@@ -7539,7 +7539,7 @@ pub struct BSXAudio2GameSound_vtable {
     pub slot_13: *const c_void,
     /// `BSXAudio2GameSound::vfunc_14` at 0xcda120 (rtti, high); signature (low): `ulonglong vfunc_14(BSXAudio2GameSound * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_14: *const c_void,
-    /// `BSXAudio2GameSound::SetPosition` at 0xcda2e0 (semantic, high); signature (untiered): `undefined SetPosition(BSXAudio2GameSound * this, float * param_1)`; `SetPosition`: stores the position, the listener distance (+0x80) and state 0x100000 (high); semantic signature: `void (BSXAudio2GameSound* this, const float* xyz)`
+    /// `BSXAudio2GameSound::SetPosition` at 0xcda2e0 (semantic, high); signature (untiered): `undefined SetPosition(BSXAudio2GameSound * this, float * param_1)`; `SetPosition`: stores the position, the listener distance (+0x80) and state 0x100000 (high); semantic signature: `void (BSXAudio2GameSound* this, const NiPoint3* xyz)`
     pub slot_15: *const c_void,
     /// `BSXAudio2GameSound::vfunc_16` at 0xcda3b0 (rtti, high); signature (low): `undefined vfunc_16(BSXAudio2GameSound * this, undefined4 * param_1)`
     pub slot_16: *const c_void,
@@ -7611,7 +7611,7 @@ impl BSXAudio2GameSound_vtable {
 /// `BSXAudio2GameSound::GetPositionMs`, slot 4: playback position in ms (high).
 pub type BSXAudio2GameSound_vtable_GetPositionMs = unsafe extern "C" fn(this: *mut crate::BSXAudio2GameSound) -> u32;
 /// `BSXAudio2GameSound::SetPosition`, slot 15: stores the position, the listener distance (+0x80) and state 0x100000 (high).
-pub type BSXAudio2GameSound_vtable_SetPosition = unsafe extern "C" fn(this: *mut crate::BSXAudio2GameSound, xyz: *const f32);
+pub type BSXAudio2GameSound_vtable_SetPosition = unsafe extern "C" fn(this: *mut crate::BSXAudio2GameSound, xyz: *const crate::NiPoint3);
 /// `BSXAudio2GameSound::ApplyFrequency`, slot 19: sets the voice frequency ratio (high).
 pub type BSXAudio2GameSound_vtable_ApplyFrequency = unsafe extern "C" fn(this: *mut crate::BSXAudio2GameSound);
 /// `BSXAudio2GameSound::Play`, slot 21: start the voice (high).

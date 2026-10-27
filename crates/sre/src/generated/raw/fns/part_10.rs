@@ -3,6 +3,22 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `FreeArrayBufferAndClearSize_31` at 0x1aeec0 (decompiler, high); signature (high): `undefined FreeArrayBufferAndClearSize_31(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const FreeArrayBufferAndClearSize_31: u64 = 523484;
+/// `FreeArrayBufferAndClearSize_32` at 0x1aef20 (decompiler, high); signature (high): `undefined FreeArrayBufferAndClearSize_32(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const FreeArrayBufferAndClearSize_32: u64 = 523485;
+/// `FreeArrayBufferAndClearSize_33` at 0x1aef80 (decompiler, high); signature (high): `undefined FreeArrayBufferAndClearSize_33(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const FreeArrayBufferAndClearSize_33: u64 = 523486;
+/// `FreeArrayBufferAndClearSize_34` at 0x1aefe0 (decompiler, high); signature (high): `undefined FreeArrayBufferAndClearSize_34(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const FreeArrayBufferAndClearSize_34: u64 = 523487;
+/// `FreeArrayBufferAndClearSize_35` at 0x1af040 (decompiler, high); signature (high): `undefined FreeArrayBufferAndClearSize_35(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const FreeArrayBufferAndClearSize_35: u64 = 523488;
+/// `FreeArrayBufferAndClearSize_36` at 0x1af0a0 (decompiler, high); signature (high): `undefined FreeArrayBufferAndClearSize_36(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const FreeArrayBufferAndClearSize_36: u64 = 523489;
+/// `FreeArrayBufferAndClearSize_37` at 0x1af100 (decompiler, high); signature (high): `undefined FreeArrayBufferAndClearSize_37(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const FreeArrayBufferAndClearSize_37: u64 = 523490;
+/// `FreeArrayBufferAndClearSize_38` at 0x1af160 (decompiler, high); signature (high): `undefined FreeArrayBufferAndClearSize_38(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const FreeArrayBufferAndClearSize_38: u64 = 523491;
 /// `FreeArrayBufferAndClearSize_39` at 0x1af1c0 (decompiler, high); signature (high): `undefined FreeArrayBufferAndClearSize_39(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const FreeArrayBufferAndClearSize_39: u64 = 523492;
 /// `FreeArrayBufferAndClearSize_4` at 0x3aa320 (decompiler, high); signature (high): `undefined FreeArrayBufferAndClearSize_4(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
@@ -8571,21 +8587,3 @@ pub const GameSetting_fMagicRangeTargetCostMult__init: u64 = 3744;
 pub const GameSetting_fMagicResistActorSkillBase__atexit: u64 = 168955;
 /// `GameSetting_fMagicResistActorSkillBase__init` at 0x66f00 (crt_init, medium); signature (high): `void GameSetting_fMagicResistActorSkillBase__init(void)`
 pub const GameSetting_fMagicResistActorSkillBase__init: u64 = 3745;
-/// `GameSetting_fMagicResistActorSkillMult__atexit` at 0x1778760 (crt_init, medium); signature (high): `void GameSetting_fMagicResistActorSkillMult__atexit(void)`
-pub const GameSetting_fMagicResistActorSkillMult__atexit: u64 = 168956;
-/// `GameSetting_fMagicResistActorSkillMult__init` at 0x66f80 (crt_init, medium); signature (high): `void GameSetting_fMagicResistActorSkillMult__init(void)`
-pub const GameSetting_fMagicResistActorSkillMult__init: u64 = 3746;
-/// `GameSetting_fMagicResistTargetWillpowerBase__atexit` at 0x17787b0 (crt_init, medium); signature (high): `void GameSetting_fMagicResistTargetWillpowerBase__atexit(void)`
-pub const GameSetting_fMagicResistTargetWillpowerBase__atexit: u64 = 168957;
-/// `GameSetting_fMagicResistTargetWillpowerBase__init` at 0x67000 (crt_init, medium); signature (high): `void GameSetting_fMagicResistTargetWillpowerBase__init(void)`
-pub const GameSetting_fMagicResistTargetWillpowerBase__init: u64 = 3747;
-/// `GameSetting_fMagicResistTargetWillpowerMult__atexit` at 0x1778800 (crt_init, medium); signature (high): `void GameSetting_fMagicResistTargetWillpowerMult__atexit(void)`
-pub const GameSetting_fMagicResistTargetWillpowerMult__atexit: u64 = 168958;
-/// `GameSetting_fMagicResistTargetWillpowerMult__init` at 0x67080 (crt_init, medium); signature (high): `void GameSetting_fMagicResistTargetWillpowerMult__init(void)`
-pub const GameSetting_fMagicResistTargetWillpowerMult__init: u64 = 3748;
-/// `GameSetting_fMagicSkillCostScale__atexit` at 0x1778850 (crt_init, medium); signature (high): `void GameSetting_fMagicSkillCostScale__atexit(void)`
-pub const GameSetting_fMagicSkillCostScale__atexit: u64 = 168959;
-/// `GameSetting_fMagicSkillCostScale__init` at 0x67100 (crt_init, medium); signature (high): `void GameSetting_fMagicSkillCostScale__init(void)`
-pub const GameSetting_fMagicSkillCostScale__init: u64 = 3749;
-/// `GameSetting_fMagicSprayMaximumDistance__atexit` at 0x173cd30 (crt_init, medium); signature (high): `void GameSetting_fMagicSprayMaximumDistance__atexit(void)`
-pub const GameSetting_fMagicSprayMaximumDistance__atexit: u64 = 165347;

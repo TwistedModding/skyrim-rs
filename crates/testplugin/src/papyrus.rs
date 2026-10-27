@@ -72,7 +72,7 @@ fn describe_object(object: &BSScript__Object) -> String {
 }
 
 fn is_type(vm: &VirtualMachine, type_id: VMTypeID, handle: Handle) -> bool {
-    vm.handle_policy().is_some_and(|p| p.handle_is_type(type_id as u32, handle.0))
+    vm.handle_policy().is_some_and(|p| p.handle_is_type(type_id, handle.0))
 }
 
 fn on_result(function: &'static str) -> skyrim::papyrus::ResultFn {
@@ -139,7 +139,7 @@ fn form_id(form: Option<&'static TESForm>) -> i32 {
 }
 
 fn player_health(actor: Option<&'static Actor>) -> f32 {
-    let health = actor.map_or(-1.0, |a| a.as_actor_value_owner().get_actor_value(ActorValue::Health as i32));
+    let health = actor.map_or(-1.0, |a| a.as_actor_value_owner().get_actor_value(ActorValue::Health));
     record("PlayerHealth", format!("actor={:?} -> {health}", actor.map(|a| form_name(a))));
     health
 }
@@ -349,7 +349,7 @@ fn handles() -> Result<String, String> {
     let policy = vm.handle_policy().ok_or("the VM has no handle policy")?;
     let global = unsafe { *(skyrim::reloc().address(globals::g_IObjectHandlePolicy_ptr).map_err(|e| e.to_string())? as *const usize) };
     check(global == core::ptr::from_ref(policy) as usize, &format!("g_IObjectHandlePolicy_ptr holds {global:#x}, not the VM's policy"))?;
-    let is_type = |ty: VMTypeID, h: Handle| policy.handle_is_type(ty as u32, h.0);
+    let is_type = |ty: VMTypeID, h: Handle| policy.handle_is_type(ty, h.0);
     let is_available = |h: Handle| policy.is_handle_object_available(h.0);
     let invalid = Handle(policy.get_invalid_handle());
     check(invalid == Handle::INVALID && invalid.0 == 0xFFFF_0000_0000 && invalid.is_invalid() && invalid.form_id().is_none(), &format!("invalid handle is {invalid}"))?;

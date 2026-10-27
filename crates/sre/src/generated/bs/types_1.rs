@@ -446,14 +446,14 @@ pub struct BSBlastNode {
     pub unknown_3C: [u8; 4],
     /// +0x40 `ptr:NiCollisionObject`, base NiAVObject, semantic; physics object of this node (refcounted); when set it, not the parent, produces the world transform (high)
     pub collisionObject: *mut crate::NiCollisionObject,
-    /// +0x48 `undefined1`, base NiAVObject, semantic; local transform: rotation 3x3 floats +0x48, translation +0x6c, scale +0x78 (high)
-    pub local: [u8; 52],
-    /// +0x7C `undefined1`, base NiAVObject, semantic; world transform: rotation +0x7c, translation +0xa0, scale +0xac (high)
-    pub world: [u8; 52],
-    /// +0xB0 `undefined1`, base NiAVObject, semantic; copy of the world transform taken once per render frame before the update (same 0x34 layout as local/world) (high)
-    pub previousWorld: [u8; 52],
-    /// +0xE4 `undefined1`, base NiAVObject, semantic; bounding sphere: centre +0xe4, radius +0xf0 (high)
-    pub worldBound: [u8; 16],
+    /// +0x48 `class:NiTransform`, base NiAVObject, semantic; local transform: rotation 3x3 floats +0x48, translation +0x6c, scale +0x78 (high); retyped undefined1 -> class:NiTransform: meaning: rotation +0x48, translation +0x6c, scale +0x78; ApplyPoseToBoneNodes 0xbdfa20 writes rotation at +0x48 and translation at +0x6c; SetRotationFromQuaternion 0x221bd0 writes +0x48..+0x68
+    pub local: crate::NiTransform,
+    /// +0x7C `class:NiTransform`, base NiAVObject, semantic; world transform: rotation +0x7c, translation +0xa0, scale +0xac (high); retyped undefined1 -> class:NiTransform: meaning: rotation +0x7c, translation +0xa0, scale +0xac; NiSkinInstance::UpdatePalette 0x1015800 reads +0x7c..+0xac as a NiTransform for NiTransform::Multiply; NiCamera::UpdateWorldBound 0xef1950 reads translate +0xa0
+    pub world: crate::NiTransform,
+    /// +0xB0 `class:NiTransform`, base NiAVObject, semantic; copy of the world transform taken once per render frame before the update (same 0x34 layout as local/world) (high); retyped undefined1 -> class:NiTransform: meaning: same 0x34 layout as local/world (snapshot of world)
+    pub previousWorld: crate::NiTransform,
+    /// +0xE4 `class:NiBound`, base NiAVObject, semantic; bounding sphere: centre +0xe4, radius +0xf0 (high); retyped undefined1 -> class:NiBound: meaning: centre +0xe4, radius +0xf0; NiCamera::UpdateWorldBound 0xef1950 writes the centre; BSGeometry::UpdateWorldBound uses NiTransform::ApplyToBound 0xefcf20
+    pub worldBound: crate::NiBound,
     /// +0xF4 `undefined4`, base NiAVObject, semantic; flag word: bit 0 hidden (no culling process visits the object), bit 11 skip the frustum test, bit 12 skipped unless the culler allows it (+0x11e; bit 20 then skips it outright), bit 26 set when a culler last accepted it; see the flag rows (high)
     pub flags: u32,
     /// +0xF8 `undefined8`, base NiAVObject, semantic; zeroed by the ctor; not read in this track's bodies (low)
@@ -1182,14 +1182,14 @@ pub struct BSClearZNode {
     pub unknown_3C: [u8; 4],
     /// +0x40 `ptr:NiCollisionObject`, base NiAVObject, semantic; physics object of this node (refcounted); when set it, not the parent, produces the world transform (high)
     pub collisionObject: *mut crate::NiCollisionObject,
-    /// +0x48 `undefined1`, base NiAVObject, semantic; local transform: rotation 3x3 floats +0x48, translation +0x6c, scale +0x78 (high)
-    pub local: [u8; 52],
-    /// +0x7C `undefined1`, base NiAVObject, semantic; world transform: rotation +0x7c, translation +0xa0, scale +0xac (high)
-    pub world: [u8; 52],
-    /// +0xB0 `undefined1`, base NiAVObject, semantic; copy of the world transform taken once per render frame before the update (same 0x34 layout as local/world) (high)
-    pub previousWorld: [u8; 52],
-    /// +0xE4 `undefined1`, base NiAVObject, semantic; bounding sphere: centre +0xe4, radius +0xf0 (high)
-    pub worldBound: [u8; 16],
+    /// +0x48 `class:NiTransform`, base NiAVObject, semantic; local transform: rotation 3x3 floats +0x48, translation +0x6c, scale +0x78 (high); retyped undefined1 -> class:NiTransform: meaning: rotation +0x48, translation +0x6c, scale +0x78; ApplyPoseToBoneNodes 0xbdfa20 writes rotation at +0x48 and translation at +0x6c; SetRotationFromQuaternion 0x221bd0 writes +0x48..+0x68
+    pub local: crate::NiTransform,
+    /// +0x7C `class:NiTransform`, base NiAVObject, semantic; world transform: rotation +0x7c, translation +0xa0, scale +0xac (high); retyped undefined1 -> class:NiTransform: meaning: rotation +0x7c, translation +0xa0, scale +0xac; NiSkinInstance::UpdatePalette 0x1015800 reads +0x7c..+0xac as a NiTransform for NiTransform::Multiply; NiCamera::UpdateWorldBound 0xef1950 reads translate +0xa0
+    pub world: crate::NiTransform,
+    /// +0xB0 `class:NiTransform`, base NiAVObject, semantic; copy of the world transform taken once per render frame before the update (same 0x34 layout as local/world) (high); retyped undefined1 -> class:NiTransform: meaning: same 0x34 layout as local/world (snapshot of world)
+    pub previousWorld: crate::NiTransform,
+    /// +0xE4 `class:NiBound`, base NiAVObject, semantic; bounding sphere: centre +0xe4, radius +0xf0 (high); retyped undefined1 -> class:NiBound: meaning: centre +0xe4, radius +0xf0; NiCamera::UpdateWorldBound 0xef1950 writes the centre; BSGeometry::UpdateWorldBound uses NiTransform::ApplyToBound 0xefcf20
+    pub worldBound: crate::NiBound,
     /// +0xF4 `undefined4`, base NiAVObject, semantic; flag word: bit 0 hidden (no culling process visits the object), bit 11 skip the frustum test, bit 12 skipped unless the culler allows it (+0x11e; bit 20 then skips it outright), bit 26 set when a culler last accepted it; see the flag rows (high)
     pub flags: u32,
     /// +0xF8 `undefined8`, base NiAVObject, semantic; zeroed by the ctor; not read in this track's bodies (low)
@@ -1475,14 +1475,14 @@ pub struct BSCubeMapCamera {
     pub padding3C: u32,
     /// +0x40 `ptr:NiCollisionObject`, base NiAVObject, semantic; physics object of this node (refcounted); when set it, not the parent, produces the world transform (high)
     pub collisionObject: *mut crate::NiCollisionObject,
-    /// +0x48 `undefined1`, base NiAVObject, semantic; local transform: rotation 3x3 floats +0x48, translation +0x6c, scale +0x78 (high)
-    pub local: [u8; 52],
-    /// +0x7C `undefined1`, base NiAVObject, semantic; world transform: rotation +0x7c, translation +0xa0, scale +0xac (high)
-    pub world: [u8; 52],
-    /// +0xB0 `undefined1`, base NiAVObject, semantic; copy of the world transform taken once per render frame before the update (same 0x34 layout as local/world) (high)
-    pub previousWorld: [u8; 52],
-    /// +0xE4 `undefined1`, base NiAVObject, semantic; bounding sphere: centre +0xe4, radius +0xf0 (high)
-    pub worldBound: [u8; 16],
+    /// +0x48 `class:NiTransform`, base NiAVObject, semantic; local transform: rotation 3x3 floats +0x48, translation +0x6c, scale +0x78 (high); retyped undefined1 -> class:NiTransform: meaning: rotation +0x48, translation +0x6c, scale +0x78; ApplyPoseToBoneNodes 0xbdfa20 writes rotation at +0x48 and translation at +0x6c; SetRotationFromQuaternion 0x221bd0 writes +0x48..+0x68
+    pub local: crate::NiTransform,
+    /// +0x7C `class:NiTransform`, base NiAVObject, semantic; world transform: rotation +0x7c, translation +0xa0, scale +0xac (high); retyped undefined1 -> class:NiTransform: meaning: rotation +0x7c, translation +0xa0, scale +0xac; NiSkinInstance::UpdatePalette 0x1015800 reads +0x7c..+0xac as a NiTransform for NiTransform::Multiply; NiCamera::UpdateWorldBound 0xef1950 reads translate +0xa0
+    pub world: crate::NiTransform,
+    /// +0xB0 `class:NiTransform`, base NiAVObject, semantic; copy of the world transform taken once per render frame before the update (same 0x34 layout as local/world) (high); retyped undefined1 -> class:NiTransform: meaning: same 0x34 layout as local/world (snapshot of world)
+    pub previousWorld: crate::NiTransform,
+    /// +0xE4 `class:NiBound`, base NiAVObject, semantic; bounding sphere: centre +0xe4, radius +0xf0 (high); retyped undefined1 -> class:NiBound: meaning: centre +0xe4, radius +0xf0; NiCamera::UpdateWorldBound 0xef1950 writes the centre; BSGeometry::UpdateWorldBound uses NiTransform::ApplyToBound 0xefcf20
+    pub worldBound: crate::NiBound,
     /// +0xF4 `undefined4`, base NiAVObject, semantic; flag word: bit 0 hidden (no culling process visits the object), bit 11 skip the frustum test, bit 12 skipped unless the culler allows it (+0x11e; bit 20 then skips it outright), bit 26 set when a culler last accepted it; see the flag rows (high)
     pub flags: u32,
     /// +0xF8 `undefined8`, base NiAVObject, semantic; zeroed by the ctor; not read in this track's bodies (low)
@@ -1773,14 +1773,14 @@ pub struct BSDamageStage {
     pub unknown_3C: [u8; 4],
     /// +0x40 `ptr:NiCollisionObject`, base NiAVObject, semantic; physics object of this node (refcounted); when set it, not the parent, produces the world transform (high)
     pub collisionObject: *mut crate::NiCollisionObject,
-    /// +0x48 `undefined1`, base NiAVObject, semantic; local transform: rotation 3x3 floats +0x48, translation +0x6c, scale +0x78 (high)
-    pub local: [u8; 52],
-    /// +0x7C `undefined1`, base NiAVObject, semantic; world transform: rotation +0x7c, translation +0xa0, scale +0xac (high)
-    pub world: [u8; 52],
-    /// +0xB0 `undefined1`, base NiAVObject, semantic; copy of the world transform taken once per render frame before the update (same 0x34 layout as local/world) (high)
-    pub previousWorld: [u8; 52],
-    /// +0xE4 `undefined1`, base NiAVObject, semantic; bounding sphere: centre +0xe4, radius +0xf0 (high)
-    pub worldBound: [u8; 16],
+    /// +0x48 `class:NiTransform`, base NiAVObject, semantic; local transform: rotation 3x3 floats +0x48, translation +0x6c, scale +0x78 (high); retyped undefined1 -> class:NiTransform: meaning: rotation +0x48, translation +0x6c, scale +0x78; ApplyPoseToBoneNodes 0xbdfa20 writes rotation at +0x48 and translation at +0x6c; SetRotationFromQuaternion 0x221bd0 writes +0x48..+0x68
+    pub local: crate::NiTransform,
+    /// +0x7C `class:NiTransform`, base NiAVObject, semantic; world transform: rotation +0x7c, translation +0xa0, scale +0xac (high); retyped undefined1 -> class:NiTransform: meaning: rotation +0x7c, translation +0xa0, scale +0xac; NiSkinInstance::UpdatePalette 0x1015800 reads +0x7c..+0xac as a NiTransform for NiTransform::Multiply; NiCamera::UpdateWorldBound 0xef1950 reads translate +0xa0
+    pub world: crate::NiTransform,
+    /// +0xB0 `class:NiTransform`, base NiAVObject, semantic; copy of the world transform taken once per render frame before the update (same 0x34 layout as local/world) (high); retyped undefined1 -> class:NiTransform: meaning: same 0x34 layout as local/world (snapshot of world)
+    pub previousWorld: crate::NiTransform,
+    /// +0xE4 `class:NiBound`, base NiAVObject, semantic; bounding sphere: centre +0xe4, radius +0xf0 (high); retyped undefined1 -> class:NiBound: meaning: centre +0xe4, radius +0xf0; NiCamera::UpdateWorldBound 0xef1950 writes the centre; BSGeometry::UpdateWorldBound uses NiTransform::ApplyToBound 0xefcf20
+    pub worldBound: crate::NiBound,
     /// +0xF4 `undefined4`, base NiAVObject, semantic; flag word: bit 0 hidden (no culling process visits the object), bit 11 skip the frustum test, bit 12 skipped unless the culler allows it (+0x11e; bit 20 then skips it outright), bit 26 set when a culler last accepted it; see the flag rows (high)
     pub flags: u32,
     /// +0xF8 `undefined8`, base NiAVObject, semantic; zeroed by the ctor; not read in this track's bodies (low)
@@ -1853,14 +1853,14 @@ pub struct BSDebrisNode {
     pub unknown_3C: [u8; 4],
     /// +0x40 `ptr:NiCollisionObject`, base NiAVObject, semantic; physics object of this node (refcounted); when set it, not the parent, produces the world transform (high)
     pub collisionObject: *mut crate::NiCollisionObject,
-    /// +0x48 `undefined1`, base NiAVObject, semantic; local transform: rotation 3x3 floats +0x48, translation +0x6c, scale +0x78 (high)
-    pub local: [u8; 52],
-    /// +0x7C `undefined1`, base NiAVObject, semantic; world transform: rotation +0x7c, translation +0xa0, scale +0xac (high)
-    pub world: [u8; 52],
-    /// +0xB0 `undefined1`, base NiAVObject, semantic; copy of the world transform taken once per render frame before the update (same 0x34 layout as local/world) (high)
-    pub previousWorld: [u8; 52],
-    /// +0xE4 `undefined1`, base NiAVObject, semantic; bounding sphere: centre +0xe4, radius +0xf0 (high)
-    pub worldBound: [u8; 16],
+    /// +0x48 `class:NiTransform`, base NiAVObject, semantic; local transform: rotation 3x3 floats +0x48, translation +0x6c, scale +0x78 (high); retyped undefined1 -> class:NiTransform: meaning: rotation +0x48, translation +0x6c, scale +0x78; ApplyPoseToBoneNodes 0xbdfa20 writes rotation at +0x48 and translation at +0x6c; SetRotationFromQuaternion 0x221bd0 writes +0x48..+0x68
+    pub local: crate::NiTransform,
+    /// +0x7C `class:NiTransform`, base NiAVObject, semantic; world transform: rotation +0x7c, translation +0xa0, scale +0xac (high); retyped undefined1 -> class:NiTransform: meaning: rotation +0x7c, translation +0xa0, scale +0xac; NiSkinInstance::UpdatePalette 0x1015800 reads +0x7c..+0xac as a NiTransform for NiTransform::Multiply; NiCamera::UpdateWorldBound 0xef1950 reads translate +0xa0
+    pub world: crate::NiTransform,
+    /// +0xB0 `class:NiTransform`, base NiAVObject, semantic; copy of the world transform taken once per render frame before the update (same 0x34 layout as local/world) (high); retyped undefined1 -> class:NiTransform: meaning: same 0x34 layout as local/world (snapshot of world)
+    pub previousWorld: crate::NiTransform,
+    /// +0xE4 `class:NiBound`, base NiAVObject, semantic; bounding sphere: centre +0xe4, radius +0xf0 (high); retyped undefined1 -> class:NiBound: meaning: centre +0xe4, radius +0xf0; NiCamera::UpdateWorldBound 0xef1950 writes the centre; BSGeometry::UpdateWorldBound uses NiTransform::ApplyToBound 0xefcf20
+    pub worldBound: crate::NiBound,
     /// +0xF4 `undefined4`, base NiAVObject, semantic; flag word: bit 0 hidden (no culling process visits the object), bit 11 skip the frustum test, bit 12 skipped unless the culler allows it (+0x11e; bit 20 then skips it outright), bit 26 set when a culler last accepted it; see the flag rows (high)
     pub flags: u32,
     /// +0xF8 `undefined8`, base NiAVObject, semantic; zeroed by the ctor; not read in this track's bodies (low)
@@ -2711,14 +2711,14 @@ pub struct BSDynamicLines {
     pub unknown_3C: [u8; 4],
     /// +0x40 `ptr:NiCollisionObject`, base NiAVObject, semantic; physics object of this node (refcounted); when set it, not the parent, produces the world transform (high)
     pub collisionObject: *mut crate::NiCollisionObject,
-    /// +0x48 `undefined1`, base NiAVObject, semantic; local transform: rotation 3x3 floats +0x48, translation +0x6c, scale +0x78 (high)
-    pub local: [u8; 52],
-    /// +0x7C `undefined1`, base NiAVObject, semantic; world transform: rotation +0x7c, translation +0xa0, scale +0xac (high)
-    pub world: [u8; 52],
-    /// +0xB0 `undefined1`, base NiAVObject, semantic; copy of the world transform taken once per render frame before the update (same 0x34 layout as local/world) (high)
-    pub previousWorld: [u8; 52],
-    /// +0xE4 `undefined1`, base NiAVObject, semantic; bounding sphere: centre +0xe4, radius +0xf0 (high)
-    pub worldBound: [u8; 16],
+    /// +0x48 `class:NiTransform`, base NiAVObject, semantic; local transform: rotation 3x3 floats +0x48, translation +0x6c, scale +0x78 (high); retyped undefined1 -> class:NiTransform: meaning: rotation +0x48, translation +0x6c, scale +0x78; ApplyPoseToBoneNodes 0xbdfa20 writes rotation at +0x48 and translation at +0x6c; SetRotationFromQuaternion 0x221bd0 writes +0x48..+0x68
+    pub local: crate::NiTransform,
+    /// +0x7C `class:NiTransform`, base NiAVObject, semantic; world transform: rotation +0x7c, translation +0xa0, scale +0xac (high); retyped undefined1 -> class:NiTransform: meaning: rotation +0x7c, translation +0xa0, scale +0xac; NiSkinInstance::UpdatePalette 0x1015800 reads +0x7c..+0xac as a NiTransform for NiTransform::Multiply; NiCamera::UpdateWorldBound 0xef1950 reads translate +0xa0
+    pub world: crate::NiTransform,
+    /// +0xB0 `class:NiTransform`, base NiAVObject, semantic; copy of the world transform taken once per render frame before the update (same 0x34 layout as local/world) (high); retyped undefined1 -> class:NiTransform: meaning: same 0x34 layout as local/world (snapshot of world)
+    pub previousWorld: crate::NiTransform,
+    /// +0xE4 `class:NiBound`, base NiAVObject, semantic; bounding sphere: centre +0xe4, radius +0xf0 (high); retyped undefined1 -> class:NiBound: meaning: centre +0xe4, radius +0xf0; NiCamera::UpdateWorldBound 0xef1950 writes the centre; BSGeometry::UpdateWorldBound uses NiTransform::ApplyToBound 0xefcf20
+    pub worldBound: crate::NiBound,
     /// +0xF4 `undefined4`, base NiAVObject, semantic; flag word: bit 0 hidden (no culling process visits the object), bit 11 skip the frustum test, bit 12 skipped unless the culler allows it (+0x11e; bit 20 then skips it outright), bit 26 set when a culler last accepted it; see the flag rows (high)
     pub flags: u32,
     /// +0xF8 `undefined8`, base NiAVObject, semantic; zeroed by the ctor; not read in this track's bodies (low)
@@ -2835,14 +2835,14 @@ pub struct BSDynamicTriShape {
     pub unknown_3C: [u8; 4],
     /// +0x40 `ptr:NiCollisionObject`, base NiAVObject, semantic; physics object of this node (refcounted); when set it, not the parent, produces the world transform (high)
     pub collisionObject: *mut crate::NiCollisionObject,
-    /// +0x48 `undefined1`, base NiAVObject, semantic; local transform: rotation 3x3 floats +0x48, translation +0x6c, scale +0x78 (high)
-    pub local: [u8; 52],
-    /// +0x7C `undefined1`, base NiAVObject, semantic; world transform: rotation +0x7c, translation +0xa0, scale +0xac (high)
-    pub world: [u8; 52],
-    /// +0xB0 `undefined1`, base NiAVObject, semantic; copy of the world transform taken once per render frame before the update (same 0x34 layout as local/world) (high)
-    pub previousWorld: [u8; 52],
-    /// +0xE4 `undefined1`, base NiAVObject, semantic; bounding sphere: centre +0xe4, radius +0xf0 (high)
-    pub worldBound: [u8; 16],
+    /// +0x48 `class:NiTransform`, base NiAVObject, semantic; local transform: rotation 3x3 floats +0x48, translation +0x6c, scale +0x78 (high); retyped undefined1 -> class:NiTransform: meaning: rotation +0x48, translation +0x6c, scale +0x78; ApplyPoseToBoneNodes 0xbdfa20 writes rotation at +0x48 and translation at +0x6c; SetRotationFromQuaternion 0x221bd0 writes +0x48..+0x68
+    pub local: crate::NiTransform,
+    /// +0x7C `class:NiTransform`, base NiAVObject, semantic; world transform: rotation +0x7c, translation +0xa0, scale +0xac (high); retyped undefined1 -> class:NiTransform: meaning: rotation +0x7c, translation +0xa0, scale +0xac; NiSkinInstance::UpdatePalette 0x1015800 reads +0x7c..+0xac as a NiTransform for NiTransform::Multiply; NiCamera::UpdateWorldBound 0xef1950 reads translate +0xa0
+    pub world: crate::NiTransform,
+    /// +0xB0 `class:NiTransform`, base NiAVObject, semantic; copy of the world transform taken once per render frame before the update (same 0x34 layout as local/world) (high); retyped undefined1 -> class:NiTransform: meaning: same 0x34 layout as local/world (snapshot of world)
+    pub previousWorld: crate::NiTransform,
+    /// +0xE4 `class:NiBound`, base NiAVObject, semantic; bounding sphere: centre +0xe4, radius +0xf0 (high); retyped undefined1 -> class:NiBound: meaning: centre +0xe4, radius +0xf0; NiCamera::UpdateWorldBound 0xef1950 writes the centre; BSGeometry::UpdateWorldBound uses NiTransform::ApplyToBound 0xefcf20
+    pub worldBound: crate::NiBound,
     /// +0xF4 `undefined4`, base NiAVObject, semantic; flag word: bit 0 hidden (no culling process visits the object), bit 11 skip the frustum test, bit 12 skipped unless the culler allows it (+0x11e; bit 20 then skips it outright), bit 26 set when a culler last accepted it; see the flag rows (high)
     pub flags: u32,
     /// +0xF8 `undefined8`, base NiAVObject, semantic; zeroed by the ctor; not read in this track's bodies (low)
@@ -4271,9 +4271,9 @@ pub struct BSGeometryListCullingProcess {
     pub accumulator: *mut c_void,
     /// +0x18 `ptr:NiCamera`, base BSCullingProcess, semantic; the camera of the current walk (high)
     pub camera: *mut crate::NiCamera,
-    /// +0x20 `undefined1`, base BSCullingProcess, semantic; copy of the camera's NiFrustum: left, right, top, bottom, near, far (floats) and the orthographic byte at +0x38 (high)
-    pub frustum: [u8; 28],
-    /// +0x3C `undefined1`, base BSCullingProcess, semantic; six world planes {nx, ny, nz, d}, 0x10 each, inside where dot(n, c) - d > 0: 0 near, 1 far, 2 left, 3 right, 4 top, 5 bottom (high)
+    /// +0x20 `class:NiFrustum`, base BSCullingProcess, semantic; copy of the camera's NiFrustum: left, right, top, bottom, near, far (floats) and the orthographic byte at +0x38 (high); retyped undefined1 -> class:NiFrustum: pass 6: 0xf04850 copies 0x1c bytes from NiCamera+0x150; ComputeFrustumPlanes 0xef7710 reads l, r, t, b, n, f and the ortho byte
+    pub frustum: crate::NiFrustum,
+    /// +0x3C `class:NiPlane`, base BSCullingProcess, semantic; six world planes {nx, ny, nz, d}, 0x10 each, inside where dot(n, c) - d > 0: 0 near, 1 far, 2 left, 3 right, 4 top, 5 bottom (high); retyped undefined1 -> class:NiPlane: array of 6 (width 0x60): ComputeFrustumPlanes 0xef7710 writes six {n, d}; TestBoundAgainstPlanes 0xfee940 steps 0x10
     pub planes: [u8; 96],
     /// +0x9C `undefined4`, base BSCullingProcess, semantic; bit i set = plane i must still be tested in this subtree; 0x3f after a camera is set; bit i is cleared when the bound sphere lies entirely inside plane i; 0 = fully inside, no test; see the flag rows (high)
     pub activePlaneMask: u32,
@@ -4654,8 +4654,8 @@ pub struct BSGrassShaderProperty {
     pub cascadePrepassList: [u8; 16],
     /// +0xE8 `pointer`, base BSLightingShaderProperty, semantic; single pooled depth pass of slot 47 (low)
     pub occlusionPass: *mut c_void,
-    /// +0xF0 `pointer`, base BSLightingShaderProperty, semantic; pointer to 3 floats of emissive colour ((0,0,0) by default); owned when flag bit 22 is set, otherwise shared with the clone source (high)
-    pub emitColor: *mut c_void,
+    /// +0xF0 `ptr:NiColor`, base BSLightingShaderProperty, semantic; pointer to 3 floats of emissive colour ((0,0,0) by default); owned when flag bit 22 is set, otherwise shared with the clone source (high); retyped pointer -> ptr:NiColor: pointer, not embedded: ctor allocates 0xc bytes; LoadBinary 0x1518860 reads 3 floats into it; slot 6 0x1549550 multiplies it by +0xf8
+    pub emitColor: *mut crate::NiColor,
     /// +0xF8 `float`, base BSLightingShaderProperty, semantic; emissive multiplier (1.0) (high)
     pub emitColorScale: f32,
     pub unknown_FC: [u8; 4],
@@ -4667,8 +4667,8 @@ pub struct BSGrassShaderProperty {
     pub landscapeFade: f32,
     /// +0x10C `undefined1`, base BSLightingShaderProperty, semantic; 4 floats written together with flag bit 23 (PROJECTED_UV) (medium)
     pub projectedUVParams: [u8; 16],
-    /// +0x11C `undefined1`, base BSLightingShaderProperty, semantic; 4 floats (defaults 0.6, 0.7, 0.8, 1.0) (low)
-    pub projectedUVColor: [u8; 16],
+    /// +0x11C `class:NiColorA`, base BSLightingShaderProperty, semantic; 4 floats (defaults 0.6, 0.7, 0.8, 1.0) (low); retyped undefined1 -> class:NiColorA: meaning: 4 colour floats (0.6, 0.7, 0.8, 1.0); read by 0x1549550 (medium: the alpha lane's use is not shown)
+    pub projectedUVColor: crate::NiColorA,
     /// +0x12C `undefined4`, base BSLightingShaderProperty
     pub field_12C: u32,
     pub unknown_130: [u8; 2],

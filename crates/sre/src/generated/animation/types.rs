@@ -248,14 +248,14 @@ pub struct BSFaceGenNiNode {
     pub unknown_3C: [u8; 4],
     /// +0x40 `ptr:NiCollisionObject`, base NiAVObject, semantic; physics object of this node (refcounted); when set it, not the parent, produces the world transform (high)
     pub collisionObject: *mut crate::NiCollisionObject,
-    /// +0x48 `undefined1`, base NiAVObject, semantic; local transform: rotation 3x3 floats +0x48, translation +0x6c, scale +0x78 (high)
-    pub local: [u8; 52],
-    /// +0x7C `undefined1`, base NiAVObject, semantic; world transform: rotation +0x7c, translation +0xa0, scale +0xac (high)
-    pub world: [u8; 52],
-    /// +0xB0 `undefined1`, base NiAVObject, semantic; copy of the world transform taken once per render frame before the update (same 0x34 layout as local/world) (high)
-    pub previousWorld: [u8; 52],
-    /// +0xE4 `undefined1`, base NiAVObject, semantic; bounding sphere: centre +0xe4, radius +0xf0 (high)
-    pub worldBound: [u8; 16],
+    /// +0x48 `class:NiTransform`, base NiAVObject, semantic; local transform: rotation 3x3 floats +0x48, translation +0x6c, scale +0x78 (high); retyped undefined1 -> class:NiTransform: meaning: rotation +0x48, translation +0x6c, scale +0x78; ApplyPoseToBoneNodes 0xbdfa20 writes rotation at +0x48 and translation at +0x6c; SetRotationFromQuaternion 0x221bd0 writes +0x48..+0x68
+    pub local: crate::NiTransform,
+    /// +0x7C `class:NiTransform`, base NiAVObject, semantic; world transform: rotation +0x7c, translation +0xa0, scale +0xac (high); retyped undefined1 -> class:NiTransform: meaning: rotation +0x7c, translation +0xa0, scale +0xac; NiSkinInstance::UpdatePalette 0x1015800 reads +0x7c..+0xac as a NiTransform for NiTransform::Multiply; NiCamera::UpdateWorldBound 0xef1950 reads translate +0xa0
+    pub world: crate::NiTransform,
+    /// +0xB0 `class:NiTransform`, base NiAVObject, semantic; copy of the world transform taken once per render frame before the update (same 0x34 layout as local/world) (high); retyped undefined1 -> class:NiTransform: meaning: same 0x34 layout as local/world (snapshot of world)
+    pub previousWorld: crate::NiTransform,
+    /// +0xE4 `class:NiBound`, base NiAVObject, semantic; bounding sphere: centre +0xe4, radius +0xf0 (high); retyped undefined1 -> class:NiBound: meaning: centre +0xe4, radius +0xf0; NiCamera::UpdateWorldBound 0xef1950 writes the centre; BSGeometry::UpdateWorldBound uses NiTransform::ApplyToBound 0xefcf20
+    pub worldBound: crate::NiBound,
     /// +0xF4 `undefined4`, base NiAVObject, semantic; flag word: bit 0 hidden (no culling process visits the object), bit 11 skip the frustum test, bit 12 skipped unless the culler allows it (+0x11e; bit 20 then skips it outright), bit 26 set when a culler last accepted it; see the flag rows (high)
     pub flags: u32,
     /// +0xF8 `undefined8`, base NiAVObject, semantic; zeroed by the ctor; not read in this track's bodies (low)
@@ -271,8 +271,8 @@ pub struct BSFaceGenNiNode {
     pub unknown_10A: [u8; 6],
     /// +0x110 `undefined1`, base NiNode, semantic; NiTObjectArray<NiPointer<NiAVObject>>: vtable +0x110, data +0x118, capacity u16 +0x120, slots in use u16 +0x122, non-null count u16 +0x124, grow step u16 +0x126 (high)
     pub children: [u8; 24],
-    /// +0x128 `undefined1`, semantic; 9 floats initialised from constants ID_388567..ID_388575 (3x3 matrix by shape) (low)
-    pub field128: [u8; 36],
+    /// +0x128 `class:NiMatrix3`, semantic; 9 floats initialised from constants ID_388567..ID_388575 (3x3 matrix by shape) (low); retyped undefined1 -> class:NiMatrix3: ctor 0x439500 initialises the nine floats from ID_388567..ID_388575, the identity-matrix constants NiTransform::IsIdentity 0xef5c60 compares rotate against; no matrix reader seen (medium)
+    pub field128: crate::NiMatrix3,
     pub unknown_14C: [u8; 4],
     /// +0x150 `ptr:BSFaceGenAnimationData`, semantic; face keyframe channels (high)
     pub animationData: *mut crate::BSFaceGenAnimationData,
@@ -436,8 +436,8 @@ pub struct NiSkinData {
     pub unknown_C: [u8; 4],
     /// +0x10 `ptr:NiObject`, semantic; refcounted object released by the dtor; not set by LoadBinary (slot 25 is a 5-byte thunk) (low)
     pub field10: *mut crate::NiObject,
-    /// +0x18 `undefined1`, semantic; overall transform of the skin (rotation, translation, scale) (medium)
-    pub skinTransform: [u8; 52],
+    /// +0x18 `class:NiTransform`, semantic; overall transform of the skin (rotation, translation, scale) (medium); retyped undefined1 -> class:NiTransform: meaning: rotation, translation, scale; IsEqual compares 13 floats (0x34); LoadBinary reads it first
+    pub skinTransform: crate::NiTransform,
     pub unknown_4C: [u8; 4],
     /// +0x50 `pointer`, semantic; per-bone records, 0x58 bytes each (high)
     pub boneData: *mut c_void,
@@ -459,10 +459,10 @@ const _: () = assert!(core::mem::offset_of!(NiSkinData, boneCount) == 0x58);
 /// Evidence: bind data of one bone; LoadBinary init loop and reads; IsEqual compares floats 0..0xc as a transform, floats 0xd..0x10 and the weights; size: stride 0x58 in the LoadBinary 0xf0d710 allocation and in UpdatePalette (ADD R12,0x58).
 #[repr(C)]
 pub struct NiSkinData__BoneData {
-    /// +0x0 `undefined1`, semantic; bind-pose inverse: skin space to the bone's space (rotation, translation, scale) (high)
-    pub skinToBone: [u8; 52],
-    /// +0x34 `undefined1`, semantic; bound sphere of the bone's vertices (center, radius) in bone space (high)
-    pub boundSphere: [u8; 16],
+    /// +0x0 `class:NiTransform`, semantic; bind-pose inverse: skin space to the bone's space (rotation, translation, scale) (high); retyped undefined1 -> class:NiTransform: UpdatePalette 0x1015800: NiTransform::Multiply(boneWorld, out, &boneData[i]) at 0x141015b24
+    pub skinToBone: crate::NiTransform,
+    /// +0x34 `class:NiBound`, semantic; bound sphere of the bone's vertices (center, radius) in bone space (high); retyped undefined1 -> class:NiBound: meaning: centre, radius; NiSkinInstance::ComputeBound 0xf09cb0 moves it with NiTransform::ApplyToBound
+    pub boundSphere: crate::NiBound,
     pub unknown_44: [u8; 4],
     /// +0x48 `pointer`, semantic; optional vertex weights, 8 bytes each {u16 vertex, pad, float weight} (high)
     pub weights: *mut c_void,
@@ -582,8 +582,8 @@ pub struct hkaSkeleton {
     pub boneCount: u32,
     /// +0x34 `undefined4`, base hkBaseObject
     pub field_34: u32,
-    /// +0x38 `pointer`, base hkBaseObject, semantic; hkQsTransform[referencePoseCount], local space (high)
-    pub referencePose: *mut c_void,
+    /// +0x38 `ptr:hkQsTransform`, base hkBaseObject, semantic; hkQsTransform[referencePoseCount], local space (high); retyped pointer -> ptr:hkQsTransform: pointer to an array: meaning hkQsTransform[referencePoseCount]
+    pub referencePose: *mut crate::hkQsTransform,
     /// +0x40 `undefined4`, base hkBaseObject, semantic; entries in referencePose (high)
     pub referencePoseCount: u32,
     /// +0x44 `undefined4`, base hkBaseObject
@@ -858,10 +858,10 @@ pub struct hkbCharacter {
     pub worldContext: *mut c_void,
     /// +0x80 `pointer`, base hkBaseObject, semantic; 0x28-byte helper object (low)
     pub unknown80: *mut c_void,
-    /// +0x88 `pointer`, base hkBaseObject, semantic; hkQsTransform* (0x30: translation vec4, rotation quaternion xyzw, scale vec4) of the character root (high)
-    pub worldFromModel: *mut c_void,
-    /// +0x90 `pointer`, base hkBaseObject, semantic, runtime; hkQsTransform[numPoseLocal]: the per-frame pose in parent-local space, one 0x30 entry per skeleton bone (high)
-    pub poseLocal: *mut c_void,
+    /// +0x88 `ptr:hkQsTransform`, base hkBaseObject, semantic; hkQsTransform* (0x30: translation vec4, rotation quaternion xyzw, scale vec4) of the character root (high); retyped pointer -> ptr:hkQsTransform: pointer: meaning names hkQsTransform* (0x30: translation, rotation xyzw, scale)
+    pub worldFromModel: *mut crate::hkQsTransform,
+    /// +0x90 `ptr:hkQsTransform`, base hkBaseObject, semantic, runtime; hkQsTransform[numPoseLocal]: the per-frame pose in parent-local space, one 0x30 entry per skeleton bone (high); retyped pointer -> ptr:hkQsTransform: pointer to an array: meaning hkQsTransform[numPoseLocal]; GetPoseLocal 0xad7d00 returns hkQsTransform*
+    pub poseLocal: *mut crate::hkQsTransform,
     /// +0x98 `undefined4`, base hkBaseObject, semantic, runtime; entries in poseLocal (= skeleton bone count) (high)
     pub numPoseLocal: u32,
     /// +0x9C `undefined1`, base hkBaseObject, semantic; worldFromModel was allocated by the character (medium)
@@ -960,8 +960,8 @@ pub struct hkbRagdollDriver {
     pub field_84: u32,
     /// +0x88 `ptr:hkaRagdollInstance`, base hkBaseObject, semantic; the character's ragdoll (rigid bodies, constraints) (high)
     pub ragdollInstance: *mut crate::hkaRagdollInstance,
-    /// +0x90 `pointer`, base hkBaseObject, semantic; hkQsTransform[ragdoll bone count] scratch pose (medium)
-    pub ragdollPose: *mut c_void,
+    /// +0x90 `ptr:hkQsTransform`, base hkBaseObject, semantic; hkQsTransform[ragdoll bone count] scratch pose (medium); retyped pointer -> ptr:hkQsTransform: pointer to an array: meaning hkQsTransform[ragdoll bone count]
+    pub ragdollPose: *mut crate::hkQsTransform,
     /// +0x98 `undefined4`, base hkBaseObject
     pub field_98: u32,
     /// +0x9C `undefined4`, base hkBaseObject

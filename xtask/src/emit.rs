@@ -344,7 +344,7 @@ fn build_classes(inp: &Inputs) -> BTreeMap<&str, Class<'_>> {
             for sf in &s.fields {
                 let off = u64::try_from(disp).unwrap() + sf.offset;
                 if let Some(fo) = class.fields.iter_mut().find(|fo| fo.f.off == off && fo.f.name == sf.name) {
-                    fo.meaning = format!("{} ({})", doc(&sf.meaning), sf.confidence);
+                    fo.meaning = format!("{} ({}){}", doc(&sf.meaning), sf.confidence, sf.retyped.as_ref().map(|r| format!("; retyped {}", doc(r))).unwrap_or_default());
                 }
             }
         }
@@ -382,7 +382,7 @@ fn layout_of(name: &str, classes: &mut BTreeMap<&str, Class>) -> u64 {
     class.align
 }
 
-fn class_rs(c: &Class, classes: &BTreeMap<&str, Class>, stats: &mut Stats) -> String {
+fn class_rs(c: &Class, value: bool, classes: &BTreeMap<&str, Class>, stats: &mut Stats) -> String {
     let mut out = String::new();
     let mut head = match &c.size {
         Size::Exact { size, conf, evidence: _ } => {
@@ -417,6 +417,9 @@ fn class_rs(c: &Class, classes: &BTreeMap<&str, Class>, stats: &mut Stats) -> St
         writeln!(out, "/// Packed: a field lies below its natural alignment.").unwrap();
     }
     writeln!(out, "#[repr(C{})]", if c.packed { ", packed" } else { "" }).unwrap();
+    if value {
+        writeln!(out, "#[derive(Default)]").unwrap();
+    }
     writeln!(out, "pub struct {} {{", c.ident).unwrap();
     let mut pos = 0;
     for fo in &c.fields {
@@ -887,7 +890,7 @@ pub fn all(inp: &Inputs, commit: &str) -> (BTreeMap<String, String>, Stats) {
     let ctx = context(inp, &classes);
     let mut items = Items::new();
     for c in classes.values() {
-        items.entry((ctx.group(c.name).to_owned(), Kind::Types)).or_default().push(class_rs(c, &classes, &mut stats));
+        items.entry((ctx.group(c.name).to_owned(), Kind::Types)).or_default().push(class_rs(c, ctx.values.contains(c.name), &classes, &mut stats));
     }
     enums(inp, &ctx, &mut items, &mut stats);
     stats.api = crate::api::emit(inp, &ctx, &mut items);

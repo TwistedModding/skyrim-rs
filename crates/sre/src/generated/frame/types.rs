@@ -107,8 +107,8 @@ pub struct BSEffectShaderMaterial {
     pub unknown_30: [u8; 8],
     /// +0x38 `undefined1`, semantic; 4 floats read as one block (low)
     pub falloffParams: [u8; 16],
-    /// +0x48 `undefined1`, semantic; 4 floats (1,1,1,1); its w (+0x54) is the alpha of property slots 49/50 (medium)
-    pub baseColor: [u8; 16],
+    /// +0x48 `class:NiColorA`, semantic; 4 floats (1,1,1,1); its w (+0x54) is the alpha of property slots 49/50 (medium); retyped undefined1 -> class:NiColorA: meaning: 4 floats (1,1,1,1), w (+0x54) is the alpha
+    pub baseColor: crate::NiColorA,
     /// +0x58 `ptr:NiSourceTexture`, semantic; base texture (placeholder until loaded) (medium)
     pub sourceTexture: *mut crate::NiSourceTexture,
     /// +0x60 `ptr:NiSourceTexture`, semantic; second texture (placeholder until loaded) (medium)
@@ -249,14 +249,14 @@ pub struct BSFadeNode {
     pub unknown_3C: [u8; 4],
     /// +0x40 `ptr:NiCollisionObject`, base NiAVObject, semantic; physics object of this node (refcounted); when set it, not the parent, produces the world transform (high)
     pub collisionObject: *mut crate::NiCollisionObject,
-    /// +0x48 `undefined1`, base NiAVObject, semantic; local transform: rotation 3x3 floats +0x48, translation +0x6c, scale +0x78 (high)
-    pub local: [u8; 52],
-    /// +0x7C `undefined1`, base NiAVObject, semantic; world transform: rotation +0x7c, translation +0xa0, scale +0xac (high)
-    pub world: [u8; 52],
-    /// +0xB0 `undefined1`, base NiAVObject, semantic; copy of the world transform taken once per render frame before the update (same 0x34 layout as local/world) (high)
-    pub previousWorld: [u8; 52],
-    /// +0xE4 `undefined1`, base NiAVObject, semantic; bounding sphere: centre +0xe4, radius +0xf0 (high)
-    pub worldBound: [u8; 16],
+    /// +0x48 `class:NiTransform`, base NiAVObject, semantic; local transform: rotation 3x3 floats +0x48, translation +0x6c, scale +0x78 (high); retyped undefined1 -> class:NiTransform: meaning: rotation +0x48, translation +0x6c, scale +0x78; ApplyPoseToBoneNodes 0xbdfa20 writes rotation at +0x48 and translation at +0x6c; SetRotationFromQuaternion 0x221bd0 writes +0x48..+0x68
+    pub local: crate::NiTransform,
+    /// +0x7C `class:NiTransform`, base NiAVObject, semantic; world transform: rotation +0x7c, translation +0xa0, scale +0xac (high); retyped undefined1 -> class:NiTransform: meaning: rotation +0x7c, translation +0xa0, scale +0xac; NiSkinInstance::UpdatePalette 0x1015800 reads +0x7c..+0xac as a NiTransform for NiTransform::Multiply; NiCamera::UpdateWorldBound 0xef1950 reads translate +0xa0
+    pub world: crate::NiTransform,
+    /// +0xB0 `class:NiTransform`, base NiAVObject, semantic; copy of the world transform taken once per render frame before the update (same 0x34 layout as local/world) (high); retyped undefined1 -> class:NiTransform: meaning: same 0x34 layout as local/world (snapshot of world)
+    pub previousWorld: crate::NiTransform,
+    /// +0xE4 `class:NiBound`, base NiAVObject, semantic; bounding sphere: centre +0xe4, radius +0xf0 (high); retyped undefined1 -> class:NiBound: meaning: centre +0xe4, radius +0xf0; NiCamera::UpdateWorldBound 0xef1950 writes the centre; BSGeometry::UpdateWorldBound uses NiTransform::ApplyToBound 0xefcf20
+    pub worldBound: crate::NiBound,
     /// +0xF4 `undefined4`, base NiAVObject, semantic; flag word: bit 0 hidden (no culling process visits the object), bit 11 skip the frustum test, bit 12 skipped unless the culler allows it (+0x11e; bit 20 then skips it outright), bit 26 set when a culler last accepted it; see the flag rows (high)
     pub flags: u32,
     /// +0xF8 `undefined8`, base NiAVObject, semantic; zeroed by the ctor; not read in this track's bodies (low)
@@ -457,8 +457,8 @@ pub struct BSLightingShaderMaterialBase {
     /// +0x2C `undefined4`, base BSShaderMaterial, semantic; cached hash (0xffffffff = not computed) (low)
     pub hash: u32,
     pub unknown_30: [u8; 8],
-    /// +0x38 `undefined1`, semantic; 3 floats (1,1,1) (high)
-    pub specularColor: [u8; 12],
+    /// +0x38 `class:NiColor`, semantic; 3 floats (1,1,1) (high); retyped undefined1 -> class:NiColor: meaning: 3 floats (1,1,1); 0x1548820 SPECULAR constant = colour * strength, w = specularPower
+    pub specularColor: crate::NiColor,
     pub unknown_44: [u8; 4],
     /// +0x48 `ptr:NiSourceTexture`, semantic; texture set slot 0, bound to sampler 0 (medium)
     pub diffuseTexture: *mut crate::NiSourceTexture,
@@ -672,14 +672,14 @@ pub struct BleedoutCameraState {
     pub cam3Node: *mut crate::NiAVObject,
     /// +0x38 `ptr:NiNode`, base ThirdPersonState, semantic; 'Camera Control' node of the target's third-person 3D; its local translation is read every frame (high)
     pub cameraControlNode: *mut crate::NiNode,
-    /// +0x40 `undefined1`, base ThirdPersonState, semantic; NiPoint3 camera world position of the frame (GetTranslation) (high)
-    pub position: [u8; 12],
-    /// +0x4C `undefined1`, base ThirdPersonState, semantic; NiQuaternion (w, x, y, z) camera rotation (GetRotation) (high)
-    pub rotation: [u8; 16],
-    /// +0x5C `undefined1`, base ThirdPersonState, semantic; NiPoint3 shoulder offset (x right, y forward, z up) the camera dollies to (high)
-    pub targetOffset: [u8; 12],
-    /// +0x68 `undefined1`, base ThirdPersonState, semantic; NiPoint3 offset applied this frame (high)
-    pub currentOffset: [u8; 12],
+    /// +0x40 `class:NiPoint3`, base ThirdPersonState, semantic; NiPoint3 camera world position of the frame (GetTranslation) (high); retyped undefined1 -> class:NiPoint3: GetTranslation 0x8fd880 copies +0x40/+0x44/+0x48 into NiPoint3* out
+    pub position: crate::NiPoint3,
+    /// +0x4C `class:NiQuaternion`, base ThirdPersonState, semantic; NiQuaternion (w, x, y, z) camera rotation (GetRotation) (high); retyped undefined1 -> class:NiQuaternion: GetRotation 0x8fd870 copies 16 bytes into NiQuaternion* out; meaning (w, x, y, z)
+    pub rotation: crate::NiQuaternion,
+    /// +0x5C `class:NiPoint3`, base ThirdPersonState, semantic; NiPoint3 shoulder offset (x right, y forward, z up) the camera dollies to (high); retyped undefined1 -> class:NiPoint3: meaning: NiPoint3 (x right, y forward, z up)
+    pub targetOffset: crate::NiPoint3,
+    /// +0x68 `class:NiPoint3`, base ThirdPersonState, semantic; NiPoint3 offset applied this frame (high); retyped undefined1 -> class:NiPoint3: meaning: NiPoint3
+    pub currentOffset: crate::NiPoint3,
     /// +0x74 `float`, base ThirdPersonState, semantic; zoom the camera moves to, in [fMinCurrentZoom, 1] (medium)
     pub targetZoom: f32,
     /// +0x78 `float`, base ThirdPersonState, semantic; zoom used this frame; scales the distance between fVanityModeMinDist and fVanityModeMaxDist (medium)
@@ -694,24 +694,24 @@ pub struct BleedoutCameraState {
     pub pitchZoomOffset: f32,
     /// +0x8C `float`, base ThirdPersonState, semantic; accumulated |zoom change| since Toggle POV was pressed; 0 at release means 'switch POV' (high)
     pub zoomSinceTogglePress: f32,
-    /// +0x90 `undefined1`, base ThirdPersonState, semantic; NiPoint3 position at the last camera collision (medium)
-    pub recoveryStart: [u8; 12],
+    /// +0x90 `class:NiPoint3`, base ThirdPersonState, semantic; NiPoint3 position at the last camera collision (medium); retyped undefined1 -> class:NiPoint3: meaning: NiPoint3
+    pub recoveryStart: crate::NiPoint3,
     /// +0x9C `float`, base ThirdPersonState, semantic; collision recovery progress 0..1, FLT_MAX when idle (medium)
     pub recoveryBlend: f32,
     /// +0xA0 `ptr:NiAVObject`, base ThirdPersonState, semantic; node of the player's third-person 3D the camera blends to (animated camera) (high)
     pub animatedNode: *mut crate::NiAVObject,
     /// +0xA8 `class:BSFixedString`, base ThirdPersonState, semantic; name of that node (high)
     pub animatedNodeName: crate::BSFixedString,
-    /// +0xB0 `undefined1`, base ThirdPersonState, semantic; NiQuaternion: animatedNode's local rotation (medium)
-    pub animatedRotation: [u8; 16],
-    /// +0xC0 `undefined1`, base ThirdPersonState, semantic; NiPoint3: animatedNode's local translation (medium)
-    pub animatedTranslation: [u8; 12],
+    /// +0xB0 `class:NiQuaternion`, base ThirdPersonState, semantic; NiQuaternion: animatedNode's local rotation (medium); retyped undefined1 -> class:NiQuaternion: meaning: NiQuaternion (animated node local rotation)
+    pub animatedRotation: crate::NiQuaternion,
+    /// +0xC0 `class:NiPoint3`, base ThirdPersonState, semantic; NiPoint3: animatedNode's local translation (medium); retyped undefined1 -> class:NiPoint3: meaning: NiPoint3 (animated node local translation)
+    pub animatedTranslation: crate::NiPoint3,
     /// +0xCC `float`, base ThirdPersonState, semantic; weight 0..1 of the animated node (medium)
     pub animatedBlend: f32,
     /// +0xD0 `float`, base ThirdPersonState, semantic; +1 blending in (node set) / -1 out (high)
     pub animatedBlendRate: f32,
-    /// +0xD4 `undefined1`, base ThirdPersonState, semantic; NiPoint2 (yaw, pitch) of the camera relative to the target while free rotation is on (high)
-    pub freeRotation: [u8; 8],
+    /// +0xD4 `class:NiPoint2`, base ThirdPersonState, semantic; NiPoint2 (yaw, pitch) of the camera relative to the target while free rotation is on (high); retyped undefined1 -> class:NiPoint2: PlayerCamera::AddFreeRotation 0x8f9070 adds a NiPoint2 to +0xd4/+0xd8
+    pub freeRotation: crate::NiPoint2,
     /// +0xDC `undefined1`, base ThirdPersonState, semantic; the camera orbits without turning the target (high)
     pub freeRotationEnabled: u8,
     /// +0xDD `undefined1`, base ThirdPersonState, semantic; switch to first person once zoomed in to fMinCurrentZoom (high)
@@ -728,8 +728,8 @@ pub struct BleedoutCameraState {
     pub togglePOVPressed: u8,
     /// +0xE3 `undefined1`, semantic; tail padding (size 0xe8) (high)
     pub padE3: [u8; 5],
-    /// +0xE8 `undefined1`, semantic; NiMatrix3 (high)
-    pub orbitMatrix: [u8; 36],
+    /// +0xE8 `class:NiMatrix3`, semantic; NiMatrix3 (high); retyped undefined1 -> class:NiMatrix3: meaning: NiMatrix3; ComputeOrbitPositionWithCollision 0x8f4530 takes const NiMatrix3*
+    pub orbitMatrix: crate::NiMatrix3,
     /// +0x10C `float`, semantic, runtime; 200 from SetCameraRoot (high)
     pub orbitDistance: f32,
     /// +0x110 `float`, semantic; 0.5236 (30 deg) from SetCameraRoot (high)
@@ -902,14 +902,14 @@ pub struct DragonCameraState {
     pub cam3Node: *mut crate::NiAVObject,
     /// +0x38 `ptr:NiNode`, base ThirdPersonState, semantic; 'Camera Control' node of the target's third-person 3D; its local translation is read every frame (high)
     pub cameraControlNode: *mut crate::NiNode,
-    /// +0x40 `undefined1`, base ThirdPersonState, semantic; NiPoint3 camera world position of the frame (GetTranslation) (high)
-    pub position: [u8; 12],
-    /// +0x4C `undefined1`, base ThirdPersonState, semantic; NiQuaternion (w, x, y, z) camera rotation (GetRotation) (high)
-    pub rotation: [u8; 16],
-    /// +0x5C `undefined1`, base ThirdPersonState, semantic; NiPoint3 shoulder offset (x right, y forward, z up) the camera dollies to (high)
-    pub targetOffset: [u8; 12],
-    /// +0x68 `undefined1`, base ThirdPersonState, semantic; NiPoint3 offset applied this frame (high)
-    pub currentOffset: [u8; 12],
+    /// +0x40 `class:NiPoint3`, base ThirdPersonState, semantic; NiPoint3 camera world position of the frame (GetTranslation) (high); retyped undefined1 -> class:NiPoint3: GetTranslation 0x8fd880 copies +0x40/+0x44/+0x48 into NiPoint3* out
+    pub position: crate::NiPoint3,
+    /// +0x4C `class:NiQuaternion`, base ThirdPersonState, semantic; NiQuaternion (w, x, y, z) camera rotation (GetRotation) (high); retyped undefined1 -> class:NiQuaternion: GetRotation 0x8fd870 copies 16 bytes into NiQuaternion* out; meaning (w, x, y, z)
+    pub rotation: crate::NiQuaternion,
+    /// +0x5C `class:NiPoint3`, base ThirdPersonState, semantic; NiPoint3 shoulder offset (x right, y forward, z up) the camera dollies to (high); retyped undefined1 -> class:NiPoint3: meaning: NiPoint3 (x right, y forward, z up)
+    pub targetOffset: crate::NiPoint3,
+    /// +0x68 `class:NiPoint3`, base ThirdPersonState, semantic; NiPoint3 offset applied this frame (high); retyped undefined1 -> class:NiPoint3: meaning: NiPoint3
+    pub currentOffset: crate::NiPoint3,
     /// +0x74 `float`, base ThirdPersonState, semantic; zoom the camera moves to, in [fMinCurrentZoom, 1] (medium)
     pub targetZoom: f32,
     /// +0x78 `float`, base ThirdPersonState, semantic; zoom used this frame; scales the distance between fVanityModeMinDist and fVanityModeMaxDist (medium)
@@ -924,24 +924,24 @@ pub struct DragonCameraState {
     pub pitchZoomOffset: f32,
     /// +0x8C `float`, base ThirdPersonState, semantic; accumulated |zoom change| since Toggle POV was pressed; 0 at release means 'switch POV' (high)
     pub zoomSinceTogglePress: f32,
-    /// +0x90 `undefined1`, base ThirdPersonState, semantic; NiPoint3 position at the last camera collision (medium)
-    pub recoveryStart: [u8; 12],
+    /// +0x90 `class:NiPoint3`, base ThirdPersonState, semantic; NiPoint3 position at the last camera collision (medium); retyped undefined1 -> class:NiPoint3: meaning: NiPoint3
+    pub recoveryStart: crate::NiPoint3,
     /// +0x9C `float`, base ThirdPersonState, semantic; collision recovery progress 0..1, FLT_MAX when idle (medium)
     pub recoveryBlend: f32,
     /// +0xA0 `ptr:NiAVObject`, base ThirdPersonState, semantic; node of the player's third-person 3D the camera blends to (animated camera) (high)
     pub animatedNode: *mut crate::NiAVObject,
     /// +0xA8 `class:BSFixedString`, base ThirdPersonState, semantic; name of that node (high)
     pub animatedNodeName: crate::BSFixedString,
-    /// +0xB0 `undefined1`, base ThirdPersonState, semantic; NiQuaternion: animatedNode's local rotation (medium)
-    pub animatedRotation: [u8; 16],
-    /// +0xC0 `undefined1`, base ThirdPersonState, semantic; NiPoint3: animatedNode's local translation (medium)
-    pub animatedTranslation: [u8; 12],
+    /// +0xB0 `class:NiQuaternion`, base ThirdPersonState, semantic; NiQuaternion: animatedNode's local rotation (medium); retyped undefined1 -> class:NiQuaternion: meaning: NiQuaternion (animated node local rotation)
+    pub animatedRotation: crate::NiQuaternion,
+    /// +0xC0 `class:NiPoint3`, base ThirdPersonState, semantic; NiPoint3: animatedNode's local translation (medium); retyped undefined1 -> class:NiPoint3: meaning: NiPoint3 (animated node local translation)
+    pub animatedTranslation: crate::NiPoint3,
     /// +0xCC `float`, base ThirdPersonState, semantic; weight 0..1 of the animated node (medium)
     pub animatedBlend: f32,
     /// +0xD0 `float`, base ThirdPersonState, semantic; +1 blending in (node set) / -1 out (high)
     pub animatedBlendRate: f32,
-    /// +0xD4 `undefined1`, base ThirdPersonState, semantic; NiPoint2 (yaw, pitch) of the camera relative to the target while free rotation is on (high)
-    pub freeRotation: [u8; 8],
+    /// +0xD4 `class:NiPoint2`, base ThirdPersonState, semantic; NiPoint2 (yaw, pitch) of the camera relative to the target while free rotation is on (high); retyped undefined1 -> class:NiPoint2: PlayerCamera::AddFreeRotation 0x8f9070 adds a NiPoint2 to +0xd4/+0xd8
+    pub freeRotation: crate::NiPoint2,
     /// +0xDC `undefined1`, base ThirdPersonState, semantic; the camera orbits without turning the target (high)
     pub freeRotationEnabled: u8,
     /// +0xDD `undefined1`, base ThirdPersonState, semantic; switch to first person once zoomed in to fMinCurrentZoom (high)
@@ -972,10 +972,10 @@ pub struct DragonCameraState {
     pub combatTargetMode: u8,
     /// +0xF9 `undefined1`, semantic; alignment padding after the byte +0xf8, before the NiPoint2 +0xfc (high)
     pub padF9: [u8; 3],
-    /// +0xFC `undefined1`, semantic; NiPoint2 (yaw, pitch) (medium)
-    pub dollyFrom: [u8; 8],
-    /// +0x104 `undefined1`, semantic; NiPoint2 (yaw, pitch) (medium)
-    pub dollyTo: [u8; 8],
+    /// +0xFC `class:NiPoint2`, semantic; NiPoint2 (yaw, pitch) (medium); retyped undefined1 -> class:NiPoint2: meaning: NiPoint2 (yaw, pitch); ctor 0x55c690 zeroes both dolly NiPoint2
+    pub dollyFrom: crate::NiPoint2,
+    /// +0x104 `class:NiPoint2`, semantic; NiPoint2 (yaw, pitch) (medium); retyped undefined1 -> class:NiPoint2: meaning: NiPoint2 (yaw, pitch)
+    pub dollyTo: crate::NiPoint2,
     /// +0x10C `undefined4`, semantic; ObjectRefHandle (low)
     pub targetHandle: u32,
     pub __engine: crate::Engine,
@@ -1049,12 +1049,12 @@ pub struct FirstPersonState {
     pub pad1c: u32,
     /// +0x20 `class:PlayerInputHandler`, semantic; embedded handler (high)
     pub inputHandler: crate::PlayerInputHandler,
-    /// +0x30 `undefined1`, semantic; NiPoint3 player position of the previous frame (FLT_MAX after Revert) (high)
-    pub lastTargetPosition: [u8; 12],
-    /// +0x3C `undefined1`, semantic; NiPoint3 velocity of the spring (high)
-    pub dampingVelocity: [u8; 12],
-    /// +0x48 `undefined1`, semantic; NiPoint3 offset added to the camera position (high)
-    pub dampingOffset: [u8; 12],
+    /// +0x30 `class:NiPoint3`, semantic; NiPoint3 player position of the previous frame (FLT_MAX after Revert) (high); retyped undefined1 -> class:NiPoint3: meaning: NiPoint3
+    pub lastTargetPosition: crate::NiPoint3,
+    /// +0x3C `class:NiPoint3`, semantic; NiPoint3 velocity of the spring (high); retyped undefined1 -> class:NiPoint3: meaning: NiPoint3
+    pub dampingVelocity: crate::NiPoint3,
+    /// +0x48 `class:NiPoint3`, semantic; NiPoint3 offset added to the camera position (high); retyped undefined1 -> class:NiPoint3: meaning: NiPoint3
+    pub dampingOffset: crate::NiPoint3,
     /// +0x54 `undefined4`, semantic; alignment padding before cameraNode (+0x58) (high)
     pub pad54: u32,
     /// +0x58 `ptr:NiAVObject`, semantic; first-person camera node: world rotation (+0x7c) and translation (+0xa0) are the camera pose (high)
@@ -1207,8 +1207,8 @@ pub struct FreeCameraState {
     pub pad1c: u32,
     /// +0x20 `class:PlayerInputHandler`, semantic; embedded handler (high)
     pub inputHandler: crate::PlayerInputHandler,
-    /// +0x30 `undefined1`, semantic, runtime; NiPoint3 camera position (high)
-    pub position: [u8; 12],
+    /// +0x30 `class:NiPoint3`, semantic, runtime; NiPoint3 camera position (high); retyped undefined1 -> class:NiPoint3: meaning: NiPoint3; GetTranslation 0x8f60a0 (NiPoint3* out)
+    pub position: crate::NiPoint3,
     /// +0x3C `float`, semantic; pitch, wrapped to [0, 2pi) (high)
     pub pitch: f32,
     /// +0x40 `float`, semantic, runtime; yaw, wrapped to [0, 2pi) (high)
@@ -1262,8 +1262,8 @@ pub struct FurnitureCameraState {
     pub pad1c: u32,
     /// +0x20 `float`, semantic; target heading at Begin (high)
     pub heading: f32,
-    /// +0x24 `undefined1`, semantic; NiPoint3 offset in the target's heading frame (high)
-    pub translate: [u8; 12],
+    /// +0x24 `class:NiPoint3`, semantic; NiPoint3 offset in the target's heading frame (high); retyped undefined1 -> class:NiPoint3: ComputeFurnitureCameraPosition 0x8f6a70 reads +0x24/+0x28/+0x2c as x, y, z of the heading-frame offset
+    pub translate: crate::NiPoint3,
     /// +0x30 `float`, semantic, runtime; distance back along the view (high)
     pub zoom: f32,
     /// +0x34 `float`, semantic;  (high)
@@ -1321,14 +1321,14 @@ pub struct HorseCameraState {
     pub cam3Node: *mut crate::NiAVObject,
     /// +0x38 `ptr:NiNode`, base ThirdPersonState, semantic; 'Camera Control' node of the target's third-person 3D; its local translation is read every frame (high)
     pub cameraControlNode: *mut crate::NiNode,
-    /// +0x40 `undefined1`, base ThirdPersonState, semantic; NiPoint3 camera world position of the frame (GetTranslation) (high)
-    pub position: [u8; 12],
-    /// +0x4C `undefined1`, base ThirdPersonState, semantic; NiQuaternion (w, x, y, z) camera rotation (GetRotation) (high)
-    pub rotation: [u8; 16],
-    /// +0x5C `undefined1`, base ThirdPersonState, semantic, runtime; NiPoint3 shoulder offset (x right, y forward, z up) the camera dollies to (high)
-    pub targetOffset: [u8; 12],
-    /// +0x68 `undefined1`, base ThirdPersonState, semantic; NiPoint3 offset applied this frame (high)
-    pub currentOffset: [u8; 12],
+    /// +0x40 `class:NiPoint3`, base ThirdPersonState, semantic; NiPoint3 camera world position of the frame (GetTranslation) (high); retyped undefined1 -> class:NiPoint3: GetTranslation 0x8fd880 copies +0x40/+0x44/+0x48 into NiPoint3* out
+    pub position: crate::NiPoint3,
+    /// +0x4C `class:NiQuaternion`, base ThirdPersonState, semantic; NiQuaternion (w, x, y, z) camera rotation (GetRotation) (high); retyped undefined1 -> class:NiQuaternion: GetRotation 0x8fd870 copies 16 bytes into NiQuaternion* out; meaning (w, x, y, z)
+    pub rotation: crate::NiQuaternion,
+    /// +0x5C `class:NiPoint3`, base ThirdPersonState, semantic, runtime; NiPoint3 shoulder offset (x right, y forward, z up) the camera dollies to (high); retyped undefined1 -> class:NiPoint3: meaning: NiPoint3 (x right, y forward, z up)
+    pub targetOffset: crate::NiPoint3,
+    /// +0x68 `class:NiPoint3`, base ThirdPersonState, semantic; NiPoint3 offset applied this frame (high); retyped undefined1 -> class:NiPoint3: meaning: NiPoint3
+    pub currentOffset: crate::NiPoint3,
     /// +0x74 `float`, base ThirdPersonState, semantic; zoom the camera moves to, in [fMinCurrentZoom, 1] (medium)
     pub targetZoom: f32,
     /// +0x78 `float`, base ThirdPersonState, semantic; zoom used this frame; scales the distance between fVanityModeMinDist and fVanityModeMaxDist (medium)
@@ -1343,24 +1343,24 @@ pub struct HorseCameraState {
     pub pitchZoomOffset: f32,
     /// +0x8C `float`, base ThirdPersonState, semantic; accumulated |zoom change| since Toggle POV was pressed; 0 at release means 'switch POV' (high)
     pub zoomSinceTogglePress: f32,
-    /// +0x90 `undefined1`, base ThirdPersonState, semantic; NiPoint3 position at the last camera collision (medium)
-    pub recoveryStart: [u8; 12],
+    /// +0x90 `class:NiPoint3`, base ThirdPersonState, semantic; NiPoint3 position at the last camera collision (medium); retyped undefined1 -> class:NiPoint3: meaning: NiPoint3
+    pub recoveryStart: crate::NiPoint3,
     /// +0x9C `float`, base ThirdPersonState, semantic; collision recovery progress 0..1, FLT_MAX when idle (medium)
     pub recoveryBlend: f32,
     /// +0xA0 `ptr:NiAVObject`, base ThirdPersonState, semantic; node of the player's third-person 3D the camera blends to (animated camera) (high)
     pub animatedNode: *mut crate::NiAVObject,
     /// +0xA8 `class:BSFixedString`, base ThirdPersonState, semantic; name of that node (high)
     pub animatedNodeName: crate::BSFixedString,
-    /// +0xB0 `undefined1`, base ThirdPersonState, semantic; NiQuaternion: animatedNode's local rotation (medium)
-    pub animatedRotation: [u8; 16],
-    /// +0xC0 `undefined1`, base ThirdPersonState, semantic; NiPoint3: animatedNode's local translation (medium)
-    pub animatedTranslation: [u8; 12],
+    /// +0xB0 `class:NiQuaternion`, base ThirdPersonState, semantic; NiQuaternion: animatedNode's local rotation (medium); retyped undefined1 -> class:NiQuaternion: meaning: NiQuaternion (animated node local rotation)
+    pub animatedRotation: crate::NiQuaternion,
+    /// +0xC0 `class:NiPoint3`, base ThirdPersonState, semantic; NiPoint3: animatedNode's local translation (medium); retyped undefined1 -> class:NiPoint3: meaning: NiPoint3 (animated node local translation)
+    pub animatedTranslation: crate::NiPoint3,
     /// +0xCC `float`, base ThirdPersonState, semantic; weight 0..1 of the animated node (medium)
     pub animatedBlend: f32,
     /// +0xD0 `float`, base ThirdPersonState, semantic; +1 blending in (node set) / -1 out (high)
     pub animatedBlendRate: f32,
-    /// +0xD4 `undefined1`, base ThirdPersonState, semantic; NiPoint2 (yaw, pitch) of the camera relative to the target while free rotation is on (high)
-    pub freeRotation: [u8; 8],
+    /// +0xD4 `class:NiPoint2`, base ThirdPersonState, semantic; NiPoint2 (yaw, pitch) of the camera relative to the target while free rotation is on (high); retyped undefined1 -> class:NiPoint2: PlayerCamera::AddFreeRotation 0x8f9070 adds a NiPoint2 to +0xd4/+0xd8
+    pub freeRotation: crate::NiPoint2,
     /// +0xDC `undefined1`, base ThirdPersonState, semantic; the camera orbits without turning the target (high)
     pub freeRotationEnabled: u8,
     /// +0xDD `undefined1`, base ThirdPersonState, semantic; switch to first person once zoomed in to fMinCurrentZoom (high)
@@ -1756,14 +1756,14 @@ pub struct NiCamera {
     pub padding3C: u32,
     /// +0x40 `ptr:NiCollisionObject`, base NiAVObject, semantic; physics object of this node (refcounted); when set it, not the parent, produces the world transform (high)
     pub collisionObject: *mut crate::NiCollisionObject,
-    /// +0x48 `undefined1`, base NiAVObject, semantic; local transform: rotation 3x3 floats +0x48, translation +0x6c, scale +0x78 (high)
-    pub local: [u8; 52],
-    /// +0x7C `undefined1`, base NiAVObject, semantic; world transform: rotation +0x7c, translation +0xa0, scale +0xac (high)
-    pub world: [u8; 52],
-    /// +0xB0 `undefined1`, base NiAVObject, semantic; copy of the world transform taken once per render frame before the update (same 0x34 layout as local/world) (high)
-    pub previousWorld: [u8; 52],
-    /// +0xE4 `undefined1`, base NiAVObject, semantic; bounding sphere: centre +0xe4, radius +0xf0 (high)
-    pub worldBound: [u8; 16],
+    /// +0x48 `class:NiTransform`, base NiAVObject, semantic; local transform: rotation 3x3 floats +0x48, translation +0x6c, scale +0x78 (high); retyped undefined1 -> class:NiTransform: meaning: rotation +0x48, translation +0x6c, scale +0x78; ApplyPoseToBoneNodes 0xbdfa20 writes rotation at +0x48 and translation at +0x6c; SetRotationFromQuaternion 0x221bd0 writes +0x48..+0x68
+    pub local: crate::NiTransform,
+    /// +0x7C `class:NiTransform`, base NiAVObject, semantic; world transform: rotation +0x7c, translation +0xa0, scale +0xac (high); retyped undefined1 -> class:NiTransform: meaning: rotation +0x7c, translation +0xa0, scale +0xac; NiSkinInstance::UpdatePalette 0x1015800 reads +0x7c..+0xac as a NiTransform for NiTransform::Multiply; NiCamera::UpdateWorldBound 0xef1950 reads translate +0xa0
+    pub world: crate::NiTransform,
+    /// +0xB0 `class:NiTransform`, base NiAVObject, semantic; copy of the world transform taken once per render frame before the update (same 0x34 layout as local/world) (high); retyped undefined1 -> class:NiTransform: meaning: same 0x34 layout as local/world (snapshot of world)
+    pub previousWorld: crate::NiTransform,
+    /// +0xE4 `class:NiBound`, base NiAVObject, semantic; bounding sphere: centre +0xe4, radius +0xf0 (high); retyped undefined1 -> class:NiBound: meaning: centre +0xe4, radius +0xf0; NiCamera::UpdateWorldBound 0xef1950 writes the centre; BSGeometry::UpdateWorldBound uses NiTransform::ApplyToBound 0xefcf20
+    pub worldBound: crate::NiBound,
     /// +0xF4 `undefined4`, base NiAVObject, semantic; flag word: bit 0 hidden (no culling process visits the object), bit 11 skip the frustum test, bit 12 skipped unless the culler allows it (+0x11e; bit 20 then skips it outright), bit 26 set when a culler last accepted it; see the flag rows (high)
     pub flags: u32,
     /// +0xF8 `undefined8`, base NiAVObject, semantic; zeroed by the ctor; not read in this track's bodies (low)
@@ -1962,10 +1962,10 @@ const _: () = assert!(core::mem::offset_of!(NiStringExtraData, value) == 0x18);
 pub struct PlayerCamera {
     /// +0x0 `vtbl:PlayerCamera:0`, rtti
     pub __vftable: *const crate::raw::vtables::PlayerCamera_vtable,
-    /// +0x8 `undefined1`, base TESCamera, semantic; NiPoint2 (x, y) rotation input of the frame; reset to the zero constant 0x20ccb20 after every Update (high)
-    pub rotationInput: [u8; 8],
-    /// +0x10 `undefined1`, base TESCamera, semantic; NiPoint3 pan input of the frame; reset after every Update (high)
-    pub translationInput: [u8; 12],
+    /// +0x8 `class:NiPoint2`, base TESCamera, semantic; NiPoint2 (x, y) rotation input of the frame; reset to the zero constant 0x20ccb20 after every Update (high); retyped undefined1 -> class:NiPoint2: meaning: NiPoint2; reset from the NiPoint2 zero constant 0x20ccb20 in TESCamera::Update 0x558e70
+    pub rotationInput: crate::NiPoint2,
+    /// +0x10 `class:NiPoint3`, base TESCamera, semantic; NiPoint3 pan input of the frame; reset after every Update (high); retyped undefined1 -> class:NiPoint3: meaning: NiPoint3; reset from the NiPoint3 zero constant 0x20ccc28
+    pub translationInput: crate::NiPoint3,
     /// +0x1C `float`, base TESCamera, semantic; zoom input of the frame; reset to 0 after every Update (high)
     pub zoomInput: f32,
     /// +0x20 `ptr:NiNode`, base TESCamera, semantic, runtime; the camera's scene graph node (high)
@@ -2002,8 +2002,8 @@ pub struct PlayerCamera {
     pub worldFOV: f32,
     /// +0x140 `float`, ctor store, semantic, runtime; first-person (hands) FOV, copied every frame into 0x34362cc by SetupWorldRenderContext (high)
     pub firstPersonFOV: f32,
-    /// +0x144 `undefined1`, ctor store, semantic, runtime; NiPoint3 camera position cached once per frame (cameraRoot world translation, or the first-person camera node / reference position) (high)
-    pub cachedPosition: [u8; 12],
+    /// +0x144 `class:NiPoint3`, ctor store, semantic, runtime; NiPoint3 camera position cached once per frame (cameraRoot world translation, or the first-person camera node / reference position) (high); retyped undefined1 -> class:NiPoint3: meaning: NiPoint3; GetPosition 0x8f89b0 fills it
+    pub cachedPosition: crate::NiPoint3,
     /// +0x150 `float`, semantic; seconds without input, compared with fAutoVanityModeDelay (high)
     pub idleTimer: f32,
     /// +0x154 `float`, ctor store, semantic, runtime; camera yaw: target heading (actor slot 164) plus FirstPersonState+0x68 or ThirdPersonState+0xd4 (high)
@@ -2409,8 +2409,8 @@ pub struct Renderer {
     /// +0x2738 `class:CubeMapRecord`, semantic; cube target records of 0x40 (two fit before +0x27b8) (medium)
     pub cubeMapTargets: [u8; 128],
     pub unknown_27B8: [u8; 32],
-    /// +0x27D8 `float`, semantic; RGBA used by ClearRenderTargetView for targets bound with mode 0 (high)
-    pub clearColor: [u8; 16],
+    /// +0x27D8 `class:NiColorA`, semantic; RGBA used by ClearRenderTargetView for targets bound with mode 0 (high); retyped float -> class:NiColorA: FlushDirtyRenderState 0x100a050 passes &R+0x27d8 as ClearRenderTargetView's FLOAT ColorRGBA[4]
+    pub clearColor: crate::NiColorA,
     pub unknown_27E8: [u8; 8],
     /// +0x27F0 `undefined1`, semantic; CRITICAL_SECTION guarding rendering; RenderFrame holds it from frame start through PresentFrame (high)
     pub lock: [u8; 40],
@@ -2847,14 +2847,14 @@ pub struct ThirdPersonState {
     pub cam3Node: *mut crate::NiAVObject,
     /// +0x38 `ptr:NiNode`, semantic; 'Camera Control' node of the target's third-person 3D; its local translation is read every frame (high)
     pub cameraControlNode: *mut crate::NiNode,
-    /// +0x40 `undefined1`, ctor store, semantic, runtime; NiPoint3 camera world position of the frame (GetTranslation) (high)
-    pub position: [u8; 12],
-    /// +0x4C `undefined1`, semantic; NiQuaternion (w, x, y, z) camera rotation (GetRotation) (high)
-    pub rotation: [u8; 16],
-    /// +0x5C `undefined1`, ctor store (widths [4, 8]), semantic, runtime; NiPoint3 shoulder offset (x right, y forward, z up) the camera dollies to (high)
-    pub targetOffset: [u8; 12],
-    /// +0x68 `undefined1`, ctor store, semantic, runtime; NiPoint3 offset applied this frame (high)
-    pub currentOffset: [u8; 12],
+    /// +0x40 `class:NiPoint3`, ctor store, semantic, runtime; NiPoint3 camera world position of the frame (GetTranslation) (high); retyped undefined1 -> class:NiPoint3: GetTranslation 0x8fd880 copies +0x40/+0x44/+0x48 into NiPoint3* out
+    pub position: crate::NiPoint3,
+    /// +0x4C `class:NiQuaternion`, semantic; NiQuaternion (w, x, y, z) camera rotation (GetRotation) (high); retyped undefined1 -> class:NiQuaternion: GetRotation 0x8fd870 copies 16 bytes into NiQuaternion* out; meaning (w, x, y, z)
+    pub rotation: crate::NiQuaternion,
+    /// +0x5C `class:NiPoint3`, ctor store (widths [4, 8]), semantic, runtime; NiPoint3 shoulder offset (x right, y forward, z up) the camera dollies to (high); retyped undefined1 -> class:NiPoint3: meaning: NiPoint3 (x right, y forward, z up)
+    pub targetOffset: crate::NiPoint3,
+    /// +0x68 `class:NiPoint3`, ctor store, semantic, runtime; NiPoint3 offset applied this frame (high); retyped undefined1 -> class:NiPoint3: meaning: NiPoint3
+    pub currentOffset: crate::NiPoint3,
     /// +0x74 `float`, ctor store, semantic, runtime; zoom the camera moves to, in [fMinCurrentZoom, 1] (medium)
     pub targetZoom: f32,
     /// +0x78 `float`, semantic, runtime; zoom used this frame; scales the distance between fVanityModeMinDist and fVanityModeMaxDist (medium)
@@ -2869,24 +2869,24 @@ pub struct ThirdPersonState {
     pub pitchZoomOffset: f32,
     /// +0x8C `float`, semantic; accumulated |zoom change| since Toggle POV was pressed; 0 at release means 'switch POV' (high)
     pub zoomSinceTogglePress: f32,
-    /// +0x90 `undefined1`, semantic; NiPoint3 position at the last camera collision (medium)
-    pub recoveryStart: [u8; 12],
+    /// +0x90 `class:NiPoint3`, semantic; NiPoint3 position at the last camera collision (medium); retyped undefined1 -> class:NiPoint3: meaning: NiPoint3
+    pub recoveryStart: crate::NiPoint3,
     /// +0x9C `float`, semantic; collision recovery progress 0..1, FLT_MAX when idle (medium)
     pub recoveryBlend: f32,
     /// +0xA0 `ptr:NiAVObject`, semantic; node of the player's third-person 3D the camera blends to (animated camera) (high)
     pub animatedNode: *mut crate::NiAVObject,
     /// +0xA8 `class:BSFixedString`, semantic; name of that node (high)
     pub animatedNodeName: crate::BSFixedString,
-    /// +0xB0 `undefined1`, semantic; NiQuaternion: animatedNode's local rotation (medium)
-    pub animatedRotation: [u8; 16],
-    /// +0xC0 `undefined1`, semantic; NiPoint3: animatedNode's local translation (medium)
-    pub animatedTranslation: [u8; 12],
+    /// +0xB0 `class:NiQuaternion`, semantic; NiQuaternion: animatedNode's local rotation (medium); retyped undefined1 -> class:NiQuaternion: meaning: NiQuaternion (animated node local rotation)
+    pub animatedRotation: crate::NiQuaternion,
+    /// +0xC0 `class:NiPoint3`, semantic; NiPoint3: animatedNode's local translation (medium); retyped undefined1 -> class:NiPoint3: meaning: NiPoint3 (animated node local translation)
+    pub animatedTranslation: crate::NiPoint3,
     /// +0xCC `float`, semantic; weight 0..1 of the animated node (medium)
     pub animatedBlend: f32,
     /// +0xD0 `float`, semantic; +1 blending in (node set) / -1 out (high)
     pub animatedBlendRate: f32,
-    /// +0xD4 `undefined1`, ctor store, semantic, runtime; NiPoint2 (yaw, pitch) of the camera relative to the target while free rotation is on (high)
-    pub freeRotation: [u8; 8],
+    /// +0xD4 `class:NiPoint2`, ctor store, semantic, runtime; NiPoint2 (yaw, pitch) of the camera relative to the target while free rotation is on (high); retyped undefined1 -> class:NiPoint2: PlayerCamera::AddFreeRotation 0x8f9070 adds a NiPoint2 to +0xd4/+0xd8
+    pub freeRotation: crate::NiPoint2,
     /// +0xDC `undefined1`, semantic; the camera orbits without turning the target (high)
     pub freeRotationEnabled: u8,
     /// +0xDD `undefined1`, semantic; switch to first person once zoomed in to fMinCurrentZoom (high)
@@ -2962,14 +2962,14 @@ pub struct TweenMenuCameraState {
     pub id: u32,
     /// +0x1C `undefined4`, semantic; alignment padding (TESCameraState ends at 0x20) (high)
     pub pad1c: u32,
-    /// +0x20 `undefined1`, semantic; NiQuaternion of the state below (high)
-    pub baseRotation: [u8; 16],
+    /// +0x20 `class:NiQuaternion`, semantic; NiQuaternion of the state below (high); retyped undefined1 -> class:NiQuaternion: meaning: NiQuaternion
+    pub baseRotation: crate::NiQuaternion,
     /// +0x30 `float`, semantic; FOV at Begin (high)
     pub baseFOV: f32,
-    /// +0x34 `undefined1`, semantic; NiPoint2 (pitch, yaw) (high)
-    pub currentAngles: [u8; 8],
-    /// +0x3C `undefined1`, semantic; NiPoint2 (high)
-    pub targetAngles: [u8; 8],
+    /// +0x34 `class:NiPoint2`, semantic; NiPoint2 (pitch, yaw) (high); retyped undefined1 -> class:NiPoint2: meaning: NiPoint2 (pitch, yaw)
+    pub currentAngles: crate::NiPoint2,
+    /// +0x3C `class:NiPoint2`, semantic; NiPoint2 (high); retyped undefined1 -> class:NiPoint2: meaning: NiPoint2; SetDirection 0x8ff750 writes +0x3c/+0x40
+    pub targetAngles: crate::NiPoint2,
     /// +0x44 `float`, semantic;  (high)
     pub currentZoomFOV: f32,
     /// +0x48 `float`, semantic; fTweenCamZoomFOVMod at Begin, 0 when closing (high)
@@ -3014,10 +3014,10 @@ pub struct VATSCameraState {
     pub id: u32,
     /// +0x1C `undefined1`, semantic; padding (medium)
     pub pad1C: [u8; 4],
-    /// +0x20 `float`, semantic; extra rotation (Euler x, y, z) applied after the look-at basis in GetRotation; the angles of the shot NIF root's animated local rotation, or 0 (high)
-    pub rotationEuler: [u8; 12],
-    /// +0x2C `float`, semantic, runtime; camera position (slot 5 GetTranslation) (high)
-    pub position: [u8; 12],
+    /// +0x20 `class:NiPoint3`, semantic; extra rotation (Euler x, y, z) applied after the look-at basis in GetRotation; the angles of the shot NIF root's animated local rotation, or 0 (high); retyped float -> class:NiPoint3: Euler triple (x, y, z): set through 0x900280 as three scalars, read by GetRotation 0x8ffd40 into SetMatrixFromEulerAngles_2; a NiPoint3 by layout, not passed as a pointer anywhere (medium)
+    pub rotationEuler: crate::NiPoint3,
+    /// +0x2C `class:NiPoint3`, semantic, runtime; camera position (slot 5 GetTranslation) (high); retyped float -> class:NiPoint3: GetTranslation 0x900260 (slot 5, NiPoint3* out); SetPosition 0x9002a0 takes const NiPoint3*
+    pub position: crate::NiPoint3,
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<VATSCameraState>() == 0x38);

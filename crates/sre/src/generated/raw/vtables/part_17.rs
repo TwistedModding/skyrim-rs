@@ -4404,9 +4404,9 @@ pub type TESCameraState_vtable_End = unsafe extern "C" fn(this: *mut crate::TESC
 /// `TESCameraState::Update`, slot 3: per-frame update: computes the pose, writes it to camera->cameraRoot's local transform and updates the node; may return the next state in *next (base: clears *next) (high).
 pub type TESCameraState_vtable_Update = unsafe extern "C" fn(this: *mut crate::TESCameraState, next: *mut c_void);
 /// `TESCameraState::GetRotation`, slot 4: the state's camera rotation (base: the identity constant 0x331d790) (high).
-pub type TESCameraState_vtable_GetRotation = unsafe extern "C" fn(this: *mut crate::TESCameraState, out: *mut c_void);
+pub type TESCameraState_vtable_GetRotation = unsafe extern "C" fn(this: *mut crate::TESCameraState, out: *mut crate::NiQuaternion);
 /// `TESCameraState::GetTranslation`, slot 5: the state's camera position (base: the zero point 0x331c458) (high).
-pub type TESCameraState_vtable_GetTranslation = unsafe extern "C" fn(this: *mut crate::TESCameraState, out: *mut c_void);
+pub type TESCameraState_vtable_GetTranslation = unsafe extern "C" fn(this: *mut crate::TESCameraState, out: *mut crate::NiPoint3);
 /// `TESCameraState::SaveGame`, slot 6: base: does nothing (high).
 pub type TESCameraState_vtable_SaveGame = unsafe extern "C" fn(this: *mut crate::TESCameraState, buffer: *mut crate::BGSSaveFormBuffer);
 /// `TESCameraState::LoadGame`, slot 7: base: does nothing (high).
@@ -5797,7 +5797,7 @@ pub struct TESForm_vtable {
     pub slot_19: *const c_void,
     /// `TESForm::GetLastFile` at 0x1466f0 (semantic, medium); signature (untiered): `undefined GetLastFile(TESForm * this)`; `GetLastFile`: the file that last defined the form (medium); semantic signature: `TESFile* GetLastFile(TESForm* this)`
     pub slot_20: *const c_void,
-    /// `TESForm::GetFormType` at 0x146820 (runtime, high); signature (untiered): `undefined1 GetFormType(TESForm * this)`; `GetFormType`: the record type (high); semantic signature: `uchar GetFormType(const TESForm* this)`
+    /// `TESForm::GetFormType` at 0x146820 (runtime, high); signature (untiered): `undefined1 GetFormType(TESForm * this)`; `GetFormType`: the record type (high); semantic signature: `FormType GetFormType(const TESForm* this)`
     pub slot_21: *const c_void,
     /// `TESForm::GetFormDetailedString` at 0x1e5d10 (semantic, high); signature (untiered): `undefined GetFormDetailedString(TESForm * this, undefined8 param_1, ulonglong param_2)`; `GetFormDetailedString`: debug description of the form (high); semantic signature: `void GetFormDetailedString(const TESForm* this, char* buf, uint size)`
     pub slot_22: *const c_void,

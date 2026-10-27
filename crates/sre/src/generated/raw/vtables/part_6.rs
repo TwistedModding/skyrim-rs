@@ -6061,9 +6061,9 @@ pub struct BSLightingShaderProperty_vtable {
     pub slot_40: *const c_void,
     /// `BSShaderProperty::SetShadowLightBit` at 0x14e77b0 (semantic, medium); signature (untiered): `undefined SetShadowLightBit(BSShaderProperty * this, int param_1)`
     pub slot_41: *const c_void,
-    /// `BSLightingShaderProperty::GetRenderPasses` at 0x151a160 (semantic, high); signature (untiered): `longlong * GetRenderPasses(BSLightingShaderProperty * this, longlong param_1, int param_2, longlong param_3)`; `GetRenderPasses`: builds the lighting pass (technique bits from the flags, see flags) plus refraction, overlay and stipple passes; returns &renderPasses (high); semantic signature: `BSRenderPass** (BSLightingShaderProperty* this, BSGeometry* g, u32 renderMode, BSShaderAccumulator* acc)`
+    /// `BSLightingShaderProperty::GetRenderPasses` at 0x151a160 (semantic, high); signature (untiered): `longlong * GetRenderPasses(BSLightingShaderProperty * this, longlong param_1, int param_2, longlong param_3)`; `GetRenderPasses`: builds the lighting pass (technique bits from the flags, see flags) plus refraction, overlay and stipple passes; returns &renderPasses (high); semantic signature: `BSRenderPass** (BSLightingShaderProperty* this, BSGeometry* g, AccumulatorRenderMode renderMode, BSShaderAccumulator* acc)`
     pub slot_42: *const c_void,
-    /// `BSLightingShaderProperty::GetDepthRenderPasses` at 0x151b1e0 (runtime, high); signature (untiered): `longlong * GetDepthRenderPasses(BSLightingShaderProperty * this, longlong param_1, int param_2, longlong param_3)`; `GetDepthRenderPasses`: pass list for an accumulator mode; modes 0xc-0xf are the depth/shadow modes and yield no pass when flags & 0x8004, an alpha-blended alpha property, or a fade below 1 (without stipple fade) (high); semantic signature: `RenderPass* (BSLightingShaderProperty* this, BSGeometry* geometry, u32 mode, BSShaderAccumulator* accumulator)`
+    /// `BSLightingShaderProperty::GetDepthRenderPasses` at 0x151b1e0 (runtime, high); signature (untiered): `longlong * GetDepthRenderPasses(BSLightingShaderProperty * this, longlong param_1, int param_2, longlong param_3)`; `GetDepthRenderPasses`: pass list for an accumulator mode; modes 0xc-0xf are the depth/shadow modes and yield no pass when flags & 0x8004, an alpha-blended alpha property, or a fade below 1 (without stipple fade) (high); semantic signature: `RenderPass* (BSLightingShaderProperty* this, BSGeometry* geometry, AccumulatorRenderMode mode, BSShaderAccumulator* accumulator)`
     pub slot_43: *const c_void,
     /// `BSLightingShaderProperty::vfunc_44` at 0x151bcb0 (rtti, medium); signature (low): `undefined8 * vfunc_44(BSLightingShaderProperty * this, longlong param_1, int param_2)`
     pub slot_44: *const c_void,
@@ -8922,7 +8922,7 @@ impl BSMultiTargetTreadTransfController_vtable {
 pub struct BSMusicManager_vtable {
     /// `BSMusicManager::vdtor` at 0x11b5050 (layout_inference, medium); signature (low): `BSMusicManager * vdtor(BSMusicManager * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `BSMusicManager::ProcessEvent` at 0x11b4a80 (semantic, high); signature (untiered): `undefined4 ProcessEvent(BSMusicManager * this, longlong * param_1)`; `ProcessEvent`: applies a music event under the music lock: 0 push (or re-arm a finished type), 1/2 finish (current) or finish+remove, 3 pause, 4 unpause (high); semantic signature: `u32 (BSMusicManager* this, const BSMusicEvent* event, BSTEventSource<BSMusicEvent>* source)`
+    /// `BSMusicManager::ProcessEvent` at 0x11b4a80 (semantic, high); signature (untiered): `undefined4 ProcessEvent(BSMusicManager * this, longlong * param_1)`; `ProcessEvent`: applies a music event under the music lock: 0 push (or re-arm a finished type), 1/2 finish (current) or finish+remove, 3 pause, 4 unpause (high); semantic signature: `BSEventNotifyControl (BSMusicManager* this, const BSMusicEvent* event, BSTEventSource<BSMusicEvent>* source)`
     pub slot_1: *const c_void,
 }
 impl BSMusicManager_vtable {

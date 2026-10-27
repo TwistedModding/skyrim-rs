@@ -2739,9 +2739,9 @@ pub type AutoVanityState_vtable_End = unsafe extern "C" fn(this: *mut crate::Aut
 /// `AutoVanityState::Update`, slot 3: position from ComputeAutoVanityCameraPosition 0x8f3a10, writes the root, advances yaw (high).
 pub type AutoVanityState_vtable_Update = unsafe extern "C" fn(this: *mut crate::TESCameraState, next: *mut c_void);
 /// `AutoVanityState::GetRotation`, slot 4: euler(0, 0, yaw) (high).
-pub type AutoVanityState_vtable_GetRotation = unsafe extern "C" fn(this: *mut crate::AutoVanityState, out: *mut c_void);
+pub type AutoVanityState_vtable_GetRotation = unsafe extern "C" fn(this: *mut crate::AutoVanityState, out: *mut crate::NiQuaternion);
 /// `AutoVanityState::GetTranslation`, slot 5: 0x8f3a10 with the slot 4 rotation (high).
-pub type AutoVanityState_vtable_GetTranslation = unsafe extern "C" fn(this: *mut crate::AutoVanityState, out: *mut c_void);
+pub type AutoVanityState_vtable_GetTranslation = unsafe extern "C" fn(this: *mut crate::AutoVanityState, out: *mut crate::NiPoint3);
 
 /// `BGSAIWorldLocation::vftable` at 0x18c3b88, id 200665 (rtti, high); 23 slots.
 #[repr(C)]

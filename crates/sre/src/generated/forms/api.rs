@@ -38,6 +38,7 @@ impl crate::BGSKeywordForm {
     ///
     /// Semantic, forms pass, high; called through the object's vtable.
     /// `bool HasKeyword(const BGSKeywordForm* this, const BGSKeyword* keyword)`
+    /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
     #[inline]
     pub fn has_keyword(&self, keyword: &crate::BGSKeyword) -> bool { unsafe { virtual_function!(self, 4, (*const Self, *const crate::BGSKeyword) -> bool)(core::ptr::from_ref(self), core::ptr::from_ref(keyword)) } }
 }
@@ -47,8 +48,9 @@ impl crate::BGSListForm {
     ///
     /// Semantic, forms pass, high; ledger runtime evidence, name high; id 20906, rva 0x320140.
     /// `int BGSListForm::Find(BGSListForm* this, TESForm* form)`
+    /// May be null: `form`.
     #[inline]
-    pub fn find(&self, form: &crate::TESForm) -> i32 { unsafe { function!(20906, (*const Self, *const crate::TESForm) -> i32)(core::ptr::from_ref(self), core::ptr::from_ref(form)) } }
+    pub fn find(&self, form: Option<&crate::TESForm>) -> i32 { unsafe { function!(20906, (*const Self, *const crate::TESForm) -> i32)(core::ptr::from_ref(self), form.map_or(core::ptr::null(), core::ptr::from_ref)) } }
     /// `BGSListForm::GetAt`: entry at index counting added forms first
     ///
     /// Semantic, forms pass, high; ledger semantic evidence, name high; id 20907, rva 0x320210.
@@ -130,6 +132,7 @@ impl crate::TESDataHandler {
     ///
     /// Semantic, forms pass, high; ledger runtime evidence, name high; id 13731, rva 0x1bd730.
     /// `TESFile* TESDataHandler::GetFile(TESDataHandler* this, const char* name)`
+    /// May be null: `name`.
     ///
     /// # Safety
     /// `name` must point to what the engine expects.
@@ -190,6 +193,7 @@ impl crate::TESEditorIDMap {
     ///
     /// Semantic, forms pass, high; ledger semantic evidence, name high; id 14705, rva 0x1e7bf0.
     /// `bool TESEditorIDMap::Find(TESEditorIDMap* map, const char* editorID, TESForm** out)`
+    /// May be null: `editorID`.
     ///
     /// # Safety
     /// `editorID`, `out` must point to what the engine expects.
@@ -208,6 +212,7 @@ impl crate::TESEditorIDMap {
     ///
     /// Semantic, forms pass, high; ledger runtime evidence, name high; id 13907, rva 0x1c94c0.
     /// `bool TESEditorIDMap::InsertEditorID(TESEditorIDMap* map, const char* editorID, TESForm* form)`
+    /// May be null: `editorID`.
     ///
     /// # Safety
     /// `editorID` must point to what the engine expects.
@@ -303,6 +308,7 @@ impl crate::TESFile {
     ///
     /// Semantic, forms pass, high; ledger runtime evidence, name high; id 441548, rva 0x1c9b20.
     /// `TESFile* TESFile::ctor(TESFile* this, const char* path, const char* name, int bufferSize, uint unused, void* arg)`
+    /// May be null: `arg`.
     ///
     /// # Safety
     /// It constructs or destroys an object in place.
@@ -338,9 +344,10 @@ impl crate::TESForm {
     /// `TESForm::GetFormType`, vtable slot 21: the record type
     ///
     /// Semantic, forms pass, high; called through the object's vtable.
-    /// `uchar GetFormType(const TESForm* this)`
+    /// `FormType GetFormType(const TESForm* this)`
+    /// Retyped: return uchar -> FormType: TESForm slot 21 returns formType (+0x1a), the FormType enum's field.
     #[inline]
-    pub fn get_form_type(&self) -> u8 { unsafe { virtual_function!(self, 21, (*const Self) -> u8)(core::ptr::from_ref(self)) } }
+    pub fn get_form_type(&self) -> Result<crate::FormType, u8> { unsafe { let raw = virtual_function!(self, 21, (*const Self) -> u8)(core::ptr::from_ref(self)); crate::FormType::from_u8(raw).ok_or(raw) } }
     /// `TESForm::GetLastFile`, vtable slot 20: the file that last defined the form
     ///
     /// Semantic, forms pass, medium; called through the object's vtable.
@@ -411,6 +418,7 @@ impl crate::TESForm {
     ///
     /// Semantic, forms pass, high; ledger runtime evidence, name high; id 14258, rva 0x1d8a50.
     /// `BGSKeywordForm* TESForm::GetKeywordForm(TESForm* this)`
+    /// May be null: `this`.
     #[inline]
     pub fn get_keyword_form(&self) -> Option<&'static crate::BGSKeywordForm> { unsafe { function!(14258, (*const Self) -> Option<&'static crate::BGSKeywordForm>)(core::ptr::from_ref(self)) } }
     /// `TESForm::RemoveFromFormMaps`: unregisters the form from the form id map
@@ -491,6 +499,7 @@ impl crate::TESFormIDMapEntry {
 ///
 /// Semantic, forms pass, high; ledger runtime evidence, name high; id 14620, rva 0x1e5a30.
 /// `TESForm* FindFormByEditorID(const char* editorID)`
+/// May be null: `editorID`.
 ///
 /// # Safety
 /// `editorID` must point to what the engine expects.

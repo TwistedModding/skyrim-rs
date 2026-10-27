@@ -868,6 +868,7 @@ impl crate::TESImageSpaceModifier {
     ///
     /// Semantic, graphics pass, medium; ledger semantic evidence, name medium; id 18575, rva 0x2a4100.
     /// `void (TESImageSpaceModifier* imod, float seconds)`
+    /// May be null: `imod`.
     ///
     /// # Safety
     /// The pass rates the signature medium.
@@ -1132,8 +1133,9 @@ impl crate::TESObjectCELL {
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 19165, rva 0x2ca230.
     /// `void (TESObjectCELL* this, TESObjectREFR* ref, bool forceRoomSearch, bool skipOwnMultiBound)`
+    /// May be null: `ref_`.
     #[inline]
-    pub fn attach_reference3_d(&self, ref_: &crate::TESObjectREFR, forceRoomSearch: bool, skipOwnMultiBound: bool) { unsafe { function!(19165, (*const Self, *const crate::TESObjectREFR, bool, bool))(core::ptr::from_ref(self), core::ptr::from_ref(ref_), forceRoomSearch, skipOwnMultiBound) } }
+    pub fn attach_reference3_d(&self, ref_: Option<&crate::TESObjectREFR>, forceRoomSearch: bool, skipOwnMultiBound: bool) { unsafe { function!(19165, (*const Self, *const crate::TESObjectREFR, bool, bool))(core::ptr::from_ref(self), ref_.map_or(core::ptr::null(), core::ptr::from_ref), forceRoomSearch, skipOwnMultiBound) } }
 }
 
 impl crate::TESObjectCONT {

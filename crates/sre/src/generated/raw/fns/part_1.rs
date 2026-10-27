@@ -38,7 +38,7 @@ pub type AIProcess__GetHighField3B8Address_fn = unsafe extern "C" fn(this: *mut 
 /// `AIProcess::GetHighPoint424` at 0x7024d0 (semantic, high); signature (untiered): `undefined4 * GetHighPoint424(longlong param_1)`; &high+0x424, or the zero NiPoint3 0x331c458 (high); semantic signature: `NiPoint3* (AIProcess* this)`
 pub const AIProcess__GetHighPoint424: u64 = 39597;
 /// `AIProcess::GetHighPoint424` as a function pointer type (high).
-pub type AIProcess__GetHighPoint424_fn = unsafe extern "C" fn(this: *mut crate::AIProcess) -> *mut c_void;
+pub type AIProcess__GetHighPoint424_fn = unsafe extern "C" fn(this: *mut crate::AIProcess) -> *mut crate::NiPoint3;
 /// `AIProcess::GetLoadingMenuClosed` at 0x700d60 (semantic, high); signature (untiered): `longlong GetLoadingMenuClosed(longlong param_1)`; high process data (+0x10) byte +0x45e != 0 (false without high data) (high); semantic signature: `bool (AIProcess* this)`
 pub const AIProcess__GetLoadingMenuClosed: u64 = 39543;
 /// `AIProcess::GetLoadingMenuClosed` as a function pointer type (high).
@@ -98,7 +98,7 @@ pub type AIProcess__SetMiddleHighField2E8_2_fn = unsafe extern "C" fn(this: *mut
 /// `AIProcess::SetMiddleHighPointD4` at 0x725350 (semantic, high); signature (untiered): `undefined SetMiddleHighPointD4(longlong param_1, undefined4 * param_2)`; middle-high +0xd4..+0xdc = *value (high); semantic signature: `void (AIProcess* this, const NiPoint3* value)`
 pub const AIProcess__SetMiddleHighPointD4: u64 = 39918;
 /// `AIProcess::SetMiddleHighPointD4` as a function pointer type (high).
-pub type AIProcess__SetMiddleHighPointD4_fn = unsafe extern "C" fn(this: *mut crate::AIProcess, value: *const c_void);
+pub type AIProcess__SetMiddleHighPointD4_fn = unsafe extern "C" fn(this: *mut crate::AIProcess, value: *const crate::NiPoint3);
 /// `AIProcess::SetPitch` at 0x723430 (semantic, high); signature (untiered): `undefined SetPitch(longlong param_1, undefined4 param_2)`; middle-high +0xb0 (pitch, the graph's Pitch channel) = pitch (high); semantic signature: `void (AIProcess* this, float pitch)`
 pub const AIProcess__SetPitch: u64 = 39880;
 /// `AIProcess::SetPitch` as a function pointer type (high).
@@ -511,30 +511,30 @@ pub const Actor__ActorState_vfunc_7: u64 = 38027;
 pub const Actor__ActorState_vfunc_8: u64 = 38029;
 /// `Actor::ActorState_vfunc_9` at 0x6b5b00 (rtti, medium); signature (high): `float ActorState_vfunc_9(Actor * this)`
 pub const Actor__ActorState_vfunc_9: u64 = 38034;
-/// `Actor::ActorValueOwner_AddBaseActorValue` at 0x6c5100 (semantic, high); signature (untiered): `undefined ActorValueOwner_AddBaseActorValue(Actor * this, int param_1, float param_2)`; adds to the base value (high); semantic signature: `void Actor::ActorValueOwner_AddBaseActorValue(ActorValueOwner* this, int value, float delta)`
+/// `Actor::ActorValueOwner_AddBaseActorValue` at 0x6c5100 (semantic, high); signature (untiered): `undefined ActorValueOwner_AddBaseActorValue(Actor * this, int param_1, float param_2)`; adds to the base value (high); semantic signature: `void Actor::ActorValueOwner_AddBaseActorValue(ActorValueOwner* this, ActorValue value, float delta)`
 pub const Actor__ActorValueOwner_AddBaseActorValue: u64 = 38466;
 /// `Actor::ActorValueOwner_AddBaseActorValue` as a function pointer type (high).
-pub type Actor__ActorValueOwner_AddBaseActorValue_fn = unsafe extern "C" fn(this: *mut crate::ActorValueOwner, value: i32, delta: f32);
-/// `Actor::ActorValueOwner_GetActorValue` at 0x6c4cb0 (runtime, high); signature (untiered): `undefined8 ActorValueOwner_GetActorValue(Actor * this, int param_2)`; current actor value (high); semantic signature: `float Actor::ActorValueOwner_GetActorValue(ActorValueOwner* this, int value)`
+pub type Actor__ActorValueOwner_AddBaseActorValue_fn = unsafe extern "C" fn(this: *mut crate::ActorValueOwner, value: u32, delta: f32);
+/// `Actor::ActorValueOwner_GetActorValue` at 0x6c4cb0 (runtime, high); signature (untiered): `undefined8 ActorValueOwner_GetActorValue(Actor * this, int param_2)`; current actor value (high); semantic signature: `float Actor::ActorValueOwner_GetActorValue(ActorValueOwner* this, ActorValue value)`
 pub const Actor__ActorValueOwner_GetActorValue: u64 = 38462;
 /// `Actor::ActorValueOwner_GetActorValue` as a function pointer type (high).
-pub type Actor__ActorValueOwner_GetActorValue_fn = unsafe extern "C" fn(this: *mut crate::ActorValueOwner, value: i32) -> f32;
-/// `Actor::ActorValueOwner_GetBaseActorValue` at 0x6c4ef0 (runtime, high); signature (untiered): `ulonglong ActorValueOwner_GetBaseActorValue(Actor * this, uint param_2)`; base actor value (high); semantic signature: `float Actor::ActorValueOwner_GetBaseActorValue(ActorValueOwner* this, int value)`
+pub type Actor__ActorValueOwner_GetActorValue_fn = unsafe extern "C" fn(this: *mut crate::ActorValueOwner, value: u32) -> f32;
+/// `Actor::ActorValueOwner_GetBaseActorValue` at 0x6c4ef0 (runtime, high); signature (untiered): `ulonglong ActorValueOwner_GetBaseActorValue(Actor * this, uint param_2)`; base actor value (high); semantic signature: `float Actor::ActorValueOwner_GetBaseActorValue(ActorValueOwner* this, ActorValue value)`
 pub const Actor__ActorValueOwner_GetBaseActorValue: u64 = 38464;
 /// `Actor::ActorValueOwner_GetBaseActorValue` as a function pointer type (high).
-pub type Actor__ActorValueOwner_GetBaseActorValue_fn = unsafe extern "C" fn(this: *mut crate::ActorValueOwner, value: i32) -> f32;
-/// `Actor::ActorValueOwner_GetPermanentActorValue` at 0x6c4e20 (runtime, high); signature (untiered): `float ActorValueOwner_GetPermanentActorValue(Actor * this, int param_1)`; base plus permanent modifier (high); semantic signature: `float Actor::ActorValueOwner_GetPermanentActorValue(ActorValueOwner* this, int value)`
+pub type Actor__ActorValueOwner_GetBaseActorValue_fn = unsafe extern "C" fn(this: *mut crate::ActorValueOwner, value: u32) -> f32;
+/// `Actor::ActorValueOwner_GetPermanentActorValue` at 0x6c4e20 (runtime, high); signature (untiered): `float ActorValueOwner_GetPermanentActorValue(Actor * this, int param_1)`; base plus permanent modifier (high); semantic signature: `float Actor::ActorValueOwner_GetPermanentActorValue(ActorValueOwner* this, ActorValue value)`
 pub const Actor__ActorValueOwner_GetPermanentActorValue: u64 = 38463;
 /// `Actor::ActorValueOwner_GetPermanentActorValue` as a function pointer type (high).
-pub type Actor__ActorValueOwner_GetPermanentActorValue_fn = unsafe extern "C" fn(this: *mut crate::ActorValueOwner, value: i32) -> f32;
-/// `Actor::ActorValueOwner_ModActorValue` at 0x6c51f0 (runtime, high); signature (untiered): `undefined ActorValueOwner_ModActorValue(Actor * this, int param_1, undefined8 param_2, float param_3)`; adds to a modifier (high); semantic signature: `void Actor::ActorValueOwner_ModActorValue(ActorValueOwner* this, int modifier, int value, float delta)`
+pub type Actor__ActorValueOwner_GetPermanentActorValue_fn = unsafe extern "C" fn(this: *mut crate::ActorValueOwner, value: u32) -> f32;
+/// `Actor::ActorValueOwner_ModActorValue` at 0x6c51f0 (runtime, high); signature (untiered): `undefined ActorValueOwner_ModActorValue(Actor * this, int param_1, undefined8 param_2, float param_3)`; adds to a modifier (high); semantic signature: `void Actor::ActorValueOwner_ModActorValue(ActorValueOwner* this, int modifier, ActorValue value, float delta)`
 pub const Actor__ActorValueOwner_ModActorValue: u64 = 38467;
 /// `Actor::ActorValueOwner_ModActorValue` as a function pointer type (high).
-pub type Actor__ActorValueOwner_ModActorValue_fn = unsafe extern "C" fn(this: *mut crate::ActorValueOwner, modifier: i32, value: i32, delta: f32);
-/// `Actor::ActorValueOwner_StoreBaseActorValue` at 0x6c5030 (semantic, high); signature (untiered): `undefined ActorValueOwner_StoreBaseActorValue(Actor * this, int param_1, float param_2)`; sets the base value (high); semantic signature: `void Actor::ActorValueOwner_StoreBaseActorValue(ActorValueOwner* this, int value, float amount)`
+pub type Actor__ActorValueOwner_ModActorValue_fn = unsafe extern "C" fn(this: *mut crate::ActorValueOwner, modifier: i32, value: u32, delta: f32);
+/// `Actor::ActorValueOwner_StoreBaseActorValue` at 0x6c5030 (semantic, high); signature (untiered): `undefined ActorValueOwner_StoreBaseActorValue(Actor * this, int param_1, float param_2)`; sets the base value (high); semantic signature: `void Actor::ActorValueOwner_StoreBaseActorValue(ActorValueOwner* this, ActorValue value, float amount)`
 pub const Actor__ActorValueOwner_StoreBaseActorValue: u64 = 38465;
 /// `Actor::ActorValueOwner_StoreBaseActorValue` as a function pointer type (high).
-pub type Actor__ActorValueOwner_StoreBaseActorValue_fn = unsafe extern "C" fn(this: *mut crate::ActorValueOwner, value: i32, amount: f32);
+pub type Actor__ActorValueOwner_StoreBaseActorValue_fn = unsafe extern "C" fn(this: *mut crate::ActorValueOwner, value: u32, amount: f32);
 /// `Actor::ActorValueOwner_vdtor` at 0x6bbd14 (slot_propagation, medium); signature (high): `undefined ActorValueOwner_vdtor(Actor * this)`
 pub const Actor__ActorValueOwner_vdtor: u64 = 38193;
 /// `Actor::AdvanceDeferredKillState` at 0x6cc930 (semantic, high); signature (untiered): `undefined AdvanceDeferredKillState(longlong param_1)`; when the process (+0xf8) has middle-high data and its deferred-kill state (+0x2f8) is non-zero, increments it (high); semantic signature: `void (Actor* this)`
@@ -581,11 +581,11 @@ pub const Actor__ForEachSpellVisitor__vdtor: u64 = 38859;
 pub const Actor__GetActiveEffectList: u64 = 38795;
 /// `Actor::GetActiveEffectList` as a function pointer type (high).
 pub type Actor__GetActiveEffectList_fn = unsafe extern "C" fn(this: *mut crate::MagicTarget) -> *mut c_void;
-/// `Actor::GetActorValueModifier` at 0x6c5440 (semantic, high); signature (untiered): `undefined4 GetActorValueModifier(longlong param_1, int param_2, int param_3)`; one modifier of a value (high); semantic signature: `float Actor::GetActorValueModifier(Actor* this, int modifier, int value)`
+/// `Actor::GetActorValueModifier` at 0x6c5440 (semantic, high); signature (untiered): `undefined4 GetActorValueModifier(longlong param_1, int param_2, int param_3)`; one modifier of a value (high); semantic signature: `float Actor::GetActorValueModifier(Actor* this, int modifier, ActorValue value)`
 pub const Actor__GetActorValueModifier: u64 = 38469;
 /// `Actor::GetActorValueModifier` as a function pointer type (high).
-pub type Actor__GetActorValueModifier_fn = unsafe extern "C" fn(this: *mut crate::Actor, modifier: i32, value: i32) -> f32;
-/// `Actor::GetActorValuePercentage` at 0x679a00 (semantic, medium); signature (untiered): `float GetActorValuePercentage(longlong param_1, undefined4 param_2)`; current / permanent value (medium); semantic signature: `float Actor::GetActorValuePercentage(Actor* this, int value)`
+pub type Actor__GetActorValueModifier_fn = unsafe extern "C" fn(this: *mut crate::Actor, modifier: i32, value: u32) -> f32;
+/// `Actor::GetActorValuePercentage` at 0x679a00 (semantic, medium); signature (untiered): `float GetActorValuePercentage(longlong param_1, undefined4 param_2)`; current / permanent value (medium); semantic signature: `float Actor::GetActorValuePercentage(Actor* this, ActorValue value)`
 pub const Actor__GetActorValuePercentage: u64 = 37337;
 /// `Actor::GetAlphaMultiplier` at 0x6d45a0 (semantic, medium); signature (untiered): `undefined4 GetAlphaMultiplier(Actor * this)`
 pub const Actor__GetAlphaMultiplier: u64 = 38723;
@@ -618,15 +618,15 @@ pub type Actor__GetLevel_fn = unsafe extern "C" fn(this: *mut crate::Actor) -> u
 /// `Actor::GetLookOriginAndDirection` at 0x6874c0 (semantic, high); signature (untiered): `undefined GetLookOriginAndDirection(Actor * this, undefined4 * param_1, float * param_2)`; Actor slot 194: origin = position (+0x54) + eye height (the player's from the Cam3 node), direction = (sin heading, cos heading, 0) normalized, heading from slot 164 (high); semantic signature: `void (Actor* this, NiPoint3* origin, NiPoint3* direction)`
 pub const Actor__GetLookOriginAndDirection: u64 = 37479;
 /// `Actor::GetLookOriginAndDirection` as a function pointer type (high).
-pub type Actor__GetLookOriginAndDirection_fn = unsafe extern "C" fn(this: *mut crate::Actor, origin: *mut c_void, direction: *mut c_void);
+pub type Actor__GetLookOriginAndDirection_fn = unsafe extern "C" fn(this: *mut crate::Actor, origin: *mut crate::NiPoint3, direction: *mut crate::NiPoint3);
 /// `Actor::GetMovementDirection` at 0x6af1b0 (semantic, high); signature (untiered): `undefined4 GetMovementDirection(longlong param_1)`; middleHigh+0xb8 (high); semantic signature: `float (Actor* this)`
 pub const Actor__GetMovementDirection: u64 = 37960;
 /// `Actor::GetMovementDirection` as a function pointer type (high).
 pub type Actor__GetMovementDirection_fn = unsafe extern "C" fn(this: *mut crate::Actor) -> f32;
-/// `Actor::GetPermanentActorValueImpl` at 0x6c62e0 (runtime, high); signature (untiered): `float GetPermanentActorValueImpl(longlong param_1, int param_2)`; base plus permanent modifier (high); semantic signature: `float Actor::GetPermanentActorValueImpl(Actor* this, int value)`
+/// `Actor::GetPermanentActorValueImpl` at 0x6c62e0 (runtime, high); signature (untiered): `float GetPermanentActorValueImpl(longlong param_1, int param_2)`; base plus permanent modifier (high); semantic signature: `float Actor::GetPermanentActorValueImpl(Actor* this, ActorValue value)`
 pub const Actor__GetPermanentActorValueImpl: u64 = 38484;
 /// `Actor::GetPermanentActorValueImpl` as a function pointer type (high).
-pub type Actor__GetPermanentActorValueImpl_fn = unsafe extern "C" fn(this: *mut crate::Actor, value: i32) -> f32;
+pub type Actor__GetPermanentActorValueImpl_fn = unsafe extern "C" fn(this: *mut crate::Actor, value: u32) -> f32;
 /// `Actor::GetScaledHeight` at 0x685b30 (semantic, high); signature (untiered): `float GetScaledHeight(longlong param_1, char param_2)`; 0.57 (0x191c7b4) times either the actor's cached scaled bound extent z (eyeHeight false) or its eye height (Actor::GetEyeHeight's rule, inlined) (high); semantic signature: `float (const Actor* actor, bool eyeHeight)`
 pub const Actor__GetScaledHeight: u64 = 37445;
 /// `Actor::GetScaledHeight` as a function pointer type (high).
@@ -715,10 +715,10 @@ pub const Actor__MagicTarget_vfunc_6: u64 = 38794;
 pub const Actor__MagicTarget_vfunc_8: u64 = 38739;
 /// `Actor::MagicTarget_vfunc_9` at 0x6d51c0 (rtti, medium); signature (low): `undefined MagicTarget_vfunc_9(Actor * this, longlong param_1)`
 pub const Actor__MagicTarget_vfunc_9: u64 = 38740;
-/// `Actor::ModActorValueImpl` at 0x6c5220 (runtime, high); signature (untiered): `undefined ModActorValueImpl(longlong * param_1, int param_2, undefined8 param_3, float param_4, undefined8 param_5)`; applies a modifier change (high); semantic signature: `void Actor::ModActorValueImpl(Actor* this, int modifier, int value, float delta, void* source)`
+/// `Actor::ModActorValueImpl` at 0x6c5220 (runtime, high); signature (untiered): `undefined ModActorValueImpl(longlong * param_1, int param_2, undefined8 param_3, float param_4, undefined8 param_5)`; applies a modifier change (high); semantic signature: `void Actor::ModActorValueImpl(Actor* this, int modifier, ActorValue value, float delta, void* source)`
 pub const Actor__ModActorValueImpl: u64 = 38468;
 /// `Actor::ModActorValueImpl` as a function pointer type (high).
-pub type Actor__ModActorValueImpl_fn = unsafe extern "C" fn(this: *mut crate::Actor, modifier: i32, value: i32, delta: f32, source: *mut c_void);
+pub type Actor__ModActorValueImpl_fn = unsafe extern "C" fn(this: *mut crate::Actor, modifier: i32, value: u32, delta: f32, source: *mut c_void);
 /// `Actor::NotifyAnimationGraph` at 0x6b61a0 (semantic, high); signature (untiered): `undefined1 NotifyAnimationGraph(Actor * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`; 5-byte thunk 'jmp 0x554220' to IAnimationGraphManagerHolder::NotifyAnimationGraph (gets the manager through slot 2, BSAnimationGraphManager::NotifyAnimationGraph 0xbc0c90, true when a graph accepted the event) (high); semantic signature: `bool (IAnimationGraphManagerHolder* this, const BSFixedString& eventName)`
 pub const Actor__NotifyAnimationGraph: u64 = 38048;
 /// `Actor::NotifyAnimationGraph` as a function pointer type (high).
@@ -1511,7 +1511,7 @@ pub const ActorValueInfo__TESFullName_vdtor: u64 = 27274;
 pub const ActorValueInfo__TESIcon_vdtor: u64 = 27276;
 /// `ActorValueInfo::TESIcon_vfunc_6` at 0x446200 (rtti, high); signature (low): `char * TESIcon_vfunc_6(void)`
 pub const ActorValueInfo__TESIcon_vfunc_6: u64 = 27252;
-/// `ActorValueInfo::ctor` at 0x445700 (layout_inference, high); signature (low): `ActorValueInfo * ctor(ActorValueInfo * this, undefined8 param_1, uint * param_2, longlong * param_3)`; constructs an AVIF form (high); semantic signature: `ActorValueInfo* ActorValueInfo::ctor(ActorValueInfo* this, uint value, const char* name)`
+/// `ActorValueInfo::ctor` at 0x445700 (layout_inference, high); signature (low): `ActorValueInfo * ctor(ActorValueInfo * this, undefined8 param_1, uint * param_2, longlong * param_3)`; constructs an AVIF form (high); semantic signature: `ActorValueInfo* ActorValueInfo::ctor(ActorValueInfo* this, ActorValue value, const char* name)`
 pub const ActorValueInfo__ctor: u64 = 27246;
 /// `ActorValueInfo::ctor` as a function pointer type (high).
 pub type ActorValueInfo__ctor_fn = unsafe extern "C" fn(this: *mut crate::ActorValueInfo, value: u32, name: *const c_char) -> *mut crate::ActorValueInfo;
@@ -1541,7 +1541,7 @@ pub const ActorValueInfo__vfunc_6_sub0: u64 = 27265;
 pub const ActorValueInfo__vfunc_6_sub1: u64 = 36283;
 /// `ActorValueInfo::vfunc_6_sub2` at 0x645790 (callgraph, medium); signature (untiered): `undefined8 vfunc_6_sub2(longlong param_1, longlong param_2)`
 pub const ActorValueInfo__vfunc_6_sub2: u64 = 36284;
-/// `ActorValueList::AddActorValue` at 0x445550 (runtime, high); signature (untiered): `longlong AddActorValue(longlong param_1, int param_2, undefined4 * param_3, undefined8 param_4, uint param_5, undefined8 param_6, int param_7)`; creates one actor value entry (high); semantic signature: `ActorValueInfo* ActorValueList::AddActorValue(ActorValueList* this, uint value, const char* name, uint category, uint flags, void* callback, void* arg)`
+/// `ActorValueList::AddActorValue` at 0x445550 (runtime, high); signature (untiered): `longlong AddActorValue(longlong param_1, int param_2, undefined4 * param_3, undefined8 param_4, uint param_5, undefined8 param_6, int param_7)`; creates one actor value entry (high); semantic signature: `ActorValueInfo* ActorValueList::AddActorValue(ActorValueList* this, ActorValue value, const char* name, uint category, uint flags, void* callback, void* arg)`
 pub const ActorValueList__AddActorValue: u64 = 27245;
 /// `ActorValueList::AddActorValue` as a function pointer type (high).
 pub type ActorValueList__AddActorValue_fn = unsafe extern "C" fn(this: *mut crate::ActorValueList, value: u32, name: *const c_char, category: u32, flags: u32, callback: *mut c_void, arg: *mut c_void) -> *mut crate::ActorValueInfo;
@@ -1549,18 +1549,18 @@ pub type ActorValueList__AddActorValue_fn = unsafe extern "C" fn(this: *mut crat
 pub const ActorValueList__AddAllActorValues: u64 = 27232;
 /// `ActorValueList::AddAllActorValues` as a function pointer type (high).
 pub type ActorValueList__AddAllActorValues_fn = unsafe extern "C" fn(this: *mut crate::ActorValueList);
-/// `ActorValueList::GetActorValueInfo` at 0x4432f0 (runtime, high); signature (untiered): `undefined8 GetActorValueInfo(uint param_1)`; the AVIF form of a value (high); semantic signature: `ActorValueInfo* ActorValueList::GetActorValueInfo(uint value)`
+/// `ActorValueList::GetActorValueInfo` at 0x4432f0 (runtime, high); signature (untiered): `undefined8 GetActorValueInfo(uint param_1)`; the AVIF form of a value (high); semantic signature: `ActorValueInfo* ActorValueList::GetActorValueInfo(ActorValue value)`
 pub const ActorValueList__GetActorValueInfo: u64 = 27202;
 /// `ActorValueList::GetActorValueInfo` as a function pointer type (high).
 pub type ActorValueList__GetActorValueInfo_fn = unsafe extern "C" fn(value: u32) -> *mut crate::ActorValueInfo;
-/// `ActorValueList::GetActorValueName` at 0x4430e0 (semantic, high); signature (untiered): `undefined8 GetActorValueName(uint param_1)`; editor name of a value (high); semantic signature: `const char* ActorValueList::GetActorValueName(uint value)`
+/// `ActorValueList::GetActorValueName` at 0x4430e0 (semantic, high); signature (untiered): `undefined8 GetActorValueName(uint param_1)`; editor name of a value (high); semantic signature: `const char* ActorValueList::GetActorValueName(ActorValue value)`
 pub const ActorValueList__GetActorValueName: u64 = 27195;
 /// `ActorValueList::GetActorValueName` as a function pointer type (high).
 pub type ActorValueList__GetActorValueName_fn = unsafe extern "C" fn(value: u32) -> *const c_char;
-/// `ActorValueList::LookupActorValueByName` at 0x443320 (runtime, high); signature (untiered): `int LookupActorValueByName(char * param_1)`; actor value id by editor name, 0xa4 when unknown (high); semantic signature: `int ActorValueList::LookupActorValueByName(const char* name)`
+/// `ActorValueList::LookupActorValueByName` at 0x443320 (runtime, high); signature (untiered): `int LookupActorValueByName(char * param_1)`; actor value id by editor name, 0xa4 when unknown (high); semantic signature: `ActorValue ActorValueList::LookupActorValueByName(const char* name)`
 pub const ActorValueList__LookupActorValueByName: u64 = 27203;
 /// `ActorValueList::LookupActorValueByName` as a function pointer type (high).
-pub type ActorValueList__LookupActorValueByName_fn = unsafe extern "C" fn(name: *const c_char) -> i32;
+pub type ActorValueList__LookupActorValueByName_fn = unsafe extern "C" fn(name: *const c_char) -> u32;
 /// `ActorValueList::ctor` at 0x442ea0 (runtime, high); signature (untiered): `longlong ctor(longlong param_1)`; constructs the actor value list (high); semantic signature: `ActorValueList* ActorValueList::ctor(ActorValueList* this)`
 pub const ActorValueList__ctor: u64 = 27190;
 /// `ActorValueList::ctor` as a function pointer type (high).
@@ -1593,10 +1593,10 @@ pub const ActorValueOwner__StoreBaseActorValue: u64 = 24935;
 pub const ActorValueOwner__dtor: u64 = 24848;
 /// `ActorValueOwner::vdtor` at 0x3cbb40 (layout_inference, medium); signature (low): `ActorValueOwner * vdtor(ActorValueOwner * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const ActorValueOwner__vdtor: u64 = 24883;
-/// `ActorValueStorage::FindModifiers` at 0x6e3500 (runtime, high); signature (untiered): `longlong FindModifiers(longlong param_1, char param_2)`; the float[3] modifiers of a stored value, or null (high); semantic signature: `float* ActorValueStorage::FindModifiers(ActorValueStorage* this, char value)`
+/// `ActorValueStorage::FindModifiers` at 0x6e3500 (runtime, high); signature (untiered): `longlong FindModifiers(longlong param_1, char param_2)`; the float[3] modifiers of a stored value, or null (high); semantic signature: `float* ActorValueStorage::FindModifiers(ActorValueStorage* this, ActorValue value)`
 pub const ActorValueStorage__FindModifiers: u64 = 39020;
 /// `ActorValueStorage::FindModifiers` as a function pointer type (high).
-pub type ActorValueStorage__FindModifiers_fn = unsafe extern "C" fn(this: *mut crate::ActorValueStorage, value: c_char) -> *mut f32;
+pub type ActorValueStorage__FindModifiers_fn = unsafe extern "C" fn(this: *mut crate::ActorValueStorage, value: u32) -> *mut f32;
 /// `AddAction` at 0xca1920 (decompiler, medium); signature (untiered): `undefined AddAction(longlong param_1, longlong param_2)`
 pub const AddAction: u64 = 67137;
 /// `AddActionToWorld` at 0x104a040 (decompiler, medium); signature (untiered): `undefined AddActionToWorld(longlong * param_1, longlong * param_2, undefined8 param_3, undefined8 param_4)`
@@ -5158,7 +5158,7 @@ pub const ApplyLongestDurationAndLargestArea: u64 = 43942;
 /// `ApplyLookInputSensitivity` at 0x7aeba0 (runtime, high); signature (medium): `undefined ApplyLookInputSensitivity(longlong param_1, float * param_2)`; bInvertYValues:Controls -> look.y negated first; mouse: x *= fMouseHeadingSensitivity * fMouseHeadingXScale / g_FrameDeltaReal, y *= sensitivity * YScale (mounted: both * fHorseHeadingMovementMult); gamepad: snap-to-axis, look curve, exponent, acceleration, sensitivity threshold, X/Y scale, optional time normalisation (high); semantic signature: `void (PlayerControls* this, NiPoint2* look)`
 pub const ApplyLookInputSensitivity: u64 = 42354;
 /// `ApplyLookInputSensitivity` as a function pointer type (high).
-pub type ApplyLookInputSensitivity_fn = unsafe extern "C" fn(this: *mut crate::PlayerControls, look: *mut c_void);
+pub type ApplyLookInputSensitivity_fn = unsafe extern "C" fn(this: *mut crate::PlayerControls, look: *mut crate::NiPoint2);
 /// `ApplyMagicExplosionImpulseToClutter` at 0x5cccf0 (decompiler, medium); signature (untiered): `undefined ApplyMagicExplosionImpulseToClutter(undefined8 param_1, longlong param_2, float * param_3, longlong param_4, float param_5)`
 pub const ApplyMagicExplosionImpulseToClutter: u64 = 34415;
 /// `ApplyMagicExplosionPushToActor` at 0x5ccbf0 (decompiler, medium); signature (untiered): `undefined ApplyMagicExplosionPushToActor(longlong * param_1, longlong * param_2, undefined4 * param_3, longlong param_4)`
@@ -5198,7 +5198,7 @@ pub const ApplyPlayerLevelUp: u64 = 41567;
 /// `ApplyPoseToBoneNodes` at 0xbdfa20 (runtime, high); signature (untiered): `undefined ApplyPoseToBoneNodes(longlong param_1, longlong * param_2, uint param_3)`; THE pose write: for each bone, normalises the quaternion and writes local rotation (row-major 3x3 at +0x48) and translation (+0x6c) of the bone node (or of the flattened entry); scale (+0x78) is not written; no world update (high); semantic signature: `void (const hkQsTransform* pose, BoneNodeArray* nodes, int count)`
 pub const ApplyPoseToBoneNodes: u64 = 63856;
 /// `ApplyPoseToBoneNodes` as a function pointer type (high).
-pub type ApplyPoseToBoneNodes_fn = unsafe extern "C" fn(pose: *const c_void, nodes: *mut c_void, count: i32);
+pub type ApplyPoseToBoneNodes_fn = unsafe extern "C" fn(pose: *const crate::hkQsTransform, nodes: *mut c_void, count: i32);
 /// `ApplyPositionAndRotationTo3D` at 0x7f9e80 (decompiler, medium); signature (untiered): `undefined ApplyPositionAndRotationTo3D(longlong * param_1)`
 pub const ApplyPositionAndRotationTo3D: u64 = 44113;
 /// `ApplyPreferenceSettings` at 0x65b520 (decompiler, medium); signature (untiered): `undefined ApplyPreferenceSettings(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
@@ -7205,5 +7205,3 @@ pub const AutoRegisterCreator_CombatPathT_CombatPathRequestWeightedMultiGoal_Com
 pub const AutoRegisterCreator_CombatPathT_CombatPathRequestWeightedMultiGoal_CombatPathDestinationRefs_BST_98048684a4fe: u64 = 50277;
 /// `AutoRegisterCreator<CombatPathingDebugData,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_>::vdtor` at 0x8e6970 (layout_inference, medium); signature (low): `AutoRegisterCreator<CombatPathingDebugData,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_> * vdtor(AutoRegisterCreator<CombatPathingDebugData,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const AutoRegisterCreator_CombatPathingDebugData_BSTCreateFactoryManager_unsigned_int_CombatObject_256____vdtor: u64 = 50192;
-/// `AutoRegisterCreator<CombatPathingRequestAdapter,BSTSmartPointerPathingFactoryManager<BSPathingRequest,64>_>::vdtor` at 0x8e4920 (layout_inference, medium); signature (low): `AutoRegisterCreator<CombatPathingRequestAdapter,BSTSmartPointerPathingFactoryManager<BSPathingRequest,64>_> * vdtor(AutoRegisterCreator<CombatPathingRequestAdapter,BSTSmartPointerPathingFactoryManager<BSPathingRequest,64>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const AutoRegisterCreator_CombatPathingRequestAdapter_BSTSmartPointerPathingFactoryManager_BSPathingRequest_64____vdtor: u64 = 50141;

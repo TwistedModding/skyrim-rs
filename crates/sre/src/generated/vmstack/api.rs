@@ -44,6 +44,7 @@ impl crate::BSScript__CompiledScriptLoader {
     ///
     /// Semantic, vmstack pass, high; called through the object's vtable.
     /// `bool (BSScript::CompiledScriptLoader* this, const char* className, void* unlinkedObject)`
+    /// May be null: `className`.
     ///
     /// # Safety
     /// `className`, `unlinkedObject` must point to what the engine expects.
@@ -119,6 +120,7 @@ impl crate::BSScript__Internal__CodeTasklet {
     ///
     /// Semantic, vmstack pass, high; called through the object's vtable.
     /// `bool (BSScript::Internal::CodeTasklet* this, u32* callKind, BSTSmartPointer<BSScript::ObjectTypeInfo>* type, BSFixedString* name, BSScript::Variable* self, BSScrapArray<BSScript::Variable>* args)`
+    /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
     ///
     /// # Safety
     /// `callKind`, `type_`, `name`, `self_`, `args` must point to what the engine expects.
@@ -203,6 +205,7 @@ impl crate::BSScript__Internal__ScriptFunction {
     ///
     /// Semantic, vmstack pass, high; called through the object's vtable.
     /// `u32 (BSScript::Internal::ScriptFunction* this, BSTSmartPointer<BSScript::Stack>* stack, BSScript::ErrorLogger* logger, BSScript::Internal::VirtualMachine* vm, bool fromTasklet)`
+    /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
     ///
     /// # Safety
     /// `stack` must point to what the engine expects.
@@ -212,6 +215,7 @@ impl crate::BSScript__Internal__ScriptFunction {
     ///
     /// Semantic, vmstack pass, high; called through the object's vtable.
     /// `BSScript::TypeInfo* (BSScript::Internal::ScriptFunction* this, BSScript::TypeInfo* out)`
+    /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
     ///
     /// # Safety
     /// `out` must point to what the engine expects.
@@ -290,6 +294,7 @@ impl crate::BSScript__Internal__ScriptFunction {
     ///
     /// Semantic, vmstack pass, high; called through the object's vtable.
     /// `void (BSScript::Internal::ScriptFunction* this, u32 index, BSFixedString* name, BSScript::TypeInfo* type)`
+    /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
     ///
     /// # Safety
     /// `name`, `type_` must point to what the engine expects.
@@ -323,6 +328,7 @@ impl crate::BSScript__Internal__ScriptFunction {
     ///
     /// Semantic, vmstack pass, high; called through the object's vtable.
     /// `void (BSScript::Internal::ScriptFunction* this, BSScript::StackFrame* frame)`
+    /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
     ///
     /// # Safety
     /// `frame` must point to what the engine expects.
@@ -338,6 +344,7 @@ impl crate::BSScript__Internal__ScriptFunction {
     ///
     /// Semantic, vmstack pass, high; called through the object's vtable.
     /// `bool (BSScript::Internal::ScriptFunction* this, u32 index, BSFixedString* out)`
+    /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
     ///
     /// # Safety
     /// `out` must point to what the engine expects.
@@ -470,6 +477,7 @@ pub unsafe fn find_stack_by_id(mapMinus8: *mut c_void, stackID: *const u32, out:
 ///
 /// Semantic, vmstack pass, high; ledger semantic evidence, name high; id 104444, rva 0x149ab10.
 /// `void (BSScript::Stack* stack, const char* message, u32 severity, char* out, u32 outSize)`
+/// May be null: `stack`, `out`.
 ///
 /// # Safety
 /// `stack`, `message`, `out` must point to what the engine expects.
@@ -515,6 +523,7 @@ pub unsafe fn init_stack_frame_and_clear_variables(frame: *mut crate::BSScript__
 ///
 /// Semantic, vmstack pass, high; ledger semantic evidence, name high; id 104257, rva 0x148f350.
 /// `bool (BSScript::Object* object, BSScript::Stack* stack)`
+/// May be null: `stack`.
 ///
 /// # Safety
 /// `object`, `stack` must point to what the engine expects.
@@ -524,6 +533,7 @@ pub unsafe fn object_try_lock_for_stack(object: *mut crate::BSScript__Object, st
 ///
 /// Semantic, vmstack pass, high; ledger semantic evidence, name high; id 104258, rva 0x148f380.
 /// `void (BSScript::Object* object, BSScript::Stack* stack)`
+/// May be null: `stack`.
 ///
 /// # Safety
 /// `object`, `stack` must point to what the engine expects.
@@ -569,6 +579,7 @@ pub unsafe fn queue_code_tasklet(vm: *mut crate::BSScript__Internal__VirtualMach
 ///
 /// Semantic, vmstack pass, high; ledger semantic evidence, name high; id 104848, rva 0x14b98f0.
 /// `bool (BSScript::Internal::VirtualMachine* vm, BSScript::Stack* stack, BSTSmartPointer<BSScript::Internal::IFuncCallQuery>* query)`
+/// May be null: `stack`.
 ///
 /// # Safety
 /// `stack`, `query` must point to what the engine expects.
@@ -578,6 +589,7 @@ pub unsafe fn queue_function_call_message(vm: *mut crate::BSScript__Internal__Vi
 ///
 /// Semantic, vmstack pass, high; ledger semantic evidence, name high; id 104849, rva 0x14b9b10.
 /// `bool (BSScript::Internal::VirtualMachine* vm, BSScript::Stack* stack)`
+/// May be null: `stack`.
 ///
 /// # Safety
 /// `stack` must point to what the engine expects.
@@ -587,6 +599,7 @@ pub unsafe fn queue_stack_return_message(vm: *mut crate::BSScript__Internal__Vir
 ///
 /// Semantic, vmstack pass, high; ledger semantic evidence, name high; id 104867, rva 0x14bc7c0.
 /// `bool (BSScript::Internal::VirtualMachine* vm, BSScript::Stack* stack, BSTSmartPointer<BSScript::Internal::IFuncCallQuery>* query)`
+/// May be null: `stack`.
 ///
 /// # Safety
 /// `stack`, `query` must point to what the engine expects.
@@ -620,6 +633,7 @@ pub unsafe fn read_typed_value_from_bit_stream(operandOut: *mut c_void, cursor: 
 ///
 /// Semantic, vmstack pass, high; ledger semantic evidence, name high; id 104873, rva 0x14bcf80.
 /// `void (BSScript::Internal::VirtualMachine* vm, BSScript::Stack* stack)`
+/// May be null: `stack`.
 ///
 /// # Safety
 /// `stack` must point to what the engine expects.

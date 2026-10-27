@@ -234,8 +234,8 @@ fn form_list() -> Result<String, String> {
     check(len == list.forms.size, "GetFormsSize differs from the forms array")?;
     let first = unsafe { (*list.forms.data.cast::<*const TESForm>()).as_ref() }.ok_or("the first entry is null")?;
     check(list.get_at(0).is_some_and(|f| core::ptr::eq(f, first)), "GetAt(0) is not the first entry")?;
-    check(list.find(first) == 0, "Find(first) is not 0")?;
-    check(list.find(form(IRON_SWORD)?) < 0 || (0..len).any(|i| list.get_at(i).is_some_and(|f| f.formID == IRON_SWORD)), "Find found a form that is not in the list")?;
+    check(list.find(Some(first)) == 0, "Find(first) is not 0")?;
+    check(list.find(Some(form(IRON_SWORD)?)) < 0 || (0..len).any(|i| list.get_at(i).is_some_and(|f| f.formID == IRON_SWORD)), "Find found a form that is not in the list")?;
     check(list.get_at(len).is_none(), "GetAt(len) returned a form")?;
     Ok(format!("{} has {len} entries, first {}: GetAt(0) and Find agree", describe(list), describe(first)))
 }
@@ -251,7 +251,7 @@ fn generated_api() -> Result<String, String> {
     check(core::ptr::eq(player, unsafe { *(global as *const *const TESForm) }), "sre::find_form_by_id(0x14) is not the object g_PlayerCharacter_ptr holds")?;
     check(sre::find_form_by_id(0x7FFF_FFFF).is_none(), "sre::find_form_by_id(0x7fffffff) is Some")?;
 
-    let info = sre::ActorValueList::get_actor_value_info(ActorValue::Health as u32).ok_or("ActorValueList::get_actor_value_info(Health) is None")?;
+    let info = sre::ActorValueList::get_actor_value_info(ActorValue::Health).ok_or("ActorValueList::get_actor_value_info(Health) is None")?;
     let table = sre::ActorValueList::singleton().and_then(|l| l.infos()[ActorValue::Health as usize]);
     check(table.is_some_and(|t| core::ptr::eq(t, info)), "ActorValueList::get_actor_value_info(Health) differs from the table entry")?;
 
@@ -261,15 +261,15 @@ fn generated_api() -> Result<String, String> {
     let keyword = form(VENDOR_ITEM_WEAPON)?;
     let name = sre_editor_id(keyword).ok_or("slot 50 get_form_editor_id is null")?;
     check(keyword.cast::<BGSKeyword>().is_some_and(|k| keyword_field(k).as_c_str() == Some(name)), "slot 50 get_form_editor_id differs from BGSKeyword.keyword")?;
-    check(sword.get_form_type() == sword.formType, "slot 21 get_form_type differs from formType")?;
+    check(sword.get_form_type().map(|t| t as u8) == Ok(sword.formType), "slot 21 get_form_type differs from formType")?;
 
     let pc = sre::PlayerCharacter::singleton().ok_or("PlayerCharacter::singleton is None")?;
     check(address(pc) == address(player), "PlayerCharacter::singleton is not the player")?;
-    check(pc.get_form_type() == player.formType, "PlayerCharacter -> TESForm slot 21 differs from formType")?;
+    check(pc.get_form_type().map(|t| t as u8) == Ok(player.formType), "PlayerCharacter -> TESForm slot 21 differs from formType")?;
     let owner = pc.as_actor_value_owner();
     check(address(owner) == address(pc) + 0xB8, "Actor::as_actor_value_owner is not at +0xB8")?;
-    let health = owner.get_actor_value(ActorValue::Health as i32);
-    let direct = pc.actor_value_owner_get_actor_value(ActorValue::Health as i32);
+    let health = owner.get_actor_value(ActorValue::Health);
+    let direct = pc.actor_value_owner_get_actor_value(ActorValue::Health);
     check(health > 0.0 && health.to_bits() == direct.to_bits(), "ActorValueOwner slot 1 differs from Actor::ActorValueOwner_GetActorValue")?;
 
     let handler = TESDataHandler::singleton().ok_or("TESDataHandler::singleton is None")?;

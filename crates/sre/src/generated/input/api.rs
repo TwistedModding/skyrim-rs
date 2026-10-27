@@ -242,6 +242,7 @@ impl crate::ActivateHandler {
     ///
     /// Semantic, input pass, high; called through the object's vtable.
     /// `bool (ActivateHandler* this, InputEvent* event)`
+    /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
     #[inline]
     pub fn can_process(&self, event: &crate::InputEvent) -> bool { unsafe { virtual_function!(self, 1, (*const Self, *const crate::InputEvent) -> bool)(core::ptr::from_ref(self), core::ptr::from_ref(event)) } }
     /// `ActivateHandler::TryActivateCurrentFurniture`: activate key with no target: unless a menu pauses the game, the controls disallow it, the camera is in cameraStates[6] (transition) or +0xbe9 bit 5 is set, activates the reference in the player's process furniture handle (ActivateReference(ref, player, 0, 0, 1, 0)); on failure plays the no-activation feedback
@@ -257,6 +258,7 @@ impl crate::AttackBlockHandler {
     ///
     /// Semantic, input pass, high; called through the object's vtable.
     /// `bool (AttackBlockHandler* this, InputEvent* event)`
+    /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
     #[inline]
     pub fn can_process(&self, event: &crate::InputEvent) -> bool { unsafe { virtual_function!(self, 1, (*const Self, *const crate::InputEvent) -> bool)(core::ptr::from_ref(self), core::ptr::from_ref(event)) } }
 }
@@ -266,6 +268,7 @@ impl crate::AutoMoveHandler {
     ///
     /// Semantic, input pass, high; called through the object's vtable.
     /// `bool (AutoMoveHandler* this, InputEvent* event)`
+    /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
     #[inline]
     pub fn can_process(&self, event: &crate::InputEvent) -> bool { unsafe { virtual_function!(self, 1, (*const Self, *const crate::InputEvent) -> bool)(core::ptr::from_ref(self), core::ptr::from_ref(event)) } }
 }
@@ -308,12 +311,14 @@ impl crate::BSInputDevice {
     ///
     /// Semantic, input pass, high; called through the object's vtable.
     /// `u32 (BSInputDevice* this, const BSFixedString* name)`
+    /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
     #[inline]
     pub fn get_key_id_by_name(&self, name: &crate::BSFixedString) -> u32 { unsafe { virtual_function!(self, 5, (*const Self, *const crate::BSFixedString) -> u32)(core::ptr::from_ref(self), core::ptr::from_ref(name)) } }
     /// `BSInputDevice::GetKeyName`, vtable slot 4: name of an id
     ///
     /// Semantic, input pass, high; called through the object's vtable.
     /// `bool (BSInputDevice* this, u32 id, BSFixedString* out)`
+    /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
     ///
     /// # Safety
     /// `out` must point to what the engine expects.
@@ -329,6 +334,7 @@ impl crate::BSInputDevice {
     ///
     /// Semantic, input pass, high; ledger semantic evidence, name high; id 68745, rva 0xd6efd0.
     /// `bool (BSInputDevice* this, const char* path)`
+    /// May be null: `path`.
     ///
     /// # Safety
     /// `path` must point to what the engine expects.
@@ -338,6 +344,7 @@ impl crate::BSInputDevice {
     ///
     /// Semantic, input pass, high; ledger semantic evidence, name high; id 68746, rva 0xd6f0e0.
     /// `void (BSInputDevice* this, char* line)`
+    /// May be null: `line`.
     ///
     /// # Safety
     /// `line` must point to what the engine expects.
@@ -508,6 +515,7 @@ impl crate::ClickHandler {
     ///
     /// Semantic, input pass, high; called through the object's vtable.
     /// `bool (ClickHandler* this, InputEvent* event)`
+    /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
     #[inline]
     pub fn can_process(&self, event: &crate::InputEvent) -> bool { unsafe { virtual_function!(self, 1, (*const Self, *const crate::InputEvent) -> bool)(core::ptr::from_ref(self), core::ptr::from_ref(event)) } }
 }
@@ -542,6 +550,7 @@ impl crate::ConsoleOpenHandler {
     ///
     /// Semantic, input pass, high; called through the object's vtable.
     /// `bool (ConsoleOpenHandler* this, InputEvent* event)`
+    /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
     #[inline]
     pub fn can_process(&self, event: &crate::InputEvent) -> bool { unsafe { virtual_function!(self, 1, (*const Self, *const crate::InputEvent) -> bool)(core::ptr::from_ref(self), core::ptr::from_ref(event)) } }
 }
@@ -551,6 +560,7 @@ impl crate::DirectionHandler {
     ///
     /// Semantic, input pass, high; called through the object's vtable.
     /// `bool (DirectionHandler* this, InputEvent* event)`
+    /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
     #[inline]
     pub fn can_process(&self, event: &crate::InputEvent) -> bool { unsafe { virtual_function!(self, 1, (*const Self, *const crate::InputEvent) -> bool)(core::ptr::from_ref(self), core::ptr::from_ref(event)) } }
 }
@@ -568,6 +578,7 @@ impl crate::FavoritesHandler {
     ///
     /// Semantic, input pass, high; called through the object's vtable.
     /// `bool (FavoritesHandler* this, InputEvent* event)`
+    /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
     #[inline]
     pub fn can_process(&self, event: &crate::InputEvent) -> bool { unsafe { virtual_function!(self, 1, (*const Self, *const crate::InputEvent) -> bool)(core::ptr::from_ref(self), core::ptr::from_ref(event)) } }
 }
@@ -583,6 +594,7 @@ impl crate::HeldStateHandler {
     ///
     /// Semantic, input pass, high; called through the object's vtable.
     /// `void (HeldStateHandler* this, ButtonEvent* event)`
+    /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
     #[inline]
     pub fn update_held_state(&self, event: &crate::ButtonEvent) { unsafe { virtual_function!(self, 7, (*const Self, *const crate::ButtonEvent))(core::ptr::from_ref(self), core::ptr::from_ref(event)) } }
 }
@@ -596,9 +608,10 @@ impl crate::InputEventQueue {
     /// `InputEventQueue::AddButtonEvent`: next of 10 ButtonEvents: device, idCode, value, held, user event ''; append
     ///
     /// Semantic, input pass, high; ledger semantic evidence, name high; id 68685, rva 0xcfb340.
-    /// `void (InputEventQueue* q, u32 device, u32 idCode, float value, float heldDownSecs)`
+    /// `void (InputEventQueue* q, InputDevice device, u32 idCode, float value, float heldDownSecs)`
+    /// Retyped: device u32 -> InputDevice: InputDevice (0 keyboard, 1 mouse, 2 gamepad, 7 none/all); stored as ButtonEvent device.
     #[inline]
-    pub fn add_button_event(&self, device: u32, idCode: u32, value: f32, heldDownSecs: f32) { unsafe { function!(68685, (*const Self, u32, u32, f32, f32))(core::ptr::from_ref(self), device, idCode, value, heldDownSecs) } }
+    pub fn add_button_event(&self, device: crate::InputDevice, idCode: u32, value: f32, heldDownSecs: f32) { unsafe { function!(68685, (*const Self, crate::InputDevice, u32, f32, f32))(core::ptr::from_ref(self), device, idCode, value, heldDownSecs) } }
     /// `InputEventQueue::AddCharEvent`: next of 5 CharEvents, device 0, the UTF-16 code at +0x18; the keyboard poll is its only caller, so character input exists only for keys DirectInput reports (real or SendInput keystrokes, not events injected into the queue)
     ///
     /// Semantic, input pass, high; ledger runtime evidence, name high; id 68686, rva 0xcfb3f0.
@@ -608,9 +621,10 @@ impl crate::InputEventQueue {
     /// `InputEventQueue::AddDeviceConnectEvent`: the single DeviceConnectEvent
     ///
     /// Semantic, input pass, high; ledger semantic evidence, name high; id 68689, rva 0xcfb5d0.
-    /// `void (InputEventQueue* q, u32 device, bool connected)`
+    /// `void (InputEventQueue* q, InputDevice device, bool connected)`
+    /// Retyped: device u32 -> InputDevice: InputDevice (0 keyboard, 1 mouse, 2 gamepad, 7 none/all); DeviceConnectEvent device.
     #[inline]
-    pub fn add_device_connect_event(&self, device: u32, connected: bool) { unsafe { function!(68689, (*const Self, u32, bool))(core::ptr::from_ref(self), device, connected) } }
+    pub fn add_device_connect_event(&self, device: crate::InputDevice, connected: bool) { unsafe { function!(68689, (*const Self, crate::InputDevice, bool))(core::ptr::from_ref(self), device, connected) } }
     /// `InputEventQueue::AddKinectEvent`: the single KinectEvent
     ///
     /// Semantic, input pass, medium; ledger semantic evidence, name medium; id 68690, rva 0xcfb640.
@@ -664,6 +678,7 @@ impl crate::JumpHandler {
     ///
     /// Semantic, input pass, high; called through the object's vtable.
     /// `bool (JumpHandler* this, InputEvent* event)`
+    /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
     #[inline]
     pub fn can_process(&self, event: &crate::InputEvent) -> bool { unsafe { virtual_function!(self, 1, (*const Self, *const crate::InputEvent) -> bool)(core::ptr::from_ref(self), core::ptr::from_ref(event)) } }
 }
@@ -673,12 +688,14 @@ impl crate::LookHandler {
     ///
     /// Semantic, input pass, high; called through the object's vtable.
     /// `bool (LookHandler* this, InputEvent* event)`
+    /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
     #[inline]
     pub fn can_process(&self, event: &crate::InputEvent) -> bool { unsafe { virtual_function!(self, 1, (*const Self, *const crate::InputEvent) -> bool)(core::ptr::from_ref(self), core::ptr::from_ref(event)) } }
     /// `LookHandler::ProcessMotion`, vtable slot 3: motion-controller aiming: only with bEnableSixaxisBowAiming and a bow/crossbow drawn (weapon types 7 / 12) or bEnableSixaxisMagicAiming with a usable hand caster; otherwise resets the embedded event. When look input is zero: the relative rotation between the new orientation and the stored one gives pitch/heading deltas, smoothed by alpha in [fSixaxisAlphaMin, 1] (scaled by fSixaxisAlphaMaxThreshold), scaled during bow zoom (PlayerCamera+0x161) by the FOV ratio (bSixaxisAimingRespectsFOV) and the time multiplier (bSixaxisAimingRespectsTimeMultiplier); applies ApplyClampedPitchDelta (not mounted) and the heading delta to the player, sets data+0x26, stores the event and the deltas
     ///
     /// Semantic, input pass, high; called through the object's vtable.
     /// `void (LookHandler* this, SixaxisEvent* event, PlayerControlsData* data)`
+    /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
     ///
     /// # Safety
     /// `data` must point to what the engine expects.
@@ -691,6 +708,7 @@ impl crate::MovementHandler {
     ///
     /// Semantic, input pass, high; called through the object's vtable.
     /// `bool (MovementHandler* this, InputEvent* event)`
+    /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
     #[inline]
     pub fn can_process(&self, event: &crate::InputEvent) -> bool { unsafe { virtual_function!(self, 1, (*const Self, *const crate::InputEvent) -> bool)(core::ptr::from_ref(self), core::ptr::from_ref(event)) } }
 }
@@ -723,17 +741,15 @@ impl crate::PlayerControls {
     ///
     /// Semantic, camera pass, high; ledger runtime evidence, name high; id 42354, rva 0x7aeba0.
     /// `void (PlayerControls* this, NiPoint2* look)`
-    ///
-    /// # Safety
-    /// `look` must point to what the engine expects.
     #[inline]
-    pub unsafe fn apply_look_input_sensitivity(&self, look: *mut c_void) { unsafe { function!(42354, (*const Self, *mut c_void))(core::ptr::from_ref(self), look) } }
+    pub fn apply_look_input_sensitivity(&self, look: &mut crate::NiPoint2) { unsafe { function!(42354, (*const Self, *mut crate::NiPoint2))(core::ptr::from_ref(self), core::ptr::from_mut(look)) } }
     /// `PlayerControls::AddHandler`: appends and enables (deferred while dispatching); camera states add their embedded handler in Begin
     ///
     /// Semantic, input pass, high; ledger semantic evidence, name high; id 42356, rva 0x7af240.
     /// `void (PlayerControls* this, PlayerInputHandler* handler, bool heldState)`
+    /// May be null: `handler`.
     #[inline]
-    pub fn add_handler(&self, handler: &crate::PlayerInputHandler, heldState: bool) { unsafe { function!(42356, (*const Self, *const crate::PlayerInputHandler, bool))(core::ptr::from_ref(self), core::ptr::from_ref(handler), heldState) } }
+    pub fn add_handler(&self, handler: Option<&crate::PlayerInputHandler>, heldState: bool) { unsafe { function!(42356, (*const Self, *const crate::PlayerInputHandler, bool))(core::ptr::from_ref(self), handler.map_or(core::ptr::null(), core::ptr::from_ref), heldState) } }
     /// `PlayerControls::ApplyLookInputWithDialogueLimits`: applies look input sensitivity to lookInput (+0x2c) and clamps it to the dialogue speaker yaw offset limits (first person when camera +0x28 == +0xb8)
     ///
     /// Semantic, camera pass, medium; ledger semantic evidence, name medium; id 42372, rva 0x7b06a0.
@@ -849,6 +865,7 @@ impl crate::QuickSaveLoadHandler {
     ///
     /// Semantic, input pass, high; called through the object's vtable.
     /// `bool (QuickSaveLoadHandler* this, InputEvent* event)`
+    /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
     #[inline]
     pub fn can_process(&self, event: &crate::InputEvent) -> bool { unsafe { virtual_function!(self, 1, (*const Self, *const crate::InputEvent) -> bool)(core::ptr::from_ref(self), core::ptr::from_ref(event)) } }
 }
@@ -858,6 +875,7 @@ impl crate::ReadyWeaponHandler {
     ///
     /// Semantic, input pass, high; called through the object's vtable.
     /// `bool (ReadyWeaponHandler* this, InputEvent* event)`
+    /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
     #[inline]
     pub fn can_process(&self, event: &crate::InputEvent) -> bool { unsafe { virtual_function!(self, 1, (*const Self, *const crate::InputEvent) -> bool)(core::ptr::from_ref(self), core::ptr::from_ref(event)) } }
 }
@@ -867,6 +885,7 @@ impl crate::RunHandler {
     ///
     /// Semantic, input pass, high; called through the object's vtable.
     /// `bool (RunHandler* this, InputEvent* event)`
+    /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
     #[inline]
     pub fn can_process(&self, event: &crate::InputEvent) -> bool { unsafe { virtual_function!(self, 1, (*const Self, *const crate::InputEvent) -> bool)(core::ptr::from_ref(self), core::ptr::from_ref(event)) } }
 }
@@ -876,6 +895,7 @@ impl crate::ScreenshotHandler {
     ///
     /// Semantic, input pass, high; called through the object's vtable.
     /// `bool (ScreenshotHandler* this, InputEvent* event)`
+    /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
     #[inline]
     pub fn can_process(&self, event: &crate::InputEvent) -> bool { unsafe { virtual_function!(self, 1, (*const Self, *const crate::InputEvent) -> bool)(core::ptr::from_ref(self), core::ptr::from_ref(event)) } }
 }
@@ -885,6 +905,7 @@ impl crate::Script {
     ///
     /// Semantic, input pass, medium; ledger semantic evidence, name medium; id 21909, rva 0x344b80.
     /// `ScriptRefVariable* (Script* this, int index, ScriptLocals* locals)`
+    /// May be null: `locals`.
     ///
     /// # Safety
     /// The pass rates the signature medium.
@@ -894,6 +915,7 @@ impl crate::Script {
     ///
     /// Semantic, input pass, medium; ledger semantic evidence, name medium; id 21883, rva 0x3435e0.
     /// `void (Script* this, const char* text)`
+    /// May be null: `text`.
     ///
     /// # Safety
     /// The pass rates the signature medium.
@@ -920,6 +942,7 @@ impl crate::ShoutHandler {
     ///
     /// Semantic, input pass, high; called through the object's vtable.
     /// `bool (ShoutHandler* this, InputEvent* event)`
+    /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
     #[inline]
     pub fn can_process(&self, event: &crate::InputEvent) -> bool { unsafe { virtual_function!(self, 1, (*const Self, *const crate::InputEvent) -> bool)(core::ptr::from_ref(self), core::ptr::from_ref(event)) } }
 }
@@ -929,6 +952,7 @@ impl crate::SneakHandler {
     ///
     /// Semantic, input pass, high; called through the object's vtable.
     /// `bool (SneakHandler* this, InputEvent* event)`
+    /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
     #[inline]
     pub fn can_process(&self, event: &crate::InputEvent) -> bool { unsafe { virtual_function!(self, 1, (*const Self, *const crate::InputEvent) -> bool)(core::ptr::from_ref(self), core::ptr::from_ref(event)) } }
 }
@@ -938,6 +962,7 @@ impl crate::SprintHandler {
     ///
     /// Semantic, input pass, high; called through the object's vtable.
     /// `bool (SprintHandler* this, InputEvent* event)`
+    /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
     #[inline]
     pub fn can_process(&self, event: &crate::InputEvent) -> bool { unsafe { virtual_function!(self, 1, (*const Self, *const crate::InputEvent) -> bool)(core::ptr::from_ref(self), core::ptr::from_ref(event)) } }
 }
@@ -947,6 +972,7 @@ impl crate::TogglePOVHandler {
     ///
     /// Semantic, input pass, high; called through the object's vtable.
     /// `bool (TogglePOVHandler* this, InputEvent* event)`
+    /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
     #[inline]
     pub fn can_process(&self, event: &crate::InputEvent) -> bool { unsafe { virtual_function!(self, 1, (*const Self, *const crate::InputEvent) -> bool)(core::ptr::from_ref(self), core::ptr::from_ref(event)) } }
 }
@@ -956,6 +982,7 @@ impl crate::ToggleRunHandler {
     ///
     /// Semantic, input pass, high; called through the object's vtable.
     /// `bool (ToggleRunHandler* this, InputEvent* event)`
+    /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
     #[inline]
     pub fn can_process(&self, event: &crate::InputEvent) -> bool { unsafe { virtual_function!(self, 1, (*const Self, *const crate::InputEvent) -> bool)(core::ptr::from_ref(self), core::ptr::from_ref(event)) } }
 }
@@ -990,12 +1017,13 @@ pub fn compare_mapping_key(a: &crate::UserEventMapping, b: &crate::UserEventMapp
 /// `CompileAndRunScript`: compiles script->text and, when the result is non-empty, runs it on thisRef; compileType 1 (console) sets TLS+0x600 for the run
 ///
 /// Semantic, input pass, high; ledger runtime evidence, name high; id 441582, rva 0x343d00.
-/// `void (Script* script, ScriptCompiler* compiler, uint compileType, TESObjectREFR* thisRef)`
+/// `void (Script* script, ScriptCompiler* compiler, ScriptCompileType compileType, TESObjectREFR* thisRef)`
+/// Retyped: compileType uint -> ScriptCompileType: compileType 1 (console) sets TLS+0x600; g_ScriptCompileTypeNames.
 ///
 /// # Safety
 /// `compiler` must point to what the engine expects.
 #[inline]
-pub unsafe fn compile_and_run_script(script: *mut crate::Script, compiler: *mut c_void, compileType: u32, thisRef: *mut crate::TESObjectREFR) { unsafe { function!(441582, (*mut crate::Script, *mut c_void, u32, *mut crate::TESObjectREFR))(script, compiler, compileType, thisRef) } }
+pub unsafe fn compile_and_run_script(script: *mut crate::Script, compiler: *mut c_void, compileType: crate::ScriptCompileType, thisRef: *mut crate::TESObjectREFR) { unsafe { function!(441582, (*mut crate::Script, *mut c_void, crate::ScriptCompileType, *mut crate::TESObjectREFR))(script, compiler, compileType, thisRef) } }
 /// `CompileExpressionTokens`: compiles function calls inside set/if expressions as 'X' u16 opcode u16 len params, variables as 'r'/'G'/'Z' tokens
 ///
 /// Semantic, input pass, medium; ledger semantic evidence, name medium; id 21971, rva 0x34b9f0.
@@ -1062,12 +1090,13 @@ pub unsafe fn control_map__allow_text_entry(this: *mut c_void, begin: bool) { un
 /// `ControlMap::GetButtonNameForUserEvent`: user event -> key: first record with that name in contexts 0..0x11 (array order, not the stack) whose key low byte != 0xff; asks the device (EventSourceHolder_Input device[device] vtable+0x20) for the key's name
 ///
 /// Semantic, input pass, high; ledger semantic evidence, name high; id 68553, rva 0xcefd90.
-/// `bool (ControlMap* this, const BSFixedString* userEvent, u32 device, BSFixedString* outName)`
+/// `bool (ControlMap* this, const BSFixedString* userEvent, InputDevice device, BSFixedString* outName)`
+/// Retyped: device u32 -> InputDevice: InputDevice (0 keyboard, 1 mouse, 2 gamepad, 7 none/all); selects the device table and EventSourceHolder_Input device[device].
 ///
 /// # Safety
 /// `this`, `outName` must point to what the engine expects.
 #[inline]
-pub unsafe fn control_map__get_button_name_for_user_event(this: *mut c_void, userEvent: *const crate::BSFixedString, device: u32, outName: *mut crate::BSFixedString) -> bool { unsafe { function!(68553, (*mut c_void, *const crate::BSFixedString, u32, *mut crate::BSFixedString) -> bool)(this, userEvent, device, outName) } }
+pub unsafe fn control_map__get_button_name_for_user_event(this: *mut c_void, userEvent: *const crate::BSFixedString, device: crate::InputDevice, outName: *mut crate::BSFixedString) -> bool { unsafe { function!(68553, (*mut c_void, *const crate::BSFixedString, crate::InputDevice, *mut crate::BSFixedString) -> bool)(this, userEvent, device, outName) } }
 /// `ControlMap::GetControlState`: getter (save game, free camera)
 ///
 /// Semantic, input pass, high; ledger semantic evidence, name high; id 68548, rva 0xcefb80.
@@ -1080,12 +1109,13 @@ pub unsafe fn control_map__get_control_state(this: *mut c_void, enabled: *mut u3
 /// `ControlMap::GetMapping`: copies the record of a user event in one context/device; no static caller in 1.7.104 (only its .pdata entry)
 ///
 /// Semantic, input pass, medium; ledger semantic evidence, name medium; id 68567, rva 0xcf1150.
-/// `bool (ControlMap* this, const BSFixedString* userEvent, u32 context, u32 device, UserEventMapping* out)`
+/// `bool (ControlMap* this, const BSFixedString* userEvent, InputContext context, InputDevice device, UserEventMapping* out)`
+/// Retyped: device u32 -> InputDevice: InputDevice (0 keyboard, 1 mouse, 2 gamepad, 7 none/all); context u32 -> InputContext: InputContext: the PushInputContext callers are the enum's source.
 ///
 /// # Safety
 /// The pass rates the signature medium.
 #[inline]
-pub unsafe fn control_map__get_mapping(this: *mut c_void, userEvent: *const crate::BSFixedString, context: u32, device: u32, out: *mut crate::UserEventMapping) -> bool { unsafe { function!(68567, (*mut c_void, *const crate::BSFixedString, u32, u32, *mut crate::UserEventMapping) -> bool)(this, userEvent, context, device, out) } }
+pub unsafe fn control_map__get_mapping(this: *mut c_void, userEvent: *const crate::BSFixedString, context: crate::InputContextEnum, device: crate::InputDevice, out: *mut crate::UserEventMapping) -> bool { unsafe { function!(68567, (*mut c_void, *const crate::BSFixedString, crate::InputContextEnum, crate::InputDevice, *mut crate::UserEventMapping) -> bool)(this, userEvent, context, device, out) } }
 /// `ControlMap::HasMappingInContextStack`: true if any context on the stack maps the user event on any device (used by CursorMenu)
 ///
 /// Semantic, input pass, high; ledger semantic evidence, name high; id 68551, rva 0xcefbe0.
@@ -1108,6 +1138,7 @@ pub unsafe fn control_map__load_remap_file(this: *mut c_void) { unsafe { functio
 ///
 /// Semantic, input pass, high; ledger runtime evidence, name high; id 68542, rva 0xcef3b0.
 /// `void (ControlMap* this, InputEvent* head)`
+/// May be null: `head`.
 ///
 /// # Safety
 /// `this` must point to what the engine expects.
@@ -1116,48 +1147,53 @@ pub unsafe fn control_map__map_input_events(this: *mut c_void, head: *mut crate:
 /// `ControlMap::ParseDefinitionFile`: parses the tab-separated control map: blank line = next context (max 0x12), '//' comments, columns name, key per device (3), remappable per device (3), group flags (hex/sscanf); device 7 = all and rebuilds everything, otherwise only that device
 ///
 /// Semantic, input pass, high; ledger semantic evidence, name high; id 524121, rva 0xcf17d0.
-/// `void (ControlMap* this, const char* path, u32 device)`
+/// `void (ControlMap* this, const char* path, InputDevice device)`
+/// Retyped: device u32 -> InputDevice: InputDevice (0 keyboard, 1 mouse, 2 gamepad, 7 none/all); meaning: device 7 = all.
 ///
 /// # Safety
 /// `this`, `path` must point to what the engine expects.
 #[inline]
-pub unsafe fn control_map__parse_definition_file(this: *mut c_void, path: *const c_char, device: u32) { unsafe { function!(524121, (*mut c_void, *const c_char, u32))(this, path, device) } }
+pub unsafe fn control_map__parse_definition_file(this: *mut c_void, path: *const c_char, device: crate::InputDevice) { unsafe { function!(524121, (*mut c_void, *const c_char, crate::InputDevice))(this, path, device) } }
 /// `ControlMap::ParseKeyList`: splits a key column on ',' and 'A+B' (modifier<<16|key); default 0xff
 ///
 /// Semantic, input pass, high; ledger semantic evidence, name high; id 68556, rva 0xcf0560.
-/// `void (ControlMap* this, const char* text, BSTArray<u32>* out, u32 device)`
+/// `void (ControlMap* this, const char* text, BSTArray<u32>* out, InputDevice device)`
+/// Retyped: device u32 -> InputDevice: InputDevice (0 keyboard, 1 mouse, 2 gamepad, 7 none/all); key column of that device.
 ///
 /// # Safety
 /// `this`, `text`, `out` must point to what the engine expects.
 #[inline]
-pub unsafe fn control_map__parse_key_list(this: *mut c_void, text: *const c_char, out: *mut c_void, device: u32) { unsafe { function!(68556, (*mut c_void, *const c_char, *mut c_void, u32))(this, text, out, device) } }
+pub unsafe fn control_map__parse_key_list(this: *mut c_void, text: *const c_char, out: *mut c_void, device: crate::InputDevice) { unsafe { function!(68556, (*mut c_void, *const c_char, *mut c_void, crate::InputDevice))(this, text, out, device) } }
 /// `ControlMap::ParseLinkedMapping`: '!ctx,name' column: appends a LinkedMapping and key 0x7fffffff
 ///
 /// Semantic, input pass, high; ledger semantic evidence, name high; id 68557, rva 0xcf0a60.
-/// `void (ControlMap* this, BSTArray<u32>* keys, BSFixedString* name, u32 context, u32 device, const char* text)`
+/// `void (ControlMap* this, BSTArray<u32>* keys, BSFixedString* name, InputContext context, InputDevice device, const char* text)`
+/// Retyped: device u32 -> InputDevice: InputDevice (0 keyboard, 1 mouse, 2 gamepad, 7 none/all); context u32 -> InputContext: InputContext: the PushInputContext callers are the enum's source; '!ctx,name' column.
 ///
 /// # Safety
 /// `this`, `keys`, `name`, `text` must point to what the engine expects.
 #[inline]
-pub unsafe fn control_map__parse_linked_mapping(this: *mut c_void, keys: *mut c_void, name: *mut crate::BSFixedString, context: u32, device: u32, text: *const c_char) { unsafe { function!(68557, (*mut c_void, *mut c_void, *mut crate::BSFixedString, u32, u32, *const c_char))(this, keys, name, context, device, text) } }
+pub unsafe fn control_map__parse_linked_mapping(this: *mut c_void, keys: *mut c_void, name: *mut crate::BSFixedString, context: crate::InputContextEnum, device: crate::InputDevice, text: *const c_char) { unsafe { function!(68557, (*mut c_void, *mut c_void, *mut crate::BSFixedString, crate::InputContextEnum, crate::InputDevice, *const c_char))(this, keys, name, context, device, text) } }
 /// `ControlMap::PopInputContext`: remove every occurrence of the context; true if one was removed
 ///
 /// Semantic, input pass, high; ledger runtime evidence, name high; id 68544, rva 0xcef980.
-/// `bool (ControlMap* this, u32 context)`
+/// `bool (ControlMap* this, InputContext context)`
+/// Retyped: context u32 -> InputContext: InputContext: the PushInputContext callers are the enum's source.
 ///
 /// # Safety
 /// `this` must point to what the engine expects.
 #[inline]
-pub unsafe fn control_map__pop_input_context(this: *mut c_void, context: u32) -> bool { unsafe { function!(68544, (*mut c_void, u32) -> bool)(this, context) } }
+pub unsafe fn control_map__pop_input_context(this: *mut c_void, context: crate::InputContextEnum) -> bool { unsafe { function!(68544, (*mut c_void, crate::InputContextEnum) -> bool)(this, context) } }
 /// `ControlMap::PushInputContext`: push a context (0 goes to the bottom; a top 2 stays on top)
 ///
 /// Semantic, input pass, high; ledger runtime evidence, name high; id 68543, rva 0xcef8a0.
-/// `void (ControlMap* this, u32 context)`
+/// `void (ControlMap* this, InputContext context)`
+/// Retyped: context u32 -> InputContext: InputContext: the PushInputContext callers are the enum's source.
 ///
 /// # Safety
 /// `this` must point to what the engine expects.
 #[inline]
-pub unsafe fn control_map__push_input_context(this: *mut c_void, context: u32) { unsafe { function!(68543, (*mut c_void, u32))(this, context) } }
+pub unsafe fn control_map__push_input_context(this: *mut c_void, context: crate::InputContextEnum) { unsafe { function!(68543, (*mut c_void, crate::InputContextEnum))(this, context) } }
 /// `ControlMap::ReloadDefinitionFile`: re-parses sControlsDefinitionFile for all devices (reset to defaults)
 ///
 /// Semantic, input pass, high; ledger semantic evidence, name high; id 68536, rva 0xceece0.
@@ -1170,21 +1206,23 @@ pub unsafe fn control_map__reload_definition_file(this: *mut c_void) { unsafe { 
 /// `ControlMap::RemapUserEvent`: rebinds a remappable user event; for keyboard/mouse also unbinds it on the other of the two devices
 ///
 /// Semantic, input pass, high; ledger semantic evidence, name high; id 68538, rva 0xceee40.
-/// `bool (ControlMap* this, const BSFixedString* userEvent, u32 device, u32 newKey)`
+/// `bool (ControlMap* this, const BSFixedString* userEvent, InputDevice device, u32 newKey)`
+/// Retyped: device u32 -> InputDevice: InputDevice (0 keyboard, 1 mouse, 2 gamepad, 7 none/all); keyboard/mouse also unbind on the other.
 ///
 /// # Safety
 /// `this` must point to what the engine expects.
 #[inline]
-pub unsafe fn control_map__remap_user_event(this: *mut c_void, userEvent: *const crate::BSFixedString, device: u32, newKey: u32) -> bool { unsafe { function!(68538, (*mut c_void, *const crate::BSFixedString, u32, u32) -> bool)(this, userEvent, device, newKey) } }
+pub unsafe fn control_map__remap_user_event(this: *mut c_void, userEvent: *const crate::BSFixedString, device: crate::InputDevice, newKey: u32) -> bool { unsafe { function!(68538, (*mut c_void, *const crate::BSFixedString, crate::InputDevice, u32) -> bool)(this, userEvent, device, newKey) } }
 /// `ControlMap::RemapUserEventOnDevice`: finds the first context with the user event, swaps keys with a remappable (or 'Look') record already on newKey, sets the key, re-sorts
 ///
 /// Semantic, input pass, high; ledger semantic evidence, name high; id 68570, rva 0xcf1470.
-/// `bool (ControlMap* this, const BSFixedString* userEvent, u32 device, u32 newKey, BSFixedString* swappedEvent, u32* oldKey)`
+/// `bool (ControlMap* this, const BSFixedString* userEvent, InputDevice device, u32 newKey, BSFixedString* swappedEvent, u32* oldKey)`
+/// Retyped: device u32 -> InputDevice: InputDevice (0 keyboard, 1 mouse, 2 gamepad, 7 none/all).
 ///
 /// # Safety
 /// `this`, `swappedEvent`, `oldKey` must point to what the engine expects.
 #[inline]
-pub unsafe fn control_map__remap_user_event_on_device(this: *mut c_void, userEvent: *const crate::BSFixedString, device: u32, newKey: u32, swappedEvent: *mut crate::BSFixedString, oldKey: *mut u32) -> bool { unsafe { function!(68570, (*mut c_void, *const crate::BSFixedString, u32, u32, *mut crate::BSFixedString, *mut u32) -> bool)(this, userEvent, device, newKey, swappedEvent, oldKey) } }
+pub unsafe fn control_map__remap_user_event_on_device(this: *mut c_void, userEvent: *const crate::BSFixedString, device: crate::InputDevice, newKey: u32, swappedEvent: *mut crate::BSFixedString, oldKey: *mut u32) -> bool { unsafe { function!(68570, (*mut c_void, *const crate::BSFixedString, crate::InputDevice, u32, *mut crate::BSFixedString, *mut u32) -> bool)(this, userEvent, device, newKey, swappedEvent, oldKey) } }
 /// `ControlMap::ResetControlState`: -1 / 0x80000000 (PlayerCharacter::Revert)
 ///
 /// Semantic, input pass, high; ledger semantic evidence, name high; id 68550, rva 0xcefbc0.
@@ -1291,6 +1329,7 @@ pub fn detect_and_create_gamepad_device(handler: &crate::BSPCGamepadDeviceHandle
 ///
 /// Semantic, input pass, medium; ledger semantic evidence, name medium; id 21911, rva 0x3455a0.
 /// `bool (double* out, const void* data, uint32* offset, TESObjectREFR* thisRef, TESObjectREFR* containingObj, Script*, ScriptLocals*, bool)`
+/// May be null: `param_6`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -1300,6 +1339,7 @@ pub unsafe fn evaluate_script_operand_as_double(out: *mut f64, data: *const c_vo
 ///
 /// Semantic, input pass, medium; ledger semantic evidence, name medium; id 21946, rva 0x347400.
 /// `bool (ScriptCompileBuffer* buf, ScriptToken* token)`
+/// May be null: `token`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -1396,6 +1436,7 @@ pub unsafe fn read_script_token(buf: *mut c_void, out: *mut c_void, text: *const
 ///
 /// Semantic, input pass, high; ledger semantic evidence, name high; id 21891, rva 0x343ee0.
 /// `void (Stream* stream, ScriptCompiler* compiler, RefHandle* selectedRef, ConsoleLogPrinter* printer)`
+/// May be null: `printer`.
 ///
 /// # Safety
 /// `stream`, `compiler`, `selectedRef`, `printer` must point to what the engine expects.
@@ -1420,6 +1461,7 @@ pub unsafe fn run_queued_console_commands(q: *mut c_void) { unsafe { function!(5
 ///
 /// Semantic, input pass, high; ledger semantic evidence, name high; id 21886, rva 0x343960.
 /// `bool (Script* script, TESObjectREFR* thisRef, ScriptLocals* locals, TESObjectREFR* containingObj, bool force)`
+/// May be null: `thisRef`, `locals`, `containingObj`.
 ///
 /// # Safety
 /// `locals` must point to what the engine expects.
@@ -1429,6 +1471,7 @@ pub unsafe fn run_script_if_delay_elapsed(script: *mut crate::Script, thisRef: *
 ///
 /// Semantic, input pass, high; ledger semantic evidence, name high; id 23336, rva 0x386f20.
 /// `bool (ScriptRunState* state, Script*, TESObjectREFR* thisRef, ScriptLocals*, TESObjectREFR* containingObj, bool, u8, u8, u32)`
+/// May be null: `containingObj`.
 ///
 /// # Safety
 /// `state`, `a3` must point to what the engine expects.
@@ -1438,6 +1481,7 @@ pub unsafe fn run_with_reentrant_script_context(state: *mut c_void, a1: *mut cra
 ///
 /// Semantic, input pass, medium; ledger semantic evidence, name medium; id 21964, rva 0x34a280.
 /// `bool (ScriptCompiler* this, Script* script, ScriptCompileBuffer* buf)`
+/// May be null: `script`, `buf`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -1446,16 +1490,18 @@ pub unsafe fn script_compiler__compile(this: *mut c_void, script: *mut crate::Sc
 /// `ScriptCompiler::CompileScript`: builds a compile buffer (text, compileType at +0xc, partial-script flag +0x24 = 1, name = the script's editor id or g_ScriptCompileTypeNames[type]) and compiles
 ///
 /// Semantic, input pass, medium; ledger semantic evidence, name medium; id 21954, rva 0x347930.
-/// `bool (ScriptCompiler* this, Script* script, TESObjectREFR* ref, uint compileType)`
+/// `bool (ScriptCompiler* this, Script* script, TESObjectREFR* ref, ScriptCompileType compileType)`
+/// Retyped: compileType uint -> ScriptCompileType: stored at compile buffer +0xc; g_ScriptCompileTypeNames[type].
 ///
 /// # Safety
 /// The pass rates the signature medium.
 #[inline]
-pub unsafe fn script_compiler__compile_script(this: *mut c_void, script: *mut crate::Script, ref_: *mut crate::TESObjectREFR, compileType: u32) -> bool { unsafe { function!(21954, (*mut c_void, *mut crate::Script, *mut crate::TESObjectREFR, u32) -> bool)(this, script, ref_, compileType) } }
+pub unsafe fn script_compiler__compile_script(this: *mut c_void, script: *mut crate::Script, ref_: *mut crate::TESObjectREFR, compileType: crate::ScriptCompileType) -> bool { unsafe { function!(21954, (*mut c_void, *mut crate::Script, *mut crate::TESObjectREFR, crate::ScriptCompileType) -> bool)(this, script, ref_, compileType) } }
 /// `ScriptRunner::ExecuteStatement`: handles keywords (begin 0x10, set 0x15, if 0x16-0x19, return 0x1e); for a command: entry = GetCommandTableEntryByOpcode, skipped silently when referenceFunction && !thisRef, else entry->execute(params, script->data, thisRef, ctx->containingObj, script, ctx->locals, &result, &offset)
 ///
 /// Semantic, input pass, high; ledger semantic evidence, name high; id 23329, rva 0x386320.
 /// `bool (ScriptRunContext* ctx, Script* script, uint opcode, TESObjectREFR* thisRef, int* blockSkip, uint offset, int* skip, uint line, bool evalOnly, bool)`
+/// May be null: `thisRef`.
 ///
 /// # Safety
 /// `ctx`, `blockSkip`, `skip` must point to what the engine expects.
@@ -1465,6 +1511,7 @@ pub unsafe fn script_runner__execute_statement(ctx: *mut crate::ScriptRunContext
 ///
 /// Semantic, input pass, high; ledger semantic evidence, name high; id 23326, rva 0x385b40.
 /// `bool (ScriptRunContext* ctx, Script* script, TESObjectREFR* thisRef, ScriptLocals* locals, TESObjectREFR* containingObj, bool, u8, u8, u32)`
+/// May be null: `script`, `thisRef`, `locals`.
 ///
 /// # Safety
 /// `ctx`, `locals` must point to what the engine expects.

@@ -6551,7 +6551,7 @@ pub(super) const ROWS: &[Function] = &[
     Function { rva: 0x2fbdc0, id: 20067, confidence: Confidence::Medium, name: "TESObjectREFR::vfunc_131" },
     Function { rva: 0x2fbdd0, id: 20068, confidence: Confidence::Medium, name: "TESObjectREFR::vfunc_96" },
     Function { rva: 0x2fbde0, id: 20069, confidence: Confidence::Medium, name: "NiTMapBase<DFALL<NiTMapItem<BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>,BSPointerHandle<class_TESObjectREFR,class_BSUntypedPointerHandle<20,6>_>_>_>,BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>,BSPointerHandle<class_TESObjectREFR,class_BSUntypedPointerHandle<20,6>_>_>::vfunc_3" },
-    Function { rva: 0x2fbdf0, id: 20070, confidence: Confidence::Medium, name: "QuaternionToMatrix3" },
+    Function { rva: 0x2fbdf0, id: 20070, confidence: Confidence::High, name: "QuaternionToMatrix3" },
     Function { rva: 0x2fbf20, id: 20071, confidence: Confidence::Medium, name: "TESObjectREFR::vfunc_147" },
     Function { rva: 0x2fbf30, id: 20072, confidence: Confidence::Medium, name: "TESObjectREFR::vfunc_146" },
     Function { rva: 0x2fbf40, id: 20073, confidence: Confidence::Medium, name: "TESObjectREFR::vfunc_149" },

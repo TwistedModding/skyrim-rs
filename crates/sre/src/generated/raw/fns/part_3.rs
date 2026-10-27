@@ -3,6 +3,12 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `BGSProcedureUseWeaponExecState::ctor` at 0x493770 (layout_inference, medium); signature (high): `BGSProcedureUseWeaponExecState * ctor(BGSProcedureUseWeaponExecState * this)`
+pub const BGSProcedureUseWeaponExecState__ctor: u64 = 29385;
+/// `BGSProcedureUseWeaponExecState::dtor` at 0x4937b0 (layout_inference, high); signature (high): `undefined dtor(BGSProcedureUseWeaponExecState * this)`
+pub const BGSProcedureUseWeaponExecState__dtor: u64 = 29386;
+/// `BGSProcedureUseWeaponExecState::vdtor` at 0x494230 (slot_propagation, medium); signature (low): `BGSProcedureUseWeaponExecState * vdtor(BGSProcedureUseWeaponExecState * this, ulonglong param_1, longlong param_2, undefined8 param_3)`
+pub const BGSProcedureUseWeaponExecState__vdtor: u64 = 29402;
 /// `BGSProcedureUseWeaponExecState::vfunc_1` at 0x4938d0 (rtti, high); signature (low): `undefined vfunc_1(BGSProcedureUseWeaponExecState * this, undefined8 * param_1, undefined8 param_2, undefined8 param_3)`
 pub const BGSProcedureUseWeaponExecState__vfunc_1: u64 = 29387;
 /// `BGSProcedureUseWeaponExecState::vfunc_2` at 0x493980 (rtti, high); signature (high): `undefined vfunc_2(BGSProcedureUseWeaponExecState * this)`
@@ -341,7 +347,7 @@ pub const BGSSaveLoadGame__AddChange: u64 = 35576;
 pub type BGSSaveLoadGame__AddChange_fn = unsafe extern "C" fn(this: *mut crate::BGSSaveLoadGame, form: *mut crate::TESForm, flags: u32, force: bool) -> bool;
 /// `BGSSaveLoadGame::FinishLoadForms` at 0x615af0 (semantic, high); signature (untiered): `undefined FinishLoadForms(longlong param_1, BGSLoadGameBuffer * param_2, longlong * param_3, ulonglong param_4)`; runs TESForm slot 16 for every loaded record, waits for IO, then slot 17 and clears formFlags bit 21 (0x200000); frees the records (high); semantic signature: `void (BGSSaveLoadGame* this, bool full, ...)`
 pub const BGSSaveLoadGame__FinishLoadForms: u64 = 35567;
-/// `BGSSaveLoadGame::LoadGame` at 0x618970 (runtime, high); signature (untiered): `undefined8 LoadGame(longlong * param_1, longlong * param_2, char param_3, uint param_4, longlong * param_5, byte param_6)`; reads the body and applies it (high); semantic signature: `bool (BGSSaveLoadGame* this, Win32FileType* stream, bool ignoreMissing, u32 requestKind, BSTArray* missingNames, bool skipPluginMatch)`
+/// `BGSSaveLoadGame::LoadGame` at 0x618970 (runtime, high); signature (untiered): `undefined8 LoadGame(longlong * param_1, longlong * param_2, char param_3, uint param_4, longlong * param_5, byte param_6)`; reads the body and applies it (high); semantic signature: `bool (BGSSaveLoadGame* this, Win32FileType* stream, bool ignoreMissing, SaveLoadRequestKind requestKind, BSTArray* missingNames, bool skipPluginMatch)`
 pub const BGSSaveLoadGame__LoadGame: u64 = 35600;
 /// `BGSSaveLoadGame::LoadGame` as a function pointer type (high).
 pub type BGSSaveLoadGame__LoadGame_fn = unsafe extern "C" fn(this: *mut crate::BGSSaveLoadGame, stream: *mut c_void, ignoreMissing: bool, requestKind: u32, missingNames: *mut crate::BSTArray, skipPluginMatch: bool) -> bool;
@@ -401,17 +407,17 @@ pub type BGSSaveLoadManager__GetByte118_fn = unsafe extern "C" fn(this: *mut cra
 pub const BGSSaveLoadManager__IsSaveAllowedNow: u64 = 35734;
 /// `BGSSaveLoadManager::IsSaveAllowedNow` as a function pointer type (high).
 pub type BGSSaveLoadManager__IsSaveAllowedNow_fn = unsafe extern "C" fn(this: *mut crate::BGSSaveLoadManager, unusedFlag: bool) -> bool;
-/// `BGSSaveLoadManager::LoadGame` at 0x627de0 (runtime, high); signature (untiered): `undefined1 * LoadGame(longlong param_1, longlong * param_2, uint param_3, char param_4, byte param_5, uint param_6)`; main-thread load: header, missing-content dialogs, BGSSaveLoadGame::LoadGame, then FinishLoad (high); semantic signature: `bool (BGSSaveLoadManager*, Win32FileType** stream, u32 entryValue, bool ignoreMissing, bool skipPluginMatch, u32 requestKind)`
+/// `BGSSaveLoadManager::LoadGame` at 0x627de0 (runtime, high); signature (untiered): `undefined1 * LoadGame(longlong param_1, longlong * param_2, uint param_3, char param_4, byte param_5, uint param_6)`; main-thread load: header, missing-content dialogs, BGSSaveLoadGame::LoadGame, then FinishLoad (high); semantic signature: `bool (BGSSaveLoadManager*, Win32FileType** stream, u32 entryValue, bool ignoreMissing, bool skipPluginMatch, SaveLoadRequestKind requestKind)`
 pub const BGSSaveLoadManager__LoadGame: u64 = 442580;
 /// `BGSSaveLoadManager::LoadGame` as a function pointer type (high).
 pub type BGSSaveLoadManager__LoadGame_fn = unsafe extern "C" fn(a0: *mut crate::BGSSaveLoadManager, stream: *mut *mut c_void, entryValue: u32, ignoreMissing: bool, skipPluginMatch: bool, requestKind: u32) -> bool;
-/// `BGSSaveLoadManager::MakeSaveName` at 0x623da0 (semantic, high); signature (untiered): `undefined MakeSaveName(longlong param_1, longlong param_2, int param_3)`; builds the file name with format '%s%u_%s_%u_%s_%s_%s_%s_%u_%u': prefix 'Save'/'Autosave'/'Quicksave' and a number first; the other arguments come from the player id formatted with ID_206654, the character name re-encoded byte by byte with format ID_206653, the location name, play time '%02u%02u%02u', the date '%u%02u%02u%02u%02u%02u' and the level (their order in the varargs was not decoded); file-name-invalid characters become spaces (a double quote becomes an apostrophe), as do bytes >= 0x80 (high); semantic signature: `void (BGSSaveLoadManager*, char* out /*0x104*/, i32 kind)`
+/// `BGSSaveLoadManager::MakeSaveName` at 0x623da0 (semantic, high); signature (untiered): `undefined MakeSaveName(longlong param_1, longlong param_2, int param_3)`; builds the file name with format '%s%u_%s_%u_%s_%s_%s_%s_%u_%u': prefix 'Save'/'Autosave'/'Quicksave' and a number first; the other arguments come from the player id formatted with ID_206654, the character name re-encoded byte by byte with format ID_206653, the location name, play time '%02u%02u%02u', the date '%u%02u%02u%02u%02u%02u' and the level (their order in the varargs was not decoded); file-name-invalid characters become spaces (a double quote becomes an apostrophe), as do bytes >= 0x80 (high); semantic signature: `void (BGSSaveLoadManager*, char* out /*0x104*/, SaveKind kind)`
 pub const BGSSaveLoadManager__MakeSaveName: u64 = 35749;
 /// `BGSSaveLoadManager::OpenSaveFile` at 0x622390 (semantic, high); signature (untiered): `longlong * OpenSaveFile(longlong param_1, longlong * param_2, char * param_3, undefined1 param_4, int param_5)`; path via BSSaveDataSystemUtility slot 2 (temp adds '.tmp'), stream via slot 11, stores the name at stream+0xab0, opens it (high); semantic signature: `Win32FileType** (BGSSaveLoadManager*, Win32FileType** out, const char* name, bool temp, i32 kind)`
 pub const BGSSaveLoadManager__OpenSaveFile: u64 = 35724;
 /// `BGSSaveLoadManager::OpenSaveFile` as a function pointer type (high).
 pub type BGSSaveLoadManager__OpenSaveFile_fn = unsafe extern "C" fn(a0: *mut crate::BGSSaveLoadManager, out: *mut *mut c_void, name: *const c_char, temp: bool, kind: i32) -> *mut *mut c_void;
-/// `BGSSaveLoadManager::PrepareForLoad` at 0x627680 (runtime, high); signature (untiered): `undefined PrepareForLoad(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined1 * param_4)`; freeze the VM, reset TES/ref handle maps, wait for Havok, suspend the game (load kinds) or close all menus, stop VATS, drain navmesh/IO (high); semantic signature: `void (BGSSaveLoadManager*, u32 requestKind)`
+/// `BGSSaveLoadManager::PrepareForLoad` at 0x627680 (runtime, high); signature (untiered): `undefined PrepareForLoad(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined1 * param_4)`; freeze the VM, reset TES/ref handle maps, wait for Havok, suspend the game (load kinds) or close all menus, stop VATS, drain navmesh/IO (high); semantic signature: `void (BGSSaveLoadManager*, SaveLoadRequestKind requestKind)`
 pub const BGSSaveLoadManager__PrepareForLoad: u64 = 35779;
 /// `BGSSaveLoadManager::PrepareForLoad` as a function pointer type (high).
 pub type BGSSaveLoadManager__PrepareForLoad_fn = unsafe extern "C" fn(a0: *mut crate::BGSSaveLoadManager, requestKind: u32);
@@ -429,7 +435,7 @@ pub type BGSSaveLoadManager__RemoveSaveEntry_fn = unsafe extern "C" fn(a0: *mut 
 pub const BGSSaveLoadManager__RequestLoad: u64 = 35728;
 /// `BGSSaveLoadManager::RequestLoad` as a function pointer type (high).
 pub type BGSSaveLoadManager__RequestLoad_fn = unsafe extern "C" fn(a0: *mut crate::BGSSaveLoadManager, name: *const c_char, entryValue: u32, value: u32, ignoreMissing: bool) -> bool;
-/// `BGSSaveLoadManager::Save` at 0x6227f0 (runtime, high); signature (untiered): `ulonglong Save(longlong param_1, int param_2, undefined8 param_3, char * param_4)`; all saves: checks, name, stream, header, body, then write now (kind 2) or queue the write to the worker thread (3,4,5) (high); semantic signature: `bool (BGSSaveLoadManager* this, i32 kind /*2 manual,3 auto,4 quick,5 forced*/, u32 value, const char* name /*null = generated*/)`
+/// `BGSSaveLoadManager::Save` at 0x6227f0 (runtime, high); signature (untiered): `ulonglong Save(longlong param_1, int param_2, undefined8 param_3, char * param_4)`; all saves: checks, name, stream, header, body, then write now (kind 2) or queue the write to the worker thread (3,4,5) (high); semantic signature: `bool (BGSSaveLoadManager* this, SaveKind kind /*2 manual,3 auto,4 quick,5 forced*/, u32 value, const char* name /*null = generated*/)`
 pub const BGSSaveLoadManager__Save: u64 = 35727;
 /// `BGSSaveLoadManager::SetCurrentSaveName` at 0x624d70 (semantic, high); signature (untiered): `undefined SetCurrentSaveName(longlong param_1, undefined1 * param_2, undefined4 param_3)`; +0x138 = name, +0x250 = index (high); semantic signature: `void (BGSSaveLoadManager*, const char* name, u32 index)`
 pub const BGSSaveLoadManager__SetCurrentSaveName: u64 = 35765;
@@ -1531,10 +1537,10 @@ pub const BSAudioManager__ParkThread: u64 = 67659;
 pub type BSAudioManager__ParkThread_fn = unsafe extern "C" fn(this: *mut crate::BSAudioManager);
 /// `BSAudioManager::PostCategoryCommand` at 0xccbd30 (semantic, medium); signature (untiered): `undefined PostCategoryCommand(int * param_1, longlong param_2, ushort param_3, uint param_4)`; posts 0x33/0xc: each sound of the category fades to the category attenuation, then followUp (5 pause) (medium); semantic signature: `void (BSAudioManager* this, BSISoundCategory* category, uint16 fadeMs, uint32 followUp)`
 pub const BSAudioManager__PostCategoryCommand: u64 = 67681;
-/// `BSAudioManager::PostCommand` at 0xccd1a0 (semantic, high); signature (untiered): `uint PostCommand(int * param_1, int param_2, int param_3, int param_4, undefined8 param_5, longlong * param_6, int * param_7)`; 0x40 node under the spin lock 0x3273958 appended to the write list; dropped unless flags bit0 or type 1/2 (high); semantic signature: `uint32 (BSAudioManager* this, uint32 type, uint32 id, uint32 arg, uint64 ptrArg, NiPointer* ref, const float* vec3)`
+/// `BSAudioManager::PostCommand` at 0xccd1a0 (semantic, high); signature (untiered): `uint PostCommand(int * param_1, int param_2, int param_3, int param_4, undefined8 param_5, longlong * param_6, int * param_7)`; 0x40 node under the spin lock 0x3273958 appended to the write list; dropped unless flags bit0 or type 1/2 (high); semantic signature: `uint32 (BSAudioManager* this, AudioCommandType type, uint32 id, uint32 arg, uint64 ptrArg, NiPointer* ref, const NiPoint3* vec3)`
 pub const BSAudioManager__PostCommand: u64 = 67717;
 /// `BSAudioManager::PostCommand` as a function pointer type (high).
-pub type BSAudioManager__PostCommand_fn = unsafe extern "C" fn(this: *mut crate::BSAudioManager, type_: u32, id: u32, arg: u32, ptrArg: u64, ref_: *mut c_void, vec3: *const f32) -> u32;
+pub type BSAudioManager__PostCommand_fn = unsafe extern "C" fn(this: *mut crate::BSAudioManager, type_: u32, id: u32, arg: u32, ptrArg: u64, ref_: *mut c_void, vec3: *const crate::NiPoint3) -> u32;
 /// `BSAudioManager::ProcessCommand` at 0xccdc90 (semantic, high); signature (untiered): `IMAGE_DOS_HEADER * ProcessCommand(int * param_1, uint * param_2, undefined8 param_3, undefined8 param_4)`; switch over the command type (enum AudioCommandType); returns 1 when the node was kept, 2 to stop draining (0x27), else 0 (high); semantic signature: `uint32 (BSAudioManager* this, AudioCommand* cmd)`
 pub const BSAudioManager__ProcessCommand: u64 = 67726;
 /// `BSAudioManager::ProcessCommand` as a function pointer type (high).
@@ -1551,14 +1557,14 @@ pub type BSAudioManager__RefreshStatuses_fn = unsafe extern "C" fn(sounds: *mut 
 pub const BSAudioManager__RemoveSound: u64 = 67650;
 /// `BSAudioManager::RemoveSound` as a function pointer type (high).
 pub type BSAudioManager__RemoveSound_fn = unsafe extern "C" fn(unused: *mut c_void, id: u32) -> bool;
-/// `BSAudioManager::SetListenerOrientation` at 0xcccea0 (semantic, high); signature (untiered): `undefined SetListenerOrientation(int * param_1, int * param_2, int * param_3)`; posts 0x29 and 0x2a (high); semantic signature: `void (BSAudioManager* this, const float* forward, const float* up)`
+/// `BSAudioManager::SetListenerOrientation` at 0xcccea0 (semantic, high); signature (untiered): `undefined SetListenerOrientation(int * param_1, int * param_2, int * param_3)`; posts 0x29 and 0x2a (high); semantic signature: `void (BSAudioManager* this, const NiPoint3* forward, const NiPoint3* up)`
 pub const BSAudioManager__SetListenerOrientation: u64 = 67709;
 /// `BSAudioManager::SetListenerOrientation` as a function pointer type (high).
-pub type BSAudioManager__SetListenerOrientation_fn = unsafe extern "C" fn(this: *mut crate::BSAudioManager, forward: *const f32, up: *const f32);
-/// `BSAudioManager::SetListenerPosition` at 0xccce50 (semantic, high); signature (untiered): `undefined SetListenerPosition(int * param_1, int * param_2)`; posts 0x28 (high); semantic signature: `void (BSAudioManager* this, const float* xyz)`
+pub type BSAudioManager__SetListenerOrientation_fn = unsafe extern "C" fn(this: *mut crate::BSAudioManager, forward: *const crate::NiPoint3, up: *const crate::NiPoint3);
+/// `BSAudioManager::SetListenerPosition` at 0xccce50 (semantic, high); signature (untiered): `undefined SetListenerPosition(int * param_1, int * param_2)`; posts 0x28 (high); semantic signature: `void (BSAudioManager* this, const NiPoint3* xyz)`
 pub const BSAudioManager__SetListenerPosition: u64 = 67708;
 /// `BSAudioManager::SetListenerPosition` as a function pointer type (high).
-pub type BSAudioManager__SetListenerPosition_fn = unsafe extern "C" fn(this: *mut crate::BSAudioManager, xyz: *const f32);
+pub type BSAudioManager__SetListenerPosition_fn = unsafe extern "C" fn(this: *mut crate::BSAudioManager, xyz: *const crate::NiPoint3);
 /// `BSAudioManager::SetThreadSleepMs` at 0xccb0a0 (semantic, high); signature (untiered): `undefined SetThreadSleepMs(longlong param_1, undefined4 param_2)`; thread+0x64 (high); semantic signature: `void (BSAudioManager* this, uint32 ms)`
 pub const BSAudioManager__SetThreadSleepMs: u64 = 67661;
 /// `BSAudioManager::SetThreadSleepMs` as a function pointer type (high).
@@ -2170,7 +2176,7 @@ pub const BSDirectAtModifier__vfunc_7: u64 = 63192;
 /// `BSDirectAtModifierInterface::GetMountFreeRotation` at 0x8f9100 (semantic, high); signature (untiered): `longlong GetMountFreeRotation(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`; &state10.freeRotation, or &state12.freeRotation on a flying mount (high); semantic signature: `NiPoint2* (PlayerCamera* this)`
 pub const BSDirectAtModifierInterface__GetMountFreeRotation: u64 = 50802;
 /// `BSDirectAtModifierInterface::GetMountFreeRotation` as a function pointer type (high).
-pub type BSDirectAtModifierInterface__GetMountFreeRotation_fn = unsafe extern "C" fn(this: *mut crate::PlayerCamera) -> *mut c_void;
+pub type BSDirectAtModifierInterface__GetMountFreeRotation_fn = unsafe extern "C" fn(this: *mut crate::PlayerCamera) -> *mut crate::NiPoint2;
 /// `BSDirectAtModifierInterface::ctor` at 0x7db580 (layout_inference, high); signature (high): `BSDirectAtModifierInterface * ctor(BSDirectAtModifierInterface * this)`
 pub const BSDirectAtModifierInterface__ctor: u64 = 43655;
 /// `BSDirectAtModifierInterface::vdtor` at 0x7db9f0 (layout_inference, medium); signature (low): `BSDirectAtModifierInterface * vdtor(BSDirectAtModifierInterface * this, uint param_1, undefined8 param_2, undefined8 param_3)`
@@ -7088,7 +7094,7 @@ pub const BSPassByTargetTriggerModifier__vfunc_4: u64 = 63299;
 /// `BSPassByTargetTriggerModifierInterface::GetTargetPosition` at 0x7dbb40 (semantic, high); signature (untiered): `undefined GetTargetPosition(BSPassByTargetTriggerModifierInterface * this, float * param_1)`; the pass-by trigger modifier's target position is the player camera's: out = PlayerCamera::GetPosition, w = 0 (high); semantic signature: `void (BSPassByTargetTriggerModifierInterface* this, hkVector4* out)`
 pub const BSPassByTargetTriggerModifierInterface__GetTargetPosition: u64 = 43662;
 /// `BSPassByTargetTriggerModifierInterface::GetTargetPosition` as a function pointer type (high).
-pub type BSPassByTargetTriggerModifierInterface__GetTargetPosition_fn = unsafe extern "C" fn(this: *mut crate::BSPassByTargetTriggerModifierInterface, out: *mut c_void);
+pub type BSPassByTargetTriggerModifierInterface__GetTargetPosition_fn = unsafe extern "C" fn(this: *mut crate::BSPassByTargetTriggerModifierInterface, out: *mut crate::hkVector4);
 /// `BSPassByTargetTriggerModifierInterface::ctor` at 0x7dba40 (layout_inference, high); signature (high): `BSPassByTargetTriggerModifierInterface * ctor(BSPassByTargetTriggerModifierInterface * this)`
 pub const BSPassByTargetTriggerModifierInterface__ctor: u64 = 43659;
 /// `BSPassByTargetTriggerModifierInterface::vdtor` at 0x7dbc30 (layout_inference, medium); signature (low): `BSPassByTargetTriggerModifierInterface * vdtor(BSPassByTargetTriggerModifierInterface * this, uint param_1, undefined8 param_2, undefined8 param_3)`
@@ -8085,9 +8091,3 @@ pub const BSResource__CacheArchiveOp__vfunc_2: u64 = 69779;
 pub const BSResource__CacheArchiveOp__vfunc_3: u64 = 69780;
 /// `BSResource::CacheArchiveOp::vfunc_5` at 0xecc2e0 (rtti, high); signature (low): `undefined vfunc_5(void)`
 pub const BSResource__CacheArchiveOp__vfunc_5: u64 = 69778;
-/// `BSResource::CacheDrive::Impl::ctor` at 0xeda920 (layout_inference, medium); signature (high): `undefined ctor(Impl * this)`
-pub const BSResource__CacheDrive__Impl__ctor: u64 = 70130;
-/// `BSResource::CacheDrive::Impl::vdtor` at 0xedab20 (layout_inference, medium); signature (low): `Impl * vdtor(Impl * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const BSResource__CacheDrive__Impl__vdtor: u64 = 70136;
-/// `BSResource::CacheDrive::Impl::vfunc_1` at 0xedb2d0 (rtti, high); signature (low): `undefined8 vfunc_1(Impl * this, undefined8 param_1, longlong * * param_2, undefined8 * param_3)`
-pub const BSResource__CacheDrive__Impl__vfunc_1: u64 = 70145;

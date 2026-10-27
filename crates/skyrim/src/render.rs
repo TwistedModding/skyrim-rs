@@ -15,7 +15,7 @@ use core::ffi::{CStr, c_void};
 use core::sync::atomic::{AtomicU32, Ordering};
 
 use sre::raw::{fns, vtables};
-use sre::{BSCullingProcess, BSGeometry, BSLight, BSLightingShaderMaterialBase, BSShaderMaterial, BSShaderProperty, BSShaderTextureSet, BSShadowLight, BSTextureSet, CameraMatrixEntry, NiAVObject, NiCamera, NiNode, ShaderMaterialType, ShadowMapData, ShadowSceneNode};
+use sre::{BSCullingProcess, BSGeometry, BSLight, BSLightingShaderMaterialBase, BSShaderMaterial, BSShaderProperty, BSShaderTextureSet, BSShadowLight, BSTextureSet, CameraMatrixEntry, NiAVObject, NiCamera, NiNode, NiTransform, ShaderMaterialType, ShadowMapData, ShadowSceneNode, TextureSetSlot};
 
 use crate::forms::ptr_slice;
 
@@ -29,11 +29,6 @@ pub use fns::RenderWorld_fn as RenderWorldFn;
 /// culler's slot 22 and is the index of the node inside a `BSOrderedNode` (0xffffffff elsewhere),
 /// not a plane mask; a detour must pass it through unchanged.
 pub type CullFn = fns::NiAVObject__Cull_fn;
-
-/// `BSSceneGraph::SetFieldOfView` (id 106461): stores the FOV and, unless it is unchanged and
-/// `force` is clear, reframes the frame camera from the scene graph's near and far slots; a null
-/// camera means the graph's own, which the generated method cannot pass.
-type SetFieldOfView = unsafe extern "C" fn(graph: *mut sre::BSSceneGraph, fov: f32, force: bool, camera: *mut NiCamera, update_lod: bool);
 
 /// `NiAVObject::flags` bit 0: no culling process visits the object.
 pub const HIDDEN: u32 = 1;
@@ -164,8 +159,7 @@ pub fn set_near_plane(near: f32) {
     set_near_distance(near);
     let fov = sre::PlayerCamera::singleton().map_or(0.0, |c| c.worldFOV) + crate::camera::fov_offset();
     if let Some(graph) = sre::g_scene_graph() {
-        let set_field_of_view: SetFieldOfView = unsafe { crate::engine_fn(fns::BSSceneGraph__SetFieldOfView) };
-        unsafe { set_field_of_view(core::ptr::from_ref(graph).cast_mut().cast(), fov, true, core::ptr::null_mut(), true) };
+        graph.set_field_of_view(fov, true, None, true);
     }
 }
 
@@ -248,13 +242,20 @@ pub fn shadow_scene_node(index: usize) -> Option<&'static ShadowSceneNode> {
     unsafe { (*slots).get(index)?.as_ref() }
 }
 
-/// The `N` floats at the start of a field the ledger lays out as bytes (a point, a matrix, a frustum).
+/// The `N` floats at the start of a field: a math value type (`NiPoint3`, `NiMatrix3`) or bytes
+/// the ledger has not typed.
+///
+/// # Panics
+/// When the field is shorter than `N` floats.
 #[must_use]
-pub fn floats<const N: usize>(bytes: &[u8]) -> [f32; N] {
-    core::array::from_fn(|i| f32::from_le_bytes([bytes[i * 4], bytes[i * 4 + 1], bytes[i * 4 + 2], bytes[i * 4 + 3]]))
+pub fn floats<const N: usize>(field: &impl Sized) -> [f32; N] {
+    assert!(size_of_val(field) >= N * 4, "the field holds fewer than {N} floats");
+    unsafe { core::ptr::from_ref(field).cast::<[f32; N]>().read_unaligned() }
 }
 
-/// Rotation, translation and scale as `NiTransform` lays them out (rotation rows first).
+/// Rotation, translation and scale as `NiTransform` lays them out (rotation rows first), as a
+/// plain value.
+#[repr(C)]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub struct Transform {
     pub rotation: [[f32; 3]; 3],
@@ -262,24 +263,11 @@ pub struct Transform {
     pub scale: f32,
 }
 
-impl Transform {
-    fn to_bytes(self) -> [u8; 0x34] {
-        let mut b = [0u8; 0x34];
-        let mut i = 0;
-        for value in self.rotation.iter().flatten().chain(self.translation.iter()).chain(core::iter::once(&self.scale)) {
-            b[i..i + 4].copy_from_slice(&value.to_le_bytes());
-            i += 4;
-        }
-        b
-    }
+const _: () = assert!(size_of::<Transform>() == size_of::<NiTransform>());
 
-    #[must_use]
-    pub fn from_bytes(b: &[u8; 0x34]) -> Self {
-        Self {
-            rotation: [floats(&b[0..]), floats(&b[12..]), floats(&b[24..])],
-            translation: floats(&b[36..]),
-            scale: floats::<1>(&b[48..])[0],
-        }
+impl From<&NiTransform> for Transform {
+    fn from(t: &NiTransform) -> Self {
+        unsafe { core::ptr::from_ref(t).cast::<Self>().read_volatile() }
     }
 }
 
@@ -360,15 +348,15 @@ impl NiAVObjectExt for NiAVObject {
     }
 
     fn local_transform(&self) -> Transform {
-        Transform::from_bytes(&self.local)
+        Transform::from(&self.local)
     }
 
     fn set_local_transform(&self, local: Transform) {
-        crate::store(&self.local, local.to_bytes());
+        unsafe { core::ptr::from_ref(&self.local).cast::<Transform>().cast_mut().write_volatile(local) }
     }
 
     fn world_transform(&self) -> Transform {
-        Transform::from_bytes(&self.world)
+        Transform::from(&self.world)
     }
 
     fn update_transforms(&self) {
@@ -494,19 +482,19 @@ pub trait BSShaderMaterialExt {
 
 impl BSShaderMaterialExt for BSShaderMaterial {
     fn as_lighting(&self) -> Option<&BSLightingShaderMaterialBase> {
-        (self.get_type() == ShaderMaterialType::Lighting as u32).then(|| unsafe { &*core::ptr::from_ref(self).cast::<BSLightingShaderMaterialBase>() })
+        (self.get_type() == Ok(ShaderMaterialType::Lighting)).then(|| unsafe { &*core::ptr::from_ref(self).cast::<BSLightingShaderMaterialBase>() })
     }
 }
 
 pub trait BSTextureSetExt {
-    /// The path in `slot` (0..9, slot 0 the diffuse map) of a `BSShaderTextureSet` through its
-    /// `GetTexturePath`; `None` when unset or when the set is of another class.
-    fn texture_path(&self, slot: u32) -> Option<&CStr>;
+    /// The path in `slot` of a `BSShaderTextureSet` through its `GetTexturePath`; `None` when
+    /// unset or when the set is of another class.
+    fn texture_path(&self, slot: TextureSetSlot) -> Option<&CStr>;
 }
 
 impl BSTextureSetExt for BSTextureSet {
-    fn texture_path(&self, slot: u32) -> Option<&CStr> {
-        if slot >= 9 || crate::class_of(self)?.id != vtables::BSShaderTextureSet_vtable::ID {
+    fn texture_path(&self, slot: TextureSetSlot) -> Option<&CStr> {
+        if crate::class_of(self)?.id != vtables::BSShaderTextureSet_vtable::ID {
             return None;
         }
         let p = unsafe { &*core::ptr::from_ref(self).cast::<BSShaderTextureSet>() }.get_texture_path(slot);

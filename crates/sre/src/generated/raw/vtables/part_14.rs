@@ -747,7 +747,7 @@ impl MapCamera_vtable {
 /// `MapCamera::Destroy`, slot 0: releases transition and exit states, destroys worldStates, TESCamera::dtor, frees 0x90 when flags & 1 (high).
 pub type MapCamera_vtable_Destroy = unsafe extern "C" fn(this: *mut crate::MapCamera, flags: u32) -> *mut crate::MapCamera;
 /// `MapCamera::Enter`, slot 3: sets the root; with a root and a worldspace: hides the player's first-person 3D, orients the root by the map's default pitch, places it at position, configures worldStates[index] around position, starts the Transition (mode 1) into it (high).
-pub type MapCamera_vtable_Enter = unsafe extern "C" fn(this: *mut crate::MapCamera, root: *mut crate::NiNode, position: *const c_void);
+pub type MapCamera_vtable_Enter = unsafe extern "C" fn(this: *mut crate::MapCamera, root: *mut crate::NiNode, position: *const crate::NiPoint3);
 
 /// `MapCameraStates::Exit::vftable` at 0x1985ff0, id 216445 (rtti, high); 9 slots.
 #[repr(C)]
@@ -811,9 +811,9 @@ pub type MapCameraStates__Exit_vtable_Begin = unsafe extern "C" fn(this: *mut cr
 /// `MapCameraStates::Exit::Update`, slot 3: queues {MapMenu, hide (3)} and {HUD Menu, show (1)} on every Update (high).
 pub type MapCameraStates__Exit_vtable_Update = unsafe extern "C" fn(this: *mut crate::MapCameraStates__Exit, next: *mut c_void);
 /// `MapCameraStates::Exit::GetRotation`, slot 4: a rotation about one axis by the map's default pitch: SinCos(mapData+0x18 * -pi/360) into the first two components, the last two 0; unchanged when the camera has no worldspace (high).
-pub type MapCameraStates__Exit_vtable_GetRotation = unsafe extern "C" fn(this: *const crate::MapCameraStates__Exit, out: *mut c_void);
+pub type MapCameraStates__Exit_vtable_GetRotation = unsafe extern "C" fn(this: *const crate::MapCameraStates__Exit, out: *mut crate::NiQuaternion);
 /// `MapCameraStates::Exit::GetTranslation`, slot 5: *out = camera->entryPosition (+0x40) (high).
-pub type MapCameraStates__Exit_vtable_GetTranslation = unsafe extern "C" fn(this: *const crate::MapCameraStates__Exit, out: *mut c_void);
+pub type MapCameraStates__Exit_vtable_GetTranslation = unsafe extern "C" fn(this: *const crate::MapCameraStates__Exit, out: *mut crate::NiPoint3);
 
 /// `MapCameraStates::Transition::vftable` at 0x1985fa0, id 216443 (rtti, high); 9 slots.
 #[repr(C)]
@@ -927,9 +927,9 @@ pub type MapCameraStates__World_vtable_Begin = unsafe extern "C" fn(this: *mut c
 /// `MapCameraStates::World::Update`, slot 3: the map camera step: delta = min(frameDelta, 0.033); yaw/pitch with soft limits; root local rotation = BuildRotationMatrixFromAngles_2 0xede800(yaw, 0, pitch); pan; bounds; terrain-height follow; zoom; root local translation = position; UpdateNode (high).
 pub type MapCameraStates__World_vtable_Update = unsafe extern "C" fn(this: *mut crate::MapCameraStates__World, next: *mut c_void);
 /// `MapCameraStates::World::GetRotation`, slot 4: quaternion looking from GetTranslation toward basePosition (high).
-pub type MapCameraStates__World_vtable_GetRotation = unsafe extern "C" fn(this: *const crate::MapCameraStates__World, out: *mut c_void);
+pub type MapCameraStates__World_vtable_GetRotation = unsafe extern "C" fn(this: *const crate::MapCameraStates__World, out: *mut crate::NiQuaternion);
 /// `MapCameraStates::World::GetTranslation`, slot 5: camera position: basePosition.xy + panOffset.xy + heightOffset.xy + zoom * zoomAxis.xy; z = panOffset.z + terrainHeight + heightOffset.z + zoom * zoomAxis.z (high).
-pub type MapCameraStates__World_vtable_GetTranslation = unsafe extern "C" fn(this: *const crate::MapCameraStates__World, out: *mut c_void);
+pub type MapCameraStates__World_vtable_GetTranslation = unsafe extern "C" fn(this: *const crate::MapCameraStates__World, out: *mut crate::NiPoint3);
 
 /// `MapInputHandler::vftable` at 0x1987128, id 216489 (rtti, high); 8 slots.
 #[repr(C)]

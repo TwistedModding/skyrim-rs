@@ -3739,13 +3739,6 @@ pub unsafe fn build_planes_and_get_field50(param_1: i64, param_2: *mut f32) -> i
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn build_planes_from_quad_corners_and_point(param_1: i64, param_2: *mut f32) -> u64 { unsafe { function!(76429, (i64, *mut f32) -> u64)(param_1, param_2) } }
-/// `BuildQuaternionFromEulerAngles` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 70843, rva 0xef9110).
-/// `undefined BuildQuaternionFromEulerAngles(float * param_1, float param_2, float param_3, float param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn build_quaternion_from_euler_angles(param_1: *mut f32, param_2: f32, param_3: f32, param_4: f32) -> u64 { unsafe { function!(70843, (*mut f32, f32, f32, f32) -> u64)(param_1, param_2, param_3, param_4) } }
 /// `BuildReferenceDestination` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 27336, rva 0x448a80).
 /// `longlong BuildReferenceDestination(longlong * param_1, float param_2, float param_3)`
 ///
@@ -4138,13 +4131,6 @@ pub unsafe fn check_matrix3_row_components(param_1: i64, param_2: *mut u8) -> *m
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn check_usable_attack_items_for_type_mask(param_1: i64, param_2: *mut u32) -> u64 { unsafe { function!(47349, (i64, *mut u32) -> u64)(param_1, param_2) } }
-/// `ClampColorComponentsToOne` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 70690, rva 0xef2e80).
-/// `undefined ClampColorComponentsToOne(float * param_1)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn clamp_color_components_to_one(param_1: *mut f32) -> u64 { unsafe { function!(70690, (*mut f32) -> u64)(param_1) } }
 /// `ClampMatrixGroupRms` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 27037, rva 0x43c1e0).
 /// `undefined ClampMatrixGroupRms(longlong param_1, float param_2)`
 ///
@@ -10536,13 +10522,6 @@ pub unsafe fn decode_worldspace_index_with_byte_coords(param_1: *mut u32, param_
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn decode_worldspace_index_with_short_coords(param_1: *mut u32, param_2: *mut u16) -> u64 { unsafe { function!(35701, (*mut u32, *mut u16) -> u64)(param_1, param_2) } }
-/// `DecomposeMatrixToEulerAngles` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 70215, rva 0xeddc30).
-/// `undefined1 DecomposeMatrixToEulerAngles(undefined4 * param_1, uint * param_2, float * param_3, uint * param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn decompose_matrix_to_euler_angles(param_1: *mut u32, param_2: *mut u32, param_3: *mut f32, param_4: *mut u32) -> u8 { unsafe { function!(70215, (*mut u32, *mut u32, *mut f32, *mut u32) -> u8)(param_1, param_2, param_3, param_4) } }
 /// `DecrementEntryStateOrAppendToList401690` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 26764, rva 0x42f1b0).
 /// `undefined DecrementEntryStateOrAppendToList401690(longlong param_1)`
 ///
@@ -13777,3 +13756,24 @@ pub unsafe fn detach_result_set_field670_2(param_1: i64, param_2: *mut u64, para
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn detach_result_set_field90(param_1: i64, param_2: *mut u64, param_3: u64) -> *mut u64 { unsafe { function!(447479, (i64, *mut u64, u64) -> *mut u64)(param_1, param_2, param_3) } }
+/// `DetachResultSetField90_10` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 447576, rva 0x135bc10).
+/// `undefined8 * DetachResultSetField90_10(longlong param_1, undefined8 * param_2, undefined8 param_3)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn detach_result_set_field90_10(param_1: i64, param_2: *mut u64, param_3: u64) -> *mut u64 { unsafe { function!(447576, (i64, *mut u64, u64) -> *mut u64)(param_1, param_2, param_3) } }
+/// `DetachResultSetField90_11` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 447968, rva 0x135cdf0).
+/// `undefined8 * DetachResultSetField90_11(longlong param_1, undefined8 * param_2, undefined8 param_3)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn detach_result_set_field90_11(param_1: i64, param_2: *mut u64, param_3: u64) -> *mut u64 { unsafe { function!(447968, (i64, *mut u64, u64) -> *mut u64)(param_1, param_2, param_3) } }
+/// `DetachResultSetField90_12` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 447631, rva 0x135dc40).
+/// `undefined8 * DetachResultSetField90_12(longlong param_1, undefined8 * param_2, undefined8 param_3)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn detach_result_set_field90_12(param_1: i64, param_2: *mut u64, param_3: u64) -> *mut u64 { unsafe { function!(447631, (i64, *mut u64, u64) -> *mut u64)(param_1, param_2, param_3) } }

@@ -3,6 +3,12 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `BSResource::CacheDrive::Impl::ctor` at 0xeda920 (layout_inference, medium); signature (high): `undefined ctor(Impl * this)`
+pub const BSResource__CacheDrive__Impl__ctor: u64 = 70130;
+/// `BSResource::CacheDrive::Impl::vdtor` at 0xedab20 (layout_inference, medium); signature (low): `Impl * vdtor(Impl * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const BSResource__CacheDrive__Impl__vdtor: u64 = 70136;
+/// `BSResource::CacheDrive::Impl::vfunc_1` at 0xedb2d0 (rtti, high); signature (low): `undefined8 vfunc_1(Impl * this, undefined8 param_1, longlong * * param_2, undefined8 * param_3)`
+pub const BSResource__CacheDrive__Impl__vfunc_1: u64 = 70145;
 /// `BSResource::CacheDrive::Impl::vfunc_1_sub0` at 0xed8640 (callgraph, medium); signature (untiered): `bool vfunc_1_sub0(longlong * param_1, FILETIME * param_2, longlong * * param_3, undefined8 * param_4)`
 pub const BSResource__CacheDrive__Impl__vfunc_1_sub0: u64 = 70090;
 /// `BSResource::CacheDrive::Impl::vfunc_1_sub1` at 0xed8940 (callgraph, medium); signature (untiered): `bool vfunc_1_sub1(longlong * param_1, ulonglong * param_2)`
@@ -3992,7 +3998,7 @@ pub const BSShader__BSReloadShaderI_vfunc_0: u64 = 108325;
 /// `BSShader::NiBoneMatrixSetterI::SetBoneMatrices` at 0x1578c80 (semantic, high); signature (untiered): `undefined SetBoneMatrices(void * this, longlong param_1, longlong param_2, float * param_3)`; slot 1 of the setter interface at BSShader+0x10: when skin differs from the thread's last skin (TLS+0x2a00) and partition+0x3c != 0, UpdatePalette, then upload palette to VS constant buffer 10 and previousPalette to buffer 9 (count*3 float4 each) (high); semantic signature: `void (NiBoneMatrixSetterI* this, NiSkinInstance* skin, NiSkinPartition::Partition* partition, const NiTransform* geometryWorld)`
 pub const BSShader__NiBoneMatrixSetterI__SetBoneMatrices: u64 = 108322;
 /// `BSShader::NiBoneMatrixSetterI::SetBoneMatrices` as a function pointer type (high).
-pub type BSShader__NiBoneMatrixSetterI__SetBoneMatrices_fn = unsafe extern "C" fn(this: *mut crate::NiBoneMatrixSetterI, skin: *mut crate::NiSkinInstance, partition: *mut crate::NiSkinPartition__Partition, geometryWorld: *const c_void);
+pub type BSShader__NiBoneMatrixSetterI__SetBoneMatrices_fn = unsafe extern "C" fn(this: *mut crate::NiBoneMatrixSetterI, skin: *mut crate::NiSkinInstance, partition: *mut crate::NiSkinPartition__Partition, geometryWorld: *const crate::NiTransform);
 /// `BSShader::NiBoneMatrixSetterI_vdtor` at 0x15796dc (slot_propagation, medium); signature (high): `undefined NiBoneMatrixSetterI_vdtor(BSShader * this)`
 pub const BSShader__NiBoneMatrixSetterI_vdtor: u64 = 108337;
 /// `BSShader::SetupMaterial` at 0x1578910 (semantic, high); signature (untiered): `undefined SetupMaterial(void)`
@@ -4317,11 +4323,11 @@ pub const BSShaderTextureSet__vfunc_26: u64 = 107165;
 pub const BSShaderTextureSet__vfunc_27: u64 = 107166;
 /// `BSShaderTextureSet::vfunc_28` at 0x153b2d0 (rtti, high); signature (low): `undefined1 vfunc_28(void)`
 pub const BSShaderTextureSet__vfunc_28: u64 = 107167;
-/// `BSShadowDirectionalLight::BlendDirection` at 0x1581730 (semantic, high); signature (untiered): `undefined BlendDirection(longlong param_1, float * param_2, int param_3)`; smooth sun direction: snap on a camera jump, restart the blend when the change exceeds fSunUpdateThreshold (cos cached in 0x20d9528), advance by frameDelta / fSunShadowUpdateTime (high); semantic signature: `void (BSShadowDirectionalLight* this, float* inOutDirection, u32 previousCameraJumped)`
+/// `BSShadowDirectionalLight::BlendDirection` at 0x1581730 (semantic, high); signature (untiered): `undefined BlendDirection(longlong param_1, float * param_2, int param_3)`; smooth sun direction: snap on a camera jump, restart the blend when the change exceeds fSunUpdateThreshold (cos cached in 0x20d9528), advance by frameDelta / fSunShadowUpdateTime (high); semantic signature: `void (BSShadowDirectionalLight* this, NiPoint3* inOutDirection, u32 previousCameraJumped)`
 pub const BSShadowDirectionalLight__BlendDirection: u64 = 108497;
 /// `BSShadowDirectionalLight::BlendDirection` as a function pointer type (high).
-pub type BSShadowDirectionalLight__BlendDirection_fn = unsafe extern "C" fn(this: *mut crate::BSShadowDirectionalLight, inOutDirection: *mut f32, previousCameraJumped: u32);
-/// `BSShadowDirectionalLight::BuildCullPlanes` at 0x1581a80 (semantic, medium); signature (untiered): `undefined BuildCullPlanes(undefined8 param_1, longlong param_2, longlong param_3, uint * param_4, uint param_5, float * param_6, float * param_7, uint param_8)`; six cull planes (+ mask 0x3f) from the 2D convex hull of the projected frustum corners, copied into the culler's +0xac..+0x118 (medium); semantic signature: `void (BSShadowDirectionalLight* this, float* outPlanes, float* corners, u32* hull, u32 hullCount, float* lightAxes, float* origin, u32 farCorner)`
+pub type BSShadowDirectionalLight__BlendDirection_fn = unsafe extern "C" fn(this: *mut crate::BSShadowDirectionalLight, inOutDirection: *mut crate::NiPoint3, previousCameraJumped: u32);
+/// `BSShadowDirectionalLight::BuildCullPlanes` at 0x1581a80 (semantic, medium); signature (untiered): `undefined BuildCullPlanes(undefined8 param_1, longlong param_2, longlong param_3, uint * param_4, uint param_5, float * param_6, float * param_7, uint param_8)`; six cull planes (+ mask 0x3f) from the 2D convex hull of the projected frustum corners, copied into the culler's +0xac..+0x118 (medium); semantic signature: `void (BSShadowDirectionalLight* this, float* outPlanes, NiPoint3* corners, u32* hull, u32 hullCount, float* lightAxes, NiPoint3* origin, u32 farCorner)`
 pub const BSShadowDirectionalLight__BuildCullPlanes: u64 = 108499;
 /// `BSShadowDirectionalLight::CullCasters` at 0x157ead0 (runtime, high); signature (untiered): `undefined CullCasters(BSShadowDirectionalLight * this, uint * param_1)`
 pub const BSShadowDirectionalLight__CullCasters: u64 = 108488;
@@ -6221,7 +6227,3 @@ pub const BSTDerivedCreator_BShkVisibilityController_BShkNonTransformController_
 pub const BSTDerivedCreator_BShkVisibilityController_BShkNonTransformController__vfunc_2: u64 = 63839;
 /// `BSTDerivedCreator<BedEnterHandler,IHandlerFunctor<Actor,BSFixedStringCI>_>::vdtor` at 0x7d2860 (layout_inference, medium); signature (low): `BSTDerivedCreator<BedEnterHandler,IHandlerFunctor<Actor,BSFixedStringCI>_> * vdtor(BSTDerivedCreator<BedEnterHandler,IHandlerFunctor<Actor,BSFixedStringCI>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const BSTDerivedCreator_BedEnterHandler_IHandlerFunctor_Actor_BSFixedStringCI____vdtor: u64 = 43204;
-/// `BSTDerivedCreator<BedEnterHandler,IHandlerFunctor<Actor,BSFixedStringCI>_>::vfunc_1` at 0x7d4ea0 (rtti, medium); signature (low): `undefined vfunc_1(BSTDerivedCreator<BedEnterHandler,IHandlerFunctor<Actor,BSFixedStringCI>_> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-pub const BSTDerivedCreator_BedEnterHandler_IHandlerFunctor_Actor_BSFixedStringCI____vfunc_1: u64 = 43392;
-/// `BSTDerivedCreator<BedEnterHandler,IHandlerFunctor<Actor,BSFixedStringCI>_>::vfunc_2` at 0x7d6d80 (rtti, medium); signature (low): `undefined vfunc_2(BSTDerivedCreator<BedEnterHandler,IHandlerFunctor<Actor,BSFixedStringCI>_> * this, undefined8 * param_1)`
-pub const BSTDerivedCreator_BedEnterHandler_IHandlerFunctor_Actor_BSFixedStringCI____vfunc_2: u64 = 43485;

@@ -3,41 +3,6 @@
 
 use core::ffi::{c_char, c_void};
 
-/// `OpenSlotAtStride18` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 47167, rva 0x861570).
-/// `undefined OpenSlotAtStride18(longlong * param_1, uint param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn open_slot_at_stride18(param_1: *mut i64, param_2: u32) -> u64 { unsafe { function!(47167, (*mut i64, u32) -> u64)(param_1, param_2) } }
-/// `OpenSlotAtStride4` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 47165, rva 0x8614d0).
-/// `undefined OpenSlotAtStride4(longlong * param_1, uint param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn open_slot_at_stride4(param_1: *mut i64, param_2: u32) -> u64 { unsafe { function!(47165, (*mut i64, u32) -> u64)(param_1, param_2) } }
-/// `OpenTextGapAndShiftRuns` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 88412, rva 0xe3df20).
-/// `longlong OpenTextGapAndShiftRuns(longlong * param_1, longlong param_2, longlong param_3, longlong param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn open_text_gap_and_shift_runs(param_1: *mut i64, param_2: i64, param_3: i64, param_4: i64) -> i64 { unsafe { function!(88412, (*mut i64, i64, i64, i64) -> i64)(param_1, param_2, param_3, param_4) } }
-/// `OpenWideCharGapAt` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 88413, rva 0xe3df90).
-/// `longlong OpenWideCharGapAt(longlong * param_1, longlong param_2, longlong param_3, longlong param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn open_wide_char_gap_at(param_1: *mut i64, param_2: i64, param_3: i64, param_4: i64) -> i64 { unsafe { function!(88413, (*mut i64, i64, i64, i64) -> i64)(param_1, param_2, param_3, param_4) } }
-/// `OperatorDelete` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 109588, rva 0x15a743c).
-/// `undefined OperatorDelete(void * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn operator_delete(param_1: *mut c_void, param_2: u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(109588, (*mut c_void, u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
 /// `OrthonormalizeMatrix3x3` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 70226, rva 0xede960).
 /// `undefined1 OrthonormalizeMatrix3x3(float * param_1)`
 ///
@@ -5169,13 +5134,6 @@ pub unsafe fn quantize_points_to_int16(param_1: f32, param_2: *mut f32, param_3:
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn quantize_value_to_byte_index(param_1: *mut u8, param_2: *mut i32) -> *mut u8 { unsafe { function!(57086, (*mut u8, *mut i32) -> *mut u8)(param_1, param_2) } }
-/// `QuaternionToMatrix3` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 20070, rva 0x2fbdf0).
-/// `undefined QuaternionToMatrix3(float * param_1, float * param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn quaternion_to_matrix3(param_1: *mut f32, param_2: *mut f32) -> u64 { unsafe { function!(20070, (*mut f32, *mut f32) -> u64)(param_1, param_2) } }
 /// `QuaternionToMatrix3x4` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 57081, rva 0xaa3f40).
 /// `undefined QuaternionToMatrix3x4(float * param_1, float * param_2)`
 ///
@@ -13471,3 +13429,45 @@ pub unsafe fn resize_scrap_array(param_1: *mut i64, param_2: u32, param_3: u64, 
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn resize_scrap_array12(param_1: *mut i64, param_2: u32, param_3: u64, param_4: u64) -> c_char { unsafe { function!(527791, (*mut i64, u32, u64, u64) -> c_char)(param_1, param_2, param_3, param_4) } }
+/// `ResizeScrapArrayOfDwords` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 71507, rva 0xf15200).
+/// `ulonglong ResizeScrapArrayOfDwords(longlong * param_1, uint param_2, undefined8 param_3, undefined8 param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn resize_scrap_array_of_dwords(param_1: *mut i64, param_2: u32, param_3: u64, param_4: u64) -> u64 { unsafe { function!(71507, (*mut i64, u32, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
+/// `ResizeScrapArrayOfRecord28` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 523762, rva 0x5adbf0).
+/// `char ResizeScrapArrayOfRecord28(longlong * param_1, ulonglong param_2, undefined8 param_3, undefined8 param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn resize_scrap_array_of_record28(param_1: *mut i64, param_2: u64, param_3: u64, param_4: u64) -> c_char { unsafe { function!(523762, (*mut i64, u64, u64, u64) -> c_char)(param_1, param_2, param_3, param_4) } }
+/// `ResizeScrapArrayStride10` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 42497, rva 0x7b6bb0).
+/// `char ResizeScrapArrayStride10(longlong * param_1, uint param_2, undefined8 param_3, undefined8 param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn resize_scrap_array_stride10(param_1: *mut i64, param_2: u32, param_3: u64, param_4: u64) -> c_char { unsafe { function!(42497, (*mut i64, u32, u64, u64) -> c_char)(param_1, param_2, param_3, param_4) } }
+/// `ResizeSmallArray0x18` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 32673, rva 0x546420).
+/// `char ResizeSmallArray0x18(uint * param_1, ulonglong param_2, undefined8 param_3, undefined8 param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn resize_small_array0x18(param_1: *mut u32, param_2: u64, param_3: u64, param_4: u64) -> c_char { unsafe { function!(32673, (*mut u32, u64, u64, u64) -> c_char)(param_1, param_2, param_3, param_4) } }
+/// `ResizeSmallArray12` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 93295, rva 0x124ada0).
+/// `char ResizeSmallArray12(uint * param_1, ulonglong param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn resize_small_array12(param_1: *mut u32, param_2: u64) -> c_char { unsafe { function!(93295, (*mut u32, u64) -> c_char)(param_1, param_2) } }
+/// `ResizeSmallArray4` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 34213, rva 0x5c31b0).
+/// `undefined8 ResizeSmallArray4(uint * param_1, ulonglong param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn resize_small_array4(param_1: *mut u32, param_2: u64) -> u64 { unsafe { function!(34213, (*mut u32, u64) -> u64)(param_1, param_2) } }

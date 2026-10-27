@@ -3074,7 +3074,7 @@ pub struct BSShaderAccumulator_vtable {
     pub slot_38: *const c_void,
     /// `BSShaderAccumulator::vfunc_39` at 0xf0f3d0 (semantic, high); signature (untiered): `undefined vfunc_39(void)`; `vfunc_39`: inherited empty NiAlphaAccumulator slot (pure in NiAccumulator) (high); semantic signature: `void (BSShaderAccumulator* this)`
     pub slot_39: *const c_void,
-    /// `BSShaderAccumulator::PushDepthGroup` at 0x1520d50 (semantic, medium); signature (untiered): `undefined PushDepthGroup(BSShaderAccumulator * this, undefined8 param_1)`; `PushDepthGroup`: opens a depth-keyed pass group in the batch renderer: key = dot(camera axis +0x7c/+0x88/+0x94, center) (minus radius when +0x51), from the pool 0x3693a00 (0x28 each, count 0x36939d0) (medium); semantic signature: `void* (BSShaderAccumulator* this, float* bound)`
+    /// `BSShaderAccumulator::PushDepthGroup` at 0x1520d50 (semantic, medium); signature (untiered): `undefined PushDepthGroup(BSShaderAccumulator * this, undefined8 param_1)`; `PushDepthGroup`: opens a depth-keyed pass group in the batch renderer: key = dot(camera axis +0x7c/+0x88/+0x94, center) (minus radius when +0x51), from the pool 0x3693a00 (0x28 each, count 0x36939d0) (medium); semantic signature: `void* (BSShaderAccumulator* this, NiBound* bound)`
     pub slot_40: *const c_void,
     /// `BSShaderAccumulator::PopDepthGroup` at 0x1520d70 (semantic, medium); signature (untiered): `undefined PopDepthGroup(BSShaderAccumulator * this)`; `PopDepthGroup`: closes the group opened by slot 40 (medium); semantic signature: `void (BSShaderAccumulator* this, void* group)`
     pub slot_41: *const c_void,
@@ -3162,9 +3162,9 @@ pub struct BSShaderMaterial_vtable {
     pub slot_4: *const c_void,
     /// `BSShaderMaterial::GetDefault` at 0x1575820 (semantic, medium); signature (untiered): `undefined8 GetDefault(void)`; `GetDefault`: the class's default material (0x3698be8 base, 0x33d4db0 lighting, 0x34866e0 effect) (medium); semantic signature: `BSShaderMaterial* (BSShaderMaterial* this)`
     pub slot_5: *const c_void,
-    /// `BSShaderMaterial::GetFeature` at 0x1556680 (semantic, high); signature (untiered): `undefined8 GetFeature(void)`; `GetFeature`: lighting feature (enum BSLightingShaderMaterial::Feature): 0 default, 1 envmap, 2 glow, 3 parallax, 4 facegen, 5 facegen tint, 6 hair tint, 7 parallax occ, 0xb multilayer parallax, 0xe snow, 0x10 eye, 0x12 LOD landscape, 0x13 landscape (high); semantic signature: `u32 (BSShaderMaterial* this)`
+    /// `BSShaderMaterial::GetFeature` at 0x1556680 (semantic, high); signature (untiered): `undefined8 GetFeature(void)`; `GetFeature`: lighting feature (enum BSLightingShaderMaterial::Feature): 0 default, 1 envmap, 2 glow, 3 parallax, 4 facegen, 5 facegen tint, 6 hair tint, 7 parallax occ, 0xb multilayer parallax, 0xe snow, 0x10 eye, 0x12 LOD landscape, 0x13 landscape (high); semantic signature: `LightingMaterialFeature (BSShaderMaterial* this)`
     pub slot_6: *const c_void,
-    /// `BSShaderMaterial::GetType` at 0x1575920 (semantic, high); signature (untiered): `undefined8 GetType(void)`; `GetType`: material family: 0 base, 1 effect, 2 lighting, 3 water (high); semantic signature: `u32 (BSShaderMaterial* this)`
+    /// `BSShaderMaterial::GetType` at 0x1575920 (semantic, high); signature (untiered): `undefined8 GetType(void)`; `GetType`: material family: 0 base, 1 effect, 2 lighting, 3 water (high); semantic signature: `ShaderMaterialType (BSShaderMaterial* this)`
     pub slot_7: *const c_void,
 }
 impl BSShaderMaterial_vtable {
@@ -3309,7 +3309,7 @@ pub struct BSShaderProperty_vtable {
     pub slot_41: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
     pub slot_42: *const c_void,
-    /// `BSShaderProperty::GetDepthRenderPasses` at 0x14e7af0 (semantic, high); signature (untiered): `undefined8 GetDepthRenderPasses(void)`; `GetDepthRenderPasses`: pass list for the depth/shadow modes 0xc-0xf; base returns null (the existing ledger row calls the lighting override GetRenderPasses) (high); semantic signature: `BSRenderPass** (BSShaderProperty* this, BSGeometry* g, u32 renderMode, BSShaderAccumulator* acc)`
+    /// `BSShaderProperty::GetDepthRenderPasses` at 0x14e7af0 (semantic, high); signature (untiered): `undefined8 GetDepthRenderPasses(void)`; `GetDepthRenderPasses`: pass list for the depth/shadow modes 0xc-0xf; base returns null (the existing ledger row calls the lighting override GetRenderPasses) (high); semantic signature: `BSRenderPass** (BSShaderProperty* this, BSGeometry* g, AccumulatorRenderMode renderMode, BSShaderAccumulator* acc)`
     pub slot_43: *const c_void,
     /// `BSShaderProperty::GetLocalMapRenderPasses` at 0x14e7b00 (semantic, low); signature (untiered): `undefined8 GetLocalMapRenderPasses(void)`; `GetLocalMapRenderPasses`: lighting override 0x151bcb0 builds a RENDER_BASE_TEXTURE (0x2000000) or LOCALMAP_FOGOFWAR (0x10000000) utility pass; landscape (bit 14) goes through slot 42 (low); semantic signature: `BSRenderPass** (BSShaderProperty* this, BSGeometry* g, u32 mode)`
     pub slot_44: *const c_void,
@@ -3347,7 +3347,7 @@ pub struct BSShaderProperty_vtable {
     pub slot_60: *const c_void,
     /// `BSShaderProperty::GetDepthTechnique` at 0x14e85e0 (semantic, high); signature (untiered): `undefined8 GetDepthTechnique(void)`; `GetDepthTechnique`: utility technique bits of the depth passes (lighting 0x151a0b0): TEXTURE|NORMALS|BINORMAL_TANGENT (0x1a), TEXTURE only with bit 12, SKINNED from bit 1, VC from bit 37, 0x20 from bits 14/46, LOD_LANDSCAPE from bit 33, 0x40 from bit 17, TREE_ANIM from bit 61 (high); semantic signature: `u32 (BSShaderProperty* this)`
     pub slot_61: *const c_void,
-    /// `BSShaderProperty::GetMaterialType` at 0x14e8610 (semantic, medium); signature (untiered): `undefined8 GetMaterialType(void)`; `GetMaterialType`: material family: base 0, effect 1, lighting (and grass) 2, water 3; the values of BSShaderMaterial::GetType (medium); semantic signature: `u32 (BSShaderProperty* this)`
+    /// `BSShaderProperty::GetMaterialType` at 0x14e8610 (semantic, medium); signature (untiered): `undefined8 GetMaterialType(void)`; `GetMaterialType`: material family: base 0, effect 1, lighting (and grass) 2, water 3; the values of BSShaderMaterial::GetType (medium); semantic signature: `ShaderMaterialType (BSShaderProperty* this)`
     pub slot_62: *const c_void,
 }
 impl BSShaderProperty_vtable {
@@ -3600,11 +3600,11 @@ pub struct BSShaderTextureSet_vtable {
     pub slot_35: *const c_void,
     /// `NiObject::vfunc_36` at 0xedcbb0 (rtti, medium); signature (low): `undefined8 vfunc_36(void)`
     pub slot_36: *const c_void,
-    /// `BSShaderTextureSet::GetTexturePath` at 0x153b3c0 (semantic, high); signature (untiered): `BSShaderTextureSet_vtbl * GetTexturePath(BSShaderTextureSet * this, int param_1)`; `GetTexturePath`: *(this+0x10+8*index) (high); semantic signature: `const char* (BSShaderTextureSet* this, u32 index)`
+    /// `BSShaderTextureSet::GetTexturePath` at 0x153b3c0 (semantic, high); signature (untiered): `BSShaderTextureSet_vtbl * GetTexturePath(BSShaderTextureSet * this, int param_1)`; `GetTexturePath`: *(this+0x10+8*index) (high); semantic signature: `const char* (BSShaderTextureSet* this, TextureSetSlot index)`
     pub slot_37: *const c_void,
-    /// `BSShaderTextureSet::LoadTexture` at 0x153b3d0 (semantic, high); signature (untiered): `undefined LoadTexture(BSShaderTextureSet * this, int param_1, undefined8 * param_2)`; `LoadTexture`: loads the texture at the path (index 4 as a cube map) (high); semantic signature: `void (BSShaderTextureSet* this, u32 index, NiPointer<NiSourceTexture>* out)`
+    /// `BSShaderTextureSet::LoadTexture` at 0x153b3d0 (semantic, high); signature (untiered): `undefined LoadTexture(BSShaderTextureSet * this, int param_1, undefined8 * param_2)`; `LoadTexture`: loads the texture at the path (index 4 as a cube map) (high); semantic signature: `void (BSShaderTextureSet* this, TextureSetSlot index, NiPointer<NiSourceTexture>* out)`
     pub slot_38: *const c_void,
-    /// `BSShaderTextureSet::SetTexturePath` at 0x153b4c0 (semantic, high); signature (untiered): `undefined SetTexturePath(BSShaderTextureSet * this, int param_1, char * param_2)`; `SetTexturePath`: replaces the BSFixedString (high); semantic signature: `void (BSShaderTextureSet* this, u32 index, const char* path)`
+    /// `BSShaderTextureSet::SetTexturePath` at 0x153b4c0 (semantic, high); signature (untiered): `undefined SetTexturePath(BSShaderTextureSet * this, int param_1, char * param_2)`; `SetTexturePath`: replaces the BSFixedString (high); semantic signature: `void (BSShaderTextureSet* this, TextureSetSlot index, const char* path)`
     pub slot_39: *const c_void,
 }
 impl BSShaderTextureSet_vtable {

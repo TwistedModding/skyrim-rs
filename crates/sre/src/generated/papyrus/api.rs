@@ -87,6 +87,7 @@ impl crate::BSScript__IStackCallbackFunctor {
     ///
     /// Semantic, papyrus pass, high; called through the object's vtable.
     /// `void (BSScript::IStackCallbackFunctor* this, BSScript::Variable* result)`
+    /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
     ///
     /// # Safety
     /// `result` must point to what the engine expects.
@@ -117,12 +118,14 @@ impl crate::BSScript__Internal__VirtualMachine {
     ///
     /// Semantic, papyrus pass, high; called through the object's vtable.
     /// `bool (BSScript::Internal::VirtualMachine* this, BSScript::IFunction* function)`
+    /// May be null: `function`.
     #[inline]
-    pub fn bind_native_method(&self, function: &crate::BSScript__IFunction) -> bool { unsafe { virtual_function!(self, 24, (*const Self, *const crate::BSScript__IFunction) -> bool)(core::ptr::from_ref(self), core::ptr::from_ref(function)) } }
+    pub fn bind_native_method(&self, function: Option<&crate::BSScript__IFunction>) -> bool { unsafe { virtual_function!(self, 24, (*const Self, *const crate::BSScript__IFunction) -> bool)(core::ptr::from_ref(self), function.map_or(core::ptr::null(), core::ptr::from_ref)) } }
     /// `BSScript::Internal::VirtualMachine::CreateArray`, vtable slot 22: under the +0x93f8 lock: an array type becomes its element type (raw 0xb-0xf minus 10, an object type with bit 0 cleared), anything else is used as the element type; releases what out held, allocates 0x20 + size * 0x10 bytes from the global heap (AllocateMemory 0xcde250 in memory context 0x16, not the scrap heap) and sets every element to {element type, 0}; out receives one reference and the VM's tracking list at +0x9408 another, so a new array has count 2; returns false only when the allocation fails
     ///
     /// Semantic, papyrus pass, high; called through the object's vtable.
     /// `bool (BSScript::Internal::VirtualMachine* this, const BSScript::TypeInfo* type, u32 size, BSTSmartPointer<BSScript::Array>* out)`
+    /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
     ///
     /// # Safety
     /// `out` must point to what the engine expects.
@@ -131,16 +134,19 @@ impl crate::BSScript__Internal__VirtualMachine {
     /// `BSScript::Internal::VirtualMachine::CreateArrayOfType`, vtable slot 23: CreateArray for a raw element code: 1 (Object) looks className up through GetScriptObjectType (slot 9, which loads the script) and uses its ObjectTypeInfo; false when the class has no script
     ///
     /// Semantic, papyrus pass, medium; called through the object's vtable.
-    /// `bool (BSScript::Internal::VirtualMachine* this, u32 rawElementType, const BSFixedString* className, u32 size, BSTSmartPointer<BSScript::Array>* out)`
+    /// `bool (BSScript::Internal::VirtualMachine* this, PapyrusType rawElementType, const BSFixedString* className, u32 size, BSTSmartPointer<BSScript::Array>* out)`
+    /// Retyped: rawElementType u32 -> PapyrusType: CreateArrayOfType: raw element code (1 Object, 2 String, ...), the PapyrusType values.
+    /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
     ///
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn create_array_of_type(&self, rawElementType: u32, className: *const crate::BSFixedString, size: u32, out: *mut c_void) -> bool { unsafe { virtual_function!(self, 23, (*const Self, u32, *const crate::BSFixedString, u32, *mut c_void) -> bool)(core::ptr::from_ref(self), rawElementType, className, size, out) } }
+    pub unsafe fn create_array_of_type(&self, rawElementType: crate::PapyrusType, className: *const crate::BSFixedString, size: u32, out: *mut c_void) -> bool { unsafe { virtual_function!(self, 23, (*const Self, crate::PapyrusType, *const crate::BSFixedString, u32, *mut c_void) -> bool)(core::ptr::from_ref(self), rawElementType, className, size, out) } }
     /// `BSScript::Internal::VirtualMachine::CreateObject`, vtable slot 21: creates an unbound script object of the class through the bind interface (+0x10 vtable, slot 9); the caller binds it to a handle with the bind policy
     ///
     /// Semantic, papyrus pass, high; called through the object's vtable.
     /// `bool (BSScript::Internal::VirtualMachine* this, const BSFixedString* className, BSTSmartPointer<BSScript::Object>* out)`
+    /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
     ///
     /// # Safety
     /// `out` must point to what the engine expects.
@@ -150,6 +156,7 @@ impl crate::BSScript__Internal__VirtualMachine {
     ///
     /// Semantic, papyrus pass, high; called through the object's vtable.
     /// `bool (BSScript::Internal::VirtualMachine* this, BSTSmartPointer<BSScript::Object>* self, const BSFixedString* fnName, BSScript::IFunctionArguments* args, BSTSmartPointer<BSScript::IStackCallbackFunctor>* callback)`
+    /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
     ///
     /// # Safety
     /// `self_`, `callback` must point to what the engine expects.
@@ -159,6 +166,7 @@ impl crate::BSScript__Internal__VirtualMachine {
     ///
     /// Semantic, papyrus pass, high; called through the object's vtable.
     /// `bool (BSScript::Internal::VirtualMachine* this, u64 handle, const BSFixedString* className, const BSFixedString* fnName, BSScript::IFunctionArguments* args, BSTSmartPointer<BSScript::IStackCallbackFunctor>* callback)`
+    /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
     ///
     /// # Safety
     /// `callback` must point to what the engine expects.
@@ -168,6 +176,7 @@ impl crate::BSScript__Internal__VirtualMachine {
     ///
     /// Semantic, papyrus pass, high; called through the object's vtable.
     /// `bool (BSScript::Internal::VirtualMachine* this, const BSFixedString* className, const BSFixedString* fnName, BSScript::IFunctionArguments* args, BSTSmartPointer<BSScript::IStackCallbackFunctor>* callback)`
+    /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
     ///
     /// # Safety
     /// `callback` must point to what the engine expects.
@@ -186,6 +195,7 @@ impl crate::BSScript__Internal__VirtualMachine {
     ///
     /// Semantic, papyrus pass, medium; called through the object's vtable.
     /// `void (BSScript::Internal::VirtualMachine* this, u64 handle, BSScript::IForEachScriptObjectFunctor* functor)`
+    /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
     ///
     /// # Safety
     /// The pass rates the signature medium.
@@ -225,6 +235,7 @@ impl crate::BSScript__Internal__VirtualMachine {
     ///
     /// Semantic, papyrus pass, high; called through the object's vtable.
     /// `bool (BSScript::Internal::VirtualMachine* this, const BSFixedString* className, BSTSmartPointer<BSScript::ObjectTypeInfo>* out)`
+    /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
     ///
     /// # Safety
     /// `out` must point to what the engine expects.
@@ -233,16 +244,18 @@ impl crate::BSScript__Internal__VirtualMachine {
     /// `BSScript::Internal::VirtualMachine::GetScriptObjectTypeByID`, vtable slot 10: the typeID variant of GetScriptObjectType (name from the +0x190 map, then the same load path); NativeFunction<N>::ctor uses it to type form parameters and returns
     ///
     /// Semantic, papyrus pass, medium; called through the object's vtable.
-    /// `bool (BSScript::Internal::VirtualMachine* this, u32 typeID, BSTSmartPointer<BSScript::ObjectTypeInfo>* out)`
+    /// `bool (BSScript::Internal::VirtualMachine* this, VMTypeID typeID, BSTSmartPointer<BSScript::ObjectTypeInfo>* out)`
+    /// Retyped: typeID u32 -> VMTypeID: VMTypeID: the typeID RegisterObjectType pairs with each script class (enum row: 82 pairs captured at RegisterObjectType); typeID variant of GetScriptObjectType.
     ///
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn get_script_object_type_by_id(&self, typeID: u32, out: *mut c_void) -> bool { unsafe { virtual_function!(self, 10, (*const Self, u32, *mut c_void) -> bool)(core::ptr::from_ref(self), typeID, out) } }
+    pub unsafe fn get_script_object_type_by_id(&self, typeID: crate::VMTypeID, out: *mut c_void) -> bool { unsafe { virtual_function!(self, 10, (*const Self, crate::VMTypeID, *mut c_void) -> bool)(core::ptr::from_ref(self), typeID, out) } }
     /// `BSScript::Internal::VirtualMachine::GetScriptObjectTypeNoLoad`, vtable slot 11: map lookup only; succeeds only for a fully linked type (flags & 3 == 3)
     ///
     /// Semantic, papyrus pass, medium; called through the object's vtable.
     /// `bool (BSScript::Internal::VirtualMachine* this, const BSFixedString* className, BSTSmartPointer<BSScript::ObjectTypeInfo>* out)`
+    /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
     ///
     /// # Safety
     /// The pass rates the signature medium.
@@ -251,12 +264,13 @@ impl crate::BSScript__Internal__VirtualMachine {
     /// `BSScript::Internal::VirtualMachine::GetScriptObjectTypeNoLoadByID`, vtable slot 12: the typeID variant of GetScriptObjectTypeNoLoad
     ///
     /// Semantic, papyrus pass, medium; called through the object's vtable.
-    /// `bool (BSScript::Internal::VirtualMachine* this, u32 typeID, BSTSmartPointer<BSScript::ObjectTypeInfo>* out)`
+    /// `bool (BSScript::Internal::VirtualMachine* this, VMTypeID typeID, BSTSmartPointer<BSScript::ObjectTypeInfo>* out)`
+    /// Retyped: typeID u32 -> VMTypeID: VMTypeID: the typeID RegisterObjectType pairs with each script class (enum row: 82 pairs captured at RegisterObjectType).
     ///
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn get_script_object_type_no_load_by_id(&self, typeID: u32, out: *mut c_void) -> bool { unsafe { virtual_function!(self, 12, (*const Self, u32, *mut c_void) -> bool)(core::ptr::from_ref(self), typeID, out) } }
+    pub unsafe fn get_script_object_type_no_load_by_id(&self, typeID: crate::VMTypeID, out: *mut c_void) -> bool { unsafe { virtual_function!(self, 12, (*const Self, crate::VMTypeID, *mut c_void) -> bool)(core::ptr::from_ref(self), typeID, out) } }
     /// `BSScript::Internal::VirtualMachine::GetScriptObjectsWithATypeID`, vtable slot 14: fills out with every registered class name of the +0x1c0 map
     ///
     /// Semantic, papyrus pass, medium; called through the object's vtable.
@@ -269,12 +283,14 @@ impl crate::BSScript__Internal__VirtualMachine {
     /// `BSScript::Internal::VirtualMachine::GetTypeIDForScriptObject`, vtable slot 13: name -> typeID through the map at +0x1c0 (the form type for form classes; 0x8b-0x8e for aliases and active effects)
     ///
     /// Semantic, papyrus pass, high; called through the object's vtable.
-    /// `bool (BSScript::Internal::VirtualMachine* this, const BSFixedString* className, u32* typeID)`
+    /// `bool (BSScript::Internal::VirtualMachine* this, const BSFixedString* className, VMTypeID* typeID)`
+    /// Retyped: typeID u32* -> VMTypeID*: VMTypeID: the typeID RegisterObjectType pairs with each script class (enum row: 82 pairs captured at RegisterObjectType); out parameter (GetTypeIDForScriptObject(Actor) = 0x3e).
+    /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
     ///
     /// # Safety
     /// `typeID` must point to what the engine expects.
     #[inline]
-    pub unsafe fn get_type_id_for_script_object(&self, className: *const crate::BSFixedString, typeID: *mut u32) -> bool { unsafe { virtual_function!(self, 13, (*const Self, *const crate::BSFixedString, *mut u32) -> bool)(core::ptr::from_ref(self), className, typeID) } }
+    pub unsafe fn get_type_id_for_script_object(&self, className: *const crate::BSFixedString, typeID: *mut crate::VMTypeID) -> bool { unsafe { virtual_function!(self, 13, (*const Self, *const crate::BSFixedString, *mut crate::VMTypeID) -> bool)(core::ptr::from_ref(self), className, typeID) } }
     /// `BSScript::Internal::VirtualMachine::IsWaitingOnLatent`, vtable slot 42: whether the stack is in the latent-wait map at +0x9350
     ///
     /// Semantic, papyrus pass, high; called through the object's vtable.
@@ -285,6 +301,7 @@ impl crate::BSScript__Internal__VirtualMachine {
     ///
     /// Semantic, papyrus pass, medium; called through the object's vtable.
     /// `bool (BSScript::Internal::VirtualMachine* this, const char* className)`
+    /// May be null: `className`.
     ///
     /// # Safety
     /// The pass rates the signature medium.
@@ -311,16 +328,19 @@ impl crate::BSScript__Internal__VirtualMachine {
     /// `BSScript::Internal::VirtualMachine::RegisterObjectType`, vtable slot 8: records className for typeID in the two maps at +0x190 (typeID -> name) and +0x1c0 (name -> typeID); returns false when either was already registered
     ///
     /// Semantic, papyrus pass, high; called through the object's vtable.
-    /// `bool (BSScript::Internal::VirtualMachine* this, u32 typeID, const char* className)`
+    /// `bool (BSScript::Internal::VirtualMachine* this, VMTypeID typeID, const char* className)`
+    /// Retyped: typeID u32 -> VMTypeID: VMTypeID: the typeID RegisterObjectType pairs with each script class (enum row: 82 pairs captured at RegisterObjectType).
+    /// May be null: `className`.
     ///
     /// # Safety
     /// `className` must point to what the engine expects.
     #[inline]
-    pub unsafe fn register_object_type(&self, typeID: u32, className: *const c_char) -> bool { unsafe { virtual_function!(self, 8, (*const Self, u32, *const c_char) -> bool)(core::ptr::from_ref(self), typeID, className) } }
+    pub unsafe fn register_object_type(&self, typeID: crate::VMTypeID, className: *const c_char) -> bool { unsafe { virtual_function!(self, 8, (*const Self, crate::VMTypeID, *const c_char) -> bool)(core::ptr::from_ref(self), typeID, className) } }
     /// `BSScript::Internal::VirtualMachine::ReturnFromLatent`, vtable slot 43: under the stacks lock (+0x9318): a stack not running or not in the latent-wait map (+0x9350) is logged and ignored; otherwise it leaves the map, state +0x68 goes to 0, result is copied into the return Variable (+0x70, Variable::assign: the caller keeps its value) and CompleteStack runs on the calling thread; no check against the native's returnType (+0x28); a one-frame stack (a direct dispatch) completes there and its callback runs on this thread, a deeper stack is queued and resumes in a later VM update on a worker thread; the engine calls it from inside the native's own binding (Debug.GetConfigName, and Call itself on a failed start) and from SkyrimVM::Update's timer (Utility.Wait)
     ///
     /// Semantic, papyrus pass, high; called through the object's vtable.
     /// `void (BSScript::Internal::VirtualMachine* this, u32 stackId, const BSScript::Variable* result)`
+    /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
     #[inline]
     pub fn return_from_latent(&self, stackId: u32, result: &crate::BSScript__Variable) { unsafe { virtual_function!(self, 43, (*const Self, u32, *const crate::BSScript__Variable))(core::ptr::from_ref(self), stackId, core::ptr::from_ref(result)) } }
     /// `BSScript::Internal::VirtualMachine::RunQueuedTasklets`, vtable slot 5: copies pendingTasklets (+0x8260) into a scrap array, clears it and runs the interpreter 0x14ce660 on each in the calling thread
@@ -333,12 +353,14 @@ impl crate::BSScript__Internal__VirtualMachine {
     ///
     /// Semantic, papyrus pass, high; called through the object's vtable.
     /// `void (BSScript::Internal::VirtualMachine* this, u64 handle, const BSFixedString* eventName, BSScript::IFunctionArguments* args)`
+    /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
     #[inline]
     pub fn send_event(&self, handle: u64, eventName: &crate::BSFixedString, args: &crate::BSScript__IFunctionArguments) { unsafe { virtual_function!(self, 36, (*const Self, u64, *const crate::BSFixedString, *const crate::BSScript__IFunctionArguments))(core::ptr::from_ref(self), handle, core::ptr::from_ref(eventName), core::ptr::from_ref(args)) } }
     /// `BSScript::Internal::VirtualMachine::SendEventAll`, vtable slot 37: SendEvent (slot 36) for every handle in the bound-object table (+0x93d0, 0x20 per entry, count at +0x93b4), forms, aliases and active effects alike, holding the +0x93a0 lock for the whole walk; what a loop of SendEvents cannot do without it is enumerate the bound handles
     ///
     /// Semantic, papyrus pass, medium; called through the object's vtable.
     /// `void (BSScript::Internal::VirtualMachine* this, const BSFixedString* eventName, BSScript::IFunctionArguments* args)`
+    /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
     ///
     /// # Safety
     /// The pass rates the signature medium.
@@ -357,6 +379,7 @@ impl crate::BSScript__Internal__VirtualMachine {
     ///
     /// Semantic, papyrus pass, medium; called through the object's vtable.
     /// `void (BSScript::Internal::VirtualMachine* this, const char* className, const char* stateName, const char* fnName, bool callable)`
+    /// May be null: `className`, `stateName`, `fnName`.
     ///
     /// # Safety
     /// The pass rates the signature medium.
@@ -427,6 +450,7 @@ impl crate::BSScript__NF_util__NativeFunctionBase {
     ///
     /// Semantic, papyrus pass, high; called through the object's vtable.
     /// `u32 (BSScript::NF_util::NativeFunctionBase* this, BSTSmartPointer<BSScript::Stack>* stack, BSScript::ErrorLogger* logger, BSScript::Internal::VirtualMachine* vm, bool)`
+    /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
     ///
     /// # Safety
     /// `stack` must point to what the engine expects.
@@ -436,6 +460,7 @@ impl crate::BSScript__NF_util__NativeFunctionBase {
     ///
     /// Semantic, papyrus pass, high; called through the object's vtable.
     /// `bool (BSScript::NF_util::NativeFunctionBase* this, BSScript::Variable* self, BSScript::Internal::VirtualMachine* vm, u32 stackId, BSScript::Variable* result, BSScript::StackFrame* frame)`
+    /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
     ///
     /// # Safety
     /// `self_`, `result`, `frame` must point to what the engine expects.
@@ -445,6 +470,7 @@ impl crate::BSScript__NF_util__NativeFunctionBase {
     ///
     /// Semantic, papyrus pass, high; called through the object's vtable.
     /// `BSScript::TypeInfo* (BSScript::NF_util::NativeFunctionBase* this, BSScript::TypeInfo* out)`
+    /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
     ///
     /// # Safety
     /// `out` must point to what the engine expects.
@@ -523,6 +549,7 @@ impl crate::BSScript__NF_util__NativeFunctionBase {
     ///
     /// Semantic, papyrus pass, high; called through the object's vtable.
     /// `void (BSScript::NF_util::NativeFunctionBase* this, u32 index, BSFixedString* name, BSScript::TypeInfo* type)`
+    /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
     ///
     /// # Safety
     /// `name`, `type_` must point to what the engine expects.
@@ -565,6 +592,7 @@ impl crate::BSScript__NF_util__NativeFunctionBase {
     ///
     /// Semantic, papyrus pass, medium; called through the object's vtable.
     /// `void (BSScript::NF_util::NativeFunctionBase* this, BSScript::StackFrame* frame)`
+    /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
     ///
     /// # Safety
     /// The pass rates the signature medium.
@@ -580,6 +608,7 @@ impl crate::BSScript__NF_util__NativeFunctionBase {
     ///
     /// Semantic, papyrus pass, high; called through the object's vtable.
     /// `bool (BSScript::NF_util::NativeFunctionBase* this, u32 index, BSFixedString* out)`
+    /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
     ///
     /// # Safety
     /// `out` must point to what the engine expects.
@@ -589,6 +618,7 @@ impl crate::BSScript__NF_util__NativeFunctionBase {
     ///
     /// Semantic, papyrus pass, high; ledger semantic evidence, name high; id 104653, rva 0x14aa0f0.
     /// `BSScript::NF_util::NativeFunctionBase* (BSScript::NF_util::NativeFunctionBase* this, const char* name, const char* className, bool isStatic, u32 paramCount)`
+    /// May be null: `name`, `className`.
     ///
     /// # Safety
     /// It constructs or destroys an object in place.
@@ -650,8 +680,9 @@ impl crate::BSScript__ObjectTypeInfo {
     ///
     /// Semantic, papyrus pass, high; ledger semantic evidence, name high; id 104325, rva 0x1494c60.
     /// `bool (BSScript::ObjectTypeInfo* this, BSScript::IFunction* function, BSScript::ErrorLogger* logger)`
+    /// May be null: `function`.
     #[inline]
-    pub fn bind_native_function(&self, function: &crate::BSScript__IFunction, logger: &crate::BSScript__ErrorLogger) -> bool { unsafe { function!(104325, (*const Self, *const crate::BSScript__IFunction, *const crate::BSScript__ErrorLogger) -> bool)(core::ptr::from_ref(self), core::ptr::from_ref(function), core::ptr::from_ref(logger)) } }
+    pub fn bind_native_function(&self, function: Option<&crate::BSScript__IFunction>, logger: &crate::BSScript__ErrorLogger) -> bool { unsafe { function!(104325, (*const Self, *const crate::BSScript__IFunction, *const crate::BSScript__ErrorLogger) -> bool)(core::ptr::from_ref(self), function.map_or(core::ptr::null(), core::ptr::from_ref), core::ptr::from_ref(logger)) } }
     /// `BSScript::ObjectTypeInfo::GetFunction`: finds a static (global) function by name: on a type in link state 3 (or state 2 when linkedOnly is false) through ID_104355 (the skyrim-rs papyrus run got static natives for either flag value and no method on a linked type); on an unlinked type, only when linkedOnly is false, the pending native whose IFunction slot 9 (GetIsStatic) is true, so DispatchStaticCall needs the script loaded
     ///
     /// Semantic, papyrus pass, high; ledger semantic evidence, name high; id 104311, rva 0x1492470.
@@ -809,6 +840,7 @@ impl crate::SkyrimScript__HandlePolicy {
     ///
     /// Semantic, papyrus pass, high; called through the object's vtable.
     /// `void (SkyrimScript::HandlePolicy* this, u64 handle, BSFixedString* out)`
+    /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
     ///
     /// # Safety
     /// `out` must point to what the engine expects.
@@ -826,12 +858,14 @@ impl crate::SkyrimScript__HandlePolicy {
     /// `SkyrimScript::HandlePolicy::GetHandleForObject`, vtable slot 4: form: formID | 0xffff << 32 (a reference carrying an ExtraUniqueID instead gets formID | uniqueID << 32 | 1 << 48); 0x8b-0x8d alias: the quest's formID (alias+0x10, its +0x14) | the alias id (u16 at alias+0x18) << 32; 0x8e active effect: the target actor's formID (ActiveEffect+0x50 is the target's MagicTarget, the actor is 0xa0 before it) | uniqueID (u16 at +0x84) << 32 | 2 << 48, and the invalid handle when the target is null or not an actor or the uniqueID is 0 (request 4f corrected 'caster' to 'target'); null object: the invalid handle
     ///
     /// Semantic, papyrus pass, high; called through the object's vtable.
-    /// `u64 (SkyrimScript::HandlePolicy* this, u32 typeID, const void* object)`
+    /// `u64 (SkyrimScript::HandlePolicy* this, VMTypeID typeID, const void* object)`
+    /// Retyped: typeID u32 -> VMTypeID: VMTypeID: the typeID RegisterObjectType pairs with each script class (enum row: 82 pairs captured at RegisterObjectType).
+    /// May be null: `object`.
     ///
     /// # Safety
     /// `object` must point to what the engine expects.
     #[inline]
-    pub unsafe fn get_handle_for_object(&self, typeID: u32, object: *const c_void) -> u64 { unsafe { virtual_function!(self, 4, (*const Self, u32, *const c_void) -> u64)(core::ptr::from_ref(self), typeID, object) } }
+    pub unsafe fn get_handle_for_object(&self, typeID: crate::VMTypeID, object: *const c_void) -> u64 { unsafe { virtual_function!(self, 4, (*const Self, crate::VMTypeID, *const c_void) -> u64)(core::ptr::from_ref(self), typeID, object) } }
     /// `SkyrimScript::HandlePolicy::GetInvalidHandle`, vtable slot 3: 0xffff00000000: the form-handle pattern with form id 0
     ///
     /// Semantic, papyrus pass, high; called through the object's vtable.
@@ -850,12 +884,13 @@ impl crate::SkyrimScript__HandlePolicy {
     /// `SkyrimScript::HandlePolicy::GetObjectForHandle`, vtable slot 8: the object the handle names when HandleIsType holds: FindFormByID for form handles, the alias of the quest for 0x8b-0x8d, the inventory item reference for bit 48, the ActiveEffect found on the actor's magic target for bit 49; null otherwise
     ///
     /// Semantic, papyrus pass, high; called through the object's vtable.
-    /// `void* (SkyrimScript::HandlePolicy* this, u32 typeID, u64 handle)`
+    /// `void* (SkyrimScript::HandlePolicy* this, VMTypeID typeID, u64 handle)`
+    /// Retyped: typeID u32 -> VMTypeID: VMTypeID: the typeID RegisterObjectType pairs with each script class (enum row: 82 pairs captured at RegisterObjectType).
     ///
     /// # Safety
     /// The result is an untyped pointer.
     #[inline]
-    pub unsafe fn get_object_for_handle(&self, typeID: u32, handle: u64) -> *mut c_void { unsafe { virtual_function!(self, 8, (*const Self, u32, u64) -> *mut c_void)(core::ptr::from_ref(self), typeID, handle) } }
+    pub unsafe fn get_object_for_handle(&self, typeID: crate::VMTypeID, handle: u64) -> *mut c_void { unsafe { virtual_function!(self, 8, (*const Self, crate::VMTypeID, u64) -> *mut c_void)(core::ptr::from_ref(self), typeID, handle) } }
     /// `SkyrimScript::HandlePolicy::HandleIsReference`, vtable slot 5: HandleIsType(0x3d, handle)
     ///
     /// Semantic, papyrus pass, high; called through the object's vtable.
@@ -865,9 +900,10 @@ impl crate::SkyrimScript__HandlePolicy {
     /// `SkyrimScript::HandlePolicy::HandleIsType`, vtable slot 1: whether the handle names an object of typeID: form handles (bits 32-47 == 0xffff) compare the form's formType (0 accepts any form, 0x3d any reference, 0x18 armor/arms/outfit, 0x20 the container set); item handles (bit 48) accept 0 and 0x3d; effect handles (bit 49) accept 0x8e only, without looking the effect up; alias handles (bits 48-63 clear, bits 32-47 the alias id): 0x8b any alias id other than 0xffff, 0x8c only when the quest's alias of that id is a reference alias, 0x8d only a location alias
     ///
     /// Semantic, papyrus pass, high; called through the object's vtable.
-    /// `bool (SkyrimScript::HandlePolicy* this, u32 typeID, u64 handle)`
+    /// `bool (SkyrimScript::HandlePolicy* this, VMTypeID typeID, u64 handle)`
+    /// Retyped: typeID u32 -> VMTypeID: VMTypeID: the typeID RegisterObjectType pairs with each script class (enum row: 82 pairs captured at RegisterObjectType); 0 any form, 0x3d any reference, 0x8b-0x8e aliases/effects.
     #[inline]
-    pub fn handle_is_type(&self, typeID: u32, handle: u64) -> bool { unsafe { virtual_function!(self, 1, (*const Self, u32, u64) -> bool)(core::ptr::from_ref(self), typeID, handle) } }
+    pub fn handle_is_type(&self, typeID: crate::VMTypeID, handle: u64) -> bool { unsafe { virtual_function!(self, 1, (*const Self, crate::VMTypeID, u64) -> bool)(core::ptr::from_ref(self), typeID, handle) } }
     /// `SkyrimScript::HandlePolicy::IsHandleObjectAvailable`, vtable slot 2: whether the object behind the handle exists and is not marked unavailable (form flags bit 21 clear); the invalid handle returns true (its first test is handle == GetInvalidHandle), so callers test HandleIsType first
     ///
     /// Semantic, papyrus pass, high; called through the object's vtable.
@@ -1015,6 +1051,7 @@ pub fn papyrus__object_reference__self_from_variable(self_: &crate::BSScript__Va
 ///
 /// Semantic, papyrus pass, high; ledger semantic evidence, name high; id 55511, rva 0xa291d0.
 /// `BSScript::Variable* (BSScript::Variable* out, TESForm* form, BSScript::Internal::VirtualMachine* vm)`
+/// May be null: `form`.
 ///
 /// # Safety
 /// `out` must point to what the engine expects.

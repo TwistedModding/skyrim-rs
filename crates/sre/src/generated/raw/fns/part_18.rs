@@ -3,6 +3,56 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `SetField28ToFrontHorseCarriage01Node` at 0x3f8690 (decompiler, medium); signature (untiered): `undefined8 SetField28ToFrontHorseCarriage01Node(longlong * param_1, longlong * param_2, undefined8 param_3, undefined8 param_4)`
+pub const SetField28ToFrontHorseCarriage01Node: u64 = 25739;
+/// `SetField28WithParamsAndNotify` at 0xe6cc40 (decompiler, medium); signature (untiered): `undefined SetField28WithParamsAndNotify(longlong param_1, longlong param_2, undefined4 param_3, undefined4 param_4)`
+pub const SetField28WithParamsAndNotify: u64 = 87752;
+/// `SetField28_2` at 0x11eaac0 (decompiler, high); signature (untiered): `undefined SetField28_2(longlong param_1, undefined8 param_2)`
+pub const SetField28_2: u64 = 91224;
+/// `SetField2A4OfField10` at 0x6f5e20 (decompiler, high); signature (untiered): `undefined SetField2A4OfField10(longlong param_1, undefined4 param_2)`
+pub const SetField2A4OfField10: u64 = 39364;
+/// `SetField2B0DeletingOld` at 0x1a9350 (decompiler, medium); signature (medium): `undefined SetField2B0DeletingOld(longlong param_1, undefined8 param_2)`
+pub const SetField2B0DeletingOld: u64 = 13404;
+/// `SetField2B4OfFieldF8Field8` at 0x6cf3c0 (decompiler, high); signature (untiered): `undefined SetField2B4OfFieldF8Field8(longlong param_1, undefined4 param_2)`
+pub const SetField2B4OfFieldF8Field8: u64 = 38635;
+/// `SetField2B78Record` at 0xd51e10 (decompiler, high); signature (high): `undefined SetField2B78Record(longlong param_1, undefined8 * param_2)`
+pub const SetField2B78Record: u64 = 83967;
+/// `SetField2BCOfFieldF8Target` at 0x6d8530 (decompiler, high); signature (untiered): `undefined SetField2BCOfFieldF8Target(longlong param_1, undefined4 param_2)`
+pub const SetField2BCOfFieldF8Target: u64 = 38792;
+/// `SetField2C` at 0xfcbcb0 (decompiler, high); signature (high): `undefined SetField2C(longlong param_1, undefined4 param_2)`
+pub const SetField2C: u64 = 75836;
+/// `SetField2C4OfField8` at 0x725e40 (decompiler, high); signature (untiered): `undefined SetField2C4OfField8(longlong param_1, undefined4 param_2)`
+pub const SetField2C4OfField8: u64 = 39940;
+/// `SetField2C8OfField8` at 0x7270d0 (decompiler, high); signature (untiered): `undefined SetField2C8OfField8(longlong param_1, undefined4 param_2)`
+pub const SetField2C8OfField8: u64 = 39961;
+/// `SetField2CHighWord` at 0x1048300 (decompiler, medium); signature (medium): `undefined SetField2CHighWord(longlong * param_1, int param_2)`
+pub const SetField2CHighWord: u64 = 77807;
+/// `SetField2COfAllRecords` at 0xe77bd0 (decompiler, medium); signature (untiered): `undefined SetField2COfAllRecords(longlong * param_1, undefined4 * param_2)`
+pub const SetField2COfAllRecords: u64 = 89361;
+/// `SetField30` at 0xcf9000 (decompiler, high); signature (untiered): `undefined SetField30(longlong param_1, undefined8 param_2)`
+pub const SetField30: u64 = 82190;
+/// `SetField30AEntryOfField8` at 0x728ea0 (decompiler, high); signature (high): `undefined SetField30AEntryOfField8(longlong param_1, uint param_2, undefined2 param_3)`
+pub const SetField30AEntryOfField8: u64 = 40049;
+/// `SetField30AndFlag800` at 0xe002c0 (decompiler, high); signature (untiered): `undefined SetField30AndFlag800(longlong param_1, int * param_2)`
+pub const SetField30AndFlag800: u64 = 87449;
+/// `SetField30AndResetFramesWithPivots` at 0xb738f0 (decompiler, medium); signature (untiered): `undefined SetField30AndResetFramesWithPivots(longlong param_1, undefined8 * param_2, undefined8 * param_3, longlong param_4)`
+pub const SetField30AndResetFramesWithPivots: u64 = 61920;
+/// `SetField30AndUpdateBit10OfField28` at 0x2ad240 (decompiler, medium); signature (untiered): `undefined SetField30AndUpdateBit10OfField28(longlong param_1, longlong param_2)`
+pub const SetField30AndUpdateBit10OfField28: u64 = 18743;
+/// `SetField30ElementAfterIndex` at 0xbfc690 (decompiler, high); signature (untiered): `undefined SetField30ElementAfterIndex(longlong param_1, int param_2, undefined8 * param_3)`
+pub const SetField30ElementAfterIndex: u64 = 64367;
+/// `SetField30FromCellHeightMinusOffset` at 0x4b6b40 (decompiler, medium); signature (medium): `undefined SetField30FromCellHeightMinusOffset(longlong param_1, float param_2)`
+pub const SetField30FromCellHeightMinusOffset: u64 = 30172;
+/// `SetField30RefCounted` at 0x10915b0 (decompiler, high); signature (high): `undefined SetField30RefCounted(longlong param_1, longlong param_2)`
+pub const SetField30RefCounted: u64 = 79015;
+/// `SetField30To2AndUpdateSlotSound` at 0x5cdb80 (decompiler, medium); signature (untiered): `undefined SetField30To2AndUpdateSlotSound(longlong * param_1)`
+pub const SetField30To2AndUpdateSlotSound: u64 = 34443;
+/// `SetField30ToCachedEntry` at 0xe450a0 (decompiler, medium); signature (untiered): `undefined SetField30ToCachedEntry(longlong param_1, int * param_2)`
+pub const SetField30ToCachedEntry: u64 = 88499;
+/// `SetField30ToField24PlusValue` at 0xb6d160 (decompiler, high); signature (high): `undefined SetField30ToField24PlusValue(longlong param_1, float param_2)`
+pub const SetField30ToField24PlusValue: u64 = 61796;
+/// `SetField30_2` at 0x38cf10 (decompiler, high); signature (high): `undefined SetField30_2(longlong param_1, undefined8 param_2)`
+pub const SetField30_2: u64 = 23523;
 /// `SetField318Byte72` at 0xd65980 (decompiler, medium); signature (untiered): `undefined SetField318Byte72(longlong * param_1, undefined1 param_2)`
 pub const SetField318Byte72: u64 = 84294;
 /// `SetField31COfField10` at 0x6f5500 (decompiler, high); signature (untiered): `undefined SetField31COfField10(longlong param_1, undefined4 param_2)`
@@ -1343,8 +1393,10 @@ pub const SetPtrArrayElementAtGrow: u64 = 72965;
 pub const SetQuadLayerVertexWeight: u64 = 18725;
 /// `SetQuadTreeNodeFlagsRecursive` at 0x5188b0 (decompiler, medium); signature (untiered): `undefined SetQuadTreeNodeFlagsRecursive(longlong param_1, uint param_2)`
 pub const SetQuadTreeNodeFlagsRecursive: u64 = 31840;
-/// `SetQuaternionFromAngleAxis` at 0xef8a60 (decompiler, medium); signature (medium): `undefined4 * SetQuaternionFromAngleAxis(undefined4 * param_1, float param_2, float * param_3)`
+/// `SetQuaternionFromAngleAxis` at 0xef8a60 (semantic, high); signature (medium): `undefined4 * SetQuaternionFromAngleAxis(undefined4 * param_1, float param_2, float * param_3)`; out = (cos(angle/2), sin(angle/2) * axis); returns out (high); semantic signature: `NiQuaternion* (NiQuaternion* out, float angle, const NiPoint3* axis)`
 pub const SetQuaternionFromAngleAxis: u64 = 70832;
+/// `SetQuaternionFromAngleAxis` as a function pointer type (high).
+pub type SetQuaternionFromAngleAxis_fn = unsafe extern "C" fn(out: *mut crate::NiQuaternion, angle: f32, axis: *const crate::NiPoint3) -> *mut crate::NiQuaternion;
 /// `SetQuaternionFromAngleAxis_2` at 0xef8cc0 (decompiler, medium); signature (medium): `undefined SetQuaternionFromAngleAxis_2(undefined4 * param_1, float param_2, float * param_3)`
 pub const SetQuaternionFromAngleAxis_2: u64 = 70837;
 /// `SetQuaternionFromAxisAngle` at 0xaa46d0 (decompiler, medium); signature (medium): `undefined SetQuaternionFromAxisAngle(float * param_1, float * param_2, float param_3)`
@@ -1669,7 +1721,7 @@ pub const SetRootField25E0Bit400: u64 = 85761;
 pub const SetRotateTowardsPathState: u64 = 90751;
 /// `SetRotationFromAxisAngle` at 0xaa3fe0 (decompiler, medium); signature (untiered): `undefined SetRotationFromAxisAngle(float * param_1)`
 pub const SetRotationFromAxisAngle: u64 = 57082;
-/// `SetRotationFromQuaternion` at 0x221bd0 (decompiler, medium); signature (medium): `undefined SetRotationFromQuaternion(longlong param_1, float * param_2)`
+/// `SetRotationFromQuaternion` at 0x221bd0 (semantic, medium); signature (medium): `undefined SetRotationFromQuaternion(longlong param_1, float * param_2)`; node local rotation (+0x48..+0x68) = matrix of q (medium); semantic signature: `void (NiAVObject* node, const NiQuaternion* q)`
 pub const SetRotationFromQuaternion: u64 = 15802;
 /// `SetRotationToLookAt` at 0xeefcd0 (decompiler, medium); signature (untiered): `void * SetRotationToLookAt(longlong * param_1, float * param_2, float * param_3)`
 pub const SetRotationToLookAt: u64 = 70629;
@@ -2126,7 +2178,7 @@ pub const SetupRef3DFadeNode: u64 = 19450;
 /// `SetupReflectedCamera` at 0xfde350 (runtime, high); signature (untiered): `undefined SetupReflectedCamera(longlong param_1, float * param_2, longlong * param_3)`; reflected local translation = source world translation mirrored across the plane (p - 2 (n.p - d) n); local rotation = the source's normalized world rotation columns reflected (column 1 negated so the frame stays right-handed); local scale = |source world scale|; SetFrustum(reflected, source frustum +0x150); UpdateNode (high); semantic signature: `void (NiCamera* source, const NiPlane* plane, NiCamera* reflected)`
 pub const SetupReflectedCamera: u64 = 76214;
 /// `SetupReflectedCamera` as a function pointer type (high).
-pub type SetupReflectedCamera_fn = unsafe extern "C" fn(source: *mut crate::NiCamera, plane: *const c_void, reflected: *mut crate::NiCamera);
+pub type SetupReflectedCamera_fn = unsafe extern "C" fn(source: *mut crate::NiCamera, plane: *const crate::NiPlane, reflected: *mut crate::NiCamera);
 /// `SetupVATSCameraFromMesh` at 0x318f20 (runtime, high); signature (untiered): `undefined SetupVATSCameraFromMesh(longlong param_1, longlong param_2, int param_3)`; load the shot NIF (if not loaded) and keep it only when its first child is an NiCamera; flags bit 5: SetField18OfListEntriesRecursive(root, -clock) to restart its controllers; UpdateNode(root, clock); resolve hasAnimatedRotation; store locationRef's handle; dolly setup per transitionMode (0: dolly over fVATSCameraDollyTime; 1: no dolly; 2: only for an action-3 shot, over minTime or fVATSCameraDollyTime); reset dolly from/delta/clock; UIVATSCameraIn for an action-2 shot when the first command's +0x98 & 0x38, UIVATSCameraOut when leaving action 2 (high); semantic signature: `void (BGSCameraShot* shot, TESObjectREFR* locationRef, i32 transitionMode)`
 pub const SetupVATSCameraFromMesh: u64 = 20705;
 /// `SetupVATSCameraFromMesh` as a function pointer type (high).
@@ -4530,7 +4582,7 @@ pub const StartBucketedPathSearchWithScratchArrays: u64 = 31155;
 /// `StartCameraShake` at 0x5584a0 (runtime, high); signature (medium): `undefined StartCameraShake(float param_1, float param_2, float param_3)`; if the shake NIF root exists and strength > 0: d = distance(camera root local translate, origin); fadeStart = max(fCameraShakeDistFadeStart * s, fCameraShakeDistMin); if d < fadeStart + fCameraShakeDistFadeDelta * s: s *= 1 - (d - fadeStart) / (DistFadeDelta * s) when d > fadeStart; g_CameraShakeStrength = clamp(s, fCameraShakeMultMin, 1); g_CameraShakeTimeLeft = duration > 0 ? duration : fCameraShakeTime. Overwrites any running shake (high); semantic signature: `void (float strength, const NiPoint3* origin, float duration)`
 pub const StartCameraShake: u64 = 33012;
 /// `StartCameraShake` as a function pointer type (high).
-pub type StartCameraShake_fn = unsafe extern "C" fn(strength: f32, origin: *const c_void, duration: f32);
+pub type StartCameraShake_fn = unsafe extern "C" fn(strength: f32, origin: *const crate::NiPoint3, duration: f32);
 /// `StartChunkUploadHttpRequest` at 0x12ef120 (decompiler, medium); signature (untiered): `undefined StartChunkUploadHttpRequest(longlong * param_1, undefined8 * param_2, longlong * param_3)`
 pub const StartChunkUploadHttpRequest: u64 = 525641;
 /// `StartCombatSearch` at 0x81db80 (decompiler, medium); signature (untiered): `undefined StartCombatSearch(longlong param_1)`
@@ -5871,8 +5923,10 @@ pub const Str_TargetUnreachableDistance_cb0: u64 = 172142;
 pub const StreamReadBaseAndDwordC: u64 = 70977;
 /// `StreamReadDwordListToTls` at 0xee51a0 (decompiler, medium); signature (untiered): `undefined StreamReadDwordListToTls(longlong param_1)`
 pub const StreamReadDwordListToTls: u64 = 70360;
-/// `StreamReadMatrix3` at 0xedfae0 (decompiler, medium); signature (untiered): `undefined StreamReadMatrix3(longlong param_1, longlong param_2)`
+/// `StreamReadMatrix3` at 0xedfae0 (semantic, high); signature (untiered): `undefined StreamReadMatrix3(longlong param_1, longlong param_2)`; reads the nine floats of a NiMatrix3 row by row from a NIF stream (high); semantic signature: `void (NiMatrix3* m, NiStream* stream)`
 pub const StreamReadMatrix3: u64 = 70239;
+/// `StreamReadMatrix3` as a function pointer type (high).
+pub type StreamReadMatrix3_fn = unsafe extern "C" fn(m: *mut crate::NiMatrix3, stream: *mut crate::NiStream);
 /// `StreamReadThreeDwords` at 0xef2f10 (decompiler, medium); signature (untiered): `undefined StreamReadThreeDwords(longlong param_1, longlong param_2)`
 pub const StreamReadThreeDwords: u64 = 70692;
 /// `StreamWriteBaseAndDwordC` at 0xeff500 (decompiler, medium); signature (untiered): `undefined StreamWriteBaseAndDwordC(longlong param_1, longlong param_2)`
@@ -6601,10 +6655,10 @@ pub const SystemTimer__Start: u64 = 109137;
 pub const SystemTimer__Stop: u64 = 109135;
 /// `SystemTimer::Stop` as a function pointer type (high).
 pub type SystemTimer__Stop_fn = unsafe extern "C" fn(timerId: i32);
-/// `TAA::Render` at 0x1544da0 (semantic, high); signature (untiered): `int Render(longlong * param_1, int param_2, int param_3)`; temporal AA: history ping-pong 0x51/0x52 (0x53/0x54 for the menu 3D scene mode 2), optional water mask pair 0x56/0x57; inputs: source, history, motion vectors (7), depth 0, TAA mask 0x55, normals; returns destTarget (high); semantic signature: `i32 (TemporalAA* this, i32 sourceTarget, i32 destTarget)`
+/// `TAA::Render` at 0x1544da0 (semantic, high); signature (untiered): `int Render(longlong * param_1, int param_2, int param_3)`; temporal AA: history ping-pong 0x51/0x52 (0x53/0x54 for the menu 3D scene mode 2), optional water mask pair 0x56/0x57; inputs: source, history, motion vectors (7), depth 0, TAA mask 0x55, normals; returns destTarget (high); semantic signature: `RenderTargetId (TemporalAA* this, RenderTargetId sourceTarget, RenderTargetId destTarget)`
 pub const TAA__Render: u64 = 527784;
 /// `TAA::Render` as a function pointer type (high).
-pub type TAA__Render_fn = unsafe extern "C" fn(this: *mut c_void, sourceTarget: i32, destTarget: i32) -> i32;
+pub type TAA__Render_fn = unsafe extern "C" fn(this: *mut c_void, sourceTarget: u32, destTarget: u32) -> u32;
 /// `TES::BSTEventSink_BSResource_ArchiveStreamOpenedEvent_vdtor` at 0x1b4400 (slot_propagation, medium); signature (high): `undefined BSTEventSink_BSResource_ArchiveStreamOpenedEvent_vdtor(TES * this)`
 pub const TES__BSTEventSink_BSResource_ArchiveStreamOpenedEvent_vdtor: u64 = 13617;
 /// `TES::BSTEventSink_BSResource_ArchiveStreamOpenedEvent_vfunc_1` at 0x1aa870 (rtti, high); signature (low): `undefined8 BSTEventSink_BSResource_ArchiveStreamOpenedEvent_vfunc_1(void)`
@@ -8199,59 +8253,3 @@ pub const TESObjectANIO__dtor: u64 = 17736;
 pub const TESObjectANIO__vdtor: u64 = 17742;
 /// `TESObjectANIO::vfunc_19` at 0x27b9b0 (rtti, high); signature (low): `undefined vfunc_19(TESObjectANIO * this, undefined8 param_1, longlong param_2, TypeDescriptor * param_3)`
 pub const TESObjectANIO__vfunc_19: u64 = 17738;
-/// `TESObjectANIO::vfunc_6` at 0x27b750 (rtti, high); signature (low): `undefined8 vfunc_6(TESObjectANIO * this, longlong param_1, undefined8 param_2, ulonglong param_3)`
-pub const TESObjectANIO__vfunc_6: u64 = 17737;
-/// `TESObjectARMA::BGSBipedObjectForm_vdtor` at 0x27d3f8 (slot_propagation, medium); signature (high): `undefined BGSBipedObjectForm_vdtor(TESObjectARMA * this)`
-pub const TESObjectARMA__BGSBipedObjectForm_vdtor: u64 = 17773;
-/// `TESObjectARMA::TESRaceForm_vdtor` at 0x27d3ec (slot_propagation, medium); signature (high): `undefined TESRaceForm_vdtor(TESObjectARMA * this)`
-pub const TESObjectARMA__TESRaceForm_vdtor: u64 = 17772;
-/// `TESObjectARMA::ctor` at 0x27be50 (layout_inference, high); signature (low): `TESObjectARMA * ctor(TESObjectARMA * this, undefined8 param_1, uint * param_2, longlong * param_3)`
-pub const TESObjectARMA__ctor: u64 = 17752;
-/// `TESObjectARMA::dtor` at 0x27bfd0 (layout_inference, high); signature (low): `undefined dtor(TESObjectARMA * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-pub const TESObjectARMA__dtor: u64 = 17753;
-/// `TESObjectARMA::vdtor` at 0x27d410 (slot_propagation, medium); signature (low): `TESObjectARMA * vdtor(TESObjectARMA * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const TESObjectARMA__vdtor: u64 = 17774;
-/// `TESObjectARMA::vfunc_19` at 0x27cad0 (rtti, high); signature (low): `undefined vfunc_19(TESObjectARMA * this, undefined8 param_1, TypeDescriptor * param_2, TypeDescriptor * param_3)`
-pub const TESObjectARMA__vfunc_19: u64 = 17758;
-/// `TESObjectARMA::vfunc_4` at 0x27c110 (rtti, high); signature (low): `undefined vfunc_4(TESObjectARMA * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-pub const TESObjectARMA__vfunc_4: u64 = 17754;
-/// `TESObjectARMA::vfunc_5` at 0x27c1c0 (rtti, high); signature (high): `undefined vfunc_5(TESObjectARMA * this)`
-pub const TESObjectARMA__vfunc_5: u64 = 17755;
-/// `TESObjectARMA::vfunc_6` at 0x27c210 (rtti, high); signature (low): `undefined8 vfunc_6(TESObjectARMA * this, uint * param_1, undefined8 param_2, undefined8 param_3)`
-pub const TESObjectARMA__vfunc_6: u64 = 17756;
-/// `TESObjectARMO::BGSBipedObjectForm_vdtor` at 0x27eee8 (slot_propagation, medium); signature (high): `undefined BGSBipedObjectForm_vdtor(TESObjectARMO * this)`
-pub const TESObjectARMO__BGSBipedObjectForm_vdtor: u64 = 17803;
-/// `TESObjectARMO::BGSBlockBashData_vdtor` at 0x27eef4 (slot_propagation, medium); signature (high): `undefined BGSBlockBashData_vdtor(TESObjectARMO * this)`
-pub const TESObjectARMO__BGSBlockBashData_vdtor: u64 = 17804;
-/// `TESObjectARMO::BGSDestructibleObjectForm_vdtor` at 0x27ef54 (slot_propagation, medium); signature (high): `undefined BGSDestructibleObjectForm_vdtor(TESObjectARMO * this)`
-pub const TESObjectARMO__BGSDestructibleObjectForm_vdtor: u64 = 17812;
-/// `TESObjectARMO::BGSEquipType_vdtor` at 0x27eedc (slot_propagation, medium); signature (high): `undefined BGSEquipType_vdtor(TESObjectARMO * this)`
-pub const TESObjectARMO__BGSEquipType_vdtor: u64 = 17802;
-/// `TESObjectARMO::BGSKeywordForm_vdtor` at 0x27ef00 (slot_propagation, medium); signature (high): `undefined BGSKeywordForm_vdtor(TESObjectARMO * this)`
-pub const TESObjectARMO__BGSKeywordForm_vdtor: u64 = 17805;
-/// `TESObjectARMO::BGSKeywordForm_vfunc_5` at 0x27ed60 (rtti, high); signature (low): `undefined8 BGSKeywordForm_vfunc_5(TESObjectARMO * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-pub const TESObjectARMO__BGSKeywordForm_vfunc_5: u64 = 17796;
-/// `TESObjectARMO::BGSPickupPutdownSounds_vdtor` at 0x27ef60 (slot_propagation, medium); signature (high): `undefined BGSPickupPutdownSounds_vdtor(TESObjectARMO * this)`
-pub const TESObjectARMO__BGSPickupPutdownSounds_vdtor: u64 = 17813;
-/// `TESObjectARMO::GetLastFile` at 0x27f1b0 (slot_propagation, medium); signature (untiered): `undefined GetLastFile(TESObjectARMO * this)`
-pub const TESObjectARMO__GetLastFile: u64 = 17817;
-/// `TESObjectARMO::LoadGame` at 0x27ee60 (slot_propagation, medium); signature (untiered): `undefined LoadGame(TESObjectARMO * this, longlong param_1)`
-pub const TESObjectARMO__LoadGame: u64 = 17799;
-/// `TESObjectARMO::SaveGame` at 0x27ee20 (slot_propagation, medium); signature (untiered): `undefined SaveGame(TESObjectARMO * this, longlong param_1)`
-pub const TESObjectARMO__SaveGame: u64 = 17798;
-/// `TESObjectARMO::TESBipedModelForm_vdtor` at 0x27ef6c (slot_propagation, medium); signature (high): `undefined TESBipedModelForm_vdtor(TESObjectARMO * this)`
-pub const TESObjectARMO__TESBipedModelForm_vdtor: u64 = 17814;
-/// `TESObjectARMO::TESDescription_vdtor` at 0x27ef0c (slot_propagation, medium); signature (high): `undefined TESDescription_vdtor(TESObjectARMO * this)`
-pub const TESObjectARMO__TESDescription_vdtor: u64 = 17806;
-/// `TESObjectARMO::TESEnchantableForm_vdtor` at 0x27ef30 (slot_propagation, medium); signature (high): `undefined TESEnchantableForm_vdtor(TESObjectARMO * this)`
-pub const TESObjectARMO__TESEnchantableForm_vdtor: u64 = 17809;
-/// `TESObjectARMO::TESFullName_vdtor` at 0x27ef18 (slot_propagation, medium); signature (high): `undefined TESFullName_vdtor(TESObjectARMO * this)`
-pub const TESObjectARMO__TESFullName_vdtor: u64 = 17807;
-/// `TESObjectARMO::TESRaceForm_vdtor` at 0x27ef24 (slot_propagation, medium); signature (high): `undefined TESRaceForm_vdtor(TESObjectARMO * this)`
-pub const TESObjectARMO__TESRaceForm_vdtor: u64 = 17808;
-/// `TESObjectARMO::TESValueForm_vdtor` at 0x27ef3c (slot_propagation, medium); signature (high): `undefined TESValueForm_vdtor(TESObjectARMO * this)`
-pub const TESObjectARMO__TESValueForm_vdtor: u64 = 17810;
-/// `TESObjectARMO::TESWeightForm_vdtor` at 0x27ef48 (slot_propagation, medium); signature (high): `undefined TESWeightForm_vdtor(TESObjectARMO * this)`
-pub const TESObjectARMO__TESWeightForm_vdtor: u64 = 17811;
-/// `TESObjectARMO::dtor` at 0x27d900 (layout_inference, high); signature (low): `undefined dtor(TESObjectARMO * this, undefined8 param_1, longlong param_2, undefined1 * param_3)`
-pub const TESObjectARMO__dtor: u64 = 17785;

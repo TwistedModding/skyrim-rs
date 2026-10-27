@@ -3005,6 +3005,7 @@ impl crate::SkyrimVM {
     ///
     /// Semantic, papyrus pass, high; ledger runtime evidence, name high; id 54033, rva 0x9e3580.
     /// `void (SkyrimVM* this, u64 handle, const BSFixedString* eventName, BSScript::IFunctionArguments* args, void* filter)`
+    /// May be null: `filter`.
     ///
     /// # Safety
     /// `filter` must point to what the engine expects.

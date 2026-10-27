@@ -3,6 +3,56 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `ReleaseThreeHeapArrays_2` at 0xce1c20 (decompiler, medium); signature (medium): `undefined ReleaseThreeHeapArrays_2(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const ReleaseThreeHeapArrays_2: u64 = 68207;
+/// `ReleaseThreeHeapArrays_3` at 0xcfa270 (decompiler, medium); signature (medium): `undefined ReleaseThreeHeapArrays_3(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const ReleaseThreeHeapArrays_3: u64 = 68642;
+/// `ReleaseThreeHeapBuffers` at 0x13bc3d0 (decompiler, medium); signature (untiered): `undefined ReleaseThreeHeapBuffers(longlong param_1)`
+pub const ReleaseThreeHeapBuffers: u64 = 450822;
+/// `ReleaseThreeRefPtrs` at 0x2dc4a0 (decompiler, high); signature (untiered): `undefined ReleaseThreeRefPtrs(longlong * param_1)`
+pub const ReleaseThreeRefPtrs: u64 = 19464;
+/// `ReleaseThroughFactoryRegistry` at 0x450980 (decompiler, medium); signature (untiered): `undefined ReleaseThroughFactoryRegistry(longlong * param_1)`
+pub const ReleaseThroughFactoryRegistry: u64 = 27668;
+/// `ReleaseTrackedEntities` at 0xbb26c0 (decompiler, medium); signature (untiered): `undefined ReleaseTrackedEntities(longlong param_1)`
+pub const ReleaseTrackedEntities: u64 = 63094;
+/// `ReleaseTrackedFormIfType2E` at 0x36d550 (decompiler, medium); signature (untiered): `undefined ReleaseTrackedFormIfType2E(undefined8 * param_1)`
+pub const ReleaseTrackedFormIfType2E: u64 = 22776;
+/// `ReleaseTrackedFormReference` at 0x63f650 (decompiler, medium); signature (untiered): `undefined ReleaseTrackedFormReference(longlong param_1, longlong * param_2)`
+pub const ReleaseTrackedFormReference: u64 = 36171;
+/// `ReleaseTriggerEventStorage` at 0x407030 (decompiler, medium); signature (untiered): `undefined ReleaseTriggerEventStorage(undefined8 * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const ReleaseTriggerEventStorage: u64 = 26040;
+/// `ReleaseTwoArrays` at 0x12295d0 (decompiler, high); signature (untiered): `undefined ReleaseTwoArrays(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const ReleaseTwoArrays: u64 = 92512;
+/// `ReleaseTwoArrays_2` at 0x9046e0 (decompiler, high); signature (untiered): `undefined ReleaseTwoArrays_2(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const ReleaseTwoArrays_2: u64 = 50999;
+/// `ReleaseTwoFixedStringPairSmallArrays` at 0x660ef0 (decompiler, medium); signature (untiered): `undefined ReleaseTwoFixedStringPairSmallArrays(int * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const ReleaseTwoFixedStringPairSmallArrays: u64 = 36718;
+/// `ReleaseTwoFixedStringSmallArrays` at 0x661010 (decompiler, medium); signature (untiered): `undefined ReleaseTwoFixedStringSmallArrays(int * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const ReleaseTwoFixedStringSmallArrays: u64 = 36719;
+/// `ReleaseTwoFixedStrings` at 0x2f80f0 (decompiler, high); signature (high): `undefined ReleaseTwoFixedStrings(void)`
+pub const ReleaseTwoFixedStrings: u64 = 19893;
+/// `ReleaseTwoFixedStrings_2` at 0x660990 (decompiler, high); signature (untiered): `undefined ReleaseTwoFixedStrings_2(void)`
+pub const ReleaseTwoFixedStrings_2: u64 = 36707;
+/// `ReleaseTwoFixedStrings_3` at 0x129e250 (decompiler, high); signature (untiered): `undefined ReleaseTwoFixedStrings_3(void)`
+pub const ReleaseTwoFixedStrings_3: u64 = 524904;
+/// `ReleaseTwoFixedStrings_4` at 0xc3f470 (decompiler, high); signature (untiered): `undefined ReleaseTwoFixedStrings_4(void)`
+pub const ReleaseTwoFixedStrings_4: u64 = 65153;
+/// `ReleaseTwoFixedStrings_5` at 0xcf2780 (decompiler, medium); signature (untiered): `undefined ReleaseTwoFixedStrings_5(void)`
+pub const ReleaseTwoFixedStrings_5: u64 = 68591;
+/// `ReleaseTwoFixedStrings_6` at 0x1790140 (decompiler, medium); signature (untiered): `undefined ReleaseTwoFixedStrings_6(void)`
+pub const ReleaseTwoFixedStrings_6: u64 = 170522;
+/// `ReleaseTwoFixedStrings_7` at 0x1790160 (decompiler, medium); signature (untiered): `undefined ReleaseTwoFixedStrings_7(void)`
+pub const ReleaseTwoFixedStrings_7: u64 = 170523;
+/// `ReleaseTwoFixedStrings_8` at 0x17901d0 (decompiler, medium); signature (untiered): `undefined ReleaseTwoFixedStrings_8(void)`
+pub const ReleaseTwoFixedStrings_8: u64 = 170525;
+/// `ReleaseTwoHandleRefCounts` at 0x6da520 (decompiler, medium); signature (untiered): `undefined ReleaseTwoHandleRefCounts(longlong * param_1)`
+pub const ReleaseTwoHandleRefCounts: u64 = 38843;
+/// `ReleaseTwoHandleRefCounts_2` at 0x7351a0 (decompiler, medium); signature (untiered): `undefined ReleaseTwoHandleRefCounts_2(longlong * param_1)`
+pub const ReleaseTwoHandleRefCounts_2: u64 = 40136;
+/// `ReleaseTwoRefCountedPointers` at 0x882200 (decompiler, medium); signature (untiered): `undefined ReleaseTwoRefCountedPointers(longlong * param_1)`
+pub const ReleaseTwoRefCountedPointers: u64 = 47889;
+/// `ReleaseTwoRefCountedPointers_2` at 0x8bc350 (decompiler, medium); signature (untiered): `undefined ReleaseTwoRefCountedPointers_2(longlong * param_1)`
+pub const ReleaseTwoRefCountedPointers_2: u64 = 49251;
 /// `ReleaseTwoRefPtrs` at 0x8d6710 (decompiler, medium); signature (untiered): `undefined ReleaseTwoRefPtrs(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const ReleaseTwoRefPtrs: u64 = 49866;
 /// `ReleaseTwoRefPtrsClearingFlag10` at 0x91f7a0 (decompiler, medium); signature (untiered): `undefined ReleaseTwoRefPtrsClearingFlag10(longlong * param_1)`
@@ -1755,7 +1805,7 @@ pub const RenderStackedPassesImmediatelyAndFreeList: u64 = 106616;
 pub const RenderTargetManager__CreateCubeMapRenderTarget: u64 = 77447;
 /// `RenderTargetManager::CreateCubeMapRenderTarget` as a function pointer type (high).
 pub type RenderTargetManager__CreateCubeMapRenderTarget_fn = unsafe extern "C" fn(this: *mut crate::RenderTargetManager, id: u32, p: *const c_void);
-/// `RenderTargetManager::CreateRenderTarget` at 0x1015420 (semantic, high); signature (untiered): `undefined CreateRenderTarget(longlong param_1, ulonglong param_2, undefined8 * param_3)`; stores the properties, creates the D3D objects (0x100a590) (high); semantic signature: `void (RenderTargetManager* this, u32 id, const RenderTargetProperties* p)`
+/// `RenderTargetManager::CreateRenderTarget` at 0x1015420 (semantic, high); signature (untiered): `undefined CreateRenderTarget(longlong param_1, ulonglong param_2, undefined8 * param_3)`; stores the properties, creates the D3D objects (0x100a590) (high); semantic signature: `void (RenderTargetManager* this, RenderTargetId id, const RenderTargetProperties* p)`
 pub const RenderTargetManager__CreateRenderTarget: u64 = 77445;
 /// `RenderTargetManager::CreateRenderTarget` as a function pointer type (high).
 pub type RenderTargetManager__CreateRenderTarget_fn = unsafe extern "C" fn(this: *mut crate::RenderTargetManager, id: u32, p: *const crate::RenderTargetProperties);
@@ -1767,7 +1817,7 @@ pub type RenderTargetManager__SetDepthStencil_fn = unsafe extern "C" fn(this: *m
 pub const RenderTargetManager__SetRenderTarget: u64 = 77453;
 /// `RenderTargetManager::SetRenderTarget` as a function pointer type (high).
 pub type RenderTargetManager__SetRenderTarget_fn = unsafe extern "C" fn(this: *mut crate::RenderTargetManager, slot: u32, id: i32, mode: u32, updateViewport: bool);
-/// `RenderTargets_CreateDepthStencil` at 0x1015470 (semantic, medium); signature (untiered): `undefined RenderTargets_CreateDepthStencil(longlong param_1, uint param_2, undefined8 * param_3)`; creates depth-stencil target id from {width, height, array slices, flags} (medium); semantic signature: `void (void* renderTargets, u32 id, const u32* properties)`
+/// `RenderTargets_CreateDepthStencil` at 0x1015470 (semantic, medium); signature (untiered): `undefined RenderTargets_CreateDepthStencil(longlong param_1, uint param_2, undefined8 * param_3)`; creates depth-stencil target id from {width, height, array slices, flags} (medium); semantic signature: `void (void* renderTargets, DepthStencilTargetId id, const u32* properties)`
 pub const RenderTargets_CreateDepthStencil: u64 = 77446;
 /// `RenderWorld` at 0x656d10 (runtime, high); signature (untiered): `undefined RenderWorld(undefined8 param_1, undefined4 param_2, undefined8 param_3, undefined8 param_4)`; sets the rendering flag, copies the camera position into the world ShadowSceneNode (+0x2f4) and draws the world scene (0x656e60) (high); semantic signature: `void (void* owner, u32 flags)`
 pub const RenderWorld: u64 = 36558;
@@ -1791,7 +1841,7 @@ pub type RenderWorldScene_fn = unsafe extern "C" fn(owner: *mut c_void, flags: u
 pub const Renderer__CreateCubeMapObjects: u64 = 77257;
 /// `Renderer::CreateCubeMapObjects` as a function pointer type (high).
 pub type Renderer__CreateCubeMapObjects_fn = unsafe extern "C" fn(this: *mut crate::Renderer, id: u32, name: *const c_char, p: *const c_void);
-/// `Renderer::CreateDepthStencilObjects` at 0x100a980 (semantic, high); signature (untiered): `undefined CreateDepthStencilObjects(longlong param_1, uint param_2, undefined8 param_3, undefined4 * param_4)`; depth-stencil D3D objects (high); semantic signature: `void (Renderer* this, u32 id, const char* name, const DepthStencilProperties* p)`
+/// `Renderer::CreateDepthStencilObjects` at 0x100a980 (semantic, high); signature (untiered): `undefined CreateDepthStencilObjects(longlong param_1, uint param_2, undefined8 param_3, undefined4 * param_4)`; depth-stencil D3D objects (high); semantic signature: `void (Renderer* this, DepthStencilTargetId id, const char* name, const DepthStencilProperties* p)`
 pub const Renderer__CreateDepthStencilObjects: u64 = 77255;
 /// `Renderer::CreateDepthStencilObjects` as a function pointer type (high).
 pub type Renderer__CreateDepthStencilObjects_fn = unsafe extern "C" fn(this: *mut crate::Renderer, id: u32, name: *const c_char, p: *const crate::DepthStencilProperties);
@@ -1799,7 +1849,7 @@ pub type Renderer__CreateDepthStencilObjects_fn = unsafe extern "C" fn(this: *mu
 pub const Renderer__CreateDeviceAndSwapChain: u64 = 77396;
 /// `Renderer::CreateDeviceAndSwapChain` as a function pointer type (high).
 pub type Renderer__CreateDeviceAndSwapChain_fn = unsafe extern "C" fn();
-/// `Renderer::CreateRenderTargetObjects` at 0x100a590 (semantic, high); signature (untiered): `undefined CreateRenderTargetObjects(longlong param_1, ulonglong param_2, undefined8 param_3, undefined4 * param_4)`; colour target D3D objects (high); semantic signature: `void (Renderer* this, u32 id, const char* name, const RenderTargetProperties* p)`
+/// `Renderer::CreateRenderTargetObjects` at 0x100a590 (semantic, high); signature (untiered): `undefined CreateRenderTargetObjects(longlong param_1, ulonglong param_2, undefined8 param_3, undefined4 * param_4)`; colour target D3D objects (high); semantic signature: `void (Renderer* this, RenderTargetId id, const char* name, const RenderTargetProperties* p)`
 pub const Renderer__CreateRenderTargetObjects: u64 = 77253;
 /// `Renderer::CreateRenderTargetObjects` as a function pointer type (high).
 pub type Renderer__CreateRenderTargetObjects_fn = unsafe extern "C" fn(this: *mut crate::Renderer, id: u32, name: *const c_char, p: *const crate::RenderTargetProperties);
@@ -5631,7 +5681,7 @@ pub type RevertAllGlobalData_fn = unsafe extern "C" fn(revertGlobals: bool);
 pub const RevertAudioGlobalData: u64 = 35143;
 /// `RevertAudioGlobalData` as a function pointer type (high).
 pub type RevertAudioGlobalData_fn = unsafe extern "C" fn();
-/// `RevertGlobalData` at 0x61cfb0 (runtime, high); signature (untiered): `undefined8 RevertGlobalData(uint param_1, longlong * param_2, longlong param_3, undefined8 param_4)`; global data revert switch (high); semantic signature: `bool (u32 type, BGSLoadGameBuffer* buf, bool revertGlobals)`
+/// `RevertGlobalData` at 0x61cfb0 (runtime, high); signature (untiered): `undefined8 RevertGlobalData(uint param_1, longlong * param_2, longlong param_3, undefined8 param_4)`; global data revert switch (high); semantic signature: `bool (GlobalDataType type, BGSLoadGameBuffer* buf, bool revertGlobals)`
 pub const RevertGlobalData: u64 = 35650;
 /// `RevertGlobalData` as a function pointer type (high).
 pub type RevertGlobalData_fn = unsafe extern "C" fn(type_: u32, buf: *mut crate::BGSLoadGameBuffer, revertGlobals: bool) -> bool;
@@ -6031,7 +6081,7 @@ pub const SaveFourSharedObjectRefs_3: u64 = 48369;
 pub const SaveGameMagicCasterVisitor__vdtor: u64 = 38238;
 /// `SaveGameMagicCasterVisitor::vfunc_1` at 0x6bbc70 (rtti, high); signature (low): `undefined8 vfunc_1(SaveGameMagicCasterVisitor * this, uint param_1)`
 pub const SaveGameMagicCasterVisitor__vfunc_1: u64 = 38188;
-/// `SaveGlobalData` at 0x61b9a0 (semantic, high); signature (untiered): `undefined8 SaveGlobalData(uint param_1, longlong param_2, undefined8 param_3, undefined8 param_4)`; global data writer switch (see enum GlobalDataType) (high); semantic signature: `bool (u32 type, BGSSaveGameBuffer* buf)`
+/// `SaveGlobalData` at 0x61b9a0 (semantic, high); signature (untiered): `undefined8 SaveGlobalData(uint param_1, longlong param_2, undefined8 param_3, undefined8 param_4)`; global data writer switch (see enum GlobalDataType) (high); semantic signature: `bool (GlobalDataType type, BGSSaveGameBuffer* buf)`
 pub const SaveGlobalData: u64 = 35639;
 /// `SaveGlobalData` as a function pointer type (high).
 pub type SaveGlobalData_fn = unsafe extern "C" fn(type_: u32, buf: *mut crate::BGSSaveGameBuffer) -> bool;
@@ -7149,7 +7199,7 @@ pub const Script__vfunc_6_sub1: u64 = 23340;
 pub const Script__vfunc_6_sub2: u64 = 23344;
 /// `ScriptCompiler::Compile` at 0x34a280 (semantic, medium); signature (untiered): `undefined8 Compile(undefined8 param_1, longlong * param_2, longlong * param_3, undefined4 * param_4)`; splits the text into lines (0x34b150), checks the begin/end and scriptname rules unless partial, compiles each line (0x34a4e0) and stores the bytecode into the Script (medium); semantic signature: `bool (ScriptCompiler* this, Script* script, ScriptCompileBuffer* buf)`
 pub const ScriptCompiler__Compile: u64 = 21964;
-/// `ScriptCompiler::CompileScript` at 0x347930 (semantic, medium); signature (untiered): `undefined1 CompileScript(undefined8 param_1, longlong * param_2, undefined8 param_3, undefined8 param_4)`; builds a compile buffer (text, compileType at +0xc, partial-script flag +0x24 = 1, name = the script's editor id or g_ScriptCompileTypeNames[type]) and compiles (medium); semantic signature: `bool (ScriptCompiler* this, Script* script, TESObjectREFR* ref, uint compileType)`
+/// `ScriptCompiler::CompileScript` at 0x347930 (semantic, medium); signature (untiered): `undefined1 CompileScript(undefined8 param_1, longlong * param_2, undefined8 param_3, undefined8 param_4)`; builds a compile buffer (text, compileType at +0xc, partial-script flag +0x24 = 1, name = the script's editor id or g_ScriptCompileTypeNames[type]) and compiles (medium); semantic signature: `bool (ScriptCompiler* this, Script* script, TESObjectREFR* ref, ScriptCompileType compileType)`
 pub const ScriptCompiler__CompileScript: u64 = 21954;
 /// `ScriptEffect::ctor` at 0x5dd2c0 (layout_inference, high); signature (low): `ScriptEffect * ctor(ScriptEffect * this, longlong param_1, undefined8 param_2, undefined4 * param_3)`
 pub const ScriptEffect__ctor: u64 = 34883;
@@ -7599,7 +7649,7 @@ pub const SetAIEnabled: u64 = 37504;
 pub const SetAcquireWeaponSearchAITimer: u64 = 47584;
 /// `SetActionEntity` at 0xb50210 (decompiler, medium); signature (medium): `undefined SetActionEntity(longlong param_1, longlong param_2)`
 pub const SetActionEntity: u64 = 61002;
-/// `SetActiveAccumulatorMode` at 0x14ec290 (semantic, high); signature (untiered): `undefined SetActiveAccumulatorMode(uint param_1)`; stores the mode in 0x33d3db0 and its register/render functions (fallback entry 0) in 0x33d4b10/0x33d4b18 (high); semantic signature: `void (u32 mode)`
+/// `SetActiveAccumulatorMode` at 0x14ec290 (semantic, high); signature (untiered): `undefined SetActiveAccumulatorMode(uint param_1)`; stores the mode in 0x33d3db0 and its register/render functions (fallback entry 0) in 0x33d4b10/0x33d4b18 (high); semantic signature: `void (AccumulatorRenderMode mode)`
 pub const SetActiveAccumulatorMode: u64 = 105641;
 /// `SetActiveAccumulatorMode` as a function pointer type (high).
 pub type SetActiveAccumulatorMode_fn = unsafe extern "C" fn(mode: u32);
@@ -8941,53 +8991,3 @@ pub const SetField28RefCounted: u64 = 79014;
 pub const SetField28RefPtr: u64 = 75825;
 /// `SetField28ToArgPlus28` at 0x4c3350 (decompiler, high); signature (high): `undefined SetField28ToArgPlus28(longlong param_1, longlong param_2)`
 pub const SetField28ToArgPlus28: u64 = 30363;
-/// `SetField28ToFrontHorseCarriage01Node` at 0x3f8690 (decompiler, medium); signature (untiered): `undefined8 SetField28ToFrontHorseCarriage01Node(longlong * param_1, longlong * param_2, undefined8 param_3, undefined8 param_4)`
-pub const SetField28ToFrontHorseCarriage01Node: u64 = 25739;
-/// `SetField28WithParamsAndNotify` at 0xe6cc40 (decompiler, medium); signature (untiered): `undefined SetField28WithParamsAndNotify(longlong param_1, longlong param_2, undefined4 param_3, undefined4 param_4)`
-pub const SetField28WithParamsAndNotify: u64 = 87752;
-/// `SetField28_2` at 0x11eaac0 (decompiler, high); signature (untiered): `undefined SetField28_2(longlong param_1, undefined8 param_2)`
-pub const SetField28_2: u64 = 91224;
-/// `SetField2A4OfField10` at 0x6f5e20 (decompiler, high); signature (untiered): `undefined SetField2A4OfField10(longlong param_1, undefined4 param_2)`
-pub const SetField2A4OfField10: u64 = 39364;
-/// `SetField2B0DeletingOld` at 0x1a9350 (decompiler, medium); signature (medium): `undefined SetField2B0DeletingOld(longlong param_1, undefined8 param_2)`
-pub const SetField2B0DeletingOld: u64 = 13404;
-/// `SetField2B4OfFieldF8Field8` at 0x6cf3c0 (decompiler, high); signature (untiered): `undefined SetField2B4OfFieldF8Field8(longlong param_1, undefined4 param_2)`
-pub const SetField2B4OfFieldF8Field8: u64 = 38635;
-/// `SetField2B78Record` at 0xd51e10 (decompiler, high); signature (high): `undefined SetField2B78Record(longlong param_1, undefined8 * param_2)`
-pub const SetField2B78Record: u64 = 83967;
-/// `SetField2BCOfFieldF8Target` at 0x6d8530 (decompiler, high); signature (untiered): `undefined SetField2BCOfFieldF8Target(longlong param_1, undefined4 param_2)`
-pub const SetField2BCOfFieldF8Target: u64 = 38792;
-/// `SetField2C` at 0xfcbcb0 (decompiler, high); signature (high): `undefined SetField2C(longlong param_1, undefined4 param_2)`
-pub const SetField2C: u64 = 75836;
-/// `SetField2C4OfField8` at 0x725e40 (decompiler, high); signature (untiered): `undefined SetField2C4OfField8(longlong param_1, undefined4 param_2)`
-pub const SetField2C4OfField8: u64 = 39940;
-/// `SetField2C8OfField8` at 0x7270d0 (decompiler, high); signature (untiered): `undefined SetField2C8OfField8(longlong param_1, undefined4 param_2)`
-pub const SetField2C8OfField8: u64 = 39961;
-/// `SetField2CHighWord` at 0x1048300 (decompiler, medium); signature (medium): `undefined SetField2CHighWord(longlong * param_1, int param_2)`
-pub const SetField2CHighWord: u64 = 77807;
-/// `SetField2COfAllRecords` at 0xe77bd0 (decompiler, medium); signature (untiered): `undefined SetField2COfAllRecords(longlong * param_1, undefined4 * param_2)`
-pub const SetField2COfAllRecords: u64 = 89361;
-/// `SetField30` at 0xcf9000 (decompiler, high); signature (untiered): `undefined SetField30(longlong param_1, undefined8 param_2)`
-pub const SetField30: u64 = 82190;
-/// `SetField30AEntryOfField8` at 0x728ea0 (decompiler, high); signature (high): `undefined SetField30AEntryOfField8(longlong param_1, uint param_2, undefined2 param_3)`
-pub const SetField30AEntryOfField8: u64 = 40049;
-/// `SetField30AndFlag800` at 0xe002c0 (decompiler, high); signature (untiered): `undefined SetField30AndFlag800(longlong param_1, int * param_2)`
-pub const SetField30AndFlag800: u64 = 87449;
-/// `SetField30AndResetFramesWithPivots` at 0xb738f0 (decompiler, medium); signature (untiered): `undefined SetField30AndResetFramesWithPivots(longlong param_1, undefined8 * param_2, undefined8 * param_3, longlong param_4)`
-pub const SetField30AndResetFramesWithPivots: u64 = 61920;
-/// `SetField30AndUpdateBit10OfField28` at 0x2ad240 (decompiler, medium); signature (untiered): `undefined SetField30AndUpdateBit10OfField28(longlong param_1, longlong param_2)`
-pub const SetField30AndUpdateBit10OfField28: u64 = 18743;
-/// `SetField30ElementAfterIndex` at 0xbfc690 (decompiler, high); signature (untiered): `undefined SetField30ElementAfterIndex(longlong param_1, int param_2, undefined8 * param_3)`
-pub const SetField30ElementAfterIndex: u64 = 64367;
-/// `SetField30FromCellHeightMinusOffset` at 0x4b6b40 (decompiler, medium); signature (medium): `undefined SetField30FromCellHeightMinusOffset(longlong param_1, float param_2)`
-pub const SetField30FromCellHeightMinusOffset: u64 = 30172;
-/// `SetField30RefCounted` at 0x10915b0 (decompiler, high); signature (high): `undefined SetField30RefCounted(longlong param_1, longlong param_2)`
-pub const SetField30RefCounted: u64 = 79015;
-/// `SetField30To2AndUpdateSlotSound` at 0x5cdb80 (decompiler, medium); signature (untiered): `undefined SetField30To2AndUpdateSlotSound(longlong * param_1)`
-pub const SetField30To2AndUpdateSlotSound: u64 = 34443;
-/// `SetField30ToCachedEntry` at 0xe450a0 (decompiler, medium); signature (untiered): `undefined SetField30ToCachedEntry(longlong param_1, int * param_2)`
-pub const SetField30ToCachedEntry: u64 = 88499;
-/// `SetField30ToField24PlusValue` at 0xb6d160 (decompiler, high); signature (high): `undefined SetField30ToField24PlusValue(longlong param_1, float param_2)`
-pub const SetField30ToField24PlusValue: u64 = 61796;
-/// `SetField30_2` at 0x38cf10 (decompiler, high); signature (high): `undefined SetField30_2(longlong param_1, undefined8 param_2)`
-pub const SetField30_2: u64 = 23523;

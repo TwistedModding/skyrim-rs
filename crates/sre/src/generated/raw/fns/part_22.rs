@@ -3,6 +3,66 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `hkpRackAndPinionConstraintData::vfunc_10` at 0xb74fe0 (rtti, high); signature (low): `undefined1 * vfunc_10(hkpRackAndPinionConstraintData * this, undefined1 * param_1)`
+pub const hkpRackAndPinionConstraintData__vfunc_10: u64 = 61939;
+/// `hkpRackAndPinionConstraintData::vfunc_11` at 0xb75070 (rtti, high); signature (low): `undefined8 vfunc_11(void)`
+pub const hkpRackAndPinionConstraintData__vfunc_11: u64 = 61940;
+/// `hkpRackAndPinionConstraintData::vfunc_12` at 0xb750a0 (rtti, high); signature (low): `undefined vfunc_12(hkpRackAndPinionConstraintData * this, undefined8 param_1, undefined4 * param_2)`
+pub const hkpRackAndPinionConstraintData__vfunc_12: u64 = 61942;
+/// `hkpRackAndPinionConstraintData::vfunc_18` at 0xb75080 (rtti, high); signature (low): `undefined vfunc_18(hkpRackAndPinionConstraintData * this, int * param_1)`
+pub const hkpRackAndPinionConstraintData__vfunc_18: u64 = 61941;
+/// `hkpRagdollConstraintData::ctor` at 0xb64e80 (layout_inference, medium); signature (high): `hkpRagdollConstraintData * ctor(hkpRagdollConstraintData * this)`
+pub const hkpRagdollConstraintData__ctor: u64 = 61606;
+/// `hkpRagdollConstraintData::ctor_sub0` at 0xb65a60 (callgraph, medium); signature (untiered): `undefined2 * ctor_sub0(undefined2 * param_1)`
+pub const hkpRagdollConstraintData__ctor_sub0: u64 = 61636;
+/// `hkpRagdollConstraintData::dtor` at 0xb65010 (layout_inference, high); signature (high): `undefined dtor(hkpRagdollConstraintData * this)`
+pub const hkpRagdollConstraintData__dtor: u64 = 61607;
+/// `hkpRagdollConstraintData::vdtor` at 0xb52650 (slot_propagation, medium); signature (low): `hkpRagdollConstraintData * vdtor(hkpRagdollConstraintData * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpRagdollConstraintData__vdtor: u64 = 61226;
+/// `hkpRagdollConstraintData::vfunc_10` at 0xb658d0 (rtti, high); signature (low): `undefined1 * vfunc_10(hkpRagdollConstraintData * this, undefined1 * param_1)`
+pub const hkpRagdollConstraintData__vfunc_10: u64 = 61631;
+/// `hkpRagdollConstraintData::vfunc_11` at 0xb659b0 (rtti, high); signature (low): `undefined8 vfunc_11(void)`
+pub const hkpRagdollConstraintData__vfunc_11: u64 = 61632;
+/// `hkpRagdollConstraintData::vfunc_12` at 0xb659e0 (rtti, high); signature (low): `undefined vfunc_12(hkpRagdollConstraintData * this, undefined8 param_1, undefined4 * param_2)`
+pub const hkpRagdollConstraintData__vfunc_12: u64 = 61634;
+/// `hkpRagdollConstraintData::vfunc_18` at 0xb659c0 (rtti, high); signature (low): `undefined vfunc_18(hkpRagdollConstraintData * this, int * param_1)`
+pub const hkpRagdollConstraintData__vfunc_18: u64 = 61633;
+/// `hkpRagdollConstraintData::vfunc_3` at 0xb656b0 (rtti, high); signature (low): `undefined vfunc_3(hkpRagdollConstraintData * this, undefined4 param_2)`
+pub const hkpRagdollConstraintData__vfunc_3: u64 = 61614;
+/// `hkpRagdollConstraintData::vfunc_4` at 0xb656c0 (rtti, high); signature (low): `undefined4 vfunc_4(hkpRagdollConstraintData * this)`
+pub const hkpRagdollConstraintData__vfunc_4: u64 = 61615;
+/// `hkpRagdollConstraintData::vfunc_5` at 0xb65700 (rtti, high); signature (low): `undefined vfunc_5(hkpRagdollConstraintData * this, int param_1)`
+pub const hkpRagdollConstraintData__vfunc_5: u64 = 61618;
+/// `hkpRagdollConstraintData::vfunc_6` at 0xb65730 (rtti, high); signature (low): `undefined8 vfunc_6(hkpRagdollConstraintData * this, undefined4 * param_1)`
+pub const hkpRagdollConstraintData__vfunc_6: u64 = 61619;
+/// `hkpRagdollConstraintData::vfunc_7` at 0xb65750 (rtti, high); signature (medium): `undefined8 vfunc_7(hkpRagdollConstraintData * this, float param_1)`
+pub const hkpRagdollConstraintData__vfunc_7: u64 = 61620;
+/// `hkpRagdollConstraintData::vfunc_8` at 0xb656d0 (rtti, high); signature (low): `undefined vfunc_8(hkpRagdollConstraintData * this, byte param_1)`
+pub const hkpRagdollConstraintData__vfunc_8: u64 = 61616;
+/// `hkpRagdollConstraintData::vfunc_9` at 0xb656f0 (rtti, high); signature (high): `byte vfunc_9(hkpRagdollConstraintData * this)`
+pub const hkpRagdollConstraintData__vfunc_9: u64 = 61617;
+/// `hkpRagdollLimitsData::ctor` at 0xb775b0 (layout_inference, medium); signature (high): `hkpRagdollLimitsData * ctor(hkpRagdollLimitsData * this)`
+pub const hkpRagdollLimitsData__ctor: u64 = 61995;
+/// `hkpRagdollLimitsData::vdtor` at 0xb526d0 (layout_inference, medium); signature (low): `hkpRagdollLimitsData * vdtor(hkpRagdollLimitsData * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpRagdollLimitsData__vdtor: u64 = 61227;
+/// `hkpRagdollLimitsData::vfunc_10` at 0xb77b40 (rtti, high); signature (low): `undefined1 * vfunc_10(hkpRagdollLimitsData * this, undefined1 * param_1)`
+pub const hkpRagdollLimitsData__vfunc_10: u64 = 62000;
+/// `hkpRagdollLimitsData::vfunc_11` at 0xb77c30 (rtti, high); signature (low): `undefined8 vfunc_11(void)`
+pub const hkpRagdollLimitsData__vfunc_11: u64 = 62001;
+/// `hkpRagdollLimitsData::vfunc_12` at 0xb77c60 (rtti, high); signature (low): `undefined vfunc_12(hkpRagdollLimitsData * this, undefined8 param_1, undefined4 * param_2)`
+pub const hkpRagdollLimitsData__vfunc_12: u64 = 62003;
+/// `hkpRagdollLimitsData::vfunc_18` at 0xb77c40 (rtti, high); signature (low): `undefined vfunc_18(hkpRagdollLimitsData * this, int * param_1)`
+pub const hkpRagdollLimitsData__vfunc_18: u64 = 62002;
+/// `hkpRayCollidableFilter::vdtor` at 0xb36780 (layout_inference, medium); signature (low): `hkpRayCollidableFilter * vdtor(hkpRayCollidableFilter * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpRayCollidableFilter__vdtor: u64 = 60408;
+/// `hkpRayHitCollector::dtor` at 0x404390 (layout_inference, high); signature (high): `undefined dtor(hkpRayHitCollector * this)`
+pub const hkpRayHitCollector__dtor: u64 = 25989;
+/// `hkpRayHitCollector::dtor` at 0x6baeb0 (layout_inference, high); signature (high): `undefined dtor(hkpRayHitCollector * this)`
+pub const hkpRayHitCollector__dtor_2: u64 = 38157;
+/// `hkpRayHitCollector::dtor` at 0x10ca940 (layout_inference, high); signature (high): `undefined dtor(hkpRayHitCollector * this)`
+pub const hkpRayHitCollector__dtor_3: u64 = 80144;
+/// `hkpRayHitCollector::vdtor` at 0x2028d0 (layout_inference, medium); signature (low): `hkpRayHitCollector * vdtor(hkpRayHitCollector * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpRayHitCollector__vdtor: u64 = 15254;
 /// `hkpRayShapeCollectionFilter::vdtor` at 0xb367b0 (layout_inference, medium); signature (low): `hkpRayShapeCollectionFilter * vdtor(hkpRayShapeCollectionFilter * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const hkpRayShapeCollectionFilter__vdtor: u64 = 60409;
 /// `hkpRemoveTerminalsMoppModifier2::ctor` at 0xb40fe0 (layout_inference, medium); signature (low): `hkpRemoveTerminalsMoppModifier2 * ctor(hkpRemoveTerminalsMoppModifier2 * this, undefined8 param_1, undefined8 param_2)`

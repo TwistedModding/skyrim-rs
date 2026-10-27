@@ -5596,13 +5596,6 @@ pub unsafe fn lookup_ref_at_field8_a4(param_1: i64) -> i64 { unsafe { function!(
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn lower_bound_by_field24(param_1: *mut i64, param_2: i32) -> i64 { unsafe { function!(83623, (*mut i64, i32) -> i64)(param_1, param_2) } }
-/// `MakePlaneFromNormalAndPoint` (decompiler signature, tier high; ledger decompiler evidence, name high; id 70803, rva 0xef74a0).
-/// `float * MakePlaneFromNormalAndPoint(float * param_1, float * param_2, float * param_3)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn make_plane_from_normal_and_point(param_1: *mut f32, param_2: *mut f32, param_3: *mut f32) -> *mut f32 { unsafe { function!(70803, (*mut f32, *mut f32, *mut f32) -> *mut f32)(param_1, param_2, param_3) } }
 /// `MakeSaveFileNameWithEssExtension` (decompiler signature, tier high; ledger decompiler evidence, name high; id 109284, rva 0x159aa60).
 /// `undefined MakeSaveFileNameWithEssExtension(undefined8 param_1, char * param_2, char * param_3)`
 ///
@@ -5610,13 +5603,6 @@ pub unsafe fn make_plane_from_normal_and_point(param_1: *mut f32, param_2: *mut 
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn make_save_file_name_with_ess_extension(param_1: u64, param_2: *mut c_char, param_3: *mut c_char) -> u64 { unsafe { function!(109284, (u64, *mut c_char, *mut c_char) -> u64)(param_1, param_2, param_3) } }
-/// `MatrixToQuaternion` (decompiler signature, tier high; ledger decompiler evidence, name high; id 70844, rva 0xef9250).
-/// `undefined MatrixToQuaternion(float * param_1, float * param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn matrix_to_quaternion(param_1: *mut f32, param_2: *mut f32) -> u64 { unsafe { function!(70844, (*mut f32, *mut f32) -> u64)(param_1, param_2) } }
 /// `MaxFloat` (decompiler signature, tier high; ledger decompiler evidence, name high; id 62268, rva 0xb86af0).
 /// `float MaxFloat(float param_1, float param_2)`
 ///
@@ -5883,13 +5869,6 @@ pub unsafe fn multiply_by_field28(param_1: f32, param_2: i64) -> f32 { unsafe { 
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn multiply_field18_recursive(param_1: i64, param_2: i32) -> i64 { unsafe { function!(89078, (i64, i32) -> i64)(param_1, param_2) } }
-/// `MultiplyMatrix3x3` (decompiler signature, tier high; ledger decompiler evidence, name high; id 14189, rva 0x1d6580).
-/// `float * MultiplyMatrix3x3(float * param_1, float * param_2, float * param_3)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn multiply_matrix3x3(param_1: *mut f32, param_2: *mut f32, param_3: *mut f32) -> *mut f32 { unsafe { function!(14189, (*mut f32, *mut f32, *mut f32) -> *mut f32)(param_1, param_2, param_3) } }
 /// `MultiplyMatrix4` (decompiler signature, tier high; ledger decompiler evidence, name high; id 82681, rva 0xd015b0).
 /// `undefined MultiplyMatrix4(float * param_1, float * param_2, float * param_3)`
 ///
@@ -7871,20 +7850,6 @@ pub unsafe fn nop_99() -> u64 { unsafe { function!(31097, () -> u64)() } }
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn normalize_path_separators(param_1: i64) -> u64 { unsafe { function!(69010, (i64) -> u64)(param_1) } }
-/// `NormalizeVector3` (decompiler signature, tier high; ledger decompiler evidence, name high; id 38401, rva 0x6c2d40).
-/// `float NormalizeVector3(float * param_1)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn normalize_vector3(param_1: *mut f32) -> f32 { unsafe { function!(38401, (*mut f32) -> f32)(param_1) } }
-/// `NormalizeVector3InPlace` (decompiler signature, tier high; ledger decompiler evidence, name high; id 18829, rva 0x2b6540).
-/// `undefined NormalizeVector3InPlace(float * param_1)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn normalize_vector3_in_place(param_1: *mut f32) -> u64 { unsafe { function!(18829, (*mut f32) -> u64)(param_1) } }
 /// `NormalizeVector4` (decompiler signature, tier high; ledger decompiler evidence, name high; id 57006, rva 0xaa2390).
 /// `undefined NormalizeVector4(float * param_1)`
 ///
@@ -16355,3 +16320,38 @@ pub unsafe fn set_process_field250_field218_bit11(param_1: i64, param_2: c_char)
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn set_process_field8_field2_c8(param_1: i64, param_2: u32) -> u64 { unsafe { function!(38725, (i64, u32) -> u64)(param_1, param_2) } }
+/// `SetQwordAtIndexTo7FFFFFFF` (decompiler signature, tier high; ledger decompiler evidence, name high; id 82002, rva 0x1160410).
+/// `undefined SetQwordAtIndexTo7FFFFFFF(longlong param_1, int param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn set_qword_at_index_to7_fffffff(param_1: i64, param_2: i32) -> u64 { unsafe { function!(82002, (i64, i32) -> u64)(param_1, param_2) } }
+/// `SetRectMembersOnObject` (decompiler signature, tier high; ledger decompiler evidence, name high; id 85924, rva 0xda9780).
+/// `undefined SetRectMembersOnObject(longlong param_1, longlong param_2, double * param_3)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn set_rect_members_on_object(param_1: i64, param_2: i64, param_3: *mut f64) -> u64 { unsafe { function!(85924, (i64, i64, *mut f64) -> u64)(param_1, param_2, param_3) } }
+/// `SetRefCountedField18_2` (decompiler signature, tier high; ledger decompiler evidence, name high; id 62049, rva 0xb79be0).
+/// `undefined SetRefCountedField18_2(longlong param_1, longlong param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn set_ref_counted_field18_2(param_1: i64, param_2: i64) -> u64 { unsafe { function!(62049, (i64, i64) -> u64)(param_1, param_2) } }
+/// `SetRefCountedField18_3` (decompiler signature, tier high; ledger decompiler evidence, name high; id 66183, rva 0xc64630).
+/// `undefined SetRefCountedField18_3(longlong param_1, longlong param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn set_ref_counted_field18_3(param_1: i64, param_2: i64) -> u64 { unsafe { function!(66183, (i64, i64) -> u64)(param_1, param_2) } }
+/// `SetRefCountedField20_2` (decompiler signature, tier high; ledger decompiler evidence, name high; id 67471, rva 0xcc0370).
+/// `undefined SetRefCountedField20_2(longlong param_1, longlong param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn set_ref_counted_field20_2(param_1: i64, param_2: i64) -> u64 { unsafe { function!(67471, (i64, i64) -> u64)(param_1, param_2) } }

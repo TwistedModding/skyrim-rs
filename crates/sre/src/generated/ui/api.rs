@@ -209,6 +209,7 @@ impl crate::Console {
     ///
     /// Semantic, ui pass, high; called through the object's vtable.
     /// `u32 (Console* this, UIMessage* msg)`
+    /// May be null: `msg`.
     ///
     /// # Safety
     /// `msg` must point to what the engine expects.
@@ -344,6 +345,7 @@ impl crate::GFxMovieView {
     ///
     /// Semantic, ui pass, high; ledger semantic evidence, name high; id 83883, rva 0xd4adb0.
     /// `bool (GFxMovieView* this, void* level, const char* path, GFxValue* result, const GFxValue* args, int argCount)`
+    /// May be null: `level`, `result`.
     ///
     /// # Safety
     /// `level`, `path`, `result` must point to what the engine expects.
@@ -359,6 +361,7 @@ impl crate::GFxMovieView {
     ///
     /// Semantic, ui pass, high; ledger semantic evidence, name high; id 83671, rva 0xd3e830.
     /// `GFxMovieView* (GFxMovieView* this, void* movieDefImpl)`
+    /// May be null: `movieDefImpl`.
     ///
     /// # Safety
     /// It constructs or destroys an object in place.
@@ -407,6 +410,7 @@ impl crate::HUDMenu {
     ///
     /// Semantic, ui pass, high; called through the object's vtable.
     /// `u32 (HUDMenu* this, UIMessage* msg)`
+    /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
     ///
     /// # Safety
     /// `msg` must point to what the engine expects.
@@ -509,6 +513,7 @@ impl crate::HUDObject {
     ///
     /// Semantic, ui pass, high; called through the object's vtable.
     /// `bool (HUDObject* this, UIMessage* msg)`
+    /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
     ///
     /// # Safety
     /// `msg` must point to what the engine expects.
@@ -535,6 +540,7 @@ impl crate::IMenu {
     ///
     /// Semantic, ui pass, high; called through the object's vtable.
     /// `void (IMenu* this, FxDelegateHandler::CallbackProcessor* processor)`
+    /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
     #[inline]
     pub fn accept(&self, processor: &crate::FxDelegateHandler__CallbackProcessor) { unsafe { virtual_function!(self, 1, (*const Self, *const crate::FxDelegateHandler__CallbackProcessor))(core::ptr::from_ref(self), core::ptr::from_ref(processor)) } }
     /// `IMenu::AdvanceMovie`, vtable slot 5: per-frame advance: sets the movie variable "CurrentTime" (a number) and advances the movie by interval (movie slot 0x128 with frame catch-up 2)
@@ -791,8 +797,9 @@ impl crate::MenuControls {
     ///
     /// Semantic, ui pass, high; ledger semantic evidence, name high; id 52202, rva 0x95f4b0.
     /// `void (MenuControls* this, MenuEventHandler* handler)`
+    /// May be null: `handler`.
     #[inline]
-    pub fn add_handler(&self, handler: &crate::MenuEventHandler) { unsafe { function!(52202, (*const Self, *const crate::MenuEventHandler))(core::ptr::from_ref(self), core::ptr::from_ref(handler)) } }
+    pub fn add_handler(&self, handler: Option<&crate::MenuEventHandler>) { unsafe { function!(52202, (*const Self, *const crate::MenuEventHandler))(core::ptr::from_ref(self), handler.map_or(core::ptr::null(), core::ptr::from_ref)) } }
     /// `MenuControls::CreateHandlers`: creates and registers the seven built-in handlers (+0x48..+0x78)
     ///
     /// Semantic, ui pass, high; ledger semantic evidence, name high; id 52224, rva 0x960440.
@@ -864,6 +871,7 @@ impl crate::MenuEventHandler {
     ///
     /// Semantic, ui pass, medium; called through the object's vtable.
     /// `bool (MenuEventHandler* this, ButtonEvent* event)`
+    /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
     ///
     /// # Safety
     /// The pass rates the signature medium.
@@ -873,6 +881,7 @@ impl crate::MenuEventHandler {
     ///
     /// Semantic, ui pass, medium; called through the object's vtable.
     /// `bool (MenuEventHandler* this, InputEvent* event)`
+    /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
     ///
     /// # Safety
     /// The pass rates the signature medium.
@@ -882,6 +891,7 @@ impl crate::MenuEventHandler {
     ///
     /// Semantic, ui pass, medium; called through the object's vtable.
     /// `bool (MenuEventHandler* this, InputEvent* event)`
+    /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
     ///
     /// # Safety
     /// The pass rates the signature medium.
@@ -891,6 +901,7 @@ impl crate::MenuEventHandler {
     ///
     /// Semantic, ui pass, medium; called through the object's vtable.
     /// `bool (MenuEventHandler* this, InputEvent* event)`
+    /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
     ///
     /// # Safety
     /// The pass rates the signature medium.
@@ -900,6 +911,7 @@ impl crate::MenuEventHandler {
     ///
     /// Semantic, ui pass, medium; called through the object's vtable.
     /// `bool (MenuEventHandler* this, InputEvent* event)`
+    /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
     ///
     /// # Safety
     /// The pass rates the signature medium.
@@ -909,6 +921,7 @@ impl crate::MenuEventHandler {
     ///
     /// Semantic, ui pass, low; called through the object's vtable.
     /// `bool (MenuEventHandler* this, InputEvent* event)`
+    /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
     ///
     /// # Safety
     /// The pass rates the signature low.
@@ -930,6 +943,7 @@ impl crate::MenuOpenHandler {
     ///
     /// Semantic, ui pass, high; called through the object's vtable.
     /// `bool (MenuOpenHandler* this, InputEvent* event)`
+    /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
     #[inline]
     pub fn can_process(&self, event: &crate::InputEvent) -> bool { unsafe { virtual_function!(self, 1, (*const Self, *const crate::InputEvent) -> bool)(core::ptr::from_ref(self), core::ptr::from_ref(event)) } }
     /// `MenuOpenHandler::OpenTweenMenu`: opens the TweenMenu (UIStrings+0xf0 'TweenMenu') and closes the FavoritesMenu (+0x158) unless VATS is active, the player is busy, the camera is in cameraStates[8] or the +0xe0/+0x48 check holds (save-on-pause option)
@@ -984,6 +998,7 @@ impl crate::MessageBoxMenu {
     ///
     /// Semantic, ui pass, high; called through the object's vtable.
     /// `u32 (MessageBoxMenu* this, UIMessage* msg)`
+    /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
     ///
     /// # Safety
     /// `msg` must point to what the engine expects.
@@ -1008,14 +1023,16 @@ impl crate::MessageBoxMenu {
     ///
     /// Semantic, ui pass, high; ledger semantic evidence, name high; id 442727, rva 0x963370.
     /// `void (MessageBoxData* data)`
+    /// May be null: `data`.
     #[inline]
-    pub fn dismiss_message(data: &crate::MessageBoxData) { unsafe { function!(442727, (*const crate::MessageBoxData))(core::ptr::from_ref(data)) } }
+    pub fn dismiss_message(data: Option<&crate::MessageBoxData>) { unsafe { function!(442727, (*const crate::MessageBoxData))(data.map_or(core::ptr::null(), core::ptr::from_ref)) } }
     /// `MessageBoxMenu::RemoveMessage`: removes data from g_MessageBoxQueue and deletes it
     ///
     /// Semantic, ui pass, high; ledger runtime evidence, name high; id 52284, rva 0x963410.
     /// `void (MessageBoxMenu* this, MessageBoxData* data)`
+    /// May be null: `data`.
     #[inline]
-    pub fn remove_message(&self, data: &crate::MessageBoxData) { unsafe { function!(52284, (*const Self, *const crate::MessageBoxData))(core::ptr::from_ref(self), core::ptr::from_ref(data)) } }
+    pub fn remove_message(&self, data: Option<&crate::MessageBoxData>) { unsafe { function!(52284, (*const Self, *const crate::MessageBoxData))(core::ptr::from_ref(self), data.map_or(core::ptr::null(), core::ptr::from_ref)) } }
     /// `MessageBoxMenu::ShowNextMessage`: shows the last (highest-depth) queued box: Invokes setMessageText/setIsVertical/setIsCancellable/setButtons, sets the menu depth from +0x48, showing=1; drops disabled types; hides the menu (3) when nothing is left
     ///
     /// Semantic, ui pass, high; ledger semantic evidence, name high; id 52285, rva 0x963530.
@@ -1163,8 +1180,9 @@ impl crate::UIMessageQueue {
     ///
     /// Semantic, ui pass, high; ledger runtime evidence, name high; id 13631, rva 0x1b47f0.
     /// `void (UIMessageQueue* this, const BSFixedString* menuName, u32 type, IUIMessageData* data)`
+    /// May be null: `data`.
     #[inline]
-    pub fn add_message(&self, menuName: &crate::BSFixedString, type_: u32, data: &crate::IUIMessageData) { unsafe { function!(13631, (*const Self, *const crate::BSFixedString, u32, *const crate::IUIMessageData))(core::ptr::from_ref(self), core::ptr::from_ref(menuName), type_, core::ptr::from_ref(data)) } }
+    pub fn add_message(&self, menuName: &crate::BSFixedString, type_: u32, data: Option<&crate::IUIMessageData>) { unsafe { function!(13631, (*const Self, *const crate::BSFixedString, u32, *const crate::IUIMessageData))(core::ptr::from_ref(self), core::ptr::from_ref(menuName), type_, data.map_or(core::ptr::null(), core::ptr::from_ref)) } }
     /// `UIMessageQueue::HasQueuedMessage`: true if a message with this name (an empty name matches any) and type is still queued
     ///
     /// Semantic, ui pass, high; ledger semantic evidence, name high; id 82168, rva 0x116e0d0.
@@ -1228,6 +1246,7 @@ pub unsafe fn compare_message_box_depth(a: *const crate::MessageBoxData, b: *con
 ///
 /// Semantic, ui pass, high; ledger semantic evidence, name high; id 52843, rva 0x98dab0.
 /// `HUDData* (u32 type, const char* text)`
+/// May be null: `text`.
 ///
 /// # Safety
 /// `text` must point to what the engine expects.
@@ -1273,6 +1292,7 @@ pub unsafe fn g_fx_function_object__call_handler(this: *mut c_void, fnCall: *mut
 ///
 /// Semantic, ui pass, medium; ledger semantic evidence, name medium; id 84640, rva 0xdf2c10.
 /// `void* (GFxLoader* this, const char* path, uint flags, uint)`
+/// May be null: `path`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -1291,6 +1311,7 @@ pub unsafe fn g_fx_value__object_interface__create_empty_movie_clip(this: *mut c
 ///
 /// Semantic, ui pass, high; ledger semantic evidence, name high; id 82237, rva 0xcf54a0.
 /// `uint (ObjectInterface* this, void* data)`
+/// May be null: `data`.
 ///
 /// # Safety
 /// `this`, `data` must point to what the engine expects.
@@ -1309,6 +1330,7 @@ pub unsafe fn g_fx_value__object_interface__get_display_info(this: *mut c_void, 
 ///
 /// Semantic, ui pass, high; ledger semantic evidence, name high; id 82241, rva 0xcf5820.
 /// `bool (ObjectInterface* this, void* data, uint index, GFxValue* out)`
+/// May be null: `data`.
 ///
 /// # Safety
 /// `this`, `data`, `out` must point to what the engine expects.
@@ -1318,6 +1340,7 @@ pub unsafe fn g_fx_value__object_interface__get_element(this: *mut c_void, data:
 ///
 /// Semantic, ui pass, high; ledger semantic evidence, name high; id 82245, rva 0xcf5a40.
 /// `bool (ObjectInterface* this, void* data, const char* name, GFxValue* out, bool isDisplayObject)`
+/// May be null: `out`.
 ///
 /// # Safety
 /// `this`, `data`, `name`, `out` must point to what the engine expects.
@@ -1363,6 +1386,7 @@ pub unsafe fn g_fx_value__object_interface__has_member(this: *mut c_void, data: 
 ///
 /// Semantic, ui pass, high; ledger runtime evidence, name high; id 82256, rva 0xcf6160.
 /// `bool (ObjectInterface* this, void* data, GFxValue* result, const char* name, const GFxValue* args, uint argCount, bool isDisplayObject)`
+/// May be null: `result`, `args`.
 ///
 /// # Safety
 /// `this`, `data`, `result`, `name` must point to what the engine expects.
@@ -1504,6 +1528,7 @@ pub unsafe fn queue_hud_button_art_refresh() { unsafe { function!(51635, ())() }
 ///
 /// Semantic, ui pass, medium; ledger semantic evidence, name medium; id 52849, rva 0x98dea0.
 /// `void (TESObjectREFR* ref, void* item)`
+/// May be null: `ref_`, `item`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -1531,8 +1556,9 @@ pub unsafe fn queue_message_box(text: *const c_void, callback: *mut *mut crate::
 ///
 /// Semantic, ui pass, high; ledger runtime evidence, name high; id 52271, rva 0x962a90.
 /// `bool (MessageBoxData* data)`
+/// May be null: `data`.
 #[inline]
-pub fn queue_message_box_data(data: &crate::MessageBoxData) -> bool { unsafe { function!(52271, (*const crate::MessageBoxData) -> bool)(core::ptr::from_ref(data)) } }
+pub fn queue_message_box_data(data: Option<&crate::MessageBoxData>) -> bool { unsafe { function!(52271, (*const crate::MessageBoxData) -> bool)(data.map_or(core::ptr::null(), core::ptr::from_ref)) } }
 /// `QueueScaleformEvent`: AddMessage(name, 6, BSUIScaleformData{event})
 ///
 /// Semantic, ui pass, high; ledger semantic evidence, name high; id 82182, rva 0x116eca0.
@@ -1564,6 +1590,7 @@ pub fn queue_ui_message_with_u_int(menuName: &crate::BSFixedString, type_: u32, 
 ///
 /// Semantic, ui pass, high; ledger semantic evidence, name high; id 82310, rva 0x116ef00.
 /// `void (IMenu* menu, GFxMovieView* movie)`
+/// May be null: `movie`.
 ///
 /// # Safety
 /// `movie` must point to what the engine expects.
@@ -1591,6 +1618,7 @@ pub unsafe fn set_hud_mode(mode: *const c_char, enable: bool) { unsafe { functio
 ///
 /// Semantic, ui pass, high; ledger runtime evidence, name high; id 52933, rva 0x991a30.
 /// `void (const char* text, const char* soundEditorId, bool suppressRepeats)`
+/// May be null: `text`, `soundEditorId`.
 ///
 /// # Safety
 /// `text`, `soundEditorId` must point to what the engine expects.
@@ -1600,6 +1628,7 @@ pub unsafe fn show_hud_message(text: *const c_char, soundEditorId: *const c_char
 ///
 /// Semantic, ui pass, medium; ledger semantic evidence, name medium; id 13363, rva 0x1a6540.
 /// `bool (bool begin, void* loadingData, bool flag, bool flag2)`
+/// May be null: `loadingData`.
 ///
 /// # Safety
 /// The pass rates the signature medium.

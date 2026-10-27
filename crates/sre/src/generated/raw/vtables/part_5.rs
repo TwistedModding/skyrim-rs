@@ -2527,7 +2527,7 @@ pub type BSCullingProcess_vtable_AppendVisible = unsafe extern "C" fn(this: *mut
 /// `BSCullingProcess::AppendGeometry`, slot 25: adds an accepted geometry to visibleGeometry (high).
 pub type BSCullingProcess_vtable_AppendGeometry = unsafe extern "C" fn(this: *mut crate::BSCullingProcess, geometry: *mut crate::BSGeometry);
 /// `BSCullingProcess::TestBoundAgainstPlanes`, slot 28: false when the sphere is outside an active plane; clears the bits of planes it is fully inside when +0x120 (high).
-pub type BSCullingProcess_vtable_TestBoundAgainstPlanes = unsafe extern "C" fn(this: *mut crate::BSCullingProcess, bound: *const c_void) -> bool;
+pub type BSCullingProcess_vtable_TestBoundAgainstPlanes = unsafe extern "C" fn(this: *mut crate::BSCullingProcess, bound: *const crate::NiBound) -> bool;
 
 /// `BSCyclicBlendTransitionGenerator::vftable` at 0x1a03548, id 232641 (rtti, high); 28 slots.
 #[repr(C)]
@@ -4065,7 +4065,7 @@ pub struct BSEffectShaderProperty_vtable {
     pub slot_40: *const c_void,
     /// `BSShaderProperty::SetShadowLightBit` at 0x14e77b0 (semantic, medium); signature (untiered): `undefined SetShadowLightBit(BSShaderProperty * this, int param_1)`
     pub slot_41: *const c_void,
-    /// `BSEffectShaderProperty::GetRenderPasses` at 0x1529cb0 (semantic, high); signature (untiered): `undefined8 * GetRenderPasses(BSEffectShaderProperty * this, longlong * param_1, int param_2, longlong param_3)`; `GetRenderPasses`: one effect-shader pass (ID_415166); null for modes 0xc-0xf and 0x10-0x11, so effect geometry casts no shadows (high); semantic signature: `BSRenderPass** (BSEffectShaderProperty* this, BSGeometry* g, u32 renderMode, BSShaderAccumulator* acc)`
+    /// `BSEffectShaderProperty::GetRenderPasses` at 0x1529cb0 (semantic, high); signature (untiered): `undefined8 * GetRenderPasses(BSEffectShaderProperty * this, longlong * param_1, int param_2, longlong param_3)`; `GetRenderPasses`: one effect-shader pass (ID_415166); null for modes 0xc-0xf and 0x10-0x11, so effect geometry casts no shadows (high); semantic signature: `BSRenderPass** (BSEffectShaderProperty* this, BSGeometry* g, AccumulatorRenderMode renderMode, BSShaderAccumulator* acc)`
     pub slot_42: *const c_void,
     /// `BSEffectShaderProperty::vfunc_43` at 0x152a0a0 (rtti, high); signature (low): `undefined8 * vfunc_43(BSEffectShaderProperty * this, longlong param_1, int param_2)`
     pub slot_43: *const c_void,
@@ -6967,7 +6967,7 @@ pub struct BSIMusicTrack_vtable {
     pub slot_6: *const c_void,
     /// `BSIMusicTrack::vfunc_7` at 0x326f40 (rtti, high); signature (low): `undefined1 vfunc_7(void)`; `TestConditions`: true without conditions, else evaluates them on the player (high); semantic signature: `bool (BSIMusicTrack* this)`
     pub slot_7: *const c_void,
-    /// `BSIMusicTrack::GetState` at 0x325560 (semantic, medium); signature (untiered): `undefined4 GetState(BSIMusicTrack * this)`; `GetState`: +8: 1 playing, 2 paused, 3 finishing, 4 finished (medium); semantic signature: `u32 (BSIMusicTrack* this)`
+    /// `BSIMusicTrack::GetState` at 0x325560 (semantic, medium); signature (untiered): `undefined4 GetState(BSIMusicTrack * this)`; `GetState`: +8: 1 playing, 2 paused, 3 finishing, 4 finished (medium); semantic signature: `MusicPlaybackState (BSIMusicTrack* this)`
     pub slot_8: *const c_void,
     /// `BSIMusicTrack::vfunc_9` at 0x325540 (rtti, medium); signature (low): `undefined vfunc_9(void)`; `DoDuck`: queues an attenuation fade on the handle over fMusicDuckingSeconds (medium); semantic signature: `void (BSIMusicTrack* this, u16 attenuation)`
     pub slot_9: *const c_void,

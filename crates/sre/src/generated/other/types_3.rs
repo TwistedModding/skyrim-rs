@@ -3,6 +3,28 @@
 
 use core::ffi::c_void;
 
+/// `_anon_76CA921F::CriticalHitToMiscStatHandler`: size >= 0x8 (lower bound); partial, the struct stops at the lower bound; primary base `BSTEventSink<CriticalHitEvent::Event>`.
+/// Evidence: vptr at 0x0.
+/// Bases: `BSTEventSink<CriticalHitEvent::Event>`@0x0.
+#[repr(C)]
+pub struct _anon_76CA921F__CriticalHitToMiscStatHandler {
+    /// +0x0 `vtbl:_anon_76CA921F::CriticalHitToMiscStatHandler:0`, rtti
+    pub __vftable: *const crate::raw::vtables::_anon_76CA921F__CriticalHitToMiscStatHandler_vtable,
+    pub __engine: crate::Engine,
+}
+const _: () = assert!(core::mem::offset_of!(_anon_76CA921F__CriticalHitToMiscStatHandler, __vftable) == 0x0);
+
+/// `_anon_76CA921F::DaysJailedToMiscStatHandler`: size >= 0x8 (lower bound); partial, the struct stops at the lower bound; primary base `BSTEventSink<DaysJailed::Event>`.
+/// Evidence: vptr at 0x0.
+/// Bases: `BSTEventSink<DaysJailed::Event>`@0x0.
+#[repr(C)]
+pub struct _anon_76CA921F__DaysJailedToMiscStatHandler {
+    /// +0x0 `vtbl:_anon_76CA921F::DaysJailedToMiscStatHandler:0`, rtti
+    pub __vftable: *const crate::raw::vtables::_anon_76CA921F__DaysJailedToMiscStatHandler_vtable,
+    pub __engine: crate::Engine,
+}
+const _: () = assert!(core::mem::offset_of!(_anon_76CA921F__DaysJailedToMiscStatHandler, __vftable) == 0x0);
+
 /// `_anon_76CA921F::DaysPassedToMiscStatHandler`: size >= 0x8 (lower bound); partial, the struct stops at the lower bound; primary base `BSTEventSink<DaysPassed::Event>`.
 /// Evidence: vptr at 0x0.
 /// Bases: `BSTEventSink<DaysPassed::Event>`@0x0.

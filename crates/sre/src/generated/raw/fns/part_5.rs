@@ -3,6 +3,10 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `BSTDerivedCreator<BedEnterHandler,IHandlerFunctor<Actor,BSFixedStringCI>_>::vfunc_1` at 0x7d4ea0 (rtti, medium); signature (low): `undefined vfunc_1(BSTDerivedCreator<BedEnterHandler,IHandlerFunctor<Actor,BSFixedStringCI>_> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+pub const BSTDerivedCreator_BedEnterHandler_IHandlerFunctor_Actor_BSFixedStringCI____vfunc_1: u64 = 43392;
+/// `BSTDerivedCreator<BedEnterHandler,IHandlerFunctor<Actor,BSFixedStringCI>_>::vfunc_2` at 0x7d6d80 (rtti, medium); signature (low): `undefined vfunc_2(BSTDerivedCreator<BedEnterHandler,IHandlerFunctor<Actor,BSFixedStringCI>_> * this, undefined8 * param_1)`
+pub const BSTDerivedCreator_BedEnterHandler_IHandlerFunctor_Actor_BSFixedStringCI____vfunc_2: u64 = 43485;
 /// `BSTDerivedCreator<BedFurnitureExitHandler,IHandlerFunctor<Actor,BSFixedStringCI>_>::vdtor` at 0x7d2890 (layout_inference, medium); signature (low): `BSTDerivedCreator<BedFurnitureExitHandler,IHandlerFunctor<Actor,BSFixedStringCI>_> * vdtor(BSTDerivedCreator<BedFurnitureExitHandler,IHandlerFunctor<Actor,BSFixedStringCI>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const BSTDerivedCreator_BedFurnitureExitHandler_IHandlerFunctor_Actor_BSFixedStringCI____vdtor: u64 = 43205;
 /// `BSTDerivedCreator<BedFurnitureExitHandler,IHandlerFunctor<Actor,BSFixedStringCI>_>::vfunc_1` at 0x7d4f00 (rtti, medium); signature (low): `undefined vfunc_1(BSTDerivedCreator<BedFurnitureExitHandler,IHandlerFunctor<Actor,BSFixedStringCI>_> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
@@ -5014,7 +5018,7 @@ pub const BleedoutCameraState__Begin: u64 = 50714;
 /// `BleedoutCameraState::ComputeOrbitPositionWithCollision` at 0x8f4530 (runtime, high); signature (untiered): `bool ComputeOrbitPositionWithCollision(longlong param_1, float * param_2, longlong param_3, undefined8 param_4)`; position = focus node (+0x120) world translation, or the target's slot-111 3D world translation + eye height when no focus node; then position -= distance (+0x10c) * rotation column 1; ComputeCameraCasterCollision(camera, position, fade true); returns true when clear (or when the position stayed zero) (high); semantic signature: `bool (BleedoutCameraState* this, NiPoint3* position, const NiMatrix3* rotation)`
 pub const BleedoutCameraState__ComputeOrbitPositionWithCollision: u64 = 50720;
 /// `BleedoutCameraState::ComputeOrbitPositionWithCollision` as a function pointer type (high).
-pub type BleedoutCameraState__ComputeOrbitPositionWithCollision_fn = unsafe extern "C" fn(this: *mut crate::BleedoutCameraState, position: *mut c_void, rotation: *const c_void) -> bool;
+pub type BleedoutCameraState__ComputeOrbitPositionWithCollision_fn = unsafe extern "C" fn(this: *mut crate::BleedoutCameraState, position: *mut crate::NiPoint3, rotation: *const crate::NiMatrix3) -> bool;
 /// `BleedoutCameraState::Destroy` at 0x8fc4f0 (semantic, high); signature (untiered): `BleedoutCameraState * Destroy(BleedoutCameraState * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const BleedoutCameraState__Destroy: u64 = 50867;
 /// `BleedoutCameraState::End` at 0x8f3cd0 (runtime, high); signature (untiered): `undefined End(BleedoutCameraState * this)`
@@ -5363,7 +5367,7 @@ pub const BuildPrefixedNameIndexMap: u64 = 63342;
 pub const BuildProfileLineString: u64 = 53671;
 /// `BuildQuaternionFromArray110Floats38To40` at 0x4240b0 (decompiler, medium); signature (untiered): `undefined8 BuildQuaternionFromArray110Floats38To40(longlong param_1, float * param_2)`
 pub const BuildQuaternionFromArray110Floats38To40: u64 = 26585;
-/// `BuildQuaternionFromEulerAngles` at 0xef9110 (decompiler, medium); signature (medium): `undefined BuildQuaternionFromEulerAngles(float * param_1, float param_2, float param_3, float param_4)`
+/// `BuildQuaternionFromEulerAngles` at 0xef9110 (semantic, medium); signature (medium): `undefined BuildQuaternionFromEulerAngles(float * param_1, float param_2, float param_3, float param_4)`; quaternion of three Euler angles (the order DecomposeMatrixToEulerAngles produces) (medium); semantic signature: `void (NiQuaternion* out, float x, float y, float z)`
 pub const BuildQuaternionFromEulerAngles: u64 = 70843;
 /// `BuildRectShapeFromBoundsField20` at 0xe2b950 (decompiler, high); signature (untiered): `undefined BuildRectShapeFromBoundsField20(longlong param_1)`
 pub const BuildRectShapeFromBoundsField20: u64 = 88292;
@@ -5441,10 +5445,10 @@ pub const BuildTreeInstanceBuffer: u64 = 31665;
 pub const BuildUgcModsContentQuery: u64 = 526755;
 /// `BuildVertexAdjacencyArrays` at 0x10fef90 (decompiler, medium); signature (untiered): `undefined BuildVertexAdjacencyArrays(longlong param_1, longlong * param_2, longlong * param_3)`
 pub const BuildVertexAdjacencyArrays: u64 = 80971;
-/// `BuildViewProjectionMatrices` at 0x101d400 (semantic, high); signature (untiered): `undefined BuildViewProjectionMatrices(undefined8 param_1, undefined8 * param_2, float * param_3, undefined1[16] * param_4, undefined4 * param_5, undefined4 * param_6, undefined4 * param_7, float * param_8)`; standard left-handed projection with D3D depth [0,1] from the NiFrustum (l, r, t, b, n, f, ortho) (high); semantic signature: `void (FrameState* this, float* view, float* proj, float* viewProj, const float* forward, const float* up, const float* right, const float* frustum)`
+/// `BuildViewProjectionMatrices` at 0x101d400 (semantic, high); signature (untiered): `undefined BuildViewProjectionMatrices(undefined8 param_1, undefined8 * param_2, float * param_3, undefined1[16] * param_4, undefined4 * param_5, undefined4 * param_6, undefined4 * param_7, float * param_8)`; standard left-handed projection with D3D depth [0,1] from the NiFrustum (l, r, t, b, n, f, ortho) (high); semantic signature: `void (FrameState* this, float* view, float* proj, float* viewProj, const NiPoint3* forward, const NiPoint3* up, const NiPoint3* right, const NiFrustum* frustum)`
 pub const BuildViewProjectionMatrices: u64 = 77510;
 /// `BuildViewProjectionMatrices` as a function pointer type (high).
-pub type BuildViewProjectionMatrices_fn = unsafe extern "C" fn(this: *mut crate::FrameState, view: *mut f32, proj: *mut f32, viewProj: *mut f32, forward: *const f32, up: *const f32, right: *const f32, frustum: *const f32);
+pub type BuildViewProjectionMatrices_fn = unsafe extern "C" fn(this: *mut crate::FrameState, view: *mut f32, proj: *mut f32, viewProj: *mut f32, forward: *const crate::NiPoint3, up: *const crate::NiPoint3, right: *const crate::NiPoint3, frustum: *const crate::NiFrustum);
 /// `BuildYesNoDialogControls` at 0x15e8080 (decompiler, medium); signature (untiered): `undefined BuildYesNoDialogControls(longlong * param_1, float * param_2, void * param_3, longlong * param_4, longlong * param_5)`
 pub const BuildYesNoDialogControls: u64 = 454781;
 /// `BumpAllocate0x140FromFieldB8` at 0x517290 (decompiler, medium); signature (medium): `longlong BumpAllocate0x140FromFieldB8(longlong param_1)`
@@ -5453,7 +5457,7 @@ pub const BumpAllocate0x140FromFieldB8: u64 = 31824;
 pub const ButtonEvent__CopyCtor: u64 = 68679;
 /// `ButtonEvent::CopyCtor` as a function pointer type (high).
 pub type ButtonEvent__CopyCtor_fn = unsafe extern "C" fn(this: *mut crate::ButtonEvent, other: *const crate::ButtonEvent) -> *mut crate::ButtonEvent;
-/// `ButtonEvent::Init` at 0xcfb060 (semantic, high); signature (untiered): `undefined Init(longlong param_1, undefined8 param_2, undefined8 param_3, undefined4 param_4, undefined4 param_5)`; fill a stand-alone ButtonEvent (menus map one through ProcessInputEventMappings) (high); semantic signature: `void (ButtonEvent* this, u32 device, u32 idCode, float value, float heldDownSecs)`
+/// `ButtonEvent::Init` at 0xcfb060 (semantic, high); signature (untiered): `undefined Init(longlong param_1, undefined8 param_2, undefined8 param_3, undefined4 param_4, undefined4 param_5)`; fill a stand-alone ButtonEvent (menus map one through ProcessInputEventMappings) (high); semantic signature: `void (ButtonEvent* this, InputDevice device, u32 idCode, float value, float heldDownSecs)`
 pub const ButtonEvent__Init: u64 = 68680;
 /// `ButtonEvent::Init` as a function pointer type (high).
 pub type ButtonEvent__Init_fn = unsafe extern "C" fn(this: *mut crate::ButtonEvent, device: u32, idCode: u32, value: f32, heldDownSecs: f32);
@@ -5759,11 +5763,3 @@ pub const CallMotdListMessages: u64 = 93716;
 pub const CallOnExtraType78Locked: u64 = 12023;
 /// `CallOwnerVfunc20WithHeldObject` at 0xcbb1e0 (decompiler, medium); signature (untiered): `undefined CallOwnerVfunc20WithHeldObject(undefined8 * param_1, undefined8 * param_2)`
 pub const CallOwnerVfunc20WithHeldObject: u64 = 67393;
-/// `CallProxyVfunc0AndDrainLocked` at 0x13876a0 (decompiler, medium); signature (untiered): `undefined CallProxyVfunc0AndDrainLocked(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const CallProxyVfunc0AndDrainLocked: u64 = 98552;
-/// `CallRigidBodyVfunc88WithVectorRecursive` at 0x404ea0 (decompiler, medium); signature (untiered): `undefined CallRigidBodyVfunc88WithVectorRecursive(longlong * param_1, undefined1[12] * param_2, char param_3)`
-pub const CallRigidBodyVfunc88WithVectorRecursive: u64 = 26009;
-/// `CallStdioCommonVsprintf` at 0x1301820 (decompiler, high); signature (high): `int CallStdioCommonVsprintf(longlong param_1, longlong param_2, longlong param_3, undefined8 param_4)`
-pub const CallStdioCommonVsprintf: u64 = 95768;
-/// `CallStdioCommonVswprintf` at 0x13018a0 (decompiler, high); signature (high): `int CallStdioCommonVswprintf(longlong param_1, longlong param_2, longlong param_3, undefined8 param_4)`
-pub const CallStdioCommonVswprintf: u64 = 95769;

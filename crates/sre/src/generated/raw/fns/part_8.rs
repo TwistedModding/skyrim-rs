@@ -3,6 +3,16 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `ComputeChildrenBoundsUnionMatrix4` at 0xd60a80 (decompiler, medium); signature (untiered): `undefined ComputeChildrenBoundsUnionMatrix4(longlong param_1, float * param_2, float * param_3, char param_4)`
+pub const ComputeChildrenBoundsUnionMatrix4: u64 = 84172;
+/// `ComputeChildrenBoundsUnionVfunc80` at 0xd61d30 (decompiler, medium); signature (untiered): `undefined ComputeChildrenBoundsUnionVfunc80(longlong param_1, float * param_2, undefined8 * param_3)`
+pub const ComputeChildrenBoundsUnionVfunc80: u64 = 84214;
+/// `ComputeCircleCommonTangents2D` at 0x11fc8b0 (decompiler, medium); signature (medium): `ulonglong ComputeCircleCommonTangents2D(float * param_1, float * param_2, int param_3, undefined4 * param_4)`
+pub const ComputeCircleCommonTangents2D: u64 = 91544;
+/// `ComputeCircleTangentDirections2D` at 0x11fbf30 (decompiler, medium); signature (untiered): `undefined1 ComputeCircleTangentDirections2D(float * param_1, float * param_2, float * param_3, float * param_4)`
+pub const ComputeCircleTangentDirections2D: u64 = 91537;
+/// `ComputeCircleTangentPoints2D` at 0x11fbe10 (decompiler, medium); signature (medium): `ulonglong ComputeCircleTangentPoints2D(float * param_1, float param_2, float * param_3, float * param_4, float * param_5)`
+pub const ComputeCircleTangentPoints2D: u64 = 91536;
 /// `ComputeCircumsphereOfFourPoints` at 0x1115e90 (decompiler, medium); signature (medium): `float * ComputeCircumsphereOfFourPoints(float * param_1, float * param_2, float * param_3, float * param_4, float * param_5, float param_6)`
 pub const ComputeCircumsphereOfFourPoints: u64 = 81194;
 /// `ComputeCircumsphereOfThreePoints` at 0x11160e0 (decompiler, medium); signature (medium): `float * ComputeCircumsphereOfThreePoints(float * param_1, float * param_2, float * param_3, float * param_4, float param_5)`
@@ -252,7 +262,7 @@ pub const ComputeFrustumPlanesFromObject: u64 = 70807;
 /// `ComputeFurnitureCameraPosition` at 0x8f6a70 (semantic, high); signature (untiered): `undefined ComputeFurnitureCameraPosition(longlong param_1, float * param_2, longlong param_3, undefined8 param_4)`; out = target 3D world translation + eye height + translate (+0x24) rotated by the target heading - zoom (+0x30) * rotation column 1, then ComputeCameraCasterCollision(camera, out, true) (high); semantic signature: `void (FurnitureCameraState* this, NiPoint3* out, const NiMatrix3* rotation)`
 pub const ComputeFurnitureCameraPosition: u64 = 50757;
 /// `ComputeFurnitureCameraPosition` as a function pointer type (high).
-pub type ComputeFurnitureCameraPosition_fn = unsafe extern "C" fn(this: *mut crate::FurnitureCameraState, out: *mut c_void, rotation: *const c_void);
+pub type ComputeFurnitureCameraPosition_fn = unsafe extern "C" fn(this: *mut crate::FurnitureCameraState, out: *mut crate::NiPoint3, rotation: *const crate::NiMatrix3);
 /// `ComputeGameplayImpulseMagnitude` at 0x4047c0 (decompiler, medium); signature (medium): `float ComputeGameplayImpulseMagnitude(float param_1, longlong param_2, char param_3)`
 pub const ComputeGameplayImpulseMagnitude: u64 = 26004;
 /// `ComputeGridCellPosition` at 0x11dd780 (decompiler, medium); signature (medium): `float * ComputeGridCellPosition(longlong param_1, float * param_2, uint param_3, uint param_4)`
@@ -854,7 +864,7 @@ pub type ComputeVATSAreaFreeDistance_fn = unsafe extern "C" fn(subject: *mut cra
 /// `ComputeVATSCameraTargetPosition` at 0x808490 (semantic, high); signature (untiered): `float * ComputeVATSCameraTargetPosition(longlong param_1, float * param_2, float param_3)`; start = attacker (VATS+0xa8) position + 0.5 * its scaled extent z; end = the first command's target (handle +0xc) or VATS+0x98, + half extent for actors; out = start + (end - start) * percent * 0.01 (high); semantic signature: `NiPoint3* (VATS* vats, NiPoint3* out, float percent)`
 pub const ComputeVATSCameraTargetPosition: u64 = 44303;
 /// `ComputeVATSCameraTargetPosition` as a function pointer type (high).
-pub type ComputeVATSCameraTargetPosition_fn = unsafe extern "C" fn(vats: *mut c_void, out: *mut c_void, percent: f32) -> *mut c_void;
+pub type ComputeVATSCameraTargetPosition_fn = unsafe extern "C" fn(vats: *mut c_void, out: *mut crate::NiPoint3, percent: f32) -> *mut crate::NiPoint3;
 /// `ComputeVATSHitChance` at 0x420330 (decompiler, medium); signature (untiered): `float ComputeVATSHitChance(longlong * param_1, longlong * param_2, longlong param_3)`
 pub const ComputeVATSHitChance: u64 = 26450;
 /// `ComputeVector4ArrayBoundsMidpointAndExtent` at 0xc3a770 (decompiler, medium); signature (medium): `undefined ComputeVector4ArrayBoundsMidpointAndExtent(undefined1[16] * param_1, uint param_2, float * param_3, float * param_4)`
@@ -2995,6 +3005,10 @@ pub const ConfirmCloseModManager: u64 = 33851;
 pub const ConfirmResetCallback__vdtor: u64 = 441748;
 /// `ConfirmResetCallback::vfunc_1` at 0x582300 (rtti, high); signature (low): `undefined vfunc_1(void)`
 pub const ConfirmResetCallback__vfunc_1: u64 = 441745;
+/// `ConjugateQuaternion` at 0xef8d30 (semantic, high); signature (untiered): `undefined4 * ConjugateQuaternion(undefined4 * param_1, undefined4 * param_2)`; out = (w, -x, -y, -z); returns out (high); semantic signature: `NiQuaternion* (NiQuaternion* out, const NiQuaternion* q)`
+pub const ConjugateQuaternion: u64 = 70838;
+/// `ConjugateQuaternion` as a function pointer type (high).
+pub type ConjugateQuaternion_fn = unsafe extern "C" fn(out: *mut crate::NiQuaternion, q: *const crate::NiQuaternion) -> *mut crate::NiQuaternion;
 /// `ConnectTriangleEdgeNeighbors` at 0x4ba450 (decompiler, medium); signature (untiered): `undefined ConnectTriangleEdgeNeighbors(longlong param_1, ushort param_2)`
 pub const ConnectTriangleEdgeNeighbors: u64 = 30232;
 /// `Console::Accept` at 0x909ad0 (semantic, high); signature (untiered): `undefined Accept(Console * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
@@ -4009,7 +4023,7 @@ pub const ContractedDisease__UnregisterSink: u64 = 38530;
 pub const ControlMap__AllowTextEntry: u64 = 68552;
 /// `ControlMap::AllowTextEntry` as a function pointer type (high).
 pub type ControlMap__AllowTextEntry_fn = unsafe extern "C" fn(this: *mut c_void, begin: bool);
-/// `ControlMap::GetButtonNameForUserEvent` at 0xcefd90 (semantic, high); signature (untiered): `undefined8 GetButtonNameForUserEvent(longlong param_1, longlong * param_2, int param_3, undefined8 param_4)`; user event -> key: first record with that name in contexts 0..0x11 (array order, not the stack) whose key low byte != 0xff; asks the device (EventSourceHolder_Input device[device] vtable+0x20) for the key's name (high); semantic signature: `bool (ControlMap* this, const BSFixedString* userEvent, u32 device, BSFixedString* outName)`
+/// `ControlMap::GetButtonNameForUserEvent` at 0xcefd90 (semantic, high); signature (untiered): `undefined8 GetButtonNameForUserEvent(longlong param_1, longlong * param_2, int param_3, undefined8 param_4)`; user event -> key: first record with that name in contexts 0..0x11 (array order, not the stack) whose key low byte != 0xff; asks the device (EventSourceHolder_Input device[device] vtable+0x20) for the key's name (high); semantic signature: `bool (ControlMap* this, const BSFixedString* userEvent, InputDevice device, BSFixedString* outName)`
 pub const ControlMap__GetButtonNameForUserEvent: u64 = 68553;
 /// `ControlMap::GetButtonNameForUserEvent` as a function pointer type (high).
 pub type ControlMap__GetButtonNameForUserEvent_fn = unsafe extern "C" fn(this: *mut c_void, userEvent: *const crate::BSFixedString, device: u32, outName: *mut crate::BSFixedString) -> bool;
@@ -4017,7 +4031,7 @@ pub type ControlMap__GetButtonNameForUserEvent_fn = unsafe extern "C" fn(this: *
 pub const ControlMap__GetControlState: u64 = 68548;
 /// `ControlMap::GetControlState` as a function pointer type (high).
 pub type ControlMap__GetControlState_fn = unsafe extern "C" fn(this: *mut c_void, enabled: *mut u32, saved: *mut u32);
-/// `ControlMap::GetMapping` at 0xcf1150 (semantic, medium); signature (untiered): `ulonglong GetMapping(longlong param_1, longlong * param_2, int param_3, int param_4, longlong * param_5)`; copies the record of a user event in one context/device; no static caller in 1.7.104 (only its .pdata entry) (medium); semantic signature: `bool (ControlMap* this, const BSFixedString* userEvent, u32 context, u32 device, UserEventMapping* out)`
+/// `ControlMap::GetMapping` at 0xcf1150 (semantic, medium); signature (untiered): `ulonglong GetMapping(longlong param_1, longlong * param_2, int param_3, int param_4, longlong * param_5)`; copies the record of a user event in one context/device; no static caller in 1.7.104 (only its .pdata entry) (medium); semantic signature: `bool (ControlMap* this, const BSFixedString* userEvent, InputContext context, InputDevice device, UserEventMapping* out)`
 pub const ControlMap__GetMapping: u64 = 68567;
 /// `ControlMap::HasMappingInContextStack` at 0xcefbe0 (semantic, high); signature (untiered): `char HasMappingInContextStack(longlong param_1, longlong * param_2, undefined8 param_3, undefined8 param_4)`; true if any context on the stack maps the user event on any device (used by CursorMenu) (high); semantic signature: `bool (ControlMap* this, const BSFixedString* userEvent)`
 pub const ControlMap__HasMappingInContextStack: u64 = 68551;
@@ -4031,23 +4045,23 @@ pub type ControlMap__LoadRemapFile_fn = unsafe extern "C" fn(this: *mut c_void);
 pub const ControlMap__MapInputEvents: u64 = 68542;
 /// `ControlMap::MapInputEvents` as a function pointer type (high).
 pub type ControlMap__MapInputEvents_fn = unsafe extern "C" fn(this: *mut c_void, head: *mut crate::InputEvent);
-/// `ControlMap::ParseDefinitionFile` at 0xcf17d0 (semantic, high); signature (untiered): `undefined ParseDefinitionFile(longlong param_1, undefined * param_2, uint param_3)`; parses the tab-separated control map: blank line = next context (max 0x12), '//' comments, columns name, key per device (3), remappable per device (3), group flags (hex/sscanf); device 7 = all and rebuilds everything, otherwise only that device (high); semantic signature: `void (ControlMap* this, const char* path, u32 device)`
+/// `ControlMap::ParseDefinitionFile` at 0xcf17d0 (semantic, high); signature (untiered): `undefined ParseDefinitionFile(longlong param_1, undefined * param_2, uint param_3)`; parses the tab-separated control map: blank line = next context (max 0x12), '//' comments, columns name, key per device (3), remappable per device (3), group flags (hex/sscanf); device 7 = all and rebuilds everything, otherwise only that device (high); semantic signature: `void (ControlMap* this, const char* path, InputDevice device)`
 pub const ControlMap__ParseDefinitionFile: u64 = 524121;
 /// `ControlMap::ParseDefinitionFile` as a function pointer type (high).
 pub type ControlMap__ParseDefinitionFile_fn = unsafe extern "C" fn(this: *mut c_void, path: *const c_char, device: u32);
-/// `ControlMap::ParseKeyList` at 0xcf0560 (semantic, high); signature (untiered): `undefined ParseKeyList(undefined8 param_1, void * param_2, longlong * param_3, undefined8 param_4)`; splits a key column on ',' and 'A+B' (modifier<<16|key); default 0xff (high); semantic signature: `void (ControlMap* this, const char* text, BSTArray<u32>* out, u32 device)`
+/// `ControlMap::ParseKeyList` at 0xcf0560 (semantic, high); signature (untiered): `undefined ParseKeyList(undefined8 param_1, void * param_2, longlong * param_3, undefined8 param_4)`; splits a key column on ',' and 'A+B' (modifier<<16|key); default 0xff (high); semantic signature: `void (ControlMap* this, const char* text, BSTArray<u32>* out, InputDevice device)`
 pub const ControlMap__ParseKeyList: u64 = 68556;
 /// `ControlMap::ParseKeyList` as a function pointer type (high).
 pub type ControlMap__ParseKeyList_fn = unsafe extern "C" fn(this: *mut c_void, text: *const c_char, out: *mut c_void, device: u32);
-/// `ControlMap::ParseLinkedMapping` at 0xcf0a60 (semantic, high); signature (untiered): `undefined ParseLinkedMapping(longlong param_1, longlong * param_2, longlong * param_3, undefined8 param_4, undefined4 param_5, void * param_6)`; '!ctx,name' column: appends a LinkedMapping and key 0x7fffffff (high); semantic signature: `void (ControlMap* this, BSTArray<u32>* keys, BSFixedString* name, u32 context, u32 device, const char* text)`
+/// `ControlMap::ParseLinkedMapping` at 0xcf0a60 (semantic, high); signature (untiered): `undefined ParseLinkedMapping(longlong param_1, longlong * param_2, longlong * param_3, undefined8 param_4, undefined4 param_5, void * param_6)`; '!ctx,name' column: appends a LinkedMapping and key 0x7fffffff (high); semantic signature: `void (ControlMap* this, BSTArray<u32>* keys, BSFixedString* name, InputContext context, InputDevice device, const char* text)`
 pub const ControlMap__ParseLinkedMapping: u64 = 68557;
 /// `ControlMap::ParseLinkedMapping` as a function pointer type (high).
 pub type ControlMap__ParseLinkedMapping_fn = unsafe extern "C" fn(this: *mut c_void, keys: *mut c_void, name: *mut crate::BSFixedString, context: u32, device: u32, text: *const c_char);
-/// `ControlMap::PopInputContext` at 0xcef980 (runtime, high); signature (untiered): `char PopInputContext(longlong param_1, int param_2)`; remove every occurrence of the context; true if one was removed (high); semantic signature: `bool (ControlMap* this, u32 context)`
+/// `ControlMap::PopInputContext` at 0xcef980 (runtime, high); signature (untiered): `char PopInputContext(longlong param_1, int param_2)`; remove every occurrence of the context; true if one was removed (high); semantic signature: `bool (ControlMap* this, InputContext context)`
 pub const ControlMap__PopInputContext: u64 = 68544;
 /// `ControlMap::PopInputContext` as a function pointer type (high).
 pub type ControlMap__PopInputContext_fn = unsafe extern "C" fn(this: *mut c_void, context: u32) -> bool;
-/// `ControlMap::PushInputContext` at 0xcef8a0 (runtime, high); signature (untiered): `undefined PushInputContext(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`; push a context (0 goes to the bottom; a top 2 stays on top) (high); semantic signature: `void (ControlMap* this, u32 context)`
+/// `ControlMap::PushInputContext` at 0xcef8a0 (runtime, high); signature (untiered): `undefined PushInputContext(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`; push a context (0 goes to the bottom; a top 2 stays on top) (high); semantic signature: `void (ControlMap* this, InputContext context)`
 pub const ControlMap__PushInputContext: u64 = 68543;
 /// `ControlMap::PushInputContext` as a function pointer type (high).
 pub type ControlMap__PushInputContext_fn = unsafe extern "C" fn(this: *mut c_void, context: u32);
@@ -4055,11 +4069,11 @@ pub type ControlMap__PushInputContext_fn = unsafe extern "C" fn(this: *mut c_voi
 pub const ControlMap__ReloadDefinitionFile: u64 = 68536;
 /// `ControlMap::ReloadDefinitionFile` as a function pointer type (high).
 pub type ControlMap__ReloadDefinitionFile_fn = unsafe extern "C" fn(this: *mut c_void);
-/// `ControlMap::RemapUserEvent` at 0xceee40 (semantic, high); signature (untiered): `char RemapUserEvent(longlong param_1, longlong * param_2, uint param_3, int param_4)`; rebinds a remappable user event; for keyboard/mouse also unbinds it on the other of the two devices (high); semantic signature: `bool (ControlMap* this, const BSFixedString* userEvent, u32 device, u32 newKey)`
+/// `ControlMap::RemapUserEvent` at 0xceee40 (semantic, high); signature (untiered): `char RemapUserEvent(longlong param_1, longlong * param_2, uint param_3, int param_4)`; rebinds a remappable user event; for keyboard/mouse also unbinds it on the other of the two devices (high); semantic signature: `bool (ControlMap* this, const BSFixedString* userEvent, InputDevice device, u32 newKey)`
 pub const ControlMap__RemapUserEvent: u64 = 68538;
 /// `ControlMap::RemapUserEvent` as a function pointer type (high).
 pub type ControlMap__RemapUserEvent_fn = unsafe extern "C" fn(this: *mut c_void, userEvent: *const crate::BSFixedString, device: u32, newKey: u32) -> bool;
-/// `ControlMap::RemapUserEventOnDevice` at 0xcf1470 (semantic, high); signature (untiered): `undefined1 RemapUserEventOnDevice(longlong param_1, longlong * param_2, int param_3, int param_4, longlong * param_5, undefined4 * param_6)`; finds the first context with the user event, swaps keys with a remappable (or 'Look') record already on newKey, sets the key, re-sorts (high); semantic signature: `bool (ControlMap* this, const BSFixedString* userEvent, u32 device, u32 newKey, BSFixedString* swappedEvent, u32* oldKey)`
+/// `ControlMap::RemapUserEventOnDevice` at 0xcf1470 (semantic, high); signature (untiered): `undefined1 RemapUserEventOnDevice(longlong param_1, longlong * param_2, int param_3, int param_4, longlong * param_5, undefined4 * param_6)`; finds the first context with the user event, swaps keys with a remappable (or 'Look') record already on newKey, sets the key, re-sorts (high); semantic signature: `bool (ControlMap* this, const BSFixedString* userEvent, InputDevice device, u32 newKey, BSFixedString* swappedEvent, u32* oldKey)`
 pub const ControlMap__RemapUserEventOnDevice: u64 = 68570;
 /// `ControlMap::RemapUserEventOnDevice` as a function pointer type (high).
 pub type ControlMap__RemapUserEventOnDevice_fn = unsafe extern "C" fn(this: *mut c_void, userEvent: *const crate::BSFixedString, device: u32, newKey: u32, swappedEvent: *mut crate::BSFixedString, oldKey: *mut u32) -> bool;
@@ -6779,7 +6793,7 @@ pub const CreateLandShaderProperty: u64 = 18791;
 pub const CreateLandingCombatPath: u64 = 50527;
 /// `CreateLandingCombatPath_2` at 0x8ed8d0 (decompiler, medium); signature (untiered): `CombatPath * CreateLandingCombatPath_2(longlong param_1, longlong param_2, ulonglong param_3, int param_4)`
 pub const CreateLandingCombatPath_2: u64 = 50526;
-/// `CreateLightingShaderMaterial` at 0x1524370 (semantic, high); signature (untiered): `BSLightingShaderMaterialLandscape * CreateLightingShaderMaterial(undefined4 param_1)`; factory used by BSLightingShaderProperty::LoadBinary: feature -> class and size (high); semantic signature: `BSLightingShaderMaterialBase* (u32 feature)`
+/// `CreateLightingShaderMaterial` at 0x1524370 (semantic, high); signature (untiered): `BSLightingShaderMaterialLandscape * CreateLightingShaderMaterial(undefined4 param_1)`; factory used by BSLightingShaderProperty::LoadBinary: feature -> class and size (high); semantic signature: `BSLightingShaderMaterialBase* (LightingMaterialFeature feature)`
 pub const CreateLightingShaderMaterial: u64 = 106723;
 /// `CreateLightingShaderMaterial` as a function pointer type (high).
 pub type CreateLightingShaderMaterial_fn = unsafe extern "C" fn(feature: u32) -> *mut crate::BSLightingShaderMaterialBase;
@@ -7492,7 +7506,7 @@ pub const CriticalHitEvent__UnregisterSink: u64 = 38532;
 /// `CrosshairPickData::Pick` at 0x409fd0 (runtime, high); signature (untiered): `undefined Pick(longlong param_1, longlong * param_2, float * param_3, float * param_4)`; the crosshair pick cast: clears the target handles (+4, +8, +0xc), +0x20 and hitPoint (+0x10); length = fFavorRequestPickDistance when a favor request is pending, else max(fActivatePickLength, player +0xae4); casts the pick phantom (+0x28) from origin * Havok scale along direction under the world's read lock (Str_TtworldLinCast) and resolves the target (high); semantic signature: `void (CrosshairPickData* this, bhkWorld* world, const NiPoint3* origin, const NiPoint3* direction)`
 pub const CrosshairPickData__Pick: u64 = 26127;
 /// `CrosshairPickData::Pick` as a function pointer type (high).
-pub type CrosshairPickData__Pick_fn = unsafe extern "C" fn(this: *mut crate::CrosshairPickData, world: *mut crate::bhkWorld, origin: *const c_void, direction: *const c_void);
+pub type CrosshairPickData__Pick_fn = unsafe extern "C" fn(this: *mut crate::CrosshairPickData, world: *mut crate::bhkWorld, origin: *const crate::NiPoint3, direction: *const crate::NiPoint3);
 /// `CrosshairPickData::Reset` at 0x40b310 (semantic, high); signature (untiered): `undefined Reset(longlong param_1)`; hit object +0x20 = null, handles +4/+8/+0xc = invalid, hit point +0x10..+0x18 = the zero NiPoint3 (high); semantic signature: `void (CrosshairPickData* this)`
 pub const CrosshairPickData__Reset: u64 = 26131;
 /// `CrosshairPickData::Reset` as a function pointer type (high).
@@ -7779,21 +7793,3 @@ pub const DebugText__vfunc_8: u64 = 82504;
 pub const DebugText__vfunc_9: u64 = 82503;
 /// `DecRef` at 0xcf3250 (decompiler, high); signature (high): `undefined DecRef(undefined8 * param_1)`
 pub const DecRef: u64 = 82197;
-/// `DecRefAndDelete` at 0x435d30 (decompiler, medium); signature (untiered): `undefined DecRefAndDelete(int * param_1)`
-pub const DecRefAndDelete: u64 = 26894;
-/// `DecRefAndDestroy68ByteObject` at 0x3ec3b0 (decompiler, medium); signature (untiered): `undefined DecRefAndDestroy68ByteObject(int * param_1, void * param_2, undefined8 param_3, undefined8 param_4)`
-pub const DecRefAndDestroy68ByteObject: u64 = 25477;
-/// `DecRefAndDestroyWithField8` at 0xd98d10 (decompiler, medium); signature (medium): `undefined DecRefAndDestroyWithField8(int * param_1)`
-pub const DecRefAndDestroyWithField8: u64 = 85716;
-/// `DecRefAndDestroyWithStringFields` at 0xd98ce0 (decompiler, medium); signature (medium): `undefined DecRefAndDestroyWithStringFields(int * param_1)`
-pub const DecRefAndDestroyWithStringFields: u64 = 85715;
-/// `DecRefAndFree` at 0x222700 (decompiler, medium); signature (untiered): `undefined DecRefAndFree(longlong * param_1)`
-pub const DecRefAndFree: u64 = 15812;
-/// `DecRefAndFreeArrayStringObject` at 0x14af1d0 (decompiler, medium); signature (medium): `undefined DecRefAndFreeArrayStringObject(int * param_1)`
-pub const DecRefAndFreeArrayStringObject: u64 = 104754;
-/// `DecRefAndFreeArrayStringObjectPtr` at 0x14ae520 (decompiler, medium); signature (untiered): `undefined DecRefAndFreeArrayStringObjectPtr(undefined8 * param_1)`
-pub const DecRefAndFreeArrayStringObjectPtr: u64 = 104736;
-/// `DecRefAndFreeIfSet` at 0x735130 (decompiler, high); signature (untiered): `undefined DecRefAndFreeIfSet(undefined8 * param_1)`
-pub const DecRefAndFreeIfSet: u64 = 40133;
-/// `DecRefAndFreeMapHolder0x78` at 0x9b90e0 (decompiler, medium); signature (medium): `undefined DecRefAndFreeMapHolder0x78(int * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const DecRefAndFreeMapHolder0x78: u64 = 53503;

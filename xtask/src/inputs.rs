@@ -107,6 +107,7 @@ pub struct SemField {
     pub name: String,
     pub meaning: String,
     pub confidence: String,
+    pub retyped: Option<String>,
 }
 
 #[derive(Deserialize)]
@@ -124,6 +125,11 @@ pub struct SemFunction {
     pub signature: String,
     pub meaning: String,
     pub confidence: String,
+    /// Pointer parameters the code tests for null or a caller passes null to.
+    #[serde(default)]
+    pub nullable: Vec<String>,
+    /// What the RE side changed in the signature and why.
+    pub retyped: Option<String>,
 }
 
 #[derive(Deserialize)]
@@ -162,6 +168,9 @@ pub struct SemSlot {
     pub signature: String,
     pub meaning: String,
     pub confidence: String,
+    #[serde(default)]
+    pub nullable: Vec<String>,
+    pub retyped: Option<String>,
 }
 
 #[derive(Deserialize)]

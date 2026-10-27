@@ -3,6 +3,42 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `NiBlendPoint3Interpolator::ctor` at 0xf73d60 (layout_inference, high); signature (low): `NiBlendPoint3Interpolator * ctor(NiBlendPoint3Interpolator * this, char param_1, undefined8 param_2, ulonglong param_3)`
+pub const NiBlendPoint3Interpolator__ctor: u64 = 73220;
+/// `NiBlendPoint3Interpolator::ctor` at 0xf74090 (layout_inference, high); signature (high): `NiBlendPoint3Interpolator * ctor(NiBlendPoint3Interpolator * this)`
+pub const NiBlendPoint3Interpolator__ctor_2: u64 = 73223;
+/// `NiBlendPoint3Interpolator::vdtor` at 0xf744b0 (slot_propagation, medium); signature (low): `NiBlendPoint3Interpolator * vdtor(NiBlendPoint3Interpolator * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+pub const NiBlendPoint3Interpolator__vdtor: u64 = 73228;
+/// `NiBlendPoint3Interpolator::vfunc_2` at 0xf744f0 (rtti, high); signature (low): `TypeNode * vfunc_2(void)`
+pub const NiBlendPoint3Interpolator__vfunc_2: u64 = 73229;
+/// `NiBlendPoint3Interpolator::vfunc_23` at 0xf73a00 (rtti, high); signature (low): `NiBlendInterpolator * vfunc_23(NiBlendPoint3Interpolator * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
+pub const NiBlendPoint3Interpolator__vfunc_23: u64 = 73212;
+/// `NiBlendPoint3Interpolator::vfunc_24` at 0xf73b50 (rtti, high); signature (low): `undefined vfunc_24(NiBlendPoint3Interpolator * this, longlong param_1)`
+pub const NiBlendPoint3Interpolator__vfunc_24: u64 = 73214;
+/// `NiBlendPoint3Interpolator::vfunc_25` at 0xf73bc0 (rtti, high); signature (untiered): `undefined vfunc_25(void)`
+pub const NiBlendPoint3Interpolator__vfunc_25: u64 = 73215;
+/// `NiBlendPoint3Interpolator::vfunc_26` at 0xf73bd0 (rtti, high); signature (untiered): `undefined1 vfunc_26(NiBlendPoint3Interpolator * this, longlong * param_1)`
+pub const NiBlendPoint3Interpolator__vfunc_26: u64 = 73216;
+/// `NiBlendPoint3Interpolator::vfunc_27` at 0xf73be0 (rtti, high); signature (low): `undefined vfunc_27(NiBlendPoint3Interpolator * this, longlong * param_1)`
+pub const NiBlendPoint3Interpolator__vfunc_27: u64 = 73217;
+/// `NiBlendPoint3Interpolator::vfunc_28` at 0xf73c20 (rtti, high); signature (low): `undefined8 vfunc_28(NiBlendPoint3Interpolator * this, longlong * param_1)`
+pub const NiBlendPoint3Interpolator__vfunc_28: u64 = 73218;
+/// `NiBlendPoint3Interpolator::vfunc_37` at 0xf74520 (rtti, high); signature (untiered): `undefined1 vfunc_37(void)`
+pub const NiBlendPoint3Interpolator__vfunc_37: u64 = 73232;
+/// `NiBlendPoint3Interpolator::vfunc_38` at 0xf74510 (rtti, high); signature (untiered): `undefined1 vfunc_38(void)`
+pub const NiBlendPoint3Interpolator__vfunc_38: u64 = 73231;
+/// `NiBlendPoint3Interpolator::vfunc_39` at 0xf73dc0 (rtti, high); signature (low): `ulonglong vfunc_39(NiBlendPoint3Interpolator * this, float param_1, undefined8 param_2, float * param_3)`
+pub const NiBlendPoint3Interpolator__vfunc_39: u64 = 73221;
+/// `NiBlendPoint3Interpolator::vfunc_40` at 0xf74530 (rtti, high); signature (untiered): `undefined1 vfunc_40(void)`
+pub const NiBlendPoint3Interpolator__vfunc_40: u64 = 73233;
+/// `NiBlendPoint3Interpolator::vfunc_41` at 0xf74500 (rtti, high); signature (untiered): `undefined1 vfunc_41(void)`
+pub const NiBlendPoint3Interpolator__vfunc_41: u64 = 73230;
+/// `NiBlendPoint3Interpolator::vfunc_42` at 0xf74540 (rtti, high); signature (untiered): `undefined1 vfunc_42(void)`
+pub const NiBlendPoint3Interpolator__vfunc_42: u64 = 73234;
+/// `NiBlendPoint3Interpolator::vfunc_46` at 0xf74080 (rtti, high); signature (low): `undefined1 vfunc_46(void)`
+pub const NiBlendPoint3Interpolator__vfunc_46: u64 = 73222;
+/// `NiBlendPoint3Interpolator::vfunc_59` at 0xf740f0 (rtti, high); signature (low): `undefined vfunc_59(NiBlendPoint3Interpolator * this, longlong * param_1)`
+pub const NiBlendPoint3Interpolator__vfunc_59: u64 = 73224;
 /// `NiBlendQuaternionInterpolator::Create` at 0xf74ce0 (string, high); signature (low): `NiBlendInterpolator * Create(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const NiBlendQuaternionInterpolator__Create: u64 = 73250;
 /// `NiBlendQuaternionInterpolator::ctor` at 0xf74830 (layout_inference, high); signature (low): `NiBlendQuaternionInterpolator * ctor(NiBlendQuaternionInterpolator * this, char param_1, undefined8 param_2, ulonglong param_3)`
@@ -328,7 +364,7 @@ pub const NiCamera__SaveBinary: u64 = 70621;
 /// `NiCamera::SetFrustum` at 0xeefae0 (semantic, high); signature (untiered): `undefined SetFrustum(longlong param_1, undefined4 * param_2)`; copies left, right, top, bottom, far, ortho and clamps near (see the field rows); does not rebuild the matrix (high); semantic signature: `void (NiCamera* this, const NiFrustum* f)`
 pub const NiCamera__SetFrustum: u64 = 70626;
 /// `NiCamera::SetFrustum` as a function pointer type (high).
-pub type NiCamera__SetFrustum_fn = unsafe extern "C" fn(this: *mut crate::NiCamera, f: *const c_void);
+pub type NiCamera__SetFrustum_fn = unsafe extern "C" fn(this: *mut crate::NiCamera, f: *const crate::NiFrustum);
 /// `NiCamera::SetPerspectiveFromFov` at 0xef17a0 (semantic, high); signature (untiered): `undefined SetPerspectiveFromFov(longlong * param_1, float param_2, float param_3, float param_4, uint param_5, uint param_6, char param_7, char param_8, float param_9)`; unchanged from data/camera/static-B.json (high there); repeated because semantic.csv still holds the pass 6 medium row (high); semantic signature: `void (NiCamera* this, float fovDegrees, float nearDist, float farDist, u32 width, u32 height, bool fovSpansActualWidth, bool setLodAdjust, float lodReferenceFov)`
 pub const NiCamera__SetPerspectiveFromFov: u64 = 70643;
 /// `NiCamera::SetPerspectiveFromFov` as a function pointer type (high).
@@ -344,7 +380,7 @@ pub type NiCamera__UpdateWorldToCamera_fn = unsafe extern "C" fn(this: *mut crat
 /// `NiCamera::WorldPtToScreenPt` at 0xef0fb0 (semantic, high); signature (untiered): `undefined8 WorldPtToScreenPt(longlong param_1, float * param_2, float * param_3, float * param_4, float * param_5, float param_6)`; projects a world point to viewport coordinates (default viewport [0,1], y up) and depth; false when |w| <= zeroTolerance (high); semantic signature: `bool (const NiCamera* this, const NiPoint3* p, float* x, float* y, float* z, float zeroTolerance)`
 pub const NiCamera__WorldPtToScreenPt: u64 = 70639;
 /// `NiCamera::WorldPtToScreenPt` as a function pointer type (high).
-pub type NiCamera__WorldPtToScreenPt_fn = unsafe extern "C" fn(this: *const crate::NiCamera, p: *const c_void, x: *mut f32, y: *mut f32, z: *mut f32, zeroTolerance: f32) -> bool;
+pub type NiCamera__WorldPtToScreenPt_fn = unsafe extern "C" fn(this: *const crate::NiCamera, p: *const crate::NiPoint3, x: *mut f32, y: *mut f32, z: *mut f32, zeroTolerance: f32) -> bool;
 /// `NiCamera::ctor` at 0xeef9a0 (semantic, high); signature (low): `NiCamera * ctor(NiCamera * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`; NiAVObject::ctor, defaults (see the class detail), UpdateWorldData, UpdateWorldToCamera, bound centre = world translation (high); semantic signature: `NiCamera* (NiCamera* this)`
 pub const NiCamera__ctor: u64 = 70624;
 /// `NiCamera::ctor` as a function pointer type (high).
@@ -680,7 +716,7 @@ pub const NiControllerSequence__vfunc_37: u64 = 72464;
 /// `NiCullingProcess::SetFrustum` at 0xf04850 (semantic, high); signature (untiered): `undefined SetFrustum(longlong param_1, undefined8 * param_2)`; copies the frustum to +0x20, recomputes the planes from the camera's world transform, sets activePlaneMask = 0x3f (high); semantic signature: `void (NiCullingProcess* this, const NiFrustum* frustum)`
 pub const NiCullingProcess__SetFrustum: u64 = 71081;
 /// `NiCullingProcess::SetFrustum` as a function pointer type (high).
-pub type NiCullingProcess__SetFrustum_fn = unsafe extern "C" fn(this: *mut crate::NiCullingProcess, frustum: *const c_void);
+pub type NiCullingProcess__SetFrustum_fn = unsafe extern "C" fn(this: *mut crate::NiCullingProcess, frustum: *const crate::NiFrustum);
 /// `NiCullingProcess::ctor` at 0xf04740 (layout_inference, medium); signature (low): `NiCullingProcess * ctor(NiCullingProcess * this, undefined8 param_1)`
 pub const NiCullingProcess__ctor: u64 = 71079;
 /// `NiCullingProcess::ctor` at 0xf048b0 (layout_inference, medium); signature (low): `NiCullingProcess * ctor(NiCullingProcess * this, undefined8 param_1, undefined1 param_2)`
@@ -4276,7 +4312,7 @@ pub const NiSkinInstance__SaveBinary: u64 = 71205;
 /// `NiSkinInstance::UpdatePalette` at 0x1015800 (runtime, high); signature (untiered): `undefined UpdatePalette(longlong param_1, float * param_2)`; rebuilds the bone matrix palette once per render frame (paletteFrame against g_RenderFrameCounter), keeping the previous palette (high); semantic signature: `void (NiSkinInstance* this, const NiTransform* geometryWorld)`
 pub const NiSkinInstance__UpdatePalette: u64 = 77461;
 /// `NiSkinInstance::UpdatePalette` as a function pointer type (high).
-pub type NiSkinInstance__UpdatePalette_fn = unsafe extern "C" fn(this: *mut crate::NiSkinInstance, geometryWorld: *const c_void);
+pub type NiSkinInstance__UpdatePalette_fn = unsafe extern "C" fn(this: *mut crate::NiSkinInstance, geometryWorld: *const crate::NiTransform);
 /// `NiSkinInstance::ctor` at 0xf09ab0 (layout_inference, high); signature (low): `NiSkinInstance * ctor(NiSkinInstance * this, longlong param_1, longlong param_2, undefined8 param_3)`
 pub const NiSkinInstance__ctor: u64 = 71208;
 /// `NiSkinInstance::ctor` at 0xf0a690 (layout_inference, high); signature (high): `NiSkinInstance * ctor(NiSkinInstance * this)`
@@ -5544,17 +5580,17 @@ pub const NiTimeController__vfunc_45: u64 = 20327;
 /// `NiTransform::ApplyToBound` at 0xefcf20 (semantic, high); signature (untiered): `undefined ApplyToBound(float * param_1, float * param_2, float * param_3)`; centre' = xf.rot*centre*xf.scale + xf.trans, radius' = radius*xf.scale; with radius 0 this is the point transform (high); semantic signature: `void (NiBound* out, const NiBound* in, const NiTransform* xf)`
 pub const NiTransform__ApplyToBound: u64 = 70938;
 /// `NiTransform::ApplyToBound` as a function pointer type (high).
-pub type NiTransform__ApplyToBound_fn = unsafe extern "C" fn(out: *mut c_void, in_: *const c_void, xf: *const c_void);
+pub type NiTransform__ApplyToBound_fn = unsafe extern "C" fn(out: *mut crate::NiBound, in_: *const crate::NiBound, xf: *const crate::NiTransform);
 /// `NiTransform::Invert` at 0x6bdfd0 (semantic, high); signature (untiered): `undefined Invert(float * param_1, float * param_2)`; out.rot = inverse(rot) by adjugate/det (left unscaled when |det| <= 1e-6), out.scale = 1/scale, out.trans = -(out.rot*trans)/scale (high); semantic signature: `void (const NiTransform* this, NiTransform* out)`
 pub const NiTransform__Invert: u64 = 38302;
 /// `NiTransform::Invert` as a function pointer type (high).
-pub type NiTransform__Invert_fn = unsafe extern "C" fn(this: *const c_void, out: *mut c_void);
+pub type NiTransform__Invert_fn = unsafe extern "C" fn(this: *const crate::NiTransform, out: *mut crate::NiTransform);
 /// `NiTransform::IsIdentity` at 0xef5c60 (semantic, medium); signature (untiered): `undefined1 IsIdentity(float * param_1)`; identity test (medium); semantic signature: `bool (const NiTransform* this)`
 pub const NiTransform__IsIdentity: u64 = 70762;
 /// `NiTransform::Multiply` at 0x3059a0 (semantic, high); signature (untiered): `float * Multiply(float * param_1, float * param_2, float * param_3)`; out = lhs * rhs: rot = lhs.rot*rhs.rot (row-major 3x3, column vectors), trans = lhs.rot*rhs.trans*lhs.scale + lhs.trans, scale = lhs.scale*rhs.scale; returns out (high); semantic signature: `NiTransform* (const NiTransform* lhs, NiTransform* out, const NiTransform* rhs)`
 pub const NiTransform__Multiply: u64 = 20324;
 /// `NiTransform::Multiply` as a function pointer type (high).
-pub type NiTransform__Multiply_fn = unsafe extern "C" fn(lhs: *const c_void, out: *mut c_void, rhs: *const c_void) -> *mut c_void;
+pub type NiTransform__Multiply_fn = unsafe extern "C" fn(lhs: *const crate::NiTransform, out: *mut crate::NiTransform, rhs: *const crate::NiTransform) -> *mut crate::NiTransform;
 /// `NiTransform::SetIdentity` at 0xef5b60 (semantic, medium); signature (untiered): `undefined SetIdentity(undefined8 * param_1)`; identity rotation, zero translation, scale 1 (medium); semantic signature: `void (NiTransform* this)`
 pub const NiTransform__SetIdentity: u64 = 70760;
 /// `NiTransformController::ctor` at 0xf69730 (layout_inference, high); signature (high): `NiTransformController * ctor(NiTransformController * this)`
@@ -6695,12 +6731,18 @@ pub const NormalizeTwoVectorsByXyzLength: u64 = 64087;
 pub const NormalizeVec3ArrayStrided: u64 = 71113;
 /// `NormalizeVec3Fast` at 0x7ece60 (decompiler, medium); signature (medium): `undefined NormalizeVec3Fast(float * param_1)`
 pub const NormalizeVec3Fast: u64 = 43941;
-/// `NormalizeVector2AndGetLength` at 0x7b5480 (decompiler, medium); signature (medium): `float NormalizeVector2AndGetLength(float * param_1)`
+/// `NormalizeVector2AndGetLength` at 0x7b5480 (semantic, high); signature (medium): `float NormalizeVector2AndGetLength(float * param_1)`; normalises a NiPoint2 in place and returns its length (high); semantic signature: `float (NiPoint2* v)`
 pub const NormalizeVector2AndGetLength: u64 = 42466;
-/// `NormalizeVector3` at 0x6c2d40 (decompiler, high); signature (high): `float NormalizeVector3(float * param_1)`
+/// `NormalizeVector2AndGetLength` as a function pointer type (high).
+pub type NormalizeVector2AndGetLength_fn = unsafe extern "C" fn(v: *mut crate::NiPoint2) -> f32;
+/// `NormalizeVector3` at 0x6c2d40 (semantic, high); signature (high): `float NormalizeVector3(float * param_1)`; normalises v in place and returns the old length (0 and a zero vector below epsilon) (high); semantic signature: `float (NiPoint3* v)`
 pub const NormalizeVector3: u64 = 38401;
-/// `NormalizeVector3InPlace` at 0x2b6540 (decompiler, high); signature (high): `undefined NormalizeVector3InPlace(float * param_1)`
+/// `NormalizeVector3` as a function pointer type (high).
+pub type NormalizeVector3_fn = unsafe extern "C" fn(v: *mut crate::NiPoint3) -> f32;
+/// `NormalizeVector3InPlace` at 0x2b6540 (semantic, high); signature (high): `undefined NormalizeVector3InPlace(float * param_1)`; v /= |v|, or zero when |v| <= epsilon (high); semantic signature: `void (NiPoint3* v)`
 pub const NormalizeVector3InPlace: u64 = 18829;
+/// `NormalizeVector3InPlace` as a function pointer type (high).
+pub type NormalizeVector3InPlace_fn = unsafe extern "C" fn(v: *mut crate::NiPoint3);
 /// `NormalizeVector4` at 0xaa2390 (decompiler, high); signature (high): `undefined NormalizeVector4(float * param_1)`
 pub const NormalizeVector4: u64 = 57006;
 /// `NotifyAndClearTaggedRefPtrArraysAt10And30` at 0x1215690 (decompiler, medium); signature (untiered): `undefined NotifyAndClearTaggedRefPtrArraysAt10And30(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
@@ -6948,7 +6990,7 @@ pub const OffsetRectangleObject: u64 = 85888;
 /// `OffsetSubtreeWorldTranslation` at 0x153ae40 (semantic, high); signature (untiered): `undefined OffsetSubtreeWorldTranslation(longlong * param_1, float * param_2, float * param_3)`; recursively adds offset to world translation (+0xa0) and previousOffset to the previous world translation (+0xd4) of the subtree, sets flag bit 11 of +0xf4 (high); semantic signature: `void (NiAVObject* node, const NiPoint3* offset, const NiPoint3* previousOffset)`
 pub const OffsetSubtreeWorldTranslation: u64 = 107150;
 /// `OffsetSubtreeWorldTranslation` as a function pointer type (high).
-pub type OffsetSubtreeWorldTranslation_fn = unsafe extern "C" fn(node: *mut crate::NiAVObject, offset: *const c_void, previousOffset: *const c_void);
+pub type OffsetSubtreeWorldTranslation_fn = unsafe extern "C" fn(node: *mut crate::NiAVObject, offset: *const crate::NiPoint3, previousOffset: *const crate::NiPoint3);
 /// `OnCompletion` at 0x13a56d0 (decompiler, medium); signature (untiered): `undefined OnCompletion(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const OnCompletion: u64 = 450290;
 /// `OnCompletion_2` at 0x13ab230 (decompiler, medium); signature (untiered): `undefined OnCompletion_2(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
@@ -8553,35 +8595,3 @@ pub const Papyrus__ObjectReference__RemoveAllItems: u64 = 56215;
 pub const Papyrus__ObjectReference__RemoveAllStolenItems: u64 = 442744;
 /// `Papyrus::ObjectReference::RemoveDependentAnimatedObjectReference` at 0xa481a0 (papyrus_native, high); signature (medium): `bool RemoveDependentAnimatedObjectReference(IVirtualMachine * vm, uint stackId, TESObjectREFR * self, TESObjectREFR * a0)`
 pub const Papyrus__ObjectReference__RemoveDependentAnimatedObjectReference: u64 = 56216;
-/// `Papyrus::ObjectReference::RemoveDependentAnimatedObjectReference_sub0` at 0x16e710 (callgraph, medium); signature (untiered): `undefined RemoveDependentAnimatedObjectReference_sub0(longlong param_1, longlong param_2, undefined8 param_3, undefined8 param_4)`
-pub const Papyrus__ObjectReference__RemoveDependentAnimatedObjectReference_sub0: u64 = 11924;
-/// `Papyrus::ObjectReference::RemoveInventoryEventFilter` at 0xa482d0 (papyrus_native, high); signature (medium): `void RemoveInventoryEventFilter(IVirtualMachine * vm, uint stackId, TESObjectREFR * self, TESForm * a0)`
-pub const Papyrus__ObjectReference__RemoveInventoryEventFilter: u64 = 56217;
-/// `Papyrus::ObjectReference::RemoveItem` at 0xa48340 (papyrus_native, high); signature (medium): `bool RemoveItem(IVirtualMachine * vm, uint stackId, TESObjectREFR * self, TESForm * a0, uint a1, bool a2, TESObjectREFR * a3)`
-pub const Papyrus__ObjectReference__RemoveItem: u64 = 56218;
-/// `Papyrus::ObjectReference::Reset` at 0xa484c0 (papyrus_native, high); signature (medium): `bool Reset(IVirtualMachine * vm, uint stackId, TESObjectREFR * self, TESObjectREFR * a0)`
-pub const Papyrus__ObjectReference__Reset: u64 = 56219;
-/// `Papyrus::ObjectReference::Say` at 0xa485f0 (papyrus_native, high); signature (medium): `void Say(IVirtualMachine * vm, uint stackId, TESObjectREFR * self, TESTopic * a0, Actor * a1, bool a2)`
-pub const Papyrus__ObjectReference__Say: u64 = 56220;
-/// `Papyrus::ObjectReference::SelfFromVariable` at 0xa56b20 (semantic, high); signature (untiered): `undefined8 SelfFromVariable(uint * param_1)`; the reference an object Variable names (typeID 0x3d through g_IObjectHandlePolicy_ptr) (high); semantic signature: `TESObjectREFR* (const BSScript::Variable* self)`
-pub const Papyrus__ObjectReference__SelfFromVariable: u64 = 56493;
-/// `Papyrus::ObjectReference::SelfFromVariable` as a function pointer type (high).
-pub type Papyrus__ObjectReference__SelfFromVariable_fn = unsafe extern "C" fn(self_: *const crate::BSScript__Variable) -> *mut crate::TESObjectREFR;
-/// `Papyrus::ObjectReference::SendStealAlarm` at 0xa48990 (papyrus_native, high); signature (medium): `void SendStealAlarm(IVirtualMachine * vm, uint stackId, TESObjectREFR * self, Actor * a0)`
-pub const Papyrus__ObjectReference__SendStealAlarm: u64 = 56221;
-/// `Papyrus::ObjectReference::SetActorCause` at 0xa48a20 (papyrus_native, high); signature (medium): `void SetActorCause(IVirtualMachine * vm, uint stackId, TESObjectREFR * self, Actor * a0)`
-pub const Papyrus__ObjectReference__SetActorCause: u64 = 56222;
-/// `Papyrus::ObjectReference::SetActorOwner` at 0xa48ab0 (papyrus_native, high); signature (medium): `void SetActorOwner(IVirtualMachine * vm, uint stackId, TESObjectREFR * self, TESNPC * a0)`
-pub const Papyrus__ObjectReference__SetActorOwner: u64 = 56223;
-/// `Papyrus::ObjectReference::SetAngle` at 0xa48ae0 (papyrus_native, high); signature (medium): `bool SetAngle(IVirtualMachine * vm, uint stackId, TESObjectREFR * self, float a0, float a1, float a2)`
-pub const Papyrus__ObjectReference__SetAngle: u64 = 56224;
-/// `Papyrus::ObjectReference::SetAnimationVariableBool` at 0xa48ce0 (papyrus_native, high); signature (medium): `void SetAnimationVariableBool(IVirtualMachine * vm, uint stackId, TESObjectREFR * self, BSFixedString * a0, bool a1)`
-pub const Papyrus__ObjectReference__SetAnimationVariableBool: u64 = 56225;
-/// `Papyrus::ObjectReference::SetAnimationVariableFloat` at 0xa48e60 (papyrus_native, high); signature (medium): `void SetAnimationVariableFloat(IVirtualMachine * vm, uint stackId, TESObjectREFR * self, BSFixedString * a0, float a1)`
-pub const Papyrus__ObjectReference__SetAnimationVariableFloat: u64 = 56227;
-/// `Papyrus::ObjectReference::SetAnimationVariableInt` at 0xa48da0 (papyrus_native, high); signature (medium): `void SetAnimationVariableInt(IVirtualMachine * vm, uint stackId, TESObjectREFR * self, BSFixedString * a0, int a1)`
-pub const Papyrus__ObjectReference__SetAnimationVariableInt: u64 = 56226;
-/// `Papyrus::ObjectReference::SetContainerAllowStolenItems` at 0xa44e20 (papyrus_native, high); signature (medium): `void SetContainerAllowStolenItems(IVirtualMachine * vm, uint stackId, TESObjectREFR * self, bool a0)`
-pub const Papyrus__ObjectReference__SetContainerAllowStolenItems: u64 = 442738;
-/// `Papyrus::ObjectReference::SetContainerAllowStolenItems_sub0` at 0x1e09f0 (callgraph, medium); signature (untiered): `undefined SetContainerAllowStolenItems_sub0(longlong param_1, undefined1 param_2)`
-pub const Papyrus__ObjectReference__SetContainerAllowStolenItems_sub0: u64 = 441561;

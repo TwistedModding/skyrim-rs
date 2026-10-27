@@ -17,7 +17,7 @@
 use core::ffi::c_void;
 
 use sre::raw::{fns, vtables};
-use sre::{CameraState, FirstPersonState, FreeCameraState, PlayerCamera, TESCameraState, ThirdPersonState};
+use sre::{CameraState, FirstPersonState, FreeCameraState, NiPoint3, NiQuaternion, PlayerCamera, TESCameraState, ThirdPersonState};
 
 pub use vtables::TESCamera_vtable_Update as CameraUpdateFn;
 
@@ -196,10 +196,10 @@ impl PlayerCameraExt for PlayerCamera {
 }
 
 pub trait TESCameraStateExt {
-    /// Slot 4 `GetRotation`: the rotation the state computed, as a quaternion `[x, y, z, w]`.
-    fn rotation(&self) -> [f32; 4];
+    /// Slot 4 `GetRotation`: the rotation the state computed.
+    fn rotation(&self) -> NiQuaternion;
     /// Slot 5 `GetTranslation`: the position the state computed (the root's world translation for the player states).
-    fn translation(&self) -> [f32; 3];
+    fn translation(&self) -> NiPoint3;
     /// The state as a third-person state when its id is 8 or 9.
     fn as_third_person(&self) -> Option<&ThirdPersonState>;
     /// The state as the first-person state when its id is 0.
@@ -209,15 +209,15 @@ pub trait TESCameraStateExt {
 }
 
 impl TESCameraStateExt for TESCameraState {
-    fn rotation(&self) -> [f32; 4] {
-        let mut out = [0.0; 4];
-        unsafe { self.get_rotation(out.as_mut_ptr().cast()) };
+    fn rotation(&self) -> NiQuaternion {
+        let mut out = NiQuaternion::default();
+        self.get_rotation(&mut out);
         out
     }
 
-    fn translation(&self) -> [f32; 3] {
-        let mut out = [0.0; 3];
-        unsafe { self.get_translation(out.as_mut_ptr().cast()) };
+    fn translation(&self) -> NiPoint3 {
+        let mut out = NiPoint3::default();
+        self.get_translation(&mut out);
         out
     }
 

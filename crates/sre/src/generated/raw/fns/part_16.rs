@@ -3,6 +3,38 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `Papyrus::ObjectReference::RemoveDependentAnimatedObjectReference_sub0` at 0x16e710 (callgraph, medium); signature (untiered): `undefined RemoveDependentAnimatedObjectReference_sub0(longlong param_1, longlong param_2, undefined8 param_3, undefined8 param_4)`
+pub const Papyrus__ObjectReference__RemoveDependentAnimatedObjectReference_sub0: u64 = 11924;
+/// `Papyrus::ObjectReference::RemoveInventoryEventFilter` at 0xa482d0 (papyrus_native, high); signature (medium): `void RemoveInventoryEventFilter(IVirtualMachine * vm, uint stackId, TESObjectREFR * self, TESForm * a0)`
+pub const Papyrus__ObjectReference__RemoveInventoryEventFilter: u64 = 56217;
+/// `Papyrus::ObjectReference::RemoveItem` at 0xa48340 (papyrus_native, high); signature (medium): `bool RemoveItem(IVirtualMachine * vm, uint stackId, TESObjectREFR * self, TESForm * a0, uint a1, bool a2, TESObjectREFR * a3)`
+pub const Papyrus__ObjectReference__RemoveItem: u64 = 56218;
+/// `Papyrus::ObjectReference::Reset` at 0xa484c0 (papyrus_native, high); signature (medium): `bool Reset(IVirtualMachine * vm, uint stackId, TESObjectREFR * self, TESObjectREFR * a0)`
+pub const Papyrus__ObjectReference__Reset: u64 = 56219;
+/// `Papyrus::ObjectReference::Say` at 0xa485f0 (papyrus_native, high); signature (medium): `void Say(IVirtualMachine * vm, uint stackId, TESObjectREFR * self, TESTopic * a0, Actor * a1, bool a2)`
+pub const Papyrus__ObjectReference__Say: u64 = 56220;
+/// `Papyrus::ObjectReference::SelfFromVariable` at 0xa56b20 (semantic, high); signature (untiered): `undefined8 SelfFromVariable(uint * param_1)`; the reference an object Variable names (typeID 0x3d through g_IObjectHandlePolicy_ptr) (high); semantic signature: `TESObjectREFR* (const BSScript::Variable* self)`
+pub const Papyrus__ObjectReference__SelfFromVariable: u64 = 56493;
+/// `Papyrus::ObjectReference::SelfFromVariable` as a function pointer type (high).
+pub type Papyrus__ObjectReference__SelfFromVariable_fn = unsafe extern "C" fn(self_: *const crate::BSScript__Variable) -> *mut crate::TESObjectREFR;
+/// `Papyrus::ObjectReference::SendStealAlarm` at 0xa48990 (papyrus_native, high); signature (medium): `void SendStealAlarm(IVirtualMachine * vm, uint stackId, TESObjectREFR * self, Actor * a0)`
+pub const Papyrus__ObjectReference__SendStealAlarm: u64 = 56221;
+/// `Papyrus::ObjectReference::SetActorCause` at 0xa48a20 (papyrus_native, high); signature (medium): `void SetActorCause(IVirtualMachine * vm, uint stackId, TESObjectREFR * self, Actor * a0)`
+pub const Papyrus__ObjectReference__SetActorCause: u64 = 56222;
+/// `Papyrus::ObjectReference::SetActorOwner` at 0xa48ab0 (papyrus_native, high); signature (medium): `void SetActorOwner(IVirtualMachine * vm, uint stackId, TESObjectREFR * self, TESNPC * a0)`
+pub const Papyrus__ObjectReference__SetActorOwner: u64 = 56223;
+/// `Papyrus::ObjectReference::SetAngle` at 0xa48ae0 (papyrus_native, high); signature (medium): `bool SetAngle(IVirtualMachine * vm, uint stackId, TESObjectREFR * self, float a0, float a1, float a2)`
+pub const Papyrus__ObjectReference__SetAngle: u64 = 56224;
+/// `Papyrus::ObjectReference::SetAnimationVariableBool` at 0xa48ce0 (papyrus_native, high); signature (medium): `void SetAnimationVariableBool(IVirtualMachine * vm, uint stackId, TESObjectREFR * self, BSFixedString * a0, bool a1)`
+pub const Papyrus__ObjectReference__SetAnimationVariableBool: u64 = 56225;
+/// `Papyrus::ObjectReference::SetAnimationVariableFloat` at 0xa48e60 (papyrus_native, high); signature (medium): `void SetAnimationVariableFloat(IVirtualMachine * vm, uint stackId, TESObjectREFR * self, BSFixedString * a0, float a1)`
+pub const Papyrus__ObjectReference__SetAnimationVariableFloat: u64 = 56227;
+/// `Papyrus::ObjectReference::SetAnimationVariableInt` at 0xa48da0 (papyrus_native, high); signature (medium): `void SetAnimationVariableInt(IVirtualMachine * vm, uint stackId, TESObjectREFR * self, BSFixedString * a0, int a1)`
+pub const Papyrus__ObjectReference__SetAnimationVariableInt: u64 = 56226;
+/// `Papyrus::ObjectReference::SetContainerAllowStolenItems` at 0xa44e20 (papyrus_native, high); signature (medium): `void SetContainerAllowStolenItems(IVirtualMachine * vm, uint stackId, TESObjectREFR * self, bool a0)`
+pub const Papyrus__ObjectReference__SetContainerAllowStolenItems: u64 = 442738;
+/// `Papyrus::ObjectReference::SetContainerAllowStolenItems_sub0` at 0x1e09f0 (callgraph, medium); signature (untiered): `undefined SetContainerAllowStolenItems_sub0(longlong param_1, undefined1 param_2)`
+pub const Papyrus__ObjectReference__SetContainerAllowStolenItems_sub0: u64 = 441561;
 /// `Papyrus::ObjectReference::SetDestroyed` at 0xa5d770 (papyrus_native, high); signature (medium): `void SetDestroyed(IVirtualMachine * vm, uint stackId, TESObjectREFR * self, bool a0)`
 pub const Papyrus__ObjectReference__SetDestroyed: u64 = 56641;
 /// `Papyrus::ObjectReference::SetFactionOwner` at 0xa48f20 (papyrus_native, high); signature (medium): `void SetFactionOwner(IVirtualMachine * vm, uint stackId, TESObjectREFR * self, TESFaction * a0)`
@@ -1313,18 +1345,18 @@ pub const PlayOkSoundAndInvokeCallbacks: u64 = 454596;
 pub const PlayShaderReferenceEffect: u64 = 19872;
 /// `PlaySoundAndInvokeCallbacks` at 0x15f1da0 (decompiler, medium); signature (untiered): `undefined PlaySoundAndInvokeCallbacks(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const PlaySoundAndInvokeCallbacks: u64 = 454406;
-/// `PlaySoundDescriptorAt` at 0x5598c0 (semantic, high); signature (untiered): `undefined PlaySoundDescriptorAt(longlong param_1, uint param_2, undefined4 * param_3, longlong param_4)`; fire-and-forget: build (flags|0x10), SetPosition, FollowNode, Play (high); semantic signature: `void (BGSSoundDescriptorForm* descriptor, uint32 flags, const float* position, NiAVObject* follow)`
+/// `PlaySoundDescriptorAt` at 0x5598c0 (semantic, high); signature (untiered): `undefined PlaySoundDescriptorAt(longlong param_1, uint param_2, undefined4 * param_3, longlong param_4)`; fire-and-forget: build (flags|0x10), SetPosition, FollowNode, Play (high); semantic signature: `void (BGSSoundDescriptorForm* descriptor, uint32 flags, const NiPoint3* position, NiAVObject* follow)`
 pub const PlaySoundDescriptorAt: u64 = 33041;
 /// `PlaySoundDescriptorAt` as a function pointer type (high).
-pub type PlaySoundDescriptorAt_fn = unsafe extern "C" fn(descriptor: *mut crate::BGSSoundDescriptorForm, flags: u32, position: *const f32, follow: *mut crate::NiAVObject);
+pub type PlaySoundDescriptorAt_fn = unsafe extern "C" fn(descriptor: *mut crate::BGSSoundDescriptorForm, flags: u32, position: *const crate::NiPoint3, follow: *mut crate::NiAVObject);
 /// `PlaySoundFile` at 0x559970 (decompiler, medium); signature (medium): `undefined PlaySoundFile(char * param_1, uint param_2)`
 pub const PlaySoundFile: u64 = 33042;
 /// `PlaySoundFileOnReference` at 0x2f6700 (decompiler, medium); signature (medium): `undefined PlaySoundFileOnReference(longlong * param_1, char * param_2, int * param_3, longlong param_4)`
 pub const PlaySoundFileOnReference: u64 = 19859;
-/// `PlayTESSoundAt` at 0x559800 (semantic, high); signature (untiered): `undefined PlayTESSoundAt(longlong param_1, uint param_2, undefined4 * param_3, longlong param_4)`; same through TESSound+0x30 (high); semantic signature: `void (TESSound* sound, uint32 flags, const float* position, NiAVObject* follow)`
+/// `PlayTESSoundAt` at 0x559800 (semantic, high); signature (untiered): `undefined PlayTESSoundAt(longlong param_1, uint param_2, undefined4 * param_3, longlong param_4)`; same through TESSound+0x30 (high); semantic signature: `void (TESSound* sound, uint32 flags, const NiPoint3* position, NiAVObject* follow)`
 pub const PlayTESSoundAt: u64 = 33040;
 /// `PlayTESSoundAt` as a function pointer type (high).
-pub type PlayTESSoundAt_fn = unsafe extern "C" fn(sound: *mut crate::TESSound, flags: u32, position: *const f32, follow: *mut crate::NiAVObject);
+pub type PlayTESSoundAt_fn = unsafe extern "C" fn(sound: *mut crate::TESSound, flags: u32, position: *const crate::NiPoint3, follow: *mut crate::NiAVObject);
 /// `PlayUISoundOrMusicByEditorId` at 0x9920a0 (runtime, high); signature (untiered): `undefined PlayUISoundOrMusicByEditorId(char * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`; descriptor by editor id -> build (0x10), SetOutputModel(default object 0x97 +0x20), Play; no position or follow. A BGSMusicType (type 0x6d) goes to BSMusicManager slot 1 (high); semantic signature: `void (const char* editorId)`
 pub const PlayUISoundOrMusicByEditorId: u64 = 52939;
 /// `PlayUISoundOrMusicByEditorId` as a function pointer type (high).
@@ -1338,7 +1370,7 @@ pub const PlayerBedEnterHandler__vdtor: u64 = 43356;
 /// `PlayerCamera::AddFreeRotation` at 0x8f9070 (semantic, high); signature (untiered): `undefined AddFreeRotation(longlong param_1, float * param_2)`; current third-person freeRotation += delta when slot 12 is true (high); semantic signature: `void (PlayerCamera* this, NiPoint2* delta)`
 pub const PlayerCamera__AddFreeRotation: u64 = 50800;
 /// `PlayerCamera::AddFreeRotation` as a function pointer type (high).
-pub type PlayerCamera__AddFreeRotation_fn = unsafe extern "C" fn(this: *mut crate::PlayerCamera, delta: *mut c_void);
+pub type PlayerCamera__AddFreeRotation_fn = unsafe extern "C" fn(this: *mut crate::PlayerCamera, delta: *mut crate::NiPoint2);
 /// `PlayerCamera::ApplyLookPitch` at 0x8fb2e0 (semantic, high); signature (untiered): `undefined ApplyLookPitch(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`; the per-frame pitch from look input: cameraOverride (FirstPersonState+0x88) in first person -> the pitch from the Cam1 matrix; pitch-to-zero active (+0x164) -> blend +0x15c to 0 over fPitchZeroBlendTime with the VATS time scale; else when look y or the motion source is nonzero, unless free look (slot 12) or a furniture camera holds it (without mount/sit exceptions): ApplyClampedPitchDelta(target, -(look.y + PlayerControls+0x44) * fLookingSpeed * min(1, scene FOV / fDefaultWorldFOV)) (the flying mount's rider gets the delta directly) (high); semantic signature: `void (PlayerCamera* this)`
 pub const PlayerCamera__ApplyLookPitch: u64 = 50840;
 /// `PlayerCamera::ApplyLookPitch` as a function pointer type (high).
@@ -1346,7 +1378,7 @@ pub type PlayerCamera__ApplyLookPitch_fn = unsafe extern "C" fn(this: *mut crate
 /// `PlayerCamera::ApplyShake` at 0x8fa2b0 (semantic, high); signature (untiered): `float * ApplyShake(undefined8 param_1, float * param_2, float * param_3)`; out = shake * rotation: the shake quaternion is identity (0x20cf010) unless ComputeCameraShakeRotation(g_NodeUpdateTime, matrix) returns a strength > 0, then the Euler angles of the sampled matrix times the strength (high); semantic signature: `NiQuaternion* (PlayerCamera* this, NiQuaternion* out, const NiQuaternion* rotation)`
 pub const PlayerCamera__ApplyShake: u64 = 50829;
 /// `PlayerCamera::ApplyShake` as a function pointer type (high).
-pub type PlayerCamera__ApplyShake_fn = unsafe extern "C" fn(this: *mut crate::PlayerCamera, out: *mut c_void, rotation: *const c_void) -> *mut c_void;
+pub type PlayerCamera__ApplyShake_fn = unsafe extern "C" fn(this: *mut crate::PlayerCamera, out: *mut crate::NiQuaternion, rotation: *const crate::NiQuaternion) -> *mut crate::NiQuaternion;
 /// `PlayerCamera::BeginCloseTweenMenu` at 0x8f99e0 (semantic, high); signature (untiered): `undefined BeginCloseTweenMenu(longlong param_1)`; 0x8ff880 on the tween state (high); semantic signature: `void (PlayerCamera* this)`
 pub const PlayerCamera__BeginCloseTweenMenu: u64 = 50818;
 /// `PlayerCamera::BeginCloseTweenMenu` as a function pointer type (high).
@@ -1418,15 +1450,15 @@ pub type PlayerCamera__GetEyeHeightFromCam3_fn = unsafe extern "C" fn(this: *mut
 /// `PlayerCamera::GetFirstPersonCameraNodePosition` at 0x8f8c10 (semantic, high); signature (untiered): `undefined GetFirstPersonCameraNodePosition(longlong param_1, undefined4 * param_2)`; Cam1 node world translation or zero (high); semantic signature: `void (PlayerCamera* this, NiPoint3* out)`
 pub const PlayerCamera__GetFirstPersonCameraNodePosition: u64 = 50786;
 /// `PlayerCamera::GetFirstPersonCameraNodePosition` as a function pointer type (high).
-pub type PlayerCamera__GetFirstPersonCameraNodePosition_fn = unsafe extern "C" fn(this: *mut crate::PlayerCamera, out: *mut c_void);
+pub type PlayerCamera__GetFirstPersonCameraNodePosition_fn = unsafe extern "C" fn(this: *mut crate::PlayerCamera, out: *mut crate::NiPoint3);
 /// `PlayerCamera::GetFirstPersonDampingOffset` at 0x8fc120 (semantic, high); signature (untiered): `undefined4 * GetFirstPersonDampingOffset(longlong param_1, undefined4 * param_2)`; out = FirstPersonState.dampingOffset (+0x48..+0x50), or the zero point when the state is missing; returns out (high); semantic signature: `NiPoint3* (PlayerCamera* this, NiPoint3* out)`
 pub const PlayerCamera__GetFirstPersonDampingOffset: u64 = 50850;
 /// `PlayerCamera::GetFirstPersonDampingOffset` as a function pointer type (high).
-pub type PlayerCamera__GetFirstPersonDampingOffset_fn = unsafe extern "C" fn(this: *mut crate::PlayerCamera, out: *mut c_void) -> *mut c_void;
+pub type PlayerCamera__GetFirstPersonDampingOffset_fn = unsafe extern "C" fn(this: *mut crate::PlayerCamera, out: *mut crate::NiPoint3) -> *mut crate::NiPoint3;
 /// `PlayerCamera::GetPosition` at 0x8f89b0 (semantic, high); signature (untiered): `undefined8 GetPosition(longlong param_1, float * param_2)`; camera position cached per frame under the lock: first-person camera node, else cameraRoot world translation, else target position + eye height (high); semantic signature: `bool (PlayerCamera* this, NiPoint3* out)`
 pub const PlayerCamera__GetPosition: u64 = 50785;
 /// `PlayerCamera::GetPosition` as a function pointer type (high).
-pub type PlayerCamera__GetPosition_fn = unsafe extern "C" fn(this: *mut crate::PlayerCamera, out: *mut c_void) -> bool;
+pub type PlayerCamera__GetPosition_fn = unsafe extern "C" fn(this: *mut crate::PlayerCamera, out: *mut crate::NiPoint3) -> bool;
 /// `PlayerCamera::GetTarget` at 0x8fb240 (semantic, high); signature (untiered): `undefined GetTarget(longlong param_1, longlong * param_2)`; ResolveRefHandle_2(+0x3c) (high); semantic signature: `bool (PlayerCamera* this, NiPointer<TESObjectREFR>* out)`
 pub const PlayerCamera__GetTarget: u64 = 50837;
 /// `PlayerCamera::GetTarget` as a function pointer type (high).
@@ -1434,7 +1466,7 @@ pub type PlayerCamera__GetTarget_fn = unsafe extern "C" fn(this: *mut crate::Pla
 /// `PlayerCamera::GetThirdPersonOffsetVector` at 0x8f9030 (semantic, high); signature (untiered): `undefined GetThirdPersonOffsetVector(longlong param_1, float * param_2, char param_3)`; the third-person shoulder offset in world space: zero when state 9 (+0x100) is null; else state slot 14 (UpdateRotation), slot 4 (GetRotation) into a quaternion, matrix, out = R * currentOffset (+0x68/+0x6c/+0x70), without the y (forward) term when ignoreForward (high); semantic signature: `void (PlayerCamera* this, NiPoint3* out, bool ignoreForward)`
 pub const PlayerCamera__GetThirdPersonOffsetVector: u64 = 50799;
 /// `PlayerCamera::GetThirdPersonOffsetVector` as a function pointer type (high).
-pub type PlayerCamera__GetThirdPersonOffsetVector_fn = unsafe extern "C" fn(this: *mut crate::PlayerCamera, out: *mut c_void, ignoreForward: bool);
+pub type PlayerCamera__GetThirdPersonOffsetVector_fn = unsafe extern "C" fn(this: *mut crate::PlayerCamera, out: *mut crate::NiPoint3, ignoreForward: bool);
 /// `PlayerCamera::HasPlayerStates` at 0x8fb2a0 (semantic, high); signature (untiered): `undefined1 HasPlayerStates(longlong param_1)`; true when any of cameraStates[0] (+0xb8), [9] (+0x100), [10] (+0x108) or [12] (+0x118) exists (high); semantic signature: `bool (PlayerCamera* this)`
 pub const PlayerCamera__HasPlayerStates: u64 = 50839;
 /// `PlayerCamera::HasPlayerStates` as a function pointer type (high).
@@ -1491,7 +1523,7 @@ pub type PlayerCamera__PushBleedout_fn = unsafe extern "C" fn(this: *mut crate::
 pub const PlayerCamera__PushIronSights: u64 = 50810;
 /// `PlayerCamera::PushIronSights` as a function pointer type (high).
 pub type PlayerCamera__PushIronSights_fn = unsafe extern "C" fn(this: *mut crate::PlayerCamera);
-/// `PlayerCamera::PushState` at 0x8fc920 (semantic, high); signature (untiered): `undefined8 * PushState(longlong param_1, ulonglong param_2)`; pushes the current state on stateStack and SetState(cameraStates[id]); while TweenMenuCameraState is current only appends the target to the stack (high); semantic signature: `TESCameraState* (PlayerCamera* this, u32 id)`
+/// `PlayerCamera::PushState` at 0x8fc920 (semantic, high); signature (untiered): `undefined8 * PushState(longlong param_1, ulonglong param_2)`; pushes the current state on stateStack and SetState(cameraStates[id]); while TweenMenuCameraState is current only appends the target to the stack (high); semantic signature: `TESCameraState* (PlayerCamera* this, CameraState id)`
 pub const PlayerCamera__PushState: u64 = 50880;
 /// `PlayerCamera::PushState` as a function pointer type (high).
 pub type PlayerCamera__PushState_fn = unsafe extern "C" fn(this: *mut crate::PlayerCamera, id: u32) -> *mut crate::TESCameraState;
@@ -1580,7 +1612,7 @@ pub type PlayerCamera__SetVATSCameraAngles_fn = unsafe extern "C" fn(this: *mut 
 /// `PlayerCamera::SetVATSCameraPosition` at 0x8f92f0 (runtime, high); signature (untiered): `undefined SetVATSCameraPosition(longlong param_1, undefined4 * param_2)`; forwards to VATSCameraState::SetPosition on cameraStates[2] (+0xc8) (high); semantic signature: `void (PlayerCamera* this, const NiPoint3* position)`
 pub const PlayerCamera__SetVATSCameraPosition: u64 = 50807;
 /// `PlayerCamera::SetVATSCameraPosition` as a function pointer type (high).
-pub type PlayerCamera__SetVATSCameraPosition_fn = unsafe extern "C" fn(this: *mut crate::PlayerCamera, position: *const c_void);
+pub type PlayerCamera__SetVATSCameraPosition_fn = unsafe extern "C" fn(this: *mut crate::PlayerCamera, position: *const crate::NiPoint3);
 /// `PlayerCamera::StartAnimatedCameraAtNode` at 0x8f9fd0 (semantic, high); signature (untiered): `undefined StartAnimatedCameraAtNode(longlong param_1, longlong * param_2, longlong param_3, undefined8 param_4)`; node of the player's third-person 3D; !gradual: state 8 gets it, Configure(transition, current, state 8, iAnimatedTransitionMillis), updateTo = 1, state 8 Begin, PushState(6), auto vanity off; gradual: current third-person state blends to it (high); semantic signature: `void (PlayerCamera* this, BSFixedString* nodeName, bool gradual)`
 pub const PlayerCamera__StartAnimatedCameraAtNode: u64 = 50825;
 /// `PlayerCamera::StartAnimatedCameraAtNode` as a function pointer type (high).
@@ -1620,7 +1652,7 @@ pub type PlayerCamera__dtor_fn = unsafe extern "C" fn(this: *mut crate::PlayerCa
 /// `PlayerCameraTransitionState::AlignQuaternionHemisphere` at 0x559170 (semantic, high); signature (untiered): `undefined AlignQuaternionHemisphere(float * param_1, float * param_2)`; negates q (sign-bit xor of all four components) when dot(q, reference) < 0, so the following slerp takes the short path (high); semantic signature: `void (NiQuaternion* q, const NiQuaternion* reference)`
 pub const PlayerCameraTransitionState__AlignQuaternionHemisphere: u64 = 33031;
 /// `PlayerCameraTransitionState::AlignQuaternionHemisphere` as a function pointer type (high).
-pub type PlayerCameraTransitionState__AlignQuaternionHemisphere_fn = unsafe extern "C" fn(q: *mut c_void, reference: *const c_void);
+pub type PlayerCameraTransitionState__AlignQuaternionHemisphere_fn = unsafe extern "C" fn(q: *mut crate::NiQuaternion, reference: *const crate::NiQuaternion);
 /// `PlayerCameraTransitionState::Begin` at 0x8fd200 (semantic, high); signature (untiered): `undefined Begin(PlayerCameraTransitionState * this)`
 pub const PlayerCameraTransitionState__Begin: u64 = 50892;
 /// `PlayerCameraTransitionState::Configure` at 0x8fcb50 (semantic, high); signature (untiered): `undefined Configure(longlong param_1, longlong * param_2, longlong * param_3, undefined4 param_4, undefined4 param_5)`; sets +0x28/+0x30 (refcounted), +0x24, +0x38, clears +0x3c/+0x3d (high); semantic signature: `void (PlayerCameraTransitionState* this, BSTSmartPointer<TESCameraState>* from, BSTSmartPointer<TESCameraState>* to, u32 durationMs, u32 easing)`
@@ -1700,11 +1732,11 @@ pub const PlayerCharacter__GetHeading: u64 = 40528;
 /// `PlayerCharacter::GetLookAtPosition` at 0x75ad40 (semantic, high); signature (untiered): `float * GetLookAtPosition(PlayerCharacter * this, float * param_1)`; PlayerCharacter slot 91: in first person (slot 113 IsThirdPerson false) PlayerCamera::GetPosition + fFirstPersonLookAtVertOffset on z when GetPosition succeeds; otherwise Actor slot 91's result (high); semantic signature: `NiPoint3* (PlayerCharacter* this, NiPoint3* out)`
 pub const PlayerCharacter__GetLookAtPosition: u64 = 40664;
 /// `PlayerCharacter::GetLookAtPosition` as a function pointer type (high).
-pub type PlayerCharacter__GetLookAtPosition_fn = unsafe extern "C" fn(this: *mut crate::PlayerCharacter, out: *mut c_void) -> *mut c_void;
+pub type PlayerCharacter__GetLookAtPosition_fn = unsafe extern "C" fn(this: *mut crate::PlayerCharacter, out: *mut crate::NiPoint3) -> *mut crate::NiPoint3;
 /// `PlayerCharacter::GetLookOriginAndDirection` at 0x74a530 (semantic, high); signature (untiered): `undefined GetLookOriginAndDirection(PlayerCharacter * this, float * param_1, float * param_2, char param_3)`; PlayerCharacter slot 194: origin = PlayerCamera::GetFirstPersonCameraNodePosition (the Cam1 node), plus GetThirdPersonOffsetVector(camera, ., false) when the flag is set and the current state's id > 8; direction = the forward column of Rz(heading, slot 164) * Rx(pitch, +0x48), normalized (high); semantic signature: `void (PlayerCharacter* this, NiPoint3* origin, NiPoint3* direction, bool addThirdPersonOffset)`
 pub const PlayerCharacter__GetLookOriginAndDirection: u64 = 40505;
 /// `PlayerCharacter::GetLookOriginAndDirection` as a function pointer type (high).
-pub type PlayerCharacter__GetLookOriginAndDirection_fn = unsafe extern "C" fn(this: *mut crate::PlayerCharacter, origin: *mut c_void, direction: *mut c_void, addThirdPersonOffset: bool);
+pub type PlayerCharacter__GetLookOriginAndDirection_fn = unsafe extern "C" fn(this: *mut crate::PlayerCharacter, origin: *mut crate::NiPoint3, direction: *mut crate::NiPoint3, addThirdPersonOffset: bool);
 /// `PlayerCharacter::GetProjectileLaunchAngles` at 0x778e20 (semantic, high); signature (untiered): `undefined GetProjectileLaunchAngles(PlayerCharacter * this, longlong param_1, float * param_2, uint * param_3, undefined8 param_4)`
 pub const PlayerCharacter__GetProjectileLaunchAngles: u64 = 41259;
 /// `PlayerCharacter::IAnimationGraphManagerHolder_vdtor` at 0x769308 (slot_propagation, medium); signature (low): `undefined IAnimationGraphManagerHolder_vdtor(PlayerCharacter * this, ulonglong param_1, ulonglong param_2, ulonglong param_3)`
@@ -3149,8 +3181,10 @@ pub const QuantizePointsToInt16: u64 = 80743;
 pub const QuantizeThreeAxisRanges: u64 = 81513;
 /// `QuantizeValueToByteIndex` at 0xaa4190 (decompiler, medium); signature (medium): `undefined1 * QuantizeValueToByteIndex(undefined1 * param_1, int * param_2)`
 pub const QuantizeValueToByteIndex: u64 = 57086;
-/// `QuaternionToMatrix3` at 0x2fbdf0 (decompiler, medium); signature (medium): `undefined QuaternionToMatrix3(float * param_1, float * param_2)`
+/// `QuaternionToMatrix3` at 0x2fbdf0 (semantic, high); signature (medium): `undefined QuaternionToMatrix3(float * param_1, float * param_2)`; rotation matrix of a (w, x, y, z) quaternion (high); semantic signature: `void (const NiQuaternion* q, NiMatrix3* out)`
 pub const QuaternionToMatrix3: u64 = 20070;
+/// `QuaternionToMatrix3` as a function pointer type (high).
+pub type QuaternionToMatrix3_fn = unsafe extern "C" fn(q: *const crate::NiQuaternion, out: *mut crate::NiMatrix3);
 /// `QuaternionToMatrix3x4` at 0xaa3f40 (decompiler, medium); signature (medium): `undefined QuaternionToMatrix3x4(float * param_1, float * param_2)`
 pub const QuaternionToMatrix3x4: u64 = 57081;
 /// `QueryAabbOverlapsF32` at 0x113c800 (decompiler, medium); signature (untiered): `int QueryAabbOverlapsF32(longlong param_1, float * param_2, longlong * param_3, float * param_4, longlong * param_5, int param_6)`
@@ -3431,7 +3465,7 @@ pub const QueueRequestResponseWithCode: u64 = 442285;
 pub const QueueRotatePathingRequestOnRootMount: u64 = 37814;
 /// `QueueRumbleEntry` at 0xcee260 (decompiler, medium); signature (untiered): `DWORD QueueRumbleEntry(int param_1, undefined4 param_2, undefined4 param_3)`
 pub const QueueRumbleEntry: u64 = 68528;
-/// `QueueSaveLoadRequest` at 0x625850 (semantic, high); signature (untiered): `undefined QueueSaveLoadRequest(longlong param_1, uint param_2, undefined8 param_3, undefined8 param_4)`; allocates a Request and pushes it to the main queue (bit31) or the worker (high); semantic signature: `void (BGSSaveLoadManager*, u32 kind)`
+/// `QueueSaveLoadRequest` at 0x625850 (semantic, high); signature (untiered): `undefined QueueSaveLoadRequest(longlong param_1, uint param_2, undefined8 param_3, undefined8 param_4)`; allocates a Request and pushes it to the main queue (bit31) or the worker (high); semantic signature: `void (BGSSaveLoadManager*, SaveLoadRequestKind kind)`
 pub const QueueSaveLoadRequest: u64 = 35769;
 /// `QueueSaveLoadRequest` as a function pointer type (high).
 pub type QueueSaveLoadRequest_fn = unsafe extern "C" fn(a0: *mut crate::BGSSaveLoadManager, kind: u32);
@@ -8553,53 +8587,3 @@ pub const ReleaseThreeFixedStringArrays: u64 = 442591;
 pub const ReleaseThreeFixedStrings: u64 = 65158;
 /// `ReleaseThreeHeapArrays` at 0xcdeaa0 (decompiler, medium); signature (medium): `undefined ReleaseThreeHeapArrays(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const ReleaseThreeHeapArrays: u64 = 68126;
-/// `ReleaseThreeHeapArrays_2` at 0xce1c20 (decompiler, medium); signature (medium): `undefined ReleaseThreeHeapArrays_2(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const ReleaseThreeHeapArrays_2: u64 = 68207;
-/// `ReleaseThreeHeapArrays_3` at 0xcfa270 (decompiler, medium); signature (medium): `undefined ReleaseThreeHeapArrays_3(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const ReleaseThreeHeapArrays_3: u64 = 68642;
-/// `ReleaseThreeHeapBuffers` at 0x13bc3d0 (decompiler, medium); signature (untiered): `undefined ReleaseThreeHeapBuffers(longlong param_1)`
-pub const ReleaseThreeHeapBuffers: u64 = 450822;
-/// `ReleaseThreeRefPtrs` at 0x2dc4a0 (decompiler, high); signature (untiered): `undefined ReleaseThreeRefPtrs(longlong * param_1)`
-pub const ReleaseThreeRefPtrs: u64 = 19464;
-/// `ReleaseThroughFactoryRegistry` at 0x450980 (decompiler, medium); signature (untiered): `undefined ReleaseThroughFactoryRegistry(longlong * param_1)`
-pub const ReleaseThroughFactoryRegistry: u64 = 27668;
-/// `ReleaseTrackedEntities` at 0xbb26c0 (decompiler, medium); signature (untiered): `undefined ReleaseTrackedEntities(longlong param_1)`
-pub const ReleaseTrackedEntities: u64 = 63094;
-/// `ReleaseTrackedFormIfType2E` at 0x36d550 (decompiler, medium); signature (untiered): `undefined ReleaseTrackedFormIfType2E(undefined8 * param_1)`
-pub const ReleaseTrackedFormIfType2E: u64 = 22776;
-/// `ReleaseTrackedFormReference` at 0x63f650 (decompiler, medium); signature (untiered): `undefined ReleaseTrackedFormReference(longlong param_1, longlong * param_2)`
-pub const ReleaseTrackedFormReference: u64 = 36171;
-/// `ReleaseTriggerEventStorage` at 0x407030 (decompiler, medium); signature (untiered): `undefined ReleaseTriggerEventStorage(undefined8 * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const ReleaseTriggerEventStorage: u64 = 26040;
-/// `ReleaseTwoArrays` at 0x12295d0 (decompiler, high); signature (untiered): `undefined ReleaseTwoArrays(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const ReleaseTwoArrays: u64 = 92512;
-/// `ReleaseTwoArrays_2` at 0x9046e0 (decompiler, high); signature (untiered): `undefined ReleaseTwoArrays_2(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const ReleaseTwoArrays_2: u64 = 50999;
-/// `ReleaseTwoFixedStringPairSmallArrays` at 0x660ef0 (decompiler, medium); signature (untiered): `undefined ReleaseTwoFixedStringPairSmallArrays(int * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const ReleaseTwoFixedStringPairSmallArrays: u64 = 36718;
-/// `ReleaseTwoFixedStringSmallArrays` at 0x661010 (decompiler, medium); signature (untiered): `undefined ReleaseTwoFixedStringSmallArrays(int * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const ReleaseTwoFixedStringSmallArrays: u64 = 36719;
-/// `ReleaseTwoFixedStrings` at 0x2f80f0 (decompiler, high); signature (high): `undefined ReleaseTwoFixedStrings(void)`
-pub const ReleaseTwoFixedStrings: u64 = 19893;
-/// `ReleaseTwoFixedStrings_2` at 0x660990 (decompiler, high); signature (untiered): `undefined ReleaseTwoFixedStrings_2(void)`
-pub const ReleaseTwoFixedStrings_2: u64 = 36707;
-/// `ReleaseTwoFixedStrings_3` at 0x129e250 (decompiler, high); signature (untiered): `undefined ReleaseTwoFixedStrings_3(void)`
-pub const ReleaseTwoFixedStrings_3: u64 = 524904;
-/// `ReleaseTwoFixedStrings_4` at 0xc3f470 (decompiler, high); signature (untiered): `undefined ReleaseTwoFixedStrings_4(void)`
-pub const ReleaseTwoFixedStrings_4: u64 = 65153;
-/// `ReleaseTwoFixedStrings_5` at 0xcf2780 (decompiler, medium); signature (untiered): `undefined ReleaseTwoFixedStrings_5(void)`
-pub const ReleaseTwoFixedStrings_5: u64 = 68591;
-/// `ReleaseTwoFixedStrings_6` at 0x1790140 (decompiler, medium); signature (untiered): `undefined ReleaseTwoFixedStrings_6(void)`
-pub const ReleaseTwoFixedStrings_6: u64 = 170522;
-/// `ReleaseTwoFixedStrings_7` at 0x1790160 (decompiler, medium); signature (untiered): `undefined ReleaseTwoFixedStrings_7(void)`
-pub const ReleaseTwoFixedStrings_7: u64 = 170523;
-/// `ReleaseTwoFixedStrings_8` at 0x17901d0 (decompiler, medium); signature (untiered): `undefined ReleaseTwoFixedStrings_8(void)`
-pub const ReleaseTwoFixedStrings_8: u64 = 170525;
-/// `ReleaseTwoHandleRefCounts` at 0x6da520 (decompiler, medium); signature (untiered): `undefined ReleaseTwoHandleRefCounts(longlong * param_1)`
-pub const ReleaseTwoHandleRefCounts: u64 = 38843;
-/// `ReleaseTwoHandleRefCounts_2` at 0x7351a0 (decompiler, medium); signature (untiered): `undefined ReleaseTwoHandleRefCounts_2(longlong * param_1)`
-pub const ReleaseTwoHandleRefCounts_2: u64 = 40136;
-/// `ReleaseTwoRefCountedPointers` at 0x882200 (decompiler, medium); signature (untiered): `undefined ReleaseTwoRefCountedPointers(longlong * param_1)`
-pub const ReleaseTwoRefCountedPointers: u64 = 47889;
-/// `ReleaseTwoRefCountedPointers_2` at 0x8bc350 (decompiler, medium); signature (untiered): `undefined ReleaseTwoRefCountedPointers_2(longlong * param_1)`
-pub const ReleaseTwoRefCountedPointers_2: u64 = 49251;

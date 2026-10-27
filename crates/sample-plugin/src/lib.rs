@@ -10,7 +10,7 @@ use skyrim::BSFixedString;
 use skyrim::events::{BSTEventSource, Event, EventSink, Sink};
 use skyrim::input::{Command, CommandContext, Param};
 use skyrim::prelude::*;
-use sre::{ActorValue, BSEventNotifyControl, FormType, MenuOpenCloseEvent, PlayerCharacter, TESNPC};
+use sre::{ActorValue, BSEventNotifyControl, MenuOpenCloseEvent, PlayerCharacter, TESNPC};
 
 skse::plugin! {
     name: "skyrim-rs-sample",
@@ -51,7 +51,7 @@ fn data_loaded() {
     log!("{}", describe_player().unwrap_or_else(|| "no player yet".into()));
 
     if let Some(form) = sre::find_form_by_id(0x8F958) {
-        log!("form 0008F958 is {:?}, a {:?}", form.editor_id(), FormType::from_u8(form.get_form_type()));
+        log!("form 0008F958 is {:?}, a {:?}", form.editor_id(), form.get_form_type());
     }
 
     match MenuOpenCloseEvent::source() {
@@ -70,7 +70,7 @@ fn describe_player() -> Option<String> {
     let player = PlayerCharacter::singleton()?;
     let name = player.base_object()?.cast::<TESNPC>()?.as_tes_full_name().full_name()?;
     let race = player.race()?;
-    let health = player.as_actor_value_owner().get_actor_value(ActorValue::Health as i32);
+    let health = player.as_actor_value_owner().get_actor_value(ActorValue::Health);
     let keywords: Vec<&CStr> = race.keywords().iter().flatten().filter_map(|k| k.editor_id()).collect();
     Some(format!("player {name:?}, race {:?} {:08X}, health {health}, race keywords {keywords:?}", race.editor_id()?, race.formID))
 }

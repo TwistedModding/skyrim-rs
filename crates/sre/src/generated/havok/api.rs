@@ -4391,11 +4391,9 @@ impl crate::bhkCharacterController {
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 78274, rva 0x1064c90.
     /// `void (bhkCharacterController* this, const NiPoint3* cameraPosition, NiAVObject* actor3D)`
-    ///
-    /// # Safety
-    /// `cameraPosition` must point to what the engine expects.
+    /// May be null: `actor3D`.
     #[inline]
-    pub unsafe fn set_distance_to_camera(&self, cameraPosition: *const c_void, actor3D: *mut crate::NiAVObject) { unsafe { function!(78274, (*const Self, *const c_void, *mut crate::NiAVObject))(core::ptr::from_ref(self), cameraPosition, actor3D) } }
+    pub fn set_distance_to_camera(&self, cameraPosition: &crate::NiPoint3, actor3D: Option<&crate::NiAVObject>) { unsafe { function!(78274, (*const Self, *const crate::NiPoint3, *const crate::NiAVObject))(core::ptr::from_ref(self), core::ptr::from_ref(cameraPosition), actor3D.map_or(core::ptr::null(), core::ptr::from_ref)) } }
 }
 
 impl crate::bhkThreadMemorySource {

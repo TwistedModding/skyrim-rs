@@ -19,9 +19,9 @@ pub struct BSCullingProcess {
     pub accumulator: *mut c_void,
     /// +0x18 `ptr:NiCamera`, base NiCullingProcess, semantic, runtime; the camera of the current walk (high)
     pub camera: *mut crate::NiCamera,
-    /// +0x20 `undefined1`, semantic; copy of the camera's NiFrustum: left, right, top, bottom, near, far (floats) and the orthographic byte at +0x38 (high)
-    pub frustum: [u8; 28],
-    /// +0x3C `undefined1`, semantic; six world planes {nx, ny, nz, d}, 0x10 each, inside where dot(n, c) - d > 0: 0 near, 1 far, 2 left, 3 right, 4 top, 5 bottom (high)
+    /// +0x20 `class:NiFrustum`, semantic; copy of the camera's NiFrustum: left, right, top, bottom, near, far (floats) and the orthographic byte at +0x38 (high); retyped undefined1 -> class:NiFrustum: pass 6: 0xf04850 copies 0x1c bytes from NiCamera+0x150; ComputeFrustumPlanes 0xef7710 reads l, r, t, b, n, f and the ortho byte
+    pub frustum: crate::NiFrustum,
+    /// +0x3C `class:NiPlane`, semantic; six world planes {nx, ny, nz, d}, 0x10 each, inside where dot(n, c) - d > 0: 0 near, 1 far, 2 left, 3 right, 4 top, 5 bottom (high); retyped undefined1 -> class:NiPlane: array of 6 (width 0x60): ComputeFrustumPlanes 0xef7710 writes six {n, d}; TestBoundAgainstPlanes 0xfee940 steps 0x10
     pub planes: [u8; 96],
     /// +0x9C `undefined4`, base NiCullingProcess, semantic, runtime; bit i set = plane i must still be tested in this subtree; 0x3f after a camera is set; bit i is cleared when the bound sphere lies entirely inside plane i; 0 = fully inside, no test; see the flag rows (high)
     pub activePlaneMask: u32,
@@ -143,14 +143,14 @@ pub struct BSGeometry {
     pub unknown_3C: [u8; 4],
     /// +0x40 `ptr:NiCollisionObject`, base NiAVObject, semantic; physics object of this node (refcounted); when set it, not the parent, produces the world transform (high)
     pub collisionObject: *mut crate::NiCollisionObject,
-    /// +0x48 `undefined1`, base NiAVObject, semantic; local transform: rotation 3x3 floats +0x48, translation +0x6c, scale +0x78 (high)
-    pub local: [u8; 52],
-    /// +0x7C `undefined1`, base NiAVObject, semantic; world transform: rotation +0x7c, translation +0xa0, scale +0xac (high)
-    pub world: [u8; 52],
-    /// +0xB0 `undefined1`, base NiAVObject, semantic; copy of the world transform taken once per render frame before the update (same 0x34 layout as local/world) (high)
-    pub previousWorld: [u8; 52],
-    /// +0xE4 `undefined1`, base NiAVObject, semantic; bounding sphere: centre +0xe4, radius +0xf0 (high)
-    pub worldBound: [u8; 16],
+    /// +0x48 `class:NiTransform`, base NiAVObject, semantic; local transform: rotation 3x3 floats +0x48, translation +0x6c, scale +0x78 (high); retyped undefined1 -> class:NiTransform: meaning: rotation +0x48, translation +0x6c, scale +0x78; ApplyPoseToBoneNodes 0xbdfa20 writes rotation at +0x48 and translation at +0x6c; SetRotationFromQuaternion 0x221bd0 writes +0x48..+0x68
+    pub local: crate::NiTransform,
+    /// +0x7C `class:NiTransform`, base NiAVObject, semantic; world transform: rotation +0x7c, translation +0xa0, scale +0xac (high); retyped undefined1 -> class:NiTransform: meaning: rotation +0x7c, translation +0xa0, scale +0xac; NiSkinInstance::UpdatePalette 0x1015800 reads +0x7c..+0xac as a NiTransform for NiTransform::Multiply; NiCamera::UpdateWorldBound 0xef1950 reads translate +0xa0
+    pub world: crate::NiTransform,
+    /// +0xB0 `class:NiTransform`, base NiAVObject, semantic; copy of the world transform taken once per render frame before the update (same 0x34 layout as local/world) (high); retyped undefined1 -> class:NiTransform: meaning: same 0x34 layout as local/world (snapshot of world)
+    pub previousWorld: crate::NiTransform,
+    /// +0xE4 `class:NiBound`, base NiAVObject, semantic; bounding sphere: centre +0xe4, radius +0xf0 (high); retyped undefined1 -> class:NiBound: meaning: centre +0xe4, radius +0xf0; NiCamera::UpdateWorldBound 0xef1950 writes the centre; BSGeometry::UpdateWorldBound uses NiTransform::ApplyToBound 0xefcf20
+    pub worldBound: crate::NiBound,
     /// +0xF4 `undefined4`, base NiAVObject, semantic; flag word: bit 0 hidden (no culling process visits the object), bit 11 skip the frustum test, bit 12 skipped unless the culler allows it (+0x11e; bit 20 then skips it outright), bit 26 set when a culler last accepted it; see the flag rows (high)
     pub flags: u32,
     /// +0xF8 `undefined8`, base NiAVObject, semantic; zeroed by the ctor; not read in this track's bodies (low)
@@ -249,8 +249,8 @@ pub struct BSLight {
     pub portalStrictCull: u8,
     /// +0x48 `ptr:NiLight`, semantic; the scene graph light (high)
     pub light: *mut crate::NiLight,
-    /// +0x50 `undefined1`, semantic; world position copied from the light's world translation each update (high)
-    pub position: [u8; 12],
+    /// +0x50 `class:NiPoint3`, semantic; world position copied from the light's world translation each update (high); retyped undefined1 -> class:NiPoint3: 0x15121a0 copies light +0xa0..+0xa8 (world translate)
+    pub position: crate::NiPoint3,
     /// +0x5C `u8`, semantic; 0xff when the light is not visible this frame (medium)
     pub visibleSlot: u8,
     pub unknown_5D: [u8; 3],
@@ -354,8 +354,8 @@ pub struct BSLightingShaderProperty {
     pub cascadePrepassList: [u8; 16],
     /// +0xE8 `pointer`, semantic; single pooled depth pass of slot 47 (low)
     pub occlusionPass: *mut c_void,
-    /// +0xF0 `pointer`, semantic; pointer to 3 floats of emissive colour ((0,0,0) by default); owned when flag bit 22 is set, otherwise shared with the clone source (high)
-    pub emitColor: *mut c_void,
+    /// +0xF0 `ptr:NiColor`, semantic; pointer to 3 floats of emissive colour ((0,0,0) by default); owned when flag bit 22 is set, otherwise shared with the clone source (high); retyped pointer -> ptr:NiColor: pointer, not embedded: ctor allocates 0xc bytes; LoadBinary 0x1518860 reads 3 floats into it; slot 6 0x1549550 multiplies it by +0xf8
+    pub emitColor: *mut crate::NiColor,
     /// +0xF8 `float`, semantic; emissive multiplier (1.0) (high)
     pub emitColorScale: f32,
     pub unknown_FC: [u8; 4],
@@ -367,8 +367,8 @@ pub struct BSLightingShaderProperty {
     pub landscapeFade: f32,
     /// +0x10C `undefined1`, semantic; 4 floats written together with flag bit 23 (PROJECTED_UV) (medium)
     pub projectedUVParams: [u8; 16],
-    /// +0x11C `undefined1`, semantic; 4 floats (defaults 0.6, 0.7, 0.8, 1.0) (low)
-    pub projectedUVColor: [u8; 16],
+    /// +0x11C `class:NiColorA`, semantic; 4 floats (defaults 0.6, 0.7, 0.8, 1.0) (low); retyped undefined1 -> class:NiColorA: meaning: 4 colour floats (0.6, 0.7, 0.8, 1.0); read by 0x1549550 (medium: the alpha lane's use is not shown)
+    pub projectedUVColor: crate::NiColorA,
     /// +0x12C `undefined4`, ctor store
     pub field_12C: u32,
     pub unknown_130: [u8; 2],
@@ -506,8 +506,8 @@ pub struct BSShaderAccumulator {
     /// +0x114 `undefined1`, ctor store
     pub field_114: u8,
     pub unknown_115: [u8; 3],
-    /// +0x118 `undefined1`, semantic; four floats, ctor 0.3,0.3,0.3,1.0; BSCubeMapCamera copies its own +0x1b8 here (low)
-    pub clearColor: [u8; 16],
+    /// +0x118 `class:NiColorA`, semantic; four floats, ctor 0.3,0.3,0.3,1.0; BSCubeMapCamera copies its own +0x1b8 here (low); retyped undefined1 -> class:NiColorA: ctor 0x151dea0 0.3, 0.3, 0.3, 1.0 (RGBA); BSCubeMapCamera copies its +0x1b8 (MOVUPS 16 bytes at 0x1559ffa)
+    pub clearColor: crate::NiColorA,
     /// +0x128 `undefined1`, semantic; with +0x129 enables the techniques 0x5c000058..0x5c00005b and excludes water properties from registration (low)
     pub field_128: u8,
     /// +0x129 `undefined1`, semantic; see +0x128; mode 0x18 registers only when set (low)
@@ -544,8 +544,8 @@ pub struct BSShaderAccumulator {
     pub shadowMapMask: u32,
     /// +0x168 `u32`, semantic; cascade number of a sun map accumulator (high)
     pub cascadeIndex: u32,
-    /// +0x16C `float`, semantic; camera world position (vec3) (high)
-    pub eyePosition: [u8; 12],
+    /// +0x16C `class:NiPoint3`, semantic; camera world position (vec3) (high); retyped float -> class:NiPoint3: RenderWorld 0x656d10 copies camera +0xa0..+0xa8; ctor 0x151dea0 seeds it from the zero point ID_410468..ID_410470
+    pub eyePosition: crate::NiPoint3,
     /// +0x178 `undefined1`, semantic; set to 1 on the main colour and first-person accumulators (low)
     pub field_178: u8,
     pub unknown_179: [u8; 7],
@@ -703,8 +703,8 @@ pub struct BSShadowDirectionalLight {
     pub portalStrictCull: u8,
     /// +0x48 `ptr:NiLight`, base BSLight, semantic; the scene graph light (high)
     pub light: *mut crate::NiLight,
-    /// +0x50 `undefined1`, base BSLight, semantic; world position copied from the light's world translation each update (high)
-    pub position: [u8; 12],
+    /// +0x50 `class:NiPoint3`, base BSLight, semantic; world position copied from the light's world translation each update (high); retyped undefined1 -> class:NiPoint3: 0x15121a0 copies light +0xa0..+0xa8 (world translate)
+    pub position: crate::NiPoint3,
     /// +0x5C `u8`, base BSLight, semantic; 0xff when the light is not visible this frame (medium)
     pub visibleSlot: u8,
     pub unknown_5D: [u8; 3],
@@ -752,10 +752,10 @@ pub struct BSShadowDirectionalLight {
     /// +0x558 `undefined1`, base BSShadowLight, semantic; whether this frame renders the focus shadow maps (high)
     pub focusShadowsActive: u8,
     pub unknown_559: [u8; 7],
-    /// +0x560 `undefined1`, ctor store (widths [4, 8]), semantic, runtime; unit direction of the sunlight used for the cascades this frame (high)
-    pub lightDirection: [u8; 12],
-    /// +0x56C `float`, semantic; direction the blend starts from (high)
-    pub previousLightDirection: [u8; 12],
+    /// +0x560 `class:NiPoint3`, ctor store (widths [4, 8]), semantic, runtime; unit direction of the sunlight used for the cascades this frame (high); retyped undefined1 -> class:NiPoint3: BlendDirection 0x1581730 reads/writes +0x560/+0x564/+0x568 as a direction (dot with the new one, copy)
+    pub lightDirection: crate::NiPoint3,
+    /// +0x56C `class:NiPoint3`, semantic; direction the blend starts from (high); retyped float -> class:NiPoint3: BlendDirection 0x1581730 copies +0x560..+0x568 to +0x56c..+0x574
+    pub previousLightDirection: crate::NiPoint3,
     /// +0x578 `ptr:NiCamera`, ctor store, semantic, runtime; camera looking along the sun used by the geometry list cull (0x157ed80) (high)
     pub lightCamera: *mut crate::NiCamera,
     /// +0x580 `class:BSTArray`, semantic, runtime; one BSGeometryListCullingProcess per culling job (6 on the test machine) (high)
@@ -836,8 +836,8 @@ pub struct BSShadowFrustumLight {
     pub portalStrictCull: u8,
     /// +0x48 `ptr:NiLight`, base BSLight, semantic; the scene graph light (high)
     pub light: *mut crate::NiLight,
-    /// +0x50 `undefined1`, base BSLight, semantic; world position copied from the light's world translation each update (high)
-    pub position: [u8; 12],
+    /// +0x50 `class:NiPoint3`, base BSLight, semantic; world position copied from the light's world translation each update (high); retyped undefined1 -> class:NiPoint3: 0x15121a0 copies light +0xa0..+0xa8 (world translate)
+    pub position: crate::NiPoint3,
     /// +0x5C `u8`, base BSLight, semantic; 0xff when the light is not visible this frame (medium)
     pub visibleSlot: u8,
     pub unknown_5D: [u8; 3],
@@ -961,8 +961,8 @@ pub struct BSShadowLight {
     pub portalStrictCull: u8,
     /// +0x48 `ptr:NiLight`, base BSLight, semantic; the scene graph light (high)
     pub light: *mut crate::NiLight,
-    /// +0x50 `undefined1`, base BSLight, semantic; world position copied from the light's world translation each update (high)
-    pub position: [u8; 12],
+    /// +0x50 `class:NiPoint3`, base BSLight, semantic; world position copied from the light's world translation each update (high); retyped undefined1 -> class:NiPoint3: 0x15121a0 copies light +0xa0..+0xa8 (world translate)
+    pub position: crate::NiPoint3,
     /// +0x5C `u8`, base BSLight, semantic; 0xff when the light is not visible this frame (medium)
     pub visibleSlot: u8,
     pub unknown_5D: [u8; 3],
@@ -1070,8 +1070,8 @@ pub struct BSShadowParabolicLight {
     pub portalStrictCull: u8,
     /// +0x48 `ptr:NiLight`, base BSLight, semantic; the scene graph light (high)
     pub light: *mut crate::NiLight,
-    /// +0x50 `undefined1`, base BSLight, semantic; world position copied from the light's world translation each update (high)
-    pub position: [u8; 12],
+    /// +0x50 `class:NiPoint3`, base BSLight, semantic; world position copied from the light's world translation each update (high); retyped undefined1 -> class:NiPoint3: 0x15121a0 copies light +0xa0..+0xa8 (world translate)
+    pub position: crate::NiPoint3,
     /// +0x5C `u8`, base BSLight, semantic; 0xff when the light is not visible this frame (medium)
     pub visibleSlot: u8,
     pub unknown_5D: [u8; 3],
@@ -1181,14 +1181,14 @@ pub struct NiAVObject {
     pub unknown_3C: [u8; 4],
     /// +0x40 `ptr:NiCollisionObject`, semantic; physics object of this node (refcounted); when set it, not the parent, produces the world transform (high)
     pub collisionObject: *mut crate::NiCollisionObject,
-    /// +0x48 `undefined1`, semantic; local transform: rotation 3x3 floats +0x48, translation +0x6c, scale +0x78 (high)
-    pub local: [u8; 52],
-    /// +0x7C `undefined1`, semantic; world transform: rotation +0x7c, translation +0xa0, scale +0xac (high)
-    pub world: [u8; 52],
-    /// +0xB0 `undefined1`, semantic; copy of the world transform taken once per render frame before the update (same 0x34 layout as local/world) (high)
-    pub previousWorld: [u8; 52],
-    /// +0xE4 `undefined1`, semantic; bounding sphere: centre +0xe4, radius +0xf0 (high)
-    pub worldBound: [u8; 16],
+    /// +0x48 `class:NiTransform`, semantic; local transform: rotation 3x3 floats +0x48, translation +0x6c, scale +0x78 (high); retyped undefined1 -> class:NiTransform: meaning: rotation +0x48, translation +0x6c, scale +0x78; ApplyPoseToBoneNodes 0xbdfa20 writes rotation at +0x48 and translation at +0x6c; SetRotationFromQuaternion 0x221bd0 writes +0x48..+0x68
+    pub local: crate::NiTransform,
+    /// +0x7C `class:NiTransform`, semantic; world transform: rotation +0x7c, translation +0xa0, scale +0xac (high); retyped undefined1 -> class:NiTransform: meaning: rotation +0x7c, translation +0xa0, scale +0xac; NiSkinInstance::UpdatePalette 0x1015800 reads +0x7c..+0xac as a NiTransform for NiTransform::Multiply; NiCamera::UpdateWorldBound 0xef1950 reads translate +0xa0
+    pub world: crate::NiTransform,
+    /// +0xB0 `class:NiTransform`, semantic; copy of the world transform taken once per render frame before the update (same 0x34 layout as local/world) (high); retyped undefined1 -> class:NiTransform: meaning: same 0x34 layout as local/world (snapshot of world)
+    pub previousWorld: crate::NiTransform,
+    /// +0xE4 `class:NiBound`, semantic; bounding sphere: centre +0xe4, radius +0xf0 (high); retyped undefined1 -> class:NiBound: meaning: centre +0xe4, radius +0xf0; NiCamera::UpdateWorldBound 0xef1950 writes the centre; BSGeometry::UpdateWorldBound uses NiTransform::ApplyToBound 0xefcf20
+    pub worldBound: crate::NiBound,
     /// +0xF4 `undefined4`, ctor store, semantic, runtime; flag word: bit 0 hidden (no culling process visits the object), bit 11 skip the frustum test, bit 12 skipped unless the culler allows it (+0x11e; bit 20 then skips it outright), bit 26 set when a culler last accepted it; see the flag rows (high)
     pub flags: u32,
     /// +0xF8 `undefined8`, semantic; zeroed by the ctor; not read in this track's bodies (low)
@@ -1255,14 +1255,14 @@ pub struct NiNode {
     pub unknown_3C: [u8; 4],
     /// +0x40 `ptr:NiCollisionObject`, base NiAVObject, semantic; physics object of this node (refcounted); when set it, not the parent, produces the world transform (high)
     pub collisionObject: *mut crate::NiCollisionObject,
-    /// +0x48 `undefined1`, base NiAVObject, semantic; local transform: rotation 3x3 floats +0x48, translation +0x6c, scale +0x78 (high)
-    pub local: [u8; 52],
-    /// +0x7C `undefined1`, base NiAVObject, semantic; world transform: rotation +0x7c, translation +0xa0, scale +0xac (high)
-    pub world: [u8; 52],
-    /// +0xB0 `undefined1`, base NiAVObject, semantic; copy of the world transform taken once per render frame before the update (same 0x34 layout as local/world) (high)
-    pub previousWorld: [u8; 52],
-    /// +0xE4 `undefined1`, base NiAVObject, semantic; bounding sphere: centre +0xe4, radius +0xf0 (high)
-    pub worldBound: [u8; 16],
+    /// +0x48 `class:NiTransform`, base NiAVObject, semantic; local transform: rotation 3x3 floats +0x48, translation +0x6c, scale +0x78 (high); retyped undefined1 -> class:NiTransform: meaning: rotation +0x48, translation +0x6c, scale +0x78; ApplyPoseToBoneNodes 0xbdfa20 writes rotation at +0x48 and translation at +0x6c; SetRotationFromQuaternion 0x221bd0 writes +0x48..+0x68
+    pub local: crate::NiTransform,
+    /// +0x7C `class:NiTransform`, base NiAVObject, semantic; world transform: rotation +0x7c, translation +0xa0, scale +0xac (high); retyped undefined1 -> class:NiTransform: meaning: rotation +0x7c, translation +0xa0, scale +0xac; NiSkinInstance::UpdatePalette 0x1015800 reads +0x7c..+0xac as a NiTransform for NiTransform::Multiply; NiCamera::UpdateWorldBound 0xef1950 reads translate +0xa0
+    pub world: crate::NiTransform,
+    /// +0xB0 `class:NiTransform`, base NiAVObject, semantic; copy of the world transform taken once per render frame before the update (same 0x34 layout as local/world) (high); retyped undefined1 -> class:NiTransform: meaning: same 0x34 layout as local/world (snapshot of world)
+    pub previousWorld: crate::NiTransform,
+    /// +0xE4 `class:NiBound`, base NiAVObject, semantic; bounding sphere: centre +0xe4, radius +0xf0 (high); retyped undefined1 -> class:NiBound: meaning: centre +0xe4, radius +0xf0; NiCamera::UpdateWorldBound 0xef1950 writes the centre; BSGeometry::UpdateWorldBound uses NiTransform::ApplyToBound 0xefcf20
+    pub worldBound: crate::NiBound,
     /// +0xF4 `undefined4`, base NiAVObject, semantic; flag word: bit 0 hidden (no culling process visits the object), bit 11 skip the frustum test, bit 12 skipped unless the culler allows it (+0x11e; bit 20 then skips it outright), bit 26 set when a culler last accepted it; see the flag rows (high)
     pub flags: u32,
     /// +0xF8 `undefined8`, base NiAVObject, semantic; zeroed by the ctor; not read in this track's bodies (low)
@@ -1375,10 +1375,10 @@ pub struct ShadowMapData {
     pub depthTarget: u32,
     /// +0x58 `undefined4`, semantic; array slice of the depth target (the cascade index for target 2, a slot from the free mask for target 4) (high)
     pub slice: u32,
-    /// +0x5C `float`, semantic; view-space plane through eye + forward*cascadeNear[i], normal = camera forward (high)
-    pub splitNearPlane: [u8; 16],
-    /// +0x6C `float`, semantic; plane through eye + forward*cascadeFar[i], normal = -forward (high)
-    pub splitFarPlane: [u8; 16],
+    /// +0x5C `class:NiPlane`, semantic; view-space plane through eye + forward*cascadeNear[i], normal = camera forward (high); retyped float -> class:NiPlane: pass 12g: 0x157f080 MakePlaneFromNormalAndPoint(camera forward, eye + fwd*near_i) into it
+    pub splitNearPlane: crate::NiPlane,
+    /// +0x6C `class:NiPlane`, semantic; plane through eye + forward*cascadeFar[i], normal = -forward (high); retyped float -> class:NiPlane: pass 12g: 0x157f080 MakePlaneFromNormalAndPoint(-forward, eye + fwd*far_i)
+    pub splitFarPlane: crate::NiPlane,
     pub unknown_7C: [u8; 80],
     /// +0xCC `float`, semantic; quantised world-units/texel ratio of the cascade: the cascade origin is snapped to multiples of it; recomputed from the cascade extent and the target size when bDirShadowMapFullViewPort == 0 (medium)
     pub texelScale: f32,
@@ -1434,14 +1434,14 @@ pub struct ShadowSceneNode {
     pub unknown_3C: [u8; 4],
     /// +0x40 `ptr:NiCollisionObject`, base NiAVObject, semantic; physics object of this node (refcounted); when set it, not the parent, produces the world transform (high)
     pub collisionObject: *mut crate::NiCollisionObject,
-    /// +0x48 `undefined1`, base NiAVObject, semantic; local transform: rotation 3x3 floats +0x48, translation +0x6c, scale +0x78 (high)
-    pub local: [u8; 52],
-    /// +0x7C `undefined1`, base NiAVObject, semantic; world transform: rotation +0x7c, translation +0xa0, scale +0xac (high)
-    pub world: [u8; 52],
-    /// +0xB0 `undefined1`, base NiAVObject, semantic; copy of the world transform taken once per render frame before the update (same 0x34 layout as local/world) (high)
-    pub previousWorld: [u8; 52],
-    /// +0xE4 `undefined1`, base NiAVObject, semantic; bounding sphere: centre +0xe4, radius +0xf0 (high)
-    pub worldBound: [u8; 16],
+    /// +0x48 `class:NiTransform`, base NiAVObject, semantic; local transform: rotation 3x3 floats +0x48, translation +0x6c, scale +0x78 (high); retyped undefined1 -> class:NiTransform: meaning: rotation +0x48, translation +0x6c, scale +0x78; ApplyPoseToBoneNodes 0xbdfa20 writes rotation at +0x48 and translation at +0x6c; SetRotationFromQuaternion 0x221bd0 writes +0x48..+0x68
+    pub local: crate::NiTransform,
+    /// +0x7C `class:NiTransform`, base NiAVObject, semantic; world transform: rotation +0x7c, translation +0xa0, scale +0xac (high); retyped undefined1 -> class:NiTransform: meaning: rotation +0x7c, translation +0xa0, scale +0xac; NiSkinInstance::UpdatePalette 0x1015800 reads +0x7c..+0xac as a NiTransform for NiTransform::Multiply; NiCamera::UpdateWorldBound 0xef1950 reads translate +0xa0
+    pub world: crate::NiTransform,
+    /// +0xB0 `class:NiTransform`, base NiAVObject, semantic; copy of the world transform taken once per render frame before the update (same 0x34 layout as local/world) (high); retyped undefined1 -> class:NiTransform: meaning: same 0x34 layout as local/world (snapshot of world)
+    pub previousWorld: crate::NiTransform,
+    /// +0xE4 `class:NiBound`, base NiAVObject, semantic; bounding sphere: centre +0xe4, radius +0xf0 (high); retyped undefined1 -> class:NiBound: meaning: centre +0xe4, radius +0xf0; NiCamera::UpdateWorldBound 0xef1950 writes the centre; BSGeometry::UpdateWorldBound uses NiTransform::ApplyToBound 0xefcf20
+    pub worldBound: crate::NiBound,
     /// +0xF4 `undefined4`, base NiAVObject, semantic; flag word: bit 0 hidden (no culling process visits the object), bit 11 skip the frustum test, bit 12 skipped unless the culler allows it (+0x11e; bit 20 then skips it outright), bit 26 set when a culler last accepted it; see the flag rows (high)
     pub flags: u32,
     /// +0xF8 `undefined8`, base NiAVObject, semantic; zeroed by the ctor; not read in this track's bodies (low)
@@ -1514,8 +1514,8 @@ pub struct ShadowSceneNode {
     pub field_2EC: f32,
     /// +0x2F0 `float`, ctor store (widths [4, 8])
     pub field_2F0: f32,
-    /// +0x2F4 `undefined1`, ctor store, semantic, runtime; the camera position of the frame, written by the world draw prelude from the camera node's world translation (high)
-    pub eyePosition: [u8; 12],
+    /// +0x2F4 `class:NiPoint3`, ctor store, semantic, runtime; the camera position of the frame, written by the world draw prelude from the camera node's world translation (high); retyped undefined1 -> class:NiPoint3: 0x656d10 copies camera +0xa0..+0xa8 (world translate)
+    pub eyePosition: crate::NiPoint3,
     /// +0x300 `undefined1`, semantic; set by the first ProcessQueues; removal requests are ignored before it (medium)
     pub queuesProcessed: u8,
     pub unknown_301: [u8; 3],
@@ -1583,10 +1583,10 @@ const _: () = assert!(core::mem::offset_of!(ShadowSceneNode, field_304) == 0x304
 pub struct TESCamera {
     /// +0x0 `vtbl:TESCamera:0`, rtti
     pub __vftable: *const crate::raw::vtables::TESCamera_vtable,
-    /// +0x8 `undefined1`, semantic; NiPoint2 (x, y) rotation input of the frame; reset to the zero constant 0x20ccb20 after every Update (high)
-    pub rotationInput: [u8; 8],
-    /// +0x10 `undefined1`, semantic; NiPoint3 pan input of the frame; reset after every Update (high)
-    pub translationInput: [u8; 12],
+    /// +0x8 `class:NiPoint2`, semantic; NiPoint2 (x, y) rotation input of the frame; reset to the zero constant 0x20ccb20 after every Update (high); retyped undefined1 -> class:NiPoint2: meaning: NiPoint2; reset from the NiPoint2 zero constant 0x20ccb20 in TESCamera::Update 0x558e70
+    pub rotationInput: crate::NiPoint2,
+    /// +0x10 `class:NiPoint3`, semantic; NiPoint3 pan input of the frame; reset after every Update (high); retyped undefined1 -> class:NiPoint3: meaning: NiPoint3; reset from the NiPoint3 zero constant 0x20ccc28
+    pub translationInput: crate::NiPoint3,
     /// +0x1C `float`, semantic; zoom input of the frame; reset to 0 after every Update (high)
     pub zoomInput: f32,
     /// +0x20 `ptr:NiNode`, ctor store, semantic, runtime; the camera's scene graph node (high)

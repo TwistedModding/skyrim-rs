@@ -211,6 +211,7 @@ impl crate::AnimatedCameraDeltaStartHandler {
     ///
     /// Semantic, camera pass, high; called through the object's vtable.
     /// `bool (AnimatedCameraDeltaStartHandler* this, Actor* actor, const BSFixedStringCI* payload)`
+    /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
     ///
     /// # Safety
     /// `payload` must point to what the engine expects.
@@ -229,6 +230,7 @@ impl crate::AnimatedCameraEndHandler {
     ///
     /// Semantic, camera pass, high; called through the object's vtable.
     /// `bool (AnimatedCameraEndHandler* this, Actor* actor, const BSFixedStringCI* payload)`
+    /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
     ///
     /// # Safety
     /// `payload` must point to what the engine expects.
@@ -247,6 +249,7 @@ impl crate::AnimatedCameraStartHandler {
     ///
     /// Semantic, camera pass, high; called through the object's vtable.
     /// `bool (AnimatedCameraStartHandler* this, Actor* actor, const BSFixedStringCI* payload)`
+    /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
     ///
     /// # Safety
     /// `payload` must point to what the engine expects.
@@ -322,6 +325,7 @@ impl crate::BGSCameraPath {
     ///
     /// Semantic, camera pass, high; called through the object's vtable.
     /// `bool (BGSCameraPath* this, TESFile* file)`
+    /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
     ///
     /// # Safety
     /// `file` must point to what the engine expects.
@@ -355,20 +359,23 @@ impl crate::BGSCameraPath {
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 20654, rva 0x317340.
     /// `void (BGSCameraPath* this, BGSCameraPath* after, BGSCameraPath* child)`
+    /// May be null: `after`, `child`.
     #[inline]
-    pub fn insert_child_after(&self, after: &Self, child: &Self) { unsafe { function!(20654, (*const Self, *const Self, *const Self))(core::ptr::from_ref(self), core::ptr::from_ref(after), core::ptr::from_ref(child)) } }
+    pub fn insert_child_after(&self, after: Option<&Self>, child: Option<&Self>) { unsafe { function!(20654, (*const Self, *const Self, *const Self))(core::ptr::from_ref(self), after.map_or(core::ptr::null(), core::ptr::from_ref), child.map_or(core::ptr::null(), core::ptr::from_ref)) } }
     /// `BGSCameraPath::InsertChildAt`: create children if needed; index -1 = append; set child->parent, child->previousSibling = children[index-1], children[index]->previousSibling = child; insert
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 20653, rva 0x3171f0.
     /// `void (BGSCameraPath* this, u32 index, BGSCameraPath* child)`
+    /// May be null: `child`.
     #[inline]
-    pub fn insert_child_at(&self, index: u32, child: &Self) { unsafe { function!(20653, (*const Self, u32, *const Self))(core::ptr::from_ref(self), index, core::ptr::from_ref(child)) } }
+    pub fn insert_child_at(&self, index: u32, child: Option<&Self>) { unsafe { function!(20653, (*const Self, u32, *const Self))(core::ptr::from_ref(self), index, child.map_or(core::ptr::null(), core::ptr::from_ref)) } }
     /// `BGSCameraPath::RemoveChild`: find child in children, relink its follower's previousSibling, remove and compact
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 20656, rva 0x317590.
     /// `void (BGSCameraPath* this, BGSCameraPath* child)`
+    /// May be null: `child`.
     #[inline]
-    pub fn remove_child(&self, child: &Self) { unsafe { function!(20656, (*const Self, *const Self))(core::ptr::from_ref(self), core::ptr::from_ref(child)) } }
+    pub fn remove_child(&self, child: Option<&Self>) { unsafe { function!(20656, (*const Self, *const Self))(core::ptr::from_ref(self), child.map_or(core::ptr::null(), core::ptr::from_ref)) } }
     /// `BGSCameraPath::RemoveChildAt`: children[index+1]->previousSibling = children[index-1]; null the slot and compact
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 20655, rva 0x3174b0.
@@ -397,8 +404,9 @@ impl crate::BGSCameraPath {
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 20657, rva 0x317690.
     /// `bool (BGSCameraPath* this, BGSCameraPath* other)`
+    /// May be null: `other`.
     #[inline]
-    pub fn contains_camera_path_recursive(&self, other: &Self) -> bool { unsafe { function!(20657, (*const Self, *const Self) -> bool)(core::ptr::from_ref(self), core::ptr::from_ref(other)) } }
+    pub fn contains_camera_path_recursive(&self, other: Option<&Self>) -> bool { unsafe { function!(20657, (*const Self, *const Self) -> bool)(core::ptr::from_ref(self), other.map_or(core::ptr::null(), core::ptr::from_ref)) } }
     /// `DetachCameraPathFromParent`: remove from parent->children (or the root list), parent = 0, the element now at the old index takes this->previousSibling, previousSibling = 0
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 20658, rva 0x317760.
@@ -457,6 +465,7 @@ impl crate::BGSCameraShot {
     ///
     /// Semantic, camera pass, high; called through the object's vtable.
     /// `bool (BGSCameraShot* this, TESFile* file)`
+    /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
     ///
     /// # Safety
     /// `file` must point to what the engine expects.
@@ -466,11 +475,8 @@ impl crate::BGSCameraShot {
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 20711, rva 0x319f60.
     /// `NiPoint3* (BGSCameraShot* shot, NiPoint3* out)`
-    ///
-    /// # Safety
-    /// `out` must point to what the engine expects, and the result is an untyped pointer.
     #[inline]
-    pub unsafe fn get_look_at_point(&self, out: *mut c_void) -> *mut c_void { unsafe { function!(20711, (*const Self, *mut c_void) -> *mut c_void)(core::ptr::from_ref(self), out) } }
+    pub fn get_look_at_point(&self, out: &mut crate::NiPoint3) -> Option<&'static crate::NiPoint3> { unsafe { function!(20711, (*const Self, *mut crate::NiPoint3) -> Option<&'static crate::NiPoint3>)(core::ptr::from_ref(self), core::ptr::from_mut(out)) } }
     /// `BGSCameraShot::ReleaseRuntime`: release +0x88, +0x90, +0xa8, +0xa0, +0xb8; +0x98 = invalid handle; cutAway = 0; UIVATSCameraOut when the in-sound flag is set and no VATS command is queued
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 20707, rva 0x319370.
@@ -577,42 +583,49 @@ impl crate::BSFrustumFOVController {
     ///
     /// Semantic, camera pass, high; called through the object's vtable.
     /// `bool (BSFrustumFOVController* this, NiObject* other)`
+    /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
     #[inline]
     pub fn is_equal(&self, other: &crate::NiObject) -> bool { unsafe { virtual_function!(self, 28, (*const Self, *const crate::NiObject) -> bool)(core::ptr::from_ref(self), core::ptr::from_ref(other)) } }
     /// `BSFrustumFOVController::IsTargetCompatible`, vtable slot 60: true when the target's RTTI chain contains NiCamera
     ///
     /// Semantic, camera pass, high; called through the object's vtable.
     /// `bool (BSFrustumFOVController* this, NiObjectNET* target)`
+    /// May be null: `target`.
     #[inline]
-    pub fn is_target_compatible(&self, target: &crate::NiObjectNET) -> bool { unsafe { virtual_function!(self, 60, (*const Self, *const crate::NiObjectNET) -> bool)(core::ptr::from_ref(self), core::ptr::from_ref(target)) } }
+    pub fn is_target_compatible(&self, target: Option<&crate::NiObjectNET>) -> bool { unsafe { virtual_function!(self, 60, (*const Self, *const crate::NiObjectNET) -> bool)(core::ptr::from_ref(self), target.map_or(core::ptr::null(), core::ptr::from_ref)) } }
     /// `BSFrustumFOVController::LinkObject`, vtable slot 25: jmp to 0xf97ef0
     ///
     /// Semantic, camera pass, high; called through the object's vtable.
     /// `void (BSFrustumFOVController* this, NiStream* stream)`
+    /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
     #[inline]
     pub fn link_object(&self, stream: &crate::NiStream) { unsafe { virtual_function!(self, 25, (*const Self, *const crate::NiStream))(core::ptr::from_ref(self), core::ptr::from_ref(stream)) } }
     /// `BSFrustumFOVController::LoadBinary`, vtable slot 24: 5-byte jmp to NiFloatInterpController slot 24 0xf97ee0
     ///
     /// Semantic, camera pass, high; called through the object's vtable.
     /// `void (BSFrustumFOVController* this, NiStream* stream)`
+    /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
     #[inline]
     pub fn load_binary(&self, stream: &crate::NiStream) { unsafe { virtual_function!(self, 24, (*const Self, *const crate::NiStream))(core::ptr::from_ref(self), core::ptr::from_ref(stream)) } }
     /// `BSFrustumFOVController::RegisterStreamables`, vtable slot 26: jmp to 0xf97f00
     ///
     /// Semantic, camera pass, high; called through the object's vtable.
     /// `bool (BSFrustumFOVController* this, NiStream* stream)`
+    /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
     #[inline]
     pub fn register_streamables(&self, stream: &crate::NiStream) -> bool { unsafe { virtual_function!(self, 26, (*const Self, *const crate::NiStream) -> bool)(core::ptr::from_ref(self), core::ptr::from_ref(stream)) } }
     /// `BSFrustumFOVController::SaveBinary`, vtable slot 27: jmp to 0xf97f10
     ///
     /// Semantic, camera pass, high; called through the object's vtable.
     /// `void (BSFrustumFOVController* this, NiStream* stream)`
+    /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
     #[inline]
     pub fn save_binary(&self, stream: &crate::NiStream) { unsafe { virtual_function!(self, 27, (*const Self, *const crate::NiStream))(core::ptr::from_ref(self), core::ptr::from_ref(stream)) } }
     /// `BSFrustumFOVController::Update`, vtable slot 39: when the time changed (or always-update flags), asks the interpolator (vfunc +0x148) for the value v at the controller time and the target, then target->SetFrustum({-v, v, 0.75v, -0.75v, near, far, ortho kept})
     ///
     /// Semantic, camera pass, high; called through the object's vtable.
     /// `void (BSFrustumFOVController* this, NiUpdateData* data)`
+    /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
     ///
     /// # Safety
     /// `data` must point to what the engine expects.
@@ -670,6 +683,7 @@ impl crate::CameraOverrideStartHandler {
     ///
     /// Semantic, camera pass, high; called through the object's vtable.
     /// `bool (CameraOverrideStartHandler* this, Actor* actor, const BSFixedStringCI* payload)`
+    /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
     ///
     /// # Safety
     /// `payload` must point to what the engine expects.
@@ -688,6 +702,7 @@ impl crate::CameraOverrideStopHandler {
     ///
     /// Semantic, camera pass, high; called through the object's vtable.
     /// `bool (CameraOverrideStopHandler* this, Actor* actor, const BSFixedStringCI* payload)`
+    /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
     ///
     /// # Safety
     /// `payload` must point to what the engine expects.
@@ -706,6 +721,7 @@ impl crate::CameraShakeHandler {
     ///
     /// Semantic, camera pass, high; called through the object's vtable.
     /// `bool (CameraShakeHandler* this, Actor* actor, const BSFixedStringCI* payload)`
+    /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
     ///
     /// # Safety
     /// `payload` must point to what the engine expects.
@@ -723,11 +739,9 @@ impl crate::CrosshairPickData {
     ///
     /// Semantic, camera pass, high; ledger runtime evidence, name high; id 26127, rva 0x409fd0.
     /// `void (CrosshairPickData* this, bhkWorld* world, const NiPoint3* origin, const NiPoint3* direction)`
-    ///
-    /// # Safety
-    /// `origin`, `direction` must point to what the engine expects.
+    /// May be null: `world`.
     #[inline]
-    pub unsafe fn pick(&self, world: *mut crate::bhkWorld, origin: *const c_void, direction: *const c_void) { unsafe { function!(26127, (*const Self, *mut crate::bhkWorld, *const c_void, *const c_void))(core::ptr::from_ref(self), world, origin, direction) } }
+    pub fn pick(&self, world: Option<&crate::bhkWorld>, origin: &crate::NiPoint3, direction: &crate::NiPoint3) { unsafe { function!(26127, (*const Self, *const crate::bhkWorld, *const crate::NiPoint3, *const crate::NiPoint3))(core::ptr::from_ref(self), world.map_or(core::ptr::null(), core::ptr::from_ref), core::ptr::from_ref(origin), core::ptr::from_ref(direction)) } }
     /// `CrosshairPickData::Reset`: hit object +0x20 = null, handles +4/+8/+0xc = invalid, hit point +0x10..+0x18 = the zero NiPoint3
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 26131, rva 0x40b310.
@@ -842,20 +856,14 @@ impl crate::LocalMapCamera {
     ///
     /// Semantic, camera pass, high; ledger runtime evidence, name high; id 16331, rva 0x248230.
     /// `void (LocalMapCamera* this, const NiPoint3* upper, const NiPoint3* lower)`
-    ///
-    /// # Safety
-    /// `upper`, `lower` must point to what the engine expects.
     #[inline]
-    pub unsafe fn set_area_bounds(&self, upper: *const c_void, lower: *const c_void) { unsafe { function!(16331, (*const Self, *const c_void, *const c_void))(core::ptr::from_ref(self), upper, lower) } }
+    pub fn set_area_bounds(&self, upper: &crate::NiPoint3, lower: &crate::NiPoint3) { unsafe { function!(16331, (*const Self, *const crate::NiPoint3, *const crate::NiPoint3))(core::ptr::from_ref(self), core::ptr::from_ref(upper), core::ptr::from_ref(lower)) } }
     /// `LocalMapCamera::SetCenter`: defaultState->center = (x, y, z + fMapLocalHeight)
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 16328, rva 0x248100.
     /// `void (LocalMapCamera* this, const NiPoint3* point)`
-    ///
-    /// # Safety
-    /// `point` must point to what the engine expects.
     #[inline]
-    pub unsafe fn set_center(&self, point: *const c_void) { unsafe { function!(16328, (*const Self, *const c_void))(core::ptr::from_ref(self), point) } }
+    pub fn set_center(&self, point: &crate::NiPoint3) { unsafe { function!(16328, (*const Self, *const crate::NiPoint3))(core::ptr::from_ref(self), core::ptr::from_ref(point)) } }
     /// `LocalMapCamera::SetNorthRotation`: northRotation = angle; root local rotation from SinCos(angle); UpdateNode
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 16330, rva 0x248170.
@@ -866,11 +874,8 @@ impl crate::LocalMapCamera {
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 16329, rva 0x248130.
     /// `void (LocalMapCamera* this, const NiPoint3* point)`
-    ///
-    /// # Safety
-    /// `point` must point to what the engine expects.
     #[inline]
-    pub unsafe fn set_offset_to_point(&self, point: *const c_void) { unsafe { function!(16329, (*const Self, *const c_void))(core::ptr::from_ref(self), point) } }
+    pub fn set_offset_to_point(&self, point: &crate::NiPoint3) { unsafe { function!(16329, (*const Self, *const crate::NiPoint3))(core::ptr::from_ref(self), core::ptr::from_ref(point)) } }
     /// `LocalMapCamera::SetViewSize`: defaultState minHalfWidth = width/2, minHalfHeight = height/2
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 16332, rva 0x248270.
@@ -925,11 +930,10 @@ impl crate::MapCamera {
     ///
     /// Semantic, camera pass, high; called through the object's vtable.
     /// `void (MapCamera* this, NiNode* root, const NiPoint3* position)`
-    ///
-    /// # Safety
-    /// `position` must point to what the engine expects.
+    /// May be null: `root`.
+    /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
     #[inline]
-    pub unsafe fn enter(&self, root: *mut crate::NiNode, position: *const c_void) { unsafe { virtual_function!(self, 3, (*const Self, *mut crate::NiNode, *const c_void))(core::ptr::from_ref(self), root, position) } }
+    pub fn enter(&self, root: Option<&crate::NiNode>, position: &crate::NiPoint3) { unsafe { virtual_function!(self, 3, (*const Self, *const crate::NiNode, *const crate::NiPoint3))(core::ptr::from_ref(self), root.map_or(core::ptr::null(), core::ptr::from_ref), core::ptr::from_ref(position)) } }
     /// `MapCamera::HideOrRestorePlayer3D`: restore false: save the player's first-person 3D hidden bit to +0x88 and hide it; restore true: set the bit back from +0x88
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 53019, rva 0x996b00.
@@ -952,11 +956,8 @@ impl crate::MapCamera {
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 53022, rva 0x997010.
     /// `void (MapCamera* this, const NiPoint3* position, float durationSeconds)`
-    ///
-    /// # Safety
-    /// `position` must point to what the engine expects.
     #[inline]
-    pub unsafe fn transition_to_alternate_world_state(&self, position: *const c_void, durationSeconds: f32) { unsafe { function!(53022, (*const Self, *const c_void, f32))(core::ptr::from_ref(self), position, durationSeconds) } }
+    pub fn transition_to_alternate_world_state(&self, position: &crate::NiPoint3, durationSeconds: f32) { unsafe { function!(53022, (*const Self, *const crate::NiPoint3, f32))(core::ptr::from_ref(self), core::ptr::from_ref(position), durationSeconds) } }
     /// `MapCamera::ctor`: MapCamera with the NullMapCameraCallbacks singleton
     ///
     /// Semantic, camera pass, high; ledger layout_inference evidence, name high; id 53011, rva 0x996170.
@@ -1037,11 +1038,8 @@ impl crate::MapCameraStates__World {
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 53048, rva 0x998580.
     /// `void (const MapCameraStates::World* this, NiPoint2* outOffset, const NiPoint2* point)`
-    ///
-    /// # Safety
-    /// `outOffset`, `point` must point to what the engine expects.
     #[inline]
-    pub unsafe fn compute_offset_to_bounds_polygon(&self, outOffset: *mut c_void, point: *const c_void) { unsafe { function!(53048, (*const Self, *mut c_void, *const c_void))(core::ptr::from_ref(self), outOffset, point) } }
+    pub fn compute_offset_to_bounds_polygon(&self, outOffset: &mut crate::NiPoint2, point: &crate::NiPoint2) { unsafe { function!(53048, (*const Self, *mut crate::NiPoint2, *const crate::NiPoint2))(core::ptr::from_ref(self), core::ptr::from_mut(outOffset), core::ptr::from_ref(point)) } }
     /// `MapCameraStates::World::ResetPositionAndOffsetVectors`: zeroes the four vectors and yaw/pitch, zoom 0.25, field_5c 0, terrainHeight 0
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 53047, rva 0x9984b0.
@@ -1052,11 +1050,8 @@ impl crate::MapCameraStates__World {
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 53045, rva 0x998060.
     /// `void (MapCameraStates::World* this, const NiPoint3* position)`
-    ///
-    /// # Safety
-    /// `position` must point to what the engine expects.
     #[inline]
-    pub unsafe fn set_position_and_bounds(&self, position: *const c_void) { unsafe { function!(53045, (*const Self, *const c_void))(core::ptr::from_ref(self), position) } }
+    pub fn set_position_and_bounds(&self, position: &crate::NiPoint3) { unsafe { function!(53045, (*const Self, *const crate::NiPoint3))(core::ptr::from_ref(self), core::ptr::from_ref(position)) } }
     /// `MapCameraStates::World::UpdateHeightAtClampedPosition`: terrainHeight = PickTerrainHeightAt(basePosition.xy + panOffset.xy pushed into the polygon)
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 53046, rva 0x998410.
@@ -1111,6 +1106,7 @@ impl crate::OwnedCameraEffectController {
     ///
     /// Semantic, camera pass, high; called through the object's vtable.
     /// `void (OwnedCameraEffectController* this, BGSLoadFormBuffer* buffer)`
+    /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
     #[inline]
     pub fn load_game(&self, buffer: &crate::BGSLoadFormBuffer) { unsafe { virtual_function!(self, 34, (*const Self, *const crate::BGSLoadFormBuffer))(core::ptr::from_ref(self), core::ptr::from_ref(buffer)) } }
     /// `OwnedCameraEffectController::ReturnsTrue22`, vtable slot 22: returns true (ReferenceEffectController default 0x5dbff0 returns false); read through ReferenceEffect slot 43 0x5d88c0, which returns true when there is no controller
@@ -1123,6 +1119,7 @@ impl crate::OwnedCameraEffectController {
     ///
     /// Semantic, camera pass, high; called through the object's vtable.
     /// `void (OwnedCameraEffectController* this, BGSSaveFormBuffer* buffer)`
+    /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
     #[inline]
     pub fn save_game(&self, buffer: &crate::BGSSaveFormBuffer) { unsafe { virtual_function!(self, 33, (*const Self, *const crate::BGSSaveFormBuffer))(core::ptr::from_ref(self), core::ptr::from_ref(buffer)) } }
     /// `OwnedCameraEffectController::ctor`: targetHandle = player, effectShader = 0, artObject = art, facingHandle = invalid, attachRoot = Weather node (ref), rotateWithCamera
@@ -1206,6 +1203,7 @@ impl crate::StopMountCameraHandler {
     ///
     /// Semantic, camera pass, high; called through the object's vtable.
     /// `bool (StopMountCameraHandler* this, Actor* actor, const BSFixedStringCI* payload)`
+    /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
     ///
     /// # Safety
     /// `payload` must point to what the engine expects.
@@ -1218,8 +1216,10 @@ impl crate::TESFurniture {
     ///
     /// Semantic, camera pass, high; called through the object's vtable.
     /// `bool (TESFurniture* this, TESObjectREFR* targetRef, TESObjectREFR* activator, u8 activateFlag, TESBoundObject* object, i32 count)`
+    /// May be null: `activator`.
+    /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
     #[inline]
-    pub fn activate(&self, targetRef: &crate::TESObjectREFR, activator: &crate::TESObjectREFR, activateFlag: u8, object: &crate::TESBoundObject, count: i32) -> bool { unsafe { virtual_function!(self, 55, (*const Self, *const crate::TESObjectREFR, *const crate::TESObjectREFR, u8, *const crate::TESBoundObject, i32) -> bool)(core::ptr::from_ref(self), core::ptr::from_ref(targetRef), core::ptr::from_ref(activator), activateFlag, core::ptr::from_ref(object), count) } }
+    pub fn activate(&self, targetRef: &crate::TESObjectREFR, activator: Option<&crate::TESObjectREFR>, activateFlag: u8, object: &crate::TESBoundObject, count: i32) -> bool { unsafe { virtual_function!(self, 55, (*const Self, *const crate::TESObjectREFR, *const crate::TESObjectREFR, u8, *const crate::TESBoundObject, i32) -> bool)(core::ptr::from_ref(self), core::ptr::from_ref(targetRef), activator.map_or(core::ptr::null(), core::ptr::from_ref), activateFlag, core::ptr::from_ref(object), count) } }
 }
 
 impl crate::TransitionState {
@@ -1248,8 +1248,9 @@ impl crate::TransitionState {
 ///
 /// Semantic, camera pass, high; ledger semantic evidence, name high; id 19796, rva 0x2f11b0.
 /// `bool (TESObjectREFR* target, TESObjectREFR* activator, u8 activateFlag, TESBoundObject* object, i32 count, bool defaultProcessingOnly)`
+/// May be null: `activator`, `object`.
 #[inline]
-pub fn activate_reference(target: &crate::TESObjectREFR, activator: &crate::TESObjectREFR, activateFlag: u8, object: &crate::TESBoundObject, count: i32, defaultProcessingOnly: bool) -> bool { unsafe { function!(19796, (*const crate::TESObjectREFR, *const crate::TESObjectREFR, u8, *const crate::TESBoundObject, i32, bool) -> bool)(core::ptr::from_ref(target), core::ptr::from_ref(activator), activateFlag, core::ptr::from_ref(object), count, defaultProcessingOnly) } }
+pub fn activate_reference(target: &crate::TESObjectREFR, activator: Option<&crate::TESObjectREFR>, activateFlag: u8, object: Option<&crate::TESBoundObject>, count: i32, defaultProcessingOnly: bool) -> bool { unsafe { function!(19796, (*const crate::TESObjectREFR, *const crate::TESObjectREFR, u8, *const crate::TESBoundObject, i32, bool) -> bool)(core::ptr::from_ref(target), activator.map_or(core::ptr::null(), core::ptr::from_ref), activateFlag, object.map_or(core::ptr::null(), core::ptr::from_ref), count, defaultProcessingOnly) } }
 /// `ApplyActionAnimEventEffects`: after an action's anim event: sheathe/draw, kill moves ('pa_Kill'), weapon and mount side effects on the action's subject actor
 ///
 /// Semantic, camera pass, medium; ledger semantic evidence, name medium; id 39004, rva 0x6e2250.
@@ -1269,6 +1270,7 @@ pub fn apply_clamped_pitch_delta(actor: &crate::Actor, pitchDelta: f32) { unsafe
 ///
 /// Semantic, camera pass, high; ledger semantic evidence, name high; id 17330, rva 0x26c600.
 /// `i32 (TESEffectShader* shader, NiAVObject* node, BSEffectShaderData* data, bool requireFlag49)`
+/// May be null: `node`, `data`.
 ///
 /// # Safety
 /// `data` must point to what the engine expects.
@@ -1329,17 +1331,19 @@ pub fn can_open_tween_menu() -> bool { unsafe { function!(52719, () -> bool)() }
 ///
 /// Semantic, camera pass, high; ledger runtime evidence, name high; id 33007, rva 0x5574f0.
 /// `bool (CameraCasterHolder* caster, bhkWorld* world, NiPoint3* from, NiPoint3* to, float* hitRecord, TESObjectREFR** hitRef, float radius)`
+/// May be null: `world`.
 ///
 /// # Safety
-/// `caster`, `from`, `to`, `hitRecord`, `hitRef` must point to what the engine expects.
+/// `caster`, `hitRecord`, `hitRef` must point to what the engine expects.
 #[inline]
-pub unsafe fn cast_camera_linear_and_collect_hits(caster: *mut crate::CameraCasterHolder, world: *mut crate::bhkWorld, from: *mut c_void, to: *mut c_void, hitRecord: *mut f32, hitRef: *mut *mut crate::TESObjectREFR, radius: f32) -> bool { unsafe { function!(33007, (*mut crate::CameraCasterHolder, *mut crate::bhkWorld, *mut c_void, *mut c_void, *mut f32, *mut *mut crate::TESObjectREFR, f32) -> bool)(caster, world, from, to, hitRecord, hitRef, radius) } }
+pub unsafe fn cast_camera_linear_and_collect_hits(caster: *mut crate::CameraCasterHolder, world: *mut crate::bhkWorld, from: *mut crate::NiPoint3, to: *mut crate::NiPoint3, hitRecord: *mut f32, hitRef: *mut *mut crate::TESObjectREFR, radius: f32) -> bool { unsafe { function!(33007, (*mut crate::CameraCasterHolder, *mut crate::bhkWorld, *mut crate::NiPoint3, *mut crate::NiPoint3, *mut f32, *mut *mut crate::TESObjectREFR, f32) -> bool)(caster, world, from, to, hitRecord, hitRef, radius) } }
 /// `CheckVATSTargetVisibleInDirection`: for i = 1..fVATSSmartCameraCheckStepCount (5): point = subject position stepped i * fVATSSmartCameraCheckStepDistance (128) along heading + angleOffset at +fVATSSmartCameraCheckHeight; ray to the target's 3D world translate; stop at the first step whose ray hits something other than the target at fraction <= 0.85 (an actor hit only within 256 units); returns i * fVATSSmartCameraCheckStepDistance of the last step evaluated (StepCount * StepDistance = 640 when no step stopped)
 ///
 /// Semantic, camera pass, high; ledger semantic evidence, name high; id 37727, rva 0x6a07c0.
 /// `float (Actor* subject, TESObjectREFR* target, float angleOffset)`
+/// May be null: `target`.
 #[inline]
-pub fn check_vats_target_visible_in_direction(subject: &crate::Actor, target: &crate::TESObjectREFR, angleOffset: f32) -> f32 { unsafe { function!(37727, (*const crate::Actor, *const crate::TESObjectREFR, f32) -> f32)(core::ptr::from_ref(subject), core::ptr::from_ref(target), angleOffset) } }
+pub fn check_vats_target_visible_in_direction(subject: &crate::Actor, target: Option<&crate::TESObjectREFR>, angleOffset: f32) -> f32 { unsafe { function!(37727, (*const crate::Actor, *const crate::TESObjectREFR, f32) -> f32)(core::ptr::from_ref(subject), target.map_or(core::ptr::null(), core::ptr::from_ref), angleOffset) } }
 /// `ClearCameraShotList`: delete every node after the head (0x10 each), head item = 0
 ///
 /// Semantic, camera pass, high; ledger semantic evidence, name high; id 20669, rva 0x317b50.
@@ -1371,6 +1375,7 @@ pub fn clear_low_health_i_mod_cache() { unsafe { function!(40610, ())() } }
 ///
 /// Semantic, camera pass, high; ledger console_cmd evidence, name high; id 22643, rva 0x368890.
 /// `bool (void* paramInfo, void* scriptData, TESObjectREFR* thisObj, void* containingObj, void* script, void* locals, double* result, u32* opcodeOffset)`
+/// May be null: `thisObj`.
 ///
 /// # Safety
 /// `paramInfo`, `scriptData`, `containingObj`, `script`, `locals`, `result`, `opcodeOffset` must point to what the engine expects.
@@ -1440,24 +1445,23 @@ pub fn cmd__toggle_animator_cam_execute() -> bool { unsafe { function!(22888, ()
 ///
 /// Semantic, camera pass, medium; ledger semantic evidence, name medium; id 41248, rva 0x777c00.
 /// `void (Actor* shooter, Projectile* projectile, NiAVObject* aimNode, float* yawInOut, float* pitchInOut, const NiPoint3* origin, float baseYaw, float basePitch)`
+/// May be null: `projectile`, `aimNode`, `origin`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
 #[inline]
-pub unsafe fn compute_auto_aim_angles(shooter: *mut crate::Actor, projectile: *mut crate::Projectile, aimNode: *mut crate::NiAVObject, yawInOut: *mut f32, pitchInOut: *mut f32, origin: *const c_void, baseYaw: f32, basePitch: f32) { unsafe { function!(41248, (*mut crate::Actor, *mut crate::Projectile, *mut crate::NiAVObject, *mut f32, *mut f32, *const c_void, f32, f32))(shooter, projectile, aimNode, yawInOut, pitchInOut, origin, baseYaw, basePitch) } }
+pub unsafe fn compute_auto_aim_angles(shooter: *mut crate::Actor, projectile: *mut crate::Projectile, aimNode: *mut crate::NiAVObject, yawInOut: *mut f32, pitchInOut: *mut f32, origin: *const crate::NiPoint3, baseYaw: f32, basePitch: f32) { unsafe { function!(41248, (*mut crate::Actor, *mut crate::Projectile, *mut crate::NiAVObject, *mut f32, *mut f32, *const crate::NiPoint3, f32, f32))(shooter, projectile, aimNode, yawInOut, pitchInOut, origin, baseYaw, basePitch) } }
 /// `ComputeCameraShakeRotation`: when strength and time left are > 1e-4: UpdateNode the CameraShake.nif root at the time stored at (root+0x18)+0x1c (its reference pose), keep that local rotation R0, UpdateNode again at `time`, outDelta = inverse(R0) * R(time); timeLeft -= g_FrameDelta; returns strength, faded linearly over the last fCameraShakeFadeTime; else zeroes both and returns 0
 ///
 /// Semantic, camera pass, high; ledger runtime evidence, name high; id 33013, rva 0x558600.
 /// `float (float time, NiMatrix3* outDelta)`
-///
-/// # Safety
-/// `outDelta` must point to what the engine expects.
 #[inline]
-pub unsafe fn compute_camera_shake_rotation(time: f32, outDelta: *mut c_void) -> f32 { unsafe { function!(33013, (f32, *mut c_void) -> f32)(time, outDelta) } }
+pub fn compute_camera_shake_rotation(time: f32, outDelta: &mut crate::NiMatrix3) -> f32 { unsafe { function!(33013, (f32, *mut crate::NiMatrix3) -> f32)(time, core::ptr::from_mut(outDelta)) } }
 /// `ComputeGunSpread`: weapon spread from skill, condition and stance, with the iron-sights base setting (fGunSpreadIronSightsBase); Fallout-era code with no caller
 ///
 /// Semantic, camera pass, medium; ledger semantic evidence, name medium; id 26440, rva 0x41fda0.
 /// `float (ActorValueOwner* shooterValues, void* weaponData, float condition, float drift, bool ironSights, bool crouching, bool walking, bool running)`
+/// May be null: `weaponData`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -1490,9 +1494,9 @@ pub fn compute_vats_area_free_distance(subject: &crate::Actor, unused: &crate::T
 /// `NiPoint3* (VATS* vats, NiPoint3* out, float percent)`
 ///
 /// # Safety
-/// `vats`, `out` must point to what the engine expects, and the result is an untyped pointer.
+/// `vats` must point to what the engine expects.
 #[inline]
-pub unsafe fn compute_vats_camera_target_position(vats: *mut c_void, out: *mut c_void, percent: f32) -> *mut c_void { unsafe { function!(44303, (*mut c_void, *mut c_void, f32) -> *mut c_void)(vats, out, percent) } }
+pub unsafe fn compute_vats_camera_target_position(vats: *mut c_void, out: *mut crate::NiPoint3, percent: f32) -> *mut crate::NiPoint3 { unsafe { function!(44303, (*mut c_void, *mut crate::NiPoint3, f32) -> *mut crate::NiPoint3)(vats, out, percent) } }
 /// `CopyHandle`: *dst = *src; returns dst
 ///
 /// Semantic, camera pass, high; ledger semantic evidence, name high; id 44073, rva 0x7f6ad0.
@@ -1575,8 +1579,9 @@ pub fn find_auto_aim_target(player: &crate::PlayerCharacter, maxDistance: f32, v
 ///
 /// Semantic, camera pass, high; ledger semantic evidence, name high; id 15891, rva 0x224230.
 /// `NiCamera* (NiAVObject* root)`
+/// May be null: `root`.
 #[inline]
-pub fn find_first_camera_in_tree(root: &crate::NiAVObject) -> Option<&'static crate::NiCamera> { unsafe { function!(15891, (*const crate::NiAVObject) -> Option<&'static crate::NiCamera>)(core::ptr::from_ref(root)) } }
+pub fn find_first_camera_in_tree(root: Option<&crate::NiAVObject>) -> Option<&'static crate::NiCamera> { unsafe { function!(15891, (*const crate::NiAVObject) -> Option<&'static crate::NiCamera>)(root.map_or(core::ptr::null(), core::ptr::from_ref)) } }
 /// `FindFirstTimeControllerInTree`: depth-first search of root and its children for the first controller whose RTTI chain contains NiTimeController
 ///
 /// Semantic, camera pass, high; ledger semantic evidence, name high; id 15890, rva 0x2241a0.
@@ -1599,8 +1604,9 @@ pub fn finish_first_person_pass() { unsafe { function!(107124, ())() } }
 ///
 /// Semantic, camera pass, high; ledger semantic evidence, name high; id 18102, rva 0x28c450.
 /// `void (TESObjectWEAP* weapon, TESObjectREFR* shooter, TESAmmo* ammo, EnchantmentItem* enchantment, AlchemyItem* poison)`
+/// May be null: `shooter`, `ammo`, `enchantment`, `poison`.
 #[inline]
-pub fn fire_weapon(weapon: &crate::TESObjectWEAP, shooter: &crate::TESObjectREFR, ammo: &crate::TESAmmo, enchantment: &crate::EnchantmentItem, poison: &crate::AlchemyItem) { unsafe { function!(18102, (*const crate::TESObjectWEAP, *const crate::TESObjectREFR, *const crate::TESAmmo, *const crate::EnchantmentItem, *const crate::AlchemyItem))(core::ptr::from_ref(weapon), core::ptr::from_ref(shooter), core::ptr::from_ref(ammo), core::ptr::from_ref(enchantment), core::ptr::from_ref(poison)) } }
+pub fn fire_weapon(weapon: &crate::TESObjectWEAP, shooter: Option<&crate::TESObjectREFR>, ammo: Option<&crate::TESAmmo>, enchantment: Option<&crate::EnchantmentItem>, poison: Option<&crate::AlchemyItem>) { unsafe { function!(18102, (*const crate::TESObjectWEAP, *const crate::TESObjectREFR, *const crate::TESAmmo, *const crate::EnchantmentItem, *const crate::AlchemyItem))(core::ptr::from_ref(weapon), shooter.map_or(core::ptr::null(), core::ptr::from_ref), ammo.map_or(core::ptr::null(), core::ptr::from_ref), enchantment.map_or(core::ptr::null(), core::ptr::from_ref), poison.map_or(core::ptr::null(), core::ptr::from_ref)) } }
 /// `FirstPersonCamera::StaticDtor`: atexit: releases g_FirstPersonCamera (refcount +8, slot 1 at zero)
 ///
 /// Semantic, camera pass, high; ledger semantic evidence, name high; id 174562, rva 0x17c2eb0.
@@ -1706,9 +1712,9 @@ pub fn init_stats_menu_event_name_camera_outro() { unsafe { function!(7338, ())(
 /// `bool (CameraCollisionHolder* holder, Actor* target, const NiPoint3* cameraPos, float radiusHavok, float heightOffset)`
 ///
 /// # Safety
-/// `holder`, `cameraPos` must point to what the engine expects.
+/// `holder` must point to what the engine expects.
 #[inline]
-pub unsafe fn is_camera_caster_overlapping(holder: *mut c_void, target: *mut crate::Actor, cameraPos: *const c_void, radiusHavok: f32, heightOffset: f32) -> bool { unsafe { function!(33008, (*mut c_void, *mut crate::Actor, *const c_void, f32, f32) -> bool)(holder, target, cameraPos, radiusHavok, heightOffset) } }
+pub unsafe fn is_camera_caster_overlapping(holder: *mut c_void, target: *mut crate::Actor, cameraPos: *const crate::NiPoint3, radiusHavok: f32, heightOffset: f32) -> bool { unsafe { function!(33008, (*mut c_void, *mut crate::Actor, *const crate::NiPoint3, f32, f32) -> bool)(holder, target, cameraPos, radiusHavok, heightOffset) } }
 /// `IsHandleSlotOccupied`: *slot != 0
 ///
 /// Semantic, camera pass, high; ledger semantic evidence, name high; id 23687, rva 0x391da0.
@@ -1737,6 +1743,7 @@ pub fn is_power_attacking(actor: &crate::Actor) -> bool { unsafe { function!(385
 ///
 /// Semantic, camera pass, high; ledger runtime evidence, name high; id 32188, rva 0x52c6f0.
 /// `bool (void* unused, NiAVObject* object)`
+/// May be null: `object`.
 ///
 /// # Safety
 /// `unused` must point to what the engine expects.
@@ -1746,15 +1753,17 @@ pub unsafe fn is_visible_in_main_camera_or_multi_bound(unused: *mut c_void, obje
 ///
 /// Semantic, camera pass, high; ledger semantic evidence, name high; id 34452, rva 0x5ce8b0.
 /// `bool (MagicCaster* caster, BGSProjectile* projectile, TESObjectREFR* shooter, CombatController* combatController, const NiPoint3* origin, float angleZ, float angleX, u32 area, const void* hitRecord)`
+/// May be null: `projectile`, `shooter`, `hitRecord`.
 ///
 /// # Safety
-/// `combatController`, `origin`, `hitRecord` must point to what the engine expects.
+/// `combatController`, `hitRecord` must point to what the engine expects.
 #[inline]
-pub unsafe fn launch_projectile_from_caster(caster: *mut crate::MagicCaster, projectile: *mut crate::BGSProjectile, shooter: *mut crate::TESObjectREFR, combatController: *mut c_void, origin: *const c_void, angleZ: f32, angleX: f32, area: u32, hitRecord: *const c_void) -> bool { unsafe { function!(34452, (*mut crate::MagicCaster, *mut crate::BGSProjectile, *mut crate::TESObjectREFR, *mut c_void, *const c_void, f32, f32, u32, *const c_void) -> bool)(caster, projectile, shooter, combatController, origin, angleZ, angleX, area, hitRecord) } }
+pub unsafe fn launch_projectile_from_caster(caster: *mut crate::MagicCaster, projectile: *mut crate::BGSProjectile, shooter: *mut crate::TESObjectREFR, combatController: *mut c_void, origin: *const crate::NiPoint3, angleZ: f32, angleX: f32, area: u32, hitRecord: *const c_void) -> bool { unsafe { function!(34452, (*mut crate::MagicCaster, *mut crate::BGSProjectile, *mut crate::TESObjectREFR, *mut c_void, *const crate::NiPoint3, f32, f32, u32, *const c_void) -> bool)(caster, projectile, shooter, combatController, origin, angleZ, angleX, area, hitRecord) } }
 /// `MoveFollowingCameraPathAfterInArray`: find the sibling whose previousSibling is path and move it directly behind path (recursively for its own follower); two claimants log an error
 ///
 /// Semantic, camera pass, high; ledger semantic evidence, name high; id 20641, rva 0x316b90.
 /// `void (BGSCameraPath* path, NiTPrimitiveArray<TESForm*>* siblings)`
+/// May be null: `siblings`.
 ///
 /// # Safety
 /// `siblings` must point to what the engine expects.
@@ -1764,11 +1773,9 @@ pub unsafe fn move_following_camera_path_after_in_array(path: *mut crate::BGSCam
 ///
 /// Semantic, camera pass, high; ledger semantic evidence, name high; id 40744, rva 0x75ed50.
 /// `void (PlayerCharacter* player, const NiPoint3* position, const NiPoint3* angle, TESObjectCELL* cell, bool refreshSky)`
-///
-/// # Safety
-/// `position`, `angle` must point to what the engine expects.
+/// May be null: `cell`.
 #[inline]
-pub unsafe fn move_player_to_cell_and_position(player: *mut crate::PlayerCharacter, position: *const c_void, angle: *const c_void, cell: *mut crate::TESObjectCELL, refreshSky: bool) { unsafe { function!(40744, (*mut crate::PlayerCharacter, *const c_void, *const c_void, *mut crate::TESObjectCELL, bool))(player, position, angle, cell, refreshSky) } }
+pub fn move_player_to_cell_and_position(player: &crate::PlayerCharacter, position: &crate::NiPoint3, angle: &crate::NiPoint3, cell: Option<&crate::TESObjectCELL>, refreshSky: bool) { unsafe { function!(40744, (*const crate::PlayerCharacter, *const crate::NiPoint3, *const crate::NiPoint3, *const crate::TESObjectCELL, bool))(core::ptr::from_ref(player), core::ptr::from_ref(position), core::ptr::from_ref(angle), cell.map_or(core::ptr::null(), core::ptr::from_ref), refreshSky) } }
 /// `NoOp_BeforeLoadingFade`: empty function (ret)
 ///
 /// Semantic, camera pass, high; ledger semantic evidence, name high; id 52623, rva 0x983e30.
@@ -1809,11 +1816,9 @@ pub fn no_op_tween_menu58() { unsafe { function!(56852, ())() } }
 ///
 /// Semantic, camera pass, high; ledger semantic evidence, name high; id 107150, rva 0x153ae40.
 /// `void (NiAVObject* node, const NiPoint3* offset, const NiPoint3* previousOffset)`
-///
-/// # Safety
-/// `offset`, `previousOffset` must point to what the engine expects.
+/// May be null: `node`.
 #[inline]
-pub unsafe fn offset_subtree_world_translation(node: *mut crate::NiAVObject, offset: *const c_void, previousOffset: *const c_void) { unsafe { function!(107150, (*mut crate::NiAVObject, *const c_void, *const c_void))(node, offset, previousOffset) } }
+pub fn offset_subtree_world_translation(node: Option<&crate::NiAVObject>, offset: &crate::NiPoint3, previousOffset: &crate::NiPoint3) { unsafe { function!(107150, (*const crate::NiAVObject, *const crate::NiPoint3, *const crate::NiPoint3))(node.map_or(core::ptr::null(), core::ptr::from_ref), core::ptr::from_ref(offset), core::ptr::from_ref(previousOffset)) } }
 /// `Papyrus::Actor::GetEquippedItemType`: hand 0 left, 1 right: the equipped item's type; vm is used only on the error paths
 ///
 /// Semantic, camera pass, high; ledger papyrus_native evidence, name high; id 54685, rva 0xa00940.
@@ -1872,6 +1877,7 @@ pub unsafe fn papyrus__game__set_sitting_rotation(vm: *mut c_void, stackId: u32,
 ///
 /// Semantic, camera pass, high; ledger papyrus_native evidence, name high; id 55494, rva 0xa25500.
 /// `void (BSScript::IVirtualMachine* vm, u32 stackId, StaticFunctionTag* tag, TESObjectREFR* source, float strength, float duration)`
+/// May be null: `source`.
 ///
 /// # Safety
 /// `tag` must point to what the engine expects.
@@ -1890,6 +1896,7 @@ pub unsafe fn papyrus__game__show_first_person_geometry(vm: *mut c_void, stackId
 ///
 /// Semantic, camera pass, high; ledger semantic evidence, name high; id 53040, rva 0x9976d0.
 /// `bool (TESWorldSpace* worldSpace, float x, float y, float* outHeight)`
+/// May be null: `worldSpace`.
 ///
 /// # Safety
 /// `outHeight` must point to what the engine expects.
@@ -1899,6 +1906,7 @@ pub unsafe fn pick_terrain_height_at(worldSpace: *mut crate::TESWorldSpace, x: f
 ///
 /// Semantic, camera pass, medium; ledger semantic evidence, name medium; id 38639, rva 0x6cf490.
 /// `TESObjectREFR* (Actor* shooter, TESObjectREFR* target, MagicItem* spell, bool leftHand)`
+/// May be null: `spell`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -1926,6 +1934,7 @@ pub unsafe fn ptr_array16__set_at_grow(array: *mut c_void, index: u32, item: *mu
 ///
 /// Semantic, camera pass, high; ledger semantic evidence, name high; id 20682, rva 0x318020.
 /// `void (CameraPathRegistry* registry, BGSCameraPath* path)`
+/// May be null: `path`.
 ///
 /// # Safety
 /// `registry` must point to what the engine expects.
@@ -1939,7 +1948,7 @@ pub unsafe fn queue_pending_camera_path(registry: *mut c_void, path: *mut crate:
 /// # Safety
 /// The pass rates the signature medium.
 #[inline]
-pub unsafe fn raycast_vertical_against_plane_shape(unused: *mut c_void, planeOwner: *mut c_void, point: *const c_void) -> bool { unsafe { function!(32190, (*mut c_void, *mut c_void, *const c_void) -> bool)(unused, planeOwner, point) } }
+pub unsafe fn raycast_vertical_against_plane_shape(unused: *mut c_void, planeOwner: *mut c_void, point: *const crate::NiPoint3) -> bool { unsafe { function!(32190, (*mut c_void, *mut c_void, *const crate::NiPoint3) -> bool)(unused, planeOwner, point) } }
 /// `RehashIfOverLoadFactor`: when size (+0x10) / bucketCount (+0x38) exceeds maxLoadFactor (+0), grows the buckets (x8 below 0x200, else x2), ResizeBucketVector and ReinsertListNodesIntoStringBuckets
 ///
 /// Semantic, camera pass, high; ledger semantic evidence, name high; id 523719, rva 0x58f260.
@@ -1962,6 +1971,7 @@ pub unsafe fn release_camera_state_pointer(pointer: *mut c_void) { unsafe { func
 ///
 /// Semantic, camera pass, high; ledger semantic evidence, name high; id 17331, rva 0x26c750.
 /// `void (TESEffectShader* shader, NiAVObject* node, BSEffectShaderData* data)`
+/// May be null: `node`, `data`.
 ///
 /// # Safety
 /// `data` must point to what the engine expects.
@@ -2142,18 +2152,21 @@ pub fn setup_first_person_camera() { unsafe { function!(107123, ())() } }
 ///
 /// Semantic, camera pass, high; ledger runtime evidence, name high; id 20705, rva 0x318f20.
 /// `void (BGSCameraShot* shot, TESObjectREFR* locationRef, i32 transitionMode)`
+/// May be null: `locationRef`.
 #[inline]
-pub fn setup_vats_camera_from_mesh(shot: &crate::BGSCameraShot, locationRef: &crate::TESObjectREFR, transitionMode: i32) { unsafe { function!(20705, (*const crate::BGSCameraShot, *const crate::TESObjectREFR, i32))(core::ptr::from_ref(shot), core::ptr::from_ref(locationRef), transitionMode) } }
+pub fn setup_vats_camera_from_mesh(shot: &crate::BGSCameraShot, locationRef: Option<&crate::TESObjectREFR>, transitionMode: i32) { unsafe { function!(20705, (*const crate::BGSCameraShot, *const crate::TESObjectREFR, i32))(core::ptr::from_ref(shot), locationRef.map_or(core::ptr::null(), core::ptr::from_ref), transitionMode) } }
 /// `SnapshotCameraForHUD`: under the spin lock 0x32567a8/0x32567ac copies the camera's world-to-clip matrix (+0x110..+0x14f) to 0x32566d0..0x325670f and its viewport to 0x3257c78; FloatingQuestMarker::vfunc_1 0x939480 takes the address of this copy (HUD marker projection)
 ///
 /// Semantic, camera pass, high; ledger runtime evidence, name high; id 51639, rva 0x935fb0.
 /// `u32 (NiCamera* camera)`
+/// May be null: `camera`.
 #[inline]
-pub fn snapshot_camera_for_hud(camera: &crate::NiCamera) -> u32 { unsafe { function!(51639, (*const crate::NiCamera) -> u32)(core::ptr::from_ref(camera)) } }
+pub fn snapshot_camera_for_hud(camera: Option<&crate::NiCamera>) -> u32 { unsafe { function!(51639, (*const crate::NiCamera) -> u32)(camera.map_or(core::ptr::null(), core::ptr::from_ref)) } }
 /// `SpeakSoundOrTopic`: plays a voice line (sound path or topic) on an actor with its lip file and speaker/listener idles; returns the duration
 ///
 /// Semantic, camera pass, medium; ledger semantic evidence, name medium; id 37542, rva 0x68d490.
 /// `float (Actor* speaker, const char* soundPath, SoundHandle* outHandle, u32 topicInfo, u32 emotion, i32 defaultDurationMs, TESIdleForm* speakerIdle, TESIdleForm* targetIdle, TESObjectREFR* target, bool setTopic, BGSSoundOutput* outputModel, bool rawPath, bool useLipFile, bool forceIdle)`
+/// May be null: `soundPath`, `speakerIdle`, `targetIdle`, `target`, `outputModel`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -2163,11 +2176,8 @@ pub unsafe fn speak_sound_or_topic(speaker: *mut crate::Actor, soundPath: *const
 ///
 /// Semantic, camera pass, high; ledger runtime evidence, name high; id 33012, rva 0x5584a0.
 /// `void (float strength, const NiPoint3* origin, float duration)`
-///
-/// # Safety
-/// `origin` must point to what the engine expects.
 #[inline]
-pub unsafe fn start_camera_shake(strength: f32, origin: *const c_void, duration: f32) { unsafe { function!(33012, (f32, *const c_void, f32))(strength, origin, duration) } }
+pub fn start_camera_shake(strength: f32, origin: &crate::NiPoint3, duration: f32) { unsafe { function!(33012, (f32, *const crate::NiPoint3, f32))(strength, core::ptr::from_ref(origin), duration) } }
 /// `StartGameInInitialCellOrSave`: startup: finds the start cell from the INI (else the loaded grid centre or default object 0xac 'Main Menu Cell'), places the player there, sends the init-script event; with loadLastSave enumerates the saves and queues the newest for loading; then marks Main+0x14 and plays sMainMenuMovieIntro when no load was queued
 ///
 /// Semantic, camera pass, high; ledger semantic evidence, name high; id 36549, rva 0x654030.
@@ -2184,6 +2194,7 @@ pub fn static_init_camera_path_node_string() { unsafe { function!(7320, ())() } 
 ///
 /// Semantic, camera pass, high; ledger semantic evidence, name high; id 39281, rva 0x6f22f0.
 /// `void (AIProcess* process, Actor* actor)`
+/// May be null: `actor`.
 ///
 /// # Safety
 /// `process` must point to what the engine expects.
@@ -2195,18 +2206,18 @@ pub unsafe fn try_play_idle_animation(process: *mut crate::AIProcess, actor: *mu
 /// `void (UI3DSceneManager* this, const NiMatrix3* rotate)`
 ///
 /// # Safety
-/// `this`, `rotate` must point to what the engine expects.
+/// `this` must point to what the engine expects.
 #[inline]
-pub unsafe fn ui3_d_scene_manager__set_camera_local_rotate(this: *mut c_void, rotate: *const c_void) { unsafe { function!(52741, (*mut c_void, *const c_void))(this, rotate) } }
+pub unsafe fn ui3_d_scene_manager__set_camera_local_rotate(this: *mut c_void, rotate: *const crate::NiMatrix3) { unsafe { function!(52741, (*mut c_void, *const crate::NiMatrix3))(this, rotate) } }
 /// `UI3DSceneManager::SetCameraLocalTranslate`: menu 3D scene camera (+0x20) local translation (+0x6c..+0x74) = translate, then UpdateNode with a zeroed NiUpdateData; nothing when the camera is null
 ///
 /// Semantic, camera pass, high; ledger semantic evidence, name high; id 52739, rva 0x98b0d0.
 /// `void (UI3DSceneManager* this, const NiPoint3* translate)`
 ///
 /// # Safety
-/// `this`, `translate` must point to what the engine expects.
+/// `this` must point to what the engine expects.
 #[inline]
-pub unsafe fn ui3_d_scene_manager__set_camera_local_translate(this: *mut c_void, translate: *const c_void) { unsafe { function!(52739, (*mut c_void, *const c_void))(this, translate) } }
+pub unsafe fn ui3_d_scene_manager__set_camera_local_translate(this: *mut c_void, translate: *const crate::NiPoint3) { unsafe { function!(52739, (*mut c_void, *const crate::NiPoint3))(this, translate) } }
 /// `UI3DSceneManager::UpdateCurrentModeRoot`: NiAVObject::UpdateNode(roots[currentMode]) (roots +0x38, mode +0x90)
 ///
 /// Semantic, camera pass, high; ledger semantic evidence, name high; id 52732, rva 0x98ab90.
@@ -2261,9 +2272,9 @@ pub unsafe fn update_teleport_fade(process: *mut crate::AIProcess, actor: *mut c
 /// `void (TerrainManager* manager, const NiPoint3* position, u32* updateFlags)`
 ///
 /// # Safety
-/// `manager`, `position`, `updateFlags` must point to what the engine expects.
+/// `manager`, `updateFlags` must point to what the engine expects.
 #[inline]
-pub unsafe fn update_terrain_lod(manager: *mut c_void, position: *const c_void, updateFlags: *mut u32) { unsafe { function!(31802, (*mut c_void, *const c_void, *mut u32))(manager, position, updateFlags) } }
+pub unsafe fn update_terrain_lod(manager: *mut c_void, position: *const crate::NiPoint3, updateFlags: *mut u32) { unsafe { function!(31802, (*mut c_void, *const crate::NiPoint3, *mut u32))(manager, position, updateFlags) } }
 /// `UpdateTerrainLODFromCameraPosition`: frame job 'Partial Terrain Manager Update': PlayerCamera::GetPosition, then (with bEnableStippleFade:Display) ID_13389(g_TES), and UpdateTerrainLOD(GetField90FollowingField158Chain(the player's worldspace), &cameraPosition, &0)
 ///
 /// Semantic, camera pass, high; ledger runtime evidence, name high; id 39102, rva 0x6e6420.
@@ -2298,6 +2309,7 @@ pub unsafe fn update_vats_camera_for_target(vats: *mut c_void, projectile: *mut 
 ///
 /// Semantic, camera pass, high; ledger semantic evidence, name high; id 44310, rva 0x808920.
 /// `void (VATS* vats, VATSCommand* command)`
+/// May be null: `command`.
 ///
 /// # Safety
 /// `vats`, `command` must point to what the engine expects.
@@ -2307,6 +2319,7 @@ pub unsafe fn update_vats_camera_state(vats: *mut c_void, command: *mut c_void) 
 ///
 /// Semantic, camera pass, medium; ledger semantic evidence, name medium; id 39846, rva 0x721c50.
 /// `void (AIProcess* process, bool drawn, void** weaponModel, Actor* actor, i32 slot)`
+/// May be null: `actor`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -2327,13 +2340,14 @@ pub unsafe fn vats__advance_camera_entry(this: *mut c_void) -> bool { unsafe { f
 /// `NiPoint3* (VATS* vats, NiPoint3* out)`
 ///
 /// # Safety
-/// `vats`, `out` must point to what the engine expects, and the result is an untyped pointer.
+/// `vats` must point to what the engine expects.
 #[inline]
-pub unsafe fn vats__get_camera_look_at_point(vats: *mut c_void, out: *mut c_void) -> *mut c_void { unsafe { function!(44296, (*mut c_void, *mut c_void) -> *mut c_void)(vats, out) } }
+pub unsafe fn vats__get_camera_look_at_point(vats: *mut c_void, out: *mut crate::NiPoint3) -> *mut crate::NiPoint3 { unsafe { function!(44296, (*mut c_void, *mut crate::NiPoint3) -> *mut crate::NiPoint3)(vats, out) } }
 /// `VATS::SetSecondProjectileAndAdvanceShots`: VATS+0x50 = projectile; with a current shot: UpdateVATSCameraState(first command) and, when VATS+0x3c (min-time left) is 0, advance shots while shot.action < phase
 ///
 /// Semantic, camera pass, high; ledger semantic evidence, name high; id 44298, rva 0x808140.
 /// `void (VATS* vats, Projectile* projectile)`
+/// May be null: `projectile`.
 ///
 /// # Safety
 /// `vats` must point to what the engine expects.
@@ -2343,6 +2357,7 @@ pub unsafe fn vats__set_second_projectile_and_advance_shots(vats: *mut c_void, p
 ///
 /// Semantic, camera pass, high; ledger semantic evidence, name high; id 20642, rva 0x316d50.
 /// `bool (BGSCameraPath* path, NiTPrimitiveArray<TESForm*>* siblings)`
+/// May be null: `siblings`.
 ///
 /// # Safety
 /// `siblings` must point to what the engine expects.

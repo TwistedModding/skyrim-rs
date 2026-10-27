@@ -21,7 +21,7 @@ $rows = @(
     @{ name = "keywords"; plugin = "$keywordCount`: $keywords"; devbench = "NordRace GetNumKeywords = $(Returned 6)";
        ok = ($keywordCount -gt 0 -and $keywordCount -eq (Returned 6)) }
     @{ name = "form";     plugin = $form; devbench = "help VendorItemWeapon 4: $(Lines 7)";
-       ok = ($form -match '"VendorItemWeapon"' -and $form -match 'Some\(KYWD\)' -and (Lines 7) -match 'KYWD: VendorItemWeapon \(0008F958\)') }
+       ok = ($form -match '"VendorItemWeapon"' -and $form -match 'Ok\(KYWD\)' -and (Lines 7) -match 'KYWD: VendorItemWeapon \(0008F958\)') }
     @{ name = "menus";    plugin = ($pluginMenus -join ','); devbench = ($dbMenus -join ',');
        ok = ($pluginMenus.Count -gt 0 -and ($pluginMenus -contains "TweenMenu:1") -and ($pluginMenus -contains "TweenMenu:0") -and (($pluginMenus -join ',') -eq (@($dbMenus | Select-Object -First $pluginMenus.Count) -join ','))) }
 )

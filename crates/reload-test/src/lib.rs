@@ -47,7 +47,7 @@ static HOOK: Mutex<Option<Result<String, String>>> = Mutex::new(None);
 static NATIVE: Mutex<Option<Result<String, String>>> = Mutex::new(None);
 static COMMAND: Mutex<Option<Result<String, String>>> = Mutex::new(None);
 
-type ModArgs = (*mut sre::Actor, i32, i32, f32, *mut c_void);
+type ModArgs = (*mut sre::Actor, i32, u32, f32, *mut c_void);
 type Test = fn() -> Result<String, String>;
 
 fn tag() -> i32 {
@@ -124,7 +124,7 @@ fn subscribe(host: &'static Host) -> Result<String, String> {
     let id = hooks
         .before(Actor__ModActorValueImpl, Options::new(host.name()), |args: &mut ModArgs| {
             let player = sre::PlayerCharacter::singleton().map_or(core::ptr::null(), |p| core::ptr::from_ref(p).cast::<c_void>());
-            if args.0.cast_const().cast::<c_void>() == player && args.2 == ActorValue::Health as i32 && args.1 == Modifier::Damage as i32 && args.3 < 0.0 {
+            if args.0.cast_const().cast::<c_void>() == player && args.2 == ActorValue::Health as u32 && args.1 == Modifier::Damage as i32 && args.3 < 0.0 {
                 DAMAGE.lock().unwrap().push(args.3);
                 log(format!("tag {TAG}: health damage {}", args.3));
             }

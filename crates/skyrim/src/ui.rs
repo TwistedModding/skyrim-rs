@@ -186,8 +186,7 @@ pub trait UIMessageQueueExt {
 impl UIMessageQueueExt for UIMessageQueue {
     unsafe fn queue(&self, menu: &str, kind: MessageType, data: *mut sre::IUIMessageData) {
         let name = BSFixedString::new(menu);
-        let add: AddMessageFn = unsafe { crate::engine_fn(fns::UIMessageQueue__AddMessage) };
-        unsafe { add(core::ptr::from_ref(self).cast_mut(), name.raw(), kind as u32, data) }
+        self.add_message(name.raw(), kind as u32, unsafe { data.as_ref() });
     }
 
     fn show(&self, menu: &str) {

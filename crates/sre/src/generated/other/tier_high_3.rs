@@ -3,41 +3,6 @@
 
 use core::ffi::{c_char, c_void};
 
-/// `SetQwordAtIndexTo7FFFFFFF` (decompiler signature, tier high; ledger decompiler evidence, name high; id 82002, rva 0x1160410).
-/// `undefined SetQwordAtIndexTo7FFFFFFF(longlong param_1, int param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn set_qword_at_index_to7_fffffff(param_1: i64, param_2: i32) -> u64 { unsafe { function!(82002, (i64, i32) -> u64)(param_1, param_2) } }
-/// `SetRectMembersOnObject` (decompiler signature, tier high; ledger decompiler evidence, name high; id 85924, rva 0xda9780).
-/// `undefined SetRectMembersOnObject(longlong param_1, longlong param_2, double * param_3)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn set_rect_members_on_object(param_1: i64, param_2: i64, param_3: *mut f64) -> u64 { unsafe { function!(85924, (i64, i64, *mut f64) -> u64)(param_1, param_2, param_3) } }
-/// `SetRefCountedField18_2` (decompiler signature, tier high; ledger decompiler evidence, name high; id 62049, rva 0xb79be0).
-/// `undefined SetRefCountedField18_2(longlong param_1, longlong param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn set_ref_counted_field18_2(param_1: i64, param_2: i64) -> u64 { unsafe { function!(62049, (i64, i64) -> u64)(param_1, param_2) } }
-/// `SetRefCountedField18_3` (decompiler signature, tier high; ledger decompiler evidence, name high; id 66183, rva 0xc64630).
-/// `undefined SetRefCountedField18_3(longlong param_1, longlong param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn set_ref_counted_field18_3(param_1: i64, param_2: i64) -> u64 { unsafe { function!(66183, (i64, i64) -> u64)(param_1, param_2) } }
-/// `SetRefCountedField20_2` (decompiler signature, tier high; ledger decompiler evidence, name high; id 67471, rva 0xcc0370).
-/// `undefined SetRefCountedField20_2(longlong param_1, longlong param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn set_ref_counted_field20_2(param_1: i64, param_2: i64) -> u64 { unsafe { function!(67471, (i64, i64) -> u64)(param_1, param_2) } }
 /// `SetRefCountedField20_3` (decompiler signature, tier high; ledger decompiler evidence, name high; id 88870, rva 0xe1f2a0).
 /// `undefined SetRefCountedField20_3(longlong param_1, longlong param_2)`
 ///

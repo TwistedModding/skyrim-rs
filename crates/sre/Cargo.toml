@@ -16,7 +16,7 @@ versionlib.workspace = true
 # in every enabled group, the functions typed only by a decompiler prototype of that rating.
 # Structs, enums and `raw` are always compiled.
 [features]
-default = ["actors", "animation", "audio", "bgs", "bnet", "bs", "camera", "combat", "events", "extra", "factory", "forms", "frame", "graphics", "havok", "input", "moments", "ni", "other", "papyrus", "pathing", "render", "save", "scaleform", "script", "settings", "stl", "tes", "ui", "vmstack", "tier-high"]
+default = ["actors", "animation", "audio", "bgs", "bnet", "bs", "camera", "combat", "events", "extra", "factory", "forms", "frame", "graphics", "havok", "input", "moments", "ni", "nimath", "other", "papyrus", "pathing", "render", "save", "scaleform", "script", "settings", "stl", "tes", "ui", "vmstack", "tier-high"]
 actors = []
 animation = []
 audio = []
@@ -35,6 +35,7 @@ havok = []
 input = []
 moments = []
 ni = []
+nimath = []
 other = []
 papyrus = []
 pathing = []

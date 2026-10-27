@@ -3,6 +3,24 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `GameSetting_fMagicResistActorSkillMult__atexit` at 0x1778760 (crt_init, medium); signature (high): `void GameSetting_fMagicResistActorSkillMult__atexit(void)`
+pub const GameSetting_fMagicResistActorSkillMult__atexit: u64 = 168956;
+/// `GameSetting_fMagicResistActorSkillMult__init` at 0x66f80 (crt_init, medium); signature (high): `void GameSetting_fMagicResistActorSkillMult__init(void)`
+pub const GameSetting_fMagicResistActorSkillMult__init: u64 = 3746;
+/// `GameSetting_fMagicResistTargetWillpowerBase__atexit` at 0x17787b0 (crt_init, medium); signature (high): `void GameSetting_fMagicResistTargetWillpowerBase__atexit(void)`
+pub const GameSetting_fMagicResistTargetWillpowerBase__atexit: u64 = 168957;
+/// `GameSetting_fMagicResistTargetWillpowerBase__init` at 0x67000 (crt_init, medium); signature (high): `void GameSetting_fMagicResistTargetWillpowerBase__init(void)`
+pub const GameSetting_fMagicResistTargetWillpowerBase__init: u64 = 3747;
+/// `GameSetting_fMagicResistTargetWillpowerMult__atexit` at 0x1778800 (crt_init, medium); signature (high): `void GameSetting_fMagicResistTargetWillpowerMult__atexit(void)`
+pub const GameSetting_fMagicResistTargetWillpowerMult__atexit: u64 = 168958;
+/// `GameSetting_fMagicResistTargetWillpowerMult__init` at 0x67080 (crt_init, medium); signature (high): `void GameSetting_fMagicResistTargetWillpowerMult__init(void)`
+pub const GameSetting_fMagicResistTargetWillpowerMult__init: u64 = 3748;
+/// `GameSetting_fMagicSkillCostScale__atexit` at 0x1778850 (crt_init, medium); signature (high): `void GameSetting_fMagicSkillCostScale__atexit(void)`
+pub const GameSetting_fMagicSkillCostScale__atexit: u64 = 168959;
+/// `GameSetting_fMagicSkillCostScale__init` at 0x67100 (crt_init, medium); signature (high): `void GameSetting_fMagicSkillCostScale__init(void)`
+pub const GameSetting_fMagicSkillCostScale__init: u64 = 3749;
+/// `GameSetting_fMagicSprayMaximumDistance__atexit` at 0x173cd30 (crt_init, medium); signature (high): `void GameSetting_fMagicSprayMaximumDistance__atexit(void)`
+pub const GameSetting_fMagicSprayMaximumDistance__atexit: u64 = 165347;
 /// `GameSetting_fMagicSprayMaximumDistance__init` at 0x8ca0 (crt_init, medium); signature (high): `void GameSetting_fMagicSprayMaximumDistance__init(void)`
 pub const GameSetting_fMagicSprayMaximumDistance__init: u64 = 157;
 /// `GameSetting_fMagicSprayOptimalDistance__atexit` at 0x173cd80 (crt_init, medium); signature (high): `void GameSetting_fMagicSprayOptimalDistance__atexit(void)`
@@ -8673,10 +8691,10 @@ pub const GetCellEncounterZone: u64 = 18988;
 pub const GetCellImageSpaceData: u64 = 19008;
 /// `GetCellIndexInWorldBounds` at 0x30cde0 (decompiler, medium); signature (medium): `int GetCellIndexInWorldBounds(undefined8 param_1, undefined8 param_2, int param_3, int param_4)`
 pub const GetCellIndexInWorldBounds: u64 = 20457;
-/// `GetChangeFormInitialType` at 0x6204c0 (semantic, high); signature (untiered): `byte GetChangeFormInitialType(longlong param_1, uint param_2)`; kind of initial data a record carries: refs 5 created, 6 bits 3|25, 4 bits 1|2, else 0; cells with bit 30: 1 if bit 29, 2 if bit 28, else 3 (high); semantic signature: `u8 (TESForm* form, u32 changeFlags)`
+/// `GetChangeFormInitialType` at 0x6204c0 (semantic, high); signature (untiered): `byte GetChangeFormInitialType(longlong param_1, uint param_2)`; kind of initial data a record carries: refs 5 created, 6 bits 3|25, 4 bits 1|2, else 0; cells with bit 30: 1 if bit 29, 2 if bit 28, else 3 (high); semantic signature: `ChangeFormInitialType (TESForm* form, u32 changeFlags)`
 pub const GetChangeFormInitialType: u64 = 35708;
 /// `GetChangeFormInitialType` as a function pointer type (high).
-pub type GetChangeFormInitialType_fn = unsafe extern "C" fn(form: *mut crate::TESForm, changeFlags: u32) -> u8;
+pub type GetChangeFormInitialType_fn = unsafe extern "C" fn(form: *mut crate::TESForm, changeFlags: u32) -> u32;
 /// `GetChannelBytePtr` at 0x1044130 (decompiler, high); signature (high): `longlong GetChannelBytePtr(longlong param_1, longlong param_2)`
 pub const GetChannelBytePtr: u64 = 77775;
 /// `GetChannelBytePtr_2` at 0x1044160 (decompiler, high); signature (high): `longlong GetChannelBytePtr_2(longlong param_1, longlong param_2)`
@@ -9495,29 +9513,3 @@ pub const GetField0xF8Field50ValueOrScaledExtentY: u64 = 37443;
 pub const GetField10: u64 = 16004;
 /// `GetField100` at 0xb657e0 (decompiler, high); signature (untiered): `undefined8 GetField100(longlong param_1)`
 pub const GetField100: u64 = 61623;
-/// `GetField100Field30OrFlagDefault` at 0x2660b0 (decompiler, medium); signature (untiered): `undefined4 GetField100Field30OrFlagDefault(longlong param_1)`
-pub const GetField100Field30OrFlagDefault: u64 = 17136;
-/// `GetField100Ptr` at 0x6239f0 (decompiler, high); signature (high): `longlong GetField100Ptr(longlong param_1)`
-pub const GetField100Ptr: u64 = 35747;
-/// `GetField100_2` at 0x1143380 (decompiler, high); signature (untiered): `undefined8 GetField100_2(longlong param_1)`
-pub const GetField100_2: u64 = 81756;
-/// `GetField108` at 0xb65830 (decompiler, high); signature (untiered): `undefined8 GetField108(longlong param_1)`
-pub const GetField108: u64 = 61627;
-/// `GetField108Address` at 0x11dee90 (decompiler, high); signature (high): `longlong GetField108Address(longlong param_1)`
-pub const GetField108Address: u64 = 91060;
-/// `GetField108OrField158Field58` at 0x3bf580 (decompiler, high); signature (untiered): `longlong GetField108OrField158Field58(longlong param_1)`
-pub const GetField108OrField158Field58: u64 = 24698;
-/// `GetField10Address_2` at 0x191890 (decompiler, high); signature (high): `longlong GetField10Address_2(longlong param_1)`
-pub const GetField10Address_2: u64 = 12973;
-/// `GetField10Address_3` at 0xad4290 (decompiler, high); signature (high): `longlong GetField10Address_3(longlong param_1)`
-pub const GetField10Address_3: u64 = 58430;
-/// `GetField10Byte455` at 0x6f12b0 (decompiler, high); signature (untiered): `undefined1 GetField10Byte455(longlong param_1)`
-pub const GetField10Byte455: u64 = 39260;
-/// `GetField10Byte464` at 0x702630 (decompiler, high); signature (untiered): `undefined1 GetField10Byte464(longlong param_1)`
-pub const GetField10Byte464: u64 = 39607;
-/// `GetField10CStringAtIndexAsString` at 0xa84820 (decompiler, medium); signature (untiered): `longlong * GetField10CStringAtIndexAsString(longlong param_1, longlong * param_2, int param_3)`
-pub const GetField10CStringAtIndexAsString: u64 = 443135;
-/// `GetField10DataOrDefault` at 0xcd4b80 (decompiler, medium); signature (medium): `undefined4 * GetField10DataOrDefault(longlong param_1)`
-pub const GetField10DataOrDefault: u64 = 67849;
-/// `GetField10Dword` at 0x4a5ba0 (decompiler, high); signature (high): `undefined4 GetField10Dword(longlong param_1)`
-pub const GetField10Dword: u64 = 29852;

@@ -1178,21 +1178,21 @@ impl VirtualMachineExt for VirtualMachine {
     }
 
     fn handle_for_form(&self, form: &TESForm) -> Handle {
-        self.handle_policy().map_or(Handle::INVALID, |policy| Handle(unsafe { policy.get_handle_for_object(VMTypeID::Form as u32, core::ptr::from_ref(form).cast()) }))
+        self.handle_policy().map_or(Handle::INVALID, |policy| Handle(unsafe { policy.get_handle_for_object(VMTypeID::Form, core::ptr::from_ref(form).cast()) }))
     }
 
     fn form_for_handle(&self, type_id: VMTypeID, handle: Handle) -> Option<&'static TESForm> {
         let policy = self.handle_policy()?;
-        if !policy.handle_is_type(type_id as u32, handle.0) || !policy.is_handle_object_available(handle.0) {
+        if !policy.handle_is_type(type_id, handle.0) || !policy.is_handle_object_available(handle.0) {
             return None;
         }
-        unsafe { policy.get_object_for_handle(type_id as u32, handle.0).cast::<TESForm>().as_ref() }
+        unsafe { policy.get_object_for_handle(type_id, handle.0).cast::<TESForm>().as_ref() }
     }
 
     fn type_id(&self, class: &str) -> Option<u32> {
         let name = BSFixedString::new(class);
-        let mut id = 0;
-        unsafe { self.get_type_id_for_script_object(name.raw(), &raw mut id) }.then_some(id)
+        let mut id = 0u32;
+        unsafe { self.get_type_id_for_script_object(name.raw(), (&raw mut id).cast()) }.then_some(id)
     }
 
     fn script_type(&self, class: &str) -> Option<&'static ObjectTypeInfo> {
@@ -1206,7 +1206,7 @@ impl VirtualMachineExt for VirtualMachine {
 
     fn script_type_by_id(&self, id: VMTypeID) -> Option<&'static ObjectTypeInfo> {
         let mut out = core::ptr::null_mut::<ObjectTypeInfo>();
-        if !unsafe { self.get_script_object_type_by_id(id as u32, (&raw mut out).cast()) } {
+        if !unsafe { self.get_script_object_type_by_id(id, (&raw mut out).cast()) } {
             return None;
         }
         unsafe { out.as_ref() }
@@ -1346,7 +1346,7 @@ fn bind<F: Send + Sync + 'static>(
         f,
     }));
     let function = unsafe { &*(&raw const native.header).cast::<sre::BSScript__IFunction>() };
-    if !vm.bind_native_method(function) {
+    if !vm.bind_native_method(Some(function)) {
         return Err(Error::Bind { class: class.to_owned(), name: name.to_owned() });
     }
     Ok(native)

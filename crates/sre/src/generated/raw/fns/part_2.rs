@@ -3,6 +3,8 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `AutoRegisterCreator<CombatPathingRequestAdapter,BSTSmartPointerPathingFactoryManager<BSPathingRequest,64>_>::vdtor` at 0x8e4920 (layout_inference, medium); signature (low): `AutoRegisterCreator<CombatPathingRequestAdapter,BSTSmartPointerPathingFactoryManager<BSPathingRequest,64>_> * vdtor(AutoRegisterCreator<CombatPathingRequestAdapter,BSTSmartPointerPathingFactoryManager<BSPathingRequest,64>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const AutoRegisterCreator_CombatPathingRequestAdapter_BSTSmartPointerPathingFactoryManager_BSPathingRequest_64____vdtor: u64 = 50141;
 /// `AutoRegisterCreator<CombatPathingRequestGeneric<CombatPathingGoalPolicyExitWater,CombatPathingSearchPolicyStandard>,BSTSmartPointerPathingFactoryManager<BSPathingRequest,64>_>::vdtor` at 0x8bdc90 (layout_inference, medium); signature (low): `AutoRegisterCreator<CombatPathingRequestGeneric<CombatPathingGoalPolicyExitWater,CombatPathingSearchPolicyStandard>,BSTSmartPointerPathingFactoryManager<BSPathingRequest,64>_> * vdtor(AutoRegisterCreator<CombatPathingRequestGeneric<CombatPathingGoalPolicyExitWater,CombatPathingSearchPolicyStandard>,BSTSmartPointerPathingFactoryManager<BSPathingRequest,64>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const AutoRegisterCreator_CombatPathingRequestGeneric_CombatPathingGoalPolicyExitWater_CombatPathingSe_cf0af95309e0: u64 = 49297;
 /// `AutoRegisterCreator<CombatPathingRequestGeneric<CombatPathingGoalPolicyFindAttackLocation,CombatPathingSearchPolicyStandard>,BSTSmartPointerPathingFactoryManager<BSPathingRequest,64>_>::vdtor` at 0x88f540 (layout_inference, medium); signature (low): `AutoRegisterCreator<CombatPathingRequestGeneric<CombatPathingGoalPolicyFindAttackLocation,CombatPathingSearchPolicyStandard>,BSTSmartPointerPathingFactoryManager<BSPathingRequest,64>_> * vdtor(AutoRegisterCreator<CombatPathingRequestGeneric<CombatPathingGoalPolicyFindAttackLocation,CombatPathingSearchPolicyStandard>,BSTSmartPointerPathingFactoryManager<BSPathingRequest,64>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
@@ -2016,7 +2018,7 @@ pub const BGSCameraShot__Destroy: u64 = 20715;
 /// `BGSCameraShot::GetLookAtPoint` at 0x319f60 (semantic, high); signature (untiered): `undefined4 * GetLookAtPoint(longlong param_1, undefined4 * param_2)`; out = lookAtNode world translate (targetPercent <= 0) or ComputeVATSCameraTargetPosition(g_VATS, targetPercent); also pushes rotationEuler (animated root rotation or 0) to the VATS state (high); semantic signature: `NiPoint3* (BGSCameraShot* shot, NiPoint3* out)`
 pub const BGSCameraShot__GetLookAtPoint: u64 = 20711;
 /// `BGSCameraShot::GetLookAtPoint` as a function pointer type (high).
-pub type BGSCameraShot__GetLookAtPoint_fn = unsafe extern "C" fn(shot: *mut crate::BGSCameraShot, out: *mut c_void) -> *mut c_void;
+pub type BGSCameraShot__GetLookAtPoint_fn = unsafe extern "C" fn(shot: *mut crate::BGSCameraShot, out: *mut crate::NiPoint3) -> *mut crate::NiPoint3;
 /// `BGSCameraShot::InitItem` at 0x318c50 (semantic, high); signature (untiered): `undefined InitItem(BGSCameraShot * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
 pub const BGSCameraShot__InitItem: u64 = 20703;
 /// `BGSCameraShot::InitializeData` at 0x318c10 (semantic, high); signature (untiered): `undefined InitializeData(BGSCameraShot * this)`
@@ -3683,9 +3685,9 @@ pub const BGSPickupPutdownSounds__vfunc_2: u64 = 14331;
 pub const BGSPickupPutdownSounds__vfunc_3: u64 = 14332;
 /// `BGSPlayerMusicChanger::BSTEventSink_BGSActorDeathEvent_vdtor` at 0x5eaedc (slot_propagation, medium); signature (high): `undefined BSTEventSink_BGSActorDeathEvent_vdtor(BGSPlayerMusicChanger * this)`
 pub const BGSPlayerMusicChanger__BSTEventSink_BGSActorDeathEvent_vdtor: u64 = 35170;
-/// `BGSPlayerMusicChanger::ProcessActorCellEvent` at 0x737360 (semantic, medium); signature (untiered): `undefined8 ProcessActorCellEvent(BGSPlayerMusicChanger * this, uint * param_1, undefined8 param_2, TypeDescriptor * param_3)`; for the player entering a cell: resolves the cell's music type and, when it changed, notifies its BSMusicEvent source with {old,1} then {new,0} (medium); semantic signature: `u32 (BGSPlayerMusicChanger* this, const BGSActorCellEvent* e, ...)`
+/// `BGSPlayerMusicChanger::ProcessActorCellEvent` at 0x737360 (semantic, medium); signature (untiered): `undefined8 ProcessActorCellEvent(BGSPlayerMusicChanger * this, uint * param_1, undefined8 param_2, TypeDescriptor * param_3)`; for the player entering a cell: resolves the cell's music type and, when it changed, notifies its BSMusicEvent source with {old,1} then {new,0} (medium); semantic signature: `BSEventNotifyControl (BGSPlayerMusicChanger* this, const BGSActorCellEvent* e, ...)`
 pub const BGSPlayerMusicChanger__ProcessActorCellEvent: u64 = 40175;
-/// `BGSPlayerMusicChanger::ProcessActorDeathEvent` at 0x737470 (semantic, medium); signature (untiered): `undefined8 ProcessActorDeathEvent(BGSPlayerMusicChanger * this, uint * param_1, undefined8 param_2, undefined8 param_3)`; on the player's death notifies {default music type 0x400193 global, 0} when that type has flags bit 0 (medium); semantic signature: `u32 (...)`
+/// `BGSPlayerMusicChanger::ProcessActorDeathEvent` at 0x737470 (semantic, medium); signature (untiered): `undefined8 ProcessActorDeathEvent(BGSPlayerMusicChanger * this, uint * param_1, undefined8 param_2, undefined8 param_3)`; on the player's death notifies {default music type 0x400193 global, 0} when that type has flags bit 0 (medium); semantic signature: `BSEventNotifyControl (...)`
 pub const BGSPlayerMusicChanger__ProcessActorDeathEvent: u64 = 40176;
 /// `BGSPlayerMusicChanger::vdtor` at 0x5eaf20 (layout_inference, medium); signature (low): `BGSPlayerMusicChanger * vdtor(BGSPlayerMusicChanger * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const BGSPlayerMusicChanger__vdtor: u64 = 35172;
@@ -5177,9 +5179,3 @@ pub const BGSProcedureUseWeapon__vfunc_12_sub0: u64 = 29383;
 pub const BGSProcedureUseWeapon__vfunc_17: u64 = 29378;
 /// `BGSProcedureUseWeapon::vfunc_9` at 0x4913a0 (rtti, high); signature (low): `undefined vfunc_9(BGSProcedureUseWeapon * this, longlong * param_1)`
 pub const BGSProcedureUseWeapon__vfunc_9: u64 = 29379;
-/// `BGSProcedureUseWeaponExecState::ctor` at 0x493770 (layout_inference, medium); signature (high): `BGSProcedureUseWeaponExecState * ctor(BGSProcedureUseWeaponExecState * this)`
-pub const BGSProcedureUseWeaponExecState__ctor: u64 = 29385;
-/// `BGSProcedureUseWeaponExecState::dtor` at 0x4937b0 (layout_inference, high); signature (high): `undefined dtor(BGSProcedureUseWeaponExecState * this)`
-pub const BGSProcedureUseWeaponExecState__dtor: u64 = 29386;
-/// `BGSProcedureUseWeaponExecState::vdtor` at 0x494230 (slot_propagation, medium); signature (low): `BGSProcedureUseWeaponExecState * vdtor(BGSProcedureUseWeaponExecState * this, ulonglong param_1, longlong param_2, undefined8 param_3)`
-pub const BGSProcedureUseWeaponExecState__vdtor: u64 = 29402;

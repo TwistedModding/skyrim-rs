@@ -3,6 +3,52 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `g_ConcreteObjectFormFactory_BGSExplosion_87_34_6__init_cb0` at 0x1745860 (callgraph, medium); signature (untiered): `void g_ConcreteObjectFormFactory_BGSExplosion_87_34_6__init_cb0(void)`
+pub const g_ConcreteObjectFormFactory_BGSExplosion_87_34_6__init_cb0: u64 = 165976;
+/// `g_ConcreteObjectFormFactory_BGSFootstepSet_111_74_6__init` at 0x1c430 (crt_init, medium); signature (high): `void g_ConcreteObjectFormFactory_BGSFootstepSet_111_74_6__init(void)`
+pub const g_ConcreteObjectFormFactory_BGSFootstepSet_111_74_6__init: u64 = 1097;
+/// `g_ConcreteObjectFormFactory_BGSFootstepSet_111_74_6__init_cb0` at 0x1749cb0 (callgraph, medium); signature (untiered): `void g_ConcreteObjectFormFactory_BGSFootstepSet_111_74_6__init_cb0(void)`
+pub const g_ConcreteObjectFormFactory_BGSFootstepSet_111_74_6__init_cb0: u64 = 166305;
+/// `g_ConcreteObjectFormFactory_BGSFootstep_110_73_6__init` at 0x1c3f0 (crt_init, medium); signature (high): `void g_ConcreteObjectFormFactory_BGSFootstep_110_73_6__init(void)`
+pub const g_ConcreteObjectFormFactory_BGSFootstep_110_73_6__init: u64 = 1096;
+/// `g_ConcreteObjectFormFactory_BGSFootstep_110_73_6__init_cb0` at 0x1749c70 (callgraph, medium); signature (untiered): `void g_ConcreteObjectFormFactory_BGSFootstep_110_73_6__init_cb0(void)`
+pub const g_ConcreteObjectFormFactory_BGSFootstep_110_73_6__init_cb0: u64 = 166304;
+/// `g_ConcreteObjectFormFactory_BGSHazard_51_92_6__init` at 0x16360 (crt_init, medium); signature (high): `void g_ConcreteObjectFormFactory_BGSHazard_51_92_6__init(void)`
+pub const g_ConcreteObjectFormFactory_BGSHazard_51_92_6__init: u64 = 777;
+/// `g_ConcreteObjectFormFactory_BGSHazard_51_92_6__init_cb0` at 0x1745950 (callgraph, medium); signature (untiered): `void g_ConcreteObjectFormFactory_BGSHazard_51_92_6__init_cb0(void)`
+pub const g_ConcreteObjectFormFactory_BGSHazard_51_92_6__init_cb0: u64 = 165980;
+/// `g_ConcreteObjectFormFactory_BGSHeadPart_12_52_5__init` at 0x1eee0 (crt_init, medium); signature (high): `void g_ConcreteObjectFormFactory_BGSHeadPart_12_52_5__init(void)`
+pub const g_ConcreteObjectFormFactory_BGSHeadPart_12_52_5__init: u64 = 1254;
+/// `g_ConcreteObjectFormFactory_BGSHeadPart_12_52_5__init_cb0` at 0x174b0a0 (callgraph, medium); signature (untiered): `void g_ConcreteObjectFormFactory_BGSHeadPart_12_52_5__init_cb0(void)`
+pub const g_ConcreteObjectFormFactory_BGSHeadPart_12_52_5__init_cb0: u64 = 166466;
+/// `g_ConcreteObjectFormFactory_BGSIdleMarker_47_30_4__init` at 0x1ef20 (crt_init, medium); signature (high): `void g_ConcreteObjectFormFactory_BGSIdleMarker_47_30_4__init(void)`
+pub const g_ConcreteObjectFormFactory_BGSIdleMarker_47_30_4__init: u64 = 1255;
+/// `g_ConcreteObjectFormFactory_BGSIdleMarker_47_30_4__init_cb0` at 0x174b0e0 (callgraph, medium); signature (untiered): `void g_ConcreteObjectFormFactory_BGSIdleMarker_47_30_4__init_cb0(void)`
+pub const g_ConcreteObjectFormFactory_BGSIdleMarker_47_30_4__init_cb0: u64 = 166467;
+/// `g_ConcreteObjectFormFactory_BGSImpactDataSet_101_45_6__init` at 0x1c510 (crt_init, medium); signature (high): `void g_ConcreteObjectFormFactory_BGSImpactDataSet_101_45_6__init(void)`
+pub const g_ConcreteObjectFormFactory_BGSImpactDataSet_101_45_6__init: u64 = 1101;
+/// `g_ConcreteObjectFormFactory_BGSImpactDataSet_101_45_6__init_cb0` at 0x1749d50 (callgraph, medium); signature (untiered): `void g_ConcreteObjectFormFactory_BGSImpactDataSet_101_45_6__init_cb0(void)`
+pub const g_ConcreteObjectFormFactory_BGSImpactDataSet_101_45_6__init_cb0: u64 = 166309;
+/// `g_ConcreteObjectFormFactory_BGSImpactData_100_44_6__init` at 0x1c4a0 (crt_init, medium); signature (high): `void g_ConcreteObjectFormFactory_BGSImpactData_100_44_6__init(void)`
+pub const g_ConcreteObjectFormFactory_BGSImpactData_100_44_6__init: u64 = 1099;
+/// `g_ConcreteObjectFormFactory_BGSImpactData_100_44_6__init_cb0` at 0x1749d00 (callgraph, medium); signature (untiered): `void g_ConcreteObjectFormFactory_BGSImpactData_100_44_6__init_cb0(void)`
+pub const g_ConcreteObjectFormFactory_BGSImpactData_100_44_6__init_cb0: u64 = 166307;
+/// `g_ConcreteObjectFormFactory_BGSKeyword_4_70_4__init` at 0x1ef60 (crt_init, medium); signature (high): `void g_ConcreteObjectFormFactory_BGSKeyword_4_70_4__init(void)`
+pub const g_ConcreteObjectFormFactory_BGSKeyword_4_70_4__init: u64 = 1256;
+/// `g_ConcreteObjectFormFactory_BGSKeyword_4_70_4__init_cb0` at 0x174b120 (callgraph, medium); signature (untiered): `void g_ConcreteObjectFormFactory_BGSKeyword_4_70_4__init_cb0(void)`
+pub const g_ConcreteObjectFormFactory_BGSKeyword_4_70_4__init_cb0: u64 = 166468;
+/// `g_ConcreteObjectFormFactory_BGSLensFlare_135_103_6__init` at 0x163d0 (crt_init, medium); signature (high): `void g_ConcreteObjectFormFactory_BGSLensFlare_135_103_6__init(void)`
+pub const g_ConcreteObjectFormFactory_BGSLensFlare_135_103_6__init: u64 = 779;
+/// `g_ConcreteObjectFormFactory_BGSLensFlare_135_103_6__init_cb0` at 0x17459a0 (callgraph, medium); signature (untiered): `void g_ConcreteObjectFormFactory_BGSLensFlare_135_103_6__init_cb0(void)`
+pub const g_ConcreteObjectFormFactory_BGSLensFlare_135_103_6__init_cb0: u64 = 165982;
+/// `g_ConcreteObjectFormFactory_BGSLightingTemplate_108_87_7__init` at 0x19740 (crt_init, medium); signature (high): `void g_ConcreteObjectFormFactory_BGSLightingTemplate_108_87_7__init(void)`
+pub const g_ConcreteObjectFormFactory_BGSLightingTemplate_108_87_7__init: u64 = 926;
+/// `g_ConcreteObjectFormFactory_BGSLightingTemplate_108_87_7__init_cb0` at 0x1747d80 (callgraph, medium); signature (untiered): `void g_ConcreteObjectFormFactory_BGSLightingTemplate_108_87_7__init_cb0(void)`
+pub const g_ConcreteObjectFormFactory_BGSLightingTemplate_108_87_7__init_cb0: u64 = 166130;
+/// `g_ConcreteObjectFormFactory_BGSListForm_91_38_4__init` at 0x1c550 (crt_init, medium); signature (high): `void g_ConcreteObjectFormFactory_BGSListForm_91_38_4__init(void)`
+pub const g_ConcreteObjectFormFactory_BGSListForm_91_38_4__init: u64 = 1102;
+/// `g_ConcreteObjectFormFactory_BGSListForm_91_38_4__init_cb0` at 0x1749d90 (callgraph, medium); signature (untiered): `void g_ConcreteObjectFormFactory_BGSListForm_91_38_4__init_cb0(void)`
+pub const g_ConcreteObjectFormFactory_BGSListForm_91_38_4__init_cb0: u64 = 166310;
 /// `g_ConcreteObjectFormFactory_BGSLocationRefType_5_72_7__init` at 0x19810 (crt_init, medium); signature (high): `void g_ConcreteObjectFormFactory_BGSLocationRefType_5_72_7__init(void)`
 pub const g_ConcreteObjectFormFactory_BGSLocationRefType_5_72_7__init: u64 = 933;
 /// `g_ConcreteObjectFormFactory_BGSLocationRefType_5_72_7__init_cb0` at 0x1747f00 (callgraph, medium); signature (untiered): `void g_ConcreteObjectFormFactory_BGSLocationRefType_5_72_7__init_cb0(void)`
@@ -4418,7 +4464,7 @@ pub const hkbCharacter__GetNearbyRigidBodies: u64 = 58451;
 /// `hkbCharacter::GetPoseLocal` at 0xad7d00 (semantic, high); signature (untiered): `undefined8 GetPoseLocal(longlong param_1)`; returns poseLocal (+0x90), creating it from the reference pose first (high); semantic signature: `hkQsTransform* (hkbCharacter* this)`
 pub const hkbCharacter__GetPoseLocal: u64 = 58458;
 /// `hkbCharacter::GetPoseLocal` as a function pointer type (high).
-pub type hkbCharacter__GetPoseLocal_fn = unsafe extern "C" fn(this: *mut crate::hkbCharacter) -> *mut c_void;
+pub type hkbCharacter__GetPoseLocal_fn = unsafe extern "C" fn(this: *mut crate::hkbCharacter) -> *mut crate::hkQsTransform;
 /// `hkbCharacter::InitPoseLocalFromReferencePose` at 0xad8060 (semantic, high); signature (untiered): `undefined InitPoseLocalFromReferencePose(longlong param_1)`; allocates poseLocal = skeleton bone count * 0x30 and copies the skeleton's reference pose (high); semantic signature: `void (hkbCharacter* this)`
 pub const hkbCharacter__InitPoseLocalFromReferencePose: u64 = 58466;
 /// `hkbCharacter::InitPoseLocalFromReferencePose` as a function pointer type (high).
@@ -8689,63 +8735,3 @@ pub const hkpPulleyConstraintData__vfunc_12: u64 = 62065;
 pub const hkpPulleyConstraintData__vfunc_18: u64 = 62064;
 /// `hkpRackAndPinionConstraintData::vdtor` at 0xb525c0 (layout_inference, medium); signature (low): `hkpRackAndPinionConstraintData * vdtor(hkpRackAndPinionConstraintData * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const hkpRackAndPinionConstraintData__vdtor: u64 = 61225;
-/// `hkpRackAndPinionConstraintData::vfunc_10` at 0xb74fe0 (rtti, high); signature (low): `undefined1 * vfunc_10(hkpRackAndPinionConstraintData * this, undefined1 * param_1)`
-pub const hkpRackAndPinionConstraintData__vfunc_10: u64 = 61939;
-/// `hkpRackAndPinionConstraintData::vfunc_11` at 0xb75070 (rtti, high); signature (low): `undefined8 vfunc_11(void)`
-pub const hkpRackAndPinionConstraintData__vfunc_11: u64 = 61940;
-/// `hkpRackAndPinionConstraintData::vfunc_12` at 0xb750a0 (rtti, high); signature (low): `undefined vfunc_12(hkpRackAndPinionConstraintData * this, undefined8 param_1, undefined4 * param_2)`
-pub const hkpRackAndPinionConstraintData__vfunc_12: u64 = 61942;
-/// `hkpRackAndPinionConstraintData::vfunc_18` at 0xb75080 (rtti, high); signature (low): `undefined vfunc_18(hkpRackAndPinionConstraintData * this, int * param_1)`
-pub const hkpRackAndPinionConstraintData__vfunc_18: u64 = 61941;
-/// `hkpRagdollConstraintData::ctor` at 0xb64e80 (layout_inference, medium); signature (high): `hkpRagdollConstraintData * ctor(hkpRagdollConstraintData * this)`
-pub const hkpRagdollConstraintData__ctor: u64 = 61606;
-/// `hkpRagdollConstraintData::ctor_sub0` at 0xb65a60 (callgraph, medium); signature (untiered): `undefined2 * ctor_sub0(undefined2 * param_1)`
-pub const hkpRagdollConstraintData__ctor_sub0: u64 = 61636;
-/// `hkpRagdollConstraintData::dtor` at 0xb65010 (layout_inference, high); signature (high): `undefined dtor(hkpRagdollConstraintData * this)`
-pub const hkpRagdollConstraintData__dtor: u64 = 61607;
-/// `hkpRagdollConstraintData::vdtor` at 0xb52650 (slot_propagation, medium); signature (low): `hkpRagdollConstraintData * vdtor(hkpRagdollConstraintData * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const hkpRagdollConstraintData__vdtor: u64 = 61226;
-/// `hkpRagdollConstraintData::vfunc_10` at 0xb658d0 (rtti, high); signature (low): `undefined1 * vfunc_10(hkpRagdollConstraintData * this, undefined1 * param_1)`
-pub const hkpRagdollConstraintData__vfunc_10: u64 = 61631;
-/// `hkpRagdollConstraintData::vfunc_11` at 0xb659b0 (rtti, high); signature (low): `undefined8 vfunc_11(void)`
-pub const hkpRagdollConstraintData__vfunc_11: u64 = 61632;
-/// `hkpRagdollConstraintData::vfunc_12` at 0xb659e0 (rtti, high); signature (low): `undefined vfunc_12(hkpRagdollConstraintData * this, undefined8 param_1, undefined4 * param_2)`
-pub const hkpRagdollConstraintData__vfunc_12: u64 = 61634;
-/// `hkpRagdollConstraintData::vfunc_18` at 0xb659c0 (rtti, high); signature (low): `undefined vfunc_18(hkpRagdollConstraintData * this, int * param_1)`
-pub const hkpRagdollConstraintData__vfunc_18: u64 = 61633;
-/// `hkpRagdollConstraintData::vfunc_3` at 0xb656b0 (rtti, high); signature (low): `undefined vfunc_3(hkpRagdollConstraintData * this, undefined4 param_2)`
-pub const hkpRagdollConstraintData__vfunc_3: u64 = 61614;
-/// `hkpRagdollConstraintData::vfunc_4` at 0xb656c0 (rtti, high); signature (low): `undefined4 vfunc_4(hkpRagdollConstraintData * this)`
-pub const hkpRagdollConstraintData__vfunc_4: u64 = 61615;
-/// `hkpRagdollConstraintData::vfunc_5` at 0xb65700 (rtti, high); signature (low): `undefined vfunc_5(hkpRagdollConstraintData * this, int param_1)`
-pub const hkpRagdollConstraintData__vfunc_5: u64 = 61618;
-/// `hkpRagdollConstraintData::vfunc_6` at 0xb65730 (rtti, high); signature (low): `undefined8 vfunc_6(hkpRagdollConstraintData * this, undefined4 * param_1)`
-pub const hkpRagdollConstraintData__vfunc_6: u64 = 61619;
-/// `hkpRagdollConstraintData::vfunc_7` at 0xb65750 (rtti, high); signature (medium): `undefined8 vfunc_7(hkpRagdollConstraintData * this, float param_1)`
-pub const hkpRagdollConstraintData__vfunc_7: u64 = 61620;
-/// `hkpRagdollConstraintData::vfunc_8` at 0xb656d0 (rtti, high); signature (low): `undefined vfunc_8(hkpRagdollConstraintData * this, byte param_1)`
-pub const hkpRagdollConstraintData__vfunc_8: u64 = 61616;
-/// `hkpRagdollConstraintData::vfunc_9` at 0xb656f0 (rtti, high); signature (high): `byte vfunc_9(hkpRagdollConstraintData * this)`
-pub const hkpRagdollConstraintData__vfunc_9: u64 = 61617;
-/// `hkpRagdollLimitsData::ctor` at 0xb775b0 (layout_inference, medium); signature (high): `hkpRagdollLimitsData * ctor(hkpRagdollLimitsData * this)`
-pub const hkpRagdollLimitsData__ctor: u64 = 61995;
-/// `hkpRagdollLimitsData::vdtor` at 0xb526d0 (layout_inference, medium); signature (low): `hkpRagdollLimitsData * vdtor(hkpRagdollLimitsData * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const hkpRagdollLimitsData__vdtor: u64 = 61227;
-/// `hkpRagdollLimitsData::vfunc_10` at 0xb77b40 (rtti, high); signature (low): `undefined1 * vfunc_10(hkpRagdollLimitsData * this, undefined1 * param_1)`
-pub const hkpRagdollLimitsData__vfunc_10: u64 = 62000;
-/// `hkpRagdollLimitsData::vfunc_11` at 0xb77c30 (rtti, high); signature (low): `undefined8 vfunc_11(void)`
-pub const hkpRagdollLimitsData__vfunc_11: u64 = 62001;
-/// `hkpRagdollLimitsData::vfunc_12` at 0xb77c60 (rtti, high); signature (low): `undefined vfunc_12(hkpRagdollLimitsData * this, undefined8 param_1, undefined4 * param_2)`
-pub const hkpRagdollLimitsData__vfunc_12: u64 = 62003;
-/// `hkpRagdollLimitsData::vfunc_18` at 0xb77c40 (rtti, high); signature (low): `undefined vfunc_18(hkpRagdollLimitsData * this, int * param_1)`
-pub const hkpRagdollLimitsData__vfunc_18: u64 = 62002;
-/// `hkpRayCollidableFilter::vdtor` at 0xb36780 (layout_inference, medium); signature (low): `hkpRayCollidableFilter * vdtor(hkpRayCollidableFilter * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const hkpRayCollidableFilter__vdtor: u64 = 60408;
-/// `hkpRayHitCollector::dtor` at 0x404390 (layout_inference, high); signature (high): `undefined dtor(hkpRayHitCollector * this)`
-pub const hkpRayHitCollector__dtor: u64 = 25989;
-/// `hkpRayHitCollector::dtor` at 0x6baeb0 (layout_inference, high); signature (high): `undefined dtor(hkpRayHitCollector * this)`
-pub const hkpRayHitCollector__dtor_2: u64 = 38157;
-/// `hkpRayHitCollector::dtor` at 0x10ca940 (layout_inference, high); signature (high): `undefined dtor(hkpRayHitCollector * this)`
-pub const hkpRayHitCollector__dtor_3: u64 = 80144;
-/// `hkpRayHitCollector::vdtor` at 0x2028d0 (layout_inference, medium); signature (low): `hkpRayHitCollector * vdtor(hkpRayHitCollector * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const hkpRayHitCollector__vdtor: u64 = 15254;

@@ -6719,7 +6719,7 @@ pub(super) const ROWS: &[Function] = &[
     Function { rva: 0x7b51a0, id: 42464, confidence: Confidence::High, name: "TogglePOVHandler::CanProcess" },
     Function { rva: 0x7b51d0, id: 42465, confidence: Confidence::High, name: "ToggleRunHandler::CanProcess" },
     Function { rva: 0x7b5200, id: 523973, confidence: Confidence::Medium, name: "LookHandler::vfunc_1_sub0" },
-    Function { rva: 0x7b5480, id: 42466, confidence: Confidence::Medium, name: "NormalizeVector2AndGetLength" },
+    Function { rva: 0x7b5480, id: 42466, confidence: Confidence::High, name: "NormalizeVector2AndGetLength" },
     Function { rva: 0x7b54f0, id: 42467, confidence: Confidence::Medium, name: "BSTEventSource<SpellAttack::Event>::RemoveEventSink" },
     Function { rva: 0x7b5680, id: 42468, confidence: Confidence::Medium, name: "BSTEventSource<TESFurnitureEvent>::RemoveEventSink" },
     Function { rva: 0x7b5810, id: 42469, confidence: Confidence::High, name: "AttackBlockHandler::vfunc_7" },

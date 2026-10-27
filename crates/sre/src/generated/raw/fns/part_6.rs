@@ -3,6 +3,14 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `CallProxyVfunc0AndDrainLocked` at 0x13876a0 (decompiler, medium); signature (untiered): `undefined CallProxyVfunc0AndDrainLocked(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const CallProxyVfunc0AndDrainLocked: u64 = 98552;
+/// `CallRigidBodyVfunc88WithVectorRecursive` at 0x404ea0 (decompiler, medium); signature (untiered): `undefined CallRigidBodyVfunc88WithVectorRecursive(longlong * param_1, undefined1[12] * param_2, char param_3)`
+pub const CallRigidBodyVfunc88WithVectorRecursive: u64 = 26009;
+/// `CallStdioCommonVsprintf` at 0x1301820 (decompiler, high); signature (high): `int CallStdioCommonVsprintf(longlong param_1, longlong param_2, longlong param_3, undefined8 param_4)`
+pub const CallStdioCommonVsprintf: u64 = 95768;
+/// `CallStdioCommonVswprintf` at 0x13018a0 (decompiler, high); signature (high): `int CallStdioCommonVswprintf(longlong param_1, longlong param_2, longlong param_3, undefined8 param_4)`
+pub const CallStdioCommonVswprintf: u64 = 95769;
 /// `CallTls407383Field58Vfunc8` at 0xabefa0 (decompiler, medium); signature (untiered): `undefined CallTls407383Field58Vfunc8(undefined4 param_1)`
 pub const CallTls407383Field58Vfunc8: u64 = 58021;
 /// `CallTls407383Field58Vfunc8_2` at 0xac4a40 (decompiler, medium); signature (untiered): `undefined CallTls407383Field58Vfunc8_2(undefined4 param_1)`
@@ -322,7 +330,7 @@ pub const CastAttackHitSpells: u64 = 38748;
 /// `CastCameraLinearAndCollectHits` at 0x5574f0 (runtime, high); signature (untiered): `ulonglong CastCameraLinearAndCollectHits(longlong * param_1, longlong * param_2, float * param_3, float * param_4, float * param_5, undefined8 * param_6, float param_7)`; sphere cast of caster+0 from 'from' to 'to' in havok units under the world read lock; 'to' comes back clipped; hitRecord gets the hit data; *hitRef the hit reference (high); semantic signature: `bool (CameraCasterHolder* caster, bhkWorld* world, NiPoint3* from, NiPoint3* to, float* hitRecord, TESObjectREFR** hitRef, float radius)`
 pub const CastCameraLinearAndCollectHits: u64 = 33007;
 /// `CastCameraLinearAndCollectHits` as a function pointer type (high).
-pub type CastCameraLinearAndCollectHits_fn = unsafe extern "C" fn(caster: *mut crate::CameraCasterHolder, world: *mut crate::bhkWorld, from: *mut c_void, to: *mut c_void, hitRecord: *mut f32, hitRef: *mut *mut crate::TESObjectREFR, radius: f32) -> bool;
+pub type CastCameraLinearAndCollectHits_fn = unsafe extern "C" fn(caster: *mut crate::CameraCasterHolder, world: *mut crate::bhkWorld, from: *mut crate::NiPoint3, to: *mut crate::NiPoint3, hitRecord: *mut f32, hitRef: *mut *mut crate::TESObjectREFR, radius: f32) -> bool;
 /// `CastIfDerivedFrom` at 0x2163f0 (decompiler, medium); signature (medium): `longlong * CastIfDerivedFrom(longlong param_1, longlong * param_2)`
 pub const CastIfDerivedFrom: u64 = 15619;
 /// `CastLinearFromPointAlongDirection` at 0x3ff900 (decompiler, medium); signature (untiered): `undefined8 CastLinearFromPointAlongDirection(longlong * param_1, longlong * param_2, float * param_3, float * param_4, float param_5)`
@@ -703,8 +711,10 @@ pub const ChestsLooted__UnregisterSink: u64 = 51121;
 pub const ChooseWeightedAttackAndPerform: u64 = 49170;
 /// `ClampByteRangeToParentRecursive` at 0x258070 (decompiler, medium); signature (untiered): `undefined ClampByteRangeToParentRecursive(longlong param_1)`
 pub const ClampByteRangeToParentRecursive: u64 = 16678;
-/// `ClampColorComponentsToOne` at 0xef2e80 (decompiler, medium); signature (medium): `undefined ClampColorComponentsToOne(float * param_1)`
+/// `ClampColorComponentsToOne` at 0xef2e80 (semantic, high); signature (medium): `undefined ClampColorComponentsToOne(float * param_1)`; clamps r, g, b to at most 1.0 (high); semantic signature: `void (NiColor* c)`
 pub const ClampColorComponentsToOne: u64 = 70690;
+/// `ClampColorComponentsToOne` as a function pointer type (high).
+pub type ClampColorComponentsToOne_fn = unsafe extern "C" fn(c: *mut crate::NiColor);
 /// `ClampField58ToField50Count` at 0xb03970 (decompiler, medium); signature (untiered): `ulonglong ClampField58ToField50Count(longlong param_1)`
 pub const ClampField58ToField50Count: u64 = 59555;
 /// `ClampMatrixGroupRms` at 0x43c1e0 (decompiler, medium); signature (medium): `undefined ClampMatrixGroupRms(longlong param_1, float param_2)`
@@ -7797,7 +7807,3 @@ pub const CombatBehaviorTreeNodeCondition_CombatBehaviorExpression_CombatBehavio
 pub const CombatBehaviorTreeNodeEvaluateFunction_CombatBehaviorExpression_CombatBehaviorMemberFunc_CombatB_3944110546dd: u64 = 49870;
 /// `CombatBehaviorTreeNodeEvaluateFunction<CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorContextCover,bool_(__cdecl_CombatBehaviorContextCover::*)(void)const___ptr64>_>_>::vfunc_4` at 0x8d7a90 (rtti, high); signature (low): `undefined vfunc_4(CombatBehaviorTreeNodeEvaluateFunction<CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorContextCover,bool_(__cdecl_CombatBehaviorContextCover::*)(void)const___ptr64>_>_> * this, longlong param_1)`
 pub const CombatBehaviorTreeNodeEvaluateFunction_CombatBehaviorExpression_CombatBehaviorMemberFunc_CombatB_feee67809d6b: u64 = 49908;
-/// `CombatBehaviorTreeNodeEvaluateFunction<CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorContextCover,bool_(__cdecl_CombatBehaviorContextCover::*)(void)const___ptr64>_>_>::vfunc_9` at 0x8d73d0 (rtti, high); signature (low): `undefined * vfunc_9(void)`
-pub const CombatBehaviorTreeNodeEvaluateFunction_CombatBehaviorExpression_CombatBehaviorMemberFunc_CombatB_f1b5a53a4181: u64 = 49896;
-/// `CombatBehaviorTreeNodeEvaluateFunction<CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorContextFlee,bool_(__cdecl_CombatBehaviorContextFlee::*)(void)const___ptr64>_>_>::vdtor` at 0x8a68b0 (slot_propagation, medium); signature (low): `CombatBehaviorTreeNodeEvaluateFunction<CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorContextFlee,bool_(__cdecl_CombatBehaviorContextFlee::*)(void)const___ptr64>_>_> * vdtor(CombatBehaviorTreeNodeEvaluateFunction<CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorContextFlee,bool_(__cdecl_CombatBehaviorContextFlee::*)(void)const___ptr64>_>_> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-pub const CombatBehaviorTreeNodeEvaluateFunction_CombatBehaviorExpression_CombatBehaviorMemberFunc_CombatB_6cfb905ccafe: u64 = 48691;

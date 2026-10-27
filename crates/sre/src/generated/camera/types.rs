@@ -404,14 +404,14 @@ pub struct BSFlattenedBoneTree {
     pub unknown_3C: [u8; 4],
     /// +0x40 `ptr:NiCollisionObject`, base NiAVObject, semantic; physics object of this node (refcounted); when set it, not the parent, produces the world transform (high)
     pub collisionObject: *mut crate::NiCollisionObject,
-    /// +0x48 `undefined1`, base NiAVObject, semantic; local transform: rotation 3x3 floats +0x48, translation +0x6c, scale +0x78 (high)
-    pub local: [u8; 52],
-    /// +0x7C `undefined1`, base NiAVObject, semantic; world transform: rotation +0x7c, translation +0xa0, scale +0xac (high)
-    pub world: [u8; 52],
-    /// +0xB0 `undefined1`, base NiAVObject, semantic; copy of the world transform taken once per render frame before the update (same 0x34 layout as local/world) (high)
-    pub previousWorld: [u8; 52],
-    /// +0xE4 `undefined1`, base NiAVObject, semantic; bounding sphere: centre +0xe4, radius +0xf0 (high)
-    pub worldBound: [u8; 16],
+    /// +0x48 `class:NiTransform`, base NiAVObject, semantic; local transform: rotation 3x3 floats +0x48, translation +0x6c, scale +0x78 (high); retyped undefined1 -> class:NiTransform: meaning: rotation +0x48, translation +0x6c, scale +0x78; ApplyPoseToBoneNodes 0xbdfa20 writes rotation at +0x48 and translation at +0x6c; SetRotationFromQuaternion 0x221bd0 writes +0x48..+0x68
+    pub local: crate::NiTransform,
+    /// +0x7C `class:NiTransform`, base NiAVObject, semantic; world transform: rotation +0x7c, translation +0xa0, scale +0xac (high); retyped undefined1 -> class:NiTransform: meaning: rotation +0x7c, translation +0xa0, scale +0xac; NiSkinInstance::UpdatePalette 0x1015800 reads +0x7c..+0xac as a NiTransform for NiTransform::Multiply; NiCamera::UpdateWorldBound 0xef1950 reads translate +0xa0
+    pub world: crate::NiTransform,
+    /// +0xB0 `class:NiTransform`, base NiAVObject, semantic; copy of the world transform taken once per render frame before the update (same 0x34 layout as local/world) (high); retyped undefined1 -> class:NiTransform: meaning: same 0x34 layout as local/world (snapshot of world)
+    pub previousWorld: crate::NiTransform,
+    /// +0xE4 `class:NiBound`, base NiAVObject, semantic; bounding sphere: centre +0xe4, radius +0xf0 (high); retyped undefined1 -> class:NiBound: meaning: centre +0xe4, radius +0xf0; NiCamera::UpdateWorldBound 0xef1950 writes the centre; BSGeometry::UpdateWorldBound uses NiTransform::ApplyToBound 0xefcf20
+    pub worldBound: crate::NiBound,
     /// +0xF4 `undefined4`, base NiAVObject, semantic; flag word: bit 0 hidden (no culling process visits the object), bit 11 skip the frustum test, bit 12 skipped unless the culler allows it (+0x11e; bit 20 then skips it outright), bit 26 set when a culler last accepted it; see the flag rows (high)
     pub flags: u32,
     /// +0xF8 `undefined8`, base NiAVObject, semantic; zeroed by the ctor; not read in this track's bodies (low)
@@ -834,8 +834,8 @@ pub struct CrosshairPickData {
     pub targetHandle2: u32,
     /// +0xC `u32`, semantic; handle kept for a hit within fLargeActivatePickLength_G:Interface (medium)
     pub largeTargetHandle: u32,
-    /// +0x10 `undefined1`, semantic; NiPoint3 origin + t * direction of the accepted hit (high)
-    pub hitPoint: [u8; 12],
+    /// +0x10 `class:NiPoint3`, semantic; NiPoint3 origin + t * direction of the accepted hit (high); retyped undefined1 -> class:NiPoint3: Pick 0x409fd0 writes t*dir + origin into +0x10..+0x18
+    pub hitPoint: crate::NiPoint3,
     pub unknown_1C: [u8; 4],
     /// +0x20 `pointer`, semantic; object of the accepted hit (cleared at each pick) (medium)
     pub hitObject: *mut c_void,
@@ -877,8 +877,8 @@ const _: () = assert!(core::mem::offset_of!(EnemyHealth, __vftable) == 0x0);
 /// Evidence: per-frame context for the first-person (hands) draw, filled by SetupWorldRenderContext; a static at 0x34362c0 returned by GetGlobal415027 0x1537410; no RTTI; descriptive name; size: StaticInit_10844 0x102b90 memsets 0x58 bytes at 0x34362c0.
 #[repr(C)]
 pub struct FirstPersonRenderContext {
-    /// +0x0 `undefined1`, semantic; FirstPersonState.cameraNode world translation (0x8f8c10), the hands camera's position before the root offset is added (high)
-    pub eyePosition: [u8; 12],
+    /// +0x0 `class:NiPoint3`, semantic; FirstPersonState.cameraNode world translation (0x8f8c10), the hands camera's position before the root offset is added (high); retyped undefined1 -> class:NiPoint3: GetFirstPersonCameraNodePosition 0x8f8c10 (NiPoint3* out) writes it via 0x657c90
+    pub eyePosition: crate::NiPoint3,
     /// +0xC `float`, semantic; PlayerCamera.firstPersonFOV; both first-person projections use g_CameraFOVOffset + this (high)
     pub firstPersonFOV: f32,
     /// +0x10 `float`, semantic; PlayerCamera.worldFOV (high)
@@ -1159,10 +1159,10 @@ const _: () = assert!(core::mem::offset_of!(IMapCameraCallbacks, __vftable) == 0
 pub struct LocalMapCamera {
     /// +0x0 `vtbl:LocalMapCamera:0`, rtti
     pub __vftable: *const crate::raw::vtables::LocalMapCamera_vtable,
-    /// +0x8 `undefined1`, base TESCamera, semantic; NiPoint2 (x, y) rotation input of the frame; reset to the zero constant 0x20ccb20 after every Update (high)
-    pub rotationInput: [u8; 8],
-    /// +0x10 `undefined1`, base TESCamera, semantic; NiPoint3 pan input of the frame; reset after every Update (high)
-    pub translationInput: [u8; 12],
+    /// +0x8 `class:NiPoint2`, base TESCamera, semantic; NiPoint2 (x, y) rotation input of the frame; reset to the zero constant 0x20ccb20 after every Update (high); retyped undefined1 -> class:NiPoint2: meaning: NiPoint2; reset from the NiPoint2 zero constant 0x20ccb20 in TESCamera::Update 0x558e70
+    pub rotationInput: crate::NiPoint2,
+    /// +0x10 `class:NiPoint3`, base TESCamera, semantic; NiPoint3 pan input of the frame; reset after every Update (high); retyped undefined1 -> class:NiPoint3: meaning: NiPoint3; reset from the NiPoint3 zero constant 0x20ccc28
+    pub translationInput: crate::NiPoint3,
     /// +0x1C `float`, base TESCamera, semantic; zoom input of the frame; reset to 0 after every Update (high)
     pub zoomInput: f32,
     /// +0x20 `ptr:NiNode`, base TESCamera, semantic; the camera's scene graph node (high)
@@ -1173,10 +1173,10 @@ pub struct LocalMapCamera {
     pub enabled: u8,
     /// +0x31 `undefined1`, semantic; alignment padding to 0x38 (TESCamera size) (high)
     pub padding31: [u8; 7],
-    /// +0x38 `undefined1`, semantic; NiPoint3 upper corner of the mapped area; z includes fMapLocalHeight (40000) (medium)
-    pub boundMax: [u8; 12],
-    /// +0x44 `undefined1`, semantic; NiPoint3 lower corner of the mapped area (medium)
-    pub boundMin: [u8; 12],
+    /// +0x38 `class:NiPoint3`, semantic; NiPoint3 upper corner of the mapped area; z includes fMapLocalHeight (40000) (medium); retyped undefined1 -> class:NiPoint3: meaning: NiPoint3 upper corner; SetAreaBounds 0x248230 takes const NiPoint3*
+    pub boundMax: crate::NiPoint3,
+    /// +0x44 `class:NiPoint3`, semantic; NiPoint3 lower corner of the mapped area (medium); retyped undefined1 -> class:NiPoint3: meaning: NiPoint3 lower corner; SetAreaBounds 0x248230
+    pub boundMin: crate::NiPoint3,
     /// +0x50 `ptr:LocalMapCamera::DefaultState`, semantic; the only state (refcounted) (high)
     pub defaultState: *mut crate::LocalMapCamera__DefaultState,
     /// +0x58 `ptr:NiCamera`, semantic; the local map NiCamera (orthographic frustum set every Update) (high)
@@ -1221,10 +1221,10 @@ pub struct LocalMapCamera__DefaultState {
     pub id: u32,
     /// +0x1C `undefined4`, semantic; alignment padding to 0x20 (high)
     pub padding1C: u32,
-    /// +0x20 `undefined1`, semantic; NiPoint3 point the view is centred on (z = point z + fMapLocalHeight) (high)
-    pub center: [u8; 12],
-    /// +0x2C `undefined1`, semantic; NiPoint3 pan offset from center (high)
-    pub panOffset: [u8; 12],
+    /// +0x20 `class:NiPoint3`, semantic; NiPoint3 point the view is centred on (z = point z + fMapLocalHeight) (high); retyped undefined1 -> class:NiPoint3: meaning: NiPoint3; LocalMapCamera::SetCenter 0x248100 takes const NiPoint3*
+    pub center: crate::NiPoint3,
+    /// +0x2C `class:NiPoint3`, semantic; NiPoint3 pan offset from center (high); retyped undefined1 -> class:NiPoint3: meaning: NiPoint3; SetOffsetToPoint 0x248130
+    pub panOffset: crate::NiPoint3,
     /// +0x38 `float`, semantic, runtime; 0 (whole area) .. 1 (minimum view) (high)
     pub zoom: f32,
     /// +0x3C `float`, semantic; half width of the view at zoom 1 (high)
@@ -1257,10 +1257,10 @@ const _: () = assert!(core::mem::offset_of!(LocalMapCamera__DefaultState, paddin
 pub struct MapCamera {
     /// +0x0 `vtbl:MapCamera:0`, rtti
     pub __vftable: *const crate::raw::vtables::MapCamera_vtable,
-    /// +0x8 `undefined1`, base TESCamera, semantic; NiPoint2 (x, y) rotation input of the frame; reset to the zero constant 0x20ccb20 after every Update (high)
-    pub rotationInput: [u8; 8],
-    /// +0x10 `undefined1`, base TESCamera, semantic; NiPoint3 pan input of the frame; reset after every Update (high)
-    pub translationInput: [u8; 12],
+    /// +0x8 `class:NiPoint2`, base TESCamera, semantic; NiPoint2 (x, y) rotation input of the frame; reset to the zero constant 0x20ccb20 after every Update (high); retyped undefined1 -> class:NiPoint2: meaning: NiPoint2; reset from the NiPoint2 zero constant 0x20ccb20 in TESCamera::Update 0x558e70
+    pub rotationInput: crate::NiPoint2,
+    /// +0x10 `class:NiPoint3`, base TESCamera, semantic; NiPoint3 pan input of the frame; reset after every Update (high); retyped undefined1 -> class:NiPoint3: meaning: NiPoint3; reset from the NiPoint3 zero constant 0x20ccc28
+    pub translationInput: crate::NiPoint3,
     /// +0x1C `float`, base TESCamera, semantic; zoom input of the frame; reset to 0 after every Update (high)
     pub zoomInput: f32,
     /// +0x20 `ptr:NiNode`, base TESCamera, semantic; the camera's scene graph node (high)
@@ -1271,10 +1271,10 @@ pub struct MapCamera {
     pub enabled: u8,
     /// +0x31 `undefined1`, semantic; alignment padding to 0x38 (TESCamera size) (high)
     pub padding31: [u8; 7],
-    /// +0x38 `undefined1`, semantic; NiPoint2 zeroed by both ctors; no reader found (medium)
-    pub field_38: [u8; 8],
-    /// +0x40 `undefined1`, semantic; NiPoint3 map-space point the map opened on; the exit transition returns to it (high)
-    pub entryPosition: [u8; 12],
+    /// +0x38 `class:NiPoint2`, semantic; NiPoint2 zeroed by both ctors; no reader found (medium); retyped undefined1 -> class:NiPoint2: meaning: NiPoint2 zeroed from 0x20ccb20 by both ctors (no reader)
+    pub field_38: crate::NiPoint2,
+    /// +0x40 `class:NiPoint3`, semantic; NiPoint3 map-space point the map opened on; the exit transition returns to it (high); retyped undefined1 -> class:NiPoint3: meaning: NiPoint3; MapCamera slot 3 Enter 0x996740 takes const NiPoint3* position
+    pub entryPosition: crate::NiPoint3,
     /// +0x4C `float`, semantic; frame delta stored by 0x9969f0; World::Update clamps it to 0.033 (high)
     pub frameDelta: f32,
     /// +0x50 `ptr:TESWorldSpace`, semantic, runtime; worldspace the map shows (high)
@@ -1365,20 +1365,20 @@ pub struct MapCameraStates__Transition {
     pub id: u32,
     /// +0x1C `undefined4`, semantic; alignment padding to 0x20 (high)
     pub padding1C: u32,
-    /// +0x20 `undefined1`, semantic; NiQuaternion at the start of the transition (high)
-    pub fromRotation: [u8; 16],
-    /// +0x30 `undefined1`, semantic; NiQuaternion of the target state (high)
-    pub toRotation: [u8; 16],
-    /// +0x40 `undefined1`, semantic; NiPoint3 root world translation at Begin (high)
-    pub fromPosition: [u8; 12],
-    /// +0x4C `undefined1`, semantic; NiPoint3 translation of the target state (high)
-    pub toPosition: [u8; 12],
+    /// +0x20 `class:NiQuaternion`, semantic; NiQuaternion at the start of the transition (high); retyped undefined1 -> class:NiQuaternion: meaning: NiQuaternion
+    pub fromRotation: crate::NiQuaternion,
+    /// +0x30 `class:NiQuaternion`, semantic; NiQuaternion of the target state (high); retyped undefined1 -> class:NiQuaternion: meaning: NiQuaternion
+    pub toRotation: crate::NiQuaternion,
+    /// +0x40 `class:NiPoint3`, semantic; NiPoint3 root world translation at Begin (high); retyped undefined1 -> class:NiPoint3: meaning: NiPoint3
+    pub fromPosition: crate::NiPoint3,
+    /// +0x4C `class:NiPoint3`, semantic; NiPoint3 translation of the target state (high); retyped undefined1 -> class:NiPoint3: meaning: NiPoint3
+    pub toPosition: crate::NiPoint3,
     /// +0x58 `u32`, semantic; g_FrameTimeMs at Begin (high)
     pub startTimeMs: u32,
     /// +0x5C `float`, semantic, runtime; transition length in milliseconds; 0 makes the first Update finish (high)
     pub durationMs: f32,
-    /// +0x60 `undefined1`, semantic; NiPoint3 interpolated translation written each Update (high)
-    pub currentPosition: [u8; 12],
+    /// +0x60 `class:NiPoint3`, semantic; NiPoint3 interpolated translation written each Update (high); retyped undefined1 -> class:NiPoint3: meaning: NiPoint3; GetTranslation 0x9973f0
+    pub currentPosition: crate::NiPoint3,
     /// +0x6C `float`, semantic; 0..1 fraction of the transition (high)
     pub progress: f32,
     /// +0x70 `ptr:TESCameraState`, semantic; BSTSmartPointer to the state the transition ends in (high)
@@ -1435,14 +1435,14 @@ pub struct MapCameraStates__World {
     pub id: u32,
     /// +0x1C `undefined4`, semantic; alignment padding to 0x20 (high)
     pub padding1C: u32,
-    /// +0x20 `undefined1`, semantic; NiPoint3 point the map was configured around (entry point or marker) (high)
-    pub basePosition: [u8; 12],
-    /// +0x2C `undefined1`, semantic; NiPoint3 pan offset (x, y moved by input; z only reset) (high)
-    pub panOffset: [u8; 12],
-    /// +0x38 `undefined1`, ctor store, semantic, runtime; NiPoint3 constant offset: (0, 0, map min camera height) (high)
-    pub heightOffset: [u8; 12],
-    /// +0x44 `undefined1`, semantic, runtime; NiPoint3 zoom direction: (0, 0, max - min camera height) (high)
-    pub zoomAxis: [u8; 12],
+    /// +0x20 `class:NiPoint3`, semantic; NiPoint3 point the map was configured around (entry point or marker) (high); retyped undefined1 -> class:NiPoint3: meaning: NiPoint3; SetPositionAndBounds 0x998060
+    pub basePosition: crate::NiPoint3,
+    /// +0x2C `class:NiPoint3`, semantic; NiPoint3 pan offset (x, y moved by input; z only reset) (high); retyped undefined1 -> class:NiPoint3: meaning: NiPoint3
+    pub panOffset: crate::NiPoint3,
+    /// +0x38 `class:NiPoint3`, ctor store, semantic, runtime; NiPoint3 constant offset: (0, 0, map min camera height) (high); retyped undefined1 -> class:NiPoint3: meaning: NiPoint3
+    pub heightOffset: crate::NiPoint3,
+    /// +0x44 `class:NiPoint3`, semantic, runtime; NiPoint3 zoom direction: (0, 0, max - min camera height) (high); retyped undefined1 -> class:NiPoint3: meaning: NiPoint3
+    pub zoomAxis: crate::NiPoint3,
     /// +0x50 `float`, semantic; heading in radians; the pan input is rotated by it (high)
     pub yaw: f32,
     /// +0x54 `float`, semantic; pitch in radians, clamped to +-pi/2 (high)
@@ -1547,10 +1547,10 @@ const _: () = assert!(core::mem::offset_of!(OwnedCameraEffectController, pad31) 
 pub struct RaceSexCamera {
     /// +0x0 `vtbl:RaceSexCamera:0`, rtti
     pub __vftable: *const crate::raw::vtables::RaceSexCamera_vtable,
-    /// +0x8 `undefined1`, base TESCamera, semantic; NiPoint2 (x, y) rotation input of the frame; reset to the zero constant 0x20ccb20 after every Update (high)
-    pub rotationInput: [u8; 8],
-    /// +0x10 `undefined1`, base TESCamera, semantic; NiPoint3 pan input of the frame; reset after every Update (high)
-    pub translationInput: [u8; 12],
+    /// +0x8 `class:NiPoint2`, base TESCamera, semantic; NiPoint2 (x, y) rotation input of the frame; reset to the zero constant 0x20ccb20 after every Update (high); retyped undefined1 -> class:NiPoint2: meaning: NiPoint2; reset from the NiPoint2 zero constant 0x20ccb20 in TESCamera::Update 0x558e70
+    pub rotationInput: crate::NiPoint2,
+    /// +0x10 `class:NiPoint3`, base TESCamera, semantic; NiPoint3 pan input of the frame; reset after every Update (high); retyped undefined1 -> class:NiPoint3: meaning: NiPoint3; reset from the NiPoint3 zero constant 0x20ccc28
+    pub translationInput: crate::NiPoint3,
     /// +0x1C `float`, base TESCamera, semantic; zoom input of the frame; reset to 0 after every Update (high)
     pub zoomInput: f32,
     /// +0x20 `ptr:NiNode`, base TESCamera, semantic, runtime; the camera's scene graph node (high)
@@ -1561,10 +1561,10 @@ pub struct RaceSexCamera {
     pub enabled: u8,
     /// +0x31 `undefined1`, semantic; alignment padding to 0x38 (TESCamera size) (high)
     pub padding31: [u8; 7],
-    /// +0x38 `undefined1`, semantic; NiPoint3 root world translation at SetCameraRoot (high)
-    pub initialPosition: [u8; 12],
-    /// +0x44 `undefined1`, semantic; NiQuaternion of the root's local rotation at SetCameraRoot (high)
-    pub initialRotation: [u8; 16],
+    /// +0x38 `class:NiPoint3`, semantic; NiPoint3 root world translation at SetCameraRoot (high); retyped undefined1 -> class:NiPoint3: meaning: NiPoint3 root world translation
+    pub initialPosition: crate::NiPoint3,
+    /// +0x44 `class:NiQuaternion`, semantic; NiQuaternion of the root's local rotation at SetCameraRoot (high); retyped undefined1 -> class:NiQuaternion: meaning: NiQuaternion of the root's local rotation
+    pub initialRotation: crate::NiQuaternion,
     /// +0x54 `undefined4`, semantic; alignment padding to 0x58 (high)
     pub padding54: u32,
     pub __engine: crate::Engine,
@@ -1818,20 +1818,20 @@ pub struct TransitionState {
     pub id: u32,
     /// +0x1C `undefined4`, semantic; alignment padding to 0x20 (high)
     pub padding1C: u32,
-    /// +0x20 `undefined1`, semantic; NiQuaternion at the start of the transition (high)
-    pub fromRotation: [u8; 16],
-    /// +0x30 `undefined1`, semantic; NiQuaternion of the target state (high)
-    pub toRotation: [u8; 16],
-    /// +0x40 `undefined1`, semantic; NiPoint3 root world translation at Begin (high)
-    pub fromPosition: [u8; 12],
-    /// +0x4C `undefined1`, semantic; NiPoint3 translation of the target state (high)
-    pub toPosition: [u8; 12],
+    /// +0x20 `class:NiQuaternion`, semantic; NiQuaternion at the start of the transition (high); retyped undefined1 -> class:NiQuaternion: meaning: NiQuaternion
+    pub fromRotation: crate::NiQuaternion,
+    /// +0x30 `class:NiQuaternion`, semantic; NiQuaternion of the target state (high); retyped undefined1 -> class:NiQuaternion: meaning: NiQuaternion
+    pub toRotation: crate::NiQuaternion,
+    /// +0x40 `class:NiPoint3`, semantic; NiPoint3 root world translation at Begin (high); retyped undefined1 -> class:NiPoint3: meaning: NiPoint3
+    pub fromPosition: crate::NiPoint3,
+    /// +0x4C `class:NiPoint3`, semantic; NiPoint3 translation of the target state (high); retyped undefined1 -> class:NiPoint3: meaning: NiPoint3
+    pub toPosition: crate::NiPoint3,
     /// +0x58 `u32`, semantic; g_FrameTimeMs at Begin (high)
     pub startTimeMs: u32,
     /// +0x5C `float`, semantic; transition length in milliseconds; 0 makes the first Update finish (high)
     pub durationMs: f32,
-    /// +0x60 `undefined1`, semantic; NiPoint3 interpolated translation written each Update (high)
-    pub currentPosition: [u8; 12],
+    /// +0x60 `class:NiPoint3`, semantic; NiPoint3 interpolated translation written each Update (high); retyped undefined1 -> class:NiPoint3: meaning: NiPoint3; GetTranslation 0x9973f0
+    pub currentPosition: crate::NiPoint3,
     /// +0x6C `float`, semantic; 0..1 fraction of the transition (high)
     pub progress: f32,
     /// +0x70 `ptr:TESCameraState`, semantic; BSTSmartPointer to the state the transition ends in (high)

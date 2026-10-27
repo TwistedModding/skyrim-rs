@@ -27,8 +27,8 @@ pub struct CameraMatrixEntry {
     /// +0x1C0 `undefined1`, semantic;  (high)
     pub projectionUnjittered: [u8; 64],
     pub unknown_200: [u8; 96],
-    /// +0x260 `float`, semantic; camera world translation at the update; +0x26c and +0x278 hold the two previous ones (medium)
-    pub eyePosition: [u8; 12],
+    /// +0x260 `class:NiPoint3`, semantic; camera world translation at the update; +0x26c and +0x278 hold the two previous ones (medium); retyped float -> class:NiPoint3: UpdateCameraMatricesWithJitter 0x101e4e0 copies camera +0xa0..+0xa8
+    pub eyePosition: crate::NiPoint3,
     pub unknown_26C: [u8; 24],
     /// +0x284 `u8`, semantic; second lookup key: entry built with TAA jitter (high)
     pub jittered: u8,

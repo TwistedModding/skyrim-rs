@@ -3,6 +3,62 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `TESObjectANIO::vfunc_6` at 0x27b750 (rtti, high); signature (low): `undefined8 vfunc_6(TESObjectANIO * this, longlong param_1, undefined8 param_2, ulonglong param_3)`
+pub const TESObjectANIO__vfunc_6: u64 = 17737;
+/// `TESObjectARMA::BGSBipedObjectForm_vdtor` at 0x27d3f8 (slot_propagation, medium); signature (high): `undefined BGSBipedObjectForm_vdtor(TESObjectARMA * this)`
+pub const TESObjectARMA__BGSBipedObjectForm_vdtor: u64 = 17773;
+/// `TESObjectARMA::TESRaceForm_vdtor` at 0x27d3ec (slot_propagation, medium); signature (high): `undefined TESRaceForm_vdtor(TESObjectARMA * this)`
+pub const TESObjectARMA__TESRaceForm_vdtor: u64 = 17772;
+/// `TESObjectARMA::ctor` at 0x27be50 (layout_inference, high); signature (low): `TESObjectARMA * ctor(TESObjectARMA * this, undefined8 param_1, uint * param_2, longlong * param_3)`
+pub const TESObjectARMA__ctor: u64 = 17752;
+/// `TESObjectARMA::dtor` at 0x27bfd0 (layout_inference, high); signature (low): `undefined dtor(TESObjectARMA * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+pub const TESObjectARMA__dtor: u64 = 17753;
+/// `TESObjectARMA::vdtor` at 0x27d410 (slot_propagation, medium); signature (low): `TESObjectARMA * vdtor(TESObjectARMA * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const TESObjectARMA__vdtor: u64 = 17774;
+/// `TESObjectARMA::vfunc_19` at 0x27cad0 (rtti, high); signature (low): `undefined vfunc_19(TESObjectARMA * this, undefined8 param_1, TypeDescriptor * param_2, TypeDescriptor * param_3)`
+pub const TESObjectARMA__vfunc_19: u64 = 17758;
+/// `TESObjectARMA::vfunc_4` at 0x27c110 (rtti, high); signature (low): `undefined vfunc_4(TESObjectARMA * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+pub const TESObjectARMA__vfunc_4: u64 = 17754;
+/// `TESObjectARMA::vfunc_5` at 0x27c1c0 (rtti, high); signature (high): `undefined vfunc_5(TESObjectARMA * this)`
+pub const TESObjectARMA__vfunc_5: u64 = 17755;
+/// `TESObjectARMA::vfunc_6` at 0x27c210 (rtti, high); signature (low): `undefined8 vfunc_6(TESObjectARMA * this, uint * param_1, undefined8 param_2, undefined8 param_3)`
+pub const TESObjectARMA__vfunc_6: u64 = 17756;
+/// `TESObjectARMO::BGSBipedObjectForm_vdtor` at 0x27eee8 (slot_propagation, medium); signature (high): `undefined BGSBipedObjectForm_vdtor(TESObjectARMO * this)`
+pub const TESObjectARMO__BGSBipedObjectForm_vdtor: u64 = 17803;
+/// `TESObjectARMO::BGSBlockBashData_vdtor` at 0x27eef4 (slot_propagation, medium); signature (high): `undefined BGSBlockBashData_vdtor(TESObjectARMO * this)`
+pub const TESObjectARMO__BGSBlockBashData_vdtor: u64 = 17804;
+/// `TESObjectARMO::BGSDestructibleObjectForm_vdtor` at 0x27ef54 (slot_propagation, medium); signature (high): `undefined BGSDestructibleObjectForm_vdtor(TESObjectARMO * this)`
+pub const TESObjectARMO__BGSDestructibleObjectForm_vdtor: u64 = 17812;
+/// `TESObjectARMO::BGSEquipType_vdtor` at 0x27eedc (slot_propagation, medium); signature (high): `undefined BGSEquipType_vdtor(TESObjectARMO * this)`
+pub const TESObjectARMO__BGSEquipType_vdtor: u64 = 17802;
+/// `TESObjectARMO::BGSKeywordForm_vdtor` at 0x27ef00 (slot_propagation, medium); signature (high): `undefined BGSKeywordForm_vdtor(TESObjectARMO * this)`
+pub const TESObjectARMO__BGSKeywordForm_vdtor: u64 = 17805;
+/// `TESObjectARMO::BGSKeywordForm_vfunc_5` at 0x27ed60 (rtti, high); signature (low): `undefined8 BGSKeywordForm_vfunc_5(TESObjectARMO * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+pub const TESObjectARMO__BGSKeywordForm_vfunc_5: u64 = 17796;
+/// `TESObjectARMO::BGSPickupPutdownSounds_vdtor` at 0x27ef60 (slot_propagation, medium); signature (high): `undefined BGSPickupPutdownSounds_vdtor(TESObjectARMO * this)`
+pub const TESObjectARMO__BGSPickupPutdownSounds_vdtor: u64 = 17813;
+/// `TESObjectARMO::GetLastFile` at 0x27f1b0 (slot_propagation, medium); signature (untiered): `undefined GetLastFile(TESObjectARMO * this)`
+pub const TESObjectARMO__GetLastFile: u64 = 17817;
+/// `TESObjectARMO::LoadGame` at 0x27ee60 (slot_propagation, medium); signature (untiered): `undefined LoadGame(TESObjectARMO * this, longlong param_1)`
+pub const TESObjectARMO__LoadGame: u64 = 17799;
+/// `TESObjectARMO::SaveGame` at 0x27ee20 (slot_propagation, medium); signature (untiered): `undefined SaveGame(TESObjectARMO * this, longlong param_1)`
+pub const TESObjectARMO__SaveGame: u64 = 17798;
+/// `TESObjectARMO::TESBipedModelForm_vdtor` at 0x27ef6c (slot_propagation, medium); signature (high): `undefined TESBipedModelForm_vdtor(TESObjectARMO * this)`
+pub const TESObjectARMO__TESBipedModelForm_vdtor: u64 = 17814;
+/// `TESObjectARMO::TESDescription_vdtor` at 0x27ef0c (slot_propagation, medium); signature (high): `undefined TESDescription_vdtor(TESObjectARMO * this)`
+pub const TESObjectARMO__TESDescription_vdtor: u64 = 17806;
+/// `TESObjectARMO::TESEnchantableForm_vdtor` at 0x27ef30 (slot_propagation, medium); signature (high): `undefined TESEnchantableForm_vdtor(TESObjectARMO * this)`
+pub const TESObjectARMO__TESEnchantableForm_vdtor: u64 = 17809;
+/// `TESObjectARMO::TESFullName_vdtor` at 0x27ef18 (slot_propagation, medium); signature (high): `undefined TESFullName_vdtor(TESObjectARMO * this)`
+pub const TESObjectARMO__TESFullName_vdtor: u64 = 17807;
+/// `TESObjectARMO::TESRaceForm_vdtor` at 0x27ef24 (slot_propagation, medium); signature (high): `undefined TESRaceForm_vdtor(TESObjectARMO * this)`
+pub const TESObjectARMO__TESRaceForm_vdtor: u64 = 17808;
+/// `TESObjectARMO::TESValueForm_vdtor` at 0x27ef3c (slot_propagation, medium); signature (high): `undefined TESValueForm_vdtor(TESObjectARMO * this)`
+pub const TESObjectARMO__TESValueForm_vdtor: u64 = 17810;
+/// `TESObjectARMO::TESWeightForm_vdtor` at 0x27ef48 (slot_propagation, medium); signature (high): `undefined TESWeightForm_vdtor(TESObjectARMO * this)`
+pub const TESObjectARMO__TESWeightForm_vdtor: u64 = 17811;
+/// `TESObjectARMO::dtor` at 0x27d900 (layout_inference, high); signature (low): `undefined dtor(TESObjectARMO * this, undefined8 param_1, longlong param_2, undefined1 * param_3)`
+pub const TESObjectARMO__dtor: u64 = 17785;
 /// `TESObjectARMO::vdtor` at 0x27ef80 (slot_propagation, medium); signature (low): `TESObjectARMO * vdtor(TESObjectARMO * this, ulonglong param_1, longlong param_2, undefined1 * param_3)`
 pub const TESObjectARMO__vdtor: u64 = 17815;
 /// `TESObjectARMO::vfunc_19` at 0x27e780 (rtti, high); signature (low): `undefined vfunc_19(TESObjectARMO * this, undefined8 param_1, TypeDescriptor * param_2, TypeDescriptor * param_3)`
@@ -2008,13 +2064,13 @@ pub const TestTriangleTriangleOverlap: u64 = 81293;
 /// `ThirdPersonState::ApplyAnimatedNode` at 0x8fee70 (semantic, high); signature (untiered): `undefined ApplyAnimatedNode(longlong param_1, float * param_2, float * param_3)`; animatedBlend (+0xcc) += 2 * g_FrameDelta * animatedBlendRate (+0xd0), clamped to [0,1]; with an animatedNode and blend > 0 copies its local rotation (+0x48 -> quaternion +0xb0) and translation (+0x6c -> +0xc0); position += rotation * (blend * translation); rotation = rotation * slerp(identity, animatedRotation, blend) (high); semantic signature: `void (ThirdPersonState* this, NiPoint3* position, NiMatrix3* rotation)`
 pub const ThirdPersonState__ApplyAnimatedNode: u64 = 50921;
 /// `ThirdPersonState::ApplyAnimatedNode` as a function pointer type (high).
-pub type ThirdPersonState__ApplyAnimatedNode_fn = unsafe extern "C" fn(this: *mut crate::ThirdPersonState, position: *mut c_void, rotation: *mut c_void);
+pub type ThirdPersonState__ApplyAnimatedNode_fn = unsafe extern "C" fn(this: *mut crate::ThirdPersonState, position: *mut crate::NiPoint3, rotation: *mut crate::NiMatrix3);
 /// `ThirdPersonState::Begin` at 0x8fd390 (semantic, high); signature (untiered): `undefined Begin(ThirdPersonState * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
 pub const ThirdPersonState__Begin: u64 = 50894;
 /// `ThirdPersonState::ComputePosition` at 0x8fe3c0 (semantic, high); signature (untiered): `undefined ComputePosition(longlong param_1, float * param_2, undefined8 param_3, undefined8 param_4)`; position += target node world translation (target vtable +0x378 node, else reference position); with useShoulderOffsets: z += eye height (0x687450), d = fVanityModeMinDist + (fVanityModeMaxDist - fVanityModeMinDist) * currentZoom (155..600; on a flying mount min = fVanityModeMinDistFly 1200, max *= fVanityModeMaxDistFlyMult 4), position += R * (offset.x, offset.y - d - pitchZoomOffset, offset.z) with R's columns right, forward, up; ComputeCameraCasterCollision(camera, &position, true) at +0x1ce; collision recovery: after a hit, blends from the hit position back at fCollisionRecoverySpeed * g_FrameDelta once the camera moved more than fCollisionRecoveryMinDist (high); semantic signature: `void (ThirdPersonState* this, const NiMatrix3* rotation)`
 pub const ThirdPersonState__ComputePosition: u64 = 50911;
 /// `ThirdPersonState::ComputePosition` as a function pointer type (high).
-pub type ThirdPersonState__ComputePosition_fn = unsafe extern "C" fn(this: *mut crate::ThirdPersonState, rotation: *const c_void);
+pub type ThirdPersonState__ComputePosition_fn = unsafe extern "C" fn(this: *mut crate::ThirdPersonState, rotation: *const crate::NiMatrix3);
 /// `ThirdPersonState::Destroy` at 0x55d4e0 (semantic, high); signature (untiered): `ThirdPersonState * Destroy(ThirdPersonState * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const ThirdPersonState__Destroy: u64 = 33127;
 /// `ThirdPersonState::End` at 0x8fd4e0 (semantic, high); signature (untiered): `undefined End(ThirdPersonState * this)`
@@ -2073,7 +2129,7 @@ pub const ThirdPersonState__UpdateRotation: u64 = 50912;
 pub const ThirdPersonState__UpdateTargetPose: u64 = 50902;
 /// `ThirdPersonState::UpdateTargetPose` as a function pointer type (high).
 pub type ThirdPersonState__UpdateTargetPose_fn = unsafe extern "C" fn(this: *mut crate::ThirdPersonState);
-/// `ThirdPersonState::ctor` at 0x8fd210 (semantic, high); signature (low): `ThirdPersonState * ctor(ThirdPersonState * this, undefined8 param_1, undefined4 param_2)`; base fields (+0x8 0, camera, id), handler enabled, vtables, every field to its default; targetOffset = (fOverShoulderPosX:Camera, 0, fOverShoulderPosZ:Camera); freeRotationEnabled 1, useShoulderOffsets 1 (high); semantic signature: `ThirdPersonState* (ThirdPersonState* this, PlayerCamera* camera, u32 id)`
+/// `ThirdPersonState::ctor` at 0x8fd210 (semantic, high); signature (low): `ThirdPersonState * ctor(ThirdPersonState * this, undefined8 param_1, undefined4 param_2)`; base fields (+0x8 0, camera, id), handler enabled, vtables, every field to its default; targetOffset = (fOverShoulderPosX:Camera, 0, fOverShoulderPosZ:Camera); freeRotationEnabled 1, useShoulderOffsets 1 (high); semantic signature: `ThirdPersonState* (ThirdPersonState* this, PlayerCamera* camera, CameraState id)`
 pub const ThirdPersonState__ctor: u64 = 50893;
 /// `ThirdPersonState::ctor` as a function pointer type (high).
 pub type ThirdPersonState__ctor_fn = unsafe extern "C" fn(this: *mut crate::ThirdPersonState, camera: *mut crate::PlayerCamera, id: u32) -> *mut crate::ThirdPersonState;
@@ -2228,7 +2284,7 @@ pub const TransformIndexedVerticesToWorld: u64 = 35375;
 /// `TransformLocalPosesToModelSpace` at 0xbf17b0 (semantic, high); signature (medium): `undefined TransformLocalPosesToModelSpace(int param_1, longlong param_2, float * param_3, longlong param_4, longlong param_5)`; model[i] = (parents[i] == -1 ? root : model[parents[i]]) * local[i] (rotate+translate, quaternion product, scale product) (high); semantic signature: `void (i32 count, const i16* parents, const hkQsTransform* root, const hkQsTransform* local, hkQsTransform* modelOut)`
 pub const TransformLocalPosesToModelSpace: u64 = 64109;
 /// `TransformLocalPosesToModelSpace` as a function pointer type (high).
-pub type TransformLocalPosesToModelSpace_fn = unsafe extern "C" fn(count: i32, parents: *const i16, root: *const c_void, local: *const c_void, modelOut: *mut c_void);
+pub type TransformLocalPosesToModelSpace_fn = unsafe extern "C" fn(count: i32, parents: *const i16, root: *const crate::hkQsTransform, local: *const crate::hkQsTransform, modelOut: *mut crate::hkQsTransform);
 /// `TransformLocalPosesToModelSpaceDefault` at 0xbf1250 (decompiler, high); signature (untiered): `undefined TransformLocalPosesToModelSpaceDefault(int param_1, longlong param_2, longlong param_3, longlong param_4)`
 pub const TransformLocalPosesToModelSpaceDefault: u64 = 64104;
 /// `TransformModelPosesToLocalSpace` at 0xbf1930 (decompiler, medium); signature (medium): `undefined TransformModelPosesToLocalSpace(int param_1, longlong param_2, float * param_3, longlong param_4, longlong param_5)`
@@ -2719,7 +2775,7 @@ pub const TweenMenuCameraState__StepAnglesAndZoom: u64 = 50930;
 pub type TweenMenuCameraState__StepAnglesAndZoom_fn = unsafe extern "C" fn(this: *mut crate::TweenMenuCameraState);
 /// `TweenMenuCameraState::Update` at 0x8ff3a0 (semantic, high); signature (untiered): `undefined Update(TweenMenuCameraState * this, undefined8 param_1, float param_2)`
 pub const TweenMenuCameraState__Update: u64 = 50925;
-/// `TweenMenuCameraState::ctor` at 0x8ff2a0 (semantic, high); signature (low): `TweenMenuCameraState * ctor(TweenMenuCameraState * this, undefined8 param_1, undefined4 param_2)`; base fields, vtable, baseRotation identity, angles zero, zoom FOVs 0, closing 0 (high); semantic signature: `TweenMenuCameraState* (TweenMenuCameraState* this, PlayerCamera* camera, u32 id)`
+/// `TweenMenuCameraState::ctor` at 0x8ff2a0 (semantic, high); signature (low): `TweenMenuCameraState * ctor(TweenMenuCameraState * this, undefined8 param_1, undefined4 param_2)`; base fields, vtable, baseRotation identity, angles zero, zoom FOVs 0, closing 0 (high); semantic signature: `TweenMenuCameraState* (TweenMenuCameraState* this, PlayerCamera* camera, CameraState id)`
 pub const TweenMenuCameraState__ctor: u64 = 50922;
 /// `TweenMenuCameraState::ctor` as a function pointer type (high).
 pub type TweenMenuCameraState__ctor_fn = unsafe extern "C" fn(this: *mut crate::TweenMenuCameraState, camera: *mut crate::PlayerCamera, id: u32) -> *mut crate::TweenMenuCameraState;
@@ -2731,10 +2787,10 @@ pub const UI3DScene__CreateLightsForDef: u64 = 52751;
 pub const UI3DScene__Init: u64 = 52726;
 /// `UI3DScene::Init` as a function pointer type (high).
 pub type UI3DScene__Init_fn = unsafe extern "C" fn(this: *mut c_void);
-/// `UI3DScene::Render` at 0x9899c0 (runtime, high); signature (untiered): `undefined8 * Render(longlong param_1, int param_2, longlong * param_3, char param_4)`; draws the menu 3D scene g_ShadowSceneNode[1] for the current mode: eye position into both accumulators, ProcessQueues on [1], shadow lights (0x98a670) for mode 4 when 0x20bbdd0 is set, optional depth pass (accumulator +0x18, renderMode 0xc) and shadow masks (0x98a3c0), then the cull of the mode's root with accumulator +0x10 and the draw (high); semantic signature: `void (UI3DScene* this, i32 mode, NiCamera* camera, bool depthPrepass)`
+/// `UI3DScene::Render` at 0x9899c0 (runtime, high); signature (untiered): `undefined8 * Render(longlong param_1, int param_2, longlong * param_3, char param_4)`; draws the menu 3D scene g_ShadowSceneNode[1] for the current mode: eye position into both accumulators, ProcessQueues on [1], shadow lights (0x98a670) for mode 4 when 0x20bbdd0 is set, optional depth pass (accumulator +0x18, renderMode 0xc) and shadow masks (0x98a3c0), then the cull of the mode's root with accumulator +0x10 and the draw (high); semantic signature: `void (UI3DScene* this, Menu3DMode mode, NiCamera* camera, bool depthPrepass)`
 pub const UI3DScene__Render: u64 = 52727;
 /// `UI3DScene::Render` as a function pointer type (high).
-pub type UI3DScene__Render_fn = unsafe extern "C" fn(this: *mut c_void, mode: i32, camera: *mut crate::NiCamera, depthPrepass: bool);
+pub type UI3DScene__Render_fn = unsafe extern "C" fn(this: *mut c_void, mode: u32, camera: *mut crate::NiCamera, depthPrepass: bool);
 /// `UI3DScene::RenderShadowMasks` at 0x98a3c0 (semantic, medium); signature (untiered): `undefined RenderShadowMasks(void)`; one BSUtilityShader shadow-mask pass per frameShadowLights entry of [1]: technique bit 0x400000 frustum (slot 5), 0x1000000 two-map parabolic (slot 8), else 0x800000 (medium); semantic signature: `void ()`
 pub const UI3DScene__RenderShadowMasks: u64 = 52728;
 /// `UI3DScene::UpdateAndRenderShadowLights` at 0x98a670 (runtime, high); signature (untiered): `undefined UpdateAndRenderShadowLights(longlong param_1, longlong param_2)`; for at most 4 shadow lights of [1]: slot 16 with the UI camera, UpdateLight, frameShadowLights, screen rect, slot 9 CullCasters on the mode's root, else slot 12; then slot 10 RenderShadowMaps over frameShadowLights (high); semantic signature: `void (UI3DScene* this, NiCamera* camera)`
@@ -2744,11 +2800,11 @@ pub type UI3DScene__UpdateAndRenderShadowLights_fn = unsafe extern "C" fn(this: 
 /// `UI3DSceneManager::SetCameraLocalRotate` at 0x98b180 (semantic, high); signature (untiered): `undefined SetCameraLocalRotate(longlong param_1, undefined8 * param_2)`; menu 3D scene camera (+0x20) local rotation (+0x48..+0x68) = rotate, then UpdateNode (high); semantic signature: `void (UI3DSceneManager* this, const NiMatrix3* rotate)`
 pub const UI3DSceneManager__SetCameraLocalRotate: u64 = 52741;
 /// `UI3DSceneManager::SetCameraLocalRotate` as a function pointer type (high).
-pub type UI3DSceneManager__SetCameraLocalRotate_fn = unsafe extern "C" fn(this: *mut c_void, rotate: *const c_void);
+pub type UI3DSceneManager__SetCameraLocalRotate_fn = unsafe extern "C" fn(this: *mut c_void, rotate: *const crate::NiMatrix3);
 /// `UI3DSceneManager::SetCameraLocalTranslate` at 0x98b0d0 (semantic, high); signature (untiered): `undefined SetCameraLocalTranslate(longlong param_1, undefined4 * param_2)`; menu 3D scene camera (+0x20) local translation (+0x6c..+0x74) = translate, then UpdateNode with a zeroed NiUpdateData; nothing when the camera is null (high); semantic signature: `void (UI3DSceneManager* this, const NiPoint3* translate)`
 pub const UI3DSceneManager__SetCameraLocalTranslate: u64 = 52739;
 /// `UI3DSceneManager::SetCameraLocalTranslate` as a function pointer type (high).
-pub type UI3DSceneManager__SetCameraLocalTranslate_fn = unsafe extern "C" fn(this: *mut c_void, translate: *const c_void);
+pub type UI3DSceneManager__SetCameraLocalTranslate_fn = unsafe extern "C" fn(this: *mut c_void, translate: *const crate::NiPoint3);
 /// `UI3DSceneManager::UpdateCurrentModeRoot` at 0x98ab90 (semantic, high); signature (untiered): `undefined UpdateCurrentModeRoot(longlong param_1, undefined8 param_2)`; NiAVObject::UpdateNode(roots[currentMode]) (roots +0x38, mode +0x90) (high); semantic signature: `void (UI3DSceneManager* this, NiUpdateData* data)`
 pub const UI3DSceneManager__UpdateCurrentModeRoot: u64 = 52732;
 /// `UI3DSceneManager::UpdateCurrentModeRoot` as a function pointer type (high).
@@ -4246,7 +4302,7 @@ pub const UpdateTempNodeLifetimes: u64 = 76110;
 /// `UpdateTerrainLOD` at 0x5160c0 (semantic, high); signature (untiered): `ulonglong UpdateTerrainLOD(char * param_1, float * param_2, uint * param_3, undefined8 param_4)`; per-worldspace terrain LOD update around a position: closes on a menu, decides the above-max-height state (fCameraAboveMaxHeightThreshold, skipped in the free camera state cameraStates[3]), then with bUseNewTerrainSystem updates the quadtree (flag bit 0 full, bit 1 recursive) (high); semantic signature: `void (TerrainManager* manager, const NiPoint3* position, u32* updateFlags)`
 pub const UpdateTerrainLOD: u64 = 31802;
 /// `UpdateTerrainLOD` as a function pointer type (high).
-pub type UpdateTerrainLOD_fn = unsafe extern "C" fn(manager: *mut c_void, position: *const c_void, updateFlags: *mut u32);
+pub type UpdateTerrainLOD_fn = unsafe extern "C" fn(manager: *mut c_void, position: *const crate::NiPoint3, updateFlags: *mut u32);
 /// `UpdateTerrainLODFromCameraPosition` at 0x6e6420 (runtime, high); signature (untiered): `undefined UpdateTerrainLODFromCameraPosition(void)`; frame job 'Partial Terrain Manager Update': PlayerCamera::GetPosition, then (with bEnableStippleFade:Display) ID_13389(g_TES), and UpdateTerrainLOD(GetField90FollowingField158Chain(the player's worldspace), &cameraPosition, &0) (high); semantic signature: `void (void)`
 pub const UpdateTerrainLODFromCameraPosition: u64 = 39102;
 /// `UpdateTerrainLODFromCameraPosition` as a function pointer type (high).
@@ -4400,7 +4456,7 @@ pub type VATS__AdvanceCameraEntry_fn = unsafe extern "C" fn(this: *mut c_void) -
 /// `VATS::GetCameraLookAtPoint` at 0x807fd0 (semantic, high); signature (untiered): `float * GetCameraLookAtPoint(longlong param_1, float * param_2)`; current shot's GetLookAtPoint, else (0,0,0); when that is (0,0,0): attacker 3D world translate with z + the player's firstPersonCameraHeight (high); semantic signature: `NiPoint3* (VATS* vats, NiPoint3* out)`
 pub const VATS__GetCameraLookAtPoint: u64 = 44296;
 /// `VATS::GetCameraLookAtPoint` as a function pointer type (high).
-pub type VATS__GetCameraLookAtPoint_fn = unsafe extern "C" fn(vats: *mut c_void, out: *mut c_void) -> *mut c_void;
+pub type VATS__GetCameraLookAtPoint_fn = unsafe extern "C" fn(vats: *mut c_void, out: *mut crate::NiPoint3) -> *mut crate::NiPoint3;
 /// `VATS::ICommandListVisitor::vdtor` at 0x809540 (layout_inference, medium); signature (low): `ICommandListVisitor * vdtor(ICommandListVisitor * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const VATS__ICommandListVisitor__vdtor: u64 = 44320;
 /// `VATS::SetSecondProjectileAndAdvanceShots` at 0x808140 (semantic, high); signature (untiered): `undefined SetSecondProjectileAndAdvanceShots(longlong param_1, undefined8 param_2)`; VATS+0x50 = projectile; with a current shot: UpdateVATSCameraState(first command) and, when VATS+0x3c (min-time left) is 0, advance shots while shot.action < phase (high); semantic signature: `void (VATS* vats, Projectile* projectile)`
@@ -4422,10 +4478,10 @@ pub type VATSCameraState__SetAngles_fn = unsafe extern "C" fn(this: *mut crate::
 /// `VATSCameraState::SetPosition` at 0x9002a0 (semantic, high); signature (untiered): `undefined SetPosition(longlong param_1, undefined4 * param_2)`; copies the position into +0x2c..+0x34 (the VATS camera position slot 5 returns) (high); semantic signature: `void (VATSCameraState* this, const NiPoint3* position)`
 pub const VATSCameraState__SetPosition: u64 = 50939;
 /// `VATSCameraState::SetPosition` as a function pointer type (high).
-pub type VATSCameraState__SetPosition_fn = unsafe extern "C" fn(this: *mut crate::VATSCameraState, position: *const c_void);
+pub type VATSCameraState__SetPosition_fn = unsafe extern "C" fn(this: *mut crate::VATSCameraState, position: *const crate::NiPoint3);
 /// `VATSCameraState::Update` at 0x8ffac0 (semantic, high); signature (untiered): `undefined Update(VATSCameraState * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
 pub const VATSCameraState__Update: u64 = 50935;
-/// `VATSCameraState::ctor` at 0x8ffa20 (semantic, high); signature (low): `VATSCameraState * ctor(VATSCameraState * this, undefined8 param_1, undefined4 param_2)`; refCount 0, vtable 0x196ea58, camera, id, rotationEuler = (0,0,0) from 0x20ccc28, position = 0 (high); semantic signature: `VATSCameraState* (VATSCameraState* this, TESCamera* camera, u32 id)`
+/// `VATSCameraState::ctor` at 0x8ffa20 (semantic, high); signature (low): `VATSCameraState * ctor(VATSCameraState * this, undefined8 param_1, undefined4 param_2)`; refCount 0, vtable 0x196ea58, camera, id, rotationEuler = (0,0,0) from 0x20ccc28, position = 0 (high); semantic signature: `VATSCameraState* (VATSCameraState* this, TESCamera* camera, CameraState id)`
 pub const VATSCameraState__ctor: u64 = 50933;
 /// `VATSCameraState::ctor` as a function pointer type (high).
 pub type VATSCameraState__ctor_fn = unsafe extern "C" fn(this: *mut crate::VATSCameraState, camera: *mut crate::TESCamera, id: u32) -> *mut crate::VATSCameraState;
@@ -8661,31 +8717,3 @@ pub const _anon_CE40B4D9__AutoRegisterCombatMagicCaster_CombatMagicCasterDisarm_
 pub const _anon_CE40B4D9__AutoRegisterCombatMagicCaster_CombatMagicCasterDisarm__ctor_sub3: u64 = 46814;
 /// `_anon_CE40B4D9::AutoRegisterCombatMagicCaster<CombatMagicCasterDisarm>::ctor_sub4` at 0x84feb0 (callgraph, medium); signature (untiered): `uint ctor_sub4(void)`
 pub const _anon_CE40B4D9__AutoRegisterCombatMagicCaster_CombatMagicCasterDisarm__ctor_sub4: u64 = 46829;
-/// `_anon_CE40B4D9::AutoRegisterCombatMagicCaster<CombatMagicCasterDisarm>::vdtor` at 0x8411f0 (slot_propagation, medium); signature (low): `AutoRegisterCombatMagicCaster<CombatMagicCasterDisarm> * vdtor(AutoRegisterCombatMagicCaster<CombatMagicCasterDisarm> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const _anon_CE40B4D9__AutoRegisterCombatMagicCaster_CombatMagicCasterDisarm__vdtor: u64 = 45880;
-/// `_anon_CE40B4D9::AutoRegisterCombatMagicCaster<CombatMagicCasterInvisibility>::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterInvisibility_vdtor` at 0x8313fc (slot_propagation, medium); signature (high): `undefined AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterInvisibility_vdtor(AutoRegisterCombatMagicCaster<CombatMagicCasterInvisibility> * this)`
-pub const _anon_CE40B4D9__AutoRegisterCombatMagicCaster_CombatMagicCasterInvisibility__AutoRegisterCombatO_fe3d74036da0: u64 = 45201;
-/// `_anon_CE40B4D9::AutoRegisterCombatMagicCaster<CombatMagicCasterInvisibility>::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterInvisibility_vdtor` at 0x831420 (slot_propagation, medium); signature (high): `undefined AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterInvisibility_vdtor(AutoRegisterCombatMagicCaster<CombatMagicCasterInvisibility> * this)`
-pub const _anon_CE40B4D9__AutoRegisterCombatMagicCaster_CombatMagicCasterInvisibility__AutoRegisterCombatO_fdcf8ee63110: u64 = 45204;
-/// `_anon_CE40B4D9::AutoRegisterCombatMagicCaster<CombatMagicCasterInvisibility>::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterInvisibility_vdtor` at 0x83142c (slot_propagation, medium); signature (high): `undefined AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterInvisibility_vdtor(AutoRegisterCombatMagicCaster<CombatMagicCasterInvisibility> * this)`
-pub const _anon_CE40B4D9__AutoRegisterCombatMagicCaster_CombatMagicCasterInvisibility__AutoRegisterCombatO_ba121fd881a5: u64 = 45205;
-/// `_anon_CE40B4D9::AutoRegisterCombatMagicCaster<CombatMagicCasterInvisibility>::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterInvisibility_vdtor` at 0x831408 (slot_propagation, medium); signature (high): `undefined AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterInvisibility_vdtor(AutoRegisterCombatMagicCaster<CombatMagicCasterInvisibility> * this)`
-pub const _anon_CE40B4D9__AutoRegisterCombatMagicCaster_CombatMagicCasterInvisibility__AutoRegisterCombatO_bc40f50dea15: u64 = 45202;
-/// `_anon_CE40B4D9::AutoRegisterCombatMagicCaster<CombatMagicCasterInvisibility>::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterInvisibility_vdtor` at 0x831414 (slot_propagation, medium); signature (high): `undefined AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterInvisibility_vdtor(AutoRegisterCombatMagicCaster<CombatMagicCasterInvisibility> * this)`
-pub const _anon_CE40B4D9__AutoRegisterCombatMagicCaster_CombatMagicCasterInvisibility__AutoRegisterCombatO_ecf9423bace4: u64 = 45203;
-/// `_anon_CE40B4D9::AutoRegisterCombatMagicCaster<CombatMagicCasterInvisibility>::ctor` at 0x84b0c0 (layout_inference, high); signature (high): `AutoRegisterCombatMagicCaster<CombatMagicCasterInvisibility> * ctor(AutoRegisterCombatMagicCaster<CombatMagicCasterInvisibility> * this)`
-pub const _anon_CE40B4D9__AutoRegisterCombatMagicCaster_CombatMagicCasterInvisibility__ctor: u64 = 46565;
-/// `_anon_CE40B4D9::AutoRegisterCombatMagicCaster<CombatMagicCasterInvisibility>::ctor_sub0` at 0x84dd80 (callgraph, medium); signature (untiered): `uint ctor_sub0(void)`
-pub const _anon_CE40B4D9__AutoRegisterCombatMagicCaster_CombatMagicCasterInvisibility__ctor_sub0: u64 = 46770;
-/// `_anon_CE40B4D9::AutoRegisterCombatMagicCaster<CombatMagicCasterInvisibility>::ctor_sub1` at 0x84e5f0 (callgraph, medium); signature (untiered): `uint ctor_sub1(void)`
-pub const _anon_CE40B4D9__AutoRegisterCombatMagicCaster_CombatMagicCasterInvisibility__ctor_sub1: u64 = 46785;
-/// `_anon_CE40B4D9::AutoRegisterCombatMagicCaster<CombatMagicCasterInvisibility>::ctor_sub2` at 0x84ee60 (callgraph, medium); signature (untiered): `uint ctor_sub2(void)`
-pub const _anon_CE40B4D9__AutoRegisterCombatMagicCaster_CombatMagicCasterInvisibility__ctor_sub2: u64 = 46800;
-/// `_anon_CE40B4D9::AutoRegisterCombatMagicCaster<CombatMagicCasterInvisibility>::ctor_sub3` at 0x84f6d0 (callgraph, medium); signature (untiered): `uint ctor_sub3(void)`
-pub const _anon_CE40B4D9__AutoRegisterCombatMagicCaster_CombatMagicCasterInvisibility__ctor_sub3: u64 = 46815;
-/// `_anon_CE40B4D9::AutoRegisterCombatMagicCaster<CombatMagicCasterInvisibility>::ctor_sub4` at 0x84ff40 (callgraph, medium); signature (untiered): `uint ctor_sub4(void)`
-pub const _anon_CE40B4D9__AutoRegisterCombatMagicCaster_CombatMagicCasterInvisibility__ctor_sub4: u64 = 46830;
-/// `_anon_CE40B4D9::AutoRegisterCombatMagicCaster<CombatMagicCasterInvisibility>::vdtor` at 0x847740 (slot_propagation, medium); signature (low): `AutoRegisterCombatMagicCaster<CombatMagicCasterInvisibility> * vdtor(AutoRegisterCombatMagicCaster<CombatMagicCasterInvisibility> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const _anon_CE40B4D9__AutoRegisterCombatMagicCaster_CombatMagicCasterInvisibility__vdtor: u64 = 46291;
-/// `_anon_CE40B4D9::AutoRegisterCombatMagicCaster<CombatMagicCasterLight>::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterLight_vdtor` at 0x83102c (slot_propagation, medium); signature (high): `undefined AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterLight_vdtor(AutoRegisterCombatMagicCaster<CombatMagicCasterLight> * this)`
-pub const _anon_CE40B4D9__AutoRegisterCombatMagicCaster_CombatMagicCasterLight__AutoRegisterCombatObject_C_aecebe778287: u64 = 45181;

@@ -40,6 +40,7 @@ impl crate::BSFixedString {
     ///
     /// Semantic, events pass, high; ledger semantic evidence, name high; id 69161, rva 0xeb0f90.
     /// `BSFixedString* (BSFixedString* this, const char* text)`
+    /// May be null: `text`.
     ///
     /// # Safety
     /// It constructs or destroys an object in place.
@@ -96,9 +97,10 @@ impl crate::ButtonEvent {
     /// `ButtonEvent::Init`: fill a stand-alone ButtonEvent (menus map one through ProcessInputEventMappings)
     ///
     /// Semantic, input pass, high; ledger semantic evidence, name high; id 68680, rva 0xcfb060.
-    /// `void (ButtonEvent* this, u32 device, u32 idCode, float value, float heldDownSecs)`
+    /// `void (ButtonEvent* this, InputDevice device, u32 idCode, float value, float heldDownSecs)`
+    /// Retyped: device u32 -> InputDevice: InputDevice (0 keyboard, 1 mouse, 2 gamepad, 7 none/all); ButtonEvent device.
     #[inline]
-    pub fn init(&self, device: u32, idCode: u32, value: f32, heldDownSecs: f32) { unsafe { function!(68680, (*const Self, u32, u32, f32, f32))(core::ptr::from_ref(self), device, idCode, value, heldDownSecs) } }
+    pub fn init(&self, device: crate::InputDevice, idCode: u32, value: f32, heldDownSecs: f32) { unsafe { function!(68680, (*const Self, crate::InputDevice, u32, f32, f32))(core::ptr::from_ref(self), device, idCode, value, heldDownSecs) } }
     /// `ButtonEvent::IsPressed`: value != 0 && heldDownSecs == 0
     ///
     /// Semantic, input pass, high; ledger semantic evidence, name high; id 68601, rva 0xcf2e80.
@@ -617,6 +619,7 @@ pub unsafe fn bs_string_pool__get_entry(out: *mut *mut crate::BSStringPool__Entr
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 38348, rva 0x6c11f0.
 /// `void (BSTEventSource<ActorItemEquipped::Event>* this, BSTEventSink<ActorItemEquipped::Event>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -635,6 +638,7 @@ pub unsafe fn bst_event_source_actor_item_equipped__event__notify(this: *mut c_v
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 38403, rva 0x6c2f60.
 /// `void (BSTEventSource<ActorItemEquipped::Event>* this, BSTEventSink<ActorItemEquipped::Event>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -644,6 +648,7 @@ pub unsafe fn bst_event_source_actor_item_equipped__event__remove_event_sink(thi
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 38349, rva 0x6c1370.
 /// `void (BSTEventSource<ActorKill::Event>* this, BSTEventSink<ActorKill::Event>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -662,6 +667,7 @@ pub unsafe fn bst_event_source_actor_kill__event__notify(this: *mut c_void, even
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 38404, rva 0x6c30f0.
 /// `void (BSTEventSource<ActorKill::Event>* this, BSTEventSink<ActorKill::Event>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -671,6 +677,7 @@ pub unsafe fn bst_event_source_actor_kill__event__remove_event_sink(this: *mut c
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 38350, rva 0x6c14f0.
 /// `void (BSTEventSource<AssaultCrime::Event>* this, BSTEventSink<AssaultCrime::Event>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -689,6 +696,7 @@ pub unsafe fn bst_event_source_assault_crime__event__notify(this: *mut c_void, e
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 38405, rva 0x6c3280.
 /// `void (BSTEventSource<AssaultCrime::Event>* this, BSTEventSink<AssaultCrime::Event>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -698,6 +706,7 @@ pub unsafe fn bst_event_source_assault_crime__event__remove_event_sink(this: *mu
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 35181, rva 0x5eb300.
 /// `void (BSTEventSource<BGSActorCellEvent>* this, BSTEventSink<BGSActorCellEvent>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -716,6 +725,7 @@ pub unsafe fn bst_event_source_bgs_actor_cell_event__notify(this: *mut c_void, e
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 35188, rva 0x5eba40.
 /// `void (BSTEventSource<BGSActorCellEvent>* this, BSTEventSink<BGSActorCellEvent>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -734,6 +744,7 @@ pub unsafe fn bst_event_source_bgs_actor_death_event__notify(this: *mut c_void, 
 ///
 /// Semantic, events pass, medium; ledger xref_inference evidence, name medium; id 39773, rva 0x71f010.
 /// `void (BSTEventSource<BGSEventProcessedEvent>* this, BSTEventSink<BGSEventProcessedEvent>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -752,6 +763,7 @@ pub unsafe fn bst_event_source_bgs_event_processed_event__notify(this: *mut c_vo
 ///
 /// Semantic, events pass, medium; ledger xref_inference evidence, name medium; id 53779, rva 0x9cc910.
 /// `void (BSTEventSource<BGSEventProcessedEvent>* this, BSTEventSink<BGSEventProcessedEvent>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -761,6 +773,7 @@ pub unsafe fn bst_event_source_bgs_event_processed_event__remove_event_sink(this
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 36782, rva 0x662fb0.
 /// `void (BSTEventSource<BGSFootstepEvent>* this, BSTEventSink<BGSFootstepEvent>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -779,6 +792,7 @@ pub unsafe fn bst_event_source_bgs_footstep_event__notify(this: *mut c_void, eve
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 36801, rva 0x664370.
 /// `void (BSTEventSource<BGSFootstepEvent>* this, BSTEventSink<BGSFootstepEvent>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -788,6 +802,7 @@ pub unsafe fn bst_event_source_bgs_footstep_event__remove_event_sink(this: *mut 
 ///
 /// Semantic, events pass, medium; ledger xref_inference evidence, name medium; id 34011, rva 0x5b9680.
 /// `void (BSTEventSource<BGSSaveLoadManagerEvent>* this, BSTEventSink<BGSSaveLoadManagerEvent>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -806,6 +821,7 @@ pub unsafe fn bst_event_source_bgs_save_load_manager_event__notify(this: *mut c_
 ///
 /// Semantic, events pass, medium; ledger xref_inference evidence, name medium; id 34015, rva 0x5b9a40.
 /// `void (BSTEventSource<BGSSaveLoadManagerEvent>* this, BSTEventSink<BGSSaveLoadManagerEvent>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -815,6 +831,7 @@ pub unsafe fn bst_event_source_bgs_save_load_manager_event__remove_event_sink(th
 ///
 /// Semantic, events pass, medium; ledger xref_inference evidence, name medium; id 34012, rva 0x5b9800.
 /// `void (BSTEventSource<BSGamerProfileEvent>* this, BSTEventSink<BSGamerProfileEvent>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -833,6 +850,7 @@ pub unsafe fn bst_event_source_bs_gamer_profile_event__notify(this: *mut c_void,
 ///
 /// Semantic, events pass, medium; ledger xref_inference evidence, name medium; id 34016, rva 0x5b9bd0.
 /// `void (BSTEventSource<BSGamerProfileEvent>* this, BSTEventSink<BSGamerProfileEvent>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -851,6 +869,7 @@ pub unsafe fn bst_event_source_bs_music_event__notify(this: *mut c_void, event: 
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 53653, rva 0x9c2c00.
 /// `void (BSTEventSource<BSPathEvent>* this, BSTEventSink<BSPathEvent>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -860,6 +879,7 @@ pub unsafe fn bst_event_source_bs_path_event__add_event_sink(this: *mut c_void, 
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 53656, rva 0x9c3070.
 /// `void (BSTEventSource<BSPathEvent>* this, BSTEventSink<BSPathEvent>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -869,6 +889,7 @@ pub unsafe fn bst_event_source_bs_path_event__remove_event_sink(this: *mut c_voi
 ///
 /// Semantic, events pass, medium; ledger xref_inference evidence, name medium; id 51733, rva 0x93c990.
 /// `void (BSTEventSource<BSRemoteGamepadEvent>* this, BSTEventSink<BSRemoteGamepadEvent>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -878,6 +899,7 @@ pub unsafe fn bst_event_source_bs_remote_gamepad_event__add_event_sink(this: *mu
 ///
 /// Semantic, events pass, medium; ledger xref_inference evidence, name medium; id 51742, rva 0x93d020.
 /// `void (BSTEventSource<BSRemoteGamepadEvent>* this, BSTEventSink<BSRemoteGamepadEvent>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -887,6 +909,7 @@ pub unsafe fn bst_event_source_bs_remote_gamepad_event__remove_event_sink(this: 
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 69951, rva 0xed2f90.
 /// `void (BSTEventSource<BSResource::ArchiveRegisteredEvent>* this, BSTEventSink<BSResource::ArchiveRegisteredEvent>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -905,6 +928,7 @@ pub unsafe fn bst_event_source_bs_resource__archive_registered_event__notify(thi
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 69958, rva 0xed3730.
 /// `void (BSTEventSource<BSResource::ArchiveRegisteredEvent>* this, BSTEventSink<BSResource::ArchiveRegisteredEvent>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -914,6 +938,7 @@ pub unsafe fn bst_event_source_bs_resource__archive_registered_event__remove_eve
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 69953, rva 0xed3290.
 /// `void (BSTEventSource<BSResource::NameFoundEvent>* this, BSTEventSink<BSResource::NameFoundEvent>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -932,6 +957,7 @@ pub unsafe fn bst_event_source_bs_resource__name_found_event__notify(this: *mut 
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 69960, rva 0xed3a50.
 /// `void (BSTEventSource<BSResource::NameFoundEvent>* this, BSTEventSink<BSResource::NameFoundEvent>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -941,6 +967,7 @@ pub unsafe fn bst_event_source_bs_resource__name_found_event__remove_event_sink(
 ///
 /// Semantic, events pass, medium; ledger xref_inference evidence, name medium; id 35877, rva 0x62f900.
 /// `void (BSTEventSource<BSSaveDataEvent>* this, BSTEventSink<BSSaveDataEvent>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -950,6 +977,7 @@ pub unsafe fn bst_event_source_bs_save_data_event__add_event_sink(this: *mut c_v
 ///
 /// Semantic, events pass, medium; ledger xref_inference evidence, name medium; id 35892, rva 0x6309a0.
 /// `void (BSTEventSource<BSSaveDataEvent>* this, BSTEventSink<BSSaveDataEvent>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -968,6 +996,7 @@ pub unsafe fn bst_event_source_bs_script__stats_event__notify(this: *mut c_void,
 ///
 /// Semantic, events pass, high; ledger runtime evidence, name high; id 13670, rva 0x1b5440.
 /// `void (BSTEventSource<BSSystemEvent>* this, BSTEventSink<BSSystemEvent>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// `this` must point to what the engine expects.
@@ -977,6 +1006,7 @@ pub unsafe fn bst_event_source_bs_system_event__add_event_sink(this: *mut c_void
 ///
 /// Semantic, events pass, medium; ledger xref_inference evidence, name medium; id 13677, rva 0x1b5f10.
 /// `void (BSTEventSource<BSSystemEvent>* this, BSTEventSink<BSSystemEvent>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -995,6 +1025,7 @@ pub unsafe fn bst_event_source_bs_task_manager_wait_action__notify(this: *mut c_
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 68463, rva 0xceb960.
 /// `void (BSTEventSource<BSThreadEvent::ThreadEvent>* this, BSTEventSink<BSThreadEvent::ThreadEvent>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -1013,6 +1044,7 @@ pub unsafe fn bst_event_source_bs_thread_event__thread_event__notify(this: *mut 
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 68465, rva 0xcebb40.
 /// `void (BSTEventSource<BSThreadEvent::ThreadEvent>* this, BSTEventSink<BSThreadEvent::ThreadEvent>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -1031,6 +1063,7 @@ pub unsafe fn bst_event_source_beam_projectile_impact_event__notify(this: *mut c
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 17866, rva 0x280cc0.
 /// `void (BSTEventSource<BooksRead::Event>* this, BSTEventSink<BooksRead::Event>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -1049,6 +1082,7 @@ pub unsafe fn bst_event_source_books_read__event__notify(this: *mut c_void, even
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 17869, rva 0x280f10.
 /// `void (BSTEventSource<BooksRead::Event>* this, BSTEventSink<BooksRead::Event>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -1058,6 +1092,7 @@ pub unsafe fn bst_event_source_books_read__event__remove_event_sink(this: *mut c
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 41079, rva 0x76f860.
 /// `void (BSTEventSource<Bounty::Event>* this, BSTEventSink<Bounty::Event>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -1076,6 +1111,7 @@ pub unsafe fn bst_event_source_bounty__event__notify(this: *mut c_void, event: *
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 41148, rva 0x773250.
 /// `void (BSTEventSource<Bounty::Event>* this, BSTEventSink<Bounty::Event>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -1085,6 +1121,7 @@ pub unsafe fn bst_event_source_bounty__event__remove_event_sink(this: *mut c_voi
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 51184, rva 0x915800.
 /// `void (BSTEventSource<ChestsLooted::Event>* this, BSTEventSink<ChestsLooted::Event>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -1103,6 +1140,7 @@ pub unsafe fn bst_event_source_chests_looted__event__notify(this: *mut c_void, e
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 51189, rva 0x915c20.
 /// `void (BSTEventSource<ChestsLooted::Event>* this, BSTEventSink<ChestsLooted::Event>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -1112,6 +1150,7 @@ pub unsafe fn bst_event_source_chests_looted__event__remove_event_sink(this: *mu
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 38673, rva 0x6d19c0.
 /// `void (BSTEventSource<ContractedDisease::Event>* this, BSTEventSink<ContractedDisease::Event>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -1130,6 +1169,7 @@ pub unsafe fn bst_event_source_contracted_disease__event__notify(this: *mut c_vo
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 38682, rva 0x6d2110.
 /// `void (BSTEventSource<ContractedDisease::Event>* this, BSTEventSink<ContractedDisease::Event>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -1139,6 +1179,7 @@ pub unsafe fn bst_event_source_contracted_disease__event__remove_event_sink(this
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 38674, rva 0x6d1b40.
 /// `void (BSTEventSource<CriticalHitEvent::Event>* this, BSTEventSink<CriticalHitEvent::Event>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -1157,6 +1198,7 @@ pub unsafe fn bst_event_source_critical_hit_event__event__notify(this: *mut c_vo
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 38683, rva 0x6d22a0.
 /// `void (BSTEventSource<CriticalHitEvent::Event>* this, BSTEventSink<CriticalHitEvent::Event>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -1166,6 +1208,7 @@ pub unsafe fn bst_event_source_critical_hit_event__event__remove_event_sink(this
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 41080, rva 0x76f9e0.
 /// `void (BSTEventSource<DaysJailed::Event>* this, BSTEventSink<DaysJailed::Event>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -1184,6 +1227,7 @@ pub unsafe fn bst_event_source_days_jailed__event__notify(this: *mut c_void, eve
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 41149, rva 0x7733e0.
 /// `void (BSTEventSource<DaysJailed::Event>* this, BSTEventSink<DaysJailed::Event>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -1193,6 +1237,7 @@ pub unsafe fn bst_event_source_days_jailed__event__remove_event_sink(this: *mut 
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 36330, rva 0x6471b0.
 /// `void (BSTEventSource<DaysPassed::Event>* this, BSTEventSink<DaysPassed::Event>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -1211,6 +1256,7 @@ pub unsafe fn bst_event_source_days_passed__event__notify(this: *mut c_void, eve
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 36332, rva 0x647390.
 /// `void (BSTEventSource<DaysPassed::Event>* this, BSTEventSink<DaysPassed::Event>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -1220,6 +1266,7 @@ pub unsafe fn bst_event_source_days_passed__event__remove_event_sink(this: *mut 
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 20782, rva 0x31c170.
 /// `void (BSTEventSource<DefaultObjectsReadyEvent::Event>* this, BSTEventSink<DefaultObjectsReadyEvent::Event>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -1238,6 +1285,7 @@ pub unsafe fn bst_event_source_default_objects_ready_event__event__notify(this: 
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 20784, rva 0x31c350.
 /// `void (BSTEventSource<DefaultObjectsReadyEvent::Event>* this, BSTEventSink<DefaultObjectsReadyEvent::Event>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -1247,6 +1295,7 @@ pub unsafe fn bst_event_source_default_objects_ready_event__event__remove_event_
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 38351, rva 0x6c1670.
 /// `void (BSTEventSource<DisarmedEvent::Event>* this, BSTEventSink<DisarmedEvent::Event>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -1265,6 +1314,7 @@ pub unsafe fn bst_event_source_disarmed_event__event__notify(this: *mut c_void, 
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 38406, rva 0x6c3410.
 /// `void (BSTEventSource<DisarmedEvent::Event>* this, BSTEventSink<DisarmedEvent::Event>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -1274,6 +1324,7 @@ pub unsafe fn bst_event_source_disarmed_event__event__remove_event_sink(this: *m
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 38521, rva 0x6c7770.
 /// `void (BSTEventSource<DragonSoulGained::Event>* this, BSTEventSink<DragonSoulGained::Event>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -1292,6 +1343,7 @@ pub unsafe fn bst_event_source_dragon_soul_gained__event__notify(this: *mut c_vo
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 38523, rva 0x6c7950.
 /// `void (BSTEventSource<DragonSoulGained::Event>* this, BSTEventSink<DragonSoulGained::Event>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -1301,6 +1353,7 @@ pub unsafe fn bst_event_source_dragon_soul_gained__event__remove_event_sink(this
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 41081, rva 0x76fb60.
 /// `void (BSTEventSource<FinePaid::Event>* this, BSTEventSink<FinePaid::Event>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -1319,6 +1372,7 @@ pub unsafe fn bst_event_source_fine_paid__event__notify(this: *mut c_void, event
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 41150, rva 0x773570.
 /// `void (BSTEventSource<FinePaid::Event>* this, BSTEventSink<FinePaid::Event>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -1328,6 +1382,7 @@ pub unsafe fn bst_event_source_fine_paid__event__remove_event_sink(this: *mut c_
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 38353, rva 0x6c1970.
 /// `void (BSTEventSource<GrandTheftHorse::Event>* this, BSTEventSink<GrandTheftHorse::Event>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -1346,6 +1401,7 @@ pub unsafe fn bst_event_source_grand_theft_horse__event__notify(this: *mut c_voi
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 38408, rva 0x6c3730.
 /// `void (BSTEventSource<GrandTheftHorse::Event>* this, BSTEventSink<GrandTheftHorse::Event>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -1355,6 +1411,7 @@ pub unsafe fn bst_event_source_grand_theft_horse__event__remove_event_sink(this:
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 52502, rva 0x975c30.
 /// `void (BSTEventSource<HoursPassed::Event>* this, BSTEventSink<HoursPassed::Event>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -1373,6 +1430,7 @@ pub unsafe fn bst_event_source_hours_passed__event__notify(this: *mut c_void, ev
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 52504, rva 0x975e10.
 /// `void (BSTEventSource<HoursPassed::Event>* this, BSTEventSink<HoursPassed::Event>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -1382,6 +1440,7 @@ pub unsafe fn bst_event_source_hours_passed__event__remove_event_sink(this: *mut
 ///
 /// Semantic, events pass, high; ledger runtime evidence, name high; id 36271, rva 0x644f40.
 /// `void (BSTEventSource<InputEvent*___ptr64>* this, BSTEventSink<InputEvent*___ptr64>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// `this` must point to what the engine expects.
@@ -1391,6 +1450,7 @@ pub unsafe fn bst_event_source_input_event____ptr64__add_event_sink(this: *mut c
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 36275, rva 0x645140.
 /// `void (BSTEventSource<InputEvent*___ptr64>* this, BSTEventSink<InputEvent*___ptr64>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -1400,6 +1460,7 @@ pub unsafe fn bst_event_source_input_event____ptr64__remove_event_sink(this: *mu
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 16226, rva 0x241b90.
 /// `void (BSTEventSource<Inventory::Event>* this, BSTEventSink<Inventory::Event>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -1418,6 +1479,7 @@ pub unsafe fn bst_event_source_inventory__event__notify(this: *mut c_void, event
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 16231, rva 0x2420e0.
 /// `void (BSTEventSource<Inventory::Event>* this, BSTEventSink<Inventory::Event>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -1427,6 +1489,7 @@ pub unsafe fn bst_event_source_inventory__event__remove_event_sink(this: *mut c_
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 51405, rva 0x924a40.
 /// `void (BSTEventSource<ItemCrafted::Event>* this, BSTEventSink<ItemCrafted::Event>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -1445,6 +1508,7 @@ pub unsafe fn bst_event_source_item_crafted__event__notify(this: *mut c_void, ev
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 51445, rva 0x926df0.
 /// `void (BSTEventSource<ItemCrafted::Event>* this, BSTEventSink<ItemCrafted::Event>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -1454,6 +1518,7 @@ pub unsafe fn bst_event_source_item_crafted__event__remove_event_sink(this: *mut
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 41082, rva 0x76fce0.
 /// `void (BSTEventSource<ItemSteal::Event>* this, BSTEventSink<ItemSteal::Event>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -1472,6 +1537,7 @@ pub unsafe fn bst_event_source_item_steal__event__notify(this: *mut c_void, even
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 41151, rva 0x773700.
 /// `void (BSTEventSource<ItemSteal::Event>* this, BSTEventSink<ItemSteal::Event>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -1481,6 +1547,7 @@ pub unsafe fn bst_event_source_item_steal__event__remove_event_sink(this: *mut c
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 51185, rva 0x915980.
 /// `void (BSTEventSource<ItemsPickpocketed::Event>* this, BSTEventSink<ItemsPickpocketed::Event>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -1499,6 +1566,7 @@ pub unsafe fn bst_event_source_items_pickpocketed__event__notify(this: *mut c_vo
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 51190, rva 0x915db0.
 /// `void (BSTEventSource<ItemsPickpocketed::Event>* this, BSTEventSink<ItemsPickpocketed::Event>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -1508,6 +1576,7 @@ pub unsafe fn bst_event_source_items_pickpocketed__event__remove_event_sink(this
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 41083, rva 0x76fe60.
 /// `void (BSTEventSource<JailEscape::Event>* this, BSTEventSink<JailEscape::Event>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -1526,6 +1595,7 @@ pub unsafe fn bst_event_source_jail_escape__event__notify(this: *mut c_void, eve
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 41152, rva 0x773890.
 /// `void (BSTEventSource<JailEscape::Event>* this, BSTEventSink<JailEscape::Event>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -1535,6 +1605,7 @@ pub unsafe fn bst_event_source_jail_escape__event__remove_event_sink(this: *mut 
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 41084, rva 0x76ffe0.
 /// `void (BSTEventSource<Jailing::Event>* this, BSTEventSink<Jailing::Event>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -1553,6 +1624,7 @@ pub unsafe fn bst_event_source_jailing__event__notify(this: *mut c_void, event: 
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 41153, rva 0x773a20.
 /// `void (BSTEventSource<Jailing::Event>* this, BSTEventSink<Jailing::Event>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -1562,6 +1634,7 @@ pub unsafe fn bst_event_source_jailing__event__remove_event_sink(this: *mut c_vo
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 40321, rva 0x73b9e0.
 /// `void (BSTEventSource<LevelIncrease::Event>* this, BSTEventSink<LevelIncrease::Event>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -1580,6 +1653,7 @@ pub unsafe fn bst_event_source_level_increase__event__notify(this: *mut c_void, 
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 40325, rva 0x73bda0.
 /// `void (BSTEventSource<LevelIncrease::Event>* this, BSTEventSink<LevelIncrease::Event>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -1589,6 +1663,7 @@ pub unsafe fn bst_event_source_level_increase__event__remove_event_sink(this: *m
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 18436, rva 0x29d390.
 /// `void (BSTEventSource<LocationCleared::Event>* this, BSTEventSink<LocationCleared::Event>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -1607,6 +1682,7 @@ pub unsafe fn bst_event_source_location_cleared__event__notify(this: *mut c_void
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 18447, rva 0x29e1f0.
 /// `void (BSTEventSource<LocationCleared::Event>* this, BSTEventSink<LocationCleared::Event>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -1616,6 +1692,7 @@ pub unsafe fn bst_event_source_location_cleared__event__remove_event_sink(this: 
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 41085, rva 0x770160.
 /// `void (BSTEventSource<LocationDiscovery::Event>* this, BSTEventSink<LocationDiscovery::Event>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -1634,6 +1711,7 @@ pub unsafe fn bst_event_source_location_discovery__event__notify(this: *mut c_vo
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 41154, rva 0x773bb0.
 /// `void (BSTEventSource<LocationDiscovery::Event>* this, BSTEventSink<LocationDiscovery::Event>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -1643,6 +1721,7 @@ pub unsafe fn bst_event_source_location_discovery__event__remove_event_sink(this
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 51998, rva 0x950c90.
 /// `void (BSTEventSource<LocksPicked::Event>* this, BSTEventSink<LocksPicked::Event>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -1661,6 +1740,7 @@ pub unsafe fn bst_event_source_locks_picked__event__notify(this: *mut c_void, ev
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 52000, rva 0x950e70.
 /// `void (BSTEventSource<LocksPicked::Event>* this, BSTEventSink<LocksPicked::Event>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -1670,6 +1750,7 @@ pub unsafe fn bst_event_source_locks_picked__event__remove_event_sink(this: *mut
 ///
 /// Semantic, events pass, high; ledger runtime evidence, name high; id 35182, rva 0x5eb480.
 /// `void (BSTEventSource<MenuModeChangeEvent>* this, BSTEventSink<MenuModeChangeEvent>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// `this` must point to what the engine expects.
@@ -1679,6 +1760,7 @@ pub unsafe fn bst_event_source_menu_mode_change_event__add_event_sink(this: *mut
 ///
 /// Semantic, events pass, medium; ledger xref_inference evidence, name medium; id 35189, rva 0x5ebbd0.
 /// `void (BSTEventSource<MenuModeChangeEvent>* this, BSTEventSink<MenuModeChangeEvent>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -1688,6 +1770,7 @@ pub unsafe fn bst_event_source_menu_mode_change_event__remove_event_sink(this: *
 ///
 /// Semantic, events pass, high; ledger runtime evidence, name high; id 24925, rva 0x3ccde0.
 /// `void (BSTEventSource<MenuOpenCloseEvent>* this, BSTEventSink<MenuOpenCloseEvent>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// `this` must point to what the engine expects.
@@ -1697,6 +1780,7 @@ pub unsafe fn bst_event_source_menu_open_close_event__add_event_sink(this: *mut 
 ///
 /// Semantic, events pass, high; ledger runtime evidence, name high; id 24940, rva 0x3cd9e0.
 /// `void (BSTEventSource<MenuOpenCloseEvent>* this, BSTEventSink<MenuOpenCloseEvent>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// `this` must point to what the engine expects.
@@ -1706,6 +1790,7 @@ pub unsafe fn bst_event_source_menu_open_close_event__remove_event_sink(this: *m
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 38354, rva 0x6c1af0.
 /// `void (BSTEventSource<MurderCrime::Event>* this, BSTEventSink<MurderCrime::Event>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -1724,6 +1809,7 @@ pub unsafe fn bst_event_source_murder_crime__event__notify(this: *mut c_void, ev
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 38409, rva 0x6c38c0.
 /// `void (BSTEventSource<MurderCrime::Event>* this, BSTEventSink<MurderCrime::Event>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -1733,6 +1819,7 @@ pub unsafe fn bst_event_source_murder_crime__event__remove_event_sink(this: *mut
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 23952, rva 0x39c430.
 /// `void (BSTEventSource<ObjectiveState::Event>* this, BSTEventSink<ObjectiveState::Event>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -1751,6 +1838,7 @@ pub unsafe fn bst_event_source_objective_state__event__notify(this: *mut c_void,
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 23954, rva 0x39c610.
 /// `void (BSTEventSource<ObjectiveState::Event>* this, BSTEventSink<ObjectiveState::Event>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -1760,6 +1848,7 @@ pub unsafe fn bst_event_source_objective_state__event__remove_event_sink(this: *
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 41086, rva 0x7702e0.
 /// `void (BSTEventSource<Pickpocket::Event>* this, BSTEventSink<Pickpocket::Event>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -1778,6 +1867,7 @@ pub unsafe fn bst_event_source_pickpocket__event__notify(this: *mut c_void, even
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 41155, rva 0x773d40.
 /// `void (BSTEventSource<Pickpocket::Event>* this, BSTEventSink<Pickpocket::Event>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -1787,6 +1877,7 @@ pub unsafe fn bst_event_source_pickpocket__event__remove_event_sink(this: *mut c
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 41087, rva 0x770460.
 /// `void (BSTEventSource<PoisonedWeapon::Event>* this, BSTEventSink<PoisonedWeapon::Event>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -1805,6 +1896,7 @@ pub unsafe fn bst_event_source_poisoned_weapon__event__notify(this: *mut c_void,
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 41156, rva 0x773ed0.
 /// `void (BSTEventSource<PoisonedWeapon::Event>* this, BSTEventSink<PoisonedWeapon::Event>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -1814,6 +1906,7 @@ pub unsafe fn bst_event_source_poisoned_weapon__event__remove_event_sink(this: *
 ///
 /// Semantic, events pass, high; ledger runtime evidence, name high; id 30206, rva 0x4b8a50.
 /// `void (BSTEventSource<PositionPlayerEvent>* this, BSTEventSink<PositionPlayerEvent>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// `this` must point to what the engine expects.
@@ -1823,6 +1916,7 @@ pub unsafe fn bst_event_source_position_player_event__add_event_sink(this: *mut 
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 30209, rva 0x4b8c50.
 /// `void (BSTEventSource<PositionPlayerEvent>* this, BSTEventSink<PositionPlayerEvent>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -1832,6 +1926,7 @@ pub unsafe fn bst_event_source_position_player_event__remove_event_sink(this: *m
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 25199, rva 0x3e0040.
 /// `void (BSTEventSource<QuestStatus::Event>* this, BSTEventSink<QuestStatus::Event>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -1850,6 +1945,7 @@ pub unsafe fn bst_event_source_quest_status__event__notify(this: *mut c_void, ev
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 25214, rva 0x3e0cc0.
 /// `void (BSTEventSource<QuestStatus::Event>* this, BSTEventSink<QuestStatus::Event>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -1859,6 +1955,7 @@ pub unsafe fn bst_event_source_quest_status__event__remove_event_sink(this: *mut
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 52467, rva 0x9744e0.
 /// `void (BSTEventSource<RaceSexMenuEvent::NameChangedEvent>* this, BSTEventSink<RaceSexMenuEvent::NameChangedEvent>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -1877,6 +1974,7 @@ pub unsafe fn bst_event_source_race_sex_menu_event__name_changed_event__notify(t
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 52469, rva 0x9746c0.
 /// `void (BSTEventSource<RaceSexMenuEvent::NameChangedEvent>* this, BSTEventSink<RaceSexMenuEvent::NameChangedEvent>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -1886,6 +1984,7 @@ pub unsafe fn bst_event_source_race_sex_menu_event__name_changed_event__remove_e
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 41089, rva 0x770760.
 /// `void (BSTEventSource<ShoutAttack::Event>* this, BSTEventSink<ShoutAttack::Event>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -1904,6 +2003,7 @@ pub unsafe fn bst_event_source_shout_attack__event__notify(this: *mut c_void, ev
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 41158, rva 0x7741f0.
 /// `void (BSTEventSource<ShoutAttack::Event>* this, BSTEventSink<ShoutAttack::Event>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -1913,6 +2013,7 @@ pub unsafe fn bst_event_source_shout_attack__event__remove_event_sink(this: *mut
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 41090, rva 0x7708e0.
 /// `void (BSTEventSource<ShoutMastered::Event>* this, BSTEventSink<ShoutMastered::Event>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -1931,6 +2032,7 @@ pub unsafe fn bst_event_source_shout_mastered__event__notify(this: *mut c_void, 
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 41159, rva 0x774380.
 /// `void (BSTEventSource<ShoutMastered::Event>* this, BSTEventSink<ShoutMastered::Event>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -1940,6 +2042,7 @@ pub unsafe fn bst_event_source_shout_mastered__event__remove_event_sink(this: *m
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 40322, rva 0x73bb60.
 /// `void (BSTEventSource<SkillIncrease::Event>* this, BSTEventSink<SkillIncrease::Event>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -1958,6 +2061,7 @@ pub unsafe fn bst_event_source_skill_increase__event__notify(this: *mut c_void, 
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 40326, rva 0x73bf30.
 /// `void (BSTEventSource<SkillIncrease::Event>* this, BSTEventSink<SkillIncrease::Event>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -1967,6 +2071,7 @@ pub unsafe fn bst_event_source_skill_increase__event__remove_event_sink(this: *m
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 51889, rva 0x946c20.
 /// `void (BSTEventSource<SoulGemsUsed::Event>* this, BSTEventSink<SoulGemsUsed::Event>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -1985,6 +2090,7 @@ pub unsafe fn bst_event_source_soul_gems_used__event__notify(this: *mut c_void, 
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 51891, rva 0x946e00.
 /// `void (BSTEventSource<SoulGemsUsed::Event>* this, BSTEventSink<SoulGemsUsed::Event>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -1994,6 +2100,7 @@ pub unsafe fn bst_event_source_soul_gems_used__event__remove_event_sink(this: *m
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 38875, rva 0x6db7c0.
 /// `void (BSTEventSource<SoulsTrapped::Event>* this, BSTEventSink<SoulsTrapped::Event>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -2012,6 +2119,7 @@ pub unsafe fn bst_event_source_souls_trapped__event__notify(this: *mut c_void, e
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 38879, rva 0x6dbb80.
 /// `void (BSTEventSource<SoulsTrapped::Event>* this, BSTEventSink<SoulsTrapped::Event>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -2021,6 +2129,7 @@ pub unsafe fn bst_event_source_souls_trapped__event__remove_event_sink(this: *mu
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 42445, rva 0x7b4850.
 /// `void (BSTEventSource<SpellAttack::Event>* this, BSTEventSink<SpellAttack::Event>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -2039,6 +2148,7 @@ pub unsafe fn bst_event_source_spell_attack__event__notify(this: *mut c_void, ev
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 42467, rva 0x7b54f0.
 /// `void (BSTEventSource<SpellAttack::Event>* this, BSTEventSink<SpellAttack::Event>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -2048,6 +2158,7 @@ pub unsafe fn bst_event_source_spell_attack__event__remove_event_sink(this: *mut
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 38876, rva 0x6db940.
 /// `void (BSTEventSource<SpellsLearned::Event>* this, BSTEventSink<SpellsLearned::Event>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -2066,6 +2177,7 @@ pub unsafe fn bst_event_source_spells_learned__event__notify(this: *mut c_void, 
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 38880, rva 0x6dbd10.
 /// `void (BSTEventSource<SpellsLearned::Event>* this, BSTEventSink<SpellsLearned::Event>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -2075,6 +2187,7 @@ pub unsafe fn bst_event_source_spells_learned__event__remove_event_sink(this: *m
 ///
 /// Semantic, events pass, high; ledger runtime evidence, name high; id 54425, rva 0x9f1eb0.
 /// `void (BSTEventSource<TESActivateEvent>* this, BSTEventSink<TESActivateEvent>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// `this` must point to what the engine expects.
@@ -2093,6 +2206,7 @@ pub unsafe fn bst_event_source_tes_activate_event__notify(this: *mut c_void, eve
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 54522, rva 0x9f7730.
 /// `void (BSTEventSource<TESActivateEvent>* this, BSTEventSink<TESActivateEvent>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -2102,6 +2216,7 @@ pub unsafe fn bst_event_source_tes_activate_event__remove_event_sink(this: *mut 
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 54426, rva 0x9f2020.
 /// `void (BSTEventSource<TESActiveEffectApplyRemoveEvent>* this, BSTEventSink<TESActiveEffectApplyRemoveEvent>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -2111,6 +2226,7 @@ pub unsafe fn bst_event_source_tes_active_effect_apply_remove_event__add_event_s
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 54523, rva 0x9f78b0.
 /// `void (BSTEventSource<TESActiveEffectApplyRemoveEvent>* this, BSTEventSink<TESActiveEffectApplyRemoveEvent>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -2120,6 +2236,7 @@ pub unsafe fn bst_event_source_tes_active_effect_apply_remove_event__remove_even
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 54427, rva 0x9f2190.
 /// `void (BSTEventSource<TESActorLocationChangeEvent>* this, BSTEventSink<TESActorLocationChangeEvent>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -2138,6 +2255,7 @@ pub unsafe fn bst_event_source_tes_actor_location_change_event__notify(this: *mu
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 54524, rva 0x9f7a30.
 /// `void (BSTEventSource<TESActorLocationChangeEvent>* this, BSTEventSink<TESActorLocationChangeEvent>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -2147,6 +2265,7 @@ pub unsafe fn bst_event_source_tes_actor_location_change_event__remove_event_sin
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 524046, rva 0x9f2300.
 /// `void (BSTEventSource<TESAmiiboForcedStopDetectionEvent>* this, BSTEventSink<TESAmiiboForcedStopDetectionEvent>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -2156,6 +2275,7 @@ pub unsafe fn bst_event_source_tes_amiibo_forced_stop_detection_event__add_event
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 524047, rva 0x9f2470.
 /// `void (BSTEventSource<TESAmiiboTouchEvent>* this, BSTEventSink<TESAmiiboTouchEvent>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -2174,6 +2294,7 @@ pub unsafe fn bst_event_source_tes_amiibo_touch_event__notify(this: *mut c_void,
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 54428, rva 0x9f25e0.
 /// `void (BSTEventSource<TESBookReadEvent>* this, BSTEventSink<TESBookReadEvent>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -2192,6 +2313,7 @@ pub unsafe fn bst_event_source_tes_book_read_event__notify(this: *mut c_void, ev
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 54525, rva 0x9f7bb0.
 /// `void (BSTEventSource<TESBookReadEvent>* this, BSTEventSink<TESBookReadEvent>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -2201,6 +2323,7 @@ pub unsafe fn bst_event_source_tes_book_read_event__remove_event_sink(this: *mut
 ///
 /// Semantic, events pass, high; ledger runtime evidence, name high; id 54429, rva 0x9f2750.
 /// `void (BSTEventSource<TESCellAttachDetachEvent>* this, BSTEventSink<TESCellAttachDetachEvent>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// `this` must point to what the engine expects.
@@ -2219,6 +2342,7 @@ pub unsafe fn bst_event_source_tes_cell_attach_detach_event__notify(this: *mut c
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 54526, rva 0x9f7d30.
 /// `void (BSTEventSource<TESCellAttachDetachEvent>* this, BSTEventSink<TESCellAttachDetachEvent>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -2228,6 +2352,7 @@ pub unsafe fn bst_event_source_tes_cell_attach_detach_event__remove_event_sink(t
 ///
 /// Semantic, events pass, high; ledger runtime evidence, name high; id 54430, rva 0x9f28c0.
 /// `void (BSTEventSource<TESCellFullyLoadedEvent>* this, BSTEventSink<TESCellFullyLoadedEvent>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// `this` must point to what the engine expects.
@@ -2246,6 +2371,7 @@ pub unsafe fn bst_event_source_tes_cell_fully_loaded_event__notify(this: *mut c_
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 54527, rva 0x9f7eb0.
 /// `void (BSTEventSource<TESCellFullyLoadedEvent>* this, BSTEventSink<TESCellFullyLoadedEvent>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -2255,6 +2381,7 @@ pub unsafe fn bst_event_source_tes_cell_fully_loaded_event__remove_event_sink(th
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 19367, rva 0x2d57d0.
 /// `void (BSTEventSource<TESCellReadyToApplyDecalsEvent>* this, BSTEventSink<TESCellReadyToApplyDecalsEvent>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -2273,6 +2400,7 @@ pub unsafe fn bst_event_source_tes_cell_ready_to_apply_decals_event__notify(this
 ///
 /// Semantic, events pass, medium; ledger xref_inference evidence, name medium; id 19386, rva 0x2d6650.
 /// `void (BSTEventSource<TESCellReadyToApplyDecalsEvent>* this, BSTEventSink<TESCellReadyToApplyDecalsEvent>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -2282,6 +2410,7 @@ pub unsafe fn bst_event_source_tes_cell_ready_to_apply_decals_event__remove_even
 ///
 /// Semantic, events pass, high; ledger runtime evidence, name high; id 54431, rva 0x9f2a30.
 /// `void (BSTEventSource<TESCombatEvent>* this, BSTEventSink<TESCombatEvent>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// `this` must point to what the engine expects.
@@ -2300,6 +2429,7 @@ pub unsafe fn bst_event_source_tes_combat_event__notify(this: *mut c_void, event
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 54528, rva 0x9f8030.
 /// `void (BSTEventSource<TESCombatEvent>* this, BSTEventSink<TESCombatEvent>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -2309,6 +2439,7 @@ pub unsafe fn bst_event_source_tes_combat_event__remove_event_sink(this: *mut c_
 ///
 /// Semantic, events pass, high; ledger runtime evidence, name high; id 54432, rva 0x9f2ba0.
 /// `void (BSTEventSource<TESContainerChangedEvent>* this, BSTEventSink<TESContainerChangedEvent>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// `this` must point to what the engine expects.
@@ -2327,6 +2458,7 @@ pub unsafe fn bst_event_source_tes_container_changed_event__notify(this: *mut c_
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 54529, rva 0x9f81b0.
 /// `void (BSTEventSource<TESContainerChangedEvent>* this, BSTEventSink<TESContainerChangedEvent>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -2336,6 +2468,7 @@ pub unsafe fn bst_event_source_tes_container_changed_event__remove_event_sink(th
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 36149, rva 0x63d8d0.
 /// `void (BSTEventSource<TESDataHandlerPostBuildFileListEvent>* this, BSTEventSink<TESDataHandlerPostBuildFileListEvent>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -2345,6 +2478,7 @@ pub unsafe fn bst_event_source_tes_data_handler_post_build_file_list_event__add_
 ///
 /// Semantic, events pass, medium; ledger xref_inference evidence, name medium; id 36154, rva 0x63e1e0.
 /// `void (BSTEventSource<TESDataHandlerPostBuildFileListEvent>* this, BSTEventSink<TESDataHandlerPostBuildFileListEvent>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -2354,6 +2488,7 @@ pub unsafe fn bst_event_source_tes_data_handler_post_build_file_list_event__remo
 ///
 /// Semantic, events pass, high; ledger runtime evidence, name high; id 54433, rva 0x9f2d10.
 /// `void (BSTEventSource<TESDeathEvent>* this, BSTEventSink<TESDeathEvent>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// `this` must point to what the engine expects.
@@ -2372,6 +2507,7 @@ pub unsafe fn bst_event_source_tes_death_event__notify(this: *mut c_void, event:
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 54530, rva 0x9f8330.
 /// `void (BSTEventSource<TESDeathEvent>* this, BSTEventSink<TESDeathEvent>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -2381,6 +2517,7 @@ pub unsafe fn bst_event_source_tes_death_event__remove_event_sink(this: *mut c_v
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 54434, rva 0x9f2e80.
 /// `void (BSTEventSource<TESDestructionStageChangedEvent>* this, BSTEventSink<TESDestructionStageChangedEvent>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -2399,6 +2536,7 @@ pub unsafe fn bst_event_source_tes_destruction_stage_changed_event__notify(this:
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 54531, rva 0x9f84b0.
 /// `void (BSTEventSource<TESDestructionStageChangedEvent>* this, BSTEventSink<TESDestructionStageChangedEvent>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -2408,6 +2546,7 @@ pub unsafe fn bst_event_source_tes_destruction_stage_changed_event__remove_event
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 54435, rva 0x9f2ff0.
 /// `void (BSTEventSource<TESEnterBleedoutEvent>* this, BSTEventSink<TESEnterBleedoutEvent>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -2426,6 +2565,7 @@ pub unsafe fn bst_event_source_tes_enter_bleedout_event__notify(this: *mut c_voi
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 54532, rva 0x9f8630.
 /// `void (BSTEventSource<TESEnterBleedoutEvent>* this, BSTEventSink<TESEnterBleedoutEvent>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -2435,6 +2575,7 @@ pub unsafe fn bst_event_source_tes_enter_bleedout_event__remove_event_sink(this:
 ///
 /// Semantic, events pass, high; ledger runtime evidence, name high; id 54436, rva 0x9f3160.
 /// `void (BSTEventSource<TESEquipEvent>* this, BSTEventSink<TESEquipEvent>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// `this` must point to what the engine expects.
@@ -2453,6 +2594,7 @@ pub unsafe fn bst_event_source_tes_equip_event__notify(this: *mut c_void, event:
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 54533, rva 0x9f87b0.
 /// `void (BSTEventSource<TESEquipEvent>* this, BSTEventSink<TESEquipEvent>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -2462,6 +2604,7 @@ pub unsafe fn bst_event_source_tes_equip_event__remove_event_sink(this: *mut c_v
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 54437, rva 0x9f32d0.
 /// `void (BSTEventSource<TESFastTravelEndEvent>* this, BSTEventSink<TESFastTravelEndEvent>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -2480,6 +2623,7 @@ pub unsafe fn bst_event_source_tes_fast_travel_end_event__notify(this: *mut c_vo
 ///
 /// Semantic, events pass, high; ledger runtime evidence, name high; id 54534, rva 0x9f8930.
 /// `void (BSTEventSource<TESFastTravelEndEvent>* this, BSTEventSink<TESFastTravelEndEvent>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// `this` must point to what the engine expects.
@@ -2489,6 +2633,7 @@ pub unsafe fn bst_event_source_tes_fast_travel_end_event__remove_event_sink(this
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 54438, rva 0x9f3440.
 /// `void (BSTEventSource<TESFormDeleteEvent>* this, BSTEventSink<TESFormDeleteEvent>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -2507,6 +2652,7 @@ pub unsafe fn bst_event_source_tes_form_delete_event__notify(this: *mut c_void, 
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 54535, rva 0x9f8ab0.
 /// `void (BSTEventSource<TESFormDeleteEvent>* this, BSTEventSink<TESFormDeleteEvent>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -2516,6 +2662,7 @@ pub unsafe fn bst_event_source_tes_form_delete_event__remove_event_sink(this: *m
 ///
 /// Semantic, events pass, medium; ledger xref_inference evidence, name medium; id 42446, rva 0x7b49d0.
 /// `void (BSTEventSource<TESFurnitureEvent>* this, BSTEventSink<TESFurnitureEvent>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -2534,6 +2681,7 @@ pub unsafe fn bst_event_source_tes_furniture_event__notify(this: *mut c_void, ev
 ///
 /// Semantic, events pass, medium; ledger xref_inference evidence, name medium; id 42468, rva 0x7b5680.
 /// `void (BSTEventSource<TESFurnitureEvent>* this, BSTEventSink<TESFurnitureEvent>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -2543,6 +2691,7 @@ pub unsafe fn bst_event_source_tes_furniture_event__remove_event_sink(this: *mut
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 54439, rva 0x9f35b0.
 /// `void (BSTEventSource<TESGrabReleaseEvent>* this, BSTEventSink<TESGrabReleaseEvent>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -2561,6 +2710,7 @@ pub unsafe fn bst_event_source_tes_grab_release_event__notify(this: *mut c_void,
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 54536, rva 0x9f8c30.
 /// `void (BSTEventSource<TESGrabReleaseEvent>* this, BSTEventSink<TESGrabReleaseEvent>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -2570,6 +2720,7 @@ pub unsafe fn bst_event_source_tes_grab_release_event__remove_event_sink(this: *
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 14876, rva 0x1ef250.
 /// `void (BSTEventSource<TESHarvestEvent::ItemHarvested>* this, BSTEventSink<TESHarvestEvent::ItemHarvested>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -2588,6 +2739,7 @@ pub unsafe fn bst_event_source_tes_harvest_event__item_harvested__notify(this: *
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 14878, rva 0x1ef430.
 /// `void (BSTEventSource<TESHarvestEvent::ItemHarvested>* this, BSTEventSink<TESHarvestEvent::ItemHarvested>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -2597,6 +2749,7 @@ pub unsafe fn bst_event_source_tes_harvest_event__item_harvested__remove_event_s
 ///
 /// Semantic, events pass, high; ledger runtime evidence, name high; id 54440, rva 0x9f3720.
 /// `void (BSTEventSource<TESHitEvent>* this, BSTEventSink<TESHitEvent>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// `this` must point to what the engine expects.
@@ -2615,6 +2768,7 @@ pub unsafe fn bst_event_source_tes_hit_event__notify(this: *mut c_void, event: *
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 54537, rva 0x9f8db0.
 /// `void (BSTEventSource<TESHitEvent>* this, BSTEventSink<TESHitEvent>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -2624,6 +2778,7 @@ pub unsafe fn bst_event_source_tes_hit_event__remove_event_sink(this: *mut c_voi
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 54441, rva 0x9f3890.
 /// `void (BSTEventSource<TESInitScriptEvent>* this, BSTEventSink<TESInitScriptEvent>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -2642,6 +2797,7 @@ pub unsafe fn bst_event_source_tes_init_script_event__notify(this: *mut c_void, 
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 54538, rva 0x9f8f30.
 /// `void (BSTEventSource<TESInitScriptEvent>* this, BSTEventSink<TESInitScriptEvent>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -2651,6 +2807,7 @@ pub unsafe fn bst_event_source_tes_init_script_event__remove_event_sink(this: *m
 ///
 /// Semantic, events pass, high; ledger runtime evidence, name high; id 442486, rva 0x60b0a0.
 /// `void (BSTEventSource<TESLoadGameEvent>* this, BSTEventSink<TESLoadGameEvent>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// `this` must point to what the engine expects.
@@ -2669,6 +2826,7 @@ pub unsafe fn bst_event_source_tes_load_game_event__notify(this: *mut c_void, ev
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 442488, rva 0x60b2e0.
 /// `void (BSTEventSource<TESLoadGameEvent>* this, BSTEventSink<TESLoadGameEvent>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -2678,6 +2836,7 @@ pub unsafe fn bst_event_source_tes_load_game_event__remove_event_sink(this: *mut
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 54443, rva 0x9f3a00.
 /// `void (BSTEventSource<TESLockChangedEvent>* this, BSTEventSink<TESLockChangedEvent>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -2696,6 +2855,7 @@ pub unsafe fn bst_event_source_tes_lock_changed_event__notify(this: *mut c_void,
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 54540, rva 0x9f90b0.
 /// `void (BSTEventSource<TESLockChangedEvent>* this, BSTEventSink<TESLockChangedEvent>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -2705,6 +2865,7 @@ pub unsafe fn bst_event_source_tes_lock_changed_event__remove_event_sink(this: *
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 54444, rva 0x9f3b70.
 /// `void (BSTEventSource<TESMagicEffectApplyEvent>* this, BSTEventSink<TESMagicEffectApplyEvent>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -2723,6 +2884,7 @@ pub unsafe fn bst_event_source_tes_magic_effect_apply_event__notify(this: *mut c
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 54541, rva 0x9f9230.
 /// `void (BSTEventSource<TESMagicEffectApplyEvent>* this, BSTEventSink<TESMagicEffectApplyEvent>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -2732,6 +2894,7 @@ pub unsafe fn bst_event_source_tes_magic_effect_apply_event__remove_event_sink(t
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 54445, rva 0x9f3ce0.
 /// `void (BSTEventSource<TESMagicWardHitEvent>* this, BSTEventSink<TESMagicWardHitEvent>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -2750,6 +2913,7 @@ pub unsafe fn bst_event_source_tes_magic_ward_hit_event__notify(this: *mut c_voi
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 54542, rva 0x9f93b0.
 /// `void (BSTEventSource<TESMagicWardHitEvent>* this, BSTEventSink<TESMagicWardHitEvent>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -2759,6 +2923,7 @@ pub unsafe fn bst_event_source_tes_magic_ward_hit_event__remove_event_sink(this:
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 54446, rva 0x9f3e50.
 /// `void (BSTEventSource<TESMoveAttachDetachEvent>* this, BSTEventSink<TESMoveAttachDetachEvent>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -2777,6 +2942,7 @@ pub unsafe fn bst_event_source_tes_move_attach_detach_event__notify(this: *mut c
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 54543, rva 0x9f9530.
 /// `void (BSTEventSource<TESMoveAttachDetachEvent>* this, BSTEventSink<TESMoveAttachDetachEvent>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -2786,6 +2952,7 @@ pub unsafe fn bst_event_source_tes_move_attach_detach_event__remove_event_sink(t
 ///
 /// Semantic, events pass, high; ledger runtime evidence, name high; id 54447, rva 0x9f3fc0.
 /// `void (BSTEventSource<TESObjectLoadedEvent>* this, BSTEventSink<TESObjectLoadedEvent>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// `this` must point to what the engine expects.
@@ -2804,6 +2971,7 @@ pub unsafe fn bst_event_source_tes_object_loaded_event__notify(this: *mut c_void
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 54544, rva 0x9f96b0.
 /// `void (BSTEventSource<TESObjectLoadedEvent>* this, BSTEventSink<TESObjectLoadedEvent>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -2813,6 +2981,7 @@ pub unsafe fn bst_event_source_tes_object_loaded_event__remove_event_sink(this: 
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 54448, rva 0x9f4130.
 /// `void (BSTEventSource<TESObjectREFRTranslationEvent>* this, BSTEventSink<TESObjectREFRTranslationEvent>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -2831,6 +3000,7 @@ pub unsafe fn bst_event_source_tes_object_refr_translation_event__notify(this: *
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 54545, rva 0x9f9830.
 /// `void (BSTEventSource<TESObjectREFRTranslationEvent>* this, BSTEventSink<TESObjectREFRTranslationEvent>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -2840,6 +3010,7 @@ pub unsafe fn bst_event_source_tes_object_refr_translation_event__remove_event_s
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 36787, rva 0x663730.
 /// `void (BSTEventSource<TESOpenCloseEvent>* this, BSTEventSink<TESOpenCloseEvent>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -2849,6 +3020,7 @@ pub unsafe fn bst_event_source_tes_open_close_event__add_event_sink(this: *mut c
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 54546, rva 0x9f99b0.
 /// `void (BSTEventSource<TESOpenCloseEvent>* this, BSTEventSink<TESOpenCloseEvent>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -2858,6 +3030,7 @@ pub unsafe fn bst_event_source_tes_open_close_event__remove_event_sink(this: *mu
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 54449, rva 0x9f42a0.
 /// `void (BSTEventSource<TESPackageEvent>* this, BSTEventSink<TESPackageEvent>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -2876,6 +3049,7 @@ pub unsafe fn bst_event_source_tes_package_event__notify(this: *mut c_void, even
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 54547, rva 0x9f9b30.
 /// `void (BSTEventSource<TESPackageEvent>* this, BSTEventSink<TESPackageEvent>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -2885,6 +3059,7 @@ pub unsafe fn bst_event_source_tes_package_event__remove_event_sink(this: *mut c
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 54450, rva 0x9f4410.
 /// `void (BSTEventSource<TESPerkEntryRunEvent>* this, BSTEventSink<TESPerkEntryRunEvent>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -2903,6 +3078,7 @@ pub unsafe fn bst_event_source_tes_perk_entry_run_event__notify(this: *mut c_voi
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 54548, rva 0x9f9cb0.
 /// `void (BSTEventSource<TESPerkEntryRunEvent>* this, BSTEventSink<TESPerkEntryRunEvent>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -2912,6 +3088,7 @@ pub unsafe fn bst_event_source_tes_perk_entry_run_event__remove_event_sink(this:
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 54451, rva 0x9f4580.
 /// `void (BSTEventSource<TESPlayerBowShotEvent>* this, BSTEventSink<TESPlayerBowShotEvent>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -2930,6 +3107,7 @@ pub unsafe fn bst_event_source_tes_player_bow_shot_event__notify(this: *mut c_vo
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 54549, rva 0x9f9e30.
 /// `void (BSTEventSource<TESPlayerBowShotEvent>* this, BSTEventSink<TESPlayerBowShotEvent>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -2939,6 +3117,7 @@ pub unsafe fn bst_event_source_tes_player_bow_shot_event__remove_event_sink(this
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 54452, rva 0x9f46f0.
 /// `void (BSTEventSource<TESQuestInitEvent>* this, BSTEventSink<TESQuestInitEvent>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -2957,6 +3136,7 @@ pub unsafe fn bst_event_source_tes_quest_init_event__notify(this: *mut c_void, e
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 54550, rva 0x9f9fb0.
 /// `void (BSTEventSource<TESQuestInitEvent>* this, BSTEventSink<TESQuestInitEvent>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -2966,6 +3146,7 @@ pub unsafe fn bst_event_source_tes_quest_init_event__remove_event_sink(this: *mu
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 54453, rva 0x9f4860.
 /// `void (BSTEventSource<TESQuestStageEvent>* this, BSTEventSink<TESQuestStageEvent>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -2984,6 +3165,7 @@ pub unsafe fn bst_event_source_tes_quest_stage_event__notify(this: *mut c_void, 
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 54551, rva 0x9fa130.
 /// `void (BSTEventSource<TESQuestStageEvent>* this, BSTEventSink<TESQuestStageEvent>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -2993,6 +3175,7 @@ pub unsafe fn bst_event_source_tes_quest_stage_event__remove_event_sink(this: *m
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 32534, rva 0x53d9b0.
 /// `void (BSTEventSource<TESQuestStageItemDoneEvent>* this, BSTEventSink<TESQuestStageItemDoneEvent>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -3011,6 +3194,7 @@ pub unsafe fn bst_event_source_tes_quest_stage_item_done_event__notify(this: *mu
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 32541, rva 0x53dfa0.
 /// `void (BSTEventSource<TESQuestStageItemDoneEvent>* this, BSTEventSink<TESQuestStageItemDoneEvent>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -3020,6 +3204,7 @@ pub unsafe fn bst_event_source_tes_quest_stage_item_done_event__remove_event_sin
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 53769, rva 0x9cb930.
 /// `void (BSTEventSource<TESQuestStartStopEvent>* this, BSTEventSink<TESQuestStartStopEvent>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -3038,6 +3223,7 @@ pub unsafe fn bst_event_source_tes_quest_start_stop_event__notify(this: *mut c_v
 ///
 /// Semantic, events pass, medium; ledger xref_inference evidence, name medium; id 53780, rva 0x9ccaa0.
 /// `void (BSTEventSource<TESQuestStartStopEvent>* this, BSTEventSink<TESQuestStartStopEvent>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -3047,6 +3233,7 @@ pub unsafe fn bst_event_source_tes_quest_start_stop_event__remove_event_sink(thi
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 54454, rva 0x9f49d0.
 /// `void (BSTEventSource<TESResetEvent>* this, BSTEventSink<TESResetEvent>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -3065,6 +3252,7 @@ pub unsafe fn bst_event_source_tes_reset_event__notify(this: *mut c_void, event:
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 54552, rva 0x9fa2b0.
 /// `void (BSTEventSource<TESResetEvent>* this, BSTEventSink<TESResetEvent>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -3074,6 +3262,7 @@ pub unsafe fn bst_event_source_tes_reset_event__remove_event_sink(this: *mut c_v
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 54455, rva 0x9f4b40.
 /// `void (BSTEventSource<TESResolveNPCTemplatesEvent>* this, BSTEventSink<TESResolveNPCTemplatesEvent>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -3092,6 +3281,7 @@ pub unsafe fn bst_event_source_tes_resolve_npc_templates_event__notify(this: *mu
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 54553, rva 0x9fa430.
 /// `void (BSTEventSource<TESResolveNPCTemplatesEvent>* this, BSTEventSink<TESResolveNPCTemplatesEvent>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -3101,6 +3291,7 @@ pub unsafe fn bst_event_source_tes_resolve_npc_templates_event__remove_event_sin
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 54456, rva 0x9f4cb0.
 /// `void (BSTEventSource<TESSceneActionEvent>* this, BSTEventSink<TESSceneActionEvent>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -3119,6 +3310,7 @@ pub unsafe fn bst_event_source_tes_scene_action_event__notify(this: *mut c_void,
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 54554, rva 0x9fa5b0.
 /// `void (BSTEventSource<TESSceneActionEvent>* this, BSTEventSink<TESSceneActionEvent>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -3128,6 +3320,7 @@ pub unsafe fn bst_event_source_tes_scene_action_event__remove_event_sink(this: *
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 54457, rva 0x9f4e20.
 /// `void (BSTEventSource<TESSceneEvent>* this, BSTEventSink<TESSceneEvent>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -3146,6 +3339,7 @@ pub unsafe fn bst_event_source_tes_scene_event__notify(this: *mut c_void, event:
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 54555, rva 0x9fa730.
 /// `void (BSTEventSource<TESSceneEvent>* this, BSTEventSink<TESSceneEvent>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -3155,6 +3349,7 @@ pub unsafe fn bst_event_source_tes_scene_event__remove_event_sink(this: *mut c_v
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 54458, rva 0x9f4f90.
 /// `void (BSTEventSource<TESScenePhaseEvent>* this, BSTEventSink<TESScenePhaseEvent>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -3173,6 +3368,7 @@ pub unsafe fn bst_event_source_tes_scene_phase_event__notify(this: *mut c_void, 
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 54556, rva 0x9fa8b0.
 /// `void (BSTEventSource<TESScenePhaseEvent>* this, BSTEventSink<TESScenePhaseEvent>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -3182,6 +3378,7 @@ pub unsafe fn bst_event_source_tes_scene_phase_event__remove_event_sink(this: *m
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 54459, rva 0x9f5100.
 /// `void (BSTEventSource<TESSellEvent>* this, BSTEventSink<TESSellEvent>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -3200,6 +3397,7 @@ pub unsafe fn bst_event_source_tes_sell_event__notify(this: *mut c_void, event: 
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 54557, rva 0x9faa30.
 /// `void (BSTEventSource<TESSellEvent>* this, BSTEventSink<TESSellEvent>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -3209,6 +3407,7 @@ pub unsafe fn bst_event_source_tes_sell_event__remove_event_sink(this: *mut c_vo
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 36788, rva 0x6638b0.
 /// `void (BSTEventSource<TESSleepStartEvent>* this, BSTEventSink<TESSleepStartEvent>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -3227,6 +3426,7 @@ pub unsafe fn bst_event_source_tes_sleep_start_event__notify(this: *mut c_void, 
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 54558, rva 0x9fabb0.
 /// `void (BSTEventSource<TESSleepStartEvent>* this, BSTEventSink<TESSleepStartEvent>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -3236,6 +3436,7 @@ pub unsafe fn bst_event_source_tes_sleep_start_event__remove_event_sink(this: *m
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 36789, rva 0x663a30.
 /// `void (BSTEventSource<TESSleepStopEvent>* this, BSTEventSink<TESSleepStopEvent>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -3254,6 +3455,7 @@ pub unsafe fn bst_event_source_tes_sleep_stop_event__notify(this: *mut c_void, e
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 54559, rva 0x9fad30.
 /// `void (BSTEventSource<TESSleepStopEvent>* this, BSTEventSink<TESSleepStopEvent>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -3263,6 +3465,7 @@ pub unsafe fn bst_event_source_tes_sleep_stop_event__remove_event_sink(this: *mu
 ///
 /// Semantic, events pass, medium; ledger xref_inference evidence, name medium; id 29115, rva 0x485650.
 /// `void (BSTEventSource<TESSpellCastEvent>* this, BSTEventSink<TESSpellCastEvent>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -3281,6 +3484,7 @@ pub unsafe fn bst_event_source_tes_spell_cast_event__notify(this: *mut c_void, e
 ///
 /// Semantic, events pass, medium; ledger xref_inference evidence, name medium; id 29117, rva 0x485830.
 /// `void (BSTEventSource<TESSpellCastEvent>* this, BSTEventSink<TESSpellCastEvent>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -3290,6 +3494,7 @@ pub unsafe fn bst_event_source_tes_spell_cast_event__remove_event_sink(this: *mu
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 54460, rva 0x9f5270.
 /// `void (BSTEventSource<TESSwitchRaceCompleteEvent>* this, BSTEventSink<TESSwitchRaceCompleteEvent>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -3308,6 +3513,7 @@ pub unsafe fn bst_event_source_tes_switch_race_complete_event__notify(this: *mut
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 54560, rva 0x9faeb0.
 /// `void (BSTEventSource<TESSwitchRaceCompleteEvent>* this, BSTEventSink<TESSwitchRaceCompleteEvent>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -3317,6 +3523,7 @@ pub unsafe fn bst_event_source_tes_switch_race_complete_event__remove_event_sink
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 54461, rva 0x9f53e0.
 /// `void (BSTEventSource<TESTopicInfoEvent>* this, BSTEventSink<TESTopicInfoEvent>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -3335,6 +3542,7 @@ pub unsafe fn bst_event_source_tes_topic_info_event__notify(this: *mut c_void, e
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 54561, rva 0x9fb030.
 /// `void (BSTEventSource<TESTopicInfoEvent>* this, BSTEventSink<TESTopicInfoEvent>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -3344,6 +3552,7 @@ pub unsafe fn bst_event_source_tes_topic_info_event__remove_event_sink(this: *mu
 ///
 /// Semantic, events pass, medium; ledger xref_inference evidence, name medium; id 41094, rva 0x770ee0.
 /// `void (BSTEventSource<TESTrackedStatsEvent>* this, BSTEventSink<TESTrackedStatsEvent>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -3353,6 +3562,7 @@ pub unsafe fn bst_event_source_tes_tracked_stats_event__add_event_sink(this: *mu
 ///
 /// Semantic, events pass, medium; ledger xref_inference evidence, name medium; id 41163, rva 0x7749c0.
 /// `void (BSTEventSource<TESTrackedStatsEvent>* this, BSTEventSink<TESTrackedStatsEvent>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -3362,6 +3572,7 @@ pub unsafe fn bst_event_source_tes_tracked_stats_event__remove_event_sink(this: 
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 54462, rva 0x9f5550.
 /// `void (BSTEventSource<TESTrapHitEvent>* this, BSTEventSink<TESTrapHitEvent>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -3380,6 +3591,7 @@ pub unsafe fn bst_event_source_tes_trap_hit_event__notify(this: *mut c_void, eve
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 54562, rva 0x9fb1b0.
 /// `void (BSTEventSource<TESTrapHitEvent>* this, BSTEventSink<TESTrapHitEvent>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -3389,6 +3601,7 @@ pub unsafe fn bst_event_source_tes_trap_hit_event__remove_event_sink(this: *mut 
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 54463, rva 0x9f56c0.
 /// `void (BSTEventSource<TESTriggerEnterEvent>* this, BSTEventSink<TESTriggerEnterEvent>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -3407,6 +3620,7 @@ pub unsafe fn bst_event_source_tes_trigger_enter_event__notify(this: *mut c_void
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 54563, rva 0x9fb330.
 /// `void (BSTEventSource<TESTriggerEnterEvent>* this, BSTEventSink<TESTriggerEnterEvent>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -3416,6 +3630,7 @@ pub unsafe fn bst_event_source_tes_trigger_enter_event__remove_event_sink(this: 
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 54464, rva 0x9f5830.
 /// `void (BSTEventSource<TESTriggerEvent>* this, BSTEventSink<TESTriggerEvent>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -3434,6 +3649,7 @@ pub unsafe fn bst_event_source_tes_trigger_event__notify(this: *mut c_void, even
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 54564, rva 0x9fb4b0.
 /// `void (BSTEventSource<TESTriggerEvent>* this, BSTEventSink<TESTriggerEvent>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -3443,6 +3659,7 @@ pub unsafe fn bst_event_source_tes_trigger_event__remove_event_sink(this: *mut c
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 54465, rva 0x9f59a0.
 /// `void (BSTEventSource<TESTriggerLeaveEvent>* this, BSTEventSink<TESTriggerLeaveEvent>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -3461,6 +3678,7 @@ pub unsafe fn bst_event_source_tes_trigger_leave_event__notify(this: *mut c_void
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 54565, rva 0x9fb630.
 /// `void (BSTEventSource<TESTriggerLeaveEvent>* this, BSTEventSink<TESTriggerLeaveEvent>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -3470,6 +3688,7 @@ pub unsafe fn bst_event_source_tes_trigger_leave_event__remove_event_sink(this: 
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 54466, rva 0x9f5b10.
 /// `void (BSTEventSource<TESUniqueIDChangeEvent>* this, BSTEventSink<TESUniqueIDChangeEvent>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -3488,6 +3707,7 @@ pub unsafe fn bst_event_source_tes_unique_id_change_event__notify(this: *mut c_v
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 54566, rva 0x9fb7b0.
 /// `void (BSTEventSource<TESUniqueIDChangeEvent>* this, BSTEventSink<TESUniqueIDChangeEvent>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -3497,6 +3717,7 @@ pub unsafe fn bst_event_source_tes_unique_id_change_event__remove_event_sink(thi
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 36790, rva 0x663bb0.
 /// `void (BSTEventSource<TESWaitStartEvent>* this, BSTEventSink<TESWaitStartEvent>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -3515,6 +3736,7 @@ pub unsafe fn bst_event_source_tes_wait_start_event__notify(this: *mut c_void, e
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 36791, rva 0x663d30.
 /// `void (BSTEventSource<TESWaitStopEvent>* this, BSTEventSink<TESWaitStopEvent>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -3533,6 +3755,7 @@ pub unsafe fn bst_event_source_tes_wait_stop_event__notify(this: *mut c_void, ev
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 51032, rva 0x905990.
 /// `void (BSTEventSource<TimesBartered::Event>* this, BSTEventSink<TimesBartered::Event>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -3551,6 +3774,7 @@ pub unsafe fn bst_event_source_times_bartered__event__notify(this: *mut c_void, 
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 51039, rva 0x905d30.
 /// `void (BSTEventSource<TimesBartered::Event>* this, BSTEventSink<TimesBartered::Event>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -3560,6 +3784,7 @@ pub unsafe fn bst_event_source_times_bartered__event__remove_event_sink(this: *m
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 52681, rva 0x986850.
 /// `void (BSTEventSource<TimesTrained::Event>* this, BSTEventSink<TimesTrained::Event>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -3578,6 +3803,7 @@ pub unsafe fn bst_event_source_times_trained__event__notify(this: *mut c_void, e
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 52683, rva 0x986a30.
 /// `void (BSTEventSource<TimesTrained::Event>* this, BSTEventSink<TimesTrained::Event>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -3587,6 +3813,7 @@ pub unsafe fn bst_event_source_times_trained__event__remove_event_sink(this: *mu
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 42692, rva 0x7c36c0.
 /// `void (BSTEventSource<Trespass::Event>* this, BSTEventSink<Trespass::Event>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -3605,6 +3832,7 @@ pub unsafe fn bst_event_source_trespass__event__notify(this: *mut c_void, event:
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 42694, rva 0x7c38a0.
 /// `void (BSTEventSource<Trespass::Event>* this, BSTEventSink<Trespass::Event>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -3614,6 +3842,7 @@ pub unsafe fn bst_event_source_trespass__event__remove_event_sink(this: *mut c_v
 ///
 /// Semantic, events pass, high; ledger runtime evidence, name high; id 41095, rva 0x771060.
 /// `void (BSTEventSource<UserEventEnabledEvent>* this, BSTEventSink<UserEventEnabledEvent>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// `this` must point to what the engine expects.
@@ -3623,6 +3852,7 @@ pub unsafe fn bst_event_source_user_event_enabled_event__add_event_sink(this: *m
 ///
 /// Semantic, events pass, medium; ledger xref_inference evidence, name medium; id 41164, rva 0x774b50.
 /// `void (BSTEventSource<UserEventEnabledEvent>* this, BSTEventSink<UserEventEnabledEvent>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -3632,6 +3862,7 @@ pub unsafe fn bst_event_source_user_event_enabled_event__remove_event_sink(this:
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 41091, rva 0x770a60.
 /// `void (BSTEventSource<WeaponAttack::Event>* this, BSTEventSink<WeaponAttack::Event>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -3650,6 +3881,7 @@ pub unsafe fn bst_event_source_weapon_attack__event__notify(this: *mut c_void, e
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 41160, rva 0x774510.
 /// `void (BSTEventSource<WeaponAttack::Event>* this, BSTEventSink<WeaponAttack::Event>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -3659,6 +3891,7 @@ pub unsafe fn bst_event_source_weapon_attack__event__remove_event_sink(this: *mu
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 41092, rva 0x770be0.
 /// `void (BSTEventSource<WordLearned::Event>* this, BSTEventSink<WordLearned::Event>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -3677,6 +3910,7 @@ pub unsafe fn bst_event_source_word_learned__event__notify(this: *mut c_void, ev
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 41161, rva 0x7746a0.
 /// `void (BSTEventSource<WordLearned::Event>* this, BSTEventSink<WordLearned::Event>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -3686,6 +3920,7 @@ pub unsafe fn bst_event_source_word_learned__event__remove_event_sink(this: *mut
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 41093, rva 0x770d60.
 /// `void (BSTEventSource<WordUnlocked::Event>* this, BSTEventSink<WordUnlocked::Event>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -3704,6 +3939,7 @@ pub unsafe fn bst_event_source_word_unlocked__event__notify(this: *mut c_void, e
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 41162, rva 0x774830.
 /// `void (BSTEventSource<WordUnlocked::Event>* this, BSTEventSink<WordUnlocked::Event>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// The pass rates the signature medium.

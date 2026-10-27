@@ -3,27 +3,6 @@
 
 use core::ffi::{c_char, c_void};
 
-/// `DetachResultSetField90_10` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 447576, rva 0x135bc10).
-/// `undefined8 * DetachResultSetField90_10(longlong param_1, undefined8 * param_2, undefined8 param_3)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn detach_result_set_field90_10(param_1: i64, param_2: *mut u64, param_3: u64) -> *mut u64 { unsafe { function!(447576, (i64, *mut u64, u64) -> *mut u64)(param_1, param_2, param_3) } }
-/// `DetachResultSetField90_11` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 447968, rva 0x135cdf0).
-/// `undefined8 * DetachResultSetField90_11(longlong param_1, undefined8 * param_2, undefined8 param_3)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn detach_result_set_field90_11(param_1: i64, param_2: *mut u64, param_3: u64) -> *mut u64 { unsafe { function!(447968, (i64, *mut u64, u64) -> *mut u64)(param_1, param_2, param_3) } }
-/// `DetachResultSetField90_12` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 447631, rva 0x135dc40).
-/// `undefined8 * DetachResultSetField90_12(longlong param_1, undefined8 * param_2, undefined8 param_3)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn detach_result_set_field90_12(param_1: i64, param_2: *mut u64, param_3: u64) -> *mut u64 { unsafe { function!(447631, (i64, *mut u64, u64) -> *mut u64)(param_1, param_2, param_3) } }
 /// `DetachResultSetField90_13` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 97831, rva 0x135ef30).
 /// `undefined8 * DetachResultSetField90_13(longlong param_1, undefined8 * param_2, undefined8 param_3)`
 ///
@@ -13905,13 +13884,6 @@ pub unsafe fn multiply_matrix3x4(param_1: i64, param_2: *mut f32, param_3: i64) 
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn multiply_quaternion_arrays(param_1: i64, param_2: i64, param_3: i64, param_4: i32) -> u64 { unsafe { function!(67226, (i64, i64, i64, i32) -> u64)(param_1, param_2, param_3, param_4) } }
-/// `MultiplyQuaternions` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 70852, rva 0xef96e0).
-/// `float * MultiplyQuaternions(float * param_1, float * param_2, float * param_3)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn multiply_quaternions(param_1: *mut f32, param_2: *mut f32, param_3: *mut f32) -> *mut f32 { unsafe { function!(70852, (*mut f32, *mut f32, *mut f32) -> *mut f32)(param_1, param_2, param_3) } }
 /// `MultiplyTransformArrayByInverseTransform` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 64108, rva 0xbf1590).
 /// `undefined MultiplyTransformArrayByInverseTransform(int param_1, float * param_2, longlong param_3, longlong param_4)`
 ///
@@ -14059,13 +14031,6 @@ pub unsafe fn normalize_two_vectors_by_xyz_length(param_1: *mut f32, param_2: *m
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn normalize_vec3_fast(param_1: *mut f32) -> u64 { unsafe { function!(43941, (*mut f32) -> u64)(param_1) } }
-/// `NormalizeVector2AndGetLength` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 42466, rva 0x7b5480).
-/// `float NormalizeVector2AndGetLength(float * param_1)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn normalize_vector2_and_get_length(param_1: *mut f32) -> f32 { unsafe { function!(42466, (*mut f32) -> f32)(param_1) } }
 /// `NotifyLoginSuccess` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 442208, rva 0x5b1560).
 /// `undefined NotifyLoginSuccess(void)`
 ///
@@ -14150,3 +14115,38 @@ pub unsafe fn open_slot_at_index_in_scrap_array_size8(param_1: i64, param_2: u32
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn open_slot_at_stride10(param_1: *mut i64, param_2: u32) -> u64 { unsafe { function!(47478, (*mut i64, u32) -> u64)(param_1, param_2) } }
+/// `OpenSlotAtStride18` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 47167, rva 0x861570).
+/// `undefined OpenSlotAtStride18(longlong * param_1, uint param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn open_slot_at_stride18(param_1: *mut i64, param_2: u32) -> u64 { unsafe { function!(47167, (*mut i64, u32) -> u64)(param_1, param_2) } }
+/// `OpenSlotAtStride4` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 47165, rva 0x8614d0).
+/// `undefined OpenSlotAtStride4(longlong * param_1, uint param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn open_slot_at_stride4(param_1: *mut i64, param_2: u32) -> u64 { unsafe { function!(47165, (*mut i64, u32) -> u64)(param_1, param_2) } }
+/// `OpenTextGapAndShiftRuns` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 88412, rva 0xe3df20).
+/// `longlong OpenTextGapAndShiftRuns(longlong * param_1, longlong param_2, longlong param_3, longlong param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn open_text_gap_and_shift_runs(param_1: *mut i64, param_2: i64, param_3: i64, param_4: i64) -> i64 { unsafe { function!(88412, (*mut i64, i64, i64, i64) -> i64)(param_1, param_2, param_3, param_4) } }
+/// `OpenWideCharGapAt` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 88413, rva 0xe3df90).
+/// `longlong OpenWideCharGapAt(longlong * param_1, longlong param_2, longlong param_3, longlong param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn open_wide_char_gap_at(param_1: *mut i64, param_2: i64, param_3: i64, param_4: i64) -> i64 { unsafe { function!(88413, (*mut i64, i64, i64, i64) -> i64)(param_1, param_2, param_3, param_4) } }
+/// `OperatorDelete` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 109588, rva 0x15a743c).
+/// `undefined OperatorDelete(void * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn operator_delete(param_1: *mut c_void, param_2: u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(109588, (*mut c_void, u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }

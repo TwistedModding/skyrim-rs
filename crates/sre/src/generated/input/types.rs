@@ -1074,10 +1074,10 @@ pub struct PlayerControls {
     /// +0x18 `vtbl:PlayerControls:18`, rtti
     pub __vftable_18: *const crate::raw::vtables::PlayerControls_vtable_18,
     pub unknown_20: [u8; 4],
-    /// +0x24 `undefined1`, semantic; NiPoint2 movement input of the frame (PlayerControlsData starts here; handlers get this+0x24) (high)
-    pub moveInput: [u8; 8],
-    /// +0x2C `undefined1`, semantic; NiPoint2 look input of the frame (high)
-    pub lookInput: [u8; 8],
+    /// +0x24 `class:NiPoint2`, semantic; NiPoint2 movement input of the frame (PlayerControlsData starts here; handlers get this+0x24) (high); retyped undefined1 -> class:NiPoint2: meaning: NiPoint2 movement input; ProcessEvent 0x7ad900 resets +0x24/+0x28
+    pub moveInput: crate::NiPoint2,
+    /// +0x2C `class:NiPoint2`, semantic; NiPoint2 look input of the frame (high); retyped undefined1 -> class:NiPoint2: meaning: NiPoint2 look input; ThirdPersonState Update passes &PlayerControls+0x2c to ProcessLookInput(NiPoint2*)
+    pub lookInput: crate::NiPoint2,
     /// +0x34 `undefined1`, semantic; copy of moveInput at the end of ProcessEvent (high)
     pub prevMoveInput: [u8; 8],
     /// +0x3C `undefined1`, semantic; copy of lookInput (high)
@@ -1431,8 +1431,8 @@ pub struct SixaxisEvent {
     pub field_74: f64,
     /// +0x7C `undefined4`, ctor store
     pub field_7C: u32,
-    /// +0x80 `undefined1`, semantic; quaternion (pass 6 row: LookHandler reads it) (low)
-    pub orientation: [u8; 16],
+    /// +0x80 `class:NiQuaternion`, semantic; quaternion (pass 6 row: LookHandler reads it) (low); retyped undefined1 -> class:NiQuaternion: LookHandler::ProcessMotion 0x7b32a0 passes the stored +0x80 to ConjugateQuaternion 0xef8d30 (w first) and multiplies it with the event's +0x80..+0x8c using w = +0x80; ctor 0x7b1380 stores four dwords
+    pub orientation: crate::NiQuaternion,
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<SixaxisEvent>() == 0x90);

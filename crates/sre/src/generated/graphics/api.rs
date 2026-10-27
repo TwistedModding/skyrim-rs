@@ -41,8 +41,9 @@ impl crate::ImageSpaceModifierInstanceForm {
 ///
 /// Semantic, graphics pass, high; ledger semantic evidence, name high; id 36755, rva 0x6623e0.
 /// `void (NiNode* node, float sortKey)`
+/// May be null: `node`.
 #[inline]
-pub fn add_focus_shadow_node(node: &crate::NiNode, sortKey: f32) { unsafe { function!(36755, (*const crate::NiNode, f32))(core::ptr::from_ref(node), sortKey) } }
+pub fn add_focus_shadow_node(node: Option<&crate::NiNode>, sortKey: f32) { unsafe { function!(36755, (*const crate::NiNode, f32))(node.map_or(core::ptr::null(), core::ptr::from_ref), sortKey) } }
 /// `ApplyViewportDepthRange`: copies 0x20d01c0/0x20d01c4 into RenderStateCache viewport MinDepth/MaxDepth (0x20cfc80/0x20cfc84), dirty bit 2
 ///
 /// Semantic, graphics pass, high; ledger semantic evidence, name high; id 77241, rva 0x1009ab0.
@@ -104,6 +105,7 @@ pub fn end_depth_shift() { unsafe { function!(107126, ())() } }
 ///
 /// Semantic, graphics pass, medium; ledger semantic evidence, name medium; id 17610, rva 0x274390.
 /// `NiPointLight* (TESObjectLIGH* form, TESObjectREFR* ref, NiNode* root, u8 flag, bool, bool)`
+/// May be null: `ref_`, `root`.
 ///
 /// # Safety
 /// The pass rates the signature medium.
@@ -122,6 +124,7 @@ pub unsafe fn get_current_accumulator() -> *mut crate::BSShaderAccumulator { uns
 ///
 /// Semantic, graphics pass, high; ledger semantic evidence, name high; id 105676, rva 0x14ee060.
 /// `void (ImageSpaceManager* this, u32 effectId, i32 sourceTarget, i32 destTarget, ImageSpaceShaderParam* params)`
+/// May be null: `params`.
 ///
 /// # Safety
 /// `this` must point to what the engine expects.
@@ -131,20 +134,23 @@ pub unsafe fn image_space_manager__render_effect(this: *mut c_void, effectId: u3
 ///
 /// Semantic, graphics pass, high; ledger runtime evidence, name high; id 18570, rva 0x2a3940.
 /// `ImageSpaceModifierInstanceForm* (TESImageSpaceModifier* imod, float strength, NiAVObject* target)`
+/// May be null: `imod`, `target`.
 #[inline]
-pub fn image_space_modifier__apply(imod: &crate::TESImageSpaceModifier, strength: f32, target: &crate::NiAVObject) -> Option<&'static crate::ImageSpaceModifierInstanceForm> { unsafe { function!(18570, (*const crate::TESImageSpaceModifier, f32, *const crate::NiAVObject) -> Option<&'static crate::ImageSpaceModifierInstanceForm>)(core::ptr::from_ref(imod), strength, core::ptr::from_ref(target)) } }
+pub fn image_space_modifier__apply(imod: Option<&crate::TESImageSpaceModifier>, strength: f32, target: Option<&crate::NiAVObject>) -> Option<&'static crate::ImageSpaceModifierInstanceForm> { unsafe { function!(18570, (*const crate::TESImageSpaceModifier, f32, *const crate::NiAVObject) -> Option<&'static crate::ImageSpaceModifierInstanceForm>)(imod.map_or(core::ptr::null(), core::ptr::from_ref), strength, target.map_or(core::ptr::null(), core::ptr::from_ref)) } }
 /// `ImageSpaceModifier::ApplyIfAbsent`: as Apply but returns null without adding when an instance of imod is already on the list
 ///
 /// Semantic, graphics pass, high; ledger semantic evidence, name high; id 18572, rva 0x2a3bc0.
 /// `ImageSpaceModifierInstanceForm* (TESImageSpaceModifier* imod, float strength, NiAVObject* target)`
+/// May be null: `imod`, `target`.
 #[inline]
-pub fn image_space_modifier__apply_if_absent(imod: &crate::TESImageSpaceModifier, strength: f32, target: &crate::NiAVObject) -> Option<&'static crate::ImageSpaceModifierInstanceForm> { unsafe { function!(18572, (*const crate::TESImageSpaceModifier, f32, *const crate::NiAVObject) -> Option<&'static crate::ImageSpaceModifierInstanceForm>)(core::ptr::from_ref(imod), strength, core::ptr::from_ref(target)) } }
+pub fn image_space_modifier__apply_if_absent(imod: Option<&crate::TESImageSpaceModifier>, strength: f32, target: Option<&crate::NiAVObject>) -> Option<&'static crate::ImageSpaceModifierInstanceForm> { unsafe { function!(18572, (*const crate::TESImageSpaceModifier, f32, *const crate::NiAVObject) -> Option<&'static crate::ImageSpaceModifierInstanceForm>)(imod.map_or(core::ptr::null(), core::ptr::from_ref), strength, target.map_or(core::ptr::null(), core::ptr::from_ref)) } }
 /// `ImageSpaceModifier::Remove`: stop: unlinks and releases every instance of imod from g_TES+0x108
 ///
 /// Semantic, graphics pass, high; ledger semantic evidence, name high; id 18573, rva 0x2a3dd0.
 /// `void (TESImageSpaceModifier* imod)`
+/// May be null: `imod`.
 #[inline]
-pub fn image_space_modifier__remove(imod: &crate::TESImageSpaceModifier) { unsafe { function!(18573, (*const crate::TESImageSpaceModifier))(core::ptr::from_ref(imod)) } }
+pub fn image_space_modifier__remove(imod: Option<&crate::TESImageSpaceModifier>) { unsafe { function!(18573, (*const crate::TESImageSpaceModifier))(imod.map_or(core::ptr::null(), core::ptr::from_ref)) } }
 /// `ImageSpaceModifier::RemoveCrossFade`: Papyrus RemoveCrossFade 0xa3abe0
 ///
 /// Semantic, graphics pass, medium; ledger semantic evidence, name medium; id 18577, rva 0x2a4400.
@@ -191,6 +197,7 @@ pub fn queue_fade_message(fadingOut: bool, black: bool, duration: f32, hold: boo
 ///
 /// Semantic, graphics pass, high; ledger semantic evidence, name high; id 106623, rva 0x1521ad0.
 /// `u32 (AccumulatorRef* ctx, NiNode* node)`
+/// May be null: `node`.
 ///
 /// # Safety
 /// `ctx` must point to what the engine expects.
@@ -227,11 +234,8 @@ pub fn set_shadow_distance_for_interior(isInterior: bool) { unsafe { function!(1
 ///
 /// Semantic, graphics pass, high; ledger runtime evidence, name high; id 76214, rva 0xfde350.
 /// `void (NiCamera* source, const NiPlane* plane, NiCamera* reflected)`
-///
-/// # Safety
-/// `plane` must point to what the engine expects.
 #[inline]
-pub unsafe fn setup_reflected_camera(source: *mut crate::NiCamera, plane: *const c_void, reflected: *mut crate::NiCamera) { unsafe { function!(76214, (*mut crate::NiCamera, *const c_void, *mut crate::NiCamera))(source, plane, reflected) } }
+pub fn setup_reflected_camera(source: &crate::NiCamera, plane: &crate::NiPlane, reflected: &crate::NiCamera) { unsafe { function!(76214, (*const crate::NiCamera, *const crate::NiPlane, *const crate::NiCamera))(core::ptr::from_ref(source), core::ptr::from_ref(plane), core::ptr::from_ref(reflected)) } }
 /// `SystemTimer::Accumulate`: as Stop without the timer-0 notification
 ///
 /// Semantic, graphics pass, medium; ledger semantic evidence, name medium; id 109136, rva 0x1594920.
@@ -265,12 +269,13 @@ pub fn system_timer__stop(timerId: i32) { unsafe { function!(109135, (i32))(time
 /// `TAA::Render`: temporal AA: history ping-pong 0x51/0x52 (0x53/0x54 for the menu 3D scene mode 2), optional water mask pair 0x56/0x57; inputs: source, history, motion vectors (7), depth 0, TAA mask 0x55, normals; returns destTarget
 ///
 /// Semantic, graphics pass, high; ledger semantic evidence, name high; id 527784, rva 0x1544da0.
-/// `i32 (TemporalAA* this, i32 sourceTarget, i32 destTarget)`
+/// `RenderTargetId (TemporalAA* this, RenderTargetId sourceTarget, RenderTargetId destTarget)`
+/// Retyped: sourceTarget i32 -> RenderTargetId: TAA::Render reads g_Renderer.renderTargets[sourceTarget].srv; destTarget i32 -> RenderTargetId: TAA::Render binds it with RenderTargetManager::SetRenderTarget(slot 0, destTarget); return i32 -> RenderTargetId: TAA::Render returns sourceTarget (TAA off) or destTarget.
 ///
 /// # Safety
 /// `this` must point to what the engine expects.
 #[inline]
-pub unsafe fn taa__render(this: *mut c_void, sourceTarget: i32, destTarget: i32) -> i32 { unsafe { function!(527784, (*mut c_void, i32, i32) -> i32)(this, sourceTarget, destTarget) } }
+pub unsafe fn taa__render(this: *mut c_void, sourceTarget: crate::RenderTargetId, destTarget: crate::RenderTargetId) -> Result<crate::RenderTargetId, u32> { unsafe { let raw = function!(527784, (*mut c_void, crate::RenderTargetId, crate::RenderTargetId) -> u32)(this, sourceTarget, destTarget); crate::RenderTargetId::from_u32(raw).ok_or(raw) } }
 /// `UpdateImageSpaceModifiers`: standalone copy of the per-frame IMOD update with no caller in 1.7.104 (only its .pdata entry); the main loop 0x658870 runs the same code inline at 0x658bb7..0x658cdc
 ///
 /// Semantic, graphics pass, high; ledger runtime evidence, name high; id 36587, rva 0x65a250.

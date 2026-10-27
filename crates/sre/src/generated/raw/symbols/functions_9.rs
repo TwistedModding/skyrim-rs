@@ -4,6 +4,7 @@
 use crate::raw::*;
 
 pub(super) const ROWS: &[Function] = &[
+    Function { rva: 0x1172560, id: 82371, confidence: Confidence::Medium, name: "GFxZlibSupport::vdtor" },
     Function { rva: 0x11725d0, id: 82372, confidence: Confidence::Medium, name: "GFxZlibSupportBase::vdtor" },
     Function { rva: 0x1172640, id: 82373, confidence: Confidence::Medium, name: "GSysAllocBase::vdtor" },
     Function { rva: 0x1172670, id: 82374, confidence: Confidence::Medium, name: "GSysAllocPaged::vdtor" },
@@ -6656,5 +6657,4 @@ pub(super) const ROWS: &[Function] = &[
     Function { rva: 0x13cac50, id: 451106, confidence: Confidence::Medium, name: "DestructAndFree_11" },
     Function { rva: 0x13cac90, id: 451107, confidence: Confidence::Medium, name: "ConstructFunctionalStorage10_13" },
     Function { rva: 0x13cb100, id: 451113, confidence: Confidence::High, name: "ScalarDeletingDtorSize10_86" },
-    Function { rva: 0x13cb130, id: 451114, confidence: Confidence::High, name: "ScalarDeletingDtorSize10_87" },
 ];

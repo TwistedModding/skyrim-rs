@@ -150,8 +150,8 @@ fn scene() -> Result<String, String> {
     check(lights.iter().flatten().all(|l| !l.is_shadow_light()), "a shadow light in `lights`")?;
     check(shadow.iter().flatten().all(|l| l.is_shadow_light()), "a plain light in `shadowLights`")?;
     let others: Vec<String> = (1..4).map(|i| shadow_scene_node(i).map_or("null".to_owned(), |n| format!("{n:p} index {}", { n.sceneIndex }))).collect();
-    let eye = floats::<3>(&w.eyePosition);
-    Ok(format!("world at {w:p}, {} lights, {} shadow lights, eye ({:.1}, {:.1}, {:.1}), slots 1-3: {}", lights.len(), shadow.len(), eye[0], eye[1], eye[2], others.join(", ")))
+    let eye = unsafe { (&raw const w.eyePosition).read_unaligned() };
+    Ok(format!("world at {w:p}, {} lights, {} shadow lights, eye ({:.1}, {:.1}, {:.1}), slots 1-3: {}", lights.len(), shadow.len(), eye.x, eye.y, eye.z, others.join(", ")))
 }
 
 /// The sun's cascade records are filled by the first frame of the loaded cell; before it (at

@@ -5802,6 +5802,7 @@ impl crate::MistMenu {
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 52323, rva 0x966320.
     /// `void (MistMenu* this, const char* modelPath)`
+    /// May be null: `modelPath`.
     ///
     /// # Safety
     /// `modelPath` must point to what the engine expects.
@@ -6015,6 +6016,7 @@ impl crate::SceneGraph {
     ///
     /// Semantic, camera pass, high; ledger layout_inference evidence, name high; id 36838, rva 0x665640.
     /// `SceneGraph* (SceneGraph* this, const char* namePrefix, bool isMenuScene, NiCamera* camera)`
+    /// May be null: `camera`.
     ///
     /// # Safety
     /// It constructs or destroys an object in place.
@@ -6108,6 +6110,7 @@ impl crate::StatsMenu {
     ///
     /// Semantic, camera pass, medium; ledger semantic evidence, name medium; id 52593, rva 0x9824d0.
     /// `bool (void* builder, BGSSkillPerkTreeNode* node)`
+    /// May be null: `node`.
     ///
     /// # Safety
     /// The pass rates the signature medium.

@@ -1624,7 +1624,7 @@ pub type DragonCameraState_vtable_SetFreeRotationMode = unsafe extern "C" fn(thi
 /// `DragonCameraState::UpdateRotation`, slot 14:  (high).
 pub type DragonCameraState_vtable_UpdateRotation = unsafe extern "C" fn(this: *mut crate::DragonCameraState);
 /// `DragonCameraState::ProcessLookInput`, slot 15:  (high).
-pub type DragonCameraState_vtable_ProcessLookInput = unsafe extern "C" fn(this: *mut crate::DragonCameraState, look: *mut c_void);
+pub type DragonCameraState_vtable_ProcessLookInput = unsafe extern "C" fn(this: *mut crate::DragonCameraState, look: *mut crate::NiPoint2);
 
 /// `DragonCameraState::vftable_20` at 0x18ecd58, id 205242 (rtti, high); 7 slots.
 #[repr(C)]
@@ -5688,9 +5688,9 @@ pub type FirstPersonState_vtable_End = unsafe extern "C" fn(this: *mut crate::Fi
 /// `FirstPersonState::Update`, slot 3: look pitch 0x8fb2e0, sitting yaw, pitch offset, spring damping, caster collision 0x8fa5d0, shake 0x8fa2b0, writes root+0x48/+0x6c and calls 0xee0930 (high).
 pub type FirstPersonState_vtable_Update = unsafe extern "C" fn(this: *mut crate::FirstPersonState, next: *mut c_void);
 /// `FirstPersonState::GetRotation`, slot 4: cameraNode world rotation with heading and sittingYaw (high).
-pub type FirstPersonState_vtable_GetRotation = unsafe extern "C" fn(this: *mut crate::FirstPersonState, out: *mut c_void);
+pub type FirstPersonState_vtable_GetRotation = unsafe extern "C" fn(this: *mut crate::FirstPersonState, out: *mut crate::NiQuaternion);
 /// `FirstPersonState::GetTranslation`, slot 5: cameraNode world translation (high).
-pub type FirstPersonState_vtable_GetTranslation = unsafe extern "C" fn(this: *mut crate::FirstPersonState, out: *mut c_void);
+pub type FirstPersonState_vtable_GetTranslation = unsafe extern "C" fn(this: *mut crate::FirstPersonState, out: *mut crate::NiPoint3);
 /// `FirstPersonState::SaveGame`, slot 6: +0x68, +0x6c, +0x70, +0x89, +0x8a (high).
 pub type FirstPersonState_vtable_SaveGame = unsafe extern "C" fn(this: *mut crate::FirstPersonState, buffer: *mut crate::BGSSaveFormBuffer);
 /// `FirstPersonState::LoadGame`, slot 7: same, the last four only for buffer version > 0x14 (high).
@@ -6574,9 +6574,9 @@ pub type FreeCameraState_vtable_End = unsafe extern "C" fn(this: *mut crate::TES
 /// `FreeCameraState::Update`, slot 3: 0x8f62c0 integrates angles and position, writes the root from slots 4/5, calls 0xee0930 (high).
 pub type FreeCameraState_vtable_Update = unsafe extern "C" fn(this: *mut crate::TESCameraState, next: *mut c_void);
 /// `FreeCameraState::GetRotation`, slot 4: matrix from (yaw +0x40, pitch +0x3c, 0) (high).
-pub type FreeCameraState_vtable_GetRotation = unsafe extern "C" fn(this: *mut crate::FreeCameraState, out: *mut c_void);
+pub type FreeCameraState_vtable_GetRotation = unsafe extern "C" fn(this: *mut crate::FreeCameraState, out: *mut crate::NiQuaternion);
 /// `FreeCameraState::GetTranslation`, slot 5: +0x30 (high).
-pub type FreeCameraState_vtable_GetTranslation = unsafe extern "C" fn(this: *mut crate::FreeCameraState, out: *mut c_void);
+pub type FreeCameraState_vtable_GetTranslation = unsafe extern "C" fn(this: *mut crate::FreeCameraState, out: *mut crate::NiPoint3);
 
 /// `FreeCameraState::vftable_20` at 0x196da40, id 214865 (rtti, high); 7 slots.
 #[repr(C)]
@@ -6746,9 +6746,9 @@ pub type FurnitureCameraState_vtable_End = unsafe extern "C" fn(this: *mut crate
 /// `FurnitureCameraState::Update`, slot 3: look pitch, rotation, position 0x8f6a70, writes the root (high).
 pub type FurnitureCameraState_vtable_Update = unsafe extern "C" fn(this: *mut crate::TESCameraState, next: *mut c_void);
 /// `FurnitureCameraState::GetRotation`, slot 4: euler(pitch, 0, heading or live heading + yawOffset) (high).
-pub type FurnitureCameraState_vtable_GetRotation = unsafe extern "C" fn(this: *mut crate::FurnitureCameraState, out: *mut c_void);
+pub type FurnitureCameraState_vtable_GetRotation = unsafe extern "C" fn(this: *mut crate::FurnitureCameraState, out: *mut crate::NiQuaternion);
 /// `FurnitureCameraState::GetTranslation`, slot 5: 0x8f6a70 (high).
-pub type FurnitureCameraState_vtable_GetTranslation = unsafe extern "C" fn(this: *mut crate::FurnitureCameraState, out: *mut c_void);
+pub type FurnitureCameraState_vtable_GetTranslation = unsafe extern "C" fn(this: *mut crate::FurnitureCameraState, out: *mut crate::NiPoint3);
 
 /// `FutBinaryFileC::vftable` at 0x18bde90, id 200222 (rtti, high); 12 slots.
 #[repr(C)]
@@ -9295,7 +9295,7 @@ pub type HorseCameraState_vtable_SetFreeRotationMode = unsafe extern "C" fn(this
 /// `HorseCameraState::UpdateRotation`, slot 14:  (high).
 pub type HorseCameraState_vtable_UpdateRotation = unsafe extern "C" fn(this: *mut crate::HorseCameraState);
 /// `HorseCameraState::ProcessLookInput`, slot 15:  (high).
-pub type HorseCameraState_vtable_ProcessLookInput = unsafe extern "C" fn(this: *mut crate::HorseCameraState, look: *mut c_void);
+pub type HorseCameraState_vtable_ProcessLookInput = unsafe extern "C" fn(this: *mut crate::HorseCameraState, look: *mut crate::NiPoint2);
 
 /// `HorseCameraState::vftable_20` at 0x196ced0, id 214839 (rtti, high); 7 slots.
 #[repr(C)]
@@ -13940,9 +13940,9 @@ pub type IronSightsState_vtable_Begin = unsafe extern "C" fn(this: *mut crate::T
 /// `IronSightsState::Update`, slot 3: writes the root from slots 4/5 (high).
 pub type IronSightsState_vtable_Update = unsafe extern "C" fn(this: *mut crate::TESCameraState, next: *mut c_void);
 /// `IronSightsState::GetRotation`, slot 4:  (high).
-pub type IronSightsState_vtable_GetRotation = unsafe extern "C" fn(this: *mut crate::IronSightsState, out: *mut c_void);
+pub type IronSightsState_vtable_GetRotation = unsafe extern "C" fn(this: *mut crate::IronSightsState, out: *mut crate::NiQuaternion);
 /// `IronSightsState::GetTranslation`, slot 5:  (high).
-pub type IronSightsState_vtable_GetTranslation = unsafe extern "C" fn(this: *mut crate::IronSightsState, out: *mut c_void);
+pub type IronSightsState_vtable_GetTranslation = unsafe extern "C" fn(this: *mut crate::IronSightsState, out: *mut crate::NiPoint3);
 
 /// `IsSpellTargetFunctor::vftable` at 0x18f8d60, id 205918 (rtti, high); 2 slots.
 #[repr(C)]

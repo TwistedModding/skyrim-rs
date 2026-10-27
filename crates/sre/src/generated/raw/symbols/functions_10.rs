@@ -4,6 +4,7 @@
 use crate::raw::*;
 
 pub(super) const ROWS: &[Function] = &[
+    Function { rva: 0x13cb130, id: 451114, confidence: Confidence::High, name: "ScalarDeletingDtorSize10_87" },
     Function { rva: 0x13cbcf0, id: 99706, confidence: Confidence::Medium, name: "DeleteVector0x530" },
     Function { rva: 0x13cbe70, id: 99711, confidence: Confidence::Medium, name: "InsertReallocateVector0x530" },
     Function { rva: 0x13cc0a0, id: 451142, confidence: Confidence::Medium, name: "MoveConstructInlineFixedString256" },
@@ -8190,5 +8191,4 @@ pub(super) const ROWS: &[Function] = &[
     Function { rva: 0x1771d70, id: 168617, confidence: Confidence::Medium, name: "GameSetting_fPerkLightArmorExpertSpeedMult__atexit" },
     Function { rva: 0x1771dc0, id: 168618, confidence: Confidence::Medium, name: "GameSetting_fPerkLightArmorJourneymanDamageMult__atexit" },
     Function { rva: 0x1771e10, id: 168619, confidence: Confidence::Medium, name: "GameSetting_fPerkLightArmorNoviceDamageMult__atexit" },
-    Function { rva: 0x1771e60, id: 168620, confidence: Confidence::Medium, name: "GameSetting_fPersAdmireAggr__atexit" },
 ];

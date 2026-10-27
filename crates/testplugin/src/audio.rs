@@ -60,7 +60,7 @@ fn play_marker() -> Result<String, String> {
     update(|r| r.ids.push(handle.id));
     check(handle.set_position(player.posX, player.posY, player.posZ), "SetPosition refused")?;
     if let Some(root) = third_person_root(player) {
-        handle.follow_node(root);
+        handle.follow_node(Some(&**root));
     }
     check(handle.play(), "Play refused")?;
     let playing = wait_for(Duration::from_secs(2), || handle.is_valid() && handle.is_playing()).ok_or("never valid and playing")?;

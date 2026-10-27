@@ -21,16 +21,16 @@ pub const LOG: &str = "skyrim-rs-hooks";
 static RUNTIME: OnceLock<u32> = OnceLock::new();
 
 /// `Actor::ModActorValueImpl(this, modifier, value, delta, source)` as the subscribers see it.
-pub type ModArgs = (*mut sre::Actor, i32, i32, f32, *mut c_void);
+pub type ModArgs = (*mut sre::Actor, i32, u32, f32, *mut c_void);
 /// `Actor::ActorValueOwner_ModActorValue(this, modifier, value, delta)`.
-pub type OwnerModArgs = (*mut sre::ActorValueOwner, i32, i32, f32);
+pub type OwnerModArgs = (*mut sre::ActorValueOwner, i32, u32, f32);
 
 /// Whether a modifier change damages the player's health.
 #[must_use]
-pub fn player_health_damage(this: *const c_void, modifier: i32, value: i32, delta: f32) -> bool {
+pub fn player_health_damage(this: *const c_void, modifier: i32, value: u32, delta: f32) -> bool {
     let player = sre::PlayerCharacter::singleton().map_or(core::ptr::null(), |p| core::ptr::from_ref(p).cast::<c_void>());
     let owner = sre::PlayerCharacter::singleton().map_or(core::ptr::null(), |p| core::ptr::from_ref(p.as_actor_value_owner()).cast::<c_void>());
-    (this == player || this == owner) && value == ActorValue::Health as i32 && modifier == Modifier::Damage as i32 && delta < 0.0
+    (this == player || this == owner) && value == ActorValue::Health as u32 && modifier == Modifier::Damage as i32 && delta < 0.0
 }
 
 pub fn log(line: impl Display) {

@@ -56,6 +56,7 @@ impl crate::BSAnimationGraphManager {
     ///
     /// Semantic, animation pass, high; called through the object's vtable.
     /// `BSEventNotifyControl (BSAnimationGraphManager* this, const BSAnimationGraphEvent* event, BSTEventSource<BSAnimationGraphEvent>* source)`
+    /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
     ///
     /// # Safety
     /// `source` must point to what the engine expects.
@@ -134,8 +135,9 @@ impl crate::BSFaceGenNiNode {
     ///
     /// Semantic, animation pass, high; called through the object's vtable.
     /// `void (BSFaceGenNiNode* this, NiNode* skeleton, bool)`
+    /// May be null: `skeleton`.
     #[inline]
-    pub fn bind_skins_to_skeleton(&self, skeleton: &crate::NiNode, a2: bool) { unsafe { virtual_function!(self, 62, (*const Self, *const crate::NiNode, bool))(core::ptr::from_ref(self), core::ptr::from_ref(skeleton), a2) } }
+    pub fn bind_skins_to_skeleton(&self, skeleton: Option<&crate::NiNode>, a2: bool) { unsafe { virtual_function!(self, 62, (*const Self, *const crate::NiNode, bool))(core::ptr::from_ref(self), skeleton.map_or(core::ptr::null(), core::ptr::from_ref), a2) } }
     /// `BSFaceGenNiNode::ApplyMorphs`: per child geometry with morph extra data: applies the animation channel weights to the head vertices with distance LOD (fTalkingDistance, fLodDistance) from the node's world translation; touches no bone
     ///
     /// Semantic, animation pass, medium; ledger semantic evidence, name medium; id 26988, rva 0x439970.
@@ -202,6 +204,7 @@ impl crate::BShkbAnimationGraph {
     ///
     /// Semantic, animation pass, high; called through the object's vtable.
     /// `void (BShkbAnimationGraph* this, bhkWorld* world)`
+    /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
     #[inline]
     pub fn set_world(&self, world: &crate::bhkWorld) { unsafe { virtual_function!(self, 4, (*const Self, *const crate::bhkWorld))(core::ptr::from_ref(self), core::ptr::from_ref(world)) } }
     /// `BShkbAnimationGraph::dtor`, vtable slot 0: virtual destructor
@@ -217,6 +220,7 @@ impl crate::BShkbAnimationGraph {
     ///
     /// Semantic, animation pass, high; ledger semantic evidence, name high; id 63583, rva 0xbccea0.
     /// `void (BShkbAnimationGraph* this, hkbContext* ctx, BSScrapArray<GraphEventPair>* eventsOut)`
+    /// May be null: `eventsOut`.
     ///
     /// # Safety
     /// `ctx`, `eventsOut` must point to what the engine expects.
@@ -325,12 +329,14 @@ impl crate::BShkbAnimationGraph {
     ///
     /// Semantic, animation pass, high; ledger semantic evidence, name high; id 63596, rva 0xbcfdb0.
     /// `void (BShkbAnimationGraph* this, NiNode* root)`
+    /// May be null: `root`.
     #[inline]
-    pub fn set_root_node(&self, root: &crate::NiNode) { unsafe { function!(63596, (*const Self, *const crate::NiNode))(core::ptr::from_ref(self), core::ptr::from_ref(root)) } }
+    pub fn set_root_node(&self, root: Option<&crate::NiNode>) { unsafe { function!(63596, (*const Self, *const crate::NiNode))(core::ptr::from_ref(self), root.map_or(core::ptr::null(), core::ptr::from_ref)) } }
     /// `BShkbAnimationGraph::Update`: advances the behaviour graph for the frame and collects its events into eventsOut when non-null
     ///
     /// Semantic, animation pass, medium; ledger semantic evidence, name medium; id 63587, rva 0xbcedb0.
     /// `void (BShkbAnimationGraph* this, BSAnimationUpdateData* data, BSScrapArray<GraphEventPair>* eventsOut)`
+    /// May be null: `eventsOut`.
     ///
     /// # Safety
     /// The pass rates the signature medium.
@@ -399,6 +405,7 @@ impl crate::IAnimationGraphManagerHolder {
     ///
     /// Semantic, animation pass, high; called through the object's vtable.
     /// `bool (IAnimationGraphManagerHolder* this, const BSFixedString& name, bool& out)`
+    /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
     ///
     /// # Safety
     /// `out` must point to what the engine expects.
@@ -414,6 +421,7 @@ impl crate::IAnimationGraphManagerHolder {
     ///
     /// Semantic, animation pass, high; called through the object's vtable.
     /// `bool (IAnimationGraphManagerHolder* this, const BSFixedString& name, float& out)`
+    /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
     ///
     /// # Safety
     /// `out` must point to what the engine expects.
@@ -423,6 +431,7 @@ impl crate::IAnimationGraphManagerHolder {
     ///
     /// Semantic, animation pass, high; called through the object's vtable.
     /// `bool (IAnimationGraphManagerHolder* this, const BSFixedString& name, int& out)`
+    /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
     ///
     /// # Safety
     /// `out` must point to what the engine expects.
@@ -441,6 +450,7 @@ impl crate::IAnimationGraphManagerHolder {
     ///
     /// Semantic, animation pass, high; called through the object's vtable.
     /// `bool (IAnimationGraphManagerHolder* this, const BSFixedString& eventName)`
+    /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
     #[inline]
     pub fn notify_animation_graph(&self, eventName: &crate::BSFixedString) -> bool { unsafe { virtual_function!(self, 1, (*const Self, *const crate::BSFixedString) -> bool)(core::ptr::from_ref(self), core::ptr::from_ref(eventName)) } }
     /// `IAnimationGraphManagerHolder::OnAnimationGraphManagerChanged`, vtable slot 13: called by SetAnimationGraphManagerAndNotify 0x554060 after slot 3 when the manager changed
@@ -594,18 +604,21 @@ impl crate::NiSkinData {
     ///
     /// Semantic, animation pass, high; called through the object's vtable.
     /// `bool (NiSkinData* this, NiObject* other)`
+    /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
     #[inline]
     pub fn is_equal(&self, other: &crate::NiObject) -> bool { unsafe { virtual_function!(self, 28, (*const Self, *const crate::NiObject) -> bool)(core::ptr::from_ref(self), core::ptr::from_ref(other)) } }
     /// `NiSkinData::LoadBinary`, vtable slot 24: reads the overall transform, bone count, a has-weights byte and per bone: transform, bound sphere, weight count and (when the byte is set) the weights
     ///
     /// Semantic, animation pass, high; called through the object's vtable.
     /// `void (NiSkinData* this, NiStream* s)`
+    /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
     #[inline]
     pub fn load_binary(&self, s: &crate::NiStream) { unsafe { virtual_function!(self, 24, (*const Self, *const crate::NiStream))(core::ptr::from_ref(self), core::ptr::from_ref(s)) } }
     /// `NiSkinData::SaveBinary`, vtable slot 27: writes the same; has-weights = boneData[0].weights != null
     ///
     /// Semantic, animation pass, high; called through the object's vtable.
     /// `void (NiSkinData* this, NiStream* s)`
+    /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
     #[inline]
     pub fn save_binary(&self, s: &crate::NiStream) { unsafe { virtual_function!(self, 27, (*const Self, *const crate::NiStream))(core::ptr::from_ref(self), core::ptr::from_ref(s)) } }
 }
@@ -615,12 +628,14 @@ impl crate::NiSkinPartition {
     ///
     /// Semantic, animation pass, high; called through the object's vtable.
     /// `bool (NiSkinPartition* this, NiObject* other)`
+    /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
     #[inline]
     pub fn is_equal(&self, other: &crate::NiObject) -> bool { unsafe { virtual_function!(self, 28, (*const Self, *const crate::NiObject) -> bool)(core::ptr::from_ref(self), core::ptr::from_ref(other)) } }
     /// `NiSkinPartition::LoadBinary`, vtable slot 24: reads the partitions and the shared vertex block (vertex descriptor bits choose the stream element sizes)
     ///
     /// Semantic, animation pass, high; called through the object's vtable.
     /// `void (NiSkinPartition* this, NiStream* s)`
+    /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
     #[inline]
     pub fn load_binary(&self, s: &crate::NiStream) { unsafe { virtual_function!(self, 24, (*const Self, *const crate::NiStream))(core::ptr::from_ref(self), core::ptr::from_ref(s)) } }
     /// `NiSkinPartition::RenderPartition`, vtable slot 37: sets the bone matrices through the context's setter and issues the partition's draw
@@ -636,6 +651,7 @@ impl crate::NiSkinPartition {
     ///
     /// Semantic, animation pass, high; called through the object's vtable.
     /// `void (NiSkinPartition* this, NiStream* s)`
+    /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
     #[inline]
     pub fn save_binary(&self, s: &crate::NiStream) { unsafe { virtual_function!(self, 27, (*const Self, *const crate::NiStream))(core::ptr::from_ref(self), core::ptr::from_ref(s)) } }
     /// `NiSkinPartition::RenderAll`: calls slot 37 for each partition
@@ -647,6 +663,14 @@ impl crate::NiSkinPartition {
     /// `ctx` must point to what the engine expects.
     #[inline]
     pub unsafe fn render_all(&self, ctx: *mut c_void) { unsafe { function!(71150, (*const Self, *mut c_void))(core::ptr::from_ref(self), ctx) } }
+}
+
+impl crate::hkaSkeleton {
+    /// `hkaSkeleton::referencePose` at +0x38: hkQsTransform[referencePoseCount], local space
+    ///
+    /// Semantic field, animation pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn reference_pose(&self) -> Option<&crate::hkQsTransform> { unsafe { { self.referencePose }.as_ref() } }
 }
 
 impl crate::hkbBehaviorGraph {
@@ -669,6 +693,7 @@ impl crate::hkbBehaviorGraph {
     ///
     /// Semantic, animation pass, medium; ledger semantic evidence, name medium; id 63851, rva 0xbdf360.
     /// `hkbVariableValueSet* (hkbBehaviorGraph* graph)`
+    /// May be null: `graph`.
     ///
     /// # Safety
     /// The pass rates the signature medium.
@@ -736,11 +761,12 @@ impl crate::hkbCharacter {
     ///
     /// Semantic, animation pass, medium; called through the object's vtable.
     /// `void (hkbCharacter* this, const hkVector4* pos, float radius, hkpWorld* world, hkArray<hkpRigidBody*>* out, u32 filter, bool excludeSelf, bool excludeNonCharacters)`
+    /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
     ///
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn get_nearby_rigid_bodies(&self, pos: *const c_void, radius: f32, world: *mut crate::hkpWorld, out: *mut c_void, filter: u32, excludeSelf: bool, excludeNonCharacters: bool) { unsafe { virtual_function!(self, 3, (*const Self, *const c_void, f32, *mut crate::hkpWorld, *mut c_void, u32, bool, bool))(core::ptr::from_ref(self), pos, radius, world, out, filter, excludeSelf, excludeNonCharacters) } }
+    pub unsafe fn get_nearby_rigid_bodies(&self, pos: *const crate::hkVector4, radius: f32, world: *mut crate::hkpWorld, out: *mut c_void, filter: u32, excludeSelf: bool, excludeNonCharacters: bool) { unsafe { virtual_function!(self, 3, (*const Self, *const crate::hkVector4, f32, *mut crate::hkpWorld, *mut c_void, u32, bool, bool))(core::ptr::from_ref(self), pos, radius, world, out, filter, excludeSelf, excludeNonCharacters) } }
     /// `hkbCharacter::FreePoseLocal`: frees poseLocal when owned
     ///
     /// Semantic, animation pass, high; ledger semantic evidence, name high; id 58467, rva 0xad80f0.
@@ -757,11 +783,8 @@ impl crate::hkbCharacter {
     ///
     /// Semantic, animation pass, high; ledger semantic evidence, name high; id 58458, rva 0xad7d00.
     /// `hkQsTransform* (hkbCharacter* this)`
-    ///
-    /// # Safety
-    /// The result is an untyped pointer.
     #[inline]
-    pub unsafe fn get_pose_local(&self) -> *mut c_void { unsafe { function!(58458, (*const Self) -> *mut c_void)(core::ptr::from_ref(self)) } }
+    pub fn get_pose_local(&self) -> Option<&'static crate::hkQsTransform> { unsafe { function!(58458, (*const Self) -> Option<&'static crate::hkQsTransform>)(core::ptr::from_ref(self)) } }
     /// `hkbCharacter::InitPoseLocalFromReferencePose`: allocates poseLocal = skeleton bone count * 0x30 and copies the skeleton's reference pose
     ///
     /// Semantic, animation pass, high; ledger semantic evidence, name high; id 58466, rva 0xad8060.
@@ -772,11 +795,12 @@ impl crate::hkbCharacter {
     ///
     /// Semantic, animation pass, medium; ledger semantic evidence, name medium; id 58461, rva 0xad7e30.
     /// `void (hkbCharacter* this, hkQsTransform* buffer, bool owned)`
+    /// May be null: `buffer`.
     ///
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn set_world_from_model_buffer(&self, buffer: *mut c_void, owned: bool) { unsafe { function!(58461, (*const Self, *mut c_void, bool))(core::ptr::from_ref(self), buffer, owned) } }
+    pub unsafe fn set_world_from_model_buffer(&self, buffer: *mut crate::hkQsTransform, owned: bool) { unsafe { function!(58461, (*const Self, *mut crate::hkQsTransform, bool))(core::ptr::from_ref(self), buffer, owned) } }
     /// `hkbCharacter::footIkDriver` at +0x40: foot IK driver
     ///
     /// Semantic field, animation pass, high; `None` while the pointer is null.
@@ -787,6 +811,11 @@ impl crate::hkbCharacter {
     /// Semantic field, animation pass, high; `None` while the pointer is null.
     #[inline]
     pub fn hand_ik_driver(&self) -> Option<&crate::hkbHandIkDriver> { unsafe { { self.handIkDriver }.as_ref() } }
+    /// `hkbCharacter::poseLocal` at +0x90: hkQsTransform[numPoseLocal]: the per-frame pose in parent-local space, one 0x30 entry per skeleton bone
+    ///
+    /// Semantic field, animation pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn pose_local(&self) -> Option<&crate::hkQsTransform> { unsafe { { self.poseLocal }.as_ref() } }
     /// `hkbCharacter::ragdollDriver` at +0x30: ragdoll driver; its +0x88 is the hkaRagdollInstance
     ///
     /// Semantic field, animation pass, high; `None` while the pointer is null.
@@ -797,6 +826,11 @@ impl crate::hkbCharacter {
     /// Semantic field, animation pass, high; `None` while the pointer is null.
     #[inline]
     pub fn setup(&self) -> Option<&crate::hkbCharacterSetup> { unsafe { { self.setup }.as_ref() } }
+    /// `hkbCharacter::worldFromModel` at +0x88: hkQsTransform* (0x30: translation vec4, rotation quaternion xyzw, scale vec4) of the character root
+    ///
+    /// Semantic field, animation pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn world_from_model(&self) -> Option<&crate::hkQsTransform> { unsafe { { self.worldFromModel }.as_ref() } }
 }
 
 impl crate::hkbRagdollDriver {
@@ -825,13 +859,14 @@ pub fn apply_face_morph_job(node: &crate::BSFaceGenNiNode) { unsafe { function!(
 /// `void (const hkQsTransform* pose, BoneNodeArray* nodes, int count)`
 ///
 /// # Safety
-/// `pose`, `nodes` must point to what the engine expects.
+/// `nodes` must point to what the engine expects.
 #[inline]
-pub unsafe fn apply_pose_to_bone_nodes(pose: *const c_void, nodes: *mut c_void, count: i32) { unsafe { function!(63856, (*const c_void, *mut c_void, i32))(pose, nodes, count) } }
+pub unsafe fn apply_pose_to_bone_nodes(pose: *const crate::hkQsTransform, nodes: *mut c_void, count: i32) { unsafe { function!(63856, (*const crate::hkQsTransform, *mut c_void, i32))(pose, nodes, count) } }
 /// `BSTEventSource<BSAnimationGraphEvent>::AddEventSink`: per-graph AddEventSink instance (the one pass 5b could not name)
 ///
 /// Semantic, animation pass, high; ledger semantic evidence, name high; id 20140, rva 0x2fe580.
 /// `void (BSTEventSource<BSAnimationGraphEvent>* source, BSTEventSink<BSAnimationGraphEvent>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// `source` must point to what the engine expects.
@@ -850,6 +885,7 @@ pub unsafe fn bst_event_source_bs_animation_graph_event__notify(source: *mut c_v
 ///
 /// Semantic, animation pass, high; ledger semantic evidence, name high; id 38402, rva 0x6c2dd0.
 /// `void (BSTEventSource<BSAnimationGraphEvent>* source, BSTEventSink<BSAnimationGraphEvent>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// `source` must point to what the engine expects.
@@ -859,6 +895,7 @@ pub unsafe fn bst_event_source_bs_animation_graph_event__remove_event_sink(sourc
 ///
 /// Semantic, animation pass, high; ledger semantic evidence, name high; id 38355, rva 0x6c1c70.
 /// `void (BSTEventSource<BSTransformDeltaEvent>* source, BSTEventSink<BSTransformDeltaEvent>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// `source` must point to what the engine expects.
@@ -868,6 +905,7 @@ pub unsafe fn bst_event_source_bs_transform_delta_event__add_event_sink(source: 
 ///
 /// Semantic, animation pass, high; ledger semantic evidence, name high; id 38410, rva 0x6c3a50.
 /// `void (BSTEventSource<BSTransformDeltaEvent>* source, BSTEventSink<BSTransformDeltaEvent>* sink)`
+/// May be null: `sink`.
 ///
 /// # Safety
 /// `source` must point to what the engine expects.
@@ -886,6 +924,7 @@ pub unsafe fn build_animation_graph_manager(holder: *mut crate::IAnimationGraphM
 ///
 /// Semantic, animation pass, high; ledger semantic evidence, name high; id 22789, rva 0x36d9e0.
 /// `bool (BSTSmartPointer<BSAnimationGraphManager>& mgr, const char* tag, const char* payload, TESObjectREFR* holder)`
+/// May be null: `tag`, `payload`.
 ///
 /// # Safety
 /// `mgr`, `tag`, `payload` must point to what the engine expects.
@@ -895,8 +934,9 @@ pub unsafe fn cmd__recv_anim_event_send(mgr: *mut c_void, tag: *const c_char, pa
 ///
 /// Semantic, animation pass, high; ledger semantic evidence, name high; id 23450, rva 0x38a660.
 /// `void (u32 unused, NiAVObject* node)`
+/// May be null: `node`.
 #[inline]
-pub fn enable_all_dismember_partitions_recursive(unused: u32, node: &crate::NiAVObject) { unsafe { function!(23450, (u32, *const crate::NiAVObject))(unused, core::ptr::from_ref(node)) } }
+pub fn enable_all_dismember_partitions_recursive(unused: u32, node: Option<&crate::NiAVObject>) { unsafe { function!(23450, (u32, *const crate::NiAVObject))(unused, node.map_or(core::ptr::null(), core::ptr::from_ref)) } }
 /// `FaceMorphingStep`: main loop step named 'Face morphing': takes job list 0xc, queues the face morph jobs, runs and waits for the list
 ///
 /// Semantic, animation pass, high; ledger semantic evidence, name high; id 39096, rva 0x6e6250.
@@ -973,6 +1013,7 @@ pub unsafe fn process_lists__update_player_animation(this: *mut c_void) { unsafe
 ///
 /// Semantic, animation pass, high; ledger semantic evidence, name high; id 26996, rva 0x43a3b0.
 /// `void (JobList* list)`
+/// May be null: `list`.
 ///
 /// # Safety
 /// `list` must point to what the engine expects.
@@ -999,9 +1040,9 @@ pub unsafe fn skyrim_script__get_animation_event_source_for_form_id(formID: u32)
 /// `void (i32 count, const i16* parents, const hkQsTransform* root, const hkQsTransform* local, hkQsTransform* modelOut)`
 ///
 /// # Safety
-/// `parents`, `root`, `local`, `modelOut` must point to what the engine expects.
+/// `parents` must point to what the engine expects.
 #[inline]
-pub unsafe fn transform_local_poses_to_model_space(count: i32, parents: *const i16, root: *const c_void, local: *const c_void, modelOut: *mut c_void) { unsafe { function!(64109, (i32, *const i16, *const c_void, *const c_void, *mut c_void))(count, parents, root, local, modelOut) } }
+pub unsafe fn transform_local_poses_to_model_space(count: i32, parents: *const i16, root: *const crate::hkQsTransform, local: *const crate::hkQsTransform, modelOut: *mut crate::hkQsTransform) { unsafe { function!(64109, (i32, *const i16, *const crate::hkQsTransform, *const crate::hkQsTransform, *mut crate::hkQsTransform))(count, parents, root, local, modelOut) } }
 /// `WaitFramePhase`: WaitForSingleObject(INFINITE) on event phase of set
 ///
 /// Semantic, animation pass, high; ledger semantic evidence, name high; id 69516, rva 0xec1dd0.

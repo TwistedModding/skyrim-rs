@@ -174,11 +174,11 @@ fn shaders() -> Result<String, String> {
         check(required.iter().all(|f| flags.contains(*f)), &format!("flags {:#x} lack a required bit", flags.bits()))?;
         check(!forbidden.iter().any(|f| flags.contains(*f)), &format!("flags {:#x} carry a refraction or decal bit", flags.bits()))?;
         let material = property.material().ok_or("a skin without a material")?;
-        let kind = ShaderMaterialType::from_u32(material.get_type());
-        check(kind == Some(ShaderMaterialType::Lighting), &format!("material type {kind:?}"))?;
+        let kind = material.get_type();
+        check(kind == Ok(ShaderMaterialType::Lighting), &format!("material type {kind:?}"))?;
         let lighting = material.as_lighting().ok_or("not a lighting material")?;
         let set = lighting.texture_set().ok_or("no texture set")?;
-        let diffuse = set.texture_path(0).map(|c| c.to_string_lossy().into_owned()).unwrap_or_default();
+        let diffuse = set.texture_path(sre::TextureSetSlot::Diffuse).map(|c| c.to_string_lossy().into_owned()).unwrap_or_default();
         check(diffuse.to_ascii_lowercase().ends_with(".dds"), &format!("diffuse path {diffuse:?}"))?;
         seen.push(format!("{}: flags {:#x} state {:#x} alpha {} feature {:?} diffuse {diffuse}", name(child).to_str().unwrap_or("?"), flags.bits(), property.lastRenderPassState, property.alpha, Some(material.get_feature())));
     }

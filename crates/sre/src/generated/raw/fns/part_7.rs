@@ -3,6 +3,10 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `CombatBehaviorTreeNodeEvaluateFunction<CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorContextCover,bool_(__cdecl_CombatBehaviorContextCover::*)(void)const___ptr64>_>_>::vfunc_9` at 0x8d73d0 (rtti, high); signature (low): `undefined * vfunc_9(void)`
+pub const CombatBehaviorTreeNodeEvaluateFunction_CombatBehaviorExpression_CombatBehaviorMemberFunc_CombatB_f1b5a53a4181: u64 = 49896;
+/// `CombatBehaviorTreeNodeEvaluateFunction<CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorContextFlee,bool_(__cdecl_CombatBehaviorContextFlee::*)(void)const___ptr64>_>_>::vdtor` at 0x8a68b0 (slot_propagation, medium); signature (low): `CombatBehaviorTreeNodeEvaluateFunction<CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorContextFlee,bool_(__cdecl_CombatBehaviorContextFlee::*)(void)const___ptr64>_>_> * vdtor(CombatBehaviorTreeNodeEvaluateFunction<CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorContextFlee,bool_(__cdecl_CombatBehaviorContextFlee::*)(void)const___ptr64>_>_> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+pub const CombatBehaviorTreeNodeEvaluateFunction_CombatBehaviorExpression_CombatBehaviorMemberFunc_CombatB_6cfb905ccafe: u64 = 48691;
 /// `CombatBehaviorTreeNodeEvaluateFunction<CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorContextFlee,bool_(__cdecl_CombatBehaviorContextFlee::*)(void)const___ptr64>_>_>::vfunc_4` at 0x8a8f50 (rtti, high); signature (low): `undefined vfunc_4(CombatBehaviorTreeNodeEvaluateFunction<CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorContextFlee,bool_(__cdecl_CombatBehaviorContextFlee::*)(void)const___ptr64>_>_> * this, longlong param_1)`
 pub const CombatBehaviorTreeNodeEvaluateFunction_CombatBehaviorExpression_CombatBehaviorMemberFunc_CombatB_fc15bb51a36d: u64 = 48791;
 /// `CombatBehaviorTreeNodeEvaluateFunction<CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorContextFlee,bool_(__cdecl_CombatBehaviorContextFlee::*)(void)const___ptr64>_>_>::vfunc_9` at 0x8a8060 (rtti, high); signature (low): `undefined * vfunc_9(void)`
@@ -5553,7 +5557,7 @@ pub type Compass__Update_fn = unsafe extern "C" fn(this: *mut crate::Compass);
 pub const Compass__vfunc_0: u64 = 51711;
 /// `Compass::vfunc_3` at 0x9388c0 (rtti, high); signature (low): `undefined vfunc_3(Compass * this, longlong param_1)`
 pub const Compass__vfunc_3: u64 = 51669;
-/// `CompileAndRunScript` at 0x343d00 (runtime, high); signature (untiered): `undefined CompileAndRunScript(longlong * param_1, undefined8 param_2, uint param_3, longlong param_4)`; compiles script->text and, when the result is non-empty, runs it on thisRef; compileType 1 (console) sets TLS+0x600 for the run (high); semantic signature: `void (Script* script, ScriptCompiler* compiler, uint compileType, TESObjectREFR* thisRef)`
+/// `CompileAndRunScript` at 0x343d00 (runtime, high); signature (untiered): `undefined CompileAndRunScript(longlong * param_1, undefined8 param_2, uint param_3, longlong param_4)`; compiles script->text and, when the result is non-empty, runs it on thisRef; compileType 1 (console) sets TLS+0x600 for the run (high); semantic signature: `void (Script* script, ScriptCompiler* compiler, ScriptCompileType compileType, TESObjectREFR* thisRef)`
 pub const CompileAndRunScript: u64 = 441582;
 /// `CompileAndRunScript` as a function pointer type (high).
 pub type CompileAndRunScript_fn = unsafe extern "C" fn(script: *mut crate::Script, compiler: *mut c_void, compileType: u32, thisRef: *mut crate::TESObjectREFR);
@@ -5718,7 +5722,7 @@ pub const ComputeAutoAimAngles: u64 = 41248;
 /// `ComputeAutoVanityCameraPosition` at 0x8f3a10 (semantic, high); signature (untiered): `undefined ComputeAutoVanityCameraPosition(longlong param_1, float * param_2, longlong param_3, undefined8 param_4)`; out = target 3D world translation + (0, 0, eye height) - fDefaultAutoVanityZoom:Camera * rotation column 1 (forward), then ComputeCameraCasterCollision(camera, out, true); zero point when there is no target (high); semantic signature: `void (AutoVanityState* this, NiPoint3* out, const NiMatrix3* rotation)`
 pub const ComputeAutoVanityCameraPosition: u64 = 50713;
 /// `ComputeAutoVanityCameraPosition` as a function pointer type (high).
-pub type ComputeAutoVanityCameraPosition_fn = unsafe extern "C" fn(this: *mut crate::AutoVanityState, out: *mut c_void, rotation: *const c_void);
+pub type ComputeAutoVanityCameraPosition_fn = unsafe extern "C" fn(this: *mut crate::AutoVanityState, out: *mut crate::NiPoint3, rotation: *const crate::NiMatrix3);
 /// `ComputeAverageVector4` at 0xad6ba0 (decompiler, medium); signature (medium): `undefined ComputeAverageVector4(undefined8 param_1, float * param_2, int param_3, float * param_4)`
 pub const ComputeAverageVector4: u64 = 58440;
 /// `ComputeAxisAlignedBoxCorners` at 0xfcead0 (decompiler, medium); signature (medium): `undefined ComputeAxisAlignedBoxCorners(longlong param_1, float * param_2)`
@@ -5758,11 +5762,11 @@ pub const ComputeBudgetCategoryUsage: u64 = 15568;
 /// `ComputeCameraCasterCollision` at 0x8fa5d0 (runtime, high); signature (untiered): `undefined8 ComputeCameraCasterCollision(longlong param_1, float * param_2, undefined8 param_3, undefined8 param_4)`; clip cameraPos against the world between the target point and the camera; returns true when moved; manages fadedActorHandle (high); semantic signature: `bool (PlayerCamera* this, NiPoint3* cameraPos, bool fadeActors)`
 pub const ComputeCameraCasterCollision: u64 = 50832;
 /// `ComputeCameraCasterCollision` as a function pointer type (high).
-pub type ComputeCameraCasterCollision_fn = unsafe extern "C" fn(this: *mut crate::PlayerCamera, cameraPos: *mut c_void, fadeActors: bool) -> bool;
+pub type ComputeCameraCasterCollision_fn = unsafe extern "C" fn(this: *mut crate::PlayerCamera, cameraPos: *mut crate::NiPoint3, fadeActors: bool) -> bool;
 /// `ComputeCameraShakeRotation` at 0x558600 (runtime, high); signature (untiered): `float ComputeCameraShakeRotation(undefined4 param_1, float * param_2)`; when strength and time left are > 1e-4: UpdateNode the CameraShake.nif root at the time stored at (root+0x18)+0x1c (its reference pose), keep that local rotation R0, UpdateNode again at `time`, outDelta = inverse(R0) * R(time); timeLeft -= g_FrameDelta; returns strength, faded linearly over the last fCameraShakeFadeTime; else zeroes both and returns 0 (high); semantic signature: `float (float time, NiMatrix3* outDelta)`
 pub const ComputeCameraShakeRotation: u64 = 33013;
 /// `ComputeCameraShakeRotation` as a function pointer type (high).
-pub type ComputeCameraShakeRotation_fn = unsafe extern "C" fn(time: f32, outDelta: *mut c_void) -> f32;
+pub type ComputeCameraShakeRotation_fn = unsafe extern "C" fn(time: f32, outDelta: *mut crate::NiMatrix3) -> f32;
 /// `ComputeCapsuleCapsuleContact` at 0xc948d0 (decompiler, medium); signature (untiered): `undefined8 ComputeCapsuleCapsuleContact(float * param_1, float param_2, float * param_3, undefined8 param_4, float param_5, float * param_6)`
 pub const ComputeCapsuleCapsuleContact: u64 = 67079;
 /// `ComputeCapsuleCapsuleMinkowskiSupport` at 0x56a550 (decompiler, medium); signature (medium): `float * ComputeCapsuleCapsuleMinkowskiSupport(float * param_1, longlong param_2, longlong param_3, float * param_4)`
@@ -5787,13 +5791,3 @@ pub const ComputeCellPlacementPositionAndRotation: u64 = 19075;
 pub const ComputeCentroidIfUnset: u64 = 80947;
 /// `ComputeChildrenBoundsUnion` at 0xd60840 (decompiler, medium); signature (untiered): `undefined ComputeChildrenBoundsUnion(longlong param_1, float * param_2, float * param_3)`
 pub const ComputeChildrenBoundsUnion: u64 = 84171;
-/// `ComputeChildrenBoundsUnionMatrix4` at 0xd60a80 (decompiler, medium); signature (untiered): `undefined ComputeChildrenBoundsUnionMatrix4(longlong param_1, float * param_2, float * param_3, char param_4)`
-pub const ComputeChildrenBoundsUnionMatrix4: u64 = 84172;
-/// `ComputeChildrenBoundsUnionVfunc80` at 0xd61d30 (decompiler, medium); signature (untiered): `undefined ComputeChildrenBoundsUnionVfunc80(longlong param_1, float * param_2, undefined8 * param_3)`
-pub const ComputeChildrenBoundsUnionVfunc80: u64 = 84214;
-/// `ComputeCircleCommonTangents2D` at 0x11fc8b0 (decompiler, medium); signature (medium): `ulonglong ComputeCircleCommonTangents2D(float * param_1, float * param_2, int param_3, undefined4 * param_4)`
-pub const ComputeCircleCommonTangents2D: u64 = 91544;
-/// `ComputeCircleTangentDirections2D` at 0x11fbf30 (decompiler, medium); signature (untiered): `undefined1 ComputeCircleTangentDirections2D(float * param_1, float * param_2, float * param_3, float * param_4)`
-pub const ComputeCircleTangentDirections2D: u64 = 91537;
-/// `ComputeCircleTangentPoints2D` at 0x11fbe10 (decompiler, medium); signature (medium): `ulonglong ComputeCircleTangentPoints2D(float * param_1, float param_2, float * param_3, float * param_4, float * param_5)`
-pub const ComputeCircleTangentPoints2D: u64 = 91536;

@@ -2062,19 +2062,19 @@ impl ActorValueMeter_vtable {
 pub struct ActorValueOwner_vtable {
     /// `ActorValueOwner::vdtor` at 0x3cbb40 (layout_inference, medium); signature (low): `ActorValueOwner * vdtor(ActorValueOwner * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `ActorValueOwner::GetActorValue` at 0x3cc610 (runtime, high); signature (untiered): `undefined8 GetActorValue(void)`; `GetActorValue`: current value (high); semantic signature: `float GetActorValue(const ActorValueOwner* this, int value)`
+    /// `ActorValueOwner::GetActorValue` at 0x3cc610 (runtime, high); signature (untiered): `undefined8 GetActorValue(void)`; `GetActorValue`: current value (high); semantic signature: `float GetActorValue(const ActorValueOwner* this, ActorValue value)`
     pub slot_1: *const c_void,
-    /// `ActorValueOwner::GetPermanentActorValue` at 0x3cc6f0 (runtime, high); signature (untiered): `undefined8 GetPermanentActorValue(void)`; `GetPermanentActorValue`: base plus permanent modifier (high); semantic signature: `float GetPermanentActorValue(const ActorValueOwner* this, int value)`
+    /// `ActorValueOwner::GetPermanentActorValue` at 0x3cc6f0 (runtime, high); signature (untiered): `undefined8 GetPermanentActorValue(void)`; `GetPermanentActorValue`: base plus permanent modifier (high); semantic signature: `float GetPermanentActorValue(const ActorValueOwner* this, ActorValue value)`
     pub slot_2: *const c_void,
-    /// `ActorValueOwner::GetBaseActorValue` at 0x3cc630 (runtime, high); signature (untiered): `undefined8 GetBaseActorValue(void)`; `GetBaseActorValue`: base value (high); semantic signature: `float GetBaseActorValue(const ActorValueOwner* this, int value)`
+    /// `ActorValueOwner::GetBaseActorValue` at 0x3cc630 (runtime, high); signature (untiered): `undefined8 GetBaseActorValue(void)`; `GetBaseActorValue`: base value (high); semantic signature: `float GetBaseActorValue(const ActorValueOwner* this, ActorValue value)`
     pub slot_3: *const c_void,
-    /// `ActorValueOwner::StoreBaseActorValue` at 0x3cd8b0 (semantic, high); signature (untiered): `undefined StoreBaseActorValue(void)`; `StoreBaseActorValue`: sets the base value (high); semantic signature: `void StoreBaseActorValue(ActorValueOwner* this, int value, float amount)`
+    /// `ActorValueOwner::StoreBaseActorValue` at 0x3cd8b0 (semantic, high); signature (untiered): `undefined StoreBaseActorValue(void)`; `StoreBaseActorValue`: sets the base value (high); semantic signature: `void StoreBaseActorValue(ActorValueOwner* this, ActorValue value, float amount)`
     pub slot_4: *const c_void,
-    /// `ActorValueOwner::AddBaseActorValue` at 0x3ccb60 (semantic, high); signature (untiered): `undefined AddBaseActorValue(void)`; `AddBaseActorValue`: adds to the base value (high); semantic signature: `void AddBaseActorValue(ActorValueOwner* this, int value, float delta)`
+    /// `ActorValueOwner::AddBaseActorValue` at 0x3ccb60 (semantic, high); signature (untiered): `undefined AddBaseActorValue(void)`; `AddBaseActorValue`: adds to the base value (high); semantic signature: `void AddBaseActorValue(ActorValueOwner* this, ActorValue value, float delta)`
     pub slot_5: *const c_void,
-    /// `ActorValueOwner::ModActorValue` at 0x3ccb40 (runtime, high); signature (untiered): `undefined ModActorValue(void)`; `ModActorValue`: adds to a modifier (0 permanent, 1 temporary, 2 damage) (high); semantic signature: `void ModActorValue(ActorValueOwner* this, int modifier, int value, float delta)`
+    /// `ActorValueOwner::ModActorValue` at 0x3ccb40 (runtime, high); signature (untiered): `undefined ModActorValue(void)`; `ModActorValue`: adds to a modifier (0 permanent, 1 temporary, 2 damage) (high); semantic signature: `void ModActorValue(ActorValueOwner* this, int modifier, ActorValue value, float delta)`
     pub slot_6: *const c_void,
-    /// `ActorValueOwner::SetActorValue` at 0x3cd850 (semantic, high); signature (untiered): `undefined SetActorValue(ActorValueOwner * this)`; `SetActorValue`: sets the value (base in the default implementation) (high); semantic signature: `void SetActorValue(ActorValueOwner* this, int value, float amount)`
+    /// `ActorValueOwner::SetActorValue` at 0x3cd850 (semantic, high); signature (untiered): `undefined SetActorValue(ActorValueOwner * this)`; `SetActorValue`: sets the value (base in the default implementation) (high); semantic signature: `void SetActorValue(ActorValueOwner* this, ActorValue value, float amount)`
     pub slot_7: *const c_void,
     /// `ActorValueOwner::IsPlayer` at 0x447170 (semantic, high); signature (untiered): `undefined1 IsPlayer(void)`; `IsPlayer`: whether the owner is the player or the player's base NPC (high); semantic signature: `bool IsPlayer(const ActorValueOwner* this)`
     pub slot_8: *const c_void,
@@ -2131,19 +2131,19 @@ impl ActorValueOwner_vtable {
     }
 }
 /// `ActorValueOwner::GetActorValue`, slot 1: current value (high).
-pub type ActorValueOwner_vtable_GetActorValue = unsafe extern "C" fn(this: *const crate::ActorValueOwner, value: i32) -> f32;
+pub type ActorValueOwner_vtable_GetActorValue = unsafe extern "C" fn(this: *const crate::ActorValueOwner, value: u32) -> f32;
 /// `ActorValueOwner::GetPermanentActorValue`, slot 2: base plus permanent modifier (high).
-pub type ActorValueOwner_vtable_GetPermanentActorValue = unsafe extern "C" fn(this: *const crate::ActorValueOwner, value: i32) -> f32;
+pub type ActorValueOwner_vtable_GetPermanentActorValue = unsafe extern "C" fn(this: *const crate::ActorValueOwner, value: u32) -> f32;
 /// `ActorValueOwner::GetBaseActorValue`, slot 3: base value (high).
-pub type ActorValueOwner_vtable_GetBaseActorValue = unsafe extern "C" fn(this: *const crate::ActorValueOwner, value: i32) -> f32;
+pub type ActorValueOwner_vtable_GetBaseActorValue = unsafe extern "C" fn(this: *const crate::ActorValueOwner, value: u32) -> f32;
 /// `ActorValueOwner::StoreBaseActorValue`, slot 4: sets the base value (high).
-pub type ActorValueOwner_vtable_StoreBaseActorValue = unsafe extern "C" fn(this: *mut crate::ActorValueOwner, value: i32, amount: f32);
+pub type ActorValueOwner_vtable_StoreBaseActorValue = unsafe extern "C" fn(this: *mut crate::ActorValueOwner, value: u32, amount: f32);
 /// `ActorValueOwner::AddBaseActorValue`, slot 5: adds to the base value (high).
-pub type ActorValueOwner_vtable_AddBaseActorValue = unsafe extern "C" fn(this: *mut crate::ActorValueOwner, value: i32, delta: f32);
+pub type ActorValueOwner_vtable_AddBaseActorValue = unsafe extern "C" fn(this: *mut crate::ActorValueOwner, value: u32, delta: f32);
 /// `ActorValueOwner::ModActorValue`, slot 6: adds to a modifier (0 permanent, 1 temporary, 2 damage) (high).
-pub type ActorValueOwner_vtable_ModActorValue = unsafe extern "C" fn(this: *mut crate::ActorValueOwner, modifier: i32, value: i32, delta: f32);
+pub type ActorValueOwner_vtable_ModActorValue = unsafe extern "C" fn(this: *mut crate::ActorValueOwner, modifier: i32, value: u32, delta: f32);
 /// `ActorValueOwner::SetActorValue`, slot 7: sets the value (base in the default implementation) (high).
-pub type ActorValueOwner_vtable_SetActorValue = unsafe extern "C" fn(this: *mut crate::ActorValueOwner, value: i32, amount: f32);
+pub type ActorValueOwner_vtable_SetActorValue = unsafe extern "C" fn(this: *mut crate::ActorValueOwner, value: u32, amount: f32);
 /// `ActorValueOwner::IsPlayer`, slot 8: whether the owner is the player or the player's base NPC (high).
 pub type ActorValueOwner_vtable_IsPlayer = unsafe extern "C" fn(this: *const crate::ActorValueOwner) -> bool;
 

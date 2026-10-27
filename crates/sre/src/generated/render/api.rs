@@ -92,35 +92,37 @@ impl crate::BSCullingProcess {
     ///
     /// Semantic, render pass, high; called through the object's vtable.
     /// `void (BSCullingProcess* this, BSGeometry* geometry)`
+    /// May be null: `geometry`.
     #[inline]
-    pub fn append_geometry(&self, geometry: &crate::BSGeometry) { unsafe { virtual_function!(self, 25, (*const Self, *const crate::BSGeometry))(core::ptr::from_ref(self), core::ptr::from_ref(geometry)) } }
+    pub fn append_geometry(&self, geometry: Option<&crate::BSGeometry>) { unsafe { virtual_function!(self, 25, (*const Self, *const crate::BSGeometry))(core::ptr::from_ref(self), geometry.map_or(core::ptr::null(), core::ptr::from_ref)) } }
     /// `BSCullingProcess::AppendVisible`, vtable slot 24: group -1 and no deferral: slot 25 AppendGeometry(object, appendTag); otherwise queue {object, group, appendTag} for the ordered pass
     ///
     /// Semantic, render pass, high; called through the object's vtable.
     /// `void (BSCullingProcess* this, NiAVObject* object, i32 groupIndex)`
+    /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
     #[inline]
     pub fn append_visible(&self, object: &crate::NiAVObject, groupIndex: i32) { unsafe { virtual_function!(self, 24, (*const Self, *const crate::NiAVObject, i32))(core::ptr::from_ref(self), core::ptr::from_ref(object), groupIndex) } }
     /// `BSCullingProcess::CullNode`, vtable slot 22: tests the node against the frustum and portals by cullMode (narrowing the frustum mask at +0x9c) and calls the node's slot 52 (OnVisible) when it passes, handing the ordered-group index on
     ///
     /// Semantic, render pass, high; called through the object's vtable.
     /// `void (BSCullingProcess* this, NiAVObject* node, u32 orderedGroup)`
+    /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
     #[inline]
     pub fn cull_node(&self, node: &crate::NiAVObject, orderedGroup: u32) { unsafe { virtual_function!(self, 22, (*const Self, *const crate::NiAVObject, u32))(core::ptr::from_ref(self), core::ptr::from_ref(node), orderedGroup) } }
     /// `BSCullingProcess::Process`, vtable slot 23: stores the camera, sets up the planes, culls the scene root (through NiAVObject::Cull when the cull is parallel)
     ///
     /// Semantic, render pass, high; called through the object's vtable.
     /// `void (BSCullingProcess* this, NiCamera* camera, NiAVObject* scene, BSShaderAccumulator* accumulator)`
+    /// May be null: `camera`, `scene`, `accumulator`.
     #[inline]
-    pub fn process(&self, camera: &crate::NiCamera, scene: &crate::NiAVObject, accumulator: &crate::BSShaderAccumulator) { unsafe { virtual_function!(self, 23, (*const Self, *const crate::NiCamera, *const crate::NiAVObject, *const crate::BSShaderAccumulator))(core::ptr::from_ref(self), core::ptr::from_ref(camera), core::ptr::from_ref(scene), core::ptr::from_ref(accumulator)) } }
+    pub fn process(&self, camera: Option<&crate::NiCamera>, scene: Option<&crate::NiAVObject>, accumulator: Option<&crate::BSShaderAccumulator>) { unsafe { virtual_function!(self, 23, (*const Self, *const crate::NiCamera, *const crate::NiAVObject, *const crate::BSShaderAccumulator))(core::ptr::from_ref(self), camera.map_or(core::ptr::null(), core::ptr::from_ref), scene.map_or(core::ptr::null(), core::ptr::from_ref), accumulator.map_or(core::ptr::null(), core::ptr::from_ref)) } }
     /// `BSCullingProcess::TestBoundAgainstPlanes`, vtable slot 28: false when the sphere is outside an active plane; clears the bits of planes it is fully inside when +0x120
     ///
     /// Semantic, render pass, high; called through the object's vtable.
     /// `bool (BSCullingProcess* this, const NiBound* bound)`
-    ///
-    /// # Safety
-    /// `bound` must point to what the engine expects.
+    /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
     #[inline]
-    pub unsafe fn test_bound_against_planes(&self, bound: *const c_void) -> bool { unsafe { virtual_function!(self, 28, (*const Self, *const c_void) -> bool)(core::ptr::from_ref(self), bound) } }
+    pub fn test_bound_against_planes(&self, bound: &crate::NiBound) -> bool { unsafe { virtual_function!(self, 28, (*const Self, *const crate::NiBound) -> bool)(core::ptr::from_ref(self), core::ptr::from_ref(bound)) } }
     /// `BSCullingProcess::DrainQueuedVisible`: moves queued {object, group} records into groupBuckets[group]; negative group: slot 25 directly
     ///
     /// Semantic, frame pass, medium; ledger semantic evidence, name medium; id 76559, rva 0xfee400.
@@ -193,6 +195,7 @@ impl crate::BSLightingShaderProperty {
     ///
     /// Semantic, render pass, low; called through the object's vtable.
     /// `BSRenderPass** (BSLightingShaderProperty* this, BSGeometry* g)`
+    /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
     ///
     /// # Safety
     /// The pass rates the signature low.
@@ -202,6 +205,7 @@ impl crate::BSLightingShaderProperty {
     ///
     /// Semantic, render pass, low; called through the object's vtable.
     /// `BSRenderPass* (BSLightingShaderProperty* this, BSGeometry* g)`
+    /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
     ///
     /// # Safety
     /// The pass rates the signature low.
@@ -210,21 +214,29 @@ impl crate::BSLightingShaderProperty {
     /// `BSLightingShaderProperty::GetRenderPasses`, vtable slot 42: builds the lighting pass (technique bits from the flags, see flags) plus refraction, overlay and stipple passes; returns &renderPasses
     ///
     /// Semantic, render pass, high; called through the object's vtable.
-    /// `BSRenderPass** (BSLightingShaderProperty* this, BSGeometry* g, u32 renderMode, BSShaderAccumulator* acc)`
+    /// `BSRenderPass** (BSLightingShaderProperty* this, BSGeometry* g, AccumulatorRenderMode renderMode, BSShaderAccumulator* acc)`
+    /// Retyped: renderMode u32 -> AccumulatorRenderMode: accumulator render mode (BSShaderAccumulator renderMode +0x150); meaning names modes 0xc-0xf (depth/shadow), 0x10-0x11.
+    /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
     ///
     /// # Safety
     /// The result is an untyped pointer.
     #[inline]
-    pub unsafe fn get_render_passes(&self, g: *mut crate::BSGeometry, renderMode: u32, acc: *mut crate::BSShaderAccumulator) -> *mut *mut c_void { unsafe { virtual_function!(self, 42, (*const Self, *mut crate::BSGeometry, u32, *mut crate::BSShaderAccumulator) -> *mut *mut c_void)(core::ptr::from_ref(self), g, renderMode, acc) } }
+    pub unsafe fn get_render_passes(&self, g: *mut crate::BSGeometry, renderMode: crate::AccumulatorRenderMode, acc: *mut crate::BSShaderAccumulator) -> *mut *mut c_void { unsafe { virtual_function!(self, 42, (*const Self, *mut crate::BSGeometry, crate::AccumulatorRenderMode, *mut crate::BSShaderAccumulator) -> *mut *mut c_void)(core::ptr::from_ref(self), g, renderMode, acc) } }
     /// `BSLightingShaderProperty::UpdateFlagsFromGeometry`, vtable slot 39: sets bit 37 from the vertex descriptor (+0x148), hides geometry that lacks normals, clears tree-anim without vertex colours, eye without a skin instance (+0x130), specular when colour*strength is black
     ///
     /// Semantic, render pass, medium; called through the object's vtable.
     /// `bool (BSLightingShaderProperty* this, BSGeometry* g)`
+    /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
     ///
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
     pub unsafe fn update_flags_from_geometry(&self, g: *mut crate::BSGeometry) -> bool { unsafe { virtual_function!(self, 39, (*const Self, *mut crate::BSGeometry) -> bool)(core::ptr::from_ref(self), g) } }
+    /// `BSLightingShaderProperty::emitColor` at +0xF0: pointer to 3 floats of emissive colour ((0,0,0) by default); owned when flag bit 22 is set, otherwise shared with the clone source
+    ///
+    /// Semantic field, render pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn emit_color(&self) -> Option<&crate::NiColor> { unsafe { { self.emitColor }.as_ref() } }
     /// `BSLightingShaderProperty::fadeNode` at +0x60: fade node whose currentFade (+0x130) gates depth and shadow passes
     ///
     /// Semantic field, render pass, high; `None` while the pointer is null.
@@ -259,12 +271,14 @@ impl crate::BSShaderAccumulator {
     /// `BSShaderAccumulator::PushDepthGroup`, vtable slot 40: opens a depth-keyed pass group in the batch renderer: key = dot(camera axis +0x7c/+0x88/+0x94, center) (minus radius when +0x51), from the pool 0x3693a00 (0x28 each, count 0x36939d0)
     ///
     /// Semantic, render pass, medium; called through the object's vtable.
-    /// `void* (BSShaderAccumulator* this, float* bound)`
+    /// `void* (BSShaderAccumulator* this, NiBound* bound)`
+    /// Retyped: bound float* -> NiBound*: BSShaderAccumulator slot 40: meaning key = dot(camera axis, centre) minus radius when +0x51 (centre, radius).
+    /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
     ///
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn push_depth_group(&self, bound: *mut f32) -> *mut c_void { unsafe { virtual_function!(self, 40, (*const Self, *mut f32) -> *mut c_void)(core::ptr::from_ref(self), bound) } }
+    pub unsafe fn push_depth_group(&self, bound: *mut crate::NiBound) -> *mut c_void { unsafe { virtual_function!(self, 40, (*const Self, *mut crate::NiBound) -> *mut c_void)(core::ptr::from_ref(self), bound) } }
     /// `BSShaderAccumulator::Render`, vtable slot 38: slot 42 then slot 43: the whole draw of the accumulator
     ///
     /// Semantic, render pass, high; called through the object's vtable.
@@ -287,6 +301,7 @@ impl crate::BSShaderAccumulator {
     ///
     /// Semantic, render pass, high; called through the object's vtable.
     /// `void (BSShaderAccumulator* this, NiCamera* camera)`
+    /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
     #[inline]
     pub fn set_camera(&self, camera: &crate::NiCamera) { unsafe { virtual_function!(self, 37, (*const Self, *const crate::NiCamera))(core::ptr::from_ref(self), core::ptr::from_ref(camera)) } }
     /// `BSShaderAccumulator::vfunc_39`, vtable slot 39: inherited empty NiAlphaAccumulator slot (pure in NiAccumulator)
@@ -317,6 +332,7 @@ impl crate::BSShaderAccumulator {
     ///
     /// Semantic, frame pass, high; ledger semantic evidence, name high; id 106567, rva 0x151e2f0.
     /// `bool (BSShaderAccumulator* this, BSGeometry* geometry, void* arg)`
+    /// May be null: `arg`.
     ///
     /// # Safety
     /// `arg` must point to what the engine expects.
@@ -443,12 +459,14 @@ impl crate::BSShaderProperty {
     /// `BSShaderProperty::GetDepthRenderPasses`, vtable slot 43: pass list for the depth/shadow modes 0xc-0xf; base returns null (the existing ledger row calls the lighting override GetRenderPasses)
     ///
     /// Semantic, render pass, high; called through the object's vtable.
-    /// `BSRenderPass** (BSShaderProperty* this, BSGeometry* g, u32 renderMode, BSShaderAccumulator* acc)`
+    /// `BSRenderPass** (BSShaderProperty* this, BSGeometry* g, AccumulatorRenderMode renderMode, BSShaderAccumulator* acc)`
+    /// Retyped: renderMode u32 -> AccumulatorRenderMode: accumulator render mode (BSShaderAccumulator renderMode +0x150); meaning names modes 0xc-0xf (depth/shadow), 0x10-0x11.
+    /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
     ///
     /// # Safety
     /// The result is an untyped pointer.
     #[inline]
-    pub unsafe fn get_depth_render_passes(&self, g: *mut crate::BSGeometry, renderMode: u32, acc: *mut crate::BSShaderAccumulator) -> *mut *mut c_void { unsafe { virtual_function!(self, 43, (*const Self, *mut crate::BSGeometry, u32, *mut crate::BSShaderAccumulator) -> *mut *mut c_void)(core::ptr::from_ref(self), g, renderMode, acc) } }
+    pub unsafe fn get_depth_render_passes(&self, g: *mut crate::BSGeometry, renderMode: crate::AccumulatorRenderMode, acc: *mut crate::BSShaderAccumulator) -> *mut *mut c_void { unsafe { virtual_function!(self, 43, (*const Self, *mut crate::BSGeometry, crate::AccumulatorRenderMode, *mut crate::BSShaderAccumulator) -> *mut *mut c_void)(core::ptr::from_ref(self), g, renderMode, acc) } }
     /// `BSShaderProperty::GetDepthTechnique`, vtable slot 61: utility technique bits of the depth passes (lighting 0x151a0b0): TEXTURE|NORMALS|BINORMAL_TANGENT (0x1a), TEXTURE only with bit 12, SKINNED from bit 1, VC from bit 37, 0x20 from bits 14/46, LOD_LANDSCAPE from bit 33, 0x40 from bit 17, TREE_ANIM from bit 61
     ///
     /// Semantic, render pass, high; called through the object's vtable.
@@ -459,6 +477,7 @@ impl crate::BSShaderProperty {
     ///
     /// Semantic, render pass, low; called through the object's vtable.
     /// `BSRenderPass** (BSShaderProperty* this, BSGeometry* g, u32 mode)`
+    /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
     ///
     /// # Safety
     /// The pass rates the signature low.
@@ -473,12 +492,13 @@ impl crate::BSShaderProperty {
     /// `BSShaderProperty::GetMaterialType`, vtable slot 62: material family: base 0, effect 1, lighting (and grass) 2, water 3; the values of BSShaderMaterial::GetType
     ///
     /// Semantic, render pass, medium; called through the object's vtable.
-    /// `u32 (BSShaderProperty* this)`
+    /// `ShaderMaterialType (BSShaderProperty* this)`
+    /// Retyped: return u32 -> ShaderMaterialType: BSShaderProperty slot 62 GetMaterialType (enum row source).
     ///
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn get_material_type(&self) -> u32 { unsafe { virtual_function!(self, 62, (*const Self) -> u32)(core::ptr::from_ref(self)) } }
+    pub unsafe fn get_material_type(&self) -> Result<crate::ShaderMaterialType, u32> { unsafe { let raw = virtual_function!(self, 62, (*const Self) -> u32)(core::ptr::from_ref(self)); crate::ShaderMaterialType::from_u32(raw).ok_or(raw) } }
     /// `BSShaderProperty::GetPropertyType`, vtable slot 37: 1 for shade/shader properties (NiAlphaProperty returns 0)
     ///
     /// Semantic, render pass, medium; called through the object's vtable.
@@ -501,6 +521,7 @@ impl crate::BSShaderProperty {
     ///
     /// Semantic, render pass, medium; called through the object's vtable.
     /// `bool (BSShaderProperty* this, BSShaderProperty* other)`
+    /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
     ///
     /// # Safety
     /// The pass rates the signature medium.
@@ -534,6 +555,7 @@ impl crate::BSShaderProperty {
     ///
     /// Semantic, render pass, medium; called through the object's vtable.
     /// `void (NiProperty* this, NiUpdateData* d)`
+    /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
     ///
     /// # Safety
     /// The pass rates the signature medium.
@@ -549,8 +571,9 @@ impl crate::BSShaderProperty {
     ///
     /// Semantic, frame pass, high; ledger semantic evidence, name high; id 105544, rva 0x14e8000.
     /// `void (BSShaderProperty* this, BSShaderMaterial* material, bool unique)`
+    /// May be null: `material`.
     #[inline]
-    pub fn set_material(&self, material: &crate::BSShaderMaterial, unique: bool) { unsafe { function!(105544, (*const Self, *const crate::BSShaderMaterial, bool))(core::ptr::from_ref(self), core::ptr::from_ref(material), unique) } }
+    pub fn set_material(&self, material: Option<&crate::BSShaderMaterial>, unique: bool) { unsafe { function!(105544, (*const Self, *const crate::BSShaderMaterial, bool))(core::ptr::from_ref(self), material.map_or(core::ptr::null(), core::ptr::from_ref), unique) } }
     /// `BSShaderProperty::fadeNode` at +0x60: fade node whose fade (+0x130) scales the alpha; g_DefaultFadeNode (fade 1.0) by default
     ///
     /// Semantic field, render pass, high; `None` while the pointer is null.
@@ -586,26 +609,26 @@ impl crate::BSShadowDirectionalLight {
     ///
     /// Semantic, render pass, high; called through the object's vtable.
     /// `bool (BSShadowLight* this, NiCamera* camera)`
+    /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
     #[inline]
     pub fn update_for_camera(&self, camera: &crate::NiCamera) -> bool { unsafe { virtual_function!(self, 16, (*const Self, *const crate::NiCamera) -> bool)(core::ptr::from_ref(self), core::ptr::from_ref(camera)) } }
     /// `BSShadowDirectionalLight::BlendDirection`: smooth sun direction: snap on a camera jump, restart the blend when the change exceeds fSunUpdateThreshold (cos cached in 0x20d9528), advance by frameDelta / fSunShadowUpdateTime
     ///
     /// Semantic, graphics pass, high; ledger semantic evidence, name high; id 108497, rva 0x1581730.
-    /// `void (BSShadowDirectionalLight* this, float* inOutDirection, u32 previousCameraJumped)`
-    ///
-    /// # Safety
-    /// `inOutDirection` must point to what the engine expects.
+    /// `void (BSShadowDirectionalLight* this, NiPoint3* inOutDirection, u32 previousCameraJumped)`
+    /// Retyped: inOutDirection float* -> NiPoint3*: BlendDirection reads/writes [0..2] against lightDirection +0x560.
     #[inline]
-    pub unsafe fn blend_direction(&self, inOutDirection: *mut f32, previousCameraJumped: u32) { unsafe { function!(108497, (*const Self, *mut f32, u32))(core::ptr::from_ref(self), inOutDirection, previousCameraJumped) } }
+    pub fn blend_direction(&self, inOutDirection: &mut crate::NiPoint3, previousCameraJumped: u32) { unsafe { function!(108497, (*const Self, *mut crate::NiPoint3, u32))(core::ptr::from_ref(self), core::ptr::from_mut(inOutDirection), previousCameraJumped) } }
     /// `BSShadowDirectionalLight::BuildCullPlanes`: six cull planes (+ mask 0x3f) from the 2D convex hull of the projected frustum corners, copied into the culler's +0xac..+0x118
     ///
     /// Semantic, graphics pass, medium; ledger semantic evidence, name medium; id 108499, rva 0x1581a80.
-    /// `void (BSShadowDirectionalLight* this, float* outPlanes, float* corners, u32* hull, u32 hullCount, float* lightAxes, float* origin, u32 farCorner)`
+    /// `void (BSShadowDirectionalLight* this, float* outPlanes, NiPoint3* corners, u32* hull, u32 hullCount, float* lightAxes, NiPoint3* origin, u32 farCorner)`
+    /// Retyped: corners float* -> NiPoint3*: BuildCullPlanes indexes corners at stride 0xc (x, y, z): an array of NiPoint3; origin float* -> NiPoint3*: BuildCullPlanes adds origin[0..2] to the corners.
     ///
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn build_cull_planes(&self, outPlanes: *mut f32, corners: *mut f32, hull: *mut u32, hullCount: u32, lightAxes: *mut f32, origin: *mut f32, farCorner: u32) { unsafe { function!(108499, (*const Self, *mut f32, *mut f32, *mut u32, u32, *mut f32, *mut f32, u32))(core::ptr::from_ref(self), outPlanes, corners, hull, hullCount, lightAxes, origin, farCorner) } }
+    pub unsafe fn build_cull_planes(&self, outPlanes: *mut f32, corners: *mut crate::NiPoint3, hull: *mut u32, hullCount: u32, lightAxes: *mut f32, origin: *mut crate::NiPoint3, farCorner: u32) { unsafe { function!(108499, (*const Self, *mut f32, *mut crate::NiPoint3, *mut u32, u32, *mut f32, *mut crate::NiPoint3, u32))(core::ptr::from_ref(self), outPlanes, corners, hull, hullCount, lightAxes, origin, farCorner) } }
     /// `BSShadowDirectionalLight::lightCamera` at +0x578: camera looking along the sun used by the geometry list cull (0x157ed80)
     ///
     /// Semantic field, render pass, high; `None` while the pointer is null.
@@ -645,6 +668,7 @@ impl crate::BSShadowFrustumLight {
     ///
     /// Semantic, render pass, medium; called through the object's vtable.
     /// `void (BSShadowFrustumLight* this, NiLight* light)`
+    /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
     ///
     /// # Safety
     /// The pass rates the signature medium.
@@ -654,6 +678,7 @@ impl crate::BSShadowFrustumLight {
     ///
     /// Semantic, render pass, high; called through the object's vtable.
     /// `bool (BSShadowFrustumLight* this, NiCamera* camera)`
+    /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
     #[inline]
     pub fn update_for_camera(&self, camera: &crate::NiCamera) -> bool { unsafe { virtual_function!(self, 16, (*const Self, *const crate::NiCamera) -> bool)(core::ptr::from_ref(self), core::ptr::from_ref(camera)) } }
 }
@@ -714,6 +739,7 @@ impl crate::BSShadowLight {
     ///
     /// Semantic, graphics pass, high; ledger runtime evidence, name high; id 107602, rva 0x155cea0.
     /// `void (BSShadowLight* this, ShadowMapData* map, u32* mapCounter, BSTArray* geometryLists, u32 cullTag)`
+    /// May be null: `geometryLists`.
     ///
     /// # Safety
     /// `map`, `mapCounter`, `geometryLists` must point to what the engine expects.
@@ -768,6 +794,7 @@ impl crate::BSShadowParabolicLight {
     ///
     /// Semantic, render pass, high; called through the object's vtable.
     /// `bool (BSShadowParabolicLight* this, NiCamera* camera)`
+    /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
     #[inline]
     pub fn update_for_camera(&self, camera: &crate::NiCamera) -> bool { unsafe { virtual_function!(self, 16, (*const Self, *const crate::NiCamera) -> bool)(core::ptr::from_ref(self), core::ptr::from_ref(camera)) } }
     /// `BSShadowParabolicLight::UsesTwoMaps`, vtable slot 8: shadowMapCount == 2 (both hemispheres)
@@ -801,6 +828,7 @@ impl crate::NiAVObject {
     ///
     /// Semantic, render pass, high; called through the object's vtable.
     /// `NiAVObject* (NiAVObject* this, const BSFixedString* name)`
+    /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
     #[inline]
     pub fn get_object_by_name(&self, name: &crate::BSFixedString) -> Option<&'static Self> { unsafe { virtual_function!(self, 42, (*const Self, *const crate::BSFixedString) -> Option<&'static Self>)(core::ptr::from_ref(self), core::ptr::from_ref(name)) } }
     /// `NiAVObject::SetSelectiveUpdateFlags`, vtable slot 43: recomputes flags bit 1 (selected for update), bit 2 (update transforms) and bit 4 (rigid: set by NiAVObject, cleared by NiNode 0xee2e30) from the controllers and flag bit 7
@@ -825,6 +853,7 @@ impl crate::NiAVObject {
     ///
     /// Semantic, render pass, high; called through the object's vtable.
     /// `void (NiAVObject* this, NiUpdateData* data)`
+    /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
     ///
     /// # Safety
     /// `data` must point to what the engine expects.
@@ -834,6 +863,7 @@ impl crate::NiAVObject {
     ///
     /// Semantic, render pass, high; called through the object's vtable.
     /// `void (NiAVObject* this, NiUpdateData* data, u32 parentFlags)`
+    /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
     ///
     /// # Safety
     /// `data` must point to what the engine expects.
@@ -843,6 +873,7 @@ impl crate::NiAVObject {
     ///
     /// Semantic, render pass, medium; called through the object's vtable.
     /// `void (NiAVObject* this, NiNode* parent, NiUpdateData* data)`
+    /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
     ///
     /// # Safety
     /// The pass rates the signature medium.
@@ -852,6 +883,7 @@ impl crate::NiAVObject {
     ///
     /// Semantic, render pass, high; called through the object's vtable.
     /// `void (NiAVObject* this, NiUpdateData* data, u32 parentFlags)`
+    /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
     ///
     /// # Safety
     /// `data` must point to what the engine expects.
@@ -861,6 +893,7 @@ impl crate::NiAVObject {
     ///
     /// Semantic, render pass, high; called through the object's vtable.
     /// `void (NiAVObject* this, NiUpdateData* data, u32 parentFlags)`
+    /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
     ///
     /// # Safety
     /// `data` must point to what the engine expects.
@@ -870,6 +903,7 @@ impl crate::NiAVObject {
     ///
     /// Semantic, render pass, medium; called through the object's vtable.
     /// `void (NiAVObject* this, NiUpdateData* data)`
+    /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
     ///
     /// # Safety
     /// The pass rates the signature medium.
@@ -891,6 +925,7 @@ impl crate::NiAVObject {
     ///
     /// Semantic, render pass, high; called through the object's vtable.
     /// `void (NiAVObject* this, NiUpdateData* data)`
+    /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
     ///
     /// # Safety
     /// `data` must point to what the engine expects.
@@ -906,8 +941,9 @@ impl crate::NiAVObject {
     ///
     /// Semantic, frame pass, high; ledger semantic evidence, name high; id 70266, rva 0xee0ef0.
     /// `void (NiAVObject* child, NiNode* newParent)`
+    /// May be null: `newParent`.
     #[inline]
-    pub fn set_parent_detaching_from_old(&self, newParent: &crate::NiNode) { unsafe { function!(70266, (*const Self, *const crate::NiNode))(core::ptr::from_ref(self), core::ptr::from_ref(newParent)) } }
+    pub fn set_parent_detaching_from_old(&self, newParent: Option<&crate::NiNode>) { unsafe { function!(70266, (*const Self, *const crate::NiNode))(core::ptr::from_ref(self), newParent.map_or(core::ptr::null(), core::ptr::from_ref)) } }
     /// `NiAVObject::UpdateNode`: slot 44 (+0x160) with (data, 0), then tail jump to the parent's (+0x30) slot 61 (+0x1e8); the call to make after writing a local transform (all camera states use it with a zeroed 8-byte record)
     ///
     /// Semantic, frame pass, high; ledger semantic evidence, name high; id 70251, rva 0xee0930.
@@ -941,12 +977,14 @@ impl crate::NiNode {
     ///
     /// Semantic, render pass, high; called through the object's vtable.
     /// `void (NiNode* this, NiAVObject* child, bool firstAvailable)`
+    /// May be null: `child`.
     #[inline]
-    pub fn attach_child(&self, child: &crate::NiAVObject, firstAvailable: bool) { unsafe { virtual_function!(self, 53, (*const Self, *const crate::NiAVObject, bool))(core::ptr::from_ref(self), core::ptr::from_ref(child), firstAvailable) } }
+    pub fn attach_child(&self, child: Option<&crate::NiAVObject>, firstAvailable: bool) { unsafe { virtual_function!(self, 53, (*const Self, *const crate::NiAVObject, bool))(core::ptr::from_ref(self), child.map_or(core::ptr::null(), core::ptr::from_ref), firstAvailable) } }
     /// `NiNode::DetachChild`, vtable slot 55: detaches child by child->parentIndex through slot 57 when it is not -1, else by a linear search; the detached object is returned in *out
     ///
     /// Semantic, render pass, high; called through the object's vtable.
     /// `void (NiNode* this, NiAVObject* child, NiPointer<NiAVObject>* out)`
+    /// May be null: `child`.
     ///
     /// # Safety
     /// `out` must point to what the engine expects.
@@ -956,6 +994,7 @@ impl crate::NiNode {
     ///
     /// Semantic, render pass, high; called through the object's vtable.
     /// `void (NiNode* this, NiAVObject* child)`
+    /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
     #[inline]
     pub fn detach_child2(&self, child: &crate::NiAVObject) { unsafe { virtual_function!(self, 56, (*const Self, *const crate::NiAVObject))(core::ptr::from_ref(self), core::ptr::from_ref(child)) } }
     /// `NiNode::DetachChildAt`, vtable slot 57: removes the child at index: parent = 0, parentIndex = -1, slot nulled (no shift)
@@ -977,18 +1016,21 @@ impl crate::NiNode {
     ///
     /// Semantic, render pass, high; called through the object's vtable.
     /// `void (NiNode* this, u32 index, NiAVObject* child)`
+    /// May be null: `child`.
     #[inline]
-    pub fn insert_child_at(&self, index: u32, child: &crate::NiAVObject) { unsafe { virtual_function!(self, 54, (*const Self, u32, *const crate::NiAVObject))(core::ptr::from_ref(self), index, core::ptr::from_ref(child)) } }
+    pub fn insert_child_at(&self, index: u32, child: Option<&crate::NiAVObject>) { unsafe { virtual_function!(self, 54, (*const Self, u32, *const crate::NiAVObject))(core::ptr::from_ref(self), index, child.map_or(core::ptr::null(), core::ptr::from_ref)) } }
     /// `NiNode::OnVisible`, vtable slot 52: visits every child through NiAVObject::Cull, passing the ordered-group index on, when the bound radius is non-zero or flag bit 11 is set
     ///
     /// Semantic, render pass, high; called through the object's vtable.
     /// `void (NiNode* this, NiCullingProcess* culler, u32 orderedGroup)`
+    /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
     #[inline]
     pub fn on_visible(&self, culler: &crate::NiCullingProcess, orderedGroup: u32) { unsafe { virtual_function!(self, 52, (*const Self, *const crate::NiCullingProcess, u32))(core::ptr::from_ref(self), core::ptr::from_ref(culler), orderedGroup) } }
     /// `NiNode::SetAt`, vtable slot 59: replaces (or appends at) index, detaching the previous occupant into *outOld
     ///
     /// Semantic, render pass, high; called through the object's vtable.
     /// `void (NiNode* this, u32 index, NiAVObject* child, NiPointer<NiAVObject>* outOld)`
+    /// May be null: `child`.
     ///
     /// # Safety
     /// `outOld` must point to what the engine expects.
@@ -998,6 +1040,7 @@ impl crate::NiNode {
     ///
     /// Semantic, render pass, high; called through the object's vtable.
     /// `void (NiNode* this, u32 index, NiAVObject* child)`
+    /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
     #[inline]
     pub fn set_at2(&self, index: u32, child: &crate::NiAVObject) { unsafe { virtual_function!(self, 60, (*const Self, u32, *const crate::NiAVObject))(core::ptr::from_ref(self), index, core::ptr::from_ref(child)) } }
     /// `NiNode::UpdateUpwardPass`, vtable slot 61: UpdateWorldBound on this node, then the same on the parent, up to the root
@@ -1022,24 +1065,28 @@ impl crate::NiSkinInstance {
     ///
     /// Semantic, render pass, high; called through the object's vtable.
     /// `bool (NiSkinInstance* this, NiObject* other)`
+    /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
     #[inline]
     pub fn is_equal(&self, other: &crate::NiObject) -> bool { unsafe { virtual_function!(self, 28, (*const Self, *const crate::NiObject) -> bool)(core::ptr::from_ref(self), core::ptr::from_ref(other)) } }
     /// `NiSkinInstance::LinkObject`, vtable slot 25: resolves skinData, skinPartition, rootParent, boneNodes and builds boneWorldTransforms
     ///
     /// Semantic, render pass, high; called through the object's vtable.
     /// `void (NiSkinInstance* this, NiStream* s)`
+    /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
     #[inline]
     pub fn link_object(&self, s: &crate::NiStream) { unsafe { virtual_function!(self, 25, (*const Self, *const crate::NiStream))(core::ptr::from_ref(self), core::ptr::from_ref(s)) } }
     /// `NiSkinInstance::LoadBinary`, vtable slot 24: reads three link ids and the bone link list
     ///
     /// Semantic, render pass, high; called through the object's vtable.
     /// `void (NiSkinInstance* this, NiStream* s)`
+    /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
     #[inline]
     pub fn load_binary(&self, s: &crate::NiStream) { unsafe { virtual_function!(self, 24, (*const Self, *const crate::NiStream))(core::ptr::from_ref(self), core::ptr::from_ref(s)) } }
     /// `NiSkinInstance::RegisterStreamables`, vtable slot 26: registers skin data, partition, root and every bone
     ///
     /// Semantic, render pass, high; called through the object's vtable.
     /// `bool (NiSkinInstance* this, NiStream* s)`
+    /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
     #[inline]
     pub fn register_streamables(&self, s: &crate::NiStream) -> bool { unsafe { virtual_function!(self, 26, (*const Self, *const crate::NiStream) -> bool)(core::ptr::from_ref(self), core::ptr::from_ref(s)) } }
     /// `NiSkinInstance::RenderPartitions`, vtable slot 37: draws every partition of skinPartition through NiSkinPartition slot 37
@@ -1055,6 +1102,7 @@ impl crate::NiSkinInstance {
     ///
     /// Semantic, render pass, high; called through the object's vtable.
     /// `void (NiSkinInstance* this, NiStream* s)`
+    /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
     #[inline]
     pub fn save_binary(&self, s: &crate::NiStream) { unsafe { virtual_function!(self, 27, (*const Self, *const crate::NiStream))(core::ptr::from_ref(self), core::ptr::from_ref(s)) } }
     /// `NiSkinInstance::ComputeBound`: merges every bone's bound sphere (boneData[i]+0x34) moved by its world transform (*(+0x30)[i])
@@ -1065,16 +1113,13 @@ impl crate::NiSkinInstance {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn compute_bound(&self, out: *mut c_void) { unsafe { function!(71212, (*const Self, *mut c_void))(core::ptr::from_ref(self), out) } }
+    pub unsafe fn compute_bound(&self, out: *mut crate::NiBound) { unsafe { function!(71212, (*const Self, *mut crate::NiBound))(core::ptr::from_ref(self), out) } }
     /// `NiSkinInstance::UpdatePalette`: rebuilds the bone matrix palette once per render frame (paletteFrame against g_RenderFrameCounter), keeping the previous palette
     ///
     /// Semantic, render pass, high; ledger runtime evidence, name high; id 77461, rva 0x1015800.
     /// `void (NiSkinInstance* this, const NiTransform* geometryWorld)`
-    ///
-    /// # Safety
-    /// `geometryWorld` must point to what the engine expects.
     #[inline]
-    pub unsafe fn update_palette(&self, geometryWorld: *const c_void) { unsafe { function!(77461, (*const Self, *const c_void))(core::ptr::from_ref(self), geometryWorld) } }
+    pub fn update_palette(&self, geometryWorld: &crate::NiTransform) { unsafe { function!(77461, (*const Self, *const crate::NiTransform))(core::ptr::from_ref(self), core::ptr::from_ref(geometryWorld)) } }
     /// `NiSkinInstance::rootParent` at +0x20: the node the skin is bound to (the actor's root BSFadeNode for body parts)
     ///
     /// Semantic field, render pass, high; `None` while the pointer is null.
@@ -1121,6 +1166,7 @@ impl crate::ShadowSceneNode {
     ///
     /// Semantic, frame pass, medium; ledger semantic evidence, name medium; id 106352, rva 0x150ee90.
     /// `bool (BSGeometry* geometry, ShadowSceneNode* scene, bool activeOnly, BSMultiBoundRoom* room, BSPortalSharedNode* shared)`
+    /// May be null: `room`, `shared`.
     ///
     /// # Safety
     /// The pass rates the signature medium.
@@ -1130,6 +1176,7 @@ impl crate::ShadowSceneNode {
     ///
     /// Semantic, frame pass, high; ledger semantic evidence, name high; id 106326, rva 0x150c810.
     /// `BSLight* (ShadowSceneNode* this, NiLight* light, const LightParams* params)`
+    /// May be null: `light`.
     ///
     /// # Safety
     /// `params` must point to what the engine expects.
@@ -1139,6 +1186,7 @@ impl crate::ShadowSceneNode {
     ///
     /// Semantic, frame pass, medium; ledger semantic evidence, name medium; id 106339, rva 0x150e1f0.
     /// `void (ShadowSceneNode* this, NiAVObject* object, bool fromPortalGraph, bool keepInGraph)`
+    /// May be null: `object`.
     ///
     /// # Safety
     /// The pass rates the signature medium.
@@ -1148,8 +1196,9 @@ impl crate::ShadowSceneNode {
     ///
     /// Semantic, frame pass, high; ledger semantic evidence, name high; id 106327, rva 0x150cb10.
     /// `void (ShadowSceneNode* this, BSLight* light)`
+    /// May be null: `light`.
     #[inline]
-    pub fn queue_light_add(&self, light: &crate::BSLight) { unsafe { function!(106327, (*const Self, *const crate::BSLight))(core::ptr::from_ref(self), core::ptr::from_ref(light)) } }
+    pub fn queue_light_add(&self, light: Option<&crate::BSLight>) { unsafe { function!(106327, (*const Self, *const crate::BSLight))(core::ptr::from_ref(self), light.map_or(core::ptr::null(), core::ptr::from_ref)) } }
     /// `ShadowSceneNode::QueueLightRemoval`: appends to +0x178 once the scene was processed
     ///
     /// Semantic, frame pass, high; ledger semantic evidence, name high; id 106332, rva 0x150d120.
@@ -1163,20 +1212,23 @@ impl crate::ShadowSceneNode {
     ///
     /// Semantic, frame pass, high; ledger semantic evidence, name high; id 106341, rva 0x150e330.
     /// `void (ShadowSceneNode* this, BSLight* light)`
+    /// May be null: `light`.
     #[inline]
-    pub fn queue_light_update(&self, light: &crate::BSLight) { unsafe { function!(106341, (*const Self, *const crate::BSLight))(core::ptr::from_ref(self), core::ptr::from_ref(light)) } }
+    pub fn queue_light_update(&self, light: Option<&crate::BSLight>) { unsafe { function!(106341, (*const Self, *const crate::BSLight))(core::ptr::from_ref(self), light.map_or(core::ptr::null(), core::ptr::from_ref)) } }
     /// `ShadowSceneNode::QueueRelight`: appends to +0x1e0 (true) or +0x1c8 (false) under geometryQueueLock
     ///
     /// Semantic, frame pass, high; ledger semantic evidence, name high; id 106349, rva 0x150e780.
     /// `void (ShadowSceneNode* this, NiAVObject* object, bool activeLightsOnly)`
+    /// May be null: `object`.
     #[inline]
-    pub fn queue_relight(&self, object: &crate::NiAVObject, activeLightsOnly: bool) { unsafe { function!(106349, (*const Self, *const crate::NiAVObject, bool))(core::ptr::from_ref(self), core::ptr::from_ref(object), activeLightsOnly) } }
+    pub fn queue_relight(&self, object: Option<&crate::NiAVObject>, activeLightsOnly: bool) { unsafe { function!(106349, (*const Self, *const crate::NiAVObject, bool))(core::ptr::from_ref(self), object.map_or(core::ptr::null(), core::ptr::from_ref), activeLightsOnly) } }
     /// `ShadowSceneNode::QueueRelightVisible`: appends a non-hidden object to +0x1c8
     ///
     /// Semantic, frame pass, high; ledger semantic evidence, name high; id 106330, rva 0x150cf20.
     /// `void (ShadowSceneNode* this, NiAVObject* object)`
+    /// May be null: `object`.
     #[inline]
-    pub fn queue_relight_visible(&self, object: &crate::NiAVObject) { unsafe { function!(106330, (*const Self, *const crate::NiAVObject))(core::ptr::from_ref(self), core::ptr::from_ref(object)) } }
+    pub fn queue_relight_visible(&self, object: Option<&crate::NiAVObject>) { unsafe { function!(106330, (*const Self, *const crate::NiAVObject))(core::ptr::from_ref(self), object.map_or(core::ptr::null(), core::ptr::from_ref)) } }
     /// `ShadowSceneNode::UpdateLight`: drops a hidden or zero-radius light, else stores the portal graph in the light and culls its receivers (0x1512540 with a parabolic culler or 0x1513290)
     ///
     /// Semantic, render pass, high; ledger runtime evidence, name high; id 106342, rva 0x150e400.
@@ -1211,8 +1263,9 @@ impl crate::TESCamera {
     ///
     /// Semantic, render pass, high; called through the object's vtable.
     /// `void (TESCamera* this, NiNode* root)`
+    /// May be null: `root`.
     #[inline]
-    pub fn set_camera_root(&self, root: &crate::NiNode) { unsafe { virtual_function!(self, 1, (*const Self, *const crate::NiNode))(core::ptr::from_ref(self), core::ptr::from_ref(root)) } }
+    pub fn set_camera_root(&self, root: Option<&crate::NiNode>) { unsafe { virtual_function!(self, 1, (*const Self, *const crate::NiNode))(core::ptr::from_ref(self), root.map_or(core::ptr::null(), core::ptr::from_ref)) } }
     /// `TESCamera::Update`, vtable slot 2: if a state is current and enabled: calls the state's slot 3 Update(&next); when next is set, End (slot 2) on the old state, swap currentState, Begin (slot 1) on the new one; then zeroes the input accumulators +0x8..+0x1c
     ///
     /// Semantic, render pass, high; called through the object's vtable.
@@ -1235,8 +1288,9 @@ impl crate::TESCamera {
     ///
     /// Semantic, frame pass, high; ledger semantic evidence, name high; id 33026, rva 0x558f90.
     /// `void (TESCamera* this, TESCameraState* state)`
+    /// May be null: `state`.
     #[inline]
-    pub fn set_state(&self, state: &crate::TESCameraState) { unsafe { function!(33026, (*const Self, *const crate::TESCameraState))(core::ptr::from_ref(self), core::ptr::from_ref(state)) } }
+    pub fn set_state(&self, state: Option<&crate::TESCameraState>) { unsafe { function!(33026, (*const Self, *const crate::TESCameraState))(core::ptr::from_ref(self), state.map_or(core::ptr::null(), core::ptr::from_ref)) } }
     /// `TESCamera::ctor`: base constructor: vtable 0x18ebbe0, rotationInput (+0x8) and translationInput (+0x10) from zero constants (0x20ccb20, 0x20ccb24, 0x20ccc28, 0x20ccc2c, 0x20ccc30), zoomInput 0, cameraRoot null, currentState null, enabled (+0x30) = 1
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 33018, rva 0x558c80.
@@ -1301,12 +1355,13 @@ pub unsafe fn render_frame(owner: *mut c_void) { unsafe { function!(36555, (*mut
 /// `RenderTargets_CreateDepthStencil`: creates depth-stencil target id from {width, height, array slices, flags}
 ///
 /// Semantic, render pass, medium; ledger semantic evidence, name medium; id 77446, rva 0x1015470.
-/// `void (void* renderTargets, u32 id, const u32* properties)`
+/// `void (void* renderTargets, DepthStencilTargetId id, const u32* properties)`
+/// Retyped: id u32 -> DepthStencilTargetId: RenderTargets_CreateDepthStencil: the enum's source (0x153b680 calls).
 ///
 /// # Safety
 /// The pass rates the signature medium.
 #[inline]
-pub unsafe fn render_targets_create_depth_stencil(renderTargets: *mut c_void, id: u32, properties: *const u32) { unsafe { function!(77446, (*mut c_void, u32, *const u32))(renderTargets, id, properties) } }
+pub unsafe fn render_targets_create_depth_stencil(renderTargets: *mut c_void, id: crate::DepthStencilTargetId, properties: *const u32) { unsafe { function!(77446, (*mut c_void, crate::DepthStencilTargetId, *const u32))(renderTargets, id, properties) } }
 /// `RenderWorld`: sets the rendering flag, copies the camera position into the world ShadowSceneNode (+0x2f4) and draws the world scene (0x656e60)
 ///
 /// Semantic, render pass, high; ledger runtime evidence, name high; id 36558, rva 0x656d10.

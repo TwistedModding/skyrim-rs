@@ -12092,13 +12092,6 @@ pub unsafe fn stream_read_base_and_dword_c(param_1: i64, param_2: i64) -> u64 { 
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn stream_read_dword_list_to_tls(param_1: i64) -> u64 { unsafe { function!(70360, (i64) -> u64)(param_1) } }
-/// `StreamReadMatrix3` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 70239, rva 0xedfae0).
-/// `undefined StreamReadMatrix3(longlong param_1, longlong param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn stream_read_matrix3(param_1: i64, param_2: i64) -> u64 { unsafe { function!(70239, (i64, i64) -> u64)(param_1, param_2) } }
 /// `StreamReadThreeDwords` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 70692, rva 0xef2f10).
 /// `undefined StreamReadThreeDwords(longlong param_1, longlong param_2)`
 ///
@@ -13961,3 +13954,10 @@ pub unsafe fn try_cast_or_dual_cast_spell_at_target(param_1: *mut u64, param_2: 
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn try_cast_shout_level(param_1: *mut i64, param_2: i64, param_3: u32, param_4: i64) -> u64 { unsafe { function!(38804, (*mut i64, i64, u32, i64) -> u64)(param_1, param_2, param_3, param_4) } }
+/// `TryClaimFieldPointers` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 63455, rva 0xbc4d90).
+/// `undefined1 TryClaimFieldPointers(longlong param_1, longlong * param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn try_claim_field_pointers(param_1: i64, param_2: *mut i64) -> u8 { unsafe { function!(63455, (i64, *mut i64) -> u8)(param_1, param_2) } }

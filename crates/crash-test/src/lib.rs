@@ -69,7 +69,7 @@ fn load(host: &'static Host) -> bool {
         return false;
     }
     log(&format!("PASS load: load thread {}", thread()));
-    let subscribed = host.hooks().before(Actor__ModActorValueImpl, Options::new(host.name()), |_: &mut (*mut sre::Actor, i32, i32, f32, *mut c_void)| {
+    let subscribed = host.hooks().before(Actor__ModActorValueImpl, Options::new(host.name()), |_: &mut (*mut sre::Actor, i32, u32, f32, *mut c_void)| {
         if ARMED.load(Ordering::Relaxed) == HOOK {
             log(&format!("crashing on thread {} (hook)", thread()));
             null_read();

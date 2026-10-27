@@ -152,5 +152,5 @@ impl ActorValueListExt for ActorValueList {
 pub fn lookup_actor_value(name: &str) -> Option<ActorValue> {
     let name = CString::new(name).ok()?;
     let id = unsafe { ActorValueList::lookup_actor_value_by_name(name.as_ptr()) };
-    ActorValue::from_u32(u32::try_from(id).ok()?)
+    id.ok()
 }

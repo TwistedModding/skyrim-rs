@@ -3,6 +3,32 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `IsArgNaN` at 0xd18c70 (decompiler, high); signature (untiered): `undefined IsArgNaN(longlong param_1)`
+pub const IsArgNaN: u64 = 83132;
+/// `IsArmorCasterUsable` at 0x836f60 (decompiler, medium); signature (untiered): `undefined1 IsArmorCasterUsable(longlong param_1, longlong * param_2, undefined8 param_3, undefined8 param_4)`
+pub const IsArmorCasterUsable: u64 = 45416;
+/// `IsArrested` at 0x6fdd80 (decompiler, medium); signature (untiered): `longlong IsArrested(longlong param_1)`
+pub const IsArrested: u64 = 39445;
+/// `IsAsciiAlphanumeric` at 0x128eeb0 (decompiler, high); signature (high): `longlong IsAsciiAlphanumeric(int param_1)`
+pub const IsAsciiAlphanumeric: u64 = 444445;
+/// `IsAudioReady` at 0xcca630 (semantic, high); signature (untiered): `undefined1 IsAudioReady(void)`; manager and backend both exist (high); semantic signature: `bool ()`
+pub const IsAudioReady: u64 = 67654;
+/// `IsAudioReady` as a function pointer type (high).
+pub type IsAudioReady_fn = unsafe extern "C" fn() -> bool;
+/// `IsBaseFieldC0Bit2SetIfVfunc150` at 0x2e3f50 (decompiler, medium); signature (untiered): `ulonglong IsBaseFieldC0Bit2SetIfVfunc150(longlong * param_1)`
+pub const IsBaseFieldC0Bit2SetIfVfunc150: u64 = 19569;
+/// `IsBaseFormType24WithFlag200` at 0x2e3c40 (decompiler, medium); signature (medium): `longlong IsBaseFormType24WithFlag200(longlong param_1)`
+pub const IsBaseFormType24WithFlag200: u64 = 19556;
+/// `IsBaseFormType7OrType32WithFieldF8` at 0x2e3fd0 (decompiler, medium); signature (medium): `undefined8 IsBaseFormType7OrType32WithFieldF8(longlong param_1)`
+pub const IsBaseFormType7OrType32WithFieldF8: u64 = 19571;
+/// `IsBaseObjectOfSelectedFormType` at 0x30fe40 (decompiler, medium); signature (medium): `undefined1 IsBaseObjectOfSelectedFormType(longlong param_1)`
+pub const IsBaseObjectOfSelectedFormType: u64 = 20519;
+/// `IsBaseOrLeveledBaseForm` at 0x2f05b0 (decompiler, medium); signature (untiered): `undefined8 IsBaseOrLeveledBaseForm(longlong param_1, longlong param_2)`
+pub const IsBaseOrLeveledBaseForm: u64 = 19776;
+/// `IsBaseType1DWithFlag100` at 0x2e4800 (decompiler, high); signature (high): `bool IsBaseType1DWithFlag100(longlong param_1)`
+pub const IsBaseType1DWithFlag100: u64 = 19578;
+/// `IsBeforeDeadlineAt8` at 0x143c6e0 (decompiler, medium); signature (medium): `ulonglong IsBeforeDeadlineAt8(longlong param_1)`
+pub const IsBeforeDeadlineAt8: u64 = 451720;
 /// `IsBelow0x11` at 0x128f330 (decompiler, medium); signature (medium): `bool IsBelow0x11(int param_1)`
 pub const IsBelow0x11: u64 = 524804;
 /// `IsBeyondSkyCellProcessDistanceFromPlayer` at 0x675c30 (decompiler, medium); signature (untiered): `undefined8 IsBeyondSkyCellProcessDistanceFromPlayer(longlong * param_1)`
@@ -172,7 +198,7 @@ pub const IsCJKCodepointWithHangulOption: u64 = 88006;
 /// `IsCameraCasterOverlapping` at 0x557ad0 (semantic, high); signature (untiered): `bool IsCameraCasterOverlapping(longlong * param_1, longlong param_2, float * param_3, undefined4 param_4, float param_5)`; pair test of the camera phantom placed at cameraPos (radius radiusHavok) against the target's character controller shape, lowered by heightOffset when above it; under the world read and write locks (high); semantic signature: `bool (CameraCollisionHolder* holder, Actor* target, const NiPoint3* cameraPos, float radiusHavok, float heightOffset)`
 pub const IsCameraCasterOverlapping: u64 = 33008;
 /// `IsCameraCasterOverlapping` as a function pointer type (high).
-pub type IsCameraCasterOverlapping_fn = unsafe extern "C" fn(holder: *mut c_void, target: *mut crate::Actor, cameraPos: *const c_void, radiusHavok: f32, heightOffset: f32) -> bool;
+pub type IsCameraCasterOverlapping_fn = unsafe extern "C" fn(holder: *mut c_void, target: *mut crate::Actor, cameraPos: *const crate::NiPoint3, radiusHavok: f32, heightOffset: f32) -> bool;
 /// `IsCasterUsableWithValidTarget` at 0x837980 (decompiler, medium); signature (untiered): `bool IsCasterUsableWithValidTarget(longlong param_1, longlong param_2, undefined8 param_3, undefined8 param_4)`
 pub const IsCasterUsableWithValidTarget: u64 = 45433;
 /// `IsCellOwnedByActor` at 0x2bb630 (decompiler, medium); signature (untiered): `char IsCellOwnedByActor(longlong param_1, longlong param_2)`
@@ -1648,7 +1674,7 @@ pub const LaunchProjectileAtTarget: u64 = 36419;
 /// `LaunchProjectileFromCaster` at 0x5ce8b0 (semantic, high); signature (untiered): `undefined8 LaunchProjectileFromCaster(longlong * param_1, longlong param_2, longlong param_3, BeamProjectile * * param_4, float * param_5, uint param_6, uint param_7, uint param_8, longlong param_9)`; builds a Projectile::LaunchData (origin = *origin, +0x48/+0x4c = angleZ/angleX, +0x90 = area, +0x70 = caster->currentSpell (+0x28), +0x78 = caster slot 21 (+0xa8), +0x20/+0x28/+0x30 = projectile/shooter/combatController, cell = shooter's or the flying-mount world cell, VATS target, dual-cast power, hitRecord +0x30 -> +0x14) and calls CreateProjectileByType at +0x354; then VATS follow and the hit record's impact; always returns true (high); semantic signature: `bool (MagicCaster* caster, BGSProjectile* projectile, TESObjectREFR* shooter, CombatController* combatController, const NiPoint3* origin, float angleZ, float angleX, u32 area, const void* hitRecord)`
 pub const LaunchProjectileFromCaster: u64 = 34452;
 /// `LaunchProjectileFromCaster` as a function pointer type (high).
-pub type LaunchProjectileFromCaster_fn = unsafe extern "C" fn(caster: *mut crate::MagicCaster, projectile: *mut crate::BGSProjectile, shooter: *mut crate::TESObjectREFR, combatController: *mut c_void, origin: *const c_void, angleZ: f32, angleX: f32, area: u32, hitRecord: *const c_void) -> bool;
+pub type LaunchProjectileFromCaster_fn = unsafe extern "C" fn(caster: *mut crate::MagicCaster, projectile: *mut crate::BGSProjectile, shooter: *mut crate::TESObjectREFR, combatController: *mut c_void, origin: *const crate::NiPoint3, angleZ: f32, angleX: f32, area: u32, hitRecord: *const c_void) -> bool;
 /// `LayoutGridEntries` at 0x16134c0 (decompiler, medium); signature (untiered): `undefined LayoutGridEntries(longlong param_1, undefined4 param_2, float * param_3)`
 pub const LayoutGridEntries: u64 = 505944;
 /// `LeaveCriticalSectionOfArg2` at 0x1257f60 (decompiler, high); signature (untiered): `undefined LeaveCriticalSectionOfArg2(undefined8 param_1, undefined8 param_2)`
@@ -1975,7 +2001,7 @@ pub const LoadGameUnrecognizedContentCallBack__dtor: u64 = 442590;
 pub const LoadGameUnrecognizedContentCallBack__vdtor: u64 = 442601;
 /// `LoadGameUnrecognizedContentCallBack::vfunc_1` at 0x62d810 (rtti, high); signature (low): `undefined vfunc_1(LoadGameUnrecognizedContentCallBack * this, undefined8 param_1, undefined8 param_2, ulonglong param_3)`
 pub const LoadGameUnrecognizedContentCallBack__vfunc_1: u64 = 442596;
-/// `LoadGlobalData` at 0x61c2f0 (semantic, high); signature (untiered): `undefined8 LoadGlobalData(uint param_1, ulonglong * param_2, undefined8 param_3, TypeDescriptor * param_4)`; global data reader switch (high); semantic signature: `bool (u32 type, BGSLoadGameBuffer* buf)`
+/// `LoadGlobalData` at 0x61c2f0 (semantic, high); signature (untiered): `undefined8 LoadGlobalData(uint param_1, ulonglong * param_2, undefined8 param_3, TypeDescriptor * param_4)`; global data reader switch (high); semantic signature: `bool (GlobalDataType type, BGSLoadGameBuffer* buf)`
 pub const LoadGlobalData: u64 = 35642;
 /// `LoadGlobalData` as a function pointer type (high).
 pub type LoadGlobalData_fn = unsafe extern "C" fn(type_: u32, buf: *mut crate::BGSLoadGameBuffer) -> bool;
@@ -2490,11 +2516,11 @@ pub const LocalMapCamera__Destroy: u64 = 16346;
 /// `LocalMapCamera::SetAreaBounds` at 0x248230 (runtime, high); signature (untiered): `undefined SetAreaBounds(longlong param_1, undefined4 * param_2, undefined4 * param_3)`; boundMax = upper with z + fMapLocalHeight, boundMin = lower (high); semantic signature: `void (LocalMapCamera* this, const NiPoint3* upper, const NiPoint3* lower)`
 pub const LocalMapCamera__SetAreaBounds: u64 = 16331;
 /// `LocalMapCamera::SetAreaBounds` as a function pointer type (high).
-pub type LocalMapCamera__SetAreaBounds_fn = unsafe extern "C" fn(this: *mut crate::LocalMapCamera, upper: *const c_void, lower: *const c_void);
+pub type LocalMapCamera__SetAreaBounds_fn = unsafe extern "C" fn(this: *mut crate::LocalMapCamera, upper: *const crate::NiPoint3, lower: *const crate::NiPoint3);
 /// `LocalMapCamera::SetCenter` at 0x248100 (semantic, high); signature (untiered): `undefined SetCenter(longlong param_1, undefined4 * param_2)`; defaultState->center = (x, y, z + fMapLocalHeight) (high); semantic signature: `void (LocalMapCamera* this, const NiPoint3* point)`
 pub const LocalMapCamera__SetCenter: u64 = 16328;
 /// `LocalMapCamera::SetCenter` as a function pointer type (high).
-pub type LocalMapCamera__SetCenter_fn = unsafe extern "C" fn(this: *mut crate::LocalMapCamera, point: *const c_void);
+pub type LocalMapCamera__SetCenter_fn = unsafe extern "C" fn(this: *mut crate::LocalMapCamera, point: *const crate::NiPoint3);
 /// `LocalMapCamera::SetNorthRotation` at 0x248170 (semantic, high); signature (untiered): `undefined SetNorthRotation(longlong param_1, uint param_2)`; northRotation = angle; root local rotation from SinCos(angle); UpdateNode (high); semantic signature: `void (LocalMapCamera* this, float angle)`
 pub const LocalMapCamera__SetNorthRotation: u64 = 16330;
 /// `LocalMapCamera::SetNorthRotation` as a function pointer type (high).
@@ -2502,7 +2528,7 @@ pub type LocalMapCamera__SetNorthRotation_fn = unsafe extern "C" fn(this: *mut c
 /// `LocalMapCamera::SetOffsetToPoint` at 0x248130 (semantic, high); signature (untiered): `undefined SetOffsetToPoint(longlong param_1, float * param_2)`; defaultState->panOffset = point - center (high); semantic signature: `void (LocalMapCamera* this, const NiPoint3* point)`
 pub const LocalMapCamera__SetOffsetToPoint: u64 = 16329;
 /// `LocalMapCamera::SetOffsetToPoint` as a function pointer type (high).
-pub type LocalMapCamera__SetOffsetToPoint_fn = unsafe extern "C" fn(this: *mut crate::LocalMapCamera, point: *const c_void);
+pub type LocalMapCamera__SetOffsetToPoint_fn = unsafe extern "C" fn(this: *mut crate::LocalMapCamera, point: *const crate::NiPoint3);
 /// `LocalMapCamera::SetViewSize` at 0x248270 (semantic, high); signature (untiered): `undefined SetViewSize(longlong param_1, float param_2, float param_3)`; defaultState minHalfWidth = width/2, minHalfHeight = height/2 (high); semantic signature: `void (LocalMapCamera* this, float width, float height)`
 pub const LocalMapCamera__SetViewSize: u64 = 16332;
 /// `LocalMapCamera::SetViewSize` as a function pointer type (high).
@@ -3451,8 +3477,10 @@ pub const MakeLegalDocumentListRequestResponse: u64 = 419132;
 pub const MakeObjectVariableForTypeId0: u64 = 53835;
 /// `MakeObjectVariableForTypeId0x68` at 0x9d1ed0 (decompiler, medium); signature (untiered): `ulonglong * MakeObjectVariableForTypeId0x68(ulonglong * param_1, longlong param_2, longlong * param_3, undefined8 param_4)`
 pub const MakeObjectVariableForTypeId0x68: u64 = 53834;
-/// `MakePlaneFromNormalAndPoint` at 0xef74a0 (decompiler, high); signature (high): `float * MakePlaneFromNormalAndPoint(float * param_1, float * param_2, float * param_3)`
+/// `MakePlaneFromNormalAndPoint` at 0xef74a0 (semantic, high); signature (high): `float * MakePlaneFromNormalAndPoint(float * param_1, float * param_2, float * param_3)`; out = {normal, dot(normal, point)}; returns out (high); semantic signature: `NiPlane* (NiPlane* out, const NiPoint3* normal, const NiPoint3* point)`
 pub const MakePlaneFromNormalAndPoint: u64 = 70803;
+/// `MakePlaneFromNormalAndPoint` as a function pointer type (high).
+pub type MakePlaneFromNormalAndPoint_fn = unsafe extern "C" fn(out: *mut crate::NiPlane, normal: *const crate::NiPoint3, point: *const crate::NiPoint3) -> *mut crate::NiPlane;
 /// `MakeRefPairWithGlobal390150` at 0xe04d80 (decompiler, medium); signature (untiered): `undefined8 * MakeRefPairWithGlobal390150(undefined8 param_1, undefined8 * param_2)`
 pub const MakeRefPairWithGlobal390150: u64 = 87516;
 /// `MakeRelativePath` at 0xeacff0 (decompiler, medium); signature (medium): `longlong MakeRelativePath(char * param_1, ulonglong param_2, char * param_3, char * param_4)`
@@ -3508,7 +3536,7 @@ pub type MapCamera__StartExitTransition_fn = unsafe extern "C" fn(this: *mut cra
 /// `MapCamera::TransitionToAlternateWorldState` at 0x997010 (semantic, high); signature (untiered): `undefined TransitionToAlternateWorldState(longlong param_1, undefined8 param_2, float param_3)`; when in the World state: configure the other World state around position (notifyOnBegin cleared), transition mode 0 with duration * 1000 ms, SetState(transition), flip worldStateIndex (high); semantic signature: `void (MapCamera* this, const NiPoint3* position, float durationSeconds)`
 pub const MapCamera__TransitionToAlternateWorldState: u64 = 53022;
 /// `MapCamera::TransitionToAlternateWorldState` as a function pointer type (high).
-pub type MapCamera__TransitionToAlternateWorldState_fn = unsafe extern "C" fn(this: *mut crate::MapCamera, position: *const c_void, durationSeconds: f32);
+pub type MapCamera__TransitionToAlternateWorldState_fn = unsafe extern "C" fn(this: *mut crate::MapCamera, position: *const crate::NiPoint3, durationSeconds: f32);
 /// `MapCamera::ctor` at 0x996170 (layout_inference, high); signature (high): `MapCamera * ctor(MapCamera * this)`; MapCamera with the NullMapCameraCallbacks singleton (high); semantic signature: `MapCamera* (MapCamera* this)`
 pub const MapCamera__ctor: u64 = 53011;
 /// `MapCamera::ctor` as a function pointer type (high).
@@ -3542,7 +3570,7 @@ pub const MapCameraStates__World__Begin: u64 = 53044;
 /// `MapCameraStates::World::ComputeOffsetToBoundsPolygon` at 0x998580 (semantic, high); signature (untiered): `undefined ComputeOffsetToBoundsPolygon(longlong param_1, float * param_2, float * param_3)`; zero when point is inside the polygon (or no polygon), else the vector to the nearest point on the nearest edge (high); semantic signature: `void (const MapCameraStates::World* this, NiPoint2* outOffset, const NiPoint2* point)`
 pub const MapCameraStates__World__ComputeOffsetToBoundsPolygon: u64 = 53048;
 /// `MapCameraStates::World::ComputeOffsetToBoundsPolygon` as a function pointer type (high).
-pub type MapCameraStates__World__ComputeOffsetToBoundsPolygon_fn = unsafe extern "C" fn(this: *const crate::MapCameraStates__World, outOffset: *mut c_void, point: *const c_void);
+pub type MapCameraStates__World__ComputeOffsetToBoundsPolygon_fn = unsafe extern "C" fn(this: *const crate::MapCameraStates__World, outOffset: *mut crate::NiPoint2, point: *const crate::NiPoint2);
 /// `MapCameraStates::World::Destroy` at 0x9989f0 (semantic, high); signature (untiered): `World * Destroy(World * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const MapCameraStates__World__Destroy: u64 = 53055;
 /// `MapCameraStates::World::GetRotation` at 0x997890 (semantic, high); signature (untiered): `undefined GetRotation(World * this, float * param_1)`
@@ -3556,7 +3584,7 @@ pub type MapCameraStates__World__ResetPositionAndOffsetVectors_fn = unsafe exter
 /// `MapCameraStates::World::SetPositionAndBounds` at 0x998060 (semantic, high); signature (untiered): `undefined SetPositionAndBounds(longlong param_1, undefined4 * param_2, undefined8 param_3, undefined8 param_4)`; Reset, basePosition = position; from the map data: bounds polygon of the cell rectangle, heightOffset.z = min height, zoomAxis.z = max - min, panOffset.y for the default pitch; push into the polygon; pick terrainHeight (high); semantic signature: `void (MapCameraStates::World* this, const NiPoint3* position)`
 pub const MapCameraStates__World__SetPositionAndBounds: u64 = 53045;
 /// `MapCameraStates::World::SetPositionAndBounds` as a function pointer type (high).
-pub type MapCameraStates__World__SetPositionAndBounds_fn = unsafe extern "C" fn(this: *mut crate::MapCameraStates__World, position: *const c_void);
+pub type MapCameraStates__World__SetPositionAndBounds_fn = unsafe extern "C" fn(this: *mut crate::MapCameraStates__World, position: *const crate::NiPoint3);
 /// `MapCameraStates::World::Update` at 0x997a50 (runtime, high); signature (untiered): `undefined Update(World * this)`
 pub const MapCameraStates__World__Update: u64 = 53043;
 /// `MapCameraStates::World::UpdateHeightAtClampedPosition` at 0x998410 (semantic, high); signature (untiered): `undefined UpdateHeightAtClampedPosition(longlong param_1)`; terrainHeight = PickTerrainHeightAt(basePosition.xy + panOffset.xy pushed into the polygon) (high); semantic signature: `void (MapCameraStates::World* this)`
@@ -3905,8 +3933,10 @@ pub const MatchesScheduleDayOfWeek: u64 = 29615;
 pub const MatchesStringAt0x80AndFreeArg: u64 = 523105;
 /// `Matrix4FromMatrix2x3` at 0xd008a0 (decompiler, medium); signature (medium): `undefined4 * Matrix4FromMatrix2x3(undefined4 * param_1, undefined4 * param_2)`
 pub const Matrix4FromMatrix2x3: u64 = 82669;
-/// `MatrixToQuaternion` at 0xef9250 (decompiler, high); signature (high): `undefined MatrixToQuaternion(float * param_1, float * param_2)`
+/// `MatrixToQuaternion` at 0xef9250 (semantic, high); signature (high): `undefined MatrixToQuaternion(float * param_1, float * param_2)`; quaternion of a rotation matrix (high); semantic signature: `void (NiQuaternion* out, const NiMatrix3* m)`
 pub const MatrixToQuaternion: u64 = 70844;
+/// `MatrixToQuaternion` as a function pointer type (high).
+pub type MatrixToQuaternion_fn = unsafe extern "C" fn(out: *mut crate::NiQuaternion, m: *const crate::NiMatrix3);
 /// `MatrixToQuaternion_2` at 0xaa4730 (decompiler, medium); signature (medium): `undefined MatrixToQuaternion_2(uint * param_1, float * param_2)`
 pub const MatrixToQuaternion_2: u64 = 57099;
 /// `MatrixToQuaternion_3` at 0xaa5260 (decompiler, medium); signature (medium): `undefined MatrixToQuaternion_3(undefined8 * param_1, float * param_2)`
@@ -4093,7 +4123,7 @@ pub const MenuEventHandler__ProcessThumbstickEvent: u64 = 523618;
 pub const MenuEventHandler__dtor: u64 = 33577;
 /// `MenuEventHandler::vdtor` at 0x582480 (semantic, high); signature (low): `MenuEventHandler * vdtor(MenuEventHandler * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const MenuEventHandler__vdtor: u64 = 33611;
-/// `MenuModeChangeListener::ProcessEvent` at 0x5e80d0 (semantic, high); signature (untiered): `undefined8 ProcessEvent(void * this, longlong * param_1, longlong param_2, undefined8 param_3)`; menu mode: pause categories default objects 0x8b (fade fMenuModeFadeOutTime) and 0x8c, MenuMode sleep; back: unpause, GameMode sleep (high); semantic signature: `uint32 (MenuModeChangeListener* this, const void* event, void* source)`
+/// `MenuModeChangeListener::ProcessEvent` at 0x5e80d0 (semantic, high); signature (untiered): `undefined8 ProcessEvent(void * this, longlong * param_1, longlong param_2, undefined8 param_3)`; menu mode: pause categories default objects 0x8b (fade fMenuModeFadeOutTime) and 0x8c, MenuMode sleep; back: unpause, GameMode sleep (high); semantic signature: `BSEventNotifyControl (MenuModeChangeListener* this, const void* event, void* source)`
 pub const MenuModeChangeListener__ProcessEvent: u64 = 35103;
 /// `MenuModeChangeListener::ProcessEvent` as a function pointer type (high).
 pub type MenuModeChangeListener__ProcessEvent_fn = unsafe extern "C" fn(this: *mut c_void, event: *const c_void, source: *mut c_void) -> u32;
@@ -5126,7 +5156,7 @@ pub const MovePairRange16: u64 = 447030;
 /// `MovePlayerToCellAndPosition` at 0x75ed50 (semantic, high); signature (untiered): `undefined MovePlayerToCellAndPosition(Actor * param_1, TESObjectCELL * param_2, float * param_3, TESObjectCELL * param_4, float param_5)`; moves the player to a cell and position: sets the angle, changes the current cell or moves the grid, optionally flags the sky (bit 4 of Sky+0x1dc), parent cell reset, AddReferenceToCell, grass/cell visits, terrain LOD (UpdateTerrainLOD), PlayerCharacter::UpdateCamera, audio listener (high); semantic signature: `void (PlayerCharacter* player, const NiPoint3* position, const NiPoint3* angle, TESObjectCELL* cell, bool refreshSky)`
 pub const MovePlayerToCellAndPosition: u64 = 40744;
 /// `MovePlayerToCellAndPosition` as a function pointer type (high).
-pub type MovePlayerToCellAndPosition_fn = unsafe extern "C" fn(player: *mut crate::PlayerCharacter, position: *const c_void, angle: *const c_void, cell: *mut crate::TESObjectCELL, refreshSky: bool);
+pub type MovePlayerToCellAndPosition_fn = unsafe extern "C" fn(player: *mut crate::PlayerCharacter, position: *const crate::NiPoint3, angle: *const crate::NiPoint3, cell: *mut crate::TESObjectCELL, refreshSky: bool);
 /// `MovePointer` at 0x159b510 (decompiler, high); signature (untiered): `undefined8 * MovePointer(undefined8 * param_1, undefined8 * param_2)`
 pub const MovePointer: u64 = 109332;
 /// `MovePolygonPoint` at 0x25a2f0 (decompiler, medium); signature (untiered): `undefined8 MovePolygonPoint(undefined8 * param_1, float * param_2, float * param_3, float param_4, float param_5)`
@@ -7313,8 +7343,10 @@ pub const MultiplyFloatArraysElementwise: u64 = 67224;
 pub const MultiplyMatrix3: u64 = 57381;
 /// `MultiplyMatrix3_2` at 0xaabb20 (decompiler, medium); signature (medium): `undefined MultiplyMatrix3_2(longlong param_1, float * param_2, longlong param_3)`
 pub const MultiplyMatrix3_2: u64 = 57394;
-/// `MultiplyMatrix3x3` at 0x1d6580 (decompiler, high); signature (high): `float * MultiplyMatrix3x3(float * param_1, float * param_2, float * param_3)`
+/// `MultiplyMatrix3x3` at 0x1d6580 (semantic, high); signature (high): `float * MultiplyMatrix3x3(float * param_1, float * param_2, float * param_3)`; out = lhs * rhs (row-major); returns out (high); semantic signature: `NiMatrix3* (const NiMatrix3* lhs, NiMatrix3* out, const NiMatrix3* rhs)`
 pub const MultiplyMatrix3x3: u64 = 14189;
+/// `MultiplyMatrix3x3` as a function pointer type (high).
+pub type MultiplyMatrix3x3_fn = unsafe extern "C" fn(lhs: *const crate::NiMatrix3, out: *mut crate::NiMatrix3, rhs: *const crate::NiMatrix3) -> *mut crate::NiMatrix3;
 /// `MultiplyMatrix3x4` at 0xaaae50 (decompiler, medium); signature (medium): `undefined MultiplyMatrix3x4(longlong param_1, float * param_2, longlong param_3)`
 pub const MultiplyMatrix3x4: u64 = 57380;
 /// `MultiplyMatrix4` at 0xd015b0 (decompiler, high); signature (high): `undefined MultiplyMatrix4(float * param_1, float * param_2, float * param_3)`
@@ -7333,8 +7365,10 @@ pub const MultiplyPaddedMatrixVector: u64 = 64209;
 pub const MultiplyQuaternionArrays: u64 = 67226;
 /// `MultiplyQuaternionInPlace` at 0xb26400 (decompiler, high); signature (high): `undefined MultiplyQuaternionInPlace(float * param_1, float * param_2)`
 pub const MultiplyQuaternionInPlace: u64 = 60044;
-/// `MultiplyQuaternions` at 0xef96e0 (decompiler, medium); signature (medium): `float * MultiplyQuaternions(float * param_1, float * param_2, float * param_3)`
+/// `MultiplyQuaternions` at 0xef96e0 (semantic, high); signature (medium): `float * MultiplyQuaternions(float * param_1, float * param_2, float * param_3)`; out = lhs * rhs; returns out (high); semantic signature: `NiQuaternion* (const NiQuaternion* lhs, NiQuaternion* out, const NiQuaternion* rhs)`
 pub const MultiplyQuaternions: u64 = 70852;
+/// `MultiplyQuaternions` as a function pointer type (high).
+pub type MultiplyQuaternions_fn = unsafe extern "C" fn(lhs: *const crate::NiQuaternion, out: *mut crate::NiQuaternion, rhs: *const crate::NiQuaternion) -> *mut crate::NiQuaternion;
 /// `MultiplyQuaternions_2` at 0xaa2410 (decompiler, high); signature (high): `undefined MultiplyQuaternions_2(float * param_1, float * param_2, float * param_3)`
 pub const MultiplyQuaternions_2: u64 = 57007;
 /// `MultiplyTargetByFloatValue` at 0x38d3a0 (decompiler, medium); signature (untiered): `undefined MultiplyTargetByFloatValue(undefined8 param_1, int param_2, byte param_3, longlong * param_4, longlong * param_5)`
@@ -8531,39 +8565,3 @@ pub const NiBlendInterpolator__vfunc_58: u64 = 72544;
 pub const NiBlendInterpolator__vfunc_60: u64 = 72552;
 /// `NiBlendPoint3Interpolator::Create` at 0xf743e0 (string, high); signature (low): `NiBlendInterpolator * Create(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const NiBlendPoint3Interpolator__Create: u64 = 73227;
-/// `NiBlendPoint3Interpolator::ctor` at 0xf73d60 (layout_inference, high); signature (low): `NiBlendPoint3Interpolator * ctor(NiBlendPoint3Interpolator * this, char param_1, undefined8 param_2, ulonglong param_3)`
-pub const NiBlendPoint3Interpolator__ctor: u64 = 73220;
-/// `NiBlendPoint3Interpolator::ctor` at 0xf74090 (layout_inference, high); signature (high): `NiBlendPoint3Interpolator * ctor(NiBlendPoint3Interpolator * this)`
-pub const NiBlendPoint3Interpolator__ctor_2: u64 = 73223;
-/// `NiBlendPoint3Interpolator::vdtor` at 0xf744b0 (slot_propagation, medium); signature (low): `NiBlendPoint3Interpolator * vdtor(NiBlendPoint3Interpolator * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-pub const NiBlendPoint3Interpolator__vdtor: u64 = 73228;
-/// `NiBlendPoint3Interpolator::vfunc_2` at 0xf744f0 (rtti, high); signature (low): `TypeNode * vfunc_2(void)`
-pub const NiBlendPoint3Interpolator__vfunc_2: u64 = 73229;
-/// `NiBlendPoint3Interpolator::vfunc_23` at 0xf73a00 (rtti, high); signature (low): `NiBlendInterpolator * vfunc_23(NiBlendPoint3Interpolator * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
-pub const NiBlendPoint3Interpolator__vfunc_23: u64 = 73212;
-/// `NiBlendPoint3Interpolator::vfunc_24` at 0xf73b50 (rtti, high); signature (low): `undefined vfunc_24(NiBlendPoint3Interpolator * this, longlong param_1)`
-pub const NiBlendPoint3Interpolator__vfunc_24: u64 = 73214;
-/// `NiBlendPoint3Interpolator::vfunc_25` at 0xf73bc0 (rtti, high); signature (untiered): `undefined vfunc_25(void)`
-pub const NiBlendPoint3Interpolator__vfunc_25: u64 = 73215;
-/// `NiBlendPoint3Interpolator::vfunc_26` at 0xf73bd0 (rtti, high); signature (untiered): `undefined1 vfunc_26(NiBlendPoint3Interpolator * this, longlong * param_1)`
-pub const NiBlendPoint3Interpolator__vfunc_26: u64 = 73216;
-/// `NiBlendPoint3Interpolator::vfunc_27` at 0xf73be0 (rtti, high); signature (low): `undefined vfunc_27(NiBlendPoint3Interpolator * this, longlong * param_1)`
-pub const NiBlendPoint3Interpolator__vfunc_27: u64 = 73217;
-/// `NiBlendPoint3Interpolator::vfunc_28` at 0xf73c20 (rtti, high); signature (low): `undefined8 vfunc_28(NiBlendPoint3Interpolator * this, longlong * param_1)`
-pub const NiBlendPoint3Interpolator__vfunc_28: u64 = 73218;
-/// `NiBlendPoint3Interpolator::vfunc_37` at 0xf74520 (rtti, high); signature (untiered): `undefined1 vfunc_37(void)`
-pub const NiBlendPoint3Interpolator__vfunc_37: u64 = 73232;
-/// `NiBlendPoint3Interpolator::vfunc_38` at 0xf74510 (rtti, high); signature (untiered): `undefined1 vfunc_38(void)`
-pub const NiBlendPoint3Interpolator__vfunc_38: u64 = 73231;
-/// `NiBlendPoint3Interpolator::vfunc_39` at 0xf73dc0 (rtti, high); signature (low): `ulonglong vfunc_39(NiBlendPoint3Interpolator * this, float param_1, undefined8 param_2, float * param_3)`
-pub const NiBlendPoint3Interpolator__vfunc_39: u64 = 73221;
-/// `NiBlendPoint3Interpolator::vfunc_40` at 0xf74530 (rtti, high); signature (untiered): `undefined1 vfunc_40(void)`
-pub const NiBlendPoint3Interpolator__vfunc_40: u64 = 73233;
-/// `NiBlendPoint3Interpolator::vfunc_41` at 0xf74500 (rtti, high); signature (untiered): `undefined1 vfunc_41(void)`
-pub const NiBlendPoint3Interpolator__vfunc_41: u64 = 73230;
-/// `NiBlendPoint3Interpolator::vfunc_42` at 0xf74540 (rtti, high); signature (untiered): `undefined1 vfunc_42(void)`
-pub const NiBlendPoint3Interpolator__vfunc_42: u64 = 73234;
-/// `NiBlendPoint3Interpolator::vfunc_46` at 0xf74080 (rtti, high); signature (low): `undefined1 vfunc_46(void)`
-pub const NiBlendPoint3Interpolator__vfunc_46: u64 = 73222;
-/// `NiBlendPoint3Interpolator::vfunc_59` at 0xf740f0 (rtti, high); signature (low): `undefined vfunc_59(NiBlendPoint3Interpolator * this, longlong * param_1)`
-pub const NiBlendPoint3Interpolator__vfunc_59: u64 = 73224;

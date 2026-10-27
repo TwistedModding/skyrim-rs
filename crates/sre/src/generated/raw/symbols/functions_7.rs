@@ -8762,7 +8762,7 @@ pub(super) const ROWS: &[Function] = &[
     Function { rva: 0xedf120, id: 70229, confidence: Confidence::Medium, name: "TransformVectorArrayByTransposedMatrix" },
     Function { rva: 0xedf800, id: 70232, confidence: Confidence::Medium, name: "GetEulerAnglesFromMatrix" },
     Function { rva: 0xedf900, id: 70233, confidence: Confidence::Medium, name: "BuildRotationMatrixFromEulerAngles" },
-    Function { rva: 0xedfae0, id: 70239, confidence: Confidence::Medium, name: "StreamReadMatrix3" },
+    Function { rva: 0xedfae0, id: 70239, confidence: Confidence::High, name: "StreamReadMatrix3" },
     Function { rva: 0xedfb70, id: 70240, confidence: Confidence::Medium, name: "StreamWriteMatrix3" },
     Function { rva: 0xedfda0, id: 70242, confidence: Confidence::Medium, name: "SolveTridiagonalEigensystem3" },
     Function { rva: 0xee0440, id: 70243, confidence: Confidence::High, name: "ComputeDeterminant3x3" },

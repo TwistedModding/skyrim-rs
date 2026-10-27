@@ -223,14 +223,14 @@ fn actor_values() -> Result<String, String> {
     check(address(owner).wrapping_sub(address(player)) == 0xB8, "ActorValueOwner is not at +0xB8")?;
     let values: Vec<(ActorValue, f32)> = [ActorValue::Health, ActorValue::Magicka, ActorValue::Stamina, ActorValue::CarryWeight, ActorValue::SpeedMult]
         .into_iter()
-        .map(|v| (v, owner.get_actor_value(v as i32)))
+        .map(|v| (v, owner.get_actor_value(v)))
         .collect();
     let expected = [100.0, 100.0, 100.0, 300.0, 100.0];
     check(values.iter().zip(expected).all(|((_, got), want)| (got - want).abs() < 0.01), &format!("values {values:?}"))?;
-    let base = owner.get_base_actor_value(ActorValue::Health as i32);
-    let permanent = owner.get_permanent_actor_value(ActorValue::Health as i32);
+    let base = owner.get_base_actor_value(ActorValue::Health);
+    let permanent = owner.get_permanent_actor_value(ActorValue::Health);
     check((base - 100.0).abs() < 0.01 && (permanent - 100.0).abs() < 0.01, &format!("base {base} permanent {permanent}"))?;
-    let modifiers = [Modifier::Permanent, Modifier::Temporary, Modifier::Damage].map(|m| player.get_actor_value_modifier(m as i32, ActorValue::Health as i32));
+    let modifiers = [Modifier::Permanent, Modifier::Temporary, Modifier::Damage].map(|m| player.get_actor_value_modifier(m as i32, ActorValue::Health));
     let field = skyrim::render::floats::<3>(&player.healthModifiers);
     check(modifiers.iter().chain(&field).all(|m| m.abs() < f32::EPSILON), &format!("health modifiers {modifiers:?}, healthModifiers {field:?}"))?;
     let text: Vec<String> = values.iter().map(|(v, x)| format!("{v:?}={x}")).collect();
@@ -239,7 +239,7 @@ fn actor_values() -> Result<String, String> {
 
 fn actor_value_write() -> Result<String, String> {
     let owner = player_ref()?.as_actor_value_owner();
-    let (speed, health, magicka) = (ActorValue::SpeedMult as i32, ActorValue::Health as i32, ActorValue::Magicka as i32);
+    let (speed, health, magicka) = (ActorValue::SpeedMult, ActorValue::Health, ActorValue::Magicka);
     owner.mod_actor_value(Modifier::Temporary as i32, speed, 5.0);
     let boosted = owner.get_actor_value(speed);
     owner.mod_actor_value(Modifier::Temporary as i32, speed, -5.0);
@@ -329,7 +329,7 @@ fn actor_value_names() -> Result<String, String> {
     check(lookup_actor_value("health") == Some(ActorValue::Health), "lookup is not case-insensitive")?;
     check(lookup_actor_value("NoSuchValue").is_none(), "NoSuchValue resolved")?;
     let name = |info: &sre::ActorValueInfo| (!info.name.is_null()).then(|| unsafe { core::ffi::CStr::from_ptr(info.name.cast()) });
-    let info = ActorValueList::get_actor_value_info(ActorValue::Health as u32).ok_or("GetActorValueInfo(Health) is null")?;
+    let info = ActorValueList::get_actor_value_info(ActorValue::Health).ok_or("GetActorValueInfo(Health) is null")?;
     check(info.formType == FormType::AVIF as u8 && name(info).is_some_and(|n| n.to_bytes() == b"Health"), &format!("info is {} {:?}", describe(info), name(info)))?;
     let list = ActorValueList::singleton().ok_or("g_ActorValueList_ptr is null")?;
     let infos = list.infos();
@@ -341,7 +341,7 @@ fn actor_value_names() -> Result<String, String> {
         .collect();
     check(infos.len() == 164 && odd.is_empty(), &format!("{} infos, not AVIF: {}", infos.len(), odd.join(" ")))?;
     check(infos[ActorValue::Health as usize].is_some_and(|i| core::ptr::eq(i, info)), "infos[24] is not GetActorValueInfo(24)")?;
-    check(infos[0].is_some_and(|i| ActorValueList::get_actor_value_info(ActorValue::Aggression as u32).is_some_and(|a| core::ptr::eq(i, a))), "infos[0] is not GetActorValueInfo(0)")?;
+    check(infos[0].is_some_and(|i| ActorValueList::get_actor_value_info(ActorValue::Aggression).is_some_and(|a| core::ptr::eq(i, a))), "infos[0] is not GetActorValueInfo(0)")?;
     let mut round_trips = 0;
     for (i, entry) in infos.iter().enumerate() {
         let value = ActorValue::from_u32(u32::try_from(i).unwrap()).ok_or(format!("no enum value {i}"))?;

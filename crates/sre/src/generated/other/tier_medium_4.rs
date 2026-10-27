@@ -3,48 +3,6 @@
 
 use core::ffi::{c_char, c_void};
 
-/// `ResizeScrapArrayOfDwords` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 71507, rva 0xf15200).
-/// `ulonglong ResizeScrapArrayOfDwords(longlong * param_1, uint param_2, undefined8 param_3, undefined8 param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn resize_scrap_array_of_dwords(param_1: *mut i64, param_2: u32, param_3: u64, param_4: u64) -> u64 { unsafe { function!(71507, (*mut i64, u32, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
-/// `ResizeScrapArrayOfRecord28` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 523762, rva 0x5adbf0).
-/// `char ResizeScrapArrayOfRecord28(longlong * param_1, ulonglong param_2, undefined8 param_3, undefined8 param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn resize_scrap_array_of_record28(param_1: *mut i64, param_2: u64, param_3: u64, param_4: u64) -> c_char { unsafe { function!(523762, (*mut i64, u64, u64, u64) -> c_char)(param_1, param_2, param_3, param_4) } }
-/// `ResizeScrapArrayStride10` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 42497, rva 0x7b6bb0).
-/// `char ResizeScrapArrayStride10(longlong * param_1, uint param_2, undefined8 param_3, undefined8 param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn resize_scrap_array_stride10(param_1: *mut i64, param_2: u32, param_3: u64, param_4: u64) -> c_char { unsafe { function!(42497, (*mut i64, u32, u64, u64) -> c_char)(param_1, param_2, param_3, param_4) } }
-/// `ResizeSmallArray0x18` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 32673, rva 0x546420).
-/// `char ResizeSmallArray0x18(uint * param_1, ulonglong param_2, undefined8 param_3, undefined8 param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn resize_small_array0x18(param_1: *mut u32, param_2: u64, param_3: u64, param_4: u64) -> c_char { unsafe { function!(32673, (*mut u32, u64, u64, u64) -> c_char)(param_1, param_2, param_3, param_4) } }
-/// `ResizeSmallArray12` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 93295, rva 0x124ada0).
-/// `char ResizeSmallArray12(uint * param_1, ulonglong param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn resize_small_array12(param_1: *mut u32, param_2: u64) -> c_char { unsafe { function!(93295, (*mut u32, u64) -> c_char)(param_1, param_2) } }
-/// `ResizeSmallArray4` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 34213, rva 0x5c31b0).
-/// `undefined8 ResizeSmallArray4(uint * param_1, ulonglong param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn resize_small_array4(param_1: *mut u32, param_2: u64) -> u64 { unsafe { function!(34213, (*mut u32, u64) -> u64)(param_1, param_2) } }
 /// `ResizeSmallDwordArrayZeroFilled` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 67818, rva 0xcd45b0).
 /// `char ResizeSmallDwordArrayZeroFilled(uint * param_1, uint param_2)`
 ///
@@ -3790,13 +3748,6 @@ pub unsafe fn set_ptr_array_capacity_on_heap(param_1: *mut i64, param_2: *mut i6
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn set_quad_layer_vertex_weight(param_1: i64, param_2: u8, param_3: u16, param_4: u16, param_5: f32) -> u64 { unsafe { function!(18725, (i64, u8, u16, u16, f32) -> u64)(param_1, param_2, param_3, param_4, param_5) } }
-/// `SetQuaternionFromAngleAxis` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 70832, rva 0xef8a60).
-/// `undefined4 * SetQuaternionFromAngleAxis(undefined4 * param_1, float param_2, float * param_3)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn set_quaternion_from_angle_axis(param_1: *mut u32, param_2: f32, param_3: *mut f32) -> *mut u32 { unsafe { function!(70832, (*mut u32, f32, *mut f32) -> *mut u32)(param_1, param_2, param_3) } }
 /// `SetQuaternionFromAngleAxis_2` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 70837, rva 0xef8cc0).
 /// `undefined SetQuaternionFromAngleAxis_2(undefined4 * param_1, float param_2, float * param_3)`
 ///
@@ -3972,13 +3923,6 @@ pub unsafe fn set_regen_delay_if_longer(param_1: i64, param_2: i32, param_3: f32
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn set_resource_event_sinks_registered(param_1: c_char) -> u64 { unsafe { function!(36101, (c_char) -> u64)(param_1) } }
-/// `SetRotationFromQuaternion` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 15802, rva 0x221bd0).
-/// `undefined SetRotationFromQuaternion(longlong param_1, float * param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn set_rotation_from_quaternion(param_1: i64, param_2: *mut f32) -> u64 { unsafe { function!(15802, (i64, *mut f32) -> u64)(param_1, param_2) } }
 /// `SetRotationZMatrix` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 82696, rva 0xd022c0).
 /// `undefined SetRotationZMatrix(float * param_1, float param_2)`
 ///

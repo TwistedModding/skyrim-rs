@@ -2383,9 +2383,9 @@ pub type ThirdPersonState_vtable_End = unsafe extern "C" fn(this: *mut crate::Th
 /// `ThirdPersonState::Update`, slot 3: pending SetFirstPerson(false); look pitch (0x8fb2e0) and slot 15 unless +0xe0; thumbstick zoom; 0x8fe830 zoom/yaw/offset chase; slot 14 rotation; camera shake 0x8fa2b0; animated node 0x8fee70; position with collision 0x8fe3c0; writes root+0x48/+0x6c and calls 0xee0930 (high).
 pub type ThirdPersonState_vtable_Update = unsafe extern "C" fn(this: *mut crate::ThirdPersonState, next: *mut c_void);
 /// `ThirdPersonState::GetRotation`, slot 4: returns +0x4c (high).
-pub type ThirdPersonState_vtable_GetRotation = unsafe extern "C" fn(this: *mut crate::ThirdPersonState, out: *mut c_void);
+pub type ThirdPersonState_vtable_GetRotation = unsafe extern "C" fn(this: *mut crate::ThirdPersonState, out: *mut crate::NiQuaternion);
 /// `ThirdPersonState::GetTranslation`, slot 5: returns +0x40 (high).
-pub type ThirdPersonState_vtable_GetTranslation = unsafe extern "C" fn(this: *mut crate::ThirdPersonState, out: *mut c_void);
+pub type ThirdPersonState_vtable_GetTranslation = unsafe extern "C" fn(this: *mut crate::ThirdPersonState, out: *mut crate::NiPoint3);
 /// `ThirdPersonState::SaveGame`, slot 6: targetOffset, targetZoom, freeRotation, freeRotationEnabled, savedZoom, animatedNodeName (high).
 pub type ThirdPersonState_vtable_SaveGame = unsafe extern "C" fn(this: *mut crate::ThirdPersonState, buffer: *mut crate::BGSSaveFormBuffer);
 /// `ThirdPersonState::LoadGame`, slot 7: reads the same and copies target values into the current ones (high).
@@ -2405,7 +2405,7 @@ pub type ThirdPersonState_vtable_SetFreeRotationMode = unsafe extern "C" fn(this
 /// `ThirdPersonState::UpdateRotation`, slot 14: targetYaw from the target heading; with +0xe1 and free look adds freeRotation; rotation = Euler(pitch, 0, currentYaw) (high).
 pub type ThirdPersonState_vtable_UpdateRotation = unsafe extern "C" fn(this: *mut crate::ThirdPersonState);
 /// `ThirdPersonState::ProcessLookInput`, slot 15: free rotation integration (fFreeRotationSpeed, real delta) and the pitch zoom offset (high).
-pub type ThirdPersonState_vtable_ProcessLookInput = unsafe extern "C" fn(this: *mut crate::ThirdPersonState, look: *mut c_void);
+pub type ThirdPersonState_vtable_ProcessLookInput = unsafe extern "C" fn(this: *mut crate::ThirdPersonState, look: *mut crate::NiPoint2);
 
 /// `ThirdPersonState::vftable_20` at 0x18ecc90, id 205238 (rtti, high); 7 slots.
 #[repr(C)]
@@ -2643,7 +2643,7 @@ pub type TransitionState_vtable_Begin = unsafe extern "C" fn(this: *mut crate::T
 /// `TransitionState::Update`, slot 3: progress = clamp((now - start) / duration); root local rotation = slerp(from, to) (InterpolateQuaternionNormalized) or to at 1; root local translation = lerp(from, to); currentPosition; UpdateNode; at progress 1 *next = targetState (high).
 pub type TransitionState_vtable_Update = unsafe extern "C" fn(this: *mut crate::TransitionState, next: *mut c_void);
 /// `TransitionState::GetTranslation`, slot 5: *out = currentPosition (+0x60) (high).
-pub type TransitionState_vtable_GetTranslation = unsafe extern "C" fn(this: *const crate::TransitionState, out: *mut c_void);
+pub type TransitionState_vtable_GetTranslation = unsafe extern "C" fn(this: *const crate::TransitionState, out: *mut crate::NiPoint3);
 
 /// `TrapEntry::vftable` at 0x1867e40, id 196394 (rtti, high); 3 slots.
 #[repr(C)]
@@ -3034,7 +3034,7 @@ pub type TweenMenuCameraState_vtable_End = unsafe extern "C" fn(this: *mut crate
 /// `TweenMenuCameraState::Update`, slot 3:  (high).
 pub type TweenMenuCameraState_vtable_Update = unsafe extern "C" fn(this: *mut crate::TweenMenuCameraState, nextState: *mut c_void);
 /// `TweenMenuCameraState::GetRotation`, slot 4: baseRotation * euler(currentAngles) (high).
-pub type TweenMenuCameraState_vtable_GetRotation = unsafe extern "C" fn(this: *mut crate::TweenMenuCameraState, out: *mut c_void);
+pub type TweenMenuCameraState_vtable_GetRotation = unsafe extern "C" fn(this: *mut crate::TweenMenuCameraState, out: *mut crate::NiQuaternion);
 
 /// `UIBlurManager::vftable` at 0x19844a0, id 216246 (rtti, high); 2 slots.
 #[repr(C)]
@@ -4380,9 +4380,9 @@ pub type VATSCameraState_vtable_Begin = unsafe extern "C" fn(this: *mut crate::V
 /// `VATSCameraState::Update`, slot 3: slots 4/5, caster collision, writes the root (high).
 pub type VATSCameraState_vtable_Update = unsafe extern "C" fn(this: *mut crate::TESCameraState, next: *mut c_void);
 /// `VATSCameraState::GetRotation`, slot 4: look-at rotation from position (+0x2c) toward VATS::GetCameraLookAtPoint 0x807fd0 with up (0,0,1) (0x20ced68), multiplied by the Euler matrix of rotationEuler (+0x20), converted to a quaternion (high).
-pub type VATSCameraState_vtable_GetRotation = unsafe extern "C" fn(this: *mut crate::VATSCameraState, out: *mut c_void);
+pub type VATSCameraState_vtable_GetRotation = unsafe extern "C" fn(this: *mut crate::VATSCameraState, out: *mut crate::NiQuaternion);
 /// `VATSCameraState::GetTranslation`, slot 5: +0x2c (high).
-pub type VATSCameraState_vtable_GetTranslation = unsafe extern "C" fn(this: *mut crate::VATSCameraState, out: *mut c_void);
+pub type VATSCameraState_vtable_GetTranslation = unsafe extern "C" fn(this: *mut crate::VATSCameraState, out: *mut crate::NiPoint3);
 
 /// `ValueAndConditionsEffect::vftable` at 0x18fce40, id 206141 (rtti, high); 33 slots.
 #[repr(C)]

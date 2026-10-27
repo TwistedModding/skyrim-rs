@@ -5883,7 +5883,7 @@ impl crate::BSDirectAtModifierInterface {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn vfunc_1(&self, characterContext: *mut *mut c_void, found: *mut bool, outPoint: *mut c_void, targetType: i32) { unsafe { function!(43657, (*const Self, *mut *mut c_void, *mut bool, *mut c_void, i32))(core::ptr::from_ref(self), characterContext, found, outPoint, targetType) } }
+    pub unsafe fn vfunc_1(&self, characterContext: *mut *mut c_void, found: *mut bool, outPoint: *mut crate::NiPoint4, targetType: i32) { unsafe { function!(43657, (*const Self, *mut *mut c_void, *mut bool, *mut crate::NiPoint4, i32))(core::ptr::from_ref(self), characterContext, found, outPoint, targetType) } }
 }
 
 impl crate::BSGameSound {
@@ -5891,6 +5891,7 @@ impl crate::BSGameSound {
     ///
     /// Semantic, audio pass, high; ledger semantic evidence, name high; id 67789, rva 0xcd2ee0.
     /// `void (BSGameSound* this, const void* params)`
+    /// May be null: `this`.
     ///
     /// # Safety
     /// `params` must point to what the engine expects.
@@ -5909,8 +5910,9 @@ impl crate::BSGeometryListCullingProcess {
     ///
     /// Semantic, graphics pass, high; ledger semantic evidence, name high; id 76772, rva 0xff5bf0.
     /// `void (BSGeometryListCullingProcess* this, NiAVObject* object)`
+    /// May be null: `object`.
     #[inline]
-    pub fn append_geometry(&self, object: &crate::NiAVObject) { unsafe { function!(76772, (*const Self, *const crate::NiAVObject))(core::ptr::from_ref(self), core::ptr::from_ref(object)) } }
+    pub fn append_geometry(&self, object: Option<&crate::NiAVObject>) { unsafe { function!(76772, (*const Self, *const crate::NiAVObject))(core::ptr::from_ref(self), object.map_or(core::ptr::null(), core::ptr::from_ref)) } }
 }
 
 impl crate::BSImagespaceShader {
@@ -6071,12 +6073,14 @@ impl crate::BSSceneGraph {
     ///
     /// Semantic, frame pass, high; ledger semantic evidence, name high; id 106461, rva 0x1516f90.
     /// `void (BSSceneGraph* this, float fov, bool force, NiCamera* camera, bool updateLodAdjust)`
+    /// May be null: `camera`.
     #[inline]
-    pub fn set_field_of_view(&self, fov: f32, force: bool, camera: &crate::NiCamera, updateLodAdjust: bool) { unsafe { function!(106461, (*const Self, f32, bool, *const crate::NiCamera, bool))(core::ptr::from_ref(self), fov, force, core::ptr::from_ref(camera), updateLodAdjust) } }
+    pub fn set_field_of_view(&self, fov: f32, force: bool, camera: Option<&crate::NiCamera>, updateLodAdjust: bool) { unsafe { function!(106461, (*const Self, f32, bool, *const crate::NiCamera, bool))(core::ptr::from_ref(self), fov, force, camera.map_or(core::ptr::null(), core::ptr::from_ref), updateLodAdjust) } }
     /// `BSSceneGraph::ctor`: NiNode named "<prefix>Root Node"; child 0 is a new NiNode "<prefix>Root CameraNode"; the camera (+0x128) is the given one or a new NiCamera "<prefix>Root Camera" with viewport (+0x174..+0x180) = (0, 1, 1, 0) from 0x1914600, a fixed local rotation (+0x48..+0x68, rows (0,0,1), (1,0,0), (0,1,0) from 0x1b5c180/0x17eab80: camera column 0 = parent +Y, column 1 = parent +Z, column 2 = parent +X), +0x16c = 1.0 and +0x170 = far / fNearDistance (far = 20480.0 (0x1914d08) for menu scenes, else fNoLODFarDistanceMin + (Max - Min) * Pct); the camera is attached under child 0 (child 0's slot 53, +0x1a8, with (camera, 1), the arguments of the direct NiNode::AttachChild call above it) and updated; +0x138 = isMenuScene; worldBound radius 1, flags |= 0x2800
     ///
     /// Semantic, graphics pass, high; ledger semantic evidence, name high; id 76746, rva 0xff46b0.
     /// `BSSceneGraph* (BSSceneGraph* this, const char* namePrefix, bool isMenuScene, NiCamera* camera)`
+    /// May be null: `camera`.
     ///
     /// # Safety
     /// It constructs or destroys an object in place.
@@ -6143,6 +6147,7 @@ impl crate::BSUtilityShader {
     ///
     /// Semantic, graphics pass, medium; ledger semantic evidence, name medium; id 107764, rva 0x1568300.
     /// `void (BSUtilityShader* this, BSShadowLight* light, RenderPass* pass)`
+    /// May be null: `light`.
     ///
     /// # Safety
     /// The pass rates the signature medium.

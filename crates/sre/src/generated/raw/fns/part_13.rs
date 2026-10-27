@@ -3,6 +3,26 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `INISetting_fFadeToBlackFadeSeconds_Interface__atexit` at 0x173f0f0 (crt_init, medium); signature (high): `void INISetting_fFadeToBlackFadeSeconds_Interface__atexit(void)`
+pub const INISetting_fFadeToBlackFadeSeconds_Interface__atexit: u64 = 165468;
+/// `INISetting_fFadeToBlackFadeSeconds_Interface__init` at 0xbef0 (crt_init, medium); signature (high): `void INISetting_fFadeToBlackFadeSeconds_Interface__init(void)`
+pub const INISetting_fFadeToBlackFadeSeconds_Interface__init: u64 = 273;
+/// `INISetting_fFadingFracStart__atexit` at 0x17c68d0 (crt_init, medium); signature (high): `void INISetting_fFadingFracStart__atexit(void)`
+pub const INISetting_fFadingFracStart__atexit: u64 = 174842;
+/// `INISetting_fFadingFracStart__init` at 0x1090d0 (crt_init, medium); signature (high): `void INISetting_fFadingFracStart__init(void)`
+pub const INISetting_fFadingFracStart__init: u64 = 10710;
+/// `INISetting_fFastTravelFadeSecs_General__atexit` at 0x17ac430 (crt_init, medium); signature (high): `void INISetting_fFastTravelFadeSecs_General__atexit(void)`
+pub const INISetting_fFastTravelFadeSecs_General__atexit: u64 = 172949;
+/// `INISetting_fFastTravelFadeSecs_General__init` at 0xc2220 (crt_init, medium); signature (high): `void INISetting_fFastTravelFadeSecs_General__init(void)`
+pub const INISetting_fFastTravelFadeSecs_General__init: u64 = 7518;
+/// `INISetting_fFeedbackImpulseMult_RagdollAnim__atexit` at 0x17b4510 (crt_init, medium); signature (high): `void INISetting_fFeedbackImpulseMult_RagdollAnim__atexit(void)`
+pub const INISetting_fFeedbackImpulseMult_RagdollAnim__atexit: u64 = 173896;
+/// `INISetting_fFeedbackImpulseMult_RagdollAnim__init` at 0xebca0 (crt_init, medium); signature (high): `void INISetting_fFeedbackImpulseMult_RagdollAnim__init(void)`
+pub const INISetting_fFeedbackImpulseMult_RagdollAnim__init: u64 = 9643;
+/// `INISetting_fFeedbackOnOffGainTimeMS_RagdollAnim__atexit` at 0x17b45b0 (crt_init, medium); signature (high): `void INISetting_fFeedbackOnOffGainTimeMS_RagdollAnim__atexit(void)`
+pub const INISetting_fFeedbackOnOffGainTimeMS_RagdollAnim__atexit: u64 = 173898;
+/// `INISetting_fFeedbackOnOffGainTimeMS_RagdollAnim__init` at 0xebda0 (crt_init, medium); signature (high): `void INISetting_fFeedbackOnOffGainTimeMS_RagdollAnim__init(void)`
+pub const INISetting_fFeedbackOnOffGainTimeMS_RagdollAnim__init: u64 = 9645;
 /// `INISetting_fFeedbackOnOffGain_RagdollAnim__atexit` at 0x17b4560 (crt_init, medium); signature (high): `void INISetting_fFeedbackOnOffGain_RagdollAnim__atexit(void)`
 pub const INISetting_fFeedbackOnOffGain_RagdollAnim__atexit: u64 = 173897;
 /// `INISetting_fFeedbackOnOffGain_RagdollAnim__init` at 0xebd20 (crt_init, medium); signature (high): `void INISetting_fFeedbackOnOffGain_RagdollAnim__init(void)`
@@ -6493,7 +6513,7 @@ pub const InputEvent__dtor_4: u64 = 523960;
 pub const InputEvent__dtor_5: u64 = 523961;
 /// `InputEvent::vdtor` at 0x7b1b60 (layout_inference, medium); signature (low): `InputEvent * vdtor(InputEvent * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const InputEvent__vdtor: u64 = 42400;
-/// `InputEventQueue::AddButtonEvent` at 0xcfb340 (semantic, high); signature (untiered): `undefined AddButtonEvent(longlong param_1, undefined8 param_2, undefined8 param_3, undefined4 param_4, undefined4 param_5)`; next of 10 ButtonEvents: device, idCode, value, held, user event ''; append (high); semantic signature: `void (InputEventQueue* q, u32 device, u32 idCode, float value, float heldDownSecs)`
+/// `InputEventQueue::AddButtonEvent` at 0xcfb340 (semantic, high); signature (untiered): `undefined AddButtonEvent(longlong param_1, undefined8 param_2, undefined8 param_3, undefined4 param_4, undefined4 param_5)`; next of 10 ButtonEvents: device, idCode, value, held, user event ''; append (high); semantic signature: `void (InputEventQueue* q, InputDevice device, u32 idCode, float value, float heldDownSecs)`
 pub const InputEventQueue__AddButtonEvent: u64 = 68685;
 /// `InputEventQueue::AddButtonEvent` as a function pointer type (high).
 pub type InputEventQueue__AddButtonEvent_fn = unsafe extern "C" fn(q: *mut crate::InputEventQueue, device: u32, idCode: u32, value: f32, heldDownSecs: f32);
@@ -6501,7 +6521,7 @@ pub type InputEventQueue__AddButtonEvent_fn = unsafe extern "C" fn(q: *mut crate
 pub const InputEventQueue__AddCharEvent: u64 = 68686;
 /// `InputEventQueue::AddCharEvent` as a function pointer type (high).
 pub type InputEventQueue__AddCharEvent_fn = unsafe extern "C" fn(q: *mut crate::InputEventQueue, charCode: u32);
-/// `InputEventQueue::AddDeviceConnectEvent` at 0xcfb5d0 (semantic, high); signature (untiered): `undefined AddDeviceConnectEvent(longlong param_1, undefined4 param_2, undefined1 param_3)`; the single DeviceConnectEvent (high); semantic signature: `void (InputEventQueue* q, u32 device, bool connected)`
+/// `InputEventQueue::AddDeviceConnectEvent` at 0xcfb5d0 (semantic, high); signature (untiered): `undefined AddDeviceConnectEvent(longlong param_1, undefined4 param_2, undefined1 param_3)`; the single DeviceConnectEvent (high); semantic signature: `void (InputEventQueue* q, InputDevice device, bool connected)`
 pub const InputEventQueue__AddDeviceConnectEvent: u64 = 68689;
 /// `InputEventQueue::AddDeviceConnectEvent` as a function pointer type (high).
 pub type InputEventQueue__AddDeviceConnectEvent_fn = unsafe extern "C" fn(q: *mut crate::InputEventQueue, device: u32, connected: bool);
@@ -8391,29 +8411,3 @@ pub const IsAnotherThreadInUpdatePhase: u64 = 39033;
 pub const IsAnyMagicCasterCasting: u64 = 38759;
 /// `IsArgFinite` at 0xd18d10 (decompiler, high); signature (untiered): `undefined IsArgFinite(longlong param_1)`
 pub const IsArgFinite: u64 = 83133;
-/// `IsArgNaN` at 0xd18c70 (decompiler, high); signature (untiered): `undefined IsArgNaN(longlong param_1)`
-pub const IsArgNaN: u64 = 83132;
-/// `IsArmorCasterUsable` at 0x836f60 (decompiler, medium); signature (untiered): `undefined1 IsArmorCasterUsable(longlong param_1, longlong * param_2, undefined8 param_3, undefined8 param_4)`
-pub const IsArmorCasterUsable: u64 = 45416;
-/// `IsArrested` at 0x6fdd80 (decompiler, medium); signature (untiered): `longlong IsArrested(longlong param_1)`
-pub const IsArrested: u64 = 39445;
-/// `IsAsciiAlphanumeric` at 0x128eeb0 (decompiler, high); signature (high): `longlong IsAsciiAlphanumeric(int param_1)`
-pub const IsAsciiAlphanumeric: u64 = 444445;
-/// `IsAudioReady` at 0xcca630 (semantic, high); signature (untiered): `undefined1 IsAudioReady(void)`; manager and backend both exist (high); semantic signature: `bool ()`
-pub const IsAudioReady: u64 = 67654;
-/// `IsAudioReady` as a function pointer type (high).
-pub type IsAudioReady_fn = unsafe extern "C" fn() -> bool;
-/// `IsBaseFieldC0Bit2SetIfVfunc150` at 0x2e3f50 (decompiler, medium); signature (untiered): `ulonglong IsBaseFieldC0Bit2SetIfVfunc150(longlong * param_1)`
-pub const IsBaseFieldC0Bit2SetIfVfunc150: u64 = 19569;
-/// `IsBaseFormType24WithFlag200` at 0x2e3c40 (decompiler, medium); signature (medium): `longlong IsBaseFormType24WithFlag200(longlong param_1)`
-pub const IsBaseFormType24WithFlag200: u64 = 19556;
-/// `IsBaseFormType7OrType32WithFieldF8` at 0x2e3fd0 (decompiler, medium); signature (medium): `undefined8 IsBaseFormType7OrType32WithFieldF8(longlong param_1)`
-pub const IsBaseFormType7OrType32WithFieldF8: u64 = 19571;
-/// `IsBaseObjectOfSelectedFormType` at 0x30fe40 (decompiler, medium); signature (medium): `undefined1 IsBaseObjectOfSelectedFormType(longlong param_1)`
-pub const IsBaseObjectOfSelectedFormType: u64 = 20519;
-/// `IsBaseOrLeveledBaseForm` at 0x2f05b0 (decompiler, medium); signature (untiered): `undefined8 IsBaseOrLeveledBaseForm(longlong param_1, longlong param_2)`
-pub const IsBaseOrLeveledBaseForm: u64 = 19776;
-/// `IsBaseType1DWithFlag100` at 0x2e4800 (decompiler, high); signature (high): `bool IsBaseType1DWithFlag100(longlong param_1)`
-pub const IsBaseType1DWithFlag100: u64 = 19578;
-/// `IsBeforeDeadlineAt8` at 0x143c6e0 (decompiler, medium); signature (medium): `ulonglong IsBeforeDeadlineAt8(longlong param_1)`
-pub const IsBeforeDeadlineAt8: u64 = 451720;

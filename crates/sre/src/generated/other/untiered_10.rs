@@ -3,13 +3,6 @@
 
 use core::ffi::{c_char, c_void};
 
-/// `TryClaimFieldPointers` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 63455, rva 0xbc4d90).
-/// `undefined1 TryClaimFieldPointers(longlong param_1, longlong * param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn try_claim_field_pointers(param_1: i64, param_2: *mut i64) -> u8 { unsafe { function!(63455, (i64, *mut i64) -> u8)(param_1, param_2) } }
 /// `TryClaimFreeArc` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 47036, rva 0x85b510).
 /// `undefined8 TryClaimFreeArc(longlong param_1, longlong param_2)`
 ///

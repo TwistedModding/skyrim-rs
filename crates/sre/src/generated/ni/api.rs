@@ -1562,11 +1562,12 @@ impl crate::NiBoneMatrixSetterI {
     ///
     /// Semantic, animation pass, high; ledger semantic evidence, name high; id 108322, rva 0x1578c80.
     /// `void (NiBoneMatrixSetterI* this, NiSkinInstance* skin, NiSkinPartition::Partition* partition, const NiTransform* geometryWorld)`
+    /// May be null: `partition`.
     ///
     /// # Safety
-    /// `partition`, `geometryWorld` must point to what the engine expects.
+    /// `partition` must point to what the engine expects.
     #[inline]
-    pub unsafe fn set_bone_matrices(&self, skin: *mut crate::NiSkinInstance, partition: *mut crate::NiSkinPartition__Partition, geometryWorld: *const c_void) { unsafe { function!(108322, (*const Self, *mut crate::NiSkinInstance, *mut crate::NiSkinPartition__Partition, *const c_void))(core::ptr::from_ref(self), skin, partition, geometryWorld) } }
+    pub unsafe fn set_bone_matrices(&self, skin: *mut crate::NiSkinInstance, partition: *mut crate::NiSkinPartition__Partition, geometryWorld: *const crate::NiTransform) { unsafe { function!(108322, (*const Self, *mut crate::NiSkinInstance, *mut crate::NiSkinPartition__Partition, *const crate::NiTransform))(core::ptr::from_ref(self), skin, partition, geometryWorld) } }
 }
 
 impl crate::NiCullingProcess {
@@ -1574,11 +1575,8 @@ impl crate::NiCullingProcess {
     ///
     /// Semantic, frame pass, high; ledger semantic evidence, name high; id 71081, rva 0xf04850.
     /// `void (NiCullingProcess* this, const NiFrustum* frustum)`
-    ///
-    /// # Safety
-    /// `frustum` must point to what the engine expects.
     #[inline]
-    pub unsafe fn set_frustum(&self, frustum: *const c_void) { unsafe { function!(71081, (*const Self, *const c_void))(core::ptr::from_ref(self), frustum) } }
+    pub fn set_frustum(&self, frustum: &crate::NiFrustum) { unsafe { function!(71081, (*const Self, *const crate::NiFrustum))(core::ptr::from_ref(self), core::ptr::from_ref(frustum)) } }
 }
 
 impl crate::NiDirectionalLight {

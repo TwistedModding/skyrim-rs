@@ -104,12 +104,13 @@ impl crate::BGSSaveLoadGame {
     /// `BGSSaveLoadGame::LoadGame`: reads the body and applies it
     ///
     /// Semantic, save pass, high; ledger runtime evidence, name high; id 35600, rva 0x618970.
-    /// `bool (BGSSaveLoadGame* this, Win32FileType* stream, bool ignoreMissing, u32 requestKind, BSTArray* missingNames, bool skipPluginMatch)`
+    /// `bool (BGSSaveLoadGame* this, Win32FileType* stream, bool ignoreMissing, SaveLoadRequestKind requestKind, BSTArray* missingNames, bool skipPluginMatch)`
+    /// Retyped: requestKind u32 -> SaveLoadRequestKind: SaveLoadRequestKind: PrepareForLoad 0x627680 compares 0xd0000010, 0xd0002000, 0x50001000, 0xd0000100 and 0xd0004000 (the last is missing from data/saveloadrequestkinds.json); passed to PrepareForLoad.
     ///
     /// # Safety
     /// `stream`, `missingNames` must point to what the engine expects.
     #[inline]
-    pub unsafe fn load_game(&self, stream: *mut c_void, ignoreMissing: bool, requestKind: u32, missingNames: *mut crate::BSTArray, skipPluginMatch: bool) -> bool { unsafe { function!(35600, (*const Self, *mut c_void, bool, u32, *mut crate::BSTArray, bool) -> bool)(core::ptr::from_ref(self), stream, ignoreMissing, requestKind, missingNames, skipPluginMatch) } }
+    pub unsafe fn load_game(&self, stream: *mut c_void, ignoreMissing: bool, requestKind: crate::SaveLoadRequestKind, missingNames: *mut crate::BSTArray, skipPluginMatch: bool) -> bool { unsafe { function!(35600, (*const Self, *mut c_void, bool, crate::SaveLoadRequestKind, *mut crate::BSTArray, bool) -> bool)(core::ptr::from_ref(self), stream, ignoreMissing, requestKind, missingNames, skipPluginMatch) } }
     /// `BGSSaveLoadGame::LoadGlobalDataTable`: count x {u32 type, length-prefixed buffer} -> LoadGlobalData; the VM type is read through LoadStorageWrapper and SkyrimVM load 0x9e1c00
     ///
     /// Semantic, save pass, high; ledger runtime evidence, name high; id 35641, rva 0x61c1a0.
@@ -162,6 +163,7 @@ impl crate::BGSSaveLoadGame {
     ///
     /// Semantic, save pass, high; ledger runtime evidence, name high; id 35566, rva 0x615690.
     /// `void (BGSSaveLoadGame* this, ChangeFormMap* newMap, FormIDIndexMap* index)`
+    /// May be null: `newMap`, `index`.
     ///
     /// # Safety
     /// `newMap`, `index` must point to what the engine expects.
@@ -229,12 +231,13 @@ impl crate::BGSSaveLoadManager {
     /// `BGSSaveLoadManager::LoadGame`: main-thread load: header, missing-content dialogs, BGSSaveLoadGame::LoadGame, then FinishLoad
     ///
     /// Semantic, save pass, high; ledger runtime evidence, name high; id 442580, rva 0x627de0.
-    /// `bool (BGSSaveLoadManager*, Win32FileType** stream, u32 entryValue, bool ignoreMissing, bool skipPluginMatch, u32 requestKind)`
+    /// `bool (BGSSaveLoadManager*, Win32FileType** stream, u32 entryValue, bool ignoreMissing, bool skipPluginMatch, SaveLoadRequestKind requestKind)`
+    /// Retyped: requestKind u32 -> SaveLoadRequestKind: SaveLoadRequestKind: PrepareForLoad 0x627680 compares 0xd0000010, 0xd0002000, 0x50001000, 0xd0000100 and 0xd0004000 (the last is missing from data/saveloadrequestkinds.json); passed on to BGSSaveLoadGame::LoadGame.
     ///
     /// # Safety
     /// `stream` must point to what the engine expects.
     #[inline]
-    pub unsafe fn load_game(&self, stream: *mut *mut c_void, entryValue: u32, ignoreMissing: bool, skipPluginMatch: bool, requestKind: u32) -> bool { unsafe { function!(442580, (*const Self, *mut *mut c_void, u32, bool, bool, u32) -> bool)(core::ptr::from_ref(self), stream, entryValue, ignoreMissing, skipPluginMatch, requestKind) } }
+    pub unsafe fn load_game(&self, stream: *mut *mut c_void, entryValue: u32, ignoreMissing: bool, skipPluginMatch: bool, requestKind: crate::SaveLoadRequestKind) -> bool { unsafe { function!(442580, (*const Self, *mut *mut c_void, u32, bool, bool, crate::SaveLoadRequestKind) -> bool)(core::ptr::from_ref(self), stream, entryValue, ignoreMissing, skipPluginMatch, requestKind) } }
     /// `BGSSaveLoadManager::OpenSaveFile`: path via BSSaveDataSystemUtility slot 2 (temp adds '.tmp'), stream via slot 11, stores the name at stream+0xab0, opens it
     ///
     /// Semantic, save pass, high; ledger semantic evidence, name high; id 35724, rva 0x622390.
@@ -247,9 +250,10 @@ impl crate::BGSSaveLoadManager {
     /// `BGSSaveLoadManager::PrepareForLoad`: freeze the VM, reset TES/ref handle maps, wait for Havok, suspend the game (load kinds) or close all menus, stop VATS, drain navmesh/IO
     ///
     /// Semantic, save pass, high; ledger runtime evidence, name high; id 35779, rva 0x627680.
-    /// `void (BGSSaveLoadManager*, u32 requestKind)`
+    /// `void (BGSSaveLoadManager*, SaveLoadRequestKind requestKind)`
+    /// Retyped: requestKind u32 -> SaveLoadRequestKind: SaveLoadRequestKind: PrepareForLoad 0x627680 compares 0xd0000010, 0xd0002000, 0x50001000, 0xd0000100 and 0xd0004000 (the last is missing from data/saveloadrequestkinds.json).
     #[inline]
-    pub fn prepare_for_load(&self, requestKind: u32) { unsafe { function!(35779, (*const Self, u32))(core::ptr::from_ref(self), requestKind) } }
+    pub fn prepare_for_load(&self, requestKind: crate::SaveLoadRequestKind) { unsafe { function!(35779, (*const Self, crate::SaveLoadRequestKind))(core::ptr::from_ref(self), requestKind) } }
     /// `BGSSaveLoadManager::QueueLoadEntry`: caches the header record and queues LoadEntryRequest 0x50001000
     ///
     /// Semantic, save pass, high; ledger semantic evidence, name high; id 442575, rva 0x625a10.
@@ -393,9 +397,10 @@ pub fn generate_unique_player_id(a0: &crate::BGSSaveLoadManager) { unsafe { func
 /// `GetChangeFormInitialType`: kind of initial data a record carries: refs 5 created, 6 bits 3|25, 4 bits 1|2, else 0; cells with bit 30: 1 if bit 29, 2 if bit 28, else 3
 ///
 /// Semantic, save pass, high; ledger semantic evidence, name high; id 35708, rva 0x6204c0.
-/// `u8 (TESForm* form, u32 changeFlags)`
+/// `ChangeFormInitialType (TESForm* form, u32 changeFlags)`
+/// Retyped: return u8 -> ChangeFormInitialType: GetChangeFormInitialType: the enum's source.
 #[inline]
-pub fn get_change_form_initial_type(form: &crate::TESForm, changeFlags: u32) -> u8 { unsafe { function!(35708, (*const crate::TESForm, u32) -> u8)(core::ptr::from_ref(form), changeFlags) } }
+pub fn get_change_form_initial_type(form: &crate::TESForm, changeFlags: u32) -> Result<crate::ChangeFormInitialType, u32> { unsafe { let raw = function!(35708, (*const crate::TESForm, u32) -> u32)(core::ptr::from_ref(form), changeFlags); crate::ChangeFormInitialType::from_u32(raw).ok_or(raw) } }
 /// `GetOrAssignFormIDIndex`: index of a form id, assigning the next one; 0xFF ids return themselves
 ///
 /// Semantic, save pass, high; ledger semantic evidence, name high; id 35554, rva 0x614cf0.
@@ -426,9 +431,10 @@ pub unsafe fn global_data_finish_load(first: u32, end: u32) { unsafe { function!
 /// `LoadGlobalData`: global data reader switch
 ///
 /// Semantic, save pass, high; ledger semantic evidence, name high; id 35642, rva 0x61c2f0.
-/// `bool (u32 type, BGSLoadGameBuffer* buf)`
+/// `bool (GlobalDataType type, BGSLoadGameBuffer* buf)`
+/// Retyped: type u32 -> GlobalDataType: the GlobalDataType switches (enum source).
 #[inline]
-pub fn load_global_data(type_: u32, buf: &crate::BGSLoadGameBuffer) -> bool { unsafe { function!(35642, (u32, *const crate::BGSLoadGameBuffer) -> bool)(type_, core::ptr::from_ref(buf)) } }
+pub fn load_global_data(type_: crate::GlobalDataType, buf: &crate::BGSLoadGameBuffer) -> bool { unsafe { function!(35642, (crate::GlobalDataType, *const crate::BGSLoadGameBuffer) -> bool)(type_, core::ptr::from_ref(buf)) } }
 /// `LoadSaveEntry`: RequestLoad(mgr, entry->name, entry+0x60, 0, false)
 ///
 /// Semantic, save pass, high; ledger semantic evidence, name high; id 35534, rva 0x614660.
@@ -456,9 +462,10 @@ pub unsafe fn process_save_load_thread_request(a0: *mut c_void, a1: *mut c_void)
 /// `QueueSaveLoadRequest`: allocates a Request and pushes it to the main queue (bit31) or the worker
 ///
 /// Semantic, save pass, high; ledger semantic evidence, name high; id 35769, rva 0x625850.
-/// `void (BGSSaveLoadManager*, u32 kind)`
+/// `void (BGSSaveLoadManager*, SaveLoadRequestKind kind)`
+/// Retyped: kind u32 -> SaveLoadRequestKind: QueueSaveLoadRequest: enum source (argument EDX at the call sites); compares 0xd0002000.
 #[inline]
-pub fn queue_save_load_request(a0: &crate::BGSSaveLoadManager, kind: u32) { unsafe { function!(35769, (*const crate::BGSSaveLoadManager, u32))(core::ptr::from_ref(a0), kind) } }
+pub fn queue_save_load_request(a0: &crate::BGSSaveLoadManager, kind: crate::SaveLoadRequestKind) { unsafe { function!(35769, (*const crate::BGSSaveLoadManager, crate::SaveLoadRequestKind))(core::ptr::from_ref(a0), kind) } }
 /// `ReadAndVerifyMagicHeader`: seek 0, check 'TESV_SAVEGAME' (0x1908f30) and read the header buffer
 ///
 /// Semantic, save pass, high; ledger semantic evidence, name high; id 35675, rva 0x61f310.
@@ -495,15 +502,17 @@ pub fn revert_all_global_data(revertGlobals: bool) { unsafe { function!(35648, (
 /// `RevertGlobalData`: global data revert switch
 ///
 /// Semantic, save pass, high; ledger runtime evidence, name high; id 35650, rva 0x61cfb0.
-/// `bool (u32 type, BGSLoadGameBuffer* buf, bool revertGlobals)`
+/// `bool (GlobalDataType type, BGSLoadGameBuffer* buf, bool revertGlobals)`
+/// Retyped: type u32 -> GlobalDataType: the GlobalDataType switches (enum source).
 #[inline]
-pub fn revert_global_data(type_: u32, buf: &crate::BGSLoadGameBuffer, revertGlobals: bool) -> bool { unsafe { function!(35650, (u32, *const crate::BGSLoadGameBuffer, bool) -> bool)(type_, core::ptr::from_ref(buf), revertGlobals) } }
+pub fn revert_global_data(type_: crate::GlobalDataType, buf: &crate::BGSLoadGameBuffer, revertGlobals: bool) -> bool { unsafe { function!(35650, (crate::GlobalDataType, *const crate::BGSLoadGameBuffer, bool) -> bool)(type_, core::ptr::from_ref(buf), revertGlobals) } }
 /// `SaveGlobalData`: global data writer switch (see enum GlobalDataType)
 ///
 /// Semantic, save pass, high; ledger semantic evidence, name high; id 35639, rva 0x61b9a0.
-/// `bool (u32 type, BGSSaveGameBuffer* buf)`
+/// `bool (GlobalDataType type, BGSSaveGameBuffer* buf)`
+/// Retyped: type u32 -> GlobalDataType: the GlobalDataType switches (enum source).
 #[inline]
-pub fn save_global_data(type_: u32, buf: &crate::BGSSaveGameBuffer) -> bool { unsafe { function!(35639, (u32, *const crate::BGSSaveGameBuffer) -> bool)(type_, core::ptr::from_ref(buf)) } }
+pub fn save_global_data(type_: crate::GlobalDataType, buf: &crate::BGSSaveGameBuffer) -> bool { unsafe { function!(35639, (crate::GlobalDataType, *const crate::BGSSaveGameBuffer) -> bool)(type_, core::ptr::from_ref(buf)) } }
 /// `SaveOverEntry`: custom-named entry: Save(2, entry name) and drop the old entry; 'Save'/'Autosave'/'Quicksave' entry: Save(2, generated name), then DeleteSaveFile(old name) (call 0x614637, S1 delete hook 1) and RemoveSaveEntry
 ///
 /// Semantic, save pass, high; ledger semantic evidence, name high; id 35533, rva 0x6145c0.

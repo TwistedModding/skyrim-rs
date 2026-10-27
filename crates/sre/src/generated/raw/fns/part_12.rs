@@ -3,6 +3,32 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `GetField100Field30OrFlagDefault` at 0x2660b0 (decompiler, medium); signature (untiered): `undefined4 GetField100Field30OrFlagDefault(longlong param_1)`
+pub const GetField100Field30OrFlagDefault: u64 = 17136;
+/// `GetField100Ptr` at 0x6239f0 (decompiler, high); signature (high): `longlong GetField100Ptr(longlong param_1)`
+pub const GetField100Ptr: u64 = 35747;
+/// `GetField100_2` at 0x1143380 (decompiler, high); signature (untiered): `undefined8 GetField100_2(longlong param_1)`
+pub const GetField100_2: u64 = 81756;
+/// `GetField108` at 0xb65830 (decompiler, high); signature (untiered): `undefined8 GetField108(longlong param_1)`
+pub const GetField108: u64 = 61627;
+/// `GetField108Address` at 0x11dee90 (decompiler, high); signature (high): `longlong GetField108Address(longlong param_1)`
+pub const GetField108Address: u64 = 91060;
+/// `GetField108OrField158Field58` at 0x3bf580 (decompiler, high); signature (untiered): `longlong GetField108OrField158Field58(longlong param_1)`
+pub const GetField108OrField158Field58: u64 = 24698;
+/// `GetField10Address_2` at 0x191890 (decompiler, high); signature (high): `longlong GetField10Address_2(longlong param_1)`
+pub const GetField10Address_2: u64 = 12973;
+/// `GetField10Address_3` at 0xad4290 (decompiler, high); signature (high): `longlong GetField10Address_3(longlong param_1)`
+pub const GetField10Address_3: u64 = 58430;
+/// `GetField10Byte455` at 0x6f12b0 (decompiler, high); signature (untiered): `undefined1 GetField10Byte455(longlong param_1)`
+pub const GetField10Byte455: u64 = 39260;
+/// `GetField10Byte464` at 0x702630 (decompiler, high); signature (untiered): `undefined1 GetField10Byte464(longlong param_1)`
+pub const GetField10Byte464: u64 = 39607;
+/// `GetField10CStringAtIndexAsString` at 0xa84820 (decompiler, medium); signature (untiered): `longlong * GetField10CStringAtIndexAsString(longlong param_1, longlong * param_2, int param_3)`
+pub const GetField10CStringAtIndexAsString: u64 = 443135;
+/// `GetField10DataOrDefault` at 0xcd4b80 (decompiler, medium); signature (medium): `undefined4 * GetField10DataOrDefault(longlong param_1)`
+pub const GetField10DataOrDefault: u64 = 67849;
+/// `GetField10Dword` at 0x4a5ba0 (decompiler, high); signature (high): `undefined4 GetField10Dword(longlong param_1)`
+pub const GetField10Dword: u64 = 29852;
 /// `GetField10Entry2FC` at 0x6f6ba0 (decompiler, high); signature (high): `undefined4 * GetField10Entry2FC(longlong param_1, int param_2)`
 pub const GetField10Entry2FC: u64 = 39399;
 /// `GetField10Field10OrZero` at 0x1082fb0 (decompiler, high); signature (untiered): `undefined GetField10Field10OrZero(longlong param_1, undefined4 * param_2)`
@@ -4473,7 +4499,7 @@ pub const HorseCameraState__SetFreeRotationMode: u64 = 50762;
 pub const HorseCameraState__SetTargetHandle: u64 = 50768;
 /// `HorseCameraState::UpdateRotation` at 0x8f7360 (semantic, high); signature (untiered): `undefined UpdateRotation(HorseCameraState * this)`
 pub const HorseCameraState__UpdateRotation: u64 = 50771;
-/// `HorseCameraState::ctor` at 0x8f6c00 (layout_inference, high); signature (low): `HorseCameraState * ctor(HorseCameraState * this, undefined8 param_1, undefined4 param_2)`; ThirdPersonState::ctor, own vtables, mountHandle invalid, mountHeading 0, turning 0 (high); semantic signature: `HorseCameraState* (HorseCameraState* this, PlayerCamera* camera, u32 id)`
+/// `HorseCameraState::ctor` at 0x8f6c00 (layout_inference, high); signature (low): `HorseCameraState * ctor(HorseCameraState * this, undefined8 param_1, undefined4 param_2)`; ThirdPersonState::ctor, own vtables, mountHandle invalid, mountHeading 0, turning 0 (high); semantic signature: `HorseCameraState* (HorseCameraState* this, PlayerCamera* camera, CameraState id)`
 pub const HorseCameraState__ctor: u64 = 50759;
 /// `HorseCameraState::ctor` as a function pointer type (high).
 pub type HorseCameraState__ctor_fn = unsafe extern "C" fn(this: *mut crate::HorseCameraState, camera: *mut crate::PlayerCamera, id: u32) -> *mut crate::HorseCameraState;
@@ -8985,23 +9011,3 @@ pub const INISetting_fFadeOutThreshold_LOD__init: u64 = 271;
 pub const INISetting_fFadeOutTime_LOD__atexit: u64 = 165467;
 /// `INISetting_fFadeOutTime_LOD__init` at 0xbe70 (crt_init, medium); signature (high): `void INISetting_fFadeOutTime_LOD__init(void)`
 pub const INISetting_fFadeOutTime_LOD__init: u64 = 272;
-/// `INISetting_fFadeToBlackFadeSeconds_Interface__atexit` at 0x173f0f0 (crt_init, medium); signature (high): `void INISetting_fFadeToBlackFadeSeconds_Interface__atexit(void)`
-pub const INISetting_fFadeToBlackFadeSeconds_Interface__atexit: u64 = 165468;
-/// `INISetting_fFadeToBlackFadeSeconds_Interface__init` at 0xbef0 (crt_init, medium); signature (high): `void INISetting_fFadeToBlackFadeSeconds_Interface__init(void)`
-pub const INISetting_fFadeToBlackFadeSeconds_Interface__init: u64 = 273;
-/// `INISetting_fFadingFracStart__atexit` at 0x17c68d0 (crt_init, medium); signature (high): `void INISetting_fFadingFracStart__atexit(void)`
-pub const INISetting_fFadingFracStart__atexit: u64 = 174842;
-/// `INISetting_fFadingFracStart__init` at 0x1090d0 (crt_init, medium); signature (high): `void INISetting_fFadingFracStart__init(void)`
-pub const INISetting_fFadingFracStart__init: u64 = 10710;
-/// `INISetting_fFastTravelFadeSecs_General__atexit` at 0x17ac430 (crt_init, medium); signature (high): `void INISetting_fFastTravelFadeSecs_General__atexit(void)`
-pub const INISetting_fFastTravelFadeSecs_General__atexit: u64 = 172949;
-/// `INISetting_fFastTravelFadeSecs_General__init` at 0xc2220 (crt_init, medium); signature (high): `void INISetting_fFastTravelFadeSecs_General__init(void)`
-pub const INISetting_fFastTravelFadeSecs_General__init: u64 = 7518;
-/// `INISetting_fFeedbackImpulseMult_RagdollAnim__atexit` at 0x17b4510 (crt_init, medium); signature (high): `void INISetting_fFeedbackImpulseMult_RagdollAnim__atexit(void)`
-pub const INISetting_fFeedbackImpulseMult_RagdollAnim__atexit: u64 = 173896;
-/// `INISetting_fFeedbackImpulseMult_RagdollAnim__init` at 0xebca0 (crt_init, medium); signature (high): `void INISetting_fFeedbackImpulseMult_RagdollAnim__init(void)`
-pub const INISetting_fFeedbackImpulseMult_RagdollAnim__init: u64 = 9643;
-/// `INISetting_fFeedbackOnOffGainTimeMS_RagdollAnim__atexit` at 0x17b45b0 (crt_init, medium); signature (high): `void INISetting_fFeedbackOnOffGainTimeMS_RagdollAnim__atexit(void)`
-pub const INISetting_fFeedbackOnOffGainTimeMS_RagdollAnim__atexit: u64 = 173898;
-/// `INISetting_fFeedbackOnOffGainTimeMS_RagdollAnim__init` at 0xebda0 (crt_init, medium); signature (high): `void INISetting_fFeedbackOnOffGainTimeMS_RagdollAnim__init(void)`
-pub const INISetting_fFeedbackOnOffGainTimeMS_RagdollAnim__init: u64 = 9645;

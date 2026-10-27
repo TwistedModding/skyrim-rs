@@ -3,6 +3,24 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `DecRefAndDelete` at 0x435d30 (decompiler, medium); signature (untiered): `undefined DecRefAndDelete(int * param_1)`
+pub const DecRefAndDelete: u64 = 26894;
+/// `DecRefAndDestroy68ByteObject` at 0x3ec3b0 (decompiler, medium); signature (untiered): `undefined DecRefAndDestroy68ByteObject(int * param_1, void * param_2, undefined8 param_3, undefined8 param_4)`
+pub const DecRefAndDestroy68ByteObject: u64 = 25477;
+/// `DecRefAndDestroyWithField8` at 0xd98d10 (decompiler, medium); signature (medium): `undefined DecRefAndDestroyWithField8(int * param_1)`
+pub const DecRefAndDestroyWithField8: u64 = 85716;
+/// `DecRefAndDestroyWithStringFields` at 0xd98ce0 (decompiler, medium); signature (medium): `undefined DecRefAndDestroyWithStringFields(int * param_1)`
+pub const DecRefAndDestroyWithStringFields: u64 = 85715;
+/// `DecRefAndFree` at 0x222700 (decompiler, medium); signature (untiered): `undefined DecRefAndFree(longlong * param_1)`
+pub const DecRefAndFree: u64 = 15812;
+/// `DecRefAndFreeArrayStringObject` at 0x14af1d0 (decompiler, medium); signature (medium): `undefined DecRefAndFreeArrayStringObject(int * param_1)`
+pub const DecRefAndFreeArrayStringObject: u64 = 104754;
+/// `DecRefAndFreeArrayStringObjectPtr` at 0x14ae520 (decompiler, medium); signature (untiered): `undefined DecRefAndFreeArrayStringObjectPtr(undefined8 * param_1)`
+pub const DecRefAndFreeArrayStringObjectPtr: u64 = 104736;
+/// `DecRefAndFreeIfSet` at 0x735130 (decompiler, high); signature (untiered): `undefined DecRefAndFreeIfSet(undefined8 * param_1)`
+pub const DecRefAndFreeIfSet: u64 = 40133;
+/// `DecRefAndFreeMapHolder0x78` at 0x9b90e0 (decompiler, medium); signature (medium): `undefined DecRefAndFreeMapHolder0x78(int * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const DecRefAndFreeMapHolder0x78: u64 = 53503;
 /// `DecRefAndFreeNestedArrays` at 0xbde200 (decompiler, medium); signature (untiered): `undefined DecRefAndFreeNestedArrays(int * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const DecRefAndFreeNestedArrays: u64 = 63834;
 /// `DecRefAndFreeNode` at 0x630200 (decompiler, medium); signature (untiered): `undefined DecRefAndFreeNode(int * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
@@ -215,7 +233,7 @@ pub const DecommitTopFreeBlockTail: u64 = 68312;
 pub const DecommitTrailingFreeBlocks: u64 = 80661;
 /// `DecommitTrailingFreePages` at 0xcdfe20 (decompiler, medium); signature (untiered): `undefined DecommitTrailingFreePages(longlong param_1)`
 pub const DecommitTrailingFreePages: u64 = 68152;
-/// `DecomposeMatrixToEulerAngles` at 0xeddc30 (decompiler, medium); signature (medium): `undefined1 DecomposeMatrixToEulerAngles(undefined4 * param_1, uint * param_2, float * param_3, uint * param_4)`
+/// `DecomposeMatrixToEulerAngles` at 0xeddc30 (semantic, medium); signature (medium): `undefined1 DecomposeMatrixToEulerAngles(undefined4 * param_1, uint * param_2, float * param_3, uint * param_4)`; three Euler angles of a rotation: y = -asin(m[2]) (clamped to the pitch limits), x = -Atan2Approx(-m[5], m[8]), z = -Atan2Approx(-m[1], m[0]); at the pitch limits returns false with z = 0 and x from m[3]/m[4] (medium); semantic signature: `bool (const NiMatrix3* m, float* x, float* y, float* z)`
 pub const DecomposeMatrixToEulerAngles: u64 = 70215;
 /// `DecompressCurrentRecord` at 0x1cee60 (decompiler, medium); signature (untiered): `undefined DecompressCurrentRecord(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const DecompressCurrentRecord: u64 = 14032;
@@ -3503,7 +3521,7 @@ pub const DragonCameraState__SetFreeRotationMode: u64 = 33111;
 pub const DragonCameraState__SetTargetHandle: u64 = 33117;
 /// `DragonCameraState::UpdateRotation` at 0x55cdf0 (semantic, high); signature (untiered): `undefined UpdateRotation(DragonCameraState * this)`
 pub const DragonCameraState__UpdateRotation: u64 = 33120;
-/// `DragonCameraState::ctor` at 0x55c690 (layout_inference, high); signature (high): `DragonCameraState * ctor(DragonCameraState * this)`; ThirdPersonState::ctor, own vtables, mountHandle/targetHandle invalid, +0xec 0, +0xf0 0, dollyProgress 1, +0xf8 0, both dolly NiPoint2 zero (high); semantic signature: `DragonCameraState* (DragonCameraState* this, PlayerCamera* camera, u32 id)`
+/// `DragonCameraState::ctor` at 0x55c690 (layout_inference, high); signature (high): `DragonCameraState * ctor(DragonCameraState * this)`; ThirdPersonState::ctor, own vtables, mountHandle/targetHandle invalid, +0xec 0, +0xf0 0, dollyProgress 1, +0xf8 0, both dolly NiPoint2 zero (high); semantic signature: `DragonCameraState* (DragonCameraState* this, PlayerCamera* camera, CameraState id)`
 pub const DragonCameraState__ctor: u64 = 33107;
 /// `DragonCameraState::ctor` as a function pointer type (high).
 pub type DragonCameraState__ctor_fn = unsafe extern "C" fn(this: *mut crate::DragonCameraState, camera: *mut crate::PlayerCamera, id: u32) -> *mut crate::DragonCameraState;
@@ -8755,19 +8773,3 @@ pub const FreeArrayBufferAndClearSize_29: u64 = 523482;
 pub const FreeArrayBufferAndClearSize_3: u64 = 23989;
 /// `FreeArrayBufferAndClearSize_30` at 0x1aee60 (decompiler, high); signature (high): `undefined FreeArrayBufferAndClearSize_30(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const FreeArrayBufferAndClearSize_30: u64 = 523483;
-/// `FreeArrayBufferAndClearSize_31` at 0x1aeec0 (decompiler, high); signature (high): `undefined FreeArrayBufferAndClearSize_31(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const FreeArrayBufferAndClearSize_31: u64 = 523484;
-/// `FreeArrayBufferAndClearSize_32` at 0x1aef20 (decompiler, high); signature (high): `undefined FreeArrayBufferAndClearSize_32(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const FreeArrayBufferAndClearSize_32: u64 = 523485;
-/// `FreeArrayBufferAndClearSize_33` at 0x1aef80 (decompiler, high); signature (high): `undefined FreeArrayBufferAndClearSize_33(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const FreeArrayBufferAndClearSize_33: u64 = 523486;
-/// `FreeArrayBufferAndClearSize_34` at 0x1aefe0 (decompiler, high); signature (high): `undefined FreeArrayBufferAndClearSize_34(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const FreeArrayBufferAndClearSize_34: u64 = 523487;
-/// `FreeArrayBufferAndClearSize_35` at 0x1af040 (decompiler, high); signature (high): `undefined FreeArrayBufferAndClearSize_35(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const FreeArrayBufferAndClearSize_35: u64 = 523488;
-/// `FreeArrayBufferAndClearSize_36` at 0x1af0a0 (decompiler, high); signature (high): `undefined FreeArrayBufferAndClearSize_36(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const FreeArrayBufferAndClearSize_36: u64 = 523489;
-/// `FreeArrayBufferAndClearSize_37` at 0x1af100 (decompiler, high); signature (high): `undefined FreeArrayBufferAndClearSize_37(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const FreeArrayBufferAndClearSize_37: u64 = 523490;
-/// `FreeArrayBufferAndClearSize_38` at 0x1af160 (decompiler, high); signature (high): `undefined FreeArrayBufferAndClearSize_38(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const FreeArrayBufferAndClearSize_38: u64 = 523491;
