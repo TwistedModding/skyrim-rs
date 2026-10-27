@@ -99,6 +99,12 @@ pub struct ApiStats {
     pub initializers: usize,
 }
 
+impl ApiStats {
+    fn left_out(&mut self, tier: Tier, why: Unexpressible) {
+        *self.tiers.entry(tier).or_default().unexpressible.entry(why).or_default() += 1;
+    }
+}
+
 #[derive(Clone, Copy, PartialEq, Eq)]
 enum Source {
     Semantic,
@@ -730,14 +736,10 @@ fn slots(
                 ];
                 (tier, last.to_owned(), parse_sig(&s.signature, Source::Decompiler, ctx), lines, "")
             };
-            let sig = match sig {
-                Ok(sig) if sig.params.first().is_some_and(|p| p.name == "this") => sig,
-                Ok(_) => {
-                    *stats.tiers.entry(tier).or_default().unexpressible.entry(Unexpressible::Malformed).or_default() += 1;
-                    continue;
-                }
+            let sig = match sig.and_then(|s| if s.params.first().is_some_and(|p| p.name == "this") { Ok(s) } else { Err(Unexpressible::Malformed) }) {
+                Ok(sig) => sig,
                 Err(why) => {
-                    *stats.tiers.entry(tier).or_default().unexpressible.entry(why).or_default() += 1;
+                    stats.left_out(tier, why);
                     continue;
                 }
             };
@@ -847,13 +849,7 @@ fn functions(
             Some((f, _)) => annotate(sig, &f.nullable, f.retyped.as_deref(), &mut notes),
             None => sig,
         };
-        let sig = match sig {
-            Ok(sig) => sig,
-            Err(why) => {
-                *stats.tiers.entry(tier).or_default().unexpressible.entry(why).or_default() += 1;
-                continue;
-            }
-        };
+        let Ok(sig) = sig.inspect_err(|why| stats.left_out(tier, *why)) else { continue };
         let (scope, last) = split_scope(name);
         let scope = scope.and_then(|c| ctx.classes.get(c));
         let this = sig.params.first().filter(|p| p.name == "this" || scope.is_some_and(|c| p.base == c.name));
