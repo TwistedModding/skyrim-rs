@@ -406,6 +406,42 @@ impl crate::Actor {
     /// `void (Actor* this, float delta)`
     #[inline]
     pub fn update_head_tracking(&self, delta: f32) { unsafe { virtual_function!(self, 290, (*const Self, f32))(core::ptr::from_ref(self), delta) } }
+    /// `Actor::ActorValueOwner_AddBaseActorValue`: adds to the base value
+    ///
+    /// Semantic, actors pass, high; ledger semantic evidence, name high; id 38466, rva 0x6c5100.
+    /// `void Actor::ActorValueOwner_AddBaseActorValue(ActorValueOwner* this, int value, float delta)`
+    #[inline]
+    pub fn actor_value_owner_add_base_actor_value(&self, value: i32, delta: f32) { unsafe { function!(38466, (*const Self, i32, f32))(core::ptr::from_ref(self).byte_add(0xB8), value, delta) } }
+    /// `Actor::ActorValueOwner_GetActorValue`: current actor value
+    ///
+    /// Semantic, actors pass, high; ledger runtime evidence, name high; id 38462, rva 0x6c4cb0.
+    /// `float Actor::ActorValueOwner_GetActorValue(ActorValueOwner* this, int value)`
+    #[inline]
+    pub fn actor_value_owner_get_actor_value(&self, value: i32) -> f32 { unsafe { function!(38462, (*const Self, i32) -> f32)(core::ptr::from_ref(self).byte_add(0xB8), value) } }
+    /// `Actor::ActorValueOwner_GetBaseActorValue`: base actor value
+    ///
+    /// Semantic, actors pass, high; ledger runtime evidence, name high; id 38464, rva 0x6c4ef0.
+    /// `float Actor::ActorValueOwner_GetBaseActorValue(ActorValueOwner* this, int value)`
+    #[inline]
+    pub fn actor_value_owner_get_base_actor_value(&self, value: i32) -> f32 { unsafe { function!(38464, (*const Self, i32) -> f32)(core::ptr::from_ref(self).byte_add(0xB8), value) } }
+    /// `Actor::ActorValueOwner_GetPermanentActorValue`: base plus permanent modifier
+    ///
+    /// Semantic, actors pass, high; ledger runtime evidence, name high; id 38463, rva 0x6c4e20.
+    /// `float Actor::ActorValueOwner_GetPermanentActorValue(ActorValueOwner* this, int value)`
+    #[inline]
+    pub fn actor_value_owner_get_permanent_actor_value(&self, value: i32) -> f32 { unsafe { function!(38463, (*const Self, i32) -> f32)(core::ptr::from_ref(self).byte_add(0xB8), value) } }
+    /// `Actor::ActorValueOwner_ModActorValue`: adds to a modifier
+    ///
+    /// Semantic, actors pass, high; ledger runtime evidence, name high; id 38467, rva 0x6c51f0.
+    /// `void Actor::ActorValueOwner_ModActorValue(ActorValueOwner* this, int modifier, int value, float delta)`
+    #[inline]
+    pub fn actor_value_owner_mod_actor_value(&self, modifier: i32, value: i32, delta: f32) { unsafe { function!(38467, (*const Self, i32, i32, f32))(core::ptr::from_ref(self).byte_add(0xB8), modifier, value, delta) } }
+    /// `Actor::ActorValueOwner_StoreBaseActorValue`: sets the base value
+    ///
+    /// Semantic, actors pass, high; ledger semantic evidence, name high; id 38465, rva 0x6c5030.
+    /// `void Actor::ActorValueOwner_StoreBaseActorValue(ActorValueOwner* this, int value, float amount)`
+    #[inline]
+    pub fn actor_value_owner_store_base_actor_value(&self, value: i32, amount: f32) { unsafe { function!(38465, (*const Self, i32, f32))(core::ptr::from_ref(self).byte_add(0xB8), value, amount) } }
     /// `Actor::AdvanceDeferredKillState`: when the process (+0xf8) has middle-high data and its deferred-kill state (+0x2f8) is non-zero, increments it
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 38617, rva 0x6cc930.
@@ -424,6 +460,24 @@ impl crate::Actor {
     /// `void (Actor* this, bool sendGetUpAction)`
     #[inline]
     pub fn begin_get_up(&self, sendGetUpAction: bool) { unsafe { function!(40150, (*const Self, bool))(core::ptr::from_ref(self), sendGetUpAction) } }
+    /// `Actor::CreateAnimationChannels`: Actor holder slot 10: creates the per-actor graph data channels: Speed, TargetSpeed, Pitch, Roll, Direction, TurnDelta, PitchDelta, weaponSpeedMult, leftWeaponSpeedMult, iWantBlock, bHeadTracking, TimeDelta
+    ///
+    /// Semantic, animation pass, high; ledger semantic evidence, name high; id 37984, rva 0x6b0650.
+    /// `void (IAnimationGraphManagerHolder* this, BSTArray<BSTSmartPointer<BSAnimationGraphChannel>>* out)`
+    ///
+    /// # Safety
+    /// `out` must point to what the engine expects.
+    #[inline]
+    pub unsafe fn create_animation_channels(&self, out: *mut c_void) { unsafe { function!(37984, (*const Self, *mut c_void))(core::ptr::from_ref(self).byte_add(0x38), out) } }
+    /// `Actor::GetActiveEffectList`: MagicTarget slot 7 on an actor: the list at +0x1a0 of the process's middle-high data (Actor+0xf8, then +8), null for an actor without one; nodes are {effect, next}
+    ///
+    /// Semantic, papyrus pass, high; ledger runtime evidence, name high; id 38795, rva 0x6d85b0.
+    /// `BSSimpleList<ActiveEffect*>* (MagicTarget* this)`
+    ///
+    /// # Safety
+    /// The result is an untyped pointer.
+    #[inline]
+    pub unsafe fn get_active_effect_list(&self) -> *mut c_void { unsafe { function!(38795, (*const Self) -> *mut c_void)(core::ptr::from_ref(self).byte_add(0xA0)) } }
     /// `Actor::GetActorValueModifier`: one modifier of a value
     ///
     /// Semantic, actors pass, high; ledger semantic evidence, name high; id 38469, rva 0x6c5440.
@@ -538,6 +592,12 @@ impl crate::Actor {
     /// `source` must point to what the engine expects.
     #[inline]
     pub unsafe fn mod_actor_value_impl(&self, modifier: i32, value: i32, delta: f32, source: *mut c_void) { unsafe { function!(38468, (*const Self, i32, i32, f32, *mut c_void))(core::ptr::from_ref(self), modifier, value, delta, source) } }
+    /// `Actor::NotifyAnimationGraph`: 5-byte thunk 'jmp 0x554220' to IAnimationGraphManagerHolder::NotifyAnimationGraph (gets the manager through slot 2, BSAnimationGraphManager::NotifyAnimationGraph 0xbc0c90, true when a graph accepted the event)
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 38048, rva 0x6b61a0.
+    /// `bool (IAnimationGraphManagerHolder* this, const BSFixedString& eventName)`
+    #[inline]
+    pub fn notify_animation_graph(&self, eventName: &crate::BSFixedString) -> bool { unsafe { function!(38048, (*const Self, *const crate::BSFixedString) -> bool)(core::ptr::from_ref(self).byte_add(0x38), core::ptr::from_ref(eventName)) } }
     /// `Actor::PerformKnockdownAction`: runs default object 0x6b 'Action Knockdown' on the actor (TESActionData slot 5); for the player also PlayerCamera::PushBleedout
     ///
     /// Semantic, camera pass, high; ledger runtime evidence, name high; id 40151, rva 0x7360d0.
@@ -552,7 +612,7 @@ impl crate::Actor {
     /// # Safety
     /// `source` must point to what the engine expects.
     #[inline]
-    pub unsafe fn process_animation_graph_event(&self, event: *const crate::BSAnimationGraphEvent, source: *mut c_void) -> Result<crate::BSEventNotifyControl, u32> { unsafe { let raw = function!(37997, (*const Self, *const crate::BSAnimationGraphEvent, *mut c_void) -> u32)(core::ptr::from_ref(self), event, source); crate::BSEventNotifyControl::from_u32(raw).ok_or(raw) } }
+    pub unsafe fn process_animation_graph_event(&self, event: *const crate::BSAnimationGraphEvent, source: *mut c_void) -> Result<crate::BSEventNotifyControl, u32> { unsafe { let raw = function!(37997, (*const Self, *const crate::BSAnimationGraphEvent, *mut c_void) -> u32)(core::ptr::from_ref(self).byte_add(0x30), event, source); crate::BSEventNotifyControl::from_u32(raw).ok_or(raw) } }
     /// `Actor::ReapplySlot166FromFlags2`: when flags2 (+0xcc) bits 5-7 are 0x20 or 0x80, tail-calls Actor slot 166 (+0x530) with (bits == 0x20)
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 37280, rva 0x675b90.
@@ -565,6 +625,12 @@ impl crate::Actor {
     /// `void (Actor* this, u32 lifeState)`
     #[inline]
     pub fn set_life_state(&self, lifeState: u32) { unsafe { function!(37612, (*const Self, u32))(core::ptr::from_ref(self), lifeState) } }
+    /// `Actor::SetWeaponDrawn`: Actor's ActorState slot 21: sets graph ints iMagicEquipped, iLeftHandEquipped, iRightHandEquipped on every graph, then ActorState::SetWeaponDrawn
+    ///
+    /// Semantic, animation pass, high; ledger semantic evidence, name high; id 38821, rva 0x6d9a20.
+    /// `void (ActorState* this, bool drawn)`
+    #[inline]
+    pub fn set_weapon_drawn(&self, drawn: bool) { unsafe { function!(38821, (*const Self, bool))(core::ptr::from_ref(self).byte_add(0xC0), drawn) } }
     /// `Actor::StartKillMove`: for an actor whose process byte 0x137 is 0 or 1: kill-move time to max, deferred kill on the process, flag 0x4000 in +0x204, partner handle at +0x108; for the player with a partner and the VATS camera (+0xc8) neither current nor stacked: PlayerCamera::ForceThirdPerson
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 38613, rva 0x6cc740.
@@ -608,24 +674,12 @@ impl crate::ActorState {
     /// `bool (ActorState* this, bool drawn)`
     #[inline]
     pub fn set_weapon_drawn(&self, drawn: bool) -> bool { unsafe { virtual_function!(self, 21, (*const Self, bool) -> bool)(core::ptr::from_ref(self), drawn) } }
-    /// `Actor::SetWeaponDrawn`: Actor's ActorState slot 21: sets graph ints iMagicEquipped, iLeftHandEquipped, iRightHandEquipped on every graph, then ActorState::SetWeaponDrawn
-    ///
-    /// Semantic, animation pass, high; ledger semantic evidence, name high; id 38821, rva 0x6d9a20.
-    /// `void (ActorState* this, bool drawn)`
-    #[inline]
-    pub fn set_weapon_drawn_2(&self, drawn: bool) { unsafe { function!(38821, (*const Self, bool))(core::ptr::from_ref(self), drawn) } }
     /// `ActorState::HasFlags`: whether every bit of the mask is set in flags1
     ///
     /// Semantic, actors pass, high; ledger runtime evidence, name high; id 38986, rva 0x6e1530.
     /// `bool ActorState::HasFlags(const ActorState* this, ushort mask)`
     #[inline]
     pub fn has_flags(&self, mask: u16) -> bool { unsafe { function!(38986, (*const Self, u16) -> bool)(core::ptr::from_ref(self), mask) } }
-    /// `PlayerCharacter::SetWeaponDrawnState`: PlayerCamera+0x162 = !drawn when the player is the camera target or mounted; Actor::SetWeaponDrawn
-    ///
-    /// Semantic, camera pass, high; ledger runtime evidence, name high; id 40752, rva 0x760e00.
-    /// `void (ActorState* this, bool drawn)`
-    #[inline]
-    pub fn set_weapon_drawn_state(&self, drawn: bool) { unsafe { function!(40752, (*const Self, bool))(core::ptr::from_ref(self), drawn) } }
 }
 
 impl crate::ActorValueInfo {
@@ -763,42 +817,6 @@ impl crate::ActorValueOwner {
     /// `void StoreBaseActorValue(ActorValueOwner* this, int value, float amount)`
     #[inline]
     pub fn store_base_actor_value(&self, value: i32, amount: f32) { unsafe { virtual_function!(self, 4, (*const Self, i32, f32))(core::ptr::from_ref(self), value, amount) } }
-    /// `Actor::ActorValueOwner_AddBaseActorValue`: adds to the base value
-    ///
-    /// Semantic, actors pass, high; ledger semantic evidence, name high; id 38466, rva 0x6c5100.
-    /// `void Actor::ActorValueOwner_AddBaseActorValue(ActorValueOwner* this, int value, float delta)`
-    #[inline]
-    pub fn actor_value_owner_add_base_actor_value(&self, value: i32, delta: f32) { unsafe { function!(38466, (*const Self, i32, f32))(core::ptr::from_ref(self), value, delta) } }
-    /// `Actor::ActorValueOwner_GetActorValue`: current actor value
-    ///
-    /// Semantic, actors pass, high; ledger runtime evidence, name high; id 38462, rva 0x6c4cb0.
-    /// `float Actor::ActorValueOwner_GetActorValue(ActorValueOwner* this, int value)`
-    #[inline]
-    pub fn actor_value_owner_get_actor_value(&self, value: i32) -> f32 { unsafe { function!(38462, (*const Self, i32) -> f32)(core::ptr::from_ref(self), value) } }
-    /// `Actor::ActorValueOwner_GetBaseActorValue`: base actor value
-    ///
-    /// Semantic, actors pass, high; ledger runtime evidence, name high; id 38464, rva 0x6c4ef0.
-    /// `float Actor::ActorValueOwner_GetBaseActorValue(ActorValueOwner* this, int value)`
-    #[inline]
-    pub fn actor_value_owner_get_base_actor_value(&self, value: i32) -> f32 { unsafe { function!(38464, (*const Self, i32) -> f32)(core::ptr::from_ref(self), value) } }
-    /// `Actor::ActorValueOwner_GetPermanentActorValue`: base plus permanent modifier
-    ///
-    /// Semantic, actors pass, high; ledger runtime evidence, name high; id 38463, rva 0x6c4e20.
-    /// `float Actor::ActorValueOwner_GetPermanentActorValue(ActorValueOwner* this, int value)`
-    #[inline]
-    pub fn actor_value_owner_get_permanent_actor_value(&self, value: i32) -> f32 { unsafe { function!(38463, (*const Self, i32) -> f32)(core::ptr::from_ref(self), value) } }
-    /// `Actor::ActorValueOwner_ModActorValue`: adds to a modifier
-    ///
-    /// Semantic, actors pass, high; ledger runtime evidence, name high; id 38467, rva 0x6c51f0.
-    /// `void Actor::ActorValueOwner_ModActorValue(ActorValueOwner* this, int modifier, int value, float delta)`
-    #[inline]
-    pub fn actor_value_owner_mod_actor_value(&self, modifier: i32, value: i32, delta: f32) { unsafe { function!(38467, (*const Self, i32, i32, f32))(core::ptr::from_ref(self), modifier, value, delta) } }
-    /// `Actor::ActorValueOwner_StoreBaseActorValue`: sets the base value
-    ///
-    /// Semantic, actors pass, high; ledger semantic evidence, name high; id 38465, rva 0x6c5030.
-    /// `void Actor::ActorValueOwner_StoreBaseActorValue(ActorValueOwner* this, int value, float amount)`
-    #[inline]
-    pub fn actor_value_owner_store_base_actor_value(&self, value: i32, amount: f32) { unsafe { function!(38465, (*const Self, i32, f32))(core::ptr::from_ref(self), value, amount) } }
 }
 
 impl crate::ActorValueStorage {
@@ -1177,7 +1195,7 @@ impl crate::PlayerCharacter {
     /// # Safety
     /// `source` must point to what the engine expects.
     #[inline]
-    pub unsafe fn process_menu_open_close_event(&self, event: *const crate::MenuOpenCloseEvent, source: *mut c_void) -> Result<crate::BSEventNotifyControl, u32> { unsafe { let raw = function!(40740, (*const Self, *const crate::MenuOpenCloseEvent, *mut c_void) -> u32)(core::ptr::from_ref(self), event, source); crate::BSEventNotifyControl::from_u32(raw).ok_or(raw) } }
+    pub unsafe fn process_menu_open_close_event(&self, event: *const crate::MenuOpenCloseEvent, source: *mut c_void) -> Result<crate::BSEventNotifyControl, u32> { unsafe { let raw = function!(40740, (*const Self, *const crate::MenuOpenCloseEvent, *mut c_void) -> u32)(core::ptr::from_ref(self).byte_add(0x2B8), event, source); crate::BSEventNotifyControl::from_u32(raw).ok_or(raw) } }
     /// `PlayerCharacter::ResetField9C0Block`: ResetField9C0Block_impl(*holder)
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 41571, rva 0x78e930.
@@ -1214,6 +1232,12 @@ impl crate::PlayerCharacter {
     /// `void (PlayerCharacter* this, bool firstPerson)`
     #[inline]
     pub fn set_first_person(&self, firstPerson: bool) { unsafe { function!(40476, (*const Self, bool))(core::ptr::from_ref(self), firstPerson) } }
+    /// `PlayerCharacter::SetWeaponDrawnState`: PlayerCamera+0x162 = !drawn when the player is the camera target or mounted; Actor::SetWeaponDrawn
+    ///
+    /// Semantic, camera pass, high; ledger runtime evidence, name high; id 40752, rva 0x760e00.
+    /// `void (ActorState* this, bool drawn)`
+    #[inline]
+    pub fn set_weapon_drawn_state(&self, drawn: bool) { unsafe { function!(40752, (*const Self, bool))(core::ptr::from_ref(self).byte_add(0xC0), drawn) } }
     /// `PlayerCharacter::StartDialogueTurnTowardSpeaker`: in first person, when the topic manager's speaker is an actor other than the player: computes the yaw (atan2, unwrapped to within pi of PlayerCamera.yaw) and pitch (-asin(dz/|d|) + fDialogueRotationPitchOffset:Dialogue) toward its look position (slot 91 on both), and arms the blend globals: start (PlayerCamera.yaw, player pitch) 0x20b7624/28, target 0x20b762c/30, duration fDialogueRotationSecs * 1000 (0x20b7634), start time g_FrameTimeMs (0x20b7638), done flag 0x20b763c = 0; non-finite results fall back to zero
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 40496, rva 0x749ed0.

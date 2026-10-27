@@ -1157,7 +1157,7 @@ impl crate::EffectSetting {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bgs_keyword_form_has_keyword(&self, param_1: *mut c_void) -> u64 { unsafe { function!(11072, (*const Self, *mut c_void) -> u64)(core::ptr::from_ref(self), param_1) } }
+    pub unsafe fn bgs_keyword_form_has_keyword(&self, param_1: *mut c_void) -> u64 { unsafe { function!(11072, (*const Self, *mut c_void) -> u64)(core::ptr::from_ref(self).byte_add(0x40), param_1) } }
     /// `EffectSetting::ctor_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 11122, rva 0x14c5d0).
     /// `undefined ctor_sub0(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
     ///
@@ -2517,7 +2517,7 @@ impl crate::MagicItem {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bgs_keyword_form_has_keyword(&self, param_1: i64) -> u64 { unsafe { function!(11336, (*const Self, i64) -> u64)(core::ptr::from_ref(self), param_1) } }
+    pub unsafe fn bgs_keyword_form_has_keyword(&self, param_1: i64) -> u64 { unsafe { function!(11336, (*const Self, i64) -> u64)(core::ptr::from_ref(self).byte_add(0x40), param_1) } }
     /// `MagicItem::vfunc_19_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 11003, rva 0x148660).
     /// `undefined vfunc_19_sub0(longlong param_1, longlong param_2)`
     ///
@@ -13895,10 +13895,3 @@ pub unsafe fn assign_optional_fixed_string80_vector(param_1: *mut i64, param_2: 
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn assign_owned_ptr(param_1: *mut i64, param_2: *mut u64) -> *mut i64 { unsafe { function!(84700, (*mut i64, *mut u64) -> *mut i64)(param_1, param_2) } }
-/// `AssignPackageTargetFromPacked` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 29843, rva 0x4a5840).
-/// `char * AssignPackageTargetFromPacked(char * param_1, char * param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn assign_package_target_from_packed(param_1: *mut c_char, param_2: *mut c_char) -> *mut c_char { unsafe { function!(29843, (*mut c_char, *mut c_char) -> *mut c_char)(param_1, param_2) } }

@@ -1460,7 +1460,7 @@ impl crate::AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicyExitW
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn auto_register_path_builder_factory_combat_pathing_request_generic_combat_pathing_goal_policy_exit_water_comb_57511b9ec5f2(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(49370, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn auto_register_path_builder_factory_combat_pathing_request_generic_combat_pathing_goal_policy_exit_water_comb_57511b9ec5f2(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(49370, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self).byte_add(0x8), param_1, param_2, param_3) } }
     /// `AutoRegisterCombatPathingRequestGeneric<CombatPathingGoalPolicyExitWater,CombatPathingSearchPolicyStandard,CombatPathDestinationNone>::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 49323, rva 0x8bf900).
     /// `AutoRegisterCombatPathingRequestGeneric<CombatPathingGoalPolicyExitWater,CombatPathingSearchPolicyStandard,CombatPathDestinationNone> * vdtor(AutoRegisterCombatPathingRequestGeneric<CombatPathingGoalPolicyExitWater,CombatPathingSearchPolicyStandard,CombatPathDestinationNone> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///
@@ -1474,7 +1474,7 @@ impl crate::AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicyExitW
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vfunc_0_vt10(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(49371, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn vfunc_0_vt10(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(49371, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self).byte_add(0x10), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicyFindAttackLocation_CombatPathingS_936155741965 {
@@ -1484,7 +1484,7 @@ impl crate::AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicyFindA
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn auto_register_path_builder_factory_combat_pathing_request_generic_combat_pathing_goal_policy_find_attack_loca_7786c715a1d6(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(48192, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn auto_register_path_builder_factory_combat_pathing_request_generic_combat_pathing_goal_policy_find_attack_loca_7786c715a1d6(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(48192, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self).byte_add(0x8), param_1, param_2, param_3) } }
     /// `AutoRegisterCombatPathingRequestGeneric<CombatPathingGoalPolicyFindAttackLocation,CombatPathingSearchPolicyStandard,CombatPathDestinationNone>::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 48164, rva 0x88f860).
     /// `AutoRegisterCombatPathingRequestGeneric<CombatPathingGoalPolicyFindAttackLocation,CombatPathingSearchPolicyStandard,CombatPathDestinationNone> * vdtor(AutoRegisterCombatPathingRequestGeneric<CombatPathingGoalPolicyFindAttackLocation,CombatPathingSearchPolicyStandard,CombatPathDestinationNone> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///
@@ -1498,7 +1498,7 @@ impl crate::AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicyFindA
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vfunc_0_vt10(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(48193, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn vfunc_0_vt10(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(48193, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self).byte_add(0x10), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicyFindCover_CombatPathingSearchPoli_a434439f14e8 {
@@ -1538,7 +1538,7 @@ impl crate::AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicyFlank
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn auto_register_path_builder_factory_combat_pathing_request_generic_combat_pathing_goal_policy_flank_combat_pa_189b253cfffd(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(48403, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn auto_register_path_builder_factory_combat_pathing_request_generic_combat_pathing_goal_policy_flank_combat_pa_189b253cfffd(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(48403, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self).byte_add(0x8), param_1, param_2, param_3) } }
     /// `AutoRegisterCombatPathingRequestGeneric<CombatPathingGoalPolicyFlank,CombatPathingSearchPolicyFlank,CombatPathDestinationRef>::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 48283, rva 0x893970).
     /// `AutoRegisterCombatPathingRequestGeneric<CombatPathingGoalPolicyFlank,CombatPathingSearchPolicyFlank,CombatPathDestinationRef> * vdtor(AutoRegisterCombatPathingRequestGeneric<CombatPathingGoalPolicyFlank,CombatPathingSearchPolicyFlank,CombatPathDestinationRef> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///
@@ -1552,7 +1552,7 @@ impl crate::AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicyFlank
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vfunc_0_vt10(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(48404, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn vfunc_0_vt10(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(48404, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self).byte_add(0x10), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicyFlankDistant_CombatPathingSearchP_2756cef5bf66 {
@@ -1562,7 +1562,7 @@ impl crate::AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicyFlank
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn auto_register_path_builder_factory_combat_pathing_request_generic_combat_pathing_goal_policy_flank_distant_c_0ac1d2c3d2a7(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(48405, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn auto_register_path_builder_factory_combat_pathing_request_generic_combat_pathing_goal_policy_flank_distant_c_0ac1d2c3d2a7(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(48405, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self).byte_add(0x8), param_1, param_2, param_3) } }
     /// `AutoRegisterCombatPathingRequestGeneric<CombatPathingGoalPolicyFlankDistant,CombatPathingSearchPolicyStandard,CombatPathDestinationLocation>::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 48298, rva 0x893e30).
     /// `AutoRegisterCombatPathingRequestGeneric<CombatPathingGoalPolicyFlankDistant,CombatPathingSearchPolicyStandard,CombatPathDestinationLocation> * vdtor(AutoRegisterCombatPathingRequestGeneric<CombatPathingGoalPolicyFlankDistant,CombatPathingSearchPolicyStandard,CombatPathDestinationLocation> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///
@@ -1576,7 +1576,7 @@ impl crate::AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicyFlank
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vfunc_0_vt10(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(48406, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn vfunc_0_vt10(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(48406, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self).byte_add(0x10), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicyFlee_CombatPathingSearchPolicySta_6062d1a3211b {
@@ -1606,7 +1606,7 @@ impl crate::AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicyRetur
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn auto_register_path_builder_factory_combat_pathing_request_generic_combat_pathing_goal_policy_return_to_combat_84b0d065a11f(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(49368, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn auto_register_path_builder_factory_combat_pathing_request_generic_combat_pathing_goal_policy_return_to_combat_84b0d065a11f(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(49368, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self).byte_add(0x8), param_1, param_2, param_3) } }
     /// `AutoRegisterCombatPathingRequestGeneric<CombatPathingGoalPolicyReturnToCombatArea,CombatPathingSearchPolicyStandard,CombatPathDestinationLocation>::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 49292, rva 0x8bdaf0).
     /// `AutoRegisterCombatPathingRequestGeneric<CombatPathingGoalPolicyReturnToCombatArea,CombatPathingSearchPolicyStandard,CombatPathDestinationLocation> * vdtor(AutoRegisterCombatPathingRequestGeneric<CombatPathingGoalPolicyReturnToCombatArea,CombatPathingSearchPolicyStandard,CombatPathDestinationLocation> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///
@@ -1620,7 +1620,7 @@ impl crate::AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicyRetur
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vfunc_0_vt10(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(49369, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn vfunc_0_vt10(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(49369, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self).byte_add(0x10), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicySearch_CombatPathingSearchPolicyS_5b9c1e73c5dc {
@@ -1630,7 +1630,7 @@ impl crate::AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicySearc
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn auto_register_path_builder_factory_combat_pathing_request_generic_combat_pathing_goal_policy_search_combat_p_7f4bb4a2fcba(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(49589, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn auto_register_path_builder_factory_combat_pathing_request_generic_combat_pathing_goal_policy_search_combat_p_7f4bb4a2fcba(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(49589, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self).byte_add(0x8), param_1, param_2, param_3) } }
     /// `AutoRegisterCombatPathingRequestGeneric<CombatPathingGoalPolicySearch,CombatPathingSearchPolicyStandard,CombatPathDestinationNone>::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 49570, rva 0x8cbf00).
     /// `AutoRegisterCombatPathingRequestGeneric<CombatPathingGoalPolicySearch,CombatPathingSearchPolicyStandard,CombatPathDestinationNone> * vdtor(AutoRegisterCombatPathingRequestGeneric<CombatPathingGoalPolicySearch,CombatPathingSearchPolicyStandard,CombatPathDestinationNone> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///
@@ -1644,7 +1644,7 @@ impl crate::AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicySearc
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vfunc_0_vt10(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(49591, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn vfunc_0_vt10(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(49591, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self).byte_add(0x10), param_1, param_2, param_3) } }
 }
 
 impl crate::AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicySearchWander_CombatPathingSearchP_8f247c02bb4b {

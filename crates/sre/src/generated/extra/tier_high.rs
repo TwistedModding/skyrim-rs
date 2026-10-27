@@ -160,7 +160,7 @@ impl crate::ExtraMagicCaster {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn magic_caster_vfunc_0(&self) -> u64 { unsafe { function!(34712, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn magic_caster_vfunc_0(&self) -> u64 { unsafe { function!(34712, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
 }
 
 impl crate::ExtraOcclusionShape {

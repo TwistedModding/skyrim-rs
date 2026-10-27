@@ -20,28 +20,28 @@ impl crate::TESActorBase {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn actor_value_owner_add_base_actor_value(&self, param_1: u32, param_2: f32) -> u64 { unsafe { function!(24382, (*const Self, u32, f32) -> u64)(core::ptr::from_ref(self), param_1, param_2) } }
+    pub unsafe fn actor_value_owner_add_base_actor_value(&self, param_1: u32, param_2: f32) -> u64 { unsafe { function!(24382, (*const Self, u32, f32) -> u64)(core::ptr::from_ref(self).byte_add(0xE8), param_1, param_2) } }
     /// `TESActorBase::ActorValueOwner_GetActorValue` (decompiler signature, tier untiered; ledger slot_propagation evidence, name high; id 24380, rva 0x3b00c0).
     /// `undefined ActorValueOwner_GetActorValue(TESActorBase * this, undefined4 param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn actor_value_owner_get_actor_value(&self, param_1: u32) -> u64 { unsafe { function!(24380, (*const Self, u32) -> u64)(core::ptr::from_ref(self), param_1) } }
+    pub unsafe fn actor_value_owner_get_actor_value(&self, param_1: u32) -> u64 { unsafe { function!(24380, (*const Self, u32) -> u64)(core::ptr::from_ref(self).byte_add(0xE8), param_1) } }
     /// `TESActorBase::ActorValueOwner_GetBaseActorValue` (decompiler signature, tier untiered; ledger slot_propagation evidence, name high; id 24904, rva 0x3cc640).
     /// `undefined ActorValueOwner_GetBaseActorValue(TESActorBase * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn actor_value_owner_get_base_actor_value(&self) -> u64 { unsafe { function!(24904, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn actor_value_owner_get_base_actor_value(&self) -> u64 { unsafe { function!(24904, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0xE8)) } }
     /// `TESActorBase::ActorValueOwner_GetPermanentActorValue` (decompiler signature, tier untiered; ledger slot_propagation evidence, name high; id 24910, rva 0x3cc700).
     /// `undefined ActorValueOwner_GetPermanentActorValue(TESActorBase * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn actor_value_owner_get_permanent_actor_value(&self) -> u64 { unsafe { function!(24910, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn actor_value_owner_get_permanent_actor_value(&self) -> u64 { unsafe { function!(24910, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0xE8)) } }
     /// `TESActorBase::ActorValueOwner_ModActorValue` (decompiler signature, tier untiered; ledger slot_propagation evidence, name high; id 24919, rva 0x3ccb50).
     /// `undefined ActorValueOwner_ModActorValue(void)`
     ///
@@ -55,14 +55,14 @@ impl crate::TESActorBase {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn actor_value_owner_set_actor_value(&self) -> u64 { unsafe { function!(24933, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn actor_value_owner_set_actor_value(&self) -> u64 { unsafe { function!(24933, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0xE8)) } }
     /// `TESActorBase::ActorValueOwner_StoreBaseActorValue` (decompiler signature, tier untiered; ledger slot_propagation evidence, name high; id 24381, rva 0x3b0240).
     /// `undefined ActorValueOwner_StoreBaseActorValue(TESActorBase * this, undefined4 param_1, float param_2)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn actor_value_owner_store_base_actor_value(&self, param_1: u32, param_2: f32) -> u64 { unsafe { function!(24381, (*const Self, u32, f32) -> u64)(core::ptr::from_ref(self), param_1, param_2) } }
+    pub unsafe fn actor_value_owner_store_base_actor_value(&self, param_1: u32, param_2: f32) -> u64 { unsafe { function!(24381, (*const Self, u32, f32) -> u64)(core::ptr::from_ref(self).byte_add(0xE8), param_1, param_2) } }
     /// `TESActorBase::ActorValueOwner_vfunc_1_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 14453, rva 0x1de9a0).
     /// `uint ActorValueOwner_vfunc_1_sub0(longlong param_1)`
     ///
@@ -1389,14 +1389,14 @@ impl crate::TESTopic {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn tes_full_name_get_full_name(&self) -> *mut c_char { unsafe { function!(25529, (*const Self) -> *mut c_char)(core::ptr::from_ref(self)) } }
+    pub unsafe fn tes_full_name_get_full_name(&self) -> *mut c_char { unsafe { function!(25529, (*const Self) -> *mut c_char)(core::ptr::from_ref(self).byte_add(0x20)) } }
     /// `TESTopic::TESFullName_GetFullNameLength` (decompiler signature, tier untiered; ledger slot_propagation evidence, name high; id 25528, rva 0x3ee3d0).
     /// `undefined TESFullName_GetFullNameLength(TESTopic * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn tes_full_name_get_full_name_length(&self) -> u64 { unsafe { function!(25528, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn tes_full_name_get_full_name_length(&self) -> u64 { unsafe { function!(25528, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x20)) } }
     /// `TESTopic::vfunc_19_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 25089, rva 0x3daa10).
     /// `undefined vfunc_19_sub0(longlong param_1, longlong param_2, undefined8 param_3, undefined8 param_4)`
     ///

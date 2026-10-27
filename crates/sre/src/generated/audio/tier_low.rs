@@ -282,7 +282,7 @@ impl crate::BSXAudio2GameSound {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ix_audio2_voice_callback_vfunc_4(&self, param_1: u64) -> u64 { unsafe { function!(68027, (*const Self, u64) -> u64)(core::ptr::from_ref(self), param_1) } }
+    pub unsafe fn ix_audio2_voice_callback_vfunc_4(&self, param_1: u64) -> u64 { unsafe { function!(68027, (*const Self, u64) -> u64)(core::ptr::from_ref(self).byte_add(0xC8), param_1) } }
     /// `BSXAudio2GameSound::IXAudio2VoiceCallback_vfunc_5` (decompiler signature, tier low; ledger rtti evidence, name high; id 68028, rva 0xcdb230).
     /// `undefined IXAudio2VoiceCallback_vfunc_5(void)`
     ///

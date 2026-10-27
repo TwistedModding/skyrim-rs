@@ -119,6 +119,8 @@ enum Ty {
 
 struct Param {
     name: String,
+    /// The C type's name without `const`, pointers and references.
+    base: String,
     ty: Ty,
 }
 
@@ -168,15 +170,21 @@ fn pointer(inner: &str, depth: usize, constant: bool) -> String {
     out
 }
 
-/// A C type as the generator types it, `None` when it has no Rust form (a class or unknown type by value).
-fn c_type(text: &str, source: Source, ctx: &Ctx) -> Option<Ty> {
+/// A C type's name without `const`, pointers and references, its pointer depth, and whether the pointee is const.
+fn parts(text: &str) -> (String, usize, bool) {
     let text = text.trim();
-    let constant = text.starts_with("const ");
-    let words = text.replace("const*", "*").replace("const&", "&");
+    let words = text.replace(" const*", " *").replace(" const&", " &");
     let words: Vec<&str> = words.split_whitespace().filter(|w| *w != "const").collect();
     let t = words.join(" ");
     let base = t.trim_end_matches(['*', '&', ' ']);
     let depth = t[base.len()..].chars().filter(|c| matches!(c, '*' | '&')).count();
+    (base.to_owned(), depth, text.starts_with("const "))
+}
+
+/// A C type as the generator types it, `None` when it has no Rust form (a class or unknown type by value).
+fn c_type(text: &str, source: Source, ctx: &Ctx) -> Option<Ty> {
+    let (base, depth, constant) = parts(text);
+    let base = base.as_str();
     let raw = |inner: &str| Some(Ty::Raw(pointer(inner, depth, constant)));
     match base {
         "void" | "undefined" | "code" if depth > 0 => return raw("c_void"),
@@ -274,7 +282,7 @@ fn parse_sig(sig: &str, source: Source, ctx: &Ctx) -> Option<Sig> {
                 return None;
             }
             if let Some((_, rest)) = p.split_once("(*") {
-                params.push(Param { name: rest.split(')').next()?.trim().to_owned(), ty: Ty::Raw("*const c_void".into()) });
+                params.push(Param { name: rest.split(')').next()?.trim().to_owned(), base: String::new(), ty: Ty::Raw("*const c_void".into()) });
                 continue;
             }
             let (ty, name) = match p.rfind(|c: char| c.is_whitespace() || c == '*' || c == '&') {
@@ -285,7 +293,7 @@ fn parse_sig(sig: &str, source: Source, ctx: &Ctx) -> Option<Sig> {
             if !is_ident(&name) {
                 return None;
             }
-            params.push(Param { name, ty: c_type(ty, source, ctx)? });
+            params.push(Param { name, base: parts(ty).0, ty: c_type(ty, source, ctx)? });
         }
     }
     Some(Sig { ret, params })
@@ -371,23 +379,25 @@ impl Ty {
 
 #[derive(Clone, Copy, PartialEq)]
 enum Shape {
-    Method,
+    /// A `&self` method; the engine's `this` is the object's subobject at this offset.
+    Method(u64),
     Associated,
     Free,
 }
 
 /// `pub [unsafe] fn NAME(params) -> ret { unsafe { call(args) } }` with `@NAME@` standing for the name.
 fn render_call(doc_lines: &str, shape: Shape, safe: bool, sig: &Sig, callee: &str, owner: Option<&str>, ctx: &Ctx) -> String {
-    let rest = &sig.params[usize::from(shape == Shape::Method)..];
+    let method = if let Shape::Method(offset) = shape { Some(offset) } else { None };
+    let rest = &sig.params[usize::from(method.is_some())..];
     let mut names: Vec<String> = rest.iter().map(|p| ident(&p.name)).collect();
     unique(&mut names);
     let mut decl: Vec<String> = Vec::new();
     let mut types: Vec<String> = Vec::new();
     let mut args: Vec<String> = Vec::new();
-    if shape == Shape::Method {
+    if let Some(offset) = method {
         decl.push("&self".into());
         types.push("*const Self".into());
-        args.push("core::ptr::from_ref(self)".into());
+        args.push(if offset == 0 { "core::ptr::from_ref(self)".into() } else { format!("core::ptr::from_ref(self).byte_add({offset:#X})") });
     }
     // References cross as raw pointers: the engine writes through `this` and other objects it is
     // handed, which a reference argument would tell the compiler it cannot.
@@ -660,7 +670,7 @@ fn slots(
             if let Some(r) = &reason {
                 lines.extend([String::new(), "# Safety".into(), r.clone()]);
             }
-            let text = render_call(&doc_block("    ", &lines), Shape::Method, reason.is_none(), &sig, &format!("virtual_function!(self, {i}, "), Some(class), ctx);
+            let text = render_call(&doc_block("    ", &lines), Shape::Method(0), reason.is_none(), &sig, &format!("virtual_function!(self, {i}, "), Some(class), ctx);
             let t = stats.tiers.entry(tier).or_default();
             if reason.is_none() { t.safe_slots += 1 } else { t.unsafe_slots += 1 }
             entries.push(Entry { tier, yields: false, group: ctx.group(class).to_owned(), owner: Some(class.to_owned()), order: (1, engine, i as u64), base, text });
@@ -697,6 +707,18 @@ fn functions(
             semantic.insert(f.id.unwrap(), (f, pass.subsystem.as_str()));
         }
     }
+    // The offsets of the vtables of each class that hold a function, keyed by (class, rva).
+    let mut columns: HashMap<(&str, u64), Vec<u64>> = HashMap::new();
+    for class in &inp.rtti.classes {
+        for col in &class.cols {
+            for &target in &col.slots {
+                let offsets = columns.entry((class.name.as_str(), target)).or_default();
+                if !offsets.contains(&col.offset) {
+                    offsets.push(col.offset);
+                }
+            }
+        }
+    }
     let mut work: Vec<Work> = Vec::new();
     for (id, (f, pass)) in &semantic {
         if let Some(s) = by_id.get(id).filter(|_| !is_placeholder(split_scope(&f.name).1)) {
@@ -724,18 +746,19 @@ fn functions(
             continue;
         };
         let (scope, last) = split_scope(name);
-        let scope = scope.filter(|c| ctx.classes.contains_key(c));
-        let this = sig.params.first().filter(|p| p.name == "this" || matches!(&p.ty, Ty::Class(c, _) if Some(c.as_str()) == scope));
-        let owner = match this.map(|p| &p.ty) {
-            Some(Ty::Class(c, _)) => Some(c.as_str()),
-            _ => scope,
+        let scope = scope.and_then(|c| ctx.classes.get(c));
+        let this = sig.params.first().filter(|p| p.name == "this" || scope.is_some_and(|c| p.base == c.name));
+        let class_of_this = this.and_then(|p| if let Ty::Class(c, _) = &p.ty { Some(c.as_str()) } else { None });
+        let (owner, shape) = match (this, scope) {
+            (Some(p), Some(c)) => match (this_offset(c, &p.base, ctx.classes.contains_key(p.base.as_str()), columns.get(&(c.name, s.rva))), class_of_this) {
+                (Some(Some(offset)), _) => (Some(c.name), Shape::Method(offset)),
+                (None, Some(t)) => (Some(t), Shape::Method(0)),
+                _ => (Some(c.name), Shape::Associated),
+            },
+            (Some(_), None) => (class_of_this, if class_of_this.is_some() { Shape::Method(0) } else { Shape::Free }),
+            (None, Some(c)) => (Some(c.name), Shape::Associated),
+            (None, None) => (None, Shape::Free),
         };
-        let shape = match (this.is_some(), owner) {
-            (true, Some(_)) => Shape::Method,
-            (false, Some(_)) => Shape::Associated,
-            (_, None) => Shape::Free,
-        };
-        let owner = if shape == Shape::Free { None } else { owner };
         if let Some(o) = owner
             && virtual_targets.contains(&(o.to_owned(), s.rva))
         {
@@ -751,7 +774,11 @@ fn functions(
                     format!("Semantic, {pass} pass, {}; {}.", f.confidence, ledger(s, name)),
                     format!("`{signature}`"),
                 ],
-                unsafe_reason(&sig, shape == Shape::Method, &f.confidence, last, owner, ctx),
+                if shape == Shape::Associated && this.is_some() {
+                    Some(format!("`this` must point to the part of the object the function takes; the ledger does not say which subobject of `{}` that is.", owner.unwrap_or_default()))
+                } else {
+                    unsafe_reason(&sig, matches!(shape, Shape::Method(_)), &f.confidence, last, owner, ctx)
+                },
             ),
             None => (
                 vec![format!("`{name}` (decompiler signature, tier {}; {}).", tier.label(), ledger(s, name)), format!("`{signature}`")],
@@ -766,8 +793,8 @@ fn functions(
         let t = stats.tiers.entry(tier).or_default();
         let safe = reason.is_none();
         match shape {
-            Shape::Method if safe => t.safe_methods += 1,
-            Shape::Method => t.unsafe_methods += 1,
+            Shape::Method(_) if safe => t.safe_methods += 1,
+            Shape::Method(_) => t.unsafe_methods += 1,
             Shape::Associated if safe => t.safe_associated += 1,
             Shape::Associated => t.unsafe_associated += 1,
             Shape::Free if safe => t.safe_free += 1,
@@ -781,6 +808,34 @@ fn functions(
         };
         entries.push(Entry { tier, yields: false, group: group.to_owned(), owner: owner.map(str::to_owned), order: (2, name.to_owned(), id), base, text });
     }
+}
+
+/// The offset in `class` of the subobject a function scoped to it takes as `this`, which the
+/// type of its `this` (`this_ty`, `laid_out` when that is a class of its own) or else the
+/// function's place in the class's vtables (`columns`) decides. A non-virtual base the type names
+/// gives its displacement; another laid-out class gives `None`, the function being that class's.
+/// Otherwise a function only a secondary vtable holds is an override reached through that base and
+/// takes the subobject at the vtable's offset, one the primary vtable holds or a function of the
+/// class in no vtable takes the object; `Some(None)` when that is unknown (several secondary
+/// vtables, or a type naming no class and no vtable holding the function).
+fn this_offset(class: &Class, this_ty: &str, laid_out: bool, columns: Option<&Vec<u64>>) -> Option<Option<u64>> {
+    let named = |c: &str| c == this_ty || split_scope(c).1 == this_ty;
+    let own = named(class.name);
+    if !own {
+        let mut bases = class.bases.iter().filter(|&&(b, _, virt)| !virt && named(b)).map(|&(_, disp, _)| disp);
+        if let Some(disp) = bases.next() {
+            return bases.all(|d| d == disp).then(|| u64::try_from(disp).ok());
+        }
+        if laid_out {
+            return None;
+        }
+    }
+    Some(match columns.map(Vec::as_slice) {
+        Some([offset]) => Some(*offset),
+        Some(offsets) if !offsets.contains(&0) => None,
+        Some(_) => Some(0),
+        None => own.then_some(0),
+    })
 }
 
 /// `Option<&X>` readers for the pointer fields a pass names with high confidence on its own class;
@@ -945,7 +1000,7 @@ mod tests {
         let classes = test_classes();
         let ctx = ctx(&classes);
         let sig = parse_sig("ActorValue TESForm::Get(TESForm* this)", Source::Semantic, &ctx).unwrap();
-        let text = render_call("", Shape::Method, true, &sig, "function!(1, ", Some("TESForm"), &ctx);
+        let text = render_call("", Shape::Method(0), true, &sig, "function!(1, ", Some("TESForm"), &ctx);
         assert!(text.contains("-> Result<crate::ActorValue, u32> { unsafe { let raw = function!(1, (*const Self) -> u32)(core::ptr::from_ref(self)); crate::ActorValue::from_u32(raw).ok_or(raw) } }"), "{text}");
     }
 

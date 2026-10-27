@@ -177,7 +177,7 @@ impl crate::BSBloodSplatterShader {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(106982, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(106982, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
     /// `BSBloodSplatterShader::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 106971, rva 0x152db90).
     /// `BSBloodSplatterShader * ctor(BSBloodSplatterShader * this)`
     ///
@@ -390,7 +390,7 @@ impl crate::BSDistantTreeShader {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(107558, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(107558, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
     /// `BSDistantTreeShader::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 107547, rva 0x1558ed0).
     /// `BSDistantTreeShader * ctor(BSDistantTreeShader * this)`
     ///
@@ -633,7 +633,7 @@ impl crate::BSGrassShader {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(106709, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(106709, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
     /// `BSGrassShader::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 106678, rva 0x1522440).
     /// `BSGrassShader * ctor(BSGrassShader * this)`
     ///
@@ -774,14 +774,14 @@ impl crate::BSImagespaceShader {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(107739, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(107739, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x90)) } }
     /// `BSImagespaceShader::NiBoneMatrixSetterI_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 107738, rva 0x15652f4).
     /// `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShader * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(107738, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(107738, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
     /// `BSImagespaceShader::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 107725, rva 0x1564680).
     /// `BSImagespaceShader * ctor(BSImagespaceShader * this)`
     ///
@@ -798,14 +798,14 @@ impl crate::BSImagespaceShaderAlphaBlend {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105805, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105805, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x90)) } }
     /// `BSImagespaceShaderAlphaBlend::NiBoneMatrixSetterI_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 105804, rva 0x15070a8).
     /// `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderAlphaBlend * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105804, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105804, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
     /// `BSImagespaceShaderAlphaBlend::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 105701, rva 0x14f43e0).
     /// `BSImagespaceShaderAlphaBlend * ctor(BSImagespaceShaderAlphaBlend * this)`
     ///
@@ -822,14 +822,14 @@ impl crate::BSImagespaceShaderApplyReflections {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105807, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105807, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x90)) } }
     /// `BSImagespaceShaderApplyReflections::NiBoneMatrixSetterI_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 105806, rva 0x15070c0).
     /// `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderApplyReflections * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105806, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105806, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
     /// `BSImagespaceShaderApplyReflections::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 105702, rva 0x14f4b90).
     /// `BSImagespaceShaderApplyReflections * ctor(BSImagespaceShaderApplyReflections * this)`
     ///
@@ -846,14 +846,14 @@ impl crate::BSImagespaceShaderBlur11 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105809, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105809, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x90)) } }
     /// `BSImagespaceShaderBlur11::NiBoneMatrixSetterI_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 105808, rva 0x15070d8).
     /// `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderBlur11 * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105808, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105808, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
     /// `BSImagespaceShaderBlur11::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 105703, rva 0x14f4d70).
     /// `BSImagespaceShaderBlur11 * ctor(BSImagespaceShaderBlur11 * this)`
     ///
@@ -870,14 +870,14 @@ impl crate::BSImagespaceShaderBlur13 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105811, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105811, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x90)) } }
     /// `BSImagespaceShaderBlur13::NiBoneMatrixSetterI_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 105810, rva 0x15070f0).
     /// `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderBlur13 * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105810, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105810, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
     /// `BSImagespaceShaderBlur13::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 105704, rva 0x14f5130).
     /// `BSImagespaceShaderBlur13 * ctor(BSImagespaceShaderBlur13 * this)`
     ///
@@ -894,14 +894,14 @@ impl crate::BSImagespaceShaderBlur15 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105813, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105813, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x90)) } }
     /// `BSImagespaceShaderBlur15::NiBoneMatrixSetterI_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 105812, rva 0x1507108).
     /// `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderBlur15 * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105812, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105812, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
     /// `BSImagespaceShaderBlur15::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 105705, rva 0x14f5560).
     /// `BSImagespaceShaderBlur15 * ctor(BSImagespaceShaderBlur15 * this)`
     ///
@@ -918,14 +918,14 @@ impl crate::BSImagespaceShaderBlur3 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105815, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105815, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x90)) } }
     /// `BSImagespaceShaderBlur3::NiBoneMatrixSetterI_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 105814, rva 0x1507120).
     /// `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderBlur3 * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105814, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105814, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
     /// `BSImagespaceShaderBlur3::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 105706, rva 0x14f5a00).
     /// `BSImagespaceShaderBlur3 * ctor(BSImagespaceShaderBlur3 * this)`
     ///
@@ -942,14 +942,14 @@ impl crate::BSImagespaceShaderBlur5 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105817, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105817, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x90)) } }
     /// `BSImagespaceShaderBlur5::NiBoneMatrixSetterI_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 105816, rva 0x1507138).
     /// `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderBlur5 * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105816, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105816, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
     /// `BSImagespaceShaderBlur5::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 105707, rva 0x14f5c20).
     /// `BSImagespaceShaderBlur5 * ctor(BSImagespaceShaderBlur5 * this)`
     ///
@@ -966,14 +966,14 @@ impl crate::BSImagespaceShaderBlur7 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105819, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105819, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x90)) } }
     /// `BSImagespaceShaderBlur7::NiBoneMatrixSetterI_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 105818, rva 0x1507150).
     /// `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderBlur7 * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105818, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105818, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
     /// `BSImagespaceShaderBlur7::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 105708, rva 0x14f5ea0).
     /// `BSImagespaceShaderBlur7 * ctor(BSImagespaceShaderBlur7 * this)`
     ///
@@ -990,14 +990,14 @@ impl crate::BSImagespaceShaderBlur9 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105821, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105821, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x90)) } }
     /// `BSImagespaceShaderBlur9::NiBoneMatrixSetterI_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 105820, rva 0x1507168).
     /// `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderBlur9 * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105820, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105820, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
     /// `BSImagespaceShaderBlur9::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 105709, rva 0x14f6190).
     /// `BSImagespaceShaderBlur9 * ctor(BSImagespaceShaderBlur9 * this)`
     ///
@@ -1014,14 +1014,14 @@ impl crate::BSImagespaceShaderBrightPassBlur11 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105823, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105823, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x90)) } }
     /// `BSImagespaceShaderBrightPassBlur11::NiBoneMatrixSetterI_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 105822, rva 0x1507180).
     /// `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderBrightPassBlur11 * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105822, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105822, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
     /// `BSImagespaceShaderBrightPassBlur11::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 105710, rva 0x14f64e0).
     /// `BSImagespaceShaderBrightPassBlur11 * ctor(BSImagespaceShaderBrightPassBlur11 * this)`
     ///
@@ -1038,14 +1038,14 @@ impl crate::BSImagespaceShaderBrightPassBlur13 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105825, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105825, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x90)) } }
     /// `BSImagespaceShaderBrightPassBlur13::NiBoneMatrixSetterI_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 105824, rva 0x1507198).
     /// `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderBrightPassBlur13 * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105824, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105824, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
     /// `BSImagespaceShaderBrightPassBlur13::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 105711, rva 0x14f6910).
     /// `BSImagespaceShaderBrightPassBlur13 * ctor(BSImagespaceShaderBrightPassBlur13 * this)`
     ///
@@ -1062,14 +1062,14 @@ impl crate::BSImagespaceShaderBrightPassBlur15 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105827, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105827, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x90)) } }
     /// `BSImagespaceShaderBrightPassBlur15::NiBoneMatrixSetterI_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 105826, rva 0x15071b0).
     /// `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderBrightPassBlur15 * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105826, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105826, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
     /// `BSImagespaceShaderBrightPassBlur15::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 105712, rva 0x14f6da0).
     /// `BSImagespaceShaderBrightPassBlur15 * ctor(BSImagespaceShaderBrightPassBlur15 * this)`
     ///
@@ -1086,14 +1086,14 @@ impl crate::BSImagespaceShaderBrightPassBlur3 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105829, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105829, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x90)) } }
     /// `BSImagespaceShaderBrightPassBlur3::NiBoneMatrixSetterI_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 105828, rva 0x15071c8).
     /// `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderBrightPassBlur3 * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105828, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105828, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
     /// `BSImagespaceShaderBrightPassBlur3::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 105713, rva 0x14f72a0).
     /// `BSImagespaceShaderBrightPassBlur3 * ctor(BSImagespaceShaderBrightPassBlur3 * this)`
     ///
@@ -1110,14 +1110,14 @@ impl crate::BSImagespaceShaderBrightPassBlur5 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105831, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105831, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x90)) } }
     /// `BSImagespaceShaderBrightPassBlur5::NiBoneMatrixSetterI_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 105830, rva 0x15071e0).
     /// `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderBrightPassBlur5 * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105830, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105830, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
     /// `BSImagespaceShaderBrightPassBlur5::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 105714, rva 0x14f7520).
     /// `BSImagespaceShaderBrightPassBlur5 * ctor(BSImagespaceShaderBrightPassBlur5 * this)`
     ///
@@ -1134,14 +1134,14 @@ impl crate::BSImagespaceShaderBrightPassBlur7 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105833, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105833, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x90)) } }
     /// `BSImagespaceShaderBrightPassBlur7::NiBoneMatrixSetterI_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 105832, rva 0x15071f8).
     /// `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderBrightPassBlur7 * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105832, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105832, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
     /// `BSImagespaceShaderBrightPassBlur7::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 105715, rva 0x14f7810).
     /// `BSImagespaceShaderBrightPassBlur7 * ctor(BSImagespaceShaderBrightPassBlur7 * this)`
     ///
@@ -1158,14 +1158,14 @@ impl crate::BSImagespaceShaderBrightPassBlur9 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105835, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105835, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x90)) } }
     /// `BSImagespaceShaderBrightPassBlur9::NiBoneMatrixSetterI_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 105834, rva 0x1507210).
     /// `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderBrightPassBlur9 * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105834, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105834, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
     /// `BSImagespaceShaderBrightPassBlur9::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 105716, rva 0x14f7b60).
     /// `BSImagespaceShaderBrightPassBlur9 * ctor(BSImagespaceShaderBrightPassBlur9 * this)`
     ///
@@ -1182,14 +1182,14 @@ impl crate::BSImagespaceShaderCopy {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105837, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105837, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x90)) } }
     /// `BSImagespaceShaderCopy::NiBoneMatrixSetterI_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 105836, rva 0x1507228).
     /// `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderCopy * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105836, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105836, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
 }
 
 impl crate::BSImagespaceShaderCopyCustomViewport {
@@ -1199,14 +1199,14 @@ impl crate::BSImagespaceShaderCopyCustomViewport {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105839, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105839, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x90)) } }
     /// `BSImagespaceShaderCopyCustomViewport::NiBoneMatrixSetterI_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 105838, rva 0x1507240).
     /// `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderCopyCustomViewport * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105838, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105838, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
 }
 
 impl crate::BSImagespaceShaderCopyDynamicFetchDisabled {
@@ -1216,14 +1216,14 @@ impl crate::BSImagespaceShaderCopyDynamicFetchDisabled {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105841, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105841, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x90)) } }
     /// `BSImagespaceShaderCopyDynamicFetchDisabled::NiBoneMatrixSetterI_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 105840, rva 0x1507258).
     /// `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderCopyDynamicFetchDisabled * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105840, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105840, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
 }
 
 impl crate::BSImagespaceShaderCopyScaleBias {
@@ -1233,14 +1233,14 @@ impl crate::BSImagespaceShaderCopyScaleBias {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105843, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105843, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x90)) } }
     /// `BSImagespaceShaderCopyScaleBias::NiBoneMatrixSetterI_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 105842, rva 0x1507270).
     /// `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderCopyScaleBias * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105842, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105842, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
 }
 
 impl crate::BSImagespaceShaderDepthOfField {
@@ -1250,14 +1250,14 @@ impl crate::BSImagespaceShaderDepthOfField {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105845, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105845, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x90)) } }
     /// `BSImagespaceShaderDepthOfField::NiBoneMatrixSetterI_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 105844, rva 0x1507288).
     /// `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderDepthOfField * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105844, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105844, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
     /// `BSImagespaceShaderDepthOfField::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 105717, rva 0x14f7f20).
     /// `BSImagespaceShaderDepthOfField * ctor(BSImagespaceShaderDepthOfField * this)`
     ///
@@ -1274,14 +1274,14 @@ impl crate::BSImagespaceShaderDepthOfFieldFogged {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105847, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105847, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x90)) } }
     /// `BSImagespaceShaderDepthOfFieldFogged::NiBoneMatrixSetterI_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 105846, rva 0x15072a0).
     /// `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderDepthOfFieldFogged * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105846, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105846, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
     /// `BSImagespaceShaderDepthOfFieldFogged::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 105718, rva 0x14f81d0).
     /// `BSImagespaceShaderDepthOfFieldFogged * ctor(BSImagespaceShaderDepthOfFieldFogged * this)`
     ///
@@ -1298,14 +1298,14 @@ impl crate::BSImagespaceShaderDepthOfFieldMaskedFogged {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105849, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105849, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x90)) } }
     /// `BSImagespaceShaderDepthOfFieldMaskedFogged::NiBoneMatrixSetterI_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 105848, rva 0x15072b8).
     /// `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderDepthOfFieldMaskedFogged * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105848, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105848, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
     /// `BSImagespaceShaderDepthOfFieldMaskedFogged::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 105719, rva 0x14f84f0).
     /// `BSImagespaceShaderDepthOfFieldMaskedFogged * ctor(BSImagespaceShaderDepthOfFieldMaskedFogged * this)`
     ///
@@ -1322,14 +1322,14 @@ impl crate::BSImagespaceShaderDistantBlur {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105851, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105851, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x90)) } }
     /// `BSImagespaceShaderDistantBlur::NiBoneMatrixSetterI_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 105850, rva 0x15072d0).
     /// `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderDistantBlur * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105850, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105850, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
     /// `BSImagespaceShaderDistantBlur::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 105720, rva 0x14f88b0).
     /// `BSImagespaceShaderDistantBlur * ctor(BSImagespaceShaderDistantBlur * this)`
     ///
@@ -1346,14 +1346,14 @@ impl crate::BSImagespaceShaderDistantBlurFogged {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105853, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105853, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x90)) } }
     /// `BSImagespaceShaderDistantBlurFogged::NiBoneMatrixSetterI_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 105852, rva 0x15072e8).
     /// `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderDistantBlurFogged * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105852, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105852, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
     /// `BSImagespaceShaderDistantBlurFogged::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 105721, rva 0x14f8b70).
     /// `BSImagespaceShaderDistantBlurFogged * ctor(BSImagespaceShaderDistantBlurFogged * this)`
     ///
@@ -1370,14 +1370,14 @@ impl crate::BSImagespaceShaderDistantBlurMaskedFogged {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105855, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105855, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x90)) } }
     /// `BSImagespaceShaderDistantBlurMaskedFogged::NiBoneMatrixSetterI_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 105854, rva 0x1507300).
     /// `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderDistantBlurMaskedFogged * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105854, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105854, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
     /// `BSImagespaceShaderDistantBlurMaskedFogged::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 105722, rva 0x14f8e90).
     /// `BSImagespaceShaderDistantBlurMaskedFogged * ctor(BSImagespaceShaderDistantBlurMaskedFogged * this)`
     ///
@@ -1394,14 +1394,14 @@ impl crate::BSImagespaceShaderDoubleVision {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105857, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105857, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x90)) } }
     /// `BSImagespaceShaderDoubleVision::NiBoneMatrixSetterI_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 105856, rva 0x1507318).
     /// `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderDoubleVision * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105856, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105856, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
     /// `BSImagespaceShaderDoubleVision::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 105723, rva 0x14f9260).
     /// `BSImagespaceShaderDoubleVision * ctor(BSImagespaceShaderDoubleVision * this)`
     ///
@@ -1418,14 +1418,14 @@ impl crate::BSImagespaceShaderFXAA {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105859, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105859, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x90)) } }
     /// `BSImagespaceShaderFXAA::NiBoneMatrixSetterI_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 105858, rva 0x1507330).
     /// `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderFXAA * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105858, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105858, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
     /// `BSImagespaceShaderFXAA::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 105724, rva 0x14f9440).
     /// `BSImagespaceShaderFXAA * ctor(BSImagespaceShaderFXAA * this)`
     ///
@@ -1442,14 +1442,14 @@ impl crate::BSImagespaceShaderGreyScale {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105861, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105861, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x90)) } }
     /// `BSImagespaceShaderGreyScale::NiBoneMatrixSetterI_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 105860, rva 0x1507348).
     /// `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderGreyScale * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105860, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105860, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
 }
 
 impl crate::BSImagespaceShaderHDRDownSample16 {
@@ -1459,14 +1459,14 @@ impl crate::BSImagespaceShaderHDRDownSample16 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105863, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105863, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x90)) } }
     /// `BSImagespaceShaderHDRDownSample16::NiBoneMatrixSetterI_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 105862, rva 0x1507360).
     /// `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderHDRDownSample16 * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105862, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105862, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
     /// `BSImagespaceShaderHDRDownSample16::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 105725, rva 0x14f9830).
     /// `BSImagespaceShaderHDRDownSample16 * ctor(BSImagespaceShaderHDRDownSample16 * this)`
     ///
@@ -1483,14 +1483,14 @@ impl crate::BSImagespaceShaderHDRDownSample16LightAdapt {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105865, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105865, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x90)) } }
     /// `BSImagespaceShaderHDRDownSample16LightAdapt::NiBoneMatrixSetterI_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 105864, rva 0x1507378).
     /// `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderHDRDownSample16LightAdapt * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105864, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105864, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
     /// `BSImagespaceShaderHDRDownSample16LightAdapt::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 105726, rva 0x14f9d30).
     /// `BSImagespaceShaderHDRDownSample16LightAdapt * ctor(BSImagespaceShaderHDRDownSample16LightAdapt * this)`
     ///
@@ -1507,14 +1507,14 @@ impl crate::BSImagespaceShaderHDRDownSample16Lum {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105867, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105867, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x90)) } }
     /// `BSImagespaceShaderHDRDownSample16Lum::NiBoneMatrixSetterI_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 105866, rva 0x1507390).
     /// `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderHDRDownSample16Lum * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105866, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105866, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
     /// `BSImagespaceShaderHDRDownSample16Lum::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 105727, rva 0x14fa2d0).
     /// `BSImagespaceShaderHDRDownSample16Lum * ctor(BSImagespaceShaderHDRDownSample16Lum * this)`
     ///
@@ -1531,14 +1531,14 @@ impl crate::BSImagespaceShaderHDRDownSample16LumClamp {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105869, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105869, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x90)) } }
     /// `BSImagespaceShaderHDRDownSample16LumClamp::NiBoneMatrixSetterI_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 105868, rva 0x15073a8).
     /// `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderHDRDownSample16LumClamp * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105868, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105868, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
     /// `BSImagespaceShaderHDRDownSample16LumClamp::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 105728, rva 0x14fa7d0).
     /// `BSImagespaceShaderHDRDownSample16LumClamp * ctor(BSImagespaceShaderHDRDownSample16LumClamp * this)`
     ///
@@ -1555,14 +1555,14 @@ impl crate::BSImagespaceShaderHDRDownSample4 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105871, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105871, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x90)) } }
     /// `BSImagespaceShaderHDRDownSample4::NiBoneMatrixSetterI_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 105870, rva 0x15073c0).
     /// `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderHDRDownSample4 * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105870, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105870, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
     /// `BSImagespaceShaderHDRDownSample4::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 105729, rva 0x14fad00).
     /// `BSImagespaceShaderHDRDownSample4 * ctor(BSImagespaceShaderHDRDownSample4 * this)`
     ///
@@ -1579,14 +1579,14 @@ impl crate::BSImagespaceShaderHDRDownSample4LightAdapt {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105873, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105873, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x90)) } }
     /// `BSImagespaceShaderHDRDownSample4LightAdapt::NiBoneMatrixSetterI_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 105872, rva 0x15073d8).
     /// `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderHDRDownSample4LightAdapt * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105872, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105872, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
     /// `BSImagespaceShaderHDRDownSample4LightAdapt::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 105730, rva 0x14faf90).
     /// `BSImagespaceShaderHDRDownSample4LightAdapt * ctor(BSImagespaceShaderHDRDownSample4LightAdapt * this)`
     ///
@@ -1603,14 +1603,14 @@ impl crate::BSImagespaceShaderHDRDownSample4LumClamp {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105875, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105875, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x90)) } }
     /// `BSImagespaceShaderHDRDownSample4LumClamp::NiBoneMatrixSetterI_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 105874, rva 0x15073f0).
     /// `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderHDRDownSample4LumClamp * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105874, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105874, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
     /// `BSImagespaceShaderHDRDownSample4LumClamp::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 105731, rva 0x14fb2b0).
     /// `BSImagespaceShaderHDRDownSample4LumClamp * ctor(BSImagespaceShaderHDRDownSample4LumClamp * this)`
     ///
@@ -1627,14 +1627,14 @@ impl crate::BSImagespaceShaderHDRDownSample4RGB2Lum {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105877, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105877, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x90)) } }
     /// `BSImagespaceShaderHDRDownSample4RGB2Lum::NiBoneMatrixSetterI_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 105876, rva 0x1507408).
     /// `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderHDRDownSample4RGB2Lum * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105876, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105876, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
     /// `BSImagespaceShaderHDRDownSample4RGB2Lum::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 105732, rva 0x14fb570).
     /// `BSImagespaceShaderHDRDownSample4RGB2Lum * ctor(BSImagespaceShaderHDRDownSample4RGB2Lum * this)`
     ///
@@ -1651,14 +1651,14 @@ impl crate::BSImagespaceShaderHDRTonemapBlendCinematic {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105879, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105879, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x90)) } }
     /// `BSImagespaceShaderHDRTonemapBlendCinematic::NiBoneMatrixSetterI_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 105878, rva 0x1507420).
     /// `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderHDRTonemapBlendCinematic * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105878, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105878, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
     /// `BSImagespaceShaderHDRTonemapBlendCinematic::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 105733, rva 0x14fb7f0).
     /// `BSImagespaceShaderHDRTonemapBlendCinematic * ctor(BSImagespaceShaderHDRTonemapBlendCinematic * this)`
     ///
@@ -1675,14 +1675,14 @@ impl crate::BSImagespaceShaderHDRTonemapBlendCinematicFade {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105881, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105881, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x90)) } }
     /// `BSImagespaceShaderHDRTonemapBlendCinematicFade::NiBoneMatrixSetterI_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 105880, rva 0x1507438).
     /// `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderHDRTonemapBlendCinematicFade * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105880, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105880, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
     /// `BSImagespaceShaderHDRTonemapBlendCinematicFade::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 105734, rva 0x14fba70).
     /// `BSImagespaceShaderHDRTonemapBlendCinematicFade * ctor(BSImagespaceShaderHDRTonemapBlendCinematicFade * this)`
     ///
@@ -1699,14 +1699,14 @@ impl crate::BSImagespaceShaderISApplyVolumetricLighting {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105883, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105883, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x90)) } }
     /// `BSImagespaceShaderISApplyVolumetricLighting::NiBoneMatrixSetterI_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 105882, rva 0x1507450).
     /// `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderISApplyVolumetricLighting * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105882, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105882, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
     /// `BSImagespaceShaderISApplyVolumetricLighting::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 105735, rva 0x14fbd30).
     /// `BSImagespaceShaderISApplyVolumetricLighting * ctor(BSImagespaceShaderISApplyVolumetricLighting * this)`
     ///
@@ -1723,14 +1723,14 @@ impl crate::BSImagespaceShaderISBasicCopy {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105885, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105885, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x90)) } }
     /// `BSImagespaceShaderISBasicCopy::NiBoneMatrixSetterI_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 105884, rva 0x1507468).
     /// `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderISBasicCopy * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105884, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105884, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
 }
 
 impl crate::BSImagespaceShaderISBlur {
@@ -1740,14 +1740,14 @@ impl crate::BSImagespaceShaderISBlur {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105887, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105887, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x90)) } }
     /// `BSImagespaceShaderISBlur::NiBoneMatrixSetterI_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 105886, rva 0x1507480).
     /// `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderISBlur * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105886, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105886, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
     /// `BSImagespaceShaderISBlur::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 105736, rva 0x14fbf80).
     /// `BSImagespaceShaderISBlur * ctor(BSImagespaceShaderISBlur * this)`
     ///
@@ -1764,14 +1764,14 @@ impl crate::BSImagespaceShaderISCompositeLensFlare {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105889, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105889, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x90)) } }
     /// `BSImagespaceShaderISCompositeLensFlare::NiBoneMatrixSetterI_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 105888, rva 0x1507498).
     /// `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderISCompositeLensFlare * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105888, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105888, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
     /// `BSImagespaceShaderISCompositeLensFlare::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 105737, rva 0x14fc270).
     /// `BSImagespaceShaderISCompositeLensFlare * ctor(BSImagespaceShaderISCompositeLensFlare * this)`
     ///
@@ -1788,14 +1788,14 @@ impl crate::BSImagespaceShaderISCompositeLensFlareVolumetricLighting {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105891, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105891, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x90)) } }
     /// `BSImagespaceShaderISCompositeLensFlareVolumetricLighting::NiBoneMatrixSetterI_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 105890, rva 0x15074b0).
     /// `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderISCompositeLensFlareVolumetricLighting * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105890, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105890, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
     /// `BSImagespaceShaderISCompositeLensFlareVolumetricLighting::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 105738, rva 0x14fc420).
     /// `BSImagespaceShaderISCompositeLensFlareVolumetricLighting * ctor(BSImagespaceShaderISCompositeLensFlareVolumetricLighting * this)`
     ///
@@ -1812,14 +1812,14 @@ impl crate::BSImagespaceShaderISCompositeVolumetricLighting {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105893, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105893, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x90)) } }
     /// `BSImagespaceShaderISCompositeVolumetricLighting::NiBoneMatrixSetterI_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 105892, rva 0x15074c8).
     /// `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderISCompositeVolumetricLighting * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105892, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105892, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
     /// `BSImagespaceShaderISCompositeVolumetricLighting::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 105739, rva 0x14fc5d0).
     /// `BSImagespaceShaderISCompositeVolumetricLighting * ctor(BSImagespaceShaderISCompositeVolumetricLighting * this)`
     ///
@@ -1836,14 +1836,14 @@ impl crate::BSImagespaceShaderISCopySubRegionCS {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105895, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105895, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x90)) } }
     /// `BSImagespaceShaderISCopySubRegionCS::NiBoneMatrixSetterI_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 105894, rva 0x15074e0).
     /// `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderISCopySubRegionCS * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105894, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105894, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
     /// `BSImagespaceShaderISCopySubRegionCS::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 105740, rva 0x14fc780).
     /// `BSImagespaceShaderISCopySubRegionCS * ctor(BSImagespaceShaderISCopySubRegionCS * this)`
     ///
@@ -1860,14 +1860,14 @@ impl crate::BSImagespaceShaderISDebugSnow {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105897, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105897, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x90)) } }
     /// `BSImagespaceShaderISDebugSnow::NiBoneMatrixSetterI_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 105896, rva 0x15074f8).
     /// `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderISDebugSnow * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105896, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105896, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
 }
 
 impl crate::BSImagespaceShaderISDepthOfFieldBlurHCS {
@@ -1877,14 +1877,14 @@ impl crate::BSImagespaceShaderISDepthOfFieldBlurHCS {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105899, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105899, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x90)) } }
     /// `BSImagespaceShaderISDepthOfFieldBlurHCS::NiBoneMatrixSetterI_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 105898, rva 0x1507510).
     /// `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderISDepthOfFieldBlurHCS * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105898, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105898, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
     /// `BSImagespaceShaderISDepthOfFieldBlurHCS::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 105741, rva 0x14fc9a0).
     /// `BSImagespaceShaderISDepthOfFieldBlurHCS * ctor(BSImagespaceShaderISDepthOfFieldBlurHCS * this)`
     ///
@@ -1901,14 +1901,14 @@ impl crate::BSImagespaceShaderISDepthOfFieldBlurVCS {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105901, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105901, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x90)) } }
     /// `BSImagespaceShaderISDepthOfFieldBlurVCS::NiBoneMatrixSetterI_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 105900, rva 0x1507528).
     /// `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderISDepthOfFieldBlurVCS * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105900, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105900, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
     /// `BSImagespaceShaderISDepthOfFieldBlurVCS::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 105742, rva 0x14fcbc0).
     /// `BSImagespaceShaderISDepthOfFieldBlurVCS * ctor(BSImagespaceShaderISDepthOfFieldBlurVCS * this)`
     ///
@@ -1925,14 +1925,14 @@ impl crate::BSImagespaceShaderISDisplayDepth {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105903, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105903, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x90)) } }
     /// `BSImagespaceShaderISDisplayDepth::NiBoneMatrixSetterI_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 105902, rva 0x1507540).
     /// `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderISDisplayDepth * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105902, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105902, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
     /// `BSImagespaceShaderISDisplayDepth::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 105743, rva 0x14fcde0).
     /// `BSImagespaceShaderISDisplayDepth * ctor(BSImagespaceShaderISDisplayDepth * this)`
     ///
@@ -1949,14 +1949,14 @@ impl crate::BSImagespaceShaderISDownsample {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105905, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105905, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x90)) } }
     /// `BSImagespaceShaderISDownsample::NiBoneMatrixSetterI_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 105904, rva 0x1507558).
     /// `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderISDownsample * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105904, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105904, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
     /// `BSImagespaceShaderISDownsample::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 105744, rva 0x14fcf90).
     /// `BSImagespaceShaderISDownsample * ctor(BSImagespaceShaderISDownsample * this)`
     ///
@@ -1973,14 +1973,14 @@ impl crate::BSImagespaceShaderISDownsampleCS {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105907, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105907, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x90)) } }
     /// `BSImagespaceShaderISDownsampleCS::NiBoneMatrixSetterI_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 105906, rva 0x1507570).
     /// `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderISDownsampleCS * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105906, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105906, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
     /// `BSImagespaceShaderISDownsampleCS::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 105745, rva 0x14fd210).
     /// `BSImagespaceShaderISDownsampleCS * ctor(BSImagespaceShaderISDownsampleCS * this)`
     ///
@@ -1997,14 +1997,14 @@ impl crate::BSImagespaceShaderISDownsampleIgnoreBrightest {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105909, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105909, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x90)) } }
     /// `BSImagespaceShaderISDownsampleIgnoreBrightest::NiBoneMatrixSetterI_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 105908, rva 0x1507588).
     /// `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderISDownsampleIgnoreBrightest * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105908, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105908, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
     /// `BSImagespaceShaderISDownsampleIgnoreBrightest::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 105746, rva 0x14fd530).
     /// `BSImagespaceShaderISDownsampleIgnoreBrightest * ctor(BSImagespaceShaderISDownsampleIgnoreBrightest * this)`
     ///
@@ -2021,14 +2021,14 @@ impl crate::BSImagespaceShaderISDownsampleIgnoreBrightestCS {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105911, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105911, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x90)) } }
     /// `BSImagespaceShaderISDownsampleIgnoreBrightestCS::NiBoneMatrixSetterI_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 105910, rva 0x15075a0).
     /// `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderISDownsampleIgnoreBrightestCS * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105910, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105910, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
     /// `BSImagespaceShaderISDownsampleIgnoreBrightestCS::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 105747, rva 0x14fd7b0).
     /// `BSImagespaceShaderISDownsampleIgnoreBrightestCS * ctor(BSImagespaceShaderISDownsampleIgnoreBrightestCS * this)`
     ///
@@ -2045,14 +2045,14 @@ impl crate::BSImagespaceShaderISExp {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105913, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105913, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x90)) } }
     /// `BSImagespaceShaderISExp::NiBoneMatrixSetterI_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 105912, rva 0x15075b8).
     /// `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderISExp * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105912, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105912, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
 }
 
 impl crate::BSImagespaceShaderISIBLensFlares {
@@ -2062,14 +2062,14 @@ impl crate::BSImagespaceShaderISIBLensFlares {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105915, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105915, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x90)) } }
     /// `BSImagespaceShaderISIBLensFlares::NiBoneMatrixSetterI_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 105914, rva 0x15075d0).
     /// `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderISIBLensFlares * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105914, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105914, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
     /// `BSImagespaceShaderISIBLensFlares::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 105748, rva 0x14fdae0).
     /// `BSImagespaceShaderISIBLensFlares * ctor(BSImagespaceShaderISIBLensFlares * this)`
     ///
@@ -2086,14 +2086,14 @@ impl crate::BSImagespaceShaderISLightingComposite {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105917, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105917, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x90)) } }
     /// `BSImagespaceShaderISLightingComposite::NiBoneMatrixSetterI_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 105916, rva 0x15075e8).
     /// `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderISLightingComposite * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105916, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105916, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
     /// `BSImagespaceShaderISLightingComposite::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 105749, rva 0x14fdfb0).
     /// `BSImagespaceShaderISLightingComposite * ctor(BSImagespaceShaderISLightingComposite * this)`
     ///
@@ -2110,14 +2110,14 @@ impl crate::BSImagespaceShaderISLightingCompositeMenu {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105919, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105919, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x90)) } }
     /// `BSImagespaceShaderISLightingCompositeMenu::NiBoneMatrixSetterI_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 105918, rva 0x1507600).
     /// `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderISLightingCompositeMenu * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105918, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105918, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
     /// `BSImagespaceShaderISLightingCompositeMenu::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 105750, rva 0x14fe2d0).
     /// `BSImagespaceShaderISLightingCompositeMenu * ctor(BSImagespaceShaderISLightingCompositeMenu * this)`
     ///
@@ -2134,14 +2134,14 @@ impl crate::BSImagespaceShaderISLightingCompositeNoDirectionalLight {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105921, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105921, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x90)) } }
     /// `BSImagespaceShaderISLightingCompositeNoDirectionalLight::NiBoneMatrixSetterI_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 105920, rva 0x1507618).
     /// `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderISLightingCompositeNoDirectionalLight * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105920, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105920, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
     /// `BSImagespaceShaderISLightingCompositeNoDirectionalLight::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 105751, rva 0x14fe5f0).
     /// `BSImagespaceShaderISLightingCompositeNoDirectionalLight * ctor(BSImagespaceShaderISLightingCompositeNoDirectionalLight * this)`
     ///
@@ -2158,14 +2158,14 @@ impl crate::BSImagespaceShaderISMinify {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105923, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105923, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x90)) } }
     /// `BSImagespaceShaderISMinify::NiBoneMatrixSetterI_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 105922, rva 0x1507630).
     /// `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderISMinify * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105922, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105922, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
     /// `BSImagespaceShaderISMinify::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 105752, rva 0x14fe910).
     /// `BSImagespaceShaderISMinify * ctor(BSImagespaceShaderISMinify * this)`
     ///
@@ -2182,14 +2182,14 @@ impl crate::BSImagespaceShaderISMinifyContrast {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105925, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105925, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x90)) } }
     /// `BSImagespaceShaderISMinifyContrast::NiBoneMatrixSetterI_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 105924, rva 0x1507648).
     /// `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderISMinifyContrast * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105924, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105924, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
     /// `BSImagespaceShaderISMinifyContrast::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 105753, rva 0x14feb90).
     /// `BSImagespaceShaderISMinifyContrast * ctor(BSImagespaceShaderISMinifyContrast * this)`
     ///
@@ -2206,14 +2206,14 @@ impl crate::BSImagespaceShaderISParallaxMaskBlurHCS {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105927, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105927, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x90)) } }
     /// `BSImagespaceShaderISParallaxMaskBlurHCS::NiBoneMatrixSetterI_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 105926, rva 0x1507660).
     /// `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderISParallaxMaskBlurHCS * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105926, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105926, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
     /// `BSImagespaceShaderISParallaxMaskBlurHCS::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 105754, rva 0x14fee10).
     /// `BSImagespaceShaderISParallaxMaskBlurHCS * ctor(BSImagespaceShaderISParallaxMaskBlurHCS * this)`
     ///
@@ -2230,14 +2230,14 @@ impl crate::BSImagespaceShaderISParallaxMaskBlurVCS {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105929, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105929, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x90)) } }
     /// `BSImagespaceShaderISParallaxMaskBlurVCS::NiBoneMatrixSetterI_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 105928, rva 0x1507678).
     /// `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderISParallaxMaskBlurVCS * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105928, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105928, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
     /// `BSImagespaceShaderISParallaxMaskBlurVCS::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 105755, rva 0x14ff030).
     /// `BSImagespaceShaderISParallaxMaskBlurVCS * ctor(BSImagespaceShaderISParallaxMaskBlurVCS * this)`
     ///
@@ -2254,14 +2254,14 @@ impl crate::BSImagespaceShaderISPerlinNoise2DCS {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105931, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105931, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x90)) } }
     /// `BSImagespaceShaderISPerlinNoise2DCS::NiBoneMatrixSetterI_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 105930, rva 0x1507690).
     /// `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderISPerlinNoise2DCS * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105930, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105930, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
 }
 
 impl crate::BSImagespaceShaderISPerlinNoiseCS {
@@ -2271,14 +2271,14 @@ impl crate::BSImagespaceShaderISPerlinNoiseCS {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105933, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105933, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x90)) } }
     /// `BSImagespaceShaderISPerlinNoiseCS::NiBoneMatrixSetterI_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 105932, rva 0x15076a8).
     /// `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderISPerlinNoiseCS * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105932, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105932, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
 }
 
 impl crate::BSImagespaceShaderISSAOBlurH {
@@ -2288,14 +2288,14 @@ impl crate::BSImagespaceShaderISSAOBlurH {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105935, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105935, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x90)) } }
     /// `BSImagespaceShaderISSAOBlurH::NiBoneMatrixSetterI_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 105934, rva 0x15076c0).
     /// `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderISSAOBlurH * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105934, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105934, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
 }
 
 impl crate::BSImagespaceShaderISSAOBlurHCS {
@@ -2305,14 +2305,14 @@ impl crate::BSImagespaceShaderISSAOBlurHCS {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105937, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105937, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x90)) } }
     /// `BSImagespaceShaderISSAOBlurHCS::NiBoneMatrixSetterI_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 105936, rva 0x15076d8).
     /// `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderISSAOBlurHCS * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105936, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105936, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
     /// `BSImagespaceShaderISSAOBlurHCS::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 105756, rva 0x14ff250).
     /// `BSImagespaceShaderISSAOBlurHCS * ctor(BSImagespaceShaderISSAOBlurHCS * this)`
     ///
@@ -2329,14 +2329,14 @@ impl crate::BSImagespaceShaderISSAOBlurV {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105939, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105939, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x90)) } }
     /// `BSImagespaceShaderISSAOBlurV::NiBoneMatrixSetterI_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 105938, rva 0x15076f0).
     /// `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderISSAOBlurV * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105938, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105938, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
 }
 
 impl crate::BSImagespaceShaderISSAOBlurVCS {
@@ -2346,14 +2346,14 @@ impl crate::BSImagespaceShaderISSAOBlurVCS {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105941, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105941, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x90)) } }
     /// `BSImagespaceShaderISSAOBlurVCS::NiBoneMatrixSetterI_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 105940, rva 0x1507708).
     /// `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderISSAOBlurVCS * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105940, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105940, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
     /// `BSImagespaceShaderISSAOBlurVCS::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 105757, rva 0x14ff400).
     /// `BSImagespaceShaderISSAOBlurVCS * ctor(BSImagespaceShaderISSAOBlurVCS * this)`
     ///
@@ -2370,14 +2370,14 @@ impl crate::BSImagespaceShaderISSAOCompositeFog {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105947, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105947, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x90)) } }
     /// `BSImagespaceShaderISSAOCompositeFog::NiBoneMatrixSetterI_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 105946, rva 0x1507750).
     /// `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderISSAOCompositeFog * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105946, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105946, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
     /// `BSImagespaceShaderISSAOCompositeFog::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 105760, rva 0x14ff980).
     /// `BSImagespaceShaderISSAOCompositeFog * ctor(BSImagespaceShaderISSAOCompositeFog * this)`
     ///
@@ -2394,14 +2394,14 @@ impl crate::BSImagespaceShaderISSAOCompositeSAO {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105949, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105949, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x90)) } }
     /// `BSImagespaceShaderISSAOCompositeSAO::NiBoneMatrixSetterI_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 105948, rva 0x1507768).
     /// `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderISSAOCompositeSAO * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105948, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105948, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
     /// `BSImagespaceShaderISSAOCompositeSAO::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 105761, rva 0x14ffe50).
     /// `BSImagespaceShaderISSAOCompositeSAO * ctor(BSImagespaceShaderISSAOCompositeSAO * this)`
     ///
@@ -2418,14 +2418,14 @@ impl crate::BSImagespaceShaderISSAOCompositeSAOFog {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105951, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105951, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x90)) } }
     /// `BSImagespaceShaderISSAOCompositeSAOFog::NiBoneMatrixSetterI_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 105950, rva 0x1507780).
     /// `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderISSAOCompositeSAOFog * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105950, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105950, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
     /// `BSImagespaceShaderISSAOCompositeSAOFog::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 105762, rva 0x1500320).
     /// `BSImagespaceShaderISSAOCompositeSAOFog * ctor(BSImagespaceShaderISSAOCompositeSAOFog * this)`
     ///
@@ -2442,14 +2442,14 @@ impl crate::BSImagespaceShaderISSAORawAO {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105953, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105953, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x90)) } }
     /// `BSImagespaceShaderISSAORawAO::NiBoneMatrixSetterI_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 105952, rva 0x1507798).
     /// `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderISSAORawAO * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105952, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105952, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
     /// `BSImagespaceShaderISSAORawAO::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 105763, rva 0x15007f0).
     /// `BSImagespaceShaderISSAORawAO * ctor(BSImagespaceShaderISSAORawAO * this)`
     ///
@@ -2466,14 +2466,14 @@ impl crate::BSImagespaceShaderISSAORawAOCS {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105955, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105955, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x90)) } }
     /// `BSImagespaceShaderISSAORawAOCS::NiBoneMatrixSetterI_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 105954, rva 0x15077b0).
     /// `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderISSAORawAOCS * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105954, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105954, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
     /// `BSImagespaceShaderISSAORawAOCS::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 105764, rva 0x1500ae0).
     /// `BSImagespaceShaderISSAORawAOCS * ctor(BSImagespaceShaderISSAORawAOCS * this)`
     ///
@@ -2490,14 +2490,14 @@ impl crate::BSImagespaceShaderISSAORawAONoTemporal {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105957, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105957, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x90)) } }
     /// `BSImagespaceShaderISSAORawAONoTemporal::NiBoneMatrixSetterI_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 105956, rva 0x15077c8).
     /// `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderISSAORawAONoTemporal * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105956, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105956, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
     /// `BSImagespaceShaderISSAORawAONoTemporal::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 105765, rva 0x1500da0).
     /// `BSImagespaceShaderISSAORawAONoTemporal * ctor(BSImagespaceShaderISSAORawAONoTemporal * this)`
     ///
@@ -2514,14 +2514,14 @@ impl crate::BSImagespaceShaderISSILComposite {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105959, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105959, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x90)) } }
     /// `BSImagespaceShaderISSILComposite::NiBoneMatrixSetterI_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 105958, rva 0x15077e0).
     /// `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderISSILComposite * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105958, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105958, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
 }
 
 impl crate::BSImagespaceShaderISSILRawInd {
@@ -2531,14 +2531,14 @@ impl crate::BSImagespaceShaderISSILRawInd {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105961, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105961, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x90)) } }
     /// `BSImagespaceShaderISSILRawInd::NiBoneMatrixSetterI_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 105960, rva 0x15077f8).
     /// `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderISSILRawInd * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105960, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105960, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
     /// `BSImagespaceShaderISSILRawInd::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 105766, rva 0x1501090).
     /// `BSImagespaceShaderISSILRawInd * ctor(BSImagespaceShaderISSILRawInd * this)`
     ///
@@ -2555,14 +2555,14 @@ impl crate::BSImagespaceShaderISSimpleColor {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105963, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105963, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x90)) } }
     /// `BSImagespaceShaderISSimpleColor::NiBoneMatrixSetterI_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 105962, rva 0x1507810).
     /// `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderISSimpleColor * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105962, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105962, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
     /// `BSImagespaceShaderISSimpleColor::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 105767, rva 0x1501380).
     /// `BSImagespaceShaderISSimpleColor * ctor(BSImagespaceShaderISSimpleColor * this)`
     ///
@@ -2579,14 +2579,14 @@ impl crate::BSImagespaceShaderISSnowSSS {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105965, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105965, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x90)) } }
     /// `BSImagespaceShaderISSnowSSS::NiBoneMatrixSetterI_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 105964, rva 0x1507828).
     /// `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderISSnowSSS * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105964, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105964, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
     /// `BSImagespaceShaderISSnowSSS::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 105768, rva 0x1501530).
     /// `BSImagespaceShaderISSnowSSS * ctor(BSImagespaceShaderISSnowSSS * this)`
     ///
@@ -2603,14 +2603,14 @@ impl crate::BSImagespaceShaderISTemporalAA {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105967, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105967, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x90)) } }
     /// `BSImagespaceShaderISTemporalAA::NiBoneMatrixSetterI_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 105966, rva 0x1507840).
     /// `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderISTemporalAA * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105966, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105966, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
     /// `BSImagespaceShaderISTemporalAA::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 105769, rva 0x1501750).
     /// `BSImagespaceShaderISTemporalAA * ctor(BSImagespaceShaderISTemporalAA * this)`
     ///
@@ -2627,14 +2627,14 @@ impl crate::BSImagespaceShaderISTemporalAA_UI {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105969, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105969, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x90)) } }
     /// `BSImagespaceShaderISTemporalAA_UI::NiBoneMatrixSetterI_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 105968, rva 0x1507858).
     /// `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderISTemporalAA_UI * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105968, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105968, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
     /// `BSImagespaceShaderISTemporalAA_UI::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 105770, rva 0x1501b10).
     /// `BSImagespaceShaderISTemporalAA_UI * ctor(BSImagespaceShaderISTemporalAA_UI * this)`
     ///
@@ -2651,14 +2651,14 @@ impl crate::BSImagespaceShaderISTemporalAA_Water {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105971, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105971, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x90)) } }
     /// `BSImagespaceShaderISTemporalAA_Water::NiBoneMatrixSetterI_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 105970, rva 0x1507870).
     /// `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderISTemporalAA_Water * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105970, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105970, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
     /// `BSImagespaceShaderISTemporalAA_Water::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 105771, rva 0x1501ed0).
     /// `BSImagespaceShaderISTemporalAA_Water * ctor(BSImagespaceShaderISTemporalAA_Water * this)`
     ///
@@ -2675,14 +2675,14 @@ impl crate::BSImagespaceShaderISUnderwaterMask {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105973, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105973, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x90)) } }
     /// `BSImagespaceShaderISUnderwaterMask::NiBoneMatrixSetterI_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 105972, rva 0x1507888).
     /// `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderISUnderwaterMask * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105972, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105972, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
 }
 
 impl crate::BSImagespaceShaderISUpsampleDynamicResolution {
@@ -2692,14 +2692,14 @@ impl crate::BSImagespaceShaderISUpsampleDynamicResolution {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105975, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105975, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x90)) } }
     /// `BSImagespaceShaderISUpsampleDynamicResolution::NiBoneMatrixSetterI_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 105974, rva 0x15078a0).
     /// `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderISUpsampleDynamicResolution * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105974, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105974, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
 }
 
 impl crate::BSImagespaceShaderISVolumetricLightingBlurHCS {
@@ -2709,14 +2709,14 @@ impl crate::BSImagespaceShaderISVolumetricLightingBlurHCS {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105977, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105977, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x90)) } }
     /// `BSImagespaceShaderISVolumetricLightingBlurHCS::NiBoneMatrixSetterI_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 105976, rva 0x15078b8).
     /// `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderISVolumetricLightingBlurHCS * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105976, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105976, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
     /// `BSImagespaceShaderISVolumetricLightingBlurHCS::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 105772, rva 0x1502290).
     /// `BSImagespaceShaderISVolumetricLightingBlurHCS * ctor(BSImagespaceShaderISVolumetricLightingBlurHCS * this)`
     ///
@@ -2733,14 +2733,14 @@ impl crate::BSImagespaceShaderISVolumetricLightingBlurVCS {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105979, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105979, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x90)) } }
     /// `BSImagespaceShaderISVolumetricLightingBlurVCS::NiBoneMatrixSetterI_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 105978, rva 0x15078d0).
     /// `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderISVolumetricLightingBlurVCS * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105978, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105978, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
     /// `BSImagespaceShaderISVolumetricLightingBlurVCS::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 105773, rva 0x15024b0).
     /// `BSImagespaceShaderISVolumetricLightingBlurVCS * ctor(BSImagespaceShaderISVolumetricLightingBlurVCS * this)`
     ///
@@ -2757,14 +2757,14 @@ impl crate::BSImagespaceShaderISWaterBlend {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105981, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105981, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x90)) } }
     /// `BSImagespaceShaderISWaterBlend::NiBoneMatrixSetterI_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 105980, rva 0x15078e8).
     /// `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderISWaterBlend * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105980, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105980, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
     /// `BSImagespaceShaderISWaterBlend::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 105774, rva 0x15026d0).
     /// `BSImagespaceShaderISWaterBlend * ctor(BSImagespaceShaderISWaterBlend * this)`
     ///
@@ -2781,14 +2781,14 @@ impl crate::BSImagespaceShaderLensFlare {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(107004, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(107004, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x90)) } }
     /// `BSImagespaceShaderLensFlare::NiBoneMatrixSetterI_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 107003, rva 0x1530774).
     /// `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderLensFlare * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(107003, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(107003, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
     /// `BSImagespaceShaderLensFlare::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 106987, rva 0x152e670).
     /// `BSImagespaceShaderLensFlare * ctor(BSImagespaceShaderLensFlare * this)`
     ///
@@ -2805,14 +2805,14 @@ impl crate::BSImagespaceShaderLensFlareVisibility {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(107006, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(107006, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x90)) } }
     /// `BSImagespaceShaderLensFlareVisibility::NiBoneMatrixSetterI_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 107005, rva 0x153078c).
     /// `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderLensFlareVisibility * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(107005, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(107005, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
     /// `BSImagespaceShaderLensFlareVisibility::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 107001, rva 0x1530170).
     /// `BSImagespaceShaderLensFlareVisibility * ctor(BSImagespaceShaderLensFlareVisibility * this)`
     ///
@@ -2829,14 +2829,14 @@ impl crate::BSImagespaceShaderLocalMap {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105983, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105983, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x90)) } }
     /// `BSImagespaceShaderLocalMap::NiBoneMatrixSetterI_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 105982, rva 0x1507900).
     /// `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderLocalMap * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105982, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105982, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
 }
 
 impl crate::BSImagespaceShaderMap {
@@ -2846,14 +2846,14 @@ impl crate::BSImagespaceShaderMap {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105985, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105985, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x90)) } }
     /// `BSImagespaceShaderMap::NiBoneMatrixSetterI_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 105984, rva 0x1507918).
     /// `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderMap * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105984, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105984, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
 }
 
 impl crate::BSImagespaceShaderNoiseNormalmap {
@@ -2863,14 +2863,14 @@ impl crate::BSImagespaceShaderNoiseNormalmap {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105987, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105987, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x90)) } }
     /// `BSImagespaceShaderNoiseNormalmap::NiBoneMatrixSetterI_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 105986, rva 0x1507930).
     /// `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderNoiseNormalmap * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105986, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105986, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
     /// `BSImagespaceShaderNoiseNormalmap::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 105775, rva 0x1502920).
     /// `BSImagespaceShaderNoiseNormalmap * ctor(BSImagespaceShaderNoiseNormalmap * this)`
     ///
@@ -2887,14 +2887,14 @@ impl crate::BSImagespaceShaderNoiseScrollAndBlend {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105989, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105989, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x90)) } }
     /// `BSImagespaceShaderNoiseScrollAndBlend::NiBoneMatrixSetterI_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 105988, rva 0x1507948).
     /// `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderNoiseScrollAndBlend * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105988, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105988, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
     /// `BSImagespaceShaderNoiseScrollAndBlend::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 105776, rva 0x1502ba0).
     /// `BSImagespaceShaderNoiseScrollAndBlend * ctor(BSImagespaceShaderNoiseScrollAndBlend * this)`
     ///
@@ -2911,14 +2911,14 @@ impl crate::BSImagespaceShaderNonHDRBlur11 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105991, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105991, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x90)) } }
     /// `BSImagespaceShaderNonHDRBlur11::NiBoneMatrixSetterI_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 105990, rva 0x1507960).
     /// `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderNonHDRBlur11 * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105990, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105990, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
     /// `BSImagespaceShaderNonHDRBlur11::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 105777, rva 0x1502e20).
     /// `BSImagespaceShaderNonHDRBlur11 * ctor(BSImagespaceShaderNonHDRBlur11 * this)`
     ///
@@ -2935,14 +2935,14 @@ impl crate::BSImagespaceShaderNonHDRBlur13 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105993, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105993, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x90)) } }
     /// `BSImagespaceShaderNonHDRBlur13::NiBoneMatrixSetterI_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 105992, rva 0x1507978).
     /// `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderNonHDRBlur13 * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105992, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105992, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
     /// `BSImagespaceShaderNonHDRBlur13::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 105778, rva 0x15031e0).
     /// `BSImagespaceShaderNonHDRBlur13 * ctor(BSImagespaceShaderNonHDRBlur13 * this)`
     ///
@@ -2959,14 +2959,14 @@ impl crate::BSImagespaceShaderNonHDRBlur15 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105995, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105995, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x90)) } }
     /// `BSImagespaceShaderNonHDRBlur15::NiBoneMatrixSetterI_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 105994, rva 0x1507990).
     /// `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderNonHDRBlur15 * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105994, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105994, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
     /// `BSImagespaceShaderNonHDRBlur15::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 105779, rva 0x1503610).
     /// `BSImagespaceShaderNonHDRBlur15 * ctor(BSImagespaceShaderNonHDRBlur15 * this)`
     ///
@@ -2983,14 +2983,14 @@ impl crate::BSImagespaceShaderNonHDRBlur3 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105997, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105997, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x90)) } }
     /// `BSImagespaceShaderNonHDRBlur3::NiBoneMatrixSetterI_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 105996, rva 0x15079a8).
     /// `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderNonHDRBlur3 * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105996, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105996, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
     /// `BSImagespaceShaderNonHDRBlur3::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 105780, rva 0x1503aa0).
     /// `BSImagespaceShaderNonHDRBlur3 * ctor(BSImagespaceShaderNonHDRBlur3 * this)`
     ///
@@ -3007,14 +3007,14 @@ impl crate::BSImagespaceShaderNonHDRBlur5 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105999, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105999, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x90)) } }
     /// `BSImagespaceShaderNonHDRBlur5::NiBoneMatrixSetterI_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 105998, rva 0x15079c0).
     /// `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderNonHDRBlur5 * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105998, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105998, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
     /// `BSImagespaceShaderNonHDRBlur5::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 105781, rva 0x1503cc0).
     /// `BSImagespaceShaderNonHDRBlur5 * ctor(BSImagespaceShaderNonHDRBlur5 * this)`
     ///
@@ -3031,14 +3031,14 @@ impl crate::BSImagespaceShaderNonHDRBlur7 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(106001, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(106001, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x90)) } }
     /// `BSImagespaceShaderNonHDRBlur7::NiBoneMatrixSetterI_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 106000, rva 0x15079d8).
     /// `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderNonHDRBlur7 * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(106000, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(106000, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
     /// `BSImagespaceShaderNonHDRBlur7::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 105782, rva 0x1503f50).
     /// `BSImagespaceShaderNonHDRBlur7 * ctor(BSImagespaceShaderNonHDRBlur7 * this)`
     ///
@@ -3055,14 +3055,14 @@ impl crate::BSImagespaceShaderNonHDRBlur9 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(106003, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(106003, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x90)) } }
     /// `BSImagespaceShaderNonHDRBlur9::NiBoneMatrixSetterI_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 106002, rva 0x15079f0).
     /// `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderNonHDRBlur9 * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(106002, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(106002, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
     /// `BSImagespaceShaderNonHDRBlur9::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 105783, rva 0x1504240).
     /// `BSImagespaceShaderNonHDRBlur9 * ctor(BSImagespaceShaderNonHDRBlur9 * this)`
     ///
@@ -3079,14 +3079,14 @@ impl crate::BSImagespaceShaderRadialBlur {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(106005, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(106005, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x90)) } }
     /// `BSImagespaceShaderRadialBlur::NiBoneMatrixSetterI_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 106004, rva 0x1507a08).
     /// `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderRadialBlur * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(106004, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(106004, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
     /// `BSImagespaceShaderRadialBlur::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 105784, rva 0x1504590).
     /// `BSImagespaceShaderRadialBlur * ctor(BSImagespaceShaderRadialBlur * this)`
     ///
@@ -3103,14 +3103,14 @@ impl crate::BSImagespaceShaderRadialBlurHigh {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(106007, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(106007, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x90)) } }
     /// `BSImagespaceShaderRadialBlurHigh::NiBoneMatrixSetterI_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 106006, rva 0x1507a20).
     /// `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderRadialBlurHigh * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(106006, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(106006, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
     /// `BSImagespaceShaderRadialBlurHigh::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 105785, rva 0x1504730).
     /// `BSImagespaceShaderRadialBlurHigh * ctor(BSImagespaceShaderRadialBlurHigh * this)`
     ///
@@ -3127,14 +3127,14 @@ impl crate::BSImagespaceShaderRadialBlurMedium {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(106009, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(106009, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x90)) } }
     /// `BSImagespaceShaderRadialBlurMedium::NiBoneMatrixSetterI_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 106008, rva 0x1507a38).
     /// `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderRadialBlurMedium * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(106008, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(106008, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
     /// `BSImagespaceShaderRadialBlurMedium::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 105786, rva 0x15048d0).
     /// `BSImagespaceShaderRadialBlurMedium * ctor(BSImagespaceShaderRadialBlurMedium * this)`
     ///
@@ -3151,14 +3151,14 @@ impl crate::BSImagespaceShaderReflectionBlurHCS {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(106011, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(106011, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x90)) } }
     /// `BSImagespaceShaderReflectionBlurHCS::NiBoneMatrixSetterI_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 106010, rva 0x1507a50).
     /// `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderReflectionBlurHCS * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(106010, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(106010, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
     /// `BSImagespaceShaderReflectionBlurHCS::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 105787, rva 0x1504a70).
     /// `BSImagespaceShaderReflectionBlurHCS * ctor(BSImagespaceShaderReflectionBlurHCS * this)`
     ///
@@ -3175,14 +3175,14 @@ impl crate::BSImagespaceShaderReflectionBlurVCS {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(106013, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(106013, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x90)) } }
     /// `BSImagespaceShaderReflectionBlurVCS::NiBoneMatrixSetterI_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 106012, rva 0x1507a68).
     /// `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderReflectionBlurVCS * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(106012, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(106012, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
     /// `BSImagespaceShaderReflectionBlurVCS::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 105788, rva 0x1504c90).
     /// `BSImagespaceShaderReflectionBlurVCS * ctor(BSImagespaceShaderReflectionBlurVCS * this)`
     ///
@@ -3199,14 +3199,14 @@ impl crate::BSImagespaceShaderReflectionsDebugSpecMask {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(106015, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(106015, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x90)) } }
     /// `BSImagespaceShaderReflectionsDebugSpecMask::NiBoneMatrixSetterI_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 106014, rva 0x1507a80).
     /// `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderReflectionsDebugSpecMask * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(106014, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(106014, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
     /// `BSImagespaceShaderReflectionsDebugSpecMask::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 105789, rva 0x1504eb0).
     /// `BSImagespaceShaderReflectionsDebugSpecMask * ctor(BSImagespaceShaderReflectionsDebugSpecMask * this)`
     ///
@@ -3223,14 +3223,14 @@ impl crate::BSImagespaceShaderReflectionsRayTracing {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(106017, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(106017, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x90)) } }
     /// `BSImagespaceShaderReflectionsRayTracing::NiBoneMatrixSetterI_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 106016, rva 0x1507a98).
     /// `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderReflectionsRayTracing * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(106016, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(106016, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
     /// `BSImagespaceShaderReflectionsRayTracing::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 105790, rva 0x1505100).
     /// `BSImagespaceShaderReflectionsRayTracing * ctor(BSImagespaceShaderReflectionsRayTracing * this)`
     ///
@@ -3247,14 +3247,14 @@ impl crate::BSImagespaceShaderRefraction {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(106019, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(106019, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x90)) } }
     /// `BSImagespaceShaderRefraction::NiBoneMatrixSetterI_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 106018, rva 0x1507ab0).
     /// `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderRefraction * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(106018, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(106018, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
     /// `BSImagespaceShaderRefraction::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 105791, rva 0x1505350).
     /// `BSImagespaceShaderRefraction * ctor(BSImagespaceShaderRefraction * this)`
     ///
@@ -3271,14 +3271,14 @@ impl crate::BSImagespaceShaderTextureMask {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(106021, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(106021, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x90)) } }
     /// `BSImagespaceShaderTextureMask::NiBoneMatrixSetterI_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 106020, rva 0x1507ac8).
     /// `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderTextureMask * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(106020, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(106020, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
 }
 
 impl crate::BSImagespaceShaderVolumetricLighting {
@@ -3288,14 +3288,14 @@ impl crate::BSImagespaceShaderVolumetricLighting {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(106023, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(106023, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x90)) } }
     /// `BSImagespaceShaderVolumetricLighting::NiBoneMatrixSetterI_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 106022, rva 0x1507ae0).
     /// `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderVolumetricLighting * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(106022, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(106022, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
     /// `BSImagespaceShaderVolumetricLighting::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 105792, rva 0x1505500).
     /// `BSImagespaceShaderVolumetricLighting * ctor(BSImagespaceShaderVolumetricLighting * this)`
     ///
@@ -3312,14 +3312,14 @@ impl crate::BSImagespaceShaderWaterBlendHeightmaps {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(106025, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(106025, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x90)) } }
     /// `BSImagespaceShaderWaterBlendHeightmaps::NiBoneMatrixSetterI_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 106024, rva 0x1507af8).
     /// `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderWaterBlendHeightmaps * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(106024, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(106024, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
     /// `BSImagespaceShaderWaterBlendHeightmaps::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 105793, rva 0x15059c0).
     /// `BSImagespaceShaderWaterBlendHeightmaps * ctor(BSImagespaceShaderWaterBlendHeightmaps * this)`
     ///
@@ -3336,14 +3336,14 @@ impl crate::BSImagespaceShaderWaterDisplacementClearSimulation {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(106027, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(106027, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x90)) } }
     /// `BSImagespaceShaderWaterDisplacementClearSimulation::NiBoneMatrixSetterI_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 106026, rva 0x1507b10).
     /// `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderWaterDisplacementClearSimulation * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(106026, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(106026, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
 }
 
 impl crate::BSImagespaceShaderWaterDisplacementNormals {
@@ -3353,14 +3353,14 @@ impl crate::BSImagespaceShaderWaterDisplacementNormals {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(106029, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(106029, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x90)) } }
     /// `BSImagespaceShaderWaterDisplacementNormals::NiBoneMatrixSetterI_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 106028, rva 0x1507b28).
     /// `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderWaterDisplacementNormals * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(106028, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(106028, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
     /// `BSImagespaceShaderWaterDisplacementNormals::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 105794, rva 0x1505c70).
     /// `BSImagespaceShaderWaterDisplacementNormals * ctor(BSImagespaceShaderWaterDisplacementNormals * this)`
     ///
@@ -3377,14 +3377,14 @@ impl crate::BSImagespaceShaderWaterDisplacementRainRipple {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(106031, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(106031, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x90)) } }
     /// `BSImagespaceShaderWaterDisplacementRainRipple::NiBoneMatrixSetterI_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 106030, rva 0x1507b40).
     /// `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderWaterDisplacementRainRipple * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(106030, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(106030, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
 }
 
 impl crate::BSImagespaceShaderWaterDisplacementTexOffset {
@@ -3394,14 +3394,14 @@ impl crate::BSImagespaceShaderWaterDisplacementTexOffset {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(106033, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(106033, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x90)) } }
     /// `BSImagespaceShaderWaterDisplacementTexOffset::NiBoneMatrixSetterI_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 106032, rva 0x1507b58).
     /// `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderWaterDisplacementTexOffset * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(106032, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(106032, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
     /// `BSImagespaceShaderWaterDisplacementTexOffset::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 105795, rva 0x1505ef0).
     /// `BSImagespaceShaderWaterDisplacementTexOffset * ctor(BSImagespaceShaderWaterDisplacementTexOffset * this)`
     ///
@@ -3418,14 +3418,14 @@ impl crate::BSImagespaceShaderWaterDisplacementWadingRipple {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(106035, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(106035, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x90)) } }
     /// `BSImagespaceShaderWaterDisplacementWadingRipple::NiBoneMatrixSetterI_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 106034, rva 0x1507b70).
     /// `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderWaterDisplacementWadingRipple * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(106034, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(106034, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
 }
 
 impl crate::BSImagespaceShaderWaterFlow {
@@ -3435,14 +3435,14 @@ impl crate::BSImagespaceShaderWaterFlow {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(106037, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(106037, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x90)) } }
     /// `BSImagespaceShaderWaterFlow::NiBoneMatrixSetterI_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 106036, rva 0x1507b88).
     /// `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderWaterFlow * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(106036, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(106036, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
     /// `BSImagespaceShaderWaterFlow::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 105796, rva 0x1506170).
     /// `BSImagespaceShaderWaterFlow * ctor(BSImagespaceShaderWaterFlow * this)`
     ///
@@ -3459,14 +3459,14 @@ impl crate::BSImagespaceShaderWaterRainHeightmap {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(106039, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(106039, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x90)) } }
     /// `BSImagespaceShaderWaterRainHeightmap::NiBoneMatrixSetterI_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 106038, rva 0x1507ba0).
     /// `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderWaterRainHeightmap * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(106038, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(106038, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
     /// `BSImagespaceShaderWaterRainHeightmap::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 105797, rva 0x1506490).
     /// `BSImagespaceShaderWaterRainHeightmap * ctor(BSImagespaceShaderWaterRainHeightmap * this)`
     ///
@@ -3483,14 +3483,14 @@ impl crate::BSImagespaceShaderWaterSmoothHeightmap {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(106041, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(106041, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x90)) } }
     /// `BSImagespaceShaderWaterSmoothHeightmap::NiBoneMatrixSetterI_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 106040, rva 0x1507bb8).
     /// `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderWaterSmoothHeightmap * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(106040, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(106040, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
     /// `BSImagespaceShaderWaterSmoothHeightmap::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 105798, rva 0x1506710).
     /// `BSImagespaceShaderWaterSmoothHeightmap * ctor(BSImagespaceShaderWaterSmoothHeightmap * this)`
     ///
@@ -3507,14 +3507,14 @@ impl crate::BSImagespaceShaderWaterWadingHeightmap {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(106043, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(106043, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x90)) } }
     /// `BSImagespaceShaderWaterWadingHeightmap::NiBoneMatrixSetterI_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 106042, rva 0x1507bd0).
     /// `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderWaterWadingHeightmap * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(106042, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(106042, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
     /// `BSImagespaceShaderWaterWadingHeightmap::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 105799, rva 0x1506990).
     /// `BSImagespaceShaderWaterWadingHeightmap * ctor(BSImagespaceShaderWaterWadingHeightmap * this)`
     ///
@@ -3531,14 +3531,14 @@ impl crate::BSImagespaceShaderWorldMap {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(106045, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(106045, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x90)) } }
     /// `BSImagespaceShaderWorldMap::NiBoneMatrixSetterI_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 106044, rva 0x1507be8).
     /// `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderWorldMap * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(106044, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(106044, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
     /// `BSImagespaceShaderWorldMap::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 105800, rva 0x1506c10).
     /// `BSImagespaceShaderWorldMap * ctor(BSImagespaceShaderWorldMap * this)`
     ///
@@ -3555,14 +3555,14 @@ impl crate::BSImagespaceShaderWorldMapNoSkyBlur {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(106047, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(106047, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x90)) } }
     /// `BSImagespaceShaderWorldMapNoSkyBlur::NiBoneMatrixSetterI_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 106046, rva 0x1507c00).
     /// `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderWorldMapNoSkyBlur * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(106046, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(106046, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
     /// `BSImagespaceShaderWorldMapNoSkyBlur::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 105801, rva 0x1506e30).
     /// `BSImagespaceShaderWorldMapNoSkyBlur * ctor(BSImagespaceShaderWorldMapNoSkyBlur * this)`
     ///
@@ -3971,7 +3971,7 @@ impl crate::BSModelDB__QueuedHandles {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bs_resource_i_entry_db_post_flush_notify_vdtor(&self) -> u64 { unsafe { function!(11370, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bs_resource_i_entry_db_post_flush_notify_vdtor(&self) -> u64 { unsafe { function!(11370, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x38)) } }
     /// `BSModelDB::QueuedHandles::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 75787, rva 0xfc9870).
     /// `undefined dtor(QueuedHandles * this)`
     ///
@@ -4414,7 +4414,7 @@ impl crate::BSParticleShader {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(108353, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(108353, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
     /// `BSParticleShader::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 108342, rva 0x15797f0).
     /// `BSParticleShader * ctor(BSParticleShader * this)`
     ///
@@ -4792,7 +4792,7 @@ impl crate::BSQueuedResourceCollection_BSResource__EntryDB_BSFaceGenDB__TRI__DBT
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bs_resource_i_entry_db_post_flush_notify_vdtor(&self) -> u64 { unsafe { function!(26856, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bs_resource_i_entry_db_post_flush_notify_vdtor(&self) -> u64 { unsafe { function!(26856, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x38)) } }
 }
 
 impl crate::BSQueuedResourceCollection_BSResource__EntryDB_BSModelDB__DBTraits_1 {
@@ -4802,7 +4802,7 @@ impl crate::BSQueuedResourceCollection_BSResource__EntryDB_BSModelDB__DBTraits_1
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bs_resource_i_entry_db_post_flush_notify_vdtor(&self) -> u64 { unsafe { function!(16888, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bs_resource_i_entry_db_post_flush_notify_vdtor(&self) -> u64 { unsafe { function!(16888, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x38)) } }
 }
 
 impl crate::BSQueuedResourceCollection_BSResource__EntryDB_BSModelDB__DBTraits_2 {
@@ -4812,7 +4812,7 @@ impl crate::BSQueuedResourceCollection_BSResource__EntryDB_BSModelDB__DBTraits_2
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bs_resource_i_entry_db_post_flush_notify_vdtor(&self) -> u64 { unsafe { function!(11366, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bs_resource_i_entry_db_post_flush_notify_vdtor(&self) -> u64 { unsafe { function!(11366, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x38)) } }
 }
 
 impl crate::BSQueuedResourceCollection_BSResource__EntryDB_BSModelDB__DBTraits_42 {
@@ -4822,7 +4822,7 @@ impl crate::BSQueuedResourceCollection_BSResource__EntryDB_BSModelDB__DBTraits_4
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bs_resource_i_entry_db_post_flush_notify_vdtor(&self) -> u64 { unsafe { function!(13180, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bs_resource_i_entry_db_post_flush_notify_vdtor(&self) -> u64 { unsafe { function!(13180, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x38)) } }
 }
 
 impl crate::BSQueuedResourceCollection_BSResource__EntryDB_BSTextureDB__DBTraits_2 {
@@ -4832,7 +4832,7 @@ impl crate::BSQueuedResourceCollection_BSResource__EntryDB_BSTextureDB__DBTraits
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bs_resource_i_entry_db_post_flush_notify_vdtor(&self) -> u64 { unsafe { function!(76057, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bs_resource_i_entry_db_post_flush_notify_vdtor(&self) -> u64 { unsafe { function!(76057, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x38)) } }
 }
 
 impl crate::BSQueuedResourceCollection_BSResource__EntryDB_BShkbHkxDB__DBTraits_2 {
@@ -4842,7 +4842,7 @@ impl crate::BSQueuedResourceCollection_BSResource__EntryDB_BShkbHkxDB__DBTraits_
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bs_resource_i_entry_db_post_flush_notify_vdtor(&self) -> u64 { unsafe { function!(63499, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bs_resource_i_entry_db_post_flush_notify_vdtor(&self) -> u64 { unsafe { function!(63499, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x38)) } }
 }
 
 impl crate::BSQueuedResourceCollectionBase {
@@ -4852,21 +4852,21 @@ impl crate::BSQueuedResourceCollectionBase {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bs_resource_i_entry_db_post_flush_notify_vdtor(&self) -> u64 { unsafe { function!(75771, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bs_resource_i_entry_db_post_flush_notify_vdtor(&self) -> u64 { unsafe { function!(75771, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x38)) } }
     /// `BSQueuedResourceCollectionBase::BSResource_IEntryDB_PostFlushNotify_vfunc_1` (decompiler signature, tier high; ledger rtti evidence, name medium; id 75766, rva 0xfc8540).
     /// `undefined1 BSResource_IEntryDB_PostFlushNotify_vfunc_1(BSQueuedResourceCollectionBase * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bs_resource_i_entry_db_post_flush_notify_vfunc_1(&self) -> u8 { unsafe { function!(75766, (*const Self) -> u8)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bs_resource_i_entry_db_post_flush_notify_vfunc_1(&self) -> u8 { unsafe { function!(75766, (*const Self) -> u8)(core::ptr::from_ref(self).byte_add(0x38)) } }
     /// `BSQueuedResourceCollectionBase::BSResource_IEntryDB_PostFlushNotify_vfunc_2` (decompiler signature, tier high; ledger rtti evidence, name medium; id 75767, rva 0xfc8610).
     /// `undefined BSResource_IEntryDB_PostFlushNotify_vfunc_2(BSQueuedResourceCollectionBase * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bs_resource_i_entry_db_post_flush_notify_vfunc_2(&self) -> u64 { unsafe { function!(75767, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bs_resource_i_entry_db_post_flush_notify_vfunc_2(&self) -> u64 { unsafe { function!(75767, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x38)) } }
     /// `BSQueuedResourceCollectionBase::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 75760, rva 0xfc8380).
     /// `BSQueuedResourceCollectionBase * ctor(BSQueuedResourceCollectionBase * this)`
     ///
@@ -4904,7 +4904,7 @@ impl crate::BSRagdollContactListenerModifier {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn hkp_contact_listener_vdtor(&self) -> u64 { unsafe { function!(63096, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn hkp_contact_listener_vdtor(&self) -> u64 { unsafe { function!(63096, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x50)) } }
 }
 
 impl crate::BSRagdollContactListenerModifierInterface {
@@ -5082,28 +5082,28 @@ impl crate::BSResource___anon_5F811FAA__LooseFileAsyncStream {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bs_resource_async_stream_vdtor(&self) -> u64 { unsafe { function!(76058, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bs_resource_async_stream_vdtor(&self) -> u64 { unsafe { function!(76058, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x30)) } }
     /// `BSResource::_anon_5F811FAA::LooseFileAsyncStream::BSResource_AsyncStream_vfunc_1` (decompiler signature, tier high; ledger rtti evidence, name high; id 70030, rva 0xed5df0).
     /// `undefined8 BSResource_AsyncStream_vfunc_1(LooseFileAsyncStream * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bs_resource_async_stream_vfunc_1(&self) -> u64 { unsafe { function!(70030, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bs_resource_async_stream_vfunc_1(&self) -> u64 { unsafe { function!(70030, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x30)) } }
     /// `BSResource::_anon_5F811FAA::LooseFileAsyncStream::BSResource_AsyncStream_vfunc_2` (decompiler signature, tier high; ledger rtti evidence, name high; id 70024, rva 0xed5c80).
     /// `undefined BSResource_AsyncStream_vfunc_2(LooseFileAsyncStream * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bs_resource_async_stream_vfunc_2(&self) -> u64 { unsafe { function!(70024, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bs_resource_async_stream_vfunc_2(&self) -> u64 { unsafe { function!(70024, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x30)) } }
     /// `BSResource::_anon_5F811FAA::LooseFileAsyncStream::BSResource_AsyncStream_vfunc_4` (decompiler signature, tier high; ledger rtti evidence, name high; id 70027, rva 0xed5d50).
     /// `undefined BSResource_AsyncStream_vfunc_4(LooseFileAsyncStream * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bs_resource_async_stream_vfunc_4(&self) -> u64 { unsafe { function!(70027, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bs_resource_async_stream_vfunc_4(&self) -> u64 { unsafe { function!(70027, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x30)) } }
     /// `BSResource::_anon_5F811FAA::LooseFileAsyncStream::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 70008, rva 0xed5580).
     /// `undefined ctor(LooseFileAsyncStream * this)`
     ///
@@ -5120,21 +5120,21 @@ impl crate::BSResource___anon_5F811FAA__LooseFileStream {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bs_resource_stream_vdtor(&self) -> u64 { unsafe { function!(70019, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bs_resource_stream_vdtor(&self) -> u64 { unsafe { function!(70019, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x30)) } }
     /// `BSResource::_anon_5F811FAA::LooseFileStream::BSResource_Stream_vfunc_4` (decompiler signature, tier high; ledger rtti evidence, name high; id 70028, rva 0xed5d60).
     /// `undefined BSResource_Stream_vfunc_4(LooseFileStream * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bs_resource_stream_vfunc_4(&self) -> u64 { unsafe { function!(70028, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bs_resource_stream_vfunc_4(&self) -> u64 { unsafe { function!(70028, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x30)) } }
     /// `BSResource::_anon_5F811FAA::LooseFileStream::BSResource_Stream_vfunc_9` (decompiler signature, tier high; ledger rtti evidence, name high; id 70034, rva 0xed62b0).
     /// `undefined8 BSResource_Stream_vfunc_9(LooseFileStream * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bs_resource_stream_vfunc_9(&self) -> u64 { unsafe { function!(70034, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bs_resource_stream_vfunc_9(&self) -> u64 { unsafe { function!(70034, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x30)) } }
     /// `BSResource::_anon_5F811FAA::LooseFileStream::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 70009, rva 0xed55c0).
     /// `undefined ctor(LooseFileStream * this)`
     ///
@@ -5205,21 +5205,21 @@ impl crate::BSResourceStreamParser {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bs_stream_parser_data_vdtor(&self) -> u64 { unsafe { function!(82357, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bs_stream_parser_data_vdtor(&self) -> u64 { unsafe { function!(82357, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x38)) } }
     /// `BSResourceStreamParser::BSStreamParserData_vfunc_1` (decompiler signature, tier high; ledger rtti evidence, name high; id 108174, rva 0x15722b0).
     /// `undefined BSStreamParserData_vfunc_1(BSResourceStreamParser * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bs_stream_parser_data_vfunc_1(&self) -> u64 { unsafe { function!(108174, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bs_stream_parser_data_vfunc_1(&self) -> u64 { unsafe { function!(108174, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x38)) } }
     /// `BSResourceStreamParser::BSStreamParserData_vfunc_3` (decompiler signature, tier high; ledger rtti evidence, name high; id 108176, rva 0x15722d0).
     /// `undefined4 * BSStreamParserData_vfunc_3(BSResourceStreamParser * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bs_stream_parser_data_vfunc_3(&self) -> *mut u32 { unsafe { function!(108176, (*const Self) -> *mut u32)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bs_stream_parser_data_vfunc_3(&self) -> *mut u32 { unsafe { function!(108176, (*const Self) -> *mut u32)(core::ptr::from_ref(self).byte_add(0x38)) } }
 }
 
 impl crate::BSRotAccumTransfInterpolator {
@@ -5330,7 +5330,7 @@ impl crate::BSSkyShader {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(107424, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(107424, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
     /// `BSSkyShader::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 107398, rva 0x15520e0).
     /// `BSSkyShader * ctor(BSSkyShader * this)`
     ///
@@ -6722,7 +6722,7 @@ impl crate::BSTObjectDictionary_BSTSmartPointer_BSResponse_BSFixedStringCI_Actor
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn preload_responses_initialization_policy_bst_smart_pointer_bs_response_bs_fixed_string_ci_actor_bs_fixed_str_879203a5b7b6(&self) -> u64 { unsafe { function!(43637, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn preload_responses_initialization_policy_bst_smart_pointer_bs_response_bs_fixed_string_ci_actor_bs_fixed_str_879203a5b7b6(&self) -> u64 { unsafe { function!(43637, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x8)) } }
 }
 
 impl crate::BSTObjectDictionary_BSTSmartPointer_IHandlerFunctor_Actor_BSFixedStringCI_BSTSmartPointerIntrusi_3629d6d7098e {
@@ -6732,7 +6732,7 @@ impl crate::BSTObjectDictionary_BSTSmartPointer_IHandlerFunctor_Actor_BSFixedStr
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn no_initialization_policy_bst_smart_pointer_i_handler_functor_actor_bs_fixed_string_ci_bst_smart_pointer_intr_61f8dd9c505b(&self) -> u64 { unsafe { function!(43638, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn no_initialization_policy_bst_smart_pointer_i_handler_functor_actor_bs_fixed_string_ci_bst_smart_pointer_intr_61f8dd9c505b(&self) -> u64 { unsafe { function!(43638, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x8)) } }
 }
 
 impl crate::BSTStaticFreeList_ActorMovementMessageMap_16__RawMessageHandlerWrapperType_16 {
@@ -6947,7 +6947,7 @@ impl crate::BSTerrainEffect {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_position_player_event_vdtor(&self) -> u64 { unsafe { function!(30197, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bst_event_sink_position_player_event_vdtor(&self) -> u64 { unsafe { function!(30197, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x30)) } }
     /// `BSTerrainEffect::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 30174, rva 0x4b6ec0).
     /// `BSTerrainEffect * ctor(BSTerrainEffect * this)`
     ///
@@ -6964,7 +6964,7 @@ impl crate::BSTextureDB__QueuedHandles {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bs_resource_i_entry_db_post_flush_notify_vdtor(&self) -> u64 { unsafe { function!(524232, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bs_resource_i_entry_db_post_flush_notify_vdtor(&self) -> u64 { unsafe { function!(524232, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x38)) } }
     /// `BSTextureDB::QueuedHandles::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 76035, rva 0xfd6790).
     /// `QueuedHandles * ctor(QueuedHandles * this)`
     ///
@@ -7103,7 +7103,7 @@ impl crate::BSWaterShader {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(107373, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(107373, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
     /// `BSWaterShader::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 107358, rva 0x154d080).
     /// `BSWaterShader * ctor(BSWaterShader * this)`
     ///

@@ -84,7 +84,7 @@ impl crate::CursorMenu {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn menu_event_handler_vfunc_1(&self, param_1: *mut i64) -> u8 { unsafe { function!(51497, (*const Self, *mut i64) -> u8)(core::ptr::from_ref(self), param_1) } }
+    pub unsafe fn menu_event_handler_vfunc_1(&self, param_1: *mut i64) -> u8 { unsafe { function!(51497, (*const Self, *mut i64) -> u8)(core::ptr::from_ref(self).byte_add(0x30), param_1) } }
     /// `CursorMenu::MenuEventHandler_vfunc_5` (decompiler signature, tier low; ledger rtti evidence, name high; id 51499, rva 0x92a1f0).
     /// `undefined1 MenuEventHandler_vfunc_5(void)`
     ///
@@ -115,7 +115,7 @@ impl crate::DialogueMenu {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_menu_open_close_event_vfunc_1(&self, param_1: *mut i64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(51512, (*const Self, *mut i64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn bst_event_sink_menu_open_close_event_vfunc_1(&self, param_1: *mut i64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(51512, (*const Self, *mut i64, u64, u64) -> u64)(core::ptr::from_ref(self).byte_add(0x30), param_1, param_2, param_3) } }
     /// `DialogueMenu::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 51519, rva 0x92bb20).
     /// `DialogueMenu * vdtor(DialogueMenu * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     ///
@@ -149,7 +149,7 @@ impl crate::HUDMenu {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_user_event_enabled_event_vfunc_1(&self, param_1: *mut u8, param_2: u64, param_3: u64) -> u64 { unsafe { function!(51643, (*const Self, *mut u8, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn bst_event_sink_user_event_enabled_event_vfunc_1(&self, param_1: *mut u8, param_2: u64, param_3: u64) -> u64 { unsafe { function!(51643, (*const Self, *mut u8, u64, u64) -> u64)(core::ptr::from_ref(self).byte_add(0x30), param_1, param_2, param_3) } }
 }
 
 impl crate::IUIMessageData {
@@ -220,21 +220,21 @@ impl crate::MainMenu {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_bs_save_data_event_vfunc_1(&self, param_1: i64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(52112, (*const Self, i64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn bst_event_sink_bs_save_data_event_vfunc_1(&self, param_1: i64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(52112, (*const Self, i64, u64, u64) -> u64)(core::ptr::from_ref(self).byte_add(0x38), param_1, param_2, param_3) } }
     /// `MainMenu::BSTEventSink_BSSystemEvent_vfunc_1` (decompiler signature, tier low; ledger rtti evidence, name high; id 52111, rva 0x958340).
     /// `undefined8 BSTEventSink_BSSystemEvent_vfunc_1(MainMenu * this, longlong param_1, ulonglong param_2, ulonglong param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_bs_system_event_vfunc_1(&self, param_1: i64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(52111, (*const Self, i64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn bst_event_sink_bs_system_event_vfunc_1(&self, param_1: i64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(52111, (*const Self, i64, u64, u64) -> u64)(core::ptr::from_ref(self).byte_add(0x30), param_1, param_2, param_3) } }
     /// `MainMenu::GFxFunctionHandler_vfunc_1` (decompiler signature, tier low; ledger rtti evidence, name high; id 52144, rva 0x95b130).
     /// `undefined GFxFunctionHandler_vfunc_1(MainMenu * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn g_fx_function_handler_vfunc_1(&self, param_1: i64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(52144, (*const Self, i64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn g_fx_function_handler_vfunc_1(&self, param_1: i64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(52144, (*const Self, i64, u64, u64) -> u64)(core::ptr::from_ref(self).byte_add(0x40), param_1, param_2, param_3) } }
     /// `MainMenu::ctor` (decompiler signature, tier low; ledger layout_inference evidence, name high; id 52108, rva 0x957e10).
     /// `MainMenu * ctor(MainMenu * this, undefined8 param_1, _Func_impl_no_alloc<<lambda_4b7cf2aed8fefcef307916bb669dedaf>,void,BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSUserContent,BSTArrayHeapAllocator>_const&___ptr64>_vtbl * * param_2, undefined8 param_3)`
     ///
@@ -265,7 +265,7 @@ impl crate::MenuControls {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_menu_mode_change_event_vfunc_1(&self, param_1: i64) -> u64 { unsafe { function!(52201, (*const Self, i64) -> u64)(core::ptr::from_ref(self), param_1) } }
+    pub unsafe fn bst_event_sink_menu_mode_change_event_vfunc_1(&self, param_1: i64) -> u64 { unsafe { function!(52201, (*const Self, i64) -> u64)(core::ptr::from_ref(self).byte_add(0x8), param_1) } }
     /// `MenuControls::dtor` (decompiler signature, tier low; ledger layout_inference evidence, name high; id 52199, rva 0x95ee10).
     /// `undefined dtor(MenuControls * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     ///

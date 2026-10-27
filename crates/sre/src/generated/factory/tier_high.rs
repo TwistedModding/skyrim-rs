@@ -20,7 +20,7 @@ impl crate::AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicyFindC
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn auto_register_path_builder_factory_combat_pathing_request_generic_combat_pathing_goal_policy_find_cover_comb_6400c448eac2(&self) -> u64 { unsafe { function!(49798, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn auto_register_path_builder_factory_combat_pathing_request_generic_combat_pathing_goal_policy_find_cover_comb_6400c448eac2(&self) -> u64 { unsafe { function!(49798, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x8)) } }
     /// `AutoRegisterCombatPathingRequestGeneric<CombatPathingGoalPolicyFindCover,CombatPathingSearchPolicyStandard,CombatPathDestinationNone>::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 49859, rva 0x8d6380).
     /// `AutoRegisterCombatPathingRequestGeneric<CombatPathingGoalPolicyFindCover,CombatPathingSearchPolicyStandard,CombatPathDestinationNone> * ctor(AutoRegisterCombatPathingRequestGeneric<CombatPathingGoalPolicyFindCover,CombatPathingSearchPolicyStandard,CombatPathDestinationNone> * this)`
     ///
@@ -34,7 +34,7 @@ impl crate::AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicyFindC
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vfunc_0_vt10(&self) -> u64 { unsafe { function!(49799, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn vfunc_0_vt10(&self) -> u64 { unsafe { function!(49799, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
 }
 
 impl crate::AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicyFindHideCover_CombatPathingSearch_66d976d86545 {
@@ -44,14 +44,14 @@ impl crate::AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicyFindH
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn auto_register_path_builder_factory_combat_pathing_request_generic_combat_pathing_goal_policy_find_hide_cover__5b642284f25e(&self) -> u64 { unsafe { function!(48522, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn auto_register_path_builder_factory_combat_pathing_request_generic_combat_pathing_goal_policy_find_hide_cover__5b642284f25e(&self) -> u64 { unsafe { function!(48522, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x8)) } }
     /// `AutoRegisterCombatPathingRequestGeneric<CombatPathingGoalPolicyFindHideCover,CombatPathingSearchPolicyStandard,CombatPathDestinationNone>::vfunc_0_vt10` (decompiler signature, tier high; ledger rtti evidence, name high; id 48523, rva 0x89e944).
     /// `undefined vfunc_0_vt10(AutoRegisterCombatPathingRequestGeneric<CombatPathingGoalPolicyFindHideCover,CombatPathingSearchPolicyStandard,CombatPathDestinationNone> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vfunc_0_vt10(&self) -> u64 { unsafe { function!(48523, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn vfunc_0_vt10(&self) -> u64 { unsafe { function!(48523, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
 }
 
 impl crate::AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicyFindTargetLocation_CombatPathingS_490a9d51f8c9 {
@@ -61,7 +61,7 @@ impl crate::AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicyFindT
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn auto_register_path_builder_factory_combat_pathing_request_generic_combat_pathing_goal_policy_find_target_loca_4e4b76957c58(&self) -> u64 { unsafe { function!(47102, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn auto_register_path_builder_factory_combat_pathing_request_generic_combat_pathing_goal_policy_find_target_loca_4e4b76957c58(&self) -> u64 { unsafe { function!(47102, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x8)) } }
     /// `AutoRegisterCombatPathingRequestGeneric<CombatPathingGoalPolicyFindTargetLocation,CombatPathingSearchPolicyStandard,CombatPathDestinationRef>::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 47120, rva 0x860230).
     /// `AutoRegisterCombatPathingRequestGeneric<CombatPathingGoalPolicyFindTargetLocation,CombatPathingSearchPolicyStandard,CombatPathDestinationRef> * ctor(AutoRegisterCombatPathingRequestGeneric<CombatPathingGoalPolicyFindTargetLocation,CombatPathingSearchPolicyStandard,CombatPathDestinationRef> * this)`
     ///
@@ -75,7 +75,7 @@ impl crate::AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicyFindT
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vfunc_0_vt10(&self) -> u64 { unsafe { function!(47103, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn vfunc_0_vt10(&self) -> u64 { unsafe { function!(47103, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
 }
 
 impl crate::AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicyFlee_CombatPathingSearchPolicySta_6062d1a3211b {
@@ -85,14 +85,14 @@ impl crate::AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicyFlee_
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn auto_register_path_builder_factory_combat_pathing_request_generic_combat_pathing_goal_policy_flee_combat_pat_8250c6461c28(&self) -> u64 { unsafe { function!(48524, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn auto_register_path_builder_factory_combat_pathing_request_generic_combat_pathing_goal_policy_flee_combat_pat_8250c6461c28(&self) -> u64 { unsafe { function!(48524, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x8)) } }
     /// `AutoRegisterCombatPathingRequestGeneric<CombatPathingGoalPolicyFlee,CombatPathingSearchPolicyStandard,CombatPathDestinationNone>::vfunc_0_vt10` (decompiler signature, tier high; ledger rtti evidence, name high; id 48525, rva 0x89e95c).
     /// `undefined vfunc_0_vt10(AutoRegisterCombatPathingRequestGeneric<CombatPathingGoalPolicyFlee,CombatPathingSearchPolicyStandard,CombatPathDestinationNone> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vfunc_0_vt10(&self) -> u64 { unsafe { function!(48525, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn vfunc_0_vt10(&self) -> u64 { unsafe { function!(48525, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
 }
 
 impl crate::AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicyRetreat_CombatPathingSearchPolicy_f4d3b56a4a35 {
@@ -102,7 +102,7 @@ impl crate::AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicyRetre
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn auto_register_path_builder_factory_combat_pathing_request_generic_combat_pathing_goal_policy_retreat_combat_4d5e274434b4(&self) -> u64 { unsafe { function!(50540, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn auto_register_path_builder_factory_combat_pathing_request_generic_combat_pathing_goal_policy_retreat_combat_4d5e274434b4(&self) -> u64 { unsafe { function!(50540, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x8)) } }
     /// `AutoRegisterCombatPathingRequestGeneric<CombatPathingGoalPolicyRetreat,CombatPathingSearchPolicyStandard,CombatPathDestinationNone>::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 50542, rva 0x8ee790).
     /// `AutoRegisterCombatPathingRequestGeneric<CombatPathingGoalPolicyRetreat,CombatPathingSearchPolicyStandard,CombatPathDestinationNone> * ctor(AutoRegisterCombatPathingRequestGeneric<CombatPathingGoalPolicyRetreat,CombatPathingSearchPolicyStandard,CombatPathDestinationNone> * this)`
     ///
@@ -116,7 +116,7 @@ impl crate::AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicyRetre
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vfunc_0_vt10(&self) -> u64 { unsafe { function!(50541, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn vfunc_0_vt10(&self) -> u64 { unsafe { function!(50541, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
 }
 
 impl crate::AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicySearchWander_CombatPathingSearchP_8f247c02bb4b {
@@ -126,14 +126,14 @@ impl crate::AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicySearc
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn auto_register_path_builder_factory_combat_pathing_request_generic_combat_pathing_goal_policy_search_wander_c_5a7936a74b08(&self) -> u64 { unsafe { function!(49595, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn auto_register_path_builder_factory_combat_pathing_request_generic_combat_pathing_goal_policy_search_wander_c_5a7936a74b08(&self) -> u64 { unsafe { function!(49595, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x8)) } }
     /// `AutoRegisterCombatPathingRequestGeneric<CombatPathingGoalPolicySearchWander,CombatPathingSearchPolicyStandard,CombatPathDestinationNone>::vfunc_0_vt10` (decompiler signature, tier high; ledger rtti evidence, name high; id 49596, rva 0x8cc570).
     /// `undefined vfunc_0_vt10(AutoRegisterCombatPathingRequestGeneric<CombatPathingGoalPolicySearchWander,CombatPathingSearchPolicyStandard,CombatPathDestinationNone> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vfunc_0_vt10(&self) -> u64 { unsafe { function!(49596, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn vfunc_0_vt10(&self) -> u64 { unsafe { function!(49596, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
 }
 
 impl crate::ConcreteExplosionFactory_ChainExplosion_1 {
@@ -5430,35 +5430,35 @@ impl crate::_anon_CE40B4D9__AutoRegisterCombatMagicCaster_CombatMagicCasterArmor
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_magic_combat_magic_caster_armor_vdtor(&self) -> u64 { unsafe { function!(45255, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_magic_combat_magic_caster_armor_vdtor(&self) -> u64 { unsafe { function!(45255, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x8)) } }
     /// `_anon_CE40B4D9::AutoRegisterCombatMagicCaster<CombatMagicCasterArmor>::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterArmor_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 45260, rva 0x831f48).
     /// `undefined AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterArmor_vdtor(AutoRegisterCombatMagicCaster<CombatMagicCasterArmor> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_potion_combat_magic_caster_armor_vdtor(&self) -> u64 { unsafe { function!(45260, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_potion_combat_magic_caster_armor_vdtor(&self) -> u64 { unsafe { function!(45260, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x20)) } }
     /// `_anon_CE40B4D9::AutoRegisterCombatMagicCaster<CombatMagicCasterArmor>::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterArmor_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 45261, rva 0x831f54).
     /// `undefined AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterArmor_vdtor(AutoRegisterCombatMagicCaster<CombatMagicCasterArmor> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_scroll_combat_magic_caster_armor_vdtor(&self) -> u64 { unsafe { function!(45261, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_scroll_combat_magic_caster_armor_vdtor(&self) -> u64 { unsafe { function!(45261, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x28)) } }
     /// `_anon_CE40B4D9::AutoRegisterCombatMagicCaster<CombatMagicCasterArmor>::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterArmor_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 45256, rva 0x831e88).
     /// `undefined AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterArmor_vdtor(AutoRegisterCombatMagicCaster<CombatMagicCasterArmor> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_shout_combat_magic_caster_armor_vdtor(&self) -> u64 { unsafe { function!(45256, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_shout_combat_magic_caster_armor_vdtor(&self) -> u64 { unsafe { function!(45256, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
     /// `_anon_CE40B4D9::AutoRegisterCombatMagicCaster<CombatMagicCasterArmor>::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterArmor_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 45258, rva 0x831f18).
     /// `undefined AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterArmor_vdtor(AutoRegisterCombatMagicCaster<CombatMagicCasterArmor> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_staff_combat_magic_caster_armor_vdtor(&self) -> u64 { unsafe { function!(45258, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_staff_combat_magic_caster_armor_vdtor(&self) -> u64 { unsafe { function!(45258, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x18)) } }
     /// `_anon_CE40B4D9::AutoRegisterCombatMagicCaster<CombatMagicCasterArmor>::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46561, rva 0x84a8c0).
     /// `AutoRegisterCombatMagicCaster<CombatMagicCasterArmor> * ctor(AutoRegisterCombatMagicCaster<CombatMagicCasterArmor> * this)`
     ///
@@ -5475,35 +5475,35 @@ impl crate::_anon_CE40B4D9__AutoRegisterCombatMagicCaster_CombatMagicCasterBound
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_magic_combat_magic_caster_bound_item_vdtor(&self) -> u64 { unsafe { function!(45222, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_magic_combat_magic_caster_bound_item_vdtor(&self) -> u64 { unsafe { function!(45222, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x8)) } }
     /// `_anon_CE40B4D9::AutoRegisterCombatMagicCaster<CombatMagicCasterBoundItem>::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterBoundItem_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 45226, rva 0x831858).
     /// `undefined AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterBoundItem_vdtor(AutoRegisterCombatMagicCaster<CombatMagicCasterBoundItem> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_potion_combat_magic_caster_bound_item_vdtor(&self) -> u64 { unsafe { function!(45226, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_potion_combat_magic_caster_bound_item_vdtor(&self) -> u64 { unsafe { function!(45226, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x20)) } }
     /// `_anon_CE40B4D9::AutoRegisterCombatMagicCaster<CombatMagicCasterBoundItem>::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterBoundItem_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 45227, rva 0x831864).
     /// `undefined AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterBoundItem_vdtor(AutoRegisterCombatMagicCaster<CombatMagicCasterBoundItem> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_scroll_combat_magic_caster_bound_item_vdtor(&self) -> u64 { unsafe { function!(45227, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_scroll_combat_magic_caster_bound_item_vdtor(&self) -> u64 { unsafe { function!(45227, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x28)) } }
     /// `_anon_CE40B4D9::AutoRegisterCombatMagicCaster<CombatMagicCasterBoundItem>::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterBoundItem_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 45223, rva 0x831814).
     /// `undefined AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterBoundItem_vdtor(AutoRegisterCombatMagicCaster<CombatMagicCasterBoundItem> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_shout_combat_magic_caster_bound_item_vdtor(&self) -> u64 { unsafe { function!(45223, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_shout_combat_magic_caster_bound_item_vdtor(&self) -> u64 { unsafe { function!(45223, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
     /// `_anon_CE40B4D9::AutoRegisterCombatMagicCaster<CombatMagicCasterBoundItem>::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterBoundItem_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 45225, rva 0x83184c).
     /// `undefined AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterBoundItem_vdtor(AutoRegisterCombatMagicCaster<CombatMagicCasterBoundItem> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_staff_combat_magic_caster_bound_item_vdtor(&self) -> u64 { unsafe { function!(45225, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_staff_combat_magic_caster_bound_item_vdtor(&self) -> u64 { unsafe { function!(45225, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x18)) } }
     /// `_anon_CE40B4D9::AutoRegisterCombatMagicCaster<CombatMagicCasterBoundItem>::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46562, rva 0x84aac0).
     /// `AutoRegisterCombatMagicCaster<CombatMagicCasterBoundItem> * ctor(AutoRegisterCombatMagicCaster<CombatMagicCasterBoundItem> * this)`
     ///
@@ -5520,35 +5520,35 @@ impl crate::_anon_CE40B4D9__AutoRegisterCombatMagicCaster_CombatMagicCasterCloak
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_magic_combat_magic_caster_cloak_vdtor(&self) -> u64 { unsafe { function!(45162, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_magic_combat_magic_caster_cloak_vdtor(&self) -> u64 { unsafe { function!(45162, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x8)) } }
     /// `_anon_CE40B4D9::AutoRegisterCombatMagicCaster<CombatMagicCasterCloak>::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterCloak_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 45165, rva 0x830cf0).
     /// `undefined AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterCloak_vdtor(AutoRegisterCombatMagicCaster<CombatMagicCasterCloak> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_potion_combat_magic_caster_cloak_vdtor(&self) -> u64 { unsafe { function!(45165, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_potion_combat_magic_caster_cloak_vdtor(&self) -> u64 { unsafe { function!(45165, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x20)) } }
     /// `_anon_CE40B4D9::AutoRegisterCombatMagicCaster<CombatMagicCasterCloak>::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterCloak_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 45166, rva 0x830cfc).
     /// `undefined AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterCloak_vdtor(AutoRegisterCombatMagicCaster<CombatMagicCasterCloak> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_scroll_combat_magic_caster_cloak_vdtor(&self) -> u64 { unsafe { function!(45166, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_scroll_combat_magic_caster_cloak_vdtor(&self) -> u64 { unsafe { function!(45166, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x28)) } }
     /// `_anon_CE40B4D9::AutoRegisterCombatMagicCaster<CombatMagicCasterCloak>::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterCloak_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 45163, rva 0x830cd8).
     /// `undefined AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterCloak_vdtor(AutoRegisterCombatMagicCaster<CombatMagicCasterCloak> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_shout_combat_magic_caster_cloak_vdtor(&self) -> u64 { unsafe { function!(45163, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_shout_combat_magic_caster_cloak_vdtor(&self) -> u64 { unsafe { function!(45163, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
     /// `_anon_CE40B4D9::AutoRegisterCombatMagicCaster<CombatMagicCasterCloak>::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterCloak_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 45164, rva 0x830ce4).
     /// `undefined AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterCloak_vdtor(AutoRegisterCombatMagicCaster<CombatMagicCasterCloak> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_staff_combat_magic_caster_cloak_vdtor(&self) -> u64 { unsafe { function!(45164, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_staff_combat_magic_caster_cloak_vdtor(&self) -> u64 { unsafe { function!(45164, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x18)) } }
     /// `_anon_CE40B4D9::AutoRegisterCombatMagicCaster<CombatMagicCasterCloak>::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46563, rva 0x84acc0).
     /// `AutoRegisterCombatMagicCaster<CombatMagicCasterCloak> * ctor(AutoRegisterCombatMagicCaster<CombatMagicCasterCloak> * this)`
     ///
@@ -5565,35 +5565,35 @@ impl crate::_anon_CE40B4D9__AutoRegisterCombatMagicCaster_CombatMagicCasterDisar
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_magic_combat_magic_caster_disarm_vdtor(&self) -> u64 { unsafe { function!(45148, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_magic_combat_magic_caster_disarm_vdtor(&self) -> u64 { unsafe { function!(45148, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x8)) } }
     /// `_anon_CE40B4D9::AutoRegisterCombatMagicCaster<CombatMagicCasterDisarm>::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterDisarm_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 45152, rva 0x830ae4).
     /// `undefined AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterDisarm_vdtor(AutoRegisterCombatMagicCaster<CombatMagicCasterDisarm> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_potion_combat_magic_caster_disarm_vdtor(&self) -> u64 { unsafe { function!(45152, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_potion_combat_magic_caster_disarm_vdtor(&self) -> u64 { unsafe { function!(45152, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x20)) } }
     /// `_anon_CE40B4D9::AutoRegisterCombatMagicCaster<CombatMagicCasterDisarm>::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterDisarm_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 45153, rva 0x830af0).
     /// `undefined AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterDisarm_vdtor(AutoRegisterCombatMagicCaster<CombatMagicCasterDisarm> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_scroll_combat_magic_caster_disarm_vdtor(&self) -> u64 { unsafe { function!(45153, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_scroll_combat_magic_caster_disarm_vdtor(&self) -> u64 { unsafe { function!(45153, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x28)) } }
     /// `_anon_CE40B4D9::AutoRegisterCombatMagicCaster<CombatMagicCasterDisarm>::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterDisarm_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 45150, rva 0x830acc).
     /// `undefined AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterDisarm_vdtor(AutoRegisterCombatMagicCaster<CombatMagicCasterDisarm> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_shout_combat_magic_caster_disarm_vdtor(&self) -> u64 { unsafe { function!(45150, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_shout_combat_magic_caster_disarm_vdtor(&self) -> u64 { unsafe { function!(45150, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
     /// `_anon_CE40B4D9::AutoRegisterCombatMagicCaster<CombatMagicCasterDisarm>::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterDisarm_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 45151, rva 0x830ad8).
     /// `undefined AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterDisarm_vdtor(AutoRegisterCombatMagicCaster<CombatMagicCasterDisarm> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_staff_combat_magic_caster_disarm_vdtor(&self) -> u64 { unsafe { function!(45151, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_staff_combat_magic_caster_disarm_vdtor(&self) -> u64 { unsafe { function!(45151, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x18)) } }
     /// `_anon_CE40B4D9::AutoRegisterCombatMagicCaster<CombatMagicCasterDisarm>::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46564, rva 0x84aec0).
     /// `AutoRegisterCombatMagicCaster<CombatMagicCasterDisarm> * ctor(AutoRegisterCombatMagicCaster<CombatMagicCasterDisarm> * this)`
     ///
@@ -5610,35 +5610,35 @@ impl crate::_anon_CE40B4D9__AutoRegisterCombatMagicCaster_CombatMagicCasterInvis
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_magic_combat_magic_caster_invisibility_vdtor(&self) -> u64 { unsafe { function!(45201, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_magic_combat_magic_caster_invisibility_vdtor(&self) -> u64 { unsafe { function!(45201, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x8)) } }
     /// `_anon_CE40B4D9::AutoRegisterCombatMagicCaster<CombatMagicCasterInvisibility>::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterInvisibility_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 45204, rva 0x831420).
     /// `undefined AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterInvisibility_vdtor(AutoRegisterCombatMagicCaster<CombatMagicCasterInvisibility> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_potion_combat_magic_caster_invisibility_vdtor(&self) -> u64 { unsafe { function!(45204, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_potion_combat_magic_caster_invisibility_vdtor(&self) -> u64 { unsafe { function!(45204, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x20)) } }
     /// `_anon_CE40B4D9::AutoRegisterCombatMagicCaster<CombatMagicCasterInvisibility>::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterInvisibility_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 45205, rva 0x83142c).
     /// `undefined AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterInvisibility_vdtor(AutoRegisterCombatMagicCaster<CombatMagicCasterInvisibility> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_scroll_combat_magic_caster_invisibility_vdtor(&self) -> u64 { unsafe { function!(45205, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_scroll_combat_magic_caster_invisibility_vdtor(&self) -> u64 { unsafe { function!(45205, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x28)) } }
     /// `_anon_CE40B4D9::AutoRegisterCombatMagicCaster<CombatMagicCasterInvisibility>::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterInvisibility_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 45202, rva 0x831408).
     /// `undefined AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterInvisibility_vdtor(AutoRegisterCombatMagicCaster<CombatMagicCasterInvisibility> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_shout_combat_magic_caster_invisibility_vdtor(&self) -> u64 { unsafe { function!(45202, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_shout_combat_magic_caster_invisibility_vdtor(&self) -> u64 { unsafe { function!(45202, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
     /// `_anon_CE40B4D9::AutoRegisterCombatMagicCaster<CombatMagicCasterInvisibility>::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterInvisibility_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 45203, rva 0x831414).
     /// `undefined AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterInvisibility_vdtor(AutoRegisterCombatMagicCaster<CombatMagicCasterInvisibility> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_staff_combat_magic_caster_invisibility_vdtor(&self) -> u64 { unsafe { function!(45203, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_staff_combat_magic_caster_invisibility_vdtor(&self) -> u64 { unsafe { function!(45203, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x18)) } }
     /// `_anon_CE40B4D9::AutoRegisterCombatMagicCaster<CombatMagicCasterInvisibility>::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46565, rva 0x84b0c0).
     /// `AutoRegisterCombatMagicCaster<CombatMagicCasterInvisibility> * ctor(AutoRegisterCombatMagicCaster<CombatMagicCasterInvisibility> * this)`
     ///
@@ -5655,35 +5655,35 @@ impl crate::_anon_CE40B4D9__AutoRegisterCombatMagicCaster_CombatMagicCasterLight
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_magic_combat_magic_caster_light_vdtor(&self) -> u64 { unsafe { function!(45181, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_magic_combat_magic_caster_light_vdtor(&self) -> u64 { unsafe { function!(45181, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x8)) } }
     /// `_anon_CE40B4D9::AutoRegisterCombatMagicCaster<CombatMagicCasterLight>::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterLight_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 45184, rva 0x831050).
     /// `undefined AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterLight_vdtor(AutoRegisterCombatMagicCaster<CombatMagicCasterLight> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_potion_combat_magic_caster_light_vdtor(&self) -> u64 { unsafe { function!(45184, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_potion_combat_magic_caster_light_vdtor(&self) -> u64 { unsafe { function!(45184, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x20)) } }
     /// `_anon_CE40B4D9::AutoRegisterCombatMagicCaster<CombatMagicCasterLight>::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterLight_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 45185, rva 0x83105c).
     /// `undefined AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterLight_vdtor(AutoRegisterCombatMagicCaster<CombatMagicCasterLight> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_scroll_combat_magic_caster_light_vdtor(&self) -> u64 { unsafe { function!(45185, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_scroll_combat_magic_caster_light_vdtor(&self) -> u64 { unsafe { function!(45185, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x28)) } }
     /// `_anon_CE40B4D9::AutoRegisterCombatMagicCaster<CombatMagicCasterLight>::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterLight_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 45182, rva 0x831038).
     /// `undefined AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterLight_vdtor(AutoRegisterCombatMagicCaster<CombatMagicCasterLight> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_shout_combat_magic_caster_light_vdtor(&self) -> u64 { unsafe { function!(45182, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_shout_combat_magic_caster_light_vdtor(&self) -> u64 { unsafe { function!(45182, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
     /// `_anon_CE40B4D9::AutoRegisterCombatMagicCaster<CombatMagicCasterLight>::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterLight_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 45183, rva 0x831044).
     /// `undefined AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterLight_vdtor(AutoRegisterCombatMagicCaster<CombatMagicCasterLight> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_staff_combat_magic_caster_light_vdtor(&self) -> u64 { unsafe { function!(45183, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_staff_combat_magic_caster_light_vdtor(&self) -> u64 { unsafe { function!(45183, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x18)) } }
     /// `_anon_CE40B4D9::AutoRegisterCombatMagicCaster<CombatMagicCasterLight>::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46566, rva 0x84b2c0).
     /// `AutoRegisterCombatMagicCaster<CombatMagicCasterLight> * ctor(AutoRegisterCombatMagicCaster<CombatMagicCasterLight> * this)`
     ///
@@ -5730,35 +5730,35 @@ impl crate::_anon_CE40B4D9__AutoRegisterCombatMagicCaster_CombatMagicCasterResto
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_magic_combat_magic_caster_restore_vdtor(&self) -> u64 { unsafe { function!(46505, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_magic_combat_magic_caster_restore_vdtor(&self) -> u64 { unsafe { function!(46505, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x8)) } }
     /// `_anon_CE40B4D9::AutoRegisterCombatMagicCaster<CombatMagicCasterRestore>::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterRestore_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 46508, rva 0x83016c).
     /// `undefined AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterRestore_vdtor(AutoRegisterCombatMagicCaster<CombatMagicCasterRestore> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_potion_combat_magic_caster_restore_vdtor(&self) -> u64 { unsafe { function!(46508, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_potion_combat_magic_caster_restore_vdtor(&self) -> u64 { unsafe { function!(46508, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x20)) } }
     /// `_anon_CE40B4D9::AutoRegisterCombatMagicCaster<CombatMagicCasterRestore>::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterRestore_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 46510, rva 0x8301ac).
     /// `undefined AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterRestore_vdtor(AutoRegisterCombatMagicCaster<CombatMagicCasterRestore> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_scroll_combat_magic_caster_restore_vdtor(&self) -> u64 { unsafe { function!(46510, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_scroll_combat_magic_caster_restore_vdtor(&self) -> u64 { unsafe { function!(46510, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x28)) } }
     /// `_anon_CE40B4D9::AutoRegisterCombatMagicCaster<CombatMagicCasterRestore>::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterRestore_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 46506, rva 0x830154).
     /// `undefined AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterRestore_vdtor(AutoRegisterCombatMagicCaster<CombatMagicCasterRestore> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_shout_combat_magic_caster_restore_vdtor(&self) -> u64 { unsafe { function!(46506, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_shout_combat_magic_caster_restore_vdtor(&self) -> u64 { unsafe { function!(46506, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
     /// `_anon_CE40B4D9::AutoRegisterCombatMagicCaster<CombatMagicCasterRestore>::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterRestore_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 46507, rva 0x830160).
     /// `undefined AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterRestore_vdtor(AutoRegisterCombatMagicCaster<CombatMagicCasterRestore> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_staff_combat_magic_caster_restore_vdtor(&self) -> u64 { unsafe { function!(46507, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_staff_combat_magic_caster_restore_vdtor(&self) -> u64 { unsafe { function!(46507, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x18)) } }
     /// `_anon_CE40B4D9::AutoRegisterCombatMagicCaster<CombatMagicCasterRestore>::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46570, rva 0x84bac0).
     /// `AutoRegisterCombatMagicCaster<CombatMagicCasterRestore> * ctor(AutoRegisterCombatMagicCaster<CombatMagicCasterRestore> * this)`
     ///
@@ -5785,21 +5785,21 @@ impl crate::_anon_CE40B4D9__AutoRegisterCombatMagicCaster_CombatMagicCasterStagg
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_magic_combat_magic_caster_stagger_vdtor(&self) -> u64 { unsafe { function!(46537, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_magic_combat_magic_caster_stagger_vdtor(&self) -> u64 { unsafe { function!(46537, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x8)) } }
     /// `_anon_CE40B4D9::AutoRegisterCombatMagicCaster<CombatMagicCasterStagger>::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterStagger_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 46539, rva 0x8306fc).
     /// `undefined AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterStagger_vdtor(AutoRegisterCombatMagicCaster<CombatMagicCasterStagger> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_shout_combat_magic_caster_stagger_vdtor(&self) -> u64 { unsafe { function!(46539, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_shout_combat_magic_caster_stagger_vdtor(&self) -> u64 { unsafe { function!(46539, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
     /// `_anon_CE40B4D9::AutoRegisterCombatMagicCaster<CombatMagicCasterStagger>::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterStagger_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 46540, rva 0x830708).
     /// `undefined AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterStagger_vdtor(AutoRegisterCombatMagicCaster<CombatMagicCasterStagger> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_staff_combat_magic_caster_stagger_vdtor(&self) -> u64 { unsafe { function!(46540, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_staff_combat_magic_caster_stagger_vdtor(&self) -> u64 { unsafe { function!(46540, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x18)) } }
     /// `_anon_CE40B4D9::AutoRegisterCombatMagicCaster<CombatMagicCasterStagger>::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46572, rva 0x84bec0).
     /// `AutoRegisterCombatMagicCaster<CombatMagicCasterStagger> * ctor(AutoRegisterCombatMagicCaster<CombatMagicCasterStagger> * this)`
     ///
@@ -5816,35 +5816,35 @@ impl crate::_anon_CE40B4D9__AutoRegisterCombatMagicCaster_CombatMagicCasterSummo
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_magic_combat_magic_caster_summon_vdtor(&self) -> u64 { unsafe { function!(46519, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_magic_combat_magic_caster_summon_vdtor(&self) -> u64 { unsafe { function!(46519, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x8)) } }
     /// `_anon_CE40B4D9::AutoRegisterCombatMagicCaster<CombatMagicCasterSummon>::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterSummon_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 46522, rva 0x8303b0).
     /// `undefined AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterSummon_vdtor(AutoRegisterCombatMagicCaster<CombatMagicCasterSummon> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_potion_combat_magic_caster_summon_vdtor(&self) -> u64 { unsafe { function!(46522, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_potion_combat_magic_caster_summon_vdtor(&self) -> u64 { unsafe { function!(46522, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x20)) } }
     /// `_anon_CE40B4D9::AutoRegisterCombatMagicCaster<CombatMagicCasterSummon>::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterSummon_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 46523, rva 0x8303bc).
     /// `undefined AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterSummon_vdtor(AutoRegisterCombatMagicCaster<CombatMagicCasterSummon> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_scroll_combat_magic_caster_summon_vdtor(&self) -> u64 { unsafe { function!(46523, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_scroll_combat_magic_caster_summon_vdtor(&self) -> u64 { unsafe { function!(46523, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x28)) } }
     /// `_anon_CE40B4D9::AutoRegisterCombatMagicCaster<CombatMagicCasterSummon>::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterSummon_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 46520, rva 0x830398).
     /// `undefined AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterSummon_vdtor(AutoRegisterCombatMagicCaster<CombatMagicCasterSummon> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_shout_combat_magic_caster_summon_vdtor(&self) -> u64 { unsafe { function!(46520, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_shout_combat_magic_caster_summon_vdtor(&self) -> u64 { unsafe { function!(46520, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
     /// `_anon_CE40B4D9::AutoRegisterCombatMagicCaster<CombatMagicCasterSummon>::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterSummon_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 46521, rva 0x8303a4).
     /// `undefined AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterSummon_vdtor(AutoRegisterCombatMagicCaster<CombatMagicCasterSummon> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_staff_combat_magic_caster_summon_vdtor(&self) -> u64 { unsafe { function!(46521, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_staff_combat_magic_caster_summon_vdtor(&self) -> u64 { unsafe { function!(46521, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x18)) } }
     /// `_anon_CE40B4D9::AutoRegisterCombatMagicCaster<CombatMagicCasterSummon>::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46573, rva 0x84c0c0).
     /// `AutoRegisterCombatMagicCaster<CombatMagicCasterSummon> * ctor(AutoRegisterCombatMagicCaster<CombatMagicCasterSummon> * this)`
     ///
@@ -5871,35 +5871,35 @@ impl crate::_anon_CE40B4D9__AutoRegisterCombatMagicCaster_CombatMagicCasterWard 
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_magic_combat_magic_caster_ward_vdtor(&self) -> u64 { unsafe { function!(46485, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_magic_combat_magic_caster_ward_vdtor(&self) -> u64 { unsafe { function!(46485, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x8)) } }
     /// `_anon_CE40B4D9::AutoRegisterCombatMagicCaster<CombatMagicCasterWard>::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterWard_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 46488, rva 0x82fda0).
     /// `undefined AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterWard_vdtor(AutoRegisterCombatMagicCaster<CombatMagicCasterWard> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_potion_combat_magic_caster_ward_vdtor(&self) -> u64 { unsafe { function!(46488, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_potion_combat_magic_caster_ward_vdtor(&self) -> u64 { unsafe { function!(46488, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x20)) } }
     /// `_anon_CE40B4D9::AutoRegisterCombatMagicCaster<CombatMagicCasterWard>::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterWard_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 46490, rva 0x82fddc).
     /// `undefined AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterWard_vdtor(AutoRegisterCombatMagicCaster<CombatMagicCasterWard> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_scroll_combat_magic_caster_ward_vdtor(&self) -> u64 { unsafe { function!(46490, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_scroll_combat_magic_caster_ward_vdtor(&self) -> u64 { unsafe { function!(46490, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x28)) } }
     /// `_anon_CE40B4D9::AutoRegisterCombatMagicCaster<CombatMagicCasterWard>::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterWard_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 46486, rva 0x82fd88).
     /// `undefined AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterWard_vdtor(AutoRegisterCombatMagicCaster<CombatMagicCasterWard> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_shout_combat_magic_caster_ward_vdtor(&self) -> u64 { unsafe { function!(46486, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_shout_combat_magic_caster_ward_vdtor(&self) -> u64 { unsafe { function!(46486, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
     /// `_anon_CE40B4D9::AutoRegisterCombatMagicCaster<CombatMagicCasterWard>::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterWard_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 46487, rva 0x82fd94).
     /// `undefined AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterWard_vdtor(AutoRegisterCombatMagicCaster<CombatMagicCasterWard> * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_staff_combat_magic_caster_ward_vdtor(&self) -> u64 { unsafe { function!(46487, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn auto_register_combat_object_combat_inventory_item_magic_t_combat_inventory_item_staff_combat_magic_caster_ward_vdtor(&self) -> u64 { unsafe { function!(46487, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x18)) } }
     /// `_anon_CE40B4D9::AutoRegisterCombatMagicCaster<CombatMagicCasterWard>::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 46575, rva 0x84c4c0).
     /// `AutoRegisterCombatMagicCaster<CombatMagicCasterWard> * ctor(AutoRegisterCombatMagicCaster<CombatMagicCasterWard> * this)`
     ///

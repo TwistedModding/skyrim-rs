@@ -57,14 +57,14 @@ impl crate::BGSSaveLoadManager {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_bs_system_event_vfunc_1(&self, param_1: i64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(35775, (*const Self, i64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn bst_event_sink_bs_system_event_vfunc_1(&self, param_1: i64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(35775, (*const Self, i64, u64, u64) -> u64)(core::ptr::from_ref(self).byte_add(0x10), param_1, param_2, param_3) } }
     /// `BGSSaveLoadManager::BSTEventSink_RaceSexMenuEvent_NameChangedEvent_vfunc_1` (decompiler signature, tier low; ledger rtti evidence, name high; id 35774, rva 0x6269b0).
     /// `undefined8 BSTEventSink_RaceSexMenuEvent_NameChangedEvent_vfunc_1(BGSSaveLoadManager * this, undefined8 * param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_race_sex_menu_event_name_changed_event_vfunc_1(&self, param_1: *mut u64) -> u64 { unsafe { function!(35774, (*const Self, *mut u64) -> u64)(core::ptr::from_ref(self), param_1) } }
+    pub unsafe fn bst_event_sink_race_sex_menu_event_name_changed_event_vfunc_1(&self, param_1: *mut u64) -> u64 { unsafe { function!(35774, (*const Self, *mut u64) -> u64)(core::ptr::from_ref(self).byte_add(0x8), param_1) } }
     /// `BGSSaveLoadManager::dtor` (decompiler signature, tier low; ledger layout_inference evidence, name high; id 35721, rva 0x6220c0).
     /// `undefined dtor(BGSSaveLoadManager * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     ///

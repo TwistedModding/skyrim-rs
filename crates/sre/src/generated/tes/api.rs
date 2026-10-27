@@ -863,15 +863,6 @@ impl crate::TESGrass {
     pub fn as_tes_model(&self) -> &crate::TESModel { unsafe { &*core::ptr::from_ref(self).byte_add(0x30).cast() } }
 }
 
-impl crate::TESImageSpaceModifiableForm {
-    /// `BGSCameraShot::TESImageSpaceModifiableForm_Destroy`: this-adjusting thunk (this - 0x48) to BGSCameraShot::Destroy
-    ///
-    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 20714, rva 0x31a0b0.
-    /// `BGSCameraShot* (TESImageSpaceModifiableForm* this, u32 flags)`
-    #[inline]
-    pub fn tes_image_space_modifiable_form_destroy(&self, flags: u32) -> Option<&'static crate::BGSCameraShot> { unsafe { function!(20714, (*const Self, u32) -> Option<&'static crate::BGSCameraShot>)(core::ptr::from_ref(self), flags) } }
-}
-
 impl crate::TESImageSpaceModifier {
     /// `TESImageSpaceModifier::ApplyCrossFade`: cross-fade to imod (Papyrus ApplyCrossFade 0xa3a530)
     ///
@@ -918,15 +909,6 @@ impl crate::TESLevSpell {
     /// The `TESLeveledList` base at +0x30.
     #[inline]
     pub fn as_tes_leveled_list(&self) -> &crate::TESLeveledList { unsafe { &*core::ptr::from_ref(self).byte_add(0x30).cast() } }
-}
-
-impl crate::TESModel {
-    /// `BGSCameraShot::TESModel_Destroy`: this-adjusting thunk (this - 0x20) to BGSCameraShot::Destroy
-    ///
-    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 20713, rva 0x31a0a4.
-    /// `BGSCameraShot* (TESModel* this, u32 flags)`
-    #[inline]
-    pub fn tes_model_destroy(&self, flags: u32) -> Option<&'static crate::BGSCameraShot> { unsafe { function!(20713, (*const Self, u32) -> Option<&'static crate::BGSCameraShot>)(core::ptr::from_ref(self), flags) } }
 }
 
 impl crate::TESObjectACTI {

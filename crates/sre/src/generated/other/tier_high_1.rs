@@ -30,7 +30,7 @@ impl crate::AStarSearch_BSNavmeshInfo_const____ptr64_BSTSmartPointer_BSPathingDo
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor(&self) -> *mut c_void { unsafe { function!(90555, (*const Self) -> *mut c_void)(core::ptr::from_ref(self)) } }
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(90555, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::AStarSearch_BSPathSmootherPOVNode_BSPathSmootherPOVLink_12 {
@@ -178,63 +178,63 @@ impl crate::AlchemyItem {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bgs_destructible_object_form_vdtor(&self) -> u64 { unsafe { function!(10856, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bgs_destructible_object_form_vdtor(&self) -> u64 { unsafe { function!(10856, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x110)) } }
     /// `AlchemyItem::BGSEquipType_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 10855, rva 0x146428).
     /// `undefined BGSEquipType_vdtor(AlchemyItem * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bgs_equip_type_vdtor(&self) -> u64 { unsafe { function!(10855, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bgs_equip_type_vdtor(&self) -> u64 { unsafe { function!(10855, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x100)) } }
     /// `AlchemyItem::BGSKeywordForm_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 10859, rva 0x146458).
     /// `undefined BGSKeywordForm_vdtor(AlchemyItem * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bgs_keyword_form_vdtor(&self) -> u64 { unsafe { function!(10859, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bgs_keyword_form_vdtor(&self) -> u64 { unsafe { function!(10859, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x40)) } }
     /// `AlchemyItem::BGSMessageIcon_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 10862, rva 0x14647c).
     /// `undefined BGSMessageIcon_vdtor(AlchemyItem * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bgs_message_icon_vdtor(&self) -> u64 { unsafe { function!(10862, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bgs_message_icon_vdtor(&self) -> u64 { unsafe { function!(10862, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0xD8)) } }
     /// `AlchemyItem::BGSPickupPutdownSounds_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 10857, rva 0x146440).
     /// `undefined BGSPickupPutdownSounds_vdtor(AlchemyItem * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bgs_pickup_putdown_sounds_vdtor(&self) -> u64 { unsafe { function!(10857, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bgs_pickup_putdown_sounds_vdtor(&self) -> u64 { unsafe { function!(10857, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x120)) } }
     /// `AlchemyItem::TESFullName_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 10858, rva 0x14644c).
     /// `undefined TESFullName_vdtor(AlchemyItem * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn tes_full_name_vdtor(&self) -> u64 { unsafe { function!(10858, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn tes_full_name_vdtor(&self) -> u64 { unsafe { function!(10858, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x30)) } }
     /// `AlchemyItem::TESIcon_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 10861, rva 0x146470).
     /// `undefined TESIcon_vdtor(AlchemyItem * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn tes_icon_vdtor(&self) -> u64 { unsafe { function!(10861, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn tes_icon_vdtor(&self) -> u64 { unsafe { function!(10861, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0xC8)) } }
     /// `AlchemyItem::TESModelTextureSwap_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 10860, rva 0x146464).
     /// `undefined TESModelTextureSwap_vdtor(AlchemyItem * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn tes_model_texture_swap_vdtor(&self) -> u64 { unsafe { function!(10860, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn tes_model_texture_swap_vdtor(&self) -> u64 { unsafe { function!(10860, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x90)) } }
     /// `AlchemyItem::TESWeightForm_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 10863, rva 0x146488).
     /// `undefined TESWeightForm_vdtor(AlchemyItem * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn tes_weight_form_vdtor(&self) -> u64 { unsafe { function!(10863, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn tes_weight_form_vdtor(&self) -> u64 { unsafe { function!(10863, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0xF0)) } }
 }
 
 impl crate::AnimationClipDataSingleton {
@@ -264,7 +264,7 @@ impl crate::AnimationSystemUtils__QueuedReferenceAnimationTask {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bs_resource_i_entry_db_post_flush_notify_vdtor(&self) -> u64 { unsafe { function!(32683, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bs_resource_i_entry_db_post_flush_notify_vdtor(&self) -> u64 { unsafe { function!(32683, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x38)) } }
 }
 
 impl crate::AnimationSystemUtils__TESModelAndAnimationHandles {
@@ -274,7 +274,7 @@ impl crate::AnimationSystemUtils__TESModelAndAnimationHandles {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bs_resource_i_entry_db_post_flush_notify_vdtor(&self) -> u64 { unsafe { function!(11371, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bs_resource_i_entry_db_post_flush_notify_vdtor(&self) -> u64 { unsafe { function!(11371, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x38)) } }
     /// `AnimationSystemUtils::TESModelAndAnimationHandles::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 11346, rva 0x151f40).
     /// `TESModelAndAnimationHandles * ctor(TESModelAndAnimationHandles * this)`
     ///
@@ -291,14 +291,14 @@ impl crate::AppResourceCaching___anon_AE50F340__Manager {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_bs_resource_archive_registered_event_vdtor(&self) -> u64 { unsafe { function!(36129, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bst_event_sink_bs_resource_archive_registered_event_vdtor(&self) -> u64 { unsafe { function!(36129, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x8)) } }
     /// `AppResourceCaching::_anon_AE50F340::Manager::BSTEventSink_TESDataHandlerPostBuildFileListEvent_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 36130, rva 0x63ce44).
     /// `undefined BSTEventSink_TESDataHandlerPostBuildFileListEvent_vdtor(Manager * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_tes_data_handler_post_build_file_list_event_vdtor(&self) -> u64 { unsafe { function!(36130, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bst_event_sink_tes_data_handler_post_build_file_list_event_vdtor(&self) -> u64 { unsafe { function!(36130, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
 }
 
 impl crate::Archive {
@@ -308,7 +308,7 @@ impl crate::Archive {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ni_ref_object_vdtor(&self) -> u64 { unsafe { function!(69329, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn ni_ref_object_vdtor(&self) -> u64 { unsafe { function!(69329, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x180)) } }
 }
 
 impl crate::ArrowProjectile {
@@ -382,7 +382,7 @@ impl crate::BShkbHkxDB__QueuedHandles {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bs_resource_i_entry_db_post_flush_notify_vdtor(&self) -> u64 { unsafe { function!(63500, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bs_resource_i_entry_db_post_flush_notify_vdtor(&self) -> u64 { unsafe { function!(63500, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x38)) } }
     /// `BShkbHkxDB::QueuedHandles::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 63466, rva 0xbc5560).
     /// `QueuedHandles * ctor(QueuedHandles * this)`
     ///
@@ -464,21 +464,21 @@ impl crate::BarrierProjectile {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bs_handle_ref_object_vdtor(&self) -> u64 { unsafe { function!(43735, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bs_handle_ref_object_vdtor(&self) -> u64 { unsafe { function!(43735, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x20)) } }
     /// `BarrierProjectile::BSTEventSink_BSAnimationGraphEvent_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 43736, rva 0x7dfb60).
     /// `undefined BSTEventSink_BSAnimationGraphEvent_vdtor(BarrierProjectile * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_bs_animation_graph_event_vdtor(&self) -> u64 { unsafe { function!(43736, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bst_event_sink_bs_animation_graph_event_vdtor(&self) -> u64 { unsafe { function!(43736, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x30)) } }
     /// `BarrierProjectile::IAnimationGraphManagerHolder_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 43737, rva 0x7dfb6c).
     /// `undefined IAnimationGraphManagerHolder_vdtor(BarrierProjectile * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_animation_graph_manager_holder_vdtor(&self) -> u64 { unsafe { function!(43737, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn i_animation_graph_manager_holder_vdtor(&self) -> u64 { unsafe { function!(43737, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x38)) } }
     /// `BarrierProjectile::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 43718, rva 0x7deaa0).
     /// `BarrierProjectile * ctor(BarrierProjectile * this)`
     ///
@@ -627,28 +627,28 @@ impl crate::BookMenu {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_bs_animation_graph_event_vdtor(&self) -> u64 { unsafe { function!(51068, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bst_event_sink_bs_animation_graph_event_vdtor(&self) -> u64 { unsafe { function!(51068, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x48)) } }
     /// `BookMenu::SimpleAnimationGraphManagerHolder_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 51067, rva 0x9089f8).
     /// `undefined SimpleAnimationGraphManagerHolder_vdtor(BookMenu * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn simple_animation_graph_manager_holder_vdtor(&self) -> u64 { unsafe { function!(51067, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn simple_animation_graph_manager_holder_vdtor(&self) -> u64 { unsafe { function!(51067, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x30)) } }
     /// `BookMenu::SimpleAnimationGraphManagerHolder_vfunc_12` (decompiler signature, tier high; ledger rtti evidence, name high; id 51061, rva 0x908880).
     /// `undefined SimpleAnimationGraphManagerHolder_vfunc_12(BookMenu * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn simple_animation_graph_manager_holder_vfunc_12(&self) -> u64 { unsafe { function!(51061, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn simple_animation_graph_manager_holder_vfunc_12(&self) -> u64 { unsafe { function!(51061, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x30)) } }
     /// `BookMenu::SimpleAnimationGraphManagerHolder_vfunc_19` (decompiler signature, tier high; ledger rtti evidence, name high; id 51062, rva 0x9088a0).
     /// `ulonglong SimpleAnimationGraphManagerHolder_vfunc_19(BookMenu * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn simple_animation_graph_manager_holder_vfunc_19(&self) -> u64 { unsafe { function!(51062, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn simple_animation_graph_manager_holder_vfunc_19(&self) -> u64 { unsafe { function!(51062, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x30)) } }
     /// `BookMenu::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 51047, rva 0x905fb0).
     /// `BookMenu * ctor(BookMenu * this)`
     ///
@@ -665,7 +665,7 @@ impl crate::BoundItemEffect {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_actor_inventory_event_vdtor(&self) -> u64 { unsafe { function!(34236, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bst_event_sink_actor_inventory_event_vdtor(&self) -> u64 { unsafe { function!(34236, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x90)) } }
 }
 
 impl crate::CellMopp {
@@ -685,28 +685,28 @@ impl crate::ChainExplosion {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bs_handle_ref_object_vdtor(&self) -> u64 { unsafe { function!(36427, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bs_handle_ref_object_vdtor(&self) -> u64 { unsafe { function!(36427, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x20)) } }
     /// `ChainExplosion::BSTEventSink_BSAnimationGraphEvent_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 36428, rva 0x64c6c4).
     /// `undefined BSTEventSink_BSAnimationGraphEvent_vdtor(ChainExplosion * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_bs_animation_graph_event_vdtor(&self) -> u64 { unsafe { function!(36428, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bst_event_sink_bs_animation_graph_event_vdtor(&self) -> u64 { unsafe { function!(36428, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x30)) } }
     /// `ChainExplosion::BSTEventSink_BeamProjectileImpactEvent_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 36426, rva 0x64c6ac).
     /// `undefined BSTEventSink_BeamProjectileImpactEvent_vdtor(ChainExplosion * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_beam_projectile_impact_event_vdtor(&self) -> u64 { unsafe { function!(36426, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bst_event_sink_beam_projectile_impact_event_vdtor(&self) -> u64 { unsafe { function!(36426, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x148)) } }
     /// `ChainExplosion::IAnimationGraphManagerHolder_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 36429, rva 0x64c6d0).
     /// `undefined IAnimationGraphManagerHolder_vdtor(ChainExplosion * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_animation_graph_manager_holder_vdtor(&self) -> u64 { unsafe { function!(36429, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn i_animation_graph_manager_holder_vdtor(&self) -> u64 { unsafe { function!(36429, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x38)) } }
 }
 
 impl crate::CharacterCollisionHandler {
@@ -804,14 +804,14 @@ impl crate::ConeProjectile {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bs_handle_ref_object_vdtor(&self) -> u64 { unsafe { function!(43808, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bs_handle_ref_object_vdtor(&self) -> u64 { unsafe { function!(43808, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x20)) } }
     /// `ConeProjectile::BSTEventSink_BSAnimationGraphEvent_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 43809, rva 0x7e335c).
     /// `undefined BSTEventSink_BSAnimationGraphEvent_vdtor(ConeProjectile * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_bs_animation_graph_event_vdtor(&self) -> u64 { unsafe { function!(43809, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bst_event_sink_bs_animation_graph_event_vdtor(&self) -> u64 { unsafe { function!(43809, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x30)) } }
     /// `ConeProjectile::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 43784, rva 0x7e1630).
     /// `ConeProjectile * ctor(ConeProjectile * this)`
     ///
@@ -858,7 +858,7 @@ impl crate::CraftingSubMenus__AlchemyMenu {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_tes_furniture_event_vdtor(&self) -> u64 { unsafe { function!(51292, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bst_event_sink_tes_furniture_event_vdtor(&self) -> u64 { unsafe { function!(51292, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
     /// `CraftingSubMenus::AlchemyMenu::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 51239, rva 0x9190e0).
     /// `AlchemyMenu * ctor(AlchemyMenu * this)`
     ///
@@ -885,7 +885,7 @@ impl crate::CraftingSubMenus__ConstructibleObjectMenu {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_tes_furniture_event_vdtor(&self) -> u64 { unsafe { function!(51293, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bst_event_sink_tes_furniture_event_vdtor(&self) -> u64 { unsafe { function!(51293, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
 }
 
 impl crate::CraftingSubMenus__CraftingSubMenu {
@@ -895,7 +895,7 @@ impl crate::CraftingSubMenus__CraftingSubMenu {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_tes_furniture_event_vdtor(&self) -> u64 { unsafe { function!(51294, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bst_event_sink_tes_furniture_event_vdtor(&self) -> u64 { unsafe { function!(51294, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
 }
 
 impl crate::CraftingSubMenus__EnchantConstructMenu {
@@ -905,7 +905,7 @@ impl crate::CraftingSubMenus__EnchantConstructMenu {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_tes_furniture_event_vdtor(&self) -> u64 { unsafe { function!(51295, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bst_event_sink_tes_furniture_event_vdtor(&self) -> u64 { unsafe { function!(51295, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
 }
 
 impl crate::CraftingSubMenus__SmithingMenu {
@@ -915,7 +915,7 @@ impl crate::CraftingSubMenus__SmithingMenu {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_tes_furniture_event_vdtor(&self) -> u64 { unsafe { function!(51296, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bst_event_sink_tes_furniture_event_vdtor(&self) -> u64 { unsafe { function!(51296, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
 }
 
 impl crate::CreditsMenu {
@@ -925,7 +925,7 @@ impl crate::CreditsMenu {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn g_fx_function_handler_vdtor(&self) -> u64 { unsafe { function!(51492, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn g_fx_function_handler_vdtor(&self) -> u64 { unsafe { function!(51492, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x30)) } }
     /// `CreditsMenu::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 51485, rva 0x929240).
     /// `CreditsMenu * ctor(CreditsMenu * this)`
     ///
@@ -999,21 +999,21 @@ impl crate::EffectSetting {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bgs_keyword_form_vdtor(&self) -> u64 { unsafe { function!(11129, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bgs_keyword_form_vdtor(&self) -> u64 { unsafe { function!(11129, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x40)) } }
     /// `EffectSetting::BGSMenuDisplayObject_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 11128, rva 0x14c6b8).
     /// `undefined BGSMenuDisplayObject_vdtor(EffectSetting * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bgs_menu_display_object_vdtor(&self) -> u64 { unsafe { function!(11128, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bgs_menu_display_object_vdtor(&self) -> u64 { unsafe { function!(11128, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x30)) } }
     /// `EffectSetting::TESFullName_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 11127, rva 0x14c6ac).
     /// `undefined TESFullName_vdtor(EffectSetting * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn tes_full_name_vdtor(&self) -> u64 { unsafe { function!(11127, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn tes_full_name_vdtor(&self) -> u64 { unsafe { function!(11127, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x20)) } }
 }
 
 impl crate::EnchantmentItem {
@@ -1023,14 +1023,14 @@ impl crate::EnchantmentItem {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bgs_keyword_form_vdtor(&self) -> u64 { unsafe { function!(11200, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bgs_keyword_form_vdtor(&self) -> u64 { unsafe { function!(11200, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x40)) } }
     /// `EnchantmentItem::TESFullName_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 11199, rva 0x14e614).
     /// `undefined TESFullName_vdtor(EnchantmentItem * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn tes_full_name_vdtor(&self) -> u64 { unsafe { function!(11199, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn tes_full_name_vdtor(&self) -> u64 { unsafe { function!(11199, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x30)) } }
 }
 
 impl crate::EnhanceWeaponEffect {
@@ -1040,7 +1040,7 @@ impl crate::EnhanceWeaponEffect {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_actor_inventory_event_vdtor(&self) -> u64 { unsafe { function!(36450, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bst_event_sink_actor_inventory_event_vdtor(&self) -> u64 { unsafe { function!(36450, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0xA0)) } }
 }
 
 impl crate::EscortActorPackageData {
@@ -1060,7 +1060,7 @@ impl crate::Explosion {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bs_handle_ref_object_vdtor(&self) -> u64 { unsafe { function!(43878, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bs_handle_ref_object_vdtor(&self) -> u64 { unsafe { function!(43878, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x20)) } }
 }
 
 impl crate::FOCollisionListener {
@@ -1114,7 +1114,7 @@ impl crate::FavoritesMenu {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn menu_event_handler_vdtor(&self) -> u64 { unsafe { function!(51556, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn menu_event_handler_vdtor(&self) -> u64 { unsafe { function!(51556, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x30)) } }
     /// `FavoritesMenu::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 51532, rva 0x92c660).
     /// `FavoritesMenu * ctor(FavoritesMenu * this)`
     ///
@@ -1580,21 +1580,21 @@ impl crate::GrenadeProjectile {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bs_handle_ref_object_vdtor(&self) -> u64 { unsafe { function!(43937, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bs_handle_ref_object_vdtor(&self) -> u64 { unsafe { function!(43937, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x20)) } }
     /// `GrenadeProjectile::BSTEventSink_BSAnimationGraphEvent_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 43938, rva 0x7ecd08).
     /// `undefined BSTEventSink_BSAnimationGraphEvent_vdtor(GrenadeProjectile * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_bs_animation_graph_event_vdtor(&self) -> u64 { unsafe { function!(43938, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bst_event_sink_bs_animation_graph_event_vdtor(&self) -> u64 { unsafe { function!(43938, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x30)) } }
     /// `GrenadeProjectile::IAnimationGraphManagerHolder_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 43939, rva 0x7ecd14).
     /// `undefined IAnimationGraphManagerHolder_vdtor(GrenadeProjectile * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_animation_graph_manager_holder_vdtor(&self) -> u64 { unsafe { function!(43939, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn i_animation_graph_manager_holder_vdtor(&self) -> u64 { unsafe { function!(43939, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x38)) } }
 }
 
 impl crate::GridArray {
@@ -1654,21 +1654,21 @@ impl crate::Hazard {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bs_handle_ref_object_vdtor(&self) -> u64 { unsafe { function!(43988, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bs_handle_ref_object_vdtor(&self) -> u64 { unsafe { function!(43988, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x20)) } }
     /// `Hazard::BSTEventSink_BSAnimationGraphEvent_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 43989, rva 0x7ef6c0).
     /// `undefined BSTEventSink_BSAnimationGraphEvent_vdtor(Hazard * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_bs_animation_graph_event_vdtor(&self) -> u64 { unsafe { function!(43989, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bst_event_sink_bs_animation_graph_event_vdtor(&self) -> u64 { unsafe { function!(43989, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x30)) } }
     /// `Hazard::IAnimationGraphManagerHolder_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 43990, rva 0x7ef6cc).
     /// `undefined IAnimationGraphManagerHolder_vdtor(Hazard * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_animation_graph_manager_holder_vdtor(&self) -> u64 { unsafe { function!(43990, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn i_animation_graph_manager_holder_vdtor(&self) -> u64 { unsafe { function!(43990, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x38)) } }
 }
 
 impl crate::HighActorCuller {
@@ -1725,7 +1725,7 @@ impl crate::IAnimationGraphManagerLoadingTask {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bs_resource_i_entry_db_post_flush_notify_vdtor(&self) -> u64 { unsafe { function!(32946, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bs_resource_i_entry_db_post_flush_notify_vdtor(&self) -> u64 { unsafe { function!(32946, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x38)) } }
     /// `IAnimationGraphManagerLoadingTask::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 32917, rva 0x554780).
     /// `undefined dtor(IAnimationGraphManagerLoadingTask * this)`
     ///
@@ -2140,7 +2140,7 @@ impl crate::IPackageDataAIWorldLocationHandle {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_package_data_vdtor(&self) -> u64 { unsafe { function!(27662, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn i_package_data_vdtor(&self) -> u64 { unsafe { function!(27662, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x8)) } }
 }
 
 impl crate::IPathBuilder {
@@ -2622,63 +2622,63 @@ impl crate::IngredientItem {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bgs_destructible_object_form_vdtor(&self) -> u64 { unsafe { function!(11264, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bgs_destructible_object_form_vdtor(&self) -> u64 { unsafe { function!(11264, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0xF8)) } }
     /// `IngredientItem::BGSEquipType_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 11263, rva 0x14fb58).
     /// `undefined BGSEquipType_vdtor(IngredientItem * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bgs_equip_type_vdtor(&self) -> u64 { unsafe { function!(11263, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bgs_equip_type_vdtor(&self) -> u64 { unsafe { function!(11263, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0xE8)) } }
     /// `IngredientItem::BGSKeywordForm_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 11259, rva 0x14fb28).
     /// `undefined BGSKeywordForm_vdtor(IngredientItem * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bgs_keyword_form_vdtor(&self) -> u64 { unsafe { function!(11259, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bgs_keyword_form_vdtor(&self) -> u64 { unsafe { function!(11259, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x40)) } }
     /// `IngredientItem::BGSPickupPutdownSounds_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 11256, rva 0x14fb04).
     /// `undefined BGSPickupPutdownSounds_vdtor(IngredientItem * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bgs_pickup_putdown_sounds_vdtor(&self) -> u64 { unsafe { function!(11256, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bgs_pickup_putdown_sounds_vdtor(&self) -> u64 { unsafe { function!(11256, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x108)) } }
     /// `IngredientItem::TESFullName_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 11258, rva 0x14fb1c).
     /// `undefined TESFullName_vdtor(IngredientItem * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn tes_full_name_vdtor(&self) -> u64 { unsafe { function!(11258, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn tes_full_name_vdtor(&self) -> u64 { unsafe { function!(11258, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x30)) } }
     /// `IngredientItem::TESIcon_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 11261, rva 0x14fb40).
     /// `undefined TESIcon_vdtor(IngredientItem * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn tes_icon_vdtor(&self) -> u64 { unsafe { function!(11261, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn tes_icon_vdtor(&self) -> u64 { unsafe { function!(11261, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0xC8)) } }
     /// `IngredientItem::TESModelTextureSwap_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 11260, rva 0x14fb34).
     /// `undefined TESModelTextureSwap_vdtor(IngredientItem * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn tes_model_texture_swap_vdtor(&self) -> u64 { unsafe { function!(11260, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn tes_model_texture_swap_vdtor(&self) -> u64 { unsafe { function!(11260, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x90)) } }
     /// `IngredientItem::TESValueForm_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 11257, rva 0x14fb10).
     /// `undefined TESValueForm_vdtor(IngredientItem * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn tes_value_form_vdtor(&self) -> u64 { unsafe { function!(11257, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn tes_value_form_vdtor(&self) -> u64 { unsafe { function!(11257, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x120)) } }
     /// `IngredientItem::TESWeightForm_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 11262, rva 0x14fb4c).
     /// `undefined TESWeightForm_vdtor(IngredientItem * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn tes_weight_form_vdtor(&self) -> u64 { unsafe { function!(11262, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn tes_weight_form_vdtor(&self) -> u64 { unsafe { function!(11262, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0xD8)) } }
 }
 
 impl crate::IntSeenData {
@@ -2906,14 +2906,14 @@ impl crate::JournalMenu {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_bs_system_event_vdtor(&self) -> u64 { unsafe { function!(53338, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bst_event_sink_bs_system_event_vdtor(&self) -> u64 { unsafe { function!(53338, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x40)) } }
     /// `JournalMenu::MenuEventHandler_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 53337, rva 0x9ad308).
     /// `undefined MenuEventHandler_vdtor(JournalMenu * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn menu_event_handler_vdtor(&self) -> u64 { unsafe { function!(53337, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn menu_event_handler_vdtor(&self) -> u64 { unsafe { function!(53337, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x30)) } }
     /// `JournalMenu::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 53313, rva 0x9abaf0).
     /// `JournalMenu * ctor(JournalMenu * this)`
     ///
@@ -2964,28 +2964,28 @@ impl crate::Journal_SystemTab {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_bgs_save_load_manager_event_vdtor(&self) -> u64 { unsafe { function!(53285, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bst_event_sink_bgs_save_load_manager_event_vdtor(&self) -> u64 { unsafe { function!(53285, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x28)) } }
     /// `Journal_SystemTab::BSTEventSink_BSGamerProfileEvent_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 53284, rva 0x9a7f38).
     /// `undefined BSTEventSink_BSGamerProfileEvent_vdtor(Journal_SystemTab * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_bs_gamer_profile_event_vdtor(&self) -> u64 { unsafe { function!(53284, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bst_event_sink_bs_gamer_profile_event_vdtor(&self) -> u64 { unsafe { function!(53284, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x20)) } }
     /// `Journal_SystemTab::BSTEventSink_BSRemoteGamepadEvent_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 53286, rva 0x9a7f50).
     /// `undefined BSTEventSink_BSRemoteGamepadEvent_vdtor(Journal_SystemTab * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_bs_remote_gamepad_event_vdtor(&self) -> u64 { unsafe { function!(53286, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bst_event_sink_bs_remote_gamepad_event_vdtor(&self) -> u64 { unsafe { function!(53286, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x30)) } }
     /// `Journal_SystemTab::BSTEventSink_BSSaveDataEvent_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 53283, rva 0x9a7f2c).
     /// `undefined BSTEventSink_BSSaveDataEvent_vdtor(Journal_SystemTab * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_bs_save_data_event_vdtor(&self) -> u64 { unsafe { function!(53283, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bst_event_sink_bs_save_data_event_vdtor(&self) -> u64 { unsafe { function!(53283, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x18)) } }
     /// `Journal_SystemTab::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 53259, rva 0x9a5d20).
     /// `Journal_SystemTab * ctor(Journal_SystemTab * this)`
     ///
@@ -3069,14 +3069,14 @@ impl crate::KinectMenu {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_menu_open_close_event_vdtor(&self) -> u64 { unsafe { function!(33986, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bst_event_sink_menu_open_close_event_vdtor(&self) -> u64 { unsafe { function!(33986, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x30)) } }
     /// `KinectMenu::BSTEventSink_MenuOpenCloseEvent_vfunc_1` (decompiler signature, tier high; ledger rtti evidence, name high; id 33983, rva 0x5b8600).
     /// `undefined8 BSTEventSink_MenuOpenCloseEvent_vfunc_1(KinectMenu * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_menu_open_close_event_vfunc_1(&self) -> u64 { unsafe { function!(33983, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bst_event_sink_menu_open_close_event_vfunc_1(&self) -> u64 { unsafe { function!(33983, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x30)) } }
     /// `KinectMenu::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 33980, rva 0x5b8270).
     /// `KinectMenu * ctor(KinectMenu * this)`
     ///
@@ -3170,21 +3170,21 @@ impl crate::LoadWaitSpinner {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_bgs_save_load_manager_event_vdtor(&self) -> u64 { unsafe { function!(34002, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bst_event_sink_bgs_save_load_manager_event_vdtor(&self) -> u64 { unsafe { function!(34002, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x40)) } }
     /// `LoadWaitSpinner::BSTEventSink_BSGamerProfileEvent_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 34001, rva 0x5b9218).
     /// `undefined BSTEventSink_BSGamerProfileEvent_vdtor(LoadWaitSpinner * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_bs_gamer_profile_event_vdtor(&self) -> u64 { unsafe { function!(34001, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bst_event_sink_bs_gamer_profile_event_vdtor(&self) -> u64 { unsafe { function!(34001, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x38)) } }
     /// `LoadWaitSpinner::BSTEventSink_BSSystemEvent_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 34000, rva 0x5b920c).
     /// `undefined BSTEventSink_BSSystemEvent_vdtor(LoadWaitSpinner * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_bs_system_event_vdtor(&self) -> u64 { unsafe { function!(34000, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bst_event_sink_bs_system_event_vdtor(&self) -> u64 { unsafe { function!(34000, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x30)) } }
     /// `LoadWaitSpinner::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 33989, rva 0x5b8c40).
     /// `LoadWaitSpinner * ctor(LoadWaitSpinner * this)`
     ///
@@ -3211,21 +3211,21 @@ impl crate::LockpickingMenu {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_menu_open_close_event_vdtor(&self) -> u64 { unsafe { function!(51989, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bst_event_sink_menu_open_close_event_vdtor(&self) -> u64 { unsafe { function!(51989, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x40)) } }
     /// `LockpickingMenu::BSTEventSink_MenuOpenCloseEvent_vfunc_1` (decompiler signature, tier high; ledger rtti evidence, name high; id 51952, rva 0x94d5d0).
     /// `undefined8 BSTEventSink_MenuOpenCloseEvent_vfunc_1(LockpickingMenu * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_menu_open_close_event_vfunc_1(&self) -> u64 { unsafe { function!(51952, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bst_event_sink_menu_open_close_event_vfunc_1(&self) -> u64 { unsafe { function!(51952, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x40)) } }
     /// `LockpickingMenu::MenuEventHandler_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 51988, rva 0x9506c8).
     /// `undefined MenuEventHandler_vdtor(LockpickingMenu * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn menu_event_handler_vdtor(&self) -> u64 { unsafe { function!(51988, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn menu_event_handler_vdtor(&self) -> u64 { unsafe { function!(51988, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x30)) } }
     /// `LockpickingMenu::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 51948, rva 0x94ce20).
     /// `LockpickingMenu * ctor(LockpickingMenu * this)`
     ///
@@ -3249,7 +3249,7 @@ impl crate::LoginMenu__loginMenu {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn g_fx_function_handler_vdtor(&self) -> u64 { unsafe { function!(441668, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn g_fx_function_handler_vdtor(&self) -> u64 { unsafe { function!(441668, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x30)) } }
 }
 
 impl crate::MagicItem {
@@ -3259,14 +3259,14 @@ impl crate::MagicItem {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bgs_keyword_form_vdtor(&self) -> u64 { unsafe { function!(11369, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bgs_keyword_form_vdtor(&self) -> u64 { unsafe { function!(11369, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x40)) } }
     /// `MagicItem::TESFullName_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 11368, rva 0x152430).
     /// `undefined TESFullName_vdtor(MagicItem * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn tes_full_name_vdtor(&self) -> u64 { unsafe { function!(11368, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn tes_full_name_vdtor(&self) -> u64 { unsafe { function!(11368, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x30)) } }
 }
 
 impl crate::MagicItemTraversalFunctor {
@@ -3579,7 +3579,7 @@ impl crate::Main {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_bs_gamer_profile_event_vdtor(&self) -> u64 { unsafe { function!(36728, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bst_event_sink_bs_gamer_profile_event_vdtor(&self) -> u64 { unsafe { function!(36728, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x8)) } }
 }
 
 impl crate::MarketplaceMenu {
@@ -3589,7 +3589,7 @@ impl crate::MarketplaceMenu {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn g_fx_function_handler_vdtor(&self) -> u64 { unsafe { function!(418933, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn g_fx_function_handler_vdtor(&self) -> u64 { unsafe { function!(418933, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x30)) } }
 }
 
 impl crate::MemoryHeap {
@@ -3640,7 +3640,7 @@ impl crate::MenuTopicManager {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_position_player_event_vdtor(&self) -> u64 { unsafe { function!(35317, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bst_event_sink_position_player_event_vdtor(&self) -> u64 { unsafe { function!(35317, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x8)) } }
     /// `MenuTopicManager::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 35265, rva 0x5ee360).
     /// `MenuTopicManager * ctor(MenuTopicManager * this)`
     ///
@@ -3657,21 +3657,21 @@ impl crate::MissileProjectile {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bs_handle_ref_object_vdtor(&self) -> u64 { unsafe { function!(44044, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bs_handle_ref_object_vdtor(&self) -> u64 { unsafe { function!(44044, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x20)) } }
     /// `MissileProjectile::BSTEventSink_BSAnimationGraphEvent_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 44045, rva 0x7f51f0).
     /// `undefined BSTEventSink_BSAnimationGraphEvent_vdtor(MissileProjectile * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_bs_animation_graph_event_vdtor(&self) -> u64 { unsafe { function!(44045, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bst_event_sink_bs_animation_graph_event_vdtor(&self) -> u64 { unsafe { function!(44045, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x30)) } }
     /// `MissileProjectile::IAnimationGraphManagerHolder_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 44046, rva 0x7f51fc).
     /// `undefined IAnimationGraphManagerHolder_vdtor(MissileProjectile * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_animation_graph_manager_holder_vdtor(&self) -> u64 { unsafe { function!(44046, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn i_animation_graph_manager_holder_vdtor(&self) -> u64 { unsafe { function!(44046, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x38)) } }
     /// `MissileProjectile::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 44022, rva 0x7f1fc0).
     /// `MissileProjectile * ctor(MissileProjectile * this)`
     ///
@@ -3705,21 +3705,21 @@ impl crate::MistMenu {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn menu_event_handler_vdtor(&self) -> u64 { unsafe { function!(52331, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn menu_event_handler_vdtor(&self) -> u64 { unsafe { function!(52331, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x48)) } }
     /// `MistMenu::SimpleAnimationGraphManagerHolder_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 52330, rva 0x966bc0).
     /// `undefined SimpleAnimationGraphManagerHolder_vdtor(MistMenu * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn simple_animation_graph_manager_holder_vdtor(&self) -> u64 { unsafe { function!(52330, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn simple_animation_graph_manager_holder_vdtor(&self) -> u64 { unsafe { function!(52330, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x30)) } }
     /// `MistMenu::SimpleAnimationGraphManagerHolder_vfunc_19` (decompiler signature, tier high; ledger rtti evidence, name high; id 52328, rva 0x966b70).
     /// `undefined SimpleAnimationGraphManagerHolder_vfunc_19(MistMenu * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn simple_animation_graph_manager_holder_vfunc_19(&self) -> u64 { unsafe { function!(52328, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn simple_animation_graph_manager_holder_vfunc_19(&self) -> u64 { unsafe { function!(52328, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x30)) } }
 }
 
 impl crate::MobIterOperator {
@@ -3753,14 +3753,14 @@ impl crate::ModManagerMenu {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn g_fx_function_handler_vdtor(&self) -> u64 { unsafe { function!(33902, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn g_fx_function_handler_vdtor(&self) -> u64 { unsafe { function!(33902, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x40)) } }
     /// `ModManagerMenu::MenuEventHandler_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 33901, rva 0x5b7b00).
     /// `undefined MenuEventHandler_vdtor(ModManagerMenu * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn menu_event_handler_vdtor(&self) -> u64 { unsafe { function!(33901, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn menu_event_handler_vdtor(&self) -> u64 { unsafe { function!(33901, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x30)) } }
     /// `ModManagerMenu::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 33751, rva 0x5aef50).
     /// `ModManagerMenu * ctor(ModManagerMenu * this)`
     ///
@@ -3784,14 +3784,14 @@ impl crate::ModelReferenceEffect {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_bs_animation_graph_event_vdtor(&self) -> u64 { unsafe { function!(34680, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bst_event_sink_bs_animation_graph_event_vdtor(&self) -> u64 { unsafe { function!(34680, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x60)) } }
     /// `ModelReferenceEffect::SimpleAnimationGraphManagerHolder_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 34679, rva 0x5d87b0).
     /// `undefined SimpleAnimationGraphManagerHolder_vdtor(ModelReferenceEffect * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn simple_animation_graph_manager_holder_vdtor(&self) -> u64 { unsafe { function!(34679, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn simple_animation_graph_manager_holder_vdtor(&self) -> u64 { unsafe { function!(34679, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x48)) } }
     /// `ModelReferenceEffect::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 34652, rva 0x5d67d0).
     /// `ModelReferenceEffect * ctor(ModelReferenceEffect * this)`
     ///
@@ -3855,21 +3855,21 @@ impl crate::NavMesh {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bs_navmesh_vfunc_0(&self) -> u64 { unsafe { function!(30284, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bs_navmesh_vfunc_0(&self) -> u64 { unsafe { function!(30284, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x28)) } }
     /// `NavMesh::BSNavmesh_vfunc_1` (decompiler signature, tier high; ledger rtti evidence, name high; id 30222, rva 0x4b9120).
     /// `undefined4 BSNavmesh_vfunc_1(NavMesh * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bs_navmesh_vfunc_1(&self) -> u32 { unsafe { function!(30222, (*const Self) -> u32)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bs_navmesh_vfunc_1(&self) -> u32 { unsafe { function!(30222, (*const Self) -> u32)(core::ptr::from_ref(self).byte_add(0x28)) } }
     /// `NavMesh::TESChildCell_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 30283, rva 0x4c02e8).
     /// `undefined TESChildCell_vdtor(NavMesh * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn tes_child_cell_vdtor(&self) -> u64 { unsafe { function!(30283, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn tes_child_cell_vdtor(&self) -> u64 { unsafe { function!(30283, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x20)) } }
 }
 
 impl crate::NavMeshInfoMap {
@@ -3879,7 +3879,7 @@ impl crate::NavMeshInfoMap {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bs_navmesh_info_map_vdtor(&self) -> u64 { unsafe { function!(30412, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bs_navmesh_info_map_vdtor(&self) -> u64 { unsafe { function!(30412, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x20)) } }
 }
 
 impl crate::NavMeshSearchClosePoint {
@@ -3939,7 +3939,7 @@ impl crate::NewInventoryMenuItemLoadTask {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bs_resource_i_entry_db_post_flush_notify_vdtor(&self) -> u64 { unsafe { function!(51785, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bs_resource_i_entry_db_post_flush_notify_vdtor(&self) -> u64 { unsafe { function!(51785, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x38)) } }
 }
 
 impl crate::NonActorMagicCaster {
@@ -3949,42 +3949,42 @@ impl crate::NonActorMagicCaster {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn magic_caster_vfunc_0(&self) -> u64 { unsafe { function!(34713, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn magic_caster_vfunc_0(&self) -> u64 { unsafe { function!(34713, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
     /// `NonActorMagicCaster::MagicCaster_vfunc_11` (decompiler signature, tier high; ledger rtti evidence, name high; id 34710, rva 0x5d9780).
     /// `undefined8 MagicCaster_vfunc_11(NonActorMagicCaster * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn magic_caster_vfunc_11(&self) -> u64 { unsafe { function!(34710, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn magic_caster_vfunc_11(&self) -> u64 { unsafe { function!(34710, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
     /// `NonActorMagicCaster::MagicCaster_vfunc_12` (decompiler signature, tier high; ledger rtti evidence, name high; id 34698, rva 0x5d8fa0).
     /// `longlong MagicCaster_vfunc_12(NonActorMagicCaster * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn magic_caster_vfunc_12(&self) -> i64 { unsafe { function!(34698, (*const Self) -> i64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn magic_caster_vfunc_12(&self) -> i64 { unsafe { function!(34698, (*const Self) -> i64)(core::ptr::from_ref(self).byte_add(0x10)) } }
     /// `NonActorMagicCaster::MagicCaster_vfunc_13` (decompiler signature, tier high; ledger rtti evidence, name high; id 34699, rva 0x5d9010).
     /// `undefined MagicCaster_vfunc_13(NonActorMagicCaster * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn magic_caster_vfunc_13(&self) -> u64 { unsafe { function!(34699, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn magic_caster_vfunc_13(&self) -> u64 { unsafe { function!(34699, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
     /// `NonActorMagicCaster::MagicCaster_vfunc_14` (decompiler signature, tier high; ledger rtti evidence, name high; id 34702, rva 0x5d91e0).
     /// `undefined8 MagicCaster_vfunc_14(NonActorMagicCaster * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn magic_caster_vfunc_14(&self) -> u64 { unsafe { function!(34702, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn magic_caster_vfunc_14(&self) -> u64 { unsafe { function!(34702, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
     /// `NonActorMagicCaster::MagicCaster_vfunc_7` (decompiler signature, tier high; ledger rtti evidence, name high; id 34711, rva 0x5d9790).
     /// `undefined MagicCaster_vfunc_7(NonActorMagicCaster * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn magic_caster_vfunc_7(&self) -> u64 { unsafe { function!(34711, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn magic_caster_vfunc_7(&self) -> u64 { unsafe { function!(34711, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
     /// `NonActorMagicCaster::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 34694, rva 0x5d8d20).
     /// `NonActorMagicCaster * ctor(NonActorMagicCaster * this)`
     ///
@@ -4001,21 +4001,21 @@ impl crate::NonActorMagicTarget {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn magic_target_vfunc_0(&self) -> u64 { unsafe { function!(12183, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn magic_target_vfunc_0(&self) -> u64 { unsafe { function!(12183, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
     /// `NonActorMagicTarget::MagicTarget_vfunc_2` (decompiler signature, tier high; ledger rtti evidence, name high; id 12334, rva 0x17ee20).
     /// `undefined8 MagicTarget_vfunc_2(NonActorMagicTarget * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn magic_target_vfunc_2(&self) -> u64 { unsafe { function!(12334, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn magic_target_vfunc_2(&self) -> u64 { unsafe { function!(12334, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
     /// `NonActorMagicTarget::MagicTarget_vfunc_7` (decompiler signature, tier high; ledger rtti evidence, name high; id 34718, rva 0x5d98f0).
     /// `undefined1 * MagicTarget_vfunc_7(NonActorMagicTarget * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn magic_target_vfunc_7(&self) -> *mut u8 { unsafe { function!(34718, (*const Self) -> *mut u8)(core::ptr::from_ref(self)) } }
+    pub unsafe fn magic_target_vfunc_7(&self) -> *mut u8 { unsafe { function!(34718, (*const Self) -> *mut u8)(core::ptr::from_ref(self).byte_add(0x10)) } }
 }
 
 impl crate::ObjectListItem {
@@ -4025,14 +4025,14 @@ impl crate::ObjectListItem {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_package_data_vdtor(&self) -> u64 { unsafe { function!(27742, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn i_package_data_vdtor(&self) -> u64 { unsafe { function!(27742, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x8)) } }
     /// `ObjectListItem::IPackageData_vfunc_5` (decompiler signature, tier high; ledger rtti evidence, name high; id 27682, rva 0x451170).
     /// `ulonglong IPackageData_vfunc_5(ObjectListItem * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_package_data_vfunc_5(&self) -> u64 { unsafe { function!(27682, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn i_package_data_vfunc_5(&self) -> u64 { unsafe { function!(27682, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x8)) } }
     /// `ObjectListItem::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 27684, rva 0x4511d0).
     /// `ObjectListItem * ctor(ObjectListItem * this)`
     ///
@@ -4096,14 +4096,14 @@ impl crate::PlayerSleepWaitMovementControllerAdapter {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_tes_sleep_stop_event_vfunc_1(&self) -> u64 { unsafe { function!(36524, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bst_event_sink_tes_sleep_stop_event_vfunc_1(&self) -> u64 { unsafe { function!(36524, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x8)) } }
     /// `PlayerSleepWaitMovementControllerAdapter::BSTEventSink_TESWaitStopEvent_vfunc_1` (decompiler signature, tier high; ledger rtti evidence, name high; id 36526, rva 0x650f50).
     /// `undefined8 BSTEventSink_TESWaitStopEvent_vfunc_1(PlayerSleepWaitMovementControllerAdapter * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_tes_wait_stop_event_vfunc_1(&self) -> u64 { unsafe { function!(36526, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bst_event_sink_tes_wait_stop_event_vfunc_1(&self) -> u64 { unsafe { function!(36526, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x18)) } }
 }
 
 impl crate::PlayerSleepWaitMovementControllerAdapter__SwitchToUnloadedSetControllerFunctor {
@@ -4184,21 +4184,21 @@ impl crate::Projectile {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bs_handle_ref_object_vdtor(&self) -> u64 { unsafe { function!(44251, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bs_handle_ref_object_vdtor(&self) -> u64 { unsafe { function!(44251, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x20)) } }
     /// `Projectile::BSTEventSink_BSAnimationGraphEvent_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 44252, rva 0x804c80).
     /// `undefined BSTEventSink_BSAnimationGraphEvent_vdtor(Projectile * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_bs_animation_graph_event_vdtor(&self) -> u64 { unsafe { function!(44252, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bst_event_sink_bs_animation_graph_event_vdtor(&self) -> u64 { unsafe { function!(44252, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x30)) } }
     /// `Projectile::IAnimationGraphManagerHolder_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 44253, rva 0x804c8c).
     /// `undefined IAnimationGraphManagerHolder_vdtor(Projectile * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_animation_graph_manager_holder_vdtor(&self) -> u64 { unsafe { function!(44253, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn i_animation_graph_manager_holder_vdtor(&self) -> u64 { unsafe { function!(44253, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x38)) } }
 }
 
 impl crate::Projectile__LaunchData {
@@ -4235,7 +4235,7 @@ impl crate::QueuedActor {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bs_resource_i_entry_db_post_flush_notify_vdtor(&self) -> u64 { unsafe { function!(13181, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bs_resource_i_entry_db_post_flush_notify_vdtor(&self) -> u64 { unsafe { function!(13181, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x38)) } }
 }
 
 impl crate::QueuedAnimationObject {
@@ -4245,7 +4245,7 @@ impl crate::QueuedAnimationObject {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bs_resource_i_entry_db_post_flush_notify_vdtor(&self) -> u64 { unsafe { function!(13182, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bs_resource_i_entry_db_post_flush_notify_vdtor(&self) -> u64 { unsafe { function!(13182, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x38)) } }
 }
 
 impl crate::QueuedCharacter {
@@ -4255,7 +4255,7 @@ impl crate::QueuedCharacter {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bs_resource_i_entry_db_post_flush_notify_vdtor(&self) -> u64 { unsafe { function!(13183, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bs_resource_i_entry_db_post_flush_notify_vdtor(&self) -> u64 { unsafe { function!(13183, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x38)) } }
 }
 
 impl crate::QueuedFile {
@@ -4275,7 +4275,7 @@ impl crate::QueuedHelmet {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bs_resource_i_entry_db_post_flush_notify_vdtor(&self) -> u64 { unsafe { function!(13184, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bs_resource_i_entry_db_post_flush_notify_vdtor(&self) -> u64 { unsafe { function!(13184, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x38)) } }
     /// `QueuedHelmet::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 12998, rva 0x192770).
     /// `undefined dtor(QueuedHelmet * this)`
     ///
@@ -4292,7 +4292,7 @@ impl crate::QueuedModel {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bs_resource_i_entry_db_post_flush_notify_vdtor(&self) -> u64 { unsafe { function!(13185, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bs_resource_i_entry_db_post_flush_notify_vdtor(&self) -> u64 { unsafe { function!(13185, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x38)) } }
 }
 
 impl crate::QueuedNamedFile {
@@ -4312,7 +4312,7 @@ impl crate::QueuedReference {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bs_resource_i_entry_db_post_flush_notify_vdtor(&self) -> u64 { unsafe { function!(13187, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bs_resource_i_entry_db_post_flush_notify_vdtor(&self) -> u64 { unsafe { function!(13187, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x38)) } }
 }
 
 impl crate::QueuedTree {
@@ -4322,7 +4322,7 @@ impl crate::QueuedTree {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bs_resource_i_entry_db_post_flush_notify_vdtor(&self) -> u64 { unsafe { function!(13188, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bs_resource_i_entry_db_post_flush_notify_vdtor(&self) -> u64 { unsafe { function!(13188, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x38)) } }
 }
 
 impl crate::REFREventCallbacks__ConcreteEventCallbackFactory__anon_01A9FA1F__SceneResultsCallBack {
@@ -4392,7 +4392,7 @@ impl crate::RaceSexMenu {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn menu_event_handler_vdtor(&self) -> u64 { unsafe { function!(52444, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn menu_event_handler_vdtor(&self) -> u64 { unsafe { function!(52444, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x30)) } }
     /// `RaceSexMenu::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 52342, rva 0x967950).
     /// `RaceSexMenu * ctor(RaceSexMenu * this)`
     ///
@@ -4416,7 +4416,7 @@ impl crate::RagdollFurnitureListener {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn hkp_entity_listener_vdtor(&self) -> u64 { unsafe { function!(25976, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn hkp_entity_listener_vdtor(&self) -> u64 { unsafe { function!(25976, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x8)) } }
 }
 
 impl crate::ReferenceEffect {
@@ -4544,56 +4544,56 @@ impl crate::ScrollItem {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bgs_destructible_object_form_vdtor(&self) -> u64 { unsafe { function!(11454, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bgs_destructible_object_form_vdtor(&self) -> u64 { unsafe { function!(11454, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x120)) } }
     /// `ScrollItem::BGSEquipType_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 11460, rva 0x154c2c).
     /// `undefined BGSEquipType_vdtor(ScrollItem * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bgs_equip_type_vdtor(&self) -> u64 { unsafe { function!(11460, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bgs_equip_type_vdtor(&self) -> u64 { unsafe { function!(11460, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x90)) } }
     /// `ScrollItem::BGSKeywordForm_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 11459, rva 0x154c20).
     /// `undefined BGSKeywordForm_vdtor(ScrollItem * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bgs_keyword_form_vdtor(&self) -> u64 { unsafe { function!(11459, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bgs_keyword_form_vdtor(&self) -> u64 { unsafe { function!(11459, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x40)) } }
     /// `ScrollItem::BGSMenuDisplayObject_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 11461, rva 0x154c38).
     /// `undefined BGSMenuDisplayObject_vdtor(ScrollItem * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bgs_menu_display_object_vdtor(&self) -> u64 { unsafe { function!(11461, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bgs_menu_display_object_vdtor(&self) -> u64 { unsafe { function!(11461, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0xA0)) } }
     /// `ScrollItem::BGSPickupPutdownSounds_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 11455, rva 0x154bf0).
     /// `undefined BGSPickupPutdownSounds_vdtor(ScrollItem * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bgs_pickup_putdown_sounds_vdtor(&self) -> u64 { unsafe { function!(11455, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bgs_pickup_putdown_sounds_vdtor(&self) -> u64 { unsafe { function!(11455, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x130)) } }
     /// `ScrollItem::TESFullName_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 11458, rva 0x154c14).
     /// `undefined TESFullName_vdtor(ScrollItem * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn tes_full_name_vdtor(&self) -> u64 { unsafe { function!(11458, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn tes_full_name_vdtor(&self) -> u64 { unsafe { function!(11458, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x30)) } }
     /// `ScrollItem::TESValueForm_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 11457, rva 0x154c08).
     /// `undefined TESValueForm_vdtor(ScrollItem * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn tes_value_form_vdtor(&self) -> u64 { unsafe { function!(11457, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn tes_value_form_vdtor(&self) -> u64 { unsafe { function!(11457, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x158)) } }
     /// `ScrollItem::TESWeightForm_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 11456, rva 0x154bfc).
     /// `undefined TESWeightForm_vdtor(ScrollItem * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn tes_weight_form_vdtor(&self) -> u64 { unsafe { function!(11456, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn tes_weight_form_vdtor(&self) -> u64 { unsafe { function!(11456, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x148)) } }
 }
 
 impl crate::SearchPage {
@@ -4653,7 +4653,7 @@ impl crate::SimpleAnimationGraphManagerLoadingTask {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bs_resource_i_entry_db_post_flush_notify_vdtor(&self) -> u64 { unsafe { function!(32976, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bs_resource_i_entry_db_post_flush_notify_vdtor(&self) -> u64 { unsafe { function!(32976, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x38)) } }
 }
 
 impl crate::SkyObject {
@@ -4680,28 +4680,28 @@ impl crate::SkyrimSpeechRecognition {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_menu_open_close_event_vdtor(&self) -> u64 { unsafe { function!(56869, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bst_event_sink_menu_open_close_event_vdtor(&self) -> u64 { unsafe { function!(56869, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x20)) } }
     /// `SkyrimSpeechRecognition::BSTEventSink_SpeechRecognitionEvents_DeviceReady_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 56866, rva 0xa67d8c).
     /// `undefined BSTEventSink_SpeechRecognitionEvents_DeviceReady_vdtor(SkyrimSpeechRecognition * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_speech_recognition_events_device_ready_vdtor(&self) -> u64 { unsafe { function!(56866, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bst_event_sink_speech_recognition_events_device_ready_vdtor(&self) -> u64 { unsafe { function!(56866, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x8)) } }
     /// `SkyrimSpeechRecognition::BSTEventSink_SpeechRecognitionEvents_Interference_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 56867, rva 0xa67d98).
     /// `undefined BSTEventSink_SpeechRecognitionEvents_Interference_vdtor(SkyrimSpeechRecognition * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_speech_recognition_events_interference_vdtor(&self) -> u64 { unsafe { function!(56867, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bst_event_sink_speech_recognition_events_interference_vdtor(&self) -> u64 { unsafe { function!(56867, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
     /// `SkyrimSpeechRecognition::BSTEventSink_SpeechRecognitionEvents_Recognition_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 56868, rva 0xa67da4).
     /// `undefined BSTEventSink_SpeechRecognitionEvents_Recognition_vdtor(SkyrimSpeechRecognition * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_speech_recognition_events_recognition_vdtor(&self) -> u64 { unsafe { function!(56868, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bst_event_sink_speech_recognition_events_recognition_vdtor(&self) -> u64 { unsafe { function!(56868, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x18)) } }
     /// `SkyrimSpeechRecognition::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 56837, rva 0xa66920).
     /// `SkyrimSpeechRecognition * ctor(SkyrimSpeechRecognition * this)`
     ///
@@ -4738,42 +4738,42 @@ impl crate::SpellItem {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bgs_equip_type_vdtor(&self) -> u64 { unsafe { function!(11509, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bgs_equip_type_vdtor(&self) -> u64 { unsafe { function!(11509, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x90)) } }
     /// `SpellItem::BGSKeywordForm_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 11508, rva 0x155be8).
     /// `undefined BGSKeywordForm_vdtor(SpellItem * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bgs_keyword_form_vdtor(&self) -> u64 { unsafe { function!(11508, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bgs_keyword_form_vdtor(&self) -> u64 { unsafe { function!(11508, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x40)) } }
     /// `SpellItem::BGSMenuDisplayObject_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 11510, rva 0x155c00).
     /// `undefined BGSMenuDisplayObject_vdtor(SpellItem * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bgs_menu_display_object_vdtor(&self) -> u64 { unsafe { function!(11510, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bgs_menu_display_object_vdtor(&self) -> u64 { unsafe { function!(11510, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0xA0)) } }
     /// `SpellItem::BGSMenuDisplayObject_vfunc_4` (decompiler signature, tier high; ledger rtti evidence, name medium; id 11484, rva 0x155350).
     /// `undefined8 BGSMenuDisplayObject_vfunc_4(SpellItem * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bgs_menu_display_object_vfunc_4(&self) -> u64 { unsafe { function!(11484, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bgs_menu_display_object_vfunc_4(&self) -> u64 { unsafe { function!(11484, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0xA0)) } }
     /// `SpellItem::TESDescription_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 11511, rva 0x155c0c).
     /// `undefined TESDescription_vdtor(SpellItem * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn tes_description_vdtor(&self) -> u64 { unsafe { function!(11511, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn tes_description_vdtor(&self) -> u64 { unsafe { function!(11511, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0xB0)) } }
     /// `SpellItem::TESFullName_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 11507, rva 0x155bdc).
     /// `undefined TESFullName_vdtor(SpellItem * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn tes_full_name_vdtor(&self) -> u64 { unsafe { function!(11507, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn tes_full_name_vdtor(&self) -> u64 { unsafe { function!(11507, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x30)) } }
 }
 
 impl crate::Stars {
@@ -4814,7 +4814,7 @@ impl crate::StaticAvoidNodeManager {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vfunc_0_vt8(&self) -> u64 { unsafe { function!(42490, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn vfunc_0_vt8(&self) -> u64 { unsafe { function!(42490, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x8)) } }
 }
 
 impl crate::StatsNode {
@@ -4824,7 +4824,7 @@ impl crate::StatsNode {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_bs_animation_graph_event_vdtor(&self) -> u64 { unsafe { function!(52599, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bst_event_sink_bs_animation_graph_event_vdtor(&self) -> u64 { unsafe { function!(52599, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x18)) } }
 }
 
 impl crate::StructArrayImplementation {
@@ -4844,14 +4844,14 @@ impl crate::SummonPlacementEffect {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_bs_animation_graph_event_vdtor(&self) -> u64 { unsafe { function!(35017, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bst_event_sink_bs_animation_graph_event_vdtor(&self) -> u64 { unsafe { function!(35017, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x60)) } }
     /// `SummonPlacementEffect::SimpleAnimationGraphManagerHolder_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 35016, rva 0x5e51fc).
     /// `undefined SimpleAnimationGraphManagerHolder_vdtor(SummonPlacementEffect * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn simple_animation_graph_manager_holder_vdtor(&self) -> u64 { unsafe { function!(35016, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn simple_animation_graph_manager_holder_vdtor(&self) -> u64 { unsafe { function!(35016, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x48)) } }
     /// `SummonPlacementEffect::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 35012, rva 0x5e5120).
     /// `SummonPlacementEffect * ctor(SummonPlacementEffect * this)`
     ///
@@ -4888,23 +4888,6 @@ impl crate::SynchronizedMap___int64_NiPointer_BSTask____SynchronizedMapIterator 
     pub unsafe fn dtor(&self) -> u64 { unsafe { function!(75663, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
-impl crate::SystemEventAdapter {
-    /// `TES::SystemEventAdapter::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 13442, rva 0x1abb50).
-    /// `SystemEventAdapter * ctor(SystemEventAdapter * this)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(13442, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
-    /// `TES::SystemEventAdapter::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 13443, rva 0x1abba0).
-    /// `undefined dtor(SystemEventAdapter * this)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(13443, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
-}
-
 impl crate::TeleportDoorSearch {
     /// `TeleportDoorSearch::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 30930, rva 0x4e4720).
     /// `TeleportDoorSearch * ctor(TeleportDoorSearch * this)`
@@ -4932,7 +4915,7 @@ impl crate::TrainingMenu {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_menu_open_close_event_vdtor(&self) -> u64 { unsafe { function!(52674, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bst_event_sink_menu_open_close_event_vdtor(&self) -> u64 { unsafe { function!(52674, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x30)) } }
     /// `TrainingMenu::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 52659, rva 0x985390).
     /// `TrainingMenu * ctor(TrainingMenu * this)`
     ///
@@ -4993,7 +4976,7 @@ impl crate::UISaveLoadManager {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_bgs_save_load_manager_event_vdtor(&self) -> u64 { unsafe { function!(52925, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bst_event_sink_bgs_save_load_manager_event_vdtor(&self) -> u64 { unsafe { function!(52925, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x8)) } }
     /// `UISaveLoadManager::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 52878, rva 0x98ee80).
     /// `UISaveLoadManager * ctor(UISaveLoadManager * this)`
     ///
@@ -5271,7 +5254,7 @@ impl crate::_anon_3B91968A__DejaGFxLogger {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn g_fx_log_base_g_fx_log_vdtor(&self) -> u64 { unsafe { function!(82367, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn g_fx_log_base_g_fx_log_vdtor(&self) -> u64 { unsafe { function!(82367, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x18)) } }
 }
 
 impl crate::_anon_422024B4__Clear1nTracksFilter {
@@ -5281,28 +5264,28 @@ impl crate::_anon_422024B4__Clear1nTracksFilter {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn hkp_collidable_collidable_filter_vdtor(&self) -> u64 { unsafe { function!(79394, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn hkp_collidable_collidable_filter_vdtor(&self) -> u64 { unsafe { function!(79394, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
     /// `_anon_422024B4::Clear1nTracksFilter::hkpRayCollidableFilter_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 79397, rva 0x10a5d50).
     /// `undefined hkpRayCollidableFilter_vdtor(Clear1nTracksFilter * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn hkp_ray_collidable_filter_vdtor(&self) -> u64 { unsafe { function!(79397, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn hkp_ray_collidable_filter_vdtor(&self) -> u64 { unsafe { function!(79397, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x28)) } }
     /// `_anon_422024B4::Clear1nTracksFilter::hkpRayShapeCollectionFilter_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 79396, rva 0x10a5d44).
     /// `undefined hkpRayShapeCollectionFilter_vdtor(Clear1nTracksFilter * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn hkp_ray_shape_collection_filter_vdtor(&self) -> u64 { unsafe { function!(79396, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn hkp_ray_shape_collection_filter_vdtor(&self) -> u64 { unsafe { function!(79396, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x20)) } }
     /// `_anon_422024B4::Clear1nTracksFilter::hkpShapeCollectionFilter_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 79395, rva 0x10a5d38).
     /// `undefined hkpShapeCollectionFilter_vdtor(Clear1nTracksFilter * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn hkp_shape_collection_filter_vdtor(&self) -> u64 { unsafe { function!(79395, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn hkp_shape_collection_filter_vdtor(&self) -> u64 { unsafe { function!(79395, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x18)) } }
 }
 
 impl crate::_anon_422024B4__NeverCollideFilter {
@@ -5312,28 +5295,28 @@ impl crate::_anon_422024B4__NeverCollideFilter {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn hkp_collidable_collidable_filter_vdtor(&self) -> u64 { unsafe { function!(79398, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn hkp_collidable_collidable_filter_vdtor(&self) -> u64 { unsafe { function!(79398, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
     /// `_anon_422024B4::NeverCollideFilter::hkpRayCollidableFilter_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 79401, rva 0x10a5d80).
     /// `undefined hkpRayCollidableFilter_vdtor(NeverCollideFilter * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn hkp_ray_collidable_filter_vdtor(&self) -> u64 { unsafe { function!(79401, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn hkp_ray_collidable_filter_vdtor(&self) -> u64 { unsafe { function!(79401, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x28)) } }
     /// `_anon_422024B4::NeverCollideFilter::hkpRayShapeCollectionFilter_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 79400, rva 0x10a5d74).
     /// `undefined hkpRayShapeCollectionFilter_vdtor(NeverCollideFilter * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn hkp_ray_shape_collection_filter_vdtor(&self) -> u64 { unsafe { function!(79400, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn hkp_ray_shape_collection_filter_vdtor(&self) -> u64 { unsafe { function!(79400, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x20)) } }
     /// `_anon_422024B4::NeverCollideFilter::hkpShapeCollectionFilter_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 79399, rva 0x10a5d68).
     /// `undefined hkpShapeCollectionFilter_vdtor(NeverCollideFilter * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn hkp_shape_collection_filter_vdtor(&self) -> u64 { unsafe { function!(79399, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn hkp_shape_collection_filter_vdtor(&self) -> u64 { unsafe { function!(79399, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x18)) } }
 }
 
 impl crate::_anon_6854232C__SortIntersectingEdgesFunctor {
@@ -5393,14 +5376,14 @@ impl crate::ahkpCharacterProxy {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn hkp_entity_listener_vdtor(&self) -> u64 { unsafe { function!(80547, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn hkp_entity_listener_vdtor(&self) -> u64 { unsafe { function!(80547, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
     /// `ahkpCharacterProxy::hkpPhantomListener_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 80548, rva 0x10deebc).
     /// `undefined hkpPhantomListener_vdtor(ahkpCharacterProxy * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn hkp_phantom_listener_vdtor(&self) -> u64 { unsafe { function!(80548, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn hkp_phantom_listener_vdtor(&self) -> u64 { unsafe { function!(80548, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x18)) } }
 }
 
 impl crate::ahkpCharacterRigidBody {
@@ -5410,14 +5393,14 @@ impl crate::ahkpCharacterRigidBody {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn hkp_entity_listener_vdtor(&self) -> u64 { unsafe { function!(80564, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn hkp_entity_listener_vdtor(&self) -> u64 { unsafe { function!(80564, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
     /// `ahkpCharacterRigidBody::hkpWorldPostSimulationListener_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 80565, rva 0x10df62c).
     /// `undefined hkpWorldPostSimulationListener_vdtor(ahkpCharacterRigidBody * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn hkp_world_post_simulation_listener_vdtor(&self) -> u64 { unsafe { function!(80565, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn hkp_world_post_simulation_listener_vdtor(&self) -> u64 { unsafe { function!(80565, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x18)) } }
 }
 
 impl crate::ahkpMalleableConstraintData {
@@ -15314,24 +15297,3 @@ pub unsafe fn get_bit5_of_field136(param_1: i64) -> u8 { unsafe { function!(3918
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn get_bit7_of_field1_f8_field108(param_1: i64) -> u32 { unsafe { function!(37217, (i64) -> u32)(param_1) } }
-/// `GetByte13B` (decompiler signature, tier high; ledger decompiler evidence, name high; id 39138, rva 0x6e9740).
-/// `undefined1 GetByte13B(longlong param_1)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn get_byte13_b(param_1: i64) -> u8 { unsafe { function!(39138, (i64) -> u8)(param_1) } }
-/// `GetByte14` (decompiler signature, tier high; ledger decompiler evidence, name high; id 441562, rva 0x1e0a00).
-/// `undefined1 GetByte14(longlong param_1)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn get_byte14(param_1: i64) -> u8 { unsafe { function!(441562, (i64) -> u8)(param_1) } }
-/// `GetByteField0C2` (decompiler signature, tier high; ledger decompiler evidence, name high; id 61629, rva 0xb65860).
-/// `undefined1 * GetByteField0C2(longlong param_1, undefined1 * param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn get_byte_field0_c2(param_1: i64, param_2: *mut u8) -> *mut u8 { unsafe { function!(61629, (i64, *mut u8) -> *mut u8)(param_1, param_2) } }

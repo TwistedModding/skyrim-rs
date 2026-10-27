@@ -60,9 +60,9 @@ impl crate::BSSpinLock {
     /// `BSSpinLock* (BSSpinLock** out, BSSpinLock* lock)`
     ///
     /// # Safety
-    /// `out`, `lock` must point to what the engine expects.
+    /// `lock` must point to what the engine expects.
     #[inline]
-    pub unsafe fn lock(out: *mut *mut crate::BSSpinLock, lock: *mut Self) -> *mut Self { unsafe { function!(13129, (*mut *mut crate::BSSpinLock, *mut Self) -> *mut Self)(out, lock) } }
+    pub unsafe fn lock(&self, lock: *mut Self) -> *mut Self { unsafe { function!(13129, (*const Self, *mut Self) -> *mut Self)(core::ptr::from_ref(self), lock) } }
     /// `BSSpinLock::LockTimed`: the variant the second set of template instances uses, called with 0
     ///
     /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 13663, rva 0x1b4d80.
@@ -185,9 +185,9 @@ impl crate::EventSourceHolder_Input {
     /// `void (BSTEventSource<InputEvent*>* this, InputEvent* const* head)`
     ///
     /// # Safety
-    /// `head` must point to what the engine expects.
+    /// `this` must point to the part of the object the function takes; the ledger does not say which subobject of `EventSourceHolder_Input` that is.
     #[inline]
-    pub unsafe fn notify_sinks(&self, head: *mut *mut crate::InputEvent) { unsafe { function!(68655, (*const Self, *mut *mut crate::InputEvent))(core::ptr::from_ref(self), head) } }
+    pub unsafe fn notify_sinks(this: *mut c_void, head: *mut *mut crate::InputEvent) { unsafe { function!(68655, (*mut c_void, *mut *mut crate::InputEvent))(this, head) } }
     /// `EventSourceHolder_Input::ReinitializeMouse`: mouse slot 9
     ///
     /// Semantic, input pass, high; ledger semantic evidence, name high; id 68621, rva 0xcf9790.

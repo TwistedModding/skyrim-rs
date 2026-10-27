@@ -67,7 +67,7 @@ impl crate::std__basic_stringstream_char_std__char_traits_char_std__allocator_ch
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vfunc_0_vt98(&self, param_1: u64) -> u64 { unsafe { function!(23281, (*const Self, u64) -> u64)(core::ptr::from_ref(self), param_1) } }
+    pub unsafe fn vfunc_0_vt98(&self, param_1: u64) -> u64 { unsafe { function!(23281, (*const Self, u64) -> u64)(core::ptr::from_ref(self).byte_add(0x98), param_1) } }
 }
 
 impl crate::std__exception {

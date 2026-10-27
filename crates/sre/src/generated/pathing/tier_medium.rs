@@ -10,7 +10,7 @@ impl crate::MovementAgentActorAvoider {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_movement_query_actor_avoidance_vfunc_1(&self, param_1: f32) -> u8 { unsafe { function!(92196, (*const Self, f32) -> u8)(core::ptr::from_ref(self), param_1) } }
+    pub unsafe fn i_movement_query_actor_avoidance_vfunc_1(&self, param_1: f32) -> u8 { unsafe { function!(92196, (*const Self, f32) -> u8)(core::ptr::from_ref(self).byte_add(0x28), param_1) } }
 }
 
 impl crate::MovementMessageJump {

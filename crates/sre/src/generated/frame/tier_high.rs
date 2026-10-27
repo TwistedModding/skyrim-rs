@@ -47,7 +47,7 @@ impl crate::BSLightingShader {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(107355, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(107355, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
 }
 
 impl crate::BSLightingShaderMaterialBase {
@@ -74,7 +74,7 @@ impl crate::BSShader {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(108337, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(108337, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
     /// `BSShader::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 108319, rva 0x1578a30).
     /// `undefined dtor(BSShader * this)`
     ///

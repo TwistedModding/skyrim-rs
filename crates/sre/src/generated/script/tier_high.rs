@@ -485,14 +485,14 @@ impl crate::SkyrimScript__QuestCallbackMgr {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_bgs_event_processed_event_vdtor(&self) -> u64 { unsafe { function!(53753, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bst_event_sink_bgs_event_processed_event_vdtor(&self) -> u64 { unsafe { function!(53753, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
     /// `SkyrimScript::QuestCallbackMgr::BSTEventSink_TESQuestStartStopEvent_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 53752, rva 0x9cb0d4).
     /// `undefined BSTEventSink_TESQuestStartStopEvent_vdtor(QuestCallbackMgr * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_tes_quest_start_stop_event_vdtor(&self) -> u64 { unsafe { function!(53752, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bst_event_sink_tes_quest_start_stop_event_vdtor(&self) -> u64 { unsafe { function!(53752, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x8)) } }
     /// `SkyrimScript::QuestCallbackMgr::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 53702, rva 0x9c6380).
     /// `undefined dtor(QuestCallbackMgr * this)`
     ///
@@ -529,49 +529,49 @@ impl crate::SkyrimVM {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bs_script_i_stack_callback_save_interface_vfunc_0(&self) -> u64 { unsafe { function!(54255, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bs_script_i_stack_callback_save_interface_vfunc_0(&self) -> u64 { unsafe { function!(54255, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x8)) } }
     /// `SkyrimVM::BSTEventSink_TESActivateEvent_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 54256, rva 0x9ef6dc).
     /// `undefined BSTEventSink_TESActivateEvent_vdtor(SkyrimVM * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_tes_activate_event_vdtor(&self) -> u64 { unsafe { function!(54256, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bst_event_sink_tes_activate_event_vdtor(&self) -> u64 { unsafe { function!(54256, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
     /// `SkyrimVM::BSTEventSink_TESAmiiboForcedStopDetectionEvent_vfunc_1` (decompiler signature, tier high; ledger rtti evidence, name high; id 524033, rva 0x9e0b20).
     /// `undefined8 BSTEventSink_TESAmiiboForcedStopDetectionEvent_vfunc_1(SkyrimVM * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_tes_amiibo_forced_stop_detection_event_vfunc_1(&self) -> u64 { unsafe { function!(524033, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bst_event_sink_tes_amiibo_forced_stop_detection_event_vfunc_1(&self) -> u64 { unsafe { function!(524033, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x188)) } }
     /// `SkyrimVM::BSTEventSink_TESLoadGameEvent_vfunc_1` (decompiler signature, tier high; ledger rtti evidence, name high; id 53976, rva 0x9dcfc0).
     /// `undefined8 BSTEventSink_TESLoadGameEvent_vfunc_1(SkyrimVM * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_tes_load_game_event_vfunc_1(&self) -> u64 { unsafe { function!(53976, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bst_event_sink_tes_load_game_event_vfunc_1(&self) -> u64 { unsafe { function!(53976, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x98)) } }
     /// `SkyrimVM::BSTEventSink_TESResolveNPCTemplatesEvent_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 54257, rva 0x9ef6e8).
     /// `undefined BSTEventSink_TESResolveNPCTemplatesEvent_vdtor(SkyrimVM * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_tes_resolve_npc_templates_event_vdtor(&self) -> u64 { unsafe { function!(54257, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bst_event_sink_tes_resolve_npc_templates_event_vdtor(&self) -> u64 { unsafe { function!(54257, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x100)) } }
     /// `SkyrimVM::BSTEventSink_TESSceneActionEvent_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 54259, rva 0x9ef700).
     /// `undefined BSTEventSink_TESSceneActionEvent_vdtor(SkyrimVM * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_tes_scene_action_event_vdtor(&self) -> u64 { unsafe { function!(54259, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bst_event_sink_tes_scene_action_event_vdtor(&self) -> u64 { unsafe { function!(54259, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x110)) } }
     /// `SkyrimVM::BSTEventSink_TESSceneEvent_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 54258, rva 0x9ef6f4).
     /// `undefined BSTEventSink_TESSceneEvent_vdtor(SkyrimVM * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_tes_scene_event_vdtor(&self) -> u64 { unsafe { function!(54258, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bst_event_sink_tes_scene_event_vdtor(&self) -> u64 { unsafe { function!(54258, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x108)) } }
     /// `SkyrimVM::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 53919, rva 0x9d5760).
     /// `SkyrimVM * ctor(SkyrimVM * this)`
     ///

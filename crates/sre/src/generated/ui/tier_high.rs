@@ -30,7 +30,7 @@ impl crate::CursorMenu {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn menu_event_handler_vdtor(&self) -> u64 { unsafe { function!(51501, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn menu_event_handler_vdtor(&self) -> u64 { unsafe { function!(51501, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x30)) } }
     /// `CursorMenu::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 51495, rva 0x929f80).
     /// `CursorMenu * ctor(CursorMenu * this)`
     ///
@@ -47,7 +47,7 @@ impl crate::DialogueMenu {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_menu_open_close_event_vdtor(&self) -> u64 { unsafe { function!(51518, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bst_event_sink_menu_open_close_event_vdtor(&self) -> u64 { unsafe { function!(51518, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x30)) } }
     /// `DialogueMenu::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 51504, rva 0x92a450).
     /// `DialogueMenu * ctor(DialogueMenu * this)`
     ///
@@ -81,14 +81,14 @@ impl crate::HUDMenu {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_bs_remote_gamepad_event_vdtor(&self) -> u64 { unsafe { function!(51708, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bst_event_sink_bs_remote_gamepad_event_vdtor(&self) -> u64 { unsafe { function!(51708, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x38)) } }
     /// `HUDMenu::BSTEventSink_UserEventEnabledEvent_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 51707, rva 0x93bbb8).
     /// `undefined BSTEventSink_UserEventEnabledEvent_vdtor(HUDMenu * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_user_event_enabled_event_vdtor(&self) -> u64 { unsafe { function!(51707, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bst_event_sink_user_event_enabled_event_vdtor(&self) -> u64 { unsafe { function!(51707, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x30)) } }
 }
 
 impl crate::HUDObject {
@@ -175,21 +175,21 @@ impl crate::MainMenu {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_bs_save_data_event_vdtor(&self) -> u64 { unsafe { function!(52175, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bst_event_sink_bs_save_data_event_vdtor(&self) -> u64 { unsafe { function!(52175, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x38)) } }
     /// `MainMenu::BSTEventSink_BSSystemEvent_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 52174, rva 0x95e344).
     /// `undefined BSTEventSink_BSSystemEvent_vdtor(MainMenu * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_bs_system_event_vdtor(&self) -> u64 { unsafe { function!(52174, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bst_event_sink_bs_system_event_vdtor(&self) -> u64 { unsafe { function!(52174, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x30)) } }
     /// `MainMenu::GFxFunctionHandler_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 52176, rva 0x95e35c).
     /// `undefined GFxFunctionHandler_vdtor(MainMenu * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn g_fx_function_handler_vdtor(&self) -> u64 { unsafe { function!(52176, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn g_fx_function_handler_vdtor(&self) -> u64 { unsafe { function!(52176, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x40)) } }
     /// `MainMenu::OpenCreationClubMenu` (decompiler signature, tier high; ledger decompiler evidence, name high; id 442713, rva 0x959b90).
     /// `undefined OpenCreationClubMenu(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
     ///
@@ -206,7 +206,7 @@ impl crate::MenuControls {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_menu_mode_change_event_vdtor(&self) -> u64 { unsafe { function!(52232, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bst_event_sink_menu_mode_change_event_vdtor(&self) -> u64 { unsafe { function!(52232, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x8)) } }
     /// `MenuControls::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 52198, rva 0x95ed10).
     /// `MenuControls * ctor(MenuControls * this)`
     ///

@@ -3,6 +3,13 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `ComputeLaunchVelocityFromAngles` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 44184, rva 0x7fe600).
+/// `undefined ComputeLaunchVelocityFromAngles(longlong * param_1, undefined8 param_2, undefined4 param_3, undefined8 param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn compute_launch_velocity_from_angles(param_1: *mut i64, param_2: u64, param_3: u32, param_4: u64) -> u64 { unsafe { function!(44184, (*mut i64, u64, u32, u64) -> u64)(param_1, param_2, param_3, param_4) } }
 /// `ComputeLeadAimPointForTarget` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 47288, rva 0x8671b0).
 /// `undefined8 ComputeLeadAimPointForTarget(undefined8 param_1, float * param_2, longlong * param_3, undefined4 param_4, undefined4 param_5, int param_6, undefined1 param_7)`
 ///

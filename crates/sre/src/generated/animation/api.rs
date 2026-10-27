@@ -515,21 +515,6 @@ impl crate::IAnimationGraphManagerHolder {
     /// It constructs or destroys an object in place.
     #[inline]
     pub unsafe fn dtor(&self, flags: u32) -> *mut Self { unsafe { virtual_function!(self, 0, (*const Self, u32) -> *mut Self)(core::ptr::from_ref(self), flags) } }
-    /// `Actor::CreateAnimationChannels`: Actor holder slot 10: creates the per-actor graph data channels: Speed, TargetSpeed, Pitch, Roll, Direction, TurnDelta, PitchDelta, weaponSpeedMult, leftWeaponSpeedMult, iWantBlock, bHeadTracking, TimeDelta
-    ///
-    /// Semantic, animation pass, high; ledger semantic evidence, name high; id 37984, rva 0x6b0650.
-    /// `void (IAnimationGraphManagerHolder* this, BSTArray<BSTSmartPointer<BSAnimationGraphChannel>>* out)`
-    ///
-    /// # Safety
-    /// `out` must point to what the engine expects.
-    #[inline]
-    pub unsafe fn create_animation_channels_2(&self, out: *mut c_void) { unsafe { function!(37984, (*const Self, *mut c_void))(core::ptr::from_ref(self), out) } }
-    /// `Actor::NotifyAnimationGraph`: 5-byte thunk 'jmp 0x554220' to IAnimationGraphManagerHolder::NotifyAnimationGraph (gets the manager through slot 2, BSAnimationGraphManager::NotifyAnimationGraph 0xbc0c90, true when a graph accepted the event)
-    ///
-    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 38048, rva 0x6b61a0.
-    /// `bool (IAnimationGraphManagerHolder* this, const BSFixedString& eventName)`
-    #[inline]
-    pub fn notify_animation_graph_2(&self, eventName: &crate::BSFixedString) -> bool { unsafe { function!(38048, (*const Self, *const crate::BSFixedString) -> bool)(core::ptr::from_ref(self), core::ptr::from_ref(eventName)) } }
     /// `IAnimationGraphManagerHolder::GetGraphVariableFloatDirect`: non-virtual copy of the base slot-16 body (active graph, no actor cache)
     ///
     /// Semantic, animation pass, medium; ledger semantic evidence, name medium; id 32929, rva 0x555160.

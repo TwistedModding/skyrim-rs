@@ -30,7 +30,7 @@ impl crate::std__basic_ifstream_char_std__char_traits_char__ {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vfunc_0_vt_b0(&self) -> u64 { unsafe { function!(442838, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn vfunc_0_vt_b0(&self) -> u64 { unsafe { function!(442838, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0xB0)) } }
 }
 
 impl crate::std__basic_ostringstream_char_std__char_traits_char_std__allocator_char__ {
@@ -40,7 +40,7 @@ impl crate::std__basic_ostringstream_char_std__char_traits_char_std__allocator_c
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vfunc_0_vt88(&self) -> u64 { unsafe { function!(442839, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn vfunc_0_vt88(&self) -> u64 { unsafe { function!(442839, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x88)) } }
 }
 
 impl crate::std__exception {

@@ -385,7 +385,7 @@ impl crate::BSScript__Internal__VirtualMachine {
     /// # Safety
     /// `object` must point to what the engine expects.
     #[inline]
-    pub unsafe fn attach_object_to_handle(&self, object: *mut c_void, handle: u64, flag: bool) { unsafe { function!(104821, (*const Self, *mut c_void, u64, bool))(core::ptr::from_ref(self), object, handle, flag) } }
+    pub unsafe fn attach_object_to_handle(&self, object: *mut c_void, handle: u64, flag: bool) { unsafe { function!(104821, (*const Self, *mut c_void, u64, bool))(core::ptr::from_ref(self).byte_add(0x10), object, handle, flag) } }
     /// `BSScript::Internal::VirtualMachine::BindObject`: bind interface slot 3, what ObjectBindPolicy::BindObject forwards to: attaches the object to the handle (slot 4), then walks the object's type and its parents for the first class with a registered type id that HandleIsType accepts for the handle; when none does, the object's own handle is reset to the invalid handle while it stays in the handle's object list
     ///
     /// Semantic, papyrus pass, high; ledger runtime evidence, name high; id 104820, rva 0x14b4fb0.
@@ -394,7 +394,16 @@ impl crate::BSScript__Internal__VirtualMachine {
     /// # Safety
     /// `object` must point to what the engine expects.
     #[inline]
-    pub unsafe fn bind_object(&self, object: *mut c_void, handle: u64) { unsafe { function!(104820, (*const Self, *mut c_void, u64))(core::ptr::from_ref(self), object, handle) } }
+    pub unsafe fn bind_object(&self, object: *mut c_void, handle: u64) { unsafe { function!(104820, (*const Self, *mut c_void, u64))(core::ptr::from_ref(self).byte_add(0x10), object, handle) } }
+    /// `BSScript::Internal::VirtualMachine::DumpRunningStacksToLog`: IVMDebugInterface slot 1 (this = VM+0x20): dumps the queued calls and every stack of the running-stacks map (VM+0x9320 under VM+0x9318) through DumpStackToLog
+    ///
+    /// Semantic, vmstack pass, medium; ledger semantic evidence, name medium; id 104844, rva 0x14b8fa0.
+    /// `void (BSScript::IVMDebugInterface* this, void* logger)`
+    ///
+    /// # Safety
+    /// The pass rates the signature medium.
+    #[inline]
+    pub unsafe fn dump_running_stacks_to_log(&self, logger: *mut c_void) { unsafe { function!(104844, (*const Self, *mut c_void))(core::ptr::from_ref(self).byte_add(0x20), logger) } }
     /// `BSScript::Internal::VirtualMachine::DumpStackToLog`: header (0x14a0ac0: 'Dumping stack %d', frame/page count, state, type, return value, callback), then per frame the trace line, 'IP: %d' (frame+0x20), 'Instruction: %d' (InstructionIndexAtBit, script functions only), 'Line: %d' (slot 17), and every variable by slot 18's name
     ///
     /// Semantic, vmstack pass, high; ledger semantic evidence, name high; id 104491, rva 0x149fc70.

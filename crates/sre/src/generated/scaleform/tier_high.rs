@@ -10,7 +10,7 @@ impl crate::GFxLog {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn g_fx_log_base_g_fx_log_vdtor(&self) -> u64 { unsafe { function!(82358, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn g_fx_log_base_g_fx_log_vdtor(&self) -> u64 { unsafe { function!(82358, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x18)) } }
 }
 
 impl crate::GFxState {

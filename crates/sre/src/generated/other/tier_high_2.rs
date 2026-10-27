@@ -3,6 +3,27 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `GetByte13B` (decompiler signature, tier high; ledger decompiler evidence, name high; id 39138, rva 0x6e9740).
+/// `undefined1 GetByte13B(longlong param_1)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn get_byte13_b(param_1: i64) -> u8 { unsafe { function!(39138, (i64) -> u8)(param_1) } }
+/// `GetByte14` (decompiler signature, tier high; ledger decompiler evidence, name high; id 441562, rva 0x1e0a00).
+/// `undefined1 GetByte14(longlong param_1)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn get_byte14(param_1: i64) -> u8 { unsafe { function!(441562, (i64) -> u8)(param_1) } }
+/// `GetByteField0C2` (decompiler signature, tier high; ledger decompiler evidence, name high; id 61629, rva 0xb65860).
+/// `undefined1 * GetByteField0C2(longlong param_1, undefined1 * param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn get_byte_field0_c2(param_1: i64, param_2: *mut u8) -> *mut u8 { unsafe { function!(61629, (i64, *mut u8) -> *mut u8)(param_1, param_2) } }
 /// `GetByteField19` (decompiler signature, tier high; ledger decompiler evidence, name high; id 57602, rva 0xab0ad0).
 /// `undefined1 GetByteField19(longlong param_1)`
 ///
@@ -16334,24 +16355,3 @@ pub unsafe fn set_process_field250_field218_bit11(param_1: i64, param_2: c_char)
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn set_process_field8_field2_c8(param_1: i64, param_2: u32) -> u64 { unsafe { function!(38725, (i64, u32) -> u64)(param_1, param_2) } }
-/// `SetQwordAtIndexTo7FFFFFFF` (decompiler signature, tier high; ledger decompiler evidence, name high; id 82002, rva 0x1160410).
-/// `undefined SetQwordAtIndexTo7FFFFFFF(longlong param_1, int param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn set_qword_at_index_to7_fffffff(param_1: i64, param_2: i32) -> u64 { unsafe { function!(82002, (i64, i32) -> u64)(param_1, param_2) } }
-/// `SetRectMembersOnObject` (decompiler signature, tier high; ledger decompiler evidence, name high; id 85924, rva 0xda9780).
-/// `undefined SetRectMembersOnObject(longlong param_1, longlong param_2, double * param_3)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn set_rect_members_on_object(param_1: i64, param_2: i64, param_3: *mut f64) -> u64 { unsafe { function!(85924, (i64, i64, *mut f64) -> u64)(param_1, param_2, param_3) } }
-/// `SetRefCountedField18_2` (decompiler signature, tier high; ledger decompiler evidence, name high; id 62049, rva 0xb79be0).
-/// `undefined SetRefCountedField18_2(longlong param_1, longlong param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn set_ref_counted_field18_2(param_1: i64, param_2: i64) -> u64 { unsafe { function!(62049, (i64, i64) -> u64)(param_1, param_2) } }

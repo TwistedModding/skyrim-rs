@@ -1520,7 +1520,7 @@ impl crate::BSTerrainEffect {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_position_player_event_vfunc_1(&self, param_1: *mut i32) -> u64 { unsafe { function!(30183, (*const Self, *mut i32) -> u64)(core::ptr::from_ref(self), param_1) } }
+    pub unsafe fn bst_event_sink_position_player_event_vfunc_1(&self, param_1: *mut i32) -> u64 { unsafe { function!(30183, (*const Self, *mut i32) -> u64)(core::ptr::from_ref(self).byte_add(0x30), param_1) } }
     /// `BSTerrainEffect::ctor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 30175, rva 0x4b6fd0).
     /// `undefined ctor(BSTerrainEffect * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     ///
@@ -1714,7 +1714,7 @@ impl crate::BSUtilityShader {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> u64 { unsafe { function!(107771, (*const Self, u32, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> u64 { unsafe { function!(107771, (*const Self, u32, u64, u64) -> u64)(core::ptr::from_ref(self).byte_add(0x10), param_1, param_2, param_3) } }
     /// `BSUtilityShader::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 107772, rva 0x1568e30).
     /// `BSUtilityShader * vdtor(BSUtilityShader * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     ///

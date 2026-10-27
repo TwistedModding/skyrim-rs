@@ -126,7 +126,7 @@ impl crate::BSShader {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bs_reload_shader_i_vfunc_0(&self, param_1: i64, param_2: u64, param_3: *mut u8) -> u64 { unsafe { function!(108325, (*const Self, i64, u64, *mut u8) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn bs_reload_shader_i_vfunc_0(&self, param_1: i64, param_2: u64, param_3: *mut u8) -> u64 { unsafe { function!(108325, (*const Self, i64, u64, *mut u8) -> u64)(core::ptr::from_ref(self).byte_add(0x18), param_1, param_2, param_3) } }
     /// `BSShader::ctor` (decompiler signature, tier low; ledger layout_inference evidence, name high; id 108318, rva 0x1578980).
     /// `BSShader * ctor(BSShader * this, longlong param_1)`
     ///

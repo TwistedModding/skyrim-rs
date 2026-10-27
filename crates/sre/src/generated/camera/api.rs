@@ -477,6 +477,18 @@ impl crate::BGSCameraShot {
     /// `void (BGSCameraShot* shot)`
     #[inline]
     pub fn release_runtime(&self) { unsafe { function!(20707, (*const Self))(core::ptr::from_ref(self)) } }
+    /// `BGSCameraShot::TESImageSpaceModifiableForm_Destroy`: this-adjusting thunk (this - 0x48) to BGSCameraShot::Destroy
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 20714, rva 0x31a0b0.
+    /// `BGSCameraShot* (TESImageSpaceModifiableForm* this, u32 flags)`
+    #[inline]
+    pub fn tes_image_space_modifiable_form_destroy(&self, flags: u32) -> Option<&'static Self> { unsafe { function!(20714, (*const Self, u32) -> Option<&'static Self>)(core::ptr::from_ref(self).byte_add(0x48), flags) } }
+    /// `BGSCameraShot::TESModel_Destroy`: this-adjusting thunk (this - 0x20) to BGSCameraShot::Destroy
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 20713, rva 0x31a0a4.
+    /// `BGSCameraShot* (TESModel* this, u32 flags)`
+    #[inline]
+    pub fn tes_model_destroy(&self, flags: u32) -> Option<&'static Self> { unsafe { function!(20713, (*const Self, u32) -> Option<&'static Self>)(core::ptr::from_ref(self).byte_add(0x20), flags) } }
     /// `BGSCameraShot::ctor`: TESForm/TESModel/TESImageSpaceModifiableForm ctors, three vtables, runtime fields cleared (+0x98 invalid handle, +0xb0 = 0x00ff), formType 0x60, DATA defaults
     ///
     /// Semantic, camera pass, high; ledger layout_inference evidence, name high; id 20700, rva 0x318900.
@@ -805,24 +817,6 @@ impl crate::IMapCameraCallbacks {
     /// It constructs or destroys an object in place.
     #[inline]
     pub unsafe fn dtor(&self) { unsafe { function!(53027, (*const Self))(core::ptr::from_ref(self)) } }
-    /// `MapMenu::IMapCameraCallbacks_Destroy`: this-adjusting thunk (-0x38) to MapMenu::vdtor 0x99f950
-    ///
-    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 53130, rva 0x99f87c.
-    /// `MapMenu* (IMapCameraCallbacks* this, u32 flags)`
-    #[inline]
-    pub fn i_map_camera_callbacks_destroy(&self, flags: u32) -> Option<&'static crate::MapMenu> { unsafe { function!(53130, (*const Self, u32) -> Option<&'static crate::MapMenu>)(core::ptr::from_ref(self), flags) } }
-    /// `MapMenu::OnExitBegin`: empty
-    ///
-    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 53120, rva 0x99f170.
-    /// `void (IMapCameraCallbacks* this)`
-    #[inline]
-    pub fn on_exit_begin(&self) { unsafe { function!(53120, (*const Self))(core::ptr::from_ref(self)) } }
-    /// `MapMenu::OnWorldStateBegin`: MapMenu (this - 0x38): menu flags |= 4, movie vfunc +0x1c0(true), {Cursor Menu, show}, tutorial 0xfb; suspends map input when the target is the player in an interior (or ID_406634), or centres the local map on a marker in the player's cell
-    ///
-    /// Semantic, camera pass, high; ledger runtime evidence, name high; id 53119, rva 0x99f000.
-    /// `void (IMapCameraCallbacks* this)`
-    #[inline]
-    pub fn on_world_state_begin(&self) { unsafe { function!(53119, (*const Self))(core::ptr::from_ref(self)) } }
     /// `NullMapCameraCallbacks::Destroy`: frees 8 when flags & 1
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 53031, rva 0x997300.
@@ -834,13 +828,13 @@ impl crate::IMapCameraCallbacks {
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 53035, rva 0x997410.
     /// `void (IMapCameraCallbacks* this)`
     #[inline]
-    pub fn on_exit_begin_2(&self) { unsafe { function!(53035, (*const Self))(core::ptr::from_ref(self)) } }
+    pub fn on_exit_begin(&self) { unsafe { function!(53035, (*const Self))(core::ptr::from_ref(self)) } }
     /// `NullMapCameraCallbacks::OnWorldStateBegin`: empty
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 53036, rva 0x997420.
     /// `void (IMapCameraCallbacks* this)`
     #[inline]
-    pub fn on_world_state_begin_2(&self) { unsafe { function!(53036, (*const Self))(core::ptr::from_ref(self)) } }
+    pub fn on_world_state_begin(&self) { unsafe { function!(53036, (*const Self))(core::ptr::from_ref(self)) } }
 }
 
 impl crate::LocalMapCamera {

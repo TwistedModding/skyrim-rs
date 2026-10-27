@@ -67,21 +67,21 @@ impl crate::PlayerControls {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_menu_mode_change_event_vdtor(&self) -> u64 { unsafe { function!(42391, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bst_event_sink_menu_mode_change_event_vdtor(&self) -> u64 { unsafe { function!(42391, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
     /// `PlayerControls::BSTEventSink_MenuOpenCloseEvent_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 42390, rva 0x7b1938).
     /// `undefined BSTEventSink_MenuOpenCloseEvent_vdtor(PlayerControls * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_menu_open_close_event_vdtor(&self) -> u64 { unsafe { function!(42390, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bst_event_sink_menu_open_close_event_vdtor(&self) -> u64 { unsafe { function!(42390, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x8)) } }
     /// `PlayerControls::BSTEventSink_TESFurnitureEvent_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 42392, rva 0x7b1950).
     /// `undefined BSTEventSink_TESFurnitureEvent_vdtor(PlayerControls * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_tes_furniture_event_vdtor(&self) -> u64 { unsafe { function!(42392, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bst_event_sink_tes_furniture_event_vdtor(&self) -> u64 { unsafe { function!(42392, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x18)) } }
 }
 
 impl crate::SixaxisEvent {

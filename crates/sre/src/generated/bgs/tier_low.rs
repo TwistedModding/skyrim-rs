@@ -344,7 +344,7 @@ impl crate::BGSBodyPartData {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bgs_preloadable_vfunc_4(&self, param_1: i64, param_2: u32, param_3: u64) -> u64 { unsafe { function!(23484, (*const Self, i64, u32, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn bgs_preloadable_vfunc_4(&self, param_1: i64, param_2: u32, param_3: u64) -> u64 { unsafe { function!(23484, (*const Self, i64, u32, u64) -> u64)(core::ptr::from_ref(self).byte_add(0x48), param_1, param_2, param_3) } }
     /// `BGSBodyPartData::ctor` (decompiler signature, tier low; ledger layout_inference evidence, name high; id 23465, rva 0x38b110).
     /// `BGSBodyPartData * ctor(BGSBodyPartData * this, undefined8 param_1, uint * param_2, longlong * param_3)`
     ///
@@ -440,7 +440,7 @@ impl crate::BGSDebris {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bgs_preloadable_vfunc_4(&self, param_1: i64, param_2: *mut u32, param_3: u64) -> u64 { unsafe { function!(16945, (*const Self, i64, *mut u32, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn bgs_preloadable_vfunc_4(&self, param_1: i64, param_2: *mut u32, param_3: u64) -> u64 { unsafe { function!(16945, (*const Self, i64, *mut u32, u64) -> u64)(core::ptr::from_ref(self).byte_add(0x20), param_1, param_2, param_3) } }
     /// `BGSDebris::ctor` (decompiler signature, tier low; ledger layout_inference evidence, name high; id 16936, rva 0x25eb30).
     /// `BGSDebris * ctor(BGSDebris * this, undefined8 param_1, uint * param_2, longlong * param_3)`
     ///
@@ -697,7 +697,7 @@ impl crate::BGSExplosion {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bgs_preloadable_vfunc_4(&self, param_1: *mut i64, param_2: *mut i32, param_3: u64) -> u64 { unsafe { function!(16996, (*const Self, *mut i64, *mut i32, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn bgs_preloadable_vfunc_4(&self, param_1: *mut i64, param_2: *mut i32, param_3: u64) -> u64 { unsafe { function!(16996, (*const Self, *mut i64, *mut i32, u64) -> u64)(core::ptr::from_ref(self).byte_add(0x80), param_1, param_2, param_3) } }
     /// `BGSExplosion::ctor` (decompiler signature, tier low; ledger layout_inference evidence, name high; id 16975, rva 0x260870).
     /// `BGSExplosion * ctor(BGSExplosion * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     ///
@@ -846,7 +846,7 @@ impl crate::BGSHazard {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bgs_preloadable_vfunc_4(&self, param_1: i64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(17031, (*const Self, i64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn bgs_preloadable_vfunc_4(&self, param_1: i64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(17031, (*const Self, i64, u64, u64) -> u64)(core::ptr::from_ref(self).byte_add(0x68), param_1, param_2, param_3) } }
     /// `BGSHazard::ctor` (decompiler signature, tier low; ledger layout_inference evidence, name high; id 17020, rva 0x261e10).
     /// `BGSHazard * ctor(BGSHazard * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     ///
@@ -966,7 +966,7 @@ impl crate::BGSImpactDataSet {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bgs_preloadable_vfunc_4(&self, param_1: i64, param_2: u64, param_3: i64) -> u64 { unsafe { function!(20863, (*const Self, i64, u64, i64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn bgs_preloadable_vfunc_4(&self, param_1: i64, param_2: u64, param_3: i64) -> u64 { unsafe { function!(20863, (*const Self, i64, u64, i64) -> u64)(core::ptr::from_ref(self).byte_add(0x20), param_1, param_2, param_3) } }
     /// `BGSImpactDataSet::ctor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 20854, rva 0x31e120).
     /// `BGSImpactDataSet * ctor(BGSImpactDataSet * this, undefined8 param_1, uint * param_2, longlong * param_3)`
     ///
@@ -997,14 +997,14 @@ impl crate::BGSImpactManager {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_bgs_collision_sound_event_vfunc_1(&self, param_1: *mut u32, param_2: u64, param_3: i64) -> u64 { unsafe { function!(36211, (*const Self, *mut u32, u64, i64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn bst_event_sink_bgs_collision_sound_event_vfunc_1(&self, param_1: *mut u32, param_2: u64, param_3: i64) -> u64 { unsafe { function!(36211, (*const Self, *mut u32, u64, i64) -> u64)(core::ptr::from_ref(self).byte_add(0x10), param_1, param_2, param_3) } }
     /// `BGSImpactManager::BSTEventSink_BGSCombatImpactEvent_vfunc_1` (decompiler signature, tier low; ledger rtti evidence, name high; id 36210, rva 0x642140).
     /// `undefined8 BSTEventSink_BGSCombatImpactEvent_vfunc_1(BGSImpactManager * this, longlong * param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_bgs_combat_impact_event_vfunc_1(&self, param_1: *mut i64) -> u64 { unsafe { function!(36210, (*const Self, *mut i64) -> u64)(core::ptr::from_ref(self), param_1) } }
+    pub unsafe fn bst_event_sink_bgs_combat_impact_event_vfunc_1(&self, param_1: *mut i64) -> u64 { unsafe { function!(36210, (*const Self, *mut i64) -> u64)(core::ptr::from_ref(self).byte_add(0x8), param_1) } }
     /// `BGSImpactManager::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 36735, rva 0x661bd0).
     /// `BGSImpactManager * vdtor(BGSImpactManager * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///
@@ -1291,14 +1291,14 @@ impl crate::BGSMovableStatic {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn tes_object_stat_vfunc_19(&self, param_1: u64, param_2: i64, param_3: *mut c_void) -> u64 { unsafe { function!(17091, (*const Self, u64, i64, *mut c_void) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn tes_object_stat_vfunc_19(&self, param_1: u64, param_2: i64, param_3: *mut c_void) -> u64 { unsafe { function!(17091, (*const Self, u64, i64, *mut c_void) -> u64)(core::ptr::from_ref(self).byte_add(0x20), param_1, param_2, param_3) } }
     /// `BGSMovableStatic::TESObjectSTAT_vfunc_6` (decompiler signature, tier low; ledger rtti evidence, name high; id 17090, rva 0x2640c0).
     /// `undefined8 TESObjectSTAT_vfunc_6(BGSMovableStatic * this, uint * param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn tes_object_stat_vfunc_6(&self, param_1: *mut u32) -> u64 { unsafe { function!(17090, (*const Self, *mut u32) -> u64)(core::ptr::from_ref(self), param_1) } }
+    pub unsafe fn tes_object_stat_vfunc_6(&self, param_1: *mut u32) -> u64 { unsafe { function!(17090, (*const Self, *mut u32) -> u64)(core::ptr::from_ref(self).byte_add(0x20), param_1) } }
     /// `BGSMovableStatic::ctor` (decompiler signature, tier low; ledger layout_inference evidence, name high; id 17087, rva 0x263f70).
     /// `BGSMovableStatic * ctor(BGSMovableStatic * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     ///
@@ -1504,7 +1504,7 @@ impl crate::BGSNamedPackageData_IAITarget {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_package_data_vfunc_2(&self, param_1: i64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(27575, (*const Self, i64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn i_package_data_vfunc_2(&self, param_1: i64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(27575, (*const Self, i64, u64, u64) -> u64)(core::ptr::from_ref(self).byte_add(0x8), param_1, param_2, param_3) } }
     /// `BGSNamedPackageData<IAITarget>::IPackageData_vfunc_3` (decompiler signature, tier low; ledger rtti evidence, name high; id 27573, rva 0x44ec80).
     /// `undefined IPackageData_vfunc_3(void)`
     ///
@@ -1518,7 +1518,7 @@ impl crate::BGSNamedPackageData_IAITarget {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_package_data_vfunc_4(&self, param_1: u64) -> u64 { unsafe { function!(27574, (*const Self, u64) -> u64)(core::ptr::from_ref(self), param_1) } }
+    pub unsafe fn i_package_data_vfunc_4(&self, param_1: u64) -> u64 { unsafe { function!(27574, (*const Self, u64) -> u64)(core::ptr::from_ref(self).byte_add(0x8), param_1) } }
     /// `BGSNamedPackageData<IAITarget>::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 27576, rva 0x44ede0).
     /// `BGSNamedPackageData<IAITarget> * vdtor(BGSNamedPackageData<IAITarget> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     ///
@@ -1552,7 +1552,7 @@ impl crate::BGSNamedPackageData_IPackageDataAIWorldLocationHandle {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_package_data_vfunc_2(&self, param_1: i64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(27588, (*const Self, i64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn i_package_data_vfunc_2(&self, param_1: i64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(27588, (*const Self, i64, u64, u64) -> u64)(core::ptr::from_ref(self).byte_add(0x8), param_1, param_2, param_3) } }
     /// `BGSNamedPackageData<IPackageDataAIWorldLocationHandle>::IPackageData_vfunc_3` (decompiler signature, tier low; ledger rtti evidence, name high; id 27586, rva 0x44f140).
     /// `undefined IPackageData_vfunc_3(void)`
     ///
@@ -1566,7 +1566,7 @@ impl crate::BGSNamedPackageData_IPackageDataAIWorldLocationHandle {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_package_data_vfunc_4(&self, param_1: u64) -> u64 { unsafe { function!(27587, (*const Self, u64) -> u64)(core::ptr::from_ref(self), param_1) } }
+    pub unsafe fn i_package_data_vfunc_4(&self, param_1: u64) -> u64 { unsafe { function!(27587, (*const Self, u64) -> u64)(core::ptr::from_ref(self).byte_add(0x8), param_1) } }
     /// `BGSNamedPackageData<IPackageDataAIWorldLocationHandle>::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 27589, rva 0x44f2a0).
     /// `BGSNamedPackageData<IPackageDataAIWorldLocationHandle> * vdtor(BGSNamedPackageData<IPackageDataAIWorldLocationHandle> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     ///
@@ -1658,21 +1658,21 @@ impl crate::BGSPackageDataBasicTemplate_IAITarget_BSPointerHandle_TESObjectREFR_
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_package_data_vfunc_2(&self, param_1: i64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(27579, (*const Self, i64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn i_package_data_vfunc_2(&self, param_1: i64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(27579, (*const Self, i64, u64, u64) -> u64)(core::ptr::from_ref(self).byte_add(0x8), param_1, param_2, param_3) } }
     /// `BGSPackageDataBasicTemplate<IAITarget,BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>,&class_BSFixedString_const_kPackageDataRefTypeName,0>::IPackageData_vfunc_3` (decompiler signature, tier low; ledger rtti evidence, name medium; id 27577, rva 0x44ee50).
     /// `undefined IPackageData_vfunc_3(BGSPackageDataBasicTemplate<IAITarget,BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>,&class_BSFixedString_const_kPackageDataRefTypeName,0> * this, undefined8 param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_package_data_vfunc_3(&self, param_1: u64) -> u64 { unsafe { function!(27577, (*const Self, u64) -> u64)(core::ptr::from_ref(self), param_1) } }
+    pub unsafe fn i_package_data_vfunc_3(&self, param_1: u64) -> u64 { unsafe { function!(27577, (*const Self, u64) -> u64)(core::ptr::from_ref(self).byte_add(0x8), param_1) } }
     /// `BGSPackageDataBasicTemplate<IAITarget,BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>,&class_BSFixedString_const_kPackageDataRefTypeName,0>::IPackageData_vfunc_4` (decompiler signature, tier low; ledger rtti evidence, name medium; id 27578, rva 0x44ee90).
     /// `longlong IPackageData_vfunc_4(BGSPackageDataBasicTemplate<IAITarget,BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>,&class_BSFixedString_const_kPackageDataRefTypeName,0> * this, undefined8 param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_package_data_vfunc_4(&self, param_1: u64) -> i64 { unsafe { function!(27578, (*const Self, u64) -> i64)(core::ptr::from_ref(self), param_1) } }
+    pub unsafe fn i_package_data_vfunc_4(&self, param_1: u64) -> i64 { unsafe { function!(27578, (*const Self, u64) -> i64)(core::ptr::from_ref(self).byte_add(0x8), param_1) } }
     /// `BGSPackageDataBasicTemplate<IAITarget,BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>,&class_BSFixedString_const_kPackageDataRefTypeName,0>::IPackageData_vfunc_5` (decompiler signature, tier low; ledger rtti evidence, name medium; id 27580, rva 0x44f020).
     /// `undefined1 IPackageData_vfunc_5(void)`
     ///
@@ -1746,14 +1746,14 @@ impl crate::BGSPackageDataLocation {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_package_data_vfunc_10(&self, param_1: *mut i64, param_2: i64) -> *mut c_char { unsafe { function!(27513, (*const Self, *mut i64, i64) -> *mut c_char)(core::ptr::from_ref(self), param_1, param_2) } }
+    pub unsafe fn i_package_data_vfunc_10(&self, param_1: *mut i64, param_2: i64) -> *mut c_char { unsafe { function!(27513, (*const Self, *mut i64, i64) -> *mut c_char)(core::ptr::from_ref(self).byte_add(0x8), param_1, param_2) } }
     /// `BGSPackageDataLocation::IPackageData_vfunc_6` (decompiler signature, tier low; ledger rtti evidence, name high; id 27517, rva 0x44dfd0).
     /// `undefined IPackageData_vfunc_6(BGSPackageDataLocation * this, undefined8 param_1, int param_2, uint * param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_package_data_vfunc_6(&self, param_1: u64, param_2: i32, param_3: *mut u32) -> u64 { unsafe { function!(27517, (*const Self, u64, i32, *mut u32) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn i_package_data_vfunc_6(&self, param_1: u64, param_2: i32, param_3: *mut u32) -> u64 { unsafe { function!(27517, (*const Self, u64, i32, *mut u32) -> u64)(core::ptr::from_ref(self).byte_add(0x8), param_1, param_2, param_3) } }
     /// `BGSPackageDataLocation::IPackageData_vfunc_9` (decompiler signature, tier low; ledger rtti evidence, name high; id 27521, rva 0x44e0c0).
     /// `undefined IPackageData_vfunc_9(void)`
     ///
@@ -1784,7 +1784,7 @@ impl crate::BGSPackageDataLocationWrapper {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_package_data_vfunc_10(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(27535, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn i_package_data_vfunc_10(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(27535, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self).byte_add(0x8), param_1, param_2, param_3) } }
     /// `BGSPackageDataLocationWrapper::IPackageData_vfunc_11` (decompiler signature, tier low; ledger rtti evidence, name high; id 27536, rva 0x44e3b0).
     /// `undefined * IPackageData_vfunc_11(void)`
     ///
@@ -1805,7 +1805,7 @@ impl crate::BGSPackageDataLocationWrapper {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_package_data_vfunc_3(&self, param_1: *mut i64) -> u64 { unsafe { function!(27528, (*const Self, *mut i64) -> u64)(core::ptr::from_ref(self), param_1) } }
+    pub unsafe fn i_package_data_vfunc_3(&self, param_1: *mut i64) -> u64 { unsafe { function!(27528, (*const Self, *mut i64) -> u64)(core::ptr::from_ref(self).byte_add(0x8), param_1) } }
     /// `BGSPackageDataLocationWrapper::IPackageData_vfunc_4` (decompiler signature, tier low; ledger rtti evidence, name high; id 27529, rva 0x44e2f0).
     /// `undefined1 IPackageData_vfunc_4(void)`
     ///
@@ -1833,14 +1833,14 @@ impl crate::BGSPackageDataLocationWrapper {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_package_data_vfunc_7(&self, param_1: i64) -> u64 { unsafe { function!(27532, (*const Self, i64) -> u64)(core::ptr::from_ref(self), param_1) } }
+    pub unsafe fn i_package_data_vfunc_7(&self, param_1: i64) -> u64 { unsafe { function!(27532, (*const Self, i64) -> u64)(core::ptr::from_ref(self).byte_add(0x8), param_1) } }
     /// `BGSPackageDataLocationWrapper::IPackageData_vfunc_8` (decompiler signature, tier low; ledger rtti evidence, name high; id 27533, rva 0x44e330).
     /// `undefined IPackageData_vfunc_8(BGSPackageDataLocationWrapper * this, longlong param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_package_data_vfunc_8(&self, param_1: i64) -> u64 { unsafe { function!(27533, (*const Self, i64) -> u64)(core::ptr::from_ref(self), param_1) } }
+    pub unsafe fn i_package_data_vfunc_8(&self, param_1: i64) -> u64 { unsafe { function!(27533, (*const Self, i64) -> u64)(core::ptr::from_ref(self).byte_add(0x8), param_1) } }
     /// `BGSPackageDataLocationWrapper::IPackageData_vfunc_9` (decompiler signature, tier low; ledger rtti evidence, name high; id 27534, rva 0x44e360).
     /// `undefined IPackageData_vfunc_9(void)`
     ///
@@ -1878,7 +1878,7 @@ impl crate::BGSPackageDataObjectList {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_package_data_vfunc_10(&self, param_1: *mut i64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(27701, (*const Self, *mut i64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn i_package_data_vfunc_10(&self, param_1: *mut i64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(27701, (*const Self, *mut i64, u64, u64) -> u64)(core::ptr::from_ref(self).byte_add(0x8), param_1, param_2, param_3) } }
     /// `BGSPackageDataObjectList::IPackageData_vfunc_11` (decompiler signature, tier low; ledger rtti evidence, name high; id 27720, rva 0x4525f0).
     /// `undefined8 * IPackageData_vfunc_11(void)`
     ///
@@ -1892,42 +1892,42 @@ impl crate::BGSPackageDataObjectList {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_package_data_vfunc_2(&self, param_1: i64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(27699, (*const Self, i64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn i_package_data_vfunc_2(&self, param_1: i64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(27699, (*const Self, i64, u64, u64) -> u64)(core::ptr::from_ref(self).byte_add(0x8), param_1, param_2, param_3) } }
     /// `BGSPackageDataObjectList::IPackageData_vfunc_3` (decompiler signature, tier low; ledger rtti evidence, name high; id 27697, rva 0x4516b0).
     /// `undefined IPackageData_vfunc_3(BGSPackageDataObjectList * this, undefined8 param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_package_data_vfunc_3(&self, param_1: u64) -> u64 { unsafe { function!(27697, (*const Self, u64) -> u64)(core::ptr::from_ref(self), param_1) } }
+    pub unsafe fn i_package_data_vfunc_3(&self, param_1: u64) -> u64 { unsafe { function!(27697, (*const Self, u64) -> u64)(core::ptr::from_ref(self).byte_add(0x8), param_1) } }
     /// `BGSPackageDataObjectList::IPackageData_vfunc_4` (decompiler signature, tier low; ledger rtti evidence, name high; id 27698, rva 0x451710).
     /// `undefined8 IPackageData_vfunc_4(BGSPackageDataObjectList * this, undefined8 param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_package_data_vfunc_4(&self, param_1: u64) -> u64 { unsafe { function!(27698, (*const Self, u64) -> u64)(core::ptr::from_ref(self), param_1) } }
+    pub unsafe fn i_package_data_vfunc_4(&self, param_1: u64) -> u64 { unsafe { function!(27698, (*const Self, u64) -> u64)(core::ptr::from_ref(self).byte_add(0x8), param_1) } }
     /// `BGSPackageDataObjectList::IPackageData_vfunc_5` (decompiler signature, tier low; ledger rtti evidence, name high; id 27702, rva 0x451b00).
     /// `undefined1 IPackageData_vfunc_5(BGSPackageDataObjectList * this, undefined8 param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_package_data_vfunc_5(&self, param_1: u64) -> u8 { unsafe { function!(27702, (*const Self, u64) -> u8)(core::ptr::from_ref(self), param_1) } }
+    pub unsafe fn i_package_data_vfunc_5(&self, param_1: u64) -> u8 { unsafe { function!(27702, (*const Self, u64) -> u8)(core::ptr::from_ref(self).byte_add(0x8), param_1) } }
     /// `BGSPackageDataObjectList::IPackageData_vfunc_7` (decompiler signature, tier low; ledger rtti evidence, name high; id 27716, rva 0x4523e0).
     /// `undefined IPackageData_vfunc_7(BGSPackageDataObjectList * this, longlong param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_package_data_vfunc_7(&self, param_1: i64) -> u64 { unsafe { function!(27716, (*const Self, i64) -> u64)(core::ptr::from_ref(self), param_1) } }
+    pub unsafe fn i_package_data_vfunc_7(&self, param_1: i64) -> u64 { unsafe { function!(27716, (*const Self, i64) -> u64)(core::ptr::from_ref(self).byte_add(0x8), param_1) } }
     /// `BGSPackageDataObjectList::IPackageData_vfunc_8` (decompiler signature, tier low; ledger rtti evidence, name high; id 27717, rva 0x452460).
     /// `undefined IPackageData_vfunc_8(BGSPackageDataObjectList * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_package_data_vfunc_8(&self, param_1: i64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(27717, (*const Self, i64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn i_package_data_vfunc_8(&self, param_1: i64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(27717, (*const Self, i64, u64, u64) -> u64)(core::ptr::from_ref(self).byte_add(0x8), param_1, param_2, param_3) } }
     /// `BGSPackageDataObjectList::IPackageData_vfunc_9` (decompiler signature, tier low; ledger rtti evidence, name high; id 27718, rva 0x4524e0).
     /// `undefined IPackageData_vfunc_9(void)`
     ///
@@ -1958,7 +1958,7 @@ impl crate::BGSPackageDataPointerTemplate_IAITarget_PackageTarget_class_BSFixedS
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_package_data_vfunc_1(&self, param_1: *mut i64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(27764, (*const Self, *mut i64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn i_package_data_vfunc_1(&self, param_1: *mut i64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(27764, (*const Self, *mut i64, u64, u64) -> u64)(core::ptr::from_ref(self).byte_add(0x8), param_1, param_2, param_3) } }
     /// `BGSPackageDataPointerTemplate<IAITarget,PackageTarget,&class_BSFixedString_const_kPackageDataRef2TypeName>::IPackageData_vfunc_11` (decompiler signature, tier low; ledger rtti evidence, name medium; id 27767, rva 0x453990).
     /// `undefined8 * IPackageData_vfunc_11(void)`
     ///
@@ -1972,21 +1972,21 @@ impl crate::BGSPackageDataPointerTemplate_IAITarget_PackageTarget_class_BSFixedS
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_package_data_vfunc_2(&self, param_1: i64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(27765, (*const Self, i64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn i_package_data_vfunc_2(&self, param_1: i64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(27765, (*const Self, i64, u64, u64) -> u64)(core::ptr::from_ref(self).byte_add(0x8), param_1, param_2, param_3) } }
     /// `BGSPackageDataPointerTemplate<IAITarget,PackageTarget,&class_BSFixedString_const_kPackageDataRef2TypeName>::IPackageData_vfunc_3` (decompiler signature, tier low; ledger rtti evidence, name medium; id 27762, rva 0x4537c0).
     /// `undefined IPackageData_vfunc_3(BGSPackageDataPointerTemplate<IAITarget,PackageTarget,&class_BSFixedString_const_kPackageDataRef2TypeName> * this, undefined8 param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_package_data_vfunc_3(&self, param_1: u64) -> u64 { unsafe { function!(27762, (*const Self, u64) -> u64)(core::ptr::from_ref(self), param_1) } }
+    pub unsafe fn i_package_data_vfunc_3(&self, param_1: u64) -> u64 { unsafe { function!(27762, (*const Self, u64) -> u64)(core::ptr::from_ref(self).byte_add(0x8), param_1) } }
     /// `BGSPackageDataPointerTemplate<IAITarget,PackageTarget,&class_BSFixedString_const_kPackageDataRef2TypeName>::IPackageData_vfunc_4` (decompiler signature, tier low; ledger rtti evidence, name medium; id 27763, rva 0x4538a0).
     /// `undefined8 IPackageData_vfunc_4(BGSPackageDataPointerTemplate<IAITarget,PackageTarget,&class_BSFixedString_const_kPackageDataRef2TypeName> * this, undefined8 param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_package_data_vfunc_4(&self, param_1: u64) -> u64 { unsafe { function!(27763, (*const Self, u64) -> u64)(core::ptr::from_ref(self), param_1) } }
+    pub unsafe fn i_package_data_vfunc_4(&self, param_1: u64) -> u64 { unsafe { function!(27763, (*const Self, u64) -> u64)(core::ptr::from_ref(self).byte_add(0x8), param_1) } }
     /// `BGSPackageDataPointerTemplate<IAITarget,PackageTarget,&class_BSFixedString_const_kPackageDataRef2TypeName>::IPackageData_vfunc_5` (decompiler signature, tier low; ledger rtti evidence, name high; id 27766, rva 0x453980).
     /// `undefined1 IPackageData_vfunc_5(void)`
     ///
@@ -2034,7 +2034,7 @@ impl crate::BGSPackageDataPointerTemplate_IPackageDataAIWorldLocationHandle_Pack
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_package_data_vfunc_1(&self, param_1: *mut i64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(27592, (*const Self, *mut i64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn i_package_data_vfunc_1(&self, param_1: *mut i64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(27592, (*const Self, *mut i64, u64, u64) -> u64)(core::ptr::from_ref(self).byte_add(0x8), param_1, param_2, param_3) } }
     /// `BGSPackageDataPointerTemplate<IPackageDataAIWorldLocationHandle,PackageLocation,&class_BSFixedString_const_kPackageDataLocationTypeName>::IPackageData_vfunc_11` (decompiler signature, tier low; ledger rtti evidence, name medium; id 27595, rva 0x44f5a0).
     /// `undefined * IPackageData_vfunc_11(void)`
     ///
@@ -2048,21 +2048,21 @@ impl crate::BGSPackageDataPointerTemplate_IPackageDataAIWorldLocationHandle_Pack
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_package_data_vfunc_2(&self, param_1: i64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(27593, (*const Self, i64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn i_package_data_vfunc_2(&self, param_1: i64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(27593, (*const Self, i64, u64, u64) -> u64)(core::ptr::from_ref(self).byte_add(0x8), param_1, param_2, param_3) } }
     /// `BGSPackageDataPointerTemplate<IPackageDataAIWorldLocationHandle,PackageLocation,&class_BSFixedString_const_kPackageDataLocationTypeName>::IPackageData_vfunc_3` (decompiler signature, tier low; ledger rtti evidence, name medium; id 27590, rva 0x44f310).
     /// `undefined IPackageData_vfunc_3(BGSPackageDataPointerTemplate<IPackageDataAIWorldLocationHandle,PackageLocation,&class_BSFixedString_const_kPackageDataLocationTypeName> * this, undefined8 param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_package_data_vfunc_3(&self, param_1: u64) -> u64 { unsafe { function!(27590, (*const Self, u64) -> u64)(core::ptr::from_ref(self), param_1) } }
+    pub unsafe fn i_package_data_vfunc_3(&self, param_1: u64) -> u64 { unsafe { function!(27590, (*const Self, u64) -> u64)(core::ptr::from_ref(self).byte_add(0x8), param_1) } }
     /// `BGSPackageDataPointerTemplate<IPackageDataAIWorldLocationHandle,PackageLocation,&class_BSFixedString_const_kPackageDataLocationTypeName>::IPackageData_vfunc_4` (decompiler signature, tier low; ledger rtti evidence, name medium; id 27591, rva 0x44f3e0).
     /// `undefined1 IPackageData_vfunc_4(BGSPackageDataPointerTemplate<IPackageDataAIWorldLocationHandle,PackageLocation,&class_BSFixedString_const_kPackageDataLocationTypeName> * this, undefined8 param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_package_data_vfunc_4(&self, param_1: u64) -> u8 { unsafe { function!(27591, (*const Self, u64) -> u8)(core::ptr::from_ref(self), param_1) } }
+    pub unsafe fn i_package_data_vfunc_4(&self, param_1: u64) -> u8 { unsafe { function!(27591, (*const Self, u64) -> u8)(core::ptr::from_ref(self).byte_add(0x8), param_1) } }
     /// `BGSPackageDataPointerTemplate<IPackageDataAIWorldLocationHandle,PackageLocation,&class_BSFixedString_const_kPackageDataLocationTypeName>::IPackageData_vfunc_5` (decompiler signature, tier low; ledger rtti evidence, name medium; id 27594, rva 0x44f590).
     /// `undefined1 IPackageData_vfunc_5(void)`
     ///
@@ -2086,21 +2086,21 @@ impl crate::BGSPackageDataRef {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_package_data_vfunc_10(&self, param_1: *mut i64, param_2: *mut c_char) -> u64 { unsafe { function!(27780, (*const Self, *mut i64, *mut c_char) -> u64)(core::ptr::from_ref(self), param_1, param_2) } }
+    pub unsafe fn i_package_data_vfunc_10(&self, param_1: *mut i64, param_2: *mut c_char) -> u64 { unsafe { function!(27780, (*const Self, *mut i64, *mut c_char) -> u64)(core::ptr::from_ref(self).byte_add(0x8), param_1, param_2) } }
     /// `BGSPackageDataRef::IPackageData_vfunc_5` (decompiler signature, tier low; ledger rtti evidence, name high; id 27777, rva 0x453cc0).
     /// `longlong IPackageData_vfunc_5(BGSPackageDataRef * this, longlong * param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_package_data_vfunc_5(&self, param_1: *mut i64) -> i64 { unsafe { function!(27777, (*const Self, *mut i64) -> i64)(core::ptr::from_ref(self), param_1) } }
+    pub unsafe fn i_package_data_vfunc_5(&self, param_1: *mut i64) -> i64 { unsafe { function!(27777, (*const Self, *mut i64) -> i64)(core::ptr::from_ref(self).byte_add(0x8), param_1) } }
     /// `BGSPackageDataRef::IPackageData_vfunc_6` (decompiler signature, tier low; ledger rtti evidence, name high; id 27778, rva 0x453d40).
     /// `undefined IPackageData_vfunc_6(BGSPackageDataRef * this, int param_1, undefined8 param_2, undefined4 * param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_package_data_vfunc_6(&self, param_1: i32, param_2: u64, param_3: *mut u32) -> u64 { unsafe { function!(27778, (*const Self, i32, u64, *mut u32) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn i_package_data_vfunc_6(&self, param_1: i32, param_2: u64, param_3: *mut u32) -> u64 { unsafe { function!(27778, (*const Self, i32, u64, *mut u32) -> u64)(core::ptr::from_ref(self).byte_add(0x8), param_1, param_2, param_3) } }
     /// `BGSPackageDataRef::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 27786, rva 0x454170).
     /// `BGSPackageDataRef * vdtor(BGSPackageDataRef * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///
@@ -2117,14 +2117,14 @@ impl crate::BGSPackageDataRefOLD {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_package_data_vfunc_1(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(27502, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn i_package_data_vfunc_1(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(27502, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self).byte_add(0x8), param_1, param_2, param_3) } }
     /// `BGSPackageDataRefOLD::IPackageData_vfunc_10` (decompiler signature, tier low; ledger rtti evidence, name high; id 27511, rva 0x44dd90).
     /// `undefined IPackageData_vfunc_10(BGSPackageDataRefOLD * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_package_data_vfunc_10(&self, param_1: *mut i64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(27511, (*const Self, *mut i64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn i_package_data_vfunc_10(&self, param_1: *mut i64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(27511, (*const Self, *mut i64, u64, u64) -> u64)(core::ptr::from_ref(self).byte_add(0x8), param_1, param_2, param_3) } }
     /// `BGSPackageDataRefOLD::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 27584, rva 0x44f0c0).
     /// `BGSPackageDataRefOLD * vdtor(BGSPackageDataRefOLD * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     ///
@@ -3024,7 +3024,7 @@ impl crate::BGSProcedureShoutExecState {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_tes_spell_cast_event_vfunc_1(&self, param_1: *mut i64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(29086, (*const Self, *mut i64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn bst_event_sink_tes_spell_cast_event_vfunc_1(&self, param_1: *mut i64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(29086, (*const Self, *mut i64, u64, u64) -> u64)(core::ptr::from_ref(self).byte_add(0x8), param_1, param_2, param_3) } }
     /// `BGSProcedureShoutExecState::dtor` (decompiler signature, tier low; ledger layout_inference evidence, name high; id 29085, rva 0x484930).
     /// `undefined dtor(BGSProcedureShoutExecState * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     ///
@@ -3246,7 +3246,7 @@ impl crate::BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_cons
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(28287, (*const Self, u64, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(28287, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureActivateParamTypes {
@@ -3256,7 +3256,7 @@ impl crate::BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_cons
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(28326, (*const Self, u64, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(28326, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureDialogueActivateParamTypes {
@@ -3266,7 +3266,7 @@ impl crate::BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_cons
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(28393, (*const Self, u64, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(28393, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureDialogueParamTypes {
@@ -3276,7 +3276,7 @@ impl crate::BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_cons
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(28358, (*const Self, u64, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(28358, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureDoneParamTypes {
@@ -3286,7 +3286,7 @@ impl crate::BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_cons
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(28212, (*const Self, u64, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(28212, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureEatParamTypes {
@@ -3296,7 +3296,7 @@ impl crate::BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_cons
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(28428, (*const Self, u64, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(28428, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureEscortParamTypes {
@@ -3306,7 +3306,7 @@ impl crate::BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_cons
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(28475, (*const Self, u64, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(28475, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureFindParamTypes {
@@ -3316,7 +3316,7 @@ impl crate::BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_cons
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(28517, (*const Self, u64, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(28517, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureFleeParamTypes {
@@ -3326,7 +3326,7 @@ impl crate::BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_cons
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(28566, (*const Self, u64, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(28566, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureFlightGrabParamTypes {
@@ -3336,7 +3336,7 @@ impl crate::BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_cons
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(28602, (*const Self, u64, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(28602, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureFollowParamTypes {
@@ -3346,7 +3346,7 @@ impl crate::BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_cons
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(28655, (*const Self, u64, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(28655, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureFollowToParamTypes {
@@ -3356,7 +3356,7 @@ impl crate::BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_cons
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(28656, (*const Self, u64, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(28656, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureForceGreetParamTypes {
@@ -3366,7 +3366,7 @@ impl crate::BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_cons
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(28705, (*const Self, u64, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(28705, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureGuardParamTypes {
@@ -3376,7 +3376,7 @@ impl crate::BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_cons
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(28734, (*const Self, u64, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(28734, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureHoldPositionParamTypes {
@@ -3386,7 +3386,7 @@ impl crate::BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_cons
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(28758, (*const Self, u64, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(28758, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureHoverParamTypes {
@@ -3396,7 +3396,7 @@ impl crate::BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_cons
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(28791, (*const Self, u64, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(28791, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureKeepAnEyeOnParamTypes {
@@ -3406,7 +3406,7 @@ impl crate::BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_cons
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(28819, (*const Self, u64, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(28819, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureLockParamTypes {
@@ -3416,7 +3416,7 @@ impl crate::BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_cons
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(28857, (*const Self, u64, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(28857, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureOrbitParamTypes {
@@ -3426,7 +3426,7 @@ impl crate::BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_cons
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(28903, (*const Self, u64, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(28903, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedurePatrolParamTypes {
@@ -3436,7 +3436,7 @@ impl crate::BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_cons
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(28953, (*const Self, u64, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(28953, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedurePursueParamTypes {
@@ -3446,7 +3446,7 @@ impl crate::BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_cons
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(28977, (*const Self, u64, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(28977, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureSandboxParamTypes {
@@ -3456,7 +3456,7 @@ impl crate::BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_cons
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(29037, (*const Self, u64, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(29037, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureSayParamTypes {
@@ -3466,7 +3466,7 @@ impl crate::BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_cons
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(29065, (*const Self, u64, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(29065, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureShoutParamTypes {
@@ -3476,7 +3476,7 @@ impl crate::BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_cons
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(29099, (*const Self, u64, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(29099, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureSitParamTypes {
@@ -3486,7 +3486,7 @@ impl crate::BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_cons
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(29160, (*const Self, u64, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(29160, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureSleepParamTypes {
@@ -3496,7 +3496,7 @@ impl crate::BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_cons
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(29161, (*const Self, u64, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(29161, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureTravelParamTypes {
@@ -3506,7 +3506,7 @@ impl crate::BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_cons
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(29206, (*const Self, u64, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(29206, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureUnlockParamTypes {
@@ -3516,7 +3516,7 @@ impl crate::BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_cons
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(28858, (*const Self, u64, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(28858, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureUseIdleMarkerParamTypes {
@@ -3526,7 +3526,7 @@ impl crate::BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_cons
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(29328, (*const Self, u64, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(29328, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureUseMagicParamTypes {
@@ -3536,7 +3536,7 @@ impl crate::BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_cons
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(29363, (*const Self, u64, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(29363, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureUseWeaponParamTypes {
@@ -3546,7 +3546,7 @@ impl crate::BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_cons
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(29398, (*const Self, u64, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(29398, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureWaitParamTypes {
@@ -3556,7 +3556,7 @@ impl crate::BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_cons
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(29424, (*const Self, u64, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(29424, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureWanderParamTypes {
@@ -3566,7 +3566,7 @@ impl crate::BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_cons
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(29457, (*const Self, u64, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(29457, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BGSProcedureUnlock {
@@ -3616,7 +3616,7 @@ impl crate::BGSProcedureUseMagicExecState {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_tes_spell_cast_event_vfunc_1(&self, param_1: *mut i64) -> u64 { unsafe { function!(29350, (*const Self, *mut i64) -> u64)(core::ptr::from_ref(self), param_1) } }
+    pub unsafe fn bst_event_sink_tes_spell_cast_event_vfunc_1(&self, param_1: *mut i64) -> u64 { unsafe { function!(29350, (*const Self, *mut i64) -> u64)(core::ptr::from_ref(self).byte_add(0x8), param_1) } }
     /// `BGSProcedureUseMagicExecState::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 29367, rva 0x491020).
     /// `BGSProcedureUseMagicExecState * vdtor(BGSProcedureUseMagicExecState * this, ulonglong param_1, longlong param_2, undefined8 param_3)`
     ///
@@ -3693,7 +3693,7 @@ impl crate::BGSProjectile {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bgs_preloadable_vfunc_4(&self, param_1: i64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(17147, (*const Self, i64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn bgs_preloadable_vfunc_4(&self, param_1: i64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(17147, (*const Self, i64, u64, u64) -> u64)(core::ptr::from_ref(self).byte_add(0x68), param_1, param_2, param_3) } }
     /// `BGSProjectile::ctor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 17127, rva 0x2653b0).
     /// `BGSProjectile * ctor(BGSProjectile * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     ///
@@ -4356,21 +4356,21 @@ impl crate::BGSTextureSet {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bs_texture_set_vfunc_37(&self, param_1: u32) -> *mut c_char { unsafe { function!(21362, (*const Self, u32) -> *mut c_char)(core::ptr::from_ref(self), param_1) } }
+    pub unsafe fn bs_texture_set_vfunc_37(&self, param_1: u32) -> *mut c_char { unsafe { function!(21362, (*const Self, u32) -> *mut c_char)(core::ptr::from_ref(self).byte_add(0x30), param_1) } }
     /// `BGSTextureSet::BSTextureSet_vfunc_38` (decompiler signature, tier low; ledger rtti evidence, name high; id 21363, rva 0x32d910).
     /// `undefined BSTextureSet_vfunc_38(BGSTextureSet * this, undefined8 param_1, longlong * param_2)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bs_texture_set_vfunc_38(&self, param_1: u64, param_2: *mut i64) -> u64 { unsafe { function!(21363, (*const Self, u64, *mut i64) -> u64)(core::ptr::from_ref(self), param_1, param_2) } }
+    pub unsafe fn bs_texture_set_vfunc_38(&self, param_1: u64, param_2: *mut i64) -> u64 { unsafe { function!(21363, (*const Self, u64, *mut i64) -> u64)(core::ptr::from_ref(self).byte_add(0x30), param_1, param_2) } }
     /// `BGSTextureSet::BSTextureSet_vfunc_39` (decompiler signature, tier low; ledger rtti evidence, name high; id 21364, rva 0x32da00).
     /// `undefined BSTextureSet_vfunc_39(BGSTextureSet * this, undefined4 param_1, char * param_2)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bs_texture_set_vfunc_39(&self, param_1: u32, param_2: *mut c_char) -> u64 { unsafe { function!(21364, (*const Self, u32, *mut c_char) -> u64)(core::ptr::from_ref(self), param_1, param_2) } }
+    pub unsafe fn bs_texture_set_vfunc_39(&self, param_1: u32, param_2: *mut c_char) -> u64 { unsafe { function!(21364, (*const Self, u32, *mut c_char) -> u64)(core::ptr::from_ref(self).byte_add(0x30), param_1, param_2) } }
     /// `BGSTextureSet::ctor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 21350, rva 0x32cf70).
     /// `undefined ctor(BGSTextureSet * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     ///
@@ -4926,14 +4926,14 @@ impl crate::BGSWaterCollisionManager__bhkPlaceableWater {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bgs_water_collision_manager_bgs_water_update_i_vfunc_1(&self) -> u32 { unsafe { function!(32100, (*const Self) -> u32)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bgs_water_collision_manager_bgs_water_update_i_vfunc_1(&self) -> u32 { unsafe { function!(32100, (*const Self) -> u32)(core::ptr::from_ref(self).byte_add(0x20)) } }
     /// `BGSWaterCollisionManager::bhkPlaceableWater::BGSWaterCollisionManager_BGSWaterUpdateI_vfunc_4` (decompiler signature, tier low; ledger rtti evidence, name high; id 32103, rva 0x526190).
     /// `undefined BGSWaterCollisionManager_BGSWaterUpdateI_vfunc_4(bhkPlaceableWater * this, undefined4 param_2, undefined8 param_3, undefined8 param_4)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bgs_water_collision_manager_bgs_water_update_i_vfunc_4(&self, param_2: u32, param_3: u64, param_4: u64) -> u64 { unsafe { function!(32103, (*const Self, u32, u64, u64) -> u64)(core::ptr::from_ref(self), param_2, param_3, param_4) } }
+    pub unsafe fn bgs_water_collision_manager_bgs_water_update_i_vfunc_4(&self, param_2: u32, param_3: u64, param_4: u64) -> u64 { unsafe { function!(32103, (*const Self, u32, u64, u64) -> u64)(core::ptr::from_ref(self).byte_add(0x20), param_2, param_3, param_4) } }
 }
 
 impl crate::BGSWaterCollisionManager__bhkWaterfall {
@@ -4950,7 +4950,7 @@ impl crate::BGSWaterCollisionManager__bhkWaterfall {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bgs_water_collision_manager_bgs_water_update_i_vfunc_4(&self, param_2: u32) -> u64 { unsafe { function!(32108, (*const Self, u32) -> u64)(core::ptr::from_ref(self), param_2) } }
+    pub unsafe fn bgs_water_collision_manager_bgs_water_update_i_vfunc_4(&self, param_2: u32) -> u64 { unsafe { function!(32108, (*const Self, u32) -> u64)(core::ptr::from_ref(self).byte_add(0x20), param_2) } }
     /// `BGSWaterCollisionManager::bhkWaterfall::BGSWaterCollisionManager_BGSWaterUpdateI_vfunc_5` (decompiler signature, tier low; ledger rtti evidence, name high; id 20061, rva 0x2fbd00).
     /// `undefined BGSWaterCollisionManager_BGSWaterUpdateI_vfunc_5(void)`
     ///
@@ -4981,14 +4981,14 @@ impl crate::BGSWaterCollisionManager__bshkAutoWater {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bgs_water_collision_manager_bgs_water_update_i_vfunc_1(&self) -> u32 { unsafe { function!(32126, (*const Self) -> u32)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bgs_water_collision_manager_bgs_water_update_i_vfunc_1(&self) -> u32 { unsafe { function!(32126, (*const Self) -> u32)(core::ptr::from_ref(self).byte_add(0x130)) } }
     /// `BGSWaterCollisionManager::bshkAutoWater::BGSWaterCollisionManager_BGSWaterUpdateI_vfunc_4` (decompiler signature, tier low; ledger rtti evidence, name high; id 32128, rva 0x527480).
     /// `undefined BGSWaterCollisionManager_BGSWaterUpdateI_vfunc_4(bshkAutoWater * this, undefined4 param_2)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bgs_water_collision_manager_bgs_water_update_i_vfunc_4(&self, param_2: u32) -> u64 { unsafe { function!(32128, (*const Self, u32) -> u64)(core::ptr::from_ref(self), param_2) } }
+    pub unsafe fn bgs_water_collision_manager_bgs_water_update_i_vfunc_4(&self, param_2: u32) -> u64 { unsafe { function!(32128, (*const Self, u32) -> u64)(core::ptr::from_ref(self).byte_add(0x130), param_2) } }
     /// `BGSWaterCollisionManager::bshkAutoWater::ctor` (decompiler signature, tier low; ledger layout_inference evidence, name high; id 32123, rva 0x5272e0).
     /// `bshkAutoWater * ctor(bshkAutoWater * this, undefined8 * param_1)`
     ///

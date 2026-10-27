@@ -10,14 +10,31 @@ impl crate::TES {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_bs_resource_archive_stream_opened_event_vdtor(&self) -> u64 { unsafe { function!(13617, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bst_event_sink_bs_resource_archive_stream_opened_event_vdtor(&self) -> u64 { unsafe { function!(13617, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x60)) } }
     /// `TES::BSTEventSink_PositionPlayerEvent_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 13618, rva 0x1b440c).
     /// `undefined BSTEventSink_PositionPlayerEvent_vdtor(TES * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_position_player_event_vdtor(&self) -> u64 { unsafe { function!(13618, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bst_event_sink_position_player_event_vdtor(&self) -> u64 { unsafe { function!(13618, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x68)) } }
+}
+
+impl crate::TES__SystemEventAdapter {
+    /// `TES::SystemEventAdapter::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 13442, rva 0x1abb50).
+    /// `SystemEventAdapter * ctor(SystemEventAdapter * this)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn ctor(&self) -> *mut crate::SystemEventAdapter { unsafe { function!(13442, (*const Self) -> *mut crate::SystemEventAdapter)(core::ptr::from_ref(self)) } }
+    /// `TES::SystemEventAdapter::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 13443, rva 0x1abba0).
+    /// `undefined dtor(SystemEventAdapter * this)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(13443, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::TESAIForm {
@@ -44,14 +61,14 @@ impl crate::TESActorBase {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bgs_keyword_form_vdtor(&self) -> u64 { unsafe { function!(24858, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bgs_keyword_form_vdtor(&self) -> u64 { unsafe { function!(24858, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x110)) } }
     /// `TESActorBase::BGSSkinForm_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 24857, rva 0x3cb9dc).
     /// `undefined BGSSkinForm_vdtor(TESActorBase * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bgs_skin_form_vdtor(&self) -> u64 { unsafe { function!(24857, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bgs_skin_form_vdtor(&self) -> u64 { unsafe { function!(24857, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x100)) } }
     /// `TESActorBase::dtor` (decompiler signature, tier high; ledger decompiler evidence, name high; id 24852, rva 0x3cb6e0).
     /// `undefined dtor(TESObject * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
     ///
@@ -85,70 +102,70 @@ impl crate::TESAmmo {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bgs_destructible_object_form_vdtor(&self) -> u64 { unsafe { function!(17248, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bgs_destructible_object_form_vdtor(&self) -> u64 { unsafe { function!(17248, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0xC0)) } }
     /// `TESAmmo::BGSKeywordForm_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 17251, rva 0x269460).
     /// `undefined BGSKeywordForm_vdtor(TESAmmo * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bgs_keyword_form_vdtor(&self) -> u64 { unsafe { function!(17251, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bgs_keyword_form_vdtor(&self) -> u64 { unsafe { function!(17251, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0xF8)) } }
     /// `TESAmmo::BGSMessageIcon_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 17245, rva 0x269418).
     /// `undefined BGSMessageIcon_vdtor(TESAmmo * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bgs_message_icon_vdtor(&self) -> u64 { unsafe { function!(17245, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bgs_message_icon_vdtor(&self) -> u64 { unsafe { function!(17245, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x88)) } }
     /// `TESAmmo::BGSPickupPutdownSounds_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 17249, rva 0x269448).
     /// `undefined BGSPickupPutdownSounds_vdtor(TESAmmo * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bgs_pickup_putdown_sounds_vdtor(&self) -> u64 { unsafe { function!(17249, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bgs_pickup_putdown_sounds_vdtor(&self) -> u64 { unsafe { function!(17249, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0xD0)) } }
     /// `TESAmmo::TESDescription_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 17250, rva 0x269454).
     /// `undefined TESDescription_vdtor(TESAmmo * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn tes_description_vdtor(&self) -> u64 { unsafe { function!(17250, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn tes_description_vdtor(&self) -> u64 { unsafe { function!(17250, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0xE8)) } }
     /// `TESAmmo::TESFullName_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 17242, rva 0x2693f4).
     /// `undefined TESFullName_vdtor(TESAmmo * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn tes_full_name_vdtor(&self) -> u64 { unsafe { function!(17242, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn tes_full_name_vdtor(&self) -> u64 { unsafe { function!(17242, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x30)) } }
     /// `TESAmmo::TESIcon_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 17244, rva 0x26940c).
     /// `undefined TESIcon_vdtor(TESAmmo * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn tes_icon_vdtor(&self) -> u64 { unsafe { function!(17244, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn tes_icon_vdtor(&self) -> u64 { unsafe { function!(17244, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x78)) } }
     /// `TESAmmo::TESModelTextureSwap_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 17243, rva 0x269400).
     /// `undefined TESModelTextureSwap_vdtor(TESAmmo * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn tes_model_texture_swap_vdtor(&self) -> u64 { unsafe { function!(17243, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn tes_model_texture_swap_vdtor(&self) -> u64 { unsafe { function!(17243, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x40)) } }
     /// `TESAmmo::TESValueForm_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 17246, rva 0x269424).
     /// `undefined TESValueForm_vdtor(TESAmmo * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn tes_value_form_vdtor(&self) -> u64 { unsafe { function!(17246, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn tes_value_form_vdtor(&self) -> u64 { unsafe { function!(17246, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0xA0)) } }
     /// `TESAmmo::TESWeightForm_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 17247, rva 0x269430).
     /// `undefined TESWeightForm_vdtor(TESAmmo * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn tes_weight_form_vdtor(&self) -> u64 { unsafe { function!(17247, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn tes_weight_form_vdtor(&self) -> u64 { unsafe { function!(17247, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0xB0)) } }
     /// `TESAmmo::ctor` (decompiler signature, tier high; ledger decompiler evidence, name high; id 17231, rva 0x268780).
     /// `TESBoundObject * ctor(TESBoundObject * param_1, undefined8 param_2, undefined8 param_3, char * param_4)`
     ///
@@ -215,21 +232,21 @@ impl crate::TESClass {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn tes_description_vdtor(&self) -> u64 { unsafe { function!(24461, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn tes_description_vdtor(&self) -> u64 { unsafe { function!(24461, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x30)) } }
     /// `TESClass::TESFullName_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 24460, rva 0x3b2bf4).
     /// `undefined TESFullName_vdtor(TESClass * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn tes_full_name_vdtor(&self) -> u64 { unsafe { function!(24460, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn tes_full_name_vdtor(&self) -> u64 { unsafe { function!(24460, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x20)) } }
     /// `TESClass::TESTexture_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 24462, rva 0x3b2c0c).
     /// `undefined TESTexture_vdtor(TESClass * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn tes_texture_vdtor(&self) -> u64 { unsafe { function!(24462, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn tes_texture_vdtor(&self) -> u64 { unsafe { function!(24462, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x40)) } }
 }
 
 impl crate::TESClimate {
@@ -330,14 +347,14 @@ impl crate::TESEyes {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn tes_full_name_vdtor(&self) -> u64 { unsafe { function!(24478, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn tes_full_name_vdtor(&self) -> u64 { unsafe { function!(24478, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x20)) } }
     /// `TESEyes::TESTexture_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 24479, rva 0x3b32a0).
     /// `undefined TESTexture_vdtor(TESEyes * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn tes_texture_vdtor(&self) -> u64 { unsafe { function!(24479, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn tes_texture_vdtor(&self) -> u64 { unsafe { function!(24479, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x30)) } }
 }
 
 impl crate::TESFaction {
@@ -347,14 +364,14 @@ impl crate::TESFaction {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn tes_full_name_vdtor(&self) -> u64 { unsafe { function!(24546, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn tes_full_name_vdtor(&self) -> u64 { unsafe { function!(24546, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x20)) } }
     /// `TESFaction::TESReactionForm_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 24547, rva 0x3b6180).
     /// `undefined TESReactionForm_vdtor(TESFaction * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn tes_reaction_form_vdtor(&self) -> u64 { unsafe { function!(24547, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn tes_reaction_form_vdtor(&self) -> u64 { unsafe { function!(24547, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x30)) } }
 }
 
 impl crate::TESFlora {
@@ -364,42 +381,42 @@ impl crate::TESFlora {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bgs_destructible_object_form_vdtor(&self) -> u64 { unsafe { function!(17376, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bgs_destructible_object_form_vdtor(&self) -> u64 { unsafe { function!(17376, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x78)) } }
     /// `TESFlora::BGSKeywordForm_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 17378, rva 0x26dc6c).
     /// `undefined BGSKeywordForm_vdtor(TESFlora * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bgs_keyword_form_vdtor(&self) -> u64 { unsafe { function!(17378, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bgs_keyword_form_vdtor(&self) -> u64 { unsafe { function!(17378, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x90)) } }
     /// `TESFlora::BGSOpenCloseForm_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 17377, rva 0x26dc60).
     /// `undefined BGSOpenCloseForm_vdtor(TESFlora * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bgs_open_close_form_vdtor(&self) -> u64 { unsafe { function!(17377, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bgs_open_close_form_vdtor(&self) -> u64 { unsafe { function!(17377, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x88)) } }
     /// `TESFlora::TESFullName_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 17374, rva 0x26dc3c).
     /// `undefined TESFullName_vdtor(TESFlora * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn tes_full_name_vdtor(&self) -> u64 { unsafe { function!(17374, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn tes_full_name_vdtor(&self) -> u64 { unsafe { function!(17374, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x30)) } }
     /// `TESFlora::TESModelTextureSwap_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 17375, rva 0x26dc48).
     /// `undefined TESModelTextureSwap_vdtor(TESFlora * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn tes_model_texture_swap_vdtor(&self) -> u64 { unsafe { function!(17375, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn tes_model_texture_swap_vdtor(&self) -> u64 { unsafe { function!(17375, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x40)) } }
     /// `TESFlora::TESProduceForm_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 17379, rva 0x26dc78).
     /// `undefined TESProduceForm_vdtor(TESFlora * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn tes_produce_form_vdtor(&self) -> u64 { unsafe { function!(17379, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn tes_produce_form_vdtor(&self) -> u64 { unsafe { function!(17379, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0xC8)) } }
 }
 
 impl crate::TESFollowPackageData {
@@ -426,7 +443,7 @@ impl crate::TESGrass {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn tes_model_vdtor(&self) -> u64 { unsafe { function!(17476, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn tes_model_vdtor(&self) -> u64 { unsafe { function!(17476, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x30)) } }
 }
 
 impl crate::TESImageSpaceModifiableForm {
@@ -446,63 +463,63 @@ impl crate::TESKey {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bgs_destructible_object_form_vdtor(&self) -> u64 { unsafe { function!(17514, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bgs_destructible_object_form_vdtor(&self) -> u64 { unsafe { function!(17514, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0xA8)) } }
     /// `TESKey::BGSKeywordForm_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 17517, rva 0x270f44).
     /// `undefined BGSKeywordForm_vdtor(TESKey * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bgs_keyword_form_vdtor(&self) -> u64 { unsafe { function!(17517, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bgs_keyword_form_vdtor(&self) -> u64 { unsafe { function!(17517, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0xE8)) } }
     /// `TESKey::BGSMessageIcon_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 17515, rva 0x270f2c).
     /// `undefined BGSMessageIcon_vdtor(TESKey * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bgs_message_icon_vdtor(&self) -> u64 { unsafe { function!(17515, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bgs_message_icon_vdtor(&self) -> u64 { unsafe { function!(17515, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0xB8)) } }
     /// `TESKey::BGSPickupPutdownSounds_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 17516, rva 0x270f38).
     /// `undefined BGSPickupPutdownSounds_vdtor(TESKey * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bgs_pickup_putdown_sounds_vdtor(&self) -> u64 { unsafe { function!(17516, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bgs_pickup_putdown_sounds_vdtor(&self) -> u64 { unsafe { function!(17516, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0xD0)) } }
     /// `TESKey::TESFullName_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 17509, rva 0x270ee4).
     /// `undefined TESFullName_vdtor(TESKey * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn tes_full_name_vdtor(&self) -> u64 { unsafe { function!(17509, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn tes_full_name_vdtor(&self) -> u64 { unsafe { function!(17509, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x30)) } }
     /// `TESKey::TESIcon_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 17511, rva 0x270efc).
     /// `undefined TESIcon_vdtor(TESKey * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn tes_icon_vdtor(&self) -> u64 { unsafe { function!(17511, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn tes_icon_vdtor(&self) -> u64 { unsafe { function!(17511, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x78)) } }
     /// `TESKey::TESModelTextureSwap_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 17510, rva 0x270ef0).
     /// `undefined TESModelTextureSwap_vdtor(TESKey * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn tes_model_texture_swap_vdtor(&self) -> u64 { unsafe { function!(17510, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn tes_model_texture_swap_vdtor(&self) -> u64 { unsafe { function!(17510, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x40)) } }
     /// `TESKey::TESValueForm_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 17512, rva 0x270f08).
     /// `undefined TESValueForm_vdtor(TESKey * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn tes_value_form_vdtor(&self) -> u64 { unsafe { function!(17512, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn tes_value_form_vdtor(&self) -> u64 { unsafe { function!(17512, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x88)) } }
     /// `TESKey::TESWeightForm_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 17513, rva 0x270f14).
     /// `undefined TESWeightForm_vdtor(TESKey * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn tes_weight_form_vdtor(&self) -> u64 { unsafe { function!(17513, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn tes_weight_form_vdtor(&self) -> u64 { unsafe { function!(17513, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x98)) } }
 }
 
 impl crate::TESLandTexture {
@@ -522,14 +539,14 @@ impl crate::TESLevCharacter {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn tes_leveled_list_vdtor(&self) -> u64 { unsafe { function!(17539, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn tes_leveled_list_vdtor(&self) -> u64 { unsafe { function!(17539, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x30)) } }
     /// `TESLevCharacter::TESModelTextureSwap_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 17540, rva 0x271930).
     /// `undefined TESModelTextureSwap_vdtor(TESLevCharacter * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn tes_model_texture_swap_vdtor(&self) -> u64 { unsafe { function!(17540, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn tes_model_texture_swap_vdtor(&self) -> u64 { unsafe { function!(17540, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x58)) } }
 }
 
 impl crate::TESLevItem {
@@ -539,7 +556,7 @@ impl crate::TESLevItem {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn tes_leveled_list_vdtor(&self) -> u64 { unsafe { function!(17561, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn tes_leveled_list_vdtor(&self) -> u64 { unsafe { function!(17561, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x30)) } }
     /// `TESLevItem::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 17550, rva 0x271b80).
     /// `TESLevItem * ctor(TESLevItem * this)`
     ///
@@ -563,7 +580,7 @@ impl crate::TESLevSpell {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn tes_leveled_list_vdtor(&self) -> u64 { unsafe { function!(17585, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn tes_leveled_list_vdtor(&self) -> u64 { unsafe { function!(17585, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x30)) } }
     /// `TESLevSpell::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 17571, rva 0x272440).
     /// `TESLevSpell * ctor(TESLevSpell * this)`
     ///
@@ -604,7 +621,7 @@ impl crate::TESModelDB__TESQueuedHandles {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bs_resource_i_entry_db_post_flush_notify_vdtor(&self) -> u64 { unsafe { function!(11372, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bs_resource_i_entry_db_post_flush_notify_vdtor(&self) -> u64 { unsafe { function!(11372, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x38)) } }
     /// `TESModelDB::TESQueuedHandles::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 11359, rva 0x152110).
     /// `undefined dtor(TESQueuedHandles * this)`
     ///
@@ -665,35 +682,35 @@ impl crate::TESObjectACTI {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bgs_destructible_object_form_vdtor(&self) -> u64 { unsafe { function!(17717, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bgs_destructible_object_form_vdtor(&self) -> u64 { unsafe { function!(17717, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x78)) } }
     /// `TESObjectACTI::BGSKeywordForm_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 17719, rva 0x27acbc).
     /// `undefined BGSKeywordForm_vdtor(TESObjectACTI * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bgs_keyword_form_vdtor(&self) -> u64 { unsafe { function!(17719, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bgs_keyword_form_vdtor(&self) -> u64 { unsafe { function!(17719, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x90)) } }
     /// `TESObjectACTI::BGSOpenCloseForm_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 17718, rva 0x27acb0).
     /// `undefined BGSOpenCloseForm_vdtor(TESObjectACTI * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bgs_open_close_form_vdtor(&self) -> u64 { unsafe { function!(17718, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bgs_open_close_form_vdtor(&self) -> u64 { unsafe { function!(17718, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x88)) } }
     /// `TESObjectACTI::TESFullName_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 17715, rva 0x27ac8c).
     /// `undefined TESFullName_vdtor(TESObjectACTI * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn tes_full_name_vdtor(&self) -> u64 { unsafe { function!(17715, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn tes_full_name_vdtor(&self) -> u64 { unsafe { function!(17715, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x30)) } }
     /// `TESObjectACTI::TESModelTextureSwap_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 17716, rva 0x27ac98).
     /// `undefined TESModelTextureSwap_vdtor(TESObjectACTI * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn tes_model_texture_swap_vdtor(&self) -> u64 { unsafe { function!(17716, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn tes_model_texture_swap_vdtor(&self) -> u64 { unsafe { function!(17716, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x40)) } }
 }
 
 impl crate::TESObjectANIO {
@@ -703,7 +720,7 @@ impl crate::TESObjectANIO {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn tes_model_texture_swap_vdtor(&self) -> u64 { unsafe { function!(17741, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn tes_model_texture_swap_vdtor(&self) -> u64 { unsafe { function!(17741, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x20)) } }
 }
 
 impl crate::TESObjectARMA {
@@ -713,14 +730,14 @@ impl crate::TESObjectARMA {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bgs_biped_object_form_vdtor(&self) -> u64 { unsafe { function!(17773, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bgs_biped_object_form_vdtor(&self) -> u64 { unsafe { function!(17773, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x30)) } }
     /// `TESObjectARMA::TESRaceForm_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 17772, rva 0x27d3ec).
     /// `undefined TESRaceForm_vdtor(TESObjectARMA * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn tes_race_form_vdtor(&self) -> u64 { unsafe { function!(17772, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn tes_race_form_vdtor(&self) -> u64 { unsafe { function!(17772, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x20)) } }
 }
 
 impl crate::TESObjectARMO {
@@ -730,91 +747,91 @@ impl crate::TESObjectARMO {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bgs_biped_object_form_vdtor(&self) -> u64 { unsafe { function!(17803, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bgs_biped_object_form_vdtor(&self) -> u64 { unsafe { function!(17803, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x1B0)) } }
     /// `TESObjectARMO::BGSBlockBashData_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 17804, rva 0x27eef4).
     /// `undefined BGSBlockBashData_vdtor(TESObjectARMO * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bgs_block_bash_data_vdtor(&self) -> u64 { unsafe { function!(17804, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bgs_block_bash_data_vdtor(&self) -> u64 { unsafe { function!(17804, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x1C0)) } }
     /// `TESObjectARMO::BGSDestructibleObjectForm_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 17812, rva 0x27ef54).
     /// `undefined BGSDestructibleObjectForm_vdtor(TESObjectARMO * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bgs_destructible_object_form_vdtor(&self) -> u64 { unsafe { function!(17812, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bgs_destructible_object_form_vdtor(&self) -> u64 { unsafe { function!(17812, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x88)) } }
     /// `TESObjectARMO::BGSEquipType_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 17802, rva 0x27eedc).
     /// `undefined BGSEquipType_vdtor(TESObjectARMO * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bgs_equip_type_vdtor(&self) -> u64 { unsafe { function!(17802, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bgs_equip_type_vdtor(&self) -> u64 { unsafe { function!(17802, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x1A0)) } }
     /// `TESObjectARMO::BGSKeywordForm_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 17805, rva 0x27ef00).
     /// `undefined BGSKeywordForm_vdtor(TESObjectARMO * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bgs_keyword_form_vdtor(&self) -> u64 { unsafe { function!(17805, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bgs_keyword_form_vdtor(&self) -> u64 { unsafe { function!(17805, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x1D8)) } }
     /// `TESObjectARMO::BGSPickupPutdownSounds_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 17813, rva 0x27ef60).
     /// `undefined BGSPickupPutdownSounds_vdtor(TESObjectARMO * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bgs_pickup_putdown_sounds_vdtor(&self) -> u64 { unsafe { function!(17813, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bgs_pickup_putdown_sounds_vdtor(&self) -> u64 { unsafe { function!(17813, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x98)) } }
     /// `TESObjectARMO::TESBipedModelForm_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 17814, rva 0x27ef6c).
     /// `undefined TESBipedModelForm_vdtor(TESObjectARMO * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn tes_biped_model_form_vdtor(&self) -> u64 { unsafe { function!(17814, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn tes_biped_model_form_vdtor(&self) -> u64 { unsafe { function!(17814, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0xB0)) } }
     /// `TESObjectARMO::TESDescription_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 17806, rva 0x27ef0c).
     /// `undefined TESDescription_vdtor(TESObjectARMO * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn tes_description_vdtor(&self) -> u64 { unsafe { function!(17806, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn tes_description_vdtor(&self) -> u64 { unsafe { function!(17806, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x1F0)) } }
     /// `TESObjectARMO::TESEnchantableForm_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 17809, rva 0x27ef30).
     /// `undefined TESEnchantableForm_vdtor(TESObjectARMO * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn tes_enchantable_form_vdtor(&self) -> u64 { unsafe { function!(17809, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn tes_enchantable_form_vdtor(&self) -> u64 { unsafe { function!(17809, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x50)) } }
     /// `TESObjectARMO::TESFullName_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 17807, rva 0x27ef18).
     /// `undefined TESFullName_vdtor(TESObjectARMO * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn tes_full_name_vdtor(&self) -> u64 { unsafe { function!(17807, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn tes_full_name_vdtor(&self) -> u64 { unsafe { function!(17807, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x30)) } }
     /// `TESObjectARMO::TESRaceForm_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 17808, rva 0x27ef24).
     /// `undefined TESRaceForm_vdtor(TESObjectARMO * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn tes_race_form_vdtor(&self) -> u64 { unsafe { function!(17808, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn tes_race_form_vdtor(&self) -> u64 { unsafe { function!(17808, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x40)) } }
     /// `TESObjectARMO::TESValueForm_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 17810, rva 0x27ef3c).
     /// `undefined TESValueForm_vdtor(TESObjectARMO * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn tes_value_form_vdtor(&self) -> u64 { unsafe { function!(17810, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn tes_value_form_vdtor(&self) -> u64 { unsafe { function!(17810, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x68)) } }
     /// `TESObjectARMO::TESWeightForm_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 17811, rva 0x27ef48).
     /// `undefined TESWeightForm_vdtor(TESObjectARMO * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn tes_weight_form_vdtor(&self) -> u64 { unsafe { function!(17811, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn tes_weight_form_vdtor(&self) -> u64 { unsafe { function!(17811, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x78)) } }
 }
 
 impl crate::TESObjectBOOK {
@@ -824,70 +841,70 @@ impl crate::TESObjectBOOK {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bgs_destructible_object_form_vdtor(&self) -> u64 { unsafe { function!(17857, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bgs_destructible_object_form_vdtor(&self) -> u64 { unsafe { function!(17857, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0xB8)) } }
     /// `TESObjectBOOK::BGSKeywordForm_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 17860, rva 0x280754).
     /// `undefined BGSKeywordForm_vdtor(TESObjectBOOK * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bgs_keyword_form_vdtor(&self) -> u64 { unsafe { function!(17860, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bgs_keyword_form_vdtor(&self) -> u64 { unsafe { function!(17860, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0xF8)) } }
     /// `TESObjectBOOK::BGSMessageIcon_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 17858, rva 0x28073c).
     /// `undefined BGSMessageIcon_vdtor(TESObjectBOOK * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bgs_message_icon_vdtor(&self) -> u64 { unsafe { function!(17858, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bgs_message_icon_vdtor(&self) -> u64 { unsafe { function!(17858, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0xC8)) } }
     /// `TESObjectBOOK::BGSPickupPutdownSounds_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 17859, rva 0x280748).
     /// `undefined BGSPickupPutdownSounds_vdtor(TESObjectBOOK * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bgs_pickup_putdown_sounds_vdtor(&self) -> u64 { unsafe { function!(17859, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bgs_pickup_putdown_sounds_vdtor(&self) -> u64 { unsafe { function!(17859, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0xE0)) } }
     /// `TESObjectBOOK::TESDescription_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 17856, rva 0x280724).
     /// `undefined TESDescription_vdtor(TESObjectBOOK * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn tes_description_vdtor(&self) -> u64 { unsafe { function!(17856, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn tes_description_vdtor(&self) -> u64 { unsafe { function!(17856, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0xA8)) } }
     /// `TESObjectBOOK::TESFullName_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 17851, rva 0x2806e8).
     /// `undefined TESFullName_vdtor(TESObjectBOOK * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn tes_full_name_vdtor(&self) -> u64 { unsafe { function!(17851, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn tes_full_name_vdtor(&self) -> u64 { unsafe { function!(17851, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x30)) } }
     /// `TESObjectBOOK::TESIcon_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 17853, rva 0x280700).
     /// `undefined TESIcon_vdtor(TESObjectBOOK * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn tes_icon_vdtor(&self) -> u64 { unsafe { function!(17853, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn tes_icon_vdtor(&self) -> u64 { unsafe { function!(17853, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x78)) } }
     /// `TESObjectBOOK::TESModelTextureSwap_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 17852, rva 0x2806f4).
     /// `undefined TESModelTextureSwap_vdtor(TESObjectBOOK * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn tes_model_texture_swap_vdtor(&self) -> u64 { unsafe { function!(17852, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn tes_model_texture_swap_vdtor(&self) -> u64 { unsafe { function!(17852, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x40)) } }
     /// `TESObjectBOOK::TESValueForm_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 17854, rva 0x28070c).
     /// `undefined TESValueForm_vdtor(TESObjectBOOK * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn tes_value_form_vdtor(&self) -> u64 { unsafe { function!(17854, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn tes_value_form_vdtor(&self) -> u64 { unsafe { function!(17854, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x88)) } }
     /// `TESObjectBOOK::TESWeightForm_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 17855, rva 0x280718).
     /// `undefined TESWeightForm_vdtor(TESObjectBOOK * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn tes_weight_form_vdtor(&self) -> u64 { unsafe { function!(17855, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn tes_weight_form_vdtor(&self) -> u64 { unsafe { function!(17855, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x98)) } }
     /// `TESObjectBOOK::ctor` (decompiler signature, tier high; ledger decompiler evidence, name high; id 17828, rva 0x27f520).
     /// `TESBoundObject * ctor(TESBoundObject * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
     ///
@@ -904,7 +921,7 @@ impl crate::TESObjectCELL {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn tes_full_name_vdtor(&self) -> u64 { unsafe { function!(19288, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn tes_full_name_vdtor(&self) -> u64 { unsafe { function!(19288, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x20)) } }
 }
 
 impl crate::TESObjectCONT {
@@ -914,42 +931,42 @@ impl crate::TESObjectCONT {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bgs_destructible_object_form_vdtor(&self) -> u64 { unsafe { function!(17897, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bgs_destructible_object_form_vdtor(&self) -> u64 { unsafe { function!(17897, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0xA0)) } }
     /// `TESObjectCONT::BGSOpenCloseForm_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 17898, rva 0x282360).
     /// `undefined BGSOpenCloseForm_vdtor(TESObjectCONT * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bgs_open_close_form_vdtor(&self) -> u64 { unsafe { function!(17898, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bgs_open_close_form_vdtor(&self) -> u64 { unsafe { function!(17898, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0xB0)) } }
     /// `TESObjectCONT::TESContainer_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 17893, rva 0x282324).
     /// `undefined TESContainer_vdtor(TESObjectCONT * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn tes_container_vdtor(&self) -> u64 { unsafe { function!(17893, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn tes_container_vdtor(&self) -> u64 { unsafe { function!(17893, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x30)) } }
     /// `TESObjectCONT::TESFullName_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 17894, rva 0x282330).
     /// `undefined TESFullName_vdtor(TESObjectCONT * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn tes_full_name_vdtor(&self) -> u64 { unsafe { function!(17894, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn tes_full_name_vdtor(&self) -> u64 { unsafe { function!(17894, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x48)) } }
     /// `TESObjectCONT::TESModelTextureSwap_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 17895, rva 0x28233c).
     /// `undefined TESModelTextureSwap_vdtor(TESObjectCONT * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn tes_model_texture_swap_vdtor(&self) -> u64 { unsafe { function!(17895, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn tes_model_texture_swap_vdtor(&self) -> u64 { unsafe { function!(17895, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x58)) } }
     /// `TESObjectCONT::TESWeightForm_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 17896, rva 0x282348).
     /// `undefined TESWeightForm_vdtor(TESObjectCONT * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn tes_weight_form_vdtor(&self) -> u64 { unsafe { function!(17896, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn tes_weight_form_vdtor(&self) -> u64 { unsafe { function!(17896, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x90)) } }
 }
 
 impl crate::TESObjectDOOR {
@@ -959,28 +976,28 @@ impl crate::TESObjectDOOR {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bgs_destructible_object_form_vdtor(&self) -> u64 { unsafe { function!(17957, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bgs_destructible_object_form_vdtor(&self) -> u64 { unsafe { function!(17957, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x78)) } }
     /// `TESObjectDOOR::BGSOpenCloseForm_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 17958, rva 0x28577c).
     /// `undefined BGSOpenCloseForm_vdtor(TESObjectDOOR * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bgs_open_close_form_vdtor(&self) -> u64 { unsafe { function!(17958, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bgs_open_close_form_vdtor(&self) -> u64 { unsafe { function!(17958, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x88)) } }
     /// `TESObjectDOOR::TESFullName_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 17955, rva 0x285758).
     /// `undefined TESFullName_vdtor(TESObjectDOOR * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn tes_full_name_vdtor(&self) -> u64 { unsafe { function!(17955, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn tes_full_name_vdtor(&self) -> u64 { unsafe { function!(17955, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x30)) } }
     /// `TESObjectDOOR::TESModelTextureSwap_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 17956, rva 0x285764).
     /// `undefined TESModelTextureSwap_vdtor(TESObjectDOOR * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn tes_model_texture_swap_vdtor(&self) -> u64 { unsafe { function!(17956, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn tes_model_texture_swap_vdtor(&self) -> u64 { unsafe { function!(17956, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x40)) } }
 }
 
 impl crate::TESObjectLAND {
@@ -990,14 +1007,14 @@ impl crate::TESObjectLAND {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn tes_child_cell_vdtor(&self) -> u64 { unsafe { function!(18820, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn tes_child_cell_vdtor(&self) -> u64 { unsafe { function!(18820, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x20)) } }
     /// `TESObjectLAND::TESChildCell_vfunc_1` (decompiler signature, tier high; ledger rtti evidence, name high; id 18828, rva 0x2b6530).
     /// `undefined8 TESChildCell_vfunc_1(TESObjectLAND * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn tes_child_cell_vfunc_1(&self) -> u64 { unsafe { function!(18828, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn tes_child_cell_vfunc_1(&self) -> u64 { unsafe { function!(18828, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x20)) } }
     /// `TESObjectLAND::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 18700, rva 0x2a8ff0).
     /// `TESObjectLAND * ctor(TESObjectLAND * this)`
     ///
@@ -1014,56 +1031,56 @@ impl crate::TESObjectLIGH {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bgs_destructible_object_form_vdtor(&self) -> u64 { unsafe { function!(17635, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bgs_destructible_object_form_vdtor(&self) -> u64 { unsafe { function!(17635, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0xC0)) } }
     /// `TESObjectLIGH::BGSEquipType_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 17636, rva 0x275978).
     /// `undefined BGSEquipType_vdtor(TESObjectLIGH * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bgs_equip_type_vdtor(&self) -> u64 { unsafe { function!(17636, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bgs_equip_type_vdtor(&self) -> u64 { unsafe { function!(17636, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0xD0)) } }
     /// `TESObjectLIGH::BGSMessageIcon_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 17632, rva 0x275948).
     /// `undefined BGSMessageIcon_vdtor(TESObjectLIGH * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bgs_message_icon_vdtor(&self) -> u64 { unsafe { function!(17632, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bgs_message_icon_vdtor(&self) -> u64 { unsafe { function!(17632, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x88)) } }
     /// `TESObjectLIGH::TESFullName_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 17629, rva 0x275924).
     /// `undefined TESFullName_vdtor(TESObjectLIGH * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn tes_full_name_vdtor(&self) -> u64 { unsafe { function!(17629, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn tes_full_name_vdtor(&self) -> u64 { unsafe { function!(17629, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x30)) } }
     /// `TESObjectLIGH::TESIcon_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 17631, rva 0x27593c).
     /// `undefined TESIcon_vdtor(TESObjectLIGH * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn tes_icon_vdtor(&self) -> u64 { unsafe { function!(17631, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn tes_icon_vdtor(&self) -> u64 { unsafe { function!(17631, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x78)) } }
     /// `TESObjectLIGH::TESModelTextureSwap_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 17630, rva 0x275930).
     /// `undefined TESModelTextureSwap_vdtor(TESObjectLIGH * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn tes_model_texture_swap_vdtor(&self) -> u64 { unsafe { function!(17630, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn tes_model_texture_swap_vdtor(&self) -> u64 { unsafe { function!(17630, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x40)) } }
     /// `TESObjectLIGH::TESValueForm_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 17634, rva 0x275960).
     /// `undefined TESValueForm_vdtor(TESObjectLIGH * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn tes_value_form_vdtor(&self) -> u64 { unsafe { function!(17634, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn tes_value_form_vdtor(&self) -> u64 { unsafe { function!(17634, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0xB0)) } }
     /// `TESObjectLIGH::TESWeightForm_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 17633, rva 0x275954).
     /// `undefined TESWeightForm_vdtor(TESObjectLIGH * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn tes_weight_form_vdtor(&self) -> u64 { unsafe { function!(17633, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn tes_weight_form_vdtor(&self) -> u64 { unsafe { function!(17633, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0xA0)) } }
     /// `TESObjectLIGH::ctor` (decompiler signature, tier high; ledger decompiler evidence, name high; id 17598, rva 0x2737c0).
     /// `undefined ctor(TESBoundAnimObject * param_1, undefined8 param_2, uint * param_3, longlong * param_4)`
     ///
@@ -1080,63 +1097,63 @@ impl crate::TESObjectMISC {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bgs_destructible_object_form_vdtor(&self) -> u64 { unsafe { function!(18002, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bgs_destructible_object_form_vdtor(&self) -> u64 { unsafe { function!(18002, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0xA8)) } }
     /// `TESObjectMISC::BGSKeywordForm_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 18005, rva 0x286fb4).
     /// `undefined BGSKeywordForm_vdtor(TESObjectMISC * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bgs_keyword_form_vdtor(&self) -> u64 { unsafe { function!(18005, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bgs_keyword_form_vdtor(&self) -> u64 { unsafe { function!(18005, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0xE8)) } }
     /// `TESObjectMISC::BGSMessageIcon_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 18003, rva 0x286f9c).
     /// `undefined BGSMessageIcon_vdtor(TESObjectMISC * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bgs_message_icon_vdtor(&self) -> u64 { unsafe { function!(18003, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bgs_message_icon_vdtor(&self) -> u64 { unsafe { function!(18003, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0xB8)) } }
     /// `TESObjectMISC::BGSPickupPutdownSounds_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 18004, rva 0x286fa8).
     /// `undefined BGSPickupPutdownSounds_vdtor(TESObjectMISC * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bgs_pickup_putdown_sounds_vdtor(&self) -> u64 { unsafe { function!(18004, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bgs_pickup_putdown_sounds_vdtor(&self) -> u64 { unsafe { function!(18004, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0xD0)) } }
     /// `TESObjectMISC::TESFullName_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 17997, rva 0x286f54).
     /// `undefined TESFullName_vdtor(TESObjectMISC * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn tes_full_name_vdtor(&self) -> u64 { unsafe { function!(17997, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn tes_full_name_vdtor(&self) -> u64 { unsafe { function!(17997, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x30)) } }
     /// `TESObjectMISC::TESIcon_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 17999, rva 0x286f6c).
     /// `undefined TESIcon_vdtor(TESObjectMISC * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn tes_icon_vdtor(&self) -> u64 { unsafe { function!(17999, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn tes_icon_vdtor(&self) -> u64 { unsafe { function!(17999, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x78)) } }
     /// `TESObjectMISC::TESModelTextureSwap_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 17998, rva 0x286f60).
     /// `undefined TESModelTextureSwap_vdtor(TESObjectMISC * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn tes_model_texture_swap_vdtor(&self) -> u64 { unsafe { function!(17998, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn tes_model_texture_swap_vdtor(&self) -> u64 { unsafe { function!(17998, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x40)) } }
     /// `TESObjectMISC::TESValueForm_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 18000, rva 0x286f78).
     /// `undefined TESValueForm_vdtor(TESObjectMISC * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn tes_value_form_vdtor(&self) -> u64 { unsafe { function!(18000, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn tes_value_form_vdtor(&self) -> u64 { unsafe { function!(18000, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x88)) } }
     /// `TESObjectMISC::TESWeightForm_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 18001, rva 0x286f84).
     /// `undefined TESWeightForm_vdtor(TESObjectMISC * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn tes_weight_form_vdtor(&self) -> u64 { unsafe { function!(18001, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn tes_weight_form_vdtor(&self) -> u64 { unsafe { function!(18001, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x98)) } }
     /// `TESObjectMISC::ctor` (decompiler signature, tier high; ledger decompiler evidence, name high; id 17988, rva 0x2866c0).
     /// `TESBoundObject * ctor(TESBoundObject * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
     ///
@@ -1218,7 +1235,7 @@ impl crate::TESObjectSTAT {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn tes_model_texture_swap_vdtor(&self) -> u64 { unsafe { function!(18026, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn tes_model_texture_swap_vdtor(&self) -> u64 { unsafe { function!(18026, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x30)) } }
     /// `TESObjectSTAT::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 18016, rva 0x287460).
     /// `TESObjectSTAT * ctor(TESObjectSTAT * this)`
     ///
@@ -1242,21 +1259,21 @@ impl crate::TESObjectTREE {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn tes_full_name_vdtor(&self) -> u64 { unsafe { function!(18051, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn tes_full_name_vdtor(&self) -> u64 { unsafe { function!(18051, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x58)) } }
     /// `TESObjectTREE::TESModel_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 18050, rva 0x288504).
     /// `undefined TESModel_vdtor(TESObjectTREE * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn tes_model_vdtor(&self) -> u64 { unsafe { function!(18050, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn tes_model_vdtor(&self) -> u64 { unsafe { function!(18050, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x30)) } }
     /// `TESObjectTREE::TESProduceForm_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 18052, rva 0x28851c).
     /// `undefined TESProduceForm_vdtor(TESObjectTREE * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn tes_produce_form_vdtor(&self) -> u64 { unsafe { function!(18052, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn tes_produce_form_vdtor(&self) -> u64 { unsafe { function!(18052, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x68)) } }
 }
 
 impl crate::TESObjectWEAP {
@@ -1266,21 +1283,21 @@ impl crate::TESObjectWEAP {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bgs_block_bash_data_vdtor(&self) -> u64 { unsafe { function!(18126, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bgs_block_bash_data_vdtor(&self) -> u64 { unsafe { function!(18126, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x128)) } }
     /// `TESObjectWEAP::BGSKeywordForm_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 18127, rva 0x28e460).
     /// `undefined BGSKeywordForm_vdtor(TESObjectWEAP * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bgs_keyword_form_vdtor(&self) -> u64 { unsafe { function!(18127, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bgs_keyword_form_vdtor(&self) -> u64 { unsafe { function!(18127, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x140)) } }
     /// `TESObjectWEAP::BGSPickupPutdownSounds_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 18125, rva 0x28e448).
     /// `undefined BGSPickupPutdownSounds_vdtor(TESObjectWEAP * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bgs_pickup_putdown_sounds_vdtor(&self) -> u64 { unsafe { function!(18125, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bgs_pickup_putdown_sounds_vdtor(&self) -> u64 { unsafe { function!(18125, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x110)) } }
     /// `TESObjectWEAP::ctor` (decompiler signature, tier high; ledger decompiler evidence, name high; id 18070, rva 0x288f40).
     /// `TESBoundObject * ctor(TESBoundObject * param_1, undefined8 param_2, longlong param_3, undefined1 * param_4)`
     ///
@@ -1337,7 +1354,7 @@ impl crate::TESQuest {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn tes_full_name_vdtor(&self) -> u64 { unsafe { function!(25161, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn tes_full_name_vdtor(&self) -> u64 { unsafe { function!(25161, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x28)) } }
 }
 
 impl crate::TESRace {
@@ -1347,21 +1364,21 @@ impl crate::TESRace {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn tes_description_vdtor(&self) -> u64 { unsafe { function!(25445, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn tes_description_vdtor(&self) -> u64 { unsafe { function!(25445, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x30)) } }
     /// `TESRace::TESFullName_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 25444, rva 0x3eb718).
     /// `undefined TESFullName_vdtor(TESRace * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn tes_full_name_vdtor(&self) -> u64 { unsafe { function!(25444, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn tes_full_name_vdtor(&self) -> u64 { unsafe { function!(25444, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x20)) } }
     /// `TESRace::TESSpellList_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 25446, rva 0x3eb730).
     /// `undefined TESSpellList_vdtor(TESRace * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn tes_spell_list_vdtor(&self) -> u64 { unsafe { function!(25446, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn tes_spell_list_vdtor(&self) -> u64 { unsafe { function!(25446, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x40)) } }
 }
 
 impl crate::TESRaceForm {
@@ -1505,28 +1522,28 @@ impl crate::TESShout {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bgs_equip_type_vdtor(&self) -> u64 { unsafe { function!(23378, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bgs_equip_type_vdtor(&self) -> u64 { unsafe { function!(23378, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x40)) } }
     /// `TESShout::BGSMenuDisplayObject_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 23377, rva 0x388370).
     /// `undefined BGSMenuDisplayObject_vdtor(TESShout * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bgs_menu_display_object_vdtor(&self) -> u64 { unsafe { function!(23377, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bgs_menu_display_object_vdtor(&self) -> u64 { unsafe { function!(23377, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x30)) } }
     /// `TESShout::TESDescription_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 23379, rva 0x388388).
     /// `undefined TESDescription_vdtor(TESShout * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn tes_description_vdtor(&self) -> u64 { unsafe { function!(23379, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn tes_description_vdtor(&self) -> u64 { unsafe { function!(23379, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x50)) } }
     /// `TESShout::TESFullName_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 23376, rva 0x388364).
     /// `undefined TESFullName_vdtor(TESShout * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn tes_full_name_vdtor(&self) -> u64 { unsafe { function!(23376, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn tes_full_name_vdtor(&self) -> u64 { unsafe { function!(23376, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x20)) } }
 }
 
 impl crate::TESSoulGem {
@@ -1536,63 +1553,63 @@ impl crate::TESSoulGem {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bgs_destructible_object_form_vdtor(&self) -> u64 { unsafe { function!(18175, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bgs_destructible_object_form_vdtor(&self) -> u64 { unsafe { function!(18175, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0xA8)) } }
     /// `TESSoulGem::BGSKeywordForm_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 18178, rva 0x28f1d4).
     /// `undefined BGSKeywordForm_vdtor(TESSoulGem * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bgs_keyword_form_vdtor(&self) -> u64 { unsafe { function!(18178, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bgs_keyword_form_vdtor(&self) -> u64 { unsafe { function!(18178, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0xE8)) } }
     /// `TESSoulGem::BGSMessageIcon_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 18176, rva 0x28f1bc).
     /// `undefined BGSMessageIcon_vdtor(TESSoulGem * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bgs_message_icon_vdtor(&self) -> u64 { unsafe { function!(18176, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bgs_message_icon_vdtor(&self) -> u64 { unsafe { function!(18176, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0xB8)) } }
     /// `TESSoulGem::BGSPickupPutdownSounds_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 18177, rva 0x28f1c8).
     /// `undefined BGSPickupPutdownSounds_vdtor(TESSoulGem * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bgs_pickup_putdown_sounds_vdtor(&self) -> u64 { unsafe { function!(18177, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bgs_pickup_putdown_sounds_vdtor(&self) -> u64 { unsafe { function!(18177, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0xD0)) } }
     /// `TESSoulGem::TESFullName_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 18170, rva 0x28f174).
     /// `undefined TESFullName_vdtor(TESSoulGem * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn tes_full_name_vdtor(&self) -> u64 { unsafe { function!(18170, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn tes_full_name_vdtor(&self) -> u64 { unsafe { function!(18170, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x30)) } }
     /// `TESSoulGem::TESIcon_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 18172, rva 0x28f18c).
     /// `undefined TESIcon_vdtor(TESSoulGem * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn tes_icon_vdtor(&self) -> u64 { unsafe { function!(18172, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn tes_icon_vdtor(&self) -> u64 { unsafe { function!(18172, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x78)) } }
     /// `TESSoulGem::TESModelTextureSwap_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 18171, rva 0x28f180).
     /// `undefined TESModelTextureSwap_vdtor(TESSoulGem * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn tes_model_texture_swap_vdtor(&self) -> u64 { unsafe { function!(18171, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn tes_model_texture_swap_vdtor(&self) -> u64 { unsafe { function!(18171, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x40)) } }
     /// `TESSoulGem::TESValueForm_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 18173, rva 0x28f198).
     /// `undefined TESValueForm_vdtor(TESSoulGem * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn tes_value_form_vdtor(&self) -> u64 { unsafe { function!(18173, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn tes_value_form_vdtor(&self) -> u64 { unsafe { function!(18173, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x88)) } }
     /// `TESSoulGem::TESWeightForm_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 18174, rva 0x28f1a4).
     /// `undefined TESWeightForm_vdtor(TESSoulGem * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn tes_weight_form_vdtor(&self) -> u64 { unsafe { function!(18174, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn tes_weight_form_vdtor(&self) -> u64 { unsafe { function!(18174, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x98)) } }
 }
 
 impl crate::TESSpellList {
@@ -1629,7 +1646,7 @@ impl crate::TESTopic {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn tes_full_name_vdtor(&self) -> u64 { unsafe { function!(25569, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn tes_full_name_vdtor(&self) -> u64 { unsafe { function!(25569, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x20)) } }
 }
 
 impl crate::TESTrapListener {
@@ -1639,7 +1656,7 @@ impl crate::TESTrapListener {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bhk_trap_listener_vdtor(&self) -> u64 { unsafe { function!(26079, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bhk_trap_listener_vdtor(&self) -> u64 { unsafe { function!(26079, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
     /// `TESTrapListener::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 26047, rva 0x4078c0).
     /// `TESTrapListener * ctor(TESTrapListener * this)`
     ///
@@ -1653,7 +1670,7 @@ impl crate::TESTrapListener {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn hkp_phantom_listener_vdtor(&self) -> u64 { unsafe { function!(26080, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn hkp_phantom_listener_vdtor(&self) -> u64 { unsafe { function!(26080, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x28)) } }
 }
 
 impl crate::TESUseItemPackageData {
@@ -1700,7 +1717,7 @@ impl crate::TESWaterForm {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn tes_full_name_vdtor(&self) -> u64 { unsafe { function!(20379, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn tes_full_name_vdtor(&self) -> u64 { unsafe { function!(20379, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x20)) } }
 }
 
 impl crate::TESWaterNormals {
@@ -1730,7 +1747,7 @@ impl crate::TESWordOfPower {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn tes_full_name_vdtor(&self) -> u64 { unsafe { function!(23411, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn tes_full_name_vdtor(&self) -> u64 { unsafe { function!(23411, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x20)) } }
 }
 
 impl crate::TESWorldSpace {
@@ -1740,14 +1757,14 @@ impl crate::TESWorldSpace {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn tes_full_name_vdtor(&self) -> u64 { unsafe { function!(20588, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn tes_full_name_vdtor(&self) -> u64 { unsafe { function!(20588, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x20)) } }
     /// `TESWorldSpace::TESModel_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 20589, rva 0x31484c).
     /// `undefined TESModel_vdtor(TESWorldSpace * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn tes_model_vdtor(&self) -> u64 { unsafe { function!(20589, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn tes_model_vdtor(&self) -> u64 { unsafe { function!(20589, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x30)) } }
 }
 
 impl crate::_anon_7816FE07__TESObjectREFRFactory {

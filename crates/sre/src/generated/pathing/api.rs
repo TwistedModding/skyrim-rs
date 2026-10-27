@@ -865,6 +865,15 @@ impl crate::MovementHandlerAgentPlayerControls {
     /// The `IMovementSetPlayerControls` base at +0x20.
     #[inline]
     pub fn as_i_movement_set_player_controls(&self) -> &crate::IMovementSetPlayerControls { unsafe { &*core::ptr::from_ref(self).byte_add(0x20).cast() } }
+    /// `MovementHandlerAgentPlayerControls::HandleMovement`: the player controls movement agent: from PlayerControls move/look input (+0x24, look), the camera state and the horse clamp, computes heading = atan2(move) and speed = |move|, feeds the direction history (subobject +0x28, freeze direction thresholds, fControllerBufferDepth) only when the player is in third person (+0x303), dampens by fControllerDampenTime/fMaxMoveRampDownDelta, and writes args->output: {+0 NiPoint3 = 0 with +8 heading, +0xc speed, +0x10 NiPoint3 = 0 with +0x18 rotation speed (look x * factor)} by mode (subobject +0x20: 0 both, 1 heading and rotation only)
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 41996, rva 0x7a3fd0.
+    /// `void (IMovementHandlerAgent* this, MovementHandlerArgs* args)`
+    ///
+    /// # Safety
+    /// `args` must point to what the engine expects.
+    #[inline]
+    pub unsafe fn handle_movement(&self, args: *mut c_void) { unsafe { function!(41996, (*const Self, *mut c_void))(core::ptr::from_ref(self).byte_add(0x18), args) } }
 }
 
 impl crate::MovementHandlerAgentSprintActionTrigger {
@@ -943,6 +952,18 @@ impl crate::MovementPlannerAgent {
     /// The `IPipelineStageInterface` base at +0x18.
     #[inline]
     pub fn as_i_pipeline_stage_interface(&self) -> &crate::IPipelineStageInterface { unsafe { &*core::ptr::from_ref(self).byte_add(0x18).cast() } }
+}
+
+impl crate::MovementPlannerAgentHorseControls {
+    /// `MovementPlannerAgentHorseControls::IMovementPlannerAgent_vfunc_2`: horse-control movement planning: reads the rider's input (dead zone 1e-06, 0.1 scale) and writes a 0x24-byte movement result into r8
+    ///
+    /// Semantic, camera pass, medium; ledger rtti evidence, name high; id 42162, rva 0x7a8060.
+    /// `void (IMovementPlannerAgent* this, void* context, void* outMovement)`
+    ///
+    /// # Safety
+    /// The pass rates the signature medium.
+    #[inline]
+    pub unsafe fn i_movement_planner_agent_vfunc_2(&self, context: *mut c_void, outMovement: *mut c_void) { unsafe { function!(42162, (*const Self, *mut c_void, *mut c_void))(core::ptr::from_ref(self).byte_add(0x18), context, outMovement) } }
 }
 
 impl crate::MovementPlannerAgentKeepOffset {

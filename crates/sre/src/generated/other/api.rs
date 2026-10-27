@@ -5491,30 +5491,6 @@ impl crate::FindEffectKeywordOnTargetFunctor {
     pub fn as_magic_item_traversal_functor(&self) -> &crate::MagicItemTraversalFunctor { unsafe { &*core::ptr::from_ref(self).byte_add(0x8).cast() } }
 }
 
-impl crate::IMovementHandlerAgent {
-    /// `MovementHandlerAgentPlayerControls::HandleMovement`: the player controls movement agent: from PlayerControls move/look input (+0x24, look), the camera state and the horse clamp, computes heading = atan2(move) and speed = |move|, feeds the direction history (subobject +0x28, freeze direction thresholds, fControllerBufferDepth) only when the player is in third person (+0x303), dampens by fControllerDampenTime/fMaxMoveRampDownDelta, and writes args->output: {+0 NiPoint3 = 0 with +8 heading, +0xc speed, +0x10 NiPoint3 = 0 with +0x18 rotation speed (look x * factor)} by mode (subobject +0x20: 0 both, 1 heading and rotation only)
-    ///
-    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 41996, rva 0x7a3fd0.
-    /// `void (IMovementHandlerAgent* this, MovementHandlerArgs* args)`
-    ///
-    /// # Safety
-    /// `args` must point to what the engine expects.
-    #[inline]
-    pub unsafe fn handle_movement(&self, args: *mut c_void) { unsafe { function!(41996, (*const Self, *mut c_void))(core::ptr::from_ref(self), args) } }
-}
-
-impl crate::IMovementPlannerAgent {
-    /// `MovementPlannerAgentHorseControls::IMovementPlannerAgent_vfunc_2`: horse-control movement planning: reads the rider's input (dead zone 1e-06, 0.1 scale) and writes a 0x24-byte movement result into r8
-    ///
-    /// Semantic, camera pass, medium; ledger rtti evidence, name high; id 42162, rva 0x7a8060.
-    /// `void (IMovementPlannerAgent* this, void* context, void* outMovement)`
-    ///
-    /// # Safety
-    /// The pass rates the signature medium.
-    #[inline]
-    pub unsafe fn i_movement_planner_agent_vfunc_2(&self, context: *mut c_void, outMovement: *mut c_void) { unsafe { function!(42162, (*const Self, *mut c_void, *mut c_void))(core::ptr::from_ref(self), context, outMovement) } }
-}
-
 impl crate::IPackageDataAIWorldLocationHandle {
     /// The `IPackageData` base at +0x8.
     #[inline]
@@ -5695,18 +5671,6 @@ impl crate::MagicItem {
     pub fn as_tes_full_name(&self) -> &crate::TESFullName { unsafe { &*core::ptr::from_ref(self).byte_add(0x30).cast() } }
 }
 
-impl crate::MagicTarget {
-    /// `Actor::GetActiveEffectList`: MagicTarget slot 7 on an actor: the list at +0x1a0 of the process's middle-high data (Actor+0xf8, then +8), null for an actor without one; nodes are {effect, next}
-    ///
-    /// Semantic, papyrus pass, high; ledger runtime evidence, name high; id 38795, rva 0x6d85b0.
-    /// `BSSimpleList<ActiveEffect*>* (MagicTarget* this)`
-    ///
-    /// # Safety
-    /// The result is an untyped pointer.
-    #[inline]
-    pub unsafe fn get_active_effect_list(&self) -> *mut c_void { unsafe { function!(38795, (*const Self) -> *mut c_void)(core::ptr::from_ref(self)) } }
-}
-
 impl crate::Main {
     /// The `BSTEventSink<BSGamerProfileEvent>` base at +0x8.
     #[inline]
@@ -5756,6 +5720,24 @@ impl crate::MapMenu {
     /// `void (MapMenu* this, float interval, u32 currentTimeMs)`
     #[inline]
     pub fn advance_movie(&self, interval: f32, currentTimeMs: u32) { unsafe { function!(53101, (*const Self, f32, u32))(core::ptr::from_ref(self), interval, currentTimeMs) } }
+    /// `MapMenu::IMapCameraCallbacks_Destroy`: this-adjusting thunk (-0x38) to MapMenu::vdtor 0x99f950
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 53130, rva 0x99f87c.
+    /// `MapMenu* (IMapCameraCallbacks* this, u32 flags)`
+    #[inline]
+    pub fn i_map_camera_callbacks_destroy(&self, flags: u32) -> Option<&'static Self> { unsafe { function!(53130, (*const Self, u32) -> Option<&'static Self>)(core::ptr::from_ref(self).byte_add(0x38), flags) } }
+    /// `MapMenu::OnExitBegin`: empty
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 53120, rva 0x99f170.
+    /// `void (IMapCameraCallbacks* this)`
+    #[inline]
+    pub fn on_exit_begin(&self) { unsafe { function!(53120, (*const Self))(core::ptr::from_ref(self).byte_add(0x38)) } }
+    /// `MapMenu::OnWorldStateBegin`: MapMenu (this - 0x38): menu flags |= 4, movie vfunc +0x1c0(true), {Cursor Menu, show}, tutorial 0xfb; suspends map input when the target is the player in an interior (or ID_406634), or centres the local map on a marker in the player's cell
+    ///
+    /// Semantic, camera pass, high; ledger runtime evidence, name high; id 53119, rva 0x99f000.
+    /// `void (IMapCameraCallbacks* this)`
+    #[inline]
+    pub fn on_world_state_begin(&self) { unsafe { function!(53119, (*const Self))(core::ptr::from_ref(self).byte_add(0x38)) } }
     /// `MapMenu::UpdateMapCamera`: camera+0x4c = delta; tail-jump TESCamera::Update
     ///
     /// Semantic, camera pass, high; ledger runtime evidence, name high; id 53016, rva 0x9969f0.

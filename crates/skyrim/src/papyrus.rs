@@ -205,7 +205,7 @@ struct EffectNode {
 /// `MagicTarget` slot 7 returns, empty for an actor without middle-high process data.
 #[must_use]
 pub fn active_effect_handles(actor: &Actor) -> Vec<Handle> {
-    let mut node = unsafe { actor.as_magic_target().get_active_effect_list() }.cast_const().cast::<EffectNode>();
+    let mut node = unsafe { actor.get_active_effect_list() }.cast_const().cast::<EffectNode>();
     let mut handles = Vec::new();
     while let Some(n) = unsafe { node.as_ref() } {
         if let Some(effect) = unsafe { n.effect.as_ref() }
@@ -1161,8 +1161,8 @@ pub trait VirtualMachineExt {
     fn relay_script_event(&self, thread: &GameThread, reference: Handle, event: &str, args: &[Variable]);
     /// Slot 21 `CreateObject`: a new, unbound script object of `class` (its `.pex` must load).
     fn new_object(&self, class: &str) -> Option<ObjectPtr>;
-    /// Binds `object` to the form `handle` names through the VM's bind policy (slot 47,
-    /// `ObjectBindPolicy::BindObject` id 104184): from then on [`bound_object`](Self::bound_object)
+    /// Binds `object` to the form `handle` names (`VirtualMachine::BindObject` id 104820, on the
+    /// VM's bind interface at +0x10, what the bind policy forwards to): from then on [`bound_object`](Self::bound_object)
     /// returns it and calls with that form as `self` run its methods.
     fn bind_to_handle(&self, thread: &GameThread, object: &ObjectPtr, handle: Handle);
 }
@@ -1293,9 +1293,8 @@ impl VirtualMachineExt for VirtualMachine {
     }
 
     fn bind_to_handle(&self, _: &GameThread, object: &ObjectPtr, handle: Handle) {
-        let Some(policy) = self.get_object_bind_policy() else { return };
         let mut target = object.0.as_ptr();
-        unsafe { policy.bind_object((&raw mut target).cast(), handle.0) };
+        unsafe { self.bind_object((&raw mut target).cast(), handle.0) };
     }
 }
 

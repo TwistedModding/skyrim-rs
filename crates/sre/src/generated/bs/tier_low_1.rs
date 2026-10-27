@@ -471,7 +471,7 @@ impl crate::BSComputeShader {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bs_reload_shader_i_vfunc_0(&self, param_1: i64, param_2: u64, param_3: *mut u8) -> u64 { unsafe { function!(108725, (*const Self, i64, u64, *mut u8) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn bs_reload_shader_i_vfunc_0(&self, param_1: i64, param_2: u64, param_3: *mut u8) -> u64 { unsafe { function!(108725, (*const Self, i64, u64, *mut u8) -> u64)(core::ptr::from_ref(self).byte_add(0x10), param_1, param_2, param_3) } }
     /// `BSComputeShader::ctor` (decompiler signature, tier low; ledger layout_inference evidence, name high; id 108721, rva 0x1589c10).
     /// `BSComputeShader * ctor(BSComputeShader * this, undefined8 param_1)`
     ///
@@ -791,7 +791,7 @@ impl crate::BSEffectShader {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> u64 { unsafe { function!(107532, (*const Self, u32, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> u64 { unsafe { function!(107532, (*const Self, u32, u64, u64) -> u64)(core::ptr::from_ref(self).byte_add(0x10), param_1, param_2, param_3) } }
     /// `BSEffectShader::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 107533, rva 0x1558850).
     /// `BSEffectShader * vdtor(BSEffectShader * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     ///
@@ -927,7 +927,7 @@ impl crate::BSFaceGenDB__TRI__QueuedHandles {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bs_resource_i_entry_db_post_flush_notify_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(26857, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn bs_resource_i_entry_db_post_flush_notify_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(26857, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self).byte_add(0x38), param_1, param_2, param_3) } }
     /// `BSFaceGenDB::TRI::QueuedHandles::dtor` (decompiler signature, tier low; ledger layout_inference evidence, name high; id 26851, rva 0x434760).
     /// `undefined dtor(QueuedHandles * this, undefined8 param_1, undefined8 param_2, longlong param_3)`
     ///
@@ -1445,14 +1445,14 @@ impl crate::BSImagespaceShader {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn image_space_effect_vfunc_1(&self, param_1: u64, param_2: *mut c_void) -> u64 { unsafe { function!(107732, (*const Self, u64, *mut c_void) -> u64)(core::ptr::from_ref(self), param_1, param_2) } }
+    pub unsafe fn image_space_effect_vfunc_1(&self, param_1: u64, param_2: *mut c_void) -> u64 { unsafe { function!(107732, (*const Self, u64, *mut c_void) -> u64)(core::ptr::from_ref(self).byte_add(0x90), param_1, param_2) } }
     /// `BSImagespaceShader::ImageSpaceEffect_vfunc_3` (decompiler signature, tier low; ledger rtti evidence, name medium; id 107737, rva 0x15652a0).
     /// `undefined ImageSpaceEffect_vfunc_3(BSImagespaceShader * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn image_space_effect_vfunc_3(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(107737, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn image_space_effect_vfunc_3(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(107737, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self).byte_add(0x90), param_1, param_2, param_3) } }
     /// `BSImagespaceShader::dtor` (decompiler signature, tier low; ledger layout_inference evidence, name high; id 107726, rva 0x15647f0).
     /// `undefined dtor(BSImagespaceShader * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     ///
@@ -1746,7 +1746,7 @@ impl crate::BSImagespaceShaderFXAA {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn image_space_effect_vfunc_1(&self, param_1: u64) -> u64 { unsafe { function!(106308, (*const Self, u64) -> u64)(core::ptr::from_ref(self), param_1) } }
+    pub unsafe fn image_space_effect_vfunc_1(&self, param_1: u64) -> u64 { unsafe { function!(106308, (*const Self, u64) -> u64)(core::ptr::from_ref(self).byte_add(0x90), param_1) } }
     /// `BSImagespaceShaderFXAA::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 106077, rva 0x1508380).
     /// `BSImagespaceShaderFXAA * vdtor(BSImagespaceShaderFXAA * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///
@@ -3207,7 +3207,7 @@ impl crate::BSMap_BSFadeNode_const____ptr64_unsigned_int {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(106624, (*const Self, u64, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(106624, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSMapBase_BGSImpactData____ptr64_bool {
@@ -3251,7 +3251,7 @@ impl crate::BSMapBase_BSFadeNode_const____ptr64_unsigned_int {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, 0, (*const Self, u32, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut Self { unsafe { virtual_function!(self, 0, (*const Self, u32, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `BSMapBase<BSFadeNode_const*___ptr64,unsigned_int>::ctor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 106622, rva 0x1521a70).
     /// `undefined ctor(BSMapBase<BSFadeNode_const*___ptr64,unsigned_int> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     ///
@@ -5773,7 +5773,7 @@ impl crate::BSRagdollContactListenerModifier {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn hkp_contact_listener_vfunc_0(&self, param_1: i64) -> u64 { unsafe { function!(63092, (*const Self, i64) -> u64)(core::ptr::from_ref(self), param_1) } }
+    pub unsafe fn hkp_contact_listener_vfunc_0(&self, param_1: i64) -> u64 { unsafe { function!(63092, (*const Self, i64) -> u64)(core::ptr::from_ref(self).byte_add(0x50), param_1) } }
     /// `BSRagdollContactListenerModifier::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 63097, rva 0xbb28d0).
     /// `BSRagdollContactListenerModifier * vdtor(BSRagdollContactListenerModifier * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     ///
@@ -6235,28 +6235,28 @@ impl crate::BSResource___anon_5F811FAA__LooseFileAsyncStream {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bs_resource_async_stream_vfunc_10(&self, param_1: *mut u64, param_2: c_char) -> u64 { unsafe { function!(70039, (*const Self, *mut u64, c_char) -> u64)(core::ptr::from_ref(self), param_1, param_2) } }
+    pub unsafe fn bs_resource_async_stream_vfunc_10(&self, param_1: *mut u64, param_2: c_char) -> u64 { unsafe { function!(70039, (*const Self, *mut u64, c_char) -> u64)(core::ptr::from_ref(self).byte_add(0x30), param_1, param_2) } }
     /// `BSResource::_anon_5F811FAA::LooseFileAsyncStream::BSResource_AsyncStream_vfunc_5` (decompiler signature, tier low; ledger rtti evidence, name high; id 70022, rva 0xed5a00).
     /// `undefined BSResource_AsyncStream_vfunc_5(LooseFileAsyncStream * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bs_resource_async_stream_vfunc_5(&self, param_1: *mut i64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(70022, (*const Self, *mut i64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn bs_resource_async_stream_vfunc_5(&self, param_1: *mut i64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(70022, (*const Self, *mut i64, u64, u64) -> u64)(core::ptr::from_ref(self).byte_add(0x30), param_1, param_2, param_3) } }
     /// `BSResource::_anon_5F811FAA::LooseFileAsyncStream::BSResource_AsyncStream_vfunc_7` (decompiler signature, tier low; ledger rtti evidence, name high; id 70035, rva 0xed6330).
     /// `undefined BSResource_AsyncStream_vfunc_7(LooseFileAsyncStream * this, longlong * param_1, longlong param_2, ulonglong param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bs_resource_async_stream_vfunc_7(&self, param_1: *mut i64, param_2: i64, param_3: u64) -> u64 { unsafe { function!(70035, (*const Self, *mut i64, i64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn bs_resource_async_stream_vfunc_7(&self, param_1: *mut i64, param_2: i64, param_3: u64) -> u64 { unsafe { function!(70035, (*const Self, *mut i64, i64, u64) -> u64)(core::ptr::from_ref(self).byte_add(0x30), param_1, param_2, param_3) } }
     /// `BSResource::_anon_5F811FAA::LooseFileAsyncStream::BSResource_AsyncStream_vfunc_9` (decompiler signature, tier low; ledger rtti evidence, name high; id 70038, rva 0xed6420).
     /// `undefined8 BSResource_AsyncStream_vfunc_9(LooseFileAsyncStream * this, longlong param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bs_resource_async_stream_vfunc_9(&self, param_1: i64) -> u64 { unsafe { function!(70038, (*const Self, i64) -> u64)(core::ptr::from_ref(self), param_1) } }
+    pub unsafe fn bs_resource_async_stream_vfunc_9(&self, param_1: i64) -> u64 { unsafe { function!(70038, (*const Self, i64) -> u64)(core::ptr::from_ref(self).byte_add(0x30), param_1) } }
     /// `BSResource::_anon_5F811FAA::LooseFileAsyncStream::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 76064, rva 0xed57d0).
     /// `LooseFileAsyncStream * vdtor(LooseFileAsyncStream * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     ///
@@ -6283,35 +6283,35 @@ impl crate::BSResource___anon_5F811FAA__LooseFileStream {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bs_resource_stream_vfunc_1(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(70031, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn bs_resource_stream_vfunc_1(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(70031, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self).byte_add(0x30), param_1, param_2, param_3) } }
     /// `BSResource::_anon_5F811FAA::LooseFileStream::BSResource_Stream_vfunc_10` (decompiler signature, tier low; ledger rtti evidence, name high; id 70029, rva 0xed5d70).
     /// `undefined8 BSResource_Stream_vfunc_10(LooseFileStream * this, ulonglong * param_1, undefined8 param_2, ulonglong param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bs_resource_stream_vfunc_10(&self, param_1: *mut u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(70029, (*const Self, *mut u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn bs_resource_stream_vfunc_10(&self, param_1: *mut u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(70029, (*const Self, *mut u64, u64, u64) -> u64)(core::ptr::from_ref(self).byte_add(0x30), param_1, param_2, param_3) } }
     /// `BSResource::_anon_5F811FAA::LooseFileStream::BSResource_Stream_vfunc_11` (decompiler signature, tier low; ledger rtti evidence, name high; id 70026, rva 0xed5d20).
     /// `undefined BSResource_Stream_vfunc_11(LooseFileStream * this, longlong * param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bs_resource_stream_vfunc_11(&self, param_1: *mut i64) -> u64 { unsafe { function!(70026, (*const Self, *mut i64) -> u64)(core::ptr::from_ref(self), param_1) } }
+    pub unsafe fn bs_resource_stream_vfunc_11(&self, param_1: *mut i64) -> u64 { unsafe { function!(70026, (*const Self, *mut i64) -> u64)(core::ptr::from_ref(self).byte_add(0x30), param_1) } }
     /// `BSResource::_anon_5F811FAA::LooseFileStream::BSResource_Stream_vfunc_2` (decompiler signature, tier low; ledger rtti evidence, name high; id 70025, rva 0xed5cd0).
     /// `undefined BSResource_Stream_vfunc_2(LooseFileStream * this, undefined8 param_1, ulonglong param_2, ulonglong * param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bs_resource_stream_vfunc_2(&self, param_1: u64, param_2: u64, param_3: *mut u64) -> u64 { unsafe { function!(70025, (*const Self, u64, u64, *mut u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn bs_resource_stream_vfunc_2(&self, param_1: u64, param_2: u64, param_3: *mut u64) -> u64 { unsafe { function!(70025, (*const Self, u64, u64, *mut u64) -> u64)(core::ptr::from_ref(self).byte_add(0x30), param_1, param_2, param_3) } }
     /// `BSResource::_anon_5F811FAA::LooseFileStream::BSResource_Stream_vfunc_5` (decompiler signature, tier low; ledger rtti evidence, name high; id 70023, rva 0xed5b40).
     /// `undefined BSResource_Stream_vfunc_5(LooseFileStream * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bs_resource_stream_vfunc_5(&self, param_1: *mut i64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(70023, (*const Self, *mut i64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn bs_resource_stream_vfunc_5(&self, param_1: *mut i64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(70023, (*const Self, *mut i64, u64, u64) -> u64)(core::ptr::from_ref(self).byte_add(0x30), param_1, param_2, param_3) } }
     /// `BSResource::_anon_5F811FAA::LooseFileStream::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 70018, rva 0xed5840).
     /// `LooseFileStream * vdtor(LooseFileStream * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///

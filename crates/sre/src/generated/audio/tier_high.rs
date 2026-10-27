@@ -10,77 +10,77 @@ impl crate::BGSMusicTrackFormWrapper {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bsi_music_track_vdtor(&self) -> u64 { unsafe { function!(21127, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bsi_music_track_vdtor(&self) -> u64 { unsafe { function!(21127, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x20)) } }
     /// `BGSMusicTrackFormWrapper::BSIMusicTrack_vfunc_1` (decompiler signature, tier high; ledger rtti evidence, name high; id 21134, rva 0x3276a0).
     /// `undefined BSIMusicTrack_vfunc_1(BGSMusicTrackFormWrapper * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bsi_music_track_vfunc_1(&self) -> u64 { unsafe { function!(21134, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bsi_music_track_vfunc_1(&self) -> u64 { unsafe { function!(21134, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x20)) } }
     /// `BGSMusicTrackFormWrapper::BSIMusicTrack_vfunc_10` (decompiler signature, tier high; ledger rtti evidence, name high; id 21129, rva 0x327650).
     /// `undefined BSIMusicTrack_vfunc_10(BGSMusicTrackFormWrapper * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bsi_music_track_vfunc_10(&self) -> u64 { unsafe { function!(21129, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bsi_music_track_vfunc_10(&self) -> u64 { unsafe { function!(21129, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x20)) } }
     /// `BGSMusicTrackFormWrapper::BSIMusicTrack_vfunc_2` (decompiler signature, tier high; ledger rtti evidence, name high; id 21132, rva 0x327680).
     /// `undefined BSIMusicTrack_vfunc_2(BGSMusicTrackFormWrapper * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bsi_music_track_vfunc_2(&self) -> u64 { unsafe { function!(21132, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bsi_music_track_vfunc_2(&self) -> u64 { unsafe { function!(21132, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x20)) } }
     /// `BGSMusicTrackFormWrapper::BSIMusicTrack_vfunc_3` (decompiler signature, tier high; ledger rtti evidence, name high; id 21131, rva 0x327670).
     /// `undefined BSIMusicTrack_vfunc_3(BGSMusicTrackFormWrapper * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bsi_music_track_vfunc_3(&self) -> u64 { unsafe { function!(21131, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bsi_music_track_vfunc_3(&self) -> u64 { unsafe { function!(21131, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x20)) } }
     /// `BGSMusicTrackFormWrapper::BSIMusicTrack_vfunc_4` (decompiler signature, tier high; ledger rtti evidence, name high; id 21130, rva 0x327660).
     /// `undefined BSIMusicTrack_vfunc_4(BGSMusicTrackFormWrapper * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bsi_music_track_vfunc_4(&self) -> u64 { unsafe { function!(21130, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bsi_music_track_vfunc_4(&self) -> u64 { unsafe { function!(21130, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x20)) } }
     /// `BGSMusicTrackFormWrapper::BSIMusicTrack_vfunc_5` (decompiler signature, tier high; ledger rtti evidence, name high; id 21135, rva 0x3276b0).
     /// `undefined BSIMusicTrack_vfunc_5(BGSMusicTrackFormWrapper * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bsi_music_track_vfunc_5(&self) -> u64 { unsafe { function!(21135, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bsi_music_track_vfunc_5(&self) -> u64 { unsafe { function!(21135, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x20)) } }
     /// `BGSMusicTrackFormWrapper::BSIMusicTrack_vfunc_6` (decompiler signature, tier high; ledger rtti evidence, name high; id 21137, rva 0x3276d0).
     /// `undefined BSIMusicTrack_vfunc_6(BGSMusicTrackFormWrapper * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bsi_music_track_vfunc_6(&self) -> u64 { unsafe { function!(21137, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bsi_music_track_vfunc_6(&self) -> u64 { unsafe { function!(21137, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x20)) } }
     /// `BGSMusicTrackFormWrapper::BSIMusicTrack_vfunc_7` (decompiler signature, tier high; ledger rtti evidence, name high; id 21139, rva 0x327790).
     /// `undefined BSIMusicTrack_vfunc_7(BGSMusicTrackFormWrapper * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bsi_music_track_vfunc_7(&self) -> u64 { unsafe { function!(21139, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bsi_music_track_vfunc_7(&self) -> u64 { unsafe { function!(21139, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x20)) } }
     /// `BGSMusicTrackFormWrapper::BSIMusicTrack_vfunc_8` (decompiler signature, tier high; ledger rtti evidence, name high; id 21136, rva 0x3276c0).
     /// `undefined BSIMusicTrack_vfunc_8(BGSMusicTrackFormWrapper * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bsi_music_track_vfunc_8(&self) -> u64 { unsafe { function!(21136, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bsi_music_track_vfunc_8(&self) -> u64 { unsafe { function!(21136, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x20)) } }
     /// `BGSMusicTrackFormWrapper::BSIMusicTrack_vfunc_9` (decompiler signature, tier high; ledger rtti evidence, name high; id 21133, rva 0x327690).
     /// `undefined BSIMusicTrack_vfunc_9(BGSMusicTrackFormWrapper * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bsi_music_track_vfunc_9(&self) -> u64 { unsafe { function!(21133, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bsi_music_track_vfunc_9(&self) -> u64 { unsafe { function!(21133, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x20)) } }
 }
 
 impl crate::BGSMusicType {
@@ -90,7 +90,7 @@ impl crate::BGSMusicType {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bsi_music_type_vfunc_7(&self) -> u64 { unsafe { function!(21166, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bsi_music_type_vfunc_7(&self) -> u64 { unsafe { function!(21166, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x20)) } }
 }
 
 impl crate::BGSSoundCategory {
@@ -100,14 +100,14 @@ impl crate::BGSSoundCategory {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bsi_sound_category_vdtor(&self) -> u64 { unsafe { function!(21234, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bsi_sound_category_vdtor(&self) -> u64 { unsafe { function!(21234, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x30)) } }
     /// `BGSSoundCategory::TESFullName_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 21233, rva 0x329d2c).
     /// `undefined TESFullName_vdtor(BGSSoundCategory * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn tes_full_name_vdtor(&self) -> u64 { unsafe { function!(21233, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn tes_full_name_vdtor(&self) -> u64 { unsafe { function!(21233, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x20)) } }
 }
 
 impl crate::BGSSoundDescriptorForm {
@@ -117,7 +117,7 @@ impl crate::BGSSoundDescriptorForm {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bsi_sound_descriptor_vdtor(&self) -> u64 { unsafe { function!(21265, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bsi_sound_descriptor_vdtor(&self) -> u64 { unsafe { function!(21265, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x20)) } }
 }
 
 impl crate::BGSSoundOutput {
@@ -127,7 +127,7 @@ impl crate::BGSSoundOutput {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bsi_sound_output_model_vdtor(&self) -> u64 { unsafe { function!(21300, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    pub unsafe fn bsi_sound_output_model_vdtor(&self) -> u64 { unsafe { function!(21300, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x20)) } }
 }
 
 impl crate::BGSStandardSoundDef {

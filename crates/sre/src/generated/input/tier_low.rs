@@ -291,21 +291,21 @@ impl crate::PlayerControls {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_menu_mode_change_event_vfunc_1(&self, param_1: i64) -> u64 { unsafe { function!(42340, (*const Self, i64) -> u64)(core::ptr::from_ref(self), param_1) } }
+    pub unsafe fn bst_event_sink_menu_mode_change_event_vfunc_1(&self, param_1: i64) -> u64 { unsafe { function!(42340, (*const Self, i64) -> u64)(core::ptr::from_ref(self).byte_add(0x10), param_1) } }
     /// `PlayerControls::BSTEventSink_MenuOpenCloseEvent_vfunc_1` (decompiler signature, tier low; ledger rtti evidence, name high; id 42339, rva 0x7ade90).
     /// `undefined8 BSTEventSink_MenuOpenCloseEvent_vfunc_1(PlayerControls * this, longlong * param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_menu_open_close_event_vfunc_1(&self, param_1: *mut i64) -> u64 { unsafe { function!(42339, (*const Self, *mut i64) -> u64)(core::ptr::from_ref(self), param_1) } }
+    pub unsafe fn bst_event_sink_menu_open_close_event_vfunc_1(&self, param_1: *mut i64) -> u64 { unsafe { function!(42339, (*const Self, *mut i64) -> u64)(core::ptr::from_ref(self).byte_add(0x8), param_1) } }
     /// `PlayerControls::BSTEventSink_TESFurnitureEvent_vfunc_1` (decompiler signature, tier low; ledger rtti evidence, name high; id 42341, rva 0x7ae010).
     /// `undefined8 BSTEventSink_TESFurnitureEvent_vfunc_1(PlayerControls * this, longlong * param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_tes_furniture_event_vfunc_1(&self, param_1: *mut i64) -> u64 { unsafe { function!(42341, (*const Self, *mut i64) -> u64)(core::ptr::from_ref(self), param_1) } }
+    pub unsafe fn bst_event_sink_tes_furniture_event_vfunc_1(&self, param_1: *mut i64) -> u64 { unsafe { function!(42341, (*const Self, *mut i64) -> u64)(core::ptr::from_ref(self).byte_add(0x18), param_1) } }
     /// `PlayerControls::dtor` (decompiler signature, tier low; ledger layout_inference evidence, name high; id 42337, rva 0x7ad6e0).
     /// `undefined dtor(PlayerControls * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     ///

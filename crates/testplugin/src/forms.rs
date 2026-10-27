@@ -269,7 +269,7 @@ fn generated_api() -> Result<String, String> {
     let owner = pc.as_actor_value_owner();
     check(address(owner) == address(pc) + 0xB8, "Actor::as_actor_value_owner is not at +0xB8")?;
     let health = owner.get_actor_value(ActorValue::Health as i32);
-    let direct = owner.actor_value_owner_get_actor_value(ActorValue::Health as i32);
+    let direct = pc.actor_value_owner_get_actor_value(ActorValue::Health as i32);
     check(health > 0.0 && health.to_bits() == direct.to_bits(), "ActorValueOwner slot 1 differs from Actor::ActorValueOwner_GetActorValue")?;
 
     let handler = TESDataHandler::singleton().ok_or("TESDataHandler::singleton is None")?;

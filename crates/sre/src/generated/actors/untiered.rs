@@ -823,14 +823,14 @@ impl crate::TESNPC {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn actor_value_owner_get_actor_value(&self, param_1: i32) -> u64 { unsafe { function!(24774, (*const Self, i32) -> u64)(core::ptr::from_ref(self), param_1) } }
+    pub unsafe fn actor_value_owner_get_actor_value(&self, param_1: i32) -> u64 { unsafe { function!(24774, (*const Self, i32) -> u64)(core::ptr::from_ref(self).byte_add(0xE8), param_1) } }
     /// `TESNPC::ActorValueOwner_SetActorValue` (decompiler signature, tier untiered; ledger slot_propagation evidence, name high; id 24775, rva 0x3c7460).
     /// `undefined ActorValueOwner_SetActorValue(TESNPC * this, int param_1, float param_2)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn actor_value_owner_set_actor_value(&self, param_1: i32, param_2: f32) -> u64 { unsafe { function!(24775, (*const Self, i32, f32) -> u64)(core::ptr::from_ref(self), param_1, param_2) } }
+    pub unsafe fn actor_value_owner_set_actor_value(&self, param_1: i32, param_2: f32) -> u64 { unsafe { function!(24775, (*const Self, i32, f32) -> u64)(core::ptr::from_ref(self).byte_add(0xE8), param_1, param_2) } }
     /// `TESNPC::LoadGame` (decompiler signature, tier untiered; ledger slot_propagation evidence, name medium; id 24778, rva 0x3c7b10).
     /// `undefined LoadGame(TESNPC * this, undefined8 * param_1, TypeDescriptor * param_2, TypeDescriptor * param_3)`
     ///

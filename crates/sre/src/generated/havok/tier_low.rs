@@ -436,14 +436,14 @@ impl crate::bhkCharProxyController {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bhk_character_controller_vfunc_10(&self, param_1: u64, param_2: u64, param_3: u64) -> c_char { unsafe { function!(79153, (*const Self, u64, u64, u64) -> c_char)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn bhk_character_controller_vfunc_10(&self, param_1: u64, param_2: u64, param_3: u64) -> c_char { unsafe { function!(79153, (*const Self, u64, u64, u64) -> c_char)(core::ptr::from_ref(self).byte_add(0x10), param_1, param_2, param_3) } }
     /// `bhkCharProxyController::bhkCharacterController_vfunc_14` (decompiler signature, tier low; ledger rtti evidence, name high; id 79138, rva 0x1098730).
     /// `undefined bhkCharacterController_vfunc_14(bhkCharProxyController * this, longlong param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bhk_character_controller_vfunc_14(&self, param_1: i64) -> u64 { unsafe { function!(79138, (*const Self, i64) -> u64)(core::ptr::from_ref(self), param_1) } }
+    pub unsafe fn bhk_character_controller_vfunc_14(&self, param_1: i64) -> u64 { unsafe { function!(79138, (*const Self, i64) -> u64)(core::ptr::from_ref(self).byte_add(0x10), param_1) } }
     /// `bhkCharProxyController::bhkCharacterController_vfunc_17` (decompiler signature, tier low; ledger rtti evidence, name high; id 79140, rva 0x10987f0).
     /// `undefined4 bhkCharacterController_vfunc_17(void)`
     ///
@@ -457,63 +457,63 @@ impl crate::bhkCharProxyController {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bhk_character_controller_vfunc_18(&self, param_1: i64) -> u64 { unsafe { function!(79152, (*const Self, i64) -> u64)(core::ptr::from_ref(self), param_1) } }
+    pub unsafe fn bhk_character_controller_vfunc_18(&self, param_1: i64) -> u64 { unsafe { function!(79152, (*const Self, i64) -> u64)(core::ptr::from_ref(self).byte_add(0x10), param_1) } }
     /// `bhkCharProxyController::bhkCharacterController_vfunc_2` (decompiler signature, tier low; ledger rtti evidence, name high; id 79142, rva 0x1098920).
     /// `undefined bhkCharacterController_vfunc_2(bhkCharProxyController * this, float * param_1, char param_2)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bhk_character_controller_vfunc_2(&self, param_1: *mut f32, param_2: c_char) -> u64 { unsafe { function!(79142, (*const Self, *mut f32, c_char) -> u64)(core::ptr::from_ref(self), param_1, param_2) } }
+    pub unsafe fn bhk_character_controller_vfunc_2(&self, param_1: *mut f32, param_2: c_char) -> u64 { unsafe { function!(79142, (*const Self, *mut f32, c_char) -> u64)(core::ptr::from_ref(self).byte_add(0x10), param_1, param_2) } }
     /// `bhkCharProxyController::bhkCharacterController_vfunc_3` (decompiler signature, tier low; ledger rtti evidence, name high; id 79141, rva 0x1098800).
     /// `undefined bhkCharacterController_vfunc_3(bhkCharProxyController * this, float * param_1, char param_2)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bhk_character_controller_vfunc_3(&self, param_1: *mut f32, param_2: c_char) -> u64 { unsafe { function!(79141, (*const Self, *mut f32, c_char) -> u64)(core::ptr::from_ref(self), param_1, param_2) } }
+    pub unsafe fn bhk_character_controller_vfunc_3(&self, param_1: *mut f32, param_2: c_char) -> u64 { unsafe { function!(79141, (*const Self, *mut f32, c_char) -> u64)(core::ptr::from_ref(self).byte_add(0x10), param_1, param_2) } }
     /// `bhkCharProxyController::bhkCharacterController_vfunc_4` (decompiler signature, tier low; ledger rtti evidence, name high; id 79143, rva 0x1098a30).
     /// `undefined bhkCharacterController_vfunc_4(bhkCharProxyController * this, undefined8 * param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bhk_character_controller_vfunc_4(&self, param_1: *mut u64) -> u64 { unsafe { function!(79143, (*const Self, *mut u64) -> u64)(core::ptr::from_ref(self), param_1) } }
+    pub unsafe fn bhk_character_controller_vfunc_4(&self, param_1: *mut u64) -> u64 { unsafe { function!(79143, (*const Self, *mut u64) -> u64)(core::ptr::from_ref(self).byte_add(0x10), param_1) } }
     /// `bhkCharProxyController::bhkCharacterController_vfunc_5` (decompiler signature, tier low; ledger rtti evidence, name high; id 79144, rva 0x1098a80).
     /// `undefined bhkCharacterController_vfunc_5(bhkCharProxyController * this, undefined8 * param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bhk_character_controller_vfunc_5(&self, param_1: *mut u64) -> u64 { unsafe { function!(79144, (*const Self, *mut u64) -> u64)(core::ptr::from_ref(self), param_1) } }
+    pub unsafe fn bhk_character_controller_vfunc_5(&self, param_1: *mut u64) -> u64 { unsafe { function!(79144, (*const Self, *mut u64) -> u64)(core::ptr::from_ref(self).byte_add(0x10), param_1) } }
     /// `bhkCharProxyController::bhkCharacterController_vfunc_6` (decompiler signature, tier low; ledger rtti evidence, name high; id 79145, rva 0x1098b20).
     /// `undefined bhkCharacterController_vfunc_6(bhkCharProxyController * this, undefined8 * param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bhk_character_controller_vfunc_6(&self, param_1: *mut u64) -> u64 { unsafe { function!(79145, (*const Self, *mut u64) -> u64)(core::ptr::from_ref(self), param_1) } }
+    pub unsafe fn bhk_character_controller_vfunc_6(&self, param_1: *mut u64) -> u64 { unsafe { function!(79145, (*const Self, *mut u64) -> u64)(core::ptr::from_ref(self).byte_add(0x10), param_1) } }
     /// `bhkCharProxyController::bhkCharacterController_vfunc_7` (decompiler signature, tier low; ledger rtti evidence, name high; id 79146, rva 0x1098b60).
     /// `undefined bhkCharacterController_vfunc_7(bhkCharProxyController * this, undefined8 * param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bhk_character_controller_vfunc_7(&self, param_1: *mut u64) -> u64 { unsafe { function!(79146, (*const Self, *mut u64) -> u64)(core::ptr::from_ref(self), param_1) } }
+    pub unsafe fn bhk_character_controller_vfunc_7(&self, param_1: *mut u64) -> u64 { unsafe { function!(79146, (*const Self, *mut u64) -> u64)(core::ptr::from_ref(self).byte_add(0x10), param_1) } }
     /// `bhkCharProxyController::bhkCharacterController_vfunc_8` (decompiler signature, tier low; ledger rtti evidence, name high; id 79147, rva 0x1098b80).
     /// `undefined4 * bhkCharacterController_vfunc_8(bhkCharProxyController * this, undefined4 * param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bhk_character_controller_vfunc_8(&self, param_1: *mut u32) -> *mut u32 { unsafe { function!(79147, (*const Self, *mut u32) -> *mut u32)(core::ptr::from_ref(self), param_1) } }
+    pub unsafe fn bhk_character_controller_vfunc_8(&self, param_1: *mut u32) -> *mut u32 { unsafe { function!(79147, (*const Self, *mut u32) -> *mut u32)(core::ptr::from_ref(self).byte_add(0x10), param_1) } }
     /// `bhkCharProxyController::bhkCharacterController_vfunc_9` (decompiler signature, tier low; ledger rtti evidence, name high; id 79148, rva 0x1098c10).
     /// `undefined bhkCharacterController_vfunc_9(bhkCharProxyController * this, undefined4 param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bhk_character_controller_vfunc_9(&self, param_1: u32) -> u64 { unsafe { function!(79148, (*const Self, u32) -> u64)(core::ptr::from_ref(self), param_1) } }
+    pub unsafe fn bhk_character_controller_vfunc_9(&self, param_1: u32) -> u64 { unsafe { function!(79148, (*const Self, u32) -> u64)(core::ptr::from_ref(self).byte_add(0x10), param_1) } }
     /// `bhkCharProxyController::ctor` (decompiler signature, tier low; ledger layout_inference evidence, name high; id 79128, rva 0x1097260).
     /// `bhkCharProxyController * ctor(bhkCharProxyController * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
     ///
@@ -568,21 +568,21 @@ impl crate::bhkCharRigidBodyController {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn hkp_character_rigid_body_listener_vfunc_3(&self, param_1: i64, param_2: u64) -> u64 { unsafe { function!(79185, (*const Self, i64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2) } }
+    pub unsafe fn hkp_character_rigid_body_listener_vfunc_3(&self, param_1: i64, param_2: u64) -> u64 { unsafe { function!(79185, (*const Self, i64, u64) -> u64)(core::ptr::from_ref(self).byte_add(0x330), param_1, param_2) } }
     /// `bhkCharRigidBodyController::hkpCharacterRigidBodyListener_vfunc_4` (decompiler signature, tier low; ledger rtti evidence, name high; id 79186, rva 0x1099d00).
     /// `undefined hkpCharacterRigidBodyListener_vfunc_4(bhkCharRigidBodyController * this, undefined8 param_1, undefined8 param_2, longlong * param_3, longlong * param_4, longlong * param_5)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn hkp_character_rigid_body_listener_vfunc_4(&self, param_1: u64, param_2: u64, param_3: *mut i64, param_4: *mut i64, param_5: *mut i64) -> u64 { unsafe { function!(79186, (*const Self, u64, u64, *mut i64, *mut i64, *mut i64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3, param_4, param_5) } }
+    pub unsafe fn hkp_character_rigid_body_listener_vfunc_4(&self, param_1: u64, param_2: u64, param_3: *mut i64, param_4: *mut i64, param_5: *mut i64) -> u64 { unsafe { function!(79186, (*const Self, u64, u64, *mut i64, *mut i64, *mut i64) -> u64)(core::ptr::from_ref(self).byte_add(0x330), param_1, param_2, param_3, param_4, param_5) } }
     /// `bhkCharRigidBodyController::hkpCharacterRigidBodyListener_vfunc_6` (decompiler signature, tier low; ledger rtti evidence, name high; id 79187, rva 0x109a270).
     /// `undefined hkpCharacterRigidBodyListener_vfunc_6(bhkCharRigidBodyController * this, undefined8 param_1, longlong param_2, longlong * param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn hkp_character_rigid_body_listener_vfunc_6(&self, param_1: u64, param_2: i64, param_3: *mut i64) -> u64 { unsafe { function!(79187, (*const Self, u64, i64, *mut i64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn hkp_character_rigid_body_listener_vfunc_6(&self, param_1: u64, param_2: i64, param_3: *mut i64) -> u64 { unsafe { function!(79187, (*const Self, u64, i64, *mut i64) -> u64)(core::ptr::from_ref(self).byte_add(0x330), param_1, param_2, param_3) } }
     /// `bhkCharRigidBodyController::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 79212, rva 0x109c100).
     /// `bhkCharRigidBodyController * vdtor(bhkCharRigidBodyController * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///
@@ -811,35 +811,35 @@ impl crate::bhkCollisionFilter {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn hkp_collidable_collidable_filter_vfunc_1(&self, param_1: u64, param_2: i64, param_3: i64) -> u64 { unsafe { function!(78548, (*const Self, u64, i64, i64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn hkp_collidable_collidable_filter_vfunc_1(&self, param_1: u64, param_2: i64, param_3: i64) -> u64 { unsafe { function!(78548, (*const Self, u64, i64, i64) -> u64)(core::ptr::from_ref(self).byte_add(0x10), param_1, param_2, param_3) } }
     /// `bhkCollisionFilter::hkpRayCollidableFilter_vfunc_1` (decompiler signature, tier low; ledger rtti evidence, name high; id 78551, rva 0x107c6f0).
     /// `undefined8 hkpRayCollidableFilter_vfunc_1(bhkCollisionFilter * this, undefined8 param_1, longlong param_2, longlong param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn hkp_ray_collidable_filter_vfunc_1(&self, param_1: u64, param_2: i64, param_3: i64) -> u64 { unsafe { function!(78551, (*const Self, u64, i64, i64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn hkp_ray_collidable_filter_vfunc_1(&self, param_1: u64, param_2: i64, param_3: i64) -> u64 { unsafe { function!(78551, (*const Self, u64, i64, i64) -> u64)(core::ptr::from_ref(self).byte_add(0x28), param_1, param_2, param_3) } }
     /// `bhkCollisionFilter::hkpRayShapeCollectionFilter_vfunc_0` (decompiler signature, tier low; ledger rtti evidence, name high; id 78550, rva 0x107c690).
     /// `undefined8 hkpRayShapeCollectionFilter_vfunc_0(bhkCollisionFilter * this, undefined8 param_1, longlong param_2, undefined8 param_3, longlong * param_4, undefined4 param_5)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn hkp_ray_shape_collection_filter_vfunc_0(&self, param_1: u64, param_2: i64, param_3: u64, param_4: *mut i64, param_5: u32) -> u64 { unsafe { function!(78550, (*const Self, u64, i64, u64, *mut i64, u32) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3, param_4, param_5) } }
+    pub unsafe fn hkp_ray_shape_collection_filter_vfunc_0(&self, param_1: u64, param_2: i64, param_3: u64, param_4: *mut i64, param_5: u32) -> u64 { unsafe { function!(78550, (*const Self, u64, i64, u64, *mut i64, u32) -> u64)(core::ptr::from_ref(self).byte_add(0x20), param_1, param_2, param_3, param_4, param_5) } }
     /// `bhkCollisionFilter::hkpShapeCollectionFilter_vfunc_0` (decompiler signature, tier low; ledger rtti evidence, name high; id 78552, rva 0x107c720).
     /// `undefined8 hkpShapeCollectionFilter_vfunc_0(bhkCollisionFilter * this, undefined8 param_1, undefined8 param_2, longlong * param_3, longlong * param_4, longlong * param_5, longlong * param_6, int param_7, int param_8)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn hkp_shape_collection_filter_vfunc_0(&self, param_1: u64, param_2: u64, param_3: *mut i64, param_4: *mut i64, param_5: *mut i64, param_6: *mut i64, param_7: i32, param_8: i32) -> u64 { unsafe { function!(78552, (*const Self, u64, u64, *mut i64, *mut i64, *mut i64, *mut i64, i32, i32) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3, param_4, param_5, param_6, param_7, param_8) } }
+    pub unsafe fn hkp_shape_collection_filter_vfunc_0(&self, param_1: u64, param_2: u64, param_3: *mut i64, param_4: *mut i64, param_5: *mut i64, param_6: *mut i64, param_7: i32, param_8: i32) -> u64 { unsafe { function!(78552, (*const Self, u64, u64, *mut i64, *mut i64, *mut i64, *mut i64, i32, i32) -> u64)(core::ptr::from_ref(self).byte_add(0x18), param_1, param_2, param_3, param_4, param_5, param_6, param_7, param_8) } }
     /// `bhkCollisionFilter::hkpShapeCollectionFilter_vfunc_1` (decompiler signature, tier low; ledger rtti evidence, name high; id 78549, rva 0x107c5a0).
     /// `undefined8 hkpShapeCollectionFilter_vfunc_1(bhkCollisionFilter * this, undefined8 param_1, undefined8 param_2, longlong param_3, longlong * param_4, longlong * param_5, int param_6)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn hkp_shape_collection_filter_vfunc_1(&self, param_1: u64, param_2: u64, param_3: i64, param_4: *mut i64, param_5: *mut i64, param_6: i32) -> u64 { unsafe { function!(78549, (*const Self, u64, u64, i64, *mut i64, *mut i64, i32) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3, param_4, param_5, param_6) } }
+    pub unsafe fn hkp_shape_collection_filter_vfunc_1(&self, param_1: u64, param_2: u64, param_3: i64, param_4: *mut i64, param_5: *mut i64, param_6: i32) -> u64 { unsafe { function!(78549, (*const Self, u64, u64, i64, *mut i64, *mut i64, i32) -> u64)(core::ptr::from_ref(self).byte_add(0x18), param_1, param_2, param_3, param_4, param_5, param_6) } }
     /// `bhkCollisionFilter::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 78564, rva 0x107f300).
     /// `bhkCollisionFilter * vdtor(bhkCollisionFilter * this, uint param_1)`
     ///
@@ -2223,35 +2223,35 @@ impl crate::bhkThreadMemorySource {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_memory_heap_vfunc_1(&self, param_1: i64) -> u64 { unsafe { function!(80619, (*const Self, i64) -> u64)(core::ptr::from_ref(self), param_1) } }
+    pub unsafe fn i_memory_heap_vfunc_1(&self, param_1: i64) -> u64 { unsafe { function!(80619, (*const Self, i64) -> u64)(core::ptr::from_ref(self).byte_add(0x8), param_1) } }
     /// `bhkThreadMemorySource::IMemoryHeap_vfunc_10` (decompiler signature, tier low; ledger rtti evidence, name high; id 80623, rva 0x10e2640).
     /// `undefined1 IMemoryHeap_vfunc_10(bhkThreadMemorySource * this, ulonglong param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_memory_heap_vfunc_10(&self, param_1: u64) -> u8 { unsafe { function!(80623, (*const Self, u64) -> u8)(core::ptr::from_ref(self), param_1) } }
+    pub unsafe fn i_memory_heap_vfunc_10(&self, param_1: u64) -> u8 { unsafe { function!(80623, (*const Self, u64) -> u8)(core::ptr::from_ref(self).byte_add(0x8), param_1) } }
     /// `bhkThreadMemorySource::IMemoryHeap_vfunc_11` (decompiler signature, tier low; ledger rtti evidence, name high; id 80624, rva 0x10e2660).
     /// `ulonglong IMemoryHeap_vfunc_11(bhkThreadMemorySource * this, longlong param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_memory_heap_vfunc_11(&self, param_1: i64) -> u64 { unsafe { function!(80624, (*const Self, i64) -> u64)(core::ptr::from_ref(self), param_1) } }
+    pub unsafe fn i_memory_heap_vfunc_11(&self, param_1: i64) -> u64 { unsafe { function!(80624, (*const Self, i64) -> u64)(core::ptr::from_ref(self).byte_add(0x8), param_1) } }
     /// `bhkThreadMemorySource::IMemoryHeap_vfunc_12` (decompiler signature, tier low; ledger rtti evidence, name high; id 80625, rva 0x10e2680).
     /// `undefined IMemoryHeap_vfunc_12(bhkThreadMemorySource * this, undefined8 * param_1, char param_2)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_memory_heap_vfunc_12(&self, param_1: *mut u64, param_2: c_char) -> u64 { unsafe { function!(80625, (*const Self, *mut u64, c_char) -> u64)(core::ptr::from_ref(self), param_1, param_2) } }
+    pub unsafe fn i_memory_heap_vfunc_12(&self, param_1: *mut u64, param_2: c_char) -> u64 { unsafe { function!(80625, (*const Self, *mut u64, c_char) -> u64)(core::ptr::from_ref(self).byte_add(0x8), param_1, param_2) } }
     /// `bhkThreadMemorySource::IMemoryHeap_vfunc_13` (decompiler signature, tier low; ledger rtti evidence, name high; id 80626, rva 0x10e2860).
     /// `bool IMemoryHeap_vfunc_13(bhkThreadMemorySource * this, ulonglong param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_memory_heap_vfunc_13(&self, param_1: u64) -> u8 { unsafe { function!(80626, (*const Self, u64) -> u8)(core::ptr::from_ref(self), param_1) } }
+    pub unsafe fn i_memory_heap_vfunc_13(&self, param_1: u64) -> u8 { unsafe { function!(80626, (*const Self, u64) -> u8)(core::ptr::from_ref(self).byte_add(0x8), param_1) } }
     /// `bhkThreadMemorySource::IMemoryHeap_vfunc_14` (decompiler signature, tier low; ledger rtti evidence, name high; id 80618, rva 0x10e24a0).
     /// `undefined8 IMemoryHeap_vfunc_14(void)`
     ///
@@ -2265,7 +2265,7 @@ impl crate::bhkThreadMemorySource {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_memory_heap_vfunc_2(&self, param_1: *mut u64) -> u64 { unsafe { function!(80620, (*const Self, *mut u64) -> u64)(core::ptr::from_ref(self), param_1) } }
+    pub unsafe fn i_memory_heap_vfunc_2(&self, param_1: *mut u64) -> u64 { unsafe { function!(80620, (*const Self, *mut u64) -> u64)(core::ptr::from_ref(self).byte_add(0x8), param_1) } }
     /// `bhkThreadMemorySource::IMemoryHeap_vfunc_7` (decompiler signature, tier low; ledger rtti evidence, name high; id 80617, rva 0x10e2490).
     /// `undefined * IMemoryHeap_vfunc_7(void)`
     ///
@@ -2279,14 +2279,14 @@ impl crate::bhkThreadMemorySource {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_memory_heap_vfunc_8(&self, param_1: u64) -> *mut u64 { unsafe { function!(80621, (*const Self, u64) -> *mut u64)(core::ptr::from_ref(self), param_1) } }
+    pub unsafe fn i_memory_heap_vfunc_8(&self, param_1: u64) -> *mut u64 { unsafe { function!(80621, (*const Self, u64) -> *mut u64)(core::ptr::from_ref(self).byte_add(0x8), param_1) } }
     /// `bhkThreadMemorySource::IMemoryHeap_vfunc_9` (decompiler signature, tier low; ledger rtti evidence, name high; id 80622, rva 0x10e25d0).
     /// `undefined IMemoryHeap_vfunc_9(bhkThreadMemorySource * this, longlong param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_memory_heap_vfunc_9(&self, param_1: i64) -> u64 { unsafe { function!(80622, (*const Self, i64) -> u64)(core::ptr::from_ref(self), param_1) } }
+    pub unsafe fn i_memory_heap_vfunc_9(&self, param_1: i64) -> u64 { unsafe { function!(80622, (*const Self, i64) -> u64)(core::ptr::from_ref(self).byte_add(0x8), param_1) } }
     /// `bhkThreadMemorySource::ctor` (decompiler signature, tier low; ledger layout_inference evidence, name high; id 80605, rva 0x10e1860).
     /// `bhkThreadMemorySource * ctor(bhkThreadMemorySource * this, int param_1)`
     ///
@@ -3070,42 +3070,42 @@ impl crate::hkCpuWorldGetClosestPointsCollector {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn hk_aabb_tree_query_utils_hk_aabb_tree_data_hk_aabb_tree_aabb16_unsigned_short_collector_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(81369, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn hk_aabb_tree_query_utils_hk_aabb_tree_data_hk_aabb_tree_aabb16_unsigned_short_collector_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(81369, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self).byte_add(0x8), param_1, param_2, param_3) } }
     /// `hkCpuWorldGetClosestPointsCollector::hkAabbTreeQueryUtils_hkAabbTreeData_hkAabbTreeAabb16_unsigned_short_Collector_vfunc_1` (decompiler signature, tier low; ledger rtti evidence, name high; id 81362, rva 0x1124f90).
     /// `undefined hkAabbTreeQueryUtils_hkAabbTreeData_hkAabbTreeAabb16_unsigned_short_Collector_vfunc_1(hkCpuWorldGetClosestPointsCollector * this, longlong param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn hk_aabb_tree_query_utils_hk_aabb_tree_data_hk_aabb_tree_aabb16_unsigned_short_collector_vfunc_1(&self, param_1: i64) -> u64 { unsafe { function!(81362, (*const Self, i64) -> u64)(core::ptr::from_ref(self), param_1) } }
+    pub unsafe fn hk_aabb_tree_query_utils_hk_aabb_tree_data_hk_aabb_tree_aabb16_unsigned_short_collector_vfunc_1(&self, param_1: i64) -> u64 { unsafe { function!(81362, (*const Self, i64) -> u64)(core::ptr::from_ref(self).byte_add(0x8), param_1) } }
     /// `hkCpuWorldGetClosestPointsCollector::hkKdTreeCastCollector_vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 81370, rva 0x11253a8).
     /// `undefined hkKdTreeCastCollector_vdtor(hkCpuWorldGetClosestPointsCollector * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn hk_kd_tree_cast_collector_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(81370, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn hk_kd_tree_cast_collector_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(81370, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self).byte_add(0x10), param_1, param_2, param_3) } }
     /// `hkCpuWorldGetClosestPointsCollector::hkKdTreeCastCollector_vfunc_1` (decompiler signature, tier low; ledger rtti evidence, name high; id 81363, rva 0x1124fb0).
     /// `undefined1 * hkKdTreeCastCollector_vfunc_1(hkCpuWorldGetClosestPointsCollector * this, undefined1 * param_1, longlong * param_2)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn hk_kd_tree_cast_collector_vfunc_1(&self, param_1: *mut u8, param_2: *mut i64) -> *mut u8 { unsafe { function!(81363, (*const Self, *mut u8, *mut i64) -> *mut u8)(core::ptr::from_ref(self), param_1, param_2) } }
+    pub unsafe fn hk_kd_tree_cast_collector_vfunc_1(&self, param_1: *mut u8, param_2: *mut i64) -> *mut u8 { unsafe { function!(81363, (*const Self, *mut u8, *mut i64) -> *mut u8)(core::ptr::from_ref(self).byte_add(0x10), param_1, param_2) } }
     /// `hkCpuWorldGetClosestPointsCollector::hkKdTreeCastCollector_vfunc_2` (decompiler signature, tier low; ledger rtti evidence, name high; id 81364, rva 0x1124fe0).
     /// `undefined8 hkKdTreeCastCollector_vfunc_2(hkCpuWorldGetClosestPointsCollector * this, undefined8 param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn hk_kd_tree_cast_collector_vfunc_2(&self, param_1: u64) -> u64 { unsafe { function!(81364, (*const Self, u64) -> u64)(core::ptr::from_ref(self), param_1) } }
+    pub unsafe fn hk_kd_tree_cast_collector_vfunc_2(&self, param_1: u64) -> u64 { unsafe { function!(81364, (*const Self, u64) -> u64)(core::ptr::from_ref(self).byte_add(0x10), param_1) } }
     /// `hkCpuWorldGetClosestPointsCollector::hkKdTreeCastCollector_vfunc_3` (decompiler signature, tier low; ledger rtti evidence, name high; id 81365, rva 0x1125000).
     /// `undefined4 hkKdTreeCastCollector_vfunc_3(hkCpuWorldGetClosestPointsCollector * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn hk_kd_tree_cast_collector_vfunc_3(&self) -> u32 { unsafe { function!(81365, (*const Self) -> u32)(core::ptr::from_ref(self)) } }
+    pub unsafe fn hk_kd_tree_cast_collector_vfunc_3(&self) -> u32 { unsafe { function!(81365, (*const Self) -> u32)(core::ptr::from_ref(self).byte_add(0x10)) } }
     /// `hkCpuWorldGetClosestPointsCollector::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 81372, rva 0x11253f0).
     /// `hkCpuWorldGetClosestPointsCollector * vdtor(hkCpuWorldGetClosestPointsCollector * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///
@@ -3122,42 +3122,42 @@ impl crate::hkCpuWorldLinearCastCollector {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn hk_aabb_tree_query_utils_hk_aabb_tree_data_hk_aabb_tree_aabb16_unsigned_short_collector_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(81381, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn hk_aabb_tree_query_utils_hk_aabb_tree_data_hk_aabb_tree_aabb16_unsigned_short_collector_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(81381, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self).byte_add(0x18), param_1, param_2, param_3) } }
     /// `hkCpuWorldLinearCastCollector::hkAabbTreeQueryUtils_hkAabbTreeData_hkAabbTreeAabb16_unsigned_short_Collector_vfunc_1` (decompiler signature, tier low; ledger rtti evidence, name high; id 81385, rva 0x1125f10).
     /// `undefined hkAabbTreeQueryUtils_hkAabbTreeData_hkAabbTreeAabb16_unsigned_short_Collector_vfunc_1(hkCpuWorldLinearCastCollector * this, longlong param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn hk_aabb_tree_query_utils_hk_aabb_tree_data_hk_aabb_tree_aabb16_unsigned_short_collector_vfunc_1(&self, param_1: i64) -> u64 { unsafe { function!(81385, (*const Self, i64) -> u64)(core::ptr::from_ref(self), param_1) } }
+    pub unsafe fn hk_aabb_tree_query_utils_hk_aabb_tree_data_hk_aabb_tree_aabb16_unsigned_short_collector_vfunc_1(&self, param_1: i64) -> u64 { unsafe { function!(81385, (*const Self, i64) -> u64)(core::ptr::from_ref(self).byte_add(0x18), param_1) } }
     /// `hkCpuWorldLinearCastCollector::hkAabbTreeQueryUtils_hkAabbTreeData_hkAabbTreeAabb_unsigned_short_Collector_vfunc_1` (decompiler signature, tier low; ledger rtti evidence, name high; id 81386, rva 0x1125f20).
     /// `undefined hkAabbTreeQueryUtils_hkAabbTreeData_hkAabbTreeAabb_unsigned_short_Collector_vfunc_1(hkCpuWorldLinearCastCollector * this, longlong param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn hk_aabb_tree_query_utils_hk_aabb_tree_data_hk_aabb_tree_aabb_unsigned_short_collector_vfunc_1(&self, param_1: i64) -> u64 { unsafe { function!(81386, (*const Self, i64) -> u64)(core::ptr::from_ref(self), param_1) } }
+    pub unsafe fn hk_aabb_tree_query_utils_hk_aabb_tree_data_hk_aabb_tree_aabb_unsigned_short_collector_vfunc_1(&self, param_1: i64) -> u64 { unsafe { function!(81386, (*const Self, i64) -> u64)(core::ptr::from_ref(self).byte_add(0x10), param_1) } }
     /// `hkCpuWorldLinearCastCollector::hkKdTreeCastCollector_vfunc_1` (decompiler signature, tier low; ledger rtti evidence, name high; id 81387, rva 0x1125f30).
     /// `undefined1 * hkKdTreeCastCollector_vfunc_1(hkCpuWorldLinearCastCollector * this, undefined1 * param_1, longlong * param_2)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn hk_kd_tree_cast_collector_vfunc_1(&self, param_1: *mut u8, param_2: *mut i64) -> *mut u8 { unsafe { function!(81387, (*const Self, *mut u8, *mut i64) -> *mut u8)(core::ptr::from_ref(self), param_1, param_2) } }
+    pub unsafe fn hk_kd_tree_cast_collector_vfunc_1(&self, param_1: *mut u8, param_2: *mut i64) -> *mut u8 { unsafe { function!(81387, (*const Self, *mut u8, *mut i64) -> *mut u8)(core::ptr::from_ref(self).byte_add(0x8), param_1, param_2) } }
     /// `hkCpuWorldLinearCastCollector::hkKdTreeCastCollector_vfunc_2` (decompiler signature, tier low; ledger rtti evidence, name high; id 81389, rva 0x1125f70).
     /// `undefined8 hkKdTreeCastCollector_vfunc_2(hkCpuWorldLinearCastCollector * this, undefined8 param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn hk_kd_tree_cast_collector_vfunc_2(&self, param_1: u64) -> u64 { unsafe { function!(81389, (*const Self, u64) -> u64)(core::ptr::from_ref(self), param_1) } }
+    pub unsafe fn hk_kd_tree_cast_collector_vfunc_2(&self, param_1: u64) -> u64 { unsafe { function!(81389, (*const Self, u64) -> u64)(core::ptr::from_ref(self).byte_add(0x8), param_1) } }
     /// `hkCpuWorldLinearCastCollector::hkKdTreeCastCollector_vfunc_3` (decompiler signature, tier low; ledger rtti evidence, name high; id 81388, rva 0x1125f60).
     /// `undefined4 hkKdTreeCastCollector_vfunc_3(hkCpuWorldLinearCastCollector * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn hk_kd_tree_cast_collector_vfunc_3(&self) -> u32 { unsafe { function!(81388, (*const Self) -> u32)(core::ptr::from_ref(self)) } }
+    pub unsafe fn hk_kd_tree_cast_collector_vfunc_3(&self) -> u32 { unsafe { function!(81388, (*const Self) -> u32)(core::ptr::from_ref(self).byte_add(0x8)) } }
     /// `hkCpuWorldLinearCastCollector::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 81383, rva 0x1125e80).
     /// `hkCpuWorldLinearCastCollector * vdtor(hkCpuWorldLinearCastCollector * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///
@@ -3174,56 +3174,56 @@ impl crate::hkCpuWorldRayCastCollector {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn hk_aabb_tree_query_utils_hk_aabb_tree_data_hk_aabb_tree_aabb16_unsigned_short_collector_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(81407, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn hk_aabb_tree_query_utils_hk_aabb_tree_data_hk_aabb_tree_aabb16_unsigned_short_collector_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(81407, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self).byte_add(0x18), param_1, param_2, param_3) } }
     /// `hkCpuWorldRayCastCollector::hkAabbTreeQueryUtils_hkAabbTreeData_hkAabbTreeAabb16_unsigned_short_Collector_vfunc_1` (decompiler signature, tier low; ledger rtti evidence, name high; id 81398, rva 0x11267c0).
     /// `undefined4 hkAabbTreeQueryUtils_hkAabbTreeData_hkAabbTreeAabb16_unsigned_short_Collector_vfunc_1(hkCpuWorldRayCastCollector * this, longlong param_2)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn hk_aabb_tree_query_utils_hk_aabb_tree_data_hk_aabb_tree_aabb16_unsigned_short_collector_vfunc_1(&self, param_2: i64) -> u32 { unsafe { function!(81398, (*const Self, i64) -> u32)(core::ptr::from_ref(self), param_2) } }
+    pub unsafe fn hk_aabb_tree_query_utils_hk_aabb_tree_data_hk_aabb_tree_aabb16_unsigned_short_collector_vfunc_1(&self, param_2: i64) -> u32 { unsafe { function!(81398, (*const Self, i64) -> u32)(core::ptr::from_ref(self).byte_add(0x18), param_2) } }
     /// `hkCpuWorldRayCastCollector::hkAabbTreeQueryUtils_hkAabbTreeData_hkAabbTreeAabb_unsigned_short_Collector_vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 81406, rva 0x1127438).
     /// `undefined hkAabbTreeQueryUtils_hkAabbTreeData_hkAabbTreeAabb_unsigned_short_Collector_vdtor(hkCpuWorldRayCastCollector * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn hk_aabb_tree_query_utils_hk_aabb_tree_data_hk_aabb_tree_aabb_unsigned_short_collector_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(81406, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn hk_aabb_tree_query_utils_hk_aabb_tree_data_hk_aabb_tree_aabb_unsigned_short_collector_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(81406, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self).byte_add(0x10), param_1, param_2, param_3) } }
     /// `hkCpuWorldRayCastCollector::hkAabbTreeQueryUtils_hkAabbTreeData_hkAabbTreeAabb_unsigned_short_Collector_vfunc_1` (decompiler signature, tier low; ledger rtti evidence, name high; id 81397, rva 0x1126790).
     /// `undefined4 hkAabbTreeQueryUtils_hkAabbTreeData_hkAabbTreeAabb_unsigned_short_Collector_vfunc_1(hkCpuWorldRayCastCollector * this, longlong param_2)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn hk_aabb_tree_query_utils_hk_aabb_tree_data_hk_aabb_tree_aabb_unsigned_short_collector_vfunc_1(&self, param_2: i64) -> u32 { unsafe { function!(81397, (*const Self, i64) -> u32)(core::ptr::from_ref(self), param_2) } }
+    pub unsafe fn hk_aabb_tree_query_utils_hk_aabb_tree_data_hk_aabb_tree_aabb_unsigned_short_collector_vfunc_1(&self, param_2: i64) -> u32 { unsafe { function!(81397, (*const Self, i64) -> u32)(core::ptr::from_ref(self).byte_add(0x10), param_2) } }
     /// `hkCpuWorldRayCastCollector::hkKdTreeCastCollector_vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 81405, rva 0x112742c).
     /// `undefined hkKdTreeCastCollector_vdtor(hkCpuWorldRayCastCollector * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn hk_kd_tree_cast_collector_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(81405, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn hk_kd_tree_cast_collector_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(81405, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self).byte_add(0x8), param_1, param_2, param_3) } }
     /// `hkCpuWorldRayCastCollector::hkKdTreeCastCollector_vfunc_1` (decompiler signature, tier low; ledger rtti evidence, name high; id 81400, rva 0x1126820).
     /// `undefined8 hkKdTreeCastCollector_vfunc_1(hkCpuWorldRayCastCollector * this, undefined8 param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn hk_kd_tree_cast_collector_vfunc_1(&self, param_1: u64) -> u64 { unsafe { function!(81400, (*const Self, u64) -> u64)(core::ptr::from_ref(self), param_1) } }
+    pub unsafe fn hk_kd_tree_cast_collector_vfunc_1(&self, param_1: u64) -> u64 { unsafe { function!(81400, (*const Self, u64) -> u64)(core::ptr::from_ref(self).byte_add(0x8), param_1) } }
     /// `hkCpuWorldRayCastCollector::hkKdTreeCastCollector_vfunc_2` (decompiler signature, tier low; ledger rtti evidence, name high; id 81410, rva 0x11274e0).
     /// `undefined1 * hkKdTreeCastCollector_vfunc_2(hkCpuWorldRayCastCollector * this, undefined1 * param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn hk_kd_tree_cast_collector_vfunc_2(&self, param_1: *mut u8) -> *mut u8 { unsafe { function!(81410, (*const Self, *mut u8) -> *mut u8)(core::ptr::from_ref(self), param_1) } }
+    pub unsafe fn hk_kd_tree_cast_collector_vfunc_2(&self, param_1: *mut u8) -> *mut u8 { unsafe { function!(81410, (*const Self, *mut u8) -> *mut u8)(core::ptr::from_ref(self).byte_add(0x8), param_1) } }
     /// `hkCpuWorldRayCastCollector::hkKdTreeCastCollector_vfunc_3` (decompiler signature, tier low; ledger rtti evidence, name high; id 81409, rva 0x11274d0).
     /// `undefined4 hkKdTreeCastCollector_vfunc_3(hkCpuWorldRayCastCollector * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn hk_kd_tree_cast_collector_vfunc_3(&self) -> u32 { unsafe { function!(81409, (*const Self) -> u32)(core::ptr::from_ref(self)) } }
+    pub unsafe fn hk_kd_tree_cast_collector_vfunc_3(&self) -> u32 { unsafe { function!(81409, (*const Self) -> u32)(core::ptr::from_ref(self).byte_add(0x8)) } }
     /// `hkCpuWorldRayCastCollector::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 81408, rva 0x1127450).
     /// `hkCpuWorldRayCastCollector * vdtor(hkCpuWorldRayCastCollector * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///
@@ -3924,21 +3924,21 @@ impl crate::hkNiTriStripsShape {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn hkp_shape_container_vfunc_3(&self, param_1: u32) -> u32 { unsafe { function!(78707, (*const Self, u32) -> u32)(core::ptr::from_ref(self), param_1) } }
+    pub unsafe fn hkp_shape_container_vfunc_3(&self, param_1: u32) -> u32 { unsafe { function!(78707, (*const Self, u32) -> u32)(core::ptr::from_ref(self).byte_add(0x20), param_1) } }
     /// `hkNiTriStripsShape::hkpShapeContainer_vfunc_4` (decompiler signature, tier low; ledger rtti evidence, name high; id 78712, rva 0x1084770).
     /// `undefined4 hkpShapeContainer_vfunc_4(hkNiTriStripsShape * this, uint param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn hkp_shape_container_vfunc_4(&self, param_1: u32) -> u32 { unsafe { function!(78712, (*const Self, u32) -> u32)(core::ptr::from_ref(self), param_1) } }
+    pub unsafe fn hkp_shape_container_vfunc_4(&self, param_1: u32) -> u32 { unsafe { function!(78712, (*const Self, u32) -> u32)(core::ptr::from_ref(self).byte_add(0x20), param_1) } }
     /// `hkNiTriStripsShape::hkpShapeContainer_vfunc_5` (decompiler signature, tier low; ledger rtti evidence, name high; id 78711, rva 0x10844a0).
     /// `undefined8 * hkpShapeContainer_vfunc_5(hkNiTriStripsShape * this, uint param_1, undefined8 * param_2)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn hkp_shape_container_vfunc_5(&self, param_1: u32, param_2: *mut u64) -> *mut u64 { unsafe { function!(78711, (*const Self, u32, *mut u64) -> *mut u64)(core::ptr::from_ref(self), param_1, param_2) } }
+    pub unsafe fn hkp_shape_container_vfunc_5(&self, param_1: u32, param_2: *mut u64) -> *mut u64 { unsafe { function!(78711, (*const Self, u32, *mut u64) -> *mut u64)(core::ptr::from_ref(self).byte_add(0x20), param_1, param_2) } }
 }
 
 impl crate::hkNormalTriangleShape {
@@ -4150,21 +4150,21 @@ impl crate::hkPackedNiTriStripsShape {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn hkp_shape_container_vfunc_3(&self, param_1: u32) -> u32 { unsafe { function!(78753, (*const Self, u32) -> u32)(core::ptr::from_ref(self), param_1) } }
+    pub unsafe fn hkp_shape_container_vfunc_3(&self, param_1: u32) -> u32 { unsafe { function!(78753, (*const Self, u32) -> u32)(core::ptr::from_ref(self).byte_add(0x20), param_1) } }
     /// `hkPackedNiTriStripsShape::hkpShapeContainer_vfunc_4` (decompiler signature, tier low; ledger rtti evidence, name high; id 78755, rva 0x1086910).
     /// `undefined4 hkpShapeContainer_vfunc_4(hkPackedNiTriStripsShape * this, uint param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn hkp_shape_container_vfunc_4(&self, param_1: u32) -> u32 { unsafe { function!(78755, (*const Self, u32) -> u32)(core::ptr::from_ref(self), param_1) } }
+    pub unsafe fn hkp_shape_container_vfunc_4(&self, param_1: u32) -> u32 { unsafe { function!(78755, (*const Self, u32) -> u32)(core::ptr::from_ref(self).byte_add(0x20), param_1) } }
     /// `hkPackedNiTriStripsShape::hkpShapeContainer_vfunc_5` (decompiler signature, tier low; ledger rtti evidence, name high; id 78754, rva 0x1086720).
     /// `undefined8 * hkpShapeContainer_vfunc_5(hkPackedNiTriStripsShape * this, uint param_1, undefined8 * param_2)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn hkp_shape_container_vfunc_5(&self, param_1: u32, param_2: *mut u64) -> *mut u64 { unsafe { function!(78754, (*const Self, u32, *mut u64) -> *mut u64)(core::ptr::from_ref(self), param_1, param_2) } }
+    pub unsafe fn hkp_shape_container_vfunc_5(&self, param_1: u32, param_2: *mut u64) -> *mut u64 { unsafe { function!(78754, (*const Self, u32, *mut u64) -> *mut u64)(core::ptr::from_ref(self).byte_add(0x20), param_1, param_2) } }
     /// `hkPackedNiTriStripsShape::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 78767, rva 0x1087290).
     /// `hkPackedNiTriStripsShape * vdtor(hkPackedNiTriStripsShape * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///
@@ -4369,14 +4369,14 @@ impl crate::hkRemoteObjectProcess {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn hk_process_vfunc_3(&self, param_1: *mut u64, param_2: *mut u32) -> u64 { unsafe { function!(81335, (*const Self, *mut u64, *mut u32) -> u64)(core::ptr::from_ref(self), param_1, param_2) } }
+    pub unsafe fn hk_process_vfunc_3(&self, param_1: *mut u64, param_2: *mut u32) -> u64 { unsafe { function!(81335, (*const Self, *mut u64, *mut u32) -> u64)(core::ptr::from_ref(self).byte_add(0x10), param_1, param_2) } }
     /// `hkRemoteObjectProcess::hkProcess_vfunc_4` (decompiler signature, tier low; ledger rtti evidence, name high; id 81336, rva 0x1124290).
     /// `undefined hkProcess_vfunc_4(hkRemoteObjectProcess * this, char param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn hk_process_vfunc_4(&self, param_1: c_char) -> u64 { unsafe { function!(81336, (*const Self, c_char) -> u64)(core::ptr::from_ref(self), param_1) } }
+    pub unsafe fn hk_process_vfunc_4(&self, param_1: c_char) -> u64 { unsafe { function!(81336, (*const Self, c_char) -> u64)(core::ptr::from_ref(self).byte_add(0x10), param_1) } }
     /// `hkRemoteObjectProcess::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 81342, rva 0x1124460).
     /// `hkRemoteObjectProcess * vdtor(hkRemoteObjectProcess * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     ///
@@ -5400,7 +5400,7 @@ impl crate::hkbBehaviorClient {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn hk_remote_object_client_side_listener_vfunc_1(&self, param_1: i64, param_2: *mut c_void) -> u64 { unsafe { function!(81058, (*const Self, i64, *mut c_void) -> u64)(core::ptr::from_ref(self), param_1, param_2) } }
+    pub unsafe fn hk_remote_object_client_side_listener_vfunc_1(&self, param_1: i64, param_2: *mut c_void) -> u64 { unsafe { function!(81058, (*const Self, i64, *mut c_void) -> u64)(core::ptr::from_ref(self).byte_add(0x10), param_1, param_2) } }
     /// `hkbBehaviorClient::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 81072, rva 0x1106d90).
     /// `hkbBehaviorClient * vdtor(hkbBehaviorClient * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     ///
@@ -6034,7 +6034,7 @@ impl crate::hkbDefaultRaycastInterface {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn hka_raycast_interface_vfunc_1(&self, param_1: *mut u8, param_2: *mut f32, param_3: *mut f32, param_4: u32, param_5: *mut f32, param_6: *mut f32) -> *mut u8 { unsafe { function!(60082, (*const Self, *mut u8, *mut f32, *mut f32, u32, *mut f32, *mut f32) -> *mut u8)(core::ptr::from_ref(self), param_1, param_2, param_3, param_4, param_5, param_6) } }
+    pub unsafe fn hka_raycast_interface_vfunc_1(&self, param_1: *mut u8, param_2: *mut f32, param_3: *mut f32, param_4: u32, param_5: *mut f32, param_6: *mut f32) -> *mut u8 { unsafe { function!(60082, (*const Self, *mut u8, *mut f32, *mut f32, u32, *mut f32, *mut f32) -> *mut u8)(core::ptr::from_ref(self).byte_add(0x10), param_1, param_2, param_3, param_4, param_5, param_6) } }
     /// `hkbDefaultRaycastInterface::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 60085, rva 0xb2a9b0).
     /// `hkbDefaultRaycastInterface * vdtor(hkbDefaultRaycastInterface * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///
@@ -8048,7 +8048,7 @@ impl crate::hkpBroadPhaseBorder {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn hkp_phantom_overlap_listener_vfunc_0(&self, param_1: i64) -> u64 { unsafe { function!(62124, (*const Self, i64) -> u64)(core::ptr::from_ref(self), param_1) } }
+    pub unsafe fn hkp_phantom_overlap_listener_vfunc_0(&self, param_1: i64) -> u64 { unsafe { function!(62124, (*const Self, i64) -> u64)(core::ptr::from_ref(self).byte_add(0x18), param_1) } }
     /// `hkpBroadPhaseBorder::hkpPhantomOverlapListener_vfunc_1` (decompiler signature, tier low; ledger rtti evidence, name high; id 62125, rva 0xb7cbe0).
     /// `undefined hkpPhantomOverlapListener_vfunc_1(void)`
     ///
@@ -8072,14 +8072,14 @@ impl crate::hkpBroadPhaseBorderListener {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn hkp_broad_phase_listener_vfunc_1(&self, param_1: *mut i64) -> u64 { unsafe { function!(62097, (*const Self, *mut i64) -> u64)(core::ptr::from_ref(self), param_1) } }
+    pub unsafe fn hkp_broad_phase_listener_vfunc_1(&self, param_1: *mut i64) -> u64 { unsafe { function!(62097, (*const Self, *mut i64) -> u64)(core::ptr::from_ref(self).byte_add(0x10), param_1) } }
     /// `hkpBroadPhaseBorderListener::hkpBroadPhaseListener_vfunc_2` (decompiler signature, tier low; ledger rtti evidence, name high; id 62098, rva 0xb7b660).
     /// `undefined hkpBroadPhaseListener_vfunc_2(hkpBroadPhaseBorderListener * this, longlong * param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn hkp_broad_phase_listener_vfunc_2(&self, param_1: *mut i64) -> u64 { unsafe { function!(62098, (*const Self, *mut i64) -> u64)(core::ptr::from_ref(self), param_1) } }
+    pub unsafe fn hkp_broad_phase_listener_vfunc_2(&self, param_1: *mut i64) -> u64 { unsafe { function!(62098, (*const Self, *mut i64) -> u64)(core::ptr::from_ref(self).byte_add(0x10), param_1) } }
     /// `hkpBroadPhaseBorderListener::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 61446, rva 0xb5c810).
     /// `hkpBroadPhaseBorderListener * vdtor(hkpBroadPhaseBorderListener * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///
@@ -8322,28 +8322,28 @@ impl crate::hkpCharacterProxy {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn hkp_entity_listener_vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> u64 { unsafe { function!(62665, (*const Self, u32, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn hkp_entity_listener_vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> u64 { unsafe { function!(62665, (*const Self, u32, u64, u64) -> u64)(core::ptr::from_ref(self).byte_add(0x10), param_1, param_2, param_3) } }
     /// `hkpCharacterProxy::hkpEntityListener_vfunc_2` (decompiler signature, tier low; ledger rtti evidence, name medium; id 62657, rva 0xba0bb0).
     /// `undefined hkpEntityListener_vfunc_2(hkpCharacterProxy * this, hkpCharacterProxy * param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn hkp_entity_listener_vfunc_2(&self, param_1: *mut Self) -> u64 { unsafe { function!(62657, (*const Self, *mut Self) -> u64)(core::ptr::from_ref(self), param_1) } }
+    pub unsafe fn hkp_entity_listener_vfunc_2(&self, param_1: *mut Self) -> u64 { unsafe { function!(62657, (*const Self, *mut Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10), param_1) } }
     /// `hkpCharacterProxy::hkpPhantomListener_vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 62666, rva 0xba15ac).
     /// `undefined hkpPhantomListener_vdtor(hkpCharacterProxy * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn hkp_phantom_listener_vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> u64 { unsafe { function!(62666, (*const Self, u32, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn hkp_phantom_listener_vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> u64 { unsafe { function!(62666, (*const Self, u32, u64, u64) -> u64)(core::ptr::from_ref(self).byte_add(0x18), param_1, param_2, param_3) } }
     /// `hkpCharacterProxy::hkpPhantomListener_vfunc_2` (decompiler signature, tier low; ledger rtti evidence, name medium; id 62658, rva 0xba0d80).
     /// `undefined hkpPhantomListener_vfunc_2(hkpCharacterProxy * this, hkpCharacterProxy * param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn hkp_phantom_listener_vfunc_2(&self, param_1: *mut Self) -> u64 { unsafe { function!(62658, (*const Self, *mut Self) -> u64)(core::ptr::from_ref(self), param_1) } }
+    pub unsafe fn hkp_phantom_listener_vfunc_2(&self, param_1: *mut Self) -> u64 { unsafe { function!(62658, (*const Self, *mut Self) -> u64)(core::ptr::from_ref(self).byte_add(0x18), param_1) } }
     /// `hkpCharacterProxy::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 62667, rva 0xba15c0).
     /// `hkpCharacterProxy * vdtor(hkpCharacterProxy * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     ///
@@ -8387,21 +8387,21 @@ impl crate::hkpCharacterRigidBody {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn hkp_entity_listener_vfunc_1(&self, param_1: i64) -> u64 { unsafe { function!(62460, (*const Self, i64) -> u64)(core::ptr::from_ref(self), param_1) } }
+    pub unsafe fn hkp_entity_listener_vfunc_1(&self, param_1: i64) -> u64 { unsafe { function!(62460, (*const Self, i64) -> u64)(core::ptr::from_ref(self).byte_add(0x10), param_1) } }
     /// `hkpCharacterRigidBody::hkpEntityListener_vfunc_2` (decompiler signature, tier low; ledger rtti evidence, name medium; id 62461, rva 0xb998c0).
     /// `undefined hkpEntityListener_vfunc_2(hkpCharacterRigidBody * this, longlong param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn hkp_entity_listener_vfunc_2(&self, param_1: i64) -> u64 { unsafe { function!(62461, (*const Self, i64) -> u64)(core::ptr::from_ref(self), param_1) } }
+    pub unsafe fn hkp_entity_listener_vfunc_2(&self, param_1: i64) -> u64 { unsafe { function!(62461, (*const Self, i64) -> u64)(core::ptr::from_ref(self).byte_add(0x10), param_1) } }
     /// `hkpCharacterRigidBody::hkpWorldPostSimulationListener_vfunc_1` (decompiler signature, tier low; ledger rtti evidence, name medium; id 62462, rva 0xb99910).
     /// `undefined hkpWorldPostSimulationListener_vfunc_1(hkpCharacterRigidBody * this, undefined8 param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn hkp_world_post_simulation_listener_vfunc_1(&self, param_1: u64) -> u64 { unsafe { function!(62462, (*const Self, u64) -> u64)(core::ptr::from_ref(self), param_1) } }
+    pub unsafe fn hkp_world_post_simulation_listener_vfunc_1(&self, param_1: u64) -> u64 { unsafe { function!(62462, (*const Self, u64) -> u64)(core::ptr::from_ref(self).byte_add(0x18), param_1) } }
     /// `hkpCharacterRigidBody::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 62465, rva 0xb99940).
     /// `hkpCharacterRigidBody * vdtor(hkpCharacterRigidBody * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     ///
@@ -8525,14 +8525,14 @@ impl crate::hkpCollisionCallbackUtil {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn hkp_constraint_listener_vfunc_1(&self, param_1: i64) -> u64 { unsafe { function!(62242, (*const Self, i64) -> u64)(core::ptr::from_ref(self), param_1) } }
+    pub unsafe fn hkp_constraint_listener_vfunc_1(&self, param_1: i64) -> u64 { unsafe { function!(62242, (*const Self, i64) -> u64)(core::ptr::from_ref(self).byte_add(0x20), param_1) } }
     /// `hkpCollisionCallbackUtil::hkpConstraintListener_vfunc_2` (decompiler signature, tier low; ledger rtti evidence, name high; id 62243, rva 0xb82060).
     /// `undefined hkpConstraintListener_vfunc_2(hkpCollisionCallbackUtil * this, longlong param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn hkp_constraint_listener_vfunc_2(&self, param_1: i64) -> u64 { unsafe { function!(62243, (*const Self, i64) -> u64)(core::ptr::from_ref(self), param_1) } }
+    pub unsafe fn hkp_constraint_listener_vfunc_2(&self, param_1: i64) -> u64 { unsafe { function!(62243, (*const Self, i64) -> u64)(core::ptr::from_ref(self).byte_add(0x20), param_1) } }
     /// `hkpCollisionCallbackUtil::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 61449, rva 0xb5c900).
     /// `hkpCollisionCallbackUtil * vdtor(hkpCollisionCallbackUtil * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///
@@ -8590,35 +8590,35 @@ impl crate::hkpCollisionFilterList {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn hkp_collidable_collidable_filter_vfunc_1(&self, param_1: *mut u8, param_2: u64, param_3: u64) -> *mut u8 { unsafe { function!(60636, (*const Self, *mut u8, u64, u64) -> *mut u8)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn hkp_collidable_collidable_filter_vfunc_1(&self, param_1: *mut u8, param_2: u64, param_3: u64) -> *mut u8 { unsafe { function!(60636, (*const Self, *mut u8, u64, u64) -> *mut u8)(core::ptr::from_ref(self).byte_add(0x10), param_1, param_2, param_3) } }
     /// `hkpCollisionFilterList::hkpRayCollidableFilter_vfunc_1` (decompiler signature, tier low; ledger rtti evidence, name high; id 60640, rva 0xb3ff20).
     /// `undefined1 * hkpRayCollidableFilter_vfunc_1(hkpCollisionFilterList * this, undefined1 * param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn hkp_ray_collidable_filter_vfunc_1(&self, param_1: *mut u8, param_2: u64, param_3: u64) -> *mut u8 { unsafe { function!(60640, (*const Self, *mut u8, u64, u64) -> *mut u8)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn hkp_ray_collidable_filter_vfunc_1(&self, param_1: *mut u8, param_2: u64, param_3: u64) -> *mut u8 { unsafe { function!(60640, (*const Self, *mut u8, u64, u64) -> *mut u8)(core::ptr::from_ref(self).byte_add(0x28), param_1, param_2, param_3) } }
     /// `hkpCollisionFilterList::hkpRayShapeCollectionFilter_vfunc_0` (decompiler signature, tier low; ledger rtti evidence, name high; id 60639, rva 0xb3fe80).
     /// `undefined1 * hkpRayShapeCollectionFilter_vfunc_0(hkpCollisionFilterList * this, undefined1 * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4, undefined4 param_5)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn hkp_ray_shape_collection_filter_vfunc_0(&self, param_1: *mut u8, param_2: u64, param_3: u64, param_4: u64, param_5: u32) -> *mut u8 { unsafe { function!(60639, (*const Self, *mut u8, u64, u64, u64, u32) -> *mut u8)(core::ptr::from_ref(self), param_1, param_2, param_3, param_4, param_5) } }
+    pub unsafe fn hkp_ray_shape_collection_filter_vfunc_0(&self, param_1: *mut u8, param_2: u64, param_3: u64, param_4: u64, param_5: u32) -> *mut u8 { unsafe { function!(60639, (*const Self, *mut u8, u64, u64, u64, u32) -> *mut u8)(core::ptr::from_ref(self).byte_add(0x20), param_1, param_2, param_3, param_4, param_5) } }
     /// `hkpCollisionFilterList::hkpShapeCollectionFilter_vfunc_0` (decompiler signature, tier low; ledger rtti evidence, name high; id 60638, rva 0xb3fda0).
     /// `undefined1 * hkpShapeCollectionFilter_vfunc_0(hkpCollisionFilterList * this, undefined1 * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4, undefined8 param_5, undefined8 param_6, undefined4 param_7, undefined4 param_8)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn hkp_shape_collection_filter_vfunc_0(&self, param_1: *mut u8, param_2: u64, param_3: u64, param_4: u64, param_5: u64, param_6: u64, param_7: u32, param_8: u32) -> *mut u8 { unsafe { function!(60638, (*const Self, *mut u8, u64, u64, u64, u64, u64, u32, u32) -> *mut u8)(core::ptr::from_ref(self), param_1, param_2, param_3, param_4, param_5, param_6, param_7, param_8) } }
+    pub unsafe fn hkp_shape_collection_filter_vfunc_0(&self, param_1: *mut u8, param_2: u64, param_3: u64, param_4: u64, param_5: u64, param_6: u64, param_7: u32, param_8: u32) -> *mut u8 { unsafe { function!(60638, (*const Self, *mut u8, u64, u64, u64, u64, u64, u32, u32) -> *mut u8)(core::ptr::from_ref(self).byte_add(0x18), param_1, param_2, param_3, param_4, param_5, param_6, param_7, param_8) } }
     /// `hkpCollisionFilterList::hkpShapeCollectionFilter_vfunc_1` (decompiler signature, tier low; ledger rtti evidence, name high; id 60637, rva 0xb3fce0).
     /// `undefined1 * hkpShapeCollectionFilter_vfunc_1(hkpCollisionFilterList * this, undefined1 * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4, undefined8 param_5, undefined4 param_6)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn hkp_shape_collection_filter_vfunc_1(&self, param_1: *mut u8, param_2: u64, param_3: u64, param_4: u64, param_5: u64, param_6: u32) -> *mut u8 { unsafe { function!(60637, (*const Self, *mut u8, u64, u64, u64, u64, u32) -> *mut u8)(core::ptr::from_ref(self), param_1, param_2, param_3, param_4, param_5, param_6) } }
+    pub unsafe fn hkp_shape_collection_filter_vfunc_1(&self, param_1: *mut u8, param_2: u64, param_3: u64, param_4: u64, param_5: u64, param_6: u32) -> *mut u8 { unsafe { function!(60637, (*const Self, *mut u8, u64, u64, u64, u64, u32) -> *mut u8)(core::ptr::from_ref(self).byte_add(0x18), param_1, param_2, param_3, param_4, param_5, param_6) } }
     /// `hkpCollisionFilterList::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 60527, rva 0xb3dcb0).
     /// `hkpCollisionFilterList * vdtor(hkpCollisionFilterList * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///
@@ -8649,21 +8649,21 @@ impl crate::hkpCompressedMeshShape {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn hkp_shape_container_vfunc_3(&self, param_1: u32) -> u32 { unsafe { function!(80698, (*const Self, u32) -> u32)(core::ptr::from_ref(self), param_1) } }
+    pub unsafe fn hkp_shape_container_vfunc_3(&self, param_1: u32) -> u32 { unsafe { function!(80698, (*const Self, u32) -> u32)(core::ptr::from_ref(self).byte_add(0x20), param_1) } }
     /// `hkpCompressedMeshShape::hkpShapeContainer_vfunc_4` (decompiler signature, tier low; ledger rtti evidence, name medium; id 80700, rva 0x10e5f50).
     /// `undefined4 hkpShapeContainer_vfunc_4(hkpCompressedMeshShape * this, uint param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn hkp_shape_container_vfunc_4(&self, param_1: u32) -> u32 { unsafe { function!(80700, (*const Self, u32) -> u32)(core::ptr::from_ref(self), param_1) } }
+    pub unsafe fn hkp_shape_container_vfunc_4(&self, param_1: u32) -> u32 { unsafe { function!(80700, (*const Self, u32) -> u32)(core::ptr::from_ref(self).byte_add(0x20), param_1) } }
     /// `hkpCompressedMeshShape::hkpShapeContainer_vfunc_5` (decompiler signature, tier low; ledger rtti evidence, name medium; id 80699, rva 0x10e5950).
     /// `hkpConvexVerticesShape * hkpShapeContainer_vfunc_5(hkpCompressedMeshShape * this, uint param_1, hkpConvexVerticesShape * param_2)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn hkp_shape_container_vfunc_5(&self, param_1: u32, param_2: *mut crate::hkpConvexVerticesShape) -> *mut crate::hkpConvexVerticesShape { unsafe { function!(80699, (*const Self, u32, *mut crate::hkpConvexVerticesShape) -> *mut crate::hkpConvexVerticesShape)(core::ptr::from_ref(self), param_1, param_2) } }
+    pub unsafe fn hkp_shape_container_vfunc_5(&self, param_1: u32, param_2: *mut crate::hkpConvexVerticesShape) -> *mut crate::hkpConvexVerticesShape { unsafe { function!(80699, (*const Self, u32, *mut crate::hkpConvexVerticesShape) -> *mut crate::hkpConvexVerticesShape)(core::ptr::from_ref(self).byte_add(0x20), param_1, param_2) } }
     /// `hkpCompressedMeshShape::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 80724, rva 0x10e6eb0).
     /// `hkpCompressedMeshShape * vdtor(hkpCompressedMeshShape * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///
@@ -8711,21 +8711,21 @@ impl crate::hkpConstrainedSystemFilter {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn hkp_collidable_collidable_filter_vfunc_1(&self, param_1: *mut u8, param_2: i64, param_3: i64) -> *mut u8 { unsafe { function!(62734, (*const Self, *mut u8, i64, i64) -> *mut u8)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn hkp_collidable_collidable_filter_vfunc_1(&self, param_1: *mut u8, param_2: i64, param_3: i64) -> *mut u8 { unsafe { function!(62734, (*const Self, *mut u8, i64, i64) -> *mut u8)(core::ptr::from_ref(self).byte_add(0x10), param_1, param_2, param_3) } }
     /// `hkpConstrainedSystemFilter::hkpConstraintListener_vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 62567, rva 0xb9bc84).
     /// `undefined hkpConstraintListener_vdtor(hkpConstrainedSystemFilter * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn hkp_constraint_listener_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(62567, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn hkp_constraint_listener_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(62567, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self).byte_add(0x48), param_1, param_2, param_3) } }
     /// `hkpConstrainedSystemFilter::hkpConstraintListener_vfunc_1` (decompiler signature, tier low; ledger rtti evidence, name high; id 62739, rva 0xba5a40).
     /// `undefined hkpConstraintListener_vfunc_1(hkpConstrainedSystemFilter * this, longlong param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn hkp_constraint_listener_vfunc_1(&self, param_1: i64) -> u64 { unsafe { function!(62739, (*const Self, i64) -> u64)(core::ptr::from_ref(self), param_1) } }
+    pub unsafe fn hkp_constraint_listener_vfunc_1(&self, param_1: i64) -> u64 { unsafe { function!(62739, (*const Self, i64) -> u64)(core::ptr::from_ref(self).byte_add(0x48), param_1) } }
     /// `hkpConstrainedSystemFilter::hkpConstraintListener_vfunc_2` (decompiler signature, tier low; ledger rtti evidence, name high; id 62740, rva 0xba5a90).
     /// `undefined hkpConstraintListener_vfunc_2(void)`
     ///
@@ -8739,42 +8739,42 @@ impl crate::hkpConstrainedSystemFilter {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn hkp_ray_collidable_filter_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(62566, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn hkp_ray_collidable_filter_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(62566, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self).byte_add(0x28), param_1, param_2, param_3) } }
     /// `hkpConstrainedSystemFilter::hkpRayCollidableFilter_vfunc_1` (decompiler signature, tier low; ledger rtti evidence, name high; id 62738, rva 0xba59f0).
     /// `undefined1 * hkpRayCollidableFilter_vfunc_1(hkpConstrainedSystemFilter * this, undefined1 * param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn hkp_ray_collidable_filter_vfunc_1(&self, param_1: *mut u8) -> *mut u8 { unsafe { function!(62738, (*const Self, *mut u8) -> *mut u8)(core::ptr::from_ref(self), param_1) } }
+    pub unsafe fn hkp_ray_collidable_filter_vfunc_1(&self, param_1: *mut u8) -> *mut u8 { unsafe { function!(62738, (*const Self, *mut u8) -> *mut u8)(core::ptr::from_ref(self).byte_add(0x28), param_1) } }
     /// `hkpConstrainedSystemFilter::hkpRayShapeCollectionFilter_vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 62565, rva 0xb9bc6c).
     /// `undefined hkpRayShapeCollectionFilter_vdtor(hkpConstrainedSystemFilter * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn hkp_ray_shape_collection_filter_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(62565, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn hkp_ray_shape_collection_filter_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(62565, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self).byte_add(0x20), param_1, param_2, param_3) } }
     /// `hkpConstrainedSystemFilter::hkpRayShapeCollectionFilter_vfunc_0` (decompiler signature, tier low; ledger rtti evidence, name high; id 62737, rva 0xba5990).
     /// `undefined1 * hkpRayShapeCollectionFilter_vfunc_0(hkpConstrainedSystemFilter * this, undefined1 * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4, undefined4 param_5)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn hkp_ray_shape_collection_filter_vfunc_0(&self, param_1: *mut u8, param_2: u64, param_3: u64, param_4: u64, param_5: u32) -> *mut u8 { unsafe { function!(62737, (*const Self, *mut u8, u64, u64, u64, u32) -> *mut u8)(core::ptr::from_ref(self), param_1, param_2, param_3, param_4, param_5) } }
+    pub unsafe fn hkp_ray_shape_collection_filter_vfunc_0(&self, param_1: *mut u8, param_2: u64, param_3: u64, param_4: u64, param_5: u32) -> *mut u8 { unsafe { function!(62737, (*const Self, *mut u8, u64, u64, u64, u32) -> *mut u8)(core::ptr::from_ref(self).byte_add(0x20), param_1, param_2, param_3, param_4, param_5) } }
     /// `hkpConstrainedSystemFilter::hkpShapeCollectionFilter_vfunc_0` (decompiler signature, tier low; ledger rtti evidence, name high; id 62736, rva 0xba5900).
     /// `undefined1 * hkpShapeCollectionFilter_vfunc_0(hkpConstrainedSystemFilter * this, undefined1 * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4, undefined8 param_5, undefined8 param_6, undefined4 param_7, undefined4 param_8)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn hkp_shape_collection_filter_vfunc_0(&self, param_1: *mut u8, param_2: u64, param_3: u64, param_4: u64, param_5: u64, param_6: u64, param_7: u32, param_8: u32) -> *mut u8 { unsafe { function!(62736, (*const Self, *mut u8, u64, u64, u64, u64, u64, u32, u32) -> *mut u8)(core::ptr::from_ref(self), param_1, param_2, param_3, param_4, param_5, param_6, param_7, param_8) } }
+    pub unsafe fn hkp_shape_collection_filter_vfunc_0(&self, param_1: *mut u8, param_2: u64, param_3: u64, param_4: u64, param_5: u64, param_6: u64, param_7: u32, param_8: u32) -> *mut u8 { unsafe { function!(62736, (*const Self, *mut u8, u64, u64, u64, u64, u64, u32, u32) -> *mut u8)(core::ptr::from_ref(self).byte_add(0x18), param_1, param_2, param_3, param_4, param_5, param_6, param_7, param_8) } }
     /// `hkpConstrainedSystemFilter::hkpShapeCollectionFilter_vfunc_1` (decompiler signature, tier low; ledger rtti evidence, name high; id 62735, rva 0xba5890).
     /// `undefined1 * hkpShapeCollectionFilter_vfunc_1(hkpConstrainedSystemFilter * this, undefined1 * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4, undefined8 param_5, undefined4 param_6)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn hkp_shape_collection_filter_vfunc_1(&self, param_1: *mut u8, param_2: u64, param_3: u64, param_4: u64, param_5: u64, param_6: u32) -> *mut u8 { unsafe { function!(62735, (*const Self, *mut u8, u64, u64, u64, u64, u32) -> *mut u8)(core::ptr::from_ref(self), param_1, param_2, param_3, param_4, param_5, param_6) } }
+    pub unsafe fn hkp_shape_collection_filter_vfunc_1(&self, param_1: *mut u8, param_2: u64, param_3: u64, param_4: u64, param_5: u64, param_6: u32) -> *mut u8 { unsafe { function!(62735, (*const Self, *mut u8, u64, u64, u64, u64, u32) -> *mut u8)(core::ptr::from_ref(self).byte_add(0x18), param_1, param_2, param_3, param_4, param_5, param_6) } }
     /// `hkpConstrainedSystemFilter::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 62582, rva 0xb9bfc0).
     /// `hkpConstrainedSystemFilter * vdtor(hkpConstrainedSystemFilter * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///
@@ -8835,28 +8835,28 @@ impl crate::hkpConstraintCollisionFilter {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn hkp_constraint_listener_vfunc_1(&self, param_1: i64) -> u64 { unsafe { function!(61888, (*const Self, i64) -> u64)(core::ptr::from_ref(self), param_1) } }
+    pub unsafe fn hkp_constraint_listener_vfunc_1(&self, param_1: i64) -> u64 { unsafe { function!(61888, (*const Self, i64) -> u64)(core::ptr::from_ref(self).byte_add(0x60), param_1) } }
     /// `hkpConstraintCollisionFilter::hkpConstraintListener_vfunc_2` (decompiler signature, tier low; ledger rtti evidence, name high; id 61889, rva 0xb71b30).
     /// `undefined hkpConstraintListener_vfunc_2(hkpConstraintCollisionFilter * this, longlong param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn hkp_constraint_listener_vfunc_2(&self, param_1: i64) -> u64 { unsafe { function!(61889, (*const Self, i64) -> u64)(core::ptr::from_ref(self), param_1) } }
+    pub unsafe fn hkp_constraint_listener_vfunc_2(&self, param_1: i64) -> u64 { unsafe { function!(61889, (*const Self, i64) -> u64)(core::ptr::from_ref(self).byte_add(0x60), param_1) } }
     /// `hkpConstraintCollisionFilter::hkpConstraintListener_vfunc_5` (decompiler signature, tier low; ledger rtti evidence, name high; id 61890, rva 0xb71c40).
     /// `undefined hkpConstraintListener_vfunc_5(hkpConstraintCollisionFilter * this, longlong * param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn hkp_constraint_listener_vfunc_5(&self, param_1: *mut i64) -> u64 { unsafe { function!(61890, (*const Self, *mut i64) -> u64)(core::ptr::from_ref(self), param_1) } }
+    pub unsafe fn hkp_constraint_listener_vfunc_5(&self, param_1: *mut i64) -> u64 { unsafe { function!(61890, (*const Self, *mut i64) -> u64)(core::ptr::from_ref(self).byte_add(0x60), param_1) } }
     /// `hkpConstraintCollisionFilter::hkpConstraintListener_vfunc_6` (decompiler signature, tier low; ledger rtti evidence, name high; id 61891, rva 0xb71ca0).
     /// `undefined hkpConstraintListener_vfunc_6(hkpConstraintCollisionFilter * this, longlong * param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn hkp_constraint_listener_vfunc_6(&self, param_1: *mut i64) -> u64 { unsafe { function!(61891, (*const Self, *mut i64) -> u64)(core::ptr::from_ref(self), param_1) } }
+    pub unsafe fn hkp_constraint_listener_vfunc_6(&self, param_1: *mut i64) -> u64 { unsafe { function!(61891, (*const Self, *mut i64) -> u64)(core::ptr::from_ref(self).byte_add(0x60), param_1) } }
     /// `hkpConstraintCollisionFilter::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 61208, rva 0xb51cd0).
     /// `hkpConstraintCollisionFilter * vdtor(hkpConstraintCollisionFilter * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///
@@ -9042,7 +9042,7 @@ impl crate::hkpConvexListShape {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn hkp_shape_container_vfunc_3(&self, param_1: i32) -> i32 { unsafe { function!(60758, (*const Self, i32) -> i32)(core::ptr::from_ref(self), param_1) } }
+    pub unsafe fn hkp_shape_container_vfunc_3(&self, param_1: i32) -> i32 { unsafe { function!(60758, (*const Self, i32) -> i32)(core::ptr::from_ref(self).byte_add(0x28), param_1) } }
     /// `hkpConvexListShape::hkpShapeContainer_vfunc_4` (decompiler signature, tier low; ledger rtti evidence, name high; id 60759, rva 0xb455c0).
     /// `undefined8 hkpShapeContainer_vfunc_4(void)`
     ///
@@ -9056,7 +9056,7 @@ impl crate::hkpConvexListShape {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn hkp_shape_container_vfunc_5(&self, param_1: i32) -> u64 { unsafe { function!(60760, (*const Self, i32) -> u64)(core::ptr::from_ref(self), param_1) } }
+    pub unsafe fn hkp_shape_container_vfunc_5(&self, param_1: i32) -> u64 { unsafe { function!(60760, (*const Self, i32) -> u64)(core::ptr::from_ref(self).byte_add(0x28), param_1) } }
     /// `hkpConvexListShape::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 60529, rva 0xb3dd30).
     /// `hkpConvexListShape * vdtor(hkpConvexListShape * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///
@@ -9269,21 +9269,21 @@ impl crate::hkpDisableEntityCollisionFilter {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn hkp_collidable_collidable_filter_vfunc_1(&self, param_1: *mut u8, param_2: i64, param_3: i64) -> *mut u8 { unsafe { function!(62747, (*const Self, *mut u8, i64, i64) -> *mut u8)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn hkp_collidable_collidable_filter_vfunc_1(&self, param_1: *mut u8, param_2: i64, param_3: i64) -> *mut u8 { unsafe { function!(62747, (*const Self, *mut u8, i64, i64) -> *mut u8)(core::ptr::from_ref(self).byte_add(0x10), param_1, param_2, param_3) } }
     /// `hkpDisableEntityCollisionFilter::hkpEntityListener_vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 62572, rva 0xb9bcc0).
     /// `undefined hkpEntityListener_vdtor(hkpDisableEntityCollisionFilter * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn hkp_entity_listener_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(62572, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn hkp_entity_listener_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(62572, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self).byte_add(0x48), param_1, param_2, param_3) } }
     /// `hkpDisableEntityCollisionFilter::hkpEntityListener_vfunc_2` (decompiler signature, tier low; ledger rtti evidence, name high; id 62745, rva 0xba5eb0).
     /// `undefined hkpEntityListener_vfunc_2(hkpDisableEntityCollisionFilter * this, longlong param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn hkp_entity_listener_vfunc_2(&self, param_1: i64) -> u64 { unsafe { function!(62745, (*const Self, i64) -> u64)(core::ptr::from_ref(self), param_1) } }
+    pub unsafe fn hkp_entity_listener_vfunc_2(&self, param_1: i64) -> u64 { unsafe { function!(62745, (*const Self, i64) -> u64)(core::ptr::from_ref(self).byte_add(0x48), param_1) } }
     /// `hkpDisableEntityCollisionFilter::hkpEntityListener_vfunc_5` (decompiler signature, tier low; ledger rtti evidence, name high; id 62746, rva 0xba5f10).
     /// `undefined hkpEntityListener_vfunc_5(void)`
     ///
@@ -9297,42 +9297,42 @@ impl crate::hkpDisableEntityCollisionFilter {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn hkp_ray_collidable_filter_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(62571, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn hkp_ray_collidable_filter_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(62571, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self).byte_add(0x28), param_1, param_2, param_3) } }
     /// `hkpDisableEntityCollisionFilter::hkpRayCollidableFilter_vfunc_1` (decompiler signature, tier low; ledger rtti evidence, name high; id 62751, rva 0xba5fa0).
     /// `undefined1 * hkpRayCollidableFilter_vfunc_1(hkpDisableEntityCollisionFilter * this, undefined1 * param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn hkp_ray_collidable_filter_vfunc_1(&self, param_1: *mut u8) -> *mut u8 { unsafe { function!(62751, (*const Self, *mut u8) -> *mut u8)(core::ptr::from_ref(self), param_1) } }
+    pub unsafe fn hkp_ray_collidable_filter_vfunc_1(&self, param_1: *mut u8) -> *mut u8 { unsafe { function!(62751, (*const Self, *mut u8) -> *mut u8)(core::ptr::from_ref(self).byte_add(0x28), param_1) } }
     /// `hkpDisableEntityCollisionFilter::hkpRayShapeCollectionFilter_vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 62570, rva 0xb9bca8).
     /// `undefined hkpRayShapeCollectionFilter_vdtor(hkpDisableEntityCollisionFilter * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn hkp_ray_shape_collection_filter_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(62570, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn hkp_ray_shape_collection_filter_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(62570, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self).byte_add(0x20), param_1, param_2, param_3) } }
     /// `hkpDisableEntityCollisionFilter::hkpRayShapeCollectionFilter_vfunc_0` (decompiler signature, tier low; ledger rtti evidence, name high; id 62750, rva 0xba5f90).
     /// `undefined1 * hkpRayShapeCollectionFilter_vfunc_0(hkpDisableEntityCollisionFilter * this, undefined1 * param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn hkp_ray_shape_collection_filter_vfunc_0(&self, param_1: *mut u8) -> *mut u8 { unsafe { function!(62750, (*const Self, *mut u8) -> *mut u8)(core::ptr::from_ref(self), param_1) } }
+    pub unsafe fn hkp_ray_shape_collection_filter_vfunc_0(&self, param_1: *mut u8) -> *mut u8 { unsafe { function!(62750, (*const Self, *mut u8) -> *mut u8)(core::ptr::from_ref(self).byte_add(0x20), param_1) } }
     /// `hkpDisableEntityCollisionFilter::hkpShapeCollectionFilter_vfunc_0` (decompiler signature, tier low; ledger rtti evidence, name high; id 62749, rva 0xba5f80).
     /// `undefined1 * hkpShapeCollectionFilter_vfunc_0(hkpDisableEntityCollisionFilter * this, undefined1 * param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn hkp_shape_collection_filter_vfunc_0(&self, param_1: *mut u8) -> *mut u8 { unsafe { function!(62749, (*const Self, *mut u8) -> *mut u8)(core::ptr::from_ref(self), param_1) } }
+    pub unsafe fn hkp_shape_collection_filter_vfunc_0(&self, param_1: *mut u8) -> *mut u8 { unsafe { function!(62749, (*const Self, *mut u8) -> *mut u8)(core::ptr::from_ref(self).byte_add(0x18), param_1) } }
     /// `hkpDisableEntityCollisionFilter::hkpShapeCollectionFilter_vfunc_1` (decompiler signature, tier low; ledger rtti evidence, name high; id 62748, rva 0xba5f70).
     /// `undefined1 * hkpShapeCollectionFilter_vfunc_1(hkpDisableEntityCollisionFilter * this, undefined1 * param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn hkp_shape_collection_filter_vfunc_1(&self, param_1: *mut u8) -> *mut u8 { unsafe { function!(62748, (*const Self, *mut u8) -> *mut u8)(core::ptr::from_ref(self), param_1) } }
+    pub unsafe fn hkp_shape_collection_filter_vfunc_1(&self, param_1: *mut u8) -> *mut u8 { unsafe { function!(62748, (*const Self, *mut u8) -> *mut u8)(core::ptr::from_ref(self).byte_add(0x18), param_1) } }
     /// `hkpDisableEntityCollisionFilter::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 62584, rva 0xb9c0c0).
     /// `hkpDisableEntityCollisionFilter * vdtor(hkpDisableEntityCollisionFilter * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///
@@ -9433,7 +9433,7 @@ impl crate::hkpEndOfStepCallbackUtil {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn hkp_world_post_simulation_listener_vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> u64 { unsafe { function!(62235, (*const Self, u32, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn hkp_world_post_simulation_listener_vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> u64 { unsafe { function!(62235, (*const Self, u32, u64, u64) -> u64)(core::ptr::from_ref(self).byte_add(0x10), param_1, param_2, param_3) } }
     /// `hkpEndOfStepCallbackUtil::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 62236, rva 0xb81be0).
     /// `hkpEndOfStepCallbackUtil * vdtor(hkpEndOfStepCallbackUtil * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     ///
@@ -9491,14 +9491,14 @@ impl crate::hkpEntityEntityBroadPhaseListener {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn hkp_broad_phase_listener_vfunc_1(&self, param_1: *mut i64) -> u64 { unsafe { function!(62093, (*const Self, *mut i64) -> u64)(core::ptr::from_ref(self), param_1) } }
+    pub unsafe fn hkp_broad_phase_listener_vfunc_1(&self, param_1: *mut i64) -> u64 { unsafe { function!(62093, (*const Self, *mut i64) -> u64)(core::ptr::from_ref(self).byte_add(0x10), param_1) } }
     /// `hkpEntityEntityBroadPhaseListener::hkpBroadPhaseListener_vfunc_2` (decompiler signature, tier low; ledger rtti evidence, name high; id 62094, rva 0xb7b4f0).
     /// `undefined hkpBroadPhaseListener_vfunc_2(hkpEntityEntityBroadPhaseListener * this, longlong * param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn hkp_broad_phase_listener_vfunc_2(&self, param_1: *mut i64) -> u64 { unsafe { function!(62094, (*const Self, *mut i64) -> u64)(core::ptr::from_ref(self), param_1) } }
+    pub unsafe fn hkp_broad_phase_listener_vfunc_2(&self, param_1: *mut i64) -> u64 { unsafe { function!(62094, (*const Self, *mut i64) -> u64)(core::ptr::from_ref(self).byte_add(0x10), param_1) } }
     /// `hkpEntityEntityBroadPhaseListener::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 62096, rva 0xb7b540).
     /// `hkpEntityEntityBroadPhaseListener * vdtor(hkpEntityEntityBroadPhaseListener * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///
@@ -9553,14 +9553,14 @@ impl crate::hkpExtendedMeshShape {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn hkp_shape_container_vfunc_3(&self, param_1: u32) -> u32 { unsafe { function!(65722, (*const Self, u32) -> u32)(core::ptr::from_ref(self), param_1) } }
+    pub unsafe fn hkp_shape_container_vfunc_3(&self, param_1: u32) -> u32 { unsafe { function!(65722, (*const Self, u32) -> u32)(core::ptr::from_ref(self).byte_add(0x20), param_1) } }
     /// `hkpExtendedMeshShape::hkpShapeContainer_vfunc_5` (decompiler signature, tier low; ledger rtti evidence, name medium; id 65726, rva 0xc57b60).
     /// `hkpConvexTransformShapeBase * hkpShapeContainer_vfunc_5(hkpExtendedMeshShape * this, uint param_1, hkpConvexTransformShapeBase * param_2)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn hkp_shape_container_vfunc_5(&self, param_1: u32, param_2: *mut crate::hkpConvexTransformShapeBase) -> *mut crate::hkpConvexTransformShapeBase { unsafe { function!(65726, (*const Self, u32, *mut crate::hkpConvexTransformShapeBase) -> *mut crate::hkpConvexTransformShapeBase)(core::ptr::from_ref(self), param_1, param_2) } }
+    pub unsafe fn hkp_shape_container_vfunc_5(&self, param_1: u32, param_2: *mut crate::hkpConvexTransformShapeBase) -> *mut crate::hkpConvexTransformShapeBase { unsafe { function!(65726, (*const Self, u32, *mut crate::hkpConvexTransformShapeBase) -> *mut crate::hkpConvexTransformShapeBase)(core::ptr::from_ref(self).byte_add(0x20), param_1, param_2) } }
     /// `hkpExtendedMeshShape::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 65740, rva 0xc58aa0).
     /// `hkpExtendedMeshShape * vdtor(hkpExtendedMeshShape * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     ///
@@ -9591,7 +9591,7 @@ impl crate::hkpFastMeshShape {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn hkp_shape_container_vfunc_5(&self, param_1: u32, param_2: *mut u64) -> *mut u64 { unsafe { function!(66648, (*const Self, u32, *mut u64) -> *mut u64)(core::ptr::from_ref(self), param_1, param_2) } }
+    pub unsafe fn hkp_shape_container_vfunc_5(&self, param_1: u32, param_2: *mut u64) -> *mut u64 { unsafe { function!(66648, (*const Self, u32, *mut u64) -> *mut u64)(core::ptr::from_ref(self).byte_add(0x20), param_1, param_2) } }
     /// `hkpFastMeshShape::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 64884, rva 0xc2cc30).
     /// `hkpFastMeshShape * vdtor(hkpFastMeshShape * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     ///
@@ -9699,35 +9699,35 @@ impl crate::hkpGroupCollisionFilter {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn hkp_collidable_collidable_filter_vfunc_1(&self, param_1: u64, param_2: i64, param_3: i64) -> u64 { unsafe { function!(62763, (*const Self, u64, i64, i64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn hkp_collidable_collidable_filter_vfunc_1(&self, param_1: u64, param_2: i64, param_3: i64) -> u64 { unsafe { function!(62763, (*const Self, u64, i64, i64) -> u64)(core::ptr::from_ref(self).byte_add(0x10), param_1, param_2, param_3) } }
     /// `hkpGroupCollisionFilter::hkpRayCollidableFilter_vfunc_1` (decompiler signature, tier low; ledger rtti evidence, name high; id 62767, rva 0xba64e0).
     /// `undefined8 hkpRayCollidableFilter_vfunc_1(hkpGroupCollisionFilter * this, undefined8 param_1, longlong param_2, longlong param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn hkp_ray_collidable_filter_vfunc_1(&self, param_1: u64, param_2: i64, param_3: i64) -> u64 { unsafe { function!(62767, (*const Self, u64, i64, i64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn hkp_ray_collidable_filter_vfunc_1(&self, param_1: u64, param_2: i64, param_3: i64) -> u64 { unsafe { function!(62767, (*const Self, u64, i64, i64) -> u64)(core::ptr::from_ref(self).byte_add(0x28), param_1, param_2, param_3) } }
     /// `hkpGroupCollisionFilter::hkpRayShapeCollectionFilter_vfunc_0` (decompiler signature, tier low; ledger rtti evidence, name high; id 62766, rva 0xba6480).
     /// `undefined8 hkpRayShapeCollectionFilter_vfunc_0(hkpGroupCollisionFilter * this, undefined8 param_1, longlong param_2, undefined8 param_3, longlong * param_4, undefined4 param_5)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn hkp_ray_shape_collection_filter_vfunc_0(&self, param_1: u64, param_2: i64, param_3: u64, param_4: *mut i64, param_5: u32) -> u64 { unsafe { function!(62766, (*const Self, u64, i64, u64, *mut i64, u32) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3, param_4, param_5) } }
+    pub unsafe fn hkp_ray_shape_collection_filter_vfunc_0(&self, param_1: u64, param_2: i64, param_3: u64, param_4: *mut i64, param_5: u32) -> u64 { unsafe { function!(62766, (*const Self, u64, i64, u64, *mut i64, u32) -> u64)(core::ptr::from_ref(self).byte_add(0x20), param_1, param_2, param_3, param_4, param_5) } }
     /// `hkpGroupCollisionFilter::hkpShapeCollectionFilter_vfunc_0` (decompiler signature, tier low; ledger rtti evidence, name high; id 62765, rva 0xba6410).
     /// `undefined8 hkpShapeCollectionFilter_vfunc_0(hkpGroupCollisionFilter * this, undefined8 param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn hkp_shape_collection_filter_vfunc_0(&self, param_1: u64) -> u64 { unsafe { function!(62765, (*const Self, u64) -> u64)(core::ptr::from_ref(self), param_1) } }
+    pub unsafe fn hkp_shape_collection_filter_vfunc_0(&self, param_1: u64) -> u64 { unsafe { function!(62765, (*const Self, u64) -> u64)(core::ptr::from_ref(self).byte_add(0x18), param_1) } }
     /// `hkpGroupCollisionFilter::hkpShapeCollectionFilter_vfunc_1` (decompiler signature, tier low; ledger rtti evidence, name high; id 62764, rva 0xba63a0).
     /// `undefined8 hkpShapeCollectionFilter_vfunc_1(hkpGroupCollisionFilter * this, undefined8 param_1, undefined8 param_2, longlong param_3, undefined8 param_4, longlong * param_5, undefined4 param_6)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn hkp_shape_collection_filter_vfunc_1(&self, param_1: u64, param_2: u64, param_3: i64, param_4: u64, param_5: *mut i64, param_6: u32) -> u64 { unsafe { function!(62764, (*const Self, u64, u64, i64, u64, *mut i64, u32) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3, param_4, param_5, param_6) } }
+    pub unsafe fn hkp_shape_collection_filter_vfunc_1(&self, param_1: u64, param_2: u64, param_3: i64, param_4: u64, param_5: *mut i64, param_6: u32) -> u64 { unsafe { function!(62764, (*const Self, u64, u64, i64, u64, *mut i64, u32) -> u64)(core::ptr::from_ref(self).byte_add(0x18), param_1, param_2, param_3, param_4, param_5, param_6) } }
     /// `hkpGroupCollisionFilter::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 62586, rva 0xb9c1c0).
     /// `hkpGroupCollisionFilter * vdtor(hkpGroupCollisionFilter * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///
@@ -9744,35 +9744,35 @@ impl crate::hkpGroupFilter {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn hkp_collidable_collidable_filter_vfunc_1(&self, param_1: *mut u8, param_2: i64, param_3: i64) -> *mut u8 { unsafe { function!(60396, (*const Self, *mut u8, i64, i64) -> *mut u8)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn hkp_collidable_collidable_filter_vfunc_1(&self, param_1: *mut u8, param_2: i64, param_3: i64) -> *mut u8 { unsafe { function!(60396, (*const Self, *mut u8, i64, i64) -> *mut u8)(core::ptr::from_ref(self).byte_add(0x10), param_1, param_2, param_3) } }
     /// `hkpGroupFilter::hkpRayCollidableFilter_vfunc_1` (decompiler signature, tier low; ledger rtti evidence, name high; id 60400, rva 0xb3c460).
     /// `undefined1 * hkpRayCollidableFilter_vfunc_1(hkpGroupFilter * this, undefined1 * param_1, longlong param_2, longlong param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn hkp_ray_collidable_filter_vfunc_1(&self, param_1: *mut u8, param_2: i64, param_3: i64) -> *mut u8 { unsafe { function!(60400, (*const Self, *mut u8, i64, i64) -> *mut u8)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn hkp_ray_collidable_filter_vfunc_1(&self, param_1: *mut u8, param_2: i64, param_3: i64) -> *mut u8 { unsafe { function!(60400, (*const Self, *mut u8, i64, i64) -> *mut u8)(core::ptr::from_ref(self).byte_add(0x28), param_1, param_2, param_3) } }
     /// `hkpGroupFilter::hkpRayShapeCollectionFilter_vfunc_0` (decompiler signature, tier low; ledger rtti evidence, name high; id 60399, rva 0xb3c400).
     /// `undefined1 * hkpRayShapeCollectionFilter_vfunc_0(hkpGroupFilter * this, undefined1 * param_1, longlong param_2, undefined8 param_3, longlong * param_4, undefined4 param_5)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn hkp_ray_shape_collection_filter_vfunc_0(&self, param_1: *mut u8, param_2: i64, param_3: u64, param_4: *mut i64, param_5: u32) -> *mut u8 { unsafe { function!(60399, (*const Self, *mut u8, i64, u64, *mut i64, u32) -> *mut u8)(core::ptr::from_ref(self), param_1, param_2, param_3, param_4, param_5) } }
+    pub unsafe fn hkp_ray_shape_collection_filter_vfunc_0(&self, param_1: *mut u8, param_2: i64, param_3: u64, param_4: *mut i64, param_5: u32) -> *mut u8 { unsafe { function!(60399, (*const Self, *mut u8, i64, u64, *mut i64, u32) -> *mut u8)(core::ptr::from_ref(self).byte_add(0x20), param_1, param_2, param_3, param_4, param_5) } }
     /// `hkpGroupFilter::hkpShapeCollectionFilter_vfunc_0` (decompiler signature, tier low; ledger rtti evidence, name high; id 60398, rva 0xb3c350).
     /// `undefined1 * hkpShapeCollectionFilter_vfunc_0(hkpGroupFilter * this, undefined1 * param_1, undefined8 param_2, longlong param_3, longlong param_4, longlong * param_5, longlong * param_6, undefined4 param_7, undefined4 param_8)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn hkp_shape_collection_filter_vfunc_0(&self, param_1: *mut u8, param_2: u64, param_3: i64, param_4: i64, param_5: *mut i64, param_6: *mut i64, param_7: u32, param_8: u32) -> *mut u8 { unsafe { function!(60398, (*const Self, *mut u8, u64, i64, i64, *mut i64, *mut i64, u32, u32) -> *mut u8)(core::ptr::from_ref(self), param_1, param_2, param_3, param_4, param_5, param_6, param_7, param_8) } }
+    pub unsafe fn hkp_shape_collection_filter_vfunc_0(&self, param_1: *mut u8, param_2: u64, param_3: i64, param_4: i64, param_5: *mut i64, param_6: *mut i64, param_7: u32, param_8: u32) -> *mut u8 { unsafe { function!(60398, (*const Self, *mut u8, u64, i64, i64, *mut i64, *mut i64, u32, u32) -> *mut u8)(core::ptr::from_ref(self).byte_add(0x18), param_1, param_2, param_3, param_4, param_5, param_6, param_7, param_8) } }
     /// `hkpGroupFilter::hkpShapeCollectionFilter_vfunc_1` (decompiler signature, tier low; ledger rtti evidence, name high; id 60397, rva 0xb3c230).
     /// `undefined1 * hkpShapeCollectionFilter_vfunc_1(hkpGroupFilter * this, undefined1 * param_1, longlong * param_2, longlong * param_3, longlong param_4, longlong * param_5, undefined4 param_6)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn hkp_shape_collection_filter_vfunc_1(&self, param_1: *mut u8, param_2: *mut i64, param_3: *mut i64, param_4: i64, param_5: *mut i64, param_6: u32) -> *mut u8 { unsafe { function!(60397, (*const Self, *mut u8, *mut i64, *mut i64, i64, *mut i64, u32) -> *mut u8)(core::ptr::from_ref(self), param_1, param_2, param_3, param_4, param_5, param_6) } }
+    pub unsafe fn hkp_shape_collection_filter_vfunc_1(&self, param_1: *mut u8, param_2: *mut i64, param_3: *mut i64, param_4: i64, param_5: *mut i64, param_6: u32) -> *mut u8 { unsafe { function!(60397, (*const Self, *mut u8, *mut i64, *mut i64, i64, *mut i64, u32) -> *mut u8)(core::ptr::from_ref(self).byte_add(0x18), param_1, param_2, param_3, param_4, param_5, param_6) } }
     /// `hkpGroupFilter::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 60407, rva 0xb3c530).
     /// `hkpGroupFilter * vdtor(hkpGroupFilter * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     ///
@@ -9995,21 +9995,21 @@ impl crate::hkpListShape {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn hkp_shape_container_vfunc_3(&self, param_1: u32) -> u32 { unsafe { function!(60662, (*const Self, u32) -> u32)(core::ptr::from_ref(self), param_1) } }
+    pub unsafe fn hkp_shape_container_vfunc_3(&self, param_1: u32) -> u32 { unsafe { function!(60662, (*const Self, u32) -> u32)(core::ptr::from_ref(self).byte_add(0x20), param_1) } }
     /// `hkpListShape::hkpShapeContainer_vfunc_4` (decompiler signature, tier low; ledger rtti evidence, name high; id 60650, rva 0xb40370).
     /// `undefined4 hkpShapeContainer_vfunc_4(hkpListShape * this, int param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn hkp_shape_container_vfunc_4(&self, param_1: i32) -> u32 { unsafe { function!(60650, (*const Self, i32) -> u32)(core::ptr::from_ref(self), param_1) } }
+    pub unsafe fn hkp_shape_container_vfunc_4(&self, param_1: i32) -> u32 { unsafe { function!(60650, (*const Self, i32) -> u32)(core::ptr::from_ref(self).byte_add(0x20), param_1) } }
     /// `hkpListShape::hkpShapeContainer_vfunc_5` (decompiler signature, tier low; ledger rtti evidence, name high; id 60652, rva 0xb403b0).
     /// `undefined8 hkpShapeContainer_vfunc_5(hkpListShape * this, int param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn hkp_shape_container_vfunc_5(&self, param_1: i32) -> u64 { unsafe { function!(60652, (*const Self, i32) -> u64)(core::ptr::from_ref(self), param_1) } }
+    pub unsafe fn hkp_shape_container_vfunc_5(&self, param_1: i32) -> u64 { unsafe { function!(60652, (*const Self, i32) -> u64)(core::ptr::from_ref(self).byte_add(0x20), param_1) } }
     /// `hkpListShape::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 60660, rva 0xb40b30).
     /// `hkpListShape * vdtor(hkpListShape * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     ///
@@ -10084,21 +10084,21 @@ impl crate::hkpMeshShape {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn hkp_shape_container_vfunc_3(&self, param_1: u32) -> u32 { unsafe { function!(65702, (*const Self, u32) -> u32)(core::ptr::from_ref(self), param_1) } }
+    pub unsafe fn hkp_shape_container_vfunc_3(&self, param_1: u32) -> u32 { unsafe { function!(65702, (*const Self, u32) -> u32)(core::ptr::from_ref(self).byte_add(0x20), param_1) } }
     /// `hkpMeshShape::hkpShapeContainer_vfunc_4` (decompiler signature, tier low; ledger rtti evidence, name medium; id 65704, rva 0xc56530).
     /// `undefined4 hkpShapeContainer_vfunc_4(hkpMeshShape * this, uint param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn hkp_shape_container_vfunc_4(&self, param_1: u32) -> u32 { unsafe { function!(65704, (*const Self, u32) -> u32)(core::ptr::from_ref(self), param_1) } }
+    pub unsafe fn hkp_shape_container_vfunc_4(&self, param_1: u32) -> u32 { unsafe { function!(65704, (*const Self, u32) -> u32)(core::ptr::from_ref(self).byte_add(0x20), param_1) } }
     /// `hkpMeshShape::hkpShapeContainer_vfunc_5` (decompiler signature, tier low; ledger rtti evidence, name medium; id 65703, rva 0xc56330).
     /// `undefined8 * hkpShapeContainer_vfunc_5(hkpMeshShape * this, uint param_1, undefined8 * param_2)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn hkp_shape_container_vfunc_5(&self, param_1: u32, param_2: *mut u64) -> *mut u64 { unsafe { function!(65703, (*const Self, u32, *mut u64) -> *mut u64)(core::ptr::from_ref(self), param_1, param_2) } }
+    pub unsafe fn hkp_shape_container_vfunc_5(&self, param_1: u32, param_2: *mut u64) -> *mut u64 { unsafe { function!(65703, (*const Self, u32, *mut u64) -> *mut u64)(core::ptr::from_ref(self).byte_add(0x20), param_1, param_2) } }
     /// `hkpMeshShape::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 65709, rva 0xc56880).
     /// `hkpMeshShape * vdtor(hkpMeshShape * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     ///
@@ -10559,35 +10559,35 @@ impl crate::hkpNullCollisionFilter {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn hkp_collidable_collidable_filter_vfunc_1(&self, param_1: *mut u8) -> *mut u8 { unsafe { function!(60573, (*const Self, *mut u8) -> *mut u8)(core::ptr::from_ref(self), param_1) } }
+    pub unsafe fn hkp_collidable_collidable_filter_vfunc_1(&self, param_1: *mut u8) -> *mut u8 { unsafe { function!(60573, (*const Self, *mut u8) -> *mut u8)(core::ptr::from_ref(self).byte_add(0x10), param_1) } }
     /// `hkpNullCollisionFilter::hkpRayCollidableFilter_vfunc_1` (decompiler signature, tier low; ledger rtti evidence, name high; id 60572, rva 0xb36850).
     /// `undefined1 * hkpRayCollidableFilter_vfunc_1(hkpNullCollisionFilter * this, undefined1 * param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn hkp_ray_collidable_filter_vfunc_1(&self, param_1: *mut u8) -> *mut u8 { unsafe { function!(60572, (*const Self, *mut u8) -> *mut u8)(core::ptr::from_ref(self), param_1) } }
+    pub unsafe fn hkp_ray_collidable_filter_vfunc_1(&self, param_1: *mut u8) -> *mut u8 { unsafe { function!(60572, (*const Self, *mut u8) -> *mut u8)(core::ptr::from_ref(self).byte_add(0x28), param_1) } }
     /// `hkpNullCollisionFilter::hkpRayShapeCollectionFilter_vfunc_0` (decompiler signature, tier low; ledger rtti evidence, name high; id 60571, rva 0xb36840).
     /// `undefined1 * hkpRayShapeCollectionFilter_vfunc_0(hkpNullCollisionFilter * this, undefined1 * param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn hkp_ray_shape_collection_filter_vfunc_0(&self, param_1: *mut u8) -> *mut u8 { unsafe { function!(60571, (*const Self, *mut u8) -> *mut u8)(core::ptr::from_ref(self), param_1) } }
+    pub unsafe fn hkp_ray_shape_collection_filter_vfunc_0(&self, param_1: *mut u8) -> *mut u8 { unsafe { function!(60571, (*const Self, *mut u8) -> *mut u8)(core::ptr::from_ref(self).byte_add(0x20), param_1) } }
     /// `hkpNullCollisionFilter::hkpShapeCollectionFilter_vfunc_0` (decompiler signature, tier low; ledger rtti evidence, name high; id 60569, rva 0xb36820).
     /// `undefined1 * hkpShapeCollectionFilter_vfunc_0(hkpNullCollisionFilter * this, undefined1 * param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn hkp_shape_collection_filter_vfunc_0(&self, param_1: *mut u8) -> *mut u8 { unsafe { function!(60569, (*const Self, *mut u8) -> *mut u8)(core::ptr::from_ref(self), param_1) } }
+    pub unsafe fn hkp_shape_collection_filter_vfunc_0(&self, param_1: *mut u8) -> *mut u8 { unsafe { function!(60569, (*const Self, *mut u8) -> *mut u8)(core::ptr::from_ref(self).byte_add(0x18), param_1) } }
     /// `hkpNullCollisionFilter::hkpShapeCollectionFilter_vfunc_1` (decompiler signature, tier low; ledger rtti evidence, name high; id 60570, rva 0xb36830).
     /// `undefined1 * hkpShapeCollectionFilter_vfunc_1(hkpNullCollisionFilter * this, undefined1 * param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn hkp_shape_collection_filter_vfunc_1(&self, param_1: *mut u8) -> *mut u8 { unsafe { function!(60570, (*const Self, *mut u8) -> *mut u8)(core::ptr::from_ref(self), param_1) } }
+    pub unsafe fn hkp_shape_collection_filter_vfunc_1(&self, param_1: *mut u8) -> *mut u8 { unsafe { function!(60570, (*const Self, *mut u8) -> *mut u8)(core::ptr::from_ref(self).byte_add(0x18), param_1) } }
     /// `hkpNullCollisionFilter::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 60539, rva 0xb36700).
     /// `hkpNullCollisionFilter * vdtor(hkpNullCollisionFilter * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     ///
@@ -10631,35 +10631,35 @@ impl crate::hkpPairCollisionFilter {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn hkp_collidable_collidable_filter_vfunc_1(&self, param_1: *mut u8, param_2: i64, param_3: i64) -> *mut u8 { unsafe { function!(61854, (*const Self, *mut u8, i64, i64) -> *mut u8)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn hkp_collidable_collidable_filter_vfunc_1(&self, param_1: *mut u8, param_2: i64, param_3: i64) -> *mut u8 { unsafe { function!(61854, (*const Self, *mut u8, i64, i64) -> *mut u8)(core::ptr::from_ref(self).byte_add(0x10), param_1, param_2, param_3) } }
     /// `hkpPairCollisionFilter::hkpRayCollidableFilter_vfunc_1` (decompiler signature, tier low; ledger rtti evidence, name medium; id 61858, rva 0xb70ec0).
     /// `undefined1 * hkpRayCollidableFilter_vfunc_1(hkpPairCollisionFilter * this, undefined1 * param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn hkp_ray_collidable_filter_vfunc_1(&self, param_1: *mut u8) -> *mut u8 { unsafe { function!(61858, (*const Self, *mut u8) -> *mut u8)(core::ptr::from_ref(self), param_1) } }
+    pub unsafe fn hkp_ray_collidable_filter_vfunc_1(&self, param_1: *mut u8) -> *mut u8 { unsafe { function!(61858, (*const Self, *mut u8) -> *mut u8)(core::ptr::from_ref(self).byte_add(0x28), param_1) } }
     /// `hkpPairCollisionFilter::hkpRayShapeCollectionFilter_vfunc_0` (decompiler signature, tier low; ledger rtti evidence, name medium; id 61857, rva 0xb70e60).
     /// `undefined1 * hkpRayShapeCollectionFilter_vfunc_0(hkpPairCollisionFilter * this, undefined1 * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4, undefined4 param_5)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn hkp_ray_shape_collection_filter_vfunc_0(&self, param_1: *mut u8, param_2: u64, param_3: u64, param_4: u64, param_5: u32) -> *mut u8 { unsafe { function!(61857, (*const Self, *mut u8, u64, u64, u64, u32) -> *mut u8)(core::ptr::from_ref(self), param_1, param_2, param_3, param_4, param_5) } }
+    pub unsafe fn hkp_ray_shape_collection_filter_vfunc_0(&self, param_1: *mut u8, param_2: u64, param_3: u64, param_4: u64, param_5: u32) -> *mut u8 { unsafe { function!(61857, (*const Self, *mut u8, u64, u64, u64, u32) -> *mut u8)(core::ptr::from_ref(self).byte_add(0x20), param_1, param_2, param_3, param_4, param_5) } }
     /// `hkpPairCollisionFilter::hkpShapeCollectionFilter_vfunc_0` (decompiler signature, tier low; ledger rtti evidence, name medium; id 61856, rva 0xb70dd0).
     /// `undefined1 * hkpShapeCollectionFilter_vfunc_0(hkpPairCollisionFilter * this, undefined1 * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4, undefined8 param_5, undefined8 param_6, undefined4 param_7, undefined4 param_8)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn hkp_shape_collection_filter_vfunc_0(&self, param_1: *mut u8, param_2: u64, param_3: u64, param_4: u64, param_5: u64, param_6: u64, param_7: u32, param_8: u32) -> *mut u8 { unsafe { function!(61856, (*const Self, *mut u8, u64, u64, u64, u64, u64, u32, u32) -> *mut u8)(core::ptr::from_ref(self), param_1, param_2, param_3, param_4, param_5, param_6, param_7, param_8) } }
+    pub unsafe fn hkp_shape_collection_filter_vfunc_0(&self, param_1: *mut u8, param_2: u64, param_3: u64, param_4: u64, param_5: u64, param_6: u64, param_7: u32, param_8: u32) -> *mut u8 { unsafe { function!(61856, (*const Self, *mut u8, u64, u64, u64, u64, u64, u32, u32) -> *mut u8)(core::ptr::from_ref(self).byte_add(0x18), param_1, param_2, param_3, param_4, param_5, param_6, param_7, param_8) } }
     /// `hkpPairCollisionFilter::hkpShapeCollectionFilter_vfunc_1` (decompiler signature, tier low; ledger rtti evidence, name medium; id 61855, rva 0xb70d60).
     /// `undefined1 * hkpShapeCollectionFilter_vfunc_1(hkpPairCollisionFilter * this, undefined1 * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4, undefined8 param_5, undefined4 param_6)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn hkp_shape_collection_filter_vfunc_1(&self, param_1: *mut u8, param_2: u64, param_3: u64, param_4: u64, param_5: u64, param_6: u32) -> *mut u8 { unsafe { function!(61855, (*const Self, *mut u8, u64, u64, u64, u64, u32) -> *mut u8)(core::ptr::from_ref(self), param_1, param_2, param_3, param_4, param_5, param_6) } }
+    pub unsafe fn hkp_shape_collection_filter_vfunc_1(&self, param_1: *mut u8, param_2: u64, param_3: u64, param_4: u64, param_5: u64, param_6: u32) -> *mut u8 { unsafe { function!(61855, (*const Self, *mut u8, u64, u64, u64, u64, u32) -> *mut u8)(core::ptr::from_ref(self).byte_add(0x18), param_1, param_2, param_3, param_4, param_5, param_6) } }
     /// `hkpPairCollisionFilter::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 61218, rva 0xb52200).
     /// `hkpPairCollisionFilter * vdtor(hkpPairCollisionFilter * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     ///
@@ -10720,14 +10720,14 @@ impl crate::hkpPhantomBroadPhaseListener {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn hkp_broad_phase_listener_vfunc_1(&self, param_1: *mut i64) -> u64 { unsafe { function!(62090, (*const Self, *mut i64) -> u64)(core::ptr::from_ref(self), param_1) } }
+    pub unsafe fn hkp_broad_phase_listener_vfunc_1(&self, param_1: *mut i64) -> u64 { unsafe { function!(62090, (*const Self, *mut i64) -> u64)(core::ptr::from_ref(self).byte_add(0x10), param_1) } }
     /// `hkpPhantomBroadPhaseListener::hkpBroadPhaseListener_vfunc_2` (decompiler signature, tier low; ledger rtti evidence, name high; id 62091, rva 0xb7b3e0).
     /// `undefined hkpBroadPhaseListener_vfunc_2(hkpPhantomBroadPhaseListener * this, longlong * param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn hkp_broad_phase_listener_vfunc_2(&self, param_1: *mut i64) -> u64 { unsafe { function!(62091, (*const Self, *mut i64) -> u64)(core::ptr::from_ref(self), param_1) } }
+    pub unsafe fn hkp_broad_phase_listener_vfunc_2(&self, param_1: *mut i64) -> u64 { unsafe { function!(62091, (*const Self, *mut i64) -> u64)(core::ptr::from_ref(self).byte_add(0x10), param_1) } }
 }
 
 impl crate::hkpPhantomCallbackShape {
@@ -10999,14 +10999,14 @@ impl crate::hkpRemoveTerminalsMoppModifier {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn hkp_mopp_modifier_vfunc_1(&self, param_1: u64, param_2: i32) -> u64 { unsafe { function!(60672, (*const Self, u64, i32) -> u64)(core::ptr::from_ref(self), param_1, param_2) } }
+    pub unsafe fn hkp_mopp_modifier_vfunc_1(&self, param_1: u64, param_2: i32) -> u64 { unsafe { function!(60672, (*const Self, u64, i32) -> u64)(core::ptr::from_ref(self).byte_add(0x10), param_1, param_2) } }
     /// `hkpRemoveTerminalsMoppModifier::hkpMoppModifier_vfunc_2` (decompiler signature, tier low; ledger rtti evidence, name medium; id 60673, rva 0xb40f70).
     /// `undefined hkpMoppModifier_vfunc_2(hkpRemoveTerminalsMoppModifier * this, int param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn hkp_mopp_modifier_vfunc_2(&self, param_1: i32) -> u64 { unsafe { function!(60673, (*const Self, i32) -> u64)(core::ptr::from_ref(self), param_1) } }
+    pub unsafe fn hkp_mopp_modifier_vfunc_2(&self, param_1: i32) -> u64 { unsafe { function!(60673, (*const Self, i32) -> u64)(core::ptr::from_ref(self).byte_add(0x10), param_1) } }
     /// `hkpRemoveTerminalsMoppModifier::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 60540, rva 0xb3e250).
     /// `hkpRemoveTerminalsMoppModifier * vdtor(hkpRemoveTerminalsMoppModifier * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///
@@ -11030,7 +11030,7 @@ impl crate::hkpRemoveTerminalsMoppModifier2 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn hkp_mopp_modifier_vfunc_1(&self, param_1: *mut u8, param_2: i32) -> *mut u8 { unsafe { function!(60675, (*const Self, *mut u8, i32) -> *mut u8)(core::ptr::from_ref(self), param_1, param_2) } }
+    pub unsafe fn hkp_mopp_modifier_vfunc_1(&self, param_1: *mut u8, param_2: i32) -> *mut u8 { unsafe { function!(60675, (*const Self, *mut u8, i32) -> *mut u8)(core::ptr::from_ref(self).byte_add(0x10), param_1, param_2) } }
     /// `hkpRemoveTerminalsMoppModifier2::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 60677, rva 0xb410b0).
     /// `hkpRemoveTerminalsMoppModifier2 * vdtor(hkpRemoveTerminalsMoppModifier2 * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     ///
@@ -11375,21 +11375,21 @@ impl crate::hkpSimpleMeshShape {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn hkp_shape_container_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(81427, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn hkp_shape_container_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(81427, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self).byte_add(0x20), param_1, param_2, param_3) } }
     /// `hkpSimpleMeshShape::hkpShapeContainer_vfunc_3` (decompiler signature, tier low; ledger rtti evidence, name high; id 81420, rva 0x11281e0).
     /// `int hkpShapeContainer_vfunc_3(hkpSimpleMeshShape * this, int param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn hkp_shape_container_vfunc_3(&self, param_1: i32) -> i32 { unsafe { function!(81420, (*const Self, i32) -> i32)(core::ptr::from_ref(self), param_1) } }
+    pub unsafe fn hkp_shape_container_vfunc_3(&self, param_1: i32) -> i32 { unsafe { function!(81420, (*const Self, i32) -> i32)(core::ptr::from_ref(self).byte_add(0x20), param_1) } }
     /// `hkpSimpleMeshShape::hkpShapeContainer_vfunc_5` (decompiler signature, tier low; ledger rtti evidence, name high; id 81421, rva 0x1128290).
     /// `undefined8 * hkpShapeContainer_vfunc_5(hkpSimpleMeshShape * this, int param_1, undefined8 * param_2)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn hkp_shape_container_vfunc_5(&self, param_1: i32, param_2: *mut u64) -> *mut u64 { unsafe { function!(81421, (*const Self, i32, *mut u64) -> *mut u64)(core::ptr::from_ref(self), param_1, param_2) } }
+    pub unsafe fn hkp_shape_container_vfunc_5(&self, param_1: i32, param_2: *mut u64) -> *mut u64 { unsafe { function!(81421, (*const Self, i32, *mut u64) -> *mut u64)(core::ptr::from_ref(self).byte_add(0x20), param_1, param_2) } }
     /// `hkpSimpleMeshShape::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 81428, rva 0x1128640).
     /// `hkpSimpleMeshShape * vdtor(hkpSimpleMeshShape * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///
@@ -11636,7 +11636,7 @@ impl crate::hkpStorageExtendedMeshShape {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn hkp_shape_container_vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> u64 { unsafe { function!(64838, (*const Self, u32, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn hkp_shape_container_vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> u64 { unsafe { function!(64838, (*const Self, u32, u64, u64) -> u64)(core::ptr::from_ref(self).byte_add(0x20), param_1, param_2, param_3) } }
     /// `hkpStorageExtendedMeshShape::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 64841, rva 0xc2aad0).
     /// `hkpStorageExtendedMeshShape * vdtor(hkpStorageExtendedMeshShape * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     ///
@@ -11745,21 +11745,21 @@ impl crate::hkpSuspendInactiveAgentsUtil {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn hkp_island_activation_listener_vfunc_1(&self, param_1: i64) -> u64 { unsafe { function!(79389, (*const Self, i64) -> u64)(core::ptr::from_ref(self), param_1) } }
+    pub unsafe fn hkp_island_activation_listener_vfunc_1(&self, param_1: i64) -> u64 { unsafe { function!(79389, (*const Self, i64) -> u64)(core::ptr::from_ref(self).byte_add(0x10), param_1) } }
     /// `hkpSuspendInactiveAgentsUtil::hkpIslandActivationListener_vfunc_2` (decompiler signature, tier low; ledger rtti evidence, name high; id 79390, rva 0x10a5a50).
     /// `undefined hkpIslandActivationListener_vfunc_2(hkpSuspendInactiveAgentsUtil * this, longlong param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn hkp_island_activation_listener_vfunc_2(&self, param_1: i64) -> u64 { unsafe { function!(79390, (*const Self, i64) -> u64)(core::ptr::from_ref(self), param_1) } }
+    pub unsafe fn hkp_island_activation_listener_vfunc_2(&self, param_1: i64) -> u64 { unsafe { function!(79390, (*const Self, i64) -> u64)(core::ptr::from_ref(self).byte_add(0x10), param_1) } }
     /// `hkpSuspendInactiveAgentsUtil::hkpWorldDeletionListener_vfunc_1` (decompiler signature, tier low; ledger rtti evidence, name high; id 79391, rva 0x10a5cd0).
     /// `undefined hkpWorldDeletionListener_vfunc_1(hkpSuspendInactiveAgentsUtil * this, longlong param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn hkp_world_deletion_listener_vfunc_1(&self, param_1: i64) -> u64 { unsafe { function!(79391, (*const Self, i64) -> u64)(core::ptr::from_ref(self), param_1) } }
+    pub unsafe fn hkp_world_deletion_listener_vfunc_1(&self, param_1: i64) -> u64 { unsafe { function!(79391, (*const Self, i64) -> u64)(core::ptr::from_ref(self).byte_add(0x18), param_1) } }
     /// `hkpSuspendInactiveAgentsUtil::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 79406, rva 0x10a5f30).
     /// `hkpSuspendInactiveAgentsUtil * vdtor(hkpSuspendInactiveAgentsUtil * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     ///
@@ -12151,7 +12151,7 @@ impl crate::hkpTriSampledHeightFieldCollection {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn hkp_shape_container_vfunc_3(&self, param_1: u64) -> u32 { unsafe { function!(60831, (*const Self, u64) -> u32)(core::ptr::from_ref(self), param_1) } }
+    pub unsafe fn hkp_shape_container_vfunc_3(&self, param_1: u64) -> u32 { unsafe { function!(60831, (*const Self, u64) -> u32)(core::ptr::from_ref(self).byte_add(0x20), param_1) } }
     /// `hkpTriSampledHeightFieldCollection::hkpShapeContainer_vfunc_4` (decompiler signature, tier low; ledger rtti evidence, name high; id 60833, rva 0xb4a730).
     /// `undefined8 hkpShapeContainer_vfunc_4(void)`
     ///
@@ -12165,7 +12165,7 @@ impl crate::hkpTriSampledHeightFieldCollection {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn hkp_shape_container_vfunc_5(&self, param_1: u32, param_2: *mut u64) -> *mut u64 { unsafe { function!(60832, (*const Self, u32, *mut u64) -> *mut u64)(core::ptr::from_ref(self), param_1, param_2) } }
+    pub unsafe fn hkp_shape_container_vfunc_5(&self, param_1: u32, param_2: *mut u64) -> *mut u64 { unsafe { function!(60832, (*const Self, u32, *mut u64) -> *mut u64)(core::ptr::from_ref(self).byte_add(0x20), param_1, param_2) } }
     /// `hkpTriSampledHeightFieldCollection::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 60611, rva 0xb3f720).
     /// `hkpTriSampledHeightFieldCollection * vdtor(hkpTriSampledHeightFieldCollection * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///
@@ -12199,35 +12199,35 @@ impl crate::hkpTriggerVolume {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn hkp_contact_listener_vfunc_0(&self, param_1: *mut i32) -> u64 { unsafe { function!(62702, (*const Self, *mut i32) -> u64)(core::ptr::from_ref(self), param_1) } }
+    pub unsafe fn hkp_contact_listener_vfunc_0(&self, param_1: *mut i32) -> u64 { unsafe { function!(62702, (*const Self, *mut i32) -> u64)(core::ptr::from_ref(self).byte_add(0x10), param_1) } }
     /// `hkpTriggerVolume::hkpContactListener_vfunc_1` (decompiler signature, tier low; ledger rtti evidence, name high; id 62703, rva 0xba3e80).
     /// `undefined hkpContactListener_vfunc_1(hkpTriggerVolume * this, int * param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn hkp_contact_listener_vfunc_1(&self, param_1: *mut i32) -> u64 { unsafe { function!(62703, (*const Self, *mut i32) -> u64)(core::ptr::from_ref(self), param_1) } }
+    pub unsafe fn hkp_contact_listener_vfunc_1(&self, param_1: *mut i32) -> u64 { unsafe { function!(62703, (*const Self, *mut i32) -> u64)(core::ptr::from_ref(self).byte_add(0x10), param_1) } }
     /// `hkpTriggerVolume::hkpContactListener_vfunc_2` (decompiler signature, tier low; ledger rtti evidence, name high; id 62704, rva 0xba3ee0).
     /// `undefined hkpContactListener_vfunc_2(hkpTriggerVolume * this, int * param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn hkp_contact_listener_vfunc_2(&self, param_1: *mut i32) -> u64 { unsafe { function!(62704, (*const Self, *mut i32) -> u64)(core::ptr::from_ref(self), param_1) } }
+    pub unsafe fn hkp_contact_listener_vfunc_2(&self, param_1: *mut i32) -> u64 { unsafe { function!(62704, (*const Self, *mut i32) -> u64)(core::ptr::from_ref(self).byte_add(0x10), param_1) } }
     /// `hkpTriggerVolume::hkpEntityListener_vfunc_1` (decompiler signature, tier low; ledger rtti evidence, name high; id 62707, rva 0xba42e0).
     /// `undefined hkpEntityListener_vfunc_1(hkpTriggerVolume * this, longlong param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn hkp_entity_listener_vfunc_1(&self, param_1: i64) -> u64 { unsafe { function!(62707, (*const Self, i64) -> u64)(core::ptr::from_ref(self), param_1) } }
+    pub unsafe fn hkp_entity_listener_vfunc_1(&self, param_1: i64) -> u64 { unsafe { function!(62707, (*const Self, i64) -> u64)(core::ptr::from_ref(self).byte_add(0x20), param_1) } }
     /// `hkpTriggerVolume::hkpEntityListener_vfunc_5` (decompiler signature, tier low; ledger rtti evidence, name high; id 62706, rva 0xba4260).
     /// `undefined hkpEntityListener_vfunc_5(hkpTriggerVolume * this, longlong param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn hkp_entity_listener_vfunc_5(&self, param_1: i64) -> u64 { unsafe { function!(62706, (*const Self, i64) -> u64)(core::ptr::from_ref(self), param_1) } }
+    pub unsafe fn hkp_entity_listener_vfunc_5(&self, param_1: i64) -> u64 { unsafe { function!(62706, (*const Self, i64) -> u64)(core::ptr::from_ref(self).byte_add(0x20), param_1) } }
     /// `hkpTriggerVolume::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 62719, rva 0xba4880).
     /// `hkpTriggerVolume * vdtor(hkpTriggerVolume * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     ///
