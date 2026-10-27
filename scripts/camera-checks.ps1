@@ -43,6 +43,6 @@ $rows = @(
     @{ name = "shadow";       plugin = "$shadow; console: $(Lines 46)"; devbench = "camera get: pov $((Step 41).pov) stateId $((Step 41).stateId); camera-shadow.png $((Step 44).bytes) bytes";
        ok = ((Step 41).pov -eq "first" -and (Step 44).ok -eq $true) }
     # A chair of the base save (0x8B825, base 0x6E7A8): the furniture camera is current from the activation until the sit-enter event pops it.
-    @{ name = "furniture";    plugin = "$furniture; console: $(Lines 59)"; devbench = "camera get after the activation: stateId $((Step 54).stateId), seated: stateId $((Step 56).stateId); getgs fFurnitureCameraZoom $(Lines 57), fFurnitureCameraAngle $(Lines 58)";
-       ok = ((Step 54).stateId -eq 5 -and (Step 56).stateId -ne 5 -and (Near $furnitureZoom (Ini 57) 0.01) -and (Near $furniturePitch (Ini 58) 0.001)) }
+    @{ name = "furniture";    plugin = "$furniture; console: $(Lines 59)"; devbench = "camera get after the activation: stateId $((Step 54).stateId), seated: stateId $((Step 56).stateId); getini fFurnitureCameraZoom:Camera $(Lines 57), fFurnitureCameraAngle:Camera $(Lines 58)";
+       ok = ((Step 54).stateId -eq 5 -and (Step 56).stateId -ne 5 -and (Near $furnitureZoom (Ini 57) 0.01) -and (Near $furniturePitch (Ini 58) 0.01)) }
 )

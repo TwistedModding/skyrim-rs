@@ -56,8 +56,8 @@
   {"tool": "camera", "args": {"action": "get"}},
   {"wait": 6000},
   {"tool": "camera", "args": {"action": "get"}},
-  {"tool": "console", "args": {"command": "getgs fFurnitureCameraZoom", "capture": true}},
-  {"tool": "console", "args": {"command": "getgs fFurnitureCameraAngle", "capture": true}},
+  {"tool": "console", "args": {"command": "getini \"fFurnitureCameraZoom:Camera\"", "capture": true}},
+  {"tool": "console", "args": {"command": "getini \"fFurnitureCameraAngle:Camera\"", "capture": true}},
   {"tool": "console", "args": {"command": "CameraDemo report furniture", "capture": true}},
   {"wait": 1000}
 ]
