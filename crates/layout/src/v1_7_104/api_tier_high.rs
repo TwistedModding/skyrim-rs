@@ -3553,16 +3553,6 @@ impl classes::BSFogProperty {
     pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(107588, (&Self) -> *mut Self)(self) } }
 }
 
-impl classes::BSFrustumFOVController {
-    /// `BSFrustumFOVController::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 74130, rva 0xf8d6c0).
-    /// `BSFrustumFOVController * ctor(BSFrustumFOVController * this)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(74130, (&Self) -> *mut Self)(self) } }
-}
-
 impl classes::partial::BSGameDataSystemUtility {
     /// `BSGameDataSystemUtility::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 109268, rva 0x159a430).
     /// `BSGameDataSystemUtility * ctor(BSGameDataSystemUtility * this)`
@@ -5372,54 +5362,6 @@ impl classes::BSImagespaceShaderISSAOBlurVCS {
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
     pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(105757, (&Self) -> *mut Self)(self) } }
-}
-
-impl classes::BSImagespaceShaderISSAOCameraZ {
-    /// `BSImagespaceShaderISSAOCameraZ::ImageSpaceEffect_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 105943, rva 0x150772c).
-    /// `undefined ImageSpaceEffect_vdtor(BSImagespaceShaderISSAOCameraZ * this)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105943, (&Self) -> u64)(self) } }
-    /// `BSImagespaceShaderISSAOCameraZ::NiBoneMatrixSetterI_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 105942, rva 0x1507720).
-    /// `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderISSAOCameraZ * this)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105942, (&Self) -> u64)(self) } }
-    /// `BSImagespaceShaderISSAOCameraZ::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 105758, rva 0x14ff5b0).
-    /// `BSImagespaceShaderISSAOCameraZ * ctor(BSImagespaceShaderISSAOCameraZ * this)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(105758, (&Self) -> *mut Self)(self) } }
-}
-
-impl classes::BSImagespaceShaderISSAOCameraZAndMipsCS {
-    /// `BSImagespaceShaderISSAOCameraZAndMipsCS::ImageSpaceEffect_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 105945, rva 0x1507744).
-    /// `undefined ImageSpaceEffect_vdtor(BSImagespaceShaderISSAOCameraZAndMipsCS * this)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn image_space_effect_vdtor(&self) -> u64 { unsafe { function!(105945, (&Self) -> u64)(self) } }
-    /// `BSImagespaceShaderISSAOCameraZAndMipsCS::NiBoneMatrixSetterI_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 105944, rva 0x1507738).
-    /// `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderISSAOCameraZAndMipsCS * this)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn ni_bone_matrix_setter_i_vdtor(&self) -> u64 { unsafe { function!(105944, (&Self) -> u64)(self) } }
-    /// `BSImagespaceShaderISSAOCameraZAndMipsCS::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 105759, rva 0x14ff760).
-    /// `BSImagespaceShaderISSAOCameraZAndMipsCS * ctor(BSImagespaceShaderISSAOCameraZAndMipsCS * this)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(105759, (&Self) -> *mut Self)(self) } }
 }
 
 impl classes::BSImagespaceShaderISSAOCompositeFog {
@@ -11065,23 +11007,6 @@ impl classes::BeamProjectile {
     pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(43745, (&Self) -> *mut Self)(self) } }
 }
 
-impl classes::BleedoutCameraState {
-    /// `BleedoutCameraState::PlayerInputHandler_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 50862, rva 0x8fc458).
-    /// `undefined PlayerInputHandler_vdtor(BleedoutCameraState * this)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn player_input_handler_vdtor(&self) -> u64 { unsafe { function!(50862, (&Self) -> u64)(self) } }
-    /// `BleedoutCameraState::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 50860, rva 0x8fc3d0).
-    /// `undefined ctor(BleedoutCameraState * this)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn ctor(&self) -> u64 { unsafe { function!(50860, (&Self) -> u64)(self) } }
-}
-
 impl classes::BookMenu {
     /// `BookMenu::BSTEventSink_BSAnimationGraphEvent_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 51068, rva 0x908a04).
     /// `undefined BSTEventSink_BSAnimationGraphEvent_vdtor(BookMenu * this)`
@@ -12957,23 +12882,6 @@ impl classes::DoNothingUnhandledPolicy_BSFixedStringCI {
     pub unsafe fn dtor(&self) -> u64 { unsafe { function!(42799, (&Self) -> u64)(self) } }
 }
 
-impl classes::DragonCameraState {
-    /// `DragonCameraState::PlayerInputHandler_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 33123, rva 0x55d444).
-    /// `undefined PlayerInputHandler_vdtor(DragonCameraState * this)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn player_input_handler_vdtor(&self) -> u64 { unsafe { function!(33123, (&Self) -> u64)(self) } }
-    /// `DragonCameraState::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 33107, rva 0x55c690).
-    /// `DragonCameraState * ctor(DragonCameraState * this)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(33107, (&Self) -> *mut Self)(self) } }
-}
-
 impl classes::EffectSetting {
     /// `EffectSetting::BGSKeywordForm_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 11129, rva 0x14c6c4).
     /// `undefined BGSKeywordForm_vdtor(EffectSetting * this)`
@@ -13470,16 +13378,6 @@ impl classes::FindTriangleForLocationFilter {
     pub unsafe fn dtor_2(&self) -> u64 { unsafe { function!(38147, (&Self) -> u64)(self) } }
 }
 
-impl classes::FirstPersonState {
-    /// `FirstPersonState::PlayerInputHandler_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 50863, rva 0x8fc464).
-    /// `undefined PlayerInputHandler_vdtor(FirstPersonState * this)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn player_input_handler_vdtor(&self) -> u64 { unsafe { function!(50863, (&Self) -> u64)(self) } }
-}
-
 impl classes::FlameProjectile {
     /// `FlameProjectile::BSHandleRefObject_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 43906, rva 0x7eb4ec).
     /// `undefined BSHandleRefObject_vdtor(FlameProjectile * this)`
@@ -13502,16 +13400,6 @@ impl classes::FlameProjectile {
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
     pub unsafe fn ctor_2(&self) -> *mut Self { unsafe { function!(43891, (&Self) -> *mut Self)(self) } }
-}
-
-impl classes::FreeCameraState {
-    /// `FreeCameraState::PlayerInputHandler_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 50864, rva 0x8fc470).
-    /// `undefined PlayerInputHandler_vdtor(FreeCameraState * this)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn player_input_handler_vdtor(&self) -> u64 { unsafe { function!(50864, (&Self) -> u64)(self) } }
 }
 
 impl classes::FutBinaryFileC {
@@ -14141,16 +14029,6 @@ impl classes::partial::HighActorCuller {
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
     pub unsafe fn dtor(&self) -> u64 { unsafe { function!(40333, (&Self) -> u64)(self) } }
-}
-
-impl classes::HorseCameraState {
-    /// `HorseCameraState::PlayerInputHandler_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 50773, rva 0x8f763c).
-    /// `undefined PlayerInputHandler_vdtor(HorseCameraState * this)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn player_input_handler_vdtor(&self) -> u64 { unsafe { function!(50773, (&Self) -> u64)(self) } }
 }
 
 impl classes::IAIWorldLocation {
@@ -18289,16 +18167,6 @@ impl classes::partial::IFormFactory__IFactoryVisitor {
     pub unsafe fn dtor_3(&self) -> u64 { unsafe { function!(441585, (&Self) -> u64)(self) } }
 }
 
-impl classes::IMapCameraCallbacks {
-    /// `IMapCameraCallbacks::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 53027, rva 0x9971d0).
-    /// `undefined dtor(IMapCameraCallbacks * this)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(53027, (&Self) -> u64)(self) } }
-}
-
 impl classes::IMemoryHeap {
     /// `IMemoryHeap::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 68476, rva 0xcebe10).
     /// `undefined dtor(IMemoryHeap * this)`
@@ -20316,26 +20184,6 @@ impl classes::MainMenu {
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
     pub unsafe fn open_creation_club_menu(param_1: u64, param_2: u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(442713, (u64, u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
-}
-
-impl classes::MapCamera {
-    /// `MapCamera::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 53011, rva 0x996170).
-    /// `MapCamera * ctor(MapCamera * this)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(53011, (&Self) -> *mut Self)(self) } }
-}
-
-impl classes::MapMenu {
-    /// `MapMenu::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 53094, rva 0x99b220).
-    /// `undefined ctor(MapMenu * this)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn ctor(&self) -> u64 { unsafe { function!(53094, (&Self) -> u64)(self) } }
 }
 
 impl classes::partial::MarketplaceMenu {
@@ -25713,16 +25561,6 @@ impl classes::PatrolActorPackageData {
     pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(42591, (&Self) -> *mut Self)(self) } }
 }
 
-impl classes::PlayerCamera {
-    /// `PlayerCamera::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 50781, rva 0x8f79f0).
-    /// `PlayerCamera * ctor(PlayerCamera * this)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(50781, (&Self) -> *mut Self)(self) } }
-}
-
 impl classes::PlayerCharacter {
     /// `PlayerCharacter::BSHandleRefObject_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 40927, rva 0x7692b4).
     /// `undefined BSHandleRefObject_vdtor(PlayerCharacter * this)`
@@ -26234,16 +26072,6 @@ impl classes::partial::ScaleformFile__MemoryFile {
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
     pub unsafe fn ctor(&self) -> u64 { unsafe { function!(82429, (&Self) -> u64)(self) } }
-}
-
-impl classes::SceneGraph {
-    /// `SceneGraph::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 36838, rva 0x665640).
-    /// `SceneGraph * ctor(SceneGraph * this)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(36838, (&Self) -> *mut Self)(self) } }
 }
 
 impl classes::partial::ScrapHeap {
@@ -26959,16 +26787,6 @@ impl classes::partial::StaticAvoidNodeManager {
     pub unsafe fn vfunc_0_vt8(&self) -> u64 { unsafe { function!(42490, (&Self) -> u64)(self) } }
 }
 
-impl classes::StatsMenu {
-    /// `StatsMenu::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 52508, rva 0x975ff0).
-    /// `StatsMenu * ctor(StatsMenu * this)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(52508, (&Self) -> *mut Self)(self) } }
-}
-
 impl classes::partial::StatsNode {
     /// `StatsNode::BSTEventSink_BSAnimationGraphEvent_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 52599, rva 0x983658).
     /// `undefined BSTEventSink_BSAnimationGraphEvent_vdtor(StatsNode * this)`
@@ -27270,33 +27088,6 @@ impl classes::TESBoundObject {
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
     pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(17654, (&Self) -> *mut Self)(self) } }
-}
-
-impl classes::TESCamera {
-    /// `TESCamera::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 33018, rva 0x558c80).
-    /// `TESCamera * ctor(TESCamera * this)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(33018, (&Self) -> *mut Self)(self) } }
-}
-
-impl classes::TESCameraState {
-    /// `TESCameraState::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 50721, rva 0x8f46b0).
-    /// `undefined ctor(TESCameraState * this)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn ctor(&self) -> u64 { unsafe { function!(50721, (&Self) -> u64)(self) } }
-    /// `TESCameraState::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 50740, rva 0x8f5e10).
-    /// `undefined ctor(TESCameraState * this)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn ctor_2(&self) -> u64 { unsafe { function!(50740, (&Self) -> u64)(self) } }
 }
 
 impl classes::TESChildCell {
@@ -29070,23 +28861,6 @@ impl classes::partial::TeleportDoorSearch {
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
     pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(30930, (&Self) -> *mut Self)(self) } }
-}
-
-impl classes::ThirdPersonState {
-    /// `ThirdPersonState::PlayerInputHandler_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 33124, rva 0x55d450).
-    /// `undefined PlayerInputHandler_vdtor(ThirdPersonState * this)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn player_input_handler_vdtor(&self) -> u64 { unsafe { function!(33124, (&Self) -> u64)(self) } }
-    /// `ThirdPersonState::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 33122, rva 0x55d3d0).
-    /// `undefined dtor(ThirdPersonState * this)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(33122, (&Self) -> u64)(self) } }
 }
 
 impl classes::partial::TitleSequenceMenu {
@@ -34692,23 +34466,6 @@ impl classes::partial::hkpFastMeshShape {
     pub unsafe fn hkp_shape_container_vdtor(&self) -> u64 { unsafe { function!(64883, (&Self) -> u64)(self) } }
 }
 
-impl classes::partial::hkpFirstPersonGun {
-    /// `hkpFirstPersonGun::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 62776, rva 0xba6a70).
-    /// `hkpFirstPersonGun * ctor(hkpFirstPersonGun * this)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(62776, (&Self) -> *mut Self)(self) } }
-    /// `hkpFirstPersonGun::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 62778, rva 0xba6b20).
-    /// `undefined dtor(hkpFirstPersonGun * this)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(62778, (&Self) -> u64)(self) } }
-}
-
 impl classes::partial::hkpFixedRigidMotion {
     /// `hkpFixedRigidMotion::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 61712, rva 0xb68f30).
     /// `hkpFixedRigidMotion * ctor(hkpFixedRigidMotion * this)`
@@ -36119,13 +35876,6 @@ pub unsafe fn add_to_field10_field448(param_1: i64, param_2: i16) -> u64 { unsaf
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn add_to_field10_vec3(param_1: i64, param_2: f32, param_3: f32, param_4: f32) -> u64 { unsafe { function!(33021, (i64, f32, f32, f32) -> u64)(param_1, param_2, param_3, param_4) } }
-/// `AddToField1C` (decompiler signature, tier high; ledger decompiler evidence, name high; id 33022, rva 0x558db0).
-/// `undefined AddToField1C(longlong param_1, float param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn add_to_field1_c(param_1: i64, param_2: f32) -> u64 { unsafe { function!(33022, (i64, f32) -> u64)(param_1, param_2) } }
 /// `AddToField340OfField10` (decompiler signature, tier high; ledger decompiler evidence, name high; id 39302, rva 0x6f35d0).
 /// `undefined AddToField340OfField10(longlong param_1, float param_2)`
 ///
@@ -37582,13 +37332,6 @@ pub unsafe fn are_floats_finite(param_1: *mut u8, param_2: i64, param_3: i32) ->
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn are_json_values_not_equal(param_1: *mut f64, param_2: *mut f64) -> u8 { unsafe { function!(442995, (*mut f64, *mut f64) -> u8)(param_1, param_2) } }
-/// `AreLowBitsOfField38Clear` (decompiler signature, tier high; ledger decompiler evidence, name high; id 20645, rva 0x316fe0).
-/// `bool AreLowBitsOfField38Clear(longlong param_1)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn are_low_bits_of_field38_clear(param_1: i64) -> u8 { unsafe { function!(20645, (i64) -> u8)(param_1) } }
 /// `ArePointerArraysEqual` (decompiler signature, tier high; ledger decompiler evidence, name high; id 12856, rva 0x18d680).
 /// `char ArePointerArraysEqual(longlong * param_1, longlong * param_2)`
 ///
@@ -38975,20 +38718,6 @@ pub unsafe fn clear_global403123_2() -> u64 { unsafe { function!(442554, () -> u
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn clear_global403123_3() -> u64 { unsafe { function!(36325, () -> u64)() } }
-/// `ClearGlobal404161` (decompiler signature, tier high; ledger decompiler evidence, name high; id 40609, rva 0x757410).
-/// `undefined ClearGlobal404161(void)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn clear_global404161() -> u64 { unsafe { function!(40609, () -> u64)() } }
-/// `ClearGlobal404161_2` (decompiler signature, tier high; ledger decompiler evidence, name high; id 40610, rva 0x757420).
-/// `undefined ClearGlobal404161_2(void)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn clear_global404161_2() -> u64 { unsafe { function!(40610, () -> u64)() } }
 /// `ClearGlobal404161_3` (decompiler signature, tier high; ledger decompiler evidence, name high; id 43566, rva 0x7d7aa0).
 /// `undefined ClearGlobal404161_3(void)`
 ///
@@ -39829,13 +39558,6 @@ pub unsafe fn copy_construct_record80(param_1: *mut u32, param_2: *mut u32, para
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn copy_construct_tagged_string(param_1: *mut u64, param_2: *mut u64) -> *mut u64 { unsafe { function!(57227, (*mut u64, *mut u64) -> *mut u64)(param_1, param_2) } }
-/// `CopyDword` (decompiler signature, tier high; ledger decompiler evidence, name high; id 44073, rva 0x7f6ad0).
-/// `undefined4 * CopyDword(undefined4 * param_1, undefined4 * param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn copy_dword(param_1: *mut u32, param_2: *mut u32) -> *mut u32 { unsafe { function!(44073, (*mut u32, *mut u32) -> *mut u32)(param_1, param_2) } }
 /// `CopyDwordPair` (decompiler signature, tier high; ledger decompiler evidence, name high; id 16725, rva 0x2591e0).
 /// `undefined4 * CopyDwordPair(undefined4 * param_1, undefined4 * param_2)`
 ///
@@ -40305,13 +40027,6 @@ pub unsafe fn create_bs_distant_object_large_ref_extra_data(param_1: u64, param_
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn create_bs_dynamic_tri_shape(param_1: u64, param_2: u64, param_3: u64, param_4: u64) -> *mut classes::BSTriShape { unsafe { function!(70957, (u64, u64, u64, u64) -> *mut classes::BSTriShape)(param_1, param_2, param_3, param_4) } }
-/// `CreateBSFrustumFOVController` (decompiler signature, tier high; ledger decompiler evidence, name high; id 74129, rva 0xf8d610).
-/// `NiFloatInterpController * CreateBSFrustumFOVController(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn create_bs_frustum_fov_controller(param_1: u64, param_2: u64, param_3: u64, param_4: u64) -> *mut classes::NiFloatInterpController { unsafe { function!(74129, (u64, u64, u64, u64) -> *mut classes::NiFloatInterpController)(param_1, param_2, param_3, param_4) } }
 /// `CreateBSGrabIKNote` (decompiler signature, tier high; ledger decompiler evidence, name high; id 74033, rva 0xf8b150).
 /// `NiObject * CreateBSGrabIKNote(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 ///
@@ -45856,13 +45571,6 @@ pub unsafe fn get_bit0_of_field136(param_1: i64) -> u8 { unsafe { function!(3917
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn get_bit0_of_field18(param_1: i64) -> u8 { unsafe { function!(85176, (i64) -> u8)(param_1) } }
-/// `GetBit0OfField38` (decompiler signature, tier high; ledger decompiler evidence, name high; id 20646, rva 0x317000).
-/// `byte GetBit0OfField38(longlong param_1)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn get_bit0_of_field38(param_1: i64) -> u8 { unsafe { function!(20646, (i64) -> u8)(param_1) } }
 /// `GetBit0OfField88OrBit3OfField70` (decompiler signature, tier high; ledger decompiler evidence, name high; id 85687, rva 0xd94d30).
 /// `ushort GetBit0OfField88OrBit3OfField70(longlong param_1)`
 ///
@@ -45905,13 +45613,6 @@ pub unsafe fn get_bit1_of_field0x_b0(param_1: i64) -> u8 { unsafe { function!(17
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn get_bit1_of_field136(param_1: i64) -> u8 { unsafe { function!(39135, (i64) -> u8)(param_1) } }
-/// `GetBit1OfField38` (decompiler signature, tier high; ledger decompiler evidence, name high; id 20647, rva 0x317030).
-/// `byte GetBit1OfField38(longlong param_1)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn get_bit1_of_field38(param_1: i64) -> u8 { unsafe { function!(20647, (i64) -> u8)(param_1) } }
 /// `GetBit29OfField10` (decompiler signature, tier high; ledger decompiler evidence, name high; id 19585, rva 0x2e4950).
 /// `uint GetBit29OfField10(longlong param_1)`
 ///
@@ -45989,13 +45690,6 @@ pub unsafe fn get_byte14(param_1: i64) -> u8 { unsafe { function!(441562, (i64) 
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn get_byte_field0_c2(param_1: i64, param_2: *mut u8) -> *mut u8 { unsafe { function!(61629, (i64, *mut u8) -> *mut u8)(param_1, param_2) } }
-/// `GetByteField118` (decompiler signature, tier high; ledger decompiler evidence, name high; id 35755, rva 0x6247a0).
-/// `undefined1 GetByteField118(longlong param_1)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn get_byte_field118(param_1: i64) -> u8 { unsafe { function!(35755, (i64) -> u8)(param_1) } }
 /// `GetByteField19` (decompiler signature, tier high; ledger decompiler evidence, name high; id 57602, rva 0xab0ad0).
 /// `undefined1 GetByteField19(longlong param_1)`
 ///
@@ -48831,13 +48525,6 @@ pub unsafe fn get_soul_level_value(param_1: i32) -> u32 { unsafe { function!(181
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn get_sound_level_game_setting_value(param_1: i32) -> u32 { unsafe { function!(26367, (i32) -> u32)(param_1) } }
-/// `GetSpeechDelay` (decompiler signature, tier high; ledger decompiler evidence, name high; id 26565, rva 0x423e20).
-/// `undefined4 GetSpeechDelay(void)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn get_speech_delay() -> u32 { unsafe { function!(26565, () -> u32)() } }
 /// `GetSquaredDistanceTo` (decompiler signature, tier high; ledger decompiler evidence, name high; id 19824, rva 0x2f41e0).
 /// `float GetSquaredDistanceTo(longlong * param_1, longlong * param_2, char param_3, char param_4)`
 ///
@@ -50245,20 +49932,6 @@ pub unsafe fn is_bit3_of_field0x_b0_set(param_1: i64) -> u8 { unsafe { function!
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn is_bit3_of_field136_set(param_1: i64) -> u8 { unsafe { function!(39164, (i64) -> u8)(param_1) } }
-/// `IsBit3OfField16CSet` (decompiler signature, tier high; ledger decompiler evidence, name high; id 67715, rva 0xccd130).
-/// `uint IsBit3OfField16CSet(longlong param_1)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn is_bit3_of_field16_c_set(param_1: i64) -> u32 { unsafe { function!(67715, (i64) -> u32)(param_1) } }
-/// `IsBit3OfField204Clear` (decompiler signature, tier high; ledger decompiler evidence, name high; id 40729, rva 0x75e150).
-/// `uint IsBit3OfField204Clear(longlong param_1)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn is_bit3_of_field204_clear(param_1: i64) -> u32 { unsafe { function!(40729, (i64) -> u32)(param_1) } }
 /// `IsBit3OfField438Set` (decompiler signature, tier high; ledger decompiler evidence, name high; id 14008, rva 0x1ce5b0).
 /// `byte IsBit3OfField438Set(longlong param_1)`
 ///
@@ -50966,13 +50639,6 @@ pub unsafe fn is_field8_equal4(param_1: i64) -> u8 { unsafe { function!(443182, 
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn is_field8_f4_non_zero(param_1: i64) -> u8 { unsafe { function!(40413, (i64) -> u8)(param_1) } }
-/// `IsField8Field210Set` (decompiler signature, tier high; ledger decompiler evidence, name high; id 39792, rva 0x71fe00).
-/// `longlong IsField8Field210Set(longlong param_1)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn is_field8_field210_set(param_1: i64) -> i64 { unsafe { function!(39792, (i64) -> i64)(param_1) } }
 /// `IsFieldC8MaskE000000Set` (decompiler signature, tier high; ledger decompiler evidence, name high; id 37484, rva 0x687a20).
 /// `bool IsFieldC8MaskE000000Set(longlong param_1)`
 ///
@@ -52583,13 +52249,6 @@ pub unsafe fn nop_116() -> u64 { unsafe { function!(33101, () -> u64)() } }
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn nop_117() -> u64 { unsafe { function!(33304, () -> u64)() } }
-/// `Nop_118` (decompiler signature, tier high; ledger decompiler evidence, name high; id 442449, rva 0x607f30).
-/// `undefined Nop_118(void)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn nop_118() -> u64 { unsafe { function!(442449, () -> u64)() } }
 /// `Nop_119` (decompiler signature, tier high; ledger decompiler evidence, name high; id 35516, rva 0x613d50).
 /// `undefined Nop_119(void)`
 ///
@@ -53556,13 +53215,6 @@ pub unsafe fn nop_56() -> u64 { unsafe { function!(15829, () -> u64)() } }
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn nop_57() -> u64 { unsafe { function!(90639, () -> u64)() } }
-/// `Nop_58` (decompiler signature, tier high; ledger decompiler evidence, name high; id 56852, rva 0xa66fe0).
-/// `undefined Nop_58(void)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn nop_58() -> u64 { unsafe { function!(56852, () -> u64)() } }
 /// `Nop_59` (decompiler signature, tier high; ledger decompiler evidence, name high; id 81995, rva 0x115e4d0).
 /// `undefined Nop_59(void)`
 ///
@@ -58582,13 +58234,6 @@ pub unsafe fn return6() -> u64 { unsafe { function!(77459, () -> u64)() } }
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn return_argument(param_1: u64) -> u64 { unsafe { function!(70053, (u64) -> u64)(param_1) } }
-/// `ReturnArgument_2` (decompiler signature, tier high; ledger decompiler evidence, name high; id 20685, rva 0x3182f0).
-/// `undefined8 ReturnArgument_2(undefined8 param_1)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn return_argument_2(param_1: u64) -> u64 { unsafe { function!(20685, (u64) -> u64)(param_1) } }
 /// `ReturnArgument_3` (decompiler signature, tier high; ledger decompiler evidence, name high; id 57229, rva 0xaa77c0).
 /// `undefined8 ReturnArgument_3(undefined8 param_1)`
 ///
@@ -60710,13 +60355,6 @@ pub unsafe fn set_bit4_of_field10(param_1: i64, param_2: c_char) -> u64 { unsafe
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn set_bit4_of_field154_if_field257_is16(param_1: i64) -> u64 { unsafe { function!(90138, (i64) -> u64)(param_1) } }
-/// `SetBit4OfField1DC` (decompiler signature, tier high; ledger decompiler evidence, name high; id 26227, rva 0x411940).
-/// `undefined SetBit4OfField1DC(longlong param_1, char param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn set_bit4_of_field1_dc(param_1: i64, param_2: c_char) -> u64 { unsafe { function!(26227, (i64, c_char) -> u64)(param_1, param_2) } }
 /// `SetBit5OfField154` (decompiler signature, tier high; ledger decompiler evidence, name high; id 90134, rva 0x11a7740).
 /// `undefined SetBit5OfField154(longlong param_1)`
 ///
@@ -60899,13 +60537,6 @@ pub unsafe fn set_byte_field_da5(param_1: i64, param_2: u8) -> u64 { unsafe { fu
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn set_check_for_missing_content_on_startup(param_1: u8) -> u64 { unsafe { function!(442574, (u8) -> u64)(param_1) } }
-/// `SetClampedAngleField48` (decompiler signature, tier high; ledger decompiler evidence, name high; id 44174, rva 0x7fe3c0).
-/// `undefined SetClampedAngleField48(longlong * param_1, float param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn set_clamped_angle_field48(param_1: *mut i64, param_2: f32) -> u64 { unsafe { function!(44174, (*mut i64, f32) -> u64)(param_1, param_2) } }
 /// `SetCurrentThreadBitInMaskFromFlag` (decompiler signature, tier high; ledger decompiler evidence, name high; id 39037, rva 0x6e4c00).
 /// `undefined SetCurrentThreadBitInMaskFromFlag(char * param_1)`
 ///
@@ -61592,13 +61223,6 @@ pub unsafe fn set_field68_from_value_as_number(param_1: i64, param_2: i64, param
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn set_field68_from_value_as_string(param_1: i64, param_2: i64, param_3: *mut c_char) -> u64 { unsafe { function!(86129, (i64, i64, *mut c_char) -> u64)(param_1, param_2, param_3) } }
-/// `SetField68OfFieldB8` (decompiler signature, tier high; ledger decompiler evidence, name high; id 50794, rva 0x8f8eb0).
-/// `undefined SetField68OfFieldB8(longlong param_1, undefined4 param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn set_field68_of_field_b8(param_1: i64, param_2: u32) -> u64 { unsafe { function!(50794, (i64, u32) -> u64)(param_1, param_2) } }
 /// `SetField6C` (decompiler signature, tier high; ledger decompiler evidence, name high; id 35545, rva 0x6149c0).
 /// `undefined SetField6C(longlong param_1, undefined4 param_2)`
 ///
@@ -62222,13 +61846,6 @@ pub unsafe fn set_g_fx_value30_and_field60(param_1: i64, param_2: *mut u64, para
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn set_global403755() -> u64 { unsafe { function!(36857, () -> u64)() } }
-/// `SetGlobal410346` (decompiler signature, tier high; ledger decompiler evidence, name high; id 69264, rva 0xeb7490).
-/// `undefined SetGlobal410346(void)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn set_global410346() -> u64 { unsafe { function!(69264, () -> u64)() } }
 /// `SetGlobal564441` (decompiler signature, tier high; ledger decompiler evidence, name high; id 524264, rva 0x1094480).
 /// `undefined SetGlobal564441(undefined4 param_1)`
 ///
@@ -63286,20 +62903,6 @@ pub unsafe fn take_value_by_key_from_array_b8(param_1: i64, param_2: *mut u64, p
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn tell_stdio_file(param_1: i64) -> i64 { unsafe { function!(90099, (i64) -> i64)(param_1) } }
-/// `TestAndClearByte10OfField78` (decompiler signature, tier high; ledger decompiler evidence, name high; id 52210, rva 0x95f740).
-/// `longlong TestAndClearByte10OfField78(longlong param_1)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn test_and_clear_byte10_of_field78(param_1: i64) -> i64 { unsafe { function!(52210, (i64) -> i64)(param_1) } }
-/// `TestAndClearByte11OfField78` (decompiler signature, tier high; ledger decompiler evidence, name high; id 52211, rva 0x95f760).
-/// `longlong TestAndClearByte11OfField78(longlong param_1)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn test_and_clear_byte11_of_field78(param_1: i64) -> i64 { unsafe { function!(52211, (i64) -> i64)(param_1) } }
 /// `TestBitInByteArray` (decompiler signature, tier high; ledger decompiler evidence, name high; id 32567, rva 0x53e9e0).
 /// `undefined4 TestBitInByteArray(longlong param_1, uint param_2)`
 ///

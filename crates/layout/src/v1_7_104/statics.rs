@@ -4591,7 +4591,7 @@ pub fn game_setting_f_motion_blur() -> *mut c_void { address!(373398) as *mut c_
 /// `GameSetting_fMountedMaxLookingDown` at 0x20a0458, id 371025 (setting, high)
 #[inline]
 pub fn game_setting_f_mounted_max_looking_down() -> *mut c_void { address!(371025) as *mut c_void }
-/// `GameSetting_fMountedMaxLookingDown_value` at 0x20a0460, id 371026 (semantic, high); 40; read only inside the three clamps after the mount-type 'ja' (0x67cee6, 0x692f2a, 0x6930d1) (high, camera pass), type `float`
+/// `GameSetting_fMountedMaxLookingDown_value` at 0x20a0460, id 371026 (runtime, high); 30 (run-cam2a); read only inside the three clamps after the mount-type 'ja' (0x67cee6, 0x692f2a, 0x6930d1) (high, camera pass), type `float`
 #[inline]
 pub fn game_setting_f_mounted_max_looking_down_value() -> *mut f32 { address!(371026) as *mut f32 }
 /// `GameSetting_fMoveCharRunBase` at 0x20aa4a0, id 375604 (setting, high)
@@ -10630,7 +10630,7 @@ pub fn ini_pref_setting_b_ind_enable_display() -> *mut c_void { address!(391552)
 /// `INIPrefSetting_bInvertYValues_Controls` at 0x20b83c8, id 381965 (setting, high)
 #[inline]
 pub fn ini_pref_setting_b_invert_y_values_controls() -> *mut c_void { address!(381965) as *mut c_void }
-/// `INIPrefSetting_bInvertYValues_Controls_value` at 0x20b83d0, id 381966 (runtime, medium); negates look.y in ApplyLookInputSensitivity (0x7aebad) and in the map look handler path; written by the options menu (medium, camera pass), type `u8`
+/// `INIPrefSetting_bInvertYValues_Controls_value` at 0x20b83d0, id 381966 (runtime, high); negates look.y in ApplyLookInputSensitivity (0x7aebad) and in the map look handler path; written by the options menu (high, camera pass), type `u8`
 #[inline]
 pub fn ini_pref_setting_b_invert_y_values_controls_value() -> *mut u8 { address!(381966) as *mut u8 }
 /// `INIPrefSetting_bLensFlare_ImageSpace` at 0x20d6eb0, id 391127 (setting, high)
@@ -11593,9 +11593,9 @@ pub fn ini_setting_b_load_background_face_gen_background_load() -> *mut c_void {
 /// `INISetting_bLoadCollatedAnimTextData_Animation` at 0x20b3bb8, id 380126 (setting, high)
 #[inline]
 pub fn ini_setting_b_load_collated_anim_text_data_animation() -> *mut c_void { address!(380126) as *mut c_void }
-/// `INISetting_bLoadDebugInformation_Papyrus` at 0x20bcae0, id 383742 (setting, high)
+/// `INISetting_bLoadDebugInformation_Papyrus` at 0x20bcae0, id 383742 (runtime, high); bLoadDebugInformation:Papyrus; bool value at +8, default 0 in the image; read once by SkyrimVM::ctor into CompiledScriptLoader+0x32 bit 0 (high, vmstack pass), type `class:Setting`
 #[inline]
-pub fn ini_setting_b_load_debug_information_papyrus() -> *mut c_void { address!(383742) as *mut c_void }
+pub fn ini_setting_b_load_debug_information_papyrus() -> &'static classes::Setting { unsafe { &*(address!(383742) as *const classes::Setting) } }
 /// `INISetting_bLoadEsmInMemory_Archive` at 0x2077fe0, id 359064 (setting, high)
 #[inline]
 pub fn ini_setting_b_load_esm_in_memory_archive() -> *mut c_void { address!(359064) as *mut c_void }
@@ -15823,6 +15823,9 @@ pub fn ini_setting_u_iblf_lateral_repeat_display() -> *mut c_void { address!(391
 /// `INISetting_uIBLFLensesCount_Display` at 0x20d84f0, id 391365 (setting, high)
 #[inline]
 pub fn ini_setting_u_iblf_lenses_count_display() -> *mut c_void { address!(391365) as *mut c_void }
+/// `INISetting_uInteriorCellBuffer_General_value` at 0x2077750, id 358814 (semantic, high); value of uInterior Cell Buffer:General (setting object 0x2077748) (high, camera pass), type `u32`
+#[inline]
+pub fn ini_setting_u_interior_cell_buffer_general_value() -> *mut u32 { address!(358814) as *mut u32 }
 /// `INISetting_uLMaxCellDemotePerFrame_General` at 0x207b638, id 360377 (setting, high)
 #[inline]
 pub fn ini_setting_u_l_max_cell_demote_per_frame_general() -> *mut c_void { address!(360377) as *mut c_void }
@@ -16093,12 +16096,18 @@ pub fn g_active_register_fn() -> *mut u64 { address!(414714) as *mut u64 }
 /// `g_ActiveRenderFn` at 0x33d4b18, id 414715 (semantic, high); render function of the active mode (high, frame pass), type `undefined8`
 #[inline]
 pub fn g_active_render_fn() -> *mut u64 { address!(414715) as *mut u64 }
-/// `g_ActiveShadowLightCount` at 0x3436300, id 415035 (runtime, medium); lights given maps this frame including the sun (medium, graphics pass), type `u32`
+/// `g_ActiveShadowLightCount` at 0x3436300, id 415035 (runtime, high); lights given maps this frame including the sun (high, graphics pass), type `u32`
 #[inline]
 pub fn g_active_shadow_light_count() -> *mut u32 { address!(415035) as *mut u32 }
 /// `g_ActorValueStorageLock` at 0x3243f88, id 404014 (semantic, high); lock of every actor's ActorValueStorage (high, actors pass), type `class:BSReadWriteLock`
 #[inline]
 pub fn g_actor_value_storage_lock() -> &'static classes::BSReadWriteLock { unsafe { &*(address!(404014) as *const classes::BSReadWriteLock) } }
+/// `g_AnimEvent_IdleCartPrisonerCExit` at 0x3243f60, id 404009 (semantic, high); "IdleCartPrisonerCExit"; turns it off (high, camera pass), type `class:BSFixedString`
+#[inline]
+pub fn g_anim_event_idle_cart_prisoner_c_exit() -> &'static classes::BSFixedString { unsafe { &*(address!(404009) as *const classes::BSFixedString) } }
+/// `g_AnimEvent_IdleCartPrisonerCIdle` at 0x3243f58, id 404008 (semantic, high); "IdleCartPrisonerCIdle"; turns FirstPersonState.useAltEuler on (high, camera pass), type `class:BSFixedString`
+#[inline]
+pub fn g_anim_event_idle_cart_prisoner_c_idle() -> &'static classes::BSFixedString { unsafe { &*(address!(404008) as *const classes::BSFixedString) } }
 /// `g_AnimationClipDataSingleton_ptr` at 0x31e09f0, id 401553 (xref_inference, medium)
 #[inline]
 pub fn g_animation_clip_data_singleton_ptr() -> *mut c_void { address!(401553) as *mut c_void }
@@ -17482,12 +17491,45 @@ pub fn g_c_callback_impl_1() -> *mut c_void { address!(505562) as *mut c_void }
 /// `g_CCallbackImpl_8` at 0x3699448, id 415501 (layout_inference, medium)
 #[inline]
 pub fn g_c_callback_impl_8() -> *mut c_void { address!(415501) as *mut c_void }
-/// `g_CameraFOVOffset` at 0x3436028, id 414942 (semantic, low); FOV offset added by ApplyWorldFOV, written from the state's cameraAnim +0x74 (low, frame pass), type `float`
+/// `g_CameraFOVOffset` at 0x3436028, id 414942 (semantic, high); FOV offset added to the world FOV (ApplyWorldFOV) and the hands FOV (0x1537460) (high, frame pass), type `float`
 #[inline]
 pub fn g_camera_fov_offset() -> *mut f32 { address!(414942) as *mut f32 }
 /// `g_CameraInsideLightMask` at 0x343630c, id 415038 (semantic, high); frame copy of ShadowSceneNode +0x248 (high, graphics pass), type `u32`
 #[inline]
 pub fn g_camera_inside_light_mask() -> *mut u32 { address!(415038) as *mut u32 }
+/// `g_CameraPathController` at 0x32307e0, id 403535 (semantic, high); pointer to `NiTimeController`: first time controller of the camera path model; its +0x20 ends the playback; first time controller of the camera path model; its +0x20 ends the playback (high, camera pass), type `ptr:NiTimeController`
+#[inline]
+pub fn g_camera_path_controller() -> Option<&'static classes::NiTimeController> { unsafe { *(address!(403535) as *const Option<&'static classes::NiTimeController>) } }
+/// `g_CameraPathFrameIndex` at 0x32307c0, id 403530 (semantic, high); recorded frame counter (file name %06d) (high, camera pass), type `u32`
+#[inline]
+pub fn g_camera_path_frame_index() -> *mut u32 { address!(403530) as *mut u32 }
+/// `g_CameraPathModel` at 0x3230780, id 403522 (semantic, high); pointer to `NiAVObject`: the [CameraPath] sNif model being played (refcounted); the [CameraPath] sNif model being played (refcounted) (high, camera pass), type `ptr:NiAVObject`
+#[inline]
+pub fn g_camera_path_model() -> Option<&'static classes::NiAVObject> { unsafe { *(address!(403522) as *const Option<&'static classes::NiAVObject>) } }
+/// `g_CameraPathOffsetRef` at 0x32307f0, id 403538 (semantic, high); pointer to `TESObjectREFR`: reference named by sOffsetID:CameraPath; the path is played in its local frame; reference named by sOffsetID:CameraPath; the path is played in its local frame (high, camera pass), type `ptr:TESObjectREFR`
+#[inline]
+pub fn g_camera_path_offset_ref() -> Option<&'static classes::TESObjectREFR> { unsafe { *(address!(403538) as *const Option<&'static classes::TESObjectREFR>) } }
+/// `g_CameraPathRecording` at 0x3230739, id 403512 (semantic, high); record mode: one screenshot per frame at a fixed 1/iFPS step (high, camera pass), type `u8`
+#[inline]
+pub fn g_camera_path_recording() -> *mut u8 { address!(403512) as *mut u8 }
+/// `g_CameraPathRegistry` at 0x31df558, id 401131 (semantic, high); CameraPathRegistry*: +0x00 NiTPrimitiveArray<TESForm*> of top-level paths (data +8, size +0x14), +0x20 pending array (data +0x28, u16 size +0x32, u16 count +0x34) (high, camera pass), type `pointer`
+#[inline]
+pub fn g_camera_path_registry() -> *mut *mut c_void { address!(401131) as *mut *mut c_void }
+/// `g_CameraPathTime` at 0x32307e8, id 403536 (semantic, high); playback time passed to the model's NiUpdateData (high, camera pass), type `float`
+#[inline]
+pub fn g_camera_path_time() -> *mut f32 { address!(403536) as *mut f32 }
+/// `g_CameraShakeModel` at 0x3204870, id 402625 (semantic, medium); 0x18-byte holder: +0x8 the loaded mesh data of sCameraShakeFilename (0x3204878), +0x10 its root object (0x3204880, refcounted, named after the path) (medium, camera pass), type `undefined1`
+#[inline]
+pub fn g_camera_shake_model() -> *mut u8 { address!(402625) as *mut u8 }
+/// `g_CameraShakeModel_ptr` at 0x3204868, id 402624 (semantic, high); points at the camera shake model holder 0x3204870 once CameraShake::LoadModel 0x5582f0 ran; null after UnloadModel 0x558420 (high, camera pass), type `pointer`
+#[inline]
+pub fn g_camera_shake_model_ptr() -> *mut *mut c_void { address!(402624) as *mut *mut c_void }
+/// `g_CameraShakeStrength` at 0x3204860, id 402622 (runtime, high); current shake strength 0..1 (high, camera pass), type `float`
+#[inline]
+pub fn g_camera_shake_strength() -> *mut f32 { address!(402622) as *mut f32 }
+/// `g_CameraShakeTimeLeft` at 0x3204864, id 402623 (runtime, high); seconds of shake left (high, camera pass), type `float`
+#[inline]
+pub fn g_camera_shake_time_left() -> *mut f32 { address!(402623) as *mut f32 }
 /// `g_CategoryVolumeSlots` at 0x31df750, id 401172 (semantic, high); saved volumes of the menu categories: form id at +8, volume float at +0x20 (high, audio pass), type `CategoryVolumeSlot[8] (0x50 each)`
 #[inline]
 pub fn g_category_volume_slots() -> *mut c_void { address!(401172) as *mut c_void }
@@ -18010,6 +18052,9 @@ pub fn g_console_selected_ref() -> *mut c_void { address!(504099) as *mut c_void
 /// `g_ControlMap` at 0x3230b50, id 403592 (semantic, high); static storage of the control map (high, input pass), type `class:EventSourceHolder_User`
 #[inline]
 pub fn g_control_map() -> &'static classes::EventSourceHolder_User { unsafe { &*(address!(403592) as *const classes::EventSourceHolder_User) } }
+/// `g_Crc32Table` at 0x1a21be0, id 236639 (runtime, high); reflected CRC-32 table (polynomial 0xEDB88320) used by Crc32OfDword 0xce2570, the stack maps' hash (high, vmstack pass), type `u32[256]`
+#[inline]
+pub fn g_crc32_table() -> *mut c_void { address!(236639) as *mut c_void }
 /// `g_CreateRenderTargetsCallback` at 0x3336380, id 411476 (semantic, high); = 0x153b680, called after device creation and after every resize (high, frame pass), type `undefined8`
 #[inline]
 pub fn g_create_render_targets_callback() -> *mut u64 { address!(411476) as *mut u64 }
@@ -18019,13 +18064,19 @@ pub fn g_crosshair_pick_data() -> &'static classes::CrosshairPickData { unsafe {
 /// `g_CullRootLists` at 0x3436270, id 415017 (semantic, high); BSTArray of 0x18-byte root lists walked by the main and the sun's cullers (high, graphics pass), type `pointer`
 #[inline]
 pub fn g_cull_root_lists() -> *mut *mut c_void { address!(415017) as *mut *mut c_void }
-/// `g_CurrentCameraState` at 0x20cff80, id 388915 (semantic, medium); the bound camera's matrices (copied from a CameraMatrixEntry), viewport, depth range +0x240/+0x244 (0x20d01c0/0x20d01c4), eye position 0x20cff5c.. (medium, graphics pass), type `undefined1`
+/// `g_CurrentCameraEyePosition` at 0x20cff5c, id 388909 (semantic, high); eye position of the bound camera entry (entry+0x260) (high, camera pass), type `undefined1`
+#[inline]
+pub fn g_current_camera_eye_position() -> *mut u8 { address!(388909) as *mut u8 }
+/// `g_CurrentCameraEyePositionOlder` at 0x20cff68, id 388912 (semantic, medium); entry+0x278: the older of the two previous eye positions (medium, camera pass), type `undefined1`
+#[inline]
+pub fn g_current_camera_eye_position_older() -> *mut u8 { address!(388912) as *mut u8 }
+/// `g_CurrentCameraState` at 0x20cff80, id 388915 (runtime, medium); the bound camera's matrices (copied from a CameraMatrixEntry), viewport, depth range +0x240/+0x244 (0x20d01c0/0x20d01c4), eye position 0x20cff5c.. (medium, graphics pass), type `undefined1`
 #[inline]
 pub fn g_current_camera_state() -> *mut u8 { address!(388915) as *mut u8 }
 /// `g_CurrentMaterial` at 0x36939e0, id 415274 (semantic, high); pointer to `BSShaderMaterial`: material last handed to SetupMaterial; material last handed to SetupMaterial (high, frame pass), type `ptr:BSShaderMaterial`
 #[inline]
 pub fn g_current_material() -> Option<&'static classes::BSShaderMaterial> { unsafe { *(address!(415274) as *const Option<&'static classes::BSShaderMaterial>) } }
-/// `g_CurrentRenderCamera` at 0x33d3d28, id 414580 (semantic, high); pointer to `NiCamera`: camera of the draw in progress; every draw-time near/far constant reads +0x160/+0x164 through it; camera of the draw in progress; every draw-time near/far constant reads +0x160/+0x164 through it (high, graphics pass), type `ptr:NiCamera`
+/// `g_CurrentRenderCamera` at 0x33d3d28, id 414580 (runtime, high); pointer to `NiCamera`: camera of the draw in progress; every draw-time near/far constant reads +0x160/+0x164 through it; camera of the draw in progress; every draw-time near/far constant reads +0x160/+0x164 through it (high, graphics pass), type `ptr:NiCamera`
 #[inline]
 pub fn g_current_render_camera() -> Option<&'static classes::NiCamera> { unsafe { *(address!(414580) as *const Option<&'static classes::NiCamera>) } }
 /// `g_CurrentRenderWindow` at 0x3330198, id 411349 (runtime, high); pointer to `RenderWindow`: window record being drawn and presented (hwnd +0, swap chain +0x18, back buffer RTV +0x30, SRV +0x38); window record being drawn and presented (hwnd +0, swap chain +0x18, back buffer RTV +0x30, SRV +0x38) (high, frame pass), type `ptr:RenderWindow`
@@ -18052,6 +18103,12 @@ pub fn g_dxgi_output() -> *mut u64 { address!(411386) as *mut u64 }
 /// `g_DebugText_ptr` at 0x333c570, id 412090 (xref_inference, medium)
 #[inline]
 pub fn g_debug_text_ptr() -> *mut c_void { address!(412090) as *mut c_void }
+/// `g_DefaultCameraPath` at 0x31df550, id 401130 (semantic, high); pointer to `BGSCameraPath`: form 0x16 "DefaultCameraPath"; form 0x16 "DefaultCameraPath" (high, camera pass), type `ptr:BGSCameraPath`
+#[inline]
+pub fn g_default_camera_path() -> Option<&'static classes::BGSCameraPath> { unsafe { *(address!(401130) as *const Option<&'static classes::BGSCameraPath>) } }
+/// `g_DefaultCameraStateRotation` at 0x331d790, id 410524 (semantic, medium); NiQuaternion returned by TESCameraState::GetRotation and seeded into TransitionState rotations; zero in the file (runtime-initialised) (medium, camera pass), type `undefined1`
+#[inline]
+pub fn g_default_camera_state_rotation() -> *mut u8 { address!(410524) as *mut u8 }
 /// `g_DefaultEffectMaterial` at 0x34866e0, id 415165 (xref_inference, medium); pointer to `BSEffectShaderMaterial`: default effect material; default effect material (medium, frame pass), type `ptr:BSEffectShaderMaterial`
 #[inline]
 pub fn g_default_effect_material() -> Option<&'static classes::BSEffectShaderMaterial> { unsafe { *(address!(415165) as *const Option<&'static classes::BSEffectShaderMaterial>) } }
@@ -18067,6 +18124,9 @@ pub fn g_default_max_pitch_down() -> *mut f32 { address!(189817) as *mut f32 }
 /// `g_DefaultMaxPitchUp` at 0x181ab90, id 189822 (semantic, high); -pi/2 (high, camera pass), type `float`
 #[inline]
 pub fn g_default_max_pitch_up() -> *mut f32 { address!(189822) as *mut f32 }
+/// `g_DefaultObjectNameTable` at 0x207bf40, id 360630 (semantic, high); the default object names: 0x174 records of 0x18 bytes {const char* name; u32 formType; char signature[4]; u64}, indexed like GetDefaultObjectByIndex (manager +0x20 + i*8, present flag +0xbc0 + i) (high, camera pass), type `undefined1`
+#[inline]
+pub fn g_default_object_name_table() -> *mut u8 { address!(360630) as *mut u8 }
 /// `g_DefaultShaderMaterial` at 0x3698be8, id 415311 (xref_inference, medium); pointer to `BSShaderMaterial`: default base material; default base material (medium, frame pass), type `ptr:BSShaderMaterial`
 #[inline]
 pub fn g_default_shader_material() -> Option<&'static classes::BSShaderMaterial> { unsafe { *(address!(415311) as *const Option<&'static classes::BSShaderMaterial>) } }
@@ -18085,6 +18145,9 @@ pub fn g_depth_shift_near() -> *mut f32 { address!(414949) as *mut f32 }
 /// `g_DepthShiftSavedDepthRange` at 0x34362b8, id 415025 (semantic, high); viewport MinDepth/MaxDepth saved by BeginDepthShift (+4 MaxDepth) (high, graphics pass), type `float`
 #[inline]
 pub fn g_depth_shift_saved_depth_range() -> *mut f32 { address!(415025) as *mut f32 }
+/// `g_DialogueTurnStartYaw` at 0x20b7624, id 381588 (semantic, high); dialogue turn blend: start yaw (PlayerCamera.yaw); +4 (0x20b7628) start pitch; 0x20b762c / 0x20b7630 target yaw / pitch; 0x20b7634 duration ms (fDialogueRotationSecs * 1000); 0x20b7638 start time (g_FrameTimeMs); byte 0x20b763c done (high, camera pass), type `float`
+#[inline]
+pub fn g_dialogue_turn_start_yaw() -> *mut f32 { address!(381588) as *mut f32 }
 /// `g_DirectInput_ptr` at 0x32309d0, id 403554 (semantic, high); wrapper whose +8 is the IDirectInput8* (high, input pass), type `undefined8`
 #[inline]
 pub fn g_direct_input_ptr() -> *mut u64 { address!(403554) as *mut u64 }
@@ -18097,7 +18160,7 @@ pub fn g_distant_tree_shader_instance() -> Option<&'static classes::BSDistantTre
 /// `g_DoorObstacleAdapter` at 0x20b6368, id 381087 (layout_inference, medium)
 #[inline]
 pub fn g_door_obstacle_adapter() -> *mut c_void { address!(381087) as *mut c_void }
-/// `g_DragonMaxTurnAngle` at 0x32048c8, id 402637 (semantic, low); dragon free-rotation limit (low, camera pass), type `float`
+/// `g_DragonMaxTurnAngle` at 0x32048c8, id 402637 (semantic, high); fDragonMaxAngleBeforeTurn:Camera in radians (pi/2 by default) (high, camera pass), type `float`
 #[inline]
 pub fn g_dragon_max_turn_angle() -> *mut f32 { address!(402637) as *mut f32 }
 /// `g_DynamicHeightRatio` at 0x33364b8, id 411506 (runtime, high); FrameState+0x118 (high, graphics pass), type `float`
@@ -18160,7 +18223,7 @@ pub fn g_fade_nodes_enabled() -> *mut u8 { address!(390866) as *mut u8 }
 /// `g_FirstPersonAccumulator` at 0x3436240, id 415011 (runtime, high); pointer to `BSShaderAccumulator`: renderMode 0x16: the first-person colour draw (RenderFirstPerson, sub8, sub10); renderMode 0x16: the first-person colour draw (RenderFirstPerson, sub8, sub10) (high, frame pass), type `ptr:BSShaderAccumulator`
 #[inline]
 pub fn g_first_person_accumulator() -> Option<&'static classes::BSShaderAccumulator> { unsafe { *(address!(415011) as *const Option<&'static classes::BSShaderAccumulator>) } }
-/// `g_FirstPersonCamera` at 0x3436220, id 415007 (xref_inference, medium); pointer to `NiCamera`: camera of the first-person draws; camera of the first-person draws (medium, frame pass), type `ptr:NiCamera`
+/// `g_FirstPersonCamera` at 0x3436220, id 415007 (semantic, high); pointer to `NiCamera`: the hands camera; its projection is set twice per first-person frame (0x1537566, 0x153979d); the hands camera; its projection is set twice per first-person frame (0x1537566, 0x153979d) (high, frame pass), type `ptr:NiCamera`
 #[inline]
 pub fn g_first_person_camera() -> Option<&'static classes::NiCamera> { unsafe { *(address!(415007) as *const Option<&'static classes::NiCamera>) } }
 /// `g_FirstPersonPitchGraphVar` at 0x3255ab8, id 405789 (semantic, high); graph float variable FirstPersonState sends laggedPitchOffset to (high, camera pass), type `class:BSFixedString`
@@ -18172,7 +18235,7 @@ pub fn g_first_person_root_offset() -> *mut u8 { address!(415042) as *mut u8 }
 /// `g_FirstPersonViewParams` at 0x34362c0, id 415027 (runtime, high); 0x58-byte block returned by 0x1537410: +0..+8 first-person position offset, +0xc (0x34362cc) the hands FOV used by 0x1537460 and 0x1538fa0 (high, camera pass), type `undefined1`
 #[inline]
 pub fn g_first_person_view_params() -> *mut u8 { address!(415027) as *mut u8 }
-/// `g_FocusShadowNodeCount` at 0x33d3e90, id 414625 (runtime, medium); number of focus shadow nodes this frame (0 in vanilla first person without nearby actors) (medium, graphics pass), type `u32`
+/// `g_FocusShadowNodeCount` at 0x33d3e90, id 414625 (runtime, high); number of focus shadow nodes this frame (0 in vanilla first person without nearby actors) (high, graphics pass), type `u32`
 #[inline]
 pub fn g_focus_shadow_node_count() -> *mut u32 { address!(414625) as *mut u32 }
 /// `g_FocusShadowNodes` at 0x33d3e80, id 414623 (semantic, high); correction of pass 6's g_StencilMaskNodes: the focus shadow list, 16-byte {float sortKey, NiNode* node}; the depth pre-pass also stencils these nodes (high, frame pass), type `class:BSTArray`
@@ -18220,9 +18283,12 @@ pub fn g_frame_time_ms() -> *mut u32 { address!(410201) as *mut u32 }
 /// `g_FrameTimer` at 0x32755f0, id 410196 (semantic, high); the frame timer: +0x18 delta, +0x1c real delta, +0x20 elapsed ms (high, frame pass), type `undefined1`
 #[inline]
 pub fn g_frame_timer() -> *mut u8 { address!(410196) as *mut u8 }
-/// `g_FreeCameraEventNames` at 0x3255ac8, id 405792 (semantic, medium); five event names 0x3255ac8..0x3255ae8 the free camera handler accepts (medium, camera pass), type `class:BSFixedString`
+/// `g_FrameTimer_fixedStep` at 0x3275600, id 410198 (semantic, medium); g_FrameTimer+0x10: fixed frame step override; 1/iFPS while the camera path records, 0 otherwise (medium, camera pass), type `float`
 #[inline]
-pub fn g_free_camera_event_names() -> &'static classes::BSFixedString { unsafe { &*(address!(405792) as *const classes::BSFixedString) } }
+pub fn g_frame_timer_fixed_step() -> *mut f32 { address!(410198) as *mut f32 }
+/// `g_FreeCameraEventNames` at 0x3255ac8, id 405792 (semantic, high); the free camera's five user-event names (BSFixedString each): CameraZUp 0x3255ac8, CameraZDown 0x3255ad0, WorldZUp 0x3255ad8, WorldZDown 0x3255ae0, LockToZPlane 0x3255ae8 (high, camera pass), type `undefined1`
+#[inline]
+pub fn g_free_camera_event_names() -> *mut u8 { address!(405792) as *mut u8 }
 /// `g_FreeShadowMapSlices` at 0x20d8ff8, id 391715 (semantic, high); bit mask of free slices of depth target 4 (focus and local shadow maps) (high, render pass), type `undefined4`
 #[inline]
 pub fn g_free_shadow_map_slices() -> *mut u32 { address!(391715) as *mut u32 }
@@ -18265,7 +18331,7 @@ pub fn g_havok_world_scale_inverse() -> *mut f32 { address!(187407) as *mut f32 
 /// `g_HelpMessageManager` at 0x3257c90, id 406161 (layout_inference, medium)
 #[inline]
 pub fn g_help_message_manager() -> *mut c_void { address!(406161) as *mut c_void }
-/// `g_HorseMaxTurnAngle` at 0x3255af0, id 405797 (semantic, low); horse free-rotation limit (radians, set at runtime) (low, camera pass), type `float`
+/// `g_HorseMaxTurnAngle` at 0x3255af0, id 405797 (runtime, high); fHorseMaxAngleBeforeTurn:Camera in radians (pi/2 by default) (high, camera pass), type `float`
 #[inline]
 pub fn g_horse_max_turn_angle() -> *mut f32 { address!(405797) as *mut f32 }
 /// `g_IBSTCreator_CombatObject` at 0x3254768, id 405148 (layout_inference, medium)
@@ -18373,6 +18439,9 @@ pub fn g_journal_input_mapping_remap_handler() -> *mut *mut c_void { address!(38
 /// `g_LastMessageBoxType` at 0x20bb3f8, id 383037 (semantic, medium); type of the last answered box (medium, ui pass), type `u32`
 #[inline]
 pub fn g_last_message_box_type() -> *mut u32 { address!(383037) as *mut u32 }
+/// `g_LastPlayerPosition` at 0x3244c90, id 404241 (semantic, high); player position cached by Main::UpdatePlayer each frame (the flying mount code reads it) (high, camera pass), type `undefined1`
+#[inline]
+pub fn g_last_player_position() -> *mut u8 { address!(404241) as *mut u8 }
 /// `g_LastSoundId` at 0x3273924, id 410106 (runtime, medium); sound id counter (new id = value+1) (medium, audio pass), type `undefined4`
 #[inline]
 pub fn g_last_sound_id() -> *mut u32 { address!(410106) as *mut u32 }
@@ -18388,6 +18457,12 @@ pub fn g_linked_sound_descriptor_i_ds() -> *mut c_void { address!(401175) as *mu
 /// `g_LipSynchAnimDB_LipAudioInterface` at 0x2079f38, id 359693 (layout_inference, medium)
 #[inline]
 pub fn g_lip_synch_anim_db_lip_audio_interface() -> *mut c_void { address!(359693) as *mut c_void }
+/// `g_LowHealthIMod` at 0x3244a98, id 404166 (xref_inference, medium); pointer to `TESImageSpaceModifier`: cached default object 0x84 applied while low on health; cached default object 0x84 applied while low on health (medium, camera pass), type `ptr:TESImageSpaceModifier`
+#[inline]
+pub fn g_low_health_i_mod() -> Option<&'static classes::TESImageSpaceModifier> { unsafe { *(address!(404166) as *const Option<&'static classes::TESImageSpaceModifier>) } }
+/// `g_LowHealthIModActive` at 0x3244a94, id 404161 (semantic, high); low-health image space modifier on (high, camera pass), type `u8`
+#[inline]
+pub fn g_low_health_i_mod_active() -> *mut u8 { address!(404161) as *mut u8 }
 /// `g_MagicFavorites` at 0x323a1d0, id 403620 (layout_inference, medium)
 #[inline]
 pub fn g_magic_favorites() -> *mut c_void { address!(403620) as *mut c_void }
@@ -18400,6 +18475,9 @@ pub fn g_main_culler_count() -> *mut u32 { address!(415016) as *mut u32 }
 /// `g_MainCullers` at 0x34362a0, id 415022 (semantic, high); BSTArray of the 6 main-camera BSGeometryListCullingProcess (high, graphics pass), type `pointer`
 #[inline]
 pub fn g_main_cullers() -> *mut *mut c_void { address!(415022) as *mut *mut c_void }
+/// `g_MainCullingCamera` at 0x32309c0, id 403552 (semantic, high); MainCullingCamera singleton handed to BSTreeManager (high, camera pass), type `pointer`
+#[inline]
+pub fn g_main_culling_camera() -> *mut *mut c_void { address!(403552) as *mut *mut c_void }
 /// `g_MainLoopSteps` at 0x20b4f00, id 380514 (semantic, medium); named main loop job steps ('Process lists' 0x20b4f00 .. 'Post reset' 0x20b51a0), 16-byte entries (medium, animation pass), type `struct {fn, const char* name}[]`
 #[inline]
 pub fn g_main_loop_steps() -> *mut c_void { address!(380514) as *mut c_void }
@@ -18514,6 +18592,9 @@ pub fn g_no_music() -> &'static classes::_anon_67C8711B__NoMusic { unsafe { &*(a
 /// `g_NodeUpdateTime` at 0x219e5f0, id 400333 (semantic, low); time the player's root updates pass in NiUpdateData (ID_400333) (low, camera pass), type `float`
 #[inline]
 pub fn g_node_update_time() -> *mut f32 { address!(400333) as *mut f32 }
+/// `g_NullMapCameraCallbacks` at 0x20bc368, id 383506 (semantic, high); the NullMapCameraCallbacks singleton used by MapCamera::ctor 0x996170 (high, camera pass), type `class:IMapCameraCallbacks`
+#[inline]
+pub fn g_null_map_camera_callbacks() -> &'static classes::IMapCameraCallbacks { unsafe { &*(address!(383506) as *const classes::IMapCameraCallbacks) } }
 /// `g_NullMovementState` at 0x3350a58, id 412263 (layout_inference, medium)
 #[inline]
 pub fn g_null_movement_state() -> *mut c_void { address!(412263) as *mut c_void }
@@ -18571,6 +18652,9 @@ pub fn g_player_ref_ptr() -> Option<&'static classes::PlayerCharacter> { unsafe 
 /// `g_PlayerSleepWaitMovementControllerAdapter` at 0x20b6340, id 381082 (layout_inference, medium)
 #[inline]
 pub fn g_player_sleep_wait_movement_controller_adapter() -> *mut c_void { address!(381082) as *mut c_void }
+/// `g_PrecipitationOcclusionMapEnabled` at 0x209e550, id 370126 (semantic, medium); precipitation occlusion map toggle (console tocm) (medium, camera pass), type `u8`
+#[inline]
+pub fn g_precipitation_occlusion_map_enabled() -> *mut u8 { address!(370126) as *mut u8 }
 /// `g_ProcessListMovementInterface` at 0x20b8040, id 381866 (layout_inference, medium)
 #[inline]
 pub fn g_process_list_movement_interface() -> *mut c_void { address!(381866) as *mut c_void }
@@ -18592,9 +18676,18 @@ pub fn g_refr_event_callbacks_concrete_event_callback_factory__anon_a5_eef477_st
 /// `g_REFREventCallbacks_ConcreteEventCallbackFactory__anon_A86607C4_ScenePhaseResultsCallBack` at 0x31e03a0, id 401386 (layout_inference, medium)
 #[inline]
 pub fn g_refr_event_callbacks_concrete_event_callback_factory__anon_a86607_c4_scene_phase_results_call_back() -> *mut c_void { address!(401386) as *mut c_void }
-/// `g_RaceMenuCameraInterp` at 0x20bb890, id 383171 (semantic, medium); eased camera interpolation the race menu camera follows; 0x20bb8d4 disables RaceSexCamera::Update's write (medium, camera pass), type `undefined1`
+/// `g_RaceMenuBodyCameraTarget` at 0x3258500, id 406392 (semantic, high); 7 floats: position + quaternion of the body view (high, camera pass), type `undefined1`
 #[inline]
-pub fn g_race_menu_camera_interp() -> *mut u8 { address!(383171) as *mut u8 }
+pub fn g_race_menu_body_camera_target() -> *mut u8 { address!(406392) as *mut u8 }
+/// `g_RaceMenuCameraEase` at 0x20bb890, id 383171 (semantic, medium); eased transform interpolation evaluated by RaceSexCamera::Update (ComputeEasedTransformInterpolation) (medium, camera pass), type `undefined1`
+#[inline]
+pub fn g_race_menu_camera_ease() -> *mut u8 { address!(383171) as *mut u8 }
+/// `g_RaceMenuCameraInterpDone` at 0x20bb8d4, id 383182 (semantic, high); g_RaceMenuCameraInterp+0x44: 1 once now > start + duration (high, camera pass), type `u8`
+#[inline]
+pub fn g_race_menu_camera_interp_done() -> *mut u8 { address!(383182) as *mut u8 }
+/// `g_RaceMenuFaceCameraTarget` at 0x3258520, id 406397 (semantic, high); 7 floats: position + quaternion of the face view (high, camera pass), type `undefined1`
+#[inline]
+pub fn g_race_menu_face_camera_target() -> *mut u8 { address!(406397) as *mut u8 }
 /// `g_RagdollFurnitureListener` at 0x209e320, id 370090 (layout_inference, medium)
 #[inline]
 pub fn g_ragdoll_furniture_listener() -> *mut c_void { address!(370090) as *mut c_void }
@@ -18667,6 +18760,9 @@ pub fn g_script_run_depth() -> *mut i32 { address!(401342) as *mut i32 }
 /// `g_ScriptedMusicState_ptr` at 0x31dfd80, id 401264 (semantic, high); pointer to the scripted music list (0x3211aa0) (high, audio pass), type `TESAudio::ScriptedMusicState*`
 #[inline]
 pub fn g_scripted_music_state_ptr() -> Option<&'static classes::TESAudio__ScriptedMusicState> { unsafe { *(address!(401264) as *const Option<&'static classes::TESAudio__ScriptedMusicState>) } }
+/// `g_SetPlayerControlsName` at 0x324fd88, id 404516 (semantic, high); "Set Player Controls": the movement-controller handler the player's slot 265 configures with fPlayerThirdPersonDampenTime (high, camera pass), type `class:BSFixedString`
+#[inline]
+pub fn g_set_player_controls_name() -> &'static classes::BSFixedString { unsafe { &*(address!(404516) as *const classes::BSFixedString) } }
 /// `g_SettingT_INIPrefSettingCollection` at 0x20b3068, id 379825 (layout_inference, medium)
 #[inline]
 pub fn g_setting_t_ini_pref_setting_collection() -> *mut c_void { address!(379825) as *mut c_void }
@@ -18760,7 +18856,7 @@ pub fn g_shadow_light_frame_index() -> *mut u32 { address!(415037) as *mut u32 }
 /// `g_ShadowMapCounter` at 0x3436304, id 415036 (semantic, high); running map counter of the frame (bit index of the shadow light mask) (high, graphics pass), type `u32`
 #[inline]
 pub fn g_shadow_map_counter() -> *mut u32 { address!(415036) as *mut u32 }
-/// `g_ShadowMapResolution` at 0x34869c0, id 415268 (runtime, medium); iShadowMapResolution cached at startup; sizes depth targets 2/3/4 (medium, graphics pass), type `u32`
+/// `g_ShadowMapResolution` at 0x34869c0, id 415268 (runtime, high); iShadowMapResolution cached at startup; sizes depth targets 2/3/4 (high, graphics pass), type `u32`
 #[inline]
 pub fn g_shadow_map_resolution() -> *mut u32 { address!(415268) as *mut u32 }
 /// `g_ShadowMaskPassEnabled` at 0x20d6811, id 390933 (semantic, medium); 1 in the image, no writer found; selects the per-light shadow-mask path in slot 43 and RenderShadowMasks (medium, graphics pass), type `u8`
@@ -18886,6 +18982,15 @@ pub fn g_static_avoid_node_manager_ptr() -> *mut c_void { address!(403562) as *m
 /// `g_StaticCuller` at 0x33d57a0, id 414842 (semantic, high); function-static culler of RunCullingWithStaticProcess (used by every map cull on the frame thread) (high, graphics pass), type `class:BSCullingProcess`
 #[inline]
 pub fn g_static_culler() -> &'static classes::BSCullingProcess { unsafe { &*(address!(414842) as *const classes::BSCullingProcess) } }
+/// `g_StatsMenuCameraIntroName` at 0x32589f8, id 406573 (semantic, high); "CameraIntro", the stats menu camera's intro sequence name (high, camera pass), type `class:BSFixedString`
+#[inline]
+pub fn g_stats_menu_camera_intro_name() -> &'static classes::BSFixedString { unsafe { &*(address!(406573) as *const classes::BSFixedString) } }
+/// `g_StatsMenuCameraOutroName` at 0x3258a00, id 406574 (semantic, high); "CameraOutro" (high, camera pass), type `class:BSFixedString`
+#[inline]
+pub fn g_stats_menu_camera_outro_name() -> &'static classes::BSFixedString { unsafe { &*(address!(406574) as *const classes::BSFixedString) } }
+/// `g_StatsMenuSkillViewTable` at 0x32586f0, id 406458 (semantic, medium); 18 x 0x28 records per skill (constants) (medium, camera pass), type `undefined1`
+#[inline]
+pub fn g_stats_menu_skill_view_table() -> *mut u8 { address!(406458) as *mut u8 }
 /// `g_SunShadowDisabled` at 0x3436311, id 415040 (semantic, medium); skips the sun in every shadow step when set; no writer found (always 0) (medium, graphics pass), type `u8`
 #[inline]
 pub fn g_sun_shadow_disabled() -> *mut u8 { address!(415040) as *mut u8 }
@@ -20185,7 +20290,7 @@ pub fn g_ui_strings_ptr() -> *mut *mut c_void { address!(400446) as *mut *mut c_
 /// `g_UseHDRTonemap` at 0x20d75e4, id 391301 (semantic, medium); non-zero (static 1): the chain's tonemap step runs effect 30 (HDR) instead of the copy 0x22 (medium, graphics pass), type `u8`
 #[inline]
 pub fn g_use_hdr_tonemap() -> *mut u8 { address!(391301) as *mut u8 }
-/// `g_UserEventNames` at 0x32048d0, id 402638 (semantic, low); table of user event BSFixedStrings the camera handlers compare (+0x70 togglePOV-like, +0x1e8/+0x1f0 zoom in/out-like) (low, frame pass), type `pointer`
+/// `g_UserEventNames` at 0x32048d0, id 402638 (semantic, high); BSFixedString table: +0x70 Toggle POV, +0xb0 Run, +0x1e8 Zoom In, +0x1f0 Zoom Out (data/usereventnames.json) (high, frame pass), type `pointer`
 #[inline]
 pub fn g_user_event_names() -> *mut *mut c_void { address!(402638) as *mut *mut c_void }
 /// `g_UserEventNamesStorage` at 0x32757a0, id 410238 (semantic, high); static storage the g_UserEventNames pointer (0x32048d0) points at (high, input pass), type `class:UserEventNames`
@@ -20197,6 +20302,60 @@ pub fn g_utility_shader() -> Option<&'static classes::BSUtilityShader> { unsafe 
 /// `g_UtilityShaderInstance` at 0x3698b60, id 415300 (semantic, high); pointer to `BSUtilityShader`: instance pointer; the shader of every depth/shadow pass (lighting and effect properties' slot 43) and of the shadow-mask passes; instance pointer; the shader of every depth/shadow pass (lighting and effect properties' slot 43) and of the shadow-mask passes (high, frame pass), type `ptr:BSUtilityShader`
 #[inline]
 pub fn g_utility_shader_instance() -> Option<&'static classes::BSUtilityShader> { unsafe { *(address!(415300) as *const Option<&'static classes::BSUtilityShader>) } }
+/// `g_VATSCameraDollyActive` at 0x31df560, id 401132 (semantic, high); dolly running (high, camera pass), type `u8`
+#[inline]
+pub fn g_vats_camera_dolly_active() -> *mut u8 { address!(401132) as *mut u8 }
+/// `g_VATSCameraDollyDelta` at 0x31df590, id 401143 (semantic, high); target position - dolly start (high, camera pass), type `float[3]`
+#[inline]
+pub fn g_vats_camera_dolly_delta() -> *mut c_void { address!(401143) as *mut c_void }
+/// `g_VATSCameraDollyDuration` at 0x31df56c, id 401136 (semantic, high); dolly time (high, camera pass), type `float`
+#[inline]
+pub fn g_vats_camera_dolly_duration() -> *mut f32 { address!(401136) as *mut f32 }
+/// `g_VATSCameraDollyFrom` at 0x31df580, id 401140 (semantic, high); camera position when the dolly started (PlayerCamera::GetPosition), zero = not yet captured (high, camera pass), type `float[3]`
+#[inline]
+pub fn g_vats_camera_dolly_from() -> *mut c_void { address!(401140) as *mut c_void }
+/// `g_VATSCameraDollyStartClock` at 0x31df564, id 401134 (semantic, high); playback clock when the dolly started (high, camera pass), type `float`
+#[inline]
+pub fn g_vats_camera_dolly_start_clock() -> *mut f32 { address!(401134) as *mut f32 }
+/// `g_VATSCameraDollyT` at 0x31df568, id 401135 (semantic, high); dolly progress 0..1 (high, camera pass), type `float`
+#[inline]
+pub fn g_vats_camera_dolly_t() -> *mut f32 { address!(401135) as *mut f32 }
+/// `g_VATSCameraInSoundPlayed` at 0x31df561, id 401133 (semantic, high); UIVATSCameraIn played, UIVATSCameraOut pending (high, camera pass), type `u8`
+#[inline]
+pub fn g_vats_camera_in_sound_played() -> *mut u8 { address!(401133) as *mut u8 }
+/// `g_VATSCameraMeshOffset` at 0x31df570, id 401137 (semantic, high); last camera NIF root local translation (high, camera pass), type `float[3]`
+#[inline]
+pub fn g_vats_camera_mesh_offset() -> *mut c_void { address!(401137) as *mut c_void }
+/// `g_VATSCameraPhase` at 0x3252a58, id 404871 (semantic, high); 0 attack, 1 projectile, 2 hit (high, camera pass), type `i32`
+#[inline]
+pub fn g_vats_camera_phase() -> *mut i32 { address!(404871) as *mut i32 }
+/// `g_VATSConsoleCameraPath` at 0x3252a30, id 404864 (semantic, high); pointer to `BGSCameraPath`: path forced by PlayVATSCameras for the next playback; path forced by PlayVATSCameras for the next playback (high, camera pass), type `ptr:BGSCameraPath`
+#[inline]
+pub fn g_vats_console_camera_path() -> Option<&'static classes::BGSCameraPath> { unsafe { *(address!(404864) as *const Option<&'static classes::BGSCameraPath>) } }
+/// `g_VATSCurrentCameraPath` at 0x3252a50, id 404870 (semantic, high); pointer to `BGSCameraPath`: path being played; path being played (high, camera pass), type `ptr:BGSCameraPath`
+#[inline]
+pub fn g_vats_current_camera_path() -> Option<&'static classes::BGSCameraPath> { unsafe { *(address!(404870) as *const Option<&'static classes::BGSCameraPath>) } }
+/// `g_VATSDefaultCameraPathOnce` at 0x3252a38, id 404865 (xref_inference, medium); pointer to `BGSCameraPath`: one-shot path override (consumed by UpdateVATS); one-shot path override (consumed by UpdateVATS) (medium, camera pass), type `ptr:BGSCameraPath`
+#[inline]
+pub fn g_vats_default_camera_path_once() -> Option<&'static classes::BGSCameraPath> { unsafe { *(address!(404865) as *const Option<&'static classes::BGSCameraPath>) } }
+/// `g_VATSPathTotalTime` at 0x3252a60, id 404873 (semantic, high); sum of the path's shot maxTime (fVATSSafetyMaxTime 20 when ~0; fVATSSafetyMaxTimeRanged 6 for a ranged command whose target is alive) (high, camera pass), type `float`
+#[inline]
+pub fn g_vats_path_total_time() -> *mut f32 { address!(404873) as *mut f32 }
+/// `g_VATSPathTransitionMode` at 0x3252a40, id 404866 (semantic, high); shot transition mode from the path's flags: 0 dolly, 1 cut (bit 0), 2 dolly only into action-3 shots (bit 1) (high, camera pass), type `i32`
+#[inline]
+pub fn g_vats_path_transition_mode() -> *mut i32 { address!(404866) as *mut i32 }
+/// `g_VATSPlaybackClock` at 0x3252a48, id 404868 (semantic, high); kill-camera clock (scaled time since playback start), the time of the shot NIF animation (high, camera pass), type `float`
+#[inline]
+pub fn g_vats_playback_clock() -> *mut f32 { address!(404868) as *mut f32 }
+/// `g_VATSPlaybackElapsed` at 0x3252a4c, id 404869 (semantic, high); elapsed time compared with the path total (high, camera pass), type `float`
+#[inline]
+pub fn g_vats_playback_elapsed() -> *mut f32 { address!(404869) as *mut f32 }
+/// `g_VATSPlaybackEndDelay` at 0x3252a5c, id 404872 (semantic, high); seconds left before the kill camera is popped once the commands are done (fVATSPlaybackDelay 3.0) (high, camera pass), type `float`
+#[inline]
+pub fn g_vats_playback_end_delay() -> *mut f32 { address!(404872) as *mut f32 }
+/// `g_VATSShotMaxTime` at 0x3252a64, id 404874 (semantic, high); current shot's maxTime (fVATSKillMoveEnd:VATS 4.0 without a shot) (high, camera pass), type `float`
+#[inline]
+pub fn g_vats_shot_max_time() -> *mut f32 { address!(404874) as *mut f32 }
 /// `g_VATS_ptr` at 0x31a5720, id 400883 (semantic, medium); VATS object: +0x20 mode (0 = not in VATS playback), +0x30 target, +0x80 time scale (medium, camera pass), type `pointer`
 #[inline]
 pub fn g_vats_ptr() -> *mut *mut c_void { address!(400883) as *mut *mut c_void }
@@ -20206,6 +20365,12 @@ pub fn g_water_shader() -> Option<&'static classes::BSWaterShader> { unsafe { *(
 /// `g_WaterShaderInstance` at 0x3436458, id 415108 (semantic, high); pointer to `BSWaterShader`: instance pointer; instance pointer (high, frame pass), type `ptr:BSWaterShader`
 #[inline]
 pub fn g_water_shader_instance() -> Option<&'static classes::BSWaterShader> { unsafe { *(address!(415108) as *const Option<&'static classes::BSWaterShader>) } }
+/// `g_WaterSystem_ptr` at 0x21a05e8, id 400450 (semantic, medium); the water system object (static storage 0x21a2650, no vtable); also ID_400450 (medium, camera pass), type `pointer`
+#[inline]
+pub fn g_water_system_ptr() -> *mut *mut c_void { address!(400450) as *mut *mut c_void }
+/// `g_WeatherNode` at 0x3230760, id 403517 (semantic, high); pointer to `NiNode`: NiNode named "Weather" attached under a scene root at world setup; attach root of OwnedCameraEffectController; NiNode named "Weather" attached under a scene root at world setup; attach root of OwnedCameraEffectController (high, camera pass), type `ptr:NiNode`
+#[inline]
+pub fn g_weather_node() -> Option<&'static classes::NiNode> { unsafe { *(address!(403517) as *const Option<&'static classes::NiNode>) } }
 /// `g_WorldAccumulator` at 0x3436230, id 415009 (runtime, high); pointer to `BSShaderAccumulator`: renderMode 0: the main colour draw; its +0x12c is ToggleDecalRendering's switch; RenderWorld writes its eyePosition; renderMode 0: the main colour draw; its +0x12c is ToggleDecalRendering's switch; RenderWorld writes its eyePosition (high, frame pass), type `ptr:BSShaderAccumulator`
 #[inline]
 pub fn g_world_accumulator() -> Option<&'static classes::BSShaderAccumulator> { unsafe { *(address!(415009) as *const Option<&'static classes::BSShaderAccumulator>) } }
@@ -20239,9 +20404,6 @@ pub fn g_anon_3_b91968_a_bs_scaleform_sys_mem_mapper() -> *mut c_void { address!
 /// `g_anon_3DFFDCB0_bhkLifoAllocator` at 0x20d2500, id 389432 (layout_inference, medium)
 #[inline]
 pub fn g_anon_3_dffdcb0_bhk_lifo_allocator() -> *mut c_void { address!(389432) as *mut c_void }
-/// `g_anon_47E0B371_NullMapCameraCallbacks` at 0x20bc368, id 383506 (layout_inference, medium)
-#[inline]
-pub fn g_anon_47_e0_b371_null_map_camera_callbacks() -> *mut c_void { address!(383506) as *mut c_void }
 /// `g_anon_5C8159CE_FavoriteShoutHandler` at 0x20bc6d8, id 383618 (layout_inference, medium)
 #[inline]
 pub fn g_anon_5_c8159_ce_favorite_shout_handler() -> *mut c_void { address!(383618) as *mut c_void }

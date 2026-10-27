@@ -884,36 +884,6 @@ impl classes::AmiiboEvent {
     pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut Self { unsafe { virtual_function!(self, 0, (&Self, u32, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
 }
 
-impl classes::AnimatedCameraDeltaStartHandler {
-    /// `AnimatedCameraDeltaStartHandler::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 43286, rva 0x7d37c0).
-    /// `AnimatedCameraDeltaStartHandler * vdtor(AnimatedCameraDeltaStartHandler * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43286, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
-}
-
-impl classes::AnimatedCameraEndHandler {
-    /// `AnimatedCameraEndHandler::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 43287, rva 0x7d37f0).
-    /// `AnimatedCameraEndHandler * vdtor(AnimatedCameraEndHandler * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43287, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
-}
-
-impl classes::AnimatedCameraStartHandler {
-    /// `AnimatedCameraStartHandler::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 43288, rva 0x7d3820).
-    /// `AnimatedCameraStartHandler * vdtor(AnimatedCameraStartHandler * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43288, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
-}
-
 impl classes::partial::AnimationClipDataSingleton {
     /// `AnimationClipDataSingleton::vdtor`, vtable slot 0, through the object's vtable (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 32606, rva 0x541390).
     /// `AnimationClipDataSingleton * vdtor(AnimationClipDataSingleton * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
@@ -12800,16 +12770,6 @@ impl classes::partial::AutoRegisterSmartPtrDerivedPathingType_PathingRequestStop
     pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(31472, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
 }
 
-impl classes::AutoVanityState {
-    /// `AutoVanityState::vdtor`, vtable slot 0, through the object's vtable (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 50866, rva 0x8fc4b0).
-    /// `AutoVanityState * vdtor(AutoVanityState * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut Self { unsafe { virtual_function!(self, 0, (&Self, u32, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
-}
-
 impl classes::BGSAIWorldLocation {
     /// `BGSAIWorldLocation::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 27373, rva 0x4496c0).
     /// `BGSAIWorldLocation * vdtor(BGSAIWorldLocation * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
@@ -13193,68 +13153,6 @@ impl classes::BGSBodyPartData {
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
     pub unsafe fn vdtor(&self, param_1: u64, param_2: i64, param_3: *mut u8) -> *mut Self { unsafe { function!(23496, (&Self, u64, i64, *mut u8) -> *mut Self)(self, param_1, param_2, param_3) } }
-}
-
-impl classes::BGSCameraPath {
-    /// `BGSCameraPath::ctor` (decompiler signature, tier low; ledger layout_inference evidence, name high; id 20633, rva 0x315ed0).
-    /// `BGSCameraPath * ctor(BGSCameraPath * this, undefined8 param_1, uint * param_2, longlong * param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn ctor(&self, param_1: u64, param_2: *mut u32, param_3: *mut i64) -> *mut Self { unsafe { function!(20633, (&Self, u64, *mut u32, *mut i64) -> *mut Self)(self, param_1, param_2, param_3) } }
-    /// `BGSCameraPath::ctor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 20634, rva 0x315f30).
-    /// `undefined ctor(BGSCameraPath * this, undefined8 param_1, undefined8 * param_2, TypeDescriptor * param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn ctor_2(&self, param_1: u64, param_2: *mut u64, param_3: *mut c_void) -> u64 { unsafe { function!(20634, (&Self, u64, *mut u64, *mut c_void) -> u64)(self, param_1, param_2, param_3) } }
-    /// `BGSCameraPath::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 20674, rva 0x317ce0).
-    /// `BGSCameraPath * vdtor(BGSCameraPath * this, ulonglong param_1, undefined8 * param_2, TypeDescriptor * param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: *mut u64, param_3: *mut c_void) -> *mut Self { unsafe { function!(20674, (&Self, u64, *mut u64, *mut c_void) -> *mut Self)(self, param_1, param_2, param_3) } }
-}
-
-impl classes::BGSCameraShot {
-    /// `BGSCameraShot::TESImageSpaceModifiableForm_vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 20714, rva 0x31a0b0).
-    /// `undefined TESImageSpaceModifiableForm_vdtor(BGSCameraShot * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn tes_image_space_modifiable_form_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(20714, (&Self, u64, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
-    /// `BGSCameraShot::TESModel_vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 20713, rva 0x31a0a4).
-    /// `undefined TESModel_vdtor(BGSCameraShot * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn tes_model_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(20713, (&Self, u64, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
-    /// `BGSCameraShot::ctor` (decompiler signature, tier low; ledger layout_inference evidence, name high; id 20700, rva 0x318900).
-    /// `BGSCameraShot * ctor(BGSCameraShot * this, undefined8 param_1, uint * param_2, longlong * param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn ctor(&self, param_1: u64, param_2: *mut u32, param_3: *mut i64) -> *mut Self { unsafe { function!(20700, (&Self, u64, *mut u32, *mut i64) -> *mut Self)(self, param_1, param_2, param_3) } }
-    /// `BGSCameraShot::dtor` (decompiler signature, tier low; ledger layout_inference evidence, name high; id 20701, rva 0x3189e0).
-    /// `undefined dtor(BGSCameraShot * this, int * param_1, char * param_2, undefined1 * param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn dtor(&self, param_1: *mut i32, param_2: *mut c_char, param_3: *mut u8) -> u64 { unsafe { function!(20701, (&Self, *mut i32, *mut c_char, *mut u8) -> u64)(self, param_1, param_2, param_3) } }
-    /// `BGSCameraShot::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 20715, rva 0x31a0c0).
-    /// `BGSCameraShot * vdtor(BGSCameraShot * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(20715, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
 }
 
 impl classes::BGSCollisionLayer {
@@ -18833,30 +18731,6 @@ impl classes::partial::BSCounterStorage {
     pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(54362, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
 }
 
-impl classes::BSCubeMapCamera {
-    /// `BSCubeMapCamera::ctor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 107560, rva 0x1559730).
-    /// `BSCubeMapCamera * ctor(BSCubeMapCamera * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn ctor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(107560, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
-    /// `BSCubeMapCamera::ctor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 107561, rva 0x15599b0).
-    /// `undefined ctor(BSCubeMapCamera * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn ctor_2(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(107561, (&Self, u64, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
-    /// `BSCubeMapCamera::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 107565, rva 0x155a2c0).
-    /// `BSCubeMapCamera * vdtor(BSCubeMapCamera * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(107565, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
-}
-
 impl classes::BSCullingProcess {
     /// `BSCullingProcess::vdtor`, vtable slot 21, through the object's vtable (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 76576, rva 0xfeee10).
     /// `BSCullingProcess * vdtor(BSCullingProcess * this, ulonglong param_1, ulonglong * param_2, undefined8 param_3)`
@@ -19662,23 +19536,6 @@ impl classes::BSFogProperty {
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
     pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(107592, (&Self, u32, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
-}
-
-impl classes::BSFrustumFOVController {
-    /// `BSFrustumFOVController::Create` (decompiler signature, tier low; ledger string evidence, name high; id 74134, rva 0xf8d8c0).
-    /// `NiFloatInterpController * Create(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn create(param_1: u64, param_2: u64, param_3: u64, param_4: u64) -> *mut classes::NiFloatInterpController { unsafe { function!(74134, (u64, u64, u64, u64) -> *mut classes::NiFloatInterpController)(param_1, param_2, param_3, param_4) } }
-    /// `BSFrustumFOVController::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 74135, rva 0xf8d970).
-    /// `BSFrustumFOVController * vdtor(BSFrustumFOVController * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(74135, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
 }
 
 impl classes::BSFurnitureMarkerNode {
@@ -20819,26 +20676,6 @@ impl classes::BSImagespaceShaderISSAOBlurVCS {
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
     pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(106118, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
-}
-
-impl classes::BSImagespaceShaderISSAOCameraZ {
-    /// `BSImagespaceShaderISSAOCameraZ::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 106119, rva 0x1508e10).
-    /// `BSImagespaceShaderISSAOCameraZ * vdtor(BSImagespaceShaderISSAOCameraZ * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(106119, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
-}
-
-impl classes::BSImagespaceShaderISSAOCameraZAndMipsCS {
-    /// `BSImagespaceShaderISSAOCameraZAndMipsCS::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 106120, rva 0x1508e50).
-    /// `BSImagespaceShaderISSAOCameraZAndMipsCS * vdtor(BSImagespaceShaderISSAOCameraZAndMipsCS * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(106120, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
 }
 
 impl classes::BSImagespaceShaderISSAOCompositeFog {
@@ -24467,7 +24304,7 @@ impl classes::BSPortalSharedNode {
 }
 
 impl classes::partial::BSPrecomputedNavmeshInfoPathMap__INavmeshInfoVisitor {
-    /// `BSPrecomputedNavmeshInfoPathMap::INavmeshInfoVisitor::vdtor`, vtable slot 0, through the object's vtable (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 91369, rva 0x11f1fa0).
+    /// `BSPrecomputedNavmeshInfoPathMap::INavmeshInfoVisitor::vdtor`, vtable slot 0, through the object's vtable (decompiler signature, tier low; ledger semantic evidence, name high; id 91369, rva 0x11f1fa0).
     /// `INavmeshInfoVisitor * vdtor(INavmeshInfoVisitor * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
@@ -25637,14 +25474,7 @@ impl classes::partial::BSScript__ByteCode__PackedInstructionStream__InstructionF
     pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, 0, (&Self, u64, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
 }
 
-impl classes::partial::BSScript__CompiledScriptLoader {
-    /// `BSScript::CompiledScriptLoader::ctor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 104572, rva 0x14a40b0).
-    /// `CompiledScriptLoader * ctor(CompiledScriptLoader * this, undefined8 param_1, char param_2, char param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn ctor(&self, param_1: u64, param_2: c_char, param_3: c_char) -> *mut c_void { unsafe { function!(104572, (&Self, u64, c_char, c_char) -> *mut c_void)(self, param_1, param_2, param_3) } }
+impl classes::BSScript__CompiledScriptLoader {
     /// `BSScript::CompiledScriptLoader::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 104615, rva 0x14a85e0).
     /// `CompiledScriptLoader * vdtor(CompiledScriptLoader * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///
@@ -25808,7 +25638,7 @@ impl classes::BSScript__IVirtualMachine {
     pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, 0, (&Self, u64, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
 }
 
-impl classes::partial::BSScript__Internal__AutoPropGetFunction {
+impl classes::BSScript__Internal__AutoPropGetFunction {
     /// `BSScript::Internal::AutoPropGetFunction::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 105274, rva 0x14d7190).
     /// `AutoPropGetFunction * vdtor(AutoPropGetFunction * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     ///
@@ -25818,7 +25648,7 @@ impl classes::partial::BSScript__Internal__AutoPropGetFunction {
     pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(105274, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
 }
 
-impl classes::partial::BSScript__Internal__AutoPropSetFunction {
+impl classes::BSScript__Internal__AutoPropSetFunction {
     /// `BSScript::Internal::AutoPropSetFunction::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 105275, rva 0x14d71e0).
     /// `AutoPropSetFunction * vdtor(AutoPropSetFunction * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     ///
@@ -25826,23 +25656,6 @@ impl classes::partial::BSScript__Internal__AutoPropSetFunction {
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
     pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(105275, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
-}
-
-impl classes::BSScript__Internal__CodeTasklet {
-    /// `BSScript::Internal::CodeTasklet::ctor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 105175, rva 0x14ce5e0).
-    /// `CodeTasklet * ctor(CodeTasklet * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn ctor(&self, param_1: i64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(105175, (&Self, i64, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
-    /// `BSScript::Internal::CodeTasklet::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 105223, rva 0x14d6480).
-    /// `CodeTasklet * vdtor(CodeTasklet * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(105223, (&Self, u64, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
 }
 
 impl classes::BSScript__Internal__IFuncCallQuery {
@@ -25883,13 +25696,6 @@ impl classes::BSScript__Internal__RawFuncCallQuery {
 }
 
 impl classes::BSScript__Internal__ScriptFunction {
-    /// `BSScript::Internal::ScriptFunction::ctor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 105450, rva 0x14e50c0).
-    /// `ScriptFunction * ctor(ScriptFunction * this, longlong * param_1, undefined * param_2, undefined8 param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn ctor(&self, param_1: *mut i64, param_2: *mut c_void, param_3: u64) -> *mut c_void { unsafe { function!(105450, (&Self, *mut i64, *mut c_void, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
     /// `BSScript::Internal::ScriptFunction::dtor` (decompiler signature, tier low; ledger layout_inference evidence, name high; id 105451, rva 0x14e5250).
     /// `undefined dtor(ScriptFunction * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     ///
@@ -25897,13 +25703,6 @@ impl classes::BSScript__Internal__ScriptFunction {
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
     pub unsafe fn dtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(105451, (&Self, u64, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
-    /// `BSScript::Internal::ScriptFunction::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 105472, rva 0x14e5700).
-    /// `ScriptFunction * vdtor(ScriptFunction * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(105472, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
 }
 
 impl classes::BSScript__Internal__VirtualMachine {
@@ -25914,13 +25713,6 @@ impl classes::BSScript__Internal__VirtualMachine {
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
     pub unsafe fn bs_script_ivm_debug_interface_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(105020, (&Self, u64, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
-    /// `BSScript::Internal::VirtualMachine::BSScript_IVMDebugInterface_vfunc_1` (decompiler signature, tier low; ledger rtti evidence, name high; id 104844, rva 0x14b8fa0).
-    /// `undefined BSScript_IVMDebugInterface_vfunc_1(VirtualMachine * this, undefined8 param_1, int * * param_2, char * * param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn bs_script_ivm_debug_interface_vfunc_1(&self, param_1: u64, param_2: *mut *mut i32, param_3: *mut *mut c_char) -> u64 { unsafe { function!(104844, (&Self, u64, *mut *mut i32, *mut *mut c_char) -> u64)(self, param_1, param_2, param_3) } }
     /// `BSScript::Internal::VirtualMachine::BSScript_IVMObjectBindInterface_vfunc_1` (decompiler signature, tier low; ledger rtti evidence, name high; id 104818, rva 0x14b4dd0).
     /// `undefined8 BSScript_IVMObjectBindInterface_vfunc_1(VirtualMachine * this, longlong * param_1)`
     ///
@@ -37758,16 +37550,6 @@ impl classes::partial::BSTreadTransfInterpolator {
     pub unsafe fn vdtor(&self, param_1: u32, param_2: i64, param_3: *mut u8) -> *mut Self { unsafe { function!(74115, (&Self, u32, i64, *mut u8) -> *mut Self)(self, param_1, param_2, param_3) } }
 }
 
-impl classes::BSTreeManager__IQueryCullingCamera {
-    /// `BSTreeManager::IQueryCullingCamera::vdtor`, vtable slot 0, through the object's vtable (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 36737, rva 0x661cf0).
-    /// `IQueryCullingCamera * vdtor(IQueryCullingCamera * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, 0, (&Self, u64, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
-}
-
 impl classes::BSTreeNode {
     /// `BSTreeNode::Create` (decompiler signature, tier low; ledger string evidence, name medium; id 105609, rva 0x14e98d0).
     /// `BSTreeNode * Create(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
@@ -38642,16 +38424,6 @@ impl classes::BedFurnitureExitHandler {
     pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43300, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
 }
 
-impl classes::BleedoutCameraState {
-    /// `BleedoutCameraState::vdtor`, vtable slot 0, through the object's vtable (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 50867, rva 0x8fc4f0).
-    /// `BleedoutCameraState * vdtor(BleedoutCameraState * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { virtual_function!(self, 0, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
-}
-
 impl classes::BookMenu {
     /// `BookMenu::vdtor`, vtable slot 0, through the object's vtable (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 51069, rva 0x908a10).
     /// `BookMenu * vdtor(BookMenu * this, ulonglong param_1, ulonglong param_2, ulonglong param_3)`
@@ -38732,26 +38504,6 @@ impl classes::BowReleaseHandler {
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
     pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43302, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
-}
-
-impl classes::BowZoomStartHandler {
-    /// `BowZoomStartHandler::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 43303, rva 0x7d3af0).
-    /// `BowZoomStartHandler * vdtor(BowZoomStartHandler * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43303, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
-}
-
-impl classes::BowZoomStopHandler {
-    /// `BowZoomStopHandler::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 43304, rva 0x7d3b20).
-    /// `BowZoomStopHandler * vdtor(BowZoomStopHandler * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43304, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
 }
 
 impl classes::ButtonEvent {
@@ -38842,36 +38594,6 @@ impl classes::CalmEffect {
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
     pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(35036, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
-}
-
-impl classes::CameraOverrideStartHandler {
-    /// `CameraOverrideStartHandler::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 43305, rva 0x7d3b50).
-    /// `CameraOverrideStartHandler * vdtor(CameraOverrideStartHandler * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43305, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
-}
-
-impl classes::CameraOverrideStopHandler {
-    /// `CameraOverrideStopHandler::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 43306, rva 0x7d3b80).
-    /// `CameraOverrideStopHandler * vdtor(CameraOverrideStopHandler * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43306, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
-}
-
-impl classes::CameraShakeHandler {
-    /// `CameraShakeHandler::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 43307, rva 0x7d3bb0).
-    /// `CameraShakeHandler * vdtor(CameraShakeHandler * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43307, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
 }
 
 impl classes::CellLoaderTask {
@@ -47630,23 +47352,6 @@ impl classes::DownloadProgressBar {
     pub unsafe fn vdtor(&self, param_1: *mut c_void, param_2: *mut c_void, param_3: u64) -> *mut Self { unsafe { function!(440966, (&Self, *mut c_void, *mut c_void, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
 }
 
-impl classes::DragonCameraState {
-    /// `DragonCameraState::vdtor`, vtable slot 0, through the object's vtable (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 33125, rva 0x55d460).
-    /// `DragonCameraState * vdtor(DragonCameraState * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { virtual_function!(self, 0, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
-    /// `DragonCameraState::PlayerInputHandler_vfunc_6` (decompiler signature, tier low; ledger rtti evidence, name high; id 33112, rva 0x55c7f0).
-    /// `undefined PlayerInputHandler_vfunc_6(DragonCameraState * this, longlong * param_1, undefined8 param_2)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn player_input_handler_vfunc_6(&self, param_1: *mut i64, param_2: u64) -> u64 { unsafe { function!(33112, (&Self, *mut i64, u64) -> u64)(self, param_1, param_2) } }
-}
-
 impl classes::DualValueModifierEffect {
     /// `DualValueModifierEffect::ctor` (decompiler signature, tier low; ledger layout_inference evidence, name high; id 34315, rva 0x5c6820).
     /// `DualValueModifierEffect * ctor(DualValueModifierEffect * this, longlong param_1, undefined8 param_2, undefined4 * param_3)`
@@ -50234,30 +49939,6 @@ impl classes::partial::FinishActiveEffectVisitor {
     pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(34047, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
 }
 
-impl classes::FirstPersonState {
-    /// `FirstPersonState::vdtor`, vtable slot 0, through the object's vtable (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 50868, rva 0x8fc570).
-    /// `FirstPersonState * vdtor(FirstPersonState * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut Self { unsafe { virtual_function!(self, 0, (&Self, u32, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
-    /// `FirstPersonState::PlayerInputHandler_vfunc_1` (decompiler signature, tier low; ledger rtti evidence, name high; id 50729, rva 0x8f5430).
-    /// `undefined8 PlayerInputHandler_vfunc_1(FirstPersonState * this, longlong * param_1)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn player_input_handler_vfunc_1(&self, param_1: *mut i64) -> u64 { unsafe { function!(50729, (&Self, *mut i64) -> u64)(self, param_1) } }
-    /// `FirstPersonState::PlayerInputHandler_vfunc_6` (decompiler signature, tier low; ledger rtti evidence, name high; id 50730, rva 0x8f54b0).
-    /// `undefined PlayerInputHandler_vfunc_6(FirstPersonState * this, longlong * param_1)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn player_input_handler_vfunc_6(&self, param_1: *mut i64) -> u64 { unsafe { function!(50730, (&Self, *mut i64) -> u64)(self, param_1) } }
-}
-
 impl classes::FlameProjectile {
     /// `FlameProjectile::BSTEventSink_BSAnimationGraphEvent_vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 43907, rva 0x7eb4f8).
     /// `undefined BSTEventSink_BSAnimationGraphEvent_vdtor(FlameProjectile * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
@@ -50436,30 +50117,6 @@ impl classes::FlightTakeOffHandler {
     pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43332, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
 }
 
-impl classes::FreeCameraState {
-    /// `FreeCameraState::vdtor`, vtable slot 0, through the object's vtable (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 50869, rva 0x8fc5b0).
-    /// `FreeCameraState * vdtor(FreeCameraState * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut Self { unsafe { virtual_function!(self, 0, (&Self, u32, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
-    /// `FreeCameraState::PlayerInputHandler_vfunc_1` (decompiler signature, tier low; ledger rtti evidence, name high; id 50747, rva 0x8f6100).
-    /// `undefined8 PlayerInputHandler_vfunc_1(FreeCameraState * this, longlong * param_1)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn player_input_handler_vfunc_1(&self, param_1: *mut i64) -> u64 { unsafe { function!(50747, (&Self, *mut i64) -> u64)(self, param_1) } }
-    /// `FreeCameraState::PlayerInputHandler_vfunc_6` (decompiler signature, tier low; ledger rtti evidence, name high; id 50748, rva 0x8f6170).
-    /// `undefined PlayerInputHandler_vfunc_6(FreeCameraState * this, longlong * param_1)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn player_input_handler_vfunc_6(&self, param_1: *mut i64) -> u64 { unsafe { function!(50748, (&Self, *mut i64) -> u64)(self, param_1) } }
-}
-
 impl classes::FrenzyEffect {
     /// `FrenzyEffect::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 35038, rva 0x5e5af0).
     /// `FrenzyEffect * vdtor(FrenzyEffect * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
@@ -50468,16 +50125,6 @@ impl classes::FrenzyEffect {
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
     pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(35038, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
-}
-
-impl classes::FurnitureCameraState {
-    /// `FurnitureCameraState::vdtor`, vtable slot 0, through the object's vtable (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 50870, rva 0x8fc5f0).
-    /// `FurnitureCameraState * vdtor(FurnitureCameraState * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut Self { unsafe { virtual_function!(self, 0, (&Self, u32, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
 }
 
 impl classes::FutBinaryFileC {
@@ -51881,30 +51528,6 @@ impl classes::partial::HoldWardSpellsActiveEffectVisitor {
     pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(38516, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
 }
 
-impl classes::HorseCameraState {
-    /// `HorseCameraState::vdtor`, vtable slot 0, through the object's vtable (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 50774, rva 0x8f7650).
-    /// `HorseCameraState * vdtor(HorseCameraState * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut Self { unsafe { virtual_function!(self, 0, (&Self, u32, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
-    /// `HorseCameraState::PlayerInputHandler_vfunc_6` (decompiler signature, tier low; ledger rtti evidence, name high; id 50763, rva 0x8f6d20).
-    /// `undefined PlayerInputHandler_vfunc_6(HorseCameraState * this, longlong * param_1, undefined8 param_2, longlong param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn player_input_handler_vfunc_6(&self, param_1: *mut i64, param_2: u64, param_3: i64) -> u64 { unsafe { function!(50763, (&Self, *mut i64, u64, i64) -> u64)(self, param_1, param_2, param_3) } }
-    /// `HorseCameraState::ctor` (decompiler signature, tier low; ledger layout_inference evidence, name high; id 50759, rva 0x8f6c00).
-    /// `HorseCameraState * ctor(HorseCameraState * this, undefined8 param_1, undefined4 param_2)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn ctor(&self, param_1: u64, param_2: u32) -> *mut Self { unsafe { function!(50759, (&Self, u64, u32) -> *mut Self)(self, param_1, param_2) } }
-}
-
 impl classes::IAITarget {
     /// `IAITarget::IPackageData_vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 27546, rva 0x44e7d8).
     /// `undefined IPackageData_vdtor(IAITarget * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
@@ -52391,16 +52014,6 @@ impl classes::IHandlerFunctor_Actor_BSFixedStringCI {
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
     pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { virtual_function!(self, 0, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
-}
-
-impl classes::IMapCameraCallbacks {
-    /// `IMapCameraCallbacks::vdtor`, vtable slot 2, through the object's vtable (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 53029, rva 0x997210).
-    /// `IMapCameraCallbacks * vdtor(IMapCameraCallbacks * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { virtual_function!(self, 2, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
 }
 
 impl classes::IMemoryHeap {
@@ -53862,16 +53475,6 @@ impl classes::InvisibilityEffect {
     pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(34371, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
 }
 
-impl classes::IronSightsState {
-    /// `IronSightsState::vdtor`, vtable slot 0, through the object's vtable (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 50871, rva 0x8fc630).
-    /// `IronSightsState * vdtor(IronSightsState * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut Self { unsafe { virtual_function!(self, 0, (&Self, u32, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
-}
-
 impl classes::partial::IsSpellTargetFunctor {
     /// `IsSpellTargetFunctor::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 34593, rva 0x5d4920).
     /// `IsSpellTargetFunctor * vdtor(IsSpellTargetFunctor * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
@@ -54728,33 +54331,6 @@ impl classes::LoadingMenuData {
     pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { virtual_function!(self, 0, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
 }
 
-impl classes::LocalMapCamera {
-    /// `LocalMapCamera::ctor` (decompiler signature, tier low; ledger layout_inference evidence, name high; id 16325, rva 0x247d20).
-    /// `LocalMapCamera * ctor(LocalMapCamera * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn ctor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(16325, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
-    /// `LocalMapCamera::dtor` (decompiler signature, tier low; ledger layout_inference evidence, name high; id 16326, rva 0x248060).
-    /// `undefined dtor(LocalMapCamera * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn dtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(16326, (&Self, u64, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
-}
-
-impl classes::LocalMapCamera__DefaultState {
-    /// `LocalMapCamera::DefaultState::vdtor`, vtable slot 0, through the object's vtable (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 16345, rva 0x249f60).
-    /// `DefaultState * vdtor(DefaultState * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, 0, (&Self, u64, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
-}
-
 impl classes::LocalMapMenu__InputHandler {
     /// `LocalMapMenu::InputHandler::vdtor`, vtable slot 0, through the object's vtable (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 52997, rva 0x995ea0).
     /// `InputHandler * vdtor(InputHandler * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
@@ -54869,16 +54445,6 @@ impl classes::partial::LongestDurationFunctor {
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
     pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(11379, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
-}
-
-impl classes::LookHandler {
-    /// `LookHandler::vdtor`, vtable slot 0, through the object's vtable (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 42402, rva 0x7b1bc0).
-    /// `LookHandler * vdtor(LookHandler * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut Self { unsafe { virtual_function!(self, 0, (&Self, u32, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
 }
 
 impl classes::MTStateHandler {
@@ -55113,13 +54679,6 @@ impl classes::Main {
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
     pub unsafe fn bst_event_sink_bs_gamer_profile_event_vfunc_1(&self, param_1: *mut u16, param_2: u64, param_3: u64) -> u64 { unsafe { function!(36624, (&Self, *mut u16, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
-    /// `Main::ctor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 36545, rva 0x6514e0).
-    /// `Main * ctor(Main * this, undefined8 param_1, undefined8 param_2)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn ctor(&self, param_1: u64, param_2: u64) -> *mut Self { unsafe { function!(36545, (&Self, u64, u64) -> *mut Self)(self, param_1, param_2) } }
     /// `Main::dtor` (decompiler signature, tier low; ledger layout_inference evidence, name high; id 36546, rva 0x652600).
     /// `undefined dtor(Main * this, undefined8 param_1, undefined8 param_2, ulonglong param_3)`
     ///
@@ -55181,67 +54740,6 @@ impl classes::MainMenu {
     pub unsafe fn dtor(&self, param_1: *mut c_char, param_2: *mut i64, param_3: u64) -> u64 { unsafe { function!(52109, (&Self, *mut c_char, *mut i64, u64) -> u64)(self, param_1, param_2, param_3) } }
 }
 
-impl classes::MapCamera {
-    /// `MapCamera::ctor` (decompiler signature, tier low; ledger layout_inference evidence, name high; id 53012, rva 0x9962b0).
-    /// `MapCamera * ctor(MapCamera * this, undefined8 param_1)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn ctor_2(&self, param_1: u64) -> *mut Self { unsafe { function!(53012, (&Self, u64) -> *mut Self)(self, param_1) } }
-    /// `MapCamera::dtor` (decompiler signature, tier low; ledger layout_inference evidence, name high; id 53014, rva 0x9966a0).
-    /// `undefined dtor(MapCamera * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn dtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(53014, (&Self, u64, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
-}
-
-impl classes::MapCameraStates__Exit {
-    /// `MapCameraStates::Exit::vdtor`, vtable slot 0, through the object's vtable (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 53028, rva 0x9971e0).
-    /// `Exit * vdtor(Exit * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, 0, (&Self, u64, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
-}
-
-impl classes::MapCameraStates__Transition {
-    /// `MapCameraStates::Transition::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 53032, rva 0x997330).
-    /// `Transition * vdtor(Transition * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(53032, (&Self, u32, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
-}
-
-impl classes::MapCameraStates__World {
-    /// `MapCameraStates::World::vdtor`, vtable slot 0, through the object's vtable (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 53055, rva 0x9989f0).
-    /// `World * vdtor(World * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, 0, (&Self, u64, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
-    /// `MapCameraStates::World::ctor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 53038, rva 0x997600).
-    /// `World * ctor(World * this, undefined8 param_1)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn ctor(&self, param_1: u64) -> *mut c_void { unsafe { function!(53038, (&Self, u64) -> *mut c_void)(self, param_1) } }
-    /// `MapCameraStates::World::dtor` (decompiler signature, tier low; ledger layout_inference evidence, name high; id 53039, rva 0x997660).
-    /// `undefined dtor(World * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn dtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(53039, (&Self, u64, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
-}
-
 impl classes::MapInputHandler {
     /// `MapInputHandler::vdtor`, vtable slot 0, through the object's vtable (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 53133, rva 0x99f8f0).
     /// `MapInputHandler * vdtor(MapInputHandler * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
@@ -55284,34 +54782,13 @@ impl classes::MapMenu {
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
     pub unsafe fn bst_event_sink_menu_open_close_event_vfunc_1(&self, param_1: *mut i64) -> u64 { unsafe { function!(53106, (&Self, *mut i64) -> u64)(self, param_1) } }
-    /// `MapMenu::IMapCameraCallbacks_vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 53130, rva 0x99f87c).
-    /// `undefined IMapCameraCallbacks_vdtor(MapMenu * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn i_map_camera_callbacks_vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> u64 { unsafe { function!(53130, (&Self, u32, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
-    /// `MapMenu::IMapCameraCallbacks_vfunc_0` (decompiler signature, tier low; ledger rtti evidence, name high; id 53119, rva 0x99f000).
-    /// `undefined IMapCameraCallbacks_vfunc_0(MapMenu * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn i_map_camera_callbacks_vfunc_0(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(53119, (&Self, u64, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
-    /// `MapMenu::IMapCameraCallbacks_vfunc_1` (decompiler signature, tier low; ledger rtti evidence, name high; id 53120, rva 0x99f170).
-    /// `undefined IMapCameraCallbacks_vfunc_1(void)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn i_map_camera_callbacks_vfunc_1() -> u64 { unsafe { function!(53120, () -> u64)() } }
     /// `MapMenu::ctor` (decompiler signature, tier low; ledger layout_inference evidence, name high; id 53093, rva 0x99ac90).
     /// `MapMenu * ctor(MapMenu * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn ctor_2(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(53093, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn ctor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(53093, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
 }
 
 impl classes::MapMoveHandler {
@@ -55322,16 +54799,6 @@ impl classes::MapMoveHandler {
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
     pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(53136, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
-}
-
-impl classes::MapZoomHandler {
-    /// `MapZoomHandler::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 53137, rva 0x99f9f0).
-    /// `MapZoomHandler * vdtor(MapZoomHandler * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(53137, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
 }
 
 impl classes::MarketplaceBundleContent {
@@ -57799,13 +57266,6 @@ impl classes::MovementPlannerAgentDirectControl {
 }
 
 impl classes::MovementPlannerAgentHorseControls {
-    /// `MovementPlannerAgentHorseControls::IMovementPlannerAgent_vfunc_2` (decompiler signature, tier low; ledger rtti evidence, name high; id 42162, rva 0x7a8060).
-    /// `undefined IMovementPlannerAgent_vfunc_2(MovementPlannerAgentHorseControls * this, undefined8 param_1, undefined8 * param_2)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn i_movement_planner_agent_vfunc_2(&self, param_1: u64, param_2: *mut u64) -> u64 { unsafe { function!(42162, (&Self, u64, *mut u64) -> u64)(self, param_1, param_2) } }
     /// `MovementPlannerAgentHorseControls::IMovementPlannerAgent_vfunc_3` (decompiler signature, tier low; ledger rtti evidence, name high; id 42163, rva 0x7a81e0).
     /// `undefined IMovementPlannerAgent_vfunc_3(void)`
     ///
@@ -59547,37 +59007,6 @@ impl classes::partial::NiBoxSphereIntersector {
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
     pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(72283, (&Self, u32, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
-}
-
-impl classes::NiCamera {
-    /// `NiCamera::Create` (decompiler signature, tier low; ledger string evidence, name medium; id 70623, rva 0xeef900).
-    /// `undefined Create(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn create(param_1: u64, param_2: u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(70623, (u64, u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
-    /// `NiCamera::ctor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 70624, rva 0xeef9a0).
-    /// `NiCamera * ctor(NiCamera * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn ctor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(70624, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
-    /// `NiCamera::dtor` (decompiler signature, tier low; ledger layout_inference evidence, name high; id 70625, rva 0xeefac0).
-    /// `undefined dtor(NiCamera * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn dtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(70625, (&Self, u64, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
-    /// `NiCamera::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 70646, rva 0xef1a10).
-    /// `NiCamera * vdtor(NiCamera * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(70646, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
 }
 
 impl classes::partial::NiCapsuleBV {
@@ -64803,23 +64232,6 @@ impl classes::Options {
     pub unsafe fn vdtor(&self, param_1: u64, param_2: *mut u64, param_3: u64) -> *mut Self { unsafe { function!(441220, (&Self, u64, *mut u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
 }
 
-impl classes::OwnedCameraEffectController {
-    /// `OwnedCameraEffectController::ctor` (decompiler signature, tier low; ledger layout_inference evidence, name high; id 34826, rva 0x5dc3b0).
-    /// `OwnedCameraEffectController * ctor(OwnedCameraEffectController * this, undefined8 param_1, undefined1 param_2)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn ctor(&self, param_1: u64, param_2: u8) -> *mut Self { unsafe { function!(34826, (&Self, u64, u8) -> *mut Self)(self, param_1, param_2) } }
-    /// `OwnedCameraEffectController::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 19934, rva 0x2f8fc0).
-    /// `OwnedCameraEffectController * vdtor(OwnedCameraEffectController * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(19934, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
-}
-
 impl classes::OwnedController {
     /// `OwnedController::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 19935, rva 0x2f9030).
     /// `OwnedController * vdtor(OwnedController * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
@@ -65689,26 +65101,6 @@ impl classes::PlayerBedEnterHandler {
     pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43356, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
 }
 
-impl classes::PlayerCamera {
-    /// `PlayerCamera::ctor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 50782, rva 0x8f7b20).
-    /// `undefined ctor(PlayerCamera * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn ctor_2(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(50782, (&Self, u64, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
-}
-
-impl classes::PlayerCameraTransitionState {
-    /// `PlayerCameraTransitionState::vdtor`, vtable slot 0, through the object's vtable (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 50873, rva 0x8fc6b0).
-    /// `PlayerCameraTransitionState * vdtor(PlayerCameraTransitionState * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut Self { unsafe { virtual_function!(self, 0, (&Self, u32, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
-}
-
 impl classes::PlayerChairEnterHandler {
     /// `PlayerChairEnterHandler::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 43357, rva 0x7d4510).
     /// `PlayerChairEnterHandler * vdtor(PlayerChairEnterHandler * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
@@ -65881,20 +65273,6 @@ impl classes::PlayerCharacter {
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
     pub unsafe fn magic_target_vfunc_8(&self, param_1: i64, param_2: u64, param_3: *mut c_void) -> u64 { unsafe { function!(40762, (&Self, i64, u64, *mut c_void) -> u64)(self, param_1, param_2, param_3) } }
-    /// `PlayerCharacter::ctor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 40411, rva 0x73f670).
-    /// `PlayerCharacter * ctor(PlayerCharacter * this, undefined8 param_1, byte * param_2, byte * param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn ctor(&self, param_1: u64, param_2: *mut u8, param_3: *mut u8) -> *mut Self { unsafe { function!(40411, (&Self, u64, *mut u8, *mut u8) -> *mut Self)(self, param_1, param_2, param_3) } }
-    /// `PlayerCharacter::dtor` (decompiler signature, tier low; ledger layout_inference evidence, name high; id 40412, rva 0x740690).
-    /// `undefined dtor(PlayerCharacter * this, undefined8 param_1, ulonglong param_2, ulonglong param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn dtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(40412, (&Self, u64, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
     /// `PlayerCharacter::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 40946, rva 0x769500).
     /// `PlayerCharacter * vdtor(PlayerCharacter * this, ulonglong param_1, ulonglong param_2, ulonglong param_3)`
     ///
@@ -66496,16 +65874,6 @@ impl classes::partial::REFREventCallbacks__IEventCallbackFactory {
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
     pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, 0, (&Self, u64, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
-}
-
-impl classes::RaceSexCamera {
-    /// `RaceSexCamera::dtor` (decompiler signature, tier low; ledger layout_inference evidence, name high; id 52436, rva 0x972910).
-    /// `undefined dtor(RaceSexCamera * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn dtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(52436, (&Self, u64, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
 }
 
 impl classes::RaceSexMenu {
@@ -67273,13 +66641,13 @@ impl classes::SimpleAnimationGraphManagerLoadingTask {
 }
 
 impl classes::SixaxisEvent {
-    /// `SixaxisEvent::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 42395, rva 0x7b1d30).
+    /// `SixaxisEvent::vdtor`, vtable slot 0, through the object's vtable (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 42395, rva 0x7b1d30).
     /// `SixaxisEvent * vdtor(SixaxisEvent * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(42395, (&Self, u32, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut Self { unsafe { virtual_function!(self, 0, (&Self, u32, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
 }
 
 impl classes::Sizing__mpBoxSizer {
@@ -69203,16 +68571,6 @@ impl classes::partial::StatsNode {
     pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(52606, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
 }
 
-impl classes::StopMountCameraHandler {
-    /// `StopMountCameraHandler::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 43367, rva 0x7d46f0).
-    /// `StopMountCameraHandler * vdtor(StopMountCameraHandler * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43367, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
-}
-
 impl classes::StorageSpaceBar {
     /// `StorageSpaceBar::ctor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 454814, rva 0x15f3690).
     /// `undefined ctor(StorageSpaceBar * this, undefined8 param_1, void * param_2, undefined8 param_3)`
@@ -69809,16 +69167,6 @@ impl classes::TESBoundObject {
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
     pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(17678, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
-}
-
-impl classes::TESCamera {
-    /// `TESCamera::dtor` (decompiler signature, tier low; ledger layout_inference evidence, name high; id 33019, rva 0x558cf0).
-    /// `undefined dtor(TESCamera * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn dtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(33019, (&Self, u64, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
 }
 
 impl classes::TESChildCell {
@@ -72359,30 +71707,6 @@ impl classes::partial::TempLoadGameBuffer {
     pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(26312, (&Self, u32, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
 }
 
-impl classes::ThirdPersonState {
-    /// `ThirdPersonState::PlayerInputHandler_vfunc_1` (decompiler signature, tier low; ledger rtti evidence, name medium; id 50905, rva 0x8fdca0).
-    /// `undefined8 PlayerInputHandler_vfunc_1(ThirdPersonState * this, longlong * param_1)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn player_input_handler_vfunc_1(&self, param_1: *mut i64) -> u64 { unsafe { function!(50905, (&Self, *mut i64) -> u64)(self, param_1) } }
-    /// `ThirdPersonState::PlayerInputHandler_vfunc_6` (decompiler signature, tier low; ledger rtti evidence, name medium; id 50906, rva 0x8fdd20).
-    /// `undefined PlayerInputHandler_vfunc_6(ThirdPersonState * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn player_input_handler_vfunc_6(&self, param_1: *mut i64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(50906, (&Self, *mut i64, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
-    /// `ThirdPersonState::ctor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 50893, rva 0x8fd210).
-    /// `ThirdPersonState * ctor(ThirdPersonState * this, undefined8 param_1, undefined4 param_2)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn ctor(&self, param_1: u64, param_2: u32) -> *mut Self { unsafe { function!(50893, (&Self, u64, u32) -> *mut Self)(self, param_1, param_2) } }
-}
-
 impl classes::ThumbstickEvent {
     /// `ThumbstickEvent::vdtor`, vtable slot 0, through the object's vtable (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 52451, rva 0x973150).
     /// `ThumbstickEvent * vdtor(ThumbstickEvent * this, uint param_1, undefined8 param_2, undefined8 param_3)`
@@ -72428,16 +71752,6 @@ impl classes::TrainingMenu {
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
     pub unsafe fn bst_event_sink_menu_open_close_event_vfunc_1(&self, param_1: *mut i64) -> u64 { unsafe { function!(52663, (&Self, *mut i64) -> u64)(self, param_1) } }
-}
-
-impl classes::TransitionState {
-    /// `TransitionState::vdtor`, vtable slot 0, through the object's vtable (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 53033, rva 0x997390).
-    /// `TransitionState * vdtor(TransitionState * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut Self { unsafe { virtual_function!(self, 0, (&Self, u32, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
 }
 
 impl classes::partial::TrapEntry {
@@ -72560,23 +71874,6 @@ impl classes::TweenMenu {
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
     pub unsafe fn ctor_2(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(52704, (&Self, u64, u64, u64) -> u64)(self, param_1, param_2, param_3) } }
-}
-
-impl classes::TweenMenuCameraState {
-    /// `TweenMenuCameraState::vdtor`, vtable slot 0, through the object's vtable (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 50932, rva 0x8ff9f0).
-    /// `TweenMenuCameraState * vdtor(TweenMenuCameraState * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { virtual_function!(self, 0, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
-    /// `TweenMenuCameraState::ctor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 50922, rva 0x8ff2a0).
-    /// `TweenMenuCameraState * ctor(TweenMenuCameraState * this, undefined8 param_1, undefined4 param_2)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn ctor(&self, param_1: u64, param_2: u32) -> *mut Self { unsafe { function!(50922, (&Self, u64, u32) -> *mut Self)(self, param_1, param_2) } }
 }
 
 impl classes::partial::UIBlurManager {
@@ -73224,23 +72521,6 @@ impl classes::partial::VATS__ICommandListVisitor {
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
     pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, 0, (&Self, u64, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
-}
-
-impl classes::VATSCameraState {
-    /// `VATSCameraState::vdtor`, vtable slot 0, through the object's vtable (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 50940, rva 0x9002c0).
-    /// `VATSCameraState * vdtor(VATSCameraState * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { virtual_function!(self, 0, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
-    /// `VATSCameraState::ctor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 50933, rva 0x8ffa20).
-    /// `VATSCameraState * ctor(VATSCameraState * this, undefined8 param_1, undefined4 param_2)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn ctor(&self, param_1: u64, param_2: u32) -> *mut Self { unsafe { function!(50933, (&Self, u64, u32) -> *mut Self)(self, param_1, param_2) } }
 }
 
 impl classes::ValueAndConditionsEffect {
@@ -74069,16 +73349,6 @@ impl classes::partial::_anon_422024B4__NeverCollideFilter {
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
     pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(79405, (&Self, u64, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
-}
-
-impl classes::partial::_anon_47E0B371__NullMapCameraCallbacks {
-    /// `_anon_47E0B371::NullMapCameraCallbacks::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 53031, rva 0x997300).
-    /// `NullMapCameraCallbacks * vdtor(NullMapCameraCallbacks * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(53031, (&Self, u64, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
 }
 
 impl classes::partial::_anon_498DB440__NearestHitCollector {
@@ -75667,16 +74937,6 @@ impl classes::partial::_anon_D1728E2C__ClearArchiveRegistrationListener {
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
     pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(13687, (&Self, u64, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
-}
-
-impl classes::partial::_anon_D351A927__MainCullingCamera {
-    /// `_anon_D351A927::MainCullingCamera::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 36741, rva 0x661e60).
-    /// `MainCullingCamera * vdtor(MainCullingCamera * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(36741, (&Self, u64, u64, u64) -> *mut c_void)(self, param_1, param_2, param_3) } }
 }
 
 impl classes::_anon_D351A927__ScriptArchiveRegistered {
@@ -81919,16 +81179,6 @@ impl classes::partial::hkbBoolVariableSequencedData {
     pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(59008, (&Self, u32, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
 }
 
-impl classes::partial::hkbCameraShakeEventPayload {
-    /// `hkbCameraShakeEventPayload::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 80358, rva 0x10d19d0).
-    /// `hkbCameraShakeEventPayload * vdtor(hkbCameraShakeEventPayload * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(80358, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
-}
-
 impl classes::hkbCharacter {
     /// `hkbCharacter::vdtor`, vtable slot 0, through the object's vtable (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 58470, rva 0xad8200).
     /// `hkbCharacter * vdtor(hkbCharacter * this, uint param_1, undefined8 param_2, undefined8 param_3)`
@@ -85921,23 +85171,6 @@ impl classes::partial::hkpFirstCdBodyPairCollector {
     pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(40950, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
 }
 
-impl classes::partial::hkpFirstPersonGun {
-    /// `hkpFirstPersonGun::ctor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 62777, rva 0xba6ad0).
-    /// `hkpFirstPersonGun * ctor(hkpFirstPersonGun * this, int param_1)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn ctor_2(&self, param_1: i32) -> *mut Self { unsafe { function!(62777, (&Self, i32) -> *mut Self)(self, param_1) } }
-    /// `hkpFirstPersonGun::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 62783, rva 0xba6ec0).
-    /// `hkpFirstPersonGun * vdtor(hkpFirstPersonGun * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(62783, (&Self, u32, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
-}
-
 impl classes::partial::hkpFixedBufferCdPointCollector {
     /// `hkpFixedBufferCdPointCollector::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 43882, rva 0x7e9ce0).
     /// `hkpFixedBufferCdPointCollector * vdtor(hkpFixedBufferCdPointCollector * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
@@ -88797,16 +88030,6 @@ impl classes::partial::hkxAttributeHolder {
     pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(65442, (&Self, u32, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
 }
 
-impl classes::partial::hkxCamera {
-    /// `hkxCamera::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 65443, rva 0xc48720).
-    /// `hkxCamera * vdtor(hkxCamera * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(65443, (&Self, u64, u64, u64) -> *mut Self)(self, param_1, param_2, param_3) } }
-}
-
 impl classes::partial::hkxEdgeSelectionChannel {
     /// `hkxEdgeSelectionChannel::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 65444, rva 0xc487b0).
     /// `hkxEdgeSelectionChannel * vdtor(hkxEdgeSelectionChannel * this, uint param_1, undefined8 param_2, undefined8 param_3)`
@@ -89517,13 +88740,6 @@ pub unsafe fn cmd__calc_low_path_to_point_execute(param_1: i64, param_2: i64, pa
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn cmd__calc_path_to_point_execute() -> u8 { unsafe { function!(22087, () -> u8)() } }
-/// `Cmd::CameraShake_Execute` (decompiler signature, tier low; ledger console_cmd evidence, name high; id 22643, rva 0x368890).
-/// `undefined8 CameraShake_Execute(longlong param_1, longlong param_2, longlong param_3, ulonglong param_4, longlong param_5, longlong param_6, undefined8 param_7, uint * param_8)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn cmd__camera_shake_execute(param_1: i64, param_2: i64, param_3: i64, param_4: u64, param_5: i64, param_6: i64, param_7: u64, param_8: *mut u32) -> u64 { unsafe { function!(22643, (i64, i64, i64, u64, i64, i64, u64, *mut u32) -> u64)(param_1, param_2, param_3, param_4, param_5, param_6, param_7, param_8) } }
 /// `Cmd::CanFlyHere_Eval` (decompiler signature, tier low; ledger console_cmd evidence, name high; id 21463, rva 0x332c90).
 /// `undefined8 CanFlyHere_Eval(Actor * param_1, undefined8 param_2, undefined8 param_3, undefined8 * param_4)`
 ///
@@ -95215,13 +94431,6 @@ pub unsafe fn cmd__is_owner_eval(param_1: i64, param_2: i64, param_3: u64, param
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn cmd__is_owner_execute(param_1: i64, param_2: i64, param_3: i64, param_4: u64, param_5: i64, param_6: i64, param_7: *mut u64, param_8: *mut u32) -> u64 { unsafe { function!(22371, (i64, i64, i64, u64, i64, i64, *mut u64, *mut u32) -> u64)(param_1, param_2, param_3, param_4, param_5, param_6, param_7, param_8) } }
-/// `Cmd::IsPC1stPerson_Execute` (decompiler signature, tier low; ledger console_cmd evidence, name high; id 22460, rva 0x360890).
-/// `undefined8 IsPC1stPerson_Execute(void)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn cmd__is_pc1st_person_execute() -> u64 { unsafe { function!(22460, () -> u64)() } }
 /// `Cmd::IsPCAMurderer_Eval` (decompiler signature, tier low; ledger console_cmd evidence, name high; id 21532, rva 0x3363d0).
 /// `undefined8 IsPCAMurderer_Eval(void)`
 ///
@@ -96405,13 +95614,6 @@ pub unsafe fn cmd__play_sync_anim_execute(param_1: i64, param_2: i64, param_3: i
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn cmd__play_terrain_effect_execute(param_1: i64, param_2: i64, param_3: i64, param_4: u64, param_5: i64, param_6: i64, param_7: u64, param_8: *mut u32) -> u64 { unsafe { function!(23056, (i64, i64, i64, u64, i64, i64, u64, *mut u32) -> u64)(param_1, param_2, param_3, param_4, param_5, param_6, param_7, param_8) } }
-/// `Cmd::PlayVATSCameras_Execute` (decompiler signature, tier low; ledger console_cmd evidence, name high; id 22970, rva 0x376c10).
-/// `ulonglong PlayVATSCameras_Execute(longlong param_1, longlong param_2, longlong param_3, ulonglong param_4, longlong param_5, longlong param_6, undefined8 param_7, uint * param_8)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn cmd__play_vats_cameras_execute(param_1: i64, param_2: i64, param_3: i64, param_4: u64, param_5: i64, param_6: i64, param_7: u64, param_8: *mut u32) -> u64 { unsafe { function!(22970, (i64, i64, i64, u64, i64, i64, u64, *mut u32) -> u64)(param_1, param_2, param_3, param_4, param_5, param_6, param_7, param_8) } }
 /// `Cmd::PlayerCreatePotion_Execute` (decompiler signature, tier low; ledger console_cmd evidence, name high; id 22506, rva 0x362410).
 /// `undefined8 PlayerCreatePotion_Execute(longlong param_1, longlong param_2, longlong param_3, ulonglong param_4, longlong param_5, longlong param_6, longlong * param_7, uint * param_8)`
 ///
@@ -98211,13 +97413,6 @@ pub unsafe fn cmd__should_attack_kill_execute(param_1: i64, param_2: i64, param_
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn cmd__shout_execute(param_1: i64, param_2: i64, param_3: i64, param_4: u64, param_5: i64, param_6: i64, param_7: u64, param_8: *mut u32) -> u64 { unsafe { function!(22288, (i64, i64, i64, u64, i64, i64, u64, *mut u32) -> u64)(param_1, param_2, param_3, param_4, param_5, param_6, param_7, param_8) } }
-/// `Cmd::Show1stPerson_Execute` (decompiler signature, tier low; ledger console_cmd evidence, name high; id 22938, rva 0x374c80).
-/// `undefined8 Show1stPerson_Execute(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn cmd__show1st_person_execute(param_1: u64, param_2: u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(22938, (u64, u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
 /// `Cmd::ShowAllMapMarkers_Execute` (decompiler signature, tier low; ledger console_cmd evidence, name high; id 22014, rva 0x34e050).
 /// `ulonglong ShowAllMapMarkers_Execute(longlong param_1, longlong param_2, longlong param_3, ulonglong param_4, longlong param_5, longlong param_6, undefined8 param_7, uint * param_8)`
 ///
@@ -98953,13 +98148,6 @@ pub unsafe fn cmd__toggle_combat_stats_execute(param_1: u64, param_2: u64, param
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn cmd__toggle_context_overlay_execute() -> u8 { unsafe { function!(23070, () -> u8)() } }
-/// `Cmd::ToggleControlsDriven_Execute` (decompiler signature, tier low; ledger console_cmd evidence, name high; id 23089, rva 0x37b3a0).
-/// `undefined8 ToggleControlsDriven_Execute(longlong param_1, longlong param_2, uint * param_3, uint * param_4, longlong param_5, longlong param_6, undefined8 param_7, uint * param_8)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn cmd__toggle_controls_driven_execute(param_1: i64, param_2: i64, param_3: *mut u32, param_4: *mut u32, param_5: i64, param_6: i64, param_7: u64, param_8: *mut u32) -> u64 { unsafe { function!(23089, (i64, i64, *mut u32, *mut u32, i64, i64, u64, *mut u32) -> u64)(param_1, param_2, param_3, param_4, param_5, param_6, param_7, param_8) } }
 /// `Cmd::ToggleConversations_Execute` (decompiler signature, tier low; ledger console_cmd evidence, name high; id 22810, rva 0x36e200).
 /// `undefined1 ToggleConversations_Execute(void)`
 ///
@@ -99079,13 +98267,6 @@ pub unsafe fn cmd__toggle_event_log_execute() -> u8 { unsafe { function!(22828, 
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn cmd__toggle_fxaa_execute() -> u64 { unsafe { function!(23123, () -> u64)() } }
-/// `Cmd::ToggleFlyCam_Execute` (decompiler signature, tier low; ledger console_cmd evidence, name high; id 441593, rva 0x372c20).
-/// `ulonglong ToggleFlyCam_Execute(longlong param_1, longlong param_2, longlong param_3, ulonglong param_4, longlong param_5, longlong param_6, undefined8 param_7, uint * param_8)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn cmd__toggle_fly_cam_execute(param_1: i64, param_2: i64, param_3: i64, param_4: u64, param_5: i64, param_6: i64, param_7: u64, param_8: *mut u32) -> u64 { unsafe { function!(441593, (i64, i64, i64, u64, i64, i64, u64, *mut u32) -> u64)(param_1, param_2, param_3, param_4, param_5, param_6, param_7, param_8) } }
 /// `Cmd::ToggleFogOfWar_Execute` (decompiler signature, tier low; ledger console_cmd evidence, name high; id 22988, rva 0x3777d0).
 /// `undefined8 ToggleFogOfWar_Execute(void)`
 ///

@@ -8419,6 +8419,13 @@ impl core::ops::Deref for classes::partial::AutoRegisterSmartPtrDerivedPathingTy
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
 
+/// `AutoVanityState` is laid out from its primary base `TESCameraState`, so its methods and fields are reachable through it.
+impl core::ops::Deref for classes::AutoVanityState {
+    type Target = classes::TESCameraState;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+
 /// `BGSAIWorldLocation` is laid out from its primary base `IAIWorldLocation`, so its methods and fields are reachable through it.
 impl core::ops::Deref for classes::BGSAIWorldLocation {
     type Target = classes::IAIWorldLocation;
@@ -13621,7 +13628,7 @@ impl core::ops::Deref for classes::partial::BSScrapMap_unsigned_int_unsigned_int
 }
 
 /// `BSScript::CompiledScriptLoader` is laid out from its primary base `BSScript::ILoader`, so its methods and fields are reachable through it.
-impl core::ops::Deref for classes::partial::BSScript__CompiledScriptLoader {
+impl core::ops::Deref for classes::BSScript__CompiledScriptLoader {
     type Target = classes::BSScript__ILoader;
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
@@ -13635,14 +13642,14 @@ impl core::ops::Deref for classes::BSScript__IStore {
 }
 
 /// `BSScript::Internal::AutoPropGetFunction` is laid out from its primary base `BSScript::IFunction`, so its methods and fields are reachable through it.
-impl core::ops::Deref for classes::partial::BSScript__Internal__AutoPropGetFunction {
+impl core::ops::Deref for classes::BSScript__Internal__AutoPropGetFunction {
     type Target = classes::BSScript__IFunction;
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
 
 /// `BSScript::Internal::AutoPropSetFunction` is laid out from its primary base `BSScript::IFunction`, so its methods and fields are reachable through it.
-impl core::ops::Deref for classes::partial::BSScript__Internal__AutoPropSetFunction {
+impl core::ops::Deref for classes::BSScript__Internal__AutoPropSetFunction {
     type Target = classes::BSScript__IFunction;
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
@@ -26374,6 +26381,13 @@ impl core::ops::Deref for classes::partial::FinishActiveEffectVisitor {
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
 
+/// `FirstPersonState` is laid out from its primary base `TESCameraState`, so its methods and fields are reachable through it.
+impl core::ops::Deref for classes::FirstPersonState {
+    type Target = classes::TESCameraState;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+
 /// `FlameProjectile` is laid out from its primary base `Projectile`, so its methods and fields are reachable through it.
 impl core::ops::Deref for classes::FlameProjectile {
     type Target = classes::Projectile;
@@ -26479,9 +26493,23 @@ impl core::ops::Deref for classes::FlightTakeOffHandler {
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
 
+/// `FreeCameraState` is laid out from its primary base `TESCameraState`, so its methods and fields are reachable through it.
+impl core::ops::Deref for classes::FreeCameraState {
+    type Target = classes::TESCameraState;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+
 /// `FrenzyEffect` is laid out from its primary base `TargetValueModifierEffect`, so its methods and fields are reachable through it.
 impl core::ops::Deref for classes::FrenzyEffect {
     type Target = classes::TargetValueModifierEffect;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+
+/// `FurnitureCameraState` is laid out from its primary base `TESCameraState`, so its methods and fields are reachable through it.
+impl core::ops::Deref for classes::FurnitureCameraState {
+    type Target = classes::TESCameraState;
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
@@ -27459,6 +27487,13 @@ impl core::ops::Deref for classes::InvisibilityEffect {
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
 
+/// `IronSightsState` is laid out from its primary base `TESCameraState`, so its methods and fields are reachable through it.
+impl core::ops::Deref for classes::IronSightsState {
+    type Target = classes::TESCameraState;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+
 /// `IsSpellTargetFunctor` is laid out from its primary base `MagicTarget::ForEachActiveEffectVisitor`, so its methods and fields are reachable through it.
 impl core::ops::Deref for classes::partial::IsSpellTargetFunctor {
     type Target = classes::MagicTarget__ForEachActiveEffectVisitor;
@@ -27725,6 +27760,13 @@ impl core::ops::Deref for classes::LocalMapCamera {
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
 
+/// `LocalMapCamera::DefaultState` is laid out from its primary base `TESCameraState`, so its methods and fields are reachable through it.
+impl core::ops::Deref for classes::LocalMapCamera__DefaultState {
+    type Target = classes::TESCameraState;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+
 /// `LockEffect` is laid out from its primary base `ActiveEffect`, so its methods and fields are reachable through it.
 impl core::ops::Deref for classes::LockEffect {
     type Target = classes::ActiveEffect;
@@ -27735,6 +27777,13 @@ impl core::ops::Deref for classes::LockEffect {
 /// `LongestDurationFunctor` is laid out from its primary base `MagicItemTraversalFunctor`, so its methods and fields are reachable through it.
 impl core::ops::Deref for classes::partial::LongestDurationFunctor {
     type Target = classes::MagicItemTraversalFunctor;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+
+/// `LookHandler` is laid out from its primary base `PlayerInputHandler`, so its methods and fields are reachable through it.
+impl core::ops::Deref for classes::LookHandler {
+    type Target = classes::PlayerInputHandler;
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
@@ -27791,6 +27840,13 @@ impl core::ops::Deref for classes::Main {
 /// `MapCamera` is laid out from its primary base `TESCamera`, so its methods and fields are reachable through it.
 impl core::ops::Deref for classes::MapCamera {
     type Target = classes::TESCamera;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+
+/// `MapCameraStates::Exit` is laid out from its primary base `TESCameraState`, so its methods and fields are reachable through it.
+impl core::ops::Deref for classes::MapCameraStates__Exit {
+    type Target = classes::TESCameraState;
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
@@ -30882,6 +30938,13 @@ impl core::ops::Deref for classes::PlayerCamera {
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
 
+/// `PlayerCameraTransitionState` is laid out from its primary base `TESCameraState`, so its methods and fields are reachable through it.
+impl core::ops::Deref for classes::PlayerCameraTransitionState {
+    type Target = classes::TESCameraState;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+
 /// `PlayerChairEnterHandler` is laid out from its primary base `ChairEnterHandler`, so its methods and fields are reachable through it.
 impl core::ops::Deref for classes::PlayerChairEnterHandler {
     type Target = classes::ChairEnterHandler;
@@ -31410,13 +31473,6 @@ impl core::ops::Deref for classes::SimpleAnimationGraphManagerHolder {
 /// `SimpleAnimationGraphManagerLoadingTask` is laid out from its primary base `IAnimationGraphManagerLoadingTask`, so its methods and fields are reachable through it.
 impl core::ops::Deref for classes::SimpleAnimationGraphManagerLoadingTask {
     type Target = classes::IAnimationGraphManagerLoadingTask;
-    #[inline]
-    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
-}
-
-/// `SixaxisEvent` is laid out from its primary base `IDEvent`, so its methods and fields are reachable through it.
-impl core::ops::Deref for classes::SixaxisEvent {
-    type Target = classes::IDEvent;
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
@@ -32963,6 +33019,20 @@ impl core::ops::Deref for classes::partial::TempLoadGameBuffer {
 
 /// `ThirdPersonState` is laid out from its primary base `TESCameraState`, so its methods and fields are reachable through it.
 impl core::ops::Deref for classes::ThirdPersonState {
+    type Target = classes::TESCameraState;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+
+/// `TogglePOVHandler` is laid out from its primary base `HeldStateHandler`, so its methods and fields are reachable through it.
+impl core::ops::Deref for classes::TogglePOVHandler {
+    type Target = classes::HeldStateHandler;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+
+/// `TransitionState` is laid out from its primary base `TESCameraState`, so its methods and fields are reachable through it.
+impl core::ops::Deref for classes::TransitionState {
     type Target = classes::TESCameraState;
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
@@ -41719,6 +41789,24 @@ impl core::ops::Deref for classes::partial::hkxVertexVectorDataChannel {
 }
 
 impl classes::AIProcess {
+    /// `AIProcess::ClearDeathForce`: high data +0x288 = fDeathForceCleared:Combat
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 39499, rva 0x6ff230.
+    /// `void (AIProcess* this)`
+    #[inline]
+    pub fn clear_death_force(&self) { unsafe { function!(39499, (&Self))(self) } }
+    /// `AIProcess::ClearKnockState`: ends the actor's knock/ragdoll state: restores its 3D and graph, clears the ragdoll extra, clears Actor+0xc8 bits 25..27 (AND 0xf1ffffff) and, for the player, PlayerCamera::LeaveBleedout(camera, 1) (instant leave of the bleedout camera)
+    ///
+    /// Semantic, camera pass, high; ledger runtime evidence, name high; id 39897, rva 0x723ff0.
+    /// `void (AIProcess* this, Actor* actor)`
+    #[inline]
+    pub fn clear_knock_state(&self, actor: &classes::Actor) { unsafe { function!(39897, (&Self, &classes::Actor))(self, actor) } }
+    /// `AIProcess::DecayAimChaseLooking`: middle-high +0x2a0 -= +0x2a0 * g_FrameDelta * fAimChaseLookingMult:Combat, snapped to 0 when it crosses zero or lies within (-eps, eps)
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 39899, rva 0x724370.
+    /// `void (AIProcess* this)`
+    #[inline]
+    pub fn decay_aim_chase_looking(&self) { unsafe { function!(39899, (&Self))(self) } }
     /// `AIProcess::GetAnimationGraphManager`: copies middleHigh->animationGraphManager into out (ref-counted); false when none
     ///
     /// Semantic, animation pass, high; ledger semantic evidence, name high; id 39840, rva 0x7217e0.
@@ -41746,6 +41834,42 @@ impl classes::AIProcess {
     /// `TESForm* AIProcess::GetEquippedRightObject(AIProcess* this)`
     #[inline]
     pub fn get_equipped_right_object(&self) -> Option<&'static classes::TESForm> { unsafe { function!(39196, (&Self) -> Option<&'static classes::TESForm>)(self) } }
+    /// `AIProcess::GetHighField3B8Address`: &high(+0x10)+0x3b8, or the static default 0x32441a0 without high data
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 39374, rva 0x6f60c0.
+    /// `void** (AIProcess* this)`
+    ///
+    /// # Safety
+    /// The result is an untyped pointer.
+    #[inline]
+    pub unsafe fn get_high_field3_b8_address(&self) -> *mut *mut c_void { unsafe { function!(39374, (&Self) -> *mut *mut c_void)(self) } }
+    /// `AIProcess::GetHighPoint424`: &high+0x424, or the zero NiPoint3 0x331c458
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 39597, rva 0x7024d0.
+    /// `NiPoint3* (AIProcess* this)`
+    ///
+    /// # Safety
+    /// The result is an untyped pointer.
+    #[inline]
+    pub unsafe fn get_high_point424(&self) -> *mut c_void { unsafe { function!(39597, (&Self) -> *mut c_void)(self) } }
+    /// `AIProcess::GetLoadingMenuClosed`: high process data (+0x10) byte +0x45e != 0 (false without high data)
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 39543, rva 0x700d60.
+    /// `bool (AIProcess* this)`
+    #[inline]
+    pub fn get_loading_menu_closed(&self) -> bool { unsafe { function!(39543, (&Self) -> bool)(self) } }
+    /// `AIProcess::HasMiddleHighField210`: middle-high data (+0x8) +0x210 != null
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 39792, rva 0x71fe00.
+    /// `bool (AIProcess* this)`
+    #[inline]
+    pub fn has_middle_high_field210(&self) -> bool { unsafe { function!(39792, (&Self) -> bool)(self) } }
+    /// `AIProcess::ResetHighField3F8Pair`: high data +0x3f8 = +0x3fa = 0xffff
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 39522, rva 0x6ffef0.
+    /// `void (AIProcess* this)`
+    #[inline]
+    pub fn reset_high_field3_f8_pair(&self) { unsafe { function!(39522, (&Self))(self) } }
     /// `AIProcess::SetAnimationGraphManager`: stores the manager at middleHigh+0x1a8, caches manager+0x70 at +0x1b0, refreshes the equipped item types at +0x304/+0x306
     ///
     /// Semantic, animation pass, high; ledger semantic evidence, name high; id 39841, rva 0x721850.
@@ -41755,6 +41879,111 @@ impl classes::AIProcess {
     /// `mgr` must point to what the engine expects.
     #[inline]
     pub unsafe fn set_animation_graph_manager(&self, mgr: *mut c_void) -> bool { unsafe { function!(39841, (&Self, *mut c_void) -> bool)(self, mgr) } }
+    /// `AIProcess::SetField94`: +0x94 = time
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 39185, rva 0x6eab10.
+    /// `void (AIProcess* this, float time)`
+    #[inline]
+    pub fn set_field94(&self, time: f32) { unsafe { function!(39185, (&Self, f32))(self, time) } }
+    /// `AIProcess::SetHeadTrackResetTimer`: high data +0x174 = seconds
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 39473, rva 0x6fe910.
+    /// `void (AIProcess* this, float seconds)`
+    #[inline]
+    pub fn set_head_track_reset_timer(&self, seconds: f32) { unsafe { function!(39473, (&Self, f32))(self, seconds) } }
+    /// `AIProcess::SetHighField324`: high data (+0x10) +0x324 = value
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 39351, rva 0x6f5200.
+    /// `void (AIProcess* this, float value)`
+    #[inline]
+    pub fn set_high_field324(&self, value: f32) { unsafe { function!(39351, (&Self, f32))(self, value) } }
+    /// `AIProcess::SetHighField32C`: high data +0x32c = value
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 39419, rva 0x6f7080.
+    /// `void (AIProcess* this, float value)`
+    #[inline]
+    pub fn set_high_field32_c(&self, value: f32) { unsafe { function!(39419, (&Self, f32))(self, value) } }
+    /// `AIProcess::SetLoadingMenuClosed`: high process data (+0x10) byte +0x45e = closed
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 39544, rva 0x700d80.
+    /// `void (AIProcess* this, bool closed)`
+    #[inline]
+    pub fn set_loading_menu_closed(&self, closed: bool) { unsafe { function!(39544, (&Self, bool))(self, closed) } }
+    /// `AIProcess::SetMiddleHighByte32A`: middle-high +0x32a = value
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 40010, rva 0x727f00.
+    /// `void (AIProcess* this, bool value)`
+    #[inline]
+    pub fn set_middle_high_byte32_a(&self, value: bool) { unsafe { function!(40010, (&Self, bool))(self, value) } }
+    /// `AIProcess::SetMiddleHighByte331`: middle-high +0x331 = value
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 40012, rva 0x727f40.
+    /// `void (AIProcess* this, bool value)`
+    #[inline]
+    pub fn set_middle_high_byte331(&self, value: bool) { unsafe { function!(40012, (&Self, bool))(self, value) } }
+    /// `AIProcess::SetMiddleHighField294`: middle-high +0x294 = value
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 39920, rva 0x7253a0.
+    /// `void (AIProcess* this, float value)`
+    #[inline]
+    pub fn set_middle_high_field294(&self, value: f32) { unsafe { function!(39920, (&Self, f32))(self, value) } }
+    /// `AIProcess::SetMiddleHighField2E8`: middle-high +0x2e8 = value (integer store)
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 39915, rva 0x7252e0.
+    /// `void (AIProcess* this, u32 value)`
+    #[inline]
+    pub fn set_middle_high_field2_e8(&self, value: u32) { unsafe { function!(39915, (&Self, u32))(self, value) } }
+    /// `AIProcess::SetMiddleHighField2E8_2`: middle-high +0x2e8 = value (byte-identical twin of 0x7252e0)
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 39922, rva 0x7253e0.
+    /// `void (AIProcess* this, u32 value)`
+    #[inline]
+    pub fn set_middle_high_field2_e8_2(&self, value: u32) { unsafe { function!(39922, (&Self, u32))(self, value) } }
+    /// `AIProcess::SetMiddleHighPointD4`: middle-high +0xd4..+0xdc = *value
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 39918, rva 0x725350.
+    /// `void (AIProcess* this, const NiPoint3* value)`
+    ///
+    /// # Safety
+    /// `value` must point to what the engine expects.
+    #[inline]
+    pub unsafe fn set_middle_high_point_d4(&self, value: *const c_void) { unsafe { function!(39918, (&Self, *const c_void))(self, value) } }
+    /// `AIProcess::SetPitch`: middle-high +0xb0 (pitch, the graph's Pitch channel) = pitch
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 39880, rva 0x723430.
+    /// `void (AIProcess* this, float pitch)`
+    #[inline]
+    pub fn set_pitch(&self, pitch: f32) { unsafe { function!(39880, (&Self, f32))(self, pitch) } }
+    /// `AIProcess::SetPitchDelta`: middle-high +0xbc (pitchDelta, ledger) = delta
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 39886, rva 0x7234f0.
+    /// `void (AIProcess* this, float delta)`
+    #[inline]
+    pub fn set_pitch_delta(&self, delta: f32) { unsafe { function!(39886, (&Self, f32))(self, delta) } }
+    /// `AIProcess::SetRoll`: middle-high +0xb4 (roll) = roll
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 39882, rva 0x723470.
+    /// `void (AIProcess* this, float roll)`
+    #[inline]
+    pub fn set_roll(&self, roll: f32) { unsafe { function!(39882, (&Self, f32))(self, roll) } }
+    /// `AIProcess::SetTargetSpeed`: middle-high +0x2ac (targetSpeed, ledger) = speed
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 39875, rva 0x723390.
+    /// `void (AIProcess* this, float speed)`
+    #[inline]
+    pub fn set_target_speed(&self, speed: f32) { unsafe { function!(39875, (&Self, f32))(self, speed) } }
+    /// `AIProcess::SetTurnDelta`: stores the heading turn rate into the middle-high process data +0xc4 (no-op without middle-high data)
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 39884, rva 0x7234b0.
+    /// `void (AIProcess* this, float turnDelta)`
+    #[inline]
+    pub fn set_turn_delta(&self, turnDelta: f32) { unsafe { function!(39884, (&Self, f32))(self, turnDelta) } }
+    /// `AIProcess::StartDeferredKill`: middle-high data: deferred-kill state +0x2f8 = 1 when 0, +0x332 |= flags, timer +0x2d4 = fBetaDeferredKillTimer:General
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 40033, rva 0x7285a0.
+    /// `void (AIProcess* this, u8 flags)`
+    #[inline]
+    pub fn start_deferred_kill(&self, flags: u8) { unsafe { function!(40033, (&Self, u8))(self, flags) } }
     /// `AIProcess::ctor`: constructs an AI process
     ///
     /// Semantic, actors pass, high; ledger runtime evidence, name high; id 39107, rva 0x6e66a0.
@@ -41764,6 +41993,15 @@ impl classes::AIProcess {
     /// It constructs or destroys an object in place.
     #[inline]
     pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(39107, (&Self) -> *mut Self)(self) } }
+    /// `DispatchEventToField8Sinks`: dispatches the 8-byte event {u32 type, u8 value} to the sinks of the process's middle-high data
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 40028, rva 0x728500.
+    /// `void (AIProcess* this, const void* event)`
+    ///
+    /// # Safety
+    /// `event` must point to what the engine expects.
+    #[inline]
+    pub unsafe fn dispatch_event_to_field8_sinks(&self, event: *const c_void) { unsafe { function!(40028, (&Self, *const c_void))(self, event) } }
 }
 
 impl classes::ActivateHandler {
@@ -41773,6 +42011,12 @@ impl classes::ActivateHandler {
     /// `bool (ActivateHandler* this, InputEvent* event)`
     #[inline]
     pub fn can_process(&self, event: &classes::InputEvent) -> bool { unsafe { virtual_function!(self, 1, (&Self, &classes::InputEvent) -> bool)(self, event) } }
+    /// `ActivateHandler::TryActivateCurrentFurniture`: activate key with no target: unless a menu pauses the game, the controls disallow it, the camera is in cameraStates[6] (transition) or +0xbe9 bit 5 is set, activates the reference in the player's process furniture handle (ActivateReference(ref, player, 0, 0, 1, 0)); on failure plays the no-activation feedback
+    ///
+    /// Semantic, camera pass, high; ledger runtime evidence, name high; id 40749, rva 0x760600.
+    /// `void (PlayerCharacter* player)`
+    #[inline]
+    pub fn try_activate_current_furniture(player: &classes::PlayerCharacter) { unsafe { function!(40749, (&classes::PlayerCharacter))(player) } }
 }
 
 impl classes::Actor {
@@ -41827,6 +42071,12 @@ impl classes::Actor {
     /// `bool IsInCombat(const Actor* this)`
     #[inline]
     pub fn is_in_combat(&self) -> bool { unsafe { virtual_function!(self, 227, (&Self) -> bool)(self) } }
+    /// `Actor::Kill`, vtable slot 270: kills the actor: stops sounds and casts, clears combat, applies the death state and action, sends the kill events; for the player closes menus and pushes the bleedout camera
+    ///
+    /// Semantic, actors pass, high; called through the object's vtable.
+    /// `void (Actor* this, Actor* killer, float deathEventValue, bool sendStoryEvent, bool skipDeathAction)`
+    #[inline]
+    pub fn kill(&self, killer: &Self, deathEventValue: f32, sendStoryEvent: bool, skipDeathAction: bool) { unsafe { virtual_function!(self, 270, (&Self, &Self, f32, bool, bool))(self, killer, deathEventValue, sendStoryEvent, skipDeathAction) } }
     /// `Actor::SetAlpha`, vtable slot 225: stores the alpha in the process and in NiAVObject.fadeAmount (+0x100) of the 3D; for the player (this == ID_401069) on both roots
     ///
     /// Semantic, actors pass, high; called through the object's vtable.
@@ -41842,6 +42092,12 @@ impl classes::Actor {
     /// `value` must point to what the engine expects.
     #[inline]
     pub unsafe fn set_middle_high_process_field150(&self, value: *mut c_void) { unsafe { virtual_function!(self, 140, (&Self, *mut c_void))(self, value) } }
+    /// `Actor::Update`, vtable slot 173: the actor's per-frame update (movement, water, process, animation); PlayerCharacter::Update chains to it
+    ///
+    /// Semantic, actors pass, high; called through the object's vtable.
+    /// `void (Actor* this, float delta)`
+    #[inline]
+    pub fn update(&self, delta: f32) { unsafe { virtual_function!(self, 173, (&Self, f32))(self, delta) } }
     /// `Actor::UpdateAlpha`, vtable slot 224: alpha = process fade * (1 - invisibility(av 0x36) * k) * distance factor, or the value of extra type 0x47; applied through slot 225
     ///
     /// Semantic, actors pass, medium; called through the object's vtable.
@@ -41851,18 +42107,36 @@ impl classes::Actor {
     /// The pass rates the signature medium.
     #[inline]
     pub unsafe fn update_alpha(&self) { unsafe { virtual_function!(self, 224, (&Self))(self) } }
+    /// `Actor::UpdateEquippedWeaponAnimations`, vtable slot 178: re-reads the equipped hand types into the graph variables iLeftHandType/iRightHandType (g_AnimationVariableNames +0x388/+0x390), handles the mounted (war horse) case and the camera's combat offsets, and when the flag is set runs default object 0x51 'Action Force Equip'
+    ///
+    /// Semantic, actors pass, high; called through the object's vtable.
+    /// `void (Actor* this, bool sendForceEquipAction)`
+    #[inline]
+    pub fn update_equipped_weapon_animations(&self, sendForceEquipAction: bool) { unsafe { virtual_function!(self, 178, (&Self, bool))(self, sendForceEquipAction) } }
     /// `Actor::UpdateHeadTracking`, vtable slot 290: head tracking target choice and update
     ///
     /// Semantic, actors pass, high; called through the object's vtable.
     /// `void (Actor* this, float delta)`
     #[inline]
     pub fn update_head_tracking(&self, delta: f32) { unsafe { virtual_function!(self, 290, (&Self, f32))(self, delta) } }
+    /// `Actor::AdvanceDeferredKillState`: when the process (+0xf8) has middle-high data and its deferred-kill state (+0x2f8) is non-zero, increments it
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 38617, rva 0x6cc930.
+    /// `void (Actor* this)`
+    #[inline]
+    pub fn advance_deferred_kill_state(&self) { unsafe { function!(38617, (&Self))(self) } }
     /// `Actor::ApplyMovementStep`: the actor's movement step: position, heading += step yaw (SetField50Angle, skipped for the player while +0xbed bit 2), pitch = clamp(rotX + step pitch) with limits by mount state: horse (fMountedMaxLookingDown only when the mount's flags2 & 0xe0 is in 0x60..0xbf, fHorseMaxUpwardPitch), flying mount (fFlyingMountedMaxLookingDown, fDragonMaxUpwardPitch), sitting (fSittingMaxLookingDown), then SetAngleField48
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 37356, rva 0x67c380.
     /// `void (Actor* this, float delta)`
     #[inline]
     pub fn apply_movement_step(&self, delta: f32) { unsafe { function!(37356, (&Self, f32))(self, delta) } }
+    /// `Actor::BeginGetUp`: starts the get-up from a knockdown: resets the knock data, and when the flag is set sets the graph variable at names+0x590 and runs default object 0x6c 'Action Get Up' (for the player in cameraStates[11] it also resets the VATS time multiplier); finally sets Actor+0xc8 knock bits to 5 (OR 0xa000000, clear 0x4000000)
+    ///
+    /// Semantic, camera pass, high; ledger runtime evidence, name high; id 40150, rva 0x735c20.
+    /// `void (Actor* this, bool sendGetUpAction)`
+    #[inline]
+    pub fn begin_get_up(&self, sendGetUpAction: bool) { unsafe { function!(40150, (&Self, bool))(self, sendGetUpAction) } }
     /// `Actor::GetActorValueModifier`: one modifier of a value
     ///
     /// Semantic, actors pass, high; ledger semantic evidence, name high; id 38469, rva 0x6c5440.
@@ -41911,6 +42185,12 @@ impl classes::Actor {
     /// `TESForm* Actor::GetEquippedObject(Actor* this, bool leftHand)`
     #[inline]
     pub fn get_equipped_object(&self, leftHand: bool) -> Option<&'static classes::TESForm> { unsafe { function!(38574, (&Self, bool) -> Option<&'static classes::TESForm>)(self, leftHand) } }
+    /// `Actor::GetEyeHeight`: the height above the actor's position that cameras and detection use: the player -> PlayerCamera::GetEyeHeightFromCam3 (Cam3 node local z); others -> the process cache (process+0x50 -> +0x14) when flag bit 9 of its +0x2c is set, else UpdateField1FChildHeight
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 37477, rva 0x687450.
+    /// `float (const Actor* actor)`
+    #[inline]
+    pub fn get_eye_height(&self) -> f32 { unsafe { function!(37477, (&Self) -> f32)(self) } }
     /// `Actor::GetLevel`: the actor's level
     ///
     /// Semantic, actors pass, high; ledger runtime evidence, name high; id 37334, rva 0x6797a0.
@@ -41929,6 +42209,18 @@ impl classes::Actor {
     /// `float Actor::GetPermanentActorValueImpl(Actor* this, int value)`
     #[inline]
     pub fn get_permanent_actor_value_impl(&self, value: i32) -> f32 { unsafe { function!(38484, (&Self, i32) -> f32)(self, value) } }
+    /// `Actor::GetScaledHeight`: 0.57 (0x191c7b4) times either the actor's cached scaled bound extent z (eyeHeight false) or its eye height (Actor::GetEyeHeight's rule, inlined)
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 37445, rva 0x685b30.
+    /// `float (const Actor* actor, bool eyeHeight)`
+    #[inline]
+    pub fn get_scaled_height(&self, eyeHeight: bool) -> f32 { unsafe { function!(37445, (&Self, bool) -> f32)(self, eyeHeight) } }
+    /// `Actor::IsBoolFlags2Bit3Clear`: !(boolFlags2 (+0x204) bit 3)
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 40729, rva 0x75e150.
+    /// `bool (Actor* this)`
+    #[inline]
+    pub fn is_bool_flags2_bit3_clear(&self) -> bool { unsafe { function!(40729, (&Self) -> bool)(self) } }
     /// `Actor::IsGhost`: whether the actor is a ghost
     ///
     /// Semantic, actors pass, medium; ledger semantic evidence, name medium; id 37275, rva 0x6756b0.
@@ -41959,6 +42251,12 @@ impl classes::Actor {
     /// `source` must point to what the engine expects.
     #[inline]
     pub unsafe fn mod_actor_value_impl(&self, modifier: i32, value: i32, delta: f32, source: *mut c_void) { unsafe { function!(38468, (&Self, i32, i32, f32, *mut c_void))(self, modifier, value, delta, source) } }
+    /// `Actor::PerformKnockdownAction`: runs default object 0x6b 'Action Knockdown' on the actor (TESActionData slot 5); for the player also PlayerCamera::PushBleedout
+    ///
+    /// Semantic, camera pass, high; ledger runtime evidence, name high; id 40151, rva 0x7360d0.
+    /// `void (Actor* actor)`
+    #[inline]
+    pub fn perform_knockdown_action(&self) { unsafe { function!(40151, (&Self))(self) } }
     /// `Actor::ProcessAnimationGraphEvent`: handles the actor's own animation events after TESObjectREFR's handler; a tag found in the footstep source's filter list (BSTArray<BSFixedString> at source+0x60, tested by 0x737040) is re-sent as a BGSFootstepEvent {actor handle, tag} through g_FootstepEventSource_ptr
     ///
     /// Semantic, events pass, high; ledger runtime evidence, name high; id 37997, rva 0x6b2000.
@@ -41968,6 +42266,36 @@ impl classes::Actor {
     /// `source` must point to what the engine expects.
     #[inline]
     pub unsafe fn process_animation_graph_event(&self, event: *const classes::BSAnimationGraphEvent, source: *mut c_void) -> u32 { unsafe { function!(37997, (&Self, *const classes::BSAnimationGraphEvent, *mut c_void) -> u32)(self, event, source) } }
+    /// `Actor::ReapplySlot166FromFlags2`: when flags2 (+0xcc) bits 5-7 are 0x20 or 0x80, tail-calls Actor slot 166 (+0x530) with (bits == 0x20)
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 37280, rva 0x675b90.
+    /// `void (Actor* this)`
+    #[inline]
+    pub fn reapply_slot166_from_flags2(&self) { unsafe { function!(37280, (&Self))(self) } }
+    /// `Actor::SetLifeState`: stores the life state into bits 21..24 of Actor+0xc8 (flags1) and applies the transition: state 2 (dead) stops sounds and 3D effects; entering/leaving bleedout (states 7/8) pushes or leaves the player's bleedout camera
+    ///
+    /// Semantic, camera pass, high; ledger runtime evidence, name high; id 37612, rva 0x693200.
+    /// `void (Actor* this, u32 lifeState)`
+    #[inline]
+    pub fn set_life_state(&self, lifeState: u32) { unsafe { function!(37612, (&Self, u32))(self, lifeState) } }
+    /// `Actor::StartKillMove`: for an actor whose process byte 0x137 is 0 or 1: kill-move time to max, deferred kill on the process, flag 0x4000 in +0x204, partner handle at +0x108; for the player with a partner and the VATS camera (+0xc8) neither current nor stacked: PlayerCamera::ForceThirdPerson
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 38613, rva 0x6cc740.
+    /// `void (Actor* actor, Actor* partner)`
+    #[inline]
+    pub fn start_kill_move(&self, partner: &Self) { unsafe { function!(38613, (&Self, &Self))(self, partner) } }
+    /// `Actor::StopUsingFurniture`: gets the actor out of its furniture: sets +0x204 bit 8; when instant, moves it to the furniture's exit point (default-object action 0x37 positions, slot 0x548 SetPosition), restores the player's controls and calls PlayerCamera::ExitFurnitureCamera(0); updates the furniture state and the process bytes +0x320 (= !instant) and +0x32c (= instant); mounted actors take the mount path (extra 0xa9)
+    ///
+    /// Semantic, camera pass, high; ledger runtime evidence, name high; id 38697, rva 0x6d2a40.
+    /// `void (Actor* this, bool instant)`
+    #[inline]
+    pub fn stop_using_furniture(&self, instant: bool) { unsafe { function!(38697, (&Self, bool))(self, instant) } }
+    /// `Actor::UpdateStaminaRegen`: decrements the stamina regen delay (AV 0x1a) by delta; when it is not delayed and the actor may regenerate (process flag bit 23, not in the 0x100 state unless extra 0xa9 is present and +0x204 bit 1 clear), applies the stamina regen for delta, except for the player while bow zoom is active (PlayerCamera+0x161)
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 38452, rva 0x6c4620.
+    /// `void (Actor* actor, float delta)`
+    #[inline]
+    pub fn update_stamina_regen(&self, delta: f32) { unsafe { function!(38452, (&Self, f32))(self, delta) } }
 }
 
 impl classes::ActorMagicCaster {
@@ -42275,6 +42603,60 @@ impl classes::AlchemyItem {
     /// The `TESWeightForm` base at +0xF0.
     #[inline]
     pub fn as_tes_weight_form(&self) -> &classes::TESWeightForm { unsafe { &*core::ptr::from_ref(self).byte_add(0xF0).cast() } }
+}
+
+impl classes::AnimatedCameraDeltaStartHandler {
+    /// `AnimatedCameraDeltaStartHandler::Destroy`, vtable slot 0: scalar deleting destructor: restores IHandlerFunctor<Actor,BSFixedStringCI>::vftable 0x1937e30, frees 0x10 when flags & 1
+    ///
+    /// Semantic, camera pass, high; called through the object's vtable.
+    /// `AnimatedCameraDeltaStartHandler* (AnimatedCameraDeltaStartHandler* this, u32 flags)`
+    #[inline]
+    pub fn destroy(&self, flags: u32) -> Option<&'static Self> { unsafe { virtual_function!(self, 0, (&Self, u32) -> Option<&'static Self>)(self, flags) } }
+    /// `AnimatedCameraDeltaStartHandler::Handle`, vtable slot 1: StartAnimatedCameraAtNode(camera, payload, delta = true): when the current state id > 8 (third person 9+), attach the named node to the current state in delta mode (state+0xcc = 0, +0xd0 = 1.0); no transition, no push
+    ///
+    /// Semantic, camera pass, high; called through the object's vtable.
+    /// `bool (AnimatedCameraDeltaStartHandler* this, Actor* actor, const BSFixedStringCI* payload)`
+    ///
+    /// # Safety
+    /// `payload` must point to what the engine expects.
+    #[inline]
+    pub unsafe fn handle(&self, actor: *mut classes::Actor, payload: *const c_void) -> bool { unsafe { virtual_function!(self, 1, (&Self, *mut classes::Actor, *const c_void) -> bool)(self, actor, payload) } }
+}
+
+impl classes::AnimatedCameraEndHandler {
+    /// `AnimatedCameraEndHandler::Destroy`, vtable slot 0: scalar deleting destructor: restores IHandlerFunctor<Actor,BSFixedStringCI>::vftable 0x1937e30, frees 0x10 when flags & 1
+    ///
+    /// Semantic, camera pass, high; called through the object's vtable.
+    /// `AnimatedCameraEndHandler* (AnimatedCameraEndHandler* this, u32 flags)`
+    #[inline]
+    pub fn destroy(&self, flags: u32) -> Option<&'static Self> { unsafe { virtual_function!(self, 0, (&Self, u32) -> Option<&'static Self>)(self, flags) } }
+    /// `AnimatedCameraEndHandler::Handle`, vtable slot 1: PlayerCamera::EndAnimatedCamera: when the current state id >= 8, clear its animated node; when it is state 8, PlayerCamera+0x160 = !bDisableAutoVanityMode:Camera and pop/SetState back
+    ///
+    /// Semantic, camera pass, high; called through the object's vtable.
+    /// `bool (AnimatedCameraEndHandler* this, Actor* actor, const BSFixedStringCI* payload)`
+    ///
+    /// # Safety
+    /// `payload` must point to what the engine expects.
+    #[inline]
+    pub unsafe fn handle(&self, actor: *mut classes::Actor, payload: *const c_void) -> bool { unsafe { virtual_function!(self, 1, (&Self, *mut classes::Actor, *const c_void) -> bool)(self, actor, payload) } }
+}
+
+impl classes::AnimatedCameraStartHandler {
+    /// `AnimatedCameraStartHandler::Destroy`, vtable slot 0: scalar deleting destructor: restores IHandlerFunctor<Actor,BSFixedStringCI>::vftable 0x1937e30, frees 0x10 when flags & 1
+    ///
+    /// Semantic, camera pass, high; called through the object's vtable.
+    /// `AnimatedCameraStartHandler* (AnimatedCameraStartHandler* this, u32 flags)`
+    #[inline]
+    pub fn destroy(&self, flags: u32) -> Option<&'static Self> { unsafe { virtual_function!(self, 0, (&Self, u32) -> Option<&'static Self>)(self, flags) } }
+    /// `AnimatedCameraStartHandler::Handle`, vtable slot 1: PlayerCamera::StartAnimatedCameraAtNode(camera, payload node name, delta = false): unless the transition or free state is current, find the node in the player's 3D, give it to ThirdPersonState id 8 (+0xf8), configure the transition (current -> 8) over iAnimatedTransitionMillis and push state 6; clears PlayerCamera+0x160
+    ///
+    /// Semantic, camera pass, high; called through the object's vtable.
+    /// `bool (AnimatedCameraStartHandler* this, Actor* actor, const BSFixedStringCI* payload)`
+    ///
+    /// # Safety
+    /// `payload` must point to what the engine expects.
+    #[inline]
+    pub unsafe fn handle(&self, actor: *mut classes::Actor, payload: *const c_void) -> bool { unsafe { virtual_function!(self, 1, (&Self, *mut classes::Actor, *const c_void) -> bool)(self, actor, payload) } }
 }
 
 impl classes::partial::AppResourceCaching___anon_AE50F340__Manager {
@@ -42599,48 +42981,54 @@ impl classes::partial::AutoRegisterCombatPathingRequestGeneric_CombatPathingGoal
 }
 
 impl classes::AutoVanityState {
-    /// `AutoVanityState::Begin`, vtable slot 1: SetFirstPerson(false), yaw = heading, queues the 'AutoVanity' message
+    /// `AutoVanityState::dtor`: non-deleting destructor: restores TESCameraState's vtable (no members to release)
     ///
-    /// Semantic, frame pass, high; called through the object's vtable.
-    /// `void (TESCameraState* this)`
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 50707, rva 0x8f3750.
+    /// `void (AutoVanityState* this)`
+    ///
+    /// # Safety
+    /// It constructs or destroys an object in place.
     #[inline]
-    pub fn begin(&self) { unsafe { virtual_function!(self, 1, (&Self))(self) } }
-    /// `AutoVanityState::End`, vtable slot 2: 0x51621('AutoVanity')
+    pub unsafe fn dtor(&self) { unsafe { function!(50707, (&Self))(self) } }
+    /// `ComputeAutoVanityCameraPosition`: out = target 3D world translation + (0, 0, eye height) - fDefaultAutoVanityZoom:Camera * rotation column 1 (forward), then ComputeCameraCasterCollision(camera, out, true); zero point when there is no target
     ///
-    /// Semantic, frame pass, medium; called through the object's vtable.
-    /// `void (TESCameraState* this)`
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 50713, rva 0x8f3a10.
+    /// `void (AutoVanityState* this, NiPoint3* out, const NiMatrix3* rotation)`
+    ///
+    /// # Safety
+    /// `out`, `rotation` must point to what the engine expects.
+    #[inline]
+    pub unsafe fn compute_auto_vanity_camera_position(&self, out: *mut c_void, rotation: *const c_void) { unsafe { function!(50713, (&Self, *mut c_void, *const c_void))(self, out, rotation) } }
+}
+
+impl classes::BGSAcousticSpaceListener {
+    /// `BGSAcousticSpaceListener::vfunc_2`, vtable slot 2: when the entity whose +0x20 collidable is the player's (first person: FindReferenceFromObjectNode == player; third person: the camera body's collidable PlayerCamera+0x128 -> +0x10 +0x20) is reported, stops the active acoustic space (StopActiveAcousticSpace(0))
+    ///
+    /// Semantic, camera pass, medium; called through the object's vtable.
+    /// `void (BGSAcousticSpaceListener* this, void* entity)`
     ///
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn end(&self) { unsafe { virtual_function!(self, 2, (&Self))(self) } }
-    /// `AutoVanityState::GetRotation`, vtable slot 4: euler(0, 0, yaw)
+    pub unsafe fn vfunc_2(&self, entity: *mut c_void) { unsafe { virtual_function!(self, 2, (&Self, *mut c_void))(self, entity) } }
+    /// `BGSAcousticSpaceListener::vfunc_7`, vtable slot 7: when the event's +0x30 collidable is the player's (or the camera body's in third person), removes the reference behind the +0x20 collidable from the listener's CRC32 handle map (+0x28.., buckets +0x48, count +0x2c) when +0x18 is set, else stops its acoustic space
     ///
-    /// Semantic, frame pass, high; called through the object's vtable.
-    /// `void (AutoVanityState* this, NiQuaternion* out)`
-    ///
-    /// # Safety
-    /// `out` must point to what the engine expects.
-    #[inline]
-    pub unsafe fn get_rotation(&self, out: *mut c_void) { unsafe { virtual_function!(self, 4, (&Self, *mut c_void))(self, out) } }
-    /// `AutoVanityState::GetTranslation`, vtable slot 5: 0x8f3a10 with the slot 4 rotation
-    ///
-    /// Semantic, frame pass, high; called through the object's vtable.
-    /// `void (AutoVanityState* this, NiPoint3* out)`
+    /// Semantic, camera pass, medium; called through the object's vtable.
+    /// `bool (BGSAcousticSpaceListener* this, void* collisionEvent)`
     ///
     /// # Safety
-    /// `out` must point to what the engine expects.
+    /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn get_translation(&self, out: *mut c_void) { unsafe { virtual_function!(self, 5, (&Self, *mut c_void))(self, out) } }
-    /// `AutoVanityState::Update`, vtable slot 3: position from ComputeAutoVanityCameraPosition 0x8f3a10, writes the root, advances yaw
+    pub unsafe fn vfunc_7(&self, collisionEvent: *mut c_void) -> bool { unsafe { virtual_function!(self, 7, (&Self, *mut c_void) -> bool)(self, collisionEvent) } }
+    /// `BGSAcousticSpaceListener::vfunc_8`, vtable slot 8: mirror of slot 7: when the event's +0x30 collidable is the player's (camera body in third person), inserts the +0x20 collidable's reference handle into the CRC32 map with value 5 (when +0x18 is set) or stops that ref's acoustic space; returns false
     ///
-    /// Semantic, frame pass, high; called through the object's vtable.
-    /// `void (TESCameraState* this, BSTSmartPointer<TESCameraState>* next)`
+    /// Semantic, camera pass, medium; called through the object's vtable.
+    /// `bool (BGSAcousticSpaceListener* this, void* collisionEvent)`
     ///
     /// # Safety
-    /// `next` must point to what the engine expects.
+    /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn update(&self, next: *mut c_void) { unsafe { virtual_function!(self, 3, (&Self, *mut c_void))(self, next) } }
+    pub unsafe fn vfunc_8(&self, collisionEvent: *mut c_void) -> bool { unsafe { virtual_function!(self, 8, (&Self, *mut c_void) -> bool)(self, collisionEvent) } }
 }
 
 impl classes::BGSAddonNode {
@@ -42706,6 +43094,129 @@ impl classes::BGSBodyPartData {
     pub unsafe fn get_part(&self, partIndex: i32) -> *mut c_void { unsafe { function!(23473, (&Self, i32) -> *mut c_void)(self, partIndex) } }
 }
 
+impl classes::BGSCameraPath {
+    /// `BGSCameraPath::ClearData`, vtable slot 5: remove from the parent's children (when TLS +0x5d8 is set and the form is initialised), free the conditions and the shot list nodes
+    ///
+    /// Semantic, camera pass, high; called through the object's vtable.
+    /// `void (BGSCameraPath* this)`
+    #[inline]
+    pub fn clear_data(&self) { unsafe { virtual_function!(self, 5, (&Self))(self) } }
+    /// `BGSCameraPath::CreateDuplicateForm`, vtable slot 9: TESForm duplicate, then remaps parent and previous sibling through the map (keeps the originals when unmapped) and duplicates every child (child slot 9) into the copy's children array
+    ///
+    /// Semantic, camera pass, high; called through the object's vtable.
+    /// `TESForm* (BGSCameraPath* this, bool createEditorID, BSTHashMap<TESForm*,TESForm*>* duplicateMap)`
+    ///
+    /// # Safety
+    /// `duplicateMap` must point to what the engine expects.
+    #[inline]
+    pub unsafe fn create_duplicate_form(&self, createEditorID: bool, duplicateMap: *mut c_void) -> *mut classes::TESForm { unsafe { virtual_function!(self, 9, (&Self, bool, *mut c_void) -> *mut classes::TESForm)(self, createEditorID, duplicateMap) } }
+    /// `BGSCameraPath::Destroy`, vtable slot 0: scalar deleting destructor: BGSCameraPath::dtor 0x315f30, frees 0x58
+    ///
+    /// Semantic, camera pass, high; called through the object's vtable.
+    /// `BGSCameraPath* (BGSCameraPath* this, u32 flags)`
+    #[inline]
+    pub fn destroy(&self, flags: u32) -> Option<&'static Self> { unsafe { virtual_function!(self, 0, (&Self, u32) -> Option<&'static Self>)(self, flags) } }
+    /// `BGSCameraPath::InitItem`, vtable slot 19: once (formFlags bit 3): init the conditions, resolve each shot id to a BGSCameraShot (unresolved entries removed, slot 50 GetFormEditorID logged once), set bit 3
+    ///
+    /// Semantic, camera pass, high; called through the object's vtable.
+    /// `void (BGSCameraPath* this)`
+    #[inline]
+    pub fn init_item(&self) { unsafe { virtual_function!(self, 19, (&Self))(self) } }
+    /// `BGSCameraPath::InitializeData`, vtable slot 4: pathFlags = 0, parent = previousSibling = 0
+    ///
+    /// Semantic, camera pass, high; called through the object's vtable.
+    /// `void (BGSCameraPath* this)`
+    #[inline]
+    pub fn initialize_data(&self) { unsafe { virtual_function!(self, 4, (&Self))(self) } }
+    /// `BGSCameraPath::Load`, vtable slot 6: reads the CPTH record (EDID, CTDA, DATA, ANAM, SNAM, OBND, VMAD) and queues the path in the registry's pending list (QueuePendingCameraPath 0x318020); for the default path 0x31df550 it first removes it from the root list
+    ///
+    /// Semantic, camera pass, high; called through the object's vtable.
+    /// `bool (BGSCameraPath* this, TESFile* file)`
+    ///
+    /// # Safety
+    /// `file` must point to what the engine expects.
+    #[inline]
+    pub unsafe fn load(&self, file: *mut classes::TESFile) -> bool { unsafe { virtual_function!(self, 6, (&Self, *mut classes::TESFile) -> bool)(self, file) } }
+    /// `BGSCameraPath::AreDataFlagBits01Clear`: (DATA flags byte +0x38 & 3) == 0
+    ///
+    /// Semantic, camera pass, high; ledger runtime evidence, name high; id 20645, rva 0x316fe0.
+    /// `bool (BGSCameraPath* this)`
+    #[inline]
+    pub fn are_data_flag_bits01_clear(&self) -> bool { unsafe { function!(20645, (&Self) -> bool)(self) } }
+    /// `BGSCameraPath::GetChildAt`: children[index] cast to BGSCameraPath, or null
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 20651, rva 0x317180.
+    /// `BGSCameraPath* (BGSCameraPath* this, u32 index)`
+    #[inline]
+    pub fn get_child_at(&self, index: u32) -> Option<&'static Self> { unsafe { function!(20651, (&Self, u32) -> Option<&'static Self>)(self, index) } }
+    /// `BGSCameraPath::GetDataFlagBit0`: DATA flags (+0x38) bit 0
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 20646, rva 0x317000.
+    /// `bool (BGSCameraPath* this)`
+    #[inline]
+    pub fn get_data_flag_bit0(&self) -> bool { unsafe { function!(20646, (&Self) -> bool)(self) } }
+    /// `BGSCameraPath::GetDataFlagBit1`: DATA flags (+0x38) bit 1
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 20647, rva 0x317030.
+    /// `bool (BGSCameraPath* this)`
+    #[inline]
+    pub fn get_data_flag_bit1(&self) -> bool { unsafe { function!(20647, (&Self) -> bool)(self) } }
+    /// `BGSCameraPath::InsertChildAfter`: as InsertChildAt with index = index of after + 1 (0 when after is null)
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 20654, rva 0x317340.
+    /// `void (BGSCameraPath* this, BGSCameraPath* after, BGSCameraPath* child)`
+    #[inline]
+    pub fn insert_child_after(&self, after: &Self, child: &Self) { unsafe { function!(20654, (&Self, &Self, &Self))(self, after, child) } }
+    /// `BGSCameraPath::InsertChildAt`: create children if needed; index -1 = append; set child->parent, child->previousSibling = children[index-1], children[index]->previousSibling = child; insert
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 20653, rva 0x3171f0.
+    /// `void (BGSCameraPath* this, u32 index, BGSCameraPath* child)`
+    #[inline]
+    pub fn insert_child_at(&self, index: u32, child: &Self) { unsafe { function!(20653, (&Self, u32, &Self))(self, index, child) } }
+    /// `BGSCameraPath::RemoveChild`: find child in children, relink its follower's previousSibling, remove and compact
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 20656, rva 0x317590.
+    /// `void (BGSCameraPath* this, BGSCameraPath* child)`
+    #[inline]
+    pub fn remove_child(&self, child: &Self) { unsafe { function!(20656, (&Self, &Self))(self, child) } }
+    /// `BGSCameraPath::RemoveChildAt`: children[index+1]->previousSibling = children[index-1]; null the slot and compact
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 20655, rva 0x3174b0.
+    /// `void (BGSCameraPath* this, u32 index)`
+    #[inline]
+    pub fn remove_child_at(&self, index: u32) { unsafe { function!(20655, (&Self, u32))(self, index) } }
+    /// `BGSCameraPath::ctor`: TESForm::ctor, vtable 0x182cc30, conditions ctor, zero list/flags/children/links, formType 0x61
+    ///
+    /// Semantic, camera pass, high; ledger layout_inference evidence, name high; id 20633, rva 0x315ed0.
+    /// `BGSCameraPath* (BGSCameraPath* this)`
+    ///
+    /// # Safety
+    /// It constructs or destroys an object in place.
+    #[inline]
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(20633, (&Self) -> *mut Self)(self) } }
+    /// `BGSCameraPath::dtor`: destructor: detach from the parent (or the root list, fixing the next sibling's previousSibling) unless TESDataHandler+0xda5 is set, delete every child (child->parent = 0, child vdtor 1) and the children array, free shots and conditions, TESForm::dtor
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 20634, rva 0x315f30.
+    /// `void (BGSCameraPath* this)`
+    ///
+    /// # Safety
+    /// It constructs or destroys an object in place.
+    #[inline]
+    pub unsafe fn dtor(&self) { unsafe { function!(20634, (&Self))(self) } }
+    /// `ContainsCameraPathRecursive`: other == this or contained in a child subtree
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 20657, rva 0x317690.
+    /// `bool (BGSCameraPath* this, BGSCameraPath* other)`
+    #[inline]
+    pub fn contains_camera_path_recursive(&self, other: &Self) -> bool { unsafe { function!(20657, (&Self, &Self) -> bool)(self, other) } }
+    /// `DetachCameraPathFromParent`: remove from parent->children (or the root list), parent = 0, the element now at the old index takes this->previousSibling, previousSibling = 0
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 20658, rva 0x317760.
+    /// `void (BGSCameraPath* this)`
+    #[inline]
+    pub fn detach_camera_path_from_parent(&self) { unsafe { function!(20658, (&Self))(self) } }
+}
+
 impl classes::BGSCameraShot {
     /// The `BaseFormComponent` base at +0x20.
     #[inline]
@@ -42719,6 +43230,66 @@ impl classes::BGSCameraShot {
     /// The `TESModel` base at +0x20.
     #[inline]
     pub fn as_tes_model(&self) -> &classes::TESModel { unsafe { &*core::ptr::from_ref(self).byte_add(0x20).cast() } }
+    /// `BGSCameraShot::Destroy`, vtable slot 0: scalar deleting destructor: BGSCameraShot::dtor 0x3189e0, frees 0xc0 when flags & 1
+    ///
+    /// Semantic, camera pass, high; called through the object's vtable.
+    /// `BGSCameraShot* (BGSCameraShot* this, u32 flags)`
+    #[inline]
+    pub fn destroy(&self, flags: u32) -> Option<&'static Self> { unsafe { virtual_function!(self, 0, (&Self, u32) -> Option<&'static Self>)(self, flags) } }
+    /// `BGSCameraShot::InitItem`, vtable slot 19: once per form (formFlags bit 3): resolve the IMAD id, clamp globalTimeMult (< 1e-4 -> 0.1), set bit 3
+    ///
+    /// Semantic, camera pass, high; called through the object's vtable.
+    /// `void (BGSCameraShot* this)`
+    #[inline]
+    pub fn init_item(&self) { unsafe { virtual_function!(self, 19, (&Self))(self) } }
+    /// `BGSCameraShot::InitializeData`, vtable slot 4: DATA defaults: action 2, location 2, target 0, flags 3, time mults 0/0/1.0, max/min/percent/cut 0
+    ///
+    /// Semantic, camera pass, high; called through the object's vtable.
+    /// `void (BGSCameraShot* this)`
+    #[inline]
+    pub fn initialize_data(&self) { unsafe { virtual_function!(self, 4, (&Self))(self) } }
+    /// `BGSCameraShot::Load`, vtable slot 6: reads the CAMS record: EDID (SetFormEditorID), OBND, MODL/MODT (TESModel), DATA 0x2c bytes into +0x58 (byte-swapped for big-endian files), MNAM (IMAD id into +0x50), VMAD; false when the record type is not 0x60
+    ///
+    /// Semantic, camera pass, high; called through the object's vtable.
+    /// `bool (BGSCameraShot* this, TESFile* file)`
+    ///
+    /// # Safety
+    /// `file` must point to what the engine expects.
+    #[inline]
+    pub unsafe fn load(&self, file: *mut classes::TESFile) -> bool { unsafe { virtual_function!(self, 6, (&Self, *mut classes::TESFile) -> bool)(self, file) } }
+    /// `BGSCameraShot::GetLookAtPoint`: out = lookAtNode world translate (targetPercent <= 0) or ComputeVATSCameraTargetPosition(g_VATS, targetPercent); also pushes rotationEuler (animated root rotation or 0) to the VATS state
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 20711, rva 0x319f60.
+    /// `NiPoint3* (BGSCameraShot* shot, NiPoint3* out)`
+    ///
+    /// # Safety
+    /// `out` must point to what the engine expects, and the result is an untyped pointer.
+    #[inline]
+    pub unsafe fn get_look_at_point(&self, out: *mut c_void) -> *mut c_void { unsafe { function!(20711, (&Self, *mut c_void) -> *mut c_void)(self, out) } }
+    /// `BGSCameraShot::ReleaseRuntime`: release +0x88, +0x90, +0xa8, +0xa0, +0xb8; +0x98 = invalid handle; cutAway = 0; UIVATSCameraOut when the in-sound flag is set and no VATS command is queued
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 20707, rva 0x319370.
+    /// `void (BGSCameraShot* shot)`
+    #[inline]
+    pub fn release_runtime(&self) { unsafe { function!(20707, (&Self))(self) } }
+    /// `BGSCameraShot::ctor`: TESForm/TESModel/TESImageSpaceModifiableForm ctors, three vtables, runtime fields cleared (+0x98 invalid handle, +0xb0 = 0x00ff), formType 0x60, DATA defaults
+    ///
+    /// Semantic, camera pass, high; ledger layout_inference evidence, name high; id 20700, rva 0x318900.
+    /// `BGSCameraShot* (BGSCameraShot* this)`
+    ///
+    /// # Safety
+    /// It constructs or destroys an object in place.
+    #[inline]
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(20700, (&Self) -> *mut Self)(self) } }
+    /// `BGSCameraShot::dtor`: release locationNode, lookAtNode, focusNode, cameraRoot, modelHandle; play "UIVATSCameraOut" when the camera-in sound flag 0x31df561 is set and the VATS command count (+0x18) is 0; TESModel and TESForm dtors
+    ///
+    /// Semantic, camera pass, high; ledger layout_inference evidence, name high; id 20701, rva 0x3189e0.
+    /// `void (BGSCameraShot* this)`
+    ///
+    /// # Safety
+    /// It constructs or destroys an object in place.
+    #[inline]
+    pub unsafe fn dtor(&self) { unsafe { function!(20701, (&Self))(self) } }
 }
 
 impl classes::BGSCollisionLayer {
@@ -43299,6 +43870,18 @@ impl classes::BGSSaveLoadManager {
     /// `void ()`
     #[inline]
     pub fn finish_load() { unsafe { function!(35780, ())() } }
+    /// `BGSSaveLoadManager::GetByte118`: returns byte +0x118
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 35755, rva 0x6247a0.
+    /// `u8 (BGSSaveLoadManager* this)`
+    #[inline]
+    pub fn get_byte118(&self) -> u8 { unsafe { function!(35755, (&Self) -> u8)(self) } }
+    /// `BGSSaveLoadManager::IsSaveAllowedNow`: save allowed: the save-data system is ready, this+0x130 set, the player is not dead/bleeding out or flagged, VATS idle, no player handle in ID_401100, the camera is neither in cameraStates[8] nor cameraStates[6] (transition) nor the +0xe0/+0x48 check, and every open menu allows saving
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 35734, rva 0x6231f0.
+    /// `bool (BGSSaveLoadManager* this, bool unusedFlag)`
+    #[inline]
+    pub fn is_save_allowed_now(&self, unusedFlag: bool) -> bool { unsafe { function!(35734, (&Self, bool) -> bool)(self, unusedFlag) } }
     /// `BGSSaveLoadManager::LoadGame`: main-thread load: header, missing-content dialogs, BGSSaveLoadGame::LoadGame, then FinishLoad
     ///
     /// Semantic, save pass, high; ledger runtime evidence, name high; id 442580, rva 0x627de0.
@@ -43511,6 +44094,18 @@ impl classes::partial::BGSStaticCollection {
     pub fn as_tes_model_texture_swap(&self) -> &classes::TESModelTextureSwap { unsafe { &*core::ptr::from_ref(self).byte_add(0x30).cast() } }
 }
 
+impl classes::BGSSynchronizedAnimationInstance {
+    /// `BGSSynchronizedAnimationInstance::AddActor`: resolves the actor handle, refuses dead/ragdolled actors (and the player during a VATS slow-motion), collects the synchronized clip generators named syncClipName from its behavior graphs and appends the handle and clips to the instance's arrays (+0x20, +0x78) under the +0x10 lock
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 32782, rva 0x54d0f0.
+    /// `bool (BGSSynchronizedAnimationInstance* this, const u32* actorHandle, const BSFixedString* syncClipName)`
+    ///
+    /// # Safety
+    /// `actorHandle` must point to what the engine expects.
+    #[inline]
+    pub unsafe fn add_actor(&self, actorHandle: *const u32, syncClipName: *const classes::BSFixedString) -> bool { unsafe { function!(32782, (&Self, *const u32, *const classes::BSFixedString) -> bool)(self, actorHandle, syncClipName) } }
+}
+
 impl classes::BGSTextureSet {
     /// The `BSTextureSet` base at +0x30.
     #[inline]
@@ -43653,6 +44248,12 @@ impl classes::BSAudioManager {
     /// `settings` must point to what the engine expects.
     #[inline]
     pub unsafe fn init(&self, settings: *const c_void) { unsafe { function!(67657, (&Self, *const c_void))(self, settings) } }
+    /// `BSAudioManager::IsFlag16CBit3Set`: (+0x16c >> 3) & 1
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 67715, rva 0xccd130.
+    /// `bool (BSAudioManager* this)`
+    #[inline]
+    pub fn is_flag16_c_bit3_set(&self) -> bool { unsafe { function!(67715, (&Self) -> bool)(self) } }
     /// `BSAudioManager::ParkThread`: posts 0x27 and waits for the park
     ///
     /// Semantic, audio pass, high; ledger semantic evidence, name high; id 67659, rva 0xccafe0.
@@ -43847,6 +44448,63 @@ impl classes::BSComputeShader {
     pub fn as_bs_reload_shader_i(&self) -> &classes::BSReloadShaderI { unsafe { &*core::ptr::from_ref(self).byte_add(0x10).cast() } }
 }
 
+impl classes::BSCubeMapCamera {
+    /// `BSCubeMapCamera::Destroy`: dtor body then free 0x1c8
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 107565, rva 0x155a2c0.
+    /// `BSCubeMapCamera* (BSCubeMapCamera* this, u32 flags)`
+    #[inline]
+    pub fn destroy(&self, flags: u32) -> Option<&'static Self> { unsafe { function!(107565, (&Self, u32) -> Option<&'static Self>)(self, flags) } }
+    /// `BSCubeMapCamera::GetRTTI`: g_TypeNode_BSCubeMapCamera
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 107566, rva 0x155a390.
+    /// `const NiRTTI* (const BSCubeMapCamera* this)`
+    ///
+    /// # Safety
+    /// The result is an untyped pointer.
+    #[inline]
+    pub unsafe fn get_rtti(&self) -> *const c_void { unsafe { function!(107566, (&Self) -> *const c_void)(self) } }
+    /// `BSCubeMapCamera::RenderFaces`: slot 53 thunk to 0x1559ea0
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 107562, rva 0x1559a60.
+    /// `void (BSCubeMapCamera* this, u32 faceMask, bool useAccumulatorTargets, bool releaseRootsAfter, bool altMode)`
+    #[inline]
+    pub fn render_faces(&self, faceMask: u32, useAccumulatorTargets: bool, releaseRootsAfter: bool, altMode: bool) { unsafe { function!(107562, (&Self, u32, bool, bool, bool))(self, faceMask, useAccumulatorTargets, releaseRootsAfter, altMode) } }
+    /// `BSCubeMapCamera::RenderFacesImpl`: renders the selected cube faces of the cube map camera
+    ///
+    /// Semantic, camera pass, medium; ledger semantic evidence, name medium; id 107564, rva 0x1559ea0.
+    /// `void (BSCubeMapCamera* this, u32 faceMask, bool useAccumulatorTargets, bool releaseRootsAfter, bool altMode)`
+    ///
+    /// # Safety
+    /// The pass rates the signature medium.
+    #[inline]
+    pub unsafe fn render_faces_impl(&self, faceMask: u32, useAccumulatorTargets: bool, releaseRootsAfter: bool, altMode: bool) { unsafe { function!(107564, (&Self, u32, bool, bool, bool))(self, faceMask, useAccumulatorTargets, releaseRootsAfter, altMode) } }
+    /// `BSCubeMapCamera::SetFaceRotation`: local rotation = the axis set for cube face 0..5 (unit-axis constants 0x20ced48..0x20ced70, sign-flipped per face), then UpdateWorldData and UpdateWorldBound
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 107563, rva 0x1559a80.
+    /// `void (BSCubeMapCamera* this, u32 face)`
+    #[inline]
+    pub fn set_face_rotation(&self, face: u32) { unsafe { function!(107563, (&Self, u32))(self, face) } }
+    /// `BSCubeMapCamera::ctor`: NiCamera::ctor; root list +0x188 (count +0x198), two BSShaderAccumulators (+0x1a0, +0x1a8), a second NiCamera +0x1b0, frustum (-1, 1, 1, -1, near 1, far 2048 (0x17f6ba4)): 90-degree faces
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 107560, rva 0x1559730.
+    /// `BSCubeMapCamera* (BSCubeMapCamera* this)`
+    ///
+    /// # Safety
+    /// It constructs or destroys an object in place.
+    #[inline]
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(107560, (&Self) -> *mut Self)(self) } }
+    /// `BSCubeMapCamera::dtor`: releases +0x1b0, +0x1a8, +0x1a0, the root list, NiCamera::dtor
+    ///
+    /// Semantic, camera pass, high; ledger runtime evidence, name high; id 107561, rva 0x15599b0.
+    /// `void (BSCubeMapCamera* this)`
+    ///
+    /// # Safety
+    /// It constructs or destroys an object in place.
+    #[inline]
+    pub unsafe fn dtor(&self) { unsafe { function!(107561, (&Self))(self) } }
+}
+
 impl classes::BSCullingProcess {
     /// `BSCullingProcess::AppendGeometry`, vtable slot 25: adds an accepted geometry to visibleGeometry
     ///
@@ -43905,6 +44563,18 @@ impl classes::BSCullingProcess {
     /// `void (BSCullingProcess* this, NiAVObject* node, i32 groupIndex)`
     #[inline]
     pub fn test_planes_and_visit(&self, node: &classes::NiAVObject, groupIndex: i32) { unsafe { function!(71083, (&Self, &classes::NiAVObject, i32))(self, node, groupIndex) } }
+}
+
+impl classes::partial::BSDirectAtModifierInterface {
+    /// `BSDirectAtModifierInterface::vfunc_1`: the direct-at (look/aim) target point for a character: for the player uses the camera's look point; writes xyz (w = 0) and the found byte
+    ///
+    /// Semantic, camera pass, medium; ledger rtti evidence, name high; id 43657, rva 0x7db5e0.
+    /// `void (BSDirectAtModifierInterface* this, void** characterContext, bool* found, NiPoint4* outPoint, i32 targetType)`
+    ///
+    /// # Safety
+    /// The pass rates the signature medium.
+    #[inline]
+    pub unsafe fn vfunc_1(&self, characterContext: *mut *mut c_void, found: *mut bool, outPoint: *mut c_void, targetType: i32) { unsafe { function!(43657, (&Self, *mut *mut c_void, *mut bool, *mut c_void, i32))(self, characterContext, found, outPoint, targetType) } }
 }
 
 impl classes::BSDismemberSkinInstance {
@@ -44039,6 +44709,102 @@ impl classes::BSFixedString {
     pub fn release(&self) { unsafe { function!(69164, (&Self))(self) } }
 }
 
+impl classes::BSFrustumFOVController {
+    /// `BSFrustumFOVController::CreateClone`, vtable slot 23: new BSFrustumFOVController, copies the interpolator link (CopyField48ForClone_2)
+    ///
+    /// Semantic, camera pass, high; called through the object's vtable.
+    /// `NiObject* (BSFrustumFOVController* this, NiCloningProcess* process)`
+    ///
+    /// # Safety
+    /// `process` must point to what the engine expects.
+    #[inline]
+    pub unsafe fn create_clone(&self, process: *mut c_void) -> *mut classes::NiObject { unsafe { virtual_function!(self, 23, (&Self, *mut c_void) -> *mut classes::NiObject)(self, process) } }
+    /// `BSFrustumFOVController::Destroy`, vtable slot 0: releases the interpolator +0x48, NiTimeController::dtor, frees 0x50
+    ///
+    /// Semantic, camera pass, high; called through the object's vtable.
+    /// `BSFrustumFOVController* (BSFrustumFOVController* this, u32 flags)`
+    #[inline]
+    pub fn destroy(&self, flags: u32) -> Option<&'static Self> { unsafe { virtual_function!(self, 0, (&Self, u32) -> Option<&'static Self>)(self, flags) } }
+    /// `BSFrustumFOVController::GetRTTI`, vtable slot 2: g_TypeNode_BSFrustumFOVController
+    ///
+    /// Semantic, camera pass, high; called through the object's vtable.
+    /// `const NiRTTI* (const BSFrustumFOVController* this)`
+    ///
+    /// # Safety
+    /// The result is an untyped pointer.
+    #[inline]
+    pub unsafe fn get_rtti(&self) -> *const c_void { unsafe { virtual_function!(self, 2, (&Self) -> *const c_void)(self) } }
+    /// `BSFrustumFOVController::GetTargetValue`, vtable slot 61: *out = 2 * atan(target->frustumRight)
+    ///
+    /// Semantic, camera pass, high; called through the object's vtable.
+    /// `void (BSFrustumFOVController* this, float* out)`
+    ///
+    /// # Safety
+    /// `out` must point to what the engine expects.
+    #[inline]
+    pub unsafe fn get_target_value(&self, out: *mut f32) { unsafe { virtual_function!(self, 61, (&Self, *mut f32))(self, out) } }
+    /// `BSFrustumFOVController::IsEqual`, vtable slot 28: jmp to 0xf97f20
+    ///
+    /// Semantic, camera pass, high; called through the object's vtable.
+    /// `bool (BSFrustumFOVController* this, NiObject* other)`
+    #[inline]
+    pub fn is_equal(&self, other: &classes::NiObject) -> bool { unsafe { virtual_function!(self, 28, (&Self, &classes::NiObject) -> bool)(self, other) } }
+    /// `BSFrustumFOVController::IsTargetCompatible`, vtable slot 60: true when the target's RTTI chain contains NiCamera
+    ///
+    /// Semantic, camera pass, high; called through the object's vtable.
+    /// `bool (BSFrustumFOVController* this, NiObjectNET* target)`
+    #[inline]
+    pub fn is_target_compatible(&self, target: &classes::NiObjectNET) -> bool { unsafe { virtual_function!(self, 60, (&Self, &classes::NiObjectNET) -> bool)(self, target) } }
+    /// `BSFrustumFOVController::LinkObject`, vtable slot 25: jmp to 0xf97ef0
+    ///
+    /// Semantic, camera pass, high; called through the object's vtable.
+    /// `void (BSFrustumFOVController* this, NiStream* stream)`
+    #[inline]
+    pub fn link_object(&self, stream: &classes::partial::NiStream) { unsafe { virtual_function!(self, 25, (&Self, &classes::partial::NiStream))(self, stream) } }
+    /// `BSFrustumFOVController::LoadBinary`, vtable slot 24: 5-byte jmp to NiFloatInterpController slot 24 0xf97ee0
+    ///
+    /// Semantic, camera pass, high; called through the object's vtable.
+    /// `void (BSFrustumFOVController* this, NiStream* stream)`
+    #[inline]
+    pub fn load_binary(&self, stream: &classes::partial::NiStream) { unsafe { virtual_function!(self, 24, (&Self, &classes::partial::NiStream))(self, stream) } }
+    /// `BSFrustumFOVController::RegisterStreamables`, vtable slot 26: jmp to 0xf97f00
+    ///
+    /// Semantic, camera pass, high; called through the object's vtable.
+    /// `bool (BSFrustumFOVController* this, NiStream* stream)`
+    #[inline]
+    pub fn register_streamables(&self, stream: &classes::partial::NiStream) -> bool { unsafe { virtual_function!(self, 26, (&Self, &classes::partial::NiStream) -> bool)(self, stream) } }
+    /// `BSFrustumFOVController::SaveBinary`, vtable slot 27: jmp to 0xf97f10
+    ///
+    /// Semantic, camera pass, high; called through the object's vtable.
+    /// `void (BSFrustumFOVController* this, NiStream* stream)`
+    #[inline]
+    pub fn save_binary(&self, stream: &classes::partial::NiStream) { unsafe { virtual_function!(self, 27, (&Self, &classes::partial::NiStream))(self, stream) } }
+    /// `BSFrustumFOVController::Update`, vtable slot 39: when the time changed (or always-update flags), asks the interpolator (vfunc +0x148) for the value v at the controller time and the target, then target->SetFrustum({-v, v, 0.75v, -0.75v, near, far, ortho kept})
+    ///
+    /// Semantic, camera pass, high; called through the object's vtable.
+    /// `void (BSFrustumFOVController* this, NiUpdateData* data)`
+    ///
+    /// # Safety
+    /// `data` must point to what the engine expects.
+    #[inline]
+    pub unsafe fn update(&self, data: *mut classes::NiUpdateData) { unsafe { virtual_function!(self, 39, (&Self, *mut classes::NiUpdateData))(self, data) } }
+    /// `BSFrustumFOVController::Create`: identical factory body
+    ///
+    /// Semantic, camera pass, high; ledger string evidence, name high; id 74134, rva 0xf8d8c0.
+    /// `NiObject* (void)`
+    #[inline]
+    pub fn create() -> Option<&'static classes::NiObject> { unsafe { function!(74134, () -> Option<&'static classes::NiObject>)() } }
+    /// `BSFrustumFOVController::ctor`: NiFloatInterpController::ctor, vtable
+    ///
+    /// Semantic, camera pass, high; ledger layout_inference evidence, name high; id 74130, rva 0xf8d6c0.
+    /// `BSFrustumFOVController* (BSFrustumFOVController* this)`
+    ///
+    /// # Safety
+    /// It constructs or destroys an object in place.
+    #[inline]
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(74130, (&Self) -> *mut Self)(self) } }
+}
+
 impl classes::BSGameSound {
     /// `BSGameSound::InitFromPlaybackParams`: form id (+0xc), category (+0x28), output model (+0x20), files (+0x30), frequency, variance, priority, static attenuation from playback characteristics (+0x18)
     ///
@@ -44094,12 +44860,12 @@ impl classes::BSGeometry {
 }
 
 impl classes::BSGeometryListCullingProcess {
-    /// `BSGeometryListCullingProcess::AppendGeometry`: slot 25: appends the geometry to visibleGeometry (+0x128); when +0x301f8 != 0 also calls the property's slot 41 SetShadowLightBit(+0x301f8)
+    /// `BSGeometryListCullingProcess::AppendGeometry`: slot 25: appends the accepted list entry (a subtree root or a geometry) to +0x128; when +0x301f8 != 0 also calls the property's slot 41 SetShadowLightBit(+0x301f8)
     ///
     /// Semantic, graphics pass, high; ledger semantic evidence, name high; id 76772, rva 0xff5bf0.
-    /// `void (BSGeometryListCullingProcess* this, BSGeometry* geometry)`
+    /// `void (BSGeometryListCullingProcess* this, NiAVObject* object)`
     #[inline]
-    pub fn append_geometry(&self, geometry: &classes::BSGeometry) { unsafe { function!(76772, (&Self, &classes::BSGeometry))(self, geometry) } }
+    pub fn append_geometry(&self, object: &classes::NiAVObject) { unsafe { function!(76772, (&Self, &classes::NiAVObject))(self, object) } }
 }
 
 impl classes::BSIMusicTrack {
@@ -44351,6 +45117,84 @@ impl classes::BSImagespaceShader {
     pub fn as_image_space_effect(&self) -> &classes::ImageSpaceEffect { unsafe { &*core::ptr::from_ref(self).byte_add(0x90).cast() } }
 }
 
+impl classes::BSImagespaceShaderISSAOCameraZ {
+    /// `BSImagespaceShaderISSAOCameraZ::ImageSpaceEffect_vdtor`: this-adjusting thunk: rcx -= 0x90, jmp vdtor 0x1508e10
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 105943, rva 0x150772c.
+    /// `void* (void* thisAt90, u64 flags)`
+    ///
+    /// # Safety
+    /// It constructs or destroys an object in place.
+    #[inline]
+    pub unsafe fn image_space_effect_vdtor(thisAt90: *mut c_void, flags: u64) -> *mut c_void { unsafe { function!(105943, (*mut c_void, u64) -> *mut c_void)(thisAt90, flags) } }
+    /// `BSImagespaceShaderISSAOCameraZ::NiBoneMatrixSetterI_vdtor`: this-adjusting thunk: rcx -= 0x10, jmp vdtor 0x1508e10
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 105942, rva 0x1507720.
+    /// `void* (void* thisAt10, u64 flags)`
+    ///
+    /// # Safety
+    /// It constructs or destroys an object in place.
+    #[inline]
+    pub unsafe fn ni_bone_matrix_setter_i_vdtor(thisAt10: *mut c_void, flags: u64) -> *mut c_void { unsafe { function!(105942, (*mut c_void, u64) -> *mut c_void)(thisAt10, flags) } }
+    /// `BSImagespaceShaderISSAOCameraZ::ctor`: BSImagespaceShader ctor, four vtables (+0, +0x10, +0x18, +0x90), names "BSImagespaceShaderISSAOCameraZ"/"ISSAOCameraZ" (+0x120/+0x128), constant names g_ClipInfos and g_ScreenInfos (+0x150 array), texture "Depth" (+0x168 array), +0x1a0 = 1, then BSImagespaceShader slot 14
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 105758, rva 0x14ff5b0.
+    /// `BSImagespaceShaderISSAOCameraZ* (BSImagespaceShaderISSAOCameraZ* this)`
+    ///
+    /// # Safety
+    /// It constructs or destroys an object in place.
+    #[inline]
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(105758, (&Self) -> *mut Self)(self) } }
+    /// `BSImagespaceShaderISSAOCameraZ::vdtor`: BSImagespaceShader::dtor, OperatorDelete(this, 0x1a8) when flags bit 0
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 106119, rva 0x1508e10.
+    /// `BSImagespaceShaderISSAOCameraZ* (BSImagespaceShaderISSAOCameraZ* this, u64 flags)`
+    ///
+    /// # Safety
+    /// It constructs or destroys an object in place.
+    #[inline]
+    pub unsafe fn vdtor(&self, flags: u64) -> *mut Self { unsafe { function!(106119, (&Self, u64) -> *mut Self)(self, flags) } }
+}
+
+impl classes::BSImagespaceShaderISSAOCameraZAndMipsCS {
+    /// `BSImagespaceShaderISSAOCameraZAndMipsCS::ImageSpaceEffect_vdtor`: this-adjusting thunk: rcx -= 0x90, jmp vdtor 0x1508e50
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 105945, rva 0x1507744.
+    /// `void* (void* thisAt90, u64 flags)`
+    ///
+    /// # Safety
+    /// It constructs or destroys an object in place.
+    #[inline]
+    pub unsafe fn image_space_effect_vdtor(thisAt90: *mut c_void, flags: u64) -> *mut c_void { unsafe { function!(105945, (*mut c_void, u64) -> *mut c_void)(thisAt90, flags) } }
+    /// `BSImagespaceShaderISSAOCameraZAndMipsCS::NiBoneMatrixSetterI_vdtor`: this-adjusting thunk: rcx -= 0x10, jmp vdtor 0x1508e50
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 105944, rva 0x1507738.
+    /// `void* (void* thisAt10, u64 flags)`
+    ///
+    /// # Safety
+    /// It constructs or destroys an object in place.
+    #[inline]
+    pub unsafe fn ni_bone_matrix_setter_i_vdtor(thisAt10: *mut c_void, flags: u64) -> *mut c_void { unsafe { function!(105944, (*mut c_void, u64) -> *mut c_void)(thisAt10, flags) } }
+    /// `BSImagespaceShaderISSAOCameraZAndMipsCS::ctor`: as ISSAOCameraZ with names "...ISSAOCameraZAndMipsCS", constant g_ClipInfos, texture Depth, UAVs g_DepthMip0..2 (+0x180 array), +0x1a0 = 0x101 (compute shader)
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 105759, rva 0x14ff760.
+    /// `BSImagespaceShaderISSAOCameraZAndMipsCS* (BSImagespaceShaderISSAOCameraZAndMipsCS* this)`
+    ///
+    /// # Safety
+    /// It constructs or destroys an object in place.
+    #[inline]
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(105759, (&Self) -> *mut Self)(self) } }
+    /// `BSImagespaceShaderISSAOCameraZAndMipsCS::vdtor`: BSImagespaceShader::dtor, OperatorDelete(this, 0x1a8) when flags bit 0
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 106120, rva 0x1508e50.
+    /// `BSImagespaceShaderISSAOCameraZAndMipsCS* (BSImagespaceShaderISSAOCameraZAndMipsCS* this, u64 flags)`
+    ///
+    /// # Safety
+    /// It constructs or destroys an object in place.
+    #[inline]
+    pub unsafe fn vdtor(&self, flags: u64) -> *mut Self { unsafe { function!(106120, (&Self, u64) -> *mut Self)(self, flags) } }
+}
+
 impl classes::BSInputDevice {
     /// `BSInputDevice::Destroy`, vtable slot 0: destructor
     ///
@@ -44445,6 +45289,12 @@ impl classes::BSLightingShader {
     /// `out` must point to what the engine expects.
     #[inline]
     pub unsafe fn get_technique_name(technique: u32, out: *mut c_char, size: u32) -> *mut c_char { unsafe { function!(108702, (u32, *mut c_char, u32) -> *mut c_char)(technique, out, size) } }
+    /// `BSLightingShader::IncrementFrameCounter`: ++(+0xc8)
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 107306, rva 0x154af70.
+    /// `void (BSLightingShader* this)`
+    #[inline]
+    pub fn increment_frame_counter(&self) { unsafe { function!(107306, (&Self))(self) } }
 }
 
 impl classes::BSLightingShaderMaterialBase {
@@ -44765,22 +45615,19 @@ impl classes::BSSceneGraph {
     /// `float (BSSceneGraph* this)`
     #[inline]
     pub fn get_near_distance(&self) -> f32 { unsafe { function!(76750, (&Self) -> f32)(self) } }
-    /// `BSSceneGraph::SetFieldOfView`: stores the fov at +0x13c and reframes camera (default this+0x128) with far/near from the scene graph's slots 62/63
+    /// `BSSceneGraph::SetFieldOfView`: camera null -> this+0x128 and: if !force and fov == +0x13c, only lodAdjust (+0x184) = fov / fDefaultFOV when updateLodAdjust, return; else +0x13c = fov. Then SetPerspectiveFromFov(camera, fov, near = slot 63, far = slot 62, g_RenderTargets width 0x3335600, height 0x3335604, +0x138 byte, updateLodAdjust, fDefaultFOV)
     ///
-    /// Semantic, frame pass, medium; ledger semantic evidence, name medium; id 106461, rva 0x1516f90.
-    /// `void (BSSceneGraph* this, float fov, bool force, NiCamera* camera, bool setLodAdjust)`
-    ///
-    /// # Safety
-    /// The pass rates the signature medium.
+    /// Semantic, frame pass, high; ledger semantic evidence, name high; id 106461, rva 0x1516f90.
+    /// `void (BSSceneGraph* this, float fov, bool force, NiCamera* camera, bool updateLodAdjust)`
     #[inline]
-    pub unsafe fn set_field_of_view(&self, fov: f32, force: bool, camera: *mut classes::NiCamera, setLodAdjust: bool) { unsafe { function!(106461, (&Self, f32, bool, *mut classes::NiCamera, bool))(self, fov, force, camera, setLodAdjust) } }
-    /// `BSSceneGraph::ctor`: pass 6 row; track D: when it creates its own camera it stores minNear +0x16c = 1.0 and +0x170 = far / fNearDistance (read at 0xff497d), the only init-time copy of the setting
+    pub fn set_field_of_view(&self, fov: f32, force: bool, camera: &classes::NiCamera, updateLodAdjust: bool) { unsafe { function!(106461, (&Self, f32, bool, &classes::NiCamera, bool))(self, fov, force, camera, updateLodAdjust) } }
+    /// `BSSceneGraph::ctor`: NiNode named "<prefix>Root Node"; child 0 is a new NiNode "<prefix>Root CameraNode"; the camera (+0x128) is the given one or a new NiCamera "<prefix>Root Camera" with viewport (+0x174..+0x180) = (0, 1, 1, 0) from 0x1914600, a fixed local rotation (+0x48..+0x68, rows (0,0,1), (1,0,0), (0,1,0) from 0x1b5c180/0x17eab80: camera column 0 = parent +Y, column 1 = parent +Z, column 2 = parent +X), +0x16c = 1.0 and +0x170 = far / fNearDistance (far = 20480.0 (0x1914d08) for menu scenes, else fNoLODFarDistanceMin + (Max - Min) * Pct); the camera is attached under child 0 (child 0's slot 53, +0x1a8, with (camera, 1), the arguments of the direct NiNode::AttachChild call above it) and updated; +0x138 = isMenuScene; worldBound radius 1, flags |= 0x2800
     ///
-    /// Semantic, graphics pass, medium; ledger layout_inference evidence, name medium; id 76746, rva 0xff46b0.
+    /// Semantic, graphics pass, high; ledger semantic evidence, name high; id 76746, rva 0xff46b0.
     /// `BSSceneGraph* (BSSceneGraph* this, const char* namePrefix, bool isMenuScene, NiCamera* camera)`
     ///
     /// # Safety
-    /// The pass rates the signature medium.
+    /// It constructs or destroys an object in place.
     #[inline]
     pub unsafe fn ctor(&self, namePrefix: *const c_char, isMenuScene: bool, camera: *mut classes::NiCamera) -> *mut Self { unsafe { function!(76746, (&Self, *const c_char, bool, *mut classes::NiCamera) -> *mut Self)(self, namePrefix, isMenuScene, camera) } }
 }
@@ -44792,6 +45639,36 @@ impl classes::BSScript__Array {
     /// `BSScript::Array* (BSScript::Array* this, const BSScript::TypeInfo* elementType, u32 size)`
     #[inline]
     pub fn init_typed_array_object(&self, elementType: &classes::BSScript__TypeInfo, size: u32) -> Option<&'static Self> { unsafe { function!(104468, (&Self, &classes::BSScript__TypeInfo, u32) -> Option<&'static Self>)(self, elementType, size) } }
+}
+
+impl classes::BSScript__CompiledScriptLoader {
+    /// `BSScript::CompiledScriptLoader::Load`, vtable slot 3: opens the class's store, reads header (0x14a4620), string table, debug info (0x14a4970), user flags (0x14a50a0) and the object (0x14a5220)
+    ///
+    /// Semantic, vmstack pass, high; called through the object's vtable.
+    /// `bool (BSScript::CompiledScriptLoader* this, const char* className, void* unlinkedObject)`
+    ///
+    /// # Safety
+    /// `className`, `unlinkedObject` must point to what the engine expects.
+    #[inline]
+    pub unsafe fn load(&self, className: *const c_char, unlinkedObject: *mut c_void) -> bool { unsafe { virtual_function!(self, 3, (&Self, *const c_char, *mut c_void) -> bool)(self, className, unlinkedObject) } }
+    /// `BSScript::CompiledScriptLoader::ReadDebugInfo`: reads the .pex debug section: a has-debug byte, the source modification time (u64), a u16 function count, per function object/state/function names (string-table indices), a type byte (<= 2), a u16 instruction count and one u16 line per instruction; stores them only when flags bit 0 is set, else skips them
+    ///
+    /// Semantic, vmstack pass, high; ledger semantic evidence, name high; id 104580, rva 0x14a4970.
+    /// `bool (BSScript::CompiledScriptLoader* this, void* unlinkedObject)`
+    ///
+    /// # Safety
+    /// `unlinkedObject` must point to what the engine expects.
+    #[inline]
+    pub unsafe fn read_debug_info(&self, unlinkedObject: *mut c_void) -> bool { unsafe { function!(104580, (&Self, *mut c_void) -> bool)(self, unlinkedObject) } }
+    /// `BSScript::CompiledScriptLoader::ctor`: flags +0x32 = loadDebugInfo | (flag2 ? 2 : 0)
+    ///
+    /// Semantic, vmstack pass, high; ledger semantic evidence, name high; id 104572, rva 0x14a40b0.
+    /// `BSScript::CompiledScriptLoader* (BSScript::CompiledScriptLoader* this, BSScript::ErrorLogger* logger, bool loadDebugInfo, bool flag2)`
+    ///
+    /// # Safety
+    /// It constructs or destroys an object in place.
+    #[inline]
+    pub unsafe fn ctor(&self, logger: *mut classes::BSScript__ErrorLogger, loadDebugInfo: bool, flag2: bool) -> *mut Self { unsafe { function!(104572, (&Self, *mut classes::BSScript__ErrorLogger, bool, bool) -> *mut Self)(self, logger, loadDebugInfo, flag2) } }
 }
 
 impl classes::BSScript__IFunctionArguments {
@@ -44843,6 +45720,285 @@ impl classes::BSScript__IStackCallbackFunctor {
     /// The pass rates the signature low.
     #[inline]
     pub unsafe fn vfunc_2(&self) -> bool { unsafe { virtual_function!(self, 2, (&Self) -> bool)(self) } }
+}
+
+impl classes::BSScript__IVMDebugInterface {
+    /// `BSScript::Internal::VirtualMachine::DumpRunningStacksToLog`: IVMDebugInterface slot 1 (this = VM+0x20): dumps the queued calls and every stack of the running-stacks map (VM+0x9320 under VM+0x9318) through DumpStackToLog
+    ///
+    /// Semantic, vmstack pass, medium; ledger semantic evidence, name medium; id 104844, rva 0x14b8fa0.
+    /// `void (BSScript::IVMDebugInterface* this, void* logger)`
+    ///
+    /// # Safety
+    /// The pass rates the signature medium.
+    #[inline]
+    pub unsafe fn dump_running_stacks_to_log(&self, logger: *mut c_void) { unsafe { function!(104844, (&Self, *mut c_void))(self, logger) } }
+}
+
+impl classes::BSScript__Internal__AutoPropGetFunction {
+    /// `BSScript::Internal::AutoPropGetFunction::GetFunctionName`, vtable slot 1: &+0x18
+    ///
+    /// Semantic, vmstack pass, high; called through the object's vtable.
+    /// `const BSFixedString* (BSScript::Internal::AutoPropGetFunction* this)`
+    #[inline]
+    pub fn get_function_name(&self) -> Option<&'static classes::BSFixedString> { unsafe { virtual_function!(self, 1, (&Self) -> Option<&'static classes::BSFixedString>)(self) } }
+    /// `BSScript::Internal::AutoPropGetFunction::GetIsNative`, vtable slot 8: true
+    ///
+    /// Semantic, vmstack pass, high; called through the object's vtable.
+    /// `bool (BSScript::Internal::AutoPropGetFunction* this)`
+    #[inline]
+    pub fn get_is_native(&self) -> bool { unsafe { virtual_function!(self, 8, (&Self) -> bool)(self) } }
+    /// `BSScript::Internal::AutoPropGetFunction::GetLineForIP`, vtable slot 17: false, *line = 0
+    ///
+    /// Semantic, vmstack pass, high; called through the object's vtable.
+    /// `bool (BSScript::Internal::AutoPropGetFunction* this, u32 ip, u32* line)`
+    ///
+    /// # Safety
+    /// `line` must point to what the engine expects.
+    #[inline]
+    pub unsafe fn get_line_for_ip(&self, ip: u32, line: *mut u32) -> bool { unsafe { virtual_function!(self, 17, (&Self, u32, *mut u32) -> bool)(self, ip, line) } }
+    /// `BSScript::Internal::AutoPropGetFunction::GetObjectTypeName`, vtable slot 2: &+0x10
+    ///
+    /// Semantic, vmstack pass, high; called through the object's vtable.
+    /// `const BSFixedString* (BSScript::Internal::AutoPropGetFunction* this)`
+    #[inline]
+    pub fn get_object_type_name(&self) -> Option<&'static classes::BSFixedString> { unsafe { virtual_function!(self, 2, (&Self) -> Option<&'static classes::BSFixedString>)(self) } }
+}
+
+impl classes::BSScript__Internal__AutoPropSetFunction {
+    /// `BSScript::Internal::AutoPropSetFunction::GetFunctionName`, vtable slot 1: &+0x18
+    ///
+    /// Semantic, vmstack pass, high; called through the object's vtable.
+    /// `const BSFixedString* (BSScript::Internal::AutoPropSetFunction* this)`
+    #[inline]
+    pub fn get_function_name(&self) -> Option<&'static classes::BSFixedString> { unsafe { virtual_function!(self, 1, (&Self) -> Option<&'static classes::BSFixedString>)(self) } }
+    /// `BSScript::Internal::AutoPropSetFunction::GetObjectTypeName`, vtable slot 2: &+0x10
+    ///
+    /// Semantic, vmstack pass, high; called through the object's vtable.
+    /// `const BSFixedString* (BSScript::Internal::AutoPropSetFunction* this)`
+    #[inline]
+    pub fn get_object_type_name(&self) -> Option<&'static classes::BSFixedString> { unsafe { virtual_function!(self, 2, (&Self) -> Option<&'static classes::BSFixedString>)(self) } }
+}
+
+impl classes::BSScript__Internal__CodeTasklet {
+    /// `BSScript::Internal::CodeTasklet::GetFunctionCallInfo`, vtable slot 1: decodes the call opcode at frame+0x20: kind (enum CallKind), target class, function or property name, self and arguments
+    ///
+    /// Semantic, vmstack pass, high; called through the object's vtable.
+    /// `bool (BSScript::Internal::CodeTasklet* this, u32* callKind, BSTSmartPointer<BSScript::ObjectTypeInfo>* type, BSFixedString* name, BSScript::Variable* self, BSScrapArray<BSScript::Variable>* args)`
+    ///
+    /// # Safety
+    /// `callKind`, `type_`, `name`, `self_`, `args` must point to what the engine expects.
+    #[inline]
+    pub unsafe fn get_function_call_info(&self, callKind: *mut u32, type_: *mut c_void, name: *mut classes::BSFixedString, self_: *mut classes::BSScript__Variable, args: *mut c_void) -> bool { unsafe { virtual_function!(self, 1, (&Self, *mut u32, *mut c_void, *mut classes::BSFixedString, *mut classes::BSScript__Variable, *mut c_void) -> bool)(self, callKind, type_, name, self_, args) } }
+    /// `BSScript::Internal::CodeTasklet::vdtor`, vtable slot 0: scalar deleting destructor
+    ///
+    /// Semantic, vmstack pass, high; called through the object's vtable.
+    /// `BSScript::Internal::CodeTasklet* (BSScript::Internal::CodeTasklet* this, u32 flags)`
+    ///
+    /// # Safety
+    /// It constructs or destroys an object in place.
+    #[inline]
+    pub unsafe fn vdtor(&self, flags: u32) -> *mut Self { unsafe { virtual_function!(self, 0, (&Self, u32) -> *mut Self)(self, flags) } }
+    /// `BSScript::Internal::CodeTasklet::ctor`: vtable 0x1b2bd88, refcount 0, stack/vm/logger, state 2, stores itself into stack+0x88 with a reference
+    ///
+    /// Semantic, vmstack pass, high; ledger semantic evidence, name high; id 105175, rva 0x14ce5e0.
+    /// `BSScript::Internal::CodeTasklet* (BSScript::Internal::CodeTasklet* this, BSScript::Stack* stack, BSScript::Internal::VirtualMachine* vm, BSScript::ErrorLogger* logger)`
+    ///
+    /// # Safety
+    /// It constructs or destroys an object in place.
+    #[inline]
+    pub unsafe fn ctor(&self, stack: *mut classes::BSScript__Stack, vm: *mut classes::BSScript__Internal__VirtualMachine, logger: *mut classes::BSScript__ErrorLogger) -> *mut Self { unsafe { function!(105175, (&Self, *mut classes::BSScript__Stack, *mut classes::BSScript__Internal__VirtualMachine, *mut classes::BSScript__ErrorLogger) -> *mut Self)(self, stack, vm, logger) } }
+}
+
+impl classes::BSScript__Internal__NativeFunctionStub {
+    /// `BSScript::Internal::NativeFunctionStub::GetFunctionName`, vtable slot 1: &+0x10
+    ///
+    /// Semantic, vmstack pass, high; called through the object's vtable.
+    /// `const BSFixedString* (BSScript::Internal::NativeFunctionStub* this)`
+    #[inline]
+    pub fn get_function_name(&self) -> Option<&'static classes::BSFixedString> { unsafe { virtual_function!(self, 1, (&Self) -> Option<&'static classes::BSFixedString>)(self) } }
+    /// `BSScript::Internal::NativeFunctionStub::GetIsNative`, vtable slot 8: true (B0 01 C3)
+    ///
+    /// Semantic, vmstack pass, high; called through the object's vtable.
+    /// `bool (BSScript::Internal::NativeFunctionStub* this)`
+    #[inline]
+    pub fn get_is_native(&self) -> bool { unsafe { virtual_function!(self, 8, (&Self) -> bool)(self) } }
+    /// `BSScript::Internal::NativeFunctionStub::GetLineForIP`, vtable slot 17: false, *line = 0
+    ///
+    /// Semantic, vmstack pass, high; called through the object's vtable.
+    /// `bool (BSScript::Internal::NativeFunctionStub* this, u32 ip, u32* line)`
+    ///
+    /// # Safety
+    /// `line` must point to what the engine expects.
+    #[inline]
+    pub unsafe fn get_line_for_ip(&self, ip: u32, line: *mut u32) -> bool { unsafe { virtual_function!(self, 17, (&Self, u32, *mut u32) -> bool)(self, ip, line) } }
+    /// `BSScript::Internal::NativeFunctionStub::GetObjectTypeName`, vtable slot 2: &+0x18
+    ///
+    /// Semantic, vmstack pass, high; called through the object's vtable.
+    /// `const BSFixedString* (BSScript::Internal::NativeFunctionStub* this)`
+    #[inline]
+    pub fn get_object_type_name(&self) -> Option<&'static classes::BSFixedString> { unsafe { virtual_function!(self, 2, (&Self) -> Option<&'static classes::BSFixedString>)(self) } }
+    /// `BSScript::Internal::NativeFunctionStub::GetSourceFileName`, vtable slot 16: static BSFixedString "native"
+    ///
+    /// Semantic, vmstack pass, high; called through the object's vtable.
+    /// `const BSFixedString* (BSScript::Internal::NativeFunctionStub* this)`
+    #[inline]
+    pub fn get_source_file_name(&self) -> Option<&'static classes::BSFixedString> { unsafe { virtual_function!(self, 16, (&Self) -> Option<&'static classes::BSFixedString>)(self) } }
+}
+
+impl classes::BSScript__Internal__ScriptFunction {
+    /// `BSScript::Internal::ScriptFunction::Call`, vtable slot 15: 4 when the stack is null or has no frames; 1 when called from the interpreter (the interpreter continues inline in the pushed frame); else QueueCodeTasklet and 2 (3 when queueing failed)
+    ///
+    /// Semantic, vmstack pass, high; called through the object's vtable.
+    /// `u32 (BSScript::Internal::ScriptFunction* this, BSTSmartPointer<BSScript::Stack>* stack, BSScript::ErrorLogger* logger, BSScript::Internal::VirtualMachine* vm, bool fromTasklet)`
+    ///
+    /// # Safety
+    /// `stack` must point to what the engine expects.
+    #[inline]
+    pub unsafe fn call(&self, stack: *mut c_void, logger: *mut classes::BSScript__ErrorLogger, vm: *mut classes::BSScript__Internal__VirtualMachine, fromTasklet: bool) -> u32 { unsafe { virtual_function!(self, 15, (&Self, *mut c_void, *mut classes::BSScript__ErrorLogger, *mut classes::BSScript__Internal__VirtualMachine, bool) -> u32)(self, stack, logger, vm, fromTasklet) } }
+    /// `BSScript::Internal::ScriptFunction::CopyReturnType`, vtable slot 4: *out = +0x28
+    ///
+    /// Semantic, vmstack pass, high; called through the object's vtable.
+    /// `BSScript::TypeInfo* (BSScript::Internal::ScriptFunction* this, BSScript::TypeInfo* out)`
+    ///
+    /// # Safety
+    /// `out` must point to what the engine expects.
+    #[inline]
+    pub unsafe fn copy_return_type(&self, out: *mut classes::BSScript__TypeInfo) -> *mut classes::BSScript__TypeInfo { unsafe { virtual_function!(self, 4, (&Self, *mut classes::BSScript__TypeInfo) -> *mut classes::BSScript__TypeInfo)(self, out) } }
+    /// `BSScript::Internal::ScriptFunction::Destroy`, vtable slot 0: releases the line table, the strings, the instruction buffer and the variables; frees 0x80 when flags & 1
+    ///
+    /// Semantic, vmstack pass, high; called through the object's vtable.
+    /// `BSScript::Internal::ScriptFunction* (BSScript::Internal::ScriptFunction* this, u32 flags)`
+    #[inline]
+    pub fn destroy(&self, flags: u32) -> Option<&'static Self> { unsafe { virtual_function!(self, 0, (&Self, u32) -> Option<&'static Self>)(self, flags) } }
+    /// `BSScript::Internal::ScriptFunction::GetDocString`, vtable slot 13: &docString (+0x60)
+    ///
+    /// Semantic, vmstack pass, high; called through the object's vtable.
+    /// `const BSFixedString* (BSScript::Internal::ScriptFunction* this)`
+    #[inline]
+    pub fn get_doc_string(&self) -> Option<&'static classes::BSFixedString> { unsafe { virtual_function!(self, 13, (&Self) -> Option<&'static classes::BSFixedString>)(self) } }
+    /// `BSScript::Internal::ScriptFunction::GetFunctionName`, vtable slot 1: &name (+0x10)
+    ///
+    /// Semantic, vmstack pass, high; called through the object's vtable.
+    /// `const BSFixedString* (BSScript::Internal::ScriptFunction* this)`
+    #[inline]
+    pub fn get_function_name(&self) -> Option<&'static classes::BSFixedString> { unsafe { virtual_function!(self, 1, (&Self) -> Option<&'static classes::BSFixedString>)(self) } }
+    /// `BSScript::Internal::ScriptFunction::GetFunctionType`, vtable slot 11: +0x58
+    ///
+    /// Semantic, vmstack pass, high; called through the object's vtable.
+    /// `u16 (BSScript::Internal::ScriptFunction* this)`
+    #[inline]
+    pub fn get_function_type(&self) -> u16 { unsafe { virtual_function!(self, 11, (&Self) -> u16)(self) } }
+    /// `BSScript::Internal::ScriptFunction::GetIsCallableFromTasklet`, vtable slot 19: true
+    ///
+    /// Semantic, vmstack pass, high; called through the object's vtable.
+    /// `bool (BSScript::Internal::ScriptFunction* this)`
+    #[inline]
+    pub fn get_is_callable_from_tasklet(&self) -> bool { unsafe { virtual_function!(self, 19, (&Self) -> bool)(self) } }
+    /// `BSScript::Internal::ScriptFunction::GetIsEmpty`, vtable slot 10: instructionBitCount (+0x48) == 0
+    ///
+    /// Semantic, vmstack pass, high; called through the object's vtable.
+    /// `bool (BSScript::Internal::ScriptFunction* this)`
+    #[inline]
+    pub fn get_is_empty(&self) -> bool { unsafe { virtual_function!(self, 10, (&Self) -> bool)(self) } }
+    /// `BSScript::Internal::ScriptFunction::GetIsNative`, vtable slot 8: false; code bytes 32 C0 C3
+    ///
+    /// Semantic, vmstack pass, high; called through the object's vtable.
+    /// `bool (BSScript::Internal::ScriptFunction* this)`
+    #[inline]
+    pub fn get_is_native(&self) -> bool { unsafe { virtual_function!(self, 8, (&Self) -> bool)(self) } }
+    /// `BSScript::Internal::ScriptFunction::GetIsStatic`, vtable slot 9: +0x5a
+    ///
+    /// Semantic, vmstack pass, high; called through the object's vtable.
+    /// `bool (BSScript::Internal::ScriptFunction* this)`
+    #[inline]
+    pub fn get_is_static(&self) -> bool { unsafe { virtual_function!(self, 9, (&Self) -> bool)(self) } }
+    /// `BSScript::Internal::ScriptFunction::GetLineForIP`, vtable slot 17: line table lookup: false and *line = 0 when lineNumbers/lineCount are 0; else index = InstructionIndexAtBit(&+0x48, ip), *line = lineNumbers[min(index, lineCount-1)], true
+    ///
+    /// Semantic, vmstack pass, high; called through the object's vtable.
+    /// `bool (BSScript::Internal::ScriptFunction* this, u32 ipBitOffset, u32* line)`
+    ///
+    /// # Safety
+    /// `line` must point to what the engine expects.
+    #[inline]
+    pub unsafe fn get_line_for_ip(&self, ipBitOffset: u32, line: *mut u32) -> bool { unsafe { virtual_function!(self, 17, (&Self, u32, *mut u32) -> bool)(self, ipBitOffset, line) } }
+    /// `BSScript::Internal::ScriptFunction::GetObjectTypeName`, vtable slot 2: &objectTypeName (+0x18)
+    ///
+    /// Semantic, vmstack pass, high; called through the object's vtable.
+    /// `const BSFixedString* (BSScript::Internal::ScriptFunction* this)`
+    #[inline]
+    pub fn get_object_type_name(&self) -> Option<&'static classes::BSFixedString> { unsafe { virtual_function!(self, 2, (&Self) -> Option<&'static classes::BSFixedString>)(self) } }
+    /// `BSScript::Internal::ScriptFunction::GetParamCount`, vtable slot 5: +0x38
+    ///
+    /// Semantic, vmstack pass, high; called through the object's vtable.
+    /// `u16 (BSScript::Internal::ScriptFunction* this)`
+    #[inline]
+    pub fn get_param_count(&self) -> u16 { unsafe { virtual_function!(self, 5, (&Self) -> u16)(self) } }
+    /// `BSScript::Internal::ScriptFunction::GetParamNameAndType`, vtable slot 6: variables[index] for index < paramCount, else a static empty pair
+    ///
+    /// Semantic, vmstack pass, high; called through the object's vtable.
+    /// `void (BSScript::Internal::ScriptFunction* this, u32 index, BSFixedString* name, BSScript::TypeInfo* type)`
+    ///
+    /// # Safety
+    /// `name`, `type_` must point to what the engine expects.
+    #[inline]
+    pub unsafe fn get_param_name_and_type(&self, index: u32, name: *mut classes::BSFixedString, type_: *mut classes::BSScript__TypeInfo) { unsafe { virtual_function!(self, 6, (&Self, u32, *mut classes::BSFixedString, *mut classes::BSScript__TypeInfo))(self, index, name, type_) } }
+    /// `BSScript::Internal::ScriptFunction::GetSourceFileName`, vtable slot 16: &sourceFileName (+0x68)
+    ///
+    /// Semantic, vmstack pass, high; called through the object's vtable.
+    /// `const BSFixedString* (BSScript::Internal::ScriptFunction* this)`
+    #[inline]
+    pub fn get_source_file_name(&self) -> Option<&'static classes::BSFixedString> { unsafe { virtual_function!(self, 16, (&Self) -> Option<&'static classes::BSFixedString>)(self) } }
+    /// `BSScript::Internal::ScriptFunction::GetStackFrameSize`, vtable slot 7: paramCount + locals = +0x3a
+    ///
+    /// Semantic, vmstack pass, high; called through the object's vtable.
+    /// `u32 (BSScript::Internal::ScriptFunction* this)`
+    #[inline]
+    pub fn get_stack_frame_size(&self) -> u32 { unsafe { virtual_function!(self, 7, (&Self) -> u32)(self) } }
+    /// `BSScript::Internal::ScriptFunction::GetStateName`, vtable slot 3: &stateName (+0x20)
+    ///
+    /// Semantic, vmstack pass, high; called through the object's vtable.
+    /// `const BSFixedString* (BSScript::Internal::ScriptFunction* this)`
+    #[inline]
+    pub fn get_state_name(&self) -> Option<&'static classes::BSFixedString> { unsafe { virtual_function!(self, 3, (&Self) -> Option<&'static classes::BSFixedString>)(self) } }
+    /// `BSScript::Internal::ScriptFunction::GetUserFlags`, vtable slot 12: +0x40
+    ///
+    /// Semantic, vmstack pass, high; called through the object's vtable.
+    /// `u32 (BSScript::Internal::ScriptFunction* this)`
+    #[inline]
+    pub fn get_user_flags(&self) -> u32 { unsafe { virtual_function!(self, 12, (&Self) -> u32)(self) } }
+    /// `BSScript::Internal::ScriptFunction::InsertLocals`, vtable slot 14: sets frame variables paramCount..variableCount-1 to {type, 0} of their declared types
+    ///
+    /// Semantic, vmstack pass, high; called through the object's vtable.
+    /// `void (BSScript::Internal::ScriptFunction* this, BSScript::StackFrame* frame)`
+    ///
+    /// # Safety
+    /// `frame` must point to what the engine expects.
+    #[inline]
+    pub unsafe fn insert_locals(&self, frame: *mut classes::BSScript__StackFrame) { unsafe { virtual_function!(self, 14, (&Self, *mut classes::BSScript__StackFrame))(self, frame) } }
+    /// `BSScript::Internal::ScriptFunction::SetIsCallableFromTasklet`, vtable slot 20: no-op
+    ///
+    /// Semantic, vmstack pass, high; called through the object's vtable.
+    /// `void (BSScript::Internal::ScriptFunction* this, bool)`
+    #[inline]
+    pub fn set_is_callable_from_tasklet(&self, a1: bool) { unsafe { virtual_function!(self, 20, (&Self, bool))(self, a1) } }
+    /// `BSScript::Internal::ScriptFunction::TryGetVariableName`, vtable slot 18: name of variable index (parameters and locals, index < +0x3a); false and the empty string otherwise
+    ///
+    /// Semantic, vmstack pass, high; called through the object's vtable.
+    /// `bool (BSScript::Internal::ScriptFunction* this, u32 index, BSFixedString* out)`
+    ///
+    /// # Safety
+    /// `out` must point to what the engine expects.
+    #[inline]
+    pub unsafe fn try_get_variable_name(&self, index: u32, out: *mut classes::BSFixedString) -> bool { unsafe { virtual_function!(self, 18, (&Self, u32, *mut classes::BSFixedString) -> bool)(self, index, out) } }
+    /// `BSScript::Internal::ScriptFunction::ctor`: copies an unlinked function's names, signature, instruction stream and (narrowed to u16) line array
+    ///
+    /// Semantic, vmstack pass, high; ledger semantic evidence, name high; id 105450, rva 0x14e50c0.
+    /// `BSScript::Internal::ScriptFunction* (BSScript::Internal::ScriptFunction* this, void* unlinkedFunction)`
+    ///
+    /// # Safety
+    /// It constructs or destroys an object in place.
+    #[inline]
+    pub unsafe fn ctor(&self, unlinkedFunction: *mut c_void) -> *mut Self { unsafe { function!(105450, (&Self, *mut c_void) -> *mut Self)(self, unlinkedFunction) } }
 }
 
 impl classes::BSScript__Internal__VirtualMachine {
@@ -45041,6 +46197,15 @@ impl classes::BSScript__Internal__VirtualMachine {
     /// The pass rates the signature medium.
     #[inline]
     pub unsafe fn log_error(&self, text: *const c_char, severity: u32) { unsafe { virtual_function!(self, 3, (&Self, *const c_char, u32))(self, text, severity) } }
+    /// `BSScript::Internal::VirtualMachine::QueueTaskletsToJobList`, vtable slot 18: under queueLock moves every pending tasklet into the job list as {0x14c2600 (jmp to the interpreter), tasklet} and clears +0x8260
+    ///
+    /// Semantic, papyrus pass, high; called through the object's vtable.
+    /// `void (BSScript::Internal::VirtualMachine* this, void* jobList)`
+    ///
+    /// # Safety
+    /// `jobList` must point to what the engine expects.
+    #[inline]
+    pub unsafe fn queue_tasklets_to_job_list(&self, jobList: *mut c_void) { unsafe { virtual_function!(self, 18, (&Self, *mut c_void))(self, jobList) } }
     /// `BSScript::Internal::VirtualMachine::RegisterObjectType`, vtable slot 8: records className for typeID in the two maps at +0x190 (typeID -> name) and +0x1c0 (name -> typeID); returns false when either was already registered
     ///
     /// Semantic, papyrus pass, high; called through the object's vtable.
@@ -45056,6 +46221,12 @@ impl classes::BSScript__Internal__VirtualMachine {
     /// `void (BSScript::Internal::VirtualMachine* this, u32 stackId, const BSScript::Variable* result)`
     #[inline]
     pub fn return_from_latent(&self, stackId: u32, result: &classes::BSScript__Variable) { unsafe { virtual_function!(self, 43, (&Self, u32, &classes::BSScript__Variable))(self, stackId, result) } }
+    /// `BSScript::Internal::VirtualMachine::RunQueuedTasklets`, vtable slot 5: copies pendingTasklets (+0x8260) into a scrap array, clears it and runs the interpreter 0x14ce660 on each in the calling thread
+    ///
+    /// Semantic, papyrus pass, high; called through the object's vtable.
+    /// `void (BSScript::Internal::VirtualMachine* this)`
+    #[inline]
+    pub fn run_queued_tasklets(&self) { unsafe { virtual_function!(self, 5, (&Self))(self) } }
     /// `BSScript::Internal::VirtualMachine::SendEvent`, vtable slot 36: copies the script objects bound to exactly this handle (the +0x93a8 map under the +0x93a0 lock, each with a reference) and calls DispatchMethodCall (slot 39) for each with eventName, args and an empty callback, outside the lock; an object whose script has no such function is skipped silently, a handle with no bound object does nothing; args is called during each dispatch that finds the function (once per such object, never kept), so it may live on the caller's stack; aliases and active effects have their own handles and are reached only through RelayEventToRefAndEffects 0x9e3580, which the engine's handlers call after it
     ///
     /// Semantic, papyrus pass, high; called through the object's vtable.
@@ -45122,6 +46293,12 @@ impl classes::BSScript__Internal__VirtualMachine {
     /// `object` must point to what the engine expects.
     #[inline]
     pub unsafe fn bind_object(&self, object: *mut c_void, handle: u64) { unsafe { function!(104820, (&Self, *mut c_void, u64))(self, object, handle) } }
+    /// `BSScript::Internal::VirtualMachine::DumpStackToLog`: header (0x14a0ac0: 'Dumping stack %d', frame/page count, state, type, return value, callback), then per frame the trace line, 'IP: %d' (frame+0x20), 'Instruction: %d' (InstructionIndexAtBit, script functions only), 'Line: %d' (slot 17), and every variable by slot 18's name
+    ///
+    /// Semantic, vmstack pass, high; ledger semantic evidence, name high; id 104491, rva 0x149fc70.
+    /// `void (const BSScript::Stack* stack, BSScript::ErrorLogger* logger)`
+    #[inline]
+    pub fn dump_stack_to_log(stack: &classes::BSScript__Stack, logger: &classes::BSScript__ErrorLogger) { unsafe { function!(104491, (&classes::BSScript__Stack, &classes::BSScript__ErrorLogger))(stack, logger) } }
 }
 
 impl classes::BSScript__NF_util__NativeFunctionBase {
@@ -45200,6 +46377,15 @@ impl classes::BSScript__NF_util__NativeFunctionBase {
     /// `bool (BSScript::NF_util::NativeFunctionBase* this)`
     #[inline]
     pub fn get_is_static(&self) -> bool { unsafe { virtual_function!(self, 9, (&Self) -> bool)(self) } }
+    /// `BSScript::NF_util::NativeFunctionBase::GetLineForIP`, vtable slot 17: false, *line = 0: natives have no lines
+    ///
+    /// Semantic, papyrus pass, high; called through the object's vtable.
+    /// `bool (BSScript::NF_util::NativeFunctionBase* this, u32 ip, u32* line)`
+    ///
+    /// # Safety
+    /// `line` must point to what the engine expects.
+    #[inline]
+    pub unsafe fn get_line_for_ip(&self, ip: u32, line: *mut u32) -> bool { unsafe { virtual_function!(self, 17, (&Self, u32, *mut u32) -> bool)(self, ip, line) } }
     /// `BSScript::NF_util::NativeFunctionBase::GetObjectTypeName`, vtable slot 2: the script class name at +0x18; BindNativeMethod uses it to find or create the type
     ///
     /// Semantic, papyrus pass, high; called through the object's vtable.
@@ -45539,6 +46725,12 @@ impl classes::BSShaderAccumulator {
     /// `void (BSShaderAccumulator* this)`
     #[inline]
     pub fn vfunc_44(&self) { unsafe { virtual_function!(self, 44, (&Self))(self) } }
+    /// `BSShaderAccumulator::GetBatchGroup5Field24`: batchRenderer (+0x130) ->groups[5] (+0x98) ->+0x24
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 106598, rva 0x15209f0.
+    /// `u16 (BSShaderAccumulator* this)`
+    #[inline]
+    pub fn get_batch_group5_field24(&self) -> u16 { unsafe { function!(106598, (&Self) -> u16)(self) } }
     /// `BSShaderAccumulator::RegisterDepthGeometry`: for the depth and shadow modes: skips properties with flags 0xc000000 (unless allowed), asks the property for its passes in renderMode (slot 43), stamps passFrame and batches the passes
     ///
     /// Semantic, render pass, high; ledger runtime evidence, name high; id 106576, rva 0x151ec10.
@@ -45932,6 +47124,12 @@ impl classes::BSShadowFrustumLight {
     /// The pass rates the signature medium.
     #[inline]
     pub unsafe fn set_light(&self, light: *mut classes::NiLight) { unsafe { virtual_function!(self, 2, (&Self, *mut classes::NiLight))(self, light) } }
+    /// `BSShadowFrustumLight::UpdateForCamera`, vtable slot 16: per-frame shadow light update against the frame camera: distance test scaled by the camera's lodAdjust (+0x184); returns false when the light is dropped (+0x5c == 0xff)
+    ///
+    /// Semantic, render pass, high; called through the object's vtable.
+    /// `bool (BSShadowFrustumLight* this, NiCamera* camera)`
+    #[inline]
+    pub fn update_for_camera(&self, camera: &classes::NiCamera) -> bool { unsafe { virtual_function!(self, 16, (&Self, &classes::NiCamera) -> bool)(self, camera) } }
 }
 
 impl classes::BSShadowLight {
@@ -46103,6 +47301,21 @@ impl classes::BSTerrainEffect {
     /// The `BSTEventSink<PositionPlayerEvent>` base at +0x30.
     #[inline]
     pub fn as_bst_event_sink_position_player_event(&self) -> &classes::BSTEventSink_PositionPlayerEvent { unsafe { &*core::ptr::from_ref(self).byte_add(0x30).cast() } }
+}
+
+impl classes::BSTreeManager__IQueryCullingCamera {
+    /// `MainCullingCamera::Destroy`: clears the singleton pointer 0x32309c0 and frees 0x10
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 36741, rva 0x661e60.
+    /// `BSTreeManager::IQueryCullingCamera* (BSTreeManager::IQueryCullingCamera* this, u32 flags)`
+    #[inline]
+    pub fn destroy(&self, flags: u32) -> Option<&'static Self> { unsafe { function!(36741, (&Self, u32) -> Option<&'static Self>)(self, flags) } }
+    /// `MainCullingCamera::GetCamera`: returns g_SceneGraph+0x128, the frame camera: the tree LOD manager culls with the main camera
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 36773, rva 0x6629e0.
+    /// `NiCamera* (const BSTreeManager::IQueryCullingCamera* this)`
+    #[inline]
+    pub fn get_camera(&self) -> Option<&'static classes::NiCamera> { unsafe { function!(36773, (&Self) -> Option<&'static classes::NiCamera>)(self) } }
 }
 
 impl classes::BSUtilityShader {
@@ -46574,6 +47787,33 @@ impl classes::BeamProjectile {
     /// The `BSTEventSink<BSProceduralGeomEvent>` base at +0x1E0.
     #[inline]
     pub fn as_bst_event_sink_bs_procedural_geom_event(&self) -> &classes::BSTEventSink_BSProceduralGeomEvent { unsafe { &*core::ptr::from_ref(self).byte_add(0x1E0).cast() } }
+    /// `BeamProjectile::UpdateImpl`, vtable slot 171: beam projectile per-frame update: follows the shooter's aim, reading cameraStates[0]+0x48 (first-person state) for the player
+    ///
+    /// Semantic, camera pass, high; called through the object's vtable.
+    /// `void (BeamProjectile* this, float delta)`
+    #[inline]
+    pub fn update_impl(&self, delta: f32) { unsafe { virtual_function!(self, 171, (&Self, f32))(self, delta) } }
+}
+
+impl classes::BleedoutCameraState {
+    /// `BleedoutCameraState::ComputeOrbitPositionWithCollision`: position = focus node (+0x120) world translation, or the target's slot-111 3D world translation + eye height when no focus node; then position -= distance (+0x10c) * rotation column 1; ComputeCameraCasterCollision(camera, position, fade true); returns true when clear (or when the position stayed zero)
+    ///
+    /// Semantic, camera pass, high; ledger runtime evidence, name high; id 50720, rva 0x8f4530.
+    /// `bool (BleedoutCameraState* this, NiPoint3* position, const NiMatrix3* rotation)`
+    ///
+    /// # Safety
+    /// `position`, `rotation` must point to what the engine expects.
+    #[inline]
+    pub unsafe fn compute_orbit_position_with_collision(&self, position: *mut c_void, rotation: *const c_void) -> bool { unsafe { function!(50720, (&Self, *mut c_void, *const c_void) -> bool)(self, position, rotation) } }
+    /// `BleedoutCameraState::dtor`: non-deleting destructor: own vtables, release focusNode (+0x120), ThirdPersonState::dtor
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 50860, rva 0x8fc3d0.
+    /// `void (BleedoutCameraState* this)`
+    ///
+    /// # Safety
+    /// It constructs or destroys an object in place.
+    #[inline]
+    pub unsafe fn dtor(&self) { unsafe { function!(50860, (&Self))(self) } }
 }
 
 impl classes::BookMenu {
@@ -46625,6 +47865,60 @@ impl classes::CameraCasterHolder {
     /// It constructs or destroys an object in place.
     #[inline]
     pub unsafe fn ctor(&self, radius: f32) -> *mut Self { unsafe { function!(33005, (&Self, f32) -> *mut Self)(self, radius) } }
+}
+
+impl classes::CameraOverrideStartHandler {
+    /// `CameraOverrideStartHandler::Destroy`, vtable slot 0: scalar deleting destructor: restores IHandlerFunctor<Actor,BSFixedStringCI>::vftable 0x1937e30, frees 0x10 when flags & 1
+    ///
+    /// Semantic, camera pass, high; called through the object's vtable.
+    /// `CameraOverrideStartHandler* (CameraOverrideStartHandler* this, u32 flags)`
+    #[inline]
+    pub fn destroy(&self, flags: u32) -> Option<&'static Self> { unsafe { virtual_function!(self, 0, (&Self, u32) -> Option<&'static Self>)(self, flags) } }
+    /// `CameraOverrideStartHandler::Handle`, vtable slot 1: if the actor's handle == PlayerCamera.targetHandle (+0x3c): PlayerCamera::SetFirstPersonCameraOverride(1) -> FirstPersonState+0x88 = 1 (spring offset off)
+    ///
+    /// Semantic, camera pass, high; called through the object's vtable.
+    /// `bool (CameraOverrideStartHandler* this, Actor* actor, const BSFixedStringCI* payload)`
+    ///
+    /// # Safety
+    /// `payload` must point to what the engine expects.
+    #[inline]
+    pub unsafe fn handle(&self, actor: *mut classes::Actor, payload: *const c_void) -> bool { unsafe { virtual_function!(self, 1, (&Self, *mut classes::Actor, *const c_void) -> bool)(self, actor, payload) } }
+}
+
+impl classes::CameraOverrideStopHandler {
+    /// `CameraOverrideStopHandler::Destroy`, vtable slot 0: scalar deleting destructor: restores IHandlerFunctor<Actor,BSFixedStringCI>::vftable 0x1937e30, frees 0x10 when flags & 1
+    ///
+    /// Semantic, camera pass, high; called through the object's vtable.
+    /// `CameraOverrideStopHandler* (CameraOverrideStopHandler* this, u32 flags)`
+    #[inline]
+    pub fn destroy(&self, flags: u32) -> Option<&'static Self> { unsafe { virtual_function!(self, 0, (&Self, u32) -> Option<&'static Self>)(self, flags) } }
+    /// `CameraOverrideStopHandler::Handle`, vtable slot 1: same gate; SetFirstPersonCameraOverride(0) -> FirstPersonState+0x88 = 0
+    ///
+    /// Semantic, camera pass, high; called through the object's vtable.
+    /// `bool (CameraOverrideStopHandler* this, Actor* actor, const BSFixedStringCI* payload)`
+    ///
+    /// # Safety
+    /// `payload` must point to what the engine expects.
+    #[inline]
+    pub unsafe fn handle(&self, actor: *mut classes::Actor, payload: *const c_void) -> bool { unsafe { virtual_function!(self, 1, (&Self, *mut classes::Actor, *const c_void) -> bool)(self, actor, payload) } }
+}
+
+impl classes::CameraShakeHandler {
+    /// `CameraShakeHandler::Destroy`, vtable slot 0: scalar deleting destructor: restores IHandlerFunctor<Actor,BSFixedStringCI>::vftable 0x1937e30, frees 0x10 when flags & 1
+    ///
+    /// Semantic, camera pass, high; called through the object's vtable.
+    /// `CameraShakeHandler* (CameraShakeHandler* this, u32 flags)`
+    #[inline]
+    pub fn destroy(&self, flags: u32) -> Option<&'static Self> { unsafe { virtual_function!(self, 0, (&Self, u32) -> Option<&'static Self>)(self, flags) } }
+    /// `CameraShakeHandler::Handle`, vtable slot 1: strength = atof(payload); if > 0: StartCameraShake(strength, &actor->position (+0x54), 0) (duration 0 -> fCameraShakeTime)
+    ///
+    /// Semantic, camera pass, high; called through the object's vtable.
+    /// `bool (CameraShakeHandler* this, Actor* actor, const BSFixedStringCI* payload)`
+    ///
+    /// # Safety
+    /// `payload` must point to what the engine expects.
+    #[inline]
+    pub unsafe fn handle(&self, actor: *mut classes::Actor, payload: *const c_void) -> bool { unsafe { virtual_function!(self, 1, (&Self, *mut classes::Actor, *const c_void) -> bool)(self, actor, payload) } }
 }
 
 impl classes::ChainExplosion {
@@ -46721,6 +48015,12 @@ impl classes::Console {
     /// The pass rates the signature medium.
     #[inline]
     pub unsafe fn init_globals() { unsafe { function!(442670, ())() } }
+    /// `Console::PickReferencesAtCursor`: console click: builds a world ray from the cursor (ID_403551 +4/+8, g_ScreenWidth/Height), picks with NiPick, sorts by distance and cycles the selected reference among unique hits
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 51089, rva 0x90a930.
+    /// `void (Console* this)`
+    #[inline]
+    pub fn pick_references_at_cursor(&self) { unsafe { function!(51089, (&Self))(self) } }
     /// `Console::SetSelectedRef`: stores g_ConsoleSelectedRef and Invokes 'Console.SetCurrentSelection' with "'%s' RefID: (%08x)..."
     ///
     /// Semantic, ui pass, high; ledger semantic evidence, name high; id 51093, rva 0x90b9d0.
@@ -46807,6 +48107,12 @@ impl classes::CrosshairPickData {
     /// `origin`, `direction` must point to what the engine expects.
     #[inline]
     pub unsafe fn pick(&self, world: *mut classes::bhkWorld, origin: *const c_void, direction: *const c_void) { unsafe { function!(26127, (&Self, *mut classes::bhkWorld, *const c_void, *const c_void))(self, world, origin, direction) } }
+    /// `CrosshairPickData::Reset`: hit object +0x20 = null, handles +4/+8/+0xc = invalid, hit point +0x10..+0x18 = the zero NiPoint3
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 26131, rva 0x40b310.
+    /// `void (CrosshairPickData* this)`
+    #[inline]
+    pub fn reset(&self) { unsafe { function!(26131, (&Self))(self) } }
     /// `CrosshairPickData::ctor`: ID_401585 (g_CrosshairPickData_ptr 0x31e0b70) = this; target handles +4/+8 invalid, +0xc = 0, hitPoint +0x10 = zero, +0x20/+0x28/+0x30/+0x34 = 0; builds a bhkSphereShape of radius fActivatePickRadius * Havok scale (slot 46) and a bhkSimpleShapePhantom (layer 0x2c) stored refcounted at +0x28; returns this
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 26125, rva 0x409c30.
@@ -46860,6 +48166,18 @@ impl classes::DirectionHandler {
     pub fn can_process(&self, event: &classes::InputEvent) -> bool { unsafe { virtual_function!(self, 1, (&Self, &classes::InputEvent) -> bool)(self, event) } }
 }
 
+impl classes::DragonCameraState {
+    /// `DragonCameraState::ctor`: ThirdPersonState::ctor, own vtables, mountHandle/targetHandle invalid, +0xec 0, +0xf0 0, dollyProgress 1, +0xf8 0, both dolly NiPoint2 zero
+    ///
+    /// Semantic, camera pass, high; ledger layout_inference evidence, name high; id 33107, rva 0x55c690.
+    /// `DragonCameraState* (DragonCameraState* this, PlayerCamera* camera, u32 id)`
+    ///
+    /// # Safety
+    /// It constructs or destroys an object in place.
+    #[inline]
+    pub unsafe fn ctor(&self, camera: *mut classes::PlayerCamera, id: u32) -> *mut Self { unsafe { function!(33107, (&Self, *mut classes::PlayerCamera, u32) -> *mut Self)(self, camera, id) } }
+}
+
 impl classes::EffectSetting {
     /// The `BGSKeywordForm` base at +0x40.
     #[inline]
@@ -46879,6 +48197,15 @@ impl classes::EffectSetting {
     /// The `TESFullName` base at +0x20.
     #[inline]
     pub fn as_tes_full_name(&self) -> &classes::TESFullName { unsafe { &*core::ptr::from_ref(self).byte_add(0x20).cast() } }
+}
+
+impl classes::EnemyHealth {
+    /// `EnemyHealth::Update`, vtable slot 1: per-frame enemy health bar: target from the camera/crosshair, health percent (GetActorValuePercentage(0x18) * 100), timestamps, new-target flag, GFx updates
+    ///
+    /// Semantic, camera pass, high; called through the object's vtable.
+    /// `void (EnemyHealth* this)`
+    #[inline]
+    pub fn update(&self) { unsafe { virtual_function!(self, 1, (&Self))(self) } }
 }
 
 impl classes::EnhanceWeaponEffect {
@@ -47171,6 +48498,15 @@ impl classes::EventSourceHolder_User {
     pub fn singleton() -> Option<&'static Self> { unsafe { *(address!(400863) as *const Option<&'static Self>) } }
 }
 
+impl classes::Explosion {
+    /// `Explosion::StartEffects`: starts the explosion's effects: image space swap (fExplosionImageSpaceSwapPower), camera shake (fCameraShakeExplosion), sound, light; returns the started bit
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 43869, rva 0x7e9090.
+    /// `bool (Explosion* this)`
+    #[inline]
+    pub fn start_effects(&self) -> bool { unsafe { function!(43869, (&Self) -> bool)(self) } }
+}
+
 impl classes::ExtraAliasInstanceArray {
     /// `ExtraAliasInstanceArray::ForEachAlias`: under the read lock at +0x28, functor slot 1 with the alias of every entry whose alias is set, stopping when it returns anything but 1
     ///
@@ -47222,70 +48558,67 @@ impl classes::partial::FindEffectKeywordOnTargetFunctor {
     pub fn as_magic_item_traversal_functor(&self) -> &classes::MagicItemTraversalFunctor { unsafe { &*core::ptr::from_ref(self).byte_add(0x8).cast() } }
 }
 
+impl classes::FirstPersonRenderContext {
+    /// `FirstPersonRenderContext::StaticInit`: zeroes the 0x58-byte first-person render context at 0x34362c0 (g_FirstPersonViewParams) at CRT init
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 10403, rva 0x102b90.
+    /// `void (void)`
+    #[inline]
+    pub fn static_init() { unsafe { function!(10403, ())() } }
+}
+
 impl classes::FirstPersonState {
     /// The `PlayerInputHandler` base at +0x20.
     #[inline]
     pub fn as_player_input_handler(&self) -> &classes::PlayerInputHandler { unsafe { &*core::ptr::from_ref(self).byte_add(0x20).cast() } }
-    /// `FirstPersonState::Begin`, vtable slot 1: SetFirstPerson(true), registers the handler, lastTargetPosition = player position, zero velocity, weight 1
+    /// `FirstPersonState::ComputeCurrentPitchOffsetMult`: the pitchOffsetMult that reproduces the player's current first-person pitch graph variable: -(0.0174533 / (actor pitch + cameraNode pitch)) * variable, capped at 1.01 and floored at f1stPitchOffsetTarget:Camera (0.75) * 0.99; 1.0 when the pitch sum is ~0
     ///
-    /// Semantic, frame pass, high; called through the object's vtable.
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 50736, rva 0x8f5970.
+    /// `float (FirstPersonState* this)`
+    #[inline]
+    pub fn compute_current_pitch_offset_mult(&self) -> f32 { unsafe { function!(50736, (&Self) -> f32)(self) } }
+    /// `FirstPersonState::UpdatePitchGraphVariable`: with a Cam1 node (+0x58), no furniture (player +0x1f0 handle unresolved) and sittingYaw (+0x68) 0: pitch = Cam1 world Euler y + the player's pitch (+0x48); +0x78 = pitch * +0x6c * -57.2958 (degrees, sign flipped); UpdatePitchOffsetLag; sets the player's graph float g_FirstPersonPitchGraphVar (0x3255ab8) to +0x74
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 523993, rva 0x8f5b60.
     /// `void (FirstPersonState* this)`
     #[inline]
-    pub fn begin(&self) { unsafe { virtual_function!(self, 1, (&Self))(self) } }
-    /// `FirstPersonState::End`, vtable slot 2: sittingYaw = 0, unregisters the handler
+    pub fn update_pitch_graph_variable(&self) { unsafe { function!(523993, (&Self))(self) } }
+    /// `FirstPersonState::UpdatePitchOffsetLag`: moves the displayed pitch offset (+0x74) toward the target (+0x78): mouse at f1stPitchOffsetMouseFollowSpeed * g_FrameDeltaReal with at most f1stPitchOffsetMouseMaxLag behind; gamepad snaps; sixaxis (PlayerControls' motion source) by the snap delta f1stPitchOffsetSixaxisMaxSnapDelta + +0x7c, at most f1stPitchOffsetSixaxisMaxLag behind; +0x7c holds the last step
     ///
-    /// Semantic, frame pass, high; called through the object's vtable.
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 523994, rva 0x8f5c40.
     /// `void (FirstPersonState* this)`
     #[inline]
-    pub fn end(&self) { unsafe { virtual_function!(self, 2, (&Self))(self) } }
-    /// `FirstPersonState::GetRotation`, vtable slot 4: cameraNode world rotation with heading and sittingYaw
+    pub fn update_pitch_offset_lag(&self) { unsafe { function!(523994, (&Self))(self) } }
+    /// `FirstPersonState::UpdatePitchOffsetMult`: moves pitchOffsetMult (+0x6c) toward target with ApproachWithAccelerationLimit (f1stPitchOffsetMultOnAccel/OnMaxSpeed, or ...OffAccel/OffMaxSpeed when target == 1.0), pitchOffsetMultPrev (+0x70) = old value; result > 1.01 -> 1.01, below f1stPitchOffsetTarget * 0.99 -> that floor; skipped when the scaled frame delta is ~0
     ///
-    /// Semantic, frame pass, high; called through the object's vtable.
-    /// `void (FirstPersonState* this, NiQuaternion* out)`
-    ///
-    /// # Safety
-    /// `out` must point to what the engine expects.
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 50737, rva 0x8f5a40.
+    /// `void (FirstPersonState* this, float target)`
     #[inline]
-    pub unsafe fn get_rotation(&self, out: *mut c_void) { unsafe { virtual_function!(self, 4, (&Self, *mut c_void))(self, out) } }
-    /// `FirstPersonState::GetTranslation`, vtable slot 5: cameraNode world translation
+    pub fn update_pitch_offset_mult(&self, target: f32) { unsafe { function!(50737, (&Self, f32))(self, target) } }
+    /// `FirstPersonState::UpdateSittingYaw`: sittingYaw (+0x68): 0 unless the player sits; with the Looking control enabled += fFirstPersonSittingRotationSpeed * lookInput.x, otherwise eases back to 0 at fFirstPersonDisablePOVLerpDPS * g_FrameDelta; clamped to +-fFirstPersonSittingAngleLimit (or a default-object override +0x34 when > 0)
     ///
-    /// Semantic, frame pass, high; called through the object's vtable.
-    /// `void (FirstPersonState* this, NiPoint3* out)`
-    ///
-    /// # Safety
-    /// `out` must point to what the engine expects.
+    /// Semantic, camera pass, high; ledger runtime evidence, name high; id 50735, rva 0x8f57c0.
+    /// `void (FirstPersonState* this)`
     #[inline]
-    pub unsafe fn get_translation(&self, out: *mut c_void) { unsafe { virtual_function!(self, 5, (&Self, *mut c_void))(self, out) } }
-    /// `FirstPersonState::LoadGame`, vtable slot 7: same, the last four only for buffer version > 0x14
+    pub fn update_sitting_yaw(&self) { unsafe { function!(50735, (&Self))(self) } }
+    /// `FirstPersonState::dtor`: non-deleting destructor: resets the embedded input handler's vtable (+0x20) to PlayerInputHandler's and this to TESCameraState's
     ///
-    /// Semantic, frame pass, high; called through the object's vtable.
-    /// `void (FirstPersonState* this, BGSLoadFormBuffer* buffer)`
-    #[inline]
-    pub fn load_game(&self, buffer: &classes::BGSLoadFormBuffer) { unsafe { virtual_function!(self, 7, (&Self, &classes::BGSLoadFormBuffer))(self, buffer) } }
-    /// `FirstPersonState::Revert`, vtable slot 8: defaults
-    ///
-    /// Semantic, frame pass, medium; called through the object's vtable.
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 50721, rva 0x8f46b0.
     /// `void (FirstPersonState* this)`
     ///
     /// # Safety
-    /// The pass rates the signature medium.
+    /// It constructs or destroys an object in place.
     #[inline]
-    pub unsafe fn revert(&self) { unsafe { virtual_function!(self, 8, (&Self))(self) } }
-    /// `FirstPersonState::SaveGame`, vtable slot 6: +0x68, +0x6c, +0x70, +0x89, +0x8a
+    pub unsafe fn dtor(&self) { unsafe { function!(50721, (&Self))(self) } }
+}
+
+impl classes::FlameProjectile {
+    /// `FlameProjectile::UpdateImpl`, vtable slot 171: flame projectile per-frame update: emitter node from slot 139, shooter handle +0x128; for the player in first person adds the first-person camera offset
     ///
-    /// Semantic, frame pass, high; called through the object's vtable.
-    /// `void (FirstPersonState* this, BGSSaveFormBuffer* buffer)`
+    /// Semantic, camera pass, high; called through the object's vtable.
+    /// `void (FlameProjectile* this, float delta)`
     #[inline]
-    pub fn save_game(&self, buffer: &classes::BGSSaveFormBuffer) { unsafe { virtual_function!(self, 6, (&Self, &classes::BGSSaveFormBuffer))(self, buffer) } }
-    /// `FirstPersonState::Update`, vtable slot 3: look pitch 0x8fb2e0, sitting yaw, pitch offset, spring damping, caster collision 0x8fa5d0, shake 0x8fa2b0, writes root+0x48/+0x6c and calls 0xee0930
-    ///
-    /// Semantic, frame pass, high; called through the object's vtable.
-    /// `void (FirstPersonState* this, BSTSmartPointer<TESCameraState>* next)`
-    ///
-    /// # Safety
-    /// `next` must point to what the engine expects.
-    #[inline]
-    pub unsafe fn update(&self, next: *mut c_void) { unsafe { virtual_function!(self, 3, (&Self, *mut c_void))(self, next) } }
+    pub fn update_impl(&self, delta: f32) { unsafe { virtual_function!(self, 171, (&Self, f32))(self, delta) } }
 }
 
 impl classes::FrameState {
@@ -47334,15 +48667,15 @@ impl classes::FrameState {
     /// `void (FrameState* this)`
     #[inline]
     pub fn update_dynamic_resolution_ratios(&self) { unsafe { function!(77515, (&Self))(self) } }
-    /// `SetCurrentCameraState`: copies the entry's matrices into g_CurrentCameraState 0x20cff80 with the camera viewport, then UploadPerFrameConstants(g_Renderer, flags)
+    /// `SetCurrentCameraState`: binds a cached camera: g_CurrentCameraState (0x20cff80, 0x250 bytes) +0x00..+0xef = entry +0x10..+0xff (world rotation, view, projection, view-projection), +0x130..+0x1ef = entry +0x140..+0x1ff (unjittered and previous matrices), +0x230 = the 4-float viewport; eye 0x20cff5c..64 = entry+0x260 (eye position), 0x20cff68..70 = entry+0x278; then UploadPerFrameConstants(g_Renderer, (u8)flags)
     ///
-    /// Semantic, graphics pass, medium; ledger semantic evidence, name medium; id 77521, rva 0x101e7f0.
-    /// `void (FrameState* this, CameraMatrixEntry* entry, const float* viewport, u32 flags)`
+    /// Semantic, graphics pass, high; ledger runtime evidence, name high; id 77521, rva 0x101e7f0.
+    /// `void (FrameState* this, const CameraMatrixEntry* entry, const float* viewport, u32 flags)`
     ///
     /// # Safety
-    /// The pass rates the signature medium.
+    /// `viewport` must point to what the engine expects.
     #[inline]
-    pub unsafe fn set_current_camera_state(&self, entry: *mut classes::CameraMatrixEntry, viewport: *const f32, flags: u32) { unsafe { function!(77521, (&Self, *mut classes::CameraMatrixEntry, *const f32, u32))(self, entry, viewport, flags) } }
+    pub unsafe fn set_current_camera_state(&self, entry: *const classes::CameraMatrixEntry, viewport: *const f32, flags: u32) { unsafe { function!(77521, (&Self, *const classes::CameraMatrixEntry, *const f32, u32))(self, entry, viewport, flags) } }
     /// `SetViewportDepthRange`: sets g_CurrentCameraState +0x240/+0x244 (0x20d01c0/0x20d01c4) and marks the viewport dirty when they differ from RenderStateCache's MinDepth/MaxDepth (0x1009ab0)
     ///
     /// Semantic, graphics pass, high; ledger semantic evidence, name high; id 77511, rva 0x101d5d0.
@@ -47373,87 +48706,48 @@ impl classes::FreeCameraState {
     /// The `PlayerInputHandler` base at +0x20.
     #[inline]
     pub fn as_player_input_handler(&self) -> &classes::PlayerInputHandler { unsafe { &*core::ptr::from_ref(self).byte_add(0x20).cast() } }
-    /// `FreeCameraState::Begin`, vtable slot 1: registers the handler, swaps fTriggerDeadzone/fMovementAxisDeadzone for the free camera values
+    /// `FreeCameraState::Integrate`: per frame: yaw += look.x * fFreeCameraRotationSpeed:Camera * real delta, pitch -= look.y * same, both wrapped to [0, 2pi); position += the yaw/pitch basis applied to (move.x, move.y, trigger sum +0x44 + +0x48) * fFreeCameraTranslationSpeed:Camera (* fFreeCameraRunSpeed:Camera while run +0x4e); horizontalMove (+0x4f) drops the pitch from the basis; verticalInput (+0x4c) replaces the z step
     ///
-    /// Semantic, frame pass, high; called through the object's vtable.
-    /// `void (TESCameraState* this)`
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 50749, rva 0x8f62c0.
+    /// `void (FreeCameraState* this)`
     #[inline]
-    pub fn begin(&self) { unsafe { virtual_function!(self, 1, (&Self))(self) } }
-    /// `FreeCameraState::End`, vtable slot 2: restores them
+    pub fn integrate(&self) { unsafe { function!(50749, (&Self))(self) } }
+    /// `FreeCameraState::dtor`: non-deleting destructor: +0x20 handler vtable = PlayerInputHandler's, vtable = TESCameraState's
     ///
-    /// Semantic, frame pass, high; called through the object's vtable.
-    /// `void (TESCameraState* this)`
-    #[inline]
-    pub fn end(&self) { unsafe { virtual_function!(self, 2, (&Self))(self) } }
-    /// `FreeCameraState::GetRotation`, vtable slot 4: matrix from (yaw +0x40, pitch +0x3c, 0)
-    ///
-    /// Semantic, frame pass, high; called through the object's vtable.
-    /// `void (FreeCameraState* this, NiQuaternion* out)`
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 50740, rva 0x8f5e10.
+    /// `void (FreeCameraState* this)`
     ///
     /// # Safety
-    /// `out` must point to what the engine expects.
+    /// It constructs or destroys an object in place.
     #[inline]
-    pub unsafe fn get_rotation(&self, out: *mut c_void) { unsafe { virtual_function!(self, 4, (&Self, *mut c_void))(self, out) } }
-    /// `FreeCameraState::GetTranslation`, vtable slot 5: +0x30
-    ///
-    /// Semantic, frame pass, high; called through the object's vtable.
-    /// `void (FreeCameraState* this, NiPoint3* out)`
-    ///
-    /// # Safety
-    /// `out` must point to what the engine expects.
-    #[inline]
-    pub unsafe fn get_translation(&self, out: *mut c_void) { unsafe { virtual_function!(self, 5, (&Self, *mut c_void))(self, out) } }
-    /// `FreeCameraState::Update`, vtable slot 3: 0x8f62c0 integrates angles and position, writes the root from slots 4/5, calls 0xee0930
-    ///
-    /// Semantic, frame pass, high; called through the object's vtable.
-    /// `void (TESCameraState* this, BSTSmartPointer<TESCameraState>* next)`
-    ///
-    /// # Safety
-    /// `next` must point to what the engine expects.
-    #[inline]
-    pub unsafe fn update(&self, next: *mut c_void) { unsafe { virtual_function!(self, 3, (&Self, *mut c_void))(self, next) } }
+    pub unsafe fn dtor(&self) { unsafe { function!(50740, (&Self))(self) } }
 }
 
 impl classes::FurnitureCameraState {
-    /// `FurnitureCameraState::Begin`, vtable slot 1: saves +0x160, disables auto vanity, sets a fixed pitch
+    /// `ComputeFurnitureCameraPosition`: out = target 3D world translation + eye height + translate (+0x24) rotated by the target heading - zoom (+0x30) * rotation column 1, then ComputeCameraCasterCollision(camera, out, true)
     ///
-    /// Semantic, frame pass, high; called through the object's vtable.
-    /// `void (TESCameraState* this)`
-    #[inline]
-    pub fn begin(&self) { unsafe { virtual_function!(self, 1, (&Self))(self) } }
-    /// `FurnitureCameraState::End`, vtable slot 2: restores auto vanity, pitch 0
-    ///
-    /// Semantic, frame pass, high; called through the object's vtable.
-    /// `void (TESCameraState* this)`
-    #[inline]
-    pub fn end(&self) { unsafe { virtual_function!(self, 2, (&Self))(self) } }
-    /// `FurnitureCameraState::GetRotation`, vtable slot 4: euler(pitch, 0, heading or live heading + yawOffset)
-    ///
-    /// Semantic, frame pass, high; called through the object's vtable.
-    /// `void (FurnitureCameraState* this, NiQuaternion* out)`
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 50757, rva 0x8f6a70.
+    /// `void (FurnitureCameraState* this, NiPoint3* out, const NiMatrix3* rotation)`
     ///
     /// # Safety
-    /// `out` must point to what the engine expects.
+    /// `out`, `rotation` must point to what the engine expects.
     #[inline]
-    pub unsafe fn get_rotation(&self, out: *mut c_void) { unsafe { virtual_function!(self, 4, (&Self, *mut c_void))(self, out) } }
-    /// `FurnitureCameraState::GetTranslation`, vtable slot 5: 0x8f6a70
+    pub unsafe fn compute_furniture_camera_position(&self, out: *mut c_void, rotation: *const c_void) { unsafe { function!(50757, (&Self, *mut c_void, *const c_void))(self, out, rotation) } }
+    /// `FurnitureCameraState::Configure`: furniture without byte +0xe0: zoom = fFurnitureCameraZoom:Camera, pitch = fFurnitureCameraAngle:Camera, yawOffset 0, translate 0, followHeading 0; with +0xe0: the fWorkbenchCamera{Zoom,Pitch,Yaw,TranslateX/Y/Z}:Camera values and followHeading 1
     ///
-    /// Semantic, frame pass, high; called through the object's vtable.
-    /// `void (FurnitureCameraState* this, NiPoint3* out)`
+    /// Semantic, camera pass, high; ledger runtime evidence, name high; id 50756, rva 0x8f69b0.
+    /// `void (FurnitureCameraState* this, TESFurniture* furniture)`
+    #[inline]
+    pub fn configure(&self, furniture: &classes::TESFurniture) { unsafe { function!(50756, (&Self, &classes::TESFurniture))(self, furniture) } }
+    /// `FurnitureCameraState::dtor`: non-deleting destructor: vtable = TESCameraState's
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 50750, rva 0x8f6610.
+    /// `void (FurnitureCameraState* this)`
     ///
     /// # Safety
-    /// `out` must point to what the engine expects.
+    /// It constructs or destroys an object in place.
     #[inline]
-    pub unsafe fn get_translation(&self, out: *mut c_void) { unsafe { virtual_function!(self, 5, (&Self, *mut c_void))(self, out) } }
-    /// `FurnitureCameraState::Update`, vtable slot 3: look pitch, rotation, position 0x8f6a70, writes the root
-    ///
-    /// Semantic, frame pass, high; called through the object's vtable.
-    /// `void (TESCameraState* this, BSTSmartPointer<TESCameraState>* next)`
-    ///
-    /// # Safety
-    /// `next` must point to what the engine expects.
-    #[inline]
-    pub unsafe fn update(&self, next: *mut c_void) { unsafe { virtual_function!(self, 3, (&Self, *mut c_void))(self, next) } }
+    pub unsafe fn dtor(&self) { unsafe { function!(50750, (&Self))(self) } }
 }
 
 impl classes::GFxFunctionHandler {
@@ -47688,6 +48982,18 @@ impl classes::HeldStateHandler {
     /// `void (HeldStateHandler* this, ButtonEvent* event)`
     #[inline]
     pub fn update_held_state(&self, event: &classes::ButtonEvent) { unsafe { virtual_function!(self, 7, (&Self, &classes::ButtonEvent))(self, event) } }
+}
+
+impl classes::HorseCameraState {
+    /// `HorseCameraState::ctor`: ThirdPersonState::ctor, own vtables, mountHandle invalid, mountHeading 0, turning 0
+    ///
+    /// Semantic, camera pass, high; ledger layout_inference evidence, name high; id 50759, rva 0x8f6c00.
+    /// `HorseCameraState* (HorseCameraState* this, PlayerCamera* camera, u32 id)`
+    ///
+    /// # Safety
+    /// It constructs or destroys an object in place.
+    #[inline]
+    pub unsafe fn ctor(&self, camera: *mut classes::PlayerCamera, id: u32) -> *mut Self { unsafe { function!(50759, (&Self, *mut classes::PlayerCamera, u32) -> *mut Self)(self, camera, id) } }
 }
 
 impl classes::IAnimationGraphManagerHolder {
@@ -47927,6 +49233,60 @@ impl classes::IAnimationGraphManagerHolder {
     pub unsafe fn update_animation_graph_manager(&self, data: *mut c_void) -> bool { unsafe { function!(32899, (&Self, *mut c_void) -> bool)(self, data) } }
 }
 
+impl classes::IMapCameraCallbacks {
+    /// `IMapCameraCallbacks::Destroy`, vtable slot 2: frees 8 bytes when flags & 1
+    ///
+    /// Semantic, camera pass, high; called through the object's vtable.
+    /// `IMapCameraCallbacks* (IMapCameraCallbacks* this, u32 flags)`
+    #[inline]
+    pub fn destroy(&self, flags: u32) -> Option<&'static Self> { unsafe { virtual_function!(self, 2, (&Self, u32) -> Option<&'static Self>)(self, flags) } }
+    /// `IMapCameraCallbacks::dtor`: resets the vtable
+    ///
+    /// Semantic, camera pass, high; ledger layout_inference evidence, name high; id 53027, rva 0x9971d0.
+    /// `void (IMapCameraCallbacks* this)`
+    ///
+    /// # Safety
+    /// It constructs or destroys an object in place.
+    #[inline]
+    pub unsafe fn dtor(&self) { unsafe { function!(53027, (&Self))(self) } }
+    /// `MapMenu::IMapCameraCallbacks_Destroy`: this-adjusting thunk (-0x38) to MapMenu::vdtor 0x99f950
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 53130, rva 0x99f87c.
+    /// `MapMenu* (IMapCameraCallbacks* this, u32 flags)`
+    #[inline]
+    pub fn i_map_camera_callbacks_destroy(&self, flags: u32) -> Option<&'static classes::MapMenu> { unsafe { function!(53130, (&Self, u32) -> Option<&'static classes::MapMenu>)(self, flags) } }
+    /// `MapMenu::OnExitBegin`: empty
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 53120, rva 0x99f170.
+    /// `void (IMapCameraCallbacks* this)`
+    #[inline]
+    pub fn on_exit_begin(&self) { unsafe { function!(53120, (&Self))(self) } }
+    /// `MapMenu::OnWorldStateBegin`: MapMenu (this - 0x38): menu flags |= 4, movie vfunc +0x1c0(true), {Cursor Menu, show}, tutorial 0xfb; suspends map input when the target is the player in an interior (or ID_406634), or centres the local map on a marker in the player's cell
+    ///
+    /// Semantic, camera pass, high; ledger runtime evidence, name high; id 53119, rva 0x99f000.
+    /// `void (IMapCameraCallbacks* this)`
+    #[inline]
+    pub fn on_world_state_begin(&self) { unsafe { function!(53119, (&Self))(self) } }
+    /// `NullMapCameraCallbacks::Destroy`: frees 8 when flags & 1
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 53031, rva 0x997300.
+    /// `IMapCameraCallbacks* (IMapCameraCallbacks* this, u32 flags)`
+    #[inline]
+    pub fn destroy_2(&self, flags: u32) -> Option<&'static Self> { unsafe { function!(53031, (&Self, u32) -> Option<&'static Self>)(self, flags) } }
+    /// `NullMapCameraCallbacks::OnExitBegin`: empty
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 53035, rva 0x997410.
+    /// `void (IMapCameraCallbacks* this)`
+    #[inline]
+    pub fn on_exit_begin_2(&self) { unsafe { function!(53035, (&Self))(self) } }
+    /// `NullMapCameraCallbacks::OnWorldStateBegin`: empty
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 53036, rva 0x997420.
+    /// `void (IMapCameraCallbacks* this)`
+    #[inline]
+    pub fn on_world_state_begin_2(&self) { unsafe { function!(53036, (&Self))(self) } }
+}
+
 impl classes::IMenu {
     /// `IMenu::Accept`, vtable slot 1: FxDelegateHandler slot: registers the menu's named ActionScript callbacks with processor->slot1(name, fn); empty in IMenu
     ///
@@ -48035,10 +49395,31 @@ impl classes::IMovementHandlerAgent {
     pub unsafe fn handle_movement(&self, args: *mut c_void) { unsafe { function!(41996, (&Self, *mut c_void))(self, args) } }
 }
 
+impl classes::IMovementPlannerAgent {
+    /// `MovementPlannerAgentHorseControls::IMovementPlannerAgent_vfunc_2`: horse-control movement planning: reads the rider's input (dead zone 1e-06, 0.1 scale) and writes a 0x24-byte movement result into r8
+    ///
+    /// Semantic, camera pass, medium; ledger rtti evidence, name high; id 42162, rva 0x7a8060.
+    /// `void (IMovementPlannerAgent* this, void* context, void* outMovement)`
+    ///
+    /// # Safety
+    /// The pass rates the signature medium.
+    #[inline]
+    pub unsafe fn i_movement_planner_agent_vfunc_2(&self, context: *mut c_void, outMovement: *mut c_void) { unsafe { function!(42162, (&Self, *mut c_void, *mut c_void))(self, context, outMovement) } }
+}
+
 impl classes::IPackageDataAIWorldLocationHandle {
     /// The `IPackageData` base at +0x8.
     #[inline]
     pub fn as_i_package_data(&self) -> &classes::IPackageData { unsafe { &*core::ptr::from_ref(self).byte_add(0x8).cast() } }
+}
+
+impl classes::ImageSpaceEffectDepthOfField {
+    /// `ImageSpaceEffectDepthOfField::EnableEntries0To2DisableEntries3To4`: sets entries 0..2 and clears entries 3..4 of the effect's bool array at +0x98 (size +0xa2, set count +0xa4), growing the size to 5; used when the depth-of-field override fades out
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 32269, rva 0x52f6a0.
+    /// `void (ImageSpaceEffectDepthOfField* this)`
+    #[inline]
+    pub fn enable_entries0_to2_disable_entries3_to4(&self) { unsafe { function!(32269, (&Self))(self) } }
 }
 
 impl classes::ImageSpaceEffectHDR {
@@ -48196,6 +49577,15 @@ impl classes::InputEventQueue {
     pub fn reset(&self) { unsafe { function!(68691, (&Self))(self) } }
 }
 
+impl classes::partial::Inventory3DManager {
+    /// `Inventory3DManager::UpdateItemZoom`: while zoom direction (+0x150) != 0: progress (+0x154) += fInventory3DItemZoomSpeed:Interface * real delta * direction, clamped to [0,1] (direction cleared at an end); item position (+0x14..+0x1c) = lerp(+0x20..+0x28, fInventory3DItemZoomX/Y/Z:Interface), scale (+0x2c) = lerp(+0x30, fInventory3DItemZoomScale:Interface); re-applies the last loaded item's scale/position (array +0x68, count +0x148, stride 0x20); +0x162 = 0
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 51777, rva 0x93efe0.
+    /// `void (Inventory3DManager* this)`
+    #[inline]
+    pub fn update_item_zoom(&self) { unsafe { function!(51777, (&Self))(self) } }
+}
+
 impl classes::InventoryChanges {
     /// `InventoryChanges::CountItem`: count of an item, base plus delta
     ///
@@ -48224,6 +49614,15 @@ impl classes::InventoryChanges {
 }
 
 impl classes::InventoryMenu {
+    /// `InventoryMenu::CloseTweenMenuCallback`: the 'CloseTweenMenu' callback of the InventoryMenu: PlayerCamera::BeginCloseTweenMenu, hide the TweenMenu, mark the menu (+0x81 = 1)
+    ///
+    /// Semantic, camera pass, high; ledger runtime evidence, name high; id 51855, rva 0x943ed0.
+    /// `void (const FxDelegateArgs* args)`
+    ///
+    /// # Safety
+    /// `args` must point to what the engine expects.
+    #[inline]
+    pub unsafe fn close_tween_menu_callback(args: *const c_void) { unsafe { function!(51855, (*const c_void))(args) } }
     /// `InventoryMenu::Create`: menu creator registered under 'InventoryMenu' (ctor inlined except ContainerMenu)
     ///
     /// Semantic, ui pass, high; ledger semantic evidence, name high; id 51886, rva 0x946710.
@@ -48239,39 +49638,15 @@ impl classes::InventoryMenu {
 }
 
 impl classes::IronSightsState {
-    /// `IronSightsState::Begin`, vtable slot 1: SetFirstPerson(true)
+    /// `IronSightsState::dtor`: non-deleting destructor: vtable = TESCameraState's
     ///
-    /// Semantic, frame pass, high; called through the object's vtable.
-    /// `void (TESCameraState* this)`
-    #[inline]
-    pub fn begin(&self) { unsafe { virtual_function!(self, 1, (&Self))(self) } }
-    /// `IronSightsState::GetRotation`, vtable slot 4: 
-    ///
-    /// Semantic, frame pass, high; called through the object's vtable.
-    /// `void (IronSightsState* this, NiQuaternion* out)`
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 50776, rva 0x8f76c0.
+    /// `void (IronSightsState* this)`
     ///
     /// # Safety
-    /// `out` must point to what the engine expects.
+    /// It constructs or destroys an object in place.
     #[inline]
-    pub unsafe fn get_rotation(&self, out: *mut c_void) { unsafe { virtual_function!(self, 4, (&Self, *mut c_void))(self, out) } }
-    /// `IronSightsState::GetTranslation`, vtable slot 5: 
-    ///
-    /// Semantic, frame pass, high; called through the object's vtable.
-    /// `void (IronSightsState* this, NiPoint3* out)`
-    ///
-    /// # Safety
-    /// `out` must point to what the engine expects.
-    #[inline]
-    pub unsafe fn get_translation(&self, out: *mut c_void) { unsafe { virtual_function!(self, 5, (&Self, *mut c_void))(self, out) } }
-    /// `IronSightsState::Update`, vtable slot 3: writes the root from slots 4/5
-    ///
-    /// Semantic, frame pass, high; called through the object's vtable.
-    /// `void (TESCameraState* this, BSTSmartPointer<TESCameraState>* next)`
-    ///
-    /// # Safety
-    /// `next` must point to what the engine expects.
-    #[inline]
-    pub unsafe fn update(&self, next: *mut c_void) { unsafe { virtual_function!(self, 3, (&Self, *mut c_void))(self, next) } }
+    pub unsafe fn dtor(&self) { unsafe { function!(50776, (&Self))(self) } }
 }
 
 impl classes::ItemList {
@@ -48320,6 +49695,12 @@ impl classes::JournalMenu {
     /// The `MenuEventHandler` base at +0x30.
     #[inline]
     pub fn as_menu_event_handler(&self) -> &classes::MenuEventHandler { unsafe { &*core::ptr::from_ref(self).byte_add(0x30).cast() } }
+    /// `JournalMenu::CloseTweenAndResetCamera`: releases the UI blur image space, hides the TweenMenu, PlayerCamera::PopTweenMenu and ResetFOVToDefaults
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 52713, rva 0x9885a0.
+    /// `void ()`
+    #[inline]
+    pub fn close_tween_and_reset_camera() { unsafe { function!(52713, ())() } }
 }
 
 impl classes::partial::Journal_SystemTab {
@@ -48382,6 +49763,66 @@ impl classes::LoadingMenu {
     pub fn create() -> Option<&'static classes::IMenu> { unsafe { function!(51943, () -> Option<&'static classes::IMenu>)() } }
 }
 
+impl classes::LocalMapCamera {
+    /// `LocalMapCamera::SetAreaBounds`: boundMax = upper with z + fMapLocalHeight, boundMin = lower
+    ///
+    /// Semantic, camera pass, high; ledger runtime evidence, name high; id 16331, rva 0x248230.
+    /// `void (LocalMapCamera* this, const NiPoint3* upper, const NiPoint3* lower)`
+    ///
+    /// # Safety
+    /// `upper`, `lower` must point to what the engine expects.
+    #[inline]
+    pub unsafe fn set_area_bounds(&self, upper: *const c_void, lower: *const c_void) { unsafe { function!(16331, (&Self, *const c_void, *const c_void))(self, upper, lower) } }
+    /// `LocalMapCamera::SetCenter`: defaultState->center = (x, y, z + fMapLocalHeight)
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 16328, rva 0x248100.
+    /// `void (LocalMapCamera* this, const NiPoint3* point)`
+    ///
+    /// # Safety
+    /// `point` must point to what the engine expects.
+    #[inline]
+    pub unsafe fn set_center(&self, point: *const c_void) { unsafe { function!(16328, (&Self, *const c_void))(self, point) } }
+    /// `LocalMapCamera::SetNorthRotation`: northRotation = angle; root local rotation from SinCos(angle); UpdateNode
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 16330, rva 0x248170.
+    /// `void (LocalMapCamera* this, float angle)`
+    #[inline]
+    pub fn set_north_rotation(&self, angle: f32) { unsafe { function!(16330, (&Self, f32))(self, angle) } }
+    /// `LocalMapCamera::SetOffsetToPoint`: defaultState->panOffset = point - center
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 16329, rva 0x248130.
+    /// `void (LocalMapCamera* this, const NiPoint3* point)`
+    ///
+    /// # Safety
+    /// `point` must point to what the engine expects.
+    #[inline]
+    pub unsafe fn set_offset_to_point(&self, point: *const c_void) { unsafe { function!(16329, (&Self, *const c_void))(self, point) } }
+    /// `LocalMapCamera::SetViewSize`: defaultState minHalfWidth = width/2, minHalfHeight = height/2
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 16332, rva 0x248270.
+    /// `void (LocalMapCamera* this, float width, float height)`
+    #[inline]
+    pub fn set_view_size(&self, width: f32, height: f32) { unsafe { function!(16332, (&Self, f32, f32))(self, width, height) } }
+    /// `LocalMapCamera::ctor`: builds the local map camera: zero bounds, NiCamera at +0x58 attached to a new NiNode root, root rotation from northRotation (0), DefaultState (id 0) made current
+    ///
+    /// Semantic, camera pass, high; ledger layout_inference evidence, name high; id 16325, rva 0x247d20.
+    /// `LocalMapCamera* (LocalMapCamera* this)`
+    ///
+    /// # Safety
+    /// It constructs or destroys an object in place.
+    #[inline]
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(16325, (&Self) -> *mut Self)(self) } }
+    /// `LocalMapCamera::dtor`: releases camera and defaultState, TESCamera::dtor
+    ///
+    /// Semantic, camera pass, high; ledger layout_inference evidence, name high; id 16326, rva 0x248060.
+    /// `void (LocalMapCamera* this)`
+    ///
+    /// # Safety
+    /// It constructs or destroys an object in place.
+    #[inline]
+    pub unsafe fn dtor(&self) { unsafe { function!(16326, (&Self))(self) } }
+}
+
 impl classes::LockpickingMenu {
     /// The `BSTEventSink<MenuOpenCloseEvent>` base at +0x40.
     #[inline]
@@ -48416,33 +49857,15 @@ impl classes::LookHandler {
     /// `bool (LookHandler* this, InputEvent* event)`
     #[inline]
     pub fn can_process(&self, event: &classes::InputEvent) -> bool { unsafe { virtual_function!(self, 1, (&Self, &classes::InputEvent) -> bool)(self, event) } }
-    /// `LookHandler::ProcessMotion`, vtable slot 3: event type 6 (motion/sixaxis orientation); reads fDefaultWorldFOV and PlayerCamera+0x161
-    ///
-    /// Semantic, input pass, medium; called through the object's vtable.
-    /// `void (LookHandler* this, InputEvent* event, PlayerControlsData* data)`
-    ///
-    /// # Safety
-    /// The pass rates the signature medium.
-    #[inline]
-    pub unsafe fn process_motion(&self, event: *mut classes::InputEvent, data: *mut c_void) { unsafe { virtual_function!(self, 3, (&Self, *mut classes::InputEvent, *mut c_void))(self, event, data) } }
-    /// `LookHandler::ProcessMouseMove`, vtable slot 5: data.lookInput.x = (float)dx (+0x28), lookInput.y = -(float)dy (+0x2c)
-    ///
-    /// Semantic, input pass, medium; called through the object's vtable.
-    /// `void (LookHandler* this, const MouseMoveEvent* event, PlayerControlsData* data)`
-    ///
-    /// # Safety
-    /// The pass rates the signature medium.
-    #[inline]
-    pub unsafe fn process_mouse_move(&self, event: *const classes::MouseMoveEvent, data: *mut c_void) { unsafe { virtual_function!(self, 5, (&Self, *const classes::MouseMoveEvent, *mut c_void))(self, event, data) } }
-    /// `LookHandler::ProcessThumbstick`, vtable slot 4: data.lookInput (data+8, +0xc) = event x, y (+0x28, +0x2c) unchanged
+    /// `LookHandler::ProcessMotion`, vtable slot 3: motion-controller aiming: only with bEnableSixaxisBowAiming and a bow/crossbow drawn (weapon types 7 / 12) or bEnableSixaxisMagicAiming with a usable hand caster; otherwise resets the embedded event. When look input is zero: the relative rotation between the new orientation and the stored one gives pitch/heading deltas, smoothed by alpha in [fSixaxisAlphaMin, 1] (scaled by fSixaxisAlphaMaxThreshold), scaled during bow zoom (PlayerCamera+0x161) by the FOV ratio (bSixaxisAimingRespectsFOV) and the time multiplier (bSixaxisAimingRespectsTimeMultiplier); applies ApplyClampedPitchDelta (not mounted) and the heading delta to the player, sets data+0x26, stores the event and the deltas
     ///
     /// Semantic, input pass, high; called through the object's vtable.
-    /// `void (LookHandler* this, const ThumbstickEvent* event, PlayerControlsData* data)`
+    /// `void (LookHandler* this, SixaxisEvent* event, PlayerControlsData* data)`
     ///
     /// # Safety
     /// `data` must point to what the engine expects.
     #[inline]
-    pub unsafe fn process_thumbstick(&self, event: *const classes::ThumbstickEvent, data: *mut c_void) { unsafe { virtual_function!(self, 4, (&Self, *const classes::ThumbstickEvent, *mut c_void))(self, event, data) } }
+    pub unsafe fn process_motion(&self, event: *mut classes::SixaxisEvent, data: *mut c_void) { unsafe { virtual_function!(self, 3, (&Self, *mut classes::SixaxisEvent, *mut c_void))(self, event, data) } }
 }
 
 impl classes::MagicItem {
@@ -48461,6 +49884,15 @@ impl classes::MagicItem {
 }
 
 impl classes::MagicMenu {
+    /// `MagicMenu::CloseTweenMenuCallback`: the 'CloseTweenMenu' callback of the MagicMenu: PlayerCamera::BeginCloseTweenMenu and hide the TweenMenu
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 52035, rva 0x953410.
+    /// `void (const FxDelegateArgs* args)`
+    ///
+    /// # Safety
+    /// `args` must point to what the engine expects.
+    #[inline]
+    pub unsafe fn close_tween_menu_callback(args: *const c_void) { unsafe { function!(52035, (*const c_void))(args) } }
     /// `MagicMenu::Create`: menu creator registered under 'MagicMenu' (ctor inlined except ContainerMenu)
     ///
     /// Semantic, ui pass, high; ledger semantic evidence, name high; id 52087, rva 0x956a60.
@@ -48485,7 +49917,13 @@ impl classes::Main {
     /// The `BSTEventSink<BSGamerProfileEvent>` base at +0x8.
     #[inline]
     pub fn as_bst_event_sink_bs_gamer_profile_event(&self) -> &classes::BSTEventSink_BSGamerProfileEvent { unsafe { &*core::ptr::from_ref(self).byte_add(0x8).cast() } }
-    /// `Main::UpdatePlayer`: free camera: UpdateActorWithCamera(player, delta 0x3275608, Main+0x16); otherwise, when not paused, the player's slot 173 with delta * time scale and cell attach; when the game is paused by a menu it calls its helper sub0(player, camera) instead
+    /// `Main::Update`: The main thread's per-frame step: save/load requests, file caching, scene and calendar time, the player update, process and world updates, VM and input when unpaused, LOD fade multipliers, grid update, frame phase signals, world FOV, main culler setup, UI messages, RenderFrame, audio, script queues and the task queue.
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 36564, rva 0x658870.
+    /// `void (Main* this)`
+    #[inline]
+    pub fn update(&self) { unsafe { function!(36564, (&Self))(self) } }
+    /// `Main::UpdatePlayer`: free camera current (cameraStates[3]): UpdateActorWithCamera(player, g_FrameDelta, Main+0x16) when the player has 3D; else unless paused (0x32303b3): player slot 173 (vtable +0x568) with g_FrameDelta * time scale, cell attach; paused: 0x743c10(player, camera)
     ///
     /// Semantic, frame pass, high; ledger runtime evidence, name high; id 36581, rva 0x659ea0.
     /// `void (Main* this)`
@@ -48497,6 +49935,18 @@ impl classes::Main {
     /// `void (void)`
     #[inline]
     pub fn update_timer() { unsafe { function!(36577, ())() } }
+    /// `ResetGame`: resets the game state for a reload or a full rebuild (this+0x12 selects the full path, +0x14 saved and restored)
+    ///
+    /// Semantic, save pass, high; ledger semantic evidence, name high; id 36601, rva 0x65b6c0.
+    /// `void (Main* this)`
+    #[inline]
+    pub fn reset_game(&self) { unsafe { function!(36601, (&Self))(self) } }
+    /// `SetupWorldRenderContext`: fills the frame's render context (first-person root +0x18, third-person root +0x20, world ShadowSceneNode +0x30, the two field-of-view values; PlayerCamera+0x140 copied into 0x34362cc), sorts the focus-shadow actors by distance (fMaxFocusShadowMapDistance) and returns the sun
+    ///
+    /// Semantic, render pass, high; ledger runtime evidence, name high; id 36561, rva 0x657c90.
+    /// `Sun* (Main* this)`
+    #[inline]
+    pub fn setup_world_render_context(&self) -> Option<&'static classes::Sun> { unsafe { function!(36561, (&Self) -> Option<&'static classes::Sun>)(self) } }
 }
 
 impl classes::MainMenu {
@@ -48524,15 +49974,120 @@ impl classes::MainMenu {
 }
 
 impl classes::MapCamera {
-    /// `MapCamera::Enter`, vtable slot 3: sets the root, hides the player 3D, starts the transition into the world state
+    /// `MapCamera::Enter`, vtable slot 3: sets the root; with a root and a worldspace: hides the player's first-person 3D, orients the root by the map's default pitch, places it at position, configures worldStates[index] around position, starts the Transition (mode 1) into it
     ///
-    /// Semantic, camera pass, medium; called through the object's vtable.
-    /// `void (MapCamera* this, NiNode* root, NiPoint3* position)`
+    /// Semantic, camera pass, high; called through the object's vtable.
+    /// `void (MapCamera* this, NiNode* root, const NiPoint3* position)`
     ///
     /// # Safety
-    /// The pass rates the signature medium.
+    /// `position` must point to what the engine expects.
     #[inline]
-    pub unsafe fn enter(&self, root: *mut classes::NiNode, position: *mut c_void) { unsafe { virtual_function!(self, 3, (&Self, *mut classes::NiNode, *mut c_void))(self, root, position) } }
+    pub unsafe fn enter(&self, root: *mut classes::NiNode, position: *const c_void) { unsafe { virtual_function!(self, 3, (&Self, *mut classes::NiNode, *const c_void))(self, root, position) } }
+    /// `MapCamera::HideOrRestorePlayer3D`: restore false: save the player's first-person 3D hidden bit to +0x88 and hide it; restore true: set the bit back from +0x88
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 53019, rva 0x996b00.
+    /// `void (MapCamera* this, bool restore)`
+    #[inline]
+    pub fn hide_or_restore_player3_d(&self, restore: bool) { unsafe { function!(53019, (&Self, bool))(self, restore) } }
+    /// `MapCamera::IsInWorldState`: currentState == worldStates[worldStateIndex]
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 53017, rva 0x996a00.
+    /// `bool (const MapCamera* this)`
+    #[inline]
+    pub fn is_in_world_state(&self) -> bool { unsafe { function!(53017, (&Self) -> bool)(self) } }
+    /// `MapCamera::StartExitTransition`: transition mode 2, target Exit, duration fMapTransitionSpeed * 1000 ms, SetState(transition)
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 53018, rva 0x996a20.
+    /// `void (MapCamera* this)`
+    #[inline]
+    pub fn start_exit_transition(&self) { unsafe { function!(53018, (&Self))(self) } }
+    /// `MapCamera::TransitionToAlternateWorldState`: when in the World state: configure the other World state around position (notifyOnBegin cleared), transition mode 0 with duration * 1000 ms, SetState(transition), flip worldStateIndex
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 53022, rva 0x997010.
+    /// `void (MapCamera* this, const NiPoint3* position, float durationSeconds)`
+    ///
+    /// # Safety
+    /// `position` must point to what the engine expects.
+    #[inline]
+    pub unsafe fn transition_to_alternate_world_state(&self, position: *const c_void, durationSeconds: f32) { unsafe { function!(53022, (&Self, *const c_void, f32))(self, position, durationSeconds) } }
+    /// `MapCamera::ctor`: MapCamera with the NullMapCameraCallbacks singleton
+    ///
+    /// Semantic, camera pass, high; ledger layout_inference evidence, name high; id 53011, rva 0x996170.
+    /// `MapCamera* (MapCamera* this)`
+    ///
+    /// # Safety
+    /// It constructs or destroys an object in place.
+    #[inline]
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(53011, (&Self) -> *mut Self)(self) } }
+    /// `MapCamera::ctor`: MapCamera with the given callbacks
+    ///
+    /// Semantic, camera pass, high; ledger layout_inference evidence, name high; id 53012, rva 0x9962b0.
+    /// `MapCamera* (MapCamera* this, IMapCameraCallbacks* callbacks)`
+    ///
+    /// # Safety
+    /// It constructs or destroys an object in place.
+    #[inline]
+    pub unsafe fn ctor_2(&self, callbacks: *mut classes::IMapCameraCallbacks) -> *mut Self { unsafe { function!(53012, (&Self, *mut classes::IMapCameraCallbacks) -> *mut Self)(self, callbacks) } }
+    /// `MapCamera::dtor`: releases transition and exit, destroys worldStates, TESCamera::dtor
+    ///
+    /// Semantic, camera pass, high; ledger layout_inference evidence, name high; id 53014, rva 0x9966a0.
+    /// `void (MapCamera* this)`
+    ///
+    /// # Safety
+    /// It constructs or destroys an object in place.
+    #[inline]
+    pub unsafe fn dtor(&self) { unsafe { function!(53014, (&Self))(self) } }
+}
+
+impl classes::MapCameraStates__World {
+    /// `MapCameraStates::World::ComputeOffsetToBoundsPolygon`: zero when point is inside the polygon (or no polygon), else the vector to the nearest point on the nearest edge
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 53048, rva 0x998580.
+    /// `void (const MapCameraStates::World* this, NiPoint2* outOffset, const NiPoint2* point)`
+    ///
+    /// # Safety
+    /// `outOffset`, `point` must point to what the engine expects.
+    #[inline]
+    pub unsafe fn compute_offset_to_bounds_polygon(&self, outOffset: *mut c_void, point: *const c_void) { unsafe { function!(53048, (&Self, *mut c_void, *const c_void))(self, outOffset, point) } }
+    /// `MapCameraStates::World::ResetPositionAndOffsetVectors`: zeroes the four vectors and yaw/pitch, zoom 0.25, field_5c 0, terrainHeight 0
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 53047, rva 0x9984b0.
+    /// `void (MapCameraStates::World* this)`
+    #[inline]
+    pub fn reset_position_and_offset_vectors(&self) { unsafe { function!(53047, (&Self))(self) } }
+    /// `MapCameraStates::World::SetPositionAndBounds`: Reset, basePosition = position; from the map data: bounds polygon of the cell rectangle, heightOffset.z = min height, zoomAxis.z = max - min, panOffset.y for the default pitch; push into the polygon; pick terrainHeight
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 53045, rva 0x998060.
+    /// `void (MapCameraStates::World* this, const NiPoint3* position)`
+    ///
+    /// # Safety
+    /// `position` must point to what the engine expects.
+    #[inline]
+    pub unsafe fn set_position_and_bounds(&self, position: *const c_void) { unsafe { function!(53045, (&Self, *const c_void))(self, position) } }
+    /// `MapCameraStates::World::UpdateHeightAtClampedPosition`: terrainHeight = PickTerrainHeightAt(basePosition.xy + panOffset.xy pushed into the polygon)
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 53046, rva 0x998410.
+    /// `void (MapCameraStates::World* this)`
+    #[inline]
+    pub fn update_height_at_clamped_position(&self) { unsafe { function!(53046, (&Self))(self) } }
+    /// `MapCameraStates::World::ctor`: id 0, camera, vectors zeroed, boundsPolygon null, notifyOnBegin 1, Reset
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 53038, rva 0x997600.
+    /// `MapCameraStates::World* (MapCameraStates::World* this, MapCamera* camera)`
+    ///
+    /// # Safety
+    /// It constructs or destroys an object in place.
+    #[inline]
+    pub unsafe fn ctor(&self, camera: *mut classes::MapCamera) -> *mut Self { unsafe { function!(53038, (&Self, *mut classes::MapCamera) -> *mut Self)(self, camera) } }
+    /// `MapCameraStates::World::dtor`: frees boundsPolygon
+    ///
+    /// Semantic, camera pass, high; ledger layout_inference evidence, name high; id 53039, rva 0x997660.
+    /// `void (MapCameraStates::World* this)`
+    ///
+    /// # Safety
+    /// It constructs or destroys an object in place.
+    #[inline]
+    pub unsafe fn dtor(&self) { unsafe { function!(53039, (&Self))(self) } }
 }
 
 impl classes::MapMenu {
@@ -48548,6 +50103,15 @@ impl classes::MapMenu {
     /// `void (MapCamera* camera, float delta)`
     #[inline]
     pub fn update_map_camera(camera: &classes::MapCamera, delta: f32) { unsafe { function!(53016, (&classes::MapCamera, f32))(camera, delta) } }
+    /// `MapMenu::dtor`: removes the map input handlers, hides the cursor, clears the scene graph near/far overrides, SetFieldOfView(fDefaultFOV, force), restores the sky, MapCamera::dtor, releases the rest
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 53094, rva 0x99b220.
+    /// `void (MapMenu* this)`
+    ///
+    /// # Safety
+    /// It constructs or destroys an object in place.
+    #[inline]
+    pub unsafe fn dtor(&self) { unsafe { function!(53094, (&Self))(self) } }
 }
 
 impl classes::partial::MarketplaceMenu {
@@ -48613,6 +50177,18 @@ impl classes::MenuControls {
     /// `void (MenuControls* this, MenuEventHandler* handler)`
     #[inline]
     pub fn remove_handler(&self, handler: &classes::MenuEventHandler) { unsafe { function!(52203, (&Self, &classes::MenuEventHandler))(self, handler) } }
+    /// `MenuControls::TestAndClearFlag10`: when +0x78 exists and its byte +0x10 is set: clears it and returns true
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 52210, rva 0x95f740.
+    /// `bool (MenuControls* this)`
+    #[inline]
+    pub fn test_and_clear_flag10(&self) -> bool { unsafe { function!(52210, (&Self) -> bool)(self) } }
+    /// `MenuControls::TestAndClearFlag11`: as 0x95f740 for byte +0x11
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 52211, rva 0x95f760.
+    /// `bool (MenuControls* this)`
+    #[inline]
+    pub fn test_and_clear_flag11(&self) -> bool { unsafe { function!(52211, (&Self) -> bool)(self) } }
 }
 
 impl classes::MenuEventHandler {
@@ -48703,6 +50279,12 @@ impl classes::MenuOpenHandler {
     /// The pass rates the signature medium.
     #[inline]
     pub unsafe fn process_kinect_event(&self, event: *mut classes::KinectEvent) -> bool { unsafe { virtual_function!(self, 4, (&Self, *mut classes::KinectEvent) -> bool)(self, event) } }
+    /// `MenuOpenHandler::OpenTweenMenu`: opens the TweenMenu (UIStrings+0xf0 'TweenMenu') and closes the FavoritesMenu (+0x158) unless VATS is active, the player is busy, the camera is in cameraStates[8] or the +0xe0/+0x48 check holds (save-on-pause option)
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 52714, rva 0x988600.
+    /// `void ()`
+    #[inline]
+    pub fn open_tween_menu() { unsafe { function!(52714, ())() } }
 }
 
 impl classes::partial::MenuTopicManager {
@@ -48802,6 +50384,24 @@ impl classes::MistMenu {
     /// The `SimpleAnimationGraphManagerHolder` base at +0x30.
     #[inline]
     pub fn as_simple_animation_graph_manager_holder(&self) -> &classes::SimpleAnimationGraphManagerHolder { unsafe { &*core::ptr::from_ref(self).byte_add(0x30).cast() } }
+    /// `InitMistMenuCameraAndModel`: UI 3D camera at fUIMistMenu_Camera X/Y/Z (-50, 600, 80) looking at fUIMistMenu_CameraLookAt (-50, 0, 0), SetCameraFrustumFromFOV(fUIMistMenu_CameraFOV 75), saves the FOV (+0x100) and camera world rotation (+0x110..+0x133); loads modelPath, finds its controller manager (+0xe0) and starts sequence ID_406374, finds node ID_406375 as the camera node (+0xd0) and moves the camera onto it
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 52323, rva 0x966320.
+    /// `void (MistMenu* this, const char* modelPath)`
+    ///
+    /// # Safety
+    /// `modelPath` must point to what the engine expects.
+    #[inline]
+    pub unsafe fn init_mist_menu_camera_and_model(&self, modelPath: *const c_char) { unsafe { function!(52323, (&Self, *const c_char))(self, modelPath) } }
+    /// `MistMenu::AdjustLogoZoomFOV`: changes the main-menu logo camera FOV (+0x100) by delta within limits
+    ///
+    /// Semantic, camera pass, medium; ledger semantic evidence, name medium; id 52325, rva 0x966890.
+    /// `void (MistMenu* this, float delta)`
+    ///
+    /// # Safety
+    /// The pass rates the signature medium.
+    #[inline]
+    pub unsafe fn adjust_logo_zoom_fov(&self, delta: f32) { unsafe { function!(52325, (&Self, f32))(self, delta) } }
 }
 
 impl classes::partial::ModManagerMenu {
@@ -49360,13 +50960,13 @@ impl classes::NiAVObject {
     /// `void (NiAVObject* child, NiNode* newParent)`
     #[inline]
     pub fn set_parent_detaching_from_old(&self, newParent: &classes::NiNode) { unsafe { function!(70266, (&Self, &classes::NiNode))(self, newParent) } }
-    /// `NiAVObject::UpdateNode`: slot 44 (+0x160) with (data, 0), then the parent's (+0x30) slot 61 (+0x1e8)
+    /// `NiAVObject::UpdateNode`: slot 44 (+0x160) with (data, 0), then tail jump to the parent's (+0x30) slot 61 (+0x1e8); the call to make after writing a local transform (all camera states use it with a zeroed 8-byte record)
     ///
-    /// Semantic, frame pass, medium; ledger semantic evidence, name medium; id 70251, rva 0xee0930.
+    /// Semantic, frame pass, high; ledger semantic evidence, name high; id 70251, rva 0xee0930.
     /// `void (NiAVObject* this, NiUpdateData* data)`
     ///
     /// # Safety
-    /// The pass rates the signature medium.
+    /// `data` must point to what the engine expects.
     #[inline]
     pub unsafe fn update_node(&self, data: *mut classes::NiUpdateData) { unsafe { function!(70251, (&Self, *mut classes::NiUpdateData))(self, data) } }
     /// `NiAVObject::UpdateWorldTransformFromParent`: world = parent.world * local (or local, or parent.world with flags bit 9) without the frame snapshot, controllers or children
@@ -49390,6 +50990,18 @@ impl classes::NiBoneMatrixSetterI {
 }
 
 impl classes::NiCamera {
+    /// `NiCamera::Destroy`, vtable slot 0: NiAVObject::dtor, frees 0x188 when flags & 1
+    ///
+    /// Semantic, frame pass, high; called through the object's vtable.
+    /// `NiCamera* (NiCamera* this, u32 flags)`
+    #[inline]
+    pub fn destroy(&self, flags: u32) -> Option<&'static Self> { unsafe { virtual_function!(self, 0, (&Self, u32) -> Option<&'static Self>)(self, flags) } }
+    /// `NiCamera::Create`: streaming factory: allocates and constructs an NiCamera (TLS memory context 0x3d)
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 70623, rva 0xeef900.
+    /// `NiObject* (void)`
+    #[inline]
+    pub fn create() -> Option<&'static classes::NiObject> { unsafe { function!(70623, () -> Option<&'static classes::NiObject>)() } }
     /// `NiCamera::SetFrustum`: copies left, right, top, bottom, far, ortho and clamps near (see the field rows); does not rebuild the matrix
     ///
     /// Semantic, frame pass, high; ledger semantic evidence, name high; id 70626, rva 0xeefae0.
@@ -49399,15 +51011,12 @@ impl classes::NiCamera {
     /// `f` must point to what the engine expects.
     #[inline]
     pub unsafe fn set_frustum(&self, f: *const c_void) { unsafe { function!(70626, (&Self, *const c_void))(self, f) } }
-    /// `NiCamera::SetPerspectiveFromFov`: frustum from tan(fov/2) and the aspect, viewport reset to (0,1,1,0), maxFarNearRatio = far/near, then Update; lodAdjust = fov/defaultFov when setLodAdjust
+    /// `NiCamera::SetPerspectiveFromFov`: unchanged from data/camera/static-B.json (high there); repeated because semantic.csv still holds the pass 6 medium row
     ///
-    /// Semantic, frame pass, medium; ledger semantic evidence, name medium; id 70643, rva 0xef17a0.
-    /// `void (NiCamera* this, float fovDegrees, float near, float far, u32 width, u32 height, bool flag7, bool setLodAdjust, float defaultFov)`
-    ///
-    /// # Safety
-    /// The pass rates the signature medium.
+    /// Semantic, frame pass, high; ledger semantic evidence, name high; id 70643, rva 0xef17a0.
+    /// `void (NiCamera* this, float fovDegrees, float nearDist, float farDist, u32 width, u32 height, bool fovSpansActualWidth, bool setLodAdjust, float lodReferenceFov)`
     #[inline]
-    pub unsafe fn set_perspective_from_fov(&self, fovDegrees: f32, near: f32, far: f32, width: u32, height: u32, flag7: bool, setLodAdjust: bool, defaultFov: f32) { unsafe { function!(70643, (&Self, f32, f32, f32, u32, u32, bool, bool, f32))(self, fovDegrees, near, far, width, height, flag7, setLodAdjust, defaultFov) } }
+    pub fn set_perspective_from_fov(&self, fovDegrees: f32, nearDist: f32, farDist: f32, width: u32, height: u32, fovSpansActualWidth: bool, setLodAdjust: bool, lodReferenceFov: f32) { unsafe { function!(70643, (&Self, f32, f32, f32, u32, u32, bool, bool, f32))(self, fovDegrees, nearDist, farDist, width, height, fovSpansActualWidth, setLodAdjust, lodReferenceFov) } }
     /// `NiCamera::UpdateWorldToCamera`: rebuilds worldToCam (+0x110) from the world transform and the frustum
     ///
     /// Semantic, frame pass, high; ledger semantic evidence, name high; id 70641, rva 0xef1310.
@@ -49423,6 +51032,24 @@ impl classes::NiCamera {
     /// `p`, `x`, `y`, `z` must point to what the engine expects.
     #[inline]
     pub unsafe fn world_pt_to_screen_pt(&self, p: *const c_void, x: *mut f32, y: *mut f32, z: *mut f32, zeroTolerance: f32) -> bool { unsafe { function!(70639, (&Self, *const c_void, *mut f32, *mut f32, *mut f32, f32) -> bool)(self, p, x, y, z, zeroTolerance) } }
+    /// `NiCamera::ctor`: NiAVObject::ctor, defaults (see the class detail), UpdateWorldData, UpdateWorldToCamera, bound centre = world translation
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 70624, rva 0xeef9a0.
+    /// `NiCamera* (NiCamera* this)`
+    ///
+    /// # Safety
+    /// It constructs or destroys an object in place.
+    #[inline]
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(70624, (&Self) -> *mut Self)(self) } }
+    /// `NiCamera::dtor`: NiAVObject::dtor
+    ///
+    /// Semantic, camera pass, high; ledger layout_inference evidence, name high; id 70625, rva 0xeefac0.
+    /// `void (NiCamera* this)`
+    ///
+    /// # Safety
+    /// It constructs or destroys an object in place.
+    #[inline]
+    pub unsafe fn dtor(&self) { unsafe { function!(70625, (&Self))(self) } }
 }
 
 impl classes::partial::NiCullingProcess {
@@ -49821,6 +51448,54 @@ impl classes::NonActorMagicTarget {
     pub fn as_magic_target(&self) -> &classes::MagicTarget { unsafe { &*core::ptr::from_ref(self).byte_add(0x10).cast() } }
 }
 
+impl classes::OwnedCameraEffectController {
+    /// `OwnedCameraEffectController::Destroy`, vtable slot 0: releases attachRoot (+0x28), ReferenceEffectController::dtor, frees 0x38 when flags & 1
+    ///
+    /// Semantic, camera pass, high; called through the object's vtable.
+    /// `OwnedCameraEffectController* (OwnedCameraEffectController* this, u32 flags)`
+    #[inline]
+    pub fn destroy(&self, flags: u32) -> Option<&'static Self> { unsafe { virtual_function!(self, 0, (&Self, u32) -> Option<&'static Self>)(self, flags) } }
+    /// `OwnedCameraEffectController::GetRotateWithCamera`, vtable slot 27: returns +0x30
+    ///
+    /// Semantic, camera pass, high; called through the object's vtable.
+    /// `bool (OwnedCameraEffectController* this)`
+    #[inline]
+    pub fn get_rotate_with_camera(&self) -> bool { unsafe { virtual_function!(self, 27, (&Self) -> bool)(self) } }
+    /// `OwnedCameraEffectController::IsCameraEffect`, vtable slot 26: returns true: ModelReferenceEffect::vfunc_59 0x5d6e20 then positions the effect at the camera root, ReferenceEffect::vfunc_45 0x5db810 saves the controller kind as 2
+    ///
+    /// Semantic, camera pass, high; called through the object's vtable.
+    /// `bool (OwnedCameraEffectController* this)`
+    #[inline]
+    pub fn is_camera_effect(&self) -> bool { unsafe { virtual_function!(self, 26, (&Self) -> bool)(self) } }
+    /// `OwnedCameraEffectController::LoadGame`, vtable slot 34: reads the same fields back and re-attaches to the current Weather node 0x3230760
+    ///
+    /// Semantic, camera pass, high; called through the object's vtable.
+    /// `void (OwnedCameraEffectController* this, BGSLoadFormBuffer* buffer)`
+    #[inline]
+    pub fn load_game(&self, buffer: &classes::BGSLoadFormBuffer) { unsafe { virtual_function!(self, 34, (&Self, &classes::BGSLoadFormBuffer))(self, buffer) } }
+    /// `OwnedCameraEffectController::ReturnsTrue22`, vtable slot 22: returns true (ReferenceEffectController default 0x5dbff0 returns false); read through ReferenceEffect slot 43 0x5d88c0, which returns true when there is no controller
+    ///
+    /// Semantic, camera pass, high; called through the object's vtable.
+    /// `bool (OwnedCameraEffectController* this)`
+    #[inline]
+    pub fn returns_true22(&self) -> bool { unsafe { virtual_function!(self, 22, (&Self) -> bool)(self) } }
+    /// `OwnedCameraEffectController::SaveGame`, vtable slot 33: writes rotateWithCamera (1 byte), targetHandle, effectShader, artObject, facingHandle
+    ///
+    /// Semantic, camera pass, high; called through the object's vtable.
+    /// `void (OwnedCameraEffectController* this, BGSSaveFormBuffer* buffer)`
+    #[inline]
+    pub fn save_game(&self, buffer: &classes::BGSSaveFormBuffer) { unsafe { virtual_function!(self, 33, (&Self, &classes::BGSSaveFormBuffer))(self, buffer) } }
+    /// `OwnedCameraEffectController::ctor`: targetHandle = player, effectShader = 0, artObject = art, facingHandle = invalid, attachRoot = Weather node (ref), rotateWithCamera
+    ///
+    /// Semantic, camera pass, high; ledger layout_inference evidence, name high; id 34826, rva 0x5dc3b0.
+    /// `OwnedCameraEffectController* (OwnedCameraEffectController* this, BGSArtObject* art, bool rotateWithCamera)`
+    ///
+    /// # Safety
+    /// It constructs or destroys an object in place.
+    #[inline]
+    pub unsafe fn ctor(&self, art: *mut classes::BGSArtObject, rotateWithCamera: bool) -> *mut Self { unsafe { function!(34826, (&Self, *mut classes::BGSArtObject, bool) -> *mut Self)(self, art, rotateWithCamera) } }
+}
+
 impl classes::partial::PathManagerPositionPlayerAdapter {
     /// The `BSTEventSink<TESSleepStartEvent>` base at +0x8.
     #[inline]
@@ -49845,6 +51520,24 @@ impl classes::partial::Pathing {
     pub fn as_bst_event_sink_cell_attach_detach_event(&self) -> &classes::BSTEventSink_CellAttachDetachEvent { unsafe { &*core::ptr::from_ref(self).byte_add(0x20).cast() } }
 }
 
+impl classes::PitchOverrideEndHandler {
+    /// `PitchOverrideEndHandler::Handle`: as PitchOverrideStartHandler with false: clears FirstPersonState.pitchOverride (+0x89) through SetFirstPersonPitchOverride in first person; returns true
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 42899, rva 0x7cf420.
+    /// `bool (PitchOverrideEndHandler* this, Actor* actor)`
+    #[inline]
+    pub fn handle(&self, actor: &classes::Actor) -> bool { unsafe { function!(42899, (&Self, &classes::Actor) -> bool)(self, actor) } }
+}
+
+impl classes::PitchOverrideStartHandler {
+    /// `PitchOverrideStartHandler::Handle`: animation event handler: when the current camera state is first person, PlayerCamera::SetFirstPersonPitchOverride(camera, true); returns true
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 42898, rva 0x7cf3f0.
+    /// `bool (PitchOverrideStartHandler* this, Actor* actor)`
+    #[inline]
+    pub fn handle(&self, actor: &classes::Actor) -> bool { unsafe { function!(42898, (&Self, &classes::Actor) -> bool)(self, actor) } }
+}
+
 impl classes::PlayerCamera {
     /// `g_PlayerCamera_ptr` at 0x31a5478, id 400802 (runtime, high); pointer to `PlayerCamera`: the player camera singleton; the player camera singleton (high, frame pass), type `ptr:PlayerCamera`
     ///
@@ -49862,7 +51555,7 @@ impl classes::PlayerCamera {
     pub unsafe fn get_mount_free_rotation(&self) -> *mut c_void { unsafe { function!(50802, (&Self) -> *mut c_void)(self) } }
     /// `ComputeCameraCasterCollision`: clip cameraPos against the world between the target point and the camera; returns true when moved; manages fadedActorHandle
     ///
-    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 50832, rva 0x8fa5d0.
+    /// Semantic, camera pass, high; ledger runtime evidence, name high; id 50832, rva 0x8fa5d0.
     /// `bool (PlayerCamera* this, NiPoint3* cameraPos, bool fadeActors)`
     ///
     /// # Safety
@@ -49878,24 +51571,21 @@ impl classes::PlayerCamera {
     /// `delta` must point to what the engine expects.
     #[inline]
     pub unsafe fn add_free_rotation(&self, delta: *mut c_void) { unsafe { function!(50800, (&Self, *mut c_void))(self, delta) } }
-    /// `PlayerCamera::ApplyLookPitch`: applies look.y * fLookingSpeed * FOV ratio to the target's pitch (0x693050) or runs the pitch-to-zero blend; clamps through 0x692eb0
+    /// `PlayerCamera::ApplyLookPitch`: the per-frame pitch from look input: cameraOverride (FirstPersonState+0x88) in first person -> the pitch from the Cam1 matrix; pitch-to-zero active (+0x164) -> blend +0x15c to 0 over fPitchZeroBlendTime with the VATS time scale; else when look y or the motion source is nonzero, unless free look (slot 12) or a furniture camera holds it (without mount/sit exceptions): ApplyClampedPitchDelta(target, -(look.y + PlayerControls+0x44) * fLookingSpeed * min(1, scene FOV / fDefaultWorldFOV)) (the flying mount's rider gets the delta directly)
     ///
-    /// Semantic, frame pass, medium; ledger semantic evidence, name medium; id 50840, rva 0x8fb2e0.
+    /// Semantic, frame pass, high; ledger semantic evidence, name high; id 50840, rva 0x8fb2e0.
     /// `void (PlayerCamera* this)`
+    #[inline]
+    pub fn apply_look_pitch(&self) { unsafe { function!(50840, (&Self))(self) } }
+    /// `PlayerCamera::ApplyShake`: out = shake * rotation: the shake quaternion is identity (0x20cf010) unless ComputeCameraShakeRotation(g_NodeUpdateTime, matrix) returns a strength > 0, then the Euler angles of the sampled matrix times the strength
+    ///
+    /// Semantic, frame pass, high; ledger semantic evidence, name high; id 50829, rva 0x8fa2b0.
+    /// `NiQuaternion* (PlayerCamera* this, NiQuaternion* out, const NiQuaternion* rotation)`
     ///
     /// # Safety
-    /// The pass rates the signature medium.
+    /// `out`, `rotation` must point to what the engine expects, and the result is an untyped pointer.
     #[inline]
-    pub unsafe fn apply_look_pitch(&self) { unsafe { function!(50840, (&Self))(self) } }
-    /// `PlayerCamera::ApplyShake`: out = shake rotation (0x558600 on 0x219e5f0, scaled by its weight) * rotation
-    ///
-    /// Semantic, frame pass, medium; ledger semantic evidence, name medium; id 50829, rva 0x8fa2b0.
-    /// `NiQuaternion* (PlayerCamera* this, NiQuaternion* out, NiQuaternion* rotation)`
-    ///
-    /// # Safety
-    /// The pass rates the signature medium.
-    #[inline]
-    pub unsafe fn apply_shake(&self, out: *mut c_void, rotation: *mut c_void) -> *mut c_void { unsafe { function!(50829, (&Self, *mut c_void, *mut c_void) -> *mut c_void)(self, out, rotation) } }
+    pub unsafe fn apply_shake(&self, out: *mut c_void, rotation: *const c_void) -> *mut c_void { unsafe { function!(50829, (&Self, *mut c_void, *const c_void) -> *mut c_void)(self, out, rotation) } }
     /// `PlayerCamera::BeginCloseTweenMenu`: 0x8ff880 on the tween state
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 50818, rva 0x8f99e0.
@@ -49908,48 +51598,57 @@ impl classes::PlayerCamera {
     /// `void (PlayerCamera* this)`
     #[inline]
     pub fn clear_first_person_camera_nodes(&self) { unsafe { function!(50792, (&Self))(self) } }
-    /// `PlayerCamera::CreateCameraCaster`: replace +0x120 with a new CameraCasterHolder (radius fCameraCasterSize)
+    /// `PlayerCamera::ClearStateStack`: releases every entry of the camera state stack (refcount +8, slot 0 at zero), frees a heap buffer (FreeBufferIfOwned) and sets the count (+0x70) to 0
     ///
-    /// Semantic, camera pass, medium; ledger runtime evidence, name medium; id 50830, rva 0x8fa4a0.
-    /// `void (PlayerCamera* this, u32 collisionGroup)`
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 50856, rva 0x8fc2d0.
+    /// `void (BSTSmallArray<BSTSmartPointer<TESCameraState>,13>* stack)`
+    ///
+    /// # Safety
+    /// `stack` must point to what the engine expects.
+    #[inline]
+    pub unsafe fn clear_state_stack(stack: *mut c_void) { unsafe { function!(50856, (*mut c_void))(stack) } }
+    /// `PlayerCamera::CreateCameraBody`: when PlayerCamera+0x128 is null: builds a bhkSphereShape (radius from the constant 0x? ID_186914) and a bhkRigidBody with collision filter 0x30024 (layer 0x24), stores it refcounted in +0x128 and adds it to the world (ToggleField10StateUnderWorldLock(body, true)); then places it (read in part)
+    ///
+    /// Semantic, camera pass, medium; ledger runtime evidence, name medium; id 50833, rva 0x8fad00.
+    /// `void (PlayerCamera* this)`
     ///
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn create_camera_caster(&self, collisionGroup: u32) { unsafe { function!(50830, (&Self, u32))(self, collisionGroup) } }
+    pub unsafe fn create_camera_body(&self) { unsafe { function!(50833, (&Self))(self) } }
+    /// `PlayerCamera::CreateCameraCaster`: creates the camera's collision caster (CameraCasterHolder::ctor with the group)
+    ///
+    /// Semantic, camera pass, high; ledger runtime evidence, name high; id 50830, rva 0x8fa4a0.
+    /// `void (PlayerCamera* this, u32 collisionGroup)`
+    #[inline]
+    pub fn create_camera_caster(&self, collisionGroup: u32) { unsafe { function!(50830, (&Self, u32))(self, collisionGroup) } }
     /// `PlayerCamera::DestroyCameraCaster`: release and null +0x120
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 50831, rva 0x8fa570.
     /// `void (PlayerCamera* this)`
     #[inline]
     pub fn destroy_camera_caster(&self) { unsafe { function!(50831, (&Self))(self) } }
-    /// `PlayerCamera::EndAnimatedCamera`: clears the third-person state's animatedNode; pops when state 8 is current
+    /// `PlayerCamera::EndAnimatedCamera`: when the current state id is 8 or above: clear its animated node (SetFieldA0RefPtrAndName(state, null, id != 8)); for state 8 also autoVanityAllowed = !bDisableAutoVanityMode and SetState(PopState())
     ///
-    /// Semantic, frame pass, medium; ledger semantic evidence, name medium; id 50826, rva 0x8fa160.
+    /// Semantic, frame pass, high; ledger semantic evidence, name high; id 50826, rva 0x8fa160.
     /// `void (PlayerCamera* this)`
-    ///
-    /// # Safety
-    /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn end_animated_camera(&self) { unsafe { function!(50826, (&Self))(self) } }
+    pub fn end_animated_camera(&self) { unsafe { function!(50826, (&Self))(self) } }
     /// `PlayerCamera::EnterAutoVanity`: PushState(1) when not already auto vanity and controls are enabled
     ///
     /// Semantic, frame pass, high; ledger semantic evidence, name high; id 50851, rva 0x8fc170.
     /// `void (PlayerCamera* this)`
     #[inline]
     pub fn enter_auto_vanity(&self) { unsafe { function!(50851, (&Self))(self) } }
-    /// `PlayerCamera::EnterFurnitureCamera`: see FurnitureCameraState
+    /// `PlayerCamera::EnterFurnitureCamera`: unless a furniture camera is current or stacked (IsFieldE0Field28OrInArray48) or state 8 is current: furniture byte +0xe0 set -> PushState(9) (its +0x28 byte cleared, its handler +0x20 handed to PlayerControls), FurnitureCameraState+0x3c = 1, autoVanityAllowed = 0; else without default-object keyword 0xb4: SetFirstPerson(player, false), FurnitureCameraState+0x3c = HasKeyword(0xb5), PushState(5); with 0xb4 and the player targeted: clear the faded actor, SetState(first person); then the furniture state setup (TESFurniture::vfunc_55_sub2_sub1)
     ///
-    /// Semantic, camera pass, medium; ledger semantic evidence, name medium; id 50813, rva 0x8f95b0.
+    /// Semantic, camera pass, high; ledger runtime evidence, name high; id 50813, rva 0x8f95b0.
     /// `void (PlayerCamera* this, TESFurniture* furniture)`
-    ///
-    /// # Safety
-    /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn enter_furniture_camera(&self, furniture: *mut classes::TESFurniture) { unsafe { function!(50813, (&Self, *mut classes::TESFurniture))(self, furniture) } }
+    pub fn enter_furniture_camera(&self, furniture: &classes::TESFurniture) { unsafe { function!(50813, (&Self, &classes::TESFurniture))(self, furniture) } }
     /// `PlayerCamera::EnterMountCamera`: unless horse or dragon is current: target = mount (player for a dragon with bDragonCameraTargetPlayer), slot 9(&handle) and slot 10 on state 10 or 12, PushState, HUD 'HorseMode'
     ///
-    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 50821, rva 0x8f9aa0.
+    /// Semantic, camera pass, high; ledger runtime evidence, name high; id 50821, rva 0x8f9aa0.
     /// `void (PlayerCamera* this, NiPointer<Actor>* mount)`
     ///
     /// # Safety
@@ -49962,15 +51661,12 @@ impl classes::PlayerCamera {
     /// `void (PlayerCamera* this)`
     #[inline]
     pub fn exit_auto_vanity(&self) { unsafe { function!(50852, (&Self))(self) } }
-    /// `PlayerCamera::ExitFurnitureCamera`: ends the animated camera, pops the furniture or pushed third-person state (or erases it from the stack), restores auto vanity
+    /// `PlayerCamera::ExitFurnitureCamera`: leaves the furniture camera: state 8 current and !keepState -> EndAnimatedCamera; furniture not current/stacked (or keepState with FurnitureCameraState+0x3c set): when !keepState and state 9 exists, pops when the target's furniture is flagged (+0x40 -> +0xe0) and restores autoVanityAllowed; otherwise furniture current -> SetState(PopState()), stacked -> erase the entry
     ///
-    /// Semantic, camera pass, medium; ledger semantic evidence, name medium; id 50814, rva 0x8f9710.
-    /// `void (PlayerCamera* this, bool keep)`
-    ///
-    /// # Safety
-    /// The pass rates the signature medium.
+    /// Semantic, camera pass, high; ledger runtime evidence, name high; id 50814, rva 0x8f9710.
+    /// `void (PlayerCamera* this, bool keepState)`
     #[inline]
-    pub unsafe fn exit_furniture_camera(&self, keep: bool) { unsafe { function!(50814, (&Self, bool))(self, keep) } }
+    pub fn exit_furniture_camera(&self, keepState: bool) { unsafe { function!(50814, (&Self, bool))(self, keepState) } }
     /// `PlayerCamera::ForceFirstPerson`: when the target is the player and the state is not first person: clear furnitureHandle, SetState(first person)
     ///
     /// Semantic, frame pass, high; ledger semantic evidence, name high; id 50790, rva 0x8f8de0.
@@ -50010,6 +51706,15 @@ impl classes::PlayerCamera {
     /// `out` must point to what the engine expects.
     #[inline]
     pub unsafe fn get_first_person_camera_node_position(&self, out: *mut c_void) { unsafe { function!(50786, (&Self, *mut c_void))(self, out) } }
+    /// `PlayerCamera::GetFirstPersonDampingOffset`: out = FirstPersonState.dampingOffset (+0x48..+0x50), or the zero point when the state is missing; returns out
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 50850, rva 0x8fc120.
+    /// `NiPoint3* (PlayerCamera* this, NiPoint3* out)`
+    ///
+    /// # Safety
+    /// `out` must point to what the engine expects, and the result is an untyped pointer.
+    #[inline]
+    pub unsafe fn get_first_person_damping_offset(&self, out: *mut c_void) -> *mut c_void { unsafe { function!(50850, (&Self, *mut c_void) -> *mut c_void)(self, out) } }
     /// `PlayerCamera::GetPosition`: camera position cached per frame under the lock: first-person camera node, else cameraRoot world translation, else target position + eye height
     ///
     /// Semantic, frame pass, high; ledger semantic evidence, name high; id 50785, rva 0x8f89b0.
@@ -50028,24 +51733,36 @@ impl classes::PlayerCamera {
     /// `out` must point to what the engine expects.
     #[inline]
     pub unsafe fn get_target(&self, out: *mut c_void) -> bool { unsafe { function!(50837, (&Self, *mut c_void) -> bool)(self, out) } }
-    /// `PlayerCamera::GetThirdPersonOffsetVector`: state 9's currentOffset rotated by its rotation
+    /// `PlayerCamera::GetThirdPersonOffsetVector`: the third-person shoulder offset in world space: zero when state 9 (+0x100) is null; else state slot 14 (UpdateRotation), slot 4 (GetRotation) into a quaternion, matrix, out = R * currentOffset (+0x68/+0x6c/+0x70), without the y (forward) term when ignoreForward
     ///
-    /// Semantic, camera pass, medium; ledger semantic evidence, name medium; id 50799, rva 0x8f9030.
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 50799, rva 0x8f9030.
     /// `void (PlayerCamera* this, NiPoint3* out, bool ignoreForward)`
     ///
     /// # Safety
-    /// The pass rates the signature medium.
+    /// `out` must point to what the engine expects.
     #[inline]
     pub unsafe fn get_third_person_offset_vector(&self, out: *mut c_void, ignoreForward: bool) { unsafe { function!(50799, (&Self, *mut c_void, bool))(self, out, ignoreForward) } }
+    /// `PlayerCamera::HasPlayerStates`: true when any of cameraStates[0] (+0xb8), [9] (+0x100), [10] (+0x108) or [12] (+0x118) exists
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 50839, rva 0x8fb2a0.
+    /// `bool (PlayerCamera* this)`
+    #[inline]
+    pub fn has_player_states(&self) -> bool { unsafe { function!(50839, (&Self) -> bool)(self) } }
     /// `PlayerCamera::IsThirdPersonFreeLook`: current id > 8 && current slot 12
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 50798, rva 0x8f8ff0.
     /// `bool (PlayerCamera* this)`
     #[inline]
     pub fn is_third_person_free_look(&self) -> bool { unsafe { function!(50798, (&Self) -> bool)(self) } }
-    /// `PlayerCamera::LeaveMountCamera`: pops auto vanity/tween/animated layers above the mount state, pops the mount state, target = player, state 9 gets freeRotation (fHorseDismountYawCorrection, 0), Configure(transition, current, popped, iHorseTransitionMillis), SetState(transition), slot 9(invalid) on the mount state
+    /// `PlayerCamera::LeaveBleedout`: bleedout current: popped = PopState (counted), Configure(transition, &current, &popped, instant ? 0 : iBleedoutTransitionMillis:Camera, 0), SetState(transition); bleedout only on the stack: erase that entry; nothing while the transition is current
     ///
-    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 50822, rva 0x8f9bb0.
+    /// Semantic, frame pass, high; ledger semantic evidence, name high; id 50824, rva 0x8f9eb0.
+    /// `void (PlayerCamera* this, bool instant)`
+    #[inline]
+    pub fn leave_bleedout(&self, instant: bool) { unsafe { function!(50824, (&Self, bool))(self, instant) } }
+    /// `PlayerCamera::LeaveMountCamera`: pops auto vanity/tween/animated layers above the mount state, pops the mount state, target = player, state 9 gets freeRotation (fHorseDismountYawCorrection, 0), then, unless the player's +0xc8 & 0xe000000 (knock/ragdoll state) is set, Configure(transition, current, popped, iHorseTransitionMillis) and SetState(transition); with the knock state set, SetState(cameraStates[9]) directly (0x8f9da0..0x8f9dd8); slot 9(invalid) on the mount state
+    ///
+    /// Semantic, camera pass, high; ledger runtime evidence, name high; id 50822, rva 0x8f9bb0.
     /// `void (PlayerCamera* this)`
     #[inline]
     pub fn leave_mount_camera(&self) { unsafe { function!(50822, (&Self))(self) } }
@@ -50055,63 +51772,60 @@ impl classes::PlayerCamera {
     /// `void (PlayerCamera* this, BGSLoadFormBuffer* buffer)`
     #[inline]
     pub fn load_game(&self, buffer: &classes::BGSLoadFormBuffer) { unsafe { function!(50847, (&Self, &classes::BGSLoadFormBuffer))(self, buffer) } }
-    /// `PlayerCamera::PopIfAIDrivenFlag`: pops when +0x165 is set and clears it
+    /// `PlayerCamera::MoveBodyToTarget`: resolves the camera target (+0x3c) and moves the camera body (+0x128) to the target's position (+0x54..+0x5c) in Havok units through its slot 53 (+0x1a8), then applies ID_219024 to the body under the world lock
     ///
-    /// Semantic, frame pass, medium; ledger semantic evidence, name medium; id 50828, rva 0x8fa270.
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 50834, rva 0x8fb0c0.
     /// `void (PlayerCamera* this)`
-    ///
-    /// # Safety
-    /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn pop_if_ai_driven_flag(&self) { unsafe { function!(50828, (&Self))(self) } }
-    /// `PlayerCamera::PopIronSights`: pop when state 4 is current
+    pub fn move_body_to_target(&self) { unsafe { function!(50834, (&Self))(self) } }
+    /// `PlayerCamera::PopIfAIDrivenFlag`: when popOnAIDrivenEnd (+0x165) is set: SetState(PopState()) and clear it
     ///
-    /// Semantic, frame pass, medium; ledger semantic evidence, name medium; id 50811, rva 0x8f94c0.
+    /// Semantic, frame pass, high; ledger semantic evidence, name high; id 50828, rva 0x8fa270.
     /// `void (PlayerCamera* this)`
-    ///
-    /// # Safety
-    /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn pop_iron_sights(&self) { unsafe { function!(50811, (&Self))(self) } }
+    pub fn pop_if_ai_driven_flag(&self) { unsafe { function!(50828, (&Self))(self) } }
+    /// `PlayerCamera::PopIronSights`: when iron sights is current: SetState(PopState())
+    ///
+    /// Semantic, frame pass, high; ledger semantic evidence, name high; id 50811, rva 0x8f94c0.
+    /// `void (PlayerCamera* this)`
+    #[inline]
+    pub fn pop_iron_sights(&self) { unsafe { function!(50811, (&Self))(self) } }
     /// `PlayerCamera::PopState`: removes and returns the top of stateStack, or cameraStates[0] (first person) when empty; callers then SetState
     ///
     /// Semantic, frame pass, high; ledger semantic evidence, name high; id 50879, rva 0x8fc8a0.
     /// `TESCameraState* (PlayerCamera* this)`
     #[inline]
     pub fn pop_state(&self) -> Option<&'static classes::TESCameraState> { unsafe { function!(50879, (&Self) -> Option<&'static classes::TESCameraState>)(self) } }
-    /// `PlayerCamera::PopTweenMenu`: pops when TweenMenuCameraState is current and not closing; re-enables auto vanity
+    /// `PlayerCamera::PopTweenMenu`: when the tween state is current and not closing (+0xf0 -> +0x4c == 0): SetState(PopState()) and autoVanityAllowed (+0x160) = !bDisableAutoVanityMode:Camera
     ///
-    /// Semantic, frame pass, medium; ledger semantic evidence, name medium; id 50819, rva 0x8f9a00.
+    /// Semantic, frame pass, high; ledger semantic evidence, name high; id 50819, rva 0x8f9a00.
     /// `void (PlayerCamera* this)`
-    ///
-    /// # Safety
-    /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn pop_tween_menu(&self) { unsafe { function!(50819, (&Self))(self) } }
+    pub fn pop_tween_menu(&self) { unsafe { function!(50819, (&Self))(self) } }
+    /// `PlayerCamera::PopTweenMenuCamera`: when the current state (+0x28) is the tween state (+0xf0): PopState, SetState, autoVanityAllowed (+0x160) = !bDisableAutoVanityMode:Camera
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 50820, rva 0x8f9a50.
+    /// `void (PlayerCamera* this)`
+    #[inline]
+    pub fn pop_tween_menu_camera(&self) { unsafe { function!(50820, (&Self))(self) } }
     /// `PlayerCamera::PopVATSCamera`: PopState+SetState; SetFieldOfView(fDefault1stPersonFOV if first person else fDefaultWorldFOV)
     ///
-    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 50806, rva 0x8f9290.
+    /// Semantic, camera pass, high; ledger runtime evidence, name high; id 50806, rva 0x8f9290.
     /// `void (PlayerCamera* this)`
     #[inline]
     pub fn pop_vats_camera(&self) { unsafe { function!(50806, (&Self))(self) } }
-    /// `PlayerCamera::PushBleedout`: push state 11 unless the transition or bleedout state is current
+    /// `PlayerCamera::PushBleedout`: unless the transition (+0xe8) or bleedout (+0x110) state is current: with the tween state current only append bleedout to the stack, else push the current state and SetState(bleedout)
     ///
-    /// Semantic, frame pass, medium; ledger semantic evidence, name medium; id 50823, rva 0x8f9e40.
+    /// Semantic, frame pass, high; ledger semantic evidence, name high; id 50823, rva 0x8f9e40.
     /// `void (PlayerCamera* this)`
-    ///
-    /// # Safety
-    /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn push_bleedout(&self) { unsafe { function!(50823, (&Self))(self) } }
-    /// `PlayerCamera::PushIronSights`: push state 4 when the target is the player
+    pub fn push_bleedout(&self) { unsafe { function!(50823, (&Self))(self) } }
+    /// `PlayerCamera::PushIronSights`: when the target is the player and iron sights (+0xd8) is not current: with the tween state current only append it to the stack, else append the current state and SetState(iron sights)
     ///
-    /// Semantic, frame pass, medium; ledger semantic evidence, name medium; id 50810, rva 0x8f9450.
+    /// Semantic, frame pass, high; ledger semantic evidence, name high; id 50810, rva 0x8f9450.
     /// `void (PlayerCamera* this)`
-    ///
-    /// # Safety
-    /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn push_iron_sights(&self) { unsafe { function!(50810, (&Self))(self) } }
+    pub fn push_iron_sights(&self) { unsafe { function!(50810, (&Self))(self) } }
     /// `PlayerCamera::PushState`: pushes the current state on stateStack and SetState(cameraStates[id]); while TweenMenuCameraState is current only appends the target to the stack
     ///
     /// Semantic, frame pass, high; ledger semantic evidence, name high; id 50880, rva 0x8fc920.
@@ -50132,7 +51846,7 @@ impl classes::PlayerCamera {
     pub fn push_tween_menu(&self) { unsafe { function!(50816, (&Self))(self) } }
     /// `PlayerCamera::PushVATSCamera`: target == player and VATS not current/stacked: VATS position = current slot 5, push state 2
     ///
-    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 50804, rva 0x8f9190.
+    /// Semantic, camera pass, high; ledger runtime evidence, name high; id 50804, rva 0x8f9190.
     /// `void (PlayerCamera* this)`
     #[inline]
     pub fn push_vats_camera(&self) { unsafe { function!(50804, (&Self))(self) } }
@@ -50162,10 +51876,16 @@ impl classes::PlayerCamera {
     pub fn set_auto_vanity_mode_allowed(&self, allowed: bool) { unsafe { function!(50803, (&Self, bool))(self, allowed) } }
     /// `PlayerCamera::SetCombatOffsets`: slot 11 on state 10 (mounted), 12 (flying mount) and 9
     ///
-    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 50841, rva 0x8fb5a0.
+    /// Semantic, camera pass, high; ledger runtime evidence, name high; id 50841, rva 0x8fb5a0.
     /// `void (PlayerCamera* this, bool weaponDrawn)`
     #[inline]
     pub fn set_combat_offsets(&self, weaponDrawn: bool) { unsafe { function!(50841, (&Self, bool))(self, weaponDrawn) } }
+    /// `PlayerCamera::SetFirstPersonAltEuler`: FirstPersonState (+0xb8) ->useAltEuler (+0x8b) = enable (no null check)
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 50815, rva 0x8f98f0.
+    /// `void (PlayerCamera* this, bool enable)`
+    #[inline]
+    pub fn set_first_person_alt_euler(&self, enable: bool) { unsafe { function!(50815, (&Self, bool))(self, enable) } }
     /// `PlayerCamera::SetFirstPersonCameraNodes`: 0x8f5370 on state 0 (Cam1 +0x58, Camera Control +0x60), copy Cam1 to IronSightsState+0x20
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 50791, rva 0x8f8e30.
@@ -50184,6 +51904,12 @@ impl classes::PlayerCamera {
     /// `void (PlayerCamera* this, bool on)`
     #[inline]
     pub fn set_first_person_pitch_override(&self, on: bool) { unsafe { function!(50843, (&Self, bool))(self, on) } }
+    /// `PlayerCamera::SetFirstPersonSittingYaw`: cameraStates[0] (FirstPersonState, +0xb8) ->sittingYaw (+0x68) = yaw when the state exists
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 50794, rva 0x8f8eb0.
+    /// `void (PlayerCamera* this, float yaw)`
+    #[inline]
+    pub fn set_first_person_sitting_yaw(&self, yaw: f32) { unsafe { function!(50794, (&Self, f32))(self, yaw) } }
     /// `PlayerCamera::SetFirstPersonSkipFrames`: FirstPersonState+0x84
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 50849, rva 0x8fc100.
@@ -50220,6 +51946,21 @@ impl classes::PlayerCamera {
     /// `void (PlayerCamera* this)`
     #[inline]
     pub fn set_vats_camera(&self) { unsafe { function!(50805, (&Self))(self) } }
+    /// `PlayerCamera::SetVATSCameraAngles`: tail-jumps to VATSCameraState::SetAngles on cameraStates[2] with the three angles
+    ///
+    /// Semantic, camera pass, high; ledger runtime evidence, name high; id 50808, rva 0x8f9310.
+    /// `void (PlayerCamera* this, float x, float y, float z)`
+    #[inline]
+    pub fn set_vats_camera_angles(&self, x: f32, y: f32, z: f32) { unsafe { function!(50808, (&Self, f32, f32, f32))(self, x, y, z) } }
+    /// `PlayerCamera::SetVATSCameraPosition`: forwards to VATSCameraState::SetPosition on cameraStates[2] (+0xc8)
+    ///
+    /// Semantic, camera pass, high; ledger runtime evidence, name high; id 50807, rva 0x8f92f0.
+    /// `void (PlayerCamera* this, const NiPoint3* position)`
+    ///
+    /// # Safety
+    /// `position` must point to what the engine expects.
+    #[inline]
+    pub unsafe fn set_vats_camera_position(&self, position: *const c_void) { unsafe { function!(50807, (&Self, *const c_void))(self, position) } }
     /// `PlayerCamera::StartAnimatedCameraAtNode`: node of the player's third-person 3D; !gradual: state 8 gets it, Configure(transition, current, state 8, iAnimatedTransitionMillis), updateTo = 1, state 8 Begin, PushState(6), auto vanity off; gradual: current third-person state blends to it
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 50825, rva 0x8f9fd0.
@@ -50229,6 +51970,12 @@ impl classes::PlayerCamera {
     /// `nodeName` must point to what the engine expects.
     #[inline]
     pub unsafe fn start_animated_camera_at_node(&self, nodeName: *mut classes::BSFixedString, gradual: bool) { unsafe { function!(50825, (&Self, *mut classes::BSFixedString, bool))(self, nodeName, gradual) } }
+    /// `PlayerCamera::ToggleAnimatorCam`: toggles ThirdPersonState(id 9, +0x100)->animatorCam (+0xe0)
+    ///
+    /// Semantic, camera pass, high; ledger runtime evidence, name high; id 50801, rva 0x8f90e0.
+    /// `void (PlayerCamera* this)`
+    #[inline]
+    pub fn toggle_animator_cam(&self) { unsafe { function!(50801, (&Self))(self) } }
     /// `PlayerCamera::ToggleFreeCamera`: free camera current: pop; else push FreeCameraState seeded with the current state's rotation and position; Main+0x16 = freezeWorld while free (the main loop's freeze flag)
     ///
     /// Semantic, frame pass, high; ledger semantic evidence, name high; id 50809, rva 0x8f9330.
@@ -50247,42 +51994,51 @@ impl classes::PlayerCamera {
     /// `void (PlayerCamera* this)`
     #[inline]
     pub fn update(&self) { unsafe { function!(50784, (&Self))(self) } }
+    /// `PlayerCamera::ctor`: TESCamera::ctor; g_PlayerCamera_ptr = this; vtable 0x196d980; targetHandle invalid; stateStack capacity word 0x80000000 (inline) and count 0; cameraStates[13] zeroed; caster, body, faded handle, lock 0; worldFOV / firstPersonFOV from fDefaultWorldFOV / fDefault1stPersonFOV:Display; cachedPosition, yaw, pitch-zero fields 0; autoVanityAllowed = !bDisableAutoVanityMode; bowZoomActive 0; allowFreeRotation 1; cachedPositionValid, pitchZeroActive, popOnAIDrivenEnd 0; then CameraShake::LoadModel
+    ///
+    /// Semantic, camera pass, high; ledger layout_inference evidence, name high; id 50781, rva 0x8f79f0.
+    /// `PlayerCamera* (PlayerCamera* this)`
+    ///
+    /// # Safety
+    /// It constructs or destroys an object in place.
+    #[inline]
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(50781, (&Self) -> *mut Self)(self) } }
+    /// `PlayerCamera::ctor_Unwind1`: unwind funclet of the PlayerCamera ctor: g_PlayerCamera_ptr 0x31a5478 = null
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 50858, rva 0x8fc3b0.
+    /// `void (void)`
+    #[inline]
+    pub fn ctor_unwind1() { unsafe { function!(50858, ())() } }
+    /// `PlayerCamera::ctor_Unwind2`: unwind funclet of the PlayerCamera ctor: tail jump to ClearStateStack 0x8fc2d0
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 50859, rva 0x8fc3c0.
+    /// `void (BSTSmallArray<BSTSmartPointer<TESCameraState>,13>* stack)`
+    ///
+    /// # Safety
+    /// `stack` must point to what the engine expects.
+    #[inline]
+    pub unsafe fn ctor_unwind2(stack: *mut c_void) { unsafe { function!(50859, (*mut c_void))(stack) } }
+    /// `PlayerCamera::dtor`: destructor: vtable reset, End (slot 2) on the current state, releases the 13 cameraStates, rigidBody (+0x128), the state stack, CameraShake::UnloadModel, deletes the caster holder (+0x120, 0x10), releases rigidBody again, g_PlayerCamera_ptr = null, TESCamera::dtor
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 50782, rva 0x8f7b20.
+    /// `void (PlayerCamera* this)`
+    ///
+    /// # Safety
+    /// It constructs or destroys an object in place.
+    #[inline]
+    pub unsafe fn dtor(&self) { unsafe { function!(50782, (&Self))(self) } }
 }
 
 impl classes::PlayerCameraTransitionState {
-    /// `PlayerCameraTransitionState::Begin`, vtable slot 1: startTime = timer ms
+    /// `PlayerCameraTransitionState::AlignQuaternionHemisphere`: negates q (sign-bit xor of all four components) when dot(q, reference) < 0, so the following slerp takes the short path
     ///
-    /// Semantic, frame pass, high; called through the object's vtable.
-    /// `void (TESCameraState* this)`
-    #[inline]
-    pub fn begin(&self) { unsafe { virtual_function!(self, 1, (&Self))(self) } }
-    /// `PlayerCameraTransitionState::GetRotation`, vtable slot 4: cameraRoot world rotation (+0x7c) as a quaternion
-    ///
-    /// Semantic, frame pass, high; called through the object's vtable.
-    /// `void (TESCameraState* this, NiQuaternion* out)`
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 33031, rva 0x559170.
+    /// `void (NiQuaternion* q, const NiQuaternion* reference)`
     ///
     /// # Safety
-    /// `out` must point to what the engine expects.
+    /// `q`, `reference` must point to what the engine expects.
     #[inline]
-    pub unsafe fn get_rotation(&self, out: *mut c_void) { unsafe { virtual_function!(self, 4, (&Self, *mut c_void))(self, out) } }
-    /// `PlayerCameraTransitionState::GetTranslation`, vtable slot 5: root world translation +0xa0
-    ///
-    /// Semantic, frame pass, high; called through the object's vtable.
-    /// `void (TESCameraState* this, NiPoint3* out)`
-    ///
-    /// # Safety
-    /// `out` must point to what the engine expects.
-    #[inline]
-    pub unsafe fn get_translation(&self, out: *mut c_void) { unsafe { virtual_function!(self, 5, (&Self, *mut c_void))(self, out) } }
-    /// `PlayerCameraTransitionState::Update`, vtable slot 3: slerp rotation and lerp position by t, writes the root, *next = toState at t = 1
-    ///
-    /// Semantic, frame pass, high; called through the object's vtable.
-    /// `void (TESCameraState* this, BSTSmartPointer<TESCameraState>* next)`
-    ///
-    /// # Safety
-    /// `next` must point to what the engine expects.
-    #[inline]
-    pub unsafe fn update(&self, next: *mut c_void) { unsafe { virtual_function!(self, 3, (&Self, *mut c_void))(self, next) } }
+    pub unsafe fn align_quaternion_hemisphere(q: *mut c_void, reference: *const c_void) { unsafe { function!(33031, (*mut c_void, *const c_void))(q, reference) } }
     /// `PlayerCameraTransitionState::Configure`: sets +0x28/+0x30 (refcounted), +0x24, +0x38, clears +0x3c/+0x3d
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 50888, rva 0x8fcb50.
@@ -50310,6 +52066,21 @@ impl classes::PlayerCharacter {
     /// The `BSTEventSink<UserEventEnabledEvent>` base at +0x2C8.
     #[inline]
     pub fn as_bst_event_sink_user_event_enabled_event(&self) -> &classes::BSTEventSink_UserEventEnabledEvent { unsafe { &*core::ptr::from_ref(self).byte_add(0x2C8).cast() } }
+    /// `PlayerCharacter::CheckWaterContact`, vtable slot 156: water contact test of one collidable: for the camera layer (filter byte +0x2c & 0x7f == 0x24) it compares the camera body's bound top (and the camera target's position) with the water height and records 'camera under water' and the height in the water system (SetFieldB8AndSyncGlobal on ID_400450); other layers go to Actor slot 156
+    ///
+    /// Semantic, actors pass, medium; called through the object's vtable.
+    /// `bool (PlayerCharacter* this, const void* collidable, float waterHeight, float waterParam)`
+    ///
+    /// # Safety
+    /// The pass rates the signature medium.
+    #[inline]
+    pub unsafe fn check_water_contact(&self, collidable: *const c_void, waterHeight: f32, waterParam: f32) -> bool { unsafe { virtual_function!(self, 156, (&Self, *const c_void, f32, f32) -> bool)(self, collidable, waterHeight, waterParam) } }
+    /// `PlayerCharacter::FinishLoad`, vtable slot 17: post-load fix-up of the player: scale from the record (savedFlags bit 4), grab reference, flying mount, health heartbeat, camera and first-person state
+    ///
+    /// Semantic, actors pass, high; called through the object's vtable.
+    /// `void (PlayerCharacter* this, BGSLoadFormBuffer* buffer)`
+    #[inline]
+    pub fn finish_load(&self, buffer: &classes::BGSLoadFormBuffer) { unsafe { virtual_function!(self, 17, (&Self, &classes::BGSLoadFormBuffer))(self, buffer) } }
     /// `PlayerCharacter::Get3DFor`, vtable slot 111: the first-person root (+0x900) for true, the third-person root (loadedData->node3D) for false
     ///
     /// Semantic, actors pass, high; called through the object's vtable.
@@ -50358,6 +52129,15 @@ impl classes::PlayerCharacter {
     /// The pass rates the signature medium.
     #[inline]
     pub unsafe fn get_heading(&self, unused: bool) -> f32 { unsafe { virtual_function!(self, 164, (&Self, bool) -> f32)(self, unused) } }
+    /// `PlayerCharacter::GetProjectileLaunchAngles`, vtable slot 160: launch angles for the player's projectile: first person (camera in cameraStates[0]) = heading from slot 164 and pitch = rotX - f1PArrowTiltUpAngle (f1PBoltTiltUpAngle for bolts), then slot 279 with launchPos; otherwise the node's world-rotation Euler angles with pitch - f3PArrowTiltUpAngle
+    ///
+    /// Semantic, actors pass, high; called through the object's vtable.
+    /// `void (PlayerCharacter* this, NiAVObject* launchNode, float* outPitch, float* outHeading, NiPoint3* launchPos)`
+    ///
+    /// # Safety
+    /// `outPitch`, `outHeading`, `launchPos` must point to what the engine expects.
+    #[inline]
+    pub unsafe fn get_projectile_launch_angles(&self, launchNode: *mut classes::NiAVObject, outPitch: *mut f32, outHeading: *mut f32, launchPos: *mut c_void) { unsafe { virtual_function!(self, 160, (&Self, *mut classes::NiAVObject, *mut f32, *mut f32, *mut c_void))(self, launchNode, outPitch, outHeading, launchPos) } }
     /// `PlayerCharacter::IsThirdPerson`, vtable slot 113: bit 0 of +0xbeb; Get3D (slot 112) returns the first-person root when this is false
     ///
     /// Semantic, actors pass, high; called through the object's vtable.
@@ -50370,18 +52150,90 @@ impl classes::PlayerCharacter {
     /// `NiAVObject* (PlayerCharacter* this, bool backgroundLoad)`
     #[inline]
     pub fn load3_d(&self, backgroundLoad: bool) -> Option<&'static classes::NiAVObject> { unsafe { virtual_function!(self, 106, (&Self, bool) -> Option<&'static classes::NiAVObject>)(self, backgroundLoad) } }
+    /// `PlayerCharacter::Resurrect`, vtable slot 171: the player's resurrect: replaces the AIProcess (new 0x140-byte AIProcess::ctor), re-registers in the process lists, recreates or destroys the camera caster (PlayerCamera::CreateCameraCaster with the character controller's filter >> 16, else DestroyCameraCaster), then Actor::Resurrect(this, 0, 0)
+    ///
+    /// Semantic, actors pass, high; called through the object's vtable.
+    /// `void (PlayerCharacter* this, bool resetState, bool has3D)`
+    #[inline]
+    pub fn resurrect(&self, resetState: bool, has3D: bool) { unsafe { virtual_function!(self, 171, (&Self, bool, bool))(self, resetState, has3D) } }
+    /// `PlayerCharacter::Revert`, vtable slot 18: reverts the player before a load: tick counters, view flags (keeps bit 6 when buffer+0x48 bit 2), scale (buffer+0x44 bit 4), camera and process state
+    ///
+    /// Semantic, actors pass, high; called through the object's vtable.
+    /// `void (PlayerCharacter* this, BGSLoadFormBuffer* buffer)`
+    #[inline]
+    pub fn revert(&self, buffer: &classes::BGSLoadFormBuffer) { unsafe { virtual_function!(self, 18, (&Self, &classes::BGSLoadFormBuffer))(self, buffer) } }
+    /// `PlayerCharacter::Set3D`, vtable slot 108: sets or clears the player's 3D: on clear, queues the first-person root and the third-person root for detach from the shadow scene node and releases the first-person biped objects and the first-person camera nodes; then Actor::Set3D
+    ///
+    /// Semantic, actors pass, medium; called through the object's vtable.
+    /// `void (PlayerCharacter* this, NiAVObject* root, bool flag)`
+    ///
+    /// # Safety
+    /// The pass rates the signature medium.
+    #[inline]
+    pub unsafe fn set3_d(&self, root: *mut classes::NiAVObject, flag: bool) { unsafe { virtual_function!(self, 108, (&Self, *mut classes::NiAVObject, bool))(self, root, flag) } }
+    /// `PlayerCharacter::SetParentCell`, vtable slot 152: the player's cell change: BGSActorCellEvent leave/enter, location change event (TESActorLocationChangeEvent), Actor::SetParentCell, then the camera (PlayerCamera slot via vfunc_152_sub5), the sky climate (TESWorldSpace::GetClimate), grass enable (TESWorldSpace::IsNoGrass), border-region flag
+    ///
+    /// Semantic, actors pass, high; called through the object's vtable.
+    /// `void (PlayerCharacter* this, TESObjectCELL* cell)`
+    #[inline]
+    pub fn set_parent_cell(&self, cell: &classes::TESObjectCELL) { unsafe { virtual_function!(self, 152, (&Self, &classes::TESObjectCELL))(self, cell) } }
+    /// `PlayerCharacter::StartVampireFeed`, vtable slot 192: starts the player's AI-driven vampire feed: builds package type 0x25 at the player, stores the target's furniture handle in the process (+0x208), copies the target's process feed data, runs a type 0x1b package on the target (slot 0x6f8) and pushes the camera to third person (PlayerCamera::PushThirdPersonForAIDriven)
+    ///
+    /// Semantic, actors pass, high; called through the object's vtable.
+    /// `void (PlayerCharacter* this, Actor* target, TESObjectREFR* targetFurniture)`
+    #[inline]
+    pub fn start_vampire_feed(&self, target: &classes::Actor, targetFurniture: &classes::TESObjectREFR) { unsafe { virtual_function!(self, 192, (&Self, &classes::Actor, &classes::TESObjectREFR))(self, target, targetFurniture) } }
     /// `PlayerCharacter::SyncRootTransforms`, vtable slot 287: writes both roots' local transforms from the reference: translation = position (+0x54..+0x5c), rotation = z rotation by the heading; the third-person root also gets the char controller's pitch (+0x24c) and roll (+0x250) when non-zero (the mount's controller when mounted)
     ///
     /// Semantic, actors pass, high; called through the object's vtable.
     /// `void (PlayerCharacter* this)`
     #[inline]
     pub fn sync_root_transforms(&self) { unsafe { virtual_function!(self, 287, (&Self))(self) } }
-    /// `PlayerCharacter::Update`, vtable slot 173: the player's per-frame actor update
+    /// `PlayerCharacter::GetLookOriginAndDirection`: PlayerCharacter slot 194: origin = PlayerCamera::GetFirstPersonCameraNodePosition (the Cam1 node), plus GetThirdPersonOffsetVector(camera, ., false) when the flag is set and the current state's id > 8; direction = the forward column of Rz(heading, slot 164) * Rx(pitch, +0x48), normalized
     ///
-    /// Semantic, actors pass, high; called through the object's vtable.
-    /// `void (PlayerCharacter* this, float delta)`
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 40505, rva 0x74a530.
+    /// `void (PlayerCharacter* this, NiPoint3* origin, NiPoint3* direction, bool addThirdPersonOffset)`
+    ///
+    /// # Safety
+    /// `origin`, `direction` must point to what the engine expects.
     #[inline]
-    pub fn update(&self, delta: f32) { unsafe { virtual_function!(self, 173, (&Self, f32))(self, delta) } }
+    pub unsafe fn get_look_origin_and_direction(&self, origin: *mut c_void, direction: *mut c_void, addThirdPersonOffset: bool) { unsafe { function!(40505, (&Self, *mut c_void, *mut c_void, bool))(self, origin, direction, addThirdPersonOffset) } }
+    /// `PlayerCharacter::IsFlagBED4Set`: +0xbed bit 4
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 40658, rva 0x75a640.
+    /// `bool (PlayerCharacter* this)`
+    #[inline]
+    pub fn is_flag_bed4_set(&self) -> bool { unsafe { function!(40658, (&Self) -> bool)(self) } }
+    /// `PlayerCharacter::LoadGame`: PlayerCharacter slot 15: restores the player's saved state from its change-form record after Character::LoadGame: the view (first/third person), many player flag bytes (+0xbe8..+0xbed) and fields (+0x8f4, +0x90c, +0x918, +0x930, firstPersonCameraHeight, +0x940), referenced forms, race data, control state, the camera, and version-gated extras.
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 40540, rva 0x74e600.
+    /// `void (PlayerCharacter* this, BGSLoadFormBuffer* buffer)`
+    #[inline]
+    pub fn load_game(&self, buffer: &classes::BGSLoadFormBuffer) { unsafe { function!(40540, (&Self, &classes::BGSLoadFormBuffer))(self, buffer) } }
+    /// `PlayerCharacter::OnDismountFinished`: after the player is placed at the dismount position: PlayerCamera::LeaveMountCamera, ControlMap::RestoreControlState, 'WarHorseMode' off, this+0x9d4 = -1, cached position reset, three user events re-appended (g_UserEventNames +0x78, +0x90, +0x250)
+    ///
+    /// Semantic, camera pass, high; ledger runtime evidence, name high; id 40726, rva 0x75e030.
+    /// `void (PlayerCharacter* this)`
+    #[inline]
+    pub fn on_dismount_finished(&self) { unsafe { function!(40726, (&Self))(self) } }
+    /// `PlayerCharacter::OnMountActivated`: the player mounts *mount: ownership check (stealing a horse), flying-mount setup (default object 0x16a 'Flying Mount - Fly Fast Worldspaces', fFlyingMountTutorialMessageDelay), clears the sneak flag 0x400 and the controller's +0x21c, and when the mount differs from the current one (slot 0x8a0 handle) switches the camera to the horse
+    ///
+    /// Semantic, camera pass, high; ledger runtime evidence, name high; id 40725, rva 0x75ddc0.
+    /// `void (PlayerCharacter* this, Actor** mount)`
+    ///
+    /// # Safety
+    /// `mount` must point to what the engine expects.
+    #[inline]
+    pub unsafe fn on_mount_activated(&self, mount: *mut *mut classes::Actor) { unsafe { function!(40725, (&Self, *mut *mut classes::Actor))(self, mount) } }
+    /// `PlayerCharacter::PlaceFavorTravelMarker`: command-mode marker: casts a 5000-unit ray (71.4375 Havok units, ID_208093) from the camera, and places/moves the travel marker (default object 0xd0 'Favor travel marker location', or ID_401050) at the hit; writes its handle to outMarkerHandle and returns it
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 40636, rva 0x7588d0.
+    /// `u32* (PlayerCharacter* this, u32* outMarkerHandle)`
+    ///
+    /// # Safety
+    /// `outMarkerHandle` must point to what the engine expects, and the result is an untyped pointer.
+    #[inline]
+    pub unsafe fn place_favor_travel_marker(&self, outMarkerHandle: *mut u32) -> *mut u32 { unsafe { function!(40636, (&Self, *mut u32) -> *mut u32)(self, outMarkerHandle) } }
     /// `PlayerCharacter::ProcessMenuOpenCloseEvent`: compares event->menuName.data with the UI string table entries and reacts to the console, journal and container menus; returns 0
     ///
     /// Semantic, events pass, high; ledger runtime evidence, name high; id 40740, rva 0x75eb40.
@@ -50391,33 +52243,66 @@ impl classes::PlayerCharacter {
     /// `source` must point to what the engine expects.
     #[inline]
     pub unsafe fn process_menu_open_close_event(&self, event: *const classes::MenuOpenCloseEvent, source: *mut c_void) -> u32 { unsafe { function!(40740, (&Self, *const classes::MenuOpenCloseEvent, *mut c_void) -> u32)(self, event, source) } }
+    /// `PlayerCharacter::ResetField9C0Block`: ResetField9C0Block_impl(*holder)
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 41571, rva 0x78e930.
+    /// `void (PlayerCharacter::Field9C0** holder)`
+    ///
+    /// # Safety
+    /// `holder` must point to what the engine expects.
+    #[inline]
+    pub unsafe fn reset_field9_c0_block(holder: *mut *mut c_void) { unsafe { function!(41571, (*mut *mut c_void))(holder) } }
+    /// `PlayerCharacter::ResetField9C0Block_impl`: zeroes 0x128 bytes: qwords 0..0x24
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 41582, rva 0x78f280.
+    /// `void (void* block)`
+    ///
+    /// # Safety
+    /// `block` must point to what the engine expects.
+    #[inline]
+    pub unsafe fn reset_field9_c0_block_impl(block: *mut c_void) { unsafe { function!(41582, (*mut c_void))(block) } }
+    /// `PlayerCharacter::SaveGame`: Writes the player's own save record after Character::SaveGame: scalar fields, handles as encoded form ids, skill and level data, timers and arrays, the control map state, the player camera's state, crime/hostility maps, player flag bits and several global bytes.
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 40538, rva 0x74cec0.
+    /// `void (PlayerCharacter* this, BGSSaveFormBuffer* buffer)`
+    #[inline]
+    pub fn save_game(&self, buffer: &classes::BGSSaveFormBuffer) { unsafe { function!(40538, (&Self, &classes::BGSSaveFormBuffer))(self, buffer) } }
+    /// `PlayerCharacter::SetFieldB10AndIncrement968`: +0xb10 = 1 and ++(+0x968)
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 40530, rva 0x74c500.
+    /// `void (PlayerCharacter* this)`
+    #[inline]
+    pub fn set_field_b10_and_increment968(&self) { unsafe { function!(40530, (&Self))(self) } }
     /// `PlayerCharacter::SetFirstPerson`: switches the player's visible root: sets flags bit 0 on the root not shown and clears it on the other, stores !firstPerson in bit 0 of +0xbeb, copies the reference position and heading into both roots' local transforms and reattaches the camera
     ///
     /// Semantic, render pass, high; ledger runtime evidence, name high; id 40476, rva 0x748d10.
     /// `void (PlayerCharacter* this, bool firstPerson)`
     #[inline]
     pub fn set_first_person(&self, firstPerson: bool) { unsafe { function!(40476, (&Self, bool))(self, firstPerson) } }
+    /// `PlayerCharacter::StartDialogueTurnTowardSpeaker`: in first person, when the topic manager's speaker is an actor other than the player: computes the yaw (atan2, unwrapped to within pi of PlayerCamera.yaw) and pitch (-asin(dz/|d|) + fDialogueRotationPitchOffset:Dialogue) toward its look position (slot 91 on both), and arms the blend globals: start (PlayerCamera.yaw, player pitch) 0x20b7624/28, target 0x20b762c/30, duration fDialogueRotationSecs * 1000 (0x20b7634), start time g_FrameTimeMs (0x20b7638), done flag 0x20b763c = 0; non-finite results fall back to zero
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 40496, rva 0x749ed0.
+    /// `void (PlayerCharacter* this)`
+    #[inline]
+    pub fn start_dialogue_turn_toward_speaker(&self) { unsafe { function!(40496, (&Self))(self) } }
     /// `PlayerCharacter::UpdateAnimation`: slot 125 for the player: collision transforms, graph update, then the first- and third-person biped graphs
     ///
     /// Semantic, animation pass, high; ledger runtime evidence, name high; id 40521, rva 0x74bf70.
     /// `void (PlayerCharacter* this, float delta)`
     #[inline]
     pub fn update_animation(&self, delta: f32) { unsafe { function!(40521, (&Self, f32))(self, delta) } }
-    /// `PlayerCharacter::UpdateCamera`: unless the VATS state is current or stacked (then only when a VATS condition at 0x31a5720+0x30 holds): signals event 2, runs PlayerCamera::Update, then posts the camera position (0x8f89b0) and the frame NiCamera's world rotation rows (g_SceneGraph+0x128, +0x7c..) as commands 0x28/0x29/0x2a to the 0x48 holder
+    /// `PlayerCharacter::UpdateCamera`: PlayerCamera::Update, then the audio listener position (GetPosition) and orientation (frame NiCamera world rotation columns)
     ///
     /// Semantic, frame pass, high; ledger runtime evidence, name high; id 40449, rva 0x7468b0.
     /// `void (PlayerCharacter* this)`
     #[inline]
     pub fn update_camera(&self) { unsafe { function!(40449, (&Self))(self) } }
-    /// `PlayerCharacter::UpdateCameraControlImageSpace`: image space modifier 'Animation_%02d' (cached in player+0x550, instance +0x568) created/updated/removed by strength
+    /// `PlayerCharacter::UpdateCameraControlImageSpace`: applies the camera-control image space modifier selected by the Camera Control node's x (as an index) with the node's y as strength
     ///
-    /// Semantic, camera pass, medium; ledger runtime evidence, name medium; id 40452, rva 0x746cb0.
-    /// `void (PlayerCharacter* this, u32 index, float strength)`
-    ///
-    /// # Safety
-    /// The pass rates the signature medium.
+    /// Semantic, camera pass, high; ledger runtime evidence, name high; id 40452, rva 0x746cb0.
+    /// `void (PlayerCharacter* this, u16 index, float strength)`
     #[inline]
-    pub unsafe fn update_camera_control_image_space(&self, index: u32, strength: f32) { unsafe { function!(40452, (&Self, u32, f32))(self, index, strength) } }
+    pub fn update_camera_control_image_space(&self, index: u16, strength: f32) { unsafe { function!(40452, (&Self, u16, f32))(self, index, strength) } }
     /// `PlayerCharacter::UpdateCrosshairPick`: the 'Pick reference' job: returns while a game-pausing or 0x4000 menu is open; clears the pick when the camera/controls disallow it; origin = PlayerCamera::GetPosition when the player is the camera target in cameraStates[0], else the camera node position (+ the third-person offset for state ids > 8 unless +0xbed bit 2); direction = frame camera (g_SceneGraph+0x128) world rotation column 0 (+0x7c, +0x88, +0x94); calls CrosshairPickData::Pick(*ID_401585, cell world, &origin, &direction) at +0x1e7, then lock/owned and 'sWaitHere' prompts
     ///
     /// Semantic, camera pass, high; ledger runtime evidence, name high; id 40620, rva 0x757700.
@@ -50430,12 +52315,57 @@ impl classes::PlayerCharacter {
     /// `void (PlayerCharacter* this, float delta)`
     #[inline]
     pub fn update_death_reload_and_actor(&self, delta: f32) { unsafe { function!(40748, (&Self, f32))(self, delta) } }
+    /// `PlayerCharacter::UpdateDialogueTurnBlend`: blends the player's yaw/pitch toward the dialogue topic ref over time (g_FrameTimeMs, pi/2 scale); skipped in furniture (+0xc8 & 0x3c000)
+    ///
+    /// Semantic, camera pass, medium; ledger semantic evidence, name medium; id 40497, rva 0x74a1a0.
+    /// `void (PlayerCharacter* this)`
+    ///
+    /// # Safety
+    /// The pass rates the signature medium.
+    #[inline]
+    pub unsafe fn update_dialogue_turn_blend(&self) { unsafe { function!(40497, (&Self))(self) } }
+    /// `PlayerCharacter::UpdateIronSightsDOF`: iron-sights depth of field driven by +0x6f0
+    ///
+    /// Semantic, camera pass, medium; ledger semantic evidence, name medium; id 41249, rva 0x778930.
+    /// `void (PlayerCharacter* this)`
+    ///
+    /// # Safety
+    /// The pass rates the signature medium.
+    #[inline]
+    pub unsafe fn update_iron_sights_dof(&self) { unsafe { function!(41249, (&Self))(self) } }
     /// `PlayerCharacter::UpdateNodesAfterRender`: slot 287 places the first-person root at the player, NiAVObject::Update(third-person root, {t, flags 0x2001}), waits main phase 7, NiAVObject::Update(first-person root)
     ///
     /// Semantic, animation pass, high; ledger runtime evidence, name high; id 40522, rva 0x74c080.
     /// `void (PlayerCharacter* this)`
     #[inline]
     pub fn update_nodes_after_render(&self) { unsafe { function!(40522, (&Self))(self) } }
+    /// `PlayerCharacter::UpdateVATSAndDialogueTurn`: when g_VATS mode (+0x20) is 4 runs UpdateVATS, then the same dialogue-turn yaw/pitch blend as 0x74a1a0
+    ///
+    /// Semantic, camera pass, medium; ledger semantic evidence, name medium; id 40448, rva 0x7466e0.
+    /// `void (PlayerCharacter* this)`
+    ///
+    /// # Safety
+    /// The pass rates the signature medium.
+    #[inline]
+    pub unsafe fn update_vats_and_dialogue_turn(&self) { unsafe { function!(40448, (&Self))(self) } }
+    /// `PlayerCharacter::ctor`: Constructs the PlayerCharacter: Character base, its three event sources (BGSActorCellEvent, BGSActorDeathEvent, PositionPlayerEvent), vtables, per-player arrays and handles, difficulty from iDifficulty, image-space-modifier anim arrays (iPlayerCharacterImagespaceModifierAnimCount), menu/user/tracked-stats event sinks, and publishes g_PlayerRef_ptr.
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 40411, rva 0x73f670.
+    /// `PlayerCharacter* (PlayerCharacter* this)`
+    ///
+    /// # Safety
+    /// It constructs or destroys an object in place.
+    #[inline]
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(40411, (&Self) -> *mut Self)(self) } }
+    /// `PlayerCharacter::dtor`: Destroys the player: restores its vtables, clears g_PlayerRef_ptr, unregisters its TESTrackedStatsEvent, MenuOpenClose, MenuModeChange and UserEventEnabled sinks, frees its process, sound handles, lists, arrays, handle tables, the 0x2778-byte first-person biped and other owned objects, destroys CrosshairPickData and the player camera, then runs Actor::dtor.
+    ///
+    /// Semantic, camera pass, high; ledger layout_inference evidence, name high; id 40412, rva 0x740690.
+    /// `void (PlayerCharacter* this)`
+    ///
+    /// # Safety
+    /// It constructs or destroys an object in place.
+    #[inline]
+    pub unsafe fn dtor(&self) { unsafe { function!(40412, (&Self))(self) } }
 }
 
 impl classes::PlayerControls {
@@ -50464,11 +52394,11 @@ impl classes::PlayerControls {
     pub unsafe fn process_event(&self, head: *mut *mut classes::InputEvent, source: *mut c_void) -> u32 { unsafe { virtual_function!(self, 1, (&Self, *mut *mut classes::InputEvent, *mut c_void) -> u32)(self, head, source) } }
     /// `ApplyLookInputSensitivity`: bInvertYValues:Controls -> look.y negated first; mouse: x *= fMouseHeadingSensitivity * fMouseHeadingXScale / g_FrameDeltaReal, y *= sensitivity * YScale (mounted: both * fHorseHeadingMovementMult); gamepad: snap-to-axis, look curve, exponent, acceleration, sensitivity threshold, X/Y scale, optional time normalisation
     ///
-    /// Semantic, camera pass, medium; ledger runtime evidence, name medium; id 42354, rva 0x7aeba0.
+    /// Semantic, camera pass, high; ledger runtime evidence, name high; id 42354, rva 0x7aeba0.
     /// `void (PlayerControls* this, NiPoint2* look)`
     ///
     /// # Safety
-    /// The pass rates the signature medium.
+    /// `look` must point to what the engine expects.
     #[inline]
     pub unsafe fn apply_look_input_sensitivity(&self, look: *mut c_void) { unsafe { function!(42354, (&Self, *mut c_void))(self, look) } }
     /// `PlayerControls::AddHandler`: appends and enables (deferred while dispatching); camera states add their embedded handler in Begin
@@ -50477,6 +52407,15 @@ impl classes::PlayerControls {
     /// `void (PlayerControls* this, PlayerInputHandler* handler, bool heldState)`
     #[inline]
     pub fn add_handler(&self, handler: &classes::PlayerInputHandler, heldState: bool) { unsafe { function!(42356, (&Self, &classes::PlayerInputHandler, bool))(self, handler, heldState) } }
+    /// `PlayerControls::ApplyLookInputWithDialogueLimits`: applies look input sensitivity to lookInput (+0x2c) and clamps it to the dialogue speaker yaw offset limits (first person when camera +0x28 == +0xb8)
+    ///
+    /// Semantic, camera pass, medium; ledger semantic evidence, name medium; id 42372, rva 0x7b06a0.
+    /// `void (PlayerControls* this)`
+    ///
+    /// # Safety
+    /// The pass rates the signature medium.
+    #[inline]
+    pub unsafe fn apply_look_input_with_dialogue_limits(&self) { unsafe { function!(42372, (&Self))(self) } }
     /// `PlayerControls::CanSwitchPOV`: ControlMap enabledControls bit 5 && PlayerControls +0x4c == 0 && +0x4d == 0
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 42342, rva 0x7ae030.
@@ -50495,6 +52434,45 @@ impl classes::PlayerControls {
     /// `void (PlayerControls* this, InputEvent* event)`
     #[inline]
     pub fn dispatch_event(&self, event: &classes::InputEvent) { unsafe { function!(523956, (&Self, &classes::InputEvent))(self, event) } }
+    /// `PlayerControls::GetSixaxisLookPitch`: Look handler (+0x178) +0xa8, or 0 without a handler: the filtered sixaxis pitch
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 523951, rva 0x7ae110.
+    /// `float (PlayerControls* this)`
+    #[inline]
+    pub fn get_sixaxis_look_pitch(&self) -> f32 { unsafe { function!(523951, (&Self) -> f32)(self) } }
+    /// `PlayerControls::GetSixaxisLookYaw`: Look handler (+0x178) +0xac, or 0: the filtered sixaxis yaw
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 523952, rva 0x7ae130.
+    /// `float (PlayerControls* this)`
+    #[inline]
+    pub fn get_sixaxis_look_yaw(&self) -> f32 { unsafe { function!(523952, (&Self) -> f32)(self) } }
+    /// `PlayerControls::HasHandler`: linear search of the handler array (data +0x58, size +0x68) for handler
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 42359, rva 0x7af690.
+    /// `bool (PlayerControls* this, PlayerInputHandler* handler)`
+    #[inline]
+    pub fn has_handler(&self, handler: &classes::PlayerInputHandler) -> bool { unsafe { function!(42359, (&Self, &classes::PlayerInputHandler) -> bool)(self, handler) } }
+    /// `PlayerControls::HasSixaxisLookReference`: true when the Look handler (+0x178) exists and its sixaxis reference index (+0xb0) is not -1
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 523950, rva 0x7ae0e0.
+    /// `bool (PlayerControls* this)`
+    #[inline]
+    pub fn has_sixaxis_look_reference(&self) -> bool { unsafe { function!(523950, (&Self) -> bool)(self) } }
+    /// `PlayerControls::InterruptPlayerActions`: stops the player's current actions (same body as 0x7afb40 without the +0x4e store)
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 523954, rva 0x7aea30.
+    /// `void (PlayerControls* this)`
+    #[inline]
+    pub fn interrupt_player_actions(&self) { unsafe { function!(523954, (&Self))(self) } }
+    /// `PlayerControls::InterruptPlayerActionsAndCasting`: global-data finish-load handler of PlayerControls (type 110): stops the player's actions and casting and clears +0x4e
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 523955, rva 0x7afb40.
+    /// `void (PlayerControls* this, void* unusedLoadBuffer)`
+    ///
+    /// # Safety
+    /// `unusedLoadBuffer` must point to what the engine expects.
+    #[inline]
+    pub unsafe fn interrupt_player_actions_and_casting(&self, unusedLoadBuffer: *mut c_void) { unsafe { function!(523955, (&Self, *mut c_void))(self, unusedLoadBuffer) } }
     /// `PlayerControls::LoadResponseGraph`: reads f%sGraphX%d/f%sGraphY%d:Controls into one of two curves
     ///
     /// Semantic, input pass, medium; ledger semantic evidence, name medium; id 42366, rva 0x7afd10.
@@ -50510,6 +52488,15 @@ impl classes::PlayerControls {
     /// `void (PlayerControls* this, PlayerInputHandler* handler)`
     #[inline]
     pub fn remove_handler(&self, handler: &classes::PlayerInputHandler) { unsafe { function!(42357, (&Self, &classes::PlayerInputHandler))(self, handler) } }
+    /// `PlayerControls::SetTurnRateFromLookInput`: player process turn delta = lookInput.x * pi, or 0 in third-person free look (AIProcess::SetTurnDelta tail call)
+    ///
+    /// Semantic, camera pass, medium; ledger semantic evidence, name medium; id 42373, rva 0x7b0790.
+    /// `void (PlayerControls* this)`
+    ///
+    /// # Safety
+    /// The pass rates the signature medium.
+    #[inline]
+    pub unsafe fn set_turn_rate_from_look_input(&self) { unsafe { function!(42373, (&Self))(self) } }
     /// `PlayerControls::UpdateMovementState`: applies auto-move and computes the player movement state after the events
     ///
     /// Semantic, input pass, low; ledger semantic evidence, name low; id 42371, rva 0x7b03c0.
@@ -50546,42 +52533,141 @@ impl classes::PlayerInputHandler {
     /// `data` must point to what the engine expects.
     #[inline]
     pub unsafe fn process_button(&self, event: *mut classes::ButtonEvent, data: *mut c_void) { unsafe { virtual_function!(self, 6, (&Self, *mut classes::ButtonEvent, *mut c_void))(self, event, data) } }
-    /// `PlayerInputHandler::ProcessMotionGesture`, vtable slot 2: event type 7
+    /// `PlayerInputHandler::ProcessMotionGesture`, vtable slot 2: base: does nothing
     ///
-    /// Semantic, frame pass, medium; called through the object's vtable.
+    /// Semantic, frame pass, high; called through the object's vtable.
     /// `void (PlayerInputHandler* this, InputEvent* event, PlayerControlsData* data)`
     ///
     /// # Safety
-    /// The pass rates the signature medium.
+    /// `data` must point to what the engine expects.
     #[inline]
     pub unsafe fn process_motion_gesture(&self, event: *mut classes::InputEvent, data: *mut c_void) { unsafe { virtual_function!(self, 2, (&Self, *mut classes::InputEvent, *mut c_void))(self, event, data) } }
-    /// `PlayerInputHandler::ProcessMouseMove`, vtable slot 5: eventType 1: int dx/dy at +0x28/+0x2c
+    /// `PlayerInputHandler::ProcessMouseMove`, vtable slot 5: base: does nothing
     ///
-    /// Semantic, frame pass, medium; called through the object's vtable.
+    /// Semantic, frame pass, high; called through the object's vtable.
     /// `void (PlayerInputHandler* this, MouseMoveEvent* event, PlayerControlsData* data)`
     ///
     /// # Safety
-    /// The pass rates the signature medium.
+    /// `data` must point to what the engine expects.
     #[inline]
     pub unsafe fn process_mouse_move(&self, event: *mut classes::MouseMoveEvent, data: *mut c_void) { unsafe { virtual_function!(self, 5, (&Self, *mut classes::MouseMoveEvent, *mut c_void))(self, event, data) } }
-    /// `PlayerInputHandler::ProcessSixaxis`, vtable slot 3: event type 6
+    /// `PlayerInputHandler::ProcessSixaxis`, vtable slot 3: base: does nothing
     ///
-    /// Semantic, frame pass, medium; called through the object's vtable.
+    /// Semantic, frame pass, high; called through the object's vtable.
     /// `void (PlayerInputHandler* this, InputEvent* event, PlayerControlsData* data)`
     ///
     /// # Safety
-    /// The pass rates the signature medium.
+    /// `data` must point to what the engine expects.
     #[inline]
     pub unsafe fn process_sixaxis(&self, event: *mut classes::InputEvent, data: *mut c_void) { unsafe { virtual_function!(self, 3, (&Self, *mut classes::InputEvent, *mut c_void))(self, event, data) } }
-    /// `PlayerInputHandler::ProcessThumbstick`, vtable slot 4: eventType 3: float x/y at +0x28/+0x2c
+    /// `PlayerInputHandler::ProcessThumbstick`, vtable slot 4: base: does nothing
     ///
-    /// Semantic, frame pass, medium; called through the object's vtable.
+    /// Semantic, frame pass, high; called through the object's vtable.
     /// `void (PlayerInputHandler* this, ThumbstickEvent* event, PlayerControlsData* data)`
     ///
     /// # Safety
-    /// The pass rates the signature medium.
+    /// `data` must point to what the engine expects.
     #[inline]
     pub unsafe fn process_thumbstick(&self, event: *mut classes::ThumbstickEvent, data: *mut c_void) { unsafe { virtual_function!(self, 4, (&Self, *mut classes::ThumbstickEvent, *mut c_void))(self, event, data) } }
+    /// `BleedoutCameraState::InputHandler::Destroy`: slot 0 adjustor thunk: rcx -= 0x20, jump to BleedoutCameraState::vdtor 0x8fc4f0
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 50862, rva 0x8fc458.
+    /// `BleedoutCameraState* (PlayerInputHandler* this, u32 flags)`
+    #[inline]
+    pub fn destroy_2(&self, flags: u32) -> Option<&'static classes::BleedoutCameraState> { unsafe { function!(50862, (&Self, u32) -> Option<&'static classes::BleedoutCameraState>)(self, flags) } }
+    /// `DragonCameraState::InputHandler::Destroy`: slot 0 adjustor thunk: rcx -= 0x20, jump to DragonCameraState::vdtor 0x55d460
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 33123, rva 0x55d444.
+    /// `DragonCameraState* (PlayerInputHandler* this, u32 flags)`
+    #[inline]
+    pub fn destroy_3(&self, flags: u32) -> Option<&'static classes::DragonCameraState> { unsafe { function!(33123, (&Self, u32) -> Option<&'static classes::DragonCameraState>)(self, flags) } }
+    /// `DragonCameraState::InputHandler::ProcessButton`: slot 6: with Toggle POV down (state+0xe2) and a Toggle POV release, zero freeRotation (state+0xd4/+0xd8); otherwise ThirdPersonState's ProcessButton 0x8fdd20
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 33112, rva 0x55c7f0.
+    /// `void (PlayerInputHandler* this, ButtonEvent* event, PlayerControlsData* data)`
+    ///
+    /// # Safety
+    /// `data` must point to what the engine expects.
+    #[inline]
+    pub unsafe fn process_button_2(&self, event: *mut classes::ButtonEvent, data: *mut c_void) { unsafe { function!(33112, (&Self, *mut classes::ButtonEvent, *mut c_void))(self, event, data) } }
+    /// `FirstPersonState::InputHandler::CanProcess`: slot 1 of the first-person handler (FirstPersonState+0x20): CanSwitchPOV and the event's user event is Toggle POV (g_UserEventNames+0x70) or Zoom Out (+0x1f0)
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 50729, rva 0x8f5430.
+    /// `bool (PlayerInputHandler* this, InputEvent* event)`
+    #[inline]
+    pub fn can_process(&self, event: &classes::InputEvent) -> bool { unsafe { function!(50729, (&Self, &classes::InputEvent) -> bool)(self, event) } }
+    /// `FirstPersonState::InputHandler::Destroy`: slot 0 adjustor thunk: rcx -= 0x20, jump to FirstPersonState::vdtor 0x8fc570
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 50863, rva 0x8fc464.
+    /// `FirstPersonState* (PlayerInputHandler* this, u32 flags)`
+    #[inline]
+    pub fn destroy_4(&self, flags: u32) -> Option<&'static classes::FirstPersonState> { unsafe { function!(50863, (&Self, u32) -> Option<&'static classes::FirstPersonState>)(self, flags) } }
+    /// `FirstPersonState::InputHandler::ProcessButton`: slot 6 of the first-person handler: Zoom Out pressed -> ForceThirdPerson; Toggle POV: the press sets FirstPersonState+0x8c (Toggle POV down); a release after at least fTogglePOVDelay:Controls -> TogglePOVToThirdPerson; held for f1st3rdSwitchDelay:Camera or more (with +0x8c set) -> ForceThirdPerson; a release this handler handles clears +0x8c (after a held switch the release goes to ThirdPersonState's handler and +0x8c stays 1 until this handler handles the next Toggle POV event)
+    ///
+    /// Semantic, camera pass, high; ledger runtime evidence, name high; id 50730, rva 0x8f54b0.
+    /// `void (PlayerInputHandler* this, ButtonEvent* event, PlayerControlsData* data)`
+    ///
+    /// # Safety
+    /// `data` must point to what the engine expects.
+    #[inline]
+    pub unsafe fn process_button_3(&self, event: *mut classes::ButtonEvent, data: *mut c_void) { unsafe { function!(50730, (&Self, *mut classes::ButtonEvent, *mut c_void))(self, event, data) } }
+    /// `FreeCameraState::InputHandler::CanProcess`: slot 1 of the free camera handler: the event is Run (+0xb0) or one of CameraZUp, CameraZDown, WorldZUp, WorldZDown, LockToZPlane (0x3255ac8..0x3255ae8)
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 50747, rva 0x8f6100.
+    /// `bool (PlayerInputHandler* this, InputEvent* event)`
+    #[inline]
+    pub fn can_process_2(&self, event: &classes::InputEvent) -> bool { unsafe { function!(50747, (&Self, &classes::InputEvent) -> bool)(self, event) } }
+    /// `FreeCameraState::InputHandler::Destroy`: slot 0 adjustor thunk: rcx -= 0x20, jump to FreeCameraState::vdtor 0x8fc5b0
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 50864, rva 0x8fc470.
+    /// `FreeCameraState* (PlayerInputHandler* this, u32 flags)`
+    #[inline]
+    pub fn destroy_5(&self, flags: u32) -> Option<&'static classes::FreeCameraState> { unsafe { function!(50864, (&Self, u32) -> Option<&'static classes::FreeCameraState>)(self, flags) } }
+    /// `FreeCameraState::InputHandler::ProcessButton`: slot 6: CameraZUp -> state+0x44 = value; CameraZDown -> state+0x48 = -value; Run -> state+0x4e = held; WorldZUp -> state+0x4c (i16) = held ? 1 : 0; WorldZDown -> +0x4c = held ? -1 : 0; LockToZPlane -> toggle +0x4f on the press (value != 0, held time 0)
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 50748, rva 0x8f6170.
+    /// `void (PlayerInputHandler* this, ButtonEvent* event, PlayerControlsData* data)`
+    ///
+    /// # Safety
+    /// `data` must point to what the engine expects.
+    #[inline]
+    pub unsafe fn process_button_4(&self, event: *mut classes::ButtonEvent, data: *mut c_void) { unsafe { function!(50748, (&Self, *mut classes::ButtonEvent, *mut c_void))(self, event, data) } }
+    /// `HorseCameraState::InputHandler::Destroy`: slot 0 adjustor thunk: rcx -= 0x20, jump to HorseCameraState::vdtor 0x8f7650
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 50773, rva 0x8f763c.
+    /// `HorseCameraState* (PlayerInputHandler* this, u32 flags)`
+    #[inline]
+    pub fn destroy_6(&self, flags: u32) -> Option<&'static classes::HorseCameraState> { unsafe { function!(50773, (&Self, u32) -> Option<&'static classes::HorseCameraState>)(self, flags) } }
+    /// `HorseCameraState::InputHandler::ProcessButton`: slot 6: same body as the dragon handler: Toggle POV release with +0xe2 set zeroes freeRotation, else ThirdPersonState's ProcessButton
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 50763, rva 0x8f6d20.
+    /// `void (PlayerInputHandler* this, ButtonEvent* event, PlayerControlsData* data)`
+    ///
+    /// # Safety
+    /// `data` must point to what the engine expects.
+    #[inline]
+    pub unsafe fn process_button_5(&self, event: *mut classes::ButtonEvent, data: *mut c_void) { unsafe { function!(50763, (&Self, *mut classes::ButtonEvent, *mut c_void))(self, event, data) } }
+    /// `ThirdPersonState::InputHandler::CanProcess`: slot 1 of the third-person handler (shared by the 4 third-person-family states): the event is Toggle POV (+0x70), Zoom In (+0x1e8) or Zoom Out (+0x1f0)
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 50905, rva 0x8fdca0.
+    /// `bool (PlayerInputHandler* this, InputEvent* event)`
+    #[inline]
+    pub fn can_process_3(&self, event: &classes::InputEvent) -> bool { unsafe { function!(50905, (&Self, &classes::InputEvent) -> bool)(self, event) } }
+    /// `ThirdPersonState::InputHandler::Destroy`: slot 0 adjustor thunk: rcx -= 0x20, jump to ThirdPersonState::Destroy 0x55d4e0
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 33124, rva 0x55d450.
+    /// `ThirdPersonState* (PlayerInputHandler* this, u32 flags)`
+    #[inline]
+    pub fn destroy_7(&self, flags: u32) -> Option<&'static classes::ThirdPersonState> { unsafe { function!(33124, (&Self, u32) -> Option<&'static classes::ThirdPersonState>)(self, flags) } }
+    /// `ThirdPersonState::InputHandler::ProcessButton`: slot 6: Toggle POV press -> zoomSinceTogglePress (+0x8c) = 0 and togglePOVDown (+0xe2) = 1; release after fTogglePOVDelay with +0xe2 set -> zero freeRotation unless freeRotationEnabled (+0xdc), and when no zoom change happened (or bReturnTo1stPersonFromVanity with a hold over f1st3rdSwitchDelay), no knock flags, CanSwitchPOV and no flying mount: savedZoom (+0x84) = currentZoom, targetZoom (+0x74) = fMinCurrentZoom, toggleToFirstPerson (+0xdd) = 1, +0x8c = FLT_MAX; release clears +0xe2. Zoom In/Out presses (not while Toggle POV held, animatorCam or +0xdd): Zoom In at currentZoom <= fMinCurrentZoom -> savedZoom = fMinCurrentZoom and ForceFirstPerson; else targetZoom -+= fMouseWheelZoomIncrement clamped to [fMinCurrentZoom, 1]
+    ///
+    /// Semantic, camera pass, high; ledger runtime evidence, name high; id 50906, rva 0x8fdd20.
+    /// `void (PlayerInputHandler* this, ButtonEvent* event, PlayerControlsData* data)`
+    ///
+    /// # Safety
+    /// `data` must point to what the engine expects.
+    #[inline]
+    pub unsafe fn process_button_6(&self, event: *mut classes::ButtonEvent, data: *mut c_void) { unsafe { function!(50906, (&Self, *mut classes::ButtonEvent, *mut c_void))(self, event, data) } }
 }
 
 impl classes::partial::PlayerSleepWaitMovementControllerAdapter {
@@ -50599,6 +52685,30 @@ impl classes::partial::PlayerSleepWaitMovementControllerAdapter {
     pub fn as_bst_event_sink_tes_wait_stop_event(&self) -> &classes::BSTEventSink_TESWaitStopEvent { unsafe { &*core::ptr::from_ref(self).byte_add(0x18).cast() } }
 }
 
+impl classes::Projectile {
+    /// `CallVfunc5B8IfFlag1D4Bit0`: when +0x1d4 bit 0 is set, tail-calls slot 183 (+0x5b8)
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 44124, rva 0x7fadd0.
+    /// `void (Projectile* this)`
+    #[inline]
+    pub fn call_vfunc5_b8_if_flag1_d4_bit0(&self) { unsafe { function!(44124, (&Self))(self) } }
+    /// `Projectile::ClearFlagBit4AndCallSlot169`: when bit 4 of +0x1d4 is set, clears it and tail-calls the projectile's slot 169 (vtable +0x548)
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 44150, rva 0x7fc290.
+    /// `void (Projectile* this)`
+    #[inline]
+    pub fn clear_flag_bit4_and_call_slot169(&self) { unsafe { function!(44150, (&Self))(self) } }
+    /// `Projectile::UpdateAimFromPlayerCamera`: for a projectile shot by the player, re-aims it from the camera (ComputeAutoAimAngles) and updates its rotation
+    ///
+    /// Semantic, camera pass, medium; ledger semantic evidence, name medium; id 44200, rva 0x7ffec0.
+    /// `void (Projectile* this)`
+    ///
+    /// # Safety
+    /// The pass rates the signature medium.
+    #[inline]
+    pub unsafe fn update_aim_from_player_camera(&self) { unsafe { function!(44200, (&Self))(self) } }
+}
+
 impl classes::QuickSaveLoadHandler {
     /// `QuickSaveLoadHandler::CanProcess`, vtable slot 1: Quicksave/Quickload/NewSave
     ///
@@ -50614,10 +52724,52 @@ impl classes::QuickSaveLoadHandler {
     pub fn process_button_event(&self, event: &classes::ButtonEvent) -> bool { unsafe { virtual_function!(self, 7, (&Self, &classes::ButtonEvent) -> bool)(self, event) } }
 }
 
+impl classes::RaceSexCamera {
+    /// `RaceSexCamera::dtor`: TESCamera::dtor
+    ///
+    /// Semantic, camera pass, high; ledger layout_inference evidence, name high; id 52436, rva 0x972910.
+    /// `void (RaceSexCamera* this)`
+    ///
+    /// # Safety
+    /// It constructs or destroys an object in place.
+    #[inline]
+    pub unsafe fn dtor(&self) { unsafe { function!(52436, (&Self))(self) } }
+}
+
 impl classes::RaceSexMenu {
     /// The `MenuEventHandler` base at +0x30.
     #[inline]
     pub fn as_menu_event_handler(&self) -> &classes::MenuEventHandler { unsafe { &*core::ptr::from_ref(self).byte_add(0x30).cast() } }
+    /// `RaceSexMenu::SetupPlayerLookAt`: sets the player's head-tracking graph variables for the race menu camera (fRSMLookAtOnGain:Interface)
+    ///
+    /// Semantic, camera pass, high; ledger runtime evidence, name high; id 52389, rva 0x96b930.
+    /// `void (RaceSexMenu* this)`
+    #[inline]
+    pub fn setup_player_look_at(&self) { unsafe { function!(52389, (&Self))(self) } }
+    /// `RaceSexMenu::StartCameraZoom`: starts the race menu camera zoom interpolation in or out
+    ///
+    /// Semantic, camera pass, medium; ledger semantic evidence, name medium; id 52414, rva 0x971760.
+    /// `void (void* unused, bool zoomIn)`
+    ///
+    /// # Safety
+    /// The pass rates the signature medium.
+    #[inline]
+    pub unsafe fn start_camera_zoom(unused: *mut c_void, zoomIn: bool) { unsafe { function!(52414, (*mut c_void, bool))(unused, zoomIn) } }
+    /// `RaceSexMenu::StartCloseFadeOut`: invokes 'FadeOut' on the movie, freezes the current eased camera pose, queues the move to the final pose (fPlayerZoomTime:Interface) for ProcessMessage, sets +0x1a0 (closing), clears the chargen precache
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 52388, rva 0x96b7d0.
+    /// `void (RaceSexMenu* this)`
+    #[inline]
+    pub fn start_close_fade_out(&self) { unsafe { function!(52388, (&Self))(self) } }
+    /// `RaceSexMenu::ZoomPCCallback`: the movie's 'ZoomPC' call: starts g_RaceMenuCameraInterp from the current eased pose (or from the opposite end when idle) to the zoomed-in or zoomed-out pose (args[0] bool) over fPlayerZoomTime:Interface ms from g_FrameTimeMs
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 52348, rva 0x9691e0.
+    /// `void (const FxDelegateArgs* args)`
+    ///
+    /// # Safety
+    /// `args` must point to what the engine expects.
+    #[inline]
+    pub unsafe fn zoom_pc_callback(args: *const c_void) { unsafe { function!(52348, (*const c_void))(args) } }
 }
 
 impl classes::partial::RagdollFurnitureListener {
@@ -50777,12 +52929,48 @@ impl classes::RunHandler {
 }
 
 impl classes::SceneGraph {
+    /// `SceneGraph::ClearFarDistanceOverride`: +0x149 = 0
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 36843, rva 0x665710.
+    /// `void (SceneGraph* this)`
+    #[inline]
+    pub fn clear_far_distance_override(&self) { unsafe { function!(36843, (&Self))(self) } }
+    /// `SceneGraph::ClearNearDistanceOverride`: +0x148 = 0
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 36841, rva 0x6656e0.
+    /// `void (SceneGraph* this)`
+    #[inline]
+    pub fn clear_near_distance_override(&self) { unsafe { function!(36841, (&Self))(self) } }
     /// `SceneGraph::GetFarDistance`: see BSSceneGraph slot 62
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 36845, rva 0x665740.
     /// `float (SceneGraph* this)`
     #[inline]
     pub fn get_far_distance(&self) -> f32 { unsafe { function!(36845, (&Self) -> f32)(self) } }
+    /// `SceneGraph::SetFarDistanceOverride`: +0x144 = far, +0x149 = 1 (slot 62 then returns it)
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 36842, rva 0x6656f0.
+    /// `void (SceneGraph* this, float farDistance)`
+    #[inline]
+    pub fn set_far_distance_override(&self, farDistance: f32) { unsafe { function!(36842, (&Self, f32))(self, farDistance) } }
+    /// `SceneGraph::SetNearDistanceOverride`: +0x140 = *nearDistance, +0x148 = 1 (slot 63 then returns it)
+    ///
+    /// Semantic, camera pass, high; ledger runtime evidence, name high; id 36840, rva 0x6656c0.
+    /// `void (SceneGraph* this, const float* nearDistance)`
+    ///
+    /// # Safety
+    /// `nearDistance` must point to what the engine expects.
+    #[inline]
+    pub unsafe fn set_near_distance_override(&self, nearDistance: *const f32) { unsafe { function!(36840, (&Self, *const f32))(self, nearDistance) } }
+    /// `SceneGraph::ctor`: BSSceneGraph::ctor with the same arguments, SceneGraph vtable, near/far overrides +0x140 = +0x148 = 0, then SetFieldOfView(this, fDefaultFOV:Display, force true, camera null, updateLod false)
+    ///
+    /// Semantic, camera pass, high; ledger layout_inference evidence, name high; id 36838, rva 0x665640.
+    /// `SceneGraph* (SceneGraph* this, const char* namePrefix, bool isMenuScene, NiCamera* camera)`
+    ///
+    /// # Safety
+    /// It constructs or destroys an object in place.
+    #[inline]
+    pub unsafe fn ctor(&self, namePrefix: *const c_char, isMenuScene: bool, camera: *mut classes::NiCamera) -> *mut Self { unsafe { function!(36838, (&Self, *const c_char, bool, *mut classes::NiCamera) -> *mut Self)(self, namePrefix, isMenuScene, camera) } }
 }
 
 impl classes::ScreenshotHandler {
@@ -50977,6 +53165,18 @@ impl classes::Sky {
     /// `None` until the engine creates it.
     #[inline]
     pub fn singleton() -> Option<&'static Self> { unsafe { *(address!(401652) as *const Option<&'static Self>) } }
+    /// `Sky::AppendLayerNodePairs`: for each of the u16 count (+0x88)->+0x510 entries e (pointers from (+0x88)+0x10): appends e->+0x128->+0x98 and ->+0xa0 (refcounted) to the BSTArray at sky+0x280 (data), +0x288 (capacity), +0x290 (size)
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 26285, rva 0x418660.
+    /// `void (Sky* this)`
+    #[inline]
+    pub fn append_layer_node_pairs(&self) { unsafe { function!(26285, (&Self))(self) } }
+    /// `Sky::SetFlags1DCBit4`: Sky +0x1dc bit 4 = set
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 26227, rva 0x411940.
+    /// `void (Sky* sky, bool set)`
+    #[inline]
+    pub fn set_flags1_dc_bit4(&self, set: bool) { unsafe { function!(26227, (&Self, bool))(self, set) } }
     /// `Sky::Update`: sky update: hour from the GameHour global into +0x1b0, then each sky object's slot 3 (the sun at 0x412238)
     ///
     /// Semantic, frame pass, high; ledger semantic evidence, name high; id 26229, rva 0x411ec0.
@@ -51363,6 +53563,12 @@ impl classes::partial::SkyrimVM {
     /// `void (SkyrimVM* this)`
     #[inline]
     pub fn revert_2(&self) { unsafe { function!(54040, (&Self))(self) } }
+    /// `SkyrimVM::RunExtraTasklets`: when +0x210 is set: its slot 5 (+0x28) with budgetMs, or fExtraTaskletBudgetMS:Papyrus when budgetMs <= 0
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 53927, rva 0x9d8410.
+    /// `void (SkyrimVM* this, float budgetMs)`
+    #[inline]
+    pub fn run_extra_tasklets(&self, budgetMs: f32) { unsafe { function!(53927, (&Self, f32))(self, budgetMs) } }
     /// `SkyrimVM::SaveGame`: writes the VM through +0x218; error string when not frozen
     ///
     /// Semantic, save pass, high; ledger runtime evidence, name high; id 54017, rva 0x9e1b20.
@@ -51726,12 +53932,66 @@ impl classes::StatsMenu {
     /// The `MenuEventHandler` base at +0x30.
     #[inline]
     pub fn as_menu_event_handler(&self) -> &classes::MenuEventHandler { unsafe { &*core::ptr::from_ref(self).byte_add(0x30).cast() } }
+    /// `StatsMenu::BuildPerkTreeNode`: creates the 3D star and line nodes for one perk tree node (StatsNode, LineNode, fStatsStar*Increment, fStatsLineScale) and recurses to children
+    ///
+    /// Semantic, camera pass, medium; ledger semantic evidence, name medium; id 52593, rva 0x9824d0.
+    /// `bool (void* builder, BGSSkillPerkTreeNode* node)`
+    ///
+    /// # Safety
+    /// The pass rates the signature medium.
+    #[inline]
+    pub unsafe fn build_perk_tree_node(builder: *mut c_void, node: *mut classes::BGSSkillPerkTreeNode) -> bool { unsafe { function!(52593, (*mut c_void, *mut classes::BGSSkillPerkTreeNode) -> bool)(builder, node) } }
+    /// `StatsMenu::CreateCamera`: new NiCamera with viewport (0,1,1,0), near fStatsCameraNearDistance (1), far = SceneGraph slot 62, frustum right = tan(fStatsCameraFOV deg) * (0.75 / a) * 0.55, top = right * a with a = +0x314 / +0x318, placed at the model's 'CameraPosition' node (axes swapped z,y,x), oriented toward the current skill node; minNear 1.0, lodAdjust 0; stored refcounted at StatsMenu+0x40
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 52530, rva 0x97bd30.
+    /// `void (StatsMenu* this)`
+    #[inline]
+    pub fn create_camera(&self) { unsafe { function!(52530, (&Self))(self) } }
+    /// `StatsMenu::InitSkillViewTable`: fills the static per-skill view records (ID_406482..ID_406564: camera/look-at vectors and angles) used by StatsMenu::vfunc_4_sub3
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 52559, rva 0x980a30.
+    /// `void (void)`
+    #[inline]
+    pub fn init_skill_view_table() { unsafe { function!(52559, ())() } }
+    /// `StatsMenu::SetupScene`: builds the stats menu 3D scene: constellation models (AssignModelFromLookup), star scale (fStatsStarScale), materials and the intro sequence
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 52531, rva 0x97c4b0.
+    /// `void (StatsMenu* this)`
+    #[inline]
+    pub fn setup_scene(&self) { unsafe { function!(52531, (&Self))(self) } }
+    /// `StatsMenu::ctor`: constructs the StatsMenu: IMenu base, both vtables, menu controls handler, the constellation camera and look-at settings (fStatsStarCameraOffsetX/Y/Z, fStatsStarLookAtX/Y/Z, fStatsSkillsLookAtX/Y/Z), the skill view table (StatsMenu::InitSkillViewTable), music pause (uiMuteMusicPauseTime), the 3D scene mesh queue
+    ///
+    /// Semantic, camera pass, high; ledger layout_inference evidence, name high; id 52508, rva 0x975ff0.
+    /// `StatsMenu* (StatsMenu* this)`
+    ///
+    /// # Safety
+    /// It constructs or destroys an object in place.
+    #[inline]
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(52508, (&Self) -> *mut Self)(self) } }
 }
 
 impl classes::partial::StatsNode {
     /// The `BSTEventSink<BSAnimationGraphEvent>` base at +0x18.
     #[inline]
     pub fn as_bst_event_sink_bs_animation_graph_event(&self) -> &classes::BSTEventSink_BSAnimationGraphEvent { unsafe { &*core::ptr::from_ref(self).byte_add(0x18).cast() } }
+}
+
+impl classes::StopMountCameraHandler {
+    /// `StopMountCameraHandler::Destroy`, vtable slot 0: scalar deleting destructor: restores IHandlerFunctor<Actor,BSFixedStringCI>::vftable 0x1937e30, frees 0x10 when flags & 1
+    ///
+    /// Semantic, camera pass, high; called through the object's vtable.
+    /// `StopMountCameraHandler* (StopMountCameraHandler* this, u32 flags)`
+    #[inline]
+    pub fn destroy(&self, flags: u32) -> Option<&'static Self> { unsafe { virtual_function!(self, 0, (&Self, u32) -> Option<&'static Self>)(self, flags) } }
+    /// `StopMountCameraHandler::Handle`, vtable slot 1: no camera call: when the actor's sit/sleep state (+0xc8 & 0x3c000) == 0x10000, finish the furniture/mount state (UpdateFurnitureState(process, actor, null, invalid, -1) when the process (+0xf8) exists and its byte 0x137 <= 1, else ActorState slot 20 (+0xc0 vtable +0xa0)(0)); then PlaceAtDismountPosition(actor) 0x6d25c0 (also called by MountInteraction slot 15)
+    ///
+    /// Semantic, camera pass, high; called through the object's vtable.
+    /// `bool (StopMountCameraHandler* this, Actor* actor, const BSFixedStringCI* payload)`
+    ///
+    /// # Safety
+    /// `payload` must point to what the engine expects.
+    #[inline]
+    pub unsafe fn handle(&self, actor: *mut classes::Actor, payload: *const c_void) -> bool { unsafe { virtual_function!(self, 1, (&Self, *mut classes::Actor, *const c_void) -> bool)(self, actor, payload) } }
 }
 
 impl classes::SummonPlacementEffect {
@@ -51968,12 +54228,42 @@ impl classes::TESCamera {
     /// `void (TESCamera* this)`
     #[inline]
     pub fn update(&self) { unsafe { virtual_function!(self, 2, (&Self))(self) } }
+    /// `TESCamera::AddZoomInput`: TESCamera zoom input (+0x1c) += delta
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 33022, rva 0x558db0.
+    /// `void (TESCamera* this, float delta)`
+    #[inline]
+    pub fn add_zoom_input(&self, delta: f32) { unsafe { function!(33022, (&Self, f32))(self, delta) } }
+    /// `TESCamera::BeginCurrentState`: tail-calls currentState->Begin (slot 1); resets the local map view
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 16327, rva 0x2480e0.
+    /// `void (TESCamera* this)`
+    #[inline]
+    pub fn begin_current_state(&self) { unsafe { function!(16327, (&Self))(self) } }
     /// `TESCamera::SetState`: End (slot 2) on the current state, refcounted swap of +0x28, Begin (slot 1) on the new one
     ///
     /// Semantic, frame pass, high; ledger semantic evidence, name high; id 33026, rva 0x558f90.
     /// `void (TESCamera* this, TESCameraState* state)`
     #[inline]
     pub fn set_state(&self, state: &classes::TESCameraState) { unsafe { function!(33026, (&Self, &classes::TESCameraState))(self, state) } }
+    /// `TESCamera::ctor`: base constructor: vtable 0x18ebbe0, rotationInput (+0x8) and translationInput (+0x10) from zero constants (0x20ccb20, 0x20ccb24, 0x20ccc28, 0x20ccc2c, 0x20ccc30), zoomInput 0, cameraRoot null, currentState null, enabled (+0x30) = 1
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 33018, rva 0x558c80.
+    /// `TESCamera* (TESCamera* this)`
+    ///
+    /// # Safety
+    /// It constructs or destroys an object in place.
+    #[inline]
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(33018, (&Self) -> *mut Self)(self) } }
+    /// `TESCamera::dtor`: base destructor: restores TESCamera's vtable, releases currentState (refcount +8, slot 0 with 1 at zero) and cameraRoot (NiRefObject refcount +8, slot 1 at zero)
+    ///
+    /// Semantic, camera pass, high; ledger layout_inference evidence, name high; id 33019, rva 0x558cf0.
+    /// `void (TESCamera* this)`
+    ///
+    /// # Safety
+    /// It constructs or destroys an object in place.
+    #[inline]
+    pub unsafe fn dtor(&self) { unsafe { function!(33019, (&Self))(self) } }
 }
 
 impl classes::TESCameraState {
@@ -52013,33 +54303,24 @@ impl classes::TESCameraState {
     /// `out` must point to what the engine expects.
     #[inline]
     pub unsafe fn get_translation(&self, out: *mut c_void) { unsafe { virtual_function!(self, 5, (&Self, *mut c_void))(self, out) } }
-    /// `TESCameraState::LoadGame`, vtable slot 7: reads them back (base: nothing)
+    /// `TESCameraState::LoadGame`, vtable slot 7: base: does nothing
     ///
-    /// Semantic, frame pass, medium; called through the object's vtable.
+    /// Semantic, frame pass, high; called through the object's vtable.
     /// `void (TESCameraState* this, BGSLoadFormBuffer* buffer)`
-    ///
-    /// # Safety
-    /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn load_game(&self, buffer: *mut classes::BGSLoadFormBuffer) { unsafe { virtual_function!(self, 7, (&Self, *mut classes::BGSLoadFormBuffer))(self, buffer) } }
-    /// `TESCameraState::Revert`, vtable slot 8: resets the state to its defaults (base: nothing)
+    pub fn load_game(&self, buffer: &classes::BGSLoadFormBuffer) { unsafe { virtual_function!(self, 7, (&Self, &classes::BGSLoadFormBuffer))(self, buffer) } }
+    /// `TESCameraState::Revert`, vtable slot 8: base: does nothing
     ///
-    /// Semantic, frame pass, medium; called through the object's vtable.
-    /// `void (TESCameraState* this)`
-    ///
-    /// # Safety
-    /// The pass rates the signature medium.
+    /// Semantic, frame pass, high; called through the object's vtable.
+    /// `void (TESCameraState* this, BGSLoadFormBuffer* buffer)`
     #[inline]
-    pub unsafe fn revert(&self) { unsafe { virtual_function!(self, 8, (&Self))(self) } }
-    /// `TESCameraState::SaveGame`, vtable slot 6: writes the state's persistent fields (base: nothing)
+    pub fn revert(&self, buffer: &classes::BGSLoadFormBuffer) { unsafe { virtual_function!(self, 8, (&Self, &classes::BGSLoadFormBuffer))(self, buffer) } }
+    /// `TESCameraState::SaveGame`, vtable slot 6: base: does nothing
     ///
-    /// Semantic, frame pass, medium; called through the object's vtable.
+    /// Semantic, frame pass, high; called through the object's vtable.
     /// `void (TESCameraState* this, BGSSaveFormBuffer* buffer)`
-    ///
-    /// # Safety
-    /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn save_game(&self, buffer: *mut classes::BGSSaveFormBuffer) { unsafe { virtual_function!(self, 6, (&Self, *mut classes::BGSSaveFormBuffer))(self, buffer) } }
+    pub fn save_game(&self, buffer: &classes::BGSSaveFormBuffer) { unsafe { virtual_function!(self, 6, (&Self, &classes::BGSSaveFormBuffer))(self, buffer) } }
     /// `TESCameraState::Update`, vtable slot 3: per-frame update: computes the pose, writes it to camera->cameraRoot's local transform and updates the node; may return the next state in *next (base: clears *next)
     ///
     /// Semantic, frame pass, high; called through the object's vtable.
@@ -52501,6 +54782,15 @@ impl classes::TESFullName {
     pub fn get_full_name_length(&self) -> u32 { unsafe { virtual_function!(self, 4, (&Self) -> u32)(self) } }
 }
 
+impl classes::TESFurniture {
+    /// `TESFurniture::Activate`, vtable slot 55: furniture activation: the player sits (PlayerCamera::EnterFurnitureCamera), a bed opens the sleep menu (or the serve-sentence question), a workbench queues its menu, or the default action 0x37 runs
+    ///
+    /// Semantic, camera pass, high; called through the object's vtable.
+    /// `bool (TESFurniture* this, TESObjectREFR* targetRef, TESObjectREFR* activator, u8 activateFlag, TESBoundObject* object, i32 count)`
+    #[inline]
+    pub fn activate(&self, targetRef: &classes::TESObjectREFR, activator: &classes::TESObjectREFR, activateFlag: u8, object: &classes::TESBoundObject, count: i32) -> bool { unsafe { virtual_function!(self, 55, (&Self, &classes::TESObjectREFR, &classes::TESObjectREFR, u8, &classes::TESBoundObject, i32) -> bool)(self, targetRef, activator, activateFlag, object, count) } }
+}
+
 impl classes::TESGrass {
     /// The `BaseFormComponent` base at +0x30.
     #[inline]
@@ -52508,6 +54798,15 @@ impl classes::TESGrass {
     /// The `TESModel` base at +0x30.
     #[inline]
     pub fn as_tes_model(&self) -> &classes::TESModel { unsafe { &*core::ptr::from_ref(self).byte_add(0x30).cast() } }
+}
+
+impl classes::TESImageSpaceModifiableForm {
+    /// `BGSCameraShot::TESImageSpaceModifiableForm_Destroy`: this-adjusting thunk (this - 0x48) to BGSCameraShot::Destroy
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 20714, rva 0x31a0b0.
+    /// `BGSCameraShot* (TESImageSpaceModifiableForm* this, u32 flags)`
+    #[inline]
+    pub fn tes_image_space_modifiable_form_destroy(&self, flags: u32) -> Option<&'static classes::BGSCameraShot> { unsafe { function!(20714, (&Self, u32) -> Option<&'static classes::BGSCameraShot>)(self, flags) } }
 }
 
 impl classes::TESImageSpaceModifier {
@@ -52556,6 +54855,15 @@ impl classes::TESLevSpell {
     /// The `TESLeveledList` base at +0x30.
     #[inline]
     pub fn as_tes_leveled_list(&self) -> &classes::TESLeveledList { unsafe { &*core::ptr::from_ref(self).byte_add(0x30).cast() } }
+}
+
+impl classes::TESModel {
+    /// `BGSCameraShot::TESModel_Destroy`: this-adjusting thunk (this - 0x20) to BGSCameraShot::Destroy
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 20713, rva 0x31a0a4.
+    /// `BGSCameraShot* (TESModel* this, u32 flags)`
+    #[inline]
+    pub fn tes_model_destroy(&self, flags: u32) -> Option<&'static classes::BGSCameraShot> { unsafe { function!(20713, (&Self, u32) -> Option<&'static classes::BGSCameraShot>)(self, flags) } }
 }
 
 impl classes::TESNPC {
@@ -53372,6 +55680,18 @@ impl classes::TESWorldSpace {
     /// The `TESModel` base at +0x30.
     #[inline]
     pub fn as_tes_model(&self) -> &classes::TESModel { unsafe { &*core::ptr::from_ref(self).byte_add(0x30).cast() } }
+    /// `TESWorldSpace::GetClimate`: the worldspace's climate, walking up the parent worldspace (+0x158) while flag 0x10 of +0xa2 (use parent climate) is set
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 20468, rva 0x30dad0.
+    /// `TESClimate* (TESWorldSpace* this)`
+    #[inline]
+    pub fn get_climate(&self) -> Option<&'static classes::TESClimate> { unsafe { function!(20468, (&Self) -> Option<&'static classes::TESClimate>)(self) } }
+    /// `TESWorldSpace::IsNoGrass`: bit 7 of the worldspace flags byte +0xa0; when set the player's cell change disables grass drawing
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 20482, rva 0x30dde0.
+    /// `bool (TESWorldSpace* this)`
+    #[inline]
+    pub fn is_no_grass(&self) -> bool { unsafe { function!(20482, (&Self) -> bool)(self) } }
 }
 
 impl classes::TaskQueueHolder {
@@ -53395,15 +55715,12 @@ impl classes::ThirdPersonState {
     /// The `PlayerInputHandler` base at +0x20.
     #[inline]
     pub fn as_player_input_handler(&self) -> &classes::PlayerInputHandler { unsafe { &*core::ptr::from_ref(self).byte_add(0x20).cast() } }
-    /// `ThirdPersonState::IsFreeLookActive`, vtable slot 12: +0xe0 || +0xdc || PlayerControls+0x4b
+    /// `ThirdPersonState::IsFreeLookActive`, vtable slot 12: animatorCam || freeRotationEnabled || PlayerControls+0x4b
     ///
-    /// Semantic, frame pass, medium; called through the object's vtable.
+    /// Semantic, frame pass, high; called through the object's vtable.
     /// `bool (ThirdPersonState* this)`
-    ///
-    /// # Safety
-    /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn is_free_look_active(&self) -> bool { unsafe { virtual_function!(self, 12, (&Self) -> bool)(self) } }
+    pub fn is_free_look_active(&self) -> bool { unsafe { virtual_function!(self, 12, (&Self) -> bool)(self) } }
     /// `ThirdPersonState::ProcessLookInput`, vtable slot 15: free rotation integration (fFreeRotationSpeed, real delta) and the pitch zoom offset
     ///
     /// Semantic, frame pass, high; called through the object's vtable.
@@ -53425,15 +55742,12 @@ impl classes::ThirdPersonState {
     /// `void (ThirdPersonState* this, bool combat)`
     #[inline]
     pub fn set_combat_offsets(&self, combat: bool) { unsafe { virtual_function!(self, 11, (&Self, bool))(self, combat) } }
-    /// `ThirdPersonState::SetFreeRotationMode`, vtable slot 13: enables free rotation when allowed and the target is idle; on disabling, turns the actor by freeRotation (0x674210 heading, 0x693050 pitch) and clears it
+    /// `ThirdPersonState::SetFreeRotationMode`, vtable slot 13: free rotation on only while allowed and the target stands still
     ///
-    /// Semantic, frame pass, medium; called through the object's vtable.
+    /// Semantic, frame pass, high; called through the object's vtable.
     /// `void (ThirdPersonState* this, bool allow)`
-    ///
-    /// # Safety
-    /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn set_free_rotation_mode(&self, allow: bool) { unsafe { virtual_function!(self, 13, (&Self, bool))(self, allow) } }
+    pub fn set_free_rotation_mode(&self, allow: bool) { unsafe { virtual_function!(self, 13, (&Self, bool))(self, allow) } }
     /// `ThirdPersonState::SetTargetHandle`, vtable slot 9: empty in the base; Horse/Dragon store their mount
     ///
     /// Semantic, frame pass, high; called through the object's vtable.
@@ -53449,24 +55763,24 @@ impl classes::ThirdPersonState {
     /// `void (ThirdPersonState* this)`
     #[inline]
     pub fn update_rotation(&self) { unsafe { virtual_function!(self, 14, (&Self))(self) } }
-    /// `ThirdPersonState::ApplyAnimatedNode`: blends the camera toward animatedNode's local transform by animatedBlend
+    /// `ThirdPersonState::ApplyAnimatedNode`: animatedBlend (+0xcc) += 2 * g_FrameDelta * animatedBlendRate (+0xd0), clamped to [0,1]; with an animatedNode and blend > 0 copies its local rotation (+0x48 -> quaternion +0xb0) and translation (+0x6c -> +0xc0); position += rotation * (blend * translation); rotation = rotation * slerp(identity, animatedRotation, blend)
     ///
-    /// Semantic, frame pass, medium; ledger semantic evidence, name medium; id 50921, rva 0x8fee70.
+    /// Semantic, frame pass, high; ledger semantic evidence, name high; id 50921, rva 0x8fee70.
     /// `void (ThirdPersonState* this, NiPoint3* position, NiMatrix3* rotation)`
     ///
     /// # Safety
-    /// The pass rates the signature medium.
+    /// `position`, `rotation` must point to what the engine expects.
     #[inline]
     pub unsafe fn apply_animated_node(&self, position: *mut c_void, rotation: *mut c_void) { unsafe { function!(50921, (&Self, *mut c_void, *mut c_void))(self, position, rotation) } }
-    /// `ThirdPersonState::ComputePosition`: position = target 3D world translation (slot 111 node) [+ eye height + zoom distance + rotated offset when useShoulderOffsets], caster collision 0x8fa5d0, collision recovery
+    /// `ThirdPersonState::ComputePosition`: position += target node world translation (target vtable +0x378 node, else reference position); with useShoulderOffsets: z += eye height (0x687450), d = fVanityModeMinDist + (fVanityModeMaxDist - fVanityModeMinDist) * currentZoom (155..600; on a flying mount min = fVanityModeMinDistFly 1200, max *= fVanityModeMaxDistFlyMult 4), position += R * (offset.x, offset.y - d - pitchZoomOffset, offset.z) with R's columns right, forward, up; ComputeCameraCasterCollision(camera, &position, true) at +0x1ce; collision recovery: after a hit, blends from the hit position back at fCollisionRecoverySpeed * g_FrameDelta once the camera moved more than fCollisionRecoveryMinDist
     ///
-    /// Semantic, frame pass, medium; ledger semantic evidence, name medium; id 50911, rva 0x8fe3c0.
-    /// `void (ThirdPersonState* this, NiMatrix3* rotation)`
+    /// Semantic, frame pass, high; ledger semantic evidence, name high; id 50911, rva 0x8fe3c0.
+    /// `void (ThirdPersonState* this, const NiMatrix3* rotation)`
     ///
     /// # Safety
-    /// The pass rates the signature medium.
+    /// `rotation` must point to what the engine expects.
     #[inline]
-    pub unsafe fn compute_position(&self, rotation: *mut c_void) { unsafe { function!(50911, (&Self, *mut c_void))(self, rotation) } }
+    pub unsafe fn compute_position(&self, rotation: *const c_void) { unsafe { function!(50911, (&Self, *const c_void))(self, rotation) } }
     /// `ThirdPersonState::ResetZoom`: currentOffset = targetOffset; savedZoom = fMinCurrentZoom when useMin; targetZoom = savedZoom; currentZoom = fMinCurrentZoom; targetZoom = currentZoom unless keepTarget
     ///
     /// Semantic, frame pass, high; ledger semantic evidence, name high; id 50900, rva 0x8fd920.
@@ -53479,15 +55793,36 @@ impl classes::ThirdPersonState {
     /// `void (ThirdPersonState* this)`
     #[inline]
     pub fn update_chase(&self) { unsafe { function!(50913, (&Self))(self) } }
-    /// `ThirdPersonState::UpdateTargetPose`: slot 14 rotation and the collision position of state 9 while the transition is current
+    /// `ThirdPersonState::UpdateCollisionRecovery`: collides the frame position (+0x40) and blends it back after a hit: on a hit recoveryStart (+0x90) = position and recoveryBlend (+0x9c) = 0; else while the blend is not FLT_MAX and |position - start|^2 > fCollisionRecoveryMinDist the blend grows by fCollisionRecoverySpeed * g_FrameDelta and position = start + (position - start) * blend; at 1 (or within the distance) the blend becomes FLT_MAX
     ///
-    /// Semantic, frame pass, medium; ledger semantic evidence, name medium; id 50902, rva 0x8fd9d0.
+    /// Semantic, camera pass, high; ledger runtime evidence, name high; id 50920, rva 0x8fed10.
+    /// `void (ThirdPersonState* this)`
+    #[inline]
+    pub fn update_collision_recovery(&self) { unsafe { function!(50920, (&Self))(self) } }
+    /// `ThirdPersonState::UpdateTargetPose`: slot 14 (UpdateRotation), slot 4 into a quaternion -> matrix, position = zero, ComputePosition(this, matrix)
+    ///
+    /// Semantic, frame pass, high; ledger semantic evidence, name high; id 50902, rva 0x8fd9d0.
+    /// `void (ThirdPersonState* this)`
+    #[inline]
+    pub fn update_target_pose(&self) { unsafe { function!(50902, (&Self))(self) } }
+    /// `ThirdPersonState::ctor`: base fields (+0x8 0, camera, id), handler enabled, vtables, every field to its default; targetOffset = (fOverShoulderPosX:Camera, 0, fOverShoulderPosZ:Camera); freeRotationEnabled 1, useShoulderOffsets 1
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 50893, rva 0x8fd210.
+    /// `ThirdPersonState* (ThirdPersonState* this, PlayerCamera* camera, u32 id)`
+    ///
+    /// # Safety
+    /// It constructs or destroys an object in place.
+    #[inline]
+    pub unsafe fn ctor(&self, camera: *mut classes::PlayerCamera, id: u32) -> *mut Self { unsafe { function!(50893, (&Self, *mut classes::PlayerCamera, u32) -> *mut Self)(self, camera, id) } }
+    /// `ThirdPersonState::dtor`: destructor body: vtables to ThirdPersonState's, releases animatedNodeName (BSFixedString) and animatedNode (NiPointer), then handler vtable = PlayerInputHandler::vftable, vtable = TESCameraState::vftable
+    ///
+    /// Semantic, camera pass, high; ledger layout_inference evidence, name high; id 33122, rva 0x55d3d0.
     /// `void (ThirdPersonState* this)`
     ///
     /// # Safety
-    /// The pass rates the signature medium.
+    /// It constructs or destroys an object in place.
     #[inline]
-    pub unsafe fn update_target_pose(&self) { unsafe { function!(50902, (&Self))(self) } }
+    pub unsafe fn dtor(&self) { unsafe { function!(33122, (&Self))(self) } }
 }
 
 impl classes::TogglePOVHandler {
@@ -53529,6 +55864,18 @@ impl classes::TrainingMenu {
     pub fn as_bst_event_sink_menu_open_close_event(&self) -> &classes::BSTEventSink_MenuOpenCloseEvent { unsafe { &*core::ptr::from_ref(self).byte_add(0x30).cast() } }
 }
 
+impl classes::TransitionState {
+    /// `TransitionState::SetTarget`: targetState = *target; toRotation/toPosition from the target's slots 4/5; durationMs
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 33030, rva 0x5590f0.
+    /// `void (TransitionState* this, BSTSmartPointer<TESCameraState>* target, float durationMs)`
+    ///
+    /// # Safety
+    /// `target` must point to what the engine expects.
+    #[inline]
+    pub unsafe fn set_target(&self, target: *mut c_void, durationMs: f32) { unsafe { function!(33030, (&Self, *mut c_void, f32))(self, target, durationMs) } }
+}
+
 impl classes::TweenMenu {
     /// `TweenMenu::PostDisplay`, vtable slot 6: PlayerCamera::Update, then movie display
     ///
@@ -53542,6 +55889,42 @@ impl classes::TweenMenu {
     /// `IMenu* ()`
     #[inline]
     pub fn create() -> Option<&'static classes::IMenu> { unsafe { function!(52723, () -> Option<&'static classes::IMenu>)() } }
+    /// `TweenMenu::OnMenuSelected`: opens the menu for the tween selection (cases 1..4: the menus behind the UI string table entries it queues); references g_PlayerCamera_ptr
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 52718, rva 0x988ba0.
+    /// `void (TweenMenu* this, i32 selection)`
+    #[inline]
+    pub fn on_menu_selected(&self, selection: i32) { unsafe { function!(52718, (&Self, i32))(self, selection) } }
+}
+
+impl classes::TweenMenuCameraState {
+    /// `TweenMenuCameraState::BeginClosing`: once: targetAngles (+0x3c) = (0, 0), targetZoomFOV (+0x48) = 0, closing (+0x4c) = 1
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 50928, rva 0x8ff880.
+    /// `void (TweenMenuCameraState* this)`
+    #[inline]
+    pub fn begin_closing(&self) { unsafe { function!(50928, (&Self))(self) } }
+    /// `TweenMenuCameraState::SetDirection`: targetAngles (+0x3c, +0x40): 0 -> (0,0); 1 -> (-fTweenCamRotAngle, 0); 2 -> (0, -angle); 3 -> (0, +angle); 4 -> (+angle, 0); 5 -> from baseRotation's pitch p = asin(m[2][1]) (clamped): (currentAngles.x, 0) when pi/4 - p <= p, else (-(pi/4 - p), 0)
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 50927, rva 0x8ff750.
+    /// `void (TweenMenuCameraState* this, u32 direction)`
+    #[inline]
+    pub fn set_direction(&self, direction: u32) { unsafe { function!(50927, (&Self, u32))(self, direction) } }
+    /// `TweenMenuCameraState::StepAnglesAndZoom`: currentAngles (+0x34) step toward targetAngles at fTweenCamRotSpeed:Camera (fTweenCamRotClosingSpeed while closing +0x4c) * real delta, snapping when the step overshoots; currentZoomFOV (+0x44) toward targetZoomFOV (+0x48) at fTweenCamZoomSpeed:Camera
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 50930, rva 0x8ff8c0.
+    /// `void (TweenMenuCameraState* this)`
+    #[inline]
+    pub fn step_angles_and_zoom(&self) { unsafe { function!(50930, (&Self))(self) } }
+    /// `TweenMenuCameraState::ctor`: base fields, vtable, baseRotation identity, angles zero, zoom FOVs 0, closing 0
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 50922, rva 0x8ff2a0.
+    /// `TweenMenuCameraState* (TweenMenuCameraState* this, PlayerCamera* camera, u32 id)`
+    ///
+    /// # Safety
+    /// It constructs or destroys an object in place.
+    #[inline]
+    pub unsafe fn ctor(&self, camera: *mut classes::PlayerCamera, id: u32) -> *mut Self { unsafe { function!(50922, (&Self, *mut classes::PlayerCamera, u32) -> *mut Self)(self, camera, id) } }
 }
 
 impl classes::UIMessageQueue {
@@ -53595,6 +55978,42 @@ impl classes::UserEventNames {
     /// It constructs or destroys an object in place.
     #[inline]
     pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(68736, (&Self) -> *mut Self)(self) } }
+}
+
+impl classes::VATSCameraState {
+    /// `VATSCameraState::SetAngles`: stores the VATS camera's Euler angles at +0x20/+0x24/+0x28
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 50938, rva 0x900280.
+    /// `void (VATSCameraState* this, float x, float y, float z)`
+    #[inline]
+    pub fn set_angles(&self, x: f32, y: f32, z: f32) { unsafe { function!(50938, (&Self, f32, f32, f32))(self, x, y, z) } }
+    /// `VATSCameraState::SetPosition`: copies the position into +0x2c..+0x34 (the VATS camera position slot 5 returns)
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 50939, rva 0x9002a0.
+    /// `void (VATSCameraState* this, const NiPoint3* position)`
+    ///
+    /// # Safety
+    /// `position` must point to what the engine expects.
+    #[inline]
+    pub unsafe fn set_position(&self, position: *const c_void) { unsafe { function!(50939, (&Self, *const c_void))(self, position) } }
+    /// `VATSCameraState::ctor`: refCount 0, vtable 0x196ea58, camera, id, rotationEuler = (0,0,0) from 0x20ccc28, position = 0
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 50933, rva 0x8ffa20.
+    /// `VATSCameraState* (VATSCameraState* this, TESCamera* camera, u32 id)`
+    ///
+    /// # Safety
+    /// It constructs or destroys an object in place.
+    #[inline]
+    pub unsafe fn ctor(&self, camera: *mut classes::TESCamera, id: u32) -> *mut Self { unsafe { function!(50933, (&Self, *mut classes::TESCamera, u32) -> *mut Self)(self, camera, id) } }
+}
+
+impl classes::ZeroPitchHandler {
+    /// `ZeroPitchHandler::Handle`: animation event handler: PlayerCamera::SetPitchZero(camera, true) (starts the pitch-to-zero blend, PlayerCamera +0x158/+0x15c/+0x164); returns true
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 42901, rva 0x7cf480.
+    /// `bool (ZeroPitchHandler* this, Actor* actor)`
+    #[inline]
+    pub fn handle(&self, actor: &classes::Actor) -> bool { unsafe { function!(42901, (&Self, &classes::Actor) -> bool)(self, actor) } }
 }
 
 impl classes::_anon_7C6875DF__OldMessageBoxCallback {
@@ -54806,6 +57225,18 @@ impl classes::bhkCharRigidBodyController {
     pub fn as_hkp_character_rigid_body_listener(&self) -> &classes::hkpCharacterRigidBodyListener { unsafe { &*core::ptr::from_ref(self).byte_add(0x330).cast() } }
 }
 
+impl classes::partial::bhkCharacterController {
+    /// `bhkCharacterController::SetDistanceToCamera`: +0x29c = max(0, |cameraPosition - actor3D world bound centre (+0xe4)| - bound radius (+0xf0)); nothing when actor3D is null
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 78274, rva 0x1064c90.
+    /// `void (bhkCharacterController* this, const NiPoint3* cameraPosition, NiAVObject* actor3D)`
+    ///
+    /// # Safety
+    /// `cameraPosition` must point to what the engine expects.
+    #[inline]
+    pub unsafe fn set_distance_to_camera(&self, cameraPosition: *const c_void, actor3D: *mut classes::NiAVObject) { unsafe { function!(78274, (&Self, *const c_void, *mut classes::NiAVObject))(self, cameraPosition, actor3D) } }
+}
+
 impl classes::partial::bhkThreadMemorySource {
     /// The `IMemoryHeap` base at +0x8.
     #[inline]
@@ -55169,6 +57600,66 @@ impl classes::partial::hkpEntityEntityBroadPhaseListener {
     pub fn as_hkp_broad_phase_listener(&self) -> &classes::hkpBroadPhaseListener { unsafe { &*core::ptr::from_ref(self).byte_add(0x10).cast() } }
 }
 
+impl classes::partial::hkpFirstPersonGun {
+    /// `hkpFirstPersonGun::Slot3_NoOp`: slot 3: empty (ret)
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 62785, rva 0xba6f50.
+    /// `void (hkpFirstPersonGun* this)`
+    #[inline]
+    pub fn slot3_no_op(&self) { unsafe { function!(62785, (&Self))(self) } }
+    /// `hkpFirstPersonGun::Slot4_NoOp`: slot 4: empty (ret)
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 62784, rva 0xba6f40.
+    /// `void (hkpFirstPersonGun* this)`
+    #[inline]
+    pub fn slot4_no_op(&self) { unsafe { function!(62784, (&Self))(self) } }
+    /// `hkpFirstPersonGun::Slot5_NoOp`: slot 5: empty (ret)
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 62787, rva 0xba6f70.
+    /// `void (hkpFirstPersonGun* this)`
+    #[inline]
+    pub fn slot5_no_op(&self) { unsafe { function!(62787, (&Self))(self) } }
+    /// `hkpFirstPersonGun::Slot8_NoOp`: slot 8: empty (ret) in the base
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 62786, rva 0xba6f60.
+    /// `void (hkpFirstPersonGun* this)`
+    #[inline]
+    pub fn slot8_no_op(&self) { unsafe { function!(62786, (&Self))(self) } }
+    /// `hkpFirstPersonGun::ctor`: default constructor: memSizeAndFlags +8 = 0x1ffff, vtable, +0x10 = 0, name +0x18 = "", +0x20 = 0x71, listener array +0x28 (data null, size +0x30 = 0, capacity +0x34 = 0x80000000)
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 62776, rva 0xba6a70.
+    /// `hkpFirstPersonGun* (hkpFirstPersonGun* this)`
+    ///
+    /// # Safety
+    /// It constructs or destroys an object in place.
+    #[inline]
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(62776, (&Self) -> *mut Self)(self) } }
+    /// `hkpFirstPersonGun::ctor_finish`: serialization constructor: vtable, name pointer fix-up, empty listener array; +0x10 = 0 only when finishing != 0
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 62777, rva 0xba6ad0.
+    /// `hkpFirstPersonGun* (hkpFirstPersonGun* this, i32 finishing)`
+    #[inline]
+    pub fn ctor_finish(&self, finishing: i32) -> Option<&'static Self> { unsafe { function!(62777, (&Self, i32) -> Option<&'static Self>)(self, finishing) } }
+    /// `hkpFirstPersonGun::dtor`: releases every listener (+0x28[i], ReleaseRefCounted16UnderLock), frees the array through the container heap allocator when owned, clears the name, resets the vtable to hkBaseObject
+    ///
+    /// Semantic, camera pass, high; ledger layout_inference evidence, name high; id 62778, rva 0xba6b20.
+    /// `void (hkpFirstPersonGun* this)`
+    ///
+    /// # Safety
+    /// It constructs or destroys an object in place.
+    #[inline]
+    pub unsafe fn dtor(&self) { unsafe { function!(62778, (&Self))(self) } }
+    /// `hkpFirstPersonGun::vdtor`: slot 0: dtor, then when flags bit 0: frees 0x38 bytes (memory router of the thread, or the default heap with bit 2)
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 62783, rva 0xba6ec0.
+    /// `hkpFirstPersonGun* (hkpFirstPersonGun* this, u32 flags)`
+    ///
+    /// # Safety
+    /// It constructs or destroys an object in place.
+    #[inline]
+    pub unsafe fn vdtor(&self, flags: u32) -> *mut Self { unsafe { function!(62783, (&Self, u32) -> *mut Self)(self, flags) } }
+}
+
 impl classes::partial::hkpGunProjectile {
     /// The `hkpContactListener` base at +0x10.
     #[inline]
@@ -55226,6 +57717,18 @@ impl classes::partial::hkpTriggerVolume {
     pub fn as_hkp_world_post_simulation_listener(&self) -> &classes::hkpWorldPostSimulationListener { unsafe { &*core::ptr::from_ref(self).byte_add(0x18).cast() } }
 }
 
+impl classes::partial::hkxCamera {
+    /// `hkxCamera::vdtor`: slot 0: resets the vtable to hkBaseObject; when flags bit 0: frees 0x50 bytes (memory router, or the default heap with bit 2)
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 65443, rva 0xc48720.
+    /// `hkxCamera* (hkxCamera* this, u64 flags)`
+    ///
+    /// # Safety
+    /// It constructs or destroys an object in place.
+    #[inline]
+    pub unsafe fn vdtor(&self, flags: u64) -> *mut Self { unsafe { function!(65443, (&Self, u64) -> *mut Self)(self, flags) } }
+}
+
 /// Functions of no laid-out class; `super::functions` re-exports them.
 pub mod functions {
     use super::*;
@@ -55239,6 +57742,12 @@ pub mod functions {
 /// `movie`, `env`, `asValue`, `out` must point to what the engine expects.
 #[inline]
 pub unsafe fn as_value_to_g_fx_value(movie: *mut classes::GFxMovieView, env: *mut c_void, asValue: *const c_void, out: *mut classes::GFxValue) { unsafe { function!(82214, (*mut classes::GFxMovieView, *mut c_void, *const c_void, *mut classes::GFxValue))(movie, env, asValue, out) } }
+/// `ActivateReference`: activates a reference: resolves an activate parent, sends TESActivateEvent (unless defaultProcessingOnly), then runs the base object's Activate (slot 55) and ActivateMountableActor
+///
+/// Semantic, camera pass, high; ledger semantic evidence, name high; id 19796, rva 0x2f11b0.
+/// `bool (TESObjectREFR* target, TESObjectREFR* activator, u8 activateFlag, TESBoundObject* object, i32 count, bool defaultProcessingOnly)`
+#[inline]
+pub fn activate_reference(target: &classes::TESObjectREFR, activator: &classes::TESObjectREFR, activateFlag: u8, object: &classes::TESBoundObject, count: i32, defaultProcessingOnly: bool) -> bool { unsafe { function!(19796, (&classes::TESObjectREFR, &classes::TESObjectREFR, u8, &classes::TESBoundObject, i32, bool) -> bool)(target, activator, activateFlag, object, count, defaultProcessingOnly) } }
 /// `ActorItemEquipped::GetEventSource`: the one source of ActorItemEquipped::Event events
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 38337, rva 0x6c0ae0.
@@ -55299,6 +57808,15 @@ pub unsafe fn actor_kill__unregister_sink(sink: *mut classes::partial::BSTEventS
 /// `void (NiNode* node, float sortKey)`
 #[inline]
 pub fn add_focus_shadow_node(node: &classes::NiNode, sortKey: f32) { unsafe { function!(36755, (&classes::NiNode, f32))(node, sortKey) } }
+/// `AllocateStackFrame`: finds (size + 4) * 0x10 bytes in the last page or a new page from the page policy, InitStackFrameAndClearVariables, frame+8 = top, top = frame, frameCount + 1; 0 ok, 1 failed, 2 retry later
+///
+/// Semantic, vmstack pass, high; ledger semantic evidence, name high; id 104495, rva 0x14a0620.
+/// `u8 (BSScript::Stack* stack, u32 variableCount, bool flag)`
+///
+/// # Safety
+/// `stack` must point to what the engine expects.
+#[inline]
+pub unsafe fn allocate_stack_frame(stack: *mut classes::BSScript__Stack, variableCount: u32, flag: bool) -> u8 { unsafe { function!(104495, (*mut classes::BSScript__Stack, u32, bool) -> u8)(stack, variableCount, flag) } }
 /// `AppendRenderPass`: allocates a pass and appends it to a property's pass list (+0x28 chain)
 ///
 /// Semantic, frame pass, high; ledger semantic evidence, name high; id 105528, rva 0x14e78e0.
@@ -55308,9 +57826,18 @@ pub fn add_focus_shadow_node(node: &classes::NiNode, sortKey: f32) { unsafe { fu
 /// `list` must point to what the engine expects, and the result is an untyped pointer.
 #[inline]
 pub unsafe fn append_render_pass(list: *mut *mut c_void, shader: *mut classes::BSShader, property: *mut classes::BSShaderProperty, geometry: *mut classes::BSGeometry, techniqueId: u32, numLights: u8, l0: *mut classes::BSLight, l1: *mut classes::BSLight, l2: *mut classes::BSLight, l3: *mut classes::BSLight) -> *mut c_void { unsafe { function!(105528, (*mut *mut c_void, *mut classes::BSShader, *mut classes::BSShaderProperty, *mut classes::BSGeometry, u32, u8, *mut classes::BSLight, *mut classes::BSLight, *mut classes::BSLight, *mut classes::BSLight) -> *mut c_void)(list, shader, property, geometry, techniqueId, numLights, l0, l1, l2, l3) } }
+/// `ApplyActionAnimEventEffects`: after an action's anim event: sheathe/draw, kill moves ('pa_Kill'), weapon and mount side effects on the action's subject actor
+///
+/// Semantic, camera pass, medium; ledger semantic evidence, name medium; id 39004, rva 0x6e2250.
+/// `void (void* owner, BGSActionData* action, bool performed)`
+///
+/// # Safety
+/// The pass rates the signature medium.
+#[inline]
+pub unsafe fn apply_action_anim_event_effects(owner: *mut c_void, action: *mut classes::BGSActionData, performed: bool) { unsafe { function!(39004, (*mut c_void, *mut classes::BGSActionData, bool))(owner, action, performed) } }
 /// `ApplyClampedPitchDelta`: as SetClampedPitch with actor+0x48 + pitchDelta; the 'ja' at +0x7f
 ///
-/// Semantic, camera pass, high; ledger semantic evidence, name high; id 37611, rva 0x693050.
+/// Semantic, camera pass, high; ledger runtime evidence, name high; id 37611, rva 0x693050.
 /// `void (Actor* actor, float pitchDelta)`
 #[inline]
 pub fn apply_clamped_pitch_delta(actor: &classes::Actor, pitchDelta: f32) { unsafe { function!(37611, (&classes::Actor, f32))(actor, pitchDelta) } }
@@ -55353,15 +57880,18 @@ pub unsafe fn apply_settings_defaults() { unsafe { function!(36622, ())() } }
 /// `void (void)`
 #[inline]
 pub fn apply_viewport_depth_range() { unsafe { function!(77241, ())() } }
-/// `ApplyWorldFOV`: unless the byte global ID_415039 is set, sets the scene graph camera's FOV to fov + the camera-anim offset 0x3436028 (0x1516f90) and the global tangent
+/// `ApplyWorldFOV`: unless the byte 0x3436310 is set: BSSceneGraph::SetFieldOfView(g_SceneGraph, fov + g_CameraFOVOffset, force false, camera null, updateLod true) and SetGlobalTanFromAngle(fov + g_CameraFOVOffset)
 ///
-/// Semantic, frame pass, medium; ledger semantic evidence, name medium; id 107127, rva 0x1537a20.
+/// Semantic, frame pass, high; ledger semantic evidence, name high; id 107127, rva 0x1537a20.
 /// `void (float fov)`
-///
-/// # Safety
-/// The pass rates the signature medium.
 #[inline]
-pub unsafe fn apply_world_fov(fov: f32) { unsafe { function!(107127, (f32))(fov) } }
+pub fn apply_world_fov(fov: f32) { unsafe { function!(107127, (f32))(fov) } }
+/// `ApproachWithAccelerationLimit`: one step of an acceleration- and speed-limited approach of current toward target: picks the accelerate/cruise/brake phase from the stopping distance, clamps the new velocity to +-acceleration*dt around velocity and to +-maxSpeed, returns current + velocity' * dt (velocity unchanged when within both tolerances)
+///
+/// Semantic, camera pass, high; ledger semantic evidence, name high; id 91824, rva 0x1210280.
+/// `float (float current, float velocity, float target, float targetVelocity, float dt, float acceleration, float maxSpeed, float positionTolerance, float velocityTolerance)`
+#[inline]
+pub fn approach_with_acceleration_limit(current: f32, velocity: f32, target: f32, targetVelocity: f32, dt: f32, acceleration: f32, maxSpeed: f32, positionTolerance: f32, velocityTolerance: f32) -> f32 { unsafe { function!(91824, (f32, f32, f32, f32, f32, f32, f32, f32, f32) -> f32)(current, velocity, target, targetVelocity, dt, acceleration, maxSpeed, positionTolerance, velocityTolerance) } }
 /// `AssaultCrime::GetEventSource`: the one source of AssaultCrime::Event events
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 38339, rva 0x6c0cc0.
@@ -55443,6 +57973,15 @@ pub unsafe fn bs_render_pass__alloc(shader: *mut classes::BSShader, property: *m
 /// `pass` must point to what the engine expects.
 #[inline]
 pub unsafe fn bs_render_pass__queue_release(pass: *mut c_void) { unsafe { function!(107498, (*mut c_void))(pass) } }
+/// `BSResource::DispatchToEventSourceC0`: DispatchToSinksWithDeferredChanges(&g_BSResource event sources +0xc0, event)
+///
+/// Semantic, camera pass, high; ledger semantic evidence, name high; id 69851, rva 0xecf2c0.
+/// `void (void* event)`
+///
+/// # Safety
+/// `event` must point to what the engine expects.
+#[inline]
+pub unsafe fn bs_resource__dispatch_to_event_source_c0(event: *mut c_void) { unsafe { function!(69851, (*mut c_void))(event) } }
 /// `BSScript::NF_util::SignaturesMatch`: same isStatic (slot 9), same parameter count (slot 5), every parameter type equal (slot 6 on both) and the same return type (slot 4)
 ///
 /// Semantic, papyrus pass, high; ledger semantic evidence, name high; id 104359, rva 0x1496bb0.
@@ -55455,6 +57994,33 @@ pub fn bs_script__nf_util__signatures_match(declared: &classes::BSScript__IFunct
 /// `void (BSScript::Internal::VirtualMachine* vm, u32 stackId)`
 #[inline]
 pub fn bs_script__nf_util__wait_for_latent(vm: &classes::BSScript__Internal__VirtualMachine, stackId: u32) { unsafe { function!(104851, (&classes::BSScript__Internal__VirtualMachine, u32))(vm, stackId) } }
+/// `BSScript::PackedInstructionStream::InstructionIndexAtBit`: counts instructions from bit 0 until the cursor reaches bitOffset; -1 when bitOffset is not an instruction start or decoding fails
+///
+/// Semantic, vmstack pass, medium; ledger runtime evidence, name medium; id 104551, rva 0x14a3350.
+/// `i32 (const void* stream, u32 bitOffset)`
+///
+/// # Safety
+/// The pass rates the signature medium.
+#[inline]
+pub unsafe fn bs_script__packed_instruction_stream__instruction_index_at_bit(stream: *const c_void, bitOffset: u32) -> i32 { unsafe { function!(104551, (*const c_void, u32) -> i32)(stream, bitOffset) } }
+/// `BSScript::PackedInstructionStream::SkipInstruction`: reads one 6-bit opcode and skips its operands: 0 none; 0x14 jumpBits; 0x15/0x16 one operand + jumpBits; 0x17/0x19 a 9-bit count n, 3 operands + n; 0x18 count n, 2 + n; 0x22/0x23 4; 1-9, 0xf-0x13, 0x1b-0x1d, 0x20, 0x21 3; 0xa-0xe, 0x1e, 0x1f 2; 0x1a 1; any other opcode fails
+///
+/// Semantic, vmstack pass, medium; ledger runtime evidence, name medium; id 104556, rva 0x14a37d0.
+/// `bool (const void* stream, void* cursor, void (*skipOperand)(void* cursor, u8 tag6Bits, u8 tag7Bits))`
+///
+/// # Safety
+/// The pass rates the signature medium.
+#[inline]
+pub unsafe fn bs_script__packed_instruction_stream__skip_instruction(stream: *const c_void, cursor: *mut c_void, skipOperand: *const c_void) -> bool { unsafe { function!(104556, (*const c_void, *mut c_void, *const c_void) -> bool)(stream, cursor, skipOperand) } }
+/// `BSScript::PackedInstructionStream::SkipOperand`: 3-bit tag, then: 0 nothing; 1, 2 (identifier, string) 62 bits; 3 (int) 6 bits, stop if bit 5, else 9 more, stop if bit 13 of (nine << 5 | six), else 19 more; 4 (float) 32; 5 (bool) 1; 6 tag6Bits; 7 tag7Bits
+///
+/// Semantic, vmstack pass, medium; ledger runtime evidence, name medium; id 104535, rva 0x14a28c0.
+/// `void (void* cursor, u32 tag6Bits, u32 tag7Bits)`
+///
+/// # Safety
+/// The pass rates the signature medium.
+#[inline]
+pub unsafe fn bs_script__packed_instruction_stream__skip_operand(cursor: *mut c_void, tag6Bits: u32, tag7Bits: u32) { unsafe { function!(104535, (*mut c_void, u32, u32))(cursor, tag6Bits, tag7Bits) } }
 /// `BSString::Clear`: sets a BSString to empty (used on log+0x408)
 ///
 /// Semantic, ui pass, medium; ledger semantic evidence, name medium; id 51103, rva 0x90d290.
@@ -58727,25 +61293,58 @@ pub unsafe fn bounty__unregister_sink(sink: *mut classes::partial::BSTEventSink_
 pub unsafe fn build_animation_graph_manager(holder: *mut classes::IAnimationGraphManagerHolder, projects: *mut c_void) -> bool { unsafe { function!(32893, (*mut classes::IAnimationGraphManagerHolder, *mut c_void) -> bool)(holder, projects) } }
 /// `BuildFocusShadowList`: rebuilds g_FocusShadowNodes each frame: the player's third-person root if its flag bit 0 is clear, then nearby actors' 3D sorted by distance^2 - radius^2 while < fMaxFocusShadowMapDistance^2 and count < g_MaxFocusShadows
 ///
-/// Semantic, graphics pass, medium; ledger runtime evidence, name medium; id 36589, rva 0x65a400.
+/// Semantic, graphics pass, high; ledger runtime evidence, name high; id 36589, rva 0x65a400.
 /// `void (void)`
-///
-/// # Safety
-/// The pass rates the signature medium.
 #[inline]
-pub unsafe fn build_focus_shadow_list() { unsafe { function!(36589, ())() } }
+pub fn build_focus_shadow_list() { unsafe { function!(36589, ())() } }
 /// `BuildFrameJobLists`: builds the serving thread's job-list segments from g_FrameJobScript 0x20b4d00: 'Main update cells', 'Main update player', 'Main prepare render', 'Main render scene', 'Main render 1st person', 'Main render end', 'Main post render'
 ///
 /// Semantic, graphics pass, high; ledger semantic evidence, name high; id 35402, rva 0x60d740.
 /// `void (void)`
 #[inline]
 pub fn build_frame_job_lists() { unsafe { function!(35402, ())() } }
+/// `CacheLastPlayerPosition`: copies the player's position (+0x54..+0x5c) into 0x3244c90..0x3244c98
+///
+/// Semantic, camera pass, high; ledger semantic evidence, name high; id 40730, rva 0x75e170.
+/// `void (void)`
+#[inline]
+pub fn cache_last_player_position() { unsafe { function!(40730, ())() } }
 /// `CacheShadowMapResolution`: g_ShadowMapResolution (0x34869c0) = iShadowMapResolution value, once at startup
 ///
 /// Semantic, graphics pass, high; ledger semantic evidence, name high; id 107596, rva 0x155c650.
 /// `void (void)`
 #[inline]
 pub fn cache_shadow_map_resolution() { unsafe { function!(107596, ())() } }
+/// `CameraPathOffsetRef_atexit`: atexit destructor of g_CameraPathOffsetRef 0x32307f0: releases the held reference
+///
+/// Semantic, camera pass, high; ledger semantic evidence, name high; id 170963, rva 0x1796f20.
+/// `void (void)`
+#[inline]
+pub fn camera_path_offset_ref_atexit() { unsafe { function!(170963, ())() } }
+/// `CameraShake::ClearModelHolderPtr`: unwind funclet of CameraShake::LoadModel 0x5582f0: stores null into g_CameraShakeModel_ptr 0x3204868
+///
+/// Semantic, camera pass, high; ledger semantic evidence, name high; id 33017, rva 0x558c70.
+/// `void (void)`
+#[inline]
+pub fn camera_shake__clear_model_holder_ptr() { unsafe { function!(33017, ())() } }
+/// `CameraShake::LoadModel`: once: points g_CameraShakeModel_ptr 0x3204868 at the static holder 0x3204870, loads the mesh named by sCameraShakeFilename (formatted with "Meshes") into holder+8 and keeps its root object (+0x28 of the loaded data, refcounted) at holder+0x10, named after the path
+///
+/// Semantic, camera pass, high; ledger semantic evidence, name high; id 33010, rva 0x5582f0.
+/// `void (void)`
+#[inline]
+pub fn camera_shake__load_model() { unsafe { function!(33010, ())() } }
+/// `CameraShake::UnloadModel`: releases the camera shake model: holder+8 (deferred release), holder+0x10 (refcount, slot 1), then g_CameraShakeModel_ptr 0x3204868 = null
+///
+/// Semantic, camera pass, high; ledger semantic evidence, name high; id 33011, rva 0x558420.
+/// `void (void)`
+#[inline]
+pub fn camera_shake__unload_model() { unsafe { function!(33011, ())() } }
+/// `CanOpenTweenMenu`: VATS idle (+0x20 == 0), player +0x204 bit 3 clear, the player not in the list 0x31df410, and the camera neither in state 8 nor in a furniture camera
+///
+/// Semantic, camera pass, high; ledger semantic evidence, name high; id 52719, rva 0x988e30.
+/// `bool (void)`
+#[inline]
+pub fn can_open_tween_menu() -> bool { unsafe { function!(52719, () -> bool)() } }
 /// `CastCameraLinearAndCollectHits`: sphere cast of caster+0 from 'from' to 'to' in havok units under the world read lock; 'to' comes back clipped; hitRecord gets the hit data; *hitRef the hit reference
 ///
 /// Semantic, camera pass, high; ledger runtime evidence, name high; id 33007, rva 0x5574f0.
@@ -58755,6 +61354,12 @@ pub fn cache_shadow_map_resolution() { unsafe { function!(107596, ())() } }
 /// `caster`, `from`, `to`, `hitRecord`, `hitRef` must point to what the engine expects.
 #[inline]
 pub unsafe fn cast_camera_linear_and_collect_hits(caster: *mut classes::CameraCasterHolder, world: *mut classes::bhkWorld, from: *mut c_void, to: *mut c_void, hitRecord: *mut f32, hitRef: *mut *mut classes::TESObjectREFR, radius: f32) -> bool { unsafe { function!(33007, (*mut classes::CameraCasterHolder, *mut classes::bhkWorld, *mut c_void, *mut c_void, *mut f32, *mut *mut classes::TESObjectREFR, f32) -> bool)(caster, world, from, to, hitRecord, hitRef, radius) } }
+/// `CheckVATSTargetVisibleInDirection`: for i = 1..fVATSSmartCameraCheckStepCount (5): point = subject position stepped i * fVATSSmartCameraCheckStepDistance (128) along heading + angleOffset at +fVATSSmartCameraCheckHeight; ray to the target's 3D world translate; stop at the first step whose ray hits something other than the target at fraction <= 0.85 (an actor hit only within 256 units); returns i * fVATSSmartCameraCheckStepDistance of the last step evaluated (StepCount * StepDistance = 640 when no step stopped)
+///
+/// Semantic, camera pass, high; ledger semantic evidence, name high; id 37727, rva 0x6a07c0.
+/// `float (Actor* subject, TESObjectREFR* target, float angleOffset)`
+#[inline]
+pub fn check_vats_target_visible_in_direction(subject: &classes::Actor, target: &classes::TESObjectREFR, angleOffset: f32) -> f32 { unsafe { function!(37727, (&classes::Actor, &classes::TESObjectREFR, f32) -> f32)(subject, target, angleOffset) } }
 /// `ChestsLooted::GetEventSource`: the one source of ChestsLooted::Event events
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 51182, rva 0x915620.
@@ -58782,12 +61387,42 @@ pub unsafe fn chests_looted__register_sink(sink: *mut classes::partial::BSTEvent
 /// The pass rates the signature medium.
 #[inline]
 pub unsafe fn chests_looted__unregister_sink(sink: *mut classes::partial::BSTEventSink_ChestsLooted__Event) { unsafe { function!(51121, (*mut classes::partial::BSTEventSink_ChestsLooted__Event))(sink) } }
+/// `ClearCameraShotList`: delete every node after the head (0x10 each), head item = 0
+///
+/// Semantic, camera pass, high; ledger semantic evidence, name high; id 20669, rva 0x317b50.
+/// `void (BSSimpleList<BGSCameraShot*>* list)`
+///
+/// # Safety
+/// `list` must point to what the engine expects.
+#[inline]
+pub unsafe fn clear_camera_shot_list(list: *mut c_void) { unsafe { function!(20669, (*mut c_void))(list) } }
 /// `ClearFieldF8Field130State`: starts the fade back in (process fade state 1)
 ///
 /// Semantic, camera pass, high; ledger semantic evidence, name high; id 37574, rva 0x691a10.
 /// `void (Actor* actor)`
 #[inline]
 pub fn clear_field_f8_field130_state(actor: &classes::Actor) { unsafe { function!(37574, (&classes::Actor))(actor) } }
+/// `ClearLowHealthIModActive`: 0x3244a94 (low-health image space modifier active flag) = 0
+///
+/// Semantic, camera pass, high; ledger semantic evidence, name high; id 40609, rva 0x757410.
+/// `void (void)`
+#[inline]
+pub fn clear_low_health_i_mod_active() { unsafe { function!(40609, ())() } }
+/// `ClearLowHealthIModCache`: 0x3244a98 (cached low-health ImageSpaceModifier, default object 0x84) = 0
+///
+/// Semantic, camera pass, high; ledger semantic evidence, name high; id 40610, rva 0x757420.
+/// `void (void)`
+#[inline]
+pub fn clear_low_health_i_mod_cache() { unsafe { function!(40610, ())() } }
+/// `Cmd::CameraShake_Execute`: console CameraShake: strength (default 0.5, clamped 0..1), duration (default 0 = fCameraShakeTime); origin = the calling reference's position (+0x54) or the player's; StartCameraShake
+///
+/// Semantic, camera pass, high; ledger console_cmd evidence, name high; id 22643, rva 0x368890.
+/// `bool (void* paramInfo, void* scriptData, TESObjectREFR* thisObj, void* containingObj, void* script, void* locals, double* result, u32* opcodeOffset)`
+///
+/// # Safety
+/// `paramInfo`, `scriptData`, `containingObj`, `script`, `locals`, `result`, `opcodeOffset` must point to what the engine expects.
+#[inline]
+pub unsafe fn cmd__camera_shake_execute(paramInfo: *mut c_void, scriptData: *mut c_void, thisObj: *mut classes::TESObjectREFR, containingObj: *mut c_void, script: *mut c_void, locals: *mut c_void, result: *mut f64, opcodeOffset: *mut u32) -> bool { unsafe { function!(22643, (*mut c_void, *mut c_void, *mut classes::TESObjectREFR, *mut c_void, *mut c_void, *mut c_void, *mut f64, *mut u32) -> bool)(paramInfo, scriptData, thisObj, containingObj, script, locals, result, opcodeOffset) } }
 /// `Cmd::IsPC1stPerson_Eval`: the engine's own 'is first person' test
 ///
 /// Semantic, camera pass, high; ledger console_cmd evidence, name high; id 21600, rva 0x3389c0.
@@ -58797,6 +61432,24 @@ pub fn clear_field_f8_field130_state(actor: &classes::Actor) { unsafe { function
 /// `result` must point to what the engine expects.
 #[inline]
 pub unsafe fn cmd__is_pc1st_person_eval(result: *mut f64) -> bool { unsafe { function!(21600, (*mut f64) -> bool)(result) } }
+/// `Cmd::IsPC1stPerson_Execute`: console 'IsPC1stPerson' ('pc1st'): runs the condition IsPC1stPerson_Eval (0x3389c0) into *result and prints "IsPC1stPerson >> %0.2f" when the console echo flag (TLS +0x600) is set; returns true
+///
+/// Semantic, camera pass, high; ledger console_cmd evidence, name high; id 22460, rva 0x360890.
+/// `bool (void* paramInfo, void* scriptData, TESObjectREFR* thisObj, void* containingObj, void* script, void* locals, double* result, u32* opcodeOffset)`
+///
+/// # Safety
+/// `paramInfo`, `scriptData`, `containingObj`, `script`, `locals`, `result`, `opcodeOffset` must point to what the engine expects.
+#[inline]
+pub unsafe fn cmd__is_pc1st_person_execute(paramInfo: *mut c_void, scriptData: *mut c_void, thisObj: *mut classes::TESObjectREFR, containingObj: *mut c_void, script: *mut c_void, locals: *mut c_void, result: *mut f64, opcodeOffset: *mut u32) -> bool { unsafe { function!(22460, (*mut c_void, *mut c_void, *mut classes::TESObjectREFR, *mut c_void, *mut c_void, *mut c_void, *mut f64, *mut u32) -> bool)(paramInfo, scriptData, thisObj, containingObj, script, locals, result, opcodeOffset) } }
+/// `Cmd::PlayVATSCameras_Execute`: console PlayVATSCameras <editorID>: g_VATSConsoleCameraPath 0x3252a30 = the BGSCameraPath (or null); prints "queued for next VATS playback" / "not found"
+///
+/// Semantic, camera pass, high; ledger console_cmd evidence, name high; id 22970, rva 0x376c10.
+/// `bool (void* paramInfo, void* scriptData, TESObjectREFR* thisObj, void* containingObj, void* script, void* locals, double* result, u32* opcodeOffset)`
+///
+/// # Safety
+/// `paramInfo`, `scriptData`, `containingObj`, `script`, `locals`, `result`, `opcodeOffset` must point to what the engine expects.
+#[inline]
+pub unsafe fn cmd__play_vats_cameras_execute(paramInfo: *mut c_void, scriptData: *mut c_void, thisObj: *mut classes::TESObjectREFR, containingObj: *mut c_void, script: *mut c_void, locals: *mut c_void, result: *mut f64, opcodeOffset: *mut u32) -> bool { unsafe { function!(22970, (*mut c_void, *mut c_void, *mut classes::TESObjectREFR, *mut c_void, *mut c_void, *mut c_void, *mut f64, *mut u32) -> bool)(paramInfo, scriptData, thisObj, containingObj, script, locals, result, opcodeOffset) } }
 /// `Cmd::RecvAnimEvent_Send`: console RecvAnimEvent: builds {tag, holder, payload} and notifies every graph's +0x68 without the behaviour graph
 ///
 /// Semantic, animation pass, high; ledger semantic evidence, name high; id 22789, rva 0x36d9e0.
@@ -58824,12 +61477,54 @@ pub unsafe fn cmd__set_camera_fov_execute(paramInfo: *mut c_void, scriptData: *m
 /// `paramInfo`, `scriptData`, `containingObj`, `script`, `locals`, `result`, `opcodeOffset` must point to what the engine expects.
 #[inline]
 pub unsafe fn cmd__set_ufo_cam_speed_mult_execute(paramInfo: *mut c_void, scriptData: *mut c_void, thisObj: *mut classes::TESObjectREFR, containingObj: *mut c_void, script: *mut c_void, locals: *mut c_void, result: *mut f64, opcodeOffset: *mut u32) -> bool { unsafe { function!(22915, (*mut c_void, *mut c_void, *mut classes::TESObjectREFR, *mut c_void, *mut c_void, *mut c_void, *mut f64, *mut u32) -> bool)(paramInfo, scriptData, thisObj, containingObj, script, locals, result, opcodeOffset) } }
+/// `Cmd::Show1stPerson_Execute`: console 'Show1stPerson' ('S1ST'): in first person ForceThirdPerson ("Showing 1st person model in 3rd person camera."); in third person with the third-person root hidden (+0xf4 bit 0) ForceFirstPerson ("Normal 1st person mode."); otherwise clears bit 0 of the first-person root when it is set ("Showing 1st and 3rd person models.") and sets it when clear ("Normal 3rd person mode."); in third person the engine sets bit 0 again within 2 s (writer not identified), so the first-person model does not stay drawn and every S1ST in third person prints 'Showing 1st and 3rd person models.'
+///
+/// Semantic, camera pass, high; ledger console_cmd evidence, name high; id 22938, rva 0x374c80.
+/// `bool (void* paramInfo, void* scriptData, TESObjectREFR* thisObj, void* containingObj, void* script, void* locals, double* result, u32* opcodeOffset)`
+///
+/// # Safety
+/// `paramInfo`, `scriptData`, `containingObj`, `script`, `locals`, `result`, `opcodeOffset` must point to what the engine expects.
+#[inline]
+pub unsafe fn cmd__show1st_person_execute(paramInfo: *mut c_void, scriptData: *mut c_void, thisObj: *mut classes::TESObjectREFR, containingObj: *mut c_void, script: *mut c_void, locals: *mut c_void, result: *mut f64, opcodeOffset: *mut u32) -> bool { unsafe { function!(22938, (*mut c_void, *mut c_void, *mut classes::TESObjectREFR, *mut c_void, *mut c_void, *mut c_void, *mut f64, *mut u32) -> bool)(paramInfo, scriptData, thisObj, containingObj, script, locals, result, opcodeOffset) } }
 /// `Cmd::ToggleAnimatorCam_Execute`: toggles ThirdPersonState(9)+0xe0 through 0x8f90e0
 ///
 /// Semantic, camera pass, high; ledger console_cmd evidence, name high; id 22888, rva 0x371fa0.
 /// `bool (void)`
 #[inline]
 pub fn cmd__toggle_animator_cam_execute() -> bool { unsafe { function!(22888, () -> bool)() } }
+/// `CodeTasklet_ExecuteCallOpcode`: the call-opcode sequence of the interpreter as a function (save ip, VM_ExecuteFunctionCall with fromTasklet 1, reload or resume)
+///
+/// Semantic, vmstack pass, medium; ledger semantic evidence, name medium; id 105204, rva 0x14d2fa0.
+/// `bool (BSScript::Internal::CodeTasklet* tasklet, void* ipCursor)`
+///
+/// # Safety
+/// The pass rates the signature medium.
+#[inline]
+pub unsafe fn code_tasklet_execute_call_opcode(tasklet: *mut classes::BSScript__Internal__CodeTasklet, ipCursor: *mut c_void) -> bool { unsafe { function!(105204, (*mut classes::BSScript__Internal__CodeTasklet, *mut c_void) -> bool)(tasklet, ipCursor) } }
+/// `CodeTasklet_Interpret`: the bytecode interpreter: loads the top frame, runs up to 100 opcodes (switch on the 6-bit opcode), handles call opcodes through VM_ExecuteFunctionCall, return opcode 0x1a through CompleteStack, then yields (state 1, re-queued in pendingTasklets)
+///
+/// Semantic, vmstack pass, high; ledger runtime evidence, name high; id 105176, rva 0x14ce660.
+/// `void (BSScript::Internal::CodeTasklet* tasklet)`
+#[inline]
+pub fn code_tasklet_interpret(tasklet: &classes::BSScript__Internal__CodeTasklet) { unsafe { function!(105176, (&classes::BSScript__Internal__CodeTasklet))(tasklet) } }
+/// `CodeTasklet_LoadFrame`: tasklet+0x30 = stack top; when frame+0x3c != 0 copies the function's code block (bits, widths, word pointer) and sets the cursor {word, bit} from frame+0x20; caches the frame's page index
+///
+/// Semantic, vmstack pass, high; ledger semantic evidence, name high; id 105221, rva 0x14d6330.
+/// `void (BSScript::Internal::CodeTasklet* tasklet, void* ipCursor)`
+///
+/// # Safety
+/// `ipCursor` must point to what the engine expects.
+#[inline]
+pub unsafe fn code_tasklet_load_frame(tasklet: *mut classes::BSScript__Internal__CodeTasklet, ipCursor: *mut c_void) { unsafe { function!(105221, (*mut classes::BSScript__Internal__CodeTasklet, *mut c_void))(tasklet, ipCursor) } }
+/// `CodeTasklet_ResumeAfterCall`: re-decodes the call instruction at the cursor and stores the stack's return value into its result operand; logs 'Instruction pointer is invalid after returning from a function call.'
+///
+/// Semantic, vmstack pass, high; ledger semantic evidence, name high; id 105181, rva 0x14cfb10.
+/// `void (BSScript::Internal::CodeTasklet* tasklet, void* ipCursor)`
+///
+/// # Safety
+/// `ipCursor` must point to what the engine expects.
+#[inline]
+pub unsafe fn code_tasklet_resume_after_call(tasklet: *mut classes::BSScript__Internal__CodeTasklet, ipCursor: *mut c_void) { unsafe { function!(105181, (*mut classes::BSScript__Internal__CodeTasklet, *mut c_void))(tasklet, ipCursor) } }
 /// `CompareMappingKey`: orders by key low word, then high word
 ///
 /// Semantic, input pass, high; ledger semantic evidence, name high; id 68573, rva 0xcf1770.
@@ -58908,6 +61603,48 @@ pub unsafe fn complete_stack(vm: *mut classes::BSScript__Internal__VirtualMachin
 /// `a0` must point to what the engine expects.
 #[inline]
 pub unsafe fn compress_and_write_payload(a0: *mut c_void) { unsafe { function!(109333, (*mut c_void))(a0) } }
+/// `ComputeAutoAimAngles`: turns the shooter's aim toward the auto-aim target: computes yaw/pitch deltas from origin to the target and adds them to the base angles (FLT_MIN base = add to current)
+///
+/// Semantic, camera pass, medium; ledger semantic evidence, name medium; id 41248, rva 0x777c00.
+/// `void (Actor* shooter, Projectile* projectile, NiAVObject* aimNode, float* yawInOut, float* pitchInOut, const NiPoint3* origin, float baseYaw, float basePitch)`
+///
+/// # Safety
+/// The pass rates the signature medium.
+#[inline]
+pub unsafe fn compute_auto_aim_angles(shooter: *mut classes::Actor, projectile: *mut classes::Projectile, aimNode: *mut classes::NiAVObject, yawInOut: *mut f32, pitchInOut: *mut f32, origin: *const c_void, baseYaw: f32, basePitch: f32) { unsafe { function!(41248, (*mut classes::Actor, *mut classes::Projectile, *mut classes::NiAVObject, *mut f32, *mut f32, *const c_void, f32, f32))(shooter, projectile, aimNode, yawInOut, pitchInOut, origin, baseYaw, basePitch) } }
+/// `ComputeCameraShakeRotation`: when strength and time left are > 1e-4: UpdateNode the CameraShake.nif root at the time stored at (root+0x18)+0x1c (its reference pose), keep that local rotation R0, UpdateNode again at `time`, outDelta = inverse(R0) * R(time); timeLeft -= g_FrameDelta; returns strength, faded linearly over the last fCameraShakeFadeTime; else zeroes both and returns 0
+///
+/// Semantic, camera pass, high; ledger runtime evidence, name high; id 33013, rva 0x558600.
+/// `float (float time, NiMatrix3* outDelta)`
+///
+/// # Safety
+/// `outDelta` must point to what the engine expects.
+#[inline]
+pub unsafe fn compute_camera_shake_rotation(time: f32, outDelta: *mut c_void) -> f32 { unsafe { function!(33013, (f32, *mut c_void) -> f32)(time, outDelta) } }
+/// `ComputeGunSpread`: weapon spread from skill, condition and stance, with the iron-sights base setting (fGunSpreadIronSightsBase); Fallout-era code with no caller
+///
+/// Semantic, camera pass, medium; ledger semantic evidence, name medium; id 26440, rva 0x41fda0.
+/// `float (ActorValueOwner* shooterValues, void* weaponData, float condition, float drift, bool ironSights, bool crouching, bool walking, bool running)`
+///
+/// # Safety
+/// The pass rates the signature medium.
+#[inline]
+pub unsafe fn compute_gun_spread(shooterValues: *mut classes::ActorValueOwner, weaponData: *mut c_void, condition: f32, drift: f32, ironSights: bool, crouching: bool, walking: bool, running: bool) -> f32 { unsafe { function!(26440, (*mut classes::ActorValueOwner, *mut c_void, f32, f32, bool, bool, bool, bool) -> f32)(shooterValues, weaponData, condition, drift, ironSights, crouching, walking, running) } }
+/// `ComputeRaceMenuCameraLookAtFromScreenPoint`: fills 7 floats (NiPoint3 + NiQuaternion): the frame camera's ray through (screenX*width, screenY*height) scaled by distance*height/width and rotated into the player's 3D frame gives the camera position near the look-at point (when the player camera's current state is state 0, FirstPerson (PlayerCamera+0x28 == +0xb8[0]): the world translation of PlayerCharacter vfunc 112's node + race height * 128 * fRSMCameraLookAtPercent (0.955); otherwise the point Actor vfunc 91 returns); the rotation looks from there to the look-at point + zOffset, then yawed by yawDegrees
+///
+/// Semantic, camera pass, high; ledger runtime evidence, name high; id 52465, rva 0x9739b0.
+/// `void (float* outPositionRotation, float screenX, float screenY, float yawDegrees, float zOffset, float distance)`
+///
+/// # Safety
+/// `outPositionRotation` must point to what the engine expects.
+#[inline]
+pub unsafe fn compute_race_menu_camera_look_at_from_screen_point(outPositionRotation: *mut f32, screenX: f32, screenY: f32, yawDegrees: f32, zOffset: f32, distance: f32) { unsafe { function!(52465, (*mut f32, f32, f32, f32, f32, f32))(outPositionRotation, screenX, screenY, yawDegrees, zOffset, distance) } }
+/// `ComputeSwimBreathDamage`: (float)baseHealth * fActorSwimBreathDamage
+///
+/// Semantic, camera pass, high; ledger semantic evidence, name high; id 26480, rva 0x421420.
+/// `float (i32 baseHealth)`
+#[inline]
+pub fn compute_swim_breath_damage(baseHealth: i32) -> f32 { unsafe { function!(26480, (i32) -> f32)(baseHealth) } }
 /// `ComputeTargetTexelConstants`: image-space ping-pong constants: [0x14] = near, [0x15] = far of g_CurrentRenderCamera (also _2 0x1545ab0, _3 0x1545fa0)
 ///
 /// Semantic, graphics pass, medium; ledger semantic evidence, name medium; id 107276, rva 0x15455c0.
@@ -58917,6 +61654,21 @@ pub unsafe fn compress_and_write_payload(a0: *mut c_void) { unsafe { function!(1
 /// The pass rates the signature medium.
 #[inline]
 pub unsafe fn compute_target_texel_constants(effect: *mut c_void, constants: *mut f32) { unsafe { function!(107276, (*mut c_void, *mut f32))(effect, constants) } }
+/// `ComputeVATSAreaFreeDistance`: ray from subject position + fVATSSmartCameraCheckHeight (96) along heading + angleOffset for 10000 units on layer 0x27 with the subject's collision group; returns the distance to the first hit that is not the subject, FLT_MAX when clear
+///
+/// Semantic, camera pass, high; ledger semantic evidence, name high; id 37726, rva 0x6a0470.
+/// `float (Actor* subject, TESObjectREFR* unused, float angleOffset)`
+#[inline]
+pub fn compute_vats_area_free_distance(subject: &classes::Actor, unused: &classes::TESObjectREFR, angleOffset: f32) -> f32 { unsafe { function!(37726, (&classes::Actor, &classes::TESObjectREFR, f32) -> f32)(subject, unused, angleOffset) } }
+/// `ComputeVATSCameraTargetPosition`: start = attacker (VATS+0xa8) position + 0.5 * its scaled extent z; end = the first command's target (handle +0xc) or VATS+0x98, + half extent for actors; out = start + (end - start) * percent * 0.01
+///
+/// Semantic, camera pass, high; ledger semantic evidence, name high; id 44303, rva 0x808490.
+/// `NiPoint3* (VATS* vats, NiPoint3* out, float percent)`
+///
+/// # Safety
+/// `vats`, `out` must point to what the engine expects, and the result is an untyped pointer.
+#[inline]
+pub unsafe fn compute_vats_camera_target_position(vats: *mut c_void, out: *mut c_void, percent: f32) -> *mut c_void { unsafe { function!(44303, (*mut c_void, *mut c_void, f32) -> *mut c_void)(vats, out, percent) } }
 /// `ConsoleCommandQueue::Push`: appends a task to the spinlock-protected list at q+8
 ///
 /// Semantic, input pass, high; ledger runtime evidence, name high; id 52951, rva 0x9927c0.
@@ -59196,6 +61948,15 @@ pub unsafe fn control_map__ctor(this: *mut c_void) -> *mut c_void { unsafe { fun
 /// It constructs or destroys an object in place.
 #[inline]
 pub unsafe fn control_map__dtor(this: *mut c_void) { unsafe { function!(68535, (*mut c_void))(this) } }
+/// `CopyHandle`: *dst = *src; returns dst
+///
+/// Semantic, camera pass, high; ledger semantic evidence, name high; id 44073, rva 0x7f6ad0.
+/// `u32* (u32* dst, const u32* src)`
+///
+/// # Safety
+/// `dst`, `src` must point to what the engine expects, and the result is an untyped pointer.
+#[inline]
+pub unsafe fn copy_handle(dst: *mut u32, src: *const u32) -> *mut u32 { unsafe { function!(44073, (*mut u32, *const u32) -> *mut u32)(dst, src) } }
 /// `CreateArrayAndTrack`: the allocation behind CreateArray and CreateArrayOfType (slots 22 and 23): global heap in memory context 0x16, InitTypedArrayObject, out gets a reference and the tracking list at +0x9408 another
 ///
 /// Semantic, papyrus pass, high; ledger runtime evidence, name high; id 104877, rva 0x14bd670.
@@ -59211,6 +61972,12 @@ pub unsafe fn create_array_and_track(vm: *mut classes::BSScript__Internal__Virtu
 /// `void ()`
 #[inline]
 pub fn create_audio_manager_and_backend() { unsafe { function!(67655, ())() } }
+/// `CreateBSFrustumFOVController`: factory: allocate 0x50, NiFloatInterpController::ctor, BSFrustumFOVController vtable
+///
+/// Semantic, camera pass, high; ledger semantic evidence, name high; id 74129, rva 0xf8d610.
+/// `NiObject* (void)`
+#[inline]
+pub fn create_bs_frustum_fov_controller() -> Option<&'static classes::NiObject> { unsafe { function!(74129, () -> Option<&'static classes::NiObject>)() } }
 /// `CreateDecalShaderProperty`: builds the NiAlphaProperty and a lighting (without a normal map, an effect) property for a dynamic decal: bit 27, VC, parallax / parallax occ / glow / envmap from the texture slots
 ///
 /// Semantic, frame pass, medium; ledger semantic evidence, name medium; id 30108, rva 0x4b2320.
@@ -59220,6 +61987,15 @@ pub fn create_audio_manager_and_backend() { unsafe { function!(67655, ())() } }
 /// The pass rates the signature medium.
 #[inline]
 pub unsafe fn create_decal_shader_property(d: *mut c_void, g: *mut classes::BSGeometry, ts: *mut classes::BGSTextureSet, a3: bool) { unsafe { function!(30108, (*mut c_void, *mut classes::BSGeometry, *mut classes::BGSTextureSet, bool))(d, g, ts, a3) } }
+/// `CreateDefaultCameraPath`: if g_DefaultCameraPath 0x31df550 is null: look up form 0x16, else create a BGSCameraPath, SetFormID(0x16, 1), editor id "DefaultCameraPath", append to forms
+///
+/// Semantic, camera pass, high; ledger semantic evidence, name high; id 20680, rva 0x317f10.
+/// `void (NiTPrimitiveArray<TESForm*>* forms)`
+///
+/// # Safety
+/// `forms` must point to what the engine expects.
+#[inline]
+pub unsafe fn create_default_camera_path(forms: *mut c_void) { unsafe { function!(20680, (*mut c_void))(forms) } }
 /// `CreateHUDData`: takes a HUDData from the 'HUDData' pool and sets type and text
 ///
 /// Semantic, ui pass, high; ledger semantic evidence, name high; id 52843, rva 0x98dab0.
@@ -59250,6 +62026,12 @@ pub fn create_lighting_shader_material(feature: u32) -> Option<&'static classes:
 /// The pass rates the signature medium.
 #[inline]
 pub unsafe fn create_movie_view(out: *mut c_void, movieDefImpl: *mut c_void, a2: bool) -> *mut classes::GFxMovieView { unsafe { function!(85301, (*mut c_void, *mut c_void, bool) -> *mut classes::GFxMovieView)(out, movieDefImpl, a2) } }
+/// `CreateNiCamera`: identical second factory body
+///
+/// Semantic, camera pass, high; ledger semantic evidence, name high; id 70645, rva 0xef1980.
+/// `NiObject* (void)`
+#[inline]
+pub fn create_ni_camera() -> Option<&'static classes::NiObject> { unsafe { function!(70645, () -> Option<&'static classes::NiObject>)() } }
 /// `CreateProjectileByType`: creates the projectile for data: class by the BGSProjectile's type bits (data->projectile +0x80 & 0x7f0000: 0x10000 Missile 0x1e8, 0x20000 Grenade 0x1f0, 0x40000 Beam 0x248 (reused per shooter), 0x80000 Flame 0x1e8 (reused), 0x100000 Cone 0x220, 0x200000 Barrier 0x200 (data+0x4c = 0 first), 0x400000 Arrow 0x1f8), sets flags from data, adds it to data->cell (+0x68) and returns *outHandle (invalid handle on failure). Launch data (RTTI Projectile::LaunchData, vtable 0x17f63b0): +0x08 origin NiPoint3 (Projectile::ctor 0x7f8a50 SetPosition(this, data+8)); direction as angles: +0x48 angleZ (heading, SetAngleZ), +0x4c angleX (pitch, SetAngleField48 = ref +0x48), angleY = 0; +0x14 NiPoint3 (default ID_410468..70, from the caster's hit record +0x30); +0x20 BGSProjectile*; +0x28 shooter; +0x30 combat controller; +0x38 weapon; +0x40 ammo; +0x58 desired target; +0x60/+0x64 -> projectile +0x1b0/+0x1b4; +0x68 cell; +0x70 spell; +0x78 casting source; +0x80/+0x88 enchantment/poison (ArrowProjectile::ctor 0x7ddd60 -> +0x1e8/+0x1f0); +0x90 area; +0x94 power; +0x98 scale -> +0x1d0
 ///
 /// Semantic, camera pass, high; ledger semantic evidence, name high; id 44108, rva 0x7f9300.
@@ -59274,6 +62056,15 @@ pub fn create_render_targets() { unsafe { function!(107175, ())() } }
 /// The pass rates the signature medium.
 #[inline]
 pub unsafe fn create_sphere_phantom(holder: *mut classes::CameraCasterHolder, radius: f32) { unsafe { function!(33009, (*mut classes::CameraCasterHolder, f32))(holder, radius) } }
+/// `CreateStack`: under stacksLock: GetOrCreateStackById(nextStackID), then advances nextStackID past ids still in runningStacks ('warning: stack id %d already used')
+///
+/// Semantic, vmstack pass, high; ledger semantic evidence, name high; id 104870, rva 0x14bcb20.
+/// `void (BSScript::Internal::VirtualMachine* vm, u32 kind, BSTSmartPointer<BSScript::IStackCallbackFunctor>* callback, BSTSmartPointer<BSScript::Stack>* out)`
+///
+/// # Safety
+/// `callback`, `out` must point to what the engine expects.
+#[inline]
+pub unsafe fn create_stack(vm: *mut classes::BSScript__Internal__VirtualMachine, kind: u32, callback: *mut c_void, out: *mut c_void) { unsafe { function!(104870, (*mut classes::BSScript__Internal__VirtualMachine, u32, *mut c_void, *mut c_void))(vm, kind, callback, out) } }
 /// `CreateSwapChainBackBufferViews`: GetBuffer(0), RTV/SRV into the window record, buffer desc into the screen/back buffer sizes, id 0 properties {w, h, R8G8B8A8}
 ///
 /// Semantic, frame pass, high; ledger semantic evidence, name high; id 77397, rva 0x1012480.
@@ -59307,6 +62098,15 @@ pub unsafe fn critical_hit_event__register_sink(sink: *mut classes::partial::BST
 /// The pass rates the signature medium.
 #[inline]
 pub unsafe fn critical_hit_event__unregister_sink(sink: *mut classes::partial::BSTEventSink_CriticalHitEvent__Event) { unsafe { function!(38532, (*mut classes::partial::BSTEventSink_CriticalHitEvent__Event))(sink) } }
+/// `CullFirstPersonGeometry`: clears the first-person geometry cull list (0x?? ID_414946); in first person: clears bit 0 (app-culled) of the player's first-person 3D (slot 111) flags, runs a culling pass with g_FirstPersonCamera into that list, then sets the bit again
+///
+/// Semantic, camera pass, high; ledger semantic evidence, name high; id 36563, rva 0x658700.
+/// `void (void* unused, bool firstPerson)`
+///
+/// # Safety
+/// `unused` must point to what the engine expects.
+#[inline]
+pub unsafe fn cull_first_person_geometry(unused: *mut c_void, firstPerson: bool) { unsafe { function!(36563, (*mut c_void, bool))(unused, firstPerson) } }
 /// `CullShadowLights`: updates and culls the casters of the scene's shadow lights and runs the sun's slot 9 (cascade caster cull) while the main camera cull jobs run
 ///
 /// Semantic, render pass, high; ledger runtime evidence, name high; id 107137, rva 0x15389b0.
@@ -59394,6 +62194,15 @@ pub unsafe fn default_objects_ready_event__get_event_source() -> *mut c_void { u
 /// The pass rates the signature medium.
 #[inline]
 pub unsafe fn default_objects_ready_event__register_sink(sink: *mut classes::partial::BSTEventSink_DefaultObjectsReadyEvent__Event) { unsafe { function!(20764, (*mut classes::partial::BSTEventSink_DefaultObjectsReadyEvent__Event))(sink) } }
+/// `DeleteCameraPathsAndClearArrays`: delete every root path and every pending path (vdtor 1), clear both arrays, g_DefaultCameraPath = 0
+///
+/// Semantic, camera pass, high; ledger semantic evidence, name high; id 20684, rva 0x3181f0.
+/// `void (CameraPathRegistry* registry)`
+///
+/// # Safety
+/// `registry` must point to what the engine expects.
+#[inline]
+pub unsafe fn delete_camera_paths_and_clear_arrays(registry: *mut c_void) { unsafe { function!(20684, (*mut c_void))(registry) } }
 /// `DeleteSaveEntry`: DeleteSaveFile(mgr, entry->name) (call 0x6146a7, S1 delete hook 2) then RemoveSaveEntry
 ///
 /// Semantic, save pass, high; ledger semantic evidence, name high; id 35535, rva 0x614690.
@@ -59526,6 +62335,12 @@ pub unsafe fn end_world_render() { unsafe { function!(107143, ())() } }
 /// `void (void)`
 #[inline]
 pub fn ensure_sky_created() { unsafe { function!(13878, ())() } }
+/// `EnterWorldMapSkyAndImageSpace`: entering the world map: image-space DOF globals 0x3698b68..74 from fWorldMapFocalDepth, fWorldMapMaximumDepthBlur, fWorldMapDepthBlurScale * 3e-5, fWorldMapNearDepthBlurScale (MapMenu), stashes the sky state and sets sky mode 3, sky update, image-space state swap
+///
+/// Semantic, camera pass, high; ledger runtime evidence, name high; id 53146, rva 0x9a03e0.
+/// `void (void)`
+#[inline]
+pub fn enter_world_map_sky_and_image_space() { unsafe { function!(53146, ())() } }
 /// `EvaluateScriptOperandAsDouble`: evaluates one numeric operand ('n' int literal, 'z' double literal, variables)
 ///
 /// Semantic, input pass, medium; ledger semantic evidence, name medium; id 21911, rva 0x3455a0.
@@ -59550,12 +62365,39 @@ pub unsafe fn execute_queued_task(task: *const c_void) { unsafe { function!(3699
 /// `void ()`
 #[inline]
 pub fn face_morphing_step() { unsafe { function!(39096, ())() } }
+/// `FillPushedFrame`: frame+0x10 = function, +0x18 = type, +0x28 = self, copies the arguments into the frame's variables, then IFunction slot 14 (InsertLocals)
+///
+/// Semantic, vmstack pass, high; ledger runtime evidence, name high; id 104475, rva 0x149ca70.
+/// `bool (BSScript::StackFrame* frame, BSTSmartPointer<BSScript::IFunction>* function, BSTSmartPointer<BSScript::ObjectTypeInfo>* type, const BSScript::Variable* self, BSScrapArray<BSScript::Variable>* args)`
+///
+/// # Safety
+/// `frame`, `function`, `type_`, `args` must point to what the engine expects.
+#[inline]
+pub unsafe fn fill_pushed_frame(frame: *mut classes::BSScript__StackFrame, function: *mut c_void, type_: *mut c_void, self_: *const classes::BSScript__Variable, args: *mut c_void) -> bool { unsafe { function!(104475, (*mut classes::BSScript__StackFrame, *mut c_void, *mut c_void, *const classes::BSScript__Variable, *mut c_void) -> bool)(frame, function, type_, self_, args) } }
+/// `FindAutoAimTarget`: auto-aim target search (fAutoAimMaxDistance, fAutoAimScreenPercentage, bAutoAimBasedOnDistance) plus the iron-sights and VATS depth-of-field blends (fIronSightsDOF*, fVATSDOF*)
+///
+/// Semantic, camera pass, high; ledger semantic evidence, name high; id 41246, rva 0x776fc0.
+/// `void (PlayerCharacter* player, float maxDistance, bool vatsScreenArea)`
+#[inline]
+pub fn find_auto_aim_target(player: &classes::PlayerCharacter, maxDistance: f32, vatsScreenArea: bool) { unsafe { function!(41246, (&classes::PlayerCharacter, f32, bool))(player, maxDistance, vatsScreenArea) } }
 /// `FindBSXFlags`: GetExtraData(object, "BSX") when its exact type is BSXFlags
 ///
 /// Semantic, frame pass, high; ledger semantic evidence, name high; id 75982, rva 0xfd2f90.
 /// `BSXFlags* (NiObjectNET* object)`
 #[inline]
 pub fn find_bsx_flags(object: &classes::NiObjectNET) -> Option<&'static classes::BSXFlags> { unsafe { function!(75982, (&classes::NiObjectNET) -> Option<&'static classes::BSXFlags>)(object) } }
+/// `FindFirstCameraInTree`: depth-first search for the first object whose RTTI chain contains NiCamera (root first, then children recursively)
+///
+/// Semantic, camera pass, high; ledger semantic evidence, name high; id 15891, rva 0x224230.
+/// `NiCamera* (NiAVObject* root)`
+#[inline]
+pub fn find_first_camera_in_tree(root: &classes::NiAVObject) -> Option<&'static classes::NiCamera> { unsafe { function!(15891, (&classes::NiAVObject) -> Option<&'static classes::NiCamera>)(root) } }
+/// `FindFirstTimeControllerInTree`: depth-first search of root and its children for the first controller whose RTTI chain contains NiTimeController
+///
+/// Semantic, camera pass, high; ledger semantic evidence, name high; id 15890, rva 0x2241a0.
+/// `NiTimeController* (NiAVObject* root)`
+#[inline]
+pub fn find_first_time_controller_in_tree(root: &classes::NiAVObject) -> Option<&'static classes::NiTimeController> { unsafe { function!(15890, (&classes::NiAVObject) -> Option<&'static classes::NiTimeController>)(root) } }
 /// `FindFormByEditorID`: returns the form registered under that editor id or null; only the 31 classes overriding slot 50 register
 ///
 /// Semantic, forms pass, high; ledger runtime evidence, name high; id 14620, rva 0x1e5a30.
@@ -59577,6 +62419,12 @@ pub fn find_form_by_editor_id_bs_fixed_string(editorID: &classes::BSFixedString)
 /// `TESForm* FindFormByID(uint formID)`
 #[inline]
 pub fn find_form_by_id(formID: u32) -> Option<&'static classes::TESForm> { unsafe { function!(14617, (u32) -> Option<&'static classes::TESForm>)(formID) } }
+/// `FindMatchingCameraPathRecursive`: null when formFlags bit 5 or the conditions fail; otherwise the first matching child's result, else path itself when it has shots or pathFlags bit 7, else null
+///
+/// Semantic, camera pass, high; ledger semantic evidence, name high; id 20648, rva 0x317050.
+/// `BGSCameraPath* (BGSCameraPath* path, TESObjectREFR* subject, TESObjectREFR* target)`
+#[inline]
+pub fn find_matching_camera_path_recursive(path: &classes::BGSCameraPath, subject: &classes::TESObjectREFR, target: &classes::TESObjectREFR) -> Option<&'static classes::BGSCameraPath> { unsafe { function!(20648, (&classes::BGSCameraPath, &classes::TESObjectREFR, &classes::TESObjectREFR) -> Option<&'static classes::BGSCameraPath>)(path, subject, target) } }
 /// `FindOrAddScriptRefVariable`: resolves an editor id or form id text to a form and adds a reference variable to the script being compiled; the second argument is the token buffer (name at +0), and the results are written back at +0x200, +0x20c and +0x210
 ///
 /// Semantic, input pass, medium; ledger semantic evidence, name medium; id 21946, rva 0x347400.
@@ -59595,6 +62443,15 @@ pub unsafe fn find_or_add_script_ref_variable(buf: *mut c_void, token: *mut c_vo
 /// `out` must point to what the engine expects.
 #[inline]
 pub unsafe fn find_or_claim_category_volume_slot(formID: u32, out: *mut *mut c_void) -> bool { unsafe { function!(21237, (u32, *mut *mut c_void) -> bool)(formID, out) } }
+/// `FindStackById`: bucket = Crc32OfDword(id) & (capacity - 1); empty when entry.next == 0; follows next until the key matches or the sentinel
+///
+/// Semantic, vmstack pass, high; ledger runtime evidence, name high; id 105076, rva 0x14c9f60.
+/// `bool (void* mapMinus8, const u32* stackID, BSTSmartPointer<BSScript::Stack>* out)`
+///
+/// # Safety
+/// `mapMinus8`, `stackID`, `out` must point to what the engine expects.
+#[inline]
+pub unsafe fn find_stack_by_id(mapMinus8: *mut c_void, stackID: *const u32, out: *mut c_void) -> bool { unsafe { function!(105076, (*mut c_void, *const u32, *mut c_void) -> bool)(mapMinus8, stackID, out) } }
 /// `FinePaid::GetEventSource`: the one source of FinePaid::Event events
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 41063, rva 0x76eac0.
@@ -59628,12 +62485,27 @@ pub unsafe fn fine_paid__unregister_sink(sink: *mut classes::partial::BSTEventSi
 /// `void (NiCamera* camera, BSShaderAccumulator* acc, u32 flags)`
 #[inline]
 pub fn finish_accumulator_draw(camera: &classes::NiCamera, acc: &classes::BSShaderAccumulator, flags: u32) { unsafe { function!(106438, (&classes::NiCamera, &classes::BSShaderAccumulator, u32))(camera, acc, flags) } }
+/// `FinishFirstPersonPass`: undoes the first-person subtree shift (OffsetSubtreeWorldTranslation(node [0x34362d8], -(0x3436318..), -(0x3436328..))), restores the hands camera's world translation from the context, sets ShadowSceneNode.eyePosition from the frame camera's parent (the camera root) local translation ([0x34362e8] +0x128 -> +0x30 -> +0x6c), zeroes its +0x2e8 vector, accumulator mode 0
+///
+/// Semantic, camera pass, high; ledger semantic evidence, name high; id 107124, rva 0x15376b0.
+/// `void (void)`
+#[inline]
+pub fn finish_first_person_pass() { unsafe { function!(107124, ())() } }
 /// `FireWeapon`: fires a weapon's projectile(s): origin = the weapon's projectile node world translation (node +0xa0..+0xa8) refined by shooter slot 160 (+0x500, origin in/out, angles out), else the shooter's position (+0x54) plus an offset; heading/pitch from the shooter or aimed at the combat target (atan, -asin); NPC bow spread; builds a Projectile::LaunchData per shot and calls CreateProjectileByType at +0xe70
 ///
 /// Semantic, camera pass, high; ledger semantic evidence, name high; id 18102, rva 0x28c450.
 /// `void (TESObjectWEAP* weapon, TESObjectREFR* shooter, TESAmmo* ammo, EnchantmentItem* enchantment, AlchemyItem* poison)`
 #[inline]
 pub fn fire_weapon(weapon: &classes::TESObjectWEAP, shooter: &classes::TESObjectREFR, ammo: &classes::TESAmmo, enchantment: &classes::EnchantmentItem, poison: &classes::AlchemyItem) { unsafe { function!(18102, (&classes::TESObjectWEAP, &classes::TESObjectREFR, &classes::TESAmmo, &classes::EnchantmentItem, &classes::AlchemyItem))(weapon, shooter, ammo, enchantment, poison) } }
+/// `FirstPersonCamera::StaticDtor`: atexit: releases g_FirstPersonCamera (refcount +8, slot 1 at zero)
+///
+/// Semantic, camera pass, high; ledger semantic evidence, name high; id 174562, rva 0x17c2eb0.
+/// `void (void)`
+///
+/// # Safety
+/// It constructs or destroys an object in place.
+#[inline]
+pub unsafe fn first_person_camera__static_dtor() { unsafe { function!(174562, ())() } }
 /// `Fmt_PtLight`: (existing row) the reference light path: form flags +0xec bits 10-12 make it a shadow light; bit 10 spot (fov from the reference, degrees), bit 11 hemisphere (fov pi -> one parabolic map), else omni (2pi -> two maps); near = form+0xf8 (default 5.0), mask parameter = form+0xf0
 ///
 /// Semantic, graphics pass, medium; ledger semantic evidence, name medium; id 17610, rva 0x274390.
@@ -59661,6 +62533,33 @@ pub unsafe fn for_each_alias_instance_of_ref(ref_: *mut classes::TESObjectREFR, 
 /// `map` must point to what the engine expects.
 #[inline]
 pub unsafe fn form_id_index_map__get_form_id(map: *mut c_void, index: u32) -> u32 { unsafe { function!(35555, (*mut c_void, u32) -> u32)(map, index) } }
+/// `FormatStackMessage`: '<severity>: <message>\nstack:' then FormatStackTrace lines
+///
+/// Semantic, vmstack pass, high; ledger semantic evidence, name high; id 104444, rva 0x149ab10.
+/// `void (BSScript::Stack* stack, const char* message, u32 severity, char* out, u32 outSize)`
+///
+/// # Safety
+/// `stack`, `message`, `out` must point to what the engine expects.
+#[inline]
+pub unsafe fn format_stack_message(stack: *mut classes::BSScript__Stack, message: *const c_char, severity: u32, out: *mut c_char, outSize: u32) { unsafe { function!(104444, (*mut classes::BSScript__Stack, *const c_char, u32, *mut c_char, u32))(stack, message, severity, out, outSize) } }
+/// `FormatStackTrace`: one line per frame from top through +8: '[<handle string>].<class>.<function>() - "<source>" Line <n>' using ObjectTypeInfo+8, IFunction slots 1, 16 and 17 (vtable+0x88 with frame+0x20)
+///
+/// Semantic, vmstack pass, high; ledger semantic evidence, name high; id 104486, rva 0x149e920.
+/// `void (BSScript::Stack* stack, BSScrapArray<BSFixedString>* outLines)`
+///
+/// # Safety
+/// `stack`, `outLines` must point to what the engine expects.
+#[inline]
+pub unsafe fn format_stack_trace(stack: *mut classes::BSScript__Stack, outLines: *mut c_void) { unsafe { function!(104486, (*mut classes::BSScript__Stack, *mut c_void))(stack, outLines) } }
+/// `FreezeStack`: stack+0x6c = 2, links the stack at the head of the frozen list (+0x9390, via stack+0x98) under freezeLock, frozenCount + 1
+///
+/// Semantic, vmstack pass, high; ledger semantic evidence, name high; id 104850, rva 0x14b9dc0.
+/// `void (BSScript::Internal::VirtualMachine* vm, BSScript::Stack* stack)`
+///
+/// # Safety
+/// `stack` must point to what the engine expects.
+#[inline]
+pub unsafe fn freeze_stack(vm: *mut classes::BSScript__Internal__VirtualMachine, stack: *mut classes::BSScript__Stack) { unsafe { function!(104850, (*mut classes::BSScript__Internal__VirtualMachine, *mut classes::BSScript__Stack))(vm, stack) } }
 /// `GFxFunctionObject::Call`: AS call entry of a function object made by CreateFunction (slot 10 of vtable 0x1a235b8)
 ///
 /// Semantic, ui pass, medium; ledger semantic evidence, name medium; id 82255, rva 0xcf5ff0.
@@ -59904,6 +62803,18 @@ pub fn get_audio_backend() -> Option<&'static classes::BSAudio> { unsafe { funct
 /// `BSAudioManager* ()`
 #[inline]
 pub fn get_audio_manager() -> Option<&'static classes::BSAudioManager> { unsafe { function!(67652, () -> Option<&'static classes::BSAudioManager>)() } }
+/// `GetCameraShakeStrength`: returns g_CameraShakeStrength (0x3204860)
+///
+/// Semantic, camera pass, high; ledger runtime evidence, name high; id 33014, rva 0x558c30.
+/// `float (void)`
+#[inline]
+pub fn get_camera_shake_strength() -> f32 { unsafe { function!(33014, () -> f32)() } }
+/// `GetCameraShakeTimeRemaining`: returns g_CameraShakeTimeRemaining (0x3204864)
+///
+/// Semantic, camera pass, high; ledger semantic evidence, name high; id 33015, rva 0x558c40.
+/// `float (void)`
+#[inline]
+pub fn get_camera_shake_time_remaining() -> f32 { unsafe { function!(33015, () -> f32)() } }
 /// `GetChangeFormInitialType`: kind of initial data a record carries: refs 5 created, 6 bits 3|25, 4 bits 1|2, else 0; cells with bit 30: 1 if bit 29, 2 if bit 28, else 3
 ///
 /// Semantic, save pass, high; ledger semantic evidence, name high; id 35708, rva 0x6204c0.
@@ -59934,15 +62845,30 @@ pub unsafe fn get_console_command_queue() -> *mut c_void { unsafe { function!(52
 /// The pass rates the signature medium.
 #[inline]
 pub unsafe fn get_current_accumulator() -> *mut classes::BSShaderAccumulator { unsafe { function!(105651, () -> *mut classes::BSShaderAccumulator)() } }
-/// `GetDialogueSpeakerYawOffset`: angle from the actor to the dialogue speaker minus PlayerCamera.yaw; the engine's only dialogue camera behaviour is this look limit
+/// `GetDefaultCameraPath`: returns the default camera path pointer 0x31df550
 ///
-/// Semantic, camera pass, medium; ledger semantic evidence, name medium; id 40498, rva 0x74a350.
-/// `float (Actor* actor)`
-///
-/// # Safety
-/// The pass rates the signature medium.
+/// Semantic, camera pass, high; ledger semantic evidence, name high; id 20681, rva 0x318010.
+/// `BGSCameraPath* (void)`
 #[inline]
-pub unsafe fn get_dialogue_speaker_yaw_offset(actor: *mut classes::Actor) -> f32 { unsafe { function!(40498, (*mut classes::Actor) -> f32)(actor) } }
+pub fn get_default_camera_path() -> Option<&'static classes::BGSCameraPath> { unsafe { function!(20681, () -> Option<&'static classes::BGSCameraPath>)() } }
+/// `GetDialogueSpeakerYawOffset`: while the topic manager has a speaker (MenuTopicManager +0xb1 and the byte 0x20b763c): the yaw from actor's look position to the speaker's (slot 91 on both) minus PlayerCamera.yaw (+0x154), wrapped to [-pi, pi]; else FLT_MAX (0x17ed6a8)
+///
+/// Semantic, camera pass, high; ledger semantic evidence, name high; id 40498, rva 0x74a350.
+/// `float (Actor* actor)`
+#[inline]
+pub fn get_dialogue_speaker_yaw_offset(actor: &classes::Actor) -> f32 { unsafe { function!(40498, (&classes::Actor) -> f32)(actor) } }
+/// `GetFirstPersonRenderContext`: returns &g_FirstPersonViewParams (0x34362c0)
+///
+/// Semantic, camera pass, high; ledger semantic evidence, name high; id 107121, rva 0x1537410.
+/// `FirstPersonRenderContext* (void)`
+#[inline]
+pub fn get_first_person_render_context() -> Option<&'static classes::FirstPersonRenderContext> { unsafe { function!(107121, () -> Option<&'static classes::FirstPersonRenderContext>)() } }
+/// `GetInteriorCellBufferSetting`: returns the value of uInterior Cell Buffer:General (INISetting object 0x2077748, value 0x2077750)
+///
+/// Semantic, camera pass, high; ledger semantic evidence, name high; id 13386, rva 0x1a7fa0.
+/// `u32 (void)`
+#[inline]
+pub fn get_interior_cell_buffer_setting() -> u32 { unsafe { function!(13386, () -> u32)() } }
 /// `GetListenerPosition`: listener+8 or a static zero vector
 ///
 /// Semantic, audio pass, high; ledger semantic evidence, name high; id 67710, rva 0xcccf30.
@@ -59967,6 +62893,21 @@ pub fn get_main_camera() -> Option<&'static classes::NiCamera> { unsafe { functi
 /// `map` must point to what the engine expects.
 #[inline]
 pub unsafe fn get_or_assign_form_id_index(map: *mut c_void, formID: u32) -> u32 { unsafe { function!(35554, (*mut c_void, u32) -> u32)(map, formID) } }
+/// `GetOrCreateStackById`: finds the id in runningStacks or allocates 0xa0, constructs (page policy VM+0x88, profiler VM+0xb0) and inserts it
+///
+/// Semantic, vmstack pass, high; ledger semantic evidence, name high; id 104871, rva 0x14bcd00.
+/// `void (BSScript::Internal::VirtualMachine* vm, u32 stackID, u32 kind, BSTSmartPointer<BSScript::IStackCallbackFunctor>* callback, BSTSmartPointer<BSScript::Stack>* out)`
+///
+/// # Safety
+/// `callback`, `out` must point to what the engine expects.
+#[inline]
+pub unsafe fn get_or_create_stack_by_id(vm: *mut classes::BSScript__Internal__VirtualMachine, stackID: u32, kind: u32, callback: *mut c_void, out: *mut c_void) { unsafe { function!(104871, (*mut classes::BSScript__Internal__VirtualMachine, u32, u32, *mut c_void, *mut c_void))(vm, stackID, kind, callback, out) } }
+/// `GetSpeechDelay`: returns fSpeechDelay (GameSetting value 0x20b0330)
+///
+/// Semantic, camera pass, high; ledger semantic evidence, name high; id 26565, rva 0x423e20.
+/// `float (void)`
+#[inline]
+pub fn get_speech_delay() -> f32 { unsafe { function!(26565, () -> f32)() } }
 /// `GlobalDataAfterChangeForms`: post-change-form step per type: 100 RebuildActorHandleList, 103 PruneGlobalListUnderLock
 ///
 /// Semantic, save pass, medium; ledger semantic evidence, name medium; id 35644, rva 0x61c830.
@@ -60077,13 +63018,10 @@ pub unsafe fn image_space_manager__render_effect(this: *mut c_void, effectId: u3
 pub unsafe fn image_space_manager__ctor(this: *mut c_void) -> *mut c_void { unsafe { function!(105666, (*mut c_void) -> *mut c_void)(this) } }
 /// `ImageSpaceModifier::Apply`: trigger: allocates an instance (0x50), appends it to g_TES+0x108, returns it (not addref'd for the caller)
 ///
-/// Semantic, graphics pass, medium; ledger runtime evidence, name medium; id 18570, rva 0x2a3940.
+/// Semantic, graphics pass, high; ledger runtime evidence, name high; id 18570, rva 0x2a3940.
 /// `ImageSpaceModifierInstanceForm* (TESImageSpaceModifier* imod, float strength, NiAVObject* target)`
-///
-/// # Safety
-/// The pass rates the signature medium.
 #[inline]
-pub unsafe fn image_space_modifier__apply(imod: *mut classes::TESImageSpaceModifier, strength: f32, target: *mut classes::NiAVObject) -> *mut classes::ImageSpaceModifierInstanceForm { unsafe { function!(18570, (*mut classes::TESImageSpaceModifier, f32, *mut classes::NiAVObject) -> *mut classes::ImageSpaceModifierInstanceForm)(imod, strength, target) } }
+pub fn image_space_modifier__apply(imod: &classes::TESImageSpaceModifier, strength: f32, target: &classes::NiAVObject) -> Option<&'static classes::ImageSpaceModifierInstanceForm> { unsafe { function!(18570, (&classes::TESImageSpaceModifier, f32, &classes::NiAVObject) -> Option<&'static classes::ImageSpaceModifierInstanceForm>)(imod, strength, target) } }
 /// `ImageSpaceModifier::ApplyIfAbsent`: as Apply but returns null without adding when an instance of imod is already on the list
 ///
 /// Semantic, graphics pass, high; ledger semantic evidence, name high; id 18572, rva 0x2a3bc0.
@@ -60105,6 +63043,42 @@ pub fn image_space_modifier__remove(imod: &classes::TESImageSpaceModifier) { uns
 /// The pass rates the signature medium.
 #[inline]
 pub unsafe fn image_space_modifier__remove_cross_fade(seconds: f32) { unsafe { function!(18577, (f32))(seconds) } }
+/// `InitDragonMaxTurnAngle`: g_DragonMaxTurnAngle = fDragonMaxAngleBeforeTurn:Camera (90 in the image) * pi/180
+///
+/// Semantic, camera pass, high; ledger semantic evidence, name high; id 5325, rva 0x90f30.
+/// `void (void)`
+#[inline]
+pub fn init_dragon_max_turn_angle() { unsafe { function!(5325, ())() } }
+/// `InitFreeCameraEventName_CameraZDown`: CRT initializer: constructs the BSFixedString "CameraZDown" in g_FreeCameraEventNames[1] (0x3255ad0) and registers its atexit destructor
+///
+/// Semantic, camera pass, high; ledger semantic evidence, name high; id 6706, rva 0xb1f50.
+/// `void (void)`
+#[inline]
+pub fn init_free_camera_event_name_camera_z_down() { unsafe { function!(6706, ())() } }
+/// `InitFreeCameraEventName_CameraZUp`: CRT initializer: constructs the BSFixedString "CameraZUp" in g_FreeCameraEventNames[0] (0x3255ac8) and registers its atexit destructor
+///
+/// Semantic, camera pass, high; ledger semantic evidence, name high; id 6707, rva 0xb1f80.
+/// `void (void)`
+#[inline]
+pub fn init_free_camera_event_name_camera_z_up() { unsafe { function!(6707, ())() } }
+/// `InitHorseMaxTurnAngle`: g_HorseMaxTurnAngle = fHorseMaxAngleBeforeTurn:Camera (90 in the image) * pi/180
+///
+/// Semantic, camera pass, high; ledger semantic evidence, name high; id 6720, rva 0xb24c0.
+/// `void (void)`
+#[inline]
+pub fn init_horse_max_turn_angle() { unsafe { function!(6720, ())() } }
+/// `InitMapCameraStates`: creates two World states (+0x68, +0x70), Exit (+0x78, id 1), Transition (+0x80, id 2, transitionHeight = fMapWorldTransitionHeight)
+///
+/// Semantic, camera pass, high; ledger semantic evidence, name high; id 53013, rva 0x996390.
+/// `void (MapCamera* camera)`
+#[inline]
+pub fn init_map_camera_states(camera: &classes::MapCamera) { unsafe { function!(53013, (&classes::MapCamera))(camera) } }
+/// `InitRaceMenuCameraTargets`: body target 0x3258500 = ScreenPoint(0.5, 0.5, yaw -10, z -20, fPlayerBodyEditDistance); face target 0x3258520 = ScreenPoint(0.5, 0.4, yaw -10, z -4, fPlayerFaceEditDistance); when dot(quaternion 0x325856c, face rotation) < 0 both the face and the body rotations are negated (one hemisphere for the ease)
+///
+/// Semantic, camera pass, high; ledger runtime evidence, name high; id 52413, rva 0x971640.
+/// `void (void)`
+#[inline]
+pub fn init_race_menu_camera_targets() { unsafe { function!(52413, ())() } }
 /// `InitRenderPassPools`: allocates the two render-pass pools (0xffff passes of 0x48 and 16 light slots each)
 ///
 /// Semantic, frame pass, high; ledger semantic evidence, name high; id 107500, rva 0x1555a10.
@@ -60120,6 +63094,27 @@ pub fn init_render_pass_pools() { unsafe { function!(107500, ())() } }
 /// The pass rates the signature medium.
 #[inline]
 pub unsafe fn init_shaders() { unsafe { function!(105624, ())() } }
+/// `InitStackFrameAndClearVariables`: frame+0 = stack, +0x8..+0x37 = 0 (previous, function, type, ip, self), +0x38 = variableCount, +0x3c = 1, every variable None
+///
+/// Semantic, vmstack pass, high; ledger semantic evidence, name high; id 104474, rva 0x149c7d0.
+/// `BSScript::StackFrame* (BSScript::StackFrame* frame, BSScript::Stack* stack, u32 variableCount)`
+///
+/// # Safety
+/// `frame`, `stack` must point to what the engine expects.
+#[inline]
+pub unsafe fn init_stack_frame_and_clear_variables(frame: *mut classes::BSScript__StackFrame, stack: *mut classes::BSScript__Stack, variableCount: u32) -> *mut classes::BSScript__StackFrame { unsafe { function!(104474, (*mut classes::BSScript__StackFrame, *mut classes::BSScript__Stack, u32) -> *mut classes::BSScript__StackFrame)(frame, stack, variableCount) } }
+/// `InitStatsMenuEventName_CameraIntro`: CRT initializer: BSFixedString "CameraIntro" at 0x32589f8 (ID_406573) plus its atexit destructor
+///
+/// Semantic, camera pass, high; ledger semantic evidence, name high; id 7337, rva 0xbd8b0.
+/// `void (void)`
+#[inline]
+pub fn init_stats_menu_event_name_camera_intro() { unsafe { function!(7337, ())() } }
+/// `InitStatsMenuEventName_CameraOutro`: CRT initializer: BSFixedString "CameraOutro" at 0x3258a00 (ID_406574) plus its atexit destructor
+///
+/// Semantic, camera pass, high; ledger semantic evidence, name high; id 7338, rva 0xbd8e0.
+/// `void (void)`
+#[inline]
+pub fn init_stats_menu_event_name_camera_outro() { unsafe { function!(7338, ())() } }
 /// `Inventory::GetEventSource`: the one source of Inventory::Event events
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 16225, rva 0x241aa0.
@@ -60171,12 +63166,39 @@ pub fn is_audio_ready() -> bool { unsafe { function!(67654, () -> bool)() } }
 /// `holder`, `cameraPos` must point to what the engine expects.
 #[inline]
 pub unsafe fn is_camera_caster_overlapping(holder: *mut c_void, target: *mut classes::Actor, cameraPos: *const c_void, radiusHavok: f32, heightOffset: f32) -> bool { unsafe { function!(33008, (*mut c_void, *mut classes::Actor, *const c_void, f32, f32) -> bool)(holder, target, cameraPos, radiusHavok, heightOffset) } }
+/// `IsHandleSlotOccupied`: *slot != 0
+///
+/// Semantic, camera pass, high; ledger semantic evidence, name high; id 23687, rva 0x391da0.
+/// `bool (void** slot)`
+///
+/// # Safety
+/// `slot` must point to what the engine expects.
+#[inline]
+pub unsafe fn is_handle_slot_occupied(slot: *mut *mut c_void) -> bool { unsafe { function!(23687, (*mut *mut c_void) -> bool)(slot) } }
+/// `IsPointeeField4EqualGlobal`: true when *entrySlot is non-null and its +4 equals ID_400641 (0x31a431c)
+///
+/// Semantic, camera pass, high; ledger semantic evidence, name high; id 16257, rva 0x242d70.
+/// `bool (void** entrySlot)`
+///
+/// # Safety
+/// `entrySlot` must point to what the engine expects.
+#[inline]
+pub unsafe fn is_pointee_field4_equal_global(entrySlot: *mut *mut c_void) -> bool { unsafe { function!(16257, (*mut *mut c_void) -> bool)(entrySlot) } }
 /// `IsPowerAttacking`: attack state bits (flags1 +0xc8 > 0x0fffffff) and the current attack data's flags (+0x28) bit 2
 ///
 /// Semantic, camera pass, high; ledger semantic evidence, name high; id 38592, rva 0x6cb980.
 /// `bool (Actor* actor)`
 #[inline]
 pub fn is_power_attacking(actor: &classes::Actor) -> bool { unsafe { function!(38592, (&classes::Actor) -> bool)(actor) } }
+/// `IsVisibleInMainCameraOrMultiBound`: false for null; when the object's parent (+0x30) is a BSMultiBoundNode returns (parent+0x128)->+0x18->+0x10 == 1; otherwise IsFieldE4SphereInsideFrustum(object, GetMainCamera()) (world bound +0xe4 against the main camera's frustum)
+///
+/// Semantic, camera pass, high; ledger runtime evidence, name high; id 32188, rva 0x52c6f0.
+/// `bool (void* unused, NiAVObject* object)`
+///
+/// # Safety
+/// `unused` must point to what the engine expects.
+#[inline]
+pub unsafe fn is_visible_in_main_camera_or_multi_bound(unused: *mut c_void, object: *mut classes::NiAVObject) -> bool { unsafe { function!(32188, (*mut c_void, *mut classes::NiAVObject) -> bool)(unused, object) } }
 /// `ItemCrafted::GetEventSource`: the one source of ItemCrafted::Event events
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 51403, rva 0x924920.
@@ -60531,6 +63553,24 @@ pub unsafe fn lookup_sound_descriptor_by_editor_id(editorId: *const c_char) -> *
 /// `this`, `event`, `source` must point to what the engine expects.
 #[inline]
 pub unsafe fn menu_mode_change_listener__process_event(this: *mut c_void, event: *const c_void, source: *mut c_void) -> u32 { unsafe { function!(35103, (*mut c_void, *const c_void, *mut c_void) -> u32)(this, event, source) } }
+/// `MoveFollowingCameraPathAfterInArray`: find the sibling whose previousSibling is path and move it directly behind path (recursively for its own follower); two claimants log an error
+///
+/// Semantic, camera pass, high; ledger semantic evidence, name high; id 20641, rva 0x316b90.
+/// `void (BGSCameraPath* path, NiTPrimitiveArray<TESForm*>* siblings)`
+///
+/// # Safety
+/// `siblings` must point to what the engine expects.
+#[inline]
+pub unsafe fn move_following_camera_path_after_in_array(path: *mut classes::BGSCameraPath, siblings: *mut c_void) { unsafe { function!(20641, (*mut classes::BGSCameraPath, *mut c_void))(path, siblings) } }
+/// `MovePlayerToCellAndPosition`: moves the player to a cell and position: sets the angle, changes the current cell or moves the grid, optionally flags the sky (bit 4 of Sky+0x1dc), parent cell reset, AddReferenceToCell, grass/cell visits, terrain LOD (UpdateTerrainLOD), PlayerCharacter::UpdateCamera, audio listener
+///
+/// Semantic, camera pass, high; ledger semantic evidence, name high; id 40744, rva 0x75ed50.
+/// `void (PlayerCharacter* player, const NiPoint3* position, const NiPoint3* angle, TESObjectCELL* cell, bool refreshSky)`
+///
+/// # Safety
+/// `position`, `angle` must point to what the engine expects.
+#[inline]
+pub unsafe fn move_player_to_cell_and_position(player: *mut classes::PlayerCharacter, position: *const c_void, angle: *const c_void, cell: *mut classes::TESObjectCELL, refreshSky: bool) { unsafe { function!(40744, (*mut classes::PlayerCharacter, *const c_void, *const c_void, *mut classes::TESObjectCELL, bool))(player, position, angle, cell, refreshSky) } }
 /// `Msg_ClearLists_sub17_sub1`: improved-snow / sparkles / reflections composite in RenderWorldColor; reads g_CurrentRenderCamera near/far and frustum
 ///
 /// Semantic, graphics pass, low; ledger callgraph evidence, name low; id 107245, rva 0x1541f40.
@@ -60639,6 +63679,60 @@ pub unsafe fn ni_transform__multiply(lhs: *const c_void, out: *mut c_void, rhs: 
 /// The pass rates the signature medium.
 #[inline]
 pub unsafe fn ni_transform__set_identity(this: *mut c_void) { unsafe { function!(70760, (*mut c_void))(this) } }
+/// `NoOp_BeforeLoadingFade`: empty function (ret)
+///
+/// Semantic, camera pass, high; ledger semantic evidence, name high; id 52623, rva 0x983e30.
+/// `void (void)`
+#[inline]
+pub fn no_op_before_loading_fade() { unsafe { function!(52623, ())() } }
+/// `NoOp_BleedingOutExtraData`: empty function (ret)
+///
+/// Semantic, camera pass, high; ledger semantic evidence, name high; id 16070, rva 0x233e70.
+/// `void (void)`
+#[inline]
+pub fn no_op_bleeding_out_extra_data() { unsafe { function!(16070, ())() } }
+/// `NoOp_EndOfMainLoop`: empty function (ret)
+///
+/// Semantic, camera pass, high; ledger semantic evidence, name high; id 78641, rva 0x1082490.
+/// `void (void)`
+#[inline]
+pub fn no_op_end_of_main_loop() { unsafe { function!(78641, ())() } }
+/// `NoOp_RenderWorldSceneDebug`: empty function (ret 0)
+///
+/// Semantic, camera pass, high; ledger semantic evidence, name high; id 107018, rva 0x1530e50.
+/// `void (void)`
+#[inline]
+pub fn no_op_render_world_scene_debug() { unsafe { function!(107018, ())() } }
+/// `NoOp_ResetGame118`: empty function (ret)
+///
+/// Semantic, camera pass, high; ledger semantic evidence, name high; id 442449, rva 0x607f30.
+/// `void (void)`
+#[inline]
+pub fn no_op_reset_game118() { unsafe { function!(442449, ())() } }
+/// `NoOp_TweenMenu58`: empty function (ret)
+///
+/// Semantic, camera pass, high; ledger semantic evidence, name high; id 56852, rva 0xa66fe0.
+/// `void (void)`
+#[inline]
+pub fn no_op_tween_menu58() { unsafe { function!(56852, ())() } }
+/// `Object_TryLockForStack`: CAS of Object+0x18 from null to stack (+1 stack reference); true also when it already holds stack or stack|1
+///
+/// Semantic, vmstack pass, high; ledger semantic evidence, name high; id 104257, rva 0x148f350.
+/// `bool (BSScript::Object* object, BSScript::Stack* stack)`
+///
+/// # Safety
+/// `object`, `stack` must point to what the engine expects.
+#[inline]
+pub unsafe fn object_try_lock_for_stack(object: *mut classes::BSScript__Object, stack: *mut classes::BSScript__Stack) -> bool { unsafe { function!(104257, (*mut classes::BSScript__Object, *mut classes::BSScript__Stack) -> bool)(object, stack) } }
+/// `Object_UnlockForStack`: clears Object+0x18 (keeping bit 0) when it holds stack, -1 stack reference
+///
+/// Semantic, vmstack pass, high; ledger semantic evidence, name high; id 104258, rva 0x148f380.
+/// `void (BSScript::Object* object, BSScript::Stack* stack)`
+///
+/// # Safety
+/// `object`, `stack` must point to what the engine expects.
+#[inline]
+pub unsafe fn object_unlock_for_stack(object: *mut classes::BSScript__Object, stack: *mut classes::BSScript__Stack) { unsafe { function!(104258, (*mut classes::BSScript__Object, *mut classes::BSScript__Stack))(object, stack) } }
 /// `ObjectiveState::GetEventSource`: the one source of ObjectiveState::Event events
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 23951, rva 0x39c340.
@@ -60762,6 +63856,15 @@ pub unsafe fn papyrus__game__force_first_person(vm: *mut c_void, stackId: u32, u
 /// `vm`, `unused` must point to what the engine expects.
 #[inline]
 pub unsafe fn papyrus__game__force_third_person(vm: *mut c_void, stackId: u32, unused: *mut c_void) { unsafe { function!(55565, (*mut c_void, u32, *mut c_void))(vm, stackId, unused) } }
+/// `Papyrus::Game::SetBeastForm`: Papyrus Game.SetBeastForm: MenuControls +0x81 = beastForm; when false, PlayerCamera::SetCombatOffsets(camera, false)
+///
+/// Semantic, camera pass, high; ledger papyrus_native evidence, name high; id 55497, rva 0xa25610.
+/// `void (IVirtualMachine* vm, u32 stackId, void* unused, bool beastForm)`
+///
+/// # Safety
+/// `vm`, `unused` must point to what the engine expects.
+#[inline]
+pub unsafe fn papyrus__game__set_beast_form(vm: *mut c_void, stackId: u32, unused: *mut c_void, beastForm: bool) { unsafe { function!(55497, (*mut c_void, u32, *mut c_void, bool))(vm, stackId, unused, beastForm) } }
 /// `Papyrus::Game::SetCameraTarget`: PlayerCamera::SetTarget(target)
 ///
 /// Semantic, camera pass, high; ledger papyrus_native evidence, name high; id 55575, rva 0xa2ade0.
@@ -60780,6 +63883,15 @@ pub unsafe fn papyrus__game__set_camera_target(vm: *mut c_void, stackId: u32, un
 /// `vm`, `unused` must point to what the engine expects.
 #[inline]
 pub unsafe fn papyrus__game__set_sitting_rotation(vm: *mut c_void, stackId: u32, unused: *mut c_void, degrees: f32) { unsafe { function!(55499, (*mut c_void, u32, *mut c_void, f32))(vm, stackId, unused, degrees) } }
+/// `Papyrus::Game::ShakeCamera`: Game.ShakeCamera(source, strength, duration): strength clamped to [0, 1], origin = source position (+0x54..+0x5c) or the player's, then StartCameraShake(strength, &origin, duration)
+///
+/// Semantic, camera pass, high; ledger papyrus_native evidence, name high; id 55494, rva 0xa25500.
+/// `void (BSScript::IVirtualMachine* vm, u32 stackId, StaticFunctionTag* tag, TESObjectREFR* source, float strength, float duration)`
+///
+/// # Safety
+/// `tag` must point to what the engine expects.
+#[inline]
+pub unsafe fn papyrus__game__shake_camera(vm: *mut classes::BSScript__IVirtualMachine, stackId: u32, tag: *mut c_void, source: *mut classes::TESObjectREFR, strength: f32, duration: f32) { unsafe { function!(55494, (*mut classes::BSScript__IVirtualMachine, u32, *mut c_void, *mut classes::TESObjectREFR, f32, f32))(vm, stackId, tag, source, strength, duration) } }
 /// `Papyrus::Game::ShowFirstPersonGeometry`: PlayerCharacter viewFlags bit 1 = !show
 ///
 /// Semantic, camera pass, high; ledger papyrus_native evidence, name high; id 55464, rva 0xa24940.
@@ -60921,6 +64033,15 @@ pub unsafe fn parse_command_params(numParams: u16, params: *const classes::Param
 /// `handle` must point to what the engine expects.
 #[inline]
 pub unsafe fn pause_category(handle: *mut *mut classes::BSISoundCategory, fadeMs: u16) { unsafe { function!(67840, (*mut *mut classes::BSISoundCategory, u16))(handle, fadeMs) } }
+/// `PickTerrainHeightAt`: NiPick straight down from z 500000 against the loaded quad-tree terrain at (x, y); on a hit *outHeight = 500000 - distance, else GetHeightAtPositionWithFallback
+///
+/// Semantic, camera pass, high; ledger semantic evidence, name high; id 53040, rva 0x9976d0.
+/// `bool (TESWorldSpace* worldSpace, float x, float y, float* outHeight)`
+///
+/// # Safety
+/// `outHeight` must point to what the engine expects.
+#[inline]
+pub unsafe fn pick_terrain_height_at(worldSpace: *mut classes::TESWorldSpace, x: f32, y: f32, outHeight: *mut f32) -> bool { unsafe { function!(53040, (*mut classes::TESWorldSpace, f32, f32, *mut f32) -> bool)(worldSpace, x, y, outHeight) } }
 /// `Pickpocket::GetEventSource`: the one source of Pickpocket::Event events
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 41068, rva 0x76ef70.
@@ -61008,6 +64129,24 @@ pub unsafe fn poisoned_weapon__unregister_sink(sink: *mut classes::partial::BSTE
 /// `void ()`
 #[inline]
 pub fn poll_controls_job() { unsafe { function!(36578, ())() } }
+/// `PopFunctionMessage`: queue slot 4, else the last overflow entry; queuedMessageCount - 1
+///
+/// Semantic, vmstack pass, high; ledger semantic evidence, name high; id 104879, rva 0x14bd970.
+/// `bool (BSScript::Internal::VirtualMachine* vm, BSScript::Internal::FunctionMessage* out)`
+///
+/// # Safety
+/// `out` must point to what the engine expects.
+#[inline]
+pub unsafe fn pop_function_message(vm: *mut classes::BSScript__Internal__VirtualMachine, out: *mut classes::BSScript__Internal__FunctionMessage) -> bool { unsafe { function!(104879, (*mut classes::BSScript__Internal__VirtualMachine, *mut classes::BSScript__Internal__FunctionMessage) -> bool)(vm, out) } }
+/// `PopSuspendedStack`: pops the read queue, else the read overflow array (front when VM+0x827c is set, else back)
+///
+/// Semantic, vmstack pass, high; ledger semantic evidence, name high; id 104868, rva 0x14bc9d0.
+/// `bool (BSScript::Internal::VirtualMachine* vm, BSScript::Internal::SuspendedStack* out)`
+///
+/// # Safety
+/// `out` must point to what the engine expects.
+#[inline]
+pub unsafe fn pop_suspended_stack(vm: *mut classes::BSScript__Internal__VirtualMachine, out: *mut classes::BSScript__Internal__SuspendedStack) -> bool { unsafe { function!(104868, (*mut classes::BSScript__Internal__VirtualMachine, *mut classes::BSScript__Internal__SuspendedStack) -> bool)(vm, out) } }
 /// `PrecacheSoundDescriptor`: builds play data through desc slot 1, creates a sound object and queues an AudioLoadToCacheTask
 ///
 /// Semantic, audio pass, medium; ledger semantic evidence, name medium; id 67720, rva 0xccd400.
@@ -61017,6 +64156,15 @@ pub fn poll_controls_job() { unsafe { function!(36578, ())() } }
 /// The pass rates the signature medium.
 #[inline]
 pub unsafe fn precache_sound_descriptor(mgr: *mut classes::BSAudioManager, desc: *mut classes::BSISoundDescriptor, flags: u32) { unsafe { function!(67720, (*mut classes::BSAudioManager, *mut classes::BSISoundDescriptor, u32))(mgr, desc, flags) } }
+/// `PredictProjectileHit`: simulates the shooter's projectile toward the target (anticipated location, projectile motion) and returns what it would hit; used by VATS to test a target
+///
+/// Semantic, camera pass, medium; ledger semantic evidence, name medium; id 38639, rva 0x6cf490.
+/// `TESObjectREFR* (Actor* shooter, TESObjectREFR* target, MagicItem* spell, bool leftHand)`
+///
+/// # Safety
+/// The pass rates the signature medium.
+#[inline]
+pub unsafe fn predict_projectile_hit(shooter: *mut classes::Actor, target: *mut classes::TESObjectREFR, spell: *mut classes::MagicItem, leftHand: bool) -> *mut classes::TESObjectREFR { unsafe { function!(38639, (*mut classes::Actor, *mut classes::TESObjectREFR, *mut classes::MagicItem, bool) -> *mut classes::TESObjectREFR)(shooter, target, spell, leftHand) } }
 /// `PresentFrame`: presents the swap chain (slot 8 of the IDXGISwapChain behind 0x3330198+0x18 with the sync interval) and increments g_RenderFrameCounter
 ///
 /// Semantic, render pass, high; ledger runtime evidence, name high; id 77246, rva 0x1009f70.
@@ -61044,6 +64192,15 @@ pub unsafe fn process_cull_object_list(culler: *mut classes::BSCullingProcess, o
 /// `void (BSInputDevice* device, u32 id, float realDelta, bool wasDown, bool isDown)`
 #[inline]
 pub fn process_digital_button_state(device: &classes::BSInputDevice, id: u32, realDelta: f32, wasDown: bool, isDown: bool) { unsafe { function!(68748, (&classes::BSInputDevice, u32, f32, bool, bool))(device, id, realDelta, wasDown, isDown) } }
+/// `ProcessHandleArrayWithFrameDelta`: tail call ProcessHandleArrayRefsAndPruneDeleted(manager, g_FrameDelta)
+///
+/// Semantic, camera pass, high; ledger semantic evidence, name high; id 34706, rva 0x5d9500.
+/// `void (void* manager)`
+///
+/// # Safety
+/// `manager` must point to what the engine expects.
+#[inline]
+pub unsafe fn process_handle_array_with_frame_delta(manager: *mut c_void) { unsafe { function!(34706, (*mut c_void))(manager) } }
 /// `ProcessLists::QueueActorAnimationJobs`: for each actor handle of the process list (+0x30, count +0x40) appends job 0x7898e0, then 0x7899b0 jobs
 ///
 /// Semantic, animation pass, high; ledger semantic evidence, name high; id 41370, rva 0x7836e0.
@@ -61089,6 +64246,24 @@ pub fn process_shadow_scene_node_queues(culler: &classes::BSCullingProcess) { un
 /// `void (BSScript::Internal::VirtualMachine* vm, float budget)`
 #[inline]
 pub fn prune_tracked_arrays(vm: &classes::BSScript__Internal__VirtualMachine, budget: f32) { unsafe { function!(104859, (&classes::BSScript__Internal__VirtualMachine, f32))(vm, budget) } }
+/// `PtrArray16::SetAtGrow`: NiT-style array with u16 capacity/size/count/grow at +0x10/+0x12/+0x14/+0x16: grow to index + grow step, store item, keep the non-null count; returns index
+///
+/// Semantic, camera pass, high; ledger semantic evidence, name high; id 20691, rva 0x318540.
+/// `u32 (PtrArray16* array, u32 index, void** item)`
+///
+/// # Safety
+/// `array`, `item` must point to what the engine expects.
+#[inline]
+pub unsafe fn ptr_array16__set_at_grow(array: *mut c_void, index: u32, item: *mut *mut c_void) -> u32 { unsafe { function!(20691, (*mut c_void, u32, *mut *mut c_void) -> u32)(array, index, item) } }
+/// `PushStackFrame`: 0 pushed; 1 failed (fewer frame slots than arguments, or the fill failed and the frame was popped); 2 page memory not available yet (the executor suspends the stack with state 2)
+///
+/// Semantic, vmstack pass, high; ledger semantic evidence, name high; id 104482, rva 0x149e660.
+/// `u32 (BSScript::Stack* stack, BSTSmartPointer<BSScript::IFunction>* function, BSTSmartPointer<BSScript::ObjectTypeInfo>* type, const BSScript::Variable* self, BSScrapArray<BSScript::Variable>* args)`
+///
+/// # Safety
+/// `stack`, `function`, `type_`, `args` must point to what the engine expects.
+#[inline]
+pub unsafe fn push_stack_frame(stack: *mut classes::BSScript__Stack, function: *mut c_void, type_: *mut c_void, self_: *const classes::BSScript__Variable, args: *mut c_void) -> u32 { unsafe { function!(104482, (*mut classes::BSScript__Stack, *mut c_void, *mut c_void, *const classes::BSScript__Variable, *mut c_void) -> u32)(stack, function, type_, self_, args) } }
 /// `QuestStatus::GetEventSource`: the one source of QuestStatus::Event events
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 25196, rva 0x3dfec0.
@@ -61116,6 +64291,15 @@ pub unsafe fn quest_status__register_sink(sink: *mut classes::partial::BSTEventS
 /// The pass rates the signature medium.
 #[inline]
 pub unsafe fn quest_status__unregister_sink(sink: *mut classes::partial::BSTEventSink_QuestStatus__Event) { unsafe { function!(24962, (*mut classes::partial::BSTEventSink_QuestStatus__Event))(sink) } }
+/// `QueueCodeTasklet`: creates the stack's CodeTasklet (state 2) or reuses Stack+0x88 (state 5) and appends it to pendingTasklets
+///
+/// Semantic, vmstack pass, high; ledger semantic evidence, name high; id 104852, rva 0x14ba260.
+/// `bool (BSScript::Internal::VirtualMachine* vm, BSScript::Stack* stack)`
+///
+/// # Safety
+/// `stack` must point to what the engine expects.
+#[inline]
+pub unsafe fn queue_code_tasklet(vm: *mut classes::BSScript__Internal__VirtualMachine, stack: *mut classes::BSScript__Stack) -> bool { unsafe { function!(104852, (*mut classes::BSScript__Internal__VirtualMachine, *mut classes::BSScript__Stack) -> bool)(vm, stack) } }
 /// `QueueConsoleLine`: echoes the line, handles 'macro', 'hotkey', 'reload console' (0x90d680), splits it into pieces and for each appends a Script pair to g_PendingConsoleLines (the piece, and for 'ForEachRef[cond]' a filter script 'float fresult / ref refr / set refr to GetSelectedRef / set fresult to <cond>')
 ///
 /// Semantic, input pass, high; ledger semantic evidence, name high; id 442672, rva 0x909f90.
@@ -61140,6 +64324,15 @@ pub unsafe fn queue_face_morph_jobs(list: *mut c_void) { unsafe { function!(2699
 /// `void (bool fadingOut, bool black, float duration, bool hold, float secondTime)`
 #[inline]
 pub fn queue_fade_message(fadingOut: bool, black: bool, duration: f32, hold: bool, secondTime: f32) { unsafe { function!(52847, (bool, bool, f32, bool, f32))(fadingOut, black, duration, hold, secondTime) } }
+/// `QueueFunctionCallMessage`: queues FunctionMessage {1, stack, query} under queueLock (overflow array when the queue is full)
+///
+/// Semantic, vmstack pass, high; ledger semantic evidence, name high; id 104848, rva 0x14b98f0.
+/// `bool (BSScript::Internal::VirtualMachine* vm, BSScript::Stack* stack, BSTSmartPointer<BSScript::Internal::IFuncCallQuery>* query)`
+///
+/// # Safety
+/// `stack`, `query` must point to what the engine expects.
+#[inline]
+pub unsafe fn queue_function_call_message(vm: *mut classes::BSScript__Internal__VirtualMachine, stack: *mut classes::BSScript__Stack, query: *mut c_void) -> bool { unsafe { function!(104848, (*mut classes::BSScript__Internal__VirtualMachine, *mut classes::BSScript__Stack, *mut c_void) -> bool)(vm, stack, query) } }
 /// `QueueHUDButtonArtRefresh`: posts HUDData 0x21 -> AS 'RefreshActivateButtonArt'
 ///
 /// Semantic, ui pass, medium; ledger semantic evidence, name medium; id 51635, rva 0x935cc0.
@@ -61182,6 +64375,15 @@ pub unsafe fn queue_message_box(text: *const c_void, callback: *mut *mut classes
 /// `bool (MessageBoxData* data)`
 #[inline]
 pub fn queue_message_box_data(data: &classes::MessageBoxData) -> bool { unsafe { function!(52271, (&classes::MessageBoxData) -> bool)(data) } }
+/// `QueuePendingCameraPath`: append path to the registry's pending array (+0x20, u16 count at +0x32)
+///
+/// Semantic, camera pass, high; ledger semantic evidence, name high; id 20682, rva 0x318020.
+/// `void (CameraPathRegistry* registry, BGSCameraPath* path)`
+///
+/// # Safety
+/// `registry` must point to what the engine expects.
+#[inline]
+pub unsafe fn queue_pending_camera_path(registry: *mut c_void, path: *mut classes::BGSCameraPath) { unsafe { function!(20682, (*mut c_void, *mut classes::BGSCameraPath))(registry, path) } }
 /// `QueueSaveLoadRequest`: allocates a Request and pushes it to the main queue (bit31) or the worker
 ///
 /// Semantic, save pass, high; ledger semantic evidence, name high; id 35769, rva 0x625850.
@@ -61197,6 +64399,30 @@ pub fn queue_save_load_request(a0: &classes::BGSSaveLoadManager, kind: u32) { un
 /// `scaleformEvent` must point to what the engine expects.
 #[inline]
 pub unsafe fn queue_scaleform_event(menuName: *const classes::BSFixedString, scaleformEvent: *mut c_void) { unsafe { function!(82182, (*const classes::BSFixedString, *mut c_void))(menuName, scaleformEvent) } }
+/// `QueueStackReturnMessage`: queues FunctionMessage {2, stack, null}: the stack's completion runs in the next VM update
+///
+/// Semantic, vmstack pass, high; ledger semantic evidence, name high; id 104849, rva 0x14b9b10.
+/// `bool (BSScript::Internal::VirtualMachine* vm, BSScript::Stack* stack)`
+///
+/// # Safety
+/// `stack` must point to what the engine expects.
+#[inline]
+pub unsafe fn queue_stack_return_message(vm: *mut classes::BSScript__Internal__VirtualMachine, stack: *mut classes::BSScript__Stack) -> bool { unsafe { function!(104849, (*mut classes::BSScript__Internal__VirtualMachine, *mut classes::BSScript__Stack) -> bool)(vm, stack) } }
+/// `QueueSuspendedStack`: pushes {stack, query} on the suspended write queue (+0x9308, overflow +0x9310) under suspendLock
+///
+/// Semantic, vmstack pass, high; ledger semantic evidence, name high; id 104867, rva 0x14bc7c0.
+/// `bool (BSScript::Internal::VirtualMachine* vm, BSScript::Stack* stack, BSTSmartPointer<BSScript::Internal::IFuncCallQuery>* query)`
+///
+/// # Safety
+/// `stack`, `query` must point to what the engine expects.
+#[inline]
+pub unsafe fn queue_suspended_stack(vm: *mut classes::BSScript__Internal__VirtualMachine, stack: *mut classes::BSScript__Stack, query: *mut c_void) -> bool { unsafe { function!(104867, (*mut classes::BSScript__Internal__VirtualMachine, *mut classes::BSScript__Stack, *mut c_void) -> bool)(vm, stack, query) } }
+/// `QueueTasklet`: appends to pendingTasklets (+0x8260) under queueLock
+///
+/// Semantic, vmstack pass, high; ledger semantic evidence, name high; id 105111, rva 0x14caf90.
+/// `void (BSScript::Internal::VirtualMachine* vm, BSScript::Internal::CodeTasklet* tasklet)`
+#[inline]
+pub fn queue_tasklet(vm: &classes::BSScript__Internal__VirtualMachine, tasklet: &classes::BSScript__Internal__CodeTasklet) { unsafe { function!(105111, (&classes::BSScript__Internal__VirtualMachine, &classes::BSScript__Internal__CodeTasklet))(vm, tasklet) } }
 /// `QueueUIMessageWithBool`: AddMessage with BSUIMessageData value byte
 ///
 /// Semantic, ui pass, high; ledger semantic evidence, name high; id 82180, rva 0x116eb60.
@@ -61233,6 +64459,15 @@ pub unsafe fn race_sex_menu_event__get_event_source() -> *mut c_void { unsafe { 
 /// The pass rates the signature medium.
 #[inline]
 pub unsafe fn race_sex_menu_event__unregister_sink(sink: *mut classes::BSTEventSink_RaceSexMenuEvent__NameChangedEvent) { unsafe { function!(52337, (*mut classes::BSTEventSink_RaceSexMenuEvent__NameChangedEvent))(sink) } }
+/// `RaycastVerticalAgainstPlaneShape`: casts a vertical ray at point against a plane shape owned by rdx, filtered by the camera body's filter word
+///
+/// Semantic, camera pass, medium; ledger semantic evidence, name medium; id 32190, rva 0x52cbc0.
+/// `bool (void* unused, void* planeOwner, const NiPoint3* point)`
+///
+/// # Safety
+/// The pass rates the signature medium.
+#[inline]
+pub unsafe fn raycast_vertical_against_plane_shape(unused: *mut c_void, planeOwner: *mut c_void, point: *const c_void) -> bool { unsafe { function!(32190, (*mut c_void, *mut c_void, *const c_void) -> bool)(unused, planeOwner, point) } }
 /// `ReadAndVerifyMagicHeader`: seek 0, check 'TESV_SAVEGAME' (0x1908f30) and read the header buffer
 ///
 /// Semantic, save pass, high; ledger semantic evidence, name high; id 35675, rva 0x61f310.
@@ -61242,6 +64477,15 @@ pub unsafe fn race_sex_menu_event__unregister_sink(sink: *mut classes::BSTEventS
 /// `a0` must point to what the engine expects.
 #[inline]
 pub unsafe fn read_and_verify_magic_header(a0: *mut c_void, out: *mut classes::BGSLoadGameBuffer) -> bool { unsafe { function!(35675, (*mut c_void, *mut classes::BGSLoadGameBuffer) -> bool)(a0, out) } }
+/// `ReadBits`: little-endian LSB-first bit read that may straddle two qwords; advances the cursor
+///
+/// Semantic, vmstack pass, high; ledger semantic evidence, name high; id 104560, rva 0x14a3ab0.
+/// `u64 (void* cursor, u64 count)`
+///
+/// # Safety
+/// `cursor` must point to what the engine expects.
+#[inline]
+pub unsafe fn read_bits(cursor: *mut c_void, count: u64) -> u64 { unsafe { function!(104560, (*mut c_void, u64) -> u64)(cursor, count) } }
 /// `ReadChangeFormData`: reads the data and inflates it when uncompressedLength != 0
 ///
 /// Semantic, save pass, high; ledger semantic evidence, name high; id 35991, rva 0x637590.
@@ -61269,6 +64513,15 @@ pub unsafe fn read_change_form_header(rec: *mut classes::SavedChangeFormRecord, 
 /// `buf`, `out`, `text`, `offset` must point to what the engine expects.
 #[inline]
 pub unsafe fn read_script_token(buf: *mut c_void, out: *mut c_void, text: *const c_char, offset: *mut u32, allowRef: bool, flag: bool) -> u32 { unsafe { function!(21974, (*mut c_void, *mut c_void, *const c_char, *mut u32, bool, bool) -> u32)(buf, out, text, offset, allowRef, flag) } }
+/// `ReadTypedValueFromBitStream`: decodes one operand into {u32 tag; value}: tags 1/2 carry an interned string pointer >> 2 in 62 bits, 3 a zigzag varint (6/15/34 bits), 4 f32 bits, 5 one bit, 6/7 an index of the given width
+///
+/// Semantic, vmstack pass, high; ledger semantic evidence, name high; id 104532, rva 0x14a23a0.
+/// `bool (void* operandOut, void* cursor, u32 tag6Bits, u32 tag7Bits)`
+///
+/// # Safety
+/// `operandOut`, `cursor` must point to what the engine expects.
+#[inline]
+pub unsafe fn read_typed_value_from_bit_stream(operandOut: *mut c_void, cursor: *mut c_void, tag6Bits: u32, tag7Bits: u32) -> bool { unsafe { function!(104532, (*mut c_void, *mut c_void, u32, u32) -> bool)(operandOut, cursor, tag6Bits, tag7Bits) } }
 /// `RefreshCategoryVolumeFromSlot`: for menu categories: volume = slot+0x20, or SetVolume(defaultMenuVolume) when no slot existed
 ///
 /// Semantic, audio pass, high; ledger semantic evidence, name high; id 21216, rva 0x3297b0.
@@ -61293,6 +64546,24 @@ pub unsafe fn refresh_menu_platform(menu: *mut classes::IMenu, movie: *mut class
 /// `ctx` must point to what the engine expects.
 #[inline]
 pub unsafe fn register_child_geometries_with_accumulator(ctx: *mut c_void, node: *mut classes::NiNode) -> u32 { unsafe { function!(106623, (*mut c_void, *mut classes::NiNode) -> u32)(ctx, node) } }
+/// `RehashIfOverLoadFactor`: when size (+0x10) / bucketCount (+0x38) exceeds maxLoadFactor (+0), grows the buckets (x8 below 0x200, else x2), ResizeBucketVector and ReinsertListNodesIntoStringBuckets
+///
+/// Semantic, camera pass, high; ledger semantic evidence, name high; id 523719, rva 0x58f260.
+/// `void (StringHashMap* this)`
+///
+/// # Safety
+/// `this` must point to what the engine expects.
+#[inline]
+pub unsafe fn rehash_if_over_load_factor(this: *mut c_void) { unsafe { function!(523719, (*mut c_void))(this) } }
+/// `ReleaseCameraStatePointer`: drops one reference of the state and Destroy(1)s it at zero (EH unwind helper of LocalMapCamera::ctor)
+///
+/// Semantic, camera pass, high; ledger semantic evidence, name high; id 16340, rva 0x2495b0.
+/// `void (BSTSmartPointer<TESCameraState>* pointer)`
+///
+/// # Safety
+/// `pointer` must point to what the engine expects.
+#[inline]
+pub unsafe fn release_camera_state_pointer(pointer: *mut c_void) { unsafe { function!(16340, (*mut c_void))(pointer) } }
 /// `RemoveEffectShaderData`: walks node's subtree like ApplyEffectShaderData (same name filter at data+8) and clears effectOverlay (+0x68) on each shader property whose effectOverlay == data (tail jump to SetField68RefPtr(property, null))
 ///
 /// Semantic, camera pass, high; ledger semantic evidence, name high; id 17331, rva 0x26c750.
@@ -61302,6 +64573,21 @@ pub unsafe fn register_child_geometries_with_accumulator(ctx: *mut c_void, node:
 /// `data` must point to what the engine expects.
 #[inline]
 pub unsafe fn remove_effect_shader_data(shader: *mut classes::TESEffectShader, node: *mut classes::NiAVObject, data: *mut c_void) { unsafe { function!(17331, (*mut classes::TESEffectShader, *mut classes::NiAVObject, *mut c_void))(shader, node, data) } }
+/// `RemoveREFRSyncControllersFromTree`: TraverseNodeTreeWithCallback_2(root, 0x305080), the callback unlinking controllers of RTTI type REFRSyncController (g_TypeNode_REFRSyncController 0x31df440) from each node
+///
+/// Semantic, camera pass, high; ledger semantic evidence, name high; id 20314, rva 0x305060.
+/// `void (NiAVObject* root)`
+#[inline]
+pub fn remove_refr_sync_controllers_from_tree(root: &classes::NiAVObject) { unsafe { function!(20314, (&classes::NiAVObject))(root) } }
+/// `RemoveStackFromMap`: erases stack+0x80 from runningStacks under stacksLock ('warning: stack id %d has already been cleaned up') and drops the map's reference
+///
+/// Semantic, vmstack pass, high; ledger semantic evidence, name high; id 104873, rva 0x14bcf80.
+/// `void (BSScript::Internal::VirtualMachine* vm, BSScript::Stack* stack)`
+///
+/// # Safety
+/// `stack` must point to what the engine expects.
+#[inline]
+pub unsafe fn remove_stack_from_map(vm: *mut classes::BSScript__Internal__VirtualMachine, stack: *mut classes::BSScript__Stack) { unsafe { function!(104873, (*mut classes::BSScript__Internal__VirtualMachine, *mut classes::BSScript__Stack))(vm, stack) } }
 /// `RenderAccumulator`: BeginAccumulatorDraw plus RenderTransparent (slot 43): the whole draw
 ///
 /// Semantic, frame pass, high; ledger semantic evidence, name high; id 106436, rva 0x1515230.
@@ -61350,6 +64636,12 @@ pub fn render_image_space(a0: i32) { unsafe { function!(107148, (i32))(a0) } }
 /// `pass` must point to what the engine expects.
 #[inline]
 pub unsafe fn render_pass_immediately(pass: *mut c_void, techniqueId: u32, alphaTest: bool, flags: u32) { unsafe { function!(107644, (*mut c_void, u32, bool, u32))(pass, techniqueId, alphaTest, flags) } }
+/// `RenderPrecipitationOcclusion_thunk`: 5-byte jump to 0x40ea30: the precipitation occlusion map pass (Sky+0xa0 Precipitation; 'tocm' toggle 0x209e550)
+///
+/// Semantic, camera pass, high; ledger semantic evidence, name high; id 107144, rva 0x153a630.
+/// `void ()`
+#[inline]
+pub fn render_precipitation_occlusion_thunk() { unsafe { function!(107144, ())() } }
 /// `RenderShadowMaskPasses`: one full-screen BSUtilityShader pass per frame shadow light into colour target 0x12 (screen x iShadowMaskQuarter/4), channel by the light's frameIndex
 ///
 /// Semantic, graphics pass, high; ledger semantic evidence, name high; id 107141, rva 0x1539b10.
@@ -61386,7 +64678,7 @@ pub unsafe fn render_world(owner: *mut c_void, flags: u32) { unsafe { function!(
 /// `void (bool gamePaused)`
 #[inline]
 pub fn render_world_color(gamePaused: bool) { unsafe { function!(107142, (bool))(gamePaused) } }
-/// `RenderWorldDepthPrepass`: step 12: depth-only draw (colour slots 0-2 unbound) of the world accumulator 0x3436228 (renderMode 0xc) with the frame camera; per entry of 0x33d3e80 (count 0x33d3e90) re-registers that node and draws it with stencil ref i+1; in first person culls the first-person root into the same accumulator and draws it with the first-person camera 0x3436220
+/// `RenderWorldDepthPrepass`: pass 6 step 12; for the camera: (a) the stencil-mask variant re-projects the world camera with far' = n*f / ((n - f) * k + f) (+0x2a5 call 0x1539245) and restores it (0x15393e3) with flags (false, false); (b) when firstPerson: undoes and redoes the first-person root offset and calls SetPerspectiveFromFov(g_FirstPersonCamera, g_CameraFOVOffset + ctx.firstPersonFOV, fNear1stPersonDistance, far, ...) a second time at 0x153979d (+0x7fd), then draws the first-person depth with that camera; viewport depth range [0, f1stPersonFarDepthRange (0.01) or ...ControlDriven (0.1)]
 ///
 /// Semantic, frame pass, high; ledger runtime evidence, name high; id 107139, rva 0x1538fa0.
 /// `void (bool firstPerson, bool controlDriven)`
@@ -61403,19 +64695,37 @@ pub fn render_world_depth_prepass(firstPerson: bool, controlDriven: bool) { unsa
 pub unsafe fn render_world_scene(owner: *mut c_void, flags: u32, menuOpen: bool) { unsafe { function!(36559, (*mut c_void, u32, bool))(owner, flags, menuOpen) } }
 /// `ReplayGeometryList`: ProcessCullObjectList(culler, list+0x128, culler->camera, skipHidden=1, parallel)
 ///
-/// Semantic, graphics pass, high; ledger semantic evidence, name high; id 76773, rva 0xff5c90.
+/// Semantic, graphics pass, high; ledger runtime evidence, name high; id 76773, rva 0xff5c90.
 /// `void (BSGeometryListCullingProcess* list, BSCullingProcess* culler, bool parallel)`
 #[inline]
 pub fn replay_geometry_list(list: &classes::BSGeometryListCullingProcess, culler: &classes::BSCullingProcess, parallel: bool) { unsafe { function!(76773, (&classes::BSGeometryListCullingProcess, &classes::BSCullingProcess, bool))(list, culler, parallel) } }
-/// `ResetGame`: back to a fresh world (quit to main menu / content change): autosave check, freeze VM, unload cells, RevertGame, recreate form maps, SkyrimVM, player, TESDataHandler::LoadFiles
+/// `ResetActorEquipAndCameraState`: as ResetActorWeaponStateAndCamera, preceded by flags2 (+0xcc) &= ~0x60, |= 0x80 and Actor slot 166 (+0x530) with 0
 ///
-/// Semantic, save pass, medium; ledger semantic evidence, name medium; id 36601, rva 0x65b6c0.
-/// `void (Main*)`
+/// Semantic, camera pass, high; ledger semantic evidence, name high; id 37170, rva 0x66fe00.
+/// `void (Actor* actor)`
+#[inline]
+pub fn reset_actor_equip_and_camera_state(actor: &classes::Actor) { unsafe { function!(37170, (&classes::Actor))(actor) } }
+/// `ResetActorWeaponStateAndCamera`: after a sheathe, a beast-form end or a race change: Actor slot 180 (+0x5a0) for the right hand and again for a WEAP in the left hand, slot 21 of the vtable at actor+0xc0, posts event {2, 1} then {2, 0} to the process (DispatchEventToField8Sinks); when the actor is the camera target (PlayerCamera+0x3c) or on a mount: PlayerCamera::SetCombatOffsets(camera, false); a mounted player also gets the animation event "WarHorseMode" (0x9350a0)
+///
+/// Semantic, camera pass, high; ledger runtime evidence, name high; id 37169, rva 0x66fca0.
+/// `void (Actor* actor)`
+#[inline]
+pub fn reset_actor_weapon_state_and_camera(actor: &classes::Actor) { unsafe { function!(37169, (&classes::Actor))(actor) } }
+/// `ResetLandAndCellPriorityCaches`: invalidates FindLandEntryAtPositionCached's cache (cell x 0x20776ac = y 0x20776b0 = 0x7fffffff, entry 0x219e5f8 = 0) and ComputeCellGridPriority's (0x20776b4 = 5, 0x219e600 = 0)
+///
+/// Semantic, camera pass, high; ledger semantic evidence, name high; id 13407, rva 0x1a9770.
+/// `void (void)`
+#[inline]
+pub fn reset_land_and_cell_priority_caches() { unsafe { function!(13407, ())() } }
+/// `ResetVATSCameraState`: release the current shot, phase = 0, clear +0x28/+0x30/+0x38, g_VATSDefaultCameraPathOnce 0x3252a38 = the default path
+///
+/// Semantic, camera pass, high; ledger semantic evidence, name high; id 44291, rva 0x806d20.
+/// `void (VATS* vats)`
 ///
 /// # Safety
-/// The pass rates the signature medium.
+/// `vats` must point to what the engine expects.
 #[inline]
-pub unsafe fn reset_game(a0: *mut classes::Main) { unsafe { function!(36601, (*mut classes::Main))(a0) } }
+pub unsafe fn reset_vats_camera_state(vats: *mut c_void) { unsafe { function!(44291, (*mut c_void))(vats) } }
 /// `ResizeVariableArray`: sets the array's size: 0 resets every element (the buffer stays); growing allocates (first time) or reallocates the 0x10-byte elements on the scrap heap and initialises the new ones to None, returning false without changing the size when the allocation fails; shrinking resets the dropped tail; returns true otherwise
 ///
 /// Semantic, papyrus pass, high; ledger semantic evidence, name high; id 53915, rva 0x9d5630.
@@ -61434,6 +64744,12 @@ pub unsafe fn resize_variable_array(array: *mut c_void, newSize: u32) -> bool { 
 /// `handle`, `out` must point to what the engine expects.
 #[inline]
 pub unsafe fn resolve_actor_handle(handle: *const u32, out: *mut c_void) -> bool { unsafe { function!(17201, (*const u32, *mut c_void) -> bool)(handle, out) } }
+/// `ResolveCameraPathLinksAndInsertIntoList`: resolve parent and previousSibling ids to BGSCameraPath (log via slot 22 on failure), insert the path into parent->children (EnsureNiFormArrayAtField40) or the root list right after its previous sibling (index 0 without one, appended when formFlags bit 5), then MoveFollowingCameraPathAfterInArray; false when a link failed
+///
+/// Semantic, camera pass, high; ledger semantic evidence, name high; id 20640, rva 0x316990.
+/// `bool (BGSCameraPath* path)`
+#[inline]
+pub fn resolve_camera_path_links_and_insert_into_list(path: &classes::BGSCameraPath) -> bool { unsafe { function!(20640, (&classes::BGSCameraPath) -> bool)(path) } }
 /// `ResolveRefHandle`: resolves a reference handle, zeroing a stale handle
 ///
 /// Semantic, actors pass, high; ledger runtime evidence, name high; id 12331, rva 0x17ebe0.
@@ -61461,6 +64777,36 @@ pub unsafe fn resolve_ref_handle_const(handle: *const u32, out: *mut c_void) -> 
 /// The pass rates the signature medium.
 #[inline]
 pub unsafe fn resolve_ref_handle_2(handle: *mut u32, out: *mut c_void) -> bool { unsafe { function!(12922, (*mut u32, *mut c_void) -> bool)(handle, out) } }
+/// `RestoreFirstPersonCameraTranslation`: g_FirstPersonCamera world translation (+0xa0) = context +0x0/+0x4/+0x8 (0x34362c0..)
+///
+/// Semantic, camera pass, high; ledger semantic evidence, name high; id 107122, rva 0x1537420.
+/// `void (void)`
+#[inline]
+pub fn restore_first_person_camera_translation() { unsafe { function!(107122, ())() } }
+/// `ReturnArgument_2`: returns its argument
+///
+/// Semantic, camera pass, high; ledger semantic evidence, name high; id 20685, rva 0x3182f0.
+/// `void* (void* value)`
+///
+/// # Safety
+/// `value` must point to what the engine expects, and the result is an untyped pointer.
+#[inline]
+pub unsafe fn return_argument_2(value: *mut c_void) -> *mut c_void { unsafe { function!(20685, (*mut c_void) -> *mut c_void)(value) } }
+/// `ReturnNull_MainCtor`: returns 0
+///
+/// Semantic, camera pass, high; ledger semantic evidence, name high; id 68626, rva 0xcf9890.
+/// `void* (void)`
+///
+/// # Safety
+/// The result is an untyped pointer.
+#[inline]
+pub unsafe fn return_null_main_ctor() -> *mut c_void { unsafe { function!(68626, () -> *mut c_void)() } }
+/// `ReturnZero`: returns 0
+///
+/// Semantic, camera pass, high; ledger semantic evidence, name high; id 77385, rva 0x1010dd0.
+/// `u64 (void)`
+#[inline]
+pub fn return_zero() -> u64 { unsafe { function!(77385, () -> u64)() } }
 /// `RevertAllGlobalData`: RevertGlobalData for 0..8, 100..114, 1000..1005
 ///
 /// Semantic, save pass, high; ledger runtime evidence, name high; id 35648, rva 0x61ce50.
@@ -61479,6 +64825,12 @@ pub fn revert_audio_global_data() { unsafe { function!(35143, ())() } }
 /// `bool (u32 type, BGSLoadGameBuffer* buf, bool revertGlobals)`
 #[inline]
 pub fn revert_global_data(type_: u32, buf: &classes::BGSLoadGameBuffer, revertGlobals: bool) -> bool { unsafe { function!(35650, (u32, &classes::BGSLoadGameBuffer, bool) -> bool)(type_, buf, revertGlobals) } }
+/// `RollKillCamChance`: odds = fKillCamBaseOdds + min(max(attackerLevel * fKillCamLevelFactor, iKillCamLevelOffset) - (attackerLevel - targetLevel) clamped >= 0, times fKillCamLevelBias, fKillCamLevelMaxBias); true when random [0,1) <= odds
+///
+/// Semantic, camera pass, high; ledger semantic evidence, name high; id 26452, rva 0x4206c0.
+/// `bool (u16 attackerLevel, u16 targetLevel)`
+#[inline]
+pub fn roll_kill_cam_chance(attackerLevel: u16, targetLevel: u16) -> bool { unsafe { function!(26452, (u16, u16) -> bool)(attackerLevel, targetLevel) } }
 /// `RunConsoleLinesFromStream`: bat path: for each line (0x104 bytes) echoes it through the printer, compiles it into a stack Script with compileType 1 and runs it immediately with TLS+0x600 set
 ///
 /// Semantic, input pass, high; ledger semantic evidence, name high; id 21891, rva 0x343ee0.
@@ -61593,6 +64945,27 @@ pub unsafe fn script_runner__run(ctx: *mut classes::ScriptRunContext, script: *m
 /// `void (u32 mode)`
 #[inline]
 pub fn set_active_accumulator_mode(mode: u32) { unsafe { function!(105641, (u32))(mode) } }
+/// `SetAngleZ_2`: thunk: jmp SetAngleZ 0x2f0e20
+///
+/// Semantic, camera pass, high; ledger semantic evidence, name high; id 44173, rva 0x7fe3b0.
+/// `void (TESObjectREFR* ref, float angleZ)`
+#[inline]
+pub fn set_angle_z_2(ref_: &classes::TESObjectREFR, angleZ: f32) { unsafe { function!(44173, (&classes::TESObjectREFR, f32))(ref_, angleZ) } }
+/// `SetCameraFrustumFromFOV`: UI 3D camera (scene+0x20): maxFarNearRatio = fUICameraFarDistance / fUICameraNearDistance (20480 / 15); frustum right = 0.75 * tan(fov * pi/1200), top = right * height/width, near/far from the settings, perspective
+///
+/// Semantic, camera pass, high; ledger runtime evidence, name high; id 52742, rva 0x98b1d0.
+/// `void (UI3DSceneManager* scene, float fovDegrees)`
+///
+/// # Safety
+/// `scene` must point to what the engine expects.
+#[inline]
+pub unsafe fn set_camera_frustum_from_fov(scene: *mut c_void, fovDegrees: f32) { unsafe { function!(52742, (*mut c_void, f32))(scene, fovDegrees) } }
+/// `SetCameraShakeState`: restores g_CameraShakeStrength and g_CameraShakeTimeRemaining from a save
+///
+/// Semantic, camera pass, high; ledger runtime evidence, name high; id 33016, rva 0x558c50.
+/// `void (float strength, float timeRemaining)`
+#[inline]
+pub fn set_camera_shake_state(strength: f32, timeRemaining: f32) { unsafe { function!(33016, (f32, f32))(strength, timeRemaining) } }
 /// `SetCategoryAttenuation`: slot 7 then command 0x33/0xc with the fade (used for dialogue ducking and speech highlight)
 ///
 /// Semantic, audio pass, medium; ledger semantic evidence, name medium; id 67844, rva 0xcd4a70.
@@ -61620,12 +64993,30 @@ pub unsafe fn set_category_frequency(handle: *mut *mut classes::BSISoundCategory
 /// `handle` must point to what the engine expects.
 #[inline]
 pub unsafe fn set_category_volume(handle: *mut *mut classes::BSISoundCategory, volume: f32) { unsafe { function!(67845, (*mut *mut classes::BSISoundCategory, f32))(handle, volume) } }
+/// `SetClampedAngleX`: SetAngleField48(ref, clamp(angleX, -1.55334, 1.55334)) (+-89 degrees, 0x192afdc/0x192afd0)
+///
+/// Semantic, camera pass, high; ledger semantic evidence, name high; id 44174, rva 0x7fe3c0.
+/// `void (TESObjectREFR* ref, float angleX)`
+#[inline]
+pub fn set_clamped_angle_x(ref_: &classes::TESObjectREFR, angleX: f32) { unsafe { function!(44174, (&classes::TESObjectREFR, f32))(ref_, angleX) } }
 /// `SetClampedPitch`: limits: default [-pi/2 (0x181ab90), +pi/2 (0x1b5be30)] (positive = looking down); mounted (extra 0xa9 mount, rider +0xc8 bits 18-20 equal 0 or 5): up = -fHorseMaxUpwardPitch deg, down = fMountedMaxLookingDown deg only when the mount's +0xcc bits 5-7 are 3..5 (the 'ja' at +0x78); flying mount: up = -fDragonMaxUpwardPitch, down = fFlyingMountedMaxLookingDown; sitting (+0xc8 bits 14-17 in 1..4): down = fSittingMaxLookingDown; clamp, actor angle x (+0x48) set; the player's head tracking gets -pitch
 ///
 /// Semantic, camera pass, high; ledger semantic evidence, name high; id 37610, rva 0x692eb0.
 /// `void (Actor* actor, float pitch)`
 #[inline]
 pub fn set_clamped_pitch(actor: &classes::Actor, pitch: f32) { unsafe { function!(37610, (&classes::Actor, f32))(actor, pitch) } }
+/// `SetCullerFrustumsFromSceneGraphCamera`: points both main cullers (g_MainCullers 0x34362a0 and 0x3436048) at the scene graph camera (+0x18) and its frustum (NiCullingProcess::SetFrustum(+0x150)), updates the quad visibility, then culls (ID_13408)
+///
+/// Semantic, camera pass, high; ledger runtime evidence, name high; id 36574, rva 0x659ad0.
+/// `void (void)`
+#[inline]
+pub fn set_culler_frustums_from_scene_graph_camera() { unsafe { function!(36574, ())() } }
+/// `SetGlobal33017d4To0x20000`: 0x33017d4 = 0x20000
+///
+/// Semantic, camera pass, high; ledger semantic evidence, name high; id 69264, rva 0xeb7490.
+/// `void (void)`
+#[inline]
+pub fn set_global33017d4_to0x20000() { unsafe { function!(69264, ())() } }
 /// `SetGlobalTanFromAngle`: 0x20d9230 = tan(fov * pi/360) * 1.303225 (= tan(fov/2) / tan(37.5 deg), 1 at 75 deg); read by 0x1579970
 ///
 /// Semantic, camera pass, high; ledger semantic evidence, name high; id 105655, rva 0x14ecc80.
@@ -61641,6 +65032,30 @@ pub fn set_global_tan_from_angle(fovDegrees: f32) { unsafe { function!(105655, (
 /// The pass rates the signature medium.
 #[inline]
 pub unsafe fn set_hud_mode(mode: *const c_char, enable: bool) { unsafe { function!(51642, (*const c_char, bool))(mode, enable) } }
+/// `SetPerspectiveFovProjectionLH`: left-handed perspective matrix: [0]=cot(fovY/2)/aspect, [5]=cot, [10]=zf/(zf-zn), [11]=1, [14]=-zn*zf/(zf-zn), rest 0
+///
+/// Semantic, camera pass, high; ledger runtime evidence, name high; id 82688, rva 0xd01d10.
+/// `void (float* outMatrix4x4, float fovY, float aspect, float zNear, float zFar)`
+///
+/// # Safety
+/// `outMatrix4x4` must point to what the engine expects.
+#[inline]
+pub unsafe fn set_perspective_fov_projection_lh(outMatrix4x4: *mut f32, fovY: f32, aspect: f32, zNear: f32, zFar: f32) { unsafe { function!(82688, (*mut f32, f32, f32, f32, f32))(outMatrix4x4, fovY, aspect, zNear, zFar) } }
+/// `SetPerspectiveFovProjectionRH`: right-handed variant: [10]=zf/(zn-zf), [11]=-1, [14]=zn*zf/(zn-zf)
+///
+/// Semantic, camera pass, high; ledger runtime evidence, name high; id 82691, rva 0xd01fd0.
+/// `void (float* outMatrix4x4, float fovY, float aspect, float zNear, float zFar)`
+///
+/// # Safety
+/// `outMatrix4x4` must point to what the engine expects.
+#[inline]
+pub unsafe fn set_perspective_fov_projection_rh(outMatrix4x4: *mut f32, fovY: f32, aspect: f32, zNear: f32, zFar: f32) { unsafe { function!(82691, (*mut f32, f32, f32, f32, f32))(outMatrix4x4, fovY, aspect, zNear, zFar) } }
+/// `SetPlayerAIDriven`: sets player+0xbea bit 3 to aiDriven and calls the object at player+0x150 slot 12 (on) or 13 (off); when turning off and the current package type byte (+0x24) is '%' (0x25), PlayerCamera::PopIfAIDrivenFlag
+///
+/// Semantic, camera pass, high; ledger semantic evidence, name high; id 40586, rva 0x7559f0.
+/// `void (PlayerCharacter* player, bool aiDriven)`
+#[inline]
+pub fn set_player_ai_driven(player: &classes::PlayerCharacter, aiDriven: bool) { unsafe { function!(40586, (&classes::PlayerCharacter, bool))(player, aiDriven) } }
 /// `SetRefractionOnNodeTree`: Cmd::SetTargetRefraction: sets flag bit 2 on every geometry's shader property and, on lighting properties without bit 15, bit 13 and material refractionPower
 ///
 /// Semantic, frame pass, high; ledger semantic evidence, name high; id 106513, rva 0x1519b70.
@@ -61653,6 +65068,15 @@ pub fn set_refraction_on_node_tree(root: &classes::NiAVObject, enable: bool, pow
 /// `void (bool isInterior)`
 #[inline]
 pub fn set_shadow_distance_for_interior(isInterior: bool) { unsafe { function!(105631, (bool))(isInterior) } }
+/// `SetVATSPlaybackState`: Sets the VATS object's playback mode (+0x20) under its spin lock (+0xb8): 0 leaves VATS (time scale back to 1, targets, modifiers and a temporary equipped item cleared, VATS camera popped, 'VATSPlayback' HUD mode dropped), 2 and 3 attach a point light, 4 starts playback (casting delay, radial blur, VATS camera pushed, 'VATSPlayback' mode queued); modes 2/3 keep the light updated.
+///
+/// Semantic, camera pass, high; ledger runtime evidence, name high; id 44282, rva 0x805d50.
+/// `void (VATS* this, u32 mode)`
+///
+/// # Safety
+/// `this` must point to what the engine expects.
+#[inline]
+pub unsafe fn set_vats_playback_state(this: *mut c_void, mode: u32) { unsafe { function!(44282, (*mut c_void, u32))(this, mode) } }
 /// `SetupFirstPersonCamera`: first-person frames only (RenderWorldScene +0x27c): once per g_RenderFrameCounter keeps the previous root offset (0x3436328..30); offset 0x3436318..20 = -(first-person root world translation); +0x106: SetPerspectiveFromFov(g_FirstPersonCamera, g_CameraFOVOffset + ctx.firstPersonFOV, fNear1stPersonDistance (5), g_SceneGraph slot 62 far, g_ScreenWidth, g_ScreenHeight, false, false, 80); hands camera world translation = ctx.eyePosition + offset, world rotation = frame camera world rotation; shifts the first-person subtree by the offset (0x153ae40); shadow scene node +0x2e8/+0x2f4 and first-person accumulator eye position
 ///
 /// Semantic, camera pass, high; ledger runtime evidence, name high; id 107123, rva 0x1537460.
@@ -61668,24 +65092,21 @@ pub fn setup_first_person_camera() { unsafe { function!(107123, ())() } }
 /// `pass` must point to what the engine expects.
 #[inline]
 pub unsafe fn setup_pass_geometry_state(pass: *mut c_void, shader: *mut classes::BSShader, alphaTest: bool, flags: u32) { unsafe { function!(107685, (*mut c_void, *mut classes::BSShader, bool, u32))(pass, shader, alphaTest, flags) } }
-/// `SetupReflectedCamera`: mirrors the source camera across the plane and copies its frustum with SetFrustum, so the reflected near is max(source near, far / reflected+0x170, reflected+0x16c)
+/// `SetupReflectedCamera`: reflected local translation = source world translation mirrored across the plane (p - 2 (n.p - d) n); local rotation = the source's normalized world rotation columns reflected (column 1 negated so the frame stays right-handed); local scale = |source world scale|; SetFrustum(reflected, source frustum +0x150); UpdateNode
 ///
-/// Semantic, graphics pass, medium; ledger semantic evidence, name medium; id 76214, rva 0xfde350.
+/// Semantic, graphics pass, high; ledger runtime evidence, name high; id 76214, rva 0xfde350.
 /// `void (NiCamera* source, const NiPlane* plane, NiCamera* reflected)`
 ///
 /// # Safety
-/// The pass rates the signature medium.
+/// `plane` must point to what the engine expects.
 #[inline]
 pub unsafe fn setup_reflected_camera(source: *mut classes::NiCamera, plane: *const c_void, reflected: *mut classes::NiCamera) { unsafe { function!(76214, (*mut classes::NiCamera, *const c_void, *mut classes::NiCamera))(source, plane, reflected) } }
-/// `SetupWorldRenderContext`: fills the frame's render context (first-person root +0x18, third-person root +0x20, world ShadowSceneNode +0x30, the two field-of-view values) and sorts the focus-shadow actors by distance (fMaxFocusShadowMapDistance)
+/// `SetupVATSCameraFromMesh`: load the shot NIF (if not loaded) and keep it only when its first child is an NiCamera; flags bit 5: SetField18OfListEntriesRecursive(root, -clock) to restart its controllers; UpdateNode(root, clock); resolve hasAnimatedRotation; store locationRef's handle; dolly setup per transitionMode (0: dolly over fVATSCameraDollyTime; 1: no dolly; 2: only for an action-3 shot, over minTime or fVATSCameraDollyTime); reset dolly from/delta/clock; UIVATSCameraIn for an action-2 shot when the first command's +0x98 & 0x38, UIVATSCameraOut when leaving action 2
 ///
-/// Semantic, render pass, medium; ledger runtime evidence, name medium; id 36561, rva 0x657c90.
-/// `void* (void* owner)`
-///
-/// # Safety
-/// The pass rates the signature medium.
+/// Semantic, camera pass, high; ledger runtime evidence, name high; id 20705, rva 0x318f20.
+/// `void (BGSCameraShot* shot, TESObjectREFR* locationRef, i32 transitionMode)`
 #[inline]
-pub unsafe fn setup_world_render_context(owner: *mut c_void) -> *mut c_void { unsafe { function!(36561, (*mut c_void) -> *mut c_void)(owner) } }
+pub fn setup_vats_camera_from_mesh(shot: &classes::BGSCameraShot, locationRef: &classes::TESObjectREFR, transitionMode: i32) { unsafe { function!(20705, (&classes::BGSCameraShot, &classes::TESObjectREFR, i32))(shot, locationRef, transitionMode) } }
 /// `ShoutAttack::GetEventSource`: the one source of ShoutAttack::Event events
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 41071, rva 0x76f240.
@@ -61851,6 +65272,15 @@ pub unsafe fn souls_trapped__register_sink(sink: *mut classes::partial::BSTEvent
 /// The pass rates the signature medium.
 #[inline]
 pub unsafe fn souls_trapped__unregister_sink(sink: *mut classes::partial::BSTEventSink_SoulsTrapped__Event) { unsafe { function!(38711, (*mut classes::partial::BSTEventSink_SoulsTrapped__Event))(sink) } }
+/// `SpeakSoundOrTopic`: plays a voice line (sound path or topic) on an actor with its lip file and speaker/listener idles; returns the duration
+///
+/// Semantic, camera pass, medium; ledger semantic evidence, name medium; id 37542, rva 0x68d490.
+/// `float (Actor* speaker, const char* soundPath, SoundHandle* outHandle, u32 topicInfo, u32 emotion, i32 defaultDurationMs, TESIdleForm* speakerIdle, TESIdleForm* targetIdle, TESObjectREFR* target, bool setTopic, BGSSoundOutput* outputModel, bool rawPath, bool useLipFile, bool forceIdle)`
+///
+/// # Safety
+/// The pass rates the signature medium.
+#[inline]
+pub unsafe fn speak_sound_or_topic(speaker: *mut classes::Actor, soundPath: *const c_char, outHandle: *mut classes::SoundHandle, topicInfo: u32, emotion: u32, defaultDurationMs: i32, speakerIdle: *mut classes::TESIdleForm, targetIdle: *mut classes::TESIdleForm, target: *mut classes::TESObjectREFR, setTopic: bool, outputModel: *mut classes::BGSSoundOutput, rawPath: bool, useLipFile: bool, forceIdle: bool) -> f32 { unsafe { function!(37542, (*mut classes::Actor, *const c_char, *mut classes::SoundHandle, u32, u32, i32, *mut classes::TESIdleForm, *mut classes::TESIdleForm, *mut classes::TESObjectREFR, bool, *mut classes::BGSSoundOutput, bool, bool, bool) -> f32)(speaker, soundPath, outHandle, topicInfo, emotion, defaultDurationMs, speakerIdle, targetIdle, target, setTopic, outputModel, rawPath, useLipFile, forceIdle) } }
 /// `SpellAttack::GetEventSource`: the one source of SpellAttack::Event events
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 42442, rva 0x7b4740.
@@ -61905,6 +65335,27 @@ pub unsafe fn spells_learned__register_sink(sink: *mut classes::partial::BSTEven
 /// The pass rates the signature medium.
 #[inline]
 pub unsafe fn spells_learned__unregister_sink(sink: *mut classes::partial::BSTEventSink_SpellsLearned__Event) { unsafe { function!(38713, (*mut classes::partial::BSTEventSink_SpellsLearned__Event))(sink) } }
+/// `StartCameraShake`: if the shake NIF root exists and strength > 0: d = distance(camera root local translate, origin); fadeStart = max(fCameraShakeDistFadeStart * s, fCameraShakeDistMin); if d < fadeStart + fCameraShakeDistFadeDelta * s: s *= 1 - (d - fadeStart) / (DistFadeDelta * s) when d > fadeStart; g_CameraShakeStrength = clamp(s, fCameraShakeMultMin, 1); g_CameraShakeTimeLeft = duration > 0 ? duration : fCameraShakeTime. Overwrites any running shake
+///
+/// Semantic, camera pass, high; ledger runtime evidence, name high; id 33012, rva 0x5584a0.
+/// `void (float strength, const NiPoint3* origin, float duration)`
+///
+/// # Safety
+/// `origin` must point to what the engine expects.
+#[inline]
+pub unsafe fn start_camera_shake(strength: f32, origin: *const c_void, duration: f32) { unsafe { function!(33012, (f32, *const c_void, f32))(strength, origin, duration) } }
+/// `StartGameInInitialCellOrSave`: startup: finds the start cell from the INI (else the loaded grid centre or default object 0xac 'Main Menu Cell'), places the player there, sends the init-script event; with loadLastSave enumerates the saves and queues the newest for loading; then marks Main+0x14 and plays sMainMenuMovieIntro when no load was queued
+///
+/// Semantic, camera pass, high; ledger semantic evidence, name high; id 36549, rva 0x654030.
+/// `void (bool loadLastSave)`
+#[inline]
+pub fn start_game_in_initial_cell_or_save(loadLastSave: bool) { unsafe { function!(36549, (bool))(loadLastSave) } }
+/// `StaticInit_CameraPathNodeString`: builds the BSFixedString "CameraPathNode" at 0x3258460 and registers its atexit
+///
+/// Semantic, camera pass, high; ledger semantic evidence, name high; id 7320, rva 0xbd280.
+/// `void (void)`
+#[inline]
+pub fn static_init_camera_path_node_string() { unsafe { function!(7320, ())() } }
 /// `SystemTimer::Accumulate`: as Stop without the timer-0 notification
 ///
 /// Semantic, graphics pass, medium; ledger semantic evidence, name medium; id 109136, rva 0x1594920.
@@ -61931,13 +65382,10 @@ pub fn system_timer__restart(timerId: i32) { unsafe { function!(109134, (i32))(t
 pub unsafe fn system_timer__start(timerId: i32) { unsafe { function!(109137, (i32))(timerId) } }
 /// `SystemTimer::Stop`: adds QPC - start of timer timerId to its accumulated seconds (table 0x3699270, stride 0x18); for timer 0 also notifies the sinks at 0x3699210 with the total
 ///
-/// Semantic, graphics pass, medium; ledger runtime evidence, name medium; id 109135, rva 0x15948a0.
+/// Semantic, graphics pass, high; ledger runtime evidence, name high; id 109135, rva 0x15948a0.
 /// `void (i32 timerId)`
-///
-/// # Safety
-/// The pass rates the signature medium.
 #[inline]
-pub unsafe fn system_timer__stop(timerId: i32) { unsafe { function!(109135, (i32))(timerId) } }
+pub fn system_timer__stop(timerId: i32) { unsafe { function!(109135, (i32))(timerId) } }
 /// `TAA::Render`: temporal AA: history ping-pong 0x51/0x52 (0x53/0x54 for the menu 3D scene mode 2), optional water mask pair 0x56/0x57; inputs: source, history, motion vectors (7), depth 0, TAA mask 0x55, normals; returns destTarget
 ///
 /// Semantic, graphics pass, high; ledger semantic evidence, name high; id 527784, rva 0x1544da0.
@@ -62094,6 +65542,15 @@ pub unsafe fn trespass__register_sink(sink: *mut classes::partial::BSTEventSink_
 /// The pass rates the signature medium.
 #[inline]
 pub unsafe fn trespass__unregister_sink(sink: *mut classes::partial::BSTEventSink_Trespass__Event) { unsafe { function!(42675, (*mut classes::partial::BSTEventSink_Trespass__Event))(sink) } }
+/// `TryPlayIdleAnimation`: plays a random idle (PlayIdle with 0x40) when the actor is in range (fAIIdleAnimationDistance, large-creature mult), has 3D, is not sitting or busy, and for the player only while the camera is in cameraStates[1] (auto vanity)
+///
+/// Semantic, camera pass, high; ledger semantic evidence, name high; id 39281, rva 0x6f22f0.
+/// `void (AIProcess* process, Actor* actor)`
+///
+/// # Safety
+/// `process` must point to what the engine expects.
+#[inline]
+pub unsafe fn try_play_idle_animation(process: *mut classes::AIProcess, actor: *mut classes::Actor) { unsafe { function!(39281, (*mut classes::AIProcess, *mut classes::Actor))(process, actor) } }
 /// `TryStartQuest`: starts a quest: clears *started; when the quest's flags (u16 +0xdc) have bit 0 it returns true at once (*started set only for one flag combination); otherwise, unless bit 8 is set with byte +0x22a, startNow true runs the quest's pending start work and on success adds it to the story manager's array and sets *started, startNow false queues it and sets *started; returns whether it was started or queued. The new-game moment's site 0x9591b9 calls it with startNow 1 on the quest the main menu starts
 ///
 /// Semantic, moments pass, medium; ledger runtime evidence, name medium; id 25003, rva 0x3d0cb0.
@@ -62148,6 +65605,33 @@ pub unsafe fn ui3_d_scene__render_shadow_masks() { unsafe { function!(52728, ())
 /// `this` must point to what the engine expects.
 #[inline]
 pub unsafe fn ui3_d_scene__update_and_render_shadow_lights(this: *mut c_void, camera: *mut classes::NiCamera) { unsafe { function!(52729, (*mut c_void, *mut classes::NiCamera))(this, camera) } }
+/// `UI3DSceneManager::SetCameraLocalRotate`: menu 3D scene camera (+0x20) local rotation (+0x48..+0x68) = rotate, then UpdateNode
+///
+/// Semantic, camera pass, high; ledger semantic evidence, name high; id 52741, rva 0x98b180.
+/// `void (UI3DSceneManager* this, const NiMatrix3* rotate)`
+///
+/// # Safety
+/// `this`, `rotate` must point to what the engine expects.
+#[inline]
+pub unsafe fn ui3_d_scene_manager__set_camera_local_rotate(this: *mut c_void, rotate: *const c_void) { unsafe { function!(52741, (*mut c_void, *const c_void))(this, rotate) } }
+/// `UI3DSceneManager::SetCameraLocalTranslate`: menu 3D scene camera (+0x20) local translation (+0x6c..+0x74) = translate, then UpdateNode with a zeroed NiUpdateData; nothing when the camera is null
+///
+/// Semantic, camera pass, high; ledger semantic evidence, name high; id 52739, rva 0x98b0d0.
+/// `void (UI3DSceneManager* this, const NiPoint3* translate)`
+///
+/// # Safety
+/// `this`, `translate` must point to what the engine expects.
+#[inline]
+pub unsafe fn ui3_d_scene_manager__set_camera_local_translate(this: *mut c_void, translate: *const c_void) { unsafe { function!(52739, (*mut c_void, *const c_void))(this, translate) } }
+/// `UI3DSceneManager::UpdateCurrentModeRoot`: NiAVObject::UpdateNode(roots[currentMode]) (roots +0x38, mode +0x90)
+///
+/// Semantic, camera pass, high; ledger semantic evidence, name high; id 52732, rva 0x98ab90.
+/// `void (UI3DSceneManager* this, NiUpdateData* data)`
+///
+/// # Safety
+/// `this`, `data` must point to what the engine expects.
+#[inline]
+pub unsafe fn ui3_d_scene_manager__update_current_mode_root(this: *mut c_void, data: *mut classes::NiUpdateData) { unsafe { function!(52732, (*mut c_void, *mut classes::NiUpdateData))(this, data) } }
 /// `UIMessageDataFactory::Create`: creates a payload by type name through the static BSTCreateFactoryManager<BSFixedString,IUIMessageData,16> registry
 ///
 /// Semantic, ui pass, high; ledger semantic evidence, name high; id 35855, rva 0x62e6a0.
@@ -62184,6 +65668,12 @@ pub fn update_actor_with_camera(player: &classes::Actor, delta: f32, skipActor: 
 /// `void (BSFlattenedBoneTree* tree)`
 #[inline]
 pub fn update_bone_world_transforms(tree: &classes::BSFlattenedBoneTree) { unsafe { function!(70746, (&classes::BSFlattenedBoneTree))(tree) } }
+/// `UpdateCameraPathPlayback`: debug camera path player and recorder driven by the INI section [CameraPath]: loads sNif, drives the scene graph's camera root (child 0) and the FOV from the NiCamera inside the NIF, optionally relative to the reference sOffsetID, and in record mode writes one screenshot per frame at iFPS
+///
+/// Semantic, camera pass, high; ledger runtime evidence, name high; id 36591, rva 0x65a750.
+/// `void (void)`
+#[inline]
+pub fn update_camera_path_playback() { unsafe { function!(36591, ())() } }
 /// `UpdateFadeAlpha`: moves currentFade (+0x130) toward fadeAmount / the distance fade by at most min(dt/2, 0.1) per call within two fade frames; sets or clears flags bit 14
 ///
 /// Semantic, camera pass, medium; ledger semantic evidence, name medium; id 105486, rva 0x14e6170.
@@ -62202,6 +65692,15 @@ pub unsafe fn update_fade_alpha(node: *mut classes::BSFadeNode, fadeAmount: f32,
 /// The pass rates the signature medium.
 #[inline]
 pub unsafe fn update_gamepad_rumble(realDelta: f32) { unsafe { function!(68532, (f32))(realDelta) } }
+/// `UpdateHandleArrayWithFrameDelta`: tail call UpdateHandleArrayRefsAndPruneDeleted(manager, g_FrameDelta)
+///
+/// Semantic, camera pass, high; ledger semantic evidence, name high; id 43946, rva 0x7ed390.
+/// `void (void* manager)`
+///
+/// # Safety
+/// `manager` must point to what the engine expects.
+#[inline]
+pub unsafe fn update_handle_array_with_frame_delta(manager: *mut c_void) { unsafe { function!(43946, (*mut c_void))(manager) } }
 /// `UpdateImageSpaceModifiers`: standalone copy of the per-frame IMOD update with no caller in 1.7.104 (only its .pdata entry); the main loop 0x658870 runs the same code inline at 0x658bb7..0x658cdc
 ///
 /// Semantic, graphics pass, high; ledger runtime evidence, name high; id 36587, rva 0x65a250.
@@ -62235,6 +65734,126 @@ pub unsafe fn update_sun_shadow_constants(params: *mut c_void, camera: *mut clas
 /// `process` must point to what the engine expects.
 #[inline]
 pub unsafe fn update_teleport_fade(process: *mut classes::AIProcess, actor: *mut classes::TESObjectREFR, seconds: f32) -> bool { unsafe { function!(39457, (*mut classes::AIProcess, *mut classes::TESObjectREFR, f32) -> bool)(process, actor, seconds) } }
+/// `UpdateTerrainLOD`: per-worldspace terrain LOD update around a position: closes on a menu, decides the above-max-height state (fCameraAboveMaxHeightThreshold, skipped in the free camera state cameraStates[3]), then with bUseNewTerrainSystem updates the quadtree (flag bit 0 full, bit 1 recursive)
+///
+/// Semantic, camera pass, high; ledger semantic evidence, name high; id 31802, rva 0x5160c0.
+/// `void (TerrainManager* manager, const NiPoint3* position, u32* updateFlags)`
+///
+/// # Safety
+/// `manager`, `position`, `updateFlags` must point to what the engine expects.
+#[inline]
+pub unsafe fn update_terrain_lod(manager: *mut c_void, position: *const c_void, updateFlags: *mut u32) { unsafe { function!(31802, (*mut c_void, *const c_void, *mut u32))(manager, position, updateFlags) } }
+/// `UpdateTerrainLODFromCameraPosition`: frame job 'Partial Terrain Manager Update': PlayerCamera::GetPosition, then (with bEnableStippleFade:Display) ID_13389(g_TES), and UpdateTerrainLOD(GetField90FollowingField158Chain(the player's worldspace), &cameraPosition, &0)
+///
+/// Semantic, camera pass, high; ledger runtime evidence, name high; id 39102, rva 0x6e6420.
+/// `void (void)`
+#[inline]
+pub fn update_terrain_lod_from_camera_position() { unsafe { function!(39102, ())() } }
+/// `UpdateVATS`: Per-frame VATS playback update: when mode (+0x20) is 4, advances the queued attack/camera entries, ticks camera and safety timers (fVATSSafetyMaxTime, fVATSCameraMinTime, fVATSPlaybackDelay), sets the VATS camera from the current entry's mesh/targets, applies and blends the VATS image space, scales global time, prunes invalid targets and updates the VATS light.
+///
+/// Semantic, camera pass, high; ledger semantic evidence, name high; id 44295, rva 0x806f80.
+/// `void (VATS* vats)`
+///
+/// # Safety
+/// `vats` must point to what the engine expects.
+#[inline]
+pub unsafe fn update_vats(vats: *mut c_void) { unsafe { function!(44295, (*mut c_void))(vats) } }
+/// `UpdateVATSCamera`: per frame: (cutAway and player alive -> ForceFirstPersonIfPOVAllowed, stop); UpdateNode(cameraRoot, clock); offset = root local translate transformed by the attacker's (flags bit 2, or no target, or location != 2) or the target's transform; position = offset + locationNode world translate; PlayerCamera::SetVATSCameraPosition; dolly from the previous camera position when active and the move exceeds fVATSCameraDollyMin (256): t = (clock - start) / duration, position = from + t * delta, until t >= 1; world NiCamera frustum = the NIF NiCamera's left/right * (w/h * 0.75), its top/bottom, the world near/far; look-at point (lookAtNode or targetPercent) and rotationEuler -> PlayerCamera::SetVATSCameraRotation; cutAway when |lookAt - position| <= fVATSCameraCutAwayDistance
+///
+/// Semantic, camera pass, high; ledger runtime evidence, name high; id 20710, rva 0x319920.
+/// `void (BGSCameraShot* shot, float clock)`
+#[inline]
+pub fn update_vats_camera(shot: &classes::BGSCameraShot, clock: f32) { unsafe { function!(20710, (&classes::BGSCameraShot, f32))(shot, clock) } }
+/// `UpdateVATSCameraForTarget`: when the current shot follows a projectile (location 1 and flags bit 0) and projectile is VATS+0x48 (or +0x50): UpdateVATSCamera(shot, clock) then PlayerCamera::Update, inside the projectile's own update
+///
+/// Semantic, camera pass, high; ledger semantic evidence, name high; id 44299, rva 0x8081b0.
+/// `void (VATS* vats, Projectile* projectile)`
+///
+/// # Safety
+/// `vats` must point to what the engine expects.
+#[inline]
+pub unsafe fn update_vats_camera_for_target(vats: *mut c_void, projectile: *mut classes::Projectile) { unsafe { function!(44299, (*mut c_void, *mut classes::Projectile))(vats, projectile) } }
+/// `UpdateVATSCameraState`: compute the VATS phase g_VATSCameraPhase 0x3252a58: no command -> 2; melee command (type < 3, phase 0): 2 when the attacker's +0xc8 bits 28-31 are not 1 or 2, or when the target is dead (slot 153), then advance shots while min time is over; ranged: 1 once projectile +0x48 exists; 2 when it is within iVATSCameraHitDist (100) + the float at +4 of the target's slot 116 (+0x3a0) result (a size term, unnamed) of the target, when +0x50 is within that distance, when +0x50 exists while the shot's action is 2, when only +0x50 exists, or when both are gone after phase 1
+///
+/// Semantic, camera pass, high; ledger semantic evidence, name high; id 44310, rva 0x808920.
+/// `void (VATS* vats, VATSCommand* command)`
+///
+/// # Safety
+/// `vats`, `command` must point to what the engine expects.
+#[inline]
+pub unsafe fn update_vats_camera_state(vats: *mut c_void, command: *mut c_void) { unsafe { function!(44310, (*mut c_void, *mut c_void))(vats, command) } }
+/// `UpdateWeaponIdleSound`: weapon draw/sheathe visuals and the weapon idle sound: shows/hides the weapon's named nodes, stores the drawn byte in the middle-high data (+0x316), refreshes the equip slot (UpdateForIndexOrAll)
+///
+/// Semantic, camera pass, medium; ledger semantic evidence, name medium; id 39846, rva 0x721c50.
+/// `void (AIProcess* process, bool drawn, void** weaponModel, Actor* actor, i32 slot)`
+///
+/// # Safety
+/// The pass rates the signature medium.
+#[inline]
+pub unsafe fn update_weapon_idle_sound(process: *mut classes::AIProcess, drawn: bool, weaponModel: *mut *mut c_void, actor: *mut classes::Actor, slot: i32) { unsafe { function!(39846, (*mut classes::AIProcess, bool, *mut *mut c_void, *mut classes::Actor, i32))(process, drawn, weaponModel, actor, slot) } }
+/// `VATS::AdvanceCameraEntry`: advances the VATS camera list's current entry (+0x30) to the next node of the list at +0x28: resets the old camera, keeps the larger +0x78 time in +0x3c, forces first person for entries with flag bit 3; true when advanced
+///
+/// Semantic, camera pass, high; ledger semantic evidence, name high; id 44315, rva 0x8091c0.
+/// `bool (VATS* this)`
+///
+/// # Safety
+/// `this` must point to what the engine expects.
+#[inline]
+pub unsafe fn vats__advance_camera_entry(this: *mut c_void) -> bool { unsafe { function!(44315, (*mut c_void) -> bool)(this) } }
+/// `VATS::GetCameraLookAtPoint`: current shot's GetLookAtPoint, else (0,0,0); when that is (0,0,0): attacker 3D world translate with z + the player's firstPersonCameraHeight
+///
+/// Semantic, camera pass, high; ledger semantic evidence, name high; id 44296, rva 0x807fd0.
+/// `NiPoint3* (VATS* vats, NiPoint3* out)`
+///
+/// # Safety
+/// `vats`, `out` must point to what the engine expects, and the result is an untyped pointer.
+#[inline]
+pub unsafe fn vats__get_camera_look_at_point(vats: *mut c_void, out: *mut c_void) -> *mut c_void { unsafe { function!(44296, (*mut c_void, *mut c_void) -> *mut c_void)(vats, out) } }
+/// `VATS::SetSecondProjectileAndAdvanceShots`: VATS+0x50 = projectile; with a current shot: UpdateVATSCameraState(first command) and, when VATS+0x3c (min-time left) is 0, advance shots while shot.action < phase
+///
+/// Semantic, camera pass, high; ledger semantic evidence, name high; id 44298, rva 0x808140.
+/// `void (VATS* vats, Projectile* projectile)`
+///
+/// # Safety
+/// `vats` must point to what the engine expects.
+#[inline]
+pub unsafe fn vats__set_second_projectile_and_advance_shots(vats: *mut c_void, projectile: *mut classes::Projectile) { unsafe { function!(44298, (*mut c_void, *mut classes::Projectile))(vats, projectile) } }
+/// `VM_ExecuteFunctionCall`: pass 4's 'executor': asks the query for kind/class/name/self/args (slot 1), resolves the function, takes the self object's stack lock, pushes the callee frame, calls IFunction slot 15 (Call) and maps its result; returns 0 continue in the new top frame, 1 call done (caller resumes after the call), 2 the stack left this thread
+///
+/// Semantic, vmstack pass, high; ledger runtime evidence, name high; id 104853, rva 0x14ba380.
+/// `u32 (BSScript::Internal::VirtualMachine* vm, BSScript::Stack* stack, BSTSmartPointer<BSScript::Internal::IFuncCallQuery>* query, bool fromTasklet)`
+///
+/// # Safety
+/// `stack`, `query` must point to what the engine expects.
+#[inline]
+pub unsafe fn vm_execute_function_call(vm: *mut classes::BSScript__Internal__VirtualMachine, stack: *mut classes::BSScript__Stack, query: *mut c_void, fromTasklet: bool) -> u32 { unsafe { function!(104853, (*mut classes::BSScript__Internal__VirtualMachine, *mut classes::BSScript__Stack, *mut c_void, bool) -> u32)(vm, stack, query, fromTasklet) } }
+/// `VM_ProcessFunctionMessages`: reads the running-stack count (capacity - free) under stacksLock, then pops function messages within the time budget: kind 1 -> VM_ExecuteFunctionCall(fromTasklet 0), kind 2 -> CompleteStack(pop 1)
+///
+/// Semantic, vmstack pass, high; ledger runtime evidence, name high; id 104857, rva 0x14bb630.
+/// `void (BSScript::Internal::VirtualMachine* vm, float budget, u32* outRunningStacks, u32* outQueuedMessages)`
+///
+/// # Safety
+/// `outRunningStacks`, `outQueuedMessages` must point to what the engine expects.
+#[inline]
+pub unsafe fn vm_process_function_messages(vm: *mut classes::BSScript__Internal__VirtualMachine, budget: f32, outRunningStacks: *mut u32, outQueuedMessages: *mut u32) { unsafe { function!(104857, (*mut classes::BSScript__Internal__VirtualMachine, f32, *mut u32, *mut u32))(vm, budget, outRunningStacks, outQueuedMessages) } }
+/// `VM_ProcessSuspendedStacks`: thaws the frozen list (re-queues each stack's tasklet with state 4; 'Unable to thaw stack (missing tasklet information)'), swaps the suspended double buffer, and for each suspended stack: states 2/4/8 -> state 0 and VM_ExecuteFunctionCall; 5 -> CompleteStack(pop 1); 6/7 -> CompleteStack(pop 0)
+///
+/// Semantic, vmstack pass, high; ledger semantic evidence, name high; id 104858, rva 0x14bb8b0.
+/// `void (BSScript::Internal::VirtualMachine* vm, float budget, u32* outSuspended)`
+///
+/// # Safety
+/// `outSuspended` must point to what the engine expects.
+#[inline]
+pub unsafe fn vm_process_suspended_stacks(vm: *mut classes::BSScript__Internal__VirtualMachine, budget: f32, outSuspended: *mut u32) { unsafe { function!(104858, (*mut classes::BSScript__Internal__VirtualMachine, f32, *mut u32))(vm, budget, outSuspended) } }
+/// `ValidateCameraPathLinksRecursive`: check parent->children == siblings, path is in siblings, previousSibling == siblings[i-1] (repaired), then the children recursively; logs each fault
+///
+/// Semantic, camera pass, high; ledger semantic evidence, name high; id 20642, rva 0x316d50.
+/// `bool (BGSCameraPath* path, NiTPrimitiveArray<TESForm*>* siblings)`
+///
+/// # Safety
+/// `siblings` must point to what the engine expects.
+#[inline]
+pub unsafe fn validate_camera_path_links_recursive(path: *mut classes::BGSCameraPath, siblings: *mut c_void) -> bool { unsafe { function!(20642, (*mut classes::BGSCameraPath, *mut c_void) -> bool)(path, siblings) } }
 /// `WaitFramePhase`: WaitForSingleObject(INFINITE) on event phase of set
 ///
 /// Semantic, animation pass, high; ledger semantic evidence, name high; id 69516, rva 0xec1dd0.
@@ -62247,6 +65866,15 @@ pub fn wait_frame_phase(set: u32, phase: u32) { unsafe { function!(69516, (u32, 
 /// `void ()`
 #[inline]
 pub fn wait_serving_thread_frame() { unsafe { function!(35409, ())() } }
+/// `WaterSystem::UpdateForCamera`: per-frame water update from the culler's camera: frustum corners, underwater test, wading water, reflections, and the depth-of-field override fade
+///
+/// Semantic, graphics pass, high; ledger runtime evidence, name high; id 32174, rva 0x5299b0.
+/// `void (WaterSystem* this, NiCullingProcess* culler)`
+///
+/// # Safety
+/// `this` must point to what the engine expects.
+#[inline]
+pub unsafe fn water_system__update_for_camera(this: *mut c_void, culler: *mut classes::partial::NiCullingProcess) { unsafe { function!(32174, (*mut c_void, *mut classes::partial::NiCullingProcess))(this, culler) } }
 /// `WeaponAttack::GetEventSource`: the one source of WeaponAttack::Event events
 ///
 /// Semantic, events pass, medium; ledger semantic evidence, name medium; id 41073, rva 0x76f420.
@@ -62370,6 +65998,18 @@ pub unsafe fn write_pending_change_form_record(pendingData: *mut *mut c_void, st
 /// `stream` must point to what the engine expects.
 #[inline]
 pub unsafe fn write_save_header(stream: *mut c_void) -> u32 { unsafe { function!(35672, (*mut c_void) -> u32)(stream) } }
+/// `g_ConcreteFormFactory_BGSCameraPath_97__atexit`: static destructor of the BGSCameraPath form factory: clears factory slot 0x61 (0x1e2e40) and restores the IFormFactory vtable
+///
+/// Semantic, camera pass, high; ledger semantic evidence, name high; id 166295, rva 0x17499b0.
+/// `void (void)`
+#[inline]
+pub fn g_concrete_form_factory_bgs_camera_path_97__atexit() { unsafe { function!(166295, ())() } }
+/// `g_ConcreteObjectFormFactory_BGSCameraShot_96_43_6__atexit`: static destructor of the BGSCameraShot form factory: clears factory slot 0x60
+///
+/// Semantic, camera pass, high; ledger semantic evidence, name high; id 166299, rva 0x1749ae0.
+/// `void (void)`
+#[inline]
+pub fn g_concrete_object_form_factory_bgs_camera_shot_96_43_6__atexit() { unsafe { function!(166299, ())() } }
 /// `processGenerateBehaviorGraphJob`: job body: generate(job+0x40 graph, +0x48 ctx, +0x50 output, +0x7a, +0x70)
 ///
 /// Semantic, animation pass, high; ledger semantic evidence, name high; id 65198, rva 0xc41730.
