@@ -97,9 +97,9 @@ fn editor_id_global() -> Result<String, String> {
 
 fn source_files() -> Result<String, String> {
     let sword = form(IRON_SWORD)?;
-    let files: Vec<&str> = (0..).map_while(|i| sword.get_file(i)).map(file_name).collect();
+    let count = sword.source_files().ok_or("IronSword has no source files")?.count;
+    let files: Vec<&str> = (0..count.cast_signed()).map(|i| sword.get_file(i).map_or("null", file_name)).collect();
     check(files == ["Skyrim.esm"], "IronSword's source files are not [Skyrim.esm]")?;
-    check(sword.source_files().is_some_and(|a| a.count == 1), "TESForm.sourceFiles does not hold one file")?;
     Ok(format!("IronSword source files = {files:?}"))
 }
 
