@@ -2,6 +2,7 @@
 
 mod api;
 mod emit;
+mod groups;
 mod inputs;
 
 use std::collections::BTreeMap;
@@ -13,6 +14,10 @@ use std::process::Command;
 pub use emit::Stats;
 
 pub const RE_REPO: &str = "SkyrimRE-1.7.104";
+/// The generated crate's package name.
+pub const PACKAGE: &str = "skre";
+pub const CRATE_DIR: &str = "crates/skre";
+/// Everything under it is generated; `cargo xtask gen` replaces the folder.
 pub const MODULE_DIR: &str = "crates/skre/src/generated";
 pub const LOCK: &str = "crates/skre/generated.lock";
 
@@ -43,7 +48,7 @@ pub fn generate(re_dir: &Path, commit: &str) -> Result<(BTreeMap<String, String>
     let inputs = inputs::read(re_dir)?;
     let (modules, stats) = emit::all(&inputs, commit);
     let mut files: BTreeMap<String, String> =
-        modules.into_iter().map(|(name, text)| (format!("{MODULE_DIR}/{name}"), text)).collect();
+        modules.into_iter().map(|(name, text)| (format!("{CRATE_DIR}/{name}"), text)).collect();
     let mut lock = format!("# Inputs of {MODULE_DIR}, recorded by `cargo xtask gen`.\nrepo {RE_REPO}\ncommit {commit}\n");
     for (path, hash) in &inputs.hashes {
         writeln!(lock, "sha256 {hash} {path}").unwrap();
@@ -83,9 +88,21 @@ mod tests {
         let lock = std::fs::read_to_string(root.join(LOCK)).unwrap_or_default();
         let commit = lock.lines().find_map(|l| l.strip_prefix("commit ")).map_or_else(|| commit_of(&re), str::to_owned);
         let (files, _) = generate(&re, &commit).unwrap();
-        for (path, text) in files {
-            let on_disk = std::fs::read_to_string(root.join(&path)).unwrap_or_default();
-            assert!(on_disk == text, "{path} is stale; run `cargo xtask gen`");
+        for (path, text) in &files {
+            let on_disk = std::fs::read_to_string(root.join(path)).unwrap_or_default();
+            assert!(on_disk == *text, "{path} is stale; run `cargo xtask gen`");
+        }
+        let mut dirs = vec![root.join(MODULE_DIR)];
+        while let Some(dir) = dirs.pop() {
+            for entry in std::fs::read_dir(&dir).unwrap().flatten() {
+                let path = entry.path();
+                let relative = path.strip_prefix(&root).unwrap().to_string_lossy().replace('\\', "/");
+                if path.is_dir() {
+                    dirs.push(path);
+                } else {
+                    assert!(files.contains_key(&relative), "{relative} is not generated any more; run `cargo xtask gen`");
+                }
+            }
         }
     }
 }

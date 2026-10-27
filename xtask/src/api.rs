@@ -4,7 +4,8 @@
 use std::collections::{BTreeMap, HashMap, HashSet};
 use std::fmt::Write;
 
-use crate::emit::{Class, HEADER, KEYWORDS, doc, ident, is_funclet, is_placeholder, screaming, unique};
+use crate::emit::{Class, KEYWORDS, doc, ident, is_funclet, is_placeholder, screaming, unique};
+use crate::groups::{Items, Kind, family};
 use crate::inputs::{Inputs, SemFunction, SemGlobal, SemSlot, Symbol};
 
 /// Where a callable's signature comes from, most proven first.
@@ -41,18 +42,15 @@ impl Tier {
         }
     }
 
+    /// The stem of the tier's files in a group module.
     #[must_use]
     pub fn module(self) -> &'static str {
-        self.file().trim_end_matches(".rs")
-    }
-
-    fn file(self) -> &'static str {
         match self {
-            Self::Semantic => "api.rs",
-            Self::High => "api_tier_high.rs",
-            Self::Medium => "api_tier_medium.rs",
-            Self::Low => "api_tier_low.rs",
-            Self::Untiered => "api_untiered.rs",
+            Self::Semantic => "api",
+            Self::High => "tier_high",
+            Self::Medium => "tier_medium",
+            Self::Low => "tier_low",
+            Self::Untiered => "untiered",
         }
     }
 
@@ -132,6 +130,14 @@ pub(crate) struct Ctx<'a> {
     rtti: HashSet<&'a str>,
     /// Semantic enum name to its integer type and its Rust name.
     pub(crate) enums: HashMap<String, (&'static str, String)>,
+    /// Class name to its group module.
+    groups: HashMap<&'a str, &'a str>,
+}
+
+impl Ctx<'_> {
+    pub(crate) fn group(&self, class: &str) -> &str {
+        self.groups[class]
+    }
 }
 
 fn scalar(base: &str) -> Option<&'static str> {
@@ -404,6 +410,7 @@ fn render_call(doc_lines: &str, shape: Shape, safe: bool, sig: &Sig, callee: &st
 /// One emitted item before naming: `text` holds `@NAME@` where its unique name goes.
 struct Entry {
     tier: Tier,
+    group: String,
     owner: Option<String>,
     order: (u8, String, u64),
     base: String,
@@ -446,7 +453,13 @@ pub(crate) fn context<'a>(inp: &'a Inputs, classes: &'a BTreeMap<&'a str, Class<
             enums.insert(e.name.clone(), (repr, name(&e.name)));
         }
     }
-    Ctx { classes, rtti: inp.layouts.keys().map(String::as_str).collect(), enums }
+    let mut groups: HashMap<&str, &str> = classes.keys().map(|c| (*c, family(c))).collect();
+    for pass in &inp.semantic {
+        for c in pass.classes.iter().filter(|c| classes.contains_key(c.name.as_str())) {
+            groups.insert(c.name.as_str(), pass.subsystem.as_str());
+        }
+    }
+    Ctx { classes, rtti: inp.layouts.keys().map(String::as_str).collect(), enums, groups }
 }
 
 /// A semantic C signature as an `unsafe extern "C" fn` type over raw pointers, `None` when a type
@@ -461,14 +474,13 @@ pub(crate) fn fn_pointer_type(signature: &str, ctx: &Ctx) -> Option<String> {
     Some(format!("unsafe extern \"C\" fn({}){ret}", params.join(", ")))
 }
 
-/// Everything the callable layer emits: the files keyed by name, and what they hold.
-pub(crate) fn emit(inp: &Inputs, ctx: &Ctx) -> (BTreeMap<&'static str, String>, ApiStats) {
+/// Adds the callable layer to every group's items and says what it holds.
+pub(crate) fn emit(inp: &Inputs, ctx: &Ctx, items: &mut Items) -> ApiStats {
     let mut stats = ApiStats::default();
     let classes = ctx.classes;
     let by_rva: HashMap<u64, &Symbol> = inp.symbols.iter().map(|s| (s.rva, s)).collect();
     let by_id: HashMap<u64, &Symbol> = inp.symbols.iter().filter_map(|s| Some((s.id?, s))).collect();
     let mut entries: Vec<Entry> = Vec::new();
-    let mut derefs = String::new();
 
     let embedded: HashSet<&str> = classes
         .values()
@@ -478,15 +490,13 @@ pub(crate) fn emit(inp: &Inputs, ctx: &Ctx) -> (BTreeMap<&'static str, String>, 
     let deref_target = derefs_of(classes, &embedded, &mut stats);
     for (c, p) in &deref_target {
         let (c, p) = (&classes[c], &classes[p]);
-        writeln!(
-            derefs,
+        items.entry((ctx.group(c.name).to_owned(), Kind::Api(Tier::Semantic))).or_default().push(format!(
             "/// `{}` is laid out from its primary base `{}`, so its methods and fields are reachable through it.\nimpl core::ops::Deref for {} {{\n    type Target = {};\n    #[inline]\n    fn deref(&self) -> &Self::Target {{ unsafe {{ &*core::ptr::from_ref(self).cast() }} }}\n}}\n",
             c.name,
             p.name,
             c.path(),
             p.path()
-        )
-        .unwrap();
+        ));
     }
     for c in classes.values() {
         let inherited: HashSet<(&str, i64)> = match deref_target.get(c.name) {
@@ -503,7 +513,7 @@ pub(crate) fn emit(inp: &Inputs, ctx: &Ctx) -> (BTreeMap<&'static str, String>, 
                 "    /// The `{b}` base at +{off:#X}.\n    #[inline]\n    pub fn @NAME@(&self) -> &{} {{ unsafe {{ &*core::ptr::from_ref(self).byte_add({off:#X}).cast() }} }}\n",
                 base.path()
             );
-            entries.push(Entry { tier: Tier::Semantic, owner: Some(c.name.to_owned()), order: (0, b.to_owned(), off), base: format!("as_{}", snake(b)), text });
+            entries.push(Entry { tier: Tier::Semantic, group: ctx.group(c.name).to_owned(), owner: Some(c.name.to_owned()), order: (0, b.to_owned(), off), base: format!("as_{}", snake(b)), text });
             stats.base_accessors += 1;
         }
     }
@@ -512,42 +522,33 @@ pub(crate) fn emit(inp: &Inputs, ctx: &Ctx) -> (BTreeMap<&'static str, String>, 
     functions(inp, ctx, &by_id, &virtual_targets, &mut entries, &mut stats);
     let statics = globals(inp, ctx, &mut entries, &mut stats);
 
-    let mut files = BTreeMap::new();
-    let mut groups: BTreeMap<(Tier, Option<String>), Vec<Entry>> = BTreeMap::new();
     let mut by_owner: BTreeMap<Option<String>, Vec<Entry>> = BTreeMap::new();
     for e in entries {
         by_owner.entry(e.owner.clone()).or_default().push(e);
     }
+    let mut free: BTreeMap<(String, Tier), Vec<String>> = BTreeMap::new();
     for (owner, mut list) in by_owner {
         list.sort_by(|a, b| (a.tier, &a.order).cmp(&(b.tier, &b.order)));
         let mut names: Vec<String> = list.iter().map(|e| e.base.clone()).collect();
         unique(&mut names);
-        for (mut e, name) in list.into_iter().zip(names) {
-            e.text = e.text.replace("@NAME@", &name);
-            groups.entry((e.tier, owner.clone())).or_default().push(e);
-        }
-    }
-    for tier in Tier::ALL {
-        let mut out = String::from(HEADER);
-        out.push_str("use core::ffi::{c_char, c_void};\n\n");
-        if tier == Tier::Semantic {
-            out.push_str(&derefs);
-        }
-        for ((_, owner), list) in groups.iter().filter(|((t, o), _)| *t == tier && o.is_some()) {
-            let owner = owner.as_deref().unwrap();
-            writeln!(out, "impl {} {{", classes[owner].path()).unwrap();
-            for e in list {
-                out.push_str(&e.text);
+        let mut blocks: BTreeMap<(String, Tier), String> = BTreeMap::new();
+        for (e, name) in list.into_iter().zip(names) {
+            let text = e.text.replace("@NAME@", &name);
+            match &owner {
+                Some(_) => blocks.entry((e.group, e.tier)).or_default().push_str(&text),
+                None => free.entry((e.group, e.tier)).or_default().push(text),
             }
-            out.push_str("}\n\n");
         }
-        for e in groups.get(&(tier, None)).into_iter().flatten() {
-            out.push_str(&e.text);
+        if let Some(owner) = owner {
+            for ((group, tier), body) in blocks {
+                items.entry((group, Kind::Api(tier))).or_default().push(format!("impl {} {{\n{body}}}\n\n", classes[owner.as_str()].path()));
+            }
         }
-        files.insert(tier.file(), out);
     }
-    files.insert("statics.rs", statics);
-    (files, stats)
+    for ((group, tier), list) in free.into_iter().chain(statics.into_iter().map(|(g, l)| ((g, Tier::Semantic), l))) {
+        items.entry((group, Kind::Api(tier))).or_default().extend(list);
+    }
+    stats
 }
 
 /// Whether every reference to `c` is aligned to `align`: it is when the struct is, and when no
@@ -646,7 +647,7 @@ fn slots(
             let text = render_call(&doc_block("    ", &lines), Shape::Method, reason.is_none(), &sig, &format!("virtual_function!(self, {i}, "), Some(class), ctx);
             let t = stats.tiers.entry(tier).or_default();
             if reason.is_none() { t.safe_slots += 1 } else { t.unsafe_slots += 1 }
-            entries.push(Entry { tier, owner: Some(class.to_owned()), order: (1, engine, i as u64), base, text });
+            entries.push(Entry { tier, group: ctx.group(class).to_owned(), owner: Some(class.to_owned()), order: (1, engine, i as u64), base, text });
         }
     }
     targets
@@ -757,13 +758,19 @@ fn functions(
             Shape::Free => t.unsafe_free += 1,
         }
         let base = if shape == Shape::Free { snake(name) } else { snake(last) };
-        entries.push(Entry { tier, owner: owner.map(str::to_owned), order: (2, name.to_owned(), id), base, text });
+        let group = match (owner, sem) {
+            (Some(o), _) => ctx.group(o),
+            (None, Some((_, pass))) => pass,
+            (None, None) => family(name),
+        };
+        entries.push(Entry { tier, group: group.to_owned(), owner: owner.map(str::to_owned), order: (2, name.to_owned(), id), base, text });
     }
 }
 
 /// Accessors for the globals: `singleton()` on a class with exactly one `g_*_ptr` label, the rest
-/// in `statics.rs`.
-fn globals(inp: &Inputs, ctx: &Ctx, entries: &mut Vec<Entry>, stats: &mut ApiStats) -> String {
+/// as functions keyed by group: the semantic pass's, else the group of the class the global holds
+/// or points to, else the group of its name.
+fn globals(inp: &Inputs, ctx: &Ctx, entries: &mut Vec<Entry>, stats: &mut ApiStats) -> BTreeMap<String, Vec<String>> {
     let mut semantic: HashMap<u64, (&SemGlobal, &str)> = HashMap::new();
     for pass in &inp.semantic {
         for g in pass.globals.iter().filter(|g| g.id.is_some()) {
@@ -775,8 +782,7 @@ fn globals(inp: &Inputs, ctx: &Ctx, entries: &mut Vec<Entry>, stats: &mut ApiSta
     for l in labels.values().filter(|l| l.pointer && l.name.ends_with("_ptr")) {
         *singles.entry(l.cls.as_str()).or_default() += 1;
     }
-    let mut out = String::from(HEADER);
-    out.push_str("//! Every global with an Address Library id, as an accessor; `singleton()` on a class replaces the accessor of its one `g_*_ptr` global.\n\nuse core::ffi::{c_char, c_void};\n\n");
+    let mut out: BTreeMap<String, Vec<String>> = BTreeMap::new();
     let mut list: Vec<&Symbol> = inp.symbols.iter().filter(|s| s.kind == "global" && s.id.is_some()).collect();
     list.sort_by(|a, b| a.name.cmp(&b.name).then(a.id.cmp(&b.id)));
     let mut idents: Vec<String> = list.iter().map(|s| snake(&s.name)).collect();
@@ -832,11 +838,17 @@ fn globals(inp: &Inputs, ctx: &Ctx, entries: &mut Vec<Entry>, stats: &mut ApiSta
             lines.push(String::new());
             lines.push("`None` until the engine creates it.".into());
             let text = format!("{}    #[inline]\n    pub fn @NAME@() -> Option<&'static Self> {{ unsafe {{ *(address!({id}) as *const Option<&'static Self>) }} }}\n", doc_block("    ", &lines));
-            entries.push(Entry { tier: Tier::Semantic, owner: Some(c.clone()), order: (0, String::new(), id), base: "singleton".into(), text });
+            entries.push(Entry { tier: Tier::Semantic, group: ctx.group(c).to_owned(), owner: Some(c.clone()), order: (0, String::new(), id), base: "singleton".into(), text });
             stats.singletons += 1;
             continue;
         }
-        write!(out, "{}#[inline]\npub fn {name}() -> {ret} {{ {body} }}\n", doc_block("", &lines)).unwrap();
+        let group = match (sem, instance.as_ref().or(pointee.as_ref()), label) {
+            (Some((_, pass)), _, _) => pass,
+            (None, Some(c), _) => ctx.group(c),
+            (None, None, Some(l)) => ctx.group(&l.cls),
+            (None, None, None) => family(s.name.strip_prefix("g_").unwrap_or(&s.name)),
+        };
+        out.entry(group.to_owned()).or_default().push(format!("{}#[inline]\npub fn {name}() -> {ret} {{ {body} }}\n", doc_block("", &lines)));
         stats.statics += 1;
     }
     out
@@ -848,7 +860,7 @@ mod tests {
     use crate::emit::test_classes;
 
     fn ctx<'a>(classes: &'a BTreeMap<&'a str, Class<'a>>) -> Ctx<'a> {
-        Ctx { classes, rtti: ["TESForm"].into_iter().collect(), enums: HashMap::from([("ActorValue".to_owned(), ("u32", "ActorValue".to_owned()))]) }
+        Ctx { classes, rtti: ["TESForm"].into_iter().collect(), enums: HashMap::from([("ActorValue".to_owned(), ("u32", "ActorValue".to_owned()))]), groups: HashMap::new() }
     }
 
     #[test]

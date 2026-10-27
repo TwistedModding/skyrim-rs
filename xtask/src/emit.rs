@@ -5,7 +5,8 @@ use std::fmt::Write;
 
 use sha2::{Digest, Sha256};
 
-use crate::api::{ApiStats, Ctx, Tier, context, fn_pointer_type};
+use crate::api::{ApiStats, Ctx, context, fn_pointer_type};
+use crate::groups::{Items, Kind, Module, cargo_toml, group_doc, group_files};
 use crate::inputs::{Field, Inputs, SemClass, SemFunction, SemGlobal, SemSlot, Symbol};
 
 #[derive(Default)]
@@ -453,15 +454,6 @@ fn class_rs(c: &Class, classes: &BTreeMap<&str, Class>, stats: &mut Stats) -> St
     out
 }
 
-fn classes_rs(classes: &BTreeMap<&str, Class>, stats: &mut Stats) -> String {
-    let mut out = String::from(HEADER);
-    out.push_str("use core::ffi::c_void;\n\n");
-    for c in classes.values() {
-        out.push_str(&class_rs(c, classes, stats));
-    }
-    out
-}
-
 fn symbol_doc(s: &Symbol) -> String {
     let mut d = format!("`{}` at {:#x} ({}, {})", s.name, s.rva, s.evidence, s.confidence);
     if !s.signature.is_empty() {
@@ -471,7 +463,8 @@ fn symbol_doc(s: &Symbol) -> String {
     doc(&d)
 }
 
-fn vtables_rs(inp: &Inputs, ctx: &Ctx, stats: &mut Stats) -> String {
+/// `raw/vtables`: one struct per vtable, the `ALL` table in parts and `find`.
+fn vtables_rs(inp: &Inputs, ctx: &Ctx, stats: &mut Stats) -> Vec<(String, String)> {
     let classes = ctx.classes;
     let by_rva: HashMap<u64, &Symbol> = inp.symbols.iter().map(|s| (s.rva, s)).collect();
     let mut named: HashMap<(&str, u64), &SemSlot> = HashMap::new();
@@ -482,12 +475,7 @@ fn vtables_rs(inp: &Inputs, ctx: &Ctx, stats: &mut Stats) -> String {
             }
         }
     }
-    let mut out = String::from(HEADER);
-    out.push_str("use core::ffi::{c_char, c_void};
-
-use crate::raw::Vtable;
-
-");
+    let mut structs = Vec::new();
     let mut all = Vec::new();
     let mut rtti: Vec<_> = inp.rtti.classes.iter().collect();
     rtti.sort_by(|a, b| a.name.cmp(&b.name));
@@ -501,6 +489,7 @@ use crate::raw::Vtable;
             let vt = vtable_ident(class_ident, col.offset);
             let mut members = String::new();
             let mut aliases = String::new();
+            let mut out = String::new();
             writeln!(out, "/// `{}` at {:#x}, id {id} ({}, {}); {} slots.", doc(&sym.name), sym.rva, sym.evidence, sym.confidence, col.slots.len()).unwrap();
             writeln!(out, "#[repr(C)]
 pub struct {vt} {{").unwrap();
@@ -541,26 +530,32 @@ impl {vt} {{
                 out.push_str(&aliases);
             }
             out.push('\n');
+            structs.push(out);
             all.push((sym.rva, class.name.as_str(), col.offset, id));
             stats.vtables += 1;
         }
     }
     all.sort_unstable();
-    out.push_str("/// Every vtable the RTTI records, sorted by rva.
-pub static ALL: &[Vtable] = &[
-");
-    for (rva, class, offset, id) in all {
-        writeln!(out, "    Vtable {{ class: {class:?}, offset: {offset:#X}, id: {id}, rva: {rva:#x} }},").unwrap();
-    }
-    out.push_str("];
-
-/// The vtable at a module-relative address.
-#[must_use]
-pub fn find(rva: u32) -> Option<&'static Vtable> {
-    ALL.binary_search_by_key(&rva, |v| v.rva).ok().map(|i| &ALL[i])
+    let rows: Vec<String> =
+        all.into_iter().map(|(rva, class, offset, id)| format!("    Vtable {{ class: {class:?}, offset: {offset:#X}, id: {id}, rva: {rva:#x} }},\n")).collect();
+    let mut module = Module::new("Every vtable the RTTI records: one struct per table with a slot per entry, and the table of all\nof them that identifies a live object's class from its vtable pointer.");
+    module.add("", "part", "use core::ffi::{c_char, c_void};\n\n", "", &structs, true);
+    let all = table(&mut module, "ALL", "Vtable", &rows);
+    module.finish(
+        "raw/vtables",
+        &format!(
+            "\nuse crate::raw::{{Table, Vtable}};\n\n/// Every vtable the RTTI records, sorted by rva.\n{all}\n\
+             /// The vtable at a module-relative address.\n#[must_use]\npub fn find(rva: u32) -> Option<&'static Vtable> {{\n    ALL.get(ALL.floor(rva, |v| v.rva)?).filter(|v| v.rva == rva)\n}}\n"
+        ),
+    )
 }
-");
-    out
+
+/// `pub static NAME: Table<T>` over `rows` packed into the module's private files `<name>_N`.
+fn table(module: &mut Module, name: &str, ty: &str, rows: &[String]) -> String {
+    let head = format!("use crate::raw::*;\n\npub(super) const ROWS: &[{ty}] = &[\n");
+    let parts = module.add("", &name.to_ascii_lowercase(), &head, "];\n", rows, false);
+    let parts: Vec<String> = parts.iter().map(|p| format!("{p}::ROWS")).collect();
+    format!("pub static {name}: Table<{ty}> = Table(&[{}]);\n", parts.join(", "))
 }
 
 pub(crate) fn is_funclet(s: &Symbol) -> bool {
@@ -572,28 +567,23 @@ pub(crate) fn is_placeholder(name: &str) -> bool {
 }
 
 /// `pub const <ident>: u64 = <id>` per symbol, with `docs` as the doc comment and `after` emitted below the const.
-fn consts_rs(
-    symbols: Vec<&Symbol>,
-    header: &str,
-    docs: &dyn Fn(&Symbol) -> String,
-    after: &dyn Fn(&Symbol, &str) -> String,
-    count: &mut usize,
-) -> String {
+fn consts(symbols: Vec<&Symbol>, docs: &dyn Fn(&Symbol) -> String, after: &dyn Fn(&Symbol, &str) -> String, count: &mut usize) -> Vec<String> {
     let mut symbols = symbols;
     symbols.sort_by(|a, b| a.name.cmp(&b.name).then(a.id.cmp(&b.id)));
     let mut idents: Vec<String> = symbols.iter().map(|s| ident(&s.name)).collect();
     unique(&mut idents);
-    let mut out = String::from(HEADER);
-    out.push_str(header);
-    for (s, id) in symbols.iter().zip(idents) {
-        writeln!(out, "/// {}\npub const {id}: u64 = {};", docs(s), s.id.unwrap()).unwrap();
-        out.push_str(&after(s, &id));
-        *count += 1;
-    }
-    out
+    *count += symbols.len();
+    symbols.iter().zip(idents).map(|(s, id)| format!("/// {}\npub const {id}: u64 = {};\n{}", docs(s), s.id.unwrap(), after(s, &id))).collect()
 }
 
-fn fns_rs(inp: &Inputs, ctx: &Ctx, stats: &mut Stats) -> String {
+/// A `raw` module of id consts.
+fn consts_module(dir: &str, doc: &str, head: &str, items: &[String]) -> Vec<(String, String)> {
+    let mut module = Module::new(doc);
+    module.add("", "part", head, "", items, true);
+    module.finish(dir, "")
+}
+
+fn fns_rs(inp: &Inputs, ctx: &Ctx, stats: &mut Stats) -> Vec<(String, String)> {
     let mut semantic: HashMap<u64, &SemFunction> = HashMap::new();
     for pass in &inp.semantic {
         for f in pass.functions.iter().filter(|f| f.id.is_some()) {
@@ -622,12 +612,17 @@ fn fns_rs(inp: &Inputs, ctx: &Ctx, stats: &mut Stats) -> String {
         typed.set(typed.get() + 1);
         format!("/// `{}` as a function pointer type ({}).\npub type {id}_fn = {ty};\n", f.name, f.confidence)
     };
-    let out = consts_rs(selected, "use core::ffi::{c_char, c_void};\n\n", &docs, &after, &mut stats.functions);
+    let items = consts(selected, &docs, &after, &mut stats.functions);
     stats.typed_functions = typed.get();
-    out
+    consts_module(
+        "raw/fns",
+        "The Address Library id of every function the ledger names with medium or high confidence, and the\n`extern \"C\" fn` type of each one a semantic pass types.",
+        "use core::ffi::{c_char, c_void};\n\n",
+        &items,
+    )
 }
 
-fn globals_rs(inp: &Inputs, stats: &mut Stats) -> String {
+fn globals_rs(inp: &Inputs, stats: &mut Stats) -> Vec<(String, String)> {
     let labels: HashMap<u64, _> = inp.structs.labels.iter().filter(|l| l.pointer).map(|l| (l.rva, l)).collect();
     let mut semantic: HashMap<u64, &SemGlobal> = HashMap::new();
     for pass in &inp.semantic {
@@ -649,13 +644,17 @@ fn globals_rs(inp: &Inputs, stats: &mut Stats) -> String {
         }
         d
     };
-    consts_rs(selected, "", &docs, &|_, _| String::new(), &mut stats.globals)
+    let items = consts(selected, &docs, &|_, _| String::new(), &mut stats.globals);
+    consts_module("raw/globals", "The Address Library id of every global the ledger names.", "", &items)
 }
 
-fn enums_rs(inp: &Inputs, ctx: &Ctx, stats: &mut Stats) -> String {
+/// `FormType` in the group of `TESForm`, every other semantic enum in its pass's group, and every
+/// flag set in its class's group.
+fn enums(inp: &Inputs, ctx: &Ctx, items: &mut Items, stats: &mut Stats) {
     assert!(ctx.enums["FormType"].1 == "FormType", "a class is named FormType");
+    let mut push = |group: &str, text: String| items.entry((group.to_owned(), Kind::Types)).or_default().push(text);
     let source = inp.symbols.iter().find(|s| s.name == "g_FormTypeSignatures");
-    let mut out = String::from(HEADER);
+    let mut out = String::new();
     let mut forms: Vec<_> = inp.formtypes.iter().collect();
     forms.sort_by_key(|f| f.id);
     let mut idents: Vec<String> = forms.iter().map(|f| ident(&f.sig)).collect();
@@ -691,7 +690,8 @@ fn enums_rs(inp: &Inputs, ctx: &Ctx, stats: &mut Stats) -> String {
     for (f, id) in forms.iter().zip(&idents) {
         writeln!(out, "            Self::{id} => {:?},", f.sig).unwrap();
     }
-    out.push_str("        }\n    }\n}\n");
+    out.push_str("        }\n    }\n}\n\n");
+    push(ctx.group("TESForm"), out);
 
     for pass in &inp.semantic {
         for e in pass.enums.iter().filter(|e| e.name != "FormType") {
@@ -708,7 +708,8 @@ fn enums_rs(inp: &Inputs, ctx: &Ctx, stats: &mut Stats) -> String {
             unique(&mut idents);
             let name = &ctx.enums[&e.name].1;
             let renamed = if *name == e.name { String::new() } else { format!(" `{}` in the pass; a class has that name", e.name) };
-            writeln!(out, "\n/// {} ({} pass{renamed}).\n#[repr({repr})]\n#[derive(Clone, Copy, PartialEq, Eq, Debug)]\npub enum {name} {{", doc(&e.meaning), pass.subsystem).unwrap();
+            let mut out = String::new();
+            writeln!(out, "/// {} ({} pass{renamed}).\n#[repr({repr})]\n#[derive(Clone, Copy, PartialEq, Eq, Debug)]\npub enum {name} {{", doc(&e.meaning), pass.subsystem).unwrap();
             for (v, id) in values.iter().zip(&idents) {
                 writeln!(out, "    /// `{}`\n    {id} = {},", v.name, v.value).unwrap();
                 stats.enum_values += 1;
@@ -717,7 +718,8 @@ fn enums_rs(inp: &Inputs, ctx: &Ctx, stats: &mut Stats) -> String {
             for (v, id) in values.iter().zip(&idents) {
                 writeln!(out, "            {} => Some(Self::{id}),", v.value).unwrap();
             }
-            out.push_str("            _ => None,\n        }\n    }\n}\n");
+            out.push_str("            _ => None,\n        }\n    }\n}\n\n");
+            push(&pass.subsystem, out);
         }
     }
 
@@ -733,18 +735,20 @@ fn enums_rs(inp: &Inputs, ctx: &Ctx, stats: &mut Stats) -> String {
             w => panic!("flag set {}: width {w}", set.name),
         };
         let name = format!("{}_{}", ident(class), ident(field));
-        writeln!(out, "\n/// Named bits of `{class}.{field}` ({pass} pass); unnamed bits pass through `bits`.\n#[repr(transparent)]\n#[derive(Clone, Copy, PartialEq, Eq, Debug, Default)]\npub struct {name}(pub {repr});\n\nimpl {name} {{").unwrap();
+        let mut out = String::new();
+        writeln!(out, "/// Named bits of `{class}.{field}` ({pass} pass); unnamed bits pass through `bits`.\n#[repr(transparent)]\n#[derive(Clone, Copy, PartialEq, Eq, Debug, Default)]\npub struct {name}(pub {repr});\n\nimpl {name} {{").unwrap();
         for v in &set.values {
             writeln!(out, "    /// {} ({})\n    pub const {}: Self = Self({:#x});", doc(&v.meaning), v.confidence, screaming(&v.name), v.value).unwrap();
             stats.flags += 1;
         }
-        writeln!(out, "\n    #[must_use]\n    pub const fn bits(self) -> {repr} {{\n        self.0\n    }}\n\n    #[must_use]\n    pub const fn contains(self, other: Self) -> bool {{\n        self.0 & other.0 == other.0\n    }}\n}}").unwrap();
+        writeln!(out, "\n    #[must_use]\n    pub const fn bits(self) -> {repr} {{\n        self.0\n    }}\n\n    #[must_use]\n    pub const fn contains(self, other: Self) -> bool {{\n        self.0 & other.0 == other.0\n    }}\n}}\n").unwrap();
+        push(if ctx.classes.contains_key(class) { ctx.group(class) } else { pass }, out);
     }
-    out
 }
 
-/// Every function `fns` names and every global, sorted by rva, for symbolizing a game address.
-fn symbols_rs(inp: &Inputs, stats: &mut Stats) -> String {
+/// `raw/symbols`: every function `fns` names and every global, sorted by rva, for symbolizing a
+/// game address, and the class hierarchy.
+fn symbols_rs(inp: &Inputs, stats: &mut Stats) -> Vec<(String, String)> {
     let mut semantic: HashMap<u64, (&SemFunction, &str)> = HashMap::new();
     for pass in &inp.semantic {
         for f in pass.functions.iter().filter(|f| f.id.is_some()) {
@@ -767,60 +771,74 @@ fn symbols_rs(inp: &Inputs, stats: &mut Stats) -> String {
     let mut globals: Vec<&Symbol> = inp.symbols.iter().filter(|s| s.kind == "global" && s.id.is_some()).collect();
     globals.sort_by_key(|s| (s.rva, s.id));
     globals.dedup_by_key(|s| s.rva);
-    let mut out = String::from(HEADER);
-    out.push_str("use crate::raw::{Confidence, Function, Global};\n\n/// The functions `fns` names, sorted by rva.\npub static FUNCTIONS: &[Function] = &[\n");
-    for s in &functions {
-        writeln!(out, "    Function {{ rva: {:#x}, id: {}, confidence: Confidence::{}, name: {:?} }},", s.rva, s.id.unwrap(), confidence(&s.confidence), s.name).unwrap();
-    }
-    out.push_str("];\n\n/// The semantic pass meaning of a function by rva, sorted.\npub static MEANINGS: &[(u32, &str)] = &[\n");
-    for s in functions.iter().filter(|s| semantic.contains_key(&s.id.unwrap())) {
-        let (f, pass) = semantic[&s.id.unwrap()];
-        writeln!(out, "    ({:#x}, {:?}),", s.rva, format!("{} ({}, {pass} pass)", doc(&f.meaning), f.confidence)).unwrap();
-    }
-    out.push_str("];\n\n/// The globals `globals` names, sorted by rva.\npub static GLOBALS: &[Global] = &[\n");
-    for s in &globals {
-        writeln!(out, "    Global {{ rva: {:#x}, id: {}, name: {:?} }},", s.rva, s.id.unwrap(), s.name).unwrap();
-    }
+    let rows = functions
+        .iter()
+        .map(|s| format!("    Function {{ rva: {:#x}, id: {}, confidence: Confidence::{}, name: {:?} }},\n", s.rva, s.id.unwrap(), confidence(&s.confidence), s.name))
+        .collect::<Vec<_>>();
+    let meanings = functions
+        .iter()
+        .filter_map(|s| semantic.get(&s.id.unwrap()).map(|(f, pass)| format!("    ({:#x}, {:?}),\n", s.rva, format!("{} ({}, {pass} pass)", doc(&f.meaning), f.confidence))))
+        .collect::<Vec<_>>();
+    let global_rows = globals.iter().map(|s| format!("    Global {{ rva: {:#x}, id: {}, name: {:?} }},\n", s.rva, s.id.unwrap(), s.name)).collect::<Vec<_>>();
     let mut rtti: Vec<&crate::inputs::RttiClass> = inp.rtti.classes.iter().collect();
     rtti.sort_by(|a, b| a.name.cmp(&b.name));
-    out.push_str("];\n\n/// Every RTTI class with its bases (all of them, nearest first), sorted by class name.\npub static HIERARCHY: &[(&str, &[&str])] = &[\n");
-    for class in &rtti {
-        let bases: Vec<String> = class.bases.iter().skip(1).map(|b| format!("{:?}", b.name)).collect();
-        writeln!(out, "    ({:?}, &[{}]),", class.name, bases.join(", ")).unwrap();
-    }
-    out.push_str(
-        "];
+    let hierarchy = rtti
+        .iter()
+        .map(|class| {
+            let bases: Vec<String> = class.bases.iter().skip(1).map(|b| format!("{:?}", b.name)).collect();
+            format!("    ({:?}, &[{}]),\n", class.name, bases.join(", "))
+        })
+        .collect::<Vec<_>>();
+    let mut module = Module::new("The crash logger's lookup tables: the functions and globals the ledger names by rva, the semantic\nmeanings, and the RTTI class hierarchy.");
+    let functions_table = table(&mut module, "FUNCTIONS", "Function", &rows);
+    let meanings_table = table(&mut module, "MEANINGS", "(u32, &str)", &meanings);
+    let globals_table = table(&mut module, "GLOBALS", "Global", &global_rows);
+    let hierarchy_table = table(&mut module, "HIERARCHY", "(&str, &[&str])", &hierarchy);
+    let files = module.finish(
+        "raw/symbols",
+        &format!(
+            "
+use crate::raw::{{Function, Global, Table}};
 
+/// The functions `fns` names, sorted by rva.
+{functions_table}
+/// The semantic pass meaning of a function by rva, sorted.
+{meanings_table}
+/// The globals `globals` names, sorted by rva.
+{globals_table}
+/// Every RTTI class with its bases (all of them, nearest first), sorted by class name.
+{hierarchy_table}
 /// Whether `class` is `base` or derives from it.
 #[must_use]
-pub fn derives(class: &str, base: &str) -> bool {
-    class == base || HIERARCHY.binary_search_by_key(&class, |h| h.0).ok().is_some_and(|i| HIERARCHY[i].1.contains(&base))
-}
+pub fn derives(class: &str, base: &str) -> bool {{
+    class == base || HIERARCHY.floor(class, |h| h.0).and_then(|i| HIERARCHY.get(i)).is_some_and(|h| h.0 == class && h.1.contains(&base))
+}}
 
 /// The function holding a module-relative address and the offset into it: the last function
 /// starting at or before `rva`, since the ledger records no sizes.
 #[must_use]
-pub fn function_at(rva: u32) -> Option<(&'static Function, u32)> {
-    let i = FUNCTIONS.partition_point(|f| f.rva <= rva).checked_sub(1)?;
-    Some((&FUNCTIONS[i], rva - FUNCTIONS[i].rva))
-}
+pub fn function_at(rva: u32) -> Option<(&'static Function, u32)> {{
+    let f = FUNCTIONS.get(FUNCTIONS.floor(rva, |f| f.rva)?)?;
+    Some((f, rva - f.rva))
+}}
 
 /// The semantic meaning of the function starting at `rva`.
 #[must_use]
-pub fn meaning_of(rva: u32) -> Option<&'static str> {
-    MEANINGS.binary_search_by_key(&rva, |m| m.0).ok().map(|i| MEANINGS[i].1)
-}
+pub fn meaning_of(rva: u32) -> Option<&'static str> {{
+    MEANINGS.get(MEANINGS.floor(rva, |m| m.0)?).filter(|m| m.0 == rva).map(|m| m.1)
+}}
 
 /// The global at or before a module-relative address and the offset into it.
 #[must_use]
-pub fn global_at(rva: u32) -> Option<(&'static Global, u32)> {
-    let i = GLOBALS.partition_point(|g| g.rva <= rva).checked_sub(1)?;
-    Some((&GLOBALS[i], rva - GLOBALS[i].rva))
-}
-",
+pub fn global_at(rva: u32) -> Option<(&'static Global, u32)> {{
+    let g = GLOBALS.get(GLOBALS.floor(rva, |g| g.rva)?)?;
+    Some((g, rva - g.rva))
+}}
+"
+        ),
     );
-    stats.symbols = functions.len() + globals.len();
-    out
+    stats.symbols = functions.len() + globals.len();    stats.symbols = functions.len() + globals.len();
+    files
 }
 
 const RAW_MOD: &str = "//! What the API is built on: the Address Library ids of functions and globals, the vtable layouts
@@ -832,57 +850,62 @@ pub mod globals;
 pub mod symbols;
 pub mod vtables;
 
-pub use crate::tables::{Confidence, Function, Global, Vtable};
+pub use crate::tables::{Confidence, Function, Global, Table, Vtable};
 ";
 
-fn mod_rs(inp: &Inputs, commit: &str) -> String {
-    let passes: Vec<&str> = inp.semantic.iter().map(|p| p.subsystem.as_str()).collect();
+/// The root: every group module, glob re-exported so a class, enum, flag set, free function or
+/// global accessor is reachable at the crate root too.
+fn root_rs(passes: &[&str], groups: &[&str], typed: &[&str], commit: &str) -> String {
     let mut out = format!(
         "//! SkyrimSE.exe 1.7.104 as the SkyrimRE-1.7.104 ledgers describe it at commit {commit}.\n\
          //! Semantic passes folded in: {}.\n\
          //! Generated by `cargo xtask gen`; do not edit.\n\n",
         if passes.is_empty() { "none".to_owned() } else { passes.join(", ") }
     );
-    for module in ["classes", "enums", "statics"] {
-        writeln!(out, "mod {module};
-pub use {module}::*;").unwrap();
+    for g in groups {
+        writeln!(out, "pub mod {g};").unwrap();
     }
-    for tier in Tier::ALL {
-        let module = tier.module();
-        let cfg = tier.feature().map(|f| format!("#[cfg(feature = \"{f}\")]
-")).unwrap_or_default();
-        writeln!(out, "{cfg}mod {module};
-{cfg}pub use {module}::*;").unwrap();
+    out.push('\n');
+    for g in groups {
+        let cfg = if typed.contains(g) { String::new() } else { format!("#[cfg(feature = \"{g}\")]
+") };
+        writeln!(out, "{cfg}pub use {g}::*;").unwrap();
     }
-    out.push_str(
-        "#[doc(hidden)]
-pub mod raw;
-
-/// The runtime these definitions describe, as `[major, minor, build]`.
-pub const VERSION: [u32; 3] = [1, 7, 104];
-",
-    );
+    out.push_str("\n#[doc(hidden)]\npub mod raw;\n\n/// The runtime these definitions describe, as `[major, minor, build]`.\npub const VERSION: [u32; 3] = [1, 7, 104];\n");
     out
 }
 
-/// The generated module files keyed by file name, and what they contain.
-pub fn all(inp: &Inputs, commit: &str) -> (BTreeMap<&'static str, String>, Stats) {
+/// The generated files keyed by their path in the crate, and what they contain.
+pub fn all(inp: &Inputs, commit: &str) -> (BTreeMap<String, String>, Stats) {
     let mut stats = Stats::default();
     let classes = build_classes(inp);
     let ctx = context(inp, &classes);
-    let mut files = BTreeMap::new();
-    files.insert("classes.rs", classes_rs(&classes, &mut stats));
-    files.insert("raw/vtables.rs", vtables_rs(inp, &ctx, &mut stats));
-    files.insert("raw/fns.rs", fns_rs(inp, &ctx, &mut stats));
-    files.insert("raw/globals.rs", globals_rs(inp, &mut stats));
-    files.insert("raw/symbols.rs", symbols_rs(inp, &mut stats));
-    files.insert("raw/mod.rs", RAW_MOD.to_owned());
-    files.insert("enums.rs", enums_rs(inp, &ctx, &mut stats));
-    files.insert("mod.rs", mod_rs(inp, commit));
-    let (api, api_stats) = crate::api::emit(inp, &ctx);
-    files.extend(api);
-    stats.api = api_stats;
-    (files, stats)
+    let mut items = Items::new();
+    for c in classes.values() {
+        items.entry((ctx.group(c.name).to_owned(), Kind::Types)).or_default().push(class_rs(c, &classes, &mut stats));
+    }
+    enums(inp, &ctx, &mut items, &mut stats);
+    stats.api = crate::api::emit(inp, &ctx, &mut items);
+
+    let mut files = vtables_rs(inp, &ctx, &mut stats);
+    files.extend(fns_rs(inp, &ctx, &mut stats));
+    files.extend(globals_rs(inp, &mut stats));
+    files.extend(symbols_rs(inp, &mut stats));
+    files.push(("raw/mod.rs".into(), RAW_MOD.to_owned()));
+    let passes: Vec<&str> = inp.semantic.iter().map(|p| p.subsystem.as_str()).collect();
+    let mut by_group: BTreeMap<&str, BTreeMap<Kind, &Vec<String>>> = BTreeMap::new();
+    for ((group, kind), list) in &items {
+        by_group.entry(group).or_default().insert(*kind, list);
+    }
+    for (group, kinds) in &by_group {
+        files.extend(group_files(group, &group_doc(group, &passes), kinds));
+    }
+    let groups: Vec<&str> = by_group.keys().copied().collect();
+    let typed: Vec<&str> = by_group.iter().filter(|(_, kinds)| kinds.contains_key(&Kind::Types)).map(|(g, _)| *g).collect();
+    files.push(("mod.rs".into(), root_rs(&passes, &groups, &typed, commit)));
+    let mut out: BTreeMap<String, String> = files.into_iter().map(|(path, text)| (format!("src/generated/{path}"), text)).collect();
+    out.insert("Cargo.toml".into(), cargo_toml(&groups));
+    (out, stats)
 }
 
 /// Three exact classes without fields, for the signature tests.

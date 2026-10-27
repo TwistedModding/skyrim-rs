@@ -24,6 +24,13 @@ fn generate() -> ExitCode {
         }
     };
     let root = xtask::workspace_root();
+    match std::fs::remove_dir_all(root.join(xtask::MODULE_DIR)) {
+        Err(e) if e.kind() != std::io::ErrorKind::NotFound => {
+            eprintln!("{}: {e}", xtask::MODULE_DIR);
+            return ExitCode::FAILURE;
+        }
+        _ => {}
+    }
     for (path, text) in &files {
         let path = root.join(path);
         std::fs::create_dir_all(path.parent().unwrap()).unwrap();

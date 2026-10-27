@@ -52,6 +52,7 @@ pub unsafe fn vtable_entry<T>(object: &T, index: usize) -> usize {
 }
 
 /// The live address of an Address Library id, cached in a static of the call site.
+#[allow(unused_macros)]
 macro_rules! address {
     ($id:literal) => {{
         static RELOCATION: $crate::Relocation = $crate::Relocation::new($id);
@@ -60,6 +61,7 @@ macro_rules! address {
 }
 
 /// The function at an Address Library id as an `unsafe extern "C" fn` of the given parameters.
+#[allow(unused_macros)]
 macro_rules! function {
     ($id:literal, ($($param:ty),*) $(-> $ret:ty)?) => {
         core::mem::transmute::<usize, unsafe extern "C" fn($($param),*) $(-> $ret)?>(address!($id))
@@ -67,6 +69,7 @@ macro_rules! function {
 }
 
 /// Vtable slot `index` of an object as an `unsafe extern "C" fn` of the given parameters.
+#[allow(unused_macros)]
 macro_rules! virtual_function {
     ($object:expr, $index:literal, ($($param:ty),*) $(-> $ret:ty)?) => {
         core::mem::transmute::<usize, unsafe extern "C" fn($($param),*) $(-> $ret)?>($crate::vtable_entry($object, $index))
@@ -124,5 +127,53 @@ mod tables {
         pub rva: u32,
         pub id: u32,
         pub name: &'static str,
+    }
+
+    /// A table generated in parts, each in its own file.
+    pub struct Table<T: 'static>(pub &'static [&'static [T]]);
+
+    impl<T> Table<T> {
+        #[must_use]
+        pub fn len(&self) -> usize {
+            self.0.iter().map(|p| p.len()).sum()
+        }
+
+        #[must_use]
+        pub fn is_empty(&self) -> bool {
+            self.0.iter().all(|p| p.is_empty())
+        }
+
+        #[must_use]
+        pub fn get(&self, mut index: usize) -> Option<&'static T> {
+            for part in self.0 {
+                if index < part.len() {
+                    return Some(&part[index]);
+                }
+                index -= part.len();
+            }
+            None
+        }
+
+        pub fn iter(&self) -> impl Iterator<Item = &'static T> {
+            self.0.iter().flat_map(|p| p.iter())
+        }
+
+        /// The index of the last entry whose key is at most `key`, in a table sorted by `key_of`.
+        pub fn floor<K: Ord + Copy>(&self, key: K, key_of: impl Fn(&T) -> K) -> Option<usize> {
+            let mut found = None;
+            let mut start = 0;
+            for part in self.0 {
+                let n = part.partition_point(|e| key_of(e) <= key);
+                if n == 0 {
+                    break;
+                }
+                found = Some(start + n - 1);
+                if n < part.len() {
+                    break;
+                }
+                start += part.len();
+            }
+            found
+        }
     }
 }

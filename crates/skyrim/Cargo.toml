@@ -7,7 +7,7 @@ publish.workspace = true
 [dependencies]
 skse.workspace = true
 hook.workspace = true
-skre.workspace = true
+skre = { workspace = true, default-features = false }
 windows-sys = { workspace = true, features = ["Win32_System_Threading"] }
 
 [lints]

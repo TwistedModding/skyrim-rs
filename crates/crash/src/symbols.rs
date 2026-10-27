@@ -89,7 +89,7 @@ pub fn code(rva: u32) -> Option<Code> {
         Some(table) => {
             let i = table.by_rva.partition_point(|e| e.0 <= rva).checked_sub(1)?;
             let (start, index) = table.by_rva[i];
-            (&ledger::FUNCTIONS[index as usize], rva - start)
+            (ledger::FUNCTIONS.get(index as usize)?, rva - start)
         }
         None => ledger::function_at(rva)?,
     };
@@ -99,11 +99,12 @@ pub fn code(rva: u32) -> Option<Code> {
 /// The vtable or global holding a module-relative data address.
 #[must_use]
 pub fn data(rva: u32) -> Option<Data> {
-    let all = vtables::ALL;
-    if let Some(i) = all.partition_point(|v| v.rva <= rva).checked_sub(1) {
-        let end = all.get(i + 1).map_or(all[i].rva + 0x400, |next| next.rva);
+    let all = &vtables::ALL;
+    if let Some(i) = all.floor(rva, |v| v.rva) {
+        let vtable = all.get(i)?;
+        let end = all.get(i + 1).map_or(vtable.rva + 0x400, |next| next.rva);
         if rva < end {
-            return Some(Data::Vtable { vtable: &all[i], offset: rva - all[i].rva });
+            return Some(Data::Vtable { vtable, offset: rva - vtable.rva });
         }
     }
     let (global, offset) = ledger::global_at(rva)?;
@@ -115,7 +116,7 @@ pub fn data(rva: u32) -> Option<Data> {
 pub fn function_rva(id: u64) -> Option<u32> {
     let id = u32::try_from(id).ok()?;
     match TABLE.get().and_then(Option::as_ref) {
-        Some(table) => table.by_rva.iter().find(|e| ledger::FUNCTIONS[e.1 as usize].id == id).map(|e| e.0),
+        Some(table) => table.by_rva.iter().find(|e| ledger::FUNCTIONS.get(e.1 as usize).is_some_and(|f| f.id == id)).map(|e| e.0),
         None => ledger::FUNCTIONS.iter().find(|f| f.id == id).map(|f| f.rva),
     }
 }

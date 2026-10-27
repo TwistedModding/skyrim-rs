@@ -7,4 +7,4 @@ pub mod globals;
 pub mod symbols;
 pub mod vtables;
 
-pub use crate::tables::{Confidence, Function, Global, Vtable};
+pub use crate::tables::{Confidence, Function, Global, Table, Vtable};
