@@ -225,8 +225,11 @@ impl crate::BSScript__Internal__ScriptFunction {
     ///
     /// Semantic, vmstack pass, high; called through the object's vtable.
     /// `BSScript::Internal::ScriptFunction* (BSScript::Internal::ScriptFunction* this, u32 flags)`
+    ///
+    /// # Safety
+    /// It constructs or destroys an object in place.
     #[inline]
-    pub fn destroy(&self, flags: u32) -> Option<&'static Self> { unsafe { virtual_function!(self, 0, (*const Self, u32) -> Option<&'static Self>)(core::ptr::from_ref(self), flags) } }
+    pub unsafe fn destroy(&self, flags: u32) -> *mut Self { unsafe { virtual_function!(self, 0, (*const Self, u32) -> *mut Self)(core::ptr::from_ref(self), flags) } }
     /// `BSScript::Internal::ScriptFunction::GetDocString`, vtable slot 13: &docString (+0x60)
     ///
     /// Semantic, vmstack pass, high; called through the object's vtable.

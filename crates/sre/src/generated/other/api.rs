@@ -5724,8 +5724,11 @@ impl crate::MapMenu {
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 53130, rva 0x99f87c.
     /// `MapMenu* (IMapCameraCallbacks* this, u32 flags)`
+    ///
+    /// # Safety
+    /// It constructs or destroys an object in place.
     #[inline]
-    pub fn i_map_camera_callbacks_destroy(&self, flags: u32) -> Option<&'static Self> { unsafe { function!(53130, (*const Self, u32) -> Option<&'static Self>)(core::ptr::from_ref(self).byte_add(0x38), flags) } }
+    pub unsafe fn i_map_camera_callbacks_destroy(&self, flags: u32) -> *mut Self { unsafe { function!(53130, (*const Self, u32) -> *mut Self)(core::ptr::from_ref(self).byte_add(0x38), flags) } }
     /// `MapMenu::OnExitBegin`: empty
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 53120, rva 0x99f170.

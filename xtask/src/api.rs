@@ -338,7 +338,7 @@ fn unsafe_reason(sig: &Sig, method: bool, confidence: &str, last: &str, class: O
     if confidence != "high" {
         return Some(format!("The pass rates the signature {confidence}."));
     }
-    if last == "ctor" || last.to_ascii_lowercase().contains("dtor") || last.starts_with('~') || class.is_some_and(|c| split_scope(c).1 == last) {
+    if last == "ctor" || last.to_ascii_lowercase().contains("dtor") || last.ends_with("Destroy") || last.starts_with('~') || class.is_some_and(|c| split_scope(c).1 == last) {
         return Some("It constructs or destroys an object in place.".into());
     }
     let raw: Vec<String> = sig

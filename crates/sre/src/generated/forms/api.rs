@@ -527,8 +527,11 @@ pub fn tes_form_maps__create() { unsafe { function!(14669, ())() } }
 ///
 /// Semantic, forms pass, high; ledger semantic evidence, name high; id 441564, rva 0x1e6d60.
 /// `void TESFormMaps::Destroy(void)`
+///
+/// # Safety
+/// It constructs or destroys an object in place.
 #[inline]
-pub fn tes_form_maps__destroy() { unsafe { function!(441564, ())() } }
+pub unsafe fn tes_form_maps__destroy() { unsafe { function!(441564, ())() } }
 /// `g_TESDataHandler` at 0x21a2890, id 400457 (runtime, high); the data handler object itself (static storage) (high, forms pass), type `class:TESDataHandler`
 #[inline]
 pub fn g_tes_data_handler() -> &'static crate::TESDataHandler { unsafe { &*(address!(400457) as *const crate::TESDataHandler) } }

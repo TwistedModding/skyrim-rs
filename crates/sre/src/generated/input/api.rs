@@ -296,8 +296,11 @@ impl crate::BSInputDevice {
     ///
     /// Semantic, input pass, high; called through the object's vtable.
     /// `BSInputDevice* (BSInputDevice* this, u32 flags)`
+    ///
+    /// # Safety
+    /// It constructs or destroys an object in place.
     #[inline]
-    pub fn destroy(&self, flags: u32) -> Option<&'static Self> { unsafe { virtual_function!(self, 0, (*const Self, u32) -> Option<&'static Self>)(core::ptr::from_ref(self), flags) } }
+    pub unsafe fn destroy(&self, flags: u32) -> *mut Self { unsafe { virtual_function!(self, 0, (*const Self, u32) -> *mut Self)(core::ptr::from_ref(self), flags) } }
     /// `BSInputDevice::GetKeyCode`, vtable slot 6: third column of the definition line (record +0xc)
     ///
     /// Semantic, input pass, high; called through the object's vtable.

@@ -876,8 +876,11 @@ impl crate::NiCamera {
     ///
     /// Semantic, frame pass, high; called through the object's vtable.
     /// `NiCamera* (NiCamera* this, u32 flags)`
+    ///
+    /// # Safety
+    /// It constructs or destroys an object in place.
     #[inline]
-    pub fn destroy(&self, flags: u32) -> Option<&'static Self> { unsafe { virtual_function!(self, 0, (*const Self, u32) -> Option<&'static Self>)(core::ptr::from_ref(self), flags) } }
+    pub unsafe fn destroy(&self, flags: u32) -> *mut Self { unsafe { virtual_function!(self, 0, (*const Self, u32) -> *mut Self)(core::ptr::from_ref(self), flags) } }
     /// `NiCamera::Create`: streaming factory: allocates and constructs an NiCamera (TLS memory context 0x3d)
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 70623, rva 0xeef900.
@@ -1641,8 +1644,11 @@ impl crate::PlayerInputHandler {
     ///
     /// Semantic, frame pass, high; called through the object's vtable.
     /// `PlayerInputHandler* (PlayerInputHandler* this, u32 flags)`
+    ///
+    /// # Safety
+    /// It constructs or destroys an object in place.
     #[inline]
-    pub fn destroy(&self, flags: u32) -> Option<&'static Self> { unsafe { virtual_function!(self, 0, (*const Self, u32) -> Option<&'static Self>)(core::ptr::from_ref(self), flags) } }
+    pub unsafe fn destroy(&self, flags: u32) -> *mut Self { unsafe { virtual_function!(self, 0, (*const Self, u32) -> *mut Self)(core::ptr::from_ref(self), flags) } }
     /// `PlayerInputHandler::ProcessButton`, vtable slot 6: eventType 0: ButtonEvent value +0x28, heldDownSecs +0x2c
     ///
     /// Semantic, frame pass, high; called through the object's vtable.
@@ -1697,14 +1703,20 @@ impl crate::PlayerInputHandler {
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 50862, rva 0x8fc458.
     /// `BleedoutCameraState* (PlayerInputHandler* this, u32 flags)`
+    ///
+    /// # Safety
+    /// It constructs or destroys an object in place.
     #[inline]
-    pub fn destroy_2(&self, flags: u32) -> Option<&'static crate::BleedoutCameraState> { unsafe { function!(50862, (*const Self, u32) -> Option<&'static crate::BleedoutCameraState>)(core::ptr::from_ref(self), flags) } }
+    pub unsafe fn destroy_2(&self, flags: u32) -> *mut crate::BleedoutCameraState { unsafe { function!(50862, (*const Self, u32) -> *mut crate::BleedoutCameraState)(core::ptr::from_ref(self), flags) } }
     /// `DragonCameraState::InputHandler::Destroy`: slot 0 adjustor thunk: rcx -= 0x20, jump to DragonCameraState::vdtor 0x55d460
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 33123, rva 0x55d444.
     /// `DragonCameraState* (PlayerInputHandler* this, u32 flags)`
+    ///
+    /// # Safety
+    /// It constructs or destroys an object in place.
     #[inline]
-    pub fn destroy_3(&self, flags: u32) -> Option<&'static crate::DragonCameraState> { unsafe { function!(33123, (*const Self, u32) -> Option<&'static crate::DragonCameraState>)(core::ptr::from_ref(self), flags) } }
+    pub unsafe fn destroy_3(&self, flags: u32) -> *mut crate::DragonCameraState { unsafe { function!(33123, (*const Self, u32) -> *mut crate::DragonCameraState)(core::ptr::from_ref(self), flags) } }
     /// `DragonCameraState::InputHandler::ProcessButton`: slot 6: with Toggle POV down (state+0xe2) and a Toggle POV release, zero freeRotation (state+0xd4/+0xd8); otherwise ThirdPersonState's ProcessButton 0x8fdd20
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 33112, rva 0x55c7f0.
@@ -1724,8 +1736,11 @@ impl crate::PlayerInputHandler {
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 50863, rva 0x8fc464.
     /// `FirstPersonState* (PlayerInputHandler* this, u32 flags)`
+    ///
+    /// # Safety
+    /// It constructs or destroys an object in place.
     #[inline]
-    pub fn destroy_4(&self, flags: u32) -> Option<&'static crate::FirstPersonState> { unsafe { function!(50863, (*const Self, u32) -> Option<&'static crate::FirstPersonState>)(core::ptr::from_ref(self), flags) } }
+    pub unsafe fn destroy_4(&self, flags: u32) -> *mut crate::FirstPersonState { unsafe { function!(50863, (*const Self, u32) -> *mut crate::FirstPersonState)(core::ptr::from_ref(self), flags) } }
     /// `FirstPersonState::InputHandler::ProcessButton`: slot 6 of the first-person handler: Zoom Out pressed -> ForceThirdPerson; Toggle POV: the press sets FirstPersonState+0x8c (Toggle POV down); a release after at least fTogglePOVDelay:Controls -> TogglePOVToThirdPerson; held for f1st3rdSwitchDelay:Camera or more (with +0x8c set) -> ForceThirdPerson; a release this handler handles clears +0x8c (after a held switch the release goes to ThirdPersonState's handler and +0x8c stays 1 until this handler handles the next Toggle POV event)
     ///
     /// Semantic, camera pass, high; ledger runtime evidence, name high; id 50730, rva 0x8f54b0.
@@ -1745,8 +1760,11 @@ impl crate::PlayerInputHandler {
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 50864, rva 0x8fc470.
     /// `FreeCameraState* (PlayerInputHandler* this, u32 flags)`
+    ///
+    /// # Safety
+    /// It constructs or destroys an object in place.
     #[inline]
-    pub fn destroy_5(&self, flags: u32) -> Option<&'static crate::FreeCameraState> { unsafe { function!(50864, (*const Self, u32) -> Option<&'static crate::FreeCameraState>)(core::ptr::from_ref(self), flags) } }
+    pub unsafe fn destroy_5(&self, flags: u32) -> *mut crate::FreeCameraState { unsafe { function!(50864, (*const Self, u32) -> *mut crate::FreeCameraState)(core::ptr::from_ref(self), flags) } }
     /// `FreeCameraState::InputHandler::ProcessButton`: slot 6: CameraZUp -> state+0x44 = value; CameraZDown -> state+0x48 = -value; Run -> state+0x4e = held; WorldZUp -> state+0x4c (i16) = held ? 1 : 0; WorldZDown -> +0x4c = held ? -1 : 0; LockToZPlane -> toggle +0x4f on the press (value != 0, held time 0)
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 50748, rva 0x8f6170.
@@ -1760,8 +1778,11 @@ impl crate::PlayerInputHandler {
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 50773, rva 0x8f763c.
     /// `HorseCameraState* (PlayerInputHandler* this, u32 flags)`
+    ///
+    /// # Safety
+    /// It constructs or destroys an object in place.
     #[inline]
-    pub fn destroy_6(&self, flags: u32) -> Option<&'static crate::HorseCameraState> { unsafe { function!(50773, (*const Self, u32) -> Option<&'static crate::HorseCameraState>)(core::ptr::from_ref(self), flags) } }
+    pub unsafe fn destroy_6(&self, flags: u32) -> *mut crate::HorseCameraState { unsafe { function!(50773, (*const Self, u32) -> *mut crate::HorseCameraState)(core::ptr::from_ref(self), flags) } }
     /// `HorseCameraState::InputHandler::ProcessButton`: slot 6: same body as the dragon handler: Toggle POV release with +0xe2 set zeroes freeRotation, else ThirdPersonState's ProcessButton
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 50763, rva 0x8f6d20.
@@ -1781,8 +1802,11 @@ impl crate::PlayerInputHandler {
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 33124, rva 0x55d450.
     /// `ThirdPersonState* (PlayerInputHandler* this, u32 flags)`
+    ///
+    /// # Safety
+    /// It constructs or destroys an object in place.
     #[inline]
-    pub fn destroy_7(&self, flags: u32) -> Option<&'static crate::ThirdPersonState> { unsafe { function!(33124, (*const Self, u32) -> Option<&'static crate::ThirdPersonState>)(core::ptr::from_ref(self), flags) } }
+    pub unsafe fn destroy_7(&self, flags: u32) -> *mut crate::ThirdPersonState { unsafe { function!(33124, (*const Self, u32) -> *mut crate::ThirdPersonState)(core::ptr::from_ref(self), flags) } }
     /// `ThirdPersonState::InputHandler::ProcessButton`: slot 6: Toggle POV press -> zoomSinceTogglePress (+0x8c) = 0 and togglePOVDown (+0xe2) = 1; release after fTogglePOVDelay with +0xe2 set -> zero freeRotation unless freeRotationEnabled (+0xdc), and when no zoom change happened (or bReturnTo1stPersonFromVanity with a hold over f1st3rdSwitchDelay), no knock flags, CanSwitchPOV and no flying mount: savedZoom (+0x84) = currentZoom, targetZoom (+0x74) = fMinCurrentZoom, toggleToFirstPerson (+0xdd) = 1, +0x8c = FLT_MAX; release clears +0xe2. Zoom In/Out presses (not while Toggle POV held, animatorCam or +0xdd): Zoom In at currentZoom <= fMinCurrentZoom -> savedZoom = fMinCurrentZoom and ForceFirstPerson; else targetZoom -+= fMouseWheelZoomIncrement clamped to [fMinCurrentZoom, 1]
     ///
     /// Semantic, camera pass, high; ledger runtime evidence, name high; id 50906, rva 0x8fdd20.
@@ -2060,8 +2084,11 @@ impl crate::TESCameraState {
     ///
     /// Semantic, frame pass, high; called through the object's vtable.
     /// `TESCameraState* (TESCameraState* this, u32 flags)`
+    ///
+    /// # Safety
+    /// It constructs or destroys an object in place.
     #[inline]
-    pub fn destroy(&self, flags: u32) -> Option<&'static Self> { unsafe { virtual_function!(self, 0, (*const Self, u32) -> Option<&'static Self>)(core::ptr::from_ref(self), flags) } }
+    pub unsafe fn destroy(&self, flags: u32) -> *mut Self { unsafe { virtual_function!(self, 0, (*const Self, u32) -> *mut Self)(core::ptr::from_ref(self), flags) } }
     /// `TESCameraState::End`, vtable slot 2: called on the state that stops being current
     ///
     /// Semantic, frame pass, high; called through the object's vtable.

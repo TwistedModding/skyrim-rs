@@ -1257,8 +1257,11 @@ impl crate::TESCamera {
     ///
     /// Semantic, render pass, high; called through the object's vtable.
     /// `TESCamera* (TESCamera* this, u32 flags)`
+    ///
+    /// # Safety
+    /// It constructs or destroys an object in place.
     #[inline]
-    pub fn destroy(&self, flags: u32) -> Option<&'static Self> { unsafe { virtual_function!(self, 0, (*const Self, u32) -> Option<&'static Self>)(core::ptr::from_ref(self), flags) } }
+    pub unsafe fn destroy(&self, flags: u32) -> *mut Self { unsafe { virtual_function!(self, 0, (*const Self, u32) -> *mut Self)(core::ptr::from_ref(self), flags) } }
     /// `TESCamera::SetCameraRoot`, vtable slot 1: refcounted assignment of cameraRoot (+0x20)
     ///
     /// Semantic, render pass, high; called through the object's vtable.

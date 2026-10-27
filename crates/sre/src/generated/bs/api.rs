@@ -5822,8 +5822,11 @@ impl crate::BSCubeMapCamera {
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 107565, rva 0x155a2c0.
     /// `BSCubeMapCamera* (BSCubeMapCamera* this, u32 flags)`
+    ///
+    /// # Safety
+    /// It constructs or destroys an object in place.
     #[inline]
-    pub fn destroy(&self, flags: u32) -> Option<&'static Self> { unsafe { function!(107565, (*const Self, u32) -> Option<&'static Self>)(core::ptr::from_ref(self), flags) } }
+    pub unsafe fn destroy(&self, flags: u32) -> *mut Self { unsafe { function!(107565, (*const Self, u32) -> *mut Self)(core::ptr::from_ref(self), flags) } }
     /// `BSCubeMapCamera::GetRTTI`: g_TypeNode_BSCubeMapCamera
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 107566, rva 0x155a390.
@@ -6111,8 +6114,11 @@ impl crate::BSTreeManager__IQueryCullingCamera {
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 36741, rva 0x661e60.
     /// `BSTreeManager::IQueryCullingCamera* (BSTreeManager::IQueryCullingCamera* this, u32 flags)`
+    ///
+    /// # Safety
+    /// It constructs or destroys an object in place.
     #[inline]
-    pub fn destroy(&self, flags: u32) -> Option<&'static Self> { unsafe { function!(36741, (*const Self, u32) -> Option<&'static Self>)(core::ptr::from_ref(self), flags) } }
+    pub unsafe fn destroy(&self, flags: u32) -> *mut Self { unsafe { function!(36741, (*const Self, u32) -> *mut Self)(core::ptr::from_ref(self), flags) } }
     /// `MainCullingCamera::GetCamera`: returns g_SceneGraph+0x128, the frame camera: the tree LOD manager culls with the main camera
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 36773, rva 0x6629e0.

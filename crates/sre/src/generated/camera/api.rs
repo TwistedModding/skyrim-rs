@@ -205,8 +205,11 @@ impl crate::AnimatedCameraDeltaStartHandler {
     ///
     /// Semantic, camera pass, high; called through the object's vtable.
     /// `AnimatedCameraDeltaStartHandler* (AnimatedCameraDeltaStartHandler* this, u32 flags)`
+    ///
+    /// # Safety
+    /// It constructs or destroys an object in place.
     #[inline]
-    pub fn destroy(&self, flags: u32) -> Option<&'static Self> { unsafe { virtual_function!(self, 0, (*const Self, u32) -> Option<&'static Self>)(core::ptr::from_ref(self), flags) } }
+    pub unsafe fn destroy(&self, flags: u32) -> *mut Self { unsafe { virtual_function!(self, 0, (*const Self, u32) -> *mut Self)(core::ptr::from_ref(self), flags) } }
     /// `AnimatedCameraDeltaStartHandler::Handle`, vtable slot 1: StartAnimatedCameraAtNode(camera, payload, delta = true): when the current state id > 8 (third person 9+), attach the named node to the current state in delta mode (state+0xcc = 0, +0xd0 = 1.0); no transition, no push
     ///
     /// Semantic, camera pass, high; called through the object's vtable.
@@ -224,8 +227,11 @@ impl crate::AnimatedCameraEndHandler {
     ///
     /// Semantic, camera pass, high; called through the object's vtable.
     /// `AnimatedCameraEndHandler* (AnimatedCameraEndHandler* this, u32 flags)`
+    ///
+    /// # Safety
+    /// It constructs or destroys an object in place.
     #[inline]
-    pub fn destroy(&self, flags: u32) -> Option<&'static Self> { unsafe { virtual_function!(self, 0, (*const Self, u32) -> Option<&'static Self>)(core::ptr::from_ref(self), flags) } }
+    pub unsafe fn destroy(&self, flags: u32) -> *mut Self { unsafe { virtual_function!(self, 0, (*const Self, u32) -> *mut Self)(core::ptr::from_ref(self), flags) } }
     /// `AnimatedCameraEndHandler::Handle`, vtable slot 1: PlayerCamera::EndAnimatedCamera: when the current state id >= 8, clear its animated node; when it is state 8, PlayerCamera+0x160 = !bDisableAutoVanityMode:Camera and pop/SetState back
     ///
     /// Semantic, camera pass, high; called through the object's vtable.
@@ -243,8 +249,11 @@ impl crate::AnimatedCameraStartHandler {
     ///
     /// Semantic, camera pass, high; called through the object's vtable.
     /// `AnimatedCameraStartHandler* (AnimatedCameraStartHandler* this, u32 flags)`
+    ///
+    /// # Safety
+    /// It constructs or destroys an object in place.
     #[inline]
-    pub fn destroy(&self, flags: u32) -> Option<&'static Self> { unsafe { virtual_function!(self, 0, (*const Self, u32) -> Option<&'static Self>)(core::ptr::from_ref(self), flags) } }
+    pub unsafe fn destroy(&self, flags: u32) -> *mut Self { unsafe { virtual_function!(self, 0, (*const Self, u32) -> *mut Self)(core::ptr::from_ref(self), flags) } }
     /// `AnimatedCameraStartHandler::Handle`, vtable slot 1: PlayerCamera::StartAnimatedCameraAtNode(camera, payload node name, delta = false): unless the transition or free state is current, find the node in the player's 3D, give it to ThirdPersonState id 8 (+0xf8), configure the transition (current -> 8) over iAnimatedTransitionMillis and push state 6; clears PlayerCamera+0x160
     ///
     /// Semantic, camera pass, high; called through the object's vtable.
@@ -307,8 +316,11 @@ impl crate::BGSCameraPath {
     ///
     /// Semantic, camera pass, high; called through the object's vtable.
     /// `BGSCameraPath* (BGSCameraPath* this, u32 flags)`
+    ///
+    /// # Safety
+    /// It constructs or destroys an object in place.
     #[inline]
-    pub fn destroy(&self, flags: u32) -> Option<&'static Self> { unsafe { virtual_function!(self, 0, (*const Self, u32) -> Option<&'static Self>)(core::ptr::from_ref(self), flags) } }
+    pub unsafe fn destroy(&self, flags: u32) -> *mut Self { unsafe { virtual_function!(self, 0, (*const Self, u32) -> *mut Self)(core::ptr::from_ref(self), flags) } }
     /// `BGSCameraPath::InitItem`, vtable slot 19: once (formFlags bit 3): init the conditions, resolve each shot id to a BGSCameraShot (unresolved entries removed, slot 50 GetFormEditorID logged once), set bit 3
     ///
     /// Semantic, camera pass, high; called through the object's vtable.
@@ -447,8 +459,11 @@ impl crate::BGSCameraShot {
     ///
     /// Semantic, camera pass, high; called through the object's vtable.
     /// `BGSCameraShot* (BGSCameraShot* this, u32 flags)`
+    ///
+    /// # Safety
+    /// It constructs or destroys an object in place.
     #[inline]
-    pub fn destroy(&self, flags: u32) -> Option<&'static Self> { unsafe { virtual_function!(self, 0, (*const Self, u32) -> Option<&'static Self>)(core::ptr::from_ref(self), flags) } }
+    pub unsafe fn destroy(&self, flags: u32) -> *mut Self { unsafe { virtual_function!(self, 0, (*const Self, u32) -> *mut Self)(core::ptr::from_ref(self), flags) } }
     /// `BGSCameraShot::InitItem`, vtable slot 19: once per form (formFlags bit 3): resolve the IMAD id, clamp globalTimeMult (< 1e-4 -> 0.1), set bit 3
     ///
     /// Semantic, camera pass, high; called through the object's vtable.
@@ -487,14 +502,20 @@ impl crate::BGSCameraShot {
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 20714, rva 0x31a0b0.
     /// `BGSCameraShot* (TESImageSpaceModifiableForm* this, u32 flags)`
+    ///
+    /// # Safety
+    /// It constructs or destroys an object in place.
     #[inline]
-    pub fn tes_image_space_modifiable_form_destroy(&self, flags: u32) -> Option<&'static Self> { unsafe { function!(20714, (*const Self, u32) -> Option<&'static Self>)(core::ptr::from_ref(self).byte_add(0x48), flags) } }
+    pub unsafe fn tes_image_space_modifiable_form_destroy(&self, flags: u32) -> *mut Self { unsafe { function!(20714, (*const Self, u32) -> *mut Self)(core::ptr::from_ref(self).byte_add(0x48), flags) } }
     /// `BGSCameraShot::TESModel_Destroy`: this-adjusting thunk (this - 0x20) to BGSCameraShot::Destroy
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 20713, rva 0x31a0a4.
     /// `BGSCameraShot* (TESModel* this, u32 flags)`
+    ///
+    /// # Safety
+    /// It constructs or destroys an object in place.
     #[inline]
-    pub fn tes_model_destroy(&self, flags: u32) -> Option<&'static Self> { unsafe { function!(20713, (*const Self, u32) -> Option<&'static Self>)(core::ptr::from_ref(self).byte_add(0x20), flags) } }
+    pub unsafe fn tes_model_destroy(&self, flags: u32) -> *mut Self { unsafe { function!(20713, (*const Self, u32) -> *mut Self)(core::ptr::from_ref(self).byte_add(0x20), flags) } }
     /// `BGSCameraShot::ctor`: TESForm/TESModel/TESImageSpaceModifiableForm ctors, three vtables, runtime fields cleared (+0x98 invalid handle, +0xb0 = 0x00ff), formType 0x60, DATA defaults
     ///
     /// Semantic, camera pass, high; ledger layout_inference evidence, name high; id 20700, rva 0x318900.
@@ -559,8 +580,11 @@ impl crate::BSFrustumFOVController {
     ///
     /// Semantic, camera pass, high; called through the object's vtable.
     /// `BSFrustumFOVController* (BSFrustumFOVController* this, u32 flags)`
+    ///
+    /// # Safety
+    /// It constructs or destroys an object in place.
     #[inline]
-    pub fn destroy(&self, flags: u32) -> Option<&'static Self> { unsafe { virtual_function!(self, 0, (*const Self, u32) -> Option<&'static Self>)(core::ptr::from_ref(self), flags) } }
+    pub unsafe fn destroy(&self, flags: u32) -> *mut Self { unsafe { virtual_function!(self, 0, (*const Self, u32) -> *mut Self)(core::ptr::from_ref(self), flags) } }
     /// `BSFrustumFOVController::GetRTTI`, vtable slot 2: g_TypeNode_BSFrustumFOVController
     ///
     /// Semantic, camera pass, high; called through the object's vtable.
@@ -677,8 +701,11 @@ impl crate::CameraOverrideStartHandler {
     ///
     /// Semantic, camera pass, high; called through the object's vtable.
     /// `CameraOverrideStartHandler* (CameraOverrideStartHandler* this, u32 flags)`
+    ///
+    /// # Safety
+    /// It constructs or destroys an object in place.
     #[inline]
-    pub fn destroy(&self, flags: u32) -> Option<&'static Self> { unsafe { virtual_function!(self, 0, (*const Self, u32) -> Option<&'static Self>)(core::ptr::from_ref(self), flags) } }
+    pub unsafe fn destroy(&self, flags: u32) -> *mut Self { unsafe { virtual_function!(self, 0, (*const Self, u32) -> *mut Self)(core::ptr::from_ref(self), flags) } }
     /// `CameraOverrideStartHandler::Handle`, vtable slot 1: if the actor's handle == PlayerCamera.targetHandle (+0x3c): PlayerCamera::SetFirstPersonCameraOverride(1) -> FirstPersonState+0x88 = 1 (spring offset off)
     ///
     /// Semantic, camera pass, high; called through the object's vtable.
@@ -696,8 +723,11 @@ impl crate::CameraOverrideStopHandler {
     ///
     /// Semantic, camera pass, high; called through the object's vtable.
     /// `CameraOverrideStopHandler* (CameraOverrideStopHandler* this, u32 flags)`
+    ///
+    /// # Safety
+    /// It constructs or destroys an object in place.
     #[inline]
-    pub fn destroy(&self, flags: u32) -> Option<&'static Self> { unsafe { virtual_function!(self, 0, (*const Self, u32) -> Option<&'static Self>)(core::ptr::from_ref(self), flags) } }
+    pub unsafe fn destroy(&self, flags: u32) -> *mut Self { unsafe { virtual_function!(self, 0, (*const Self, u32) -> *mut Self)(core::ptr::from_ref(self), flags) } }
     /// `CameraOverrideStopHandler::Handle`, vtable slot 1: same gate; SetFirstPersonCameraOverride(0) -> FirstPersonState+0x88 = 0
     ///
     /// Semantic, camera pass, high; called through the object's vtable.
@@ -715,8 +745,11 @@ impl crate::CameraShakeHandler {
     ///
     /// Semantic, camera pass, high; called through the object's vtable.
     /// `CameraShakeHandler* (CameraShakeHandler* this, u32 flags)`
+    ///
+    /// # Safety
+    /// It constructs or destroys an object in place.
     #[inline]
-    pub fn destroy(&self, flags: u32) -> Option<&'static Self> { unsafe { virtual_function!(self, 0, (*const Self, u32) -> Option<&'static Self>)(core::ptr::from_ref(self), flags) } }
+    pub unsafe fn destroy(&self, flags: u32) -> *mut Self { unsafe { virtual_function!(self, 0, (*const Self, u32) -> *mut Self)(core::ptr::from_ref(self), flags) } }
     /// `CameraShakeHandler::Handle`, vtable slot 1: strength = atof(payload); if > 0: StartCameraShake(strength, &actor->position (+0x54), 0) (duration 0 -> fCameraShakeTime)
     ///
     /// Semantic, camera pass, high; called through the object's vtable.
@@ -820,8 +853,11 @@ impl crate::IMapCameraCallbacks {
     ///
     /// Semantic, camera pass, high; called through the object's vtable.
     /// `IMapCameraCallbacks* (IMapCameraCallbacks* this, u32 flags)`
+    ///
+    /// # Safety
+    /// It constructs or destroys an object in place.
     #[inline]
-    pub fn destroy(&self, flags: u32) -> Option<&'static Self> { unsafe { virtual_function!(self, 2, (*const Self, u32) -> Option<&'static Self>)(core::ptr::from_ref(self), flags) } }
+    pub unsafe fn destroy(&self, flags: u32) -> *mut Self { unsafe { virtual_function!(self, 2, (*const Self, u32) -> *mut Self)(core::ptr::from_ref(self), flags) } }
     /// `IMapCameraCallbacks::dtor`: resets the vtable
     ///
     /// Semantic, camera pass, high; ledger layout_inference evidence, name high; id 53027, rva 0x9971d0.
@@ -835,8 +871,11 @@ impl crate::IMapCameraCallbacks {
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 53031, rva 0x997300.
     /// `IMapCameraCallbacks* (IMapCameraCallbacks* this, u32 flags)`
+    ///
+    /// # Safety
+    /// It constructs or destroys an object in place.
     #[inline]
-    pub fn destroy_2(&self, flags: u32) -> Option<&'static Self> { unsafe { function!(53031, (*const Self, u32) -> Option<&'static Self>)(core::ptr::from_ref(self), flags) } }
+    pub unsafe fn destroy_2(&self, flags: u32) -> *mut Self { unsafe { function!(53031, (*const Self, u32) -> *mut Self)(core::ptr::from_ref(self), flags) } }
     /// `NullMapCameraCallbacks::OnExitBegin`: empty
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 53035, rva 0x997410.
@@ -1088,8 +1127,11 @@ impl crate::OwnedCameraEffectController {
     ///
     /// Semantic, camera pass, high; called through the object's vtable.
     /// `OwnedCameraEffectController* (OwnedCameraEffectController* this, u32 flags)`
+    ///
+    /// # Safety
+    /// It constructs or destroys an object in place.
     #[inline]
-    pub fn destroy(&self, flags: u32) -> Option<&'static Self> { unsafe { virtual_function!(self, 0, (*const Self, u32) -> Option<&'static Self>)(core::ptr::from_ref(self), flags) } }
+    pub unsafe fn destroy(&self, flags: u32) -> *mut Self { unsafe { virtual_function!(self, 0, (*const Self, u32) -> *mut Self)(core::ptr::from_ref(self), flags) } }
     /// `OwnedCameraEffectController::GetRotateWithCamera`, vtable slot 27: returns +0x30
     ///
     /// Semantic, camera pass, high; called through the object's vtable.
@@ -1197,8 +1239,11 @@ impl crate::StopMountCameraHandler {
     ///
     /// Semantic, camera pass, high; called through the object's vtable.
     /// `StopMountCameraHandler* (StopMountCameraHandler* this, u32 flags)`
+    ///
+    /// # Safety
+    /// It constructs or destroys an object in place.
     #[inline]
-    pub fn destroy(&self, flags: u32) -> Option<&'static Self> { unsafe { virtual_function!(self, 0, (*const Self, u32) -> Option<&'static Self>)(core::ptr::from_ref(self), flags) } }
+    pub unsafe fn destroy(&self, flags: u32) -> *mut Self { unsafe { virtual_function!(self, 0, (*const Self, u32) -> *mut Self)(core::ptr::from_ref(self), flags) } }
     /// `StopMountCameraHandler::Handle`, vtable slot 1: no camera call: when the actor's sit/sleep state (+0xc8 & 0x3c000) == 0x10000, finish the furniture/mount state (UpdateFurnitureState(process, actor, null, invalid, -1) when the process (+0xf8) exists and its byte 0x137 <= 1, else ActorState slot 20 (+0xc0 vtable +0xa0)(0)); then PlaceAtDismountPosition(actor) 0x6d25c0 (also called by MountInteraction slot 15)
     ///
     /// Semantic, camera pass, high; called through the object's vtable.
