@@ -1,4 +1,4 @@
-//! In-game test plugin: one test per `skyrim` API, grouped by subsystem, logging
+//! In-game test plugin: tests of the generated methods and the `skyrim` layer, grouped by subsystem, logging
 //! `PASS name: detail` / `FAIL name: detail` and a `summary <suite> <phase>` line per run.
 //! `forms` runs at `DataLoaded` and after a game is loaded; `actors` runs after a game is loaded
 //! and again when the game is saved, by which time the `DevBench` scenario has put the player into
