@@ -14,7 +14,6 @@ use std::sync::{Mutex, OnceLock};
 use framework::hooks::ops::Actor__ModActorValueImpl;
 use framework::hooks::{self, Options};
 use framework::{Host, egui};
-use layout::v1_7_104::classes;
 use skyrim::actors::{ActorValue, Modifier, PlayerCharacter};
 use skyrim::events::{BSEventNotifyControl, TESEquipEvent};
 use skyrim::input::{Command, CommandContext, Param};
@@ -48,7 +47,7 @@ static HOOK: Mutex<Option<Result<String, String>>> = Mutex::new(None);
 static NATIVE: Mutex<Option<Result<String, String>>> = Mutex::new(None);
 static COMMAND: Mutex<Option<Result<String, String>>> = Mutex::new(None);
 
-type ModArgs = (*mut classes::Actor, i32, i32, f32, *mut c_void);
+type ModArgs = (*mut skre::Actor, i32, i32, f32, *mut c_void);
 type Test = fn() -> Result<String, String>;
 
 fn tag() -> i32 {

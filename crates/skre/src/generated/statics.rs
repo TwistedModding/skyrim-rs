@@ -5,8 +5,6 @@
 
 use core::ffi::{c_char, c_void};
 
-use super::{classes, enums};
-
 /// `GameSetting_bAutoAimBasedOnDistance` at 0x20a52b0, id 373344 (setting, high)
 #[inline]
 pub fn game_setting_b_auto_aim_based_on_distance() -> *mut c_void { address!(373344) as *mut c_void }
@@ -11595,7 +11593,7 @@ pub fn ini_setting_b_load_background_face_gen_background_load() -> *mut c_void {
 pub fn ini_setting_b_load_collated_anim_text_data_animation() -> *mut c_void { address!(380126) as *mut c_void }
 /// `INISetting_bLoadDebugInformation_Papyrus` at 0x20bcae0, id 383742 (runtime, high); bLoadDebugInformation:Papyrus; bool value at +8, default 0 in the image; read once by SkyrimVM::ctor into CompiledScriptLoader+0x32 bit 0 (high, vmstack pass), type `class:Setting`
 #[inline]
-pub fn ini_setting_b_load_debug_information_papyrus() -> &'static classes::Setting { unsafe { &*(address!(383742) as *const classes::Setting) } }
+pub fn ini_setting_b_load_debug_information_papyrus() -> &'static crate::Setting { unsafe { &*(address!(383742) as *const crate::Setting) } }
 /// `INISetting_bLoadEsmInMemory_Archive` at 0x2077fe0, id 359064 (setting, high)
 #[inline]
 pub fn ini_setting_b_load_esm_in_memory_archive() -> *mut c_void { address!(359064) as *mut c_void }
@@ -16101,13 +16099,13 @@ pub fn g_active_render_fn() -> *mut u64 { address!(414715) as *mut u64 }
 pub fn g_active_shadow_light_count() -> *mut u32 { address!(415035) as *mut u32 }
 /// `g_ActorValueStorageLock` at 0x3243f88, id 404014 (semantic, high); lock of every actor's ActorValueStorage (high, actors pass), type `class:BSReadWriteLock`
 #[inline]
-pub fn g_actor_value_storage_lock() -> &'static classes::BSReadWriteLock { unsafe { &*(address!(404014) as *const classes::BSReadWriteLock) } }
+pub fn g_actor_value_storage_lock() -> &'static crate::BSReadWriteLock { unsafe { &*(address!(404014) as *const crate::BSReadWriteLock) } }
 /// `g_AnimEvent_IdleCartPrisonerCExit` at 0x3243f60, id 404009 (semantic, high); "IdleCartPrisonerCExit"; turns it off (high, camera pass), type `class:BSFixedString`
 #[inline]
-pub fn g_anim_event_idle_cart_prisoner_c_exit() -> &'static classes::BSFixedString { unsafe { &*(address!(404009) as *const classes::BSFixedString) } }
+pub fn g_anim_event_idle_cart_prisoner_c_exit() -> &'static crate::BSFixedString { unsafe { &*(address!(404009) as *const crate::BSFixedString) } }
 /// `g_AnimEvent_IdleCartPrisonerCIdle` at 0x3243f58, id 404008 (semantic, high); "IdleCartPrisonerCIdle"; turns FirstPersonState.useAltEuler on (high, camera pass), type `class:BSFixedString`
 #[inline]
-pub fn g_anim_event_idle_cart_prisoner_c_idle() -> &'static classes::BSFixedString { unsafe { &*(address!(404008) as *const classes::BSFixedString) } }
+pub fn g_anim_event_idle_cart_prisoner_c_idle() -> &'static crate::BSFixedString { unsafe { &*(address!(404008) as *const crate::BSFixedString) } }
 /// `g_AnimationClipDataSingleton_ptr` at 0x31e09f0, id 401553 (xref_inference, medium)
 #[inline]
 pub fn g_animation_clip_data_singleton_ptr() -> *mut c_void { address!(401553) as *mut c_void }
@@ -16125,22 +16123,22 @@ pub fn g_animation_variable_names() -> *mut u8 { address!(400281) as *mut u8 }
 pub fn g_app_resource_caching__anon_ae50_f340_manager() -> *mut c_void { address!(403360) as *mut c_void }
 /// `g_AudioBackend` at 0x3273938, id 410109 (semantic, high); pointer to `BSAudio`: the backend; the backend (high, audio pass), type `ptr:BSAudio`
 #[inline]
-pub fn g_audio_backend() -> Option<&'static classes::BSAudio> { unsafe { *(address!(410109) as *const Option<&'static classes::BSAudio>) } }
+pub fn g_audio_backend() -> Option<&'static crate::BSAudio> { unsafe { *(address!(410109) as *const Option<&'static crate::BSAudio>) } }
 /// `g_AudioCacheLock` at 0x3273960, id 410115 (semantic, medium); guards the cache list (medium, audio pass), type `class:BSSpinLock`
 #[inline]
-pub fn g_audio_cache_lock() -> &'static classes::BSSpinLock { unsafe { &*(address!(410115) as *const classes::BSSpinLock) } }
+pub fn g_audio_cache_lock() -> &'static crate::BSSpinLock { unsafe { &*(address!(410115) as *const crate::BSSpinLock) } }
 /// `g_AudioCommandLock` at 0x3273958, id 410113 (semantic, high); guards the command lists and the node pool (high, audio pass), type `class:BSSpinLock`
 #[inline]
-pub fn g_audio_command_lock() -> &'static classes::BSSpinLock { unsafe { &*(address!(410113) as *const classes::BSSpinLock) } }
+pub fn g_audio_command_lock() -> &'static crate::BSSpinLock { unsafe { &*(address!(410113) as *const crate::BSSpinLock) } }
 /// `g_AudioFollowNodeHook` at 0x3273910, id 410104 (semantic, medium); optional void(*)(NiAVObject*) called by FollowNode (medium, audio pass), type `ptr`
 #[inline]
 pub fn g_audio_follow_node_hook() -> *mut *mut c_void { address!(410104) as *mut *mut c_void }
 /// `g_AudioManager` at 0x3273930, id 410108 (runtime, high); pointer to `BSAudioManager`: the audio manager; the audio manager (high, audio pass), type `ptr:BSAudioManager`
 #[inline]
-pub fn g_audio_manager() -> Option<&'static classes::BSAudioManager> { unsafe { *(address!(410108) as *const Option<&'static classes::BSAudioManager>) } }
+pub fn g_audio_manager() -> Option<&'static crate::BSAudioManager> { unsafe { *(address!(410108) as *const Option<&'static crate::BSAudioManager>) } }
 /// `g_AudioStatusLock` at 0x3273950, id 410112 (semantic, high); guards the status map (high, audio pass), type `class:BSReadWriteLock`
 #[inline]
-pub fn g_audio_status_lock() -> &'static classes::BSReadWriteLock { unsafe { &*(address!(410112) as *const classes::BSReadWriteLock) } }
+pub fn g_audio_status_lock() -> &'static crate::BSReadWriteLock { unsafe { &*(address!(410112) as *const crate::BSReadWriteLock) } }
 /// `g_AudioUrgentCommands` at 0x3273940, id 410110 (semantic, medium); urgent command list drained before the read list (medium, audio pass), type `undefined1`
 #[inline]
 pub fn g_audio_urgent_commands() -> *mut u8 { address!(410110) as *mut u8 }
@@ -17325,10 +17323,10 @@ pub fn g_bs_limb_ik_modifier_utility_ptr() -> *mut c_void { address!(402597) as 
 pub fn g_bs_list_bs_temp_effect_debris____ptr64() -> *mut c_void { address!(379776) as *mut c_void }
 /// `g_BSMusicManager` at 0x3230dc0, id 403596 (runtime, medium); static storage of the music manager (medium, audio pass), type `BSMusicManager`
 #[inline]
-pub fn g_bs_music_manager() -> &'static classes::BSMusicManager { unsafe { &*(address!(403596) as *const classes::BSMusicManager) } }
+pub fn g_bs_music_manager() -> &'static crate::BSMusicManager { unsafe { &*(address!(403596) as *const crate::BSMusicManager) } }
 /// `g_BSMusicManager_ptr` at 0x31a57a0, id 400896 (runtime, medium); the music manager (static instance 0x3230dc0) (medium, audio pass), type `BSMusicManager*`
 #[inline]
-pub fn g_bs_music_manager_ptr() -> Option<&'static classes::BSMusicManager> { unsafe { *(address!(400896) as *const Option<&'static classes::BSMusicManager>) } }
+pub fn g_bs_music_manager_ptr() -> Option<&'static crate::BSMusicManager> { unsafe { *(address!(400896) as *const Option<&'static crate::BSMusicManager>) } }
 /// `g_BSParabolicCullingProcess_ptr` at 0x33d4dd0, id 414782 (xref_inference, medium)
 #[inline]
 pub fn g_bs_parabolic_culling_process_ptr() -> *mut c_void { address!(414782) as *mut c_void }
@@ -17406,7 +17404,7 @@ pub fn g_bs_resource__anon_ac99_f91_c_location_tree() -> *mut c_void { address!(
 pub fn g_bs_resource__anon_aea03715_default_location_data_ptr() -> *mut c_void { address!(410449) as *mut c_void }
 /// `g_BSScaleformManager` at 0x3241bc0, id 504086 (semantic, high); static storage of the manager (high, ui pass), type `class:BSScaleformManager`
 #[inline]
-pub fn g_bs_scaleform_manager() -> &'static classes::BSScaleformManager { unsafe { &*(address!(504086) as *const classes::BSScaleformManager) } }
+pub fn g_bs_scaleform_manager() -> &'static crate::BSScaleformManager { unsafe { &*(address!(504086) as *const crate::BSScaleformManager) } }
 /// `g_BSShaderResourceManager` at 0x20d9530, id 391872 (layout_inference, medium)
 #[inline]
 pub fn g_bs_shader_resource_manager() -> *mut c_void { address!(391872) as *mut c_void }
@@ -17469,7 +17467,7 @@ pub fn g_bs_win32_gamer_profile() -> *mut c_void { address!(410253) as *mut c_vo
 pub fn g_bs_win32_save_data_system_utility() -> *mut c_void { address!(415512) as *mut c_void }
 /// `g_BSXName` at 0x3327878, id 411157 (semantic, high); the fixed string "BSX" (high, frame pass), type `class:BSFixedString`
 #[inline]
-pub fn g_bsx_name() -> &'static classes::BSFixedString { unsafe { &*(address!(411157) as *const classes::BSFixedString) } }
+pub fn g_bsx_name() -> &'static crate::BSFixedString { unsafe { &*(address!(411157) as *const crate::BSFixedString) } }
 /// `g_BackBufferHeight` at 0x33363d0, id 411486 (semantic, high); swap chain buffer height (high, frame pass), type `undefined4`
 #[inline]
 pub fn g_back_buffer_height() -> *mut u32 { address!(411486) as *mut u32 }
@@ -17478,10 +17476,10 @@ pub fn g_back_buffer_height() -> *mut u32 { address!(411486) as *mut u32 }
 pub fn g_back_buffer_width() -> *mut u32 { address!(411485) as *mut u32 }
 /// `g_BloodSplatterShader` at 0x33d3e30, id 414614 (semantic, high); pointer to `BSBloodSplatterShader`: holder; holder (high, frame pass), type `ptr:BSBloodSplatterShader`
 #[inline]
-pub fn g_blood_splatter_shader() -> Option<&'static classes::BSBloodSplatterShader> { unsafe { *(address!(414614) as *const Option<&'static classes::BSBloodSplatterShader>) } }
+pub fn g_blood_splatter_shader() -> Option<&'static crate::BSBloodSplatterShader> { unsafe { *(address!(414614) as *const Option<&'static crate::BSBloodSplatterShader>) } }
 /// `g_BloodSplatterShaderInstance` at 0x3435c08, id 414854 (semantic, high); pointer to `BSBloodSplatterShader`: instance pointer; instance pointer (high, frame pass), type `ptr:BSBloodSplatterShader`
 #[inline]
-pub fn g_blood_splatter_shader_instance() -> Option<&'static classes::BSBloodSplatterShader> { unsafe { *(address!(414854) as *const Option<&'static classes::BSBloodSplatterShader>) } }
+pub fn g_blood_splatter_shader_instance() -> Option<&'static crate::BSBloodSplatterShader> { unsafe { *(address!(414854) as *const Option<&'static crate::BSBloodSplatterShader>) } }
 /// `g_CCallResult_BSWin32SystemUtility_EncryptedAppTicketResponse_t` at 0x3699470, id 415503 (layout_inference, medium)
 #[inline]
 pub fn g_c_call_result_bs_win32_system_utility_encrypted_app_ticket_response_t() -> *mut c_void { address!(415503) as *mut c_void }
@@ -17499,16 +17497,16 @@ pub fn g_camera_fov_offset() -> *mut f32 { address!(414942) as *mut f32 }
 pub fn g_camera_inside_light_mask() -> *mut u32 { address!(415038) as *mut u32 }
 /// `g_CameraPathController` at 0x32307e0, id 403535 (semantic, high); pointer to `NiTimeController`: first time controller of the camera path model; its +0x20 ends the playback; first time controller of the camera path model; its +0x20 ends the playback (high, camera pass), type `ptr:NiTimeController`
 #[inline]
-pub fn g_camera_path_controller() -> Option<&'static classes::NiTimeController> { unsafe { *(address!(403535) as *const Option<&'static classes::NiTimeController>) } }
+pub fn g_camera_path_controller() -> Option<&'static crate::NiTimeController> { unsafe { *(address!(403535) as *const Option<&'static crate::NiTimeController>) } }
 /// `g_CameraPathFrameIndex` at 0x32307c0, id 403530 (semantic, high); recorded frame counter (file name %06d) (high, camera pass), type `u32`
 #[inline]
 pub fn g_camera_path_frame_index() -> *mut u32 { address!(403530) as *mut u32 }
 /// `g_CameraPathModel` at 0x3230780, id 403522 (semantic, high); pointer to `NiAVObject`: the [CameraPath] sNif model being played (refcounted); the [CameraPath] sNif model being played (refcounted) (high, camera pass), type `ptr:NiAVObject`
 #[inline]
-pub fn g_camera_path_model() -> Option<&'static classes::NiAVObject> { unsafe { *(address!(403522) as *const Option<&'static classes::NiAVObject>) } }
+pub fn g_camera_path_model() -> Option<&'static crate::NiAVObject> { unsafe { *(address!(403522) as *const Option<&'static crate::NiAVObject>) } }
 /// `g_CameraPathOffsetRef` at 0x32307f0, id 403538 (semantic, high); pointer to `TESObjectREFR`: reference named by sOffsetID:CameraPath; the path is played in its local frame; reference named by sOffsetID:CameraPath; the path is played in its local frame (high, camera pass), type `ptr:TESObjectREFR`
 #[inline]
-pub fn g_camera_path_offset_ref() -> Option<&'static classes::TESObjectREFR> { unsafe { *(address!(403538) as *const Option<&'static classes::TESObjectREFR>) } }
+pub fn g_camera_path_offset_ref() -> Option<&'static crate::TESObjectREFR> { unsafe { *(address!(403538) as *const Option<&'static crate::TESObjectREFR>) } }
 /// `g_CameraPathRecording` at 0x3230739, id 403512 (semantic, high); record mode: one screenshot per frame at a fixed 1/iFPS step (high, camera pass), type `u8`
 #[inline]
 pub fn g_camera_path_recording() -> *mut u8 { address!(403512) as *mut u8 }
@@ -18045,13 +18043,13 @@ pub fn g_console_macros() -> *mut c_void { address!(504095) as *mut c_void }
 pub fn g_console_output_file() -> *mut *mut c_void { address!(405877) as *mut *mut c_void }
 /// `g_ConsoleScopeQuest` at 0x3255e40, id 504093 (semantic, high); quest scope of console lines (SetConsoleScopeQuest / SSQ) (high, input pass), type `TESQuest*`
 #[inline]
-pub fn g_console_scope_quest() -> Option<&'static classes::TESQuest> { unsafe { *(address!(504093) as *const Option<&'static classes::TESQuest>) } }
+pub fn g_console_scope_quest() -> Option<&'static crate::TESQuest> { unsafe { *(address!(504093) as *const Option<&'static crate::TESQuest>) } }
 /// `g_ConsoleSelectedRef` at 0x325606c, id 504099 (semantic, high); console's selected reference (high, ui pass), type `RefHandle`
 #[inline]
 pub fn g_console_selected_ref() -> *mut c_void { address!(504099) as *mut c_void }
 /// `g_ControlMap` at 0x3230b50, id 403592 (semantic, high); static storage of the control map (high, input pass), type `class:EventSourceHolder_User`
 #[inline]
-pub fn g_control_map() -> &'static classes::EventSourceHolder_User { unsafe { &*(address!(403592) as *const classes::EventSourceHolder_User) } }
+pub fn g_control_map() -> &'static crate::EventSourceHolder_User { unsafe { &*(address!(403592) as *const crate::EventSourceHolder_User) } }
 /// `g_Crc32Table` at 0x1a21be0, id 236639 (runtime, high); reflected CRC-32 table (polynomial 0xEDB88320) used by Crc32OfDword 0xce2570, the stack maps' hash (high, vmstack pass), type `u32[256]`
 #[inline]
 pub fn g_crc32_table() -> *mut c_void { address!(236639) as *mut c_void }
@@ -18060,7 +18058,7 @@ pub fn g_crc32_table() -> *mut c_void { address!(236639) as *mut c_void }
 pub fn g_create_render_targets_callback() -> *mut u64 { address!(411476) as *mut u64 }
 /// `g_CrosshairPickData` at 0x3245340, id 404421 (semantic, high); the static pick data object (high, camera pass), type `class:CrosshairPickData`
 #[inline]
-pub fn g_crosshair_pick_data() -> &'static classes::CrosshairPickData { unsafe { &*(address!(404421) as *const classes::CrosshairPickData) } }
+pub fn g_crosshair_pick_data() -> &'static crate::CrosshairPickData { unsafe { &*(address!(404421) as *const crate::CrosshairPickData) } }
 /// `g_CullRootLists` at 0x3436270, id 415017 (semantic, high); BSTArray of 0x18-byte root lists walked by the main and the sun's cullers (high, graphics pass), type `pointer`
 #[inline]
 pub fn g_cull_root_lists() -> *mut *mut c_void { address!(415017) as *mut *mut c_void }
@@ -18075,16 +18073,16 @@ pub fn g_current_camera_eye_position_older() -> *mut u8 { address!(388912) as *m
 pub fn g_current_camera_state() -> *mut u8 { address!(388915) as *mut u8 }
 /// `g_CurrentMaterial` at 0x36939e0, id 415274 (semantic, high); pointer to `BSShaderMaterial`: material last handed to SetupMaterial; material last handed to SetupMaterial (high, frame pass), type `ptr:BSShaderMaterial`
 #[inline]
-pub fn g_current_material() -> Option<&'static classes::BSShaderMaterial> { unsafe { *(address!(415274) as *const Option<&'static classes::BSShaderMaterial>) } }
+pub fn g_current_material() -> Option<&'static crate::BSShaderMaterial> { unsafe { *(address!(415274) as *const Option<&'static crate::BSShaderMaterial>) } }
 /// `g_CurrentRenderCamera` at 0x33d3d28, id 414580 (runtime, high); pointer to `NiCamera`: camera of the draw in progress; every draw-time near/far constant reads +0x160/+0x164 through it; camera of the draw in progress; every draw-time near/far constant reads +0x160/+0x164 through it (high, graphics pass), type `ptr:NiCamera`
 #[inline]
-pub fn g_current_render_camera() -> Option<&'static classes::NiCamera> { unsafe { *(address!(414580) as *const Option<&'static classes::NiCamera>) } }
+pub fn g_current_render_camera() -> Option<&'static crate::NiCamera> { unsafe { *(address!(414580) as *const Option<&'static crate::NiCamera>) } }
 /// `g_CurrentRenderWindow` at 0x3330198, id 411349 (runtime, high); pointer to `RenderWindow`: window record being drawn and presented (hwnd +0, swap chain +0x18, back buffer RTV +0x30, SRV +0x38); window record being drawn and presented (hwnd +0, swap chain +0x18, back buffer RTV +0x30, SRV +0x38) (high, frame pass), type `ptr:RenderWindow`
 #[inline]
-pub fn g_current_render_window() -> Option<&'static classes::RenderWindow> { unsafe { *(address!(411349) as *const Option<&'static classes::RenderWindow>) } }
+pub fn g_current_render_window() -> Option<&'static crate::RenderWindow> { unsafe { *(address!(411349) as *const Option<&'static crate::RenderWindow>) } }
 /// `g_CurrentShader` at 0x36939d8, id 415273 (semantic, high); pointer to `BSShader`: shader of the technique currently set up; shader of the technique currently set up (high, frame pass), type `ptr:BSShader`
 #[inline]
-pub fn g_current_shader() -> Option<&'static classes::BSShader> { unsafe { *(address!(415273) as *const Option<&'static classes::BSShader>) } }
+pub fn g_current_shader() -> Option<&'static crate::BSShader> { unsafe { *(address!(415273) as *const Option<&'static crate::BSShader>) } }
 /// `g_CurrentTechnique` at 0x36939d4, id 415272 (semantic, high); technique id currently set up (high, frame pass), type `undefined4`
 #[inline]
 pub fn g_current_technique() -> *mut u32 { address!(415272) as *mut u32 }
@@ -18105,19 +18103,19 @@ pub fn g_dxgi_output() -> *mut u64 { address!(411386) as *mut u64 }
 pub fn g_debug_text_ptr() -> *mut c_void { address!(412090) as *mut c_void }
 /// `g_DefaultCameraPath` at 0x31df550, id 401130 (semantic, high); pointer to `BGSCameraPath`: form 0x16 "DefaultCameraPath"; form 0x16 "DefaultCameraPath" (high, camera pass), type `ptr:BGSCameraPath`
 #[inline]
-pub fn g_default_camera_path() -> Option<&'static classes::BGSCameraPath> { unsafe { *(address!(401130) as *const Option<&'static classes::BGSCameraPath>) } }
+pub fn g_default_camera_path() -> Option<&'static crate::BGSCameraPath> { unsafe { *(address!(401130) as *const Option<&'static crate::BGSCameraPath>) } }
 /// `g_DefaultCameraStateRotation` at 0x331d790, id 410524 (semantic, medium); NiQuaternion returned by TESCameraState::GetRotation and seeded into TransitionState rotations; zero in the file (runtime-initialised) (medium, camera pass), type `undefined1`
 #[inline]
 pub fn g_default_camera_state_rotation() -> *mut u8 { address!(410524) as *mut u8 }
 /// `g_DefaultEffectMaterial` at 0x34866e0, id 415165 (xref_inference, medium); pointer to `BSEffectShaderMaterial`: default effect material; default effect material (medium, frame pass), type `ptr:BSEffectShaderMaterial`
 #[inline]
-pub fn g_default_effect_material() -> Option<&'static classes::BSEffectShaderMaterial> { unsafe { *(address!(415165) as *const Option<&'static classes::BSEffectShaderMaterial>) } }
+pub fn g_default_effect_material() -> Option<&'static crate::BSEffectShaderMaterial> { unsafe { *(address!(415165) as *const Option<&'static crate::BSEffectShaderMaterial>) } }
 /// `g_DefaultFadeNode` at 0x33d3ca0, id 414561 (semantic, high); pointer to `BSFadeNode`: fade node every shader property starts with (fade 1.0); fade node every shader property starts with (fade 1.0) (high, frame pass), type `ptr:BSFadeNode`
 #[inline]
-pub fn g_default_fade_node() -> Option<&'static classes::BSFadeNode> { unsafe { *(address!(414561) as *const Option<&'static classes::BSFadeNode>) } }
+pub fn g_default_fade_node() -> Option<&'static crate::BSFadeNode> { unsafe { *(address!(414561) as *const Option<&'static crate::BSFadeNode>) } }
 /// `g_DefaultLightingMaterial` at 0x33d4db0, id 414779 (xref_inference, medium); pointer to `BSLightingShaderMaterialBase`: default lighting material; default lighting material (medium, frame pass), type `ptr:BSLightingShaderMaterialBase`
 #[inline]
-pub fn g_default_lighting_material() -> Option<&'static classes::BSLightingShaderMaterialBase> { unsafe { *(address!(414779) as *const Option<&'static classes::BSLightingShaderMaterialBase>) } }
+pub fn g_default_lighting_material() -> Option<&'static crate::BSLightingShaderMaterialBase> { unsafe { *(address!(414779) as *const Option<&'static crate::BSLightingShaderMaterialBase>) } }
 /// `g_DefaultMaxPitchDown` at 0x1b5be30, id 189817 (semantic, high); pi/2 (high, camera pass), type `float`
 #[inline]
 pub fn g_default_max_pitch_down() -> *mut f32 { address!(189817) as *mut f32 }
@@ -18129,10 +18127,10 @@ pub fn g_default_max_pitch_up() -> *mut f32 { address!(189822) as *mut f32 }
 pub fn g_default_object_name_table() -> *mut u8 { address!(360630) as *mut u8 }
 /// `g_DefaultShaderMaterial` at 0x3698be8, id 415311 (xref_inference, medium); pointer to `BSShaderMaterial`: default base material; default base material (medium, frame pass), type `ptr:BSShaderMaterial`
 #[inline]
-pub fn g_default_shader_material() -> Option<&'static classes::BSShaderMaterial> { unsafe { *(address!(415311) as *const Option<&'static classes::BSShaderMaterial>) } }
+pub fn g_default_shader_material() -> Option<&'static crate::BSShaderMaterial> { unsafe { *(address!(415311) as *const Option<&'static crate::BSShaderMaterial>) } }
 /// `g_DepthAccumulator2` at 0x3436248, id 415012 (runtime, high); pointer to `BSShaderAccumulator`: renderMode 0xc, decals off; only Main and Msg_LODTrees reference it; renderMode 0xc, decals off; only Main and Msg_LODTrees reference it (high, frame pass), type `ptr:BSShaderAccumulator`
 #[inline]
-pub fn g_depth_accumulator2() -> Option<&'static classes::BSShaderAccumulator> { unsafe { *(address!(415012) as *const Option<&'static classes::BSShaderAccumulator>) } }
+pub fn g_depth_accumulator2() -> Option<&'static crate::BSShaderAccumulator> { unsafe { *(address!(415012) as *const Option<&'static crate::BSShaderAccumulator>) } }
 /// `g_DepthShiftEnabled` at 0x20d72c0, id 391260 (semantic, high); enables BeginDepthShift/EndDepthShift and the prepass's inline shift; static 1 (high, graphics pass), type `u8`
 #[inline]
 pub fn g_depth_shift_enabled() -> *mut u8 { address!(391260) as *mut u8 }
@@ -18153,10 +18151,10 @@ pub fn g_dialogue_turn_start_yaw() -> *mut f32 { address!(381588) as *mut f32 }
 pub fn g_direct_input_ptr() -> *mut u64 { address!(403554) as *mut u64 }
 /// `g_DistantTreeShader` at 0x33d3df0, id 414610 (semantic, high); pointer to `BSDistantTreeShader`: holder; holder (high, frame pass), type `ptr:BSDistantTreeShader`
 #[inline]
-pub fn g_distant_tree_shader() -> Option<&'static classes::BSDistantTreeShader> { unsafe { *(address!(414610) as *const Option<&'static classes::BSDistantTreeShader>) } }
+pub fn g_distant_tree_shader() -> Option<&'static crate::BSDistantTreeShader> { unsafe { *(address!(414610) as *const Option<&'static crate::BSDistantTreeShader>) } }
 /// `g_DistantTreeShaderInstance` at 0x3486710, id 415171 (semantic, high); pointer to `BSDistantTreeShader`: instance pointer; instance pointer (high, frame pass), type `ptr:BSDistantTreeShader`
 #[inline]
-pub fn g_distant_tree_shader_instance() -> Option<&'static classes::BSDistantTreeShader> { unsafe { *(address!(415171) as *const Option<&'static classes::BSDistantTreeShader>) } }
+pub fn g_distant_tree_shader_instance() -> Option<&'static crate::BSDistantTreeShader> { unsafe { *(address!(415171) as *const Option<&'static crate::BSDistantTreeShader>) } }
 /// `g_DoorObstacleAdapter` at 0x20b6368, id 381087 (layout_inference, medium)
 #[inline]
 pub fn g_door_obstacle_adapter() -> *mut c_void { address!(381087) as *mut c_void }
@@ -18180,28 +18178,28 @@ pub fn g_dynamic_width_ratio() -> *mut f32 { address!(411505) as *mut f32 }
 pub fn g_effect_setting_collection() -> *mut c_void { address!(433120) as *mut c_void }
 /// `g_EffectShader` at 0x33d3dd8, id 414607 (semantic, high); pointer to `BSEffectShader`: holder; holder (high, frame pass), type `ptr:BSEffectShader`
 #[inline]
-pub fn g_effect_shader() -> Option<&'static classes::BSEffectShader> { unsafe { *(address!(414607) as *const Option<&'static classes::BSEffectShader>) } }
+pub fn g_effect_shader() -> Option<&'static crate::BSEffectShader> { unsafe { *(address!(414607) as *const Option<&'static crate::BSEffectShader>) } }
 /// `g_EffectShaderInstance` at 0x34866e8, id 415166 (semantic, high); pointer to `BSEffectShader`: instance pointer; instance pointer (high, frame pass), type `ptr:BSEffectShader`
 #[inline]
-pub fn g_effect_shader_instance() -> Option<&'static classes::BSEffectShader> { unsafe { *(address!(415166) as *const Option<&'static classes::BSEffectShader>) } }
+pub fn g_effect_shader_instance() -> Option<&'static crate::BSEffectShader> { unsafe { *(address!(415166) as *const Option<&'static crate::BSEffectShader>) } }
 /// `g_EmptyStateName` at 0x33d37b8, id 414404 (semantic, high); the empty state name: a BSFixedString built from an empty string at startup (pooled, so it holds the same pointer as any BSFixedString built from an empty string, e.g. GetEmptyFixedString 0x17eed0); BindNativeFunction compares a member native's state name with it by pointer (high, papyrus pass), type `class:BSFixedString`
 #[inline]
-pub fn g_empty_state_name() -> &'static classes::BSFixedString { unsafe { &*(address!(414404) as *const classes::BSFixedString) } }
+pub fn g_empty_state_name() -> &'static crate::BSFixedString { unsafe { &*(address!(414404) as *const crate::BSFixedString) } }
 /// `g_EventSourceHolder_Input` at 0x3230c80, id 403593 (semantic, high); static storage of the input manager (high, input pass), type `class:EventSourceHolder_Input`
 #[inline]
-pub fn g_event_source_holder_input() -> &'static classes::EventSourceHolder_Input { unsafe { &*(address!(403593) as *const classes::EventSourceHolder_Input) } }
+pub fn g_event_source_holder_input() -> &'static crate::EventSourceHolder_Input { unsafe { &*(address!(403593) as *const crate::EventSourceHolder_Input) } }
 /// `g_EventSourceHolder_MenuOpenClose` at 0x3204b40, id 402767 (semantic, high); the UI singleton's static storage (0x1c8 bytes) (high, ui pass), type `class:EventSourceHolder_MenuOpenClose`
 #[inline]
-pub fn g_event_source_holder_menu_open_close() -> &'static classes::EventSourceHolder_MenuOpenClose { unsafe { &*(address!(402767) as *const classes::EventSourceHolder_MenuOpenClose) } }
+pub fn g_event_source_holder_menu_open_close() -> &'static crate::EventSourceHolder_MenuOpenClose { unsafe { &*(address!(402767) as *const crate::EventSourceHolder_MenuOpenClose) } }
 /// `g_EventSourceHolder_TES` at 0x219f250, id 400420 (runtime, high); the holder object (static storage) (high, events pass), type `class:EventSourceHolder_TES`
 #[inline]
-pub fn g_event_source_holder_tes() -> &'static classes::EventSourceHolder_TES { unsafe { &*(address!(400420) as *const classes::EventSourceHolder_TES) } }
+pub fn g_event_source_holder_tes() -> &'static crate::EventSourceHolder_TES { unsafe { &*(address!(400420) as *const crate::EventSourceHolder_TES) } }
 /// `g_ExtraDataChangeFlags` at 0x2076db0, id 358622 (semantic, high); extra data type -> change-flag mask that makes ExtraDataList::SaveGame write it (high, save pass), type `undefined4[0xb4]`
 #[inline]
 pub fn g_extra_data_change_flags() -> *mut c_void { address!(358622) as *mut c_void }
 /// `g_ExtraDataLock` at 0x331c618, id 410492 (semantic, high); one global lock for every NiObjectNET extra data array (high, frame pass), type `class:BSReadWriteLock`
 #[inline]
-pub fn g_extra_data_lock() -> &'static classes::BSReadWriteLock { unsafe { &*(address!(410492) as *const classes::BSReadWriteLock) } }
+pub fn g_extra_data_lock() -> &'static crate::BSReadWriteLock { unsafe { &*(address!(410492) as *const crate::BSReadWriteLock) } }
 /// `g_FOCollisionListener_ptr` at 0x21a05b8, id 400444 (xref_inference, medium)
 #[inline]
 pub fn g_fo_collision_listener_ptr() -> *mut c_void { address!(400444) as *mut c_void }
@@ -18222,13 +18220,13 @@ pub fn g_fade_frame_counter() -> *mut u32 { address!(390886) as *mut u32 }
 pub fn g_fade_nodes_enabled() -> *mut u8 { address!(390866) as *mut u8 }
 /// `g_FirstPersonAccumulator` at 0x3436240, id 415011 (runtime, high); pointer to `BSShaderAccumulator`: renderMode 0x16: the first-person colour draw (RenderFirstPerson, sub8, sub10); renderMode 0x16: the first-person colour draw (RenderFirstPerson, sub8, sub10) (high, frame pass), type `ptr:BSShaderAccumulator`
 #[inline]
-pub fn g_first_person_accumulator() -> Option<&'static classes::BSShaderAccumulator> { unsafe { *(address!(415011) as *const Option<&'static classes::BSShaderAccumulator>) } }
+pub fn g_first_person_accumulator() -> Option<&'static crate::BSShaderAccumulator> { unsafe { *(address!(415011) as *const Option<&'static crate::BSShaderAccumulator>) } }
 /// `g_FirstPersonCamera` at 0x3436220, id 415007 (semantic, high); pointer to `NiCamera`: the hands camera; its projection is set twice per first-person frame (0x1537566, 0x153979d); the hands camera; its projection is set twice per first-person frame (0x1537566, 0x153979d) (high, frame pass), type `ptr:NiCamera`
 #[inline]
-pub fn g_first_person_camera() -> Option<&'static classes::NiCamera> { unsafe { *(address!(415007) as *const Option<&'static classes::NiCamera>) } }
+pub fn g_first_person_camera() -> Option<&'static crate::NiCamera> { unsafe { *(address!(415007) as *const Option<&'static crate::NiCamera>) } }
 /// `g_FirstPersonPitchGraphVar` at 0x3255ab8, id 405789 (semantic, high); graph float variable FirstPersonState sends laggedPitchOffset to (high, camera pass), type `class:BSFixedString`
 #[inline]
-pub fn g_first_person_pitch_graph_var() -> &'static classes::BSFixedString { unsafe { &*(address!(405789) as *const classes::BSFixedString) } }
+pub fn g_first_person_pitch_graph_var() -> &'static crate::BSFixedString { unsafe { &*(address!(405789) as *const crate::BSFixedString) } }
 /// `g_FirstPersonRootOffset` at 0x3436318, id 415042 (semantic, high); NiPoint3 = -(first-person root world translation) of this frame; 0x3436328 holds the previous frame's (copied once per g_RenderFrameCounter, 0x343602c) (high, camera pass), type `undefined1`
 #[inline]
 pub fn g_first_person_root_offset() -> *mut u8 { address!(415042) as *mut u8 }
@@ -18240,10 +18238,10 @@ pub fn g_first_person_view_params() -> *mut u8 { address!(415027) as *mut u8 }
 pub fn g_focus_shadow_node_count() -> *mut u32 { address!(414625) as *mut u32 }
 /// `g_FocusShadowNodes` at 0x33d3e80, id 414623 (semantic, high); correction of pass 6's g_StencilMaskNodes: the focus shadow list, 16-byte {float sortKey, NiNode* node}; the depth pre-pass also stencils these nodes (high, frame pass), type `class:BSTArray`
 #[inline]
-pub fn g_focus_shadow_nodes() -> &'static classes::BSTArray { unsafe { &*(address!(414623) as *const classes::BSTArray) } }
+pub fn g_focus_shadow_nodes() -> &'static crate::BSTArray { unsafe { &*(address!(414623) as *const crate::BSTArray) } }
 /// `g_FocusShadowOwner` at 0x34869b8, id 415267 (semantic, high); pointer to `BSShadowLight`: local light that owned the focus maps; local light that owned the focus maps (high, graphics pass), type `ptr:BSShadowLight`
 #[inline]
-pub fn g_focus_shadow_owner() -> Option<&'static classes::BSShadowLight> { unsafe { *(address!(415267) as *const Option<&'static classes::BSShadowLight>) } }
+pub fn g_focus_shadow_owner() -> Option<&'static crate::BSShadowLight> { unsafe { *(address!(415267) as *const Option<&'static crate::BSShadowLight>) } }
 /// `g_FocusShadowsAssigned` at 0x3436312, id 415041 (semantic, high); a light already owns the focus maps this frame (high, graphics pass), type `u8`
 #[inline]
 pub fn g_focus_shadows_assigned() -> *mut u8 { address!(415041) as *mut u8 }
@@ -18252,7 +18250,7 @@ pub fn g_focus_shadows_assigned() -> *mut u8 { address!(415041) as *mut u8 }
 pub fn g_focus_shadows_enabled() -> *mut u8 { address!(390932) as *mut u8 }
 /// `g_FootstepEventSource_ptr` at 0x32309c8, id 403553 (semantic, high); pointer to `BSTEventSource`: pointer to the BSTEventSource<BGSFootstepEvent> Main::ctor creates (static storage) followed by the BSTArray<BSFixedString> of forwarded tags at +0x60; actors notify it from their animation graph handler and BGSImpactManager is its sink; pointer to the BSTEventSource<BGSFootstepEvent> Main::ctor creates (static storage) followed by the BSTArray<BSFixedString> of forwarded tags at +0x60; actors notify it from their animation graph handler and BGSImpactManager is its sink (high, events pass), type `ptr:BSTEventSource`
 #[inline]
-pub fn g_footstep_event_source_ptr() -> Option<&'static classes::BSTEventSource> { unsafe { *(address!(403553) as *const Option<&'static classes::BSTEventSource>) } }
+pub fn g_footstep_event_source_ptr() -> Option<&'static crate::BSTEventSource> { unsafe { *(address!(403553) as *const Option<&'static crate::BSTEventSource>) } }
 /// `g_FormTypeSignatures` at 0x17f95a0, id 187799 (string, high)
 #[inline]
 pub fn g_form_type_signatures() -> *mut c_void { address!(187799) as *mut c_void }
@@ -18276,7 +18274,7 @@ pub fn g_frame_phase_events() -> *mut *mut c_void { address!(403108) as *mut *mu
 pub fn g_frame_segments() -> *mut *mut c_void { address!(403104) as *mut *mut c_void }
 /// `g_FrameState` at 0x33363a0, id 411479 (runtime, high); sizes, jitter, frame counter, dynamic resolution (high, frame pass), type `class:FrameState`
 #[inline]
-pub fn g_frame_state() -> &'static classes::FrameState { unsafe { &*(address!(411479) as *const classes::FrameState) } }
+pub fn g_frame_state() -> &'static crate::FrameState { unsafe { &*(address!(411479) as *const crate::FrameState) } }
 /// `g_FrameTimeMs` at 0x3275610, id 410201 (semantic, high); elapsed milliseconds (sum of deltas) (high, frame pass), type `undefined4`
 #[inline]
 pub fn g_frame_time_ms() -> *mut u32 { address!(410201) as *mut u32 }
@@ -18300,10 +18298,10 @@ pub fn g_g_ref_count_impl_core() -> *mut c_void { address!(390206) as *mut c_voi
 pub fn g_garbage_collector_ptr() -> *mut c_void { address!(400329) as *mut c_void }
 /// `g_GrassShader` at 0x33d3de0, id 414608 (semantic, high); pointer to `BSGrassShader`: holder; holder (high, frame pass), type `ptr:BSGrassShader`
 #[inline]
-pub fn g_grass_shader() -> Option<&'static classes::BSGrassShader> { unsafe { *(address!(414608) as *const Option<&'static classes::BSGrassShader>) } }
+pub fn g_grass_shader() -> Option<&'static crate::BSGrassShader> { unsafe { *(address!(414608) as *const Option<&'static crate::BSGrassShader>) } }
 /// `g_GrassShaderInstance` at 0x33d4c30, id 414752 (semantic, high); pointer to `BSGrassShader`: instance pointer; instance pointer (high, frame pass), type `ptr:BSGrassShader`
 #[inline]
-pub fn g_grass_shader_instance() -> Option<&'static classes::BSGrassShader> { unsafe { *(address!(414752) as *const Option<&'static classes::BSGrassShader>) } }
+pub fn g_grass_shader_instance() -> Option<&'static crate::BSGrassShader> { unsafe { *(address!(414752) as *const Option<&'static crate::BSGrassShader>) } }
 /// `g_HUDCameraWorldToClip` at 0x32566d0, id 406126 (runtime, high); 64-byte snapshot of the frame camera's world-to-clip matrix; viewport snapshot at 0x3257c78; lock 0x32567a8 (owner) / 0x32567ac (count) (high, camera pass), type `undefined1`
 #[inline]
 pub fn g_hud_camera_world_to_clip() -> *mut u8 { address!(406126) as *mut u8 }
@@ -18315,10 +18313,10 @@ pub fn g_handle_free_head() -> *mut u32 { address!(400619) as *mut u32 }
 pub fn g_handle_free_tail() -> *mut u32 { address!(400620) as *mut u32 }
 /// `g_HandleTable` at 0x21a4280, id 400622 (runtime, high); first entry of the reference handle table (2^20 entries) (high, actors pass), type `class:HandleEntry`
 #[inline]
-pub fn g_handle_table() -> &'static classes::HandleEntry { unsafe { &*(address!(400622) as *const classes::HandleEntry) } }
+pub fn g_handle_table() -> &'static crate::HandleEntry { unsafe { &*(address!(400622) as *const crate::HandleEntry) } }
 /// `g_HandleTableLock` at 0x21a4278, id 400621 (semantic, high); lock of the handle table (high, actors pass), type `class:BSReadWriteLock`
 #[inline]
-pub fn g_handle_table_lock() -> &'static classes::BSReadWriteLock { unsafe { &*(address!(400621) as *const classes::BSReadWriteLock) } }
+pub fn g_handle_table_lock() -> &'static crate::BSReadWriteLock { unsafe { &*(address!(400621) as *const crate::BSReadWriteLock) } }
 /// `g_HavokJobContext` at 0x326fb78, id 409554 (semantic, low); Havok job queue/thread-pool context; when its +0x28 and +0x30 are set, GenerateBehaviorGraphPose(..., true) runs generate through processGenerateBehaviorGraphJob (low, animation pass), type `pointer`
 #[inline]
 pub fn g_havok_job_context() -> *mut *mut c_void { address!(409554) as *mut *mut c_void }
@@ -18414,10 +18412,10 @@ pub fn g_i_path_builder_factory_base_4() -> *mut c_void { address!(405787) as *m
 pub fn g_image_space_modifier_clock() -> *mut f32 { address!(400912) as *mut f32 }
 /// `g_ImageSpaceState` at 0x33d40a0, id 414660 (xref_inference, medium); pointer to `ImageSpaceState`: the 0x220-byte image space state created in InitShaders (0x14ed370): the image space effects by id at +0x20 and the current parameters at +0xc8, which the lighting shader's SetupGeometry also reads (+0xe0); the 0x220-byte image space state created in InitShaders (0x14ed370): the image space effects by id at +0x20 and the current parameters at +0xc8, which the lighting shader's SetupGeometry also reads (+0xe0) (low, frame pass), type `ptr:ImageSpaceState`
 #[inline]
-pub fn g_image_space_state() -> Option<&'static classes::ImageSpaceState> { unsafe { *(address!(414660) as *const Option<&'static classes::ImageSpaceState>) } }
+pub fn g_image_space_state() -> Option<&'static crate::ImageSpaceState> { unsafe { *(address!(414660) as *const Option<&'static crate::ImageSpaceState>) } }
 /// `g_InputEventQueue` at 0x3275f70, id 564417 (semantic, high); static queue object (high, input pass), type `class:InputEventQueue`
 #[inline]
-pub fn g_input_event_queue() -> &'static classes::InputEventQueue { unsafe { &*(address!(564417) as *const classes::InputEventQueue) } }
+pub fn g_input_event_queue() -> &'static crate::InputEventQueue { unsafe { &*(address!(564417) as *const crate::InputEventQueue) } }
 /// `g_InstalledContent_ptr` at 0x3210eb0, id 503225 (xref_inference, medium)
 #[inline]
 pub fn g_installed_content_ptr() -> *mut c_void { address!(503225) as *mut c_void }
@@ -18432,7 +18430,7 @@ pub fn g_inventory3_d_manager_ptr() -> *mut c_void { address!(403559) as *mut c_
 pub fn g_job_entry_poll_controls() -> *mut c_void { address!(380582) as *mut c_void }
 /// `g_JobListServingThread` at 0x3220aa0, id 403109 (semantic, high); the game update thread object; 0x3220a90 points at it (high, animation pass), type `class:JobListManager::ServingThread`
 #[inline]
-pub fn g_job_list_serving_thread() -> &'static classes::partial::JobListManager__ServingThread { unsafe { &*(address!(403109) as *const classes::partial::JobListManager__ServingThread) } }
+pub fn g_job_list_serving_thread() -> &'static crate::JobListManager__ServingThread { unsafe { &*(address!(403109) as *const crate::JobListManager__ServingThread) } }
 /// `g_JournalInputMapping_RemapHandler` at 0x20bc728, id 383628 (semantic, high); the remap sink object (vtable 0x1988ce8) (high, input pass), type `pointer`
 #[inline]
 pub fn g_journal_input_mapping_remap_handler() -> *mut *mut c_void { address!(383628) as *mut *mut c_void }
@@ -18447,10 +18445,10 @@ pub fn g_last_player_position() -> *mut u8 { address!(404241) as *mut u8 }
 pub fn g_last_sound_id() -> *mut u32 { address!(410106) as *mut u32 }
 /// `g_LightingShader` at 0x33d3e28, id 414613 (semantic, high); pointer to `BSLightingShader`: refcounted holder of the lighting shader; refcounted holder of the lighting shader (high, frame pass), type `ptr:BSLightingShader`
 #[inline]
-pub fn g_lighting_shader() -> Option<&'static classes::BSLightingShader> { unsafe { *(address!(414613) as *const Option<&'static classes::BSLightingShader>) } }
+pub fn g_lighting_shader() -> Option<&'static crate::BSLightingShader> { unsafe { *(address!(414613) as *const Option<&'static crate::BSLightingShader>) } }
 /// `g_LightingShaderInstance` at 0x3436400, id 415094 (semantic, high); pointer to `BSLightingShader`: instance pointer set by the ctor; instance pointer set by the ctor (high, frame pass), type `ptr:BSLightingShader`
 #[inline]
-pub fn g_lighting_shader_instance() -> Option<&'static classes::BSLightingShader> { unsafe { *(address!(415094) as *const Option<&'static classes::BSLightingShader>) } }
+pub fn g_lighting_shader_instance() -> Option<&'static crate::BSLightingShader> { unsafe { *(address!(415094) as *const Option<&'static crate::BSLightingShader>) } }
 /// `g_LinkedSoundDescriptorIDs` at 0x31df9d8, id 401175 (semantic, medium); SNAM ids collected at load; a descriptor whose id is listed is precached in its InitItem and removed (medium, audio pass), type `BSTArray<u32>`
 #[inline]
 pub fn g_linked_sound_descriptor_i_ds() -> *mut c_void { address!(401175) as *mut c_void }
@@ -18459,7 +18457,7 @@ pub fn g_linked_sound_descriptor_i_ds() -> *mut c_void { address!(401175) as *mu
 pub fn g_lip_synch_anim_db_lip_audio_interface() -> *mut c_void { address!(359693) as *mut c_void }
 /// `g_LowHealthIMod` at 0x3244a98, id 404166 (xref_inference, medium); pointer to `TESImageSpaceModifier`: cached default object 0x84 applied while low on health; cached default object 0x84 applied while low on health (medium, camera pass), type `ptr:TESImageSpaceModifier`
 #[inline]
-pub fn g_low_health_i_mod() -> Option<&'static classes::TESImageSpaceModifier> { unsafe { *(address!(404166) as *const Option<&'static classes::TESImageSpaceModifier>) } }
+pub fn g_low_health_i_mod() -> Option<&'static crate::TESImageSpaceModifier> { unsafe { *(address!(404166) as *const Option<&'static crate::TESImageSpaceModifier>) } }
 /// `g_LowHealthIModActive` at 0x3244a94, id 404161 (semantic, high); low-health image space modifier on (high, camera pass), type `u8`
 #[inline]
 pub fn g_low_health_i_mod_active() -> *mut u8 { address!(404161) as *mut u8 }
@@ -18486,10 +18484,10 @@ pub fn g_main_loop_steps() -> *mut c_void { address!(380514) as *mut c_void }
 pub fn g_max_focus_shadows() -> *mut u32 { address!(414621) as *mut u32 }
 /// `g_MenuControls` at 0x323a670, id 403634 (runtime, high); static storage of MenuControls (0x88, ends at ConsoleLog 0x323a700) (high, input pass), type `class:MenuControls`
 #[inline]
-pub fn g_menu_controls() -> &'static classes::MenuControls { unsafe { &*(address!(403634) as *const classes::MenuControls) } }
+pub fn g_menu_controls() -> &'static crate::MenuControls { unsafe { &*(address!(403634) as *const crate::MenuControls) } }
 /// `g_MenuControlsCurrentEvent` at 0x32583b8, id 406354 (semantic, high); pointer to `InputEvent`: the event being dispatched; the event being dispatched (high, ui pass), type `ptr:InputEvent`
 #[inline]
-pub fn g_menu_controls_current_event() -> Option<&'static classes::InputEvent> { unsafe { *(address!(406354) as *const Option<&'static classes::InputEvent>) } }
+pub fn g_menu_controls_current_event() -> Option<&'static crate::InputEvent> { unsafe { *(address!(406354) as *const Option<&'static crate::InputEvent>) } }
 /// `g_MenuControlsEventHandled` at 0x32583c0, id 406355 (semantic, high); result of the last handler that accepted the current event; when 0 the event is turned into UI messages (high, ui pass), type `undefined1`
 #[inline]
 pub fn g_menu_controls_event_handled() -> *mut u8 { address!(406355) as *mut u8 }
@@ -18501,19 +18499,19 @@ pub fn g_menu_open_handler_handled() -> *mut u8 { address!(406356) as *mut u8 }
 pub fn g_menu_topic_manager_ptr() -> *mut c_void { address!(401099) as *mut c_void }
 /// `g_MessageBoxMenu` at 0x32583f8, id 406361 (semantic, high); the live MessageBoxMenu (high, ui pass), type `MessageBoxMenu*`
 #[inline]
-pub fn g_message_box_menu() -> Option<&'static classes::MessageBoxMenu> { unsafe { *(address!(406361) as *const Option<&'static classes::MessageBoxMenu>) } }
+pub fn g_message_box_menu() -> Option<&'static crate::MessageBoxMenu> { unsafe { *(address!(406361) as *const Option<&'static crate::MessageBoxMenu>) } }
 /// `g_MessageBoxQueue` at 0x3258408, id 406362 (semantic, high); pending boxes sorted by depth; data 0x3258408, capacity 0x3258410, size 0x3258418; top = last (high, ui pass), type `BSTArray<MessageBoxData*>`
 #[inline]
 pub fn g_message_box_queue() -> *mut c_void { address!(406362) as *mut c_void }
 /// `g_MessageBoxQueueLock` at 0x3258420, id 406365 (semantic, medium); owner thread id at +0, count at +4 (medium, ui pass), type `BSSpinLock`
 #[inline]
-pub fn g_message_box_queue_lock() -> &'static classes::BSSpinLock { unsafe { &*(address!(406365) as *const classes::BSSpinLock) } }
+pub fn g_message_box_queue_lock() -> &'static crate::BSSpinLock { unsafe { &*(address!(406365) as *const crate::BSSpinLock) } }
 /// `g_MessageBoxTypeDisabled` at 0x32583d8, id 406360 (semantic, medium); per-type suppression (medium, ui pass), type `bool[0x1f]`
 #[inline]
 pub fn g_message_box_type_disabled() -> *mut c_void { address!(406360) as *mut c_void }
 /// `g_Mode10Accumulator` at 0x3436238, id 415010 (runtime, high); pointer to `BSShaderAccumulator`: renderMode 0x10, decals off; used only by Msg_LODTrees in the references found; renderMode 0x10, decals off; used only by Msg_LODTrees in the references found (high, frame pass), type `ptr:BSShaderAccumulator`
 #[inline]
-pub fn g_mode10_accumulator() -> Option<&'static classes::BSShaderAccumulator> { unsafe { *(address!(415010) as *const Option<&'static classes::BSShaderAccumulator>) } }
+pub fn g_mode10_accumulator() -> Option<&'static crate::BSShaderAccumulator> { unsafe { *(address!(415010) as *const Option<&'static crate::BSShaderAccumulator>) } }
 /// `g_MovementAgentNullTracker_IMovementHandlerAgent_MovementHandlerOutputDataSmallDelta` at 0x3350fe0, id 412324 (layout_inference, medium)
 #[inline]
 pub fn g_movement_agent_null_tracker_i_movement_handler_agent_movement_handler_output_data_small_delta() -> *mut c_void { address!(412324) as *mut c_void }
@@ -18549,7 +18547,7 @@ pub fn g_movement_path_manager_null_tracker() -> *mut c_void { address!(412241) 
 pub fn g_movement_select_idle_utils_select_first_idle_filter() -> *mut c_void { address!(412233) as *mut c_void }
 /// `g_MusicLock` at 0x33508e0, id 412215 (semantic, high); music lock: owner thread id at +0, recursion count at +4 (high, audio pass), type `BSSpinLock`
 #[inline]
-pub fn g_music_lock() -> &'static classes::BSSpinLock { unsafe { &*(address!(412215) as *const classes::BSSpinLock) } }
+pub fn g_music_lock() -> &'static crate::BSSpinLock { unsafe { &*(address!(412215) as *const crate::BSSpinLock) } }
 /// `g_NavMeshObstacleManager_ptr` at 0x21a05a8, id 400442 (xref_inference, medium)
 #[inline]
 pub fn g_nav_mesh_obstacle_manager_ptr() -> *mut c_void { address!(400442) as *mut c_void }
@@ -18585,16 +18583,16 @@ pub fn g_ni_t_object_array_ni_pointer_ni_metrics_output_module() -> *mut c_void 
 pub fn g_ni_t_object_array_ni_pointer_ni_ref_object() -> *mut c_void { address!(388583) as *mut c_void }
 /// `g_NoActivationSoundDescriptor` at 0x32119d8, id 402984 (semantic, medium); descriptor set by the SetNoActivationSound console path; saved in audio global data (medium, audio pass), type `BGSSoundDescriptorForm*`
 #[inline]
-pub fn g_no_activation_sound_descriptor() -> Option<&'static classes::BGSSoundDescriptorForm> { unsafe { *(address!(402984) as *const Option<&'static classes::BGSSoundDescriptorForm>) } }
+pub fn g_no_activation_sound_descriptor() -> Option<&'static crate::BGSSoundDescriptorForm> { unsafe { *(address!(402984) as *const Option<&'static crate::BGSSoundDescriptorForm>) } }
 /// `g_NoMusic` at 0x20d3cb0, id 390241 (semantic, high); the placeholder music type (priority 100) (high, audio pass), type `_anon_67C8711B::NoMusic`
 #[inline]
-pub fn g_no_music() -> &'static classes::_anon_67C8711B__NoMusic { unsafe { &*(address!(390241) as *const classes::_anon_67C8711B__NoMusic) } }
+pub fn g_no_music() -> &'static crate::_anon_67C8711B__NoMusic { unsafe { &*(address!(390241) as *const crate::_anon_67C8711B__NoMusic) } }
 /// `g_NodeUpdateTime` at 0x219e5f0, id 400333 (semantic, low); time the player's root updates pass in NiUpdateData (ID_400333) (low, camera pass), type `float`
 #[inline]
 pub fn g_node_update_time() -> *mut f32 { address!(400333) as *mut f32 }
 /// `g_NullMapCameraCallbacks` at 0x20bc368, id 383506 (semantic, high); the NullMapCameraCallbacks singleton used by MapCamera::ctor 0x996170 (high, camera pass), type `class:IMapCameraCallbacks`
 #[inline]
-pub fn g_null_map_camera_callbacks() -> &'static classes::IMapCameraCallbacks { unsafe { &*(address!(383506) as *const classes::IMapCameraCallbacks) } }
+pub fn g_null_map_camera_callbacks() -> &'static crate::IMapCameraCallbacks { unsafe { &*(address!(383506) as *const crate::IMapCameraCallbacks) } }
 /// `g_NullMovementState` at 0x3350a58, id 412263 (layout_inference, medium)
 #[inline]
 pub fn g_null_movement_state() -> *mut c_void { address!(412263) as *mut c_void }
@@ -18609,10 +18607,10 @@ pub fn g_orbis_pad_button_masks() -> *mut c_void { address!(236847) as *mut c_vo
 pub fn g_package_creator() -> *mut c_void { address!(379696) as *mut c_void }
 /// `g_ParticleShader` at 0x33d3df8, id 414611 (semantic, high); pointer to `BSParticleShader`: holder; holder (high, frame pass), type `ptr:BSParticleShader`
 #[inline]
-pub fn g_particle_shader() -> Option<&'static classes::BSParticleShader> { unsafe { *(address!(414611) as *const Option<&'static classes::BSParticleShader>) } }
+pub fn g_particle_shader() -> Option<&'static crate::BSParticleShader> { unsafe { *(address!(414611) as *const Option<&'static crate::BSParticleShader>) } }
 /// `g_ParticleShaderInstance` at 0x3698c10, id 415316 (semantic, high); pointer to `BSParticleShader`: instance pointer; instance pointer (high, frame pass), type `ptr:BSParticleShader`
 #[inline]
-pub fn g_particle_shader_instance() -> Option<&'static classes::BSParticleShader> { unsafe { *(address!(415316) as *const Option<&'static classes::BSParticleShader>) } }
+pub fn g_particle_shader_instance() -> Option<&'static crate::BSParticleShader> { unsafe { *(address!(415316) as *const Option<&'static crate::BSParticleShader>) } }
 /// `g_PathManagerPositionPlayerAdapter` at 0x20b6310, id 381076 (layout_inference, medium)
 #[inline]
 pub fn g_path_manager_position_player_adapter() -> *mut c_void { address!(381076) as *mut c_void }
@@ -18630,16 +18628,16 @@ pub fn g_pending_console_lines() -> *mut c_void { address!(504100) as *mut c_voi
 pub fn g_per_frame_constant_buffer() -> *mut u64 { address!(411384) as *mut u64 }
 /// `g_PlaceholderTexture` at 0x3336448, id 411503 (xref_inference, medium); pointer to `NiSourceTexture`: texture used when a material texture is missing; texture used when a material texture is missing (low, frame pass), type `ptr:NiSourceTexture`
 #[inline]
-pub fn g_placeholder_texture() -> Option<&'static classes::NiSourceTexture> { unsafe { *(address!(411503) as *const Option<&'static classes::NiSourceTexture>) } }
+pub fn g_placeholder_texture() -> Option<&'static crate::NiSourceTexture> { unsafe { *(address!(411503) as *const Option<&'static crate::NiSourceTexture>) } }
 /// `g_PlayerCamera` at 0x3245380, id 404422 (semantic, medium); static PlayerCamera instance (medium, camera pass), type `class:PlayerCamera`
 #[inline]
-pub fn g_player_camera() -> &'static classes::PlayerCamera { unsafe { &*(address!(404422) as *const classes::PlayerCamera) } }
+pub fn g_player_camera() -> &'static crate::PlayerCamera { unsafe { &*(address!(404422) as *const crate::PlayerCamera) } }
 /// `g_PlayerCharacter_ptr` at 0x3230778, id 403521 (runtime, high); pointer to `PlayerCharacter`: pointer to the player; pointer to the player (high, actors pass), type `ptr:PlayerCharacter`
 #[inline]
-pub fn g_player_character_ptr() -> Option<&'static classes::PlayerCharacter> { unsafe { *(address!(403521) as *const Option<&'static classes::PlayerCharacter>) } }
+pub fn g_player_character_ptr() -> Option<&'static crate::PlayerCharacter> { unsafe { *(address!(403521) as *const Option<&'static crate::PlayerCharacter>) } }
 /// `g_PlayerControls` at 0x3241520, id 403657 (runtime, high); static storage (high, input pass), type `class:PlayerControls`
 #[inline]
-pub fn g_player_controls() -> &'static classes::PlayerControls { unsafe { &*(address!(403657) as *const classes::PlayerControls) } }
+pub fn g_player_controls() -> &'static crate::PlayerControls { unsafe { &*(address!(403657) as *const crate::PlayerControls) } }
 /// `g_PlayerDeathReloadTimer` at 0x20b746c, id 381535 (semantic, high); seconds left before the automatic reload after the player's death; reset to the constant at 0x17e2820 when the state bits are outside 0x200000/0x400000 and to ID_186426 after firing; a negative value restarts it from the setting (high, camera pass), type `float`
 #[inline]
 pub fn g_player_death_reload_timer() -> *mut f32 { address!(381535) as *mut f32 }
@@ -18648,7 +18646,7 @@ pub fn g_player_death_reload_timer() -> *mut f32 { address!(381535) as *mut f32 
 pub fn g_player_handle() -> *mut u32 { address!(403520) as *mut u32 }
 /// `g_PlayerRef_ptr` at 0x31df300, id 401069 (xref_inference, medium); pointer to `PlayerCharacter`: pointer compared with the camera target and the actor in the pitch clamps; behaves as the player reference; pointer compared with the camera target and the actor in the pitch clamps; behaves as the player reference (medium, camera pass), type `ptr:PlayerCharacter`
 #[inline]
-pub fn g_player_ref_ptr() -> Option<&'static classes::PlayerCharacter> { unsafe { *(address!(401069) as *const Option<&'static classes::PlayerCharacter>) } }
+pub fn g_player_ref_ptr() -> Option<&'static crate::PlayerCharacter> { unsafe { *(address!(401069) as *const Option<&'static crate::PlayerCharacter>) } }
 /// `g_PlayerSleepWaitMovementControllerAdapter` at 0x20b6340, id 381082 (layout_inference, medium)
 #[inline]
 pub fn g_player_sleep_wait_movement_controller_adapter() -> *mut c_void { address!(381082) as *mut c_void }
@@ -18705,13 +18703,13 @@ pub fn g_render_map_menu_open() -> *mut u8 { address!(414950) as *mut u8 }
 pub fn g_render_pass_pools() -> *mut u8 { address!(415150) as *mut u8 }
 /// `g_RenderStateCache` at 0x20cfc00, id 388819 (semantic, high); pending pipeline state (targets, depth, viewport, state indices) (high, frame pass), type `class:RenderStateCache`
 #[inline]
-pub fn g_render_state_cache() -> &'static classes::RenderStateCache { unsafe { &*(address!(388819) as *const classes::RenderStateCache) } }
+pub fn g_render_state_cache() -> &'static crate::RenderStateCache { unsafe { &*(address!(388819) as *const crate::RenderStateCache) } }
 /// `g_RenderTargets` at 0x3335600, id 411451 (semantic, medium); the render and depth-stencil target tables; the shadow maps use depth-stencil ids 2, 3 and 4 (medium, render pass), type `undefined1`
 #[inline]
 pub fn g_render_targets() -> *mut u8 { address!(411451) as *mut u8 }
 /// `g_Renderer` at 0x3331f40, id 411393 (semantic, high); renderer singleton (static storage) (high, frame pass), type `class:Renderer`
 #[inline]
-pub fn g_renderer() -> &'static classes::Renderer { unsafe { &*(address!(411393) as *const classes::Renderer) } }
+pub fn g_renderer() -> &'static crate::Renderer { unsafe { &*(address!(411393) as *const crate::Renderer) } }
 /// `g_RendererData_ptr` at 0x3330188, id 411347 (runtime, high); points at g_Renderer+0x10; code through it uses offsets 0x10 lower (its +0x30 is Renderer+0x40) (high, frame pass), type `undefined8`
 #[inline]
 pub fn g_renderer_data_ptr() -> *mut u64 { address!(411347) as *mut u64 }
@@ -18726,13 +18724,13 @@ pub fn g_save_header_version() -> *mut u32 { address!(206555) as *mut u32 }
 pub fn g_scaleform_heap_ptr() -> *mut *mut c_void { address!(412058) as *mut *mut c_void }
 /// `g_SceneGraph` at 0x3230740, id 403513 (runtime, high); pointer to `SceneGraph`: world scene graph (0x150); +0x128 is the frame NiCamera; world scene graph (0x150); +0x128 is the frame NiCamera (high, frame pass), type `ptr:SceneGraph`
 #[inline]
-pub fn g_scene_graph() -> Option<&'static classes::SceneGraph> { unsafe { *(address!(403513) as *const Option<&'static classes::SceneGraph>) } }
+pub fn g_scene_graph() -> Option<&'static crate::SceneGraph> { unsafe { *(address!(403513) as *const Option<&'static crate::SceneGraph>) } }
 /// `g_ScreenHeight` at 0x33363c8, id 411484 (semantic, high); render height (high, frame pass), type `undefined4`
 #[inline]
 pub fn g_screen_height() -> *mut u32 { address!(411484) as *mut u32 }
 /// `g_ScreenSplatterAccumulator` at 0x3436250, id 415013 (runtime, high); pointer to `BSShaderAccumulator`: renderMode 0x17, batch kind 100: the screen blood splatter (0x31a5000) drawn in sub17 and after image space in sub20 (techniques 0x5c006073..74); renderMode 0x17, batch kind 100: the screen blood splatter (0x31a5000) drawn in sub17 and after image space in sub20 (techniques 0x5c006073..74) (high, frame pass), type `ptr:BSShaderAccumulator`
 #[inline]
-pub fn g_screen_splatter_accumulator() -> Option<&'static classes::BSShaderAccumulator> { unsafe { *(address!(415013) as *const Option<&'static classes::BSShaderAccumulator>) } }
+pub fn g_screen_splatter_accumulator() -> Option<&'static crate::BSShaderAccumulator> { unsafe { *(address!(415013) as *const Option<&'static crate::BSShaderAccumulator>) } }
 /// `g_ScreenWidth` at 0x33363c4, id 411483 (semantic, high); render width (FrameState+0x24) (high, frame pass), type `undefined4`
 #[inline]
 pub fn g_screen_width() -> *mut u32 { address!(411483) as *mut u32 }
@@ -18759,10 +18757,10 @@ pub fn g_script_param_type_info() -> *mut c_void { address!(368071) as *mut c_vo
 pub fn g_script_run_depth() -> *mut i32 { address!(401342) as *mut i32 }
 /// `g_ScriptedMusicState_ptr` at 0x31dfd80, id 401264 (semantic, high); pointer to the scripted music list (0x3211aa0) (high, audio pass), type `TESAudio::ScriptedMusicState*`
 #[inline]
-pub fn g_scripted_music_state_ptr() -> Option<&'static classes::TESAudio__ScriptedMusicState> { unsafe { *(address!(401264) as *const Option<&'static classes::TESAudio__ScriptedMusicState>) } }
+pub fn g_scripted_music_state_ptr() -> Option<&'static crate::TESAudio__ScriptedMusicState> { unsafe { *(address!(401264) as *const Option<&'static crate::TESAudio__ScriptedMusicState>) } }
 /// `g_SetPlayerControlsName` at 0x324fd88, id 404516 (semantic, high); "Set Player Controls": the movement-controller handler the player's slot 265 configures with fPlayerThirdPersonDampenTime (high, camera pass), type `class:BSFixedString`
 #[inline]
-pub fn g_set_player_controls_name() -> &'static classes::BSFixedString { unsafe { &*(address!(404516) as *const classes::BSFixedString) } }
+pub fn g_set_player_controls_name() -> &'static crate::BSFixedString { unsafe { &*(address!(404516) as *const crate::BSFixedString) } }
 /// `g_SettingT_INIPrefSettingCollection` at 0x20b3068, id 379825 (layout_inference, medium)
 #[inline]
 pub fn g_setting_t_ini_pref_setting_collection() -> *mut c_void { address!(379825) as *mut c_void }
@@ -18864,7 +18862,7 @@ pub fn g_shadow_map_resolution() -> *mut u32 { address!(415268) as *mut u32 }
 pub fn g_shadow_mask_pass_enabled() -> *mut u8 { address!(390933) as *mut u8 }
 /// `g_ShadowSceneNode` at 0x20d68b0, id 390951 (runtime, high); pointer to `ShadowSceneNode`: the four ShadowSceneNode slots; [0] is the world scene (the frame's shadow step and RenderWorld use it), [1] a second scene processed by 0x98a670, [2] and [3] empty; the four ShadowSceneNode slots; [0] is the world scene (the frame's shadow step and RenderWorld use it), [1] a second scene processed by 0x98a670, [2] and [3] empty (high, render pass), type `ptr:ShadowSceneNode`
 #[inline]
-pub fn g_shadow_scene_node() -> Option<&'static classes::ShadowSceneNode> { unsafe { *(address!(390951) as *const Option<&'static classes::ShadowSceneNode>) } }
+pub fn g_shadow_scene_node() -> Option<&'static crate::ShadowSceneNode> { unsafe { *(address!(390951) as *const Option<&'static crate::ShadowSceneNode>) } }
 /// `g_ShadowsOnGrass` at 0x20d6812, id 390934 (semantic, high); bShadowsOnGrass copied by InitShaders 0x14eaa96 (high, graphics pass), type `u8`
 #[inline]
 pub fn g_shadows_on_grass() -> *mut u8 { address!(390934) as *mut u8 }
@@ -18873,10 +18871,10 @@ pub fn g_shadows_on_grass() -> *mut u8 { address!(390934) as *mut u8 }
 pub fn g_skip_apply_world_fov() -> *mut u8 { address!(415039) as *mut u8 }
 /// `g_SkyShader` at 0x33d3e20, id 414612 (semantic, high); pointer to `BSSkyShader`: holder; holder (high, frame pass), type `ptr:BSSkyShader`
 #[inline]
-pub fn g_sky_shader() -> Option<&'static classes::BSSkyShader> { unsafe { *(address!(414612) as *const Option<&'static classes::BSSkyShader>) } }
+pub fn g_sky_shader() -> Option<&'static crate::BSSkyShader> { unsafe { *(address!(414612) as *const Option<&'static crate::BSSkyShader>) } }
 /// `g_SkyShaderInstance` at 0x34364f0, id 415143 (semantic, high); pointer to `BSSkyShader`: instance pointer; RenderPassImmediately's SetupPassGeometryState skips the alpha update for it; instance pointer; RenderPassImmediately's SetupPassGeometryState skips the alpha update for it (high, frame pass), type `ptr:BSSkyShader`
 #[inline]
-pub fn g_sky_shader_instance() -> Option<&'static classes::BSSkyShader> { unsafe { *(address!(415143) as *const Option<&'static classes::BSSkyShader>) } }
+pub fn g_sky_shader_instance() -> Option<&'static crate::BSSkyShader> { unsafe { *(address!(415143) as *const Option<&'static crate::BSSkyShader>) } }
 /// `g_SkyrimScript_ConcreteDelayFunctorFactory_SkyrimScript__anon_0D8D4B7E_AttachAshPileFunctor_14` at 0x20bcb70, id 383759 (layout_inference, medium)
 #[inline]
 pub fn g_skyrim_script_concrete_delay_functor_factory_skyrim_script__anon_0_d8_d4_b7_e_attach_ash_pile_functor_14() -> *mut c_void { address!(383759) as *mut c_void }
@@ -18969,7 +18967,7 @@ pub fn g_skyrim_script__anon_3_a897_ab3_latent_player_mover() -> *mut c_void { a
 pub fn g_skyrim_speech_recognition_ptr() -> *mut c_void { address!(402858) as *mut c_void }
 /// `g_SkyrimVM` at 0x32316d0, id 403618 (runtime, high); the Papyrus VM singleton (static storage); its sink sub-objects at +0x10.. are the first sinks of 50 holder sources (high, events pass), type `class:SkyrimVM`
 #[inline]
-pub fn g_skyrim_vm() -> &'static classes::partial::SkyrimVM { unsafe { &*(address!(403618) as *const classes::partial::SkyrimVM) } }
+pub fn g_skyrim_vm() -> &'static crate::SkyrimVM { unsafe { &*(address!(403618) as *const crate::SkyrimVM) } }
 /// `g_SkyrimVM_ptr_2` at 0x21a36e0, id 400475 (xref_inference, medium)
 #[inline]
 pub fn g_skyrim_vm_ptr_2() -> *mut c_void { address!(400475) as *mut c_void }
@@ -18981,13 +18979,13 @@ pub fn g_sound_status_free_list() -> *mut *mut c_void { address!(410107) as *mut
 pub fn g_static_avoid_node_manager_ptr() -> *mut c_void { address!(403562) as *mut c_void }
 /// `g_StaticCuller` at 0x33d57a0, id 414842 (semantic, high); function-static culler of RunCullingWithStaticProcess (used by every map cull on the frame thread) (high, graphics pass), type `class:BSCullingProcess`
 #[inline]
-pub fn g_static_culler() -> &'static classes::BSCullingProcess { unsafe { &*(address!(414842) as *const classes::BSCullingProcess) } }
+pub fn g_static_culler() -> &'static crate::BSCullingProcess { unsafe { &*(address!(414842) as *const crate::BSCullingProcess) } }
 /// `g_StatsMenuCameraIntroName` at 0x32589f8, id 406573 (semantic, high); "CameraIntro", the stats menu camera's intro sequence name (high, camera pass), type `class:BSFixedString`
 #[inline]
-pub fn g_stats_menu_camera_intro_name() -> &'static classes::BSFixedString { unsafe { &*(address!(406573) as *const classes::BSFixedString) } }
+pub fn g_stats_menu_camera_intro_name() -> &'static crate::BSFixedString { unsafe { &*(address!(406573) as *const crate::BSFixedString) } }
 /// `g_StatsMenuCameraOutroName` at 0x3258a00, id 406574 (semantic, high); "CameraOutro" (high, camera pass), type `class:BSFixedString`
 #[inline]
-pub fn g_stats_menu_camera_outro_name() -> &'static classes::BSFixedString { unsafe { &*(address!(406574) as *const classes::BSFixedString) } }
+pub fn g_stats_menu_camera_outro_name() -> &'static crate::BSFixedString { unsafe { &*(address!(406574) as *const crate::BSFixedString) } }
 /// `g_StatsMenuSkillViewTable` at 0x32586f0, id 406458 (semantic, medium); 18 x 0x28 records per skill (constants) (medium, camera pass), type `undefined1`
 #[inline]
 pub fn g_stats_menu_skill_view_table() -> *mut u8 { address!(406458) as *mut u8 }
@@ -19005,22 +19003,22 @@ pub fn g_system_event_adapter() -> *mut c_void { address!(381088) as *mut c_void
 pub fn g_system_timer0_sinks() -> *mut *mut c_void { address!(415489) as *mut *mut c_void }
 /// `g_SystemTimers` at 0x3699270, id 415497 (semantic, high); QPC accumulator timers, stride 0x18; timer 1 = PresentFrame's frame timer (high, graphics pass), type `class:SystemTimerRecord`
 #[inline]
-pub fn g_system_timers() -> &'static classes::SystemTimerRecord { unsafe { &*(address!(415497) as *const classes::SystemTimerRecord) } }
+pub fn g_system_timers() -> &'static crate::SystemTimerRecord { unsafe { &*(address!(415497) as *const crate::SystemTimerRecord) } }
 /// `g_TESAudio_ScriptedMusicState` at 0x3211aa0, id 403008 (layout_inference, medium)
 #[inline]
 pub fn g_tes_audio_scripted_music_state() -> *mut c_void { address!(403008) as *mut c_void }
 /// `g_TESDataHandler` at 0x21a2890, id 400457 (runtime, high); the data handler object itself (static storage) (high, forms pass), type `class:TESDataHandler`
 #[inline]
-pub fn g_tes_data_handler() -> &'static classes::TESDataHandler { unsafe { &*(address!(400457) as *const classes::TESDataHandler) } }
+pub fn g_tes_data_handler() -> &'static crate::TESDataHandler { unsafe { &*(address!(400457) as *const crate::TESDataHandler) } }
 /// `g_TESDataHandlerPostBuildFileListEventSource_ptr` at 0x21a36d8, id 400474 (runtime, high); pointer to `BSTEventSource`: event source for the post-build-file-list event, valid only during TES initialisation; event source for the post-build-file-list event, valid only during TES initialisation (high, forms pass), type `ptr:BSTEventSource`
 #[inline]
-pub fn g_tes_data_handler_post_build_file_list_event_source_ptr() -> Option<&'static classes::BSTEventSource> { unsafe { *(address!(400474) as *const Option<&'static classes::BSTEventSource>) } }
+pub fn g_tes_data_handler_post_build_file_list_event_source_ptr() -> Option<&'static crate::BSTEventSource> { unsafe { *(address!(400474) as *const Option<&'static crate::BSTEventSource>) } }
 /// `g_TESEditorIDMapLock` at 0x21a3ca0, id 400518 (semantic, high); lock of the editor id map (high, forms pass), type `class:BSReadWriteLock`
 #[inline]
-pub fn g_tes_editor_id_map_lock() -> &'static classes::BSReadWriteLock { unsafe { &*(address!(400518) as *const classes::BSReadWriteLock) } }
+pub fn g_tes_editor_id_map_lock() -> &'static crate::BSReadWriteLock { unsafe { &*(address!(400518) as *const crate::BSReadWriteLock) } }
 /// `g_TESFormIDMapLock` at 0x21a3c98, id 400517 (semantic, high); lock of the form id map (high, forms pass), type `class:BSReadWriteLock`
 #[inline]
-pub fn g_tes_form_id_map_lock() -> &'static classes::BSReadWriteLock { unsafe { &*(address!(400517) as *const classes::BSReadWriteLock) } }
+pub fn g_tes_form_id_map_lock() -> &'static crate::BSReadWriteLock { unsafe { &*(address!(400517) as *const crate::BSReadWriteLock) } }
 /// `g_TESFormInstanceCount` at 0x21a3804, id 400506 (semantic, medium); number of live TESForm objects (medium, forms pass), type `undefined4`
 #[inline]
 pub fn g_tes_form_instance_count() -> *mut u32 { address!(400506) as *mut u32 }
@@ -19035,7 +19033,7 @@ pub fn g_task_queue_lock() -> *mut u64 { address!(403767) as *mut u64 }
 pub fn g_time_multiplier() -> *mut f32 { address!(388442) as *mut f32 }
 /// `g_TopMenuName` at 0x333b058, id 412035 (semantic, high); function-local static 'Top Menu' compared with every message name in ProcessMessages (high, ui pass), type `class:BSFixedString`
 #[inline]
-pub fn g_top_menu_name() -> &'static classes::BSFixedString { unsafe { &*(address!(412035) as *const classes::BSFixedString) } }
+pub fn g_top_menu_name() -> &'static crate::BSFixedString { unsafe { &*(address!(412035) as *const crate::BSFixedString) } }
 /// `g_TypeNode_BGSAddonNodeSoundHandleExtra` at 0x31a5428, id 400793 (string, high)
 #[inline]
 pub fn g_type_node_bgs_addon_node_sound_handle_extra() -> *mut c_void { address!(400793) as *mut c_void }
@@ -20280,7 +20278,7 @@ pub fn g_ui_blur_manager_ptr() -> *mut c_void { address!(403350) as *mut c_void 
 pub fn g_ui_menu_stack_lock() -> *mut u64 { address!(412033) as *mut u64 }
 /// `g_UIMessageQueue` at 0x333b0b0, id 412047 (semantic, high); the queue's static storage (0xb80 bytes) (high, ui pass), type `class:UIMessageQueue`
 #[inline]
-pub fn g_ui_message_queue() -> &'static classes::UIMessageQueue { unsafe { &*(address!(412047) as *const classes::UIMessageQueue) } }
+pub fn g_ui_message_queue() -> &'static crate::UIMessageQueue { unsafe { &*(address!(412047) as *const crate::UIMessageQueue) } }
 /// `g_UISaveLoadManager_ptr` at 0x31e0140, id 401336 (xref_inference, medium)
 #[inline]
 pub fn g_ui_save_load_manager_ptr() -> *mut c_void { address!(401336) as *mut c_void }
@@ -20295,13 +20293,13 @@ pub fn g_use_hdr_tonemap() -> *mut u8 { address!(391301) as *mut u8 }
 pub fn g_user_event_names() -> *mut *mut c_void { address!(402638) as *mut *mut c_void }
 /// `g_UserEventNamesStorage` at 0x32757a0, id 410238 (semantic, high); static storage the g_UserEventNames pointer (0x32048d0) points at (high, input pass), type `class:UserEventNames`
 #[inline]
-pub fn g_user_event_names_storage() -> &'static classes::UserEventNames { unsafe { &*(address!(410238) as *const classes::UserEventNames) } }
+pub fn g_user_event_names_storage() -> &'static crate::UserEventNames { unsafe { &*(address!(410238) as *const crate::UserEventNames) } }
 /// `g_UtilityShader` at 0x33d3de8, id 414609 (semantic, high); pointer to `BSUtilityShader`: holder; holder (high, frame pass), type `ptr:BSUtilityShader`
 #[inline]
-pub fn g_utility_shader() -> Option<&'static classes::BSUtilityShader> { unsafe { *(address!(414609) as *const Option<&'static classes::BSUtilityShader>) } }
+pub fn g_utility_shader() -> Option<&'static crate::BSUtilityShader> { unsafe { *(address!(414609) as *const Option<&'static crate::BSUtilityShader>) } }
 /// `g_UtilityShaderInstance` at 0x3698b60, id 415300 (semantic, high); pointer to `BSUtilityShader`: instance pointer; the shader of every depth/shadow pass (lighting and effect properties' slot 43) and of the shadow-mask passes; instance pointer; the shader of every depth/shadow pass (lighting and effect properties' slot 43) and of the shadow-mask passes (high, frame pass), type `ptr:BSUtilityShader`
 #[inline]
-pub fn g_utility_shader_instance() -> Option<&'static classes::BSUtilityShader> { unsafe { *(address!(415300) as *const Option<&'static classes::BSUtilityShader>) } }
+pub fn g_utility_shader_instance() -> Option<&'static crate::BSUtilityShader> { unsafe { *(address!(415300) as *const Option<&'static crate::BSUtilityShader>) } }
 /// `g_VATSCameraDollyActive` at 0x31df560, id 401132 (semantic, high); dolly running (high, camera pass), type `u8`
 #[inline]
 pub fn g_vats_camera_dolly_active() -> *mut u8 { address!(401132) as *mut u8 }
@@ -20331,13 +20329,13 @@ pub fn g_vats_camera_mesh_offset() -> *mut c_void { address!(401137) as *mut c_v
 pub fn g_vats_camera_phase() -> *mut i32 { address!(404871) as *mut i32 }
 /// `g_VATSConsoleCameraPath` at 0x3252a30, id 404864 (semantic, high); pointer to `BGSCameraPath`: path forced by PlayVATSCameras for the next playback; path forced by PlayVATSCameras for the next playback (high, camera pass), type `ptr:BGSCameraPath`
 #[inline]
-pub fn g_vats_console_camera_path() -> Option<&'static classes::BGSCameraPath> { unsafe { *(address!(404864) as *const Option<&'static classes::BGSCameraPath>) } }
+pub fn g_vats_console_camera_path() -> Option<&'static crate::BGSCameraPath> { unsafe { *(address!(404864) as *const Option<&'static crate::BGSCameraPath>) } }
 /// `g_VATSCurrentCameraPath` at 0x3252a50, id 404870 (semantic, high); pointer to `BGSCameraPath`: path being played; path being played (high, camera pass), type `ptr:BGSCameraPath`
 #[inline]
-pub fn g_vats_current_camera_path() -> Option<&'static classes::BGSCameraPath> { unsafe { *(address!(404870) as *const Option<&'static classes::BGSCameraPath>) } }
+pub fn g_vats_current_camera_path() -> Option<&'static crate::BGSCameraPath> { unsafe { *(address!(404870) as *const Option<&'static crate::BGSCameraPath>) } }
 /// `g_VATSDefaultCameraPathOnce` at 0x3252a38, id 404865 (xref_inference, medium); pointer to `BGSCameraPath`: one-shot path override (consumed by UpdateVATS); one-shot path override (consumed by UpdateVATS) (medium, camera pass), type `ptr:BGSCameraPath`
 #[inline]
-pub fn g_vats_default_camera_path_once() -> Option<&'static classes::BGSCameraPath> { unsafe { *(address!(404865) as *const Option<&'static classes::BGSCameraPath>) } }
+pub fn g_vats_default_camera_path_once() -> Option<&'static crate::BGSCameraPath> { unsafe { *(address!(404865) as *const Option<&'static crate::BGSCameraPath>) } }
 /// `g_VATSPathTotalTime` at 0x3252a60, id 404873 (semantic, high); sum of the path's shot maxTime (fVATSSafetyMaxTime 20 when ~0; fVATSSafetyMaxTimeRanged 6 for a ranged command whose target is alive) (high, camera pass), type `float`
 #[inline]
 pub fn g_vats_path_total_time() -> *mut f32 { address!(404873) as *mut f32 }
@@ -20361,22 +20359,22 @@ pub fn g_vats_shot_max_time() -> *mut f32 { address!(404874) as *mut f32 }
 pub fn g_vats_ptr() -> *mut *mut c_void { address!(400883) as *mut *mut c_void }
 /// `g_WaterShader` at 0x33d3e58, id 414615 (semantic, high); pointer to `BSWaterShader`: holder; holder (high, frame pass), type `ptr:BSWaterShader`
 #[inline]
-pub fn g_water_shader() -> Option<&'static classes::BSWaterShader> { unsafe { *(address!(414615) as *const Option<&'static classes::BSWaterShader>) } }
+pub fn g_water_shader() -> Option<&'static crate::BSWaterShader> { unsafe { *(address!(414615) as *const Option<&'static crate::BSWaterShader>) } }
 /// `g_WaterShaderInstance` at 0x3436458, id 415108 (semantic, high); pointer to `BSWaterShader`: instance pointer; instance pointer (high, frame pass), type `ptr:BSWaterShader`
 #[inline]
-pub fn g_water_shader_instance() -> Option<&'static classes::BSWaterShader> { unsafe { *(address!(415108) as *const Option<&'static classes::BSWaterShader>) } }
+pub fn g_water_shader_instance() -> Option<&'static crate::BSWaterShader> { unsafe { *(address!(415108) as *const Option<&'static crate::BSWaterShader>) } }
 /// `g_WaterSystem_ptr` at 0x21a05e8, id 400450 (semantic, medium); the water system object (static storage 0x21a2650, no vtable); also ID_400450 (medium, camera pass), type `pointer`
 #[inline]
 pub fn g_water_system_ptr() -> *mut *mut c_void { address!(400450) as *mut *mut c_void }
 /// `g_WeatherNode` at 0x3230760, id 403517 (semantic, high); pointer to `NiNode`: NiNode named "Weather" attached under a scene root at world setup; attach root of OwnedCameraEffectController; NiNode named "Weather" attached under a scene root at world setup; attach root of OwnedCameraEffectController (high, camera pass), type `ptr:NiNode`
 #[inline]
-pub fn g_weather_node() -> Option<&'static classes::NiNode> { unsafe { *(address!(403517) as *const Option<&'static classes::NiNode>) } }
+pub fn g_weather_node() -> Option<&'static crate::NiNode> { unsafe { *(address!(403517) as *const Option<&'static crate::NiNode>) } }
 /// `g_WorldAccumulator` at 0x3436230, id 415009 (runtime, high); pointer to `BSShaderAccumulator`: renderMode 0: the main colour draw; its +0x12c is ToggleDecalRendering's switch; RenderWorld writes its eyePosition; renderMode 0: the main colour draw; its +0x12c is ToggleDecalRendering's switch; RenderWorld writes its eyePosition (high, frame pass), type `ptr:BSShaderAccumulator`
 #[inline]
-pub fn g_world_accumulator() -> Option<&'static classes::BSShaderAccumulator> { unsafe { *(address!(415009) as *const Option<&'static classes::BSShaderAccumulator>) } }
+pub fn g_world_accumulator() -> Option<&'static crate::BSShaderAccumulator> { unsafe { *(address!(415009) as *const Option<&'static crate::BSShaderAccumulator>) } }
 /// `g_WorldDepthAccumulator` at 0x3436228, id 415008 (runtime, high); pointer to `BSShaderAccumulator`: renderMode 0xc, drawSkinnedDecals 1: the world depth pre-pass (step 12) and RenderShadowMaps' camera-depth draws; renderMode 0xc, drawSkinnedDecals 1: the world depth pre-pass (step 12) and RenderShadowMaps' camera-depth draws (high, frame pass), type `ptr:BSShaderAccumulator`
 #[inline]
-pub fn g_world_depth_accumulator() -> Option<&'static classes::BSShaderAccumulator> { unsafe { *(address!(415008) as *const Option<&'static classes::BSShaderAccumulator>) } }
+pub fn g_world_depth_accumulator() -> Option<&'static crate::BSShaderAccumulator> { unsafe { *(address!(415008) as *const Option<&'static crate::BSShaderAccumulator>) } }
 /// `g_XInputButtonMasks` at 0x20ce878, id 388495 (semantic, high); ids of the XInput pad's digital buttons (high, input pass), type `undefined2[14]`
 #[inline]
 pub fn g_x_input_button_masks() -> *mut c_void { address!(388495) as *mut c_void }
@@ -20658,7 +20656,7 @@ pub fn g_hkp_entity_listener() -> *mut c_void { address!(370091) as *mut c_void 
 pub fn g_hkp_null_agent() -> *mut c_void { address!(409740) as *mut c_void }
 /// `g_strIsAttacking` at 0x3252908, id 404830 (semantic, high); interned 'IsAttacking' built at static init (0xac720) (high, animation pass), type `class:BSFixedString`
 #[inline]
-pub fn g_str_is_attacking() -> &'static classes::BSFixedString { unsafe { &*(address!(404830) as *const classes::BSFixedString) } }
+pub fn g_str_is_attacking() -> &'static crate::BSFixedString { unsafe { &*(address!(404830) as *const crate::BSFixedString) } }
 /// `kDepthShiftFarScale` at 0x1b436b4, id 254903 (semantic, high); 1.000002 (0x3f800011) (high, graphics pass), type `float`
 #[inline]
 pub fn k_depth_shift_far_scale() -> *mut f32 { address!(254903) as *mut f32 }

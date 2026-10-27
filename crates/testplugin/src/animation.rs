@@ -9,7 +9,6 @@ use std::collections::BTreeMap;
 use std::sync::{Mutex, OnceLock};
 use std::sync::atomic::{AtomicBool, AtomicPtr, AtomicU32, Ordering};
 
-use layout::v1_7_104::classes;
 use skyrim::actors::PlayerCharacter;
 use skyrim::animation::{AnimationGraph, AnimationGraphHolder, ApplyPoseFn, HkQsTransform, UpdateNodesAfterRenderFn, current_speed, graph_event_source, graph_manager};
 use skyrim::events::{BSAnimationGraphEvent, BSEventNotifyControl, BSTEventSource, EventSink, Registration, Sink};
@@ -24,8 +23,8 @@ pub const RUN_TESTS: &[(&str, Test)] = &[("variables", variables), ("weapon_stat
 static APPLY: OnceLock<hook::Hook<ApplyPoseFn>> = OnceLock::new();
 static UPDATE: OnceLock<hook::Hook<UpdateNodesAfterRenderFn>> = OnceLock::new();
 static ACTIVE: AtomicBool = AtomicBool::new(false);
-static PLAYER: AtomicPtr<classes::TESObjectREFR> = AtomicPtr::new(core::ptr::null_mut());
-static HEAD: AtomicPtr<classes::NiAVObject> = AtomicPtr::new(core::ptr::null_mut());
+static PLAYER: AtomicPtr<skre::TESObjectREFR> = AtomicPtr::new(core::ptr::null_mut());
+static HEAD: AtomicPtr<skre::NiAVObject> = AtomicPtr::new(core::ptr::null_mut());
 static POSE_WRITES: [AtomicU32; 2] = [const { AtomicU32::new(0) }; 2];
 static POSE_WRITES_OTHER: AtomicU32 = AtomicU32::new(0);
 static UPDATES: AtomicU32 = AtomicU32::new(0);
@@ -82,7 +81,7 @@ unsafe extern "C" fn apply_detour(pose: *const HkQsTransform, nodes: *mut core::
     }
 }
 
-unsafe extern "C" fn update_detour(player: *mut classes::PlayerCharacter) {
+unsafe extern "C" fn update_detour(player: *mut skre::PlayerCharacter) {
     let head = unsafe { NiAVObject::from_ptr(HEAD.load(Ordering::Relaxed)) };
     let before = head.map(|h| (h.local(), h.world()));
     unsafe { UPDATE.get().expect("stored before enabling").original()(player) }
@@ -121,7 +120,7 @@ pub fn suspend() {
 /// starts sampling; called after a load.
 pub fn register() -> Result<String, String> {
     let player = PlayerCharacter::get().ok_or("g_PlayerCharacter_ptr is null")?;
-    PLAYER.store(core::ptr::from_ref::<skyrim::actors::TESObjectREFR>(player).cast::<classes::TESObjectREFR>().cast_mut(), Ordering::Relaxed);
+    PLAYER.store(core::ptr::from_ref::<skyrim::actors::TESObjectREFR>(player).cast::<skre::TESObjectREFR>().cast_mut(), Ordering::Relaxed);
     let root = player.third_person_root().ok_or("loadedData->node3D is null")?;
     let head = root.object_by_name(&BSFixedString::new("NPC Head [Head]")).ok_or("GetObjectByName(NPC Head [Head]) returned null")?;
     HEAD.store(head.as_ptr().cast_mut(), Ordering::Relaxed);

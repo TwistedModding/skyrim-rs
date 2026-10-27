@@ -11,16 +11,16 @@
 use core::ffi::{CStr, c_char};
 use std::ffi::CString;
 
-use layout::v1_7_104::{classes, fns, globals};
+use skre::raw::{fns, globals};
 
-pub use layout::v1_7_104::enums::SaveLoadEventKind;
+pub use skre::SaveLoadEventKind;
 
 use crate::events::{BSTEventSource, Event};
 use crate::forms::{FormId, TESFile};
 
-type RemapFn = unsafe extern "C" fn(game: *mut classes::BGSSaveLoadGame, saved: u32) -> u32;
-type SaveFn = unsafe extern "C" fn(manager: *mut classes::BGSSaveLoadManager, kind: i32, value: u32, name: *const c_char) -> bool;
-type RequestLoadFn = unsafe extern "C" fn(manager: *mut classes::BGSSaveLoadManager, name: *const c_char, entry: u32, a4: u32, a5: bool) -> bool;
+type RemapFn = unsafe extern "C" fn(game: *mut skre::BGSSaveLoadGame, saved: u32) -> u32;
+type SaveFn = unsafe extern "C" fn(manager: *mut skre::BGSSaveLoadManager, kind: i32, value: u32, name: *const c_char) -> bool;
+type RequestLoadFn = unsafe extern "C" fn(manager: *mut skre::BGSSaveLoadManager, name: *const c_char, entry: u32, a4: u32, a5: bool) -> bool;
 
 /// `BGSSaveLoadManager::Save`'s kind for a manual save.
 const MANUAL_SAVE: i32 = 2;
@@ -29,8 +29,8 @@ const MANUAL_SAVE: i32 = 2;
 const SAVE_NAME_PTR: usize = 0x240 - 0x138;
 
 pub(crate) struct Fns {
-    manager: *const *mut classes::BGSSaveLoadManager,
-    game: *const *mut classes::BGSSaveLoadGame,
+    manager: *const *mut skre::BGSSaveLoadManager,
+    game: *const *mut skre::BGSSaveLoadGame,
     remap: RemapFn,
     save: SaveFn,
     request_load: RequestLoadFn,
@@ -45,8 +45,8 @@ impl Fns {
         reloc.address(SaveLoadEvent::REMOVE_SINK)?;
         unsafe {
             Ok(Self {
-                manager: reloc.address(globals::g_BGSSaveLoadManager_ptr)? as *const *mut classes::BGSSaveLoadManager,
-                game: reloc.address(globals::g_BGSSaveLoadGame_ptr)? as *const *mut classes::BGSSaveLoadGame,
+                manager: reloc.address(globals::g_BGSSaveLoadManager_ptr)? as *const *mut skre::BGSSaveLoadManager,
+                game: reloc.address(globals::g_BGSSaveLoadGame_ptr)? as *const *mut skre::BGSSaveLoadGame,
                 remap: crate::resolve(reloc, fns::BGSSaveLoadGame__RemapSavedFormID)?,
                 save: crate::resolve(reloc, fns::BGSSaveLoadManager__Save)?,
                 request_load: crate::resolve(reloc, fns::BGSSaveLoadManager__RequestLoad)?,
@@ -62,7 +62,7 @@ fn fns() -> &'static Fns {
 /// The save/load manager (`BGSSaveLoadManager`, 0x418): the save list, the current save name and
 /// the event source a save or load reports through.
 #[repr(transparent)]
-pub struct SaveLoadManager(classes::BGSSaveLoadManager);
+pub struct SaveLoadManager(skre::BGSSaveLoadManager);
 
 impl SaveLoadManager {
     #[must_use]
@@ -71,11 +71,11 @@ impl SaveLoadManager {
     }
 
     #[must_use]
-    pub fn raw(&self) -> &classes::BGSSaveLoadManager {
+    pub fn raw(&self) -> &skre::BGSSaveLoadManager {
         &self.0
     }
 
-    fn as_ptr(&self) -> *mut classes::BGSSaveLoadManager {
+    fn as_ptr(&self) -> *mut skre::BGSSaveLoadManager {
         (&raw const self.0).cast_mut()
     }
 
@@ -157,7 +157,7 @@ impl Event for SaveLoadEvent {
 
 /// The save format's state (`BGSSaveLoadGame`, 0x348).
 #[repr(transparent)]
-pub struct SaveLoadGame(classes::BGSSaveLoadGame);
+pub struct SaveLoadGame(skre::BGSSaveLoadGame);
 
 impl SaveLoadGame {
     #[must_use]
@@ -166,7 +166,7 @@ impl SaveLoadGame {
     }
 
     #[must_use]
-    pub fn raw(&self) -> &classes::BGSSaveLoadGame {
+    pub fn raw(&self) -> &skre::BGSSaveLoadGame {
         &self.0
     }
 
@@ -184,7 +184,7 @@ impl SaveLoadGame {
     }
 }
 
-fn files(array: &classes::BSTArray) -> &[Option<&TESFile>] {
+fn files(array: &skre::BSTArray) -> &[Option<&TESFile>] {
     if array.data.is_null() {
         return &[];
     }

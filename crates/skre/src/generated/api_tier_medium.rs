@@ -3,9 +3,7 @@
 
 use core::ffi::{c_char, c_void};
 
-use super::{classes, enums};
-
-impl classes::Actor {
+impl crate::Actor {
     /// `Actor::SendAssaultAlarm` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 37424, rva 0x682e70).
     /// `undefined SendAssaultAlarm(Actor * param_1, longlong * * * * * * * param_2, char param_3)`
     ///
@@ -15,7 +13,7 @@ impl classes::Actor {
     pub unsafe fn send_assault_alarm(&self, param_2: *mut *mut *mut *mut *mut *mut *mut i64, param_3: c_char) -> u64 { unsafe { function!(37424, (&Self, *mut *mut *mut *mut *mut *mut *mut i64, c_char) -> u64)(self, param_2, param_3) } }
 }
 
-impl classes::partial::BSGrabIKNote {
+impl crate::BSGrabIKNote {
     /// `BSGrabIKNote::ctor` (decompiler signature, tier medium; ledger layout_inference evidence, name high; id 74037, rva 0xf8b380).
     /// `BSGrabIKNote * ctor(BSGrabIKNote * this, float param_1)`
     ///
@@ -25,7 +23,7 @@ impl classes::partial::BSGrabIKNote {
     pub unsafe fn ctor_2(&self, param_1: f32) -> *mut Self { unsafe { function!(74037, (&Self, f32) -> *mut Self)(self, param_1) } }
 }
 
-impl classes::partial::BSLookIKNote {
+impl crate::BSLookIKNote {
     /// `BSLookIKNote::ctor` (decompiler signature, tier medium; ledger layout_inference evidence, name high; id 74061, rva 0xf8bc50).
     /// `BSLookIKNote * ctor(BSLookIKNote * this, float param_1)`
     ///
@@ -35,7 +33,7 @@ impl classes::partial::BSLookIKNote {
     pub unsafe fn ctor_2(&self, param_1: f32) -> *mut Self { unsafe { function!(74061, (&Self, f32) -> *mut Self)(self, param_1) } }
 }
 
-impl classes::CombatMagicCaster {
+impl crate::CombatMagicCaster {
     /// `CombatMagicCaster::LoadObjectAndActorHandle` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 45437, rva 0x837c90).
     /// `undefined LoadObjectAndActorHandle(CombatMagicCaster * param_1, longlong param_2, undefined8 param_3, undefined8 param_4)`
     ///
@@ -45,7 +43,7 @@ impl classes::CombatMagicCaster {
     pub unsafe fn load_object_and_actor_handle(&self, param_2: i64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(45437, (&Self, i64, u64, u64) -> u64)(self, param_2, param_3, param_4) } }
 }
 
-impl classes::partial::FindTriangleForLocationWaterFilter {
+impl crate::FindTriangleForLocationWaterFilter {
     /// `FindTriangleForLocationWaterFilter::ctor` (decompiler signature, tier medium; ledger layout_inference evidence, name medium; id 90392, rva 0x11b8fb0).
     /// `FindTriangleForLocationWaterFilter * ctor(FindTriangleForLocationWaterFilter * this, float param_1)`
     ///
@@ -55,7 +53,7 @@ impl classes::partial::FindTriangleForLocationWaterFilter {
     pub unsafe fn ctor(&self, param_1: f32) -> *mut Self { unsafe { function!(90392, (&Self, f32) -> *mut Self)(self, param_1) } }
 }
 
-impl classes::GRefCountImplCore {
+impl crate::GRefCountImplCore {
     /// `GRefCountImplCore::DeletingDestructor` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 83421, rva 0xd30d90).
     /// `GRefCountImplCore * DeletingDestructor(GRefCountImplCore * param_1, uint param_2, undefined8 param_3, undefined8 param_4)`
     ///
@@ -282,7 +280,7 @@ impl classes::GRefCountImplCore {
     pub unsafe fn scalar_deleting_dtor_13(&self, param_2: u32, param_3: u64, param_4: u64) -> *mut Self { unsafe { function!(88156, (&Self, u32, u64, u64) -> *mut Self)(self, param_2, param_3, param_4) } }
 }
 
-impl classes::LoadedAreaBound {
+impl crate::LoadedAreaBound {
     /// `LoadedAreaBound::ctor` (decompiler signature, tier medium; ledger layout_inference evidence, name high; id 25944, rva 0x3fff20).
     /// `LoadedAreaBound * ctor(LoadedAreaBound * this, float param_1, float param_2, float param_3, float param_4)`
     ///
@@ -292,7 +290,7 @@ impl classes::LoadedAreaBound {
     pub unsafe fn ctor(&self, param_1: f32, param_2: f32, param_3: f32, param_4: f32) -> *mut Self { unsafe { function!(25944, (&Self, f32, f32, f32, f32) -> *mut Self)(self, param_1, param_2, param_3, param_4) } }
 }
 
-impl classes::MovementAgentActorAvoider {
+impl crate::MovementAgentActorAvoider {
     /// `MovementAgentActorAvoider::IMovementQueryActorAvoidance_vfunc_1` (decompiler signature, tier medium; ledger rtti evidence, name high; id 92196, rva 0x121e550).
     /// `bool IMovementQueryActorAvoidance_vfunc_1(MovementAgentActorAvoider * this, float param_1)`
     ///
@@ -302,7 +300,7 @@ impl classes::MovementAgentActorAvoider {
     pub unsafe fn i_movement_query_actor_avoidance_vfunc_1(&self, param_1: f32) -> u8 { unsafe { function!(92196, (&Self, f32) -> u8)(self, param_1) } }
 }
 
-impl classes::partial::MovementMessageJump {
+impl crate::MovementMessageJump {
     /// `MovementMessageJump::ctor` (decompiler signature, tier medium; ledger layout_inference evidence, name medium; id 92092, rva 0x121b2e0).
     /// `MovementMessageJump * ctor(MovementMessageJump * this, float param_1)`
     ///
@@ -312,7 +310,7 @@ impl classes::partial::MovementMessageJump {
     pub unsafe fn ctor(&self, param_1: f32) -> *mut Self { unsafe { function!(92092, (&Self, f32) -> *mut Self)(self, param_1) } }
 }
 
-impl classes::NiBSplineFloatInterpolator {
+impl crate::NiBSplineFloatInterpolator {
     /// `NiBSplineFloatInterpolator::ctor` (decompiler signature, tier medium; ledger layout_inference evidence, name high; id 73503, rva 0xf7a700).
     /// `NiBSplineFloatInterpolator * ctor(NiBSplineFloatInterpolator * this, float param_1)`
     ///
@@ -322,7 +320,7 @@ impl classes::NiBSplineFloatInterpolator {
     pub unsafe fn ctor(&self, param_1: f32) -> *mut Self { unsafe { function!(73503, (&Self, f32) -> *mut Self)(self, param_1) } }
 }
 
-impl classes::NiFloatInterpolator {
+impl crate::NiFloatInterpolator {
     /// `NiFloatInterpolator::ctor` (decompiler signature, tier medium; ledger layout_inference evidence, name high; id 72688, rva 0xf61650).
     /// `NiFloatInterpolator * ctor(NiFloatInterpolator * this, float param_1)`
     ///
@@ -332,7 +330,7 @@ impl classes::NiFloatInterpolator {
     pub unsafe fn ctor(&self, param_1: f32) -> *mut Self { unsafe { function!(72688, (&Self, f32) -> *mut Self)(self, param_1) } }
 }
 
-impl classes::partial::NiStream {
+impl crate::NiStream {
     /// `NiStream::LoadFromPath` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 75949, rva 0xfd1530).
     /// `undefined1 LoadFromPath(NiStream * param_1, char * param_2, longlong * param_3, undefined8 param_4)`
     ///
@@ -342,7 +340,7 @@ impl classes::partial::NiStream {
     pub unsafe fn load_from_path(&self, param_2: *mut c_char, param_3: *mut i64, param_4: u64) -> u8 { unsafe { function!(75949, (&Self, *mut c_char, *mut i64, u64) -> u8)(self, param_2, param_3, param_4) } }
 }
 
-impl classes::PathingRequestFlyOrbit {
+impl crate::PathingRequestFlyOrbit {
     /// `PathingRequestFlyOrbit::ctor` (decompiler signature, tier medium; ledger layout_inference evidence, name high; id 31351, rva 0x4f7380).
     /// `PathingRequestFlyOrbit * ctor(PathingRequestFlyOrbit * this, float param_1)`
     ///
@@ -352,7 +350,7 @@ impl classes::PathingRequestFlyOrbit {
     pub unsafe fn ctor_2(&self, param_1: f32) -> *mut Self { unsafe { function!(31351, (&Self, f32) -> *mut Self)(self, param_1) } }
 }
 
-impl classes::QueuedFile {
+impl crate::QueuedFile {
     /// `QueuedFile::DestroyQueuedHandlesAndFlushNotify` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 13139, rva 0x19a8a0).
     /// `undefined DestroyQueuedHandlesAndFlushNotify(QueuedFile * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
     ///
@@ -362,7 +360,7 @@ impl classes::QueuedFile {
     pub unsafe fn destroy_queued_handles_and_flush_notify(&self, param_2: u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(13139, (&Self, u64, u64, u64) -> u64)(self, param_2, param_3, param_4) } }
 }
 
-impl classes::partial::SkyrimScript__ObjectBindPolicy {
+impl crate::SkyrimScript__ObjectBindPolicy {
     /// `SkyrimScript::ObjectBindPolicy::dtor` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 54208, rva 0x9ed2c0).
     /// `undefined dtor(ObjectBindPolicy * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
     ///
@@ -372,7 +370,7 @@ impl classes::partial::SkyrimScript__ObjectBindPolicy {
     pub unsafe fn dtor(param_1: *mut c_void, param_2: u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(54208, (*mut c_void, u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
 }
 
-impl classes::TESObjectREFR {
+impl crate::TESObjectREFR {
     /// `TESObjectREFR::SaveAnimationGraphState` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 20098, rva 0x2fc3e0).
     /// `undefined8 SaveAnimationGraphState(TESObjectREFR * param_1, longlong param_2, undefined8 param_3, undefined8 param_4)`
     ///
@@ -389,7 +387,7 @@ impl classes::TESObjectREFR {
     pub unsafe fn set_scale(param_1: *mut i64, param_2: f32) -> u64 { unsafe { function!(19665, (*mut i64, f32) -> u64)(param_1, param_2) } }
 }
 
-impl classes::hkpAllCdPointCollector {
+impl crate::hkpAllCdPointCollector {
     /// `hkpAllCdPointCollector::ScalarDeletingDtor_2` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 78207, rva 0x105e6a0).
     /// `hkpAllCdPointCollector * ScalarDeletingDtor_2(hkpAllCdPointCollector * param_1, ulonglong param_2, undefined8 param_3, undefined8 param_4)`
     ///
@@ -398,10 +396,6 @@ impl classes::hkpAllCdPointCollector {
     #[inline]
     pub unsafe fn scalar_deleting_dtor_2(&self, param_2: u64, param_3: u64, param_4: u64) -> *mut Self { unsafe { function!(78207, (&Self, u64, u64, u64) -> *mut Self)(self, param_2, param_3, param_4) } }
 }
-
-/// Functions of no laid-out class; `super::functions` re-exports them.
-pub mod functions {
-    use super::*;
 
 /// `AabbsOverlap` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 90418, rva 0x11bc2c0).
 /// `undefined8 AabbsOverlap(undefined8 param_1, float * param_2, float * param_3, float * param_4, float * param_5)`
@@ -871,7 +865,7 @@ pub unsafe fn add_ref_ptr_to_first_free_slot(param_1: i64, param_2: *mut i64, pa
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn add_ref_to_cell_if_position_inside(param_1: u64, param_2: *mut classes::TESObjectCELL, param_3: *mut *mut i64) -> u64 { unsafe { function!(13725, (u64, *mut classes::TESObjectCELL, *mut *mut i64) -> u64)(param_1, param_2, param_3) } }
+pub unsafe fn add_ref_to_cell_if_position_inside(param_1: u64, param_2: *mut crate::TESObjectCELL, param_3: *mut *mut i64) -> u64 { unsafe { function!(13725, (u64, *mut crate::TESObjectCELL, *mut *mut i64) -> u64)(param_1, param_2, param_3) } }
 /// `AddRefValueCollectable` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 82862, rva 0xd0b670).
 /// `undefined AddRefValueCollectable(char * param_1, longlong param_2)`
 ///
@@ -3027,14 +3021,14 @@ pub unsafe fn apply_actor_value_regen_for_elapsed_time(param_1: i64, param_2: i3
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn apply_attack_hit_from_handle128_actor(param_1: i64, param_2: *mut classes::TESObjectREFR) -> u64 { unsafe { function!(44218, (i64, *mut classes::TESObjectREFR) -> u64)(param_1, param_2) } }
+pub unsafe fn apply_attack_hit_from_handle128_actor(param_1: i64, param_2: *mut crate::TESObjectREFR) -> u64 { unsafe { function!(44218, (i64, *mut crate::TESObjectREFR) -> u64)(param_1, param_2) } }
 /// `ApplyAttackHitToTarget` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 38627, rva 0x6cd2f0).
 /// `undefined ApplyAttackHitToTarget(TESObjectREFR * param_1, TESObjectREFR * param_2, longlong param_3, byte param_4)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn apply_attack_hit_to_target(param_1: *mut classes::TESObjectREFR, param_2: *mut classes::TESObjectREFR, param_3: i64, param_4: u8) -> u64 { unsafe { function!(38627, (*mut classes::TESObjectREFR, *mut classes::TESObjectREFR, i64, u8) -> u64)(param_1, param_2, param_3, param_4) } }
+pub unsafe fn apply_attack_hit_to_target(param_1: *mut crate::TESObjectREFR, param_2: *mut crate::TESObjectREFR, param_3: i64, param_4: u8) -> u64 { unsafe { function!(38627, (*mut crate::TESObjectREFR, *mut crate::TESObjectREFR, i64, u8) -> u64)(param_1, param_2, param_3, param_4) } }
 /// `ApplyCrimeGoldSkillPenalty` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 41579, rva 0x78ef00).
 /// `undefined ApplyCrimeGoldSkillPenalty(longlong param_1, uint param_2)`
 ///
@@ -3048,7 +3042,7 @@ pub unsafe fn apply_crime_gold_skill_penalty(param_1: i64, param_2: u32) -> u64 
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn apply_fall_damage(param_1: *mut classes::TESObjectREFR) -> u64 { unsafe { function!(37336, (*mut classes::TESObjectREFR) -> u64)(param_1) } }
+pub unsafe fn apply_fall_damage(param_1: *mut crate::TESObjectREFR) -> u64 { unsafe { function!(37336, (*mut crate::TESObjectREFR) -> u64)(param_1) } }
 /// `ApplyField30ModeToField20RigidBody` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 78918, rva 0x108d780).
 /// `undefined ApplyField30ModeToField20RigidBody(longlong param_1)`
 ///
@@ -5771,14 +5765,14 @@ pub unsafe fn clone_b_net_result_func_impl(param_1: *mut u64, param_2: u64, para
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn clone_ball_and_socket_constraint_data(param_1: i64) -> *mut classes::partial::hkpBallAndSocketConstraintData { unsafe { function!(62292, (i64) -> *mut classes::partial::hkpBallAndSocketConstraintData)(param_1) } }
+pub unsafe fn clone_ball_and_socket_constraint_data(param_1: i64) -> *mut crate::hkpBallAndSocketConstraintData { unsafe { function!(62292, (i64) -> *mut crate::hkpBallAndSocketConstraintData)(param_1) } }
 /// `CloneConvexHull` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 80853, rva 0x10f0fe0).
 /// `hkgpConvexHull * CloneConvexHull(longlong param_1)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn clone_convex_hull(param_1: i64) -> *mut classes::partial::hkgpConvexHull { unsafe { function!(80853, (i64) -> *mut classes::partial::hkgpConvexHull)(param_1) } }
+pub unsafe fn clone_convex_hull(param_1: i64) -> *mut crate::hkgpConvexHull { unsafe { function!(80853, (i64) -> *mut crate::hkgpConvexHull)(param_1) } }
 /// `CloneCountedStringBuffer` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 107927, rva 0x156e570).
 /// `longlong * CloneCountedStringBuffer(void * param_1)`
 ///
@@ -5792,14 +5786,14 @@ pub unsafe fn clone_counted_string_buffer(param_1: *mut c_void) -> *mut i64 { un
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn clone_face_gen_animation_data(param_1: i64, param_2: u64, param_3: u64, param_4: u64) -> *mut classes::BSFaceGenAnimationData { unsafe { function!(26608, (i64, u64, u64, u64) -> *mut classes::BSFaceGenAnimationData)(param_1, param_2, param_3, param_4) } }
+pub unsafe fn clone_face_gen_animation_data(param_1: i64, param_2: u64, param_3: u64, param_4: u64) -> *mut crate::BSFaceGenAnimationData { unsafe { function!(26608, (i64, u64, u64, u64) -> *mut crate::BSFaceGenAnimationData)(param_1, param_2, param_3, param_4) } }
 /// `CloneHingeConstraintData` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 62293, rva 0xb87b80).
 /// `hkpHingeConstraintData * CloneHingeConstraintData(longlong param_1)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn clone_hinge_constraint_data(param_1: i64) -> *mut classes::partial::hkpHingeConstraintData { unsafe { function!(62293, (i64) -> *mut classes::partial::hkpHingeConstraintData)(param_1) } }
+pub unsafe fn clone_hinge_constraint_data(param_1: i64) -> *mut crate::hkpHingeConstraintData { unsafe { function!(62293, (i64) -> *mut crate::hkpHingeConstraintData)(param_1) } }
 /// `CloneHingeLimitsData` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 62294, rva 0xb87be0).
 /// `longlong CloneHingeLimitsData(longlong param_1)`
 ///
@@ -5813,7 +5807,7 @@ pub unsafe fn clone_hinge_limits_data(param_1: i64) -> i64 { unsafe { function!(
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn clone_limited_hinge_constraint_data(param_1: i64) -> *mut classes::partial::hkpLimitedHingeConstraintData { unsafe { function!(62295, (i64) -> *mut classes::partial::hkpLimitedHingeConstraintData)(param_1) } }
+pub unsafe fn clone_limited_hinge_constraint_data(param_1: i64) -> *mut crate::hkpLimitedHingeConstraintData { unsafe { function!(62295, (i64) -> *mut crate::hkpLimitedHingeConstraintData)(param_1) } }
 /// `ClonePointToPathConstraintData` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 62296, rva 0xb87ca0).
 /// `longlong ClonePointToPathConstraintData(longlong param_1)`
 ///
@@ -5834,7 +5828,7 @@ pub unsafe fn clone_point_to_plane_constraint_data(param_1: i64) -> i64 { unsafe
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn clone_prismatic_constraint_data(param_1: i64) -> *mut classes::partial::hkpPrismaticConstraintData { unsafe { function!(62298, (i64) -> *mut classes::partial::hkpPrismaticConstraintData)(param_1) } }
+pub unsafe fn clone_prismatic_constraint_data(param_1: i64) -> *mut crate::hkpPrismaticConstraintData { unsafe { function!(62298, (i64) -> *mut crate::hkpPrismaticConstraintData)(param_1) } }
 /// `ClonePulleyConstraintData` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 62299, rva 0xb87dc0).
 /// `longlong ClonePulleyConstraintData(longlong param_1)`
 ///
@@ -5848,7 +5842,7 @@ pub unsafe fn clone_pulley_constraint_data(param_1: i64) -> i64 { unsafe { funct
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn clone_ragdoll_constraint_data(param_1: i64) -> *mut classes::partial::hkpRagdollConstraintData { unsafe { function!(62300, (i64) -> *mut classes::partial::hkpRagdollConstraintData)(param_1) } }
+pub unsafe fn clone_ragdoll_constraint_data(param_1: i64) -> *mut crate::hkpRagdollConstraintData { unsafe { function!(62300, (i64) -> *mut crate::hkpRagdollConstraintData)(param_1) } }
 /// `CloneRagdollLimitsData` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 62301, rva 0xb87e80).
 /// `longlong CloneRagdollLimitsData(longlong param_1)`
 ///
@@ -5862,7 +5856,7 @@ pub unsafe fn clone_ragdoll_limits_data(param_1: i64) -> i64 { unsafe { function
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn clone_stiff_spring_constraint_data(param_1: i64) -> *mut classes::partial::hkpStiffSpringConstraintData { unsafe { function!(62302, (i64) -> *mut classes::partial::hkpStiffSpringConstraintData)(param_1) } }
+pub unsafe fn clone_stiff_spring_constraint_data(param_1: i64) -> *mut crate::hkpStiffSpringConstraintData { unsafe { function!(62302, (i64) -> *mut crate::hkpStiffSpringConstraintData)(param_1) } }
 /// `CloneWaveFormatAsExtensible` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 70, rva 0x3174).
 /// `undefined2 * CloneWaveFormatAsExtensible(ushort * param_1)`
 ///
@@ -6555,7 +6549,7 @@ pub unsafe fn compute_cell_grid_origin(param_1: i64, param_2: *mut f32) -> *mut 
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn compute_cell_placement_position_and_rotation(param_1: *mut classes::TESObjectCELL, param_2: *mut classes::TESObjectCELL, param_3: *mut u32, param_4: u64) -> u64 { unsafe { function!(19075, (*mut classes::TESObjectCELL, *mut classes::TESObjectCELL, *mut u32, u64) -> u64)(param_1, param_2, param_3, param_4) } }
+pub unsafe fn compute_cell_placement_position_and_rotation(param_1: *mut crate::TESObjectCELL, param_2: *mut crate::TESObjectCELL, param_3: *mut u32, param_4: u64) -> u64 { unsafe { function!(19075, (*mut crate::TESObjectCELL, *mut crate::TESObjectCELL, *mut u32, u64) -> u64)(param_1, param_2, param_3, param_4) } }
 /// `ComputeCircleCommonTangents2D` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 91544, rva 0x11fc8b0).
 /// `ulonglong ComputeCircleCommonTangents2D(float * param_1, float * param_2, int param_3, undefined4 * param_4)`
 ///
@@ -8676,7 +8670,7 @@ pub unsafe fn construct_functional_callable_in_buffer_or_heap_9(param_1: *mut u6
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn construct_model_subclass(param_1: *mut classes::TESModel, param_2: u64, param_3: u64, param_4: u64) -> *mut classes::TESModel { unsafe { function!(18106, (*mut classes::TESModel, u64, u64, u64) -> *mut classes::TESModel)(param_1, param_2, param_3, param_4) } }
+pub unsafe fn construct_model_subclass(param_1: *mut crate::TESModel, param_2: u64, param_3: u64, param_4: u64) -> *mut crate::TESModel { unsafe { function!(18106, (*mut crate::TESModel, u64, u64, u64) -> *mut crate::TESModel)(param_1, param_2, param_3, param_4) } }
 /// `ConstructObjectListItemRange` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 27746, rva 0x453370).
 /// `undefined ConstructObjectListItemRange(longlong * param_1, ulonglong param_2, uint param_3)`
 ///
@@ -10146,140 +10140,140 @@ pub unsafe fn create_async_operation_and_enqueue_9(param_1: *mut c_void, param_2
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn create_bs_blast_node(param_1: u64, param_2: u64, param_3: u64, param_4: u64) -> *mut classes::BSRangeNode { unsafe { function!(76234, (u64, u64, u64, u64) -> *mut classes::BSRangeNode)(param_1, param_2, param_3, param_4) } }
+pub unsafe fn create_bs_blast_node(param_1: u64, param_2: u64, param_3: u64, param_4: u64) -> *mut crate::BSRangeNode { unsafe { function!(76234, (u64, u64, u64, u64) -> *mut crate::BSRangeNode)(param_1, param_2, param_3, param_4) } }
 /// `CreateBSBoneLODExtraData` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 77000, rva 0xfff720).
 /// `NiExtraData * CreateBSBoneLODExtraData(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn create_bs_bone_lod_extra_data(param_1: u64, param_2: u64, param_3: u64, param_4: u64) -> *mut classes::NiExtraData { unsafe { function!(77000, (u64, u64, u64, u64) -> *mut classes::NiExtraData)(param_1, param_2, param_3, param_4) } }
+pub unsafe fn create_bs_bone_lod_extra_data(param_1: u64, param_2: u64, param_3: u64, param_4: u64) -> *mut crate::NiExtraData { unsafe { function!(77000, (u64, u64, u64, u64) -> *mut crate::NiExtraData)(param_1, param_2, param_3, param_4) } }
 /// `CreateBSDamageStage` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 76256, rva 0xfdffc0).
 /// `BSRangeNode * CreateBSDamageStage(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn create_bs_damage_stage(param_1: u64, param_2: u64, param_3: u64, param_4: u64) -> *mut classes::BSRangeNode { unsafe { function!(76256, (u64, u64, u64, u64) -> *mut classes::BSRangeNode)(param_1, param_2, param_3, param_4) } }
+pub unsafe fn create_bs_damage_stage(param_1: u64, param_2: u64, param_3: u64, param_4: u64) -> *mut crate::BSRangeNode { unsafe { function!(76256, (u64, u64, u64, u64) -> *mut crate::BSRangeNode)(param_1, param_2, param_3, param_4) } }
 /// `CreateBSDebrisNode` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 76245, rva 0xfdfd60).
 /// `BSRangeNode * CreateBSDebrisNode(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn create_bs_debris_node(param_1: u64, param_2: u64, param_3: u64, param_4: u64) -> *mut classes::BSRangeNode { unsafe { function!(76245, (u64, u64, u64, u64) -> *mut classes::BSRangeNode)(param_1, param_2, param_3, param_4) } }
+pub unsafe fn create_bs_debris_node(param_1: u64, param_2: u64, param_3: u64, param_4: u64) -> *mut crate::BSRangeNode { unsafe { function!(76245, (u64, u64, u64, u64) -> *mut crate::BSRangeNode)(param_1, param_2, param_3, param_4) } }
 /// `CreateBSDecalPlacementVectorExtraData` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 77043, rva 0x1000fb0).
 /// `NiExtraData * CreateBSDecalPlacementVectorExtraData(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn create_bs_decal_placement_vector_extra_data(param_1: u64, param_2: u64, param_3: u64, param_4: u64) -> *mut classes::NiExtraData { unsafe { function!(77043, (u64, u64, u64, u64) -> *mut classes::NiExtraData)(param_1, param_2, param_3, param_4) } }
+pub unsafe fn create_bs_decal_placement_vector_extra_data(param_1: u64, param_2: u64, param_3: u64, param_4: u64) -> *mut crate::NiExtraData { unsafe { function!(77043, (u64, u64, u64, u64) -> *mut crate::NiExtraData)(param_1, param_2, param_3, param_4) } }
 /// `CreateBSInvMarker` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 76985, rva 0xffefe0).
 /// `NiExtraData * CreateBSInvMarker(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn create_bs_inv_marker(param_1: u64, param_2: u64, param_3: u64, param_4: u64) -> *mut classes::NiExtraData { unsafe { function!(76985, (u64, u64, u64, u64) -> *mut classes::NiExtraData)(param_1, param_2, param_3, param_4) } }
+pub unsafe fn create_bs_inv_marker(param_1: u64, param_2: u64, param_3: u64, param_4: u64) -> *mut crate::NiExtraData { unsafe { function!(76985, (u64, u64, u64, u64) -> *mut crate::NiExtraData)(param_1, param_2, param_3, param_4) } }
 /// `CreateBSMultiBoundCapsule` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 77093, rva 0x1002670).
 /// `BSMultiBoundShape * CreateBSMultiBoundCapsule(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn create_bs_multi_bound_capsule(param_1: u64, param_2: u64, param_3: u64, param_4: u64) -> *mut classes::BSMultiBoundShape { unsafe { function!(77093, (u64, u64, u64, u64) -> *mut classes::BSMultiBoundShape)(param_1, param_2, param_3, param_4) } }
+pub unsafe fn create_bs_multi_bound_capsule(param_1: u64, param_2: u64, param_3: u64, param_4: u64) -> *mut crate::BSMultiBoundShape { unsafe { function!(77093, (u64, u64, u64, u64) -> *mut crate::BSMultiBoundShape)(param_1, param_2, param_3, param_4) } }
 /// `CreateBSMultiBoundOBB` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 75928, rva 0xfcf780).
 /// `BSMultiBoundAABB * CreateBSMultiBoundOBB(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn create_bs_multi_bound_obb(param_1: u64, param_2: u64, param_3: u64, param_4: u64) -> *mut classes::partial::BSMultiBoundAABB { unsafe { function!(75928, (u64, u64, u64, u64) -> *mut classes::partial::BSMultiBoundAABB)(param_1, param_2, param_3, param_4) } }
+pub unsafe fn create_bs_multi_bound_obb(param_1: u64, param_2: u64, param_3: u64, param_4: u64) -> *mut crate::BSMultiBoundAABB { unsafe { function!(75928, (u64, u64, u64, u64) -> *mut crate::BSMultiBoundAABB)(param_1, param_2, param_3, param_4) } }
 /// `CreateBSNodeReferences` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 77031, rva 0x1000510).
 /// `NiObject * CreateBSNodeReferences(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn create_bs_node_references(param_1: u64, param_2: u64, param_3: u64, param_4: u64) -> *mut classes::NiObject { unsafe { function!(77031, (u64, u64, u64, u64) -> *mut classes::NiObject)(param_1, param_2, param_3, param_4) } }
+pub unsafe fn create_bs_node_references(param_1: u64, param_2: u64, param_3: u64, param_4: u64) -> *mut crate::NiObject { unsafe { function!(77031, (u64, u64, u64, u64) -> *mut crate::NiObject)(param_1, param_2, param_3, param_4) } }
 /// `CreateBSNonUniformScaleExtraData` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 77173, rva 0x1004d80).
 /// `NiExtraData * CreateBSNonUniformScaleExtraData(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn create_bs_non_uniform_scale_extra_data(param_1: u64, param_2: u64, param_3: u64, param_4: u64) -> *mut classes::NiExtraData { unsafe { function!(77173, (u64, u64, u64, u64) -> *mut classes::NiExtraData)(param_1, param_2, param_3, param_4) } }
+pub unsafe fn create_bs_non_uniform_scale_extra_data(param_1: u64, param_2: u64, param_3: u64, param_4: u64) -> *mut crate::NiExtraData { unsafe { function!(77173, (u64, u64, u64, u64) -> *mut crate::NiExtraData)(param_1, param_2, param_3, param_4) } }
 /// `CreateBSPSysScaleModifier` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 77142, rva 0x1003a20).
 /// `NiPSysModifier * CreateBSPSysScaleModifier(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn create_bsp_sys_scale_modifier(param_1: u64, param_2: u64, param_3: u64, param_4: u64) -> *mut classes::NiPSysModifier { unsafe { function!(77142, (u64, u64, u64, u64) -> *mut classes::NiPSysModifier)(param_1, param_2, param_3, param_4) } }
+pub unsafe fn create_bsp_sys_scale_modifier(param_1: u64, param_2: u64, param_3: u64, param_4: u64) -> *mut crate::NiPSysModifier { unsafe { function!(77142, (u64, u64, u64, u64) -> *mut crate::NiPSysModifier)(param_1, param_2, param_3, param_4) } }
 /// `CreateBSPSysStripUpdateModifier` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 77112, rva 0x1002aa0).
 /// `NiPSysModifier * CreateBSPSysStripUpdateModifier(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn create_bsp_sys_strip_update_modifier(param_1: u64, param_2: u64, param_3: u64, param_4: u64) -> *mut classes::NiPSysModifier { unsafe { function!(77112, (u64, u64, u64, u64) -> *mut classes::NiPSysModifier)(param_1, param_2, param_3, param_4) } }
+pub unsafe fn create_bsp_sys_strip_update_modifier(param_1: u64, param_2: u64, param_3: u64, param_4: u64) -> *mut crate::NiPSysModifier { unsafe { function!(77112, (u64, u64, u64, u64) -> *mut crate::NiPSysModifier)(param_1, param_2, param_3, param_4) } }
 /// `CreateBSPSysSubTexModifier` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 77128, rva 0x10032d0).
 /// `NiPSysModifier * CreateBSPSysSubTexModifier(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn create_bsp_sys_sub_tex_modifier(param_1: u64, param_2: u64, param_3: u64, param_4: u64) -> *mut classes::NiPSysModifier { unsafe { function!(77128, (u64, u64, u64, u64) -> *mut classes::NiPSysModifier)(param_1, param_2, param_3, param_4) } }
+pub unsafe fn create_bsp_sys_sub_tex_modifier(param_1: u64, param_2: u64, param_3: u64, param_4: u64) -> *mut crate::NiPSysModifier { unsafe { function!(77128, (u64, u64, u64, u64) -> *mut crate::NiPSysModifier)(param_1, param_2, param_3, param_4) } }
 /// `CreateBSRangeNode` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 76200, rva 0xfdd750).
 /// `BSNiNode * CreateBSRangeNode(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn create_bs_range_node(param_1: u64, param_2: u64, param_3: u64, param_4: u64) -> *mut classes::BSNiNode { unsafe { function!(76200, (u64, u64, u64, u64) -> *mut classes::BSNiNode)(param_1, param_2, param_3, param_4) } }
+pub unsafe fn create_bs_range_node(param_1: u64, param_2: u64, param_3: u64, param_4: u64) -> *mut crate::BSNiNode { unsafe { function!(76200, (u64, u64, u64, u64) -> *mut crate::BSNiNode)(param_1, param_2, param_3, param_4) } }
 /// `CreateBSReference` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 77024, rva 0x1000220).
 /// `NiObject * CreateBSReference(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn create_bs_reference(param_1: u64, param_2: u64, param_3: u64, param_4: u64) -> *mut classes::NiObject { unsafe { function!(77024, (u64, u64, u64, u64) -> *mut classes::NiObject)(param_1, param_2, param_3, param_4) } }
+pub unsafe fn create_bs_reference(param_1: u64, param_2: u64, param_3: u64, param_4: u64) -> *mut crate::NiObject { unsafe { function!(77024, (u64, u64, u64, u64) -> *mut crate::NiObject)(param_1, param_2, param_3, param_4) } }
 /// `CreateBSStripPSysData` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 75492, rva 0xfbd880).
 /// `NiPSysData * CreateBSStripPSysData(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn create_bs_strip_p_sys_data(param_1: u64, param_2: u64, param_3: u64, param_4: u64) -> *mut classes::NiPSysData { unsafe { function!(75492, (u64, u64, u64, u64) -> *mut classes::NiPSysData)(param_1, param_2, param_3, param_4) } }
+pub unsafe fn create_bs_strip_p_sys_data(param_1: u64, param_2: u64, param_3: u64, param_4: u64) -> *mut crate::NiPSysData { unsafe { function!(75492, (u64, u64, u64, u64) -> *mut crate::NiPSysData)(param_1, param_2, param_3, param_4) } }
 /// `CreateBSValueNode` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 75995, rva 0xfd3470).
 /// `BSNiNode * CreateBSValueNode(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn create_bs_value_node(param_1: u64, param_2: u64, param_3: u64, param_4: u64) -> *mut classes::BSNiNode { unsafe { function!(75995, (u64, u64, u64, u64) -> *mut classes::BSNiNode)(param_1, param_2, param_3, param_4) } }
+pub unsafe fn create_bs_value_node(param_1: u64, param_2: u64, param_3: u64, param_4: u64) -> *mut crate::BSNiNode { unsafe { function!(75995, (u64, u64, u64, u64) -> *mut crate::BSNiNode)(param_1, param_2, param_3, param_4) } }
 /// `CreateBSWArray` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 77076, rva 0x1002010).
 /// `NiExtraData * CreateBSWArray(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn create_bsw_array(param_1: u64, param_2: u64, param_3: u64, param_4: u64) -> *mut classes::NiExtraData { unsafe { function!(77076, (u64, u64, u64, u64) -> *mut classes::NiExtraData)(param_1, param_2, param_3, param_4) } }
+pub unsafe fn create_bsw_array(param_1: u64, param_2: u64, param_3: u64, param_4: u64) -> *mut crate::NiExtraData { unsafe { function!(77076, (u64, u64, u64, u64) -> *mut crate::NiExtraData)(param_1, param_2, param_3, param_4) } }
 /// `CreateBSWindModifier` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 76099, rva 0xfd8d00).
 /// `NiPSysModifier * CreateBSWindModifier(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn create_bs_wind_modifier(param_1: u64, param_2: u64, param_3: u64, param_4: u64) -> *mut classes::NiPSysModifier { unsafe { function!(76099, (u64, u64, u64, u64) -> *mut classes::NiPSysModifier)(param_1, param_2, param_3, param_4) } }
+pub unsafe fn create_bs_wind_modifier(param_1: u64, param_2: u64, param_3: u64, param_4: u64) -> *mut crate::NiPSysModifier { unsafe { function!(76099, (u64, u64, u64, u64) -> *mut crate::NiPSysModifier)(param_1, param_2, param_3, param_4) } }
 /// `CreateBSXFlags` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 75978, rva 0xfd2e20).
 /// `NiExtraData * CreateBSXFlags(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn create_bsx_flags(param_1: u64, param_2: u64, param_3: u64, param_4: u64) -> *mut classes::NiExtraData { unsafe { function!(75978, (u64, u64, u64, u64) -> *mut classes::NiExtraData)(param_1, param_2, param_3, param_4) } }
+pub unsafe fn create_bsx_flags(param_1: u64, param_2: u64, param_3: u64, param_4: u64) -> *mut crate::NiExtraData { unsafe { function!(75978, (u64, u64, u64, u64) -> *mut crate::NiExtraData)(param_1, param_2, param_3, param_4) } }
 /// `CreateBucketArray1031` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 81906, rva 0x1152f70).
 /// `undefined CreateBucketArray1031(undefined8 * param_1)`
 ///
@@ -10293,7 +10287,7 @@ pub unsafe fn create_bucket_array1031(param_1: *mut u64) -> u64 { unsafe { funct
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn create_cell_in_sparse_array_d08(param_1: i64, param_2: u64, param_3: u64, param_4: u64) -> *mut classes::TESObjectCELL { unsafe { function!(13711, (i64, u64, u64, u64) -> *mut classes::TESObjectCELL)(param_1, param_2, param_3, param_4) } }
+pub unsafe fn create_cell_in_sparse_array_d08(param_1: i64, param_2: u64, param_3: u64, param_4: u64) -> *mut crate::TESObjectCELL { unsafe { function!(13711, (i64, u64, u64, u64) -> *mut crate::TESObjectCELL)(param_1, param_2, param_3, param_4) } }
 /// `CreateD3D11OcclusionQueries` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 77404, rva 0x1012ed0).
 /// `undefined CreateD3D11OcclusionQueries(void)`
 ///
@@ -10321,7 +10315,7 @@ pub unsafe fn create_directory_path(param_1: *mut c_char) -> c_char { unsafe { f
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn create_enchantment_item(param_1: *mut i64, param_2: u8, param_3: u64, param_4: u64) -> *mut classes::EnchantmentItem { unsafe { function!(36178, (*mut i64, u8, u64, u64) -> *mut classes::EnchantmentItem)(param_1, param_2, param_3, param_4) } }
+pub unsafe fn create_enchantment_item(param_1: *mut i64, param_2: u8, param_3: u64, param_4: u64) -> *mut crate::EnchantmentItem { unsafe { function!(36178, (*mut i64, u8, u64, u64) -> *mut crate::EnchantmentItem)(param_1, param_2, param_3, param_4) } }
 /// `CreateFlowMapTexture` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 32034, rva 0x521920).
 /// `undefined CreateFlowMapTexture(undefined8 param_1, int param_2, int param_3)`
 ///
@@ -10335,14 +10329,14 @@ pub unsafe fn create_flow_map_texture(param_1: u64, param_2: i32, param_3: i32) 
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn create_image_space_modifier_instance_dof(param_1: f32, param_2: f32, param_3: u64, param_4: f32, param_5: f32) -> *mut classes::ImageSpaceModifierInstanceDOF { unsafe { function!(18584, (f32, f32, u64, f32, f32) -> *mut classes::ImageSpaceModifierInstanceDOF)(param_1, param_2, param_3, param_4, param_5) } }
+pub unsafe fn create_image_space_modifier_instance_dof(param_1: f32, param_2: f32, param_3: u64, param_4: f32, param_5: f32) -> *mut crate::ImageSpaceModifierInstanceDOF { unsafe { function!(18584, (f32, f32, u64, f32, f32) -> *mut crate::ImageSpaceModifierInstanceDOF)(param_1, param_2, param_3, param_4, param_5) } }
 /// `CreateInventoryGrenadeProjectile` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 44109, rva 0x7f9ae0).
 /// `GrenadeProjectile * CreateInventoryGrenadeProjectile(longlong param_1, GrenadeProjectile * param_2, longlong param_3, undefined8 param_4)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn create_inventory_grenade_projectile(param_1: i64, param_2: *mut classes::GrenadeProjectile, param_3: i64, param_4: u64) -> *mut classes::GrenadeProjectile { unsafe { function!(44109, (i64, *mut classes::GrenadeProjectile, i64, u64) -> *mut classes::GrenadeProjectile)(param_1, param_2, param_3, param_4) } }
+pub unsafe fn create_inventory_grenade_projectile(param_1: i64, param_2: *mut crate::GrenadeProjectile, param_3: i64, param_4: u64) -> *mut crate::GrenadeProjectile { unsafe { function!(44109, (i64, *mut crate::GrenadeProjectile, i64, u64) -> *mut crate::GrenadeProjectile)(param_1, param_2, param_3, param_4) } }
 /// `CreateLightsForDefIndex` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 52747, rva 0x98be80).
 /// `undefined CreateLightsForDefIndex(longlong param_1, uint param_2)`
 ///
@@ -10377,42 +10371,42 @@ pub unsafe fn create_movie_into_slot(param_1: i64, param_2: *mut u64, param_3: *
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn create_multi_bound_room_for_ref_handle(param_1: *mut u32, param_2: u64, param_3: u64, param_4: u64) -> *mut classes::BSMultiBoundRoom { unsafe { function!(12964, (*mut u32, u64, u64, u64) -> *mut classes::BSMultiBoundRoom)(param_1, param_2, param_3, param_4) } }
+pub unsafe fn create_multi_bound_room_for_ref_handle(param_1: *mut u32, param_2: u64, param_3: u64, param_4: u64) -> *mut crate::BSMultiBoundRoom { unsafe { function!(12964, (*mut u32, u64, u64, u64) -> *mut crate::BSMultiBoundRoom)(param_1, param_2, param_3, param_4) } }
 /// `CreateMultiGoalCombatPath` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 50519, rva 0x8ece50).
 /// `CombatPath * CreateMultiGoalCombatPath(longlong param_1, longlong param_2, ulonglong param_3, undefined8 param_4)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn create_multi_goal_combat_path(param_1: i64, param_2: i64, param_3: u64, param_4: u64) -> *mut classes::CombatPath { unsafe { function!(50519, (i64, i64, u64, u64) -> *mut classes::CombatPath)(param_1, param_2, param_3, param_4) } }
+pub unsafe fn create_multi_goal_combat_path(param_1: i64, param_2: i64, param_3: u64, param_4: u64) -> *mut crate::CombatPath { unsafe { function!(50519, (i64, i64, u64, u64) -> *mut crate::CombatPath)(param_1, param_2, param_3, param_4) } }
 /// `CreateNiNode` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 74695, rva 0xee3090).
 /// `NiAVObject * CreateNiNode(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn create_ni_node(param_1: u64, param_2: u64, param_3: u64, param_4: u64) -> *mut classes::NiAVObject { unsafe { function!(74695, (u64, u64, u64, u64) -> *mut classes::NiAVObject)(param_1, param_2, param_3, param_4) } }
+pub unsafe fn create_ni_node(param_1: u64, param_2: u64, param_3: u64, param_4: u64) -> *mut crate::NiAVObject { unsafe { function!(74695, (u64, u64, u64, u64) -> *mut crate::NiAVObject)(param_1, param_2, param_3, param_4) } }
 /// `CreateNiPSysVortexFieldModifier` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 75474, rva 0xfbc150).
 /// `NiPSysFieldModifier * CreateNiPSysVortexFieldModifier(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn create_ni_p_sys_vortex_field_modifier(param_1: u64, param_2: u64, param_3: u64, param_4: u64) -> *mut classes::NiPSysFieldModifier { unsafe { function!(75474, (u64, u64, u64, u64) -> *mut classes::NiPSysFieldModifier)(param_1, param_2, param_3, param_4) } }
+pub unsafe fn create_ni_p_sys_vortex_field_modifier(param_1: u64, param_2: u64, param_3: u64, param_4: u64) -> *mut crate::NiPSysFieldModifier { unsafe { function!(75474, (u64, u64, u64, u64) -> *mut crate::NiPSysFieldModifier)(param_1, param_2, param_3, param_4) } }
 /// `CreatePArrayPoint` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 76274, rva 0xfe08d0).
 /// `NiExtraData * CreatePArrayPoint(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn create_p_array_point(param_1: u64, param_2: u64, param_3: u64, param_4: u64) -> *mut classes::NiExtraData { unsafe { function!(76274, (u64, u64, u64, u64) -> *mut classes::NiExtraData)(param_1, param_2, param_3, param_4) } }
+pub unsafe fn create_p_array_point(param_1: u64, param_2: u64, param_3: u64, param_4: u64) -> *mut crate::NiExtraData { unsafe { function!(76274, (u64, u64, u64, u64) -> *mut crate::NiExtraData)(param_1, param_2, param_3, param_4) } }
 /// `CreatePhysicsSystem` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 61422, rva 0xb5b420).
 /// `hkpPhysicsSystem * CreatePhysicsSystem(longlong param_1)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn create_physics_system(param_1: i64) -> *mut classes::partial::hkpPhysicsSystem { unsafe { function!(61422, (i64) -> *mut classes::partial::hkpPhysicsSystem)(param_1) } }
+pub unsafe fn create_physics_system(param_1: i64) -> *mut crate::hkpPhysicsSystem { unsafe { function!(61422, (i64) -> *mut crate::hkpPhysicsSystem)(param_1) } }
 /// `CreatePlayerCharacter` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 36629, rva 0x65d250).
 /// `undefined CreatePlayerCharacter(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 ///
@@ -10468,7 +10462,7 @@ pub unsafe fn create_simple_mesh_shape_from_geometry(param_1: *mut i64) -> i64 {
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn create_system_file_storage_for_path(param_1: *mut u8, param_2: u64) -> *mut classes::BSSystemFileStorage { unsafe { function!(523865, (*mut u8, u64) -> *mut classes::BSSystemFileStorage)(param_1, param_2) } }
+pub unsafe fn create_system_file_storage_for_path(param_1: *mut u8, param_2: u64) -> *mut crate::BSSystemFileStorage { unsafe { function!(523865, (*mut u8, u64) -> *mut crate::BSSystemFileStorage)(param_1, param_2) } }
 /// `CreateTextObjectAt` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 82494, rva 0x1178880).
 /// `longlong * CreateTextObjectAt(undefined8 param_1, float param_2, float param_3, int param_4)`
 ///
@@ -10489,7 +10483,7 @@ pub unsafe fn create_thread_local_buffer_state() -> u64 { unsafe { function!(572
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn create_value_modifier_effect_subclass(param_1: i64, param_2: u64, param_3: *mut u32) -> *mut classes::ValueModifierEffect { unsafe { function!(35025, (i64, u64, *mut u32) -> *mut classes::ValueModifierEffect)(param_1, param_2, param_3) } }
+pub unsafe fn create_value_modifier_effect_subclass(param_1: i64, param_2: u64, param_3: *mut u32) -> *mut crate::ValueModifierEffect { unsafe { function!(35025, (i64, u64, *mut u32) -> *mut crate::ValueModifierEffect)(param_1, param_2, param_3) } }
 /// `DeactivateSlotByIdLocked` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 68859, rva 0xea4000).
 /// `undefined DeactivateSlotByIdLocked(int param_1)`
 ///
@@ -11210,7 +11204,7 @@ pub unsafe fn deleting_destructor178(param_1: *mut c_void, param_2: u64, param_3
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn deleting_dtor_g_ref_count_object_with_buffer20(param_1: *mut classes::GRefCountImplCore, param_2: u32, param_3: u64, param_4: u64) -> *mut classes::GRefCountImplCore { unsafe { function!(86644, (*mut classes::GRefCountImplCore, u32, u64, u64) -> *mut classes::GRefCountImplCore)(param_1, param_2, param_3, param_4) } }
+pub unsafe fn deleting_dtor_g_ref_count_object_with_buffer20(param_1: *mut crate::GRefCountImplCore, param_2: u32, param_3: u64, param_4: u64) -> *mut crate::GRefCountImplCore { unsafe { function!(86644, (*mut crate::GRefCountImplCore, u32, u64, u64) -> *mut crate::GRefCountImplCore)(param_1, param_2, param_3, param_4) } }
 /// `DeletingDtorNoRTTI_1A23598` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 71867, rva 0xdccf50).
 /// `undefined8 * DeletingDtorNoRTTI_1A23598(undefined8 * param_1, uint param_2, undefined8 param_3, undefined8 param_4)`
 ///
@@ -11224,7 +11218,7 @@ pub unsafe fn deleting_dtor_no_rtti_1_a23598(param_1: *mut u64, param_2: u32, pa
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn deleting_dtor_with_paged_arrays18_and38(param_1: *mut classes::GRefCountImplCore, param_2: u32, param_3: u64, param_4: u64) -> *mut classes::GRefCountImplCore { unsafe { function!(89370, (*mut classes::GRefCountImplCore, u32, u64, u64) -> *mut classes::GRefCountImplCore)(param_1, param_2, param_3, param_4) } }
+pub unsafe fn deleting_dtor_with_paged_arrays18_and38(param_1: *mut crate::GRefCountImplCore, param_2: u32, param_3: u64, param_4: u64) -> *mut crate::GRefCountImplCore { unsafe { function!(89370, (*mut crate::GRefCountImplCore, u32, u64, u64) -> *mut crate::GRefCountImplCore)(param_1, param_2, param_3, param_4) } }
 /// `DequantizeAndTransformVertices` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 80718, rva 0x10e6910).
 /// `undefined DequantizeAndTransformVertices(float * param_1, float param_2, float * param_3, longlong * param_4)`
 ///
@@ -12498,28 +12492,28 @@ pub unsafe fn destroy_list_nodes_3(param_1: *mut u64, param_2: u32, param_3: u64
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn destroy_modifier_with_av_object_array(param_1: *mut classes::NiPSysModifier) -> u64 { unsafe { function!(74589, (*mut classes::NiPSysModifier) -> u64)(param_1) } }
+pub unsafe fn destroy_modifier_with_av_object_array(param_1: *mut crate::NiPSysModifier) -> u64 { unsafe { function!(74589, (*mut crate::NiPSysModifier) -> u64)(param_1) } }
 /// `DestroyNavmeshSearchFilterSetDerived` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 31119, rva 0x4ee600).
 /// `undefined DestroyNavmeshSearchFilterSetDerived(INavmeshSearchFilterSet * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn destroy_navmesh_search_filter_set_derived(param_1: *mut classes::partial::INavmeshSearchFilterSet, param_2: u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(31119, (*mut classes::partial::INavmeshSearchFilterSet, u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
+pub unsafe fn destroy_navmesh_search_filter_set_derived(param_1: *mut crate::INavmeshSearchFilterSet, param_2: u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(31119, (*mut crate::INavmeshSearchFilterSet, u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
 /// `DestroyNavmeshSearchFilterSetDerived_2` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 31120, rva 0x4ee740).
 /// `undefined DestroyNavmeshSearchFilterSetDerived_2(INavmeshSearchFilterSet * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn destroy_navmesh_search_filter_set_derived_2(param_1: *mut classes::partial::INavmeshSearchFilterSet, param_2: u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(31120, (*mut classes::partial::INavmeshSearchFilterSet, u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
+pub unsafe fn destroy_navmesh_search_filter_set_derived_2(param_1: *mut crate::INavmeshSearchFilterSet, param_2: u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(31120, (*mut crate::INavmeshSearchFilterSet, u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
 /// `DestroyNavmeshSearchFilterSetDerived_3` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 31142, rva 0x4f0950).
 /// `undefined DestroyNavmeshSearchFilterSetDerived_3(INavmeshSearchFilterSet * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn destroy_navmesh_search_filter_set_derived_3(param_1: *mut classes::partial::INavmeshSearchFilterSet, param_2: u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(31142, (*mut classes::partial::INavmeshSearchFilterSet, u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
+pub unsafe fn destroy_navmesh_search_filter_set_derived_3(param_1: *mut crate::INavmeshSearchFilterSet, param_2: u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(31142, (*mut crate::INavmeshSearchFilterSet, u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
 /// `DestroyNode50` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 419176, rva 0x5fcc20).
 /// `void * DestroyNode50(void * param_1, ulonglong param_2, undefined8 param_3, undefined8 param_4)`
 ///
@@ -12540,7 +12534,7 @@ pub unsafe fn destroy_notification_registration(param_1: *mut i64, param_2: u32,
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn destroy_object_releasing_four_refs(param_1: *mut classes::GRefCountImplCore, param_2: u32, param_3: u64, param_4: u64) -> *mut classes::GRefCountImplCore { unsafe { function!(84579, (*mut classes::GRefCountImplCore, u32, u64, u64) -> *mut classes::GRefCountImplCore)(param_1, param_2, param_3, param_4) } }
+pub unsafe fn destroy_object_releasing_four_refs(param_1: *mut crate::GRefCountImplCore, param_2: u32, param_3: u64, param_4: u64) -> *mut crate::GRefCountImplCore { unsafe { function!(84579, (*mut crate::GRefCountImplCore, u32, u64, u64) -> *mut crate::GRefCountImplCore)(param_1, param_2, param_3, param_4) } }
 /// `DestroyObjectViaVtableSlot0` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 444998, rva 0x1295f60).
 /// `undefined DestroyObjectViaVtableSlot0(undefined8 * param_1)`
 ///
@@ -12582,7 +12576,7 @@ pub unsafe fn destroy_object_with_two_ref_fields(param_1: *mut u64, param_2: u32
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn destroy_object_with_two_strings(param_1: *mut classes::GRefCountImplCore, param_2: u32, param_3: u64, param_4: u64) -> *mut classes::GRefCountImplCore { unsafe { function!(87350, (*mut classes::GRefCountImplCore, u32, u64, u64) -> *mut classes::GRefCountImplCore)(param_1, param_2, param_3, param_4) } }
+pub unsafe fn destroy_object_with_two_strings(param_1: *mut crate::GRefCountImplCore, param_2: u32, param_3: u64, param_4: u64) -> *mut crate::GRefCountImplCore { unsafe { function!(87350, (*mut crate::GRefCountImplCore, u32, u64, u64) -> *mut crate::GRefCountImplCore)(param_1, param_2, param_3, param_4) } }
 /// `DestroyOwnedPtrAt18AndDelete28` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 451850, rva 0x141b110).
 /// `void * DestroyOwnedPtrAt18AndDelete28(void * param_1, ulonglong param_2, undefined8 param_3, undefined8 param_4)`
 ///
@@ -13842,28 +13836,28 @@ pub unsafe fn destruct_object_vtable244608(param_1: *mut u64) -> u64 { unsafe { 
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn destruct_ref_count_object140(param_1: *mut classes::GRefCountImplCore, param_2: u32, param_3: u64, param_4: u64) -> *mut classes::GRefCountImplCore { unsafe { function!(89116, (*mut classes::GRefCountImplCore, u32, u64, u64) -> *mut classes::GRefCountImplCore)(param_1, param_2, param_3, param_4) } }
+pub unsafe fn destruct_ref_count_object140(param_1: *mut crate::GRefCountImplCore, param_2: u32, param_3: u64, param_4: u64) -> *mut crate::GRefCountImplCore { unsafe { function!(89116, (*mut crate::GRefCountImplCore, u32, u64, u64) -> *mut crate::GRefCountImplCore)(param_1, param_2, param_3, param_4) } }
 /// `DestructRefCountObject30` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 89119, rva 0xe5aa40).
 /// `GRefCountImplCore * DestructRefCountObject30(GRefCountImplCore * param_1, uint param_2, undefined8 param_3, undefined8 param_4)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn destruct_ref_count_object30(param_1: *mut classes::GRefCountImplCore, param_2: u32, param_3: u64, param_4: u64) -> *mut classes::GRefCountImplCore { unsafe { function!(89119, (*mut classes::GRefCountImplCore, u32, u64, u64) -> *mut classes::GRefCountImplCore)(param_1, param_2, param_3, param_4) } }
+pub unsafe fn destruct_ref_count_object30(param_1: *mut crate::GRefCountImplCore, param_2: u32, param_3: u64, param_4: u64) -> *mut crate::GRefCountImplCore { unsafe { function!(89119, (*mut crate::GRefCountImplCore, u32, u64, u64) -> *mut crate::GRefCountImplCore)(param_1, param_2, param_3, param_4) } }
 /// `DestructRefCountObject48` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 89118, rva 0xe5a990).
 /// `GRefCountImplCore * DestructRefCountObject48(GRefCountImplCore * param_1, uint param_2, undefined8 param_3, undefined8 param_4)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn destruct_ref_count_object48(param_1: *mut classes::GRefCountImplCore, param_2: u32, param_3: u64, param_4: u64) -> *mut classes::GRefCountImplCore { unsafe { function!(89118, (*mut classes::GRefCountImplCore, u32, u64, u64) -> *mut classes::GRefCountImplCore)(param_1, param_2, param_3, param_4) } }
+pub unsafe fn destruct_ref_count_object48(param_1: *mut crate::GRefCountImplCore, param_2: u32, param_3: u64, param_4: u64) -> *mut crate::GRefCountImplCore { unsafe { function!(89118, (*mut crate::GRefCountImplCore, u32, u64, u64) -> *mut crate::GRefCountImplCore)(param_1, param_2, param_3, param_4) } }
 /// `DestructRefCountObject78` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 89117, rva 0xe5a890).
 /// `GRefCountImplCore * DestructRefCountObject78(GRefCountImplCore * param_1, uint param_2, undefined8 param_3, undefined8 param_4)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn destruct_ref_count_object78(param_1: *mut classes::GRefCountImplCore, param_2: u32, param_3: u64, param_4: u64) -> *mut classes::GRefCountImplCore { unsafe { function!(89117, (*mut classes::GRefCountImplCore, u32, u64, u64) -> *mut classes::GRefCountImplCore)(param_1, param_2, param_3, param_4) } }
+pub unsafe fn destruct_ref_count_object78(param_1: *mut crate::GRefCountImplCore, param_2: u32, param_3: u64, param_4: u64) -> *mut crate::GRefCountImplCore { unsafe { function!(89117, (*mut crate::GRefCountImplCore, u32, u64, u64) -> *mut crate::GRefCountImplCore)(param_1, param_2, param_3, param_4) } }
 /// `DestructViaVtableSlot0` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 446659, rva 0x12f07e0).
 /// `undefined DestructViaVtableSlot0(undefined8 * param_1)`
 ///
@@ -16124,7 +16118,7 @@ pub unsafe fn find_or_create_cell_at_world_position(param_1: u64, param_2: f32, 
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn find_or_create_marketplace_content_collection(param_1: i64, param_2: u64, param_3: u64, param_4: u64) -> *mut classes::MarketplaceContentCollection { unsafe { function!(441829, (i64, u64, u64, u64) -> *mut classes::MarketplaceContentCollection)(param_1, param_2, param_3, param_4) } }
+pub unsafe fn find_or_create_marketplace_content_collection(param_1: i64, param_2: u64, param_3: u64, param_4: u64) -> *mut crate::MarketplaceContentCollection { unsafe { function!(441829, (i64, u64, u64, u64) -> *mut crate::MarketplaceContentCollection)(param_1, param_2, param_3, param_4) } }
 /// `FindOrCreateTable58SlotArray` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 87194, rva 0xdea710).
 /// `longlong FindOrCreateTable58SlotArray(longlong param_1, longlong param_2, ulonglong param_3, uint param_4)`
 ///
@@ -20702,7 +20696,7 @@ pub unsafe fn get_or_create_animation_callbacks_for_form_id(param_1: i64, param_
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn get_or_create_cached_all_cd_point_collector(param_1: i32, param_2: u64, param_3: u64, param_4: u64) -> *mut classes::hkpAllCdPointCollector { unsafe { function!(25925, (i32, u64, u64, u64) -> *mut classes::hkpAllCdPointCollector)(param_1, param_2, param_3, param_4) } }
+pub unsafe fn get_or_create_cached_all_cd_point_collector(param_1: i32, param_2: u64, param_3: u64, param_4: u64) -> *mut crate::hkpAllCdPointCollector { unsafe { function!(25925, (i32, u64, u64, u64) -> *mut crate::hkpAllCdPointCollector)(param_1, param_2, param_3, param_4) } }
 /// `GetOrCreateCellF8` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 20543, rva 0x311640).
 /// `longlong GetOrCreateCellF8(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 ///
@@ -20716,7 +20710,7 @@ pub unsafe fn get_or_create_cell_f8(param_1: i64, param_2: u64, param_3: u64, pa
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn get_or_create_extra_cell_grass_data(param_1: i64, param_2: c_char, param_3: u64, param_4: u64) -> *mut classes::ExtraCellGrassData { unsafe { function!(12069, (i64, c_char, u64, u64) -> *mut classes::ExtraCellGrassData)(param_1, param_2, param_3, param_4) } }
+pub unsafe fn get_or_create_extra_cell_grass_data(param_1: i64, param_2: c_char, param_3: u64, param_4: u64) -> *mut crate::ExtraCellGrassData { unsafe { function!(12069, (i64, c_char, u64, u64) -> *mut crate::ExtraCellGrassData)(param_1, param_2, param_3, param_4) } }
 /// `GetOrCreateField30` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 85609, rva 0xd90780).
 /// `undefined8 * GetOrCreateField30(longlong param_1)`
 ///
@@ -20737,7 +20731,7 @@ pub unsafe fn get_or_create_global_refr401500(param_1: *mut i64, param_2: u64, p
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn get_or_create_int_seen_data(param_1: *mut i64, param_2: c_char, param_3: u8, param_4: c_char) -> *mut classes::IntSeenData { unsafe { function!(19143, (*mut i64, c_char, u8, c_char) -> *mut classes::IntSeenData)(param_1, param_2, param_3, param_4) } }
+pub unsafe fn get_or_create_int_seen_data(param_1: *mut i64, param_2: c_char, param_3: u8, param_4: c_char) -> *mut crate::IntSeenData { unsafe { function!(19143, (*mut i64, c_char, u8, c_char) -> *mut crate::IntSeenData)(param_1, param_2, param_3, param_4) } }
 /// `GetOrCreateLand` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 18970, rva 0x2bcbf0).
 /// `longlong GetOrCreateLand(longlong param_1)`
 ///
@@ -20758,14 +20752,14 @@ pub unsafe fn get_or_create_multi_bound_room_for_ref(param_1: *mut u32, param_2:
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn get_or_create_node_for_index(param_1: *mut classes::NiNode, param_2: i32, param_3: u64, param_4: u64) -> *mut classes::NiNode { unsafe { function!(70735, (*mut classes::NiNode, i32, u64, u64) -> *mut classes::NiNode)(param_1, param_2, param_3, param_4) } }
+pub unsafe fn get_or_create_node_for_index(param_1: *mut crate::NiNode, param_2: i32, param_3: u64, param_4: u64) -> *mut crate::NiNode { unsafe { function!(70735, (*mut crate::NiNode, i32, u64, u64) -> *mut crate::NiNode)(param_1, param_2, param_3, param_4) } }
 /// `GetOrCreateObstacleTaskData` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 30478, rva 0x4ce6f0).
 /// `ObstacleTaskData * GetOrCreateObstacleTaskData(longlong param_1, uint * param_2, ulonglong param_3, undefined8 param_4)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn get_or_create_obstacle_task_data(param_1: i64, param_2: *mut u32, param_3: u64, param_4: u64) -> *mut classes::ObstacleTaskData { unsafe { function!(30478, (i64, *mut u32, u64, u64) -> *mut classes::ObstacleTaskData)(param_1, param_2, param_3, param_4) } }
+pub unsafe fn get_or_create_obstacle_task_data(param_1: i64, param_2: *mut u32, param_3: u64, param_4: u64) -> *mut crate::ObstacleTaskData { unsafe { function!(30478, (i64, *mut u32, u64, u64) -> *mut crate::ObstacleTaskData)(param_1, param_2, param_3, param_4) } }
 /// `GetOrCreateRefCountedProxyAtField10` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 82196, rva 0xcf31f0).
 /// `undefined8 GetOrCreateRefCountedProxyAtField10(longlong param_1)`
 ///
@@ -20800,14 +20794,14 @@ pub unsafe fn get_or_init_static_hash_map402090() -> *mut c_void { unsafe { func
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn get_or_load_exterior_cell_at_coords(param_1: *mut classes::TESObjectCELL, param_2: i16, param_3: u16) -> *mut classes::TESObjectCELL { unsafe { function!(20460, (*mut classes::TESObjectCELL, i16, u16) -> *mut classes::TESObjectCELL)(param_1, param_2, param_3) } }
+pub unsafe fn get_or_load_exterior_cell_at_coords(param_1: *mut crate::TESObjectCELL, param_2: i16, param_3: u16) -> *mut crate::TESObjectCELL { unsafe { function!(20460, (*mut crate::TESObjectCELL, i16, u16) -> *mut crate::TESObjectCELL)(param_1, param_2, param_3) } }
 /// `GetPathBuilderTrackerOrNull` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 91755, rva 0x120a5c0).
 /// `NullPathBuilderTracker * GetPathBuilderTrackerOrNull(longlong param_1)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn get_path_builder_tracker_or_null(param_1: i64) -> *mut classes::partial::NullPathBuilderTracker { unsafe { function!(91755, (i64) -> *mut classes::partial::NullPathBuilderTracker)(param_1) } }
+pub unsafe fn get_path_builder_tracker_or_null(param_1: i64) -> *mut crate::NullPathBuilderTracker { unsafe { function!(91755, (i64) -> *mut crate::NullPathBuilderTracker)(param_1) } }
 /// `GetPatrolWaitSecondsAtRef` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 28942, rva 0x47c560).
 /// `float GetPatrolWaitSecondsAtRef(longlong param_1)`
 ///
@@ -21115,7 +21109,7 @@ pub unsafe fn get_static_dword_table_entry(param_1: i32) -> u32 { unsafe { funct
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn get_static_ref_handle_u_int_map() -> *mut classes::partial::NiTMap_BSPointerHandle_TESObjectREFR_BSUntypedPointerHandle_20_6___unsigned_int { unsafe { function!(14205, () -> *mut classes::partial::NiTMap_BSPointerHandle_TESObjectREFR_BSUntypedPointerHandle_20_6___unsigned_int)() } }
+pub unsafe fn get_static_ref_handle_u_int_map() -> *mut crate::NiTMap_BSPointerHandle_TESObjectREFR_BSUntypedPointerHandle_20_6___unsigned_int { unsafe { function!(14205, () -> *mut crate::NiTMap_BSPointerHandle_TESObjectREFR_BSUntypedPointerHandle_20_6___unsigned_int)() } }
 /// `GetStaticVec3Ptr` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 32580, rva 0x53fff0).
 /// `undefined4 * GetStaticVec3Ptr(void)`
 ///
@@ -22550,7 +22544,7 @@ pub unsafe fn hit_test_point_packed(param_1: *mut i64, param_2: *mut f32, param_
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn increment_counter_and_sync_collision_object(param_1: *mut classes::bhkCollisionObject) -> u64 { unsafe { function!(78916, (*mut classes::bhkCollisionObject) -> u64)(param_1) } }
+pub unsafe fn increment_counter_and_sync_collision_object(param_1: *mut crate::bhkCollisionObject) -> u64 { unsafe { function!(78916, (*mut crate::bhkCollisionObject) -> u64)(param_1) } }
 /// `IncrementEntryField44AtPosition60` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 88996, rva 0xe53400).
 /// `undefined IncrementEntryField44AtPosition60(longlong param_1)`
 ///
@@ -26666,7 +26660,7 @@ pub unsafe fn less_by_shared_ptr_field18_3(param_1: u64, param_2: *mut i64, para
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn load_cell_from_source_files(param_1: *mut classes::TESObjectCELL, param_2: *mut classes::TESObjectCELL, param_3: u64, param_4: *mut c_void) -> u64 { unsafe { function!(19111, (*mut classes::TESObjectCELL, *mut classes::TESObjectCELL, u64, *mut c_void) -> u64)(param_1, param_2, param_3, param_4) } }
+pub unsafe fn load_cell_from_source_files(param_1: *mut crate::TESObjectCELL, param_2: *mut crate::TESObjectCELL, param_3: u64, param_4: *mut c_void) -> u64 { unsafe { function!(19111, (*mut crate::TESObjectCELL, *mut crate::TESObjectCELL, u64, *mut c_void) -> u64)(param_1, param_2, param_3, param_4) } }
 /// `LoadFuzeDataFromFile` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 16262, rva 0x243170).
 /// `undefined8 * LoadFuzeDataFromFile(char * param_1, undefined8 param_2, undefined8 param_3, ulonglong param_4)`
 ///
@@ -28038,7 +28032,7 @@ pub unsafe fn open_archives_for_plugin_if_plugin_extension(param_1: *mut u8, par
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn open_bs_file(param_1: *mut c_char, param_2: i32, param_3: u64, param_4: u64) -> *mut classes::BSFile { unsafe { function!(69208, (*mut c_char, i32, u64, u64) -> *mut classes::BSFile)(param_1, param_2, param_3, param_4) } }
+pub unsafe fn open_bs_file(param_1: *mut c_char, param_2: i32, param_3: u64, param_4: u64) -> *mut crate::BSFile { unsafe { function!(69208, (*mut c_char, i32, u64, u64) -> *mut crate::BSFile)(param_1, param_2, param_3, param_4) } }
 /// `OpenScrapSlotAtStride8` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 47166, rva 0x861520).
 /// `undefined OpenScrapSlotAtStride8(longlong param_1, uint param_2)`
 ///
@@ -28220,1701 +28214,1701 @@ pub unsafe fn pad_writer_byte_array_to_alignment(param_1: *mut i64, param_2: i32
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__active_magic_effect__add_inventory_event_filter(vm: *mut c_void, stackId: u32, self_: *mut classes::ActiveEffect, a0: *mut classes::TESForm) { unsafe { function!(54576, (*mut c_void, u32, *mut classes::ActiveEffect, *mut classes::TESForm))(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__active_magic_effect__add_inventory_event_filter(vm: *mut c_void, stackId: u32, self_: *mut crate::ActiveEffect, a0: *mut crate::TESForm) { unsafe { function!(54576, (*mut c_void, u32, *mut crate::ActiveEffect, *mut crate::TESForm))(vm, stackId, self_, a0) } }
 /// `Papyrus::ActiveMagicEffect::GetBaseObject` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54615, rva 0x9fdee0).
 /// `EffectSetting * GetBaseObject(IVirtualMachine * vm, uint stackId, ActiveEffect * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__active_magic_effect__get_base_object(vm: *mut c_void, stackId: u32, self_: *mut classes::ActiveEffect) -> *mut classes::EffectSetting { unsafe { function!(54615, (*mut c_void, u32, *mut classes::ActiveEffect) -> *mut classes::EffectSetting)(vm, stackId, self_) } }
+pub unsafe fn papyrus__active_magic_effect__get_base_object(vm: *mut c_void, stackId: u32, self_: *mut crate::ActiveEffect) -> *mut crate::EffectSetting { unsafe { function!(54615, (*mut c_void, u32, *mut crate::ActiveEffect) -> *mut crate::EffectSetting)(vm, stackId, self_) } }
 /// `Papyrus::ActiveMagicEffect::GetCasterActor` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54577, rva 0x9fbb50).
 /// `Actor * GetCasterActor(IVirtualMachine * vm, uint stackId, ActiveEffect * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__active_magic_effect__get_caster_actor(vm: *mut c_void, stackId: u32, self_: *mut classes::ActiveEffect) -> *mut classes::Actor { unsafe { function!(54577, (*mut c_void, u32, *mut classes::ActiveEffect) -> *mut classes::Actor)(vm, stackId, self_) } }
+pub unsafe fn papyrus__active_magic_effect__get_caster_actor(vm: *mut c_void, stackId: u32, self_: *mut crate::ActiveEffect) -> *mut crate::Actor { unsafe { function!(54577, (*mut c_void, u32, *mut crate::ActiveEffect) -> *mut crate::Actor)(vm, stackId, self_) } }
 /// `Papyrus::ActiveMagicEffect::GetTargetActor` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54578, rva 0x9fbbc0).
 /// `Actor * GetTargetActor(IVirtualMachine * vm, uint stackId, ActiveEffect * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__active_magic_effect__get_target_actor(vm: *mut c_void, stackId: u32, self_: *mut classes::ActiveEffect) -> *mut classes::Actor { unsafe { function!(54578, (*mut c_void, u32, *mut classes::ActiveEffect) -> *mut classes::Actor)(vm, stackId, self_) } }
+pub unsafe fn papyrus__active_magic_effect__get_target_actor(vm: *mut c_void, stackId: u32, self_: *mut crate::ActiveEffect) -> *mut crate::Actor { unsafe { function!(54578, (*mut c_void, u32, *mut crate::ActiveEffect) -> *mut crate::Actor)(vm, stackId, self_) } }
 /// `Papyrus::ActiveMagicEffect::RegisterForAnimationEvent` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54579, rva 0x9fbbe0).
 /// `bool RegisterForAnimationEvent(IVirtualMachine * vm, uint stackId, ActiveEffect * self, TESObjectREFR * a0, BSFixedString * a1)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__active_magic_effect__register_for_animation_event(vm: *mut c_void, stackId: u32, self_: *mut classes::ActiveEffect, a0: *mut classes::TESObjectREFR, a1: *mut classes::BSFixedString) -> u8 { unsafe { function!(54579, (*mut c_void, u32, *mut classes::ActiveEffect, *mut classes::TESObjectREFR, *mut classes::BSFixedString) -> u8)(vm, stackId, self_, a0, a1) } }
+pub unsafe fn papyrus__active_magic_effect__register_for_animation_event(vm: *mut c_void, stackId: u32, self_: *mut crate::ActiveEffect, a0: *mut crate::TESObjectREFR, a1: *mut crate::BSFixedString) -> u8 { unsafe { function!(54579, (*mut c_void, u32, *mut crate::ActiveEffect, *mut crate::TESObjectREFR, *mut crate::BSFixedString) -> u8)(vm, stackId, self_, a0, a1) } }
 /// `Papyrus::ActiveMagicEffect::RegisterForLOS` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54580, rva 0x9fbcc0).
 /// `void RegisterForLOS(IVirtualMachine * vm, uint stackId, ActiveEffect * self, Actor * a0, TESObjectREFR * a1)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__active_magic_effect__register_for_los(vm: *mut c_void, stackId: u32, self_: *mut classes::ActiveEffect, a0: *mut classes::Actor, a1: *mut classes::TESObjectREFR) { unsafe { function!(54580, (*mut c_void, u32, *mut classes::ActiveEffect, *mut classes::Actor, *mut classes::TESObjectREFR))(vm, stackId, self_, a0, a1) } }
+pub unsafe fn papyrus__active_magic_effect__register_for_los(vm: *mut c_void, stackId: u32, self_: *mut crate::ActiveEffect, a0: *mut crate::Actor, a1: *mut crate::TESObjectREFR) { unsafe { function!(54580, (*mut c_void, u32, *mut crate::ActiveEffect, *mut crate::Actor, *mut crate::TESObjectREFR))(vm, stackId, self_, a0, a1) } }
 /// `Papyrus::ActiveMagicEffect::RegisterForSingleLOSGain` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54581, rva 0x9fbd50).
 /// `void RegisterForSingleLOSGain(IVirtualMachine * vm, uint stackId, ActiveEffect * self, Actor * a0, TESObjectREFR * a1)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__active_magic_effect__register_for_single_los_gain(vm: *mut c_void, stackId: u32, self_: *mut classes::ActiveEffect, a0: *mut classes::Actor, a1: *mut classes::TESObjectREFR) { unsafe { function!(54581, (*mut c_void, u32, *mut classes::ActiveEffect, *mut classes::Actor, *mut classes::TESObjectREFR))(vm, stackId, self_, a0, a1) } }
+pub unsafe fn papyrus__active_magic_effect__register_for_single_los_gain(vm: *mut c_void, stackId: u32, self_: *mut crate::ActiveEffect, a0: *mut crate::Actor, a1: *mut crate::TESObjectREFR) { unsafe { function!(54581, (*mut c_void, u32, *mut crate::ActiveEffect, *mut crate::Actor, *mut crate::TESObjectREFR))(vm, stackId, self_, a0, a1) } }
 /// `Papyrus::ActiveMagicEffect::RegisterForSingleLOSLost` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54582, rva 0x9fbde0).
 /// `void RegisterForSingleLOSLost(IVirtualMachine * vm, uint stackId, ActiveEffect * self, Actor * a0, TESObjectREFR * a1)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__active_magic_effect__register_for_single_los_lost(vm: *mut c_void, stackId: u32, self_: *mut classes::ActiveEffect, a0: *mut classes::Actor, a1: *mut classes::TESObjectREFR) { unsafe { function!(54582, (*mut c_void, u32, *mut classes::ActiveEffect, *mut classes::Actor, *mut classes::TESObjectREFR))(vm, stackId, self_, a0, a1) } }
+pub unsafe fn papyrus__active_magic_effect__register_for_single_los_lost(vm: *mut c_void, stackId: u32, self_: *mut crate::ActiveEffect, a0: *mut crate::Actor, a1: *mut crate::TESObjectREFR) { unsafe { function!(54582, (*mut c_void, u32, *mut crate::ActiveEffect, *mut crate::Actor, *mut crate::TESObjectREFR))(vm, stackId, self_, a0, a1) } }
 /// `Papyrus::ActiveMagicEffect::RegisterForSingleUpdate` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54583, rva 0x9fbe70).
 /// `void RegisterForSingleUpdate(IVirtualMachine * vm, uint stackId, ActiveEffect * self, float a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__active_magic_effect__register_for_single_update(vm: *mut c_void, stackId: u32, self_: *mut classes::ActiveEffect, a0: f32) { unsafe { function!(54583, (*mut c_void, u32, *mut classes::ActiveEffect, f32))(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__active_magic_effect__register_for_single_update(vm: *mut c_void, stackId: u32, self_: *mut crate::ActiveEffect, a0: f32) { unsafe { function!(54583, (*mut c_void, u32, *mut crate::ActiveEffect, f32))(vm, stackId, self_, a0) } }
 /// `Papyrus::ActiveMagicEffect::RegisterForSingleUpdateGameTime` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54584, rva 0x9fbed0).
 /// `void RegisterForSingleUpdateGameTime(IVirtualMachine * vm, uint stackId, ActiveEffect * self, float a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__active_magic_effect__register_for_single_update_game_time(vm: *mut c_void, stackId: u32, self_: *mut classes::ActiveEffect, a0: f32) { unsafe { function!(54584, (*mut c_void, u32, *mut classes::ActiveEffect, f32))(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__active_magic_effect__register_for_single_update_game_time(vm: *mut c_void, stackId: u32, self_: *mut crate::ActiveEffect, a0: f32) { unsafe { function!(54584, (*mut c_void, u32, *mut crate::ActiveEffect, f32))(vm, stackId, self_, a0) } }
 /// `Papyrus::ActiveMagicEffect::RegisterForSleep` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54585, rva 0x9fbf30).
 /// `void RegisterForSleep(IVirtualMachine * vm, uint stackId, ActiveEffect * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__active_magic_effect__register_for_sleep(vm: *mut c_void, stackId: u32, self_: *mut classes::ActiveEffect) { unsafe { function!(54585, (*mut c_void, u32, *mut classes::ActiveEffect))(vm, stackId, self_) } }
+pub unsafe fn papyrus__active_magic_effect__register_for_sleep(vm: *mut c_void, stackId: u32, self_: *mut crate::ActiveEffect) { unsafe { function!(54585, (*mut c_void, u32, *mut crate::ActiveEffect))(vm, stackId, self_) } }
 /// `Papyrus::ActiveMagicEffect::RegisterForTrackedStatsEvent` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54586, rva 0x9fbf80).
 /// `void RegisterForTrackedStatsEvent(IVirtualMachine * vm, uint stackId, ActiveEffect * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__active_magic_effect__register_for_tracked_stats_event(vm: *mut c_void, stackId: u32, self_: *mut classes::ActiveEffect) { unsafe { function!(54586, (*mut c_void, u32, *mut classes::ActiveEffect))(vm, stackId, self_) } }
+pub unsafe fn papyrus__active_magic_effect__register_for_tracked_stats_event(vm: *mut c_void, stackId: u32, self_: *mut crate::ActiveEffect) { unsafe { function!(54586, (*mut c_void, u32, *mut crate::ActiveEffect))(vm, stackId, self_) } }
 /// `Papyrus::ActiveMagicEffect::RegisterForUpdate` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54587, rva 0x9fbfd0).
 /// `void RegisterForUpdate(IVirtualMachine * vm, uint stackId, ActiveEffect * self, float a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__active_magic_effect__register_for_update(vm: *mut c_void, stackId: u32, self_: *mut classes::ActiveEffect, a0: f32) { unsafe { function!(54587, (*mut c_void, u32, *mut classes::ActiveEffect, f32))(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__active_magic_effect__register_for_update(vm: *mut c_void, stackId: u32, self_: *mut crate::ActiveEffect, a0: f32) { unsafe { function!(54587, (*mut c_void, u32, *mut crate::ActiveEffect, f32))(vm, stackId, self_, a0) } }
 /// `Papyrus::ActiveMagicEffect::RegisterForUpdateGameTime` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54588, rva 0x9fc030).
 /// `void RegisterForUpdateGameTime(IVirtualMachine * vm, uint stackId, ActiveEffect * self, float a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__active_magic_effect__register_for_update_game_time(vm: *mut c_void, stackId: u32, self_: *mut classes::ActiveEffect, a0: f32) { unsafe { function!(54588, (*mut c_void, u32, *mut classes::ActiveEffect, f32))(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__active_magic_effect__register_for_update_game_time(vm: *mut c_void, stackId: u32, self_: *mut crate::ActiveEffect, a0: f32) { unsafe { function!(54588, (*mut c_void, u32, *mut crate::ActiveEffect, f32))(vm, stackId, self_, a0) } }
 /// `Papyrus::ActiveMagicEffect::RemoveAllInventoryEventFilters` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54589, rva 0x9fc090).
 /// `void RemoveAllInventoryEventFilters(IVirtualMachine * vm, uint stackId, ActiveEffect * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__active_magic_effect__remove_all_inventory_event_filters(vm: *mut c_void, stackId: u32, self_: *mut classes::ActiveEffect) { unsafe { function!(54589, (*mut c_void, u32, *mut classes::ActiveEffect))(vm, stackId, self_) } }
+pub unsafe fn papyrus__active_magic_effect__remove_all_inventory_event_filters(vm: *mut c_void, stackId: u32, self_: *mut crate::ActiveEffect) { unsafe { function!(54589, (*mut c_void, u32, *mut crate::ActiveEffect))(vm, stackId, self_) } }
 /// `Papyrus::ActiveMagicEffect::RemoveInventoryEventFilter` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54590, rva 0x9fc0e0).
 /// `void RemoveInventoryEventFilter(IVirtualMachine * vm, uint stackId, ActiveEffect * self, TESForm * a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__active_magic_effect__remove_inventory_event_filter(vm: *mut c_void, stackId: u32, self_: *mut classes::ActiveEffect, a0: *mut classes::TESForm) { unsafe { function!(54590, (*mut c_void, u32, *mut classes::ActiveEffect, *mut classes::TESForm))(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__active_magic_effect__remove_inventory_event_filter(vm: *mut c_void, stackId: u32, self_: *mut crate::ActiveEffect, a0: *mut crate::TESForm) { unsafe { function!(54590, (*mut c_void, u32, *mut crate::ActiveEffect, *mut crate::TESForm))(vm, stackId, self_, a0) } }
 /// `Papyrus::ActiveMagicEffect::StartObjectProfiling` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54591, rva 0x9fc150).
 /// `void StartObjectProfiling(IVirtualMachine * vm, uint stackId, ActiveEffect * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__active_magic_effect__start_object_profiling(vm: *mut c_void, stackId: u32, self_: *mut classes::ActiveEffect) { unsafe { function!(54591, (*mut c_void, u32, *mut classes::ActiveEffect))(vm, stackId, self_) } }
+pub unsafe fn papyrus__active_magic_effect__start_object_profiling(vm: *mut c_void, stackId: u32, self_: *mut crate::ActiveEffect) { unsafe { function!(54591, (*mut c_void, u32, *mut crate::ActiveEffect))(vm, stackId, self_) } }
 /// `Papyrus::ActiveMagicEffect::StopObjectProfiling` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54592, rva 0x9fc1e0).
 /// `void StopObjectProfiling(IVirtualMachine * vm, uint stackId, ActiveEffect * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__active_magic_effect__stop_object_profiling(vm: *mut c_void, stackId: u32, self_: *mut classes::ActiveEffect) { unsafe { function!(54592, (*mut c_void, u32, *mut classes::ActiveEffect))(vm, stackId, self_) } }
+pub unsafe fn papyrus__active_magic_effect__stop_object_profiling(vm: *mut c_void, stackId: u32, self_: *mut crate::ActiveEffect) { unsafe { function!(54592, (*mut c_void, u32, *mut crate::ActiveEffect))(vm, stackId, self_) } }
 /// `Papyrus::ActiveMagicEffect::UnregisterForAnimationEvent` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54593, rva 0x9fc270).
 /// `void UnregisterForAnimationEvent(IVirtualMachine * vm, uint stackId, ActiveEffect * self, TESObjectREFR * a0, BSFixedString * a1)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__active_magic_effect__unregister_for_animation_event(vm: *mut c_void, stackId: u32, self_: *mut classes::ActiveEffect, a0: *mut classes::TESObjectREFR, a1: *mut classes::BSFixedString) { unsafe { function!(54593, (*mut c_void, u32, *mut classes::ActiveEffect, *mut classes::TESObjectREFR, *mut classes::BSFixedString))(vm, stackId, self_, a0, a1) } }
+pub unsafe fn papyrus__active_magic_effect__unregister_for_animation_event(vm: *mut c_void, stackId: u32, self_: *mut crate::ActiveEffect, a0: *mut crate::TESObjectREFR, a1: *mut crate::BSFixedString) { unsafe { function!(54593, (*mut c_void, u32, *mut crate::ActiveEffect, *mut crate::TESObjectREFR, *mut crate::BSFixedString))(vm, stackId, self_, a0, a1) } }
 /// `Papyrus::ActiveMagicEffect::UnregisterForLOS` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54594, rva 0x9fc350).
 /// `void UnregisterForLOS(IVirtualMachine * vm, uint stackId, ActiveEffect * self, Actor * a0, TESObjectREFR * a1)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__active_magic_effect__unregister_for_los(vm: *mut c_void, stackId: u32, self_: *mut classes::ActiveEffect, a0: *mut classes::Actor, a1: *mut classes::TESObjectREFR) { unsafe { function!(54594, (*mut c_void, u32, *mut classes::ActiveEffect, *mut classes::Actor, *mut classes::TESObjectREFR))(vm, stackId, self_, a0, a1) } }
+pub unsafe fn papyrus__active_magic_effect__unregister_for_los(vm: *mut c_void, stackId: u32, self_: *mut crate::ActiveEffect, a0: *mut crate::Actor, a1: *mut crate::TESObjectREFR) { unsafe { function!(54594, (*mut c_void, u32, *mut crate::ActiveEffect, *mut crate::Actor, *mut crate::TESObjectREFR))(vm, stackId, self_, a0, a1) } }
 /// `Papyrus::ActiveMagicEffect::UnregisterForSleep` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54595, rva 0x9fc3f0).
 /// `void UnregisterForSleep(IVirtualMachine * vm, uint stackId, ActiveEffect * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__active_magic_effect__unregister_for_sleep(vm: *mut c_void, stackId: u32, self_: *mut classes::ActiveEffect) { unsafe { function!(54595, (*mut c_void, u32, *mut classes::ActiveEffect))(vm, stackId, self_) } }
+pub unsafe fn papyrus__active_magic_effect__unregister_for_sleep(vm: *mut c_void, stackId: u32, self_: *mut crate::ActiveEffect) { unsafe { function!(54595, (*mut c_void, u32, *mut crate::ActiveEffect))(vm, stackId, self_) } }
 /// `Papyrus::ActiveMagicEffect::UnregisterForTrackedStatsEvent` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54596, rva 0x9fc440).
 /// `void UnregisterForTrackedStatsEvent(IVirtualMachine * vm, uint stackId, ActiveEffect * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__active_magic_effect__unregister_for_tracked_stats_event(vm: *mut c_void, stackId: u32, self_: *mut classes::ActiveEffect) { unsafe { function!(54596, (*mut c_void, u32, *mut classes::ActiveEffect))(vm, stackId, self_) } }
+pub unsafe fn papyrus__active_magic_effect__unregister_for_tracked_stats_event(vm: *mut c_void, stackId: u32, self_: *mut crate::ActiveEffect) { unsafe { function!(54596, (*mut c_void, u32, *mut crate::ActiveEffect))(vm, stackId, self_) } }
 /// `Papyrus::ActiveMagicEffect::UnregisterForUpdate` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54597, rva 0x9fc490).
 /// `void UnregisterForUpdate(IVirtualMachine * vm, uint stackId, ActiveEffect * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__active_magic_effect__unregister_for_update(vm: *mut c_void, stackId: u32, self_: *mut classes::ActiveEffect) { unsafe { function!(54597, (*mut c_void, u32, *mut classes::ActiveEffect))(vm, stackId, self_) } }
+pub unsafe fn papyrus__active_magic_effect__unregister_for_update(vm: *mut c_void, stackId: u32, self_: *mut crate::ActiveEffect) { unsafe { function!(54597, (*mut c_void, u32, *mut crate::ActiveEffect))(vm, stackId, self_) } }
 /// `Papyrus::ActiveMagicEffect::UnregisterForUpdateGameTime` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54598, rva 0x9fc4e0).
 /// `void UnregisterForUpdateGameTime(IVirtualMachine * vm, uint stackId, ActiveEffect * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__active_magic_effect__unregister_for_update_game_time(vm: *mut c_void, stackId: u32, self_: *mut classes::ActiveEffect) { unsafe { function!(54598, (*mut c_void, u32, *mut classes::ActiveEffect))(vm, stackId, self_) } }
+pub unsafe fn papyrus__active_magic_effect__unregister_for_update_game_time(vm: *mut c_void, stackId: u32, self_: *mut crate::ActiveEffect) { unsafe { function!(54598, (*mut c_void, u32, *mut crate::ActiveEffect))(vm, stackId, self_) } }
 /// `Papyrus::Actor::AddPerk` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54642, rva 0x9ff750).
 /// `void AddPerk(IVirtualMachine * vm, uint stackId, Actor * self, BGSPerk * a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__add_perk(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor, a0: *mut classes::BGSPerk) { unsafe { function!(54642, (*mut c_void, u32, *mut classes::Actor, *mut classes::BGSPerk))(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__actor__add_perk(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor, a0: *mut crate::BGSPerk) { unsafe { function!(54642, (*mut c_void, u32, *mut crate::Actor, *mut crate::BGSPerk))(vm, stackId, self_, a0) } }
 /// `Papyrus::Actor::AddShout` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54651, rva 0x9ff970).
 /// `bool AddShout(IVirtualMachine * vm, uint stackId, Actor * self, TESShout * a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__add_shout(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor, a0: *mut classes::TESShout) -> u8 { unsafe { function!(54651, (*mut c_void, u32, *mut classes::Actor, *mut classes::TESShout) -> u8)(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__actor__add_shout(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor, a0: *mut crate::TESShout) -> u8 { unsafe { function!(54651, (*mut c_void, u32, *mut crate::Actor, *mut crate::TESShout) -> u8)(vm, stackId, self_, a0) } }
 /// `Papyrus::Actor::AddSpell` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54652, rva 0x9ff9b0).
 /// `bool AddSpell(IVirtualMachine * vm, uint stackId, Actor * self, SpellItem * a0, bool a1)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__add_spell(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor, a0: *mut classes::SpellItem, a1: u8) -> u8 { unsafe { function!(54652, (*mut c_void, u32, *mut classes::Actor, *mut classes::SpellItem, u8) -> u8)(vm, stackId, self_, a0, a1) } }
+pub unsafe fn papyrus__actor__add_spell(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor, a0: *mut crate::SpellItem, a1: u8) -> u8 { unsafe { function!(54652, (*mut c_void, u32, *mut crate::Actor, *mut crate::SpellItem, u8) -> u8)(vm, stackId, self_, a0, a1) } }
 /// `Papyrus::Actor::AllowBleedoutDialogue` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54913, rva 0xa0d440).
 /// `void AllowBleedoutDialogue(IVirtualMachine * vm, uint stackId, Actor * self, bool a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__allow_bleedout_dialogue(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor, a0: u8) { unsafe { function!(54913, (*mut c_void, u32, *mut classes::Actor, u8))(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__actor__allow_bleedout_dialogue(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor, a0: u8) { unsafe { function!(54913, (*mut c_void, u32, *mut crate::Actor, u8))(vm, stackId, self_, a0) } }
 /// `Papyrus::Actor::AllowPCDialogue` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54654, rva 0x9ffb30).
 /// `void AllowPCDialogue(IVirtualMachine * vm, uint stackId, Actor * self, bool a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__allow_pc_dialogue(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor, a0: u8) { unsafe { function!(54654, (*mut c_void, u32, *mut classes::Actor, u8))(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__actor__allow_pc_dialogue(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor, a0: u8) { unsafe { function!(54654, (*mut c_void, u32, *mut crate::Actor, u8))(vm, stackId, self_, a0) } }
 /// `Papyrus::Actor::AttachAshPile` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54655, rva 0x9ffb50).
 /// `void AttachAshPile(IVirtualMachine * vm, uint stackId, Actor * self, TESForm * a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__attach_ash_pile(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor, a0: *mut classes::TESForm) { unsafe { function!(54655, (*mut c_void, u32, *mut classes::Actor, *mut classes::TESForm))(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__actor__attach_ash_pile(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor, a0: *mut crate::TESForm) { unsafe { function!(54655, (*mut c_void, u32, *mut crate::Actor, *mut crate::TESForm))(vm, stackId, self_, a0) } }
 /// `Papyrus::Actor::CanFlyHere` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54914, rva 0xa0d460).
 /// `bool CanFlyHere(IVirtualMachine * vm, uint stackId, Actor * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__can_fly_here(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor) -> u8 { unsafe { function!(54914, (*mut c_void, u32, *mut classes::Actor) -> u8)(vm, stackId, self_) } }
+pub unsafe fn papyrus__actor__can_fly_here(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor) -> u8 { unsafe { function!(54914, (*mut c_void, u32, *mut crate::Actor) -> u8)(vm, stackId, self_) } }
 /// `Papyrus::Actor::ClearArrested` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54656, rva 0x9ffdd0).
 /// `void ClearArrested(IVirtualMachine * vm, uint stackId, Actor * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__clear_arrested(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor) { unsafe { function!(54656, (*mut c_void, u32, *mut classes::Actor))(vm, stackId, self_) } }
+pub unsafe fn papyrus__actor__clear_arrested(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor) { unsafe { function!(54656, (*mut c_void, u32, *mut crate::Actor))(vm, stackId, self_) } }
 /// `Papyrus::Actor::ClearExpressionOverride` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54657, rva 0x9ffe30).
 /// `void ClearExpressionOverride(IVirtualMachine * vm, uint stackId, Actor * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__clear_expression_override(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor) { unsafe { function!(54657, (*mut c_void, u32, *mut classes::Actor))(vm, stackId, self_) } }
+pub unsafe fn papyrus__actor__clear_expression_override(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor) { unsafe { function!(54657, (*mut c_void, u32, *mut crate::Actor))(vm, stackId, self_) } }
 /// `Papyrus::Actor::ClearExtraArrows` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54658, rva 0x9ffeb0).
 /// `void ClearExtraArrows(IVirtualMachine * vm, uint stackId, Actor * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__clear_extra_arrows(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor) { unsafe { function!(54658, (*mut c_void, u32, *mut classes::Actor))(vm, stackId, self_) } }
+pub unsafe fn papyrus__actor__clear_extra_arrows(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor) { unsafe { function!(54658, (*mut c_void, u32, *mut crate::Actor))(vm, stackId, self_) } }
 /// `Papyrus::Actor::ClearKeepOffsetFromActor` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54915, rva 0xa0d470).
 /// `void ClearKeepOffsetFromActor(IVirtualMachine * vm, uint stackId, Actor * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__clear_keep_offset_from_actor(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor) { unsafe { function!(54915, (*mut c_void, u32, *mut classes::Actor))(vm, stackId, self_) } }
+pub unsafe fn papyrus__actor__clear_keep_offset_from_actor(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor) { unsafe { function!(54915, (*mut c_void, u32, *mut crate::Actor))(vm, stackId, self_) } }
 /// `Papyrus::Actor::ClearLookAt` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54659, rva 0x9ffec0).
 /// `void ClearLookAt(IVirtualMachine * vm, uint stackId, Actor * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__clear_look_at(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor) { unsafe { function!(54659, (*mut c_void, u32, *mut classes::Actor))(vm, stackId, self_) } }
+pub unsafe fn papyrus__actor__clear_look_at(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor) { unsafe { function!(54659, (*mut c_void, u32, *mut crate::Actor))(vm, stackId, self_) } }
 /// `Papyrus::Actor::DamageActorValue` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54660, rva 0x9fff30).
 /// `void DamageActorValue(IVirtualMachine * vm, uint stackId, Actor * self, BSFixedString * a0, float a1)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__damage_actor_value(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor, a0: *mut classes::BSFixedString, a1: f32) { unsafe { function!(54660, (*mut c_void, u32, *mut classes::Actor, *mut classes::BSFixedString, f32))(vm, stackId, self_, a0, a1) } }
+pub unsafe fn papyrus__actor__damage_actor_value(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor, a0: *mut crate::BSFixedString, a1: f32) { unsafe { function!(54660, (*mut c_void, u32, *mut crate::Actor, *mut crate::BSFixedString, f32))(vm, stackId, self_, a0, a1) } }
 /// `Papyrus::Actor::Dismount` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54916, rva 0xa0d480).
 /// `bool Dismount(IVirtualMachine * vm, uint stackId, Actor * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__dismount(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor) -> u8 { unsafe { function!(54916, (*mut c_void, u32, *mut classes::Actor) -> u8)(vm, stackId, self_) } }
+pub unsafe fn papyrus__actor__dismount(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor) -> u8 { unsafe { function!(54916, (*mut c_void, u32, *mut crate::Actor) -> u8)(vm, stackId, self_) } }
 /// `Papyrus::Actor::DispelAllSpells` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54917, rva 0xa0d490).
 /// `void DispelAllSpells(IVirtualMachine * vm, uint stackId, Actor * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__dispel_all_spells(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor) { unsafe { function!(54917, (*mut c_void, u32, *mut classes::Actor))(vm, stackId, self_) } }
+pub unsafe fn papyrus__actor__dispel_all_spells(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor) { unsafe { function!(54917, (*mut c_void, u32, *mut crate::Actor))(vm, stackId, self_) } }
 /// `Papyrus::Actor::DispelSpell` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54648, rva 0x9ff880).
 /// `bool DispelSpell(IVirtualMachine * vm, uint stackId, Actor * self, SpellItem * a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__dispel_spell(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor, a0: *mut classes::SpellItem) -> u8 { unsafe { function!(54648, (*mut c_void, u32, *mut classes::Actor, *mut classes::SpellItem) -> u8)(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__actor__dispel_spell(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor, a0: *mut crate::SpellItem) -> u8 { unsafe { function!(54648, (*mut c_void, u32, *mut crate::Actor, *mut crate::SpellItem) -> u8)(vm, stackId, self_, a0) } }
 /// `Papyrus::Actor::DoCombatSpellApply` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54918, rva 0xa0d4a0).
 /// `void DoCombatSpellApply(IVirtualMachine * vm, uint stackId, Actor * self, SpellItem * a0, TESObjectREFR * a1)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__do_combat_spell_apply(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor, a0: *mut classes::SpellItem, a1: *mut classes::TESObjectREFR) { unsafe { function!(54918, (*mut c_void, u32, *mut classes::Actor, *mut classes::SpellItem, *mut classes::TESObjectREFR))(vm, stackId, self_, a0, a1) } }
+pub unsafe fn papyrus__actor__do_combat_spell_apply(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor, a0: *mut crate::SpellItem, a1: *mut crate::TESObjectREFR) { unsafe { function!(54918, (*mut c_void, u32, *mut crate::Actor, *mut crate::SpellItem, *mut crate::TESObjectREFR))(vm, stackId, self_, a0, a1) } }
 /// `Papyrus::Actor::DrawWeapon` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54779, rva 0xa03b70).
 /// `void DrawWeapon(IVirtualMachine * vm, uint stackId, Actor * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__draw_weapon(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor) { unsafe { function!(54779, (*mut c_void, u32, *mut classes::Actor))(vm, stackId, self_) } }
+pub unsafe fn papyrus__actor__draw_weapon(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor) { unsafe { function!(54779, (*mut c_void, u32, *mut crate::Actor))(vm, stackId, self_) } }
 /// `Papyrus::Actor::EnableAI` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54919, rva 0xa0d4b0).
 /// `void EnableAI(IVirtualMachine * vm, uint stackId, Actor * self, bool a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__enable_ai(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor, a0: u8) { unsafe { function!(54919, (*mut c_void, u32, *mut classes::Actor, u8))(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__actor__enable_ai(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor, a0: u8) { unsafe { function!(54919, (*mut c_void, u32, *mut crate::Actor, u8))(vm, stackId, self_, a0) } }
 /// `Papyrus::Actor::EndDeferredKill` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54781, rva 0xa03ba0).
 /// `void EndDeferredKill(IVirtualMachine * vm, uint stackId, Actor * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__end_deferred_kill(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor) { unsafe { function!(54781, (*mut c_void, u32, *mut classes::Actor))(vm, stackId, self_) } }
+pub unsafe fn papyrus__actor__end_deferred_kill(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor) { unsafe { function!(54781, (*mut c_void, u32, *mut crate::Actor))(vm, stackId, self_) } }
 /// `Papyrus::Actor::EquipItem` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54661, rva 0xa00040).
 /// `void EquipItem(IVirtualMachine * vm, uint stackId, Actor * self, TESForm * a0, bool a1, bool a2)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__equip_item(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor, a0: *mut classes::TESForm, a1: u8, a2: u8) { unsafe { function!(54661, (*mut c_void, u32, *mut classes::Actor, *mut classes::TESForm, u8, u8))(vm, stackId, self_, a0, a1, a2) } }
+pub unsafe fn papyrus__actor__equip_item(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor, a0: *mut crate::TESForm, a1: u8, a2: u8) { unsafe { function!(54661, (*mut c_void, u32, *mut crate::Actor, *mut crate::TESForm, u8, u8))(vm, stackId, self_, a0, a1, a2) } }
 /// `Papyrus::Actor::EquipShout` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54662, rva 0xa002a0).
 /// `void EquipShout(IVirtualMachine * vm, uint stackId, Actor * self, TESShout * a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__equip_shout(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor, a0: *mut classes::TESShout) { unsafe { function!(54662, (*mut c_void, u32, *mut classes::Actor, *mut classes::TESShout))(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__actor__equip_shout(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor, a0: *mut crate::TESShout) { unsafe { function!(54662, (*mut c_void, u32, *mut crate::Actor, *mut crate::TESShout))(vm, stackId, self_, a0) } }
 /// `Papyrus::Actor::EquipSpell` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54666, rva 0xa00320).
 /// `void EquipSpell(IVirtualMachine * vm, uint stackId, Actor * self, SpellItem * a0, uint a1)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__equip_spell(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor, a0: *mut classes::SpellItem, a1: u32) { unsafe { function!(54666, (*mut c_void, u32, *mut classes::Actor, *mut classes::SpellItem, u32))(vm, stackId, self_, a0, a1) } }
+pub unsafe fn papyrus__actor__equip_spell(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor, a0: *mut crate::SpellItem, a1: u32) { unsafe { function!(54666, (*mut c_void, u32, *mut crate::Actor, *mut crate::SpellItem, u32))(vm, stackId, self_, a0, a1) } }
 /// `Papyrus::Actor::EvaluatePackage` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54672, rva 0xa003e0).
 /// `void EvaluatePackage(IVirtualMachine * vm, uint stackId, Actor * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__evaluate_package(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor) { unsafe { function!(54672, (*mut c_void, u32, *mut classes::Actor))(vm, stackId, self_) } }
+pub unsafe fn papyrus__actor__evaluate_package(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor) { unsafe { function!(54672, (*mut c_void, u32, *mut crate::Actor))(vm, stackId, self_) } }
 /// `Papyrus::Actor::ForceActorValue` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54674, rva 0xa00410).
 /// `void ForceActorValue(IVirtualMachine * vm, uint stackId, Actor * self, BSFixedString * a0, float a1)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__force_actor_value(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor, a0: *mut classes::BSFixedString, a1: f32) { unsafe { function!(54674, (*mut c_void, u32, *mut classes::Actor, *mut classes::BSFixedString, f32))(vm, stackId, self_, a0, a1) } }
+pub unsafe fn papyrus__actor__force_actor_value(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor, a0: *mut crate::BSFixedString, a1: f32) { unsafe { function!(54674, (*mut c_void, u32, *mut crate::Actor, *mut crate::BSFixedString, f32))(vm, stackId, self_, a0, a1) } }
 /// `Papyrus::Actor::GetActorValue` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54675, rva 0xa004e0).
 /// `float GetActorValue(IVirtualMachine * vm, uint stackId, Actor * self, BSFixedString * a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__get_actor_value(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor, a0: *mut classes::BSFixedString) -> f32 { unsafe { function!(54675, (*mut c_void, u32, *mut classes::Actor, *mut classes::BSFixedString) -> f32)(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__actor__get_actor_value(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor, a0: *mut crate::BSFixedString) -> f32 { unsafe { function!(54675, (*mut c_void, u32, *mut crate::Actor, *mut crate::BSFixedString) -> f32)(vm, stackId, self_, a0) } }
 /// `Papyrus::Actor::GetActorValueMax` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54676, rva 0xa00570).
 /// `float GetActorValueMax(IVirtualMachine * vm, uint stackId, Actor * self, BSFixedString * a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__get_actor_value_max(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor, a0: *mut classes::BSFixedString) -> f32 { unsafe { function!(54676, (*mut c_void, u32, *mut classes::Actor, *mut classes::BSFixedString) -> f32)(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__actor__get_actor_value_max(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor, a0: *mut crate::BSFixedString) -> f32 { unsafe { function!(54676, (*mut c_void, u32, *mut crate::Actor, *mut crate::BSFixedString) -> f32)(vm, stackId, self_, a0) } }
 /// `Papyrus::Actor::GetActorValuePercentage` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54677, rva 0xa00620).
 /// `float GetActorValuePercentage(IVirtualMachine * vm, uint stackId, Actor * self, BSFixedString * a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__get_actor_value_percentage(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor, a0: *mut classes::BSFixedString) -> f32 { unsafe { function!(54677, (*mut c_void, u32, *mut classes::Actor, *mut classes::BSFixedString) -> f32)(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__actor__get_actor_value_percentage(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor, a0: *mut crate::BSFixedString) -> f32 { unsafe { function!(54677, (*mut c_void, u32, *mut crate::Actor, *mut crate::BSFixedString) -> f32)(vm, stackId, self_, a0) } }
 /// `Papyrus::Actor::GetBaseActorValue` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54678, rva 0xa00690).
 /// `float GetBaseActorValue(IVirtualMachine * vm, uint stackId, Actor * self, BSFixedString * a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__get_base_actor_value(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor, a0: *mut classes::BSFixedString) -> f32 { unsafe { function!(54678, (*mut c_void, u32, *mut classes::Actor, *mut classes::BSFixedString) -> f32)(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__actor__get_base_actor_value(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor, a0: *mut crate::BSFixedString) -> f32 { unsafe { function!(54678, (*mut c_void, u32, *mut crate::Actor, *mut crate::BSFixedString) -> f32)(vm, stackId, self_, a0) } }
 /// `Papyrus::Actor::GetBribeAmount` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54920, rva 0xa0d4c0).
 /// `uint GetBribeAmount(IVirtualMachine * vm, uint stackId, Actor * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__get_bribe_amount(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor) -> u32 { unsafe { function!(54920, (*mut c_void, u32, *mut classes::Actor) -> u32)(vm, stackId, self_) } }
+pub unsafe fn papyrus__actor__get_bribe_amount(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor) -> u32 { unsafe { function!(54920, (*mut c_void, u32, *mut crate::Actor) -> u32)(vm, stackId, self_) } }
 /// `Papyrus::Actor::GetCombatState` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54679, rva 0xa00710).
 /// `uint GetCombatState(IVirtualMachine * vm, uint stackId, Actor * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__get_combat_state(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor) -> u32 { unsafe { function!(54679, (*mut c_void, u32, *mut classes::Actor) -> u32)(vm, stackId, self_) } }
+pub unsafe fn papyrus__actor__get_combat_state(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor) -> u32 { unsafe { function!(54679, (*mut c_void, u32, *mut crate::Actor) -> u32)(vm, stackId, self_) } }
 /// `Papyrus::Actor::GetCombatTarget` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54680, rva 0xa00720).
 /// `Actor * GetCombatTarget(IVirtualMachine * vm, uint stackId, Actor * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__get_combat_target(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor) -> *mut classes::Actor { unsafe { function!(54680, (*mut c_void, u32, *mut classes::Actor) -> *mut classes::Actor)(vm, stackId, self_) } }
+pub unsafe fn papyrus__actor__get_combat_target(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor) -> *mut crate::Actor { unsafe { function!(54680, (*mut c_void, u32, *mut crate::Actor) -> *mut crate::Actor)(vm, stackId, self_) } }
 /// `Papyrus::Actor::GetCrimeFaction` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54921, rva 0xa0d4d0).
 /// `TESFaction * GetCrimeFaction(IVirtualMachine * vm, uint stackId, Actor * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__get_crime_faction(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor) -> *mut classes::TESFaction { unsafe { function!(54921, (*mut c_void, u32, *mut classes::Actor) -> *mut classes::TESFaction)(vm, stackId, self_) } }
+pub unsafe fn papyrus__actor__get_crime_faction(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor) -> *mut crate::TESFaction { unsafe { function!(54921, (*mut c_void, u32, *mut crate::Actor) -> *mut crate::TESFaction)(vm, stackId, self_) } }
 /// `Papyrus::Actor::GetCurrentPackage` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54681, rva 0xa00790).
 /// `TESPackage * GetCurrentPackage(IVirtualMachine * vm, uint stackId, Actor * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__get_current_package(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor) -> *mut classes::TESPackage { unsafe { function!(54681, (*mut c_void, u32, *mut classes::Actor) -> *mut classes::TESPackage)(vm, stackId, self_) } }
+pub unsafe fn papyrus__actor__get_current_package(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor) -> *mut crate::TESPackage { unsafe { function!(54681, (*mut c_void, u32, *mut crate::Actor) -> *mut crate::TESPackage)(vm, stackId, self_) } }
 /// `Papyrus::Actor::GetDialogueTarget` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54682, rva 0xa007f0).
 /// `Actor * GetDialogueTarget(IVirtualMachine * vm, uint stackId, Actor * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__get_dialogue_target(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor) -> *mut classes::Actor { unsafe { function!(54682, (*mut c_void, u32, *mut classes::Actor) -> *mut classes::Actor)(vm, stackId, self_) } }
+pub unsafe fn papyrus__actor__get_dialogue_target(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor) -> *mut crate::Actor { unsafe { function!(54682, (*mut c_void, u32, *mut crate::Actor) -> *mut crate::Actor)(vm, stackId, self_) } }
 /// `Papyrus::Actor::GetEquippedArmorInSlot` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54684, rva 0xa008c0).
 /// `TESObjectARMO * GetEquippedArmorInSlot(IVirtualMachine * vm, uint stackId, Actor * self, uint a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__get_equipped_armor_in_slot(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor, a0: u32) -> *mut classes::TESObjectARMO { unsafe { function!(54684, (*mut c_void, u32, *mut classes::Actor, u32) -> *mut classes::TESObjectARMO)(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__actor__get_equipped_armor_in_slot(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor, a0: u32) -> *mut crate::TESObjectARMO { unsafe { function!(54684, (*mut c_void, u32, *mut crate::Actor, u32) -> *mut crate::TESObjectARMO)(vm, stackId, self_, a0) } }
 /// `Papyrus::Actor::GetEquippedShield` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54922, rva 0xa0d4e0).
 /// `TESObjectARMO * GetEquippedShield(IVirtualMachine * vm, uint stackId, Actor * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__get_equipped_shield(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor) -> *mut classes::TESObjectARMO { unsafe { function!(54922, (*mut c_void, u32, *mut classes::Actor) -> *mut classes::TESObjectARMO)(vm, stackId, self_) } }
+pub unsafe fn papyrus__actor__get_equipped_shield(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor) -> *mut crate::TESObjectARMO { unsafe { function!(54922, (*mut c_void, u32, *mut crate::Actor) -> *mut crate::TESObjectARMO)(vm, stackId, self_) } }
 /// `Papyrus::Actor::GetEquippedShout` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54923, rva 0xa0d4f0).
 /// `TESShout * GetEquippedShout(IVirtualMachine * vm, uint stackId, Actor * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__get_equipped_shout(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor) -> *mut classes::TESShout { unsafe { function!(54923, (*mut c_void, u32, *mut classes::Actor) -> *mut classes::TESShout)(vm, stackId, self_) } }
+pub unsafe fn papyrus__actor__get_equipped_shout(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor) -> *mut crate::TESShout { unsafe { function!(54923, (*mut c_void, u32, *mut crate::Actor) -> *mut crate::TESShout)(vm, stackId, self_) } }
 /// `Papyrus::Actor::GetEquippedSpell` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54683, rva 0xa00860).
 /// `SpellItem * GetEquippedSpell(IVirtualMachine * vm, uint stackId, Actor * self, uint a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__get_equipped_spell(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor, a0: u32) -> *mut classes::SpellItem { unsafe { function!(54683, (*mut c_void, u32, *mut classes::Actor, u32) -> *mut classes::SpellItem)(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__actor__get_equipped_spell(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor, a0: u32) -> *mut crate::SpellItem { unsafe { function!(54683, (*mut c_void, u32, *mut crate::Actor, u32) -> *mut crate::SpellItem)(vm, stackId, self_, a0) } }
 /// `Papyrus::Actor::GetEquippedWeapon` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54924, rva 0xa0d500).
 /// `TESObjectWEAP * GetEquippedWeapon(IVirtualMachine * vm, uint stackId, Actor * self, bool a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__get_equipped_weapon(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor, a0: u8) -> *mut classes::TESObjectWEAP { unsafe { function!(54924, (*mut c_void, u32, *mut classes::Actor, u8) -> *mut classes::TESObjectWEAP)(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__actor__get_equipped_weapon(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor, a0: u8) -> *mut crate::TESObjectWEAP { unsafe { function!(54924, (*mut c_void, u32, *mut crate::Actor, u8) -> *mut crate::TESObjectWEAP)(vm, stackId, self_, a0) } }
 /// `Papyrus::Actor::GetFactionRank` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54686, rva 0xa009d0).
 /// `int GetFactionRank(IVirtualMachine * vm, uint stackId, Actor * self, TESFaction * a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__get_faction_rank(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor, a0: *mut classes::TESFaction) -> i32 { unsafe { function!(54686, (*mut c_void, u32, *mut classes::Actor, *mut classes::TESFaction) -> i32)(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__actor__get_faction_rank(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor, a0: *mut crate::TESFaction) -> i32 { unsafe { function!(54686, (*mut c_void, u32, *mut crate::Actor, *mut crate::TESFaction) -> i32)(vm, stackId, self_, a0) } }
 /// `Papyrus::Actor::GetFactionReaction` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54687, rva 0xa00a20).
 /// `uint GetFactionReaction(IVirtualMachine * vm, uint stackId, Actor * self, Actor * a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__get_faction_reaction(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor, a0: *mut classes::Actor) -> u32 { unsafe { function!(54687, (*mut c_void, u32, *mut classes::Actor, *mut classes::Actor) -> u32)(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__actor__get_faction_reaction(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor, a0: *mut crate::Actor) -> u32 { unsafe { function!(54687, (*mut c_void, u32, *mut crate::Actor, *mut crate::Actor) -> u32)(vm, stackId, self_, a0) } }
 /// `Papyrus::Actor::GetFlyingState` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54925, rva 0xa0d510).
 /// `uint GetFlyingState(IVirtualMachine * vm, uint stackId, Actor * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__get_flying_state(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor) -> u32 { unsafe { function!(54925, (*mut c_void, u32, *mut classes::Actor) -> u32)(vm, stackId, self_) } }
+pub unsafe fn papyrus__actor__get_flying_state(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor) -> u32 { unsafe { function!(54925, (*mut c_void, u32, *mut crate::Actor) -> u32)(vm, stackId, self_) } }
 /// `Papyrus::Actor::GetForcedLandingMarker` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54690, rva 0xa00b30).
 /// `TESObjectREFR * GetForcedLandingMarker(IVirtualMachine * vm, uint stackId, Actor * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__get_forced_landing_marker(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor) -> *mut classes::TESObjectREFR { unsafe { function!(54690, (*mut c_void, u32, *mut classes::Actor) -> *mut classes::TESObjectREFR)(vm, stackId, self_) } }
+pub unsafe fn papyrus__actor__get_forced_landing_marker(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor) -> *mut crate::TESObjectREFR { unsafe { function!(54690, (*mut c_void, u32, *mut crate::Actor) -> *mut crate::TESObjectREFR)(vm, stackId, self_) } }
 /// `Papyrus::Actor::GetGoldAmount` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54926, rva 0xa0d520).
 /// `int GetGoldAmount(IVirtualMachine * vm, uint stackId, Actor * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__get_gold_amount(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor) -> i32 { unsafe { function!(54926, (*mut c_void, u32, *mut classes::Actor) -> i32)(vm, stackId, self_) } }
+pub unsafe fn papyrus__actor__get_gold_amount(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor) -> i32 { unsafe { function!(54926, (*mut c_void, u32, *mut crate::Actor) -> i32)(vm, stackId, self_) } }
 /// `Papyrus::Actor::GetHighestRelationshipRank` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54688, rva 0xa00a60).
 /// `int GetHighestRelationshipRank(IVirtualMachine * vm, uint stackId, Actor * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__get_highest_relationship_rank(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor) -> i32 { unsafe { function!(54688, (*mut c_void, u32, *mut classes::Actor) -> i32)(vm, stackId, self_) } }
+pub unsafe fn papyrus__actor__get_highest_relationship_rank(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor) -> i32 { unsafe { function!(54688, (*mut c_void, u32, *mut crate::Actor) -> i32)(vm, stackId, self_) } }
 /// `Papyrus::Actor::GetKiller` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54689, rva 0xa00aa0).
 /// `Actor * GetKiller(IVirtualMachine * vm, uint stackId, Actor * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__get_killer(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor) -> *mut classes::Actor { unsafe { function!(54689, (*mut c_void, u32, *mut classes::Actor) -> *mut classes::Actor)(vm, stackId, self_) } }
+pub unsafe fn papyrus__actor__get_killer(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor) -> *mut crate::Actor { unsafe { function!(54689, (*mut c_void, u32, *mut crate::Actor) -> *mut crate::Actor)(vm, stackId, self_) } }
 /// `Papyrus::Actor::GetLevel` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54927, rva 0xa0d530).
 /// `uint GetLevel(IVirtualMachine * vm, uint stackId, Actor * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__get_level(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor) -> u32 { unsafe { function!(54927, (*mut c_void, u32, *mut classes::Actor) -> u32)(vm, stackId, self_) } }
+pub unsafe fn papyrus__actor__get_level(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor) -> u32 { unsafe { function!(54927, (*mut c_void, u32, *mut crate::Actor) -> u32)(vm, stackId, self_) } }
 /// `Papyrus::Actor::GetLeveledActorBase` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54691, rva 0xa00bb0).
 /// `TESNPC * GetLeveledActorBase(IVirtualMachine * vm, uint stackId, Actor * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__get_leveled_actor_base(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor) -> *mut classes::TESNPC { unsafe { function!(54691, (*mut c_void, u32, *mut classes::Actor) -> *mut classes::TESNPC)(vm, stackId, self_) } }
+pub unsafe fn papyrus__actor__get_leveled_actor_base(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor) -> *mut crate::TESNPC { unsafe { function!(54691, (*mut c_void, u32, *mut crate::Actor) -> *mut crate::TESNPC)(vm, stackId, self_) } }
 /// `Papyrus::Actor::GetLightLevel` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54928, rva 0xa0d550).
 /// `float GetLightLevel(IVirtualMachine * vm, uint stackId, Actor * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__get_light_level(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor) -> f32 { unsafe { function!(54928, (*mut c_void, u32, *mut classes::Actor) -> f32)(vm, stackId, self_) } }
+pub unsafe fn papyrus__actor__get_light_level(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor) -> f32 { unsafe { function!(54928, (*mut c_void, u32, *mut crate::Actor) -> f32)(vm, stackId, self_) } }
 /// `Papyrus::Actor::GetLowestRelationshipRank` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54693, rva 0xa00bd0).
 /// `int GetLowestRelationshipRank(IVirtualMachine * vm, uint stackId, Actor * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__get_lowest_relationship_rank(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor) -> i32 { unsafe { function!(54693, (*mut c_void, u32, *mut classes::Actor) -> i32)(vm, stackId, self_) } }
+pub unsafe fn papyrus__actor__get_lowest_relationship_rank(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor) -> i32 { unsafe { function!(54693, (*mut c_void, u32, *mut crate::Actor) -> i32)(vm, stackId, self_) } }
 /// `Papyrus::Actor::GetNoBleedoutRecovery` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54929, rva 0xa0d560).
 /// `bool GetNoBleedoutRecovery(IVirtualMachine * vm, uint stackId, Actor * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__get_no_bleedout_recovery(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor) -> u8 { unsafe { function!(54929, (*mut c_void, u32, *mut classes::Actor) -> u8)(vm, stackId, self_) } }
+pub unsafe fn papyrus__actor__get_no_bleedout_recovery(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor) -> u8 { unsafe { function!(54929, (*mut c_void, u32, *mut crate::Actor) -> u8)(vm, stackId, self_) } }
 /// `Papyrus::Actor::GetPlayerControls` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54694, rva 0xa00c10).
 /// `bool GetPlayerControls(IVirtualMachine * vm, uint stackId, Actor * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__get_player_controls(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor) -> u8 { unsafe { function!(54694, (*mut c_void, u32, *mut classes::Actor) -> u8)(vm, stackId, self_) } }
+pub unsafe fn papyrus__actor__get_player_controls(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor) -> u8 { unsafe { function!(54694, (*mut c_void, u32, *mut crate::Actor) -> u8)(vm, stackId, self_) } }
 /// `Papyrus::Actor::GetRace` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54930, rva 0xa0d570).
 /// `TESRace * GetRace(IVirtualMachine * vm, uint stackId, Actor * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__get_race(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor) -> *mut classes::TESRace { unsafe { function!(54930, (*mut c_void, u32, *mut classes::Actor) -> *mut classes::TESRace)(vm, stackId, self_) } }
+pub unsafe fn papyrus__actor__get_race(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor) -> *mut crate::TESRace { unsafe { function!(54930, (*mut c_void, u32, *mut crate::Actor) -> *mut crate::TESRace)(vm, stackId, self_) } }
 /// `Papyrus::Actor::GetRelationshipRank` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54710, rva 0xa01190).
 /// `int GetRelationshipRank(IVirtualMachine * vm, uint stackId, Actor * self, Actor * a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__get_relationship_rank(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor, a0: *mut classes::Actor) -> i32 { unsafe { function!(54710, (*mut c_void, u32, *mut classes::Actor, *mut classes::Actor) -> i32)(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__actor__get_relationship_rank(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor, a0: *mut crate::Actor) -> i32 { unsafe { function!(54710, (*mut c_void, u32, *mut crate::Actor, *mut crate::Actor) -> i32)(vm, stackId, self_, a0) } }
 /// `Papyrus::Actor::GetSitState` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54711, rva 0xa01200).
 /// `uint GetSitState(IVirtualMachine * vm, uint stackId, Actor * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__get_sit_state(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor) -> u32 { unsafe { function!(54711, (*mut c_void, u32, *mut classes::Actor) -> u32)(vm, stackId, self_) } }
+pub unsafe fn papyrus__actor__get_sit_state(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor) -> u32 { unsafe { function!(54711, (*mut c_void, u32, *mut crate::Actor) -> u32)(vm, stackId, self_) } }
 /// `Papyrus::Actor::GetSleepState` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54715, rva 0xa01260).
 /// `uint GetSleepState(IVirtualMachine * vm, uint stackId, Actor * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__get_sleep_state(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor) -> u32 { unsafe { function!(54715, (*mut c_void, u32, *mut classes::Actor) -> u32)(vm, stackId, self_) } }
+pub unsafe fn papyrus__actor__get_sleep_state(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor) -> u32 { unsafe { function!(54715, (*mut c_void, u32, *mut crate::Actor) -> u32)(vm, stackId, self_) } }
 /// `Papyrus::Actor::GetVoiceRecoveryTime` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54931, rva 0xa0d580).
 /// `float GetVoiceRecoveryTime(IVirtualMachine * vm, uint stackId, Actor * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__get_voice_recovery_time(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor) -> f32 { unsafe { function!(54931, (*mut c_void, u32, *mut classes::Actor) -> f32)(vm, stackId, self_) } }
+pub unsafe fn papyrus__actor__get_voice_recovery_time(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor) -> f32 { unsafe { function!(54931, (*mut c_void, u32, *mut crate::Actor) -> f32)(vm, stackId, self_) } }
 /// `Papyrus::Actor::GetWarmthRating` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54695, rva 0xa00c50).
 /// `float GetWarmthRating(IVirtualMachine * vm, uint stackId, Actor * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__get_warmth_rating(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor) -> f32 { unsafe { function!(54695, (*mut c_void, u32, *mut classes::Actor) -> f32)(vm, stackId, self_) } }
+pub unsafe fn papyrus__actor__get_warmth_rating(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor) -> f32 { unsafe { function!(54695, (*mut c_void, u32, *mut crate::Actor) -> f32)(vm, stackId, self_) } }
 /// `Papyrus::Actor::HasAssociation` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54696, rva 0xa00c60).
 /// `bool HasAssociation(IVirtualMachine * vm, uint stackId, Actor * self, BGSAssociationType * a0, Actor * a1)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__has_association(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor, a0: *mut classes::BGSAssociationType, a1: *mut classes::Actor) -> u8 { unsafe { function!(54696, (*mut c_void, u32, *mut classes::Actor, *mut classes::BGSAssociationType, *mut classes::Actor) -> u8)(vm, stackId, self_, a0, a1) } }
+pub unsafe fn papyrus__actor__has_association(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor, a0: *mut crate::BGSAssociationType, a1: *mut crate::Actor) -> u8 { unsafe { function!(54696, (*mut c_void, u32, *mut crate::Actor, *mut crate::BGSAssociationType, *mut crate::Actor) -> u8)(vm, stackId, self_, a0, a1) } }
 /// `Papyrus::Actor::HasFamilyRelationship` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54697, rva 0xa00cd0).
 /// `bool HasFamilyRelationship(IVirtualMachine * vm, uint stackId, Actor * self, Actor * a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__has_family_relationship(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor, a0: *mut classes::Actor) -> u8 { unsafe { function!(54697, (*mut c_void, u32, *mut classes::Actor, *mut classes::Actor) -> u8)(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__actor__has_family_relationship(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor, a0: *mut crate::Actor) -> u8 { unsafe { function!(54697, (*mut c_void, u32, *mut crate::Actor, *mut crate::Actor) -> u8)(vm, stackId, self_, a0) } }
 /// `Papyrus::Actor::HasLOS` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54698, rva 0xa00d20).
 /// `bool HasLOS(IVirtualMachine * vm, uint stackId, Actor * self, TESObjectREFR * a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__has_los(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor, a0: *mut classes::TESObjectREFR) -> u8 { unsafe { function!(54698, (*mut c_void, u32, *mut classes::Actor, *mut classes::TESObjectREFR) -> u8)(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__actor__has_los(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor, a0: *mut crate::TESObjectREFR) -> u8 { unsafe { function!(54698, (*mut c_void, u32, *mut crate::Actor, *mut crate::TESObjectREFR) -> u8)(vm, stackId, self_, a0) } }
 /// `Papyrus::Actor::HasMagicEffect` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54649, rva 0x9ff8e0).
 /// `bool HasMagicEffect(IVirtualMachine * vm, uint stackId, Actor * self, EffectSetting * a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__has_magic_effect(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor, a0: *mut classes::EffectSetting) -> u8 { unsafe { function!(54649, (*mut c_void, u32, *mut classes::Actor, *mut classes::EffectSetting) -> u8)(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__actor__has_magic_effect(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor, a0: *mut crate::EffectSetting) -> u8 { unsafe { function!(54649, (*mut c_void, u32, *mut crate::Actor, *mut crate::EffectSetting) -> u8)(vm, stackId, self_, a0) } }
 /// `Papyrus::Actor::HasMagicEffectWithKeyword` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54650, rva 0x9ff920).
 /// `bool HasMagicEffectWithKeyword(IVirtualMachine * vm, uint stackId, Actor * self, BGSKeyword * a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__has_magic_effect_with_keyword(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor, a0: *mut classes::BGSKeyword) -> u8 { unsafe { function!(54650, (*mut c_void, u32, *mut classes::Actor, *mut classes::BGSKeyword) -> u8)(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__actor__has_magic_effect_with_keyword(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor, a0: *mut crate::BGSKeyword) -> u8 { unsafe { function!(54650, (*mut c_void, u32, *mut crate::Actor, *mut crate::BGSKeyword) -> u8)(vm, stackId, self_, a0) } }
 /// `Papyrus::Actor::HasParentRelationship` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54699, rva 0xa00db0).
 /// `bool HasParentRelationship(IVirtualMachine * vm, uint stackId, Actor * self, Actor * a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__has_parent_relationship(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor, a0: *mut classes::Actor) -> u8 { unsafe { function!(54699, (*mut c_void, u32, *mut classes::Actor, *mut classes::Actor) -> u8)(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__actor__has_parent_relationship(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor, a0: *mut crate::Actor) -> u8 { unsafe { function!(54699, (*mut c_void, u32, *mut crate::Actor, *mut crate::Actor) -> u8)(vm, stackId, self_, a0) } }
 /// `Papyrus::Actor::HasPerk` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54644, rva 0x9ff790).
 /// `bool HasPerk(IVirtualMachine * vm, uint stackId, Actor * self, BGSPerk * a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__has_perk(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor, a0: *mut classes::BGSPerk) -> u8 { unsafe { function!(54644, (*mut c_void, u32, *mut classes::Actor, *mut classes::BGSPerk) -> u8)(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__actor__has_perk(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor, a0: *mut crate::BGSPerk) -> u8 { unsafe { function!(54644, (*mut c_void, u32, *mut crate::Actor, *mut crate::BGSPerk) -> u8)(vm, stackId, self_, a0) } }
 /// `Papyrus::Actor::HasSpell` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54653, rva 0x9ffaa0).
 /// `bool HasSpell(IVirtualMachine * vm, uint stackId, Actor * self, TESForm * a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__has_spell(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor, a0: *mut classes::TESForm) -> u8 { unsafe { function!(54653, (*mut c_void, u32, *mut classes::Actor, *mut classes::TESForm) -> u8)(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__actor__has_spell(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor, a0: *mut crate::TESForm) -> u8 { unsafe { function!(54653, (*mut c_void, u32, *mut crate::Actor, *mut crate::TESForm) -> u8)(vm, stackId, self_, a0) } }
 /// `Papyrus::Actor::IsAlarmed` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54700, rva 0xa00e20).
 /// `bool IsAlarmed(IVirtualMachine * vm, uint stackId, Actor * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__is_alarmed(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor) -> u8 { unsafe { function!(54700, (*mut c_void, u32, *mut classes::Actor) -> u8)(vm, stackId, self_) } }
+pub unsafe fn papyrus__actor__is_alarmed(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor) -> u8 { unsafe { function!(54700, (*mut c_void, u32, *mut crate::Actor) -> u8)(vm, stackId, self_) } }
 /// `Papyrus::Actor::IsAlerted` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54932, rva 0xa0d590).
 /// `bool IsAlerted(IVirtualMachine * vm, uint stackId, Actor * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__is_alerted(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor) -> u8 { unsafe { function!(54932, (*mut c_void, u32, *mut classes::Actor) -> u8)(vm, stackId, self_) } }
+pub unsafe fn papyrus__actor__is_alerted(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor) -> u8 { unsafe { function!(54932, (*mut c_void, u32, *mut crate::Actor) -> u8)(vm, stackId, self_) } }
 /// `Papyrus::Actor::IsAllowedToFly` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54701, rva 0xa00e60).
 /// `bool IsAllowedToFly(IVirtualMachine * vm, uint stackId, Actor * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__is_allowed_to_fly(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor) -> u8 { unsafe { function!(54701, (*mut c_void, u32, *mut classes::Actor) -> u8)(vm, stackId, self_) } }
+pub unsafe fn papyrus__actor__is_allowed_to_fly(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor) -> u8 { unsafe { function!(54701, (*mut c_void, u32, *mut crate::Actor) -> u8)(vm, stackId, self_) } }
 /// `Papyrus::Actor::IsArrested` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54702, rva 0xa00e70).
 /// `bool IsArrested(IVirtualMachine * vm, uint stackId, Actor * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__is_arrested(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor) -> u8 { unsafe { function!(54702, (*mut c_void, u32, *mut classes::Actor) -> u8)(vm, stackId, self_) } }
+pub unsafe fn papyrus__actor__is_arrested(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor) -> u8 { unsafe { function!(54702, (*mut c_void, u32, *mut crate::Actor) -> u8)(vm, stackId, self_) } }
 /// `Papyrus::Actor::IsArrestingTarget` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54933, rva 0xa0d5a0).
 /// `bool IsArrestingTarget(IVirtualMachine * vm, uint stackId, Actor * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__is_arresting_target(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor) -> u8 { unsafe { function!(54933, (*mut c_void, u32, *mut classes::Actor) -> u8)(vm, stackId, self_) } }
+pub unsafe fn papyrus__actor__is_arresting_target(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor) -> u8 { unsafe { function!(54933, (*mut c_void, u32, *mut crate::Actor) -> u8)(vm, stackId, self_) } }
 /// `Papyrus::Actor::IsBeingRidden` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54934, rva 0xa0d5b0).
 /// `bool IsBeingRidden(IVirtualMachine * vm, uint stackId, Actor * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__is_being_ridden(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor) -> u8 { unsafe { function!(54934, (*mut c_void, u32, *mut classes::Actor) -> u8)(vm, stackId, self_) } }
+pub unsafe fn papyrus__actor__is_being_ridden(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor) -> u8 { unsafe { function!(54934, (*mut c_void, u32, *mut crate::Actor) -> u8)(vm, stackId, self_) } }
 /// `Papyrus::Actor::IsBleedingOut` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54703, rva 0xa00ea0).
 /// `bool IsBleedingOut(IVirtualMachine * vm, uint stackId, Actor * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__is_bleeding_out(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor) -> u8 { unsafe { function!(54703, (*mut c_void, u32, *mut classes::Actor) -> u8)(vm, stackId, self_) } }
+pub unsafe fn papyrus__actor__is_bleeding_out(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor) -> u8 { unsafe { function!(54703, (*mut c_void, u32, *mut crate::Actor) -> u8)(vm, stackId, self_) } }
 /// `Papyrus::Actor::IsBribed` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54935, rva 0xa0d630).
 /// `bool IsBribed(IVirtualMachine * vm, uint stackId, Actor * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__is_bribed(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor) -> u8 { unsafe { function!(54935, (*mut c_void, u32, *mut classes::Actor) -> u8)(vm, stackId, self_) } }
+pub unsafe fn papyrus__actor__is_bribed(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor) -> u8 { unsafe { function!(54935, (*mut c_void, u32, *mut crate::Actor) -> u8)(vm, stackId, self_) } }
 /// `Papyrus::Actor::IsChild` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54936, rva 0xa0d640).
 /// `bool IsChild(IVirtualMachine * vm, uint stackId, Actor * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__is_child(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor) -> u8 { unsafe { function!(54936, (*mut c_void, u32, *mut classes::Actor) -> u8)(vm, stackId, self_) } }
+pub unsafe fn papyrus__actor__is_child(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor) -> u8 { unsafe { function!(54936, (*mut c_void, u32, *mut crate::Actor) -> u8)(vm, stackId, self_) } }
 /// `Papyrus::Actor::IsCommandedActor` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54937, rva 0xa0d650).
 /// `bool IsCommandedActor(IVirtualMachine * vm, uint stackId, Actor * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__is_commanded_actor(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor) -> u8 { unsafe { function!(54937, (*mut c_void, u32, *mut classes::Actor) -> u8)(vm, stackId, self_) } }
+pub unsafe fn papyrus__actor__is_commanded_actor(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor) -> u8 { unsafe { function!(54937, (*mut c_void, u32, *mut crate::Actor) -> u8)(vm, stackId, self_) } }
 /// `Papyrus::Actor::IsDead` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54705, rva 0xa00ed0).
 /// `bool IsDead(IVirtualMachine * vm, uint stackId, Actor * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__is_dead(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor) -> u8 { unsafe { function!(54705, (*mut c_void, u32, *mut classes::Actor) -> u8)(vm, stackId, self_) } }
+pub unsafe fn papyrus__actor__is_dead(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor) -> u8 { unsafe { function!(54705, (*mut c_void, u32, *mut crate::Actor) -> u8)(vm, stackId, self_) } }
 /// `Papyrus::Actor::IsDetectedBy` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54706, rva 0xa00ef0).
 /// `bool IsDetectedBy(IVirtualMachine * vm, uint stackId, Actor * self, Actor * a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__is_detected_by(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor, a0: *mut classes::Actor) -> u8 { unsafe { function!(54706, (*mut c_void, u32, *mut classes::Actor, *mut classes::Actor) -> u8)(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__actor__is_detected_by(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor, a0: *mut crate::Actor) -> u8 { unsafe { function!(54706, (*mut c_void, u32, *mut crate::Actor, *mut crate::Actor) -> u8)(vm, stackId, self_, a0) } }
 /// `Papyrus::Actor::IsDoingFavor` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54938, rva 0xa0d660).
 /// `bool IsDoingFavor(IVirtualMachine * vm, uint stackId, Actor * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__is_doing_favor(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor) -> u8 { unsafe { function!(54938, (*mut c_void, u32, *mut classes::Actor) -> u8)(vm, stackId, self_) } }
+pub unsafe fn papyrus__actor__is_doing_favor(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor) -> u8 { unsafe { function!(54938, (*mut c_void, u32, *mut crate::Actor) -> u8)(vm, stackId, self_) } }
 /// `Papyrus::Actor::IsEquipped` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54707, rva 0xa00f50).
 /// `bool IsEquipped(IVirtualMachine * vm, uint stackId, Actor * self, TESForm * a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__is_equipped(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor, a0: *mut classes::TESForm) -> u8 { unsafe { function!(54707, (*mut c_void, u32, *mut classes::Actor, *mut classes::TESForm) -> u8)(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__actor__is_equipped(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor, a0: *mut crate::TESForm) -> u8 { unsafe { function!(54707, (*mut c_void, u32, *mut crate::Actor, *mut crate::TESForm) -> u8)(vm, stackId, self_, a0) } }
 /// `Papyrus::Actor::IsEssential` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54939, rva 0xa0d670).
 /// `bool IsEssential(IVirtualMachine * vm, uint stackId, Actor * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__is_essential(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor) -> u8 { unsafe { function!(54939, (*mut c_void, u32, *mut classes::Actor) -> u8)(vm, stackId, self_) } }
+pub unsafe fn papyrus__actor__is_essential(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor) -> u8 { unsafe { function!(54939, (*mut c_void, u32, *mut crate::Actor) -> u8)(vm, stackId, self_) } }
 /// `Papyrus::Actor::IsFlying` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54940, rva 0xa0d680).
 /// `bool IsFlying(IVirtualMachine * vm, uint stackId, Actor * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__is_flying(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor) -> u8 { unsafe { function!(54940, (*mut c_void, u32, *mut classes::Actor) -> u8)(vm, stackId, self_) } }
+pub unsafe fn papyrus__actor__is_flying(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor) -> u8 { unsafe { function!(54940, (*mut c_void, u32, *mut crate::Actor) -> u8)(vm, stackId, self_) } }
 /// `Papyrus::Actor::IsGhost` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54942, rva 0xa0d6a0).
 /// `bool IsGhost(IVirtualMachine * vm, uint stackId, Actor * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__is_ghost(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor) -> u8 { unsafe { function!(54942, (*mut c_void, u32, *mut classes::Actor) -> u8)(vm, stackId, self_) } }
+pub unsafe fn papyrus__actor__is_ghost(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor) -> u8 { unsafe { function!(54942, (*mut c_void, u32, *mut crate::Actor) -> u8)(vm, stackId, self_) } }
 /// `Papyrus::Actor::IsGuard` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54943, rva 0xa0d6b0).
 /// `bool IsGuard(IVirtualMachine * vm, uint stackId, Actor * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__is_guard(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor) -> u8 { unsafe { function!(54943, (*mut c_void, u32, *mut classes::Actor) -> u8)(vm, stackId, self_) } }
+pub unsafe fn papyrus__actor__is_guard(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor) -> u8 { unsafe { function!(54943, (*mut c_void, u32, *mut crate::Actor) -> u8)(vm, stackId, self_) } }
 /// `Papyrus::Actor::IsHostileToActor` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54944, rva 0xa0d6c0).
 /// `bool IsHostileToActor(IVirtualMachine * vm, uint stackId, Actor * self, Actor * a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__is_hostile_to_actor(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor, a0: *mut classes::Actor) -> u8 { unsafe { function!(54944, (*mut c_void, u32, *mut classes::Actor, *mut classes::Actor) -> u8)(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__actor__is_hostile_to_actor(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor, a0: *mut crate::Actor) -> u8 { unsafe { function!(54944, (*mut c_void, u32, *mut crate::Actor, *mut crate::Actor) -> u8)(vm, stackId, self_, a0) } }
 /// `Papyrus::Actor::IsInCombat` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54945, rva 0xa0d6d0).
 /// `bool IsInCombat(IVirtualMachine * vm, uint stackId, Actor * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__is_in_combat(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor) -> u8 { unsafe { function!(54945, (*mut c_void, u32, *mut classes::Actor) -> u8)(vm, stackId, self_) } }
+pub unsafe fn papyrus__actor__is_in_combat(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor) -> u8 { unsafe { function!(54945, (*mut c_void, u32, *mut crate::Actor) -> u8)(vm, stackId, self_) } }
 /// `Papyrus::Actor::IsInFaction` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54946, rva 0xa0d6e0).
 /// `bool IsInFaction(IVirtualMachine * vm, uint stackId, Actor * self, TESFaction * a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__is_in_faction(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor, a0: *mut classes::TESFaction) -> u8 { unsafe { function!(54946, (*mut c_void, u32, *mut classes::Actor, *mut classes::TESFaction) -> u8)(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__actor__is_in_faction(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor, a0: *mut crate::TESFaction) -> u8 { unsafe { function!(54946, (*mut c_void, u32, *mut crate::Actor, *mut crate::TESFaction) -> u8)(vm, stackId, self_, a0) } }
 /// `Papyrus::Actor::IsInKillMove` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54947, rva 0xa0d6f0).
 /// `bool IsInKillMove(IVirtualMachine * vm, uint stackId, Actor * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__is_in_kill_move(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor) -> u8 { unsafe { function!(54947, (*mut c_void, u32, *mut classes::Actor) -> u8)(vm, stackId, self_) } }
+pub unsafe fn papyrus__actor__is_in_kill_move(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor) -> u8 { unsafe { function!(54947, (*mut c_void, u32, *mut crate::Actor) -> u8)(vm, stackId, self_) } }
 /// `Papyrus::Actor::IsIntimidated` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54948, rva 0xa0d700).
 /// `bool IsIntimidated(IVirtualMachine * vm, uint stackId, Actor * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__is_intimidated(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor) -> u8 { unsafe { function!(54948, (*mut c_void, u32, *mut classes::Actor) -> u8)(vm, stackId, self_) } }
+pub unsafe fn papyrus__actor__is_intimidated(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor) -> u8 { unsafe { function!(54948, (*mut c_void, u32, *mut crate::Actor) -> u8)(vm, stackId, self_) } }
 /// `Papyrus::Actor::IsOnMount` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54949, rva 0xa0d710).
 /// `bool IsOnMount(IVirtualMachine * vm, uint stackId, Actor * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__is_on_mount(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor) -> u8 { unsafe { function!(54949, (*mut c_void, u32, *mut classes::Actor) -> u8)(vm, stackId, self_) } }
+pub unsafe fn papyrus__actor__is_on_mount(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor) -> u8 { unsafe { function!(54949, (*mut c_void, u32, *mut crate::Actor) -> u8)(vm, stackId, self_) } }
 /// `Papyrus::Actor::IsOverEncumbered` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54950, rva 0xa0d720).
 /// `bool IsOverEncumbered(IVirtualMachine * vm, uint stackId, Actor * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__is_over_encumbered(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor) -> u8 { unsafe { function!(54950, (*mut c_void, u32, *mut classes::Actor) -> u8)(vm, stackId, self_) } }
+pub unsafe fn papyrus__actor__is_over_encumbered(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor) -> u8 { unsafe { function!(54950, (*mut c_void, u32, *mut crate::Actor) -> u8)(vm, stackId, self_) } }
 /// `Papyrus::Actor::IsPlayerTeammate` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54951, rva 0xa0d730).
 /// `bool IsPlayerTeammate(IVirtualMachine * vm, uint stackId, Actor * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__is_player_teammate(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor) -> u8 { unsafe { function!(54951, (*mut c_void, u32, *mut classes::Actor) -> u8)(vm, stackId, self_) } }
+pub unsafe fn papyrus__actor__is_player_teammate(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor) -> u8 { unsafe { function!(54951, (*mut c_void, u32, *mut crate::Actor) -> u8)(vm, stackId, self_) } }
 /// `Papyrus::Actor::IsPlayersLastRiddenHorse` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54708, rva 0xa01080).
 /// `bool IsPlayersLastRiddenHorse(IVirtualMachine * vm, uint stackId, Actor * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__is_players_last_ridden_horse(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor) -> u8 { unsafe { function!(54708, (*mut c_void, u32, *mut classes::Actor) -> u8)(vm, stackId, self_) } }
+pub unsafe fn papyrus__actor__is_players_last_ridden_horse(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor) -> u8 { unsafe { function!(54708, (*mut c_void, u32, *mut crate::Actor) -> u8)(vm, stackId, self_) } }
 /// `Papyrus::Actor::IsRunning` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54952, rva 0xa0d740).
 /// `bool IsRunning(IVirtualMachine * vm, uint stackId, Actor * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__is_running(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor) -> u8 { unsafe { function!(54952, (*mut c_void, u32, *mut classes::Actor) -> u8)(vm, stackId, self_) } }
+pub unsafe fn papyrus__actor__is_running(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor) -> u8 { unsafe { function!(54952, (*mut c_void, u32, *mut crate::Actor) -> u8)(vm, stackId, self_) } }
 /// `Papyrus::Actor::IsSneaking` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54953, rva 0xa0d750).
 /// `bool IsSneaking(IVirtualMachine * vm, uint stackId, Actor * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__is_sneaking(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor) -> u8 { unsafe { function!(54953, (*mut c_void, u32, *mut classes::Actor) -> u8)(vm, stackId, self_) } }
+pub unsafe fn papyrus__actor__is_sneaking(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor) -> u8 { unsafe { function!(54953, (*mut c_void, u32, *mut crate::Actor) -> u8)(vm, stackId, self_) } }
 /// `Papyrus::Actor::IsSprinting` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54954, rva 0xa0d7b0).
 /// `bool IsSprinting(IVirtualMachine * vm, uint stackId, Actor * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__is_sprinting(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor) -> u8 { unsafe { function!(54954, (*mut c_void, u32, *mut classes::Actor) -> u8)(vm, stackId, self_) } }
+pub unsafe fn papyrus__actor__is_sprinting(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor) -> u8 { unsafe { function!(54954, (*mut c_void, u32, *mut crate::Actor) -> u8)(vm, stackId, self_) } }
 /// `Papyrus::Actor::IsTrespassing` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54955, rva 0xa0d7d0).
 /// `bool IsTrespassing(IVirtualMachine * vm, uint stackId, Actor * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__is_trespassing(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor) -> u8 { unsafe { function!(54955, (*mut c_void, u32, *mut classes::Actor) -> u8)(vm, stackId, self_) } }
+pub unsafe fn papyrus__actor__is_trespassing(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor) -> u8 { unsafe { function!(54955, (*mut c_void, u32, *mut crate::Actor) -> u8)(vm, stackId, self_) } }
 /// `Papyrus::Actor::IsUnconscious` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54956, rva 0xa0d7e0).
 /// `bool IsUnconscious(IVirtualMachine * vm, uint stackId, Actor * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__is_unconscious(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor) -> u8 { unsafe { function!(54956, (*mut c_void, u32, *mut classes::Actor) -> u8)(vm, stackId, self_) } }
+pub unsafe fn papyrus__actor__is_unconscious(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor) -> u8 { unsafe { function!(54956, (*mut c_void, u32, *mut crate::Actor) -> u8)(vm, stackId, self_) } }
 /// `Papyrus::Actor::IsWeaponDrawn` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54957, rva 0xa0d800).
 /// `bool IsWeaponDrawn(IVirtualMachine * vm, uint stackId, Actor * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__is_weapon_drawn(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor) -> u8 { unsafe { function!(54957, (*mut c_void, u32, *mut classes::Actor) -> u8)(vm, stackId, self_) } }
+pub unsafe fn papyrus__actor__is_weapon_drawn(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor) -> u8 { unsafe { function!(54957, (*mut c_void, u32, *mut crate::Actor) -> u8)(vm, stackId, self_) } }
 /// `Papyrus::Actor::KeepOffsetFromActor` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54709, rva 0xa010d0).
 /// `void KeepOffsetFromActor(IVirtualMachine * vm, uint stackId, Actor * self, Actor * a0, float a1, float a2, float a3, float a4, float a5, float a6, float a7, float a8)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__keep_offset_from_actor(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor, a0: *mut classes::Actor, a1: f32, a2: f32, a3: f32, a4: f32, a5: f32, a6: f32, a7: f32, a8: f32) { unsafe { function!(54709, (*mut c_void, u32, *mut classes::Actor, *mut classes::Actor, f32, f32, f32, f32, f32, f32, f32, f32))(vm, stackId, self_, a0, a1, a2, a3, a4, a5, a6, a7, a8) } }
+pub unsafe fn papyrus__actor__keep_offset_from_actor(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor, a0: *mut crate::Actor, a1: f32, a2: f32, a3: f32, a4: f32, a5: f32, a6: f32, a7: f32, a8: f32) { unsafe { function!(54709, (*mut c_void, u32, *mut crate::Actor, *mut crate::Actor, f32, f32, f32, f32, f32, f32, f32, f32))(vm, stackId, self_, a0, a1, a2, a3, a4, a5, a6, a7, a8) } }
 /// `Papyrus::Actor::Kill` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54720, rva 0xa012f0).
 /// `void Kill(IVirtualMachine * vm, uint stackId, Actor * self, Actor * a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__kill(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor, a0: *mut classes::Actor) { unsafe { function!(54720, (*mut c_void, u32, *mut classes::Actor, *mut classes::Actor))(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__actor__kill(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor, a0: *mut crate::Actor) { unsafe { function!(54720, (*mut c_void, u32, *mut crate::Actor, *mut crate::Actor))(vm, stackId, self_, a0) } }
 /// `Papyrus::Actor::KillSilent` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54719, rva 0xa012c0).
 /// `void KillSilent(IVirtualMachine * vm, uint stackId, Actor * self, Actor * a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__kill_silent(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor, a0: *mut classes::Actor) { unsafe { function!(54719, (*mut c_void, u32, *mut classes::Actor, *mut classes::Actor))(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__actor__kill_silent(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor, a0: *mut crate::Actor) { unsafe { function!(54719, (*mut c_void, u32, *mut crate::Actor, *mut crate::Actor))(vm, stackId, self_, a0) } }
 /// `Papyrus::Actor::ModActorValue` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54721, rva 0xa01320).
 /// `void ModActorValue(IVirtualMachine * vm, uint stackId, Actor * self, BSFixedString * a0, float a1)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__mod_actor_value(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor, a0: *mut classes::BSFixedString, a1: f32) { unsafe { function!(54721, (*mut c_void, u32, *mut classes::Actor, *mut classes::BSFixedString, f32))(vm, stackId, self_, a0, a1) } }
+pub unsafe fn papyrus__actor__mod_actor_value(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor, a0: *mut crate::BSFixedString, a1: f32) { unsafe { function!(54721, (*mut c_void, u32, *mut crate::Actor, *mut crate::BSFixedString, f32))(vm, stackId, self_, a0, a1) } }
 /// `Papyrus::Actor::ModFactionRank` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54722, rva 0xa013c0).
 /// `void ModFactionRank(IVirtualMachine * vm, uint stackId, Actor * self, TESFaction * a0, int a1)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__mod_faction_rank(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor, a0: *mut classes::TESFaction, a1: i32) { unsafe { function!(54722, (*mut c_void, u32, *mut classes::Actor, *mut classes::TESFaction, i32))(vm, stackId, self_, a0, a1) } }
+pub unsafe fn papyrus__actor__mod_faction_rank(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor, a0: *mut crate::TESFaction, a1: i32) { unsafe { function!(54722, (*mut c_void, u32, *mut crate::Actor, *mut crate::TESFaction, i32))(vm, stackId, self_, a0, a1) } }
 /// `Papyrus::Actor::OpenInventory` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54728, rva 0xa017c0).
 /// `void OpenInventory(IVirtualMachine * vm, uint stackId, Actor * self, bool a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__open_inventory(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor, a0: u8) { unsafe { function!(54728, (*mut c_void, u32, *mut classes::Actor, u8))(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__actor__open_inventory(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor, a0: u8) { unsafe { function!(54728, (*mut c_void, u32, *mut crate::Actor, u8))(vm, stackId, self_, a0) } }
 /// `Papyrus::Actor::PathToReference` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54731, rva 0xa017f0).
 /// `bool PathToReference(IVirtualMachine * vm, uint stackId, Actor * self, TESObjectREFR * a0, float a1)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__path_to_reference(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor, a0: *mut classes::TESObjectREFR, a1: f32) -> u8 { unsafe { function!(54731, (*mut c_void, u32, *mut classes::Actor, *mut classes::TESObjectREFR, f32) -> u8)(vm, stackId, self_, a0, a1) } }
+pub unsafe fn papyrus__actor__path_to_reference(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor, a0: *mut crate::TESObjectREFR, a1: f32) -> u8 { unsafe { function!(54731, (*mut c_void, u32, *mut crate::Actor, *mut crate::TESObjectREFR, f32) -> u8)(vm, stackId, self_, a0, a1) } }
 /// `Papyrus::Actor::PlayIdle` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54732, rva 0xa01930).
 /// `bool PlayIdle(IVirtualMachine * vm, uint stackId, Actor * self, TESIdleForm * a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__play_idle(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor, a0: *mut classes::TESIdleForm) -> u8 { unsafe { function!(54732, (*mut c_void, u32, *mut classes::Actor, *mut classes::TESIdleForm) -> u8)(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__actor__play_idle(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor, a0: *mut crate::TESIdleForm) -> u8 { unsafe { function!(54732, (*mut c_void, u32, *mut crate::Actor, *mut crate::TESIdleForm) -> u8)(vm, stackId, self_, a0) } }
 /// `Papyrus::Actor::PlayIdleWithTarget` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54733, rva 0xa01960).
 /// `bool PlayIdleWithTarget(IVirtualMachine * vm, uint stackId, Actor * self, TESIdleForm * a0, TESObjectREFR * a1)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__play_idle_with_target(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor, a0: *mut classes::TESIdleForm, a1: *mut classes::TESObjectREFR) -> u8 { unsafe { function!(54733, (*mut c_void, u32, *mut classes::Actor, *mut classes::TESIdleForm, *mut classes::TESObjectREFR) -> u8)(vm, stackId, self_, a0, a1) } }
+pub unsafe fn papyrus__actor__play_idle_with_target(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor, a0: *mut crate::TESIdleForm, a1: *mut crate::TESObjectREFR) -> u8 { unsafe { function!(54733, (*mut c_void, u32, *mut crate::Actor, *mut crate::TESIdleForm, *mut crate::TESObjectREFR) -> u8)(vm, stackId, self_, a0, a1) } }
 /// `Papyrus::Actor::PlaySubGraphAnimation` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54734, rva 0xa01990).
 /// `void PlaySubGraphAnimation(IVirtualMachine * vm, uint stackId, Actor * self, BSFixedString * a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__play_sub_graph_animation(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor, a0: *mut classes::BSFixedString) { unsafe { function!(54734, (*mut c_void, u32, *mut classes::Actor, *mut classes::BSFixedString))(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__actor__play_sub_graph_animation(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor, a0: *mut crate::BSFixedString) { unsafe { function!(54734, (*mut c_void, u32, *mut crate::Actor, *mut crate::BSFixedString))(vm, stackId, self_, a0) } }
 /// `Papyrus::Actor::RemoveFromAllFactions` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54735, rva 0xa01ab0).
 /// `void RemoveFromAllFactions(IVirtualMachine * vm, uint stackId, Actor * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__remove_from_all_factions(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor) { unsafe { function!(54735, (*mut c_void, u32, *mut classes::Actor))(vm, stackId, self_) } }
+pub unsafe fn papyrus__actor__remove_from_all_factions(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor) { unsafe { function!(54735, (*mut c_void, u32, *mut crate::Actor))(vm, stackId, self_) } }
 /// `Papyrus::Actor::RemoveFromFaction` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54958, rva 0xa0d820).
 /// `void RemoveFromFaction(IVirtualMachine * vm, uint stackId, Actor * self, TESFaction * a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__remove_from_faction(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor, a0: *mut classes::TESFaction) { unsafe { function!(54958, (*mut c_void, u32, *mut classes::Actor, *mut classes::TESFaction))(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__actor__remove_from_faction(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor, a0: *mut crate::TESFaction) { unsafe { function!(54958, (*mut c_void, u32, *mut crate::Actor, *mut crate::TESFaction))(vm, stackId, self_, a0) } }
 /// `Papyrus::Actor::RemovePerk` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54645, rva 0x9ff7e0).
 /// `void RemovePerk(IVirtualMachine * vm, uint stackId, Actor * self, BGSPerk * a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__remove_perk(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor, a0: *mut classes::BGSPerk) { unsafe { function!(54645, (*mut c_void, u32, *mut classes::Actor, *mut classes::BGSPerk))(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__actor__remove_perk(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor, a0: *mut crate::BGSPerk) { unsafe { function!(54645, (*mut c_void, u32, *mut crate::Actor, *mut crate::BGSPerk))(vm, stackId, self_, a0) } }
 /// `Papyrus::Actor::RemoveShout` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54959, rva 0xa0d830).
 /// `bool RemoveShout(IVirtualMachine * vm, uint stackId, Actor * self, TESShout * a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__remove_shout(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor, a0: *mut classes::TESShout) -> u8 { unsafe { function!(54959, (*mut c_void, u32, *mut classes::Actor, *mut classes::TESShout) -> u8)(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__actor__remove_shout(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor, a0: *mut crate::TESShout) -> u8 { unsafe { function!(54959, (*mut c_void, u32, *mut crate::Actor, *mut crate::TESShout) -> u8)(vm, stackId, self_, a0) } }
 /// `Papyrus::Actor::RemoveSpell` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54647, rva 0x9ff820).
 /// `bool RemoveSpell(IVirtualMachine * vm, uint stackId, Actor * self, SpellItem * a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__remove_spell(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor, a0: *mut classes::SpellItem) -> u8 { unsafe { function!(54647, (*mut c_void, u32, *mut classes::Actor, *mut classes::SpellItem) -> u8)(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__actor__remove_spell(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor, a0: *mut crate::SpellItem) -> u8 { unsafe { function!(54647, (*mut c_void, u32, *mut crate::Actor, *mut crate::SpellItem) -> u8)(vm, stackId, self_, a0) } }
 /// `Papyrus::Actor::ResetHealthAndLimbs` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54960, rva 0xa0d840).
 /// `void ResetHealthAndLimbs(IVirtualMachine * vm, uint stackId, Actor * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__reset_health_and_limbs(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor) { unsafe { function!(54960, (*mut c_void, u32, *mut classes::Actor))(vm, stackId, self_) } }
+pub unsafe fn papyrus__actor__reset_health_and_limbs(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor) { unsafe { function!(54960, (*mut c_void, u32, *mut crate::Actor))(vm, stackId, self_) } }
 /// `Papyrus::Actor::RestoreActorValue` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54737, rva 0xa01d60).
 /// `void RestoreActorValue(IVirtualMachine * vm, uint stackId, Actor * self, BSFixedString * a0, float a1)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__restore_actor_value(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor, a0: *mut classes::BSFixedString, a1: f32) { unsafe { function!(54737, (*mut c_void, u32, *mut classes::Actor, *mut classes::BSFixedString, f32))(vm, stackId, self_, a0, a1) } }
+pub unsafe fn papyrus__actor__restore_actor_value(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor, a0: *mut crate::BSFixedString, a1: f32) { unsafe { function!(54737, (*mut c_void, u32, *mut crate::Actor, *mut crate::BSFixedString, f32))(vm, stackId, self_, a0, a1) } }
 /// `Papyrus::Actor::Resurrect` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54736, rva 0xa01c20).
 /// `bool Resurrect(IVirtualMachine * vm, uint stackId, Actor * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__resurrect(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor) -> u8 { unsafe { function!(54736, (*mut c_void, u32, *mut classes::Actor) -> u8)(vm, stackId, self_) } }
+pub unsafe fn papyrus__actor__resurrect(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor) -> u8 { unsafe { function!(54736, (*mut c_void, u32, *mut crate::Actor) -> u8)(vm, stackId, self_) } }
 /// `Papyrus::Actor::SendAssaultAlarm` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54738, rva 0xa01e10).
 /// `void SendAssaultAlarm(IVirtualMachine * vm, uint stackId, Actor * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__send_assault_alarm(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor) { unsafe { function!(54738, (*mut c_void, u32, *mut classes::Actor))(vm, stackId, self_) } }
+pub unsafe fn papyrus__actor__send_assault_alarm(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor) { unsafe { function!(54738, (*mut c_void, u32, *mut crate::Actor))(vm, stackId, self_) } }
 /// `Papyrus::Actor::SendLycanthropyStateChanged` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54739, rva 0xa01e70).
 /// `void SendLycanthropyStateChanged(IVirtualMachine * vm, uint stackId, Actor * self, bool a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__send_lycanthropy_state_changed(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor, a0: u8) { unsafe { function!(54739, (*mut c_void, u32, *mut classes::Actor, u8))(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__actor__send_lycanthropy_state_changed(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor, a0: u8) { unsafe { function!(54739, (*mut c_void, u32, *mut crate::Actor, u8))(vm, stackId, self_, a0) } }
 /// `Papyrus::Actor::SendTrespassAlarm` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54740, rva 0xa01e90).
 /// `void SendTrespassAlarm(IVirtualMachine * vm, uint stackId, Actor * self, Actor * a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__send_trespass_alarm(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor, a0: *mut classes::Actor) { unsafe { function!(54740, (*mut c_void, u32, *mut classes::Actor, *mut classes::Actor))(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__actor__send_trespass_alarm(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor, a0: *mut crate::Actor) { unsafe { function!(54740, (*mut c_void, u32, *mut crate::Actor, *mut crate::Actor))(vm, stackId, self_, a0) } }
 /// `Papyrus::Actor::SendVampirismStateChanged` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54742, rva 0xa01ed0).
 /// `void SendVampirismStateChanged(IVirtualMachine * vm, uint stackId, Actor * self, bool a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__send_vampirism_state_changed(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor, a0: u8) { unsafe { function!(54742, (*mut c_void, u32, *mut classes::Actor, u8))(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__actor__send_vampirism_state_changed(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor, a0: u8) { unsafe { function!(54742, (*mut c_void, u32, *mut crate::Actor, u8))(vm, stackId, self_, a0) } }
 /// `Papyrus::Actor::SetActorValue` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54743, rva 0xa01ef0).
 /// `void SetActorValue(IVirtualMachine * vm, uint stackId, Actor * self, BSFixedString * a0, float a1)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__set_actor_value(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor, a0: *mut classes::BSFixedString, a1: f32) { unsafe { function!(54743, (*mut c_void, u32, *mut classes::Actor, *mut classes::BSFixedString, f32))(vm, stackId, self_, a0, a1) } }
+pub unsafe fn papyrus__actor__set_actor_value(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor, a0: *mut crate::BSFixedString, a1: f32) { unsafe { function!(54743, (*mut c_void, u32, *mut crate::Actor, *mut crate::BSFixedString, f32))(vm, stackId, self_, a0, a1) } }
 /// `Papyrus::Actor::SetAlert` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54961, rva 0xa0d850).
 /// `void SetAlert(IVirtualMachine * vm, uint stackId, Actor * self, bool a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__set_alert(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor, a0: u8) { unsafe { function!(54961, (*mut c_void, u32, *mut classes::Actor, u8))(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__actor__set_alert(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor, a0: u8) { unsafe { function!(54961, (*mut c_void, u32, *mut crate::Actor, u8))(vm, stackId, self_, a0) } }
 /// `Papyrus::Actor::SetAllowFlying` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54744, rva 0xa02070).
 /// `void SetAllowFlying(IVirtualMachine * vm, uint stackId, Actor * self, bool a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__set_allow_flying(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor, a0: u8) { unsafe { function!(54744, (*mut c_void, u32, *mut classes::Actor, u8))(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__actor__set_allow_flying(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor, a0: u8) { unsafe { function!(54744, (*mut c_void, u32, *mut crate::Actor, u8))(vm, stackId, self_, a0) } }
 /// `Papyrus::Actor::SetAllowFlyingEx` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54745, rva 0xa02130).
 /// `void SetAllowFlyingEx(IVirtualMachine * vm, uint stackId, Actor * self, bool a0, bool a1, bool a2)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__set_allow_flying_ex(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor, a0: u8, a1: u8, a2: u8) { unsafe { function!(54745, (*mut c_void, u32, *mut classes::Actor, u8, u8, u8))(vm, stackId, self_, a0, a1, a2) } }
+pub unsafe fn papyrus__actor__set_allow_flying_ex(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor, a0: u8, a1: u8, a2: u8) { unsafe { function!(54745, (*mut c_void, u32, *mut crate::Actor, u8, u8, u8))(vm, stackId, self_, a0, a1, a2) } }
 /// `Papyrus::Actor::SetAlpha` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54746, rva 0xa02200).
 /// `void SetAlpha(IVirtualMachine * vm, uint stackId, Actor * self, float a0, bool a1)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__set_alpha(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor, a0: f32, a1: u8) { unsafe { function!(54746, (*mut c_void, u32, *mut classes::Actor, f32, u8))(vm, stackId, self_, a0, a1) } }
+pub unsafe fn papyrus__actor__set_alpha(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor, a0: f32, a1: u8) { unsafe { function!(54746, (*mut c_void, u32, *mut crate::Actor, f32, u8))(vm, stackId, self_, a0, a1) } }
 /// `Papyrus::Actor::SetAttackActorOnSight` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54962, rva 0xa0d860).
 /// `void SetAttackActorOnSight(IVirtualMachine * vm, uint stackId, Actor * self, bool a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__set_attack_actor_on_sight(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor, a0: u8) { unsafe { function!(54962, (*mut c_void, u32, *mut classes::Actor, u8))(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__actor__set_attack_actor_on_sight(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor, a0: u8) { unsafe { function!(54962, (*mut c_void, u32, *mut crate::Actor, u8))(vm, stackId, self_, a0) } }
 /// `Papyrus::Actor::SetBribed` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54963, rva 0xa0d870).
 /// `void SetBribed(IVirtualMachine * vm, uint stackId, Actor * self, bool a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__set_bribed(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor, a0: u8) { unsafe { function!(54963, (*mut c_void, u32, *mut classes::Actor, u8))(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__actor__set_bribed(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor, a0: u8) { unsafe { function!(54963, (*mut c_void, u32, *mut crate::Actor, u8))(vm, stackId, self_, a0) } }
 /// `Papyrus::Actor::SetCrimeFaction` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54964, rva 0xa0d880).
 /// `void SetCrimeFaction(IVirtualMachine * vm, uint stackId, Actor * self, TESFaction * a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__set_crime_faction(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor, a0: *mut classes::TESFaction) { unsafe { function!(54964, (*mut c_void, u32, *mut classes::Actor, *mut classes::TESFaction))(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__actor__set_crime_faction(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor, a0: *mut crate::TESFaction) { unsafe { function!(54964, (*mut c_void, u32, *mut crate::Actor, *mut crate::TESFaction))(vm, stackId, self_, a0) } }
 /// `Papyrus::Actor::SetCriticalStage` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54747, rva 0xa02280).
 /// `void SetCriticalStage(IVirtualMachine * vm, uint stackId, Actor * self, uint a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__set_critical_stage(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor, a0: u32) { unsafe { function!(54747, (*mut c_void, u32, *mut classes::Actor, u32))(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__actor__set_critical_stage(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor, a0: u32) { unsafe { function!(54747, (*mut c_void, u32, *mut crate::Actor, u32))(vm, stackId, self_, a0) } }
 /// `Papyrus::Actor::SetDoingFavor` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54965, rva 0xa0d890).
 /// `void SetDoingFavor(IVirtualMachine * vm, uint stackId, Actor * self, bool a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__set_doing_favor(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor, a0: u8) { unsafe { function!(54965, (*mut c_void, u32, *mut classes::Actor, u8))(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__actor__set_doing_favor(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor, a0: u8) { unsafe { function!(54965, (*mut c_void, u32, *mut crate::Actor, u8))(vm, stackId, self_, a0) } }
 /// `Papyrus::Actor::SetDontMove` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54761, rva 0xa02b60).
 /// `void SetDontMove(IVirtualMachine * vm, uint stackId, Actor * self, bool a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__set_dont_move(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor, a0: u8) { unsafe { function!(54761, (*mut c_void, u32, *mut classes::Actor, u8))(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__actor__set_dont_move(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor, a0: u8) { unsafe { function!(54761, (*mut c_void, u32, *mut crate::Actor, u8))(vm, stackId, self_, a0) } }
 /// `Papyrus::Actor::SetExpressionOverride` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54748, rva 0xa02300).
 /// `void SetExpressionOverride(IVirtualMachine * vm, uint stackId, Actor * self, uint a0, uint a1)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__set_expression_override(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor, a0: u32, a1: u32) { unsafe { function!(54748, (*mut c_void, u32, *mut classes::Actor, u32, u32))(vm, stackId, self_, a0, a1) } }
+pub unsafe fn papyrus__actor__set_expression_override(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor, a0: u32, a1: u32) { unsafe { function!(54748, (*mut c_void, u32, *mut crate::Actor, u32, u32))(vm, stackId, self_, a0, a1) } }
 /// `Papyrus::Actor::SetEyeTexture` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54749, rva 0xa02410).
 /// `void SetEyeTexture(IVirtualMachine * vm, uint stackId, Actor * self, BGSTextureSet * a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__set_eye_texture(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor, a0: *mut classes::BGSTextureSet) { unsafe { function!(54749, (*mut c_void, u32, *mut classes::Actor, *mut classes::BGSTextureSet))(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__actor__set_eye_texture(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor, a0: *mut crate::BGSTextureSet) { unsafe { function!(54749, (*mut c_void, u32, *mut crate::Actor, *mut crate::BGSTextureSet))(vm, stackId, self_, a0) } }
 /// `Papyrus::Actor::SetFactionRank` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54750, rva 0xa02570).
 /// `void SetFactionRank(IVirtualMachine * vm, uint stackId, Actor * self, TESFaction * a0, int a1)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__set_faction_rank(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor, a0: *mut classes::TESFaction, a1: i32) { unsafe { function!(54750, (*mut c_void, u32, *mut classes::Actor, *mut classes::TESFaction, i32))(vm, stackId, self_, a0, a1) } }
+pub unsafe fn papyrus__actor__set_faction_rank(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor, a0: *mut crate::TESFaction, a1: i32) { unsafe { function!(54750, (*mut c_void, u32, *mut crate::Actor, *mut crate::TESFaction, i32))(vm, stackId, self_, a0, a1) } }
 /// `Papyrus::Actor::SetForcedLandingMarker` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54753, rva 0xa025d0).
 /// `void SetForcedLandingMarker(IVirtualMachine * vm, uint stackId, Actor * self, TESObjectREFR * a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__set_forced_landing_marker(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor, a0: *mut classes::TESObjectREFR) { unsafe { function!(54753, (*mut c_void, u32, *mut classes::Actor, *mut classes::TESObjectREFR))(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__actor__set_forced_landing_marker(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor, a0: *mut crate::TESObjectREFR) { unsafe { function!(54753, (*mut c_void, u32, *mut crate::Actor, *mut crate::TESObjectREFR))(vm, stackId, self_, a0) } }
 /// `Papyrus::Actor::SetGhost` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54966, rva 0xa0d8a0).
 /// `void SetGhost(IVirtualMachine * vm, uint stackId, Actor * self, bool a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__set_ghost(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor, a0: u8) { unsafe { function!(54966, (*mut c_void, u32, *mut classes::Actor, u8))(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__actor__set_ghost(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor, a0: u8) { unsafe { function!(54966, (*mut c_void, u32, *mut crate::Actor, u8))(vm, stackId, self_, a0) } }
 /// `Papyrus::Actor::SetHeadTracking` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54752, rva 0xa025b0).
 /// `void SetHeadTracking(IVirtualMachine * vm, uint stackId, Actor * self, bool a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__set_head_tracking(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor, a0: u8) { unsafe { function!(54752, (*mut c_void, u32, *mut classes::Actor, u8))(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__actor__set_head_tracking(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor, a0: u8) { unsafe { function!(54752, (*mut c_void, u32, *mut crate::Actor, u8))(vm, stackId, self_, a0) } }
 /// `Papyrus::Actor::SetIntimidated` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54967, rva 0xa0d8b0).
 /// `void SetIntimidated(IVirtualMachine * vm, uint stackId, Actor * self, bool a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__set_intimidated(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor, a0: u8) { unsafe { function!(54967, (*mut c_void, u32, *mut classes::Actor, u8))(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__actor__set_intimidated(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor, a0: u8) { unsafe { function!(54967, (*mut c_void, u32, *mut crate::Actor, u8))(vm, stackId, self_, a0) } }
 /// `Papyrus::Actor::SetLookAt` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54754, rva 0xa02640).
 /// `void SetLookAt(IVirtualMachine * vm, uint stackId, Actor * self, TESObjectREFR * a0, bool a1)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__set_look_at(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor, a0: *mut classes::TESObjectREFR, a1: u8) { unsafe { function!(54754, (*mut c_void, u32, *mut classes::Actor, *mut classes::TESObjectREFR, u8))(vm, stackId, self_, a0, a1) } }
+pub unsafe fn papyrus__actor__set_look_at(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor, a0: *mut crate::TESObjectREFR, a1: u8) { unsafe { function!(54754, (*mut c_void, u32, *mut crate::Actor, *mut crate::TESObjectREFR, u8))(vm, stackId, self_, a0, a1) } }
 /// `Papyrus::Actor::SetNoBleedoutRecovery` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54968, rva 0xa0d8c0).
 /// `void SetNoBleedoutRecovery(IVirtualMachine * vm, uint stackId, Actor * self, bool a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__set_no_bleedout_recovery(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor, a0: u8) { unsafe { function!(54968, (*mut c_void, u32, *mut classes::Actor, u8))(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__actor__set_no_bleedout_recovery(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor, a0: u8) { unsafe { function!(54968, (*mut c_void, u32, *mut crate::Actor, u8))(vm, stackId, self_, a0) } }
 /// `Papyrus::Actor::SetNotShowOnStealthMeter` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54969, rva 0xa0d8d0).
 /// `void SetNotShowOnStealthMeter(IVirtualMachine * vm, uint stackId, Actor * self, bool a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__set_not_show_on_stealth_meter(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor, a0: u8) { unsafe { function!(54969, (*mut c_void, u32, *mut classes::Actor, u8))(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__actor__set_not_show_on_stealth_meter(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor, a0: u8) { unsafe { function!(54969, (*mut c_void, u32, *mut crate::Actor, u8))(vm, stackId, self_, a0) } }
 /// `Papyrus::Actor::SetOutfit` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54755, rva 0xa02770).
 /// `void SetOutfit(IVirtualMachine * vm, uint stackId, Actor * self, BGSOutfit * a0, bool a1)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__set_outfit(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor, a0: *mut classes::BGSOutfit, a1: u8) { unsafe { function!(54755, (*mut c_void, u32, *mut classes::Actor, *mut classes::BGSOutfit, u8))(vm, stackId, self_, a0, a1) } }
+pub unsafe fn papyrus__actor__set_outfit(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor, a0: *mut crate::BGSOutfit, a1: u8) { unsafe { function!(54755, (*mut c_void, u32, *mut crate::Actor, *mut crate::BGSOutfit, u8))(vm, stackId, self_, a0, a1) } }
 /// `Papyrus::Actor::SetPlayerControls` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54756, rva 0xa02840).
 /// `void SetPlayerControls(IVirtualMachine * vm, uint stackId, Actor * self, bool a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__set_player_controls(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor, a0: u8) { unsafe { function!(54756, (*mut c_void, u32, *mut classes::Actor, u8))(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__actor__set_player_controls(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor, a0: u8) { unsafe { function!(54756, (*mut c_void, u32, *mut crate::Actor, u8))(vm, stackId, self_, a0) } }
 /// `Papyrus::Actor::SetPlayerResistingArrest` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54757, rva 0xa028b0).
 /// `void SetPlayerResistingArrest(IVirtualMachine * vm, uint stackId, Actor * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__set_player_resisting_arrest(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor) { unsafe { function!(54757, (*mut c_void, u32, *mut classes::Actor))(vm, stackId, self_) } }
+pub unsafe fn papyrus__actor__set_player_resisting_arrest(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor) { unsafe { function!(54757, (*mut c_void, u32, *mut crate::Actor))(vm, stackId, self_) } }
 /// `Papyrus::Actor::SetPlayerTeammate` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54970, rva 0xa0d8e0).
 /// `void SetPlayerTeammate(IVirtualMachine * vm, uint stackId, Actor * self, bool a0, bool a1)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__set_player_teammate(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor, a0: u8, a1: u8) { unsafe { function!(54970, (*mut c_void, u32, *mut classes::Actor, u8, u8))(vm, stackId, self_, a0, a1) } }
+pub unsafe fn papyrus__actor__set_player_teammate(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor, a0: u8, a1: u8) { unsafe { function!(54970, (*mut c_void, u32, *mut crate::Actor, u8, u8))(vm, stackId, self_, a0, a1) } }
 /// `Papyrus::Actor::SetRace` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54758, rva 0xa028e0).
 /// `void SetRace(IVirtualMachine * vm, uint stackId, Actor * self, TESRace * a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__set_race(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor, a0: *mut classes::TESRace) { unsafe { function!(54758, (*mut c_void, u32, *mut classes::Actor, *mut classes::TESRace))(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__actor__set_race(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor, a0: *mut crate::TESRace) { unsafe { function!(54758, (*mut c_void, u32, *mut crate::Actor, *mut crate::TESRace))(vm, stackId, self_, a0) } }
 /// `Papyrus::Actor::SetRelationshipRank` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54759, rva 0xa02960).
 /// `void SetRelationshipRank(IVirtualMachine * vm, uint stackId, Actor * self, Actor * a0, int a1)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__set_relationship_rank(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor, a0: *mut classes::Actor, a1: i32) { unsafe { function!(54759, (*mut c_void, u32, *mut classes::Actor, *mut classes::Actor, i32))(vm, stackId, self_, a0, a1) } }
+pub unsafe fn papyrus__actor__set_relationship_rank(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor, a0: *mut crate::Actor, a1: i32) { unsafe { function!(54759, (*mut c_void, u32, *mut crate::Actor, *mut crate::Actor, i32))(vm, stackId, self_, a0, a1) } }
 /// `Papyrus::Actor::SetRestrained` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54760, rva 0xa02b20).
 /// `void SetRestrained(IVirtualMachine * vm, uint stackId, Actor * self, bool a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__set_restrained(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor, a0: u8) { unsafe { function!(54760, (*mut c_void, u32, *mut classes::Actor, u8))(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__actor__set_restrained(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor, a0: u8) { unsafe { function!(54760, (*mut c_void, u32, *mut crate::Actor, u8))(vm, stackId, self_, a0) } }
 /// `Papyrus::Actor::SetSubGraphFloatVariable` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54762, rva 0xa02ba0).
 /// `void SetSubGraphFloatVariable(IVirtualMachine * vm, uint stackId, Actor * self, BSFixedString * a0, float a1)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__set_sub_graph_float_variable(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor, a0: *mut classes::BSFixedString, a1: f32) { unsafe { function!(54762, (*mut c_void, u32, *mut classes::Actor, *mut classes::BSFixedString, f32))(vm, stackId, self_, a0, a1) } }
+pub unsafe fn papyrus__actor__set_sub_graph_float_variable(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor, a0: *mut crate::BSFixedString, a1: f32) { unsafe { function!(54762, (*mut c_void, u32, *mut crate::Actor, *mut crate::BSFixedString, f32))(vm, stackId, self_, a0, a1) } }
 /// `Papyrus::Actor::SetUnconscious` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54763, rva 0xa02ca0).
 /// `void SetUnconscious(IVirtualMachine * vm, uint stackId, Actor * self, bool a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__set_unconscious(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor, a0: u8) { unsafe { function!(54763, (*mut c_void, u32, *mut classes::Actor, u8))(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__actor__set_unconscious(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor, a0: u8) { unsafe { function!(54763, (*mut c_void, u32, *mut crate::Actor, u8))(vm, stackId, self_, a0) } }
 /// `Papyrus::Actor::SetVehicle` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54764, rva 0xa02d50).
 /// `void SetVehicle(IVirtualMachine * vm, uint stackId, Actor * self, TESObjectREFR * a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__set_vehicle(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor, a0: *mut classes::TESObjectREFR) { unsafe { function!(54764, (*mut c_void, u32, *mut classes::Actor, *mut classes::TESObjectREFR))(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__actor__set_vehicle(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor, a0: *mut crate::TESObjectREFR) { unsafe { function!(54764, (*mut c_void, u32, *mut crate::Actor, *mut crate::TESObjectREFR))(vm, stackId, self_, a0) } }
 /// `Papyrus::Actor::SetVoiceRecoveryTime` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54971, rva 0xa0d900).
 /// `void SetVoiceRecoveryTime(IVirtualMachine * vm, uint stackId, Actor * self, float a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__set_voice_recovery_time(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor, a0: f32) { unsafe { function!(54971, (*mut c_void, u32, *mut classes::Actor, f32))(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__actor__set_voice_recovery_time(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor, a0: f32) { unsafe { function!(54971, (*mut c_void, u32, *mut crate::Actor, f32))(vm, stackId, self_, a0) } }
 /// `Papyrus::Actor::ShowBarterMenu` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54765, rva 0xa02dd0).
 /// `void ShowBarterMenu(IVirtualMachine * vm, uint stackId, Actor * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__show_barter_menu(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor) { unsafe { function!(54765, (*mut c_void, u32, *mut classes::Actor))(vm, stackId, self_) } }
+pub unsafe fn papyrus__actor__show_barter_menu(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor) { unsafe { function!(54765, (*mut c_void, u32, *mut crate::Actor))(vm, stackId, self_) } }
 /// `Papyrus::Actor::ShowGiftMenu` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54766, rva 0xa02de0).
 /// `bool ShowGiftMenu(IVirtualMachine * vm, uint stackId, Actor * self, bool a0, BGSListForm * a1, bool a2, bool a3)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__show_gift_menu(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor, a0: u8, a1: *mut classes::BGSListForm, a2: u8, a3: u8) -> u8 { unsafe { function!(54766, (*mut c_void, u32, *mut classes::Actor, u8, *mut classes::BGSListForm, u8, u8) -> u8)(vm, stackId, self_, a0, a1, a2, a3) } }
+pub unsafe fn papyrus__actor__show_gift_menu(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor, a0: u8, a1: *mut crate::BGSListForm, a2: u8, a3: u8) -> u8 { unsafe { function!(54766, (*mut c_void, u32, *mut crate::Actor, u8, *mut crate::BGSListForm, u8, u8) -> u8)(vm, stackId, self_, a0, a1, a2, a3) } }
 /// `Papyrus::Actor::StartCannibal` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54767, rva 0xa02f90).
 /// `void StartCannibal(IVirtualMachine * vm, uint stackId, Actor * self, Actor * a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__start_cannibal(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor, a0: *mut classes::Actor) { unsafe { function!(54767, (*mut c_void, u32, *mut classes::Actor, *mut classes::Actor))(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__actor__start_cannibal(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor, a0: *mut crate::Actor) { unsafe { function!(54767, (*mut c_void, u32, *mut crate::Actor, *mut crate::Actor))(vm, stackId, self_, a0) } }
 /// `Papyrus::Actor::StartCombat` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54768, rva 0xa03090).
 /// `void StartCombat(IVirtualMachine * vm, uint stackId, Actor * self, Actor * a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__start_combat(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor, a0: *mut classes::Actor) { unsafe { function!(54768, (*mut c_void, u32, *mut classes::Actor, *mut classes::Actor))(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__actor__start_combat(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor, a0: *mut crate::Actor) { unsafe { function!(54768, (*mut c_void, u32, *mut crate::Actor, *mut crate::Actor))(vm, stackId, self_, a0) } }
 /// `Papyrus::Actor::StartDeferredKill` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54780, rva 0xa03b90).
 /// `void StartDeferredKill(IVirtualMachine * vm, uint stackId, Actor * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__start_deferred_kill(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor) { unsafe { function!(54780, (*mut c_void, u32, *mut classes::Actor))(vm, stackId, self_) } }
+pub unsafe fn papyrus__actor__start_deferred_kill(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor) { unsafe { function!(54780, (*mut c_void, u32, *mut crate::Actor))(vm, stackId, self_) } }
 /// `Papyrus::Actor::StartSneaking` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54778, rva 0xa03a30).
 /// `void StartSneaking(IVirtualMachine * vm, uint stackId, Actor * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__start_sneaking(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor) { unsafe { function!(54778, (*mut c_void, u32, *mut classes::Actor))(vm, stackId, self_) } }
+pub unsafe fn papyrus__actor__start_sneaking(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor) { unsafe { function!(54778, (*mut c_void, u32, *mut crate::Actor))(vm, stackId, self_) } }
 /// `Papyrus::Actor::StartVampireFeed` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54769, rva 0xa03320).
 /// `void StartVampireFeed(IVirtualMachine * vm, uint stackId, Actor * self, Actor * a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__start_vampire_feed(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor, a0: *mut classes::Actor) { unsafe { function!(54769, (*mut c_void, u32, *mut classes::Actor, *mut classes::Actor))(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__actor__start_vampire_feed(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor, a0: *mut crate::Actor) { unsafe { function!(54769, (*mut c_void, u32, *mut crate::Actor, *mut crate::Actor))(vm, stackId, self_, a0) } }
 /// `Papyrus::Actor::StopCombat` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54770, rva 0xa03480).
 /// `void StopCombat(IVirtualMachine * vm, uint stackId, Actor * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__stop_combat(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor) { unsafe { function!(54770, (*mut c_void, u32, *mut classes::Actor))(vm, stackId, self_) } }
+pub unsafe fn papyrus__actor__stop_combat(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor) { unsafe { function!(54770, (*mut c_void, u32, *mut crate::Actor))(vm, stackId, self_) } }
 /// `Papyrus::Actor::StopCombatAlarm` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54771, rva 0xa034e0).
 /// `void StopCombatAlarm(IVirtualMachine * vm, uint stackId, Actor * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__stop_combat_alarm(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor) { unsafe { function!(54771, (*mut c_void, u32, *mut classes::Actor))(vm, stackId, self_) } }
+pub unsafe fn papyrus__actor__stop_combat_alarm(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor) { unsafe { function!(54771, (*mut c_void, u32, *mut crate::Actor))(vm, stackId, self_) } }
 /// `Papyrus::Actor::TrapSoul` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54772, rva 0xa03520).
 /// `bool TrapSoul(IVirtualMachine * vm, uint stackId, Actor * self, Actor * a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__trap_soul(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor, a0: *mut classes::Actor) -> u8 { unsafe { function!(54772, (*mut c_void, u32, *mut classes::Actor, *mut classes::Actor) -> u8)(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__actor__trap_soul(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor, a0: *mut crate::Actor) -> u8 { unsafe { function!(54772, (*mut c_void, u32, *mut crate::Actor, *mut crate::Actor) -> u8)(vm, stackId, self_, a0) } }
 /// `Papyrus::Actor::UnequipAll` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54773, rva 0xa03540).
 /// `void UnequipAll(IVirtualMachine * vm, uint stackId, Actor * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__unequip_all(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor) { unsafe { function!(54773, (*mut c_void, u32, *mut classes::Actor))(vm, stackId, self_) } }
+pub unsafe fn papyrus__actor__unequip_all(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor) { unsafe { function!(54773, (*mut c_void, u32, *mut crate::Actor))(vm, stackId, self_) } }
 /// `Papyrus::Actor::UnequipItem` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54774, rva 0xa03560).
 /// `void UnequipItem(IVirtualMachine * vm, uint stackId, Actor * self, TESForm * a0, bool a1, bool a2)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__unequip_item(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor, a0: *mut classes::TESForm, a1: u8, a2: u8) { unsafe { function!(54774, (*mut c_void, u32, *mut classes::Actor, *mut classes::TESForm, u8, u8))(vm, stackId, self_, a0, a1, a2) } }
+pub unsafe fn papyrus__actor__unequip_item(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor, a0: *mut crate::TESForm, a1: u8, a2: u8) { unsafe { function!(54774, (*mut c_void, u32, *mut crate::Actor, *mut crate::TESForm, u8, u8))(vm, stackId, self_, a0, a1, a2) } }
 /// `Papyrus::Actor::UnequipItemSlot` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54775, rva 0xa03870).
 /// `void UnequipItemSlot(IVirtualMachine * vm, uint stackId, Actor * self, uint a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__unequip_item_slot(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor, a0: u32) { unsafe { function!(54775, (*mut c_void, u32, *mut classes::Actor, u32))(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__actor__unequip_item_slot(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor, a0: u32) { unsafe { function!(54775, (*mut c_void, u32, *mut crate::Actor, u32))(vm, stackId, self_, a0) } }
 /// `Papyrus::Actor::UnequipShout` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54664, rva 0xa002e0).
 /// `void UnequipShout(IVirtualMachine * vm, uint stackId, Actor * self, TESShout * a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__unequip_shout(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor, a0: *mut classes::TESShout) { unsafe { function!(54664, (*mut c_void, u32, *mut classes::Actor, *mut classes::TESShout))(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__actor__unequip_shout(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor, a0: *mut crate::TESShout) { unsafe { function!(54664, (*mut c_void, u32, *mut crate::Actor, *mut crate::TESShout))(vm, stackId, self_, a0) } }
 /// `Papyrus::Actor::UnequipSpell` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54669, rva 0xa00380).
 /// `void UnequipSpell(IVirtualMachine * vm, uint stackId, Actor * self, SpellItem * a0, uint a1)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__unequip_spell(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor, a0: *mut classes::SpellItem, a1: u32) { unsafe { function!(54669, (*mut c_void, u32, *mut classes::Actor, *mut classes::SpellItem, u32))(vm, stackId, self_, a0, a1) } }
+pub unsafe fn papyrus__actor__unequip_spell(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor, a0: *mut crate::SpellItem, a1: u32) { unsafe { function!(54669, (*mut c_void, u32, *mut crate::Actor, *mut crate::SpellItem, u32))(vm, stackId, self_, a0, a1) } }
 /// `Papyrus::Actor::UnlockOwnedDoorsInCell` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54776, rva 0xa03900).
 /// `void UnlockOwnedDoorsInCell(IVirtualMachine * vm, uint stackId, Actor * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__unlock_owned_doors_in_cell(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor) { unsafe { function!(54776, (*mut c_void, u32, *mut classes::Actor))(vm, stackId, self_) } }
+pub unsafe fn papyrus__actor__unlock_owned_doors_in_cell(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor) { unsafe { function!(54776, (*mut c_void, u32, *mut crate::Actor))(vm, stackId, self_) } }
 /// `Papyrus::Actor::WillIntimidateSucceed` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54972, rva 0xa0d910).
 /// `bool WillIntimidateSucceed(IVirtualMachine * vm, uint stackId, Actor * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__will_intimidate_succeed(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor) -> u8 { unsafe { function!(54972, (*mut c_void, u32, *mut classes::Actor) -> u8)(vm, stackId, self_) } }
+pub unsafe fn papyrus__actor__will_intimidate_succeed(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor) -> u8 { unsafe { function!(54972, (*mut c_void, u32, *mut crate::Actor) -> u8)(vm, stackId, self_) } }
 /// `Papyrus::Actor::WornHasKeyword` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54777, rva 0xa039a0).
 /// `bool WornHasKeyword(IVirtualMachine * vm, uint stackId, Actor * self, BGSKeyword * a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor__worn_has_keyword(vm: *mut c_void, stackId: u32, self_: *mut classes::Actor, a0: *mut classes::BGSKeyword) -> u8 { unsafe { function!(54777, (*mut c_void, u32, *mut classes::Actor, *mut classes::BGSKeyword) -> u8)(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__actor__worn_has_keyword(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor, a0: *mut crate::BGSKeyword) -> u8 { unsafe { function!(54777, (*mut c_void, u32, *mut crate::Actor, *mut crate::BGSKeyword) -> u8)(vm, stackId, self_, a0) } }
 /// `Papyrus::ActorBase::GetClass` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56002, rva 0xa3e030).
 /// `TESClass * GetClass(IVirtualMachine * vm, uint stackId, TESNPC * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor_base__get_class(vm: *mut c_void, stackId: u32, self_: *mut classes::TESNPC) -> *mut classes::TESClass { unsafe { function!(56002, (*mut c_void, u32, *mut classes::TESNPC) -> *mut classes::TESClass)(vm, stackId, self_) } }
+pub unsafe fn papyrus__actor_base__get_class(vm: *mut c_void, stackId: u32, self_: *mut crate::TESNPC) -> *mut crate::TESClass { unsafe { function!(56002, (*mut c_void, u32, *mut crate::TESNPC) -> *mut crate::TESClass)(vm, stackId, self_) } }
 /// `Papyrus::ActorBase::GetDeadCount` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55987, rva 0xa3cab0).
 /// `int GetDeadCount(IVirtualMachine * vm, uint stackId, TESNPC * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor_base__get_dead_count(vm: *mut c_void, stackId: u32, self_: *mut classes::TESNPC) -> i32 { unsafe { function!(55987, (*mut c_void, u32, *mut classes::TESNPC) -> i32)(vm, stackId, self_) } }
+pub unsafe fn papyrus__actor_base__get_dead_count(vm: *mut c_void, stackId: u32, self_: *mut crate::TESNPC) -> i32 { unsafe { function!(55987, (*mut c_void, u32, *mut crate::TESNPC) -> i32)(vm, stackId, self_) } }
 /// `Papyrus::ActorBase::GetGiftFilter` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56003, rva 0xa3e040).
 /// `BGSListForm * GetGiftFilter(IVirtualMachine * vm, uint stackId, TESNPC * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor_base__get_gift_filter(vm: *mut c_void, stackId: u32, self_: *mut classes::TESNPC) -> *mut classes::BGSListForm { unsafe { function!(56003, (*mut c_void, u32, *mut classes::TESNPC) -> *mut classes::BGSListForm)(vm, stackId, self_) } }
+pub unsafe fn papyrus__actor_base__get_gift_filter(vm: *mut c_void, stackId: u32, self_: *mut crate::TESNPC) -> *mut crate::BGSListForm { unsafe { function!(56003, (*mut c_void, u32, *mut crate::TESNPC) -> *mut crate::BGSListForm)(vm, stackId, self_) } }
 /// `Papyrus::ActorBase::GetRace` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56004, rva 0xa3e050).
 /// `TESRace * GetRace(IVirtualMachine * vm, uint stackId, TESNPC * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor_base__get_race(vm: *mut c_void, stackId: u32, self_: *mut classes::TESNPC) -> *mut classes::TESRace { unsafe { function!(56004, (*mut c_void, u32, *mut classes::TESNPC) -> *mut classes::TESRace)(vm, stackId, self_) } }
+pub unsafe fn papyrus__actor_base__get_race(vm: *mut c_void, stackId: u32, self_: *mut crate::TESNPC) -> *mut crate::TESRace { unsafe { function!(56004, (*mut c_void, u32, *mut crate::TESNPC) -> *mut crate::TESRace)(vm, stackId, self_) } }
 /// `Papyrus::ActorBase::GetSex` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56005, rva 0xa3e060).
 /// `int GetSex(IVirtualMachine * vm, uint stackId, TESNPC * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor_base__get_sex(vm: *mut c_void, stackId: u32, self_: *mut classes::TESNPC) -> i32 { unsafe { function!(56005, (*mut c_void, u32, *mut classes::TESNPC) -> i32)(vm, stackId, self_) } }
+pub unsafe fn papyrus__actor_base__get_sex(vm: *mut c_void, stackId: u32, self_: *mut crate::TESNPC) -> i32 { unsafe { function!(56005, (*mut c_void, u32, *mut crate::TESNPC) -> i32)(vm, stackId, self_) } }
 /// `Papyrus::ActorBase::IsEssential` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56006, rva 0xa3e070).
 /// `bool IsEssential(IVirtualMachine * vm, uint stackId, TESNPC * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor_base__is_essential(vm: *mut c_void, stackId: u32, self_: *mut classes::TESNPC) -> u8 { unsafe { function!(56006, (*mut c_void, u32, *mut classes::TESNPC) -> u8)(vm, stackId, self_) } }
+pub unsafe fn papyrus__actor_base__is_essential(vm: *mut c_void, stackId: u32, self_: *mut crate::TESNPC) -> u8 { unsafe { function!(56006, (*mut c_void, u32, *mut crate::TESNPC) -> u8)(vm, stackId, self_) } }
 /// `Papyrus::ActorBase::IsInvulnerable` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56007, rva 0xa3e080).
 /// `bool IsInvulnerable(IVirtualMachine * vm, uint stackId, TESNPC * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor_base__is_invulnerable(vm: *mut c_void, stackId: u32, self_: *mut classes::TESNPC) -> u8 { unsafe { function!(56007, (*mut c_void, u32, *mut classes::TESNPC) -> u8)(vm, stackId, self_) } }
+pub unsafe fn papyrus__actor_base__is_invulnerable(vm: *mut c_void, stackId: u32, self_: *mut crate::TESNPC) -> u8 { unsafe { function!(56007, (*mut c_void, u32, *mut crate::TESNPC) -> u8)(vm, stackId, self_) } }
 /// `Papyrus::ActorBase::IsProtected` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56008, rva 0xa3e090).
 /// `bool IsProtected(IVirtualMachine * vm, uint stackId, TESNPC * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor_base__is_protected(vm: *mut c_void, stackId: u32, self_: *mut classes::TESNPC) -> u8 { unsafe { function!(56008, (*mut c_void, u32, *mut classes::TESNPC) -> u8)(vm, stackId, self_) } }
+pub unsafe fn papyrus__actor_base__is_protected(vm: *mut c_void, stackId: u32, self_: *mut crate::TESNPC) -> u8 { unsafe { function!(56008, (*mut c_void, u32, *mut crate::TESNPC) -> u8)(vm, stackId, self_) } }
 /// `Papyrus::ActorBase::IsUnique` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56009, rva 0xa3e0a0).
 /// `bool IsUnique(IVirtualMachine * vm, uint stackId, TESNPC * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor_base__is_unique(vm: *mut c_void, stackId: u32, self_: *mut classes::TESNPC) -> u8 { unsafe { function!(56009, (*mut c_void, u32, *mut classes::TESNPC) -> u8)(vm, stackId, self_) } }
+pub unsafe fn papyrus__actor_base__is_unique(vm: *mut c_void, stackId: u32, self_: *mut crate::TESNPC) -> u8 { unsafe { function!(56009, (*mut c_void, u32, *mut crate::TESNPC) -> u8)(vm, stackId, self_) } }
 /// `Papyrus::ActorBase::SetEssential` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56010, rva 0xa3e0b0).
 /// `void SetEssential(IVirtualMachine * vm, uint stackId, TESNPC * self, bool a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor_base__set_essential(vm: *mut c_void, stackId: u32, self_: *mut classes::TESNPC, a0: u8) { unsafe { function!(56010, (*mut c_void, u32, *mut classes::TESNPC, u8))(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__actor_base__set_essential(vm: *mut c_void, stackId: u32, self_: *mut crate::TESNPC, a0: u8) { unsafe { function!(56010, (*mut c_void, u32, *mut crate::TESNPC, u8))(vm, stackId, self_, a0) } }
 /// `Papyrus::ActorBase::SetInvulnerable` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56011, rva 0xa3e100).
 /// `void SetInvulnerable(IVirtualMachine * vm, uint stackId, TESNPC * self, bool a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor_base__set_invulnerable(vm: *mut c_void, stackId: u32, self_: *mut classes::TESNPC, a0: u8) { unsafe { function!(56011, (*mut c_void, u32, *mut classes::TESNPC, u8))(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__actor_base__set_invulnerable(vm: *mut c_void, stackId: u32, self_: *mut crate::TESNPC, a0: u8) { unsafe { function!(56011, (*mut c_void, u32, *mut crate::TESNPC, u8))(vm, stackId, self_, a0) } }
 /// `Papyrus::ActorBase::SetOutfit` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55988, rva 0xa3cad0).
 /// `void SetOutfit(IVirtualMachine * vm, uint stackId, TESNPC * self, BGSOutfit * a0, bool a1)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor_base__set_outfit(vm: *mut c_void, stackId: u32, self_: *mut classes::TESNPC, a0: *mut classes::BGSOutfit, a1: u8) { unsafe { function!(55988, (*mut c_void, u32, *mut classes::TESNPC, *mut classes::BGSOutfit, u8))(vm, stackId, self_, a0, a1) } }
+pub unsafe fn papyrus__actor_base__set_outfit(vm: *mut c_void, stackId: u32, self_: *mut crate::TESNPC, a0: *mut crate::BGSOutfit, a1: u8) { unsafe { function!(55988, (*mut c_void, u32, *mut crate::TESNPC, *mut crate::BGSOutfit, u8))(vm, stackId, self_, a0, a1) } }
 /// `Papyrus::ActorBase::SetProtected` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56012, rva 0xa3e120).
 /// `void SetProtected(IVirtualMachine * vm, uint stackId, TESNPC * self, bool a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__actor_base__set_protected(vm: *mut c_void, stackId: u32, self_: *mut classes::TESNPC, a0: u8) { unsafe { function!(56012, (*mut c_void, u32, *mut classes::TESNPC, u8))(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__actor_base__set_protected(vm: *mut c_void, stackId: u32, self_: *mut crate::TESNPC, a0: u8) { unsafe { function!(56012, (*mut c_void, u32, *mut crate::TESNPC, u8))(vm, stackId, self_, a0) } }
 /// `Papyrus::Alias::GetOwningQuest` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55155, rva 0xa15550).
 /// `TESQuest * GetOwningQuest(IVirtualMachine * vm, uint stackId, BGSBaseAlias * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__alias__get_owning_quest(vm: *mut c_void, stackId: u32, self_: *mut classes::BGSBaseAlias) -> *mut classes::TESQuest { unsafe { function!(55155, (*mut c_void, u32, *mut classes::BGSBaseAlias) -> *mut classes::TESQuest)(vm, stackId, self_) } }
+pub unsafe fn papyrus__alias__get_owning_quest(vm: *mut c_void, stackId: u32, self_: *mut crate::BGSBaseAlias) -> *mut crate::TESQuest { unsafe { function!(55155, (*mut c_void, u32, *mut crate::BGSBaseAlias) -> *mut crate::TESQuest)(vm, stackId, self_) } }
 /// `Papyrus::Alias::RegisterForAnimationEvent` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55127, rva 0xa138e0).
 /// `bool RegisterForAnimationEvent(IVirtualMachine * vm, uint stackId, BGSBaseAlias * self, TESObjectREFR * a0, BSFixedString * a1)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__alias__register_for_animation_event(vm: *mut c_void, stackId: u32, self_: *mut classes::BGSBaseAlias, a0: *mut classes::TESObjectREFR, a1: *mut classes::BSFixedString) -> u8 { unsafe { function!(55127, (*mut c_void, u32, *mut classes::BGSBaseAlias, *mut classes::TESObjectREFR, *mut classes::BSFixedString) -> u8)(vm, stackId, self_, a0, a1) } }
+pub unsafe fn papyrus__alias__register_for_animation_event(vm: *mut c_void, stackId: u32, self_: *mut crate::BGSBaseAlias, a0: *mut crate::TESObjectREFR, a1: *mut crate::BSFixedString) -> u8 { unsafe { function!(55127, (*mut c_void, u32, *mut crate::BGSBaseAlias, *mut crate::TESObjectREFR, *mut crate::BSFixedString) -> u8)(vm, stackId, self_, a0, a1) } }
 /// `Papyrus::Alias::RegisterForLOS` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55128, rva 0xa139c0).
 /// `void RegisterForLOS(IVirtualMachine * vm, uint stackId, BGSBaseAlias * self, Actor * a0, TESObjectREFR * a1)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__alias__register_for_los(vm: *mut c_void, stackId: u32, self_: *mut classes::BGSBaseAlias, a0: *mut classes::Actor, a1: *mut classes::TESObjectREFR) { unsafe { function!(55128, (*mut c_void, u32, *mut classes::BGSBaseAlias, *mut classes::Actor, *mut classes::TESObjectREFR))(vm, stackId, self_, a0, a1) } }
+pub unsafe fn papyrus__alias__register_for_los(vm: *mut c_void, stackId: u32, self_: *mut crate::BGSBaseAlias, a0: *mut crate::Actor, a1: *mut crate::TESObjectREFR) { unsafe { function!(55128, (*mut c_void, u32, *mut crate::BGSBaseAlias, *mut crate::Actor, *mut crate::TESObjectREFR))(vm, stackId, self_, a0, a1) } }
 /// `Papyrus::Alias::RegisterForSingleLOSGain` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55129, rva 0xa13a50).
 /// `void RegisterForSingleLOSGain(IVirtualMachine * vm, uint stackId, BGSBaseAlias * self, Actor * a0, TESObjectREFR * a1)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__alias__register_for_single_los_gain(vm: *mut c_void, stackId: u32, self_: *mut classes::BGSBaseAlias, a0: *mut classes::Actor, a1: *mut classes::TESObjectREFR) { unsafe { function!(55129, (*mut c_void, u32, *mut classes::BGSBaseAlias, *mut classes::Actor, *mut classes::TESObjectREFR))(vm, stackId, self_, a0, a1) } }
+pub unsafe fn papyrus__alias__register_for_single_los_gain(vm: *mut c_void, stackId: u32, self_: *mut crate::BGSBaseAlias, a0: *mut crate::Actor, a1: *mut crate::TESObjectREFR) { unsafe { function!(55129, (*mut c_void, u32, *mut crate::BGSBaseAlias, *mut crate::Actor, *mut crate::TESObjectREFR))(vm, stackId, self_, a0, a1) } }
 /// `Papyrus::Alias::RegisterForSingleLOSLost` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55130, rva 0xa13ae0).
 /// `void RegisterForSingleLOSLost(IVirtualMachine * vm, uint stackId, BGSBaseAlias * self, Actor * a0, TESObjectREFR * a1)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__alias__register_for_single_los_lost(vm: *mut c_void, stackId: u32, self_: *mut classes::BGSBaseAlias, a0: *mut classes::Actor, a1: *mut classes::TESObjectREFR) { unsafe { function!(55130, (*mut c_void, u32, *mut classes::BGSBaseAlias, *mut classes::Actor, *mut classes::TESObjectREFR))(vm, stackId, self_, a0, a1) } }
+pub unsafe fn papyrus__alias__register_for_single_los_lost(vm: *mut c_void, stackId: u32, self_: *mut crate::BGSBaseAlias, a0: *mut crate::Actor, a1: *mut crate::TESObjectREFR) { unsafe { function!(55130, (*mut c_void, u32, *mut crate::BGSBaseAlias, *mut crate::Actor, *mut crate::TESObjectREFR))(vm, stackId, self_, a0, a1) } }
 /// `Papyrus::Alias::RegisterForSingleUpdateGameTime` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55132, rva 0xa13bd0).
 /// `void RegisterForSingleUpdateGameTime(IVirtualMachine * vm, uint stackId, BGSBaseAlias * self, float a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__alias__register_for_single_update_game_time(vm: *mut c_void, stackId: u32, self_: *mut classes::BGSBaseAlias, a0: f32) { unsafe { function!(55132, (*mut c_void, u32, *mut classes::BGSBaseAlias, f32))(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__alias__register_for_single_update_game_time(vm: *mut c_void, stackId: u32, self_: *mut crate::BGSBaseAlias, a0: f32) { unsafe { function!(55132, (*mut c_void, u32, *mut crate::BGSBaseAlias, f32))(vm, stackId, self_, a0) } }
 /// `Papyrus::Alias::RegisterForTrackedStatsEvent` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55134, rva 0xa13c80).
 /// `void RegisterForTrackedStatsEvent(IVirtualMachine * vm, uint stackId, BGSBaseAlias * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__alias__register_for_tracked_stats_event(vm: *mut c_void, stackId: u32, self_: *mut classes::BGSBaseAlias) { unsafe { function!(55134, (*mut c_void, u32, *mut classes::BGSBaseAlias))(vm, stackId, self_) } }
+pub unsafe fn papyrus__alias__register_for_tracked_stats_event(vm: *mut c_void, stackId: u32, self_: *mut crate::BGSBaseAlias) { unsafe { function!(55134, (*mut c_void, u32, *mut crate::BGSBaseAlias))(vm, stackId, self_) } }
 /// `Papyrus::Alias::RegisterForUpdate` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55135, rva 0xa13cd0).
 /// `void RegisterForUpdate(IVirtualMachine * vm, uint stackId, BGSBaseAlias * self, float a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__alias__register_for_update(vm: *mut c_void, stackId: u32, self_: *mut classes::BGSBaseAlias, a0: f32) { unsafe { function!(55135, (*mut c_void, u32, *mut classes::BGSBaseAlias, f32))(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__alias__register_for_update(vm: *mut c_void, stackId: u32, self_: *mut crate::BGSBaseAlias, a0: f32) { unsafe { function!(55135, (*mut c_void, u32, *mut crate::BGSBaseAlias, f32))(vm, stackId, self_, a0) } }
 /// `Papyrus::Alias::RegisterForUpdateGameTime` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55136, rva 0xa13d30).
 /// `void RegisterForUpdateGameTime(IVirtualMachine * vm, uint stackId, BGSBaseAlias * self, float a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__alias__register_for_update_game_time(vm: *mut c_void, stackId: u32, self_: *mut classes::BGSBaseAlias, a0: f32) { unsafe { function!(55136, (*mut c_void, u32, *mut classes::BGSBaseAlias, f32))(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__alias__register_for_update_game_time(vm: *mut c_void, stackId: u32, self_: *mut crate::BGSBaseAlias, a0: f32) { unsafe { function!(55136, (*mut c_void, u32, *mut crate::BGSBaseAlias, f32))(vm, stackId, self_, a0) } }
 /// `Papyrus::Alias::StartObjectProfiling` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55137, rva 0xa13d90).
 /// `void StartObjectProfiling(IVirtualMachine * vm, uint stackId, BGSBaseAlias * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__alias__start_object_profiling(vm: *mut c_void, stackId: u32, self_: *mut classes::BGSBaseAlias) { unsafe { function!(55137, (*mut c_void, u32, *mut classes::BGSBaseAlias))(vm, stackId, self_) } }
+pub unsafe fn papyrus__alias__start_object_profiling(vm: *mut c_void, stackId: u32, self_: *mut crate::BGSBaseAlias) { unsafe { function!(55137, (*mut c_void, u32, *mut crate::BGSBaseAlias))(vm, stackId, self_) } }
 /// `Papyrus::Alias::StopObjectProfiling` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55138, rva 0xa13e20).
 /// `void StopObjectProfiling(IVirtualMachine * vm, uint stackId, BGSBaseAlias * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__alias__stop_object_profiling(vm: *mut c_void, stackId: u32, self_: *mut classes::BGSBaseAlias) { unsafe { function!(55138, (*mut c_void, u32, *mut classes::BGSBaseAlias))(vm, stackId, self_) } }
+pub unsafe fn papyrus__alias__stop_object_profiling(vm: *mut c_void, stackId: u32, self_: *mut crate::BGSBaseAlias) { unsafe { function!(55138, (*mut c_void, u32, *mut crate::BGSBaseAlias))(vm, stackId, self_) } }
 /// `Papyrus::Alias::UnregisterForAnimationEvent` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55139, rva 0xa13eb0).
 /// `void UnregisterForAnimationEvent(IVirtualMachine * vm, uint stackId, BGSBaseAlias * self, TESObjectREFR * a0, BSFixedString * a1)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__alias__unregister_for_animation_event(vm: *mut c_void, stackId: u32, self_: *mut classes::BGSBaseAlias, a0: *mut classes::TESObjectREFR, a1: *mut classes::BSFixedString) { unsafe { function!(55139, (*mut c_void, u32, *mut classes::BGSBaseAlias, *mut classes::TESObjectREFR, *mut classes::BSFixedString))(vm, stackId, self_, a0, a1) } }
+pub unsafe fn papyrus__alias__unregister_for_animation_event(vm: *mut c_void, stackId: u32, self_: *mut crate::BGSBaseAlias, a0: *mut crate::TESObjectREFR, a1: *mut crate::BSFixedString) { unsafe { function!(55139, (*mut c_void, u32, *mut crate::BGSBaseAlias, *mut crate::TESObjectREFR, *mut crate::BSFixedString))(vm, stackId, self_, a0, a1) } }
 /// `Papyrus::Alias::UnregisterForLOS` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55140, rva 0xa13f90).
 /// `void UnregisterForLOS(IVirtualMachine * vm, uint stackId, BGSBaseAlias * self, Actor * a0, TESObjectREFR * a1)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__alias__unregister_for_los(vm: *mut c_void, stackId: u32, self_: *mut classes::BGSBaseAlias, a0: *mut classes::Actor, a1: *mut classes::TESObjectREFR) { unsafe { function!(55140, (*mut c_void, u32, *mut classes::BGSBaseAlias, *mut classes::Actor, *mut classes::TESObjectREFR))(vm, stackId, self_, a0, a1) } }
+pub unsafe fn papyrus__alias__unregister_for_los(vm: *mut c_void, stackId: u32, self_: *mut crate::BGSBaseAlias, a0: *mut crate::Actor, a1: *mut crate::TESObjectREFR) { unsafe { function!(55140, (*mut c_void, u32, *mut crate::BGSBaseAlias, *mut crate::Actor, *mut crate::TESObjectREFR))(vm, stackId, self_, a0, a1) } }
 /// `Papyrus::Alias::UnregisterForSleep` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55141, rva 0xa14030).
 /// `void UnregisterForSleep(IVirtualMachine * vm, uint stackId, BGSBaseAlias * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__alias__unregister_for_sleep(vm: *mut c_void, stackId: u32, self_: *mut classes::BGSBaseAlias) { unsafe { function!(55141, (*mut c_void, u32, *mut classes::BGSBaseAlias))(vm, stackId, self_) } }
+pub unsafe fn papyrus__alias__unregister_for_sleep(vm: *mut c_void, stackId: u32, self_: *mut crate::BGSBaseAlias) { unsafe { function!(55141, (*mut c_void, u32, *mut crate::BGSBaseAlias))(vm, stackId, self_) } }
 /// `Papyrus::Alias::UnregisterForTrackedStatsEvent` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55142, rva 0xa14080).
 /// `void UnregisterForTrackedStatsEvent(IVirtualMachine * vm, uint stackId, BGSBaseAlias * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__alias__unregister_for_tracked_stats_event(vm: *mut c_void, stackId: u32, self_: *mut classes::BGSBaseAlias) { unsafe { function!(55142, (*mut c_void, u32, *mut classes::BGSBaseAlias))(vm, stackId, self_) } }
+pub unsafe fn papyrus__alias__unregister_for_tracked_stats_event(vm: *mut c_void, stackId: u32, self_: *mut crate::BGSBaseAlias) { unsafe { function!(55142, (*mut c_void, u32, *mut crate::BGSBaseAlias))(vm, stackId, self_) } }
 /// `Papyrus::Alias::UnregisterForUpdate` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55143, rva 0xa140d0).
 /// `void UnregisterForUpdate(IVirtualMachine * vm, uint stackId, BGSBaseAlias * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__alias__unregister_for_update(vm: *mut c_void, stackId: u32, self_: *mut classes::BGSBaseAlias) { unsafe { function!(55143, (*mut c_void, u32, *mut classes::BGSBaseAlias))(vm, stackId, self_) } }
+pub unsafe fn papyrus__alias__unregister_for_update(vm: *mut c_void, stackId: u32, self_: *mut crate::BGSBaseAlias) { unsafe { function!(55143, (*mut c_void, u32, *mut crate::BGSBaseAlias))(vm, stackId, self_) } }
 /// `Papyrus::Alias::UnregisterForUpdateGameTime` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55144, rva 0xa14120).
 /// `void UnregisterForUpdateGameTime(IVirtualMachine * vm, uint stackId, BGSBaseAlias * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__alias__unregister_for_update_game_time(vm: *mut c_void, stackId: u32, self_: *mut classes::BGSBaseAlias) { unsafe { function!(55144, (*mut c_void, u32, *mut classes::BGSBaseAlias))(vm, stackId, self_) } }
+pub unsafe fn papyrus__alias__unregister_for_update_game_time(vm: *mut c_void, stackId: u32, self_: *mut crate::BGSBaseAlias) { unsafe { function!(55144, (*mut c_void, u32, *mut crate::BGSBaseAlias))(vm, stackId, self_) } }
 /// `Papyrus::Armor::GetWarmthRating` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56029, rva 0xa3ea20).
 /// `float GetWarmthRating(IVirtualMachine * vm, uint stackId, TESObjectARMO * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__armor__get_warmth_rating(vm: *mut c_void, stackId: u32, self_: *mut classes::TESObjectARMO) -> f32 { unsafe { function!(56029, (*mut c_void, u32, *mut classes::TESObjectARMO) -> f32)(vm, stackId, self_) } }
+pub unsafe fn papyrus__armor__get_warmth_rating(vm: *mut c_void, stackId: u32, self_: *mut crate::TESObjectARMO) -> f32 { unsafe { function!(56029, (*mut c_void, u32, *mut crate::TESObjectARMO) -> f32)(vm, stackId, self_) } }
 /// `Papyrus::Cell::GetActorOwner` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56036, rva 0xa3ed30).
 /// `TESNPC * GetActorOwner(IVirtualMachine * vm, uint stackId, TESObjectCELL * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__cell__get_actor_owner(vm: *mut c_void, stackId: u32, self_: *mut classes::TESObjectCELL) -> *mut classes::TESNPC { unsafe { function!(56036, (*mut c_void, u32, *mut classes::TESObjectCELL) -> *mut classes::TESNPC)(vm, stackId, self_) } }
+pub unsafe fn papyrus__cell__get_actor_owner(vm: *mut c_void, stackId: u32, self_: *mut crate::TESObjectCELL) -> *mut crate::TESNPC { unsafe { function!(56036, (*mut c_void, u32, *mut crate::TESObjectCELL) -> *mut crate::TESNPC)(vm, stackId, self_) } }
 /// `Papyrus::Cell::GetFactionOwner` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56037, rva 0xa3ed60).
 /// `TESFaction * GetFactionOwner(IVirtualMachine * vm, uint stackId, TESObjectCELL * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__cell__get_faction_owner(vm: *mut c_void, stackId: u32, self_: *mut classes::TESObjectCELL) -> *mut classes::TESFaction { unsafe { function!(56037, (*mut c_void, u32, *mut classes::TESObjectCELL) -> *mut classes::TESFaction)(vm, stackId, self_) } }
+pub unsafe fn papyrus__cell__get_faction_owner(vm: *mut c_void, stackId: u32, self_: *mut crate::TESObjectCELL) -> *mut crate::TESFaction { unsafe { function!(56037, (*mut c_void, u32, *mut crate::TESObjectCELL) -> *mut crate::TESFaction)(vm, stackId, self_) } }
 /// `Papyrus::Cell::IsAttached` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56055, rva 0xa3ff60).
 /// `bool IsAttached(IVirtualMachine * vm, uint stackId, TESObjectCELL * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__cell__is_attached(vm: *mut c_void, stackId: u32, self_: *mut classes::TESObjectCELL) -> u8 { unsafe { function!(56055, (*mut c_void, u32, *mut classes::TESObjectCELL) -> u8)(vm, stackId, self_) } }
+pub unsafe fn papyrus__cell__is_attached(vm: *mut c_void, stackId: u32, self_: *mut crate::TESObjectCELL) -> u8 { unsafe { function!(56055, (*mut c_void, u32, *mut crate::TESObjectCELL) -> u8)(vm, stackId, self_) } }
 /// `Papyrus::Cell::IsInterior` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56056, rva 0xa3ff70).
 /// `bool IsInterior(IVirtualMachine * vm, uint stackId, TESObjectCELL * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__cell__is_interior(vm: *mut c_void, stackId: u32, self_: *mut classes::TESObjectCELL) -> u8 { unsafe { function!(56056, (*mut c_void, u32, *mut classes::TESObjectCELL) -> u8)(vm, stackId, self_) } }
+pub unsafe fn papyrus__cell__is_interior(vm: *mut c_void, stackId: u32, self_: *mut crate::TESObjectCELL) -> u8 { unsafe { function!(56056, (*mut c_void, u32, *mut crate::TESObjectCELL) -> u8)(vm, stackId, self_) } }
 /// `Papyrus::Cell::Reset` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56038, rva 0xa3ed90).
 /// `void Reset(IVirtualMachine * vm, uint stackId, TESObjectCELL * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__cell__reset(vm: *mut c_void, stackId: u32, self_: *mut classes::TESObjectCELL) { unsafe { function!(56038, (*mut c_void, u32, *mut classes::TESObjectCELL))(vm, stackId, self_) } }
+pub unsafe fn papyrus__cell__reset(vm: *mut c_void, stackId: u32, self_: *mut crate::TESObjectCELL) { unsafe { function!(56038, (*mut c_void, u32, *mut crate::TESObjectCELL))(vm, stackId, self_) } }
 /// `Papyrus::Cell::SetActorOwner` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56057, rva 0xa3ff80).
 /// `void SetActorOwner(IVirtualMachine * vm, uint stackId, TESObjectCELL * self, TESNPC * a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__cell__set_actor_owner(vm: *mut c_void, stackId: u32, self_: *mut classes::TESObjectCELL, a0: *mut classes::TESNPC) { unsafe { function!(56057, (*mut c_void, u32, *mut classes::TESObjectCELL, *mut classes::TESNPC))(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__cell__set_actor_owner(vm: *mut c_void, stackId: u32, self_: *mut crate::TESObjectCELL, a0: *mut crate::TESNPC) { unsafe { function!(56057, (*mut c_void, u32, *mut crate::TESObjectCELL, *mut crate::TESNPC))(vm, stackId, self_, a0) } }
 /// `Papyrus::Cell::SetFactionOwner` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56058, rva 0xa3ff90).
 /// `void SetFactionOwner(IVirtualMachine * vm, uint stackId, TESObjectCELL * self, TESFaction * a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__cell__set_faction_owner(vm: *mut c_void, stackId: u32, self_: *mut classes::TESObjectCELL, a0: *mut classes::TESFaction) { unsafe { function!(56058, (*mut c_void, u32, *mut classes::TESObjectCELL, *mut classes::TESFaction))(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__cell__set_faction_owner(vm: *mut c_void, stackId: u32, self_: *mut crate::TESObjectCELL, a0: *mut crate::TESFaction) { unsafe { function!(56058, (*mut c_void, u32, *mut crate::TESObjectCELL, *mut crate::TESFaction))(vm, stackId, self_, a0) } }
 /// `Papyrus::Cell::SetFogColor` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56039, rva 0xa3ee00).
 /// `void SetFogColor(IVirtualMachine * vm, uint stackId, TESObjectCELL * self, uint a0, uint a1, uint a2, uint a3, uint a4, uint a5)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__cell__set_fog_color(vm: *mut c_void, stackId: u32, self_: *mut classes::TESObjectCELL, a0: u32, a1: u32, a2: u32, a3: u32, a4: u32, a5: u32) { unsafe { function!(56039, (*mut c_void, u32, *mut classes::TESObjectCELL, u32, u32, u32, u32, u32, u32))(vm, stackId, self_, a0, a1, a2, a3, a4, a5) } }
+pub unsafe fn papyrus__cell__set_fog_color(vm: *mut c_void, stackId: u32, self_: *mut crate::TESObjectCELL, a0: u32, a1: u32, a2: u32, a3: u32, a4: u32, a5: u32) { unsafe { function!(56039, (*mut c_void, u32, *mut crate::TESObjectCELL, u32, u32, u32, u32, u32, u32))(vm, stackId, self_, a0, a1, a2, a3, a4, a5) } }
 /// `Papyrus::Cell::SetFogPlanes` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56040, rva 0xa3eea0).
 /// `void SetFogPlanes(IVirtualMachine * vm, uint stackId, TESObjectCELL * self, float a0, float a1)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__cell__set_fog_planes(vm: *mut c_void, stackId: u32, self_: *mut classes::TESObjectCELL, a0: f32, a1: f32) { unsafe { function!(56040, (*mut c_void, u32, *mut classes::TESObjectCELL, f32, f32))(vm, stackId, self_, a0, a1) } }
+pub unsafe fn papyrus__cell__set_fog_planes(vm: *mut c_void, stackId: u32, self_: *mut crate::TESObjectCELL, a0: f32, a1: f32) { unsafe { function!(56040, (*mut c_void, u32, *mut crate::TESObjectCELL, f32, f32))(vm, stackId, self_, a0, a1) } }
 /// `Papyrus::Cell::SetFogPower` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56059, rva 0xa3ffa0).
 /// `void SetFogPower(IVirtualMachine * vm, uint stackId, TESObjectCELL * self, float a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__cell__set_fog_power(vm: *mut c_void, stackId: u32, self_: *mut classes::TESObjectCELL, a0: f32) { unsafe { function!(56059, (*mut c_void, u32, *mut classes::TESObjectCELL, f32))(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__cell__set_fog_power(vm: *mut c_void, stackId: u32, self_: *mut crate::TESObjectCELL, a0: f32) { unsafe { function!(56059, (*mut c_void, u32, *mut crate::TESObjectCELL, f32))(vm, stackId, self_, a0) } }
 /// `Papyrus::Cell::SetPublic` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56060, rva 0xa3ffb0).
 /// `void SetPublic(IVirtualMachine * vm, uint stackId, TESObjectCELL * self, bool a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__cell__set_public(vm: *mut c_void, stackId: u32, self_: *mut classes::TESObjectCELL, a0: u8) { unsafe { function!(56060, (*mut c_void, u32, *mut classes::TESObjectCELL, u8))(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__cell__set_public(vm: *mut c_void, stackId: u32, self_: *mut crate::TESObjectCELL, a0: u8) { unsafe { function!(56060, (*mut c_void, u32, *mut crate::TESObjectCELL, u8))(vm, stackId, self_, a0) } }
 /// `Papyrus::Debug::CenterOnCell` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55367, rva 0xa1eee0).
 /// `void CenterOnCell(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, BSFixedString * a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__debug__center_on_cell(vm: *mut c_void, stackId: u32, unused: *mut c_void, a0: *mut classes::BSFixedString) { unsafe { function!(55367, (*mut c_void, u32, *mut c_void, *mut classes::BSFixedString))(vm, stackId, unused, a0) } }
+pub unsafe fn papyrus__debug__center_on_cell(vm: *mut c_void, stackId: u32, unused: *mut c_void, a0: *mut crate::BSFixedString) { unsafe { function!(55367, (*mut c_void, u32, *mut c_void, *mut crate::BSFixedString))(vm, stackId, unused, a0) } }
 /// `Papyrus::Debug::CenterOnCellAndWait` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55368, rva 0xa1ef60).
 /// `bool CenterOnCellAndWait(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, BSFixedString * a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__debug__center_on_cell_and_wait(vm: *mut c_void, stackId: u32, unused: *mut c_void, a0: *mut classes::BSFixedString) -> u8 { unsafe { function!(55368, (*mut c_void, u32, *mut c_void, *mut classes::BSFixedString) -> u8)(vm, stackId, unused, a0) } }
+pub unsafe fn papyrus__debug__center_on_cell_and_wait(vm: *mut c_void, stackId: u32, unused: *mut c_void, a0: *mut crate::BSFixedString) -> u8 { unsafe { function!(55368, (*mut c_void, u32, *mut c_void, *mut crate::BSFixedString) -> u8)(vm, stackId, unused, a0) } }
 /// `Papyrus::Debug::CloseUserLog` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55370, rva 0xa1f0a0).
 /// `void CloseUserLog(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, BSFixedString * a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__debug__close_user_log(vm: *mut c_void, stackId: u32, unused: *mut c_void, a0: *mut classes::BSFixedString) { unsafe { function!(55370, (*mut c_void, u32, *mut c_void, *mut classes::BSFixedString))(vm, stackId, unused, a0) } }
+pub unsafe fn papyrus__debug__close_user_log(vm: *mut c_void, stackId: u32, unused: *mut c_void, a0: *mut crate::BSFixedString) { unsafe { function!(55370, (*mut c_void, u32, *mut c_void, *mut crate::BSFixedString))(vm, stackId, unused, a0) } }
 /// `Papyrus::Debug::DebugChannelNotify` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55371, rva 0xa1f0f0).
 /// `void DebugChannelNotify(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, BSFixedString * a0, BSFixedString * a1)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__debug__debug_channel_notify(vm: *mut c_void, stackId: u32, unused: *mut c_void, a0: *mut classes::BSFixedString, a1: *mut classes::BSFixedString) { unsafe { function!(55371, (*mut c_void, u32, *mut c_void, *mut classes::BSFixedString, *mut classes::BSFixedString))(vm, stackId, unused, a0, a1) } }
+pub unsafe fn papyrus__debug__debug_channel_notify(vm: *mut c_void, stackId: u32, unused: *mut c_void, a0: *mut crate::BSFixedString, a1: *mut crate::BSFixedString) { unsafe { function!(55371, (*mut c_void, u32, *mut c_void, *mut crate::BSFixedString, *mut crate::BSFixedString))(vm, stackId, unused, a0, a1) } }
 /// `Papyrus::Debug::DumpAliasData` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55372, rva 0xa1f110).
 /// `void DumpAliasData(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, TESQuest * a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__debug__dump_alias_data(vm: *mut c_void, stackId: u32, unused: *mut c_void, a0: *mut classes::TESQuest) { unsafe { function!(55372, (*mut c_void, u32, *mut c_void, *mut classes::TESQuest))(vm, stackId, unused, a0) } }
+pub unsafe fn papyrus__debug__dump_alias_data(vm: *mut c_void, stackId: u32, unused: *mut c_void, a0: *mut crate::TESQuest) { unsafe { function!(55372, (*mut c_void, u32, *mut c_void, *mut crate::TESQuest))(vm, stackId, unused, a0) } }
 /// `Papyrus::Debug::GetPlatformName` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55374, rva 0xa1f3c0).
 /// `bool GetPlatformName(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused)`
 ///
@@ -29935,21 +29929,21 @@ pub unsafe fn papyrus__debug__get_version_number(vm: *mut c_void, stackId: u32, 
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__debug__open_user_log(vm: *mut c_void, stackId: u32, unused: *mut c_void, a0: *mut classes::BSFixedString) -> u8 { unsafe { function!(55378, (*mut c_void, u32, *mut c_void, *mut classes::BSFixedString) -> u8)(vm, stackId, unused, a0) } }
+pub unsafe fn papyrus__debug__open_user_log(vm: *mut c_void, stackId: u32, unused: *mut c_void, a0: *mut crate::BSFixedString) -> u8 { unsafe { function!(55378, (*mut c_void, u32, *mut c_void, *mut crate::BSFixedString) -> u8)(vm, stackId, unused, a0) } }
 /// `Papyrus::Debug::PlayerMoveToAndWait` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55369, rva 0xa1f000).
 /// `bool PlayerMoveToAndWait(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, BSFixedString * a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__debug__player_move_to_and_wait(vm: *mut c_void, stackId: u32, unused: *mut c_void, a0: *mut classes::BSFixedString) -> u8 { unsafe { function!(55369, (*mut c_void, u32, *mut c_void, *mut classes::BSFixedString) -> u8)(vm, stackId, unused, a0) } }
+pub unsafe fn papyrus__debug__player_move_to_and_wait(vm: *mut c_void, stackId: u32, unused: *mut c_void, a0: *mut crate::BSFixedString) -> u8 { unsafe { function!(55369, (*mut c_void, u32, *mut c_void, *mut crate::BSFixedString) -> u8)(vm, stackId, unused, a0) } }
 /// `Papyrus::Debug::SendAnimationEvent` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55380, rva 0xa1f620).
 /// `void SendAnimationEvent(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, TESObjectREFR * a0, BSFixedString * a1)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__debug__send_animation_event(vm: *mut c_void, stackId: u32, unused: *mut c_void, a0: *mut classes::TESObjectREFR, a1: *mut classes::BSFixedString) { unsafe { function!(55380, (*mut c_void, u32, *mut c_void, *mut classes::TESObjectREFR, *mut classes::BSFixedString))(vm, stackId, unused, a0, a1) } }
+pub unsafe fn papyrus__debug__send_animation_event(vm: *mut c_void, stackId: u32, unused: *mut c_void, a0: *mut crate::TESObjectREFR, a1: *mut crate::BSFixedString) { unsafe { function!(55380, (*mut c_void, u32, *mut c_void, *mut crate::TESObjectREFR, *mut crate::BSFixedString))(vm, stackId, unused, a0, a1) } }
 /// `Papyrus::Debug::SetFootIK` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55381, rva 0xa1f670).
 /// `void SetFootIK(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, bool a0)`
 ///
@@ -29970,7 +29964,7 @@ pub unsafe fn papyrus__debug__set_god_mode(vm: *mut c_void, stackId: u32, unused
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__debug__start_script_profiling(vm: *mut c_void, stackId: u32, unused: *mut c_void, a0: *mut classes::BSFixedString) { unsafe { function!(55383, (*mut c_void, u32, *mut c_void, *mut classes::BSFixedString))(vm, stackId, unused, a0) } }
+pub unsafe fn papyrus__debug__start_script_profiling(vm: *mut c_void, stackId: u32, unused: *mut c_void, a0: *mut crate::BSFixedString) { unsafe { function!(55383, (*mut c_void, u32, *mut c_void, *mut crate::BSFixedString))(vm, stackId, unused, a0) } }
 /// `Papyrus::Debug::StartStackProfiling` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55384, rva 0xa1f7f0).
 /// `void StartStackProfiling(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused)`
 ///
@@ -29984,7 +29978,7 @@ pub unsafe fn papyrus__debug__start_stack_profiling(vm: *mut c_void, stackId: u3
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__debug__stop_script_profiling(vm: *mut c_void, stackId: u32, unused: *mut c_void, a0: *mut classes::BSFixedString) { unsafe { function!(55385, (*mut c_void, u32, *mut c_void, *mut classes::BSFixedString))(vm, stackId, unused, a0) } }
+pub unsafe fn papyrus__debug__stop_script_profiling(vm: *mut c_void, stackId: u32, unused: *mut c_void, a0: *mut crate::BSFixedString) { unsafe { function!(55385, (*mut c_void, u32, *mut c_void, *mut crate::BSFixedString))(vm, stackId, unused, a0) } }
 /// `Papyrus::Debug::StopStackProfiling` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55386, rva 0xa1f8f0).
 /// `void StopStackProfiling(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused)`
 ///
@@ -29998,7 +29992,7 @@ pub unsafe fn papyrus__debug__stop_stack_profiling(vm: *mut c_void, stackId: u32
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__debug__take_screenshot(vm: *mut c_void, stackId: u32, unused: *mut c_void, a0: *mut classes::BSFixedString) { unsafe { function!(55387, (*mut c_void, u32, *mut c_void, *mut classes::BSFixedString))(vm, stackId, unused, a0) } }
+pub unsafe fn papyrus__debug__take_screenshot(vm: *mut c_void, stackId: u32, unused: *mut c_void, a0: *mut crate::BSFixedString) { unsafe { function!(55387, (*mut c_void, u32, *mut c_void, *mut crate::BSFixedString))(vm, stackId, unused, a0) } }
 /// `Papyrus::Debug::ToggleAI` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55388, rva 0xa1f9a0).
 /// `void ToggleAI(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused)`
 ///
@@ -30026,413 +30020,413 @@ pub unsafe fn papyrus__debug__toggle_menus(vm: *mut c_void, stackId: u32, unused
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__debug__trace(vm: *mut c_void, stackId: u32, unused: *mut c_void, a0: *mut classes::BSFixedString, a1: u32) { unsafe { function!(55391, (*mut c_void, u32, *mut c_void, *mut classes::BSFixedString, u32))(vm, stackId, unused, a0, a1) } }
+pub unsafe fn papyrus__debug__trace(vm: *mut c_void, stackId: u32, unused: *mut c_void, a0: *mut crate::BSFixedString, a1: u32) { unsafe { function!(55391, (*mut c_void, u32, *mut c_void, *mut crate::BSFixedString, u32))(vm, stackId, unused, a0, a1) } }
 /// `Papyrus::Debug::TraceStack` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55392, rva 0xa1faa0).
 /// `void TraceStack(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, BSFixedString * a0, uint a1)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__debug__trace_stack(vm: *mut c_void, stackId: u32, unused: *mut c_void, a0: *mut classes::BSFixedString, a1: u32) { unsafe { function!(55392, (*mut c_void, u32, *mut c_void, *mut classes::BSFixedString, u32))(vm, stackId, unused, a0, a1) } }
+pub unsafe fn papyrus__debug__trace_stack(vm: *mut c_void, stackId: u32, unused: *mut c_void, a0: *mut crate::BSFixedString, a1: u32) { unsafe { function!(55392, (*mut c_void, u32, *mut c_void, *mut crate::BSFixedString, u32))(vm, stackId, unused, a0, a1) } }
 /// `Papyrus::Debug::TraceUser` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55393, rva 0xa1fb20).
 /// `bool TraceUser(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, BSFixedString * a0, BSFixedString * a1, uint a2)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__debug__trace_user(vm: *mut c_void, stackId: u32, unused: *mut c_void, a0: *mut classes::BSFixedString, a1: *mut classes::BSFixedString, a2: u32) -> u8 { unsafe { function!(55393, (*mut c_void, u32, *mut c_void, *mut classes::BSFixedString, *mut classes::BSFixedString, u32) -> u8)(vm, stackId, unused, a0, a1, a2) } }
+pub unsafe fn papyrus__debug__trace_user(vm: *mut c_void, stackId: u32, unused: *mut c_void, a0: *mut crate::BSFixedString, a1: *mut crate::BSFixedString, a2: u32) -> u8 { unsafe { function!(55393, (*mut c_void, u32, *mut c_void, *mut crate::BSFixedString, *mut crate::BSFixedString, u32) -> u8)(vm, stackId, unused, a0, a1, a2) } }
 /// `Papyrus::EffectShader::Play` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55778, rva 0xa33fa0).
 /// `void Play(IVirtualMachine * vm, uint stackId, TESEffectShader * self, TESObjectREFR * a0, float a1)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__effect_shader__play(vm: *mut c_void, stackId: u32, self_: *mut classes::TESEffectShader, a0: *mut classes::TESObjectREFR, a1: f32) { unsafe { function!(55778, (*mut c_void, u32, *mut classes::TESEffectShader, *mut classes::TESObjectREFR, f32))(vm, stackId, self_, a0, a1) } }
+pub unsafe fn papyrus__effect_shader__play(vm: *mut c_void, stackId: u32, self_: *mut crate::TESEffectShader, a0: *mut crate::TESObjectREFR, a1: f32) { unsafe { function!(55778, (*mut c_void, u32, *mut crate::TESEffectShader, *mut crate::TESObjectREFR, f32))(vm, stackId, self_, a0, a1) } }
 /// `Papyrus::EffectShader::Stop` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55779, rva 0xa340d0).
 /// `void Stop(IVirtualMachine * vm, uint stackId, TESEffectShader * self, TESObjectREFR * a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__effect_shader__stop(vm: *mut c_void, stackId: u32, self_: *mut classes::TESEffectShader, a0: *mut classes::TESObjectREFR) { unsafe { function!(55779, (*mut c_void, u32, *mut classes::TESEffectShader, *mut classes::TESObjectREFR))(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__effect_shader__stop(vm: *mut c_void, stackId: u32, self_: *mut crate::TESEffectShader, a0: *mut crate::TESObjectREFR) { unsafe { function!(55779, (*mut c_void, u32, *mut crate::TESEffectShader, *mut crate::TESObjectREFR))(vm, stackId, self_, a0) } }
 /// `Papyrus::Enchantment::IsHostile` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55441, rva 0xa22f00).
 /// `bool IsHostile(IVirtualMachine * vm, uint stackId, EnchantmentItem * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__enchantment__is_hostile(vm: *mut c_void, stackId: u32, self_: *mut classes::EnchantmentItem) -> u8 { unsafe { function!(55441, (*mut c_void, u32, *mut classes::EnchantmentItem) -> u8)(vm, stackId, self_) } }
+pub unsafe fn papyrus__enchantment__is_hostile(vm: *mut c_void, stackId: u32, self_: *mut crate::EnchantmentItem) -> u8 { unsafe { function!(55441, (*mut c_void, u32, *mut crate::EnchantmentItem) -> u8)(vm, stackId, self_) } }
 /// `Papyrus::Faction::CanPayCrimeGold` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55793, rva 0xa34990).
 /// `bool CanPayCrimeGold(IVirtualMachine * vm, uint stackId, TESFaction * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__faction__can_pay_crime_gold(vm: *mut c_void, stackId: u32, self_: *mut classes::TESFaction) -> u8 { unsafe { function!(55793, (*mut c_void, u32, *mut classes::TESFaction) -> u8)(vm, stackId, self_) } }
+pub unsafe fn papyrus__faction__can_pay_crime_gold(vm: *mut c_void, stackId: u32, self_: *mut crate::TESFaction) -> u8 { unsafe { function!(55793, (*mut c_void, u32, *mut crate::TESFaction) -> u8)(vm, stackId, self_) } }
 /// `Papyrus::Faction::GetCrimeGold` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55794, rva 0xa349d0).
 /// `uint GetCrimeGold(IVirtualMachine * vm, uint stackId, TESFaction * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__faction__get_crime_gold(vm: *mut c_void, stackId: u32, self_: *mut classes::TESFaction) -> u32 { unsafe { function!(55794, (*mut c_void, u32, *mut classes::TESFaction) -> u32)(vm, stackId, self_) } }
+pub unsafe fn papyrus__faction__get_crime_gold(vm: *mut c_void, stackId: u32, self_: *mut crate::TESFaction) -> u32 { unsafe { function!(55794, (*mut c_void, u32, *mut crate::TESFaction) -> u32)(vm, stackId, self_) } }
 /// `Papyrus::Faction::GetCrimeGoldNonViolent` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55795, rva 0xa349f0).
 /// `uint GetCrimeGoldNonViolent(IVirtualMachine * vm, uint stackId, TESFaction * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__faction__get_crime_gold_non_violent(vm: *mut c_void, stackId: u32, self_: *mut classes::TESFaction) -> u32 { unsafe { function!(55795, (*mut c_void, u32, *mut classes::TESFaction) -> u32)(vm, stackId, self_) } }
+pub unsafe fn papyrus__faction__get_crime_gold_non_violent(vm: *mut c_void, stackId: u32, self_: *mut crate::TESFaction) -> u32 { unsafe { function!(55795, (*mut c_void, u32, *mut crate::TESFaction) -> u32)(vm, stackId, self_) } }
 /// `Papyrus::Faction::GetCrimeGoldViolent` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55796, rva 0xa34a10).
 /// `uint GetCrimeGoldViolent(IVirtualMachine * vm, uint stackId, TESFaction * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__faction__get_crime_gold_violent(vm: *mut c_void, stackId: u32, self_: *mut classes::TESFaction) -> u32 { unsafe { function!(55796, (*mut c_void, u32, *mut classes::TESFaction) -> u32)(vm, stackId, self_) } }
+pub unsafe fn papyrus__faction__get_crime_gold_violent(vm: *mut c_void, stackId: u32, self_: *mut crate::TESFaction) -> u32 { unsafe { function!(55796, (*mut c_void, u32, *mut crate::TESFaction) -> u32)(vm, stackId, self_) } }
 /// `Papyrus::Faction::GetInfamy` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55797, rva 0xa34a30).
 /// `uint GetInfamy(IVirtualMachine * vm, uint stackId, TESFaction * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__faction__get_infamy(vm: *mut c_void, stackId: u32, self_: *mut classes::TESFaction) -> u32 { unsafe { function!(55797, (*mut c_void, u32, *mut classes::TESFaction) -> u32)(vm, stackId, self_) } }
+pub unsafe fn papyrus__faction__get_infamy(vm: *mut c_void, stackId: u32, self_: *mut crate::TESFaction) -> u32 { unsafe { function!(55797, (*mut c_void, u32, *mut crate::TESFaction) -> u32)(vm, stackId, self_) } }
 /// `Papyrus::Faction::GetInfamyNonViolent` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55798, rva 0xa34a50).
 /// `uint GetInfamyNonViolent(IVirtualMachine * vm, uint stackId, TESFaction * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__faction__get_infamy_non_violent(vm: *mut c_void, stackId: u32, self_: *mut classes::TESFaction) -> u32 { unsafe { function!(55798, (*mut c_void, u32, *mut classes::TESFaction) -> u32)(vm, stackId, self_) } }
+pub unsafe fn papyrus__faction__get_infamy_non_violent(vm: *mut c_void, stackId: u32, self_: *mut crate::TESFaction) -> u32 { unsafe { function!(55798, (*mut c_void, u32, *mut crate::TESFaction) -> u32)(vm, stackId, self_) } }
 /// `Papyrus::Faction::GetInfamyViolent` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55799, rva 0xa34a70).
 /// `uint GetInfamyViolent(IVirtualMachine * vm, uint stackId, TESFaction * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__faction__get_infamy_violent(vm: *mut c_void, stackId: u32, self_: *mut classes::TESFaction) -> u32 { unsafe { function!(55799, (*mut c_void, u32, *mut classes::TESFaction) -> u32)(vm, stackId, self_) } }
+pub unsafe fn papyrus__faction__get_infamy_violent(vm: *mut c_void, stackId: u32, self_: *mut crate::TESFaction) -> u32 { unsafe { function!(55799, (*mut c_void, u32, *mut crate::TESFaction) -> u32)(vm, stackId, self_) } }
 /// `Papyrus::Faction::GetReaction` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55839, rva 0xa366c0).
 /// `int GetReaction(IVirtualMachine * vm, uint stackId, TESFaction * self, TESFaction * a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__faction__get_reaction(vm: *mut c_void, stackId: u32, self_: *mut classes::TESFaction, a0: *mut classes::TESFaction) -> i32 { unsafe { function!(55839, (*mut c_void, u32, *mut classes::TESFaction, *mut classes::TESFaction) -> i32)(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__faction__get_reaction(vm: *mut c_void, stackId: u32, self_: *mut crate::TESFaction, a0: *mut crate::TESFaction) -> i32 { unsafe { function!(55839, (*mut c_void, u32, *mut crate::TESFaction, *mut crate::TESFaction) -> i32)(vm, stackId, self_, a0) } }
 /// `Papyrus::Faction::GetStolenItemValueCrime` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55800, rva 0xa34a90).
 /// `uint GetStolenItemValueCrime(IVirtualMachine * vm, uint stackId, TESFaction * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__faction__get_stolen_item_value_crime(vm: *mut c_void, stackId: u32, self_: *mut classes::TESFaction) -> u32 { unsafe { function!(55800, (*mut c_void, u32, *mut classes::TESFaction) -> u32)(vm, stackId, self_) } }
+pub unsafe fn papyrus__faction__get_stolen_item_value_crime(vm: *mut c_void, stackId: u32, self_: *mut crate::TESFaction) -> u32 { unsafe { function!(55800, (*mut c_void, u32, *mut crate::TESFaction) -> u32)(vm, stackId, self_) } }
 /// `Papyrus::Faction::GetStolenItemValueNoCrime` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55801, rva 0xa34ab0).
 /// `uint GetStolenItemValueNoCrime(IVirtualMachine * vm, uint stackId, TESFaction * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__faction__get_stolen_item_value_no_crime(vm: *mut c_void, stackId: u32, self_: *mut classes::TESFaction) -> u32 { unsafe { function!(55801, (*mut c_void, u32, *mut classes::TESFaction) -> u32)(vm, stackId, self_) } }
+pub unsafe fn papyrus__faction__get_stolen_item_value_no_crime(vm: *mut c_void, stackId: u32, self_: *mut crate::TESFaction) -> u32 { unsafe { function!(55801, (*mut c_void, u32, *mut crate::TESFaction) -> u32)(vm, stackId, self_) } }
 /// `Papyrus::Faction::IsFactionInCrimeGroup` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55840, rva 0xa366d0).
 /// `bool IsFactionInCrimeGroup(IVirtualMachine * vm, uint stackId, TESFaction * self, TESFaction * a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__faction__is_faction_in_crime_group(vm: *mut c_void, stackId: u32, self_: *mut classes::TESFaction, a0: *mut classes::TESFaction) -> u8 { unsafe { function!(55840, (*mut c_void, u32, *mut classes::TESFaction, *mut classes::TESFaction) -> u8)(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__faction__is_faction_in_crime_group(vm: *mut c_void, stackId: u32, self_: *mut crate::TESFaction, a0: *mut crate::TESFaction) -> u8 { unsafe { function!(55840, (*mut c_void, u32, *mut crate::TESFaction, *mut crate::TESFaction) -> u8)(vm, stackId, self_, a0) } }
 /// `Papyrus::Faction::IsPlayerExpelled` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55841, rva 0xa366e0).
 /// `bool IsPlayerExpelled(IVirtualMachine * vm, uint stackId, TESFaction * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__faction__is_player_expelled(vm: *mut c_void, stackId: u32, self_: *mut classes::TESFaction) -> u8 { unsafe { function!(55841, (*mut c_void, u32, *mut classes::TESFaction) -> u8)(vm, stackId, self_) } }
+pub unsafe fn papyrus__faction__is_player_expelled(vm: *mut c_void, stackId: u32, self_: *mut crate::TESFaction) -> u8 { unsafe { function!(55841, (*mut c_void, u32, *mut crate::TESFaction) -> u8)(vm, stackId, self_) } }
 /// `Papyrus::Faction::ModCrimeGold` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55802, rva 0xa34ad0).
 /// `void ModCrimeGold(IVirtualMachine * vm, uint stackId, TESFaction * self, int a0, bool a1)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__faction__mod_crime_gold(vm: *mut c_void, stackId: u32, self_: *mut classes::TESFaction, a0: i32, a1: u8) { unsafe { function!(55802, (*mut c_void, u32, *mut classes::TESFaction, i32, u8))(vm, stackId, self_, a0, a1) } }
+pub unsafe fn papyrus__faction__mod_crime_gold(vm: *mut c_void, stackId: u32, self_: *mut crate::TESFaction, a0: i32, a1: u8) { unsafe { function!(55802, (*mut c_void, u32, *mut crate::TESFaction, i32, u8))(vm, stackId, self_, a0, a1) } }
 /// `Papyrus::Faction::ModReaction` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55803, rva 0xa34af0).
 /// `void ModReaction(IVirtualMachine * vm, uint stackId, TESFaction * self, TESFaction * a0, int a1)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__faction__mod_reaction(vm: *mut c_void, stackId: u32, self_: *mut classes::TESFaction, a0: *mut classes::TESFaction, a1: i32) { unsafe { function!(55803, (*mut c_void, u32, *mut classes::TESFaction, *mut classes::TESFaction, i32))(vm, stackId, self_, a0, a1) } }
+pub unsafe fn papyrus__faction__mod_reaction(vm: *mut c_void, stackId: u32, self_: *mut crate::TESFaction, a0: *mut crate::TESFaction, a1: i32) { unsafe { function!(55803, (*mut c_void, u32, *mut crate::TESFaction, *mut crate::TESFaction, i32))(vm, stackId, self_, a0, a1) } }
 /// `Papyrus::Faction::PlayerPayCrimeGold` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55805, rva 0xa34b30).
 /// `void PlayerPayCrimeGold(IVirtualMachine * vm, uint stackId, TESFaction * self, bool a0, bool a1)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__faction__player_pay_crime_gold(vm: *mut c_void, stackId: u32, self_: *mut classes::TESFaction, a0: u8, a1: u8) { unsafe { function!(55805, (*mut c_void, u32, *mut classes::TESFaction, u8, u8))(vm, stackId, self_, a0, a1) } }
+pub unsafe fn papyrus__faction__player_pay_crime_gold(vm: *mut c_void, stackId: u32, self_: *mut crate::TESFaction, a0: u8, a1: u8) { unsafe { function!(55805, (*mut c_void, u32, *mut crate::TESFaction, u8, u8))(vm, stackId, self_, a0, a1) } }
 /// `Papyrus::Faction::SendAssaultAlarm` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55806, rva 0xa34b50).
 /// `void SendAssaultAlarm(IVirtualMachine * vm, uint stackId, TESFaction * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__faction__send_assault_alarm(vm: *mut c_void, stackId: u32, self_: *mut classes::TESFaction) { unsafe { function!(55806, (*mut c_void, u32, *mut classes::TESFaction))(vm, stackId, self_) } }
+pub unsafe fn papyrus__faction__send_assault_alarm(vm: *mut c_void, stackId: u32, self_: *mut crate::TESFaction) { unsafe { function!(55806, (*mut c_void, u32, *mut crate::TESFaction))(vm, stackId, self_) } }
 /// `Papyrus::Faction::SendPlayerToJail` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55807, rva 0xa34c40).
 /// `bool SendPlayerToJail(IVirtualMachine * vm, uint stackId, TESFaction * self, bool a0, bool a1)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__faction__send_player_to_jail(vm: *mut c_void, stackId: u32, self_: *mut classes::TESFaction, a0: u8, a1: u8) -> u8 { unsafe { function!(55807, (*mut c_void, u32, *mut classes::TESFaction, u8, u8) -> u8)(vm, stackId, self_, a0, a1) } }
+pub unsafe fn papyrus__faction__send_player_to_jail(vm: *mut c_void, stackId: u32, self_: *mut crate::TESFaction, a0: u8, a1: u8) -> u8 { unsafe { function!(55807, (*mut c_void, u32, *mut crate::TESFaction, u8, u8) -> u8)(vm, stackId, self_, a0, a1) } }
 /// `Papyrus::Faction::SetAlly` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55808, rva 0xa34d50).
 /// `void SetAlly(IVirtualMachine * vm, uint stackId, TESFaction * self, TESFaction * a0, bool a1, bool a2)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__faction__set_ally(vm: *mut c_void, stackId: u32, self_: *mut classes::TESFaction, a0: *mut classes::TESFaction, a1: u8, a2: u8) { unsafe { function!(55808, (*mut c_void, u32, *mut classes::TESFaction, *mut classes::TESFaction, u8, u8))(vm, stackId, self_, a0, a1, a2) } }
+pub unsafe fn papyrus__faction__set_ally(vm: *mut c_void, stackId: u32, self_: *mut crate::TESFaction, a0: *mut crate::TESFaction, a1: u8, a2: u8) { unsafe { function!(55808, (*mut c_void, u32, *mut crate::TESFaction, *mut crate::TESFaction, u8, u8))(vm, stackId, self_, a0, a1, a2) } }
 /// `Papyrus::Faction::SetCrimeGold` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55809, rva 0xa34dd0).
 /// `void SetCrimeGold(IVirtualMachine * vm, uint stackId, TESFaction * self, uint a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__faction__set_crime_gold(vm: *mut c_void, stackId: u32, self_: *mut classes::TESFaction, a0: u32) { unsafe { function!(55809, (*mut c_void, u32, *mut classes::TESFaction, u32))(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__faction__set_crime_gold(vm: *mut c_void, stackId: u32, self_: *mut crate::TESFaction, a0: u32) { unsafe { function!(55809, (*mut c_void, u32, *mut crate::TESFaction, u32))(vm, stackId, self_, a0) } }
 /// `Papyrus::Faction::SetCrimeGoldViolent` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55810, rva 0xa34df0).
 /// `void SetCrimeGoldViolent(IVirtualMachine * vm, uint stackId, TESFaction * self, uint a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__faction__set_crime_gold_violent(vm: *mut c_void, stackId: u32, self_: *mut classes::TESFaction, a0: u32) { unsafe { function!(55810, (*mut c_void, u32, *mut classes::TESFaction, u32))(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__faction__set_crime_gold_violent(vm: *mut c_void, stackId: u32, self_: *mut crate::TESFaction, a0: u32) { unsafe { function!(55810, (*mut c_void, u32, *mut crate::TESFaction, u32))(vm, stackId, self_, a0) } }
 /// `Papyrus::Faction::SetEnemy` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55811, rva 0xa34e10).
 /// `void SetEnemy(IVirtualMachine * vm, uint stackId, TESFaction * self, TESFaction * a0, bool a1, bool a2)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__faction__set_enemy(vm: *mut c_void, stackId: u32, self_: *mut classes::TESFaction, a0: *mut classes::TESFaction, a1: u8, a2: u8) { unsafe { function!(55811, (*mut c_void, u32, *mut classes::TESFaction, *mut classes::TESFaction, u8, u8))(vm, stackId, self_, a0, a1, a2) } }
+pub unsafe fn papyrus__faction__set_enemy(vm: *mut c_void, stackId: u32, self_: *mut crate::TESFaction, a0: *mut crate::TESFaction, a1: u8, a2: u8) { unsafe { function!(55811, (*mut c_void, u32, *mut crate::TESFaction, *mut crate::TESFaction, u8, u8))(vm, stackId, self_, a0, a1, a2) } }
 /// `Papyrus::Faction::SetPlayerEnemy` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55842, rva 0xa366f0).
 /// `void SetPlayerEnemy(IVirtualMachine * vm, uint stackId, TESFaction * self, bool a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__faction__set_player_enemy(vm: *mut c_void, stackId: u32, self_: *mut classes::TESFaction, a0: u8) { unsafe { function!(55842, (*mut c_void, u32, *mut classes::TESFaction, u8))(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__faction__set_player_enemy(vm: *mut c_void, stackId: u32, self_: *mut crate::TESFaction, a0: u8) { unsafe { function!(55842, (*mut c_void, u32, *mut crate::TESFaction, u8))(vm, stackId, self_, a0) } }
 /// `Papyrus::Faction::SetPlayerExpelled` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55843, rva 0xa36700).
 /// `void SetPlayerExpelled(IVirtualMachine * vm, uint stackId, TESFaction * self, bool a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__faction__set_player_expelled(vm: *mut c_void, stackId: u32, self_: *mut classes::TESFaction, a0: u8) { unsafe { function!(55843, (*mut c_void, u32, *mut classes::TESFaction, u8))(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__faction__set_player_expelled(vm: *mut c_void, stackId: u32, self_: *mut crate::TESFaction, a0: u8) { unsafe { function!(55843, (*mut c_void, u32, *mut crate::TESFaction, u8))(vm, stackId, self_, a0) } }
 /// `Papyrus::Faction::SetReaction` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55812, rva 0xa34e90).
 /// `void SetReaction(IVirtualMachine * vm, uint stackId, TESFaction * self, TESFaction * a0, int a1)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__faction__set_reaction(vm: *mut c_void, stackId: u32, self_: *mut classes::TESFaction, a0: *mut classes::TESFaction, a1: i32) { unsafe { function!(55812, (*mut c_void, u32, *mut classes::TESFaction, *mut classes::TESFaction, i32))(vm, stackId, self_, a0, a1) } }
+pub unsafe fn papyrus__faction__set_reaction(vm: *mut c_void, stackId: u32, self_: *mut crate::TESFaction, a0: *mut crate::TESFaction, a1: i32) { unsafe { function!(55812, (*mut c_void, u32, *mut crate::TESFaction, *mut crate::TESFaction, i32))(vm, stackId, self_, a0, a1) } }
 /// `Papyrus::Form::GetFormID` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55902, rva 0xa392a0).
 /// `uint GetFormID(IVirtualMachine * vm, uint stackId, TESForm * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__form__get_form_id(vm: *mut c_void, stackId: u32, self_: *mut classes::TESForm) -> u32 { unsafe { function!(55902, (*mut c_void, u32, *mut classes::TESForm) -> u32)(vm, stackId, self_) } }
+pub unsafe fn papyrus__form__get_form_id(vm: *mut c_void, stackId: u32, self_: *mut crate::TESForm) -> u32 { unsafe { function!(55902, (*mut c_void, u32, *mut crate::TESForm) -> u32)(vm, stackId, self_) } }
 /// `Papyrus::Form::GetGoldValue` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55869, rva 0xa37690).
 /// `int GetGoldValue(IVirtualMachine * vm, uint stackId, TESForm * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__form__get_gold_value(vm: *mut c_void, stackId: u32, self_: *mut classes::TESForm) -> i32 { unsafe { function!(55869, (*mut c_void, u32, *mut classes::TESForm) -> i32)(vm, stackId, self_) } }
+pub unsafe fn papyrus__form__get_gold_value(vm: *mut c_void, stackId: u32, self_: *mut crate::TESForm) -> i32 { unsafe { function!(55869, (*mut c_void, u32, *mut crate::TESForm) -> i32)(vm, stackId, self_) } }
 /// `Papyrus::Form::HasKeyword` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55870, rva 0xa376d0).
 /// `bool HasKeyword(IVirtualMachine * vm, uint stackId, TESForm * self, BGSKeyword * a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__form__has_keyword(vm: *mut c_void, stackId: u32, self_: *mut classes::TESForm, a0: *mut classes::BGSKeyword) -> u8 { unsafe { function!(55870, (*mut c_void, u32, *mut classes::TESForm, *mut classes::BGSKeyword) -> u8)(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__form__has_keyword(vm: *mut c_void, stackId: u32, self_: *mut crate::TESForm, a0: *mut crate::BGSKeyword) -> u8 { unsafe { function!(55870, (*mut c_void, u32, *mut crate::TESForm, *mut crate::BGSKeyword) -> u8)(vm, stackId, self_, a0) } }
 /// `Papyrus::Form::PlayerKnows` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55903, rva 0xa392b0).
 /// `bool PlayerKnows(IVirtualMachine * vm, uint stackId, TESForm * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__form__player_knows(vm: *mut c_void, stackId: u32, self_: *mut classes::TESForm) -> u8 { unsafe { function!(55903, (*mut c_void, u32, *mut classes::TESForm) -> u8)(vm, stackId, self_) } }
+pub unsafe fn papyrus__form__player_knows(vm: *mut c_void, stackId: u32, self_: *mut crate::TESForm) -> u8 { unsafe { function!(55903, (*mut c_void, u32, *mut crate::TESForm) -> u8)(vm, stackId, self_) } }
 /// `Papyrus::Form::RegisterForAnimationEvent` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55871, rva 0xa37740).
 /// `bool RegisterForAnimationEvent(IVirtualMachine * vm, uint stackId, TESForm * self, TESObjectREFR * a0, BSFixedString * a1)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__form__register_for_animation_event(vm: *mut c_void, stackId: u32, self_: *mut classes::TESForm, a0: *mut classes::TESObjectREFR, a1: *mut classes::BSFixedString) -> u8 { unsafe { function!(55871, (*mut c_void, u32, *mut classes::TESForm, *mut classes::TESObjectREFR, *mut classes::BSFixedString) -> u8)(vm, stackId, self_, a0, a1) } }
+pub unsafe fn papyrus__form__register_for_animation_event(vm: *mut c_void, stackId: u32, self_: *mut crate::TESForm, a0: *mut crate::TESObjectREFR, a1: *mut crate::BSFixedString) -> u8 { unsafe { function!(55871, (*mut c_void, u32, *mut crate::TESForm, *mut crate::TESObjectREFR, *mut crate::BSFixedString) -> u8)(vm, stackId, self_, a0, a1) } }
 /// `Papyrus::Form::RegisterForLOS` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55872, rva 0xa37820).
 /// `void RegisterForLOS(IVirtualMachine * vm, uint stackId, TESForm * self, Actor * a0, TESObjectREFR * a1)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__form__register_for_los(vm: *mut c_void, stackId: u32, self_: *mut classes::TESForm, a0: *mut classes::Actor, a1: *mut classes::TESObjectREFR) { unsafe { function!(55872, (*mut c_void, u32, *mut classes::TESForm, *mut classes::Actor, *mut classes::TESObjectREFR))(vm, stackId, self_, a0, a1) } }
+pub unsafe fn papyrus__form__register_for_los(vm: *mut c_void, stackId: u32, self_: *mut crate::TESForm, a0: *mut crate::Actor, a1: *mut crate::TESObjectREFR) { unsafe { function!(55872, (*mut c_void, u32, *mut crate::TESForm, *mut crate::Actor, *mut crate::TESObjectREFR))(vm, stackId, self_, a0, a1) } }
 /// `Papyrus::Form::RegisterForSingleLOSGain` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55873, rva 0xa378b0).
 /// `void RegisterForSingleLOSGain(IVirtualMachine * vm, uint stackId, TESForm * self, Actor * a0, TESObjectREFR * a1)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__form__register_for_single_los_gain(vm: *mut c_void, stackId: u32, self_: *mut classes::TESForm, a0: *mut classes::Actor, a1: *mut classes::TESObjectREFR) { unsafe { function!(55873, (*mut c_void, u32, *mut classes::TESForm, *mut classes::Actor, *mut classes::TESObjectREFR))(vm, stackId, self_, a0, a1) } }
+pub unsafe fn papyrus__form__register_for_single_los_gain(vm: *mut c_void, stackId: u32, self_: *mut crate::TESForm, a0: *mut crate::Actor, a1: *mut crate::TESObjectREFR) { unsafe { function!(55873, (*mut c_void, u32, *mut crate::TESForm, *mut crate::Actor, *mut crate::TESObjectREFR))(vm, stackId, self_, a0, a1) } }
 /// `Papyrus::Form::RegisterForSingleLOSLost` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55874, rva 0xa37940).
 /// `void RegisterForSingleLOSLost(IVirtualMachine * vm, uint stackId, TESForm * self, Actor * a0, TESObjectREFR * a1)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__form__register_for_single_los_lost(vm: *mut c_void, stackId: u32, self_: *mut classes::TESForm, a0: *mut classes::Actor, a1: *mut classes::TESObjectREFR) { unsafe { function!(55874, (*mut c_void, u32, *mut classes::TESForm, *mut classes::Actor, *mut classes::TESObjectREFR))(vm, stackId, self_, a0, a1) } }
+pub unsafe fn papyrus__form__register_for_single_los_lost(vm: *mut c_void, stackId: u32, self_: *mut crate::TESForm, a0: *mut crate::Actor, a1: *mut crate::TESObjectREFR) { unsafe { function!(55874, (*mut c_void, u32, *mut crate::TESForm, *mut crate::Actor, *mut crate::TESObjectREFR))(vm, stackId, self_, a0, a1) } }
 /// `Papyrus::Form::RegisterForSingleUpdate` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55875, rva 0xa379d0).
 /// `void RegisterForSingleUpdate(IVirtualMachine * vm, uint stackId, TESForm * self, float a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__form__register_for_single_update(vm: *mut c_void, stackId: u32, self_: *mut classes::TESForm, a0: f32) { unsafe { function!(55875, (*mut c_void, u32, *mut classes::TESForm, f32))(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__form__register_for_single_update(vm: *mut c_void, stackId: u32, self_: *mut crate::TESForm, a0: f32) { unsafe { function!(55875, (*mut c_void, u32, *mut crate::TESForm, f32))(vm, stackId, self_, a0) } }
 /// `Papyrus::Form::RegisterForSingleUpdateGameTime` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55876, rva 0xa37a30).
 /// `void RegisterForSingleUpdateGameTime(IVirtualMachine * vm, uint stackId, TESForm * self, float a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__form__register_for_single_update_game_time(vm: *mut c_void, stackId: u32, self_: *mut classes::TESForm, a0: f32) { unsafe { function!(55876, (*mut c_void, u32, *mut classes::TESForm, f32))(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__form__register_for_single_update_game_time(vm: *mut c_void, stackId: u32, self_: *mut crate::TESForm, a0: f32) { unsafe { function!(55876, (*mut c_void, u32, *mut crate::TESForm, f32))(vm, stackId, self_, a0) } }
 /// `Papyrus::Form::RegisterForSleep` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55877, rva 0xa37a90).
 /// `void RegisterForSleep(IVirtualMachine * vm, uint stackId, TESForm * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__form__register_for_sleep(vm: *mut c_void, stackId: u32, self_: *mut classes::TESForm) { unsafe { function!(55877, (*mut c_void, u32, *mut classes::TESForm))(vm, stackId, self_) } }
+pub unsafe fn papyrus__form__register_for_sleep(vm: *mut c_void, stackId: u32, self_: *mut crate::TESForm) { unsafe { function!(55877, (*mut c_void, u32, *mut crate::TESForm))(vm, stackId, self_) } }
 /// `Papyrus::Form::RegisterForTrackedStatsEvent` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55878, rva 0xa37ae0).
 /// `void RegisterForTrackedStatsEvent(IVirtualMachine * vm, uint stackId, TESForm * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__form__register_for_tracked_stats_event(vm: *mut c_void, stackId: u32, self_: *mut classes::TESForm) { unsafe { function!(55878, (*mut c_void, u32, *mut classes::TESForm))(vm, stackId, self_) } }
+pub unsafe fn papyrus__form__register_for_tracked_stats_event(vm: *mut c_void, stackId: u32, self_: *mut crate::TESForm) { unsafe { function!(55878, (*mut c_void, u32, *mut crate::TESForm))(vm, stackId, self_) } }
 /// `Papyrus::Form::RegisterForUpdate` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55879, rva 0xa37b30).
 /// `void RegisterForUpdate(IVirtualMachine * vm, uint stackId, TESForm * self, float a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__form__register_for_update(vm: *mut c_void, stackId: u32, self_: *mut classes::TESForm, a0: f32) { unsafe { function!(55879, (*mut c_void, u32, *mut classes::TESForm, f32))(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__form__register_for_update(vm: *mut c_void, stackId: u32, self_: *mut crate::TESForm, a0: f32) { unsafe { function!(55879, (*mut c_void, u32, *mut crate::TESForm, f32))(vm, stackId, self_, a0) } }
 /// `Papyrus::Form::RegisterForUpdateGameTime` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55880, rva 0xa37b90).
 /// `void RegisterForUpdateGameTime(IVirtualMachine * vm, uint stackId, TESForm * self, float a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__form__register_for_update_game_time(vm: *mut c_void, stackId: u32, self_: *mut classes::TESForm, a0: f32) { unsafe { function!(55880, (*mut c_void, u32, *mut classes::TESForm, f32))(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__form__register_for_update_game_time(vm: *mut c_void, stackId: u32, self_: *mut crate::TESForm, a0: f32) { unsafe { function!(55880, (*mut c_void, u32, *mut crate::TESForm, f32))(vm, stackId, self_, a0) } }
 /// `Papyrus::Form::StartObjectProfiling` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55881, rva 0xa37bf0).
 /// `void StartObjectProfiling(IVirtualMachine * vm, uint stackId, TESForm * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__form__start_object_profiling(vm: *mut c_void, stackId: u32, self_: *mut classes::TESForm) { unsafe { function!(55881, (*mut c_void, u32, *mut classes::TESForm))(vm, stackId, self_) } }
+pub unsafe fn papyrus__form__start_object_profiling(vm: *mut c_void, stackId: u32, self_: *mut crate::TESForm) { unsafe { function!(55881, (*mut c_void, u32, *mut crate::TESForm))(vm, stackId, self_) } }
 /// `Papyrus::Form::StopObjectProfiling` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55882, rva 0xa37c80).
 /// `void StopObjectProfiling(IVirtualMachine * vm, uint stackId, TESForm * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__form__stop_object_profiling(vm: *mut c_void, stackId: u32, self_: *mut classes::TESForm) { unsafe { function!(55882, (*mut c_void, u32, *mut classes::TESForm))(vm, stackId, self_) } }
+pub unsafe fn papyrus__form__stop_object_profiling(vm: *mut c_void, stackId: u32, self_: *mut crate::TESForm) { unsafe { function!(55882, (*mut c_void, u32, *mut crate::TESForm))(vm, stackId, self_) } }
 /// `Papyrus::Form::UnregisterForAnimationEvent` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55883, rva 0xa37d10).
 /// `void UnregisterForAnimationEvent(IVirtualMachine * vm, uint stackId, TESForm * self, TESObjectREFR * a0, BSFixedString * a1)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__form__unregister_for_animation_event(vm: *mut c_void, stackId: u32, self_: *mut classes::TESForm, a0: *mut classes::TESObjectREFR, a1: *mut classes::BSFixedString) { unsafe { function!(55883, (*mut c_void, u32, *mut classes::TESForm, *mut classes::TESObjectREFR, *mut classes::BSFixedString))(vm, stackId, self_, a0, a1) } }
+pub unsafe fn papyrus__form__unregister_for_animation_event(vm: *mut c_void, stackId: u32, self_: *mut crate::TESForm, a0: *mut crate::TESObjectREFR, a1: *mut crate::BSFixedString) { unsafe { function!(55883, (*mut c_void, u32, *mut crate::TESForm, *mut crate::TESObjectREFR, *mut crate::BSFixedString))(vm, stackId, self_, a0, a1) } }
 /// `Papyrus::Form::UnregisterForLOS` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55884, rva 0xa37de0).
 /// `void UnregisterForLOS(IVirtualMachine * vm, uint stackId, TESForm * self, Actor * a0, TESObjectREFR * a1)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__form__unregister_for_los(vm: *mut c_void, stackId: u32, self_: *mut classes::TESForm, a0: *mut classes::Actor, a1: *mut classes::TESObjectREFR) { unsafe { function!(55884, (*mut c_void, u32, *mut classes::TESForm, *mut classes::Actor, *mut classes::TESObjectREFR))(vm, stackId, self_, a0, a1) } }
+pub unsafe fn papyrus__form__unregister_for_los(vm: *mut c_void, stackId: u32, self_: *mut crate::TESForm, a0: *mut crate::Actor, a1: *mut crate::TESObjectREFR) { unsafe { function!(55884, (*mut c_void, u32, *mut crate::TESForm, *mut crate::Actor, *mut crate::TESObjectREFR))(vm, stackId, self_, a0, a1) } }
 /// `Papyrus::Form::UnregisterForSleep` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55885, rva 0xa37e80).
 /// `void UnregisterForSleep(IVirtualMachine * vm, uint stackId, TESForm * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__form__unregister_for_sleep(vm: *mut c_void, stackId: u32, self_: *mut classes::TESForm) { unsafe { function!(55885, (*mut c_void, u32, *mut classes::TESForm))(vm, stackId, self_) } }
+pub unsafe fn papyrus__form__unregister_for_sleep(vm: *mut c_void, stackId: u32, self_: *mut crate::TESForm) { unsafe { function!(55885, (*mut c_void, u32, *mut crate::TESForm))(vm, stackId, self_) } }
 /// `Papyrus::Form::UnregisterForTrackedStatsEvent` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55886, rva 0xa37ed0).
 /// `void UnregisterForTrackedStatsEvent(IVirtualMachine * vm, uint stackId, TESForm * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__form__unregister_for_tracked_stats_event(vm: *mut c_void, stackId: u32, self_: *mut classes::TESForm) { unsafe { function!(55886, (*mut c_void, u32, *mut classes::TESForm))(vm, stackId, self_) } }
+pub unsafe fn papyrus__form__unregister_for_tracked_stats_event(vm: *mut c_void, stackId: u32, self_: *mut crate::TESForm) { unsafe { function!(55886, (*mut c_void, u32, *mut crate::TESForm))(vm, stackId, self_) } }
 /// `Papyrus::Form::UnregisterForUpdate` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55887, rva 0xa37f20).
 /// `void UnregisterForUpdate(IVirtualMachine * vm, uint stackId, TESForm * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__form__unregister_for_update(vm: *mut c_void, stackId: u32, self_: *mut classes::TESForm) { unsafe { function!(55887, (*mut c_void, u32, *mut classes::TESForm))(vm, stackId, self_) } }
+pub unsafe fn papyrus__form__unregister_for_update(vm: *mut c_void, stackId: u32, self_: *mut crate::TESForm) { unsafe { function!(55887, (*mut c_void, u32, *mut crate::TESForm))(vm, stackId, self_) } }
 /// `Papyrus::Form::UnregisterForUpdateGameTime` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55888, rva 0xa37f70).
 /// `void UnregisterForUpdateGameTime(IVirtualMachine * vm, uint stackId, TESForm * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__form__unregister_for_update_game_time(vm: *mut c_void, stackId: u32, self_: *mut classes::TESForm) { unsafe { function!(55888, (*mut c_void, u32, *mut classes::TESForm))(vm, stackId, self_) } }
+pub unsafe fn papyrus__form__unregister_for_update_game_time(vm: *mut c_void, stackId: u32, self_: *mut crate::TESForm) { unsafe { function!(55888, (*mut c_void, u32, *mut crate::TESForm))(vm, stackId, self_) } }
 /// `Papyrus::FormList::AddForm` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55680, rva 0xa300b0).
 /// `void AddForm(IVirtualMachine * vm, uint stackId, BGSListForm * self, TESForm * a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__form_list__add_form(vm: *mut c_void, stackId: u32, self_: *mut classes::BGSListForm, a0: *mut classes::TESForm) { unsafe { function!(55680, (*mut c_void, u32, *mut classes::BGSListForm, *mut classes::TESForm))(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__form_list__add_form(vm: *mut c_void, stackId: u32, self_: *mut crate::BGSListForm, a0: *mut crate::TESForm) { unsafe { function!(55680, (*mut c_void, u32, *mut crate::BGSListForm, *mut crate::TESForm))(vm, stackId, self_, a0) } }
 /// `Papyrus::FormList::Find` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55669, rva 0xa2f580).
 /// `int Find(IVirtualMachine * vm, uint stackId, BGSListForm * self, TESForm * a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__form_list__find(vm: *mut c_void, stackId: u32, self_: *mut classes::BGSListForm, a0: *mut classes::TESForm) -> i32 { unsafe { function!(55669, (*mut c_void, u32, *mut classes::BGSListForm, *mut classes::TESForm) -> i32)(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__form_list__find(vm: *mut c_void, stackId: u32, self_: *mut crate::BGSListForm, a0: *mut crate::TESForm) -> i32 { unsafe { function!(55669, (*mut c_void, u32, *mut crate::BGSListForm, *mut crate::TESForm) -> i32)(vm, stackId, self_, a0) } }
 /// `Papyrus::FormList::GetAt` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55681, rva 0xa300c0).
 /// `TESForm * GetAt(IVirtualMachine * vm, uint stackId, BGSListForm * self, uint a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__form_list__get_at(vm: *mut c_void, stackId: u32, self_: *mut classes::BGSListForm, a0: u32) -> *mut classes::TESForm { unsafe { function!(55681, (*mut c_void, u32, *mut classes::BGSListForm, u32) -> *mut classes::TESForm)(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__form_list__get_at(vm: *mut c_void, stackId: u32, self_: *mut crate::BGSListForm, a0: u32) -> *mut crate::TESForm { unsafe { function!(55681, (*mut c_void, u32, *mut crate::BGSListForm, u32) -> *mut crate::TESForm)(vm, stackId, self_, a0) } }
 /// `Papyrus::FormList::GetSize` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55670, rva 0xa2f5d0).
 /// `uint GetSize(IVirtualMachine * vm, uint stackId, BGSListForm * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__form_list__get_size(vm: *mut c_void, stackId: u32, self_: *mut classes::BGSListForm) -> u32 { unsafe { function!(55670, (*mut c_void, u32, *mut classes::BGSListForm) -> u32)(vm, stackId, self_) } }
+pub unsafe fn papyrus__form_list__get_size(vm: *mut c_void, stackId: u32, self_: *mut crate::BGSListForm) -> u32 { unsafe { function!(55670, (*mut c_void, u32, *mut crate::BGSListForm) -> u32)(vm, stackId, self_) } }
 /// `Papyrus::FormList::HasForm` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55682, rva 0xa300d0).
 /// `bool HasForm(IVirtualMachine * vm, uint stackId, BGSListForm * self, TESForm * a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__form_list__has_form(vm: *mut c_void, stackId: u32, self_: *mut classes::BGSListForm, a0: *mut classes::TESForm) -> u8 { unsafe { function!(55682, (*mut c_void, u32, *mut classes::BGSListForm, *mut classes::TESForm) -> u8)(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__form_list__has_form(vm: *mut c_void, stackId: u32, self_: *mut crate::BGSListForm, a0: *mut crate::TESForm) -> u8 { unsafe { function!(55682, (*mut c_void, u32, *mut crate::BGSListForm, *mut crate::TESForm) -> u8)(vm, stackId, self_, a0) } }
 /// `Papyrus::FormList::RemoveAddedForm` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55683, rva 0xa300f0).
 /// `void RemoveAddedForm(IVirtualMachine * vm, uint stackId, BGSListForm * self, TESForm * a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__form_list__remove_added_form(vm: *mut c_void, stackId: u32, self_: *mut classes::BGSListForm, a0: *mut classes::TESForm) { unsafe { function!(55683, (*mut c_void, u32, *mut classes::BGSListForm, *mut classes::TESForm))(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__form_list__remove_added_form(vm: *mut c_void, stackId: u32, self_: *mut crate::BGSListForm, a0: *mut crate::TESForm) { unsafe { function!(55683, (*mut c_void, u32, *mut crate::BGSListForm, *mut crate::TESForm))(vm, stackId, self_, a0) } }
 /// `Papyrus::FormList::Revert` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55684, rva 0xa30100).
 /// `void Revert(IVirtualMachine * vm, uint stackId, BGSListForm * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__form_list__revert(vm: *mut c_void, stackId: u32, self_: *mut classes::BGSListForm) { unsafe { function!(55684, (*mut c_void, u32, *mut classes::BGSListForm))(vm, stackId, self_) } }
+pub unsafe fn papyrus__form_list__revert(vm: *mut c_void, stackId: u32, self_: *mut crate::BGSListForm) { unsafe { function!(55684, (*mut c_void, u32, *mut crate::BGSListForm))(vm, stackId, self_) } }
 /// `Papyrus::Game::AddAchievement` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55450, rva 0xa23dd0).
 /// `void AddAchievement(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, int a0)`
 ///
@@ -30446,7 +30440,7 @@ pub unsafe fn papyrus__game__add_achievement(vm: *mut c_void, stackId: u32, unus
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__game__add_havok_ball_and_socket_constraint(vm: *mut c_void, stackId: u32, unused: *mut c_void, a0: *mut classes::TESObjectREFR, a1: *mut classes::BSFixedString, a2: *mut classes::TESObjectREFR, a3: *mut classes::BSFixedString, a4: f32, a5: f32, a6: f32, a7: f32, a8: f32, a9: f32) -> u8 { unsafe { function!(55447, (*mut c_void, u32, *mut c_void, *mut classes::TESObjectREFR, *mut classes::BSFixedString, *mut classes::TESObjectREFR, *mut classes::BSFixedString, f32, f32, f32, f32, f32, f32) -> u8)(vm, stackId, unused, a0, a1, a2, a3, a4, a5, a6, a7, a8, a9) } }
+pub unsafe fn papyrus__game__add_havok_ball_and_socket_constraint(vm: *mut c_void, stackId: u32, unused: *mut c_void, a0: *mut crate::TESObjectREFR, a1: *mut crate::BSFixedString, a2: *mut crate::TESObjectREFR, a3: *mut crate::BSFixedString, a4: f32, a5: f32, a6: f32, a7: f32, a8: f32, a9: f32) -> u8 { unsafe { function!(55447, (*mut c_void, u32, *mut c_void, *mut crate::TESObjectREFR, *mut crate::BSFixedString, *mut crate::TESObjectREFR, *mut crate::BSFixedString, f32, f32, f32, f32, f32, f32) -> u8)(vm, stackId, unused, a0, a1, a2, a3, a4, a5, a6, a7, a8, a9) } }
 /// `Papyrus::Game::AddPerkPoints` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55451, rva 0xa23e50).
 /// `void AddPerkPoints(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, int a0)`
 ///
@@ -30460,7 +30454,7 @@ pub unsafe fn papyrus__game__add_perk_points(vm: *mut c_void, stackId: u32, unus
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__game__advance_skill(vm: *mut c_void, stackId: u32, unused: *mut c_void, a0: *mut classes::BSFixedString, a1: f32) { unsafe { function!(55449, (*mut c_void, u32, *mut c_void, *mut classes::BSFixedString, f32))(vm, stackId, unused, a0, a1) } }
+pub unsafe fn papyrus__game__advance_skill(vm: *mut c_void, stackId: u32, unused: *mut c_void, a0: *mut crate::BSFixedString, a1: f32) { unsafe { function!(55449, (*mut c_void, u32, *mut c_void, *mut crate::BSFixedString, f32))(vm, stackId, unused, a0, a1) } }
 /// `Papyrus::Game::CalculateFavorCost` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55453, rva 0xa23e90).
 /// `uint CalculateFavorCost(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, uint a0)`
 ///
@@ -30516,112 +30510,112 @@ pub unsafe fn papyrus__game__fade_out_game(vm: *mut c_void, stackId: u32, unused
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__game__fast_travel(vm: *mut c_void, stackId: u32, unused: *mut c_void, a0: *mut classes::TESObjectREFR) { unsafe { function!(55457, (*mut c_void, u32, *mut c_void, *mut classes::TESObjectREFR))(vm, stackId, unused, a0) } }
+pub unsafe fn papyrus__game__fast_travel(vm: *mut c_void, stackId: u32, unused: *mut c_void, a0: *mut crate::TESObjectREFR) { unsafe { function!(55457, (*mut c_void, u32, *mut c_void, *mut crate::TESObjectREFR))(vm, stackId, unused, a0) } }
 /// `Papyrus::Game::FindClosestActor` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55462, rva 0xa24700).
 /// `Actor * FindClosestActor(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, float a0, float a1, float a2, float a3)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__game__find_closest_actor(vm: *mut c_void, stackId: u32, unused: *mut c_void, a0: f32, a1: f32, a2: f32, a3: f32) -> *mut classes::Actor { unsafe { function!(55462, (*mut c_void, u32, *mut c_void, f32, f32, f32, f32) -> *mut classes::Actor)(vm, stackId, unused, a0, a1, a2, a3) } }
+pub unsafe fn papyrus__game__find_closest_actor(vm: *mut c_void, stackId: u32, unused: *mut c_void, a0: f32, a1: f32, a2: f32, a3: f32) -> *mut crate::Actor { unsafe { function!(55462, (*mut c_void, u32, *mut c_void, f32, f32, f32, f32) -> *mut crate::Actor)(vm, stackId, unused, a0, a1, a2, a3) } }
 /// `Papyrus::Game::FindClosestReferenceOfAnyTypeInList` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55459, rva 0xa242c0).
 /// `TESObjectREFR * FindClosestReferenceOfAnyTypeInList(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, BGSListForm * a0, float a1, float a2, float a3, float a4)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__game__find_closest_reference_of_any_type_in_list(vm: *mut c_void, stackId: u32, unused: *mut c_void, a0: *mut classes::BGSListForm, a1: f32, a2: f32, a3: f32, a4: f32) -> *mut classes::TESObjectREFR { unsafe { function!(55459, (*mut c_void, u32, *mut c_void, *mut classes::BGSListForm, f32, f32, f32, f32) -> *mut classes::TESObjectREFR)(vm, stackId, unused, a0, a1, a2, a3, a4) } }
+pub unsafe fn papyrus__game__find_closest_reference_of_any_type_in_list(vm: *mut c_void, stackId: u32, unused: *mut c_void, a0: *mut crate::BGSListForm, a1: f32, a2: f32, a3: f32, a4: f32) -> *mut crate::TESObjectREFR { unsafe { function!(55459, (*mut c_void, u32, *mut c_void, *mut crate::BGSListForm, f32, f32, f32, f32) -> *mut crate::TESObjectREFR)(vm, stackId, unused, a0, a1, a2, a3, a4) } }
 /// `Papyrus::Game::FindClosestReferenceOfType` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55458, rva 0xa241a0).
 /// `TESObjectREFR * FindClosestReferenceOfType(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, TESForm * a0, float a1, float a2, float a3, float a4)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__game__find_closest_reference_of_type(vm: *mut c_void, stackId: u32, unused: *mut c_void, a0: *mut classes::TESForm, a1: f32, a2: f32, a3: f32, a4: f32) -> *mut classes::TESObjectREFR { unsafe { function!(55458, (*mut c_void, u32, *mut c_void, *mut classes::TESForm, f32, f32, f32, f32) -> *mut classes::TESObjectREFR)(vm, stackId, unused, a0, a1, a2, a3, a4) } }
+pub unsafe fn papyrus__game__find_closest_reference_of_type(vm: *mut c_void, stackId: u32, unused: *mut c_void, a0: *mut crate::TESForm, a1: f32, a2: f32, a3: f32, a4: f32) -> *mut crate::TESObjectREFR { unsafe { function!(55458, (*mut c_void, u32, *mut c_void, *mut crate::TESForm, f32, f32, f32, f32) -> *mut crate::TESObjectREFR)(vm, stackId, unused, a0, a1, a2, a3, a4) } }
 /// `Papyrus::Game::FindRandomActor` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55463, rva 0xa247a0).
 /// `Actor * FindRandomActor(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, float a0, float a1, float a2, float a3)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__game__find_random_actor(vm: *mut c_void, stackId: u32, unused: *mut c_void, a0: f32, a1: f32, a2: f32, a3: f32) -> *mut classes::Actor { unsafe { function!(55463, (*mut c_void, u32, *mut c_void, f32, f32, f32, f32) -> *mut classes::Actor)(vm, stackId, unused, a0, a1, a2, a3) } }
+pub unsafe fn papyrus__game__find_random_actor(vm: *mut c_void, stackId: u32, unused: *mut c_void, a0: f32, a1: f32, a2: f32, a3: f32) -> *mut crate::Actor { unsafe { function!(55463, (*mut c_void, u32, *mut c_void, f32, f32, f32, f32) -> *mut crate::Actor)(vm, stackId, unused, a0, a1, a2, a3) } }
 /// `Papyrus::Game::FindRandomReferenceOfAnyTypeInList` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55461, rva 0xa24570).
 /// `TESObjectREFR * FindRandomReferenceOfAnyTypeInList(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, BGSListForm * a0, float a1, float a2, float a3, float a4)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__game__find_random_reference_of_any_type_in_list(vm: *mut c_void, stackId: u32, unused: *mut c_void, a0: *mut classes::BGSListForm, a1: f32, a2: f32, a3: f32, a4: f32) -> *mut classes::TESObjectREFR { unsafe { function!(55461, (*mut c_void, u32, *mut c_void, *mut classes::BGSListForm, f32, f32, f32, f32) -> *mut classes::TESObjectREFR)(vm, stackId, unused, a0, a1, a2, a3, a4) } }
+pub unsafe fn papyrus__game__find_random_reference_of_any_type_in_list(vm: *mut c_void, stackId: u32, unused: *mut c_void, a0: *mut crate::BGSListForm, a1: f32, a2: f32, a3: f32, a4: f32) -> *mut crate::TESObjectREFR { unsafe { function!(55461, (*mut c_void, u32, *mut c_void, *mut crate::BGSListForm, f32, f32, f32, f32) -> *mut crate::TESObjectREFR)(vm, stackId, unused, a0, a1, a2, a3, a4) } }
 /// `Papyrus::Game::FindRandomReferenceOfType` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55460, rva 0xa24450).
 /// `TESObjectREFR * FindRandomReferenceOfType(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, TESForm * a0, float a1, float a2, float a3, float a4)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__game__find_random_reference_of_type(vm: *mut c_void, stackId: u32, unused: *mut c_void, a0: *mut classes::TESForm, a1: f32, a2: f32, a3: f32, a4: f32) -> *mut classes::TESObjectREFR { unsafe { function!(55460, (*mut c_void, u32, *mut c_void, *mut classes::TESForm, f32, f32, f32, f32) -> *mut classes::TESObjectREFR)(vm, stackId, unused, a0, a1, a2, a3, a4) } }
+pub unsafe fn papyrus__game__find_random_reference_of_type(vm: *mut c_void, stackId: u32, unused: *mut c_void, a0: *mut crate::TESForm, a1: f32, a2: f32, a3: f32, a4: f32) -> *mut crate::TESObjectREFR { unsafe { function!(55460, (*mut c_void, u32, *mut c_void, *mut crate::TESForm, f32, f32, f32, f32) -> *mut crate::TESObjectREFR)(vm, stackId, unused, a0, a1, a2, a3, a4) } }
 /// `Papyrus::Game::GetForm` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55566, rva 0xa2ad40).
 /// `TESForm * GetForm(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, uint a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__game__get_form(vm: *mut c_void, stackId: u32, unused: *mut c_void, a0: u32) -> *mut classes::TESForm { unsafe { function!(55566, (*mut c_void, u32, *mut c_void, u32) -> *mut classes::TESForm)(vm, stackId, unused, a0) } }
+pub unsafe fn papyrus__game__get_form(vm: *mut c_void, stackId: u32, unused: *mut c_void, a0: u32) -> *mut crate::TESForm { unsafe { function!(55566, (*mut c_void, u32, *mut c_void, u32) -> *mut crate::TESForm)(vm, stackId, unused, a0) } }
 /// `Papyrus::Game::GetFormFromFile` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55465, rva 0xa24a10).
 /// `TESForm * GetFormFromFile(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, uint a0, BSFixedString * a1)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__game__get_form_from_file(vm: *mut c_void, stackId: u32, unused: *mut c_void, a0: u32, a1: *mut classes::BSFixedString) -> *mut classes::TESForm { unsafe { function!(55465, (*mut c_void, u32, *mut c_void, u32, *mut classes::BSFixedString) -> *mut classes::TESForm)(vm, stackId, unused, a0, a1) } }
+pub unsafe fn papyrus__game__get_form_from_file(vm: *mut c_void, stackId: u32, unused: *mut c_void, a0: u32, a1: *mut crate::BSFixedString) -> *mut crate::TESForm { unsafe { function!(55465, (*mut c_void, u32, *mut c_void, u32, *mut crate::BSFixedString) -> *mut crate::TESForm)(vm, stackId, unused, a0, a1) } }
 /// `Papyrus::Game::GetGameSettingFloat` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55466, rva 0xa24ad0).
 /// `float GetGameSettingFloat(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, BSFixedString * a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__game__get_game_setting_float(vm: *mut c_void, stackId: u32, unused: *mut c_void, a0: *mut classes::BSFixedString) -> f32 { unsafe { function!(55466, (*mut c_void, u32, *mut c_void, *mut classes::BSFixedString) -> f32)(vm, stackId, unused, a0) } }
+pub unsafe fn papyrus__game__get_game_setting_float(vm: *mut c_void, stackId: u32, unused: *mut c_void, a0: *mut crate::BSFixedString) -> f32 { unsafe { function!(55466, (*mut c_void, u32, *mut c_void, *mut crate::BSFixedString) -> f32)(vm, stackId, unused, a0) } }
 /// `Papyrus::Game::GetGameSettingInt` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55467, rva 0xa24ba0).
 /// `int GetGameSettingInt(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, BSFixedString * a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__game__get_game_setting_int(vm: *mut c_void, stackId: u32, unused: *mut c_void, a0: *mut classes::BSFixedString) -> i32 { unsafe { function!(55467, (*mut c_void, u32, *mut c_void, *mut classes::BSFixedString) -> i32)(vm, stackId, unused, a0) } }
+pub unsafe fn papyrus__game__get_game_setting_int(vm: *mut c_void, stackId: u32, unused: *mut c_void, a0: *mut crate::BSFixedString) -> i32 { unsafe { function!(55467, (*mut c_void, u32, *mut c_void, *mut crate::BSFixedString) -> i32)(vm, stackId, unused, a0) } }
 /// `Papyrus::Game::GetGameSettingString` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55468, rva 0xa24c80).
 /// `bool GetGameSettingString(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, BSFixedString * a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__game__get_game_setting_string(vm: *mut c_void, stackId: u32, unused: *mut c_void, a0: *mut classes::BSFixedString) -> u8 { unsafe { function!(55468, (*mut c_void, u32, *mut c_void, *mut classes::BSFixedString) -> u8)(vm, stackId, unused, a0) } }
+pub unsafe fn papyrus__game__get_game_setting_string(vm: *mut c_void, stackId: u32, unused: *mut c_void, a0: *mut crate::BSFixedString) -> u8 { unsafe { function!(55468, (*mut c_void, u32, *mut c_void, *mut crate::BSFixedString) -> u8)(vm, stackId, unused, a0) } }
 /// `Papyrus::Game::GetLocalizedNameForAmiibo` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 524049, rva 0xa25990).
 /// `BSFixedString * GetLocalizedNameForAmiibo(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, uint a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__game__get_localized_name_for_amiibo(vm: *mut c_void, stackId: u32, unused: *mut c_void, a0: u32) -> *mut classes::BSFixedString { unsafe { function!(524049, (*mut c_void, u32, *mut c_void, u32) -> *mut classes::BSFixedString)(vm, stackId, unused, a0) } }
+pub unsafe fn papyrus__game__get_localized_name_for_amiibo(vm: *mut c_void, stackId: u32, unused: *mut c_void, a0: u32) -> *mut crate::BSFixedString { unsafe { function!(524049, (*mut c_void, u32, *mut c_void, u32) -> *mut crate::BSFixedString)(vm, stackId, unused, a0) } }
 /// `Papyrus::Game::GetPlayer` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55469, rva 0xa24de0).
 /// `Actor * GetPlayer(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__game__get_player(vm: *mut c_void, stackId: u32, unused: *mut c_void) -> *mut classes::Actor { unsafe { function!(55469, (*mut c_void, u32, *mut c_void) -> *mut classes::Actor)(vm, stackId, unused) } }
+pub unsafe fn papyrus__game__get_player(vm: *mut c_void, stackId: u32, unused: *mut c_void) -> *mut crate::Actor { unsafe { function!(55469, (*mut c_void, u32, *mut c_void) -> *mut crate::Actor)(vm, stackId, unused) } }
 /// `Papyrus::Game::GetPlayerGrabbedRef` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55470, rva 0xa24df0).
 /// `TESObjectREFR * GetPlayerGrabbedRef(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__game__get_player_grabbed_ref(vm: *mut c_void, stackId: u32, unused: *mut c_void) -> *mut classes::TESObjectREFR { unsafe { function!(55470, (*mut c_void, u32, *mut c_void) -> *mut classes::TESObjectREFR)(vm, stackId, unused) } }
+pub unsafe fn papyrus__game__get_player_grabbed_ref(vm: *mut c_void, stackId: u32, unused: *mut c_void) -> *mut crate::TESObjectREFR { unsafe { function!(55470, (*mut c_void, u32, *mut c_void) -> *mut crate::TESObjectREFR)(vm, stackId, unused) } }
 /// `Papyrus::Game::GetPlayersLastRiddenHorse` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55471, rva 0xa24e70).
 /// `Actor * GetPlayersLastRiddenHorse(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__game__get_players_last_ridden_horse(vm: *mut c_void, stackId: u32, unused: *mut c_void) -> *mut classes::Actor { unsafe { function!(55471, (*mut c_void, u32, *mut c_void) -> *mut classes::Actor)(vm, stackId, unused) } }
+pub unsafe fn papyrus__game__get_players_last_ridden_horse(vm: *mut c_void, stackId: u32, unused: *mut c_void) -> *mut crate::Actor { unsafe { function!(55471, (*mut c_void, u32, *mut c_void) -> *mut crate::Actor)(vm, stackId, unused) } }
 /// `Papyrus::Game::GetRealHoursPassed` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55475, rva 0xa25070).
 /// `float GetRealHoursPassed(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused)`
 ///
@@ -30670,21 +30664,21 @@ pub unsafe fn papyrus__game__hide_title_sequence_menu(vm: *mut c_void, stackId: 
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__game__increment_skill(vm: *mut c_void, stackId: u32, unused: *mut c_void, a0: *mut classes::BSFixedString) { unsafe { function!(55476, (*mut c_void, u32, *mut c_void, *mut classes::BSFixedString))(vm, stackId, unused, a0) } }
+pub unsafe fn papyrus__game__increment_skill(vm: *mut c_void, stackId: u32, unused: *mut c_void, a0: *mut crate::BSFixedString) { unsafe { function!(55476, (*mut c_void, u32, *mut c_void, *mut crate::BSFixedString))(vm, stackId, unused, a0) } }
 /// `Papyrus::Game::IncrementSkillBy` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55477, rva 0xa25100).
 /// `void IncrementSkillBy(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, BSFixedString * a0, uint a1)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__game__increment_skill_by(vm: *mut c_void, stackId: u32, unused: *mut c_void, a0: *mut classes::BSFixedString, a1: u32) { unsafe { function!(55477, (*mut c_void, u32, *mut c_void, *mut classes::BSFixedString, u32))(vm, stackId, unused, a0, a1) } }
+pub unsafe fn papyrus__game__increment_skill_by(vm: *mut c_void, stackId: u32, unused: *mut c_void, a0: *mut crate::BSFixedString, a1: u32) { unsafe { function!(55477, (*mut c_void, u32, *mut c_void, *mut crate::BSFixedString, u32))(vm, stackId, unused, a0, a1) } }
 /// `Papyrus::Game::IncrementStat` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55478, rva 0xa25120).
 /// `void IncrementStat(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, BSFixedString * a0, int a1)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__game__increment_stat(vm: *mut c_void, stackId: u32, unused: *mut c_void, a0: *mut classes::BSFixedString, a1: i32) { unsafe { function!(55478, (*mut c_void, u32, *mut c_void, *mut classes::BSFixedString, i32))(vm, stackId, unused, a0, a1) } }
+pub unsafe fn papyrus__game__increment_stat(vm: *mut c_void, stackId: u32, unused: *mut c_void, a0: *mut crate::BSFixedString, a1: i32) { unsafe { function!(55478, (*mut c_void, u32, *mut c_void, *mut crate::BSFixedString, i32))(vm, stackId, unused, a0, a1) } }
 /// `Papyrus::Game::IsActivateControlsEnabled` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55568, rva 0xa2ad60).
 /// `bool IsActivateControlsEnabled(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused)`
 ///
@@ -30775,14 +30769,14 @@ pub unsafe fn papyrus__game__is_sneaking_controls_enabled(vm: *mut c_void, stack
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__game__is_word_unlocked(vm: *mut c_void, stackId: u32, unused: *mut c_void, a0: *mut classes::TESWordOfPower) -> u8 { unsafe { function!(55502, (*mut c_void, u32, *mut c_void, *mut classes::TESWordOfPower) -> u8)(vm, stackId, unused, a0) } }
+pub unsafe fn papyrus__game__is_word_unlocked(vm: *mut c_void, stackId: u32, unused: *mut c_void, a0: *mut crate::TESWordOfPower) -> u8 { unsafe { function!(55502, (*mut c_void, u32, *mut c_void, *mut crate::TESWordOfPower) -> u8)(vm, stackId, unused, a0) } }
 /// `Papyrus::Game::PlayBink` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55488, rva 0xa252e0).
 /// `void PlayBink(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, BSFixedString * a0, bool a1, bool a2, bool a3, bool a4)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__game__play_bink(vm: *mut c_void, stackId: u32, unused: *mut c_void, a0: *mut classes::BSFixedString, a1: u8, a2: u8, a3: u8, a4: u8) { unsafe { function!(55488, (*mut c_void, u32, *mut c_void, *mut classes::BSFixedString, u8, u8, u8, u8))(vm, stackId, unused, a0, a1, a2, a3, a4) } }
+pub unsafe fn papyrus__game__play_bink(vm: *mut c_void, stackId: u32, unused: *mut c_void, a0: *mut crate::BSFixedString, a1: u8, a2: u8, a3: u8, a4: u8) { unsafe { function!(55488, (*mut c_void, u32, *mut c_void, *mut crate::BSFixedString, u8, u8, u8, u8))(vm, stackId, unused, a0, a1, a2, a3, a4) } }
 /// `Papyrus::Game::PrecacheCharGen` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55570, rva 0xa2ad80).
 /// `void PrecacheCharGen(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused)`
 ///
@@ -30803,7 +30797,7 @@ pub unsafe fn papyrus__game__precache_char_gen_clear(vm: *mut c_void, stackId: u
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__game__query_stat(vm: *mut c_void, stackId: u32, unused: *mut c_void, a0: *mut classes::BSFixedString) -> i32 { unsafe { function!(55489, (*mut c_void, u32, *mut c_void, *mut classes::BSFixedString) -> i32)(vm, stackId, unused, a0) } }
+pub unsafe fn papyrus__game__query_stat(vm: *mut c_void, stackId: u32, unused: *mut c_void, a0: *mut crate::BSFixedString) -> i32 { unsafe { function!(55489, (*mut c_void, u32, *mut c_void, *mut crate::BSFixedString) -> i32)(vm, stackId, unused, a0) } }
 /// `Papyrus::Game::QuitToMainMenu` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55490, rva 0xa253e0).
 /// `void QuitToMainMenu(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused)`
 ///
@@ -30817,7 +30811,7 @@ pub unsafe fn papyrus__game__quit_to_main_menu(vm: *mut c_void, stackId: u32, un
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__game__remove_havok_constraints(vm: *mut c_void, stackId: u32, unused: *mut c_void, a0: *mut classes::TESObjectREFR, a1: *mut classes::BSFixedString, a2: *mut classes::TESObjectREFR, a3: *mut classes::BSFixedString) -> u8 { unsafe { function!(55448, (*mut c_void, u32, *mut c_void, *mut classes::TESObjectREFR, *mut classes::BSFixedString, *mut classes::TESObjectREFR, *mut classes::BSFixedString) -> u8)(vm, stackId, unused, a0, a1, a2, a3) } }
+pub unsafe fn papyrus__game__remove_havok_constraints(vm: *mut c_void, stackId: u32, unused: *mut c_void, a0: *mut crate::TESObjectREFR, a1: *mut crate::BSFixedString, a2: *mut crate::TESObjectREFR, a3: *mut crate::BSFixedString) -> u8 { unsafe { function!(55448, (*mut c_void, u32, *mut c_void, *mut crate::TESObjectREFR, *mut crate::BSFixedString, *mut crate::TESObjectREFR, *mut crate::BSFixedString) -> u8)(vm, stackId, unused, a0, a1, a2, a3) } }
 /// `Papyrus::Game::RequestAutosave` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55491, rva 0xa25460).
 /// `void RequestAutosave(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused)`
 ///
@@ -30831,7 +30825,7 @@ pub unsafe fn papyrus__game__request_autosave(vm: *mut c_void, stackId: u32, unu
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__game__request_model(vm: *mut c_void, stackId: u32, unused: *mut c_void, a0: *mut classes::BSFixedString) { unsafe { function!(55492, (*mut c_void, u32, *mut c_void, *mut classes::BSFixedString))(vm, stackId, unused, a0) } }
+pub unsafe fn papyrus__game__request_model(vm: *mut c_void, stackId: u32, unused: *mut c_void, a0: *mut crate::BSFixedString) { unsafe { function!(55492, (*mut c_void, u32, *mut c_void, *mut crate::BSFixedString))(vm, stackId, unused, a0) } }
 /// `Papyrus::Game::RequestSave` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55493, rva 0xa254e0).
 /// `void RequestSave(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused)`
 ///
@@ -30901,7 +30895,7 @@ pub unsafe fn papyrus__game__set_player_report_crime(vm: *mut c_void, stackId: u
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__game__set_sun_gaze_image_space_modifier(vm: *mut c_void, stackId: u32, unused: *mut c_void, a0: *mut classes::TESImageSpaceModifier) { unsafe { function!(55496, (*mut c_void, u32, *mut c_void, *mut classes::TESImageSpaceModifier))(vm, stackId, unused, a0) } }
+pub unsafe fn papyrus__game__set_sun_gaze_image_space_modifier(vm: *mut c_void, stackId: u32, unused: *mut c_void, a0: *mut crate::TESImageSpaceModifier) { unsafe { function!(55496, (*mut c_void, u32, *mut c_void, *mut crate::TESImageSpaceModifier))(vm, stackId, unused, a0) } }
 /// `Papyrus::Game::ShakeController` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55495, rva 0xa25590).
 /// `void ShakeController(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, float a0, float a1, float a2)`
 ///
@@ -30936,7 +30930,7 @@ pub unsafe fn papyrus__game__show_title_sequence_menu(vm: *mut c_void, stackId: 
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__game__show_training_menu(vm: *mut c_void, stackId: u32, unused: *mut c_void, a0: *mut classes::Actor) { unsafe { function!(55582, (*mut c_void, u32, *mut c_void, *mut classes::Actor))(vm, stackId, unused, a0) } }
+pub unsafe fn papyrus__game__show_training_menu(vm: *mut c_void, stackId: u32, unused: *mut c_void, a0: *mut crate::Actor) { unsafe { function!(55582, (*mut c_void, u32, *mut c_void, *mut crate::Actor))(vm, stackId, unused, a0) } }
 /// `Papyrus::Game::StartNFCDetection` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 524050, rva 0xa25a30).
 /// `bool StartNFCDetection(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused)`
 ///
@@ -30950,7 +30944,7 @@ pub unsafe fn papyrus__game__start_nfc_detection(vm: *mut c_void, stackId: u32, 
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__game__start_title_sequence(vm: *mut c_void, stackId: u32, unused: *mut c_void, a0: *mut classes::BSFixedString) { unsafe { function!(55583, (*mut c_void, u32, *mut c_void, *mut classes::BSFixedString))(vm, stackId, unused, a0) } }
+pub unsafe fn papyrus__game__start_title_sequence(vm: *mut c_void, stackId: u32, unused: *mut c_void, a0: *mut crate::BSFixedString) { unsafe { function!(55583, (*mut c_void, u32, *mut c_void, *mut crate::BSFixedString))(vm, stackId, unused, a0) } }
 /// `Papyrus::Game::StopNFCDetection` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 524051, rva 0xa25a40).
 /// `bool StopNFCDetection(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused)`
 ///
@@ -30964,7 +30958,7 @@ pub unsafe fn papyrus__game__stop_nfc_detection(vm: *mut c_void, stackId: u32, u
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__game__teach_word(vm: *mut c_void, stackId: u32, unused: *mut c_void, a0: *mut classes::TESWordOfPower) { unsafe { function!(55500, (*mut c_void, u32, *mut c_void, *mut classes::TESWordOfPower))(vm, stackId, unused, a0) } }
+pub unsafe fn papyrus__game__teach_word(vm: *mut c_void, stackId: u32, unused: *mut c_void, a0: *mut crate::TESWordOfPower) { unsafe { function!(55500, (*mut c_void, u32, *mut c_void, *mut crate::TESWordOfPower))(vm, stackId, unused, a0) } }
 /// `Papyrus::Game::TriggerScreenBlood` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55584, rva 0xa2aec0).
 /// `void TriggerScreenBlood(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, uint a0)`
 ///
@@ -30978,7 +30972,7 @@ pub unsafe fn papyrus__game__trigger_screen_blood(vm: *mut c_void, stackId: u32,
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__game__unlock_word(vm: *mut c_void, stackId: u32, unused: *mut c_void, a0: *mut classes::TESWordOfPower) { unsafe { function!(55501, (*mut c_void, u32, *mut c_void, *mut classes::TESWordOfPower))(vm, stackId, unused, a0) } }
+pub unsafe fn papyrus__game__unlock_word(vm: *mut c_void, stackId: u32, unused: *mut c_void, a0: *mut crate::TESWordOfPower) { unsafe { function!(55501, (*mut c_void, u32, *mut c_void, *mut crate::TESWordOfPower))(vm, stackId, unused, a0) } }
 /// `Papyrus::Game::UsingGamepad` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55585, rva 0xa2aee0).
 /// `bool UsingGamepad(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused)`
 ///
@@ -30992,35 +30986,35 @@ pub unsafe fn papyrus__game__using_gamepad(vm: *mut c_void, stackId: u32, unused
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__global_variable__get_value(vm: *mut c_void, stackId: u32, self_: *mut classes::TESGlobal) -> f32 { unsafe { function!(55930, (*mut c_void, u32, *mut classes::TESGlobal) -> f32)(vm, stackId, self_) } }
+pub unsafe fn papyrus__global_variable__get_value(vm: *mut c_void, stackId: u32, self_: *mut crate::TESGlobal) -> f32 { unsafe { function!(55930, (*mut c_void, u32, *mut crate::TESGlobal) -> f32)(vm, stackId, self_) } }
 /// `Papyrus::ImageSpaceModifier::Apply` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55936, rva 0xa3a510).
 /// `void Apply(IVirtualMachine * vm, uint stackId, TESImageSpaceModifier * self, float a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__image_space_modifier__apply(vm: *mut c_void, stackId: u32, self_: *mut classes::TESImageSpaceModifier, a0: f32) { unsafe { function!(55936, (*mut c_void, u32, *mut classes::TESImageSpaceModifier, f32))(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__image_space_modifier__apply(vm: *mut c_void, stackId: u32, self_: *mut crate::TESImageSpaceModifier, a0: f32) { unsafe { function!(55936, (*mut c_void, u32, *mut crate::TESImageSpaceModifier, f32))(vm, stackId, self_, a0) } }
 /// `Papyrus::ImageSpaceModifier::ApplyCrossFade` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55937, rva 0xa3a530).
 /// `void ApplyCrossFade(IVirtualMachine * vm, uint stackId, TESImageSpaceModifier * self, float a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__image_space_modifier__apply_cross_fade(vm: *mut c_void, stackId: u32, self_: *mut classes::TESImageSpaceModifier, a0: f32) { unsafe { function!(55937, (*mut c_void, u32, *mut classes::TESImageSpaceModifier, f32))(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__image_space_modifier__apply_cross_fade(vm: *mut c_void, stackId: u32, self_: *mut crate::TESImageSpaceModifier, a0: f32) { unsafe { function!(55937, (*mut c_void, u32, *mut crate::TESImageSpaceModifier, f32))(vm, stackId, self_, a0) } }
 /// `Papyrus::ImageSpaceModifier::PopTo` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55938, rva 0xa3a550).
 /// `void PopTo(IVirtualMachine * vm, uint stackId, TESImageSpaceModifier * self, TESImageSpaceModifier * a0, float a1)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__image_space_modifier__pop_to(vm: *mut c_void, stackId: u32, self_: *mut classes::TESImageSpaceModifier, a0: *mut classes::TESImageSpaceModifier, a1: f32) { unsafe { function!(55938, (*mut c_void, u32, *mut classes::TESImageSpaceModifier, *mut classes::TESImageSpaceModifier, f32))(vm, stackId, self_, a0, a1) } }
+pub unsafe fn papyrus__image_space_modifier__pop_to(vm: *mut c_void, stackId: u32, self_: *mut crate::TESImageSpaceModifier, a0: *mut crate::TESImageSpaceModifier, a1: f32) { unsafe { function!(55938, (*mut c_void, u32, *mut crate::TESImageSpaceModifier, *mut crate::TESImageSpaceModifier, f32))(vm, stackId, self_, a0, a1) } }
 /// `Papyrus::ImageSpaceModifier::Remove` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55939, rva 0xa3a580).
 /// `void Remove(IVirtualMachine * vm, uint stackId, TESImageSpaceModifier * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__image_space_modifier__remove(vm: *mut c_void, stackId: u32, self_: *mut classes::TESImageSpaceModifier) { unsafe { function!(55939, (*mut c_void, u32, *mut classes::TESImageSpaceModifier))(vm, stackId, self_) } }
+pub unsafe fn papyrus__image_space_modifier__remove(vm: *mut c_void, stackId: u32, self_: *mut crate::TESImageSpaceModifier) { unsafe { function!(55939, (*mut c_void, u32, *mut crate::TESImageSpaceModifier))(vm, stackId, self_) } }
 /// `Papyrus::ImageSpaceModifier::RemoveCrossFade` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55949, rva 0xa3abe0).
 /// `void RemoveCrossFade(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, float a0)`
 ///
@@ -31034,189 +31028,189 @@ pub unsafe fn papyrus__image_space_modifier__remove_cross_fade(vm: *mut c_void, 
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__ingredient__is_hostile(vm: *mut c_void, stackId: u32, self_: *mut classes::IngredientItem) -> u8 { unsafe { function!(55660, (*mut c_void, u32, *mut classes::IngredientItem) -> u8)(vm, stackId, self_) } }
+pub unsafe fn papyrus__ingredient__is_hostile(vm: *mut c_void, stackId: u32, self_: *mut crate::IngredientItem) -> u8 { unsafe { function!(55660, (*mut c_void, u32, *mut crate::IngredientItem) -> u8)(vm, stackId, self_) } }
 /// `Papyrus::Ingredient::LearnAllEffects` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55661, rva 0xa2f100).
 /// `void LearnAllEffects(IVirtualMachine * vm, uint stackId, IngredientItem * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__ingredient__learn_all_effects(vm: *mut c_void, stackId: u32, self_: *mut classes::IngredientItem) { unsafe { function!(55661, (*mut c_void, u32, *mut classes::IngredientItem))(vm, stackId, self_) } }
+pub unsafe fn papyrus__ingredient__learn_all_effects(vm: *mut c_void, stackId: u32, self_: *mut crate::IngredientItem) { unsafe { function!(55661, (*mut c_void, u32, *mut crate::IngredientItem))(vm, stackId, self_) } }
 /// `Papyrus::Ingredient::LearnEffect` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55662, rva 0xa2f110).
 /// `void LearnEffect(IVirtualMachine * vm, uint stackId, IngredientItem * self, uint a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__ingredient__learn_effect(vm: *mut c_void, stackId: u32, self_: *mut classes::IngredientItem, a0: u32) { unsafe { function!(55662, (*mut c_void, u32, *mut classes::IngredientItem, u32))(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__ingredient__learn_effect(vm: *mut c_void, stackId: u32, self_: *mut crate::IngredientItem, a0: u32) { unsafe { function!(55662, (*mut c_void, u32, *mut crate::IngredientItem, u32))(vm, stackId, self_, a0) } }
 /// `Papyrus::Ingredient::LearnNextEffect` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55663, rva 0xa2f120).
 /// `uint LearnNextEffect(IVirtualMachine * vm, uint stackId, IngredientItem * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__ingredient__learn_next_effect(vm: *mut c_void, stackId: u32, self_: *mut classes::IngredientItem) -> u32 { unsafe { function!(55663, (*mut c_void, u32, *mut classes::IngredientItem) -> u32)(vm, stackId, self_) } }
+pub unsafe fn papyrus__ingredient__learn_next_effect(vm: *mut c_void, stackId: u32, self_: *mut crate::IngredientItem) -> u32 { unsafe { function!(55663, (*mut c_void, u32, *mut crate::IngredientItem) -> u32)(vm, stackId, self_) } }
 /// `Papyrus::Keyword::SendStoryEvent` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55174, rva 0xa15f70).
 /// `void SendStoryEvent(IVirtualMachine * vm, uint stackId, BGSKeyword * self, BGSLocation * a0, TESObjectREFR * a1, TESObjectREFR * a2, uint a3, uint a4)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__keyword__send_story_event(vm: *mut c_void, stackId: u32, self_: *mut classes::BGSKeyword, a0: *mut classes::BGSLocation, a1: *mut classes::TESObjectREFR, a2: *mut classes::TESObjectREFR, a3: u32, a4: u32) { unsafe { function!(55174, (*mut c_void, u32, *mut classes::BGSKeyword, *mut classes::BGSLocation, *mut classes::TESObjectREFR, *mut classes::TESObjectREFR, u32, u32))(vm, stackId, self_, a0, a1, a2, a3, a4) } }
+pub unsafe fn papyrus__keyword__send_story_event(vm: *mut c_void, stackId: u32, self_: *mut crate::BGSKeyword, a0: *mut crate::BGSLocation, a1: *mut crate::TESObjectREFR, a2: *mut crate::TESObjectREFR, a3: u32, a4: u32) { unsafe { function!(55174, (*mut c_void, u32, *mut crate::BGSKeyword, *mut crate::BGSLocation, *mut crate::TESObjectREFR, *mut crate::TESObjectREFR, u32, u32))(vm, stackId, self_, a0, a1, a2, a3, a4) } }
 /// `Papyrus::Keyword::SendStoryEventAndWait` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55175, rva 0xa16010).
 /// `bool SendStoryEventAndWait(IVirtualMachine * vm, uint stackId, BGSKeyword * self, BGSLocation * a0, TESObjectREFR * a1, TESObjectREFR * a2, uint a3, uint a4)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__keyword__send_story_event_and_wait(vm: *mut c_void, stackId: u32, self_: *mut classes::BGSKeyword, a0: *mut classes::BGSLocation, a1: *mut classes::TESObjectREFR, a2: *mut classes::TESObjectREFR, a3: u32, a4: u32) -> u8 { unsafe { function!(55175, (*mut c_void, u32, *mut classes::BGSKeyword, *mut classes::BGSLocation, *mut classes::TESObjectREFR, *mut classes::TESObjectREFR, u32, u32) -> u8)(vm, stackId, self_, a0, a1, a2, a3, a4) } }
+pub unsafe fn papyrus__keyword__send_story_event_and_wait(vm: *mut c_void, stackId: u32, self_: *mut crate::BGSKeyword, a0: *mut crate::BGSLocation, a1: *mut crate::TESObjectREFR, a2: *mut crate::TESObjectREFR, a3: u32, a4: u32) -> u8 { unsafe { function!(55175, (*mut c_void, u32, *mut crate::BGSKeyword, *mut crate::BGSLocation, *mut crate::TESObjectREFR, *mut crate::TESObjectREFR, u32, u32) -> u8)(vm, stackId, self_, a0, a1, a2, a3, a4) } }
 /// `Papyrus::LeveledActor::AddForm` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55954, rva 0xa3b0a0).
 /// `void AddForm(IVirtualMachine * vm, uint stackId, TESLevCharacter * self, TESForm * a0, uint a1)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__leveled_actor__add_form(vm: *mut c_void, stackId: u32, self_: *mut classes::TESLevCharacter, a0: *mut classes::TESForm, a1: u32) { unsafe { function!(55954, (*mut c_void, u32, *mut classes::TESLevCharacter, *mut classes::TESForm, u32))(vm, stackId, self_, a0, a1) } }
+pub unsafe fn papyrus__leveled_actor__add_form(vm: *mut c_void, stackId: u32, self_: *mut crate::TESLevCharacter, a0: *mut crate::TESForm, a1: u32) { unsafe { function!(55954, (*mut c_void, u32, *mut crate::TESLevCharacter, *mut crate::TESForm, u32))(vm, stackId, self_, a0, a1) } }
 /// `Papyrus::LeveledActor::Revert` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55962, rva 0xa3b560).
 /// `void Revert(IVirtualMachine * vm, uint stackId, TESLevCharacter * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__leveled_actor__revert(vm: *mut c_void, stackId: u32, self_: *mut classes::TESLevCharacter) { unsafe { function!(55962, (*mut c_void, u32, *mut classes::TESLevCharacter))(vm, stackId, self_) } }
+pub unsafe fn papyrus__leveled_actor__revert(vm: *mut c_void, stackId: u32, self_: *mut crate::TESLevCharacter) { unsafe { function!(55962, (*mut c_void, u32, *mut crate::TESLevCharacter))(vm, stackId, self_) } }
 /// `Papyrus::LeveledItem::AddForm` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55965, rva 0xa3b920).
 /// `void AddForm(IVirtualMachine * vm, uint stackId, TESLevItem * self, TESForm * a0, uint a1, uint a2)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__leveled_item__add_form(vm: *mut c_void, stackId: u32, self_: *mut classes::TESLevItem, a0: *mut classes::TESForm, a1: u32, a2: u32) { unsafe { function!(55965, (*mut c_void, u32, *mut classes::TESLevItem, *mut classes::TESForm, u32, u32))(vm, stackId, self_, a0, a1, a2) } }
+pub unsafe fn papyrus__leveled_item__add_form(vm: *mut c_void, stackId: u32, self_: *mut crate::TESLevItem, a0: *mut crate::TESForm, a1: u32, a2: u32) { unsafe { function!(55965, (*mut c_void, u32, *mut crate::TESLevItem, *mut crate::TESForm, u32, u32))(vm, stackId, self_, a0, a1, a2) } }
 /// `Papyrus::LeveledItem::Revert` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55973, rva 0xa3be00).
 /// `void Revert(IVirtualMachine * vm, uint stackId, TESLevItem * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__leveled_item__revert(vm: *mut c_void, stackId: u32, self_: *mut classes::TESLevItem) { unsafe { function!(55973, (*mut c_void, u32, *mut classes::TESLevItem))(vm, stackId, self_) } }
+pub unsafe fn papyrus__leveled_item__revert(vm: *mut c_void, stackId: u32, self_: *mut crate::TESLevItem) { unsafe { function!(55973, (*mut c_void, u32, *mut crate::TESLevItem))(vm, stackId, self_) } }
 /// `Papyrus::LeveledSpell::AddForm` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55976, rva 0xa3c230).
 /// `void AddForm(IVirtualMachine * vm, uint stackId, TESLevSpell * self, TESForm * a0, uint a1)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__leveled_spell__add_form(vm: *mut c_void, stackId: u32, self_: *mut classes::TESLevSpell, a0: *mut classes::TESForm, a1: u32) { unsafe { function!(55976, (*mut c_void, u32, *mut classes::TESLevSpell, *mut classes::TESForm, u32))(vm, stackId, self_, a0, a1) } }
+pub unsafe fn papyrus__leveled_spell__add_form(vm: *mut c_void, stackId: u32, self_: *mut crate::TESLevSpell, a0: *mut crate::TESForm, a1: u32) { unsafe { function!(55976, (*mut c_void, u32, *mut crate::TESLevSpell, *mut crate::TESForm, u32))(vm, stackId, self_, a0, a1) } }
 /// `Papyrus::LeveledSpell::Revert` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55984, rva 0xa3c6f0).
 /// `void Revert(IVirtualMachine * vm, uint stackId, TESLevSpell * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__leveled_spell__revert(vm: *mut c_void, stackId: u32, self_: *mut classes::TESLevSpell) { unsafe { function!(55984, (*mut c_void, u32, *mut classes::TESLevSpell))(vm, stackId, self_) } }
+pub unsafe fn papyrus__leveled_spell__revert(vm: *mut c_void, stackId: u32, self_: *mut crate::TESLevSpell) { unsafe { function!(55984, (*mut c_void, u32, *mut crate::TESLevSpell))(vm, stackId, self_) } }
 /// `Papyrus::Light::GetWarmthRating` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56085, rva 0xa412b0).
 /// `float GetWarmthRating(IVirtualMachine * vm, uint stackId, TESObjectLIGH * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__light__get_warmth_rating(vm: *mut c_void, stackId: u32, self_: *mut classes::TESObjectLIGH) -> f32 { unsafe { function!(56085, (*mut c_void, u32, *mut classes::TESObjectLIGH) -> f32)(vm, stackId, self_) } }
+pub unsafe fn papyrus__light__get_warmth_rating(vm: *mut c_void, stackId: u32, self_: *mut crate::TESObjectLIGH) -> f32 { unsafe { function!(56085, (*mut c_void, u32, *mut crate::TESObjectLIGH) -> f32)(vm, stackId, self_) } }
 /// `Papyrus::Location::GetKeywordData` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55237, rva 0xa18b40).
 /// `float GetKeywordData(IVirtualMachine * vm, uint stackId, BGSLocation * self, BGSKeyword * a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__location__get_keyword_data(vm: *mut c_void, stackId: u32, self_: *mut classes::BGSLocation, a0: *mut classes::BGSKeyword) -> f32 { unsafe { function!(55237, (*mut c_void, u32, *mut classes::BGSLocation, *mut classes::BGSKeyword) -> f32)(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__location__get_keyword_data(vm: *mut c_void, stackId: u32, self_: *mut crate::BGSLocation, a0: *mut crate::BGSKeyword) -> f32 { unsafe { function!(55237, (*mut c_void, u32, *mut crate::BGSLocation, *mut crate::BGSKeyword) -> f32)(vm, stackId, self_, a0) } }
 /// `Papyrus::Location::GetRefTypeAliveCount` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55207, rva 0xa17820).
 /// `uint GetRefTypeAliveCount(IVirtualMachine * vm, uint stackId, BGSLocation * self, BGSLocationRefType * a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__location__get_ref_type_alive_count(vm: *mut c_void, stackId: u32, self_: *mut classes::BGSLocation, a0: *mut classes::BGSLocationRefType) -> u32 { unsafe { function!(55207, (*mut c_void, u32, *mut classes::BGSLocation, *mut classes::BGSLocationRefType) -> u32)(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__location__get_ref_type_alive_count(vm: *mut c_void, stackId: u32, self_: *mut crate::BGSLocation, a0: *mut crate::BGSLocationRefType) -> u32 { unsafe { function!(55207, (*mut c_void, u32, *mut crate::BGSLocation, *mut crate::BGSLocationRefType) -> u32)(vm, stackId, self_, a0) } }
 /// `Papyrus::Location::GetRefTypeDeadCount` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55208, rva 0xa17880).
 /// `uint GetRefTypeDeadCount(IVirtualMachine * vm, uint stackId, BGSLocation * self, BGSLocationRefType * a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__location__get_ref_type_dead_count(vm: *mut c_void, stackId: u32, self_: *mut classes::BGSLocation, a0: *mut classes::BGSLocationRefType) -> u32 { unsafe { function!(55208, (*mut c_void, u32, *mut classes::BGSLocation, *mut classes::BGSLocationRefType) -> u32)(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__location__get_ref_type_dead_count(vm: *mut c_void, stackId: u32, self_: *mut crate::BGSLocation, a0: *mut crate::BGSLocationRefType) -> u32 { unsafe { function!(55208, (*mut c_void, u32, *mut crate::BGSLocation, *mut crate::BGSLocationRefType) -> u32)(vm, stackId, self_, a0) } }
 /// `Papyrus::Location::HasCommonParent` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55209, rva 0xa178e0).
 /// `bool HasCommonParent(IVirtualMachine * vm, uint stackId, BGSLocation * self, BGSLocation * a0, BGSKeyword * a1)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__location__has_common_parent(vm: *mut c_void, stackId: u32, self_: *mut classes::BGSLocation, a0: *mut classes::BGSLocation, a1: *mut classes::BGSKeyword) -> u8 { unsafe { function!(55209, (*mut c_void, u32, *mut classes::BGSLocation, *mut classes::BGSLocation, *mut classes::BGSKeyword) -> u8)(vm, stackId, self_, a0, a1) } }
+pub unsafe fn papyrus__location__has_common_parent(vm: *mut c_void, stackId: u32, self_: *mut crate::BGSLocation, a0: *mut crate::BGSLocation, a1: *mut crate::BGSKeyword) -> u8 { unsafe { function!(55209, (*mut c_void, u32, *mut crate::BGSLocation, *mut crate::BGSLocation, *mut crate::BGSKeyword) -> u8)(vm, stackId, self_, a0, a1) } }
 /// `Papyrus::Location::HasRefType` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55238, rva 0xa18b50).
 /// `bool HasRefType(IVirtualMachine * vm, uint stackId, BGSLocation * self, BGSLocationRefType * a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__location__has_ref_type(vm: *mut c_void, stackId: u32, self_: *mut classes::BGSLocation, a0: *mut classes::BGSLocationRefType) -> u8 { unsafe { function!(55238, (*mut c_void, u32, *mut classes::BGSLocation, *mut classes::BGSLocationRefType) -> u8)(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__location__has_ref_type(vm: *mut c_void, stackId: u32, self_: *mut crate::BGSLocation, a0: *mut crate::BGSLocationRefType) -> u8 { unsafe { function!(55238, (*mut c_void, u32, *mut crate::BGSLocation, *mut crate::BGSLocationRefType) -> u8)(vm, stackId, self_, a0) } }
 /// `Papyrus::Location::IsChild` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55210, rva 0xa17a60).
 /// `bool IsChild(IVirtualMachine * vm, uint stackId, BGSLocation * self, BGSLocation * a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__location__is_child(vm: *mut c_void, stackId: u32, self_: *mut classes::BGSLocation, a0: *mut classes::BGSLocation) -> u8 { unsafe { function!(55210, (*mut c_void, u32, *mut classes::BGSLocation, *mut classes::BGSLocation) -> u8)(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__location__is_child(vm: *mut c_void, stackId: u32, self_: *mut crate::BGSLocation, a0: *mut crate::BGSLocation) -> u8 { unsafe { function!(55210, (*mut c_void, u32, *mut crate::BGSLocation, *mut crate::BGSLocation) -> u8)(vm, stackId, self_, a0) } }
 /// `Papyrus::Location::IsCleared` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55239, rva 0xa18b60).
 /// `bool IsCleared(IVirtualMachine * vm, uint stackId, BGSLocation * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__location__is_cleared(vm: *mut c_void, stackId: u32, self_: *mut classes::BGSLocation) -> u8 { unsafe { function!(55239, (*mut c_void, u32, *mut classes::BGSLocation) -> u8)(vm, stackId, self_) } }
+pub unsafe fn papyrus__location__is_cleared(vm: *mut c_void, stackId: u32, self_: *mut crate::BGSLocation) -> u8 { unsafe { function!(55239, (*mut c_void, u32, *mut crate::BGSLocation) -> u8)(vm, stackId, self_) } }
 /// `Papyrus::Location::IsLoaded` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55240, rva 0xa18b70).
 /// `bool IsLoaded(IVirtualMachine * vm, uint stackId, BGSLocation * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__location__is_loaded(vm: *mut c_void, stackId: u32, self_: *mut classes::BGSLocation) -> u8 { unsafe { function!(55240, (*mut c_void, u32, *mut classes::BGSLocation) -> u8)(vm, stackId, self_) } }
+pub unsafe fn papyrus__location__is_loaded(vm: *mut c_void, stackId: u32, self_: *mut crate::BGSLocation) -> u8 { unsafe { function!(55240, (*mut c_void, u32, *mut crate::BGSLocation) -> u8)(vm, stackId, self_) } }
 /// `Papyrus::Location::SetCleared` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55241, rva 0xa18b80).
 /// `void SetCleared(IVirtualMachine * vm, uint stackId, BGSLocation * self, bool a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__location__set_cleared(vm: *mut c_void, stackId: u32, self_: *mut classes::BGSLocation, a0: u8) { unsafe { function!(55241, (*mut c_void, u32, *mut classes::BGSLocation, u8))(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__location__set_cleared(vm: *mut c_void, stackId: u32, self_: *mut crate::BGSLocation, a0: u8) { unsafe { function!(55241, (*mut c_void, u32, *mut crate::BGSLocation, u8))(vm, stackId, self_, a0) } }
 /// `Papyrus::Location::SetKeywordData` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55211, rva 0xa17ad0).
 /// `void SetKeywordData(IVirtualMachine * vm, uint stackId, BGSLocation * self, BGSKeyword * a0, float a1)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__location__set_keyword_data(vm: *mut c_void, stackId: u32, self_: *mut classes::BGSLocation, a0: *mut classes::BGSKeyword, a1: f32) { unsafe { function!(55211, (*mut c_void, u32, *mut classes::BGSLocation, *mut classes::BGSKeyword, f32))(vm, stackId, self_, a0, a1) } }
+pub unsafe fn papyrus__location__set_keyword_data(vm: *mut c_void, stackId: u32, self_: *mut crate::BGSLocation, a0: *mut crate::BGSKeyword, a1: f32) { unsafe { function!(55211, (*mut c_void, u32, *mut crate::BGSLocation, *mut crate::BGSKeyword, f32))(vm, stackId, self_, a0, a1) } }
 /// `Papyrus::LocationAlias::Clear` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55188, rva 0xa16c30).
 /// `void Clear(IVirtualMachine * vm, uint stackId, BGSLocAlias * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__location_alias__clear(vm: *mut c_void, stackId: u32, self_: *mut classes::BGSLocAlias) { unsafe { function!(55188, (*mut c_void, u32, *mut classes::BGSLocAlias))(vm, stackId, self_) } }
+pub unsafe fn papyrus__location_alias__clear(vm: *mut c_void, stackId: u32, self_: *mut crate::BGSLocAlias) { unsafe { function!(55188, (*mut c_void, u32, *mut crate::BGSLocAlias))(vm, stackId, self_) } }
 /// `Papyrus::LocationAlias::ForceLocationTo` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55191, rva 0xa16ca0).
 /// `void ForceLocationTo(IVirtualMachine * vm, uint stackId, BGSLocAlias * self, BGSLocation * a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__location_alias__force_location_to(vm: *mut c_void, stackId: u32, self_: *mut classes::BGSLocAlias, a0: *mut classes::BGSLocation) { unsafe { function!(55191, (*mut c_void, u32, *mut classes::BGSLocAlias, *mut classes::BGSLocation))(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__location_alias__force_location_to(vm: *mut c_void, stackId: u32, self_: *mut crate::BGSLocAlias, a0: *mut crate::BGSLocation) { unsafe { function!(55191, (*mut c_void, u32, *mut crate::BGSLocAlias, *mut crate::BGSLocation))(vm, stackId, self_, a0) } }
 /// `Papyrus::LocationAlias::GetLocation` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55189, rva 0xa16c80).
 /// `BGSLocation * GetLocation(IVirtualMachine * vm, uint stackId, BGSLocAlias * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__location_alias__get_location(vm: *mut c_void, stackId: u32, self_: *mut classes::BGSLocAlias) -> *mut classes::BGSLocation { unsafe { function!(55189, (*mut c_void, u32, *mut classes::BGSLocAlias) -> *mut classes::BGSLocation)(vm, stackId, self_) } }
+pub unsafe fn papyrus__location_alias__get_location(vm: *mut c_void, stackId: u32, self_: *mut crate::BGSLocAlias) -> *mut crate::BGSLocation { unsafe { function!(55189, (*mut c_void, u32, *mut crate::BGSLocAlias) -> *mut crate::BGSLocation)(vm, stackId, self_) } }
 /// `Papyrus::MagicEffect::GetAssociatedSkill` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55431, rva 0xa229b0).
 /// `bool GetAssociatedSkill(IVirtualMachine * vm, uint stackId, EffectSetting * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__magic_effect__get_associated_skill(vm: *mut c_void, stackId: u32, self_: *mut classes::EffectSetting) -> u8 { unsafe { function!(55431, (*mut c_void, u32, *mut classes::EffectSetting) -> u8)(vm, stackId, self_) } }
+pub unsafe fn papyrus__magic_effect__get_associated_skill(vm: *mut c_void, stackId: u32, self_: *mut crate::EffectSetting) -> u8 { unsafe { function!(55431, (*mut c_void, u32, *mut crate::EffectSetting) -> u8)(vm, stackId, self_) } }
 /// `Papyrus::Math::DegreesToRadians` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55703, rva 0xa30890).
 /// `float DegreesToRadians(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, float a0)`
 ///
@@ -31307,1141 +31301,1141 @@ pub unsafe fn papyrus__math__tan(vm: *mut c_void, stackId: u32, unused: *mut c_v
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__message__reset_help_message(vm: *mut c_void, stackId: u32, unused: *mut c_void, a0: *mut classes::BSFixedString) { unsafe { function!(55272, (*mut c_void, u32, *mut c_void, *mut classes::BSFixedString))(vm, stackId, unused, a0) } }
+pub unsafe fn papyrus__message__reset_help_message(vm: *mut c_void, stackId: u32, unused: *mut c_void, a0: *mut crate::BSFixedString) { unsafe { function!(55272, (*mut c_void, u32, *mut c_void, *mut crate::BSFixedString))(vm, stackId, unused, a0) } }
 /// `Papyrus::Message::Show` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55255, rva 0xa19850).
 /// `bool Show(IVirtualMachine * vm, uint stackId, BGSMessage * self, float a0, float a1, float a2, float a3, float a4, float a5, float a6, float a7, float a8)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__message__show(vm: *mut c_void, stackId: u32, self_: *mut classes::BGSMessage, a0: f32, a1: f32, a2: f32, a3: f32, a4: f32, a5: f32, a6: f32, a7: f32, a8: f32) -> u8 { unsafe { function!(55255, (*mut c_void, u32, *mut classes::BGSMessage, f32, f32, f32, f32, f32, f32, f32, f32, f32) -> u8)(vm, stackId, self_, a0, a1, a2, a3, a4, a5, a6, a7, a8) } }
+pub unsafe fn papyrus__message__show(vm: *mut c_void, stackId: u32, self_: *mut crate::BGSMessage, a0: f32, a1: f32, a2: f32, a3: f32, a4: f32, a5: f32, a6: f32, a7: f32, a8: f32) -> u8 { unsafe { function!(55255, (*mut c_void, u32, *mut crate::BGSMessage, f32, f32, f32, f32, f32, f32, f32, f32, f32) -> u8)(vm, stackId, self_, a0, a1, a2, a3, a4, a5, a6, a7, a8) } }
 /// `Papyrus::Message::ShowAsHelpMessage` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55256, rva 0xa19ff0).
 /// `void ShowAsHelpMessage(IVirtualMachine * vm, uint stackId, BGSMessage * self, BSFixedString * a0, float a1, float a2, int a3)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__message__show_as_help_message(vm: *mut c_void, stackId: u32, self_: *mut classes::BGSMessage, a0: *mut classes::BSFixedString, a1: f32, a2: f32, a3: i32) { unsafe { function!(55256, (*mut c_void, u32, *mut classes::BGSMessage, *mut classes::BSFixedString, f32, f32, i32))(vm, stackId, self_, a0, a1, a2, a3) } }
+pub unsafe fn papyrus__message__show_as_help_message(vm: *mut c_void, stackId: u32, self_: *mut crate::BGSMessage, a0: *mut crate::BSFixedString, a1: f32, a2: f32, a3: i32) { unsafe { function!(55256, (*mut c_void, u32, *mut crate::BGSMessage, *mut crate::BSFixedString, f32, f32, i32))(vm, stackId, self_, a0, a1, a2, a3) } }
 /// `Papyrus::ObjectReference::Activate` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56139, rva 0xa446e0).
 /// `bool Activate(IVirtualMachine * vm, uint stackId, TESObjectREFR * self, TESObjectREFR * a0, bool a1)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__object_reference__activate(vm: *mut c_void, stackId: u32, self_: *mut classes::TESObjectREFR, a0: *mut classes::TESObjectREFR, a1: u8) -> u8 { unsafe { function!(56139, (*mut c_void, u32, *mut classes::TESObjectREFR, *mut classes::TESObjectREFR, u8) -> u8)(vm, stackId, self_, a0, a1) } }
+pub unsafe fn papyrus__object_reference__activate(vm: *mut c_void, stackId: u32, self_: *mut crate::TESObjectREFR, a0: *mut crate::TESObjectREFR, a1: u8) -> u8 { unsafe { function!(56139, (*mut c_void, u32, *mut crate::TESObjectREFR, *mut crate::TESObjectREFR, u8) -> u8)(vm, stackId, self_, a0, a1) } }
 /// `Papyrus::ObjectReference::AddDependentAnimatedObjectReference` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56144, rva 0xa44a70).
 /// `bool AddDependentAnimatedObjectReference(IVirtualMachine * vm, uint stackId, TESObjectREFR * self, TESObjectREFR * a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__object_reference__add_dependent_animated_object_reference(vm: *mut c_void, stackId: u32, self_: *mut classes::TESObjectREFR, a0: *mut classes::TESObjectREFR) -> u8 { unsafe { function!(56144, (*mut c_void, u32, *mut classes::TESObjectREFR, *mut classes::TESObjectREFR) -> u8)(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__object_reference__add_dependent_animated_object_reference(vm: *mut c_void, stackId: u32, self_: *mut crate::TESObjectREFR, a0: *mut crate::TESObjectREFR) -> u8 { unsafe { function!(56144, (*mut c_void, u32, *mut crate::TESObjectREFR, *mut crate::TESObjectREFR) -> u8)(vm, stackId, self_, a0) } }
 /// `Papyrus::ObjectReference::AddInventoryEventFilter` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56140, rva 0xa44740).
 /// `void AddInventoryEventFilter(IVirtualMachine * vm, uint stackId, TESObjectREFR * self, TESForm * a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__object_reference__add_inventory_event_filter(vm: *mut c_void, stackId: u32, self_: *mut classes::TESObjectREFR, a0: *mut classes::TESForm) { unsafe { function!(56140, (*mut c_void, u32, *mut classes::TESObjectREFR, *mut classes::TESForm))(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__object_reference__add_inventory_event_filter(vm: *mut c_void, stackId: u32, self_: *mut crate::TESObjectREFR, a0: *mut crate::TESForm) { unsafe { function!(56140, (*mut c_void, u32, *mut crate::TESObjectREFR, *mut crate::TESForm))(vm, stackId, self_, a0) } }
 /// `Papyrus::ObjectReference::AddItem` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56145, rva 0xa44bb0).
 /// `bool AddItem(IVirtualMachine * vm, uint stackId, TESObjectREFR * self, TESForm * a0, uint a1, bool a2)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__object_reference__add_item(vm: *mut c_void, stackId: u32, self_: *mut classes::TESObjectREFR, a0: *mut classes::TESForm, a1: u32, a2: u8) -> u8 { unsafe { function!(56145, (*mut c_void, u32, *mut classes::TESObjectREFR, *mut classes::TESForm, u32, u8) -> u8)(vm, stackId, self_, a0, a1, a2) } }
+pub unsafe fn papyrus__object_reference__add_item(vm: *mut c_void, stackId: u32, self_: *mut crate::TESObjectREFR, a0: *mut crate::TESForm, a1: u32, a2: u8) -> u8 { unsafe { function!(56145, (*mut c_void, u32, *mut crate::TESObjectREFR, *mut crate::TESForm, u32, u8) -> u8)(vm, stackId, self_, a0, a1, a2) } }
 /// `Papyrus::ObjectReference::ApplyHavokImpulse` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56147, rva 0xa44e70).
 /// `bool ApplyHavokImpulse(IVirtualMachine * vm, uint stackId, TESObjectREFR * self, float a0, float a1, float a2, float a3)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__object_reference__apply_havok_impulse(vm: *mut c_void, stackId: u32, self_: *mut classes::TESObjectREFR, a0: f32, a1: f32, a2: f32, a3: f32) -> u8 { unsafe { function!(56147, (*mut c_void, u32, *mut classes::TESObjectREFR, f32, f32, f32, f32) -> u8)(vm, stackId, self_, a0, a1, a2, a3) } }
+pub unsafe fn papyrus__object_reference__apply_havok_impulse(vm: *mut c_void, stackId: u32, self_: *mut crate::TESObjectREFR, a0: f32, a1: f32, a2: f32, a3: f32) -> u8 { unsafe { function!(56147, (*mut c_void, u32, *mut crate::TESObjectREFR, f32, f32, f32, f32) -> u8)(vm, stackId, self_, a0, a1, a2, a3) } }
 /// `Papyrus::ObjectReference::BlockActivation` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56148, rva 0xa450a0).
 /// `void BlockActivation(IVirtualMachine * vm, uint stackId, TESObjectREFR * self, bool a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__object_reference__block_activation(vm: *mut c_void, stackId: u32, self_: *mut classes::TESObjectREFR, a0: u8) { unsafe { function!(56148, (*mut c_void, u32, *mut classes::TESObjectREFR, u8))(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__object_reference__block_activation(vm: *mut c_void, stackId: u32, self_: *mut crate::TESObjectREFR, a0: u8) { unsafe { function!(56148, (*mut c_void, u32, *mut crate::TESObjectREFR, u8))(vm, stackId, self_, a0) } }
 /// `Papyrus::ObjectReference::CalculateEncounterLevel` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56149, rva 0xa450f0).
 /// `uint CalculateEncounterLevel(IVirtualMachine * vm, uint stackId, TESObjectREFR * self, uint a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__object_reference__calculate_encounter_level(vm: *mut c_void, stackId: u32, self_: *mut classes::TESObjectREFR, a0: u32) -> u32 { unsafe { function!(56149, (*mut c_void, u32, *mut classes::TESObjectREFR, u32) -> u32)(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__object_reference__calculate_encounter_level(vm: *mut c_void, stackId: u32, self_: *mut crate::TESObjectREFR, a0: u32) -> u32 { unsafe { function!(56149, (*mut c_void, u32, *mut crate::TESObjectREFR, u32) -> u32)(vm, stackId, self_, a0) } }
 /// `Papyrus::ObjectReference::CanFastTravelToMarker` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56150, rva 0xa45170).
 /// `bool CanFastTravelToMarker(IVirtualMachine * vm, uint stackId, TESObjectREFR * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__object_reference__can_fast_travel_to_marker(vm: *mut c_void, stackId: u32, self_: *mut classes::TESObjectREFR) -> u8 { unsafe { function!(56150, (*mut c_void, u32, *mut classes::TESObjectREFR) -> u8)(vm, stackId, self_) } }
+pub unsafe fn papyrus__object_reference__can_fast_travel_to_marker(vm: *mut c_void, stackId: u32, self_: *mut crate::TESObjectREFR) -> u8 { unsafe { function!(56150, (*mut c_void, u32, *mut crate::TESObjectREFR) -> u8)(vm, stackId, self_) } }
 /// `Papyrus::ObjectReference::ClearDestruction` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56151, rva 0xa451e0).
 /// `void ClearDestruction(IVirtualMachine * vm, uint stackId, TESObjectREFR * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__object_reference__clear_destruction(vm: *mut c_void, stackId: u32, self_: *mut classes::TESObjectREFR) { unsafe { function!(56151, (*mut c_void, u32, *mut classes::TESObjectREFR))(vm, stackId, self_) } }
+pub unsafe fn papyrus__object_reference__clear_destruction(vm: *mut c_void, stackId: u32, self_: *mut crate::TESObjectREFR) { unsafe { function!(56151, (*mut c_void, u32, *mut crate::TESObjectREFR))(vm, stackId, self_) } }
 /// `Papyrus::ObjectReference::CreateDetectionEvent` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56152, rva 0xa451f0).
 /// `void CreateDetectionEvent(IVirtualMachine * vm, uint stackId, TESObjectREFR * self, Actor * a0, uint a1)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__object_reference__create_detection_event(vm: *mut c_void, stackId: u32, self_: *mut classes::TESObjectREFR, a0: *mut classes::Actor, a1: u32) { unsafe { function!(56152, (*mut c_void, u32, *mut classes::TESObjectREFR, *mut classes::Actor, u32))(vm, stackId, self_, a0, a1) } }
+pub unsafe fn papyrus__object_reference__create_detection_event(vm: *mut c_void, stackId: u32, self_: *mut crate::TESObjectREFR, a0: *mut crate::Actor, a1: u32) { unsafe { function!(56152, (*mut c_void, u32, *mut crate::TESObjectREFR, *mut crate::Actor, u32))(vm, stackId, self_, a0, a1) } }
 /// `Papyrus::ObjectReference::DamageObject` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56153, rva 0xa45250).
 /// `bool DamageObject(IVirtualMachine * vm, uint stackId, TESObjectREFR * self, float a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__object_reference__damage_object(vm: *mut c_void, stackId: u32, self_: *mut classes::TESObjectREFR, a0: f32) -> u8 { unsafe { function!(56153, (*mut c_void, u32, *mut classes::TESObjectREFR, f32) -> u8)(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__object_reference__damage_object(vm: *mut c_void, stackId: u32, self_: *mut crate::TESObjectREFR, a0: f32) -> u8 { unsafe { function!(56153, (*mut c_void, u32, *mut crate::TESObjectREFR, f32) -> u8)(vm, stackId, self_, a0) } }
 /// `Papyrus::ObjectReference::DisableNoWait` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56156, rva 0xa45540).
 /// `void DisableNoWait(IVirtualMachine * vm, uint stackId, TESObjectREFR * self, bool a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__object_reference__disable_no_wait(vm: *mut c_void, stackId: u32, self_: *mut classes::TESObjectREFR, a0: u8) { unsafe { function!(56156, (*mut c_void, u32, *mut classes::TESObjectREFR, u8))(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__object_reference__disable_no_wait(vm: *mut c_void, stackId: u32, self_: *mut crate::TESObjectREFR, a0: u8) { unsafe { function!(56156, (*mut c_void, u32, *mut crate::TESObjectREFR, u8))(vm, stackId, self_, a0) } }
 /// `Papyrus::ObjectReference::DropObject` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56157, rva 0xa45570).
 /// `bool DropObject(IVirtualMachine * vm, uint stackId, TESObjectREFR * self, TESForm * a0, uint a1)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__object_reference__drop_object(vm: *mut c_void, stackId: u32, self_: *mut classes::TESObjectREFR, a0: *mut classes::TESForm, a1: u32) -> u8 { unsafe { function!(56157, (*mut c_void, u32, *mut classes::TESObjectREFR, *mut classes::TESForm, u32) -> u8)(vm, stackId, self_, a0, a1) } }
+pub unsafe fn papyrus__object_reference__drop_object(vm: *mut c_void, stackId: u32, self_: *mut crate::TESObjectREFR, a0: *mut crate::TESForm, a1: u32) -> u8 { unsafe { function!(56157, (*mut c_void, u32, *mut crate::TESObjectREFR, *mut crate::TESForm, u32) -> u8)(vm, stackId, self_, a0, a1) } }
 /// `Papyrus::ObjectReference::Enable` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56158, rva 0xa456f0).
 /// `bool Enable(IVirtualMachine * vm, uint stackId, TESObjectREFR * self, bool a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__object_reference__enable(vm: *mut c_void, stackId: u32, self_: *mut classes::TESObjectREFR, a0: u8) -> u8 { unsafe { function!(56158, (*mut c_void, u32, *mut classes::TESObjectREFR, u8) -> u8)(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__object_reference__enable(vm: *mut c_void, stackId: u32, self_: *mut crate::TESObjectREFR, a0: u8) -> u8 { unsafe { function!(56158, (*mut c_void, u32, *mut crate::TESObjectREFR, u8) -> u8)(vm, stackId, self_, a0) } }
 /// `Papyrus::ObjectReference::EnableFastTravel` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56159, rva 0xa45720).
 /// `void EnableFastTravel(IVirtualMachine * vm, uint stackId, TESObjectREFR * self, bool a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__object_reference__enable_fast_travel(vm: *mut c_void, stackId: u32, self_: *mut classes::TESObjectREFR, a0: u8) { unsafe { function!(56159, (*mut c_void, u32, *mut classes::TESObjectREFR, u8))(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__object_reference__enable_fast_travel(vm: *mut c_void, stackId: u32, self_: *mut crate::TESObjectREFR, a0: u8) { unsafe { function!(56159, (*mut c_void, u32, *mut crate::TESObjectREFR, u8))(vm, stackId, self_, a0) } }
 /// `Papyrus::ObjectReference::EnableNoWait` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56160, rva 0xa457b0).
 /// `void EnableNoWait(IVirtualMachine * vm, uint stackId, TESObjectREFR * self, bool a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__object_reference__enable_no_wait(vm: *mut c_void, stackId: u32, self_: *mut classes::TESObjectREFR, a0: u8) { unsafe { function!(56160, (*mut c_void, u32, *mut classes::TESObjectREFR, u8))(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__object_reference__enable_no_wait(vm: *mut c_void, stackId: u32, self_: *mut crate::TESObjectREFR, a0: u8) { unsafe { function!(56160, (*mut c_void, u32, *mut crate::TESObjectREFR, u8))(vm, stackId, self_, a0) } }
 /// `Papyrus::ObjectReference::ForceAddRagdollToWorld` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56137, rva 0xa444e0).
 /// `bool ForceAddRagdollToWorld(IVirtualMachine * vm, uint stackId, TESObjectREFR * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__object_reference__force_add_ragdoll_to_world(vm: *mut c_void, stackId: u32, self_: *mut classes::TESObjectREFR) -> u8 { unsafe { function!(56137, (*mut c_void, u32, *mut classes::TESObjectREFR) -> u8)(vm, stackId, self_) } }
+pub unsafe fn papyrus__object_reference__force_add_ragdoll_to_world(vm: *mut c_void, stackId: u32, self_: *mut crate::TESObjectREFR) -> u8 { unsafe { function!(56137, (*mut c_void, u32, *mut crate::TESObjectREFR) -> u8)(vm, stackId, self_) } }
 /// `Papyrus::ObjectReference::ForceRemoveRagdollFromWorld` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56138, rva 0xa445e0).
 /// `bool ForceRemoveRagdollFromWorld(IVirtualMachine * vm, uint stackId, TESObjectREFR * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__object_reference__force_remove_ragdoll_from_world(vm: *mut c_void, stackId: u32, self_: *mut classes::TESObjectREFR) -> u8 { unsafe { function!(56138, (*mut c_void, u32, *mut classes::TESObjectREFR) -> u8)(vm, stackId, self_) } }
+pub unsafe fn papyrus__object_reference__force_remove_ragdoll_from_world(vm: *mut c_void, stackId: u32, self_: *mut crate::TESObjectREFR) -> u8 { unsafe { function!(56138, (*mut c_void, u32, *mut crate::TESObjectREFR) -> u8)(vm, stackId, self_) } }
 /// `Papyrus::ObjectReference::GetActorOwner` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56161, rva 0xa457e0).
 /// `TESNPC * GetActorOwner(IVirtualMachine * vm, uint stackId, TESObjectREFR * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__object_reference__get_actor_owner(vm: *mut c_void, stackId: u32, self_: *mut classes::TESObjectREFR) -> *mut classes::TESNPC { unsafe { function!(56161, (*mut c_void, u32, *mut classes::TESObjectREFR) -> *mut classes::TESNPC)(vm, stackId, self_) } }
+pub unsafe fn papyrus__object_reference__get_actor_owner(vm: *mut c_void, stackId: u32, self_: *mut crate::TESObjectREFR) -> *mut crate::TESNPC { unsafe { function!(56161, (*mut c_void, u32, *mut crate::TESObjectREFR) -> *mut crate::TESNPC)(vm, stackId, self_) } }
 /// `Papyrus::ObjectReference::GetAllItemsCount` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 442739, rva 0xa45810).
 /// `uint GetAllItemsCount(IVirtualMachine * vm, uint stackId, TESObjectREFR * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__object_reference__get_all_items_count(vm: *mut c_void, stackId: u32, self_: *mut classes::TESObjectREFR) -> u32 { unsafe { function!(442739, (*mut c_void, u32, *mut classes::TESObjectREFR) -> u32)(vm, stackId, self_) } }
+pub unsafe fn papyrus__object_reference__get_all_items_count(vm: *mut c_void, stackId: u32, self_: *mut crate::TESObjectREFR) -> u32 { unsafe { function!(442739, (*mut c_void, u32, *mut crate::TESObjectREFR) -> u32)(vm, stackId, self_) } }
 /// `Papyrus::ObjectReference::GetAngleX` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 442740, rva 0xa45830).
 /// `float GetAngleX(IVirtualMachine * vm, uint stackId, TESObjectREFR * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__object_reference__get_angle_x(vm: *mut c_void, stackId: u32, self_: *mut classes::TESObjectREFR) -> f32 { unsafe { function!(442740, (*mut c_void, u32, *mut classes::TESObjectREFR) -> f32)(vm, stackId, self_) } }
+pub unsafe fn papyrus__object_reference__get_angle_x(vm: *mut c_void, stackId: u32, self_: *mut crate::TESObjectREFR) -> f32 { unsafe { function!(442740, (*mut c_void, u32, *mut crate::TESObjectREFR) -> f32)(vm, stackId, self_) } }
 /// `Papyrus::ObjectReference::GetAngleY` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 442741, rva 0xa45850).
 /// `float GetAngleY(IVirtualMachine * vm, uint stackId, TESObjectREFR * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__object_reference__get_angle_y(vm: *mut c_void, stackId: u32, self_: *mut classes::TESObjectREFR) -> f32 { unsafe { function!(442741, (*mut c_void, u32, *mut classes::TESObjectREFR) -> f32)(vm, stackId, self_) } }
+pub unsafe fn papyrus__object_reference__get_angle_y(vm: *mut c_void, stackId: u32, self_: *mut crate::TESObjectREFR) -> f32 { unsafe { function!(442741, (*mut c_void, u32, *mut crate::TESObjectREFR) -> f32)(vm, stackId, self_) } }
 /// `Papyrus::ObjectReference::GetAngleZ` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 442742, rva 0xa45870).
 /// `float GetAngleZ(IVirtualMachine * vm, uint stackId, TESObjectREFR * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__object_reference__get_angle_z(vm: *mut c_void, stackId: u32, self_: *mut classes::TESObjectREFR) -> f32 { unsafe { function!(442742, (*mut c_void, u32, *mut classes::TESObjectREFR) -> f32)(vm, stackId, self_) } }
+pub unsafe fn papyrus__object_reference__get_angle_z(vm: *mut c_void, stackId: u32, self_: *mut crate::TESObjectREFR) -> f32 { unsafe { function!(442742, (*mut c_void, u32, *mut crate::TESObjectREFR) -> f32)(vm, stackId, self_) } }
 /// `Papyrus::ObjectReference::GetAnimationVariableBool` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56165, rva 0xa45890).
 /// `bool GetAnimationVariableBool(IVirtualMachine * vm, uint stackId, TESObjectREFR * self, BSFixedString * a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__object_reference__get_animation_variable_bool(vm: *mut c_void, stackId: u32, self_: *mut classes::TESObjectREFR, a0: *mut classes::BSFixedString) -> u8 { unsafe { function!(56165, (*mut c_void, u32, *mut classes::TESObjectREFR, *mut classes::BSFixedString) -> u8)(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__object_reference__get_animation_variable_bool(vm: *mut c_void, stackId: u32, self_: *mut crate::TESObjectREFR, a0: *mut crate::BSFixedString) -> u8 { unsafe { function!(56165, (*mut c_void, u32, *mut crate::TESObjectREFR, *mut crate::BSFixedString) -> u8)(vm, stackId, self_, a0) } }
 /// `Papyrus::ObjectReference::GetAnimationVariableFloat` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56167, rva 0xa45a30).
 /// `float GetAnimationVariableFloat(IVirtualMachine * vm, uint stackId, TESObjectREFR * self, BSFixedString * a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__object_reference__get_animation_variable_float(vm: *mut c_void, stackId: u32, self_: *mut classes::TESObjectREFR, a0: *mut classes::BSFixedString) -> f32 { unsafe { function!(56167, (*mut c_void, u32, *mut classes::TESObjectREFR, *mut classes::BSFixedString) -> f32)(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__object_reference__get_animation_variable_float(vm: *mut c_void, stackId: u32, self_: *mut crate::TESObjectREFR, a0: *mut crate::BSFixedString) -> f32 { unsafe { function!(56167, (*mut c_void, u32, *mut crate::TESObjectREFR, *mut crate::BSFixedString) -> f32)(vm, stackId, self_, a0) } }
 /// `Papyrus::ObjectReference::GetAnimationVariableInt` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56166, rva 0xa45960).
 /// `int GetAnimationVariableInt(IVirtualMachine * vm, uint stackId, TESObjectREFR * self, BSFixedString * a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__object_reference__get_animation_variable_int(vm: *mut c_void, stackId: u32, self_: *mut classes::TESObjectREFR, a0: *mut classes::BSFixedString) -> i32 { unsafe { function!(56166, (*mut c_void, u32, *mut classes::TESObjectREFR, *mut classes::BSFixedString) -> i32)(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__object_reference__get_animation_variable_int(vm: *mut c_void, stackId: u32, self_: *mut crate::TESObjectREFR, a0: *mut crate::BSFixedString) -> i32 { unsafe { function!(56166, (*mut c_void, u32, *mut crate::TESObjectREFR, *mut crate::BSFixedString) -> i32)(vm, stackId, self_, a0) } }
 /// `Papyrus::ObjectReference::GetBaseObject` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56168, rva 0xa45b00).
 /// `TESForm * GetBaseObject(IVirtualMachine * vm, uint stackId, TESObjectREFR * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__object_reference__get_base_object(vm: *mut c_void, stackId: u32, self_: *mut classes::TESObjectREFR) -> *mut classes::TESForm { unsafe { function!(56168, (*mut c_void, u32, *mut classes::TESObjectREFR) -> *mut classes::TESForm)(vm, stackId, self_) } }
+pub unsafe fn papyrus__object_reference__get_base_object(vm: *mut c_void, stackId: u32, self_: *mut crate::TESObjectREFR) -> *mut crate::TESForm { unsafe { function!(56168, (*mut c_void, u32, *mut crate::TESObjectREFR) -> *mut crate::TESForm)(vm, stackId, self_) } }
 /// `Papyrus::ObjectReference::GetCurrentDestructionStage` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56169, rva 0xa45b30).
 /// `int GetCurrentDestructionStage(IVirtualMachine * vm, uint stackId, TESObjectREFR * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__object_reference__get_current_destruction_stage(vm: *mut c_void, stackId: u32, self_: *mut classes::TESObjectREFR) -> i32 { unsafe { function!(56169, (*mut c_void, u32, *mut classes::TESObjectREFR) -> i32)(vm, stackId, self_) } }
+pub unsafe fn papyrus__object_reference__get_current_destruction_stage(vm: *mut c_void, stackId: u32, self_: *mut crate::TESObjectREFR) -> i32 { unsafe { function!(56169, (*mut c_void, u32, *mut crate::TESObjectREFR) -> i32)(vm, stackId, self_) } }
 /// `Papyrus::ObjectReference::GetCurrentLocation` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56627, rva 0xa5d690).
 /// `BGSLocation * GetCurrentLocation(IVirtualMachine * vm, uint stackId, TESObjectREFR * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__object_reference__get_current_location(vm: *mut c_void, stackId: u32, self_: *mut classes::TESObjectREFR) -> *mut classes::BGSLocation { unsafe { function!(56627, (*mut c_void, u32, *mut classes::TESObjectREFR) -> *mut classes::BGSLocation)(vm, stackId, self_) } }
+pub unsafe fn papyrus__object_reference__get_current_location(vm: *mut c_void, stackId: u32, self_: *mut crate::TESObjectREFR) -> *mut crate::BGSLocation { unsafe { function!(56627, (*mut c_void, u32, *mut crate::TESObjectREFR) -> *mut crate::BGSLocation)(vm, stackId, self_) } }
 /// `Papyrus::ObjectReference::GetCurrentScene` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56628, rva 0xa5d6a0).
 /// `BGSScene * GetCurrentScene(IVirtualMachine * vm, uint stackId, TESObjectREFR * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__object_reference__get_current_scene(vm: *mut c_void, stackId: u32, self_: *mut classes::TESObjectREFR) -> *mut classes::BGSScene { unsafe { function!(56628, (*mut c_void, u32, *mut classes::TESObjectREFR) -> *mut classes::BGSScene)(vm, stackId, self_) } }
+pub unsafe fn papyrus__object_reference__get_current_scene(vm: *mut c_void, stackId: u32, self_: *mut crate::TESObjectREFR) -> *mut crate::BGSScene { unsafe { function!(56628, (*mut c_void, u32, *mut crate::TESObjectREFR) -> *mut crate::BGSScene)(vm, stackId, self_) } }
 /// `Papyrus::ObjectReference::GetDistance` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56170, rva 0xa45b40).
 /// `float GetDistance(IVirtualMachine * vm, uint stackId, TESObjectREFR * self, TESObjectREFR * a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__object_reference__get_distance(vm: *mut c_void, stackId: u32, self_: *mut classes::TESObjectREFR, a0: *mut classes::TESObjectREFR) -> f32 { unsafe { function!(56170, (*mut c_void, u32, *mut classes::TESObjectREFR, *mut classes::TESObjectREFR) -> f32)(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__object_reference__get_distance(vm: *mut c_void, stackId: u32, self_: *mut crate::TESObjectREFR, a0: *mut crate::TESObjectREFR) -> f32 { unsafe { function!(56170, (*mut c_void, u32, *mut crate::TESObjectREFR, *mut crate::TESObjectREFR) -> f32)(vm, stackId, self_, a0) } }
 /// `Papyrus::ObjectReference::GetEditorLocation` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56629, rva 0xa5d6b0).
 /// `BGSLocation * GetEditorLocation(IVirtualMachine * vm, uint stackId, TESObjectREFR * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__object_reference__get_editor_location(vm: *mut c_void, stackId: u32, self_: *mut classes::TESObjectREFR) -> *mut classes::BGSLocation { unsafe { function!(56629, (*mut c_void, u32, *mut classes::TESObjectREFR) -> *mut classes::BGSLocation)(vm, stackId, self_) } }
+pub unsafe fn papyrus__object_reference__get_editor_location(vm: *mut c_void, stackId: u32, self_: *mut crate::TESObjectREFR) -> *mut crate::BGSLocation { unsafe { function!(56629, (*mut c_void, u32, *mut crate::TESObjectREFR) -> *mut crate::BGSLocation)(vm, stackId, self_) } }
 /// `Papyrus::ObjectReference::GetFactionOwner` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56171, rva 0xa45b90).
 /// `TESFaction * GetFactionOwner(IVirtualMachine * vm, uint stackId, TESObjectREFR * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__object_reference__get_faction_owner(vm: *mut c_void, stackId: u32, self_: *mut classes::TESObjectREFR) -> *mut classes::TESFaction { unsafe { function!(56171, (*mut c_void, u32, *mut classes::TESObjectREFR) -> *mut classes::TESFaction)(vm, stackId, self_) } }
+pub unsafe fn papyrus__object_reference__get_faction_owner(vm: *mut c_void, stackId: u32, self_: *mut crate::TESObjectREFR) -> *mut crate::TESFaction { unsafe { function!(56171, (*mut c_void, u32, *mut crate::TESObjectREFR) -> *mut crate::TESFaction)(vm, stackId, self_) } }
 /// `Papyrus::ObjectReference::GetHeadingAngle` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56172, rva 0xa45bc0).
 /// `float GetHeadingAngle(IVirtualMachine * vm, uint stackId, TESObjectREFR * self, TESObjectREFR * a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__object_reference__get_heading_angle(vm: *mut c_void, stackId: u32, self_: *mut classes::TESObjectREFR, a0: *mut classes::TESObjectREFR) -> f32 { unsafe { function!(56172, (*mut c_void, u32, *mut classes::TESObjectREFR, *mut classes::TESObjectREFR) -> f32)(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__object_reference__get_heading_angle(vm: *mut c_void, stackId: u32, self_: *mut crate::TESObjectREFR, a0: *mut crate::TESObjectREFR) -> f32 { unsafe { function!(56172, (*mut c_void, u32, *mut crate::TESObjectREFR, *mut crate::TESObjectREFR) -> f32)(vm, stackId, self_, a0) } }
 /// `Papyrus::ObjectReference::GetHeight` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56182, rva 0xa45df0).
 /// `float GetHeight(IVirtualMachine * vm, uint stackId, TESObjectREFR * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__object_reference__get_height(vm: *mut c_void, stackId: u32, self_: *mut classes::TESObjectREFR) -> f32 { unsafe { function!(56182, (*mut c_void, u32, *mut classes::TESObjectREFR) -> f32)(vm, stackId, self_) } }
+pub unsafe fn papyrus__object_reference__get_height(vm: *mut c_void, stackId: u32, self_: *mut crate::TESObjectREFR) -> f32 { unsafe { function!(56182, (*mut c_void, u32, *mut crate::TESObjectREFR) -> f32)(vm, stackId, self_) } }
 /// `Papyrus::ObjectReference::GetItemCount` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56173, rva 0xa45ca0).
 /// `uint GetItemCount(IVirtualMachine * vm, uint stackId, TESObjectREFR * self, TESForm * a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__object_reference__get_item_count(vm: *mut c_void, stackId: u32, self_: *mut classes::TESObjectREFR, a0: *mut classes::TESForm) -> u32 { unsafe { function!(56173, (*mut c_void, u32, *mut classes::TESObjectREFR, *mut classes::TESForm) -> u32)(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__object_reference__get_item_count(vm: *mut c_void, stackId: u32, self_: *mut crate::TESObjectREFR, a0: *mut crate::TESForm) -> u32 { unsafe { function!(56173, (*mut c_void, u32, *mut crate::TESObjectREFR, *mut crate::TESForm) -> u32)(vm, stackId, self_, a0) } }
 /// `Papyrus::ObjectReference::GetItemHealthPercent` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56630, rva 0xa5d6c0).
 /// `float GetItemHealthPercent(IVirtualMachine * vm, uint stackId, TESObjectREFR * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__object_reference__get_item_health_percent(vm: *mut c_void, stackId: u32, self_: *mut classes::TESObjectREFR) -> f32 { unsafe { function!(56630, (*mut c_void, u32, *mut classes::TESObjectREFR) -> f32)(vm, stackId, self_) } }
+pub unsafe fn papyrus__object_reference__get_item_health_percent(vm: *mut c_void, stackId: u32, self_: *mut crate::TESObjectREFR) -> f32 { unsafe { function!(56630, (*mut c_void, u32, *mut crate::TESObjectREFR) -> f32)(vm, stackId, self_) } }
 /// `Papyrus::ObjectReference::GetKey` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56174, rva 0xa45cc0).
 /// `TESKey * GetKey(IVirtualMachine * vm, uint stackId, TESObjectREFR * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__object_reference__get_key(vm: *mut c_void, stackId: u32, self_: *mut classes::TESObjectREFR) -> *mut classes::TESKey { unsafe { function!(56174, (*mut c_void, u32, *mut classes::TESObjectREFR) -> *mut classes::TESKey)(vm, stackId, self_) } }
+pub unsafe fn papyrus__object_reference__get_key(vm: *mut c_void, stackId: u32, self_: *mut crate::TESObjectREFR) -> *mut crate::TESKey { unsafe { function!(56174, (*mut c_void, u32, *mut crate::TESObjectREFR) -> *mut crate::TESKey)(vm, stackId, self_) } }
 /// `Papyrus::ObjectReference::GetLength` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56183, rva 0xa45e40).
 /// `float GetLength(IVirtualMachine * vm, uint stackId, TESObjectREFR * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__object_reference__get_length(vm: *mut c_void, stackId: u32, self_: *mut classes::TESObjectREFR) -> f32 { unsafe { function!(56183, (*mut c_void, u32, *mut classes::TESObjectREFR) -> f32)(vm, stackId, self_) } }
+pub unsafe fn papyrus__object_reference__get_length(vm: *mut c_void, stackId: u32, self_: *mut crate::TESObjectREFR) -> f32 { unsafe { function!(56183, (*mut c_void, u32, *mut crate::TESObjectREFR) -> f32)(vm, stackId, self_) } }
 /// `Papyrus::ObjectReference::GetLinkedRef` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56631, rva 0xa5d6d0).
 /// `TESObjectREFR * GetLinkedRef(IVirtualMachine * vm, uint stackId, TESObjectREFR * self, BGSKeyword * a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__object_reference__get_linked_ref(vm: *mut c_void, stackId: u32, self_: *mut classes::TESObjectREFR, a0: *mut classes::BGSKeyword) -> *mut classes::TESObjectREFR { unsafe { function!(56631, (*mut c_void, u32, *mut classes::TESObjectREFR, *mut classes::BGSKeyword) -> *mut classes::TESObjectREFR)(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__object_reference__get_linked_ref(vm: *mut c_void, stackId: u32, self_: *mut crate::TESObjectREFR, a0: *mut crate::BGSKeyword) -> *mut crate::TESObjectREFR { unsafe { function!(56631, (*mut c_void, u32, *mut crate::TESObjectREFR, *mut crate::BGSKeyword) -> *mut crate::TESObjectREFR)(vm, stackId, self_, a0) } }
 /// `Papyrus::ObjectReference::GetLockLevel` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56175, rva 0xa45cf0).
 /// `int GetLockLevel(IVirtualMachine * vm, uint stackId, TESObjectREFR * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__object_reference__get_lock_level(vm: *mut c_void, stackId: u32, self_: *mut classes::TESObjectREFR) -> i32 { unsafe { function!(56175, (*mut c_void, u32, *mut classes::TESObjectREFR) -> i32)(vm, stackId, self_) } }
+pub unsafe fn papyrus__object_reference__get_lock_level(vm: *mut c_void, stackId: u32, self_: *mut crate::TESObjectREFR) -> i32 { unsafe { function!(56175, (*mut c_void, u32, *mut crate::TESObjectREFR) -> i32)(vm, stackId, self_) } }
 /// `Papyrus::ObjectReference::GetMass` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56176, rva 0xa45d30).
 /// `float GetMass(IVirtualMachine * vm, uint stackId, TESObjectREFR * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__object_reference__get_mass(vm: *mut c_void, stackId: u32, self_: *mut classes::TESObjectREFR) -> f32 { unsafe { function!(56176, (*mut c_void, u32, *mut classes::TESObjectREFR) -> f32)(vm, stackId, self_) } }
+pub unsafe fn papyrus__object_reference__get_mass(vm: *mut c_void, stackId: u32, self_: *mut crate::TESObjectREFR) -> f32 { unsafe { function!(56176, (*mut c_void, u32, *mut crate::TESObjectREFR) -> f32)(vm, stackId, self_) } }
 /// `Papyrus::ObjectReference::GetNthLinkedRef` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56244, rva 0xa4a590).
 /// `TESObjectREFR * GetNthLinkedRef(IVirtualMachine * vm, uint stackId, TESObjectREFR * self, int a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__object_reference__get_nth_linked_ref(vm: *mut c_void, stackId: u32, self_: *mut classes::TESObjectREFR, a0: i32) -> *mut classes::TESObjectREFR { unsafe { function!(56244, (*mut c_void, u32, *mut classes::TESObjectREFR, i32) -> *mut classes::TESObjectREFR)(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__object_reference__get_nth_linked_ref(vm: *mut c_void, stackId: u32, self_: *mut crate::TESObjectREFR, a0: i32) -> *mut crate::TESObjectREFR { unsafe { function!(56244, (*mut c_void, u32, *mut crate::TESObjectREFR, i32) -> *mut crate::TESObjectREFR)(vm, stackId, self_, a0) } }
 /// `Papyrus::ObjectReference::GetOpenState` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56177, rva 0xa45d60).
 /// `uint GetOpenState(IVirtualMachine * vm, uint stackId, TESObjectREFR * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__object_reference__get_open_state(vm: *mut c_void, stackId: u32, self_: *mut classes::TESObjectREFR) -> u32 { unsafe { function!(56177, (*mut c_void, u32, *mut classes::TESObjectREFR) -> u32)(vm, stackId, self_) } }
+pub unsafe fn papyrus__object_reference__get_open_state(vm: *mut c_void, stackId: u32, self_: *mut crate::TESObjectREFR) -> u32 { unsafe { function!(56177, (*mut c_void, u32, *mut crate::TESObjectREFR) -> u32)(vm, stackId, self_) } }
 /// `Papyrus::ObjectReference::GetParentCell` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56632, rva 0xa5d6e0).
 /// `TESObjectCELL * GetParentCell(IVirtualMachine * vm, uint stackId, TESObjectREFR * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__object_reference__get_parent_cell(vm: *mut c_void, stackId: u32, self_: *mut classes::TESObjectREFR) -> *mut classes::TESObjectCELL { unsafe { function!(56632, (*mut c_void, u32, *mut classes::TESObjectREFR) -> *mut classes::TESObjectCELL)(vm, stackId, self_) } }
+pub unsafe fn papyrus__object_reference__get_parent_cell(vm: *mut c_void, stackId: u32, self_: *mut crate::TESObjectREFR) -> *mut crate::TESObjectCELL { unsafe { function!(56632, (*mut c_void, u32, *mut crate::TESObjectREFR) -> *mut crate::TESObjectCELL)(vm, stackId, self_) } }
 /// `Papyrus::ObjectReference::GetPositionX` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56178, rva 0xa45d70).
 /// `float GetPositionX(IVirtualMachine * vm, uint stackId, TESObjectREFR * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__object_reference__get_position_x(vm: *mut c_void, stackId: u32, self_: *mut classes::TESObjectREFR) -> f32 { unsafe { function!(56178, (*mut c_void, u32, *mut classes::TESObjectREFR) -> f32)(vm, stackId, self_) } }
+pub unsafe fn papyrus__object_reference__get_position_x(vm: *mut c_void, stackId: u32, self_: *mut crate::TESObjectREFR) -> f32 { unsafe { function!(56178, (*mut c_void, u32, *mut crate::TESObjectREFR) -> f32)(vm, stackId, self_) } }
 /// `Papyrus::ObjectReference::GetPositionY` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56179, rva 0xa45d80).
 /// `float GetPositionY(IVirtualMachine * vm, uint stackId, TESObjectREFR * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__object_reference__get_position_y(vm: *mut c_void, stackId: u32, self_: *mut classes::TESObjectREFR) -> f32 { unsafe { function!(56179, (*mut c_void, u32, *mut classes::TESObjectREFR) -> f32)(vm, stackId, self_) } }
+pub unsafe fn papyrus__object_reference__get_position_y(vm: *mut c_void, stackId: u32, self_: *mut crate::TESObjectREFR) -> f32 { unsafe { function!(56179, (*mut c_void, u32, *mut crate::TESObjectREFR) -> f32)(vm, stackId, self_) } }
 /// `Papyrus::ObjectReference::GetPositionZ` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56180, rva 0xa45d90).
 /// `float GetPositionZ(IVirtualMachine * vm, uint stackId, TESObjectREFR * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__object_reference__get_position_z(vm: *mut c_void, stackId: u32, self_: *mut classes::TESObjectREFR) -> f32 { unsafe { function!(56180, (*mut c_void, u32, *mut classes::TESObjectREFR) -> f32)(vm, stackId, self_) } }
+pub unsafe fn papyrus__object_reference__get_position_z(vm: *mut c_void, stackId: u32, self_: *mut crate::TESObjectREFR) -> f32 { unsafe { function!(56180, (*mut c_void, u32, *mut crate::TESObjectREFR) -> f32)(vm, stackId, self_) } }
 /// `Papyrus::ObjectReference::GetScale` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56633, rva 0xa5d6f0).
 /// `float GetScale(IVirtualMachine * vm, uint stackId, TESObjectREFR * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__object_reference__get_scale(vm: *mut c_void, stackId: u32, self_: *mut classes::TESObjectREFR) -> f32 { unsafe { function!(56633, (*mut c_void, u32, *mut classes::TESObjectREFR) -> f32)(vm, stackId, self_) } }
+pub unsafe fn papyrus__object_reference__get_scale(vm: *mut c_void, stackId: u32, self_: *mut crate::TESObjectREFR) -> f32 { unsafe { function!(56633, (*mut c_void, u32, *mut crate::TESObjectREFR) -> f32)(vm, stackId, self_) } }
 /// `Papyrus::ObjectReference::GetTriggerObjectCount` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56634, rva 0xa5d700).
 /// `uint GetTriggerObjectCount(IVirtualMachine * vm, uint stackId, TESObjectREFR * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__object_reference__get_trigger_object_count(vm: *mut c_void, stackId: u32, self_: *mut classes::TESObjectREFR) -> u32 { unsafe { function!(56634, (*mut c_void, u32, *mut classes::TESObjectREFR) -> u32)(vm, stackId, self_) } }
+pub unsafe fn papyrus__object_reference__get_trigger_object_count(vm: *mut c_void, stackId: u32, self_: *mut crate::TESObjectREFR) -> u32 { unsafe { function!(56634, (*mut c_void, u32, *mut crate::TESObjectREFR) -> u32)(vm, stackId, self_) } }
 /// `Papyrus::ObjectReference::GetVoiceType` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56635, rva 0xa5d710).
 /// `BGSVoiceType * GetVoiceType(IVirtualMachine * vm, uint stackId, TESObjectREFR * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__object_reference__get_voice_type(vm: *mut c_void, stackId: u32, self_: *mut classes::TESObjectREFR) -> *mut classes::BGSVoiceType { unsafe { function!(56635, (*mut c_void, u32, *mut classes::TESObjectREFR) -> *mut classes::BGSVoiceType)(vm, stackId, self_) } }
+pub unsafe fn papyrus__object_reference__get_voice_type(vm: *mut c_void, stackId: u32, self_: *mut crate::TESObjectREFR) -> *mut crate::BGSVoiceType { unsafe { function!(56635, (*mut c_void, u32, *mut crate::TESObjectREFR) -> *mut crate::BGSVoiceType)(vm, stackId, self_) } }
 /// `Papyrus::ObjectReference::GetWidth` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56181, rva 0xa45da0).
 /// `float GetWidth(IVirtualMachine * vm, uint stackId, TESObjectREFR * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__object_reference__get_width(vm: *mut c_void, stackId: u32, self_: *mut classes::TESObjectREFR) -> f32 { unsafe { function!(56181, (*mut c_void, u32, *mut classes::TESObjectREFR) -> f32)(vm, stackId, self_) } }
+pub unsafe fn papyrus__object_reference__get_width(vm: *mut c_void, stackId: u32, self_: *mut crate::TESObjectREFR) -> f32 { unsafe { function!(56181, (*mut c_void, u32, *mut crate::TESObjectREFR) -> f32)(vm, stackId, self_) } }
 /// `Papyrus::ObjectReference::GetWorldSpace` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56636, rva 0xa5d720).
 /// `TESWorldSpace * GetWorldSpace(IVirtualMachine * vm, uint stackId, TESObjectREFR * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__object_reference__get_world_space(vm: *mut c_void, stackId: u32, self_: *mut classes::TESObjectREFR) -> *mut classes::TESWorldSpace { unsafe { function!(56636, (*mut c_void, u32, *mut classes::TESObjectREFR) -> *mut classes::TESWorldSpace)(vm, stackId, self_) } }
+pub unsafe fn papyrus__object_reference__get_world_space(vm: *mut c_void, stackId: u32, self_: *mut crate::TESObjectREFR) -> *mut crate::TESWorldSpace { unsafe { function!(56636, (*mut c_void, u32, *mut crate::TESObjectREFR) -> *mut crate::TESWorldSpace)(vm, stackId, self_) } }
 /// `Papyrus::ObjectReference::HasEffectKeyword` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56637, rva 0xa5d730).
 /// `bool HasEffectKeyword(IVirtualMachine * vm, uint stackId, TESObjectREFR * self, BGSKeyword * a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__object_reference__has_effect_keyword(vm: *mut c_void, stackId: u32, self_: *mut classes::TESObjectREFR, a0: *mut classes::BGSKeyword) -> u8 { unsafe { function!(56637, (*mut c_void, u32, *mut classes::TESObjectREFR, *mut classes::BGSKeyword) -> u8)(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__object_reference__has_effect_keyword(vm: *mut c_void, stackId: u32, self_: *mut crate::TESObjectREFR, a0: *mut crate::BGSKeyword) -> u8 { unsafe { function!(56637, (*mut c_void, u32, *mut crate::TESObjectREFR, *mut crate::BGSKeyword) -> u8)(vm, stackId, self_, a0) } }
 /// `Papyrus::ObjectReference::HasNode` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56184, rva 0xa45e90).
 /// `bool HasNode(IVirtualMachine * vm, uint stackId, TESObjectREFR * self, BSFixedString * a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__object_reference__has_node(vm: *mut c_void, stackId: u32, self_: *mut classes::TESObjectREFR, a0: *mut classes::BSFixedString) -> u8 { unsafe { function!(56184, (*mut c_void, u32, *mut classes::TESObjectREFR, *mut classes::BSFixedString) -> u8)(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__object_reference__has_node(vm: *mut c_void, stackId: u32, self_: *mut crate::TESObjectREFR, a0: *mut crate::BSFixedString) -> u8 { unsafe { function!(56184, (*mut c_void, u32, *mut crate::TESObjectREFR, *mut crate::BSFixedString) -> u8)(vm, stackId, self_, a0) } }
 /// `Papyrus::ObjectReference::HasRefType` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56185, rva 0xa45f10).
 /// `bool HasRefType(IVirtualMachine * vm, uint stackId, TESObjectREFR * self, BGSLocationRefType * a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__object_reference__has_ref_type(vm: *mut c_void, stackId: u32, self_: *mut classes::TESObjectREFR, a0: *mut classes::BGSLocationRefType) -> u8 { unsafe { function!(56185, (*mut c_void, u32, *mut classes::TESObjectREFR, *mut classes::BGSLocationRefType) -> u8)(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__object_reference__has_ref_type(vm: *mut c_void, stackId: u32, self_: *mut crate::TESObjectREFR, a0: *mut crate::BGSLocationRefType) -> u8 { unsafe { function!(56185, (*mut c_void, u32, *mut crate::TESObjectREFR, *mut crate::BGSLocationRefType) -> u8)(vm, stackId, self_, a0) } }
 /// `Papyrus::ObjectReference::IgnoreFriendlyHits` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56186, rva 0xa45f60).
 /// `void IgnoreFriendlyHits(IVirtualMachine * vm, uint stackId, TESObjectREFR * self, bool a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__object_reference__ignore_friendly_hits(vm: *mut c_void, stackId: u32, self_: *mut classes::TESObjectREFR, a0: u8) { unsafe { function!(56186, (*mut c_void, u32, *mut classes::TESObjectREFR, u8))(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__object_reference__ignore_friendly_hits(vm: *mut c_void, stackId: u32, self_: *mut crate::TESObjectREFR, a0: u8) { unsafe { function!(56186, (*mut c_void, u32, *mut crate::TESObjectREFR, u8))(vm, stackId, self_, a0) } }
 /// `Papyrus::ObjectReference::InterruptCast` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56187, rva 0xa45f90).
 /// `void InterruptCast(IVirtualMachine * vm, uint stackId, TESObjectREFR * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__object_reference__interrupt_cast(vm: *mut c_void, stackId: u32, self_: *mut classes::TESObjectREFR) { unsafe { function!(56187, (*mut c_void, u32, *mut classes::TESObjectREFR))(vm, stackId, self_) } }
+pub unsafe fn papyrus__object_reference__interrupt_cast(vm: *mut c_void, stackId: u32, self_: *mut crate::TESObjectREFR) { unsafe { function!(56187, (*mut c_void, u32, *mut crate::TESObjectREFR))(vm, stackId, self_) } }
 /// `Papyrus::ObjectReference::Is3DLoaded` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56188, rva 0xa45ff0).
 /// `bool Is3DLoaded(IVirtualMachine * vm, uint stackId, TESObjectREFR * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__object_reference__is3_d_loaded(vm: *mut c_void, stackId: u32, self_: *mut classes::TESObjectREFR) -> u8 { unsafe { function!(56188, (*mut c_void, u32, *mut classes::TESObjectREFR) -> u8)(vm, stackId, self_) } }
+pub unsafe fn papyrus__object_reference__is3_d_loaded(vm: *mut c_void, stackId: u32, self_: *mut crate::TESObjectREFR) -> u8 { unsafe { function!(56188, (*mut c_void, u32, *mut crate::TESObjectREFR) -> u8)(vm, stackId, self_) } }
 /// `Papyrus::ObjectReference::IsActivateChild` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56189, rva 0xa46020).
 /// `bool IsActivateChild(IVirtualMachine * vm, uint stackId, TESObjectREFR * self, TESObjectREFR * a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__object_reference__is_activate_child(vm: *mut c_void, stackId: u32, self_: *mut classes::TESObjectREFR, a0: *mut classes::TESObjectREFR) -> u8 { unsafe { function!(56189, (*mut c_void, u32, *mut classes::TESObjectREFR, *mut classes::TESObjectREFR) -> u8)(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__object_reference__is_activate_child(vm: *mut c_void, stackId: u32, self_: *mut crate::TESObjectREFR, a0: *mut crate::TESObjectREFR) -> u8 { unsafe { function!(56189, (*mut c_void, u32, *mut crate::TESObjectREFR, *mut crate::TESObjectREFR) -> u8)(vm, stackId, self_, a0) } }
 /// `Papyrus::ObjectReference::IsActivationBlocked` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56191, rva 0xa46040).
 /// `bool IsActivationBlocked(IVirtualMachine * vm, uint stackId, TESObjectREFR * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__object_reference__is_activation_blocked(vm: *mut c_void, stackId: u32, self_: *mut classes::TESObjectREFR) -> u8 { unsafe { function!(56191, (*mut c_void, u32, *mut classes::TESObjectREFR) -> u8)(vm, stackId, self_) } }
+pub unsafe fn papyrus__object_reference__is_activation_blocked(vm: *mut c_void, stackId: u32, self_: *mut crate::TESObjectREFR) -> u8 { unsafe { function!(56191, (*mut c_void, u32, *mut crate::TESObjectREFR) -> u8)(vm, stackId, self_) } }
 /// `Papyrus::ObjectReference::IsContainerEmpty` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 442743, rva 0xa46060).
 /// `bool IsContainerEmpty(IVirtualMachine * vm, uint stackId, TESObjectREFR * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__object_reference__is_container_empty(vm: *mut c_void, stackId: u32, self_: *mut classes::TESObjectREFR) -> u8 { unsafe { function!(442743, (*mut c_void, u32, *mut classes::TESObjectREFR) -> u8)(vm, stackId, self_) } }
+pub unsafe fn papyrus__object_reference__is_container_empty(vm: *mut c_void, stackId: u32, self_: *mut crate::TESObjectREFR) -> u8 { unsafe { function!(442743, (*mut c_void, u32, *mut crate::TESObjectREFR) -> u8)(vm, stackId, self_) } }
 /// `Papyrus::ObjectReference::IsDeleted` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56638, rva 0xa5d740).
 /// `bool IsDeleted(IVirtualMachine * vm, uint stackId, TESObjectREFR * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__object_reference__is_deleted(vm: *mut c_void, stackId: u32, self_: *mut classes::TESObjectREFR) -> u8 { unsafe { function!(56638, (*mut c_void, u32, *mut classes::TESObjectREFR) -> u8)(vm, stackId, self_) } }
+pub unsafe fn papyrus__object_reference__is_deleted(vm: *mut c_void, stackId: u32, self_: *mut crate::TESObjectREFR) -> u8 { unsafe { function!(56638, (*mut c_void, u32, *mut crate::TESObjectREFR) -> u8)(vm, stackId, self_) } }
 /// `Papyrus::ObjectReference::IsDisabled` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56639, rva 0xa5d750).
 /// `bool IsDisabled(IVirtualMachine * vm, uint stackId, TESObjectREFR * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__object_reference__is_disabled(vm: *mut c_void, stackId: u32, self_: *mut classes::TESObjectREFR) -> u8 { unsafe { function!(56639, (*mut c_void, u32, *mut classes::TESObjectREFR) -> u8)(vm, stackId, self_) } }
+pub unsafe fn papyrus__object_reference__is_disabled(vm: *mut c_void, stackId: u32, self_: *mut crate::TESObjectREFR) -> u8 { unsafe { function!(56639, (*mut c_void, u32, *mut crate::TESObjectREFR) -> u8)(vm, stackId, self_) } }
 /// `Papyrus::ObjectReference::IsFurnitureInUse` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56192, rva 0xa46090).
 /// `bool IsFurnitureInUse(IVirtualMachine * vm, uint stackId, TESObjectREFR * self, bool a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__object_reference__is_furniture_in_use(vm: *mut c_void, stackId: u32, self_: *mut classes::TESObjectREFR, a0: u8) -> u8 { unsafe { function!(56192, (*mut c_void, u32, *mut classes::TESObjectREFR, u8) -> u8)(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__object_reference__is_furniture_in_use(vm: *mut c_void, stackId: u32, self_: *mut crate::TESObjectREFR, a0: u8) -> u8 { unsafe { function!(56192, (*mut c_void, u32, *mut crate::TESObjectREFR, u8) -> u8)(vm, stackId, self_, a0) } }
 /// `Papyrus::ObjectReference::IsFurnitureMarkerInUse` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56193, rva 0xa461f0).
 /// `bool IsFurnitureMarkerInUse(IVirtualMachine * vm, uint stackId, TESObjectREFR * self, uint a0, bool a1)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__object_reference__is_furniture_marker_in_use(vm: *mut c_void, stackId: u32, self_: *mut classes::TESObjectREFR, a0: u32, a1: u8) -> u8 { unsafe { function!(56193, (*mut c_void, u32, *mut classes::TESObjectREFR, u32, u8) -> u8)(vm, stackId, self_, a0, a1) } }
+pub unsafe fn papyrus__object_reference__is_furniture_marker_in_use(vm: *mut c_void, stackId: u32, self_: *mut crate::TESObjectREFR, a0: u32, a1: u8) -> u8 { unsafe { function!(56193, (*mut c_void, u32, *mut crate::TESObjectREFR, u32, u8) -> u8)(vm, stackId, self_, a0, a1) } }
 /// `Papyrus::ObjectReference::IsIgnoringFriendlyHits` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56640, rva 0xa5d760).
 /// `bool IsIgnoringFriendlyHits(IVirtualMachine * vm, uint stackId, TESObjectREFR * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__object_reference__is_ignoring_friendly_hits(vm: *mut c_void, stackId: u32, self_: *mut classes::TESObjectREFR) -> u8 { unsafe { function!(56640, (*mut c_void, u32, *mut classes::TESObjectREFR) -> u8)(vm, stackId, self_) } }
+pub unsafe fn papyrus__object_reference__is_ignoring_friendly_hits(vm: *mut c_void, stackId: u32, self_: *mut crate::TESObjectREFR) -> u8 { unsafe { function!(56640, (*mut c_void, u32, *mut crate::TESObjectREFR) -> u8)(vm, stackId, self_) } }
 /// `Papyrus::ObjectReference::IsInDialogueWithPlayer` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56194, rva 0xa46240).
 /// `bool IsInDialogueWithPlayer(IVirtualMachine * vm, uint stackId, TESObjectREFR * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__object_reference__is_in_dialogue_with_player(vm: *mut c_void, stackId: u32, self_: *mut classes::TESObjectREFR) -> u8 { unsafe { function!(56194, (*mut c_void, u32, *mut classes::TESObjectREFR) -> u8)(vm, stackId, self_) } }
+pub unsafe fn papyrus__object_reference__is_in_dialogue_with_player(vm: *mut c_void, stackId: u32, self_: *mut crate::TESObjectREFR) -> u8 { unsafe { function!(56194, (*mut c_void, u32, *mut crate::TESObjectREFR) -> u8)(vm, stackId, self_) } }
 /// `Papyrus::ObjectReference::IsLockBroken` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56195, rva 0xa462a0).
 /// `bool IsLockBroken(IVirtualMachine * vm, uint stackId, TESObjectREFR * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__object_reference__is_lock_broken(vm: *mut c_void, stackId: u32, self_: *mut classes::TESObjectREFR) -> u8 { unsafe { function!(56195, (*mut c_void, u32, *mut classes::TESObjectREFR) -> u8)(vm, stackId, self_) } }
+pub unsafe fn papyrus__object_reference__is_lock_broken(vm: *mut c_void, stackId: u32, self_: *mut crate::TESObjectREFR) -> u8 { unsafe { function!(56195, (*mut c_void, u32, *mut crate::TESObjectREFR) -> u8)(vm, stackId, self_) } }
 /// `Papyrus::ObjectReference::IsLocked` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56196, rva 0xa462d0).
 /// `bool IsLocked(IVirtualMachine * vm, uint stackId, TESObjectREFR * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__object_reference__is_locked(vm: *mut c_void, stackId: u32, self_: *mut classes::TESObjectREFR) -> u8 { unsafe { function!(56196, (*mut c_void, u32, *mut classes::TESObjectREFR) -> u8)(vm, stackId, self_) } }
+pub unsafe fn papyrus__object_reference__is_locked(vm: *mut c_void, stackId: u32, self_: *mut crate::TESObjectREFR) -> u8 { unsafe { function!(56196, (*mut c_void, u32, *mut crate::TESObjectREFR) -> u8)(vm, stackId, self_) } }
 /// `Papyrus::ObjectReference::IsMapMarkerVisible` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56197, rva 0xa46300).
 /// `bool IsMapMarkerVisible(IVirtualMachine * vm, uint stackId, TESObjectREFR * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__object_reference__is_map_marker_visible(vm: *mut c_void, stackId: u32, self_: *mut classes::TESObjectREFR) -> u8 { unsafe { function!(56197, (*mut c_void, u32, *mut classes::TESObjectREFR) -> u8)(vm, stackId, self_) } }
+pub unsafe fn papyrus__object_reference__is_map_marker_visible(vm: *mut c_void, stackId: u32, self_: *mut crate::TESObjectREFR) -> u8 { unsafe { function!(56197, (*mut c_void, u32, *mut crate::TESObjectREFR) -> u8)(vm, stackId, self_) } }
 /// `Papyrus::ObjectReference::KnockAreaEffect` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56236, rva 0xa49760).
 /// `void KnockAreaEffect(IVirtualMachine * vm, uint stackId, TESObjectREFR * self, float a0, float a1)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__object_reference__knock_area_effect(vm: *mut c_void, stackId: u32, self_: *mut classes::TESObjectREFR, a0: f32, a1: f32) { unsafe { function!(56236, (*mut c_void, u32, *mut classes::TESObjectREFR, f32, f32))(vm, stackId, self_, a0, a1) } }
+pub unsafe fn papyrus__object_reference__knock_area_effect(vm: *mut c_void, stackId: u32, self_: *mut crate::TESObjectREFR, a0: f32, a1: f32) { unsafe { function!(56236, (*mut c_void, u32, *mut crate::TESObjectREFR, f32, f32))(vm, stackId, self_, a0, a1) } }
 /// `Papyrus::ObjectReference::Lock` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56198, rva 0xa46370).
 /// `void Lock(IVirtualMachine * vm, uint stackId, TESObjectREFR * self, bool a0, bool a1)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__object_reference__lock(vm: *mut c_void, stackId: u32, self_: *mut classes::TESObjectREFR, a0: u8, a1: u8) { unsafe { function!(56198, (*mut c_void, u32, *mut classes::TESObjectREFR, u8, u8))(vm, stackId, self_, a0, a1) } }
+pub unsafe fn papyrus__object_reference__lock(vm: *mut c_void, stackId: u32, self_: *mut crate::TESObjectREFR, a0: u8, a1: u8) { unsafe { function!(56198, (*mut c_void, u32, *mut crate::TESObjectREFR, u8, u8))(vm, stackId, self_, a0, a1) } }
 /// `Papyrus::ObjectReference::MoveTo` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56199, rva 0xa46420).
 /// `bool MoveTo(IVirtualMachine * vm, uint stackId, TESObjectREFR * self, TESObjectREFR * a0, float a1, float a2, float a3, bool a4)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__object_reference__move_to(vm: *mut c_void, stackId: u32, self_: *mut classes::TESObjectREFR, a0: *mut classes::TESObjectREFR, a1: f32, a2: f32, a3: f32, a4: u8) -> u8 { unsafe { function!(56199, (*mut c_void, u32, *mut classes::TESObjectREFR, *mut classes::TESObjectREFR, f32, f32, f32, u8) -> u8)(vm, stackId, self_, a0, a1, a2, a3, a4) } }
+pub unsafe fn papyrus__object_reference__move_to(vm: *mut c_void, stackId: u32, self_: *mut crate::TESObjectREFR, a0: *mut crate::TESObjectREFR, a1: f32, a2: f32, a3: f32, a4: u8) -> u8 { unsafe { function!(56199, (*mut c_void, u32, *mut crate::TESObjectREFR, *mut crate::TESObjectREFR, f32, f32, f32, u8) -> u8)(vm, stackId, self_, a0, a1, a2, a3, a4) } }
 /// `Papyrus::ObjectReference::MoveToMyEditorLocation` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56201, rva 0xa46950).
 /// `bool MoveToMyEditorLocation(IVirtualMachine * vm, uint stackId, TESObjectREFR * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__object_reference__move_to_my_editor_location(vm: *mut c_void, stackId: u32, self_: *mut classes::TESObjectREFR) -> u8 { unsafe { function!(56201, (*mut c_void, u32, *mut classes::TESObjectREFR) -> u8)(vm, stackId, self_) } }
+pub unsafe fn papyrus__object_reference__move_to_my_editor_location(vm: *mut c_void, stackId: u32, self_: *mut crate::TESObjectREFR) -> u8 { unsafe { function!(56201, (*mut c_void, u32, *mut crate::TESObjectREFR) -> u8)(vm, stackId, self_) } }
 /// `Papyrus::ObjectReference::MoveToNode` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56202, rva 0xa46af0).
 /// `bool MoveToNode(IVirtualMachine * vm, uint stackId, TESObjectREFR * self, TESObjectREFR * a0, BSFixedString * a1)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__object_reference__move_to_node(vm: *mut c_void, stackId: u32, self_: *mut classes::TESObjectREFR, a0: *mut classes::TESObjectREFR, a1: *mut classes::BSFixedString) -> u8 { unsafe { function!(56202, (*mut c_void, u32, *mut classes::TESObjectREFR, *mut classes::TESObjectREFR, *mut classes::BSFixedString) -> u8)(vm, stackId, self_, a0, a1) } }
+pub unsafe fn papyrus__object_reference__move_to_node(vm: *mut c_void, stackId: u32, self_: *mut crate::TESObjectREFR, a0: *mut crate::TESObjectREFR, a1: *mut crate::BSFixedString) -> u8 { unsafe { function!(56202, (*mut c_void, u32, *mut crate::TESObjectREFR, *mut crate::TESObjectREFR, *mut crate::BSFixedString) -> u8)(vm, stackId, self_, a0, a1) } }
 /// `Papyrus::ObjectReference::PlaceActorAtMe` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56204, rva 0xa47180).
 /// `Actor * PlaceActorAtMe(IVirtualMachine * vm, uint stackId, TESObjectREFR * self, TESNPC * a0, uint a1, BGSEncounterZone * a2)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__object_reference__place_actor_at_me(vm: *mut c_void, stackId: u32, self_: *mut classes::TESObjectREFR, a0: *mut classes::TESNPC, a1: u32, a2: *mut classes::BGSEncounterZone) -> *mut classes::Actor { unsafe { function!(56204, (*mut c_void, u32, *mut classes::TESObjectREFR, *mut classes::TESNPC, u32, *mut classes::BGSEncounterZone) -> *mut classes::Actor)(vm, stackId, self_, a0, a1, a2) } }
+pub unsafe fn papyrus__object_reference__place_actor_at_me(vm: *mut c_void, stackId: u32, self_: *mut crate::TESObjectREFR, a0: *mut crate::TESNPC, a1: u32, a2: *mut crate::BGSEncounterZone) -> *mut crate::Actor { unsafe { function!(56204, (*mut c_void, u32, *mut crate::TESObjectREFR, *mut crate::TESNPC, u32, *mut crate::BGSEncounterZone) -> *mut crate::Actor)(vm, stackId, self_, a0, a1, a2) } }
 /// `Papyrus::ObjectReference::PlaceAtMe` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56203, rva 0xa46de0).
 /// `TESObjectREFR * PlaceAtMe(IVirtualMachine * vm, uint stackId, TESObjectREFR * self, TESForm * a0, uint a1, bool a2, bool a3)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__object_reference__place_at_me(vm: *mut c_void, stackId: u32, self_: *mut classes::TESObjectREFR, a0: *mut classes::TESForm, a1: u32, a2: u8, a3: u8) -> *mut classes::TESObjectREFR { unsafe { function!(56203, (*mut c_void, u32, *mut classes::TESObjectREFR, *mut classes::TESForm, u32, u8, u8) -> *mut classes::TESObjectREFR)(vm, stackId, self_, a0, a1, a2, a3) } }
+pub unsafe fn papyrus__object_reference__place_at_me(vm: *mut c_void, stackId: u32, self_: *mut crate::TESObjectREFR, a0: *mut crate::TESForm, a1: u32, a2: u8, a3: u8) -> *mut crate::TESObjectREFR { unsafe { function!(56203, (*mut c_void, u32, *mut crate::TESObjectREFR, *mut crate::TESForm, u32, u8, u8) -> *mut crate::TESObjectREFR)(vm, stackId, self_, a0, a1, a2, a3) } }
 /// `Papyrus::ObjectReference::PlayAnimation` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56205, rva 0xa47370).
 /// `bool PlayAnimation(IVirtualMachine * vm, uint stackId, TESObjectREFR * self, BSFixedString * a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__object_reference__play_animation(vm: *mut c_void, stackId: u32, self_: *mut classes::TESObjectREFR, a0: *mut classes::BSFixedString) -> u8 { unsafe { function!(56205, (*mut c_void, u32, *mut classes::TESObjectREFR, *mut classes::BSFixedString) -> u8)(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__object_reference__play_animation(vm: *mut c_void, stackId: u32, self_: *mut crate::TESObjectREFR, a0: *mut crate::BSFixedString) -> u8 { unsafe { function!(56205, (*mut c_void, u32, *mut crate::TESObjectREFR, *mut crate::BSFixedString) -> u8)(vm, stackId, self_, a0) } }
 /// `Papyrus::ObjectReference::PlayAnimationAndWait` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56206, rva 0xa473f0).
 /// `bool PlayAnimationAndWait(IVirtualMachine * vm, uint stackId, TESObjectREFR * self, BSFixedString * a0, BSFixedString * a1)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__object_reference__play_animation_and_wait(vm: *mut c_void, stackId: u32, self_: *mut classes::TESObjectREFR, a0: *mut classes::BSFixedString, a1: *mut classes::BSFixedString) -> u8 { unsafe { function!(56206, (*mut c_void, u32, *mut classes::TESObjectREFR, *mut classes::BSFixedString, *mut classes::BSFixedString) -> u8)(vm, stackId, self_, a0, a1) } }
+pub unsafe fn papyrus__object_reference__play_animation_and_wait(vm: *mut c_void, stackId: u32, self_: *mut crate::TESObjectREFR, a0: *mut crate::BSFixedString, a1: *mut crate::BSFixedString) -> u8 { unsafe { function!(56206, (*mut c_void, u32, *mut crate::TESObjectREFR, *mut crate::BSFixedString, *mut crate::BSFixedString) -> u8)(vm, stackId, self_, a0, a1) } }
 /// `Papyrus::ObjectReference::PlayGamebryoAnimation` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56207, rva 0xa47580).
 /// `bool PlayGamebryoAnimation(IVirtualMachine * vm, uint stackId, TESObjectREFR * self, BSFixedString * a0, bool a1, float a2)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__object_reference__play_gamebryo_animation(vm: *mut c_void, stackId: u32, self_: *mut classes::TESObjectREFR, a0: *mut classes::BSFixedString, a1: u8, a2: f32) -> u8 { unsafe { function!(56207, (*mut c_void, u32, *mut classes::TESObjectREFR, *mut classes::BSFixedString, u8, f32) -> u8)(vm, stackId, self_, a0, a1, a2) } }
+pub unsafe fn papyrus__object_reference__play_gamebryo_animation(vm: *mut c_void, stackId: u32, self_: *mut crate::TESObjectREFR, a0: *mut crate::BSFixedString, a1: u8, a2: f32) -> u8 { unsafe { function!(56207, (*mut c_void, u32, *mut crate::TESObjectREFR, *mut crate::BSFixedString, u8, f32) -> u8)(vm, stackId, self_, a0, a1, a2) } }
 /// `Papyrus::ObjectReference::PlayImpactEffect` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56208, rva 0xa477c0).
 /// `bool PlayImpactEffect(IVirtualMachine * vm, uint stackId, TESObjectREFR * self, BGSImpactDataSet * a0, BSFixedString * a1, float a2, float a3, float a4, float a5, bool a6, bool a7)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__object_reference__play_impact_effect(vm: *mut c_void, stackId: u32, self_: *mut classes::TESObjectREFR, a0: *mut classes::BGSImpactDataSet, a1: *mut classes::BSFixedString, a2: f32, a3: f32, a4: f32, a5: f32, a6: u8, a7: u8) -> u8 { unsafe { function!(56208, (*mut c_void, u32, *mut classes::TESObjectREFR, *mut classes::BGSImpactDataSet, *mut classes::BSFixedString, f32, f32, f32, f32, u8, u8) -> u8)(vm, stackId, self_, a0, a1, a2, a3, a4, a5, a6, a7) } }
+pub unsafe fn papyrus__object_reference__play_impact_effect(vm: *mut c_void, stackId: u32, self_: *mut crate::TESObjectREFR, a0: *mut crate::BGSImpactDataSet, a1: *mut crate::BSFixedString, a2: f32, a3: f32, a4: f32, a5: f32, a6: u8, a7: u8) -> u8 { unsafe { function!(56208, (*mut c_void, u32, *mut crate::TESObjectREFR, *mut crate::BGSImpactDataSet, *mut crate::BSFixedString, f32, f32, f32, f32, u8, u8) -> u8)(vm, stackId, self_, a0, a1, a2, a3, a4, a5, a6, a7) } }
 /// `Papyrus::ObjectReference::PlaySyncedAnimationAndWaitSS` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56210, rva 0xa479f0).
 /// `bool PlaySyncedAnimationAndWaitSS(IVirtualMachine * vm, uint stackId, TESObjectREFR * self, BSFixedString * a0, BSFixedString * a1, TESObjectREFR * a2, BSFixedString * a3, BSFixedString * a4)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__object_reference__play_synced_animation_and_wait_ss(vm: *mut c_void, stackId: u32, self_: *mut classes::TESObjectREFR, a0: *mut classes::BSFixedString, a1: *mut classes::BSFixedString, a2: *mut classes::TESObjectREFR, a3: *mut classes::BSFixedString, a4: *mut classes::BSFixedString) -> u8 { unsafe { function!(56210, (*mut c_void, u32, *mut classes::TESObjectREFR, *mut classes::BSFixedString, *mut classes::BSFixedString, *mut classes::TESObjectREFR, *mut classes::BSFixedString, *mut classes::BSFixedString) -> u8)(vm, stackId, self_, a0, a1, a2, a3, a4) } }
+pub unsafe fn papyrus__object_reference__play_synced_animation_and_wait_ss(vm: *mut c_void, stackId: u32, self_: *mut crate::TESObjectREFR, a0: *mut crate::BSFixedString, a1: *mut crate::BSFixedString, a2: *mut crate::TESObjectREFR, a3: *mut crate::BSFixedString, a4: *mut crate::BSFixedString) -> u8 { unsafe { function!(56210, (*mut c_void, u32, *mut crate::TESObjectREFR, *mut crate::BSFixedString, *mut crate::BSFixedString, *mut crate::TESObjectREFR, *mut crate::BSFixedString, *mut crate::BSFixedString) -> u8)(vm, stackId, self_, a0, a1, a2, a3, a4) } }
 /// `Papyrus::ObjectReference::PlaySyncedAnimationSS` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56209, rva 0xa478c0).
 /// `bool PlaySyncedAnimationSS(IVirtualMachine * vm, uint stackId, TESObjectREFR * self, BSFixedString * a0, TESObjectREFR * a1, BSFixedString * a2)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__object_reference__play_synced_animation_ss(vm: *mut c_void, stackId: u32, self_: *mut classes::TESObjectREFR, a0: *mut classes::BSFixedString, a1: *mut classes::TESObjectREFR, a2: *mut classes::BSFixedString) -> u8 { unsafe { function!(56209, (*mut c_void, u32, *mut classes::TESObjectREFR, *mut classes::BSFixedString, *mut classes::TESObjectREFR, *mut classes::BSFixedString) -> u8)(vm, stackId, self_, a0, a1, a2) } }
+pub unsafe fn papyrus__object_reference__play_synced_animation_ss(vm: *mut c_void, stackId: u32, self_: *mut crate::TESObjectREFR, a0: *mut crate::BSFixedString, a1: *mut crate::TESObjectREFR, a2: *mut crate::BSFixedString) -> u8 { unsafe { function!(56209, (*mut c_void, u32, *mut crate::TESObjectREFR, *mut crate::BSFixedString, *mut crate::TESObjectREFR, *mut crate::BSFixedString) -> u8)(vm, stackId, self_, a0, a1, a2) } }
 /// `Papyrus::ObjectReference::PlayTerrainEffect` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56211, rva 0xa47cb0).
 /// `void PlayTerrainEffect(IVirtualMachine * vm, uint stackId, TESObjectREFR * self, BSFixedString * a0, BSFixedString * a1)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__object_reference__play_terrain_effect(vm: *mut c_void, stackId: u32, self_: *mut classes::TESObjectREFR, a0: *mut classes::BSFixedString, a1: *mut classes::BSFixedString) { unsafe { function!(56211, (*mut c_void, u32, *mut classes::TESObjectREFR, *mut classes::BSFixedString, *mut classes::BSFixedString))(vm, stackId, self_, a0, a1) } }
+pub unsafe fn papyrus__object_reference__play_terrain_effect(vm: *mut c_void, stackId: u32, self_: *mut crate::TESObjectREFR, a0: *mut crate::BSFixedString, a1: *mut crate::BSFixedString) { unsafe { function!(56211, (*mut c_void, u32, *mut crate::TESObjectREFR, *mut crate::BSFixedString, *mut crate::BSFixedString))(vm, stackId, self_, a0, a1) } }
 /// `Papyrus::ObjectReference::ProcessTrapHit` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56212, rva 0xa47e60).
 /// `void ProcessTrapHit(IVirtualMachine * vm, uint stackId, TESObjectREFR * self, TESObjectREFR * a0, float a1, float a2, float a3, float a4, float a5, float a6, float a7, float a8, int a9, float a10)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__object_reference__process_trap_hit(vm: *mut c_void, stackId: u32, self_: *mut classes::TESObjectREFR, a0: *mut classes::TESObjectREFR, a1: f32, a2: f32, a3: f32, a4: f32, a5: f32, a6: f32, a7: f32, a8: f32, a9: i32, a10: f32) { unsafe { function!(56212, (*mut c_void, u32, *mut classes::TESObjectREFR, *mut classes::TESObjectREFR, f32, f32, f32, f32, f32, f32, f32, f32, i32, f32))(vm, stackId, self_, a0, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10) } }
+pub unsafe fn papyrus__object_reference__process_trap_hit(vm: *mut c_void, stackId: u32, self_: *mut crate::TESObjectREFR, a0: *mut crate::TESObjectREFR, a1: f32, a2: f32, a3: f32, a4: f32, a5: f32, a6: f32, a7: f32, a8: f32, a9: i32, a10: f32) { unsafe { function!(56212, (*mut c_void, u32, *mut crate::TESObjectREFR, *mut crate::TESObjectREFR, f32, f32, f32, f32, f32, f32, f32, f32, i32, f32))(vm, stackId, self_, a0, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10) } }
 /// `Papyrus::ObjectReference::PushActorAway` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56213, rva 0xa47fa0).
 /// `void PushActorAway(IVirtualMachine * vm, uint stackId, TESObjectREFR * self, Actor * a0, float a1)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__object_reference__push_actor_away(vm: *mut c_void, stackId: u32, self_: *mut classes::TESObjectREFR, a0: *mut classes::Actor, a1: f32) { unsafe { function!(56213, (*mut c_void, u32, *mut classes::TESObjectREFR, *mut classes::Actor, f32))(vm, stackId, self_, a0, a1) } }
+pub unsafe fn papyrus__object_reference__push_actor_away(vm: *mut c_void, stackId: u32, self_: *mut crate::TESObjectREFR, a0: *mut crate::Actor, a1: f32) { unsafe { function!(56213, (*mut c_void, u32, *mut crate::TESObjectREFR, *mut crate::Actor, f32))(vm, stackId, self_, a0, a1) } }
 /// `Papyrus::ObjectReference::RemoveAllInventoryEventFilters` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56214, rva 0xa48080).
 /// `void RemoveAllInventoryEventFilters(IVirtualMachine * vm, uint stackId, TESObjectREFR * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__object_reference__remove_all_inventory_event_filters(vm: *mut c_void, stackId: u32, self_: *mut classes::TESObjectREFR) { unsafe { function!(56214, (*mut c_void, u32, *mut classes::TESObjectREFR))(vm, stackId, self_) } }
+pub unsafe fn papyrus__object_reference__remove_all_inventory_event_filters(vm: *mut c_void, stackId: u32, self_: *mut crate::TESObjectREFR) { unsafe { function!(56214, (*mut c_void, u32, *mut crate::TESObjectREFR))(vm, stackId, self_) } }
 /// `Papyrus::ObjectReference::RemoveAllItems` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56215, rva 0xa480d0).
 /// `void RemoveAllItems(IVirtualMachine * vm, uint stackId, TESObjectREFR * self, TESObjectREFR * a0, bool a1, bool a2)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__object_reference__remove_all_items(vm: *mut c_void, stackId: u32, self_: *mut classes::TESObjectREFR, a0: *mut classes::TESObjectREFR, a1: u8, a2: u8) { unsafe { function!(56215, (*mut c_void, u32, *mut classes::TESObjectREFR, *mut classes::TESObjectREFR, u8, u8))(vm, stackId, self_, a0, a1, a2) } }
+pub unsafe fn papyrus__object_reference__remove_all_items(vm: *mut c_void, stackId: u32, self_: *mut crate::TESObjectREFR, a0: *mut crate::TESObjectREFR, a1: u8, a2: u8) { unsafe { function!(56215, (*mut c_void, u32, *mut crate::TESObjectREFR, *mut crate::TESObjectREFR, u8, u8))(vm, stackId, self_, a0, a1, a2) } }
 /// `Papyrus::ObjectReference::RemoveAllStolenItems` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 442744, rva 0xa48140).
 /// `void RemoveAllStolenItems(IVirtualMachine * vm, uint stackId, TESObjectREFR * self, TESObjectREFR * a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__object_reference__remove_all_stolen_items(vm: *mut c_void, stackId: u32, self_: *mut classes::TESObjectREFR, a0: *mut classes::TESObjectREFR) { unsafe { function!(442744, (*mut c_void, u32, *mut classes::TESObjectREFR, *mut classes::TESObjectREFR))(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__object_reference__remove_all_stolen_items(vm: *mut c_void, stackId: u32, self_: *mut crate::TESObjectREFR, a0: *mut crate::TESObjectREFR) { unsafe { function!(442744, (*mut c_void, u32, *mut crate::TESObjectREFR, *mut crate::TESObjectREFR))(vm, stackId, self_, a0) } }
 /// `Papyrus::ObjectReference::RemoveDependentAnimatedObjectReference` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56216, rva 0xa481a0).
 /// `bool RemoveDependentAnimatedObjectReference(IVirtualMachine * vm, uint stackId, TESObjectREFR * self, TESObjectREFR * a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__object_reference__remove_dependent_animated_object_reference(vm: *mut c_void, stackId: u32, self_: *mut classes::TESObjectREFR, a0: *mut classes::TESObjectREFR) -> u8 { unsafe { function!(56216, (*mut c_void, u32, *mut classes::TESObjectREFR, *mut classes::TESObjectREFR) -> u8)(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__object_reference__remove_dependent_animated_object_reference(vm: *mut c_void, stackId: u32, self_: *mut crate::TESObjectREFR, a0: *mut crate::TESObjectREFR) -> u8 { unsafe { function!(56216, (*mut c_void, u32, *mut crate::TESObjectREFR, *mut crate::TESObjectREFR) -> u8)(vm, stackId, self_, a0) } }
 /// `Papyrus::ObjectReference::RemoveInventoryEventFilter` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56217, rva 0xa482d0).
 /// `void RemoveInventoryEventFilter(IVirtualMachine * vm, uint stackId, TESObjectREFR * self, TESForm * a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__object_reference__remove_inventory_event_filter(vm: *mut c_void, stackId: u32, self_: *mut classes::TESObjectREFR, a0: *mut classes::TESForm) { unsafe { function!(56217, (*mut c_void, u32, *mut classes::TESObjectREFR, *mut classes::TESForm))(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__object_reference__remove_inventory_event_filter(vm: *mut c_void, stackId: u32, self_: *mut crate::TESObjectREFR, a0: *mut crate::TESForm) { unsafe { function!(56217, (*mut c_void, u32, *mut crate::TESObjectREFR, *mut crate::TESForm))(vm, stackId, self_, a0) } }
 /// `Papyrus::ObjectReference::RemoveItem` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56218, rva 0xa48340).
 /// `bool RemoveItem(IVirtualMachine * vm, uint stackId, TESObjectREFR * self, TESForm * a0, uint a1, bool a2, TESObjectREFR * a3)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__object_reference__remove_item(vm: *mut c_void, stackId: u32, self_: *mut classes::TESObjectREFR, a0: *mut classes::TESForm, a1: u32, a2: u8, a3: *mut classes::TESObjectREFR) -> u8 { unsafe { function!(56218, (*mut c_void, u32, *mut classes::TESObjectREFR, *mut classes::TESForm, u32, u8, *mut classes::TESObjectREFR) -> u8)(vm, stackId, self_, a0, a1, a2, a3) } }
+pub unsafe fn papyrus__object_reference__remove_item(vm: *mut c_void, stackId: u32, self_: *mut crate::TESObjectREFR, a0: *mut crate::TESForm, a1: u32, a2: u8, a3: *mut crate::TESObjectREFR) -> u8 { unsafe { function!(56218, (*mut c_void, u32, *mut crate::TESObjectREFR, *mut crate::TESForm, u32, u8, *mut crate::TESObjectREFR) -> u8)(vm, stackId, self_, a0, a1, a2, a3) } }
 /// `Papyrus::ObjectReference::Reset` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56219, rva 0xa484c0).
 /// `bool Reset(IVirtualMachine * vm, uint stackId, TESObjectREFR * self, TESObjectREFR * a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__object_reference__reset(vm: *mut c_void, stackId: u32, self_: *mut classes::TESObjectREFR, a0: *mut classes::TESObjectREFR) -> u8 { unsafe { function!(56219, (*mut c_void, u32, *mut classes::TESObjectREFR, *mut classes::TESObjectREFR) -> u8)(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__object_reference__reset(vm: *mut c_void, stackId: u32, self_: *mut crate::TESObjectREFR, a0: *mut crate::TESObjectREFR) -> u8 { unsafe { function!(56219, (*mut c_void, u32, *mut crate::TESObjectREFR, *mut crate::TESObjectREFR) -> u8)(vm, stackId, self_, a0) } }
 /// `Papyrus::ObjectReference::Say` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56220, rva 0xa485f0).
 /// `void Say(IVirtualMachine * vm, uint stackId, TESObjectREFR * self, TESTopic * a0, Actor * a1, bool a2)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__object_reference__say(vm: *mut c_void, stackId: u32, self_: *mut classes::TESObjectREFR, a0: *mut classes::TESTopic, a1: *mut classes::Actor, a2: u8) { unsafe { function!(56220, (*mut c_void, u32, *mut classes::TESObjectREFR, *mut classes::TESTopic, *mut classes::Actor, u8))(vm, stackId, self_, a0, a1, a2) } }
+pub unsafe fn papyrus__object_reference__say(vm: *mut c_void, stackId: u32, self_: *mut crate::TESObjectREFR, a0: *mut crate::TESTopic, a1: *mut crate::Actor, a2: u8) { unsafe { function!(56220, (*mut c_void, u32, *mut crate::TESObjectREFR, *mut crate::TESTopic, *mut crate::Actor, u8))(vm, stackId, self_, a0, a1, a2) } }
 /// `Papyrus::ObjectReference::SendStealAlarm` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56221, rva 0xa48990).
 /// `void SendStealAlarm(IVirtualMachine * vm, uint stackId, TESObjectREFR * self, Actor * a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__object_reference__send_steal_alarm(vm: *mut c_void, stackId: u32, self_: *mut classes::TESObjectREFR, a0: *mut classes::Actor) { unsafe { function!(56221, (*mut c_void, u32, *mut classes::TESObjectREFR, *mut classes::Actor))(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__object_reference__send_steal_alarm(vm: *mut c_void, stackId: u32, self_: *mut crate::TESObjectREFR, a0: *mut crate::Actor) { unsafe { function!(56221, (*mut c_void, u32, *mut crate::TESObjectREFR, *mut crate::Actor))(vm, stackId, self_, a0) } }
 /// `Papyrus::ObjectReference::SetActorCause` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56222, rva 0xa48a20).
 /// `void SetActorCause(IVirtualMachine * vm, uint stackId, TESObjectREFR * self, Actor * a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__object_reference__set_actor_cause(vm: *mut c_void, stackId: u32, self_: *mut classes::TESObjectREFR, a0: *mut classes::Actor) { unsafe { function!(56222, (*mut c_void, u32, *mut classes::TESObjectREFR, *mut classes::Actor))(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__object_reference__set_actor_cause(vm: *mut c_void, stackId: u32, self_: *mut crate::TESObjectREFR, a0: *mut crate::Actor) { unsafe { function!(56222, (*mut c_void, u32, *mut crate::TESObjectREFR, *mut crate::Actor))(vm, stackId, self_, a0) } }
 /// `Papyrus::ObjectReference::SetActorOwner` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56223, rva 0xa48ab0).
 /// `void SetActorOwner(IVirtualMachine * vm, uint stackId, TESObjectREFR * self, TESNPC * a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__object_reference__set_actor_owner(vm: *mut c_void, stackId: u32, self_: *mut classes::TESObjectREFR, a0: *mut classes::TESNPC) { unsafe { function!(56223, (*mut c_void, u32, *mut classes::TESObjectREFR, *mut classes::TESNPC))(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__object_reference__set_actor_owner(vm: *mut c_void, stackId: u32, self_: *mut crate::TESObjectREFR, a0: *mut crate::TESNPC) { unsafe { function!(56223, (*mut c_void, u32, *mut crate::TESObjectREFR, *mut crate::TESNPC))(vm, stackId, self_, a0) } }
 /// `Papyrus::ObjectReference::SetAngle` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56224, rva 0xa48ae0).
 /// `bool SetAngle(IVirtualMachine * vm, uint stackId, TESObjectREFR * self, float a0, float a1, float a2)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__object_reference__set_angle(vm: *mut c_void, stackId: u32, self_: *mut classes::TESObjectREFR, a0: f32, a1: f32, a2: f32) -> u8 { unsafe { function!(56224, (*mut c_void, u32, *mut classes::TESObjectREFR, f32, f32, f32) -> u8)(vm, stackId, self_, a0, a1, a2) } }
+pub unsafe fn papyrus__object_reference__set_angle(vm: *mut c_void, stackId: u32, self_: *mut crate::TESObjectREFR, a0: f32, a1: f32, a2: f32) -> u8 { unsafe { function!(56224, (*mut c_void, u32, *mut crate::TESObjectREFR, f32, f32, f32) -> u8)(vm, stackId, self_, a0, a1, a2) } }
 /// `Papyrus::ObjectReference::SetAnimationVariableBool` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56225, rva 0xa48ce0).
 /// `void SetAnimationVariableBool(IVirtualMachine * vm, uint stackId, TESObjectREFR * self, BSFixedString * a0, bool a1)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__object_reference__set_animation_variable_bool(vm: *mut c_void, stackId: u32, self_: *mut classes::TESObjectREFR, a0: *mut classes::BSFixedString, a1: u8) { unsafe { function!(56225, (*mut c_void, u32, *mut classes::TESObjectREFR, *mut classes::BSFixedString, u8))(vm, stackId, self_, a0, a1) } }
+pub unsafe fn papyrus__object_reference__set_animation_variable_bool(vm: *mut c_void, stackId: u32, self_: *mut crate::TESObjectREFR, a0: *mut crate::BSFixedString, a1: u8) { unsafe { function!(56225, (*mut c_void, u32, *mut crate::TESObjectREFR, *mut crate::BSFixedString, u8))(vm, stackId, self_, a0, a1) } }
 /// `Papyrus::ObjectReference::SetAnimationVariableFloat` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56227, rva 0xa48e60).
 /// `void SetAnimationVariableFloat(IVirtualMachine * vm, uint stackId, TESObjectREFR * self, BSFixedString * a0, float a1)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__object_reference__set_animation_variable_float(vm: *mut c_void, stackId: u32, self_: *mut classes::TESObjectREFR, a0: *mut classes::BSFixedString, a1: f32) { unsafe { function!(56227, (*mut c_void, u32, *mut classes::TESObjectREFR, *mut classes::BSFixedString, f32))(vm, stackId, self_, a0, a1) } }
+pub unsafe fn papyrus__object_reference__set_animation_variable_float(vm: *mut c_void, stackId: u32, self_: *mut crate::TESObjectREFR, a0: *mut crate::BSFixedString, a1: f32) { unsafe { function!(56227, (*mut c_void, u32, *mut crate::TESObjectREFR, *mut crate::BSFixedString, f32))(vm, stackId, self_, a0, a1) } }
 /// `Papyrus::ObjectReference::SetAnimationVariableInt` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56226, rva 0xa48da0).
 /// `void SetAnimationVariableInt(IVirtualMachine * vm, uint stackId, TESObjectREFR * self, BSFixedString * a0, int a1)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__object_reference__set_animation_variable_int(vm: *mut c_void, stackId: u32, self_: *mut classes::TESObjectREFR, a0: *mut classes::BSFixedString, a1: i32) { unsafe { function!(56226, (*mut c_void, u32, *mut classes::TESObjectREFR, *mut classes::BSFixedString, i32))(vm, stackId, self_, a0, a1) } }
+pub unsafe fn papyrus__object_reference__set_animation_variable_int(vm: *mut c_void, stackId: u32, self_: *mut crate::TESObjectREFR, a0: *mut crate::BSFixedString, a1: i32) { unsafe { function!(56226, (*mut c_void, u32, *mut crate::TESObjectREFR, *mut crate::BSFixedString, i32))(vm, stackId, self_, a0, a1) } }
 /// `Papyrus::ObjectReference::SetContainerAllowStolenItems` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 442738, rva 0xa44e20).
 /// `void SetContainerAllowStolenItems(IVirtualMachine * vm, uint stackId, TESObjectREFR * self, bool a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__object_reference__set_container_allow_stolen_items(vm: *mut c_void, stackId: u32, self_: *mut classes::TESObjectREFR, a0: u8) { unsafe { function!(442738, (*mut c_void, u32, *mut classes::TESObjectREFR, u8))(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__object_reference__set_container_allow_stolen_items(vm: *mut c_void, stackId: u32, self_: *mut crate::TESObjectREFR, a0: u8) { unsafe { function!(442738, (*mut c_void, u32, *mut crate::TESObjectREFR, u8))(vm, stackId, self_, a0) } }
 /// `Papyrus::ObjectReference::SetDestroyed` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56641, rva 0xa5d770).
 /// `void SetDestroyed(IVirtualMachine * vm, uint stackId, TESObjectREFR * self, bool a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__object_reference__set_destroyed(vm: *mut c_void, stackId: u32, self_: *mut classes::TESObjectREFR, a0: u8) { unsafe { function!(56641, (*mut c_void, u32, *mut classes::TESObjectREFR, u8))(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__object_reference__set_destroyed(vm: *mut c_void, stackId: u32, self_: *mut crate::TESObjectREFR, a0: u8) { unsafe { function!(56641, (*mut c_void, u32, *mut crate::TESObjectREFR, u8))(vm, stackId, self_, a0) } }
 /// `Papyrus::ObjectReference::SetFactionOwner` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56228, rva 0xa48f20).
 /// `void SetFactionOwner(IVirtualMachine * vm, uint stackId, TESObjectREFR * self, TESFaction * a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__object_reference__set_faction_owner(vm: *mut c_void, stackId: u32, self_: *mut classes::TESObjectREFR, a0: *mut classes::TESFaction) { unsafe { function!(56228, (*mut c_void, u32, *mut classes::TESObjectREFR, *mut classes::TESFaction))(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__object_reference__set_faction_owner(vm: *mut c_void, stackId: u32, self_: *mut crate::TESObjectREFR, a0: *mut crate::TESFaction) { unsafe { function!(56228, (*mut c_void, u32, *mut crate::TESObjectREFR, *mut crate::TESFaction))(vm, stackId, self_, a0) } }
 /// `Papyrus::ObjectReference::SetLockLevel` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56229, rva 0xa48f50).
 /// `void SetLockLevel(IVirtualMachine * vm, uint stackId, TESObjectREFR * self, uint a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__object_reference__set_lock_level(vm: *mut c_void, stackId: u32, self_: *mut classes::TESObjectREFR, a0: u32) { unsafe { function!(56229, (*mut c_void, u32, *mut classes::TESObjectREFR, u32))(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__object_reference__set_lock_level(vm: *mut c_void, stackId: u32, self_: *mut crate::TESObjectREFR, a0: u32) { unsafe { function!(56229, (*mut c_void, u32, *mut crate::TESObjectREFR, u32))(vm, stackId, self_, a0) } }
 /// `Papyrus::ObjectReference::SetMotionType` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56232, rva 0xa491d0).
 /// `bool SetMotionType(IVirtualMachine * vm, uint stackId, TESObjectREFR * self, uint a0, bool a1)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__object_reference__set_motion_type(vm: *mut c_void, stackId: u32, self_: *mut classes::TESObjectREFR, a0: u32, a1: u8) -> u8 { unsafe { function!(56232, (*mut c_void, u32, *mut classes::TESObjectREFR, u32, u8) -> u8)(vm, stackId, self_, a0, a1) } }
+pub unsafe fn papyrus__object_reference__set_motion_type(vm: *mut c_void, stackId: u32, self_: *mut crate::TESObjectREFR, a0: u32, a1: u8) -> u8 { unsafe { function!(56232, (*mut c_void, u32, *mut crate::TESObjectREFR, u32, u8) -> u8)(vm, stackId, self_, a0, a1) } }
 /// `Papyrus::ObjectReference::SetNoFavorAllowed` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56642, rva 0xa5d780).
 /// `void SetNoFavorAllowed(IVirtualMachine * vm, uint stackId, TESObjectREFR * self, bool a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__object_reference__set_no_favor_allowed(vm: *mut c_void, stackId: u32, self_: *mut classes::TESObjectREFR, a0: u8) { unsafe { function!(56642, (*mut c_void, u32, *mut classes::TESObjectREFR, u8))(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__object_reference__set_no_favor_allowed(vm: *mut c_void, stackId: u32, self_: *mut crate::TESObjectREFR, a0: u8) { unsafe { function!(56642, (*mut c_void, u32, *mut crate::TESObjectREFR, u8))(vm, stackId, self_, a0) } }
 /// `Papyrus::ObjectReference::SetOpen` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56233, rva 0xa493d0).
 /// `void SetOpen(IVirtualMachine * vm, uint stackId, TESObjectREFR * self, bool a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__object_reference__set_open(vm: *mut c_void, stackId: u32, self_: *mut classes::TESObjectREFR, a0: u8) { unsafe { function!(56233, (*mut c_void, u32, *mut classes::TESObjectREFR, u8))(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__object_reference__set_open(vm: *mut c_void, stackId: u32, self_: *mut crate::TESObjectREFR, a0: u8) { unsafe { function!(56233, (*mut c_void, u32, *mut crate::TESObjectREFR, u8))(vm, stackId, self_, a0) } }
 /// `Papyrus::ObjectReference::SetPosition` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56234, rva 0xa49470).
 /// `bool SetPosition(IVirtualMachine * vm, uint stackId, TESObjectREFR * self, float a0, float a1, float a2)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__object_reference__set_position(vm: *mut c_void, stackId: u32, self_: *mut classes::TESObjectREFR, a0: f32, a1: f32, a2: f32) -> u8 { unsafe { function!(56234, (*mut c_void, u32, *mut classes::TESObjectREFR, f32, f32, f32) -> u8)(vm, stackId, self_, a0, a1, a2) } }
+pub unsafe fn papyrus__object_reference__set_position(vm: *mut c_void, stackId: u32, self_: *mut crate::TESObjectREFR, a0: f32, a1: f32, a2: f32) -> u8 { unsafe { function!(56234, (*mut c_void, u32, *mut crate::TESObjectREFR, f32, f32, f32) -> u8)(vm, stackId, self_, a0, a1, a2) } }
 /// `Papyrus::ObjectReference::SetScale` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56240, rva 0xa49be0).
 /// `bool SetScale(IVirtualMachine * vm, uint stackId, TESObjectREFR * self, float a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__object_reference__set_scale(vm: *mut c_void, stackId: u32, self_: *mut classes::TESObjectREFR, a0: f32) -> u8 { unsafe { function!(56240, (*mut c_void, u32, *mut classes::TESObjectREFR, f32) -> u8)(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__object_reference__set_scale(vm: *mut c_void, stackId: u32, self_: *mut crate::TESObjectREFR, a0: f32) -> u8 { unsafe { function!(56240, (*mut c_void, u32, *mut crate::TESObjectREFR, f32) -> u8)(vm, stackId, self_, a0) } }
 /// `Papyrus::ObjectReference::SplineTranslateTo` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56241, rva 0xa49cf0).
 /// `void SplineTranslateTo(IVirtualMachine * vm, uint stackId, TESObjectREFR * self, float a0, float a1, float a2, float a3, float a4, float a5, float a6, float a7, float a8)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__object_reference__spline_translate_to(vm: *mut c_void, stackId: u32, self_: *mut classes::TESObjectREFR, a0: f32, a1: f32, a2: f32, a3: f32, a4: f32, a5: f32, a6: f32, a7: f32, a8: f32) { unsafe { function!(56241, (*mut c_void, u32, *mut classes::TESObjectREFR, f32, f32, f32, f32, f32, f32, f32, f32, f32))(vm, stackId, self_, a0, a1, a2, a3, a4, a5, a6, a7, a8) } }
+pub unsafe fn papyrus__object_reference__spline_translate_to(vm: *mut c_void, stackId: u32, self_: *mut crate::TESObjectREFR, a0: f32, a1: f32, a2: f32, a3: f32, a4: f32, a5: f32, a6: f32, a7: f32, a8: f32) { unsafe { function!(56241, (*mut c_void, u32, *mut crate::TESObjectREFR, f32, f32, f32, f32, f32, f32, f32, f32, f32))(vm, stackId, self_, a0, a1, a2, a3, a4, a5, a6, a7, a8) } }
 /// `Papyrus::ObjectReference::SplineTranslateToRefNode` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56242, rva 0xa4a050).
 /// `void SplineTranslateToRefNode(IVirtualMachine * vm, uint stackId, TESObjectREFR * self, TESObjectREFR * a0, BSFixedString * a1, float a2, float a3, float a4)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__object_reference__spline_translate_to_ref_node(vm: *mut c_void, stackId: u32, self_: *mut classes::TESObjectREFR, a0: *mut classes::TESObjectREFR, a1: *mut classes::BSFixedString, a2: f32, a3: f32, a4: f32) { unsafe { function!(56242, (*mut c_void, u32, *mut classes::TESObjectREFR, *mut classes::TESObjectREFR, *mut classes::BSFixedString, f32, f32, f32))(vm, stackId, self_, a0, a1, a2, a3, a4) } }
+pub unsafe fn papyrus__object_reference__spline_translate_to_ref_node(vm: *mut c_void, stackId: u32, self_: *mut crate::TESObjectREFR, a0: *mut crate::TESObjectREFR, a1: *mut crate::BSFixedString, a2: f32, a3: f32, a4: f32) { unsafe { function!(56242, (*mut c_void, u32, *mut crate::TESObjectREFR, *mut crate::TESObjectREFR, *mut crate::BSFixedString, f32, f32, f32))(vm, stackId, self_, a0, a1, a2, a3, a4) } }
 /// `Papyrus::ObjectReference::StopTranslation` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56243, rva 0xa4a3f0).
 /// `void StopTranslation(IVirtualMachine * vm, uint stackId, TESObjectREFR * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__object_reference__stop_translation(vm: *mut c_void, stackId: u32, self_: *mut classes::TESObjectREFR) { unsafe { function!(56243, (*mut c_void, u32, *mut classes::TESObjectREFR))(vm, stackId, self_) } }
+pub unsafe fn papyrus__object_reference__stop_translation(vm: *mut c_void, stackId: u32, self_: *mut crate::TESObjectREFR) { unsafe { function!(56243, (*mut c_void, u32, *mut crate::TESObjectREFR))(vm, stackId, self_) } }
 /// `Papyrus::ObjectReference::TetherToHorse` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56143, rva 0xa44940).
 /// `void TetherToHorse(IVirtualMachine * vm, uint stackId, TESObjectREFR * self, TESObjectREFR * a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__object_reference__tether_to_horse(vm: *mut c_void, stackId: u32, self_: *mut classes::TESObjectREFR, a0: *mut classes::TESObjectREFR) { unsafe { function!(56143, (*mut c_void, u32, *mut classes::TESObjectREFR, *mut classes::TESObjectREFR))(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__object_reference__tether_to_horse(vm: *mut c_void, stackId: u32, self_: *mut crate::TESObjectREFR, a0: *mut crate::TESObjectREFR) { unsafe { function!(56143, (*mut c_void, u32, *mut crate::TESObjectREFR, *mut crate::TESObjectREFR))(vm, stackId, self_, a0) } }
 /// `Papyrus::ObjectReference::TranslateTo` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56237, rva 0xa49780).
 /// `void TranslateTo(IVirtualMachine * vm, uint stackId, TESObjectREFR * self, float a0, float a1, float a2, float a3, float a4, float a5, float a6, float a7)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__object_reference__translate_to(vm: *mut c_void, stackId: u32, self_: *mut classes::TESObjectREFR, a0: f32, a1: f32, a2: f32, a3: f32, a4: f32, a5: f32, a6: f32, a7: f32) { unsafe { function!(56237, (*mut c_void, u32, *mut classes::TESObjectREFR, f32, f32, f32, f32, f32, f32, f32, f32))(vm, stackId, self_, a0, a1, a2, a3, a4, a5, a6, a7) } }
+pub unsafe fn papyrus__object_reference__translate_to(vm: *mut c_void, stackId: u32, self_: *mut crate::TESObjectREFR, a0: f32, a1: f32, a2: f32, a3: f32, a4: f32, a5: f32, a6: f32, a7: f32) { unsafe { function!(56237, (*mut c_void, u32, *mut crate::TESObjectREFR, f32, f32, f32, f32, f32, f32, f32, f32))(vm, stackId, self_, a0, a1, a2, a3, a4, a5, a6, a7) } }
 /// `Papyrus::ObjectReference::WaitForAnimationEvent` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56235, rva 0xa49640).
 /// `bool WaitForAnimationEvent(IVirtualMachine * vm, uint stackId, TESObjectREFR * self, BSFixedString * a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__object_reference__wait_for_animation_event(vm: *mut c_void, stackId: u32, self_: *mut classes::TESObjectREFR, a0: *mut classes::BSFixedString) -> u8 { unsafe { function!(56235, (*mut c_void, u32, *mut classes::TESObjectREFR, *mut classes::BSFixedString) -> u8)(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__object_reference__wait_for_animation_event(vm: *mut c_void, stackId: u32, self_: *mut crate::TESObjectREFR, a0: *mut crate::BSFixedString) -> u8 { unsafe { function!(56235, (*mut c_void, u32, *mut crate::TESObjectREFR, *mut crate::BSFixedString) -> u8)(vm, stackId, self_, a0) } }
 /// `Papyrus::Package::GetOwningQuest` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56673, rva 0xa5f3b0).
 /// `TESQuest * GetOwningQuest(IVirtualMachine * vm, uint stackId, TESPackage * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__package__get_owning_quest(vm: *mut c_void, stackId: u32, self_: *mut classes::TESPackage) -> *mut classes::TESQuest { unsafe { function!(56673, (*mut c_void, u32, *mut classes::TESPackage) -> *mut classes::TESQuest)(vm, stackId, self_) } }
+pub unsafe fn papyrus__package__get_owning_quest(vm: *mut c_void, stackId: u32, self_: *mut crate::TESPackage) -> *mut crate::TESQuest { unsafe { function!(56673, (*mut c_void, u32, *mut crate::TESPackage) -> *mut crate::TESQuest)(vm, stackId, self_) } }
 /// `Papyrus::Package::GetTemplate` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56661, rva 0xa5e930).
 /// `TESPackage * GetTemplate(IVirtualMachine * vm, uint stackId, TESPackage * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__package__get_template(vm: *mut c_void, stackId: u32, self_: *mut classes::TESPackage) -> *mut classes::TESPackage { unsafe { function!(56661, (*mut c_void, u32, *mut classes::TESPackage) -> *mut classes::TESPackage)(vm, stackId, self_) } }
+pub unsafe fn papyrus__package__get_template(vm: *mut c_void, stackId: u32, self_: *mut crate::TESPackage) -> *mut crate::TESPackage { unsafe { function!(56661, (*mut c_void, u32, *mut crate::TESPackage) -> *mut crate::TESPackage)(vm, stackId, self_) } }
 /// `Papyrus::Potion::IsHostile` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55123, rva 0xa13870).
 /// `bool IsHostile(IVirtualMachine * vm, uint stackId, AlchemyItem * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__potion__is_hostile(vm: *mut c_void, stackId: u32, self_: *mut classes::AlchemyItem) -> u8 { unsafe { function!(55123, (*mut c_void, u32, *mut classes::AlchemyItem) -> u8)(vm, stackId, self_) } }
+pub unsafe fn papyrus__potion__is_hostile(vm: *mut c_void, stackId: u32, self_: *mut crate::AlchemyItem) -> u8 { unsafe { function!(55123, (*mut c_void, u32, *mut crate::AlchemyItem) -> u8)(vm, stackId, self_) } }
 /// `Papyrus::Quest::CompleteAllObjectives` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56721, rva 0xa62520).
 /// `void CompleteAllObjectives(IVirtualMachine * vm, uint stackId, TESQuest * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__quest__complete_all_objectives(vm: *mut c_void, stackId: u32, self_: *mut classes::TESQuest) { unsafe { function!(56721, (*mut c_void, u32, *mut classes::TESQuest))(vm, stackId, self_) } }
+pub unsafe fn papyrus__quest__complete_all_objectives(vm: *mut c_void, stackId: u32, self_: *mut crate::TESQuest) { unsafe { function!(56721, (*mut c_void, u32, *mut crate::TESQuest))(vm, stackId, self_) } }
 /// `Papyrus::Quest::CompleteQuest` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56675, rva 0xa5f480).
 /// `void CompleteQuest(IVirtualMachine * vm, uint stackId, TESQuest * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__quest__complete_quest(vm: *mut c_void, stackId: u32, self_: *mut classes::TESQuest) { unsafe { function!(56675, (*mut c_void, u32, *mut classes::TESQuest))(vm, stackId, self_) } }
+pub unsafe fn papyrus__quest__complete_quest(vm: *mut c_void, stackId: u32, self_: *mut crate::TESQuest) { unsafe { function!(56675, (*mut c_void, u32, *mut crate::TESQuest))(vm, stackId, self_) } }
 /// `Papyrus::Quest::FailAllObjectives` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56722, rva 0xa62530).
 /// `void FailAllObjectives(IVirtualMachine * vm, uint stackId, TESQuest * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__quest__fail_all_objectives(vm: *mut c_void, stackId: u32, self_: *mut classes::TESQuest) { unsafe { function!(56722, (*mut c_void, u32, *mut classes::TESQuest))(vm, stackId, self_) } }
+pub unsafe fn papyrus__quest__fail_all_objectives(vm: *mut c_void, stackId: u32, self_: *mut crate::TESQuest) { unsafe { function!(56722, (*mut c_void, u32, *mut crate::TESQuest))(vm, stackId, self_) } }
 /// `Papyrus::Quest::GetAlias` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56723, rva 0xa62540).
 /// `BGSBaseAlias * GetAlias(IVirtualMachine * vm, uint stackId, TESQuest * self, uint a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__quest__get_alias(vm: *mut c_void, stackId: u32, self_: *mut classes::TESQuest, a0: u32) -> *mut classes::BGSBaseAlias { unsafe { function!(56723, (*mut c_void, u32, *mut classes::TESQuest, u32) -> *mut classes::BGSBaseAlias)(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__quest__get_alias(vm: *mut c_void, stackId: u32, self_: *mut crate::TESQuest, a0: u32) -> *mut crate::BGSBaseAlias { unsafe { function!(56723, (*mut c_void, u32, *mut crate::TESQuest, u32) -> *mut crate::BGSBaseAlias)(vm, stackId, self_, a0) } }
 /// `Papyrus::Quest::GetCurrentStageID` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56724, rva 0xa62550).
 /// `uint GetCurrentStageID(IVirtualMachine * vm, uint stackId, TESQuest * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__quest__get_current_stage_id(vm: *mut c_void, stackId: u32, self_: *mut classes::TESQuest) -> u32 { unsafe { function!(56724, (*mut c_void, u32, *mut classes::TESQuest) -> u32)(vm, stackId, self_) } }
+pub unsafe fn papyrus__quest__get_current_stage_id(vm: *mut c_void, stackId: u32, self_: *mut crate::TESQuest) -> u32 { unsafe { function!(56724, (*mut c_void, u32, *mut crate::TESQuest) -> u32)(vm, stackId, self_) } }
 /// `Papyrus::Quest::IsActive` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56725, rva 0xa62560).
 /// `bool IsActive(IVirtualMachine * vm, uint stackId, TESQuest * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__quest__is_active(vm: *mut c_void, stackId: u32, self_: *mut classes::TESQuest) -> u8 { unsafe { function!(56725, (*mut c_void, u32, *mut classes::TESQuest) -> u8)(vm, stackId, self_) } }
+pub unsafe fn papyrus__quest__is_active(vm: *mut c_void, stackId: u32, self_: *mut crate::TESQuest) -> u8 { unsafe { function!(56725, (*mut c_void, u32, *mut crate::TESQuest) -> u8)(vm, stackId, self_) } }
 /// `Papyrus::Quest::IsCompleted` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56726, rva 0xa62570).
 /// `bool IsCompleted(IVirtualMachine * vm, uint stackId, TESQuest * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__quest__is_completed(vm: *mut c_void, stackId: u32, self_: *mut classes::TESQuest) -> u8 { unsafe { function!(56726, (*mut c_void, u32, *mut classes::TESQuest) -> u8)(vm, stackId, self_) } }
+pub unsafe fn papyrus__quest__is_completed(vm: *mut c_void, stackId: u32, self_: *mut crate::TESQuest) -> u8 { unsafe { function!(56726, (*mut c_void, u32, *mut crate::TESQuest) -> u8)(vm, stackId, self_) } }
 /// `Papyrus::Quest::IsObjectiveCompleted` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56677, rva 0xa5f560).
 /// `bool IsObjectiveCompleted(IVirtualMachine * vm, uint stackId, TESQuest * self, uint a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__quest__is_objective_completed(vm: *mut c_void, stackId: u32, self_: *mut classes::TESQuest, a0: u32) -> u8 { unsafe { function!(56677, (*mut c_void, u32, *mut classes::TESQuest, u32) -> u8)(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__quest__is_objective_completed(vm: *mut c_void, stackId: u32, self_: *mut crate::TESQuest, a0: u32) -> u8 { unsafe { function!(56677, (*mut c_void, u32, *mut crate::TESQuest, u32) -> u8)(vm, stackId, self_, a0) } }
 /// `Papyrus::Quest::IsObjectiveDisplayed` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56678, rva 0xa5f600).
 /// `bool IsObjectiveDisplayed(IVirtualMachine * vm, uint stackId, TESQuest * self, uint a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__quest__is_objective_displayed(vm: *mut c_void, stackId: u32, self_: *mut classes::TESQuest, a0: u32) -> u8 { unsafe { function!(56678, (*mut c_void, u32, *mut classes::TESQuest, u32) -> u8)(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__quest__is_objective_displayed(vm: *mut c_void, stackId: u32, self_: *mut crate::TESQuest, a0: u32) -> u8 { unsafe { function!(56678, (*mut c_void, u32, *mut crate::TESQuest, u32) -> u8)(vm, stackId, self_, a0) } }
 /// `Papyrus::Quest::IsObjectiveFailed` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56679, rva 0xa5f6a0).
 /// `bool IsObjectiveFailed(IVirtualMachine * vm, uint stackId, TESQuest * self, uint a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__quest__is_objective_failed(vm: *mut c_void, stackId: u32, self_: *mut classes::TESQuest, a0: u32) -> u8 { unsafe { function!(56679, (*mut c_void, u32, *mut classes::TESQuest, u32) -> u8)(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__quest__is_objective_failed(vm: *mut c_void, stackId: u32, self_: *mut crate::TESQuest, a0: u32) -> u8 { unsafe { function!(56679, (*mut c_void, u32, *mut crate::TESQuest, u32) -> u8)(vm, stackId, self_, a0) } }
 /// `Papyrus::Quest::IsRunning` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56727, rva 0xa62580).
 /// `bool IsRunning(IVirtualMachine * vm, uint stackId, TESQuest * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__quest__is_running(vm: *mut c_void, stackId: u32, self_: *mut classes::TESQuest) -> u8 { unsafe { function!(56727, (*mut c_void, u32, *mut classes::TESQuest) -> u8)(vm, stackId, self_) } }
+pub unsafe fn papyrus__quest__is_running(vm: *mut c_void, stackId: u32, self_: *mut crate::TESQuest) -> u8 { unsafe { function!(56727, (*mut c_void, u32, *mut crate::TESQuest) -> u8)(vm, stackId, self_) } }
 /// `Papyrus::Quest::IsStageDone` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56676, rva 0xa5f4e0).
 /// `bool IsStageDone(IVirtualMachine * vm, uint stackId, TESQuest * self, uint a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__quest__is_stage_done(vm: *mut c_void, stackId: u32, self_: *mut classes::TESQuest, a0: u32) -> u8 { unsafe { function!(56676, (*mut c_void, u32, *mut classes::TESQuest, u32) -> u8)(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__quest__is_stage_done(vm: *mut c_void, stackId: u32, self_: *mut crate::TESQuest, a0: u32) -> u8 { unsafe { function!(56676, (*mut c_void, u32, *mut crate::TESQuest, u32) -> u8)(vm, stackId, self_, a0) } }
 /// `Papyrus::Quest::IsStarting` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56729, rva 0xa625b0).
 /// `bool IsStarting(IVirtualMachine * vm, uint stackId, TESQuest * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__quest__is_starting(vm: *mut c_void, stackId: u32, self_: *mut classes::TESQuest) -> u8 { unsafe { function!(56729, (*mut c_void, u32, *mut classes::TESQuest) -> u8)(vm, stackId, self_) } }
+pub unsafe fn papyrus__quest__is_starting(vm: *mut c_void, stackId: u32, self_: *mut crate::TESQuest) -> u8 { unsafe { function!(56729, (*mut c_void, u32, *mut crate::TESQuest) -> u8)(vm, stackId, self_) } }
 /// `Papyrus::Quest::IsStopped` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56732, rva 0xa625e0).
 /// `bool IsStopped(IVirtualMachine * vm, uint stackId, TESQuest * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__quest__is_stopped(vm: *mut c_void, stackId: u32, self_: *mut classes::TESQuest) -> u8 { unsafe { function!(56732, (*mut c_void, u32, *mut classes::TESQuest) -> u8)(vm, stackId, self_) } }
+pub unsafe fn papyrus__quest__is_stopped(vm: *mut c_void, stackId: u32, self_: *mut crate::TESQuest) -> u8 { unsafe { function!(56732, (*mut c_void, u32, *mut crate::TESQuest) -> u8)(vm, stackId, self_) } }
 /// `Papyrus::Quest::IsStopping` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56733, rva 0xa625f0).
 /// `bool IsStopping(IVirtualMachine * vm, uint stackId, TESQuest * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__quest__is_stopping(vm: *mut c_void, stackId: u32, self_: *mut classes::TESQuest) -> u8 { unsafe { function!(56733, (*mut c_void, u32, *mut classes::TESQuest) -> u8)(vm, stackId, self_) } }
+pub unsafe fn papyrus__quest__is_stopping(vm: *mut c_void, stackId: u32, self_: *mut crate::TESQuest) -> u8 { unsafe { function!(56733, (*mut c_void, u32, *mut crate::TESQuest) -> u8)(vm, stackId, self_) } }
 /// `Papyrus::Quest::Reset` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56680, rva 0xa5f740).
 /// `void Reset(IVirtualMachine * vm, uint stackId, TESQuest * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__quest__reset(vm: *mut c_void, stackId: u32, self_: *mut classes::TESQuest) { unsafe { function!(56680, (*mut c_void, u32, *mut classes::TESQuest))(vm, stackId, self_) } }
+pub unsafe fn papyrus__quest__reset(vm: *mut c_void, stackId: u32, self_: *mut crate::TESQuest) { unsafe { function!(56680, (*mut c_void, u32, *mut crate::TESQuest))(vm, stackId, self_) } }
 /// `Papyrus::Quest::SetActive` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56735, rva 0xa62610).
 /// `void SetActive(IVirtualMachine * vm, uint stackId, TESQuest * self, bool a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__quest__set_active(vm: *mut c_void, stackId: u32, self_: *mut classes::TESQuest, a0: u8) { unsafe { function!(56735, (*mut c_void, u32, *mut classes::TESQuest, u8))(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__quest__set_active(vm: *mut c_void, stackId: u32, self_: *mut crate::TESQuest, a0: u8) { unsafe { function!(56735, (*mut c_void, u32, *mut crate::TESQuest, u8))(vm, stackId, self_, a0) } }
 /// `Papyrus::Quest::SetCurrentStageID` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56684, rva 0xa5fb50).
 /// `bool SetCurrentStageID(IVirtualMachine * vm, uint stackId, TESQuest * self, uint a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__quest__set_current_stage_id(vm: *mut c_void, stackId: u32, self_: *mut classes::TESQuest, a0: u32) -> u8 { unsafe { function!(56684, (*mut c_void, u32, *mut classes::TESQuest, u32) -> u8)(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__quest__set_current_stage_id(vm: *mut c_void, stackId: u32, self_: *mut crate::TESQuest, a0: u32) -> u8 { unsafe { function!(56684, (*mut c_void, u32, *mut crate::TESQuest, u32) -> u8)(vm, stackId, self_, a0) } }
 /// `Papyrus::Quest::SetObjectiveCompleted` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56681, rva 0xa5f7e0).
 /// `void SetObjectiveCompleted(IVirtualMachine * vm, uint stackId, TESQuest * self, uint a0, bool a1)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__quest__set_objective_completed(vm: *mut c_void, stackId: u32, self_: *mut classes::TESQuest, a0: u32, a1: u8) { unsafe { function!(56681, (*mut c_void, u32, *mut classes::TESQuest, u32, u8))(vm, stackId, self_, a0, a1) } }
+pub unsafe fn papyrus__quest__set_objective_completed(vm: *mut c_void, stackId: u32, self_: *mut crate::TESQuest, a0: u32, a1: u8) { unsafe { function!(56681, (*mut c_void, u32, *mut crate::TESQuest, u32, u8))(vm, stackId, self_, a0, a1) } }
 /// `Papyrus::Quest::SetObjectiveDisplayed` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56682, rva 0xa5f8f0).
 /// `void SetObjectiveDisplayed(IVirtualMachine * vm, uint stackId, TESQuest * self, uint a0, bool a1, bool a2)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__quest__set_objective_displayed(vm: *mut c_void, stackId: u32, self_: *mut classes::TESQuest, a0: u32, a1: u8, a2: u8) { unsafe { function!(56682, (*mut c_void, u32, *mut classes::TESQuest, u32, u8, u8))(vm, stackId, self_, a0, a1, a2) } }
+pub unsafe fn papyrus__quest__set_objective_displayed(vm: *mut c_void, stackId: u32, self_: *mut crate::TESQuest, a0: u32, a1: u8, a2: u8) { unsafe { function!(56682, (*mut c_void, u32, *mut crate::TESQuest, u32, u8, u8))(vm, stackId, self_, a0, a1, a2) } }
 /// `Papyrus::Quest::SetObjectiveFailed` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56683, rva 0xa5fa20).
 /// `void SetObjectiveFailed(IVirtualMachine * vm, uint stackId, TESQuest * self, uint a0, bool a1)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__quest__set_objective_failed(vm: *mut c_void, stackId: u32, self_: *mut classes::TESQuest, a0: u32, a1: u8) { unsafe { function!(56683, (*mut c_void, u32, *mut classes::TESQuest, u32, u8))(vm, stackId, self_, a0, a1) } }
+pub unsafe fn papyrus__quest__set_objective_failed(vm: *mut c_void, stackId: u32, self_: *mut crate::TESQuest, a0: u32, a1: u8) { unsafe { function!(56683, (*mut c_void, u32, *mut crate::TESQuest, u32, u8))(vm, stackId, self_, a0, a1) } }
 /// `Papyrus::Quest::Start` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56685, rva 0xa5fd00).
 /// `bool Start(IVirtualMachine * vm, uint stackId, TESQuest * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__quest__start(vm: *mut c_void, stackId: u32, self_: *mut classes::TESQuest) -> u8 { unsafe { function!(56685, (*mut c_void, u32, *mut classes::TESQuest) -> u8)(vm, stackId, self_) } }
+pub unsafe fn papyrus__quest__start(vm: *mut c_void, stackId: u32, self_: *mut crate::TESQuest) -> u8 { unsafe { function!(56685, (*mut c_void, u32, *mut crate::TESQuest) -> u8)(vm, stackId, self_) } }
 /// `Papyrus::Quest::Stop` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56686, rva 0xa5fe30).
 /// `void Stop(IVirtualMachine * vm, uint stackId, TESQuest * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__quest__stop(vm: *mut c_void, stackId: u32, self_: *mut classes::TESQuest) { unsafe { function!(56686, (*mut c_void, u32, *mut classes::TESQuest))(vm, stackId, self_) } }
+pub unsafe fn papyrus__quest__stop(vm: *mut c_void, stackId: u32, self_: *mut crate::TESQuest) { unsafe { function!(56686, (*mut c_void, u32, *mut crate::TESQuest))(vm, stackId, self_) } }
 /// `Papyrus::Quest::UpdateCurrentInstanceGlobal` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56736, rva 0xa62620).
 /// `bool UpdateCurrentInstanceGlobal(IVirtualMachine * vm, uint stackId, TESQuest * self, TESGlobal * a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__quest__update_current_instance_global(vm: *mut c_void, stackId: u32, self_: *mut classes::TESQuest, a0: *mut classes::TESGlobal) -> u8 { unsafe { function!(56736, (*mut c_void, u32, *mut classes::TESQuest, *mut classes::TESGlobal) -> u8)(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__quest__update_current_instance_global(vm: *mut c_void, stackId: u32, self_: *mut crate::TESQuest, a0: *mut crate::TESGlobal) -> u8 { unsafe { function!(56736, (*mut c_void, u32, *mut crate::TESQuest, *mut crate::TESGlobal) -> u8)(vm, stackId, self_, a0) } }
 /// `Papyrus::ReferenceAlias::AddInventoryEventFilter` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55285, rva 0xa1b4f0).
 /// `void AddInventoryEventFilter(IVirtualMachine * vm, uint stackId, BGSRefAlias * self, TESForm * a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__reference_alias__add_inventory_event_filter(vm: *mut c_void, stackId: u32, self_: *mut classes::BGSRefAlias, a0: *mut classes::TESForm) { unsafe { function!(55285, (*mut c_void, u32, *mut classes::BGSRefAlias, *mut classes::TESForm))(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__reference_alias__add_inventory_event_filter(vm: *mut c_void, stackId: u32, self_: *mut crate::BGSRefAlias, a0: *mut crate::TESForm) { unsafe { function!(55285, (*mut c_void, u32, *mut crate::BGSRefAlias, *mut crate::TESForm))(vm, stackId, self_, a0) } }
 /// `Papyrus::ReferenceAlias::ForceRefTo` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55288, rva 0xa1b6a0).
 /// `void ForceRefTo(IVirtualMachine * vm, uint stackId, BGSRefAlias * self, TESObjectREFR * a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__reference_alias__force_ref_to(vm: *mut c_void, stackId: u32, self_: *mut classes::BGSRefAlias, a0: *mut classes::TESObjectREFR) { unsafe { function!(55288, (*mut c_void, u32, *mut classes::BGSRefAlias, *mut classes::TESObjectREFR))(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__reference_alias__force_ref_to(vm: *mut c_void, stackId: u32, self_: *mut crate::BGSRefAlias, a0: *mut crate::TESObjectREFR) { unsafe { function!(55288, (*mut c_void, u32, *mut crate::BGSRefAlias, *mut crate::TESObjectREFR))(vm, stackId, self_, a0) } }
 /// `Papyrus::ReferenceAlias::GetReference` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55287, rva 0xa1b620).
 /// `TESObjectREFR * GetReference(IVirtualMachine * vm, uint stackId, BGSRefAlias * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__reference_alias__get_reference(vm: *mut c_void, stackId: u32, self_: *mut classes::BGSRefAlias) -> *mut classes::TESObjectREFR { unsafe { function!(55287, (*mut c_void, u32, *mut classes::BGSRefAlias) -> *mut classes::TESObjectREFR)(vm, stackId, self_) } }
+pub unsafe fn papyrus__reference_alias__get_reference(vm: *mut c_void, stackId: u32, self_: *mut crate::BGSRefAlias) -> *mut crate::TESObjectREFR { unsafe { function!(55287, (*mut c_void, u32, *mut crate::BGSRefAlias) -> *mut crate::TESObjectREFR)(vm, stackId, self_) } }
 /// `Papyrus::ReferenceAlias::RemoveAllInventoryEventFilters` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55289, rva 0xa1b6f0).
 /// `void RemoveAllInventoryEventFilters(IVirtualMachine * vm, uint stackId, BGSRefAlias * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__reference_alias__remove_all_inventory_event_filters(vm: *mut c_void, stackId: u32, self_: *mut classes::BGSRefAlias) { unsafe { function!(55289, (*mut c_void, u32, *mut classes::BGSRefAlias))(vm, stackId, self_) } }
+pub unsafe fn papyrus__reference_alias__remove_all_inventory_event_filters(vm: *mut c_void, stackId: u32, self_: *mut crate::BGSRefAlias) { unsafe { function!(55289, (*mut c_void, u32, *mut crate::BGSRefAlias))(vm, stackId, self_) } }
 /// `Papyrus::ReferenceAlias::RemoveInventoryEventFilter` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55290, rva 0xa1b740).
 /// `void RemoveInventoryEventFilter(IVirtualMachine * vm, uint stackId, BGSRefAlias * self, TESForm * a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__reference_alias__remove_inventory_event_filter(vm: *mut c_void, stackId: u32, self_: *mut classes::BGSRefAlias, a0: *mut classes::TESForm) { unsafe { function!(55290, (*mut c_void, u32, *mut classes::BGSRefAlias, *mut classes::TESForm))(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__reference_alias__remove_inventory_event_filter(vm: *mut c_void, stackId: u32, self_: *mut crate::BGSRefAlias, a0: *mut crate::TESForm) { unsafe { function!(55290, (*mut c_void, u32, *mut crate::BGSRefAlias, *mut crate::TESForm))(vm, stackId, self_, a0) } }
 /// `Papyrus::Scene::ForceStart` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55319, rva 0xa1d130).
 /// `void ForceStart(IVirtualMachine * vm, uint stackId, BGSScene * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__scene__force_start(vm: *mut c_void, stackId: u32, self_: *mut classes::BGSScene) { unsafe { function!(55319, (*mut c_void, u32, *mut classes::BGSScene))(vm, stackId, self_) } }
+pub unsafe fn papyrus__scene__force_start(vm: *mut c_void, stackId: u32, self_: *mut crate::BGSScene) { unsafe { function!(55319, (*mut c_void, u32, *mut crate::BGSScene))(vm, stackId, self_) } }
 /// `Papyrus::Scene::GetOwningQuest` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55338, rva 0xa1df50).
 /// `TESQuest * GetOwningQuest(IVirtualMachine * vm, uint stackId, BGSScene * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__scene__get_owning_quest(vm: *mut c_void, stackId: u32, self_: *mut classes::BGSScene) -> *mut classes::TESQuest { unsafe { function!(55338, (*mut c_void, u32, *mut classes::BGSScene) -> *mut classes::TESQuest)(vm, stackId, self_) } }
+pub unsafe fn papyrus__scene__get_owning_quest(vm: *mut c_void, stackId: u32, self_: *mut crate::BGSScene) -> *mut crate::TESQuest { unsafe { function!(55338, (*mut c_void, u32, *mut crate::BGSScene) -> *mut crate::TESQuest)(vm, stackId, self_) } }
 /// `Papyrus::Scene::IsActionComplete` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55339, rva 0xa1df60).
 /// `bool IsActionComplete(IVirtualMachine * vm, uint stackId, BGSScene * self, uint a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__scene__is_action_complete(vm: *mut c_void, stackId: u32, self_: *mut classes::BGSScene, a0: u32) -> u8 { unsafe { function!(55339, (*mut c_void, u32, *mut classes::BGSScene, u32) -> u8)(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__scene__is_action_complete(vm: *mut c_void, stackId: u32, self_: *mut crate::BGSScene, a0: u32) -> u8 { unsafe { function!(55339, (*mut c_void, u32, *mut crate::BGSScene, u32) -> u8)(vm, stackId, self_, a0) } }
 /// `Papyrus::Scene::IsPlaying` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55340, rva 0xa1df70).
 /// `bool IsPlaying(IVirtualMachine * vm, uint stackId, BGSScene * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__scene__is_playing(vm: *mut c_void, stackId: u32, self_: *mut classes::BGSScene) -> u8 { unsafe { function!(55340, (*mut c_void, u32, *mut classes::BGSScene) -> u8)(vm, stackId, self_) } }
+pub unsafe fn papyrus__scene__is_playing(vm: *mut c_void, stackId: u32, self_: *mut crate::BGSScene) -> u8 { unsafe { function!(55340, (*mut c_void, u32, *mut crate::BGSScene) -> u8)(vm, stackId, self_) } }
 /// `Papyrus::Scene::Start` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55320, rva 0xa1d1a0).
 /// `void Start(IVirtualMachine * vm, uint stackId, BGSScene * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__scene__start(vm: *mut c_void, stackId: u32, self_: *mut classes::BGSScene) { unsafe { function!(55320, (*mut c_void, u32, *mut classes::BGSScene))(vm, stackId, self_) } }
+pub unsafe fn papyrus__scene__start(vm: *mut c_void, stackId: u32, self_: *mut crate::BGSScene) { unsafe { function!(55320, (*mut c_void, u32, *mut crate::BGSScene))(vm, stackId, self_) } }
 /// `Papyrus::Scene::Stop` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55321, rva 0xa1d210).
 /// `void Stop(IVirtualMachine * vm, uint stackId, BGSScene * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__scene__stop(vm: *mut c_void, stackId: u32, self_: *mut classes::BGSScene) { unsafe { function!(55321, (*mut c_void, u32, *mut classes::BGSScene))(vm, stackId, self_) } }
+pub unsafe fn papyrus__scene__stop(vm: *mut c_void, stackId: u32, self_: *mut crate::BGSScene) { unsafe { function!(55321, (*mut c_void, u32, *mut crate::BGSScene))(vm, stackId, self_) } }
 /// `Papyrus::Scroll::Cast` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55725, rva 0xa31e60).
 /// `bool Cast(IVirtualMachine * vm, uint stackId, ScrollItem * self, TESObjectREFR * a0, TESObjectREFR * a1)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__scroll__cast(vm: *mut c_void, stackId: u32, self_: *mut classes::ScrollItem, a0: *mut classes::TESObjectREFR, a1: *mut classes::TESObjectREFR) -> u8 { unsafe { function!(55725, (*mut c_void, u32, *mut classes::ScrollItem, *mut classes::TESObjectREFR, *mut classes::TESObjectREFR) -> u8)(vm, stackId, self_, a0, a1) } }
+pub unsafe fn papyrus__scroll__cast(vm: *mut c_void, stackId: u32, self_: *mut crate::ScrollItem, a0: *mut crate::TESObjectREFR, a1: *mut crate::TESObjectREFR) -> u8 { unsafe { function!(55725, (*mut c_void, u32, *mut crate::ScrollItem, *mut crate::TESObjectREFR, *mut crate::TESObjectREFR) -> u8)(vm, stackId, self_, a0, a1) } }
 /// `Papyrus::ShaderParticleGeometry::Apply` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55341, rva 0xa1df80).
 /// `void Apply(IVirtualMachine * vm, uint stackId, BGSShaderParticleGeometryData * self, float a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__shader_particle_geometry__apply(vm: *mut c_void, stackId: u32, self_: *mut classes::BGSShaderParticleGeometryData, a0: f32) { unsafe { function!(55341, (*mut c_void, u32, *mut classes::BGSShaderParticleGeometryData, f32))(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__shader_particle_geometry__apply(vm: *mut c_void, stackId: u32, self_: *mut crate::BGSShaderParticleGeometryData, a0: f32) { unsafe { function!(55341, (*mut c_void, u32, *mut crate::BGSShaderParticleGeometryData, f32))(vm, stackId, self_, a0) } }
 /// `Papyrus::ShaderParticleGeometry::Remove` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55342, rva 0xa1dfa0).
 /// `void Remove(IVirtualMachine * vm, uint stackId, BGSShaderParticleGeometryData * self, float a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__shader_particle_geometry__remove(vm: *mut c_void, stackId: u32, self_: *mut classes::BGSShaderParticleGeometryData, a0: f32) { unsafe { function!(55342, (*mut c_void, u32, *mut classes::BGSShaderParticleGeometryData, f32))(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__shader_particle_geometry__remove(vm: *mut c_void, stackId: u32, self_: *mut crate::BGSShaderParticleGeometryData, a0: f32) { unsafe { function!(55342, (*mut c_void, u32, *mut crate::BGSShaderParticleGeometryData, f32))(vm, stackId, self_, a0) } }
 /// `Papyrus::Sound::Play` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56740, rva 0xa62690).
 /// `uint Play(IVirtualMachine * vm, uint stackId, TESSound * self, TESObjectREFR * a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__sound__play(vm: *mut c_void, stackId: u32, self_: *mut classes::TESSound, a0: *mut classes::TESObjectREFR) -> u32 { unsafe { function!(56740, (*mut c_void, u32, *mut classes::TESSound, *mut classes::TESObjectREFR) -> u32)(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__sound__play(vm: *mut c_void, stackId: u32, self_: *mut crate::TESSound, a0: *mut crate::TESObjectREFR) -> u32 { unsafe { function!(56740, (*mut c_void, u32, *mut crate::TESSound, *mut crate::TESObjectREFR) -> u32)(vm, stackId, self_, a0) } }
 /// `Papyrus::Sound::PlayAndWait` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56741, rva 0xa627b0).
 /// `bool PlayAndWait(IVirtualMachine * vm, uint stackId, TESSound * self, TESObjectREFR * a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__sound__play_and_wait(vm: *mut c_void, stackId: u32, self_: *mut classes::TESSound, a0: *mut classes::TESObjectREFR) -> u8 { unsafe { function!(56741, (*mut c_void, u32, *mut classes::TESSound, *mut classes::TESObjectREFR) -> u8)(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__sound__play_and_wait(vm: *mut c_void, stackId: u32, self_: *mut crate::TESSound, a0: *mut crate::TESObjectREFR) -> u8 { unsafe { function!(56741, (*mut c_void, u32, *mut crate::TESSound, *mut crate::TESObjectREFR) -> u8)(vm, stackId, self_, a0) } }
 /// `Papyrus::Sound::SetInstanceVolume` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56743, rva 0xa62980).
 /// `void SetInstanceVolume(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, uint a0, float a1)`
 ///
@@ -32462,49 +32456,49 @@ pub unsafe fn papyrus__sound__stop_instance(vm: *mut c_void, stackId: u32, unuse
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__spell__cast(vm: *mut c_void, stackId: u32, self_: *mut classes::SpellItem, a0: *mut classes::TESObjectREFR, a1: *mut classes::TESObjectREFR) -> u8 { unsafe { function!(55747, (*mut c_void, u32, *mut classes::SpellItem, *mut classes::TESObjectREFR, *mut classes::TESObjectREFR) -> u8)(vm, stackId, self_, a0, a1) } }
+pub unsafe fn papyrus__spell__cast(vm: *mut c_void, stackId: u32, self_: *mut crate::SpellItem, a0: *mut crate::TESObjectREFR, a1: *mut crate::TESObjectREFR) -> u8 { unsafe { function!(55747, (*mut c_void, u32, *mut crate::SpellItem, *mut crate::TESObjectREFR, *mut crate::TESObjectREFR) -> u8)(vm, stackId, self_, a0, a1) } }
 /// `Papyrus::Spell::IsHostile` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55773, rva 0xa33f30).
 /// `bool IsHostile(IVirtualMachine * vm, uint stackId, SpellItem * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__spell__is_hostile(vm: *mut c_void, stackId: u32, self_: *mut classes::SpellItem) -> u8 { unsafe { function!(55773, (*mut c_void, u32, *mut classes::SpellItem) -> u8)(vm, stackId, self_) } }
+pub unsafe fn papyrus__spell__is_hostile(vm: *mut c_void, stackId: u32, self_: *mut crate::SpellItem) -> u8 { unsafe { function!(55773, (*mut c_void, u32, *mut crate::SpellItem) -> u8)(vm, stackId, self_) } }
 /// `Papyrus::Spell::Preload` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55774, rva 0xa33f40).
 /// `void Preload(IVirtualMachine * vm, uint stackId, SpellItem * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__spell__preload(vm: *mut c_void, stackId: u32, self_: *mut classes::SpellItem) { unsafe { function!(55774, (*mut c_void, u32, *mut classes::SpellItem))(vm, stackId, self_) } }
+pub unsafe fn papyrus__spell__preload(vm: *mut c_void, stackId: u32, self_: *mut crate::SpellItem) { unsafe { function!(55774, (*mut c_void, u32, *mut crate::SpellItem))(vm, stackId, self_) } }
 /// `Papyrus::Spell::RemoteCast` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55748, rva 0xa32fd0).
 /// `bool RemoteCast(IVirtualMachine * vm, uint stackId, SpellItem * self, TESObjectREFR * a0, Actor * a1, TESObjectREFR * a2)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__spell__remote_cast(vm: *mut c_void, stackId: u32, self_: *mut classes::SpellItem, a0: *mut classes::TESObjectREFR, a1: *mut classes::Actor, a2: *mut classes::TESObjectREFR) -> u8 { unsafe { function!(55748, (*mut c_void, u32, *mut classes::SpellItem, *mut classes::TESObjectREFR, *mut classes::Actor, *mut classes::TESObjectREFR) -> u8)(vm, stackId, self_, a0, a1, a2) } }
+pub unsafe fn papyrus__spell__remote_cast(vm: *mut c_void, stackId: u32, self_: *mut crate::SpellItem, a0: *mut crate::TESObjectREFR, a1: *mut crate::Actor, a2: *mut crate::TESObjectREFR) -> u8 { unsafe { function!(55748, (*mut c_void, u32, *mut crate::SpellItem, *mut crate::TESObjectREFR, *mut crate::Actor, *mut crate::TESObjectREFR) -> u8)(vm, stackId, self_, a0, a1, a2) } }
 /// `Papyrus::Spell::Unload` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55775, rva 0xa33f50).
 /// `void Unload(IVirtualMachine * vm, uint stackId, SpellItem * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__spell__unload(vm: *mut c_void, stackId: u32, self_: *mut classes::SpellItem) { unsafe { function!(55775, (*mut c_void, u32, *mut classes::SpellItem))(vm, stackId, self_) } }
+pub unsafe fn papyrus__spell__unload(vm: *mut c_void, stackId: u32, self_: *mut crate::SpellItem) { unsafe { function!(55775, (*mut c_void, u32, *mut crate::SpellItem))(vm, stackId, self_) } }
 /// `Papyrus::Topic::Add` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56758, rva 0xa633c0).
 /// `void Add(IVirtualMachine * vm, uint stackId, TESTopic * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__topic__add(vm: *mut c_void, stackId: u32, self_: *mut classes::TESTopic) { unsafe { function!(56758, (*mut c_void, u32, *mut classes::TESTopic))(vm, stackId, self_) } }
+pub unsafe fn papyrus__topic__add(vm: *mut c_void, stackId: u32, self_: *mut crate::TESTopic) { unsafe { function!(56758, (*mut c_void, u32, *mut crate::TESTopic))(vm, stackId, self_) } }
 /// `Papyrus::TopicInfo::GetOwningQuest` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56765, rva 0xa63750).
 /// `TESQuest * GetOwningQuest(IVirtualMachine * vm, uint stackId, TESTopicInfo * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__topic_info__get_owning_quest(vm: *mut c_void, stackId: u32, self_: *mut classes::TESTopicInfo) -> *mut classes::TESQuest { unsafe { function!(56765, (*mut c_void, u32, *mut classes::TESTopicInfo) -> *mut classes::TESQuest)(vm, stackId, self_) } }
+pub unsafe fn papyrus__topic_info__get_owning_quest(vm: *mut c_void, stackId: u32, self_: *mut crate::TESTopicInfo) -> *mut crate::TESQuest { unsafe { function!(56765, (*mut c_void, u32, *mut crate::TESTopicInfo) -> *mut crate::TESQuest)(vm, stackId, self_) } }
 /// `Papyrus::Utility::GameTimeToString` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56810, rva 0xa65210).
 /// `bool GameTimeToString(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, float a0)`
 ///
@@ -32553,28 +32547,28 @@ pub unsafe fn papyrus__utility__random_int(vm: *mut c_void, stackId: u32, unused
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__utility__set_ini_bool(vm: *mut c_void, stackId: u32, unused: *mut c_void, a0: *mut classes::BSFixedString, a1: u8) { unsafe { function!(56812, (*mut c_void, u32, *mut c_void, *mut classes::BSFixedString, u8))(vm, stackId, unused, a0, a1) } }
+pub unsafe fn papyrus__utility__set_ini_bool(vm: *mut c_void, stackId: u32, unused: *mut c_void, a0: *mut crate::BSFixedString, a1: u8) { unsafe { function!(56812, (*mut c_void, u32, *mut c_void, *mut crate::BSFixedString, u8))(vm, stackId, unused, a0, a1) } }
 /// `Papyrus::Utility::SetINIFloat` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56813, rva 0xa654d0).
 /// `void SetINIFloat(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, BSFixedString * a0, float a1)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__utility__set_ini_float(vm: *mut c_void, stackId: u32, unused: *mut c_void, a0: *mut classes::BSFixedString, a1: f32) { unsafe { function!(56813, (*mut c_void, u32, *mut c_void, *mut classes::BSFixedString, f32))(vm, stackId, unused, a0, a1) } }
+pub unsafe fn papyrus__utility__set_ini_float(vm: *mut c_void, stackId: u32, unused: *mut c_void, a0: *mut crate::BSFixedString, a1: f32) { unsafe { function!(56813, (*mut c_void, u32, *mut c_void, *mut crate::BSFixedString, f32))(vm, stackId, unused, a0, a1) } }
 /// `Papyrus::Utility::SetINIInt` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56814, rva 0xa65580).
 /// `void SetINIInt(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, BSFixedString * a0, int a1)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__utility__set_ini_int(vm: *mut c_void, stackId: u32, unused: *mut c_void, a0: *mut classes::BSFixedString, a1: i32) { unsafe { function!(56814, (*mut c_void, u32, *mut c_void, *mut classes::BSFixedString, i32))(vm, stackId, unused, a0, a1) } }
+pub unsafe fn papyrus__utility__set_ini_int(vm: *mut c_void, stackId: u32, unused: *mut c_void, a0: *mut crate::BSFixedString, a1: i32) { unsafe { function!(56814, (*mut c_void, u32, *mut c_void, *mut crate::BSFixedString, i32))(vm, stackId, unused, a0, a1) } }
 /// `Papyrus::Utility::SetINIString` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56815, rva 0xa65630).
 /// `void SetINIString(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, BSFixedString * a0, BSFixedString * a1)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__utility__set_ini_string(vm: *mut c_void, stackId: u32, unused: *mut c_void, a0: *mut classes::BSFixedString, a1: *mut classes::BSFixedString) { unsafe { function!(56815, (*mut c_void, u32, *mut c_void, *mut classes::BSFixedString, *mut classes::BSFixedString))(vm, stackId, unused, a0, a1) } }
+pub unsafe fn papyrus__utility__set_ini_string(vm: *mut c_void, stackId: u32, unused: *mut c_void, a0: *mut crate::BSFixedString, a1: *mut crate::BSFixedString) { unsafe { function!(56815, (*mut c_void, u32, *mut c_void, *mut crate::BSFixedString, *mut crate::BSFixedString))(vm, stackId, unused, a0, a1) } }
 /// `Papyrus::Utility::WaitGameTime` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56817, rva 0xa65710).
 /// `bool WaitGameTime(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, float a0)`
 ///
@@ -32595,49 +32589,49 @@ pub unsafe fn papyrus__utility__wait_menu_mode(vm: *mut c_void, stackId: u32, un
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__visual_effect__play(vm: *mut c_void, stackId: u32, self_: *mut classes::BGSReferenceEffect, a0: *mut classes::TESObjectREFR, a1: f32, a2: *mut classes::TESObjectREFR) { unsafe { function!(55308, (*mut c_void, u32, *mut classes::BGSReferenceEffect, *mut classes::TESObjectREFR, f32, *mut classes::TESObjectREFR))(vm, stackId, self_, a0, a1, a2) } }
+pub unsafe fn papyrus__visual_effect__play(vm: *mut c_void, stackId: u32, self_: *mut crate::BGSReferenceEffect, a0: *mut crate::TESObjectREFR, a1: f32, a2: *mut crate::TESObjectREFR) { unsafe { function!(55308, (*mut c_void, u32, *mut crate::BGSReferenceEffect, *mut crate::TESObjectREFR, f32, *mut crate::TESObjectREFR))(vm, stackId, self_, a0, a1, a2) } }
 /// `Papyrus::VisualEffect::Stop` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55309, rva 0xa1c9d0).
 /// `void Stop(IVirtualMachine * vm, uint stackId, BGSReferenceEffect * self, TESObjectREFR * a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__visual_effect__stop(vm: *mut c_void, stackId: u32, self_: *mut classes::BGSReferenceEffect, a0: *mut classes::TESObjectREFR) { unsafe { function!(55309, (*mut c_void, u32, *mut classes::BGSReferenceEffect, *mut classes::TESObjectREFR))(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__visual_effect__stop(vm: *mut c_void, stackId: u32, self_: *mut crate::BGSReferenceEffect, a0: *mut crate::TESObjectREFR) { unsafe { function!(55309, (*mut c_void, u32, *mut crate::BGSReferenceEffect, *mut crate::TESObjectREFR))(vm, stackId, self_, a0) } }
 /// `Papyrus::Weapon::Fire` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56653, rva 0xa5e190).
 /// `void Fire(IVirtualMachine * vm, uint stackId, TESObjectWEAP * self, TESObjectREFR * a0, TESAmmo * a1)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__weapon__fire(vm: *mut c_void, stackId: u32, self_: *mut classes::TESObjectWEAP, a0: *mut classes::TESObjectREFR, a1: *mut classes::TESAmmo) { unsafe { function!(56653, (*mut c_void, u32, *mut classes::TESObjectWEAP, *mut classes::TESObjectREFR, *mut classes::TESAmmo))(vm, stackId, self_, a0, a1) } }
+pub unsafe fn papyrus__weapon__fire(vm: *mut c_void, stackId: u32, self_: *mut crate::TESObjectWEAP, a0: *mut crate::TESObjectREFR, a1: *mut crate::TESAmmo) { unsafe { function!(56653, (*mut c_void, u32, *mut crate::TESObjectWEAP, *mut crate::TESObjectREFR, *mut crate::TESAmmo))(vm, stackId, self_, a0, a1) } }
 /// `Papyrus::Weather::FindWeather` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56802, rva 0xa65110).
 /// `TESWeather * FindWeather(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, uint a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__weather__find_weather(vm: *mut c_void, stackId: u32, unused: *mut c_void, a0: u32) -> *mut classes::TESWeather { unsafe { function!(56802, (*mut c_void, u32, *mut c_void, u32) -> *mut classes::TESWeather)(vm, stackId, unused, a0) } }
+pub unsafe fn papyrus__weather__find_weather(vm: *mut c_void, stackId: u32, unused: *mut c_void, a0: u32) -> *mut crate::TESWeather { unsafe { function!(56802, (*mut c_void, u32, *mut c_void, u32) -> *mut crate::TESWeather)(vm, stackId, unused, a0) } }
 /// `Papyrus::Weather::ForceActive` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56773, rva 0xa63d70).
 /// `void ForceActive(IVirtualMachine * vm, uint stackId, TESWeather * self, bool a0)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__weather__force_active(vm: *mut c_void, stackId: u32, self_: *mut classes::TESWeather, a0: u8) { unsafe { function!(56773, (*mut c_void, u32, *mut classes::TESWeather, u8))(vm, stackId, self_, a0) } }
+pub unsafe fn papyrus__weather__force_active(vm: *mut c_void, stackId: u32, self_: *mut crate::TESWeather, a0: u8) { unsafe { function!(56773, (*mut c_void, u32, *mut crate::TESWeather, u8))(vm, stackId, self_, a0) } }
 /// `Papyrus::Weather::GetClassification` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56775, rva 0xa63dd0).
 /// `int GetClassification(IVirtualMachine * vm, uint stackId, TESWeather * self)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__weather__get_classification(vm: *mut c_void, stackId: u32, self_: *mut classes::TESWeather) -> i32 { unsafe { function!(56775, (*mut c_void, u32, *mut classes::TESWeather) -> i32)(vm, stackId, self_) } }
+pub unsafe fn papyrus__weather__get_classification(vm: *mut c_void, stackId: u32, self_: *mut crate::TESWeather) -> i32 { unsafe { function!(56775, (*mut c_void, u32, *mut crate::TESWeather) -> i32)(vm, stackId, self_) } }
 /// `Papyrus::Weather::GetCurrentWeather` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56803, rva 0xa65130).
 /// `TESWeather * GetCurrentWeather(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__weather__get_current_weather(vm: *mut c_void, stackId: u32, unused: *mut c_void) -> *mut classes::TESWeather { unsafe { function!(56803, (*mut c_void, u32, *mut c_void) -> *mut classes::TESWeather)(vm, stackId, unused) } }
+pub unsafe fn papyrus__weather__get_current_weather(vm: *mut c_void, stackId: u32, unused: *mut c_void) -> *mut crate::TESWeather { unsafe { function!(56803, (*mut c_void, u32, *mut c_void) -> *mut crate::TESWeather)(vm, stackId, unused) } }
 /// `Papyrus::Weather::GetCurrentWeatherTransition` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56804, rva 0xa65150).
 /// `float GetCurrentWeatherTransition(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused)`
 ///
@@ -32651,7 +32645,7 @@ pub unsafe fn papyrus__weather__get_current_weather_transition(vm: *mut c_void, 
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__weather__get_outgoing_weather(vm: *mut c_void, stackId: u32, unused: *mut c_void) -> *mut classes::TESWeather { unsafe { function!(56805, (*mut c_void, u32, *mut c_void) -> *mut classes::TESWeather)(vm, stackId, unused) } }
+pub unsafe fn papyrus__weather__get_outgoing_weather(vm: *mut c_void, stackId: u32, unused: *mut c_void) -> *mut crate::TESWeather { unsafe { function!(56805, (*mut c_void, u32, *mut c_void) -> *mut crate::TESWeather)(vm, stackId, unused) } }
 /// `Papyrus::Weather::GetSkyMode` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56806, rva 0xa65190).
 /// `uint GetSkyMode(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused)`
 ///
@@ -32672,7 +32666,7 @@ pub unsafe fn papyrus__weather__release_override(vm: *mut c_void, stackId: u32, 
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn papyrus__weather__set_active(vm: *mut c_void, stackId: u32, self_: *mut classes::TESWeather, a0: u8, a1: u8) { unsafe { function!(56774, (*mut c_void, u32, *mut classes::TESWeather, u8, u8))(vm, stackId, self_, a0, a1) } }
+pub unsafe fn papyrus__weather__set_active(vm: *mut c_void, stackId: u32, self_: *mut crate::TESWeather, a0: u8, a1: u8) { unsafe { function!(56774, (*mut c_void, u32, *mut crate::TESWeather, u8, u8))(vm, stackId, self_, a0, a1) } }
 /// `ParseBraceFormatString` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 84883, rva 0xd73800).
 /// `undefined ParseBraceFormatString(longlong param_1, char * param_2)`
 ///
@@ -33365,7 +33359,7 @@ pub unsafe fn queue_player_slot_mesh_loads(param_1: c_char, param_2: u64, param_
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn queue_promote_large_references_for_cell(param_1: i64, param_2: *mut classes::TESObjectCELL, param_3: u64, param_4: u64) -> u64 { unsafe { function!(18224, (i64, *mut classes::TESObjectCELL, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
+pub unsafe fn queue_promote_large_references_for_cell(param_1: i64, param_2: *mut crate::TESObjectCELL, param_3: u64, param_4: u64) -> u64 { unsafe { function!(18224, (i64, *mut crate::TESObjectCELL, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
 /// `QueueStringMessage` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 52853, rva 0x98e180).
 /// `undefined QueueStringMessage(undefined1 * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 ///
@@ -33918,7 +33912,7 @@ pub unsafe fn read_climate_form_ref(param_1: i64, param_2: *mut u64, param_3: u6
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn read_constraint_motor_from_stream(param_1: u64, param_2: i64) -> *mut classes::partial::bhkPositionConstraintMotor { unsafe { function!(79012, (u64, i64) -> *mut classes::partial::bhkPositionConstraintMotor)(param_1, param_2) } }
+pub unsafe fn read_constraint_motor_from_stream(param_1: u64, param_2: i64) -> *mut crate::bhkPositionConstraintMotor { unsafe { function!(79012, (u64, i64) -> *mut crate::bhkPositionConstraintMotor)(param_1, param_2) } }
 /// `ReadCurrentRecordIntoBuffer` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 13987, rva 0x1cdb50).
 /// `uint ReadCurrentRecordIntoBuffer(longlong param_1, undefined8 * param_2, uint param_3)`
 ///
@@ -34758,7 +34752,7 @@ pub unsafe fn reallocate_via_global_allocator(param_1: i64, param_2: i64) -> u64
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn reapply_dismemberment_from_extra_data(param_1: *mut classes::TESObjectREFR) -> u64 { unsafe { function!(37644, (*mut classes::TESObjectREFR) -> u64)(param_1) } }
+pub unsafe fn reapply_dismemberment_from_extra_data(param_1: *mut crate::TESObjectREFR) -> u64 { unsafe { function!(37644, (*mut crate::TESObjectREFR) -> u64)(param_1) } }
 /// `RebuildFlaggedEntryIndexList` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 91071, rva 0x11df610).
 /// `undefined RebuildFlaggedEntryIndexList(longlong param_1)`
 ///
@@ -39518,7 +39512,7 @@ pub unsafe fn reserve_buffer_capacity(param_1: *mut i64, param_2: u64) -> u64 { 
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn reserve_combat_cover_location(param_1: i64, param_2: *mut u32, param_3: *mut *mut u8, param_4: f32) -> *mut classes::CombatCoverLocation { unsafe { function!(44550, (i64, *mut u32, *mut *mut u8, f32) -> *mut classes::CombatCoverLocation)(param_1, param_2, param_3, param_4) } }
+pub unsafe fn reserve_combat_cover_location(param_1: i64, param_2: *mut u32, param_3: *mut *mut u8, param_4: f32) -> *mut crate::CombatCoverLocation { unsafe { function!(44550, (i64, *mut u32, *mut *mut u8, f32) -> *mut crate::CombatCoverLocation)(param_1, param_2, param_3, param_4) } }
 /// `ReserveCombatCoverLocation_2` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 44542, rva 0x8119b0).
 /// `undefined8 ReserveCombatCoverLocation_2(longlong param_1, longlong param_2, float param_3, undefined8 param_4)`
 ///
@@ -41359,7 +41353,7 @@ pub unsafe fn resize_float_array_fill_lowest(param_1: *mut i64, param_2: u32, pa
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn resize_ni_file_buffer(param_1: *mut classes::NiFile, param_2: u32, param_3: u64, param_4: u64) -> u8 { unsafe { function!(69424, (*mut classes::NiFile, u32, u64, u64) -> u8)(param_1, param_2, param_3, param_4) } }
+pub unsafe fn resize_ni_file_buffer(param_1: *mut crate::NiFile, param_2: u32, param_3: u64, param_4: u64) -> u8 { unsafe { function!(69424, (*mut crate::NiFile, u32, u64, u64) -> u8)(param_1, param_2, param_3, param_4) } }
 /// `ResizeObjectListItemArray` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 27756, rva 0x453620).
 /// `bool ResizeObjectListItemArray(longlong * param_1, uint param_2, undefined8 param_3, undefined8 param_4)`
 ///
@@ -41772,7 +41766,7 @@ pub unsafe fn resolve_relative_path_against_file_directory(param_1: *mut c_char,
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn restart_loop_sound_at_ref_position(param_1: *mut classes::TESObjectREFR) -> u64 { unsafe { function!(43976, (*mut classes::TESObjectREFR) -> u64)(param_1) } }
+pub unsafe fn restart_loop_sound_at_ref_position(param_1: *mut crate::TESObjectREFR) -> u64 { unsafe { function!(43976, (*mut crate::TESObjectREFR) -> u64)(param_1) } }
 /// `RestoreActorValue` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 38455, rva 0x6c47f0).
 /// `undefined RestoreActorValue(longlong param_1, int param_2, float param_3)`
 ///
@@ -42297,77 +42291,77 @@ pub unsafe fn scalar_deleting_dtor_cb0_2(param_1: *mut c_void, param_2: u32, par
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn scalar_deleting_dtor_g_ref_count_impl_core(param_1: *mut classes::GRefCountImplCore, param_2: u32, param_3: u64, param_4: u64) -> *mut classes::GRefCountImplCore { unsafe { function!(84441, (*mut classes::GRefCountImplCore, u32, u64, u64) -> *mut classes::GRefCountImplCore)(param_1, param_2, param_3, param_4) } }
+pub unsafe fn scalar_deleting_dtor_g_ref_count_impl_core(param_1: *mut crate::GRefCountImplCore, param_2: u32, param_3: u64, param_4: u64) -> *mut crate::GRefCountImplCore { unsafe { function!(84441, (*mut crate::GRefCountImplCore, u32, u64, u64) -> *mut crate::GRefCountImplCore)(param_1, param_2, param_3, param_4) } }
 /// `ScalarDeletingDtorGRefCountImplCore_10` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 85577, rva 0xd8e6d0).
 /// `GRefCountImplCore * ScalarDeletingDtorGRefCountImplCore_10(GRefCountImplCore * param_1, uint param_2, undefined8 param_3, undefined8 param_4)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn scalar_deleting_dtor_g_ref_count_impl_core_10(param_1: *mut classes::GRefCountImplCore, param_2: u32, param_3: u64, param_4: u64) -> *mut classes::GRefCountImplCore { unsafe { function!(85577, (*mut classes::GRefCountImplCore, u32, u64, u64) -> *mut classes::GRefCountImplCore)(param_1, param_2, param_3, param_4) } }
+pub unsafe fn scalar_deleting_dtor_g_ref_count_impl_core_10(param_1: *mut crate::GRefCountImplCore, param_2: u32, param_3: u64, param_4: u64) -> *mut crate::GRefCountImplCore { unsafe { function!(85577, (*mut crate::GRefCountImplCore, u32, u64, u64) -> *mut crate::GRefCountImplCore)(param_1, param_2, param_3, param_4) } }
 /// `ScalarDeletingDtorGRefCountImplCore_2` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 84442, rva 0xd6dec0).
 /// `GRefCountImplCore * ScalarDeletingDtorGRefCountImplCore_2(GRefCountImplCore * param_1, uint param_2, undefined8 param_3, undefined8 param_4)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn scalar_deleting_dtor_g_ref_count_impl_core_2(param_1: *mut classes::GRefCountImplCore, param_2: u32, param_3: u64, param_4: u64) -> *mut classes::GRefCountImplCore { unsafe { function!(84442, (*mut classes::GRefCountImplCore, u32, u64, u64) -> *mut classes::GRefCountImplCore)(param_1, param_2, param_3, param_4) } }
+pub unsafe fn scalar_deleting_dtor_g_ref_count_impl_core_2(param_1: *mut crate::GRefCountImplCore, param_2: u32, param_3: u64, param_4: u64) -> *mut crate::GRefCountImplCore { unsafe { function!(84442, (*mut crate::GRefCountImplCore, u32, u64, u64) -> *mut crate::GRefCountImplCore)(param_1, param_2, param_3, param_4) } }
 /// `ScalarDeletingDtorGRefCountImplCore_3` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 85083, rva 0xd74e00).
 /// `GRefCountImplCore * ScalarDeletingDtorGRefCountImplCore_3(GRefCountImplCore * param_1, uint param_2, undefined8 param_3, undefined8 param_4)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn scalar_deleting_dtor_g_ref_count_impl_core_3(param_1: *mut classes::GRefCountImplCore, param_2: u32, param_3: u64, param_4: u64) -> *mut classes::GRefCountImplCore { unsafe { function!(85083, (*mut classes::GRefCountImplCore, u32, u64, u64) -> *mut classes::GRefCountImplCore)(param_1, param_2, param_3, param_4) } }
+pub unsafe fn scalar_deleting_dtor_g_ref_count_impl_core_3(param_1: *mut crate::GRefCountImplCore, param_2: u32, param_3: u64, param_4: u64) -> *mut crate::GRefCountImplCore { unsafe { function!(85083, (*mut crate::GRefCountImplCore, u32, u64, u64) -> *mut crate::GRefCountImplCore)(param_1, param_2, param_3, param_4) } }
 /// `ScalarDeletingDtorGRefCountImplCore_4` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 85261, rva 0xd7cc50).
 /// `GRefCountImplCore * ScalarDeletingDtorGRefCountImplCore_4(GRefCountImplCore * param_1, uint param_2, undefined8 param_3, undefined8 param_4)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn scalar_deleting_dtor_g_ref_count_impl_core_4(param_1: *mut classes::GRefCountImplCore, param_2: u32, param_3: u64, param_4: u64) -> *mut classes::GRefCountImplCore { unsafe { function!(85261, (*mut classes::GRefCountImplCore, u32, u64, u64) -> *mut classes::GRefCountImplCore)(param_1, param_2, param_3, param_4) } }
+pub unsafe fn scalar_deleting_dtor_g_ref_count_impl_core_4(param_1: *mut crate::GRefCountImplCore, param_2: u32, param_3: u64, param_4: u64) -> *mut crate::GRefCountImplCore { unsafe { function!(85261, (*mut crate::GRefCountImplCore, u32, u64, u64) -> *mut crate::GRefCountImplCore)(param_1, param_2, param_3, param_4) } }
 /// `ScalarDeletingDtorGRefCountImplCore_5` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 85262, rva 0xd7ccb0).
 /// `GRefCountImplCore * ScalarDeletingDtorGRefCountImplCore_5(GRefCountImplCore * param_1, uint param_2, undefined8 param_3, undefined8 param_4)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn scalar_deleting_dtor_g_ref_count_impl_core_5(param_1: *mut classes::GRefCountImplCore, param_2: u32, param_3: u64, param_4: u64) -> *mut classes::GRefCountImplCore { unsafe { function!(85262, (*mut classes::GRefCountImplCore, u32, u64, u64) -> *mut classes::GRefCountImplCore)(param_1, param_2, param_3, param_4) } }
+pub unsafe fn scalar_deleting_dtor_g_ref_count_impl_core_5(param_1: *mut crate::GRefCountImplCore, param_2: u32, param_3: u64, param_4: u64) -> *mut crate::GRefCountImplCore { unsafe { function!(85262, (*mut crate::GRefCountImplCore, u32, u64, u64) -> *mut crate::GRefCountImplCore)(param_1, param_2, param_3, param_4) } }
 /// `ScalarDeletingDtorGRefCountImplCore_6` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 85265, rva 0xd7cdd0).
 /// `GRefCountImplCore * ScalarDeletingDtorGRefCountImplCore_6(GRefCountImplCore * param_1, uint param_2, undefined8 param_3, undefined8 param_4)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn scalar_deleting_dtor_g_ref_count_impl_core_6(param_1: *mut classes::GRefCountImplCore, param_2: u32, param_3: u64, param_4: u64) -> *mut classes::GRefCountImplCore { unsafe { function!(85265, (*mut classes::GRefCountImplCore, u32, u64, u64) -> *mut classes::GRefCountImplCore)(param_1, param_2, param_3, param_4) } }
+pub unsafe fn scalar_deleting_dtor_g_ref_count_impl_core_6(param_1: *mut crate::GRefCountImplCore, param_2: u32, param_3: u64, param_4: u64) -> *mut crate::GRefCountImplCore { unsafe { function!(85265, (*mut crate::GRefCountImplCore, u32, u64, u64) -> *mut crate::GRefCountImplCore)(param_1, param_2, param_3, param_4) } }
 /// `ScalarDeletingDtorGRefCountImplCore_7` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 85266, rva 0xd7ce30).
 /// `GRefCountImplCore * ScalarDeletingDtorGRefCountImplCore_7(GRefCountImplCore * param_1, uint param_2, undefined8 param_3, undefined8 param_4)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn scalar_deleting_dtor_g_ref_count_impl_core_7(param_1: *mut classes::GRefCountImplCore, param_2: u32, param_3: u64, param_4: u64) -> *mut classes::GRefCountImplCore { unsafe { function!(85266, (*mut classes::GRefCountImplCore, u32, u64, u64) -> *mut classes::GRefCountImplCore)(param_1, param_2, param_3, param_4) } }
+pub unsafe fn scalar_deleting_dtor_g_ref_count_impl_core_7(param_1: *mut crate::GRefCountImplCore, param_2: u32, param_3: u64, param_4: u64) -> *mut crate::GRefCountImplCore { unsafe { function!(85266, (*mut crate::GRefCountImplCore, u32, u64, u64) -> *mut crate::GRefCountImplCore)(param_1, param_2, param_3, param_4) } }
 /// `ScalarDeletingDtorGRefCountImplCore_8` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 85267, rva 0xd7ce90).
 /// `GRefCountImplCore * ScalarDeletingDtorGRefCountImplCore_8(GRefCountImplCore * param_1, uint param_2, undefined8 param_3, undefined8 param_4)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn scalar_deleting_dtor_g_ref_count_impl_core_8(param_1: *mut classes::GRefCountImplCore, param_2: u32, param_3: u64, param_4: u64) -> *mut classes::GRefCountImplCore { unsafe { function!(85267, (*mut classes::GRefCountImplCore, u32, u64, u64) -> *mut classes::GRefCountImplCore)(param_1, param_2, param_3, param_4) } }
+pub unsafe fn scalar_deleting_dtor_g_ref_count_impl_core_8(param_1: *mut crate::GRefCountImplCore, param_2: u32, param_3: u64, param_4: u64) -> *mut crate::GRefCountImplCore { unsafe { function!(85267, (*mut crate::GRefCountImplCore, u32, u64, u64) -> *mut crate::GRefCountImplCore)(param_1, param_2, param_3, param_4) } }
 /// `ScalarDeletingDtorGRefCountImplCore_9` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 524161, rva 0xd8e670).
 /// `GRefCountImplCore * ScalarDeletingDtorGRefCountImplCore_9(GRefCountImplCore * param_1, uint param_2, undefined8 param_3, undefined8 param_4)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn scalar_deleting_dtor_g_ref_count_impl_core_9(param_1: *mut classes::GRefCountImplCore, param_2: u32, param_3: u64, param_4: u64) -> *mut classes::GRefCountImplCore { unsafe { function!(524161, (*mut classes::GRefCountImplCore, u32, u64, u64) -> *mut classes::GRefCountImplCore)(param_1, param_2, param_3, param_4) } }
+pub unsafe fn scalar_deleting_dtor_g_ref_count_impl_core_9(param_1: *mut crate::GRefCountImplCore, param_2: u32, param_3: u64, param_4: u64) -> *mut crate::GRefCountImplCore { unsafe { function!(524161, (*mut crate::GRefCountImplCore, u32, u64, u64) -> *mut crate::GRefCountImplCore)(param_1, param_2, param_3, param_4) } }
 /// `ScalarDeletingDtorNiBlendInterpolator48` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 72877, rva 0xf68630).
 /// `NiBlendInterpolator * ScalarDeletingDtorNiBlendInterpolator48(NiBlendInterpolator * param_1, uint param_2, undefined8 param_3, undefined8 param_4)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn scalar_deleting_dtor_ni_blend_interpolator48(param_1: *mut classes::NiBlendInterpolator, param_2: u32, param_3: u64, param_4: u64) -> *mut classes::NiBlendInterpolator { unsafe { function!(72877, (*mut classes::NiBlendInterpolator, u32, u64, u64) -> *mut classes::NiBlendInterpolator)(param_1, param_2, param_3, param_4) } }
+pub unsafe fn scalar_deleting_dtor_ni_blend_interpolator48(param_1: *mut crate::NiBlendInterpolator, param_2: u32, param_3: u64, param_4: u64) -> *mut crate::NiBlendInterpolator { unsafe { function!(72877, (*mut crate::NiBlendInterpolator, u32, u64, u64) -> *mut crate::NiBlendInterpolator)(param_1, param_2, param_3, param_4) } }
 /// `ScalarDeletingDtorNoRTTI1A29F00` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 85580, rva 0xd8e7c0).
 /// `undefined8 * ScalarDeletingDtorNoRTTI1A29F00(undefined8 * param_1, uint param_2, undefined8 param_3, undefined8 param_4)`
 ///
@@ -42388,28 +42382,28 @@ pub unsafe fn scalar_deleting_dtor_object_base78(param_1: *mut u64, param_2: u32
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn scalar_deleting_dtor_ref_count_impl18(param_1: *mut classes::GRefCountImplCore, param_2: u32, param_3: u64, param_4: u64) -> *mut classes::GRefCountImplCore { unsafe { function!(85578, (*mut classes::GRefCountImplCore, u32, u64, u64) -> *mut classes::GRefCountImplCore)(param_1, param_2, param_3, param_4) } }
+pub unsafe fn scalar_deleting_dtor_ref_count_impl18(param_1: *mut crate::GRefCountImplCore, param_2: u32, param_3: u64, param_4: u64) -> *mut crate::GRefCountImplCore { unsafe { function!(85578, (*mut crate::GRefCountImplCore, u32, u64, u64) -> *mut crate::GRefCountImplCore)(param_1, param_2, param_3, param_4) } }
 /// `ScalarDeletingDtorRefCountImpl18_2` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 85589, rva 0xd8ed10).
 /// `GRefCountImplCore * ScalarDeletingDtorRefCountImpl18_2(GRefCountImplCore * param_1, uint param_2, undefined8 param_3, undefined8 param_4)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn scalar_deleting_dtor_ref_count_impl18_2(param_1: *mut classes::GRefCountImplCore, param_2: u32, param_3: u64, param_4: u64) -> *mut classes::GRefCountImplCore { unsafe { function!(85589, (*mut classes::GRefCountImplCore, u32, u64, u64) -> *mut classes::GRefCountImplCore)(param_1, param_2, param_3, param_4) } }
+pub unsafe fn scalar_deleting_dtor_ref_count_impl18_2(param_1: *mut crate::GRefCountImplCore, param_2: u32, param_3: u64, param_4: u64) -> *mut crate::GRefCountImplCore { unsafe { function!(85589, (*mut crate::GRefCountImplCore, u32, u64, u64) -> *mut crate::GRefCountImplCore)(param_1, param_2, param_3, param_4) } }
 /// `ScalarDeletingDtorRefCountImpl30` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 84708, rva 0xd8ebb0).
 /// `GRefCountImplCore * ScalarDeletingDtorRefCountImpl30(GRefCountImplCore * param_1, uint param_2, undefined8 param_3, undefined8 param_4)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn scalar_deleting_dtor_ref_count_impl30(param_1: *mut classes::GRefCountImplCore, param_2: u32, param_3: u64, param_4: u64) -> *mut classes::GRefCountImplCore { unsafe { function!(84708, (*mut classes::GRefCountImplCore, u32, u64, u64) -> *mut classes::GRefCountImplCore)(param_1, param_2, param_3, param_4) } }
+pub unsafe fn scalar_deleting_dtor_ref_count_impl30(param_1: *mut crate::GRefCountImplCore, param_2: u32, param_3: u64, param_4: u64) -> *mut crate::GRefCountImplCore { unsafe { function!(84708, (*mut crate::GRefCountImplCore, u32, u64, u64) -> *mut crate::GRefCountImplCore)(param_1, param_2, param_3, param_4) } }
 /// `ScalarDeletingDtorRefCountImpl48` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 85587, rva 0xd8ec10).
 /// `GRefCountImplCore * ScalarDeletingDtorRefCountImpl48(GRefCountImplCore * param_1, uint param_2, undefined8 param_3, undefined8 param_4)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn scalar_deleting_dtor_ref_count_impl48(param_1: *mut classes::GRefCountImplCore, param_2: u32, param_3: u64, param_4: u64) -> *mut classes::GRefCountImplCore { unsafe { function!(85587, (*mut classes::GRefCountImplCore, u32, u64, u64) -> *mut classes::GRefCountImplCore)(param_1, param_2, param_3, param_4) } }
+pub unsafe fn scalar_deleting_dtor_ref_count_impl48(param_1: *mut crate::GRefCountImplCore, param_2: u32, param_3: u64, param_4: u64) -> *mut crate::GRefCountImplCore { unsafe { function!(85587, (*mut crate::GRefCountImplCore, u32, u64, u64) -> *mut crate::GRefCountImplCore)(param_1, param_2, param_3, param_4) } }
 /// `ScalarDeletingDtorSize0x10` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 452761, rva 0x14629d0).
 /// `void * ScalarDeletingDtorSize0x10(void * param_1, ulonglong param_2, undefined8 param_3, undefined8 param_4)`
 ///
@@ -44033,7 +44027,7 @@ pub unsafe fn set_extra_light_data_field1_c(param_1: i64, param_2: f32, param_3:
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn set_extra_lock(param_1: i64, param_2: *mut c_void, param_3: u64, param_4: u64) -> *mut classes::ExtraLock { unsafe { function!(11605, (i64, *mut c_void, u64, u64) -> *mut classes::ExtraLock)(param_1, param_2, param_3, param_4) } }
+pub unsafe fn set_extra_lock(param_1: i64, param_2: *mut c_void, param_3: u64, param_4: u64) -> *mut crate::ExtraLock { unsafe { function!(11605, (i64, *mut c_void, u64, u64) -> *mut crate::ExtraLock)(param_1, param_2, param_3, param_4) } }
 /// `SetExtraNorthRotation` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 11920, rva 0x16e470).
 /// `undefined SetExtraNorthRotation(longlong param_1, float param_2, undefined8 param_3, undefined8 param_4)`
 ///
@@ -45391,7 +45385,7 @@ pub unsafe fn set_quest_completed(param_1: *mut i64, param_2: c_char) -> u64 { u
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn set_queued_attach_for3_d(param_1: *mut classes::TESObjectREFR, param_2: *mut i64) -> u64 { unsafe { function!(19415, (*mut classes::TESObjectREFR, *mut i64) -> u64)(param_1, param_2) } }
+pub unsafe fn set_queued_attach_for3_d(param_1: *mut crate::TESObjectREFR, param_2: *mut i64) -> u64 { unsafe { function!(19415, (*mut crate::TESObjectREFR, *mut i64) -> u64)(param_1, param_2) } }
 /// `SetRagdollAnimSettingInverted` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 13376, rva 0x1a72d0).
 /// `undefined SetRagdollAnimSettingInverted(undefined8 param_1, byte param_2)`
 ///
@@ -47491,7 +47485,7 @@ pub unsafe fn update_bit4000_of_field2_c(param_1: *mut i64, param_2: c_char) -> 
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn update_bleedout_timer(param_1: *mut classes::TESObjectREFR, param_2: f32, param_3: u64, param_4: u64) -> u64 { unsafe { function!(38632, (*mut classes::TESObjectREFR, f32, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
+pub unsafe fn update_bleedout_timer(param_1: *mut crate::TESObjectREFR, param_2: f32, param_3: u64, param_4: u64) -> u64 { unsafe { function!(38632, (*mut crate::TESObjectREFR, f32, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
 /// `UpdateButtonStateColors` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 454592, rva 0x16095b0).
 /// `undefined UpdateButtonStateColors(longlong param_1, char param_2)`
 ///
@@ -47505,7 +47499,7 @@ pub unsafe fn update_button_state_colors(param_1: i64, param_2: c_char) -> u64 {
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn update_delayed_limb_removals(param_1: i64, param_2: *mut classes::TESObjectREFR, param_3: i64, param_4: *mut i64) -> u64 { unsafe { function!(39985, (i64, *mut classes::TESObjectREFR, i64, *mut i64) -> u64)(param_1, param_2, param_3, param_4) } }
+pub unsafe fn update_delayed_limb_removals(param_1: i64, param_2: *mut crate::TESObjectREFR, param_3: i64, param_4: *mut i64) -> u64 { unsafe { function!(39985, (i64, *mut crate::TESObjectREFR, i64, *mut i64) -> u64)(param_1, param_2, param_3, param_4) } }
 /// `UpdateFadeAndCheckVisible` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 19384, rva 0x2d64b0).
 /// `bool UpdateFadeAndCheckVisible(longlong * param_1)`
 ///
@@ -48668,4 +48662,3 @@ pub unsafe fn memcpy_s_8_3(param_1: *mut c_void, param_2: u64, param_3: *mut c_v
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn memcpy_s_9_2(param_1: *mut c_void, param_2: u64, param_3: *mut c_void, param_4: u64) -> u64 { unsafe { function!(447699, (*mut c_void, u64, *mut c_void, u64) -> u64)(param_1, param_2, param_3, param_4) } }
-}

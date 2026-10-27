@@ -15,46 +15,46 @@ use core::ops::Deref;
 use std::ffi::CString;
 use std::sync::atomic::{AtomicU32, Ordering};
 
-use layout::v1_7_104::{classes, enums, fns, globals, vtables};
+use skre::raw::{fns, globals, vtables};
 
 pub use crate::events::EventSourceHolderMenuOpenClose as Ui;
 use crate::SpinGuard;
 use crate::string::BSFixedString;
 
-pub use enums::IMenu_flags as MenuFlags;
+pub use skre::IMenu_flags as MenuFlags;
 
 pub type RenderMenuStackFn = fns::RenderMenuStack_fn;
 pub type AddMessageFn = fns::UIMessageQueue__AddMessage_fn;
 pub type ShowHudMessageFn = fns::ShowHUDMessage_fn;
 /// A menu creator as `Register` takes it: no arguments, a new menu holding one reference.
-pub type MenuCreator = unsafe extern "C" fn() -> *mut classes::IMenu;
+pub type MenuCreator = unsafe extern "C" fn() -> *mut skre::IMenu;
 
-type RegisterFn = unsafe extern "C" fn(this: *mut classes::EventSourceHolder_MenuOpenClose, name: *const c_char, create: Option<MenuCreator>);
+type RegisterFn = unsafe extern "C" fn(this: *mut skre::EventSourceHolder_MenuOpenClose, name: *const c_char, create: Option<MenuCreator>);
 /// `MenuTable::Find` (id 82135): the table is the UI singleton's `menuTable`; the out value is
 /// `{menu (one reference added), create}`.
-type FindFn = unsafe extern "C" fn(table: *mut c_void, name: *const classes::BSFixedString, out: *mut MenuTableValue) -> bool;
-type LoadMovieFn = unsafe extern "C" fn(this: *mut classes::BSScaleformManager, menu: *mut classes::IMenu, out: *mut *mut classes::GFxMovieView, name: *const c_char, scale_mode: u32, alpha: f32) -> bool;
-type AssignFn = unsafe extern "C" fn(this: *mut classes::GFxValue, other: *const classes::GFxValue) -> *mut classes::GFxValue;
-type ObjectInvokeFn = unsafe extern "C" fn(this: *mut c_void, data: *mut c_void, result: *mut classes::GFxValue, name: *const c_char, args: *const classes::GFxValue, count: u32, is_display: bool) -> bool;
-type ObjectGetMemberFn = unsafe extern "C" fn(this: *mut c_void, data: *mut c_void, name: *const c_char, out: *mut classes::GFxValue, is_display: bool) -> bool;
-type ObjectSetMemberFn = unsafe extern "C" fn(this: *mut c_void, data: *mut c_void, name: *const c_char, value: *const classes::GFxValue, is_display: bool) -> bool;
+type FindFn = unsafe extern "C" fn(table: *mut c_void, name: *const skre::BSFixedString, out: *mut MenuTableValue) -> bool;
+type LoadMovieFn = unsafe extern "C" fn(this: *mut skre::BSScaleformManager, menu: *mut skre::IMenu, out: *mut *mut skre::GFxMovieView, name: *const c_char, scale_mode: u32, alpha: f32) -> bool;
+type AssignFn = unsafe extern "C" fn(this: *mut skre::GFxValue, other: *const skre::GFxValue) -> *mut skre::GFxValue;
+type ObjectInvokeFn = unsafe extern "C" fn(this: *mut c_void, data: *mut c_void, result: *mut skre::GFxValue, name: *const c_char, args: *const skre::GFxValue, count: u32, is_display: bool) -> bool;
+type ObjectGetMemberFn = unsafe extern "C" fn(this: *mut c_void, data: *mut c_void, name: *const c_char, out: *mut skre::GFxValue, is_display: bool) -> bool;
+type ObjectSetMemberFn = unsafe extern "C" fn(this: *mut c_void, data: *mut c_void, name: *const c_char, value: *const skre::GFxValue, is_display: bool) -> bool;
 type ObjectHasMemberFn = unsafe extern "C" fn(this: *mut c_void, data: *mut c_void, name: *const c_char, is_display: bool) -> bool;
 
-type MenuVdtor = unsafe extern "C" fn(this: *mut classes::IMenu, flags: u32) -> *mut classes::IMenu;
-type MenuProcessMessage = unsafe extern "C" fn(this: *mut classes::IMenu, message: *mut classes::UIMessage) -> u32;
-type MenuAdvance = unsafe extern "C" fn(this: *mut classes::IMenu, interval: f32, time_ms: u32);
-type MenuSlot = unsafe extern "C" fn(this: *mut classes::IMenu);
+type MenuVdtor = unsafe extern "C" fn(this: *mut skre::IMenu, flags: u32) -> *mut skre::IMenu;
+type MenuProcessMessage = unsafe extern "C" fn(this: *mut skre::IMenu, message: *mut skre::UIMessage) -> u32;
+type MenuAdvance = unsafe extern "C" fn(this: *mut skre::IMenu, interval: f32, time_ms: u32);
+type MenuSlot = unsafe extern "C" fn(this: *mut skre::IMenu);
 
-type MovieSetVisible = unsafe extern "C" fn(this: *mut classes::GFxMovieView, visible: bool);
-type MovieGetVisible = unsafe extern "C" fn(this: *mut classes::GFxMovieView) -> bool;
-type MovieCreateString = unsafe extern "C" fn(this: *mut classes::GFxMovieView, out: *mut classes::GFxValue, text: *const c_char);
-type MovieCreateObject = unsafe extern "C" fn(this: *mut classes::GFxMovieView, out: *mut classes::GFxValue, class_name: *const c_char, args: *const classes::GFxValue, count: u32);
-type MovieCreateArray = unsafe extern "C" fn(this: *mut classes::GFxMovieView, out: *mut classes::GFxValue);
-type MovieCreateFunction = unsafe extern "C" fn(this: *mut classes::GFxMovieView, out: *mut classes::GFxValue, handler: *mut classes::GFxFunctionHandler, user_data: *mut c_void);
-type MovieSetVariable = unsafe extern "C" fn(this: *mut classes::GFxMovieView, path: *const c_char, value: *const classes::GFxValue, set_type: i32) -> bool;
-type MovieGetVariable = unsafe extern "C" fn(this: *mut classes::GFxMovieView, out: *mut classes::GFxValue, path: *const c_char) -> bool;
-type MovieInvoke = unsafe extern "C" fn(this: *mut classes::GFxMovieView, path: *const c_char, result: *mut classes::GFxValue, args: *const classes::GFxValue, count: u32) -> bool;
-type MovieRelease = unsafe extern "C" fn(this: *mut classes::GFxMovieView);
+type MovieSetVisible = unsafe extern "C" fn(this: *mut skre::GFxMovieView, visible: bool);
+type MovieGetVisible = unsafe extern "C" fn(this: *mut skre::GFxMovieView) -> bool;
+type MovieCreateString = unsafe extern "C" fn(this: *mut skre::GFxMovieView, out: *mut skre::GFxValue, text: *const c_char);
+type MovieCreateObject = unsafe extern "C" fn(this: *mut skre::GFxMovieView, out: *mut skre::GFxValue, class_name: *const c_char, args: *const skre::GFxValue, count: u32);
+type MovieCreateArray = unsafe extern "C" fn(this: *mut skre::GFxMovieView, out: *mut skre::GFxValue);
+type MovieCreateFunction = unsafe extern "C" fn(this: *mut skre::GFxMovieView, out: *mut skre::GFxValue, handler: *mut skre::GFxFunctionHandler, user_data: *mut c_void);
+type MovieSetVariable = unsafe extern "C" fn(this: *mut skre::GFxMovieView, path: *const c_char, value: *const skre::GFxValue, set_type: i32) -> bool;
+type MovieGetVariable = unsafe extern "C" fn(this: *mut skre::GFxMovieView, out: *mut skre::GFxValue, path: *const c_char) -> bool;
+type MovieInvoke = unsafe extern "C" fn(this: *mut skre::GFxMovieView, path: *const c_char, result: *mut skre::GFxValue, args: *const skre::GFxValue, count: u32) -> bool;
+type MovieRelease = unsafe extern "C" fn(this: *mut skre::GFxMovieView);
 
 /// `GFxMovieView_vftable`: the one concrete movie-view vtable. It has no RTTI, so the ledger
 /// carries it as a global and the generator emits no vtable for it.
@@ -62,14 +62,14 @@ const MOVIE_VIEW_VTABLE: u64 = 242_614;
 
 #[repr(C)]
 struct MenuTableValue {
-    menu: *mut classes::IMenu,
+    menu: *mut skre::IMenu,
     create: *const c_void,
 }
 
 pub(crate) struct Fns {
-    queue: *const *mut classes::UIMessageQueue,
-    stack_lock: *const classes::BSSpinLock,
-    scaleform: *const *mut classes::BSScaleformManager,
+    queue: *const *mut skre::UIMessageQueue,
+    stack_lock: *const skre::BSSpinLock,
+    scaleform: *const *mut skre::BSScaleformManager,
     movie_vtable: usize,
     menu_vtable: [*const c_void; 9],
     register: RegisterFn,
@@ -96,9 +96,9 @@ impl Fns {
         let base_vtable = reloc.address(vtables::IMenu_vtable::ID)? as *const [*const c_void; 9];
         unsafe {
             Ok(Self {
-                queue: reloc.address(globals::g_UIMessageQueue_ptr)? as *const *mut classes::UIMessageQueue,
-                stack_lock: reloc.address(globals::g_UIMenuStackLock)? as *const classes::BSSpinLock,
-                scaleform: reloc.address(globals::g_BSScaleformManager_ptr)? as *const *mut classes::BSScaleformManager,
+                queue: reloc.address(globals::g_UIMessageQueue_ptr)? as *const *mut skre::UIMessageQueue,
+                stack_lock: reloc.address(globals::g_UIMenuStackLock)? as *const skre::BSSpinLock,
+                scaleform: reloc.address(globals::g_BSScaleformManager_ptr)? as *const *mut skre::BSScaleformManager,
                 movie_vtable: reloc.address(MOVIE_VIEW_VTABLE)?,
                 menu_vtable: *base_vtable,
                 register: crate::resolve(reloc, fns::EventSourceHolder_MenuOpenClose__Register)?,
@@ -217,11 +217,11 @@ pub enum MessageResult {
 
 /// One queued message: the menu it is for, its kind and an optional payload.
 #[repr(transparent)]
-pub struct UiMessage(classes::UIMessage);
+pub struct UiMessage(skre::UIMessage);
 
 impl UiMessage {
     #[must_use]
-    pub fn raw(&self) -> &classes::UIMessage {
+    pub fn raw(&self) -> &skre::UIMessage {
         &self.0
     }
 
@@ -241,7 +241,7 @@ impl UiMessage {
     }
 
     #[must_use]
-    pub fn data(&self) -> *mut classes::IUIMessageData {
+    pub fn data(&self) -> *mut skre::IUIMessageData {
         self.0.data
     }
 }
@@ -249,7 +249,7 @@ impl UiMessage {
 /// The UI message queue behind `g_UIMessageQueue_ptr` (id 400445): a spin-locked ring that
 /// `ProcessMessages` drains once per frame.
 #[repr(transparent)]
-pub struct UiMessageQueue(classes::UIMessageQueue);
+pub struct UiMessageQueue(skre::UIMessageQueue);
 
 impl UiMessageQueue {
     /// `None` before the UI is constructed and after shutdown.
@@ -259,11 +259,11 @@ impl UiMessageQueue {
     }
 
     #[must_use]
-    pub fn raw(&self) -> &classes::UIMessageQueue {
+    pub fn raw(&self) -> &skre::UIMessageQueue {
         &self.0
     }
 
-    fn as_ptr(&self) -> *mut classes::UIMessageQueue {
+    fn as_ptr(&self) -> *mut skre::UIMessageQueue {
         (&raw const self.0).cast_mut()
     }
 
@@ -272,7 +272,7 @@ impl UiMessageQueue {
     ///
     /// # Safety
     /// `data` must be null or a payload the queue may own and delete.
-    pub unsafe fn add_message(&self, menu: &str, kind: MessageType, data: *mut classes::IUIMessageData) {
+    pub unsafe fn add_message(&self, menu: &str, kind: MessageType, data: *mut skre::IUIMessageData) {
         let name = BSFixedString::new(menu);
         unsafe { (fns().add_message)(self.as_ptr(), name.raw(), kind as u32, data) }
     }
@@ -294,23 +294,23 @@ impl UiMessageQueue {
 
 /// A live menu (0x30 bytes of `IMenu`, then the subclass): its movie, depth, flags and class.
 #[repr(transparent)]
-pub struct IMenu(classes::IMenu);
+pub struct IMenu(skre::IMenu);
 
 impl IMenu {
     /// # Safety
     /// `p` must be null or point to a live `IMenu` for `'a`.
     #[must_use]
-    pub unsafe fn from_ptr<'a>(p: *const classes::IMenu) -> Option<&'a Self> {
+    pub unsafe fn from_ptr<'a>(p: *const skre::IMenu) -> Option<&'a Self> {
         unsafe { p.cast::<Self>().as_ref() }
     }
 
     #[must_use]
-    pub fn raw(&self) -> &classes::IMenu {
+    pub fn raw(&self) -> &skre::IMenu {
         &self.0
     }
 
     #[must_use]
-    pub fn as_ptr(&self) -> *mut classes::IMenu {
+    pub fn as_ptr(&self) -> *mut skre::IMenu {
         (&raw const self.0).cast_mut()
     }
 
@@ -348,7 +348,7 @@ impl IMenu {
 
     /// The ledger's vtable for this menu's class, `None` for a class the ledger has no vtable for.
     #[must_use]
-    pub fn class(&self) -> Option<&'static layout::Vtable> {
+    pub fn class(&self) -> Option<&'static skre::raw::Vtable> {
         unsafe { crate::class_of(self.as_ptr().cast()) }
     }
 
@@ -364,7 +364,7 @@ impl IMenu {
     }
 
     /// Drops one reference; at zero the menu's own destructor runs and frees it.
-    unsafe fn release(menu: *mut classes::IMenu) {
+    unsafe fn release(menu: *mut skre::IMenu) {
         let count = unsafe { &*(&raw mut (*menu).refCount).cast::<AtomicU32>() };
         if count.fetch_sub(1, Ordering::AcqRel) == 1 {
             let dtor: MenuVdtor = unsafe { slot((*menu).__vftable.cast(), vtables::IMenu_vtable::SLOT_vdtor) };
@@ -375,11 +375,11 @@ impl IMenu {
 
 /// The HUD (`HUDMenu`, 0x98 bytes): meters, the component list and the root `GFxValue` of its movie.
 #[repr(transparent)]
-pub struct HudMenu(classes::HUDMenu);
+pub struct HudMenu(skre::HUDMenu);
 
 impl HudMenu {
     #[must_use]
-    pub fn raw(&self) -> &classes::HUDMenu {
+    pub fn raw(&self) -> &skre::HUDMenu {
         &self.0
     }
 
@@ -403,7 +403,7 @@ impl HudMenu {
 /// The open menus, read under the engine's recursive stack lock (`g_UIMenuStackLock`), which is
 /// released on drop. Ascending depth: the HUD at 2, the cursor at 13.
 pub struct MenuStack<'a> {
-    menus: &'a [*mut classes::IMenu],
+    menus: &'a [*mut skre::IMenu],
     _lock: SpinGuard,
 }
 
@@ -424,7 +424,7 @@ impl MenuStack<'_> {
 }
 
 impl Ui {
-    fn as_ptr(&self) -> *mut classes::EventSourceHolder_MenuOpenClose {
+    fn as_ptr(&self) -> *mut skre::EventSourceHolder_MenuOpenClose {
         (&raw const *self.raw()).cast_mut()
     }
 
@@ -438,7 +438,7 @@ impl Ui {
         let lock = unsafe { SpinGuard::lock(fns().stack_lock) };
         let ui = self.raw();
         let count = u32::from_le_bytes([ui.unknown_118[8], ui.unknown_118[9], ui.unknown_118[10], ui.unknown_118[11]]) as usize;
-        let menus = if ui.menuStack.is_null() || count == 0 { &[][..] } else { unsafe { core::slice::from_raw_parts(ui.menuStack.cast::<*mut classes::IMenu>(), count) } };
+        let menus = if ui.menuStack.is_null() || count == 0 { &[][..] } else { unsafe { core::slice::from_raw_parts(ui.menuStack.cast::<*mut skre::IMenu>(), count) } };
         MenuStack { menus, _lock: lock }
     }
 
@@ -532,7 +532,7 @@ pub enum ScaleMode {
 
 /// The `IMenu` part of a menu of this mod's own, handed to the [`Menu`] callbacks.
 #[repr(transparent)]
-pub struct MenuBase(classes::IMenu);
+pub struct MenuBase(skre::IMenu);
 
 impl Deref for MenuBase {
     type Target = IMenu;
@@ -615,22 +615,22 @@ pub trait Menu: Sized + 'static {
 
 #[repr(C)]
 struct MenuObject<M: Menu> {
-    base: classes::IMenu,
+    base: skre::IMenu,
     vtable: [*const c_void; 9],
     menu: MaybeUninit<M>,
 }
 
 impl<M: Menu> MenuObject<M> {
-    unsafe fn parts<'a>(this: *mut classes::IMenu) -> (&'a mut MenuBase, &'a mut M) {
+    unsafe fn parts<'a>(this: *mut skre::IMenu) -> (&'a mut MenuBase, &'a mut M) {
         let object = unsafe { &mut *this.cast::<Self>() };
         (unsafe { &mut *(&raw mut object.base).cast::<MenuBase>() }, unsafe { object.menu.assume_init_mut() })
     }
 }
 
-unsafe extern "C" fn create_menu<M: Menu>() -> *mut classes::IMenu {
+unsafe extern "C" fn create_menu<M: Menu>() -> *mut skre::IMenu {
     let engine = &fns().menu_vtable;
     let mut object = Box::new(MenuObject::<M> {
-        base: classes::IMenu {
+        base: skre::IMenu {
             __vftable: core::ptr::null(),
             refCount: 1,
             unknown_C: [0; 4],
@@ -663,7 +663,7 @@ unsafe extern "C" fn create_menu<M: Menu>() -> *mut classes::IMenu {
 
 // The engine's own IMenu destructor without its free (bit 0 clear) releases the movie and the
 // delegate; the object itself is a Box.
-unsafe extern "C" fn menu_dtor<M: Menu>(this: *mut classes::IMenu, flags: u32) -> *mut classes::IMenu {
+unsafe extern "C" fn menu_dtor<M: Menu>(this: *mut skre::IMenu, flags: u32) -> *mut skre::IMenu {
     let object = this.cast::<MenuObject<M>>();
     unsafe { (*object).menu.assume_init_drop() };
     let base: MenuVdtor = unsafe { slot(fns().menu_vtable.as_ptr(), vtables::IMenu_vtable::SLOT_vdtor) };
@@ -674,12 +674,12 @@ unsafe extern "C" fn menu_dtor<M: Menu>(this: *mut classes::IMenu, flags: u32) -
     this
 }
 
-unsafe extern "C" fn menu_post_create<M: Menu>(this: *mut classes::IMenu) {
+unsafe extern "C" fn menu_post_create<M: Menu>(this: *mut skre::IMenu) {
     let (base, menu) = unsafe { MenuObject::<M>::parts(this) };
     menu.post_create(base);
 }
 
-unsafe extern "C" fn menu_process_message<M: Menu>(this: *mut classes::IMenu, message: *mut classes::UIMessage) -> u32 {
+unsafe extern "C" fn menu_process_message<M: Menu>(this: *mut skre::IMenu, message: *mut skre::UIMessage) -> u32 {
     let (base, menu) = unsafe { MenuObject::<M>::parts(this) };
     let Some(msg) = (unsafe { message.cast::<UiMessage>().as_ref() }) else { return 2 };
     match menu.process_message(base, msg) {
@@ -693,17 +693,17 @@ unsafe extern "C" fn menu_process_message<M: Menu>(this: *mut classes::IMenu, me
     }
 }
 
-unsafe extern "C" fn menu_advance<M: Menu>(this: *mut classes::IMenu, interval: f32, time_ms: u32) {
+unsafe extern "C" fn menu_advance<M: Menu>(this: *mut skre::IMenu, interval: f32, time_ms: u32) {
     let (base, menu) = unsafe { MenuObject::<M>::parts(this) };
     menu.advance(base, interval, time_ms);
 }
 
-unsafe extern "C" fn menu_display<M: Menu>(this: *mut classes::IMenu) {
+unsafe extern "C" fn menu_display<M: Menu>(this: *mut skre::IMenu) {
     let (base, menu) = unsafe { MenuObject::<M>::parts(this) };
     menu.display(base);
 }
 
-unsafe extern "C" fn menu_refresh_platform(this: *mut classes::IMenu) {
+unsafe extern "C" fn menu_refresh_platform(this: *mut skre::IMenu) {
     if unsafe { !(*this).movie.is_null() } {
         let f: MenuSlot = unsafe { slot(fns().menu_vtable.as_ptr(), vtables::IMenu_vtable::SLOT_RefreshPlatform) };
         unsafe { f(this) }
@@ -712,23 +712,23 @@ unsafe extern "C" fn menu_refresh_platform(this: *mut classes::IMenu) {
 
 /// A Scaleform movie view (`GFxMovieView`, 0x2BF0 bytes): the object a menu's `movie` points at.
 #[repr(transparent)]
-pub struct Movie(classes::GFxMovieView);
+pub struct Movie(skre::GFxMovieView);
 
 impl Movie {
     /// # Safety
     /// `p` must be null or point to a live movie view for `'a`.
     #[must_use]
-    pub unsafe fn from_ptr<'a>(p: *const classes::GFxMovieView) -> Option<&'a Self> {
+    pub unsafe fn from_ptr<'a>(p: *const skre::GFxMovieView) -> Option<&'a Self> {
         unsafe { p.cast::<Self>().as_ref() }
     }
 
     #[must_use]
-    pub fn raw(&self) -> &classes::GFxMovieView {
+    pub fn raw(&self) -> &skre::GFxMovieView {
         &self.0
     }
 
     #[must_use]
-    pub fn as_ptr(&self) -> *mut classes::GFxMovieView {
+    pub fn as_ptr(&self) -> *mut skre::GFxMovieView {
         (&raw const self.0).cast_mut()
     }
 
@@ -852,46 +852,46 @@ const VALUE_TYPE_MASK: u32 = 0xF;
 /// A `GFxValue` (0x18 bytes): the value passed to and read from Scaleform. A managed value
 /// (bit 0x40) keeps its object alive and is released on drop; release every value before its movie.
 #[repr(transparent)]
-pub struct Value(classes::GFxValue);
+pub struct Value(skre::GFxValue);
 
 impl Value {
     #[must_use]
     pub const fn undefined() -> Self {
-        Self(classes::GFxValue { objectInterface: core::ptr::null_mut(), type_: 0, unknown_C: [0; 4], data: 0 })
+        Self(skre::GFxValue { objectInterface: core::ptr::null_mut(), type_: 0, unknown_C: [0; 4], data: 0 })
     }
 
     #[must_use]
     pub const fn null() -> Self {
-        Self(classes::GFxValue { objectInterface: core::ptr::null_mut(), type_: 1, unknown_C: [0; 4], data: 0 })
+        Self(skre::GFxValue { objectInterface: core::ptr::null_mut(), type_: 1, unknown_C: [0; 4], data: 0 })
     }
 
     #[must_use]
     pub const fn boolean(value: bool) -> Self {
-        Self(classes::GFxValue { objectInterface: core::ptr::null_mut(), type_: 2, unknown_C: [0; 4], data: value as u64 })
+        Self(skre::GFxValue { objectInterface: core::ptr::null_mut(), type_: 2, unknown_C: [0; 4], data: value as u64 })
     }
 
     #[must_use]
     pub fn number(value: f64) -> Self {
-        Self(classes::GFxValue { objectInterface: core::ptr::null_mut(), type_: 3, unknown_C: [0; 4], data: value.to_bits() })
+        Self(skre::GFxValue { objectInterface: core::ptr::null_mut(), type_: 3, unknown_C: [0; 4], data: value.to_bits() })
     }
 
     /// An unmanaged string value over `text`, which must outlive every use of the value.
     #[must_use]
     pub fn string(text: &'static CStr) -> Self {
-        Self(classes::GFxValue { objectInterface: core::ptr::null_mut(), type_: 4, unknown_C: [0; 4], data: text.as_ptr() as u64 })
+        Self(skre::GFxValue { objectInterface: core::ptr::null_mut(), type_: 4, unknown_C: [0; 4], data: text.as_ptr() as u64 })
     }
 
     #[must_use]
-    pub fn raw(&self) -> &classes::GFxValue {
+    pub fn raw(&self) -> &skre::GFxValue {
         &self.0
     }
 
     #[must_use]
-    pub fn as_ptr(&self) -> *const classes::GFxValue {
+    pub fn as_ptr(&self) -> *const skre::GFxValue {
         &raw const self.0
     }
 
-    fn as_mut_ptr(&mut self) -> *mut classes::GFxValue {
+    fn as_mut_ptr(&mut self) -> *mut skre::GFxValue {
         &raw mut self.0
     }
 
@@ -1017,11 +1017,11 @@ impl core::fmt::Debug for Value {
 
 /// The arguments of a native callback: `this`, the arguments, the movie and the return slot.
 #[repr(transparent)]
-pub struct Params(classes::GFxFunctionHandler__Params);
+pub struct Params(skre::GFxFunctionHandler__Params);
 
 impl Params {
     #[must_use]
-    pub fn raw(&self) -> &classes::GFxFunctionHandler__Params {
+    pub fn raw(&self) -> &skre::GFxFunctionHandler__Params {
         &self.0
     }
 
@@ -1058,7 +1058,7 @@ pub trait FunctionHandler: Sync + 'static {
 #[repr(C)]
 struct FunctionVtable<H: FunctionHandler> {
     destroy: unsafe extern "C" fn(this: *mut Function<H>, flags: u32) -> *mut Function<H>,
-    call: unsafe extern "C" fn(this: *mut Function<H>, params: *mut classes::GFxFunctionHandler__Params),
+    call: unsafe extern "C" fn(this: *mut Function<H>, params: *mut skre::GFxFunctionHandler__Params),
 }
 
 /// The `GFxFunctionHandler` object Scaleform calls (vtable, reference count, then the handler);
@@ -1089,7 +1089,7 @@ impl<H: FunctionHandler> Function<H> {
         self.ref_count.load(Ordering::Relaxed)
     }
 
-    fn as_ptr(&'static self) -> *mut classes::GFxFunctionHandler {
+    fn as_ptr(&'static self) -> *mut skre::GFxFunctionHandler {
         core::ptr::from_ref(self).cast_mut().cast()
     }
 
@@ -1097,7 +1097,7 @@ impl<H: FunctionHandler> Function<H> {
         this
     }
 
-    unsafe extern "C" fn call(this: *mut Self, params: *mut classes::GFxFunctionHandler__Params) {
+    unsafe extern "C" fn call(this: *mut Self, params: *mut skre::GFxFunctionHandler__Params) {
         if let (Some(this), Some(params)) = (unsafe { this.as_ref() }, unsafe { params.cast::<Params>().as_mut() }) {
             this.handler.call(params);
         }

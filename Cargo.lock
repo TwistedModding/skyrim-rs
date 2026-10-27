@@ -55,7 +55,7 @@ name = "bone-driver"
 version = "0.1.0"
 dependencies = [
  "hook",
- "layout",
+ "skre",
  "skse",
  "skyrim",
 ]
@@ -85,7 +85,7 @@ name = "camera-demo"
 version = "0.1.0"
 dependencies = [
  "hook",
- "layout",
+ "skre",
  "skse",
  "skyrim",
 ]
@@ -128,7 +128,7 @@ dependencies = [
 name = "crash"
 version = "0.1.0"
 dependencies = [
- "layout",
+ "skre",
  "skse",
  "versionlib",
  "windows-sys",
@@ -140,7 +140,7 @@ version = "0.1.0"
 dependencies = [
  "framework",
  "hook",
- "layout",
+ "skre",
  "skse",
  "skyrim",
  "windows-sys",
@@ -273,7 +273,7 @@ name = "example-mod"
 version = "0.1.0"
 dependencies = [
  "framework",
- "layout",
+ "skre",
  "skse",
  "skyrim",
 ]
@@ -295,7 +295,7 @@ name = "first-person-shadows"
 version = "0.1.0"
 dependencies = [
  "hook",
- "layout",
+ "skre",
  "skse",
  "skyrim",
 ]
@@ -321,8 +321,8 @@ version = "0.1.0"
 dependencies = [
  "crash",
  "hook",
- "layout",
  "overlay",
+ "skre",
  "skse",
  "skyrim",
  "windows-sys",
@@ -408,7 +408,7 @@ name = "hooks-test"
 version = "0.1.0"
 dependencies = [
  "framework",
- "layout",
+ "skre",
  "skse",
  "skyrim",
 ]
@@ -465,19 +465,11 @@ dependencies = [
 ]
 
 [[package]]
-name = "layout"
-version = "0.1.0"
-dependencies = [
- "skse",
- "versionlib",
-]
-
-[[package]]
 name = "legacy-patch"
 version = "0.1.0"
 dependencies = [
  "hook",
- "layout",
+ "skre",
  "skse",
  "skyrim",
 ]
@@ -609,7 +601,7 @@ version = "0.1.0"
 dependencies = [
  "egui",
  "hook",
- "layout",
+ "skre",
  "skyrim",
  "windows",
 ]
@@ -714,7 +706,7 @@ name = "reload-test"
 version = "0.1.0"
 dependencies = [
  "framework",
- "layout",
+ "skre",
  "skse",
  "skyrim",
 ]
@@ -730,7 +722,7 @@ name = "sample-plugin"
 version = "0.1.0"
 dependencies = [
  "hook",
- "layout",
+ "skre",
  "skse",
 ]
 
@@ -807,6 +799,14 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "f8fadd59c855ef2080decdef8ff161eb6661b86933c9d82e5ba29dc602a55aba"
 
 [[package]]
+name = "skre"
+version = "0.1.0"
+dependencies = [
+ "skse",
+ "versionlib",
+]
+
+[[package]]
 name = "skrifa"
 version = "0.44.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -828,7 +828,7 @@ name = "skyrim"
 version = "0.1.0"
 dependencies = [
  "hook",
- "layout",
+ "skre",
  "skse",
  "windows-sys",
 ]
@@ -844,7 +844,7 @@ name = "standalone"
 version = "0.1.0"
 dependencies = [
  "hook",
- "layout",
+ "skre",
  "skse",
  "skyrim",
  "windows-sys",
@@ -878,8 +878,8 @@ version = "0.1.0"
 dependencies = [
  "crash",
  "hook",
- "layout",
  "overlay",
+ "skre",
  "skse",
  "skyrim",
  "windows-sys",

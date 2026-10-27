@@ -11,7 +11,7 @@ use std::io::Write as _;
 use std::sync::OnceLock;
 use std::sync::atomic::{AtomicU64, Ordering};
 
-use layout::v1_7_104::{classes, fns};
+use skre::raw::fns;
 use skyrim::actors::{ActorValue, Modifier, PlayerCharacter};
 
 pub const A: &str = "skyrim-rs-legacy-patch-a";
@@ -59,7 +59,7 @@ fn install<F: Copy>(plugin: &str, cell: &'static OnceLock<hook::Hook<F>>, name: 
     cell.get().is_some()
 }
 
-unsafe extern "C" fn mod_actor_value(this: *mut classes::Actor, modifier: i32, value: i32, delta: f32, source: *mut c_void) {
+unsafe extern "C" fn mod_actor_value(this: *mut skre::Actor, modifier: i32, value: i32, delta: f32, source: *mut c_void) {
     let player = PlayerCharacter::get().is_some_and(|p| core::ptr::eq(p.as_ptr().cast(), this));
     if player && value == ActorValue::Health as i32 && modifier == Modifier::Damage as i32 && delta < 0.0 {
         log(A, format_args!("player health damage {delta}"));
@@ -67,7 +67,7 @@ unsafe extern "C" fn mod_actor_value(this: *mut classes::Actor, modifier: i32, v
     unsafe { MOD_ACTOR_VALUE.get().expect("set before enabling").original()(this, modifier, value, delta, source) }
 }
 
-unsafe extern "C" fn get_scale(this: *mut classes::TESObjectREFR) -> f32 {
+unsafe extern "C" fn get_scale(this: *mut skre::TESObjectREFR) -> f32 {
     SCALE_CALLS.fetch_add(1, Ordering::Relaxed);
     unsafe { GET_SCALE.get().expect("set before enabling").original()(this) }
 }

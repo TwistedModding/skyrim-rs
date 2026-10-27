@@ -13,15 +13,15 @@ use core::sync::atomic::{AtomicU32, Ordering};
 use std::ffi::CString;
 use std::fmt;
 
-use layout::v1_7_104::{classes, enums, fns, globals, vtables};
+use skre::raw::{fns, globals, vtables};
 
 use crate::forms::{BGSKeyword, BGSLocation, FormFlags, FormType, TESClass, TESForm, TESNPC, TESObjectCELL, TESRace, TESWorldSpace, ptr_slice};
 
-pub use enums::{ActorValue, Actor_boolFlags as ActorFlags, ActorState_flags1 as StateFlags, TESActorBaseData_flags as ActorBaseFlags};
+pub use skre::{ActorValue, Actor_boolFlags as ActorFlags, ActorState_flags1 as StateFlags, TESActorBaseData_flags as ActorBaseFlags};
 
 /// `ResolveRefHandle` (id 12331): `bool (uint* handle, NiPointer<TESObjectREFR>* out)`; the
 /// `NiPointer` is one pointer slot that receives a referenced object or null.
-type ResolveRefHandleFn = unsafe extern "C" fn(handle: *mut u32, out: *mut *mut classes::TESObjectREFR) -> bool;
+type ResolveRefHandleFn = unsafe extern "C" fn(handle: *mut u32, out: *mut *mut skre::TESObjectREFR) -> bool;
 
 pub(crate) struct Fns {
     get_handle: fns::TESObjectREFR__GetHandle_fn,
@@ -46,8 +46,8 @@ pub(crate) struct Fns {
     base_level: fns::TESActorBaseData__GetLevel_fn,
     av_by_name: fns::ActorValueList__LookupActorValueByName_fn,
     av_info: fns::ActorValueList__GetActorValueInfo_fn,
-    player: *const *const classes::PlayerCharacter,
-    av_list: *const *const classes::ActorValueList,
+    player: *const *const skre::PlayerCharacter,
+    av_list: *const *const skre::ActorValueList,
 }
 
 unsafe impl Send for Fns {}
@@ -79,8 +79,8 @@ impl Fns {
                 base_level: crate::resolve(reloc, fns::TESActorBaseData__GetLevel)?,
                 av_by_name: crate::resolve(reloc, fns::ActorValueList__LookupActorValueByName)?,
                 av_info: crate::resolve(reloc, fns::ActorValueList__GetActorValueInfo)?,
-                player: reloc.address(globals::g_PlayerCharacter_ptr)? as *const *const classes::PlayerCharacter,
-                av_list: reloc.address(globals::g_ActorValueList_ptr)? as *const *const classes::ActorValueList,
+                player: reloc.address(globals::g_PlayerCharacter_ptr)? as *const *const skre::PlayerCharacter,
+                av_list: reloc.address(globals::g_ActorValueList_ptr)? as *const *const skre::ActorValueList,
             })
         }
     }
@@ -103,16 +103,16 @@ macro_rules! wrapper {
     ($(#[$doc:meta] $name:ident($layout:ident) : $base:ident) => {
         $(#[$doc]
         #[repr(transparent)]
-        pub struct $name(classes::$layout);
+        pub struct $name(skre::$layout);
 
         impl $name {
             #[must_use]
-            pub fn raw(&self) -> &classes::$layout {
+            pub fn raw(&self) -> &skre::$layout {
                 &self.0
             }
 
             #[must_use]
-            pub fn as_ptr(&self) -> *const classes::$layout {
+            pub fn as_ptr(&self) -> *const skre::$layout {
                 &raw const self.0
             }
         }
@@ -314,7 +314,7 @@ impl RefHandle {
     #[must_use]
     pub fn lookup(self) -> Option<RefPtr> {
         let mut handle = self.0;
-        let mut out: *mut classes::TESObjectREFR = core::ptr::null_mut();
+        let mut out: *mut skre::TESObjectREFR = core::ptr::null_mut();
         let found = unsafe { (fns().resolve_handle)(&raw mut handle, &raw mut out) };
         if !found {
             return None;
@@ -346,7 +346,7 @@ impl core::ops::Deref for RefPtr {
 
 impl Drop for RefPtr {
     fn drop(&mut self) {
-        let word = unsafe { AtomicU32::from_ptr(&raw mut (*self.0.as_ptr().cast::<classes::TESObjectREFR>()).refCount) };
+        let word = unsafe { AtomicU32::from_ptr(&raw mut (*self.0.as_ptr().cast::<skre::TESObjectREFR>()).refCount) };
         word.fetch_sub(1, Ordering::AcqRel);
     }
 }
@@ -359,17 +359,17 @@ impl fmt::Debug for RefPtr {
 
 /// A scene graph node, reached through [`TESObjectREFR::node_3d`]; only its class is described.
 #[repr(transparent)]
-pub struct NiNode(classes::NiNode);
+pub struct NiNode(skre::NiNode);
 
 impl NiNode {
     #[must_use]
-    pub fn raw(&self) -> &classes::NiNode {
+    pub fn raw(&self) -> &skre::NiNode {
         &self.0
     }
 
     /// The node's dynamic class from its vtable pointer (`BSFadeNode` for an actor's root).
     #[must_use]
-    pub fn class(&self) -> Option<&'static layout::Vtable> {
+    pub fn class(&self) -> Option<&'static skre::raw::Vtable> {
         unsafe { crate::class_of((&raw const self.0).cast()) }
     }
 }
@@ -377,11 +377,11 @@ impl NiNode {
 /// The extra data list of a reference; only the typed lookups are wrapped, the node walk needs
 /// the list's lock, which pass 2 did not describe.
 #[repr(transparent)]
-pub struct BaseExtraList(classes::BaseExtraList);
+pub struct BaseExtraList(skre::BaseExtraList);
 
 impl BaseExtraList {
     #[must_use]
-    pub fn raw(&self) -> &classes::BaseExtraList {
+    pub fn raw(&self) -> &skre::BaseExtraList {
         &self.0
     }
 
@@ -393,18 +393,18 @@ impl BaseExtraList {
 
     /// The node of extra data type `ty` through `BaseExtraList::GetByType` (id 12329).
     #[must_use]
-    pub fn get_by_type(&self, ty: u32) -> Option<&classes::BSExtraData> {
+    pub fn get_by_type(&self, ty: u32) -> Option<&skre::BSExtraData> {
         unsafe { (fns().extra_get_by_type)((&raw const self.0).cast_mut(), ty).as_ref() }
     }
 }
 
 /// The items a reference gained or lost relative to its base container.
 #[repr(transparent)]
-pub struct InventoryChanges(classes::InventoryChanges);
+pub struct InventoryChanges(skre::InventoryChanges);
 
 impl InventoryChanges {
     #[must_use]
-    pub fn raw(&self) -> &classes::InventoryChanges {
+    pub fn raw(&self) -> &skre::InventoryChanges {
         &self.0
     }
 
@@ -418,7 +418,7 @@ impl InventoryChanges {
         let mut node = unsafe { self.0.entries.as_ref() };
         core::iter::from_fn(move || {
             let n = node?;
-            node = unsafe { n.next.cast::<classes::BSSimpleListNode>().as_ref() };
+            node = unsafe { n.next.cast::<skre::BSSimpleListNode>().as_ref() };
             Some(unsafe { n.item.cast::<InventoryEntry>().as_ref() })
         })
         .flatten()
@@ -434,11 +434,11 @@ impl InventoryChanges {
 /// One inventory entry: the object, its count relative to the base container and the per-stack
 /// extra lists (`raw().extraLists`, a list pass 2 did not walk).
 #[repr(transparent)]
-pub struct InventoryEntry(classes::InventoryEntry);
+pub struct InventoryEntry(skre::InventoryEntry);
 
 impl InventoryEntry {
     #[must_use]
-    pub fn raw(&self) -> &classes::InventoryEntry {
+    pub fn raw(&self) -> &skre::InventoryEntry {
         &self.0
     }
 
@@ -456,11 +456,11 @@ impl InventoryEntry {
 
 /// The base container component of an `NPC_` or `CONT` record (`TESNPC` +0x88).
 #[repr(transparent)]
-pub struct TESContainer(classes::TESContainer);
+pub struct TESContainer(skre::TESContainer);
 
 impl TESContainer {
     #[must_use]
-    pub fn raw(&self) -> &classes::TESContainer {
+    pub fn raw(&self) -> &skre::TESContainer {
         &self.0
     }
 
@@ -478,11 +478,11 @@ impl TESContainer {
 
 /// One base container entry.
 #[repr(transparent)]
-pub struct ContainerEntry(classes::ContainerEntry);
+pub struct ContainerEntry(skre::ContainerEntry);
 
 impl ContainerEntry {
     #[must_use]
-    pub fn raw(&self) -> &classes::ContainerEntry {
+    pub fn raw(&self) -> &skre::ContainerEntry {
         &self.0
     }
 
@@ -656,14 +656,14 @@ pub enum Modifier {
 /// The actor value interface of an actor (`Actor` +0xB8): current = base + the three modifiers,
 /// permanent = base + the permanent modifier.
 #[repr(transparent)]
-pub struct ActorValueOwner(classes::ActorValueOwner);
+pub struct ActorValueOwner(skre::ActorValueOwner);
 
 impl ActorValueOwner {
     fn vtable(&self) -> &vtables::ActorValueOwner_vtable {
         unsafe { &*self.0.__vftable }
     }
 
-    fn as_ptr(&self) -> *mut classes::ActorValueOwner {
+    fn as_ptr(&self) -> *mut skre::ActorValueOwner {
         (&raw const self.0).cast_mut()
     }
 
@@ -715,11 +715,11 @@ impl ActorValueOwner {
 
 /// The movement and weapon state of an actor (`Actor` +0xC0).
 #[repr(transparent)]
-pub struct ActorState(classes::ActorState);
+pub struct ActorState(skre::ActorState);
 
 impl ActorState {
     #[must_use]
-    pub fn raw(&self) -> &classes::ActorState {
+    pub fn raw(&self) -> &skre::ActorState {
         &self.0
     }
 
@@ -773,11 +773,11 @@ impl ActorState {
 
 /// The AI process of an actor.
 #[repr(transparent)]
-pub struct AIProcess(classes::AIProcess);
+pub struct AIProcess(skre::AIProcess);
 
 impl AIProcess {
     #[must_use]
-    pub fn raw(&self) -> &classes::AIProcess {
+    pub fn raw(&self) -> &skre::AIProcess {
         &self.0
     }
 
@@ -808,11 +808,11 @@ impl AIProcess {
 
 /// Middle-high process data; only the two equipped entries are described (size rated medium).
 #[repr(transparent)]
-pub struct MiddleHighProcessData(classes::MiddleHighProcessData);
+pub struct MiddleHighProcessData(skre::MiddleHighProcessData);
 
 impl MiddleHighProcessData {
     #[must_use]
-    pub fn raw(&self) -> &classes::MiddleHighProcessData {
+    pub fn raw(&self) -> &skre::MiddleHighProcessData {
         &self.0
     }
 
@@ -835,14 +835,14 @@ pub enum Sex {
 }
 
 impl TESNPC {
-    fn actor_base_data(&self) -> *const classes::TESActorBaseData {
+    fn actor_base_data(&self) -> *const skre::TESActorBaseData {
         (&raw const self.raw().__vftable_30).cast()
     }
 
     /// The full name through `TESFullName` vtable slot 5 (`GetFullName`) on the component at +0xD8.
     #[must_use]
     pub fn full_name(&self) -> Option<&CStr> {
-        let name: *const classes::TESFullName = (&raw const self.raw().__vftable_D8).cast();
+        let name: *const skre::TESFullName = (&raw const self.raw().__vftable_D8).cast();
         let get = unsafe { (*(*name).__vftable).GetFullName() }?;
         unsafe { c_str(get(name)) }.filter(|s| !s.is_empty())
     }
@@ -941,7 +941,7 @@ impl ActorValueInfo {
 
 /// The actor value table: one `ActorValueInfo` per [`ActorValue`].
 #[repr(transparent)]
-pub struct ActorValueList(classes::ActorValueList);
+pub struct ActorValueList(skre::ActorValueList);
 
 impl ActorValueList {
     /// The singleton behind `g_ActorValueList_ptr` (id 400267).
@@ -951,7 +951,7 @@ impl ActorValueList {
     }
 
     #[must_use]
-    pub fn raw(&self) -> &classes::ActorValueList {
+    pub fn raw(&self) -> &skre::ActorValueList {
         &self.0
     }
 

@@ -1,4 +1,4 @@
-//! Generates `crates/layout` from the SkyrimRE-1.7.104 ledgers.
+//! Generates `crates/skre` from the SkyrimRE-1.7.104 ledgers.
 
 mod api;
 mod emit;
@@ -13,8 +13,8 @@ use std::process::Command;
 pub use emit::Stats;
 
 pub const RE_REPO: &str = "SkyrimRE-1.7.104";
-pub const MODULE_DIR: &str = "crates/layout/src/v1_7_104";
-pub const LOCK: &str = "crates/layout/generated.lock";
+pub const MODULE_DIR: &str = "crates/skre/src/generated";
+pub const LOCK: &str = "crates/skre/generated.lock";
 
 #[must_use]
 pub fn workspace_root() -> PathBuf {

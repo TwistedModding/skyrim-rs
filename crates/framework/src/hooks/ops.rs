@@ -1,12 +1,12 @@
 //! The typed engine operations a plugin can subscribe to, and the raw slots for addresses outside the set.
 //!
 //! Each marker type below is one engine function: its Address Library id and `extern "C" fn` type
-//! come from the layout crate, so a subscriber's closure is checked against the function's real
+//! come from `skre`, so a subscriber's closure is checked against the function's real
 //! signature. Adding one is one line in `ops!`.
 
 use core::marker::PhantomData;
 
-use layout::v1_7_104::fns;
+use skre::raw::fns;
 
 use super::site::{Op, Signature, Site};
 use super::{Hookable, Target};
@@ -89,7 +89,7 @@ pub const RAW_MAX_ARITY: usize = 8;
 
 static RAW_SITES: [Site; RAW_SLOTS] = [const { Site::new() }; RAW_SLOTS];
 
-/// A function the layout does not type, hooked by address with a shape the caller vouches for.
+/// A function `skre` does not type, hooked by address with a shape the caller vouches for.
 /// Only integer-class arguments and results are carried (`usize` each, in register order); a
 /// float or a struct passed by value is not preserved. A second plugin may subscribe to the same
 /// address with the same shape; a different shape is refused.

@@ -1974,10 +1974,10 @@ impl InputDevice {
     }
 }
 
-/// values in data/inputcontexts.json (input pass).
+/// values in data/inputcontexts.json (input pass `InputContext` in the pass; a class has that name).
 #[repr(u32)]
 #[derive(Clone, Copy, PartialEq, Eq, Debug)]
-pub enum InputContext {
+pub enum InputContextEnum {
     /// `Gameplay`
     Gameplay = 0,
     /// `MenuMode`
@@ -2020,7 +2020,7 @@ pub enum InputContext {
     none = 19,
 }
 
-impl InputContext {
+impl InputContextEnum {
     #[must_use]
     pub const fn from_u32(value: u32) -> Option<Self> {
         match value {

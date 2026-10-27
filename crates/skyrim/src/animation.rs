@@ -11,7 +11,7 @@
 
 use core::ffi::c_void;
 
-use layout::v1_7_104::{classes, fns, globals, vtables};
+use skre::raw::{fns, globals, vtables};
 
 use crate::actors::{Actor, TESObjectREFR};
 use crate::events::{BSAnimationGraphEvent, BSTEventSource};
@@ -25,13 +25,13 @@ pub use fns::PlayerCharacter__UpdateNodesAfterRender_fn as UpdateNodesAfterRende
 pub type ApplyPoseFn = unsafe extern "C" fn(pose: *const HkQsTransform, nodes: *mut c_void, count: i32);
 
 /// Holder slot 1 `NotifyAnimationGraph(const BSFixedString&)`.
-type NotifyFn = unsafe extern "C" fn(this: *mut classes::IAnimationGraphManagerHolder, name: *const classes::BSFixedString) -> bool;
+type NotifyFn = unsafe extern "C" fn(this: *mut skre::IAnimationGraphManagerHolder, name: *const skre::BSFixedString) -> bool;
 /// Holder slots 16, 17, 18: `bool (this, const BSFixedString& name, T& out)`.
-type GetVariableFn<T> = unsafe extern "C" fn(this: *mut classes::IAnimationGraphManagerHolder, name: *const classes::BSFixedString, out: *mut T) -> bool;
+type GetVariableFn<T> = unsafe extern "C" fn(this: *mut skre::IAnimationGraphManagerHolder, name: *const skre::BSFixedString, out: *mut T) -> bool;
 /// The non-virtual setters (ids 32887, 32886, 32885): `bool (this, const BSFixedString& name, T value)`.
-type SetVariableFn<T> = unsafe extern "C" fn(this: *mut classes::IAnimationGraphManagerHolder, name: *const classes::BSFixedString, value: T) -> bool;
+type SetVariableFn<T> = unsafe extern "C" fn(this: *mut skre::IAnimationGraphManagerHolder, name: *const skre::BSFixedString, value: T) -> bool;
 /// `TESObjectREFR::GetAnimationGraphEventSource` (id 40850): `bool (ref, out, graphIndex)`.
-type GetEventSourceFn = unsafe extern "C" fn(refr: *mut classes::TESObjectREFR, out: *mut *mut classes::BSTEventSource, graph_index: u32) -> bool;
+type GetEventSourceFn = unsafe extern "C" fn(refr: *mut skre::TESObjectREFR, out: *mut *mut skre::BSTEventSource, graph_index: u32) -> bool;
 
 /// A Havok transform: translation, rotation quaternion `[x, y, z, w]` and scale, each padded to four floats.
 #[repr(C)]
@@ -48,7 +48,7 @@ const _: () = assert!(size_of::<HkQsTransform>() == 0x30);
 #[repr(C)]
 #[derive(Clone, Copy, Debug)]
 pub struct BoneNodeEntry {
-    pub node: *mut classes::NiAVObject,
+    pub node: *mut skre::NiAVObject,
     pub index: u32,
     pub padding: u32,
 }
@@ -123,14 +123,14 @@ pub fn actor_mediator() -> *const c_void {
 /// The registration dies with the manager (3D unload).
 #[must_use]
 pub fn graph_event_source(refr: &TESObjectREFR, graph: Option<u32>) -> Option<&'static BSTEventSource<BSAnimationGraphEvent>> {
-    let mut out: *mut classes::BSTEventSource = core::ptr::null_mut();
+    let mut out: *mut skre::BSTEventSource = core::ptr::null_mut();
     let ok = unsafe { (fns().get_event_source)(refr.as_ptr().cast_mut(), &raw mut out, graph.unwrap_or(u32::MAX)) };
     if ok { unsafe { BSTEventSource::from_ptr(out) } } else { None }
 }
 
 /// The animation graph holder interface of a reference (`TESObjectREFR` +0x38).
 #[repr(transparent)]
-pub struct AnimationGraphHolder(classes::IAnimationGraphManagerHolder);
+pub struct AnimationGraphHolder(skre::IAnimationGraphManagerHolder);
 
 impl AnimationGraphHolder {
     /// The holder sub-object of `refr`.
@@ -140,7 +140,7 @@ impl AnimationGraphHolder {
     }
 
     #[must_use]
-    pub fn as_ptr(&self) -> *mut classes::IAnimationGraphManagerHolder {
+    pub fn as_ptr(&self) -> *mut skre::IAnimationGraphManagerHolder {
         (&raw const self.0).cast_mut()
     }
 
@@ -216,11 +216,11 @@ pub fn current_speed(actor: &Actor) -> f32 {
 
 /// An actor's graph manager: its graphs and the active one.
 #[repr(transparent)]
-pub struct AnimationGraphManager(classes::BSAnimationGraphManager);
+pub struct AnimationGraphManager(skre::BSAnimationGraphManager);
 
 impl AnimationGraphManager {
     #[must_use]
-    pub fn raw(&self) -> &classes::BSAnimationGraphManager {
+    pub fn raw(&self) -> &skre::BSAnimationGraphManager {
         &self.0
     }
 
@@ -247,16 +247,16 @@ impl AnimationGraphManager {
 
 /// One behaviour graph: its owner, root, bone nodes, pose and event source.
 #[repr(transparent)]
-pub struct AnimationGraph(classes::BShkbAnimationGraph);
+pub struct AnimationGraph(skre::BShkbAnimationGraph);
 
 impl AnimationGraph {
     #[must_use]
-    pub fn raw(&self) -> &classes::BShkbAnimationGraph {
+    pub fn raw(&self) -> &skre::BShkbAnimationGraph {
         &self.0
     }
 
     #[must_use]
-    pub fn as_ptr(&self) -> *const classes::BShkbAnimationGraph {
+    pub fn as_ptr(&self) -> *const skre::BShkbAnimationGraph {
         &raw const self.0
     }
 
@@ -267,7 +267,7 @@ impl AnimationGraph {
     #[must_use]
     #[allow(clippy::cast_ptr_alignment)]
     pub unsafe fn from_bone_array<'a>(nodes: *mut c_void) -> Option<&'a Self> {
-        let graph = nodes.cast::<u8>().wrapping_sub(core::mem::offset_of!(classes::BShkbAnimationGraph, boneNodes)).cast::<Self>();
+        let graph = nodes.cast::<u8>().wrapping_sub(core::mem::offset_of!(skre::BShkbAnimationGraph, boneNodes)).cast::<Self>();
         unsafe { graph.as_ref() }
     }
 
@@ -322,7 +322,7 @@ impl AnimationGraph {
         if setup.is_null() {
             return None;
         }
-        let skeleton = unsafe { setup.add(0x20).cast::<*const classes::hkaSkeleton>().read_unaligned() };
+        let skeleton = unsafe { setup.add(0x20).cast::<*const skre::hkaSkeleton>().read_unaligned() };
         unsafe { skeleton.as_ref() }.map(|s| s.boneCount)
     }
 

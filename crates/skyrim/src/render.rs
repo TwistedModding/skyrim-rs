@@ -19,11 +19,11 @@ use std::fmt;
 
 use core::ffi::{CStr, c_char};
 
-use layout::v1_7_104::{classes, enums, fns, globals, vtables};
+use skre::raw::{fns, globals, vtables};
 
 use crate::string::BSFixedString;
 
-pub use enums::{AccumulatorRenderMode, BSShaderProperty_flags as ShaderFlags, NiAVObject_flags as NodeFlags, NiAlphaProperty_flags as AlphaFlags, ShaderMaterialType};
+pub use skre::{AccumulatorRenderMode, BSShaderProperty_flags as ShaderFlags, NiAVObject_flags as NodeFlags, NiAlphaProperty_flags as AlphaFlags, ShaderMaterialType};
 pub use fns::BSShaderAccumulator__RegisterDepthGeometry_fn as RegisterDepthGeometryFn;
 pub use fns::PlayerCharacter__SetFirstPerson_fn as SetFirstPersonFn;
 pub use fns::PresentFrame_fn as PresentFn;
@@ -31,7 +31,7 @@ pub use fns::ProcessCullObjectList_fn as ProcessCullObjectListFn;
 pub use fns::RenderWorld_fn as RenderWorldFn;
 
 /// `NiAVObject::UpdateNode` (id 70251, medium): slot 44 with the update data, then the parent's slot 61.
-type NiAVObjectUpdateNode = unsafe extern "C" fn(this: *mut classes::NiAVObject, data: *mut c_void);
+type NiAVObjectUpdateNode = unsafe extern "C" fn(this: *mut skre::NiAVObject, data: *mut c_void);
 
 /// `NiAVObject::Cull(node, culler, orderedGroup)`: the third argument passes through `r8` into the
 /// culler's slot 22 and is the index of the node inside a `BSOrderedNode` (0xffffffff elsewhere),
@@ -40,7 +40,7 @@ pub type CullFn = fns::NiAVObject__Cull_fn;
 
 /// `BSSceneGraph::SetFieldOfView` (id 106461, medium): stores the FOV and, unless it is unchanged
 /// and `force` is clear, reframes the frame camera from the scene graph's near and far slots.
-type SetFieldOfView = unsafe extern "C" fn(graph: *mut classes::BSSceneGraph, fov: f32, force: bool, camera: *mut classes::NiCamera, update_lod: bool);
+type SetFieldOfView = unsafe extern "C" fn(graph: *mut skre::BSSceneGraph, fov: f32, force: bool, camera: *mut skre::NiCamera, update_lod: bool);
 
 /// `NiAVObject::flags` bit 0: no culling process visits the object.
 pub const HIDDEN: u32 = 1;
@@ -55,12 +55,12 @@ const RECEIVER_MASK: usize = 0x1c;
 const SETTING_VALUE: usize = 8;
 
 pub(crate) struct Fns {
-    scene_nodes: *const [*mut classes::ShadowSceneNode; 4],
+    scene_nodes: *const [*mut skre::ShadowSceneNode; 4],
     frame_counter: *const AtomicU32,
-    scene_graph: *const *const classes::SceneGraph,
-    window: *const *const classes::RenderWindow,
-    sky: *const *const classes::Sky,
-    accumulators: [*const *const classes::BSShaderAccumulator; 3],
+    scene_graph: *const *const skre::SceneGraph,
+    window: *const *const skre::RenderWindow,
+    sky: *const *const skre::Sky,
+    accumulators: [*const *const skre::BSShaderAccumulator; 3],
     cull: usize,
     render_world: usize,
     present: usize,
@@ -76,11 +76,11 @@ pub(crate) struct Fns {
     first_person_near_setting: *const f32,
     depth_shift_near: *const f32,
     depth_shift_far: *const f32,
-    frame_state: *const classes::FrameState,
+    frame_state: *const skre::FrameState,
     shadow_distance: *mut f32,
     shadow_distance_sq: *mut f32,
     shadow_map_resolution: *const u32,
-    cascade_settings: [*const classes::Setting; 4],
+    cascade_settings: [*const skre::Setting; 4],
 }
 
 unsafe impl Send for Fns {}
@@ -89,15 +89,15 @@ unsafe impl Sync for Fns {}
 impl Fns {
     pub(crate) fn resolve(reloc: &hook::Reloc) -> Result<Self, hook::Error> {
         Ok(Self {
-            scene_nodes: reloc.address(globals::g_ShadowSceneNode)? as *const [*mut classes::ShadowSceneNode; 4],
+            scene_nodes: reloc.address(globals::g_ShadowSceneNode)? as *const [*mut skre::ShadowSceneNode; 4],
             frame_counter: reloc.address(globals::g_RenderFrameCounter)? as *const AtomicU32,
-            scene_graph: reloc.address(globals::g_SceneGraph)? as *const *const classes::SceneGraph,
-            window: reloc.address(globals::g_CurrentRenderWindow)? as *const *const classes::RenderWindow,
-            sky: reloc.address(globals::g_Sky_ptr)? as *const *const classes::Sky,
+            scene_graph: reloc.address(globals::g_SceneGraph)? as *const *const skre::SceneGraph,
+            window: reloc.address(globals::g_CurrentRenderWindow)? as *const *const skre::RenderWindow,
+            sky: reloc.address(globals::g_Sky_ptr)? as *const *const skre::Sky,
             accumulators: [
-                reloc.address(globals::g_WorldDepthAccumulator)? as *const *const classes::BSShaderAccumulator,
-                reloc.address(globals::g_WorldAccumulator)? as *const *const classes::BSShaderAccumulator,
-                reloc.address(globals::g_FirstPersonAccumulator)? as *const *const classes::BSShaderAccumulator,
+                reloc.address(globals::g_WorldDepthAccumulator)? as *const *const skre::BSShaderAccumulator,
+                reloc.address(globals::g_WorldAccumulator)? as *const *const skre::BSShaderAccumulator,
+                reloc.address(globals::g_FirstPersonAccumulator)? as *const *const skre::BSShaderAccumulator,
             ],
             cull: reloc.address(fns::NiAVObject__Cull)?,
             render_world: reloc.address(fns::RenderWorld)?,
@@ -114,15 +114,15 @@ impl Fns {
             first_person_near_setting: reloc.address(globals::INISetting_fNear1stPersonDistance_Display_value)? as *const f32,
             depth_shift_near: reloc.address(globals::g_DepthShiftNear)? as *const f32,
             depth_shift_far: reloc.address(globals::g_DepthShiftFar)? as *const f32,
-            frame_state: reloc.address(globals::g_FrameState)? as *const classes::FrameState,
+            frame_state: reloc.address(globals::g_FrameState)? as *const skre::FrameState,
             shadow_distance: reloc.address(globals::g_ShadowDistance)? as *mut f32,
             shadow_distance_sq: reloc.address(globals::g_ShadowDistanceSq)? as *mut f32,
             shadow_map_resolution: reloc.address(globals::g_ShadowMapResolution)? as *const u32,
             cascade_settings: [
-                reloc.address(globals::INIPrefSetting_fShadowDistance_Display)? as *const classes::Setting,
-                reloc.address(globals::INISetting_fFirstSliceDistance_Display)? as *const classes::Setting,
-                reloc.address(globals::INISetting_fSplitOverlap_Display)? as *const classes::Setting,
-                reloc.address(globals::INIPrefSetting_iNumSplits_Display)? as *const classes::Setting,
+                reloc.address(globals::INIPrefSetting_fShadowDistance_Display)? as *const skre::Setting,
+                reloc.address(globals::INISetting_fFirstSliceDistance_Display)? as *const skre::Setting,
+                reloc.address(globals::INISetting_fSplitOverlap_Display)? as *const skre::Setting,
+                reloc.address(globals::INIPrefSetting_iNumSplits_Display)? as *const skre::Setting,
             ],
         })
     }
@@ -304,22 +304,22 @@ pub fn set_cascade_settings(settings: CascadeSettings) {
 struct Setting;
 
 impl Setting {
-    fn read<T: Copy>(setting: *const classes::Setting) -> T {
+    fn read<T: Copy>(setting: *const skre::Setting) -> T {
         unsafe { setting.cast::<u8>().add(SETTING_VALUE).cast::<T>().read_volatile() }
     }
 
-    fn write<T: Copy>(setting: *const classes::Setting, value: T) {
+    fn write<T: Copy>(setting: *const skre::Setting, value: T) {
         unsafe { setting.cast::<u8>().add(SETTING_VALUE).cast::<T>().cast_mut().write_volatile(value) }
     }
 }
 
 /// The world scene graph (`g_SceneGraph`, id 403513): the frame camera and the near and far slots.
 #[repr(transparent)]
-pub struct SceneGraph(classes::SceneGraph);
+pub struct SceneGraph(skre::SceneGraph);
 
 impl SceneGraph {
     #[must_use]
-    pub fn raw(&self) -> &classes::SceneGraph {
+    pub fn raw(&self) -> &skre::SceneGraph {
         &self.0
     }
 
@@ -331,7 +331,7 @@ impl SceneGraph {
     /// The frame camera (+0x128), what [`crate::camera::main_camera`] returns.
     #[must_use]
     pub fn frame_camera(&self) -> Option<&NiCamera> {
-        unsafe { NiCamera::from_ptr(self.0.field_128 as *const classes::NiCamera) }
+        unsafe { NiCamera::from_ptr(self.0.field_128 as *const skre::NiCamera) }
     }
 
     /// Slot 63 (id 36844): the map menu's near override while it is set, else `fNearDistance:Display`.
@@ -353,18 +353,18 @@ impl SceneGraph {
         unsafe { (fns().set_field_of_view)(self.as_mut_ptr().cast(), fov, force, core::ptr::null_mut(), true) }
     }
 
-    fn as_mut_ptr(&self) -> *mut classes::SceneGraph {
+    fn as_mut_ptr(&self) -> *mut skre::SceneGraph {
         (&raw const self.0).cast_mut()
     }
 }
 
 /// `g_FrameState` (id 411479): the frame's sizes, jitter and the GPU copies of the cameras.
 #[repr(transparent)]
-pub struct FrameState(classes::FrameState);
+pub struct FrameState(skre::FrameState);
 
 impl FrameState {
     #[must_use]
-    pub fn raw(&self) -> &classes::FrameState {
+    pub fn raw(&self) -> &skre::FrameState {
         &self.0
     }
 
@@ -396,16 +396,16 @@ impl FrameState {
 
 /// One GPU camera snapshot (`FindOrAddEntry290`): the matrices every draw of that camera binds.
 #[repr(transparent)]
-pub struct CameraMatrixEntry(classes::CameraMatrixEntry);
+pub struct CameraMatrixEntry(skre::CameraMatrixEntry);
 
 impl CameraMatrixEntry {
     #[must_use]
-    pub fn raw(&self) -> &classes::CameraMatrixEntry {
+    pub fn raw(&self) -> &skre::CameraMatrixEntry {
         &self.0
     }
 
     #[must_use]
-    pub fn camera_ptr(&self) -> *const classes::NiCamera {
+    pub fn camera_ptr(&self) -> *const skre::NiCamera {
         self.0.camera
     }
 
@@ -472,16 +472,16 @@ macro_rules! node_wrapper {
     ($(#[$doc:meta] $name:ident($layout:ident) : $base:ident) => {
         $(#[$doc]
         #[repr(transparent)]
-        pub struct $name(classes::$layout);
+        pub struct $name(skre::$layout);
 
         impl $name {
             #[must_use]
-            pub fn raw(&self) -> &classes::$layout {
+            pub fn raw(&self) -> &skre::$layout {
                 &self.0
             }
 
             #[must_use]
-            pub fn as_ptr(&self) -> *const classes::$layout {
+            pub fn as_ptr(&self) -> *const skre::$layout {
                 &raw const self.0
             }
 
@@ -490,7 +490,7 @@ macro_rules! node_wrapper {
             /// # Safety
             /// `p` must be null or point to a live object of this class (or a derived one) that outlives `'a`.
             #[must_use]
-            pub unsafe fn from_ptr<'a>(p: *const classes::$layout) -> Option<&'a Self> {
+            pub unsafe fn from_ptr<'a>(p: *const skre::$layout) -> Option<&'a Self> {
                 unsafe { p.cast::<Self>().as_ref() }
             }
         }
@@ -509,29 +509,29 @@ macro_rules! node_wrapper {
 /// Any object of the scene graph: flags, parent, transforms and bounding sphere. Every class
 /// below derives from it, and a [`CullFn`] detour receives one.
 #[repr(transparent)]
-pub struct NiAVObject(classes::NiAVObject);
+pub struct NiAVObject(skre::NiAVObject);
 
 impl NiAVObject {
     #[must_use]
-    pub fn raw(&self) -> &classes::NiAVObject {
+    pub fn raw(&self) -> &skre::NiAVObject {
         &self.0
     }
 
     #[must_use]
-    pub fn as_ptr(&self) -> *const classes::NiAVObject {
+    pub fn as_ptr(&self) -> *const skre::NiAVObject {
         &raw const self.0
     }
 
     /// # Safety
     /// `p` must be null or point to a live `NiAVObject` (or derived object) that outlives `'a`.
     #[must_use]
-    pub unsafe fn from_ptr<'a>(p: *const classes::NiAVObject) -> Option<&'a Self> {
+    pub unsafe fn from_ptr<'a>(p: *const skre::NiAVObject) -> Option<&'a Self> {
         unsafe { p.cast::<Self>().as_ref() }
     }
 
     /// The object's class from its vtable pointer.
     #[must_use]
-    pub fn class(&self) -> Option<&'static layout::Vtable> {
+    pub fn class(&self) -> Option<&'static skre::raw::Vtable> {
         unsafe { crate::class_of(self.as_ptr().cast()) }
     }
 
@@ -813,7 +813,7 @@ impl BSFadeNode {
 
 impl BSGeometry {
     #[must_use]
-    pub fn skin_instance(&self) -> Option<&classes::NiSkinInstance> {
+    pub fn skin_instance(&self) -> Option<&skre::NiSkinInstance> {
         unsafe { self.0.skinInstance.as_ref() }
     }
 
@@ -836,16 +836,16 @@ impl BSGeometry {
 
 /// A light the scene node holds: the `NiLight` it wraps and its position.
 #[repr(transparent)]
-pub struct BSLight(classes::BSLight);
+pub struct BSLight(skre::BSLight);
 
 impl BSLight {
     #[must_use]
-    pub fn raw(&self) -> &classes::BSLight {
+    pub fn raw(&self) -> &skre::BSLight {
         &self.0
     }
 
     #[must_use]
-    pub fn as_ptr(&self) -> *const classes::BSLight {
+    pub fn as_ptr(&self) -> *const skre::BSLight {
         &raw const self.0
     }
 
@@ -854,7 +854,7 @@ impl BSLight {
     }
 
     #[must_use]
-    pub fn class(&self) -> Option<&'static layout::Vtable> {
+    pub fn class(&self) -> Option<&'static skre::raw::Vtable> {
         unsafe { crate::class_of(self.as_ptr().cast()) }
     }
 
@@ -884,7 +884,7 @@ impl BSLight {
 
 /// A shadow-casting light: its cascade or map records and the focus maps.
 #[repr(transparent)]
-pub struct BSShadowLight(classes::BSShadowLight);
+pub struct BSShadowLight(skre::BSShadowLight);
 
 impl core::ops::Deref for BSShadowLight {
     type Target = BSLight;
@@ -898,7 +898,7 @@ impl core::ops::Deref for BSShadowLight {
 
 impl BSShadowLight {
     #[must_use]
-    pub fn raw(&self) -> &classes::BSShadowLight {
+    pub fn raw(&self) -> &skre::BSShadowLight {
         &self.0
     }
 
@@ -943,14 +943,14 @@ impl BSShadowLight {
 
     /// Whether `camera` is one of this light's map or focus map cameras.
     #[must_use]
-    pub fn owns_camera(&self, camera: *const classes::NiCamera) -> bool {
+    pub fn owns_camera(&self, camera: *const skre::NiCamera) -> bool {
         self.shadow_maps().iter().chain(self.focus_shadow_maps()).any(|m| core::ptr::eq(m.raw().camera, camera))
     }
 }
 
 /// The sun: a shadow light with a direction, a light camera and the geometry list cullers.
 #[repr(transparent)]
-pub struct BSShadowDirectionalLight(classes::BSShadowDirectionalLight);
+pub struct BSShadowDirectionalLight(skre::BSShadowDirectionalLight);
 
 impl core::ops::Deref for BSShadowDirectionalLight {
     type Target = BSShadowLight;
@@ -962,7 +962,7 @@ impl core::ops::Deref for BSShadowDirectionalLight {
 
 impl BSShadowDirectionalLight {
     #[must_use]
-    pub fn raw(&self) -> &classes::BSShadowDirectionalLight {
+    pub fn raw(&self) -> &skre::BSShadowDirectionalLight {
         &self.0
     }
 
@@ -979,7 +979,7 @@ impl BSShadowDirectionalLight {
 
     /// Whether `camera` is the light camera, a cascade camera or a focus map camera of the sun.
     #[must_use]
-    pub fn is_shadow_camera(&self, camera: *const classes::NiCamera) -> bool {
+    pub fn is_shadow_camera(&self, camera: *const skre::NiCamera) -> bool {
         core::ptr::eq(self.0.lightCamera, camera) || self.owns_camera(camera)
     }
 
@@ -1008,11 +1008,11 @@ impl BSShadowDirectionalLight {
 
 /// One shadow map of a light: camera, accumulator, depth target slice, viewport and culler.
 #[repr(transparent)]
-pub struct ShadowMapData(classes::ShadowMapData);
+pub struct ShadowMapData(skre::ShadowMapData);
 
 impl ShadowMapData {
     #[must_use]
-    pub fn raw(&self) -> &classes::ShadowMapData {
+    pub fn raw(&self) -> &skre::ShadowMapData {
         &self.0
     }
 
@@ -1045,7 +1045,7 @@ impl ShadowMapData {
     }
 
     #[must_use]
-    pub fn accumulator(&self) -> Option<&classes::BSShaderAccumulator> {
+    pub fn accumulator(&self) -> Option<&skre::BSShaderAccumulator> {
         unsafe { self.0.accumulator.as_ref() }
     }
 }
@@ -1053,28 +1053,28 @@ impl ShadowMapData {
 /// The culling process a [`CullFn`] detour receives: every culler of the frame is a
 /// `BSCullingProcess` (or its geometry-list subclass), whose `camera` names the pass.
 #[repr(transparent)]
-pub struct CullingProcess(classes::BSCullingProcess);
+pub struct CullingProcess(skre::BSCullingProcess);
 
 impl CullingProcess {
     #[must_use]
-    pub fn raw(&self) -> &classes::BSCullingProcess {
+    pub fn raw(&self) -> &skre::BSCullingProcess {
         &self.0
     }
 
     /// # Safety
     /// `p` must be null or point to a live culling process that outlives `'a`.
     #[must_use]
-    pub unsafe fn from_ptr<'a>(p: *const classes::partial::NiCullingProcess) -> Option<&'a Self> {
+    pub unsafe fn from_ptr<'a>(p: *const skre::NiCullingProcess) -> Option<&'a Self> {
         unsafe { p.cast::<Self>().as_ref() }
     }
 
     #[must_use]
-    pub fn class(&self) -> Option<&'static layout::Vtable> {
+    pub fn class(&self) -> Option<&'static skre::raw::Vtable> {
         unsafe { crate::class_of((&raw const self.0).cast()) }
     }
 
     #[must_use]
-    pub fn camera_ptr(&self) -> *const classes::NiCamera {
+    pub fn camera_ptr(&self) -> *const skre::NiCamera {
         self.0.camera
     }
 
@@ -1084,8 +1084,8 @@ impl CullingProcess {
     }
 
     #[must_use]
-    pub fn accumulator(&self) -> Option<&classes::BSShaderAccumulator> {
-        unsafe { self.0.accumulator.cast::<classes::BSShaderAccumulator>().as_ref() }
+    pub fn accumulator(&self) -> Option<&skre::BSShaderAccumulator> {
+        unsafe { self.0.accumulator.cast::<skre::BSShaderAccumulator>().as_ref() }
     }
 
     /// 1 and 2 accept without testing, 3 and 4 test planes and portals. Only valid on a
@@ -1129,11 +1129,11 @@ impl CullingProcess {
 
 /// A scene's lights, shadow lights and sun; `g_ShadowSceneNode[0]` is the world.
 #[repr(transparent)]
-pub struct ShadowSceneNode(classes::ShadowSceneNode);
+pub struct ShadowSceneNode(skre::ShadowSceneNode);
 
 impl ShadowSceneNode {
     #[must_use]
-    pub fn raw(&self) -> &classes::ShadowSceneNode {
+    pub fn raw(&self) -> &skre::ShadowSceneNode {
         &self.0
     }
 
@@ -1194,21 +1194,21 @@ impl ShadowSceneNode {
 
 /// A geometry's shader property: flags, alpha, the last pass state, the material and the pass list.
 #[repr(transparent)]
-pub struct BSShaderProperty(classes::BSShaderProperty);
+pub struct BSShaderProperty(skre::BSShaderProperty);
 
 impl BSShaderProperty {
     #[must_use]
-    pub fn raw(&self) -> &classes::BSShaderProperty {
+    pub fn raw(&self) -> &skre::BSShaderProperty {
         &self.0
     }
 
     #[must_use]
-    pub fn as_ptr(&self) -> *const classes::BSShaderProperty {
+    pub fn as_ptr(&self) -> *const skre::BSShaderProperty {
         &raw const self.0
     }
 
     #[must_use]
-    pub fn class(&self) -> Option<&'static layout::Vtable> {
+    pub fn class(&self) -> Option<&'static skre::raw::Vtable> {
         unsafe { crate::class_of(self.as_ptr().cast()) }
     }
 
@@ -1259,16 +1259,16 @@ impl BSShaderProperty {
 
 /// A material: type, feature and texture coordinate transform; the lighting material adds the texture set.
 #[repr(transparent)]
-pub struct BSShaderMaterial(classes::BSShaderMaterial);
+pub struct BSShaderMaterial(skre::BSShaderMaterial);
 
 impl BSShaderMaterial {
     #[must_use]
-    pub fn raw(&self) -> &classes::BSShaderMaterial {
+    pub fn raw(&self) -> &skre::BSShaderMaterial {
         &self.0
     }
 
     #[must_use]
-    pub fn as_ptr(&self) -> *const classes::BSShaderMaterial {
+    pub fn as_ptr(&self) -> *const skre::BSShaderMaterial {
         &raw const self.0
     }
 
@@ -1299,7 +1299,7 @@ impl BSShaderMaterial {
 
 /// A lighting material: the texture set and the lighting parameters.
 #[repr(transparent)]
-pub struct BSLightingShaderMaterial(classes::BSLightingShaderMaterialBase);
+pub struct BSLightingShaderMaterial(skre::BSLightingShaderMaterialBase);
 
 impl core::ops::Deref for BSLightingShaderMaterial {
     type Target = BSShaderMaterial;
@@ -1311,7 +1311,7 @@ impl core::ops::Deref for BSLightingShaderMaterial {
 
 impl BSLightingShaderMaterial {
     #[must_use]
-    pub fn raw(&self) -> &classes::BSLightingShaderMaterialBase {
+    pub fn raw(&self) -> &skre::BSLightingShaderMaterialBase {
         &self.0
     }
 
@@ -1333,11 +1333,11 @@ impl BSLightingShaderMaterial {
 
 /// The nine texture path slots of a material (slot 0 the diffuse map).
 #[repr(transparent)]
-pub struct BSShaderTextureSet(classes::BSShaderTextureSet);
+pub struct BSShaderTextureSet(skre::BSShaderTextureSet);
 
 impl BSShaderTextureSet {
     #[must_use]
-    pub fn raw(&self) -> &classes::BSShaderTextureSet {
+    pub fn raw(&self) -> &skre::BSShaderTextureSet {
         &self.0
     }
 
@@ -1354,11 +1354,11 @@ impl BSShaderTextureSet {
 
 /// A geometry's alpha property: blend and test flags and the test threshold.
 #[repr(transparent)]
-pub struct NiAlphaProperty(classes::NiAlphaProperty);
+pub struct NiAlphaProperty(skre::NiAlphaProperty);
 
 impl NiAlphaProperty {
     #[must_use]
-    pub fn raw(&self) -> &classes::NiAlphaProperty {
+    pub fn raw(&self) -> &skre::NiAlphaProperty {
         &self.0
     }
 
@@ -1375,11 +1375,11 @@ impl NiAlphaProperty {
 
 /// One render pass: shader, property, geometry and technique, linked through the property's list.
 #[repr(transparent)]
-pub struct RenderPass(classes::RenderPass);
+pub struct RenderPass(skre::RenderPass);
 
 impl RenderPass {
     #[must_use]
-    pub fn raw(&self) -> &classes::RenderPass {
+    pub fn raw(&self) -> &skre::RenderPass {
         &self.0
     }
 
@@ -1412,18 +1412,18 @@ impl RenderPass {
 
 /// A shader accumulator: the camera it collects for and its render mode.
 #[repr(transparent)]
-pub struct BSShaderAccumulator(classes::BSShaderAccumulator);
+pub struct BSShaderAccumulator(skre::BSShaderAccumulator);
 
 impl BSShaderAccumulator {
     #[must_use]
-    pub fn raw(&self) -> &classes::BSShaderAccumulator {
+    pub fn raw(&self) -> &skre::BSShaderAccumulator {
         &self.0
     }
 
     /// # Safety
     /// `p` must be null or point to a live accumulator that outlives `'a`.
     #[must_use]
-    pub unsafe fn from_ptr<'a>(p: *const classes::BSShaderAccumulator) -> Option<&'a Self> {
+    pub unsafe fn from_ptr<'a>(p: *const skre::BSShaderAccumulator) -> Option<&'a Self> {
         unsafe { p.cast::<Self>().as_ref() }
     }
 
@@ -1469,11 +1469,11 @@ impl BSShaderAccumulator {
 
 /// The window being drawn and presented: handle, size, swap chain and back buffer views.
 #[repr(transparent)]
-pub struct RenderWindow(classes::RenderWindow);
+pub struct RenderWindow(skre::RenderWindow);
 
 impl RenderWindow {
     #[must_use]
-    pub fn raw(&self) -> &classes::RenderWindow {
+    pub fn raw(&self) -> &skre::RenderWindow {
         &self.0
     }
 
@@ -1508,11 +1508,11 @@ impl RenderWindow {
 
 /// The sky: the game hour it follows and the sun whose light the shadow scene node wraps.
 #[repr(transparent)]
-pub struct Sky(classes::Sky);
+pub struct Sky(skre::Sky);
 
 impl Sky {
     #[must_use]
-    pub fn raw(&self) -> &classes::Sky {
+    pub fn raw(&self) -> &skre::Sky {
         &self.0
     }
 

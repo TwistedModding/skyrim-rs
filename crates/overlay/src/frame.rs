@@ -5,7 +5,7 @@ use std::io::Write as _;
 use std::path::{Path, PathBuf};
 use std::sync::Mutex;
 
-use layout::v1_7_104::globals;
+use skre::raw::globals;
 use skyrim::render::RenderWindow;
 use windows::Win32::Graphics::Direct3D11::{D3D11_CPU_ACCESS_READ, D3D11_MAP_READ, D3D11_MAPPED_SUBRESOURCE, D3D11_TEXTURE2D_DESC, D3D11_USAGE_STAGING, ID3D11Device, ID3D11DeviceContext, ID3D11RenderTargetView, ID3D11Texture2D};
 use windows::core::Interface;

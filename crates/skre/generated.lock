@@ -1,4 +1,4 @@
-# Inputs of crates/layout/src/v1_7_104, recorded by `cargo xtask gen`.
+# Inputs of crates/skre/src/generated, recorded by `cargo xtask gen`.
 repo SkyrimRE-1.7.104
 commit 0331170532638bf0da170cc5fb7e59128bb605ca
 sha256 2fdee94ccd76e6298d6ca9a7c55905ad6e6fa33670e660f090242d2183d168cd export/symbols.csv

@@ -325,7 +325,7 @@ const fn fill<const N: usize>(s: &str) -> [u8; N] {
 /// ```
 ///
 /// The defaults (`flags` = `FLAG_NO_TIMESTAMP_GATE`, `method` = `METHOD_ADDRESS_LIBRARY |
-/// METHOD_STRUCTS_1_6_629`) are what a mod on `layout` needs on every runtime SKSE 2.3.1 accepts:
+/// METHOD_STRUCTS_1_6_629`) are what a mod on `skre` needs on every runtime SKSE 2.3.1 accepts:
 /// the Address Library file must exist, the 1.6.629 test passes, and the link-timestamp gate is
 /// skipped. Pass `flags:` and `method:` to override both.
 #[macro_export]

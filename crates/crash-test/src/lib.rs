@@ -19,7 +19,6 @@ use framework::Host;
 use framework::hooks::Options;
 use framework::hooks::ops::Actor__ModActorValueImpl;
 use skyrim::papyrus::VirtualMachine;
-use layout::v1_7_104::classes;
 use skyrim::input::{Arg, Command, CommandContext, Param, ScriptParamType};
 use windows_sys::Win32::System::Threading::GetCurrentThreadId;
 
@@ -69,7 +68,7 @@ fn load(host: &'static Host) -> bool {
         return false;
     }
     log(&format!("PASS load: load thread {}", thread()));
-    let subscribed = host.hooks().before(Actor__ModActorValueImpl, Options::new(host.name()), |_: &mut (*mut classes::Actor, i32, i32, f32, *mut c_void)| {
+    let subscribed = host.hooks().before(Actor__ModActorValueImpl, Options::new(host.name()), |_: &mut (*mut skre::Actor, i32, i32, f32, *mut c_void)| {
         if ARMED.load(Ordering::Relaxed) == HOOK {
             log(&format!("crashing on thread {} (hook)", thread()));
             null_read();

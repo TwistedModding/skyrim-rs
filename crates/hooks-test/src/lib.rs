@@ -8,7 +8,6 @@ use std::fmt::Display;
 use std::io::Write as _;
 use std::sync::OnceLock;
 
-use layout::v1_7_104::classes;
 use skyrim::actors::{ActorValue, Modifier, PlayerCharacter};
 
 pub mod a;
@@ -21,9 +20,9 @@ pub const LOG: &str = "skyrim-rs-hooks";
 static RUNTIME: OnceLock<u32> = OnceLock::new();
 
 /// `Actor::ModActorValueImpl(this, modifier, value, delta, source)` as the subscribers see it.
-pub type ModArgs = (*mut classes::Actor, i32, i32, f32, *mut c_void);
+pub type ModArgs = (*mut skre::Actor, i32, i32, f32, *mut c_void);
 /// `Actor::ActorValueOwner_ModActorValue(this, modifier, value, delta)`.
-pub type OwnerModArgs = (*mut classes::ActorValueOwner, i32, i32, f32);
+pub type OwnerModArgs = (*mut skre::ActorValueOwner, i32, i32, f32);
 
 /// Whether a modifier change damages the player's health.
 #[must_use]

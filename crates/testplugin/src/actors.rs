@@ -4,7 +4,7 @@
 
 use std::sync::atomic::{AtomicBool, Ordering};
 
-use layout::v1_7_104::{classes, vtables};
+use skre::raw::vtables;
 use skyrim::actors::{ActorValue, ActorValueList, Modifier, PlayerCharacter, RefHandle, Sex, StateFlags, actor_value_info, lookup_actor_value};
 use skyrim::forms::{FormId, FormType, TESForm, find_form_by_editor_id};
 
@@ -52,7 +52,7 @@ fn player_ref() -> Result<&'static PlayerCharacter, String> {
     PlayerCharacter::get().ok_or_else(|| "g_PlayerCharacter_ptr is null".into())
 }
 
-fn class_name(vtable: Option<&'static layout::Vtable>) -> &'static str {
+fn class_name(vtable: Option<&'static skre::raw::Vtable>) -> &'static str {
     vtable.map_or("unknown", |v| v.class)
 }
 
@@ -172,7 +172,7 @@ fn extra_list() -> Result<String, String> {
     let list = player.extra_list();
     check(list.has_type(EXTRA_CONTAINER_CHANGES) && list.has_type(EXTRA_ALIAS_INSTANCE_ARRAY), "ContainerChanges or AliasInstanceArray missing")?;
     let node = list.get_by_type(EXTRA_CONTAINER_CHANGES).ok_or("GetByType(0x15) returned null")?;
-    let held = unsafe { &*std::ptr::from_ref(node).cast::<classes::ExtraContainerChanges>() }.changes;
+    let held = unsafe { &*std::ptr::from_ref(node).cast::<skre::ExtraContainerChanges>() }.changes;
     let changes = player.inventory_changes().ok_or("GetInventoryChanges returned null")?;
     check(std::ptr::eq(held.cast_const(), changes.raw()), "ExtraContainerChanges.changes differs from GetInventoryChanges")?;
     let offset = (std::ptr::from_ref(list.raw()) as usize).wrapping_sub(player.as_ptr() as usize);

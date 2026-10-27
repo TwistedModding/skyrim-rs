@@ -8,7 +8,7 @@ use std::fmt;
 use std::sync::Mutex;
 use std::sync::atomic::{AtomicU32, Ordering};
 
-use layout::v1_7_104::globals;
+use skre::raw::globals;
 use skyrim::actors::{PlayerCharacter, RefHandle};
 use skyrim::events::{
     BGSActorCellEvent, BGSFootstepEvent, BSEventNotifyControl, BSFixedString, BSTEventSource, Event, EventSink, EventSourceHolderMenuOpenClose, EventSourceHolderTes,

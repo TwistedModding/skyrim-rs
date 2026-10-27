@@ -7,7 +7,7 @@
 use std::sync::OnceLock;
 use std::sync::atomic::{AtomicBool, AtomicPtr, AtomicU32, Ordering};
 
-use layout::v1_7_104::{classes, vtables};
+use skre::raw::vtables;
 use skyrim::actors::PlayerCharacter;
 use skyrim::camera::{CameraState, PlayerCamera};
 use skyrim::render::{CullFn, CullingProcess, NiAVObject, SetFirstPersonFn, ShadowSceneNode, frame_counter};
@@ -25,8 +25,8 @@ static SWITCH: OnceLock<hook::Hook<SetFirstPersonFn>> = OnceLock::new();
 /// Counting is on between `PostLoadGame` and the next `PreLoadGame`/`NewGame`: outside that
 /// window the player's roots are being replaced and must not be read from the job threads.
 static ACTIVE: AtomicBool = AtomicBool::new(false);
-static THIRD_ROOT: AtomicPtr<classes::NiAVObject> = AtomicPtr::new(core::ptr::null_mut());
-static FIRST_ROOT: AtomicPtr<classes::NiAVObject> = AtomicPtr::new(core::ptr::null_mut());
+static THIRD_ROOT: AtomicPtr<skre::NiAVObject> = AtomicPtr::new(core::ptr::null_mut());
+static FIRST_ROOT: AtomicPtr<skre::NiAVObject> = AtomicPtr::new(core::ptr::null_mut());
 static FIRST_PERSON: AtomicBool = AtomicBool::new(false);
 static SWITCHES: AtomicU32 = AtomicU32::new(0);
 static FRAME_AT_LOAD: AtomicU32 = AtomicU32::new(0);
@@ -47,7 +47,7 @@ fn count(view: usize, root: usize, pass: usize, hidden: usize, is_self: usize) -
     COUNTS[index(view, root, pass, hidden, is_self)].load(Ordering::Relaxed)
 }
 
-unsafe extern "C" fn cull_detour(node: *mut classes::NiAVObject, culler: *mut classes::partial::NiCullingProcess, plane_mask: u32) {
+unsafe extern "C" fn cull_detour(node: *mut skre::NiAVObject, culler: *mut skre::NiCullingProcess, plane_mask: u32) {
     let original = CULL.get().expect("stored before enabling").original();
     if ACTIVE.load(Ordering::Acquire)
         && let (Some(n), Some(c)) = (unsafe { NiAVObject::from_ptr(node) }, unsafe { CullingProcess::from_ptr(culler) })
@@ -71,7 +71,7 @@ unsafe extern "C" fn cull_detour(node: *mut classes::NiAVObject, culler: *mut cl
     unsafe { original(node, culler, plane_mask) }
 }
 
-unsafe extern "C" fn switch_detour(player: *mut classes::PlayerCharacter, first_person: bool) {
+unsafe extern "C" fn switch_detour(player: *mut skre::PlayerCharacter, first_person: bool) {
     unsafe { SWITCH.get().expect("stored before enabling").original()(player, first_person) }
     FIRST_PERSON.store(first_person, Ordering::Relaxed);
     SWITCHES.fetch_add(1, Ordering::Relaxed);

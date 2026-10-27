@@ -130,7 +130,8 @@ struct Sig {
 pub(crate) struct Ctx<'a> {
     pub(crate) classes:&'a BTreeMap<&'a str, Class<'a>>,
     rtti: HashSet<&'a str>,
-    enums: HashMap<String, &'static str>,
+    /// Semantic enum name to its integer type and its Rust name.
+    pub(crate) enums: HashMap<String, (&'static str, String)>,
 }
 
 fn scalar(base: &str) -> Option<&'static str> {
@@ -180,9 +181,9 @@ fn c_type(text: &str, source: Source, ctx: &Ctx) -> Option<Ty> {
         return if depth == 0 { Some(Ty::Scalar(s)) } else { raw(s) };
     }
     if source == Source::Semantic
-        && let Some(repr) = ctx.enums.get(base)
+        && let Some((repr, name)) = ctx.enums.get(base)
     {
-        return if depth == 0 { Some(Ty::Enum(format!("enums::{base}"), repr)) } else { raw(&format!("enums::{base}")) };
+        return if depth == 0 { Some(Ty::Enum(format!("crate::{name}"), repr)) } else { raw(&format!("crate::{name}")) };
     }
     if let Some(class) = ctx.classes.get(base) {
         return match depth {
@@ -431,7 +432,9 @@ const DECOMPILER_SAFETY: &str = "The decompiler's prototype: nothing checks the 
 
 /// What signatures are typed against: the laid-out classes, which of them have RTTI, the semantic enums.
 pub(crate) fn context<'a>(inp: &'a Inputs, classes: &'a BTreeMap<&'a str, Class<'a>>) -> Ctx<'a> {
-    let mut enums: HashMap<String, &'static str> = HashMap::from([("FormType".to_owned(), "u8")]);
+    let taken: HashSet<&str> = classes.values().map(|c| c.ident.as_str()).collect();
+    let name = |e: &str| if taken.contains(e) { format!("{e}Enum") } else { e.to_owned() };
+    let mut enums: HashMap<String, (&'static str, String)> = HashMap::from([("FormType".to_owned(), ("u8", name("FormType")))]);
     for pass in &inp.semantic {
         for e in pass.enums.iter().filter(|e| e.name != "FormType") {
             let repr = match e.width {
@@ -440,7 +443,7 @@ pub(crate) fn context<'a>(inp: &'a Inputs, classes: &'a BTreeMap<&'a str, Class<
                 4 => "u32",
                 _ => "u64",
             };
-            enums.insert(e.name.clone(), repr);
+            enums.insert(e.name.clone(), (repr, name(&e.name)));
         }
     }
     Ctx { classes, rtti: inp.layouts.keys().map(String::as_str).collect(), enums }
@@ -526,7 +529,7 @@ pub(crate) fn emit(inp: &Inputs, ctx: &Ctx) -> (BTreeMap<&'static str, String>, 
     }
     for tier in Tier::ALL {
         let mut out = String::from(HEADER);
-        out.push_str("use core::ffi::{c_char, c_void};\n\nuse super::{classes, enums};\n\n");
+        out.push_str("use core::ffi::{c_char, c_void};\n\n");
         if tier == Tier::Semantic {
             out.push_str(&derefs);
         }
@@ -538,11 +541,9 @@ pub(crate) fn emit(inp: &Inputs, ctx: &Ctx) -> (BTreeMap<&'static str, String>, 
             }
             out.push_str("}\n\n");
         }
-        out.push_str("/// Functions of no laid-out class; `super::functions` re-exports them.\npub mod functions {\n    use super::*;\n\n");
         for e in groups.get(&(tier, None)).into_iter().flatten() {
             out.push_str(&e.text);
         }
-        out.push_str("}\n");
         files.insert(tier.file(), out);
     }
     files.insert("statics.rs", statics);
@@ -775,7 +776,7 @@ fn globals(inp: &Inputs, ctx: &Ctx, entries: &mut Vec<Entry>, stats: &mut ApiSta
         *singles.entry(l.cls.as_str()).or_default() += 1;
     }
     let mut out = String::from(HEADER);
-    out.push_str("//! Every global with an Address Library id, as an accessor; `singleton()` on a class replaces the accessor of its one `g_*_ptr` global.\n\nuse core::ffi::{c_char, c_void};\n\nuse super::{classes, enums};\n\n");
+    out.push_str("//! Every global with an Address Library id, as an accessor; `singleton()` on a class replaces the accessor of its one `g_*_ptr` global.\n\nuse core::ffi::{c_char, c_void};\n\n");
     let mut list: Vec<&Symbol> = inp.symbols.iter().filter(|s| s.kind == "global" && s.id.is_some()).collect();
     list.sort_by(|a, b| a.name.cmp(&b.name).then(a.id.cmp(&b.id)));
     let mut idents: Vec<String> = list.iter().map(|s| snake(&s.name)).collect();
@@ -847,7 +848,7 @@ mod tests {
     use crate::emit::test_classes;
 
     fn ctx<'a>(classes: &'a BTreeMap<&'a str, Class<'a>>) -> Ctx<'a> {
-        Ctx { classes, rtti: ["TESForm"].into_iter().collect(), enums: HashMap::from([("ActorValue".to_owned(), "u32")]) }
+        Ctx { classes, rtti: ["TESForm"].into_iter().collect(), enums: HashMap::from([("ActorValue".to_owned(), ("u32", "ActorValue".to_owned()))]) }
     }
 
     #[test]
@@ -872,7 +873,7 @@ mod tests {
         let sig = parse_sig("bool (const TESForm* this, ActorValue av, void (*cb)(void*, int))", Source::Semantic, &ctx).unwrap();
         assert_eq!(sig.ret, Ty::Bool);
         assert_eq!(sig.params[0].ty, Ty::Class("TESForm".into(), true));
-        assert_eq!(sig.params[1].ty, Ty::Enum("enums::ActorValue".into(), "u32"));
+        assert_eq!(sig.params[1].ty, Ty::Enum("crate::ActorValue".into(), "u32"));
         assert_eq!(sig.params[2].name, "cb");
         let sig = parse_sig("undefined FUN(TESForm * this, undefined8 * param_1, bool param_2, BSTArray<Foo,Bar> * p)", Source::Decompiler, &ctx).unwrap();
         assert_eq!(sig.ret, Ty::Scalar("u64"));

@@ -13,7 +13,7 @@ skse.workspace = true
 hook.workspace = true
 skyrim.workspace = true
 framework.workspace = true
-layout.workspace = true
+skre.workspace = true
 windows-sys = { workspace = true, features = ["Win32_System_Threading"] }
 
 [lints]

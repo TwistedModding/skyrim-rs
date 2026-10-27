@@ -10,20 +10,20 @@
 use core::ffi::c_char;
 use std::ffi::CString;
 
-use layout::v1_7_104::{classes, fns, globals};
+use skre::raw::{fns, globals};
 
 use crate::forms::{FormId, FormType, TESForm};
 use crate::render::NiAVObject;
 
-type BuildByFormIdFn = unsafe extern "C" fn(manager: *mut classes::BSAudioManager, out: *mut classes::SoundHandle, form_id: u32, flags: u32);
-type BuildByEditorIdFn = unsafe extern "C" fn(manager: *mut classes::BSAudioManager, out: *mut classes::SoundHandle, editor_id: *const c_char, flags: u32);
+type BuildByFormIdFn = unsafe extern "C" fn(manager: *mut skre::BSAudioManager, out: *mut skre::SoundHandle, form_id: u32, flags: u32);
+type BuildByEditorIdFn = unsafe extern "C" fn(manager: *mut skre::BSAudioManager, out: *mut skre::SoundHandle, editor_id: *const c_char, flags: u32);
 
 /// `BGSMusicType` keeps its `BSIMusicType` interface here.
 const MUSIC_TYPE_INTERFACE: usize = 0x20;
 
 pub(crate) struct Fns {
     manager: fns::GetAudioManager_fn,
-    music: *const *mut classes::BSMusicManager,
+    music: *const *mut skre::BSMusicManager,
     no_music: usize,
     by_form_id: BuildByFormIdFn,
     by_editor_id: BuildByEditorIdFn,
@@ -48,7 +48,7 @@ impl Fns {
         unsafe {
             Ok(Self {
                 manager: crate::resolve(reloc, fns::GetAudioManager)?,
-                music: reloc.address(globals::g_BSMusicManager_ptr)? as *const *mut classes::BSMusicManager,
+                music: reloc.address(globals::g_BSMusicManager_ptr)? as *const *mut skre::BSMusicManager,
                 no_music: reloc.address(globals::g_NoMusic)?,
                 by_form_id: crate::resolve(reloc, fns::BSAudioManager__BuildSoundHandleByFormId)?,
                 by_editor_id: crate::resolve(reloc, fns::BSAudioManager__BuildSoundHandleByEditorId)?,
@@ -78,7 +78,7 @@ fn c_string(text: &str) -> CString {
 
 /// The audio manager (`BSAudioManager`, 0x190).
 #[repr(transparent)]
-pub struct AudioManager(classes::BSAudioManager);
+pub struct AudioManager(skre::BSAudioManager);
 
 impl AudioManager {
     /// `None` before the audio backend is created.
@@ -88,11 +88,11 @@ impl AudioManager {
     }
 
     #[must_use]
-    pub fn raw(&self) -> &classes::BSAudioManager {
+    pub fn raw(&self) -> &skre::BSAudioManager {
         &self.0
     }
 
-    fn as_ptr(&self) -> *mut classes::BSAudioManager {
+    fn as_ptr(&self) -> *mut skre::BSAudioManager {
         (&raw const self.0).cast_mut()
     }
 
@@ -111,23 +111,23 @@ pub const RELEASE_WHEN_DONE: u32 = 0x10;
 /// pointer; every call looks the id up or posts a command, so it may be cloned and kept. A sound
 /// built without [`RELEASE_WHEN_DONE`] stays until [`SoundHandle::release`].
 #[repr(transparent)]
-pub struct SoundHandle(classes::SoundHandle);
+pub struct SoundHandle(skre::SoundHandle);
 
 impl Clone for SoundHandle {
     fn clone(&self) -> Self {
-        Self(classes::SoundHandle { id: self.0.id, assumeState: self.0.assumeState, unknown_5: self.0.unknown_5, requestedState: self.0.requestedState })
+        Self(skre::SoundHandle { id: self.0.id, assumeState: self.0.assumeState, unknown_5: self.0.unknown_5, requestedState: self.0.requestedState })
     }
 }
 
 impl SoundHandle {
     const fn invalid() -> Self {
-        Self(classes::SoundHandle { id: u32::MAX, assumeState: 0, unknown_5: [0; 3], requestedState: 0 })
+        Self(skre::SoundHandle { id: u32::MAX, assumeState: 0, unknown_5: [0; 3], requestedState: 0 })
     }
 
     /// The handle of an id a Papyrus `Sound.Play` returned or a handle reported.
     #[must_use]
     pub const fn from_id(id: u32) -> Self {
-        Self(classes::SoundHandle { id, assumeState: 0, unknown_5: [0; 3], requestedState: 0 })
+        Self(skre::SoundHandle { id, assumeState: 0, unknown_5: [0; 3], requestedState: 0 })
     }
 
     fn built(handle: Self) -> Option<Self> {
@@ -155,7 +155,7 @@ impl SoundHandle {
     }
 
     #[must_use]
-    pub fn raw(&self) -> &classes::SoundHandle {
+    pub fn raw(&self) -> &skre::SoundHandle {
         &self.0
     }
 
@@ -226,7 +226,7 @@ pub fn play_ui_sound(editor_id: &str) {
 
 /// A sound category (`BGSSoundCategory`, SNCT, 0x58).
 #[repr(transparent)]
-pub struct SoundCategory(classes::BGSSoundCategory);
+pub struct SoundCategory(skre::BGSSoundCategory);
 
 impl SoundCategory {
     /// The form as a category, `None` for any other form type.
@@ -236,7 +236,7 @@ impl SoundCategory {
     }
 
     #[must_use]
-    pub fn raw(&self) -> &classes::BGSSoundCategory {
+    pub fn raw(&self) -> &skre::BGSSoundCategory {
         &self.0
     }
 
@@ -269,5 +269,5 @@ pub fn current_music() -> Option<&'static TESForm> {
     if current == 0 || current == fns().no_music {
         return None;
     }
-    unsafe { TESForm::from_ptr((current - MUSIC_TYPE_INTERFACE) as *const classes::TESForm) }
+    unsafe { TESForm::from_ptr((current - MUSIC_TYPE_INTERFACE) as *const skre::TESForm) }
 }

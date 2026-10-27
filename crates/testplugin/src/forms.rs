@@ -1,7 +1,7 @@
 //! One test per `skyrim::forms` API; the expected values are those of the RE repo's
 //! `docs/subsystems/forms-verify.md`.
 
-use layout::v1_7_104::globals;
+use skre::raw::globals;
 use skyrim::forms::{FormId, FormType, TESDataHandler, TESForm, find_form_by_editor_id};
 
 use crate::{IRON_SWORD, PLAYER, Test, check, form};
@@ -47,7 +47,7 @@ fn form_id() -> Result<String, String> {
 fn lookup_player() -> Result<String, String> {
     let player = form(PLAYER)?;
     let global = skyrim::reloc().address(globals::g_PlayerCharacter_ptr).map_err(|e| e.to_string())?;
-    let held = unsafe { *(global as *const *const layout::v1_7_104::classes::TESForm) };
+    let held = unsafe { *(global as *const *const skre::TESForm) };
     check(std::ptr::eq(held, player.as_ptr()), "FindFormByID(0x14) is not the object g_PlayerCharacter_ptr holds")?;
     check(player.form_id() == PLAYER, "formID is not 0x14")?;
     check(player.form_type() == Some(FormType::ACHR), "formType is not ACHR")?;
@@ -231,16 +231,15 @@ fn form_list() -> Result<String, String> {
 /// function, an associated function, `&self` methods, vtable slots, a base accessor and methods
 /// reached through `Deref`, and global accessors.
 fn generated_api() -> Result<String, String> {
-    use layout::v1_7_104::{classes, functions, statics};
     use skyrim::actors::ActorValue;
 
     let player = form(PLAYER)?;
     let sword = form(IRON_SWORD)?;
-    let found = functions::find_form_by_id(PLAYER.0).ok_or("functions::find_form_by_id(0x14) is None")?;
-    check(std::ptr::eq(found, player.raw()), "functions::find_form_by_id(0x14) is not FormId::lookup's form")?;
-    check(functions::find_form_by_id(0x7FFF_FFFF).is_none(), "functions::find_form_by_id(0x7fffffff) is Some")?;
+    let found = skre::find_form_by_id(PLAYER.0).ok_or("skre::find_form_by_id(0x14) is None")?;
+    check(std::ptr::eq(found, player.raw()), "skre::find_form_by_id(0x14) is not FormId::lookup's form")?;
+    check(skre::find_form_by_id(0x7FFF_FFFF).is_none(), "skre::find_form_by_id(0x7fffffff) is Some")?;
 
-    let info = classes::ActorValueList::get_actor_value_info(ActorValue::Health as u32).map(std::ptr::from_ref);
+    let info = skre::ActorValueList::get_actor_value_info(ActorValue::Health as u32).map(std::ptr::from_ref);
     let wrapped = skyrim::actors::actor_value_info(ActorValue::Health).map(|i| std::ptr::from_ref(i.raw()));
     check(info.is_some() && info == wrapped, "ActorValueList::get_actor_value_info(Health) differs from actor_value_info")?;
 
@@ -253,8 +252,8 @@ fn generated_api() -> Result<String, String> {
     check(Some(name) == keyword.editor_id(), "slot 50 get_form_editor_id differs from editor_id")?;
     check(sword.raw().get_form_type() == sword.form_type_raw(), "slot 21 get_form_type differs from formType")?;
 
-    let pc = statics::g_player_character_ptr().ok_or("statics::g_player_character_ptr is None")?;
-    check(std::ptr::eq(std::ptr::from_ref(pc).cast(), player.as_ptr()), "statics::g_player_character_ptr is not the player")?;
+    let pc = skre::g_player_character_ptr().ok_or("skre::g_player_character_ptr is None")?;
+    check(std::ptr::eq(std::ptr::from_ref(pc).cast(), player.as_ptr()), "skre::g_player_character_ptr is not the player")?;
     check(pc.get_form_type() == player.form_type_raw(), "PlayerCharacter -> TESForm slot 21 differs from formType")?;
     let actor = player.as_reference().and_then(|r| r.as_actor()).ok_or("the player is not an actor")?;
     let owner = pc.as_actor_value_owner();
@@ -262,7 +261,7 @@ fn generated_api() -> Result<String, String> {
     let health = owner.get_actor_value(ActorValue::Health as i32);
     check(health > 0.0 && health.to_bits() == actor.actor_value_owner().get(ActorValue::Health).to_bits(), "ActorValueOwner slot 1 differs from get(Health)")?;
 
-    let handler = classes::TESDataHandler::singleton().ok_or("TESDataHandler::singleton is None")?;
+    let handler = skre::TESDataHandler::singleton().ok_or("TESDataHandler::singleton is None")?;
     let wrapped = TESDataHandler::get().ok_or("g_TESDataHandler_ptr is null")?;
     check(std::ptr::eq(handler, wrapped.raw()), "TESDataHandler::singleton differs from TESDataHandler::get")?;
     let file = unsafe { handler.get_file(c"skyrim.esm".as_ptr()) };

@@ -14,21 +14,21 @@
 
 use core::ffi::c_void;
 
-use layout::v1_7_104::{classes, enums, fns, globals, vtables};
+use skre::raw::{fns, globals, vtables};
 
 use crate::render::{NiAVObject, NiCamera, NiNode, Transform, vec3};
 
-pub use enums::CameraState;
+pub use skre::CameraState;
 pub use vtables::TESCamera_vtable_Update as CameraUpdateFn;
 
 /// `NiCamera::SetPerspectiveFromFov` (id 70643) as the two hands projection sites call it:
 /// viewport (0, 1, 1, 0), `right = tan(fov / 2)` (scaled to a 16:9 frame unless `fov_spans_width`),
 /// `top = right * height / width`, near and far as given, `far / near` into +0x170, then the node
 /// update; `lod_adjust` sets +0x184 to `fov / lod_reference_fov`.
-pub type SetPerspectiveFromFovFn = unsafe extern "C" fn(camera: *mut classes::NiCamera, fov_degrees: f32, near: f32, far: f32, width: u32, height: u32, fov_spans_width: bool, set_lod_adjust: bool, lod_reference_fov: f32);
+pub type SetPerspectiveFromFovFn = unsafe extern "C" fn(camera: *mut skre::NiCamera, fov_degrees: f32, near: f32, far: f32, width: u32, height: u32, fov_spans_width: bool, set_lod_adjust: bool, lod_reference_fov: f32);
 
-type GetRotation = unsafe extern "C" fn(this: *mut classes::TESCameraState, out: *mut [f32; 4]);
-type GetTranslation = unsafe extern "C" fn(this: *mut classes::TESCameraState, out: *mut [f32; 3]);
+type GetRotation = unsafe extern "C" fn(this: *mut skre::TESCameraState, out: *mut [f32; 4]);
+type GetTranslation = unsafe extern "C" fn(this: *mut skre::TESCameraState, out: *mut [f32; 3]);
 
 /// Offsets of the `call` sites a camera mod redirects, inside the functions named by their ids
 /// (pass 12, `camera.md` sections 5 and 7 and the byte checks of `camera-verify.md`).
@@ -38,7 +38,7 @@ const SETUP_FIRST_PERSON_PROJECTION: usize = 0x106;
 const DEPTH_PREPASS_PROJECTION: usize = 0x7fd;
 
 pub(crate) struct Fns {
-    player_camera: *const *const classes::PlayerCamera,
+    player_camera: *const *const skre::PlayerCamera,
     frame_timer: *const u8,
     update: usize,
     player_update: usize,
@@ -47,8 +47,8 @@ pub(crate) struct Fns {
     depth_prepass: usize,
     set_perspective: usize,
     fov_offset: *mut f32,
-    first_person_view: *const classes::FirstPersonRenderContext,
-    first_person_camera: *const *const classes::NiCamera,
+    first_person_view: *const skre::FirstPersonRenderContext,
+    first_person_camera: *const *const skre::NiCamera,
     set_state: fns::TESCamera__SetState_fn,
     push_state: fns::PlayerCamera__PushState_fn,
     pop_state: fns::PlayerCamera__PopState_fn,
@@ -66,7 +66,7 @@ impl Fns {
     pub(crate) fn resolve(reloc: &hook::Reloc) -> Result<Self, hook::Error> {
         unsafe {
             Ok(Self {
-                player_camera: reloc.address(globals::g_PlayerCamera_ptr)? as *const *const classes::PlayerCamera,
+                player_camera: reloc.address(globals::g_PlayerCamera_ptr)? as *const *const skre::PlayerCamera,
                 frame_timer: reloc.address(globals::g_FrameTimer)? as *const u8,
                 update: reloc.address(fns::TESCamera__Update)?,
                 player_update: reloc.address(fns::PlayerCamera__Update)?,
@@ -75,8 +75,8 @@ impl Fns {
                 depth_prepass: reloc.address(fns::RenderWorldDepthPrepass)?,
                 set_perspective: reloc.address(fns::NiCamera__SetPerspectiveFromFov)?,
                 fov_offset: reloc.address(globals::g_CameraFOVOffset)? as *mut f32,
-                first_person_view: reloc.address(globals::g_FirstPersonViewParams)? as *const classes::FirstPersonRenderContext,
-                first_person_camera: reloc.address(globals::g_FirstPersonCamera)? as *const *const classes::NiCamera,
+                first_person_view: reloc.address(globals::g_FirstPersonViewParams)? as *const skre::FirstPersonRenderContext,
+                first_person_camera: reloc.address(globals::g_FirstPersonCamera)? as *const *const skre::NiCamera,
                 set_state: crate::resolve(reloc, fns::TESCamera__SetState)?,
                 push_state: crate::resolve(reloc, fns::PlayerCamera__PushState)?,
                 pop_state: crate::resolve(reloc, fns::PlayerCamera__PopState)?,
@@ -223,23 +223,23 @@ pub unsafe fn hook_hands_projection(detour: SetPerspectiveFromFovFn) -> Result<H
 
 /// The camera base: a root node, a current state and the enabled byte that gates the update.
 #[repr(transparent)]
-pub struct TESCamera(classes::TESCamera);
+pub struct TESCamera(skre::TESCamera);
 
 impl TESCamera {
     #[must_use]
-    pub fn raw(&self) -> &classes::TESCamera {
+    pub fn raw(&self) -> &skre::TESCamera {
         &self.0
     }
 
     #[must_use]
-    pub fn as_ptr(&self) -> *const classes::TESCamera {
+    pub fn as_ptr(&self) -> *const skre::TESCamera {
         &raw const self.0
     }
 
     /// # Safety
     /// `p` must be null or point to a live `TESCamera` (or derived object) that outlives `'a`.
     #[must_use]
-    pub unsafe fn from_ptr<'a>(p: *const classes::TESCamera) -> Option<&'a Self> {
+    pub unsafe fn from_ptr<'a>(p: *const skre::TESCamera) -> Option<&'a Self> {
         unsafe { p.cast::<Self>().as_ref() }
     }
 
@@ -272,7 +272,7 @@ impl TESCamera {
 
 /// The player camera, one static object behind `g_PlayerCamera_ptr`.
 #[repr(transparent)]
-pub struct PlayerCamera(classes::PlayerCamera);
+pub struct PlayerCamera(skre::PlayerCamera);
 
 impl core::ops::Deref for PlayerCamera {
     type Target = TESCamera;
@@ -284,7 +284,7 @@ impl core::ops::Deref for PlayerCamera {
 
 impl PlayerCamera {
     #[must_use]
-    pub fn raw(&self) -> &classes::PlayerCamera {
+    pub fn raw(&self) -> &skre::PlayerCamera {
         &self.0
     }
 
@@ -296,7 +296,7 @@ impl PlayerCamera {
 
     /// Whether `camera` is the player camera (for a [`CameraUpdateFn`] detour).
     #[must_use]
-    pub fn is(camera: *const classes::TESCamera) -> bool {
+    pub fn is(camera: *const skre::TESCamera) -> bool {
         Self::get().is_some_and(|p| core::ptr::eq(p.as_ptr(), camera))
     }
 
@@ -459,23 +459,23 @@ impl PlayerCamera {
         unsafe { (fns().toggle_free_camera)(self.as_player_ptr(), freeze_world) }
     }
 
-    fn as_player_ptr(&self) -> *mut classes::PlayerCamera {
+    fn as_player_ptr(&self) -> *mut skre::PlayerCamera {
         (&raw const self.0).cast_mut()
     }
 }
 
 /// A camera state: its id, owning camera and class; downcasts to the states with accessors.
 #[repr(transparent)]
-pub struct TESCameraState(classes::TESCameraState);
+pub struct TESCameraState(skre::TESCameraState);
 
 impl TESCameraState {
     #[must_use]
-    pub fn raw(&self) -> &classes::TESCameraState {
+    pub fn raw(&self) -> &skre::TESCameraState {
         &self.0
     }
 
     #[must_use]
-    pub fn as_ptr(&self) -> *const classes::TESCameraState {
+    pub fn as_ptr(&self) -> *const skre::TESCameraState {
         &raw const self.0
     }
 
@@ -490,7 +490,7 @@ impl TESCameraState {
     }
 
     #[must_use]
-    pub fn class(&self) -> Option<&'static layout::Vtable> {
+    pub fn class(&self) -> Option<&'static skre::raw::Vtable> {
         unsafe { crate::class_of(self.as_ptr().cast()) }
     }
 
@@ -537,7 +537,7 @@ fn write<T>(field: &T, value: T) {
 /// The third-person states (ids 8 and 9): chase position, shoulder offsets, zoom, yaw, free
 /// rotation and the `animcam` byte. Written on the main thread, from the state-step detour at the latest.
 #[repr(transparent)]
-pub struct ThirdPersonState(classes::ThirdPersonState);
+pub struct ThirdPersonState(skre::ThirdPersonState);
 
 impl core::ops::Deref for ThirdPersonState {
     type Target = TESCameraState;
@@ -549,7 +549,7 @@ impl core::ops::Deref for ThirdPersonState {
 
 impl ThirdPersonState {
     #[must_use]
-    pub fn raw(&self) -> &classes::ThirdPersonState {
+    pub fn raw(&self) -> &skre::ThirdPersonState {
         &self.0
     }
 
@@ -683,7 +683,7 @@ impl ThirdPersonState {
 
 /// The first-person state (id 0): the two camera nodes, the pitch and sitting values and the override bytes.
 #[repr(transparent)]
-pub struct FirstPersonState(classes::FirstPersonState);
+pub struct FirstPersonState(skre::FirstPersonState);
 
 impl core::ops::Deref for FirstPersonState {
     type Target = TESCameraState;
@@ -695,7 +695,7 @@ impl core::ops::Deref for FirstPersonState {
 
 impl FirstPersonState {
     #[must_use]
-    pub fn raw(&self) -> &classes::FirstPersonState {
+    pub fn raw(&self) -> &skre::FirstPersonState {
         &self.0
     }
 
@@ -749,7 +749,7 @@ impl FirstPersonState {
 
 /// The free camera (`tfc`, id 3): position and angles the camera root takes directly.
 #[repr(transparent)]
-pub struct FreeCameraState(classes::FreeCameraState);
+pub struct FreeCameraState(skre::FreeCameraState);
 
 impl core::ops::Deref for FreeCameraState {
     type Target = TESCameraState;
@@ -761,7 +761,7 @@ impl core::ops::Deref for FreeCameraState {
 
 impl FreeCameraState {
     #[must_use]
-    pub fn raw(&self) -> &classes::FreeCameraState {
+    pub fn raw(&self) -> &skre::FreeCameraState {
         &self.0
     }
 

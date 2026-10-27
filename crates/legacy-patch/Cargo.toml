@@ -7,7 +7,7 @@ publish.workspace = true
 [dependencies]
 skse.workspace = true
 hook.workspace = true
-layout.workspace = true
+skre.workspace = true
 skyrim.workspace = true
 
 [lints]

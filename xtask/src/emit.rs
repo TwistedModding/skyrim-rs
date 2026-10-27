@@ -143,7 +143,7 @@ pub(crate) struct FieldOut<'a> {
 
 pub(crate) struct Class<'a> {
     pub(crate) name: &'a str,
-    ident: String,
+    pub(crate) ident: String,
     size: Size,
     pub(crate) fields: Vec<FieldOut<'a>>,
     pub(crate) primary_base: Option<&'a str>,
@@ -154,19 +154,15 @@ pub(crate) struct Class<'a> {
 }
 
 impl Class<'_> {
-    fn partial(&self) -> bool {
-        matches!(self.size, Size::Partial { .. })
-    }
-
     pub(crate) fn extent(&self) -> u64 {
         match self.size {
             Size::Exact { size, .. } | Size::Partial { lower: size, .. } => size,
         }
     }
 
-    /// The struct's path from a sibling module of `classes`.
+    /// The struct's path anywhere in the crate, through the root's re-export.
     pub(crate) fn path(&self) -> String {
-        if self.partial() { format!("classes::partial::{}", self.ident) } else { format!("classes::{}", self.ident) }
+        format!("crate::{}", self.ident)
     }
 }
 
@@ -218,15 +214,8 @@ fn ty_align(ty: &Ty, classes: &BTreeMap<&str, Class>) -> u64 {
     }
 }
 
-fn ty_str(ty: &Ty, in_partial: bool, classes: &BTreeMap<&str, Class>) -> String {
-    let path = |c: &str| {
-        let class = &classes[c];
-        match (in_partial, class.partial()) {
-            (true, true) | (false, false) => class.ident.clone(),
-            (true, false) => format!("super::{}", class.ident),
-            (false, true) => format!("partial::{}", class.ident),
-        }
-    };
+fn ty_str(ty: &Ty, classes: &BTreeMap<&str, Class>) -> String {
+    let path = |c: &str| classes[c].path();
     match ty {
         Ty::U8 => "u8".into(),
         Ty::U16 => "u16".into(),
@@ -238,7 +227,7 @@ fn ty_str(ty: &Ty, in_partial: bool, classes: &BTreeMap<&str, Class>) -> String 
         Ty::PtrVoid => "*mut c_void".into(),
         Ty::Ptr(c) => format!("*mut {}", path(c)),
         Ty::Embed(c) => path(c),
-        Ty::Vtable(v) => format!("*const vtables::{v}"),
+        Ty::Vtable(v) => format!("*const crate::raw::vtables::{v}"),
     }
 }
 
@@ -388,8 +377,8 @@ fn layout_of(name: &str, classes: &mut BTreeMap<&str, Class>) -> u64 {
     class.align
 }
 
-fn write_class(out: &mut String, c: &Class, in_partial: bool, classes: &BTreeMap<&str, Class>, stats: &mut Stats) {
-    let indent = if in_partial { "    " } else { "" };
+fn class_rs(c: &Class, classes: &BTreeMap<&str, Class>, stats: &mut Stats) -> String {
+    let mut out = String::new();
     let mut head = match &c.size {
         Size::Exact { size, conf, evidence: _ } => {
             format!("`{}`: size {size:#X} (exact{})", c.name, conf.as_deref().map(|s| format!(", {s}")).unwrap_or_default())
@@ -406,30 +395,30 @@ fn write_class(out: &mut String, c: &Class, in_partial: bool, classes: &BTreeMap
     let evidence = match &c.size {
         Size::Exact { evidence, .. } | Size::Partial { evidence, .. } => evidence,
     };
-    writeln!(out, "{indent}/// {}.", doc(&head)).unwrap();
+    writeln!(out, "/// {}.", doc(&head)).unwrap();
     if !c.meaning.is_empty() {
-        writeln!(out, "{indent}/// Meaning: {}.", c.meaning).unwrap();
+        writeln!(out, "/// Meaning: {}.", c.meaning).unwrap();
     }
-    writeln!(out, "{indent}/// Evidence: {}.", doc(evidence)).unwrap();
+    writeln!(out, "/// Evidence: {}.", doc(evidence)).unwrap();
     if !c.bases.is_empty() {
         let bases: Vec<String> = c
             .bases
             .iter()
             .map(|(n, off, virt)| format!("`{n}`@{off:#X}{}", if *virt { " (virtual)" } else { "" }))
             .collect();
-        writeln!(out, "{indent}/// Bases: {}.", doc(&bases.join(", "))).unwrap();
+        writeln!(out, "/// Bases: {}.", doc(&bases.join(", "))).unwrap();
     }
     if c.packed {
-        writeln!(out, "{indent}/// Packed: a field lies below its natural alignment.").unwrap();
+        writeln!(out, "/// Packed: a field lies below its natural alignment.").unwrap();
     }
-    writeln!(out, "{indent}#[repr(C{})]", if c.packed { ", packed" } else { "" }).unwrap();
-    writeln!(out, "{indent}pub struct {} {{", c.ident).unwrap();
+    writeln!(out, "#[repr(C{})]", if c.packed { ", packed" } else { "" }).unwrap();
+    writeln!(out, "pub struct {} {{", c.ident).unwrap();
     let mut pos = 0;
     for fo in &c.fields {
         let f = fo.f;
         assert!(f.off >= pos, "{}: field {} at {:#X} overlaps the previous field", c.name, f.name, f.off);
         if f.off > pos {
-            writeln!(out, "{indent}    pub unknown_{pos:X}: [u8; {}],", f.off - pos).unwrap();
+            writeln!(out, "    pub unknown_{pos:X}: [u8; {}],", f.off - pos).unwrap();
         }
         let src = if f.src.is_empty() { String::new() } else { format!(", {}", doc(&f.src)) };
         let meaning = if fo.meaning.is_empty() {
@@ -438,43 +427,38 @@ fn write_class(out: &mut String, c: &Class, in_partial: bool, classes: &BTreeMap
             stats.field_meanings += 1;
             format!("; {}", fo.meaning)
         };
-        writeln!(out, "{indent}    /// +{:#X} `{}`{src}{meaning}", f.off, doc(&f.ty)).unwrap();
-        writeln!(out, "{indent}    pub {}: {},", fo.ident, ty_str(&fo.ty, in_partial, classes)).unwrap();
+        writeln!(out, "    /// +{:#X} `{}`{src}{meaning}", f.off, doc(&f.ty)).unwrap();
+        writeln!(out, "    pub {}: {},", fo.ident, ty_str(&fo.ty, classes)).unwrap();
         pos = f.off + f.size;
         stats.fields += 1;
     }
     let extent = c.extent();
     assert!(pos <= extent, "{}: fields extend past {extent:#X}", c.name);
     if pos < extent {
-        writeln!(out, "{indent}    pub unknown_{pos:X}: [u8; {}],", extent - pos).unwrap();
+        writeln!(out, "    pub unknown_{pos:X}: [u8; {}],", extent - pos).unwrap();
     }
-    writeln!(out, "{indent}}}").unwrap();
+    writeln!(out, "}}").unwrap();
     if let Size::Exact { size, .. } = c.size {
-        writeln!(out, "{indent}const _: () = assert!(size_of::<{}>() == {size:#X});", c.ident).unwrap();
+        writeln!(out, "const _: () = assert!(size_of::<{}>() == {size:#X});", c.ident).unwrap();
         stats.size_asserts += 1;
         stats.exact_classes += 1;
     } else {
         stats.partial_classes += 1;
     }
     for fo in &c.fields {
-        writeln!(out, "{indent}const _: () = assert!(core::mem::offset_of!({}, {}) == {:#X});", c.ident, fo.ident, fo.f.off).unwrap();
+        writeln!(out, "const _: () = assert!(core::mem::offset_of!({}, {}) == {:#X});", c.ident, fo.ident, fo.f.off).unwrap();
         stats.offset_asserts += 1;
     }
     out.push('\n');
+    out
 }
 
 fn classes_rs(classes: &BTreeMap<&str, Class>, stats: &mut Stats) -> String {
     let mut out = String::from(HEADER);
-    out.push_str("use core::ffi::c_void;\n\nuse super::vtables;\n\n");
-    for c in classes.values().filter(|c| !c.partial()) {
-        write_class(&mut out, c, false, classes, stats);
+    out.push_str("use core::ffi::c_void;\n\n");
+    for c in classes.values() {
+        out.push_str(&class_rs(c, classes, stats));
     }
-    out.push_str("/// Classes whose size is only bounded below; each struct stops at the lower bound.\npub mod partial {\n");
-    out.push_str("    use core::ffi::c_void;\n\n    use super::vtables;\n\n");
-    for c in classes.values().filter(|c| c.partial()) {
-        write_class(&mut out, c, true, classes, stats);
-    }
-    out.push_str("}\n");
     out
 }
 
@@ -501,8 +485,7 @@ fn vtables_rs(inp: &Inputs, ctx: &Ctx, stats: &mut Stats) -> String {
     let mut out = String::from(HEADER);
     out.push_str("use core::ffi::{c_char, c_void};
 
-use crate::Vtable;
-use super::classes;
+use crate::raw::Vtable;
 
 ");
     let mut all = Vec::new();
@@ -639,7 +622,7 @@ fn fns_rs(inp: &Inputs, ctx: &Ctx, stats: &mut Stats) -> String {
         typed.set(typed.get() + 1);
         format!("/// `{}` as a function pointer type ({}).\npub type {id}_fn = {ty};\n", f.name, f.confidence)
     };
-    let out = consts_rs(selected, "use core::ffi::{c_char, c_void};\n\nuse super::classes;\n\n", &docs, &after, &mut stats.functions);
+    let out = consts_rs(selected, "use core::ffi::{c_char, c_void};\n\n", &docs, &after, &mut stats.functions);
     stats.typed_functions = typed.get();
     out
 }
@@ -669,7 +652,8 @@ fn globals_rs(inp: &Inputs, stats: &mut Stats) -> String {
     consts_rs(selected, "", &docs, &|_, _| String::new(), &mut stats.globals)
 }
 
-fn enums_rs(inp: &Inputs, stats: &mut Stats) -> String {
+fn enums_rs(inp: &Inputs, ctx: &Ctx, stats: &mut Stats) -> String {
+    assert!(ctx.enums["FormType"].1 == "FormType", "a class is named FormType");
     let source = inp.symbols.iter().find(|s| s.name == "g_FormTypeSignatures");
     let mut out = String::from(HEADER);
     let mut forms: Vec<_> = inp.formtypes.iter().collect();
@@ -722,12 +706,14 @@ fn enums_rs(inp: &Inputs, stats: &mut Stats) -> String {
             values.sort_by_key(|v| v.value);
             let mut idents: Vec<String> = values.iter().map(|v| ident(&v.name)).collect();
             unique(&mut idents);
-            writeln!(out, "\n/// {} ({} pass).\n#[repr({repr})]\n#[derive(Clone, Copy, PartialEq, Eq, Debug)]\npub enum {} {{", doc(&e.meaning), pass.subsystem, e.name).unwrap();
+            let name = &ctx.enums[&e.name].1;
+            let renamed = if *name == e.name { String::new() } else { format!(" `{}` in the pass; a class has that name", e.name) };
+            writeln!(out, "\n/// {} ({} pass{renamed}).\n#[repr({repr})]\n#[derive(Clone, Copy, PartialEq, Eq, Debug)]\npub enum {name} {{", doc(&e.meaning), pass.subsystem).unwrap();
             for (v, id) in values.iter().zip(&idents) {
                 writeln!(out, "    /// `{}`\n    {id} = {},", v.name, v.value).unwrap();
                 stats.enum_values += 1;
             }
-            writeln!(out, "}}\n\nimpl {} {{\n    #[must_use]\n    pub const fn from_{repr}(value: {repr}) -> Option<Self> {{\n        match value {{", e.name).unwrap();
+            writeln!(out, "}}\n\nimpl {name} {{\n    #[must_use]\n    pub const fn from_{repr}(value: {repr}) -> Option<Self> {{\n        match value {{").unwrap();
             for (v, id) in values.iter().zip(&idents) {
                 writeln!(out, "            {} => Some(Self::{id}),", v.value).unwrap();
             }
@@ -782,7 +768,7 @@ fn symbols_rs(inp: &Inputs, stats: &mut Stats) -> String {
     globals.sort_by_key(|s| (s.rva, s.id));
     globals.dedup_by_key(|s| s.rva);
     let mut out = String::from(HEADER);
-    out.push_str("use crate::{Confidence, Function, Global};\n\n/// The functions `fns` names, sorted by rva.\npub static FUNCTIONS: &[Function] = &[\n");
+    out.push_str("use crate::raw::{Confidence, Function, Global};\n\n/// The functions `fns` names, sorted by rva.\npub static FUNCTIONS: &[Function] = &[\n");
     for s in &functions {
         writeln!(out, "    Function {{ rva: {:#x}, id: {}, confidence: Confidence::{}, name: {:?} }},", s.rva, s.id.unwrap(), confidence(&s.confidence), s.name).unwrap();
     }
@@ -837,6 +823,18 @@ pub fn global_at(rva: u32) -> Option<(&'static Global, u32)> {
     out
 }
 
+const RAW_MOD: &str = "//! What the API is built on: the Address Library ids of functions and globals, the vtable layouts
+//! with their named slots, and the crash logger's lookup tables.
+//! Generated by `cargo xtask gen`; do not edit.
+
+pub mod fns;
+pub mod globals;
+pub mod symbols;
+pub mod vtables;
+
+pub use crate::tables::{Confidence, Function, Global, Vtable};
+";
+
 fn mod_rs(inp: &Inputs, commit: &str) -> String {
     let passes: Vec<&str> = inp.semantic.iter().map(|p| p.subsystem.as_str()).collect();
     let mut out = format!(
@@ -845,23 +843,25 @@ fn mod_rs(inp: &Inputs, commit: &str) -> String {
          //! Generated by `cargo xtask gen`; do not edit.\n\n",
         if passes.is_empty() { "none".to_owned() } else { passes.join(", ") }
     );
-    for module in ["classes", "enums", "fns", "globals", "statics", "symbols", "vtables"] {
-        writeln!(out, "#[rustfmt::skip]\npub mod {module};").unwrap();
+    for module in ["classes", "enums", "statics"] {
+        writeln!(out, "mod {module};
+pub use {module}::*;").unwrap();
     }
-    let mut functions = String::new();
     for tier in Tier::ALL {
         let module = tier.module();
-        let cfg = tier.feature().map(|f| format!("#[cfg(feature = \"{f}\")]\n")).unwrap_or_default();
-        writeln!(out, "{cfg}#[rustfmt::skip]\nmod {module};").unwrap();
-        writeln!(functions, "    {}pub use super::{module}::functions::*;", cfg.replace('\n', "\n    ")).unwrap();
+        let cfg = tier.feature().map(|f| format!("#[cfg(feature = \"{f}\")]
+")).unwrap_or_default();
+        writeln!(out, "{cfg}mod {module};
+{cfg}pub use {module}::*;").unwrap();
     }
-    write!(
-        out,
-        "\n/// Engine functions of no laid-out class: the semantic passes' always, the decompiler-typed ones\n\
-         /// by tier feature.\npub mod functions {{\n{functions}}}\n\n\
-         /// The runtime these definitions describe, as `[major, minor, build]`.\npub const VERSION: [u32; 3] = [1, 7, 104];\n"
-    )
-    .unwrap();
+    out.push_str(
+        "#[doc(hidden)]
+pub mod raw;
+
+/// The runtime these definitions describe, as `[major, minor, build]`.
+pub const VERSION: [u32; 3] = [1, 7, 104];
+",
+    );
     out
 }
 
@@ -872,11 +872,12 @@ pub fn all(inp: &Inputs, commit: &str) -> (BTreeMap<&'static str, String>, Stats
     let ctx = context(inp, &classes);
     let mut files = BTreeMap::new();
     files.insert("classes.rs", classes_rs(&classes, &mut stats));
-    files.insert("vtables.rs", vtables_rs(inp, &ctx, &mut stats));
-    files.insert("fns.rs", fns_rs(inp, &ctx, &mut stats));
-    files.insert("globals.rs", globals_rs(inp, &mut stats));
-    files.insert("enums.rs", enums_rs(inp, &mut stats));
-    files.insert("symbols.rs", symbols_rs(inp, &mut stats));
+    files.insert("raw/vtables.rs", vtables_rs(inp, &ctx, &mut stats));
+    files.insert("raw/fns.rs", fns_rs(inp, &ctx, &mut stats));
+    files.insert("raw/globals.rs", globals_rs(inp, &mut stats));
+    files.insert("raw/symbols.rs", symbols_rs(inp, &mut stats));
+    files.insert("raw/mod.rs", RAW_MOD.to_owned());
+    files.insert("enums.rs", enums_rs(inp, &ctx, &mut stats));
     files.insert("mod.rs", mod_rs(inp, commit));
     let (api, api_stats) = crate::api::emit(inp, &ctx);
     files.extend(api);

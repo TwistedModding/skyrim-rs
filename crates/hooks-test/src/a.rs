@@ -9,7 +9,7 @@ use std::sync::{Mutex, OnceLock};
 use framework::hooks::ops::{Actor__ActorValueOwner_ModActorValue, Actor__ModActorValueImpl, TESObjectREFR__GetScale};
 use framework::hooks::{Hooks, Options, Outcome, Phase, Validation, validate};
 use framework::Host;
-use layout::v1_7_104::fns;
+use skre::raw::fns;
 
 use crate::{A, B, ModArgs, OwnerModArgs, check, log, player_health_damage, run};
 

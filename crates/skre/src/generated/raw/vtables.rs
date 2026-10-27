@@ -3,8 +3,7 @@
 
 use core::ffi::{c_char, c_void};
 
-use crate::Vtable;
-use super::classes;
+use crate::raw::Vtable;
 
 /// `AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>::vftable` at 0x18de218, id 204382 (rtti, high); 3 slots.
 #[repr(C)]
@@ -334,7 +333,7 @@ impl ActivateHandler_vtable {
     }
 }
 /// `ActivateHandler::CanProcess`, slot 1: Activate (high).
-pub type ActivateHandler_vtable_CanProcess = unsafe extern "C" fn(this: *mut classes::ActivateHandler, event: *mut classes::InputEvent) -> bool;
+pub type ActivateHandler_vtable_CanProcess = unsafe extern "C" fn(this: *mut crate::ActivateHandler, event: *mut crate::InputEvent) -> bool;
 
 /// `ActiveEffect::vftable` at 0x18f5b98, id 205813 (rtti, high); 25 slots.
 #[repr(C)]
@@ -1140,23 +1139,23 @@ impl Actor_vtable {
     }
 }
 /// `Actor::IsChild`, slot 94: whether the actor is a child (high).
-pub type Actor_vtable_IsChild = unsafe extern "C" fn(this: *const classes::Actor) -> bool;
+pub type Actor_vtable_IsChild = unsafe extern "C" fn(this: *const crate::Actor) -> bool;
 /// `Actor::SetMiddleHighProcessField150`, slot 140: stores value in currentProcess->middleHigh (+8) +0x150 when both exist (high).
-pub type Actor_vtable_SetMiddleHighProcessField150 = unsafe extern "C" fn(this: *mut classes::Actor, value: *mut c_void);
+pub type Actor_vtable_SetMiddleHighProcessField150 = unsafe extern "C" fn(this: *mut crate::Actor, value: *mut c_void);
 /// `Actor::IsDead`, slot 153: whether the actor is dead or dying (high).
-pub type Actor_vtable_IsDead = unsafe extern "C" fn(this: *const classes::Actor, ignoreBleedout: bool) -> bool;
+pub type Actor_vtable_IsDead = unsafe extern "C" fn(this: *const crate::Actor, ignoreBleedout: bool) -> bool;
 /// `Actor::Update`, slot 173: the actor's per-frame update (movement, water, process, animation); PlayerCharacter::Update chains to it (high).
-pub type Actor_vtable_Update = unsafe extern "C" fn(this: *mut classes::Actor, delta: f32);
+pub type Actor_vtable_Update = unsafe extern "C" fn(this: *mut crate::Actor, delta: f32);
 /// `Actor::UpdateEquippedWeaponAnimations`, slot 178: re-reads the equipped hand types into the graph variables iLeftHandType/iRightHandType (g_AnimationVariableNames +0x388/+0x390), handles the mounted (war horse) case and the camera's combat offsets, and when the flag is set runs default object 0x51 'Action Force Equip' (high).
-pub type Actor_vtable_UpdateEquippedWeaponAnimations = unsafe extern "C" fn(this: *mut classes::Actor, sendForceEquipAction: bool);
+pub type Actor_vtable_UpdateEquippedWeaponAnimations = unsafe extern "C" fn(this: *mut crate::Actor, sendForceEquipAction: bool);
 /// `Actor::SetAlpha`, slot 225: stores the alpha in the process and in NiAVObject.fadeAmount (+0x100) of the 3D; for the player (this == ID_401069) on both roots (high).
-pub type Actor_vtable_SetAlpha = unsafe extern "C" fn(this: *mut classes::Actor, alpha: f32);
+pub type Actor_vtable_SetAlpha = unsafe extern "C" fn(this: *mut crate::Actor, alpha: f32);
 /// `Actor::IsInCombat`, slot 227: whether the actor has a combat controller (high).
-pub type Actor_vtable_IsInCombat = unsafe extern "C" fn(this: *const classes::Actor) -> bool;
+pub type Actor_vtable_IsInCombat = unsafe extern "C" fn(this: *const crate::Actor) -> bool;
 /// `Actor::Kill`, slot 270: kills the actor: stops sounds and casts, clears combat, applies the death state and action, sends the kill events; for the player closes menus and pushes the bleedout camera (high).
-pub type Actor_vtable_Kill = unsafe extern "C" fn(this: *mut classes::Actor, killer: *mut classes::Actor, deathEventValue: f32, sendStoryEvent: bool, skipDeathAction: bool);
+pub type Actor_vtable_Kill = unsafe extern "C" fn(this: *mut crate::Actor, killer: *mut crate::Actor, deathEventValue: f32, sendStoryEvent: bool, skipDeathAction: bool);
 /// `Actor::UpdateHeadTracking`, slot 290: head tracking target choice and update (high).
-pub type Actor_vtable_UpdateHeadTracking = unsafe extern "C" fn(this: *mut classes::Actor, delta: f32);
+pub type Actor_vtable_UpdateHeadTracking = unsafe extern "C" fn(this: *mut crate::Actor, delta: f32);
 
 /// `Actor::vftable_20` at 0x191be90, id 207513 (rtti, high); 2 slots.
 #[repr(C)]
@@ -1478,9 +1477,9 @@ impl ActorMagicCaster_vtable {
     }
 }
 /// `ActorMagicCaster::FindCasterNode`, slot 14: returns casterNode (+0xc0), resolving it when null from the root the player's view selects (high).
-pub type ActorMagicCaster_vtable_FindCasterNode = unsafe extern "C" fn(this: *mut classes::ActorMagicCaster) -> *mut classes::NiNode;
+pub type ActorMagicCaster_vtable_FindCasterNode = unsafe extern "C" fn(this: *mut crate::ActorMagicCaster) -> *mut crate::NiNode;
 /// `ActorMagicCaster::ClearCasterNode`, slot 15: casterNode = 0 (high).
-pub type ActorMagicCaster_vtable_ClearCasterNode = unsafe extern "C" fn(this: *mut classes::ActorMagicCaster);
+pub type ActorMagicCaster_vtable_ClearCasterNode = unsafe extern "C" fn(this: *mut crate::ActorMagicCaster);
 
 /// `ActorMagicCaster::vftable_48` at 0x18f6248, id 205830 (rtti, high); 20 slots.
 #[repr(C)]
@@ -1840,9 +1839,9 @@ impl ActorState_vtable {
     }
 }
 /// `ActorState::SetSitSleepState`, slot 20: writes bits 14-17 of flags1 (high).
-pub type ActorState_vtable_SetSitSleepState = unsafe extern "C" fn(this: *mut classes::ActorState, state: u32) -> bool;
+pub type ActorState_vtable_SetSitSleepState = unsafe extern "C" fn(this: *mut crate::ActorState, state: u32) -> bool;
 /// `ActorState::SetWeaponDrawn`, slot 21: sets the weapon state (flags2 bits 5-7) to 3 (drawn) or 0 (sheathed) unless it already is 4 resp. 1 (high).
-pub type ActorState_vtable_SetWeaponDrawn = unsafe extern "C" fn(this: *mut classes::ActorState, drawn: bool) -> bool;
+pub type ActorState_vtable_SetWeaponDrawn = unsafe extern "C" fn(this: *mut crate::ActorState, drawn: bool) -> bool;
 
 /// `ActorTargetCheck::vftable` at 0x18f8888, id 205911 (rtti, high); 2 slots.
 #[repr(C)]
@@ -2134,21 +2133,21 @@ impl ActorValueOwner_vtable {
     }
 }
 /// `ActorValueOwner::GetActorValue`, slot 1: current value (high).
-pub type ActorValueOwner_vtable_GetActorValue = unsafe extern "C" fn(this: *const classes::ActorValueOwner, value: i32) -> f32;
+pub type ActorValueOwner_vtable_GetActorValue = unsafe extern "C" fn(this: *const crate::ActorValueOwner, value: i32) -> f32;
 /// `ActorValueOwner::GetPermanentActorValue`, slot 2: base plus permanent modifier (high).
-pub type ActorValueOwner_vtable_GetPermanentActorValue = unsafe extern "C" fn(this: *const classes::ActorValueOwner, value: i32) -> f32;
+pub type ActorValueOwner_vtable_GetPermanentActorValue = unsafe extern "C" fn(this: *const crate::ActorValueOwner, value: i32) -> f32;
 /// `ActorValueOwner::GetBaseActorValue`, slot 3: base value (high).
-pub type ActorValueOwner_vtable_GetBaseActorValue = unsafe extern "C" fn(this: *const classes::ActorValueOwner, value: i32) -> f32;
+pub type ActorValueOwner_vtable_GetBaseActorValue = unsafe extern "C" fn(this: *const crate::ActorValueOwner, value: i32) -> f32;
 /// `ActorValueOwner::StoreBaseActorValue`, slot 4: sets the base value (high).
-pub type ActorValueOwner_vtable_StoreBaseActorValue = unsafe extern "C" fn(this: *mut classes::ActorValueOwner, value: i32, amount: f32);
+pub type ActorValueOwner_vtable_StoreBaseActorValue = unsafe extern "C" fn(this: *mut crate::ActorValueOwner, value: i32, amount: f32);
 /// `ActorValueOwner::AddBaseActorValue`, slot 5: adds to the base value (high).
-pub type ActorValueOwner_vtable_AddBaseActorValue = unsafe extern "C" fn(this: *mut classes::ActorValueOwner, value: i32, delta: f32);
+pub type ActorValueOwner_vtable_AddBaseActorValue = unsafe extern "C" fn(this: *mut crate::ActorValueOwner, value: i32, delta: f32);
 /// `ActorValueOwner::ModActorValue`, slot 6: adds to a modifier (0 permanent, 1 temporary, 2 damage) (high).
-pub type ActorValueOwner_vtable_ModActorValue = unsafe extern "C" fn(this: *mut classes::ActorValueOwner, modifier: i32, value: i32, delta: f32);
+pub type ActorValueOwner_vtable_ModActorValue = unsafe extern "C" fn(this: *mut crate::ActorValueOwner, modifier: i32, value: i32, delta: f32);
 /// `ActorValueOwner::SetActorValue`, slot 7: sets the value (base in the default implementation) (high).
-pub type ActorValueOwner_vtable_SetActorValue = unsafe extern "C" fn(this: *mut classes::ActorValueOwner, value: i32, amount: f32);
+pub type ActorValueOwner_vtable_SetActorValue = unsafe extern "C" fn(this: *mut crate::ActorValueOwner, value: i32, amount: f32);
 /// `ActorValueOwner::IsPlayer`, slot 8: whether the owner is the player or the player's base NPC (high).
-pub type ActorValueOwner_vtable_IsPlayer = unsafe extern "C" fn(this: *const classes::ActorValueOwner) -> bool;
+pub type ActorValueOwner_vtable_IsPlayer = unsafe extern "C" fn(this: *const crate::ActorValueOwner) -> bool;
 
 /// `AddCallbackVisitor::vftable` at 0x1a9c2f0, id 242195 (rtti, high); 2 slots.
 #[repr(C)]
@@ -2794,9 +2793,9 @@ impl AnimatedCameraDeltaStartHandler_vtable {
     }
 }
 /// `AnimatedCameraDeltaStartHandler::Destroy`, slot 0: scalar deleting destructor: restores IHandlerFunctor<Actor,BSFixedStringCI>::vftable 0x1937e30, frees 0x10 when flags & 1 (high).
-pub type AnimatedCameraDeltaStartHandler_vtable_Destroy = unsafe extern "C" fn(this: *mut classes::AnimatedCameraDeltaStartHandler, flags: u32) -> *mut classes::AnimatedCameraDeltaStartHandler;
+pub type AnimatedCameraDeltaStartHandler_vtable_Destroy = unsafe extern "C" fn(this: *mut crate::AnimatedCameraDeltaStartHandler, flags: u32) -> *mut crate::AnimatedCameraDeltaStartHandler;
 /// `AnimatedCameraDeltaStartHandler::Handle`, slot 1: StartAnimatedCameraAtNode(camera, payload, delta = true): when the current state id > 8 (third person 9+), attach the named node to the current state in delta mode (state+0xcc = 0, +0xd0 = 1.0); no transition, no push (high).
-pub type AnimatedCameraDeltaStartHandler_vtable_Handle = unsafe extern "C" fn(this: *mut classes::AnimatedCameraDeltaStartHandler, actor: *mut classes::Actor, payload: *const c_void) -> bool;
+pub type AnimatedCameraDeltaStartHandler_vtable_Handle = unsafe extern "C" fn(this: *mut crate::AnimatedCameraDeltaStartHandler, actor: *mut crate::Actor, payload: *const c_void) -> bool;
 
 /// `AnimatedCameraEndHandler::vftable` at 0x1938670, id 208983 (rtti, high); 2 slots.
 #[repr(C)]
@@ -2822,9 +2821,9 @@ impl AnimatedCameraEndHandler_vtable {
     }
 }
 /// `AnimatedCameraEndHandler::Destroy`, slot 0: scalar deleting destructor: restores IHandlerFunctor<Actor,BSFixedStringCI>::vftable 0x1937e30, frees 0x10 when flags & 1 (high).
-pub type AnimatedCameraEndHandler_vtable_Destroy = unsafe extern "C" fn(this: *mut classes::AnimatedCameraEndHandler, flags: u32) -> *mut classes::AnimatedCameraEndHandler;
+pub type AnimatedCameraEndHandler_vtable_Destroy = unsafe extern "C" fn(this: *mut crate::AnimatedCameraEndHandler, flags: u32) -> *mut crate::AnimatedCameraEndHandler;
 /// `AnimatedCameraEndHandler::Handle`, slot 1: PlayerCamera::EndAnimatedCamera: when the current state id >= 8, clear its animated node; when it is state 8, PlayerCamera+0x160 = !bDisableAutoVanityMode:Camera and pop/SetState back (high).
-pub type AnimatedCameraEndHandler_vtable_Handle = unsafe extern "C" fn(this: *mut classes::AnimatedCameraEndHandler, actor: *mut classes::Actor, payload: *const c_void) -> bool;
+pub type AnimatedCameraEndHandler_vtable_Handle = unsafe extern "C" fn(this: *mut crate::AnimatedCameraEndHandler, actor: *mut crate::Actor, payload: *const c_void) -> bool;
 
 /// `AnimatedCameraStartHandler::vftable` at 0x1938640, id 208979 (rtti, high); 2 slots.
 #[repr(C)]
@@ -2850,9 +2849,9 @@ impl AnimatedCameraStartHandler_vtable {
     }
 }
 /// `AnimatedCameraStartHandler::Destroy`, slot 0: scalar deleting destructor: restores IHandlerFunctor<Actor,BSFixedStringCI>::vftable 0x1937e30, frees 0x10 when flags & 1 (high).
-pub type AnimatedCameraStartHandler_vtable_Destroy = unsafe extern "C" fn(this: *mut classes::AnimatedCameraStartHandler, flags: u32) -> *mut classes::AnimatedCameraStartHandler;
+pub type AnimatedCameraStartHandler_vtable_Destroy = unsafe extern "C" fn(this: *mut crate::AnimatedCameraStartHandler, flags: u32) -> *mut crate::AnimatedCameraStartHandler;
 /// `AnimatedCameraStartHandler::Handle`, slot 1: PlayerCamera::StartAnimatedCameraAtNode(camera, payload node name, delta = false): unless the transition or free state is current, find the node in the player's 3D, give it to ThirdPersonState id 8 (+0xf8), configure the transition (current -> 8) over iAnimatedTransitionMillis and push state 6; clears PlayerCamera+0x160 (high).
-pub type AnimatedCameraStartHandler_vtable_Handle = unsafe extern "C" fn(this: *mut classes::AnimatedCameraStartHandler, actor: *mut classes::Actor, payload: *const c_void) -> bool;
+pub type AnimatedCameraStartHandler_vtable_Handle = unsafe extern "C" fn(this: *mut crate::AnimatedCameraStartHandler, actor: *mut crate::Actor, payload: *const c_void) -> bool;
 
 /// `AnimationClipDataSingleton::vftable` at 0x18e8db8, id 205084 (rtti, high); 1 slots.
 #[repr(C)]
@@ -4078,7 +4077,7 @@ impl AttackBlockHandler_vtable {
     }
 }
 /// `AttackBlockHandler::CanProcess`, slot 1: Left/Right Attack/Block (high).
-pub type AttackBlockHandler_vtable_CanProcess = unsafe extern "C" fn(this: *mut classes::AttackBlockHandler, event: *mut classes::InputEvent) -> bool;
+pub type AttackBlockHandler_vtable_CanProcess = unsafe extern "C" fn(this: *mut crate::AttackBlockHandler, event: *mut crate::InputEvent) -> bool;
 
 /// `AttackStopHandler::vftable` at 0x1937ea8, id 208817 (rtti, high); 2 slots.
 #[repr(C)]
@@ -4208,7 +4207,7 @@ impl AutoMoveHandler_vtable {
     }
 }
 /// `AutoMoveHandler::CanProcess`, slot 1: Auto-Move (high).
-pub type AutoMoveHandler_vtable_CanProcess = unsafe extern "C" fn(this: *mut classes::AutoMoveHandler, event: *mut classes::InputEvent) -> bool;
+pub type AutoMoveHandler_vtable_CanProcess = unsafe extern "C" fn(this: *mut crate::AutoMoveHandler, event: *mut crate::InputEvent) -> bool;
 
 /// `AutoRegisterCombatObject<CombatAimController>::vftable` at 0x1943c08, id 210097 (rtti, high); 3 slots.
 #[repr(C)]
@@ -20452,17 +20451,17 @@ impl AutoVanityState_vtable {
     }
 }
 /// `AutoVanityState::Destroy`, slot 0: scalar deleting destructor: calls 0x8f3750 (destructor body: vtable = TESCameraState::vftable), frees 0x28 when flags & 1 (high).
-pub type AutoVanityState_vtable_Destroy = unsafe extern "C" fn(this: *mut classes::AutoVanityState, flags: u32) -> *mut classes::AutoVanityState;
+pub type AutoVanityState_vtable_Destroy = unsafe extern "C" fn(this: *mut crate::AutoVanityState, flags: u32) -> *mut crate::AutoVanityState;
 /// `AutoVanityState::Begin`, slot 1: SetFirstPerson(false), yaw = heading, queues the 'AutoVanity' message (high).
-pub type AutoVanityState_vtable_Begin = unsafe extern "C" fn(this: *mut classes::TESCameraState);
+pub type AutoVanityState_vtable_Begin = unsafe extern "C" fn(this: *mut crate::TESCameraState);
 /// `AutoVanityState::End`, slot 2:  (high).
-pub type AutoVanityState_vtable_End = unsafe extern "C" fn(this: *mut classes::AutoVanityState);
+pub type AutoVanityState_vtable_End = unsafe extern "C" fn(this: *mut crate::AutoVanityState);
 /// `AutoVanityState::Update`, slot 3: position from ComputeAutoVanityCameraPosition 0x8f3a10, writes the root, advances yaw (high).
-pub type AutoVanityState_vtable_Update = unsafe extern "C" fn(this: *mut classes::TESCameraState, next: *mut c_void);
+pub type AutoVanityState_vtable_Update = unsafe extern "C" fn(this: *mut crate::TESCameraState, next: *mut c_void);
 /// `AutoVanityState::GetRotation`, slot 4: euler(0, 0, yaw) (high).
-pub type AutoVanityState_vtable_GetRotation = unsafe extern "C" fn(this: *mut classes::AutoVanityState, out: *mut c_void);
+pub type AutoVanityState_vtable_GetRotation = unsafe extern "C" fn(this: *mut crate::AutoVanityState, out: *mut c_void);
 /// `AutoVanityState::GetTranslation`, slot 5: 0x8f3a10 with the slot 4 rotation (high).
-pub type AutoVanityState_vtable_GetTranslation = unsafe extern "C" fn(this: *mut classes::AutoVanityState, out: *mut c_void);
+pub type AutoVanityState_vtable_GetTranslation = unsafe extern "C" fn(this: *mut crate::AutoVanityState, out: *mut c_void);
 
 /// `BGSAIWorldLocation::vftable` at 0x18c3b88, id 200665 (rtti, high); 23 slots.
 #[repr(C)]
@@ -22605,17 +22604,17 @@ impl BGSCameraPath_vtable {
     }
 }
 /// `BGSCameraPath::Destroy`, slot 0: scalar deleting destructor: BGSCameraPath::dtor 0x315f30, frees 0x58 (high).
-pub type BGSCameraPath_vtable_Destroy = unsafe extern "C" fn(this: *mut classes::BGSCameraPath, flags: u32) -> *mut classes::BGSCameraPath;
+pub type BGSCameraPath_vtable_Destroy = unsafe extern "C" fn(this: *mut crate::BGSCameraPath, flags: u32) -> *mut crate::BGSCameraPath;
 /// `BGSCameraPath::InitializeData`, slot 4: pathFlags = 0, parent = previousSibling = 0 (high).
-pub type BGSCameraPath_vtable_InitializeData = unsafe extern "C" fn(this: *mut classes::BGSCameraPath);
+pub type BGSCameraPath_vtable_InitializeData = unsafe extern "C" fn(this: *mut crate::BGSCameraPath);
 /// `BGSCameraPath::ClearData`, slot 5: remove from the parent's children (when TLS +0x5d8 is set and the form is initialised), free the conditions and the shot list nodes (high).
-pub type BGSCameraPath_vtable_ClearData = unsafe extern "C" fn(this: *mut classes::BGSCameraPath);
+pub type BGSCameraPath_vtable_ClearData = unsafe extern "C" fn(this: *mut crate::BGSCameraPath);
 /// `BGSCameraPath::Load`, slot 6: reads the CPTH record (EDID, CTDA, DATA, ANAM, SNAM, OBND, VMAD) and queues the path in the registry's pending list (QueuePendingCameraPath 0x318020); for the default path 0x31df550 it first removes it from the root list (high).
-pub type BGSCameraPath_vtable_Load = unsafe extern "C" fn(this: *mut classes::BGSCameraPath, file: *mut classes::TESFile) -> bool;
+pub type BGSCameraPath_vtable_Load = unsafe extern "C" fn(this: *mut crate::BGSCameraPath, file: *mut crate::TESFile) -> bool;
 /// `BGSCameraPath::CreateDuplicateForm`, slot 9: TESForm duplicate, then remaps parent and previous sibling through the map (keeps the originals when unmapped) and duplicates every child (child slot 9) into the copy's children array (high).
-pub type BGSCameraPath_vtable_CreateDuplicateForm = unsafe extern "C" fn(this: *mut classes::BGSCameraPath, createEditorID: bool, duplicateMap: *mut c_void) -> *mut classes::TESForm;
+pub type BGSCameraPath_vtable_CreateDuplicateForm = unsafe extern "C" fn(this: *mut crate::BGSCameraPath, createEditorID: bool, duplicateMap: *mut c_void) -> *mut crate::TESForm;
 /// `BGSCameraPath::InitItem`, slot 19: once (formFlags bit 3): init the conditions, resolve each shot id to a BGSCameraShot (unresolved entries removed, slot 50 GetFormEditorID logged once), set bit 3 (high).
-pub type BGSCameraPath_vtable_InitItem = unsafe extern "C" fn(this: *mut classes::BGSCameraPath);
+pub type BGSCameraPath_vtable_InitItem = unsafe extern "C" fn(this: *mut crate::BGSCameraPath);
 
 /// `BGSCameraShot::vftable` at 0x182d380, id 190481 (rtti, high); 59 slots.
 #[repr(C)]
@@ -22767,13 +22766,13 @@ impl BGSCameraShot_vtable {
     }
 }
 /// `BGSCameraShot::Destroy`, slot 0: scalar deleting destructor: BGSCameraShot::dtor 0x3189e0, frees 0xc0 when flags & 1 (high).
-pub type BGSCameraShot_vtable_Destroy = unsafe extern "C" fn(this: *mut classes::BGSCameraShot, flags: u32) -> *mut classes::BGSCameraShot;
+pub type BGSCameraShot_vtable_Destroy = unsafe extern "C" fn(this: *mut crate::BGSCameraShot, flags: u32) -> *mut crate::BGSCameraShot;
 /// `BGSCameraShot::InitializeData`, slot 4: DATA defaults: action 2, location 2, target 0, flags 3, time mults 0/0/1.0, max/min/percent/cut 0 (high).
-pub type BGSCameraShot_vtable_InitializeData = unsafe extern "C" fn(this: *mut classes::BGSCameraShot);
+pub type BGSCameraShot_vtable_InitializeData = unsafe extern "C" fn(this: *mut crate::BGSCameraShot);
 /// `BGSCameraShot::Load`, slot 6: reads the CAMS record: EDID (SetFormEditorID), OBND, MODL/MODT (TESModel), DATA 0x2c bytes into +0x58 (byte-swapped for big-endian files), MNAM (IMAD id into +0x50), VMAD; false when the record type is not 0x60 (high).
-pub type BGSCameraShot_vtable_Load = unsafe extern "C" fn(this: *mut classes::BGSCameraShot, file: *mut classes::TESFile) -> bool;
+pub type BGSCameraShot_vtable_Load = unsafe extern "C" fn(this: *mut crate::BGSCameraShot, file: *mut crate::TESFile) -> bool;
 /// `BGSCameraShot::InitItem`, slot 19: once per form (formFlags bit 3): resolve the IMAD id, clamp globalTimeMult (< 1e-4 -> 0.1), set bit 3 (high).
-pub type BGSCameraShot_vtable_InitItem = unsafe extern "C" fn(this: *mut classes::BGSCameraShot);
+pub type BGSCameraShot_vtable_InitItem = unsafe extern "C" fn(this: *mut crate::BGSCameraShot);
 
 /// `BGSCameraShot::vftable_20` at 0x182d560, id 190483 (rtti, high); 7 slots.
 #[repr(C)]
@@ -26237,7 +26236,7 @@ impl BGSKeywordForm_vtable {
     }
 }
 /// `BGSKeywordForm::HasKeyword`, slot 4: whether the keyword is in the array (high).
-pub type BGSKeywordForm_vtable_HasKeyword = unsafe extern "C" fn(this: *const classes::BGSKeywordForm, keyword: *const classes::BGSKeyword) -> bool;
+pub type BGSKeywordForm_vtable_HasKeyword = unsafe extern "C" fn(this: *const crate::BGSKeywordForm, keyword: *const crate::BGSKeyword) -> bool;
 
 /// `BGSLOSData::vftable` at 0x18e89f8, id 205075 (rtti, high); 2 slots.
 #[repr(C)]
@@ -26661,7 +26660,7 @@ impl BGSLoadFormBuffer_vtable {
     }
 }
 /// `BGSLoadFormBuffer::GetVersion`, slot 1: the record's version byte (high).
-pub type BGSLoadFormBuffer_vtable_GetVersion = unsafe extern "C" fn(this: *mut classes::BGSLoadFormBuffer) -> u8;
+pub type BGSLoadFormBuffer_vtable_GetVersion = unsafe extern "C" fn(this: *mut crate::BGSLoadFormBuffer) -> u8;
 
 /// `BGSLoadGameBuffer::vftable` at 0x190bf98, id 206715 (rtti, high); 2 slots.
 #[repr(C)]
@@ -28520,15 +28519,15 @@ impl BGSMusicType_vtable {
     }
 }
 /// `BGSMusicType::ClearData`, slot 5: frees both arrays, resets flags, fade, ducking and priority 50 (high).
-pub type BGSMusicType_vtable_ClearData = unsafe extern "C" fn(this: *mut classes::BGSMusicType);
+pub type BGSMusicType_vtable_ClearData = unsafe extern "C" fn(this: *mut crate::BGSMusicType);
 /// `BGSMusicType::Load`, slot 6: FNAM, VMAD, EDID, OBND, PNAM, TNAM, WNAM (high).
-pub type BGSMusicType_vtable_Load = unsafe extern "C" fn(this: *mut classes::BGSMusicType, file: *mut classes::TESFile) -> bool;
+pub type BGSMusicType_vtable_Load = unsafe extern "C" fn(this: *mut crate::BGSMusicType, file: *mut crate::TESFile) -> bool;
 /// `BGSMusicType::InitItemImpl`, slot 19: resolves track ids to wrapper interfaces (high).
-pub type BGSMusicType_vtable_InitItemImpl = unsafe extern "C" fn(this: *mut classes::BGSMusicType);
+pub type BGSMusicType_vtable_InitItemImpl = unsafe extern "C" fn(this: *mut crate::BGSMusicType);
 /// `BGSMusicType::GetFormEditorID`, slot 50: +0x70 or empty (high).
-pub type BGSMusicType_vtable_GetFormEditorID = unsafe extern "C" fn(this: *mut classes::BGSMusicType) -> *const c_char;
+pub type BGSMusicType_vtable_GetFormEditorID = unsafe extern "C" fn(this: *mut crate::BGSMusicType) -> *const c_char;
 /// `BGSMusicType::SetFormEditorID`, slot 51: assigns +0x70 (high).
-pub type BGSMusicType_vtable_SetFormEditorID = unsafe extern "C" fn(this: *mut classes::BGSMusicType, id: *const c_char) -> bool;
+pub type BGSMusicType_vtable_SetFormEditorID = unsafe extern "C" fn(this: *mut crate::BGSMusicType, id: *const c_char) -> bool;
 
 /// `BGSMusicType::vftable_20` at 0x18346b8, id 191051 (rtti, high); 8 slots.
 #[repr(C)]
@@ -38159,9 +38158,9 @@ impl BGSSaveFormBuffer_vtable {
     }
 }
 /// `BGSSaveFormBuffer::GetForm`, slot 1: the form being saved (high).
-pub type BGSSaveFormBuffer_vtable_GetForm = unsafe extern "C" fn(this: *mut classes::BGSSaveFormBuffer) -> *mut classes::TESForm;
+pub type BGSSaveFormBuffer_vtable_GetForm = unsafe extern "C" fn(this: *mut crate::BGSSaveFormBuffer) -> *mut crate::TESForm;
 /// `BGSSaveFormBuffer::GetActor`, slot 3: slot 2 when formType == 0x3e (high).
-pub type BGSSaveFormBuffer_vtable_GetActor = unsafe extern "C" fn(this: *mut classes::BGSSaveFormBuffer) -> *mut classes::Actor;
+pub type BGSSaveFormBuffer_vtable_GetActor = unsafe extern "C" fn(this: *mut crate::BGSSaveFormBuffer) -> *mut crate::Actor;
 
 /// `BGSSaveGameBuffer::vftable` at 0x190c3f8, id 206725 (rtti, high); 4 slots.
 #[repr(C)]
@@ -38203,9 +38202,9 @@ impl BGSSaveLoadManager_vtable {
     }
 }
 /// `BGSSaveLoadManager::vdtor`, slot 0: destructor (high).
-pub type BGSSaveLoadManager_vtable_vdtor = unsafe extern "C" fn(a0: *mut classes::BGSSaveLoadManager, a1: u32) -> *mut c_void;
+pub type BGSSaveLoadManager_vtable_vdtor = unsafe extern "C" fn(a0: *mut crate::BGSSaveLoadManager, a1: u32) -> *mut c_void;
 /// `BGSSaveLoadManager::ProcessSaveDataEvent`, slot 1: completion of a BSSaveDataSystemUtility operation: op 0 (file read) -> build LoadRequest 0xd0000010 and queue it, notify {2,1}; op 1 (file written) -> rotate .bak copies (iSaveGameBackupCount), rename '<name>.ess.tmp' to '<name>.ess', add the list entry, SetCurrentSaveName, queue deletion of the replaced autosave/quicksave (0x40000004), notify {1,1}; op 2 (delete) -> nothing (high).
-pub type BGSSaveLoadManager_vtable_ProcessSaveDataEvent = unsafe extern "C" fn(a0: *mut classes::BGSSaveLoadManager, a1: *const c_void, a2: *mut c_void) -> u32;
+pub type BGSSaveLoadManager_vtable_ProcessSaveDataEvent = unsafe extern "C" fn(a0: *mut crate::BGSSaveLoadManager, a1: *const c_void, a2: *mut c_void) -> u32;
 
 /// `BGSSaveLoadManager::vftable_8` at 0x190ad40, id 206624 (rtti, high); 2 slots.
 #[repr(C)]
@@ -38908,9 +38907,9 @@ impl BGSSoundCategory_vtable {
     }
 }
 /// `BGSSoundCategory::Load`, slot 6: checks the record type is 0x82, then FNAM, VMAD, EDID, OBND, FULL, PNAM, SNAM, UNAM, VNAM (high).
-pub type BGSSoundCategory_vtable_Load = unsafe extern "C" fn(this: *mut classes::BGSSoundCategory, file: *mut classes::TESFile) -> bool;
+pub type BGSSoundCategory_vtable_Load = unsafe extern "C" fn(this: *mut crate::BGSSoundCategory, file: *mut crate::TESFile) -> bool;
 /// `BGSSoundCategory::InitItemImpl`, slot 19: once: clears menu slots whose form is missing/not SNCT/not flag bit 1; resolves the parent; for menu categories restores the saved volume from the slot table or applies the default menu volume (high).
-pub type BGSSoundCategory_vtable_InitItemImpl = unsafe extern "C" fn(this: *mut classes::BGSSoundCategory);
+pub type BGSSoundCategory_vtable_InitItemImpl = unsafe extern "C" fn(this: *mut crate::BGSSoundCategory);
 
 /// `BGSSoundCategory::vftable_20` at 0x1835010, id 191091 (rtti, high); 6 slots.
 #[repr(C)]
@@ -38998,9 +38997,9 @@ impl BGSSoundDescriptor_vtable {
     }
 }
 /// `BGSSoundDescriptor::InitItem`, slot 3: resolves the category form id and initialises the category (high).
-pub type BGSSoundDescriptor_vtable_InitItem = unsafe extern "C" fn(this: *mut classes::BGSSoundDescriptor, owner: *mut classes::TESForm);
+pub type BGSSoundDescriptor_vtable_InitItem = unsafe extern "C" fn(this: *mut crate::BGSSoundDescriptor, owner: *mut crate::TESForm);
 /// `BGSSoundDescriptor::LoadChunk`, slot 4: reads GNAM (category id) and SNAM (linked id) (high).
-pub type BGSSoundDescriptor_vtable_LoadChunk = unsafe extern "C" fn(this: *mut classes::BGSSoundDescriptor, file: *mut classes::TESFile);
+pub type BGSSoundDescriptor_vtable_LoadChunk = unsafe extern "C" fn(this: *mut crate::BGSSoundDescriptor, file: *mut crate::TESFile);
 
 /// `BGSSoundDescriptorForm::vftable` at 0x1835378, id 191106 (rtti, high); 60 slots.
 #[repr(C)]
@@ -39150,11 +39149,11 @@ impl BGSSoundDescriptorForm_vtable {
     }
 }
 /// `BGSSoundDescriptorForm::Load`, slot 6: reads VMAD, EDID, OBND, CNAM; CNAM picks the descriptor class; returns false when the CNAM type is unknown (high).
-pub type BGSSoundDescriptorForm_vtable_Load = unsafe extern "C" fn(this: *mut classes::BGSSoundDescriptorForm, file: *mut classes::TESFile) -> bool;
+pub type BGSSoundDescriptorForm_vtable_Load = unsafe extern "C" fn(this: *mut crate::BGSSoundDescriptorForm, file: *mut crate::TESFile) -> bool;
 /// `BGSSoundDescriptorForm::SetFormEditorID`, slot 51: registers the editor id in the global editor-id map (AddFormToEditorIDMap), so SNDR forms are findable by editor id (high).
-pub type BGSSoundDescriptorForm_vtable_SetFormEditorID = unsafe extern "C" fn(this: *mut classes::BGSSoundDescriptorForm, id: *const c_char) -> bool;
+pub type BGSSoundDescriptorForm_vtable_SetFormEditorID = unsafe extern "C" fn(this: *mut crate::BGSSoundDescriptorForm, id: *const c_char) -> bool;
 /// `BGSSoundDescriptorForm::GetDescriptorTypeCRC`, slot 59: forwards to descriptor slot 5 (crc32 of the descriptor class name) (high).
-pub type BGSSoundDescriptorForm_vtable_GetDescriptorTypeCRC = unsafe extern "C" fn(this: *mut classes::BGSSoundDescriptorForm) -> u32;
+pub type BGSSoundDescriptorForm_vtable_GetDescriptorTypeCRC = unsafe extern "C" fn(this: *mut crate::BGSSoundDescriptorForm) -> u32;
 
 /// `BGSSoundDescriptorForm::vftable_20` at 0x1835560, id 191108 (rtti, high); 3 slots.
 #[repr(C)]
@@ -39314,11 +39313,11 @@ impl BGSSoundOutput_vtable {
     }
 }
 /// `BGSSoundOutput::ClearData`, slot 5: frees the attenuation object and the speaker table (high).
-pub type BGSSoundOutput_vtable_ClearData = unsafe extern "C" fn(this: *mut classes::BGSSoundOutput);
+pub type BGSSoundOutput_vtable_ClearData = unsafe extern "C" fn(this: *mut crate::BGSSoundOutput);
 /// `BGSSoundOutput::Load`, slot 6: type gate 0x83, then ANAM, NAM1, VMAD, EDID, OBND, FNAM, MNAM, ONAM, SNAM (high).
-pub type BGSSoundOutput_vtable_Load = unsafe extern "C" fn(this: *mut classes::BGSSoundOutput, file: *mut classes::TESFile) -> bool;
+pub type BGSSoundOutput_vtable_Load = unsafe extern "C" fn(this: *mut crate::BGSSoundOutput, file: *mut crate::TESFile) -> bool;
 /// `BGSSoundOutput::InitItemImpl`, slot 19: only sets the initialised bit (high).
-pub type BGSSoundOutput_vtable_InitItemImpl = unsafe extern "C" fn(this: *mut classes::BGSSoundOutput);
+pub type BGSSoundOutput_vtable_InitItemImpl = unsafe extern "C" fn(this: *mut crate::BGSSoundOutput);
 
 /// `BGSSoundOutput::vftable_20` at 0x18359d8, id 191126 (rtti, high); 10 slots.
 #[repr(C)]
@@ -39425,17 +39424,17 @@ impl BGSStandardSoundDef_vtable {
     }
 }
 /// `BGSStandardSoundDef::FillPlayData`, slot 1: picks a file (random, no immediate repeat), checks conditions, fills file id, linked id, flags, playback characteristics, output model, category and the send list (high).
-pub type BGSStandardSoundDef_vtable_FillPlayData = unsafe extern "C" fn(this: *mut classes::BGSStandardSoundDef, out: *mut c_void) -> bool;
+pub type BGSStandardSoundDef_vtable_FillPlayData = unsafe extern "C" fn(this: *mut crate::BGSStandardSoundDef, out: *mut c_void) -> bool;
 /// `BGSStandardSoundDef::ShouldPlayAtDistance`, slot 2: output model present and (not attenuating or distance < attenuation max distance) and conditions pass (high).
-pub type BGSStandardSoundDef_vtable_ShouldPlayAtDistance = unsafe extern "C" fn(this: *mut classes::BGSStandardSoundDef, distance: f32) -> bool;
+pub type BGSStandardSoundDef_vtable_ShouldPlayAtDistance = unsafe extern "C" fn(this: *mut crate::BGSStandardSoundDef, distance: f32) -> bool;
 /// `BGSStandardSoundDef::InitItem`, slot 3: base InitItem plus output model resolution and the conditions' InitItem (high).
-pub type BGSStandardSoundDef_vtable_InitItem = unsafe extern "C" fn(this: *mut classes::BGSStandardSoundDef, owner: *mut classes::TESForm);
+pub type BGSStandardSoundDef_vtable_InitItem = unsafe extern "C" fn(this: *mut crate::BGSStandardSoundDef, owner: *mut crate::TESForm);
 /// `BGSStandardSoundDef::LoadChunk`, slot 4: chunk loop: ANAM files, CTDA conditions, BNAM playback, FNAM/LNAM flags, GNAM/SNAM (base), ONAM output (high).
-pub type BGSStandardSoundDef_vtable_LoadChunk = unsafe extern "C" fn(this: *mut classes::BGSStandardSoundDef, file: *mut classes::TESFile);
+pub type BGSStandardSoundDef_vtable_LoadChunk = unsafe extern "C" fn(this: *mut crate::BGSStandardSoundDef, file: *mut crate::TESFile);
 /// `BGSStandardSoundDef::GetTypeCRC`, slot 5: crc32 of 'BGSStandardSoundDef', the CNAM key of this class (high).
 pub type BGSStandardSoundDef_vtable_GetTypeCRC = unsafe extern "C" fn() -> u32;
 /// `BGSStandardSoundDef::GetMaxDistance`, slot 6: attenuation max distance when the output model attenuates, else FLT_MAX (high).
-pub type BGSStandardSoundDef_vtable_GetMaxDistance = unsafe extern "C" fn(this: *mut classes::BGSStandardSoundDef) -> f32;
+pub type BGSStandardSoundDef_vtable_GetMaxDistance = unsafe extern "C" fn(this: *mut crate::BGSStandardSoundDef) -> f32;
 
 /// `BGSStandardSoundDef::SoundPlaybackCharacteristics::vftable` at 0x1835ca8, id 191151 (rtti, high); 6 slots.
 #[repr(C)]
@@ -43308,9 +43307,9 @@ impl BSAnimationGraphManager_vtable {
     }
 }
 /// `BSAnimationGraphManager::dtor`, slot 0: virtual destructor (high).
-pub type BSAnimationGraphManager_vtable_dtor = unsafe extern "C" fn(this: *mut classes::BSAnimationGraphManager, flags: u32) -> *mut classes::BSAnimationGraphManager;
+pub type BSAnimationGraphManager_vtable_dtor = unsafe extern "C" fn(this: *mut crate::BSAnimationGraphManager, flags: u32) -> *mut crate::BSAnimationGraphManager;
 /// `BSAnimationGraphManager::ProcessEvent`, slot 1: forwards the active graph's events (by tag) to the dependent managers' graphs; returns 0 (continue) (high).
-pub type BSAnimationGraphManager_vtable_ProcessEvent = unsafe extern "C" fn(this: *mut classes::BSAnimationGraphManager, event: *const classes::BSAnimationGraphEvent, source: *mut c_void) -> u32;
+pub type BSAnimationGraphManager_vtable_ProcessEvent = unsafe extern "C" fn(this: *mut crate::BSAnimationGraphManager, event: *const crate::BSAnimationGraphEvent, source: *mut c_void) -> u32;
 
 /// `BSArrowConstructor::vftable` at 0x1b4c378, id 255385 (rtti, high); 3 slots.
 #[repr(C)]
@@ -43434,7 +43433,7 @@ impl BSAudioManagerThread_vtable {
     }
 }
 /// `BSAudioManagerThread::Run`, slot 1: waits for the start, then loops { DrainCommands 0xccdab0; Sleep(0); UpdateSounds 0xccf5a0; Sleep(sleepMs) } (high).
-pub type BSAudioManagerThread_vtable_Run = unsafe extern "C" fn(this: *mut classes::BSAudioManagerThread) -> u32;
+pub type BSAudioManagerThread_vtable_Run = unsafe extern "C" fn(this: *mut crate::BSAudioManagerThread) -> u32;
 
 /// `BSAutoQueuedResourceCollection<AnimationSystemUtils::TESModelAndAnimationHandles>::vftable` at 0x17e34c8, id 186473 (rtti, high); 1 slots.
 #[repr(C)]
@@ -43548,13 +43547,13 @@ impl BSBatchRenderer_vtable {
     }
 }
 /// `BSBatchRenderer::vdtor`, slot 0: destructor; frees the 16 groups, the alpha group, the technique list, the hash map and the bucket array (high).
-pub type BSBatchRenderer_vtable_vdtor = unsafe extern "C" fn(this: *mut classes::BSBatchRenderer, flags: u32) -> *mut classes::BSBatchRenderer;
+pub type BSBatchRenderer_vtable_vdtor = unsafe extern "C" fn(this: *mut crate::BSBatchRenderer, flags: u32) -> *mut crate::BSBatchRenderer;
 /// `BSBatchRenderer::AddPassSorted`, slot 1: files the pass into its technique bucket keeping the list ascending by *(pass->property + 0x78) (the material pointer) (high).
-pub type BSBatchRenderer_vtable_AddPassSorted = unsafe extern "C" fn(this: *mut classes::BSBatchRenderer, pass: *mut c_void, techniqueId: u32);
+pub type BSBatchRenderer_vtable_AddPassSorted = unsafe extern "C" fn(this: *mut crate::BSBatchRenderer, pass: *mut c_void, techniqueId: u32);
 /// `BSBatchRenderer::AddPass`, slot 2: files the pass at the head of its technique bucket (high).
-pub type BSBatchRenderer_vtable_AddPass = unsafe extern "C" fn(this: *mut classes::BSBatchRenderer, pass: *mut c_void, techniqueId: u32);
+pub type BSBatchRenderer_vtable_AddPass = unsafe extern "C" fn(this: *mut crate::BSBatchRenderer, pass: *mut c_void, techniqueId: u32);
 /// `BSBatchRenderer::RenderBatches`, slot 3: for each technique id in [first,last] (defaults 1..0x5c006074) in ascending order, draws its 5 sub-lists in order 0..4 with the cull/alpha-test state per sub-list through RenderPassImmediately; ends with RestoreTechnique on the cached shader (high).
-pub type BSBatchRenderer_vtable_RenderBatches = unsafe extern "C" fn(this: *mut classes::BSBatchRenderer, firstTechnique: u32, lastTechnique: u32, flags: u32);
+pub type BSBatchRenderer_vtable_RenderBatches = unsafe extern "C" fn(this: *mut crate::BSBatchRenderer, firstTechnique: u32, lastTechnique: u32, flags: u32);
 
 /// `BSBehaviorGraphExtraData::vftable` at 0x1a6e4f0, id 238393 (rtti, high); 39 slots.
 #[repr(C)]
@@ -45036,15 +45035,15 @@ impl BSCullingProcess_vtable {
     }
 }
 /// `BSCullingProcess::CullNode`, slot 22: tests the node against the frustum and portals by cullMode (narrowing the frustum mask at +0x9c) and calls the node's slot 52 (OnVisible) when it passes, handing the ordered-group index on (high).
-pub type BSCullingProcess_vtable_CullNode = unsafe extern "C" fn(this: *mut classes::BSCullingProcess, node: *mut classes::NiAVObject, orderedGroup: u32);
+pub type BSCullingProcess_vtable_CullNode = unsafe extern "C" fn(this: *mut crate::BSCullingProcess, node: *mut crate::NiAVObject, orderedGroup: u32);
 /// `BSCullingProcess::Process`, slot 23: stores the camera, sets up the planes, culls the scene root (through NiAVObject::Cull when the cull is parallel) (high).
-pub type BSCullingProcess_vtable_Process = unsafe extern "C" fn(this: *mut classes::BSCullingProcess, camera: *mut classes::NiCamera, scene: *mut classes::NiAVObject, accumulator: *mut classes::BSShaderAccumulator);
+pub type BSCullingProcess_vtable_Process = unsafe extern "C" fn(this: *mut crate::BSCullingProcess, camera: *mut crate::NiCamera, scene: *mut crate::NiAVObject, accumulator: *mut crate::BSShaderAccumulator);
 /// `BSCullingProcess::AppendVisible`, slot 24: group -1 and no deferral: slot 25 AppendGeometry(object, appendTag); otherwise queue {object, group, appendTag} for the ordered pass (high).
-pub type BSCullingProcess_vtable_AppendVisible = unsafe extern "C" fn(this: *mut classes::BSCullingProcess, object: *mut classes::NiAVObject, groupIndex: i32);
+pub type BSCullingProcess_vtable_AppendVisible = unsafe extern "C" fn(this: *mut crate::BSCullingProcess, object: *mut crate::NiAVObject, groupIndex: i32);
 /// `BSCullingProcess::AppendGeometry`, slot 25: adds an accepted geometry to visibleGeometry (high).
-pub type BSCullingProcess_vtable_AppendGeometry = unsafe extern "C" fn(this: *mut classes::BSCullingProcess, geometry: *mut classes::BSGeometry);
+pub type BSCullingProcess_vtable_AppendGeometry = unsafe extern "C" fn(this: *mut crate::BSCullingProcess, geometry: *mut crate::BSGeometry);
 /// `BSCullingProcess::TestBoundAgainstPlanes`, slot 28: false when the sphere is outside an active plane; clears the bits of planes it is fully inside when +0x120 (high).
-pub type BSCullingProcess_vtable_TestBoundAgainstPlanes = unsafe extern "C" fn(this: *mut classes::BSCullingProcess, bound: *const c_void) -> bool;
+pub type BSCullingProcess_vtable_TestBoundAgainstPlanes = unsafe extern "C" fn(this: *mut crate::BSCullingProcess, bound: *const c_void) -> bool;
 
 /// `BSCyclicBlendTransitionGenerator::vftable` at 0x1a03548, id 232641 (rtti, high); 28 slots.
 #[repr(C)]
@@ -45743,13 +45742,13 @@ impl BSDismemberSkinInstance_vtable {
     }
 }
 /// `BSDismemberSkinInstance::LoadBinary`, slot 24: base load, then partitionCount and the entries; recomputes anyPartitionVisible (high).
-pub type BSDismemberSkinInstance_vtable_LoadBinary = unsafe extern "C" fn(this: *mut classes::BSDismemberSkinInstance, s: *mut classes::partial::NiStream);
+pub type BSDismemberSkinInstance_vtable_LoadBinary = unsafe extern "C" fn(this: *mut crate::BSDismemberSkinInstance, s: *mut crate::NiStream);
 /// `BSDismemberSkinInstance::SaveBinary`, slot 27: base save, then count and entries (endian-swapped when the stream needs it) (high).
-pub type BSDismemberSkinInstance_vtable_SaveBinary = unsafe extern "C" fn(this: *mut classes::BSDismemberSkinInstance, s: *mut classes::partial::NiStream);
+pub type BSDismemberSkinInstance_vtable_SaveBinary = unsafe extern "C" fn(this: *mut crate::BSDismemberSkinInstance, s: *mut crate::NiStream);
 /// `BSDismemberSkinInstance::IsEqual`, slot 28: base compare plus every entry (high).
-pub type BSDismemberSkinInstance_vtable_IsEqual = unsafe extern "C" fn(this: *mut classes::BSDismemberSkinInstance, other: *mut classes::NiObject) -> bool;
+pub type BSDismemberSkinInstance_vtable_IsEqual = unsafe extern "C" fn(this: *mut crate::BSDismemberSkinInstance, other: *mut crate::NiObject) -> bool;
 /// `BSDismemberSkinInstance::RenderPartitions`, slot 37: draws only partitions whose entry byte 0 is set; without a table falls back to NiSkinInstance slot 37 (high).
-pub type BSDismemberSkinInstance_vtable_RenderPartitions = unsafe extern "C" fn(this: *mut classes::BSDismemberSkinInstance, ctx: *mut c_void);
+pub type BSDismemberSkinInstance_vtable_RenderPartitions = unsafe extern "C" fn(this: *mut crate::BSDismemberSkinInstance, ctx: *mut c_void);
 
 /// `BSDistTriggerModifier::vftable` at 0x1a03fa0, id 232675 (rtti, high); 25 slots.
 #[repr(C)]
@@ -46641,9 +46640,9 @@ impl BSEffectShaderProperty_vtable {
     }
 }
 /// `BSEffectShaderProperty::LoadBinary`, slot 24: creates a BSEffectShaderMaterial (0x88) and reads the base fields, source texture path (+0x70), clamp byte (+0x80), 16 bytes at +0x38, 4 floats at +0x48, +0x6c, +0x68 and the greyscale texture path (+0x78) (high).
-pub type BSEffectShaderProperty_vtable_LoadBinary = unsafe extern "C" fn(this: *mut classes::BSEffectShaderProperty, s: *mut classes::partial::NiStream);
+pub type BSEffectShaderProperty_vtable_LoadBinary = unsafe extern "C" fn(this: *mut crate::BSEffectShaderProperty, s: *mut crate::NiStream);
 /// `BSEffectShaderProperty::GetRenderPasses`, slot 42: one effect-shader pass (ID_415166); null for modes 0xc-0xf and 0x10-0x11, so effect geometry casts no shadows (high).
-pub type BSEffectShaderProperty_vtable_GetRenderPasses = unsafe extern "C" fn(this: *mut classes::BSEffectShaderProperty, g: *mut classes::BSGeometry, renderMode: u32, acc: *mut classes::BSShaderAccumulator) -> *mut *mut c_void;
+pub type BSEffectShaderProperty_vtable_GetRenderPasses = unsafe extern "C" fn(this: *mut crate::BSEffectShaderProperty, g: *mut crate::BSGeometry, renderMode: u32, acc: *mut crate::BSShaderAccumulator) -> *mut *mut c_void;
 
 /// `BSEffectShaderPropertyColorController::vftable` at 0x1b4d888, id 255447 (rtti, high); 62 slots.
 #[repr(C)]
@@ -47885,11 +47884,11 @@ impl BSFaceGenNiNode_vtable {
     }
 }
 /// `BSFaceGenNiNode::CreateClone`, slot 23: clones the node and shares animationData (high).
-pub type BSFaceGenNiNode_vtable_CreateClone = unsafe extern "C" fn(this: *mut classes::BSFaceGenNiNode, cp: *mut c_void) -> *mut classes::NiObject;
+pub type BSFaceGenNiNode_vtable_CreateClone = unsafe extern "C" fn(this: *mut crate::BSFaceGenNiNode, cp: *mut c_void) -> *mut crate::NiObject;
 /// `BSFaceGenNiNode::UpdateDownwardPass`, slot 44: when not hidden (+0xf4 bit 0 clear): advance the face animation and queue the node for morphing (0x43a4e0); then NiNode's downward pass (high).
-pub type BSFaceGenNiNode_vtable_UpdateDownwardPass = unsafe extern "C" fn(this: *mut classes::BSFaceGenNiNode, data: *mut classes::NiUpdateData, flags: u32);
+pub type BSFaceGenNiNode_vtable_UpdateDownwardPass = unsafe extern "C" fn(this: *mut crate::BSFaceGenNiNode, data: *mut crate::NiUpdateData, flags: u32);
 /// `BSFaceGenNiNode::BindSkinsToSkeleton`, slot 62: for each child geometry with a skin: finds each bone by name under skeleton (its slot 42 GetObjectByName) and rewrites skin->boneNodes[i] and skin->boneWorldTransforms[i] (node + 0x7c); sets skin->rootParent = this (high).
-pub type BSFaceGenNiNode_vtable_BindSkinsToSkeleton = unsafe extern "C" fn(this: *mut classes::BSFaceGenNiNode, skeleton: *mut classes::NiNode, a2: bool);
+pub type BSFaceGenNiNode_vtable_BindSkinsToSkeleton = unsafe extern "C" fn(this: *mut crate::BSFaceGenNiNode, skeleton: *mut crate::NiNode, a2: bool);
 
 /// `BSFadeNode::vftable` at 0x1b2efb0, id 252901 (rtti, high); 64 slots.
 #[repr(C)]
@@ -48042,9 +48041,9 @@ impl BSFadeNode_vtable {
     pub const SLOT_Slot63ReturnsZero: usize = 63;
 }
 /// `BSFadeNode::AsFadeNode`, slot 5: this for BSFadeNode, null for other classes (high).
-pub type BSFadeNode_vtable_AsFadeNode = unsafe extern "C" fn(this: *mut classes::NiObject) -> *mut classes::BSFadeNode;
+pub type BSFadeNode_vtable_AsFadeNode = unsafe extern "C" fn(this: *mut crate::NiObject) -> *mut crate::BSFadeNode;
 /// `BSFadeNode::OnVisible`, slot 52: distance fade against culler->camera (+0x18): its world translation (+0xa0) and lodAdjust (+0x184); visits the children through NiNode::OnVisible unless the fade is 0 (high).
-pub type BSFadeNode_vtable_OnVisible = unsafe extern "C" fn(this: *mut classes::BSFadeNode, culler: *mut classes::partial::NiCullingProcess, planeMask: u32);
+pub type BSFadeNode_vtable_OnVisible = unsafe extern "C" fn(this: *mut crate::BSFadeNode, culler: *mut crate::NiCullingProcess, planeMask: u32);
 
 /// `BSFadeNodeCuller::vftable` at 0x18c1440, id 200417 (rtti, high); 25 slots.
 #[repr(C)]
@@ -48308,9 +48307,9 @@ impl BSFlattenedBoneTree_vtable {
     }
 }
 /// `BSFlattenedBoneTree::GetObjectByName`, slot 42: looks the name up in nameMap and materialises a NiNode for that entry (GetOrCreateNodeForIndex 0xef4af0), else NiNode's search (high).
-pub type BSFlattenedBoneTree_vtable_GetObjectByName = unsafe extern "C" fn(this: *mut classes::BSFlattenedBoneTree, name: *const classes::BSFixedString) -> *mut classes::NiAVObject;
+pub type BSFlattenedBoneTree_vtable_GetObjectByName = unsafe extern "C" fn(this: *mut crate::BSFlattenedBoneTree, name: *const crate::BSFixedString) -> *mut crate::NiAVObject;
 /// `BSFlattenedBoneTree::UpdateDownwardPass`, slot 44: NiNode slot 44, then UpdateBoneWorldTransforms (high).
-pub type BSFlattenedBoneTree_vtable_UpdateDownwardPass = unsafe extern "C" fn(this: *mut classes::BSFlattenedBoneTree, data: *mut classes::NiUpdateData, parentHidden: u32);
+pub type BSFlattenedBoneTree_vtable_UpdateDownwardPass = unsafe extern "C" fn(this: *mut crate::BSFlattenedBoneTree, data: *mut crate::NiUpdateData, parentHidden: u32);
 
 /// `BSFogProperty::vftable` at 0x1b49518, id 255245 (rtti, high); 39 slots.
 #[repr(C)]
@@ -48596,27 +48595,27 @@ impl BSFrustumFOVController_vtable {
     }
 }
 /// `BSFrustumFOVController::Destroy`, slot 0: releases the interpolator +0x48, NiTimeController::dtor, frees 0x50 (high).
-pub type BSFrustumFOVController_vtable_Destroy = unsafe extern "C" fn(this: *mut classes::BSFrustumFOVController, flags: u32) -> *mut classes::BSFrustumFOVController;
+pub type BSFrustumFOVController_vtable_Destroy = unsafe extern "C" fn(this: *mut crate::BSFrustumFOVController, flags: u32) -> *mut crate::BSFrustumFOVController;
 /// `BSFrustumFOVController::GetRTTI`, slot 2: g_TypeNode_BSFrustumFOVController (high).
-pub type BSFrustumFOVController_vtable_GetRTTI = unsafe extern "C" fn(this: *const classes::BSFrustumFOVController) -> *const c_void;
+pub type BSFrustumFOVController_vtable_GetRTTI = unsafe extern "C" fn(this: *const crate::BSFrustumFOVController) -> *const c_void;
 /// `BSFrustumFOVController::CreateClone`, slot 23: new BSFrustumFOVController, copies the interpolator link (CopyField48ForClone_2) (high).
-pub type BSFrustumFOVController_vtable_CreateClone = unsafe extern "C" fn(this: *mut classes::BSFrustumFOVController, process: *mut c_void) -> *mut classes::NiObject;
+pub type BSFrustumFOVController_vtable_CreateClone = unsafe extern "C" fn(this: *mut crate::BSFrustumFOVController, process: *mut c_void) -> *mut crate::NiObject;
 /// `BSFrustumFOVController::LoadBinary`, slot 24: 5-byte jmp to NiFloatInterpController slot 24 0xf97ee0 (high).
-pub type BSFrustumFOVController_vtable_LoadBinary = unsafe extern "C" fn(this: *mut classes::BSFrustumFOVController, stream: *mut classes::partial::NiStream);
+pub type BSFrustumFOVController_vtable_LoadBinary = unsafe extern "C" fn(this: *mut crate::BSFrustumFOVController, stream: *mut crate::NiStream);
 /// `BSFrustumFOVController::LinkObject`, slot 25: jmp to 0xf97ef0 (high).
-pub type BSFrustumFOVController_vtable_LinkObject = unsafe extern "C" fn(this: *mut classes::BSFrustumFOVController, stream: *mut classes::partial::NiStream);
+pub type BSFrustumFOVController_vtable_LinkObject = unsafe extern "C" fn(this: *mut crate::BSFrustumFOVController, stream: *mut crate::NiStream);
 /// `BSFrustumFOVController::RegisterStreamables`, slot 26: jmp to 0xf97f00 (high).
-pub type BSFrustumFOVController_vtable_RegisterStreamables = unsafe extern "C" fn(this: *mut classes::BSFrustumFOVController, stream: *mut classes::partial::NiStream) -> bool;
+pub type BSFrustumFOVController_vtable_RegisterStreamables = unsafe extern "C" fn(this: *mut crate::BSFrustumFOVController, stream: *mut crate::NiStream) -> bool;
 /// `BSFrustumFOVController::SaveBinary`, slot 27: jmp to 0xf97f10 (high).
-pub type BSFrustumFOVController_vtable_SaveBinary = unsafe extern "C" fn(this: *mut classes::BSFrustumFOVController, stream: *mut classes::partial::NiStream);
+pub type BSFrustumFOVController_vtable_SaveBinary = unsafe extern "C" fn(this: *mut crate::BSFrustumFOVController, stream: *mut crate::NiStream);
 /// `BSFrustumFOVController::IsEqual`, slot 28: jmp to 0xf97f20 (high).
-pub type BSFrustumFOVController_vtable_IsEqual = unsafe extern "C" fn(this: *mut classes::BSFrustumFOVController, other: *mut classes::NiObject) -> bool;
+pub type BSFrustumFOVController_vtable_IsEqual = unsafe extern "C" fn(this: *mut crate::BSFrustumFOVController, other: *mut crate::NiObject) -> bool;
 /// `BSFrustumFOVController::Update`, slot 39: when the time changed (or always-update flags), asks the interpolator (vfunc +0x148) for the value v at the controller time and the target, then target->SetFrustum({-v, v, 0.75v, -0.75v, near, far, ortho kept}) (high).
-pub type BSFrustumFOVController_vtable_Update = unsafe extern "C" fn(this: *mut classes::BSFrustumFOVController, data: *mut classes::NiUpdateData);
+pub type BSFrustumFOVController_vtable_Update = unsafe extern "C" fn(this: *mut crate::BSFrustumFOVController, data: *mut crate::NiUpdateData);
 /// `BSFrustumFOVController::IsTargetCompatible`, slot 60: true when the target's RTTI chain contains NiCamera (high).
-pub type BSFrustumFOVController_vtable_IsTargetCompatible = unsafe extern "C" fn(this: *mut classes::BSFrustumFOVController, target: *mut classes::NiObjectNET) -> bool;
+pub type BSFrustumFOVController_vtable_IsTargetCompatible = unsafe extern "C" fn(this: *mut crate::BSFrustumFOVController, target: *mut crate::NiObjectNET) -> bool;
 /// `BSFrustumFOVController::GetTargetValue`, slot 61: *out = 2 * atan(target->frustumRight) (high).
-pub type BSFrustumFOVController_vtable_GetTargetValue = unsafe extern "C" fn(this: *mut classes::BSFrustumFOVController, out: *mut f32);
+pub type BSFrustumFOVController_vtable_GetTargetValue = unsafe extern "C" fn(this: *mut crate::BSFrustumFOVController, out: *mut f32);
 
 /// `BSFurnitureMarkerNode::vftable` at 0x1a6f7c0, id 238439 (rtti, high); 39 slots.
 #[repr(C)]
@@ -48832,9 +48831,9 @@ impl BSGamepadDevice_vtable {
     }
 }
 /// `BSGamepadDevice::IsEnabled`, slot 7: connected && userIndex != -1 (high).
-pub type BSGamepadDevice_vtable_IsEnabled = unsafe extern "C" fn(this: *mut classes::BSGamepadDevice) -> bool;
+pub type BSGamepadDevice_vtable_IsEnabled = unsafe extern "C" fn(this: *mut crate::BSGamepadDevice) -> bool;
 /// `BSGamepadDevice::NormalizeStick`, slot 13: raw * (1/32767) clamped to [-1, 1] (high).
-pub type BSGamepadDevice_vtable_NormalizeStick = unsafe extern "C" fn(this: *mut classes::BSGamepadDevice, x: i32, y: i32, outX: *mut f32, outY: *mut f32);
+pub type BSGamepadDevice_vtable_NormalizeStick = unsafe extern "C" fn(this: *mut crate::BSGamepadDevice, x: i32, y: i32, outX: *mut f32, outY: *mut f32);
 
 /// `BSGamerProfile::vftable` at 0x1a27538, id 236733 (rtti, high); 8 slots.
 #[repr(C)]
@@ -48987,7 +48986,7 @@ impl BSGeometry_vtable {
     pub const SLOT_Slot54ReturnsNull: usize = 54;
 }
 /// `BSGeometry::UpdateWorldBound`, slot 47: skinned: bound = merge of the bones' bound spheres moved by their world transforms (0xf09cb0), then moved by world; otherwise the model bound moved by world (high).
-pub type BSGeometry_vtable_UpdateWorldBound = unsafe extern "C" fn(this: *mut classes::BSGeometry);
+pub type BSGeometry_vtable_UpdateWorldBound = unsafe extern "C" fn(this: *mut crate::BSGeometry);
 
 /// `BSGeometryListCullingProcess::vftable` at 0x1868af8, id 196460 (rtti, high); 29 slots.
 #[repr(C)]
@@ -49517,7 +49516,7 @@ impl BSIMusicTrack_vtable {
 /// `BSIMusicTrack::GetTypeCRC`, slot 6: crc32 of the class name (CNAM key) (high).
 pub type BSIMusicTrack_vtable_GetTypeCRC = unsafe extern "C" fn() -> u32;
 /// `BSIMusicTrack::TestConditions`, slot 7: true without conditions, else evaluates them on the player (high).
-pub type BSIMusicTrack_vtable_TestConditions = unsafe extern "C" fn(this: *mut classes::BSIMusicTrack) -> bool;
+pub type BSIMusicTrack_vtable_TestConditions = unsafe extern "C" fn(this: *mut crate::BSIMusicTrack) -> bool;
 
 /// `BSIMusicType::vftable` at 0x1834490, id 191047 (rtti, high); 8 slots.
 #[repr(C)]
@@ -49571,13 +49570,13 @@ impl BSIMusicType_vtable {
     }
 }
 /// `BSIMusicType::DoPlay`, slot 1: unless paused, picks the next track (random with no repeat, or from the sequence when flag bit 2), then plays it; state 1, or 4 if no track qualifies (high).
-pub type BSIMusicType_vtable_DoPlay = unsafe extern "C" fn(this: *mut classes::BSIMusicType);
+pub type BSIMusicType_vtable_DoPlay = unsafe extern "C" fn(this: *mut crate::BSIMusicType);
 /// `BSIMusicType::DoPause`, slot 2: pauses the current track, state 2 (high).
-pub type BSIMusicType_vtable_DoPause = unsafe extern "C" fn(this: *mut classes::BSIMusicType);
+pub type BSIMusicType_vtable_DoPause = unsafe extern "C" fn(this: *mut crate::BSIMusicType);
 /// `BSIMusicType::DoFinish`, slot 3: asks the current track to finish over max(fadeDuration, 4 s); state = track state. The immediate argument is ignored (the track gets false) (high).
-pub type BSIMusicType_vtable_DoFinish = unsafe extern "C" fn(this: *mut classes::BSIMusicType, immediate: bool);
+pub type BSIMusicType_vtable_DoFinish = unsafe extern "C" fn(this: *mut crate::BSIMusicType, immediate: bool);
 /// `BSIMusicType::vdtor`, slot 7: deleting destructor (high).
-pub type BSIMusicType_vtable_vdtor = unsafe extern "C" fn(this: *mut classes::BSIMusicType, flags: u32) -> *mut c_void;
+pub type BSIMusicType_vtable_vdtor = unsafe extern "C" fn(this: *mut crate::BSIMusicType, flags: u32) -> *mut c_void;
 
 /// `BSIPassByTargetTriggerModifierSingleton::vftable` at 0x1a02ff8, id 232618 (rtti, high); 4 slots.
 #[repr(C)]
@@ -49761,23 +49760,23 @@ impl BSISoundCategory_vtable {
     }
 }
 /// `BSISoundCategory::IsSameOrChildOf`, slot 1: true if other is this category or one of its ancestors (high).
-pub type BSISoundCategory_vtable_IsSameOrChildOf = unsafe extern "C" fn(this: *mut classes::BSISoundCategory, other: *mut classes::BSISoundCategory) -> bool;
+pub type BSISoundCategory_vtable_IsSameOrChildOf = unsafe extern "C" fn(this: *mut crate::BSISoundCategory, other: *mut crate::BSISoundCategory) -> bool;
 /// `BSISoundCategory::GetEffectiveVolume`, slot 2: staticVolume/65535 * volume * parent's effective volume (1.0 at the root) (high).
-pub type BSISoundCategory_vtable_GetEffectiveVolume = unsafe extern "C" fn(this: *mut classes::BSISoundCategory) -> f32;
+pub type BSISoundCategory_vtable_GetEffectiveVolume = unsafe extern "C" fn(this: *mut crate::BSISoundCategory) -> f32;
 /// `BSISoundCategory::SetVolume`, slot 3: stores the runtime volume; for menu categories (flags bit 1) also writes the menu slot table entry (high).
-pub type BSISoundCategory_vtable_SetVolume = unsafe extern "C" fn(this: *mut classes::BSISoundCategory, volume: f32);
+pub type BSISoundCategory_vtable_SetVolume = unsafe extern "C" fn(this: *mut crate::BSISoundCategory, volume: f32);
 /// `BSISoundCategory::GetEffectiveFrequency`, slot 4: frequency * parent's effective frequency (high).
-pub type BSISoundCategory_vtable_GetEffectiveFrequency = unsafe extern "C" fn(this: *mut classes::BSISoundCategory) -> f32;
+pub type BSISoundCategory_vtable_GetEffectiveFrequency = unsafe extern "C" fn(this: *mut crate::BSISoundCategory) -> f32;
 /// `BSISoundCategory::SetFrequency`, slot 5: stores the runtime frequency multiplier (high).
-pub type BSISoundCategory_vtable_SetFrequency = unsafe extern "C" fn(this: *mut classes::BSISoundCategory, frequency: f32);
+pub type BSISoundCategory_vtable_SetFrequency = unsafe extern "C" fn(this: *mut crate::BSISoundCategory, frequency: f32);
 /// `BSISoundCategory::IsPaused`, slot 8: paused bit here or in any ancestor (high).
-pub type BSISoundCategory_vtable_IsPaused = unsafe extern "C" fn(this: *mut classes::BSISoundCategory) -> bool;
+pub type BSISoundCategory_vtable_IsPaused = unsafe extern "C" fn(this: *mut crate::BSISoundCategory) -> bool;
 /// `BSISoundCategory::SetPaused`, slot 9: sets/clears the paused bit (high).
-pub type BSISoundCategory_vtable_SetPaused = unsafe extern "C" fn(this: *mut classes::BSISoundCategory, paused: bool);
+pub type BSISoundCategory_vtable_SetPaused = unsafe extern "C" fn(this: *mut crate::BSISoundCategory, paused: bool);
 /// `BSISoundCategory::IsMuted`, slot 10: muted bit here or in any ancestor (high).
-pub type BSISoundCategory_vtable_IsMuted = unsafe extern "C" fn(this: *mut classes::BSISoundCategory) -> bool;
+pub type BSISoundCategory_vtable_IsMuted = unsafe extern "C" fn(this: *mut crate::BSISoundCategory) -> bool;
 /// `BSISoundCategory::SetMuted`, slot 11: sets/clears the muted bit (high).
-pub type BSISoundCategory_vtable_SetMuted = unsafe extern "C" fn(this: *mut classes::BSISoundCategory, muted: bool);
+pub type BSISoundCategory_vtable_SetMuted = unsafe extern "C" fn(this: *mut crate::BSISoundCategory, muted: bool);
 
 /// `BSISoundDescriptor::vftable` at 0x1835358, id 191104 (rtti, high); 3 slots.
 #[repr(C)]
@@ -49800,7 +49799,7 @@ impl BSISoundDescriptor_vtable {
     pub const SLOT_ShouldPlayAtDistance: usize = 2;
 }
 /// `BSISoundDescriptor::FillPlayData`, slot 1: fills the play request the audio manager builds a sound from; false = nothing to play (no files or conditions fail) (high).
-pub type BSISoundDescriptor_vtable_FillPlayData = unsafe extern "C" fn(this: *mut classes::BSISoundDescriptor, out: *mut c_void) -> bool;
+pub type BSISoundDescriptor_vtable_FillPlayData = unsafe extern "C" fn(this: *mut crate::BSISoundDescriptor, out: *mut c_void) -> bool;
 
 /// `BSISoundDescriptor::BSIPlaybackCharacteristics::vftable` at 0x1835c30, id 191141 (rtti, high); 6 slots.
 #[repr(C)]
@@ -61033,15 +61032,15 @@ impl BSInputDevice_vtable {
     }
 }
 /// `BSInputDevice::Destroy`, slot 0: destructor (high).
-pub type BSInputDevice_vtable_Destroy = unsafe extern "C" fn(this: *mut classes::BSInputDevice, flags: u32) -> *mut classes::BSInputDevice;
+pub type BSInputDevice_vtable_Destroy = unsafe extern "C" fn(this: *mut crate::BSInputDevice, flags: u32) -> *mut crate::BSInputDevice;
 /// `BSInputDevice::GetKeyName`, slot 4: name of an id (high).
-pub type BSInputDevice_vtable_GetKeyName = unsafe extern "C" fn(this: *mut classes::BSInputDevice, id: u32, out: *mut classes::BSFixedString) -> bool;
+pub type BSInputDevice_vtable_GetKeyName = unsafe extern "C" fn(this: *mut crate::BSInputDevice, id: u32, out: *mut crate::BSFixedString) -> bool;
 /// `BSInputDevice::GetKeyIDByName`, slot 5: id for a name, 0xffffffff if unknown (high).
-pub type BSInputDevice_vtable_GetKeyIDByName = unsafe extern "C" fn(this: *mut classes::BSInputDevice, name: *const classes::BSFixedString) -> u32;
+pub type BSInputDevice_vtable_GetKeyIDByName = unsafe extern "C" fn(this: *mut crate::BSInputDevice, name: *const crate::BSFixedString) -> u32;
 /// `BSInputDevice::GetKeyCode`, slot 6: third column of the definition line (record +0xc) (high).
-pub type BSInputDevice_vtable_GetKeyCode = unsafe extern "C" fn(this: *mut classes::BSInputDevice, id: u32, out: *mut u32) -> bool;
+pub type BSInputDevice_vtable_GetKeyCode = unsafe extern "C" fn(this: *mut crate::BSInputDevice, id: u32, out: *mut u32) -> bool;
 /// `BSInputDevice::IsEnabled`, slot 7: true in the base; pads: connected (high).
-pub type BSInputDevice_vtable_IsEnabled = unsafe extern "C" fn(this: *mut classes::BSInputDevice) -> bool;
+pub type BSInputDevice_vtable_IsEnabled = unsafe extern "C" fn(this: *mut crate::BSInputDevice) -> bool;
 
 /// `BSInstanceTriShape::vftable` at 0x1a6d210, id 238300 (rtti, high); 62 slots.
 #[repr(C)]
@@ -61943,7 +61942,7 @@ impl BSLight_vtable {
     }
 }
 /// `BSLight::IsShadowLight`, slot 3: false for a plain light, true for every BSShadowLight (high).
-pub type BSLight_vtable_IsShadowLight = unsafe extern "C" fn(this: *mut classes::BSLight) -> bool;
+pub type BSLight_vtable_IsShadowLight = unsafe extern "C" fn(this: *mut crate::BSLight) -> bool;
 
 /// `BSLightingShader::vftable` at 0x1b47420, id 255053 (rtti, high); 10 slots.
 #[repr(C)]
@@ -61979,7 +61978,7 @@ impl BSLightingShader_vtable {
     }
 }
 /// `BSLightingShader::SetupGeometry`, slot 6: per-pass constants; reads the first light: lights = numLights ? pass->sceneLights : null; niLight = lights[0]->light (+0x48); color = niLight +0x11c..+0x124 times niLight+0x134 times *(g 0x33d40a0 + 0xe0); direction niLight +0x140..+0x148; then point lights in vfunc_6_sub1 (high).
-pub type BSLightingShader_vtable_SetupGeometry = unsafe extern "C" fn(this: *mut classes::BSLightingShader, pass: *mut c_void, flags: u32);
+pub type BSLightingShader_vtable_SetupGeometry = unsafe extern "C" fn(this: *mut crate::BSLightingShader, pass: *mut c_void, flags: u32);
 
 /// `BSLightingShader::vftable_10` at 0x1b47478, id 255055 (rtti, high); 2 slots.
 #[repr(C)]
@@ -62106,15 +62105,15 @@ impl BSLightingShaderMaterialBase_vtable {
     }
 }
 /// `BSLightingShaderMaterialBase::OnLoadTextureSet`, slot 8: stores the set (+0x78) and loads texture slots 0,1,2,7; derived classes add theirs (envmap/eye 4,5; glow 2; parallax/parallax occ 3; facegen 2,3,6; multilayer 6,4,5) (high).
-pub type BSLightingShaderMaterialBase_vtable_OnLoadTextureSet = unsafe extern "C" fn(this: *mut classes::BSLightingShaderMaterialBase, unused: u64, set: *mut classes::BSTextureSet);
+pub type BSLightingShaderMaterialBase_vtable_OnLoadTextureSet = unsafe extern "C" fn(this: *mut crate::BSLightingShaderMaterialBase, unused: u64, set: *mut crate::BSTextureSet);
 /// `BSLightingShaderMaterialBase::ClearTextures`, slot 9: releases the textures (high).
-pub type BSLightingShaderMaterialBase_vtable_ClearTextures = unsafe extern "C" fn(this: *mut classes::BSLightingShaderMaterialBase);
+pub type BSLightingShaderMaterialBase_vtable_ClearTextures = unsafe extern "C" fn(this: *mut crate::BSLightingShaderMaterialBase);
 /// `BSLightingShaderMaterialBase::GetTextures`, slot 11: writes the non-null textures and returns their count (high).
-pub type BSLightingShaderMaterialBase_vtable_GetTextures = unsafe extern "C" fn(this: *mut classes::BSLightingShaderMaterialBase, out: *mut *mut classes::NiSourceTexture) -> u32;
+pub type BSLightingShaderMaterialBase_vtable_GetTextures = unsafe extern "C" fn(this: *mut crate::BSLightingShaderMaterialBase, out: *mut *mut crate::NiSourceTexture) -> u32;
 /// `BSLightingShaderMaterialBase::SaveBinary`, slot 12: writes clamp mode, alpha, refraction power, glossiness, specular colour, strength, +0x90, +0x94 (high).
-pub type BSLightingShaderMaterialBase_vtable_SaveBinary = unsafe extern "C" fn(this: *mut classes::BSLightingShaderMaterialBase, s: *mut classes::partial::NiStream);
+pub type BSLightingShaderMaterialBase_vtable_SaveBinary = unsafe extern "C" fn(this: *mut crate::BSLightingShaderMaterialBase, s: *mut crate::NiStream);
 /// `BSLightingShaderMaterialBase::LoadBinary`, slot 13: reads the same fields (high).
-pub type BSLightingShaderMaterialBase_vtable_LoadBinary = unsafe extern "C" fn(this: *mut classes::BSLightingShaderMaterialBase, s: *mut classes::partial::NiStream);
+pub type BSLightingShaderMaterialBase_vtable_LoadBinary = unsafe extern "C" fn(this: *mut crate::BSLightingShaderMaterialBase, s: *mut crate::NiStream);
 
 /// `BSLightingShaderMaterialEnvmap::vftable` at 0x1b3fe60, id 254739 (rtti, high); 14 slots.
 #[repr(C)]
@@ -62698,9 +62697,9 @@ impl BSLightingShaderProperty_vtable {
     pub const SLOT_VisitTextures: usize = 51;
 }
 /// `BSLightingShaderProperty::GetRenderPasses`, slot 42: builds the lighting pass (technique bits from the flags, see flags) plus refraction, overlay and stipple passes; returns &renderPasses (high).
-pub type BSLightingShaderProperty_vtable_GetRenderPasses = unsafe extern "C" fn(this: *mut classes::BSLightingShaderProperty, g: *mut classes::BSGeometry, renderMode: u32, acc: *mut classes::BSShaderAccumulator) -> *mut *mut c_void;
+pub type BSLightingShaderProperty_vtable_GetRenderPasses = unsafe extern "C" fn(this: *mut crate::BSLightingShaderProperty, g: *mut crate::BSGeometry, renderMode: u32, acc: *mut crate::BSShaderAccumulator) -> *mut *mut c_void;
 /// `BSLightingShaderProperty::GetDepthRenderPasses`, slot 43: pass list for an accumulator mode; modes 0xc-0xf are the depth/shadow modes and yield no pass when flags & 0x8004, an alpha-blended alpha property, or a fade below 1 (without stipple fade) (high).
-pub type BSLightingShaderProperty_vtable_GetDepthRenderPasses = unsafe extern "C" fn(this: *mut classes::BSLightingShaderProperty, geometry: *mut classes::BSGeometry, mode: u32, accumulator: *mut classes::BSShaderAccumulator) -> *mut classes::RenderPass;
+pub type BSLightingShaderProperty_vtable_GetDepthRenderPasses = unsafe extern "C" fn(this: *mut crate::BSLightingShaderProperty, geometry: *mut crate::BSGeometry, mode: u32, accumulator: *mut crate::BSShaderAccumulator) -> *mut crate::RenderPass;
 
 /// `BSLightingShaderPropertyColorController::vftable` at 0x1b4d330, id 255443 (rtti, high); 62 slots.
 #[repr(C)]
@@ -65509,7 +65508,7 @@ impl BSMusicManager_vtable {
     }
 }
 /// `BSMusicManager::ProcessEvent`, slot 1: applies a music event under the music lock: 0 push (or re-arm a finished type), 1/2 finish (current) or finish+remove, 3 pause, 4 unpause (high).
-pub type BSMusicManager_vtable_ProcessEvent = unsafe extern "C" fn(this: *mut classes::BSMusicManager, event: *const c_void, source: *mut c_void) -> u32;
+pub type BSMusicManager_vtable_ProcessEvent = unsafe extern "C" fn(this: *mut crate::BSMusicManager, event: *const c_void, source: *mut c_void) -> u32;
 
 /// `BSNavmesh::vftable` at 0x1abfd50, id 245898 (rtti, high); 2 slots.
 #[repr(C)]
@@ -66797,11 +66796,11 @@ impl BSPCGamepadDeviceHandler_vtable {
     }
 }
 /// `BSPCGamepadDeviceHandler::Initialize`, slot 1: init the pad library, detect a pad when bGamepadEnable (high).
-pub type BSPCGamepadDeviceHandler_vtable_Initialize = unsafe extern "C" fn(this: *mut classes::BSPCGamepadDeviceHandler);
+pub type BSPCGamepadDeviceHandler_vtable_Initialize = unsafe extern "C" fn(this: *mut crate::BSPCGamepadDeviceHandler);
 /// `BSPCGamepadDeviceHandler::Poll`, slot 2: detect when none (bGamepadEnable), then forward Poll (high).
-pub type BSPCGamepadDeviceHandler_vtable_Poll = unsafe extern "C" fn(this: *mut classes::BSPCGamepadDeviceHandler, realDelta: f32);
+pub type BSPCGamepadDeviceHandler_vtable_Poll = unsafe extern "C" fn(this: *mut crate::BSPCGamepadDeviceHandler, realDelta: f32);
 /// `BSPCGamepadDeviceHandler::IsEnabled`, slot 7: a pad is present (high).
-pub type BSPCGamepadDeviceHandler_vtable_IsEnabled = unsafe extern "C" fn(this: *mut classes::BSPCGamepadDeviceHandler) -> bool;
+pub type BSPCGamepadDeviceHandler_vtable_IsEnabled = unsafe extern "C" fn(this: *mut crate::BSPCGamepadDeviceHandler) -> bool;
 
 /// `BSPCOrbisGamepadDevice::vftable` at 0x1a3d7f8, id 236833 (rtti, high); 15 slots.
 #[repr(C)]
@@ -72838,7 +72837,7 @@ impl BSScript__CompiledScriptLoader_vtable {
     }
 }
 /// `BSScript::CompiledScriptLoader::Load`, slot 3: opens the class's store, reads header (0x14a4620), string table, debug info (0x14a4970), user flags (0x14a50a0) and the object (0x14a5220) (high).
-pub type BSScript__CompiledScriptLoader_vtable_Load = unsafe extern "C" fn(this: *mut classes::BSScript__CompiledScriptLoader, className: *const c_char, unlinkedObject: *mut c_void) -> bool;
+pub type BSScript__CompiledScriptLoader_vtable_Load = unsafe extern "C" fn(this: *mut crate::BSScript__CompiledScriptLoader, className: *const c_char, unlinkedObject: *mut c_void) -> bool;
 
 /// `BSScript::ErrorLogger::vftable` at 0x1b23e38, id 252247 (rtti, high); 3 slots.
 #[repr(C)]
@@ -72958,7 +72957,7 @@ impl BSScript__IFunctionArguments_vtable {
     }
 }
 /// `BSScript::IFunctionArguments::operator()`, slot 1: resize out to the argument count and assign the Variables; return true (high).
-pub type BSScript__IFunctionArguments_vtable_operator = unsafe extern "C" fn(this: *mut classes::BSScript__IFunctionArguments, out: *mut c_void) -> bool;
+pub type BSScript__IFunctionArguments_vtable_operator = unsafe extern "C" fn(this: *mut crate::BSScript__IFunctionArguments, out: *mut c_void) -> bool;
 
 /// `BSScript::IHandleReaderWriter::vftable` at 0x17fa1d0, id 187901 (rtti, high); 4 slots.
 #[repr(C)]
@@ -73118,9 +73117,9 @@ impl BSScript__IStackCallbackFunctor_vtable {
     pub const SLOT_SetObject: usize = 3;
 }
 /// `BSScript::IStackCallbackFunctor::dtor`, slot 0: destructor; bit 0 of flags deletes (0x10 bytes for the base) (high).
-pub type BSScript__IStackCallbackFunctor_vtable_dtor = unsafe extern "C" fn(this: *mut classes::BSScript__IStackCallbackFunctor, flags: u32) -> *mut classes::BSScript__IStackCallbackFunctor;
+pub type BSScript__IStackCallbackFunctor_vtable_dtor = unsafe extern "C" fn(this: *mut crate::BSScript__IStackCallbackFunctor, flags: u32) -> *mut crate::BSScript__IStackCallbackFunctor;
 /// `BSScript::IStackCallbackFunctor::operator()`, slot 1: called once with a copy of the returned Variable (the stack's +0x70) when the stack's last frame returns, before the stack is removed; the copy lives only for the call; on the VM worker thread that completes the stack, not the main thread (skyrim-rs's thread ids: a dispatch from inside a native completed, and its callback ran, on that native's thread), or inside DispatchStaticCall on the caller's thread with None when the function is empty (slot 10) (high).
-pub type BSScript__IStackCallbackFunctor_vtable_operator = unsafe extern "C" fn(this: *mut classes::BSScript__IStackCallbackFunctor, result: *mut classes::BSScript__Variable);
+pub type BSScript__IStackCallbackFunctor_vtable_operator = unsafe extern "C" fn(this: *mut crate::BSScript__IStackCallbackFunctor, result: *mut crate::BSScript__Variable);
 
 /// `BSScript::IStackCallbackSaveInterface::vftable` at 0x1990ef8, id 216931 (rtti, high); 3 slots.
 #[repr(C)]
@@ -73454,13 +73453,13 @@ impl BSScript__Internal__AutoPropGetFunction_vtable {
     }
 }
 /// `BSScript::Internal::AutoPropGetFunction::GetFunctionName`, slot 1: &+0x18 (high).
-pub type BSScript__Internal__AutoPropGetFunction_vtable_GetFunctionName = unsafe extern "C" fn(this: *mut classes::BSScript__Internal__AutoPropGetFunction) -> *const classes::BSFixedString;
+pub type BSScript__Internal__AutoPropGetFunction_vtable_GetFunctionName = unsafe extern "C" fn(this: *mut crate::BSScript__Internal__AutoPropGetFunction) -> *const crate::BSFixedString;
 /// `BSScript::Internal::AutoPropGetFunction::GetObjectTypeName`, slot 2: &+0x10 (high).
-pub type BSScript__Internal__AutoPropGetFunction_vtable_GetObjectTypeName = unsafe extern "C" fn(this: *mut classes::BSScript__Internal__AutoPropGetFunction) -> *const classes::BSFixedString;
+pub type BSScript__Internal__AutoPropGetFunction_vtable_GetObjectTypeName = unsafe extern "C" fn(this: *mut crate::BSScript__Internal__AutoPropGetFunction) -> *const crate::BSFixedString;
 /// `BSScript::Internal::AutoPropGetFunction::GetIsNative`, slot 8: true (high).
-pub type BSScript__Internal__AutoPropGetFunction_vtable_GetIsNative = unsafe extern "C" fn(this: *mut classes::BSScript__Internal__AutoPropGetFunction) -> bool;
+pub type BSScript__Internal__AutoPropGetFunction_vtable_GetIsNative = unsafe extern "C" fn(this: *mut crate::BSScript__Internal__AutoPropGetFunction) -> bool;
 /// `BSScript::Internal::AutoPropGetFunction::GetLineForIP`, slot 17: false, *line = 0 (high).
-pub type BSScript__Internal__AutoPropGetFunction_vtable_GetLineForIP = unsafe extern "C" fn(this: *mut classes::BSScript__Internal__AutoPropGetFunction, ip: u32, line: *mut u32) -> bool;
+pub type BSScript__Internal__AutoPropGetFunction_vtable_GetLineForIP = unsafe extern "C" fn(this: *mut crate::BSScript__Internal__AutoPropGetFunction, ip: u32, line: *mut u32) -> bool;
 
 /// `BSScript::Internal::AutoPropSetFunction::vftable` at 0x1b2c8f8, id 252797 (rtti, high); 21 slots.
 #[repr(C)]
@@ -73524,9 +73523,9 @@ impl BSScript__Internal__AutoPropSetFunction_vtable {
     }
 }
 /// `BSScript::Internal::AutoPropSetFunction::GetFunctionName`, slot 1: &+0x18 (high).
-pub type BSScript__Internal__AutoPropSetFunction_vtable_GetFunctionName = unsafe extern "C" fn(this: *mut classes::BSScript__Internal__AutoPropSetFunction) -> *const classes::BSFixedString;
+pub type BSScript__Internal__AutoPropSetFunction_vtable_GetFunctionName = unsafe extern "C" fn(this: *mut crate::BSScript__Internal__AutoPropSetFunction) -> *const crate::BSFixedString;
 /// `BSScript::Internal::AutoPropSetFunction::GetObjectTypeName`, slot 2: &+0x10 (high).
-pub type BSScript__Internal__AutoPropSetFunction_vtable_GetObjectTypeName = unsafe extern "C" fn(this: *mut classes::BSScript__Internal__AutoPropSetFunction) -> *const classes::BSFixedString;
+pub type BSScript__Internal__AutoPropSetFunction_vtable_GetObjectTypeName = unsafe extern "C" fn(this: *mut crate::BSScript__Internal__AutoPropSetFunction) -> *const crate::BSFixedString;
 
 /// `BSScript::Internal::CodeTasklet::vftable` at 0x1b2bd88, id 252746 (rtti, high); 2 slots.
 #[repr(C)]
@@ -73552,9 +73551,9 @@ impl BSScript__Internal__CodeTasklet_vtable {
     }
 }
 /// `BSScript::Internal::CodeTasklet::vdtor`, slot 0: scalar deleting destructor (high).
-pub type BSScript__Internal__CodeTasklet_vtable_vdtor = unsafe extern "C" fn(this: *mut classes::BSScript__Internal__CodeTasklet, flags: u32) -> *mut classes::BSScript__Internal__CodeTasklet;
+pub type BSScript__Internal__CodeTasklet_vtable_vdtor = unsafe extern "C" fn(this: *mut crate::BSScript__Internal__CodeTasklet, flags: u32) -> *mut crate::BSScript__Internal__CodeTasklet;
 /// `BSScript::Internal::CodeTasklet::GetFunctionCallInfo`, slot 1: decodes the call opcode at frame+0x20: kind (enum CallKind), target class, function or property name, self and arguments (high).
-pub type BSScript__Internal__CodeTasklet_vtable_GetFunctionCallInfo = unsafe extern "C" fn(this: *mut classes::BSScript__Internal__CodeTasklet, callKind: *mut u32, type_: *mut c_void, name: *mut classes::BSFixedString, self_: *mut classes::BSScript__Variable, args: *mut c_void) -> bool;
+pub type BSScript__Internal__CodeTasklet_vtable_GetFunctionCallInfo = unsafe extern "C" fn(this: *mut crate::BSScript__Internal__CodeTasklet, callKind: *mut u32, type_: *mut c_void, name: *mut crate::BSFixedString, self_: *mut crate::BSScript__Variable, args: *mut c_void) -> bool;
 
 /// `BSScript::Internal::IFuncCallQuery::vftable` at 0x1b29810, id 252597 (rtti, high); 2 slots.
 #[repr(C)]
@@ -73648,15 +73647,15 @@ impl BSScript__Internal__NativeFunctionStub_vtable {
     }
 }
 /// `BSScript::Internal::NativeFunctionStub::GetFunctionName`, slot 1: &+0x10 (high).
-pub type BSScript__Internal__NativeFunctionStub_vtable_GetFunctionName = unsafe extern "C" fn(this: *mut classes::BSScript__Internal__NativeFunctionStub) -> *const classes::BSFixedString;
+pub type BSScript__Internal__NativeFunctionStub_vtable_GetFunctionName = unsafe extern "C" fn(this: *mut crate::BSScript__Internal__NativeFunctionStub) -> *const crate::BSFixedString;
 /// `BSScript::Internal::NativeFunctionStub::GetObjectTypeName`, slot 2: &+0x18 (high).
-pub type BSScript__Internal__NativeFunctionStub_vtable_GetObjectTypeName = unsafe extern "C" fn(this: *mut classes::BSScript__Internal__NativeFunctionStub) -> *const classes::BSFixedString;
+pub type BSScript__Internal__NativeFunctionStub_vtable_GetObjectTypeName = unsafe extern "C" fn(this: *mut crate::BSScript__Internal__NativeFunctionStub) -> *const crate::BSFixedString;
 /// `BSScript::Internal::NativeFunctionStub::GetIsNative`, slot 8: true (B0 01 C3) (high).
-pub type BSScript__Internal__NativeFunctionStub_vtable_GetIsNative = unsafe extern "C" fn(this: *mut classes::BSScript__Internal__NativeFunctionStub) -> bool;
+pub type BSScript__Internal__NativeFunctionStub_vtable_GetIsNative = unsafe extern "C" fn(this: *mut crate::BSScript__Internal__NativeFunctionStub) -> bool;
 /// `BSScript::Internal::NativeFunctionStub::GetSourceFileName`, slot 16: static BSFixedString "native" (high).
-pub type BSScript__Internal__NativeFunctionStub_vtable_GetSourceFileName = unsafe extern "C" fn(this: *mut classes::BSScript__Internal__NativeFunctionStub) -> *const classes::BSFixedString;
+pub type BSScript__Internal__NativeFunctionStub_vtable_GetSourceFileName = unsafe extern "C" fn(this: *mut crate::BSScript__Internal__NativeFunctionStub) -> *const crate::BSFixedString;
 /// `BSScript::Internal::NativeFunctionStub::GetLineForIP`, slot 17: false, *line = 0 (high).
-pub type BSScript__Internal__NativeFunctionStub_vtable_GetLineForIP = unsafe extern "C" fn(this: *mut classes::BSScript__Internal__NativeFunctionStub, ip: u32, line: *mut u32) -> bool;
+pub type BSScript__Internal__NativeFunctionStub_vtable_GetLineForIP = unsafe extern "C" fn(this: *mut crate::BSScript__Internal__NativeFunctionStub, ip: u32, line: *mut u32) -> bool;
 
 /// `BSScript::Internal::RawFuncCallQuery::vftable` at 0x1b29828, id 252599 (rtti, high); 2 slots.
 #[repr(C)]
@@ -73846,47 +73845,47 @@ impl BSScript__Internal__ScriptFunction_vtable {
     }
 }
 /// `BSScript::Internal::ScriptFunction::Destroy`, slot 0: releases the line table, the strings, the instruction buffer and the variables; frees 0x80 when flags & 1 (high).
-pub type BSScript__Internal__ScriptFunction_vtable_Destroy = unsafe extern "C" fn(this: *mut classes::BSScript__Internal__ScriptFunction, flags: u32) -> *mut classes::BSScript__Internal__ScriptFunction;
+pub type BSScript__Internal__ScriptFunction_vtable_Destroy = unsafe extern "C" fn(this: *mut crate::BSScript__Internal__ScriptFunction, flags: u32) -> *mut crate::BSScript__Internal__ScriptFunction;
 /// `BSScript::Internal::ScriptFunction::GetFunctionName`, slot 1: &name (+0x10) (high).
-pub type BSScript__Internal__ScriptFunction_vtable_GetFunctionName = unsafe extern "C" fn(this: *mut classes::BSScript__Internal__ScriptFunction) -> *const classes::BSFixedString;
+pub type BSScript__Internal__ScriptFunction_vtable_GetFunctionName = unsafe extern "C" fn(this: *mut crate::BSScript__Internal__ScriptFunction) -> *const crate::BSFixedString;
 /// `BSScript::Internal::ScriptFunction::GetObjectTypeName`, slot 2: &objectTypeName (+0x18) (high).
-pub type BSScript__Internal__ScriptFunction_vtable_GetObjectTypeName = unsafe extern "C" fn(this: *mut classes::BSScript__Internal__ScriptFunction) -> *const classes::BSFixedString;
+pub type BSScript__Internal__ScriptFunction_vtable_GetObjectTypeName = unsafe extern "C" fn(this: *mut crate::BSScript__Internal__ScriptFunction) -> *const crate::BSFixedString;
 /// `BSScript::Internal::ScriptFunction::GetStateName`, slot 3: &stateName (+0x20) (high).
-pub type BSScript__Internal__ScriptFunction_vtable_GetStateName = unsafe extern "C" fn(this: *mut classes::BSScript__Internal__ScriptFunction) -> *const classes::BSFixedString;
+pub type BSScript__Internal__ScriptFunction_vtable_GetStateName = unsafe extern "C" fn(this: *mut crate::BSScript__Internal__ScriptFunction) -> *const crate::BSFixedString;
 /// `BSScript::Internal::ScriptFunction::CopyReturnType`, slot 4: *out = +0x28 (high).
-pub type BSScript__Internal__ScriptFunction_vtable_CopyReturnType = unsafe extern "C" fn(this: *mut classes::BSScript__Internal__ScriptFunction, out: *mut classes::BSScript__TypeInfo) -> *mut classes::BSScript__TypeInfo;
+pub type BSScript__Internal__ScriptFunction_vtable_CopyReturnType = unsafe extern "C" fn(this: *mut crate::BSScript__Internal__ScriptFunction, out: *mut crate::BSScript__TypeInfo) -> *mut crate::BSScript__TypeInfo;
 /// `BSScript::Internal::ScriptFunction::GetParamCount`, slot 5: +0x38 (high).
-pub type BSScript__Internal__ScriptFunction_vtable_GetParamCount = unsafe extern "C" fn(this: *mut classes::BSScript__Internal__ScriptFunction) -> u16;
+pub type BSScript__Internal__ScriptFunction_vtable_GetParamCount = unsafe extern "C" fn(this: *mut crate::BSScript__Internal__ScriptFunction) -> u16;
 /// `BSScript::Internal::ScriptFunction::GetParamNameAndType`, slot 6: variables[index] for index < paramCount, else a static empty pair (high).
-pub type BSScript__Internal__ScriptFunction_vtable_GetParamNameAndType = unsafe extern "C" fn(this: *mut classes::BSScript__Internal__ScriptFunction, index: u32, name: *mut classes::BSFixedString, type_: *mut classes::BSScript__TypeInfo);
+pub type BSScript__Internal__ScriptFunction_vtable_GetParamNameAndType = unsafe extern "C" fn(this: *mut crate::BSScript__Internal__ScriptFunction, index: u32, name: *mut crate::BSFixedString, type_: *mut crate::BSScript__TypeInfo);
 /// `BSScript::Internal::ScriptFunction::GetStackFrameSize`, slot 7: paramCount + locals = +0x3a (high).
-pub type BSScript__Internal__ScriptFunction_vtable_GetStackFrameSize = unsafe extern "C" fn(this: *mut classes::BSScript__Internal__ScriptFunction) -> u32;
+pub type BSScript__Internal__ScriptFunction_vtable_GetStackFrameSize = unsafe extern "C" fn(this: *mut crate::BSScript__Internal__ScriptFunction) -> u32;
 /// `BSScript::Internal::ScriptFunction::GetIsNative`, slot 8: false; code bytes 32 C0 C3 (high).
-pub type BSScript__Internal__ScriptFunction_vtable_GetIsNative = unsafe extern "C" fn(this: *mut classes::BSScript__Internal__ScriptFunction) -> bool;
+pub type BSScript__Internal__ScriptFunction_vtable_GetIsNative = unsafe extern "C" fn(this: *mut crate::BSScript__Internal__ScriptFunction) -> bool;
 /// `BSScript::Internal::ScriptFunction::GetIsStatic`, slot 9: +0x5a (high).
-pub type BSScript__Internal__ScriptFunction_vtable_GetIsStatic = unsafe extern "C" fn(this: *mut classes::BSScript__Internal__ScriptFunction) -> bool;
+pub type BSScript__Internal__ScriptFunction_vtable_GetIsStatic = unsafe extern "C" fn(this: *mut crate::BSScript__Internal__ScriptFunction) -> bool;
 /// `BSScript::Internal::ScriptFunction::GetIsEmpty`, slot 10: instructionBitCount (+0x48) == 0 (high).
-pub type BSScript__Internal__ScriptFunction_vtable_GetIsEmpty = unsafe extern "C" fn(this: *mut classes::BSScript__Internal__ScriptFunction) -> bool;
+pub type BSScript__Internal__ScriptFunction_vtable_GetIsEmpty = unsafe extern "C" fn(this: *mut crate::BSScript__Internal__ScriptFunction) -> bool;
 /// `BSScript::Internal::ScriptFunction::GetFunctionType`, slot 11: +0x58 (high).
-pub type BSScript__Internal__ScriptFunction_vtable_GetFunctionType = unsafe extern "C" fn(this: *mut classes::BSScript__Internal__ScriptFunction) -> u16;
+pub type BSScript__Internal__ScriptFunction_vtable_GetFunctionType = unsafe extern "C" fn(this: *mut crate::BSScript__Internal__ScriptFunction) -> u16;
 /// `BSScript::Internal::ScriptFunction::GetUserFlags`, slot 12: +0x40 (high).
-pub type BSScript__Internal__ScriptFunction_vtable_GetUserFlags = unsafe extern "C" fn(this: *mut classes::BSScript__Internal__ScriptFunction) -> u32;
+pub type BSScript__Internal__ScriptFunction_vtable_GetUserFlags = unsafe extern "C" fn(this: *mut crate::BSScript__Internal__ScriptFunction) -> u32;
 /// `BSScript::Internal::ScriptFunction::GetDocString`, slot 13: &docString (+0x60) (high).
-pub type BSScript__Internal__ScriptFunction_vtable_GetDocString = unsafe extern "C" fn(this: *mut classes::BSScript__Internal__ScriptFunction) -> *const classes::BSFixedString;
+pub type BSScript__Internal__ScriptFunction_vtable_GetDocString = unsafe extern "C" fn(this: *mut crate::BSScript__Internal__ScriptFunction) -> *const crate::BSFixedString;
 /// `BSScript::Internal::ScriptFunction::InsertLocals`, slot 14: sets frame variables paramCount..variableCount-1 to {type, 0} of their declared types (high).
-pub type BSScript__Internal__ScriptFunction_vtable_InsertLocals = unsafe extern "C" fn(this: *mut classes::BSScript__Internal__ScriptFunction, frame: *mut classes::BSScript__StackFrame);
+pub type BSScript__Internal__ScriptFunction_vtable_InsertLocals = unsafe extern "C" fn(this: *mut crate::BSScript__Internal__ScriptFunction, frame: *mut crate::BSScript__StackFrame);
 /// `BSScript::Internal::ScriptFunction::Call`, slot 15: 4 when the stack is null or has no frames; 1 when called from the interpreter (the interpreter continues inline in the pushed frame); else QueueCodeTasklet and 2 (3 when queueing failed) (high).
-pub type BSScript__Internal__ScriptFunction_vtable_Call = unsafe extern "C" fn(this: *mut classes::BSScript__Internal__ScriptFunction, stack: *mut c_void, logger: *mut classes::BSScript__ErrorLogger, vm: *mut classes::BSScript__Internal__VirtualMachine, fromTasklet: bool) -> u32;
+pub type BSScript__Internal__ScriptFunction_vtable_Call = unsafe extern "C" fn(this: *mut crate::BSScript__Internal__ScriptFunction, stack: *mut c_void, logger: *mut crate::BSScript__ErrorLogger, vm: *mut crate::BSScript__Internal__VirtualMachine, fromTasklet: bool) -> u32;
 /// `BSScript::Internal::ScriptFunction::GetSourceFileName`, slot 16: &sourceFileName (+0x68) (high).
-pub type BSScript__Internal__ScriptFunction_vtable_GetSourceFileName = unsafe extern "C" fn(this: *mut classes::BSScript__Internal__ScriptFunction) -> *const classes::BSFixedString;
+pub type BSScript__Internal__ScriptFunction_vtable_GetSourceFileName = unsafe extern "C" fn(this: *mut crate::BSScript__Internal__ScriptFunction) -> *const crate::BSFixedString;
 /// `BSScript::Internal::ScriptFunction::GetLineForIP`, slot 17: line table lookup: false and *line = 0 when lineNumbers/lineCount are 0; else index = InstructionIndexAtBit(&+0x48, ip), *line = lineNumbers[min(index, lineCount-1)], true (high).
-pub type BSScript__Internal__ScriptFunction_vtable_GetLineForIP = unsafe extern "C" fn(this: *mut classes::BSScript__Internal__ScriptFunction, ipBitOffset: u32, line: *mut u32) -> bool;
+pub type BSScript__Internal__ScriptFunction_vtable_GetLineForIP = unsafe extern "C" fn(this: *mut crate::BSScript__Internal__ScriptFunction, ipBitOffset: u32, line: *mut u32) -> bool;
 /// `BSScript::Internal::ScriptFunction::TryGetVariableName`, slot 18: name of variable index (parameters and locals, index < +0x3a); false and the empty string otherwise (high).
-pub type BSScript__Internal__ScriptFunction_vtable_TryGetVariableName = unsafe extern "C" fn(this: *mut classes::BSScript__Internal__ScriptFunction, index: u32, out: *mut classes::BSFixedString) -> bool;
+pub type BSScript__Internal__ScriptFunction_vtable_TryGetVariableName = unsafe extern "C" fn(this: *mut crate::BSScript__Internal__ScriptFunction, index: u32, out: *mut crate::BSFixedString) -> bool;
 /// `BSScript::Internal::ScriptFunction::GetIsCallableFromTasklet`, slot 19: true (high).
-pub type BSScript__Internal__ScriptFunction_vtable_GetIsCallableFromTasklet = unsafe extern "C" fn(this: *mut classes::BSScript__Internal__ScriptFunction) -> bool;
+pub type BSScript__Internal__ScriptFunction_vtable_GetIsCallableFromTasklet = unsafe extern "C" fn(this: *mut crate::BSScript__Internal__ScriptFunction) -> bool;
 /// `BSScript::Internal::ScriptFunction::SetIsCallableFromTasklet`, slot 20: no-op (high).
-pub type BSScript__Internal__ScriptFunction_vtable_SetIsCallableFromTasklet = unsafe extern "C" fn(this: *mut classes::BSScript__Internal__ScriptFunction, a1: bool);
+pub type BSScript__Internal__ScriptFunction_vtable_SetIsCallableFromTasklet = unsafe extern "C" fn(this: *mut crate::BSScript__Internal__ScriptFunction, a1: bool);
 
 /// `BSScript::Internal::VirtualMachine::vftable` at 0x1b299e8, id 252631 (rtti, high); 54 slots.
 #[repr(C)]
@@ -74147,49 +74146,49 @@ impl BSScript__Internal__VirtualMachine_vtable {
     }
 }
 /// `BSScript::Internal::VirtualMachine::Update`, slot 4: runs the queued and suspended stacks for this frame (budget scaled by 0.05) under the +0x9384 lock and prunes the tracked arrays (0x14bbf00); a non-latent dispatch completes inside the next call; called once per frame by SkyrimVM::Update on whichever worker thread runs it that frame, so not tied to the main thread (high).
-pub type BSScript__Internal__VirtualMachine_vtable_Update = unsafe extern "C" fn(this: *mut classes::BSScript__Internal__VirtualMachine, budget: f32);
+pub type BSScript__Internal__VirtualMachine_vtable_Update = unsafe extern "C" fn(this: *mut crate::BSScript__Internal__VirtualMachine, budget: f32);
 /// `BSScript::Internal::VirtualMachine::RunQueuedTasklets`, slot 5: copies pendingTasklets (+0x8260) into a scrap array, clears it and runs the interpreter 0x14ce660 on each in the calling thread (high).
-pub type BSScript__Internal__VirtualMachine_vtable_RunQueuedTasklets = unsafe extern "C" fn(this: *mut classes::BSScript__Internal__VirtualMachine);
+pub type BSScript__Internal__VirtualMachine_vtable_RunQueuedTasklets = unsafe extern "C" fn(this: *mut crate::BSScript__Internal__VirtualMachine);
 /// `BSScript::Internal::VirtualMachine::RegisterObjectType`, slot 8: records className for typeID in the two maps at +0x190 (typeID -> name) and +0x1c0 (name -> typeID); returns false when either was already registered (high).
-pub type BSScript__Internal__VirtualMachine_vtable_RegisterObjectType = unsafe extern "C" fn(this: *mut classes::BSScript__Internal__VirtualMachine, typeID: u32, className: *const c_char) -> bool;
+pub type BSScript__Internal__VirtualMachine_vtable_RegisterObjectType = unsafe extern "C" fn(this: *mut crate::BSScript__Internal__VirtualMachine, typeID: u32, className: *const c_char) -> bool;
 /// `BSScript::Internal::VirtualMachine::GetScriptObjectType`, slot 9: looks the type up in the name map at +0x160; when it is missing or not linked, asks the linker (+0xc8) to load and link <className>.pex first; false when no script exists; a type already in the map with link state 2 or 3 is returned without relinking, so a type a failed link left in state 2 is handed back by later lookups (worker 0x14bc440, follow-up 5b) (high).
-pub type BSScript__Internal__VirtualMachine_vtable_GetScriptObjectType = unsafe extern "C" fn(this: *mut classes::BSScript__Internal__VirtualMachine, className: *const classes::BSFixedString, out: *mut c_void) -> bool;
+pub type BSScript__Internal__VirtualMachine_vtable_GetScriptObjectType = unsafe extern "C" fn(this: *mut crate::BSScript__Internal__VirtualMachine, className: *const crate::BSFixedString, out: *mut c_void) -> bool;
 /// `BSScript::Internal::VirtualMachine::GetTypeIDForScriptObject`, slot 13: name -> typeID through the map at +0x1c0 (the form type for form classes; 0x8b-0x8e for aliases and active effects) (high).
-pub type BSScript__Internal__VirtualMachine_vtable_GetTypeIDForScriptObject = unsafe extern "C" fn(this: *mut classes::BSScript__Internal__VirtualMachine, className: *const classes::BSFixedString, typeID: *mut u32) -> bool;
+pub type BSScript__Internal__VirtualMachine_vtable_GetTypeIDForScriptObject = unsafe extern "C" fn(this: *mut crate::BSScript__Internal__VirtualMachine, className: *const crate::BSFixedString, typeID: *mut u32) -> bool;
 /// `BSScript::Internal::VirtualMachine::QueueTaskletsToJobList`, slot 18: under queueLock moves every pending tasklet into the job list as {0x14c2600 (jmp to the interpreter), tasklet} and clears +0x8260 (high).
-pub type BSScript__Internal__VirtualMachine_vtable_QueueTaskletsToJobList = unsafe extern "C" fn(this: *mut classes::BSScript__Internal__VirtualMachine, jobList: *mut c_void);
+pub type BSScript__Internal__VirtualMachine_vtable_QueueTaskletsToJobList = unsafe extern "C" fn(this: *mut crate::BSScript__Internal__VirtualMachine, jobList: *mut c_void);
 /// `BSScript::Internal::VirtualMachine::CreateObject`, slot 21: creates an unbound script object of the class through the bind interface (+0x10 vtable, slot 9); the caller binds it to a handle with the bind policy (high).
-pub type BSScript__Internal__VirtualMachine_vtable_CreateObject = unsafe extern "C" fn(this: *mut classes::BSScript__Internal__VirtualMachine, className: *const classes::BSFixedString, out: *mut c_void) -> bool;
+pub type BSScript__Internal__VirtualMachine_vtable_CreateObject = unsafe extern "C" fn(this: *mut crate::BSScript__Internal__VirtualMachine, className: *const crate::BSFixedString, out: *mut c_void) -> bool;
 /// `BSScript::Internal::VirtualMachine::CreateArray`, slot 22: under the +0x93f8 lock: an array type becomes its element type (raw 0xb-0xf minus 10, an object type with bit 0 cleared), anything else is used as the element type; releases what out held, allocates 0x20 + size * 0x10 bytes from the global heap (AllocateMemory 0xcde250 in memory context 0x16, not the scrap heap) and sets every element to {element type, 0}; out receives one reference and the VM's tracking list at +0x9408 another, so a new array has count 2; returns false only when the allocation fails (high).
-pub type BSScript__Internal__VirtualMachine_vtable_CreateArray = unsafe extern "C" fn(this: *mut classes::BSScript__Internal__VirtualMachine, type_: *const classes::BSScript__TypeInfo, size: u32, out: *mut c_void) -> bool;
+pub type BSScript__Internal__VirtualMachine_vtable_CreateArray = unsafe extern "C" fn(this: *mut crate::BSScript__Internal__VirtualMachine, type_: *const crate::BSScript__TypeInfo, size: u32, out: *mut c_void) -> bool;
 /// `BSScript::Internal::VirtualMachine::BindNativeMethod`, slot 24: registers a native: takes a reference, fetches the class through function->GetObjectTypeName (slot 2), creates the ObjectTypeInfo (0x38 bytes, unlinked) when the class is unknown and inserts it in the +0x160 map, then ObjectTypeInfo::BindNativeFunction; the registration call site is [vtable+0xc0] (high).
-pub type BSScript__Internal__VirtualMachine_vtable_BindNativeMethod = unsafe extern "C" fn(this: *mut classes::BSScript__Internal__VirtualMachine, function: *mut classes::BSScript__IFunction) -> bool;
+pub type BSScript__Internal__VirtualMachine_vtable_BindNativeMethod = unsafe extern "C" fn(this: *mut crate::BSScript__Internal__VirtualMachine, function: *mut crate::BSScript__IFunction) -> bool;
 /// `BSScript::Internal::VirtualMachine::SetCallableFromTasklets`, slot 26: SetCallableFromTaskletsInState with the empty state; every engine RegisterFuncs calls it right after BindNativeMethod ([vtable+0xd0]) for the natives the tasklet VM may run (high).
-pub type BSScript__Internal__VirtualMachine_vtable_SetCallableFromTasklets = unsafe extern "C" fn(this: *mut classes::BSScript__Internal__VirtualMachine, className: *const c_char, fnName: *const c_char, callable: bool);
+pub type BSScript__Internal__VirtualMachine_vtable_SetCallableFromTasklets = unsafe extern "C" fn(this: *mut crate::BSScript__Internal__VirtualMachine, className: *const c_char, fnName: *const c_char, callable: bool);
 /// `BSScript::Internal::VirtualMachine::FindBoundObject`, slot 28: the script object of that class bound to the handle, if any (high).
-pub type BSScript__Internal__VirtualMachine_vtable_FindBoundObject = unsafe extern "C" fn(this: *mut classes::BSScript__Internal__VirtualMachine, handle: u64, className: *const c_char, out: *mut c_void) -> bool;
+pub type BSScript__Internal__VirtualMachine_vtable_FindBoundObject = unsafe extern "C" fn(this: *mut crate::BSScript__Internal__VirtualMachine, handle: u64, className: *const c_char, out: *mut c_void) -> bool;
 /// `BSScript::Internal::VirtualMachine::SendEvent`, slot 36: copies the script objects bound to exactly this handle (the +0x93a8 map under the +0x93a0 lock, each with a reference) and calls DispatchMethodCall (slot 39) for each with eventName, args and an empty callback, outside the lock; an object whose script has no such function is skipped silently, a handle with no bound object does nothing; args is called during each dispatch that finds the function (once per such object, never kept), so it may live on the caller's stack; aliases and active effects have their own handles and are reached only through RelayEventToRefAndEffects 0x9e3580, which the engine's handlers call after it (high).
-pub type BSScript__Internal__VirtualMachine_vtable_SendEvent = unsafe extern "C" fn(this: *mut classes::BSScript__Internal__VirtualMachine, handle: u64, eventName: *const classes::BSFixedString, args: *mut classes::BSScript__IFunctionArguments);
+pub type BSScript__Internal__VirtualMachine_vtable_SendEvent = unsafe extern "C" fn(this: *mut crate::BSScript__Internal__VirtualMachine, handle: u64, eventName: *const crate::BSFixedString, args: *mut crate::BSScript__IFunctionArguments);
 /// `BSScript::Internal::VirtualMachine::DispatchStaticCall`, slot 38: resolves the type (GetScriptObjectType, which loads the script) and the static function, lets args fill the argument array, creates a stack and queues it; the callback receives the result; false when the type or function is missing or the queue is full (high).
-pub type BSScript__Internal__VirtualMachine_vtable_DispatchStaticCall = unsafe extern "C" fn(this: *mut classes::BSScript__Internal__VirtualMachine, className: *const classes::BSFixedString, fnName: *const classes::BSFixedString, args: *mut classes::BSScript__IFunctionArguments, callback: *mut c_void) -> bool;
+pub type BSScript__Internal__VirtualMachine_vtable_DispatchStaticCall = unsafe extern "C" fn(this: *mut crate::BSScript__Internal__VirtualMachine, className: *const crate::BSFixedString, fnName: *const crate::BSFixedString, args: *mut crate::BSScript__IFunctionArguments, callback: *mut c_void) -> bool;
 /// `BSScript::Internal::VirtualMachine::DispatchMethodCall`, slot 39: queues a method call on a script object (the function is looked up on the object's type; a native that is callable from tasklets runs synchronously when the VM is not frozen) (high).
-pub type BSScript__Internal__VirtualMachine_vtable_DispatchMethodCall = unsafe extern "C" fn(this: *mut classes::BSScript__Internal__VirtualMachine, self_: *mut c_void, fnName: *const classes::BSFixedString, args: *mut classes::BSScript__IFunctionArguments, callback: *mut c_void) -> bool;
+pub type BSScript__Internal__VirtualMachine_vtable_DispatchMethodCall = unsafe extern "C" fn(this: *mut crate::BSScript__Internal__VirtualMachine, self_: *mut c_void, fnName: *const crate::BSFixedString, args: *mut crate::BSScript__IFunctionArguments, callback: *mut c_void) -> bool;
 /// `BSScript::Internal::VirtualMachine::DispatchMethodCallByHandle`, slot 40: FindBoundObject(handle, className) then DispatchMethodCall (high).
-pub type BSScript__Internal__VirtualMachine_vtable_DispatchMethodCallByHandle = unsafe extern "C" fn(this: *mut classes::BSScript__Internal__VirtualMachine, handle: u64, className: *const classes::BSFixedString, fnName: *const classes::BSFixedString, args: *mut classes::BSScript__IFunctionArguments, callback: *mut c_void) -> bool;
+pub type BSScript__Internal__VirtualMachine_vtable_DispatchMethodCallByHandle = unsafe extern "C" fn(this: *mut crate::BSScript__Internal__VirtualMachine, handle: u64, className: *const crate::BSFixedString, fnName: *const crate::BSFixedString, args: *mut crate::BSScript__IFunctionArguments, callback: *mut c_void) -> bool;
 /// `BSScript::Internal::VirtualMachine::IsWaitingOnLatent`, slot 42: whether the stack is in the latent-wait map at +0x9350 (high).
-pub type BSScript__Internal__VirtualMachine_vtable_IsWaitingOnLatent = unsafe extern "C" fn(this: *mut classes::BSScript__Internal__VirtualMachine, stackId: u32) -> bool;
+pub type BSScript__Internal__VirtualMachine_vtable_IsWaitingOnLatent = unsafe extern "C" fn(this: *mut crate::BSScript__Internal__VirtualMachine, stackId: u32) -> bool;
 /// `BSScript::Internal::VirtualMachine::ReturnFromLatent`, slot 43: under the stacks lock (+0x9318): a stack not running or not in the latent-wait map (+0x9350) is logged and ignored; otherwise it leaves the map, state +0x68 goes to 0, result is copied into the return Variable (+0x70, Variable::assign: the caller keeps its value) and CompleteStack runs on the calling thread; no check against the native's returnType (+0x28); a one-frame stack (a direct dispatch) completes there and its callback runs on this thread, a deeper stack is queued and resumes in a later VM update on a worker thread; the engine calls it from inside the native's own binding (Debug.GetConfigName, and Call itself on a failed start) and from SkyrimVM::Update's timer (Utility.Wait) (high).
-pub type BSScript__Internal__VirtualMachine_vtable_ReturnFromLatent = unsafe extern "C" fn(this: *mut classes::BSScript__Internal__VirtualMachine, stackId: u32, result: *const classes::BSScript__Variable);
+pub type BSScript__Internal__VirtualMachine_vtable_ReturnFromLatent = unsafe extern "C" fn(this: *mut crate::BSScript__Internal__VirtualMachine, stackId: u32, result: *const crate::BSScript__Variable);
 /// `BSScript::Internal::VirtualMachine::GetErrorLogger`, slot 44: the logger at +0x80 (high).
-pub type BSScript__Internal__VirtualMachine_vtable_GetErrorLogger = unsafe extern "C" fn(this: *mut classes::BSScript__Internal__VirtualMachine) -> *mut classes::BSScript__ErrorLogger;
+pub type BSScript__Internal__VirtualMachine_vtable_GetErrorLogger = unsafe extern "C" fn(this: *mut crate::BSScript__Internal__VirtualMachine) -> *mut crate::BSScript__ErrorLogger;
 /// `BSScript::Internal::VirtualMachine::GetObjectHandlePolicy`, slot 45: the handle policy at +0x90 (SkyrimVM+0x338) (high).
-pub type BSScript__Internal__VirtualMachine_vtable_GetObjectHandlePolicy = unsafe extern "C" fn(this: *mut classes::BSScript__Internal__VirtualMachine) -> *mut classes::partial::BSScript__IObjectHandlePolicy;
+pub type BSScript__Internal__VirtualMachine_vtable_GetObjectHandlePolicy = unsafe extern "C" fn(this: *mut crate::BSScript__Internal__VirtualMachine) -> *mut crate::BSScript__IObjectHandlePolicy;
 /// `BSScript::Internal::VirtualMachine::GetObjectHandlePolicyConst`, slot 46: the const overload of GetObjectHandlePolicy (high).
-pub type BSScript__Internal__VirtualMachine_vtable_GetObjectHandlePolicyConst = unsafe extern "C" fn(this: *mut classes::BSScript__Internal__VirtualMachine) -> *const classes::partial::BSScript__IObjectHandlePolicy;
+pub type BSScript__Internal__VirtualMachine_vtable_GetObjectHandlePolicyConst = unsafe extern "C" fn(this: *mut crate::BSScript__Internal__VirtualMachine) -> *const crate::BSScript__IObjectHandlePolicy;
 /// `BSScript::Internal::VirtualMachine::GetObjectBindPolicy`, slot 47: the bind policy at +0x98 (SkyrimVM+0x3a8) (high).
-pub type BSScript__Internal__VirtualMachine_vtable_GetObjectBindPolicy = unsafe extern "C" fn(this: *mut classes::BSScript__Internal__VirtualMachine) -> *mut classes::partial::BSScript__ObjectBindPolicy;
+pub type BSScript__Internal__VirtualMachine_vtable_GetObjectBindPolicy = unsafe extern "C" fn(this: *mut crate::BSScript__Internal__VirtualMachine) -> *mut crate::BSScript__ObjectBindPolicy;
 /// `BSScript::Internal::VirtualMachine::GetObjectBindPolicyConst`, slot 48: the const overload of GetObjectBindPolicy (high).
-pub type BSScript__Internal__VirtualMachine_vtable_GetObjectBindPolicyConst = unsafe extern "C" fn(this: *mut classes::BSScript__Internal__VirtualMachine) -> *const classes::partial::BSScript__ObjectBindPolicy;
+pub type BSScript__Internal__VirtualMachine_vtable_GetObjectBindPolicyConst = unsafe extern "C" fn(this: *mut crate::BSScript__Internal__VirtualMachine) -> *const crate::BSScript__ObjectBindPolicy;
 
 /// `BSScript::Internal::VirtualMachine::vftable_10` at 0x1b29ba0, id 252633 (rtti, high); 11 slots.
 #[repr(C)]
@@ -74493,41 +74492,41 @@ impl BSScript__NF_util__NativeFunctionBase_vtable {
     }
 }
 /// `BSScript::NF_util::NativeFunctionBase::GetFunctionName`, slot 1: the function name at +0x10 (high).
-pub type BSScript__NF_util__NativeFunctionBase_vtable_GetFunctionName = unsafe extern "C" fn(this: *mut classes::BSScript__NF_util__NativeFunctionBase) -> *mut classes::BSFixedString;
+pub type BSScript__NF_util__NativeFunctionBase_vtable_GetFunctionName = unsafe extern "C" fn(this: *mut crate::BSScript__NF_util__NativeFunctionBase) -> *mut crate::BSFixedString;
 /// `BSScript::NF_util::NativeFunctionBase::GetObjectTypeName`, slot 2: the script class name at +0x18; BindNativeMethod uses it to find or create the type (high).
-pub type BSScript__NF_util__NativeFunctionBase_vtable_GetObjectTypeName = unsafe extern "C" fn(this: *mut classes::BSScript__NF_util__NativeFunctionBase) -> *mut classes::BSFixedString;
+pub type BSScript__NF_util__NativeFunctionBase_vtable_GetObjectTypeName = unsafe extern "C" fn(this: *mut crate::BSScript__NF_util__NativeFunctionBase) -> *mut crate::BSFixedString;
 /// `BSScript::NF_util::NativeFunctionBase::GetStateName`, slot 3: the state name at +0x20 (empty for natives) (high).
-pub type BSScript__NF_util__NativeFunctionBase_vtable_GetStateName = unsafe extern "C" fn(this: *mut classes::BSScript__NF_util__NativeFunctionBase) -> *mut classes::BSFixedString;
+pub type BSScript__NF_util__NativeFunctionBase_vtable_GetStateName = unsafe extern "C" fn(this: *mut crate::BSScript__NF_util__NativeFunctionBase) -> *mut crate::BSFixedString;
 /// `BSScript::NF_util::NativeFunctionBase::CopyReturnType`, slot 4: copies +0x28 into out and returns out (high).
-pub type BSScript__NF_util__NativeFunctionBase_vtable_CopyReturnType = unsafe extern "C" fn(this: *mut classes::BSScript__NF_util__NativeFunctionBase, out: *mut classes::BSScript__TypeInfo) -> *mut classes::BSScript__TypeInfo;
+pub type BSScript__NF_util__NativeFunctionBase_vtable_CopyReturnType = unsafe extern "C" fn(this: *mut crate::BSScript__NF_util__NativeFunctionBase, out: *mut crate::BSScript__TypeInfo) -> *mut crate::BSScript__TypeInfo;
 /// `BSScript::NF_util::NativeFunctionBase::GetParamCount`, slot 5: the total variable count at +0x3a (parameters plus locals, equal to the parameter count for natives) (high).
-pub type BSScript__NF_util__NativeFunctionBase_vtable_GetParamCount = unsafe extern "C" fn(this: *mut classes::BSScript__NF_util__NativeFunctionBase) -> u16;
+pub type BSScript__NF_util__NativeFunctionBase_vtable_GetParamCount = unsafe extern "C" fn(this: *mut crate::BSScript__NF_util__NativeFunctionBase) -> u16;
 /// `BSScript::NF_util::NativeFunctionBase::GetParamNameAndType`, slot 6: name and type of parameter index from the array at +0x30 (0x10 per entry); an index past +0x38 yields the empty name (high).
-pub type BSScript__NF_util__NativeFunctionBase_vtable_GetParamNameAndType = unsafe extern "C" fn(this: *mut classes::BSScript__NF_util__NativeFunctionBase, index: u32, name: *mut classes::BSFixedString, type_: *mut classes::BSScript__TypeInfo);
+pub type BSScript__NF_util__NativeFunctionBase_vtable_GetParamNameAndType = unsafe extern "C" fn(this: *mut crate::BSScript__NF_util__NativeFunctionBase, index: u32, name: *mut crate::BSFixedString, type_: *mut crate::BSScript__TypeInfo);
 /// `BSScript::NF_util::NativeFunctionBase::GetStackFrameSize`, slot 7: the variable count at +0x3a: the number of Variables the frame holds (high).
-pub type BSScript__NF_util__NativeFunctionBase_vtable_GetStackFrameSize = unsafe extern "C" fn(this: *mut classes::BSScript__NF_util__NativeFunctionBase) -> u16;
+pub type BSScript__NF_util__NativeFunctionBase_vtable_GetStackFrameSize = unsafe extern "C" fn(this: *mut crate::BSScript__NF_util__NativeFunctionBase) -> u16;
 /// `BSScript::NF_util::NativeFunctionBase::GetIsNative`, slot 8: true (high).
-pub type BSScript__NF_util__NativeFunctionBase_vtable_GetIsNative = unsafe extern "C" fn(this: *mut classes::BSScript__NF_util__NativeFunctionBase) -> bool;
+pub type BSScript__NF_util__NativeFunctionBase_vtable_GetIsNative = unsafe extern "C" fn(this: *mut crate::BSScript__NF_util__NativeFunctionBase) -> bool;
 /// `BSScript::NF_util::NativeFunctionBase::GetIsStatic`, slot 9: +0x40, set from the ctor's isStatic argument (high).
-pub type BSScript__NF_util__NativeFunctionBase_vtable_GetIsStatic = unsafe extern "C" fn(this: *mut classes::BSScript__NF_util__NativeFunctionBase) -> bool;
+pub type BSScript__NF_util__NativeFunctionBase_vtable_GetIsStatic = unsafe extern "C" fn(this: *mut crate::BSScript__NF_util__NativeFunctionBase) -> bool;
 /// `BSScript::NF_util::NativeFunctionBase::GetUserFlags`, slot 12: +0x44 (0 for every native) (high).
-pub type BSScript__NF_util__NativeFunctionBase_vtable_GetUserFlags = unsafe extern "C" fn(this: *mut classes::BSScript__NF_util__NativeFunctionBase) -> u32;
+pub type BSScript__NF_util__NativeFunctionBase_vtable_GetUserFlags = unsafe extern "C" fn(this: *mut crate::BSScript__NF_util__NativeFunctionBase) -> u32;
 /// `BSScript::NF_util::NativeFunctionBase::GetDocString`, slot 13: +0x48 (empty for natives) (high).
-pub type BSScript__NF_util__NativeFunctionBase_vtable_GetDocString = unsafe extern "C" fn(this: *mut classes::BSScript__NF_util__NativeFunctionBase) -> *mut classes::BSFixedString;
+pub type BSScript__NF_util__NativeFunctionBase_vtable_GetDocString = unsafe extern "C" fn(this: *mut crate::BSScript__NF_util__NativeFunctionBase) -> *mut crate::BSFixedString;
 /// `BSScript::NF_util::NativeFunctionBase::Call`, slot 15: the VM's entry into a native: copies the frame's self (frame+0x28) and stack id (stack+0x80), checks HasBinding (slot 21), calls CallBinding (slot 22) and stores the result in the stack's return Variable (stack+0x70); returns 0 completed, 2 latent, 4 failed, with the errors 'Cannot call native function %%s because the stack is NULL / the binding is NULL' and 'Unable to call %%s - no native object bound to the script object, or object is of incorrect type'; for a latent native (+0x42) it first registers the wait (0x14b9ee0), then calls CallBinding and expects the result Variable to be a true Bool; anything else logs 'Latent function %%s did not successfully start - aborting call' (or the no-native-object error) and calls ReturnFromLatent with None itself; either way it returns 2, and the executor (0x14ba380) does nothing further with the stack on 2 (high).
-pub type BSScript__NF_util__NativeFunctionBase_vtable_Call = unsafe extern "C" fn(this: *mut classes::BSScript__NF_util__NativeFunctionBase, stack: *mut c_void, logger: *mut classes::BSScript__ErrorLogger, vm: *mut classes::BSScript__Internal__VirtualMachine, a4: bool) -> u32;
+pub type BSScript__NF_util__NativeFunctionBase_vtable_Call = unsafe extern "C" fn(this: *mut crate::BSScript__NF_util__NativeFunctionBase, stack: *mut c_void, logger: *mut crate::BSScript__ErrorLogger, vm: *mut crate::BSScript__Internal__VirtualMachine, a4: bool) -> u32;
 /// `BSScript::NF_util::NativeFunctionBase::GetLineForIP`, slot 17: false, *line = 0: natives have no lines (high).
-pub type BSScript__NF_util__NativeFunctionBase_vtable_GetLineForIP = unsafe extern "C" fn(this: *mut classes::BSScript__NF_util__NativeFunctionBase, ip: u32, line: *mut u32) -> bool;
+pub type BSScript__NF_util__NativeFunctionBase_vtable_GetLineForIP = unsafe extern "C" fn(this: *mut crate::BSScript__NF_util__NativeFunctionBase, ip: u32, line: *mut u32) -> bool;
 /// `BSScript::NF_util::NativeFunctionBase::TryGetParamName`, slot 18: the name of parameter index, false (and the empty name) past the count (high).
-pub type BSScript__NF_util__NativeFunctionBase_vtable_TryGetParamName = unsafe extern "C" fn(this: *mut classes::BSScript__NF_util__NativeFunctionBase, index: u32, out: *mut classes::BSFixedString) -> bool;
+pub type BSScript__NF_util__NativeFunctionBase_vtable_TryGetParamName = unsafe extern "C" fn(this: *mut crate::BSScript__NF_util__NativeFunctionBase, index: u32, out: *mut crate::BSFixedString) -> bool;
 /// `BSScript::NF_util::NativeFunctionBase::GetIsCallableFromTasklet`, slot 19: +0x41 (never set on a native: the VM keeps the flag in the type's function table) (high).
-pub type BSScript__NF_util__NativeFunctionBase_vtable_GetIsCallableFromTasklet = unsafe extern "C" fn(this: *mut classes::BSScript__NF_util__NativeFunctionBase) -> bool;
+pub type BSScript__NF_util__NativeFunctionBase_vtable_GetIsCallableFromTasklet = unsafe extern "C" fn(this: *mut crate::BSScript__NF_util__NativeFunctionBase) -> bool;
 /// `BSScript::NF_util::NativeFunctionBase::SetIsCallableFromTasklet`, slot 20: ignored by natives (high).
-pub type BSScript__NF_util__NativeFunctionBase_vtable_SetIsCallableFromTasklet = unsafe extern "C" fn(this: *mut classes::BSScript__NF_util__NativeFunctionBase, a1: bool);
+pub type BSScript__NF_util__NativeFunctionBase_vtable_SetIsCallableFromTasklet = unsafe extern "C" fn(this: *mut crate::BSScript__NF_util__NativeFunctionBase, a1: bool);
 /// `BSScript::NF_util::NativeFunctionBase::HasBinding`, slot 21: pure here; every NativeFunction<N> instantiation returns +0x50 != 0 (high).
-pub type BSScript__NF_util__NativeFunctionBase_vtable_HasBinding = unsafe extern "C" fn(this: *mut classes::BSScript__NF_util__NativeFunctionBase) -> bool;
+pub type BSScript__NF_util__NativeFunctionBase_vtable_HasBinding = unsafe extern "C" fn(this: *mut crate::BSScript__NF_util__NativeFunctionBase) -> bool;
 /// `BSScript::NF_util::NativeFunctionBase::CallBinding`, slot 22: pure here; each NativeFunction<N> instantiation reads its arguments from the frame (Stack::GetStackFrameVariable(stack, frame, i, Stack::GetPageForFrame(stack, frame)) for i below frame+0x38), converts self through the handle policy, calls the C callback at +0x50 as callback(vm, stackId, self, args...) and writes the converted return value into result; false when self could not be converted (high).
-pub type BSScript__NF_util__NativeFunctionBase_vtable_CallBinding = unsafe extern "C" fn(this: *mut classes::BSScript__NF_util__NativeFunctionBase, self_: *mut classes::BSScript__Variable, vm: *mut classes::BSScript__Internal__VirtualMachine, stackId: u32, result: *mut classes::BSScript__Variable, frame: *mut classes::BSScript__StackFrame) -> bool;
+pub type BSScript__NF_util__NativeFunctionBase_vtable_CallBinding = unsafe extern "C" fn(this: *mut crate::BSScript__NF_util__NativeFunctionBase, self_: *mut crate::BSScript__Variable, vm: *mut crate::BSScript__Internal__VirtualMachine, stackId: u32, result: *mut crate::BSScript__Variable, frame: *mut crate::BSScript__StackFrame) -> bool;
 
 /// `BSScript::NativeFunction0<ActiveEffect,Actor*___ptr64>::vftable` at 0x1993180, id 217310 (rtti, high); 23 slots.
 #[repr(C)]
@@ -93529,9 +93528,9 @@ impl BSShader_vtable {
     pub const SLOT_ReleaseShaders: usize = 9;
 }
 /// `BSShader::SetupMaterial`, slot 4: uploads textures and constants of the material for the current technique (high).
-pub type BSShader_vtable_SetupMaterial = unsafe extern "C" fn(this: *mut classes::BSShader, material: *mut classes::BSShaderMaterial);
+pub type BSShader_vtable_SetupMaterial = unsafe extern "C" fn(this: *mut crate::BSShader, material: *mut crate::BSShaderMaterial);
 /// `BSShader::vfunc_8`, slot 8: empty (high).
-pub type BSShader_vtable_vfunc_8 = unsafe extern "C" fn(this: *mut classes::BSShader);
+pub type BSShader_vtable_vfunc_8 = unsafe extern "C" fn(this: *mut crate::BSShader);
 
 /// `BSShader::vftable_10` at 0x1b4cbd0, id 255416 (rtti, high); 2 slots.
 #[repr(C)]
@@ -93697,19 +93696,19 @@ impl BSShaderAccumulator_vtable {
     }
 }
 /// `BSShaderAccumulator::GetRTTI`, slot 2: returns g_TypeNode_BSShaderAccumulator (high).
-pub type BSShaderAccumulator_vtable_GetRTTI = unsafe extern "C" fn(this: *mut classes::BSShaderAccumulator) -> *mut c_void;
+pub type BSShaderAccumulator_vtable_GetRTTI = unsafe extern "C" fn(this: *mut crate::BSShaderAccumulator) -> *mut c_void;
 /// `BSShaderAccumulator::SetCamera`, slot 37: stores the camera at +0x10 (high).
-pub type BSShaderAccumulator_vtable_SetCamera = unsafe extern "C" fn(this: *mut classes::BSShaderAccumulator, camera: *mut classes::NiCamera);
+pub type BSShaderAccumulator_vtable_SetCamera = unsafe extern "C" fn(this: *mut crate::BSShaderAccumulator, camera: *mut crate::NiCamera);
 /// `BSShaderAccumulator::Render`, slot 38: slot 42 then slot 43: the whole draw of the accumulator (high).
-pub type BSShaderAccumulator_vtable_Render = unsafe extern "C" fn(this: *mut classes::BSShaderAccumulator, flags: u32);
+pub type BSShaderAccumulator_vtable_Render = unsafe extern "C" fn(this: *mut crate::BSShaderAccumulator, flags: u32);
 /// `BSShaderAccumulator::vfunc_39`, slot 39: inherited empty NiAlphaAccumulator slot (pure in NiAccumulator) (high).
-pub type BSShaderAccumulator_vtable_vfunc_39 = unsafe extern "C" fn(this: *mut classes::BSShaderAccumulator);
+pub type BSShaderAccumulator_vtable_vfunc_39 = unsafe extern "C" fn(this: *mut crate::BSShaderAccumulator);
 /// `BSShaderAccumulator::RenderOpaque`, slot 42: activates the mode (SetActiveIndexWithFallback(renderMode)); mode 0: the opaque half ID_106583; any other mode: the whole per-mode draw g_AccumulatorRenderFns[renderMode] (fallback entry 0) (high).
-pub type BSShaderAccumulator_vtable_RenderOpaque = unsafe extern "C" fn(this: *mut classes::BSShaderAccumulator, flags: u32);
+pub type BSShaderAccumulator_vtable_RenderOpaque = unsafe extern "C" fn(this: *mut crate::BSShaderAccumulator, flags: u32);
 /// `BSShaderAccumulator::RenderTransparent`, slot 43: mode 0 only: the blended half ID_106584 (water, blended groups, sorted alpha, last sky technique); then the empty NiAccumulator slot 38 (high).
-pub type BSShaderAccumulator_vtable_RenderTransparent = unsafe extern "C" fn(this: *mut classes::BSShaderAccumulator, flags: u32);
+pub type BSShaderAccumulator_vtable_RenderTransparent = unsafe extern "C" fn(this: *mut crate::BSShaderAccumulator, flags: u32);
 /// `BSShaderAccumulator::vfunc_44`, slot 44: empty (high).
-pub type BSShaderAccumulator_vtable_vfunc_44 = unsafe extern "C" fn(this: *mut classes::BSShaderAccumulator);
+pub type BSShaderAccumulator_vtable_vfunc_44 = unsafe extern "C" fn(this: *mut crate::BSShaderAccumulator);
 
 /// `BSShaderMaterial::vftable` at 0x1b4c7b8, id 255400 (rtti, high); 8 slots.
 #[repr(C)]
@@ -93772,17 +93771,17 @@ impl BSShaderMaterial_vtable {
     }
 }
 /// `BSShaderMaterial::Create`, slot 1: new default instance of the same class (high).
-pub type BSShaderMaterial_vtable_Create = unsafe extern "C" fn(this: *mut classes::BSShaderMaterial) -> *mut classes::BSShaderMaterial;
+pub type BSShaderMaterial_vtable_Create = unsafe extern "C" fn(this: *mut crate::BSShaderMaterial) -> *mut crate::BSShaderMaterial;
 /// `BSShaderMaterial::CopyMembers`, slot 2: copies uv offset/scale; derived classes add their fields (high).
-pub type BSShaderMaterial_vtable_CopyMembers = unsafe extern "C" fn(this: *mut classes::BSShaderMaterial, src: *const classes::BSShaderMaterial);
+pub type BSShaderMaterial_vtable_CopyMembers = unsafe extern "C" fn(this: *mut crate::BSShaderMaterial, src: *const crate::BSShaderMaterial);
 /// `BSShaderMaterial::IsEqual`, slot 3: same GetType and uv offset/scale (lighting: also same feature and same texture path 0) (high).
-pub type BSShaderMaterial_vtable_IsEqual = unsafe extern "C" fn(this: *mut classes::BSShaderMaterial, other: *const classes::BSShaderMaterial) -> bool;
+pub type BSShaderMaterial_vtable_IsEqual = unsafe extern "C" fn(this: *mut crate::BSShaderMaterial, other: *const crate::BSShaderMaterial) -> bool;
 /// `BSShaderMaterial::ComputeHash`, slot 4: CRC32 of offset, scale and seed (lighting adds the texture path CRCs and quantised floats) (high).
-pub type BSShaderMaterial_vtable_ComputeHash = unsafe extern "C" fn(this: *mut classes::BSShaderMaterial, seed: u32) -> u32;
+pub type BSShaderMaterial_vtable_ComputeHash = unsafe extern "C" fn(this: *mut crate::BSShaderMaterial, seed: u32) -> u32;
 /// `BSShaderMaterial::GetFeature`, slot 6: lighting feature (enum BSLightingShaderMaterial::Feature): 0 default, 1 envmap, 2 glow, 3 parallax, 4 facegen, 5 facegen tint, 6 hair tint, 7 parallax occ, 0xb multilayer parallax, 0xe snow, 0x10 eye, 0x12 LOD landscape, 0x13 landscape (high).
-pub type BSShaderMaterial_vtable_GetFeature = unsafe extern "C" fn(this: *mut classes::BSShaderMaterial) -> u32;
+pub type BSShaderMaterial_vtable_GetFeature = unsafe extern "C" fn(this: *mut crate::BSShaderMaterial) -> u32;
 /// `BSShaderMaterial::GetType`, slot 7: material family: 0 base, 1 effect, 2 lighting, 3 water (high).
-pub type BSShaderMaterial_vtable_GetType = unsafe extern "C" fn(this: *mut classes::BSShaderMaterial) -> u32;
+pub type BSShaderMaterial_vtable_GetType = unsafe extern "C" fn(this: *mut crate::BSShaderMaterial) -> u32;
 
 /// `BSShaderProperty::vftable` at 0x1b2f2d8, id 252907 (rtti, high); 63 slots.
 #[repr(C)]
@@ -93973,19 +93972,19 @@ impl BSShaderProperty_vtable {
     pub const SLOT_GetMaterialType: usize = 62;
 }
 /// `BSShaderProperty::LoadBinary`, slot 24: reads flags (8 bytes) and two float pairs into material+0xc (uv offset) and +0x1c (uv scale), duplicated into +0x14/+0x24 (high).
-pub type BSShaderProperty_vtable_LoadBinary = unsafe extern "C" fn(this: *mut classes::BSShaderProperty, s: *mut classes::partial::NiStream);
+pub type BSShaderProperty_vtable_LoadBinary = unsafe extern "C" fn(this: *mut crate::BSShaderProperty, s: *mut crate::NiStream);
 /// `BSShaderProperty::SaveBinary`, slot 27: writes flags and the uv offset/scale (high).
-pub type BSShaderProperty_vtable_SaveBinary = unsafe extern "C" fn(this: *mut classes::BSShaderProperty, s: *mut classes::partial::NiStream);
+pub type BSShaderProperty_vtable_SaveBinary = unsafe extern "C" fn(this: *mut crate::BSShaderProperty, s: *mut crate::NiStream);
 /// `BSShaderProperty::GetDepthRenderPasses`, slot 43: pass list for the depth/shadow modes 0xc-0xf; base returns null (the existing ledger row calls the lighting override GetRenderPasses) (high).
-pub type BSShaderProperty_vtable_GetDepthRenderPasses = unsafe extern "C" fn(this: *mut classes::BSShaderProperty, g: *mut classes::BSGeometry, renderMode: u32, acc: *mut classes::BSShaderAccumulator) -> *mut *mut c_void;
+pub type BSShaderProperty_vtable_GetDepthRenderPasses = unsafe extern "C" fn(this: *mut crate::BSShaderProperty, g: *mut crate::BSGeometry, renderMode: u32, acc: *mut crate::BSShaderAccumulator) -> *mut *mut c_void;
 /// `BSShaderProperty::SetMaterialAlpha`, slot 49: lighting writes material+0x80, effect material+0x54 (clamped at 0); base does nothing (high).
-pub type BSShaderProperty_vtable_SetMaterialAlpha = unsafe extern "C" fn(this: *mut classes::BSShaderProperty, alpha: f32);
+pub type BSShaderProperty_vtable_SetMaterialAlpha = unsafe extern "C" fn(this: *mut crate::BSShaderProperty, alpha: f32);
 /// `BSShaderProperty::GetMaterialAlpha`, slot 50: lighting reads material+0x80, effect material+0x54, base 1.0 (high).
-pub type BSShaderProperty_vtable_GetMaterialAlpha = unsafe extern "C" fn(this: *mut classes::BSShaderProperty) -> f32;
+pub type BSShaderProperty_vtable_GetMaterialAlpha = unsafe extern "C" fn(this: *mut crate::BSShaderProperty) -> f32;
 /// `BSShaderProperty::ClearRenderPasses`, slot 52: releases the pass lists and invalidates lastRenderPassState (high).
-pub type BSShaderProperty_vtable_ClearRenderPasses = unsafe extern "C" fn(this: *mut classes::BSShaderProperty);
+pub type BSShaderProperty_vtable_ClearRenderPasses = unsafe extern "C" fn(this: *mut crate::BSShaderProperty);
 /// `BSShaderProperty::GetDepthTechnique`, slot 61: utility technique bits of the depth passes (lighting 0x151a0b0): TEXTURE|NORMALS|BINORMAL_TANGENT (0x1a), TEXTURE only with bit 12, SKINNED from bit 1, VC from bit 37, 0x20 from bits 14/46, LOD_LANDSCAPE from bit 33, 0x40 from bit 17, TREE_ANIM from bit 61 (high).
-pub type BSShaderProperty_vtable_GetDepthTechnique = unsafe extern "C" fn(this: *mut classes::BSShaderProperty) -> u32;
+pub type BSShaderProperty_vtable_GetDepthTechnique = unsafe extern "C" fn(this: *mut crate::BSShaderProperty) -> u32;
 
 /// `BSShaderProperty::ForEachVisitor::vftable` at 0x18021e0, id 188316 (rtti, high); 2 slots.
 #[repr(C)]
@@ -94193,11 +94192,11 @@ impl BSShaderTextureSet_vtable {
     }
 }
 /// `BSShaderTextureSet::GetTexturePath`, slot 37: *(this+0x10+8*index) (high).
-pub type BSShaderTextureSet_vtable_GetTexturePath = unsafe extern "C" fn(this: *mut classes::BSShaderTextureSet, index: u32) -> *const c_char;
+pub type BSShaderTextureSet_vtable_GetTexturePath = unsafe extern "C" fn(this: *mut crate::BSShaderTextureSet, index: u32) -> *const c_char;
 /// `BSShaderTextureSet::LoadTexture`, slot 38: loads the texture at the path (index 4 as a cube map) (high).
-pub type BSShaderTextureSet_vtable_LoadTexture = unsafe extern "C" fn(this: *mut classes::BSShaderTextureSet, index: u32, out: *mut c_void);
+pub type BSShaderTextureSet_vtable_LoadTexture = unsafe extern "C" fn(this: *mut crate::BSShaderTextureSet, index: u32, out: *mut c_void);
 /// `BSShaderTextureSet::SetTexturePath`, slot 39: replaces the BSFixedString (high).
-pub type BSShaderTextureSet_vtable_SetTexturePath = unsafe extern "C" fn(this: *mut classes::BSShaderTextureSet, index: u32, path: *const c_char);
+pub type BSShaderTextureSet_vtable_SetTexturePath = unsafe extern "C" fn(this: *mut crate::BSShaderTextureSet, index: u32, path: *const c_char);
 
 /// `BSShadowDirectionalLight::vftable` at 0x1b4e5f8, id 255466 (rtti, high); 17 slots.
 #[repr(C)]
@@ -94262,11 +94261,11 @@ impl BSShadowDirectionalLight_vtable {
     }
 }
 /// `BSShadowDirectionalLight::RenderShadowMaps`, slot 10: renders each map into depth target 2 slice k (and target 3 with iEnableShadowCastingFlag 2), then the focus maps into target 4 when focusShadowsActive (high).
-pub type BSShadowDirectionalLight_vtable_RenderShadowMaps = unsafe extern "C" fn(this: *mut classes::BSShadowLight, counter: *mut u32);
+pub type BSShadowDirectionalLight_vtable_RenderShadowMaps = unsafe extern "C" fn(this: *mut crate::BSShadowLight, counter: *mut u32);
 /// `BSShadowDirectionalLight::ReleaseShadowMaps`, slot 12: maps 1.. get depthTarget -1 and texelScale 1.0, then BSShadowLight::ReleaseShadowMaps (high).
-pub type BSShadowDirectionalLight_vtable_ReleaseShadowMaps = unsafe extern "C" fn(this: *mut classes::BSShadowDirectionalLight);
+pub type BSShadowDirectionalLight_vtable_ReleaseShadowMaps = unsafe extern "C" fn(this: *mut crate::BSShadowDirectionalLight);
 /// `BSShadowDirectionalLight::UpdateForCamera`, slot 16: per-frame setup against the scene camera: sun direction, cascade split and camera placement (bDisableShadowJumps, fSunStaticTimeUpdateScale) (high).
-pub type BSShadowDirectionalLight_vtable_UpdateForCamera = unsafe extern "C" fn(this: *mut classes::BSShadowLight, camera: *mut classes::NiCamera) -> bool;
+pub type BSShadowDirectionalLight_vtable_UpdateForCamera = unsafe extern "C" fn(this: *mut crate::BSShadowLight, camera: *mut crate::NiCamera) -> bool;
 
 /// `BSShadowFrustumLight::vftable` at 0x1b4efe0, id 255531 (rtti, high); 17 slots.
 #[repr(C)]
@@ -94326,9 +94325,9 @@ impl BSShadowFrustumLight_vtable {
     }
 }
 /// `BSShadowFrustumLight::RenderShadowMaps`, slot 10: RenderShadowMap on its single map, then the focus maps when focusShadowsActive (high).
-pub type BSShadowFrustumLight_vtable_RenderShadowMaps = unsafe extern "C" fn(this: *mut classes::BSShadowFrustumLight, counter: *mut i32);
+pub type BSShadowFrustumLight_vtable_RenderShadowMaps = unsafe extern "C" fn(this: *mut crate::BSShadowFrustumLight, counter: *mut i32);
 /// `BSShadowFrustumLight::UpdateForCamera`, slot 16: per-frame shadow light update against the frame camera: distance test scaled by the camera's lodAdjust (+0x184); returns false when the light is dropped (+0x5c == 0xff) (high).
-pub type BSShadowFrustumLight_vtable_UpdateForCamera = unsafe extern "C" fn(this: *mut classes::BSShadowFrustumLight, camera: *mut classes::NiCamera) -> bool;
+pub type BSShadowFrustumLight_vtable_UpdateForCamera = unsafe extern "C" fn(this: *mut crate::BSShadowFrustumLight, camera: *mut crate::NiCamera) -> bool;
 
 /// `BSShadowLight::vftable` at 0x1b49b30, id 255256 (rtti, high); 17 slots.
 #[repr(C)]
@@ -94388,9 +94387,9 @@ impl BSShadowLight_vtable {
     pub const SLOT_vfunc_14: usize = 14;
 }
 /// `BSShadowLight::IsShadowLight`, slot 3: true (high).
-pub type BSShadowLight_vtable_IsShadowLight = unsafe extern "C" fn(this: *mut classes::BSLight) -> bool;
+pub type BSShadowLight_vtable_IsShadowLight = unsafe extern "C" fn(this: *mut crate::BSLight) -> bool;
 /// `BSShadowLight::SetShadowMapCount`, slot 11: resizes shadowMaps and initialises new records (+0xcc 1.0, +0xe8 1, accumulator released) (high).
-pub type BSShadowLight_vtable_SetShadowMapCount = unsafe extern "C" fn(this: *mut classes::BSShadowLight, count: u32);
+pub type BSShadowLight_vtable_SetShadowMapCount = unsafe extern "C" fn(this: *mut crate::BSShadowLight, count: u32);
 
 /// `BSShadowParabolicLight::vftable` at 0x1b4f0f0, id 255534 (rtti, high); 17 slots.
 #[repr(C)]
@@ -94449,9 +94448,9 @@ impl BSShadowParabolicLight_vtable {
     }
 }
 /// `BSShadowParabolicLight::UsesTwoMaps`, slot 8: shadowMapCount == 2 (both hemispheres) (high).
-pub type BSShadowParabolicLight_vtable_UsesTwoMaps = unsafe extern "C" fn(this: *mut classes::BSShadowParabolicLight) -> bool;
+pub type BSShadowParabolicLight_vtable_UsesTwoMaps = unsafe extern "C" fn(this: *mut crate::BSShadowParabolicLight) -> bool;
 /// `BSShadowParabolicLight::UpdateForCamera`, slot 16: copies the NiLight's world transform into the map cameras (second map mirrored), visible = light sphere (radius NiLight+0x128) inside the camera frustum, then dropped when +0x63 and (d^2 - r^2) * camera+0x184 >= g_ShadowDistanceSq (high).
-pub type BSShadowParabolicLight_vtable_UpdateForCamera = unsafe extern "C" fn(this: *mut classes::BSShadowParabolicLight, camera: *mut classes::NiCamera) -> bool;
+pub type BSShadowParabolicLight_vtable_UpdateForCamera = unsafe extern "C" fn(this: *mut crate::BSShadowParabolicLight, camera: *mut crate::NiCamera) -> bool;
 
 /// `BSShapeConstructor::vftable` at 0x1b4c2b8, id 255373 (rtti, high); 3 slots.
 #[repr(C)]
@@ -107812,9 +107811,9 @@ impl BSWin32GamepadDevice_vtable {
     }
 }
 /// `BSWin32GamepadDevice::Poll`, slot 2: XInputGetState; buttons per mask; analog 9/10; ThumbstickEvent 0xb/0xc while this or the previous frame was off-centre; ERROR_DEVICE_NOT_CONNECTED (0x48f) or bGamepadEnable off: clear and release (DeviceConnectEvent(2, false)) (high).
-pub type BSWin32GamepadDevice_vtable_Poll = unsafe extern "C" fn(this: *mut classes::BSWin32GamepadDevice, realDelta: f32);
+pub type BSWin32GamepadDevice_vtable_Poll = unsafe extern "C" fn(this: *mut crate::BSWin32GamepadDevice, realDelta: f32);
 /// `BSWin32GamepadDevice::Reset`, slot 8: clear the state block (high).
-pub type BSWin32GamepadDevice_vtable_Reset = unsafe extern "C" fn(this: *mut classes::BSWin32GamepadDevice);
+pub type BSWin32GamepadDevice_vtable_Reset = unsafe extern "C" fn(this: *mut crate::BSWin32GamepadDevice);
 
 /// `BSWin32GamerProfile::vftable` at 0x1a23ca8, id 236711 (rtti, high); 8 slots.
 #[repr(C)]
@@ -107906,17 +107905,17 @@ impl BSWin32KeyboardDevice_vtable {
     }
 }
 /// `BSWin32KeyboardDevice::Initialize`, slot 1: create and configure the DirectInput keyboard (high).
-pub type BSWin32KeyboardDevice_vtable_Initialize = unsafe extern "C" fn(this: *mut classes::BSWin32KeyboardDevice);
+pub type BSWin32KeyboardDevice_vtable_Initialize = unsafe extern "C" fn(this: *mut crate::BSWin32KeyboardDevice);
 /// `BSWin32KeyboardDevice::Poll`, slot 2: copy state to previous; up to 10 buffered records, each a press or release through ProcessDigitalButtonState and, on key-down only, a CharEvent: numpad digits with Num Lock, otherwise MapVirtualKeyA(scan, 1) and ToUnicode with a key state built from the device (Shift, Caps Lock toggled on its press, Alt/Ctrl); no flag or menu gates it and a held key repeats nothing; then a hold for every scan code down in both arrays (high).
-pub type BSWin32KeyboardDevice_vtable_Poll = unsafe extern "C" fn(this: *mut classes::BSWin32KeyboardDevice, realDelta: f32);
+pub type BSWin32KeyboardDevice_vtable_Poll = unsafe extern "C" fn(this: *mut crate::BSWin32KeyboardDevice, realDelta: f32);
 /// `BSWin32KeyboardDevice::Release`, slot 3: release the DirectInput device (high).
-pub type BSWin32KeyboardDevice_vtable_Release = unsafe extern "C" fn(this: *mut classes::BSWin32KeyboardDevice);
+pub type BSWin32KeyboardDevice_vtable_Release = unsafe extern "C" fn(this: *mut crate::BSWin32KeyboardDevice);
 /// `BSWin32KeyboardDevice::Reset`, slot 8: zero both state arrays (high).
-pub type BSWin32KeyboardDevice_vtable_Reset = unsafe extern "C" fn(this: *mut classes::BSWin32KeyboardDevice);
+pub type BSWin32KeyboardDevice_vtable_Reset = unsafe extern "C" fn(this: *mut crate::BSWin32KeyboardDevice);
 /// `BSWin32KeyboardDevice::Unk9`, slot 9: empty (high).
-pub type BSWin32KeyboardDevice_vtable_Unk9 = unsafe extern "C" fn(this: *mut classes::BSWin32KeyboardDevice);
+pub type BSWin32KeyboardDevice_vtable_Unk9 = unsafe extern "C" fn(this: *mut crate::BSWin32KeyboardDevice);
 /// `BSWin32KeyboardDevice::Unk10`, slot 10: empty (high).
-pub type BSWin32KeyboardDevice_vtable_Unk10 = unsafe extern "C" fn(this: *mut classes::BSWin32KeyboardDevice);
+pub type BSWin32KeyboardDevice_vtable_Unk10 = unsafe extern "C" fn(this: *mut crate::BSWin32KeyboardDevice);
 
 /// `BSWin32MouseDevice::vftable` at 0x1a2ceb0, id 236810 (rtti, high); 10 slots.
 #[repr(C)]
@@ -107976,15 +107975,15 @@ impl BSWin32MouseDevice_vtable {
     }
 }
 /// `BSWin32MouseDevice::Initialize`, slot 1: create and configure the DirectInput mouse (high).
-pub type BSWin32MouseDevice_vtable_Initialize = unsafe extern "C" fn(this: *mut classes::BSWin32MouseDevice);
+pub type BSWin32MouseDevice_vtable_Initialize = unsafe extern "C" fn(this: *mut crate::BSWin32MouseDevice);
 /// `BSWin32MouseDevice::Poll`, slot 2: unless reinitializing or BSSystemUtility+0x120: MouseMoveEvent(dx, dy) when this or the previous frame moved; buttons 0-7 from prev/cur; wheel: press and release of id 8 (wheel > 0) or 9 (wheel < 0) in the same frame (high).
-pub type BSWin32MouseDevice_vtable_Poll = unsafe extern "C" fn(this: *mut classes::BSWin32MouseDevice, realDelta: f32);
+pub type BSWin32MouseDevice_vtable_Poll = unsafe extern "C" fn(this: *mut crate::BSWin32MouseDevice, realDelta: f32);
 /// `BSWin32MouseDevice::Release`, slot 3: release the DirectInput device (high).
-pub type BSWin32MouseDevice_vtable_Release = unsafe extern "C" fn(this: *mut classes::BSWin32MouseDevice);
+pub type BSWin32MouseDevice_vtable_Release = unsafe extern "C" fn(this: *mut crate::BSWin32MouseDevice);
 /// `BSWin32MouseDevice::Reset`, slot 8: zero both states (high).
-pub type BSWin32MouseDevice_vtable_Reset = unsafe extern "C" fn(this: *mut classes::BSWin32MouseDevice);
+pub type BSWin32MouseDevice_vtable_Reset = unsafe extern "C" fn(this: *mut crate::BSWin32MouseDevice);
 /// `BSWin32MouseDevice::Reinitialize`, slot 9: under the lock: store background, Release, Initialize (high).
-pub type BSWin32MouseDevice_vtable_Reinitialize = unsafe extern "C" fn(this: *mut classes::BSWin32MouseDevice, background: bool);
+pub type BSWin32MouseDevice_vtable_Reinitialize = unsafe extern "C" fn(this: *mut crate::BSWin32MouseDevice, background: bool);
 
 /// `BSWin32SaveDataSystemUtility::vftable` at 0x1b51c10, id 255912 (rtti, high); 24 slots.
 #[repr(C)]
@@ -108194,7 +108193,7 @@ impl BSWin32VirtualKeyboardDevice_vtable {
     }
 }
 /// `BSWin32VirtualKeyboardDevice::Start`, slot 11: when BSSystemUtility+0x208: copy 3 qwords of params and call ShowGamepadTextInput through BSSystemUtility+0x200 (high).
-pub type BSWin32VirtualKeyboardDevice_vtable_Start = unsafe extern "C" fn(this: *mut classes::BSWin32VirtualKeyboardDevice, params: *mut c_void);
+pub type BSWin32VirtualKeyboardDevice_vtable_Start = unsafe extern "C" fn(this: *mut crate::BSWin32VirtualKeyboardDevice, params: *mut c_void);
 
 /// `BSWindModifier::vftable` at 0x1a6b2d8, id 238256 (rtti, high); 42 slots.
 #[repr(C)]
@@ -108453,19 +108452,19 @@ impl BSXAudio2GameSound_vtable {
     }
 }
 /// `BSXAudio2GameSound::GetPositionMs`, slot 4: playback position in ms (high).
-pub type BSXAudio2GameSound_vtable_GetPositionMs = unsafe extern "C" fn(this: *mut classes::BSXAudio2GameSound) -> u32;
+pub type BSXAudio2GameSound_vtable_GetPositionMs = unsafe extern "C" fn(this: *mut crate::BSXAudio2GameSound) -> u32;
 /// `BSXAudio2GameSound::SetPosition`, slot 15: stores the position, the listener distance (+0x80) and state 0x100000 (high).
-pub type BSXAudio2GameSound_vtable_SetPosition = unsafe extern "C" fn(this: *mut classes::BSXAudio2GameSound, xyz: *const f32);
+pub type BSXAudio2GameSound_vtable_SetPosition = unsafe extern "C" fn(this: *mut crate::BSXAudio2GameSound, xyz: *const f32);
 /// `BSXAudio2GameSound::ApplyFrequency`, slot 19: sets the voice frequency ratio (high).
-pub type BSXAudio2GameSound_vtable_ApplyFrequency = unsafe extern "C" fn(this: *mut classes::BSXAudio2GameSound);
+pub type BSXAudio2GameSound_vtable_ApplyFrequency = unsafe extern "C" fn(this: *mut crate::BSXAudio2GameSound);
 /// `BSXAudio2GameSound::Play`, slot 21: start the voice (high).
-pub type BSXAudio2GameSound_vtable_Play = unsafe extern "C" fn(this: *mut classes::BSXAudio2GameSound);
+pub type BSXAudio2GameSound_vtable_Play = unsafe extern "C" fn(this: *mut crate::BSXAudio2GameSound);
 /// `BSXAudio2GameSound::Pause`, slot 22: stop the voice without flushing (high).
-pub type BSXAudio2GameSound_vtable_Pause = unsafe extern "C" fn(this: *mut classes::BSXAudio2GameSound);
+pub type BSXAudio2GameSound_vtable_Pause = unsafe extern "C" fn(this: *mut crate::BSXAudio2GameSound);
 /// `BSXAudio2GameSound::Stop`, slot 23: stop and flush; a looping sound with a loop region seeks to the loop end and plays out (high).
-pub type BSXAudio2GameSound_vtable_Stop = unsafe extern "C" fn(this: *mut classes::BSXAudio2GameSound);
+pub type BSXAudio2GameSound_vtable_Stop = unsafe extern "C" fn(this: *mut crate::BSXAudio2GameSound);
 /// `BSXAudio2GameSound::ApplyVolume`, slot 24: ComputeAmplitude 0xcd5410 to the voice (high).
-pub type BSXAudio2GameSound_vtable_ApplyVolume = unsafe extern "C" fn(this: *mut classes::BSXAudio2GameSound);
+pub type BSXAudio2GameSound_vtable_ApplyVolume = unsafe extern "C" fn(this: *mut crate::BSXAudio2GameSound);
 
 /// `BSXAudio2GameSound::vftable_C8` at 0x1a211e0, id 236558 (rtti, high); 7 slots.
 #[repr(C)]
@@ -108675,9 +108674,9 @@ impl BShkbAnimationGraph_vtable {
     pub const SLOT_ResetRagdoll: usize = 5;
 }
 /// `BShkbAnimationGraph::dtor`, slot 0: virtual destructor (high).
-pub type BShkbAnimationGraph_vtable_dtor = unsafe extern "C" fn(this: *mut classes::BShkbAnimationGraph, flags: u32) -> *mut classes::BShkbAnimationGraph;
+pub type BShkbAnimationGraph_vtable_dtor = unsafe extern "C" fn(this: *mut crate::BShkbAnimationGraph, flags: u32) -> *mut crate::BShkbAnimationGraph;
 /// `BShkbAnimationGraph::SetWorld`, slot 4: stores the physics world (high).
-pub type BShkbAnimationGraph_vtable_SetWorld = unsafe extern "C" fn(this: *mut classes::BShkbAnimationGraph, world: *mut classes::bhkWorld);
+pub type BShkbAnimationGraph_vtable_SetWorld = unsafe extern "C" fn(this: *mut crate::BShkbAnimationGraph, world: *mut crate::bhkWorld);
 
 /// `BShkbHkxDB::DBData::vftable` at 0x1a05f70, id 232778 (rtti, high); 15 slots.
 #[repr(C)]
@@ -110373,7 +110372,7 @@ impl BeamProjectile_vtable {
     }
 }
 /// `BeamProjectile::UpdateImpl`, slot 171: beam projectile per-frame update: follows the shooter's aim, reading cameraStates[0]+0x48 (first-person state) for the player (high).
-pub type BeamProjectile_vtable_UpdateImpl = unsafe extern "C" fn(this: *mut classes::BeamProjectile, delta: f32);
+pub type BeamProjectile_vtable_UpdateImpl = unsafe extern "C" fn(this: *mut crate::BeamProjectile, delta: f32);
 
 /// `BeamProjectile::vftable_20` at 0x193dc48, id 209916 (rtti, high); 2 slots.
 #[repr(C)]
@@ -110545,13 +110544,13 @@ impl BleedoutCameraState_vtable {
     }
 }
 /// `BleedoutCameraState::Destroy`, slot 0: scalar deleting destructor: own vtables, releases focusNode (+0x120), ThirdPersonState::dtor, frees 0x138 (high).
-pub type BleedoutCameraState_vtable_Destroy = unsafe extern "C" fn(this: *mut classes::BleedoutCameraState, flags: u32) -> *mut classes::BleedoutCameraState;
+pub type BleedoutCameraState_vtable_Destroy = unsafe extern "C" fn(this: *mut crate::BleedoutCameraState, flags: u32) -> *mut crate::BleedoutCameraState;
 /// `BleedoutCameraState::Begin`, slot 1:  (high).
-pub type BleedoutCameraState_vtable_Begin = unsafe extern "C" fn(this: *mut classes::BleedoutCameraState);
+pub type BleedoutCameraState_vtable_Begin = unsafe extern "C" fn(this: *mut crate::BleedoutCameraState);
 /// `BleedoutCameraState::End`, slot 2:  (high).
-pub type BleedoutCameraState_vtable_End = unsafe extern "C" fn(this: *mut classes::BleedoutCameraState);
+pub type BleedoutCameraState_vtable_End = unsafe extern "C" fn(this: *mut crate::BleedoutCameraState);
 /// `BleedoutCameraState::Update`, slot 3: SetFirstPerson(false) once, orbit pose with collision retries, writes root, UpdateNode (high).
-pub type BleedoutCameraState_vtable_Update = unsafe extern "C" fn(this: *mut classes::BleedoutCameraState, nextState: *mut c_void);
+pub type BleedoutCameraState_vtable_Update = unsafe extern "C" fn(this: *mut crate::BleedoutCameraState, nextState: *mut c_void);
 
 /// `BleedoutCameraState::vftable_20` at 0x196dbf8, id 214875 (rtti, high); 7 slots.
 #[repr(C)]
@@ -111097,9 +111096,9 @@ impl CameraOverrideStartHandler_vtable {
     }
 }
 /// `CameraOverrideStartHandler::Destroy`, slot 0: scalar deleting destructor: restores IHandlerFunctor<Actor,BSFixedStringCI>::vftable 0x1937e30, frees 0x10 when flags & 1 (high).
-pub type CameraOverrideStartHandler_vtable_Destroy = unsafe extern "C" fn(this: *mut classes::CameraOverrideStartHandler, flags: u32) -> *mut classes::CameraOverrideStartHandler;
+pub type CameraOverrideStartHandler_vtable_Destroy = unsafe extern "C" fn(this: *mut crate::CameraOverrideStartHandler, flags: u32) -> *mut crate::CameraOverrideStartHandler;
 /// `CameraOverrideStartHandler::Handle`, slot 1: if the actor's handle == PlayerCamera.targetHandle (+0x3c): PlayerCamera::SetFirstPersonCameraOverride(1) -> FirstPersonState+0x88 = 1 (spring offset off) (high).
-pub type CameraOverrideStartHandler_vtable_Handle = unsafe extern "C" fn(this: *mut classes::CameraOverrideStartHandler, actor: *mut classes::Actor, payload: *const c_void) -> bool;
+pub type CameraOverrideStartHandler_vtable_Handle = unsafe extern "C" fn(this: *mut crate::CameraOverrideStartHandler, actor: *mut crate::Actor, payload: *const c_void) -> bool;
 
 /// `CameraOverrideStopHandler::vftable` at 0x1937fe0, id 208843 (rtti, high); 2 slots.
 #[repr(C)]
@@ -111125,9 +111124,9 @@ impl CameraOverrideStopHandler_vtable {
     }
 }
 /// `CameraOverrideStopHandler::Destroy`, slot 0: scalar deleting destructor: restores IHandlerFunctor<Actor,BSFixedStringCI>::vftable 0x1937e30, frees 0x10 when flags & 1 (high).
-pub type CameraOverrideStopHandler_vtable_Destroy = unsafe extern "C" fn(this: *mut classes::CameraOverrideStopHandler, flags: u32) -> *mut classes::CameraOverrideStopHandler;
+pub type CameraOverrideStopHandler_vtable_Destroy = unsafe extern "C" fn(this: *mut crate::CameraOverrideStopHandler, flags: u32) -> *mut crate::CameraOverrideStopHandler;
 /// `CameraOverrideStopHandler::Handle`, slot 1: same gate; SetFirstPersonCameraOverride(0) -> FirstPersonState+0x88 = 0 (high).
-pub type CameraOverrideStopHandler_vtable_Handle = unsafe extern "C" fn(this: *mut classes::CameraOverrideStopHandler, actor: *mut classes::Actor, payload: *const c_void) -> bool;
+pub type CameraOverrideStopHandler_vtable_Handle = unsafe extern "C" fn(this: *mut crate::CameraOverrideStopHandler, actor: *mut crate::Actor, payload: *const c_void) -> bool;
 
 /// `CameraShakeHandler::vftable` at 0x19383d0, id 208927 (rtti, high); 2 slots.
 #[repr(C)]
@@ -111153,9 +111152,9 @@ impl CameraShakeHandler_vtable {
     }
 }
 /// `CameraShakeHandler::Destroy`, slot 0: scalar deleting destructor: restores IHandlerFunctor<Actor,BSFixedStringCI>::vftable 0x1937e30, frees 0x10 when flags & 1 (high).
-pub type CameraShakeHandler_vtable_Destroy = unsafe extern "C" fn(this: *mut classes::CameraShakeHandler, flags: u32) -> *mut classes::CameraShakeHandler;
+pub type CameraShakeHandler_vtable_Destroy = unsafe extern "C" fn(this: *mut crate::CameraShakeHandler, flags: u32) -> *mut crate::CameraShakeHandler;
 /// `CameraShakeHandler::Handle`, slot 1: strength = atof(payload); if > 0: StartCameraShake(strength, &actor->position (+0x54), 0) (duration 0 -> fCameraShakeTime) (high).
-pub type CameraShakeHandler_vtable_Handle = unsafe extern "C" fn(this: *mut classes::CameraShakeHandler, actor: *mut classes::Actor, payload: *const c_void) -> bool;
+pub type CameraShakeHandler_vtable_Handle = unsafe extern "C" fn(this: *mut crate::CameraShakeHandler, actor: *mut crate::Actor, payload: *const c_void) -> bool;
 
 /// `CellLoaderTask::vftable` at 0x181e368, id 189967 (rtti, high); 9 slots.
 #[repr(C)]
@@ -112635,9 +112634,9 @@ impl ClickHandler_vtable {
     }
 }
 /// `ClickHandler::CanProcess`, slot 1: Click (high).
-pub type ClickHandler_vtable_CanProcess = unsafe extern "C" fn(this: *mut classes::ClickHandler, event: *mut classes::InputEvent) -> bool;
+pub type ClickHandler_vtable_CanProcess = unsafe extern "C" fn(this: *mut crate::ClickHandler, event: *mut crate::InputEvent) -> bool;
 /// `ClickHandler::ProcessButtonEvent`, slot 7: mouse button to Scaleform (high).
-pub type ClickHandler_vtable_ProcessButtonEvent = unsafe extern "C" fn(this: *mut classes::ClickHandler, event: *mut classes::ButtonEvent) -> bool;
+pub type ClickHandler_vtable_ProcessButtonEvent = unsafe extern "C" fn(this: *mut crate::ClickHandler, event: *mut crate::ButtonEvent) -> bool;
 
 /// `CloakEffect::vftable` at 0x18f6678, id 205849 (rtti, high); 25 slots.
 #[repr(C)]
@@ -134403,11 +134402,11 @@ impl Console_vtable {
     }
 }
 /// `Console::Dtor`, slot 0: deleting destructor (high).
-pub type Console_vtable_Dtor = unsafe extern "C" fn(this: *mut classes::Console, flags: u32) -> *mut classes::Console;
+pub type Console_vtable_Dtor = unsafe extern "C" fn(this: *mut crate::Console, flags: u32) -> *mut crate::Console;
 /// `Console::Accept`, slot 1: registers 'ExecuteCommand' (0x909e00) and 'HideComplete' (0x90a610) (high).
-pub type Console_vtable_Accept = unsafe extern "C" fn(this: *mut classes::Console, p: *mut classes::partial::FxDelegateHandler__CallbackProcessor);
+pub type Console_vtable_Accept = unsafe extern "C" fn(this: *mut crate::Console, p: *mut crate::FxDelegateHandler__CallbackProcessor);
 /// `Console::ProcessMessage`, slot 4: ConsoleData updates (flush log, select ref, execute, clear history), show/hide, key input (high).
-pub type Console_vtable_ProcessMessage = unsafe extern "C" fn(this: *mut classes::Console, msg: *mut classes::UIMessage) -> u32;
+pub type Console_vtable_ProcessMessage = unsafe extern "C" fn(this: *mut crate::Console, msg: *mut crate::UIMessage) -> u32;
 
 /// `ConsoleData::vftable` at 0x1984818, id 216321 (rtti, high); 1 slots.
 #[repr(C)]
@@ -134481,9 +134480,9 @@ impl ConsoleOpenHandler_vtable {
     }
 }
 /// `ConsoleOpenHandler::CanProcess`, slot 1: Console (high).
-pub type ConsoleOpenHandler_vtable_CanProcess = unsafe extern "C" fn(this: *mut classes::ConsoleOpenHandler, event: *mut classes::InputEvent) -> bool;
+pub type ConsoleOpenHandler_vtable_CanProcess = unsafe extern "C" fn(this: *mut crate::ConsoleOpenHandler, event: *mut crate::InputEvent) -> bool;
 /// `ConsoleOpenHandler::ProcessButtonEvent`, slot 7: press edge -> open/close console (high).
-pub type ConsoleOpenHandler_vtable_ProcessButtonEvent = unsafe extern "C" fn(this: *mut classes::ConsoleOpenHandler, event: *mut classes::ButtonEvent) -> bool;
+pub type ConsoleOpenHandler_vtable_ProcessButtonEvent = unsafe extern "C" fn(this: *mut crate::ConsoleOpenHandler, event: *mut crate::ButtonEvent) -> bool;
 
 /// `ContainerMenu::vftable` at 0x1971a90, id 215061 (rtti, high); 9 slots.
 #[repr(C)]
@@ -135800,7 +135799,7 @@ impl DirectionHandler_vtable {
     }
 }
 /// `DirectionHandler::CanProcess`, slot 1: Up/Down/Left/Right/Left Stick (high).
-pub type DirectionHandler_vtable_CanProcess = unsafe extern "C" fn(this: *mut classes::DirectionHandler, event: *mut classes::InputEvent) -> bool;
+pub type DirectionHandler_vtable_CanProcess = unsafe extern "C" fn(this: *mut crate::DirectionHandler, event: *mut crate::InputEvent) -> bool;
 
 /// `DisableCharacterBumperHandler::vftable` at 0x1938580, id 208963 (rtti, high); 2 slots.
 #[repr(C)]
@@ -136228,31 +136227,31 @@ impl DragonCameraState_vtable {
     }
 }
 /// `DragonCameraState::Destroy`, slot 0: scalar deleting destructor: own vtables, ThirdPersonState::dtor 0x55d3d0, frees 0x110 (high).
-pub type DragonCameraState_vtable_Destroy = unsafe extern "C" fn(this: *mut classes::DragonCameraState, flags: u32) -> *mut classes::DragonCameraState;
+pub type DragonCameraState_vtable_Destroy = unsafe extern "C" fn(this: *mut crate::DragonCameraState, flags: u32) -> *mut crate::DragonCameraState;
 /// `DragonCameraState::Begin`, slot 1:  (high).
-pub type DragonCameraState_vtable_Begin = unsafe extern "C" fn(this: *mut classes::DragonCameraState);
+pub type DragonCameraState_vtable_Begin = unsafe extern "C" fn(this: *mut crate::DragonCameraState);
 /// `DragonCameraState::End`, slot 2:  (high).
-pub type DragonCameraState_vtable_End = unsafe extern "C" fn(this: *mut classes::DragonCameraState);
+pub type DragonCameraState_vtable_End = unsafe extern "C" fn(this: *mut crate::DragonCameraState);
 /// `DragonCameraState::SaveGame`, slot 6:  (high).
-pub type DragonCameraState_vtable_SaveGame = unsafe extern "C" fn(this: *mut classes::DragonCameraState, buffer: *mut classes::BGSSaveFormBuffer);
+pub type DragonCameraState_vtable_SaveGame = unsafe extern "C" fn(this: *mut crate::DragonCameraState, buffer: *mut crate::BGSSaveFormBuffer);
 /// `DragonCameraState::LoadGame`, slot 7:  (high).
-pub type DragonCameraState_vtable_LoadGame = unsafe extern "C" fn(this: *mut classes::DragonCameraState, buffer: *mut classes::BGSLoadFormBuffer);
+pub type DragonCameraState_vtable_LoadGame = unsafe extern "C" fn(this: *mut crate::DragonCameraState, buffer: *mut crate::BGSLoadFormBuffer);
 /// `DragonCameraState::Revert`, slot 8:  (high).
-pub type DragonCameraState_vtable_Revert = unsafe extern "C" fn(this: *mut classes::DragonCameraState, buffer: *mut classes::BGSLoadFormBuffer);
+pub type DragonCameraState_vtable_Revert = unsafe extern "C" fn(this: *mut crate::DragonCameraState, buffer: *mut crate::BGSLoadFormBuffer);
 /// `DragonCameraState::SetTargetHandle`, slot 9:  (high).
-pub type DragonCameraState_vtable_SetTargetHandle = unsafe extern "C" fn(this: *mut classes::DragonCameraState, handle: *mut c_void);
+pub type DragonCameraState_vtable_SetTargetHandle = unsafe extern "C" fn(this: *mut crate::DragonCameraState, handle: *mut c_void);
 /// `DragonCameraState::ResetOffsets`, slot 10: fOverShoulderDragon* and dolly reset (high).
-pub type DragonCameraState_vtable_ResetOffsets = unsafe extern "C" fn(this: *mut classes::DragonCameraState);
+pub type DragonCameraState_vtable_ResetOffsets = unsafe extern "C" fn(this: *mut crate::DragonCameraState);
 /// `DragonCameraState::SetCombatOffsets`, slot 11:  (high).
-pub type DragonCameraState_vtable_SetCombatOffsets = unsafe extern "C" fn(this: *mut classes::DragonCameraState, weaponDrawn: bool);
+pub type DragonCameraState_vtable_SetCombatOffsets = unsafe extern "C" fn(this: *mut crate::DragonCameraState, weaponDrawn: bool);
 /// `DragonCameraState::IsFreeLookActive`, slot 12:  (high).
-pub type DragonCameraState_vtable_IsFreeLookActive = unsafe extern "C" fn(this: *mut classes::DragonCameraState) -> bool;
+pub type DragonCameraState_vtable_IsFreeLookActive = unsafe extern "C" fn(this: *mut crate::DragonCameraState) -> bool;
 /// `DragonCameraState::SetFreeRotationMode`, slot 13: empty (high).
-pub type DragonCameraState_vtable_SetFreeRotationMode = unsafe extern "C" fn(this: *mut classes::DragonCameraState, allow: bool);
+pub type DragonCameraState_vtable_SetFreeRotationMode = unsafe extern "C" fn(this: *mut crate::DragonCameraState, allow: bool);
 /// `DragonCameraState::UpdateRotation`, slot 14:  (high).
-pub type DragonCameraState_vtable_UpdateRotation = unsafe extern "C" fn(this: *mut classes::DragonCameraState);
+pub type DragonCameraState_vtable_UpdateRotation = unsafe extern "C" fn(this: *mut crate::DragonCameraState);
 /// `DragonCameraState::ProcessLookInput`, slot 15:  (high).
-pub type DragonCameraState_vtable_ProcessLookInput = unsafe extern "C" fn(this: *mut classes::DragonCameraState, look: *mut c_void);
+pub type DragonCameraState_vtable_ProcessLookInput = unsafe extern "C" fn(this: *mut crate::DragonCameraState, look: *mut c_void);
 
 /// `DragonCameraState::vftable_20` at 0x18ecd58, id 205242 (rtti, high); 7 slots.
 #[repr(C)]
@@ -136894,7 +136893,7 @@ impl EnemyHealth_vtable {
     }
 }
 /// `EnemyHealth::Update`, slot 1: per-frame enemy health bar: target from the camera/crosshair, health percent (GetActorValuePercentage(0x18) * 100), timestamps, new-target flag, GFx updates (high).
-pub type EnemyHealth_vtable_Update = unsafe extern "C" fn(this: *mut classes::EnemyHealth);
+pub type EnemyHealth_vtable_Update = unsafe extern "C" fn(this: *mut crate::EnemyHealth);
 
 /// `EnhanceWeaponEffect::vftable` at 0x190e8f8, id 206860 (rtti, high); 35 slots.
 #[repr(C)]
@@ -139986,7 +139985,7 @@ impl FavoritesHandler_vtable {
     }
 }
 /// `FavoritesHandler::CanProcess`, slot 1: Favorites, Hotkey1-8 and 29 more global names set by the Str_HK* initializers (speech hotkeys such as HKHealthPotion), looked up through 0x92cef0; false while 0x32583c8 is set (high).
-pub type FavoritesHandler_vtable_CanProcess = unsafe extern "C" fn(this: *mut classes::FavoritesHandler, event: *mut classes::InputEvent) -> bool;
+pub type FavoritesHandler_vtable_CanProcess = unsafe extern "C" fn(this: *mut crate::FavoritesHandler, event: *mut crate::InputEvent) -> bool;
 
 /// `FavoritesMenu::vftable` at 0x1975188, id 215307 (rtti, high); 9 slots.
 #[repr(C)]
@@ -140308,23 +140307,23 @@ impl FirstPersonState_vtable {
     }
 }
 /// `FirstPersonState::Destroy`, slot 0: scalar deleting destructor: calls 0x8f46b0 (the destructor body: inputHandler vtable = PlayerInputHandler::vftable, vtable = TESCameraState::vftable), frees 0x90 when flags & 1 (high).
-pub type FirstPersonState_vtable_Destroy = unsafe extern "C" fn(this: *mut classes::FirstPersonState, flags: u32) -> *mut classes::FirstPersonState;
+pub type FirstPersonState_vtable_Destroy = unsafe extern "C" fn(this: *mut crate::FirstPersonState, flags: u32) -> *mut crate::FirstPersonState;
 /// `FirstPersonState::Begin`, slot 1: SetFirstPerson(true), registers the handler, lastTargetPosition = player position, zero velocity, weight 1 (high).
-pub type FirstPersonState_vtable_Begin = unsafe extern "C" fn(this: *mut classes::FirstPersonState);
+pub type FirstPersonState_vtable_Begin = unsafe extern "C" fn(this: *mut crate::FirstPersonState);
 /// `FirstPersonState::End`, slot 2: sittingYaw = 0, unregisters the handler (high).
-pub type FirstPersonState_vtable_End = unsafe extern "C" fn(this: *mut classes::FirstPersonState);
+pub type FirstPersonState_vtable_End = unsafe extern "C" fn(this: *mut crate::FirstPersonState);
 /// `FirstPersonState::Update`, slot 3: look pitch 0x8fb2e0, sitting yaw, pitch offset, spring damping, caster collision 0x8fa5d0, shake 0x8fa2b0, writes root+0x48/+0x6c and calls 0xee0930 (high).
-pub type FirstPersonState_vtable_Update = unsafe extern "C" fn(this: *mut classes::FirstPersonState, next: *mut c_void);
+pub type FirstPersonState_vtable_Update = unsafe extern "C" fn(this: *mut crate::FirstPersonState, next: *mut c_void);
 /// `FirstPersonState::GetRotation`, slot 4: cameraNode world rotation with heading and sittingYaw (high).
-pub type FirstPersonState_vtable_GetRotation = unsafe extern "C" fn(this: *mut classes::FirstPersonState, out: *mut c_void);
+pub type FirstPersonState_vtable_GetRotation = unsafe extern "C" fn(this: *mut crate::FirstPersonState, out: *mut c_void);
 /// `FirstPersonState::GetTranslation`, slot 5: cameraNode world translation (high).
-pub type FirstPersonState_vtable_GetTranslation = unsafe extern "C" fn(this: *mut classes::FirstPersonState, out: *mut c_void);
+pub type FirstPersonState_vtable_GetTranslation = unsafe extern "C" fn(this: *mut crate::FirstPersonState, out: *mut c_void);
 /// `FirstPersonState::SaveGame`, slot 6: +0x68, +0x6c, +0x70, +0x89, +0x8a (high).
-pub type FirstPersonState_vtable_SaveGame = unsafe extern "C" fn(this: *mut classes::FirstPersonState, buffer: *mut classes::BGSSaveFormBuffer);
+pub type FirstPersonState_vtable_SaveGame = unsafe extern "C" fn(this: *mut crate::FirstPersonState, buffer: *mut crate::BGSSaveFormBuffer);
 /// `FirstPersonState::LoadGame`, slot 7: same, the last four only for buffer version > 0x14 (high).
-pub type FirstPersonState_vtable_LoadGame = unsafe extern "C" fn(this: *mut classes::FirstPersonState, buffer: *mut classes::BGSLoadFormBuffer);
+pub type FirstPersonState_vtable_LoadGame = unsafe extern "C" fn(this: *mut crate::FirstPersonState, buffer: *mut crate::BGSLoadFormBuffer);
 /// `FirstPersonState::Revert`, slot 8:  (high).
-pub type FirstPersonState_vtable_Revert = unsafe extern "C" fn(this: *mut classes::FirstPersonState, buffer: *mut classes::BGSLoadFormBuffer);
+pub type FirstPersonState_vtable_Revert = unsafe extern "C" fn(this: *mut crate::FirstPersonState, buffer: *mut crate::BGSLoadFormBuffer);
 
 /// `FirstPersonState::vftable_20` at 0x196d940, id 214857 (rtti, high); 7 slots.
 #[repr(C)]
@@ -140750,7 +140749,7 @@ impl FlameProjectile_vtable {
     }
 }
 /// `FlameProjectile::UpdateImpl`, slot 171: flame projectile per-frame update: emitter node from slot 139, shooter handle +0x128; for the player in first person adds the first-person camera offset (high).
-pub type FlameProjectile_vtable_UpdateImpl = unsafe extern "C" fn(this: *mut classes::FlameProjectile, delta: f32);
+pub type FlameProjectile_vtable_UpdateImpl = unsafe extern "C" fn(this: *mut crate::FlameProjectile, delta: f32);
 
 /// `FlameProjectile::vftable_20` at 0x193f978, id 209955 (rtti, high); 2 slots.
 #[repr(C)]
@@ -141194,17 +141193,17 @@ impl FreeCameraState_vtable {
     }
 }
 /// `FreeCameraState::Destroy`, slot 0: scalar deleting destructor: calls 0x8f5e10 (destructor body: handler and main vtables back to the bases), frees 0x50 when flags & 1 (high).
-pub type FreeCameraState_vtable_Destroy = unsafe extern "C" fn(this: *mut classes::FreeCameraState, flags: u32) -> *mut classes::FreeCameraState;
+pub type FreeCameraState_vtable_Destroy = unsafe extern "C" fn(this: *mut crate::FreeCameraState, flags: u32) -> *mut crate::FreeCameraState;
 /// `FreeCameraState::Begin`, slot 1: registers the handler, swaps fTriggerDeadzone/fMovementAxisDeadzone for the free camera values (high).
-pub type FreeCameraState_vtable_Begin = unsafe extern "C" fn(this: *mut classes::TESCameraState);
+pub type FreeCameraState_vtable_Begin = unsafe extern "C" fn(this: *mut crate::TESCameraState);
 /// `FreeCameraState::End`, slot 2: restores them (high).
-pub type FreeCameraState_vtable_End = unsafe extern "C" fn(this: *mut classes::TESCameraState);
+pub type FreeCameraState_vtable_End = unsafe extern "C" fn(this: *mut crate::TESCameraState);
 /// `FreeCameraState::Update`, slot 3: 0x8f62c0 integrates angles and position, writes the root from slots 4/5, calls 0xee0930 (high).
-pub type FreeCameraState_vtable_Update = unsafe extern "C" fn(this: *mut classes::TESCameraState, next: *mut c_void);
+pub type FreeCameraState_vtable_Update = unsafe extern "C" fn(this: *mut crate::TESCameraState, next: *mut c_void);
 /// `FreeCameraState::GetRotation`, slot 4: matrix from (yaw +0x40, pitch +0x3c, 0) (high).
-pub type FreeCameraState_vtable_GetRotation = unsafe extern "C" fn(this: *mut classes::FreeCameraState, out: *mut c_void);
+pub type FreeCameraState_vtable_GetRotation = unsafe extern "C" fn(this: *mut crate::FreeCameraState, out: *mut c_void);
 /// `FreeCameraState::GetTranslation`, slot 5: +0x30 (high).
-pub type FreeCameraState_vtable_GetTranslation = unsafe extern "C" fn(this: *mut classes::FreeCameraState, out: *mut c_void);
+pub type FreeCameraState_vtable_GetTranslation = unsafe extern "C" fn(this: *mut crate::FreeCameraState, out: *mut c_void);
 
 /// `FreeCameraState::vftable_20` at 0x196da40, id 214865 (rtti, high); 7 slots.
 #[repr(C)]
@@ -141366,17 +141365,17 @@ impl FurnitureCameraState_vtable {
     }
 }
 /// `FurnitureCameraState::Destroy`, slot 0: scalar deleting destructor: calls 0x8f6610 (destructor body: vtable = TESCameraState::vftable), frees 0x40 when flags & 1 (high).
-pub type FurnitureCameraState_vtable_Destroy = unsafe extern "C" fn(this: *mut classes::FurnitureCameraState, flags: u32) -> *mut classes::FurnitureCameraState;
+pub type FurnitureCameraState_vtable_Destroy = unsafe extern "C" fn(this: *mut crate::FurnitureCameraState, flags: u32) -> *mut crate::FurnitureCameraState;
 /// `FurnitureCameraState::Begin`, slot 1: saves +0x160, disables auto vanity, sets a fixed pitch (high).
-pub type FurnitureCameraState_vtable_Begin = unsafe extern "C" fn(this: *mut classes::TESCameraState);
+pub type FurnitureCameraState_vtable_Begin = unsafe extern "C" fn(this: *mut crate::TESCameraState);
 /// `FurnitureCameraState::End`, slot 2: restores auto vanity, pitch 0 (high).
-pub type FurnitureCameraState_vtable_End = unsafe extern "C" fn(this: *mut classes::TESCameraState);
+pub type FurnitureCameraState_vtable_End = unsafe extern "C" fn(this: *mut crate::TESCameraState);
 /// `FurnitureCameraState::Update`, slot 3: look pitch, rotation, position 0x8f6a70, writes the root (high).
-pub type FurnitureCameraState_vtable_Update = unsafe extern "C" fn(this: *mut classes::TESCameraState, next: *mut c_void);
+pub type FurnitureCameraState_vtable_Update = unsafe extern "C" fn(this: *mut crate::TESCameraState, next: *mut c_void);
 /// `FurnitureCameraState::GetRotation`, slot 4: euler(pitch, 0, heading or live heading + yawOffset) (high).
-pub type FurnitureCameraState_vtable_GetRotation = unsafe extern "C" fn(this: *mut classes::FurnitureCameraState, out: *mut c_void);
+pub type FurnitureCameraState_vtable_GetRotation = unsafe extern "C" fn(this: *mut crate::FurnitureCameraState, out: *mut c_void);
 /// `FurnitureCameraState::GetTranslation`, slot 5: 0x8f6a70 (high).
-pub type FurnitureCameraState_vtable_GetTranslation = unsafe extern "C" fn(this: *mut classes::FurnitureCameraState, out: *mut c_void);
+pub type FurnitureCameraState_vtable_GetTranslation = unsafe extern "C" fn(this: *mut crate::FurnitureCameraState, out: *mut c_void);
 
 /// `FutBinaryFileC::vftable` at 0x18bde90, id 200222 (rtti, high); 12 slots.
 #[repr(C)]
@@ -141682,7 +141681,7 @@ impl GFxFunctionHandler_vtable {
     }
 }
 /// `GFxFunctionHandler::Destroy`, slot 0: deleting destructor (high).
-pub type GFxFunctionHandler_vtable_Destroy = unsafe extern "C" fn(this: *mut classes::GFxFunctionHandler, flags: u32) -> *mut classes::GFxFunctionHandler;
+pub type GFxFunctionHandler_vtable_Destroy = unsafe extern "C" fn(this: *mut crate::GFxFunctionHandler, flags: u32) -> *mut crate::GFxFunctionHandler;
 
 /// `GFxImageLoader::vftable` at 0x1a9af70, id 242886 (rtti, high); 2 slots.
 #[repr(C)]
@@ -142902,11 +142901,11 @@ impl HUDMenu_vtable {
     pub const SLOT_Slot8: usize = 8;
 }
 /// `HUDMenu::Dtor`, slot 0: deleting destructor (high).
-pub type HUDMenu_vtable_Dtor = unsafe extern "C" fn(this: *mut classes::HUDMenu, flags: u32) -> *mut classes::HUDMenu;
+pub type HUDMenu_vtable_Dtor = unsafe extern "C" fn(this: *mut crate::HUDMenu, flags: u32) -> *mut crate::HUDMenu;
 /// `HUDMenu::ProcessMessage`, slot 4: handles HUD messages; HUDData (type at data+0x10) on 'HUD Menu' drives the AS calls (high).
-pub type HUDMenu_vtable_ProcessMessage = unsafe extern "C" fn(this: *mut classes::HUDMenu, msg: *mut classes::UIMessage) -> u32;
+pub type HUDMenu_vtable_ProcessMessage = unsafe extern "C" fn(this: *mut crate::HUDMenu, msg: *mut crate::UIMessage) -> u32;
 /// `HUDMenu::AdvanceMovie`, slot 5: IMenu's advance with the interval clamped to the constant ID_215451, then queues a HUD data message when the tracked globals change (only while numPausesGame == 0) (high).
-pub type HUDMenu_vtable_AdvanceMovie = unsafe extern "C" fn(this: *mut classes::HUDMenu, interval: f32, currentTimeMs: u32);
+pub type HUDMenu_vtable_AdvanceMovie = unsafe extern "C" fn(this: *mut crate::HUDMenu, interval: f32, currentTimeMs: u32);
 
 /// `HUDMenu::vftable_30` at 0x1976758, id 215364 (rtti, high); 2 slots.
 #[repr(C)]
@@ -142994,13 +142993,13 @@ impl HUDNotifications_vtable {
     }
 }
 /// `HUDNotifications::Update`, slot 1: if AS 'CanShowNotification' is true, shows the first ready entry via 'ShowNotification' (9 args) and removes it (high).
-pub type HUDNotifications_vtable_Update = unsafe extern "C" fn(this: *mut classes::HUDNotifications);
+pub type HUDNotifications_vtable_Update = unsafe extern "C" fn(this: *mut crate::HUDNotifications);
 /// `HUDNotifications::ProcessMessage`, slot 2: queues HUDData types 0xe..0x1a (quest started/completed/failed, objectives, level up, shout) (high).
-pub type HUDNotifications_vtable_ProcessMessage = unsafe extern "C" fn(this: *mut classes::HUDNotifications, msg: *mut classes::UIMessage) -> bool;
+pub type HUDNotifications_vtable_ProcessMessage = unsafe extern "C" fn(this: *mut crate::HUDNotifications, msg: *mut crate::UIMessage) -> bool;
 /// `HUDNotifications::RegisterHUDComponent`, slot 3: takes args[0] and args[1] and caches 'ObjectivesA' (high).
-pub type HUDNotifications_vtable_RegisterHUDComponent = unsafe extern "C" fn(this: *mut classes::HUDNotifications, args: *mut c_void);
+pub type HUDNotifications_vtable_RegisterHUDComponent = unsafe extern "C" fn(this: *mut crate::HUDNotifications, args: *mut c_void);
 /// `HUDNotifications::Cleanup`, slot 4: clears the queue and the quest-name letters (high).
-pub type HUDNotifications_vtable_Cleanup = unsafe extern "C" fn(this: *mut classes::HUDNotifications);
+pub type HUDNotifications_vtable_Cleanup = unsafe extern "C" fn(this: *mut crate::HUDNotifications);
 
 /// `HUDObject::vftable` at 0x1976788, id 215368 (rtti, high); 5 slots.
 #[repr(C)]
@@ -143039,11 +143038,11 @@ impl HUDObject_vtable {
     pub const SLOT_Cleanup: usize = 4;
 }
 /// `HUDObject::Dtor`, slot 0: deleting destructor (high).
-pub type HUDObject_vtable_Dtor = unsafe extern "C" fn(this: *mut classes::HUDObject, flags: u32) -> *mut classes::HUDObject;
+pub type HUDObject_vtable_Dtor = unsafe extern "C" fn(this: *mut crate::HUDObject, flags: u32) -> *mut crate::HUDObject;
 /// `HUDObject::ProcessMessage`, slot 2: lets an element consume a HUD message; base returns false (high).
-pub type HUDObject_vtable_ProcessMessage = unsafe extern "C" fn(this: *mut classes::HUDObject, msg: *mut classes::UIMessage) -> bool;
+pub type HUDObject_vtable_ProcessMessage = unsafe extern "C" fn(this: *mut crate::HUDObject, msg: *mut crate::UIMessage) -> bool;
 /// `HUDObject::RegisterHUDComponent`, slot 3: takes the element's AS object from the RegisterHUDComponents call (high).
-pub type HUDObject_vtable_RegisterHUDComponent = unsafe extern "C" fn(this: *mut classes::HUDObject, args: *mut c_void);
+pub type HUDObject_vtable_RegisterHUDComponent = unsafe extern "C" fn(this: *mut crate::HUDObject, args: *mut c_void);
 
 /// `HandlerCreationMissPolicy<BSTSmartPointer<IHandlerFunctor<Actor,BSFixedStringCI>,BSTSmartPointerIntrusiveRefCount>,BSFixedStringCI>::vftable` at 0x193b9b0, id 209841 (rtti, high); 1 slots.
 #[repr(C)]
@@ -143729,9 +143728,9 @@ impl HeldStateHandler_vtable {
     }
 }
 /// `HeldStateHandler::UpdateHeldState`, slot 7: after ProcessButton, held = !(value == 0 && heldDownSecs >= 0) (high).
-pub type HeldStateHandler_vtable_UpdateHeldState = unsafe extern "C" fn(this: *mut classes::HeldStateHandler, event: *mut classes::ButtonEvent);
+pub type HeldStateHandler_vtable_UpdateHeldState = unsafe extern "C" fn(this: *mut crate::HeldStateHandler, event: *mut crate::ButtonEvent);
 /// `HeldStateHandler::SetHeldState`, slot 8: stores held (high).
-pub type HeldStateHandler_vtable_SetHeldState = unsafe extern "C" fn(this: *mut classes::HeldStateHandler, held: bool);
+pub type HeldStateHandler_vtable_SetHeldState = unsafe extern "C" fn(this: *mut crate::HeldStateHandler, held: bool);
 
 /// `HelpMessageManager::vftable` at 0x1976980, id 215388 (rtti, high); 2 slots.
 #[repr(C)]
@@ -143899,31 +143898,31 @@ impl HorseCameraState_vtable {
     }
 }
 /// `HorseCameraState::Destroy`, slot 0: scalar deleting destructor: own vtables, ThirdPersonState::dtor 0x55d3d0, frees 0xf8 (high).
-pub type HorseCameraState_vtable_Destroy = unsafe extern "C" fn(this: *mut classes::HorseCameraState, flags: u32) -> *mut classes::HorseCameraState;
+pub type HorseCameraState_vtable_Destroy = unsafe extern "C" fn(this: *mut crate::HorseCameraState, flags: u32) -> *mut crate::HorseCameraState;
 /// `HorseCameraState::Begin`, slot 1: ThirdPersonState::Begin, mountHeading (high).
-pub type HorseCameraState_vtable_Begin = unsafe extern "C" fn(this: *mut classes::HorseCameraState);
+pub type HorseCameraState_vtable_Begin = unsafe extern "C" fn(this: *mut crate::HorseCameraState);
 /// `HorseCameraState::End`, slot 2: ThirdPersonState::End, +0xf0 = 0 (high).
-pub type HorseCameraState_vtable_End = unsafe extern "C" fn(this: *mut classes::HorseCameraState);
+pub type HorseCameraState_vtable_End = unsafe extern "C" fn(this: *mut crate::HorseCameraState);
 /// `HorseCameraState::SaveGame`, slot 6:  (high).
-pub type HorseCameraState_vtable_SaveGame = unsafe extern "C" fn(this: *mut classes::HorseCameraState, buffer: *mut classes::BGSSaveFormBuffer);
+pub type HorseCameraState_vtable_SaveGame = unsafe extern "C" fn(this: *mut crate::HorseCameraState, buffer: *mut crate::BGSSaveFormBuffer);
 /// `HorseCameraState::LoadGame`, slot 7: also SetTarget(mount) (high).
-pub type HorseCameraState_vtable_LoadGame = unsafe extern "C" fn(this: *mut classes::HorseCameraState, buffer: *mut classes::BGSLoadFormBuffer);
+pub type HorseCameraState_vtable_LoadGame = unsafe extern "C" fn(this: *mut crate::HorseCameraState, buffer: *mut crate::BGSLoadFormBuffer);
 /// `HorseCameraState::Revert`, slot 8:  (high).
-pub type HorseCameraState_vtable_Revert = unsafe extern "C" fn(this: *mut classes::HorseCameraState, buffer: *mut classes::BGSLoadFormBuffer);
+pub type HorseCameraState_vtable_Revert = unsafe extern "C" fn(this: *mut crate::HorseCameraState, buffer: *mut crate::BGSLoadFormBuffer);
 /// `HorseCameraState::SetTargetHandle`, slot 9: mountHandle = *handle (high).
-pub type HorseCameraState_vtable_SetTargetHandle = unsafe extern "C" fn(this: *mut classes::HorseCameraState, handle: *mut c_void);
+pub type HorseCameraState_vtable_SetTargetHandle = unsafe extern "C" fn(this: *mut crate::HorseCameraState, handle: *mut c_void);
 /// `HorseCameraState::ResetOffsets`, slot 10: offsets = mount actor+0x1f8 -> +0x180 vector or fOverShoulderHorse* (high).
-pub type HorseCameraState_vtable_ResetOffsets = unsafe extern "C" fn(this: *mut classes::HorseCameraState);
+pub type HorseCameraState_vtable_ResetOffsets = unsafe extern "C" fn(this: *mut crate::HorseCameraState);
 /// `HorseCameraState::SetCombatOffsets`, slot 11: fOverShoulderRangedMounted* or the mount offsets (high).
-pub type HorseCameraState_vtable_SetCombatOffsets = unsafe extern "C" fn(this: *mut classes::HorseCameraState, weaponDrawn: bool);
+pub type HorseCameraState_vtable_SetCombatOffsets = unsafe extern "C" fn(this: *mut crate::HorseCameraState, weaponDrawn: bool);
 /// `HorseCameraState::IsFreeLookActive`, slot 12:  (high).
-pub type HorseCameraState_vtable_IsFreeLookActive = unsafe extern "C" fn(this: *mut classes::HorseCameraState) -> bool;
+pub type HorseCameraState_vtable_IsFreeLookActive = unsafe extern "C" fn(this: *mut crate::HorseCameraState) -> bool;
 /// `HorseCameraState::SetFreeRotationMode`, slot 13: empty (high).
-pub type HorseCameraState_vtable_SetFreeRotationMode = unsafe extern "C" fn(this: *mut classes::HorseCameraState, allow: bool);
+pub type HorseCameraState_vtable_SetFreeRotationMode = unsafe extern "C" fn(this: *mut crate::HorseCameraState, allow: bool);
 /// `HorseCameraState::UpdateRotation`, slot 14:  (high).
-pub type HorseCameraState_vtable_UpdateRotation = unsafe extern "C" fn(this: *mut classes::HorseCameraState);
+pub type HorseCameraState_vtable_UpdateRotation = unsafe extern "C" fn(this: *mut crate::HorseCameraState);
 /// `HorseCameraState::ProcessLookInput`, slot 15:  (high).
-pub type HorseCameraState_vtable_ProcessLookInput = unsafe extern "C" fn(this: *mut classes::HorseCameraState, look: *mut c_void);
+pub type HorseCameraState_vtable_ProcessLookInput = unsafe extern "C" fn(this: *mut crate::HorseCameraState, look: *mut c_void);
 
 /// `HorseCameraState::vftable_20` at 0x196ced0, id 214839 (rtti, high); 7 slots.
 #[repr(C)]
@@ -144229,25 +144228,25 @@ impl IAnimationGraphManagerHolder_vtable {
     }
 }
 /// `IAnimationGraphManagerHolder::dtor`, slot 0: virtual destructor (high).
-pub type IAnimationGraphManagerHolder_vtable_dtor = unsafe extern "C" fn(this: *mut classes::IAnimationGraphManagerHolder, flags: u32) -> *mut classes::IAnimationGraphManagerHolder;
+pub type IAnimationGraphManagerHolder_vtable_dtor = unsafe extern "C" fn(this: *mut crate::IAnimationGraphManagerHolder, flags: u32) -> *mut crate::IAnimationGraphManagerHolder;
 /// `IAnimationGraphManagerHolder::NotifyAnimationGraph`, slot 1: sends a behaviour event by name to every graph of the holder's manager (and its dependent managers); true if at least one graph accepted it (high).
-pub type IAnimationGraphManagerHolder_vtable_NotifyAnimationGraph = unsafe extern "C" fn(this: *mut classes::IAnimationGraphManagerHolder, eventName: *const classes::BSFixedString) -> bool;
+pub type IAnimationGraphManagerHolder_vtable_NotifyAnimationGraph = unsafe extern "C" fn(this: *mut crate::IAnimationGraphManagerHolder, eventName: *const crate::BSFixedString) -> bool;
 /// `IAnimationGraphManagerHolder::GetAnimationGraphManager`, slot 2: for actors: the manager at middleHigh+0x1a8 (AIProcess+0x8 -> +0x1a8), add-ref'd into *out (high).
-pub type IAnimationGraphManagerHolder_vtable_GetAnimationGraphManager = unsafe extern "C" fn(this: *mut classes::IAnimationGraphManagerHolder, out: *mut c_void) -> bool;
+pub type IAnimationGraphManagerHolder_vtable_GetAnimationGraphManager = unsafe extern "C" fn(this: *mut crate::IAnimationGraphManagerHolder, out: *mut c_void) -> bool;
 /// `IAnimationGraphManagerHolder::InitializeGraphVariables`, slot 7: writes the reference's initial graph variables into a freshly loaded graph (high).
-pub type IAnimationGraphManagerHolder_vtable_InitializeGraphVariables = unsafe extern "C" fn(this: *mut classes::IAnimationGraphManagerHolder, graph: *mut c_void) -> bool;
+pub type IAnimationGraphManagerHolder_vtable_InitializeGraphVariables = unsafe extern "C" fn(this: *mut crate::IAnimationGraphManagerHolder, graph: *mut c_void) -> bool;
 /// `IAnimationGraphManagerHolder::RegisterGraphEventSinks`, slot 8: connects the reference's sinks to one graph's event sources (high).
-pub type IAnimationGraphManagerHolder_vtable_RegisterGraphEventSinks = unsafe extern "C" fn(this: *mut classes::IAnimationGraphManagerHolder, graph: *mut c_void) -> bool;
+pub type IAnimationGraphManagerHolder_vtable_RegisterGraphEventSinks = unsafe extern "C" fn(this: *mut crate::IAnimationGraphManagerHolder, graph: *mut c_void) -> bool;
 /// `IAnimationGraphManagerHolder::CreateAnimationChannels`, slot 10: creates the per-frame variable channels the manager pushes into the graphs (high).
-pub type IAnimationGraphManagerHolder_vtable_CreateAnimationChannels = unsafe extern "C" fn(this: *mut classes::IAnimationGraphManagerHolder, out: *mut c_void) -> bool;
+pub type IAnimationGraphManagerHolder_vtable_CreateAnimationChannels = unsafe extern "C" fn(this: *mut crate::IAnimationGraphManagerHolder, out: *mut c_void) -> bool;
 /// `IAnimationGraphManagerHolder::GetGraphVariableCacheSize`, slot 15: capacity of the manager's name -> value-pointer variable cache (high).
-pub type IAnimationGraphManagerHolder_vtable_GetGraphVariableCacheSize = unsafe extern "C" fn(this: *mut classes::IAnimationGraphManagerHolder) -> u32;
+pub type IAnimationGraphManagerHolder_vtable_GetGraphVariableCacheSize = unsafe extern "C" fn(this: *mut crate::IAnimationGraphManagerHolder) -> u32;
 /// `IAnimationGraphManagerHolder::GetGraphVariableFloat`, slot 16: reads a float graph variable of the active graph (high).
-pub type IAnimationGraphManagerHolder_vtable_GetGraphVariableFloat = unsafe extern "C" fn(this: *mut classes::IAnimationGraphManagerHolder, name: *const classes::BSFixedString, out: *mut f32) -> bool;
+pub type IAnimationGraphManagerHolder_vtable_GetGraphVariableFloat = unsafe extern "C" fn(this: *mut crate::IAnimationGraphManagerHolder, name: *const crate::BSFixedString, out: *mut f32) -> bool;
 /// `IAnimationGraphManagerHolder::GetGraphVariableInt`, slot 17: reads an int graph variable of the active graph (high).
-pub type IAnimationGraphManagerHolder_vtable_GetGraphVariableInt = unsafe extern "C" fn(this: *mut classes::IAnimationGraphManagerHolder, name: *const classes::BSFixedString, out: *mut i32) -> bool;
+pub type IAnimationGraphManagerHolder_vtable_GetGraphVariableInt = unsafe extern "C" fn(this: *mut crate::IAnimationGraphManagerHolder, name: *const crate::BSFixedString, out: *mut i32) -> bool;
 /// `IAnimationGraphManagerHolder::GetGraphVariableBool`, slot 18: reads a bool graph variable of the active graph (high).
-pub type IAnimationGraphManagerHolder_vtable_GetGraphVariableBool = unsafe extern "C" fn(this: *mut classes::IAnimationGraphManagerHolder, name: *const classes::BSFixedString, out: *mut bool) -> bool;
+pub type IAnimationGraphManagerHolder_vtable_GetGraphVariableBool = unsafe extern "C" fn(this: *mut crate::IAnimationGraphManagerHolder, name: *const crate::BSFixedString, out: *mut bool) -> bool;
 
 /// `IAnimationGraphManagerLoadingTask::vftable` at 0x18eb2b0, id 205176 (rtti, high); 21 slots.
 #[repr(C)]
@@ -144947,7 +144946,7 @@ impl IMapCameraCallbacks_vtable {
     }
 }
 /// `IMapCameraCallbacks::Destroy`, slot 2: frees 8 bytes when flags & 1 (high).
-pub type IMapCameraCallbacks_vtable_Destroy = unsafe extern "C" fn(this: *mut classes::IMapCameraCallbacks, flags: u32) -> *mut classes::IMapCameraCallbacks;
+pub type IMapCameraCallbacks_vtable_Destroy = unsafe extern "C" fn(this: *mut crate::IMapCameraCallbacks, flags: u32) -> *mut crate::IMapCameraCallbacks;
 
 /// `IMemoryHeap::vftable` at 0x1a226f0, id 236662 (rtti, high); 15 slots.
 #[repr(C)]
@@ -145129,19 +145128,19 @@ impl IMenu_vtable {
     }
 }
 /// `IMenu::vdtor`, slot 0: destructor; bit 0 frees: through the Scaleform heap (*0x3275ae0 slot 0x60) unless bit 2, then FreeDefaultHeapMemory(0x30) (high).
-pub type IMenu_vtable_vdtor = unsafe extern "C" fn(this: *mut classes::IMenu, flags: u32) -> *mut classes::IMenu;
+pub type IMenu_vtable_vdtor = unsafe extern "C" fn(this: *mut crate::IMenu, flags: u32) -> *mut crate::IMenu;
 /// `IMenu::Accept`, slot 1: FxDelegateHandler slot: registers the menu's named ActionScript callbacks with processor->slot1(name, fn); empty in IMenu (high).
-pub type IMenu_vtable_Accept = unsafe extern "C" fn(this: *mut classes::IMenu, processor: *mut classes::partial::FxDelegateHandler__CallbackProcessor);
+pub type IMenu_vtable_Accept = unsafe extern "C" fn(this: *mut crate::IMenu, processor: *mut crate::FxDelegateHandler__CallbackProcessor);
 /// `IMenu::PostCreate`, slot 2: called once right after the creator returned the new menu, before it is stored in the UI table; empty in IMenu (high).
-pub type IMenu_vtable_PostCreate = unsafe extern "C" fn(this: *mut classes::IMenu);
+pub type IMenu_vtable_PostCreate = unsafe extern "C" fn(this: *mut crate::IMenu);
 /// `IMenu::AdvanceMovie`, slot 5: per-frame advance: sets the movie variable "CurrentTime" (a number) and advances the movie by interval (movie slot 0x128 with frame catch-up 2) (high).
-pub type IMenu_vtable_AdvanceMovie = unsafe extern "C" fn(this: *mut classes::IMenu, interval: f32, currentTimeMs: u32);
+pub type IMenu_vtable_AdvanceMovie = unsafe extern "C" fn(this: *mut crate::IMenu, interval: f32, currentTimeMs: u32);
 /// `IMenu::PostDisplay`, slot 6: draws the menu in the UI pass after the world: IMenu's default tail-calls movie slot 0x130 (display) when the movie exists (high).
-pub type IMenu_vtable_PostDisplay = unsafe extern "C" fn(this: *mut classes::IMenu);
+pub type IMenu_vtable_PostDisplay = unsafe extern "C" fn(this: *mut crate::IMenu);
 /// `IMenu::PreDisplay`, slot 7: off-screen draw before the world: called each frame for menus with flag 0x1000; empty in IMenu (high).
-pub type IMenu_vtable_PreDisplay = unsafe extern "C" fn(this: *mut classes::IMenu);
+pub type IMenu_vtable_PreDisplay = unsafe extern "C" fn(this: *mut crate::IMenu);
 /// `IMenu::RefreshPlatform`, slot 8: re-applies the input platform: calls RefreshMenuPlatform 0x116ef00 ("_root.SetPlatform"(gamepad ? 1 : 0, false); for flag-0x400 menus sets/clears flag 4 and queues the cursor menu) (high).
-pub type IMenu_vtable_RefreshPlatform = unsafe extern "C" fn(this: *mut classes::IMenu);
+pub type IMenu_vtable_RefreshPlatform = unsafe extern "C" fn(this: *mut crate::IMenu);
 
 /// `IMessageBoxCallback::vftable` at 0x18eec28, id 205383 (rtti, high); 2 slots.
 #[repr(C)]
@@ -145161,7 +145160,7 @@ impl IMessageBoxCallback_vtable {
     }
 }
 /// `IMessageBoxCallback::Dtor`, slot 0: deleting destructor (high).
-pub type IMessageBoxCallback_vtable_Dtor = unsafe extern "C" fn(this: *mut classes::IMessageBoxCallback, flags: u32) -> *mut classes::IMessageBoxCallback;
+pub type IMessageBoxCallback_vtable_Dtor = unsafe extern "C" fn(this: *mut crate::IMessageBoxCallback, flags: u32) -> *mut crate::IMessageBoxCallback;
 
 /// `IMovementAgentDataTracker<IMovementHandlerAgent,MovementHandlerOutputDataSmallDelta>::vftable` at 0x1ac6c38, id 246417 (rtti, high); 2 slots.
 #[repr(C)]
@@ -147498,9 +147497,9 @@ impl ImageSpaceModifierInstanceForm_vtable {
     }
 }
 /// `ImageSpaceModifierInstanceForm::IsFinished`, slot 37: true when the form has a duration (imod+0x20) and clock - startTime exceeds imod+0x24 (high).
-pub type ImageSpaceModifierInstanceForm_vtable_IsFinished = unsafe extern "C" fn(this: *mut classes::ImageSpaceModifierInstanceForm) -> bool;
+pub type ImageSpaceModifierInstanceForm_vtable_IsFinished = unsafe extern "C" fn(this: *mut crate::ImageSpaceModifierInstanceForm) -> bool;
 /// `ImageSpaceModifierInstanceForm::Apply`, slot 38: blends the form's curves at (clock - startTime) into g_ImageSpaceState's parameters +0xc8 (high).
-pub type ImageSpaceModifierInstanceForm_vtable_Apply = unsafe extern "C" fn(this: *mut classes::ImageSpaceModifierInstanceForm);
+pub type ImageSpaceModifierInstanceForm_vtable_Apply = unsafe extern "C" fn(this: *mut crate::ImageSpaceModifierInstanceForm);
 
 /// `ImageSpaceModifierInstanceRB::vftable` at 0x181ec50, id 189980 (rtti, high); 41 slots.
 #[repr(C)]
@@ -148170,9 +148169,9 @@ impl InputEvent_vtable {
     }
 }
 /// `InputEvent::HasIDCode`, slot 1: false here (CharEvent, DeviceConnectEvent); IDEvent 0x7b4470 returns true (high).
-pub type InputEvent_vtable_HasIDCode = unsafe extern "C" fn(this: *mut classes::InputEvent) -> bool;
+pub type InputEvent_vtable_HasIDCode = unsafe extern "C" fn(this: *mut crate::InputEvent) -> bool;
 /// `InputEvent::QUserEvent`, slot 2: the empty string here; IDEvent 0x7b4830 returns this+0x18 (high).
-pub type InputEvent_vtable_QUserEvent = unsafe extern "C" fn(this: *mut classes::InputEvent) -> *const classes::BSFixedString;
+pub type InputEvent_vtable_QUserEvent = unsafe extern "C" fn(this: *mut crate::InputEvent) -> *const crate::BSFixedString;
 
 /// `InstalledContent::vftable` at 0x1905718, id 465278 (rtti, high); 2 slots.
 #[repr(C)]
@@ -148562,15 +148561,15 @@ impl IronSightsState_vtable {
     }
 }
 /// `IronSightsState::Destroy`, slot 0: scalar deleting destructor: calls 0x8f76c0 (destructor body: vtable = TESCameraState::vftable), frees 0x28 when flags & 1 (high).
-pub type IronSightsState_vtable_Destroy = unsafe extern "C" fn(this: *mut classes::IronSightsState, flags: u32) -> *mut classes::IronSightsState;
+pub type IronSightsState_vtable_Destroy = unsafe extern "C" fn(this: *mut crate::IronSightsState, flags: u32) -> *mut crate::IronSightsState;
 /// `IronSightsState::Begin`, slot 1: SetFirstPerson(true) (high).
-pub type IronSightsState_vtable_Begin = unsafe extern "C" fn(this: *mut classes::TESCameraState);
+pub type IronSightsState_vtable_Begin = unsafe extern "C" fn(this: *mut crate::TESCameraState);
 /// `IronSightsState::Update`, slot 3: writes the root from slots 4/5 (high).
-pub type IronSightsState_vtable_Update = unsafe extern "C" fn(this: *mut classes::TESCameraState, next: *mut c_void);
+pub type IronSightsState_vtable_Update = unsafe extern "C" fn(this: *mut crate::TESCameraState, next: *mut c_void);
 /// `IronSightsState::GetRotation`, slot 4:  (high).
-pub type IronSightsState_vtable_GetRotation = unsafe extern "C" fn(this: *mut classes::IronSightsState, out: *mut c_void);
+pub type IronSightsState_vtable_GetRotation = unsafe extern "C" fn(this: *mut crate::IronSightsState, out: *mut c_void);
 /// `IronSightsState::GetTranslation`, slot 5:  (high).
-pub type IronSightsState_vtable_GetTranslation = unsafe extern "C" fn(this: *mut classes::IronSightsState, out: *mut c_void);
+pub type IronSightsState_vtable_GetTranslation = unsafe extern "C" fn(this: *mut crate::IronSightsState, out: *mut c_void);
 
 /// `IsSpellTargetFunctor::vftable` at 0x18f8d60, id 205918 (rtti, high); 2 slots.
 #[repr(C)]
@@ -149004,7 +149003,7 @@ impl JumpHandler_vtable {
     }
 }
 /// `JumpHandler::CanProcess`, slot 1: Jump (high).
-pub type JumpHandler_vtable_CanProcess = unsafe extern "C" fn(this: *mut classes::JumpHandler, event: *mut classes::InputEvent) -> bool;
+pub type JumpHandler_vtable_CanProcess = unsafe extern "C" fn(this: *mut crate::JumpHandler, event: *mut crate::InputEvent) -> bool;
 
 /// `KeywordDispelFunctor::vftable` at 0x18f8d48, id 205916 (rtti, high); 2 slots.
 #[repr(C)]
@@ -149808,7 +149807,7 @@ impl LocalMapCamera_vtable {
     }
 }
 /// `LocalMapCamera::Destroy`, slot 0: dtor 0x248060 then free 0x68 when flags & 1 (high).
-pub type LocalMapCamera_vtable_Destroy = unsafe extern "C" fn(this: *mut classes::LocalMapCamera, flags: u32) -> *mut classes::LocalMapCamera;
+pub type LocalMapCamera_vtable_Destroy = unsafe extern "C" fn(this: *mut crate::LocalMapCamera, flags: u32) -> *mut crate::LocalMapCamera;
 
 /// `LocalMapCamera::DefaultState::vftable` at 0x18064d0, id 188661 (rtti, high); 9 slots.
 #[repr(C)]
@@ -149854,11 +149853,11 @@ impl LocalMapCamera__DefaultState_vtable {
     }
 }
 /// `LocalMapCamera::DefaultState::Destroy`, slot 0: resets the vtable to TESCameraState's and frees 0x48 when flags & 1 (high).
-pub type LocalMapCamera__DefaultState_vtable_Destroy = unsafe extern "C" fn(this: *mut classes::LocalMapCamera__DefaultState, flags: u32) -> *mut classes::LocalMapCamera__DefaultState;
+pub type LocalMapCamera__DefaultState_vtable_Destroy = unsafe extern "C" fn(this: *mut crate::LocalMapCamera__DefaultState, flags: u32) -> *mut crate::LocalMapCamera__DefaultState;
 /// `LocalMapCamera::DefaultState::Begin`, slot 1: panOffset = 0, zoom = 0.5 (high).
-pub type LocalMapCamera__DefaultState_vtable_Begin = unsafe extern "C" fn(this: *mut classes::LocalMapCamera__DefaultState);
+pub type LocalMapCamera__DefaultState_vtable_Begin = unsafe extern "C" fn(this: *mut crate::LocalMapCamera__DefaultState);
 /// `LocalMapCamera::DefaultState::Update`, slot 3: rotates the area corners by northRotation, applies zoom and pan input, sets the NiCamera's orthographic frustum {-w, w, w*r, -w*r, near 100, far = boundMax.z - boundMin.z + 100, ortho 1} (boundMax.z already includes fMapLocalHeight), clamps the pan, places the root at (center + panOffset).xy, z = boundMax.z + 100, UpdateNode (high).
-pub type LocalMapCamera__DefaultState_vtable_Update = unsafe extern "C" fn(this: *mut classes::LocalMapCamera__DefaultState, next: *mut c_void);
+pub type LocalMapCamera__DefaultState_vtable_Update = unsafe extern "C" fn(this: *mut crate::LocalMapCamera__DefaultState, next: *mut c_void);
 
 /// `LocalMapMenu::InputHandler::vftable` at 0x1985b70, id 216412 (rtti, high); 8 slots.
 #[repr(C)]
@@ -150118,15 +150117,15 @@ impl LookHandler_vtable {
     }
 }
 /// `LookHandler::Destroy`, slot 0: releases the embedded event's string, resets the embedded vtable and its own, frees 0xb8 when flags bit 0 (high).
-pub type LookHandler_vtable_Destroy = unsafe extern "C" fn(this: *mut classes::LookHandler, flags: u32) -> *mut classes::LookHandler;
+pub type LookHandler_vtable_Destroy = unsafe extern "C" fn(this: *mut crate::LookHandler, flags: u32) -> *mut crate::LookHandler;
 /// `LookHandler::CanProcess`, slot 1: Look, or a type-6 (motion) event that 0x7b5200 accepts (bEnableSixaxisBowAiming/bEnableSixaxisMagicAiming with a matching equipped weapon or spell) (high).
-pub type LookHandler_vtable_CanProcess = unsafe extern "C" fn(this: *mut classes::LookHandler, event: *mut classes::InputEvent) -> bool;
+pub type LookHandler_vtable_CanProcess = unsafe extern "C" fn(this: *mut crate::LookHandler, event: *mut crate::InputEvent) -> bool;
 /// `LookHandler::ProcessMotion`, slot 3: motion-controller aiming: only with bEnableSixaxisBowAiming and a bow/crossbow drawn (weapon types 7 / 12) or bEnableSixaxisMagicAiming with a usable hand caster; otherwise resets the embedded event. When look input is zero: the relative rotation between the new orientation and the stored one gives pitch/heading deltas, smoothed by alpha in [fSixaxisAlphaMin, 1] (scaled by fSixaxisAlphaMaxThreshold), scaled during bow zoom (PlayerCamera+0x161) by the FOV ratio (bSixaxisAimingRespectsFOV) and the time multiplier (bSixaxisAimingRespectsTimeMultiplier); applies ApplyClampedPitchDelta (not mounted) and the heading delta to the player, sets data+0x26, stores the event and the deltas (high).
-pub type LookHandler_vtable_ProcessMotion = unsafe extern "C" fn(this: *mut classes::LookHandler, event: *mut classes::SixaxisEvent, data: *mut c_void);
+pub type LookHandler_vtable_ProcessMotion = unsafe extern "C" fn(this: *mut crate::LookHandler, event: *mut crate::SixaxisEvent, data: *mut c_void);
 /// `LookHandler::ProcessThumbstick`, slot 4: data.lookInput (data+8, +0xc) = event x, y (+0x28, +0x2c) unchanged (high).
-pub type LookHandler_vtable_ProcessThumbstick = unsafe extern "C" fn(this: *mut classes::LookHandler, event: *const classes::ThumbstickEvent, data: *mut c_void);
+pub type LookHandler_vtable_ProcessThumbstick = unsafe extern "C" fn(this: *mut crate::LookHandler, event: *const crate::ThumbstickEvent, data: *mut c_void);
 /// `LookHandler::ProcessMouseMove`, slot 5: adds the mouse delta (scaled) to the look input of PlayerControls+0x24 (high).
-pub type LookHandler_vtable_ProcessMouseMove = unsafe extern "C" fn(this: *mut classes::LookHandler, event: *const classes::MouseMoveEvent, data: *mut c_void);
+pub type LookHandler_vtable_ProcessMouseMove = unsafe extern "C" fn(this: *mut crate::LookHandler, event: *const crate::MouseMoveEvent, data: *mut c_void);
 
 /// `MTStateHandler::vftable` at 0x19386b8, id 208989 (rtti, high); 2 slots.
 #[repr(C)]
@@ -150796,9 +150795,9 @@ impl MapCamera_vtable {
     }
 }
 /// `MapCamera::Destroy`, slot 0: releases transition and exit states, destroys worldStates, TESCamera::dtor, frees 0x90 when flags & 1 (high).
-pub type MapCamera_vtable_Destroy = unsafe extern "C" fn(this: *mut classes::MapCamera, flags: u32) -> *mut classes::MapCamera;
+pub type MapCamera_vtable_Destroy = unsafe extern "C" fn(this: *mut crate::MapCamera, flags: u32) -> *mut crate::MapCamera;
 /// `MapCamera::Enter`, slot 3: sets the root; with a root and a worldspace: hides the player's first-person 3D, orients the root by the map's default pitch, places it at position, configures worldStates[index] around position, starts the Transition (mode 1) into it (high).
-pub type MapCamera_vtable_Enter = unsafe extern "C" fn(this: *mut classes::MapCamera, root: *mut classes::NiNode, position: *const c_void);
+pub type MapCamera_vtable_Enter = unsafe extern "C" fn(this: *mut crate::MapCamera, root: *mut crate::NiNode, position: *const c_void);
 
 /// `MapCameraStates::Exit::vftable` at 0x1985ff0, id 216445 (rtti, high); 9 slots.
 #[repr(C)]
@@ -150856,15 +150855,15 @@ impl MapCameraStates__Exit_vtable {
     }
 }
 /// `MapCameraStates::Exit::Destroy`, slot 0: frees 0x20 when flags & 1 (high).
-pub type MapCameraStates__Exit_vtable_Destroy = unsafe extern "C" fn(this: *mut classes::MapCameraStates__Exit, flags: u32) -> *mut classes::MapCameraStates__Exit;
+pub type MapCameraStates__Exit_vtable_Destroy = unsafe extern "C" fn(this: *mut crate::MapCameraStates__Exit, flags: u32) -> *mut crate::MapCameraStates__Exit;
 /// `MapCameraStates::Exit::Begin`, slot 1: tail-calls camera->callbacks slot 1 (OnExitBegin; empty in MapMenu) (high).
-pub type MapCameraStates__Exit_vtable_Begin = unsafe extern "C" fn(this: *mut classes::MapCameraStates__Exit);
+pub type MapCameraStates__Exit_vtable_Begin = unsafe extern "C" fn(this: *mut crate::MapCameraStates__Exit);
 /// `MapCameraStates::Exit::Update`, slot 3: queues {MapMenu, hide (3)} and {HUD Menu, show (1)} on every Update (high).
-pub type MapCameraStates__Exit_vtable_Update = unsafe extern "C" fn(this: *mut classes::MapCameraStates__Exit, next: *mut c_void);
+pub type MapCameraStates__Exit_vtable_Update = unsafe extern "C" fn(this: *mut crate::MapCameraStates__Exit, next: *mut c_void);
 /// `MapCameraStates::Exit::GetRotation`, slot 4: a rotation about one axis by the map's default pitch: SinCos(mapData+0x18 * -pi/360) into the first two components, the last two 0; unchanged when the camera has no worldspace (high).
-pub type MapCameraStates__Exit_vtable_GetRotation = unsafe extern "C" fn(this: *const classes::MapCameraStates__Exit, out: *mut c_void);
+pub type MapCameraStates__Exit_vtable_GetRotation = unsafe extern "C" fn(this: *const crate::MapCameraStates__Exit, out: *mut c_void);
 /// `MapCameraStates::Exit::GetTranslation`, slot 5: *out = camera->entryPosition (+0x40) (high).
-pub type MapCameraStates__Exit_vtable_GetTranslation = unsafe extern "C" fn(this: *const classes::MapCameraStates__Exit, out: *mut c_void);
+pub type MapCameraStates__Exit_vtable_GetTranslation = unsafe extern "C" fn(this: *const crate::MapCameraStates__Exit, out: *mut c_void);
 
 /// `MapCameraStates::Transition::vftable` at 0x1985fa0, id 216443 (rtti, high); 9 slots.
 #[repr(C)]
@@ -150910,11 +150909,11 @@ impl MapCameraStates__Transition_vtable {
     }
 }
 /// `MapCameraStates::Transition::Destroy`, slot 0: releases targetState, frees 0x88 when flags & 1 (high).
-pub type MapCameraStates__Transition_vtable_Destroy = unsafe extern "C" fn(this: *mut classes::MapCameraStates__Transition, flags: u32) -> *mut classes::MapCameraStates__Transition;
+pub type MapCameraStates__Transition_vtable_Destroy = unsafe extern "C" fn(this: *mut crate::MapCameraStates__Transition, flags: u32) -> *mut crate::MapCameraStates__Transition;
 /// `MapCameraStates::Transition::Begin`, slot 1: TransitionState::Begin, heightEventFired = 0 (high).
-pub type MapCameraStates__Transition_vtable_Begin = unsafe extern "C" fn(this: *mut classes::MapCameraStates__Transition);
+pub type MapCameraStates__Transition_vtable_Begin = unsafe extern "C" fn(this: *mut crate::MapCameraStates__Transition);
 /// `MapCameraStates::Transition::Update`, slot 3: for a World target (id 0): UpdateHeightAtClampedPosition(target) and re-read its translation and rotation; TransitionState::Update; then the one-shot height event per mode (high).
-pub type MapCameraStates__Transition_vtable_Update = unsafe extern "C" fn(this: *mut classes::MapCameraStates__Transition, next: *mut c_void);
+pub type MapCameraStates__Transition_vtable_Update = unsafe extern "C" fn(this: *mut crate::MapCameraStates__Transition, next: *mut c_void);
 
 /// `MapCameraStates::World::vftable` at 0x19864b0, id 216457 (rtti, high); 9 slots.
 #[repr(C)]
@@ -150972,15 +150971,15 @@ impl MapCameraStates__World_vtable {
     }
 }
 /// `MapCameraStates::World::Destroy`, slot 0: frees boundsPolygon, frees 0x78 when flags & 1 (high).
-pub type MapCameraStates__World_vtable_Destroy = unsafe extern "C" fn(this: *mut classes::MapCameraStates__World, flags: u32) -> *mut classes::MapCameraStates__World;
+pub type MapCameraStates__World_vtable_Destroy = unsafe extern "C" fn(this: *mut crate::MapCameraStates__World, flags: u32) -> *mut crate::MapCameraStates__World;
 /// `MapCameraStates::World::Begin`, slot 1: reads yaw and pitch back from the root's world rotation; calls callbacks slot 0 when notifyOnBegin (high).
-pub type MapCameraStates__World_vtable_Begin = unsafe extern "C" fn(this: *mut classes::MapCameraStates__World);
+pub type MapCameraStates__World_vtable_Begin = unsafe extern "C" fn(this: *mut crate::MapCameraStates__World);
 /// `MapCameraStates::World::Update`, slot 3: the map camera step: delta = min(frameDelta, 0.033); yaw/pitch with soft limits; root local rotation = BuildRotationMatrixFromAngles_2 0xede800(yaw, 0, pitch); pan; bounds; terrain-height follow; zoom; root local translation = position; UpdateNode (high).
-pub type MapCameraStates__World_vtable_Update = unsafe extern "C" fn(this: *mut classes::MapCameraStates__World, next: *mut c_void);
+pub type MapCameraStates__World_vtable_Update = unsafe extern "C" fn(this: *mut crate::MapCameraStates__World, next: *mut c_void);
 /// `MapCameraStates::World::GetRotation`, slot 4: quaternion looking from GetTranslation toward basePosition (high).
-pub type MapCameraStates__World_vtable_GetRotation = unsafe extern "C" fn(this: *const classes::MapCameraStates__World, out: *mut c_void);
+pub type MapCameraStates__World_vtable_GetRotation = unsafe extern "C" fn(this: *const crate::MapCameraStates__World, out: *mut c_void);
 /// `MapCameraStates::World::GetTranslation`, slot 5: camera position: basePosition.xy + panOffset.xy + heightOffset.xy + zoom * zoomAxis.xy; z = panOffset.z + terrainHeight + heightOffset.z + zoom * zoomAxis.z (high).
-pub type MapCameraStates__World_vtable_GetTranslation = unsafe extern "C" fn(this: *const classes::MapCameraStates__World, out: *mut c_void);
+pub type MapCameraStates__World_vtable_GetTranslation = unsafe extern "C" fn(this: *const crate::MapCameraStates__World, out: *mut c_void);
 
 /// `MapInputHandler::vftable` at 0x1987128, id 216489 (rtti, high); 8 slots.
 #[repr(C)]
@@ -151420,9 +151419,9 @@ impl MenuControls_vtable {
     }
 }
 /// `MenuControls::vdtor`, slot 0:  (high).
-pub type MenuControls_vtable_vdtor = unsafe extern "C" fn(this: *mut classes::MenuControls, flags: u32) -> *mut classes::MenuControls;
+pub type MenuControls_vtable_vdtor = unsafe extern "C" fn(this: *mut crate::MenuControls, flags: u32) -> *mut crate::MenuControls;
 /// `MenuControls::ProcessEvent`, slot 1: walks the frame's InputEvent list (next at +0x10) and dispatches (see answers); returns 0 (high).
-pub type MenuControls_vtable_ProcessEvent = unsafe extern "C" fn(this: *mut classes::MenuControls, head: *mut *mut classes::InputEvent, source: *mut c_void) -> u32;
+pub type MenuControls_vtable_ProcessEvent = unsafe extern "C" fn(this: *mut crate::MenuControls, head: *mut *mut crate::InputEvent, source: *mut c_void) -> u32;
 
 /// `MenuControls::vftable_8` at 0x197c200, id 215775 (rtti, high); 2 slots.
 #[repr(C)]
@@ -151472,7 +151471,7 @@ impl MenuEventHandler_vtable {
     pub const SLOT_ProcessButtonEvent: usize = 7;
 }
 /// `MenuEventHandler::vdtor`, slot 0: destructor (high).
-pub type MenuEventHandler_vtable_vdtor = unsafe extern "C" fn(this: *mut classes::MenuEventHandler, flags: u32) -> *mut classes::MenuEventHandler;
+pub type MenuEventHandler_vtable_vdtor = unsafe extern "C" fn(this: *mut crate::MenuEventHandler, flags: u32) -> *mut crate::MenuEventHandler;
 
 /// `MenuOpenHandler::vftable` at 0x197c350, id 215783 (rtti, high); 8 slots.
 #[repr(C)]
@@ -151511,9 +151510,9 @@ impl MenuOpenHandler_vtable {
     }
 }
 /// `MenuOpenHandler::CanProcess`, slot 1:  (high).
-pub type MenuOpenHandler_vtable_CanProcess = unsafe extern "C" fn(this: *mut classes::MenuOpenHandler, event: *mut classes::InputEvent) -> bool;
+pub type MenuOpenHandler_vtable_CanProcess = unsafe extern "C" fn(this: *mut crate::MenuOpenHandler, event: *mut crate::InputEvent) -> bool;
 /// `MenuOpenHandler::ProcessButtonEvent`, slot 7:  (high).
-pub type MenuOpenHandler_vtable_ProcessButtonEvent = unsafe extern "C" fn(this: *mut classes::MenuOpenHandler, event: *mut classes::ButtonEvent) -> bool;
+pub type MenuOpenHandler_vtable_ProcessButtonEvent = unsafe extern "C" fn(this: *mut crate::MenuOpenHandler, event: *mut crate::ButtonEvent) -> bool;
 
 /// `MenuTopicManager::vftable` at 0x18fea40, id 206215 (rtti, high); 2 slots.
 #[repr(C)]
@@ -151593,11 +151592,11 @@ impl MessageBoxMenu_vtable {
     }
 }
 /// `MessageBoxMenu::Dtor`, slot 0: deletes every queued MessageBoxData, clears g_MessageBoxMenu (high).
-pub type MessageBoxMenu_vtable_Dtor = unsafe extern "C" fn(this: *mut classes::MessageBoxMenu, flags: u32) -> *mut classes::MessageBoxMenu;
+pub type MessageBoxMenu_vtable_Dtor = unsafe extern "C" fn(this: *mut crate::MessageBoxMenu, flags: u32) -> *mut crate::MessageBoxMenu;
 /// `MessageBoxMenu::Accept`, slot 1: registers 'buttonPress' (0x962f50) and 'PlaySound' (high).
-pub type MessageBoxMenu_vtable_Accept = unsafe extern "C" fn(this: *mut classes::MessageBoxMenu, p: *mut classes::partial::FxDelegateHandler__CallbackProcessor);
+pub type MessageBoxMenu_vtable_Accept = unsafe extern "C" fn(this: *mut crate::MessageBoxMenu, p: *mut crate::FxDelegateHandler__CallbackProcessor);
 /// `MessageBoxMenu::ProcessMessage`, slot 4: on show (1) shows the top queued box unless 'Loading Menu' is open; refuses hide (3) while boxes remain (high).
-pub type MessageBoxMenu_vtable_ProcessMessage = unsafe extern "C" fn(this: *mut classes::MessageBoxMenu, msg: *mut classes::UIMessage) -> u32;
+pub type MessageBoxMenu_vtable_ProcessMessage = unsafe extern "C" fn(this: *mut crate::MessageBoxMenu, msg: *mut crate::UIMessage) -> u32;
 
 /// `MessageHandler::vftable` at 0x1a6bdc8, id 238272 (rtti, high); 7 slots.
 #[repr(C)]
@@ -153877,7 +153876,7 @@ impl MovementHandler_vtable {
     }
 }
 /// `MovementHandler::CanProcess`, slot 1: Forward/Back/Strafe Left/Strafe Right/Move (high).
-pub type MovementHandler_vtable_CanProcess = unsafe extern "C" fn(this: *mut classes::MovementHandler, event: *mut classes::InputEvent) -> bool;
+pub type MovementHandler_vtable_CanProcess = unsafe extern "C" fn(this: *mut crate::MovementHandler, event: *mut crate::InputEvent) -> bool;
 
 /// `MovementHandlerAgent::vftable` at 0x1ac6b70, id 246409 (rtti, high); 13 slots.
 #[repr(C)]
@@ -157190,23 +157189,23 @@ impl NiAVObject_vtable {
     }
 }
 /// `NiAVObject::CreateClone`, slot 23: allocates a copy (NiNode's version 0x128 bytes, NiCamera's 0x188, BSFadeNode's 0x158) (high).
-pub type NiAVObject_vtable_CreateClone = unsafe extern "C" fn(this: *mut classes::NiObject, process: *mut c_void) -> *mut classes::NiObject;
+pub type NiAVObject_vtable_CreateClone = unsafe extern "C" fn(this: *mut crate::NiObject, process: *mut c_void) -> *mut crate::NiObject;
 /// `NiAVObject::UpdateControllers`, slot 37: runs each controller's slot 39 when data->flags bit 0 is set; NiNode 0xee2420 also recurses into the children's slot 37 (high).
-pub type NiAVObject_vtable_UpdateControllers = unsafe extern "C" fn(this: *mut classes::NiAVObject, data: *mut classes::NiUpdateData);
+pub type NiAVObject_vtable_UpdateControllers = unsafe extern "C" fn(this: *mut crate::NiAVObject, data: *mut crate::NiUpdateData);
 /// `NiAVObject::GetObjectByName`, slot 42: this when this->name == *name (pointer compare), else null; NiNode 0xee23a0 then searches the children depth-first in array order (high).
-pub type NiAVObject_vtable_GetObjectByName = unsafe extern "C" fn(this: *mut classes::NiAVObject, name: *const classes::BSFixedString) -> *mut classes::NiAVObject;
+pub type NiAVObject_vtable_GetObjectByName = unsafe extern "C" fn(this: *mut crate::NiAVObject, name: *const crate::BSFixedString) -> *mut crate::NiAVObject;
 /// `NiAVObject::UpdateDownwardPass`, slot 44: full update of the subtree: controllers (data bit 0), UpdateWorldData (slot 48), bound; NiNode 0xee24d0 runs slot 44 on every child and merges their bounds (unless flags bit 13) (high).
-pub type NiAVObject_vtable_UpdateDownwardPass = unsafe extern "C" fn(this: *mut classes::NiAVObject, data: *mut classes::NiUpdateData, parentFlags: u32);
+pub type NiAVObject_vtable_UpdateDownwardPass = unsafe extern "C" fn(this: *mut crate::NiAVObject, data: *mut crate::NiUpdateData, parentFlags: u32);
 /// `NiAVObject::UpdateSelectedDownwardPass`, slot 45: selective update: controllers only with flags bit 3, transforms only with flags bit 2 and data bit 1 clear; NiNode 0xee2680 visits only children with flags bit 1, through slot 46 for children with bit 4 (high).
-pub type NiAVObject_vtable_UpdateSelectedDownwardPass = unsafe extern "C" fn(this: *mut classes::NiAVObject, data: *mut classes::NiUpdateData, parentFlags: u32);
+pub type NiAVObject_vtable_UpdateSelectedDownwardPass = unsafe extern "C" fn(this: *mut crate::NiAVObject, data: *mut crate::NiUpdateData, parentFlags: u32);
 /// `NiAVObject::UpdateRigidDownwardPass`, slot 46: as slot 45 for rigid subtrees: NiNode 0xee2a40 recurses with slot 46 into children with flags bit 1 and does not rebuild the bound (high).
-pub type NiAVObject_vtable_UpdateRigidDownwardPass = unsafe extern "C" fn(this: *mut classes::NiAVObject, data: *mut classes::NiUpdateData, parentFlags: u32);
+pub type NiAVObject_vtable_UpdateRigidDownwardPass = unsafe extern "C" fn(this: *mut crate::NiAVObject, data: *mut crate::NiUpdateData, parentFlags: u32);
 /// `NiAVObject::UpdateWorldBound`, slot 47: rebuilds worldBound: no-op on NiAVObject, union of the children on NiNode 0xee2920 (skipped with flags bit 13), the camera position on NiCamera 0xef1950 (high).
-pub type NiAVObject_vtable_UpdateWorldBound = unsafe extern "C" fn(this: *mut classes::NiAVObject);
+pub type NiAVObject_vtable_UpdateWorldBound = unsafe extern "C" fn(this: *mut crate::NiAVObject);
 /// `NiAVObject::UpdateWorldData`, slot 48: snapshots previousWorld once per render frame, then world = parent.world * local (MultiplyTransforms 0x3059a0), world = parent.world with flags bit 9, world = local without a parent, or the collision object's slot 38 when +0x40 is set (high).
-pub type NiAVObject_vtable_UpdateWorldData = unsafe extern "C" fn(this: *mut classes::NiAVObject, data: *mut classes::NiUpdateData);
+pub type NiAVObject_vtable_UpdateWorldData = unsafe extern "C" fn(this: *mut crate::NiAVObject, data: *mut crate::NiUpdateData);
 /// `NiAVObject::UpdateUpwardPass`, slot 51: asks the parent to rebuild its bound upward (parent slot 61) (high).
-pub type NiAVObject_vtable_UpdateUpwardPass = unsafe extern "C" fn(this: *mut classes::NiAVObject);
+pub type NiAVObject_vtable_UpdateUpwardPass = unsafe extern "C" fn(this: *mut crate::NiAVObject);
 
 /// `NiAVObjectPalette::vftable` at 0x1a4a9b8, id 237264 (rtti, high); 40 slots.
 #[repr(C)]
@@ -161676,25 +161675,25 @@ impl NiCamera_vtable {
     }
 }
 /// `NiCamera::Destroy`, slot 0: NiAVObject::dtor, frees 0x188 when flags & 1 (high).
-pub type NiCamera_vtable_Destroy = unsafe extern "C" fn(this: *mut classes::NiCamera, flags: u32) -> *mut classes::NiCamera;
+pub type NiCamera_vtable_Destroy = unsafe extern "C" fn(this: *mut crate::NiCamera, flags: u32) -> *mut crate::NiCamera;
 /// `NiCamera::GetRTTI`, slot 2: returns the NiCamera type node g_TypeNode_NiCamera 0x331c690 (high).
-pub type NiCamera_vtable_GetRTTI = unsafe extern "C" fn(this: *const classes::NiCamera) -> *const c_void;
+pub type NiCamera_vtable_GetRTTI = unsafe extern "C" fn(this: *const crate::NiCamera) -> *const c_void;
 /// `NiCamera::CreateClone`, slot 23: new NiCamera, NiAVObject clone copy (CopyFieldsForClone), then copies worldToCam, world translation, frustum (+ the padding dword), viewport, lodAdjust, minNear, maxFarNearRatio (high).
-pub type NiCamera_vtable_CreateClone = unsafe extern "C" fn(this: *mut classes::NiCamera, process: *mut c_void) -> *mut classes::NiObject;
+pub type NiCamera_vtable_CreateClone = unsafe extern "C" fn(this: *mut crate::NiCamera, process: *mut c_void) -> *mut crate::NiObject;
 /// `NiCamera::LoadBinary`, slot 24: NiAVObject::LoadBinary (0xee05a0), then reads a u16 (discarded), left, right, top, bottom, near, far, an ortho byte, viewport l/r/t/b, lodAdjust, then one link id and two link-id lists (high).
-pub type NiCamera_vtable_LoadBinary = unsafe extern "C" fn(this: *mut classes::NiCamera, stream: *mut classes::partial::NiStream);
+pub type NiCamera_vtable_LoadBinary = unsafe extern "C" fn(this: *mut crate::NiCamera, stream: *mut crate::NiStream);
 /// `NiCamera::LinkObject`, slot 25: NiAVObject::LinkObject (0xee0680), then resolves the one link and the two lists LoadBinary queued and releases every object (nothing kept) (high).
-pub type NiCamera_vtable_LinkObject = unsafe extern "C" fn(this: *mut classes::NiCamera, stream: *mut classes::partial::NiStream);
+pub type NiCamera_vtable_LinkObject = unsafe extern "C" fn(this: *mut crate::NiCamera, stream: *mut crate::NiStream);
 /// `NiCamera::RegisterStreamables`, slot 26: 5-byte jmp to NiAVObject's 0xee0700: NiObjectNET::RegisterStreamables then collisionObject's (high).
-pub type NiCamera_vtable_RegisterStreamables = unsafe extern "C" fn(this: *mut classes::NiCamera, stream: *mut classes::partial::NiStream) -> bool;
+pub type NiCamera_vtable_RegisterStreamables = unsafe extern "C" fn(this: *mut crate::NiCamera, stream: *mut crate::NiStream) -> bool;
 /// `NiCamera::SaveBinary`, slot 27: NiAVObject::SaveBinary (0xee0750), then writes u16 0, the frustum, ortho byte, viewport, lodAdjust, a null link (stream vfunc +0x60) and two zero counts (high).
-pub type NiCamera_vtable_SaveBinary = unsafe extern "C" fn(this: *mut classes::NiCamera, stream: *mut classes::partial::NiStream);
+pub type NiCamera_vtable_SaveBinary = unsafe extern "C" fn(this: *mut crate::NiCamera, stream: *mut crate::NiStream);
 /// `NiCamera::IsEqual`, slot 28: NiAVObject::IsEqual (0xee0810) and equal frustum l/r/t/b/near/far, viewport and lodAdjust (ortho, minNear, maxFarNearRatio and worldToCam not compared) (high).
-pub type NiCamera_vtable_IsEqual = unsafe extern "C" fn(this: *mut classes::NiCamera, other: *mut classes::NiObject) -> bool;
+pub type NiCamera_vtable_IsEqual = unsafe extern "C" fn(this: *mut crate::NiCamera, other: *mut crate::NiObject) -> bool;
 /// `NiCamera::UpdateWorldBound`, slot 47: bound centre = world translation (high).
-pub type NiCamera_vtable_UpdateWorldBound = unsafe extern "C" fn(this: *mut classes::NiCamera);
+pub type NiCamera_vtable_UpdateWorldBound = unsafe extern "C" fn(this: *mut crate::NiCamera);
 /// `NiCamera::UpdateWorldData`, slot 48: NiAVObject::UpdateWorldData then UpdateWorldToCamera 0xef1310 (high).
-pub type NiCamera_vtable_UpdateWorldData = unsafe extern "C" fn(this: *mut classes::NiCamera, data: *mut classes::NiUpdateData);
+pub type NiCamera_vtable_UpdateWorldData = unsafe extern "C" fn(this: *mut crate::NiCamera, data: *mut crate::NiUpdateData);
 
 /// `NiCapsuleBV::vftable` at 0x1a50f48, id 237504 (rtti, high); 11 slots.
 #[repr(C)]
@@ -166392,27 +166391,27 @@ impl NiNode_vtable {
     }
 }
 /// `NiNode::AsNode`, slot 3: this for NiNode and subclasses, null for other NiObjects (NiObject 0x20bec0 returns 0) (high).
-pub type NiNode_vtable_AsNode = unsafe extern "C" fn(this: *mut classes::NiObject) -> *mut classes::NiNode;
+pub type NiNode_vtable_AsNode = unsafe extern "C" fn(this: *mut crate::NiObject) -> *mut crate::NiNode;
 /// `NiNode::OnVisible`, slot 52: visits every child through NiAVObject::Cull, passing the ordered-group index on, when the bound radius is non-zero or flag bit 11 is set (high).
-pub type NiNode_vtable_OnVisible = unsafe extern "C" fn(this: *mut classes::NiNode, culler: *mut classes::partial::NiCullingProcess, orderedGroup: u32);
+pub type NiNode_vtable_OnVisible = unsafe extern "C" fn(this: *mut crate::NiNode, culler: *mut crate::NiCullingProcess, orderedGroup: u32);
 /// `NiNode::AttachChild`, slot 53: reparents child under this: the old parent's slot 56 detaches it, child->parent = this, child stored at the end (or the first null slot when firstAvailable), child->parentIndex = slot (high).
-pub type NiNode_vtable_AttachChild = unsafe extern "C" fn(this: *mut classes::NiNode, child: *mut classes::NiAVObject, firstAvailable: bool);
+pub type NiNode_vtable_AttachChild = unsafe extern "C" fn(this: *mut crate::NiNode, child: *mut crate::NiAVObject, firstAvailable: bool);
 /// `NiNode::InsertChildAt`, slot 54: inserts child at index, shifting later children up; sets only the inserted child's parentIndex (high).
-pub type NiNode_vtable_InsertChildAt = unsafe extern "C" fn(this: *mut classes::NiNode, index: u32, child: *mut classes::NiAVObject);
+pub type NiNode_vtable_InsertChildAt = unsafe extern "C" fn(this: *mut crate::NiNode, index: u32, child: *mut crate::NiAVObject);
 /// `NiNode::DetachChild`, slot 55: detaches child by child->parentIndex through slot 57 when it is not -1, else by a linear search; the detached object is returned in *out (high).
-pub type NiNode_vtable_DetachChild = unsafe extern "C" fn(this: *mut classes::NiNode, child: *mut classes::NiAVObject, out: *mut c_void);
+pub type NiNode_vtable_DetachChild = unsafe extern "C" fn(this: *mut crate::NiNode, child: *mut crate::NiAVObject, out: *mut c_void);
 /// `NiNode::DetachChild2`, slot 56: slot 55 with a temporary out pointer that is released (the child dies here unless someone else holds it) (high).
-pub type NiNode_vtable_DetachChild2 = unsafe extern "C" fn(this: *mut classes::NiNode, child: *mut classes::NiAVObject);
+pub type NiNode_vtable_DetachChild2 = unsafe extern "C" fn(this: *mut crate::NiNode, child: *mut crate::NiAVObject);
 /// `NiNode::DetachChildAt`, slot 57: removes the child at index: parent = 0, parentIndex = -1, slot nulled (no shift) (high).
-pub type NiNode_vtable_DetachChildAt = unsafe extern "C" fn(this: *mut classes::NiNode, index: u32, out: *mut c_void);
+pub type NiNode_vtable_DetachChildAt = unsafe extern "C" fn(this: *mut crate::NiNode, index: u32, out: *mut c_void);
 /// `NiNode::DetachChildAt2`, slot 58: slot 57 with a temporary out pointer (high).
-pub type NiNode_vtable_DetachChildAt2 = unsafe extern "C" fn(this: *mut classes::NiNode, index: u32);
+pub type NiNode_vtable_DetachChildAt2 = unsafe extern "C" fn(this: *mut crate::NiNode, index: u32);
 /// `NiNode::SetAt`, slot 59: replaces (or appends at) index, detaching the previous occupant into *outOld (high).
-pub type NiNode_vtable_SetAt = unsafe extern "C" fn(this: *mut classes::NiNode, index: u32, child: *mut classes::NiAVObject, outOld: *mut c_void);
+pub type NiNode_vtable_SetAt = unsafe extern "C" fn(this: *mut crate::NiNode, index: u32, child: *mut crate::NiAVObject, outOld: *mut c_void);
 /// `NiNode::SetAt2`, slot 60: slot 59 without the out pointer (high).
-pub type NiNode_vtable_SetAt2 = unsafe extern "C" fn(this: *mut classes::NiNode, index: u32, child: *mut classes::NiAVObject);
+pub type NiNode_vtable_SetAt2 = unsafe extern "C" fn(this: *mut crate::NiNode, index: u32, child: *mut crate::NiAVObject);
 /// `NiNode::UpdateUpwardPass`, slot 61: UpdateWorldBound on this node, then the same on the parent, up to the root (high).
-pub type NiNode_vtable_UpdateUpwardPass = unsafe extern "C" fn(this: *mut classes::NiNode);
+pub type NiNode_vtable_UpdateUpwardPass = unsafe extern "C" fn(this: *mut crate::NiNode);
 
 /// `NiOBBLeaf::vftable` at 0x1a51460, id 237519 (rtti, high); 5 slots.
 #[repr(C)]
@@ -166642,7 +166641,7 @@ impl NiObjectNET_vtable {
     pub const SLOT_PostLinkObject: usize = 30;
 }
 /// `NiObjectNET::GetRTTI`, slot 2: returns the class TypeNode (IsKindOf walks TypeNode::parent) (high).
-pub type NiObjectNET_vtable_GetRTTI = unsafe extern "C" fn(this: *const classes::NiObject) -> *mut c_void;
+pub type NiObjectNET_vtable_GetRTTI = unsafe extern "C" fn(this: *const crate::NiObject) -> *mut c_void;
 
 /// `NiPSysAgeDeathModifier::vftable` at 0x1a61ba0, id 237993 (rtti, high); 42 slots.
 #[repr(C)]
@@ -175018,11 +175017,11 @@ impl NiSkinData_vtable {
     }
 }
 /// `NiSkinData::LoadBinary`, slot 24: reads the overall transform, bone count, a has-weights byte and per bone: transform, bound sphere, weight count and (when the byte is set) the weights (high).
-pub type NiSkinData_vtable_LoadBinary = unsafe extern "C" fn(this: *mut classes::NiSkinData, s: *mut classes::partial::NiStream);
+pub type NiSkinData_vtable_LoadBinary = unsafe extern "C" fn(this: *mut crate::NiSkinData, s: *mut crate::NiStream);
 /// `NiSkinData::SaveBinary`, slot 27: writes the same; has-weights = boneData[0].weights != null (high).
-pub type NiSkinData_vtable_SaveBinary = unsafe extern "C" fn(this: *mut classes::NiSkinData, s: *mut classes::partial::NiStream);
+pub type NiSkinData_vtable_SaveBinary = unsafe extern "C" fn(this: *mut crate::NiSkinData, s: *mut crate::NiStream);
 /// `NiSkinData::IsEqual`, slot 28: compares transforms, bounds and weights (high).
-pub type NiSkinData_vtable_IsEqual = unsafe extern "C" fn(this: *mut classes::NiSkinData, other: *mut classes::NiObject) -> bool;
+pub type NiSkinData_vtable_IsEqual = unsafe extern "C" fn(this: *mut crate::NiSkinData, other: *mut crate::NiObject) -> bool;
 
 /// `NiSkinInstance::vftable` at 0x1a495e0, id 237229 (rtti, high); 38 slots.
 #[repr(C)]
@@ -175140,15 +175139,15 @@ impl NiSkinInstance_vtable {
     pub const SLOT_RenderPartitions: usize = 37;
 }
 /// `NiSkinInstance::LoadBinary`, slot 24: reads three link ids and the bone link list (high).
-pub type NiSkinInstance_vtable_LoadBinary = unsafe extern "C" fn(this: *mut classes::NiSkinInstance, s: *mut classes::partial::NiStream);
+pub type NiSkinInstance_vtable_LoadBinary = unsafe extern "C" fn(this: *mut crate::NiSkinInstance, s: *mut crate::NiStream);
 /// `NiSkinInstance::LinkObject`, slot 25: resolves skinData, skinPartition, rootParent, boneNodes and builds boneWorldTransforms (high).
-pub type NiSkinInstance_vtable_LinkObject = unsafe extern "C" fn(this: *mut classes::NiSkinInstance, s: *mut classes::partial::NiStream);
+pub type NiSkinInstance_vtable_LinkObject = unsafe extern "C" fn(this: *mut crate::NiSkinInstance, s: *mut crate::NiStream);
 /// `NiSkinInstance::RegisterStreamables`, slot 26: registers skin data, partition, root and every bone (high).
-pub type NiSkinInstance_vtable_RegisterStreamables = unsafe extern "C" fn(this: *mut classes::NiSkinInstance, s: *mut classes::partial::NiStream) -> bool;
+pub type NiSkinInstance_vtable_RegisterStreamables = unsafe extern "C" fn(this: *mut crate::NiSkinInstance, s: *mut crate::NiStream) -> bool;
 /// `NiSkinInstance::SaveBinary`, slot 27: writes the three links, the bone count and the bone links (high).
-pub type NiSkinInstance_vtable_SaveBinary = unsafe extern "C" fn(this: *mut classes::NiSkinInstance, s: *mut classes::partial::NiStream);
+pub type NiSkinInstance_vtable_SaveBinary = unsafe extern "C" fn(this: *mut crate::NiSkinInstance, s: *mut crate::NiStream);
 /// `NiSkinInstance::IsEqual`, slot 28: compares skin data and partition with their slot 28 (high).
-pub type NiSkinInstance_vtable_IsEqual = unsafe extern "C" fn(this: *mut classes::NiSkinInstance, other: *mut classes::NiObject) -> bool;
+pub type NiSkinInstance_vtable_IsEqual = unsafe extern "C" fn(this: *mut crate::NiSkinInstance, other: *mut crate::NiObject) -> bool;
 
 /// `NiSkinPartition::vftable` at 0x1a4bb08, id 237386 (rtti, high); 38 slots.
 #[repr(C)]
@@ -175253,11 +175252,11 @@ impl NiSkinPartition_vtable {
     pub const SLOT_RenderPartition: usize = 37;
 }
 /// `NiSkinPartition::LoadBinary`, slot 24: reads the partitions and the shared vertex block (vertex descriptor bits choose the stream element sizes) (high).
-pub type NiSkinPartition_vtable_LoadBinary = unsafe extern "C" fn(this: *mut classes::NiSkinPartition, s: *mut classes::partial::NiStream);
+pub type NiSkinPartition_vtable_LoadBinary = unsafe extern "C" fn(this: *mut crate::NiSkinPartition, s: *mut crate::NiStream);
 /// `NiSkinPartition::SaveBinary`, slot 27: writes the same (high).
-pub type NiSkinPartition_vtable_SaveBinary = unsafe extern "C" fn(this: *mut classes::NiSkinPartition, s: *mut classes::partial::NiStream);
+pub type NiSkinPartition_vtable_SaveBinary = unsafe extern "C" fn(this: *mut crate::NiSkinPartition, s: *mut crate::NiStream);
 /// `NiSkinPartition::IsEqual`, slot 28: compares counts and arrays of every partition (high).
-pub type NiSkinPartition_vtable_IsEqual = unsafe extern "C" fn(this: *mut classes::NiSkinPartition, other: *mut classes::NiObject) -> bool;
+pub type NiSkinPartition_vtable_IsEqual = unsafe extern "C" fn(this: *mut crate::NiSkinPartition, other: *mut crate::NiObject) -> bool;
 
 /// `NiSourceTexture::vftable` at 0x1a48fa8, id 237218 (rtti, high); 43 slots.
 #[repr(C)]
@@ -180525,17 +180524,17 @@ impl OwnedCameraEffectController_vtable {
     }
 }
 /// `OwnedCameraEffectController::Destroy`, slot 0: releases attachRoot (+0x28), ReferenceEffectController::dtor, frees 0x38 when flags & 1 (high).
-pub type OwnedCameraEffectController_vtable_Destroy = unsafe extern "C" fn(this: *mut classes::OwnedCameraEffectController, flags: u32) -> *mut classes::OwnedCameraEffectController;
+pub type OwnedCameraEffectController_vtable_Destroy = unsafe extern "C" fn(this: *mut crate::OwnedCameraEffectController, flags: u32) -> *mut crate::OwnedCameraEffectController;
 /// `OwnedCameraEffectController::ReturnsTrue22`, slot 22: returns true (ReferenceEffectController default 0x5dbff0 returns false); read through ReferenceEffect slot 43 0x5d88c0, which returns true when there is no controller (high).
-pub type OwnedCameraEffectController_vtable_ReturnsTrue22 = unsafe extern "C" fn(this: *mut classes::OwnedCameraEffectController) -> bool;
+pub type OwnedCameraEffectController_vtable_ReturnsTrue22 = unsafe extern "C" fn(this: *mut crate::OwnedCameraEffectController) -> bool;
 /// `OwnedCameraEffectController::IsCameraEffect`, slot 26: returns true: ModelReferenceEffect::vfunc_59 0x5d6e20 then positions the effect at the camera root, ReferenceEffect::vfunc_45 0x5db810 saves the controller kind as 2 (high).
-pub type OwnedCameraEffectController_vtable_IsCameraEffect = unsafe extern "C" fn(this: *mut classes::OwnedCameraEffectController) -> bool;
+pub type OwnedCameraEffectController_vtable_IsCameraEffect = unsafe extern "C" fn(this: *mut crate::OwnedCameraEffectController) -> bool;
 /// `OwnedCameraEffectController::GetRotateWithCamera`, slot 27: returns +0x30 (high).
-pub type OwnedCameraEffectController_vtable_GetRotateWithCamera = unsafe extern "C" fn(this: *mut classes::OwnedCameraEffectController) -> bool;
+pub type OwnedCameraEffectController_vtable_GetRotateWithCamera = unsafe extern "C" fn(this: *mut crate::OwnedCameraEffectController) -> bool;
 /// `OwnedCameraEffectController::SaveGame`, slot 33: writes rotateWithCamera (1 byte), targetHandle, effectShader, artObject, facingHandle (high).
-pub type OwnedCameraEffectController_vtable_SaveGame = unsafe extern "C" fn(this: *mut classes::OwnedCameraEffectController, buffer: *mut classes::BGSSaveFormBuffer);
+pub type OwnedCameraEffectController_vtable_SaveGame = unsafe extern "C" fn(this: *mut crate::OwnedCameraEffectController, buffer: *mut crate::BGSSaveFormBuffer);
 /// `OwnedCameraEffectController::LoadGame`, slot 34: reads the same fields back and re-attaches to the current Weather node 0x3230760 (high).
-pub type OwnedCameraEffectController_vtable_LoadGame = unsafe extern "C" fn(this: *mut classes::OwnedCameraEffectController, buffer: *mut classes::BGSLoadFormBuffer);
+pub type OwnedCameraEffectController_vtable_LoadGame = unsafe extern "C" fn(this: *mut crate::OwnedCameraEffectController, buffer: *mut crate::BGSLoadFormBuffer);
 
 /// `OwnedController::vftable` at 0x1828b08, id 190287 (rtti, high); 35 slots.
 #[repr(C)]
@@ -181911,9 +181910,9 @@ impl PlayerCamera_vtable {
     }
 }
 /// `PlayerCamera::Destroy`, slot 0: dtor 0x8f7b20 (ends the current state, releases states, stack, +0x120, +0x128, clears g_PlayerCamera_ptr), frees 0x168 (high).
-pub type PlayerCamera_vtable_Destroy = unsafe extern "C" fn(this: *mut classes::PlayerCamera, flags: u32) -> *mut classes::PlayerCamera;
+pub type PlayerCamera_vtable_Destroy = unsafe extern "C" fn(this: *mut crate::PlayerCamera, flags: u32) -> *mut crate::PlayerCamera;
 /// `PlayerCamera::SetCameraRoot`, slot 1: stores the root like TESCamera slot 1, then allocates and constructs the 13 states into +0xb8 + 8*id and SetState(states[0]) (first person) (high).
-pub type PlayerCamera_vtable_SetCameraRoot = unsafe extern "C" fn(this: *mut classes::PlayerCamera, root: *mut classes::NiNode);
+pub type PlayerCamera_vtable_SetCameraRoot = unsafe extern "C" fn(this: *mut crate::PlayerCamera, root: *mut crate::NiNode);
 
 /// `PlayerCameraTransitionState::vftable` at 0x196db20, id 214871 (rtti, high); 9 slots.
 #[repr(C)]
@@ -181971,15 +181970,15 @@ impl PlayerCameraTransitionState_vtable {
     }
 }
 /// `PlayerCameraTransitionState::Destroy`, slot 0: scalar deleting destructor: releases toState (+0x30) and fromState (+0x28), vtable = TESCameraState::vftable, frees 0x40 (high).
-pub type PlayerCameraTransitionState_vtable_Destroy = unsafe extern "C" fn(this: *mut classes::PlayerCameraTransitionState, flags: u32) -> *mut classes::PlayerCameraTransitionState;
+pub type PlayerCameraTransitionState_vtable_Destroy = unsafe extern "C" fn(this: *mut crate::PlayerCameraTransitionState, flags: u32) -> *mut crate::PlayerCameraTransitionState;
 /// `PlayerCameraTransitionState::Begin`, slot 1: startTime = timer ms (high).
-pub type PlayerCameraTransitionState_vtable_Begin = unsafe extern "C" fn(this: *mut classes::TESCameraState);
+pub type PlayerCameraTransitionState_vtable_Begin = unsafe extern "C" fn(this: *mut crate::TESCameraState);
 /// `PlayerCameraTransitionState::Update`, slot 3: slerp rotation and lerp position by t, writes the root, *next = toState at t = 1 (high).
-pub type PlayerCameraTransitionState_vtable_Update = unsafe extern "C" fn(this: *mut classes::TESCameraState, next: *mut c_void);
+pub type PlayerCameraTransitionState_vtable_Update = unsafe extern "C" fn(this: *mut crate::TESCameraState, next: *mut c_void);
 /// `PlayerCameraTransitionState::GetRotation`, slot 4: cameraRoot world rotation (+0x7c) as a quaternion (high).
-pub type PlayerCameraTransitionState_vtable_GetRotation = unsafe extern "C" fn(this: *mut classes::TESCameraState, out: *mut c_void);
+pub type PlayerCameraTransitionState_vtable_GetRotation = unsafe extern "C" fn(this: *mut crate::TESCameraState, out: *mut c_void);
 /// `PlayerCameraTransitionState::GetTranslation`, slot 5: root world translation +0xa0 (high).
-pub type PlayerCameraTransitionState_vtable_GetTranslation = unsafe extern "C" fn(this: *mut classes::TESCameraState, out: *mut c_void);
+pub type PlayerCameraTransitionState_vtable_GetTranslation = unsafe extern "C" fn(this: *mut crate::TESCameraState, out: *mut c_void);
 
 /// `PlayerChairEnterHandler::vftable` at 0x1938058, id 208853 (rtti, high); 2 slots.
 #[repr(C)]
@@ -182707,37 +182706,37 @@ impl PlayerCharacter_vtable {
     }
 }
 /// `PlayerCharacter::FinishLoad`, slot 17: post-load fix-up of the player: scale from the record (savedFlags bit 4), grab reference, flying mount, health heartbeat, camera and first-person state (high).
-pub type PlayerCharacter_vtable_FinishLoad = unsafe extern "C" fn(this: *mut classes::PlayerCharacter, buffer: *mut classes::BGSLoadFormBuffer);
+pub type PlayerCharacter_vtable_FinishLoad = unsafe extern "C" fn(this: *mut crate::PlayerCharacter, buffer: *mut crate::BGSLoadFormBuffer);
 /// `PlayerCharacter::Revert`, slot 18: reverts the player before a load: tick counters, view flags (keeps bit 6 when buffer+0x48 bit 2), scale (buffer+0x44 bit 4), camera and process state (high).
-pub type PlayerCharacter_vtable_Revert = unsafe extern "C" fn(this: *mut classes::PlayerCharacter, buffer: *mut classes::BGSLoadFormBuffer);
+pub type PlayerCharacter_vtable_Revert = unsafe extern "C" fn(this: *mut crate::PlayerCharacter, buffer: *mut crate::BGSLoadFormBuffer);
 /// `PlayerCharacter::Load3D`, slot 106: builds the first-person root from sFirstPersonSkeleton and its biped, then the third-person 3D through Actor slot 106 with the view bit forced to third person; hides the root not in view (high).
-pub type PlayerCharacter_vtable_Load3D = unsafe extern "C" fn(this: *mut classes::PlayerCharacter, backgroundLoad: bool) -> *mut classes::NiAVObject;
+pub type PlayerCharacter_vtable_Load3D = unsafe extern "C" fn(this: *mut crate::PlayerCharacter, backgroundLoad: bool) -> *mut crate::NiAVObject;
 /// `PlayerCharacter::Get3DFor`, slot 111: the first-person root (+0x900) for true, the third-person root (loadedData->node3D) for false (high).
-pub type PlayerCharacter_vtable_Get3DFor = unsafe extern "C" fn(this: *mut classes::PlayerCharacter, firstPerson: bool) -> *mut classes::NiNode;
+pub type PlayerCharacter_vtable_Get3DFor = unsafe extern "C" fn(this: *mut crate::PlayerCharacter, firstPerson: bool) -> *mut crate::NiNode;
 /// `PlayerCharacter::Get3D`, slot 112: current-view root: firstPersonRoot when IsThirdPerson is false and it exists, else the third-person root (TESObjectREFR::Get3D) (high).
-pub type PlayerCharacter_vtable_Get3D = unsafe extern "C" fn(this: *mut classes::PlayerCharacter) -> *mut classes::NiAVObject;
+pub type PlayerCharacter_vtable_Get3D = unsafe extern "C" fn(this: *mut crate::PlayerCharacter) -> *mut crate::NiAVObject;
 /// `PlayerCharacter::IsThirdPerson`, slot 113: bit 0 of +0xbeb; Get3D (slot 112) returns the first-person root when this is false (high).
-pub type PlayerCharacter_vtable_IsThirdPerson = unsafe extern "C" fn(this: *mut classes::PlayerCharacter) -> bool;
+pub type PlayerCharacter_vtable_IsThirdPerson = unsafe extern "C" fn(this: *mut crate::PlayerCharacter) -> bool;
 /// `PlayerCharacter::GetBiped`, slot 126: &firstPersonBiped for true, the third-person biped holder otherwise (high).
-pub type PlayerCharacter_vtable_GetBiped = unsafe extern "C" fn(this: *mut classes::PlayerCharacter, firstPerson: bool) -> *mut *mut c_void;
+pub type PlayerCharacter_vtable_GetBiped = unsafe extern "C" fn(this: *mut crate::PlayerCharacter, firstPerson: bool) -> *mut *mut c_void;
 /// `PlayerCharacter::GetCurrentBiped`, slot 127: first-person biped while IsThirdPerson is false and it exists, else the third-person one (high).
-pub type PlayerCharacter_vtable_GetCurrentBiped = unsafe extern "C" fn(this: *mut classes::PlayerCharacter) -> *mut *mut c_void;
+pub type PlayerCharacter_vtable_GetCurrentBiped = unsafe extern "C" fn(this: *mut crate::PlayerCharacter) -> *mut *mut c_void;
 /// `PlayerCharacter::GetCurrent3DNoFallback`, slot 141: like slot 112 but returns firstPersonRoot (even null) whenever IsThirdPerson is false (high).
-pub type PlayerCharacter_vtable_GetCurrent3DNoFallback = unsafe extern "C" fn(this: *mut classes::PlayerCharacter) -> *mut classes::NiAVObject;
+pub type PlayerCharacter_vtable_GetCurrent3DNoFallback = unsafe extern "C" fn(this: *mut crate::PlayerCharacter) -> *mut crate::NiAVObject;
 /// `PlayerCharacter::SetParentCell`, slot 152: the player's cell change: BGSActorCellEvent leave/enter, location change event (TESActorLocationChangeEvent), Actor::SetParentCell, then the camera (PlayerCamera slot via vfunc_152_sub5), the sky climate (TESWorldSpace::GetClimate), grass enable (TESWorldSpace::IsNoGrass), border-region flag (high).
-pub type PlayerCharacter_vtable_SetParentCell = unsafe extern "C" fn(this: *mut classes::PlayerCharacter, cell: *mut classes::TESObjectCELL);
+pub type PlayerCharacter_vtable_SetParentCell = unsafe extern "C" fn(this: *mut crate::PlayerCharacter, cell: *mut crate::TESObjectCELL);
 /// `PlayerCharacter::GetProjectileLaunchAngles`, slot 160: launch angles for the player's projectile: first person (camera in cameraStates[0]) = heading from slot 164 and pitch = rotX - f1PArrowTiltUpAngle (f1PBoltTiltUpAngle for bolts), then slot 279 with launchPos; otherwise the node's world-rotation Euler angles with pitch - f3PArrowTiltUpAngle (high).
-pub type PlayerCharacter_vtable_GetProjectileLaunchAngles = unsafe extern "C" fn(this: *mut classes::PlayerCharacter, launchNode: *mut classes::NiAVObject, outPitch: *mut f32, outHeading: *mut f32, launchPos: *mut c_void);
+pub type PlayerCharacter_vtable_GetProjectileLaunchAngles = unsafe extern "C" fn(this: *mut crate::PlayerCharacter, launchNode: *mut crate::NiAVObject, outPitch: *mut f32, outHeading: *mut f32, launchPos: *mut c_void);
 /// `PlayerCharacter::Resurrect`, slot 171: the player's resurrect: replaces the AIProcess (new 0x140-byte AIProcess::ctor), re-registers in the process lists, recreates or destroys the camera caster (PlayerCamera::CreateCameraCaster with the character controller's filter >> 16, else DestroyCameraCaster), then Actor::Resurrect(this, 0, 0) (high).
-pub type PlayerCharacter_vtable_Resurrect = unsafe extern "C" fn(this: *mut classes::PlayerCharacter, resetState: bool, has3D: bool);
+pub type PlayerCharacter_vtable_Resurrect = unsafe extern "C" fn(this: *mut crate::PlayerCharacter, resetState: bool, has3D: bool);
 /// `PlayerCharacter::Update`, slot 173: the player's per-frame actor update (high).
-pub type PlayerCharacter_vtable_Update = unsafe extern "C" fn(this: *mut classes::PlayerCharacter, delta: f32);
+pub type PlayerCharacter_vtable_Update = unsafe extern "C" fn(this: *mut crate::PlayerCharacter, delta: f32);
 /// `PlayerCharacter::StartVampireFeed`, slot 192: starts the player's AI-driven vampire feed: builds package type 0x25 at the player, stores the target's furniture handle in the process (+0x208), copies the target's process feed data, runs a type 0x1b package on the target (slot 0x6f8) and pushes the camera to third person (PlayerCamera::PushThirdPersonForAIDriven) (high).
-pub type PlayerCharacter_vtable_StartVampireFeed = unsafe extern "C" fn(this: *mut classes::PlayerCharacter, target: *mut classes::Actor, targetFurniture: *mut classes::TESObjectREFR);
+pub type PlayerCharacter_vtable_StartVampireFeed = unsafe extern "C" fn(this: *mut crate::PlayerCharacter, target: *mut crate::Actor, targetFurniture: *mut crate::TESObjectREFR);
 /// `PlayerCharacter::UpdateAlpha`, slot 224: Actor::UpdateAlpha, then re-applies slot 226 clamped below by fMagicPlayerMinimumInvisibility through slot 225 (high).
-pub type PlayerCharacter_vtable_UpdateAlpha = unsafe extern "C" fn(this: *mut classes::PlayerCharacter);
+pub type PlayerCharacter_vtable_UpdateAlpha = unsafe extern "C" fn(this: *mut crate::PlayerCharacter);
 /// `PlayerCharacter::SyncRootTransforms`, slot 287: writes both roots' local transforms from the reference: translation = position (+0x54..+0x5c), rotation = z rotation by the heading; the third-person root also gets the char controller's pitch (+0x24c) and roll (+0x250) when non-zero (the mount's controller when mounted) (high).
-pub type PlayerCharacter_vtable_SyncRootTransforms = unsafe extern "C" fn(this: *mut classes::PlayerCharacter);
+pub type PlayerCharacter_vtable_SyncRootTransforms = unsafe extern "C" fn(this: *mut crate::PlayerCharacter);
 
 /// `PlayerCharacter::vftable_20` at 0x192a040, id 208042 (rtti, high); 2 slots.
 #[repr(C)]
@@ -183033,7 +183032,7 @@ impl PlayerControls_vtable {
     }
 }
 /// `PlayerControls::ProcessEvent`, slot 1: skips everything while a game-pausing menu is open, while 'Fader Menu' is open with no valid player handle, during certain player states (mount/flying checks) or while +0x50 is set; otherwise dispatches every event of the list in order through 0x7b0130, then computes look/move; always returns 0 (high).
-pub type PlayerControls_vtable_ProcessEvent = unsafe extern "C" fn(this: *mut classes::PlayerControls, head: *mut *mut classes::InputEvent, source: *mut c_void) -> u32;
+pub type PlayerControls_vtable_ProcessEvent = unsafe extern "C" fn(this: *mut crate::PlayerControls, head: *mut *mut crate::InputEvent, source: *mut c_void) -> u32;
 
 /// `PlayerControls::vftable_8` at 0x1935088, id 208696 (rtti, high); 2 slots.
 #[repr(C)]
@@ -183141,17 +183140,17 @@ impl PlayerInputHandler_vtable {
     }
 }
 /// `PlayerInputHandler::Destroy`, slot 0: destructor (high).
-pub type PlayerInputHandler_vtable_Destroy = unsafe extern "C" fn(this: *mut classes::PlayerInputHandler, flags: u32) -> *mut classes::PlayerInputHandler;
+pub type PlayerInputHandler_vtable_Destroy = unsafe extern "C" fn(this: *mut crate::PlayerInputHandler, flags: u32) -> *mut crate::PlayerInputHandler;
 /// `PlayerInputHandler::ProcessMotionGesture`, slot 2: base: does nothing (high).
-pub type PlayerInputHandler_vtable_ProcessMotionGesture = unsafe extern "C" fn(this: *mut classes::PlayerInputHandler, event: *mut classes::InputEvent, data: *mut c_void);
+pub type PlayerInputHandler_vtable_ProcessMotionGesture = unsafe extern "C" fn(this: *mut crate::PlayerInputHandler, event: *mut crate::InputEvent, data: *mut c_void);
 /// `PlayerInputHandler::ProcessSixaxis`, slot 3: base: does nothing (high).
-pub type PlayerInputHandler_vtable_ProcessSixaxis = unsafe extern "C" fn(this: *mut classes::PlayerInputHandler, event: *mut classes::InputEvent, data: *mut c_void);
+pub type PlayerInputHandler_vtable_ProcessSixaxis = unsafe extern "C" fn(this: *mut crate::PlayerInputHandler, event: *mut crate::InputEvent, data: *mut c_void);
 /// `PlayerInputHandler::ProcessThumbstick`, slot 4: base: does nothing (high).
-pub type PlayerInputHandler_vtable_ProcessThumbstick = unsafe extern "C" fn(this: *mut classes::PlayerInputHandler, event: *mut classes::ThumbstickEvent, data: *mut c_void);
+pub type PlayerInputHandler_vtable_ProcessThumbstick = unsafe extern "C" fn(this: *mut crate::PlayerInputHandler, event: *mut crate::ThumbstickEvent, data: *mut c_void);
 /// `PlayerInputHandler::ProcessMouseMove`, slot 5: base: does nothing (high).
-pub type PlayerInputHandler_vtable_ProcessMouseMove = unsafe extern "C" fn(this: *mut classes::PlayerInputHandler, event: *mut classes::MouseMoveEvent, data: *mut c_void);
+pub type PlayerInputHandler_vtable_ProcessMouseMove = unsafe extern "C" fn(this: *mut crate::PlayerInputHandler, event: *mut crate::MouseMoveEvent, data: *mut c_void);
 /// `PlayerInputHandler::ProcessButton`, slot 6: eventType 0: ButtonEvent value +0x28, heldDownSecs +0x2c (high).
-pub type PlayerInputHandler_vtable_ProcessButton = unsafe extern "C" fn(this: *mut classes::PlayerInputHandler, event: *mut classes::ButtonEvent, data: *mut c_void);
+pub type PlayerInputHandler_vtable_ProcessButton = unsafe extern "C" fn(this: *mut crate::PlayerInputHandler, event: *mut crate::ButtonEvent, data: *mut c_void);
 
 /// `PlayerRegionState::vftable` at 0x192b100, id 208125 (rtti, high); 2 slots.
 #[repr(C)]
@@ -184703,9 +184702,9 @@ impl QuickSaveLoadHandler_vtable {
     }
 }
 /// `QuickSaveLoadHandler::CanProcess`, slot 1: Quicksave/Quickload/NewSave (high).
-pub type QuickSaveLoadHandler_vtable_CanProcess = unsafe extern "C" fn(this: *mut classes::QuickSaveLoadHandler, event: *mut classes::InputEvent) -> bool;
+pub type QuickSaveLoadHandler_vtable_CanProcess = unsafe extern "C" fn(this: *mut crate::QuickSaveLoadHandler, event: *mut crate::InputEvent) -> bool;
 /// `QuickSaveLoadHandler::ProcessButtonEvent`, slot 7: queues the request (high).
-pub type QuickSaveLoadHandler_vtable_ProcessButtonEvent = unsafe extern "C" fn(this: *mut classes::QuickSaveLoadHandler, event: *mut classes::ButtonEvent) -> bool;
+pub type QuickSaveLoadHandler_vtable_ProcessButtonEvent = unsafe extern "C" fn(this: *mut crate::QuickSaveLoadHandler, event: *mut crate::ButtonEvent) -> bool;
 
 /// `REFREventCallbacks::ConcreteEventCallbackFactory<_anon_01A9FA1F::SceneResultsCallBack>::vftable` at 0x1858bc0, id 195369 (rtti, high); 5 slots.
 #[repr(C)]
@@ -184865,11 +184864,11 @@ impl RaceSexCamera_vtable {
     }
 }
 /// `RaceSexCamera::Destroy`, slot 0:  (high).
-pub type RaceSexCamera_vtable_Destroy = unsafe extern "C" fn(this: *mut classes::RaceSexCamera, flags: u32) -> *mut classes::RaceSexCamera;
+pub type RaceSexCamera_vtable_Destroy = unsafe extern "C" fn(this: *mut crate::RaceSexCamera, flags: u32) -> *mut crate::RaceSexCamera;
 /// `RaceSexCamera::SetCameraRoot`, slot 1: stores the root, records its pose, offsets local y by a constant (high).
-pub type RaceSexCamera_vtable_SetCameraRoot = unsafe extern "C" fn(this: *mut classes::RaceSexCamera, root: *mut classes::NiNode);
+pub type RaceSexCamera_vtable_SetCameraRoot = unsafe extern "C" fn(this: *mut crate::RaceSexCamera, root: *mut crate::NiNode);
 /// `RaceSexCamera::Update`, slot 2: unless byte 0x20bb8d4: root local translation/rotation = eased interpolation 0x20bb890 (StartPlayerZoomInterpolation 0x971760, face/body targets 0x971640); then NiAVObject::UpdateNode(root, zero) (high).
-pub type RaceSexCamera_vtable_Update = unsafe extern "C" fn(this: *mut classes::RaceSexCamera);
+pub type RaceSexCamera_vtable_Update = unsafe extern "C" fn(this: *mut crate::RaceSexCamera);
 
 /// `RaceSexMenu::vftable` at 0x197edb0, id 215885 (rtti, high); 9 slots.
 #[repr(C)]
@@ -185079,7 +185078,7 @@ impl ReadyWeaponHandler_vtable {
     }
 }
 /// `ReadyWeaponHandler::CanProcess`, slot 1: Ready Weapon (high).
-pub type ReadyWeaponHandler_vtable_CanProcess = unsafe extern "C" fn(this: *mut classes::ReadyWeaponHandler, event: *mut classes::InputEvent) -> bool;
+pub type ReadyWeaponHandler_vtable_CanProcess = unsafe extern "C" fn(this: *mut crate::ReadyWeaponHandler, event: *mut crate::InputEvent) -> bool;
 
 /// `RealArrayImplementation::vftable` at 0x1a17ef8, id 235299 (rtti, high); 37 slots.
 #[repr(C)]
@@ -185685,7 +185684,7 @@ impl RunHandler_vtable {
     }
 }
 /// `RunHandler::CanProcess`, slot 1: Run (high).
-pub type RunHandler_vtable_CanProcess = unsafe extern "C" fn(this: *mut classes::RunHandler, event: *mut classes::InputEvent) -> bool;
+pub type RunHandler_vtable_CanProcess = unsafe extern "C" fn(this: *mut crate::RunHandler, event: *mut crate::InputEvent) -> bool;
 
 /// `SafeZoneMenu::vftable` at 0x197f198, id 215931 (rtti, high); 9 slots.
 #[repr(C)]
@@ -186019,7 +186018,7 @@ impl ScreenshotHandler_vtable {
     }
 }
 /// `ScreenshotHandler::CanProcess`, slot 1: Screenshot/Multi-Screenshot (high).
-pub type ScreenshotHandler_vtable_CanProcess = unsafe extern "C" fn(this: *mut classes::ScreenshotHandler, event: *mut classes::InputEvent) -> bool;
+pub type ScreenshotHandler_vtable_CanProcess = unsafe extern "C" fn(this: *mut crate::ScreenshotHandler, event: *mut crate::InputEvent) -> bool;
 
 /// `Script::vftable` at 0x183ad68, id 191694 (rtti, high); 59 slots.
 #[repr(C)]
@@ -187081,9 +187080,9 @@ impl ShaderReferenceEffect_vtable {
     }
 }
 /// `ShaderReferenceEffect::UpdateTargetRoot`, slot 59: root = slot 60; when it differs from attachedRoot (or bit 2): RemoveEffectShaderData(effectShader, old, effectData), ApplyEffectShaderData(effectShader, root, effectData, false); then places the effect's own node (+0xf8) relative to the root (high).
-pub type ShaderReferenceEffect_vtable_UpdateTargetRoot = unsafe extern "C" fn(this: *mut classes::ShaderReferenceEffect);
+pub type ShaderReferenceEffect_vtable_UpdateTargetRoot = unsafe extern "C" fn(this: *mut crate::ShaderReferenceEffect);
 /// `ShaderReferenceEffect::GetTargetRoot`, slot 60: controller's root (+0x30 slot 15) when present, else 0 with flag bit 7, else ReferenceEffect slot 60 = target->Get3D() (slot 112) (high).
-pub type ShaderReferenceEffect_vtable_GetTargetRoot = unsafe extern "C" fn(this: *mut classes::ShaderReferenceEffect) -> *mut classes::NiAVObject;
+pub type ShaderReferenceEffect_vtable_GetTargetRoot = unsafe extern "C" fn(this: *mut crate::ShaderReferenceEffect) -> *mut crate::NiAVObject;
 
 /// `ShadowSceneNode::vftable` at 0x1b3dba0, id 254646 (rtti, high); 62 slots.
 #[repr(C)]
@@ -187245,7 +187244,7 @@ impl ShoutHandler_vtable {
     }
 }
 /// `ShoutHandler::CanProcess`, slot 1: Shout/KinectShout (high).
-pub type ShoutHandler_vtable_CanProcess = unsafe extern "C" fn(this: *mut classes::ShoutHandler, event: *mut classes::InputEvent) -> bool;
+pub type ShoutHandler_vtable_CanProcess = unsafe extern "C" fn(this: *mut crate::ShoutHandler, event: *mut crate::InputEvent) -> bool;
 
 /// `ShoutMeter::vftable` at 0x1976858, id 215376 (rtti, high); 6 slots.
 #[repr(C)]
@@ -188193,19 +188192,19 @@ impl SkyrimScript__HandlePolicy_vtable {
     }
 }
 /// `SkyrimScript::HandlePolicy::HandleIsType`, slot 1: whether the handle names an object of typeID: form handles (bits 32-47 == 0xffff) compare the form's formType (0 accepts any form, 0x3d any reference, 0x18 armor/arms/outfit, 0x20 the container set); item handles (bit 48) accept 0 and 0x3d; effect handles (bit 49) accept 0x8e only, without looking the effect up; alias handles (bits 48-63 clear, bits 32-47 the alias id): 0x8b any alias id other than 0xffff, 0x8c only when the quest's alias of that id is a reference alias, 0x8d only a location alias (high).
-pub type SkyrimScript__HandlePolicy_vtable_HandleIsType = unsafe extern "C" fn(this: *mut classes::SkyrimScript__HandlePolicy, typeID: u32, handle: u64) -> bool;
+pub type SkyrimScript__HandlePolicy_vtable_HandleIsType = unsafe extern "C" fn(this: *mut crate::SkyrimScript__HandlePolicy, typeID: u32, handle: u64) -> bool;
 /// `SkyrimScript::HandlePolicy::IsHandleObjectAvailable`, slot 2: whether the object behind the handle exists and is not marked unavailable (form flags bit 21 clear); the invalid handle returns true (its first test is handle == GetInvalidHandle), so callers test HandleIsType first (high).
-pub type SkyrimScript__HandlePolicy_vtable_IsHandleObjectAvailable = unsafe extern "C" fn(this: *mut classes::SkyrimScript__HandlePolicy, handle: u64) -> bool;
+pub type SkyrimScript__HandlePolicy_vtable_IsHandleObjectAvailable = unsafe extern "C" fn(this: *mut crate::SkyrimScript__HandlePolicy, handle: u64) -> bool;
 /// `SkyrimScript::HandlePolicy::GetInvalidHandle`, slot 3: 0xffff00000000: the form-handle pattern with form id 0 (high).
-pub type SkyrimScript__HandlePolicy_vtable_GetInvalidHandle = unsafe extern "C" fn(this: *mut classes::SkyrimScript__HandlePolicy) -> u64;
+pub type SkyrimScript__HandlePolicy_vtable_GetInvalidHandle = unsafe extern "C" fn(this: *mut crate::SkyrimScript__HandlePolicy) -> u64;
 /// `SkyrimScript::HandlePolicy::GetHandleForObject`, slot 4: form: formID | 0xffff << 32 (a reference carrying an ExtraUniqueID instead gets formID | uniqueID << 32 | 1 << 48); 0x8b-0x8d alias: the quest's formID (alias+0x10, its +0x14) | the alias id (u16 at alias+0x18) << 32; 0x8e active effect: the target actor's formID (ActiveEffect+0x50 is the target's MagicTarget, the actor is 0xa0 before it) | uniqueID (u16 at +0x84) << 32 | 2 << 48, and the invalid handle when the target is null or not an actor or the uniqueID is 0 (request 4f corrected 'caster' to 'target'); null object: the invalid handle (high).
-pub type SkyrimScript__HandlePolicy_vtable_GetHandleForObject = unsafe extern "C" fn(this: *mut classes::SkyrimScript__HandlePolicy, typeID: u32, object: *const c_void) -> u64;
+pub type SkyrimScript__HandlePolicy_vtable_GetHandleForObject = unsafe extern "C" fn(this: *mut crate::SkyrimScript__HandlePolicy, typeID: u32, object: *const c_void) -> u64;
 /// `SkyrimScript::HandlePolicy::HandleIsReference`, slot 5: HandleIsType(0x3d, handle) (high).
-pub type SkyrimScript__HandlePolicy_vtable_HandleIsReference = unsafe extern "C" fn(this: *mut classes::SkyrimScript__HandlePolicy, handle: u64) -> bool;
+pub type SkyrimScript__HandlePolicy_vtable_HandleIsReference = unsafe extern "C" fn(this: *mut crate::SkyrimScript__HandlePolicy, handle: u64) -> bool;
 /// `SkyrimScript::HandlePolicy::GetObjectForHandle`, slot 8: the object the handle names when HandleIsType holds: FindFormByID for form handles, the alias of the quest for 0x8b-0x8d, the inventory item reference for bit 48, the ActiveEffect found on the actor's magic target for bit 49; null otherwise (high).
-pub type SkyrimScript__HandlePolicy_vtable_GetObjectForHandle = unsafe extern "C" fn(this: *mut classes::SkyrimScript__HandlePolicy, typeID: u32, handle: u64) -> *mut c_void;
+pub type SkyrimScript__HandlePolicy_vtable_GetObjectForHandle = unsafe extern "C" fn(this: *mut crate::SkyrimScript__HandlePolicy, typeID: u32, handle: u64) -> *mut c_void;
 /// `SkyrimScript::HandlePolicy::ConvertHandleToString`, slot 11: the log form of a handle: None, 'Item %d in container %s (%08X)', 'Active effect %d on %s (%08X)', 'alias %s on quest %s (%08X)', the form's editor id, or 'Unknown handle (%016I64X)' (high).
-pub type SkyrimScript__HandlePolicy_vtable_ConvertHandleToString = unsafe extern "C" fn(this: *mut classes::SkyrimScript__HandlePolicy, handle: u64, out: *mut classes::BSFixedString);
+pub type SkyrimScript__HandlePolicy_vtable_ConvertHandleToString = unsafe extern "C" fn(this: *mut crate::SkyrimScript__HandlePolicy, handle: u64, out: *mut crate::BSFixedString);
 
 /// `SkyrimScript::Internal::AnimationCallbacks::vftable` at 0x198a548, id 216706 (rtti, high); 2 slots.
 #[repr(C)]
@@ -190305,7 +190304,7 @@ impl SneakHandler_vtable {
     }
 }
 /// `SneakHandler::CanProcess`, slot 1: Sneak (high).
-pub type SneakHandler_vtable_CanProcess = unsafe extern "C" fn(this: *mut classes::SneakHandler, event: *mut classes::InputEvent) -> bool;
+pub type SneakHandler_vtable_CanProcess = unsafe extern "C" fn(this: *mut crate::SneakHandler, event: *mut crate::InputEvent) -> bool;
 
 /// `SoulTrapEffect::vftable` at 0x18fba50, id 206070 (rtti, high); 25 slots.
 #[repr(C)]
@@ -190931,7 +190930,7 @@ impl SprintHandler_vtable {
     }
 }
 /// `SprintHandler::CanProcess`, slot 1: Sprint (high).
-pub type SprintHandler_vtable_CanProcess = unsafe extern "C" fn(this: *mut classes::SprintHandler, event: *mut classes::InputEvent) -> bool;
+pub type SprintHandler_vtable_CanProcess = unsafe extern "C" fn(this: *mut crate::SprintHandler, event: *mut crate::InputEvent) -> bool;
 
 /// `StaggerEffect::vftable` at 0x18fbb70, id 206072 (rtti, high); 25 slots.
 #[repr(C)]
@@ -191061,17 +191060,17 @@ impl StandardItemData_vtable {
     }
 }
 /// `StandardItemData::GetName`, slot 1: display name -> 'text' (high).
-pub type StandardItemData_vtable_GetName = unsafe extern "C" fn(this: *mut classes::StandardItemData) -> *const c_char;
+pub type StandardItemData_vtable_GetName = unsafe extern "C" fn(this: *mut crate::StandardItemData) -> *const c_char;
 /// `StandardItemData::GetCount`, slot 2: stack count -> 'count' (high).
-pub type StandardItemData_vtable_GetCount = unsafe extern "C" fn(this: *mut classes::StandardItemData) -> i32;
+pub type StandardItemData_vtable_GetCount = unsafe extern "C" fn(this: *mut crate::StandardItemData) -> i32;
 /// `StandardItemData::GetEquipState`, slot 3: 0..4 worn/hand state -> 'equipState' (high).
-pub type StandardItemData_vtable_GetEquipState = unsafe extern "C" fn(this: *mut classes::StandardItemData) -> i32;
+pub type StandardItemData_vtable_GetEquipState = unsafe extern "C" fn(this: *mut crate::StandardItemData) -> i32;
 /// `StandardItemData::GetFilterFlag`, slot 4: category bits by form type (<< 10 when not the player's) -> 'filterFlag' (high).
-pub type StandardItemData_vtable_GetFilterFlag = unsafe extern "C" fn(this: *mut classes::StandardItemData) -> u32;
+pub type StandardItemData_vtable_GetFilterFlag = unsafe extern "C" fn(this: *mut crate::StandardItemData) -> u32;
 /// `StandardItemData::GetFavorite`, slot 5: entry has a hotkey/favorite extra -> 'favorite' (high).
-pub type StandardItemData_vtable_GetFavorite = unsafe extern "C" fn(this: *mut classes::StandardItemData) -> bool;
+pub type StandardItemData_vtable_GetFavorite = unsafe extern "C" fn(this: *mut crate::StandardItemData) -> bool;
 /// `StandardItemData::GetEnabled`, slot 6: always true -> 'enabled' (high).
-pub type StandardItemData_vtable_GetEnabled = unsafe extern "C" fn(this: *mut classes::StandardItemData) -> bool;
+pub type StandardItemData_vtable_GetEnabled = unsafe extern "C" fn(this: *mut crate::StandardItemData) -> bool;
 
 /// `Stars::vftable` at 0x186a0e0, id 196521 (rtti, high); 4 slots.
 #[repr(C)]
@@ -191303,9 +191302,9 @@ impl StopMountCameraHandler_vtable {
     }
 }
 /// `StopMountCameraHandler::Destroy`, slot 0: scalar deleting destructor: restores IHandlerFunctor<Actor,BSFixedStringCI>::vftable 0x1937e30, frees 0x10 when flags & 1 (high).
-pub type StopMountCameraHandler_vtable_Destroy = unsafe extern "C" fn(this: *mut classes::StopMountCameraHandler, flags: u32) -> *mut classes::StopMountCameraHandler;
+pub type StopMountCameraHandler_vtable_Destroy = unsafe extern "C" fn(this: *mut crate::StopMountCameraHandler, flags: u32) -> *mut crate::StopMountCameraHandler;
 /// `StopMountCameraHandler::Handle`, slot 1: no camera call: when the actor's sit/sleep state (+0xc8 & 0x3c000) == 0x10000, finish the furniture/mount state (UpdateFurnitureState(process, actor, null, invalid, -1) when the process (+0xf8) exists and its byte 0x137 <= 1, else ActorState slot 20 (+0xc0 vtable +0xa0)(0)); then PlaceAtDismountPosition(actor) 0x6d25c0 (also called by MountInteraction slot 15) (high).
-pub type StopMountCameraHandler_vtable_Handle = unsafe extern "C" fn(this: *mut classes::StopMountCameraHandler, actor: *mut classes::Actor, payload: *const c_void) -> bool;
+pub type StopMountCameraHandler_vtable_Handle = unsafe extern "C" fn(this: *mut crate::StopMountCameraHandler, actor: *mut crate::Actor, payload: *const c_void) -> bool;
 
 /// `StorageSpaceBar::vftable` at 0x1b59eb8, id 469938 (rtti, high); 15 slots.
 #[repr(C)]
@@ -191794,7 +191793,7 @@ impl Sun_vtable {
     }
 }
 /// `Sun::Update`, slot 3: per-frame sun placement and light direction from sky+0x1b0 (high).
-pub type Sun_vtable_Update = unsafe extern "C" fn(this: *mut classes::Sun, sky: *mut classes::Sky, delta: f32);
+pub type Sun_vtable_Update = unsafe extern "C" fn(this: *mut crate::Sun, sky: *mut crate::Sky, delta: f32);
 
 /// `SyncQueueObj::vftable` at 0x192d878, id 208219 (rtti, high); 2 slots.
 #[repr(C)]
@@ -193248,11 +193247,11 @@ impl TESCamera_vtable {
     }
 }
 /// `TESCamera::Destroy`, slot 0: releases currentState and cameraRoot, frees 0x38 when flags & 1 (high).
-pub type TESCamera_vtable_Destroy = unsafe extern "C" fn(this: *mut classes::TESCamera, flags: u32) -> *mut classes::TESCamera;
+pub type TESCamera_vtable_Destroy = unsafe extern "C" fn(this: *mut crate::TESCamera, flags: u32) -> *mut crate::TESCamera;
 /// `TESCamera::SetCameraRoot`, slot 1: refcounted assignment of cameraRoot (+0x20) (high).
-pub type TESCamera_vtable_SetCameraRoot = unsafe extern "C" fn(this: *mut classes::TESCamera, root: *mut classes::NiNode);
+pub type TESCamera_vtable_SetCameraRoot = unsafe extern "C" fn(this: *mut crate::TESCamera, root: *mut crate::NiNode);
 /// `TESCamera::Update`, slot 2: if a state is current and enabled: calls the state's slot 3 Update(&next); when next is set, End (slot 2) on the old state, swap currentState, Begin (slot 1) on the new one; then zeroes the input accumulators +0x8..+0x1c (high).
-pub type TESCamera_vtable_Update = unsafe extern "C" fn(this: *mut classes::TESCamera);
+pub type TESCamera_vtable_Update = unsafe extern "C" fn(this: *mut crate::TESCamera);
 
 /// `TESCameraState::vftable` at 0x1806460, id 188657 (rtti, high); 9 slots.
 #[repr(C)]
@@ -193334,23 +193333,23 @@ impl TESCameraState_vtable {
     }
 }
 /// `TESCameraState::Destroy`, slot 0: destructor (high).
-pub type TESCameraState_vtable_Destroy = unsafe extern "C" fn(this: *mut classes::TESCameraState, flags: u32) -> *mut classes::TESCameraState;
+pub type TESCameraState_vtable_Destroy = unsafe extern "C" fn(this: *mut crate::TESCameraState, flags: u32) -> *mut crate::TESCameraState;
 /// `TESCameraState::Begin`, slot 1: called on the state that becomes current (high).
-pub type TESCameraState_vtable_Begin = unsafe extern "C" fn(this: *mut classes::TESCameraState);
+pub type TESCameraState_vtable_Begin = unsafe extern "C" fn(this: *mut crate::TESCameraState);
 /// `TESCameraState::End`, slot 2: called on the state that stops being current (high).
-pub type TESCameraState_vtable_End = unsafe extern "C" fn(this: *mut classes::TESCameraState);
+pub type TESCameraState_vtable_End = unsafe extern "C" fn(this: *mut crate::TESCameraState);
 /// `TESCameraState::Update`, slot 3: per-frame update: computes the pose, writes it to camera->cameraRoot's local transform and updates the node; may return the next state in *next (base: clears *next) (high).
-pub type TESCameraState_vtable_Update = unsafe extern "C" fn(this: *mut classes::TESCameraState, next: *mut c_void);
+pub type TESCameraState_vtable_Update = unsafe extern "C" fn(this: *mut crate::TESCameraState, next: *mut c_void);
 /// `TESCameraState::GetRotation`, slot 4: the state's camera rotation (base: the identity constant 0x331d790) (high).
-pub type TESCameraState_vtable_GetRotation = unsafe extern "C" fn(this: *mut classes::TESCameraState, out: *mut c_void);
+pub type TESCameraState_vtable_GetRotation = unsafe extern "C" fn(this: *mut crate::TESCameraState, out: *mut c_void);
 /// `TESCameraState::GetTranslation`, slot 5: the state's camera position (base: the zero point 0x331c458) (high).
-pub type TESCameraState_vtable_GetTranslation = unsafe extern "C" fn(this: *mut classes::TESCameraState, out: *mut c_void);
+pub type TESCameraState_vtable_GetTranslation = unsafe extern "C" fn(this: *mut crate::TESCameraState, out: *mut c_void);
 /// `TESCameraState::SaveGame`, slot 6: base: does nothing (high).
-pub type TESCameraState_vtable_SaveGame = unsafe extern "C" fn(this: *mut classes::TESCameraState, buffer: *mut classes::BGSSaveFormBuffer);
+pub type TESCameraState_vtable_SaveGame = unsafe extern "C" fn(this: *mut crate::TESCameraState, buffer: *mut crate::BGSSaveFormBuffer);
 /// `TESCameraState::LoadGame`, slot 7: base: does nothing (high).
-pub type TESCameraState_vtable_LoadGame = unsafe extern "C" fn(this: *mut classes::TESCameraState, buffer: *mut classes::BGSLoadFormBuffer);
+pub type TESCameraState_vtable_LoadGame = unsafe extern "C" fn(this: *mut crate::TESCameraState, buffer: *mut crate::BGSLoadFormBuffer);
 /// `TESCameraState::Revert`, slot 8: base: does nothing (high).
-pub type TESCameraState_vtable_Revert = unsafe extern "C" fn(this: *mut classes::TESCameraState, buffer: *mut classes::BGSLoadFormBuffer);
+pub type TESCameraState_vtable_Revert = unsafe extern "C" fn(this: *mut crate::TESCameraState, buffer: *mut crate::BGSLoadFormBuffer);
 
 /// `TESChildCell::vftable` at 0x1820bc8, id 190058 (rtti, high); 2 slots.
 #[repr(C)]
@@ -194857,17 +194856,17 @@ impl TESForm_vtable {
     }
 }
 /// `TESForm::vdtor`, slot 0: deleting destructor (high).
-pub type TESForm_vtable_vdtor = unsafe extern "C" fn(this: *mut classes::TESForm, flags: u32);
+pub type TESForm_vtable_vdtor = unsafe extern "C" fn(this: *mut crate::TESForm, flags: u32);
 /// `TESForm::GetFormType`, slot 21: the record type (high).
-pub type TESForm_vtable_GetFormType = unsafe extern "C" fn(this: *const classes::TESForm) -> u8;
+pub type TESForm_vtable_GetFormType = unsafe extern "C" fn(this: *const crate::TESForm) -> u8;
 /// `TESForm::GetFormDetailedString`, slot 22: debug description of the form (high).
-pub type TESForm_vtable_GetFormDetailedString = unsafe extern "C" fn(this: *const classes::TESForm, buf: *mut c_char, size: u32);
+pub type TESForm_vtable_GetFormDetailedString = unsafe extern "C" fn(this: *const crate::TESForm, buf: *mut c_char, size: u32);
 /// `TESForm::GetFormEditorID`, slot 50: editor id of the form, empty unless the class keeps it (high).
-pub type TESForm_vtable_GetFormEditorID = unsafe extern "C" fn(this: *const classes::TESForm) -> *const c_char;
+pub type TESForm_vtable_GetFormEditorID = unsafe extern "C" fn(this: *const crate::TESForm) -> *const c_char;
 /// `TESForm::SetFormEditorID`, slot 51: sets the editor id where the class keeps one (high).
-pub type TESForm_vtable_SetFormEditorID = unsafe extern "C" fn(this: *mut classes::TESForm, editorID: *const c_char) -> bool;
+pub type TESForm_vtable_SetFormEditorID = unsafe extern "C" fn(this: *mut crate::TESForm, editorID: *const c_char) -> bool;
 /// `TESForm::SetFormID`, slot 56: changes the form id and re-registers the form (high).
-pub type TESForm_vtable_SetFormID = unsafe extern "C" fn(this: *mut classes::TESForm, formID: u32, updateFile: bool);
+pub type TESForm_vtable_SetFormID = unsafe extern "C" fn(this: *mut crate::TESForm, formID: u32, updateFile: bool);
 
 /// `TESFormUIData::vftable` at 0x1984998, id 216350 (rtti, high); 1 slots.
 #[repr(C)]
@@ -194911,9 +194910,9 @@ impl TESFullName_vtable {
     }
 }
 /// `TESFullName::GetFullNameLength`, slot 4: length of the name (high).
-pub type TESFullName_vtable_GetFullNameLength = unsafe extern "C" fn(this: *const classes::TESFullName) -> u32;
+pub type TESFullName_vtable_GetFullNameLength = unsafe extern "C" fn(this: *const crate::TESFullName) -> u32;
 /// `TESFullName::GetFullName`, slot 5: the name (high).
-pub type TESFullName_vtable_GetFullName = unsafe extern "C" fn(this: *const classes::TESFullName) -> *const c_char;
+pub type TESFullName_vtable_GetFullName = unsafe extern "C" fn(this: *const crate::TESFullName) -> *const c_char;
 
 /// `TESFurniture::vftable` at 0x1811840, id 189309 (rtti, high); 83 slots.
 #[repr(C)]
@@ -195095,7 +195094,7 @@ impl TESFurniture_vtable {
     }
 }
 /// `TESFurniture::Activate`, slot 55: furniture activation: the player sits (PlayerCamera::EnterFurnitureCamera), a bed opens the sleep menu (or the serve-sentence question), a workbench queues its menu, or the default action 0x37 runs (high).
-pub type TESFurniture_vtable_Activate = unsafe extern "C" fn(this: *mut classes::TESFurniture, targetRef: *mut classes::TESObjectREFR, activator: *mut classes::TESObjectREFR, activateFlag: u8, object: *mut classes::TESBoundObject, count: i32) -> bool;
+pub type TESFurniture_vtable_Activate = unsafe extern "C" fn(this: *mut crate::TESFurniture, targetRef: *mut crate::TESObjectREFR, activator: *mut crate::TESObjectREFR, activateFlag: u8, object: *mut crate::TESBoundObject, count: i32) -> bool;
 
 /// `TESFurniture::vftable_30` at 0x1811ae0, id 189311 (rtti, high); 6 slots.
 #[repr(C)]
@@ -201199,9 +201198,9 @@ impl TESObjectREFR_vtable {
     }
 }
 /// `TESObjectREFR::HasKeyword`, slot 72: whether the reference or its base carries the keyword (high).
-pub type TESObjectREFR_vtable_HasKeyword = unsafe extern "C" fn(this: *const classes::TESObjectREFR, keyword: *const classes::BGSKeyword) -> bool;
+pub type TESObjectREFR_vtable_HasKeyword = unsafe extern "C" fn(this: *const crate::TESObjectREFR, keyword: *const crate::BGSKeyword) -> bool;
 /// `TESObjectREFR::Get3D`, slot 112: root 3D node, null when not loaded (high).
-pub type TESObjectREFR_vtable_Get3D = unsafe extern "C" fn(this: *const classes::TESObjectREFR) -> *mut classes::NiNode;
+pub type TESObjectREFR_vtable_Get3D = unsafe extern "C" fn(this: *const crate::TESObjectREFR) -> *mut crate::NiNode;
 
 /// `TESObjectREFR::vftable_20` at 0x1827cd8, id 190261 (rtti, high); 2 slots.
 #[repr(C)]
@@ -205631,37 +205630,37 @@ impl ThirdPersonState_vtable {
     }
 }
 /// `ThirdPersonState::Destroy`, slot 0:  (high).
-pub type ThirdPersonState_vtable_Destroy = unsafe extern "C" fn(this: *mut classes::ThirdPersonState, flags: u32) -> *mut classes::ThirdPersonState;
+pub type ThirdPersonState_vtable_Destroy = unsafe extern "C" fn(this: *mut crate::ThirdPersonState, flags: u32) -> *mut crate::ThirdPersonState;
 /// `ThirdPersonState::Begin`, slot 1: target heading into both yaws, registers the handler, schedules SetFirstPerson(false), looks up animatedNode (high).
-pub type ThirdPersonState_vtable_Begin = unsafe extern "C" fn(this: *mut classes::ThirdPersonState);
+pub type ThirdPersonState_vtable_Begin = unsafe extern "C" fn(this: *mut crate::ThirdPersonState);
 /// `ThirdPersonState::End`, slot 2: resets freeRotation (unless +0xdf), unregisters the handler, releases animatedNode, zeroes animatedBlend (high).
-pub type ThirdPersonState_vtable_End = unsafe extern "C" fn(this: *mut classes::ThirdPersonState);
+pub type ThirdPersonState_vtable_End = unsafe extern "C" fn(this: *mut crate::ThirdPersonState);
 /// `ThirdPersonState::Update`, slot 3: pending SetFirstPerson(false); look pitch (0x8fb2e0) and slot 15 unless +0xe0; thumbstick zoom; 0x8fe830 zoom/yaw/offset chase; slot 14 rotation; camera shake 0x8fa2b0; animated node 0x8fee70; position with collision 0x8fe3c0; writes root+0x48/+0x6c and calls 0xee0930 (high).
-pub type ThirdPersonState_vtable_Update = unsafe extern "C" fn(this: *mut classes::ThirdPersonState, next: *mut c_void);
+pub type ThirdPersonState_vtable_Update = unsafe extern "C" fn(this: *mut crate::ThirdPersonState, next: *mut c_void);
 /// `ThirdPersonState::GetRotation`, slot 4: returns +0x4c (high).
-pub type ThirdPersonState_vtable_GetRotation = unsafe extern "C" fn(this: *mut classes::ThirdPersonState, out: *mut c_void);
+pub type ThirdPersonState_vtable_GetRotation = unsafe extern "C" fn(this: *mut crate::ThirdPersonState, out: *mut c_void);
 /// `ThirdPersonState::GetTranslation`, slot 5: returns +0x40 (high).
-pub type ThirdPersonState_vtable_GetTranslation = unsafe extern "C" fn(this: *mut classes::ThirdPersonState, out: *mut c_void);
+pub type ThirdPersonState_vtable_GetTranslation = unsafe extern "C" fn(this: *mut crate::ThirdPersonState, out: *mut c_void);
 /// `ThirdPersonState::SaveGame`, slot 6: targetOffset, targetZoom, freeRotation, freeRotationEnabled, savedZoom, animatedNodeName (high).
-pub type ThirdPersonState_vtable_SaveGame = unsafe extern "C" fn(this: *mut classes::ThirdPersonState, buffer: *mut classes::BGSSaveFormBuffer);
+pub type ThirdPersonState_vtable_SaveGame = unsafe extern "C" fn(this: *mut crate::ThirdPersonState, buffer: *mut crate::BGSSaveFormBuffer);
 /// `ThirdPersonState::LoadGame`, slot 7: reads the same and copies target values into the current ones (high).
-pub type ThirdPersonState_vtable_LoadGame = unsafe extern "C" fn(this: *mut classes::ThirdPersonState, buffer: *mut classes::BGSLoadFormBuffer);
+pub type ThirdPersonState_vtable_LoadGame = unsafe extern "C" fn(this: *mut crate::ThirdPersonState, buffer: *mut crate::BGSLoadFormBuffer);
 /// `ThirdPersonState::Revert`, slot 8: zeroes pose, offsets, zooms, freeRotation; flags back to ctor values (high).
-pub type ThirdPersonState_vtable_Revert = unsafe extern "C" fn(this: *mut classes::ThirdPersonState, buffer: *mut classes::BGSLoadFormBuffer);
+pub type ThirdPersonState_vtable_Revert = unsafe extern "C" fn(this: *mut crate::ThirdPersonState, buffer: *mut crate::BGSLoadFormBuffer);
 /// `ThirdPersonState::SetTargetHandle`, slot 9: empty in the base; Horse/Dragon store their mount (high).
-pub type ThirdPersonState_vtable_SetTargetHandle = unsafe extern "C" fn(this: *mut classes::ThirdPersonState, handle: *mut c_void);
+pub type ThirdPersonState_vtable_SetTargetHandle = unsafe extern "C" fn(this: *mut crate::ThirdPersonState, handle: *mut c_void);
 /// `ThirdPersonState::ResetOffsets`, slot 10: empty in the base; Horse/Dragon set current and target offsets to their mount values (high).
-pub type ThirdPersonState_vtable_ResetOffsets = unsafe extern "C" fn(this: *mut classes::ThirdPersonState);
+pub type ThirdPersonState_vtable_ResetOffsets = unsafe extern "C" fn(this: *mut crate::ThirdPersonState);
 /// `ThirdPersonState::SetCombatOffsets`, slot 11: targetOffset from fOverShoulderCombatPosX/AddY/PosZ or fOverShoulderPosX/0/PosZ (high).
-pub type ThirdPersonState_vtable_SetCombatOffsets = unsafe extern "C" fn(this: *mut classes::ThirdPersonState, combat: bool);
+pub type ThirdPersonState_vtable_SetCombatOffsets = unsafe extern "C" fn(this: *mut crate::ThirdPersonState, combat: bool);
 /// `ThirdPersonState::IsFreeLookActive`, slot 12: animatorCam || freeRotationEnabled || PlayerControls+0x4b (high).
-pub type ThirdPersonState_vtable_IsFreeLookActive = unsafe extern "C" fn(this: *mut classes::ThirdPersonState) -> bool;
+pub type ThirdPersonState_vtable_IsFreeLookActive = unsafe extern "C" fn(this: *mut crate::ThirdPersonState) -> bool;
 /// `ThirdPersonState::SetFreeRotationMode`, slot 13: free rotation on only while allowed and the target stands still (high).
-pub type ThirdPersonState_vtable_SetFreeRotationMode = unsafe extern "C" fn(this: *mut classes::ThirdPersonState, allow: bool);
+pub type ThirdPersonState_vtable_SetFreeRotationMode = unsafe extern "C" fn(this: *mut crate::ThirdPersonState, allow: bool);
 /// `ThirdPersonState::UpdateRotation`, slot 14: targetYaw from the target heading; with +0xe1 and free look adds freeRotation; rotation = Euler(pitch, 0, currentYaw) (high).
-pub type ThirdPersonState_vtable_UpdateRotation = unsafe extern "C" fn(this: *mut classes::ThirdPersonState);
+pub type ThirdPersonState_vtable_UpdateRotation = unsafe extern "C" fn(this: *mut crate::ThirdPersonState);
 /// `ThirdPersonState::ProcessLookInput`, slot 15: free rotation integration (fFreeRotationSpeed, real delta) and the pitch zoom offset (high).
-pub type ThirdPersonState_vtable_ProcessLookInput = unsafe extern "C" fn(this: *mut classes::ThirdPersonState, look: *mut c_void);
+pub type ThirdPersonState_vtable_ProcessLookInput = unsafe extern "C" fn(this: *mut crate::ThirdPersonState, look: *mut c_void);
 
 /// `ThirdPersonState::vftable_20` at 0x18ecc90, id 205238 (rtti, high); 7 slots.
 #[repr(C)]
@@ -205769,11 +205768,11 @@ impl TogglePOVHandler_vtable {
     }
 }
 /// `TogglePOVHandler::Destroy`, slot 0:  (high).
-pub type TogglePOVHandler_vtable_Destroy = unsafe extern "C" fn(this: *mut classes::TogglePOVHandler, flags: u32) -> *mut classes::TogglePOVHandler;
+pub type TogglePOVHandler_vtable_Destroy = unsafe extern "C" fn(this: *mut crate::TogglePOVHandler, flags: u32) -> *mut crate::TogglePOVHandler;
 /// `TogglePOVHandler::CanProcess`, slot 1: Toggle POV (high).
-pub type TogglePOVHandler_vtable_CanProcess = unsafe extern "C" fn(this: *mut classes::TogglePOVHandler, event: *mut classes::InputEvent) -> bool;
+pub type TogglePOVHandler_vtable_CanProcess = unsafe extern "C" fn(this: *mut crate::TogglePOVHandler, event: *mut crate::InputEvent) -> bool;
 /// `TogglePOVHandler::ProcessButton`, slot 6: sets PlayerControls+0x4b (vanity held) (high).
-pub type TogglePOVHandler_vtable_ProcessButton = unsafe extern "C" fn(this: *mut classes::TogglePOVHandler, event: *mut classes::ButtonEvent, data: *mut c_void);
+pub type TogglePOVHandler_vtable_ProcessButton = unsafe extern "C" fn(this: *mut crate::TogglePOVHandler, event: *mut crate::ButtonEvent, data: *mut c_void);
 
 /// `ToggleRunHandler::vftable` at 0x1935418, id 208727 (rtti, high); 7 slots.
 #[repr(C)]
@@ -205803,7 +205802,7 @@ impl ToggleRunHandler_vtable {
     }
 }
 /// `ToggleRunHandler::CanProcess`, slot 1: Toggle Always Run (high).
-pub type ToggleRunHandler_vtable_CanProcess = unsafe extern "C" fn(this: *mut classes::ToggleRunHandler, event: *mut classes::InputEvent) -> bool;
+pub type ToggleRunHandler_vtable_CanProcess = unsafe extern "C" fn(this: *mut crate::ToggleRunHandler, event: *mut crate::InputEvent) -> bool;
 
 /// `TrainingMenu::vftable` at 0x1981158, id 216116 (rtti, high); 9 slots.
 #[repr(C)]
@@ -205893,13 +205892,13 @@ impl TransitionState_vtable {
     }
 }
 /// `TransitionState::Destroy`, slot 0: releases targetState, frees 0x78 when flags & 1 (high).
-pub type TransitionState_vtable_Destroy = unsafe extern "C" fn(this: *mut classes::TransitionState, flags: u32) -> *mut classes::TransitionState;
+pub type TransitionState_vtable_Destroy = unsafe extern "C" fn(this: *mut crate::TransitionState, flags: u32) -> *mut crate::TransitionState;
 /// `TransitionState::Begin`, slot 1: fromRotation/fromPosition from the root, shortest-path sign fix, startTimeMs = g_FrameTimeMs (high).
-pub type TransitionState_vtable_Begin = unsafe extern "C" fn(this: *mut classes::TransitionState);
+pub type TransitionState_vtable_Begin = unsafe extern "C" fn(this: *mut crate::TransitionState);
 /// `TransitionState::Update`, slot 3: progress = clamp((now - start) / duration); root local rotation = slerp(from, to) (InterpolateQuaternionNormalized) or to at 1; root local translation = lerp(from, to); currentPosition; UpdateNode; at progress 1 *next = targetState (high).
-pub type TransitionState_vtable_Update = unsafe extern "C" fn(this: *mut classes::TransitionState, next: *mut c_void);
+pub type TransitionState_vtable_Update = unsafe extern "C" fn(this: *mut crate::TransitionState, next: *mut c_void);
 /// `TransitionState::GetTranslation`, slot 5: *out = currentPosition (+0x60) (high).
-pub type TransitionState_vtable_GetTranslation = unsafe extern "C" fn(this: *const classes::TransitionState, out: *mut c_void);
+pub type TransitionState_vtable_GetTranslation = unsafe extern "C" fn(this: *const crate::TransitionState, out: *mut c_void);
 
 /// `TrapEntry::vftable` at 0x1867e40, id 196394 (rtti, high); 3 slots.
 #[repr(C)]
@@ -206224,7 +206223,7 @@ impl TweenMenu_vtable {
     }
 }
 /// `TweenMenu::PostDisplay`, slot 6: PlayerCamera::Update, then movie display (high).
-pub type TweenMenu_vtable_PostDisplay = unsafe extern "C" fn(this: *mut classes::TweenMenu);
+pub type TweenMenu_vtable_PostDisplay = unsafe extern "C" fn(this: *mut crate::TweenMenu);
 
 /// `TweenMenuCameraState::vftable` at 0x196e9e0, id 214907 (rtti, high); 9 slots.
 #[repr(C)]
@@ -206282,15 +206281,15 @@ impl TweenMenuCameraState_vtable {
     }
 }
 /// `TweenMenuCameraState::Destroy`, slot 0: scalar deleting destructor: vtable = TESCameraState::vftable, frees 0x50 when flags & 1 (high).
-pub type TweenMenuCameraState_vtable_Destroy = unsafe extern "C" fn(this: *mut classes::TweenMenuCameraState, flags: u32) -> *mut classes::TweenMenuCameraState;
+pub type TweenMenuCameraState_vtable_Destroy = unsafe extern "C" fn(this: *mut crate::TweenMenuCameraState, flags: u32) -> *mut crate::TweenMenuCameraState;
 /// `TweenMenuCameraState::Begin`, slot 1: zeroes closing, stores the base FOV, target zoom FOV = fTweenCamZoomFOVMod (high).
-pub type TweenMenuCameraState_vtable_Begin = unsafe extern "C" fn(this: *mut classes::TweenMenuCameraState);
+pub type TweenMenuCameraState_vtable_Begin = unsafe extern "C" fn(this: *mut crate::TweenMenuCameraState);
 /// `TweenMenuCameraState::End`, slot 2: worldFOV = baseFOV (high).
-pub type TweenMenuCameraState_vtable_End = unsafe extern "C" fn(this: *mut classes::TweenMenuCameraState);
+pub type TweenMenuCameraState_vtable_End = unsafe extern "C" fn(this: *mut crate::TweenMenuCameraState);
 /// `TweenMenuCameraState::Update`, slot 3:  (high).
-pub type TweenMenuCameraState_vtable_Update = unsafe extern "C" fn(this: *mut classes::TweenMenuCameraState, nextState: *mut c_void);
+pub type TweenMenuCameraState_vtable_Update = unsafe extern "C" fn(this: *mut crate::TweenMenuCameraState, nextState: *mut c_void);
 /// `TweenMenuCameraState::GetRotation`, slot 4: baseRotation * euler(currentAngles) (high).
-pub type TweenMenuCameraState_vtable_GetRotation = unsafe extern "C" fn(this: *mut classes::TweenMenuCameraState, out: *mut c_void);
+pub type TweenMenuCameraState_vtable_GetRotation = unsafe extern "C" fn(this: *mut crate::TweenMenuCameraState, out: *mut c_void);
 
 /// `UIBlurManager::vftable` at 0x19844a0, id 216246 (rtti, high); 2 slots.
 #[repr(C)]
@@ -207630,15 +207629,15 @@ impl VATSCameraState_vtable {
     }
 }
 /// `VATSCameraState::Destroy`, slot 0: scalar deleting destructor: restores TESCameraState::vftable, frees 0x38 when flags & 1 (high).
-pub type VATSCameraState_vtable_Destroy = unsafe extern "C" fn(this: *mut classes::VATSCameraState, flags: u32) -> *mut classes::VATSCameraState;
+pub type VATSCameraState_vtable_Destroy = unsafe extern "C" fn(this: *mut crate::VATSCameraState, flags: u32) -> *mut crate::VATSCameraState;
 /// `VATSCameraState::Begin`, slot 1: PlayerCharacter::SetFirstPerson(player, false): the player body is drawn in third-person form while the kill camera runs (high).
-pub type VATSCameraState_vtable_Begin = unsafe extern "C" fn(this: *mut classes::VATSCameraState);
+pub type VATSCameraState_vtable_Begin = unsafe extern "C" fn(this: *mut crate::VATSCameraState);
 /// `VATSCameraState::Update`, slot 3: slots 4/5, caster collision, writes the root (high).
-pub type VATSCameraState_vtable_Update = unsafe extern "C" fn(this: *mut classes::TESCameraState, next: *mut c_void);
+pub type VATSCameraState_vtable_Update = unsafe extern "C" fn(this: *mut crate::TESCameraState, next: *mut c_void);
 /// `VATSCameraState::GetRotation`, slot 4: look-at rotation from position (+0x2c) toward VATS::GetCameraLookAtPoint 0x807fd0 with up (0,0,1) (0x20ced68), multiplied by the Euler matrix of rotationEuler (+0x20), converted to a quaternion (high).
-pub type VATSCameraState_vtable_GetRotation = unsafe extern "C" fn(this: *mut classes::VATSCameraState, out: *mut c_void);
+pub type VATSCameraState_vtable_GetRotation = unsafe extern "C" fn(this: *mut crate::VATSCameraState, out: *mut c_void);
 /// `VATSCameraState::GetTranslation`, slot 5: +0x2c (high).
-pub type VATSCameraState_vtable_GetTranslation = unsafe extern "C" fn(this: *mut classes::VATSCameraState, out: *mut c_void);
+pub type VATSCameraState_vtable_GetTranslation = unsafe extern "C" fn(this: *mut crate::VATSCameraState, out: *mut c_void);
 
 /// `ValueAndConditionsEffect::vftable` at 0x18fce40, id 206141 (rtti, high); 33 slots.
 #[repr(C)]
@@ -235573,7 +235572,7 @@ impl hkbCharacter_vtable {
     }
 }
 /// `hkbCharacter::GetNearbyCharacters`, slot 4: appends the nearbyCharacters whose worldFromModel position is within radius (high).
-pub type hkbCharacter_vtable_GetNearbyCharacters = unsafe extern "C" fn(this: *mut classes::hkbCharacter, radius: f32, out: *mut c_void);
+pub type hkbCharacter_vtable_GetNearbyCharacters = unsafe extern "C" fn(this: *mut crate::hkbCharacter, radius: f32, out: *mut c_void);
 
 /// `hkbCharacterAddedInfo::vftable` at 0x1a95970, id 241287 (rtti, high); 3 slots.
 #[repr(C)]

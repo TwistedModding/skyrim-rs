@@ -12,7 +12,7 @@ crate-type = ["cdylib"]
 skse.workspace = true
 skyrim.workspace = true
 framework.workspace = true
-layout.workspace = true
+skre.workspace = true
 
 [lints]
 workspace = true
