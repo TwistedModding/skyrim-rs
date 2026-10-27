@@ -15,7 +15,7 @@ use core::ffi::{CStr, c_void};
 use core::sync::atomic::{AtomicU32, Ordering};
 
 use sre::raw::{fns, vtables};
-use sre::{BSCullingProcess, BSGeometry, BSLight, BSLightingShaderMaterialBase, BSShaderMaterial, BSShaderProperty, BSShaderTextureSet, BSShadowLight, CameraMatrixEntry, NiAVObject, NiCamera, NiNode, ShaderMaterialType, ShadowMapData, ShadowSceneNode};
+use sre::{BSCullingProcess, BSGeometry, BSLight, BSLightingShaderMaterialBase, BSShaderMaterial, BSShaderProperty, BSShaderTextureSet, BSShadowLight, BSTextureSet, CameraMatrixEntry, NiAVObject, NiCamera, NiNode, ShaderMaterialType, ShadowMapData, ShadowSceneNode};
 
 use crate::forms::ptr_slice;
 
@@ -498,17 +498,18 @@ impl BSShaderMaterialExt for BSShaderMaterial {
     }
 }
 
-pub trait BSShaderTextureSetExt {
-    /// The path in `slot` (0..9, slot 0 the diffuse map) through `GetTexturePath`, `None` when unset.
+pub trait BSTextureSetExt {
+    /// The path in `slot` (0..9, slot 0 the diffuse map) of a `BSShaderTextureSet` through its
+    /// `GetTexturePath`; `None` when unset or when the set is of another class.
     fn texture_path(&self, slot: u32) -> Option<&CStr>;
 }
 
-impl BSShaderTextureSetExt for BSShaderTextureSet {
+impl BSTextureSetExt for BSTextureSet {
     fn texture_path(&self, slot: u32) -> Option<&CStr> {
-        if slot >= 9 {
+        if slot >= 9 || crate::class_of(self)?.id != vtables::BSShaderTextureSet_vtable::ID {
             return None;
         }
-        let p = self.get_texture_path(slot);
+        let p = unsafe { &*core::ptr::from_ref(self).cast::<BSShaderTextureSet>() }.get_texture_path(slot);
         if p.is_null() { None } else { Some(unsafe { CStr::from_ptr(p) }) }
     }
 }

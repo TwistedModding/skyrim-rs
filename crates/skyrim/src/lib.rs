@@ -38,7 +38,7 @@ pub mod prelude {
     pub use crate::forms::{FormClass, TESDataHandlerExt, TESFileExt, TESFormExt};
     pub use crate::input::{ControlMapExt, InputEventExt, InputManagerExt};
     pub use crate::papyrus::VirtualMachineExt;
-    pub use crate::render::{BSCullingProcessExt, BSShaderMaterialExt, BSShaderPropertyExt, BSShaderTextureSetExt, BSShadowLightExt, NiAVObjectExt, NiNodeExt, NodeClass, ShadowSceneNodeExt};
+    pub use crate::render::{BSCullingProcessExt, BSShaderMaterialExt, BSShaderPropertyExt, BSShadowLightExt, BSTextureSetExt, NiAVObjectExt, NiNodeExt, NodeClass, ShadowSceneNodeExt};
     pub use crate::save::{BGSSaveLoadGameExt, BGSSaveLoadManagerExt};
     pub use crate::ui::{GFxMovieViewExt, MenuManagerExt, UIMessageQueueExt};
 }

@@ -157,6 +157,8 @@ pub unsafe fn hook_hands_projection(detour: SetPerspectiveFromFovFn) -> Result<H
 }
 
 pub trait PlayerCameraExt {
+    /// The current state object, `None` before the camera has one.
+    fn current_state(&self) -> Option<&TESCameraState>;
     /// The state object for `state`, one of the 13 at +0xb8 in `CameraState` order.
     fn state_object(&self, state: CameraState) -> Option<&TESCameraState>;
     /// Which of the 13 states is current, `None` when the pointer matches none; the engine's own
@@ -169,6 +171,10 @@ pub trait PlayerCameraExt {
 }
 
 impl PlayerCameraExt for PlayerCamera {
+    fn current_state(&self) -> Option<&TESCameraState> {
+        unsafe { self.currentState.cast::<TESCameraState>().as_ref() }
+    }
+
     fn state_object(&self, state: CameraState) -> Option<&TESCameraState> {
         let i = state as usize * 8;
         let p = usize::from_le_bytes(self.cameraStates[i..i + 8].try_into().unwrap()) as *const TESCameraState;
