@@ -1,4 +1,4 @@
-//! One test per `skyrim::camera` and the pass 6 part of `skyrim::render`, against the RE repo's
+//! The frame suite through `skyrim::camera`, `skyrim::render` and the generated camera and scene classes, against the RE repo's
 //! `docs/subsystems/frame-verify.md`. `install` detours `TESCamera::Update` and `PresentFrame` at
 //! `DataLoaded`; the camera detour keeps one sample per camera state (and one for the orbit, a
 //! third-person sample with free rotation) of what the state wrote; `TESTS` reads the scene graph,
@@ -9,12 +9,26 @@ use std::collections::BTreeMap;
 use std::sync::{Mutex, OnceLock};
 use std::sync::atomic::{AtomicU32, Ordering};
 
+use skyrim::BSFixedString;
+use skyrim::camera::{CameraUpdateFn, frame_delta, frame_delta_real};
+use skyrim::prelude::*;
+use skyrim::render::{PresentFn, floats, frame_counter, shadow_scene_node};
 use sre::raw::vtables;
-use skyrim::actors::PlayerCharacter;
-use skyrim::camera::{CameraState, CameraUpdateFn, PlayerCamera, frame_delta, frame_delta_real, main_camera};
-use skyrim::render::{AccumulatorRenderMode, BSShaderAccumulator, PresentFn, RenderWindow, ShaderFlags, ShaderMaterialType, ShadowSceneNode, Sky, frame_counter, world_scene_graph};
+use sre::{AccumulatorRenderMode, BSGeometry, BSShaderProperty_flags as ShaderFlags, CameraState, NiAVObject, NiCamera, PlayerCamera, PlayerCharacter, ShaderMaterialType};
 
-use crate::{Test, check};
+use crate::{Test, check, third_person_root};
+
+fn frustum(camera: &NiCamera) -> [f32; 6] {
+    [camera.frustumLeft, camera.frustumRight, camera.frustumTop, camera.frustumBottom, camera.frustumNear, camera.frustumFar]
+}
+
+fn viewport(camera: &NiCamera) -> [f32; 4] {
+    [camera.portLeft, camera.portRight, camera.portTop, camera.portBottom]
+}
+
+fn name(object: &NiAVObject) -> &BSFixedString {
+    BSFixedString::view(&object.name)
+}
 
 pub const TESTS: &[(&str, Test)] = &[("names", names), ("shaders", shaders), ("accumulators", accumulators), ("window", window), ("sky", sky), ("frame_camera", frame_camera), ("presents", presents)];
 pub const SAMPLE_TESTS: &[(&str, Test)] = &[("third_person", third_person), ("orbit", orbit), ("first_person", first_person), ("free_camera", free_camera), ("frame_time", frame_time)];
@@ -52,11 +66,11 @@ static SAMPLES: Mutex<BTreeMap<&'static str, Sample>> = Mutex::new(BTreeMap::new
 
 fn sample(camera: &PlayerCamera) -> Option<(&'static str, Sample)> {
     let state = camera.current_state()?;
-    let id = state.id()?;
+    let id = CameraState::from_u32(state.id)?;
     let root = camera.camera_root()?;
-    let frame_camera = main_camera()?;
-    let third = state.as_third_person().map(|t| (t.target_offset(), t.current_offset(), t.current_yaw(), t.current_zoom(), t.free_rotation(), t.free_rotation_enabled()));
-    let free = state.as_free().map(|f| (f.position(), f.pitch(), f.yaw()));
+    let frame_camera = sre::get_main_camera()?;
+    let third = state.as_third_person().map(|t| (floats(&t.targetOffset), floats(&t.currentOffset), t.currentYaw, t.currentZoom, floats(&t.freeRotation), t.freeRotationEnabled != 0));
+    let free = state.as_free().map(|f| (floats(&f.position), f.pitch, f.yaw));
     let key = match (id, third) {
         (CameraState::ThirdPerson, Some((_, _, _, _, [yaw, _], true))) if yaw.abs() > 0.5 => "orbit",
         (CameraState::ThirdPerson, _) => "third",
@@ -68,16 +82,16 @@ fn sample(camera: &PlayerCamera) -> Option<(&'static str, Sample)> {
         key,
         Sample {
             state: id,
-            stack_count: camera.state_stack_count(),
-            cached_position: camera.cached_position(),
-            root_world: root.world().translation,
-            root_local: root.local().translation,
-            frame_camera_world: frame_camera.world().translation,
-            frame_camera_under_root: frame_camera.parent().is_some_and(|p| core::ptr::eq(p.raw(), root.raw())),
-            world_fov: camera.world_fov(),
-            frustum: frame_camera.frustum(),
-            viewport: frame_camera.viewport(),
-            yaw: camera.yaw(),
+            stack_count: camera.stateStackCount,
+            cached_position: floats(&camera.cachedPosition),
+            root_world: root.world_transform().translation,
+            root_local: root.local_transform().translation,
+            frame_camera_world: frame_camera.world_transform().translation,
+            frame_camera_under_root: frame_camera.parent().is_some_and(|p| core::ptr::eq(p, root)),
+            world_fov: camera.worldFOV,
+            frustum: frustum(frame_camera),
+            viewport: viewport(frame_camera),
+            yaw: camera.yaw,
             third,
             free,
             delta: frame_delta(),
@@ -88,8 +102,8 @@ fn sample(camera: &PlayerCamera) -> Option<(&'static str, Sample)> {
 
 unsafe extern "C" fn update_detour(camera: *mut sre::TESCamera) {
     unsafe { UPDATE.get().expect("stored before enabling").original()(camera) }
-    if PlayerCamera::is(camera)
-        && let Some(player_camera) = PlayerCamera::get()
+    if let Some(player_camera) = PlayerCamera::singleton()
+        && core::ptr::eq(core::ptr::from_ref::<sre::TESCamera>(player_camera), camera)
         && let Some((key, s)) = sample(player_camera)
     {
         UPDATES.fetch_add(1, Ordering::Relaxed);
@@ -121,97 +135,99 @@ pub fn reset() {
 }
 
 fn player() -> Result<&'static PlayerCharacter, String> {
-    PlayerCharacter::get().ok_or_else(|| "g_PlayerCharacter_ptr is null".to_owned())
+    sre::g_player_character_ptr().ok_or_else(|| "g_PlayerCharacter_ptr is null".to_owned())
 }
 
 fn names() -> Result<String, String> {
     let p = player()?;
-    let third = p.third_person_root().ok_or("loadedData->node3D is null")?;
-    let name = third.name().to_str().unwrap_or("?").to_owned();
-    check(name == "Skeleton.nif", &format!("the third-person root is named {name:?}"))?;
-    let counts = third.children_counts();
+    let third = third_person_root(p).ok_or("loadedData->node3D is null")?;
+    let root_name = name(third).to_str().unwrap_or("?").to_owned();
+    check(root_name == "Skeleton.nif", &format!("the third-person root is named {root_name:?}"))?;
+    let counts: [u16; 4] = core::array::from_fn(|i| u16::from_le_bytes([third.children[16 + 2 * i], third.children[17 + 2 * i]]));
     check(counts[0] == 8 && counts[1] == 8 && counts[2] == 8 && counts[3] == 1, &format!("children counts {counts:?}"))?;
     let mut kids = Vec::new();
     for (i, child) in third.children().iter().enumerate() {
         let child = child.ok_or_else(|| format!("child {i} is null"))?;
-        check(child.parent_index() as usize == i, &format!("child {i} has parentIndex {}", child.parent_index()))?;
-        check(child.parent().is_some_and(|q| core::ptr::eq(q.raw(), third.raw())), &format!("child {i} has another parent"))?;
-        kids.push(format!("{}={}", child.class().map_or("?", |c| c.class), child.name().to_str().unwrap_or("?")));
+        let index = child.parentIndex;
+        check(index as usize == i, &format!("child {i} has parentIndex {index}"))?;
+        check(core::ptr::eq(child.parent, third), &format!("child {i} has another parent"))?;
+        kids.push(format!("{}={}", skyrim::class_of(child).map_or("?", |c| c.class), name(child).to_str().unwrap_or("?")));
     }
-    let bumper = skyrim::string::BSFixedString::new("CharacterBumper");
-    let found = third.object_by_name(&bumper).ok_or("GetObjectByName(CharacterBumper) returned null")?;
-    check(found.name().to_str() == Some("CharacterBumper"), "GetObjectByName returned another node")?;
-    Ok(format!("{name} counts {counts:?} children [{}]; CharacterBumper found at {:p}", kids.join(", "), found.as_ptr()))
+    let bumper = BSFixedString::new("CharacterBumper");
+    let found = third.get_object_by_name(bumper.raw()).ok_or("GetObjectByName(CharacterBumper) returned null")?;
+    check(name(found).to_str() == Some("CharacterBumper"), "GetObjectByName returned another node")?;
+    Ok(format!("{root_name} counts {counts:?} children [{}]; CharacterBumper found at {found:p}", kids.join(", ")))
 }
 
 fn shaders() -> Result<String, String> {
     let p = player()?;
-    let third = p.third_person_root().ok_or("loadedData->node3D is null")?;
+    let third = third_person_root(p).ok_or("loadedData->node3D is null")?;
     let mut seen = Vec::new();
     for child in third.children().iter().flatten() {
-        let Some(geometry) = child.as_geometry() else { continue };
-        let property = geometry.shader_property().ok_or("a skin without a shader property")?;
-        let class = property.class().ok_or("the property's vtable is not in the ledger")?;
+        let Some(geometry) = child.cast::<BSGeometry>() else { continue };
+        let property = unsafe { geometry.shaderProperty.as_ref() }.ok_or("a skin without a shader property")?;
+        let class = skyrim::class_of(property).ok_or("the property's vtable is not in the ledger")?;
         check(class.id == vtables::BSLightingShaderProperty_vtable::ID, &format!("a skin's property is a {}", class.class))?;
-        let flags = property.flags();
+        let flags = ShaderFlags(property.flags);
         let required = [ShaderFlags::SKINNED, ShaderFlags::RECEIVE_SHADOWS, ShaderFlags::CAST_SHADOWS, ShaderFlags::Z_BUFFER_TEST, ShaderFlags::Z_BUFFER_WRITE];
         let forbidden = [ShaderFlags::REFRACTION, ShaderFlags::REFRACTION2, ShaderFlags::DECAL, ShaderFlags::DYNAMIC_DECAL];
         check(required.iter().all(|f| flags.contains(*f)), &format!("flags {:#x} lack a required bit", flags.bits()))?;
         check(!forbidden.iter().any(|f| flags.contains(*f)), &format!("flags {:#x} carry a refraction or decal bit", flags.bits()))?;
         let material = property.material().ok_or("a skin without a material")?;
-        check(material.material_type() == Some(ShaderMaterialType::Lighting), &format!("material type {:?}", material.material_type()))?;
+        let kind = ShaderMaterialType::from_u32(material.get_type());
+        check(kind == Some(ShaderMaterialType::Lighting), &format!("material type {kind:?}"))?;
         let lighting = material.as_lighting().ok_or("not a lighting material")?;
         let set = lighting.texture_set().ok_or("no texture set")?;
-        let diffuse = set.path(0).map(|c| c.to_string_lossy().into_owned()).unwrap_or_default();
+        let diffuse = set.texture_path(0).map(|c| c.to_string_lossy().into_owned()).unwrap_or_default();
         check(diffuse.to_ascii_lowercase().ends_with(".dds"), &format!("diffuse path {diffuse:?}"))?;
-        seen.push(format!("{}: flags {:#x} state {:#x} alpha {} feature {:?} diffuse {diffuse}", child.name().to_str().unwrap_or("?"), flags.bits(), property.last_render_pass_state(), property.alpha(), material.feature()));
+        seen.push(format!("{}: flags {:#x} state {:#x} alpha {} feature {:?} diffuse {diffuse}", name(child).to_str().unwrap_or("?"), flags.bits(), property.lastRenderPassState, property.alpha, Some(material.get_feature())));
     }
     check(seen.len() >= 2, &format!("{} skins under the root", seen.len()))?;
     Ok(seen.join(" | "))
 }
 
 fn accumulators() -> Result<String, String> {
-    let [depth, world, first] = BSShaderAccumulator::world();
-    let depth = depth.ok_or("g_WorldDepthAccumulator is null")?;
-    let world = world.ok_or("g_WorldAccumulator is null")?;
-    let first = first.ok_or("g_FirstPersonAccumulator is null")?;
-    check(depth.render_mode() == Some(AccumulatorRenderMode::DepthPrepass), &format!("depth accumulator mode {:#x}", depth.render_mode_raw()))?;
-    check(world.render_mode() == Some(AccumulatorRenderMode::Standard), &format!("world accumulator mode {:#x}", world.render_mode_raw()))?;
-    check(first.render_mode() == Some(AccumulatorRenderMode::FirstPerson), &format!("first-person accumulator mode {:#x}", first.render_mode_raw()))?;
-    Ok(format!("modes depth {:#x} world {:#x} first person {:#x}; world camera {:p}", depth.render_mode_raw(), world.render_mode_raw(), first.render_mode_raw(), world.camera().map_or(core::ptr::null(), |c| c.raw())))
+    let depth = sre::g_world_depth_accumulator().ok_or("g_WorldDepthAccumulator is null")?;
+    let world = sre::g_world_accumulator().ok_or("g_WorldAccumulator is null")?;
+    let first = sre::g_first_person_accumulator().ok_or("g_FirstPersonAccumulator is null")?;
+    let (depth_mode, world_mode, first_mode) = (depth.renderMode, world.renderMode, first.renderMode);
+    check(AccumulatorRenderMode::from_u32(depth_mode) == Some(AccumulatorRenderMode::DepthPrepass), &format!("depth accumulator mode {depth_mode:#x}"))?;
+    check(AccumulatorRenderMode::from_u32(world_mode) == Some(AccumulatorRenderMode::Standard), &format!("world accumulator mode {world_mode:#x}"))?;
+    check(AccumulatorRenderMode::from_u32(first_mode) == Some(AccumulatorRenderMode::FirstPerson), &format!("first-person accumulator mode {first_mode:#x}"))?;
+    Ok(format!("modes depth {depth_mode:#x} world {world_mode:#x} first person {first_mode:#x}; world camera {:p}", world.camera().map_or(core::ptr::null(), core::ptr::from_ref)))
 }
 
 fn window() -> Result<String, String> {
-    let w = RenderWindow::current().ok_or("g_CurrentRenderWindow is null")?;
-    let [width, height] = w.size();
-    check(width > 0 && height > 0 && w.hwnd() != 0, &format!("window {width}x{height} hwnd {:#x}", w.hwnd()))?;
-    check(!w.swap_chain().is_null() && !w.back_buffer_rtv().is_null(), "the swap chain or the back buffer view is null")?;
-    Ok(format!("window {width}x{height} hwnd {:#x}, swap chain {:p}, back buffer RTV {:p}", w.hwnd(), w.swap_chain(), w.back_buffer_rtv()))
+    let w = sre::g_current_render_window().ok_or("g_CurrentRenderWindow is null")?;
+    let (width, height, hwnd) = (w.width, w.height, w.hwnd);
+    check(width > 0 && height > 0 && hwnd != 0, &format!("window {width}x{height} hwnd {hwnd:#x}"))?;
+    check(!w.swapChain.is_null() && !w.backBufferRTV.is_null(), "the swap chain or the back buffer view is null")?;
+    Ok(format!("window {width}x{height} hwnd {hwnd:#x}, swap chain {:p}, back buffer RTV {:p}", w.swapChain, w.backBufferRTV))
 }
 
 fn sky() -> Result<String, String> {
-    let sky = Sky::get().ok_or("g_Sky_ptr is null")?;
-    let hour = sky.current_game_hour();
-    let sun = sky.sun_light().ok_or("the sky has no sun light")?;
-    let scene = ShadowSceneNode::world().ok_or("g_ShadowSceneNode[0] is null")?;
+    let sky = sre::Sky::singleton().ok_or("g_Sky_ptr is null")?;
+    let hour = sky.currentGameHour;
+    let sun = sky.sun().and_then(|s| s.light()).ok_or("the sky has no sun light")?;
+    let scene = shadow_scene_node(0).ok_or("g_ShadowSceneNode[0] is null")?;
     let scene_sun = scene.sun_light().and_then(|l| l.light()).ok_or("the scene node has no sun light")?;
-    check(core::ptr::eq(sun.as_ptr(), scene_sun.as_ptr()), "the sky's sun light is not the scene node's")?;
-    Ok(format!("game hour {hour:.2}, sun light {:p} = sunLight->light", sun.as_ptr()))
+    check(core::ptr::from_ref(sun).cast::<u8>() == core::ptr::from_ref(scene_sun).cast::<u8>(), "the sky's sun light is not the scene node's")?;
+    Ok(format!("game hour {hour:.2}, sun light {sun:p} = sunLight->light"))
 }
 
 fn frame_camera() -> Result<String, String> {
-    let camera = main_camera().ok_or("GetMainCamera returned null")?;
-    let graph = world_scene_graph().ok_or("g_SceneGraph is null")?;
-    check(camera.class().is_some_and(|c| c.id == vtables::NiCamera_vtable::ID), "the main camera is not a NiCamera")?;
-    let root = PlayerCamera::get().and_then(|c| c.camera_root()).ok_or("the player camera has no root")?;
-    check(camera.parent().is_some_and(|p| core::ptr::eq(p.raw(), root.raw())), "the frame camera is not a child of the camera root")?;
-    let f = camera.frustum();
-    let fov = PlayerCamera::get().map_or(0.0, PlayerCamera::world_fov);
+    let camera = sre::get_main_camera().ok_or("GetMainCamera returned null")?;
+    let graph = sre::g_scene_graph().ok_or("g_SceneGraph is null")?;
+    check(skyrim::class_of(camera).is_some_and(|c| c.id == vtables::NiCamera_vtable::ID), "the main camera is not a NiCamera")?;
+    let root = PlayerCamera::singleton().and_then(|c| c.camera_root()).ok_or("the player camera has no root")?;
+    check(camera.parent().is_some_and(|p| core::ptr::eq(p, root)), "the frame camera is not a child of the camera root")?;
+    let f = frustum(camera);
+    let fov = PlayerCamera::singleton().map_or(0.0, |c| c.worldFOV);
     let expected_right = (fov.to_radians() / 2.0).tan();
     check((f[1] - expected_right).abs() < 0.01 && (f[0] + expected_right).abs() < 0.01, &format!("frustum {f:?} against fov {fov}"))?;
     check((f[4] - 15.0).abs() < 0.01, &format!("near {}", f[4]))?;
-    check(full_viewport(camera.viewport()), &format!("viewport {:?}", camera.viewport()))?;
-    Ok(format!("NiCamera {:p} under the camera root, scene graph {:p}, frustum {f:?}, fov {fov}", camera.raw(), graph.raw()))
+    check(full_viewport(viewport(camera)), &format!("viewport {:?}", viewport(camera)))?;
+    Ok(format!("NiCamera {camera:p} under the camera root, scene graph {graph:p}, frustum {f:?}, fov {fov}"))
 }
 
 fn presents() -> Result<String, String> {

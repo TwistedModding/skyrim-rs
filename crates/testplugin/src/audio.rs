@@ -1,4 +1,4 @@
-//! One test per `skyrim::audio` API, against the RE repo's `docs/subsystems/audio-verify.md`.
+//! The audio suite through `skyrim::audio` and the generated `SoundHandle`, against the RE repo's `docs/subsystems/audio-verify.md`.
 //! After a load `start` runs the suite's sequence on a thread of its own, since audio answers on
 //! the audio thread with no frame guarantee: the `UISkillIncrease` marker played on the player
 //! and stopped, `UIMenuOKSD` built by editor id and left to end, a handle's and a category's
@@ -10,14 +10,14 @@
 use std::sync::Mutex;
 use std::time::{Duration, Instant};
 
-use skyrim::actors::PlayerCharacter;
-use skyrim::audio::{AudioManager, RELEASE_WHEN_DONE, SoundCategory, SoundHandle};
-use skyrim::forms::FormId;
+use skyrim::audio::{RELEASE_WHEN_DONE, set_category_volume, sound_from_editor_id, sound_from_form};
+use skyrim::prelude::*;
+use sre::{BGSSoundCategory, FormType};
 
-use crate::{Test, check, form};
+use crate::{Test, check, form, third_person_root};
 
-const UI_SKILL_INCREASE: FormId = FormId(0x18538);
-const AUDIO_CATEGORY_UI: FormId = FormId(0x64451);
+const UI_SKILL_INCREASE: u32 = 0x18538;
+const AUDIO_CATEGORY_UI: u32 = 0x64451;
 const UI_MENU_OK: &str = "UIMenuOKSD";
 const POLL: Duration = Duration::from_millis(20);
 
@@ -55,50 +55,49 @@ fn wait_for(limit: Duration, test: impl Fn() -> bool) -> Option<Duration> {
 }
 
 fn play_marker() -> Result<String, String> {
-    let player = PlayerCharacter::get().ok_or("no player")?;
-    let mut handle = SoundHandle::from_form(UI_SKILL_INCREASE, RELEASE_WHEN_DONE).ok_or("BuildSoundHandleByFormId gave no handle")?;
-    update(|r| r.ids.push(handle.id()));
-    check(handle.set_position(player.position()), "SetPosition refused")?;
-    if let Some(root) = player.third_person_root() {
-        handle.follow(root);
+    let player = sre::g_player_character_ptr().ok_or("no player")?;
+    let handle = sound_from_form(UI_SKILL_INCREASE, RELEASE_WHEN_DONE).ok_or("BuildSoundHandleByFormId gave no handle")?;
+    update(|r| r.ids.push(handle.id));
+    check(handle.set_position(player.posX, player.posY, player.posZ), "SetPosition refused")?;
+    if let Some(root) = third_person_root(player) {
+        handle.follow_node(root);
     }
     check(handle.play(), "Play refused")?;
     let playing = wait_for(Duration::from_secs(2), || handle.is_valid() && handle.is_playing()).ok_or("never valid and playing")?;
     check(handle.stop(), "Stop refused")?;
-    let probe = handle.clone();
-    let gone = wait_for(Duration::from_secs(3), || !probe.is_valid() && !probe.is_playing()).ok_or("still valid 3 s after the stop")?;
-    Ok(format!("id {} valid and playing after {} ms, invalid {} ms after the stop", handle.id(), playing.as_millis(), gone.as_millis()))
+    let gone = wait_for(Duration::from_secs(3), || !handle.is_valid() && !handle.is_playing()).ok_or("still valid 3 s after the stop")?;
+    Ok(format!("id {} valid and playing after {} ms, invalid {} ms after the stop", handle.id, playing.as_millis(), gone.as_millis()))
 }
 
 fn play_one_shot() -> Result<String, String> {
-    let mut handle = SoundHandle::from_editor_id(UI_MENU_OK, RELEASE_WHEN_DONE).ok_or("BuildSoundHandleByEditorId gave no handle")?;
-    update(|r| r.ids.push(handle.id()));
+    let handle = sound_from_editor_id(UI_MENU_OK, RELEASE_WHEN_DONE).ok_or("BuildSoundHandleByEditorId gave no handle")?;
+    update(|r| r.ids.push(handle.id));
     check(handle.play(), "Play refused")?;
     let started = wait_for(Duration::from_secs(2), || handle.is_valid() && handle.is_playing()).ok_or("never playing")?;
     let ended = wait_for(Duration::from_secs(5), || !handle.is_valid()).ok_or("still valid 5 s after it started")?;
     skyrim::audio::play_ui_sound(UI_MENU_OK);
-    Ok(format!("{UI_MENU_OK} id {} playing after {} ms, released by itself {} ms later; the UI path played it again", handle.id(), started.as_millis(), ended.as_millis()))
+    Ok(format!("{UI_MENU_OK} id {} playing after {} ms, released by itself {} ms later; the UI path played it again", handle.id, started.as_millis(), ended.as_millis()))
 }
 
 fn set_handle_volume() -> Result<String, String> {
-    let mut handle = SoundHandle::from_form(UI_SKILL_INCREASE, RELEASE_WHEN_DONE).ok_or("no handle")?;
-    update(|r| r.ids.push(handle.id()));
+    let handle = sound_from_form(UI_SKILL_INCREASE, RELEASE_WHEN_DONE).ok_or("no handle")?;
+    update(|r| r.ids.push(handle.id));
     check(handle.set_volume(0.5), "SetVolume refused")?;
     check(handle.play(), "Play refused")?;
-    let probe = handle.clone();
-    let took = wait_for(Duration::from_secs(2), || (probe.volume() - 0.5).abs() < 1e-3).ok_or_else(|| format!("volume reads {}", probe.volume()))?;
+    let took = wait_for(Duration::from_secs(2), || (handle.get_volume() - 0.5).abs() < 1e-3).ok_or_else(|| format!("volume reads {}", handle.get_volume()))?;
     handle.stop();
-    Ok(format!("id {} volume 0.5 read back after {} ms", handle.id(), took.as_millis()))
+    Ok(format!("id {} volume 0.5 read back after {} ms", handle.id, took.as_millis()))
 }
 
 fn set_category() -> Result<String, String> {
-    let category = SoundCategory::from_form(form(AUDIO_CATEGORY_UI)?).ok_or("0x64451 is not a sound category")?;
-    let before = category.volume();
-    category.set_volume(0.25);
-    let set = category.volume();
-    category.set_volume(before);
-    check((set - 0.25).abs() < 1e-6 && (category.volume() - before).abs() < 1e-6, &format!("volume {before} -> {set} -> {}", category.volume()))?;
-    Ok(format!("AudioCategoryUI volume {before} -> 0.25 -> {before}, static volume {}", category.static_volume()))
+    let category = form(AUDIO_CATEGORY_UI)?.cast::<BGSSoundCategory>().ok_or("0x64451 is not a sound category")?;
+    let before = category.volume;
+    set_category_volume(category, 0.25);
+    let set = category.volume;
+    set_category_volume(category, before);
+    let after = category.volume;
+    check((set - 0.25).abs() < 1e-6 && (after - before).abs() < 1e-6, &format!("volume {before} -> {set} -> {after}"))?;
+    Ok(format!("AudioCategoryUI volume {before} -> 0.25 -> {before}, static volume {}", { category.staticVolume }))
 }
 
 /// Starts the suite's sequence on its own thread; after every load.
@@ -119,10 +118,10 @@ pub fn start() {
         log!("audio step category: {category:?}");
         update(|r| r.category = Some(category));
         let Ok(category) = form(AUDIO_CATEGORY_UI) else { return };
-        let Some(category) = SoundCategory::from_form(category) else { return };
+        let Some(category) = category.cast::<BGSSoundCategory>() else { return };
         let start = Instant::now();
         while start.elapsed() < Duration::from_secs(30) {
-            let volume = category.volume();
+            let volume = category.volume;
             update(|r| {
                 if r.samples.last() != Some(&volume) {
                     r.samples.push(volume);
@@ -134,12 +133,13 @@ pub fn start() {
 }
 
 fn manager() -> Result<String, String> {
-    let manager = AudioManager::get().ok_or("no audio manager")?;
-    let master = manager.master_volume();
+    let manager = sre::get_audio_manager().ok_or("no audio manager")?;
+    let master = manager.masterVolume;
     check(master > 0.0 && master <= 1.0, &format!("master volume {master}"))?;
     let music = skyrim::audio::current_music().ok_or("no music type playing")?;
-    check(music.form_type() == Some(skyrim::forms::FormType::MUSC), &format!("the current music is a {:?}", music.form_type()))?;
-    Ok(format!("master volume {master}, music type {} playing", music.form_id()))
+    let kind = FormType::from_u8(music.formType);
+    check(kind == Some(FormType::MUSC), &format!("the current music is a {kind:?}"))?;
+    Ok(format!("master volume {master}, music type {:08X} playing", music.formID))
 }
 
 fn result(pick: fn(&Run) -> Option<Result<String, String>>, what: &str) -> Result<String, String> {

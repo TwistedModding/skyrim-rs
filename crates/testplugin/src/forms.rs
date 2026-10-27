@@ -1,15 +1,19 @@
-//! One test per `skyrim::forms` API; the expected values are those of the RE repo's
-//! `docs/subsystems/forms-verify.md`.
+//! The forms suite through the generated `sre` methods and the `skyrim` prelude; the expected
+//! values are those of the RE repo's `docs/subsystems/forms-verify.md`.
 
+use core::ffi::CStr;
+
+use skyrim::actors::ActorValueListExt;
+use skyrim::forms::form_by_editor_id;
+use skyrim::prelude::*;
 use sre::raw::globals;
-use skyrim::forms::{FormId, FormType, TESDataHandler, TESForm, find_form_by_editor_id};
+use sre::{ActorValue, BGSKeyword, BGSListForm, FormType, TESDataHandler, TESFile, TESForm, TESGlobal, TESNPC, TESObjectREFR, TESObjectWEAP};
 
-use crate::{IRON_SWORD, PLAYER, Test, check, form};
+use crate::{IRON_SWORD, PLAYER, Test, check, describe, file_name, form, keyword_field};
 
-const VENDOR_ITEM_WEAPON: FormId = FormId(0x8F958);
+const VENDOR_ITEM_WEAPON: u32 = 0x8F958;
 
 pub const TESTS: &[(&str, Test)] = &[
-    ("form_id", form_id),
     ("lookup_player", lookup_player),
     ("lookup_weapon", lookup_weapon),
     ("lookup_missing", lookup_missing),
@@ -29,123 +33,123 @@ pub const TESTS: &[(&str, Test)] = &[
     ("generated_api", generated_api),
 ];
 
-fn names(keywords: &[Option<&skyrim::forms::BGSKeyword>]) -> Vec<String> {
-    keywords.iter().map(|k| k.map_or("null".into(), |k| k.name().to_string())).collect()
+fn address<T>(object: &T) -> usize {
+    core::ptr::from_ref(object) as usize
 }
 
-fn form_id() -> Result<String, String> {
-    let light = FormId(0xFE00_1800);
-    let regular = FormId(0x0500_0800);
-    let runtime = FormId(0xFF00_0CFA);
-    check(light.is_light() && light.light_file_index() == Some(1) && light.local() == 0x800 && light.mod_index() == 0xFE, "light id helpers")?;
-    check(!regular.is_light() && regular.light_file_index().is_none() && regular.local() == 0x800 && regular.mod_index() == 5, "regular id helpers")?;
-    check(runtime.is_runtime() && !light.is_runtime() && !regular.is_runtime(), "runtime id helpers")?;
-    check(format!("{light}") == "FE001800" && format!("{regular:?}") == "FormId(05000800)", "formatting")?;
-    Ok(format!("{light} light index 1 local 0x800, {regular} mod index 5, {runtime} runtime"))
+fn file_flag(file: &TESFile, flag: sre::TESFile_fileFlags) -> bool {
+    sre::TESFile_fileFlags(file.fileFlags).contains(flag)
+}
+
+fn handler() -> Result<&'static TESDataHandler, String> {
+    TESDataHandler::singleton().ok_or_else(|| "g_TESDataHandler_ptr is null".into())
 }
 
 fn lookup_player() -> Result<String, String> {
     let player = form(PLAYER)?;
     let global = skyrim::reloc().address(globals::g_PlayerCharacter_ptr).map_err(|e| e.to_string())?;
-    let held = unsafe { *(global as *const *const sre::TESForm) };
-    check(std::ptr::eq(held, player.as_ptr()), "FindFormByID(0x14) is not the object g_PlayerCharacter_ptr holds")?;
-    check(player.form_id() == PLAYER, "formID is not 0x14")?;
-    check(player.form_type() == Some(FormType::ACHR), "formType is not ACHR")?;
-    check(player.source_files().is_empty(), "the player has source files")?;
-    Ok(format!("{player:?} at {:p} = g_PlayerCharacter_ptr, flags {:#x}, no source files", player.as_ptr(), player.flags().bits()))
+    let held = unsafe { *(global as *const *const TESForm) };
+    check(core::ptr::eq(held, player), "FindFormByID(0x14) is not the object g_PlayerCharacter_ptr holds")?;
+    check(player.formID == PLAYER, "formID is not 0x14")?;
+    check(player.formType == FormType::ACHR as u8, "formType is not ACHR")?;
+    check(player.source_files().is_none() && player.get_file(0).is_none(), "the player has source files")?;
+    Ok(format!("{} at {:#x} = g_PlayerCharacter_ptr, flags {:#x}, no source files", describe(player), address(player), { player.formFlags }))
 }
 
 fn lookup_weapon() -> Result<String, String> {
     let sword = form(IRON_SWORD)?;
-    check(sword.form_id() == IRON_SWORD, "formID is not 0x12eb7")?;
-    check(sword.form_type() == Some(FormType::WEAP), "formType is not WEAP")?;
+    check(sword.formID == IRON_SWORD, "formID is not 0x12eb7")?;
+    check(sword.formType == FormType::WEAP as u8, "formType is not WEAP")?;
     check(sword.editor_id().is_none(), "a weapon reported an editor id")?;
-    Ok(format!("formID={} type={} ({}) editor_id=none", sword.form_id(), sword.form_type_raw(), FormType::WEAP.signature()))
+    Ok(format!("formID={:08X} type={} ({}) editor_id=none", { sword.formID }, { sword.formType }, FormType::WEAP.signature()))
 }
 
 fn lookup_missing() -> Result<String, String> {
-    check(FormId(0x7FFF_FFFF).lookup().is_none(), "0x7fffffff resolved to a form")?;
+    check(sre::find_form_by_id(0x7FFF_FFFF).is_none(), "0x7fffffff resolved to a form")?;
     Ok("FindFormByID(0x7fffffff) = null".into())
 }
 
 fn editor_id_keyword() -> Result<String, String> {
-    let keyword = find_form_by_editor_id("VendorItemWeapon").ok_or("VendorItemWeapon did not resolve")?;
-    check(keyword.form_id() == VENDOR_ITEM_WEAPON, "formID is not 0x8f958")?;
-    check(keyword.form_type() == Some(FormType::KYWD), "formType is not KYWD")?;
+    let keyword = form_by_editor_id("VendorItemWeapon").ok_or("VendorItemWeapon did not resolve")?;
+    check(keyword.formID == VENDOR_ITEM_WEAPON, "formID is not 0x8f958")?;
+    check(keyword.formType == FormType::KYWD as u8, "formType is not KYWD")?;
     let via_slot = keyword.editor_id().map(|s| s.to_string_lossy().into_owned());
     check(via_slot.as_deref() == Some("VendorItemWeapon"), "GetFormEditorID did not return VendorItemWeapon")?;
-    let via_field = keyword.as_keyword().and_then(|k| k.name().to_str());
+    let via_field = keyword.cast::<BGSKeyword>().and_then(|k| keyword_field(k).to_str());
     check(via_field == Some("VendorItemWeapon"), "BGSKeyword.keyword is not VendorItemWeapon (empty before a game is loaded)")?;
-    check(find_form_by_editor_id("vendoritemweapon").map(TESForm::form_id) == Some(VENDOR_ITEM_WEAPON), "lookup is not case-insensitive")?;
-    Ok(format!("formID={} type=4 (KYWD) editor_id=VendorItemWeapon keyword=VendorItemWeapon", keyword.form_id()))
+    check(form_by_editor_id("vendoritemweapon").map(|f| f.formID) == Some(VENDOR_ITEM_WEAPON), "lookup is not case-insensitive")?;
+    Ok(format!("formID={:08X} type=4 (KYWD) editor_id=VendorItemWeapon keyword=VendorItemWeapon", { keyword.formID }))
 }
 
 fn editor_id_missing() -> Result<String, String> {
     for name in ["IronSword", "HousecarlWhiterun", "NoSuchEditorId"] {
-        check(find_form_by_editor_id(name).is_none(), &format!("{name} resolved to a form"))?;
+        check(form_by_editor_id(name).is_none(), &format!("{name} resolved to a form"))?;
     }
     Ok("IronSword, HousecarlWhiterun, NoSuchEditorId = null".into())
 }
 
 fn editor_id_global() -> Result<String, String> {
-    let hour = find_form_by_editor_id("GameHour").ok_or("GameHour did not resolve")?;
-    check(hour.form_type() == Some(FormType::GLOB), "formType is not GLOB")?;
-    let value = hour.as_global().ok_or("as_global returned None")?.value();
-    Ok(format!("GameHour={value:.2} formID={}", hour.form_id()))
+    let hour = form_by_editor_id("GameHour").ok_or("GameHour did not resolve")?;
+    check(hour.formType == FormType::GLOB as u8, "formType is not GLOB")?;
+    let value = hour.cast::<TESGlobal>().ok_or("cast to TESGlobal returned None")?.value;
+    Ok(format!("GameHour={value:.2} formID={:08X}", { hour.formID }))
 }
 
 fn source_files() -> Result<String, String> {
     let sword = form(IRON_SWORD)?;
-    let files: Vec<&str> = sword.source_files().iter().map(|f| f.map_or("null", |f| f.name())).collect();
+    let files: Vec<&str> = (0..).map_while(|i| sword.get_file(i)).map(file_name).collect();
     check(files == ["Skyrim.esm"], "IronSword's source files are not [Skyrim.esm]")?;
+    check(sword.source_files().is_some_and(|a| a.count == 1), "TESForm.sourceFiles does not hold one file")?;
     Ok(format!("IronSword source files = {files:?}"))
 }
 
 fn downcast() -> Result<String, String> {
     let sword = form(IRON_SWORD)?;
-    let npc = form(FormId(0x7))?;
+    let npc = form(0x7)?;
     let player = form(PLAYER)?;
-    check(sword.as_weapon().is_some() && sword.as_npc().is_none() && sword.as_keyword().is_none(), "weapon downcasts")?;
-    check(npc.form_type() == Some(FormType::NPC_) && npc.as_npc().is_some() && npc.as_weapon().is_none(), "NPC downcasts")?;
-    check(player.as_npc().is_none() && player.as_weapon().is_none() && player.as_form_list().is_none(), "player downcasts")?;
-    check(std::ptr::eq(sword.as_weapon().unwrap().raw(), sword.as_ptr().cast()), "the wrapper moved the pointer")?;
-    Ok(format!("0x12eb7 -> TESObjectWEAP, 0x7 -> TESNPC ({npc:?}), 0x14 -> neither"))
+    check(sword.cast::<TESObjectWEAP>().is_some() && sword.cast::<TESNPC>().is_none() && sword.cast::<BGSKeyword>().is_none(), "weapon casts")?;
+    check(npc.formType == FormType::NPC_ as u8 && npc.cast::<TESNPC>().is_some() && npc.cast::<TESObjectWEAP>().is_none(), "NPC casts")?;
+    check(player.cast::<TESNPC>().is_none() && player.cast::<TESObjectWEAP>().is_none() && player.cast::<BGSListForm>().is_none(), "player casts")?;
+    check(sword.cast::<TESObjectWEAP>().is_some_and(|w| address(w) == address(sword)), "the cast moved the pointer")?;
+    Ok(format!("0x12eb7 -> TESObjectWEAP, 0x7 -> TESNPC ({}), 0x14 -> neither", describe(npc)))
 }
 
 fn as_reference() -> Result<String, String> {
     let player = form(PLAYER)?;
     let sword = form(IRON_SWORD)?;
-    let refr = player.as_reference().ok_or("the player is not a reference")?;
-    check(std::ptr::eq(refr.raw(), player.as_ptr().cast()), "AsReference moved the player pointer")?;
-    check(refr.form_id() == PLAYER, "the reference's formID is not 0x14")?;
-    check(sword.as_reference().is_none(), "a weapon is a reference")?;
+    let refr = player.cast::<TESObjectREFR>().ok_or("the player is not a reference")?;
+    check(address(refr) == address(player), "AsReference moved the player pointer")?;
+    check(refr.formID == PLAYER, "the reference's formID is not 0x14")?;
+    check(sword.cast::<TESObjectREFR>().is_none(), "a weapon is a reference")?;
     Ok("player -> TESObjectREFR at the same address, IronSword -> none".into())
+}
+
+fn keyword(editor_id: &str) -> Result<&'static BGSKeyword, String> {
+    form_by_editor_id(editor_id).and_then(TESForm::cast::<BGSKeyword>).ok_or_else(|| format!("{editor_id} did not resolve"))
 }
 
 fn keywords() -> Result<String, String> {
     let sword = form(IRON_SWORD)?;
-    let vendor = form(VENDOR_ITEM_WEAPON)?.as_keyword().ok_or("0x8f958 is not a keyword")?;
-    let component = sword.keyword_form().ok_or("GetKeywordForm returned null")?;
-    let offset = (std::ptr::from_ref(component) as usize).wrapping_sub(sword.as_ptr() as usize);
-    check(offset == 0x140, "the keyword form is not at +0x140")?;
-    let found = names(sword.keywords());
+    let vendor = form(VENDOR_ITEM_WEAPON)?.cast::<BGSKeyword>().ok_or("0x8f958 is not a keyword")?;
+    let component = sword.get_keyword_form().ok_or("GetKeywordForm returned null")?;
+    check(address(component).wrapping_sub(address(sword)) == 0x140, "the keyword form is not at +0x140")?;
+    let found: Vec<String> = sword.keywords().iter().map(|k| k.map_or("null".into(), |k| keyword_field(k).to_string())).collect();
     check(found == ["WeapMaterialIron", "WeapTypeSword", "VendorItemWeapon"], &format!("keywords are {found:?}"))?;
-    check(sword.has_keyword(vendor), "HasKeyword(VendorItemWeapon) is false")?;
-    let armor = find_form_by_editor_id("VendorItemArmor").and_then(TESForm::as_keyword).ok_or("VendorItemArmor did not resolve")?;
-    check(!sword.has_keyword(armor), "HasKeyword(VendorItemArmor) is true")?;
-    check(form(PLAYER)?.keyword_form().is_none() && form(PLAYER)?.keywords().is_empty(), "the player has a keyword form")?;
+    check(component.has_keyword(vendor), "HasKeyword(VendorItemWeapon) is false")?;
+    check(!component.has_keyword(keyword("VendorItemArmor")?), "HasKeyword(VendorItemArmor) is true")?;
+    check(form(PLAYER)?.get_keyword_form().is_none() && form(PLAYER)?.keywords().is_empty(), "the player has a keyword form")?;
     Ok(format!("IronSword keyword form at +0x140: {} has_keyword(VendorItemWeapon)=true has_keyword(VendorItemArmor)=false", found.join(",")))
 }
 
 fn data_handler() -> Result<String, String> {
-    let handler = TESDataHandler::get().ok_or("g_TESDataHandler_ptr is null")?;
+    let handler = handler()?;
     let object = skyrim::reloc().address(globals::g_TESDataHandler).map_err(|e| e.to_string())?;
-    check(object == std::ptr::from_ref(handler.raw()) as usize, "the pointer does not hold the static object")?;
+    check(object == address(handler), "the pointer does not hold the static object")?;
     Ok(format!("TESDataHandler at {:#x} = g_TESDataHandler (base + {:#x})", object, object - skyrim::reloc().base()))
 }
 
 fn form_arrays() -> Result<String, String> {
-    let handler = TESDataHandler::get().ok_or("g_TESDataHandler_ptr is null")?;
+    let handler = handler()?;
     let mut total = 0usize;
     let mut nulls = 0usize;
     let mut mismatched = 0usize;
@@ -154,7 +158,7 @@ fn form_arrays() -> Result<String, String> {
             total += 1;
             match entry {
                 None => nulls += 1,
-                Some(f) if f.form_type() != Some(ty) => mismatched += 1,
+                Some(f) if f.formType != ty as u8 => mismatched += 1,
                 Some(_) => {}
             }
         }
@@ -167,118 +171,127 @@ fn form_arrays() -> Result<String, String> {
     Ok(format!("{total} forms, every entry of its array's type; {}", counts.join(" ")))
 }
 
+fn masters(file: &TESFile) -> Vec<&str> {
+    (0..file.get_master_count()).map(|i| file.get_master(i).map_or("null", file_name)).collect()
+}
+
 fn files() -> Result<String, String> {
-    let handler = TESDataHandler::get().ok_or("g_TESDataHandler_ptr is null")?;
+    let handler = handler()?;
     let first = handler.files().next().ok_or("the file list is empty")?;
-    check(first.name() == "Skyrim.esm" && first.is_master() && first.is_active() && !first.is_light(), "the first file is not an active master Skyrim.esm")?;
-    check(first.compile_index() == 0 && first.masters().is_empty(), "Skyrim.esm is not compile index 0 without masters")?;
+    check(file_name(first) == "Skyrim.esm" && first.is_master() && file_flag(first, sre::TESFile_fileFlags::ACTIVE) && !first.is_light(), "the first file is not an active master Skyrim.esm")?;
+    check(first.compileIndex == 0 && first.get_master_count() == 0, "Skyrim.esm is not compile index 0 without masters")?;
     let listed = handler.files().count();
-    let compiled: Vec<String> = handler.compiled_files().iter().enumerate().map(|(i, f)| describe(i, *f, false)).collect();
-    let light: Vec<String> = handler.light_files().iter().enumerate().map(|(i, f)| describe(i, *f, true)).collect();
+    let compiled: Vec<String> = handler.compiled_files().iter().enumerate().map(|(i, f)| describe_file(i, *f, false)).collect();
+    let light: Vec<String> = handler.light_files().iter().enumerate().map(|(i, f)| describe_file(i, *f, true)).collect();
     let update = handler.files().nth(1).ok_or("no second file")?;
-    let update_masters: Vec<&str> = update.masters().iter().map(|f| f.map_or("null", |f| f.name())).collect();
+    let update_masters = masters(update);
     check(update_masters == ["Skyrim.esm"], &format!("Update.esm's masters are {update_masters:?}"))?;
     Ok(format!("{listed} files listed; compiled=[{}] light=[{}]; Update.esm masters={update_masters:?}", compiled.join(","), light.join(",")))
 }
 
-fn describe(index: usize, file: Option<&skyrim::forms::TESFile>, light: bool) -> String {
+fn describe_file(index: usize, file: Option<&TESFile>, light: bool) -> String {
     let Some(f) = file else { return format!("{index}:null") };
-    let own = if light { usize::from(f.light_file_index()) } else { usize::from(f.compile_index()) };
-    let flags = format!("{}{}{}", if f.is_master() { "M" } else { "" }, if f.is_active() { "A" } else { "" }, if f.is_light() { "L" } else { "" });
-    let index_ok = own == index && (light == f.is_light()) && (!light || f.compile_index() == 0xFE);
-    format!("{index}:{}:{flags}{}", f.name(), if index_ok { "" } else { ":BADINDEX" })
+    let own = if light { usize::from(f.lightFileIndex) } else { usize::from(f.compileIndex) };
+    let (master, active, is_light) = (file_flag(f, sre::TESFile_fileFlags::MASTER), file_flag(f, sre::TESFile_fileFlags::ACTIVE), file_flag(f, sre::TESFile_fileFlags::LIGHT));
+    let flags = format!("{}{}{}", if master { "M" } else { "" }, if active { "A" } else { "" }, if is_light { "L" } else { "" });
+    let index_ok = own == index && (light == f.is_light()) && is_light == f.is_light() && master == f.is_master() && (!light || f.compileIndex == 0xFE);
+    format!("{index}:{}:{flags}{}", file_name(f), if index_ok { "" } else { ":BADINDEX" })
+}
+
+fn file(handler: &'static TESDataHandler, name: &str) -> Result<&'static TESFile, String> {
+    handler.file(name).ok_or_else(|| format!("{name} not found"))
 }
 
 fn get_file() -> Result<String, String> {
-    let handler = TESDataHandler::get().ok_or("g_TESDataHandler_ptr is null")?;
-    let curios = handler.file("ccBGSSSE037-Curios.esl").ok_or("Curios not found")?;
-    check(curios.is_light() && curios.compile_index() == 0xFE, &format!("Curios has compile index {:#x}", curios.compile_index()))?;
-    let curios_id = curios.resolve_form_id(0x800).ok_or("Curios is not loaded")?;
-    let curios_expected = FormId(0xFE00_0800 | u32::from(curios.light_file_index()) << 12);
-    check(curios_id == curios_expected, &format!("Curios 0x800 resolved to {curios_id}, light index {}", curios.light_file_index()))?;
-    let fish = handler.file("ccBGSSSE001-Fish.esm").ok_or("Fish not found")?;
-    let fish_id = fish.resolve_form_id(0x800).ok_or("Fish is not loaded")?;
-    let fish_expected = FormId(u32::from(fish.compile_index()) << 24 | 0x800);
-    check(!fish.is_light() && fish_id == fish_expected, &format!("Fish 0x800 resolved to {fish_id}, compile index {}", fish.compile_index()))?;
+    let handler = handler()?;
+    let curios = file(handler, "ccBGSSSE037-Curios.esl")?;
+    check(curios.is_light() && curios.compileIndex == 0xFE, &format!("Curios has compile index {:#x}", { curios.compileIndex }))?;
+    let curios_id = curios.runtime_form_id(0x800).ok_or("Curios is not loaded")?;
+    let curios_expected = 0xFE00_0800 | u32::from(curios.lightFileIndex) << 12;
+    check(curios_id == curios_expected, &format!("Curios 0x800 resolved to {curios_id:08X}, light index {}", { curios.lightFileIndex }))?;
+    let fish = file(handler, "ccBGSSSE001-Fish.esm")?;
+    let fish_id = fish.runtime_form_id(0x800).ok_or("Fish is not loaded")?;
+    let fish_expected = u32::from(fish.compileIndex) << 24 | 0x800;
+    check(!fish.is_light() && fish_id == fish_expected, &format!("Fish 0x800 resolved to {fish_id:08X}, compile index {}", { fish.compileIndex }))?;
     check(handler.file("NoSuchFile.esp").is_none(), "NoSuchFile.esp was found")?;
-    check(handler.file("skyrim.esm").is_some_and(|f| f.name() == "Skyrim.esm"), "GetFile is not case-insensitive")?;
-    check(curios_id.lookup().is_some_and(|f| f.form_id() == curios_id), "0xFE001800 does not resolve to a form")?;
-    let sword_id = handler.file("Skyrim.esm").and_then(|f| f.resolve_form_id(IRON_SWORD.local())).ok_or("Skyrim.esm is not loaded")?;
-    check(sword_id == IRON_SWORD, &format!("Skyrim.esm 0x12eb7 resolved to {sword_id}"))?;
-    Ok(format!("Skyrim.esm 0x12eb7 -> {sword_id}, Curios 0x800 -> {curios_id}, Fish 0x800 -> {fish_id}, NoSuchFile.esp -> none, skyrim.esm -> Skyrim.esm"))
+    check(handler.file("skyrim.esm").is_some_and(|f| file_name(f) == "Skyrim.esm"), "GetFile is not case-insensitive")?;
+    check(sre::find_form_by_id(curios_id).is_some_and(|f| f.formID == curios_id), "0xFE001800 does not resolve to a form")?;
+    let sword_id = handler.file("Skyrim.esm").and_then(|f| f.runtime_form_id(IRON_SWORD & 0x00FF_FFFF)).ok_or("Skyrim.esm is not loaded")?;
+    check(sword_id == IRON_SWORD, &format!("Skyrim.esm 0x12eb7 resolved to {sword_id:08X}"))?;
+    Ok(format!("Skyrim.esm 0x12eb7 -> {sword_id:08X}, Curios 0x800 -> {curios_id:08X}, Fish 0x800 -> {fish_id:08X}, NoSuchFile.esp -> none, skyrim.esm -> Skyrim.esm"))
 }
 
 fn form_list() -> Result<String, String> {
-    let handler = TESDataHandler::get().ok_or("g_TESDataHandler_ptr is null")?;
+    let handler = handler()?;
     let list = handler
         .forms_of_type(FormType::FLST)
         .iter()
         .flatten()
-        .filter_map(|f| f.as_form_list())
-        .find(|l| !l.forms().is_empty())
+        .filter_map(|f| f.cast::<BGSListForm>())
+        .find(|l| l.forms.size != 0)
         .ok_or("no form list has entries")?;
-    let entries = list.forms();
-    check(usize::try_from(list.len()).ok() == Some(entries.len()), "GetFormsSize differs from the forms array")?;
-    let first = entries[0].ok_or("the first entry is null")?;
-    check(list.get(0).is_some_and(|f| std::ptr::eq(f, first)), "GetAt(0) is not the first entry")?;
-    check(list.find(first) == Some(0), "Find(first) is not 0")?;
-    check(list.find(form(IRON_SWORD)?).is_none() || entries.iter().flatten().any(|f| f.form_id() == IRON_SWORD), "Find found a form that is not in the list")?;
-    check(list.get(list.len()).is_none(), "GetAt(len) returned a form")?;
-    Ok(format!("{list:?} has {} entries, first {first:?}: GetAt(0) and Find agree", list.len()))
+    let len = list.get_forms_size();
+    check(len == list.forms.size, "GetFormsSize differs from the forms array")?;
+    let first = unsafe { (*list.forms.data.cast::<*const TESForm>()).as_ref() }.ok_or("the first entry is null")?;
+    check(list.get_at(0).is_some_and(|f| core::ptr::eq(f, first)), "GetAt(0) is not the first entry")?;
+    check(list.find(first) == 0, "Find(first) is not 0")?;
+    check(list.find(form(IRON_SWORD)?) < 0 || (0..len).any(|i| list.get_at(i).is_some_and(|f| f.formID == IRON_SWORD)), "Find found a form that is not in the list")?;
+    check(list.get_at(len).is_none(), "GetAt(len) returned a form")?;
+    Ok(format!("{} has {len} entries, first {}: GetAt(0) and Find agree", describe(list), describe(first)))
 }
 
-/// The generated layer called directly, each result against the hand-written wrapper's: a free
-/// function, an associated function, `&self` methods, vtable slots, a base accessor and methods
-/// reached through `Deref`, and global accessors.
+/// Generated methods, each against a second route to the same answer: a free function and a
+/// global, an associated function and the actor value table, `&self` methods and the layout,
+/// vtable slots and the fields they read, a base accessor and a method reached through `Deref`
+/// against the non-virtual function behind the slot, and a singleton against the static object.
 fn generated_api() -> Result<String, String> {
-    use skyrim::actors::ActorValue;
-
     let player = form(PLAYER)?;
     let sword = form(IRON_SWORD)?;
-    let found = sre::find_form_by_id(PLAYER.0).ok_or("sre::find_form_by_id(0x14) is None")?;
-    check(std::ptr::eq(found, player.raw()), "sre::find_form_by_id(0x14) is not FormId::lookup's form")?;
+    let global = skyrim::reloc().address(globals::g_PlayerCharacter_ptr).map_err(|e| e.to_string())?;
+    check(core::ptr::eq(player, unsafe { *(global as *const *const TESForm) }), "sre::find_form_by_id(0x14) is not the object g_PlayerCharacter_ptr holds")?;
     check(sre::find_form_by_id(0x7FFF_FFFF).is_none(), "sre::find_form_by_id(0x7fffffff) is Some")?;
 
-    let info = sre::ActorValueList::get_actor_value_info(ActorValue::Health as u32).map(std::ptr::from_ref);
-    let wrapped = skyrim::actors::actor_value_info(ActorValue::Health).map(|i| std::ptr::from_ref(i.raw()));
-    check(info.is_some() && info == wrapped, "ActorValueList::get_actor_value_info(Health) differs from actor_value_info")?;
+    let info = sre::ActorValueList::get_actor_value_info(ActorValue::Health as u32).ok_or("ActorValueList::get_actor_value_info(Health) is None")?;
+    let table = sre::ActorValueList::singleton().and_then(|l| l.infos()[ActorValue::Health as usize]);
+    check(table.is_some_and(|t| core::ptr::eq(t, info)), "ActorValueList::get_actor_value_info(Health) differs from the table entry")?;
 
-    let component = sword.raw().get_keyword_form().map(|k| std::ptr::from_ref(k).cast::<u8>());
-    let wrapped = sword.keyword_form().map(|k| std::ptr::from_ref(k).cast::<u8>());
-    check(component.is_some() && component == wrapped, "TESForm::get_keyword_form differs from keyword_form")?;
+    let component = sword.get_keyword_form().ok_or("TESForm::get_keyword_form is None")?;
+    check(address(component) == address(sword) + 0x140, "TESForm::get_keyword_form differs from the weapon's component at +0x140")?;
 
-    let keyword = find_form_by_editor_id("VendorItemWeapon").ok_or("VendorItemWeapon did not resolve")?;
-    let name = unsafe { std::ffi::CStr::from_ptr(keyword.raw().get_form_editor_id()) };
-    check(Some(name) == keyword.editor_id(), "slot 50 get_form_editor_id differs from editor_id")?;
-    check(sword.raw().get_form_type() == sword.form_type_raw(), "slot 21 get_form_type differs from formType")?;
+    let keyword = form(VENDOR_ITEM_WEAPON)?;
+    let name = sre_editor_id(keyword).ok_or("slot 50 get_form_editor_id is null")?;
+    check(keyword.cast::<BGSKeyword>().is_some_and(|k| keyword_field(k).as_c_str() == Some(name)), "slot 50 get_form_editor_id differs from BGSKeyword.keyword")?;
+    check(sword.get_form_type() == sword.formType, "slot 21 get_form_type differs from formType")?;
 
     let pc = sre::g_player_character_ptr().ok_or("sre::g_player_character_ptr is None")?;
-    check(std::ptr::eq(std::ptr::from_ref(pc).cast(), player.as_ptr()), "sre::g_player_character_ptr is not the player")?;
-    check(pc.get_form_type() == player.form_type_raw(), "PlayerCharacter -> TESForm slot 21 differs from formType")?;
-    let actor = player.as_reference().and_then(|r| r.as_actor()).ok_or("the player is not an actor")?;
+    check(address(pc) == address(player), "sre::g_player_character_ptr is not the player")?;
+    check(pc.get_form_type() == player.formType, "PlayerCharacter -> TESForm slot 21 differs from formType")?;
     let owner = pc.as_actor_value_owner();
-    check(std::ptr::eq(std::ptr::from_ref(owner).cast(), std::ptr::from_ref(actor.actor_value_owner())), "Actor::as_actor_value_owner differs from actor_value_owner")?;
+    check(address(owner) == address(pc) + 0xB8, "Actor::as_actor_value_owner is not at +0xB8")?;
     let health = owner.get_actor_value(ActorValue::Health as i32);
-    check(health > 0.0 && health.to_bits() == actor.actor_value_owner().get(ActorValue::Health).to_bits(), "ActorValueOwner slot 1 differs from get(Health)")?;
+    let direct = owner.actor_value_owner_get_actor_value(ActorValue::Health as i32);
+    check(health > 0.0 && health.to_bits() == direct.to_bits(), "ActorValueOwner slot 1 differs from Actor::ActorValueOwner_GetActorValue")?;
 
-    let handler = sre::TESDataHandler::singleton().ok_or("TESDataHandler::singleton is None")?;
-    let wrapped = TESDataHandler::get().ok_or("g_TESDataHandler_ptr is null")?;
-    check(std::ptr::eq(handler, wrapped.raw()), "TESDataHandler::singleton differs from TESDataHandler::get")?;
+    let handler = TESDataHandler::singleton().ok_or("TESDataHandler::singleton is None")?;
+    check(core::ptr::eq(handler, sre::g_tes_data_handler()), "TESDataHandler::singleton differs from the static g_TESDataHandler")?;
     let file = unsafe { handler.get_file(c"skyrim.esm".as_ptr()) };
-    let wrapped = wrapped.file("Skyrim.esm").ok_or("Skyrim.esm not found")?;
-    check(std::ptr::eq(file, wrapped.raw()), "TESDataHandler::get_file differs from file")?;
+    check(handler.files().next().is_some_and(|first| core::ptr::eq(first, file)), "TESDataHandler::get_file differs from the head of the file list")?;
     Ok(format!(
-        "find_form_by_id(0x14)={:p}, ActorValueList::get_actor_value_info(Health)={:p}, get_keyword_form, slot 50 \"{}\", slot 21 type {}, player health {health} through Deref and as_actor_value_owner, TESDataHandler::singleton().get_file(skyrim.esm)={file:p}: 12 comparisons equal",
-        std::ptr::from_ref(found),
-        info.unwrap(),
+        "find_form_by_id(0x14)={:#x}, ActorValueList::get_actor_value_info(Health)={:#x}, get_keyword_form, slot 50 \"{}\", slot 21 type {}, player health {health} through Deref and as_actor_value_owner, TESDataHandler::singleton().get_file(skyrim.esm)={file:p}: 12 comparisons equal",
+        address(player),
+        address(info),
         name.to_string_lossy(),
-        sword.form_type_raw()
+        sword.formType
     ))
 }
 
+fn sre_editor_id(form: &TESForm) -> Option<&CStr> {
+    let text = form.get_form_editor_id();
+    (!text.is_null()).then(|| unsafe { CStr::from_ptr(text) })
+}
+
 fn next_form_id() -> Result<String, String> {
-    let handler = TESDataHandler::get().ok_or("g_TESDataHandler_ptr is null")?;
-    let next = handler.next_form_id();
-    check(next.is_runtime(), &format!("nextFormID {next} is not in the 0xFF range"))?;
-    Ok(format!("nextFormID={next}"))
+    let next = handler()?.nextFormID;
+    check(next >> 24 == 0xFF, &format!("nextFormID {next:08X} is not in the 0xFF range"))?;
+    Ok(format!("nextFormID={next:08X}"))
 }

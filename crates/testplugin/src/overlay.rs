@@ -13,9 +13,10 @@ use std::sync::atomic::{AtomicBool, AtomicU32, Ordering};
 use std::sync::{Mutex, OnceLock};
 
 use overlay::egui;
-use skyrim::events::{BSEventNotifyControl, BSTEventSource, Event, EventSink, Sink};
-use skyrim::input::{InputDevice, InputEventList};
+use skyrim::events::{BSTEventSource, Event, EventSink, InputEventList, Sink};
+use skyrim::prelude::*;
 use skyrim::render::PresentFn;
+use sre::{BSEventNotifyControl, ButtonEvent, InputDevice, InputEvent};
 use windows_sys::Win32::System::Threading::GetCurrentThreadId;
 
 use crate::{Test, check};
@@ -47,11 +48,15 @@ static TYPED_CHARS: AtomicU32 = AtomicU32::new(0);
 static TYPING_CONTEXT: Mutex<String> = Mutex::new(String::new());
 static CLOSED_PIXEL: Mutex<Option<[u8; 3]>> = Mutex::new(None);
 
+fn key_press(event: &InputEvent) -> Option<&ButtonEvent> {
+    event.as_button().filter(|b| InputDevice::from_u32(event.device) == Some(InputDevice::Keyboard) && b.is_pressed())
+}
+
 struct Witness;
 
 impl EventSink<InputEventList> for Witness {
     fn process(&self, list: &InputEventList, _: &BSTEventSource<InputEventList>) -> BSEventNotifyControl {
-        let presses = list.iter().filter_map(|e| e.as_button().filter(|b| e.device_kind() == Some(InputDevice::Keyboard) && b.id() == KEY_W && b.is_pressed())).count();
+        let presses = list.iter().filter_map(key_press).filter(|b| b.idCode == KEY_W).count();
         if presses > 0 {
             let mut w = WITNESS_W.lock().unwrap();
             if overlay::is_open() { w.0 += 1 } else { w.1 += 1 }
@@ -70,7 +75,7 @@ impl EventSink<InputEventList> for TypingWitness {
         for e in list.iter() {
             if e.as_char().is_some() {
                 TYPED_CHARS.fetch_add(1, Ordering::Relaxed);
-            } else if e.as_button().is_some_and(|b| e.device_kind() == Some(InputDevice::Keyboard) && b.is_pressed() && TYPED.1.iter().any(|&c| u32::from(c) == b.id())) {
+            } else if key_press(e).is_some_and(|b| TYPED.1.iter().any(|&c| u32::from(c) == b.idCode)) {
                 TYPED_KEYS.fetch_add(1, Ordering::Relaxed);
             }
         }
@@ -95,7 +100,7 @@ pub fn install() -> Result<String, String> {
 pub fn register() -> Result<String, String> {
     let source = InputEventList::source().ok_or("no input source")?;
     source.add_sink(&WITNESS).leak();
-    Ok(format!("{} sinks", source.sink_count()))
+    Ok(format!("{} sinks", source.sinks().len()))
 }
 
 fn window(ctx: &egui::Context) {
@@ -181,7 +186,7 @@ fn installed() -> Result<String, String> {
     let source = InputEventList::source().ok_or("no input source")?;
     let first = source.sinks().first().copied().unwrap_or_default();
     let witness = source.sinks().iter().position(|s| core::ptr::eq(*s, (&raw const WITNESS).cast())).ok_or("witness not registered")?;
-    Ok(format!("{} sinks, overlay sink first at {first:p}, witness at {witness}, overlay {}", source.sink_count(), if overlay::is_open() { "open" } else { "closed" }))
+    Ok(format!("{} sinks, overlay sink first at {first:p}, witness at {witness}, overlay {}", source.sinks().len(), if overlay::is_open() { "open" } else { "closed" }))
 }
 
 fn clicks() -> Result<String, String> {

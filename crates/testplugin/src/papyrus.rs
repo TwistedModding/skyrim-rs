@@ -1,4 +1,4 @@
-//! One test per `skyrim::papyrus` API. `REGISTER` runs inside the SKSE `PapyrusInterface`
+//! The papyrus suite through `skyrim::papyrus` and the generated VM. `REGISTER` runs inside the SKSE `PapyrusInterface`
 //! callback: the VM's identity, the type lookups and the binding of the natives
 //! `papyrus/SkyrimRsTest.psc` and `SkyrimRsTestRef.psc` declare. `TESTS` runs after a game is
 //! loaded (handles, script types, bound objects, then a `SkyrimRsTestRef` object bound to the
@@ -17,12 +17,13 @@ use core::ffi::c_void;
 use std::sync::Mutex;
 use std::sync::atomic::{AtomicPtr, AtomicU32, Ordering};
 
+use skyrim::BSFixedString;
+use skyrim::papyrus::{GameThread, Handle, Latent, NativeFunction, TypeInfo, Variable, VirtualMachine, active_effect_handles, alias_handles, current_stack_id, function_of};
+use skyrim::prelude::*;
 use sre::raw::globals;
-use skyrim::actors::{Actor, ActorValue, TESObjectREFR};
-use skyrim::forms::TESForm;
-use skyrim::papyrus::{BSFixedString, GameThread, Handle, HandlePolicy, Latent, NativeFunction, PapyrusType, TypeInfo, VMTypeID, Variable, VirtualMachine, active_effect_handles, alias_handles, current_stack_id};
+use sre::{Actor, ActorValue, BSScript__Object, BSScript__ObjectTypeInfo, PapyrusType, TESForm, TESObjectREFR, VMTypeID};
 
-use crate::{IRON_SWORD, PLAYER, Test, check, form};
+use crate::{IRON_SWORD, PLAYER, Test, check, describe as form_name, form};
 
 const CLASS: &str = "SkyrimRsTest";
 const REF_CLASS: &str = "SkyrimRsTestRef";
@@ -49,6 +50,29 @@ const LATER_MS: u64 = 250;
 
 fn os_thread() -> u32 {
     unsafe { windows_sys::Win32::System::Threading::GetCurrentThreadId() }
+}
+
+fn type_name(ty: &BSScript__ObjectTypeInfo) -> &BSFixedString {
+    BSFixedString::view(&ty.name)
+}
+
+fn is_linked(ty: &BSScript__ObjectTypeInfo) -> bool {
+    ty.linkedAndVariables & 3 == 3
+}
+
+/// A script class as the logs name it: its name, link state and own variable count.
+fn describe_type(ty: &BSScript__ObjectTypeInfo) -> String {
+    format!("{} (link state {}, {} variables)", type_name(ty), ty.linkedAndVariables & 3, (ty.linkedAndVariables >> 8) & 0x3FF)
+}
+
+/// A script object as the logs name it: its class, handle and reference count.
+fn describe_object(object: &BSScript__Object) -> String {
+    let class = object.type_().map_or_else(|| "?".to_owned(), |t| type_name(t).to_string());
+    format!("{class} object {} (refs {})", Handle(object.get_handle()), object.refCountAndLock & 0x7FFF_FFFF)
+}
+
+fn is_type(vm: &VirtualMachine, type_id: VMTypeID, handle: Handle) -> bool {
+    vm.handle_policy().is_some_and(|p| p.handle_is_type(type_id as u32, handle.0))
 }
 
 fn on_result(function: &'static str) -> skyrim::papyrus::ResultFn {
@@ -88,15 +112,15 @@ fn record(name: &'static str, detail: String) {
 }
 
 fn ping(x: i32) -> i32 {
-    let dispatched = match (GameThread::current(), VirtualMachine::get()) {
+    let dispatched = match (GameThread::current(), VirtualMachine::singleton()) {
         (Some(thread), Some(vm)) => {
-            let tick = vm.dispatch_static_call(&thread, CLASS, "Tick", &[], on_result("Tick"));
-            let scale = vm.dispatch_static_call(&thread, CLASS, "Scale", &[Variable::float(1.5), Variable::bool(true)], on_result("Scale"));
-            let method = vm.find_bound_object(Handle::form(PLAYER), REF_CLASS).is_some_and(|object| vm.dispatch_method_call(&thread, &object, "SelfFormId", &[], on_result("SelfFormId")));
+            let tick = vm.call_static(&thread, CLASS, "Tick", &[], on_result("Tick"));
+            let scale = vm.call_static(&thread, CLASS, "Scale", &[Variable::float(1.5), Variable::bool(true)], on_result("Scale"));
+            let method = vm.bound_object(Handle::form(PLAYER), REF_CLASS).is_some_and(|object| vm.call_method(&thread, &object, "SelfFormId", &[], on_result("SelfFormId")));
             let args = [Variable::int(x), Variable::string(&BSFixedString::new("from Ping"))];
-            vm.send_event(&thread, Handle::form(PLAYER), "OnSkyrimRsEvent", &args);
+            vm.send_script_event(&thread, Handle::form(PLAYER), "OnSkyrimRsEvent", &args);
             bind_relay_targets(vm, &thread);
-            vm.relay_event(&thread, Handle::form(PLAYER), "OnSkyrimRsEvent", &args);
+            vm.relay_script_event(&thread, Handle::form(PLAYER), "OnSkyrimRsEvent", &args);
             [tick, scale, method]
         }
         _ => [false; 3],
@@ -109,14 +133,14 @@ fn ping(x: i32) -> i32 {
 }
 
 fn form_id(form: Option<&'static TESForm>) -> i32 {
-    let id = form.map_or(0, |f| f.form_id().0.cast_signed());
-    record("FormId", format!("form={form:?} -> {id}"));
+    let id = form.map_or(0, |f| f.formID.cast_signed());
+    record("FormId", format!("form={:?} -> {id}", form.map(form_name)));
     id
 }
 
 fn player_health(actor: Option<&'static Actor>) -> f32 {
-    let health = actor.map_or(-1.0, |a| a.actor_value_owner().get(ActorValue::Health));
-    record("PlayerHealth", format!("actor={actor:?} -> {health}"));
+    let health = actor.map_or(-1.0, |a| a.as_actor_value_owner().get_actor_value(ActorValue::Health as i32));
+    record("PlayerHealth", format!("actor={:?} -> {health}", actor.map(|a| form_name(a))));
     health
 }
 
@@ -132,8 +156,8 @@ fn scale(x: f32, double: bool) -> f32 {
 }
 
 fn player() -> Option<&'static TESForm> {
-    let player = PLAYER.lookup();
-    record("Player", format!("-> {player:?}"));
+    let player = sre::find_form_by_id(PLAYER);
+    record("Player", format!("-> {:?}", player.map(form_name)));
     player
 }
 
@@ -144,14 +168,14 @@ fn tick() {
 
 #[allow(clippy::needless_pass_by_value)]
 fn describe(reference: Option<&'static TESObjectREFR>, count: i32, suffix: String, flag: bool) -> String {
-    let out = format!("{} x{count} {suffix} flag={flag}", reference.map_or_else(|| "none".to_owned(), |r| r.form_id().to_string()));
-    record("Describe", format!("ref={reference:?} count={count} suffix={suffix:?} flag={flag} -> {out:?}"));
+    let out = format!("{} x{count} {suffix} flag={flag}", reference.map_or_else(|| "none".to_owned(), |r| format!("{:08X}", r.formID)));
+    record("Describe", format!("ref={:?} count={count} suffix={suffix:?} flag={flag} -> {out:?}", reference.map(|r| form_name(r))));
     out
 }
 
 fn self_form_id(this: &TESObjectREFR) -> i32 {
-    let id = this.form_id().0.cast_signed();
-    record("SelfFormId", format!("self={this:?} -> {id}"));
+    let id = this.formID.cast_signed();
+    record("SelfFormId", format!("self={} -> {id}", form_name(this)));
     id
 }
 
@@ -163,8 +187,8 @@ fn halves(values: Vec<i32>) -> Vec<f32> {
 }
 
 fn forms() -> Vec<Option<&'static TESForm>> {
-    let out = vec![PLAYER.lookup(), None, IRON_SWORD.lookup()];
-    record("Forms", format!("-> {out:?}"));
+    let out = vec![sre::find_form_by_id(PLAYER), None, sre::find_form_by_id(IRON_SWORD)];
+    record("Forms", format!("-> {:?}", out.iter().map(|f| f.map(form_name)).collect::<Vec<_>>()));
     out
 }
 
@@ -204,17 +228,17 @@ fn bind_relay_targets(vm: &VirtualMachine, thread: &GameThread) {
     if !targets.is_empty() {
         return;
     }
-    let (Some(player), Some(policy)) = (form(PLAYER).ok().and_then(|f| f.as_reference()).and_then(|r| r.as_actor()), HandlePolicy::get()) else { return };
-    let alias = alias_handles(player).into_iter().find(|&h| policy.is_type(VMTypeID::ReferenceAlias, h));
-    let effect = active_effect_handles(player).into_iter().find(|&h| policy.is_type(VMTypeID::ActiveMagicEffect, h));
+    let Some(player) = form(PLAYER).ok().and_then(TESForm::cast::<Actor>) else { return };
+    let alias = alias_handles(player).into_iter().find(|&h| is_type(vm, VMTypeID::ReferenceAlias, h));
+    let effect = active_effect_handles(player).into_iter().find(|&h| is_type(vm, VMTypeID::ActiveMagicEffect, h));
     for (class, handle) in [(ALIAS_CLASS, alias), (EFFECT_CLASS, effect)] {
         let Some(handle) = handle else {
             targets.push(format!("{class}: no handle"));
             continue;
         };
-        let bound = vm.create_object(class).map(|object| {
-            vm.bind_object(thread, &object, handle);
-            vm.find_bound_object(handle, class).is_some_and(|b| b.handle() == handle)
+        let bound = vm.new_object(class).map(|object| {
+            vm.bind_to_handle(thread, &object, handle);
+            vm.bound_object(handle, class).is_some_and(|b| b.get_handle() == handle.0)
         });
         targets.push(format!("{class} on {handle}: bound {bound:?}"));
     }
@@ -225,11 +249,11 @@ fn event_count() -> i32 {
 }
 
 fn registry() -> Result<&'static VirtualMachine, String> {
-    unsafe { VirtualMachine::from_ptr(REGISTRY.load(Ordering::Relaxed)) }.ok_or_else(|| "the registry pointer is not a BSScript::Internal::VirtualMachine".to_owned())
+    unsafe { VirtualMachine::from_registry(REGISTRY.load(Ordering::Relaxed)) }.ok_or_else(|| "the registry pointer is not a BSScript::Internal::VirtualMachine".to_owned())
 }
 
 fn vm() -> Result<&'static VirtualMachine, String> {
-    VirtualMachine::get().ok_or_else(|| "g_SkyrimVM + 0x210 is null".to_owned())
+    VirtualMachine::singleton().ok_or_else(|| "g_SkyrimVM + 0x210 is null".to_owned())
 }
 
 fn native(name: &str) -> Result<&'static NativeFunction, String> {
@@ -241,15 +265,15 @@ fn vm_identity() -> Result<String, String> {
     let global = vm()?;
     check(core::ptr::eq(registry, global), "the registry pointer is not g_SkyrimVM + 0x210")?;
     let skyrim_vm = skyrim::reloc().address(globals::g_SkyrimVM).map_err(|e| e.to_string())?;
-    let policy = registry.raw().handlePolicy as usize;
-    let bind = registry.raw().objectBindPolicy as usize;
+    let policy = registry.handlePolicy as usize;
+    let bind = registry.objectBindPolicy as usize;
     check(policy == skyrim_vm + core::mem::offset_of!(sre::SkyrimVM, m_HandlePolicy_338), "VM+0x90 is not g_SkyrimVM + 0x338")?;
     check(bind == skyrim_vm + core::mem::offset_of!(sre::SkyrimVM, m_ObjectBindPolicy_3A8), "VM+0x98 is not g_SkyrimVM + 0x3a8")?;
-    let via_slot = registry.handle_policy();
-    check(core::ptr::from_ref(via_slot) as usize == policy && HandlePolicy::get().is_some_and(|p| core::ptr::eq(p, via_slot)), "GetObjectHandlePolicy is not VM+0x90")?;
+    let via_slot = registry.get_object_handle_policy().map_or(0, |p| core::ptr::from_ref(p) as usize);
+    check(via_slot == policy && registry.handle_policy().is_some_and(|p| core::ptr::from_ref(p) as usize == policy), "GetObjectHandlePolicy is not VM+0x90")?;
     let global = unsafe { *(skyrim::reloc().address(globals::g_IObjectHandlePolicy_ptr).map_err(|e| e.to_string())? as *const usize) };
-    let refs = registry.raw().refCount;
-    Ok(format!("registry {:p} = g_SkyrimVM+0x210, refCount {refs}, handle policy {policy:#x} = g_SkyrimVM+0x338 = GetObjectHandlePolicy(), bind policy {bind:#x} = g_SkyrimVM+0x3a8; g_IObjectHandlePolicy_ptr holds {global:#x} during registration", registry.as_ptr()))
+    let refs = registry.refCount;
+    Ok(format!("registry {registry:p} = g_SkyrimVM+0x210, refCount {refs}, handle policy {policy:#x} = g_SkyrimVM+0x338 = GetObjectHandlePolicy(), bind policy {bind:#x} = g_SkyrimVM+0x3a8; g_IObjectHandlePolicy_ptr holds {global:#x} during registration"))
 }
 
 fn type_ids_before() -> Result<String, String> {
@@ -267,10 +291,10 @@ fn script_type_by_id() -> Result<String, String> {
     let vm = registry()?;
     let form = vm.script_type_by_id(VMTypeID::Form).ok_or("no script type for Form")?;
     let actor = vm.script_type_by_id(VMTypeID::Actor).ok_or("no script type for Actor")?;
-    check(*form.name() == *"Form" && form.parent().is_none(), &format!("Form type is {form:?}"))?;
-    let chain: Vec<String> = core::iter::successors(Some(actor), |t| t.parent()).map(|t| t.name().to_string()).collect();
+    check(*type_name(form) == *"Form" && form.parent().is_none(), &format!("Form type is {}", describe_type(form)))?;
+    let chain: Vec<String> = core::iter::successors(Some(actor), |t| t.parent()).map(|t| type_name(t).to_string()).collect();
     check(chain == ["Actor", "ObjectReference", "Form"], &format!("Actor's parent chain is {chain:?}"))?;
-    Ok(format!("Form {form:?} at {:p}; Actor chain {}; Actor {actor:?}", form.as_ptr(), chain.join(" -> ")))
+    Ok(format!("Form {} at {form:p}; Actor chain {}; Actor {}", describe_type(form), chain.join(" -> "), describe_type(actor)))
 }
 
 fn register() -> Result<String, String> {
@@ -315,77 +339,81 @@ fn rebind() -> Result<String, String> {
 fn tasklets() -> Result<String, String> {
     let vm = registry()?;
     for name in ["Ping", "FormId", "PlayerHealth", "Echo", "Scale", "Player", "Tick", "Describe"] {
-        vm.set_callable_from_tasklets(CLASS, name, true);
+        vm.allow_tasklets(CLASS, name, true);
     }
     Ok("SetCallableFromTasklets(SkyrimRsTest, each, true) returned".into())
 }
 
 fn handles() -> Result<String, String> {
-    let policy = HandlePolicy::get().ok_or("no VM")?;
+    let vm = vm()?;
+    let policy = vm.handle_policy().ok_or("the VM has no handle policy")?;
     let global = unsafe { *(skyrim::reloc().address(globals::g_IObjectHandlePolicy_ptr).map_err(|e| e.to_string())? as *const usize) };
     check(global == core::ptr::from_ref(policy) as usize, &format!("g_IObjectHandlePolicy_ptr holds {global:#x}, not the VM's policy"))?;
-    let invalid = policy.invalid_handle();
+    let is_type = |ty: VMTypeID, h: Handle| policy.handle_is_type(ty as u32, h.0);
+    let is_available = |h: Handle| policy.is_handle_object_available(h.0);
+    let invalid = Handle(policy.get_invalid_handle());
     check(invalid == Handle::INVALID && invalid.0 == 0xFFFF_0000_0000 && invalid.is_invalid() && invalid.form_id().is_none(), &format!("invalid handle is {invalid}"))?;
     let player = form(PLAYER)?;
     let sword = form(IRON_SWORD)?;
-    let h = policy.handle_for_form(player);
+    let h = vm.handle_for_form(player);
     check(h == Handle::form(PLAYER) && h.0 == 0xFFFF_0000_0014 && h.form_id() == Some(PLAYER), &format!("player handle is {h}"))?;
-    check(policy.is_type(VMTypeID::Form, h) && policy.is_type(VMTypeID::ObjectReference, h) && policy.is_type(VMTypeID::Actor, h) && !policy.is_type(VMTypeID::Weapon, h), "HandleIsType on the player handle")?;
-    check(policy.is_available(h), "the player handle is not available")?;
-    let back = policy.form_for_handle(VMTypeID::Actor, h).ok_or("GetObjectForHandle(Actor, player) is null")?;
+    check(is_type(VMTypeID::Form, h) && is_type(VMTypeID::ObjectReference, h) && is_type(VMTypeID::Actor, h) && !is_type(VMTypeID::Weapon, h), "HandleIsType on the player handle")?;
+    check(is_available(h), "the player handle is not available")?;
+    let back = vm.form_for_handle(VMTypeID::Actor, h).ok_or("GetObjectForHandle(Actor, player) is null")?;
     check(core::ptr::eq(back, player), "GetObjectForHandle(Actor) is not the player")?;
-    check(policy.form_for_handle(VMTypeID::ObjectReference, h).is_some_and(|f| core::ptr::eq(f, player)), "GetObjectForHandle(ObjectReference) is not the player")?;
-    check(policy.form_for_handle(VMTypeID::Weapon, h).is_none(), "GetObjectForHandle(Weapon, player) returned a form")?;
-    let hs = policy.handle_for_form(sword);
+    check(vm.form_for_handle(VMTypeID::ObjectReference, h).is_some_and(|f| core::ptr::eq(f, player)), "GetObjectForHandle(ObjectReference) is not the player")?;
+    check(vm.form_for_handle(VMTypeID::Weapon, h).is_none(), "GetObjectForHandle(Weapon, player) returned a form")?;
+    let hs = vm.handle_for_form(sword);
     check(hs == Handle::form(IRON_SWORD) && hs.0 == 0xFFFF_0001_2EB7, &format!("sword handle is {hs}"))?;
-    check(policy.form_for_handle(VMTypeID::Weapon, hs).is_some_and(|f| core::ptr::eq(f, sword)), "GetObjectForHandle(Weapon, sword) is not the sword")?;
-    check(!policy.is_type(VMTypeID::Actor, hs) && policy.form_for_handle(VMTypeID::Actor, hs).is_none(), "the sword handle passes as an Actor")?;
-    check(policy.form_for_handle(VMTypeID::Form, invalid).is_none(), "the invalid handle resolved to a form")?;
-    Ok(format!("g_IObjectHandlePolicy_ptr = the VM's policy; invalid={invalid} (HandleIsType(Form)={} IsHandleObjectAvailable={}, no form); player={h} (Form/ObjectReference/Actor yes, Weapon no) -> {back:?}; sword={hs} -> Weapon yes, Actor no", policy.is_type(VMTypeID::Form, invalid), policy.is_available(invalid)))
+    check(vm.form_for_handle(VMTypeID::Weapon, hs).is_some_and(|f| core::ptr::eq(f, sword)), "GetObjectForHandle(Weapon, sword) is not the sword")?;
+    check(!is_type(VMTypeID::Actor, hs) && vm.form_for_handle(VMTypeID::Actor, hs).is_none(), "the sword handle passes as an Actor")?;
+    check(vm.form_for_handle(VMTypeID::Form, invalid).is_none(), "the invalid handle resolved to a form")?;
+    Ok(format!("g_IObjectHandlePolicy_ptr = the VM's policy; invalid={invalid} (HandleIsType(Form)={} IsHandleObjectAvailable={}, no form); player={h} (Form/ObjectReference/Actor yes, Weapon no) -> {}; sword={hs} -> Weapon yes, Actor no", is_type(VMTypeID::Form, invalid), is_available(invalid), form_name(back)))
 }
 
 fn script_types() -> Result<String, String> {
     let vm = vm()?;
     let actor = vm.script_type("Actor").ok_or("GetScriptObjectType(Actor) failed")?;
-    check(*actor.name() == *"Actor" && actor.is_linked(), &format!("Actor is {actor:?}"))?;
+    check(*type_name(actor) == *"Actor" && is_linked(actor), &format!("Actor is {}", describe_type(actor)))?;
     let missing = vm.script_type("NoSuchScript");
-    check(missing.is_none_or(|t| !t.is_linked()), &format!("NoSuchScript resolved to a linked type {missing:?}"))?;
+    check(missing.is_none_or(|t| !is_linked(t)), &format!("NoSuchScript resolved to a linked type {:?}", missing.map(describe_type)))?;
     let own = vm.script_type(CLASS).ok_or("GetScriptObjectType(SkyrimRsTest) failed: is SkyrimRsTest.pex in Data\\Scripts?")?;
-    check(own.is_linked() && own.parent().is_none(), &format!("{CLASS} is {own:?}"))?;
+    check(is_linked(own) && own.parent().is_none(), &format!("{CLASS} is {}", describe_type(own)))?;
     for name in ["Ping", "FormId", "PlayerHealth", "Echo", "Scale", "Player", "Tick", "Describe"] {
-        let bound = own.function(name, true).ok_or_else(|| format!("{CLASS}.{name} has no function"))?;
+        let bound = function_of(own, name, true).ok_or_else(|| format!("{CLASS}.{name} has no function"))?;
         check(bound == native(name)?.as_ptr(), &format!("{CLASS}.{name} is bound to {bound:?}, not the registered native"))?;
     }
-    check(own.function("Nope", true).is_none(), "GetFunction found Nope")?;
-    let ping_as_method = own.function("Ping", false);
+    check(function_of(own, "Nope", true).is_none(), "GetFunction found Nope")?;
+    let ping_as_method = function_of(own, "Ping", false);
     let reference = vm.script_type(REF_CLASS).ok_or("GetScriptObjectType(SkyrimRsTestRef) failed")?;
-    check(reference.is_linked() && reference.parent().is_some_and(|p| *p.name() == *"ObjectReference"), &format!("{REF_CLASS} is {reference:?}"))?;
+    check(is_linked(reference) && reference.parent().is_some_and(|p| *type_name(p) == *"ObjectReference"), &format!("{REF_CLASS} is {}", describe_type(reference)))?;
     let method = native("SelfFormId")?;
-    let found = [false, true].map(|is_static| reference.function("SelfFormId", is_static));
-    Ok(format!("Actor {actor:?}; NoSuchScript {missing:?}; {CLASS} {own:?} with 8 natives bound to the registered objects (GetFunction(Ping, isStatic=false) = {ping_as_method:?}); {REF_CLASS} {reference:?} extends ObjectReference; GetFunction(SelfFormId) for isStatic false/true = {found:?} (non-static functions are not returned for a linked type), the native {:?} has refCount {} after linking", method.as_ptr(), method.ref_count()))
+    let found = [false, true].map(|is_static| function_of(reference, "SelfFormId", is_static));
+    let (actor, missing, own, reference) = (describe_type(actor), missing.map(describe_type), describe_type(own), describe_type(reference));
+    Ok(format!("Actor {actor}; NoSuchScript {missing:?}; {CLASS} {own} with 8 natives bound to the registered objects (GetFunction(Ping, isStatic=false) = {ping_as_method:?}); {REF_CLASS} {reference} extends ObjectReference; GetFunction(SelfFormId) for isStatic false/true = {found:?} (non-static functions are not returned for a linked type), the native {:?} has refCount {} after linking", method.as_ptr(), method.ref_count()))
 }
 
 fn find_bound_object() -> Result<String, String> {
     let vm = vm()?;
     let h = Handle::form(PLAYER);
-    let object = vm.find_bound_object(h, "Actor").ok_or("FindBoundObject(player, Actor) failed")?;
-    check(object.handle() == h, &format!("the Actor object's handle is {}", object.handle()))?;
-    check(object.type_info().is_some_and(|t| *t.name() == *"Actor"), "the object's type is not Actor")?;
-    check(vm.find_bound_object(h, REF_CLASS).is_none(), "FindBoundObject(player, SkyrimRsTestRef) found an object")?;
-    check(vm.find_bound_object(Handle::INVALID, "Actor").is_none(), "FindBoundObject(invalid, Actor) found an object")?;
-    Ok(format!("player -> {object:?}; SkyrimRsTestRef none; invalid none"))
+    let object = vm.bound_object(h, "Actor").ok_or("FindBoundObject(player, Actor) failed")?;
+    check(object.get_handle() == h.0, &format!("the Actor object's handle is {}", Handle(object.get_handle())))?;
+    check(object.type_().is_some_and(|t| *type_name(t) == *"Actor"), "the object's type is not Actor")?;
+    check(vm.bound_object(h, REF_CLASS).is_none(), "FindBoundObject(player, SkyrimRsTestRef) found an object")?;
+    check(vm.bound_object(Handle::INVALID, "Actor").is_none(), "FindBoundObject(invalid, Actor) found an object")?;
+    Ok(format!("player -> {}; SkyrimRsTestRef none; invalid none", describe_object(&object)))
 }
 
 fn bind_object() -> Result<String, String> {
     let vm = vm()?;
     let thread = unsafe { GameThread::assume() };
     let h = Handle::form(PLAYER);
-    let created = vm.create_object(REF_CLASS).ok_or("CreateObject(SkyrimRsTestRef) failed")?;
-    check(created.handle() != h && created.type_info().is_some_and(|t| *t.name() == *REF_CLASS), &format!("the new object is {created:?}"))?;
-    vm.bind_object(&thread, &created, h);
-    let bound = vm.find_bound_object(h, REF_CLASS).ok_or("FindBoundObject(player, SkyrimRsTestRef) found nothing after BindObject")?;
-    check(core::ptr::from_ref(&*bound) == core::ptr::from_ref(&*created) && bound.handle() == h, &format!("found {bound:?}, created {created:?}"))?;
-    Ok(format!("created {REF_CLASS} unbound, BindObject(player) -> FindBoundObject returns it: {bound:?}; main thread {}", os_thread()))
+    let created = vm.new_object(REF_CLASS).ok_or("CreateObject(SkyrimRsTestRef) failed")?;
+    check(created.get_handle() != h.0 && created.type_().is_some_and(|t| *type_name(t) == *REF_CLASS), &format!("the new object is {}", describe_object(&created)))?;
+    vm.bind_to_handle(&thread, &created, h);
+    let bound = vm.bound_object(h, REF_CLASS).ok_or("FindBoundObject(player, SkyrimRsTestRef) found nothing after BindObject")?;
+    check(core::ptr::from_ref(&*bound) == core::ptr::from_ref(&*created) && bound.get_handle() == h.0, &format!("found {}, created {}", describe_object(&bound), describe_object(&created)))?;
+    Ok(format!("created {REF_CLASS} unbound, BindObject(player) -> FindBoundObject returns it: {}; main thread {}", describe_object(&bound), os_thread()))
 }
 
 fn game_thread() -> Result<String, String> {
@@ -450,10 +478,10 @@ fn arrays() -> Result<String, String> {
     check(halves == "values=[3, 8, -5] -> [1.5, 4.0, -2.5]", &format!("Halves: {halves}"))?;
     let forms = find("Forms")?;
     check(forms.contains("ACHR 00000014") && forms.contains("None") && forms.contains("00012EB7"), &format!("Forms: {forms}"))?;
-    let made = vm()?.create_array(TypeInfo::raw(PapyrusType::Int), 3).ok_or("CreateArray(Int, 3) failed")?;
+    let made = vm()?.new_array(TypeInfo::raw(PapyrusType::Int), 3).ok_or("CreateArray(Int, 3) failed")?;
     let array = made.as_array().ok_or("CreateArray gave no array")?;
-    let refs = array.raw().refCount;
-    check(array.len() == 3 && refs >= 1 && array.elements().iter().all(|e| e.as_int() == Some(0)), &format!("new Int[3] is {made:?}, refs {refs}"))?;
+    let refs = array.refCount;
+    check(array.size == 3 && refs >= 1 && made.elements().is_some_and(|e| e.iter().all(|e| e.as_int() == Some(0))), &format!("new Int[3] is {made:?}, refs {refs}"))?;
     Ok(format!("Halves {halves}; Forms {forms}; CreateArray(Int, 3) at the save = {made:?} with {refs} references"))
 }
 

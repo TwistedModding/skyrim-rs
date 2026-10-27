@@ -1,4 +1,4 @@
-//! One test per `skyrim::animation` API, against the RE repo's `docs/subsystems/animation-verify.md`.
+//! The animation suite through `skyrim::animation` and the generated graph classes, against the RE repo's `docs/subsystems/animation-verify.md`.
 //! `install` post-hooks `ApplyPoseToBoneNodes` and detours `PlayerCharacter::UpdateNodesAfterRender`
 //! at `DataLoaded`; `register` adds a sink on the player's graph 0 after a load; the hooks sample
 //! the player's head bone at the pose write and at the world update. `TESTS` reads the graphs after
@@ -9,13 +9,22 @@ use std::collections::BTreeMap;
 use std::sync::{Mutex, OnceLock};
 use std::sync::atomic::{AtomicBool, AtomicPtr, AtomicU32, Ordering};
 
-use skyrim::actors::PlayerCharacter;
-use skyrim::animation::{AnimationGraph, AnimationGraphHolder, ApplyPoseFn, HkQsTransform, UpdateNodesAfterRenderFn, current_speed, graph_event_source, graph_manager};
-use skyrim::events::{BSAnimationGraphEvent, BSEventNotifyControl, BSTEventSource, EventSink, Registration, Sink};
-use skyrim::render::{NiAVObject, Transform};
-use skyrim::string::BSFixedString;
+use skyrim::BSFixedString;
+use skyrim::animation::{ApplyPoseFn, HkQsTransform, UpdateNodesAfterRenderFn, graph_event_source};
+use skyrim::events::{BSTEventSource, EventSink, Registration, Sink};
+use skyrim::prelude::*;
+use skyrim::render::Transform;
+use sre::{BSAnimationGraphEvent, BSAnimationGraphManager, BSEventNotifyControl, BShkbAnimationGraph, NiAVObject, NiNode, PlayerCharacter};
 
-use crate::{Test, check};
+use crate::{Test, check, third_person_root};
+
+fn graph_manager(player: &PlayerCharacter) -> Option<&BSAnimationGraphManager> {
+    player.current_process()?.middle_high()?.animation_graph_manager()
+}
+
+fn name(object: &NiAVObject) -> &BSFixedString {
+    BSFixedString::view(&object.name)
+}
 
 pub const TESTS: &[(&str, Test)] = &[("graphs", graphs), ("head_bone", head_bone)];
 pub const RUN_TESTS: &[(&str, Test)] = &[("variables", variables), ("weapon_state", weapon_state), ("events", events), ("pose_write", pose_write), ("world_update", world_update)];
@@ -40,8 +49,8 @@ struct TagCounter;
 
 impl EventSink<BSAnimationGraphEvent> for TagCounter {
     fn process(&self, event: &BSAnimationGraphEvent, _: &BSTEventSource<BSAnimationGraphEvent>) -> BSEventNotifyControl {
-        let tag = event.tag().to_str().unwrap_or("?").to_owned();
-        let owner_is_player = event.owner().is_some_and(|o| core::ptr::eq(o.as_ptr(), PLAYER.load(Ordering::Relaxed)));
+        let tag = BSFixedString::view(&event.tag).to_str().unwrap_or("?").to_owned();
+        let owner_is_player = event.owner().is_some_and(|o| core::ptr::eq(o, PLAYER.load(Ordering::Relaxed)));
         let mut tags = TAGS.lock().unwrap();
         if tags.len() < 64 || tags.contains_key(&tag) {
             *tags.entry(if owner_is_player { tag } else { format!("{tag} (other owner)") }).or_insert(0) += 1;
@@ -52,7 +61,7 @@ impl EventSink<BSAnimationGraphEvent> for TagCounter {
 
 static SINK: Sink<BSAnimationGraphEvent, TagCounter> = Sink::new(TagCounter);
 
-fn head_index(graph: &AnimationGraph) -> Option<usize> {
+fn head_index(graph: &BShkbAnimationGraph) -> Option<usize> {
     let head = HEAD.load(Ordering::Relaxed);
     graph.bone_nodes().iter().position(|e| core::ptr::eq(e.node, head))
 }
@@ -62,28 +71,28 @@ unsafe extern "C" fn apply_detour(pose: *const HkQsTransform, nodes: *mut core::
     if !ACTIVE.load(Ordering::Acquire) {
         return;
     }
-    let Some(graph) = (unsafe { AnimationGraph::from_bone_array(nodes) }) else { return };
+    let Some(graph) = (unsafe { BShkbAnimationGraph::from_bone_array(nodes) }) else { return };
     let player = PLAYER.load(Ordering::Relaxed);
-    if !graph.owner().is_some_and(|o| core::ptr::eq(o.as_ptr(), player)) {
+    if !graph.owner().is_some_and(|o| core::ptr::eq(o, player)) {
         POSE_WRITES_OTHER.fetch_add(1, Ordering::Relaxed);
         return;
     }
     let Some(player) = (unsafe { player.cast::<PlayerCharacter>().as_ref() }) else { return };
-    let index = usize::from(!core::ptr::eq(graph.root_node().map_or(core::ptr::null(), |r| r.raw()), player.third_person_root().map_or(core::ptr::null(), |r| r.raw())));
+    let index = usize::from(!core::ptr::eq(graph.root_node().map_or(core::ptr::null(), core::ptr::from_ref), third_person_root(player).map_or(core::ptr::null(), core::ptr::from_ref)));
     POSE_WRITES[index].fetch_add(1, Ordering::Relaxed);
     if index == 0 {
-        MAX_SPEED_BITS.fetch_max(current_speed(player).max(0.0).to_bits(), Ordering::Relaxed);
+        MAX_SPEED_BITS.fetch_max(player.get_current_speed().max(0.0).to_bits(), Ordering::Relaxed);
         if let Some(i) = head_index(graph)
             && let (Some(node), Some(entry)) = (graph.bone_node(i), graph.pose_local().get(i))
         {
-            *LAST_POSE.lock().unwrap() = Some((node.local(), *entry));
+            *LAST_POSE.lock().unwrap() = Some((node.local_transform(), *entry));
         }
     }
 }
 
 unsafe extern "C" fn update_detour(player: *mut sre::PlayerCharacter) {
-    let head = unsafe { NiAVObject::from_ptr(HEAD.load(Ordering::Relaxed)) };
-    let before = head.map(|h| (h.local(), h.world()));
+    let head = unsafe { HEAD.load(Ordering::Relaxed).as_ref() };
+    let before = head.map(|h| (h.local_transform(), h.world_transform()));
     unsafe { UPDATE.get().expect("stored before enabling").original()(player) }
     if !ACTIVE.load(Ordering::Acquire) {
         return;
@@ -92,7 +101,7 @@ unsafe extern "C" fn update_detour(player: *mut sre::PlayerCharacter) {
     if let (Some(h), Some((local, world))) = (head, before) {
         let matches = LAST_POSE.lock().unwrap().as_ref().is_some_and(|(written, _)| *written == local);
         if matches { &LOCAL_MATCHES } else { &LOCAL_DIFFERS }.fetch_add(1, Ordering::Relaxed);
-        if h.world() != world {
+        if h.world_transform() != world {
             WORLD_CHANGED.fetch_add(1, Ordering::Relaxed);
         }
     }
@@ -119,27 +128,27 @@ pub fn suspend() {
 /// Caches the player and its head bone, registers the sink on graph 0, clears the counters and
 /// starts sampling; called after a load.
 pub fn register() -> Result<String, String> {
-    let player = PlayerCharacter::get().ok_or("g_PlayerCharacter_ptr is null")?;
-    PLAYER.store(core::ptr::from_ref::<skyrim::actors::TESObjectREFR>(player).cast::<sre::TESObjectREFR>().cast_mut(), Ordering::Relaxed);
-    let root = player.third_person_root().ok_or("loadedData->node3D is null")?;
-    let head = root.object_by_name(&BSFixedString::new("NPC Head [Head]")).ok_or("GetObjectByName(NPC Head [Head]) returned null")?;
-    HEAD.store(head.as_ptr().cast_mut(), Ordering::Relaxed);
+    let player = sre::g_player_character_ptr().ok_or("g_PlayerCharacter_ptr is null")?;
+    PLAYER.store(core::ptr::from_ref::<sre::TESObjectREFR>(player).cast_mut(), Ordering::Relaxed);
+    let root = third_person_root(player).ok_or("loadedData->node3D is null")?;
+    let head = root.get_object_by_name(BSFixedString::new("NPC Head [Head]").raw()).ok_or("GetObjectByName(NPC Head [Head]) returned null")?;
+    HEAD.store(core::ptr::from_ref(head).cast_mut(), Ordering::Relaxed);
     for c in POSE_WRITES.iter().chain([&POSE_WRITES_OTHER, &UPDATES, &LOCAL_MATCHES, &LOCAL_DIFFERS, &WORLD_CHANGED, &MAX_SPEED_BITS]) {
         c.store(0, Ordering::Relaxed);
     }
     *LAST_POSE.lock().unwrap() = None;
     TAGS.lock().unwrap().clear();
     let source = graph_event_source(player, Some(0)).ok_or("GetAnimationGraphEventSource(player, 0) failed")?;
-    let graph_source = graph_manager(player).and_then(|m| m.graphs().first().copied().flatten()).and_then(AnimationGraph::event_source);
+    let graph_source = graph_manager(player).and_then(|m| m.graphs().first().copied().flatten()).and_then(BShkbAnimationGraph::event_source);
     check(graph_source.is_some_and(|g| core::ptr::eq(g, source)), "GetAnimationGraphEventSource(0) is not graph 0's +0x68")?;
-    let sinks_before = source.sink_count();
+    let sinks_before = source.sinks().len();
     *REGISTRATION.lock().unwrap() = Some(source.add_sink(&SINK));
     ACTIVE.store(true, Ordering::Release);
-    Ok(format!("head bone {:p} ({}), graph 0 source {:p} sinks {} -> {}", head.as_ptr(), head.name().to_str().unwrap_or("?"), source, sinks_before, source.sink_count()))
+    Ok(format!("head bone {head:p} ({}), graph 0 source {:p} sinks {} -> {}", name(head).to_str().unwrap_or("?"), source, sinks_before, source.sinks().len()))
 }
 
 fn player() -> Result<&'static PlayerCharacter, String> {
-    PlayerCharacter::get().ok_or_else(|| "g_PlayerCharacter_ptr is null".to_owned())
+    sre::g_player_character_ptr().ok_or_else(|| "g_PlayerCharacter_ptr is null".to_owned())
 }
 
 fn graphs() -> Result<String, String> {
@@ -147,20 +156,25 @@ fn graphs() -> Result<String, String> {
     let manager = graph_manager(p).ok_or("no animation graph manager")?;
     let graphs = manager.graphs();
     check(graphs.len() == 2, &format!("{} graphs", graphs.len()))?;
-    let active = manager.active_graph_index();
+    let active = manager.activeGraph;
     check((active == 1) != p.is_third_person(), &format!("active graph {active} with IsThirdPerson {}", p.is_third_person()))?;
     let mut described = Vec::new();
     for (i, g) in graphs.iter().enumerate() {
         let g = g.ok_or_else(|| format!("graph {i} is null"))?;
-        check(g.owner().is_some_and(|o| core::ptr::eq(o.as_ptr(), p.as_ptr().cast())), &format!("graph {i} is not owned by the player"))?;
-        let bones = g.bone_count();
+        check(g.owner().is_some_and(|o| core::ptr::eq(o, core::ptr::from_ref::<sre::TESObjectREFR>(p))), &format!("graph {i} is not owned by the player"))?;
+        let bones = g.boneCount;
         let nodes = g.bone_nodes().len();
         let pose = g.pose_local().len();
         let skeleton = g.skeleton_bone_count().unwrap_or(0);
         check(bones == 99 && nodes == 99 && pose == 99 && skeleton == 99, &format!("graph {i}: bones {bones}, nodes {nodes}, pose {pose}, skeleton {skeleton}"))?;
-        let expected_root = if i == 0 { p.third_person_root() } else { p.first_person_root() };
-        check(g.root_node().zip(expected_root).is_some_and(|(a, b)| core::ptr::eq(a.raw(), b.raw())), &format!("graph {i} does not drive the expected root"))?;
-        described.push(format!("graph {i} {:?} at {:p}: 99 bones, root {:p}, source sinks {}", g.project_name().to_str().unwrap_or("?"), g.as_ptr(), g.root_node().map_or(core::ptr::null(), |r| r.raw()), g.event_source().map_or(0, BSTEventSource::sink_count)));
+        let expected_root: Option<&NiNode> = if i == 0 { third_person_root(p) } else { p.first_person_root().map(|r| &**r) };
+        check(g.root_node().zip(expected_root).is_some_and(|(a, b)| core::ptr::eq(a, b)), &format!("graph {i} does not drive the expected root"))?;
+        described.push(format!(
+            "graph {i} {:?} at {g:p}: 99 bones, root {:p}, source sinks {}",
+            BSFixedString::view(&g.projectName).to_str().unwrap_or("?"),
+            g.root_node().map_or(core::ptr::null(), core::ptr::from_ref),
+            g.event_source().map_or(0, |s| s.sinks().len())
+        ));
     }
     Ok(format!("2 graphs, active {active}; {}", described.join("; ")))
 }
@@ -169,19 +183,19 @@ fn head_bone() -> Result<String, String> {
     let p = player()?;
     let graph = graph_manager(p).and_then(|m| m.graphs().first().copied().flatten()).ok_or("no graph 0")?;
     let i = head_index(graph).ok_or("the head bone is not in graph 0's bone array")?;
-    let head = unsafe { NiAVObject::from_ptr(HEAD.load(Ordering::Relaxed)) }.ok_or("no head")?;
-    check(head.name().to_str() == Some("NPC Head [Head]"), "the cached head has another name")?;
-    let local = head.local();
+    let head = unsafe { HEAD.load(Ordering::Relaxed).as_ref() }.ok_or("no head")?;
+    check(name(head).to_str() == Some("NPC Head [Head]"), "the cached head has another name")?;
+    let local = head.local_transform();
     let pose = graph.pose_local()[i];
     Ok(format!("NPC Head [Head] is skeleton bone {i}; local translation {:?}, pose translation {:?}, pose rotation {:?}", local.translation, &pose.translation[..3], pose.rotation))
 }
 
 fn variables() -> Result<String, String> {
     let p = player()?;
-    let holder = AnimationGraphHolder::of(p);
-    let speed = holder.float(&BSFixedString::new("Speed")).ok_or("GetGraphVariableFloat(Speed) failed")?;
-    let attacking = holder.bool(&BSFixedString::new("IsAttacking")).ok_or("GetGraphVariableBool(IsAttacking) failed")?;
-    let direct = current_speed(p);
+    let holder = p.as_i_animation_graph_manager_holder();
+    let speed = holder.variable_float(&BSFixedString::new("Speed")).ok_or("GetGraphVariableFloat(Speed) failed")?;
+    let attacking = holder.variable_bool(&BSFixedString::new("IsAttacking")).ok_or("GetGraphVariableBool(IsAttacking) failed")?;
+    let direct = p.get_current_speed();
     let max_seen = f32::from_bits(MAX_SPEED_BITS.load(Ordering::Relaxed));
     check(!attacking, "IsAttacking is true")?;
     check((speed - direct).abs() < 1.0, &format!("Speed variable {speed} vs GetCurrentSpeed {direct}"))?;
@@ -191,7 +205,7 @@ fn variables() -> Result<String, String> {
 
 fn weapon_state() -> Result<String, String> {
     let p = player()?;
-    let state = p.state().weapon_state();
+    let state = (p.as_actor_state().flags2 >> 5) & 7;
     check(state == 3, &format!("weapon state {state} after DrawWeapon"))?;
     Ok(format!("weapon state {state} (drawn)"))
 }

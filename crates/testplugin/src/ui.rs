@@ -1,4 +1,4 @@
-//! One test per `skyrim::ui` API, against the RE repo's `docs/subsystems/ui-verify.md`. `install`
+//! The ui suite through `skyrim::ui` and the generated UI classes, against the RE repo's `docs/subsystems/ui-verify.md`. `install`
 //! registers the suite's own menu and detours `RenderMenuStack`, `UIMessageQueue::AddMessage` and
 //! `ShowHUDMessage` at `DataLoaded`; the draw detour keeps the latest stack sample per set of open
 //! menus and, on the first frame after a load with only the HUD open, runs the Scaleform probe,
@@ -11,11 +11,18 @@ use std::collections::BTreeMap;
 use std::sync::atomic::{AtomicBool, AtomicPtr, AtomicU32, AtomicU64, Ordering};
 use std::sync::{Mutex, OnceLock};
 
-use skyrim::events::{BSEventNotifyControl, BSTEventSource, Event, EventSink, MenuOpenCloseEvent, Sink};
-use skyrim::string::BSFixedString;
-use skyrim::ui::{AddMessageFn, Function, FunctionHandler, IMenu, Menu, MenuBase, MenuFlags, MessageResult, MessageType, Params, RenderMenuStackFn, ShowHudMessageFn, Ui, UiMessage, UiMessageQueue, Value, ValueType};
+use skyrim::BSFixedString;
+use skyrim::events::{BSTEventSource, Event, EventSink, Sink};
+use skyrim::prelude::*;
+use skyrim::ui::{AddMessageFn, Function, FunctionHandler, Menu, MenuBase, MessageResult, MessageType, Params, RenderMenuStackFn, ShowHudMessageFn, Value, ValueType};
+use sre::{BSEventNotifyControl, EventSourceHolder_MenuOpenClose as Ui, IMenu, IMenu_flags, MenuOpenCloseEvent, UIMessage, UIMessageQueue};
 
 use crate::{Test, check};
+
+/// The menu's class without its `::vftable` suffix, `?` when the ledger has no vtable for it.
+fn class_name(menu: &IMenu) -> &'static str {
+    skyrim::class_of(menu).map_or("?", |c| c.class.strip_suffix("::vftable").unwrap_or(c.class))
+}
 
 pub const MENU: &str = "SkyrimRsTestMenu";
 const DEPTH: u8 = 6;
@@ -65,8 +72,8 @@ impl Menu for TestMenu {
     fn create(base: &mut MenuBase) -> Self {
         CREATED.fetch_add(1, Ordering::Relaxed);
         base.set_depth(DEPTH);
-        base.set_flags(MenuFlags(0));
-        OWN.store(base.as_ptr(), Ordering::Relaxed);
+        base.set_flags(IMenu_flags(0));
+        OWN.store(core::ptr::from_ref::<IMenu>(base).cast_mut(), Ordering::Relaxed);
         Self
     }
 
@@ -74,8 +81,8 @@ impl Menu for TestMenu {
         POST_CREATED.fetch_add(1, Ordering::Relaxed);
     }
 
-    fn process_message(&mut self, _: &mut MenuBase, message: &UiMessage) -> MessageResult {
-        match message.kind() {
+    fn process_message(&mut self, _: &mut MenuBase, message: &UIMessage) -> MessageResult {
+        match MessageType::from_raw(message.type_) {
             Some(MessageType::Show) => SHOWN.fetch_add(1, Ordering::Relaxed),
             Some(MessageType::Hide) => HIDDEN.fetch_add(1, Ordering::Relaxed),
             _ => 0,
@@ -105,8 +112,8 @@ struct MenuEvents;
 
 impl EventSink<MenuOpenCloseEvent> for MenuEvents {
     fn process(&self, event: &MenuOpenCloseEvent, _: &BSTEventSource<MenuOpenCloseEvent>) -> BSEventNotifyControl {
-        if event.menu_name() == MENU {
-            if event.opening() { &OPEN_EVENTS } else { &CLOSE_EVENTS }.fetch_add(1, Ordering::Relaxed);
+        if *BSFixedString::view(&event.menuName) == *MENU {
+            if event.opening != 0 { &OPEN_EVENTS } else { &CLOSE_EVENTS }.fetch_add(1, Ordering::Relaxed);
         }
         BSEventNotifyControl::Continue
     }
@@ -132,36 +139,36 @@ impl FunctionHandler for Counter {
 static CALLBACK: Function<Counter> = Function::new(Counter { calls: AtomicU32::new(0), last: AtomicU64::new(0) });
 
 fn name_of(menu: &IMenu) -> String {
-    if core::ptr::eq(menu.as_ptr(), OWN.load(Ordering::Relaxed)) { MENU.to_owned() } else { menu.class_name().to_owned() }
+    if core::ptr::eq(menu, OWN.load(Ordering::Relaxed)) { MENU.to_owned() } else { class_name(menu).to_owned() }
 }
 
 unsafe extern "C" fn render_detour(ui: *mut sre::EventSourceHolder_MenuOpenClose) {
     unsafe { RENDER.get().expect("stored before enabling").original()(ui) }
-    let Some(ui) = Ui::get() else { return };
+    let Some(ui) = Ui::singleton() else { return };
     let stack = ui.stack();
-    let menus: Vec<(String, u8, u32)> = stack.iter().map(|m| (name_of(m), m.depth(), m.flags().bits())).collect();
+    let menus: Vec<(String, u8, u32)> = stack.iter().map(|m| (name_of(m), m.depth, m.flags)).collect();
     drop(stack);
     let mut names: Vec<&str> = menus.iter().map(|m| m.0.as_str()).filter(|n| *n != "?").collect();
     names.sort_unstable();
     let key = names.join("+");
-    let sample = Sample { menus, pauses: ui.num_pauses_game(), modal: ui.modal_menu_open(), allowing_save: ui.num_menus_allowing_save(), thread: format!("{:?}", std::thread::current().id()) };
+    let sample = Sample { menus, pauses: ui.numPausesGame, modal: ui.modalMenuOpen != 0, allowing_save: ui.numMenusAllowingSave, thread: format!("{:?}", std::thread::current().id()) };
     let hud_only = key == "HUDMenu";
     SAMPLES.lock().unwrap().insert(key, sample);
     if hud_only && PROBE_PENDING.swap(false, Ordering::Relaxed) {
         *PROBE.lock().unwrap() = Some(probe(ui));
         skyrim::ui::show_hud_message(NOTE, None, false);
-        if let Some(queue) = UiMessageQueue::get() {
+        if let Some(queue) = UIMessageQueue::singleton() {
             queue.show(MENU);
             HIDE_PENDING.store(true, Ordering::Relaxed);
         }
     }
     if DISPLAYS.load(Ordering::Relaxed) >= OWN_FRAMES
         && HIDE_PENDING.swap(false, Ordering::Relaxed)
-        && let Some(queue) = UiMessageQueue::get()
+        && let Some(queue) = UIMessageQueue::singleton()
     {
         queue.hide(MENU);
     }
-    match (REQUEST.swap(0, Ordering::Relaxed), UiMessageQueue::get()) {
+    match (REQUEST.swap(0, Ordering::Relaxed), UIMessageQueue::singleton()) {
         (1, Some(queue)) => queue.show(MENU),
         (2, Some(queue)) => queue.hide(MENU),
         _ => {}
@@ -182,7 +189,7 @@ pub fn own_menu_events() -> (u32, u32) {
 unsafe extern "C" fn add_detour(queue: *mut sre::UIMessageQueue, name: *const sre::BSFixedString, kind: u32, data: *mut sre::IUIMessageData) {
     unsafe { ADD.get().expect("stored before enabling").original()(queue, name, kind, data) }
     if !name.is_null() {
-        let name = unsafe { BSFixedString::from_ptr(name) }.to_string();
+        let name = BSFixedString::view(unsafe { &*name }).to_string();
         let mut messages = MESSAGES.lock().unwrap();
         if messages.len() < 500 {
             messages.push((name, kind));
@@ -199,8 +206,8 @@ unsafe extern "C" fn hud_detour(text: *const c_char, sound: *const c_char, suppr
 
 /// Registers the suite's menu, listens for its open and close events and enables the three detours; once at `DataLoaded`.
 pub fn install() -> Result<String, String> {
-    let ui = Ui::get().ok_or("g_EventSourceHolder_MenuOpenClose_ptr is null")?;
-    ui.register::<TestMenu>(MENU);
+    let ui = Ui::singleton().ok_or("g_EventSourceHolder_MenuOpenClose_ptr is null")?;
+    ui.register_menu::<TestMenu>(MENU);
     MenuOpenCloseEvent::source().ok_or("no MenuOpenCloseEvent source")?.add_sink(&MENU_SINK).leak();
     let render = unsafe { skyrim::ui::hook_render_menu_stack(render_detour) }.map_err(|e| format!("RenderMenuStack: {e}"))?;
     let add = unsafe { skyrim::ui::hook_add_message(add_detour) }.map_err(|e| format!("AddMessage: {e}"))?;
@@ -229,7 +236,7 @@ pub fn reset() {
 }
 
 fn ui() -> Result<&'static Ui, String> {
-    Ui::get().ok_or_else(|| "g_EventSourceHolder_MenuOpenClose_ptr is null".to_owned())
+    Ui::singleton().ok_or_else(|| "g_EventSourceHolder_MenuOpenClose_ptr is null".to_owned())
 }
 
 fn describe(menus: &[(String, u8, u32)]) -> String {
@@ -239,11 +246,11 @@ fn describe(menus: &[(String, u8, u32)]) -> String {
 fn singleton() -> Result<String, String> {
     let ui = ui()?;
     let stack = ui.stack();
-    let menus: Vec<(String, u8, u32)> = stack.iter().map(|m| (name_of(m), m.depth(), m.flags().bits())).collect();
+    let menus: Vec<(String, u8, u32)> = stack.iter().map(|m| (name_of(m), m.depth, m.flags)).collect();
     drop(stack);
     check(menus.iter().any(|(name, depth, flags)| name == "HUDMenu" && *depth == 2 && flags & 0x40 != 0), &format!("no open HUDMenu at depth 2 in [{}]", describe(&menus)))?;
-    check(ui.menus_visible() && !ui.closing_all_menus(), "menusVisible or closingAllMenus is off")?;
-    Ok(format!("stack [{}], numPausesGame {}, modal {}, allowing save {}, inventory menus {}", describe(&menus), ui.num_pauses_game(), ui.modal_menu_open(), ui.num_menus_allowing_save(), ui.num_inventory_menus()))
+    check(ui.menusVisible != 0 && ui.closingAllMenus == 0, "menusVisible or closingAllMenus is off")?;
+    Ok(format!("stack [{}], numPausesGame {}, modal {}, allowing save {}, inventory menus {}", describe(&menus), { ui.numPausesGame }, ui.modalMenuOpen != 0, { ui.numMenusAllowingSave }, { ui.numInventoryMenus }))
 }
 
 fn table() -> Result<String, String> {
@@ -251,39 +258,40 @@ fn table() -> Result<String, String> {
     check(ui.is_registered("TweenMenu") && ui.is_registered("HUD Menu") && ui.is_registered("Cursor Menu"), "a vanilla menu name is not registered")?;
     check(ui.is_registered(MENU), &format!("{MENU} is not registered"))?;
     check(!ui.is_registered("SkyrimRsNoSuchMenu"), "an unknown name is registered")?;
-    check(!ui.is_menu_open(MENU) && !ui.is_menu_open("TweenMenu"), "a menu reads open before the scenario")?;
-    check(ui.is_menu_open("HUD Menu"), "the HUD reads closed")?;
+    check(!ui.is_open(MENU) && !ui.is_open("TweenMenu"), "a menu reads open before the scenario")?;
+    check(ui.is_open("HUD Menu"), "the HUD reads closed")?;
     let hud = ui.menu("HUD Menu").ok_or("the HUD Menu has no live menu")?;
-    check(hud.class_name() == "HUDMenu", &format!("HUD Menu is a {}", hud.class_name()))?;
-    let tween = ui.menu("TweenMenu").map_or("none".to_owned(), |m| format!("{} refs {} flags {:#x}", m.class_name(), m.ref_count(), m.flags().bits()));
-    Ok(format!("TweenMenu, HUD Menu, Cursor Menu and {MENU} registered; HUD Menu live as HUDMenu (refs {}, depth {}); TweenMenu live: {tween}", hud.ref_count(), hud.depth()))
+    check(class_name(hud) == "HUDMenu", &format!("HUD Menu is a {}", class_name(hud)))?;
+    let tween = ui.menu("TweenMenu").map_or("none".to_owned(), |m| format!("{} refs {} flags {:#x}", class_name(m), m.refCount, m.flags));
+    Ok(format!("TweenMenu, HUD Menu, Cursor Menu and {MENU} registered; HUD Menu live as HUDMenu (refs {}, depth {}); TweenMenu live: {tween}", hud.refCount, hud.depth))
 }
 
 fn queue() -> Result<String, String> {
-    let queue = UiMessageQueue::get().ok_or("g_UIMessageQueue_ptr is null")?;
-    let used = queue.static_messages_used();
+    let queue = UIMessageQueue::singleton().ok_or("g_UIMessageQueue_ptr is null")?;
+    let used = queue.staticMessagesUsed;
     check(used <= 64, &format!("{used} static messages in use"))?;
-    Ok(format!("queue at {:p}, {used} static messages used since the last drain", queue.raw()))
+    Ok(format!("queue at {queue:p}, {used} static messages used since the last drain"))
 }
 
 fn hud() -> Result<String, String> {
     let ui = ui()?;
     let hud = ui.hud().ok_or("HUD Menu is not a live HUDMenu")?;
-    let menu = hud.as_menu();
-    check(menu.is_open() && menu.depth() == 2, &format!("HUD depth {} flags {:#x}", menu.depth(), menu.flags().bits()))?;
-    check(menu.flags().bits() == 0x18942, &format!("HUD flags {:#x}", menu.flags().bits()))?;
+    let menu = ui.menu("HUD Menu").ok_or("the HUD Menu has no live menu")?;
+    check(menu.flags & 0x40 != 0 && menu.depth == 2, &format!("HUD depth {} flags {:#x}", menu.depth, menu.flags))?;
+    check(menu.flags == 0x18942, &format!("HUD flags {:#x}", menu.flags))?;
     let movie = menu.movie().ok_or("the HUD has no movie")?;
     check(movie.is_engine_view(), "the HUD movie's vtable is not GFxMovieView_vftable")?;
-    let root = hud.root();
+    let root = Value::view(&hud.root);
     check(root.value_type() == Some(ValueType::DisplayObject) && root.is_managed(), &format!("the HUD root is {root:?}"))?;
-    check(hud.component_count() > 0, "the HUD has no components")?;
-    Ok(format!("HUDMenu flags 0x18942 depth 2, movie {:p} (engine vtable, {} refs, visible {}), root managed display object, {} components", movie.raw(), movie.ref_count(), movie.visible(), hud.component_count()))
+    let components = hud.objects.size;
+    check(components > 0, "the HUD has no components")?;
+    Ok(format!("HUDMenu flags 0x18942 depth 2, movie {movie:p} (engine vtable, {} refs, visible {}), root managed display object, {components} components", { movie.refCount }, movie.visible()))
 }
 
 fn probe(ui: &Ui) -> Result<String, String> {
     let hud = ui.hud().ok_or("HUD Menu is not a live HUDMenu")?;
-    let movie = hud.as_menu().movie().ok_or("the HUD has no movie")?;
-    let root = movie.get_variable("_root").ok_or("_root does not resolve")?;
+    let movie = ui.menu("HUD Menu").and_then(IMenu::movie).ok_or("the HUD has no movie")?;
+    let root = movie.variable("_root").ok_or("_root does not resolve")?;
     check(root.is_object() && root.is_managed(), &format!("_root is {root:?}"))?;
     let text = movie.create_string("probe");
     check(text.value_type() == Some(ValueType::String) && text.is_managed(), &format!("the created string is {text:?}"))?;
@@ -294,7 +302,7 @@ fn probe(ui: &Ui) -> Result<String, String> {
     check(x.as_number() == Some(42.0), &format!("x read back as {x:?}"))?;
     check(object.has_member("x") && !object.has_member("y"), "has_member disagrees with the members set")?;
     check(movie.set_variable("_root.skyrimRsProbe", &Value::number(7.0)), "set_variable(_root.skyrimRsProbe) failed")?;
-    let probe = movie.get_variable("_root.skyrimRsProbe").ok_or("get_variable(_root.skyrimRsProbe) failed")?;
+    let probe = movie.variable("_root.skyrimRsProbe").ok_or("variable(_root.skyrimRsProbe) failed")?;
     check(probe.as_number() == Some(7.0), &format!("_root.skyrimRsProbe read back as {probe:?}"))?;
     let function = movie.create_function(&CALLBACK);
     check(function.is_object() && function.is_managed(), &format!("the function value is {function:?}"))?;
@@ -304,7 +312,7 @@ fn probe(ui: &Ui) -> Result<String, String> {
     let last = f64::from_bits(CALLBACK.handler().last.load(Ordering::Relaxed));
     check(calls == 1 && (last - 3.0).abs() < f64::EPSILON, &format!("the callback ran {calls} times, last argument {last}"))?;
     check(returned.as_number() == Some(42.0), &format!("the callback's return read back as {returned:?}"))?;
-    let hud_root = hud.root();
+    let hud_root = Value::view(&hud.root);
     check(hud_root.has_member("ShowMessage"), "the HUD root has no ShowMessage")?;
     Ok(format!("_root managed object; created string and object managed; x = 42 round trip; _root.skyrimRsProbe = 7 round trip; callback called once with 3, returned 42; HUD root has ShowMessage; on {:?}", std::thread::current().id()))
 }
@@ -385,7 +393,7 @@ fn own_menu() -> Result<String, String> {
     check(advances > 0 && displays >= OWN_FRAMES, &format!("advanced {advances} times, drawn {displays} times"))?;
     check(opened == 1 && closed == 1, &format!("MenuOpenCloseEvent opening {opened}, closing {closed}"))?;
     check(dropped == 1, &format!("destroyed {dropped} times"))?;
-    check(!ui.is_menu_open(MENU) && ui.menu(MENU).is_none(), "the menu is still live after its hide")?;
+    check(!ui.is_open(MENU) && ui.menu(MENU).is_none(), "the menu is still live after its hide")?;
     Ok(format!("{MENU}: created and post-created once, show and hide delivered, advanced {advances} and drawn {displays} frames, one open and one close event, destroyed after the hide, table entry empty again"))
 }
 
