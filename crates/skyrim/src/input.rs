@@ -1,26 +1,22 @@
-//! Input and console (subsystem pass 9): the typed events of the frame's input list, the
-//! keyboard's key state and the devices' key names, the control map's context stack and enabled
-//! controls, the player controls' handlers, console output and console commands of a mod's own.
+//! Input and console (subsystem pass 9): console output and console commands of a mod's own, and
+//! what the generated input classes leave `unsafe`: the typed events of the frame's list as checked
+//! casts, the key and button names an engine call writes into an out-parameter, the keyboard and
+//! the control map's context stack.
 //!
 //! The input source's sinks run in registration order: the console hotkeys, `MenuControls`,
 //! `PlayerControls`, then the sinks of plugins, so a plugin sink sees every event after the game
 //! has acted on it. Keys injected into the event queue (`DevBench`'s `input` tool) never reach the
-//! keyboard's state arrays: [`Keyboard::is_down`] answers for physical keys only.
+//! keyboard's state arrays: `keyState` answers for physical keys only.
 
 use core::ffi::{CStr, c_char, c_void};
-use core::ops::Deref;
 use std::sync::{Mutex, OnceLock, PoisonError, RwLock};
 
-use sre::raw::{fns, globals};
+use sre::raw::fns;
+use sre::{BSWin32KeyboardDevice, ButtonEvent, CharEvent, EventSourceHolder_Input, EventSourceHolder_User, InputDevice, InputEvent, InputEventType, MouseMoveEvent, ScriptParamType, TESForm, TESObjectREFR, ThumbstickEvent};
 
-pub use crate::events::EventSourceHolderInput as InputManager;
-pub use crate::events::{InputEvent, InputEventList};
-use crate::forms::{TESForm, TESObjectREFR};
-use crate::string::BSFixedString;
+use crate::BSFixedString;
 
-pub use sre::{InputContextEnum as InputContext, InputDevice, InputEventType, ScriptParamType};
-
-type GetButtonNameFn = unsafe extern "C" fn(this: *mut sre::EventSourceHolder_User, user_event: *const sre::BSFixedString, device: u32, out: *mut sre::BSFixedString) -> bool;
+type GetButtonNameFn = unsafe extern "C" fn(this: *mut EventSourceHolder_User, user_event: *const sre::BSFixedString, device: u32, out: *mut sre::BSFixedString) -> bool;
 type PrintFn = unsafe extern "C" fn(log: *mut c_void, format: *const c_char, ...);
 type UnpackFn = unsafe extern "C" fn(params: *const sre::ParamInfo, data: *const c_void, offset: *mut u32, this_ref: *mut c_void, containing: *mut c_void, script: *mut c_void, locals: *mut c_void, ...) -> bool;
 
@@ -35,328 +31,110 @@ const SCRIPT_FUNCTIONS: usize = 738;
 const MAX_ARGS: usize = 8;
 const ARG_SIZE: usize = 0x208;
 
-pub(crate) struct Fns {
-    control_map: *const *mut sre::EventSourceHolder_User,
-    player_controls: *const *mut sre::PlayerControls,
-    console_log: *const *mut c_void,
-    keywords: *mut sre::CommandTableEntry,
-    script_functions: *mut sre::CommandTableEntry,
-    console_commands: *mut sre::CommandTableEntry,
-    param_types: *const sre::ScriptParamTypeInfo,
-    parse: *mut c_void,
-    get_key_name: fns::EventSourceHolder_Input__GetKeyName_fn,
-    get_key_code: fns::EventSourceHolder_Input__GetKeyCode_fn,
-    get_button_name: GetButtonNameFn,
-    print: PrintFn,
-    unpack: UnpackFn,
+pub trait InputEventExt {
+    /// The event as a button event when its type is `Button`.
+    fn as_button(&self) -> Option<&ButtonEvent>;
+    fn as_char(&self) -> Option<&CharEvent>;
+    fn as_mouse_move(&self) -> Option<&MouseMoveEvent>;
+    fn as_thumbstick(&self) -> Option<&ThumbstickEvent>;
 }
 
-unsafe impl Sync for Fns {}
-unsafe impl Send for Fns {}
+fn cast<T>(event: &InputEvent, kind: InputEventType) -> Option<&T> {
+    (event.eventType == kind as u32).then(|| unsafe { &*core::ptr::from_ref(event).cast::<T>() })
+}
 
-impl Fns {
-    pub(crate) fn resolve(reloc: &hook::Reloc) -> Result<Self, hook::Error> {
-        unsafe {
-            Ok(Self {
-                control_map: reloc.address(globals::g_EventSourceHolder_User_ptr)? as *const *mut sre::EventSourceHolder_User,
-                player_controls: reloc.address(globals::g_PlayerControls_ptr)? as *const *mut sre::PlayerControls,
-                console_log: reloc.address(globals::g_ConsoleLog)? as *const *mut c_void,
-                keywords: reloc.address(globals::g_ScriptKeywordTable)? as *mut sre::CommandTableEntry,
-                script_functions: reloc.address(globals::g_ScriptCommandTable)? as *mut sre::CommandTableEntry,
-                console_commands: reloc.address(globals::g_ConsoleCommandTable)? as *mut sre::CommandTableEntry,
-                param_types: reloc.address(globals::g_ScriptParamTypeInfo)? as *const sre::ScriptParamTypeInfo,
-                parse: reloc.address(fns::ParseCommandParams)? as *mut c_void,
-                get_key_name: crate::resolve(reloc, fns::EventSourceHolder_Input__GetKeyName)?,
-                get_key_code: crate::resolve(reloc, fns::EventSourceHolder_Input__GetKeyCode)?,
-                get_button_name: crate::resolve(reloc, fns::ControlMap__GetButtonNameForUserEvent)?,
-                print: crate::resolve(reloc, fns::ConsoleLog__Print)?,
-                unpack: crate::resolve(reloc, fns::UnpackCommandArguments)?,
-            })
-        }
+impl InputEventExt for InputEvent {
+    fn as_button(&self) -> Option<&ButtonEvent> {
+        cast(self, InputEventType::Button)
+    }
+
+    fn as_char(&self) -> Option<&CharEvent> {
+        cast(self, InputEventType::Char)
+    }
+
+    fn as_mouse_move(&self) -> Option<&MouseMoveEvent> {
+        cast(self, InputEventType::MouseMove)
+    }
+
+    fn as_thumbstick(&self) -> Option<&ThumbstickEvent> {
+        cast(self, InputEventType::Thumbstick)
     }
 }
 
-fn fns() -> &'static Fns {
-    &crate::runtime().input
-}
-
-impl InputEvent {
-    #[must_use]
-    pub fn device_kind(&self) -> Option<InputDevice> {
-        InputDevice::from_u32(self.device())
-    }
-
-    #[must_use]
-    pub fn kind(&self) -> Option<InputEventType> {
-        InputEventType::from_u32(self.event_type())
-    }
-
-    fn cast<T>(&self, kind: InputEventType) -> Option<&T> {
-        (self.event_type() == kind as u32).then(|| unsafe { &*(core::ptr::from_ref(self).cast::<T>()) })
-    }
-
-    #[must_use]
-    pub fn as_button(&self) -> Option<&ButtonEvent> {
-        self.cast(InputEventType::Button)
-    }
-
-    #[must_use]
-    pub fn as_char(&self) -> Option<&CharEvent> {
-        self.cast(InputEventType::Char)
-    }
-
-    #[must_use]
-    pub fn as_mouse_move(&self) -> Option<&MouseMoveEvent> {
-        self.cast(InputEventType::MouseMove)
-    }
-
-    #[must_use]
-    pub fn as_thumbstick(&self) -> Option<&ThumbstickEvent> {
-        self.cast(InputEventType::Thumbstick)
-    }
-}
-
-macro_rules! input_event {
-    ($(#[$doc:meta] $name:ident) => {
-        $(#[$doc]
-        #[repr(transparent)]
-        pub struct $name(sre::$name);
-
-        impl $name {
-            #[must_use]
-            pub fn raw(&self) -> &sre::$name {
-                &self.0
-            }
-        }
-
-        impl Deref for $name {
-            type Target = InputEvent;
-
-            fn deref(&self) -> &InputEvent {
-                unsafe { &*(&raw const self.0).cast::<InputEvent>() }
-            }
-        }
-    };
-}
-
-input_event! {
-    /// A key, mouse button, wheel step or pad button (0x30): one per frame while it is down, then
-    /// one release. The press frame reads value 1 and held 0, every later frame value 1 and the
-    /// seconds held so far, the release frame value 0 with the time held.
-    ButtonEvent
-}
-
-impl ButtonEvent {
-    /// Keyboard: the `DirectInput` scan code; mouse: 0-7 buttons, 8 wheel up, 9 wheel down.
-    #[must_use]
-    pub fn id(&self) -> u32 {
-        self.0.idCode
-    }
-
-    #[must_use]
-    pub fn value(&self) -> f32 {
-        self.0.value
-    }
-
-    #[must_use]
-    pub fn held_secs(&self) -> f32 {
-        self.0.heldDownSecs
-    }
-
-    /// The control map's name for this key in the topmost context that maps it ("Activate",
-    /// "Forward", ...), empty when no context does.
-    #[must_use]
-    pub fn user_event(&self) -> &BSFixedString {
-        unsafe { BSFixedString::from_ptr(&raw const self.0.userEvent) }
-    }
-
-    #[must_use]
-    pub fn is_pressed(&self) -> bool {
-        self.value() > 0.0 && self.held_secs() == 0.0
-    }
-
-    #[must_use]
-    pub fn is_down(&self) -> bool {
-        self.value() > 0.0
-    }
-
-    #[must_use]
-    pub fn is_released(&self) -> bool {
-        self.value() == 0.0
-    }
-}
-
-input_event! {
-    /// A typed character while text entry is on.
-    CharEvent
-}
-
-impl CharEvent {
-    #[must_use]
-    pub fn char_code(&self) -> u32 {
-        self.0.charCode
-    }
-}
-
-input_event! {
-    /// The mouse's movement this frame.
-    MouseMoveEvent
-}
-
-impl MouseMoveEvent {
-    #[must_use]
-    pub fn delta(&self) -> (i32, i32) {
-        (self.0.dx.cast_signed(), self.0.dy.cast_signed())
-    }
-}
-
-input_event! {
-    /// A pad stick (id 0xb left, 0xc right).
-    ThumbstickEvent
-}
-
-impl ThumbstickEvent {
-    #[must_use]
-    pub fn id(&self) -> u32 {
-        self.0.idCode
-    }
-
-    #[must_use]
-    pub fn position(&self) -> (f32, f32) {
-        (self.0.x, self.0.y)
-    }
-}
-
-/// The `DirectInput` keyboard (`BSWin32KeyboardDevice`, 0x370).
-#[repr(transparent)]
-pub struct Keyboard(sre::BSWin32KeyboardDevice);
-
-impl Keyboard {
-    #[must_use]
-    pub fn raw(&self) -> &sre::BSWin32KeyboardDevice {
-        &self.0
-    }
-
-    /// The physical key with `DirectInput` scan code `scan_code` is down this frame.
-    #[must_use]
-    pub fn is_down(&self, scan_code: u8) -> bool {
-        self.0.keyState[usize::from(scan_code)] & 0x80 != 0
-    }
-
-    /// The key was down the frame before.
-    #[must_use]
-    pub fn was_down(&self, scan_code: u8) -> bool {
-        self.0.prevKeyState[usize::from(scan_code)] & 0x80 != 0
-    }
-}
-
-impl InputManager {
-    fn as_ptr(&self) -> *mut sre::EventSourceHolder_Input {
-        (&raw const *self.raw()).cast_mut()
-    }
-
-    #[must_use]
-    pub fn keyboard(&self) -> Option<&Keyboard> {
-        unsafe { self.raw().keyboard.cast::<Keyboard>().as_ref() }
-    }
-
+pub trait InputManagerExt {
+    /// The `DirectInput` keyboard (its `keyState` byte has bit 0x80 while a physical key is down).
+    fn keyboard(&self) -> Option<&BSWin32KeyboardDevice>;
     /// The device's name for key `id` ("E", "Tab", ...), `None` for an id it does not define.
-    #[must_use]
-    pub fn key_name(&self, device: InputDevice, id: u32) -> Option<String> {
+    fn key_name(&self, device: InputDevice, id: u32) -> Option<String>;
+    /// The Windows virtual-key code of key `id`.
+    fn key_code(&self, device: InputDevice, id: u32) -> Option<u32>;
+}
+
+impl InputManagerExt for EventSourceHolder_Input {
+    fn keyboard(&self) -> Option<&BSWin32KeyboardDevice> {
+        unsafe { self.keyboard.as_ref() }
+    }
+
+    fn key_name(&self, device: InputDevice, id: u32) -> Option<String> {
         let mut out = BSFixedString::empty();
-        let found = unsafe { (fns().get_key_name)(self.as_ptr(), device as i32, id, out.as_mut_ptr()) };
+        let found = unsafe { self.get_key_name(device as i32, id, (&raw mut out).cast()) };
         found.then(|| out.to_string())
     }
 
-    /// The Windows virtual-key code of key `id`.
-    #[must_use]
-    pub fn key_code(&self, device: InputDevice, id: u32) -> Option<u32> {
+    fn key_code(&self, device: InputDevice, id: u32) -> Option<u32> {
         let mut out = 0;
-        unsafe { (fns().get_key_code)(self.as_ptr(), device as i32, id, &raw mut out) }.then_some(out)
+        unsafe { self.get_key_code(device as i32, id, &raw mut out) }.then_some(out)
     }
 }
 
-/// The control map (`EventSourceHolder_User`, 0x130): user event names per input context, the
-/// context stack the open menus push, and the enabled control groups.
-#[repr(transparent)]
-pub struct ControlMap(sre::EventSourceHolder_User);
-
-impl ControlMap {
-    /// `None` before the control map is constructed.
-    #[must_use]
-    pub fn get() -> Option<&'static Self> {
-        unsafe { (*fns().control_map).cast::<Self>().as_ref() }
-    }
-
-    #[must_use]
-    pub fn raw(&self) -> &sre::EventSourceHolder_User {
-        &self.0
-    }
-
+pub trait ControlMapExt {
     /// The input contexts from the bottom (0, gameplay) to the top; a key maps through the topmost
     /// context that defines it.
-    #[must_use]
-    pub fn context_stack(&self) -> &[u32] {
-        let stack = &self.0.contextStack;
+    fn context_stack(&self) -> &[u32];
+    /// The name of the key `device` maps to `user_event` in the first context that maps it.
+    fn button_name(&self, user_event: &str, device: InputDevice) -> Option<String>;
+}
+
+impl ControlMapExt for EventSourceHolder_User {
+    fn context_stack(&self) -> &[u32] {
+        let stack = &self.contextStack;
         if stack.data.is_null() {
             return &[];
         }
         unsafe { core::slice::from_raw_parts(stack.data.cast::<u32>(), stack.size as usize) }
     }
 
-    /// The enabled control group bits (`ControlGroupFlag`); all set in normal play.
-    #[must_use]
-    pub fn enabled_controls(&self) -> u32 {
-        self.0.enabledControls
-    }
-
-    /// The name of the key `device` maps to `user_event` in the first context that maps it.
-    #[must_use]
-    pub fn button_name(&self, user_event: &str, device: InputDevice) -> Option<String> {
+    fn button_name(&self, user_event: &str, device: InputDevice) -> Option<String> {
         let name = BSFixedString::new(user_event);
         let mut out = BSFixedString::empty();
-        let this = (&raw const self.0).cast_mut();
-        let found = unsafe { (fns().get_button_name)(this, name.raw(), device as u32, out.as_mut_ptr()) };
+        let get: GetButtonNameFn = unsafe { crate::engine_fn(fns::ControlMap__GetButtonNameForUserEvent) };
+        let found = unsafe { get(core::ptr::from_ref(self).cast_mut(), name.raw(), device as u32, (&raw mut out).cast()) };
         found.then(|| out.to_string())
     }
 }
 
-/// The player's input handlers (`PlayerControls`, 0x1e0).
-#[repr(transparent)]
-pub struct PlayerControls(sre::PlayerControls);
-
-impl PlayerControls {
-    #[must_use]
-    pub fn get() -> Option<&'static Self> {
-        unsafe { (*fns().player_controls).cast::<Self>().as_ref() }
+/// The player's input handlers in the order they are offered every event: `Movement`, `Look`,
+/// `ReadyWeapon`, ..., then the camera state's.
+#[must_use]
+pub fn player_input_handlers() -> &'static [*mut c_void] {
+    let Some(controls) = sre::PlayerControls::singleton() else { return &[] };
+    let handlers = &controls.handlers;
+    if handlers.data.is_null() {
+        return &[];
     }
-
-    #[must_use]
-    pub fn raw(&self) -> &sre::PlayerControls {
-        &self.0
-    }
-
-    /// The handlers in the order they are offered every event: `Movement`, `Look`, `ReadyWeapon`, ...,
-    /// then the camera state's.
-    #[must_use]
-    pub fn handlers(&self) -> &[*mut c_void] {
-        let handlers = &self.0.handlers;
-        if handlers.data.is_null() {
-            return &[];
-        }
-        unsafe { core::slice::from_raw_parts(handlers.data.cast::<*mut c_void>(), handlers.size as usize) }
-    }
+    unsafe { core::slice::from_raw_parts(handlers.data.cast::<*mut c_void>(), handlers.size as usize) }
 }
 
 /// Prints one line to the console (`ConsoleLog::Print`); call it from the game's threads, as the
 /// engine's commands do.
 pub fn print(text: &str) {
-    let log = unsafe { *fns().console_log };
+    let log = unsafe { *sre::g_console_log() };
     if log.is_null() {
         return;
     }
     let text = std::ffi::CString::new(text.replace('\0', "")).expect("no interior nul left");
-    unsafe { (fns().print)(log, c"%s".as_ptr(), text.as_ptr()) }
+    let print: PrintFn = unsafe { crate::engine_fn(fns::ConsoleLog__Print) };
+    unsafe { print(log, c"%s".as_ptr(), text.as_ptr()) }
 }
 
 /// One parameter of a console command.
@@ -373,7 +151,7 @@ impl Param {
 }
 
 /// A parsed argument; `Missing` for an optional argument the line left out.
-#[derive(Clone, Copy, Debug)]
+#[derive(Clone, Copy)]
 pub enum Arg<'a> {
     Missing,
     Int(i32),
@@ -382,6 +160,19 @@ pub enum Arg<'a> {
     Form(&'a TESForm),
     /// An axis letter or another one-byte argument.
     Char(u8),
+}
+
+impl core::fmt::Debug for Arg<'_> {
+    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
+        match self {
+            Self::Missing => f.write_str("Missing"),
+            Self::Int(i) => write!(f, "Int({i})"),
+            Self::Float(x) => write!(f, "Float({x})"),
+            Self::Str(s) => write!(f, "Str({s:?})"),
+            Self::Form(form) => write!(f, "Form({:08X})", form.formID),
+            Self::Char(c) => write!(f, "Char({c})"),
+        }
+    }
 }
 
 /// What an execute function gets: the reference the line ran on and the parsed arguments.
@@ -444,43 +235,6 @@ impl core::fmt::Display for CommandError {
 
 impl std::error::Error for CommandError {}
 
-/// One record of the command tables (0x50).
-#[repr(transparent)]
-pub struct CommandEntry(sre::CommandTableEntry);
-
-impl CommandEntry {
-    #[must_use]
-    pub fn raw(&self) -> &sre::CommandTableEntry {
-        &self.0
-    }
-
-    #[must_use]
-    pub fn name(&self) -> &str {
-        text(self.0.name)
-    }
-
-    #[must_use]
-    pub fn short_name(&self) -> &str {
-        text(self.0.shortName)
-    }
-
-    #[must_use]
-    pub fn opcode(&self) -> u32 {
-        self.0.opcode
-    }
-
-    fn answers_to(&self, name: &CStr) -> bool {
-        let name = name.to_str().unwrap_or("");
-        self.name().eq_ignore_ascii_case(name) || (!self.short_name().is_empty() && self.short_name().eq_ignore_ascii_case(name))
-    }
-
-    /// An execute of three bytes (`mov al, 1; ret` or `xor al, al; ret`): an entry the binary never uses.
-    fn is_stub(&self) -> bool {
-        let execute = self.0.execute.cast::<[u8; 3]>();
-        !execute.is_null() && matches!(unsafe { *execute }, [0xB0, 0x01, 0xC3] | [0x32, 0xC0, 0xC3])
-    }
-}
-
 fn text_c<'a>(p: *mut c_void) -> &'a CStr {
     if p.is_null() { c"" } else { unsafe { CStr::from_ptr(p.cast()) } }
 }
@@ -489,14 +243,26 @@ fn text<'a>(p: *mut c_void) -> &'a str {
     text_c(p).to_str().unwrap_or("")
 }
 
-fn table(base: *mut sre::CommandTableEntry, len: usize) -> &'static mut [CommandEntry] {
-    unsafe { core::slice::from_raw_parts_mut(base.cast::<CommandEntry>(), len) }
+fn table(base: *mut c_void, len: usize) -> &'static mut [sre::CommandTableEntry] {
+    unsafe { core::slice::from_raw_parts_mut(base.cast::<sre::CommandTableEntry>(), len) }
+}
+
+fn answers_to(entry: &sre::CommandTableEntry, name: &CStr) -> bool {
+    let name = name.to_str().unwrap_or("");
+    let short = text(entry.shortName);
+    text(entry.name).eq_ignore_ascii_case(name) || (!short.is_empty() && short.eq_ignore_ascii_case(name))
+}
+
+/// An execute of three bytes (`mov al, 1; ret` or `xor al, al; ret`): an entry the binary never uses.
+fn is_stub(entry: &sre::CommandTableEntry) -> bool {
+    let execute = entry.execute.cast::<[u8; 3]>();
+    !execute.is_null() && matches!(unsafe { *execute }, [0xB0, 0x01, 0xC3] | [0x32, 0xC0, 0xC3])
 }
 
 /// The console commands (opcodes 0x100 to 0x2c0).
 #[must_use]
-pub fn console_commands() -> &'static [CommandEntry] {
-    table(fns().console_commands, CONSOLE_COMMANDS)
+pub fn console_commands() -> &'static [sre::CommandTableEntry] {
+    table(sre::g_console_command_table(), CONSOLE_COMMANDS)
 }
 
 /// The console entry a command took over.
@@ -566,25 +332,23 @@ fn take_entry(name: &'static CStr, help: &'static CStr, params: &'static [Param]
     if params.len() > MAX_ARGS {
         return Err(CommandError::TooManyParams);
     }
-    let f = fns();
-    let taken = [table(f.keywords, KEYWORDS), table(f.script_functions, SCRIPT_FUNCTIONS), table(f.console_commands, CONSOLE_COMMANDS)].iter().any(|t| t.iter().any(|e| e.answers_to(name)));
-    if taken {
+    let tables = [table(sre::g_script_keyword_table(), KEYWORDS), table(sre::g_script_command_table(), SCRIPT_FUNCTIONS), table(sre::g_console_command_table(), CONSOLE_COMMANDS)];
+    if tables.iter().any(|t| t.iter().any(|e| answers_to(e, name))) {
         return Err(CommandError::NameTaken);
     }
-    let entry = table(f.console_commands, CONSOLE_COMMANDS).iter_mut().find(|e| e.is_stub()).ok_or(CommandError::NoFreeEntry)?;
-    let replaced = text(entry.0.name);
-    let raw = &mut entry.0;
-    raw.name = name.as_ptr().cast_mut().cast();
-    raw.shortName = c"".as_ptr().cast_mut().cast();
-    raw.helpText = help.as_ptr().cast_mut().cast();
-    raw.referenceFunction = u8::from(needs_reference);
-    raw.numParams = u16::try_from(params.len()).expect("at most MAX_ARGS");
-    raw.params = if params.is_empty() { core::ptr::null_mut() } else { params.as_ptr().cast_mut().cast() };
-    raw.parse = f.parse;
-    raw.eval = core::ptr::null_mut();
-    raw.flags = 0;
-    raw.execute = execute as *mut c_void;
-    Ok(CommandSlot { opcode: raw.opcode, replaced })
+    let entry = table(sre::g_console_command_table(), CONSOLE_COMMANDS).iter_mut().find(|e| is_stub(e)).ok_or(CommandError::NoFreeEntry)?;
+    let replaced = text(entry.name);
+    entry.name = name.as_ptr().cast_mut().cast();
+    entry.shortName = c"".as_ptr().cast_mut().cast();
+    entry.helpText = help.as_ptr().cast_mut().cast();
+    entry.referenceFunction = u8::from(needs_reference);
+    entry.numParams = u16::try_from(params.len()).expect("at most MAX_ARGS");
+    entry.params = if params.is_empty() { core::ptr::null_mut() } else { params.as_ptr().cast_mut().cast() };
+    entry.parse = crate::reloc().address(fns::ParseCommandParams).expect("ParseCommandParams id") as *mut c_void;
+    entry.eval = core::ptr::null_mut();
+    entry.flags = 0;
+    entry.execute = execute as *mut c_void;
+    Ok(CommandSlot { opcode: entry.opcode, replaced })
 }
 
 #[repr(C, align(8))]
@@ -619,8 +383,11 @@ unsafe fn run(declared: &[Param], params: *const sre::ParamInfo, data: *const c_
     let mut slots: [ArgSlot; MAX_ARGS] = core::array::from_fn(|_| ArgSlot([0; ARG_SIZE]));
     let out: [*mut ArgSlot; MAX_ARGS] = core::array::from_fn(|i| &raw mut slots[i]);
     // A command without parameters has no parameter table for the engine to unpack from.
-    if !declared.is_empty() && !unsafe { (fns().unpack)(params, data, offset, this_ref, containing, script, locals, out[0], out[1], out[2], out[3], out[4], out[5], out[6], out[7]) } {
-        return false;
+    if !declared.is_empty() {
+        let unpack: UnpackFn = unsafe { crate::engine_fn(fns::UnpackCommandArguments) };
+        if !unsafe { unpack(params, data, offset, this_ref, containing, script, locals, out[0], out[1], out[2], out[3], out[4], out[5], out[6], out[7]) } {
+            return false;
+        }
     }
     let args: Vec<Arg<'_>> = declared.iter().zip(&slots).enumerate().map(|(i, (param, slot))| if i < given { decode(param.0.typeCode, slot) } else { Arg::Missing }).collect();
     execute(&mut CommandContext { this_ref, args: &args, result })
@@ -628,10 +395,10 @@ unsafe fn run(declared: &[Param], params: *const sre::ParamInfo, data: *const c_
 
 fn decode(kind: u32, slot: &ArgSlot) -> Arg<'_> {
     let bytes = &slot.0;
-    let info = unsafe { &*fns().param_types.add(kind as usize) };
+    let info = unsafe { &*sre::g_script_param_type_info().cast::<sre::ScriptParamTypeInfo>().add(kind as usize) };
     if info.isForm != 0 {
-        let form = usize::from_le_bytes(bytes[..8].try_into().expect("8 bytes")) as *const sre::TESForm;
-        return unsafe { TESForm::from_ptr(form) }.map_or(Arg::Missing, Arg::Form);
+        let form = usize::from_le_bytes(bytes[..8].try_into().expect("8 bytes")) as *const TESForm;
+        return unsafe { form.as_ref() }.map_or(Arg::Missing, Arg::Form);
     }
     match kind {
         k if k == ScriptParamType::String as u32 => Arg::Str(CStr::from_bytes_until_nul(bytes).ok().and_then(|s| s.to_str().ok()).unwrap_or("")),

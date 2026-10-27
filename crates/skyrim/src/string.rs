@@ -1,5 +1,5 @@
-//! `BSFixedString`, the engine's interned string, pinned by subsystem pass 3 because events, menus
-//! and forms carry it.
+//! `BSFixedString`, the engine's interned string, owned (interned on creation, released on drop)
+//! or viewed inside an engine object.
 //!
 //! The value is one pointer to the NUL-terminated characters of a `BSStringPool::Entry`; the
 //! entry header (`next`, `flags`, `length`) lies 0x18 bytes before them. Interning folds case, so
@@ -12,39 +12,11 @@ use core::ffi::{CStr, c_char};
 use std::ffi::CString;
 use std::fmt;
 
-use sre::raw::fns;
-
-type Ctor = unsafe extern "C" fn(this: *mut sre::BSFixedString, text: *const c_char) -> *mut sre::BSFixedString;
-type Copy_ = unsafe extern "C" fn(this: *mut sre::BSFixedString, other: *const sre::BSFixedString) -> *mut sre::BSFixedString;
-type Release = unsafe extern "C" fn(this: *mut sre::BSFixedString);
-
-pub(crate) struct Fns {
-    ctor: Ctor,
-    copy: Copy_,
-    release: Release,
-}
-
-impl Fns {
-    pub(crate) fn resolve(reloc: &hook::Reloc) -> Result<Self, hook::Error> {
-        unsafe {
-            Ok(Self {
-                ctor: crate::resolve(reloc, fns::BSFixedString__ctor)?,
-                copy: crate::resolve(reloc, fns::BSFixedString__copy)?,
-                release: crate::resolve(reloc, fns::BSFixedString__release)?,
-            })
-        }
-    }
-}
-
-fn fns() -> &'static Fns {
-    &crate::runtime().strings
-}
-
 /// The reference count of a pinned entry, never counted up or down.
 pub const PINNED: u32 = 0x7FFF;
 
 /// An interned string: owned when made by [`new`](Self::new) or [`clone`](Clone::clone) (released on
-/// drop), borrowed when viewed inside an engine object through [`from_ptr`](Self::from_ptr).
+/// drop), borrowed when viewed inside an engine object through [`view`](Self::view).
 #[repr(transparent)]
 pub struct BSFixedString(sre::BSFixedString);
 
@@ -54,9 +26,9 @@ impl BSFixedString {
     #[must_use]
     pub fn new(text: &str) -> Self {
         let text = CString::new(text.split('\0').next().unwrap_or("")).unwrap_or_default();
-        let mut s = sre::BSFixedString { data: core::ptr::null_mut() };
-        unsafe { (fns().ctor)(&raw mut s, text.as_ptr()) };
-        Self(s)
+        let s = Self::empty();
+        unsafe { s.0.ctor(text.as_ptr()) };
+        s
     }
 
     /// A null string: reads as "", but is not the engine's pooled empty string (`new("")`), which
@@ -66,26 +38,18 @@ impl BSFixedString {
         Self(sre::BSFixedString { data: core::ptr::null_mut() })
     }
 
+    /// The string a field of an engine object holds, borrowed without touching its count.
+    #[must_use]
+    pub fn view(field: &sre::BSFixedString) -> &Self {
+        unsafe { &*core::ptr::from_ref(field).cast::<Self>() }
+    }
+
     /// Gives the reference up to an engine object that will hold it from now on.
     #[must_use]
     pub fn into_raw(self) -> sre::BSFixedString {
         let raw = sre::BSFixedString { data: self.0.data };
         core::mem::forget(self);
         raw
-    }
-
-    /// A view of a `BSFixedString` the engine owns.
-    ///
-    /// # Safety
-    /// `p` must point to a `BSFixedString` field that stays valid for `'a`.
-    #[must_use]
-    pub unsafe fn from_ptr<'a>(p: *const sre::BSFixedString) -> &'a Self {
-        unsafe { &*p.cast::<Self>() }
-    }
-
-    /// For an engine out parameter that stores one reference into the string.
-    pub(crate) fn as_mut_ptr(&mut self) -> *mut sre::BSFixedString {
-        &raw mut self.0
     }
 
     #[must_use]
@@ -162,9 +126,9 @@ impl BSFixedString {
 impl Clone for BSFixedString {
     /// Adds a reference through `BSFixedString::copy` (id 69162).
     fn clone(&self) -> Self {
-        let mut s = sre::BSFixedString { data: core::ptr::null_mut() };
-        unsafe { (fns().copy)(&raw mut s, &raw const self.0) };
-        Self(s)
+        let s = Self::empty();
+        s.0.copy(&self.0);
+        s
     }
 }
 
@@ -172,7 +136,7 @@ impl Drop for BSFixedString {
     /// Drops the reference through `BSFixedString::release` (id 69164).
     fn drop(&mut self) {
         if !self.is_empty() {
-            unsafe { (fns().release)(&raw mut self.0) };
+            self.0.release();
         }
     }
 }

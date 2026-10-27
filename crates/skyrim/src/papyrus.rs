@@ -1,7 +1,7 @@
-//! Papyrus VM and natives (subsystem pass 4): the [`VirtualMachine`] behind `g_SkyrimVM`, the
-//! [`HandlePolicy`] that encodes forms as script handles, script values ([`Variable`],
-//! [`TypeInfo`], [`Object`], [`ObjectTypeInfo`]) and the registration of Rust functions as the
-//! natives a `.pex` declares.
+//! Papyrus (subsystem pass 4): Rust functions registered as the natives a `.pex` declares, typed
+//! script values ([`Variable`], [`TypeInfo`]), script object handles that release ([`ObjectPtr`]),
+//! and calls into Papyrus with a closure for the result, as [`VirtualMachineExt`] methods on the
+//! generated `BSScript::Internal::VirtualMachine` behind `g_SkyrimVM`.
 //!
 //! A native is a 0x58-byte `NativeFunctionBase` whose `IFunction` vtable the engine calls; this
 //! module builds one per registered function, with the engine's own implementations of slots 0-20
@@ -15,168 +15,75 @@
 //!
 //! Calling Papyrus from Rust must happen on a game thread: the VM allocates stacks through the
 //! per-thread memory manager, and pass 4 crashed the engine twice from a foreign thread.
-//! [`VirtualMachine::dispatch_static_call`] therefore takes a [`GameThread`] token, which exists
-//! inside a native callback ([`GameThread::current`]) and is asserted with
-//! [`GameThread::assume`] from an SKSE message handler, task or event sink. Dispatch takes typed
-//! arguments (`IFunctionArguments` filling the engine's `BSScrapArray<Variable>`) and a closure the
-//! engine calls with the result (an `IStackCallbackFunctor` of this module's own) once the call
-//! completes, on the VM thread that completed it (not the main thread), so the closure synchronizes
-//! what it touches. A script object of a mod's own class is
-//! created with [`VirtualMachine::create_object`] and bound to a form with
-//! [`VirtualMachine::bind_object`], after which the engine and `DevBench` call its methods,
+//! [`VirtualMachineExt::call_static`] therefore takes a [`GameThread`] token, which exists inside a
+//! native callback ([`GameThread::current`]) and is asserted with [`GameThread::assume`] from an
+//! SKSE message handler, task or event sink. A call takes typed arguments (`IFunctionArguments`
+//! filling the engine's `BSScrapArray<Variable>`) and a closure the engine calls with the result (an
+//! `IStackCallbackFunctor` of this module's own) once the call completes, on the VM thread that
+//! completed it (not the main thread), so the closure synchronizes what it touches. A script object
+//! of a mod's own class is created with [`VirtualMachineExt::new_object`] and bound to a form with
+//! [`VirtualMachineExt::bind_to_handle`], after which the engine and `DevBench` call its methods,
 //! natives included, like any attached script's.
 //!
 //! Request 4e added the rest. Arrays are `BSScript::Array`s (a 0x20 header with the element type and
 //! size, the Variables inline) that `CreateArray` (slot 22) makes on the global heap; `Vec<T>` is a
-//! native parameter or return of type `T[]`. A latent native ([`VirtualMachine::register_latent`])
+//! native parameter or return of type `T[]`. A latent native ([`VirtualMachineExt::register_latent`])
 //! receives a [`Latent`] and returns at once; the calling script waits until [`Latent::complete`]
 //! hands `ReturnFromLatent` (slot 43) the value, from inside the native or later from any thread.
-//! [`VirtualMachine::send_event`] is `SendEvent` (slot 36), the call behind every engine event a
-//! script receives, and [`VirtualMachine::relay_event`] the engine's second half of an event, which
-//! reaches the aliases a reference fills and an actor's scripted active effects (request 4f;
-//! [`alias_handles`] and [`active_effect_handles`] name them). The VM's own work (its update, the stacks, the completions) runs on rotating
-//! worker threads, never on the main thread.
+//! [`VirtualMachineExt::send_script_event`] is `SendEvent` (slot 36), the call behind every engine
+//! event a script receives, and [`VirtualMachineExt::relay_script_event`] the engine's second half
+//! of an event, which reaches the aliases a reference fills and an actor's scripted active effects
+//! (request 4f; [`alias_handles`] and [`active_effect_handles`] name them). The VM's own work (its
+//! update, the stacks, the completions) runs on rotating worker threads, never on the main thread.
 
 use core::cell::Cell;
+use core::ffi::c_void;
 use core::marker::PhantomData;
-use core::ffi::{c_char, c_void};
 use core::ptr::NonNull;
 use std::ffi::CString;
 use std::fmt;
-use std::sync::{PoisonError, RwLock};
+use std::sync::{OnceLock, PoisonError, RwLock};
 
-use sre::raw::{fns, globals, vtables};
+use sre::raw::vtables::BSScript__NF_util__NativeFunctionBase_vtable as NativeVtable;
+use sre::{Actor, PapyrusType, TESForm, TESObjectREFR, VMTypeID};
 
-use crate::actors::{Actor, TESObjectREFR};
-use crate::forms::{BGSKeyword, BGSListForm, BGSLocation, FormId, TESClass, TESForm, TESGlobal, TESNPC, TESObjectCELL, TESObjectWEAP, TESRace, TESWorldSpace};
-pub use crate::string::BSFixedString;
-pub use sre::{PapyrusType, VMTypeID};
+use crate::BSFixedString;
+use crate::forms::{FormClass, TESFormExt};
 
-type VmRaw = sre::BSScript__Internal__VirtualMachine;
+/// The VM the SKSE `PapyrusInterface` hands a registration callback and `g_SkyrimVM + 0x210` holds.
+pub type VirtualMachine = sre::BSScript__Internal__VirtualMachine;
+
 type VariableRaw = sre::BSScript__Variable;
-type TypeRaw = sre::BSScript__ObjectTypeInfo;
-type PolicyRaw = sre::SkyrimScript__HandlePolicy;
+type ObjectTypeInfo = sre::BSScript__ObjectTypeInfo;
 
-type GetPageForFrame = unsafe extern "C" fn(stack: *mut sre::BSScript__Stack, frame: *const sre::BSScript__StackFrame) -> u32;
-type GetStackFrameVariable = unsafe extern "C" fn(stack: *mut sre::BSScript__Stack, frame: *const sre::BSScript__StackFrame, index: u32, page: u32) -> *mut VariableRaw;
-type VariableAssign = unsafe extern "C" fn(this: *mut VariableRaw, other: *const VariableRaw);
-type VariableReset = unsafe extern "C" fn(this: *mut VariableRaw);
-type ObjectGetHandle = unsafe extern "C" fn(this: *mut sre::BSScript__Object) -> u64;
-type ObjectDecRef = unsafe extern "C" fn(this: *mut sre::BSScript__Object) -> u32;
-type PackFormToVariable = unsafe extern "C" fn(out: *mut VariableRaw, form: *mut sre::TESForm, vm: *mut VmRaw) -> *mut VariableRaw;
-type TypeGetFunction = unsafe extern "C" fn(this: *mut TypeRaw, name: *const sre::BSFixedString, out: *mut *mut c_void, is_static: bool) -> u8;
-
-type GetScriptObjectType = unsafe extern "C" fn(vm: *mut VmRaw, name: *const sre::BSFixedString, out: *mut *mut TypeRaw) -> u8;
-type GetScriptObjectTypeByID = unsafe extern "C" fn(vm: *mut VmRaw, type_id: u32, out: *mut *mut TypeRaw) -> u8;
-type GetTypeIDForScriptObject = unsafe extern "C" fn(vm: *mut VmRaw, name: *const sre::BSFixedString, out: *mut u32) -> u8;
-type BindNativeMethod = unsafe extern "C" fn(vm: *mut VmRaw, function: *mut c_void) -> u8;
-type SetCallableFromTasklets = unsafe extern "C" fn(vm: *mut VmRaw, class: *const c_char, name: *const c_char, callable: bool);
-type FindBoundObject = unsafe extern "C" fn(vm: *mut VmRaw, handle: u64, class: *const c_char, out: *mut *mut sre::BSScript__Object) -> u8;
-type DispatchStaticCall = unsafe extern "C" fn(vm: *mut VmRaw, class: *const sre::BSFixedString, name: *const sre::BSFixedString, args: *mut c_void, callback: *mut *mut c_void) -> u8;
-type DispatchMethodCall = unsafe extern "C" fn(vm: *mut VmRaw, object: *mut *mut sre::BSScript__Object, name: *const sre::BSFixedString, args: *mut c_void, callback: *mut *mut c_void) -> u8;
-type CreateObject = unsafe extern "C" fn(vm: *mut VmRaw, class: *const sre::BSFixedString, out: *mut *mut sre::BSScript__Object) -> u8;
-type GetObjectBindPolicy = unsafe extern "C" fn(vm: *mut VmRaw) -> *mut c_void;
-type BindObject = unsafe extern "C" fn(policy: *mut c_void, object: *mut *mut sre::BSScript__Object, handle: u64);
-type ResizeVariableArray = unsafe extern "C" fn(array: *mut c_void, count: u64) -> u8;
-type GetObjectHandlePolicy = unsafe extern "C" fn(vm: *mut VmRaw) -> *mut PolicyRaw;
-type CreateArray = unsafe extern "C" fn(vm: *mut VmRaw, element: *const sre::BSScript__TypeInfo, size: u32, out: *mut *mut sre::BSScript__Array) -> u8;
-type ReturnFromLatent = unsafe extern "C" fn(vm: *mut VmRaw, stack_id: u32, result: *const VariableRaw);
-type SendEvent = unsafe extern "C" fn(vm: *mut VmRaw, handle: u64, event: *const sre::BSFixedString, args: *mut c_void);
-
-type HandleIsType = unsafe extern "C" fn(this: *mut PolicyRaw, type_id: u32, handle: u64) -> u8;
-type IsHandleObjectAvailable = unsafe extern "C" fn(this: *mut PolicyRaw, handle: u64) -> u8;
-type GetInvalidHandle = unsafe extern "C" fn(this: *mut PolicyRaw) -> u64;
-type GetHandleForObject = unsafe extern "C" fn(this: *mut PolicyRaw, type_id: u32, object: *const c_void) -> u64;
-type GetObjectForHandle = unsafe extern "C" fn(this: *mut PolicyRaw, type_id: u32, handle: u64) -> *mut c_void;
-
-type EffectListFn = unsafe extern "C" fn(magic_target: *mut c_void) -> *const EffectNode;
-
-/// A node of the actor's `BSSimpleList<ActiveEffect*>`.
-#[repr(C)]
-struct EffectNode {
-    effect: *const sre::ActiveEffect,
-    next: *const EffectNode,
-}
+type CallBindingSlot = unsafe extern "C" fn(this: *mut NativeHeader, self_: *mut VariableRaw, vm: *mut VirtualMachine, stack_id: u32, result: *mut VariableRaw, frame: *mut sre::BSScript__StackFrame) -> bool;
+type HasBindingSlot = unsafe extern "C" fn(this: *mut NativeHeader) -> bool;
 
 /// `ExtraAliasInstanceArray`'s extra data type.
 const ALIAS_INSTANCES: u32 = 0x88;
-/// `Actor`'s `MagicTarget` subobject.
-const MAGIC_TARGET: usize = 0xa0;
-
-type CallBindingSlot = unsafe extern "C" fn(this: *mut NativeHeader, self_: *mut VariableRaw, vm: *mut VmRaw, stack_id: u32, result: *mut VariableRaw, frame: *mut sre::BSScript__StackFrame) -> bool;
-type HasBindingSlot = unsafe extern "C" fn(this: *mut NativeHeader) -> bool;
-
 const IFUNCTION_SLOTS: usize = 23;
 /// Natives take at most this many parameters, the arity the [`NativeFn`] impls cover.
 pub const MAX_PARAMS: usize = 4;
 
-pub(crate) struct Fns {
-    page_for_frame: GetPageForFrame,
-    frame_variable: GetStackFrameVariable,
-    assign: VariableAssign,
-    reset: VariableReset,
-    object_handle: ObjectGetHandle,
-    object_dec_ref: ObjectDecRef,
-    pack_form: PackFormToVariable,
-    type_function: TypeGetFunction,
-    bind_object: BindObject,
-    resize_args: ResizeVariableArray,
-    relay: fns::SkyrimVM__RelayEventToRefAndEffects_fn,
-    effect_list: EffectListFn,
-    lock_read: fns::BSReadWriteLock__LockForRead_fn,
-    unlock_read: fns::BSReadWriteLock__UnlockForRead_fn,
-    skyrim_vm: *const sre::SkyrimVM,
-    vtable: [*const c_void; IFUNCTION_SLOTS],
-}
+/// The `IFunction` vtable of every native: the engine's `NativeFunctionBase` slots, then `HasBinding`
+/// and `CallBinding` of this module.
+struct Vtable([*const c_void; IFUNCTION_SLOTS]);
 
-unsafe impl Send for Fns {}
-unsafe impl Sync for Fns {}
+unsafe impl Send for Vtable {}
+unsafe impl Sync for Vtable {}
 
-impl Fns {
-    pub(crate) fn resolve(reloc: &hook::Reloc) -> Result<Self, hook::Error> {
-        let base_vtable = reloc.address(vtables::BSScript__NF_util__NativeFunctionBase_vtable::ID)? as *const *const c_void;
-        let mut vtable = [core::ptr::null(); IFUNCTION_SLOTS];
-        for (i, entry) in vtable.iter_mut().enumerate().take(vtables::BSScript__NF_util__NativeFunctionBase_vtable::SLOT_HasBinding) {
-            *entry = unsafe { *base_vtable.add(i) };
+fn native_vtable() -> &'static Vtable {
+    static VTABLE: OnceLock<Vtable> = OnceLock::new();
+    VTABLE.get_or_init(|| {
+        let base = crate::reloc().address(NativeVtable::ID).expect("NativeFunctionBase vtable id") as *const *const c_void;
+        let mut slots = [core::ptr::null(); IFUNCTION_SLOTS];
+        for (i, slot) in slots.iter_mut().enumerate().take(NativeVtable::SLOT_HasBinding) {
+            *slot = unsafe { *base.add(i) };
         }
-        vtable[vtables::BSScript__NF_util__NativeFunctionBase_vtable::SLOT_HasBinding] = has_binding as HasBindingSlot as *const c_void;
-        vtable[vtables::BSScript__NF_util__NativeFunctionBase_vtable::SLOT_CallBinding] = call_binding as CallBindingSlot as *const c_void;
-        unsafe {
-            Ok(Self {
-                page_for_frame: crate::resolve(reloc, fns::BSScript__Stack__GetPageForFrame)?,
-                frame_variable: crate::resolve(reloc, fns::BSScript__Stack__GetStackFrameVariable)?,
-                assign: crate::resolve(reloc, fns::BSScript__Variable__assign)?,
-                reset: crate::resolve(reloc, fns::BSScript__Variable__reset)?,
-                object_handle: crate::resolve(reloc, fns::BSScript__Object__GetHandle)?,
-                object_dec_ref: crate::resolve(reloc, fns::BSScript__Object__DecRef)?,
-                pack_form: crate::resolve(reloc, fns::Papyrus__PackFormToVariable)?,
-                type_function: crate::resolve(reloc, fns::BSScript__ObjectTypeInfo__GetFunction)?,
-                bind_object: crate::resolve(reloc, fns::BSScript__ObjectBindPolicy__BindObject)?,
-                resize_args: crate::resolve(reloc, fns::ResizeVariableArray)?,
-                relay: crate::resolve(reloc, fns::SkyrimVM__RelayEventToRefAndEffects)?,
-                effect_list: crate::resolve(reloc, fns::Actor__GetActiveEffectList)?,
-                lock_read: crate::resolve(reloc, fns::BSReadWriteLock__LockForRead)?,
-                unlock_read: crate::resolve(reloc, fns::BSReadWriteLock__UnlockForRead)?,
-                skyrim_vm: reloc.address(globals::g_SkyrimVM)? as *const sre::SkyrimVM,
-                vtable,
-            })
-        }
-    }
-}
-
-fn fns() -> &'static Fns {
-    &crate::runtime().papyrus
-}
-
-/// Slot `index` of the vtable an object's first word points at, as a function pointer of type `F`.
-///
-/// # Safety
-/// `object` must point to a live object with a vtable of at least `index + 1` slots, and `F` must
-/// match the slot's signature.
-unsafe fn vslot<F: Copy>(object: *const c_void, index: usize) -> F {
-    const { assert!(size_of::<F>() == size_of::<usize>(), "F must be a function pointer type") };
-    let table = unsafe { *object.cast::<*const *const c_void>() };
-    unsafe { core::mem::transmute_copy::<*const c_void, F>(&*table.add(index)) }
+        slots[NativeVtable::SLOT_HasBinding] = has_binding as HasBindingSlot as *const c_void;
+        slots[NativeVtable::SLOT_CallBinding] = call_binding as CallBindingSlot as *const c_void;
+        Vtable(slots)
+    })
 }
 
 #[derive(Debug)]
@@ -209,20 +116,20 @@ impl Handle {
     pub const INVALID: Self = Self(0xFFFF << 32);
 
     #[must_use]
-    pub const fn form(id: FormId) -> Self {
-        Self(id.0 as u64 | 0xFFFF << 32)
+    pub const fn form(form_id: u32) -> Self {
+        Self(form_id as u64 | 0xFFFF << 32)
     }
 
     /// A quest alias's handle: the quest's form id and the alias id (request 4f).
     #[must_use]
-    pub const fn alias(quest: FormId, alias_id: u16) -> Self {
-        Self(quest.0 as u64 | (alias_id as u64) << 32)
+    pub const fn alias(quest: u32, alias_id: u16) -> Self {
+        Self(quest as u64 | (alias_id as u64) << 32)
     }
 
     /// An active effect's handle: the target actor's form id and the effect's unique id (request 4f).
     #[must_use]
-    pub const fn active_effect(target: FormId, unique_id: u16) -> Self {
-        Self(target.0 as u64 | (unique_id as u64) << 32 | 2 << 48)
+    pub const fn active_effect(target: u32, unique_id: u16) -> Self {
+        Self(target as u64 | (unique_id as u64) << 32 | 2 << 48)
     }
 
     #[must_use]
@@ -233,9 +140,9 @@ impl Handle {
     /// The form id of a form handle, `None` for the invalid handle and the other encodings.
     #[must_use]
     #[allow(clippy::cast_possible_truncation)]
-    pub const fn form_id(self) -> Option<FormId> {
+    pub const fn form_id(self) -> Option<u32> {
         let low = self.0 as u32;
-        if self.0 >> 32 == 0xFFFF && low != 0 { Some(FormId(low)) } else { None }
+        if self.0 >> 32 == 0xFFFF && low != 0 { Some(low) } else { None }
     }
 }
 
@@ -251,89 +158,31 @@ impl fmt::Display for Handle {
     }
 }
 
-/// `SkyrimScript::HandlePolicy`, the VM's `IObjectHandlePolicy` at `g_SkyrimVM + 0x338`; the same
-/// object sits behind `g_IObjectHandlePolicy_ptr` once the VM has finished constructing (it is
-/// still null during the SKSE registration callback).
-#[repr(transparent)]
-pub struct HandlePolicy(PolicyRaw);
-
-impl HandlePolicy {
-    /// The VM's policy through [`VirtualMachine::handle_policy`], `None` before the VM exists.
-    #[must_use]
-    pub fn get() -> Option<&'static Self> {
-        VirtualMachine::get().map(VirtualMachine::handle_policy)
-    }
-
-    #[must_use]
-    pub fn raw(&self) -> &PolicyRaw {
-        &self.0
-    }
-
-    fn as_ptr(&self) -> *mut PolicyRaw {
-        (&raw const self.0).cast_mut()
-    }
-
-    fn slot<F: Copy>(&self, index: usize) -> F {
-        unsafe { vslot(self.as_ptr().cast(), index) }
-    }
-
-    /// Slot 1 `HandleIsType`: whether the handle names an object of the script class `type_id`
-    /// (`Form` accepts every form, `ObjectReference` every reference).
-    #[must_use]
-    pub fn is_type(&self, type_id: VMTypeID, handle: Handle) -> bool {
-        unsafe { self.slot::<HandleIsType>(vtables::SkyrimScript__HandlePolicy_vtable::SLOT_HandleIsType)(self.as_ptr(), type_id as u32, handle.0) != 0 }
-    }
-
-    /// Slot 2 `IsHandleObjectAvailable`: the object exists and is not flagged unavailable.
-    #[must_use]
-    pub fn is_available(&self, handle: Handle) -> bool {
-        unsafe { self.slot::<IsHandleObjectAvailable>(vtables::SkyrimScript__HandlePolicy_vtable::SLOT_IsHandleObjectAvailable)(self.as_ptr(), handle.0) != 0 }
-    }
-
-    /// Slot 3 `GetInvalidHandle`.
-    #[must_use]
-    pub fn invalid_handle(&self) -> Handle {
-        Handle(unsafe { self.slot::<GetInvalidHandle>(vtables::SkyrimScript__HandlePolicy_vtable::SLOT_GetInvalidHandle)(self.as_ptr()) })
-    }
-
-    /// Slot 4 `GetHandleForObject` with the `Form` type id, which encodes every form the same way.
-    #[must_use]
-    pub fn handle_for_form(&self, form: &TESForm) -> Handle {
-        Handle(unsafe { self.slot::<GetHandleForObject>(vtables::SkyrimScript__HandlePolicy_vtable::SLOT_GetHandleForObject)(self.as_ptr(), VMTypeID::Form as u32, form.as_ptr().cast()) })
-    }
-
-    /// The form a handle names when it is of class `type_id` and available: slots 1, 2 and 8
-    /// (`GetObjectForHandle`), the sequence the engine's own natives run on an object argument.
-    #[must_use]
-    pub fn form_for_handle(&self, type_id: VMTypeID, handle: Handle) -> Option<&'static TESForm> {
-        if !self.is_type(type_id, handle) || !self.is_available(handle) {
-            return None;
-        }
-        let p = unsafe { self.slot::<GetObjectForHandle>(vtables::SkyrimScript__HandlePolicy_vtable::SLOT_GetObjectForHandle)(self.as_ptr(), type_id as u32, handle.0) };
-        unsafe { TESForm::from_ptr(p.cast()) }
-    }
-}
-
 /// The handles of the quest aliases `reference` fills, from its `ExtraAliasInstanceArray` read under
 /// the array's lock. A reference whose aliases live on another reference (through its
 /// `ExtraReferenceHandle`, which the engine's relay follows) answers its own array only.
 #[must_use]
 #[allow(clippy::cast_possible_truncation)]
 pub fn alias_handles(reference: &TESObjectREFR) -> Vec<Handle> {
-    let Some(extra) = reference.extra_list().get_by_type(ALIAS_INSTANCES) else { return Vec::new() };
-    let array = core::ptr::from_ref(extra).cast::<sre::ExtraAliasInstanceArray>().cast_mut();
-    let lock = unsafe { &raw mut (*array).lock };
-    unsafe { (fns().lock_read)(lock) };
-    let (entries, count) = unsafe { ((*array).entries.cast::<*const sre::ExtraAliasInstanceArray__Entry>(), (*array).count as usize) };
-    let handles = (0..count)
+    let Some(extra) = reference.extraList.get_by_type(ALIAS_INSTANCES) else { return Vec::new() };
+    let array = unsafe { &*core::ptr::from_ref(extra).cast::<sre::ExtraAliasInstanceArray>() };
+    array.lock.lock_for_read();
+    let entries = array.entries.cast::<*const sre::ExtraAliasInstanceArray__Entry>();
+    let handles = (0..array.count as usize)
         .filter_map(|i| {
             let entry = unsafe { (*entries.add(i)).as_ref() }?;
-            let (quest, alias) = (unsafe { TESForm::from_ptr(entry.quest.cast()) }?, unsafe { entry.alias.as_ref() }?);
-            Some(Handle::alias(quest.form_id(), alias.aliasID as u16))
+            Some(Handle::alias(entry.quest()?.formID, entry.alias()?.aliasID as u16))
         })
         .collect();
-    unsafe { (fns().unlock_read)(lock) };
+    array.lock.unlock_for_read();
     handles
+}
+
+/// A node of the actor's `BSSimpleList<ActiveEffect*>`.
+#[repr(C)]
+struct EffectNode {
+    effect: *const sre::ActiveEffect,
+    next: *const EffectNode,
 }
 
 /// The handles of `actor`'s active effects that have one: an effect gets a unique id, and so a
@@ -341,86 +190,20 @@ pub fn alias_handles(reference: &TESObjectREFR) -> Vec<Handle> {
 /// `MagicTarget` slot 7 returns, empty for an actor without middle-high process data.
 #[must_use]
 pub fn active_effect_handles(actor: &Actor) -> Vec<Handle> {
-    let target = unsafe { actor.as_ptr().cast::<u8>().add(MAGIC_TARGET).cast_mut().cast() };
-    let mut node = unsafe { (fns().effect_list)(target) };
+    let mut node = unsafe { actor.as_magic_target().get_active_effect_list() }.cast_const().cast::<EffectNode>();
     let mut handles = Vec::new();
     while let Some(n) = unsafe { node.as_ref() } {
         if let Some(effect) = unsafe { n.effect.as_ref() }
             && effect.uniqueID != 0
         {
-            handles.push(Handle::active_effect(actor.form_id(), effect.uniqueID));
+            handles.push(Handle::active_effect(actor.formID, effect.uniqueID));
         }
         node = n.next;
     }
     handles
 }
 
-/// A form class a native can take or return: the script type id the handle policy checks and the
-/// downcast from the form the policy resolves.
-pub trait FormClass: 'static {
-    const TYPE_ID: VMTypeID;
-    fn from_form(form: &TESForm) -> Option<&Self>;
-    fn as_form(&self) -> &TESForm;
-}
-
-impl FormClass for TESForm {
-    const TYPE_ID: VMTypeID = VMTypeID::Form;
-    fn from_form(form: &TESForm) -> Option<&Self> {
-        Some(form)
-    }
-    fn as_form(&self) -> &TESForm {
-        self
-    }
-}
-
-impl FormClass for TESObjectREFR {
-    const TYPE_ID: VMTypeID = VMTypeID::ObjectReference;
-    fn from_form(form: &TESForm) -> Option<&Self> {
-        form.as_reference()
-    }
-    fn as_form(&self) -> &TESForm {
-        self
-    }
-}
-
-impl FormClass for Actor {
-    const TYPE_ID: VMTypeID = VMTypeID::Actor;
-    fn from_form(form: &TESForm) -> Option<&Self> {
-        form.as_reference()?.as_actor()
-    }
-    fn as_form(&self) -> &TESForm {
-        self
-    }
-}
-
-macro_rules! form_classes {
-    ($($ty:ident = $id:ident / $as:ident),* $(,)?) => {$(
-        impl FormClass for $ty {
-            const TYPE_ID: VMTypeID = VMTypeID::$id;
-            fn from_form(form: &TESForm) -> Option<&Self> {
-                form.$as()
-            }
-            fn as_form(&self) -> &TESForm {
-                self
-            }
-        }
-    };
-}
-
-form_classes!(
-    BGSKeyword = Keyword / as_keyword,
-    BGSListForm = FormList / as_form_list,
-    TESGlobal = GlobalVariable / as_global,
-    TESObjectWEAP = Weapon / as_weapon,
-    TESNPC = ActorBase / as_npc,
-    TESRace = Race / as_race,
-    TESClass = Class / as_class,
-    TESObjectCELL = Cell / as_cell,
-    TESWorldSpace = WorldSpace / as_worldspace,
-    BGSLocation = Location / as_location,
-);
-
-/// `BSScript::TypeInfo`: a [`PapyrusType`] below 0x10, else an [`ObjectTypeInfo`] pointer with bit 0
+/// `BSScript::TypeInfo`: a [`PapyrusType`] below 0x10, else an `ObjectTypeInfo` pointer with bit 0
 /// marking an array of that class.
 #[repr(transparent)]
 #[derive(Clone, Copy, PartialEq, Eq)]
@@ -436,7 +219,7 @@ impl TypeInfo {
 
     #[must_use]
     pub fn object(ty: &ObjectTypeInfo) -> Self {
-        Self(ty.as_ptr() as u64)
+        Self(core::ptr::from_ref(ty) as u64)
     }
 
     #[must_use]
@@ -476,201 +259,49 @@ impl fmt::Debug for TypeInfo {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         match (self.papyrus_type(), self.object_type()) {
             (Some(ty), _) => write!(f, "{ty:?}"),
-            (None, Some(class)) => write!(f, "{}{}", class.name(), if self.is_array() { "[]" } else { "" }),
+            (None, Some(class)) => write!(f, "{}{}", BSFixedString::view(&class.name), if self.is_array() { "[]" } else { "" }),
             (None, None) => write!(f, "TypeInfo({:#x})", self.0),
         }
     }
 }
 
-/// `BSScript::ObjectTypeInfo`: a script class, one per `.pex` or native class.
-///
-/// The lookups that return one add a reference the engine's smart pointer would drop; this
-/// module keeps it, since every registered native holds its parameter classes for the life of the
-/// game anyway.
-#[repr(transparent)]
-pub struct ObjectTypeInfo(TypeRaw);
-
-impl ObjectTypeInfo {
-    #[must_use]
-    pub fn raw(&self) -> &TypeRaw {
-        &self.0
+/// The `IFunction` `class` binds under `name` through `ObjectTypeInfo::GetFunction` (id 104311): on
+/// a linked type any function of the tables, on an unlinked one only the non-static natives bound
+/// so far. The pointer is the native object a registration returned when that native is bound.
+/// The reference the lookup adds is kept, as every registered native holds its classes for the
+/// life of the game anyway.
+#[must_use]
+pub fn function_of(class: &ObjectTypeInfo, name: &str, is_static: bool) -> Option<NonNull<c_void>> {
+    let name = BSFixedString::new(name);
+    let mut out = core::ptr::null_mut::<c_void>();
+    if !unsafe { class.get_function(name.raw(), (&raw mut out).cast(), is_static) } {
+        return None;
     }
-
-    #[must_use]
-    pub fn as_ptr(&self) -> *const TypeRaw {
-        &raw const self.0
-    }
-
-    #[must_use]
-    pub fn name(&self) -> &BSFixedString {
-        unsafe { BSFixedString::from_ptr(&raw const self.0.name) }
-    }
-
-    #[must_use]
-    pub fn parent(&self) -> Option<&ObjectTypeInfo> {
-        unsafe { self.0.parent.cast::<Self>().as_ref() }
-    }
-
-    #[must_use]
-    pub fn ref_count(&self) -> u32 {
-        self.0.refCount
-    }
-
-    /// Bits 0-1 of `linkedAndVariables`: 0 unlinked (natives wait in a list), 3 fully linked.
-    #[must_use]
-    pub fn link_state(&self) -> u32 {
-        self.0.linkedAndVariables & 3
-    }
-
-    #[must_use]
-    pub fn is_linked(&self) -> bool {
-        self.link_state() == 3
-    }
-
-    /// Bits 8-17 of `linkedAndVariables`: the class's own variable count.
-    #[must_use]
-    pub fn variable_count(&self) -> u32 {
-        (self.0.linkedAndVariables >> 8) & 0x3FF
-    }
-
-    /// The `IFunction` the class binds under `name` through `ObjectTypeInfo::GetFunction`
-    /// (id 104311): on a linked type any function of the tables, on an unlinked one only the
-    /// non-static natives bound so far. The pointer is the native object `register_native`
-    /// returned when that native is bound. The reference the lookup adds is kept.
-    #[must_use]
-    pub fn function(&self, name: &str, is_static: bool) -> Option<NonNull<c_void>> {
-        let name = BSFixedString::new(name);
-        let mut out = core::ptr::null_mut();
-        let found = unsafe { (fns().type_function)((&raw const self.0).cast_mut(), name.raw(), &raw mut out, is_static) };
-        if found == 0 {
-            return None;
-        }
-        NonNull::new(out)
-    }
+    NonNull::new(out)
 }
 
-impl fmt::Debug for ObjectTypeInfo {
-    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
-        write!(f, "{} (link state {}, {} variables)", self.name(), self.link_state(), self.variable_count())
-    }
-}
-
-/// `BSScript::Object`: a script object bound to a handle, as the payload of an object [`Variable`].
-#[repr(transparent)]
-pub struct Object(sre::BSScript__Object);
-
-impl Object {
-    #[must_use]
-    pub fn raw(&self) -> &sre::BSScript__Object {
-        &self.0
-    }
-
-    /// The handle through `Object::GetHandle` (id 104247), read under the object's lock bit.
-    #[must_use]
-    pub fn handle(&self) -> Handle {
-        Handle(unsafe { (fns().object_handle)((&raw const self.0).cast_mut()) })
-    }
-
-    #[must_use]
-    pub fn type_info(&self) -> Option<&ObjectTypeInfo> {
-        unsafe { self.0.type_.cast::<ObjectTypeInfo>().as_ref() }
-    }
-
-    /// Bits 0-30 of `refCountAndLock`.
-    #[must_use]
-    pub fn ref_count(&self) -> u32 {
-        self.0.refCountAndLock & 0x7FFF_FFFF
-    }
-}
-
-impl fmt::Debug for Object {
-    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
-        write!(f, "{} object {} (refs {})", self.type_info().map_or_else(|| "?".to_owned(), |t| t.name().to_string()), self.handle(), self.ref_count())
-    }
-}
-
-/// A script object held by one reference, taken by [`VirtualMachine::find_bound_object`] and
-/// dropped through `Object::DecRef` (id 104253). The VM's own table keeps a bound object alive, so
-/// the count never reaches zero here.
-pub struct ObjectPtr(NonNull<Object>);
+/// A script object held by one reference, taken by [`VirtualMachineExt::bound_object`] or
+/// [`VirtualMachineExt::new_object`] and dropped through `Object::DecRef` (id 104253). The VM's own
+/// table keeps a bound object alive, so the count never reaches zero here.
+pub struct ObjectPtr(NonNull<sre::BSScript__Object>);
 
 impl core::ops::Deref for ObjectPtr {
-    type Target = Object;
+    type Target = sre::BSScript__Object;
 
-    fn deref(&self) -> &Object {
+    fn deref(&self) -> &sre::BSScript__Object {
         unsafe { self.0.as_ref() }
     }
 }
 
 impl Drop for ObjectPtr {
     fn drop(&mut self) {
-        unsafe { (fns().object_dec_ref)(self.0.as_ptr().cast()) };
-    }
-}
-
-impl fmt::Debug for ObjectPtr {
-    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
-        Object::fmt(self, f)
-    }
-}
-
-/// `BSScript::Array` (request 4e): the creator's element type, the size and `size` Variables inline
-/// after the 0x20 header, each carrying its own type. Held through the Variables that point at it;
-/// the last reference resets the elements and frees the block.
-#[repr(transparent)]
-pub struct Array(sre::BSScript__Array);
-
-impl Array {
-    #[must_use]
-    pub fn raw(&self) -> &sre::BSScript__Array {
-        &self.0
-    }
-
-    /// The element type the creator passed; None for the arrays the script extender's natives make.
-    #[must_use]
-    pub fn element_type(&self) -> TypeInfo {
-        TypeInfo(self.0.elementType.rawTypeOrObjectType)
-    }
-
-    #[must_use]
-    pub fn len(&self) -> usize {
-        self.0.size as usize
-    }
-
-    #[must_use]
-    pub fn is_empty(&self) -> bool {
-        self.len() == 0
-    }
-
-    fn data(&self) -> *mut VariableRaw {
-        unsafe { (&raw const self.0).add(1).cast::<VariableRaw>().cast_mut() }
-    }
-
-    #[must_use]
-    pub fn elements(&self) -> &[Variable] {
-        unsafe { core::slice::from_raw_parts(self.data().cast::<Variable>(), self.len()) }
-    }
-
-    /// Copies `value` into element `index` through `Variable::assign`; false past the end.
-    #[must_use]
-    pub fn set(&self, index: usize, value: &Variable) -> bool {
-        if index >= self.len() {
-            return false;
-        }
-        unsafe { value.assign_to(self.data().add(index)) };
-        true
-    }
-}
-
-impl fmt::Debug for Array {
-    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
-        f.debug_list().entries(self.elements()).finish()
+        self.dec_ref();
     }
 }
 
 /// `BSScript::Variable`: a type tag and an 8-byte payload. Owned values release their payload
 /// (string, object) through `Variable::reset` on drop; views into engine memory come from
-/// [`from_ptr`](Self::from_ptr).
+/// [`view`](Self::view).
 #[repr(transparent)]
 pub struct Variable(VariableRaw);
 
@@ -711,16 +342,15 @@ impl Variable {
     pub fn form(form: Option<&TESForm>, vm: &VirtualMachine) -> Self {
         let mut out = Self::none();
         if let Some(form) = form {
-            unsafe { (fns().pack_form)(&raw mut out.0, form.as_ptr().cast_mut(), vm.as_ptr()) };
+            unsafe { sre::papyrus__pack_form_to_variable(&raw mut out.0, core::ptr::from_ref(form).cast_mut(), core::ptr::from_ref(vm).cast_mut()) };
         }
         out
     }
 
-    /// # Safety
-    /// `p` must be null or point to a `Variable` that stays valid for `'a`.
+    /// A `Variable` the engine owns, viewed without taking its payload.
     #[must_use]
-    pub unsafe fn from_ptr<'a>(p: *const VariableRaw) -> Option<&'a Self> {
-        unsafe { p.cast::<Self>().as_ref() }
+    pub fn view(raw: &VariableRaw) -> &Self {
+        unsafe { &*core::ptr::from_ref(raw).cast::<Self>() }
     }
 
     #[must_use]
@@ -760,48 +390,56 @@ impl Variable {
 
     #[must_use]
     pub fn as_string(&self) -> Option<&BSFixedString> {
-        self.is(PapyrusType::String).then(|| unsafe { BSFixedString::from_ptr((&raw const self.0.value).cast()) })
+        self.is(PapyrusType::String).then(|| unsafe { &*(&raw const self.0.value).cast::<BSFixedString>() })
     }
 
     /// The object of an object-typed Variable, `None` for other types and for a None object.
     #[must_use]
-    pub fn as_object(&self) -> Option<&Object> {
+    pub fn as_object(&self) -> Option<&sre::BSScript__Object> {
         let ty = self.type_info();
         if ty.object_type().is_none() || ty.is_array() {
             return None;
         }
-        unsafe { (self.0.value as *const Object).as_ref() }
+        unsafe { (self.0.value as *const sre::BSScript__Object).as_ref() }
     }
 
     /// The array of an array-typed Variable, `None` for other types and for a None array.
     #[must_use]
-    pub fn as_array(&self) -> Option<&Array> {
+    pub fn as_array(&self) -> Option<&sre::BSScript__Array> {
         if !self.type_info().is_array() {
             return None;
         }
-        unsafe { (self.0.value as *const Array).as_ref() }
+        unsafe { (self.0.value as *const sre::BSScript__Array).as_ref() }
+    }
+
+    /// The elements of an array-typed Variable, inline after the array's 0x20-byte header.
+    #[must_use]
+    pub fn elements(&self) -> Option<&[Variable]> {
+        let array = self.as_array()?;
+        Some(unsafe { core::slice::from_raw_parts(core::ptr::from_ref(array).add(1).cast::<Variable>(), array.size as usize) })
+    }
+
+    /// Copies `value` into element `index` of an array-typed Variable through `Variable::assign`;
+    /// false past the end or for another type.
+    #[must_use]
+    pub fn set_element(&self, index: usize, value: &Variable) -> bool {
+        self.elements().and_then(|e| e.get(index)).is_some_and(|slot| {
+            slot.0.assign(&value.0);
+            true
+        })
     }
 
     /// The form behind an object Variable, resolved through the handle policy with `T`'s type id.
     #[must_use]
     pub fn as_form<T: FormClass>(&self) -> Option<&'static T> {
-        let handle = self.as_object()?.handle();
-        HandlePolicy::get()?.form_for_handle(T::TYPE_ID, handle).and_then(T::from_form)
-    }
-
-    /// Copies this value into `target` through `Variable::assign` (id 104297), which releases
-    /// what `target` held and adds a reference for a string or object payload.
-    ///
-    /// # Safety
-    /// `target` must point to a `Variable` the engine owns or one that is initialized.
-    pub unsafe fn assign_to(&self, target: *mut VariableRaw) {
-        unsafe { (fns().assign)(target, &raw const self.0) };
+        let handle = Handle(self.as_object()?.get_handle());
+        VirtualMachine::singleton()?.form_for_handle(T::TYPE_ID, handle)?.cast::<T>()
     }
 }
 
 impl Drop for Variable {
     fn drop(&mut self) {
-        unsafe { (fns().reset)(&raw mut self.0) };
+        self.0.reset();
     }
 }
 
@@ -813,12 +451,13 @@ impl fmt::Debug for Variable {
             Some(PapyrusType::Float) => write!(f, "Float {}", f32::from_bits(self.word())),
             Some(PapyrusType::Bool) => write!(f, "Bool {}", self.word() & 0xFF != 0),
             Some(PapyrusType::String) => write!(f, "String {:?}", self.as_string().map(ToString::to_string).unwrap_or_default()),
-            _ => match self.as_object() {
-                Some(object) => write!(f, "{object:?}"),
-                None => match self.as_array() {
-                    Some(array) => write!(f, "{:?} {array:?}", self.type_info()),
-                    None => write!(f, "{:?} {:#x}", self.type_info(), self.0.value),
-                },
+            _ => match (self.as_object(), self.elements()) {
+                (Some(object), _) => {
+                    let class = object.type_().map_or_else(|| "?".to_owned(), |t| BSFixedString::view(&t.name).to_string());
+                    write!(f, "{class} object {} (refs {})", Handle(object.get_handle()), object.refCountAndLock & 0x7FFF_FFFF)
+                }
+                (None, Some(elements)) => write!(f, "{:?} {elements:?}", self.type_info()),
+                (None, None) => write!(f, "{:?} {:#x}", self.type_info(), self.0.value),
             },
         }
     }
@@ -921,7 +560,7 @@ impl<T: FormClass> FromVariable for Option<&'static T> {
 impl<T: FromVariable> FromVariable for Vec<T> {
     const TYPE: ParamType = T::TYPE.array();
     fn from_variable(v: &Variable) -> Self {
-        v.as_array().map(|a| a.elements().iter().map(T::from_variable).collect()).unwrap_or_default()
+        v.elements().map(|e| e.iter().map(T::from_variable).collect()).unwrap_or_default()
     }
 }
 
@@ -988,7 +627,7 @@ impl<T: FormClass> IntoVariable for Option<&T> {
     }
 }
 
-/// A new array through [`VirtualMachine::create_array`]; elements that convert to None keep the
+/// A new array through [`VirtualMachineExt::new_array`]; elements that convert to None keep the
 /// array's initial `{element type, 0}`, which is how the engine holds a None form in a `Form[]`.
 impl<T: IntoVariable> IntoVariable for Vec<T> {
     const TYPE: Option<ParamType> = match T::TYPE {
@@ -997,21 +636,19 @@ impl<T: IntoVariable> IntoVariable for Vec<T> {
     };
     fn into_variable(self, vm: &VirtualMachine) -> Variable {
         let Some(Ok(element)) = T::TYPE.map(|t| t.type_info(vm)) else { return Variable::none() };
-        let Some(array) = u32::try_from(self.len()).ok().and_then(|len| vm.create_array(element, len)) else { return Variable::none() };
-        if let Some(a) = array.as_array() {
-            for (i, value) in self.into_iter().enumerate() {
-                let value = value.into_variable(vm);
-                if value.type_info() != TypeInfo::NONE {
-                    let _ = a.set(i, &value);
-                }
+        let Some(array) = u32::try_from(self.len()).ok().and_then(|len| vm.new_array(element, len)) else { return Variable::none() };
+        for (i, value) in self.into_iter().enumerate() {
+            let value = value.into_variable(vm);
+            if value.type_info() != TypeInfo::NONE {
+                let _ = array.set_element(i, &value);
             }
         }
         array
     }
 }
 
-/// A started latent call ([`VirtualMachine::register_latent`]): complete it once, from the native
-/// or later from any thread, with the value the waiting script receives.
+/// A started latent call ([`VirtualMachineExt::register_latent`]): complete it once, from the
+/// native or later from any thread, with the value the waiting script receives.
 #[must_use = "a latent call never completed leaves its script waiting until the VM is reset by a load"]
 pub struct Latent<R> {
     stack_id: u32,
@@ -1028,9 +665,9 @@ impl<R: IntoVariable> Latent<R> {
     /// on this thread when the latent native was the stack's only frame (a dispatch), else in a later
     /// VM update on a worker.
     pub fn complete(self, value: R) {
-        let Some(vm) = VirtualMachine::get() else { return };
+        let Some(vm) = VirtualMachine::singleton() else { return };
         let value = value.into_variable(vm);
-        unsafe { vm.slot::<ReturnFromLatent>(vtables::BSScript__Internal__VirtualMachine_vtable::SLOT_ReturnFromLatent)(vm.as_ptr(), self.stack_id, &raw const value.0) };
+        vm.return_from_latent(self.stack_id, &value.0);
     }
 }
 
@@ -1146,7 +783,7 @@ impl NativeFunction {
         &self.0.base
     }
 
-    /// The object the VM holds, for comparison with [`ObjectTypeInfo::function`].
+    /// The object the VM holds, for comparison with [`function_of`].
     #[must_use]
     pub fn as_ptr(&self) -> NonNull<c_void> {
         NonNull::from(&self.0).cast()
@@ -1154,12 +791,12 @@ impl NativeFunction {
 
     #[must_use]
     pub fn name(&self) -> &BSFixedString {
-        unsafe { BSFixedString::from_ptr(&raw const self.0.base.name) }
+        BSFixedString::view(&self.0.base.name)
     }
 
     #[must_use]
     pub fn class_name(&self) -> &BSFixedString {
-        unsafe { BSFixedString::from_ptr(&raw const self.0.base.objectTypeName) }
+        BSFixedString::view(&self.0.base.objectTypeName)
     }
 
     #[must_use]
@@ -1187,19 +824,19 @@ pub struct NativeCall<'a> {
 }
 
 impl NativeCall<'_> {
-    /// Runs `f` as a global function ([`VirtualMachine::register_native`]).
+    /// Runs `f` as a global function ([`VirtualMachineExt::register_native`]).
     #[must_use]
     pub fn global<F: NativeFn<M>, M>(&self, f: F) -> Option<Variable> {
         self.on_stack(|| Some(f.invoke(self.vm, self.args)))
     }
 
-    /// Runs `f` as a method ([`VirtualMachine::register_method`]); `None` when `self` is not bound to its form class.
+    /// Runs `f` as a method ([`VirtualMachineExt::register_method`]); `None` when `self` is not bound to its form class.
     #[must_use]
     pub fn method<F: NativeMethod<M>, M>(&self, f: F) -> Option<Variable> {
         self.on_stack(|| Some(f.invoke(self.vm, self.self_.as_form::<F::Receiver>()?, self.args)))
     }
 
-    /// Starts `f` as a latent function ([`VirtualMachine::register_latent`]) and answers the true Bool `Call` requires before the stack waits.
+    /// Starts `f` as a latent function ([`VirtualMachineExt::register_latent`]) and answers the true Bool `Call` requires before the stack waits.
     #[must_use]
     pub fn latent<F: LatentFn<M>, M>(&self, f: F) -> Option<Variable> {
         self.on_stack(|| {
@@ -1243,27 +880,26 @@ thread_local! {
     static STACK_ID: Cell<Option<u32>> = const { Cell::new(None) };
 }
 
-unsafe extern "C" fn call_binding(this: *mut NativeHeader, self_: *mut VariableRaw, vm: *mut VmRaw, stack_id: u32, result: *mut VariableRaw, frame: *mut sre::BSScript__StackFrame) -> bool {
-    let (Some(this), Some(self_), Some(vm), Some(frame)) = (unsafe { this.as_ref() }, unsafe { Variable::from_ptr(self_) }, unsafe { vm.cast::<VirtualMachine>().as_ref() }, unsafe { frame.as_ref() }) else {
+unsafe extern "C" fn call_binding(this: *mut NativeHeader, self_: *mut VariableRaw, vm: *mut VirtualMachine, stack_id: u32, result: *mut VariableRaw, frame: *mut sre::BSScript__StackFrame) -> bool {
+    let (Some(this), Some(self_), Some(vm), Some(frame)) = (unsafe { this.as_ref() }, unsafe { self_.as_ref() }, unsafe { vm.as_ref() }, unsafe { frame.as_ref() }) else {
         return false;
     };
     let count = usize::from(this.base.paramCount);
+    let Some(stack) = frame.owning_stack() else { return false };
     if count > MAX_PARAMS || (frame.size as usize) < count {
         return false;
     }
-    let page = unsafe { (fns().page_for_frame)(frame.owningStack, frame) };
+    let page = stack.get_page_for_frame(frame);
     let none = Variable::none();
     let mut args = [&none; MAX_PARAMS];
     for (i, arg) in (0u32..).zip(args.iter_mut().take(count)) {
-        let Some(v) = (unsafe { Variable::from_ptr((fns().frame_variable)(frame.owningStack, frame, i, page)) }) else {
-            return false;
-        };
-        *arg = v;
+        let Some(v) = stack.get_stack_frame_variable(frame, i, page) else { return false };
+        *arg = Variable::view(v);
     }
-    let call = NativeCall { vm, self_, args: &args[..count], stack_id };
+    let call = NativeCall { vm, self_: Variable::view(self_), args: &args[..count], stack_id };
     match unsafe { (this.invoke)(this, &call) } {
         Some(out) => {
-            unsafe { out.assign_to(result) };
+            unsafe { (*result).assign(&out.0) };
             true
         }
         None => false,
@@ -1387,7 +1023,7 @@ impl Callback {
 
     unsafe extern "C" fn call(this: *mut Self, result: *mut VariableRaw) {
         let none = Variable::none();
-        let value = unsafe { Variable::from_ptr(result) }.unwrap_or(&none);
+        let value = unsafe { result.as_ref() }.map_or(&none, Variable::view);
         if let Some(f) = unsafe { (*this).f.take() } {
             f(value);
         }
@@ -1416,293 +1052,286 @@ impl Args {
         Self { vtable: Self::VTABLE, values: values.as_ptr(), len: values.len() }
     }
 
+    fn as_raw(&mut self) -> *mut sre::BSScript__IFunctionArguments {
+        core::ptr::from_mut(self).cast()
+    }
+
     unsafe extern "C" fn dtor(this: *mut Self, _: u32) -> *mut Self {
         this
     }
 
     unsafe extern "C" fn supply(this: *mut Self, out: *mut c_void) -> bool {
         let this = unsafe { &*this };
-        if unsafe { (fns().resize_args)(out, this.len as u64) } == 0 {
+        let Ok(len) = u32::try_from(this.len) else { return false };
+        if !unsafe { sre::resize_variable_array(out, len) } {
             return false;
         }
         let data = unsafe { (*out.cast::<sre::BSScrapArray>()).data.cast::<VariableRaw>() };
         for i in 0..this.len {
-            unsafe { (fns().assign)(data.add(i), &raw const (*this.values.add(i)).0) };
+            unsafe { (*data.add(i)).assign(&(*this.values.add(i)).0) };
         }
         true
     }
 }
 
-/// `BSScript::Internal::VirtualMachine`, the object `g_SkyrimVM + 0x210` points at and the SKSE
-/// `PapyrusInterface` hands to a registration callback.
-#[repr(transparent)]
-pub struct VirtualMachine(VmRaw);
-
-impl VirtualMachine {
+/// What the generated `VirtualMachine` methods leave raw: lookups by `&str` and out-parameters, the
+/// handle policy's form handles, native registration, and calls and events with typed arguments.
+pub trait VirtualMachineExt {
     /// The VM through `g_SkyrimVM` (id 403618) + 0x210, `None` before `SkyrimVM::ctor` stored it.
-    #[must_use]
-    pub fn get() -> Option<&'static Self> {
-        let holder = (fns().skyrim_vm as usize + core::mem::offset_of!(sre::SkyrimVM, field_210)) as *const *const Self;
-        unsafe { (*holder).as_ref() }
-    }
-
+    fn singleton() -> Option<&'static Self>;
     /// The registry pointer of an SKSE `PapyrusInterface` callback as the VM, after checking that
     /// its vtable is `BSScript::Internal::VirtualMachine`'s.
     ///
     /// # Safety
     /// `p` must be null or point to a live object with a vtable.
-    #[must_use]
-    pub unsafe fn from_ptr(p: *mut c_void) -> Option<&'static Self> {
-        if p.is_null() {
-            return None;
-        }
-        let class = unsafe { crate::class_of(p) }?;
-        (class.id == vtables::BSScript__Internal__VirtualMachine_vtable::ID).then(|| unsafe { &*p.cast::<Self>() })
-    }
-
-    #[must_use]
-    pub fn raw(&self) -> &VmRaw {
-        &self.0
-    }
-
-    #[must_use]
-    pub fn as_ptr(&self) -> *mut VmRaw {
-        (&raw const self.0).cast_mut()
-    }
-
-    fn slot<F: Copy>(&self, index: usize) -> F {
-        unsafe { vslot(self.as_ptr().cast(), index) }
-    }
-
-    /// Slot 45 `GetObjectHandlePolicy`.
-    #[must_use]
-    pub fn handle_policy(&self) -> &'static HandlePolicy {
-        let p = unsafe { self.slot::<GetObjectHandlePolicy>(vtables::BSScript__Internal__VirtualMachine_vtable::SLOT_GetObjectHandlePolicy)(self.as_ptr()) };
-        unsafe { &*p.cast::<HandlePolicy>() }
-    }
-
+    unsafe fn from_registry(p: *mut c_void) -> Option<&'static Self>;
+    /// The handle policy's slot 4 `GetHandleForObject` with the `Form` type id, which encodes every form the same way.
+    fn handle_for_form(&self, form: &TESForm) -> Handle;
+    /// The form a handle names when it is of class `type_id` and available: the policy's slots 1,
+    /// 2 and 8, the sequence the engine's own natives run on an object argument.
+    fn form_for_handle(&self, type_id: VMTypeID, handle: Handle) -> Option<&'static TESForm>;
     /// Slot 13 `GetTypeIDForScriptObject`: the type id a script class was registered with, `None`
     /// for a class the engine did not register (every mod script).
-    #[must_use]
-    pub fn type_id(&self, class: &str) -> Option<u32> {
-        let name = BSFixedString::new(class);
-        let mut id = 0;
-        let found = unsafe { self.slot::<GetTypeIDForScriptObject>(vtables::BSScript__Internal__VirtualMachine_vtable::SLOT_GetTypeIDForScriptObject)(self.as_ptr(), name.raw(), &raw mut id) };
-        (found != 0).then_some(id)
-    }
-
+    fn type_id(&self, class: &str) -> Option<u32>;
     /// Slot 9 `GetScriptObjectType`: the class by name, loading and linking `Data\Scripts\<class>.pex`
     /// when it is missing or unlinked; `None` when no script exists.
-    #[must_use]
-    pub fn script_type(&self, class: &str) -> Option<&'static ObjectTypeInfo> {
-        let name = BSFixedString::new(class);
-        let mut out = core::ptr::null_mut();
-        let found = unsafe { self.slot::<GetScriptObjectType>(vtables::BSScript__Internal__VirtualMachine_vtable::SLOT_GetScriptObjectType)(self.as_ptr(), name.raw(), &raw mut out) };
-        if found == 0 {
-            return None;
-        }
-        unsafe { out.cast::<ObjectTypeInfo>().as_ref() }
-    }
-
+    fn script_type(&self, class: &str) -> Option<&'static ObjectTypeInfo>;
     /// Slot 10 `GetScriptObjectTypeByID` (medium in `papyrus.json`; the lookup the engine's own
     /// native constructors use to type form parameters).
-    #[must_use]
-    pub fn script_type_by_id(&self, id: VMTypeID) -> Option<&'static ObjectTypeInfo> {
-        let mut out = core::ptr::null_mut();
-        let found = unsafe { self.slot::<GetScriptObjectTypeByID>(vtables::BSScript__Internal__VirtualMachine_vtable::SLOT_GetScriptObjectTypeByID)(self.as_ptr(), id as u32, &raw mut out) };
-        if found == 0 {
-            return None;
-        }
-        unsafe { out.cast::<ObjectTypeInfo>().as_ref() }
-    }
-
+    fn script_type_by_id(&self, id: VMTypeID) -> Option<&'static ObjectTypeInfo>;
     /// Slot 28 `FindBoundObject`: the script object of class `class` bound to `handle`, `None`
     /// when none is (no script of that class is attached to the form).
-    #[must_use]
-    pub fn find_bound_object(&self, handle: Handle, class: &str) -> Option<ObjectPtr> {
-        let class = CString::new(class).ok()?;
-        let mut out = core::ptr::null_mut();
-        let found = unsafe { self.slot::<FindBoundObject>(vtables::BSScript__Internal__VirtualMachine_vtable::SLOT_FindBoundObject)(self.as_ptr(), handle.0, class.as_ptr(), &raw mut out) };
-        if found == 0 {
-            return None;
-        }
-        NonNull::new(out.cast::<Object>()).map(ObjectPtr)
-    }
-
+    fn bound_object(&self, handle: Handle, class: &str) -> Option<ObjectPtr>;
     /// Slot 26 `SetCallableFromTasklets`: lets the tasklet VM run the native without a context
     /// switch, what the engine sets for most of its own natives after binding them.
-    pub fn set_callable_from_tasklets(&self, class: &str, name: &str, callable: bool) {
-        let (Ok(class), Ok(name)) = (CString::new(class), CString::new(name)) else { return };
-        unsafe { self.slot::<SetCallableFromTasklets>(vtables::BSScript__Internal__VirtualMachine_vtable::SLOT_SetCallableFromTasklets)(self.as_ptr(), class.as_ptr(), name.as_ptr(), callable) };
-    }
-
+    fn allow_tasklets(&self, class: &str, name: &str, callable: bool);
     /// Registers `f` as `class.name`, a `native global` function. The `.pex` must declare it with
     /// the same parameter and return types ([`ParamType`] per Rust type) or the engine refuses the
     /// binding when the script links.
-    pub fn register_native<F: NativeFn<M>, M>(&self, class: &str, name: &str, f: F) -> Result<&'static NativeFunction, Error> {
-        self.bind(class, name, NativeKind::Global, F::PARAMS, F::RETURN, invoke_fn::<F, M>, f).map(Native::function)
-    }
-
+    fn register_native<F: NativeFn<M>, M>(&self, class: &str, name: &str, f: F) -> Result<&'static NativeFunction, Error>;
     /// Registers `f` as `class.name`, a latent `native global` function: the calling script waits
     /// until `f`'s [`Latent`] is completed. The `.pex` declares it like any native, returning the
     /// type of `F::Output`.
-    pub fn register_latent<F: LatentFn<M>, M>(&self, class: &str, name: &str, f: F) -> Result<&'static NativeFunction, Error> {
-        self.bind(class, name, NativeKind::Latent, F::PARAMS, <F::Output as IntoVariable>::TYPE, invoke_latent::<F, M>, f).map(Native::function)
-    }
-
+    fn register_latent<F: LatentFn<M>, M>(&self, class: &str, name: &str, f: F) -> Result<&'static NativeFunction, Error>;
     /// Registers `f` as `class.name`, a `native` method of a script that extends the form class
     /// of `f`'s first parameter; a call whose object is not bound to such a form fails with the
     /// engine's "no native object bound" error.
-    pub fn register_method<F: NativeMethod<M>, M>(&self, class: &str, name: &str, f: F) -> Result<&'static NativeFunction, Error> {
-        self.bind(class, name, NativeKind::Method, F::PARAMS, F::RETURN, invoke_method::<F, M>, f).map(Native::function)
-    }
-
+    fn register_method<F: NativeMethod<M>, M>(&self, class: &str, name: &str, f: F) -> Result<&'static NativeFunction, Error>;
     /// Registers `class.name` with the declared shape and a handler that can be replaced later
     /// ([`ErasedNative::set`]); `params` and `ret` are what the typed registrations take from
     /// their `F` ([`NativeFn::PARAMS`] and [`NativeFn::RETURN`], a latent's `Output` type).
-    pub fn register_erased(&self, class: &str, name: &str, kind: NativeKind, params: &[ParamType], ret: Option<ParamType>, f: ErasedNativeFn) -> Result<ErasedNative, Error> {
-        self.bind(class, name, kind, params, ret, invoke_erased, RwLock::new(f)).map(ErasedNative)
-    }
-
-    #[allow(clippy::too_many_arguments)]
-    fn bind<F: Send + Sync + 'static>(
-        &self,
-        class: &str,
-        name: &str,
-        kind: NativeKind,
-        params: &[ParamType],
-        ret: Option<ParamType>,
-        invoke: unsafe fn(*const NativeHeader, &NativeCall<'_>) -> Option<Variable>,
-        f: F,
-    ) -> Result<&'static Native<F>, Error> {
-        let return_type = ret.map_or(Ok(TypeInfo::NONE), |t| t.type_info(self))?;
-        let count = u16::try_from(params.len()).expect("at most MAX_PARAMS parameters");
-        let mut param_infos = Vec::with_capacity(1 + 2 * params.len());
-        param_infos.push(params.len() as u64);
-        for (i, param) in params.iter().enumerate() {
-            param_infos.push(BSFixedString::new(&format!("a{i}")).into_raw().data as u64);
-            param_infos.push(param.type_info(self)?.bits());
-        }
-        let param_infos = Box::leak(param_infos.into_boxed_slice());
-        let native = Box::leak(Box::new(Native {
-            header: NativeHeader {
-                base: sre::BSScript__NF_util__NativeFunctionBase {
-                    __vftable: (&raw const fns().vtable).cast(),
-                    refCount: 1,
-                    unknown_C: [0; 4],
-                    name: BSFixedString::new(name).into_raw(),
-                    objectTypeName: BSFixedString::new(class).into_raw(),
-                    stateName: BSFixedString::new("").into_raw(),
-                    returnType: sre::BSScript__TypeInfo { rawTypeOrObjectType: return_type.bits() },
-                    params: param_infos[1..].as_mut_ptr().cast(),
-                    paramCount: count,
-                    variableCount: count,
-                    unknown_3C: [0; 4],
-                    isStatic: u8::from(kind != NativeKind::Method),
-                    isCallableFromTasklet: 0,
-                    isLatent: u8::from(kind == NativeKind::Latent),
-                    unknown_43: [0; 1],
-                    userFlags: 0,
-                    docString: BSFixedString::empty().into_raw(),
-                    binding: invoke as *mut c_void,
-                },
-                invoke,
-            },
-            f,
-        }));
-        let header: *mut NativeHeader = &raw mut native.header;
-        let bound = unsafe { self.slot::<BindNativeMethod>(vtables::BSScript__Internal__VirtualMachine_vtable::SLOT_BindNativeMethod)(self.as_ptr(), header.cast()) };
-        if bound == 0 {
-            return Err(Error::Bind { class: class.to_owned(), name: name.to_owned() });
-        }
-        Ok(native)
-    }
-
+    fn register_erased(&self, class: &str, name: &str, kind: NativeKind, params: &[ParamType], ret: Option<ParamType>, f: ErasedNativeFn) -> Result<ErasedNative, Error>;
     /// Slot 38 `DispatchStaticCall` of `class.function(args)`: the call is queued on a new stack and
     /// `on_result` runs with its result when it completes, on the VM thread that ran it (at once with
     /// None for an empty function). Returns what the slot returned. The class's script must be
     /// loadable (`script_type` semantics apply).
-    #[must_use]
-    pub fn dispatch_static_call(&self, _: &GameThread, class: &str, function: &str, args: &[Variable], on_result: ResultFn) -> bool {
+    fn call_static(&self, thread: &GameThread, class: &str, function: &str, args: &[Variable], on_result: ResultFn) -> bool;
+    /// Slot 39 `DispatchMethodCall` of `function(args)` on `object`, as [`call_static`](Self::call_static).
+    fn call_method(&self, thread: &GameThread, object: &ObjectPtr, function: &str, args: &[Variable], on_result: ResultFn) -> bool;
+    /// Slot 22 `CreateArray`: a new array of `len` elements of type `element`, each `{element, 0}`,
+    /// as an array Variable holding the creator's reference (the VM's tracking list holds another
+    /// until its next update). It allocates from the global heap, not the per-thread scrap heap.
+    fn new_array(&self, element: TypeInfo, len: u32) -> Option<Variable>;
+    /// Slot 36 `SendEvent`: calls `event(args)` on every script object bound to exactly `handle`
+    /// whose script declares that event, each as a new stack. The arguments are read during the call,
+    /// once per receiving object. A reference's aliases and an actor's active effects have handles of
+    /// their own; the engine reaches them through `SkyrimVM::RelayEventToRefAndEffects` after this.
+    fn send_script_event(&self, thread: &GameThread, handle: Handle, event: &str, args: &[Variable]);
+    /// `SkyrimVM::RelayEventToRefAndEffects` (id 54033): sends `event(args)` to every alias the
+    /// reference behind `reference` fills and, for an actor, to every active effect with a handle,
+    /// each through `SendEvent`; not to the reference itself. The engine sends to the reference first
+    /// with [`send_script_event`](Self::send_script_event), then relays, and a mod reaches what the
+    /// engine reaches by doing the same.
+    fn relay_script_event(&self, thread: &GameThread, reference: Handle, event: &str, args: &[Variable]);
+    /// Slot 21 `CreateObject`: a new, unbound script object of `class` (its `.pex` must load).
+    fn new_object(&self, class: &str) -> Option<ObjectPtr>;
+    /// Binds `object` to the form `handle` names through the VM's bind policy (slot 47,
+    /// `ObjectBindPolicy::BindObject` id 104184): from then on [`bound_object`](Self::bound_object)
+    /// returns it and calls with that form as `self` run its methods.
+    fn bind_to_handle(&self, thread: &GameThread, object: &ObjectPtr, handle: Handle);
+}
+
+impl VirtualMachineExt for VirtualMachine {
+    fn singleton() -> Option<&'static Self> {
+        unsafe { (sre::g_skyrim_vm().field_210 as *const Self).as_ref() }
+    }
+
+    unsafe fn from_registry(p: *mut c_void) -> Option<&'static Self> {
+        let object = unsafe { p.cast::<Self>().as_ref() }?;
+        (crate::class_of(object)?.id == sre::raw::vtables::BSScript__Internal__VirtualMachine_vtable::ID).then_some(object)
+    }
+
+    fn handle_for_form(&self, form: &TESForm) -> Handle {
+        self.handle_policy().map_or(Handle::INVALID, |policy| Handle(unsafe { policy.get_handle_for_object(VMTypeID::Form as u32, core::ptr::from_ref(form).cast()) }))
+    }
+
+    fn form_for_handle(&self, type_id: VMTypeID, handle: Handle) -> Option<&'static TESForm> {
+        let policy = self.handle_policy()?;
+        if !policy.handle_is_type(type_id as u32, handle.0) || !policy.is_handle_object_available(handle.0) {
+            return None;
+        }
+        unsafe { policy.get_object_for_handle(type_id as u32, handle.0).cast::<TESForm>().as_ref() }
+    }
+
+    fn type_id(&self, class: &str) -> Option<u32> {
+        let name = BSFixedString::new(class);
+        let mut id = 0;
+        unsafe { self.get_type_id_for_script_object(name.raw(), &raw mut id) }.then_some(id)
+    }
+
+    fn script_type(&self, class: &str) -> Option<&'static ObjectTypeInfo> {
+        let name = BSFixedString::new(class);
+        let mut out = core::ptr::null_mut::<ObjectTypeInfo>();
+        if !unsafe { self.get_script_object_type(name.raw(), (&raw mut out).cast()) } {
+            return None;
+        }
+        unsafe { out.as_ref() }
+    }
+
+    fn script_type_by_id(&self, id: VMTypeID) -> Option<&'static ObjectTypeInfo> {
+        let mut out = core::ptr::null_mut::<ObjectTypeInfo>();
+        if !unsafe { self.get_script_object_type_by_id(id as u32, (&raw mut out).cast()) } {
+            return None;
+        }
+        unsafe { out.as_ref() }
+    }
+
+    fn bound_object(&self, handle: Handle, class: &str) -> Option<ObjectPtr> {
+        let class = CString::new(class).ok()?;
+        let mut out = core::ptr::null_mut::<sre::BSScript__Object>();
+        if !unsafe { self.find_bound_object(handle.0, class.as_ptr(), (&raw mut out).cast()) } {
+            return None;
+        }
+        NonNull::new(out).map(ObjectPtr)
+    }
+
+    fn allow_tasklets(&self, class: &str, name: &str, callable: bool) {
+        let (Ok(class), Ok(name)) = (CString::new(class), CString::new(name)) else { return };
+        unsafe { self.set_callable_from_tasklets(class.as_ptr(), name.as_ptr(), callable) };
+    }
+
+    fn register_native<F: NativeFn<M>, M>(&self, class: &str, name: &str, f: F) -> Result<&'static NativeFunction, Error> {
+        bind(self, class, name, NativeKind::Global, F::PARAMS, F::RETURN, invoke_fn::<F, M>, f).map(Native::function)
+    }
+
+    fn register_latent<F: LatentFn<M>, M>(&self, class: &str, name: &str, f: F) -> Result<&'static NativeFunction, Error> {
+        bind(self, class, name, NativeKind::Latent, F::PARAMS, <F::Output as IntoVariable>::TYPE, invoke_latent::<F, M>, f).map(Native::function)
+    }
+
+    fn register_method<F: NativeMethod<M>, M>(&self, class: &str, name: &str, f: F) -> Result<&'static NativeFunction, Error> {
+        bind(self, class, name, NativeKind::Method, F::PARAMS, F::RETURN, invoke_method::<F, M>, f).map(Native::function)
+    }
+
+    fn register_erased(&self, class: &str, name: &str, kind: NativeKind, params: &[ParamType], ret: Option<ParamType>, f: ErasedNativeFn) -> Result<ErasedNative, Error> {
+        bind(self, class, name, kind, params, ret, invoke_erased, RwLock::new(f)).map(ErasedNative)
+    }
+
+    fn call_static(&self, _: &GameThread, class: &str, function: &str, args: &[Variable], on_result: ResultFn) -> bool {
         let class = BSFixedString::new(class);
         let function = BSFixedString::new(function);
         let mut args = Args::new(args);
         let mut callback = Callback::new(on_result);
-        let queued = unsafe {
-            self.slot::<DispatchStaticCall>(vtables::BSScript__Internal__VirtualMachine_vtable::SLOT_DispatchStaticCall)(self.as_ptr(), class.raw(), function.raw(), (&raw mut args).cast(), (&raw mut callback).cast()) != 0
-        };
+        let queued = unsafe { self.dispatch_static_call(class.raw(), function.raw(), args.as_raw(), (&raw mut callback).cast()) };
         Callback::release(callback);
         queued
     }
 
-    /// Slot 39 `DispatchMethodCall` of `function(args)` on `object`, as
-    /// [`dispatch_static_call`](Self::dispatch_static_call).
-    #[must_use]
-    pub fn dispatch_method_call(&self, _: &GameThread, object: &ObjectPtr, function: &str, args: &[Variable], on_result: ResultFn) -> bool {
+    fn call_method(&self, _: &GameThread, object: &ObjectPtr, function: &str, args: &[Variable], on_result: ResultFn) -> bool {
         let function = BSFixedString::new(function);
         let mut args = Args::new(args);
-        let mut target = object.0.as_ptr().cast::<sre::BSScript__Object>();
+        let mut target = object.0.as_ptr();
         let mut callback = Callback::new(on_result);
-        let queued = unsafe {
-            self.slot::<DispatchMethodCall>(vtables::BSScript__Internal__VirtualMachine_vtable::SLOT_DispatchMethodCall)(self.as_ptr(), &raw mut target, function.raw(), (&raw mut args).cast(), (&raw mut callback).cast()) != 0
-        };
+        let queued = unsafe { self.dispatch_method_call((&raw mut target).cast(), function.raw(), args.as_raw(), (&raw mut callback).cast()) };
         Callback::release(callback);
         queued
     }
 
-    /// Slot 22 `CreateArray`: a new array of `len` elements of type `element`, each `{element, 0}`,
-    /// as an array Variable holding the creator's reference (the VM's tracking list holds another
-    /// until its next update). It allocates from the global heap, not the per-thread scrap heap.
-    #[must_use]
-    pub fn create_array(&self, element: TypeInfo, len: u32) -> Option<Variable> {
-        let mut out = core::ptr::null_mut();
+    fn new_array(&self, element: TypeInfo, len: u32) -> Option<Variable> {
+        let mut out = core::ptr::null_mut::<sre::BSScript__Array>();
         let ty = sre::BSScript__TypeInfo { rawTypeOrObjectType: element.bits() };
-        let created = unsafe { self.slot::<CreateArray>(vtables::BSScript__Internal__VirtualMachine_vtable::SLOT_CreateArray)(self.as_ptr(), &raw const ty, len, &raw mut out) };
-        if created == 0 || out.is_null() {
+        if !unsafe { self.create_array(&raw const ty, len, (&raw mut out).cast()) } || out.is_null() {
             return None;
         }
         Some(Variable(VariableRaw { type_: sre::BSScript__TypeInfo { rawTypeOrObjectType: element.array_of().bits() }, value: out as u64 }))
     }
 
-    /// Slot 36 `SendEvent`: calls `event(args)` on every script object bound to exactly `handle`
-    /// whose script declares that event, each as a new stack. The arguments are read during the call,
-    /// once per receiving object. A reference's aliases and an actor's active effects have handles of
-    /// their own; the engine reaches them through `SkyrimVM::RelayEventToRefAndEffects` after this.
-    pub fn send_event(&self, _: &GameThread, handle: Handle, event: &str, args: &[Variable]) {
+    fn send_script_event(&self, _: &GameThread, handle: Handle, event: &str, args: &[Variable]) {
         let event = BSFixedString::new(event);
         let mut args = Args::new(args);
-        unsafe { self.slot::<SendEvent>(vtables::BSScript__Internal__VirtualMachine_vtable::SLOT_SendEvent)(self.as_ptr(), handle.0, event.raw(), (&raw mut args).cast()) };
+        self.send_event(handle.0, event.raw(), unsafe { &*args.as_raw() });
     }
 
-    /// `SkyrimVM::RelayEventToRefAndEffects` (id 54033): sends `event(args)` to every alias the
-    /// reference behind `reference` fills and, for an actor, to every active effect with a handle,
-    /// each through `SendEvent`; not to the reference itself. The engine sends to the reference first
-    /// with [`send_event`](Self::send_event), then relays, and a mod reaches what the engine reaches by
-    /// doing the same.
-    pub fn relay_event(&self, _: &GameThread, reference: Handle, event: &str, args: &[Variable]) {
+    fn relay_script_event(&self, _: &GameThread, reference: Handle, event: &str, args: &[Variable]) {
         let event = BSFixedString::new(event);
         let mut args = Args::new(args);
-        unsafe { (fns().relay)(fns().skyrim_vm.cast_mut(), reference.0, event.raw(), (&raw mut args).cast(), core::ptr::null_mut()) };
+        unsafe { sre::g_skyrim_vm().relay_event_to_ref_and_effects(reference.0, event.raw(), args.as_raw(), core::ptr::null_mut()) };
     }
 
-    /// Slot 21 `CreateObject`: a new, unbound script object of `class` (its `.pex` must load).
-    #[must_use]
-    pub fn create_object(&self, class: &str) -> Option<ObjectPtr> {
+    fn new_object(&self, class: &str) -> Option<ObjectPtr> {
         let class = BSFixedString::new(class);
-        let mut out = core::ptr::null_mut();
-        let created = unsafe { self.slot::<CreateObject>(vtables::BSScript__Internal__VirtualMachine_vtable::SLOT_CreateObject)(self.as_ptr(), class.raw(), &raw mut out) };
-        if created == 0 {
+        let mut out = core::ptr::null_mut::<sre::BSScript__Object>();
+        if !unsafe { self.create_object(class.raw(), (&raw mut out).cast()) } {
             return None;
         }
-        NonNull::new(out.cast::<Object>()).map(ObjectPtr)
+        NonNull::new(out).map(ObjectPtr)
     }
 
-    /// Binds `object` to the form `handle` names through the VM's bind policy (slot 47,
-    /// `ObjectBindPolicy::BindObject` id 104184): from then on [`find_bound_object`](Self::find_bound_object)
-    /// returns it and calls with that form as `self` run its methods. Call it on a game thread.
-    pub fn bind_object(&self, _: &GameThread, object: &ObjectPtr, handle: Handle) {
-        let policy = unsafe { self.slot::<GetObjectBindPolicy>(vtables::BSScript__Internal__VirtualMachine_vtable::SLOT_GetObjectBindPolicy)(self.as_ptr()) };
-        let mut target = object.0.as_ptr().cast::<sre::BSScript__Object>();
-        unsafe { (fns().bind_object)(policy, &raw mut target, handle.0) };
+    fn bind_to_handle(&self, _: &GameThread, object: &ObjectPtr, handle: Handle) {
+        let Some(policy) = self.get_object_bind_policy() else { return };
+        let mut target = object.0.as_ptr();
+        unsafe { policy.bind_object((&raw mut target).cast(), handle.0) };
     }
+}
+
+#[allow(clippy::too_many_arguments)]
+fn bind<F: Send + Sync + 'static>(
+    vm: &VirtualMachine,
+    class: &str,
+    name: &str,
+    kind: NativeKind,
+    params: &[ParamType],
+    ret: Option<ParamType>,
+    invoke: unsafe fn(*const NativeHeader, &NativeCall<'_>) -> Option<Variable>,
+    f: F,
+) -> Result<&'static Native<F>, Error> {
+    let return_type = ret.map_or(Ok(TypeInfo::NONE), |t| t.type_info(vm))?;
+    let count = u16::try_from(params.len()).expect("at most MAX_PARAMS parameters");
+    let mut param_infos = Vec::with_capacity(1 + 2 * params.len());
+    param_infos.push(params.len() as u64);
+    for (i, param) in params.iter().enumerate() {
+        param_infos.push(BSFixedString::new(&format!("a{i}")).into_raw().data as u64);
+        param_infos.push(param.type_info(vm)?.bits());
+    }
+    let param_infos = Box::leak(param_infos.into_boxed_slice());
+    let native = Box::leak(Box::new(Native {
+        header: NativeHeader {
+            base: sre::BSScript__NF_util__NativeFunctionBase {
+                __vftable: (&raw const native_vtable().0).cast(),
+                refCount: 1,
+                unknown_C: [0; 4],
+                name: BSFixedString::new(name).into_raw(),
+                objectTypeName: BSFixedString::new(class).into_raw(),
+                stateName: BSFixedString::new("").into_raw(),
+                returnType: sre::BSScript__TypeInfo { rawTypeOrObjectType: return_type.bits() },
+                params: param_infos[1..].as_mut_ptr().cast(),
+                paramCount: count,
+                variableCount: count,
+                unknown_3C: [0; 4],
+                isStatic: u8::from(kind != NativeKind::Method),
+                isCallableFromTasklet: 0,
+                isLatent: u8::from(kind == NativeKind::Latent),
+                unknown_43: [0; 1],
+                userFlags: 0,
+                docString: BSFixedString::empty().into_raw(),
+                binding: invoke as *mut c_void,
+            },
+            invoke,
+        },
+        f,
+    }));
+    let function = unsafe { &*(&raw const native.header).cast::<sre::BSScript__IFunction>() };
+    if !vm.bind_native_method(function) {
+        return Err(Error::Bind { class: class.to_owned(), name: name.to_owned() });
+    }
+    Ok(native)
 }
