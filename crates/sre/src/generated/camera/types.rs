@@ -82,6 +82,7 @@ pub struct ActorMagicCaster {
     /// +0xF8 `undefined4`, ctor store
     pub field_F8: u32,
     pub unknown_FC: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ActorMagicCaster>() == 0x100);
 const _: () = assert!(core::mem::offset_of!(ActorMagicCaster, __vftable) == 0x0);
@@ -130,6 +131,7 @@ pub struct AnimatedCameraDeltaStartHandler {
     pub refCount: u32,
     /// +0xC `undefined1`, semantic; padding to the 0x10 allocation (medium)
     pub pad0C: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<AnimatedCameraDeltaStartHandler>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(AnimatedCameraDeltaStartHandler, __vftable) == 0x0);
@@ -148,6 +150,7 @@ pub struct AnimatedCameraEndHandler {
     pub refCount: u32,
     /// +0xC `undefined1`, semantic; padding to the 0x10 allocation (medium)
     pub pad0C: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<AnimatedCameraEndHandler>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(AnimatedCameraEndHandler, __vftable) == 0x0);
@@ -166,6 +169,7 @@ pub struct AnimatedCameraStartHandler {
     pub refCount: u32,
     /// +0xC `undefined1`, semantic; padding to the 0x10 allocation (medium)
     pub pad0C: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<AnimatedCameraStartHandler>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(AnimatedCameraStartHandler, __vftable) == 0x0);
@@ -200,6 +204,7 @@ pub struct BGSAcousticSpaceListener {
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, ctor store
     pub field_48: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSAcousticSpaceListener>() == 0x50);
 const _: () = assert!(core::mem::offset_of!(BGSAcousticSpaceListener, __vftable) == 0x0);
@@ -246,6 +251,7 @@ pub struct BGSCameraPath {
     pub parent: *mut crate::BGSCameraPath,
     /// +0x50 `ptr:BGSCameraPath`, semantic; path placed right before this one among its siblings (ANAM high dword until resolved) (high)
     pub previousSibling: *mut crate::BGSCameraPath,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSCameraPath>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BGSCameraPath, __vftable) == 0x0);
@@ -333,6 +339,7 @@ pub struct BGSCameraShot {
     pub padB2: [u8; 6],
     /// +0xB8 `pointer`, semantic; loaded model handle (refcounted, released through DecRefAndQueueForReleaseOnLast); +0x28 of it is the NIF root (high)
     pub modelHandle: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSCameraShot>() == 0xC0);
 const _: () = assert!(core::mem::offset_of!(BGSCameraShot, __vftable) == 0x0);
@@ -427,6 +434,7 @@ pub struct BSFlattenedBoneTree {
     pub bones: *mut c_void,
     /// +0x138 `undefined1`, semantic; hash map name -> entry index (count +0x144, entries +0x160) (medium)
     pub nameMap: [u8; 48],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSFlattenedBoneTree>() == 0x168);
 const _: () = assert!(core::mem::offset_of!(BSFlattenedBoneTree, __vftable) == 0x0);
@@ -490,6 +498,7 @@ pub struct BSFrustumFOVController {
     pub field_40: u64,
     /// +0x48 `undefined8`, base NiSingleInterpController
     pub field_48: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSFrustumFOVController>() == 0x50);
 const _: () = assert!(core::mem::offset_of!(BSFrustumFOVController, __vftable) == 0x0);
@@ -666,6 +675,7 @@ pub struct BeamProjectile {
     /// +0x240 `undefined1`, ctor store
     pub field_240: u8,
     pub unknown_241: [u8; 7],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BeamProjectile>() == 0x248);
 const _: () = assert!(core::mem::offset_of!(BeamProjectile, __vftable) == 0x0);
@@ -749,6 +759,7 @@ pub struct CameraCasterHolder {
     pub castPhantom: *mut c_void,
     /// +0x8 `pointer`, semantic; second bhkSimpleShapePhantom (same sphere) (high)
     pub overlapPhantom: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CameraCasterHolder>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(CameraCasterHolder, castPhantom) == 0x0);
@@ -766,6 +777,7 @@ pub struct CameraOverrideStartHandler {
     pub refCount: u32,
     /// +0xC `undefined1`, semantic; padding to the 0x10 allocation (medium)
     pub pad0C: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CameraOverrideStartHandler>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(CameraOverrideStartHandler, __vftable) == 0x0);
@@ -784,6 +796,7 @@ pub struct CameraOverrideStopHandler {
     pub refCount: u32,
     /// +0xC `undefined1`, semantic; padding to the 0x10 allocation (medium)
     pub pad0C: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CameraOverrideStopHandler>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(CameraOverrideStopHandler, __vftable) == 0x0);
@@ -802,6 +815,7 @@ pub struct CameraShakeHandler {
     pub refCount: u32,
     /// +0xC `undefined1`, semantic; padding to the 0x10 allocation (medium)
     pub pad0C: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CameraShakeHandler>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(CameraShakeHandler, __vftable) == 0x0);
@@ -832,6 +846,7 @@ pub struct CrosshairPickData {
     /// +0x34 `u8`, semantic; the pick wants a HUD prompt (drives the sWaitHere / clear text messages) (low)
     pub promptActive: u8,
     pub unknown_35: [u8; 3],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CrosshairPickData>() == 0x38);
 const _: () = assert!(core::mem::offset_of!(CrosshairPickData, targetHandle) == 0x4);
@@ -852,6 +867,7 @@ pub struct EnemyHealth {
     /// +0x0 `vtbl:EnemyHealth:0`, rtti
     pub __vftable: *const crate::raw::vtables::EnemyHealth_vtable,
     pub unknown_8: [u8; 128],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<EnemyHealth>() == 0x88);
 const _: () = assert!(core::mem::offset_of!(EnemyHealth, __vftable) == 0x0);
@@ -882,6 +898,7 @@ pub struct FirstPersonRenderContext {
     /// +0x51 `undefined1`, semantic; set from the current worldspace/cell flags; selects the volumetric lighting pass in RenderWorldScene (low)
     pub unk51: u8,
     pub unknown_52: [u8; 6],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<FirstPersonRenderContext>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(FirstPersonRenderContext, eyePosition) == 0x0);
@@ -1049,6 +1066,7 @@ pub struct FlameProjectile {
     pub unknown_1DA: [u8; 6],
     /// +0x1E0 `undefined8`, ctor store
     pub field_1E0: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<FlameProjectile>() == 0x1E8);
 const _: () = assert!(core::mem::offset_of!(FlameProjectile, __vftable) == 0x0);
@@ -1128,6 +1146,7 @@ const _: () = assert!(core::mem::offset_of!(FlameProjectile, field_1E0) == 0x1E0
 pub struct IMapCameraCallbacks {
     /// +0x0 `vtbl:IMapCameraCallbacks:0`, rtti
     pub __vftable: *const crate::raw::vtables::IMapCameraCallbacks_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<IMapCameraCallbacks>() == 0x8);
 const _: () = assert!(core::mem::offset_of!(IMapCameraCallbacks, __vftable) == 0x0);
@@ -1166,6 +1185,7 @@ pub struct LocalMapCamera {
     pub northRotation: f32,
     /// +0x64 `undefined4`, semantic; alignment padding to 0x68 (high)
     pub padding64: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<LocalMapCamera>() == 0x68);
 const _: () = assert!(core::mem::offset_of!(LocalMapCamera, __vftable) == 0x0);
@@ -1213,6 +1233,7 @@ pub struct LocalMapCamera__DefaultState {
     pub minHalfHeight: f32,
     /// +0x44 `undefined4`, semantic; alignment padding to 0x48 (high)
     pub padding44: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<LocalMapCamera__DefaultState>() == 0x48);
 const _: () = assert!(core::mem::offset_of!(LocalMapCamera__DefaultState, __vftable) == 0x0);
@@ -1274,6 +1295,7 @@ pub struct MapCamera {
     pub savedPlayer3DHidden: u8,
     /// +0x89 `undefined1`, semantic; alignment padding to 0x90 (high)
     pub padding89: [u8; 7],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<MapCamera>() == 0x90);
 const _: () = assert!(core::mem::offset_of!(MapCamera, __vftable) == 0x0);
@@ -1315,6 +1337,7 @@ pub struct MapCameraStates__Exit {
     pub id: u32,
     /// +0x1C `undefined4`, semantic; alignment padding to 0x20 (high)
     pub padding1C: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<MapCameraStates__Exit>() == 0x20);
 const _: () = assert!(core::mem::offset_of!(MapCameraStates__Exit, __vftable) == 0x0);
@@ -1370,6 +1393,7 @@ pub struct MapCameraStates__Transition {
     pub mode: u32,
     /// +0x84 `undefined4`, semantic; alignment padding to 0x88 (high)
     pub padding84: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<MapCameraStates__Transition>() == 0x88);
 const _: () = assert!(core::mem::offset_of!(MapCameraStates__Transition, __vftable) == 0x0);
@@ -1437,6 +1461,7 @@ pub struct MapCameraStates__World {
     pub notifyOnBegin: u8,
     /// +0x71 `undefined1`, semantic; alignment padding to 0x78 (high)
     pub padding71: [u8; 7],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<MapCameraStates__World>() == 0x78);
 const _: () = assert!(core::mem::offset_of!(MapCameraStates__World, __vftable) == 0x0);
@@ -1468,6 +1493,7 @@ pub struct NiUpdateData {
     pub time: f32,
     /// +0x4 `u32`, semantic; bit 0 run controllers, bit 1 force the previous-world snapshot, bit 13 (0x2000) set by UpdateNodesAfterRender (high)
     pub flags: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiUpdateData>() == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiUpdateData, time) == 0x0);
@@ -1499,6 +1525,7 @@ pub struct OwnedCameraEffectController {
     pub rotateWithCamera: u8,
     /// +0x31 `undefined1`, semantic; padding to 0x38 (medium)
     pub pad31: [u8; 7],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<OwnedCameraEffectController>() == 0x38);
 const _: () = assert!(core::mem::offset_of!(OwnedCameraEffectController, __vftable) == 0x0);
@@ -1540,6 +1567,7 @@ pub struct RaceSexCamera {
     pub initialRotation: [u8; 16],
     /// +0x54 `undefined4`, semantic; alignment padding to 0x58 (high)
     pub padding54: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<RaceSexCamera>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(RaceSexCamera, __vftable) == 0x0);
@@ -1624,6 +1652,7 @@ pub struct ShaderReferenceEffect {
     /// +0x130 `u32`, semantic; bit 0 attached to the first-person root; 2 force re-apply; 3 particle sources resolved; 4 emitters built; 5 root changed; 6 finish now; 7 no default target; see the flag rows (medium)
     pub effectFlags: u32,
     pub unknown_134: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ShaderReferenceEffect>() == 0x138);
 const _: () = assert!(core::mem::offset_of!(ShaderReferenceEffect, __vftable) == 0x0);
@@ -1667,6 +1696,7 @@ pub struct StopMountCameraHandler {
     pub refCount: u32,
     /// +0xC `undefined1`, semantic; padding to the 0x10 allocation (medium)
     pub pad0C: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<StopMountCameraHandler>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(StopMountCameraHandler, __vftable) == 0x0);
@@ -1740,6 +1770,7 @@ pub struct TESFurniture {
     pub field_E4: u32,
     /// +0xE8 `undefined8`, ctor store
     pub field_E8: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESFurniture>() == 0xF0);
 const _: () = assert!(core::mem::offset_of!(TESFurniture, __vftable) == 0x0);
@@ -1805,6 +1836,7 @@ pub struct TransitionState {
     pub progress: f32,
     /// +0x70 `ptr:TESCameraState`, semantic; BSTSmartPointer to the state the transition ends in (high)
     pub targetState: *mut crate::TESCameraState,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TransitionState>() == 0x78);
 const _: () = assert!(core::mem::offset_of!(TransitionState, __vftable) == 0x0);

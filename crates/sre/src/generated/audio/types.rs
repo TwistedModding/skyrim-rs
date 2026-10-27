@@ -29,6 +29,7 @@ pub struct BGSMusicTrackFormWrapper {
     pub unknown_2C: [u8; 4],
     /// +0x30 `ptr:BSIMusicTrack`, semantic; the real track (BGSMusicSingleTrack, BGSMusicPaletteTrack or BGSMusicSilenceTrack) (high)
     pub track: *mut crate::BSIMusicTrack,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSMusicTrackFormWrapper>() == 0x38);
 const _: () = assert!(core::mem::offset_of!(BGSMusicTrackFormWrapper, __vftable) == 0x0);
@@ -82,6 +83,7 @@ pub struct BGSMusicType {
     pub unknown_6C: [u8; 4],
     /// +0x70 `class:BSFixedString`, semantic; editor id kept by the form (high)
     pub editorID: crate::BSFixedString,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSMusicType>() == 0x78);
 const _: () = assert!(core::mem::offset_of!(BGSMusicType, __vftable) == 0x0);
@@ -141,6 +143,7 @@ pub struct BGSSoundCategory {
     pub volume: f32,
     /// +0x54 `float`, semantic; runtime frequency multiplier (Papyrus SetFrequency, time multiplier); 1.0 default (high)
     pub frequency: f32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSSoundCategory>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BGSSoundCategory, __vftable) == 0x0);
@@ -173,6 +176,7 @@ pub struct BGSSoundDescriptor {
     /// +0x10 `undefined4`, semantic; SNAM: a raw form id kept unresolved; Load puts it in the global list 0x31df9d8 and the named descriptor is precached in its own InitItem (medium)
     pub linkedDescriptorID: u32,
     pub unknown_14: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSSoundDescriptor>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(BGSSoundDescriptor, __vftable) == 0x0);
@@ -202,6 +206,7 @@ pub struct BGSSoundDescriptorForm {
     pub soundDescriptorInterface: crate::BSISoundDescriptor,
     /// +0x28 `ptr:BGSSoundDescriptor`, semantic; the descriptor object (BGSStandardSoundDef in 1.7.104), created from CNAM's type CRC (high)
     pub descriptor: *mut crate::BGSSoundDescriptor,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSSoundDescriptorForm>() == 0x30);
 const _: () = assert!(core::mem::offset_of!(BGSSoundDescriptorForm, __vftable) == 0x0);
@@ -242,6 +247,7 @@ pub struct BGSSoundOutput {
     pub attenuation: *mut crate::BGSSoundOutput__DynamicAttenuationCharacteristics,
     /// +0x38 `pointer`, semantic; 0x18-byte table of per-channel percent levels (3 rows of 8) (medium)
     pub speakerLevels: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSSoundOutput>() == 0x40);
 const _: () = assert!(core::mem::offset_of!(BGSSoundOutput, __vftable) == 0x0);
@@ -271,6 +277,7 @@ pub struct BGSSoundOutput__DynamicAttenuationCharacteristics {
     /// +0x10 `undefined1`, semantic; 5 attenuation points in percent (default 100,50,20,5,0) (medium)
     pub curve: [u8; 5],
     pub unknown_15: [u8; 3],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSSoundOutput__DynamicAttenuationCharacteristics>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(BGSSoundOutput__DynamicAttenuationCharacteristics, __vftable) == 0x0);
@@ -303,6 +310,7 @@ pub struct BGSStandardSoundDef {
     pub flags: u32,
     /// +0x54 `undefined4`, semantic; index of the file played last; the random pick avoids repeating it (high)
     pub lastFileIndex: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSStandardSoundDef>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BGSStandardSoundDef, __vftable) == 0x0);
@@ -324,6 +332,7 @@ pub struct BGSStandardSoundDef__SoundPlaybackCharacteristics {
     /// +0x0 `vtbl:BGSStandardSoundDef::SoundPlaybackCharacteristics:0`, rtti
     pub __vftable: *const crate::raw::vtables::BGSStandardSoundDef__SoundPlaybackCharacteristics_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSStandardSoundDef__SoundPlaybackCharacteristics>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(BGSStandardSoundDef__SoundPlaybackCharacteristics, __vftable) == 0x0);
@@ -377,6 +386,7 @@ pub struct BSAudioManager {
     pub resolveDescriptorByEditorId: [u8; 8],
     /// +0x188 `ptr`, semantic; third init callback (settings+0x50, set to 0x5597c0) (low)
     pub callback3: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSAudioManager>() == 0x190);
 const _: () = assert!(core::mem::offset_of!(BSAudioManager, writeListIndex) == 0x0);
@@ -431,6 +441,7 @@ pub struct BSAudioManagerThread {
     pub unknown_62: [u8; 2],
     /// +0x64 `undefined4`, semantic; sleep between iterations: uAudioThreadSleepTimeGameMode or ...MenuMode (high)
     pub sleepMs: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSAudioManagerThread>() == 0x68);
 const _: () = assert!(core::mem::offset_of!(BSAudioManagerThread, __vftable) == 0x0);
@@ -451,6 +462,7 @@ const _: () = assert!(core::mem::offset_of!(BSAudioManagerThread, sleepMs) == 0x
 pub struct BSIMusicTrack {
     /// +0x0 `vtbl:BSIMusicTrack:0`, rtti
     pub __vftable: *const crate::raw::vtables::BSIMusicTrack_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSIMusicTrack>() == 0x8);
 const _: () = assert!(core::mem::offset_of!(BSIMusicTrack, __vftable) == 0x0);
@@ -462,6 +474,7 @@ const _: () = assert!(core::mem::offset_of!(BSIMusicTrack, __vftable) == 0x0);
 pub struct BSIMusicType {
     /// +0x0 `vtbl:BSIMusicType:0`, rtti
     pub __vftable: *const crate::raw::vtables::BSIMusicType_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSIMusicType>() == 0x8);
 const _: () = assert!(core::mem::offset_of!(BSIMusicType, __vftable) == 0x0);
@@ -473,6 +486,7 @@ const _: () = assert!(core::mem::offset_of!(BSIMusicType, __vftable) == 0x0);
 pub struct BSISoundCategory {
     /// +0x0 `vtbl:BSISoundCategory:0`, rtti
     pub __vftable: *const crate::raw::vtables::BSISoundCategory_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSISoundCategory>() == 0x8);
 const _: () = assert!(core::mem::offset_of!(BSISoundCategory, __vftable) == 0x0);
@@ -484,6 +498,7 @@ const _: () = assert!(core::mem::offset_of!(BSISoundCategory, __vftable) == 0x0)
 pub struct BSISoundDescriptor {
     /// +0x0 `vtbl:BSISoundDescriptor:0`, rtti
     pub __vftable: *const crate::raw::vtables::BSISoundDescriptor_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSISoundDescriptor>() == 0x8);
 const _: () = assert!(core::mem::offset_of!(BSISoundDescriptor, __vftable) == 0x0);
@@ -495,6 +510,7 @@ const _: () = assert!(core::mem::offset_of!(BSISoundDescriptor, __vftable) == 0x
 pub struct BSISoundOutputModel {
     /// +0x0 `vtbl:BSISoundOutputModel:0`, rtti
     pub __vftable: *const crate::raw::vtables::BSISoundOutputModel_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSISoundOutputModel>() == 0x8);
 const _: () = assert!(core::mem::offset_of!(BSISoundOutputModel, __vftable) == 0x0);
@@ -515,6 +531,7 @@ pub struct BSMusicManager {
     /// +0x30 `undefined4`, semantic; nested pause requests (events 3/4); the current type is paused at 0->1 and resumed at 1->0 (high)
     pub pauseCount: u32,
     pub unknown_34: [u8; 12],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSMusicManager>() == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSMusicManager, __vftable) == 0x0);
@@ -675,6 +692,7 @@ pub struct BSXAudio2GameSound {
     pub field_210: u64,
     /// +0x218 `undefined8`, ctor store
     pub field_218: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSXAudio2GameSound>() == 0x220);
 const _: () = assert!(core::mem::offset_of!(BSXAudio2GameSound, __vftable) == 0x0);
@@ -758,6 +776,7 @@ pub struct SoundHandle {
     pub unknown_5: [u8; 3],
     /// +0x8 `undefined4`, semantic; last state requested through this handle: 0 none, 1 play, 2 stop, 3 pause (high)
     pub requestedState: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<SoundHandle>() == 0xC);
 const _: () = assert!(core::mem::offset_of!(SoundHandle, id) == 0x0);
@@ -787,6 +806,7 @@ pub struct SoundHandleStatus {
     pub unknown_1C: [u8; 4],
     /// +0x20 `ptr`, semantic; free-list link (high)
     pub nextFree: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<SoundHandleStatus>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(SoundHandleStatus, id) == 0x0);
@@ -810,6 +830,7 @@ pub struct TESAudio__ScriptedMusicState {
     /// +0x10 `undefined1`, semantic; BGSMusicType* list (+0x10 capacity with 0x80000000 = inline, +0x18 data or inline storage, +0x28 count) (high)
     pub scriptedTypes: [u8; 28],
     pub unknown_2C: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESAudio__ScriptedMusicState>() == 0x30);
 const _: () = assert!(core::mem::offset_of!(TESAudio__ScriptedMusicState, __vftable) == 0x0);
@@ -830,6 +851,7 @@ pub struct _anon_67C8711B__NoMusic {
     pub unknown_D: [u8; 59],
     /// +0x48 `undefined4`, semantic; same state enum as BGSMusicType+0x68 (high)
     pub state: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<_anon_67C8711B__NoMusic>() == 0x4C);
 const _: () = assert!(core::mem::offset_of!(_anon_67C8711B__NoMusic, __vftable) == 0x0);

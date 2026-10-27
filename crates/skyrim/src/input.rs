@@ -146,7 +146,7 @@ unsafe impl Sync for Param {}
 impl Param {
     #[must_use]
     pub const fn new(name: &'static CStr, kind: ScriptParamType, optional: bool) -> Self {
-        Self(sre::ParamInfo { name: name.as_ptr().cast_mut().cast(), typeCode: kind as u32, optional: optional as u8, unknown_D: [0; 3] })
+        Self(sre::ParamInfo { name: name.as_ptr().cast_mut().cast(), typeCode: kind as u32, optional: optional as u8, unknown_D: [0; 3], __engine: sre::Engine::new() })
     }
 }
 
@@ -321,7 +321,7 @@ pub fn register_erased(name: &CStr, help: &CStr, params: &[Param], needs_referen
     let _serialized = REGISTER.lock().unwrap_or_else(PoisonError::into_inner);
     let index = ERASED.iter().position(|s| s.params.get().is_none()).ok_or(CommandError::NoFreeEntry)?;
     let leak = |s: &CStr| -> &'static CStr { Box::leak(s.to_owned().into_boxed_c_str()) };
-    let params: &'static [Param] = Box::leak(params.iter().map(|p| Param(sre::ParamInfo { name: leak(text_c(p.0.name)).as_ptr().cast_mut().cast(), ..p.0 })).collect());
+    let params: &'static [Param] = Box::leak(params.iter().map(|p| Param(sre::ParamInfo { name: leak(text_c(p.0.name)).as_ptr().cast_mut().cast(), typeCode: p.0.typeCode, optional: p.0.optional, unknown_D: p.0.unknown_D, __engine: sre::Engine::new() })).collect());
     let slot = take_entry(leak(name), leak(help), params, needs_reference, EXECUTES[index])?;
     *ERASED[index].execute.write().unwrap_or_else(PoisonError::into_inner) = Some(execute);
     let _ = ERASED[index].params.set(params);

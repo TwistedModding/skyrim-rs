@@ -44,6 +44,7 @@ use std::ffi::CString;
 use std::fmt;
 use std::sync::{OnceLock, PoisonError, RwLock};
 
+use sre::raw::fns;
 use sre::raw::vtables::BSScript__NF_util__NativeFunctionBase_vtable as NativeVtable;
 use sre::{Actor, PapyrusType, TESForm, TESObjectREFR, VMTypeID};
 
@@ -58,6 +59,20 @@ type ObjectTypeInfo = sre::BSScript__ObjectTypeInfo;
 
 type CallBindingSlot = unsafe extern "C" fn(this: *mut NativeHeader, self_: *mut VariableRaw, vm: *mut VirtualMachine, stack_id: u32, result: *mut VariableRaw, frame: *mut sre::BSScript__StackFrame) -> bool;
 type HasBindingSlot = unsafe extern "C" fn(this: *mut NativeHeader) -> bool;
+
+const fn type_info(bits: u64) -> sre::BSScript__TypeInfo {
+    sre::BSScript__TypeInfo { rawTypeOrObjectType: bits, __engine: sre::Engine::new() }
+}
+
+const fn variable(type_bits: u64, value: u64) -> VariableRaw {
+    VariableRaw { type_: type_info(type_bits), value, __engine: sre::Engine::new() }
+}
+
+/// `Variable::assign` (id 104297): releases what `target` held and takes a reference to `value`'s.
+unsafe fn assign(target: *mut VariableRaw, value: &VariableRaw) {
+    let f: fns::BSScript__Variable__assign_fn = unsafe { crate::engine_fn(fns::BSScript__Variable__assign) };
+    unsafe { f(target, value) }
+}
 
 /// `ExtraAliasInstanceArray`'s extra data type.
 const ALIAS_INSTANCES: u32 = 0x88;
@@ -312,7 +327,7 @@ impl Variable {
     }
 
     const fn scalar(ty: PapyrusType, value: u64) -> Self {
-        Self(VariableRaw { type_: sre::BSScript__TypeInfo { rawTypeOrObjectType: ty as u64 }, value })
+        Self(variable(ty as u64, value))
     }
 
     #[must_use]
@@ -424,7 +439,7 @@ impl Variable {
     #[must_use]
     pub fn set_element(&self, index: usize, value: &Variable) -> bool {
         self.elements().and_then(|e| e.get(index)).is_some_and(|slot| {
-            slot.0.assign(&value.0);
+            unsafe { assign(core::ptr::from_ref(&slot.0).cast_mut(), &value.0) };
             true
         })
     }
@@ -439,7 +454,8 @@ impl Variable {
 
 impl Drop for Variable {
     fn drop(&mut self) {
-        self.0.reset();
+        let reset: fns::BSScript__Variable__reset_fn = unsafe { crate::engine_fn(fns::BSScript__Variable__reset) };
+        unsafe { reset(&raw mut self.0) };
     }
 }
 
@@ -899,7 +915,7 @@ unsafe extern "C" fn call_binding(this: *mut NativeHeader, self_: *mut VariableR
     let call = NativeCall { vm, self_: Variable::view(self_), args: &args[..count], stack_id };
     match unsafe { (this.invoke)(this, &call) } {
         Some(out) => {
-            unsafe { (*result).assign(&out.0) };
+            unsafe { assign(result, &out.0) };
             true
         }
         None => false,
@@ -998,7 +1014,7 @@ impl Callback {
     /// A callback holding the one reference the dispatch call borrows.
     fn new(f: ResultFn) -> *mut Self {
         Box::into_raw(Box::new(Self {
-            header: sre::BSScript__IStackCallbackFunctor { __vftable: core::ptr::from_ref(Self::VTABLE).cast(), refCount: 1, unknown_C: [0; 4] },
+            header: sre::BSScript__IStackCallbackFunctor { __vftable: core::ptr::from_ref(Self::VTABLE).cast(), refCount: 1, unknown_C: [0; 4], __engine: sre::Engine::new() },
             f: Some(f),
         }))
     }
@@ -1068,7 +1084,7 @@ impl Args {
         }
         let data = unsafe { (*out.cast::<sre::BSScrapArray>()).data.cast::<VariableRaw>() };
         for i in 0..this.len {
-            unsafe { (*data.add(i)).assign(&(*this.values.add(i)).0) };
+            unsafe { assign(data.add(i), &(*this.values.add(i)).0) };
         }
         true
     }
@@ -1248,11 +1264,11 @@ impl VirtualMachineExt for VirtualMachine {
 
     fn new_array(&self, element: TypeInfo, len: u32) -> Option<Variable> {
         let mut out = core::ptr::null_mut::<sre::BSScript__Array>();
-        let ty = sre::BSScript__TypeInfo { rawTypeOrObjectType: element.bits() };
+        let ty = type_info(element.bits());
         if !unsafe { self.create_array(&raw const ty, len, (&raw mut out).cast()) } || out.is_null() {
             return None;
         }
-        Some(Variable(VariableRaw { type_: sre::BSScript__TypeInfo { rawTypeOrObjectType: element.array_of().bits() }, value: out as u64 }))
+        Some(Variable(variable(element.array_of().bits(), out as u64)))
     }
 
     fn send_script_event(&self, _: &GameThread, handle: Handle, event: &str, args: &[Variable]) {
@@ -1312,7 +1328,7 @@ fn bind<F: Send + Sync + 'static>(
                 name: BSFixedString::new(name).into_raw(),
                 objectTypeName: BSFixedString::new(class).into_raw(),
                 stateName: BSFixedString::new("").into_raw(),
-                returnType: sre::BSScript__TypeInfo { rawTypeOrObjectType: return_type.bits() },
+                returnType: type_info(return_type.bits()),
                 params: param_infos[1..].as_mut_ptr().cast(),
                 paramCount: count,
                 variableCount: count,
@@ -1324,6 +1340,7 @@ fn bind<F: Send + Sync + 'static>(
                 userFlags: 0,
                 docString: BSFixedString::empty().into_raw(),
                 binding: invoke as *mut c_void,
+                __engine: sre::Engine::new(),
             },
             invoke,
         },

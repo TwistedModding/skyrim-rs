@@ -3,6 +3,290 @@
 
 use core::ffi::c_void;
 
+/// `hkpDisableEntityCollisionFilter`: size >= 0x118 (lower bound); partial, the struct stops at the lower bound; primary base `hkpCollisionFilter`.
+/// Evidence: field field_114.
+/// Bases: `hkpCollisionFilter`@0x0, `hkReferencedObject`@0x0, `hkBaseObject`@0x0, `hkpCollidableCollidableFilter`@0x10, `hkpShapeCollectionFilter`@0x18, `hkpRayShapeCollectionFilter`@0x20, `hkpRayCollidableFilter`@0x28, `hkpEntityListener`@0x48.
+#[repr(C)]
+pub struct hkpDisableEntityCollisionFilter {
+    /// +0x0 `vtbl:hkpDisableEntityCollisionFilter:0`, rtti
+    pub __vftable: *const crate::raw::vtables::hkpDisableEntityCollisionFilter_vtable,
+    /// +0x8 `undefined4`, base hkpCollisionFilter
+    pub field_8: u32,
+    pub unknown_C: [u8; 4],
+    /// +0x10 `vtbl:hkpDisableEntityCollisionFilter:10`, rtti
+    pub __vftable_10: *const crate::raw::vtables::hkpDisableEntityCollisionFilter_vtable_10,
+    /// +0x18 `vtbl:hkpDisableEntityCollisionFilter:18`, rtti
+    pub __vftable_18: *const crate::raw::vtables::hkpDisableEntityCollisionFilter_vtable_18,
+    /// +0x20 `vtbl:hkpDisableEntityCollisionFilter:20`, rtti
+    pub __vftable_20: *const crate::raw::vtables::hkpDisableEntityCollisionFilter_vtable_20,
+    /// +0x28 `vtbl:hkpDisableEntityCollisionFilter:28`, rtti
+    pub __vftable_28: *const crate::raw::vtables::hkpDisableEntityCollisionFilter_vtable_28,
+    /// +0x30 `undefined4`, base hkBaseObject
+    pub field_30: u32,
+    /// +0x34 `undefined4`, base hkBaseObject
+    pub field_34: u32,
+    /// +0x38 `undefined4`, base hkBaseObject
+    pub field_38: u32,
+    /// +0x3C `undefined4`, base hkBaseObject
+    pub field_3C: u32,
+    /// +0x40 `undefined4`, base hkBaseObject
+    pub field_40: u32,
+    /// +0x44 `undefined4`, base hkBaseObject
+    pub field_44: u32,
+    /// +0x48 `vtbl:hkpDisableEntityCollisionFilter:48`, rtti
+    pub __vftable_48: *const crate::raw::vtables::hkpDisableEntityCollisionFilter_vtable_48,
+    /// +0x50 `undefined4`, base hkBaseObject
+    pub field_50: u32,
+    /// +0x54 `undefined4`, base hkBaseObject
+    pub field_54: u32,
+    /// +0x58 `undefined4`, base hkBaseObject
+    pub field_58: u32,
+    /// +0x5C `undefined4`, base hkBaseObject
+    pub field_5C: u32,
+    /// +0x60 `undefined4`, base hkBaseObject
+    pub field_60: u32,
+    /// +0x64 `undefined4`, base hkBaseObject
+    pub field_64: u32,
+    /// +0x68 `undefined4`, base hkBaseObject
+    pub field_68: u32,
+    /// +0x6C `undefined4`, base hkBaseObject
+    pub field_6C: u32,
+    /// +0x70 `undefined4`, base hkBaseObject
+    pub field_70: u32,
+    /// +0x74 `undefined4`, base hkBaseObject
+    pub field_74: u32,
+    /// +0x78 `undefined4`, base hkBaseObject
+    pub field_78: u32,
+    /// +0x7C `undefined4`, base hkBaseObject
+    pub field_7C: u32,
+    /// +0x80 `undefined4`, base hkBaseObject
+    pub field_80: u32,
+    /// +0x84 `undefined4`, base hkBaseObject
+    pub field_84: u32,
+    /// +0x88 `undefined4`, base hkBaseObject
+    pub field_88: u32,
+    /// +0x8C `undefined4`, base hkBaseObject
+    pub field_8C: u32,
+    /// +0x90 `undefined4`, base hkBaseObject
+    pub field_90: u32,
+    /// +0x94 `undefined4`, base hkBaseObject
+    pub field_94: u32,
+    /// +0x98 `undefined4`, base hkBaseObject
+    pub field_98: u32,
+    /// +0x9C `undefined4`, base hkBaseObject
+    pub field_9C: u32,
+    /// +0xA0 `undefined4`, base hkBaseObject
+    pub field_A0: u32,
+    /// +0xA4 `undefined4`, base hkBaseObject
+    pub field_A4: u32,
+    /// +0xA8 `undefined8`, base hkBaseObject
+    pub field_A8: u64,
+    /// +0xB0 `undefined4`, base hkBaseObject
+    pub field_B0: u32,
+    /// +0xB4 `undefined4`, base hkBaseObject
+    pub field_B4: u32,
+    /// +0xB8 `undefined8`, base hkBaseObject
+    pub field_B8: u64,
+    /// +0xC0 `undefined4`, base hkBaseObject
+    pub field_C0: u32,
+    /// +0xC4 `undefined4`, base hkBaseObject
+    pub field_C4: u32,
+    pub unknown_C8: [u8; 64],
+    /// +0x108 `undefined8`, base hkBaseObject
+    pub field_108: u64,
+    /// +0x110 `undefined4`, base hkBaseObject
+    pub field_110: u32,
+    /// +0x114 `undefined4`, base hkBaseObject
+    pub field_114: u32,
+    pub __engine: crate::Engine,
+}
+const _: () = assert!(core::mem::offset_of!(hkpDisableEntityCollisionFilter, __vftable) == 0x0);
+const _: () = assert!(core::mem::offset_of!(hkpDisableEntityCollisionFilter, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(hkpDisableEntityCollisionFilter, __vftable_10) == 0x10);
+const _: () = assert!(core::mem::offset_of!(hkpDisableEntityCollisionFilter, __vftable_18) == 0x18);
+const _: () = assert!(core::mem::offset_of!(hkpDisableEntityCollisionFilter, __vftable_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(hkpDisableEntityCollisionFilter, __vftable_28) == 0x28);
+const _: () = assert!(core::mem::offset_of!(hkpDisableEntityCollisionFilter, field_30) == 0x30);
+const _: () = assert!(core::mem::offset_of!(hkpDisableEntityCollisionFilter, field_34) == 0x34);
+const _: () = assert!(core::mem::offset_of!(hkpDisableEntityCollisionFilter, field_38) == 0x38);
+const _: () = assert!(core::mem::offset_of!(hkpDisableEntityCollisionFilter, field_3C) == 0x3C);
+const _: () = assert!(core::mem::offset_of!(hkpDisableEntityCollisionFilter, field_40) == 0x40);
+const _: () = assert!(core::mem::offset_of!(hkpDisableEntityCollisionFilter, field_44) == 0x44);
+const _: () = assert!(core::mem::offset_of!(hkpDisableEntityCollisionFilter, __vftable_48) == 0x48);
+const _: () = assert!(core::mem::offset_of!(hkpDisableEntityCollisionFilter, field_50) == 0x50);
+const _: () = assert!(core::mem::offset_of!(hkpDisableEntityCollisionFilter, field_54) == 0x54);
+const _: () = assert!(core::mem::offset_of!(hkpDisableEntityCollisionFilter, field_58) == 0x58);
+const _: () = assert!(core::mem::offset_of!(hkpDisableEntityCollisionFilter, field_5C) == 0x5C);
+const _: () = assert!(core::mem::offset_of!(hkpDisableEntityCollisionFilter, field_60) == 0x60);
+const _: () = assert!(core::mem::offset_of!(hkpDisableEntityCollisionFilter, field_64) == 0x64);
+const _: () = assert!(core::mem::offset_of!(hkpDisableEntityCollisionFilter, field_68) == 0x68);
+const _: () = assert!(core::mem::offset_of!(hkpDisableEntityCollisionFilter, field_6C) == 0x6C);
+const _: () = assert!(core::mem::offset_of!(hkpDisableEntityCollisionFilter, field_70) == 0x70);
+const _: () = assert!(core::mem::offset_of!(hkpDisableEntityCollisionFilter, field_74) == 0x74);
+const _: () = assert!(core::mem::offset_of!(hkpDisableEntityCollisionFilter, field_78) == 0x78);
+const _: () = assert!(core::mem::offset_of!(hkpDisableEntityCollisionFilter, field_7C) == 0x7C);
+const _: () = assert!(core::mem::offset_of!(hkpDisableEntityCollisionFilter, field_80) == 0x80);
+const _: () = assert!(core::mem::offset_of!(hkpDisableEntityCollisionFilter, field_84) == 0x84);
+const _: () = assert!(core::mem::offset_of!(hkpDisableEntityCollisionFilter, field_88) == 0x88);
+const _: () = assert!(core::mem::offset_of!(hkpDisableEntityCollisionFilter, field_8C) == 0x8C);
+const _: () = assert!(core::mem::offset_of!(hkpDisableEntityCollisionFilter, field_90) == 0x90);
+const _: () = assert!(core::mem::offset_of!(hkpDisableEntityCollisionFilter, field_94) == 0x94);
+const _: () = assert!(core::mem::offset_of!(hkpDisableEntityCollisionFilter, field_98) == 0x98);
+const _: () = assert!(core::mem::offset_of!(hkpDisableEntityCollisionFilter, field_9C) == 0x9C);
+const _: () = assert!(core::mem::offset_of!(hkpDisableEntityCollisionFilter, field_A0) == 0xA0);
+const _: () = assert!(core::mem::offset_of!(hkpDisableEntityCollisionFilter, field_A4) == 0xA4);
+const _: () = assert!(core::mem::offset_of!(hkpDisableEntityCollisionFilter, field_A8) == 0xA8);
+const _: () = assert!(core::mem::offset_of!(hkpDisableEntityCollisionFilter, field_B0) == 0xB0);
+const _: () = assert!(core::mem::offset_of!(hkpDisableEntityCollisionFilter, field_B4) == 0xB4);
+const _: () = assert!(core::mem::offset_of!(hkpDisableEntityCollisionFilter, field_B8) == 0xB8);
+const _: () = assert!(core::mem::offset_of!(hkpDisableEntityCollisionFilter, field_C0) == 0xC0);
+const _: () = assert!(core::mem::offset_of!(hkpDisableEntityCollisionFilter, field_C4) == 0xC4);
+const _: () = assert!(core::mem::offset_of!(hkpDisableEntityCollisionFilter, field_108) == 0x108);
+const _: () = assert!(core::mem::offset_of!(hkpDisableEntityCollisionFilter, field_110) == 0x110);
+const _: () = assert!(core::mem::offset_of!(hkpDisableEntityCollisionFilter, field_114) == 0x114);
+
+/// `hkpDisplayBindingData`: size >= 0x118 (lower bound); partial, the struct stops at the lower bound; primary base `hkReferencedObject`.
+/// Evidence: field field_114.
+/// Bases: `hkReferencedObject`@0x0, `hkBaseObject`@0x0.
+#[repr(C)]
+pub struct hkpDisplayBindingData {
+    /// +0x0 `vtbl:hkpDisplayBindingData:0`, rtti
+    pub __vftable: *const crate::raw::vtables::hkpDisplayBindingData_vtable,
+    pub unknown_8: [u8; 8],
+    /// +0x10 `undefined8`, base hkBaseObject
+    pub m_hkpCollidableCollidableFilter_10: u64,
+    /// +0x18 `undefined8`, base hkBaseObject
+    pub m_hkpShapeCollectionFilter_18: u64,
+    /// +0x20 `undefined8`, base hkBaseObject
+    pub m_hkpRayShapeCollectionFilter_20: u64,
+    /// +0x28 `undefined8`, base hkBaseObject
+    pub m_hkpRayCollidableFilter_28: u64,
+    /// +0x30 `undefined4`, base hkBaseObject
+    pub field_30: u32,
+    /// +0x34 `undefined4`, base hkBaseObject
+    pub field_34: u32,
+    /// +0x38 `undefined4`, base hkBaseObject
+    pub field_38: u32,
+    /// +0x3C `undefined4`, base hkBaseObject
+    pub field_3C: u32,
+    /// +0x40 `undefined4`, base hkBaseObject
+    pub field_40: u32,
+    /// +0x44 `undefined4`, base hkBaseObject
+    pub field_44: u32,
+    /// +0x48 `undefined4`, base hkBaseObject
+    pub field_48: u32,
+    /// +0x4C `undefined4`, base hkBaseObject
+    pub field_4C: u32,
+    /// +0x50 `undefined4`, base hkBaseObject
+    pub field_50: u32,
+    /// +0x54 `undefined4`, base hkBaseObject
+    pub field_54: u32,
+    /// +0x58 `undefined4`, base hkBaseObject
+    pub field_58: u32,
+    /// +0x5C `undefined4`, base hkBaseObject
+    pub field_5C: u32,
+    /// +0x60 `undefined4`, base hkBaseObject
+    pub field_60: u32,
+    /// +0x64 `undefined4`, base hkBaseObject
+    pub field_64: u32,
+    /// +0x68 `undefined4`, base hkBaseObject
+    pub field_68: u32,
+    /// +0x6C `undefined4`, base hkBaseObject
+    pub field_6C: u32,
+    /// +0x70 `undefined4`, base hkBaseObject
+    pub field_70: u32,
+    /// +0x74 `undefined4`, base hkBaseObject
+    pub field_74: u32,
+    /// +0x78 `undefined4`, base hkBaseObject
+    pub field_78: u32,
+    /// +0x7C `undefined4`, base hkBaseObject
+    pub field_7C: u32,
+    /// +0x80 `undefined4`, base hkBaseObject
+    pub field_80: u32,
+    /// +0x84 `undefined4`, base hkBaseObject
+    pub field_84: u32,
+    /// +0x88 `undefined4`, base hkBaseObject
+    pub field_88: u32,
+    /// +0x8C `undefined4`, base hkBaseObject
+    pub field_8C: u32,
+    /// +0x90 `undefined4`, base hkBaseObject
+    pub field_90: u32,
+    /// +0x94 `undefined4`, base hkBaseObject
+    pub field_94: u32,
+    /// +0x98 `undefined4`, base hkBaseObject
+    pub field_98: u32,
+    /// +0x9C `undefined4`, base hkBaseObject
+    pub field_9C: u32,
+    /// +0xA0 `undefined4`, base hkBaseObject
+    pub field_A0: u32,
+    /// +0xA4 `undefined4`, base hkBaseObject
+    pub field_A4: u32,
+    /// +0xA8 `undefined8`, base hkBaseObject
+    pub field_A8: u64,
+    /// +0xB0 `undefined4`, base hkBaseObject
+    pub field_B0: u32,
+    /// +0xB4 `undefined4`, base hkBaseObject
+    pub field_B4: u32,
+    /// +0xB8 `undefined8`, base hkBaseObject
+    pub field_B8: u64,
+    /// +0xC0 `undefined4`, base hkBaseObject
+    pub field_C0: u32,
+    /// +0xC4 `undefined4`, base hkBaseObject
+    pub field_C4: u32,
+    pub unknown_C8: [u8; 64],
+    /// +0x108 `undefined8`, base hkBaseObject
+    pub field_108: u64,
+    /// +0x110 `undefined4`, base hkBaseObject
+    pub field_110: u32,
+    /// +0x114 `undefined4`, base hkBaseObject
+    pub field_114: u32,
+    pub __engine: crate::Engine,
+}
+const _: () = assert!(core::mem::offset_of!(hkpDisplayBindingData, __vftable) == 0x0);
+const _: () = assert!(core::mem::offset_of!(hkpDisplayBindingData, m_hkpCollidableCollidableFilter_10) == 0x10);
+const _: () = assert!(core::mem::offset_of!(hkpDisplayBindingData, m_hkpShapeCollectionFilter_18) == 0x18);
+const _: () = assert!(core::mem::offset_of!(hkpDisplayBindingData, m_hkpRayShapeCollectionFilter_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(hkpDisplayBindingData, m_hkpRayCollidableFilter_28) == 0x28);
+const _: () = assert!(core::mem::offset_of!(hkpDisplayBindingData, field_30) == 0x30);
+const _: () = assert!(core::mem::offset_of!(hkpDisplayBindingData, field_34) == 0x34);
+const _: () = assert!(core::mem::offset_of!(hkpDisplayBindingData, field_38) == 0x38);
+const _: () = assert!(core::mem::offset_of!(hkpDisplayBindingData, field_3C) == 0x3C);
+const _: () = assert!(core::mem::offset_of!(hkpDisplayBindingData, field_40) == 0x40);
+const _: () = assert!(core::mem::offset_of!(hkpDisplayBindingData, field_44) == 0x44);
+const _: () = assert!(core::mem::offset_of!(hkpDisplayBindingData, field_48) == 0x48);
+const _: () = assert!(core::mem::offset_of!(hkpDisplayBindingData, field_4C) == 0x4C);
+const _: () = assert!(core::mem::offset_of!(hkpDisplayBindingData, field_50) == 0x50);
+const _: () = assert!(core::mem::offset_of!(hkpDisplayBindingData, field_54) == 0x54);
+const _: () = assert!(core::mem::offset_of!(hkpDisplayBindingData, field_58) == 0x58);
+const _: () = assert!(core::mem::offset_of!(hkpDisplayBindingData, field_5C) == 0x5C);
+const _: () = assert!(core::mem::offset_of!(hkpDisplayBindingData, field_60) == 0x60);
+const _: () = assert!(core::mem::offset_of!(hkpDisplayBindingData, field_64) == 0x64);
+const _: () = assert!(core::mem::offset_of!(hkpDisplayBindingData, field_68) == 0x68);
+const _: () = assert!(core::mem::offset_of!(hkpDisplayBindingData, field_6C) == 0x6C);
+const _: () = assert!(core::mem::offset_of!(hkpDisplayBindingData, field_70) == 0x70);
+const _: () = assert!(core::mem::offset_of!(hkpDisplayBindingData, field_74) == 0x74);
+const _: () = assert!(core::mem::offset_of!(hkpDisplayBindingData, field_78) == 0x78);
+const _: () = assert!(core::mem::offset_of!(hkpDisplayBindingData, field_7C) == 0x7C);
+const _: () = assert!(core::mem::offset_of!(hkpDisplayBindingData, field_80) == 0x80);
+const _: () = assert!(core::mem::offset_of!(hkpDisplayBindingData, field_84) == 0x84);
+const _: () = assert!(core::mem::offset_of!(hkpDisplayBindingData, field_88) == 0x88);
+const _: () = assert!(core::mem::offset_of!(hkpDisplayBindingData, field_8C) == 0x8C);
+const _: () = assert!(core::mem::offset_of!(hkpDisplayBindingData, field_90) == 0x90);
+const _: () = assert!(core::mem::offset_of!(hkpDisplayBindingData, field_94) == 0x94);
+const _: () = assert!(core::mem::offset_of!(hkpDisplayBindingData, field_98) == 0x98);
+const _: () = assert!(core::mem::offset_of!(hkpDisplayBindingData, field_9C) == 0x9C);
+const _: () = assert!(core::mem::offset_of!(hkpDisplayBindingData, field_A0) == 0xA0);
+const _: () = assert!(core::mem::offset_of!(hkpDisplayBindingData, field_A4) == 0xA4);
+const _: () = assert!(core::mem::offset_of!(hkpDisplayBindingData, field_A8) == 0xA8);
+const _: () = assert!(core::mem::offset_of!(hkpDisplayBindingData, field_B0) == 0xB0);
+const _: () = assert!(core::mem::offset_of!(hkpDisplayBindingData, field_B4) == 0xB4);
+const _: () = assert!(core::mem::offset_of!(hkpDisplayBindingData, field_B8) == 0xB8);
+const _: () = assert!(core::mem::offset_of!(hkpDisplayBindingData, field_C0) == 0xC0);
+const _: () = assert!(core::mem::offset_of!(hkpDisplayBindingData, field_C4) == 0xC4);
+const _: () = assert!(core::mem::offset_of!(hkpDisplayBindingData, field_108) == 0x108);
+const _: () = assert!(core::mem::offset_of!(hkpDisplayBindingData, field_110) == 0x110);
+const _: () = assert!(core::mem::offset_of!(hkpDisplayBindingData, field_114) == 0x114);
+
 /// `hkpDisplayBindingData::PhysicsSystem`: size >= 0x118 (lower bound); partial, the struct stops at the lower bound; primary base `hkReferencedObject`.
 /// Evidence: field field_114.
 /// Bases: `hkReferencedObject`@0x0, `hkBaseObject`@0x0.
@@ -98,6 +382,7 @@ pub struct hkpDisplayBindingData__PhysicsSystem {
     pub field_110: u32,
     /// +0x114 `undefined4`, base hkBaseObject
     pub field_114: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(hkpDisplayBindingData__PhysicsSystem, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(hkpDisplayBindingData__PhysicsSystem, m_hkpCollidableCollidableFilter_10) == 0x10);
@@ -239,6 +524,7 @@ pub struct hkpDisplayBindingData__RigidBody {
     pub field_110: u32,
     /// +0x114 `undefined4`, base hkBaseObject
     pub field_114: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(hkpDisplayBindingData__RigidBody, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(hkpDisplayBindingData__RigidBody, m_hkpCollidableCollidableFilter_10) == 0x10);
@@ -380,6 +666,7 @@ pub struct hkpDynamicsContactMgr {
     pub field_110: u32,
     /// +0x114 `undefined4`, base hkBaseObject
     pub field_114: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(hkpDynamicsContactMgr, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(hkpDynamicsContactMgr, m_hkpCollidableCollidableFilter_10) == 0x10);
@@ -523,6 +810,7 @@ pub struct hkpEaseConstraintsAction {
     pub field_110: u32,
     /// +0x114 `undefined4`, base hkBaseObject
     pub field_114: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(hkpEaseConstraintsAction, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(hkpEaseConstraintsAction, field_8) == 0x8);
@@ -577,6 +865,7 @@ const _: () = assert!(core::mem::offset_of!(hkpEaseConstraintsAction, field_114)
 pub struct hkpEaseConstraintsAction__CollectSupportedConstraints {
     /// +0x0 `vtbl:hkpEaseConstraintsAction::CollectSupportedConstraints:0`, rtti
     pub __vftable: *const crate::raw::vtables::hkpEaseConstraintsAction__CollectSupportedConstraints_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(hkpEaseConstraintsAction__CollectSupportedConstraints, __vftable) == 0x0);
 
@@ -677,6 +966,7 @@ pub struct hkpEasePenetrationAction {
     pub field_110: u32,
     /// +0x114 `undefined4`, base hkBaseObject
     pub field_114: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(hkpEasePenetrationAction, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(hkpEasePenetrationAction, field_8) == 0x8);
@@ -821,6 +1111,7 @@ pub struct hkpEndOfStepCallbackUtil {
     pub field_110: u32,
     /// +0x114 `undefined4`, base hkBaseObject
     pub field_114: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(hkpEndOfStepCallbackUtil, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(hkpEndOfStepCallbackUtil, field_8) == 0x8);
@@ -1037,6 +1328,7 @@ pub struct hkpEntity {
     /// +0x2C0 `undefined4`, ctor store
     pub field_2C0: u32,
     pub unknown_2C4: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(hkpEntity, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(hkpEntity, field_8) == 0x8);
@@ -1120,6 +1412,7 @@ const _: () = assert!(core::mem::offset_of!(hkpEntity, field_2C0) == 0x2C0);
 pub struct hkpEntityActivationListener {
     /// +0x0 `vtbl:hkpEntityActivationListener:0`, rtti
     pub __vftable: *const crate::raw::vtables::hkpEntityActivationListener_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<hkpEntityActivationListener>() == 0x8);
 const _: () = assert!(core::mem::offset_of!(hkpEntityActivationListener, __vftable) == 0x0);
@@ -1221,6 +1514,7 @@ pub struct hkpEntityEntityBroadPhaseListener {
     pub field_110: u32,
     /// +0x114 `undefined4`, base hkBaseObject
     pub field_114: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(hkpEntityEntityBroadPhaseListener, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(hkpEntityEntityBroadPhaseListener, field_8) == 0x8);
@@ -1277,6 +1571,7 @@ pub struct hkpEntityListener {
     pub unknown_8: [u8; 8],
     /// +0x10 `undefined8`, ctor store
     pub field_10: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(hkpEntityListener, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(hkpEntityListener, field_10) == 0x10);
@@ -1408,6 +1703,7 @@ pub struct hkpExtendedMeshShape {
     pub field_138: u32,
     /// +0x13C `float`, ctor store (widths [4, 4])
     pub field_13C: f32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(hkpExtendedMeshShape, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(hkpExtendedMeshShape, field_8) == 0x8);
@@ -1566,6 +1862,7 @@ pub struct hkpFastMeshShape {
     pub field_110: u32,
     /// +0x114 `undefined4`, base hkBaseObject
     pub field_114: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(hkpFastMeshShape, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(hkpFastMeshShape, field_8) == 0x8);
@@ -1620,6 +1917,7 @@ const _: () = assert!(core::mem::offset_of!(hkpFastMeshShape, field_114) == 0x11
 pub struct hkpFirstCdBodyPairCollector {
     /// +0x0 `vtbl:hkpFirstCdBodyPairCollector:0`, rtti
     pub __vftable: *const crate::raw::vtables::hkpFirstCdBodyPairCollector_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(hkpFirstCdBodyPairCollector, __vftable) == 0x0);
 
@@ -1720,6 +2018,7 @@ pub struct hkpFirstPersonGun {
     pub field_110: u32,
     /// +0x114 `undefined4`, base hkBaseObject
     pub field_114: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(hkpFirstPersonGun, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(hkpFirstPersonGun, field_8) == 0x8);
@@ -1774,6 +2073,7 @@ const _: () = assert!(core::mem::offset_of!(hkpFirstPersonGun, field_114) == 0x1
 pub struct hkpFixedBufferCdPointCollector {
     /// +0x0 `vtbl:hkpFixedBufferCdPointCollector:0`, rtti
     pub __vftable: *const crate::raw::vtables::hkpFixedBufferCdPointCollector_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(hkpFixedBufferCdPointCollector, __vftable) == 0x0);
 
@@ -1784,6 +2084,7 @@ const _: () = assert!(core::mem::offset_of!(hkpFixedBufferCdPointCollector, __vf
 pub struct hkpFixedBufferRayHitCollector {
     /// +0x0 `vtbl:hkpFixedBufferRayHitCollector:0`, rtti
     pub __vftable: *const crate::raw::vtables::hkpFixedBufferRayHitCollector_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(hkpFixedBufferRayHitCollector, __vftable) == 0x0);
 
@@ -1900,6 +2201,7 @@ pub struct hkpFixedRigidMotion {
     /// +0x132 `undefined2`, base hkpMotion
     pub field_132: u16,
     pub unknown_134: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(hkpFixedRigidMotion, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(hkpFixedRigidMotion, field_8) == 0x8);
@@ -1961,6 +2263,7 @@ const _: () = assert!(core::mem::offset_of!(hkpFixedRigidMotion, field_132) == 0
 pub struct hkpFlagCdBodyPairCollector {
     /// +0x0 `vtbl:hkpFlagCdBodyPairCollector:0`, rtti
     pub __vftable: *const crate::raw::vtables::hkpFlagCdBodyPairCollector_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(hkpFlagCdBodyPairCollector, __vftable) == 0x0);
 
@@ -2061,6 +2364,7 @@ pub struct hkpGenericConstraintData {
     pub field_110: u32,
     /// +0x114 `undefined4`, base hkBaseObject
     pub field_114: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(hkpGenericConstraintData, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(hkpGenericConstraintData, field_8) == 0x8);
@@ -2205,6 +2509,7 @@ pub struct hkpGravityGun {
     pub field_110: u32,
     /// +0x114 `undefined4`, base hkBaseObject
     pub field_114: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(hkpGravityGun, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(hkpGravityGun, field_8) == 0x8);
@@ -2349,6 +2654,7 @@ pub struct hkpGroupCollisionFilter {
     pub field_110: u32,
     /// +0x114 `undefined4`, base hkBaseObject
     pub field_114: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(hkpGroupCollisionFilter, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(hkpGroupCollisionFilter, field_8) == 0x8);
@@ -2493,6 +2799,7 @@ pub struct hkpGroupFilter {
     pub field_110: u32,
     /// +0x114 `undefined4`, base hkBaseObject
     pub field_114: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(hkpGroupFilter, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(hkpGroupFilter, field_8) == 0x8);
@@ -2637,6 +2944,7 @@ pub struct hkpGskBaseAgent {
     pub field_110: u32,
     /// +0x114 `undefined4`, base hkBaseObject
     pub field_114: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(hkpGskBaseAgent, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(hkpGskBaseAgent, field_8) == 0x8);
@@ -2781,6 +3089,7 @@ pub struct hkpGskfAgent {
     pub field_110: u32,
     /// +0x114 `undefined4`, base hkBaseObject
     pub field_114: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(hkpGskfAgent, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(hkpGskfAgent, field_8) == 0x8);
@@ -2925,6 +3234,7 @@ pub struct hkpGunProjectile {
     pub field_110: u32,
     /// +0x114 `undefined4`, base hkBaseObject
     pub field_114: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(hkpGunProjectile, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(hkpGunProjectile, field_8) == 0x8);
@@ -3067,6 +3377,7 @@ pub struct hkpHavokSnapshot__ConvertListener {
     pub field_110: u32,
     /// +0x114 `undefined4`, base hkBaseObject
     pub field_114: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(hkpHavokSnapshot__ConvertListener, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(hkpHavokSnapshot__ConvertListener, m_hkpCollidableCollidableFilter_10) == 0x10);
@@ -3210,6 +3521,7 @@ pub struct hkpHeightFieldAgent {
     pub field_110: u32,
     /// +0x114 `undefined4`, base hkBaseObject
     pub field_114: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(hkpHeightFieldAgent, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(hkpHeightFieldAgent, field_8) == 0x8);
@@ -3352,6 +3664,7 @@ pub struct hkpHeightFieldShape {
     pub field_110: u32,
     /// +0x114 `undefined4`, base hkBaseObject
     pub field_114: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(hkpHeightFieldShape, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(hkpHeightFieldShape, m_hkpCollidableCollidableFilter_10) == 0x10);
@@ -3495,6 +3808,7 @@ pub struct hkpHingeConstraintData {
     pub field_110: u32,
     /// +0x114 `undefined4`, base hkBaseObject
     pub field_114: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(hkpHingeConstraintData, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(hkpHingeConstraintData, field_8) == 0x8);
@@ -3639,6 +3953,7 @@ pub struct hkpHingeLimitsData {
     pub field_110: u32,
     /// +0x114 `undefined4`, base hkBaseObject
     pub field_114: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(hkpHingeLimitsData, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(hkpHingeLimitsData, field_8) == 0x8);
@@ -3692,6 +4007,7 @@ const _: () = assert!(core::mem::offset_of!(hkpHingeLimitsData, field_114) == 0x
 pub struct hkpIslandActivationListener {
     /// +0x0 `vtbl:hkpIslandActivationListener:0`, rtti
     pub __vftable: *const crate::raw::vtables::hkpIslandActivationListener_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<hkpIslandActivationListener>() == 0x8);
 const _: () = assert!(core::mem::offset_of!(hkpIslandActivationListener, __vftable) == 0x0);
@@ -3791,6 +4107,7 @@ pub struct hkpIterativeLinearCastAgent {
     pub field_110: u32,
     /// +0x114 `undefined4`, base hkBaseObject
     pub field_114: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(hkpIterativeLinearCastAgent, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(hkpIterativeLinearCastAgent, m_hkpCollidableCollidableFilter_10) == 0x10);
@@ -3950,6 +4267,7 @@ pub struct hkpKeyframedRigidMotion {
     /// +0x132 `undefined2`, base hkpMotion
     pub field_132: u16,
     pub unknown_134: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(hkpKeyframedRigidMotion, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(hkpKeyframedRigidMotion, field_8) == 0x8);
@@ -4099,6 +4417,7 @@ pub struct hkpLimitedForceConstraintMotor {
     pub field_110: u32,
     /// +0x114 `undefined4`, base hkBaseObject
     pub field_114: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(hkpLimitedForceConstraintMotor, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(hkpLimitedForceConstraintMotor, m_hkpCollidableCollidableFilter_10) == 0x10);
@@ -4268,6 +4587,7 @@ pub struct hkpLimitedHingeConstraintData {
     pub field_110: u32,
     /// +0x114 `undefined4`, base hkBaseObject
     pub field_114: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(hkpLimitedHingeConstraintData, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(hkpLimitedHingeConstraintData, field_8) == 0x8);
@@ -4422,6 +4742,7 @@ pub struct hkpLinearParametricCurve {
     pub field_110: u32,
     /// +0x114 `undefined4`, base hkBaseObject
     pub field_114: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(hkpLinearParametricCurve, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(hkpLinearParametricCurve, field_8) == 0x8);
@@ -4566,6 +4887,7 @@ pub struct hkpListAgent {
     pub field_110: u32,
     /// +0x114 `undefined4`, base hkBaseObject
     pub field_114: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(hkpListAgent, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(hkpListAgent, field_8) == 0x8);
@@ -4710,6 +5032,7 @@ pub struct hkpListShape {
     pub field_110: u32,
     /// +0x114 `undefined4`, base hkBaseObject
     pub field_114: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(hkpListShape, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(hkpListShape, field_8) == 0x8);
@@ -4856,6 +5179,7 @@ pub struct hkpMalleableConstraintData {
     pub field_110: u32,
     /// +0x114 `undefined4`, base hkBaseObject
     pub field_114: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(hkpMalleableConstraintData, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(hkpMalleableConstraintData, field_8) == 0x8);
@@ -4999,6 +5323,7 @@ pub struct hkpMapPointsToSubShapeContactMgr {
     pub field_110: u32,
     /// +0x114 `undefined4`, base hkBaseObject
     pub field_114: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(hkpMapPointsToSubShapeContactMgr, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(hkpMapPointsToSubShapeContactMgr, m_hkpCollidableCollidableFilter_10) == 0x10);
@@ -5158,6 +5483,7 @@ pub struct hkpMaxSizeMotion {
     /// +0x132 `undefined2`, base hkpMotion
     pub field_132: u16,
     pub unknown_134: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(hkpMaxSizeMotion, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(hkpMaxSizeMotion, field_8) == 0x8);
@@ -5309,6 +5635,7 @@ pub struct hkpMeshShape {
     pub field_110: u32,
     /// +0x114 `undefined4`, base hkBaseObject
     pub field_114: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(hkpMeshShape, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(hkpMeshShape, field_8) == 0x8);
@@ -5453,6 +5780,7 @@ pub struct hkpMoppAgent {
     pub field_110: u32,
     /// +0x114 `undefined4`, base hkBaseObject
     pub field_114: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(hkpMoppAgent, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(hkpMoppAgent, field_8) == 0x8);
@@ -5595,6 +5923,7 @@ pub struct hkpMoppAssembler {
     pub field_110: u32,
     /// +0x114 `undefined4`, base hkBaseObject
     pub field_114: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(hkpMoppAssembler, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(hkpMoppAssembler, m_hkpCollidableCollidableFilter_10) == 0x10);
@@ -5738,6 +6067,7 @@ pub struct hkpMoppBvTreeShape {
     pub field_110: u32,
     /// +0x114 `undefined4`, base hkBaseObject
     pub field_114: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(hkpMoppBvTreeShape, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(hkpMoppBvTreeShape, field_8) == 0x8);
@@ -5882,6 +6212,7 @@ pub struct hkpMoppCachedShapeMediator {
     pub field_110: u32,
     /// +0x114 `undefined4`, base hkBaseObject
     pub field_114: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(hkpMoppCachedShapeMediator, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(hkpMoppCachedShapeMediator, field_8) == 0x8);
@@ -5953,6 +6284,7 @@ pub struct hkpMoppCode {
     pub field_38: u32,
     /// +0x3C `undefined4`, base hkBaseObject
     pub field_3C: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<hkpMoppCode>() == 0x40);
 const _: () = assert!(core::mem::offset_of!(hkpMoppCode, __vftable) == 0x0);
@@ -6062,6 +6394,7 @@ pub struct hkpMoppCodeGenerator {
     pub field_110: u32,
     /// +0x114 `undefined4`, base hkBaseObject
     pub field_114: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(hkpMoppCodeGenerator, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(hkpMoppCodeGenerator, field_8) == 0x8);
@@ -6206,6 +6539,7 @@ pub struct hkpMoppCostFunction {
     pub field_110: u32,
     /// +0x114 `undefined4`, base hkBaseObject
     pub field_114: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(hkpMoppCostFunction, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(hkpMoppCostFunction, field_8) == 0x8);
@@ -6350,6 +6684,7 @@ pub struct hkpMoppDefaultAssembler {
     pub field_110: u32,
     /// +0x114 `undefined4`, base hkBaseObject
     pub field_114: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(hkpMoppDefaultAssembler, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(hkpMoppDefaultAssembler, field_8) == 0x8);
@@ -6494,6 +6829,7 @@ pub struct hkpMoppDefaultSplitter {
     pub field_110: u32,
     /// +0x114 `undefined4`, base hkBaseObject
     pub field_114: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(hkpMoppDefaultSplitter, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(hkpMoppDefaultSplitter, field_8) == 0x8);
@@ -6636,6 +6972,7 @@ pub struct hkpMoppMediator {
     pub field_110: u32,
     /// +0x114 `undefined4`, base hkBaseObject
     pub field_114: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(hkpMoppMediator, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(hkpMoppMediator, m_hkpCollidableCollidableFilter_10) == 0x10);
@@ -6688,6 +7025,7 @@ const _: () = assert!(core::mem::offset_of!(hkpMoppMediator, field_114) == 0x114
 pub struct hkpMoppModifier {
     /// +0x0 `vtbl:hkpMoppModifier:0`, rtti
     pub __vftable: *const crate::raw::vtables::hkpMoppModifier_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(hkpMoppModifier, __vftable) == 0x0);
 
@@ -6786,6 +7124,7 @@ pub struct hkpMoppNodeMgr {
     pub field_110: u32,
     /// +0x114 `undefined4`, base hkBaseObject
     pub field_114: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(hkpMoppNodeMgr, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(hkpMoppNodeMgr, m_hkpCollidableCollidableFilter_10) == 0x10);
@@ -6929,6 +7268,7 @@ pub struct hkpMoppShapeMediator {
     pub field_110: u32,
     /// +0x114 `undefined4`, base hkBaseObject
     pub field_114: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(hkpMoppShapeMediator, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(hkpMoppShapeMediator, field_8) == 0x8);
@@ -7071,6 +7411,7 @@ pub struct hkpMoppSplitter {
     pub field_110: u32,
     /// +0x114 `undefined4`, base hkBaseObject
     pub field_114: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(hkpMoppSplitter, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(hkpMoppSplitter, m_hkpCollidableCollidableFilter_10) == 0x10);
@@ -7225,6 +7566,7 @@ pub struct hkpMotion {
     /// +0x132 `undefined2`, ctor store
     pub field_132: u16,
     pub unknown_134: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(hkpMotion, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(hkpMotion, field_8) == 0x8);
@@ -7373,6 +7715,7 @@ pub struct hkpMotorAction {
     pub field_110: u32,
     /// +0x114 `undefined4`, base hkBaseObject
     pub field_114: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(hkpMotorAction, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(hkpMotorAction, field_8) == 0x8);
@@ -7517,6 +7860,7 @@ pub struct hkpMountedBallGun {
     pub field_110: u32,
     /// +0x114 `undefined4`, base hkBaseObject
     pub field_114: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(hkpMountedBallGun, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(hkpMountedBallGun, field_8) == 0x8);
@@ -7661,6 +8005,7 @@ pub struct hkpMouseSpringAction {
     pub field_110: u32,
     /// +0x114 `undefined4`, base hkBaseObject
     pub field_114: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(hkpMouseSpringAction, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(hkpMouseSpringAction, field_8) == 0x8);
@@ -7805,6 +8150,7 @@ pub struct hkpMultiRayConvexAgent {
     pub field_110: u32,
     /// +0x114 `undefined4`, base hkBaseObject
     pub field_114: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(hkpMultiRayConvexAgent, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(hkpMultiRayConvexAgent, field_8) == 0x8);
@@ -7949,6 +8295,7 @@ pub struct hkpMultiRayShape {
     pub field_110: u32,
     /// +0x114 `undefined4`, base hkBaseObject
     pub field_114: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(hkpMultiRayShape, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(hkpMultiRayShape, field_8) == 0x8);
@@ -8093,6 +8440,7 @@ pub struct hkpMultiSphereAgent {
     pub field_110: u32,
     /// +0x114 `undefined4`, base hkBaseObject
     pub field_114: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(hkpMultiSphereAgent, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(hkpMultiSphereAgent, field_8) == 0x8);
@@ -8237,6 +8585,7 @@ pub struct hkpMultiSphereShape {
     pub field_110: u32,
     /// +0x114 `undefined4`, base hkBaseObject
     pub field_114: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(hkpMultiSphereShape, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(hkpMultiSphereShape, field_8) == 0x8);
@@ -8304,6 +8653,7 @@ pub struct hkpMultiSphereTriangleAgent {
     pub field_30: u32,
     /// +0x34 `undefined4`, base hkBaseObject
     pub field_34: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<hkpMultiSphereTriangleAgent>() == 0x38);
 const _: () = assert!(core::mem::offset_of!(hkpMultiSphereTriangleAgent, __vftable) == 0x0);
@@ -8421,6 +8771,7 @@ pub struct hkpMultiThreadedSimulation {
     pub unknown_118: [u8; 16],
     /// +0x128 `undefined8`, ctor store
     pub field_128: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(hkpMultiThreadedSimulation, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(hkpMultiThreadedSimulation, field_8) == 0x8);
@@ -8479,6 +8830,7 @@ const _: () = assert!(core::mem::offset_of!(hkpMultiThreadedSimulation, field_12
 pub struct hkpMultiThreadedSimulation__MtBroadPhaseBorderListener {
     /// +0x0 `vtbl:hkpMultiThreadedSimulation::MtBroadPhaseBorderListener:0`, rtti
     pub __vftable: *const crate::raw::vtables::hkpMultiThreadedSimulation__MtBroadPhaseBorderListener_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(hkpMultiThreadedSimulation__MtBroadPhaseBorderListener, __vftable) == 0x0);
 
@@ -8489,6 +8841,7 @@ const _: () = assert!(core::mem::offset_of!(hkpMultiThreadedSimulation__MtBroadP
 pub struct hkpMultiThreadedSimulation__MtEntityEntityBroadPhaseListener {
     /// +0x0 `vtbl:hkpMultiThreadedSimulation::MtEntityEntityBroadPhaseListener:0`, rtti
     pub __vftable: *const crate::raw::vtables::hkpMultiThreadedSimulation__MtEntityEntityBroadPhaseListener_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(hkpMultiThreadedSimulation__MtEntityEntityBroadPhaseListener, __vftable) == 0x0);
 
@@ -8499,6 +8852,7 @@ const _: () = assert!(core::mem::offset_of!(hkpMultiThreadedSimulation__MtEntity
 pub struct hkpMultiThreadedSimulation__MtPhantomBroadPhaseListener {
     /// +0x0 `vtbl:hkpMultiThreadedSimulation::MtPhantomBroadPhaseListener:0`, rtti
     pub __vftable: *const crate::raw::vtables::hkpMultiThreadedSimulation__MtPhantomBroadPhaseListener_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(hkpMultiThreadedSimulation__MtPhantomBroadPhaseListener, __vftable) == 0x0);
 
@@ -8599,6 +8953,7 @@ pub struct hkpNullAgent {
     pub field_110: u32,
     /// +0x114 `undefined4`, base hkBaseObject
     pub field_114: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(hkpNullAgent, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(hkpNullAgent, field_8) == 0x8);
@@ -8741,6 +9096,7 @@ pub struct hkpNullBroadPhaseListener {
     pub field_110: u32,
     /// +0x114 `undefined4`, base hkBaseObject
     pub field_114: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(hkpNullBroadPhaseListener, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(hkpNullBroadPhaseListener, __vftable_10) == 0x10);
@@ -8884,6 +9240,7 @@ pub struct hkpNullCollisionFilter {
     pub field_110: u32,
     /// +0x114 `undefined4`, base hkBaseObject
     pub field_114: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(hkpNullCollisionFilter, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(hkpNullCollisionFilter, field_8) == 0x8);
@@ -9026,6 +9383,7 @@ pub struct hkpNullContactMgr {
     pub field_110: u32,
     /// +0x114 `undefined4`, base hkBaseObject
     pub field_114: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(hkpNullContactMgr, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(hkpNullContactMgr, m_hkpCollidableCollidableFilter_10) == 0x10);
@@ -9086,6 +9444,7 @@ pub struct hkpNullContactMgrFactory {
     pub m_hkpShapeCollectionFilter_18: u64,
     /// +0x20 `undefined8`, base hkBaseObject
     pub m_hkpRayShapeCollectionFilter_20: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<hkpNullContactMgrFactory>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(hkpNullContactMgrFactory, __vftable) == 0x0);
@@ -9190,6 +9549,7 @@ pub struct hkpPairCollisionFilter {
     pub field_110: u32,
     /// +0x114 `undefined4`, base hkBaseObject
     pub field_114: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(hkpPairCollisionFilter, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(hkpPairCollisionFilter, field_8) == 0x8);
@@ -9332,6 +9692,7 @@ pub struct hkpParametricCurve {
     pub field_110: u32,
     /// +0x114 `undefined4`, base hkBaseObject
     pub field_114: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(hkpParametricCurve, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(hkpParametricCurve, m_hkpCollidableCollidableFilter_10) == 0x10);
@@ -9489,6 +9850,7 @@ pub struct hkpPhantom {
     pub field_110: u32,
     /// +0x114 `undefined4`, base hkBaseObject
     pub field_114: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<hkpPhantom>() == 0x118);
 const _: () = assert!(core::mem::offset_of!(hkpPhantom, __vftable) == 0x0);
@@ -9641,6 +10003,7 @@ pub struct hkpPhantomAgent {
     pub field_110: u32,
     /// +0x114 `undefined4`, base hkBaseObject
     pub field_114: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(hkpPhantomAgent, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(hkpPhantomAgent, field_8) == 0x8);
@@ -9698,6 +10061,7 @@ pub struct hkpPhantomBroadPhaseListener {
     pub unknown_8: [u8; 8],
     /// +0x10 `vtbl:hkpPhantomBroadPhaseListener:10`, rtti
     pub __vftable_10: *const crate::raw::vtables::hkpPhantomBroadPhaseListener_vtable_10,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<hkpPhantomBroadPhaseListener>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(hkpPhantomBroadPhaseListener, __vftable) == 0x0);
@@ -9798,6 +10162,7 @@ pub struct hkpPhantomCallbackShape {
     pub field_110: u32,
     /// +0x114 `undefined4`, base hkBaseObject
     pub field_114: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(hkpPhantomCallbackShape, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(hkpPhantomCallbackShape, m_hkpCollidableCollidableFilter_10) == 0x10);
@@ -9850,6 +10215,7 @@ const _: () = assert!(core::mem::offset_of!(hkpPhantomCallbackShape, field_114) 
 pub struct hkpPhantomListener {
     /// +0x0 `vtbl:hkpPhantomListener:0`, rtti
     pub __vftable: *const crate::raw::vtables::hkpPhantomListener_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<hkpPhantomListener>() == 0x8);
 const _: () = assert!(core::mem::offset_of!(hkpPhantomListener, __vftable) == 0x0);
@@ -9860,6 +10226,7 @@ const _: () = assert!(core::mem::offset_of!(hkpPhantomListener, __vftable) == 0x
 pub struct hkpPhantomOverlapListener {
     /// +0x0 `vtbl:hkpPhantomOverlapListener:0`, rtti
     pub __vftable: *const crate::raw::vtables::hkpPhantomOverlapListener_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<hkpPhantomOverlapListener>() == 0x8);
 const _: () = assert!(core::mem::offset_of!(hkpPhantomOverlapListener, __vftable) == 0x0);
@@ -9961,6 +10328,7 @@ pub struct hkpPhysicsData {
     pub field_110: u32,
     /// +0x114 `undefined4`, base hkBaseObject
     pub field_114: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(hkpPhysicsData, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(hkpPhysicsData, field_8) == 0x8);
@@ -10105,6 +10473,7 @@ pub struct hkpPhysicsSystem {
     pub field_110: u32,
     /// +0x114 `undefined4`, base hkBaseObject
     pub field_114: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(hkpPhysicsSystem, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(hkpPhysicsSystem, field_8) == 0x8);
@@ -10249,6 +10618,7 @@ pub struct hkpPhysicsSystemWithContacts {
     pub field_110: u32,
     /// +0x114 `undefined4`, base hkBaseObject
     pub field_114: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(hkpPhysicsSystemWithContacts, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(hkpPhysicsSystemWithContacts, field_8) == 0x8);
@@ -10393,6 +10763,7 @@ pub struct hkpPlaneShape {
     pub field_110: u32,
     /// +0x114 `undefined4`, base hkBaseObject
     pub field_114: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(hkpPlaneShape, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(hkpPlaneShape, field_8) == 0x8);
@@ -10537,6 +10908,7 @@ pub struct hkpPointToPathConstraintData {
     pub field_110: u32,
     /// +0x114 `undefined4`, base hkBaseObject
     pub field_114: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(hkpPointToPathConstraintData, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(hkpPointToPathConstraintData, field_8) == 0x8);
@@ -10681,6 +11053,7 @@ pub struct hkpPointToPlaneConstraintData {
     pub field_110: u32,
     /// +0x114 `undefined4`, base hkBaseObject
     pub field_114: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(hkpPointToPlaneConstraintData, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(hkpPointToPlaneConstraintData, field_8) == 0x8);
@@ -10746,6 +11119,7 @@ pub struct hkpPositionConstraintMotor {
     pub m_hkpRayShapeCollectionFilter_20: u64,
     /// +0x28 `undefined8`, base hkBaseObject
     pub m_hkpRayCollidableFilter_28: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<hkpPositionConstraintMotor>() == 0x30);
 const _: () = assert!(core::mem::offset_of!(hkpPositionConstraintMotor, __vftable) == 0x0);
@@ -10852,6 +11226,7 @@ pub struct hkpPoweredChainData {
     pub field_110: u32,
     /// +0x114 `undefined4`, base hkBaseObject
     pub field_114: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(hkpPoweredChainData, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(hkpPoweredChainData, field_8) == 0x8);
@@ -10923,6 +11298,7 @@ pub struct hkpPoweredChainMapper {
     pub field_38: u32,
     /// +0x3C `undefined4`, base hkBaseObject
     pub field_3C: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<hkpPoweredChainMapper>() == 0x40);
 const _: () = assert!(core::mem::offset_of!(hkpPoweredChainMapper, __vftable) == 0x0);
@@ -11032,6 +11408,7 @@ pub struct hkpPredGskfAgent {
     pub field_110: u32,
     /// +0x114 `undefined4`, base hkBaseObject
     pub field_114: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(hkpPredGskfAgent, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(hkpPredGskfAgent, field_8) == 0x8);
@@ -11199,6 +11576,7 @@ pub struct hkpPrismaticConstraintData {
     pub field_110: u32,
     /// +0x114 `undefined4`, base hkBaseObject
     pub field_114: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(hkpPrismaticConstraintData, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(hkpPrismaticConstraintData, field_8) == 0x8);
@@ -11353,6 +11731,7 @@ pub struct hkpProjectileGun {
     pub field_110: u32,
     /// +0x114 `undefined4`, base hkBaseObject
     pub field_114: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(hkpProjectileGun, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(hkpProjectileGun, field_8) == 0x8);
@@ -11497,6 +11876,7 @@ pub struct hkpPulleyConstraintData {
     pub field_110: u32,
     /// +0x114 `undefined4`, base hkBaseObject
     pub field_114: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(hkpPulleyConstraintData, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(hkpPulleyConstraintData, field_8) == 0x8);
@@ -11639,6 +12019,7 @@ pub struct hkpRackAndPinionConstraintData {
     pub field_110: u32,
     /// +0x114 `undefined4`, base hkBaseObject
     pub field_114: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(hkpRackAndPinionConstraintData, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(hkpRackAndPinionConstraintData, m_hkpCollidableCollidableFilter_10) == 0x10);
@@ -11832,6 +12213,7 @@ pub struct hkpRagdollConstraintData {
     pub field_160: u32,
     /// +0x164 `undefined4`, ctor store
     pub field_164: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(hkpRagdollConstraintData, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(hkpRagdollConstraintData, field_8) == 0x8);
@@ -11998,6 +12380,7 @@ pub struct hkpRagdollLimitsData {
     pub field_110: u32,
     /// +0x114 `undefined4`, base hkBaseObject
     pub field_114: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(hkpRagdollLimitsData, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(hkpRagdollLimitsData, field_8) == 0x8);
@@ -12052,6 +12435,7 @@ const _: () = assert!(core::mem::offset_of!(hkpRagdollLimitsData, field_114) == 
 pub struct hkpRayCollidableFilter {
     /// +0x0 `vtbl:hkpRayCollidableFilter:0`, rtti
     pub __vftable: *const crate::raw::vtables::hkpRayCollidableFilter_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(hkpRayCollidableFilter, __vftable) == 0x0);
 
@@ -12061,6 +12445,7 @@ const _: () = assert!(core::mem::offset_of!(hkpRayCollidableFilter, __vftable) =
 pub struct hkpRayHitCollector {
     /// +0x0 `vtbl:hkpRayHitCollector:0`, rtti
     pub __vftable: *const crate::raw::vtables::hkpRayHitCollector_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<hkpRayHitCollector>() == 0x8);
 const _: () = assert!(core::mem::offset_of!(hkpRayHitCollector, __vftable) == 0x0);
@@ -12071,6 +12456,7 @@ const _: () = assert!(core::mem::offset_of!(hkpRayHitCollector, __vftable) == 0x
 pub struct hkpRayShapeCollectionFilter {
     /// +0x0 `vtbl:hkpRayShapeCollectionFilter:0`, rtti
     pub __vftable: *const crate::raw::vtables::hkpRayShapeCollectionFilter_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<hkpRayShapeCollectionFilter>() == 0x8);
 const _: () = assert!(core::mem::offset_of!(hkpRayShapeCollectionFilter, __vftable) == 0x0);
@@ -12172,6 +12558,7 @@ pub struct hkpRemoveTerminalsMoppModifier {
     pub field_110: u32,
     /// +0x114 `undefined4`, base hkBaseObject
     pub field_114: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(hkpRemoveTerminalsMoppModifier, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(hkpRemoveTerminalsMoppModifier, field_8) == 0x8);
@@ -12316,6 +12703,7 @@ pub struct hkpRemoveTerminalsMoppModifier2 {
     pub field_110: u32,
     /// +0x114 `undefined4`, base hkBaseObject
     pub field_114: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(hkpRemoveTerminalsMoppModifier2, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(hkpRemoveTerminalsMoppModifier2, field_8) == 0x8);
@@ -12460,6 +12848,7 @@ pub struct hkpReorientAction {
     pub field_110: u32,
     /// +0x114 `undefined4`, base hkBaseObject
     pub field_114: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(hkpReorientAction, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(hkpReorientAction, field_8) == 0x8);
@@ -12604,6 +12993,7 @@ pub struct hkpReportContactMgr {
     pub field_110: u32,
     /// +0x114 `undefined4`, base hkBaseObject
     pub field_114: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(hkpReportContactMgr, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(hkpReportContactMgr, field_8) == 0x8);
@@ -12748,6 +13138,7 @@ pub struct hkpReportContactMgr__Factory {
     pub field_110: u32,
     /// +0x114 `undefined4`, base hkBaseObject
     pub field_114: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(hkpReportContactMgr__Factory, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(hkpReportContactMgr__Factory, field_8) == 0x8);
@@ -12977,6 +13368,7 @@ pub struct hkpRigidBody {
     /// +0x2C0 `undefined4`, base hkpEntity
     pub field_2C0: u32,
     pub unknown_2C4: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(hkpRigidBody, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(hkpRigidBody, field_8) == 0x8);
@@ -13156,6 +13548,7 @@ pub struct hkpRotationalConstraintData {
     pub field_110: u32,
     /// +0x114 `undefined4`, base hkBaseObject
     pub field_114: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(hkpRotationalConstraintData, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(hkpRotationalConstraintData, m_hkpCollidableCollidableFilter_10) == 0x10);
@@ -13297,6 +13690,7 @@ pub struct hkpSafeEaseConstraintsAction {
     pub field_110: u32,
     /// +0x114 `undefined4`, base hkBaseObject
     pub field_114: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(hkpSafeEaseConstraintsAction, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(hkpSafeEaseConstraintsAction, field_8) == 0x8);
@@ -13440,6 +13834,7 @@ pub struct hkpSampledHeightFieldShape {
     pub field_110: u32,
     /// +0x114 `undefined4`, base hkBaseObject
     pub field_114: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(hkpSampledHeightFieldShape, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(hkpSampledHeightFieldShape, field_8) == 0x8);
@@ -13493,6 +13888,7 @@ const _: () = assert!(core::mem::offset_of!(hkpSampledHeightFieldShape, field_11
 pub struct hkpSaveContactPointsUtil__EntitySelector {
     /// +0x0 `vtbl:hkpSaveContactPointsUtil::EntitySelector:0`, rtti
     pub __vftable: *const crate::raw::vtables::hkpSaveContactPointsUtil__EntitySelector_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(hkpSaveContactPointsUtil__EntitySelector, __vftable) == 0x0);
 
@@ -13610,6 +14006,7 @@ pub struct hkpSerializedAgentNnEntry {
     pub field_160: u32,
     /// +0x164 `undefined4`, ctor store
     pub field_164: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(hkpSerializedAgentNnEntry, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(hkpSerializedAgentNnEntry, field_8) == 0x8);
@@ -13760,6 +14157,7 @@ pub struct hkpSerializedDisplayMarker {
     pub field_110: u32,
     /// +0x114 `undefined4`, base hkBaseObject
     pub field_114: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(hkpSerializedDisplayMarker, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(hkpSerializedDisplayMarker, m_hkpCollidableCollidableFilter_10) == 0x10);
@@ -13901,6 +14299,7 @@ pub struct hkpSerializedDisplayMarkerList {
     pub field_110: u32,
     /// +0x114 `undefined4`, base hkBaseObject
     pub field_114: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(hkpSerializedDisplayMarkerList, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(hkpSerializedDisplayMarkerList, m_hkpCollidableCollidableFilter_10) == 0x10);
@@ -14042,6 +14441,7 @@ pub struct hkpSerializedDisplayRbTransforms {
     pub field_110: u32,
     /// +0x114 `undefined4`, base hkBaseObject
     pub field_114: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(hkpSerializedDisplayRbTransforms, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(hkpSerializedDisplayRbTransforms, m_hkpCollidableCollidableFilter_10) == 0x10);
@@ -14183,6 +14583,7 @@ pub struct hkpShape {
     pub field_110: u32,
     /// +0x114 `undefined4`, base hkBaseObject
     pub field_114: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(hkpShape, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(hkpShape, m_hkpCollidableCollidableFilter_10) == 0x10);
@@ -14326,6 +14727,7 @@ pub struct hkpShapeCollection {
     pub field_110: u32,
     /// +0x114 `undefined4`, base hkBaseObject
     pub field_114: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(hkpShapeCollection, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(hkpShapeCollection, field_8) == 0x8);
@@ -14470,6 +14872,7 @@ pub struct hkpShapeCollectionAgent {
     pub field_110: u32,
     /// +0x114 `undefined4`, base hkBaseObject
     pub field_114: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(hkpShapeCollectionAgent, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(hkpShapeCollectionAgent, field_8) == 0x8);
@@ -14523,6 +14926,7 @@ const _: () = assert!(core::mem::offset_of!(hkpShapeCollectionAgent, field_114) 
 pub struct hkpShapeCollectionFilter {
     /// +0x0 `vtbl:hkpShapeCollectionFilter:0`, rtti
     pub __vftable: *const crate::raw::vtables::hkpShapeCollectionFilter_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<hkpShapeCollectionFilter>() == 0x8);
 const _: () = assert!(core::mem::offset_of!(hkpShapeCollectionFilter, __vftable) == 0x0);
@@ -14534,6 +14938,7 @@ pub struct hkpShapeContainer {
     /// +0x0 `vtbl:hkpShapeContainer:0`, rtti
     pub __vftable: *const crate::raw::vtables::hkpShapeContainer_vtable,
     pub unknown_8: [u8; 168],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<hkpShapeContainer>() == 0xB0);
 const _: () = assert!(core::mem::offset_of!(hkpShapeContainer, __vftable) == 0x0);
@@ -14633,6 +15038,7 @@ pub struct hkpShapeInfo {
     pub field_110: u32,
     /// +0x114 `undefined4`, base hkBaseObject
     pub field_114: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(hkpShapeInfo, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(hkpShapeInfo, m_hkpCollidableCollidableFilter_10) == 0x10);
@@ -14790,6 +15196,7 @@ pub struct hkpShapePhantom {
     pub field_110: u32,
     /// +0x114 `undefined4`, base hkBaseObject
     pub field_114: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(hkpShapePhantom, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(hkpShapePhantom, field_8) == 0x8);
@@ -14851,6 +15258,7 @@ const _: () = assert!(core::mem::offset_of!(hkpShapePhantom, field_114) == 0x114
 pub struct hkpSimpleClosestContactCollector {
     /// +0x0 `vtbl:hkpSimpleClosestContactCollector:0`, rtti
     pub __vftable: *const crate::raw::vtables::hkpSimpleClosestContactCollector_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(hkpSimpleClosestContactCollector, __vftable) == 0x0);
 
@@ -14954,6 +15362,7 @@ pub struct hkpSimpleConstraintContactMgr {
     pub field_110: u32,
     /// +0x114 `undefined4`, base hkBaseObject
     pub field_114: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(hkpSimpleConstraintContactMgr, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(hkpSimpleConstraintContactMgr, field_8) == 0x8);
@@ -15099,6 +15508,7 @@ pub struct hkpSimpleConstraintContactMgr__Factory {
     pub field_110: u32,
     /// +0x114 `undefined4`, base hkBaseObject
     pub field_114: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(hkpSimpleConstraintContactMgr__Factory, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(hkpSimpleConstraintContactMgr__Factory, field_8) == 0x8);
@@ -15245,6 +15655,7 @@ pub struct hkpSimpleContactConstraintData {
     pub field_110: u32,
     /// +0x114 `undefined4`, base hkBaseObject
     pub field_114: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(hkpSimpleContactConstraintData, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(hkpSimpleContactConstraintData, field_8) == 0x8);
@@ -15390,6 +15801,7 @@ pub struct hkpSimpleMeshShape {
     pub field_110: u32,
     /// +0x114 `undefined4`, base hkBaseObject
     pub field_114: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(hkpSimpleMeshShape, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(hkpSimpleMeshShape, field_8) == 0x8);
@@ -15558,6 +15970,7 @@ pub struct hkpSimpleShapePhantom {
     /// +0x1B0 `undefined1`, ctor store
     pub field_1B0: u8,
     pub unknown_1B1: [u8; 7],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(hkpSimpleShapePhantom, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(hkpSimpleShapePhantom, field_8) == 0x8);
@@ -15623,6 +16036,7 @@ const _: () = assert!(core::mem::offset_of!(hkpSimpleShapePhantom, field_1B0) ==
 pub struct hkpSimpleWorldRayCaster {
     /// +0x0 `vtbl:hkpSimpleWorldRayCaster:0`, rtti
     pub __vftable: *const crate::raw::vtables::hkpSimpleWorldRayCaster_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(hkpSimpleWorldRayCaster, __vftable) == 0x0);
 
@@ -15723,6 +16137,7 @@ pub struct hkpSimulation {
     pub field_110: u32,
     /// +0x114 `undefined4`, base hkBaseObject
     pub field_114: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(hkpSimulation, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(hkpSimulation, field_8) == 0x8);
@@ -15867,6 +16282,7 @@ pub struct hkpSimulationIsland {
     pub field_110: u32,
     /// +0x114 `undefined4`, base hkBaseObject
     pub field_114: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(hkpSimulationIsland, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(hkpSimulationIsland, field_8) == 0x8);
@@ -15921,6 +16337,7 @@ const _: () = assert!(core::mem::offset_of!(hkpSimulationIsland, field_114) == 0
 pub struct hkpSingleShapeContainer {
     /// +0x0 `vtbl:hkpSingleShapeContainer:0`, rtti
     pub __vftable: *const crate::raw::vtables::hkpSingleShapeContainer_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(hkpSingleShapeContainer, __vftable) == 0x0);
 
@@ -15936,6 +16353,7 @@ pub struct hkpSphereBoxAgent {
     pub m_hkpCollidableCollidableFilter_10: u64,
     /// +0x18 `undefined8`, base hkBaseObject
     pub m_hkpShapeCollectionFilter_18: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<hkpSphereBoxAgent>() == 0x20);
 const _: () = assert!(core::mem::offset_of!(hkpSphereBoxAgent, __vftable) == 0x0);
@@ -15954,6 +16372,7 @@ pub struct hkpSphereCapsuleAgent {
     pub m_hkpCollidableCollidableFilter_10: u64,
     /// +0x18 `undefined8`, base hkBaseObject
     pub m_hkpShapeCollectionFilter_18: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<hkpSphereCapsuleAgent>() == 0x20);
 const _: () = assert!(core::mem::offset_of!(hkpSphereCapsuleAgent, __vftable) == 0x0);
@@ -16068,6 +16487,7 @@ pub struct hkpSphereMotion {
     /// +0x132 `undefined2`, base hkpMotion
     pub field_132: u16,
     pub unknown_134: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(hkpSphereMotion, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(hkpSphereMotion, field_8) == 0x8);
@@ -16214,6 +16634,7 @@ pub struct hkpSphereRepShape {
     pub field_110: u32,
     /// +0x114 `undefined4`, base hkBaseObject
     pub field_114: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(hkpSphereRepShape, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(hkpSphereRepShape, m_hkpCollidableCollidableFilter_10) == 0x10);
@@ -16357,6 +16778,7 @@ pub struct hkpSphereShape {
     pub field_110: u32,
     /// +0x114 `undefined4`, base hkBaseObject
     pub field_114: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(hkpSphereShape, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(hkpSphereShape, field_8) == 0x8);
@@ -16416,6 +16838,7 @@ pub struct hkpSphereSphereAgent {
     pub m_hkpCollidableCollidableFilter_10: u64,
     /// +0x18 `undefined8`, base hkBaseObject
     pub m_hkpShapeCollectionFilter_18: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<hkpSphereSphereAgent>() == 0x20);
 const _: () = assert!(core::mem::offset_of!(hkpSphereSphereAgent, __vftable) == 0x0);
@@ -16438,6 +16861,7 @@ pub struct hkpSphereTriangleAgent {
     pub m_hkpRayShapeCollectionFilter_20: u64,
     /// +0x28 `undefined8`, base hkBaseObject
     pub m_hkpRayCollidableFilter_28: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<hkpSphereTriangleAgent>() == 0x30);
 const _: () = assert!(core::mem::offset_of!(hkpSphereTriangleAgent, __vftable) == 0x0);
@@ -16543,6 +16967,7 @@ pub struct hkpSpringAction {
     pub field_110: u32,
     /// +0x114 `undefined4`, base hkBaseObject
     pub field_114: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(hkpSpringAction, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(hkpSpringAction, field_8) == 0x8);
@@ -16606,6 +17031,7 @@ pub struct hkpSpringDamperConstraintMotor {
     pub m_hkpShapeCollectionFilter_18: u64,
     /// +0x20 `undefined8`, base hkBaseObject
     pub m_hkpRayShapeCollectionFilter_20: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<hkpSpringDamperConstraintMotor>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(hkpSpringDamperConstraintMotor, __vftable) == 0x0);
@@ -16711,6 +17137,7 @@ pub struct hkpStiffSpringChainData {
     pub field_110: u32,
     /// +0x114 `undefined4`, base hkBaseObject
     pub field_114: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(hkpStiffSpringChainData, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(hkpStiffSpringChainData, field_8) == 0x8);
@@ -16855,6 +17282,7 @@ pub struct hkpStiffSpringConstraintData {
     pub field_110: u32,
     /// +0x114 `undefined4`, base hkBaseObject
     pub field_114: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(hkpStiffSpringConstraintData, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(hkpStiffSpringConstraintData, field_8) == 0x8);
@@ -17042,6 +17470,7 @@ pub struct hkpStorageExtendedMeshShape {
     pub field_168: u32,
     /// +0x16C `undefined4`, ctor store
     pub field_16C: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(hkpStorageExtendedMeshShape, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(hkpStorageExtendedMeshShape, field_8) == 0x8);
@@ -17173,6 +17602,7 @@ pub struct hkpStorageExtendedMeshShape__MeshSubpartStorage {
     pub field_88: u32,
     /// +0x8C `undefined4`, base hkBaseObject
     pub field_8C: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<hkpStorageExtendedMeshShape__MeshSubpartStorage>() == 0x90);
 const _: () = assert!(core::mem::offset_of!(hkpStorageExtendedMeshShape__MeshSubpartStorage, __vftable) == 0x0);
@@ -17229,6 +17659,7 @@ pub struct hkpStorageExtendedMeshShape__ShapeSubpartStorage {
     pub field_38: u32,
     /// +0x3C `undefined4`, base hkBaseObject
     pub field_3C: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<hkpStorageExtendedMeshShape__ShapeSubpartStorage>() == 0x40);
 const _: () = assert!(core::mem::offset_of!(hkpStorageExtendedMeshShape__ShapeSubpartStorage, __vftable) == 0x0);
@@ -17338,6 +17769,7 @@ pub struct hkpStorageMeshShape {
     pub field_110: u32,
     /// +0x114 `undefined4`, base hkBaseObject
     pub field_114: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(hkpStorageMeshShape, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(hkpStorageMeshShape, field_8) == 0x8);
@@ -17433,6 +17865,7 @@ pub struct hkpStorageMeshShape__SubpartStorage {
     pub field_68: u32,
     /// +0x6C `undefined4`, base hkBaseObject
     pub field_6C: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<hkpStorageMeshShape__SubpartStorage>() == 0x70);
 const _: () = assert!(core::mem::offset_of!(hkpStorageMeshShape__SubpartStorage, __vftable) == 0x0);
@@ -17554,6 +17987,7 @@ pub struct hkpStorageSampledHeightFieldShape {
     pub field_110: u32,
     /// +0x114 `undefined4`, base hkBaseObject
     pub field_114: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(hkpStorageSampledHeightFieldShape, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(hkpStorageSampledHeightFieldShape, field_8) == 0x8);
@@ -17698,6 +18132,7 @@ pub struct hkpSuspendInactiveAgentsUtil {
     pub field_110: u32,
     /// +0x114 `undefined4`, base hkBaseObject
     pub field_114: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(hkpSuspendInactiveAgentsUtil, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(hkpSuspendInactiveAgentsUtil, field_8) == 0x8);
@@ -17842,6 +18277,7 @@ pub struct hkpSymmetricAgent_hkpBvAgent {
     pub field_110: u32,
     /// +0x114 `undefined4`, base hkBaseObject
     pub field_114: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(hkpSymmetricAgent_hkpBvAgent, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(hkpSymmetricAgent_hkpBvAgent, field_8) == 0x8);
@@ -17986,6 +18422,7 @@ pub struct hkpSymmetricAgent_hkpBvTreeAgent {
     pub field_110: u32,
     /// +0x114 `undefined4`, base hkBaseObject
     pub field_114: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(hkpSymmetricAgent_hkpBvTreeAgent, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(hkpSymmetricAgent_hkpBvTreeAgent, field_8) == 0x8);
@@ -18130,6 +18567,7 @@ pub struct hkpSymmetricAgent_hkpBvTreeStreamAgent {
     pub field_110: u32,
     /// +0x114 `undefined4`, base hkBaseObject
     pub field_114: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(hkpSymmetricAgent_hkpBvTreeStreamAgent, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(hkpSymmetricAgent_hkpBvTreeStreamAgent, field_8) == 0x8);
@@ -18274,6 +18712,7 @@ pub struct hkpSymmetricAgent_hkpConvexListAgent {
     pub field_110: u32,
     /// +0x114 `undefined4`, base hkBaseObject
     pub field_114: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(hkpSymmetricAgent_hkpConvexListAgent, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(hkpSymmetricAgent_hkpConvexListAgent, field_8) == 0x8);
@@ -18320,292 +18759,4 @@ const _: () = assert!(core::mem::offset_of!(hkpSymmetricAgent_hkpConvexListAgent
 const _: () = assert!(core::mem::offset_of!(hkpSymmetricAgent_hkpConvexListAgent, field_108) == 0x108);
 const _: () = assert!(core::mem::offset_of!(hkpSymmetricAgent_hkpConvexListAgent, field_110) == 0x110);
 const _: () = assert!(core::mem::offset_of!(hkpSymmetricAgent_hkpConvexListAgent, field_114) == 0x114);
-
-/// `hkpSymmetricAgent<hkpHeightFieldAgent>`: size >= 0x118 (lower bound); partial, the struct stops at the lower bound; primary base `hkpSymmetricAgentLinearCast<hkpHeightFieldAgent>`.
-/// Evidence: field field_114.
-/// Bases: `hkpSymmetricAgentLinearCast<hkpHeightFieldAgent>`@0x0, `hkpHeightFieldAgent`@0x0, `hkpCollisionAgent`@0x0, `hkReferencedObject`@0x0, `hkBaseObject`@0x0.
-#[repr(C)]
-pub struct hkpSymmetricAgent_hkpHeightFieldAgent {
-    /// +0x0 `vtbl:hkpSymmetricAgent<hkpHeightFieldAgent>:0`, rtti
-    pub __vftable: *const crate::raw::vtables::hkpSymmetricAgent_hkpHeightFieldAgent_vtable,
-    /// +0x8 `undefined4`, base hkpHeightFieldAgent
-    pub field_8: u32,
-    pub unknown_C: [u8; 4],
-    /// +0x10 `undefined8`, base hkBaseObject
-    pub m_hkpCollidableCollidableFilter_10: u64,
-    /// +0x18 `undefined8`, base hkBaseObject
-    pub m_hkpShapeCollectionFilter_18: u64,
-    /// +0x20 `undefined8`, base hkBaseObject
-    pub m_hkpRayShapeCollectionFilter_20: u64,
-    /// +0x28 `undefined8`, base hkBaseObject
-    pub m_hkpRayCollidableFilter_28: u64,
-    /// +0x30 `undefined4`, base hkBaseObject
-    pub field_30: u32,
-    /// +0x34 `undefined4`, base hkBaseObject
-    pub field_34: u32,
-    /// +0x38 `undefined4`, base hkBaseObject
-    pub field_38: u32,
-    /// +0x3C `undefined4`, base hkBaseObject
-    pub field_3C: u32,
-    /// +0x40 `undefined4`, base hkBaseObject
-    pub field_40: u32,
-    /// +0x44 `undefined4`, base hkBaseObject
-    pub field_44: u32,
-    /// +0x48 `undefined4`, base hkBaseObject
-    pub field_48: u32,
-    /// +0x4C `undefined4`, base hkBaseObject
-    pub field_4C: u32,
-    /// +0x50 `undefined4`, base hkBaseObject
-    pub field_50: u32,
-    /// +0x54 `undefined4`, base hkBaseObject
-    pub field_54: u32,
-    /// +0x58 `undefined4`, base hkBaseObject
-    pub field_58: u32,
-    /// +0x5C `undefined4`, base hkBaseObject
-    pub field_5C: u32,
-    /// +0x60 `undefined4`, base hkBaseObject
-    pub field_60: u32,
-    /// +0x64 `undefined4`, base hkBaseObject
-    pub field_64: u32,
-    /// +0x68 `undefined4`, base hkBaseObject
-    pub field_68: u32,
-    /// +0x6C `undefined4`, base hkBaseObject
-    pub field_6C: u32,
-    /// +0x70 `undefined4`, base hkBaseObject
-    pub field_70: u32,
-    /// +0x74 `undefined4`, base hkBaseObject
-    pub field_74: u32,
-    /// +0x78 `undefined4`, base hkBaseObject
-    pub field_78: u32,
-    /// +0x7C `undefined4`, base hkBaseObject
-    pub field_7C: u32,
-    /// +0x80 `undefined4`, base hkBaseObject
-    pub field_80: u32,
-    /// +0x84 `undefined4`, base hkBaseObject
-    pub field_84: u32,
-    /// +0x88 `undefined4`, base hkBaseObject
-    pub field_88: u32,
-    /// +0x8C `undefined4`, base hkBaseObject
-    pub field_8C: u32,
-    /// +0x90 `undefined4`, base hkBaseObject
-    pub field_90: u32,
-    /// +0x94 `undefined4`, base hkBaseObject
-    pub field_94: u32,
-    /// +0x98 `undefined4`, base hkBaseObject
-    pub field_98: u32,
-    /// +0x9C `undefined4`, base hkBaseObject
-    pub field_9C: u32,
-    /// +0xA0 `undefined4`, base hkBaseObject
-    pub field_A0: u32,
-    /// +0xA4 `undefined4`, base hkBaseObject
-    pub field_A4: u32,
-    /// +0xA8 `undefined8`, base hkBaseObject
-    pub field_A8: u64,
-    /// +0xB0 `undefined4`, base hkBaseObject
-    pub field_B0: u32,
-    /// +0xB4 `undefined4`, base hkBaseObject
-    pub field_B4: u32,
-    /// +0xB8 `undefined8`, base hkBaseObject
-    pub field_B8: u64,
-    /// +0xC0 `undefined4`, base hkBaseObject
-    pub field_C0: u32,
-    /// +0xC4 `undefined4`, base hkBaseObject
-    pub field_C4: u32,
-    pub unknown_C8: [u8; 64],
-    /// +0x108 `undefined8`, base hkBaseObject
-    pub field_108: u64,
-    /// +0x110 `undefined4`, base hkBaseObject
-    pub field_110: u32,
-    /// +0x114 `undefined4`, base hkBaseObject
-    pub field_114: u32,
-}
-const _: () = assert!(core::mem::offset_of!(hkpSymmetricAgent_hkpHeightFieldAgent, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(hkpSymmetricAgent_hkpHeightFieldAgent, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(hkpSymmetricAgent_hkpHeightFieldAgent, m_hkpCollidableCollidableFilter_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(hkpSymmetricAgent_hkpHeightFieldAgent, m_hkpShapeCollectionFilter_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(hkpSymmetricAgent_hkpHeightFieldAgent, m_hkpRayShapeCollectionFilter_20) == 0x20);
-const _: () = assert!(core::mem::offset_of!(hkpSymmetricAgent_hkpHeightFieldAgent, m_hkpRayCollidableFilter_28) == 0x28);
-const _: () = assert!(core::mem::offset_of!(hkpSymmetricAgent_hkpHeightFieldAgent, field_30) == 0x30);
-const _: () = assert!(core::mem::offset_of!(hkpSymmetricAgent_hkpHeightFieldAgent, field_34) == 0x34);
-const _: () = assert!(core::mem::offset_of!(hkpSymmetricAgent_hkpHeightFieldAgent, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(hkpSymmetricAgent_hkpHeightFieldAgent, field_3C) == 0x3C);
-const _: () = assert!(core::mem::offset_of!(hkpSymmetricAgent_hkpHeightFieldAgent, field_40) == 0x40);
-const _: () = assert!(core::mem::offset_of!(hkpSymmetricAgent_hkpHeightFieldAgent, field_44) == 0x44);
-const _: () = assert!(core::mem::offset_of!(hkpSymmetricAgent_hkpHeightFieldAgent, field_48) == 0x48);
-const _: () = assert!(core::mem::offset_of!(hkpSymmetricAgent_hkpHeightFieldAgent, field_4C) == 0x4C);
-const _: () = assert!(core::mem::offset_of!(hkpSymmetricAgent_hkpHeightFieldAgent, field_50) == 0x50);
-const _: () = assert!(core::mem::offset_of!(hkpSymmetricAgent_hkpHeightFieldAgent, field_54) == 0x54);
-const _: () = assert!(core::mem::offset_of!(hkpSymmetricAgent_hkpHeightFieldAgent, field_58) == 0x58);
-const _: () = assert!(core::mem::offset_of!(hkpSymmetricAgent_hkpHeightFieldAgent, field_5C) == 0x5C);
-const _: () = assert!(core::mem::offset_of!(hkpSymmetricAgent_hkpHeightFieldAgent, field_60) == 0x60);
-const _: () = assert!(core::mem::offset_of!(hkpSymmetricAgent_hkpHeightFieldAgent, field_64) == 0x64);
-const _: () = assert!(core::mem::offset_of!(hkpSymmetricAgent_hkpHeightFieldAgent, field_68) == 0x68);
-const _: () = assert!(core::mem::offset_of!(hkpSymmetricAgent_hkpHeightFieldAgent, field_6C) == 0x6C);
-const _: () = assert!(core::mem::offset_of!(hkpSymmetricAgent_hkpHeightFieldAgent, field_70) == 0x70);
-const _: () = assert!(core::mem::offset_of!(hkpSymmetricAgent_hkpHeightFieldAgent, field_74) == 0x74);
-const _: () = assert!(core::mem::offset_of!(hkpSymmetricAgent_hkpHeightFieldAgent, field_78) == 0x78);
-const _: () = assert!(core::mem::offset_of!(hkpSymmetricAgent_hkpHeightFieldAgent, field_7C) == 0x7C);
-const _: () = assert!(core::mem::offset_of!(hkpSymmetricAgent_hkpHeightFieldAgent, field_80) == 0x80);
-const _: () = assert!(core::mem::offset_of!(hkpSymmetricAgent_hkpHeightFieldAgent, field_84) == 0x84);
-const _: () = assert!(core::mem::offset_of!(hkpSymmetricAgent_hkpHeightFieldAgent, field_88) == 0x88);
-const _: () = assert!(core::mem::offset_of!(hkpSymmetricAgent_hkpHeightFieldAgent, field_8C) == 0x8C);
-const _: () = assert!(core::mem::offset_of!(hkpSymmetricAgent_hkpHeightFieldAgent, field_90) == 0x90);
-const _: () = assert!(core::mem::offset_of!(hkpSymmetricAgent_hkpHeightFieldAgent, field_94) == 0x94);
-const _: () = assert!(core::mem::offset_of!(hkpSymmetricAgent_hkpHeightFieldAgent, field_98) == 0x98);
-const _: () = assert!(core::mem::offset_of!(hkpSymmetricAgent_hkpHeightFieldAgent, field_9C) == 0x9C);
-const _: () = assert!(core::mem::offset_of!(hkpSymmetricAgent_hkpHeightFieldAgent, field_A0) == 0xA0);
-const _: () = assert!(core::mem::offset_of!(hkpSymmetricAgent_hkpHeightFieldAgent, field_A4) == 0xA4);
-const _: () = assert!(core::mem::offset_of!(hkpSymmetricAgent_hkpHeightFieldAgent, field_A8) == 0xA8);
-const _: () = assert!(core::mem::offset_of!(hkpSymmetricAgent_hkpHeightFieldAgent, field_B0) == 0xB0);
-const _: () = assert!(core::mem::offset_of!(hkpSymmetricAgent_hkpHeightFieldAgent, field_B4) == 0xB4);
-const _: () = assert!(core::mem::offset_of!(hkpSymmetricAgent_hkpHeightFieldAgent, field_B8) == 0xB8);
-const _: () = assert!(core::mem::offset_of!(hkpSymmetricAgent_hkpHeightFieldAgent, field_C0) == 0xC0);
-const _: () = assert!(core::mem::offset_of!(hkpSymmetricAgent_hkpHeightFieldAgent, field_C4) == 0xC4);
-const _: () = assert!(core::mem::offset_of!(hkpSymmetricAgent_hkpHeightFieldAgent, field_108) == 0x108);
-const _: () = assert!(core::mem::offset_of!(hkpSymmetricAgent_hkpHeightFieldAgent, field_110) == 0x110);
-const _: () = assert!(core::mem::offset_of!(hkpSymmetricAgent_hkpHeightFieldAgent, field_114) == 0x114);
-
-/// `hkpSymmetricAgent<hkpListAgent>`: size >= 0x118 (lower bound); partial, the struct stops at the lower bound; primary base `hkpSymmetricAgentLinearCast<hkpListAgent>`.
-/// Evidence: field field_114.
-/// Bases: `hkpSymmetricAgentLinearCast<hkpListAgent>`@0x0, `hkpListAgent`@0x0, `hkpCollisionAgent`@0x0, `hkReferencedObject`@0x0, `hkBaseObject`@0x0.
-#[repr(C)]
-pub struct hkpSymmetricAgent_hkpListAgent {
-    /// +0x0 `vtbl:hkpSymmetricAgent<hkpListAgent>:0`, rtti
-    pub __vftable: *const crate::raw::vtables::hkpSymmetricAgent_hkpListAgent_vtable,
-    /// +0x8 `undefined4`, base hkpListAgent
-    pub field_8: u32,
-    pub unknown_C: [u8; 4],
-    /// +0x10 `undefined8`, base hkBaseObject
-    pub m_hkpCollidableCollidableFilter_10: u64,
-    /// +0x18 `undefined8`, base hkBaseObject
-    pub m_hkpShapeCollectionFilter_18: u64,
-    /// +0x20 `undefined8`, base hkBaseObject
-    pub m_hkpRayShapeCollectionFilter_20: u64,
-    /// +0x28 `undefined8`, base hkBaseObject
-    pub m_hkpRayCollidableFilter_28: u64,
-    /// +0x30 `undefined4`, base hkBaseObject
-    pub field_30: u32,
-    /// +0x34 `undefined4`, base hkBaseObject
-    pub field_34: u32,
-    /// +0x38 `undefined4`, base hkBaseObject
-    pub field_38: u32,
-    /// +0x3C `undefined4`, base hkBaseObject
-    pub field_3C: u32,
-    /// +0x40 `undefined4`, base hkBaseObject
-    pub field_40: u32,
-    /// +0x44 `undefined4`, base hkBaseObject
-    pub field_44: u32,
-    /// +0x48 `undefined4`, base hkBaseObject
-    pub field_48: u32,
-    /// +0x4C `undefined4`, base hkBaseObject
-    pub field_4C: u32,
-    /// +0x50 `undefined4`, base hkBaseObject
-    pub field_50: u32,
-    /// +0x54 `undefined4`, base hkBaseObject
-    pub field_54: u32,
-    /// +0x58 `undefined4`, base hkBaseObject
-    pub field_58: u32,
-    /// +0x5C `undefined4`, base hkBaseObject
-    pub field_5C: u32,
-    /// +0x60 `undefined4`, base hkBaseObject
-    pub field_60: u32,
-    /// +0x64 `undefined4`, base hkBaseObject
-    pub field_64: u32,
-    /// +0x68 `undefined4`, base hkBaseObject
-    pub field_68: u32,
-    /// +0x6C `undefined4`, base hkBaseObject
-    pub field_6C: u32,
-    /// +0x70 `undefined4`, base hkBaseObject
-    pub field_70: u32,
-    /// +0x74 `undefined4`, base hkBaseObject
-    pub field_74: u32,
-    /// +0x78 `undefined4`, base hkBaseObject
-    pub field_78: u32,
-    /// +0x7C `undefined4`, base hkBaseObject
-    pub field_7C: u32,
-    /// +0x80 `undefined4`, base hkBaseObject
-    pub field_80: u32,
-    /// +0x84 `undefined4`, base hkBaseObject
-    pub field_84: u32,
-    /// +0x88 `undefined4`, base hkBaseObject
-    pub field_88: u32,
-    /// +0x8C `undefined4`, base hkBaseObject
-    pub field_8C: u32,
-    /// +0x90 `undefined4`, base hkBaseObject
-    pub field_90: u32,
-    /// +0x94 `undefined4`, base hkBaseObject
-    pub field_94: u32,
-    /// +0x98 `undefined4`, base hkBaseObject
-    pub field_98: u32,
-    /// +0x9C `undefined4`, base hkBaseObject
-    pub field_9C: u32,
-    /// +0xA0 `undefined4`, base hkBaseObject
-    pub field_A0: u32,
-    /// +0xA4 `undefined4`, base hkBaseObject
-    pub field_A4: u32,
-    /// +0xA8 `undefined8`, base hkBaseObject
-    pub field_A8: u64,
-    /// +0xB0 `undefined4`, base hkBaseObject
-    pub field_B0: u32,
-    /// +0xB4 `undefined4`, base hkBaseObject
-    pub field_B4: u32,
-    /// +0xB8 `undefined8`, base hkBaseObject
-    pub field_B8: u64,
-    /// +0xC0 `undefined4`, base hkBaseObject
-    pub field_C0: u32,
-    /// +0xC4 `undefined4`, base hkBaseObject
-    pub field_C4: u32,
-    pub unknown_C8: [u8; 64],
-    /// +0x108 `undefined8`, base hkBaseObject
-    pub field_108: u64,
-    /// +0x110 `undefined4`, base hkBaseObject
-    pub field_110: u32,
-    /// +0x114 `undefined4`, base hkBaseObject
-    pub field_114: u32,
-}
-const _: () = assert!(core::mem::offset_of!(hkpSymmetricAgent_hkpListAgent, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(hkpSymmetricAgent_hkpListAgent, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(hkpSymmetricAgent_hkpListAgent, m_hkpCollidableCollidableFilter_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(hkpSymmetricAgent_hkpListAgent, m_hkpShapeCollectionFilter_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(hkpSymmetricAgent_hkpListAgent, m_hkpRayShapeCollectionFilter_20) == 0x20);
-const _: () = assert!(core::mem::offset_of!(hkpSymmetricAgent_hkpListAgent, m_hkpRayCollidableFilter_28) == 0x28);
-const _: () = assert!(core::mem::offset_of!(hkpSymmetricAgent_hkpListAgent, field_30) == 0x30);
-const _: () = assert!(core::mem::offset_of!(hkpSymmetricAgent_hkpListAgent, field_34) == 0x34);
-const _: () = assert!(core::mem::offset_of!(hkpSymmetricAgent_hkpListAgent, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(hkpSymmetricAgent_hkpListAgent, field_3C) == 0x3C);
-const _: () = assert!(core::mem::offset_of!(hkpSymmetricAgent_hkpListAgent, field_40) == 0x40);
-const _: () = assert!(core::mem::offset_of!(hkpSymmetricAgent_hkpListAgent, field_44) == 0x44);
-const _: () = assert!(core::mem::offset_of!(hkpSymmetricAgent_hkpListAgent, field_48) == 0x48);
-const _: () = assert!(core::mem::offset_of!(hkpSymmetricAgent_hkpListAgent, field_4C) == 0x4C);
-const _: () = assert!(core::mem::offset_of!(hkpSymmetricAgent_hkpListAgent, field_50) == 0x50);
-const _: () = assert!(core::mem::offset_of!(hkpSymmetricAgent_hkpListAgent, field_54) == 0x54);
-const _: () = assert!(core::mem::offset_of!(hkpSymmetricAgent_hkpListAgent, field_58) == 0x58);
-const _: () = assert!(core::mem::offset_of!(hkpSymmetricAgent_hkpListAgent, field_5C) == 0x5C);
-const _: () = assert!(core::mem::offset_of!(hkpSymmetricAgent_hkpListAgent, field_60) == 0x60);
-const _: () = assert!(core::mem::offset_of!(hkpSymmetricAgent_hkpListAgent, field_64) == 0x64);
-const _: () = assert!(core::mem::offset_of!(hkpSymmetricAgent_hkpListAgent, field_68) == 0x68);
-const _: () = assert!(core::mem::offset_of!(hkpSymmetricAgent_hkpListAgent, field_6C) == 0x6C);
-const _: () = assert!(core::mem::offset_of!(hkpSymmetricAgent_hkpListAgent, field_70) == 0x70);
-const _: () = assert!(core::mem::offset_of!(hkpSymmetricAgent_hkpListAgent, field_74) == 0x74);
-const _: () = assert!(core::mem::offset_of!(hkpSymmetricAgent_hkpListAgent, field_78) == 0x78);
-const _: () = assert!(core::mem::offset_of!(hkpSymmetricAgent_hkpListAgent, field_7C) == 0x7C);
-const _: () = assert!(core::mem::offset_of!(hkpSymmetricAgent_hkpListAgent, field_80) == 0x80);
-const _: () = assert!(core::mem::offset_of!(hkpSymmetricAgent_hkpListAgent, field_84) == 0x84);
-const _: () = assert!(core::mem::offset_of!(hkpSymmetricAgent_hkpListAgent, field_88) == 0x88);
-const _: () = assert!(core::mem::offset_of!(hkpSymmetricAgent_hkpListAgent, field_8C) == 0x8C);
-const _: () = assert!(core::mem::offset_of!(hkpSymmetricAgent_hkpListAgent, field_90) == 0x90);
-const _: () = assert!(core::mem::offset_of!(hkpSymmetricAgent_hkpListAgent, field_94) == 0x94);
-const _: () = assert!(core::mem::offset_of!(hkpSymmetricAgent_hkpListAgent, field_98) == 0x98);
-const _: () = assert!(core::mem::offset_of!(hkpSymmetricAgent_hkpListAgent, field_9C) == 0x9C);
-const _: () = assert!(core::mem::offset_of!(hkpSymmetricAgent_hkpListAgent, field_A0) == 0xA0);
-const _: () = assert!(core::mem::offset_of!(hkpSymmetricAgent_hkpListAgent, field_A4) == 0xA4);
-const _: () = assert!(core::mem::offset_of!(hkpSymmetricAgent_hkpListAgent, field_A8) == 0xA8);
-const _: () = assert!(core::mem::offset_of!(hkpSymmetricAgent_hkpListAgent, field_B0) == 0xB0);
-const _: () = assert!(core::mem::offset_of!(hkpSymmetricAgent_hkpListAgent, field_B4) == 0xB4);
-const _: () = assert!(core::mem::offset_of!(hkpSymmetricAgent_hkpListAgent, field_B8) == 0xB8);
-const _: () = assert!(core::mem::offset_of!(hkpSymmetricAgent_hkpListAgent, field_C0) == 0xC0);
-const _: () = assert!(core::mem::offset_of!(hkpSymmetricAgent_hkpListAgent, field_C4) == 0xC4);
-const _: () = assert!(core::mem::offset_of!(hkpSymmetricAgent_hkpListAgent, field_108) == 0x108);
-const _: () = assert!(core::mem::offset_of!(hkpSymmetricAgent_hkpListAgent, field_110) == 0x110);
-const _: () = assert!(core::mem::offset_of!(hkpSymmetricAgent_hkpListAgent, field_114) == 0x114);
 

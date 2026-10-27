@@ -22,6 +22,7 @@ pub struct BSScript__CompiledScriptLoader {
     /// +0x32 `undefined1`, ctor store, semantic, runtime; bit 0: keep the debug section (bLoadDebugInformation:Papyrus); bit 1: second ctor flag (SkyrimVM passes 0); see the flag rows (high)
     pub flags: u8,
     pub unknown_33: [u8; 5],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__CompiledScriptLoader>() == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__CompiledScriptLoader, __vftable) == 0x0);
@@ -47,6 +48,7 @@ pub struct BSScript__Internal__AutoPropGetFunction {
     /// +0x20 `undefined8`, semantic; TypeInfo (high)
     pub returnType: u64,
     pub unknown_28: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__Internal__AutoPropGetFunction>() == 0x30);
 const _: () = assert!(core::mem::offset_of!(BSScript__Internal__AutoPropGetFunction, __vftable) == 0x0);
@@ -68,6 +70,7 @@ pub struct BSScript__Internal__AutoPropSetFunction {
     /// +0x18 `class:BSFixedString`, semantic; function name (high)
     pub name: crate::BSFixedString,
     pub unknown_20: [u8; 16],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__Internal__AutoPropSetFunction>() == 0x30);
 const _: () = assert!(core::mem::offset_of!(BSScript__Internal__AutoPropSetFunction, __vftable) == 0x0);
@@ -110,6 +113,7 @@ pub struct BSScript__Internal__CodeTasklet {
     pub unknown_44: [u8; 4],
     /// +0x48 `pointer`, semantic; u64 words of the bytecode bit stream (high)
     pub code: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__Internal__CodeTasklet>() == 0x50);
 const _: () = assert!(core::mem::offset_of!(BSScript__Internal__CodeTasklet, __vftable) == 0x0);
@@ -138,6 +142,7 @@ pub struct BSScript__Internal__FunctionMessage {
     pub stack: *mut crate::BSScript__Stack,
     /// +0x10 `pointer`, semantic; BSTSmartPointer<IFuncCallQuery> (null for kind 2) (high)
     pub query: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__Internal__FunctionMessage>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__Internal__FunctionMessage, kind) == 0x0);
@@ -160,6 +165,7 @@ pub struct BSScript__Internal__NativeFunctionStub {
     /// +0x20 `class:BSFixedString`, semantic; state name (high)
     pub stateName: crate::BSFixedString,
     pub unknown_28: [u8; 40],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__Internal__NativeFunctionStub>() == 0x50);
 const _: () = assert!(core::mem::offset_of!(BSScript__Internal__NativeFunctionStub, __vftable) == 0x0);
@@ -220,6 +226,7 @@ pub struct BSScript__Internal__ScriptFunction {
     pub unknown_74: [u8; 4],
     /// +0x78 `pointer`, ctor store, semantic, runtime; u16 source line per instruction index (values above 0xffff clamped to 0xffff) (high)
     pub lineNumbers: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__Internal__ScriptFunction>() == 0x80);
 const _: () = assert!(core::mem::offset_of!(BSScript__Internal__ScriptFunction, __vftable) == 0x0);
@@ -256,6 +263,7 @@ pub struct BSScript__Internal__StackMapEntry {
     pub stack: *mut crate::BSScript__Stack,
     /// +0x10 `pointer`, semantic; next entry of the chain, the sentinel at the end, 0 for an empty slot (high)
     pub next: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__Internal__StackMapEntry>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__Internal__StackMapEntry, stackID) == 0x0);
@@ -271,6 +279,7 @@ pub struct BSScript__Internal__SuspendedStack {
     pub stack: *mut crate::BSScript__Stack,
     /// +0x8 `pointer`, semantic; BSTSmartPointer<IFuncCallQuery> (a CodeTasklet or a RawFuncCallQuery) (high)
     pub query: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__Internal__SuspendedStack>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__Internal__SuspendedStack, stack) == 0x0);

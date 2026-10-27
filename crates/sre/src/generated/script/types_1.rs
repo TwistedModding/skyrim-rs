@@ -9,6 +9,7 @@ use core::ffi::c_void;
 pub struct BSScript__ByteCode__PackedInstructionStream__InstructionFunctor {
     /// +0x0 `vtbl:BSScript::ByteCode::PackedInstructionStream::InstructionFunctor:0`, rtti
     pub __vftable: *const crate::raw::vtables::BSScript__ByteCode__PackedInstructionStream__InstructionFunctor_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BSScript__ByteCode__PackedInstructionStream__InstructionFunctor, __vftable) == 0x0);
 
@@ -35,6 +36,7 @@ pub struct BSScript__ErrorLogger {
     /// +0x90 `undefined8`, ctor store
     pub field_90: u64,
     pub unknown_98: [u8; 24],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__ErrorLogger>() == 0xB0);
 const _: () = assert!(core::mem::offset_of!(BSScript__ErrorLogger, __vftable) == 0x0);
@@ -51,6 +53,7 @@ const _: () = assert!(core::mem::offset_of!(BSScript__ErrorLogger, field_90) == 
 pub struct BSScript__IFindBoundObjectFunctor {
     /// +0x0 `vtbl:BSScript::IFindBoundObjectFunctor:0`, rtti
     pub __vftable: *const crate::raw::vtables::BSScript__IFindBoundObjectFunctor_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BSScript__IFindBoundObjectFunctor, __vftable) == 0x0);
 
@@ -60,6 +63,7 @@ const _: () = assert!(core::mem::offset_of!(BSScript__IFindBoundObjectFunctor, _
 pub struct BSScript__IForEachScriptObjectFunctor {
     /// +0x0 `vtbl:BSScript::IForEachScriptObjectFunctor:0`, rtti
     pub __vftable: *const crate::raw::vtables::BSScript__IForEachScriptObjectFunctor_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BSScript__IForEachScriptObjectFunctor, __vftable) == 0x0);
 
@@ -69,6 +73,7 @@ const _: () = assert!(core::mem::offset_of!(BSScript__IForEachScriptObjectFuncto
 pub struct BSScript__IFreezeQuery {
     /// +0x0 `vtbl:BSScript::IFreezeQuery:0`, rtti
     pub __vftable: *const crate::raw::vtables::BSScript__IFreezeQuery_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__IFreezeQuery>() == 0x8);
 const _: () = assert!(core::mem::offset_of!(BSScript__IFreezeQuery, __vftable) == 0x0);
@@ -80,6 +85,7 @@ const _: () = assert!(core::mem::offset_of!(BSScript__IFreezeQuery, __vftable) =
 pub struct BSScript__IFunction {
     /// +0x0 `vtbl:BSScript::IFunction:0`, rtti
     pub __vftable: *const crate::raw::vtables::BSScript__IFunction_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__IFunction>() == 0x8);
 const _: () = assert!(core::mem::offset_of!(BSScript__IFunction, __vftable) == 0x0);
@@ -90,6 +96,7 @@ const _: () = assert!(core::mem::offset_of!(BSScript__IFunction, __vftable) == 0
 pub struct BSScript__IHandleReaderWriter {
     /// +0x0 `vtbl:BSScript::IHandleReaderWriter:0`, rtti
     pub __vftable: *const crate::raw::vtables::BSScript__IHandleReaderWriter_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BSScript__IHandleReaderWriter, __vftable) == 0x0);
 
@@ -99,6 +106,7 @@ const _: () = assert!(core::mem::offset_of!(BSScript__IHandleReaderWriter, __vft
 pub struct BSScript__ILoader {
     /// +0x0 `vtbl:BSScript::ILoader:0`, rtti
     pub __vftable: *const crate::raw::vtables::BSScript__ILoader_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__ILoader>() == 0x8);
 const _: () = assert!(core::mem::offset_of!(BSScript__ILoader, __vftable) == 0x0);
@@ -109,6 +117,7 @@ const _: () = assert!(core::mem::offset_of!(BSScript__ILoader, __vftable) == 0x0
 pub struct BSScript__IMemoryPagePolicy {
     /// +0x0 `vtbl:BSScript::IMemoryPagePolicy:0`, rtti
     pub __vftable: *const crate::raw::vtables::BSScript__IMemoryPagePolicy_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__IMemoryPagePolicy>() == 0x8);
 const _: () = assert!(core::mem::offset_of!(BSScript__IMemoryPagePolicy, __vftable) == 0x0);
@@ -119,6 +128,7 @@ const _: () = assert!(core::mem::offset_of!(BSScript__IMemoryPagePolicy, __vftab
 pub struct BSScript__IObjectHandlePolicy {
     /// +0x0 `vtbl:BSScript::IObjectHandlePolicy:0`, rtti
     pub __vftable: *const crate::raw::vtables::BSScript__IObjectHandlePolicy_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BSScript__IObjectHandlePolicy, __vftable) == 0x0);
 
@@ -128,6 +138,7 @@ const _: () = assert!(core::mem::offset_of!(BSScript__IObjectHandlePolicy, __vft
 pub struct BSScript__IObjectProcessor {
     /// +0x0 `vtbl:BSScript::IObjectProcessor:0`, rtti
     pub __vftable: *const crate::raw::vtables::BSScript__IObjectProcessor_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__IObjectProcessor>() == 0x8);
 const _: () = assert!(core::mem::offset_of!(BSScript__IObjectProcessor, __vftable) == 0x0);
@@ -138,6 +149,7 @@ const _: () = assert!(core::mem::offset_of!(BSScript__IObjectProcessor, __vftabl
 pub struct BSScript__IProfilePolicy {
     /// +0x0 `vtbl:BSScript::IProfilePolicy:0`, rtti
     pub __vftable: *const crate::raw::vtables::BSScript__IProfilePolicy_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BSScript__IProfilePolicy, __vftable) == 0x0);
 
@@ -147,6 +159,7 @@ const _: () = assert!(core::mem::offset_of!(BSScript__IProfilePolicy, __vftable)
 pub struct BSScript__ISavePatcherInterface {
     /// +0x0 `vtbl:BSScript::ISavePatcherInterface:0`, rtti
     pub __vftable: *const crate::raw::vtables::BSScript__ISavePatcherInterface_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BSScript__ISavePatcherInterface, __vftable) == 0x0);
 
@@ -156,6 +169,7 @@ const _: () = assert!(core::mem::offset_of!(BSScript__ISavePatcherInterface, __v
 pub struct BSScript__IStackCallbackSaveInterface {
     /// +0x0 `vtbl:BSScript::IStackCallbackSaveInterface:0`, rtti
     pub __vftable: *const crate::raw::vtables::BSScript__IStackCallbackSaveInterface_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__IStackCallbackSaveInterface>() == 0x8);
 const _: () = assert!(core::mem::offset_of!(BSScript__IStackCallbackSaveInterface, __vftable) == 0x0);
@@ -168,6 +182,7 @@ pub struct BSScript__IStore {
     /// +0x0 `vtbl:BSScript::IStore:0`, rtti
     pub __vftable: *const crate::raw::vtables::BSScript__IStore_vtable,
     pub unknown_8: [u8; 56],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__IStore>() == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__IStore, __vftable) == 0x0);
@@ -178,6 +193,7 @@ const _: () = assert!(core::mem::offset_of!(BSScript__IStore, __vftable) == 0x0)
 pub struct BSScript__IVMDebugInterface {
     /// +0x0 `vtbl:BSScript::IVMDebugInterface:0`, rtti
     pub __vftable: *const crate::raw::vtables::BSScript__IVMDebugInterface_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__IVMDebugInterface>() == 0x8);
 const _: () = assert!(core::mem::offset_of!(BSScript__IVMDebugInterface, __vftable) == 0x0);
@@ -188,6 +204,7 @@ const _: () = assert!(core::mem::offset_of!(BSScript__IVMDebugInterface, __vftab
 pub struct BSScript__IVMObjectBindInterface {
     /// +0x0 `vtbl:BSScript::IVMObjectBindInterface:0`, rtti
     pub __vftable: *const crate::raw::vtables::BSScript__IVMObjectBindInterface_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__IVMObjectBindInterface>() == 0x8);
 const _: () = assert!(core::mem::offset_of!(BSScript__IVMObjectBindInterface, __vftable) == 0x0);
@@ -198,6 +215,7 @@ const _: () = assert!(core::mem::offset_of!(BSScript__IVMObjectBindInterface, __
 pub struct BSScript__IVMSaveLoadInterface {
     /// +0x0 `vtbl:BSScript::IVMSaveLoadInterface:0`, rtti
     pub __vftable: *const crate::raw::vtables::BSScript__IVMSaveLoadInterface_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__IVMSaveLoadInterface>() == 0x8);
 const _: () = assert!(core::mem::offset_of!(BSScript__IVMSaveLoadInterface, __vftable) == 0x0);
@@ -209,6 +227,7 @@ const _: () = assert!(core::mem::offset_of!(BSScript__IVMSaveLoadInterface, __vf
 pub struct BSScript__IVirtualMachine {
     /// +0x0 `vtbl:BSScript::IVirtualMachine:0`, rtti
     pub __vftable: *const crate::raw::vtables::BSScript__IVirtualMachine_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__IVirtualMachine>() == 0x8);
 const _: () = assert!(core::mem::offset_of!(BSScript__IVirtualMachine, __vftable) == 0x0);
@@ -220,6 +239,7 @@ const _: () = assert!(core::mem::offset_of!(BSScript__IVirtualMachine, __vftable
 pub struct BSScript__Internal__IFuncCallQuery {
     /// +0x0 `vtbl:BSScript::Internal::IFuncCallQuery:0`, rtti
     pub __vftable: *const crate::raw::vtables::BSScript__Internal__IFuncCallQuery_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__Internal__IFuncCallQuery>() == 0x8);
 const _: () = assert!(core::mem::offset_of!(BSScript__Internal__IFuncCallQuery, __vftable) == 0x0);
@@ -246,6 +266,7 @@ pub struct BSScript__Internal__RawFuncCallQuery {
     /// +0x30 `undefined8`, ctor store
     pub field_30: u64,
     pub unknown_38: [u8; 24],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__Internal__RawFuncCallQuery>() == 0x50);
 const _: () = assert!(core::mem::offset_of!(BSScript__Internal__RawFuncCallQuery, __vftable) == 0x0);
@@ -262,6 +283,7 @@ const _: () = assert!(core::mem::offset_of!(BSScript__Internal__RawFuncCallQuery
 pub struct BSScript__Internal___anon_16AAB8A9__OneVariableArgument {
     /// +0x0 `vtbl:BSScript::Internal::_anon_16AAB8A9::OneVariableArgument:0`, rtti
     pub __vftable: *const crate::raw::vtables::BSScript__Internal___anon_16AAB8A9__OneVariableArgument_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BSScript__Internal___anon_16AAB8A9__OneVariableArgument, __vftable) == 0x0);
 
@@ -272,6 +294,7 @@ const _: () = assert!(core::mem::offset_of!(BSScript__Internal___anon_16AAB8A9__
 pub struct BSScript__Internal___anon_16AAB8A9__ZeroArguments {
     /// +0x0 `vtbl:BSScript::Internal::_anon_16AAB8A9::ZeroArguments:0`, rtti
     pub __vftable: *const crate::raw::vtables::BSScript__Internal___anon_16AAB8A9__ZeroArguments_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BSScript__Internal___anon_16AAB8A9__ZeroArguments, __vftable) == 0x0);
 
@@ -307,6 +330,7 @@ pub struct BSScript__LinkerProcessor {
     pub unknown_7C: [u8; 12],
     /// +0x88 `undefined8`, ctor store
     pub field_88: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__LinkerProcessor>() == 0x90);
 const _: () = assert!(core::mem::offset_of!(BSScript__LinkerProcessor, __vftable) == 0x0);
@@ -360,6 +384,7 @@ pub struct BSScript__NativeFunction0_ActiveEffect_Actor____ptr64 {
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction0_ActiveEffect_Actor____ptr64>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction0_ActiveEffect_Actor____ptr64, __vftable) == 0x0);
@@ -416,6 +441,7 @@ pub struct BSScript__NativeFunction0_ActiveEffect_EffectSetting____ptr64 {
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction0_ActiveEffect_EffectSetting____ptr64>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction0_ActiveEffect_EffectSetting____ptr64, __vftable) == 0x0);
@@ -472,6 +498,7 @@ pub struct BSScript__NativeFunction0_ActiveEffect_void {
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction0_ActiveEffect_void>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction0_ActiveEffect_void, __vftable) == 0x0);
@@ -528,6 +555,7 @@ pub struct BSScript__NativeFunction0_Actor_Actor____ptr64 {
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction0_Actor_Actor____ptr64>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction0_Actor_Actor____ptr64, __vftable) == 0x0);
@@ -584,6 +612,7 @@ pub struct BSScript__NativeFunction0_Actor_TESFaction____ptr64 {
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction0_Actor_TESFaction____ptr64>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction0_Actor_TESFaction____ptr64, __vftable) == 0x0);
@@ -640,6 +669,7 @@ pub struct BSScript__NativeFunction0_Actor_TESNPC____ptr64 {
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction0_Actor_TESNPC____ptr64>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction0_Actor_TESNPC____ptr64, __vftable) == 0x0);
@@ -696,6 +726,7 @@ pub struct BSScript__NativeFunction0_Actor_TESObjectARMO____ptr64 {
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction0_Actor_TESObjectARMO____ptr64>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction0_Actor_TESObjectARMO____ptr64, __vftable) == 0x0);
@@ -752,6 +783,7 @@ pub struct BSScript__NativeFunction0_Actor_TESObjectREFR____ptr64 {
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction0_Actor_TESObjectREFR____ptr64>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction0_Actor_TESObjectREFR____ptr64, __vftable) == 0x0);
@@ -808,6 +840,7 @@ pub struct BSScript__NativeFunction0_Actor_TESPackage____ptr64 {
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction0_Actor_TESPackage____ptr64>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction0_Actor_TESPackage____ptr64, __vftable) == 0x0);
@@ -864,6 +897,7 @@ pub struct BSScript__NativeFunction0_Actor_TESRace____ptr64 {
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction0_Actor_TESRace____ptr64>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction0_Actor_TESRace____ptr64, __vftable) == 0x0);
@@ -920,6 +954,7 @@ pub struct BSScript__NativeFunction0_Actor_TESShout____ptr64 {
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction0_Actor_TESShout____ptr64>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction0_Actor_TESShout____ptr64, __vftable) == 0x0);
@@ -976,6 +1011,7 @@ pub struct BSScript__NativeFunction0_Actor_bool {
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction0_Actor_bool>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction0_Actor_bool, __vftable) == 0x0);
@@ -1032,6 +1068,7 @@ pub struct BSScript__NativeFunction0_Actor_float {
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction0_Actor_float>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction0_Actor_float, __vftable) == 0x0);
@@ -1088,6 +1125,7 @@ pub struct BSScript__NativeFunction0_Actor_int {
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction0_Actor_int>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction0_Actor_int, __vftable) == 0x0);
@@ -1144,6 +1182,7 @@ pub struct BSScript__NativeFunction0_Actor_unsigned_int {
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction0_Actor_unsigned_int>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction0_Actor_unsigned_int, __vftable) == 0x0);
@@ -1200,6 +1239,7 @@ pub struct BSScript__NativeFunction0_Actor_void {
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction0_Actor_void>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction0_Actor_void, __vftable) == 0x0);
@@ -1256,6 +1296,7 @@ pub struct BSScript__NativeFunction0_AlchemyItem_bool {
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction0_AlchemyItem_bool>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction0_AlchemyItem_bool, __vftable) == 0x0);
@@ -1312,6 +1353,7 @@ pub struct BSScript__NativeFunction0_BGSBaseAlias_TESQuest____ptr64 {
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction0_BGSBaseAlias_TESQuest____ptr64>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction0_BGSBaseAlias_TESQuest____ptr64, __vftable) == 0x0);
@@ -1368,6 +1410,7 @@ pub struct BSScript__NativeFunction0_BGSBaseAlias_void {
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction0_BGSBaseAlias_void>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction0_BGSBaseAlias_void, __vftable) == 0x0);
@@ -1424,6 +1467,7 @@ pub struct BSScript__NativeFunction0_BGSListForm_unsigned_int {
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction0_BGSListForm_unsigned_int>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction0_BGSListForm_unsigned_int, __vftable) == 0x0);
@@ -1480,6 +1524,7 @@ pub struct BSScript__NativeFunction0_BGSListForm_void {
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction0_BGSListForm_void>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction0_BGSListForm_void, __vftable) == 0x0);
@@ -1536,6 +1581,7 @@ pub struct BSScript__NativeFunction0_BGSLocAlias_BGSLocation____ptr64 {
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction0_BGSLocAlias_BGSLocation____ptr64>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction0_BGSLocAlias_BGSLocation____ptr64, __vftable) == 0x0);
@@ -1592,6 +1638,7 @@ pub struct BSScript__NativeFunction0_BGSLocAlias_void {
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction0_BGSLocAlias_void>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction0_BGSLocAlias_void, __vftable) == 0x0);
@@ -1648,6 +1695,7 @@ pub struct BSScript__NativeFunction0_BGSLocation_bool {
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction0_BGSLocation_bool>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction0_BGSLocation_bool, __vftable) == 0x0);
@@ -1704,6 +1752,7 @@ pub struct BSScript__NativeFunction0_BGSMusicType_void {
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction0_BGSMusicType_void>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction0_BGSMusicType_void, __vftable) == 0x0);
@@ -1760,6 +1809,7 @@ pub struct BSScript__NativeFunction0_BGSRefAlias_TESObjectREFR____ptr64 {
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction0_BGSRefAlias_TESObjectREFR____ptr64>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction0_BGSRefAlias_TESObjectREFR____ptr64, __vftable) == 0x0);
@@ -1816,6 +1866,7 @@ pub struct BSScript__NativeFunction0_BGSRefAlias_void {
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction0_BGSRefAlias_void>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction0_BGSRefAlias_void, __vftable) == 0x0);
@@ -1872,6 +1923,7 @@ pub struct BSScript__NativeFunction0_BGSScene_TESQuest____ptr64 {
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction0_BGSScene_TESQuest____ptr64>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction0_BGSScene_TESQuest____ptr64, __vftable) == 0x0);
@@ -1928,6 +1980,7 @@ pub struct BSScript__NativeFunction0_BGSScene_bool {
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction0_BGSScene_bool>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction0_BGSScene_bool, __vftable) == 0x0);
@@ -1984,6 +2037,7 @@ pub struct BSScript__NativeFunction0_BGSScene_void {
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction0_BGSScene_void>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction0_BGSScene_void, __vftable) == 0x0);
@@ -2040,6 +2094,7 @@ pub struct BSScript__NativeFunction0_BGSSoundCategory_void {
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction0_BGSSoundCategory_void>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction0_BGSSoundCategory_void, __vftable) == 0x0);
@@ -2096,6 +2151,7 @@ pub struct BSScript__NativeFunction0_BSScript__StaticFunctionTag_Actor____ptr64 
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction0_BSScript__StaticFunctionTag_Actor____ptr64>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction0_BSScript__StaticFunctionTag_Actor____ptr64, __vftable) == 0x0);
@@ -2152,6 +2208,7 @@ pub struct BSScript__NativeFunction0_BSScript__StaticFunctionTag_TESObjectREFR__
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction0_BSScript__StaticFunctionTag_TESObjectREFR____ptr64>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction0_BSScript__StaticFunctionTag_TESObjectREFR____ptr64, __vftable) == 0x0);
@@ -2208,6 +2265,7 @@ pub struct BSScript__NativeFunction0_BSScript__StaticFunctionTag_TESWeather____p
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction0_BSScript__StaticFunctionTag_TESWeather____ptr64>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction0_BSScript__StaticFunctionTag_TESWeather____ptr64, __vftable) == 0x0);
@@ -2264,6 +2322,7 @@ pub struct BSScript__NativeFunction0_BSScript__StaticFunctionTag_bool {
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction0_BSScript__StaticFunctionTag_bool>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction0_BSScript__StaticFunctionTag_bool, __vftable) == 0x0);
@@ -2320,6 +2379,7 @@ pub struct BSScript__NativeFunction0_BSScript__StaticFunctionTag_float {
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction0_BSScript__StaticFunctionTag_float>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction0_BSScript__StaticFunctionTag_float, __vftable) == 0x0);
@@ -2376,6 +2436,7 @@ pub struct BSScript__NativeFunction0_BSScript__StaticFunctionTag_unsigned_int {
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction0_BSScript__StaticFunctionTag_unsigned_int>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction0_BSScript__StaticFunctionTag_unsigned_int, __vftable) == 0x0);
@@ -2432,6 +2493,7 @@ pub struct BSScript__NativeFunction0_BSScript__StaticFunctionTag_void {
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction0_BSScript__StaticFunctionTag_void>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction0_BSScript__StaticFunctionTag_void, __vftable) == 0x0);
@@ -2488,6 +2550,7 @@ pub struct BSScript__NativeFunction0_EffectSetting_bool {
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction0_EffectSetting_bool>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction0_EffectSetting_bool, __vftable) == 0x0);
@@ -2544,6 +2607,7 @@ pub struct BSScript__NativeFunction0_EnchantmentItem_bool {
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction0_EnchantmentItem_bool>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction0_EnchantmentItem_bool, __vftable) == 0x0);
@@ -2600,6 +2664,7 @@ pub struct BSScript__NativeFunction0_IngredientItem_bool {
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction0_IngredientItem_bool>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction0_IngredientItem_bool, __vftable) == 0x0);
@@ -2656,6 +2721,7 @@ pub struct BSScript__NativeFunction0_IngredientItem_unsigned_int {
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction0_IngredientItem_unsigned_int>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction0_IngredientItem_unsigned_int, __vftable) == 0x0);
@@ -2712,6 +2778,7 @@ pub struct BSScript__NativeFunction0_IngredientItem_void {
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction0_IngredientItem_void>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction0_IngredientItem_void, __vftable) == 0x0);
@@ -2768,6 +2835,7 @@ pub struct BSScript__NativeFunction0_SpellItem_bool {
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction0_SpellItem_bool>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction0_SpellItem_bool, __vftable) == 0x0);
@@ -2824,6 +2892,7 @@ pub struct BSScript__NativeFunction0_SpellItem_void {
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction0_SpellItem_void>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction0_SpellItem_void, __vftable) == 0x0);
@@ -2880,6 +2949,7 @@ pub struct BSScript__NativeFunction0_TESFaction_bool {
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction0_TESFaction_bool>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction0_TESFaction_bool, __vftable) == 0x0);
@@ -2936,6 +3006,7 @@ pub struct BSScript__NativeFunction0_TESFaction_unsigned_int {
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction0_TESFaction_unsigned_int>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction0_TESFaction_unsigned_int, __vftable) == 0x0);
@@ -2992,6 +3063,7 @@ pub struct BSScript__NativeFunction0_TESFaction_void {
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction0_TESFaction_void>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction0_TESFaction_void, __vftable) == 0x0);
@@ -3048,6 +3120,7 @@ pub struct BSScript__NativeFunction0_TESForm_bool {
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction0_TESForm_bool>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction0_TESForm_bool, __vftable) == 0x0);
@@ -3104,6 +3177,7 @@ pub struct BSScript__NativeFunction0_TESForm_int {
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction0_TESForm_int>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction0_TESForm_int, __vftable) == 0x0);
@@ -3160,6 +3234,7 @@ pub struct BSScript__NativeFunction0_TESForm_unsigned_int {
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction0_TESForm_unsigned_int>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction0_TESForm_unsigned_int, __vftable) == 0x0);
@@ -3216,6 +3291,7 @@ pub struct BSScript__NativeFunction0_TESForm_void {
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction0_TESForm_void>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction0_TESForm_void, __vftable) == 0x0);
@@ -3272,6 +3348,7 @@ pub struct BSScript__NativeFunction0_TESGlobal_float {
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction0_TESGlobal_float>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction0_TESGlobal_float, __vftable) == 0x0);
@@ -3328,6 +3405,7 @@ pub struct BSScript__NativeFunction0_TESImageSpaceModifier_void {
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction0_TESImageSpaceModifier_void>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction0_TESImageSpaceModifier_void, __vftable) == 0x0);
@@ -3384,6 +3462,7 @@ pub struct BSScript__NativeFunction0_TESLevCharacter_void {
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction0_TESLevCharacter_void>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction0_TESLevCharacter_void, __vftable) == 0x0);
@@ -3440,6 +3519,7 @@ pub struct BSScript__NativeFunction0_TESLevItem_void {
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction0_TESLevItem_void>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction0_TESLevItem_void, __vftable) == 0x0);
@@ -3496,6 +3576,7 @@ pub struct BSScript__NativeFunction0_TESLevSpell_void {
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction0_TESLevSpell_void>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction0_TESLevSpell_void, __vftable) == 0x0);
@@ -3552,6 +3633,7 @@ pub struct BSScript__NativeFunction0_TESNPC_BGSListForm____ptr64 {
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction0_TESNPC_BGSListForm____ptr64>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction0_TESNPC_BGSListForm____ptr64, __vftable) == 0x0);
@@ -3608,6 +3690,7 @@ pub struct BSScript__NativeFunction0_TESNPC_TESClass____ptr64 {
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction0_TESNPC_TESClass____ptr64>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction0_TESNPC_TESClass____ptr64, __vftable) == 0x0);
@@ -3664,6 +3747,7 @@ pub struct BSScript__NativeFunction0_TESNPC_TESRace____ptr64 {
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction0_TESNPC_TESRace____ptr64>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction0_TESNPC_TESRace____ptr64, __vftable) == 0x0);
@@ -3720,6 +3804,7 @@ pub struct BSScript__NativeFunction0_TESNPC_bool {
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction0_TESNPC_bool>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction0_TESNPC_bool, __vftable) == 0x0);
@@ -3776,6 +3861,7 @@ pub struct BSScript__NativeFunction0_TESNPC_int {
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction0_TESNPC_int>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction0_TESNPC_int, __vftable) == 0x0);
@@ -3832,6 +3918,7 @@ pub struct BSScript__NativeFunction0_TESObjectARMO_float {
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction0_TESObjectARMO_float>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction0_TESObjectARMO_float, __vftable) == 0x0);
@@ -3888,6 +3975,7 @@ pub struct BSScript__NativeFunction0_TESObjectCELL_TESFaction____ptr64 {
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction0_TESObjectCELL_TESFaction____ptr64>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction0_TESObjectCELL_TESFaction____ptr64, __vftable) == 0x0);
@@ -3944,6 +4032,7 @@ pub struct BSScript__NativeFunction0_TESObjectCELL_TESNPC____ptr64 {
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction0_TESObjectCELL_TESNPC____ptr64>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction0_TESObjectCELL_TESNPC____ptr64, __vftable) == 0x0);
@@ -4000,6 +4089,7 @@ pub struct BSScript__NativeFunction0_TESObjectCELL_bool {
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction0_TESObjectCELL_bool>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction0_TESObjectCELL_bool, __vftable) == 0x0);
@@ -4056,6 +4146,7 @@ pub struct BSScript__NativeFunction0_TESObjectCELL_void {
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction0_TESObjectCELL_void>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction0_TESObjectCELL_void, __vftable) == 0x0);
@@ -4112,6 +4203,7 @@ pub struct BSScript__NativeFunction0_TESObjectLIGH_float {
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction0_TESObjectLIGH_float>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction0_TESObjectLIGH_float, __vftable) == 0x0);
@@ -4168,6 +4260,7 @@ pub struct BSScript__NativeFunction0_TESObjectREFR_BGSLocation____ptr64 {
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction0_TESObjectREFR_BGSLocation____ptr64>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction0_TESObjectREFR_BGSLocation____ptr64, __vftable) == 0x0);
@@ -4224,6 +4317,7 @@ pub struct BSScript__NativeFunction0_TESObjectREFR_BGSScene____ptr64 {
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction0_TESObjectREFR_BGSScene____ptr64>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction0_TESObjectREFR_BGSScene____ptr64, __vftable) == 0x0);
@@ -4280,6 +4374,7 @@ pub struct BSScript__NativeFunction0_TESObjectREFR_BGSVoiceType____ptr64 {
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction0_TESObjectREFR_BGSVoiceType____ptr64>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction0_TESObjectREFR_BGSVoiceType____ptr64, __vftable) == 0x0);
@@ -4336,6 +4431,7 @@ pub struct BSScript__NativeFunction0_TESObjectREFR_TESFaction____ptr64 {
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction0_TESObjectREFR_TESFaction____ptr64>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction0_TESObjectREFR_TESFaction____ptr64, __vftable) == 0x0);
@@ -4392,6 +4488,7 @@ pub struct BSScript__NativeFunction0_TESObjectREFR_TESForm____ptr64 {
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction0_TESObjectREFR_TESForm____ptr64>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction0_TESObjectREFR_TESForm____ptr64, __vftable) == 0x0);
@@ -4448,6 +4545,7 @@ pub struct BSScript__NativeFunction0_TESObjectREFR_TESKey____ptr64 {
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction0_TESObjectREFR_TESKey____ptr64>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction0_TESObjectREFR_TESKey____ptr64, __vftable) == 0x0);
@@ -4504,6 +4602,7 @@ pub struct BSScript__NativeFunction0_TESObjectREFR_TESNPC____ptr64 {
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction0_TESObjectREFR_TESNPC____ptr64>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction0_TESObjectREFR_TESNPC____ptr64, __vftable) == 0x0);
@@ -4560,6 +4659,7 @@ pub struct BSScript__NativeFunction0_TESObjectREFR_TESObjectCELL____ptr64 {
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction0_TESObjectREFR_TESObjectCELL____ptr64>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction0_TESObjectREFR_TESObjectCELL____ptr64, __vftable) == 0x0);
@@ -4616,6 +4716,7 @@ pub struct BSScript__NativeFunction0_TESObjectREFR_TESWorldSpace____ptr64 {
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction0_TESObjectREFR_TESWorldSpace____ptr64>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction0_TESObjectREFR_TESWorldSpace____ptr64, __vftable) == 0x0);
@@ -4672,6 +4773,7 @@ pub struct BSScript__NativeFunction0_TESObjectREFR_bool {
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction0_TESObjectREFR_bool>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction0_TESObjectREFR_bool, __vftable) == 0x0);
@@ -4728,6 +4830,7 @@ pub struct BSScript__NativeFunction0_TESObjectREFR_float {
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction0_TESObjectREFR_float>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction0_TESObjectREFR_float, __vftable) == 0x0);
@@ -4784,6 +4887,7 @@ pub struct BSScript__NativeFunction0_TESObjectREFR_int {
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction0_TESObjectREFR_int>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction0_TESObjectREFR_int, __vftable) == 0x0);
@@ -4840,6 +4944,7 @@ pub struct BSScript__NativeFunction0_TESObjectREFR_unsigned_int {
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction0_TESObjectREFR_unsigned_int>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction0_TESObjectREFR_unsigned_int, __vftable) == 0x0);
@@ -4896,6 +5001,7 @@ pub struct BSScript__NativeFunction0_TESObjectREFR_void {
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction0_TESObjectREFR_void>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction0_TESObjectREFR_void, __vftable) == 0x0);
@@ -4952,6 +5058,7 @@ pub struct BSScript__NativeFunction0_TESPackage_TESPackage_const____ptr64 {
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction0_TESPackage_TESPackage_const____ptr64>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction0_TESPackage_TESPackage_const____ptr64, __vftable) == 0x0);
@@ -5008,6 +5115,7 @@ pub struct BSScript__NativeFunction0_TESPackage_TESQuest____ptr64 {
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction0_TESPackage_TESQuest____ptr64>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction0_TESPackage_TESQuest____ptr64, __vftable) == 0x0);
@@ -5064,6 +5172,7 @@ pub struct BSScript__NativeFunction0_TESQuest_bool {
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction0_TESQuest_bool>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction0_TESQuest_bool, __vftable) == 0x0);
@@ -5120,6 +5229,7 @@ pub struct BSScript__NativeFunction0_TESQuest_unsigned_int {
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction0_TESQuest_unsigned_int>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction0_TESQuest_unsigned_int, __vftable) == 0x0);
@@ -5176,6 +5286,7 @@ pub struct BSScript__NativeFunction0_TESQuest_void {
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction0_TESQuest_void>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction0_TESQuest_void, __vftable) == 0x0);
@@ -5232,6 +5343,7 @@ pub struct BSScript__NativeFunction0_TESTopic_void {
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction0_TESTopic_void>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction0_TESTopic_void, __vftable) == 0x0);
@@ -5288,6 +5400,7 @@ pub struct BSScript__NativeFunction0_TESTopicInfo_TESQuest____ptr64 {
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction0_TESTopicInfo_TESQuest____ptr64>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction0_TESTopicInfo_TESQuest____ptr64, __vftable) == 0x0);
@@ -5344,6 +5457,7 @@ pub struct BSScript__NativeFunction0_TESWeather_int {
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction0_TESWeather_int>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction0_TESWeather_int, __vftable) == 0x0);
@@ -5400,6 +5514,7 @@ pub struct BSScript__NativeFunction10_BSScript__StaticFunctionTag_bool_TESObject
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction10_BSScript__StaticFunctionTag_bool_TESObjectREFR____ptr64_BSFixedString_9e413a14af52>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction10_BSScript__StaticFunctionTag_bool_TESObjectREFR____ptr64_BSFixedString_9e413a14af52, __vftable) == 0x0);
@@ -5456,6 +5571,7 @@ pub struct BSScript__NativeFunction11_TESObjectREFR_void_TESObjectREFR____ptr64_
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction11_TESObjectREFR_void_TESObjectREFR____ptr64_float_float_float_float_flo_693c6ff4f2d3>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction11_TESObjectREFR_void_TESObjectREFR____ptr64_float_float_float_float_flo_693c6ff4f2d3, __vftable) == 0x0);
@@ -5512,6 +5628,7 @@ pub struct BSScript__NativeFunction1_ActiveEffect_void_TESForm____ptr64 {
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction1_ActiveEffect_void_TESForm____ptr64>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_ActiveEffect_void_TESForm____ptr64, __vftable) == 0x0);
@@ -5568,6 +5685,7 @@ pub struct BSScript__NativeFunction1_ActiveEffect_void_float {
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction1_ActiveEffect_void_float>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_ActiveEffect_void_float, __vftable) == 0x0);
@@ -5624,6 +5742,7 @@ pub struct BSScript__NativeFunction1_Actor_SpellItem____ptr64_unsigned_int {
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction1_Actor_SpellItem____ptr64_unsigned_int>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_Actor_SpellItem____ptr64_unsigned_int, __vftable) == 0x0);
@@ -5680,6 +5799,7 @@ pub struct BSScript__NativeFunction1_Actor_TESObjectARMO____ptr64_unsigned_int {
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction1_Actor_TESObjectARMO____ptr64_unsigned_int>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_Actor_TESObjectARMO____ptr64_unsigned_int, __vftable) == 0x0);
@@ -5736,6 +5856,7 @@ pub struct BSScript__NativeFunction1_Actor_TESObjectWEAP____ptr64_bool {
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction1_Actor_TESObjectWEAP____ptr64_bool>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_Actor_TESObjectWEAP____ptr64_bool, __vftable) == 0x0);
@@ -5792,6 +5913,7 @@ pub struct BSScript__NativeFunction1_Actor_bool_Actor____ptr64 {
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction1_Actor_bool_Actor____ptr64>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_Actor_bool_Actor____ptr64, __vftable) == 0x0);
@@ -5848,6 +5970,7 @@ pub struct BSScript__NativeFunction1_Actor_bool_BGSKeyword____ptr64 {
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction1_Actor_bool_BGSKeyword____ptr64>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_Actor_bool_BGSKeyword____ptr64, __vftable) == 0x0);
@@ -5904,6 +6027,7 @@ pub struct BSScript__NativeFunction1_Actor_bool_BGSPerk____ptr64 {
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction1_Actor_bool_BGSPerk____ptr64>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_Actor_bool_BGSPerk____ptr64, __vftable) == 0x0);
@@ -5960,6 +6084,7 @@ pub struct BSScript__NativeFunction1_Actor_bool_EffectSetting____ptr64 {
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction1_Actor_bool_EffectSetting____ptr64>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_Actor_bool_EffectSetting____ptr64, __vftable) == 0x0);
@@ -6016,6 +6141,7 @@ pub struct BSScript__NativeFunction1_Actor_bool_SpellItem____ptr64 {
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction1_Actor_bool_SpellItem____ptr64>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_Actor_bool_SpellItem____ptr64, __vftable) == 0x0);
@@ -6072,6 +6198,7 @@ pub struct BSScript__NativeFunction1_Actor_bool_TESFaction____ptr64 {
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction1_Actor_bool_TESFaction____ptr64>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_Actor_bool_TESFaction____ptr64, __vftable) == 0x0);
@@ -6128,6 +6255,7 @@ pub struct BSScript__NativeFunction1_Actor_bool_TESForm____ptr64 {
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction1_Actor_bool_TESForm____ptr64>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_Actor_bool_TESForm____ptr64, __vftable) == 0x0);
@@ -6184,6 +6312,7 @@ pub struct BSScript__NativeFunction1_Actor_bool_TESIdleForm____ptr64 {
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction1_Actor_bool_TESIdleForm____ptr64>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_Actor_bool_TESIdleForm____ptr64, __vftable) == 0x0);
@@ -6240,6 +6369,7 @@ pub struct BSScript__NativeFunction1_Actor_bool_TESObjectREFR____ptr64 {
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction1_Actor_bool_TESObjectREFR____ptr64>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_Actor_bool_TESObjectREFR____ptr64, __vftable) == 0x0);
@@ -6296,6 +6426,7 @@ pub struct BSScript__NativeFunction1_Actor_bool_TESShout____ptr64 {
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction1_Actor_bool_TESShout____ptr64>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_Actor_bool_TESShout____ptr64, __vftable) == 0x0);
@@ -6352,6 +6483,7 @@ pub struct BSScript__NativeFunction1_Actor_float_BSFixedString_const____ptr64 {
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction1_Actor_float_BSFixedString_const____ptr64>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_Actor_float_BSFixedString_const____ptr64, __vftable) == 0x0);
@@ -6408,6 +6540,7 @@ pub struct BSScript__NativeFunction1_Actor_int_Actor____ptr64 {
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction1_Actor_int_Actor____ptr64>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_Actor_int_Actor____ptr64, __vftable) == 0x0);
@@ -6464,6 +6597,7 @@ pub struct BSScript__NativeFunction1_Actor_int_TESFaction____ptr64 {
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction1_Actor_int_TESFaction____ptr64>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_Actor_int_TESFaction____ptr64, __vftable) == 0x0);
@@ -6520,6 +6654,7 @@ pub struct BSScript__NativeFunction1_Actor_int_unsigned_int {
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction1_Actor_int_unsigned_int>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_Actor_int_unsigned_int, __vftable) == 0x0);
@@ -6576,6 +6711,7 @@ pub struct BSScript__NativeFunction1_Actor_unsigned_int_Actor____ptr64 {
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction1_Actor_unsigned_int_Actor____ptr64>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_Actor_unsigned_int_Actor____ptr64, __vftable) == 0x0);
@@ -6632,6 +6768,7 @@ pub struct BSScript__NativeFunction1_Actor_void_Actor____ptr64 {
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction1_Actor_void_Actor____ptr64>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_Actor_void_Actor____ptr64, __vftable) == 0x0);
@@ -6688,6 +6825,7 @@ pub struct BSScript__NativeFunction1_Actor_void_BGSPerk____ptr64 {
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction1_Actor_void_BGSPerk____ptr64>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_Actor_void_BGSPerk____ptr64, __vftable) == 0x0);
@@ -6744,6 +6882,7 @@ pub struct BSScript__NativeFunction1_Actor_void_BGSTextureSet____ptr64 {
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction1_Actor_void_BGSTextureSet____ptr64>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_Actor_void_BGSTextureSet____ptr64, __vftable) == 0x0);
@@ -6800,6 +6939,7 @@ pub struct BSScript__NativeFunction1_Actor_void_BSFixedString_const____ptr64 {
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction1_Actor_void_BSFixedString_const____ptr64>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_Actor_void_BSFixedString_const____ptr64, __vftable) == 0x0);
@@ -6856,6 +6996,7 @@ pub struct BSScript__NativeFunction1_Actor_void_TESFaction____ptr64 {
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction1_Actor_void_TESFaction____ptr64>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_Actor_void_TESFaction____ptr64, __vftable) == 0x0);
@@ -6912,6 +7053,7 @@ pub struct BSScript__NativeFunction1_Actor_void_TESForm____ptr64 {
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction1_Actor_void_TESForm____ptr64>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_Actor_void_TESForm____ptr64, __vftable) == 0x0);
@@ -6968,6 +7110,7 @@ pub struct BSScript__NativeFunction1_Actor_void_TESObjectREFR____ptr64 {
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction1_Actor_void_TESObjectREFR____ptr64>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_Actor_void_TESObjectREFR____ptr64, __vftable) == 0x0);
@@ -7024,6 +7167,7 @@ pub struct BSScript__NativeFunction1_Actor_void_TESRace____ptr64 {
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction1_Actor_void_TESRace____ptr64>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_Actor_void_TESRace____ptr64, __vftable) == 0x0);
@@ -7080,6 +7224,7 @@ pub struct BSScript__NativeFunction1_Actor_void_TESShout____ptr64 {
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction1_Actor_void_TESShout____ptr64>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_Actor_void_TESShout____ptr64, __vftable) == 0x0);
@@ -7136,6 +7281,7 @@ pub struct BSScript__NativeFunction1_Actor_void_bool {
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction1_Actor_void_bool>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_Actor_void_bool, __vftable) == 0x0);
@@ -7192,6 +7338,7 @@ pub struct BSScript__NativeFunction1_Actor_void_float {
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction1_Actor_void_float>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_Actor_void_float, __vftable) == 0x0);
@@ -7248,6 +7395,7 @@ pub struct BSScript__NativeFunction1_Actor_void_unsigned_int {
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction1_Actor_void_unsigned_int>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_Actor_void_unsigned_int, __vftable) == 0x0);
@@ -7304,6 +7452,7 @@ pub struct BSScript__NativeFunction1_BGSBaseAlias_void_float {
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction1_BGSBaseAlias_void_float>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_BGSBaseAlias_void_float, __vftable) == 0x0);
@@ -7360,6 +7509,7 @@ pub struct BSScript__NativeFunction1_BGSListForm_TESForm____ptr64_unsigned_int {
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction1_BGSListForm_TESForm____ptr64_unsigned_int>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_BGSListForm_TESForm____ptr64_unsigned_int, __vftable) == 0x0);
@@ -7416,6 +7566,7 @@ pub struct BSScript__NativeFunction1_BGSListForm_bool_TESForm____ptr64 {
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction1_BGSListForm_bool_TESForm____ptr64>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_BGSListForm_bool_TESForm____ptr64, __vftable) == 0x0);
@@ -7472,6 +7623,7 @@ pub struct BSScript__NativeFunction1_BGSListForm_int_TESForm____ptr64 {
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction1_BGSListForm_int_TESForm____ptr64>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_BGSListForm_int_TESForm____ptr64, __vftable) == 0x0);
@@ -7528,6 +7680,7 @@ pub struct BSScript__NativeFunction1_BGSListForm_void_TESForm____ptr64 {
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction1_BGSListForm_void_TESForm____ptr64>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_BGSListForm_void_TESForm____ptr64, __vftable) == 0x0);
@@ -7584,6 +7737,7 @@ pub struct BSScript__NativeFunction1_BGSLocAlias_void_BGSLocation____ptr64 {
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction1_BGSLocAlias_void_BGSLocation____ptr64>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_BGSLocAlias_void_BGSLocation____ptr64, __vftable) == 0x0);
@@ -7640,6 +7794,7 @@ pub struct BSScript__NativeFunction1_BGSLocation_bool_BGSLocation____ptr64 {
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction1_BGSLocation_bool_BGSLocation____ptr64>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_BGSLocation_bool_BGSLocation____ptr64, __vftable) == 0x0);
@@ -7696,6 +7851,7 @@ pub struct BSScript__NativeFunction1_BGSLocation_bool_BGSLocationRefType____ptr6
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction1_BGSLocation_bool_BGSLocationRefType____ptr64>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_BGSLocation_bool_BGSLocationRefType____ptr64, __vftable) == 0x0);
@@ -7752,6 +7908,7 @@ pub struct BSScript__NativeFunction1_BGSLocation_float_BGSKeyword____ptr64 {
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction1_BGSLocation_float_BGSKeyword____ptr64>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_BGSLocation_float_BGSKeyword____ptr64, __vftable) == 0x0);
@@ -7808,6 +7965,7 @@ pub struct BSScript__NativeFunction1_BGSLocation_unsigned_int_BGSLocationRefType
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction1_BGSLocation_unsigned_int_BGSLocationRefType____ptr64>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_BGSLocation_unsigned_int_BGSLocationRefType____ptr64, __vftable) == 0x0);
@@ -7864,6 +8022,7 @@ pub struct BSScript__NativeFunction1_BGSLocation_void_bool {
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction1_BGSLocation_void_bool>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_BGSLocation_void_bool, __vftable) == 0x0);
@@ -7920,6 +8079,7 @@ pub struct BSScript__NativeFunction1_BGSRefAlias_void_TESForm____ptr64 {
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction1_BGSRefAlias_void_TESForm____ptr64>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_BGSRefAlias_void_TESForm____ptr64, __vftable) == 0x0);
@@ -7976,6 +8136,7 @@ pub struct BSScript__NativeFunction1_BGSRefAlias_void_TESObjectREFR____ptr64 {
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction1_BGSRefAlias_void_TESObjectREFR____ptr64>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_BGSRefAlias_void_TESObjectREFR____ptr64, __vftable) == 0x0);
@@ -8032,6 +8193,7 @@ pub struct BSScript__NativeFunction1_BGSReferenceEffect_void_TESObjectREFR____pt
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction1_BGSReferenceEffect_void_TESObjectREFR____ptr64>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_BGSReferenceEffect_void_TESObjectREFR____ptr64, __vftable) == 0x0);
@@ -8088,6 +8250,7 @@ pub struct BSScript__NativeFunction1_BGSScene_bool_unsigned_int {
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction1_BGSScene_bool_unsigned_int>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_BGSScene_bool_unsigned_int, __vftable) == 0x0);
@@ -8144,6 +8307,7 @@ pub struct BSScript__NativeFunction1_BGSShaderParticleGeometryData_void_float {
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction1_BGSShaderParticleGeometryData_void_float>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_BGSShaderParticleGeometryData_void_float, __vftable) == 0x0);
@@ -8200,6 +8364,7 @@ pub struct BSScript__NativeFunction1_BGSSoundCategory_void_float {
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction1_BGSSoundCategory_void_float>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_BGSSoundCategory_void_float, __vftable) == 0x0);
@@ -8256,6 +8421,7 @@ pub struct BSScript__NativeFunction1_BSScript__StaticFunctionTag_BSFixedString_c
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction1_BSScript__StaticFunctionTag_BSFixedString_const____ptr64_unsigned_int>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_BSScript__StaticFunctionTag_BSFixedString_const____ptr64_unsigned_int, __vftable) == 0x0);
@@ -8312,6 +8478,7 @@ pub struct BSScript__NativeFunction1_BSScript__StaticFunctionTag_TESForm____ptr6
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction1_BSScript__StaticFunctionTag_TESForm____ptr64_unsigned_int>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_BSScript__StaticFunctionTag_TESForm____ptr64_unsigned_int, __vftable) == 0x0);
@@ -8368,6 +8535,7 @@ pub struct BSScript__NativeFunction1_BSScript__StaticFunctionTag_TESWeather____p
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction1_BSScript__StaticFunctionTag_TESWeather____ptr64_unsigned_int>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_BSScript__StaticFunctionTag_TESWeather____ptr64_unsigned_int, __vftable) == 0x0);
@@ -8424,6 +8592,7 @@ pub struct BSScript__NativeFunction1_BSScript__StaticFunctionTag_bool_BSFixedStr
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction1_BSScript__StaticFunctionTag_bool_BSFixedString_const____ptr64>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_BSScript__StaticFunctionTag_bool_BSFixedString_const____ptr64, __vftable) == 0x0);
@@ -8480,6 +8649,7 @@ pub struct BSScript__NativeFunction1_BSScript__StaticFunctionTag_bool_TESWordOfP
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction1_BSScript__StaticFunctionTag_bool_TESWordOfPower____ptr64>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_BSScript__StaticFunctionTag_bool_TESWordOfPower____ptr64, __vftable) == 0x0);
@@ -8536,6 +8706,7 @@ pub struct BSScript__NativeFunction1_BSScript__StaticFunctionTag_bool_float {
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction1_BSScript__StaticFunctionTag_bool_float>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_BSScript__StaticFunctionTag_bool_float, __vftable) == 0x0);
@@ -8592,6 +8763,7 @@ pub struct BSScript__NativeFunction1_BSScript__StaticFunctionTag_bool_unsigned_i
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction1_BSScript__StaticFunctionTag_bool_unsigned_int>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_BSScript__StaticFunctionTag_bool_unsigned_int, __vftable) == 0x0);
@@ -8648,6 +8820,7 @@ pub struct BSScript__NativeFunction1_BSScript__StaticFunctionTag_float_BSFixedSt
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction1_BSScript__StaticFunctionTag_float_BSFixedString_const____ptr64>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_BSScript__StaticFunctionTag_float_BSFixedString_const____ptr64, __vftable) == 0x0);
@@ -8704,6 +8877,7 @@ pub struct BSScript__NativeFunction1_BSScript__StaticFunctionTag_float_float {
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction1_BSScript__StaticFunctionTag_float_float>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_BSScript__StaticFunctionTag_float_float, __vftable) == 0x0);
@@ -8760,6 +8934,7 @@ pub struct BSScript__NativeFunction1_BSScript__StaticFunctionTag_int_BSFixedStri
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction1_BSScript__StaticFunctionTag_int_BSFixedString_const____ptr64>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_BSScript__StaticFunctionTag_int_BSFixedString_const____ptr64, __vftable) == 0x0);
@@ -8816,6 +8991,7 @@ pub struct BSScript__NativeFunction1_BSScript__StaticFunctionTag_int_float {
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction1_BSScript__StaticFunctionTag_int_float>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_BSScript__StaticFunctionTag_int_float, __vftable) == 0x0);
@@ -8872,6 +9048,7 @@ pub struct BSScript__NativeFunction1_BSScript__StaticFunctionTag_int_unsigned_in
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction1_BSScript__StaticFunctionTag_int_unsigned_int>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_BSScript__StaticFunctionTag_int_unsigned_int, __vftable) == 0x0);
@@ -8928,6 +9105,7 @@ pub struct BSScript__NativeFunction1_BSScript__StaticFunctionTag_unsigned_int_un
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction1_BSScript__StaticFunctionTag_unsigned_int_unsigned_int>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_BSScript__StaticFunctionTag_unsigned_int_unsigned_int, __vftable) == 0x0);
@@ -8984,6 +9162,7 @@ pub struct BSScript__NativeFunction1_BSScript__StaticFunctionTag_void_Actor____p
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction1_BSScript__StaticFunctionTag_void_Actor____ptr64>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_BSScript__StaticFunctionTag_void_Actor____ptr64, __vftable) == 0x0);
@@ -9040,6 +9219,7 @@ pub struct BSScript__NativeFunction1_BSScript__StaticFunctionTag_void_BSFixedStr
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction1_BSScript__StaticFunctionTag_void_BSFixedString_const____ptr64>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_BSScript__StaticFunctionTag_void_BSFixedString_const____ptr64, __vftable) == 0x0);
@@ -9096,6 +9276,7 @@ pub struct BSScript__NativeFunction1_BSScript__StaticFunctionTag_void_TESImageSp
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction1_BSScript__StaticFunctionTag_void_TESImageSpaceModifier____ptr64>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_BSScript__StaticFunctionTag_void_TESImageSpaceModifier____ptr64, __vftable) == 0x0);
@@ -9152,6 +9333,7 @@ pub struct BSScript__NativeFunction1_BSScript__StaticFunctionTag_void_TESObjectR
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction1_BSScript__StaticFunctionTag_void_TESObjectREFR____ptr64>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_BSScript__StaticFunctionTag_void_TESObjectREFR____ptr64, __vftable) == 0x0);
@@ -9208,6 +9390,7 @@ pub struct BSScript__NativeFunction1_BSScript__StaticFunctionTag_void_TESQuest__
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction1_BSScript__StaticFunctionTag_void_TESQuest____ptr64>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_BSScript__StaticFunctionTag_void_TESQuest____ptr64, __vftable) == 0x0);
@@ -9264,6 +9447,7 @@ pub struct BSScript__NativeFunction1_BSScript__StaticFunctionTag_void_TESWordOfP
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction1_BSScript__StaticFunctionTag_void_TESWordOfPower____ptr64>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_BSScript__StaticFunctionTag_void_TESWordOfPower____ptr64, __vftable) == 0x0);
@@ -9320,6 +9504,7 @@ pub struct BSScript__NativeFunction1_BSScript__StaticFunctionTag_void_bool {
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction1_BSScript__StaticFunctionTag_void_bool>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_BSScript__StaticFunctionTag_void_bool, __vftable) == 0x0);
@@ -9376,6 +9561,7 @@ pub struct BSScript__NativeFunction1_BSScript__StaticFunctionTag_void_float {
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction1_BSScript__StaticFunctionTag_void_float>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_BSScript__StaticFunctionTag_void_float, __vftable) == 0x0);
@@ -9432,6 +9618,7 @@ pub struct BSScript__NativeFunction1_BSScript__StaticFunctionTag_void_int {
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction1_BSScript__StaticFunctionTag_void_int>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_BSScript__StaticFunctionTag_void_int, __vftable) == 0x0);
@@ -9488,6 +9675,7 @@ pub struct BSScript__NativeFunction1_BSScript__StaticFunctionTag_void_unsigned_i
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction1_BSScript__StaticFunctionTag_void_unsigned_int>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_BSScript__StaticFunctionTag_void_unsigned_int, __vftable) == 0x0);
@@ -9544,6 +9732,7 @@ pub struct BSScript__NativeFunction1_IngredientItem_void_unsigned_int {
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction1_IngredientItem_void_unsigned_int>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_IngredientItem_void_unsigned_int, __vftable) == 0x0);
@@ -9600,6 +9789,7 @@ pub struct BSScript__NativeFunction1_TESEffectShader_void_TESObjectREFR____ptr64
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction1_TESEffectShader_void_TESObjectREFR____ptr64>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESEffectShader_void_TESObjectREFR____ptr64, __vftable) == 0x0);
@@ -9656,6 +9846,7 @@ pub struct BSScript__NativeFunction1_TESFaction_bool_TESFaction____ptr64 {
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction1_TESFaction_bool_TESFaction____ptr64>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESFaction_bool_TESFaction____ptr64, __vftable) == 0x0);
@@ -9712,6 +9903,7 @@ pub struct BSScript__NativeFunction1_TESFaction_int_TESFaction____ptr64 {
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction1_TESFaction_int_TESFaction____ptr64>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESFaction_int_TESFaction____ptr64, __vftable) == 0x0);
@@ -9768,6 +9960,7 @@ pub struct BSScript__NativeFunction1_TESFaction_void_bool {
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction1_TESFaction_void_bool>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESFaction_void_bool, __vftable) == 0x0);
@@ -9824,6 +10017,7 @@ pub struct BSScript__NativeFunction1_TESFaction_void_unsigned_int {
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction1_TESFaction_void_unsigned_int>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESFaction_void_unsigned_int, __vftable) == 0x0);
@@ -9880,6 +10074,7 @@ pub struct BSScript__NativeFunction1_TESForm_bool_BGSKeyword____ptr64 {
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction1_TESForm_bool_BGSKeyword____ptr64>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESForm_bool_BGSKeyword____ptr64, __vftable) == 0x0);
@@ -9936,6 +10131,7 @@ pub struct BSScript__NativeFunction1_TESForm_void_float {
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction1_TESForm_void_float>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESForm_void_float, __vftable) == 0x0);
@@ -9992,6 +10188,7 @@ pub struct BSScript__NativeFunction1_TESGlobal_void_float {
     pub docString: crate::BSFixedString,
     /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
     pub binding: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__NativeFunction1_TESGlobal_void_float>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESGlobal_void_float, __vftable) == 0x0);
@@ -10009,116 +10206,4 @@ const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESGlobal_
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESGlobal_void_float, userFlags) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESGlobal_void_float, docString) == 0x48);
 const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESGlobal_void_float, binding) == 0x50);
-
-/// `BSScript::NativeFunction1<TESImageSpaceModifier,void,float>`: size 0x58 (exact, high); primary base `BSScript::NF_util::NativeFunctionBase`.
-/// Evidence: runtime: 0x58 at 2 allocation sites.
-/// Bases: `BSScript::NF_util::NativeFunctionBase`@0x0, `BSScript::IFunction`@0x0, `BSIntrusiveRefCounted`@0x8.
-#[repr(C)]
-pub struct BSScript__NativeFunction1_TESImageSpaceModifier_void_float {
-    /// +0x0 `vtbl:BSScript::NativeFunction1<TESImageSpaceModifier,void,float>:0`, rtti
-    pub __vftable: *const crate::raw::vtables::BSScript__NativeFunction1_TESImageSpaceModifier_void_float_vtable,
-    /// +0x8 `undefined4`, base BSScript::NF_util::NativeFunctionBase, semantic; BSIntrusiveRefCounted count; BindNativeMethod increments it and the ObjectTypeInfo keeps a reference (high)
-    pub refCount: u32,
-    pub unknown_C: [u8; 4],
-    /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
-    /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
-    pub objectTypeName: crate::BSFixedString,
-    /// +0x20 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; empty for natives (a four-argument ctor variant 0x14a9fc0 takes one) (high)
-    pub stateName: crate::BSFixedString,
-    /// +0x28 `class:BSScript::TypeInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the return type; 0 (None) from the ctor, set by the NativeFunction<N> ctor from its template argument (form types through GetScriptObjectTypeByID, 1 when that fails); for a latent native the value type the native returns through ReturnFromLatent (high)
-    pub returnType: crate::BSScript__TypeInfo,
-    /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
-    pub params: *mut crate::BSScript__NF_util__ParamInfo,
-    /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
-    /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
-    pub variableCount: u16,
-    pub unknown_3C: [u8; 4],
-    /// +0x40 `undefined1`, base BSScript::NF_util::NativeFunctionBase, semantic; 1 for global functions (BSScript::StaticFunctionTag self): the VM passes a null self (high)
-    pub isStatic: u8,
-    /// +0x41 `undefined1`, base BSScript::NF_util::NativeFunctionBase, semantic; read by slot 19; stays 0 for natives (SetCallableFromTasklets flags the type's table instead) (high)
-    pub isCallableFromTasklet: u8,
-    /// +0x42 `undefined1`, base BSScript::NF_util::NativeFunctionBase, semantic; 1 for NativeLatentFunction<N>: Call returns 2 and the callback's bool result means 'started' (high)
-    pub isLatent: u8,
-    pub unknown_43: [u8; 1],
-    /// +0x44 `undefined4`, base BSScript::NF_util::NativeFunctionBase, semantic; 0 for natives (high)
-    pub userFlags: u32,
-    /// +0x48 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; empty for natives (high)
-    pub docString: crate::BSFixedString,
-    /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
-}
-const _: () = assert!(size_of::<BSScript__NativeFunction1_TESImageSpaceModifier_void_float>() == 0x58);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESImageSpaceModifier_void_float, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESImageSpaceModifier_void_float, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESImageSpaceModifier_void_float, name) == 0x10);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESImageSpaceModifier_void_float, objectTypeName) == 0x18);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESImageSpaceModifier_void_float, stateName) == 0x20);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESImageSpaceModifier_void_float, returnType) == 0x28);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESImageSpaceModifier_void_float, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESImageSpaceModifier_void_float, paramCount) == 0x38);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESImageSpaceModifier_void_float, variableCount) == 0x3A);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESImageSpaceModifier_void_float, isStatic) == 0x40);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESImageSpaceModifier_void_float, isCallableFromTasklet) == 0x41);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESImageSpaceModifier_void_float, isLatent) == 0x42);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESImageSpaceModifier_void_float, userFlags) == 0x44);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESImageSpaceModifier_void_float, docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESImageSpaceModifier_void_float, binding) == 0x50);
-
-/// `BSScript::NativeFunction1<TESNPC,void,bool>`: size 0x58 (exact, high); primary base `BSScript::NF_util::NativeFunctionBase`.
-/// Evidence: runtime: 0x58 at 3 allocation sites.
-/// Bases: `BSScript::NF_util::NativeFunctionBase`@0x0, `BSScript::IFunction`@0x0, `BSIntrusiveRefCounted`@0x8.
-#[repr(C)]
-pub struct BSScript__NativeFunction1_TESNPC_void_bool {
-    /// +0x0 `vtbl:BSScript::NativeFunction1<TESNPC,void,bool>:0`, rtti
-    pub __vftable: *const crate::raw::vtables::BSScript__NativeFunction1_TESNPC_void_bool_vtable,
-    /// +0x8 `undefined4`, base BSScript::NF_util::NativeFunctionBase, semantic; BSIntrusiveRefCounted count; BindNativeMethod increments it and the ObjectTypeInfo keeps a reference (high)
-    pub refCount: u32,
-    pub unknown_C: [u8; 4],
-    /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
-    pub name: crate::BSFixedString,
-    /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
-    pub objectTypeName: crate::BSFixedString,
-    /// +0x20 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; empty for natives (a four-argument ctor variant 0x14a9fc0 takes one) (high)
-    pub stateName: crate::BSFixedString,
-    /// +0x28 `class:BSScript::TypeInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the return type; 0 (None) from the ctor, set by the NativeFunction<N> ctor from its template argument (form types through GetScriptObjectTypeByID, 1 when that fails); for a latent native the value type the native returns through ReturnFromLatent (high)
-    pub returnType: crate::BSScript__TypeInfo,
-    /// +0x30 `ptr:BSScript::NF_util::ParamInfo`, base BSScript::NF_util::NativeFunctionBase, semantic; the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front (high)
-    pub params: *mut crate::BSScript__NF_util__ParamInfo,
-    /// +0x38 `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; the declared parameter count (high)
-    pub paramCount: u16,
-    /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
-    pub variableCount: u16,
-    pub unknown_3C: [u8; 4],
-    /// +0x40 `undefined1`, base BSScript::NF_util::NativeFunctionBase, semantic; 1 for global functions (BSScript::StaticFunctionTag self): the VM passes a null self (high)
-    pub isStatic: u8,
-    /// +0x41 `undefined1`, base BSScript::NF_util::NativeFunctionBase, semantic; read by slot 19; stays 0 for natives (SetCallableFromTasklets flags the type's table instead) (high)
-    pub isCallableFromTasklet: u8,
-    /// +0x42 `undefined1`, base BSScript::NF_util::NativeFunctionBase, semantic; 1 for NativeLatentFunction<N>: Call returns 2 and the callback's bool result means 'started' (high)
-    pub isLatent: u8,
-    pub unknown_43: [u8; 1],
-    /// +0x44 `undefined4`, base BSScript::NF_util::NativeFunctionBase, semantic; 0 for natives (high)
-    pub userFlags: u32,
-    /// +0x48 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; empty for natives (high)
-    pub docString: crate::BSFixedString,
-    /// +0x50 `pointer`, base BSScript::NF_util::NativeFunctionBase, semantic; NativeFunction<N>'s C function: Ret (*)(IVirtualMachine* vm, u32 stackId, Self* self, Args...); null makes Call fail with 'binding is NULL' (high)
-    pub binding: *mut c_void,
-}
-const _: () = assert!(size_of::<BSScript__NativeFunction1_TESNPC_void_bool>() == 0x58);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESNPC_void_bool, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESNPC_void_bool, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESNPC_void_bool, name) == 0x10);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESNPC_void_bool, objectTypeName) == 0x18);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESNPC_void_bool, stateName) == 0x20);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESNPC_void_bool, returnType) == 0x28);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESNPC_void_bool, params) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESNPC_void_bool, paramCount) == 0x38);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESNPC_void_bool, variableCount) == 0x3A);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESNPC_void_bool, isStatic) == 0x40);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESNPC_void_bool, isCallableFromTasklet) == 0x41);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESNPC_void_bool, isLatent) == 0x42);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESNPC_void_bool, userFlags) == 0x44);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESNPC_void_bool, docString) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__NativeFunction1_TESNPC_void_bool, binding) == 0x50);
 

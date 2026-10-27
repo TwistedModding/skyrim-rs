@@ -24,6 +24,7 @@ pub struct BGSKeyword {
     pub unknown_1B: [u8; 5],
     /// +0x20 `pointer`, ctor store, semantic, runtime; BSFixedString editor id of the keyword (high)
     pub keyword: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSKeyword>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(BGSKeyword, __vftable) == 0x0);
@@ -47,6 +48,7 @@ pub struct BGSKeywordForm {
     /// +0x10 `undefined4`, ctor store, semantic, runtime; number of keywords (high)
     pub numKeywords: u32,
     pub unknown_14: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSKeywordForm>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(BGSKeywordForm, __vftable) == 0x0);
@@ -79,6 +81,7 @@ pub struct BGSListForm {
     /// +0x40 `undefined4`, ctor store
     pub field_40: u32,
     pub unknown_44: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSListForm>() == 0x48);
 const _: () = assert!(core::mem::offset_of!(BGSListForm, __vftable) == 0x0);
@@ -100,6 +103,7 @@ pub struct BSReadWriteLock {
     pub writerThread: u32,
     /// +0x4 `undefined4`, semantic; reader count, or 0x80000000 | depth while written (high)
     pub lockCount: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSReadWriteLock>() == 0x8);
 const _: () = assert!(core::mem::offset_of!(BSReadWriteLock, writerThread) == 0x0);
@@ -114,6 +118,7 @@ pub struct BSSimpleListNode {
     pub item: *mut c_void,
     /// +0x8 `pointer`, semantic; next node or null (high)
     pub next: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSSimpleListNode>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSSimpleListNode, item) == 0x0);
@@ -132,6 +137,7 @@ pub struct BSTArray {
     /// +0x10 `undefined4`, semantic; used elements (high)
     pub size: u32,
     pub unknown_14: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSTArray>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSTArray, data) == 0x0);
@@ -175,6 +181,7 @@ pub struct TESDataHandler {
     pub unknown_DB8: [u8; 8],
     /// +0xDC0 `class:BSTArray`, semantic; BSTArray<TESFile*> of the files named by the plugin list (medium)
     pub selectedFiles: crate::BSTArray,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESDataHandler>() == 0xDD8);
 const _: () = assert!(core::mem::offset_of!(TESDataHandler, formArrays) == 0x10);
@@ -208,6 +215,7 @@ pub struct TESEditorIDMap {
     pub unknown_20: [u8; 8],
     /// +0x28 `pointer`, semantic; bucket array of 0x18-byte entries (high)
     pub entries: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESEditorIDMap>() == 0x30);
 const _: () = assert!(core::mem::offset_of!(TESEditorIDMap, capacity) == 0xC);
@@ -227,6 +235,7 @@ pub struct TESEditorIDMapEntry {
     pub form: *mut crate::TESForm,
     /// +0x10 `pointer`, semantic; chain (high)
     pub next: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESEditorIDMapEntry>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(TESEditorIDMapEntry, editorID) == 0x0);
@@ -267,6 +276,7 @@ pub struct TESFile {
     /// +0x47A `undefined2`, semantic; index among light files, valid when compileIndex is 0xfe (high)
     pub lightFileIndex: u16,
     pub unknown_47C: [u8; 76],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESFile>() == 0x4C8);
 const _: () = assert!(core::mem::offset_of!(TESFile, fileName) == 0x58);
@@ -290,6 +300,7 @@ pub struct TESFileArray {
     /// +0x8 `undefined4`, semantic; number of files (high)
     pub count: u32,
     pub unknown_C: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESFileArray>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(TESFileArray, files) == 0x0);
@@ -314,6 +325,7 @@ pub struct TESForm {
     /// +0x1A `undefined1`, ctor store, semantic, runtime; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 5],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESForm>() == 0x20);
 const _: () = assert!(core::mem::offset_of!(TESForm, __vftable) == 0x0);
@@ -340,6 +352,7 @@ pub struct TESFormIDMap {
     pub unknown_20: [u8; 8],
     /// +0x28 `pointer`, semantic; bucket array of 0x18-byte entries (high)
     pub entries: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESFormIDMap>() == 0x30);
 const _: () = assert!(core::mem::offset_of!(TESFormIDMap, capacity) == 0xC);
@@ -360,6 +373,7 @@ pub struct TESFormIDMapEntry {
     pub form: *mut crate::TESForm,
     /// +0x10 `pointer`, semantic; chain (high)
     pub next: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESFormIDMapEntry>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(TESFormIDMapEntry, formID) == 0x0);
@@ -395,6 +409,7 @@ pub struct TESGlobal {
     pub unknown_31: [u8; 3],
     /// +0x34 `float`, ctor store, semantic, runtime; the value, stored as float (high)
     pub value: f32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESGlobal>() == 0x38);
 const _: () = assert!(core::mem::offset_of!(TESGlobal, __vftable) == 0x0);

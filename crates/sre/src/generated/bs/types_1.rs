@@ -9,6 +9,7 @@ use core::ffi::c_void;
 pub struct BSAnimGraphVisit__BShkbVisitor {
     /// +0x0 `vtbl:BSAnimGraphVisit::BShkbVisitor:0`, rtti
     pub __vftable: *const crate::raw::vtables::BSAnimGraphVisit__BShkbVisitor_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BSAnimGraphVisit__BShkbVisitor, __vftable) == 0x0);
 
@@ -85,6 +86,7 @@ pub struct BSAnimGroupSequence {
     pub unknown_B3: [u8; 5],
     /// +0xB8 `undefined8`, ctor store
     pub field_B8: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSAnimGroupSequence>() == 0xC0);
 const _: () = assert!(core::mem::offset_of!(BSAnimGroupSequence, __vftable) == 0x0);
@@ -140,6 +142,7 @@ pub struct BSAnimInteractionMarker {
     /// +0x24 `undefined2`, ctor store
     pub field_24: u16,
     pub unknown_26: [u8; 2],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BSAnimInteractionMarker, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSAnimInteractionMarker, field_8) == 0x8);
@@ -159,6 +162,7 @@ pub struct BSAnimNote {
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
     pub unknown_C: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSAnimNote>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSAnimNote, __vftable) == 0x0);
@@ -171,6 +175,7 @@ const _: () = assert!(core::mem::offset_of!(BSAnimNote, field_8) == 0x8);
 pub struct BSAnimNoteReceiver {
     /// +0x0 `vtbl:BSAnimNoteReceiver:0`, rtti
     pub __vftable: *const crate::raw::vtables::BSAnimNoteReceiver_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BSAnimNoteReceiver, __vftable) == 0x0);
 
@@ -189,6 +194,7 @@ pub struct BSAnimNotes {
     /// +0x18 `undefined2`, ctor store
     pub field_18: u16,
     pub unknown_1A: [u8; 6],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BSAnimNotes, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSAnimNotes, field_8) == 0x8);
@@ -202,6 +208,7 @@ const _: () = assert!(core::mem::offset_of!(BSAnimNotes, field_18) == 0x18);
 pub struct BSAnimationGraphChannel {
     /// +0x0 `vtbl:BSAnimationGraphChannel:0`, rtti
     pub __vftable: *const crate::raw::vtables::BSAnimationGraphChannel_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BSAnimationGraphChannel, __vftable) == 0x0);
 
@@ -211,6 +218,7 @@ const _: () = assert!(core::mem::offset_of!(BSAnimationGraphChannel, __vftable) 
 pub struct BSAnimationGraphLoadScrapper {
     /// +0x0 `vtbl:BSAnimationGraphLoadScrapper:0`, rtti
     pub __vftable: *const crate::raw::vtables::BSAnimationGraphLoadScrapper_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BSAnimationGraphLoadScrapper, __vftable) == 0x0);
 
@@ -221,6 +229,7 @@ const _: () = assert!(core::mem::offset_of!(BSAnimationGraphLoadScrapper, __vfta
 pub struct BSArrowConstructor {
     /// +0x0 `vtbl:BSArrowConstructor:0`, rtti
     pub __vftable: *const crate::raw::vtables::BSArrowConstructor_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BSArrowConstructor, __vftable) == 0x0);
 
@@ -230,6 +239,7 @@ const _: () = assert!(core::mem::offset_of!(BSArrowConstructor, __vftable) == 0x
 pub struct BSAttachTechniques__AttachTechniqueInput {
     /// +0x0 `vtbl:BSAttachTechniques::AttachTechniqueInput:0`, rtti
     pub __vftable: *const crate::raw::vtables::BSAttachTechniques__AttachTechniqueInput_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BSAttachTechniques__AttachTechniqueInput, __vftable) == 0x0);
 
@@ -239,6 +249,7 @@ const _: () = assert!(core::mem::offset_of!(BSAttachTechniques__AttachTechniqueI
 pub struct BSAttachTechniques__BSAttachTechnique {
     /// +0x0 `vtbl:BSAttachTechniques::BSAttachTechnique:0`, rtti
     pub __vftable: *const crate::raw::vtables::BSAttachTechniques__BSAttachTechnique_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BSAttachTechniques__BSAttachTechnique, __vftable) == 0x0);
 
@@ -253,6 +264,7 @@ pub struct BSAudio {
     pub unknown_9: [u8; 7],
     /// +0x10 `undefined8`, ctor store
     pub field_10: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSAudio>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSAudio, __vftable) == 0x0);
@@ -266,6 +278,7 @@ const _: () = assert!(core::mem::offset_of!(BSAudio, field_10) == 0x10);
 pub struct BSAudioDataSrc_BSXAudio2DataSrc {
     /// +0x0 `vtbl:BSAudioDataSrc<BSXAudio2DataSrc>:0`, rtti
     pub __vftable: *const crate::raw::vtables::BSAudioDataSrc_BSXAudio2DataSrc_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSAudioDataSrc_BSXAudio2DataSrc>() == 0x8);
 const _: () = assert!(core::mem::offset_of!(BSAudioDataSrc_BSXAudio2DataSrc, __vftable) == 0x0);
@@ -305,6 +318,7 @@ pub struct BSAudioListener {
     pub unknown_40: [u8; 48],
     /// +0x70 `undefined8`, ctor store
     pub field_70: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSAudioListener>() == 0x78);
 const _: () = assert!(core::mem::offset_of!(BSAudioListener, __vftable) == 0x0);
@@ -329,6 +343,7 @@ const _: () = assert!(core::mem::offset_of!(BSAudioListener, field_70) == 0x70);
 pub struct BSAutoQueuedResourceCollection_AnimationSystemUtils__TESModelAndAnimationHandles {
     /// +0x0 `vtbl:BSAutoQueuedResourceCollection<AnimationSystemUtils::TESModelAndAnimationHandles>:0`, rtti
     pub __vftable: *const crate::raw::vtables::BSAutoQueuedResourceCollection_AnimationSystemUtils__TESModelAndAnimationHandles_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BSAutoQueuedResourceCollection_AnimationSystemUtils__TESModelAndAnimationHandles, __vftable) == 0x0);
 
@@ -338,6 +353,7 @@ const _: () = assert!(core::mem::offset_of!(BSAutoQueuedResourceCollection_Anima
 pub struct BSAutoQueuedResourceCollection_BSFaceGenDB__TRI__QueuedHandles {
     /// +0x0 `vtbl:BSAutoQueuedResourceCollection<BSFaceGenDB::TRI::QueuedHandles>:0`, rtti
     pub __vftable: *const crate::raw::vtables::BSAutoQueuedResourceCollection_BSFaceGenDB__TRI__QueuedHandles_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BSAutoQueuedResourceCollection_BSFaceGenDB__TRI__QueuedHandles, __vftable) == 0x0);
 
@@ -347,6 +363,7 @@ const _: () = assert!(core::mem::offset_of!(BSAutoQueuedResourceCollection_BSFac
 pub struct BSAutoQueuedResourceCollection_BSTextureDB__QueuedHandles {
     /// +0x0 `vtbl:BSAutoQueuedResourceCollection<BSTextureDB::QueuedHandles>:0`, rtti
     pub __vftable: *const crate::raw::vtables::BSAutoQueuedResourceCollection_BSTextureDB__QueuedHandles_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BSAutoQueuedResourceCollection_BSTextureDB__QueuedHandles, __vftable) == 0x0);
 
@@ -356,6 +373,7 @@ const _: () = assert!(core::mem::offset_of!(BSAutoQueuedResourceCollection_BSTex
 pub struct BSAutoQueuedResourceCollection_BShkbHkxDB__QueuedHandles {
     /// +0x0 `vtbl:BSAutoQueuedResourceCollection<BShkbHkxDB::QueuedHandles>:0`, rtti
     pub __vftable: *const crate::raw::vtables::BSAutoQueuedResourceCollection_BShkbHkxDB__QueuedHandles_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BSAutoQueuedResourceCollection_BShkbHkxDB__QueuedHandles, __vftable) == 0x0);
 
@@ -365,6 +383,7 @@ const _: () = assert!(core::mem::offset_of!(BSAutoQueuedResourceCollection_BShkb
 pub struct BSAutoQueuedResourceCollection_TESModelDB__TESQueuedHandles {
     /// +0x0 `vtbl:BSAutoQueuedResourceCollection<TESModelDB::TESQueuedHandles>:0`, rtti
     pub __vftable: *const crate::raw::vtables::BSAutoQueuedResourceCollection_TESModelDB__TESQueuedHandles_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BSAutoQueuedResourceCollection_TESModelDB__TESQueuedHandles, __vftable) == 0x0);
 
@@ -374,6 +393,7 @@ const _: () = assert!(core::mem::offset_of!(BSAutoQueuedResourceCollection_TESMo
 pub struct BSAwardsSystemUtility {
     /// +0x0 `vtbl:BSAwardsSystemUtility:0`, rtti
     pub __vftable: *const crate::raw::vtables::BSAwardsSystemUtility_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSAwardsSystemUtility>() == 0x8);
 const _: () = assert!(core::mem::offset_of!(BSAwardsSystemUtility, __vftable) == 0x0);
@@ -391,6 +411,7 @@ pub struct BSBehaviorGraphExtraData {
     /// +0x10 `class:BSFixedString`, base NiExtraData, semantic; the key the owner's sorted array is ordered by (high)
     pub name: crate::BSFixedString,
     pub unknown_18: [u8; 16],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSBehaviorGraphExtraData>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSBehaviorGraphExtraData, __vftable) == 0x0);
@@ -451,6 +472,7 @@ pub struct BSBlastNode {
     /// +0x128 `undefined4`, base BSRangeNode
     pub field_128: u32,
     pub unknown_12C: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSBlastNode>() == 0x130);
 const _: () = assert!(core::mem::offset_of!(BSBlastNode, __vftable) == 0x0);
@@ -515,6 +537,7 @@ pub struct BSBlendTreadTransfInterpolator {
     /// +0x48 `undefined4`, ctor store
     pub field_48: u32,
     pub unknown_4C: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BSBlendTreadTransfInterpolator, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSBlendTreadTransfInterpolator, field_8) == 0x8);
@@ -571,6 +594,7 @@ pub struct BSBloodSplatterShader {
     /// +0x88 `undefined8`, base BSShader
     pub field_88: u64,
     pub unknown_90: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSBloodSplatterShader>() == 0x98);
 const _: () = assert!(core::mem::offset_of!(BSBloodSplatterShader, __vftable) == 0x0);
@@ -642,6 +666,7 @@ pub struct BSBloodSplatterShaderProperty {
     pub unknown_A4: [u8; 4],
     /// +0xA8 `undefined8`, ctor store
     pub field_A8: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSBloodSplatterShaderProperty>() == 0xB0);
 const _: () = assert!(core::mem::offset_of!(BSBloodSplatterShaderProperty, __vftable) == 0x0);
@@ -684,6 +709,7 @@ pub struct BSBodyMorphOffsetsExtraData {
     pub unknown_1C: [u8; 4],
     /// +0x20 `undefined8`, ctor store
     pub field_20: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BSBodyMorphOffsetsExtraData, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSBodyMorphOffsetsExtraData, field_8) == 0x8);
@@ -704,6 +730,7 @@ pub struct BSBoneLODExtraData {
     /// +0x10 `class:BSFixedString`, base NiExtraData, semantic; the key the owner's sorted array is ordered by (high)
     pub name: crate::BSFixedString,
     pub unknown_18: [u8; 24],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSBoneLODExtraData>() == 0x30);
 const _: () = assert!(core::mem::offset_of!(BSBoneLODExtraData, __vftable) == 0x0);
@@ -733,6 +760,7 @@ pub struct BSBoneMap {
     pub unknown_38: [u8; 8],
     /// +0x40 `undefined8`, ctor store
     pub field_40: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSBoneMap>() == 0x48);
 const _: () = assert!(core::mem::offset_of!(BSBoneMap, __vftable) == 0x0);
@@ -840,6 +868,7 @@ pub struct BSBoneSwitchGenerator {
     pub field_110: u32,
     /// +0x114 `undefined4`, base hkBaseObject
     pub field_114: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BSBoneSwitchGenerator, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSBoneSwitchGenerator, field_8) == 0x8);
@@ -984,6 +1013,7 @@ pub struct BSBoneSwitchGeneratorBoneData {
     pub field_110: u32,
     /// +0x114 `undefined4`, base hkBaseObject
     pub field_114: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BSBoneSwitchGeneratorBoneData, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSBoneSwitchGeneratorBoneData, field_8) == 0x8);
@@ -1055,6 +1085,7 @@ pub struct BSBound {
     pub field_28: f32,
     /// +0x2C `float`, ctor store
     pub field_2C: f32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSBound>() == 0x30);
 const _: () = assert!(core::mem::offset_of!(BSBound, __vftable) == 0x0);
@@ -1074,6 +1105,7 @@ const _: () = assert!(core::mem::offset_of!(BSBound, field_2C) == 0x2C);
 pub struct BSBoxConstructor {
     /// +0x0 `vtbl:BSBoxConstructor:0`, rtti
     pub __vftable: *const crate::raw::vtables::BSBoxConstructor_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BSBoxConstructor, __vftable) == 0x0);
 
@@ -1092,6 +1124,7 @@ pub struct BSCacheDriveSystemUtility {
     /// +0x18 `undefined2`, ctor store
     pub field_18: u16,
     pub unknown_1A: [u8; 6],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BSCacheDriveSystemUtility, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSCacheDriveSystemUtility, field_8) == 0x8);
@@ -1106,6 +1139,7 @@ const _: () = assert!(core::mem::offset_of!(BSCacheDriveSystemUtility, field_18)
 pub struct BSCapsuleConstructor {
     /// +0x0 `vtbl:BSCapsuleConstructor:0`, rtti
     pub __vftable: *const crate::raw::vtables::BSCapsuleConstructor_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BSCapsuleConstructor, __vftable) == 0x0);
 
@@ -1116,6 +1150,7 @@ const _: () = assert!(core::mem::offset_of!(BSCapsuleConstructor, __vftable) == 
 pub struct BSCircleConstructor {
     /// +0x0 `vtbl:BSCircleConstructor:0`, rtti
     pub __vftable: *const crate::raw::vtables::BSCircleConstructor_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BSCircleConstructor, __vftable) == 0x0);
 
@@ -1178,6 +1213,7 @@ pub struct BSClearZNode {
     /// +0x130 `undefined4`, ctor store
     pub field_130: u32,
     pub unknown_134: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSClearZNode>() == 0x138);
 const _: () = assert!(core::mem::offset_of!(BSClearZNode, __vftable) == 0x0);
@@ -1302,6 +1338,7 @@ pub struct BSComputeAddBoneAnimModifier {
     pub field_110: u32,
     /// +0x114 `undefined4`, base hkBaseObject
     pub field_114: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BSComputeAddBoneAnimModifier, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSComputeAddBoneAnimModifier, field_8) == 0x8);
@@ -1374,6 +1411,7 @@ pub struct BSComputeShader {
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, ctor store
     pub field_48: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSComputeShader>() == 0x50);
 const _: () = assert!(core::mem::offset_of!(BSComputeShader, __vftable) == 0x0);
@@ -1391,6 +1429,7 @@ const _: () = assert!(core::mem::offset_of!(BSComputeShader, field_48) == 0x48);
 pub struct BSCoreMessage {
     /// +0x0 `vtbl:BSCoreMessage:0`, rtti
     pub __vftable: *const crate::raw::vtables::BSCoreMessage_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BSCoreMessage, __vftable) == 0x0);
 
@@ -1401,6 +1440,7 @@ const _: () = assert!(core::mem::offset_of!(BSCoreMessage, __vftable) == 0x0);
 pub struct BSCounterStorage {
     /// +0x0 `vtbl:BSCounterStorage:0`, rtti
     pub __vftable: *const crate::raw::vtables::BSCounterStorage_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BSCounterStorage, __vftable) == 0x0);
 
@@ -1500,6 +1540,7 @@ pub struct BSCubeMapCamera {
     pub field_1B8: u64,
     /// +0x1C0 `undefined8`, ctor store
     pub field_1C0: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSCubeMapCamera>() == 0x1C8);
 const _: () = assert!(core::mem::offset_of!(BSCubeMapCamera, __vftable) == 0x0);
@@ -1645,6 +1686,7 @@ pub struct BSCyclicBlendTransitionGenerator {
     pub field_110: u32,
     /// +0x114 `undefined4`, base hkBaseObject
     pub field_114: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BSCyclicBlendTransitionGenerator, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSCyclicBlendTransitionGenerator, field_8) == 0x8);
@@ -1699,6 +1741,7 @@ const _: () = assert!(core::mem::offset_of!(BSCyclicBlendTransitionGenerator, fi
 pub struct BSCylinderConstructor {
     /// +0x0 `vtbl:BSCylinderConstructor:0`, rtti
     pub __vftable: *const crate::raw::vtables::BSCylinderConstructor_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BSCylinderConstructor, __vftable) == 0x0);
 
@@ -1756,6 +1799,7 @@ pub struct BSDamageStage {
     /// +0x128 `undefined4`, base BSRangeNode
     pub field_128: u32,
     pub unknown_12C: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSDamageStage>() == 0x130);
 const _: () = assert!(core::mem::offset_of!(BSDamageStage, __vftable) == 0x0);
@@ -1835,6 +1879,7 @@ pub struct BSDebrisNode {
     /// +0x128 `undefined4`, base BSRangeNode
     pub field_128: u32,
     pub unknown_12C: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSDebrisNode>() == 0x130);
 const _: () = assert!(core::mem::offset_of!(BSDebrisNode, __vftable) == 0x0);
@@ -1901,6 +1946,7 @@ pub struct BSDecalPlacementVectorExtraData {
     /// +0x78 `undefined4`, ctor store
     pub field_78: u32,
     pub unknown_7C: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSDecalPlacementVectorExtraData>() == 0x80);
 const _: () = assert!(core::mem::offset_of!(BSDecalPlacementVectorExtraData, __vftable) == 0x0);
@@ -2017,6 +2063,7 @@ pub struct BSDecomposeVectorModifier {
     pub field_110: u32,
     /// +0x114 `undefined4`, base hkBaseObject
     pub field_114: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BSDecomposeVectorModifier, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSDecomposeVectorModifier, field_8) == 0x8);
@@ -2168,6 +2215,7 @@ pub struct BSDirectAtModifier {
     pub field_110: u32,
     /// +0x114 `undefined4`, base hkBaseObject
     pub field_114: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BSDirectAtModifier, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSDirectAtModifier, field_8) == 0x8);
@@ -2225,6 +2273,7 @@ const _: () = assert!(core::mem::offset_of!(BSDirectAtModifier, field_114) == 0x
 pub struct BSDirectAtModifierInterface {
     /// +0x0 `vtbl:BSDirectAtModifierInterface:0`, rtti
     pub __vftable: *const crate::raw::vtables::BSDirectAtModifierInterface_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BSDirectAtModifierInterface, __vftable) == 0x0);
 
@@ -2250,6 +2299,7 @@ pub struct BSDiscBootSystemUtility {
     /// +0xA0 `undefined1`, ctor store
     pub field_A0: u8,
     pub unknown_A1: [u8; 7],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BSDiscBootSystemUtility, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSDiscBootSystemUtility, field_8) == 0x8);
@@ -2266,6 +2316,7 @@ const _: () = assert!(core::mem::offset_of!(BSDiscBootSystemUtility, field_A0) =
 pub struct BSDiskConstructor {
     /// +0x0 `vtbl:BSDiskConstructor:0`, rtti
     pub __vftable: *const crate::raw::vtables::BSDiskConstructor_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BSDiskConstructor, __vftable) == 0x0);
 
@@ -2366,6 +2417,7 @@ pub struct BSDistTriggerModifier {
     pub field_110: u32,
     /// +0x114 `undefined4`, base hkBaseObject
     pub field_114: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BSDistTriggerModifier, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSDistTriggerModifier, field_8) == 0x8);
@@ -2428,6 +2480,7 @@ pub struct BSDistantObjectLargeRefExtraData {
     /// +0x18 `undefined1`, ctor store
     pub field_18: u8,
     pub unknown_19: [u8; 7],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSDistantObjectLargeRefExtraData>() == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSDistantObjectLargeRefExtraData, __vftable) == 0x0);
@@ -2474,6 +2527,7 @@ pub struct BSDistantTreeShader {
     pub field_80: u64,
     /// +0x88 `undefined8`, base BSShader
     pub field_88: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSDistantTreeShader>() == 0x90);
 const _: () = assert!(core::mem::offset_of!(BSDistantTreeShader, __vftable) == 0x0);
@@ -2548,6 +2602,7 @@ pub struct BSDistantTreeShaderProperty {
     pub field_A0: u64,
     /// +0xA8 `undefined8`, ctor store
     pub field_A8: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSDistantTreeShaderProperty>() == 0xB0);
 const _: () = assert!(core::mem::offset_of!(BSDistantTreeShaderProperty, __vftable) == 0x0);
@@ -2611,6 +2666,7 @@ pub struct BSDoorHavokController {
     /// +0x48 `undefined1`, ctor store
     pub field_48: u8,
     pub unknown_49: [u8; 7],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BSDoorHavokController, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSDoorHavokController, field_8) == 0x8);
@@ -2711,6 +2767,7 @@ pub struct BSDynamicLines {
     pub unknown_16C: [u8; 4],
     /// +0x170 `undefined8`, ctor store
     pub field_170: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSDynamicLines>() == 0x178);
 const _: () = assert!(core::mem::offset_of!(BSDynamicLines, __vftable) == 0x0);
@@ -2836,6 +2893,7 @@ pub struct BSDynamicTriShape {
     /// +0x174 `undefined4`, ctor store
     pub field_174: u32,
     pub unknown_178: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSDynamicTriShape>() == 0x180);
 const _: () = assert!(core::mem::offset_of!(BSDynamicTriShape, __vftable) == 0x0);
@@ -2916,6 +2974,7 @@ pub struct BSEffectShader {
     /// +0x88 `undefined8`, base BSShader
     pub field_88: u64,
     pub unknown_90: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSEffectShader>() == 0x98);
 const _: () = assert!(core::mem::offset_of!(BSEffectShader, __vftable) == 0x0);
@@ -2969,6 +3028,7 @@ pub struct BSEffectShaderPropertyColorController {
     /// +0x48 `undefined8`, base NiSingleInterpController
     pub field_48: u64,
     pub unknown_50: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSEffectShaderPropertyColorController>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSEffectShaderPropertyColorController, __vftable) == 0x0);
@@ -3021,6 +3081,7 @@ pub struct BSEffectShaderPropertyFloatController {
     /// +0x48 `undefined8`, base NiSingleInterpController
     pub field_48: u64,
     pub unknown_50: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSEffectShaderPropertyFloatController>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSEffectShaderPropertyFloatController, __vftable) == 0x0);
@@ -3134,6 +3195,7 @@ pub struct BSEventEveryNEventsModifier {
     pub field_110: u32,
     /// +0x114 `undefined4`, base hkBaseObject
     pub field_114: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BSEventEveryNEventsModifier, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSEventEveryNEventsModifier, field_8) == 0x8);
@@ -3278,6 +3340,7 @@ pub struct BSEventOnDeactivateModifier {
     pub field_110: u32,
     /// +0x114 `undefined4`, base hkBaseObject
     pub field_114: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BSEventOnDeactivateModifier, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSEventOnDeactivateModifier, field_8) == 0x8);
@@ -3422,6 +3485,7 @@ pub struct BSEventOnFalseToTrueModifier {
     pub field_110: u32,
     /// +0x114 `undefined4`, base hkBaseObject
     pub field_114: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BSEventOnFalseToTrueModifier, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSEventOnFalseToTrueModifier, field_8) == 0x8);
@@ -3475,6 +3539,7 @@ const _: () = assert!(core::mem::offset_of!(BSEventOnFalseToTrueModifier, field_
 pub struct BSExternalAudioIO__ExternalIOInterface {
     /// +0x0 `vtbl:BSExternalAudioIO::ExternalIOInterface:0`, rtti
     pub __vftable: *const crate::raw::vtables::BSExternalAudioIO__ExternalIOInterface_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BSExternalAudioIO__ExternalIOInterface, __vftable) == 0x0);
 
@@ -3496,6 +3561,7 @@ pub struct BSFaceGenBaseMorphExtraData {
     pub field_20: u32,
     /// +0x24 `undefined4`, ctor store
     pub field_24: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSFaceGenBaseMorphExtraData>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSFaceGenBaseMorphExtraData, __vftable) == 0x0);
@@ -3540,6 +3606,7 @@ pub struct BSFaceGenDB__TRI__QueuedHandles {
     /// +0x54 `undefined2`, base BSQueuedResourceCollectionBase
     pub field_54: u16,
     pub unknown_56: [u8; 50],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSFaceGenDB__TRI__QueuedHandles>() == 0x88);
 const _: () = assert!(core::mem::offset_of!(BSFaceGenDB__TRI__QueuedHandles, __vftable) == 0x0);
@@ -3562,6 +3629,7 @@ const _: () = assert!(core::mem::offset_of!(BSFaceGenDB__TRI__QueuedHandles, fie
 pub struct BSFaceGenKeyframe {
     /// +0x0 `vtbl:BSFaceGenKeyframe:0`, rtti
     pub __vftable: *const crate::raw::vtables::BSFaceGenKeyframe_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSFaceGenKeyframe>() == 0x8);
 const _: () = assert!(core::mem::offset_of!(BSFaceGenKeyframe, __vftable) == 0x0);
@@ -3574,6 +3642,7 @@ pub struct BSFaceGenKeyframeExclusive {
     /// +0x0 `vtbl:BSFaceGenKeyframeExclusive:0`, rtti
     pub __vftable: *const crate::raw::vtables::BSFaceGenKeyframeExclusive_vtable,
     pub unknown_8: [u8; 16],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSFaceGenKeyframeExclusive>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSFaceGenKeyframeExclusive, __vftable) == 0x0);
@@ -3596,6 +3665,7 @@ pub struct BSFaceGenKeyframeMultiple {
     /// +0x1C `undefined1`, ctor store
     pub field_1C: u8,
     pub unknown_1D: [u8; 3],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSFaceGenKeyframeMultiple>() == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSFaceGenKeyframeMultiple, __vftable) == 0x0);
@@ -3620,6 +3690,7 @@ pub struct BSFaceGenModel {
     /// +0x18 `undefined4`, ctor store
     pub field_18: u32,
     pub unknown_1C: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSFaceGenModel>() == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSFaceGenModel, __vftable) == 0x0);
@@ -3640,6 +3711,7 @@ pub struct BSFaceGenModelExtraData {
     /// +0x10 `class:BSFixedString`, base NiExtraData, semantic; the key the owner's sorted array is ordered by (high)
     pub name: crate::BSFixedString,
     pub unknown_18: [u8; 72],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSFaceGenModelExtraData>() == 0x60);
 const _: () = assert!(core::mem::offset_of!(BSFaceGenModelExtraData, __vftable) == 0x0);
@@ -3654,6 +3726,7 @@ pub struct BSFaceGenModelMap__Entry {
     /// +0x0 `vtbl:BSFaceGenModelMap::Entry:0`, rtti
     pub __vftable: *const crate::raw::vtables::BSFaceGenModelMap__Entry_vtable,
     pub unknown_8: [u8; 24],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSFaceGenModelMap__Entry>() == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSFaceGenModelMap__Entry, __vftable) == 0x0);
@@ -3665,6 +3738,7 @@ const _: () = assert!(core::mem::offset_of!(BSFaceGenModelMap__Entry, __vftable)
 pub struct BSFaceGenMorphData {
     /// +0x0 `vtbl:BSFaceGenMorphData:0`, rtti
     pub __vftable: *const crate::raw::vtables::BSFaceGenMorphData_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSFaceGenMorphData>() == 0x8);
 const _: () = assert!(core::mem::offset_of!(BSFaceGenMorphData, __vftable) == 0x0);
@@ -3684,6 +3758,7 @@ pub struct BSFaceGenMorphDataHair {
     /// +0x18 `undefined4`, ctor store
     pub field_18: u32,
     pub unknown_1C: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BSFaceGenMorphDataHair, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSFaceGenMorphDataHair, field_8) == 0x8);
@@ -3728,6 +3803,7 @@ pub struct BSFaceGenMorphDataHead {
     /// +0x60 `undefined4`, ctor store
     pub field_60: u32,
     pub unknown_64: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSFaceGenMorphDataHead>() == 0x68);
 const _: () = assert!(core::mem::offset_of!(BSFaceGenMorphDataHead, __vftable) == 0x0);
@@ -3776,6 +3852,7 @@ pub struct BSFadeNodeCuller {
     /// +0x121 `undefined1`, base NiCullingProcess
     pub field_121: u8,
     pub unknown_122: [u8; 6],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BSFadeNodeCuller, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSFadeNodeCuller, field_8) == 0x8);
@@ -3839,6 +3916,7 @@ pub struct BSFile {
     /// +0x178 `undefined1`, ctor store
     pub field_178: u8,
     pub unknown_179: [u8; 7],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSFile>() == 0x180);
 const _: () = assert!(core::mem::offset_of!(BSFile, __vftable) == 0x0);
@@ -3869,6 +3947,7 @@ const _: () = assert!(core::mem::offset_of!(BSFile, field_178) == 0x178);
 pub struct BSFlatQuadConstructor {
     /// +0x0 `vtbl:BSFlatQuadConstructor:0`, rtti
     pub __vftable: *const crate::raw::vtables::BSFlatQuadConstructor_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BSFlatQuadConstructor, __vftable) == 0x0);
 
@@ -3926,6 +4005,7 @@ pub struct BSFogProperty {
     /// +0x88 `undefined4`, ctor store
     pub field_88: u32,
     pub unknown_8C: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSFogProperty>() == 0x90);
 const _: () = assert!(core::mem::offset_of!(BSFogProperty, __vftable) == 0x0);
@@ -3963,6 +4043,7 @@ pub struct BSFurnitureMarkerNode {
     /// +0x10 `class:BSFixedString`, base NiExtraData, semantic; the key the owner's sorted array is ordered by (high)
     pub name: crate::BSFixedString,
     pub unknown_18: [u8; 24],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSFurnitureMarkerNode>() == 0x30);
 const _: () = assert!(core::mem::offset_of!(BSFurnitureMarkerNode, __vftable) == 0x0);
@@ -4010,6 +4091,7 @@ pub struct BSGameDataSystemUtility {
     pub unknown_6B8: [u8; 24],
     /// +0x6D0 `undefined8`, ctor store
     pub field_6D0: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BSGameDataSystemUtility, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSGameDataSystemUtility, field_8) == 0x8);
@@ -4090,6 +4172,7 @@ pub struct BSGameSound {
     /// +0xC0 `undefined2`, ctor store
     pub field_C0: u16,
     pub unknown_C2: [u8; 6],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSGameSound>() == 0xC8);
 const _: () = assert!(core::mem::offset_of!(BSGameSound, __vftable) == 0x0);
@@ -4156,6 +4239,7 @@ pub struct BSGamerProfile {
     pub unknown_B4: [u8; 4],
     /// +0xB8 `undefined8`, ctor store
     pub field_B8: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BSGamerProfile, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSGamerProfile, source_BSGamerProfileEvent) == 0x8);
@@ -4249,6 +4333,7 @@ pub struct BSGeometryListCullingProcess {
     /// +0x301F4 `undefined4`, base BSCullingProcess, semantic; value passed with each appended object (AppendGeometry's second argument); BSParabolicCullingProcess stores the hemisphere (1 or 2) its bound test returned (medium)
     pub appendTag: u32,
     pub unknown_301F8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSGeometryListCullingProcess>() == 0x30200);
 const _: () = assert!(core::mem::offset_of!(BSGeometryListCullingProcess, __vftable) == 0x0);
@@ -4379,6 +4464,7 @@ pub struct BSGetTimeStepModifier {
     pub field_110: u32,
     /// +0x114 `undefined4`, base hkBaseObject
     pub field_114: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BSGetTimeStepModifier, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSGetTimeStepModifier, field_8) == 0x8);
@@ -4447,6 +4533,7 @@ pub struct BSGrabIKNote {
     /// +0x20 `undefined4`, ctor store
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BSGrabIKNote, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSGrabIKNote, field_8) == 0x8);
@@ -4495,6 +4582,7 @@ pub struct BSGrassShader {
     pub field_80: u64,
     /// +0x88 `undefined8`, base BSShader
     pub field_88: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSGrassShader>() == 0x90);
 const _: () = assert!(core::mem::offset_of!(BSGrassShader, __vftable) == 0x0);
@@ -4618,6 +4706,7 @@ pub struct BSGrassShaderProperty {
     pub field_1C0: u64,
     /// +0x1C8 `undefined8`, ctor store
     pub field_1C8: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSGrassShaderProperty>() == 0x1D0);
 const _: () = assert!(core::mem::offset_of!(BSGrassShaderProperty, __vftable) == 0x0);
@@ -4670,6 +4759,7 @@ const _: () = assert!(core::mem::offset_of!(BSGrassShaderProperty, field_1C8) ==
 pub struct BSIDirectAtModifierSingleton {
     /// +0x0 `vtbl:BSIDirectAtModifierSingleton:0`, rtti
     pub __vftable: *const crate::raw::vtables::BSIDirectAtModifierSingleton_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSIDirectAtModifierSingleton>() == 0x8);
 const _: () = assert!(core::mem::offset_of!(BSIDirectAtModifierSingleton, __vftable) == 0x0);
@@ -4680,6 +4770,7 @@ const _: () = assert!(core::mem::offset_of!(BSIDirectAtModifierSingleton, __vfta
 pub struct BSIFootIkRaycastInterfaceDB {
     /// +0x0 `vtbl:BSIFootIkRaycastInterfaceDB:0`, rtti
     pub __vftable: *const crate::raw::vtables::BSIFootIkRaycastInterfaceDB_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSIFootIkRaycastInterfaceDB>() == 0x8);
 const _: () = assert!(core::mem::offset_of!(BSIFootIkRaycastInterfaceDB, __vftable) == 0x0);
@@ -4690,6 +4781,7 @@ const _: () = assert!(core::mem::offset_of!(BSIFootIkRaycastInterfaceDB, __vftab
 pub struct BSIInputDevice {
     /// +0x0 `vtbl:BSIInputDevice:0`, rtti
     pub __vftable: *const crate::raw::vtables::BSIInputDevice_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSIInputDevice>() == 0x8);
 const _: () = assert!(core::mem::offset_of!(BSIInputDevice, __vftable) == 0x0);
@@ -4700,6 +4792,7 @@ const _: () = assert!(core::mem::offset_of!(BSIInputDevice, __vftable) == 0x0);
 pub struct BSILimbIKModifierSingleton {
     /// +0x0 `vtbl:BSILimbIKModifierSingleton:0`, rtti
     pub __vftable: *const crate::raw::vtables::BSILimbIKModifierSingleton_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSILimbIKModifierSingleton>() == 0x8);
 const _: () = assert!(core::mem::offset_of!(BSILimbIKModifierSingleton, __vftable) == 0x0);
@@ -4710,6 +4803,7 @@ const _: () = assert!(core::mem::offset_of!(BSILimbIKModifierSingleton, __vftabl
 pub struct BSIPassByTargetTriggerModifierSingleton {
     /// +0x0 `vtbl:BSIPassByTargetTriggerModifierSingleton:0`, rtti
     pub __vftable: *const crate::raw::vtables::BSIPassByTargetTriggerModifierSingleton_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSIPassByTargetTriggerModifierSingleton>() == 0x8);
 const _: () = assert!(core::mem::offset_of!(BSIPassByTargetTriggerModifierSingleton, __vftable) == 0x0);
@@ -4720,6 +4814,7 @@ const _: () = assert!(core::mem::offset_of!(BSIPassByTargetTriggerModifierSingle
 pub struct BSIRagdollContactListenerModifierSingleton {
     /// +0x0 `vtbl:BSIRagdollContactListenerModifierSingleton:0`, rtti
     pub __vftable: *const crate::raw::vtables::BSIRagdollContactListenerModifierSingleton_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSIRagdollContactListenerModifierSingleton>() == 0x8);
 const _: () = assert!(core::mem::offset_of!(BSIRagdollContactListenerModifierSingleton, __vftable) == 0x0);
@@ -4730,6 +4825,7 @@ const _: () = assert!(core::mem::offset_of!(BSIRagdollContactListenerModifierSin
 pub struct BSIRagdollDriver {
     /// +0x0 `vtbl:BSIRagdollDriver:0`, rtti
     pub __vftable: *const crate::raw::vtables::BSIRagdollDriver_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSIRagdollDriver>() == 0x8);
 const _: () = assert!(core::mem::offset_of!(BSIRagdollDriver, __vftable) == 0x0);
@@ -4740,6 +4836,7 @@ const _: () = assert!(core::mem::offset_of!(BSIRagdollDriver, __vftable) == 0x0)
 pub struct BSIReverbType {
     /// +0x0 `vtbl:BSIReverbType:0`, rtti
     pub __vftable: *const crate::raw::vtables::BSIReverbType_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSIReverbType>() == 0x8);
 const _: () = assert!(core::mem::offset_of!(BSIReverbType, __vftable) == 0x0);
@@ -4750,6 +4847,7 @@ const _: () = assert!(core::mem::offset_of!(BSIReverbType, __vftable) == 0x0);
 pub struct BSISoundDescriptor__BSIPlaybackCharacteristics {
     /// +0x0 `vtbl:BSISoundDescriptor::BSIPlaybackCharacteristics:0`, rtti
     pub __vftable: *const crate::raw::vtables::BSISoundDescriptor__BSIPlaybackCharacteristics_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BSISoundDescriptor__BSIPlaybackCharacteristics, __vftable) == 0x0);
 
@@ -4760,6 +4858,7 @@ pub struct BSISoundOutputModel__BSIAttenuationCharacteristics {
     /// +0x0 `vtbl:BSISoundOutputModel::BSIAttenuationCharacteristics:0`, rtti
     pub __vftable: *const crate::raw::vtables::BSISoundOutputModel__BSIAttenuationCharacteristics_vtable,
     pub unknown_8: [u8; 16],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSISoundOutputModel__BSIAttenuationCharacteristics>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSISoundOutputModel__BSIAttenuationCharacteristics, __vftable) == 0x0);
@@ -4770,6 +4869,7 @@ const _: () = assert!(core::mem::offset_of!(BSISoundOutputModel__BSIAttenuationC
 pub struct BSISpeedSamplerDB {
     /// +0x0 `vtbl:BSISpeedSamplerDB:0`, rtti
     pub __vftable: *const crate::raw::vtables::BSISpeedSamplerDB_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSISpeedSamplerDB>() == 0x8);
 const _: () = assert!(core::mem::offset_of!(BSISpeedSamplerDB, __vftable) == 0x0);
@@ -4871,6 +4971,7 @@ pub struct BSIStateManagerModifier {
     pub field_110: u32,
     /// +0x114 `undefined4`, base hkBaseObject
     pub field_114: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BSIStateManagerModifier, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSIStateManagerModifier, field_8) == 0x8);
@@ -5013,6 +5114,7 @@ pub struct BSIStateManagerModifier__BSIStateManagerStateListener {
     pub field_110: u32,
     /// +0x114 `undefined4`, base hkBaseObject
     pub field_114: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BSIStateManagerModifier__BSIStateManagerStateListener, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSIStateManagerModifier__BSIStateManagerStateListener, m_hkpCollidableCollidableFilter_10) == 0x10);
@@ -5071,6 +5173,7 @@ pub struct BSIStream {
     /// +0x10 `undefined1`, base BSTIOStream::TIStream<BSIOStreamTraits>
     pub field_10: u8,
     pub unknown_11: [u8; 7],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BSIStream, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSIStream, field_8) == 0x8);
@@ -5176,6 +5279,7 @@ pub struct BSImagespaceShader {
     /// +0x1A0 `undefined2`, ctor store
     pub field_1A0: u16,
     pub unknown_1A2: [u8; 6],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSImagespaceShader>() == 0x1A8);
 const _: () = assert!(core::mem::offset_of!(BSImagespaceShader, __vftable) == 0x0);
@@ -5322,6 +5426,7 @@ pub struct BSImagespaceShaderAlphaBlend {
     /// +0x1A0 `undefined2`, base BSImagespaceShader
     pub field_1A0: u16,
     pub unknown_1A2: [u8; 6],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSImagespaceShaderAlphaBlend>() == 0x1A8);
 const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderAlphaBlend, __vftable) == 0x0);
@@ -5469,6 +5574,7 @@ pub struct BSImagespaceShaderApplyReflections {
     /// +0x1A0 `undefined2`, base BSImagespaceShader
     pub field_1A0: u16,
     pub unknown_1A2: [u8; 6],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSImagespaceShaderApplyReflections>() == 0x1A8);
 const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderApplyReflections, __vftable) == 0x0);
@@ -5616,6 +5722,7 @@ pub struct BSImagespaceShaderBlur11 {
     /// +0x1A0 `undefined2`, base BSImagespaceShader
     pub field_1A0: u16,
     pub unknown_1A2: [u8; 6],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSImagespaceShaderBlur11>() == 0x1A8);
 const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderBlur11, __vftable) == 0x0);
@@ -5763,6 +5870,7 @@ pub struct BSImagespaceShaderBlur13 {
     /// +0x1A0 `undefined2`, base BSImagespaceShader
     pub field_1A0: u16,
     pub unknown_1A2: [u8; 6],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSImagespaceShaderBlur13>() == 0x1A8);
 const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderBlur13, __vftable) == 0x0);
@@ -5910,6 +6018,7 @@ pub struct BSImagespaceShaderBlur15 {
     /// +0x1A0 `undefined2`, base BSImagespaceShader
     pub field_1A0: u16,
     pub unknown_1A2: [u8; 6],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSImagespaceShaderBlur15>() == 0x1A8);
 const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderBlur15, __vftable) == 0x0);
@@ -6057,6 +6166,7 @@ pub struct BSImagespaceShaderBlur3 {
     /// +0x1A0 `undefined2`, base BSImagespaceShader
     pub field_1A0: u16,
     pub unknown_1A2: [u8; 6],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSImagespaceShaderBlur3>() == 0x1A8);
 const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderBlur3, __vftable) == 0x0);
@@ -6204,6 +6314,7 @@ pub struct BSImagespaceShaderBlur5 {
     /// +0x1A0 `undefined2`, base BSImagespaceShader
     pub field_1A0: u16,
     pub unknown_1A2: [u8; 6],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSImagespaceShaderBlur5>() == 0x1A8);
 const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderBlur5, __vftable) == 0x0);
@@ -6351,6 +6462,7 @@ pub struct BSImagespaceShaderBlur7 {
     /// +0x1A0 `undefined2`, base BSImagespaceShader
     pub field_1A0: u16,
     pub unknown_1A2: [u8; 6],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSImagespaceShaderBlur7>() == 0x1A8);
 const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderBlur7, __vftable) == 0x0);
@@ -6498,6 +6610,7 @@ pub struct BSImagespaceShaderBlur9 {
     /// +0x1A0 `undefined2`, base BSImagespaceShader
     pub field_1A0: u16,
     pub unknown_1A2: [u8; 6],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSImagespaceShaderBlur9>() == 0x1A8);
 const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderBlur9, __vftable) == 0x0);
@@ -6645,6 +6758,7 @@ pub struct BSImagespaceShaderBrightPassBlur11 {
     /// +0x1A0 `undefined2`, base BSImagespaceShader
     pub field_1A0: u16,
     pub unknown_1A2: [u8; 6],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSImagespaceShaderBrightPassBlur11>() == 0x1A8);
 const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderBrightPassBlur11, __vftable) == 0x0);
@@ -6792,6 +6906,7 @@ pub struct BSImagespaceShaderBrightPassBlur13 {
     /// +0x1A0 `undefined2`, base BSImagespaceShader
     pub field_1A0: u16,
     pub unknown_1A2: [u8; 6],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSImagespaceShaderBrightPassBlur13>() == 0x1A8);
 const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderBrightPassBlur13, __vftable) == 0x0);
@@ -6939,6 +7054,7 @@ pub struct BSImagespaceShaderBrightPassBlur15 {
     /// +0x1A0 `undefined2`, base BSImagespaceShader
     pub field_1A0: u16,
     pub unknown_1A2: [u8; 6],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSImagespaceShaderBrightPassBlur15>() == 0x1A8);
 const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderBrightPassBlur15, __vftable) == 0x0);
@@ -7086,6 +7202,7 @@ pub struct BSImagespaceShaderBrightPassBlur3 {
     /// +0x1A0 `undefined2`, base BSImagespaceShader
     pub field_1A0: u16,
     pub unknown_1A2: [u8; 6],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSImagespaceShaderBrightPassBlur3>() == 0x1A8);
 const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderBrightPassBlur3, __vftable) == 0x0);
@@ -7233,6 +7350,7 @@ pub struct BSImagespaceShaderBrightPassBlur5 {
     /// +0x1A0 `undefined2`, base BSImagespaceShader
     pub field_1A0: u16,
     pub unknown_1A2: [u8; 6],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSImagespaceShaderBrightPassBlur5>() == 0x1A8);
 const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderBrightPassBlur5, __vftable) == 0x0);
@@ -7380,6 +7498,7 @@ pub struct BSImagespaceShaderBrightPassBlur7 {
     /// +0x1A0 `undefined2`, base BSImagespaceShader
     pub field_1A0: u16,
     pub unknown_1A2: [u8; 6],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSImagespaceShaderBrightPassBlur7>() == 0x1A8);
 const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderBrightPassBlur7, __vftable) == 0x0);
@@ -7527,6 +7646,7 @@ pub struct BSImagespaceShaderBrightPassBlur9 {
     /// +0x1A0 `undefined2`, base BSImagespaceShader
     pub field_1A0: u16,
     pub unknown_1A2: [u8; 6],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSImagespaceShaderBrightPassBlur9>() == 0x1A8);
 const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderBrightPassBlur9, __vftable) == 0x0);
@@ -7673,6 +7793,7 @@ pub struct BSImagespaceShaderCopy {
     /// +0x1A0 `undefined2`, base BSImagespaceShader
     pub field_1A0: u16,
     pub unknown_1A2: [u8; 6],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSImagespaceShaderCopy>() == 0x1A8);
 const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderCopy, __vftable) == 0x0);
@@ -7818,6 +7939,7 @@ pub struct BSImagespaceShaderCopyCustomViewport {
     /// +0x1A0 `undefined2`, base BSImagespaceShader
     pub field_1A0: u16,
     pub unknown_1A2: [u8; 22],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSImagespaceShaderCopyCustomViewport>() == 0x1B8);
 const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderCopyCustomViewport, __vftable) == 0x0);
@@ -7963,6 +8085,7 @@ pub struct BSImagespaceShaderCopyDynamicFetchDisabled {
     /// +0x1A0 `undefined2`, base BSImagespaceShader
     pub field_1A0: u16,
     pub unknown_1A2: [u8; 6],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSImagespaceShaderCopyDynamicFetchDisabled>() == 0x1A8);
 const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderCopyDynamicFetchDisabled, __vftable) == 0x0);
@@ -8108,6 +8231,7 @@ pub struct BSImagespaceShaderCopyScaleBias {
     /// +0x1A0 `undefined2`, base BSImagespaceShader
     pub field_1A0: u16,
     pub unknown_1A2: [u8; 6],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSImagespaceShaderCopyScaleBias>() == 0x1A8);
 const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderCopyScaleBias, __vftable) == 0x0);
@@ -8254,6 +8378,7 @@ pub struct BSImagespaceShaderDepthOfField {
     /// +0x1A0 `undefined2`, base BSImagespaceShader
     pub field_1A0: u16,
     pub unknown_1A2: [u8; 6],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSImagespaceShaderDepthOfField>() == 0x1A8);
 const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderDepthOfField, __vftable) == 0x0);
@@ -8401,6 +8526,7 @@ pub struct BSImagespaceShaderDepthOfFieldFogged {
     /// +0x1A0 `undefined2`, base BSImagespaceShader
     pub field_1A0: u16,
     pub unknown_1A2: [u8; 6],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSImagespaceShaderDepthOfFieldFogged>() == 0x1A8);
 const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderDepthOfFieldFogged, __vftable) == 0x0);
@@ -8548,6 +8674,7 @@ pub struct BSImagespaceShaderDepthOfFieldMaskedFogged {
     /// +0x1A0 `undefined2`, base BSImagespaceShader
     pub field_1A0: u16,
     pub unknown_1A2: [u8; 6],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSImagespaceShaderDepthOfFieldMaskedFogged>() == 0x1A8);
 const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderDepthOfFieldMaskedFogged, __vftable) == 0x0);
@@ -8695,6 +8822,7 @@ pub struct BSImagespaceShaderDistantBlur {
     /// +0x1A0 `undefined2`, base BSImagespaceShader
     pub field_1A0: u16,
     pub unknown_1A2: [u8; 6],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSImagespaceShaderDistantBlur>() == 0x1A8);
 const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderDistantBlur, __vftable) == 0x0);
@@ -8842,6 +8970,7 @@ pub struct BSImagespaceShaderDistantBlurFogged {
     /// +0x1A0 `undefined2`, base BSImagespaceShader
     pub field_1A0: u16,
     pub unknown_1A2: [u8; 6],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSImagespaceShaderDistantBlurFogged>() == 0x1A8);
 const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderDistantBlurFogged, __vftable) == 0x0);
@@ -8989,6 +9118,7 @@ pub struct BSImagespaceShaderDistantBlurMaskedFogged {
     /// +0x1A0 `undefined2`, base BSImagespaceShader
     pub field_1A0: u16,
     pub unknown_1A2: [u8; 6],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSImagespaceShaderDistantBlurMaskedFogged>() == 0x1A8);
 const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderDistantBlurMaskedFogged, __vftable) == 0x0);
@@ -9136,6 +9266,7 @@ pub struct BSImagespaceShaderDoubleVision {
     /// +0x1A0 `undefined2`, base BSImagespaceShader
     pub field_1A0: u16,
     pub unknown_1A2: [u8; 6],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSImagespaceShaderDoubleVision>() == 0x1A8);
 const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderDoubleVision, __vftable) == 0x0);
@@ -9285,6 +9416,7 @@ pub struct BSImagespaceShaderFXAA {
     pub unknown_1A2: [u8; 6],
     /// +0x1A8 `class:ImageSpaceShaderParam`, member ctor ImageSpaceShaderParam
     pub m_ImageSpaceShaderParam_1A8: crate::ImageSpaceShaderParam,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSImagespaceShaderFXAA>() == 0x228);
 const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderFXAA, __vftable) == 0x0);
@@ -9432,6 +9564,7 @@ pub struct BSImagespaceShaderGreyScale {
     /// +0x1A0 `undefined2`, base BSImagespaceShader
     pub field_1A0: u16,
     pub unknown_1A2: [u8; 6],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSImagespaceShaderGreyScale>() == 0x1A8);
 const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderGreyScale, __vftable) == 0x0);
@@ -9578,6 +9711,7 @@ pub struct BSImagespaceShaderHDRDownSample16 {
     /// +0x1A0 `undefined2`, base BSImagespaceShader
     pub field_1A0: u16,
     pub unknown_1A2: [u8; 6],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSImagespaceShaderHDRDownSample16>() == 0x1A8);
 const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderHDRDownSample16, __vftable) == 0x0);
@@ -9725,6 +9859,7 @@ pub struct BSImagespaceShaderHDRDownSample16LightAdapt {
     /// +0x1A0 `undefined2`, base BSImagespaceShader
     pub field_1A0: u16,
     pub unknown_1A2: [u8; 6],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSImagespaceShaderHDRDownSample16LightAdapt>() == 0x1A8);
 const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderHDRDownSample16LightAdapt, __vftable) == 0x0);
@@ -9872,6 +10007,7 @@ pub struct BSImagespaceShaderHDRDownSample16Lum {
     /// +0x1A0 `undefined2`, base BSImagespaceShader
     pub field_1A0: u16,
     pub unknown_1A2: [u8; 6],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSImagespaceShaderHDRDownSample16Lum>() == 0x1A8);
 const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderHDRDownSample16Lum, __vftable) == 0x0);
@@ -10019,6 +10155,7 @@ pub struct BSImagespaceShaderHDRDownSample16LumClamp {
     /// +0x1A0 `undefined2`, base BSImagespaceShader
     pub field_1A0: u16,
     pub unknown_1A2: [u8; 6],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSImagespaceShaderHDRDownSample16LumClamp>() == 0x1A8);
 const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderHDRDownSample16LumClamp, __vftable) == 0x0);
@@ -10166,6 +10303,7 @@ pub struct BSImagespaceShaderHDRDownSample4 {
     /// +0x1A0 `undefined2`, base BSImagespaceShader
     pub field_1A0: u16,
     pub unknown_1A2: [u8; 6],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSImagespaceShaderHDRDownSample4>() == 0x1A8);
 const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderHDRDownSample4, __vftable) == 0x0);
@@ -10313,6 +10451,7 @@ pub struct BSImagespaceShaderHDRDownSample4LightAdapt {
     /// +0x1A0 `undefined2`, base BSImagespaceShader
     pub field_1A0: u16,
     pub unknown_1A2: [u8; 6],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSImagespaceShaderHDRDownSample4LightAdapt>() == 0x1A8);
 const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderHDRDownSample4LightAdapt, __vftable) == 0x0);
@@ -10460,6 +10599,7 @@ pub struct BSImagespaceShaderHDRDownSample4LumClamp {
     /// +0x1A0 `undefined2`, base BSImagespaceShader
     pub field_1A0: u16,
     pub unknown_1A2: [u8; 6],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSImagespaceShaderHDRDownSample4LumClamp>() == 0x1A8);
 const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderHDRDownSample4LumClamp, __vftable) == 0x0);
@@ -10607,6 +10747,7 @@ pub struct BSImagespaceShaderHDRDownSample4RGB2Lum {
     /// +0x1A0 `undefined2`, base BSImagespaceShader
     pub field_1A0: u16,
     pub unknown_1A2: [u8; 6],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSImagespaceShaderHDRDownSample4RGB2Lum>() == 0x1A8);
 const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderHDRDownSample4RGB2Lum, __vftable) == 0x0);
@@ -10754,6 +10895,7 @@ pub struct BSImagespaceShaderHDRTonemapBlendCinematic {
     /// +0x1A0 `undefined2`, base BSImagespaceShader
     pub field_1A0: u16,
     pub unknown_1A2: [u8; 6],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSImagespaceShaderHDRTonemapBlendCinematic>() == 0x1A8);
 const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderHDRTonemapBlendCinematic, __vftable) == 0x0);
@@ -10901,6 +11043,7 @@ pub struct BSImagespaceShaderHDRTonemapBlendCinematicFade {
     /// +0x1A0 `undefined2`, base BSImagespaceShader
     pub field_1A0: u16,
     pub unknown_1A2: [u8; 6],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSImagespaceShaderHDRTonemapBlendCinematicFade>() == 0x1A8);
 const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderHDRTonemapBlendCinematicFade, __vftable) == 0x0);
@@ -11048,6 +11191,7 @@ pub struct BSImagespaceShaderISApplyVolumetricLighting {
     /// +0x1A0 `undefined2`, base BSImagespaceShader
     pub field_1A0: u16,
     pub unknown_1A2: [u8; 6],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSImagespaceShaderISApplyVolumetricLighting>() == 0x1A8);
 const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISApplyVolumetricLighting, __vftable) == 0x0);
@@ -11194,6 +11338,7 @@ pub struct BSImagespaceShaderISBasicCopy {
     /// +0x1A0 `undefined2`, base BSImagespaceShader
     pub field_1A0: u16,
     pub unknown_1A2: [u8; 6],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSImagespaceShaderISBasicCopy>() == 0x1A8);
 const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISBasicCopy, __vftable) == 0x0);
@@ -11340,6 +11485,7 @@ pub struct BSImagespaceShaderISBlur {
     /// +0x1A0 `undefined2`, base BSImagespaceShader
     pub field_1A0: u16,
     pub unknown_1A2: [u8; 6],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSImagespaceShaderISBlur>() == 0x1A8);
 const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISBlur, __vftable) == 0x0);
@@ -11487,6 +11633,7 @@ pub struct BSImagespaceShaderISCompositeLensFlare {
     /// +0x1A0 `undefined2`, base BSImagespaceShader
     pub field_1A0: u16,
     pub unknown_1A2: [u8; 6],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSImagespaceShaderISCompositeLensFlare>() == 0x1A8);
 const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISCompositeLensFlare, __vftable) == 0x0);
@@ -11634,6 +11781,7 @@ pub struct BSImagespaceShaderISCompositeLensFlareVolumetricLighting {
     /// +0x1A0 `undefined2`, base BSImagespaceShader
     pub field_1A0: u16,
     pub unknown_1A2: [u8; 6],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSImagespaceShaderISCompositeLensFlareVolumetricLighting>() == 0x1A8);
 const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISCompositeLensFlareVolumetricLighting, __vftable) == 0x0);
@@ -11781,6 +11929,7 @@ pub struct BSImagespaceShaderISCompositeVolumetricLighting {
     /// +0x1A0 `undefined2`, base BSImagespaceShader
     pub field_1A0: u16,
     pub unknown_1A2: [u8; 6],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSImagespaceShaderISCompositeVolumetricLighting>() == 0x1A8);
 const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISCompositeVolumetricLighting, __vftable) == 0x0);
@@ -11928,6 +12077,7 @@ pub struct BSImagespaceShaderISCopySubRegionCS {
     /// +0x1A0 `undefined2`, base BSImagespaceShader
     pub field_1A0: u16,
     pub unknown_1A2: [u8; 6],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSImagespaceShaderISCopySubRegionCS>() == 0x1A8);
 const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISCopySubRegionCS, __vftable) == 0x0);
@@ -12074,6 +12224,7 @@ pub struct BSImagespaceShaderISDebugSnow {
     /// +0x1A0 `undefined2`, base BSImagespaceShader
     pub field_1A0: u16,
     pub unknown_1A2: [u8; 6],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSImagespaceShaderISDebugSnow>() == 0x1A8);
 const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISDebugSnow, __vftable) == 0x0);
@@ -12220,6 +12371,7 @@ pub struct BSImagespaceShaderISDepthOfFieldBlurHCS {
     /// +0x1A0 `undefined2`, base BSImagespaceShader
     pub field_1A0: u16,
     pub unknown_1A2: [u8; 6],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSImagespaceShaderISDepthOfFieldBlurHCS>() == 0x1A8);
 const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISDepthOfFieldBlurHCS, __vftable) == 0x0);
@@ -12367,6 +12519,7 @@ pub struct BSImagespaceShaderISDepthOfFieldBlurVCS {
     /// +0x1A0 `undefined2`, base BSImagespaceShader
     pub field_1A0: u16,
     pub unknown_1A2: [u8; 6],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSImagespaceShaderISDepthOfFieldBlurVCS>() == 0x1A8);
 const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISDepthOfFieldBlurVCS, __vftable) == 0x0);
@@ -12514,6 +12667,7 @@ pub struct BSImagespaceShaderISDisplayDepth {
     /// +0x1A0 `undefined2`, base BSImagespaceShader
     pub field_1A0: u16,
     pub unknown_1A2: [u8; 6],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSImagespaceShaderISDisplayDepth>() == 0x1A8);
 const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISDisplayDepth, __vftable) == 0x0);
@@ -12661,6 +12815,7 @@ pub struct BSImagespaceShaderISDownsample {
     /// +0x1A0 `undefined2`, base BSImagespaceShader
     pub field_1A0: u16,
     pub unknown_1A2: [u8; 6],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSImagespaceShaderISDownsample>() == 0x1A8);
 const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISDownsample, __vftable) == 0x0);
@@ -12808,6 +12963,7 @@ pub struct BSImagespaceShaderISDownsampleCS {
     /// +0x1A0 `undefined2`, base BSImagespaceShader
     pub field_1A0: u16,
     pub unknown_1A2: [u8; 6],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSImagespaceShaderISDownsampleCS>() == 0x1A8);
 const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISDownsampleCS, __vftable) == 0x0);
@@ -12955,6 +13111,7 @@ pub struct BSImagespaceShaderISDownsampleIgnoreBrightest {
     /// +0x1A0 `undefined2`, base BSImagespaceShader
     pub field_1A0: u16,
     pub unknown_1A2: [u8; 6],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSImagespaceShaderISDownsampleIgnoreBrightest>() == 0x1A8);
 const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISDownsampleIgnoreBrightest, __vftable) == 0x0);
@@ -13102,6 +13259,7 @@ pub struct BSImagespaceShaderISDownsampleIgnoreBrightestCS {
     /// +0x1A0 `undefined2`, base BSImagespaceShader
     pub field_1A0: u16,
     pub unknown_1A2: [u8; 6],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSImagespaceShaderISDownsampleIgnoreBrightestCS>() == 0x1A8);
 const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISDownsampleIgnoreBrightestCS, __vftable) == 0x0);
@@ -13248,6 +13406,7 @@ pub struct BSImagespaceShaderISExp {
     /// +0x1A0 `undefined2`, base BSImagespaceShader
     pub field_1A0: u16,
     pub unknown_1A2: [u8; 6],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSImagespaceShaderISExp>() == 0x1A8);
 const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISExp, __vftable) == 0x0);
@@ -13394,6 +13553,7 @@ pub struct BSImagespaceShaderISIBLensFlares {
     /// +0x1A0 `undefined2`, base BSImagespaceShader
     pub field_1A0: u16,
     pub unknown_1A2: [u8; 6],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSImagespaceShaderISIBLensFlares>() == 0x1A8);
 const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISIBLensFlares, __vftable) == 0x0);
@@ -13541,6 +13701,7 @@ pub struct BSImagespaceShaderISLightingComposite {
     /// +0x1A0 `undefined2`, base BSImagespaceShader
     pub field_1A0: u16,
     pub unknown_1A2: [u8; 6],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSImagespaceShaderISLightingComposite>() == 0x1A8);
 const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISLightingComposite, __vftable) == 0x0);
@@ -13688,6 +13849,7 @@ pub struct BSImagespaceShaderISLightingCompositeMenu {
     /// +0x1A0 `undefined2`, base BSImagespaceShader
     pub field_1A0: u16,
     pub unknown_1A2: [u8; 6],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSImagespaceShaderISLightingCompositeMenu>() == 0x1A8);
 const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISLightingCompositeMenu, __vftable) == 0x0);
@@ -13835,6 +13997,7 @@ pub struct BSImagespaceShaderISLightingCompositeNoDirectionalLight {
     /// +0x1A0 `undefined2`, base BSImagespaceShader
     pub field_1A0: u16,
     pub unknown_1A2: [u8; 6],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSImagespaceShaderISLightingCompositeNoDirectionalLight>() == 0x1A8);
 const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISLightingCompositeNoDirectionalLight, __vftable) == 0x0);
@@ -13982,6 +14145,7 @@ pub struct BSImagespaceShaderISMinify {
     /// +0x1A0 `undefined2`, base BSImagespaceShader
     pub field_1A0: u16,
     pub unknown_1A2: [u8; 6],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSImagespaceShaderISMinify>() == 0x1A8);
 const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISMinify, __vftable) == 0x0);
@@ -14129,6 +14293,7 @@ pub struct BSImagespaceShaderISMinifyContrast {
     /// +0x1A0 `undefined2`, base BSImagespaceShader
     pub field_1A0: u16,
     pub unknown_1A2: [u8; 6],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSImagespaceShaderISMinifyContrast>() == 0x1A8);
 const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISMinifyContrast, __vftable) == 0x0);
@@ -14276,6 +14441,7 @@ pub struct BSImagespaceShaderISParallaxMaskBlurHCS {
     /// +0x1A0 `undefined2`, base BSImagespaceShader
     pub field_1A0: u16,
     pub unknown_1A2: [u8; 6],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSImagespaceShaderISParallaxMaskBlurHCS>() == 0x1A8);
 const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISParallaxMaskBlurHCS, __vftable) == 0x0);
@@ -14423,6 +14589,7 @@ pub struct BSImagespaceShaderISParallaxMaskBlurVCS {
     /// +0x1A0 `undefined2`, base BSImagespaceShader
     pub field_1A0: u16,
     pub unknown_1A2: [u8; 6],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSImagespaceShaderISParallaxMaskBlurVCS>() == 0x1A8);
 const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISParallaxMaskBlurVCS, __vftable) == 0x0);
@@ -14569,6 +14736,7 @@ pub struct BSImagespaceShaderISPerlinNoise2DCS {
     /// +0x1A0 `undefined2`, base BSImagespaceShader
     pub field_1A0: u16,
     pub unknown_1A2: [u8; 6],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSImagespaceShaderISPerlinNoise2DCS>() == 0x1A8);
 const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISPerlinNoise2DCS, __vftable) == 0x0);
@@ -14714,6 +14882,7 @@ pub struct BSImagespaceShaderISPerlinNoiseCS {
     /// +0x1A0 `undefined2`, base BSImagespaceShader
     pub field_1A0: u16,
     pub unknown_1A2: [u8; 6],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSImagespaceShaderISPerlinNoiseCS>() == 0x1A8);
 const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISPerlinNoiseCS, __vftable) == 0x0);
@@ -14859,6 +15028,7 @@ pub struct BSImagespaceShaderISSAOBlurH {
     /// +0x1A0 `undefined2`, base BSImagespaceShader
     pub field_1A0: u16,
     pub unknown_1A2: [u8; 6],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSImagespaceShaderISSAOBlurH>() == 0x1A8);
 const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISSAOBlurH, __vftable) == 0x0);
@@ -15005,6 +15175,7 @@ pub struct BSImagespaceShaderISSAOBlurHCS {
     /// +0x1A0 `undefined2`, base BSImagespaceShader
     pub field_1A0: u16,
     pub unknown_1A2: [u8; 6],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSImagespaceShaderISSAOBlurHCS>() == 0x1A8);
 const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISSAOBlurHCS, __vftable) == 0x0);
@@ -15151,6 +15322,7 @@ pub struct BSImagespaceShaderISSAOBlurV {
     /// +0x1A0 `undefined2`, base BSImagespaceShader
     pub field_1A0: u16,
     pub unknown_1A2: [u8; 6],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSImagespaceShaderISSAOBlurV>() == 0x1A8);
 const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISSAOBlurV, __vftable) == 0x0);
@@ -15297,6 +15469,7 @@ pub struct BSImagespaceShaderISSAOBlurVCS {
     /// +0x1A0 `undefined2`, base BSImagespaceShader
     pub field_1A0: u16,
     pub unknown_1A2: [u8; 6],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSImagespaceShaderISSAOBlurVCS>() == 0x1A8);
 const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISSAOBlurVCS, __vftable) == 0x0);
@@ -15444,6 +15617,7 @@ pub struct BSImagespaceShaderISSAOCameraZ {
     /// +0x1A0 `undefined2`, base BSImagespaceShader
     pub field_1A0: u16,
     pub unknown_1A2: [u8; 6],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSImagespaceShaderISSAOCameraZ>() == 0x1A8);
 const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISSAOCameraZ, __vftable) == 0x0);
@@ -15591,6 +15765,7 @@ pub struct BSImagespaceShaderISSAOCameraZAndMipsCS {
     /// +0x1A0 `undefined2`, base BSImagespaceShader
     pub field_1A0: u16,
     pub unknown_1A2: [u8; 6],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSImagespaceShaderISSAOCameraZAndMipsCS>() == 0x1A8);
 const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISSAOCameraZAndMipsCS, __vftable) == 0x0);
@@ -15738,6 +15913,7 @@ pub struct BSImagespaceShaderISSAOCompositeFog {
     /// +0x1A0 `undefined2`, base BSImagespaceShader
     pub field_1A0: u16,
     pub unknown_1A2: [u8; 6],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSImagespaceShaderISSAOCompositeFog>() == 0x1A8);
 const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISSAOCompositeFog, __vftable) == 0x0);
@@ -15885,6 +16061,7 @@ pub struct BSImagespaceShaderISSAOCompositeSAO {
     /// +0x1A0 `undefined2`, base BSImagespaceShader
     pub field_1A0: u16,
     pub unknown_1A2: [u8; 6],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSImagespaceShaderISSAOCompositeSAO>() == 0x1A8);
 const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISSAOCompositeSAO, __vftable) == 0x0);
@@ -16032,6 +16209,7 @@ pub struct BSImagespaceShaderISSAOCompositeSAOFog {
     /// +0x1A0 `undefined2`, base BSImagespaceShader
     pub field_1A0: u16,
     pub unknown_1A2: [u8; 6],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSImagespaceShaderISSAOCompositeSAOFog>() == 0x1A8);
 const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISSAOCompositeSAOFog, __vftable) == 0x0);
@@ -16179,6 +16357,7 @@ pub struct BSImagespaceShaderISSAORawAO {
     /// +0x1A0 `undefined2`, base BSImagespaceShader
     pub field_1A0: u16,
     pub unknown_1A2: [u8; 6],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSImagespaceShaderISSAORawAO>() == 0x1A8);
 const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISSAORawAO, __vftable) == 0x0);
@@ -16326,6 +16505,7 @@ pub struct BSImagespaceShaderISSAORawAOCS {
     /// +0x1A0 `undefined2`, base BSImagespaceShader
     pub field_1A0: u16,
     pub unknown_1A2: [u8; 6],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSImagespaceShaderISSAORawAOCS>() == 0x1A8);
 const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISSAORawAOCS, __vftable) == 0x0);
@@ -16473,6 +16653,7 @@ pub struct BSImagespaceShaderISSAORawAONoTemporal {
     /// +0x1A0 `undefined2`, base BSImagespaceShader
     pub field_1A0: u16,
     pub unknown_1A2: [u8; 6],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSImagespaceShaderISSAORawAONoTemporal>() == 0x1A8);
 const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISSAORawAONoTemporal, __vftable) == 0x0);
@@ -16619,6 +16800,7 @@ pub struct BSImagespaceShaderISSILComposite {
     /// +0x1A0 `undefined2`, base BSImagespaceShader
     pub field_1A0: u16,
     pub unknown_1A2: [u8; 6],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSImagespaceShaderISSILComposite>() == 0x1A8);
 const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISSILComposite, __vftable) == 0x0);
@@ -16765,6 +16947,7 @@ pub struct BSImagespaceShaderISSILRawInd {
     /// +0x1A0 `undefined2`, base BSImagespaceShader
     pub field_1A0: u16,
     pub unknown_1A2: [u8; 6],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSImagespaceShaderISSILRawInd>() == 0x1A8);
 const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISSILRawInd, __vftable) == 0x0);
@@ -16810,151 +16993,4 @@ const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISSILRawInd, field
 const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISSILRawInd, field_134) == 0x134);
 const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISSILRawInd, field_198) == 0x198);
 const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISSILRawInd, field_1A0) == 0x1A0);
-
-/// `BSImagespaceShaderISSimpleColor`: size 0x1A8 (exact, medium); primary base `BSImagespaceShader`.
-/// Evidence: runtime: 0x1A8 at 1 allocation sites; agrees with the static allocation sites.
-/// Bases: `BSImagespaceShader`@0x0, `BSShader`@0x0, `NiRefObject`@0x0, `NiBoneMatrixSetterI`@0x10, `BSReloadShaderI`@0x18, `ImageSpaceEffect`@0x90.
-/// Packed: a field lies below its natural alignment.
-#[repr(C, packed)]
-pub struct BSImagespaceShaderISSimpleColor {
-    /// +0x0 `vtbl:BSImagespaceShaderISSimpleColor:0`, rtti
-    pub __vftable: *const crate::raw::vtables::BSImagespaceShaderISSimpleColor_vtable,
-    /// +0x8 `undefined4`, base BSShader
-    pub field_8: u32,
-    pub unknown_C: [u8; 4],
-    /// +0x10 `vtbl:BSImagespaceShaderISSimpleColor:10`, rtti
-    pub __vftable_10: *const crate::raw::vtables::BSImagespaceShaderISSimpleColor_vtable_10,
-    /// +0x18 `vtbl:BSImagespaceShaderISSimpleColor:18`, rtti
-    pub __vftable_18: *const crate::raw::vtables::BSImagespaceShaderISSimpleColor_vtable_18,
-    /// +0x20 `undefined4`, base BSImagespaceShader
-    pub field_20: u32,
-    pub unknown_24: [u8; 16],
-    /// +0x34 `undefined8`, base BSShader
-    pub field_34: u64,
-    /// +0x3C `undefined4`, base BSShader
-    pub field_3C: u32,
-    /// +0x40 `undefined8`, base BSShader
-    pub field_40: u64,
-    pub unknown_48: [u8; 8],
-    /// +0x50 `undefined8`, base BSShader
-    pub field_50: u64,
-    pub unknown_58: [u8; 12],
-    /// +0x64 `undefined8`, base BSShader
-    pub field_64: u64,
-    /// +0x6C `undefined4`, base BSShader
-    pub field_6C: u32,
-    /// +0x70 `undefined8`, base BSShader
-    pub field_70: u64,
-    pub unknown_78: [u8; 8],
-    /// +0x80 `undefined8`, base BSShader
-    pub field_80: u64,
-    /// +0x88 `undefined8`, base BSShader
-    pub field_88: u64,
-    /// +0x90 `vtbl:BSImagespaceShaderISSimpleColor:90`, rtti
-    pub __vftable_90: *const crate::raw::vtables::BSImagespaceShaderISSimpleColor_vtable_90,
-    /// +0x98 `undefined2`, base ImageSpaceEffect
-    pub field_98: u16,
-    pub unknown_9A: [u8; 6],
-    /// +0xA0 `undefined8`, base ImageSpaceEffect
-    pub m_NiTPrimitiveArray_A0: u64,
-    /// +0xA8 `undefined8`, base ImageSpaceEffect
-    pub field_A8: u64,
-    /// +0xB0 `undefined4`, base ImageSpaceEffect
-    pub field_B0: u32,
-    /// +0xB4 `undefined4`, base ImageSpaceEffect
-    pub field_B4: u32,
-    /// +0xB8 `undefined8`, base ImageSpaceEffect
-    pub m_NiTPrimitiveArray_B8: u64,
-    /// +0xC0 `undefined8`, base ImageSpaceEffect
-    pub field_C0: u64,
-    /// +0xC8 `undefined4`, base ImageSpaceEffect
-    pub field_C8: u32,
-    /// +0xCC `undefined4`, base ImageSpaceEffect
-    pub field_CC: u32,
-    /// +0xD0 `undefined8`, base ImageSpaceEffect
-    pub m_NiTPrimitiveArray_D0: u64,
-    /// +0xD8 `undefined8`, base ImageSpaceEffect
-    pub field_D8: u64,
-    /// +0xE0 `undefined4`, base ImageSpaceEffect
-    pub field_E0: u32,
-    /// +0xE4 `undefined4`, base ImageSpaceEffect
-    pub field_E4: u32,
-    /// +0xE8 `undefined8`, base ImageSpaceEffect
-    pub m_EffectInput____ptr64__E8: u64,
-    /// +0xF0 `undefined8`, base ImageSpaceEffect
-    pub field_F0: u64,
-    /// +0xF8 `undefined4`, base ImageSpaceEffect
-    pub field_F8: u32,
-    /// +0xFC `undefined4`, base ImageSpaceEffect
-    pub field_FC: u32,
-    /// +0x100 `undefined8`, base ImageSpaceEffect
-    pub m_NiTPrimitiveArray_100: u64,
-    /// +0x108 `undefined8`, base ImageSpaceEffect
-    pub field_108: u64,
-    /// +0x110 `undefined4`, base ImageSpaceEffect
-    pub field_110: u32,
-    /// +0x114 `undefined4`, base ImageSpaceEffect
-    pub field_114: u32,
-    /// +0x118 `undefined1`, base ImageSpaceEffect
-    pub field_118: u8,
-    pub unknown_119: [u8; 7],
-    /// +0x120 `undefined8`, base BSImagespaceShader
-    pub field_120: u64,
-    /// +0x128 `undefined8`, ctor store
-    pub field_128: u64,
-    /// +0x130 `undefined4`, base BSImagespaceShader
-    pub field_130: u32,
-    /// +0x134 `undefined1`, base BSImagespaceShader
-    pub field_134: u8,
-    pub unknown_135: [u8; 99],
-    /// +0x198 `undefined8`, base BSImagespaceShader
-    pub field_198: u64,
-    /// +0x1A0 `undefined2`, base BSImagespaceShader
-    pub field_1A0: u16,
-    pub unknown_1A2: [u8; 6],
-}
-const _: () = assert!(size_of::<BSImagespaceShaderISSimpleColor>() == 0x1A8);
-const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISSimpleColor, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISSimpleColor, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISSimpleColor, __vftable_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISSimpleColor, __vftable_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISSimpleColor, field_20) == 0x20);
-const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISSimpleColor, field_34) == 0x34);
-const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISSimpleColor, field_3C) == 0x3C);
-const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISSimpleColor, field_40) == 0x40);
-const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISSimpleColor, field_50) == 0x50);
-const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISSimpleColor, field_64) == 0x64);
-const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISSimpleColor, field_6C) == 0x6C);
-const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISSimpleColor, field_70) == 0x70);
-const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISSimpleColor, field_80) == 0x80);
-const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISSimpleColor, field_88) == 0x88);
-const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISSimpleColor, __vftable_90) == 0x90);
-const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISSimpleColor, field_98) == 0x98);
-const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISSimpleColor, m_NiTPrimitiveArray_A0) == 0xA0);
-const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISSimpleColor, field_A8) == 0xA8);
-const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISSimpleColor, field_B0) == 0xB0);
-const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISSimpleColor, field_B4) == 0xB4);
-const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISSimpleColor, m_NiTPrimitiveArray_B8) == 0xB8);
-const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISSimpleColor, field_C0) == 0xC0);
-const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISSimpleColor, field_C8) == 0xC8);
-const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISSimpleColor, field_CC) == 0xCC);
-const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISSimpleColor, m_NiTPrimitiveArray_D0) == 0xD0);
-const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISSimpleColor, field_D8) == 0xD8);
-const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISSimpleColor, field_E0) == 0xE0);
-const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISSimpleColor, field_E4) == 0xE4);
-const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISSimpleColor, m_EffectInput____ptr64__E8) == 0xE8);
-const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISSimpleColor, field_F0) == 0xF0);
-const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISSimpleColor, field_F8) == 0xF8);
-const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISSimpleColor, field_FC) == 0xFC);
-const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISSimpleColor, m_NiTPrimitiveArray_100) == 0x100);
-const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISSimpleColor, field_108) == 0x108);
-const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISSimpleColor, field_110) == 0x110);
-const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISSimpleColor, field_114) == 0x114);
-const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISSimpleColor, field_118) == 0x118);
-const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISSimpleColor, field_120) == 0x120);
-const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISSimpleColor, field_128) == 0x128);
-const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISSimpleColor, field_130) == 0x130);
-const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISSimpleColor, field_134) == 0x134);
-const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISSimpleColor, field_198) == 0x198);
-const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISSimpleColor, field_1A0) == 0x1A0);
 

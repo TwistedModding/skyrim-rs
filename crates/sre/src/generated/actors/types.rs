@@ -20,6 +20,7 @@ pub struct AIProcess {
     /// +0x136 `undefined1`, semantic; process flags; bit 3 alerted (medium)
     pub flags: u8,
     pub unknown_137: [u8; 9],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<AIProcess>() == 0x140);
 const _: () = assert!(core::mem::offset_of!(AIProcess, middleHigh) == 0x8);
@@ -164,6 +165,7 @@ pub struct Actor {
     pub unknown_28C: [u8; 4],
     /// +0x290 `undefined40`, semantic; CRITICAL_SECTION (high)
     pub criticalSection: [u8; 40],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<Actor>() == 0x2B8);
 const _: () = assert!(core::mem::offset_of!(Actor, __vftable) == 0x0);
@@ -236,6 +238,7 @@ pub struct ActorState {
     pub flags1: u32,
     /// +0xC `undefined4`, ctor store, semantic, runtime; state flags: bits 5-7 weapon state, drawn when >= 3 (high)
     pub flags2: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ActorState>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(ActorState, __vftable) == 0x0);
@@ -342,6 +345,7 @@ pub struct ActorValueInfo {
     /// +0x118 `undefined8`, ctor store
     pub field_118: u64,
     pub unknown_120: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ActorValueInfo>() == 0x128);
 const _: () = assert!(core::mem::offset_of!(ActorValueInfo, __vftable) == 0x0);
@@ -397,6 +401,7 @@ pub struct ActorValueList {
     /// +0x8 `undefined1`, semantic; ActorValueInfo*[164] indexed by ActorValue (high)
     pub infos: [u8; 1312],
     pub unknown_528: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ActorValueList>() == 0x530);
 const _: () = assert!(core::mem::offset_of!(ActorValueList, infos) == 0x8);
@@ -408,6 +413,7 @@ const _: () = assert!(core::mem::offset_of!(ActorValueList, infos) == 0x8);
 pub struct ActorValueOwner {
     /// +0x0 `vtbl:ActorValueOwner:0`, rtti
     pub __vftable: *const crate::raw::vtables::ActorValueOwner_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ActorValueOwner>() == 0x8);
 const _: () = assert!(core::mem::offset_of!(ActorValueOwner, __vftable) == 0x0);
@@ -422,6 +428,7 @@ pub struct ActorValueStorage {
     pub modifierKeys: *mut c_void,
     /// +0x18 `pointer`, semantic; float[3] per key: permanent, temporary, damage (high)
     pub modifierValues: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ActorValueStorage>() == 0x20);
 const _: () = assert!(core::mem::offset_of!(ActorValueStorage, modifierKeys) == 0x10);
@@ -436,6 +443,7 @@ pub struct BSExtraData {
     pub __vftable: *const crate::raw::vtables::BSExtraData_vtable,
     /// +0x8 `ptr:BSExtraData`, semantic, runtime; next node (high)
     pub next: *mut crate::BSExtraData,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSExtraData>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSExtraData, __vftable) == 0x0);
@@ -452,6 +460,7 @@ pub struct BSHandleRefObject {
     /// +0x8 `undefined4`, semantic, runtime; bits 0-9 reference count, bit 10 handle assigned, bits 11-30 handle index (high)
     pub refCount: u32,
     pub unknown_C: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSHandleRefObject>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSHandleRefObject, __vftable) == 0x0);
@@ -470,6 +479,7 @@ pub struct BaseExtraList {
     pub presence: *mut c_void,
     /// +0x18 `class:BSReadWriteLock`, semantic, runtime; lock of the list (high)
     pub lock: crate::BSReadWriteLock,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BaseExtraList>() == 0x20);
 const _: () = assert!(core::mem::offset_of!(BaseExtraList, __vftable) == 0x0);
@@ -625,6 +635,7 @@ pub struct Character {
     pub unknown_28C: [u8; 4],
     /// +0x290 `undefined40`, base Actor, semantic; CRITICAL_SECTION (high)
     pub criticalSection: [u8; 40],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<Character>() == 0x2B8);
 const _: () = assert!(core::mem::offset_of!(Character, __vftable) == 0x0);
@@ -700,6 +711,7 @@ pub struct ContainerEntry {
     /// +0x8 `ptr:TESForm`, semantic; the item (high)
     pub form: *mut crate::TESForm,
     pub unknown_10: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ContainerEntry>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(ContainerEntry, count) == 0x0);
@@ -717,6 +729,7 @@ pub struct ExtraContainerChanges {
     pub field_8: u64,
     /// +0x10 `ptr:InventoryChanges`, ctor store, semantic, runtime; the inventory changes (high)
     pub changes: *mut crate::InventoryChanges,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ExtraContainerChanges>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(ExtraContainerChanges, __vftable) == 0x0);
@@ -733,6 +746,7 @@ pub struct HandleEntry {
     pub unknown_4: [u8; 4],
     /// +0x8 `pointer`, semantic; NiPointer<BSHandleRefObject> (high)
     pub ref_: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<HandleEntry>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(HandleEntry, ageAndNext) == 0x0);
@@ -752,6 +766,7 @@ pub struct InventoryChanges {
     /// +0x14 `float`, semantic; the value of +0x10 before its last reset (medium)
     pub previousCachedValue: f32,
     pub unknown_18: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<InventoryChanges>() == 0x20);
 const _: () = assert!(core::mem::offset_of!(InventoryChanges, entries) == 0x0);
@@ -771,6 +786,7 @@ pub struct InventoryEntry {
     /// +0x10 `undefined4`, semantic; count relative to the base container (high)
     pub countDelta: u32,
     pub unknown_14: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<InventoryEntry>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(InventoryEntry, object) == 0x0);
@@ -785,6 +801,7 @@ pub struct LoadedReferenceData {
     pub unknown_0: [u8; 104],
     /// +0x68 `ptr:NiNode`, semantic; root node of the reference's 3D (high)
     pub node3D: *mut crate::NiNode,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<LoadedReferenceData>() == 0x70);
 const _: () = assert!(core::mem::offset_of!(LoadedReferenceData, node3D) == 0x68);
@@ -837,6 +854,7 @@ pub struct MiddleHighProcessData {
     /// +0x326 `undefined1`, semantic; head tracking on; graph bool bHeadTracking (high)
     pub headTrackingEnabled: u8,
     pub unknown_327: [u8; 1],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<MiddleHighProcessData>() == 0x328);
 const _: () = assert!(core::mem::offset_of!(MiddleHighProcessData, pitch) == 0xB0);
@@ -1493,6 +1511,7 @@ pub struct PlayerCharacter {
     /// +0xBEC `undefined1`, ctor store
     pub field_BEC: u8,
     pub unknown_BED: [u8; 3],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<PlayerCharacter>() == 0xBF0);
 const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __vftable) == 0x0);
@@ -1813,6 +1832,7 @@ pub struct TESActorBaseData {
     /// +0x38 `undefined4`, ctor store
     pub field_38: u32,
     pub unknown_3C: [u8; 28],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESActorBaseData>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(TESActorBaseData, __vftable) == 0x0);
@@ -1844,6 +1864,7 @@ pub struct TESContainer {
     /// +0x14 `undefined1`, ctor store
     pub field_14: u8,
     pub unknown_15: [u8; 3],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESContainer>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(TESContainer, __vftable) == 0x0);
@@ -1868,6 +1889,7 @@ pub struct TESFullName {
     /// +0x12 `undefined2`, ctor store
     pub field_12: u16,
     pub unknown_14: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESFullName>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(TESFullName, __vftable) == 0x0);
@@ -2011,6 +2033,7 @@ pub struct TESNPC {
     /// +0x1FC `float`, semantic, runtime; weight (0-100) (high)
     pub weight: f32,
     pub unknown_200: [u8; 104],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESNPC>() == 0x268);
 const _: () = assert!(core::mem::offset_of!(TESNPC, __vftable) == 0x0);
@@ -2129,6 +2152,7 @@ pub struct TESObjectREFR {
     /// +0x9B `undefined1`, ctor store
     pub field_9B: u8,
     pub unknown_9C: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESObjectREFR>() == 0xA0);
 const _: () = assert!(core::mem::offset_of!(TESObjectREFR, __vftable) == 0x0);

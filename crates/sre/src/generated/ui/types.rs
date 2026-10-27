@@ -30,6 +30,7 @@ pub struct ActorValueMeter {
     /// +0x48 `undefined4`, semantic; actor value index the bar shows (high)
     pub actorValue: u32,
     pub unknown_4C: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ActorValueMeter>() == 0x50);
 const _: () = assert!(core::mem::offset_of!(ActorValueMeter, __vftable) == 0x0);
@@ -61,6 +62,7 @@ pub struct BSScaleformManager {
     pub unknown_30: [u8; 8],
     /// +0x38 `ptr:BSScaleformTranslator`, semantic; translator for Interface\Translate_<sLanguage>.txt, loader state 3 (high)
     pub translator: *mut crate::BSScaleformTranslator,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScaleformManager>() == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScaleformManager, loader) == 0x8);
@@ -90,6 +92,7 @@ pub struct BSTCommonStaticMessageQueue_UIMessage____ptr64_100 {
     /// +0x338 `undefined4`, semantic; next read index (mod 100) (high)
     pub popIndex: u32,
     pub unknown_33C: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSTCommonStaticMessageQueue_UIMessage____ptr64_100>() == 0x340);
 const _: () = assert!(core::mem::offset_of!(BSTCommonStaticMessageQueue_UIMessage____ptr64_100, __vftable) == 0x0);
@@ -115,6 +118,7 @@ pub struct BSUIMessageData {
     /// +0x20 `undefined4`, semantic; u32 (QueueMessageWithDwordData 0x116ec00) or bool byte (QueueMessageWithFlag 0x116eb60) (high)
     pub value: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSUIMessageData>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSUIMessageData, __vftable) == 0x0);
@@ -133,6 +137,7 @@ pub struct BSUIScaleformData {
     pub unknown_8: [u8; 8],
     /// +0x10 `undefined8`, semantic; event object handed to the movie (GFxEvent* hypothesis, track B) (medium)
     pub scaleformEvent: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSUIScaleformData>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSUIScaleformData, __vftable) == 0x0);
@@ -182,6 +187,7 @@ pub struct Console {
     /// +0x4E `undefined1`, semantic; Ctrl held (enables Ctrl+V paste, Ctrl+C copy selected ref) (high)
     pub ctrlDown: u8,
     pub unknown_4F: [u8; 1],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<Console>() == 0x50);
 const _: () = assert!(core::mem::offset_of!(Console, __vftable) == 0x0);
@@ -221,6 +227,7 @@ pub struct ConsoleData {
     /// +0x28 `undefined4`, semantic; ConsoleDataType (creator default 4) (high)
     pub type_: u32,
     pub unknown_2C: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ConsoleData>() == 0x30);
 const _: () = assert!(core::mem::offset_of!(ConsoleData, __vftable) == 0x0);
@@ -339,6 +346,7 @@ pub struct ContainerMenu {
     pub unknown_BB: [u8; 1],
     /// +0xBC `undefined4`, base GRefCountImplCore
     pub field_BC: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ContainerMenu>() == 0xC0);
 const _: () = assert!(core::mem::offset_of!(ContainerMenu, __vftable) == 0x0);
@@ -422,6 +430,7 @@ pub struct CursorMenu {
     pub field_2C: u32,
     /// +0x30 `class:MenuEventHandler`, semantic; vtable 0x19745d8; +0x38 refCount, +0x3c enabled, +0x3d processWhileModal (1) (high)
     pub inputHandler: crate::MenuEventHandler,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CursorMenu>() == 0x40);
 const _: () = assert!(core::mem::offset_of!(CursorMenu, __vftable) == 0x0);
@@ -475,6 +484,7 @@ pub struct DialogueMenu {
     pub menuOpenCloseSink: crate::BSTEventSink_MenuOpenCloseEvent,
     /// +0x38 `class:BSTArray`, base GRefCountImplCore, semantic; zero-initialised BSTArray (low)
     pub array38: crate::BSTArray,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<DialogueMenu>() == 0x50);
 const _: () = assert!(core::mem::offset_of!(DialogueMenu, __vftable) == 0x0);
@@ -503,6 +513,7 @@ pub struct GFxFunctionHandler {
     /// +0x8 `undefined4`, base GRefCountImplCore, semantic; reference count (high)
     pub refCount: u32,
     pub unknown_C: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<GFxFunctionHandler>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(GFxFunctionHandler, __vftable) == 0x0);
@@ -528,6 +539,7 @@ pub struct GFxFunctionHandler__Params {
     pub unknown_2C: [u8; 4],
     /// +0x30 `pointer`, semantic; userData given to CreateFunction (high)
     pub userData: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<GFxFunctionHandler__Params>() == 0x38);
 const _: () = assert!(core::mem::offset_of!(GFxFunctionHandler__Params, retVal) == 0x0);
@@ -591,6 +603,7 @@ pub struct GFxMovieView {
     /// +0x25E0 `undefined4`, semantic; movie flags: bit 20 paused, bit 0 viewport dirty, bits 2 and 6 set by slots 71/72, bits 10/18 read by slots 55/54; see the flag rows (high)
     pub flags: u32,
     pub unknown_25E4: [u8; 1548],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<GFxMovieView>() == 0x2BF0);
 const _: () = assert!(core::mem::offset_of!(GFxMovieView, refCount) == 0x8);
@@ -624,6 +637,7 @@ pub struct GFxValue {
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined8`, semantic; union: bool (byte), number (double), const char* or string node, const wchar_t*, object data (AS object + 0x20), display-object handle (high)
     pub data: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<GFxValue>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(GFxValue, objectInterface) == 0x0);
@@ -667,6 +681,7 @@ pub struct GFxValue__DisplayInfo {
     /// +0xE0 `undefined2`, semantic; mask of valid fields (GFxDisplayInfoFlags) (high)
     pub varsSet: u16,
     pub unknown_E2: [u8; 6],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<GFxValue__DisplayInfo>() == 0xE8);
 const _: () = assert!(core::mem::offset_of!(GFxValue__DisplayInfo, x) == 0x0);
@@ -710,6 +725,7 @@ pub struct GFxViewport {
     pub aspectRatio: f32,
     /// +0x30 `undefined4`, semantic; 0 at the engine's call (low)
     pub flags: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<GFxViewport>() == 0x34);
 const _: () = assert!(core::mem::offset_of!(GFxViewport, bufferWidth) == 0x0);
@@ -748,6 +764,7 @@ pub struct HUDData {
     pub unknown_41: [u8; 3],
     /// +0x44 `undefined4`, semantic; integer argument (arrow count, music type) (medium)
     pub value: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<HUDData>() == 0x48);
 const _: () = assert!(core::mem::offset_of!(HUDData, __vftable) == 0x0);
@@ -812,6 +829,7 @@ pub struct HUDMenu {
     pub unknown_91: [u8; 3],
     /// +0x94 `undefined4`, base GRefCountImplCore
     pub field_94: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<HUDMenu>() == 0x98);
 const _: () = assert!(core::mem::offset_of!(HUDMenu, __vftable) == 0x0);
@@ -860,6 +878,7 @@ pub struct HUDNotificationEntry {
     /// +0x58 `undefined4`, semantic; time from which the entry may be shown (now + iObjectivesWaitTime) (medium)
     pub readyTime: u32,
     pub unknown_5C: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<HUDNotificationEntry>() == 0x60);
 const _: () = assert!(core::mem::offset_of!(HUDNotificationEntry, text) == 0x0);
@@ -890,6 +909,7 @@ pub struct HUDNotifications {
     pub lastReminderTime: u32,
     /// +0x74 `float`, semantic; player XP seen at the last update (medium)
     pub lastXP: f32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<HUDNotifications>() == 0x78);
 const _: () = assert!(core::mem::offset_of!(HUDNotifications, __vftable) == 0x0);
@@ -910,6 +930,7 @@ pub struct HUDObject {
     pub view: *mut crate::GFxMovieView,
     /// +0x10 `class:GFxValue`, semantic; the element's AS object (high)
     pub clip: crate::GFxValue,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<HUDObject>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(HUDObject, __vftable) == 0x0);
@@ -940,6 +961,7 @@ pub struct IMenu {
     pub field_24: u32,
     /// +0x28 `ptr:FxDelegate`, base GRefCountImplCore, semantic; the FxDelegate that dispatches the movie's ExternalInterface calls to the callbacks registered by slot 1 (medium)
     pub fxDelegate: *mut crate::FxDelegate,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<IMenu>() == 0x30);
 const _: () = assert!(core::mem::offset_of!(IMenu, __vftable) == 0x0);
@@ -962,6 +984,7 @@ pub struct IMessageBoxCallback {
     /// +0x8 `undefined4`, semantic; intrusive ref count (high)
     pub refCount: u32,
     pub unknown_C: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<IMessageBoxCallback>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(IMessageBoxCallback, __vftable) == 0x0);
@@ -979,6 +1002,7 @@ pub struct IUIMessageData {
     /// +0x9 `undefined1`, semantic; 0 = deleted (vtable[0](data, 1)) after the drain, non-0 = kept in the pool (medium)
     pub isPooled: u8,
     pub unknown_A: [u8; 6],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<IUIMessageData>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(IUIMessageData, __vftable) == 0x0);
@@ -1053,6 +1077,7 @@ pub struct InventoryMenu {
     pub unknown_81: [u8; 3],
     /// +0x84 `undefined4`, base GRefCountImplCore
     pub field_84: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<InventoryMenu>() == 0x88);
 const _: () = assert!(core::mem::offset_of!(InventoryMenu, __vftable) == 0x0);
@@ -1099,6 +1124,7 @@ pub struct ItemList {
     /// +0x50 `undefined1`, semantic; list needs rebuilding; GetSelectedEntry returns null while set (high)
     pub stale: u8,
     pub unknown_51: [u8; 7],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ItemList>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(ItemList, view) == 0x0);
@@ -1178,6 +1204,7 @@ pub struct LoadingMenu {
     pub field_7A: u16,
     /// +0x7C `undefined4`, base GRefCountImplCore
     pub field_7C: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<LoadingMenu>() == 0x80);
 const _: () = assert!(core::mem::offset_of!(LoadingMenu, __vftable) == 0x0);
@@ -1262,6 +1289,7 @@ pub struct MagicMenu {
     /// +0x64 `undefined1`, base GRefCountImplCore
     pub field_64: u8,
     pub unknown_65: [u8; 3],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<MagicMenu>() == 0x68);
 const _: () = assert!(core::mem::offset_of!(MagicMenu, __vftable) == 0x0);
@@ -1344,6 +1372,7 @@ pub struct MainMenu {
     pub field_68: u32,
     /// +0x6C `undefined4`, base GRefCountImplCore
     pub field_6C: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<MainMenu>() == 0x70);
 const _: () = assert!(core::mem::offset_of!(MainMenu, __vftable) == 0x0);
@@ -1409,6 +1438,7 @@ pub struct MenuControls {
     /// +0x83 `undefined1`, semantic; ProcessEvent does nothing while set (medium)
     pub ignoreInput: u8,
     pub unknown_84: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<MenuControls>() == 0x88);
 const _: () = assert!(core::mem::offset_of!(MenuControls, __vftable) == 0x0);
@@ -1442,6 +1472,7 @@ pub struct MenuEventHandler {
     /// +0xD `undefined1`, semantic; the handler still receives events while a modal menu is open (UI+0x17c != 0) (high)
     pub processWhileModal: u8,
     pub unknown_E: [u8; 2],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<MenuEventHandler>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(MenuEventHandler, __vftable) == 0x0);
@@ -1461,6 +1492,7 @@ pub struct MenuOpenHandler {
     /// +0x10 `undefined1`, semantic; when 0 (or MenuControls+0x81 set) the tween key shows sTweenDisabledMessage instead of opening TweenMenu (medium)
     pub tweenMenuAllowed: u8,
     pub unknown_11: [u8; 7],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<MenuOpenHandler>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(MenuOpenHandler, __vftable) == 0x0);
@@ -1479,6 +1511,7 @@ pub struct MenuTableEntry {
     pub create: u64,
     /// +0x18 `ptr:MenuTableEntry`, semantic; bucket chain; null = empty slot, the chain ends at the table sentinel (high)
     pub next: *mut crate::MenuTableEntry,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<MenuTableEntry>() == 0x20);
 const _: () = assert!(core::mem::offset_of!(MenuTableEntry, menuName) == 0x0);
@@ -1517,6 +1550,7 @@ pub struct MessageBoxData {
     pub isVertical: u8,
     /// +0x4F `undefined1`, semantic; first argument of 'setIsCancellable' (medium)
     pub isCancellable: u8,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<MessageBoxData>() == 0x50);
 const _: () = assert!(core::mem::offset_of!(MessageBoxData, __vftable) == 0x0);
@@ -1573,6 +1607,7 @@ pub struct MessageBoxMenu {
     /// +0x35 `undefined1`, base GRefCountImplCore
     pub field_35: u8,
     pub unknown_36: [u8; 2],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<MessageBoxMenu>() == 0x38);
 const _: () = assert!(core::mem::offset_of!(MessageBoxMenu, __vftable) == 0x0);
@@ -1605,6 +1640,7 @@ pub struct SkyrimScript___anon_0B1D96E2__ScriptMessageBoxCallback {
     pub unknown_14: [u8; 4],
     /// +0x18 `pointer`, semantic; VM (ref counted) (high)
     pub vm: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<SkyrimScript___anon_0B1D96E2__ScriptMessageBoxCallback>() == 0x20);
 const _: () = assert!(core::mem::offset_of!(SkyrimScript___anon_0B1D96E2__ScriptMessageBoxCallback, __vftable) == 0x0);
@@ -1626,6 +1662,7 @@ pub struct StandardItemData {
     /// +0x18 `class:GFxValue`, semantic; the AS object pushed into entryList, with members text, count, equipState, filterFlag, favorite, enabled (high)
     pub obj: crate::GFxValue,
     pub unknown_30: [u8; 16],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<StandardItemData>() == 0x40);
 const _: () = assert!(core::mem::offset_of!(StandardItemData, __vftable) == 0x0);
@@ -1644,6 +1681,7 @@ pub struct TaskQueueHolder {
     pub queueB: u64,
     /// +0x10 `undefined8`, semantic; queue that QueueTask pushes into; the drain swaps it and empties the other (medium)
     pub current: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TaskQueueHolder>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(TaskQueueHolder, queueA) == 0x0);
@@ -1689,6 +1727,7 @@ pub struct TweenMenu {
     pub savedRepeatRateShort: f32,
     /// +0x4C `float`, base GRefCountImplCore, semantic; see +0x48 (medium)
     pub savedRepeatRateLong: f32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TweenMenu>() == 0x50);
 const _: () = assert!(core::mem::offset_of!(TweenMenu, __vftable) == 0x0);
@@ -1722,6 +1761,7 @@ pub struct UIMessage {
     /// +0x18 `undefined1`, semantic; 1 = one of the queue's 64 static slots (not freed per message), 0 = heap-allocated, freed by ProcessMessages after delivery (high)
     pub isStatic: u8,
     pub unknown_19: [u8; 7],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<UIMessage>() == 0x20);
 const _: () = assert!(core::mem::offset_of!(UIMessage, menuName) == 0x0);
@@ -1745,6 +1785,7 @@ pub struct UIMessageQueue {
     pub unknown_37C: [u8; 4],
     /// +0x380 `undefined1`, semantic; UIMessage[64] reused every drain; after the drain each slot's data is deleted (IUIMessageData+9 == 0) or returned to its pool (+8 = 0) (high)
     pub staticMessages: [u8; 2048],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<UIMessageQueue>() == 0xB80);
 const _: () = assert!(core::mem::offset_of!(UIMessageQueue, queue) == 0x8);
@@ -1763,6 +1804,7 @@ pub struct _anon_7C6875DF__OldMessageBoxCallback {
     pub unknown_8: [u8; 8],
     /// +0x10 `undefined8`, semantic; void (*)(u8 button) (high)
     pub fn_: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<_anon_7C6875DF__OldMessageBoxCallback>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(_anon_7C6875DF__OldMessageBoxCallback, __vftable) == 0x0);

@@ -22,6 +22,7 @@ pub struct BGSLoadFormBuffer {
     pub position: u32,
     /// +0x28 `class:SavedChangeFormRecord`, semantic; copy of the record being applied (high)
     pub record: crate::SavedChangeFormRecord,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSLoadFormBuffer>() == 0x50);
 const _: () = assert!(core::mem::offset_of!(BGSLoadFormBuffer, __vftable) == 0x0);
@@ -47,6 +48,7 @@ pub struct BGSLoadGameBuffer {
     pub unknown_1C: [u8; 8],
     /// +0x24 `undefined4`, semantic; read offset (high)
     pub position: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSLoadGameBuffer>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(BGSLoadGameBuffer, __vftable) == 0x0);
@@ -81,6 +83,7 @@ pub struct BGSSaveFormBuffer {
     pub unknown_21: [u8; 7],
     /// +0x28 `ptr:TESForm`, semantic; form being written (high)
     pub form: *mut crate::TESForm,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSSaveFormBuffer>() == 0x30);
 const _: () = assert!(core::mem::offset_of!(BGSSaveFormBuffer, __vftable) == 0x0);
@@ -106,6 +109,7 @@ pub struct BGSSaveGameBuffer {
     pub capacity: u32,
     /// +0x14 `undefined4`, semantic; bytes written (high)
     pub size: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSSaveGameBuffer>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(BGSSaveGameBuffer, __vftable) == 0x0);
@@ -148,6 +152,7 @@ pub struct BGSSaveLoadGame {
     /// +0x345 `undefined1`, semantic; set when the saved plugin list does not match the loaded one (high)
     pub pluginListMismatch: u8,
     pub unknown_346: [u8; 2],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSSaveLoadGame>() == 0x348);
 const _: () = assert!(core::mem::offset_of!(BGSSaveLoadGame, savedFiles) == 0x0);
@@ -268,6 +273,7 @@ pub struct BGSSaveLoadManager {
     /// +0x410 `undefined4`, ctor store
     pub field_410: u32,
     pub unknown_414: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSSaveLoadManager>() == 0x418);
 const _: () = assert!(core::mem::offset_of!(BGSSaveLoadManager, vtbl) == 0x0);
@@ -342,6 +348,7 @@ pub struct BGSSaveLoadManager__Thread {
     pub event: [u8; 8],
     /// +0x60 `undefined1`, semantic; worker request queue (8 slots); Enqueue spins with Sleep while full (high)
     pub queue: [u8; 96],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSSaveLoadManager__Thread>() == 0xC0);
 const _: () = assert!(core::mem::offset_of!(BGSSaveLoadManager__Thread, __vftable) == 0x0);
@@ -365,6 +372,7 @@ pub struct ChangeFormMap {
     pub map: [u8; 40],
     /// +0x30 `undefined8`, semantic; BSReadWriteLock (high)
     pub lock: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ChangeFormMap>() == 0x38);
 const _: () = assert!(core::mem::offset_of!(ChangeFormMap, map) == 0x8);
@@ -395,6 +403,7 @@ pub struct SavedChangeFormRecord {
     /// +0x23 `undefined1`, semantic; per-record version byte (the writer stores the save format version 0x4e) (high)
     pub version: u8,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<SavedChangeFormRecord>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(SavedChangeFormRecord, formID) == 0x0);
@@ -471,6 +480,7 @@ pub struct _anon_14F04957__Win32FileType {
     /// +0xBC8 `undefined2`, semantic; 0 none, 1 zlib, 2 LZ4 (INI uiCompression:SaveGame) (high)
     pub compression: u16,
     pub unknown_BCA: [u8; 30],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<_anon_14F04957__Win32FileType>() == 0xBE8);
 const _: () = assert!(core::mem::offset_of!(_anon_14F04957__Win32FileType, __vftable) == 0x0);
@@ -516,6 +526,7 @@ pub struct bgs__saveload__LoadEntryRequest {
     pub unknown_14: [u8; 4],
     /// +0x18 `ptr`, semantic; save-list entry (+0 char* name, +0x60 u32) (high)
     pub entry: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bgs__saveload__LoadEntryRequest>() == 0x20);
 const _: () = assert!(core::mem::offset_of!(bgs__saveload__LoadEntryRequest, __vftable) == 0x0);
@@ -548,6 +559,7 @@ pub struct bgs__saveload__LoadRequest {
     /// +0x25 `undefined1`, semantic; passed through as LoadGame param_6 (skip the plugin-list match) (low)
     pub flag25: u8,
     pub unknown_26: [u8; 2],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bgs__saveload__LoadRequest>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(bgs__saveload__LoadRequest, __vftable) == 0x0);
@@ -574,6 +586,7 @@ pub struct bgs__saveload__Request {
     /// +0x10 `undefined4`, semantic; decremented by ProcessSaveLoadRequests; the request runs when it reaches 0 (all callers pass 1) (medium)
     pub deferFrames: u32,
     pub unknown_14: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bgs__saveload__Request>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(bgs__saveload__Request, __vftable) == 0x0);
@@ -603,6 +616,7 @@ pub struct bgs__saveload__SaveOperationRequest {
     pub info: [u8; 24],
     /// +0x148 `ptr:_anon_14F04957::Win32FileType`, semantic; the built save (0x40000001) (high)
     pub stream: *mut crate::_anon_14F04957__Win32FileType,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bgs__saveload__SaveOperationRequest>() == 0x150);
 const _: () = assert!(core::mem::offset_of!(bgs__saveload__SaveOperationRequest, __vftable) == 0x0);

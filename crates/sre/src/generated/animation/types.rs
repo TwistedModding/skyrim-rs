@@ -31,6 +31,7 @@ pub struct BSAnimationGraphManager {
     /// +0xB0 `undefined4`, ctor store, semantic, runtime; index of the active graph in graphs (high)
     pub activeGraph: u32,
     pub unknown_B4: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSAnimationGraphManager>() == 0xB8);
 const _: () = assert!(core::mem::offset_of!(BSAnimationGraphManager, vftable) == 0x0);
@@ -89,6 +90,7 @@ pub struct BSDismemberSkinInstance {
     /// +0x98 `undefined1`, semantic; OR of the entries' byte 0 (high)
     pub anyPartitionVisible: u8,
     pub unknown_99: [u8; 7],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSDismemberSkinInstance>() == 0xA0);
 const _: () = assert!(core::mem::offset_of!(BSDismemberSkinInstance, __vftable) == 0x0);
@@ -183,6 +185,7 @@ pub struct BSFaceGenAnimationData {
     pub lock: crate::BSSpinLock,
     /// +0x228 `pointer`, semantic; sampled lip-sync channel data (17 floats per sample) (low)
     pub phonemeAnim: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSFaceGenAnimationData>() == 0x230);
 const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, __vftable) == 0x0);
@@ -280,6 +283,7 @@ pub struct BSFaceGenNiNode {
     /// +0x160 `undefined2`, semantic; face update flags (see flags); see the flag rows (high)
     pub faceFlags: u16,
     pub unknown_162: [u8; 6],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSFaceGenNiNode>() == 0x168);
 const _: () = assert!(core::mem::offset_of!(BSFaceGenNiNode, __vftable) == 0x0);
@@ -375,6 +379,7 @@ pub struct BShkbAnimationGraph {
     /// +0x248 `undefined2`, ctor store
     pub field_248: u16,
     pub unknown_24A: [u8; 6],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BShkbAnimationGraph>() == 0x250);
 const _: () = assert!(core::mem::offset_of!(BShkbAnimationGraph, vftable) == 0x0);
@@ -413,6 +418,7 @@ const _: () = assert!(core::mem::offset_of!(BShkbAnimationGraph, field_248) == 0
 pub struct IAnimationGraphManagerHolder {
     /// +0x0 `vtbl:IAnimationGraphManagerHolder:0`, rtti
     pub __vftable: *const crate::raw::vtables::IAnimationGraphManagerHolder_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<IAnimationGraphManagerHolder>() == 0x8);
 const _: () = assert!(core::mem::offset_of!(IAnimationGraphManagerHolder, __vftable) == 0x0);
@@ -438,6 +444,7 @@ pub struct NiSkinData {
     /// +0x58 `undefined4`, semantic; number of bones (high)
     pub boneCount: u32,
     pub unknown_5C: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiSkinData>() == 0x60);
 const _: () = assert!(core::mem::offset_of!(NiSkinData, __vftable) == 0x0);
@@ -462,6 +469,7 @@ pub struct NiSkinData__BoneData {
     /// +0x50 `undefined2`, semantic; number of weights (high)
     pub weightCount: u16,
     pub unknown_52: [u8; 6],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiSkinData__BoneData>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(NiSkinData__BoneData, skinToBone) == 0x0);
@@ -488,6 +496,7 @@ pub struct NiSkinPartition {
     /// +0x20 `undefined4`, semantic; shared vertex block size / vertex stride (medium)
     pub vertexCount: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiSkinPartition>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(NiSkinPartition, __vftable) == 0x0);
@@ -532,6 +541,7 @@ pub struct NiSkinPartition__Partition {
     pub unknown_44: [u8; 4],
     /// +0x48 `pointer`, semantic; renderer index buffer built from the triangles (low)
     pub triangleBuffer: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiSkinPartition__Partition>() == 0x50);
 const _: () = assert!(core::mem::offset_of!(NiSkinPartition__Partition, vertexDesc) == 0x0);
@@ -602,6 +612,7 @@ pub struct hkaSkeleton {
     pub field_70: u32,
     /// +0x74 `undefined4`, base hkBaseObject
     pub field_74: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<hkaSkeleton>() == 0x78);
 const _: () = assert!(core::mem::offset_of!(hkaSkeleton, __vftable) == 0x0);
@@ -747,6 +758,7 @@ pub struct hkbBehaviorGraph {
     /// +0x12C `undefined1`, semantic; graph has been activated (medium)
     pub isActive: u8,
     pub unknown_12D: [u8; 3],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<hkbBehaviorGraph>() == 0x130);
 const _: () = assert!(core::mem::offset_of!(hkbBehaviorGraph, __vftable) == 0x0);
@@ -857,6 +869,7 @@ pub struct hkbCharacter {
     /// +0x9D `undefined1`, semantic; poseLocal was allocated by the character (high)
     pub ownsPoseLocal: u8,
     pub unknown_9E: [u8; 2],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<hkbCharacter>() == 0xA0);
 const _: () = assert!(core::mem::offset_of!(hkbCharacter, __vftable) == 0x0);
@@ -970,6 +983,7 @@ pub struct hkbRagdollDriver {
     /// +0xC4 `undefined4`, base hkBaseObject
     pub field_C4: u32,
     pub unknown_C8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<hkbRagdollDriver>() == 0xD0);
 const _: () = assert!(core::mem::offset_of!(hkbRagdollDriver, __vftable) == 0x0);
@@ -1031,6 +1045,7 @@ pub struct hkbVariableValueSet {
     pub quadValues: [u8; 16],
     /// +0x30 `undefined1`, base hkBaseObject, semantic; third hkArray (ref-counted entries) (low)
     pub variantValues: [u8; 16],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<hkbVariableValueSet>() == 0x40);
 const _: () = assert!(core::mem::offset_of!(hkbVariableValueSet, __vftable) == 0x0);

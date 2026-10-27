@@ -420,6 +420,7 @@ unsafe extern "C" fn create_menu<M: Menu>() -> *mut IMenu {
             inputContext: 0x13,
             field_24: 0,
             fxDelegate: core::ptr::null_mut(),
+            __engine: sre::Engine::new(),
         },
         vtable: [
             menu_dtor::<M> as MenuVdtor as *const c_void,
@@ -609,30 +610,34 @@ const VALUE_TYPE_MASK: u32 = 0xF;
 pub struct Value(sre::GFxValue);
 
 impl Value {
+    const fn unmanaged(type_: u32, data: u64) -> Self {
+        Self(sre::GFxValue { objectInterface: core::ptr::null_mut(), type_, unknown_C: [0; 4], data, __engine: sre::Engine::new() })
+    }
+
     #[must_use]
     pub const fn undefined() -> Self {
-        Self(sre::GFxValue { objectInterface: core::ptr::null_mut(), type_: 0, unknown_C: [0; 4], data: 0 })
+        Self::unmanaged(0, 0)
     }
 
     #[must_use]
     pub const fn null() -> Self {
-        Self(sre::GFxValue { objectInterface: core::ptr::null_mut(), type_: 1, unknown_C: [0; 4], data: 0 })
+        Self::unmanaged(1, 0)
     }
 
     #[must_use]
     pub const fn boolean(value: bool) -> Self {
-        Self(sre::GFxValue { objectInterface: core::ptr::null_mut(), type_: 2, unknown_C: [0; 4], data: value as u64 })
+        Self::unmanaged(2, value as u64)
     }
 
     #[must_use]
     pub fn number(value: f64) -> Self {
-        Self(sre::GFxValue { objectInterface: core::ptr::null_mut(), type_: 3, unknown_C: [0; 4], data: value.to_bits() })
+        Self::unmanaged(3, value.to_bits())
     }
 
     /// An unmanaged string value over `text`, which must outlive every use of the value.
     #[must_use]
     pub fn string(text: &'static CStr) -> Self {
-        Self(sre::GFxValue { objectInterface: core::ptr::null_mut(), type_: 4, unknown_C: [0; 4], data: text.as_ptr() as u64 })
+        Self::unmanaged(4, text.as_ptr() as u64)
     }
 
     /// A value an engine object holds (the HUD's `root`), viewed without taking it.
@@ -744,16 +749,22 @@ impl Value {
 impl Drop for Value {
     fn drop(&mut self) {
         if self.is_managed() {
-            self.0.release_managed();
+            let release: fns::GFxValue__ReleaseManaged_fn = unsafe { crate::engine_fn(fns::GFxValue__ReleaseManaged) };
+            unsafe { release(&raw mut self.0) };
         }
     }
 }
 
+/// `GFxValue::Assign` (id 33582): add-ref and release as needed.
+unsafe fn assign(target: *mut sre::GFxValue, value: &sre::GFxValue) {
+    let f: fns::GFxValue__Assign_fn = unsafe { crate::engine_fn(fns::GFxValue__Assign) };
+    unsafe { f(target, value) };
+}
+
 impl Clone for Value {
-    /// Copies the value through `GFxValue::Assign` (id 33582: add-ref and release as needed).
     fn clone(&self) -> Self {
-        let out = Self::undefined();
-        out.0.assign(&self.0);
+        let mut out = Self::undefined();
+        unsafe { assign(&raw mut out.0, &self.0) };
         out
     }
 }
@@ -799,8 +810,8 @@ impl Params {
     }
 
     pub fn set_return(&mut self, value: &Value) {
-        if let Some(ret) = unsafe { self.0.retVal.as_ref() } {
-            ret.assign(&value.0);
+        if !self.0.retVal.is_null() {
+            unsafe { assign(self.0.retVal, &value.0) };
         }
     }
 }

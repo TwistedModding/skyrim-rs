@@ -33,6 +33,7 @@ pub struct CameraMatrixEntry {
     /// +0x284 `u8`, semantic; second lookup key: entry built with TAA jitter (high)
     pub jittered: u8,
     pub unknown_285: [u8; 11],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CameraMatrixEntry>() == 0x290);
 const _: () = assert!(core::mem::offset_of!(CameraMatrixEntry, camera) == 0x0);
@@ -80,6 +81,7 @@ pub struct ImageSpaceModifierInstanceForm {
     /// +0x48 `undefined4`, ctor store
     pub field_48: u32,
     pub unknown_4C: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ImageSpaceModifierInstanceForm>() == 0x50);
 const _: () = assert!(core::mem::offset_of!(ImageSpaceModifierInstanceForm, __vftable) == 0x0);
@@ -108,6 +110,7 @@ pub struct SystemTimerRecord {
     pub accumulatedSeconds: f32,
     /// +0x14 `float`, semantic; previous period's total, saved by the start function before it zeroes +0x10 (high)
     pub lastTotal: f32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<SystemTimerRecord>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(SystemTimerRecord, startTicks) == 0x0);

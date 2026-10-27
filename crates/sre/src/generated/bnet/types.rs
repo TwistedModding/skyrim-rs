@@ -18,6 +18,7 @@ pub struct bnet__AsyncOperationProxy {
     pub field_18: u64,
     /// +0x20 `undefined8`, ctor store
     pub field_20: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(bnet__AsyncOperationProxy, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(bnet__AsyncOperationProxy, field_8) == 0x8);
@@ -31,6 +32,7 @@ const _: () = assert!(core::mem::offset_of!(bnet__AsyncOperationProxy, field_20)
 pub struct bnet__BaseCallback {
     /// +0x0 `vtbl:bnet::BaseCallback:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet__BaseCallback_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet__BaseCallback>() == 0x8);
 const _: () = assert!(core::mem::offset_of!(bnet__BaseCallback, __vftable) == 0x0);
@@ -42,6 +44,7 @@ const _: () = assert!(core::mem::offset_of!(bnet__BaseCallback, __vftable) == 0x
 pub struct bnet__Callback_bnet__Mods__VerifiedCreatorCheckResponse_bnet__HttpResponseInfo {
     /// +0x0 `vtbl:bnet::Callback<bnet::Mods::VerifiedCreatorCheckResponse,bnet::HttpResponseInfo>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet__Callback_bnet__Mods__VerifiedCreatorCheckResponse_bnet__HttpResponseInfo_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(bnet__Callback_bnet__Mods__VerifiedCreatorCheckResponse_bnet__HttpResponseInfo, __vftable) == 0x0);
 
@@ -92,6 +95,7 @@ pub struct bnet__Callback_bnet__Telemetry__EventResponse_bnet__HttpResponseInfo 
     /// +0x6D0 `undefined1`, base bnet::detail::CallbackImpl<1,bnet::Telemetry::EventResponse,bnet::HttpResponseInfo>
     pub field_6D0: u8,
     pub unknown_6D1: [u8; 7],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet__Callback_bnet__Telemetry__EventResponse_bnet__HttpResponseInfo>() == 0x6D8);
 const _: () = assert!(core::mem::offset_of!(bnet__Callback_bnet__Telemetry__EventResponse_bnet__HttpResponseInfo, __vftable) == 0x0);
@@ -120,6 +124,7 @@ const _: () = assert!(core::mem::offset_of!(bnet__Callback_bnet__Telemetry__Even
 pub struct bnet__Callback_bnet__UniquePtr_bnet__Account__AuthResult_bnet__Account__AuthenticationStatus {
     /// +0x0 `vtbl:bnet::Callback<bnet::UniquePtr<bnet::Account::AuthResult>,bnet::Account::AuthenticationStatus>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet__Callback_bnet__UniquePtr_bnet__Account__AuthResult_bnet__Account__AuthenticationStatus_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(bnet__Callback_bnet__UniquePtr_bnet__Account__AuthResult_bnet__Account__AuthenticationStatus, __vftable) == 0x0);
 
@@ -131,6 +136,7 @@ pub struct bnet__Callback_bnet__UniquePtr_bnet__Account__ExternalAccountInfoResu
     /// +0x0 `vtbl:bnet::Callback<bnet::UniquePtr<bnet::Account::ExternalAccountInfoResult>,bnet::HttpResponseInfo>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet__Callback_bnet__UniquePtr_bnet__Account__ExternalAccountInfoResult_bnet__HttpResponseInfo_vtable,
     pub unknown_8: [u8; 1224],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet__Callback_bnet__UniquePtr_bnet__Account__ExternalAccountInfoResult_bnet__HttpResponseInfo>() == 0x4D0);
 const _: () = assert!(core::mem::offset_of!(bnet__Callback_bnet__UniquePtr_bnet__Account__ExternalAccountInfoResult_bnet__HttpResponseInfo, __vftable) == 0x0);
@@ -142,6 +148,7 @@ const _: () = assert!(core::mem::offset_of!(bnet__Callback_bnet__UniquePtr_bnet_
 pub struct bnet__Callback_bnet__UniquePtr_bnet__Account__LinkingResult_bnet__HttpResponseInfo {
     /// +0x0 `vtbl:bnet::Callback<bnet::UniquePtr<bnet::Account::LinkingResult>,bnet::HttpResponseInfo>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet__Callback_bnet__UniquePtr_bnet__Account__LinkingResult_bnet__HttpResponseInfo_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(bnet__Callback_bnet__UniquePtr_bnet__Account__LinkingResult_bnet__HttpResponseInfo, __vftable) == 0x0);
 
@@ -152,6 +159,7 @@ const _: () = assert!(core::mem::offset_of!(bnet__Callback_bnet__UniquePtr_bnet_
 pub struct bnet__Callback_bnet__UniquePtr_bnet__Catalog__Item_bnet__HttpResponseInfo {
     /// +0x0 `vtbl:bnet::Callback<bnet::UniquePtr<bnet::Catalog::Item>,bnet::HttpResponseInfo>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet__Callback_bnet__UniquePtr_bnet__Catalog__Item_bnet__HttpResponseInfo_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(bnet__Callback_bnet__UniquePtr_bnet__Catalog__Item_bnet__HttpResponseInfo, __vftable) == 0x0);
 
@@ -162,6 +170,7 @@ const _: () = assert!(core::mem::offset_of!(bnet__Callback_bnet__UniquePtr_bnet_
 pub struct bnet__Callback_bnet__UniquePtr_bnet__MOTD__Messages_bnet__HttpResponseInfo {
     /// +0x0 `vtbl:bnet::Callback<bnet::UniquePtr<bnet::MOTD::Messages>,bnet::HttpResponseInfo>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet__Callback_bnet__UniquePtr_bnet__MOTD__Messages_bnet__HttpResponseInfo_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(bnet__Callback_bnet__UniquePtr_bnet__MOTD__Messages_bnet__HttpResponseInfo, __vftable) == 0x0);
 
@@ -172,6 +181,7 @@ const _: () = assert!(core::mem::offset_of!(bnet__Callback_bnet__UniquePtr_bnet_
 pub struct bnet__Callback_bnet__UniquePtr_bnet__Mods__Bundle_bnet__HttpResponseInfo {
     /// +0x0 `vtbl:bnet::Callback<bnet::UniquePtr<bnet::Mods::Bundle>,bnet::HttpResponseInfo>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet__Callback_bnet__UniquePtr_bnet__Mods__Bundle_bnet__HttpResponseInfo_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(bnet__Callback_bnet__UniquePtr_bnet__Mods__Bundle_bnet__HttpResponseInfo, __vftable) == 0x0);
 
@@ -182,6 +192,7 @@ const _: () = assert!(core::mem::offset_of!(bnet__Callback_bnet__UniquePtr_bnet_
 pub struct bnet__Callback_bnet__UniquePtr_bnet__Mods__Collection_bnet__HttpResponseInfo {
     /// +0x0 `vtbl:bnet::Callback<bnet::UniquePtr<bnet::Mods::Collection>,bnet::HttpResponseInfo>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet__Callback_bnet__UniquePtr_bnet__Mods__Collection_bnet__HttpResponseInfo_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(bnet__Callback_bnet__UniquePtr_bnet__Mods__Collection_bnet__HttpResponseInfo, __vftable) == 0x0);
 
@@ -192,6 +203,7 @@ const _: () = assert!(core::mem::offset_of!(bnet__Callback_bnet__UniquePtr_bnet_
 pub struct bnet__Callback_bnet__UniquePtr_bnet__Mods__Content_bnet__HttpResponseInfo {
     /// +0x0 `vtbl:bnet::Callback<bnet::UniquePtr<bnet::Mods::Content>,bnet::HttpResponseInfo>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet__Callback_bnet__UniquePtr_bnet__Mods__Content_bnet__HttpResponseInfo_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(bnet__Callback_bnet__UniquePtr_bnet__Mods__Content_bnet__HttpResponseInfo, __vftable) == 0x0);
 
@@ -202,6 +214,7 @@ const _: () = assert!(core::mem::offset_of!(bnet__Callback_bnet__UniquePtr_bnet_
 pub struct bnet__Callback_bnet__UniquePtr_bnet__Mods__GetContentIdFromLegacyIdResponse_bnet__HttpResponseInfo {
     /// +0x0 `vtbl:bnet::Callback<bnet::UniquePtr<bnet::Mods::GetContentIdFromLegacyIdResponse>,bnet::HttpResponseInfo>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet__Callback_bnet__UniquePtr_bnet__Mods__GetContentIdFromLegacyIdResponse_bnet__HttpResponseInfo_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(bnet__Callback_bnet__UniquePtr_bnet__Mods__GetContentIdFromLegacyIdResponse_bnet__HttpResponseInfo, __vftable) == 0x0);
 
@@ -212,6 +225,7 @@ const _: () = assert!(core::mem::offset_of!(bnet__Callback_bnet__UniquePtr_bnet_
 pub struct bnet__Callback_bnet__UniquePtr_bnet__Mods__GetCuratedListResponse_bnet__HttpResponseInfo {
     /// +0x0 `vtbl:bnet::Callback<bnet::UniquePtr<bnet::Mods::GetCuratedListResponse>,bnet::HttpResponseInfo>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet__Callback_bnet__UniquePtr_bnet__Mods__GetCuratedListResponse_bnet__HttpResponseInfo_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(bnet__Callback_bnet__UniquePtr_bnet__Mods__GetCuratedListResponse_bnet__HttpResponseInfo, __vftable) == 0x0);
 
@@ -222,6 +236,7 @@ const _: () = assert!(core::mem::offset_of!(bnet__Callback_bnet__UniquePtr_bnet_
 pub struct bnet__Callback_bnet__UniquePtr_bnet__Mods__ListBundlesResponse_bnet__HttpResponseInfo {
     /// +0x0 `vtbl:bnet::Callback<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet__Callback_bnet__UniquePtr_bnet__Mods__ListBundlesResponse_bnet__HttpResponseInfo_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(bnet__Callback_bnet__UniquePtr_bnet__Mods__ListBundlesResponse_bnet__HttpResponseInfo, __vftable) == 0x0);
 
@@ -232,6 +247,7 @@ const _: () = assert!(core::mem::offset_of!(bnet__Callback_bnet__UniquePtr_bnet_
 pub struct bnet__Callback_bnet__UniquePtr_bnet__Mods__ListCategoriesResponse_bnet__HttpResponseInfo {
     /// +0x0 `vtbl:bnet::Callback<bnet::UniquePtr<bnet::Mods::ListCategoriesResponse>,bnet::HttpResponseInfo>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet__Callback_bnet__UniquePtr_bnet__Mods__ListCategoriesResponse_bnet__HttpResponseInfo_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(bnet__Callback_bnet__UniquePtr_bnet__Mods__ListCategoriesResponse_bnet__HttpResponseInfo, __vftable) == 0x0);
 
@@ -242,6 +258,7 @@ const _: () = assert!(core::mem::offset_of!(bnet__Callback_bnet__UniquePtr_bnet_
 pub struct bnet__Callback_bnet__UniquePtr_bnet__Mods__ListCollectionResponse_bnet__HttpResponseInfo {
     /// +0x0 `vtbl:bnet::Callback<bnet::UniquePtr<bnet::Mods::ListCollectionResponse>,bnet::HttpResponseInfo>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet__Callback_bnet__UniquePtr_bnet__Mods__ListCollectionResponse_bnet__HttpResponseInfo_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(bnet__Callback_bnet__UniquePtr_bnet__Mods__ListCollectionResponse_bnet__HttpResponseInfo, __vftable) == 0x0);
 
@@ -252,6 +269,7 @@ const _: () = assert!(core::mem::offset_of!(bnet__Callback_bnet__UniquePtr_bnet_
 pub struct bnet__Callback_bnet__UniquePtr_bnet__Mods__ListContentResponse_bnet__HttpResponseInfo {
     /// +0x0 `vtbl:bnet::Callback<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet__Callback_bnet__UniquePtr_bnet__Mods__ListContentResponse_bnet__HttpResponseInfo_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(bnet__Callback_bnet__UniquePtr_bnet__Mods__ListContentResponse_bnet__HttpResponseInfo, __vftable) == 0x0);
 
@@ -262,6 +280,7 @@ const _: () = assert!(core::mem::offset_of!(bnet__Callback_bnet__UniquePtr_bnet_
 pub struct bnet__Callback_bnet__UniquePtr_bnet__Mods__MultipartUploadSession_bnet__HttpResponseInfo {
     /// +0x0 `vtbl:bnet::Callback<bnet::UniquePtr<bnet::Mods::MultipartUploadSession>,bnet::HttpResponseInfo>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet__Callback_bnet__UniquePtr_bnet__Mods__MultipartUploadSession_bnet__HttpResponseInfo_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(bnet__Callback_bnet__UniquePtr_bnet__Mods__MultipartUploadSession_bnet__HttpResponseInfo, __vftable) == 0x0);
 
@@ -272,6 +291,7 @@ const _: () = assert!(core::mem::offset_of!(bnet__Callback_bnet__UniquePtr_bnet_
 pub struct bnet__Callback_bnet__UniquePtr_bnet__Mods__ReleaseNote_bnet__HttpResponseInfo {
     /// +0x0 `vtbl:bnet::Callback<bnet::UniquePtr<bnet::Mods::ReleaseNote>,bnet::HttpResponseInfo>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet__Callback_bnet__UniquePtr_bnet__Mods__ReleaseNote_bnet__HttpResponseInfo_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(bnet__Callback_bnet__UniquePtr_bnet__Mods__ReleaseNote_bnet__HttpResponseInfo, __vftable) == 0x0);
 
@@ -282,6 +302,7 @@ const _: () = assert!(core::mem::offset_of!(bnet__Callback_bnet__UniquePtr_bnet_
 pub struct bnet__Callback_bnet__UniquePtr_bnet__Mods__SearchCuratedListsResponse_bnet__HttpResponseInfo {
     /// +0x0 `vtbl:bnet::Callback<bnet::UniquePtr<bnet::Mods::SearchCuratedListsResponse>,bnet::HttpResponseInfo>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet__Callback_bnet__UniquePtr_bnet__Mods__SearchCuratedListsResponse_bnet__HttpResponseInfo_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(bnet__Callback_bnet__UniquePtr_bnet__Mods__SearchCuratedListsResponse_bnet__HttpResponseInfo, __vftable) == 0x0);
 
@@ -292,6 +313,7 @@ const _: () = assert!(core::mem::offset_of!(bnet__Callback_bnet__UniquePtr_bnet_
 pub struct bnet__Callback_bnet__UniquePtr_bnet__TitleStorage__DownloadData_bnet__HttpResponseInfo {
     /// +0x0 `vtbl:bnet::Callback<bnet::UniquePtr<bnet::TitleStorage::DownloadData>,bnet::HttpResponseInfo>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet__Callback_bnet__UniquePtr_bnet__TitleStorage__DownloadData_bnet__HttpResponseInfo_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(bnet__Callback_bnet__UniquePtr_bnet__TitleStorage__DownloadData_bnet__HttpResponseInfo, __vftable) == 0x0);
 
@@ -302,6 +324,7 @@ const _: () = assert!(core::mem::offset_of!(bnet__Callback_bnet__UniquePtr_bnet_
 pub struct bnet__Callback_bnet__UniquePtr_bnet__Wallet__Balance_bnet__HttpResponseInfo {
     /// +0x0 `vtbl:bnet::Callback<bnet::UniquePtr<bnet::Wallet::Balance>,bnet::HttpResponseInfo>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet__Callback_bnet__UniquePtr_bnet__Wallet__Balance_bnet__HttpResponseInfo_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(bnet__Callback_bnet__UniquePtr_bnet__Wallet__Balance_bnet__HttpResponseInfo, __vftable) == 0x0);
 
@@ -312,6 +335,7 @@ const _: () = assert!(core::mem::offset_of!(bnet__Callback_bnet__UniquePtr_bnet_
 pub struct bnet__Callback_bnet__UniquePtr_bnet__Wallet__PurchasePreviewResult_bnet__HttpResponseInfo {
     /// +0x0 `vtbl:bnet::Callback<bnet::UniquePtr<bnet::Wallet::PurchasePreviewResult>,bnet::HttpResponseInfo>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet__Callback_bnet__UniquePtr_bnet__Wallet__PurchasePreviewResult_bnet__HttpResponseInfo_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(bnet__Callback_bnet__UniquePtr_bnet__Wallet__PurchasePreviewResult_bnet__HttpResponseInfo, __vftable) == 0x0);
 
@@ -322,6 +346,7 @@ const _: () = assert!(core::mem::offset_of!(bnet__Callback_bnet__UniquePtr_bnet_
 pub struct bnet__Callback_bnet__UniquePtr_bnet__Wallet__PurchaseResult_bnet__HttpResponseInfo {
     /// +0x0 `vtbl:bnet::Callback<bnet::UniquePtr<bnet::Wallet::PurchaseResult>,bnet::HttpResponseInfo>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet__Callback_bnet__UniquePtr_bnet__Wallet__PurchaseResult_bnet__HttpResponseInfo_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(bnet__Callback_bnet__UniquePtr_bnet__Wallet__PurchaseResult_bnet__HttpResponseInfo, __vftable) == 0x0);
 
@@ -333,6 +358,7 @@ pub struct bnet__Callback_bnet__UniquePtr_bnet__impl__FixedVector_bnet__Legal__D
     /// +0x0 `vtbl:bnet::Callback<bnet::UniquePtr<bnet::impl::FixedVector<bnet::Legal::Document,5,1,1,bnet::impl::StdAllocator<bnet::Legal::Document>_>_>,bnet::HttpResponseInfo>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet__Callback_bnet__UniquePtr_bnet__impl__FixedVector_bnet__Legal__Document_5_1_1_bnet__impl__S_cc1647b345a1_vtable,
     pub unknown_8: [u8; 1224],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet__Callback_bnet__UniquePtr_bnet__impl__FixedVector_bnet__Legal__Document_5_1_1_bnet__impl__S_cc1647b345a1>() == 0x4D0);
 const _: () = assert!(core::mem::offset_of!(bnet__Callback_bnet__UniquePtr_bnet__impl__FixedVector_bnet__Legal__Document_5_1_1_bnet__impl__S_cc1647b345a1, __vftable) == 0x0);
@@ -344,6 +370,7 @@ const _: () = assert!(core::mem::offset_of!(bnet__Callback_bnet__UniquePtr_bnet_
 pub struct bnet__Callback_bnet__UniquePtr_bnet__impl__FixedVector_bnet__Legal__DocumentResult_5_1_1_bnet__i_03ab651bc6e9 {
     /// +0x0 `vtbl:bnet::Callback<bnet::UniquePtr<bnet::impl::FixedVector<bnet::Legal::DocumentResult,5,1,1,bnet::impl::StdAllocator<bnet::Legal::DocumentResult>_>_>,bnet::Legal::AcceptDocumentsStatus>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet__Callback_bnet__UniquePtr_bnet__impl__FixedVector_bnet__Legal__DocumentResult_5_1_1_bnet__i_03ab651bc6e9_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(bnet__Callback_bnet__UniquePtr_bnet__impl__FixedVector_bnet__Legal__DocumentResult_5_1_1_bnet__i_03ab651bc6e9, __vftable) == 0x0);
 
@@ -354,6 +381,7 @@ const _: () = assert!(core::mem::offset_of!(bnet__Callback_bnet__UniquePtr_bnet_
 pub struct bnet__Callback_bnet__UniquePtr_std__vector_bnet__Entitlements__Item_bnet__impl__StdAllocator_bne_13cada492529 {
     /// +0x0 `vtbl:bnet::Callback<bnet::UniquePtr<std::vector<bnet::Entitlements::Item,bnet::impl::StdAllocator<bnet::Entitlements::Item>_>_>,bnet::HttpResponseInfo>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet__Callback_bnet__UniquePtr_std__vector_bnet__Entitlements__Item_bnet__impl__StdAllocator_bne_13cada492529_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(bnet__Callback_bnet__UniquePtr_std__vector_bnet__Entitlements__Item_bnet__impl__StdAllocator_bne_13cada492529, __vftable) == 0x0);
 
@@ -364,6 +392,7 @@ const _: () = assert!(core::mem::offset_of!(bnet__Callback_bnet__UniquePtr_std__
 pub struct bnet__Callback_bnet__impl__FixedString_2048_1_1_bnet__impl__StdAllocator_char___bnet__HttpResponseInfo {
     /// +0x0 `vtbl:bnet::Callback<bnet::impl::FixedString<2048,1,1,bnet::impl::StdAllocator<char>_>,bnet::HttpResponseInfo>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet__Callback_bnet__impl__FixedString_2048_1_1_bnet__impl__StdAllocator_char___bnet__HttpResponseInfo_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(bnet__Callback_bnet__impl__FixedString_2048_1_1_bnet__impl__StdAllocator_char___bnet__HttpResponseInfo, __vftable) == 0x0);
 
@@ -375,6 +404,7 @@ pub struct bnet__Callback_bnet_std__void_t_bnet__HttpResponseInfo {
     /// +0x0 `vtbl:bnet::Callback<bnet_std::void_t,bnet::HttpResponseInfo>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet__Callback_bnet_std__void_t_bnet__HttpResponseInfo_vtable,
     pub unknown_8: [u8; 1216],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet__Callback_bnet_std__void_t_bnet__HttpResponseInfo>() == 0x4C8);
 const _: () = assert!(core::mem::offset_of!(bnet__Callback_bnet_std__void_t_bnet__HttpResponseInfo, __vftable) == 0x0);
@@ -387,6 +417,7 @@ pub struct bnet__Callback_bool_bnet__HttpResponseInfo {
     /// +0x0 `vtbl:bnet::Callback<bool,bnet::HttpResponseInfo>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet__Callback_bool_bnet__HttpResponseInfo_vtable,
     pub unknown_8: [u8; 1216],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet__Callback_bool_bnet__HttpResponseInfo>() == 0x4C8);
 const _: () = assert!(core::mem::offset_of!(bnet__Callback_bool_bnet__HttpResponseInfo, __vftable) == 0x0);
@@ -398,6 +429,7 @@ const _: () = assert!(core::mem::offset_of!(bnet__Callback_bool_bnet__HttpRespon
 pub struct bnet__Callback_std__shared_ptr_bnet__ChunkUploadedResult_bnet__HttpResponseInfo {
     /// +0x0 `vtbl:bnet::Callback<std::shared_ptr<bnet::ChunkUploadedResult>,bnet::HttpResponseInfo>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet__Callback_std__shared_ptr_bnet__ChunkUploadedResult_bnet__HttpResponseInfo_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(bnet__Callback_std__shared_ptr_bnet__ChunkUploadedResult_bnet__HttpResponseInfo, __vftable) == 0x0);
 
@@ -408,6 +440,7 @@ const _: () = assert!(core::mem::offset_of!(bnet__Callback_std__shared_ptr_bnet_
 pub struct bnet__Callback_std__shared_ptr_bnet__FileChunk_bnet__HttpResponseInfo {
     /// +0x0 `vtbl:bnet::Callback<std::shared_ptr<bnet::FileChunk>,bnet::HttpResponseInfo>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet__Callback_std__shared_ptr_bnet__FileChunk_bnet__HttpResponseInfo_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(bnet__Callback_std__shared_ptr_bnet__FileChunk_bnet__HttpResponseInfo, __vftable) == 0x0);
 
@@ -423,6 +456,7 @@ pub struct bnet__Mods__BaseUpdatePreferenceInfo {
     pub field_10: u64,
     /// +0x18 `undefined8`, ctor store
     pub field_18: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(bnet__Mods__BaseUpdatePreferenceInfo, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(bnet__Mods__BaseUpdatePreferenceInfo, field_8) == 0x8);
@@ -442,6 +476,7 @@ pub struct bnet__Mods__UpdateContentPreferenceInfo {
     pub field_10: u64,
     /// +0x18 `undefined8`, base bnet::Mods::BaseUpdatePreferenceInfo
     pub field_18: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(bnet__Mods__UpdateContentPreferenceInfo, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(bnet__Mods__UpdateContentPreferenceInfo, field_8) == 0x8);
@@ -456,6 +491,7 @@ pub struct bnet__detail__CallbackImpl_1_bnet__Mods__VerifiedCreatorCheckResponse
     /// +0x0 `vtbl:bnet::detail::CallbackImpl<1,bnet::Mods::VerifiedCreatorCheckResponse,bnet::HttpResponseInfo>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet__detail__CallbackImpl_1_bnet__Mods__VerifiedCreatorCheckResponse_bnet__HttpResponseInfo_vtable,
     pub unknown_8: [u8; 1216],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet__detail__CallbackImpl_1_bnet__Mods__VerifiedCreatorCheckResponse_bnet__HttpResponseInfo>() == 0x4C8);
 const _: () = assert!(core::mem::offset_of!(bnet__detail__CallbackImpl_1_bnet__Mods__VerifiedCreatorCheckResponse_bnet__HttpResponseInfo, __vftable) == 0x0);
@@ -497,6 +533,7 @@ pub struct bnet__detail__CallbackImpl_1_bnet__Telemetry__EventResponse_bnet__Htt
     /// +0x6D0 `undefined1`, ctor store
     pub field_6D0: u8,
     pub unknown_6D1: [u8; 7],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet__detail__CallbackImpl_1_bnet__Telemetry__EventResponse_bnet__HttpResponseInfo>() == 0x6D8);
 const _: () = assert!(core::mem::offset_of!(bnet__detail__CallbackImpl_1_bnet__Telemetry__EventResponse_bnet__HttpResponseInfo, __vftable) == 0x0);
@@ -521,6 +558,7 @@ pub struct bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Account__AuthResul
     /// +0x0 `vtbl:bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::Account::AuthResult>,bnet::Account::AuthenticationStatus>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Account__AuthResult_bnet__Account__AuthenticationStatus_vtable,
     pub unknown_8: [u8; 6640],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Account__AuthResult_bnet__Account__AuthenticationStatus>() == 0x19F8);
 const _: () = assert!(core::mem::offset_of!(bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Account__AuthResult_bnet__Account__AuthenticationStatus, __vftable) == 0x0);
@@ -533,6 +571,7 @@ pub struct bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Account__ExternalA
     /// +0x0 `vtbl:bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::Account::ExternalAccountInfoResult>,bnet::HttpResponseInfo>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Account__ExternalAccountInfoResult_bnet__HttpResponseInfo_vtable,
     pub unknown_8: [u8; 1224],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Account__ExternalAccountInfoResult_bnet__HttpResponseInfo>() == 0x4D0);
 const _: () = assert!(core::mem::offset_of!(bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Account__ExternalAccountInfoResult_bnet__HttpResponseInfo, __vftable) == 0x0);
@@ -545,6 +584,7 @@ pub struct bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Account__LinkingRe
     /// +0x0 `vtbl:bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::Account::LinkingResult>,bnet::HttpResponseInfo>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Account__LinkingResult_bnet__HttpResponseInfo_vtable,
     pub unknown_8: [u8; 1224],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Account__LinkingResult_bnet__HttpResponseInfo>() == 0x4D0);
 const _: () = assert!(core::mem::offset_of!(bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Account__LinkingResult_bnet__HttpResponseInfo, __vftable) == 0x0);
@@ -557,6 +597,7 @@ pub struct bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Catalog__Item_bnet
     /// +0x0 `vtbl:bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::Catalog::Item>,bnet::HttpResponseInfo>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Catalog__Item_bnet__HttpResponseInfo_vtable,
     pub unknown_8: [u8; 1224],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Catalog__Item_bnet__HttpResponseInfo>() == 0x4D0);
 const _: () = assert!(core::mem::offset_of!(bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Catalog__Item_bnet__HttpResponseInfo, __vftable) == 0x0);
@@ -569,6 +610,7 @@ pub struct bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__MOTD__Messages_bne
     /// +0x0 `vtbl:bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::MOTD::Messages>,bnet::HttpResponseInfo>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__MOTD__Messages_bnet__HttpResponseInfo_vtable,
     pub unknown_8: [u8; 1224],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__MOTD__Messages_bnet__HttpResponseInfo>() == 0x4D0);
 const _: () = assert!(core::mem::offset_of!(bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__MOTD__Messages_bnet__HttpResponseInfo, __vftable) == 0x0);
@@ -581,6 +623,7 @@ pub struct bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Mods__Bundle_bnet_
     /// +0x0 `vtbl:bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::Mods::Bundle>,bnet::HttpResponseInfo>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Mods__Bundle_bnet__HttpResponseInfo_vtable,
     pub unknown_8: [u8; 1224],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Mods__Bundle_bnet__HttpResponseInfo>() == 0x4D0);
 const _: () = assert!(core::mem::offset_of!(bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Mods__Bundle_bnet__HttpResponseInfo, __vftable) == 0x0);
@@ -593,6 +636,7 @@ pub struct bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Mods__Collection_b
     /// +0x0 `vtbl:bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::Mods::Collection>,bnet::HttpResponseInfo>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Mods__Collection_bnet__HttpResponseInfo_vtable,
     pub unknown_8: [u8; 1224],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Mods__Collection_bnet__HttpResponseInfo>() == 0x4D0);
 const _: () = assert!(core::mem::offset_of!(bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Mods__Collection_bnet__HttpResponseInfo, __vftable) == 0x0);
@@ -605,6 +649,7 @@ pub struct bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Mods__Content_bnet
     /// +0x0 `vtbl:bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::Mods::Content>,bnet::HttpResponseInfo>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Mods__Content_bnet__HttpResponseInfo_vtable,
     pub unknown_8: [u8; 1224],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Mods__Content_bnet__HttpResponseInfo>() == 0x4D0);
 const _: () = assert!(core::mem::offset_of!(bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Mods__Content_bnet__HttpResponseInfo, __vftable) == 0x0);
@@ -617,6 +662,7 @@ pub struct bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Mods__GetContentId
     /// +0x0 `vtbl:bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::Mods::GetContentIdFromLegacyIdResponse>,bnet::HttpResponseInfo>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Mods__GetContentIdFromLegacyIdResponse_bnet__HttpResponseInfo_vtable,
     pub unknown_8: [u8; 1224],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Mods__GetContentIdFromLegacyIdResponse_bnet__HttpResponseInfo>() == 0x4D0);
 const _: () = assert!(core::mem::offset_of!(bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Mods__GetContentIdFromLegacyIdResponse_bnet__HttpResponseInfo, __vftable) == 0x0);
@@ -629,6 +675,7 @@ pub struct bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Mods__GetCuratedLi
     /// +0x0 `vtbl:bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::Mods::GetCuratedListResponse>,bnet::HttpResponseInfo>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Mods__GetCuratedListResponse_bnet__HttpResponseInfo_vtable,
     pub unknown_8: [u8; 1224],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Mods__GetCuratedListResponse_bnet__HttpResponseInfo>() == 0x4D0);
 const _: () = assert!(core::mem::offset_of!(bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Mods__GetCuratedListResponse_bnet__HttpResponseInfo, __vftable) == 0x0);
@@ -641,6 +688,7 @@ pub struct bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Mods__ListBundlesR
     /// +0x0 `vtbl:bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Mods__ListBundlesResponse_bnet__HttpResponseInfo_vtable,
     pub unknown_8: [u8; 1224],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Mods__ListBundlesResponse_bnet__HttpResponseInfo>() == 0x4D0);
 const _: () = assert!(core::mem::offset_of!(bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Mods__ListBundlesResponse_bnet__HttpResponseInfo, __vftable) == 0x0);
@@ -653,6 +701,7 @@ pub struct bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Mods__ListCategori
     /// +0x0 `vtbl:bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::Mods::ListCategoriesResponse>,bnet::HttpResponseInfo>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Mods__ListCategoriesResponse_bnet__HttpResponseInfo_vtable,
     pub unknown_8: [u8; 1224],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Mods__ListCategoriesResponse_bnet__HttpResponseInfo>() == 0x4D0);
 const _: () = assert!(core::mem::offset_of!(bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Mods__ListCategoriesResponse_bnet__HttpResponseInfo, __vftable) == 0x0);
@@ -665,6 +714,7 @@ pub struct bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Mods__ListCollecti
     /// +0x0 `vtbl:bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::Mods::ListCollectionResponse>,bnet::HttpResponseInfo>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Mods__ListCollectionResponse_bnet__HttpResponseInfo_vtable,
     pub unknown_8: [u8; 1224],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Mods__ListCollectionResponse_bnet__HttpResponseInfo>() == 0x4D0);
 const _: () = assert!(core::mem::offset_of!(bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Mods__ListCollectionResponse_bnet__HttpResponseInfo, __vftable) == 0x0);
@@ -677,6 +727,7 @@ pub struct bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Mods__ListContentR
     /// +0x0 `vtbl:bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Mods__ListContentResponse_bnet__HttpResponseInfo_vtable,
     pub unknown_8: [u8; 1224],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Mods__ListContentResponse_bnet__HttpResponseInfo>() == 0x4D0);
 const _: () = assert!(core::mem::offset_of!(bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Mods__ListContentResponse_bnet__HttpResponseInfo, __vftable) == 0x0);
@@ -689,6 +740,7 @@ pub struct bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Mods__MultipartUpl
     /// +0x0 `vtbl:bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::Mods::MultipartUploadSession>,bnet::HttpResponseInfo>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Mods__MultipartUploadSession_bnet__HttpResponseInfo_vtable,
     pub unknown_8: [u8; 1224],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Mods__MultipartUploadSession_bnet__HttpResponseInfo>() == 0x4D0);
 const _: () = assert!(core::mem::offset_of!(bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Mods__MultipartUploadSession_bnet__HttpResponseInfo, __vftable) == 0x0);
@@ -701,6 +753,7 @@ pub struct bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Mods__ReleaseNote_
     /// +0x0 `vtbl:bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::Mods::ReleaseNote>,bnet::HttpResponseInfo>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Mods__ReleaseNote_bnet__HttpResponseInfo_vtable,
     pub unknown_8: [u8; 1224],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Mods__ReleaseNote_bnet__HttpResponseInfo>() == 0x4D0);
 const _: () = assert!(core::mem::offset_of!(bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Mods__ReleaseNote_bnet__HttpResponseInfo, __vftable) == 0x0);
@@ -713,6 +766,7 @@ pub struct bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Mods__SearchCurate
     /// +0x0 `vtbl:bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::Mods::SearchCuratedListsResponse>,bnet::HttpResponseInfo>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Mods__SearchCuratedListsResponse_bnet__HttpResponseInfo_vtable,
     pub unknown_8: [u8; 1224],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Mods__SearchCuratedListsResponse_bnet__HttpResponseInfo>() == 0x4D0);
 const _: () = assert!(core::mem::offset_of!(bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Mods__SearchCuratedListsResponse_bnet__HttpResponseInfo, __vftable) == 0x0);
@@ -725,6 +779,7 @@ pub struct bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__TitleStorage__Down
     /// +0x0 `vtbl:bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::TitleStorage::DownloadData>,bnet::HttpResponseInfo>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__TitleStorage__DownloadData_bnet__HttpResponseInfo_vtable,
     pub unknown_8: [u8; 1224],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__TitleStorage__DownloadData_bnet__HttpResponseInfo>() == 0x4D0);
 const _: () = assert!(core::mem::offset_of!(bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__TitleStorage__DownloadData_bnet__HttpResponseInfo, __vftable) == 0x0);
@@ -737,6 +792,7 @@ pub struct bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Wallet__Balance_bn
     /// +0x0 `vtbl:bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::Wallet::Balance>,bnet::HttpResponseInfo>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Wallet__Balance_bnet__HttpResponseInfo_vtable,
     pub unknown_8: [u8; 1224],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Wallet__Balance_bnet__HttpResponseInfo>() == 0x4D0);
 const _: () = assert!(core::mem::offset_of!(bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Wallet__Balance_bnet__HttpResponseInfo, __vftable) == 0x0);
@@ -749,6 +805,7 @@ pub struct bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Wallet__PurchasePr
     /// +0x0 `vtbl:bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::Wallet::PurchasePreviewResult>,bnet::HttpResponseInfo>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Wallet__PurchasePreviewResult_bnet__HttpResponseInfo_vtable,
     pub unknown_8: [u8; 1224],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Wallet__PurchasePreviewResult_bnet__HttpResponseInfo>() == 0x4D0);
 const _: () = assert!(core::mem::offset_of!(bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Wallet__PurchasePreviewResult_bnet__HttpResponseInfo, __vftable) == 0x0);
@@ -761,6 +818,7 @@ pub struct bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Wallet__PurchaseRe
     /// +0x0 `vtbl:bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::Wallet::PurchaseResult>,bnet::HttpResponseInfo>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Wallet__PurchaseResult_bnet__HttpResponseInfo_vtable,
     pub unknown_8: [u8; 1224],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Wallet__PurchaseResult_bnet__HttpResponseInfo>() == 0x4D0);
 const _: () = assert!(core::mem::offset_of!(bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Wallet__PurchaseResult_bnet__HttpResponseInfo, __vftable) == 0x0);
@@ -773,6 +831,7 @@ pub struct bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__impl__FixedVector_
     /// +0x0 `vtbl:bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::impl::FixedVector<bnet::Legal::Document,5,1,1,bnet::impl::StdAllocator<bnet::Legal::Document>_>_>,bnet::HttpResponseInfo>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__impl__FixedVector_bnet__Legal__Document_5_1_1_fed1531e66d0_vtable,
     pub unknown_8: [u8; 1224],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__impl__FixedVector_bnet__Legal__Document_5_1_1_fed1531e66d0>() == 0x4D0);
 const _: () = assert!(core::mem::offset_of!(bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__impl__FixedVector_bnet__Legal__Document_5_1_1_fed1531e66d0, __vftable) == 0x0);
@@ -785,6 +844,7 @@ pub struct bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__impl__FixedVector_
     /// +0x0 `vtbl:bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::impl::FixedVector<bnet::Legal::DocumentResult,5,1,1,bnet::impl::StdAllocator<bnet::Legal::DocumentResult>_>_>,bnet::Legal::AcceptDocumentsStatus>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__impl__FixedVector_bnet__Legal__DocumentResult_d0731f9d3b54_vtable,
     pub unknown_8: [u8; 7704],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__impl__FixedVector_bnet__Legal__DocumentResult_d0731f9d3b54>() == 0x1E20);
 const _: () = assert!(core::mem::offset_of!(bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__impl__FixedVector_bnet__Legal__DocumentResult_d0731f9d3b54, __vftable) == 0x0);
@@ -797,6 +857,7 @@ pub struct bnet__detail__CallbackImpl_1_bnet__UniquePtr_std__vector_bnet__Entitl
     /// +0x0 `vtbl:bnet::detail::CallbackImpl<1,bnet::UniquePtr<std::vector<bnet::Entitlements::Item,bnet::impl::StdAllocator<bnet::Entitlements::Item>_>_>,bnet::HttpResponseInfo>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet__detail__CallbackImpl_1_bnet__UniquePtr_std__vector_bnet__Entitlements__Item_bnet__impl__St_cffbae195d6d_vtable,
     pub unknown_8: [u8; 1224],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet__detail__CallbackImpl_1_bnet__UniquePtr_std__vector_bnet__Entitlements__Item_bnet__impl__St_cffbae195d6d>() == 0x4D0);
 const _: () = assert!(core::mem::offset_of!(bnet__detail__CallbackImpl_1_bnet__UniquePtr_std__vector_bnet__Entitlements__Item_bnet__impl__St_cffbae195d6d, __vftable) == 0x0);
@@ -809,6 +870,7 @@ pub struct bnet__detail__CallbackImpl_1_bnet__impl__FixedString_2048_1_1_bnet__i
     /// +0x0 `vtbl:bnet::detail::CallbackImpl<1,bnet::impl::FixedString<2048,1,1,bnet::impl::StdAllocator<char>_>,bnet::HttpResponseInfo>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet__detail__CallbackImpl_1_bnet__impl__FixedString_2048_1_1_bnet__impl__StdAllocator_char___bnet__HttpResponseInfo_vtable,
     pub unknown_8: [u8; 3288],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet__detail__CallbackImpl_1_bnet__impl__FixedString_2048_1_1_bnet__impl__StdAllocator_char___bnet__HttpResponseInfo>() == 0xCE0);
 const _: () = assert!(core::mem::offset_of!(bnet__detail__CallbackImpl_1_bnet__impl__FixedString_2048_1_1_bnet__impl__StdAllocator_char___bnet__HttpResponseInfo, __vftable) == 0x0);
@@ -821,6 +883,7 @@ pub struct bnet__detail__CallbackImpl_1_bnet_std__void_t_bnet__HttpResponseInfo 
     /// +0x0 `vtbl:bnet::detail::CallbackImpl<1,bnet_std::void_t,bnet::HttpResponseInfo>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet__detail__CallbackImpl_1_bnet_std__void_t_bnet__HttpResponseInfo_vtable,
     pub unknown_8: [u8; 1216],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet__detail__CallbackImpl_1_bnet_std__void_t_bnet__HttpResponseInfo>() == 0x4C8);
 const _: () = assert!(core::mem::offset_of!(bnet__detail__CallbackImpl_1_bnet_std__void_t_bnet__HttpResponseInfo, __vftable) == 0x0);
@@ -833,6 +896,7 @@ pub struct bnet__detail__CallbackImpl_1_bool_bnet__HttpResponseInfo {
     /// +0x0 `vtbl:bnet::detail::CallbackImpl<1,bool,bnet::HttpResponseInfo>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet__detail__CallbackImpl_1_bool_bnet__HttpResponseInfo_vtable,
     pub unknown_8: [u8; 1216],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet__detail__CallbackImpl_1_bool_bnet__HttpResponseInfo>() == 0x4C8);
 const _: () = assert!(core::mem::offset_of!(bnet__detail__CallbackImpl_1_bool_bnet__HttpResponseInfo, __vftable) == 0x0);
@@ -845,6 +909,7 @@ pub struct bnet__detail__CallbackImpl_1_std__shared_ptr_bnet__ChunkUploadedResul
     /// +0x0 `vtbl:bnet::detail::CallbackImpl<1,std::shared_ptr<bnet::ChunkUploadedResult>,bnet::HttpResponseInfo>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet__detail__CallbackImpl_1_std__shared_ptr_bnet__ChunkUploadedResult_bnet__HttpResponseInfo_vtable,
     pub unknown_8: [u8; 1224],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet__detail__CallbackImpl_1_std__shared_ptr_bnet__ChunkUploadedResult_bnet__HttpResponseInfo>() == 0x4D0);
 const _: () = assert!(core::mem::offset_of!(bnet__detail__CallbackImpl_1_std__shared_ptr_bnet__ChunkUploadedResult_bnet__HttpResponseInfo, __vftable) == 0x0);
@@ -857,6 +922,7 @@ pub struct bnet__detail__CallbackImpl_1_std__shared_ptr_bnet__FileChunk_bnet__Ht
     /// +0x0 `vtbl:bnet::detail::CallbackImpl<1,std::shared_ptr<bnet::FileChunk>,bnet::HttpResponseInfo>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet__detail__CallbackImpl_1_std__shared_ptr_bnet__FileChunk_bnet__HttpResponseInfo_vtable,
     pub unknown_8: [u8; 1224],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet__detail__CallbackImpl_1_std__shared_ptr_bnet__FileChunk_bnet__HttpResponseInfo>() == 0x4D0);
 const _: () = assert!(core::mem::offset_of!(bnet__detail__CallbackImpl_1_std__shared_ptr_bnet__FileChunk_bnet__HttpResponseInfo, __vftable) == 0x0);
@@ -869,6 +935,7 @@ pub struct bnet__impl__AsyncOperation {
     pub __vftable: *const crate::raw::vtables::bnet__impl__AsyncOperation_vtable,
     /// +0x8 `undefined8`, ctor store
     pub field_8: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet__impl__AsyncOperation>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet__impl__AsyncOperation, __vftable) == 0x0);
@@ -882,6 +949,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::Mods::VerifiedCreatorCheckResponse,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::Mods::VerifiedCreatorCheckResponse,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_b7438afc9891b435608fdff844ca8d0f>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_2e7363663d7a_vtable,
     pub unknown_8: [u8; 64],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_2e7363663d7a>() == 0x48);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_2e7363663d7a, __vftable) == 0x0);
@@ -893,6 +961,7 @@ const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_
 pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_2d9874610e96 {
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::Mods::VerifiedCreatorCheckResponse,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_b7438afc9891b435608fdff844ca8d0f>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_2d9874610e96_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_2d9874610e96, __vftable) == 0x0);
 
@@ -903,6 +972,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::Mods::VerifiedCreatorCheckResponse,bnet::HttpResponseInfo>&&___ptr64)>::ICallableBase:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_12e89c043219_vtable,
     pub unknown_8: [u8; 64],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_12e89c043219>() == 0x48);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_12e89c043219, __vftable) == 0x0);
@@ -915,6 +985,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::Mods::VerifiedCreatorCheckResponse,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_0a3e76f905f8_vtable,
     pub unknown_8: [u8; 64],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_0a3e76f905f8>() == 0x48);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_0a3e76f905f8, __vftable) == 0x0);
@@ -927,6 +998,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::Telemetry::EventResponse,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::Telemetry::EventResponse,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_f0c7aaf269a7e80ae9fa79b79669e531>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_0099e4fcbb51_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_0099e4fcbb51>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_0099e4fcbb51, __vftable) == 0x0);
@@ -939,6 +1011,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::Telemetry::EventResponse,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_f0c7aaf269a7e80ae9fa79b79669e531>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_775f86ea116e_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_775f86ea116e>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_775f86ea116e, __vftable) == 0x0);
@@ -950,6 +1023,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::Telemetry::EventResponse,bnet::HttpResponseInfo>&&___ptr64)>::ICallableBase:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_b472202d6f92_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_b472202d6f92>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_b472202d6f92, __vftable) == 0x0);
@@ -962,6 +1036,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::Telemetry::EventResponse,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_eec3928470ab_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_eec3928470ab>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_eec3928470ab, __vftable) == 0x0);
@@ -974,6 +1049,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Account::AuthResult>,bnet::Account::AuthenticationStatus>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Account::AuthResult>,bnet::Account::AuthenticationStatus>&&___ptr64)>::ICopyableCallable,<lambda_82bcbd3fb251b2263e67e6db424f121b>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_4b4f8c0e7db1_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_4b4f8c0e7db1>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_4b4f8c0e7db1, __vftable) == 0x0);
@@ -986,6 +1062,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Account::AuthResult>,bnet::Account::AuthenticationStatus>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Account::AuthResult>,bnet::Account::AuthenticationStatus>&&___ptr64)>::ICopyableCallable,<lambda_bca3863b820df7f7fa9be398e1d217f8>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_d5de015dc7c2_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_d5de015dc7c2>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_d5de015dc7c2, __vftable) == 0x0);
@@ -998,6 +1075,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Account::AuthResult>,bnet::Account::AuthenticationStatus>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Account::AuthResult>,bnet::Account::AuthenticationStatus>&&___ptr64)>::ICopyableCallable,<lambda_bcd3b9aeaecd808c029e42744a27bbf8>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_7eb4fed21b5a_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_7eb4fed21b5a>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_7eb4fed21b5a, __vftable) == 0x0);
@@ -1010,6 +1088,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Account::AuthResult>,bnet::Account::AuthenticationStatus>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Account::AuthResult>,bnet::Account::AuthenticationStatus>&&___ptr64)>::ICopyableCallable,<lambda_dbc23dd6b7bc37a8708c3ae040177d1c>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_9163894b477a_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_9163894b477a>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_9163894b477a, __vftable) == 0x0);
@@ -1022,6 +1101,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Account::AuthResult>,bnet::Account::AuthenticationStatus>&&___ptr64)>::CopyableCallable<<lambda_82bcbd3fb251b2263e67e6db424f121b>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_af068a724e75_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_af068a724e75>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_af068a724e75, __vftable) == 0x0);
@@ -1034,6 +1114,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Account::AuthResult>,bnet::Account::AuthenticationStatus>&&___ptr64)>::CopyableCallable<<lambda_bca3863b820df7f7fa9be398e1d217f8>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_2ecb528227c9_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_2ecb528227c9>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_2ecb528227c9, __vftable) == 0x0);
@@ -1046,6 +1127,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Account::AuthResult>,bnet::Account::AuthenticationStatus>&&___ptr64)>::CopyableCallable<<lambda_bcd3b9aeaecd808c029e42744a27bbf8>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_80f3004566f9_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_80f3004566f9>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_80f3004566f9, __vftable) == 0x0);
@@ -1058,6 +1140,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Account::AuthResult>,bnet::Account::AuthenticationStatus>&&___ptr64)>::CopyableCallable<<lambda_dbc23dd6b7bc37a8708c3ae040177d1c>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_bc14cb4746ae_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_bc14cb4746ae>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_bc14cb4746ae, __vftable) == 0x0);
@@ -1069,6 +1152,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Account::AuthResult>,bnet::Account::AuthenticationStatus>&&___ptr64)>::ICallableBase:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_f93b8747dbec_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_f93b8747dbec>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_f93b8747dbec, __vftable) == 0x0);
@@ -1081,6 +1165,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Account::AuthResult>,bnet::Account::AuthenticationStatus>&&___ptr64)>::ICopyableCallable:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_481343f30148_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_481343f30148>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_481343f30148, __vftable) == 0x0);
@@ -1093,6 +1178,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Account::ExternalAccountInfoResult>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Account::ExternalAccountInfoResult>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_c2dd550c3b1908dd6607d96f060fdc04>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_a8c343409674_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_a8c343409674>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_a8c343409674, __vftable) == 0x0);
@@ -1105,6 +1191,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Account::ExternalAccountInfoResult>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_c2dd550c3b1908dd6607d96f060fdc04>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_5b3337b93b1f_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_5b3337b93b1f>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_5b3337b93b1f, __vftable) == 0x0);
@@ -1116,6 +1203,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Account::ExternalAccountInfoResult>,bnet::HttpResponseInfo>&&___ptr64)>::ICallableBase:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_8188bf1912cc_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_8188bf1912cc>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_8188bf1912cc, __vftable) == 0x0);
@@ -1128,6 +1216,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Account::ExternalAccountInfoResult>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_8b9f253363cc_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_8b9f253363cc>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_8b9f253363cc, __vftable) == 0x0);
@@ -1140,6 +1229,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Account::LinkingResult>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Account::LinkingResult>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_ebc9de367fd9436c006efd750a462274>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_f0a54e4d703e_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_f0a54e4d703e>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_f0a54e4d703e, __vftable) == 0x0);
@@ -1152,6 +1242,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Account::LinkingResult>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_ebc9de367fd9436c006efd750a462274>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_1a73bb24356f_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_1a73bb24356f>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_1a73bb24356f, __vftable) == 0x0);
@@ -1163,6 +1254,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Account::LinkingResult>,bnet::HttpResponseInfo>&&___ptr64)>::ICallableBase:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_28ca7612e75f_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_28ca7612e75f>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_28ca7612e75f, __vftable) == 0x0);
@@ -1175,6 +1267,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Account::LinkingResult>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_50c290519a60_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_50c290519a60>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_50c290519a60, __vftable) == 0x0);
@@ -1187,6 +1280,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Catalog::Item>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Catalog::Item>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_b425cdcec433e15b9d26f95e9abc5c59>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_c9d16303f269_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_c9d16303f269>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_c9d16303f269, __vftable) == 0x0);
@@ -1199,6 +1293,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Catalog::Item>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_b425cdcec433e15b9d26f95e9abc5c59>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_18e07702b2d5_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_18e07702b2d5>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_18e07702b2d5, __vftable) == 0x0);
@@ -1210,6 +1305,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Catalog::Item>,bnet::HttpResponseInfo>&&___ptr64)>::ICallableBase:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_8a8fe757bc8f_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_8a8fe757bc8f>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_8a8fe757bc8f, __vftable) == 0x0);
@@ -1222,6 +1318,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Catalog::Item>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_66d07c381bf2_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_66d07c381bf2>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_66d07c381bf2, __vftable) == 0x0);
@@ -1234,6 +1331,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::MOTD::Messages>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::MOTD::Messages>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_b78ea52940478ace5def42612ac5fdc0>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_5cca9a5903f0_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_5cca9a5903f0>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_5cca9a5903f0, __vftable) == 0x0);
@@ -1246,6 +1344,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::MOTD::Messages>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_b78ea52940478ace5def42612ac5fdc0>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_fee3237b40ce_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_fee3237b40ce>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_fee3237b40ce, __vftable) == 0x0);
@@ -1257,6 +1356,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::MOTD::Messages>,bnet::HttpResponseInfo>&&___ptr64)>::ICallableBase:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_dca63ee5bcb6_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_dca63ee5bcb6>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_dca63ee5bcb6, __vftable) == 0x0);
@@ -1269,6 +1369,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::MOTD::Messages>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_0f4ae2366257_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_0f4ae2366257>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_0f4ae2366257, __vftable) == 0x0);
@@ -1281,6 +1382,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::Bundle>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::Bundle>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_d8d7aa5ad5983741e244fe5362712ecd>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_6f0c1c4b943f_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_6f0c1c4b943f>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_6f0c1c4b943f, __vftable) == 0x0);
@@ -1293,6 +1395,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::Bundle>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_d8d7aa5ad5983741e244fe5362712ecd>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_f9d4e4084c89_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_f9d4e4084c89>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_f9d4e4084c89, __vftable) == 0x0);
@@ -1304,6 +1407,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::Bundle>,bnet::HttpResponseInfo>&&___ptr64)>::ICallableBase:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_07c3b35260d5_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_07c3b35260d5>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_07c3b35260d5, __vftable) == 0x0);
@@ -1316,6 +1420,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::Bundle>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_28772759f4e5_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_28772759f4e5>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_28772759f4e5, __vftable) == 0x0);
@@ -1328,6 +1433,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::Collection>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::Collection>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_49fbb219d9af7b4f36dd014c32901436>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_5b7bdd6de585_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_5b7bdd6de585>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_5b7bdd6de585, __vftable) == 0x0);
@@ -1340,6 +1446,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::Collection>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::Collection>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_5e73326145ba244a2320511712107396>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_dc2104a418dd_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_dc2104a418dd>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_dc2104a418dd, __vftable) == 0x0);
@@ -1352,6 +1459,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::Collection>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::Collection>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_9a315ca27cd8bf429b1feb16fd219afa>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_dfdf237e9238_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_dfdf237e9238>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_dfdf237e9238, __vftable) == 0x0);
@@ -1364,6 +1472,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::Collection>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_49fbb219d9af7b4f36dd014c32901436>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_e3273b6e2824_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_e3273b6e2824>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_e3273b6e2824, __vftable) == 0x0);
@@ -1376,6 +1485,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::Collection>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_5e73326145ba244a2320511712107396>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_dc813e3f4055_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_dc813e3f4055>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_dc813e3f4055, __vftable) == 0x0);
@@ -1388,6 +1498,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::Collection>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_9a315ca27cd8bf429b1feb16fd219afa>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_e86d7d6680da_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_e86d7d6680da>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_e86d7d6680da, __vftable) == 0x0);
@@ -1399,6 +1510,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::Collection>,bnet::HttpResponseInfo>&&___ptr64)>::ICallableBase:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_942d5e3ca1c2_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_942d5e3ca1c2>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_942d5e3ca1c2, __vftable) == 0x0);
@@ -1411,6 +1523,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::Collection>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_48509bf8b2fe_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_48509bf8b2fe>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_48509bf8b2fe, __vftable) == 0x0);
@@ -1423,6 +1536,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::Content>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::Content>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_19844420caa9a8145aec57e4c89aa2b4>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_bb2f0e3efa95_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_bb2f0e3efa95>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_bb2f0e3efa95, __vftable) == 0x0);
@@ -1435,6 +1549,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::Content>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::Content>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_3cb0228eaac2ad1f4e92a8e48c5a3976>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_fe5f094cf305_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_fe5f094cf305>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_fe5f094cf305, __vftable) == 0x0);
@@ -1447,6 +1562,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::Content>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::Content>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_ba75da216330e677d7d9aaf12f4e48d7>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_abe103ec2179_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_abe103ec2179>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_abe103ec2179, __vftable) == 0x0);
@@ -1459,6 +1575,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::Content>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_19844420caa9a8145aec57e4c89aa2b4>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_f1e8dffda57b_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_f1e8dffda57b>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_f1e8dffda57b, __vftable) == 0x0);
@@ -1471,6 +1588,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::Content>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_3cb0228eaac2ad1f4e92a8e48c5a3976>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_69ffae7780b6_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_69ffae7780b6>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_69ffae7780b6, __vftable) == 0x0);
@@ -1483,6 +1601,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::Content>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_ba75da216330e677d7d9aaf12f4e48d7>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_17e0cd64dcb5_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_17e0cd64dcb5>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_17e0cd64dcb5, __vftable) == 0x0);
@@ -1494,6 +1613,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::Content>,bnet::HttpResponseInfo>&&___ptr64)>::ICallableBase:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_139c8240148b_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_139c8240148b>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_139c8240148b, __vftable) == 0x0);
@@ -1506,6 +1626,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::Content>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_00e76eb446aa_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_00e76eb446aa>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_00e76eb446aa, __vftable) == 0x0);
@@ -1518,6 +1639,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::GetContentIdFromLegacyIdResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::GetContentIdFromLegacyIdResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_e4df452180a1b9a2d1083726a24b9a50>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_89b64a249bf4_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_89b64a249bf4>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_89b64a249bf4, __vftable) == 0x0);
@@ -1530,6 +1652,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::GetContentIdFromLegacyIdResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_e4df452180a1b9a2d1083726a24b9a50>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_2ebb09fce599_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_2ebb09fce599>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_2ebb09fce599, __vftable) == 0x0);
@@ -1541,6 +1664,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::GetContentIdFromLegacyIdResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICallableBase:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_8e4b2c5c105b_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_8e4b2c5c105b>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_8e4b2c5c105b, __vftable) == 0x0);
@@ -1553,6 +1677,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::GetContentIdFromLegacyIdResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_9859d23f29a1_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_9859d23f29a1>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_9859d23f29a1, __vftable) == 0x0);
@@ -1565,6 +1690,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::GetCuratedListResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::GetCuratedListResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_7b2ae8c3b996c550abe404ad0e5b1e47>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_c2e4323105ab_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_c2e4323105ab>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_c2e4323105ab, __vftable) == 0x0);
@@ -1577,6 +1703,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::GetCuratedListResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::GetCuratedListResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_f441b7a089aaaea6276058c22baa6c41>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_7f512006e124_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_7f512006e124>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_7f512006e124, __vftable) == 0x0);
@@ -1589,6 +1716,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::GetCuratedListResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_7b2ae8c3b996c550abe404ad0e5b1e47>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_53a9513412a1_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_53a9513412a1>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_53a9513412a1, __vftable) == 0x0);
@@ -1601,6 +1729,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::GetCuratedListResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_f441b7a089aaaea6276058c22baa6c41>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_30e622abe0b9_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_30e622abe0b9>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_30e622abe0b9, __vftable) == 0x0);
@@ -1612,6 +1741,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::GetCuratedListResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICallableBase:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_5912d381f85a_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_5912d381f85a>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_5912d381f85a, __vftable) == 0x0);
@@ -1624,6 +1754,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::GetCuratedListResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_1f07fb75429c_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_1f07fb75429c>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_1f07fb75429c, __vftable) == 0x0);
@@ -1636,6 +1767,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_0a19a9583547489a643c1d25b09011dc>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_a586519434b0_vtable,
     pub unknown_8: [u8; 16],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_a586519434b0>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_a586519434b0, __vftable) == 0x0);
@@ -1648,6 +1780,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_47af9f2ced50f6065f1eccf21d3e4629>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_37a46b686ea9_vtable,
     pub unknown_8: [u8; 16],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_37a46b686ea9>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_37a46b686ea9, __vftable) == 0x0);
@@ -1660,6 +1793,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_eb78b71c8d6cc9908f9dee665c73db75>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_268a060425ab_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_268a060425ab>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_268a060425ab, __vftable) == 0x0);
@@ -1672,6 +1806,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_f5038a3a46b07fd433adb1813db79985>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_d91aefc204e7_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_d91aefc204e7>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_d91aefc204e7, __vftable) == 0x0);
@@ -1683,6 +1818,7 @@ const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_
 pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_b598d94cad70 {
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_0a19a9583547489a643c1d25b09011dc>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_b598d94cad70_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_b598d94cad70, __vftable) == 0x0);
 
@@ -1694,6 +1830,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_47af9f2ced50f6065f1eccf21d3e4629>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_9cb166b5828e_vtable,
     pub unknown_8: [u8; 16],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_9cb166b5828e>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_9cb166b5828e, __vftable) == 0x0);
@@ -1706,6 +1843,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_eb78b71c8d6cc9908f9dee665c73db75>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_c0d1583ce9ce_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_c0d1583ce9ce>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_c0d1583ce9ce, __vftable) == 0x0);
@@ -1718,6 +1856,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_f5038a3a46b07fd433adb1813db79985>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_061061ede16a_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_061061ede16a>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_061061ede16a, __vftable) == 0x0);
@@ -1729,6 +1868,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICallableBase:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_0ff7591c0378_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_0ff7591c0378>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_0ff7591c0378, __vftable) == 0x0);
@@ -1741,6 +1881,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_055a751a3461_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_055a751a3461>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_055a751a3461, __vftable) == 0x0);
@@ -1753,6 +1894,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListCategoriesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListCategoriesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_bfe8378b8aa588e20458806ccc5cafad>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_f030d037be3f_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_f030d037be3f>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_f030d037be3f, __vftable) == 0x0);
@@ -1765,6 +1907,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListCategoriesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_bfe8378b8aa588e20458806ccc5cafad>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_becdd9105bfb_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_becdd9105bfb>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_becdd9105bfb, __vftable) == 0x0);
@@ -1776,6 +1919,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListCategoriesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICallableBase:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_1dfe869c7409_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_1dfe869c7409>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_1dfe869c7409, __vftable) == 0x0);
@@ -1788,6 +1932,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListCategoriesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_26615aa9a18c_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_26615aa9a18c>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_26615aa9a18c, __vftable) == 0x0);
@@ -1800,6 +1945,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListCollectionResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListCollectionResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_d4b5c51e81d59193dd702c093fbeb980>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_ff29d921b2a4_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_ff29d921b2a4>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_ff29d921b2a4, __vftable) == 0x0);
@@ -1812,6 +1958,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListCollectionResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_d4b5c51e81d59193dd702c093fbeb980>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_def6efe8c1ba_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_def6efe8c1ba>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_def6efe8c1ba, __vftable) == 0x0);
@@ -1823,6 +1970,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListCollectionResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICallableBase:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_dc4837c3df49_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_dc4837c3df49>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_dc4837c3df49, __vftable) == 0x0);
@@ -1835,6 +1983,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListCollectionResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_50b9a60d7dc0_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_50b9a60d7dc0>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_50b9a60d7dc0, __vftable) == 0x0);
@@ -1847,6 +1996,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_0334f3ea506f392b6646d961847017d0>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_5b077b768224_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_5b077b768224>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_5b077b768224, __vftable) == 0x0);
@@ -1859,6 +2009,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_0c25bdcaa5c2e97f86c2d0ea684e7e3f>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_31438fa55c51_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_31438fa55c51>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_31438fa55c51, __vftable) == 0x0);
@@ -1871,6 +2022,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_2c0586bafc78585bda7c70f1ee53129f>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_31803902b818_vtable,
     pub unknown_8: [u8; 16],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_31803902b818>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_31803902b818, __vftable) == 0x0);
@@ -1883,6 +2035,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_37d93f6d237fec52d272d7677b362e70>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_8321aa80d928_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_8321aa80d928>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_8321aa80d928, __vftable) == 0x0);
@@ -1895,6 +2048,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_3fbfdc5799edac0af451d6bbf3745028>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_92d95a0fd60c_vtable,
     pub unknown_8: [u8; 16],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_92d95a0fd60c>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_92d95a0fd60c, __vftable) == 0x0);
@@ -1907,6 +2061,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_72ad632ec4450f84072973c713edcddd>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_3e0ad0aa7891_vtable,
     pub unknown_8: [u8; 16],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_3e0ad0aa7891>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_3e0ad0aa7891, __vftable) == 0x0);
@@ -1919,6 +2074,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_83c0c6d7897936d7f5f63d2879161653>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_447ac14e58bf_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_447ac14e58bf>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_447ac14e58bf, __vftable) == 0x0);
@@ -1931,6 +2087,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_99647caeb1d555456edf28d2fb97c094>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_10cf3ba9da25_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_10cf3ba9da25>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_10cf3ba9da25, __vftable) == 0x0);
@@ -1943,6 +2100,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_a3c4541099af4325677440eef8bea468>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_4491bfd240e8_vtable,
     pub unknown_8: [u8; 24],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_4491bfd240e8>() == 0x20);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_4491bfd240e8, __vftable) == 0x0);
@@ -1955,6 +2113,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_a766cc75c53d15f496b075c8a961ea69>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_c897ddd513b3_vtable,
     pub unknown_8: [u8; 16],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_c897ddd513b3>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_c897ddd513b3, __vftable) == 0x0);
@@ -1967,6 +2126,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_a911d0f86e7b47fcd96773506be69108>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_44aab8c049f8_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_44aab8c049f8>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_44aab8c049f8, __vftable) == 0x0);
@@ -1979,6 +2139,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_e4e9d9e553e1b829e89cb70047d78ef7>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_fc5d16ded1d2_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_fc5d16ded1d2>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_fc5d16ded1d2, __vftable) == 0x0);
@@ -1991,6 +2152,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_e622e65e01ede8fdaf05876c07743ad3>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_837327158a2d_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_837327158a2d>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_837327158a2d, __vftable) == 0x0);
@@ -2003,6 +2165,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_f0d94ef49b94a4742fe839cdc1bea6f6>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_73500c8e2b9f_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_73500c8e2b9f>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_73500c8e2b9f, __vftable) == 0x0);
@@ -2015,6 +2178,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_fe4b23abdcf156897a3e954dac9de83c>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_fbcd6196d247_vtable,
     pub unknown_8: [u8; 16],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_fbcd6196d247>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_fbcd6196d247, __vftable) == 0x0);
@@ -2027,6 +2191,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_0334f3ea506f392b6646d961847017d0>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_eec8d47e0162_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_eec8d47e0162>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_eec8d47e0162, __vftable) == 0x0);
@@ -2039,6 +2204,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_0c25bdcaa5c2e97f86c2d0ea684e7e3f>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_89fc20c75fff_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_89fc20c75fff>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_89fc20c75fff, __vftable) == 0x0);
@@ -2050,6 +2216,7 @@ const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_
 pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_f2302e41d59b {
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_2c0586bafc78585bda7c70f1ee53129f>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_f2302e41d59b_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_f2302e41d59b, __vftable) == 0x0);
 
@@ -2061,6 +2228,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_37d93f6d237fec52d272d7677b362e70>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_487f983e92d2_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_487f983e92d2>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_487f983e92d2, __vftable) == 0x0);
@@ -2073,6 +2241,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_3fbfdc5799edac0af451d6bbf3745028>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_80e318fcf72d_vtable,
     pub unknown_8: [u8; 16],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_80e318fcf72d>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_80e318fcf72d, __vftable) == 0x0);
@@ -2085,6 +2254,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_72ad632ec4450f84072973c713edcddd>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_45a31c3572b5_vtable,
     pub unknown_8: [u8; 16],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_45a31c3572b5>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_45a31c3572b5, __vftable) == 0x0);
@@ -2097,6 +2267,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_83c0c6d7897936d7f5f63d2879161653>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_0403e1f878bd_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_0403e1f878bd>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_0403e1f878bd, __vftable) == 0x0);
@@ -2109,6 +2280,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_99647caeb1d555456edf28d2fb97c094>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_d1306a274e4f_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_d1306a274e4f>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_d1306a274e4f, __vftable) == 0x0);
@@ -2120,6 +2292,7 @@ const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_
 pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_7663c8a05ea4 {
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_a3c4541099af4325677440eef8bea468>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_7663c8a05ea4_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_7663c8a05ea4, __vftable) == 0x0);
 
@@ -2131,6 +2304,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_a766cc75c53d15f496b075c8a961ea69>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_7d223d26436c_vtable,
     pub unknown_8: [u8; 16],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_7d223d26436c>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_7d223d26436c, __vftable) == 0x0);
@@ -2143,6 +2317,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_a911d0f86e7b47fcd96773506be69108>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_d2e1a2d3c18b_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_d2e1a2d3c18b>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_d2e1a2d3c18b, __vftable) == 0x0);
@@ -2155,6 +2330,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_e4e9d9e553e1b829e89cb70047d78ef7>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_6dc4d27c5def_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_6dc4d27c5def>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_6dc4d27c5def, __vftable) == 0x0);
@@ -2167,6 +2343,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_e622e65e01ede8fdaf05876c07743ad3>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_06b1cc70dabd_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_06b1cc70dabd>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_06b1cc70dabd, __vftable) == 0x0);
@@ -2179,6 +2356,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_f0d94ef49b94a4742fe839cdc1bea6f6>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_a138e0beac28_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_a138e0beac28>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_a138e0beac28, __vftable) == 0x0);
@@ -2191,6 +2369,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_fe4b23abdcf156897a3e954dac9de83c>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_3d9e070a1d62_vtable,
     pub unknown_8: [u8; 16],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_3d9e070a1d62>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_3d9e070a1d62, __vftable) == 0x0);
@@ -2202,6 +2381,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICallableBase:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_3bdb359a53c2_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_3bdb359a53c2>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_3bdb359a53c2, __vftable) == 0x0);
@@ -2214,6 +2394,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_fe1d49cdf800_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_fe1d49cdf800>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_fe1d49cdf800, __vftable) == 0x0);
@@ -2226,6 +2407,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::MultipartUploadSession>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::MultipartUploadSession>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_7a31e167553e9afbc526f28bcd4a3dd6>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_2d71a9896b32_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_2d71a9896b32>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_2d71a9896b32, __vftable) == 0x0);
@@ -2238,6 +2420,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::MultipartUploadSession>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_7a31e167553e9afbc526f28bcd4a3dd6>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_e4f7e67aafc1_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_e4f7e67aafc1>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_e4f7e67aafc1, __vftable) == 0x0);
@@ -2249,6 +2432,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::MultipartUploadSession>,bnet::HttpResponseInfo>&&___ptr64)>::ICallableBase:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_3a2ae5c05ed9_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_3a2ae5c05ed9>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_3a2ae5c05ed9, __vftable) == 0x0);
@@ -2261,6 +2445,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::MultipartUploadSession>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_8634995cab4d_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_8634995cab4d>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_8634995cab4d, __vftable) == 0x0);
@@ -2273,6 +2458,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ReleaseNote>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ReleaseNote>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_011b78ece2e776a201ecd4d2f293fd79>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_818190ca3c5f_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_818190ca3c5f>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_818190ca3c5f, __vftable) == 0x0);
@@ -2285,6 +2471,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ReleaseNote>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ReleaseNote>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_87f3477ec2164b75511a3457e032a12e>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_8874be39b639_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_8874be39b639>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_8874be39b639, __vftable) == 0x0);
@@ -2297,6 +2484,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ReleaseNote>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_011b78ece2e776a201ecd4d2f293fd79>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_ae2b3371c250_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_ae2b3371c250>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_ae2b3371c250, __vftable) == 0x0);
@@ -2309,6 +2497,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ReleaseNote>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_87f3477ec2164b75511a3457e032a12e>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_02ed88c023fd_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_02ed88c023fd>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_02ed88c023fd, __vftable) == 0x0);
@@ -2320,6 +2509,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ReleaseNote>,bnet::HttpResponseInfo>&&___ptr64)>::ICallableBase:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_daae44fa661c_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_daae44fa661c>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_daae44fa661c, __vftable) == 0x0);
@@ -2332,6 +2522,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ReleaseNote>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_3ddc72125703_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_3ddc72125703>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_3ddc72125703, __vftable) == 0x0);
@@ -2344,6 +2535,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::SearchCuratedListsResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::SearchCuratedListsResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_1c40bff9a621879fd4d4be31e4dffd0a>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_1caa9c672881_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_1caa9c672881>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_1caa9c672881, __vftable) == 0x0);
@@ -2356,6 +2548,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::SearchCuratedListsResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_1c40bff9a621879fd4d4be31e4dffd0a>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_5155f65b3924_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_5155f65b3924>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_5155f65b3924, __vftable) == 0x0);
@@ -2367,6 +2560,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::SearchCuratedListsResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICallableBase:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_118068f51da8_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_118068f51da8>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_118068f51da8, __vftable) == 0x0);
@@ -2379,6 +2573,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::SearchCuratedListsResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_e11edc1a58ca_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_e11edc1a58ca>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_e11edc1a58ca, __vftable) == 0x0);
@@ -2391,6 +2586,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::TitleStorage::DownloadData>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::TitleStorage::DownloadData>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_caae1aea9061e3c0fb576427985b4372>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_890e41bc9508_vtable,
     pub unknown_8: [u8; 80],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_890e41bc9508>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_890e41bc9508, __vftable) == 0x0);
@@ -2402,6 +2598,7 @@ const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_
 pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_93752dba2931 {
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::TitleStorage::DownloadData>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_caae1aea9061e3c0fb576427985b4372>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_93752dba2931_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_93752dba2931, __vftable) == 0x0);
 
@@ -2412,6 +2609,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::TitleStorage::DownloadData>,bnet::HttpResponseInfo>&&___ptr64)>::ICallableBase:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_6fa9ed21f02f_vtable,
     pub unknown_8: [u8; 80],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_6fa9ed21f02f>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_6fa9ed21f02f, __vftable) == 0x0);
@@ -2424,6 +2622,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::TitleStorage::DownloadData>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_9488de88a56e_vtable,
     pub unknown_8: [u8; 80],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_9488de88a56e>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_9488de88a56e, __vftable) == 0x0);
@@ -2436,6 +2635,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Wallet::Balance>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Wallet::Balance>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_bf29759697eaf8d5eeed6d87f32bf029>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_25a48025f78c_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_25a48025f78c>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_25a48025f78c, __vftable) == 0x0);
@@ -2448,6 +2648,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Wallet::Balance>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_bf29759697eaf8d5eeed6d87f32bf029>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_ef7704ab383a_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_ef7704ab383a>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_ef7704ab383a, __vftable) == 0x0);
@@ -2459,6 +2660,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Wallet::Balance>,bnet::HttpResponseInfo>&&___ptr64)>::ICallableBase:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_65072a9bf898_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_65072a9bf898>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_65072a9bf898, __vftable) == 0x0);
@@ -2471,6 +2673,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Wallet::Balance>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_2a5840dc0988_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_2a5840dc0988>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_2a5840dc0988, __vftable) == 0x0);
@@ -2483,6 +2686,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Wallet::PurchasePreviewResult>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Wallet::PurchasePreviewResult>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_80759a00069d6d049cb09c78beb9f55e>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_294ecf7a5391_vtable,
     pub unknown_8: [u8; 72],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_294ecf7a5391>() == 0x50);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_294ecf7a5391, __vftable) == 0x0);
@@ -2494,6 +2698,7 @@ const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_
 pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_4d018e589778 {
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Wallet::PurchasePreviewResult>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_80759a00069d6d049cb09c78beb9f55e>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_4d018e589778_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_4d018e589778, __vftable) == 0x0);
 
@@ -2504,6 +2709,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Wallet::PurchasePreviewResult>,bnet::HttpResponseInfo>&&___ptr64)>::ICallableBase:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_b504e48d364c_vtable,
     pub unknown_8: [u8; 72],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_b504e48d364c>() == 0x50);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_b504e48d364c, __vftable) == 0x0);
@@ -2516,6 +2722,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Wallet::PurchasePreviewResult>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_46232825fa18_vtable,
     pub unknown_8: [u8; 72],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_46232825fa18>() == 0x50);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_46232825fa18, __vftable) == 0x0);
@@ -2528,6 +2735,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Wallet::PurchaseResult>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Wallet::PurchaseResult>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_1a6b1f879a3937e0aa4f278b4f9cce50>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_78c7c0943654_vtable,
     pub unknown_8: [u8; 72],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_78c7c0943654>() == 0x50);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_78c7c0943654, __vftable) == 0x0);
@@ -2540,6 +2748,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Wallet::PurchaseResult>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Wallet::PurchaseResult>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_fce559dc0e0d343f4b4e66666cd3217e>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_b904c865a047_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_b904c865a047>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_b904c865a047, __vftable) == 0x0);
@@ -2551,6 +2760,7 @@ const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_
 pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_c314e774de8f {
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Wallet::PurchaseResult>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_1a6b1f879a3937e0aa4f278b4f9cce50>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_c314e774de8f_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_c314e774de8f, __vftable) == 0x0);
 
@@ -2562,6 +2772,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Wallet::PurchaseResult>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_fce559dc0e0d343f4b4e66666cd3217e>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_7c3e85fd1191_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_7c3e85fd1191>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_7c3e85fd1191, __vftable) == 0x0);
@@ -2573,6 +2784,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Wallet::PurchaseResult>,bnet::HttpResponseInfo>&&___ptr64)>::ICallableBase:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_a148733f0052_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_a148733f0052>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_a148733f0052, __vftable) == 0x0);
@@ -2585,6 +2797,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Wallet::PurchaseResult>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_86557b3a0a5d_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_86557b3a0a5d>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_86557b3a0a5d, __vftable) == 0x0);
@@ -2597,6 +2810,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::impl::FixedVector<bnet::Legal::Document,5,1,1,bnet::impl::StdAllocator<bnet::Legal::Document>_>_>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::impl::FixedVector<bnet::Legal::Document,5,1,1,bnet::impl::StdAllocator<bnet::Legal::Document>_>_>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_207ceef7ce8d7d2573a247f40580b845>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_921785a0d27a_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_921785a0d27a>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_921785a0d27a, __vftable) == 0x0);
@@ -2609,6 +2823,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::impl::FixedVector<bnet::Legal::Document,5,1,1,bnet::impl::StdAllocator<bnet::Legal::Document>_>_>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::impl::FixedVector<bnet::Legal::Document,5,1,1,bnet::impl::StdAllocator<bnet::Legal::Document>_>_>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_ea79fcca329a4abbf6ff605b0628b773>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_c851b223f6b6_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_c851b223f6b6>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_c851b223f6b6, __vftable) == 0x0);
@@ -2621,6 +2836,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::impl::FixedVector<bnet::Legal::Document,5,1,1,bnet::impl::StdAllocator<bnet::Legal::Document>_>_>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_207ceef7ce8d7d2573a247f40580b845>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_ec3037ecc2f8_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_ec3037ecc2f8>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_ec3037ecc2f8, __vftable) == 0x0);
@@ -2633,6 +2849,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::impl::FixedVector<bnet::Legal::Document,5,1,1,bnet::impl::StdAllocator<bnet::Legal::Document>_>_>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_ea79fcca329a4abbf6ff605b0628b773>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_9d6cb703de18_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_9d6cb703de18>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_9d6cb703de18, __vftable) == 0x0);
@@ -2644,6 +2861,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::impl::FixedVector<bnet::Legal::Document,5,1,1,bnet::impl::StdAllocator<bnet::Legal::Document>_>_>,bnet::HttpResponseInfo>&&___ptr64)>::ICallableBase:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_8916ff24e000_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_8916ff24e000>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_8916ff24e000, __vftable) == 0x0);
@@ -2656,6 +2874,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::impl::FixedVector<bnet::Legal::Document,5,1,1,bnet::impl::StdAllocator<bnet::Legal::Document>_>_>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_e6a1c186d54a_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_e6a1c186d54a>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_e6a1c186d54a, __vftable) == 0x0);
@@ -2668,6 +2887,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::impl::FixedVector<bnet::Legal::DocumentResult,5,1,1,bnet::impl::StdAllocator<bnet::Legal::DocumentResult>_>_>,bnet::Legal::AcceptDocumentsStatus>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::impl::FixedVector<bnet::Legal::DocumentResult,5,1,1,bnet::impl::StdAllocator<bnet::Legal::DocumentResult>_>_>,bnet::Legal::AcceptDocumentsStatus>&&___ptr64)>::ICopyableCallable,<lambda_c2b88a5c628f447867b8975b66b7c504>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_8b44a707e2ed_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_8b44a707e2ed>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_8b44a707e2ed, __vftable) == 0x0);
@@ -2680,6 +2900,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::impl::FixedVector<bnet::Legal::DocumentResult,5,1,1,bnet::impl::StdAllocator<bnet::Legal::DocumentResult>_>_>,bnet::Legal::AcceptDocumentsStatus>&&___ptr64)>::CopyableCallable<<lambda_c2b88a5c628f447867b8975b66b7c504>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_be3bf3160d8f_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_be3bf3160d8f>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_be3bf3160d8f, __vftable) == 0x0);
@@ -2691,6 +2912,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::impl::FixedVector<bnet::Legal::DocumentResult,5,1,1,bnet::impl::StdAllocator<bnet::Legal::DocumentResult>_>_>,bnet::Legal::AcceptDocumentsStatus>&&___ptr64)>::ICallableBase:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_0470197c5f21_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_0470197c5f21>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_0470197c5f21, __vftable) == 0x0);
@@ -2703,6 +2925,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::impl::FixedVector<bnet::Legal::DocumentResult,5,1,1,bnet::impl::StdAllocator<bnet::Legal::DocumentResult>_>_>,bnet::Legal::AcceptDocumentsStatus>&&___ptr64)>::ICopyableCallable:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_9ed94f14ceb3_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_9ed94f14ceb3>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_9ed94f14ceb3, __vftable) == 0x0);
@@ -2715,6 +2938,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<std::vector<bnet::Entitlements::Item,bnet::impl::StdAllocator<bnet::Entitlements::Item>_>_>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<std::vector<bnet::Entitlements::Item,bnet::impl::StdAllocator<bnet::Entitlements::Item>_>_>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_34c2de899831ef32a3ce3adf126c34d5>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_da09513a4e99_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_da09513a4e99>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_da09513a4e99, __vftable) == 0x0);
@@ -2727,6 +2951,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<std::vector<bnet::Entitlements::Item,bnet::impl::StdAllocator<bnet::Entitlements::Item>_>_>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_34c2de899831ef32a3ce3adf126c34d5>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_aa880fc30f1c_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_aa880fc30f1c>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_aa880fc30f1c, __vftable) == 0x0);
@@ -2738,6 +2963,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<std::vector<bnet::Entitlements::Item,bnet::impl::StdAllocator<bnet::Entitlements::Item>_>_>,bnet::HttpResponseInfo>&&___ptr64)>::ICallableBase:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_0ee61db41546_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_0ee61db41546>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_0ee61db41546, __vftable) == 0x0);
@@ -2750,6 +2976,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<std::vector<bnet::Entitlements::Item,bnet::impl::StdAllocator<bnet::Entitlements::Item>_>_>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_4e80f9047bf7_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_4e80f9047bf7>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_4e80f9047bf7, __vftable) == 0x0);
@@ -2762,6 +2989,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::impl::FixedString<2048,1,1,bnet::impl::StdAllocator<char>_>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::impl::FixedString<2048,1,1,bnet::impl::StdAllocator<char>_>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_850352f01067750e1a63258a75e3e52a>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_8d7c6850186a_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_8d7c6850186a>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_8d7c6850186a, __vftable) == 0x0);
@@ -2774,6 +3002,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::impl::FixedString<2048,1,1,bnet::impl::StdAllocator<char>_>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_850352f01067750e1a63258a75e3e52a>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_cfd27e936807_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_cfd27e936807>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_cfd27e936807, __vftable) == 0x0);
@@ -2785,6 +3014,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::impl::FixedString<2048,1,1,bnet::impl::StdAllocator<char>_>,bnet::HttpResponseInfo>&&___ptr64)>::ICallableBase:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_68cab0bf2386_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_68cab0bf2386>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_68cab0bf2386, __vftable) == 0x0);
@@ -2797,6 +3027,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::impl::FixedString<2048,1,1,bnet::impl::StdAllocator<char>_>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_9695d613d768_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_9695d613d768>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_9695d613d768, __vftable) == 0x0);
@@ -2809,6 +3040,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_04364feec46ca23c904cf67120bbb977>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_07bb14a6aa45_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_07bb14a6aa45>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_07bb14a6aa45, __vftable) == 0x0);
@@ -2821,6 +3053,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_084b388a05d378e142dad9a3c2e195ed>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_442cb27653c1_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_442cb27653c1>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_442cb27653c1, __vftable) == 0x0);
@@ -2833,6 +3066,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_11d18c60610d650d2f78796d0d278e87>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_863e2c4f2199_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_863e2c4f2199>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_863e2c4f2199, __vftable) == 0x0);
@@ -2845,6 +3079,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_133c1da527c611c9dcda295aefdf806d>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_a6bd6cfd1c2e_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_a6bd6cfd1c2e>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_a6bd6cfd1c2e, __vftable) == 0x0);
@@ -2857,6 +3092,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_1656df761702a34a262b091507cce5f7>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_10e77557bd12_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_10e77557bd12>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_10e77557bd12, __vftable) == 0x0);
@@ -2869,6 +3105,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_339b5ce6d6104c0c8fb09c9881f11023>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_8684274ae71d_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_8684274ae71d>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_8684274ae71d, __vftable) == 0x0);
@@ -2881,6 +3118,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_3be0cd93eee1a525d5980446f7145a43>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_c861a5a28b7f_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_c861a5a28b7f>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_c861a5a28b7f, __vftable) == 0x0);
@@ -2893,6 +3131,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_41fd7ee57d994a684c6bd214f348446e>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_cdff5b287d30_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_cdff5b287d30>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_cdff5b287d30, __vftable) == 0x0);
@@ -2905,6 +3144,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_4d412f9360f2e770764471adcb40583d>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_5701bc0a2681_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_5701bc0a2681>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_5701bc0a2681, __vftable) == 0x0);
@@ -2917,6 +3157,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_60f66320e7ff53969a066e9bb5390d87>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_a12e22a95dfd_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_a12e22a95dfd>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_a12e22a95dfd, __vftable) == 0x0);
@@ -2929,6 +3170,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_6923c7db47795dd1ace1b80563a447ad>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_7f1ad302388b_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_7f1ad302388b>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_7f1ad302388b, __vftable) == 0x0);
@@ -2941,6 +3183,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_7c6a748cf7ef983a0d58de9288ce9768>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_b31705e35b97_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_b31705e35b97>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_b31705e35b97, __vftable) == 0x0);
@@ -2953,6 +3196,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_81362fefa0bafdc97634a2e2e71c0582>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_b7d061b7b94d_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_b7d061b7b94d>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_b7d061b7b94d, __vftable) == 0x0);
@@ -2965,6 +3209,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_84ba32da379f1a5a62094d61327152df>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_9846c8b43d80_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_9846c8b43d80>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_9846c8b43d80, __vftable) == 0x0);
@@ -2977,6 +3222,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_996cdf0862a56af86372b0f56da3e7fc>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_f119ef2c2483_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_f119ef2c2483>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_f119ef2c2483, __vftable) == 0x0);
@@ -2989,6 +3235,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_9cc4381cb528551df1adb7b5fc690a8e>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_d3977e9a9f2b_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_d3977e9a9f2b>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_d3977e9a9f2b, __vftable) == 0x0);
@@ -3001,6 +3248,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_adea97f238d027e01a467b281ee4d039>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_f1c6c0a5c341_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_f1c6c0a5c341>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_f1c6c0a5c341, __vftable) == 0x0);
@@ -3013,6 +3261,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_af1c5628e4452240cdaa04843329f091>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_582dd2959f82_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_582dd2959f82>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_582dd2959f82, __vftable) == 0x0);
@@ -3025,6 +3274,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_c52bf3fa64981bb2fac1cf8941423930>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_12d18f982229_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_12d18f982229>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_12d18f982229, __vftable) == 0x0);
@@ -3037,6 +3287,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_d4e662662591968f723ad2e6b67bd457>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_460fd19a440c_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_460fd19a440c>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_460fd19a440c, __vftable) == 0x0);
@@ -3049,6 +3300,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_dc47955391806d5d301a84fffe1e352f>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_d5b997bc61a9_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_d5b997bc61a9>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_d5b997bc61a9, __vftable) == 0x0);
@@ -3061,6 +3313,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_ec7833b5bfb3ef55e5ada91b58a80c43>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_9799e96ce1fe_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_9799e96ce1fe>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_9799e96ce1fe, __vftable) == 0x0);
@@ -3073,6 +3326,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_04364feec46ca23c904cf67120bbb977>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_3240ac88fc44_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_3240ac88fc44>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_3240ac88fc44, __vftable) == 0x0);
@@ -3085,6 +3339,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_084b388a05d378e142dad9a3c2e195ed>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_c49c0913ac76_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_c49c0913ac76>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_c49c0913ac76, __vftable) == 0x0);
@@ -3097,6 +3352,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_11d18c60610d650d2f78796d0d278e87>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_41e2cb0ec2a6_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_41e2cb0ec2a6>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_41e2cb0ec2a6, __vftable) == 0x0);
@@ -3109,6 +3365,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_133c1da527c611c9dcda295aefdf806d>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_ba4066ba338d_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_ba4066ba338d>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_ba4066ba338d, __vftable) == 0x0);
@@ -3121,6 +3378,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_1656df761702a34a262b091507cce5f7>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_6107cf3b1ab6_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_6107cf3b1ab6>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_6107cf3b1ab6, __vftable) == 0x0);
@@ -3133,6 +3391,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_339b5ce6d6104c0c8fb09c9881f11023>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_37ac44af3dbf_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_37ac44af3dbf>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_37ac44af3dbf, __vftable) == 0x0);
@@ -3145,6 +3404,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_3be0cd93eee1a525d5980446f7145a43>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_0d9664d7ff1c_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_0d9664d7ff1c>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_0d9664d7ff1c, __vftable) == 0x0);
@@ -3157,6 +3417,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_41fd7ee57d994a684c6bd214f348446e>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_bd7047e3a4b3_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_bd7047e3a4b3>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_bd7047e3a4b3, __vftable) == 0x0);
@@ -3169,6 +3430,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_4d412f9360f2e770764471adcb40583d>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_76eaab451107_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_76eaab451107>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_76eaab451107, __vftable) == 0x0);
@@ -3181,6 +3443,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_60f66320e7ff53969a066e9bb5390d87>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_13f22f8241cb_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_13f22f8241cb>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_13f22f8241cb, __vftable) == 0x0);
@@ -3193,6 +3456,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_6923c7db47795dd1ace1b80563a447ad>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_0e2f9ed0f6d0_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_0e2f9ed0f6d0>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_0e2f9ed0f6d0, __vftable) == 0x0);
@@ -3205,6 +3469,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_7c6a748cf7ef983a0d58de9288ce9768>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_01f8c1a112a5_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_01f8c1a112a5>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_01f8c1a112a5, __vftable) == 0x0);
@@ -3217,6 +3482,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_81362fefa0bafdc97634a2e2e71c0582>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_d6e732295b86_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_d6e732295b86>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_d6e732295b86, __vftable) == 0x0);
@@ -3229,6 +3495,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_84ba32da379f1a5a62094d61327152df>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_38436c29ada8_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_38436c29ada8>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_38436c29ada8, __vftable) == 0x0);
@@ -3241,6 +3508,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_996cdf0862a56af86372b0f56da3e7fc>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_af4090b75db2_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_af4090b75db2>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_af4090b75db2, __vftable) == 0x0);
@@ -3253,6 +3521,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_9cc4381cb528551df1adb7b5fc690a8e>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_9f56bf7a86cd_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_9f56bf7a86cd>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_9f56bf7a86cd, __vftable) == 0x0);
@@ -3265,6 +3534,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_adea97f238d027e01a467b281ee4d039>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_b57349ac9f72_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_b57349ac9f72>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_b57349ac9f72, __vftable) == 0x0);
@@ -3277,6 +3547,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_af1c5628e4452240cdaa04843329f091>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_975f84d287ca_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_975f84d287ca>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_975f84d287ca, __vftable) == 0x0);
@@ -3289,6 +3560,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_c52bf3fa64981bb2fac1cf8941423930>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_21b14b565146_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_21b14b565146>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_21b14b565146, __vftable) == 0x0);
@@ -3301,6 +3573,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_d4e662662591968f723ad2e6b67bd457>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_2f676302b7f7_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_2f676302b7f7>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_2f676302b7f7, __vftable) == 0x0);
@@ -3313,6 +3586,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_dc47955391806d5d301a84fffe1e352f>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_5e46a1f570a8_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_5e46a1f570a8>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_5e46a1f570a8, __vftable) == 0x0);
@@ -3325,6 +3599,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_ec7833b5bfb3ef55e5ada91b58a80c43>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_43ed5109e4ac_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_43ed5109e4ac>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_43ed5109e4ac, __vftable) == 0x0);
@@ -3336,6 +3611,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::ICallableBase:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_3c131509f2fb_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_3c131509f2fb>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_3c131509f2fb, __vftable) == 0x0);
@@ -3348,6 +3624,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_9df2bd393e37_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_9df2bd393e37>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_9df2bd393e37, __vftable) == 0x0);
@@ -3360,6 +3637,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bool,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bool,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_463900ed92a2f8fa13b2115620e21f94>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_c3999516fbc2_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_c3999516fbc2>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_c3999516fbc2, __vftable) == 0x0);
@@ -3372,6 +3650,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bool,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bool,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_b74693073e62dfe3900e7755047d3b0e>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_af66e7706a50_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_af66e7706a50>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_af66e7706a50, __vftable) == 0x0);
@@ -3384,6 +3663,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bool,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_463900ed92a2f8fa13b2115620e21f94>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_c20080a36c47_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_c20080a36c47>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_c20080a36c47, __vftable) == 0x0);
@@ -3396,6 +3676,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bool,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_b74693073e62dfe3900e7755047d3b0e>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_29c3a450f20b_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_29c3a450f20b>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_29c3a450f20b, __vftable) == 0x0);
@@ -3407,6 +3688,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bool,bnet::HttpResponseInfo>&&___ptr64)>::ICallableBase:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_e95d95ef57dc_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_e95d95ef57dc>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_e95d95ef57dc, __vftable) == 0x0);
@@ -3419,6 +3701,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bool,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_551276ea2294_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_551276ea2294>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_551276ea2294, __vftable) == 0x0);
@@ -3431,6 +3714,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::ChunkUploadedResult>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::ChunkUploadedResult>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_d7df5299aa0dfb1534894b6ffcff0625>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_00494e1eacc4_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_00494e1eacc4>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_00494e1eacc4, __vftable) == 0x0);
@@ -3443,6 +3727,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::ChunkUploadedResult>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_d7df5299aa0dfb1534894b6ffcff0625>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_6869c9fc8ce6_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_6869c9fc8ce6>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_6869c9fc8ce6, __vftable) == 0x0);
@@ -3454,6 +3739,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::ChunkUploadedResult>,bnet::HttpResponseInfo>&&___ptr64)>::ICallableBase:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_878a1cc2233c_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_878a1cc2233c>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_878a1cc2233c, __vftable) == 0x0);
@@ -3466,6 +3752,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::ChunkUploadedResult>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_ba52839d75d3_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_ba52839d75d3>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_ba52839d75d3, __vftable) == 0x0);
@@ -3478,6 +3765,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::FileChunk>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::FileChunk>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_1e115a34fa92652d7d9402011643d019>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_ca0ef88a55ee_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_ca0ef88a55ee>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_ca0ef88a55ee, __vftable) == 0x0);
@@ -3490,6 +3778,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::FileChunk>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::FileChunk>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_4f36912b353e5ec1a478a3777faaddcb>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_4257498c4ae0_vtable,
     pub unknown_8: [u8; 16],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_4257498c4ae0>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_4257498c4ae0, __vftable) == 0x0);
@@ -3502,6 +3791,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::FileChunk>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::FileChunk>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_7dec0c800e37e37d404130c032617714>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_ce4d90992c48_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_ce4d90992c48>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_ce4d90992c48, __vftable) == 0x0);
@@ -3514,6 +3804,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::FileChunk>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::FileChunk>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_9a178d4ccf12849133a395e69fad8f52>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_5a0854b0da82_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_5a0854b0da82>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_5a0854b0da82, __vftable) == 0x0);
@@ -3526,6 +3817,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::FileChunk>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::FileChunk>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_f6cd55725bab799c0df422d8ec2e2b8b>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_b4cde38c308e_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_b4cde38c308e>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_b4cde38c308e, __vftable) == 0x0);
@@ -3538,6 +3830,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::FileChunk>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_1e115a34fa92652d7d9402011643d019>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_ae2d661b874f_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_ae2d661b874f>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_ae2d661b874f, __vftable) == 0x0);
@@ -3550,6 +3843,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::FileChunk>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_4f36912b353e5ec1a478a3777faaddcb>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_d9b0e0e77d4e_vtable,
     pub unknown_8: [u8; 16],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_d9b0e0e77d4e>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_d9b0e0e77d4e, __vftable) == 0x0);
@@ -3562,6 +3856,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::FileChunk>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_7dec0c800e37e37d404130c032617714>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_0acfa7706344_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_0acfa7706344>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_0acfa7706344, __vftable) == 0x0);
@@ -3574,6 +3869,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::FileChunk>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_9a178d4ccf12849133a395e69fad8f52>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_a381108ba82c_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_a381108ba82c>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_a381108ba82c, __vftable) == 0x0);
@@ -3586,6 +3882,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::FileChunk>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_f6cd55725bab799c0df422d8ec2e2b8b>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_ab4427e7fb90_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_ab4427e7fb90>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_ab4427e7fb90, __vftable) == 0x0);
@@ -3597,6 +3894,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::FileChunk>,bnet::HttpResponseInfo>&&___ptr64)>::ICallableBase:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_a86dc2caf29c_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_a86dc2caf29c>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_a86dc2caf29c, __vftable) == 0x0);
@@ -3609,6 +3907,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::FileChunk>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_521245f70359_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_521245f70359>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_521245f70359, __vftable) == 0x0);
@@ -3621,6 +3920,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::ErrorParams_const&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::ErrorParams_const&___ptr64)>::ICopyableCallable,<lambda_6ee167bc8cb900b3de3c5edee0afddf9>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__ErrorParams_349e3e20ee77_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__ErrorParams_349e3e20ee77>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__ErrorParams_349e3e20ee77, __vftable) == 0x0);
@@ -3633,6 +3933,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::ErrorParams_const&___ptr64)>::CopyableCallable<<lambda_6ee167bc8cb900b3de3c5edee0afddf9>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__ErrorParams_0aae39e858aa_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__ErrorParams_0aae39e858aa>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__ErrorParams_0aae39e858aa, __vftable) == 0x0);
@@ -3644,6 +3945,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::ErrorParams_const&___ptr64)>::ICallableBase:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__ErrorParams_5167aa974e98_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__ErrorParams_5167aa974e98>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__ErrorParams_5167aa974e98, __vftable) == 0x0);
@@ -3656,6 +3958,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::ErrorParams_const&___ptr64)>::ICopyableCallable:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__ErrorParams_c2c45ac6bb7f_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__ErrorParams_c2c45ac6bb7f>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__ErrorParams_c2c45ac6bb7f, __vftable) == 0x0);
@@ -3668,6 +3971,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::LogParams_const&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::LogParams_const&___ptr64)>::ICopyableCallable,void_(__cdecl*)(bnet::LogParams_const&___ptr64)>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__LogParams_c_33fcb79f3074_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__LogParams_c_33fcb79f3074>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__LogParams_c_33fcb79f3074, __vftable) == 0x0);
@@ -3680,6 +3984,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::LogParams_const&___ptr64)>::CopyableCallable<void_(__cdecl*)(bnet::LogParams_const&___ptr64)>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__LogParams_c_71ce521d1073_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__LogParams_c_71ce521d1073>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__LogParams_c_71ce521d1073, __vftable) == 0x0);
@@ -3691,6 +3996,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::LogParams_const&___ptr64)>::ICallableBase:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__LogParams_c_89e444c7bbee_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__LogParams_c_89e444c7bbee>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__LogParams_c_89e444c7bbee, __vftable) == 0x0);
@@ -3703,6 +4009,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::LogParams_const&___ptr64)>::ICopyableCallable:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__LogParams_c_a33b975552b6_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__LogParams_c_a33b975552b6>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__LogParams_c_a33b975552b6, __vftable) == 0x0);
@@ -3715,6 +4022,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(void)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(void)>::ICopyableCallable,<lambda_e35940508eec14f4e3ce2fa64956727e>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_void__CallableBas_aae3fc427fa4_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_void__CallableBas_aae3fc427fa4>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_void__CallableBas_aae3fc427fa4, __vftable) == 0x0);
@@ -3727,6 +4035,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(void)>::CopyableCallable<<lambda_e35940508eec14f4e3ce2fa64956727e>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_void__CopyableCal_ab6490f7a02c_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_void__CopyableCal_ab6490f7a02c>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_void__CopyableCal_ab6490f7a02c, __vftable) == 0x0);
@@ -3738,6 +4047,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(void)>::ICallableBase:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_void__ICallableBase_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_void__ICallableBase>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_void__ICallableBase, __vftable) == 0x0);
@@ -3750,6 +4060,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(void)>::ICopyableCallable:0`, rtti
     pub __vftable: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_void__ICopyableCallable_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_void__ICopyableCallable>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_void__ICopyableCallable, __vftable) == 0x0);

@@ -10,6 +10,7 @@ use core::ffi::c_void;
 pub struct GameSettingCollection {
     /// +0x0 `vtbl:GameSettingCollection:0`, rtti
     pub __vftable: *const crate::raw::vtables::GameSettingCollection_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(GameSettingCollection, __vftable) == 0x0);
 
@@ -21,6 +22,7 @@ pub struct INIPrefSettingCollection {
     /// +0x0 `vtbl:INIPrefSettingCollection:0`, rtti
     pub __vftable: *const crate::raw::vtables::INIPrefSettingCollection_vtable,
     pub unknown_8: [u8; 288],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<INIPrefSettingCollection>() == 0x128);
 const _: () = assert!(core::mem::offset_of!(INIPrefSettingCollection, __vftable) == 0x0);
@@ -33,6 +35,7 @@ pub struct INISettingCollection {
     /// +0x0 `vtbl:INISettingCollection:0`, rtti
     pub __vftable: *const crate::raw::vtables::INISettingCollection_vtable,
     pub unknown_8: [u8; 288],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<INISettingCollection>() == 0x128);
 const _: () = assert!(core::mem::offset_of!(INISettingCollection, __vftable) == 0x0);
@@ -43,6 +46,7 @@ const _: () = assert!(core::mem::offset_of!(INISettingCollection, __vftable) == 
 pub struct Setting {
     /// +0x0 `vtbl:Setting:0`, rtti
     pub __vftable: *const crate::raw::vtables::Setting_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<Setting>() == 0x8);
 const _: () = assert!(core::mem::offset_of!(Setting, __vftable) == 0x0);
@@ -54,6 +58,7 @@ pub struct SettingCollection_Setting {
     /// +0x0 `vtbl:SettingCollection<Setting>:0`, rtti
     pub __vftable: *const crate::raw::vtables::SettingCollection_Setting_vtable,
     pub unknown_8: [u8; 288],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<SettingCollection_Setting>() == 0x128);
 const _: () = assert!(core::mem::offset_of!(SettingCollection_Setting, __vftable) == 0x0);
@@ -66,6 +71,7 @@ pub struct SettingCollectionList_Setting {
     /// +0x0 `vtbl:SettingCollectionList<Setting>:0`, rtti
     pub __vftable: *const crate::raw::vtables::SettingCollectionList_Setting_vtable,
     pub unknown_8: [u8; 288],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<SettingCollectionList_Setting>() == 0x128);
 const _: () = assert!(core::mem::offset_of!(SettingCollectionList_Setting, __vftable) == 0x0);
@@ -77,6 +83,7 @@ const _: () = assert!(core::mem::offset_of!(SettingCollectionList_Setting, __vft
 pub struct SettingCollectionMap_Setting {
     /// +0x0 `vtbl:SettingCollectionMap<Setting>:0`, rtti
     pub __vftable: *const crate::raw::vtables::SettingCollectionMap_Setting_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(SettingCollectionMap_Setting, __vftable) == 0x0);
 
@@ -88,6 +95,7 @@ pub struct SettingT_GameSettingCollection {
     /// +0x0 `vtbl:SettingT<GameSettingCollection>:0`, rtti
     pub __vftable: *const crate::raw::vtables::SettingT_GameSettingCollection_vtable,
     pub unknown_8: [u8; 16],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<SettingT_GameSettingCollection>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(SettingT_GameSettingCollection, __vftable) == 0x0);
@@ -111,6 +119,7 @@ pub struct SettingT_INIPrefSettingCollection {
     pub unknown_24: [u8; 4],
     /// +0x28 `undefined8`, ctor store
     pub field_28: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(SettingT_INIPrefSettingCollection, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(SettingT_INIPrefSettingCollection, field_8) == 0x8);
@@ -126,6 +135,7 @@ const _: () = assert!(core::mem::offset_of!(SettingT_INIPrefSettingCollection, f
 pub struct SettingT_INISettingCollection {
     /// +0x0 `vtbl:SettingT<INISettingCollection>:0`, rtti
     pub __vftable: *const crate::raw::vtables::SettingT_INISettingCollection_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(SettingT_INISettingCollection, __vftable) == 0x0);
 
@@ -136,6 +146,7 @@ const _: () = assert!(core::mem::offset_of!(SettingT_INISettingCollection, __vft
 pub struct SettingT_RegSettingCollection {
     /// +0x0 `vtbl:SettingT<RegSettingCollection>:0`, rtti
     pub __vftable: *const crate::raw::vtables::SettingT_RegSettingCollection_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(SettingT_RegSettingCollection, __vftable) == 0x0);
 

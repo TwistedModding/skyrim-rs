@@ -17,6 +17,7 @@ pub struct ExtraAction {
     pub unknown_11: [u8; 7],
     /// +0x18 `undefined8`, ctor store
     pub field_18: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ExtraAction>() == 0x20);
 const _: () = assert!(core::mem::offset_of!(ExtraAction, __vftable) == 0x0);
@@ -31,6 +32,7 @@ const _: () = assert!(core::mem::offset_of!(ExtraAction, field_18) == 0x18);
 pub struct ExtraActivateLoopSound {
     /// +0x0 `vtbl:ExtraActivateLoopSound:0`, rtti
     pub __vftable: *const crate::raw::vtables::ExtraActivateLoopSound_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(ExtraActivateLoopSound, __vftable) == 0x0);
 
@@ -42,6 +44,7 @@ pub struct ExtraActivateRef {
     /// +0x0 `vtbl:ExtraActivateRef:0`, rtti
     pub __vftable: *const crate::raw::vtables::ExtraActivateRef_vtable,
     pub unknown_8: [u8; 32],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ExtraActivateRef>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(ExtraActivateRef, __vftable) == 0x0);
@@ -54,6 +57,7 @@ pub struct ExtraActivateRefChildren {
     /// +0x0 `vtbl:ExtraActivateRefChildren:0`, rtti
     pub __vftable: *const crate::raw::vtables::ExtraActivateRefChildren_vtable,
     pub unknown_8: [u8; 32],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ExtraActivateRefChildren>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(ExtraActivateRefChildren, __vftable) == 0x0);
@@ -66,6 +70,7 @@ pub struct ExtraActorCause {
     /// +0x0 `vtbl:ExtraActorCause:0`, rtti
     pub __vftable: *const crate::raw::vtables::ExtraActorCause_vtable,
     pub unknown_8: [u8; 16],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ExtraActorCause>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(ExtraActorCause, __vftable) == 0x0);
@@ -78,6 +83,7 @@ pub struct ExtraAlphaCutoff {
     /// +0x0 `vtbl:ExtraAlphaCutoff:0`, rtti
     pub __vftable: *const crate::raw::vtables::ExtraAlphaCutoff_vtable,
     pub unknown_8: [u8; 16],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ExtraAlphaCutoff>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(ExtraAlphaCutoff, __vftable) == 0x0);
@@ -90,6 +96,7 @@ pub struct ExtraAmmo {
     /// +0x0 `vtbl:ExtraAmmo:0`, rtti
     pub __vftable: *const crate::raw::vtables::ExtraAmmo_vtable,
     pub unknown_8: [u8; 24],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ExtraAmmo>() == 0x20);
 const _: () = assert!(core::mem::offset_of!(ExtraAmmo, __vftable) == 0x0);
@@ -105,6 +112,7 @@ pub struct ExtraAnimGraphManager {
     pub field_8: u64,
     /// +0x10 `undefined8`, ctor store
     pub field_10: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ExtraAnimGraphManager>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(ExtraAnimGraphManager, __vftable) == 0x0);
@@ -118,6 +126,7 @@ const _: () = assert!(core::mem::offset_of!(ExtraAnimGraphManager, field_10) == 
 pub struct ExtraAnimNoteReceiver {
     /// +0x0 `vtbl:ExtraAnimNoteReceiver:0`, rtti
     pub __vftable: *const crate::raw::vtables::ExtraAnimNoteReceiver_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(ExtraAnimNoteReceiver, __vftable) == 0x0);
 
@@ -132,6 +141,7 @@ pub struct ExtraAnimationSequencer {
     pub field_8: u64,
     /// +0x10 `undefined8`, ctor store
     pub field_10: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(ExtraAnimationSequencer, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(ExtraAnimationSequencer, field_8) == 0x8);
@@ -145,6 +155,7 @@ pub struct ExtraAshPileRef {
     /// +0x0 `vtbl:ExtraAshPileRef:0`, rtti
     pub __vftable: *const crate::raw::vtables::ExtraAshPileRef_vtable,
     pub unknown_8: [u8; 16],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ExtraAshPileRef>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(ExtraAshPileRef, __vftable) == 0x0);
@@ -157,6 +168,7 @@ pub struct ExtraAttachRef {
     /// +0x0 `vtbl:ExtraAttachRef:0`, rtti
     pub __vftable: *const crate::raw::vtables::ExtraAttachRef_vtable,
     pub unknown_8: [u8; 16],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ExtraAttachRef>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(ExtraAttachRef, __vftable) == 0x0);
@@ -169,6 +181,7 @@ pub struct ExtraAttachRefChildren {
     /// +0x0 `vtbl:ExtraAttachRefChildren:0`, rtti
     pub __vftable: *const crate::raw::vtables::ExtraAttachRefChildren_vtable,
     pub unknown_8: [u8; 24],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ExtraAttachRefChildren>() == 0x20);
 const _: () = assert!(core::mem::offset_of!(ExtraAttachRefChildren, __vftable) == 0x0);
@@ -189,6 +202,7 @@ pub struct ExtraAttachedArrows3D {
     /// +0x28 `undefined4`, ctor store
     pub field_28: u32,
     pub unknown_2C: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ExtraAttachedArrows3D>() == 0x30);
 const _: () = assert!(core::mem::offset_of!(ExtraAttachedArrows3D, __vftable) == 0x0);
@@ -204,6 +218,7 @@ pub struct ExtraBadPosition {
     /// +0x0 `vtbl:ExtraBadPosition:0`, rtti
     pub __vftable: *const crate::raw::vtables::ExtraBadPosition_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ExtraBadPosition>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(ExtraBadPosition, __vftable) == 0x0);
@@ -219,6 +234,7 @@ pub struct ExtraBiped {
     pub field_8: u64,
     /// +0x10 `undefined8`, ctor store
     pub field_10: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(ExtraBiped, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(ExtraBiped, field_8) == 0x8);
@@ -232,6 +248,7 @@ pub struct ExtraCachedScale {
     /// +0x0 `vtbl:ExtraCachedScale:0`, rtti
     pub __vftable: *const crate::raw::vtables::ExtraCachedScale_vtable,
     pub unknown_8: [u8; 16],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ExtraCachedScale>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(ExtraCachedScale, __vftable) == 0x0);
@@ -244,6 +261,7 @@ pub struct ExtraCanTalkToPlayer {
     /// +0x0 `vtbl:ExtraCanTalkToPlayer:0`, rtti
     pub __vftable: *const crate::raw::vtables::ExtraCanTalkToPlayer_vtable,
     pub unknown_8: [u8; 16],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ExtraCanTalkToPlayer>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(ExtraCanTalkToPlayer, __vftable) == 0x0);
@@ -255,6 +273,7 @@ const _: () = assert!(core::mem::offset_of!(ExtraCanTalkToPlayer, __vftable) == 
 pub struct ExtraCannotWear {
     /// +0x0 `vtbl:ExtraCannotWear:0`, rtti
     pub __vftable: *const crate::raw::vtables::ExtraCannotWear_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(ExtraCannotWear, __vftable) == 0x0);
 
@@ -265,6 +284,7 @@ const _: () = assert!(core::mem::offset_of!(ExtraCannotWear, __vftable) == 0x0);
 pub struct ExtraCell3D {
     /// +0x0 `vtbl:ExtraCell3D:0`, rtti
     pub __vftable: *const crate::raw::vtables::ExtraCell3D_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(ExtraCell3D, __vftable) == 0x0);
 
@@ -276,6 +296,7 @@ pub struct ExtraCellAcousticSpace {
     /// +0x0 `vtbl:ExtraCellAcousticSpace:0`, rtti
     pub __vftable: *const crate::raw::vtables::ExtraCellAcousticSpace_vtable,
     pub unknown_8: [u8; 16],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ExtraCellAcousticSpace>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(ExtraCellAcousticSpace, __vftable) == 0x0);
@@ -292,6 +313,7 @@ pub struct ExtraCellGrassData {
     pub unknown_10: [u8; 24],
     /// +0x28 `undefined8`, ctor store
     pub field_28: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ExtraCellGrassData>() == 0x30);
 const _: () = assert!(core::mem::offset_of!(ExtraCellGrassData, __vftable) == 0x0);
@@ -306,6 +328,7 @@ pub struct ExtraCellImageSpace {
     /// +0x0 `vtbl:ExtraCellImageSpace:0`, rtti
     pub __vftable: *const crate::raw::vtables::ExtraCellImageSpace_vtable,
     pub unknown_8: [u8; 16],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ExtraCellImageSpace>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(ExtraCellImageSpace, __vftable) == 0x0);
@@ -318,6 +341,7 @@ pub struct ExtraCellMusicType {
     /// +0x0 `vtbl:ExtraCellMusicType:0`, rtti
     pub __vftable: *const crate::raw::vtables::ExtraCellMusicType_vtable,
     pub unknown_8: [u8; 16],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ExtraCellMusicType>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(ExtraCellMusicType, __vftable) == 0x0);
@@ -330,6 +354,7 @@ pub struct ExtraCellSkyRegion {
     /// +0x0 `vtbl:ExtraCellSkyRegion:0`, rtti
     pub __vftable: *const crate::raw::vtables::ExtraCellSkyRegion_vtable,
     pub unknown_8: [u8; 16],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ExtraCellSkyRegion>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(ExtraCellSkyRegion, __vftable) == 0x0);
@@ -342,6 +367,7 @@ pub struct ExtraCellWaterEnvMap {
     /// +0x0 `vtbl:ExtraCellWaterEnvMap:0`, rtti
     pub __vftable: *const crate::raw::vtables::ExtraCellWaterEnvMap_vtable,
     pub unknown_8: [u8; 24],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ExtraCellWaterEnvMap>() == 0x20);
 const _: () = assert!(core::mem::offset_of!(ExtraCellWaterEnvMap, __vftable) == 0x0);
@@ -354,6 +380,7 @@ pub struct ExtraCellWaterType {
     /// +0x0 `vtbl:ExtraCellWaterType:0`, rtti
     pub __vftable: *const crate::raw::vtables::ExtraCellWaterType_vtable,
     pub unknown_8: [u8; 16],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ExtraCellWaterType>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(ExtraCellWaterType, __vftable) == 0x0);
@@ -366,6 +393,7 @@ pub struct ExtraCharge {
     /// +0x0 `vtbl:ExtraCharge:0`, rtti
     pub __vftable: *const crate::raw::vtables::ExtraCharge_vtable,
     pub unknown_8: [u8; 16],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ExtraCharge>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(ExtraCharge, __vftable) == 0x0);
@@ -378,6 +406,7 @@ pub struct ExtraCollisionData {
     /// +0x0 `vtbl:ExtraCollisionData:0`, rtti
     pub __vftable: *const crate::raw::vtables::ExtraCollisionData_vtable,
     pub unknown_8: [u8; 16],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ExtraCollisionData>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(ExtraCollisionData, __vftable) == 0x0);
@@ -390,6 +419,7 @@ pub struct ExtraCombatStyle {
     /// +0x0 `vtbl:ExtraCombatStyle:0`, rtti
     pub __vftable: *const crate::raw::vtables::ExtraCombatStyle_vtable,
     pub unknown_8: [u8; 16],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ExtraCombatStyle>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(ExtraCombatStyle, __vftable) == 0x0);
@@ -406,6 +436,7 @@ pub struct ExtraCount {
     /// +0x10 `undefined2`, ctor store
     pub field_10: u16,
     pub unknown_12: [u8; 6],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ExtraCount>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(ExtraCount, __vftable) == 0x0);
@@ -420,6 +451,7 @@ pub struct ExtraCreatureAwakeSound {
     /// +0x0 `vtbl:ExtraCreatureAwakeSound:0`, rtti
     pub __vftable: *const crate::raw::vtables::ExtraCreatureAwakeSound_vtable,
     pub unknown_8: [u8; 24],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ExtraCreatureAwakeSound>() == 0x20);
 const _: () = assert!(core::mem::offset_of!(ExtraCreatureAwakeSound, __vftable) == 0x0);
@@ -431,6 +463,7 @@ const _: () = assert!(core::mem::offset_of!(ExtraCreatureAwakeSound, __vftable) 
 pub struct ExtraCreatureMovementSound {
     /// +0x0 `vtbl:ExtraCreatureMovementSound:0`, rtti
     pub __vftable: *const crate::raw::vtables::ExtraCreatureMovementSound_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(ExtraCreatureMovementSound, __vftable) == 0x0);
 
@@ -441,6 +474,7 @@ const _: () = assert!(core::mem::offset_of!(ExtraCreatureMovementSound, __vftabl
 pub struct ExtraDecalGroup {
     /// +0x0 `vtbl:ExtraDecalGroup:0`, rtti
     pub __vftable: *const crate::raw::vtables::ExtraDecalGroup_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(ExtraDecalGroup, __vftable) == 0x0);
 
@@ -452,6 +486,7 @@ pub struct ExtraDetachTime {
     /// +0x0 `vtbl:ExtraDetachTime:0`, rtti
     pub __vftable: *const crate::raw::vtables::ExtraDetachTime_vtable,
     pub unknown_8: [u8; 16],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ExtraDetachTime>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(ExtraDetachTime, __vftable) == 0x0);
@@ -478,6 +513,7 @@ pub struct ExtraDismemberedLimbs {
     /// +0x38 `undefined4`, ctor store
     pub field_38: u32,
     pub unknown_3C: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ExtraDismemberedLimbs>() == 0x40);
 const _: () = assert!(core::mem::offset_of!(ExtraDismemberedLimbs, __vftable) == 0x0);
@@ -502,6 +538,7 @@ pub struct ExtraDistantData {
     /// +0x18 `undefined4`, ctor store
     pub field_18: u32,
     pub unknown_1C: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(ExtraDistantData, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(ExtraDistantData, field_8) == 0x8);
@@ -515,6 +552,7 @@ const _: () = assert!(core::mem::offset_of!(ExtraDistantData, field_18) == 0x18)
 pub struct ExtraDroppedItemList {
     /// +0x0 `vtbl:ExtraDroppedItemList:0`, rtti
     pub __vftable: *const crate::raw::vtables::ExtraDroppedItemList_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(ExtraDroppedItemList, __vftable) == 0x0);
 
@@ -529,6 +567,7 @@ pub struct ExtraEditorID {
     pub field_8: u64,
     /// +0x10 `undefined8`, ctor store
     pub field_10: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ExtraEditorID>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(ExtraEditorID, __vftable) == 0x0);
@@ -542,6 +581,7 @@ const _: () = assert!(core::mem::offset_of!(ExtraEditorID, field_10) == 0x10);
 pub struct ExtraEditorRef3DData {
     /// +0x0 `vtbl:ExtraEditorRef3DData:0`, rtti
     pub __vftable: *const crate::raw::vtables::ExtraEditorRef3DData_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(ExtraEditorRef3DData, __vftable) == 0x0);
 
@@ -552,6 +592,7 @@ const _: () = assert!(core::mem::offset_of!(ExtraEditorRef3DData, __vftable) == 
 pub struct ExtraEditorRefMoveData {
     /// +0x0 `vtbl:ExtraEditorRefMoveData:0`, rtti
     pub __vftable: *const crate::raw::vtables::ExtraEditorRefMoveData_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(ExtraEditorRefMoveData, __vftable) == 0x0);
 
@@ -563,6 +604,7 @@ pub struct ExtraEmittanceSource {
     /// +0x0 `vtbl:ExtraEmittanceSource:0`, rtti
     pub __vftable: *const crate::raw::vtables::ExtraEmittanceSource_vtable,
     pub unknown_8: [u8; 16],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ExtraEmittanceSource>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(ExtraEmittanceSource, __vftable) == 0x0);
@@ -575,6 +617,7 @@ pub struct ExtraEnableStateChildren {
     /// +0x0 `vtbl:ExtraEnableStateChildren:0`, rtti
     pub __vftable: *const crate::raw::vtables::ExtraEnableStateChildren_vtable,
     pub unknown_8: [u8; 24],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ExtraEnableStateChildren>() == 0x20);
 const _: () = assert!(core::mem::offset_of!(ExtraEnableStateChildren, __vftable) == 0x0);
@@ -587,6 +630,7 @@ pub struct ExtraEnableStateParent {
     /// +0x0 `vtbl:ExtraEnableStateParent:0`, rtti
     pub __vftable: *const crate::raw::vtables::ExtraEnableStateParent_vtable,
     pub unknown_8: [u8; 16],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ExtraEnableStateParent>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(ExtraEnableStateParent, __vftable) == 0x0);
@@ -599,6 +643,7 @@ pub struct ExtraEnchantment {
     /// +0x0 `vtbl:ExtraEnchantment:0`, rtti
     pub __vftable: *const crate::raw::vtables::ExtraEnchantment_vtable,
     pub unknown_8: [u8; 24],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ExtraEnchantment>() == 0x20);
 const _: () = assert!(core::mem::offset_of!(ExtraEnchantment, __vftable) == 0x0);
@@ -611,6 +656,7 @@ pub struct ExtraEncounterZone {
     /// +0x0 `vtbl:ExtraEncounterZone:0`, rtti
     pub __vftable: *const crate::raw::vtables::ExtraEncounterZone_vtable,
     pub unknown_8: [u8; 16],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ExtraEncounterZone>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(ExtraEncounterZone, __vftable) == 0x0);
@@ -630,6 +676,7 @@ pub struct ExtraFactionChanges {
     /// +0x30 `undefined1`, ctor store
     pub field_30: u8,
     pub unknown_31: [u8; 7],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ExtraFactionChanges>() == 0x38);
 const _: () = assert!(core::mem::offset_of!(ExtraFactionChanges, __vftable) == 0x0);
@@ -645,6 +692,7 @@ pub struct ExtraFavorCost {
     /// +0x0 `vtbl:ExtraFavorCost:0`, rtti
     pub __vftable: *const crate::raw::vtables::ExtraFavorCost_vtable,
     pub unknown_8: [u8; 16],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ExtraFavorCost>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(ExtraFavorCost, __vftable) == 0x0);
@@ -657,6 +705,7 @@ pub struct ExtraFlags {
     /// +0x0 `vtbl:ExtraFlags:0`, rtti
     pub __vftable: *const crate::raw::vtables::ExtraFlags_vtable,
     pub unknown_8: [u8; 16],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ExtraFlags>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(ExtraFlags, __vftable) == 0x0);
@@ -671,6 +720,7 @@ pub struct ExtraFollower {
     /// +0x8 `undefined8`, ctor store
     pub field_8: u64,
     pub unknown_10: [u8; 24],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ExtraFollower>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(ExtraFollower, __vftable) == 0x0);
@@ -700,6 +750,7 @@ pub struct ExtraFollowerSwimBreadcrumbs {
     pub field_28: u64,
     /// +0x30 `undefined8`, ctor store
     pub field_30: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ExtraFollowerSwimBreadcrumbs>() == 0x38);
 const _: () = assert!(core::mem::offset_of!(ExtraFollowerSwimBreadcrumbs, __vftable) == 0x0);
@@ -720,6 +771,7 @@ pub struct ExtraForcedLandingMarker {
     /// +0x0 `vtbl:ExtraForcedLandingMarker:0`, rtti
     pub __vftable: *const crate::raw::vtables::ExtraForcedLandingMarker_vtable,
     pub unknown_8: [u8; 16],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ExtraForcedLandingMarker>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(ExtraForcedLandingMarker, __vftable) == 0x0);
@@ -732,6 +784,7 @@ pub struct ExtraForcedTarget {
     /// +0x0 `vtbl:ExtraForcedTarget:0`, rtti
     pub __vftable: *const crate::raw::vtables::ExtraForcedTarget_vtable,
     pub unknown_8: [u8; 16],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ExtraForcedTarget>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(ExtraForcedTarget, __vftable) == 0x0);
@@ -746,6 +799,7 @@ pub struct ExtraFriendHits {
     /// +0x8 `undefined8`, ctor store
     pub field_8: u64,
     pub unknown_10: [u8; 24],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ExtraFriendHits>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(ExtraFriendHits, __vftable) == 0x0);
@@ -759,6 +813,7 @@ pub struct ExtraFromAlias {
     /// +0x0 `vtbl:ExtraFromAlias:0`, rtti
     pub __vftable: *const crate::raw::vtables::ExtraFromAlias_vtable,
     pub unknown_8: [u8; 24],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ExtraFromAlias>() == 0x20);
 const _: () = assert!(core::mem::offset_of!(ExtraFromAlias, __vftable) == 0x0);
@@ -770,6 +825,7 @@ const _: () = assert!(core::mem::offset_of!(ExtraFromAlias, __vftable) == 0x0);
 pub struct ExtraGIDBuffer {
     /// +0x0 `vtbl:ExtraGIDBuffer:0`, rtti
     pub __vftable: *const crate::raw::vtables::ExtraGIDBuffer_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(ExtraGIDBuffer, __vftable) == 0x0);
 
@@ -785,6 +841,7 @@ pub struct ExtraGhost {
     /// +0x10 `undefined1`, ctor store
     pub field_10: u8,
     pub unknown_11: [u8; 7],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ExtraGhost>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(ExtraGhost, __vftable) == 0x0);
@@ -802,6 +859,7 @@ pub struct ExtraGlobal {
     pub field_8: u64,
     /// +0x10 `undefined8`, ctor store
     pub field_10: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ExtraGlobal>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(ExtraGlobal, __vftable) == 0x0);
@@ -841,6 +899,7 @@ pub struct ExtraGroupConstraint {
     pub field_40: u32,
     /// +0x44 `float`, ctor store (widths [4, 4])
     pub field_44: f32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ExtraGroupConstraint>() == 0x48);
 const _: () = assert!(core::mem::offset_of!(ExtraGroupConstraint, __vftable) == 0x0);
@@ -868,6 +927,7 @@ pub struct ExtraGuardedRefData {
     /// +0x8 `undefined8`, ctor store
     pub field_8: u64,
     pub unknown_10: [u8; 24],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ExtraGuardedRefData>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(ExtraGuardedRefData, __vftable) == 0x0);
@@ -881,6 +941,7 @@ pub struct ExtraHasNoRumors {
     /// +0x0 `vtbl:ExtraHasNoRumors:0`, rtti
     pub __vftable: *const crate::raw::vtables::ExtraHasNoRumors_vtable,
     pub unknown_8: [u8; 16],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ExtraHasNoRumors>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(ExtraHasNoRumors, __vftable) == 0x0);
@@ -898,6 +959,7 @@ pub struct ExtraHavok {
     pub field_10: u64,
     /// +0x18 `undefined8`, ctor store
     pub field_18: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ExtraHavok>() == 0x20);
 const _: () = assert!(core::mem::offset_of!(ExtraHavok, __vftable) == 0x0);
@@ -913,6 +975,7 @@ pub struct ExtraHeadTrackingWeight {
     /// +0x0 `vtbl:ExtraHeadTrackingWeight:0`, rtti
     pub __vftable: *const crate::raw::vtables::ExtraHeadTrackingWeight_vtable,
     pub unknown_8: [u8; 16],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ExtraHeadTrackingWeight>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(ExtraHeadTrackingWeight, __vftable) == 0x0);
@@ -925,6 +988,7 @@ pub struct ExtraHeadingTarget {
     /// +0x0 `vtbl:ExtraHeadingTarget:0`, rtti
     pub __vftable: *const crate::raw::vtables::ExtraHeadingTarget_vtable,
     pub unknown_8: [u8; 16],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ExtraHeadingTarget>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(ExtraHeadingTarget, __vftable) == 0x0);
@@ -937,6 +1001,7 @@ pub struct ExtraHealth {
     /// +0x0 `vtbl:ExtraHealth:0`, rtti
     pub __vftable: *const crate::raw::vtables::ExtraHealth_vtable,
     pub unknown_8: [u8; 16],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ExtraHealth>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(ExtraHealth, __vftable) == 0x0);
@@ -948,6 +1013,7 @@ const _: () = assert!(core::mem::offset_of!(ExtraHealth, __vftable) == 0x0);
 pub struct ExtraHealthPerc {
     /// +0x0 `vtbl:ExtraHealthPerc:0`, rtti
     pub __vftable: *const crate::raw::vtables::ExtraHealthPerc_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(ExtraHealthPerc, __vftable) == 0x0);
 
@@ -959,6 +1025,7 @@ pub struct ExtraHorse {
     /// +0x0 `vtbl:ExtraHorse:0`, rtti
     pub __vftable: *const crate::raw::vtables::ExtraHorse_vtable,
     pub unknown_8: [u8; 16],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ExtraHorse>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(ExtraHorse, __vftable) == 0x0);
@@ -970,6 +1037,7 @@ const _: () = assert!(core::mem::offset_of!(ExtraHorse, __vftable) == 0x0);
 pub struct ExtraHotkey {
     /// +0x0 `vtbl:ExtraHotkey:0`, rtti
     pub __vftable: *const crate::raw::vtables::ExtraHotkey_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(ExtraHotkey, __vftable) == 0x0);
 
@@ -981,6 +1049,7 @@ pub struct ExtraIgnoredBySandbox {
     /// +0x0 `vtbl:ExtraIgnoredBySandbox:0`, rtti
     pub __vftable: *const crate::raw::vtables::ExtraIgnoredBySandbox_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ExtraIgnoredBySandbox>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(ExtraIgnoredBySandbox, __vftable) == 0x0);
@@ -996,6 +1065,7 @@ pub struct ExtraInfoGeneralTopic {
     pub field_8: u64,
     /// +0x10 `undefined8`, ctor store
     pub field_10: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ExtraInfoGeneralTopic>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(ExtraInfoGeneralTopic, __vftable) == 0x0);
@@ -1013,6 +1083,7 @@ pub struct ExtraInteraction {
     pub field_8: u64,
     /// +0x10 `undefined8`, ctor store
     pub field_10: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(ExtraInteraction, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(ExtraInteraction, field_8) == 0x8);
@@ -1026,6 +1097,7 @@ pub struct ExtraItemDropper {
     /// +0x0 `vtbl:ExtraItemDropper:0`, rtti
     pub __vftable: *const crate::raw::vtables::ExtraItemDropper_vtable,
     pub unknown_8: [u8; 16],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ExtraItemDropper>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(ExtraItemDropper, __vftable) == 0x0);
@@ -1038,6 +1110,7 @@ pub struct ExtraLargeRefOwnerCells {
     /// +0x0 `vtbl:ExtraLargeRefOwnerCells:0`, rtti
     pub __vftable: *const crate::raw::vtables::ExtraLargeRefOwnerCells_vtable,
     pub unknown_8: [u8; 40],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ExtraLargeRefOwnerCells>() == 0x30);
 const _: () = assert!(core::mem::offset_of!(ExtraLargeRefOwnerCells, __vftable) == 0x0);
@@ -1050,6 +1123,7 @@ pub struct ExtraLastFinishedSequence {
     /// +0x0 `vtbl:ExtraLastFinishedSequence:0`, rtti
     pub __vftable: *const crate::raw::vtables::ExtraLastFinishedSequence_vtable,
     pub unknown_8: [u8; 16],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ExtraLastFinishedSequence>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(ExtraLastFinishedSequence, __vftable) == 0x0);
@@ -1062,6 +1136,7 @@ pub struct ExtraLevCreaModifier {
     /// +0x0 `vtbl:ExtraLevCreaModifier:0`, rtti
     pub __vftable: *const crate::raw::vtables::ExtraLevCreaModifier_vtable,
     pub unknown_8: [u8; 16],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ExtraLevCreaModifier>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(ExtraLevCreaModifier, __vftable) == 0x0);
@@ -1079,6 +1154,7 @@ pub struct ExtraLeveledCreature {
     pub field_10: u64,
     /// +0x18 `undefined8`, ctor store
     pub field_18: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ExtraLeveledCreature>() == 0x20);
 const _: () = assert!(core::mem::offset_of!(ExtraLeveledCreature, __vftable) == 0x0);
@@ -1094,6 +1170,7 @@ pub struct ExtraLeveledItem {
     /// +0x0 `vtbl:ExtraLeveledItem:0`, rtti
     pub __vftable: *const crate::raw::vtables::ExtraLeveledItem_vtable,
     pub unknown_8: [u8; 16],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ExtraLeveledItem>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(ExtraLeveledItem, __vftable) == 0x0);
@@ -1106,6 +1183,7 @@ pub struct ExtraLeveledItemBase {
     /// +0x0 `vtbl:ExtraLeveledItemBase:0`, rtti
     pub __vftable: *const crate::raw::vtables::ExtraLeveledItemBase_vtable,
     pub unknown_8: [u8; 16],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ExtraLeveledItemBase>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(ExtraLeveledItemBase, __vftable) == 0x0);
@@ -1121,6 +1199,7 @@ pub struct ExtraLight {
     pub field_8: u64,
     /// +0x10 `undefined8`, ctor store
     pub field_10: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ExtraLight>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(ExtraLight, __vftable) == 0x0);
@@ -1135,6 +1214,7 @@ pub struct ExtraLightData {
     /// +0x0 `vtbl:ExtraLightData:0`, rtti
     pub __vftable: *const crate::raw::vtables::ExtraLightData_vtable,
     pub unknown_8: [u8; 32],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ExtraLightData>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(ExtraLightData, __vftable) == 0x0);
@@ -1147,6 +1227,7 @@ pub struct ExtraLinkedRef {
     /// +0x0 `vtbl:ExtraLinkedRef:0`, rtti
     pub __vftable: *const crate::raw::vtables::ExtraLinkedRef_vtable,
     pub unknown_8: [u8; 40],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ExtraLinkedRef>() == 0x30);
 const _: () = assert!(core::mem::offset_of!(ExtraLinkedRef, __vftable) == 0x0);
@@ -1159,6 +1240,7 @@ pub struct ExtraLinkedRefChildren {
     /// +0x0 `vtbl:ExtraLinkedRefChildren:0`, rtti
     pub __vftable: *const crate::raw::vtables::ExtraLinkedRefChildren_vtable,
     pub unknown_8: [u8; 40],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ExtraLinkedRefChildren>() == 0x30);
 const _: () = assert!(core::mem::offset_of!(ExtraLinkedRefChildren, __vftable) == 0x0);
@@ -1170,6 +1252,7 @@ const _: () = assert!(core::mem::offset_of!(ExtraLinkedRefChildren, __vftable) =
 pub struct ExtraLitWaterRefs {
     /// +0x0 `vtbl:ExtraLitWaterRefs:0`, rtti
     pub __vftable: *const crate::raw::vtables::ExtraLitWaterRefs_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(ExtraLitWaterRefs, __vftable) == 0x0);
 
@@ -1181,6 +1264,7 @@ pub struct ExtraLocation {
     /// +0x0 `vtbl:ExtraLocation:0`, rtti
     pub __vftable: *const crate::raw::vtables::ExtraLocation_vtable,
     pub unknown_8: [u8; 16],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ExtraLocation>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(ExtraLocation, __vftable) == 0x0);
@@ -1193,6 +1277,7 @@ pub struct ExtraLocationRefType {
     /// +0x0 `vtbl:ExtraLocationRefType:0`, rtti
     pub __vftable: *const crate::raw::vtables::ExtraLocationRefType_vtable,
     pub unknown_8: [u8; 16],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ExtraLocationRefType>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(ExtraLocationRefType, __vftable) == 0x0);
@@ -1208,6 +1293,7 @@ pub struct ExtraLock {
     pub field_8: u64,
     /// +0x10 `undefined8`, ctor store
     pub field_10: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ExtraLock>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(ExtraLock, __vftable) == 0x0);
@@ -1225,6 +1311,7 @@ pub struct ExtraLockList {
     pub field_8: u64,
     /// +0x10 `undefined8`, ctor store
     pub field_10: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ExtraLockList>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(ExtraLockList, __vftable) == 0x0);
@@ -1261,6 +1348,7 @@ pub struct ExtraMagicCaster {
     pub field_4C: u64,
     /// +0x54 `undefined4`, base MagicCaster
     pub field_54: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ExtraMagicCaster>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(ExtraMagicCaster, __vftable) == 0x0);
@@ -1285,6 +1373,7 @@ pub struct ExtraMagicLight {
     pub field_8: u64,
     /// +0x10 `undefined8`, base ExtraLight
     pub field_10: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(ExtraMagicLight, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(ExtraMagicLight, field_8) == 0x8);
@@ -1301,6 +1390,7 @@ pub struct ExtraMapMarker {
     pub field_8: u64,
     /// +0x10 `undefined8`, ctor store
     pub field_10: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ExtraMapMarker>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(ExtraMapMarker, __vftable) == 0x0);
@@ -1315,6 +1405,7 @@ pub struct ExtraMissingLinkedRefIDs {
     /// +0x0 `vtbl:ExtraMissingLinkedRefIDs:0`, rtti
     pub __vftable: *const crate::raw::vtables::ExtraMissingLinkedRefIDs_vtable,
     pub unknown_8: [u8; 32],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ExtraMissingLinkedRefIDs>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(ExtraMissingLinkedRefIDs, __vftable) == 0x0);
@@ -1326,6 +1417,7 @@ const _: () = assert!(core::mem::offset_of!(ExtraMissingLinkedRefIDs, __vftable)
 pub struct ExtraMissingRefIDs {
     /// +0x0 `vtbl:ExtraMissingRefIDs:0`, rtti
     pub __vftable: *const crate::raw::vtables::ExtraMissingRefIDs_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(ExtraMissingRefIDs, __vftable) == 0x0);
 
@@ -1337,6 +1429,7 @@ pub struct ExtraModelSwap {
     /// +0x0 `vtbl:ExtraModelSwap:0`, rtti
     pub __vftable: *const crate::raw::vtables::ExtraModelSwap_vtable,
     pub unknown_8: [u8; 24],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ExtraModelSwap>() == 0x20);
 const _: () = assert!(core::mem::offset_of!(ExtraModelSwap, __vftable) == 0x0);
@@ -1348,6 +1441,7 @@ const _: () = assert!(core::mem::offset_of!(ExtraModelSwap, __vftable) == 0x0);
 pub struct ExtraMultiBound {
     /// +0x0 `vtbl:ExtraMultiBound:0`, rtti
     pub __vftable: *const crate::raw::vtables::ExtraMultiBound_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(ExtraMultiBound, __vftable) == 0x0);
 
@@ -1359,6 +1453,7 @@ pub struct ExtraMultiBoundRef {
     /// +0x0 `vtbl:ExtraMultiBoundRef:0`, rtti
     pub __vftable: *const crate::raw::vtables::ExtraMultiBoundRef_vtable,
     pub unknown_8: [u8; 16],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ExtraMultiBoundRef>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(ExtraMultiBoundRef, __vftable) == 0x0);
@@ -1371,6 +1466,7 @@ pub struct ExtraNavMeshPortal {
     /// +0x0 `vtbl:ExtraNavMeshPortal:0`, rtti
     pub __vftable: *const crate::raw::vtables::ExtraNavMeshPortal_vtable,
     pub unknown_8: [u8; 24],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ExtraNavMeshPortal>() == 0x20);
 const _: () = assert!(core::mem::offset_of!(ExtraNavMeshPortal, __vftable) == 0x0);
@@ -1383,6 +1479,7 @@ pub struct ExtraNorthRotation {
     /// +0x0 `vtbl:ExtraNorthRotation:0`, rtti
     pub __vftable: *const crate::raw::vtables::ExtraNorthRotation_vtable,
     pub unknown_8: [u8; 16],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ExtraNorthRotation>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(ExtraNorthRotation, __vftable) == 0x0);
@@ -1395,6 +1492,7 @@ pub struct ExtraObjectHealth {
     /// +0x0 `vtbl:ExtraObjectHealth:0`, rtti
     pub __vftable: *const crate::raw::vtables::ExtraObjectHealth_vtable,
     pub unknown_8: [u8; 16],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ExtraObjectHealth>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(ExtraObjectHealth, __vftable) == 0x0);
@@ -1406,6 +1504,7 @@ const _: () = assert!(core::mem::offset_of!(ExtraObjectHealth, __vftable) == 0x0
 pub struct ExtraOcclusionPlaneRefData {
     /// +0x0 `vtbl:ExtraOcclusionPlaneRefData:0`, rtti
     pub __vftable: *const crate::raw::vtables::ExtraOcclusionPlaneRefData_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(ExtraOcclusionPlaneRefData, __vftable) == 0x0);
 
@@ -1420,6 +1519,7 @@ pub struct ExtraOcclusionShape {
     pub field_8: u64,
     /// +0x10 `undefined8`, ctor store
     pub field_10: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ExtraOcclusionShape>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(ExtraOcclusionShape, __vftable) == 0x0);
@@ -1434,6 +1534,7 @@ pub struct ExtraOpenCloseActivateRef {
     /// +0x0 `vtbl:ExtraOpenCloseActivateRef:0`, rtti
     pub __vftable: *const crate::raw::vtables::ExtraOpenCloseActivateRef_vtable,
     pub unknown_8: [u8; 16],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ExtraOpenCloseActivateRef>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(ExtraOpenCloseActivateRef, __vftable) == 0x0);
@@ -1445,6 +1546,7 @@ const _: () = assert!(core::mem::offset_of!(ExtraOpenCloseActivateRef, __vftable
 pub struct ExtraOriginalReference {
     /// +0x0 `vtbl:ExtraOriginalReference:0`, rtti
     pub __vftable: *const crate::raw::vtables::ExtraOriginalReference_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(ExtraOriginalReference, __vftable) == 0x0);
 
@@ -1456,6 +1558,7 @@ pub struct ExtraOutfitItem {
     /// +0x0 `vtbl:ExtraOutfitItem:0`, rtti
     pub __vftable: *const crate::raw::vtables::ExtraOutfitItem_vtable,
     pub unknown_8: [u8; 16],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ExtraOutfitItem>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(ExtraOutfitItem, __vftable) == 0x0);
@@ -1471,6 +1574,7 @@ pub struct ExtraOwnership {
     pub field_8: u64,
     /// +0x10 `undefined8`, ctor store
     pub field_10: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ExtraOwnership>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(ExtraOwnership, __vftable) == 0x0);
@@ -1496,6 +1600,7 @@ pub struct ExtraPackage {
     /// +0x20 `undefined1`, ctor store
     pub field_20: u8,
     pub unknown_21: [u8; 7],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ExtraPackage>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(ExtraPackage, __vftable) == 0x0);
@@ -1513,6 +1618,7 @@ pub struct ExtraPackageData {
     /// +0x0 `vtbl:ExtraPackageData:0`, rtti
     pub __vftable: *const crate::raw::vtables::ExtraPackageData_vtable,
     pub unknown_8: [u8; 16],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ExtraPackageData>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(ExtraPackageData, __vftable) == 0x0);
@@ -1536,6 +1642,7 @@ pub struct ExtraPackageStartLocation {
     pub field_20: u32,
     /// +0x24 `float`, ctor store
     pub field_24: f32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ExtraPackageStartLocation>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(ExtraPackageStartLocation, __vftable) == 0x0);
@@ -1554,6 +1661,7 @@ pub struct ExtraPatrolRefData {
     /// +0x0 `vtbl:ExtraPatrolRefData:0`, rtti
     pub __vftable: *const crate::raw::vtables::ExtraPatrolRefData_vtable,
     pub unknown_8: [u8; 16],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ExtraPatrolRefData>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(ExtraPatrolRefData, __vftable) == 0x0);
@@ -1570,6 +1678,7 @@ pub struct ExtraPatrolRefInUseData {
     /// +0x10 `undefined4`, ctor store
     pub field_10: u32,
     pub unknown_14: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(ExtraPatrolRefInUseData, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(ExtraPatrolRefInUseData, field_8) == 0x8);
@@ -1586,6 +1695,7 @@ pub struct ExtraPersistentCell {
     pub field_8: u64,
     /// +0x10 `undefined8`, ctor store
     pub field_10: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ExtraPersistentCell>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(ExtraPersistentCell, __vftable) == 0x0);
@@ -1603,6 +1713,7 @@ pub struct ExtraPlayerCrimeList {
     pub field_8: u64,
     /// +0x10 `undefined8`, ctor store
     pub field_10: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ExtraPlayerCrimeList>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(ExtraPlayerCrimeList, __vftable) == 0x0);
@@ -1617,6 +1728,7 @@ pub struct ExtraPoison {
     /// +0x0 `vtbl:ExtraPoison:0`, rtti
     pub __vftable: *const crate::raw::vtables::ExtraPoison_vtable,
     pub unknown_8: [u8; 24],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ExtraPoison>() == 0x20);
 const _: () = assert!(core::mem::offset_of!(ExtraPoison, __vftable) == 0x0);
@@ -1632,6 +1744,7 @@ pub struct ExtraPortal {
     pub field_8: u64,
     /// +0x10 `undefined8`, ctor store
     pub field_10: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(ExtraPortal, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(ExtraPortal, field_8) == 0x8);
@@ -1644,6 +1757,7 @@ const _: () = assert!(core::mem::offset_of!(ExtraPortal, field_10) == 0x10);
 pub struct ExtraPortalRefData {
     /// +0x0 `vtbl:ExtraPortalRefData:0`, rtti
     pub __vftable: *const crate::raw::vtables::ExtraPortalRefData_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(ExtraPortalRefData, __vftable) == 0x0);
 
@@ -1655,6 +1769,7 @@ pub struct ExtraPrimitive {
     /// +0x0 `vtbl:ExtraPrimitive:0`, rtti
     pub __vftable: *const crate::raw::vtables::ExtraPrimitive_vtable,
     pub unknown_8: [u8; 16],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ExtraPrimitive>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(ExtraPrimitive, __vftable) == 0x0);
@@ -1667,6 +1782,7 @@ pub struct ExtraProcessMiddleLow {
     /// +0x0 `vtbl:ExtraProcessMiddleLow:0`, rtti
     pub __vftable: *const crate::raw::vtables::ExtraProcessMiddleLow_vtable,
     pub unknown_8: [u8; 16],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ExtraProcessMiddleLow>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(ExtraProcessMiddleLow, __vftable) == 0x0);
@@ -1681,6 +1797,7 @@ pub struct ExtraPromotedRef {
     /// +0x8 `undefined8`, ctor store
     pub field_8: u64,
     pub unknown_10: [u8; 24],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ExtraPromotedRef>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(ExtraPromotedRef, __vftable) == 0x0);
@@ -1693,6 +1810,7 @@ const _: () = assert!(core::mem::offset_of!(ExtraPromotedRef, field_8) == 0x8);
 pub struct ExtraRaceData {
     /// +0x0 `vtbl:ExtraRaceData:0`, rtti
     pub __vftable: *const crate::raw::vtables::ExtraRaceData_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(ExtraRaceData, __vftable) == 0x0);
 
@@ -1704,6 +1822,7 @@ pub struct ExtraRadius {
     /// +0x0 `vtbl:ExtraRadius:0`, rtti
     pub __vftable: *const crate::raw::vtables::ExtraRadius_vtable,
     pub unknown_8: [u8; 16],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ExtraRadius>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(ExtraRadius, __vftable) == 0x0);
@@ -1716,6 +1835,7 @@ pub struct ExtraRagDollData {
     /// +0x0 `vtbl:ExtraRagDollData:0`, rtti
     pub __vftable: *const crate::raw::vtables::ExtraRagDollData_vtable,
     pub unknown_8: [u8; 16],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ExtraRagDollData>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(ExtraRagDollData, __vftable) == 0x0);
@@ -1727,6 +1847,7 @@ const _: () = assert!(core::mem::offset_of!(ExtraRagDollData, __vftable) == 0x0)
 pub struct ExtraRandomTeleportMarker {
     /// +0x0 `vtbl:ExtraRandomTeleportMarker:0`, rtti
     pub __vftable: *const crate::raw::vtables::ExtraRandomTeleportMarker_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(ExtraRandomTeleportMarker, __vftable) == 0x0);
 
@@ -1742,6 +1863,7 @@ pub struct ExtraRank {
     /// +0x10 `undefined4`, ctor store
     pub field_10: u32,
     pub unknown_14: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ExtraRank>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(ExtraRank, __vftable) == 0x0);
@@ -1756,6 +1878,7 @@ pub struct ExtraReferenceHandle {
     /// +0x0 `vtbl:ExtraReferenceHandle:0`, rtti
     pub __vftable: *const crate::raw::vtables::ExtraReferenceHandle_vtable,
     pub unknown_8: [u8; 16],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ExtraReferenceHandle>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(ExtraReferenceHandle, __vftable) == 0x0);
@@ -1770,6 +1893,7 @@ pub struct ExtraReflectedRefs {
     /// +0x8 `undefined8`, ctor store
     pub field_8: u64,
     pub unknown_10: [u8; 24],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ExtraReflectedRefs>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(ExtraReflectedRefs, __vftable) == 0x0);
@@ -1785,6 +1909,7 @@ pub struct ExtraReflectorRefs {
     /// +0x8 `undefined8`, ctor store
     pub field_8: u64,
     pub unknown_10: [u8; 24],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ExtraReflectorRefs>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(ExtraReflectorRefs, __vftable) == 0x0);
@@ -1798,6 +1923,7 @@ pub struct ExtraRefrPath {
     /// +0x0 `vtbl:ExtraRefrPath:0`, rtti
     pub __vftable: *const crate::raw::vtables::ExtraRefrPath_vtable,
     pub unknown_8: [u8; 96],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ExtraRefrPath>() == 0x68);
 const _: () = assert!(core::mem::offset_of!(ExtraRefrPath, __vftable) == 0x0);
@@ -1809,6 +1935,7 @@ const _: () = assert!(core::mem::offset_of!(ExtraRefrPath, __vftable) == 0x0);
 pub struct ExtraRefractionProperty {
     /// +0x0 `vtbl:ExtraRefractionProperty:0`, rtti
     pub __vftable: *const crate::raw::vtables::ExtraRefractionProperty_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(ExtraRefractionProperty, __vftable) == 0x0);
 
@@ -1820,6 +1947,7 @@ pub struct ExtraRegionList {
     /// +0x0 `vtbl:ExtraRegionList:0`, rtti
     pub __vftable: *const crate::raw::vtables::ExtraRegionList_vtable,
     pub unknown_8: [u8; 16],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ExtraRegionList>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(ExtraRegionList, __vftable) == 0x0);
@@ -1834,6 +1962,7 @@ pub struct ExtraReservedMarkers {
     /// +0x8 `undefined8`, ctor store
     pub field_8: u64,
     pub unknown_10: [u8; 32],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ExtraReservedMarkers>() == 0x30);
 const _: () = assert!(core::mem::offset_of!(ExtraReservedMarkers, __vftable) == 0x0);
@@ -1850,6 +1979,7 @@ pub struct ExtraResourcesPreload {
     pub field_8: u64,
     /// +0x10 `undefined8`, ctor store
     pub field_10: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ExtraResourcesPreload>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(ExtraResourcesPreload, __vftable) == 0x0);
@@ -1863,6 +1993,7 @@ const _: () = assert!(core::mem::offset_of!(ExtraResourcesPreload, field_10) == 
 pub struct ExtraRoom {
     /// +0x0 `vtbl:ExtraRoom:0`, rtti
     pub __vftable: *const crate::raw::vtables::ExtraRoom_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(ExtraRoom, __vftable) == 0x0);
 
@@ -1874,6 +2005,7 @@ pub struct ExtraRoomRefData {
     /// +0x0 `vtbl:ExtraRoomRefData:0`, rtti
     pub __vftable: *const crate::raw::vtables::ExtraRoomRefData_vtable,
     pub unknown_8: [u8; 16],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ExtraRoomRefData>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(ExtraRoomRefData, __vftable) == 0x0);
@@ -1889,6 +2021,7 @@ pub struct ExtraRunOncePacks {
     pub field_8: u64,
     /// +0x10 `undefined8`, ctor store
     pub field_10: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ExtraRunOncePacks>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(ExtraRunOncePacks, __vftable) == 0x0);
@@ -1903,6 +2036,7 @@ pub struct ExtraSavedAnimation {
     /// +0x0 `vtbl:ExtraSavedAnimation:0`, rtti
     pub __vftable: *const crate::raw::vtables::ExtraSavedAnimation_vtable,
     pub unknown_8: [u8; 16],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ExtraSavedAnimation>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(ExtraSavedAnimation, __vftable) == 0x0);
@@ -1915,6 +2049,7 @@ pub struct ExtraSavedHavokData {
     /// +0x0 `vtbl:ExtraSavedHavokData:0`, rtti
     pub __vftable: *const crate::raw::vtables::ExtraSavedHavokData_vtable,
     pub unknown_8: [u8; 16],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ExtraSavedHavokData>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(ExtraSavedHavokData, __vftable) == 0x0);
@@ -1947,6 +2082,7 @@ pub struct ExtraSayToTopicInfo {
     pub unknown_34: [u8; 4],
     /// +0x38 `undefined8`, ctor store
     pub field_38: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ExtraSayToTopicInfo>() == 0x40);
 const _: () = assert!(core::mem::offset_of!(ExtraSayToTopicInfo, __vftable) == 0x0);
@@ -1971,6 +2107,7 @@ pub struct ExtraSayTopicInfoOnceADay {
     pub field_8: u64,
     /// +0x10 `undefined8`, ctor store
     pub field_10: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ExtraSayTopicInfoOnceADay>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(ExtraSayTopicInfoOnceADay, __vftable) == 0x0);
@@ -1985,6 +2122,7 @@ pub struct ExtraScale {
     /// +0x0 `vtbl:ExtraScale:0`, rtti
     pub __vftable: *const crate::raw::vtables::ExtraScale_vtable,
     pub unknown_8: [u8; 16],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ExtraScale>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(ExtraScale, __vftable) == 0x0);
@@ -1997,6 +2135,7 @@ pub struct ExtraSceneData {
     /// +0x0 `vtbl:ExtraSceneData:0`, rtti
     pub __vftable: *const crate::raw::vtables::ExtraSceneData_vtable,
     pub unknown_8: [u8; 16],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ExtraSceneData>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(ExtraSceneData, __vftable) == 0x0);
@@ -2011,6 +2150,7 @@ pub struct ExtraScriptedAnimDependence {
     /// +0x8 `undefined8`, ctor store
     pub field_8: u64,
     pub unknown_10: [u8; 24],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ExtraScriptedAnimDependence>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(ExtraScriptedAnimDependence, __vftable) == 0x0);
@@ -2024,6 +2164,7 @@ pub struct ExtraSeenData {
     /// +0x0 `vtbl:ExtraSeenData:0`, rtti
     pub __vftable: *const crate::raw::vtables::ExtraSeenData_vtable,
     pub unknown_8: [u8; 16],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ExtraSeenData>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(ExtraSeenData, __vftable) == 0x0);
@@ -2040,6 +2181,7 @@ pub struct ExtraShouldWear {
     /// +0x10 `undefined1`, ctor store
     pub field_10: u8,
     pub unknown_11: [u8; 7],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ExtraShouldWear>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(ExtraShouldWear, __vftable) == 0x0);
@@ -2058,6 +2200,7 @@ pub struct ExtraSoul {
     /// +0x10 `undefined1`, ctor store
     pub field_10: u8,
     pub unknown_11: [u8; 7],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ExtraSoul>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(ExtraSoul, __vftable) == 0x0);
@@ -2072,6 +2215,7 @@ pub struct ExtraSound {
     /// +0x0 `vtbl:ExtraSound:0`, rtti
     pub __vftable: *const crate::raw::vtables::ExtraSound_vtable,
     pub unknown_8: [u8; 24],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ExtraSound>() == 0x20);
 const _: () = assert!(core::mem::offset_of!(ExtraSound, __vftable) == 0x0);
@@ -2083,6 +2227,7 @@ const _: () = assert!(core::mem::offset_of!(ExtraSound, __vftable) == 0x0);
 pub struct ExtraSpawnContainer {
     /// +0x0 `vtbl:ExtraSpawnContainer:0`, rtti
     pub __vftable: *const crate::raw::vtables::ExtraSpawnContainer_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(ExtraSpawnContainer, __vftable) == 0x0);
 
@@ -2109,6 +2254,7 @@ pub struct ExtraStartingPosition {
     pub field_24: u32,
     /// +0x28 `undefined8`, ctor store
     pub field_28: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ExtraStartingPosition>() == 0x30);
 const _: () = assert!(core::mem::offset_of!(ExtraStartingPosition, __vftable) == 0x0);
@@ -2129,6 +2275,7 @@ pub struct ExtraStartingWorldOrCell {
     /// +0x0 `vtbl:ExtraStartingWorldOrCell:0`, rtti
     pub __vftable: *const crate::raw::vtables::ExtraStartingWorldOrCell_vtable,
     pub unknown_8: [u8; 16],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ExtraStartingWorldOrCell>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(ExtraStartingWorldOrCell, __vftable) == 0x0);
@@ -2144,6 +2291,7 @@ pub struct ExtraTeleport {
     pub field_8: u64,
     /// +0x10 `undefined8`, ctor store
     pub field_10: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ExtraTeleport>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(ExtraTeleport, __vftable) == 0x0);
@@ -2158,6 +2306,7 @@ pub struct ExtraTeleportName {
     /// +0x0 `vtbl:ExtraTeleportName:0`, rtti
     pub __vftable: *const crate::raw::vtables::ExtraTeleportName_vtable,
     pub unknown_8: [u8; 16],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ExtraTeleportName>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(ExtraTeleportName, __vftable) == 0x0);
@@ -2170,6 +2319,7 @@ pub struct ExtraTerminalState {
     /// +0x0 `vtbl:ExtraTerminalState:0`, rtti
     pub __vftable: *const crate::raw::vtables::ExtraTerminalState_vtable,
     pub unknown_8: [u8; 16],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ExtraTerminalState>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(ExtraTerminalState, __vftable) == 0x0);
@@ -2182,6 +2332,7 @@ pub struct ExtraTextDisplayData {
     /// +0x0 `vtbl:ExtraTextDisplayData:0`, rtti
     pub __vftable: *const crate::raw::vtables::ExtraTextDisplayData_vtable,
     pub unknown_8: [u8; 48],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ExtraTextDisplayData>() == 0x38);
 const _: () = assert!(core::mem::offset_of!(ExtraTextDisplayData, __vftable) == 0x0);
@@ -2194,6 +2345,7 @@ pub struct ExtraTimeLeft {
     /// +0x0 `vtbl:ExtraTimeLeft:0`, rtti
     pub __vftable: *const crate::raw::vtables::ExtraTimeLeft_vtable,
     pub unknown_8: [u8; 16],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ExtraTimeLeft>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(ExtraTimeLeft, __vftable) == 0x0);
@@ -2206,6 +2358,7 @@ pub struct ExtraTresPassPackage {
     /// +0x0 `vtbl:ExtraTresPassPackage:0`, rtti
     pub __vftable: *const crate::raw::vtables::ExtraTresPassPackage_vtable,
     pub unknown_8: [u8; 16],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ExtraTresPassPackage>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(ExtraTresPassPackage, __vftable) == 0x0);
@@ -2218,6 +2371,7 @@ pub struct ExtraUniqueID {
     /// +0x0 `vtbl:ExtraUniqueID:0`, rtti
     pub __vftable: *const crate::raw::vtables::ExtraUniqueID_vtable,
     pub unknown_8: [u8; 16],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ExtraUniqueID>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(ExtraUniqueID, __vftable) == 0x0);
@@ -2230,6 +2384,7 @@ pub struct ExtraUsedMarkers {
     /// +0x0 `vtbl:ExtraUsedMarkers:0`, rtti
     pub __vftable: *const crate::raw::vtables::ExtraUsedMarkers_vtable,
     pub unknown_8: [u8; 32],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ExtraUsedMarkers>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(ExtraUsedMarkers, __vftable) == 0x0);
@@ -2270,6 +2425,7 @@ pub struct ExtraWaterCurrentZoneData {
     pub field_60: f32,
     /// +0x64 `float`, ctor store
     pub field_64: f32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(ExtraWaterCurrentZoneData, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(ExtraWaterCurrentZoneData, field_8) == 0x8);
@@ -2294,6 +2450,7 @@ pub struct ExtraWaterData {
     /// +0x0 `vtbl:ExtraWaterData:0`, rtti
     pub __vftable: *const crate::raw::vtables::ExtraWaterData_vtable,
     pub unknown_8: [u8; 32],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ExtraWaterData>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(ExtraWaterData, __vftable) == 0x0);
@@ -2305,6 +2462,7 @@ const _: () = assert!(core::mem::offset_of!(ExtraWaterData, __vftable) == 0x0);
 pub struct ExtraWaterLightRefs {
     /// +0x0 `vtbl:ExtraWaterLightRefs:0`, rtti
     pub __vftable: *const crate::raw::vtables::ExtraWaterLightRefs_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(ExtraWaterLightRefs, __vftable) == 0x0);
 
@@ -2315,6 +2473,7 @@ const _: () = assert!(core::mem::offset_of!(ExtraWaterLightRefs, __vftable) == 0
 pub struct ExtraWeaponAttackSound {
     /// +0x0 `vtbl:ExtraWeaponAttackSound:0`, rtti
     pub __vftable: *const crate::raw::vtables::ExtraWeaponAttackSound_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(ExtraWeaponAttackSound, __vftable) == 0x0);
 
@@ -2325,6 +2484,7 @@ const _: () = assert!(core::mem::offset_of!(ExtraWeaponAttackSound, __vftable) =
 pub struct ExtraWeaponIdleSound {
     /// +0x0 `vtbl:ExtraWeaponIdleSound:0`, rtti
     pub __vftable: *const crate::raw::vtables::ExtraWeaponIdleSound_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(ExtraWeaponIdleSound, __vftable) == 0x0);
 
@@ -2336,6 +2496,7 @@ pub struct ExtraWorn {
     /// +0x0 `vtbl:ExtraWorn:0`, rtti
     pub __vftable: *const crate::raw::vtables::ExtraWorn_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ExtraWorn>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(ExtraWorn, __vftable) == 0x0);
@@ -2347,6 +2508,7 @@ const _: () = assert!(core::mem::offset_of!(ExtraWorn, __vftable) == 0x0);
 pub struct ExtraWornLeft {
     /// +0x0 `vtbl:ExtraWornLeft:0`, rtti
     pub __vftable: *const crate::raw::vtables::ExtraWornLeft_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(ExtraWornLeft, __vftable) == 0x0);
 

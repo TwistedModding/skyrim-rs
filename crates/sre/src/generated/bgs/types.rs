@@ -10,6 +10,7 @@ use core::ffi::c_void;
 pub struct BGSAIWorldLocation {
     /// +0x0 `vtbl:BGSAIWorldLocation:0`, rtti
     pub __vftable: *const crate::raw::vtables::BGSAIWorldLocation_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSAIWorldLocation>() == 0x8);
 const _: () = assert!(core::mem::offset_of!(BGSAIWorldLocation, __vftable) == 0x0);
@@ -30,6 +31,7 @@ pub struct BGSAIWorldLocationInteriorCell {
     /// +0x18 `float`, ctor store
     pub field_18: f32,
     pub unknown_1C: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSAIWorldLocationInteriorCell, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BGSAIWorldLocationInteriorCell, field_8) == 0x8);
@@ -60,6 +62,7 @@ pub struct BGSAIWorldLocationPointRadius {
     /// +0x30 `undefined2`, ctor store
     pub field_30: u16,
     pub unknown_32: [u8; 6],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSAIWorldLocationPointRadius>() == 0x38);
 const _: () = assert!(core::mem::offset_of!(BGSAIWorldLocationPointRadius, __vftable) == 0x0);
@@ -87,6 +90,7 @@ pub struct BGSAIWorldLocationRefRadius {
     /// +0x18 `undefined1`, ctor store
     pub field_18: u8,
     pub unknown_19: [u8; 7],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSAIWorldLocationRefRadius, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BGSAIWorldLocationRefRadius, field_8) == 0x8);
@@ -102,6 +106,7 @@ pub struct BGSAbilityPerkEntry {
     /// +0x0 `vtbl:BGSAbilityPerkEntry:0`, rtti
     pub __vftable: *const crate::raw::vtables::BGSAbilityPerkEntry_vtable,
     pub unknown_8: [u8; 16],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSAbilityPerkEntry>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(BGSAbilityPerkEntry, __vftable) == 0x0);
@@ -143,6 +148,7 @@ pub struct BGSAcousticSpace {
     pub field_38: u64,
     /// +0x40 `undefined8`, ctor store
     pub field_40: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSAcousticSpace>() == 0x48);
 const _: () = assert!(core::mem::offset_of!(BGSAcousticSpace, __vftable) == 0x0);
@@ -184,6 +190,7 @@ pub struct BGSAction {
     /// +0x28 `undefined4`, ctor store
     pub field_28: u32,
     pub unknown_2C: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSAction>() == 0x30);
 const _: () = assert!(core::mem::offset_of!(BGSAction, __vftable) == 0x0);
@@ -224,6 +231,7 @@ pub struct BGSActionData {
     /// +0x58 `undefined4`, ctor store
     pub field_58: u32,
     pub unknown_5C: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSActionData>() == 0x60);
 const _: () = assert!(core::mem::offset_of!(BGSActionData, __vftable) == 0x0);
@@ -286,6 +294,7 @@ pub struct BGSAddonNode {
     pub field_70: u64,
     /// +0x78 `undefined8`, ctor store
     pub field_78: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSAddonNode>() == 0x80);
 const _: () = assert!(core::mem::offset_of!(BGSAddonNode, __vftable) == 0x0);
@@ -328,6 +337,7 @@ pub struct BGSAddonNodeSoundHandleExtra {
     /// +0x20 `undefined4`, ctor store
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSAddonNodeSoundHandleExtra, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BGSAddonNodeSoundHandleExtra, field_8) == 0x8);
@@ -343,6 +353,7 @@ const _: () = assert!(core::mem::offset_of!(BGSAddonNodeSoundHandleExtra, field_
 pub struct BGSAnimSoundStateManager {
     /// +0x0 `vtbl:BGSAnimSoundStateManager:0`, rtti
     pub __vftable: *const crate::raw::vtables::BGSAnimSoundStateManager_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSAnimSoundStateManager, __vftable) == 0x0);
 
@@ -426,6 +437,7 @@ pub struct BGSApparatus {
     /// +0x118 `undefined4`, base TESDescription
     pub field_118: u32,
     pub unknown_11C: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSApparatus>() == 0x120);
 const _: () = assert!(core::mem::offset_of!(BGSApparatus, __vftable) == 0x0);
@@ -505,6 +517,7 @@ pub struct BGSArtObject {
     /// +0x68 `undefined4`, ctor store
     pub field_68: u32,
     pub unknown_6C: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSArtObject>() == 0x70);
 const _: () = assert!(core::mem::offset_of!(BGSArtObject, __vftable) == 0x0);
@@ -570,6 +583,7 @@ pub struct BGSArtObjectCloneTask {
     /// +0x88 `undefined4`, ctor store
     pub field_88: u32,
     pub unknown_8C: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSArtObjectCloneTask>() == 0x90);
 const _: () = assert!(core::mem::offset_of!(BGSArtObjectCloneTask, __vftable) == 0x0);
@@ -611,6 +625,7 @@ pub struct BGSAssociationType {
     /// +0x40 `undefined4`, ctor store
     pub field_40: u32,
     pub unknown_44: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSAssociationType>() == 0x48);
 const _: () = assert!(core::mem::offset_of!(BGSAssociationType, __vftable) == 0x0);
@@ -628,6 +643,7 @@ const _: () = assert!(core::mem::offset_of!(BGSAssociationType, field_40) == 0x4
 pub struct BGSAttachTechniquesUtil__AttachTechniquesFunctor {
     /// +0x0 `vtbl:BGSAttachTechniquesUtil::AttachTechniquesFunctor:0`, rtti
     pub __vftable: *const crate::raw::vtables::BGSAttachTechniquesUtil__AttachTechniquesFunctor_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSAttachTechniquesUtil__AttachTechniquesFunctor, __vftable) == 0x0);
 
@@ -638,6 +654,7 @@ const _: () = assert!(core::mem::offset_of!(BGSAttachTechniquesUtil__AttachTechn
 pub struct BGSAttachTechniquesUtil__DetachTechniquesFunctor {
     /// +0x0 `vtbl:BGSAttachTechniquesUtil::DetachTechniquesFunctor:0`, rtti
     pub __vftable: *const crate::raw::vtables::BGSAttachTechniquesUtil__DetachTechniquesFunctor_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSAttachTechniquesUtil__DetachTechniquesFunctor, __vftable) == 0x0);
 
@@ -647,6 +664,7 @@ const _: () = assert!(core::mem::offset_of!(BGSAttachTechniquesUtil__DetachTechn
 pub struct BGSAttachTechniquesUtil__ProcessTechniquesFunctor {
     /// +0x0 `vtbl:BGSAttachTechniquesUtil::ProcessTechniquesFunctor:0`, rtti
     pub __vftable: *const crate::raw::vtables::BGSAttachTechniquesUtil__ProcessTechniquesFunctor_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSAttachTechniquesUtil__ProcessTechniquesFunctor, __vftable) == 0x0);
 
@@ -679,6 +697,7 @@ pub struct BGSAttackData {
     /// +0x48 `undefined4`, ctor store
     pub field_48: u32,
     pub unknown_4C: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSAttackData>() == 0x50);
 const _: () = assert!(core::mem::offset_of!(BGSAttackData, __vftable) == 0x0);
@@ -702,6 +721,7 @@ pub struct BGSAttackDataForm {
     pub __vftable: *const crate::raw::vtables::BGSAttackDataForm_vtable,
     /// +0x8 `undefined8`, ctor store
     pub field_8: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSAttackDataForm>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(BGSAttackDataForm, __vftable) == 0x0);
@@ -729,6 +749,7 @@ pub struct BGSAttackDataMap {
     pub field_38: u64,
     /// +0x40 `undefined8`, ctor store
     pub field_40: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSAttackDataMap>() == 0x48);
 const _: () = assert!(core::mem::offset_of!(BGSAttackDataMap, __vftable) == 0x0);
@@ -749,6 +770,7 @@ pub struct BGSBehaviorGraphModel {
     pub unknown_8: [u8; 8],
     /// +0x10 `undefined8`, base TESModel
     pub field_10: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSBehaviorGraphModel, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BGSBehaviorGraphModel, field_10) == 0x10);
@@ -760,6 +782,7 @@ const _: () = assert!(core::mem::offset_of!(BGSBehaviorGraphModel, field_10) == 
 pub struct BGSBipedModelList {
     /// +0x0 `vtbl:BGSBipedModelList:0`, rtti
     pub __vftable: *const crate::raw::vtables::BGSBipedModelList_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSBipedModelList, __vftable) == 0x0);
 
@@ -774,6 +797,7 @@ pub struct BGSBipedObjectForm {
     pub field_8: u32,
     /// +0xC `undefined4`, ctor store
     pub field_C: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSBipedObjectForm>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(BGSBipedObjectForm, __vftable) == 0x0);
@@ -791,6 +815,7 @@ pub struct BGSBlockBashData {
     pub field_8: u64,
     /// +0x10 `undefined8`, ctor store
     pub field_10: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSBlockBashData>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(BGSBlockBashData, __vftable) == 0x0);
@@ -837,6 +862,7 @@ pub struct BGSBodyPartData {
     pub field_78: u64,
     /// +0x80 `undefined8`, ctor store
     pub field_80: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSBodyPartData>() == 0x88);
 const _: () = assert!(core::mem::offset_of!(BGSBodyPartData, __vftable) == 0x0);
@@ -891,6 +917,7 @@ pub struct BGSCollisionLayer {
     /// +0x58 `undefined4`, ctor store
     pub field_58: u32,
     pub unknown_5C: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSCollisionLayer>() == 0x60);
 const _: () = assert!(core::mem::offset_of!(BGSCollisionLayer, __vftable) == 0x0);
@@ -935,6 +962,7 @@ pub struct BGSColorForm {
     /// +0x32 `undefined2`, base TESFullName
     pub field_32: u16,
     pub unknown_34: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSColorForm>() == 0x38);
 const _: () = assert!(core::mem::offset_of!(BGSColorForm, __vftable) == 0x0);
@@ -977,6 +1005,7 @@ pub struct BGSConstructibleObject {
     /// +0x50 `undefined2`, ctor store
     pub field_50: u16,
     pub unknown_52: [u8; 6],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSConstructibleObject>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BGSConstructibleObject, __vftable) == 0x0);
@@ -1014,6 +1043,7 @@ pub struct BGSDebris {
     pub field_28: u64,
     /// +0x30 `undefined8`, ctor store
     pub field_30: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSDebris>() == 0x38);
 const _: () = assert!(core::mem::offset_of!(BGSDebris, __vftable) == 0x0);
@@ -1081,6 +1111,7 @@ pub struct BGSDecalNode {
     /// +0x140 `undefined1`, ctor store
     pub field_140: u8,
     pub unknown_141: [u8; 7],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSDecalNode>() == 0x148);
 const _: () = assert!(core::mem::offset_of!(BGSDecalNode, __vftable) == 0x0);
@@ -1124,6 +1155,7 @@ pub struct BGSDefaultObjectManager {
     /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 5],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSDefaultObjectManager, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BGSDefaultObjectManager, sourceFiles) == 0x8);
@@ -1141,6 +1173,7 @@ pub struct BGSDestructibleObjectForm {
     pub __vftable: *const crate::raw::vtables::BGSDestructibleObjectForm_vtable,
     /// +0x8 `undefined8`, ctor store
     pub field_8: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSDestructibleObjectForm>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(BGSDestructibleObjectForm, __vftable) == 0x0);
@@ -1174,6 +1207,7 @@ pub struct BGSDialogueBranch {
     /// +0x38 `undefined4`, ctor store
     pub field_38: u32,
     pub unknown_3C: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSDialogueBranch>() == 0x40);
 const _: () = assert!(core::mem::offset_of!(BGSDialogueBranch, __vftable) == 0x0);
@@ -1231,6 +1265,7 @@ pub struct BGSDualCastData {
     /// +0x58 `undefined4`, ctor store
     pub field_58: u32,
     pub unknown_5C: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSDualCastData>() == 0x60);
 const _: () = assert!(core::mem::offset_of!(BGSDualCastData, __vftable) == 0x0);
@@ -1280,6 +1315,7 @@ pub struct BGSEncounterZone {
     pub field_38: u64,
     /// +0x40 `undefined8`, ctor store
     pub field_40: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSEncounterZone>() == 0x48);
 const _: () = assert!(core::mem::offset_of!(BGSEncounterZone, __vftable) == 0x0);
@@ -1301,6 +1337,7 @@ pub struct BGSEntryPointFunctionData {
     /// +0x0 `vtbl:BGSEntryPointFunctionData:0`, rtti
     pub __vftable: *const crate::raw::vtables::BGSEntryPointFunctionData_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSEntryPointFunctionData>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(BGSEntryPointFunctionData, __vftable) == 0x0);
@@ -1313,6 +1350,7 @@ pub struct BGSEntryPointFunctionDataActivateChoice {
     /// +0x0 `vtbl:BGSEntryPointFunctionDataActivateChoice:0`, rtti
     pub __vftable: *const crate::raw::vtables::BGSEntryPointFunctionDataActivateChoice_vtable,
     pub unknown_8: [u8; 32],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSEntryPointFunctionDataActivateChoice>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(BGSEntryPointFunctionDataActivateChoice, __vftable) == 0x0);
@@ -1325,6 +1363,7 @@ pub struct BGSEntryPointFunctionDataBooleanGraphVariable {
     /// +0x0 `vtbl:BGSEntryPointFunctionDataBooleanGraphVariable:0`, rtti
     pub __vftable: *const crate::raw::vtables::BGSEntryPointFunctionDataBooleanGraphVariable_vtable,
     pub unknown_8: [u8; 16],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSEntryPointFunctionDataBooleanGraphVariable>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(BGSEntryPointFunctionDataBooleanGraphVariable, __vftable) == 0x0);
@@ -1337,6 +1376,7 @@ pub struct BGSEntryPointFunctionDataLeveledList {
     /// +0x0 `vtbl:BGSEntryPointFunctionDataLeveledList:0`, rtti
     pub __vftable: *const crate::raw::vtables::BGSEntryPointFunctionDataLeveledList_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSEntryPointFunctionDataLeveledList>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(BGSEntryPointFunctionDataLeveledList, __vftable) == 0x0);
@@ -1349,6 +1389,7 @@ pub struct BGSEntryPointFunctionDataOneValue {
     /// +0x0 `vtbl:BGSEntryPointFunctionDataOneValue:0`, rtti
     pub __vftable: *const crate::raw::vtables::BGSEntryPointFunctionDataOneValue_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSEntryPointFunctionDataOneValue>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(BGSEntryPointFunctionDataOneValue, __vftable) == 0x0);
@@ -1361,6 +1402,7 @@ pub struct BGSEntryPointFunctionDataSpellItem {
     /// +0x0 `vtbl:BGSEntryPointFunctionDataSpellItem:0`, rtti
     pub __vftable: *const crate::raw::vtables::BGSEntryPointFunctionDataSpellItem_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSEntryPointFunctionDataSpellItem>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(BGSEntryPointFunctionDataSpellItem, __vftable) == 0x0);
@@ -1373,6 +1415,7 @@ pub struct BGSEntryPointFunctionDataText {
     /// +0x0 `vtbl:BGSEntryPointFunctionDataText:0`, rtti
     pub __vftable: *const crate::raw::vtables::BGSEntryPointFunctionDataText_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSEntryPointFunctionDataText>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(BGSEntryPointFunctionDataText, __vftable) == 0x0);
@@ -1385,6 +1428,7 @@ pub struct BGSEntryPointFunctionDataTwoValue {
     /// +0x0 `vtbl:BGSEntryPointFunctionDataTwoValue:0`, rtti
     pub __vftable: *const crate::raw::vtables::BGSEntryPointFunctionDataTwoValue_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSEntryPointFunctionDataTwoValue>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(BGSEntryPointFunctionDataTwoValue, __vftable) == 0x0);
@@ -1397,6 +1441,7 @@ pub struct BGSEntryPointPerkEntry {
     /// +0x0 `vtbl:BGSEntryPointPerkEntry:0`, rtti
     pub __vftable: *const crate::raw::vtables::BGSEntryPointPerkEntry_vtable,
     pub unknown_8: [u8; 40],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSEntryPointPerkEntry>() == 0x30);
 const _: () = assert!(core::mem::offset_of!(BGSEntryPointPerkEntry, __vftable) == 0x0);
@@ -1425,6 +1470,7 @@ pub struct BGSEquipSlot {
     /// +0x38 `undefined4`, ctor store
     pub field_38: u32,
     pub unknown_3C: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSEquipSlot>() == 0x40);
 const _: () = assert!(core::mem::offset_of!(BGSEquipSlot, __vftable) == 0x0);
@@ -1445,6 +1491,7 @@ pub struct BGSEquipType {
     pub __vftable: *const crate::raw::vtables::BGSEquipType_vtable,
     /// +0x8 `undefined8`, ctor store
     pub field_8: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSEquipType>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(BGSEquipType, __vftable) == 0x0);
@@ -1524,6 +1571,7 @@ pub struct BGSExplosion {
     /// +0xE0 `undefined4`, ctor store
     pub field_E0: u32,
     pub unknown_E4: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSExplosion>() == 0xE8);
 const _: () = assert!(core::mem::offset_of!(BGSExplosion, __vftable) == 0x0);
@@ -1577,6 +1625,7 @@ pub struct BGSFootIkRaycastInterfaceDB {
     pub unknown_30: [u8; 8],
     /// +0x38 `undefined8`, ctor store
     pub field_38: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSFootIkRaycastInterfaceDB, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BGSFootIkRaycastInterfaceDB, field_1C) == 0x1C);
@@ -1607,6 +1656,7 @@ pub struct BGSFootstep {
     pub field_20: u64,
     /// +0x28 `undefined8`, ctor store
     pub field_28: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSFootstep>() == 0x30);
 const _: () = assert!(core::mem::offset_of!(BGSFootstep, __vftable) == 0x0);
@@ -1636,6 +1686,7 @@ pub struct BGSFootstepSet {
     /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 125],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSFootstepSet>() == 0x98);
 const _: () = assert!(core::mem::offset_of!(BGSFootstepSet, __vftable) == 0x0);
@@ -1742,6 +1793,7 @@ pub struct BGSGamebryoSequenceGenerator {
     pub field_110: u32,
     /// +0x114 `undefined4`, base hkBaseObject
     pub field_114: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSGamebryoSequenceGenerator, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BGSGamebryoSequenceGenerator, field_8) == 0x8);
@@ -1796,6 +1848,7 @@ const _: () = assert!(core::mem::offset_of!(BGSGamebryoSequenceGenerator, field_
 pub struct BGSGamebryoSequenceGeneratorHolderSingleton {
     /// +0x0 `vtbl:BGSGamebryoSequenceGeneratorHolderSingleton:0`, rtti
     pub __vftable: *const crate::raw::vtables::BGSGamebryoSequenceGeneratorHolderSingleton_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSGamebryoSequenceGeneratorHolderSingleton, __vftable) == 0x0);
 
@@ -1806,6 +1859,7 @@ const _: () = assert!(core::mem::offset_of!(BGSGamebryoSequenceGeneratorHolderSi
 pub struct BGSHavokGeometryAttach {
     /// +0x0 `vtbl:BGSHavokGeometryAttach:0`, rtti
     pub __vftable: *const crate::raw::vtables::BGSHavokGeometryAttach_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSHavokGeometryAttach, __vftable) == 0x0);
 
@@ -1815,6 +1869,7 @@ const _: () = assert!(core::mem::offset_of!(BGSHavokGeometryAttach, __vftable) =
 pub struct BGSHavokGeometryAttach__ActionPolicy {
     /// +0x0 `vtbl:BGSHavokGeometryAttach::ActionPolicy:0`, rtti
     pub __vftable: *const crate::raw::vtables::BGSHavokGeometryAttach__ActionPolicy_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSHavokGeometryAttach__ActionPolicy, __vftable) == 0x0);
 
@@ -1825,6 +1880,7 @@ const _: () = assert!(core::mem::offset_of!(BGSHavokGeometryAttach__ActionPolicy
 pub struct BGSHavokGeometryAttach__AttachPolicy {
     /// +0x0 `vtbl:BGSHavokGeometryAttach::AttachPolicy:0`, rtti
     pub __vftable: *const crate::raw::vtables::BGSHavokGeometryAttach__AttachPolicy_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSHavokGeometryAttach__AttachPolicy, __vftable) == 0x0);
 
@@ -1835,6 +1891,7 @@ const _: () = assert!(core::mem::offset_of!(BGSHavokGeometryAttach__AttachPolicy
 pub struct BGSHavokGeometryAttach__DetachPolicy {
     /// +0x0 `vtbl:BGSHavokGeometryAttach::DetachPolicy:0`, rtti
     pub __vftable: *const crate::raw::vtables::BGSHavokGeometryAttach__DetachPolicy_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSHavokGeometryAttach__DetachPolicy, __vftable) == 0x0);
 
@@ -1900,6 +1957,7 @@ pub struct BGSHazard {
     pub field_A8: u64,
     /// +0xB0 `undefined8`, ctor store
     pub field_B0: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSHazard>() == 0xB8);
 const _: () = assert!(core::mem::offset_of!(BGSHazard, __vftable) == 0x0);
@@ -1976,6 +2034,7 @@ pub struct BGSHeadPart {
     pub field_110: u64,
     /// +0x118 `undefined8`, ctor store
     pub field_118: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSHeadPart>() == 0x120);
 const _: () = assert!(core::mem::offset_of!(BGSHeadPart, __vftable) == 0x0);
@@ -2011,6 +2070,7 @@ pub struct BGSIdleCollection {
     /// +0x18 `undefined4`, ctor store
     pub field_18: u32,
     pub unknown_1C: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSIdleCollection>() == 0x20);
 const _: () = assert!(core::mem::offset_of!(BGSIdleCollection, __vftable) == 0x0);
@@ -2065,6 +2125,7 @@ pub struct BGSIdleMarker {
     /// +0x70 `undefined4`, base BGSIdleCollection
     pub field_70: u32,
     pub unknown_74: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSIdleMarker>() == 0x78);
 const _: () = assert!(core::mem::offset_of!(BGSIdleMarker, __vftable) == 0x0);
@@ -2132,6 +2193,7 @@ pub struct BGSImpactData {
     /// +0x80 `undefined8`, ctor store
     pub field_80: u64,
     pub unknown_88: [u8; 40],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSImpactData>() == 0xB0);
 const _: () = assert!(core::mem::offset_of!(BGSImpactData, __vftable) == 0x0);
@@ -2184,6 +2246,7 @@ pub struct BGSImpactDataSet {
     pub unknown_48: [u8; 8],
     /// +0x50 `undefined8`, ctor store
     pub field_50: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSImpactDataSet>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BGSImpactDataSet, __vftable) == 0x0);
@@ -2209,6 +2272,7 @@ pub struct BGSImpactManager {
     pub __vftable_8: *const crate::raw::vtables::BGSImpactManager_vtable_8,
     /// +0x10 `vtbl:BGSImpactManager:10`, rtti
     pub __vftable_10: *const crate::raw::vtables::BGSImpactManager_vtable_10,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSImpactManager, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BGSImpactManager, __vftable_8) == 0x8);
@@ -2221,6 +2285,7 @@ const _: () = assert!(core::mem::offset_of!(BGSImpactManager, __vftable_10) == 0
 pub struct BGSLOSData {
     /// +0x0 `vtbl:BGSLOSData:0`, rtti
     pub __vftable: *const crate::raw::vtables::BGSLOSData_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSLOSData, __vftable) == 0x0);
 
@@ -2250,6 +2315,7 @@ pub struct BGSLensFlare {
     /// +0x38 `undefined4`, ctor store
     pub field_38: u32,
     pub unknown_3C: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSLensFlare, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BGSLensFlare, sourceFiles) == 0x8);
@@ -2293,6 +2359,7 @@ pub struct BGSLensFlareSprite {
     pub field_38: u64,
     /// +0x40 `undefined8`, ctor store
     pub field_40: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSLensFlareSprite, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BGSLensFlareSprite, field_8) == 0x8);
@@ -2349,6 +2416,7 @@ pub struct BGSLightingTemplate {
     /// +0x78 `undefined8`, ctor store
     pub field_78: u64,
     pub unknown_80: [u8; 32],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSLightingTemplate>() == 0xA0);
 const _: () = assert!(core::mem::offset_of!(BGSLightingTemplate, __vftable) == 0x0);
@@ -2401,6 +2469,7 @@ pub struct BGSLocAlias {
     pub unknown_54: [u8; 4],
     /// +0x58 `undefined8`, ctor store
     pub field_58: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSLocAlias>() == 0x60);
 const _: () = assert!(core::mem::offset_of!(BGSLocAlias, __vftable) == 0x0);
@@ -2469,6 +2538,7 @@ pub struct BGSLocation {
     /// +0xEC `undefined2`, ctor store
     pub field_EC: u16,
     pub unknown_EE: [u8; 2],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSLocation>() == 0xF0);
 const _: () = assert!(core::mem::offset_of!(BGSLocation, __vftable) == 0x0);
@@ -2513,6 +2583,7 @@ pub struct BGSLocationRefType {
     pub unknown_1B: [u8; 5],
     /// +0x20 `pointer`, base BGSKeyword, semantic; BSFixedString editor id of the keyword (high)
     pub keyword: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSLocationRefType>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(BGSLocationRefType, __vftable) == 0x0);
@@ -2569,6 +2640,7 @@ pub struct BGSMaterialObject {
     /// +0x7C `undefined8`, ctor store
     pub field_7C: u64,
     pub unknown_84: [u8; 52],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSMaterialObject>() == 0xB8);
 const _: () = assert!(core::mem::offset_of!(BGSMaterialObject, __vftable) == 0x0);
@@ -2623,6 +2695,7 @@ pub struct BGSMaterialType {
     pub field_40: u64,
     /// +0x48 `undefined8`, ctor store
     pub field_48: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSMaterialType>() == 0x50);
 const _: () = assert!(core::mem::offset_of!(BGSMaterialType, __vftable) == 0x0);
@@ -2648,6 +2721,7 @@ pub struct BGSMenuDisplayObject {
     pub __vftable: *const crate::raw::vtables::BGSMenuDisplayObject_vtable,
     /// +0x8 `undefined8`, ctor store
     pub field_8: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSMenuDisplayObject>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(BGSMenuDisplayObject, __vftable) == 0x0);
@@ -2673,6 +2747,7 @@ pub struct BGSMenuIcon {
     pub unknown_1B: [u8; 5],
     /// +0x20 `vtbl:BGSMenuIcon:20`, rtti
     pub __vftable_20: *const crate::raw::vtables::BGSMenuIcon_vtable_20,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSMenuIcon, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BGSMenuIcon, sourceFiles) == 0x8);
@@ -2720,6 +2795,7 @@ pub struct BGSMessage {
     pub field_60: u32,
     /// +0x64 `undefined4`, ctor store
     pub field_64: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSMessage>() == 0x68);
 const _: () = assert!(core::mem::offset_of!(BGSMessage, __vftable) == 0x0);
@@ -2745,6 +2821,7 @@ const _: () = assert!(core::mem::offset_of!(BGSMessage, field_64) == 0x64);
 pub struct BGSMessageIcon {
     /// +0x0 `vtbl:BGSMessageIcon:0`, rtti
     pub __vftable: *const crate::raw::vtables::BGSMessageIcon_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSMessageIcon, __vftable) == 0x0);
 
@@ -2813,6 +2890,7 @@ pub struct BGSMovableStatic {
     /// +0xA8 `undefined1`, ctor store
     pub field_A8: u8,
     pub unknown_A9: [u8; 7],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSMovableStatic>() == 0xB0);
 const _: () = assert!(core::mem::offset_of!(BGSMovableStatic, __vftable) == 0x0);
@@ -2872,6 +2950,7 @@ pub struct BGSMovementType {
     pub field_58: u32,
     /// +0x5C `undefined4`, ctor store
     pub field_5C: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSMovementType>() == 0x60);
 const _: () = assert!(core::mem::offset_of!(BGSMovementType, __vftable) == 0x0);
@@ -2926,6 +3005,7 @@ pub struct BGSMoviePlayer {
     /// +0xB8 `undefined1`, ctor store
     pub field_B8: u8,
     pub unknown_B9: [u8; 7],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSMoviePlayer>() == 0xC0);
 const _: () = assert!(core::mem::offset_of!(BGSMoviePlayer, __vftable) == 0x0);
@@ -2951,6 +3031,7 @@ const _: () = assert!(core::mem::offset_of!(BGSMoviePlayer, field_B8) == 0xB8);
 pub struct BGSMultiTechniqueAttach {
     /// +0x0 `vtbl:BGSMultiTechniqueAttach:0`, rtti
     pub __vftable: *const crate::raw::vtables::BGSMultiTechniqueAttach_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSMultiTechniqueAttach, __vftable) == 0x0);
 
@@ -2960,6 +3041,7 @@ const _: () = assert!(core::mem::offset_of!(BGSMultiTechniqueAttach, __vftable) 
 pub struct BGSMultiTechniqueAttach__ActionPolicy {
     /// +0x0 `vtbl:BGSMultiTechniqueAttach::ActionPolicy:0`, rtti
     pub __vftable: *const crate::raw::vtables::BGSMultiTechniqueAttach__ActionPolicy_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSMultiTechniqueAttach__ActionPolicy, __vftable) == 0x0);
 
@@ -2970,6 +3052,7 @@ const _: () = assert!(core::mem::offset_of!(BGSMultiTechniqueAttach__ActionPolic
 pub struct BGSMultiTechniqueAttach__AttachPolicy {
     /// +0x0 `vtbl:BGSMultiTechniqueAttach::AttachPolicy:0`, rtti
     pub __vftable: *const crate::raw::vtables::BGSMultiTechniqueAttach__AttachPolicy_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSMultiTechniqueAttach__AttachPolicy, __vftable) == 0x0);
 
@@ -2980,6 +3063,7 @@ const _: () = assert!(core::mem::offset_of!(BGSMultiTechniqueAttach__AttachPolic
 pub struct BGSMultiTechniqueAttach__DetachPolicy {
     /// +0x0 `vtbl:BGSMultiTechniqueAttach::DetachPolicy:0`, rtti
     pub __vftable: *const crate::raw::vtables::BGSMultiTechniqueAttach__DetachPolicy_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSMultiTechniqueAttach__DetachPolicy, __vftable) == 0x0);
 
@@ -3010,6 +3094,7 @@ pub struct BGSMusicPaletteTrack {
     pub field_80: u64,
     /// +0x88 `undefined8`, ctor store
     pub field_88: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSMusicPaletteTrack>() == 0x90);
 const _: () = assert!(core::mem::offset_of!(BGSMusicPaletteTrack, __vftable) == 0x0);
@@ -3037,6 +3122,7 @@ pub struct BGSMusicSilenceTrack {
     /// +0x18 `undefined4`, base BGSMusicTrack
     pub field_18: u32,
     pub unknown_1C: [u8; 28],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSMusicSilenceTrack>() == 0x38);
 const _: () = assert!(core::mem::offset_of!(BGSMusicSilenceTrack, __vftable) == 0x0);
@@ -3090,6 +3176,7 @@ pub struct BGSMusicSingleTrack {
     pub unknown_79: [u8; 3],
     /// +0x7C `undefined4`, ctor store
     pub field_7C: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSMusicSingleTrack>() == 0x80);
 const _: () = assert!(core::mem::offset_of!(BGSMusicSingleTrack, __vftable) == 0x0);
@@ -3125,6 +3212,7 @@ pub struct BGSMusicTrack {
     /// +0x18 `undefined4`, ctor store
     pub field_18: u32,
     pub unknown_1C: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSMusicTrack>() == 0x20);
 const _: () = assert!(core::mem::offset_of!(BGSMusicTrack, __vftable) == 0x0);
@@ -3139,6 +3227,7 @@ const _: () = assert!(core::mem::offset_of!(BGSMusicTrack, field_18) == 0x18);
 pub struct BGSNamedNodeAttach {
     /// +0x0 `vtbl:BGSNamedNodeAttach:0`, rtti
     pub __vftable: *const crate::raw::vtables::BGSNamedNodeAttach_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSNamedNodeAttach, __vftable) == 0x0);
 
@@ -3148,6 +3237,7 @@ const _: () = assert!(core::mem::offset_of!(BGSNamedNodeAttach, __vftable) == 0x
 pub struct BGSNamedNodeAttach__ActionPolicy {
     /// +0x0 `vtbl:BGSNamedNodeAttach::ActionPolicy:0`, rtti
     pub __vftable: *const crate::raw::vtables::BGSNamedNodeAttach__ActionPolicy_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSNamedNodeAttach__ActionPolicy, __vftable) == 0x0);
 
@@ -3158,6 +3248,7 @@ const _: () = assert!(core::mem::offset_of!(BGSNamedNodeAttach__ActionPolicy, __
 pub struct BGSNamedNodeAttach__AttachPolicy {
     /// +0x0 `vtbl:BGSNamedNodeAttach::AttachPolicy:0`, rtti
     pub __vftable: *const crate::raw::vtables::BGSNamedNodeAttach__AttachPolicy_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSNamedNodeAttach__AttachPolicy, __vftable) == 0x0);
 
@@ -3168,6 +3259,7 @@ const _: () = assert!(core::mem::offset_of!(BGSNamedNodeAttach__AttachPolicy, __
 pub struct BGSNamedNodeAttach__DetachPolicy {
     /// +0x0 `vtbl:BGSNamedNodeAttach::DetachPolicy:0`, rtti
     pub __vftable: *const crate::raw::vtables::BGSNamedNodeAttach__DetachPolicy_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSNamedNodeAttach__DetachPolicy, __vftable) == 0x0);
 
@@ -3181,6 +3273,7 @@ pub struct BGSNamedPackageData_IAITarget {
     /// +0x8 `vtbl:BGSNamedPackageData<IAITarget>:8`, rtti
     pub __vftable_8: *const crate::raw::vtables::BGSNamedPackageData_IAITarget_vtable_8,
     pub unknown_10: [u8; 16],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSNamedPackageData_IAITarget>() == 0x20);
 const _: () = assert!(core::mem::offset_of!(BGSNamedPackageData_IAITarget, __vftable) == 0x0);
@@ -3194,6 +3287,7 @@ pub struct BGSNamedPackageData_IPackageData {
     /// +0x0 `vtbl:BGSNamedPackageData<IPackageData>:0`, rtti
     pub __vftable: *const crate::raw::vtables::BGSNamedPackageData_IPackageData_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSNamedPackageData_IPackageData>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(BGSNamedPackageData_IPackageData, __vftable) == 0x0);
@@ -3208,6 +3302,7 @@ pub struct BGSNamedPackageData_IPackageDataAIWorldLocationHandle {
     /// +0x8 `vtbl:BGSNamedPackageData<IPackageDataAIWorldLocationHandle>:8`, rtti
     pub __vftable_8: *const crate::raw::vtables::BGSNamedPackageData_IPackageDataAIWorldLocationHandle_vtable_8,
     pub unknown_10: [u8; 16],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSNamedPackageData_IPackageDataAIWorldLocationHandle>() == 0x20);
 const _: () = assert!(core::mem::offset_of!(BGSNamedPackageData_IPackageDataAIWorldLocationHandle, __vftable) == 0x0);
@@ -3273,6 +3368,7 @@ pub struct BGSNote {
     /// +0xB0 `undefined2`, ctor store
     pub field_B0: u16,
     pub unknown_B2: [u8; 6],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSNote, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BGSNote, sourceFiles) == 0x8);
@@ -3305,6 +3401,7 @@ const _: () = assert!(core::mem::offset_of!(BGSNote, field_B0) == 0xB0);
 pub struct BGSOpenCloseForm {
     /// +0x0 `vtbl:BGSOpenCloseForm:0`, rtti
     pub __vftable: *const crate::raw::vtables::BGSOpenCloseForm_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSOpenCloseForm>() == 0x8);
 const _: () = assert!(core::mem::offset_of!(BGSOpenCloseForm, __vftable) == 0x0);
@@ -3330,6 +3427,7 @@ pub struct BGSOutfit {
     /// +0x30 `undefined4`, ctor store
     pub field_30: u32,
     pub unknown_34: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSOutfit>() == 0x38);
 const _: () = assert!(core::mem::offset_of!(BGSOutfit, __vftable) == 0x0);
@@ -3355,6 +3453,7 @@ pub struct BGSOverridePackCollection {
     pub field_18: u64,
     /// +0x20 `undefined8`, ctor store
     pub field_20: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSOverridePackCollection>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(BGSOverridePackCollection, __vftable) == 0x0);
@@ -3372,6 +3471,7 @@ pub struct BGSPackageDataBasicTemplate_IAITarget_BSPointerHandle_TESObjectREFR_B
     pub __vftable: *const crate::raw::vtables::BGSPackageDataBasicTemplate_IAITarget_BSPointerHandle_TESObjectREFR_BSUntypedPointerHandle_20_6__5d4a9c252dbd_vtable,
     /// +0x8 `vtbl:BGSPackageDataBasicTemplate<IAITarget,BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>,&class_BSFixedString_const_kPackageDataRefTypeName,0>:8`, rtti
     pub __vftable_8: *const crate::raw::vtables::BGSPackageDataBasicTemplate_IAITarget_BSPointerHandle_TESObjectREFR_BSUntypedPointerHandle_20_6__5d4a9c252dbd_vtable_8,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSPackageDataBasicTemplate_IAITarget_BSPointerHandle_TESObjectREFR_BSUntypedPointerHandle_20_6__5d4a9c252dbd, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BGSPackageDataBasicTemplate_IAITarget_BSPointerHandle_TESObjectREFR_BSUntypedPointerHandle_20_6__5d4a9c252dbd, __vftable_8) == 0x8);
@@ -3384,6 +3484,7 @@ pub struct BGSPackageDataBasicTemplate_IPackageData_float_class_BSFixedString_co
     /// +0x0 `vtbl:BGSPackageDataBasicTemplate<IPackageData,float,&class_BSFixedString_const_kPackageDataFloatTypeName,&float_const_fPackageDataFloatDefault>:0`, rtti
     pub __vftable: *const crate::raw::vtables::BGSPackageDataBasicTemplate_IPackageData_float_class_BSFixedString_const_kPackageDataFloatTypeNa_8b9ae7e590ff_vtable,
     pub unknown_8: [u8; 16],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSPackageDataBasicTemplate_IPackageData_float_class_BSFixedString_const_kPackageDataFloatTypeNa_8b9ae7e590ff>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(BGSPackageDataBasicTemplate_IPackageData_float_class_BSFixedString_const_kPackageDataFloatTypeNa_8b9ae7e590ff, __vftable) == 0x0);
@@ -3396,6 +3497,7 @@ pub struct BGSPackageDataBasicTemplate_IPackageData_int_class_BSFixedString_cons
     /// +0x0 `vtbl:BGSPackageDataBasicTemplate<IPackageData,int,&class_BSFixedString_const_kPackageDataIntTypeName,&int_const_iPackageDataIntDefault>:0`, rtti
     pub __vftable: *const crate::raw::vtables::BGSPackageDataBasicTemplate_IPackageData_int_class_BSFixedString_const_kPackageDataIntTypeName_i_5a976714a864_vtable,
     pub unknown_8: [u8; 16],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSPackageDataBasicTemplate_IPackageData_int_class_BSFixedString_const_kPackageDataIntTypeName_i_5a976714a864>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(BGSPackageDataBasicTemplate_IPackageData_int_class_BSFixedString_const_kPackageDataIntTypeName_i_5a976714a864, __vftable) == 0x0);
@@ -3408,6 +3510,7 @@ pub struct BGSPackageDataBool {
     /// +0x0 `vtbl:BGSPackageDataBool:0`, rtti
     pub __vftable: *const crate::raw::vtables::BGSPackageDataBool_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSPackageDataBool>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(BGSPackageDataBool, __vftable) == 0x0);
@@ -3420,6 +3523,7 @@ pub struct BGSPackageDataFloat {
     /// +0x0 `vtbl:BGSPackageDataFloat:0`, rtti
     pub __vftable: *const crate::raw::vtables::BGSPackageDataFloat_vtable,
     pub unknown_8: [u8; 16],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSPackageDataFloat>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(BGSPackageDataFloat, __vftable) == 0x0);
@@ -3432,6 +3536,7 @@ pub struct BGSPackageDataInt {
     /// +0x0 `vtbl:BGSPackageDataInt:0`, rtti
     pub __vftable: *const crate::raw::vtables::BGSPackageDataInt_vtable,
     pub unknown_8: [u8; 16],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSPackageDataInt>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(BGSPackageDataInt, __vftable) == 0x0);
@@ -3446,6 +3551,7 @@ pub struct BGSPackageDataLocation {
     /// +0x8 `vtbl:BGSPackageDataLocation:8`, rtti
     pub __vftable_8: *const crate::raw::vtables::BGSPackageDataLocation_vtable_8,
     pub unknown_10: [u8; 16],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSPackageDataLocation>() == 0x20);
 const _: () = assert!(core::mem::offset_of!(BGSPackageDataLocation, __vftable) == 0x0);
@@ -3462,6 +3568,7 @@ pub struct BGSPackageDataLocationWrapper {
     pub __vftable_8: *const crate::raw::vtables::BGSPackageDataLocationWrapper_vtable_8,
     /// +0x10 `undefined8`, ctor store
     pub field_10: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSPackageDataLocationWrapper>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(BGSPackageDataLocationWrapper, __vftable) == 0x0);
@@ -3478,6 +3585,7 @@ pub struct BGSPackageDataObjectList {
     /// +0x8 `vtbl:BGSPackageDataObjectList:8`, rtti
     pub __vftable_8: *const crate::raw::vtables::BGSPackageDataObjectList_vtable_8,
     pub unknown_10: [u8; 48],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSPackageDataObjectList>() == 0x40);
 const _: () = assert!(core::mem::offset_of!(BGSPackageDataObjectList, __vftable) == 0x0);
@@ -3493,6 +3601,7 @@ pub struct BGSPackageDataPointerTemplate_IAITarget_PackageTarget_class_BSFixedSt
     /// +0x8 `vtbl:BGSPackageDataPointerTemplate<IAITarget,PackageTarget,&class_BSFixedString_const_kPackageDataRef2TypeName>:8`, rtti
     pub __vftable_8: *const crate::raw::vtables::BGSPackageDataPointerTemplate_IAITarget_PackageTarget_class_BSFixedString_const_kPackageDataRef2TypeName_vtable_8,
     pub unknown_10: [u8; 16],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSPackageDataPointerTemplate_IAITarget_PackageTarget_class_BSFixedString_const_kPackageDataRef2TypeName>() == 0x20);
 const _: () = assert!(core::mem::offset_of!(BGSPackageDataPointerTemplate_IAITarget_PackageTarget_class_BSFixedString_const_kPackageDataRef2TypeName, __vftable) == 0x0);
@@ -3506,6 +3615,7 @@ pub struct BGSPackageDataPointerTemplate_IPackageData_PackageTarget_class_BSFixe
     /// +0x0 `vtbl:BGSPackageDataPointerTemplate<IPackageData,PackageTarget,&class_BSFixedString_const_kPackageDataTargetSelectorTypeName>:0`, rtti
     pub __vftable: *const crate::raw::vtables::BGSPackageDataPointerTemplate_IPackageData_PackageTarget_class_BSFixedString_const_kPackageDataTargetSelectorTypeName_vtable,
     pub unknown_8: [u8; 16],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSPackageDataPointerTemplate_IPackageData_PackageTarget_class_BSFixedString_const_kPackageDataTargetSelectorTypeName>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(BGSPackageDataPointerTemplate_IPackageData_PackageTarget_class_BSFixedString_const_kPackageDataTargetSelectorTypeName, __vftable) == 0x0);
@@ -3520,6 +3630,7 @@ pub struct BGSPackageDataPointerTemplate_IPackageDataAIWorldLocationHandle_Packa
     /// +0x8 `vtbl:BGSPackageDataPointerTemplate<IPackageDataAIWorldLocationHandle,PackageLocation,&class_BSFixedString_const_kPackageDataLocationTypeName>:8`, rtti
     pub __vftable_8: *const crate::raw::vtables::BGSPackageDataPointerTemplate_IPackageDataAIWorldLocationHandle_PackageLocation_class_BSFixedStr_0ffa3654c476_vtable_8,
     pub unknown_10: [u8; 16],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSPackageDataPointerTemplate_IPackageDataAIWorldLocationHandle_PackageLocation_class_BSFixedStr_0ffa3654c476>() == 0x20);
 const _: () = assert!(core::mem::offset_of!(BGSPackageDataPointerTemplate_IPackageDataAIWorldLocationHandle_PackageLocation_class_BSFixedStr_0ffa3654c476, __vftable) == 0x0);
@@ -3535,6 +3646,7 @@ pub struct BGSPackageDataRef {
     /// +0x8 `vtbl:BGSPackageDataRef:8`, rtti
     pub __vftable_8: *const crate::raw::vtables::BGSPackageDataRef_vtable_8,
     pub unknown_10: [u8; 16],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSPackageDataRef>() == 0x20);
 const _: () = assert!(core::mem::offset_of!(BGSPackageDataRef, __vftable) == 0x0);
@@ -3549,6 +3661,7 @@ pub struct BGSPackageDataRefOLD {
     pub __vftable: *const crate::raw::vtables::BGSPackageDataRefOLD_vtable,
     /// +0x8 `vtbl:BGSPackageDataRefOLD:8`, rtti
     pub __vftable_8: *const crate::raw::vtables::BGSPackageDataRefOLD_vtable_8,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSPackageDataRefOLD, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BGSPackageDataRefOLD, __vftable_8) == 0x8);
@@ -3561,6 +3674,7 @@ pub struct BGSPackageDataSaveableTemplate_IPackageData_float_class_BSFixedString
     /// +0x0 `vtbl:BGSPackageDataSaveableTemplate<IPackageData,float,&class_BSFixedString_const_kPackageDataFloatTypeName,&float_const_fPackageDataFloatDefault>:0`, rtti
     pub __vftable: *const crate::raw::vtables::BGSPackageDataSaveableTemplate_IPackageData_float_class_BSFixedString_const_kPackageDataFloatTyp_0cb254898459_vtable,
     pub unknown_8: [u8; 16],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSPackageDataSaveableTemplate_IPackageData_float_class_BSFixedString_const_kPackageDataFloatTyp_0cb254898459>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(BGSPackageDataSaveableTemplate_IPackageData_float_class_BSFixedString_const_kPackageDataFloatTyp_0cb254898459, __vftable) == 0x0);
@@ -3573,6 +3687,7 @@ pub struct BGSPackageDataSaveableTemplate_IPackageData_int_class_BSFixedString_c
     /// +0x0 `vtbl:BGSPackageDataSaveableTemplate<IPackageData,int,&class_BSFixedString_const_kPackageDataIntTypeName,&int_const_iPackageDataIntDefault>:0`, rtti
     pub __vftable: *const crate::raw::vtables::BGSPackageDataSaveableTemplate_IPackageData_int_class_BSFixedString_const_kPackageDataIntTypeNam_68f14969af7c_vtable,
     pub unknown_8: [u8; 16],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSPackageDataSaveableTemplate_IPackageData_int_class_BSFixedString_const_kPackageDataIntTypeNam_68f14969af7c>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(BGSPackageDataSaveableTemplate_IPackageData_int_class_BSFixedString_const_kPackageDataIntTypeNam_68f14969af7c, __vftable) == 0x0);
@@ -3585,6 +3700,7 @@ pub struct BGSPackageDataTargetSelector {
     /// +0x0 `vtbl:BGSPackageDataTargetSelector:0`, rtti
     pub __vftable: *const crate::raw::vtables::BGSPackageDataTargetSelector_vtable,
     pub unknown_8: [u8; 16],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSPackageDataTargetSelector>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(BGSPackageDataTargetSelector, __vftable) == 0x0);
@@ -3597,6 +3713,7 @@ pub struct BGSPackageDataTopic {
     /// +0x0 `vtbl:BGSPackageDataTopic:0`, rtti
     pub __vftable: *const crate::raw::vtables::BGSPackageDataTopic_vtable,
     pub unknown_8: [u8; 24],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSPackageDataTopic>() == 0x20);
 const _: () = assert!(core::mem::offset_of!(BGSPackageDataTopic, __vftable) == 0x0);
@@ -3608,6 +3725,7 @@ const _: () = assert!(core::mem::offset_of!(BGSPackageDataTopic, __vftable) == 0
 pub struct BGSPackageDataTypeCheck_BGSPackageDataBool_BGSPackageDataBool {
     /// +0x0 `vtbl:BGSPackageDataTypeCheck<BGSPackageDataBool,BGSPackageDataBool>:0`, rtti
     pub __vftable: *const crate::raw::vtables::BGSPackageDataTypeCheck_BGSPackageDataBool_BGSPackageDataBool_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSPackageDataTypeCheck_BGSPackageDataBool_BGSPackageDataBool, __vftable) == 0x0);
 
@@ -3618,6 +3736,7 @@ const _: () = assert!(core::mem::offset_of!(BGSPackageDataTypeCheck_BGSPackageDa
 pub struct BGSPackageDataTypeCheck_BGSPackageDataFloat_BGSPackageDataFloat {
     /// +0x0 `vtbl:BGSPackageDataTypeCheck<BGSPackageDataFloat,BGSPackageDataFloat>:0`, rtti
     pub __vftable: *const crate::raw::vtables::BGSPackageDataTypeCheck_BGSPackageDataFloat_BGSPackageDataFloat_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSPackageDataTypeCheck_BGSPackageDataFloat_BGSPackageDataFloat, __vftable) == 0x0);
 
@@ -3628,6 +3747,7 @@ const _: () = assert!(core::mem::offset_of!(BGSPackageDataTypeCheck_BGSPackageDa
 pub struct BGSPackageDataTypeCheck_BGSPackageDataInt_BGSPackageDataInt {
     /// +0x0 `vtbl:BGSPackageDataTypeCheck<BGSPackageDataInt,BGSPackageDataInt>:0`, rtti
     pub __vftable: *const crate::raw::vtables::BGSPackageDataTypeCheck_BGSPackageDataInt_BGSPackageDataInt_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSPackageDataTypeCheck_BGSPackageDataInt_BGSPackageDataInt, __vftable) == 0x0);
 
@@ -3638,6 +3758,7 @@ const _: () = assert!(core::mem::offset_of!(BGSPackageDataTypeCheck_BGSPackageDa
 pub struct BGSPackageDataTypeCheck_BGSPackageDataObjectList_BGSPackageDataObjectList {
     /// +0x0 `vtbl:BGSPackageDataTypeCheck<BGSPackageDataObjectList,BGSPackageDataObjectList>:0`, rtti
     pub __vftable: *const crate::raw::vtables::BGSPackageDataTypeCheck_BGSPackageDataObjectList_BGSPackageDataObjectList_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSPackageDataTypeCheck_BGSPackageDataObjectList_BGSPackageDataObjectList, __vftable) == 0x0);
 
@@ -3648,6 +3769,7 @@ const _: () = assert!(core::mem::offset_of!(BGSPackageDataTypeCheck_BGSPackageDa
 pub struct BGSPackageDataTypeCheck_BGSPackageDataTargetSelector_BGSPackageDataTargetSelector {
     /// +0x0 `vtbl:BGSPackageDataTypeCheck<BGSPackageDataTargetSelector,BGSPackageDataTargetSelector>:0`, rtti
     pub __vftable: *const crate::raw::vtables::BGSPackageDataTypeCheck_BGSPackageDataTargetSelector_BGSPackageDataTargetSelector_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSPackageDataTypeCheck_BGSPackageDataTargetSelector_BGSPackageDataTargetSelector, __vftable) == 0x0);
 
@@ -3658,6 +3780,7 @@ const _: () = assert!(core::mem::offset_of!(BGSPackageDataTypeCheck_BGSPackageDa
 pub struct BGSPackageDataTypeCheck_BGSPackageDataTopic_BGSPackageDataTopic {
     /// +0x0 `vtbl:BGSPackageDataTypeCheck<BGSPackageDataTopic,BGSPackageDataTopic>:0`, rtti
     pub __vftable: *const crate::raw::vtables::BGSPackageDataTypeCheck_BGSPackageDataTopic_BGSPackageDataTopic_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSPackageDataTypeCheck_BGSPackageDataTopic_BGSPackageDataTopic, __vftable) == 0x0);
 
@@ -3668,6 +3791,7 @@ const _: () = assert!(core::mem::offset_of!(BGSPackageDataTypeCheck_BGSPackageDa
 pub struct BGSPackageDataTypeCheck_IAITarget_BGSPackageDataObjectList {
     /// +0x0 `vtbl:BGSPackageDataTypeCheck<IAITarget,BGSPackageDataObjectList>:0`, rtti
     pub __vftable: *const crate::raw::vtables::BGSPackageDataTypeCheck_IAITarget_BGSPackageDataObjectList_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSPackageDataTypeCheck_IAITarget_BGSPackageDataObjectList, __vftable) == 0x0);
 
@@ -3678,6 +3802,7 @@ const _: () = assert!(core::mem::offset_of!(BGSPackageDataTypeCheck_IAITarget_BG
 pub struct BGSPackageDataTypeCheck_IAITarget_BGSPackageDataRef {
     /// +0x0 `vtbl:BGSPackageDataTypeCheck<IAITarget,BGSPackageDataRef>:0`, rtti
     pub __vftable: *const crate::raw::vtables::BGSPackageDataTypeCheck_IAITarget_BGSPackageDataRef_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSPackageDataTypeCheck_IAITarget_BGSPackageDataRef, __vftable) == 0x0);
 
@@ -3688,6 +3813,7 @@ const _: () = assert!(core::mem::offset_of!(BGSPackageDataTypeCheck_IAITarget_BG
 pub struct BGSPackageDataTypeCheck_IPackageDataAIWorldLocationHandle_BGSPackageDataLocation {
     /// +0x0 `vtbl:BGSPackageDataTypeCheck<IPackageDataAIWorldLocationHandle,BGSPackageDataLocation>:0`, rtti
     pub __vftable: *const crate::raw::vtables::BGSPackageDataTypeCheck_IPackageDataAIWorldLocationHandle_BGSPackageDataLocation_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSPackageDataTypeCheck_IPackageDataAIWorldLocationHandle_BGSPackageDataLocation, __vftable) == 0x0);
 
@@ -3698,6 +3824,7 @@ const _: () = assert!(core::mem::offset_of!(BGSPackageDataTypeCheck_IPackageData
 pub struct BGSPackageDataTypeCheck_IPackageDataAIWorldLocationHandle_BGSPackageDataRef {
     /// +0x0 `vtbl:BGSPackageDataTypeCheck<IPackageDataAIWorldLocationHandle,BGSPackageDataRef>:0`, rtti
     pub __vftable: *const crate::raw::vtables::BGSPackageDataTypeCheck_IPackageDataAIWorldLocationHandle_BGSPackageDataRef_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSPackageDataTypeCheck_IPackageDataAIWorldLocationHandle_BGSPackageDataRef, __vftable) == 0x0);
 
@@ -3708,6 +3835,7 @@ const _: () = assert!(core::mem::offset_of!(BGSPackageDataTypeCheck_IPackageData
 pub struct BGSParticleArrayAttach {
     /// +0x0 `vtbl:BGSParticleArrayAttach:0`, rtti
     pub __vftable: *const crate::raw::vtables::BGSParticleArrayAttach_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSParticleArrayAttach, __vftable) == 0x0);
 
@@ -3718,6 +3846,7 @@ const _: () = assert!(core::mem::offset_of!(BGSParticleArrayAttach, __vftable) =
 pub struct BGSParticleArrayAttach__ClearEmitterPolicy {
     /// +0x0 `vtbl:BGSParticleArrayAttach::ClearEmitterPolicy:0`, rtti
     pub __vftable: *const crate::raw::vtables::BGSParticleArrayAttach__ClearEmitterPolicy_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSParticleArrayAttach__ClearEmitterPolicy, __vftable) == 0x0);
 
@@ -3728,6 +3857,7 @@ const _: () = assert!(core::mem::offset_of!(BGSParticleArrayAttach__ClearEmitter
 pub struct BGSParticleArrayAttach__CollectEmitterPolicy {
     /// +0x0 `vtbl:BGSParticleArrayAttach::CollectEmitterPolicy:0`, rtti
     pub __vftable: *const crate::raw::vtables::BGSParticleArrayAttach__CollectEmitterPolicy_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSParticleArrayAttach__CollectEmitterPolicy, __vftable) == 0x0);
 
@@ -3737,6 +3867,7 @@ const _: () = assert!(core::mem::offset_of!(BGSParticleArrayAttach__CollectEmitt
 pub struct BGSParticleArrayAttach__EmitterPolicy {
     /// +0x0 `vtbl:BGSParticleArrayAttach::EmitterPolicy:0`, rtti
     pub __vftable: *const crate::raw::vtables::BGSParticleArrayAttach__EmitterPolicy_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSParticleArrayAttach__EmitterPolicy, __vftable) == 0x0);
 
@@ -3748,6 +3879,7 @@ pub struct BGSParticleObjectCloneTask {
     /// +0x0 `vtbl:BGSParticleObjectCloneTask:0`, rtti
     pub __vftable: *const crate::raw::vtables::BGSParticleObjectCloneTask_vtable,
     pub unknown_8: [u8; 56],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSParticleObjectCloneTask>() == 0x40);
 const _: () = assert!(core::mem::offset_of!(BGSParticleObjectCloneTask, __vftable) == 0x0);
@@ -3788,6 +3920,7 @@ pub struct BGSPerk {
     pub unknown_55: [u8; 35],
     /// +0x78 `undefined8`, ctor store
     pub field_78: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSPerk>() == 0x80);
 const _: () = assert!(core::mem::offset_of!(BGSPerk, __vftable) == 0x0);
@@ -3811,6 +3944,7 @@ const _: () = assert!(core::mem::offset_of!(BGSPerk, field_78) == 0x78);
 pub struct BGSPerk__AddPerkVisitor {
     /// +0x0 `vtbl:BGSPerk::AddPerkVisitor:0`, rtti
     pub __vftable: *const crate::raw::vtables::BGSPerk__AddPerkVisitor_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSPerk__AddPerkVisitor, __vftable) == 0x0);
 
@@ -3821,6 +3955,7 @@ const _: () = assert!(core::mem::offset_of!(BGSPerk__AddPerkVisitor, __vftable) 
 pub struct BGSPerk__ApplyPerksVisitor {
     /// +0x0 `vtbl:BGSPerk::ApplyPerksVisitor:0`, rtti
     pub __vftable: *const crate::raw::vtables::BGSPerk__ApplyPerksVisitor_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSPerk__ApplyPerksVisitor, __vftable) == 0x0);
 
@@ -3831,6 +3966,7 @@ const _: () = assert!(core::mem::offset_of!(BGSPerk__ApplyPerksVisitor, __vftabl
 pub struct BGSPerk__FindPerkInRanksVisitor {
     /// +0x0 `vtbl:BGSPerk::FindPerkInRanksVisitor:0`, rtti
     pub __vftable: *const crate::raw::vtables::BGSPerk__FindPerkInRanksVisitor_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSPerk__FindPerkInRanksVisitor, __vftable) == 0x0);
 
@@ -3841,6 +3977,7 @@ pub struct BGSPerkEntry {
     /// +0x0 `vtbl:BGSPerkEntry:0`, rtti
     pub __vftable: *const crate::raw::vtables::BGSPerkEntry_vtable,
     pub unknown_8: [u8; 16],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSPerkEntry>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(BGSPerkEntry, __vftable) == 0x0);
@@ -3857,6 +3994,7 @@ pub struct BGSPerkRankArray {
     /// +0x10 `undefined4`, ctor store
     pub field_10: u32,
     pub unknown_14: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSPerkRankArray>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(BGSPerkRankArray, __vftable) == 0x0);
@@ -3874,6 +4012,7 @@ pub struct BGSPickupPutdownSounds {
     pub field_8: u64,
     /// +0x10 `undefined8`, ctor store
     pub field_10: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSPickupPutdownSounds>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(BGSPickupPutdownSounds, __vftable) == 0x0);
@@ -3891,6 +4030,7 @@ pub struct BGSPlayerMusicChanger {
     pub __vftable_8: *const crate::raw::vtables::BGSPlayerMusicChanger_vtable_8,
     /// +0x10 `class:BSTEventSource`, RTTI base BSTEventSource<BSMusicEvent>
     pub source_BSMusicEvent: crate::BSTEventSource,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSPlayerMusicChanger, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BGSPlayerMusicChanger, __vftable_8) == 0x8);
@@ -3903,6 +4043,7 @@ const _: () = assert!(core::mem::offset_of!(BGSPlayerMusicChanger, source_BSMusi
 pub struct BGSPreloadable {
     /// +0x0 `vtbl:BGSPreloadable:0`, rtti
     pub __vftable: *const crate::raw::vtables::BGSPreloadable_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSPreloadable>() == 0x8);
 const _: () = assert!(core::mem::offset_of!(BGSPreloadable, __vftable) == 0x0);
@@ -3914,6 +4055,7 @@ pub struct BGSPrimitive {
     /// +0x0 `vtbl:BGSPrimitive:0`, rtti
     pub __vftable: *const crate::raw::vtables::BGSPrimitive_vtable,
     pub unknown_8: [u8; 16],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSPrimitive>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(BGSPrimitive, __vftable) == 0x0);
@@ -3926,6 +4068,7 @@ pub struct BGSPrimitiveBox {
     /// +0x0 `vtbl:BGSPrimitiveBox:0`, rtti
     pub __vftable: *const crate::raw::vtables::BGSPrimitiveBox_vtable,
     pub unknown_8: [u8; 16],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSPrimitiveBox>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(BGSPrimitiveBox, __vftable) == 0x0);
@@ -3938,6 +4081,7 @@ pub struct BGSPrimitiveLine {
     /// +0x0 `vtbl:BGSPrimitiveLine:0`, rtti
     pub __vftable: *const crate::raw::vtables::BGSPrimitiveLine_vtable,
     pub unknown_8: [u8; 16],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSPrimitiveLine>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(BGSPrimitiveLine, __vftable) == 0x0);
@@ -3950,6 +4094,7 @@ pub struct BGSPrimitivePlane {
     /// +0x0 `vtbl:BGSPrimitivePlane:0`, rtti
     pub __vftable: *const crate::raw::vtables::BGSPrimitivePlane_vtable,
     pub unknown_8: [u8; 16],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSPrimitivePlane>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(BGSPrimitivePlane, __vftable) == 0x0);
@@ -3962,6 +4107,7 @@ pub struct BGSPrimitiveSphere {
     /// +0x0 `vtbl:BGSPrimitiveSphere:0`, rtti
     pub __vftable: *const crate::raw::vtables::BGSPrimitiveSphere_vtable,
     pub unknown_8: [u8; 16],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSPrimitiveSphere>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(BGSPrimitiveSphere, __vftable) == 0x0);
@@ -3982,6 +4128,7 @@ pub struct BGSProcedureAcquire {
     pub unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base BGSProcedureBase
     pub field_30: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureAcquire>() == 0x38);
 const _: () = assert!(core::mem::offset_of!(BGSProcedureAcquire, __vftable) == 0x0);
@@ -4013,6 +4160,7 @@ pub struct BGSProcedureAcquireExecState {
     pub field_38: u64,
     /// +0x40 `undefined8`, ctor store
     pub field_40: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSProcedureAcquireExecState, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BGSProcedureAcquireExecState, field_8) == 0x8);
@@ -4040,6 +4188,7 @@ pub struct BGSProcedureActivate {
     pub unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base BGSProcedureBase
     pub field_30: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureActivate>() == 0x38);
 const _: () = assert!(core::mem::offset_of!(BGSProcedureActivate, __vftable) == 0x0);
@@ -4069,6 +4218,7 @@ pub struct BGSProcedureActivateExecState {
     /// +0x30 `undefined2`, ctor store
     pub field_30: u16,
     pub unknown_32: [u8; 6],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureActivateExecState>() == 0x38);
 const _: () = assert!(core::mem::offset_of!(BGSProcedureActivateExecState, __vftable) == 0x0);
@@ -4096,6 +4246,7 @@ pub struct BGSProcedureBase {
     pub unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, ctor store
     pub field_30: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureBase>() == 0x38);
 const _: () = assert!(core::mem::offset_of!(BGSProcedureBase, __vftable) == 0x0);
@@ -4119,6 +4270,7 @@ pub struct BGSProcedureDialogue {
     pub unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base BGSProcedureBase
     pub field_30: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSProcedureDialogue, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BGSProcedureDialogue, field_20) == 0x20);
@@ -4141,6 +4293,7 @@ pub struct BGSProcedureDialogueActivate {
     pub unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base BGSProcedureBase
     pub field_30: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureDialogueActivate>() == 0x38);
 const _: () = assert!(core::mem::offset_of!(BGSProcedureDialogueActivate, __vftable) == 0x0);
@@ -4173,6 +4326,7 @@ pub struct BGSProcedureDialogueActivateExecState {
     /// +0x42 `undefined1`, ctor store
     pub field_42: u8,
     pub unknown_43: [u8; 5],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureDialogueActivateExecState>() == 0x48);
 const _: () = assert!(core::mem::offset_of!(BGSProcedureDialogueActivateExecState, __vftable) == 0x0);
@@ -4194,6 +4348,7 @@ pub struct BGSProcedureDialogueExecState {
     pub __vftable: *const crate::raw::vtables::BGSProcedureDialogueExecState_vtable,
     /// +0x8 `undefined8`, base IProcedureTreeExecState
     pub field_8: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSProcedureDialogueExecState, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BGSProcedureDialogueExecState, field_8) == 0x8);
@@ -4214,6 +4369,7 @@ pub struct BGSProcedureDone {
     pub unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base BGSProcedureBase
     pub field_30: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSProcedureDone, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BGSProcedureDone, field_20) == 0x20);
@@ -4229,6 +4385,7 @@ pub struct BGSProcedureDoneExecState {
     pub __vftable: *const crate::raw::vtables::BGSProcedureDoneExecState_vtable,
     /// +0x8 `undefined8`, base IProcedureTreeExecState
     pub field_8: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSProcedureDoneExecState, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BGSProcedureDoneExecState, field_8) == 0x8);
@@ -4249,6 +4406,7 @@ pub struct BGSProcedureEat {
     pub unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base BGSProcedureBase
     pub field_30: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureEat>() == 0x38);
 const _: () = assert!(core::mem::offset_of!(BGSProcedureEat, __vftable) == 0x0);
@@ -4266,6 +4424,7 @@ pub struct BGSProcedureEatExecState {
     /// +0x8 `undefined8`, base IProcedureTreeExecState
     pub field_8: u64,
     pub unknown_10: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureEatExecState>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(BGSProcedureEatExecState, __vftable) == 0x0);
@@ -4287,6 +4446,7 @@ pub struct BGSProcedureEscort {
     pub unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base BGSProcedureBase
     pub field_30: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureEscort>() == 0x38);
 const _: () = assert!(core::mem::offset_of!(BGSProcedureEscort, __vftable) == 0x0);
@@ -4315,6 +4475,7 @@ pub struct BGSProcedureEscortExecState {
     pub unknown_37: [u8; 1],
     /// +0x38 `undefined8`, ctor store
     pub field_38: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSProcedureEscortExecState, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BGSProcedureEscortExecState, field_8) == 0x8);
@@ -4340,6 +4501,7 @@ pub struct BGSProcedureFind {
     pub unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base BGSProcedureBase
     pub field_30: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureFind>() == 0x38);
 const _: () = assert!(core::mem::offset_of!(BGSProcedureFind, __vftable) == 0x0);
@@ -4356,6 +4518,7 @@ pub struct BGSProcedureFindExecState {
     pub __vftable: *const crate::raw::vtables::BGSProcedureFindExecState_vtable,
     /// +0x8 `undefined8`, base IProcedureTreeExecState
     pub field_8: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSProcedureFindExecState, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BGSProcedureFindExecState, field_8) == 0x8);
@@ -4376,6 +4539,7 @@ pub struct BGSProcedureFlee {
     pub unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base BGSProcedureBase
     pub field_30: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureFlee>() == 0x38);
 const _: () = assert!(core::mem::offset_of!(BGSProcedureFlee, __vftable) == 0x0);
@@ -4422,6 +4586,7 @@ pub struct BGSProcedureFleeExecState {
     /// +0x6C `undefined2`, ctor store
     pub field_6C: u16,
     pub unknown_6E: [u8; 2],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSProcedureFleeExecState, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BGSProcedureFleeExecState, field_8) == 0x8);
@@ -4456,6 +4621,7 @@ pub struct BGSProcedureFlightGrab {
     pub unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base BGSProcedureBase
     pub field_30: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureFlightGrab>() == 0x38);
 const _: () = assert!(core::mem::offset_of!(BGSProcedureFlightGrab, __vftable) == 0x0);
@@ -4477,6 +4643,7 @@ pub struct BGSProcedureFlightGrabExecState {
     /// +0x18 `undefined2`, ctor store
     pub field_18: u16,
     pub unknown_1A: [u8; 6],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSProcedureFlightGrabExecState, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BGSProcedureFlightGrabExecState, field_8) == 0x8);
@@ -4499,6 +4666,7 @@ pub struct BGSProcedureFollow {
     pub unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base BGSProcedureBase
     pub field_30: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureFollow>() == 0x38);
 const _: () = assert!(core::mem::offset_of!(BGSProcedureFollow, __vftable) == 0x0);
@@ -4532,6 +4700,7 @@ pub struct BGSProcedureFollowExecState {
     /// +0x40 `undefined1`, ctor store
     pub field_40: u8,
     pub unknown_41: [u8; 7],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureFollowExecState>() == 0x48);
 const _: () = assert!(core::mem::offset_of!(BGSProcedureFollowExecState, __vftable) == 0x0);
@@ -4562,6 +4731,7 @@ pub struct BGSProcedureFollowTo {
     /// +0x30 `undefined8`, base BGSProcedureBase
     pub field_30: u64,
     pub unknown_38: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureFollowTo>() == 0x40);
 const _: () = assert!(core::mem::offset_of!(BGSProcedureFollowTo, __vftable) == 0x0);
@@ -4585,6 +4755,7 @@ pub struct BGSProcedureForceGreet {
     pub unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base BGSProcedureBase
     pub field_30: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureForceGreet>() == 0x38);
 const _: () = assert!(core::mem::offset_of!(BGSProcedureForceGreet, __vftable) == 0x0);
@@ -4608,6 +4779,7 @@ pub struct BGSProcedureGuard {
     pub unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base BGSProcedureBase
     pub field_30: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureGuard>() == 0x38);
 const _: () = assert!(core::mem::offset_of!(BGSProcedureGuard, __vftable) == 0x0);
@@ -4625,6 +4797,7 @@ pub struct BGSProcedureGuardExecState {
     /// +0x8 `undefined8`, base IProcedureTreeExecState
     pub field_8: u64,
     pub unknown_10: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureGuardExecState>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(BGSProcedureGuardExecState, __vftable) == 0x0);
@@ -4646,6 +4819,7 @@ pub struct BGSProcedureHoldPosition {
     pub unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base BGSProcedureBase
     pub field_30: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureHoldPosition>() == 0x38);
 const _: () = assert!(core::mem::offset_of!(BGSProcedureHoldPosition, __vftable) == 0x0);
@@ -4662,6 +4836,7 @@ pub struct BGSProcedureHoldPositionExecState {
     pub __vftable: *const crate::raw::vtables::BGSProcedureHoldPositionExecState_vtable,
     /// +0x8 `undefined8`, base IProcedureTreeExecState
     pub field_8: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureHoldPositionExecState>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(BGSProcedureHoldPositionExecState, __vftable) == 0x0);
@@ -4683,6 +4858,7 @@ pub struct BGSProcedureHover {
     pub unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base BGSProcedureBase
     pub field_30: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureHover>() == 0x38);
 const _: () = assert!(core::mem::offset_of!(BGSProcedureHover, __vftable) == 0x0);
@@ -4704,6 +4880,7 @@ pub struct BGSProcedureHoverExecState {
     /// +0x18 `undefined1`, ctor store
     pub field_18: u8,
     pub unknown_19: [u8; 7],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSProcedureHoverExecState, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BGSProcedureHoverExecState, field_8) == 0x8);
@@ -4726,6 +4903,7 @@ pub struct BGSProcedureKeepAnEyeOn {
     pub unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base BGSProcedureBase
     pub field_30: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureKeepAnEyeOn>() == 0x38);
 const _: () = assert!(core::mem::offset_of!(BGSProcedureKeepAnEyeOn, __vftable) == 0x0);
@@ -4743,6 +4921,7 @@ pub struct BGSProcedureKeepAnEyeOnExecState {
     /// +0x8 `undefined8`, base IProcedureTreeExecState
     pub field_8: u64,
     pub unknown_10: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureKeepAnEyeOnExecState>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(BGSProcedureKeepAnEyeOnExecState, __vftable) == 0x0);
@@ -4764,6 +4943,7 @@ pub struct BGSProcedureLock {
     pub unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base BGSProcedureBase
     pub field_30: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureLock>() == 0x38);
 const _: () = assert!(core::mem::offset_of!(BGSProcedureLock, __vftable) == 0x0);
@@ -4785,6 +4965,7 @@ pub struct BGSProcedureLockUnlockExecState {
     /// +0x12 `undefined1`, ctor store
     pub field_12: u8,
     pub unknown_13: [u8; 5],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSProcedureLockUnlockExecState, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BGSProcedureLockUnlockExecState, field_8) == 0x8);
@@ -4807,6 +4988,7 @@ pub struct BGSProcedureOrbit {
     pub unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base BGSProcedureBase
     pub field_30: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureOrbit>() == 0x38);
 const _: () = assert!(core::mem::offset_of!(BGSProcedureOrbit, __vftable) == 0x0);
@@ -4828,6 +5010,7 @@ pub struct BGSProcedureOrbitExecState {
     /// +0x18 `undefined2`, ctor store
     pub field_18: u16,
     pub unknown_1A: [u8; 6],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSProcedureOrbitExecState, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BGSProcedureOrbitExecState, field_8) == 0x8);
@@ -4850,6 +5033,7 @@ pub struct BGSProcedurePatrol {
     pub unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base BGSProcedureBase
     pub field_30: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedurePatrol>() == 0x38);
 const _: () = assert!(core::mem::offset_of!(BGSProcedurePatrol, __vftable) == 0x0);
@@ -4887,6 +5071,7 @@ pub struct BGSProcedurePatrolExecState {
     /// +0x52 `undefined1`, ctor store
     pub field_52: u8,
     pub unknown_53: [u8; 5],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedurePatrolExecState>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BGSProcedurePatrolExecState, __vftable) == 0x0);
@@ -4918,6 +5103,7 @@ pub struct BGSProcedurePursue {
     pub unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base BGSProcedureBase
     pub field_30: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSProcedurePursue, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BGSProcedurePursue, field_20) == 0x20);
@@ -4940,6 +5126,7 @@ pub struct BGSProcedureSandbox {
     pub unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base BGSProcedureBase
     pub field_30: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureSandbox>() == 0x38);
 const _: () = assert!(core::mem::offset_of!(BGSProcedureSandbox, __vftable) == 0x0);
@@ -5011,6 +5198,7 @@ pub struct BGSProcedureSandboxExecState {
     /// +0xB1 `undefined1`, ctor store
     pub field_B1: u8,
     pub unknown_B2: [u8; 6],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureSandboxExecState>() == 0xB8);
 const _: () = assert!(core::mem::offset_of!(BGSProcedureSandboxExecState, __vftable) == 0x0);
@@ -5057,6 +5245,7 @@ pub struct BGSProcedureSay {
     pub unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base BGSProcedureBase
     pub field_30: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureSay>() == 0x38);
 const _: () = assert!(core::mem::offset_of!(BGSProcedureSay, __vftable) == 0x0);
@@ -5073,6 +5262,7 @@ pub struct BGSProcedureSayExecState {
     pub __vftable: *const crate::raw::vtables::BGSProcedureSayExecState_vtable,
     /// +0x8 `undefined8`, base IProcedureTreeExecState
     pub field_8: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSProcedureSayExecState, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BGSProcedureSayExecState, field_8) == 0x8);
@@ -5093,6 +5283,7 @@ pub struct BGSProcedureShout {
     pub unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base BGSProcedureBase
     pub field_30: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureShout>() == 0x38);
 const _: () = assert!(core::mem::offset_of!(BGSProcedureShout, __vftable) == 0x0);
@@ -5128,6 +5319,7 @@ pub struct BGSProcedureShoutExecState {
     /// +0x40 `undefined4`, ctor store
     pub field_40: u32,
     pub unknown_44: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSProcedureShoutExecState, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BGSProcedureShoutExecState, __vftable_8) == 0x8);
@@ -5157,6 +5349,7 @@ pub struct BGSProcedureSit {
     pub unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base BGSProcedureBase
     pub field_30: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureSit>() == 0x38);
 const _: () = assert!(core::mem::offset_of!(BGSProcedureSit, __vftable) == 0x0);
@@ -5180,6 +5373,7 @@ pub struct BGSProcedureSitSleepExecState {
     /// +0x20 `undefined1`, ctor store
     pub field_20: u8,
     pub unknown_21: [u8; 7],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureSitSleepExecState>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(BGSProcedureSitSleepExecState, __vftable) == 0x0);
@@ -5204,6 +5398,7 @@ pub struct BGSProcedureSleep {
     pub unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base BGSProcedureBase
     pub field_30: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureSleep>() == 0x38);
 const _: () = assert!(core::mem::offset_of!(BGSProcedureSleep, __vftable) == 0x0);
@@ -5227,6 +5422,7 @@ pub struct BGSProcedureTravel {
     pub unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base BGSProcedureBase
     pub field_30: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureTravel>() == 0x38);
 const _: () = assert!(core::mem::offset_of!(BGSProcedureTravel, __vftable) == 0x0);
@@ -5250,6 +5446,7 @@ pub struct BGSProcedureTravelExecState {
     /// +0x20 `undefined4`, ctor store
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureTravelExecState>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(BGSProcedureTravelExecState, __vftable) == 0x0);
@@ -5269,6 +5466,7 @@ pub struct BGSProcedureTreeBranch {
     /// +0x28 `undefined4`, ctor store
     pub field_28: u32,
     pub unknown_2C: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureTreeBranch>() == 0x30);
 const _: () = assert!(core::mem::offset_of!(BGSProcedureTreeBranch, __vftable) == 0x0);
@@ -5281,6 +5479,7 @@ const _: () = assert!(core::mem::offset_of!(BGSProcedureTreeBranch, field_28) ==
 pub struct BGSProcedureTreeConditionalItem {
     /// +0x0 `vtbl:BGSProcedureTreeConditionalItem:0`, rtti
     pub __vftable: *const crate::raw::vtables::BGSProcedureTreeConditionalItem_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSProcedureTreeConditionalItem, __vftable) == 0x0);
 
@@ -5294,6 +5493,7 @@ pub struct BGSProcedureTreeOneChildExecState {
     /// +0x8 `undefined8`, base IProcedureTreeExecState
     pub field_8: u64,
     pub unknown_10: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureTreeOneChildExecState>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(BGSProcedureTreeOneChildExecState, __vftable) == 0x0);
@@ -5309,6 +5509,7 @@ pub struct BGSProcedureTreeProcedure {
     pub unknown_8: [u8; 8],
     /// +0x10 `undefined8`, ctor store
     pub field_10: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureTreeProcedure>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(BGSProcedureTreeProcedure, __vftable) == 0x0);
@@ -5325,6 +5526,7 @@ pub struct BGSProcedureTreeRandom {
     /// +0x28 `undefined4`, base BGSProcedureTreeBranch
     pub field_28: u32,
     pub unknown_2C: [u8; 12],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureTreeRandom>() == 0x38);
 const _: () = assert!(core::mem::offset_of!(BGSProcedureTreeRandom, __vftable) == 0x0);
@@ -5340,6 +5542,7 @@ pub struct BGSProcedureTreeRandomExecState {
     /// +0x8 `undefined8`, base IProcedureTreeExecState
     pub field_8: u64,
     pub unknown_10: [u8; 32],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureTreeRandomExecState>() == 0x30);
 const _: () = assert!(core::mem::offset_of!(BGSProcedureTreeRandomExecState, __vftable) == 0x0);
@@ -5356,6 +5559,7 @@ pub struct BGSProcedureTreeSequence {
     /// +0x28 `undefined4`, base BGSProcedureTreeBranch
     pub field_28: u32,
     pub unknown_2C: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureTreeSequence>() == 0x30);
 const _: () = assert!(core::mem::offset_of!(BGSProcedureTreeSequence, __vftable) == 0x0);
@@ -5371,6 +5575,7 @@ pub struct BGSProcedureTreeSequenceExecState {
     /// +0x8 `undefined8`, base IProcedureTreeExecState
     pub field_8: u64,
     pub unknown_10: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureTreeSequenceExecState>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(BGSProcedureTreeSequenceExecState, __vftable) == 0x0);
@@ -5387,6 +5592,7 @@ pub struct BGSProcedureTreeSimultaneous {
     /// +0x28 `undefined4`, base BGSProcedureTreeBranch
     pub field_28: u32,
     pub unknown_2C: [u8; 20],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureTreeSimultaneous>() == 0x40);
 const _: () = assert!(core::mem::offset_of!(BGSProcedureTreeSimultaneous, __vftable) == 0x0);
@@ -5402,6 +5608,7 @@ pub struct BGSProcedureTreeSimultaneousExecState {
     /// +0x8 `undefined8`, base IProcedureTreeExecState
     pub field_8: u64,
     pub unknown_10: [u8; 16],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureTreeSimultaneousExecState>() == 0x20);
 const _: () = assert!(core::mem::offset_of!(BGSProcedureTreeSimultaneousExecState, __vftable) == 0x0);
@@ -5418,6 +5625,7 @@ pub struct BGSProcedureTreeStacked {
     /// +0x28 `undefined4`, base BGSProcedureTreeBranch
     pub field_28: u32,
     pub unknown_2C: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureTreeStacked>() == 0x30);
 const _: () = assert!(core::mem::offset_of!(BGSProcedureTreeStacked, __vftable) == 0x0);
@@ -5433,6 +5641,7 @@ pub struct BGSProcedureTreeStackedExecState {
     /// +0x8 `undefined8`, base IProcedureTreeExecState
     pub field_8: u64,
     pub unknown_10: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureTreeStackedExecState>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(BGSProcedureTreeStackedExecState, __vftable) == 0x0);
@@ -5454,6 +5663,7 @@ pub struct BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const
     pub unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base BGSProcedureBase
     pub field_30: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureAcquireParamTypes>() == 0x38);
 const _: () = assert!(core::mem::offset_of!(BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureAcquireParamTypes, __vftable) == 0x0);
@@ -5477,6 +5687,7 @@ pub struct BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const
     pub unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base BGSProcedureBase
     pub field_30: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureActivateParamTypes>() == 0x38);
 const _: () = assert!(core::mem::offset_of!(BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureActivateParamTypes, __vftable) == 0x0);
@@ -5500,6 +5711,7 @@ pub struct BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const
     pub unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base BGSProcedureBase
     pub field_30: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureDialogueActivateParamTypes>() == 0x38);
 const _: () = assert!(core::mem::offset_of!(BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureDialogueActivateParamTypes, __vftable) == 0x0);
@@ -5523,6 +5735,7 @@ pub struct BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const
     pub unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base BGSProcedureBase
     pub field_30: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureDialogueParamTypes, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureDialogueParamTypes, field_20) == 0x20);
@@ -5545,6 +5758,7 @@ pub struct BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const
     pub unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base BGSProcedureBase
     pub field_30: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureDoneParamTypes, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureDoneParamTypes, field_20) == 0x20);
@@ -5567,6 +5781,7 @@ pub struct BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const
     pub unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base BGSProcedureBase
     pub field_30: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureEatParamTypes>() == 0x38);
 const _: () = assert!(core::mem::offset_of!(BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureEatParamTypes, __vftable) == 0x0);
@@ -5590,6 +5805,7 @@ pub struct BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const
     pub unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base BGSProcedureBase
     pub field_30: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureEscortParamTypes>() == 0x38);
 const _: () = assert!(core::mem::offset_of!(BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureEscortParamTypes, __vftable) == 0x0);
@@ -5613,6 +5829,7 @@ pub struct BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const
     pub unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base BGSProcedureBase
     pub field_30: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureFindParamTypes>() == 0x38);
 const _: () = assert!(core::mem::offset_of!(BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureFindParamTypes, __vftable) == 0x0);
@@ -5636,6 +5853,7 @@ pub struct BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const
     pub unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base BGSProcedureBase
     pub field_30: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureFleeParamTypes>() == 0x38);
 const _: () = assert!(core::mem::offset_of!(BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureFleeParamTypes, __vftable) == 0x0);
@@ -5659,6 +5877,7 @@ pub struct BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const
     pub unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base BGSProcedureBase
     pub field_30: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureFlightGrabParamTypes>() == 0x38);
 const _: () = assert!(core::mem::offset_of!(BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureFlightGrabParamTypes, __vftable) == 0x0);
@@ -5682,6 +5901,7 @@ pub struct BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const
     pub unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base BGSProcedureBase
     pub field_30: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureFollowParamTypes>() == 0x38);
 const _: () = assert!(core::mem::offset_of!(BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureFollowParamTypes, __vftable) == 0x0);
@@ -5706,6 +5926,7 @@ pub struct BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const
     /// +0x30 `undefined8`, base BGSProcedureBase
     pub field_30: u64,
     pub unknown_38: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureFollowToParamTypes>() == 0x40);
 const _: () = assert!(core::mem::offset_of!(BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureFollowToParamTypes, __vftable) == 0x0);
@@ -5729,6 +5950,7 @@ pub struct BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const
     pub unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base BGSProcedureBase
     pub field_30: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureForceGreetParamTypes>() == 0x38);
 const _: () = assert!(core::mem::offset_of!(BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureForceGreetParamTypes, __vftable) == 0x0);
@@ -5752,6 +5974,7 @@ pub struct BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const
     pub unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base BGSProcedureBase
     pub field_30: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureGuardParamTypes>() == 0x38);
 const _: () = assert!(core::mem::offset_of!(BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureGuardParamTypes, __vftable) == 0x0);
@@ -5775,6 +5998,7 @@ pub struct BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const
     pub unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base BGSProcedureBase
     pub field_30: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureHoldPositionParamTypes>() == 0x38);
 const _: () = assert!(core::mem::offset_of!(BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureHoldPositionParamTypes, __vftable) == 0x0);
@@ -5798,6 +6022,7 @@ pub struct BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const
     pub unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base BGSProcedureBase
     pub field_30: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureHoverParamTypes>() == 0x38);
 const _: () = assert!(core::mem::offset_of!(BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureHoverParamTypes, __vftable) == 0x0);
@@ -5821,6 +6046,7 @@ pub struct BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const
     pub unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base BGSProcedureBase
     pub field_30: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureKeepAnEyeOnParamTypes>() == 0x38);
 const _: () = assert!(core::mem::offset_of!(BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureKeepAnEyeOnParamTypes, __vftable) == 0x0);
@@ -5844,6 +6070,7 @@ pub struct BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const
     pub unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base BGSProcedureBase
     pub field_30: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureLockParamTypes>() == 0x38);
 const _: () = assert!(core::mem::offset_of!(BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureLockParamTypes, __vftable) == 0x0);
@@ -5867,6 +6094,7 @@ pub struct BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const
     pub unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base BGSProcedureBase
     pub field_30: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureOrbitParamTypes>() == 0x38);
 const _: () = assert!(core::mem::offset_of!(BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureOrbitParamTypes, __vftable) == 0x0);
@@ -5890,6 +6118,7 @@ pub struct BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const
     pub unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base BGSProcedureBase
     pub field_30: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedurePatrolParamTypes>() == 0x38);
 const _: () = assert!(core::mem::offset_of!(BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedurePatrolParamTypes, __vftable) == 0x0);
@@ -5913,6 +6142,7 @@ pub struct BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const
     pub unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base BGSProcedureBase
     pub field_30: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedurePursueParamTypes, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedurePursueParamTypes, field_20) == 0x20);
@@ -5935,6 +6165,7 @@ pub struct BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const
     pub unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base BGSProcedureBase
     pub field_30: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureSandboxParamTypes>() == 0x38);
 const _: () = assert!(core::mem::offset_of!(BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureSandboxParamTypes, __vftable) == 0x0);
@@ -5958,6 +6189,7 @@ pub struct BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const
     pub unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base BGSProcedureBase
     pub field_30: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureSayParamTypes>() == 0x38);
 const _: () = assert!(core::mem::offset_of!(BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureSayParamTypes, __vftable) == 0x0);
@@ -5981,6 +6213,7 @@ pub struct BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const
     pub unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base BGSProcedureBase
     pub field_30: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureShoutParamTypes>() == 0x38);
 const _: () = assert!(core::mem::offset_of!(BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureShoutParamTypes, __vftable) == 0x0);
@@ -6004,6 +6237,7 @@ pub struct BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const
     pub unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base BGSProcedureBase
     pub field_30: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureSitParamTypes>() == 0x38);
 const _: () = assert!(core::mem::offset_of!(BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureSitParamTypes, __vftable) == 0x0);
@@ -6027,6 +6261,7 @@ pub struct BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const
     pub unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base BGSProcedureBase
     pub field_30: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureSleepParamTypes>() == 0x38);
 const _: () = assert!(core::mem::offset_of!(BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureSleepParamTypes, __vftable) == 0x0);
@@ -6050,6 +6285,7 @@ pub struct BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const
     pub unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base BGSProcedureBase
     pub field_30: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureTravelParamTypes>() == 0x38);
 const _: () = assert!(core::mem::offset_of!(BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureTravelParamTypes, __vftable) == 0x0);
@@ -6073,6 +6309,7 @@ pub struct BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const
     pub unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base BGSProcedureBase
     pub field_30: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureUnlockParamTypes>() == 0x38);
 const _: () = assert!(core::mem::offset_of!(BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureUnlockParamTypes, __vftable) == 0x0);
@@ -6096,6 +6333,7 @@ pub struct BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const
     pub unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base BGSProcedureBase
     pub field_30: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureUseIdleMarkerParamTypes>() == 0x38);
 const _: () = assert!(core::mem::offset_of!(BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureUseIdleMarkerParamTypes, __vftable) == 0x0);
@@ -6119,6 +6357,7 @@ pub struct BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const
     pub unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base BGSProcedureBase
     pub field_30: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureUseMagicParamTypes>() == 0x38);
 const _: () = assert!(core::mem::offset_of!(BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureUseMagicParamTypes, __vftable) == 0x0);
@@ -6142,6 +6381,7 @@ pub struct BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const
     pub unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base BGSProcedureBase
     pub field_30: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureUseWeaponParamTypes>() == 0x38);
 const _: () = assert!(core::mem::offset_of!(BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureUseWeaponParamTypes, __vftable) == 0x0);
@@ -6165,6 +6405,7 @@ pub struct BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const
     pub unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base BGSProcedureBase
     pub field_30: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureWaitParamTypes>() == 0x38);
 const _: () = assert!(core::mem::offset_of!(BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureWaitParamTypes, __vftable) == 0x0);
@@ -6188,6 +6429,7 @@ pub struct BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const
     pub unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base BGSProcedureBase
     pub field_30: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureWanderParamTypes>() == 0x38);
 const _: () = assert!(core::mem::offset_of!(BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureWanderParamTypes, __vftable) == 0x0);
@@ -6211,6 +6453,7 @@ pub struct BGSProcedureUnlock {
     pub unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base BGSProcedureBase
     pub field_30: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureUnlock>() == 0x38);
 const _: () = assert!(core::mem::offset_of!(BGSProcedureUnlock, __vftable) == 0x0);
@@ -6234,6 +6477,7 @@ pub struct BGSProcedureUseIdleMarker {
     pub unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base BGSProcedureBase
     pub field_30: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureUseIdleMarker>() == 0x38);
 const _: () = assert!(core::mem::offset_of!(BGSProcedureUseIdleMarker, __vftable) == 0x0);
@@ -6260,6 +6504,7 @@ pub struct BGSProcedureUseIdleMarkerExecState {
     /// +0x28 `undefined1`, ctor store
     pub field_28: u8,
     pub unknown_29: [u8; 7],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureUseIdleMarkerExecState>() == 0x30);
 const _: () = assert!(core::mem::offset_of!(BGSProcedureUseIdleMarkerExecState, __vftable) == 0x0);
@@ -6285,6 +6530,7 @@ pub struct BGSProcedureUseMagic {
     pub unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base BGSProcedureBase
     pub field_30: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureUseMagic>() == 0x38);
 const _: () = assert!(core::mem::offset_of!(BGSProcedureUseMagic, __vftable) == 0x0);
@@ -6331,6 +6577,7 @@ pub struct BGSProcedureUseMagicExecState {
     /// +0x54 `undefined8`, ctor store
     pub field_54: u64,
     pub unknown_5C: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureUseMagicExecState>() == 0x60);
 const _: () = assert!(core::mem::offset_of!(BGSProcedureUseMagicExecState, __vftable) == 0x0);
@@ -6365,6 +6612,7 @@ pub struct BGSProcedureUseWeapon {
     pub unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base BGSProcedureBase
     pub field_30: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureUseWeapon>() == 0x38);
 const _: () = assert!(core::mem::offset_of!(BGSProcedureUseWeapon, __vftable) == 0x0);
@@ -6398,6 +6646,7 @@ pub struct BGSProcedureUseWeaponExecState {
     pub unknown_3A: [u8; 2],
     /// +0x3C `undefined4`, ctor store
     pub field_3C: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureUseWeaponExecState>() == 0x40);
 const _: () = assert!(core::mem::offset_of!(BGSProcedureUseWeaponExecState, __vftable) == 0x0);
@@ -6427,6 +6676,7 @@ pub struct BGSProcedureWait {
     pub unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base BGSProcedureBase
     pub field_30: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureWait>() == 0x38);
 const _: () = assert!(core::mem::offset_of!(BGSProcedureWait, __vftable) == 0x0);
@@ -6443,6 +6693,7 @@ pub struct BGSProcedureWaitExecState {
     pub __vftable: *const crate::raw::vtables::BGSProcedureWaitExecState_vtable,
     /// +0x8 `undefined8`, base IProcedureTreeExecState
     pub field_8: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureWaitExecState>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(BGSProcedureWaitExecState, __vftable) == 0x0);
@@ -6464,6 +6715,7 @@ pub struct BGSProcedureWander {
     pub unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base BGSProcedureBase
     pub field_30: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureWander>() == 0x38);
 const _: () = assert!(core::mem::offset_of!(BGSProcedureWander, __vftable) == 0x0);
@@ -6487,6 +6739,7 @@ pub struct BGSProcedureWanderExecState {
     /// +0x20 `undefined1`, ctor store
     pub field_20: u8,
     pub unknown_21: [u8; 7],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProcedureWanderExecState>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(BGSProcedureWanderExecState, __vftable) == 0x0);
@@ -6586,6 +6839,7 @@ pub struct BGSProjectile {
     /// +0x130 `undefined4`, ctor store
     pub field_130: u32,
     pub unknown_134: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSProjectile>() == 0x138);
 const _: () = assert!(core::mem::offset_of!(BGSProjectile, __vftable) == 0x0);
@@ -6635,6 +6889,7 @@ pub struct BGSQuestPerkEntry {
     /// +0x0 `vtbl:BGSQuestPerkEntry:0`, rtti
     pub __vftable: *const crate::raw::vtables::BGSQuestPerkEntry_vtable,
     pub unknown_8: [u8; 24],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSQuestPerkEntry>() == 0x20);
 const _: () = assert!(core::mem::offset_of!(BGSQuestPerkEntry, __vftable) == 0x0);
@@ -6677,6 +6932,7 @@ pub struct BGSQueuedGrassModelHandles {
     /// +0x58 `undefined4`, ctor store
     pub field_58: u32,
     pub unknown_5C: [u8; 44],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSQueuedGrassModelHandles>() == 0x88);
 const _: () = assert!(core::mem::offset_of!(BGSQueuedGrassModelHandles, __vftable) == 0x0);
@@ -6708,6 +6964,7 @@ pub struct BGSQueuedObjectDowngrade {
     /// +0x14 `undefined1`, ctor store
     pub field_14: u8,
     pub unknown_15: [u8; 11],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSQueuedObjectDowngrade>() == 0x20);
 const _: () = assert!(core::mem::offset_of!(BGSQueuedObjectDowngrade, __vftable) == 0x0);
@@ -6723,6 +6980,7 @@ pub struct BGSQueuedObjectInitialLoad {
     /// +0x0 `vtbl:BGSQueuedObjectInitialLoad:0`, rtti
     pub __vftable: *const crate::raw::vtables::BGSQueuedObjectInitialLoad_vtable,
     pub unknown_8: [u8; 24],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSQueuedObjectInitialLoad>() == 0x20);
 const _: () = assert!(core::mem::offset_of!(BGSQueuedObjectInitialLoad, __vftable) == 0x0);
@@ -6741,6 +6999,7 @@ pub struct BGSQueuedObjectUpgrade {
     /// +0x14 `undefined1`, ctor store
     pub field_14: u8,
     pub unknown_15: [u8; 43],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSQueuedObjectUpgrade>() == 0x40);
 const _: () = assert!(core::mem::offset_of!(BGSQueuedObjectUpgrade, __vftable) == 0x0);
@@ -6762,6 +7021,7 @@ pub struct BGSQueuedTerrainDowngrade {
     /// +0x14 `undefined1`, ctor store
     pub field_14: u8,
     pub unknown_15: [u8; 11],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSQueuedTerrainDowngrade>() == 0x20);
 const _: () = assert!(core::mem::offset_of!(BGSQueuedTerrainDowngrade, __vftable) == 0x0);
@@ -6777,6 +7037,7 @@ pub struct BGSQueuedTerrainInitialLoad {
     /// +0x0 `vtbl:BGSQueuedTerrainInitialLoad:0`, rtti
     pub __vftable: *const crate::raw::vtables::BGSQueuedTerrainInitialLoad_vtable,
     pub unknown_8: [u8; 24],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSQueuedTerrainInitialLoad>() == 0x20);
 const _: () = assert!(core::mem::offset_of!(BGSQueuedTerrainInitialLoad, __vftable) == 0x0);
@@ -6787,6 +7048,7 @@ const _: () = assert!(core::mem::offset_of!(BGSQueuedTerrainInitialLoad, __vftab
 pub struct BGSQueuedTerrainUpdate {
     /// +0x0 `vtbl:BGSQueuedTerrainUpdate:0`, rtti
     pub __vftable: *const crate::raw::vtables::BGSQueuedTerrainUpdate_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSQueuedTerrainUpdate>() == 0x8);
 const _: () = assert!(core::mem::offset_of!(BGSQueuedTerrainUpdate, __vftable) == 0x0);
@@ -6805,6 +7067,7 @@ pub struct BGSQueuedTerrainUpgrade {
     /// +0x14 `undefined1`, ctor store
     pub field_14: u8,
     pub unknown_15: [u8; 35],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSQueuedTerrainUpgrade>() == 0x38);
 const _: () = assert!(core::mem::offset_of!(BGSQueuedTerrainUpgrade, __vftable) == 0x0);
@@ -6907,6 +7170,7 @@ pub struct BGSRagdoll {
     /// +0x198 `undefined8`, ctor store
     pub field_198: u64,
     pub unknown_1A0: [u8; 24],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSRagdoll>() == 0x1B8);
 const _: () = assert!(core::mem::offset_of!(BGSRagdoll, __vftable) == 0x0);
@@ -6973,6 +7237,7 @@ pub struct BGSRefAlias {
     pub field_38: u64,
     /// +0x40 `undefined8`, ctor store
     pub field_40: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSRefAlias>() == 0x48);
 const _: () = assert!(core::mem::offset_of!(BGSRefAlias, __vftable) == 0x0);
@@ -7010,6 +7275,7 @@ pub struct BGSReferenceEffect {
     /// +0x30 `undefined4`, ctor store
     pub field_30: u32,
     pub unknown_34: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSReferenceEffect>() == 0x38);
 const _: () = assert!(core::mem::offset_of!(BGSReferenceEffect, __vftable) == 0x0);
@@ -7049,6 +7315,7 @@ pub struct BGSRelationship {
     /// +0x38 `undefined4`, ctor store
     pub field_38: u32,
     pub unknown_3C: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSRelationship>() == 0x40);
 const _: () = assert!(core::mem::offset_of!(BGSRelationship, __vftable) == 0x0);
@@ -7089,6 +7356,7 @@ pub struct BGSReverbParameters {
     /// +0x30 `undefined4`, ctor store
     pub field_30: u32,
     pub unknown_34: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSReverbParameters>() == 0x38);
 const _: () = assert!(core::mem::offset_of!(BGSReverbParameters, __vftable) == 0x0);
@@ -7126,6 +7394,7 @@ pub struct BGSSaveLoadStatsMap {
     /// +0x38 `undefined4`, ctor store
     pub field_38: u32,
     pub unknown_3C: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSSaveLoadStatsMap, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BGSSaveLoadStatsMap, field_8) == 0x8);
@@ -7184,6 +7453,7 @@ pub struct BGSScene {
     /// +0xC0 `undefined4`, ctor store
     pub field_C0: u32,
     pub unknown_C4: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSScene>() == 0xC8);
 const _: () = assert!(core::mem::offset_of!(BGSScene, __vftable) == 0x0);
@@ -7210,6 +7480,7 @@ const _: () = assert!(core::mem::offset_of!(BGSScene, field_C0) == 0xC0);
 pub struct BGSSceneAction {
     /// +0x0 `vtbl:BGSSceneAction:0`, rtti
     pub __vftable: *const crate::raw::vtables::BGSSceneAction_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSSceneAction>() == 0x8);
 const _: () = assert!(core::mem::offset_of!(BGSSceneAction, __vftable) == 0x0);
@@ -7222,6 +7493,7 @@ pub struct BGSSceneActionDialogue {
     /// +0x0 `vtbl:BGSSceneActionDialogue:0`, rtti
     pub __vftable: *const crate::raw::vtables::BGSSceneActionDialogue_vtable,
     pub unknown_8: [u8; 56],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSSceneActionDialogue>() == 0x40);
 const _: () = assert!(core::mem::offset_of!(BGSSceneActionDialogue, __vftable) == 0x0);
@@ -7234,6 +7506,7 @@ pub struct BGSSceneActionPackage {
     /// +0x0 `vtbl:BGSSceneActionPackage:0`, rtti
     pub __vftable: *const crate::raw::vtables::BGSSceneActionPackage_vtable,
     pub unknown_8: [u8; 56],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSSceneActionPackage>() == 0x40);
 const _: () = assert!(core::mem::offset_of!(BGSSceneActionPackage, __vftable) == 0x0);
@@ -7258,6 +7531,7 @@ pub struct BGSSceneActionTimer {
     /// +0x28 `undefined2`, ctor store
     pub field_28: u16,
     pub unknown_2A: [u8; 6],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSSceneActionTimer>() == 0x30);
 const _: () = assert!(core::mem::offset_of!(BGSSceneActionTimer, __vftable) == 0x0);
@@ -7273,6 +7547,7 @@ const _: () = assert!(core::mem::offset_of!(BGSSceneActionTimer, field_28) == 0x
 pub struct BGSSceneInfo {
     /// +0x0 `vtbl:BGSSceneInfo:0`, rtti
     pub __vftable: *const crate::raw::vtables::BGSSceneInfo_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSSceneInfo, __vftable) == 0x0);
 
@@ -7283,6 +7558,7 @@ const _: () = assert!(core::mem::offset_of!(BGSSceneInfo, __vftable) == 0x0);
 pub struct BGSSceneInfo__TextureUse {
     /// +0x0 `vtbl:BGSSceneInfo::TextureUse:0`, rtti
     pub __vftable: *const crate::raw::vtables::BGSSceneInfo__TextureUse_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSSceneInfo__TextureUse, __vftable) == 0x0);
 
@@ -7309,6 +7585,7 @@ pub struct BGSShaderParticleGeometryData {
     pub unknown_34: [u8; 4],
     /// +0x38 `class:TESTexture`, member ctor TESTexture
     pub m_TESTexture_38: crate::TESTexture,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSShaderParticleGeometryData>() == 0x48);
 const _: () = assert!(core::mem::offset_of!(BGSShaderParticleGeometryData, __vftable) == 0x0);
@@ -7346,6 +7623,7 @@ pub struct BGSSkillPerkTreeNode {
     pub field_58: u64,
     /// +0x60 `undefined8`, ctor store
     pub field_60: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSSkillPerkTreeNode>() == 0x68);
 const _: () = assert!(core::mem::offset_of!(BGSSkillPerkTreeNode, __vftable) == 0x0);
@@ -7367,6 +7645,7 @@ pub struct BGSSkinForm {
     pub __vftable: *const crate::raw::vtables::BGSSkinForm_vtable,
     /// +0x8 `undefined8`, ctor store
     pub field_8: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSSkinForm>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(BGSSkinForm, __vftable) == 0x0);
@@ -7414,6 +7693,7 @@ pub struct BGSStaticCollection {
     /// +0x60 `undefined4`, base TESModelTextureSwap
     pub field_60: u32,
     pub unknown_64: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSStaticCollection, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BGSStaticCollection, sourceFiles) == 0x8);
@@ -7460,6 +7740,7 @@ pub struct BGSStoryManager {
     pub unknown_54: [u8; 4],
     /// +0x58 `undefined8`, ctor store
     pub field_58: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSStoryManager, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BGSStoryManager, field_10) == 0x10);
@@ -7489,6 +7770,7 @@ pub struct BGSStoryManagerBranchNode {
     /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 69],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSStoryManagerBranchNode>() == 0x60);
 const _: () = assert!(core::mem::offset_of!(BGSStoryManagerBranchNode, __vftable) == 0x0);
@@ -7516,6 +7798,7 @@ pub struct BGSStoryManagerEventNode {
     /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 77],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSStoryManagerEventNode>() == 0x68);
 const _: () = assert!(core::mem::offset_of!(BGSStoryManagerEventNode, __vftable) == 0x0);
@@ -7543,6 +7826,7 @@ pub struct BGSStoryManagerNodeBase {
     /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 197],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSStoryManagerNodeBase>() == 0xE0);
 const _: () = assert!(core::mem::offset_of!(BGSStoryManagerNodeBase, __vftable) == 0x0);
@@ -7563,6 +7847,7 @@ pub struct BGSStoryManagerQuestFinder {
     /// +0x30 `undefined4`, base BGSStoryManagerTreeVisitor
     pub field_30: u32,
     pub unknown_34: [u8; 140],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSStoryManagerQuestFinder>() == 0xC0);
 const _: () = assert!(core::mem::offset_of!(BGSStoryManagerQuestFinder, __vftable) == 0x0);
@@ -7586,6 +7871,7 @@ pub struct BGSStoryManagerQuestNode {
     /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 197],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSStoryManagerQuestNode>() == 0xE0);
 const _: () = assert!(core::mem::offset_of!(BGSStoryManagerQuestNode, __vftable) == 0x0);
@@ -7613,6 +7899,7 @@ pub struct BGSStoryManagerTreeForm {
     /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 5],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSStoryManagerTreeForm>() == 0x20);
 const _: () = assert!(core::mem::offset_of!(BGSStoryManagerTreeForm, __vftable) == 0x0);
@@ -7632,6 +7919,7 @@ pub struct BGSStoryManagerTreeVisitor {
     /// +0x30 `undefined4`, ctor store
     pub field_30: u32,
     pub unknown_34: [u8; 140],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSStoryManagerTreeVisitor>() == 0xC0);
 const _: () = assert!(core::mem::offset_of!(BGSStoryManagerTreeVisitor, __vftable) == 0x0);
@@ -7658,6 +7946,7 @@ pub struct BGSStoryTeller {
     pub unknown_C8: [u8; 8],
     /// +0xD0 `undefined8`, ctor store
     pub field_D0: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSStoryTeller, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BGSStoryTeller, field_A0) == 0xA0);
@@ -7740,6 +8029,7 @@ pub struct BGSSynchronizedAnimationInstance {
     pub field_98: u32,
     /// +0x9C `undefined4`, base hkBaseObject
     pub field_9C: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSSynchronizedAnimationInstance>() == 0xA0);
 const _: () = assert!(core::mem::offset_of!(BGSSynchronizedAnimationInstance, __vftable) == 0x0);
@@ -7838,6 +8128,7 @@ pub struct BGSTalkingActivator {
     pub unknown_C2: [u8; 14],
     /// +0xD0 `undefined8`, ctor store
     pub field_D0: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSTalkingActivator>() == 0xD8);
 const _: () = assert!(core::mem::offset_of!(BGSTalkingActivator, __vftable) == 0x0);
@@ -7875,6 +8166,7 @@ pub struct BGSTextureModel {
     pub unknown_8: [u8; 8],
     /// +0x10 `undefined8`, base TESModel
     pub field_10: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSTextureModel, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BGSTextureModel, field_10) == 0x10);
@@ -7946,6 +8238,7 @@ pub struct BGSTextureSet {
     /// +0x124 `undefined8`, ctor store
     pub field_124: u64,
     pub unknown_12C: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSTextureSet>() == 0x130);
 const _: () = assert!(core::mem::offset_of!(BGSTextureSet, __vftable) == 0x0);
@@ -7984,6 +8277,7 @@ const _: () = assert!(core::mem::offset_of!(BGSTextureSet, field_124) == 0x124);
 pub struct BGSTextureUseMap__TextureUse {
     /// +0x0 `vtbl:BGSTextureUseMap::TextureUse:0`, rtti
     pub __vftable: *const crate::raw::vtables::BGSTextureUseMap__TextureUse_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSTextureUseMap__TextureUse, __vftable) == 0x0);
 
@@ -7994,6 +8288,7 @@ const _: () = assert!(core::mem::offset_of!(BGSTextureUseMap__TextureUse, __vfta
 pub struct BGSTypedItem_BGSAIWorldLocationInteriorCell_BGSAIWorldLocation {
     /// +0x0 `vtbl:BGSTypedItem<BGSAIWorldLocationInteriorCell,BGSAIWorldLocation>:0`, rtti
     pub __vftable: *const crate::raw::vtables::BGSTypedItem_BGSAIWorldLocationInteriorCell_BGSAIWorldLocation_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSTypedItem_BGSAIWorldLocationInteriorCell_BGSAIWorldLocation>() == 0x8);
 const _: () = assert!(core::mem::offset_of!(BGSTypedItem_BGSAIWorldLocationInteriorCell_BGSAIWorldLocation, __vftable) == 0x0);
@@ -8005,6 +8300,7 @@ const _: () = assert!(core::mem::offset_of!(BGSTypedItem_BGSAIWorldLocationInter
 pub struct BGSTypedItem_BGSAIWorldLocationPointRadius_BGSAIWorldLocation {
     /// +0x0 `vtbl:BGSTypedItem<BGSAIWorldLocationPointRadius,BGSAIWorldLocation>:0`, rtti
     pub __vftable: *const crate::raw::vtables::BGSTypedItem_BGSAIWorldLocationPointRadius_BGSAIWorldLocation_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSTypedItem_BGSAIWorldLocationPointRadius_BGSAIWorldLocation>() == 0x8);
 const _: () = assert!(core::mem::offset_of!(BGSTypedItem_BGSAIWorldLocationPointRadius_BGSAIWorldLocation, __vftable) == 0x0);
@@ -8016,6 +8312,7 @@ const _: () = assert!(core::mem::offset_of!(BGSTypedItem_BGSAIWorldLocationPoint
 pub struct BGSTypedItem_BGSAIWorldLocationRefRadius_BGSAIWorldLocation {
     /// +0x0 `vtbl:BGSTypedItem<BGSAIWorldLocationRefRadius,BGSAIWorldLocation>:0`, rtti
     pub __vftable: *const crate::raw::vtables::BGSTypedItem_BGSAIWorldLocationRefRadius_BGSAIWorldLocation_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSTypedItem_BGSAIWorldLocationRefRadius_BGSAIWorldLocation>() == 0x8);
 const _: () = assert!(core::mem::offset_of!(BGSTypedItem_BGSAIWorldLocationRefRadius_BGSAIWorldLocation, __vftable) == 0x0);
@@ -8029,6 +8326,7 @@ pub struct BGSTypedItem_BGSProcedureAcquireExecState_IProcedureTreeExecState {
     pub __vftable: *const crate::raw::vtables::BGSTypedItem_BGSProcedureAcquireExecState_IProcedureTreeExecState_vtable,
     /// +0x8 `undefined8`, base IProcedureTreeExecState
     pub field_8: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSTypedItem_BGSProcedureAcquireExecState_IProcedureTreeExecState>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(BGSTypedItem_BGSProcedureAcquireExecState_IProcedureTreeExecState, __vftable) == 0x0);
@@ -8043,6 +8341,7 @@ pub struct BGSTypedItem_BGSProcedureActivateExecState_IProcedureTreeExecState {
     pub __vftable: *const crate::raw::vtables::BGSTypedItem_BGSProcedureActivateExecState_IProcedureTreeExecState_vtable,
     /// +0x8 `undefined8`, base IProcedureTreeExecState
     pub field_8: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSTypedItem_BGSProcedureActivateExecState_IProcedureTreeExecState>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(BGSTypedItem_BGSProcedureActivateExecState_IProcedureTreeExecState, __vftable) == 0x0);
@@ -8057,6 +8356,7 @@ pub struct BGSTypedItem_BGSProcedureDialogueActivateExecState_IProcedureTreeExec
     pub __vftable: *const crate::raw::vtables::BGSTypedItem_BGSProcedureDialogueActivateExecState_IProcedureTreeExecState_vtable,
     /// +0x8 `undefined8`, base IProcedureTreeExecState
     pub field_8: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSTypedItem_BGSProcedureDialogueActivateExecState_IProcedureTreeExecState>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(BGSTypedItem_BGSProcedureDialogueActivateExecState_IProcedureTreeExecState, __vftable) == 0x0);
@@ -8071,6 +8371,7 @@ pub struct BGSTypedItem_BGSProcedureDialogueExecState_IProcedureTreeExecState {
     pub __vftable: *const crate::raw::vtables::BGSTypedItem_BGSProcedureDialogueExecState_IProcedureTreeExecState_vtable,
     /// +0x8 `undefined8`, base IProcedureTreeExecState
     pub field_8: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSTypedItem_BGSProcedureDialogueExecState_IProcedureTreeExecState, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BGSTypedItem_BGSProcedureDialogueExecState_IProcedureTreeExecState, field_8) == 0x8);
@@ -8084,6 +8385,7 @@ pub struct BGSTypedItem_BGSProcedureDoneExecState_IProcedureTreeExecState {
     pub __vftable: *const crate::raw::vtables::BGSTypedItem_BGSProcedureDoneExecState_IProcedureTreeExecState_vtable,
     /// +0x8 `undefined8`, base IProcedureTreeExecState
     pub field_8: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSTypedItem_BGSProcedureDoneExecState_IProcedureTreeExecState, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BGSTypedItem_BGSProcedureDoneExecState_IProcedureTreeExecState, field_8) == 0x8);
@@ -8098,6 +8400,7 @@ pub struct BGSTypedItem_BGSProcedureEatExecState_IProcedureTreeExecState {
     /// +0x8 `undefined8`, base IProcedureTreeExecState
     pub field_8: u64,
     pub unknown_10: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSTypedItem_BGSProcedureEatExecState_IProcedureTreeExecState>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(BGSTypedItem_BGSProcedureEatExecState_IProcedureTreeExecState, __vftable) == 0x0);
@@ -8112,6 +8415,7 @@ pub struct BGSTypedItem_BGSProcedureEscortExecState_IProcedureTreeExecState {
     pub __vftable: *const crate::raw::vtables::BGSTypedItem_BGSProcedureEscortExecState_IProcedureTreeExecState_vtable,
     /// +0x8 `undefined8`, base IProcedureTreeExecState
     pub field_8: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSTypedItem_BGSProcedureEscortExecState_IProcedureTreeExecState, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BGSTypedItem_BGSProcedureEscortExecState_IProcedureTreeExecState, field_8) == 0x8);
@@ -8125,6 +8429,7 @@ pub struct BGSTypedItem_BGSProcedureFindExecState_IProcedureTreeExecState {
     pub __vftable: *const crate::raw::vtables::BGSTypedItem_BGSProcedureFindExecState_IProcedureTreeExecState_vtable,
     /// +0x8 `undefined8`, base IProcedureTreeExecState
     pub field_8: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSTypedItem_BGSProcedureFindExecState_IProcedureTreeExecState, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BGSTypedItem_BGSProcedureFindExecState_IProcedureTreeExecState, field_8) == 0x8);
@@ -8138,6 +8443,7 @@ pub struct BGSTypedItem_BGSProcedureFleeExecState_IProcedureTreeExecState {
     pub __vftable: *const crate::raw::vtables::BGSTypedItem_BGSProcedureFleeExecState_IProcedureTreeExecState_vtable,
     /// +0x8 `undefined8`, base IProcedureTreeExecState
     pub field_8: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSTypedItem_BGSProcedureFleeExecState_IProcedureTreeExecState>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(BGSTypedItem_BGSProcedureFleeExecState_IProcedureTreeExecState, __vftable) == 0x0);
@@ -8152,6 +8458,7 @@ pub struct BGSTypedItem_BGSProcedureFlightGrabExecState_IProcedureTreeExecState 
     pub __vftable: *const crate::raw::vtables::BGSTypedItem_BGSProcedureFlightGrabExecState_IProcedureTreeExecState_vtable,
     /// +0x8 `undefined8`, base IProcedureTreeExecState
     pub field_8: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSTypedItem_BGSProcedureFlightGrabExecState_IProcedureTreeExecState>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(BGSTypedItem_BGSProcedureFlightGrabExecState_IProcedureTreeExecState, __vftable) == 0x0);
@@ -8166,6 +8473,7 @@ pub struct BGSTypedItem_BGSProcedureFollowExecState_IProcedureTreeExecState {
     pub __vftable: *const crate::raw::vtables::BGSTypedItem_BGSProcedureFollowExecState_IProcedureTreeExecState_vtable,
     /// +0x8 `undefined8`, base IProcedureTreeExecState
     pub field_8: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSTypedItem_BGSProcedureFollowExecState_IProcedureTreeExecState>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(BGSTypedItem_BGSProcedureFollowExecState_IProcedureTreeExecState, __vftable) == 0x0);
@@ -8181,6 +8489,7 @@ pub struct BGSTypedItem_BGSProcedureGuardExecState_IProcedureTreeExecState {
     /// +0x8 `undefined8`, base IProcedureTreeExecState
     pub field_8: u64,
     pub unknown_10: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSTypedItem_BGSProcedureGuardExecState_IProcedureTreeExecState>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(BGSTypedItem_BGSProcedureGuardExecState_IProcedureTreeExecState, __vftable) == 0x0);
@@ -8195,6 +8504,7 @@ pub struct BGSTypedItem_BGSProcedureHoldPositionExecState_IProcedureTreeExecStat
     pub __vftable: *const crate::raw::vtables::BGSTypedItem_BGSProcedureHoldPositionExecState_IProcedureTreeExecState_vtable,
     /// +0x8 `undefined8`, base IProcedureTreeExecState
     pub field_8: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSTypedItem_BGSProcedureHoldPositionExecState_IProcedureTreeExecState>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(BGSTypedItem_BGSProcedureHoldPositionExecState_IProcedureTreeExecState, __vftable) == 0x0);
@@ -8209,6 +8519,7 @@ pub struct BGSTypedItem_BGSProcedureHoverExecState_IProcedureTreeExecState {
     pub __vftable: *const crate::raw::vtables::BGSTypedItem_BGSProcedureHoverExecState_IProcedureTreeExecState_vtable,
     /// +0x8 `undefined8`, base IProcedureTreeExecState
     pub field_8: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSTypedItem_BGSProcedureHoverExecState_IProcedureTreeExecState>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(BGSTypedItem_BGSProcedureHoverExecState_IProcedureTreeExecState, __vftable) == 0x0);
@@ -8224,6 +8535,7 @@ pub struct BGSTypedItem_BGSProcedureKeepAnEyeOnExecState_IProcedureTreeExecState
     /// +0x8 `undefined8`, base IProcedureTreeExecState
     pub field_8: u64,
     pub unknown_10: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSTypedItem_BGSProcedureKeepAnEyeOnExecState_IProcedureTreeExecState>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(BGSTypedItem_BGSProcedureKeepAnEyeOnExecState_IProcedureTreeExecState, __vftable) == 0x0);
@@ -8238,6 +8550,7 @@ pub struct BGSTypedItem_BGSProcedureLockUnlockExecState_IProcedureTreeExecState 
     pub __vftable: *const crate::raw::vtables::BGSTypedItem_BGSProcedureLockUnlockExecState_IProcedureTreeExecState_vtable,
     /// +0x8 `undefined8`, base IProcedureTreeExecState
     pub field_8: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSTypedItem_BGSProcedureLockUnlockExecState_IProcedureTreeExecState>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(BGSTypedItem_BGSProcedureLockUnlockExecState_IProcedureTreeExecState, __vftable) == 0x0);
@@ -8252,6 +8565,7 @@ pub struct BGSTypedItem_BGSProcedureOrbitExecState_IProcedureTreeExecState {
     pub __vftable: *const crate::raw::vtables::BGSTypedItem_BGSProcedureOrbitExecState_IProcedureTreeExecState_vtable,
     /// +0x8 `undefined8`, base IProcedureTreeExecState
     pub field_8: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSTypedItem_BGSProcedureOrbitExecState_IProcedureTreeExecState>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(BGSTypedItem_BGSProcedureOrbitExecState_IProcedureTreeExecState, __vftable) == 0x0);
@@ -8266,6 +8580,7 @@ pub struct BGSTypedItem_BGSProcedurePatrolExecState_IProcedureTreeExecState {
     pub __vftable: *const crate::raw::vtables::BGSTypedItem_BGSProcedurePatrolExecState_IProcedureTreeExecState_vtable,
     /// +0x8 `undefined8`, base IProcedureTreeExecState
     pub field_8: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSTypedItem_BGSProcedurePatrolExecState_IProcedureTreeExecState>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(BGSTypedItem_BGSProcedurePatrolExecState_IProcedureTreeExecState, __vftable) == 0x0);
@@ -8280,6 +8595,7 @@ pub struct BGSTypedItem_BGSProcedureSandboxExecState_IProcedureTreeExecState {
     pub __vftable: *const crate::raw::vtables::BGSTypedItem_BGSProcedureSandboxExecState_IProcedureTreeExecState_vtable,
     /// +0x8 `undefined8`, base IProcedureTreeExecState
     pub field_8: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSTypedItem_BGSProcedureSandboxExecState_IProcedureTreeExecState, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BGSTypedItem_BGSProcedureSandboxExecState_IProcedureTreeExecState, field_8) == 0x8);
@@ -8293,6 +8609,7 @@ pub struct BGSTypedItem_BGSProcedureSayExecState_IProcedureTreeExecState {
     pub __vftable: *const crate::raw::vtables::BGSTypedItem_BGSProcedureSayExecState_IProcedureTreeExecState_vtable,
     /// +0x8 `undefined8`, base IProcedureTreeExecState
     pub field_8: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSTypedItem_BGSProcedureSayExecState_IProcedureTreeExecState, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BGSTypedItem_BGSProcedureSayExecState_IProcedureTreeExecState, field_8) == 0x8);
@@ -8306,6 +8623,7 @@ pub struct BGSTypedItem_BGSProcedureShoutExecState_IProcedureTreeExecState {
     pub __vftable: *const crate::raw::vtables::BGSTypedItem_BGSProcedureShoutExecState_IProcedureTreeExecState_vtable,
     /// +0x8 `undefined8`, base IProcedureTreeExecState
     pub field_8: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSTypedItem_BGSProcedureShoutExecState_IProcedureTreeExecState, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BGSTypedItem_BGSProcedureShoutExecState_IProcedureTreeExecState, field_8) == 0x8);
@@ -8319,6 +8637,7 @@ pub struct BGSTypedItem_BGSProcedureSitSleepExecState_IProcedureTreeExecState {
     pub __vftable: *const crate::raw::vtables::BGSTypedItem_BGSProcedureSitSleepExecState_IProcedureTreeExecState_vtable,
     /// +0x8 `undefined8`, base IProcedureTreeExecState
     pub field_8: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSTypedItem_BGSProcedureSitSleepExecState_IProcedureTreeExecState>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(BGSTypedItem_BGSProcedureSitSleepExecState_IProcedureTreeExecState, __vftable) == 0x0);
@@ -8333,6 +8652,7 @@ pub struct BGSTypedItem_BGSProcedureTravelExecState_IProcedureTreeExecState {
     pub __vftable: *const crate::raw::vtables::BGSTypedItem_BGSProcedureTravelExecState_IProcedureTreeExecState_vtable,
     /// +0x8 `undefined8`, base IProcedureTreeExecState
     pub field_8: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSTypedItem_BGSProcedureTravelExecState_IProcedureTreeExecState>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(BGSTypedItem_BGSProcedureTravelExecState_IProcedureTreeExecState, __vftable) == 0x0);
@@ -8345,6 +8665,7 @@ const _: () = assert!(core::mem::offset_of!(BGSTypedItem_BGSProcedureTravelExecS
 pub struct BGSTypedItem_BGSProcedureTreeProcedure_BGSProcedureTreeConditionalItem {
     /// +0x0 `vtbl:BGSTypedItem<BGSProcedureTreeProcedure,BGSProcedureTreeConditionalItem>:0`, rtti
     pub __vftable: *const crate::raw::vtables::BGSTypedItem_BGSProcedureTreeProcedure_BGSProcedureTreeConditionalItem_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSTypedItem_BGSProcedureTreeProcedure_BGSProcedureTreeConditionalItem, __vftable) == 0x0);
 
@@ -8359,6 +8680,7 @@ pub struct BGSTypedItem_BGSProcedureTreeRandom_BGSProcedureTreeBranch {
     /// +0x28 `undefined4`, base BGSProcedureTreeBranch
     pub field_28: u32,
     pub unknown_2C: [u8; 12],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSTypedItem_BGSProcedureTreeRandom_BGSProcedureTreeBranch>() == 0x38);
 const _: () = assert!(core::mem::offset_of!(BGSTypedItem_BGSProcedureTreeRandom_BGSProcedureTreeBranch, __vftable) == 0x0);
@@ -8374,6 +8696,7 @@ pub struct BGSTypedItem_BGSProcedureTreeRandomExecState_BGSProcedureTreeOneChild
     /// +0x8 `undefined8`, base IProcedureTreeExecState
     pub field_8: u64,
     pub unknown_10: [u8; 32],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSTypedItem_BGSProcedureTreeRandomExecState_BGSProcedureTreeOneChildExecState>() == 0x30);
 const _: () = assert!(core::mem::offset_of!(BGSTypedItem_BGSProcedureTreeRandomExecState_BGSProcedureTreeOneChildExecState, __vftable) == 0x0);
@@ -8390,6 +8713,7 @@ pub struct BGSTypedItem_BGSProcedureTreeSequence_BGSProcedureTreeBranch {
     /// +0x28 `undefined4`, base BGSProcedureTreeBranch
     pub field_28: u32,
     pub unknown_2C: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSTypedItem_BGSProcedureTreeSequence_BGSProcedureTreeBranch>() == 0x30);
 const _: () = assert!(core::mem::offset_of!(BGSTypedItem_BGSProcedureTreeSequence_BGSProcedureTreeBranch, __vftable) == 0x0);
@@ -8405,6 +8729,7 @@ pub struct BGSTypedItem_BGSProcedureTreeSequenceExecState_BGSProcedureTreeOneChi
     /// +0x8 `undefined8`, base IProcedureTreeExecState
     pub field_8: u64,
     pub unknown_10: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSTypedItem_BGSProcedureTreeSequenceExecState_BGSProcedureTreeOneChildExecState>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(BGSTypedItem_BGSProcedureTreeSequenceExecState_BGSProcedureTreeOneChildExecState, __vftable) == 0x0);
@@ -8421,6 +8746,7 @@ pub struct BGSTypedItem_BGSProcedureTreeSimultaneous_BGSProcedureTreeBranch {
     /// +0x28 `undefined4`, base BGSProcedureTreeBranch
     pub field_28: u32,
     pub unknown_2C: [u8; 20],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSTypedItem_BGSProcedureTreeSimultaneous_BGSProcedureTreeBranch>() == 0x40);
 const _: () = assert!(core::mem::offset_of!(BGSTypedItem_BGSProcedureTreeSimultaneous_BGSProcedureTreeBranch, __vftable) == 0x0);
@@ -8436,6 +8762,7 @@ pub struct BGSTypedItem_BGSProcedureTreeSimultaneousExecState_IProcedureTreeExec
     /// +0x8 `undefined8`, base IProcedureTreeExecState
     pub field_8: u64,
     pub unknown_10: [u8; 16],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSTypedItem_BGSProcedureTreeSimultaneousExecState_IProcedureTreeExecState>() == 0x20);
 const _: () = assert!(core::mem::offset_of!(BGSTypedItem_BGSProcedureTreeSimultaneousExecState_IProcedureTreeExecState, __vftable) == 0x0);
@@ -8452,6 +8779,7 @@ pub struct BGSTypedItem_BGSProcedureTreeStacked_BGSProcedureTreeBranch {
     /// +0x28 `undefined4`, base BGSProcedureTreeBranch
     pub field_28: u32,
     pub unknown_2C: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSTypedItem_BGSProcedureTreeStacked_BGSProcedureTreeBranch>() == 0x30);
 const _: () = assert!(core::mem::offset_of!(BGSTypedItem_BGSProcedureTreeStacked_BGSProcedureTreeBranch, __vftable) == 0x0);
@@ -8467,6 +8795,7 @@ pub struct BGSTypedItem_BGSProcedureTreeStackedExecState_BGSProcedureTreeOneChil
     /// +0x8 `undefined8`, base IProcedureTreeExecState
     pub field_8: u64,
     pub unknown_10: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSTypedItem_BGSProcedureTreeStackedExecState_BGSProcedureTreeOneChildExecState>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(BGSTypedItem_BGSProcedureTreeStackedExecState_BGSProcedureTreeOneChildExecState, __vftable) == 0x0);
@@ -8481,6 +8810,7 @@ pub struct BGSTypedItem_BGSProcedureUseIdleMarkerExecState_IProcedureTreeExecSta
     pub __vftable: *const crate::raw::vtables::BGSTypedItem_BGSProcedureUseIdleMarkerExecState_IProcedureTreeExecState_vtable,
     /// +0x8 `undefined8`, base IProcedureTreeExecState
     pub field_8: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSTypedItem_BGSProcedureUseIdleMarkerExecState_IProcedureTreeExecState>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(BGSTypedItem_BGSProcedureUseIdleMarkerExecState_IProcedureTreeExecState, __vftable) == 0x0);
@@ -8495,6 +8825,7 @@ pub struct BGSTypedItem_BGSProcedureUseMagicExecState_IProcedureTreeExecState {
     pub __vftable: *const crate::raw::vtables::BGSTypedItem_BGSProcedureUseMagicExecState_IProcedureTreeExecState_vtable,
     /// +0x8 `undefined8`, base IProcedureTreeExecState
     pub field_8: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSTypedItem_BGSProcedureUseMagicExecState_IProcedureTreeExecState, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BGSTypedItem_BGSProcedureUseMagicExecState_IProcedureTreeExecState, field_8) == 0x8);
@@ -8508,6 +8839,7 @@ pub struct BGSTypedItem_BGSProcedureUseWeaponExecState_IProcedureTreeExecState {
     pub __vftable: *const crate::raw::vtables::BGSTypedItem_BGSProcedureUseWeaponExecState_IProcedureTreeExecState_vtable,
     /// +0x8 `undefined8`, base IProcedureTreeExecState
     pub field_8: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSTypedItem_BGSProcedureUseWeaponExecState_IProcedureTreeExecState>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(BGSTypedItem_BGSProcedureUseWeaponExecState_IProcedureTreeExecState, __vftable) == 0x0);
@@ -8522,6 +8854,7 @@ pub struct BGSTypedItem_BGSProcedureWaitExecState_IProcedureTreeExecState {
     pub __vftable: *const crate::raw::vtables::BGSTypedItem_BGSProcedureWaitExecState_IProcedureTreeExecState_vtable,
     /// +0x8 `undefined8`, base IProcedureTreeExecState
     pub field_8: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSTypedItem_BGSProcedureWaitExecState_IProcedureTreeExecState>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(BGSTypedItem_BGSProcedureWaitExecState_IProcedureTreeExecState, __vftable) == 0x0);
@@ -8536,6 +8869,7 @@ pub struct BGSTypedItem_BGSProcedureWanderExecState_IProcedureTreeExecState {
     pub __vftable: *const crate::raw::vtables::BGSTypedItem_BGSProcedureWanderExecState_IProcedureTreeExecState_vtable,
     /// +0x8 `undefined8`, base IProcedureTreeExecState
     pub field_8: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSTypedItem_BGSProcedureWanderExecState_IProcedureTreeExecState>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(BGSTypedItem_BGSProcedureWanderExecState_IProcedureTreeExecState, __vftable) == 0x0);
@@ -8553,6 +8887,7 @@ pub struct BGSVisitProceduresCheckGuardWarnTarget {
     /// +0x10 `undefined1`, ctor store
     pub field_10: u8,
     pub unknown_11: [u8; 7],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSVisitProceduresCheckGuardWarnTarget, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BGSVisitProceduresCheckGuardWarnTarget, field_8) == 0x8);
@@ -8565,6 +8900,7 @@ const _: () = assert!(core::mem::offset_of!(BGSVisitProceduresCheckGuardWarnTarg
 pub struct BGSVisitProceduresInitActorAnimPose {
     /// +0x0 `vtbl:BGSVisitProceduresInitActorAnimPose:0`, rtti
     pub __vftable: *const crate::raw::vtables::BGSVisitProceduresInitActorAnimPose_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSVisitProceduresInitActorAnimPose, __vftable) == 0x0);
 
@@ -8575,6 +8911,7 @@ const _: () = assert!(core::mem::offset_of!(BGSVisitProceduresInitActorAnimPose,
 pub struct BGSVisitProceduresInitActorLocation {
     /// +0x0 `vtbl:BGSVisitProceduresInitActorLocation:0`, rtti
     pub __vftable: *const crate::raw::vtables::BGSVisitProceduresInitActorLocation_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSVisitProceduresInitActorLocation, __vftable) == 0x0);
 
@@ -8585,6 +8922,7 @@ const _: () = assert!(core::mem::offset_of!(BGSVisitProceduresInitActorLocation,
 pub struct BGSVisitProceduresProcess {
     /// +0x0 `vtbl:BGSVisitProceduresProcess:0`, rtti
     pub __vftable: *const crate::raw::vtables::BGSVisitProceduresProcess_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSVisitProceduresProcess, __vftable) == 0x0);
 
@@ -8614,6 +8952,7 @@ pub struct BGSVoiceType {
     /// +0x30 `undefined4`, ctor store
     pub field_30: u32,
     pub unknown_34: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSVoiceType>() == 0x38);
 const _: () = assert!(core::mem::offset_of!(BGSVoiceType, __vftable) == 0x0);
@@ -8644,6 +8983,7 @@ pub struct BGSVolumetricLighting {
     /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 53],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSVolumetricLighting>() == 0x50);
 const _: () = assert!(core::mem::offset_of!(BGSVolumetricLighting, __vftable) == 0x0);
@@ -8669,6 +9009,7 @@ pub struct BGSWaterCollisionManager__BGSWaterUpdateI {
     /// +0x38 `undefined8`, ctor store
     pub field_38: u64,
     pub unknown_40: [u8; 16],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSWaterCollisionManager__BGSWaterUpdateI>() == 0x50);
 const _: () = assert!(core::mem::offset_of!(BGSWaterCollisionManager__BGSWaterUpdateI, __vftable) == 0x0);
@@ -8696,6 +9037,7 @@ pub struct BGSWaterCollisionManager__bhkAutoWater {
     /// +0x28 `undefined1`, ctor store
     pub field_28: u8,
     pub unknown_29: [u8; 7],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSWaterCollisionManager__bhkAutoWater>() == 0x30);
 const _: () = assert!(core::mem::offset_of!(BGSWaterCollisionManager__bhkAutoWater, __vftable) == 0x0);
@@ -8753,6 +9095,7 @@ pub struct BGSWaterCollisionManager__bhkPlaceableWater {
     pub field_68: u32,
     /// +0x6C `undefined4`, base hkBaseObject
     pub field_6C: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSWaterCollisionManager__bhkPlaceableWater>() == 0x70);
 const _: () = assert!(core::mem::offset_of!(BGSWaterCollisionManager__bhkPlaceableWater, __vftable) == 0x0);
@@ -8872,6 +9215,7 @@ pub struct BGSWaterCollisionManager__bhkWaterfall {
     pub field_110: u32,
     /// +0x114 `undefined4`, base hkBaseObject
     pub field_114: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSWaterCollisionManager__bhkWaterfall, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BGSWaterCollisionManager__bhkWaterfall, m_hkpCollidableCollidableFilter_10) == 0x10);
@@ -9048,6 +9392,7 @@ pub struct BGSWaterCollisionManager__bshkAutoWater {
     pub field_160: u64,
     /// +0x168 `undefined8`, base BGSWaterCollisionManager::BGSWaterUpdateI
     pub field_168: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSWaterCollisionManager__bshkAutoWater, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BGSWaterCollisionManager__bshkAutoWater, field_8) == 0x8);
@@ -9119,6 +9464,7 @@ pub struct BGSZoneTargetListener {
     pub __vftable: *const crate::raw::vtables::BGSZoneTargetListener_vtable,
     /// +0x8 `undefined8`, ctor store
     pub field_8: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSZoneTargetListener>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(BGSZoneTargetListener, __vftable) == 0x0);

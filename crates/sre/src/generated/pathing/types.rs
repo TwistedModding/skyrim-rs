@@ -15,6 +15,7 @@ pub struct MovementAgent {
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined8`, ctor store
     pub field_10: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<MovementAgent>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(MovementAgent, __vftable) == 0x0);
@@ -53,6 +54,7 @@ pub struct MovementAgentActorAvoider {
     /// +0x64 `undefined8`, ctor store
     pub field_64: u64,
     pub unknown_6C: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<MovementAgentActorAvoider>() == 0x70);
 const _: () = assert!(core::mem::offset_of!(MovementAgentActorAvoider, __vftable) == 0x0);
@@ -110,6 +112,7 @@ pub struct MovementAgentActorState {
     /// +0x70 `undefined4`, ctor store
     pub field_70: u32,
     pub unknown_74: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<MovementAgentActorState>() == 0x78);
 const _: () = assert!(core::mem::offset_of!(MovementAgentActorState, __vftable) == 0x0);
@@ -136,6 +139,7 @@ const _: () = assert!(core::mem::offset_of!(MovementAgentActorState, field_70) =
 pub struct MovementAgentNullTracker_IMovementHandlerAgent_MovementHandlerOutputDataSmallDelta {
     /// +0x0 `vtbl:MovementAgentNullTracker<IMovementHandlerAgent,MovementHandlerOutputDataSmallDelta>:0`, rtti
     pub __vftable: *const crate::raw::vtables::MovementAgentNullTracker_IMovementHandlerAgent_MovementHandlerOutputDataSmallDelta_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(MovementAgentNullTracker_IMovementHandlerAgent_MovementHandlerOutputDataSmallDelta, __vftable) == 0x0);
 
@@ -146,6 +150,7 @@ const _: () = assert!(core::mem::offset_of!(MovementAgentNullTracker_IMovementHa
 pub struct MovementAgentNullTracker_IMovementHandlerAgent_MovementHandlerUpdateDataSmallDelta {
     /// +0x0 `vtbl:MovementAgentNullTracker<IMovementHandlerAgent,MovementHandlerUpdateDataSmallDelta>:0`, rtti
     pub __vftable: *const crate::raw::vtables::MovementAgentNullTracker_IMovementHandlerAgent_MovementHandlerUpdateDataSmallDelta_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(MovementAgentNullTracker_IMovementHandlerAgent_MovementHandlerUpdateDataSmallDelta, __vftable) == 0x0);
 
@@ -156,6 +161,7 @@ const _: () = assert!(core::mem::offset_of!(MovementAgentNullTracker_IMovementHa
 pub struct MovementAgentNullTracker_IMovementPlannerAgent_MovementPlannerAgentReturnDataSmallDelta {
     /// +0x0 `vtbl:MovementAgentNullTracker<IMovementPlannerAgent,MovementPlannerAgentReturnDataSmallDelta>:0`, rtti
     pub __vftable: *const crate::raw::vtables::MovementAgentNullTracker_IMovementPlannerAgent_MovementPlannerAgentReturnDataSmallDelta_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(MovementAgentNullTracker_IMovementPlannerAgent_MovementPlannerAgentReturnDataSmallDelta, __vftable) == 0x0);
 
@@ -166,6 +172,7 @@ const _: () = assert!(core::mem::offset_of!(MovementAgentNullTracker_IMovementPl
 pub struct MovementAgentNullTracker_IMovementTweenerAgent_MovementTweenerAgentOutputData {
     /// +0x0 `vtbl:MovementAgentNullTracker<IMovementTweenerAgent,MovementTweenerAgentOutputData>:0`, rtti
     pub __vftable: *const crate::raw::vtables::MovementAgentNullTracker_IMovementTweenerAgent_MovementTweenerAgentOutputData_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(MovementAgentNullTracker_IMovementTweenerAgent_MovementTweenerAgentOutputData, __vftable) == 0x0);
 
@@ -206,6 +213,7 @@ pub struct MovementAgentPathFollowerFlight {
     /// +0x98 `undefined8`, ctor store
     pub field_98: u64,
     pub unknown_A0: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<MovementAgentPathFollowerFlight>() == 0xA8);
 const _: () = assert!(core::mem::offset_of!(MovementAgentPathFollowerFlight, __vftable) == 0x0);
@@ -312,6 +320,7 @@ pub struct MovementAgentPathFollowerStandard {
     /// +0x160 `undefined4`, ctor store
     pub field_160: u32,
     pub unknown_164: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<MovementAgentPathFollowerStandard>() == 0x168);
 const _: () = assert!(core::mem::offset_of!(MovementAgentPathFollowerStandard, __vftable) == 0x0);
@@ -381,6 +390,7 @@ pub struct MovementAgentPathFollowerVirtual {
     pub field_50: u64,
     /// +0x58 `undefined8`, ctor store
     pub field_58: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<MovementAgentPathFollowerVirtual>() == 0x60);
 const _: () = assert!(core::mem::offset_of!(MovementAgentPathFollowerVirtual, __vftable) == 0x0);
@@ -407,6 +417,7 @@ pub struct MovementArbiter {
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined8`, ctor store
     pub field_10: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<MovementArbiter>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(MovementArbiter, __vftable) == 0x0);
@@ -421,6 +432,7 @@ pub struct MovementArbitrationAverage_float {
     /// +0x0 `vtbl:MovementArbitrationAverage<float>:0`, rtti
     pub __vftable: *const crate::raw::vtables::MovementArbitrationAverage_float_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<MovementArbitrationAverage_float>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(MovementArbitrationAverage_float, __vftable) == 0x0);
@@ -433,6 +445,7 @@ pub struct MovementArbitrationAverageFloat {
     /// +0x0 `vtbl:MovementArbitrationAverageFloat:0`, rtti
     pub __vftable: *const crate::raw::vtables::MovementArbitrationAverageFloat_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<MovementArbitrationAverageFloat>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(MovementArbitrationAverageFloat, __vftable) == 0x0);
@@ -445,6 +458,7 @@ pub struct MovementArbitrationMaxWeight_BSTSmartPointer_IMovementParameters_BSTS
     /// +0x0 `vtbl:MovementArbitrationMaxWeight<BSTSmartPointer<IMovementParameters,BSTSmartPointerIntrusiveRefCount>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::MovementArbitrationMaxWeight_BSTSmartPointer_IMovementParameters_BSTSmartPointerIntrusiveRefCount___vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<MovementArbitrationMaxWeight_BSTSmartPointer_IMovementParameters_BSTSmartPointerIntrusiveRefCount__>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(MovementArbitrationMaxWeight_BSTSmartPointer_IMovementParameters_BSTSmartPointerIntrusiveRefCount__, __vftable) == 0x0);
@@ -457,6 +471,7 @@ pub struct MovementArbitrationMaxWeight_NiPoint3 {
     /// +0x0 `vtbl:MovementArbitrationMaxWeight<NiPoint3>:0`, rtti
     pub __vftable: *const crate::raw::vtables::MovementArbitrationMaxWeight_NiPoint3_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<MovementArbitrationMaxWeight_NiPoint3>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(MovementArbitrationMaxWeight_NiPoint3, __vftable) == 0x0);
@@ -469,6 +484,7 @@ pub struct MovementArbitrationMaxWeightParameters {
     /// +0x0 `vtbl:MovementArbitrationMaxWeightParameters:0`, rtti
     pub __vftable: *const crate::raw::vtables::MovementArbitrationMaxWeightParameters_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<MovementArbitrationMaxWeightParameters>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(MovementArbitrationMaxWeightParameters, __vftable) == 0x0);
@@ -481,6 +497,7 @@ pub struct MovementArbitrationMaxWeightPoint {
     /// +0x0 `vtbl:MovementArbitrationMaxWeightPoint:0`, rtti
     pub __vftable: *const crate::raw::vtables::MovementArbitrationMaxWeightPoint_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<MovementArbitrationMaxWeightPoint>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(MovementArbitrationMaxWeightPoint, __vftable) == 0x0);
@@ -493,6 +510,7 @@ pub struct MovementArbitrationScheme_BSTSmartPointer_IMovementParameters_BSTSmar
     /// +0x0 `vtbl:MovementArbitrationScheme<BSTSmartPointer<IMovementParameters,BSTSmartPointerIntrusiveRefCount>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::MovementArbitrationScheme_BSTSmartPointer_IMovementParameters_BSTSmartPointerIntrusiveRefCount___vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<MovementArbitrationScheme_BSTSmartPointer_IMovementParameters_BSTSmartPointerIntrusiveRefCount__>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(MovementArbitrationScheme_BSTSmartPointer_IMovementParameters_BSTSmartPointerIntrusiveRefCount__, __vftable) == 0x0);
@@ -504,6 +522,7 @@ const _: () = assert!(core::mem::offset_of!(MovementArbitrationScheme_BSTSmartPo
 pub struct MovementArbitrationScheme_MovementVector {
     /// +0x0 `vtbl:MovementArbitrationScheme<MovementVector>:0`, rtti
     pub __vftable: *const crate::raw::vtables::MovementArbitrationScheme_MovementVector_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<MovementArbitrationScheme_MovementVector>() == 0x8);
 const _: () = assert!(core::mem::offset_of!(MovementArbitrationScheme_MovementVector, __vftable) == 0x0);
@@ -516,6 +535,7 @@ pub struct MovementArbitrationScheme_NiPoint3 {
     /// +0x0 `vtbl:MovementArbitrationScheme<NiPoint3>:0`, rtti
     pub __vftable: *const crate::raw::vtables::MovementArbitrationScheme_NiPoint3_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<MovementArbitrationScheme_NiPoint3>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(MovementArbitrationScheme_NiPoint3, __vftable) == 0x0);
@@ -528,6 +548,7 @@ pub struct MovementArbitrationScheme_float {
     /// +0x0 `vtbl:MovementArbitrationScheme<float>:0`, rtti
     pub __vftable: *const crate::raw::vtables::MovementArbitrationScheme_float_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<MovementArbitrationScheme_float>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(MovementArbitrationScheme_float, __vftable) == 0x0);
@@ -542,6 +563,7 @@ pub struct MovementArbitrationVectorAdd {
     /// +0x8 `undefined4`, ctor store
     pub field_8: u32,
     pub unknown_C: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<MovementArbitrationVectorAdd>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(MovementArbitrationVectorAdd, __vftable) == 0x0);
@@ -554,6 +576,7 @@ const _: () = assert!(core::mem::offset_of!(MovementArbitrationVectorAdd, field_
 pub struct MovementAvoidBoxEventAdapter {
     /// +0x0 `vtbl:MovementAvoidBoxEventAdapter:0`, rtti
     pub __vftable: *const crate::raw::vtables::MovementAvoidBoxEventAdapter_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(MovementAvoidBoxEventAdapter, __vftable) == 0x0);
 
@@ -569,6 +592,7 @@ pub struct MovementAvoidanceManager {
     /// +0xC `undefined8`, ctor store
     pub field_C: u64,
     pub unknown_14: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(MovementAvoidanceManager, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(MovementAvoidanceManager, field_C) == 0xC);
@@ -594,6 +618,7 @@ pub struct MovementControllerAI {
     pub unknown_114: [u8; 4],
     /// +0x118 `undefined8`, ctor store
     pub field_118: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<MovementControllerAI>() == 0x120);
 const _: () = assert!(core::mem::offset_of!(MovementControllerAI, __vftable) == 0x0);
@@ -652,6 +677,7 @@ pub struct MovementControllerNPC {
     /// +0x1C8 `undefined4`, ctor store
     pub field_1C8: u32,
     pub unknown_1CC: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<MovementControllerNPC>() == 0x1D0);
 const _: () = assert!(core::mem::offset_of!(MovementControllerNPC, __vftable) == 0x0);
@@ -681,6 +707,7 @@ const _: () = assert!(core::mem::offset_of!(MovementControllerNPC, field_1C8) ==
 pub struct MovementControllerNullDataTracker {
     /// +0x0 `vtbl:MovementControllerNullDataTracker:0`, rtti
     pub __vftable: *const crate::raw::vtables::MovementControllerNullDataTracker_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(MovementControllerNullDataTracker, __vftable) == 0x0);
 
@@ -698,6 +725,7 @@ pub struct MovementHandlerAgent {
     pub field_10: u64,
     /// +0x18 `vtbl:MovementHandlerAgent:18`, rtti
     pub __vftable_18: *const crate::raw::vtables::MovementHandlerAgent_vtable_18,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<MovementHandlerAgent>() == 0x20);
 const _: () = assert!(core::mem::offset_of!(MovementHandlerAgent, __vftable) == 0x0);
@@ -719,6 +747,7 @@ pub struct MovementHandlerAgentAngleController {
     pub field_10: u64,
     /// +0x18 `vtbl:MovementHandlerAgentAngleController:18`, rtti
     pub __vftable_18: *const crate::raw::vtables::MovementHandlerAgentAngleController_vtable_18,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<MovementHandlerAgentAngleController>() == 0x20);
 const _: () = assert!(core::mem::offset_of!(MovementHandlerAgentAngleController, __vftable) == 0x0);
@@ -740,6 +769,7 @@ pub struct MovementHandlerAgentAngleGain {
     pub field_10: u64,
     /// +0x18 `vtbl:MovementHandlerAgentAngleGain:18`, rtti
     pub __vftable_18: *const crate::raw::vtables::MovementHandlerAgentAngleGain_vtable_18,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(MovementHandlerAgentAngleGain, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(MovementHandlerAgentAngleGain, field_8) == 0x8);
@@ -760,6 +790,7 @@ pub struct MovementHandlerAgentAnglePassThrough {
     pub field_10: u64,
     /// +0x18 `vtbl:MovementHandlerAgentAnglePassThrough:18`, rtti
     pub __vftable_18: *const crate::raw::vtables::MovementHandlerAgentAnglePassThrough_vtable_18,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<MovementHandlerAgentAnglePassThrough>() == 0x20);
 const _: () = assert!(core::mem::offset_of!(MovementHandlerAgentAnglePassThrough, __vftable) == 0x0);
@@ -818,6 +849,7 @@ pub struct MovementHandlerAgentDirectControl {
     /// +0x70 `float`, ctor store
     pub field_70: f32,
     pub unknown_74: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<MovementHandlerAgentDirectControl>() == 0x78);
 const _: () = assert!(core::mem::offset_of!(MovementHandlerAgentDirectControl, __vftable) == 0x0);
@@ -856,6 +888,7 @@ pub struct MovementHandlerAgentDirectionPassThrough {
     pub field_10: u64,
     /// +0x18 `vtbl:MovementHandlerAgentDirectionPassThrough:18`, rtti
     pub __vftable_18: *const crate::raw::vtables::MovementHandlerAgentDirectionPassThrough_vtable_18,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<MovementHandlerAgentDirectionPassThrough>() == 0x20);
 const _: () = assert!(core::mem::offset_of!(MovementHandlerAgentDirectionPassThrough, __vftable) == 0x0);
@@ -882,6 +915,7 @@ pub struct MovementHandlerAgentLargeDeltaIdle {
     /// +0x28 `undefined4`, ctor store
     pub field_28: u32,
     pub unknown_2C: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<MovementHandlerAgentLargeDeltaIdle>() == 0x30);
 const _: () = assert!(core::mem::offset_of!(MovementHandlerAgentLargeDeltaIdle, __vftable) == 0x0);
@@ -920,6 +954,7 @@ pub struct MovementHandlerAgentPlayerControls {
     /// +0x4C `undefined1`, ctor store
     pub field_4C: u8,
     pub unknown_4D: [u8; 3],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<MovementHandlerAgentPlayerControls>() == 0x50);
 const _: () = assert!(core::mem::offset_of!(MovementHandlerAgentPlayerControls, __vftable) == 0x0);
@@ -950,6 +985,7 @@ pub struct MovementHandlerAgentPlayerControlsActionTrigger {
     /// +0x20 `undefined4`, ctor store
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<MovementHandlerAgentPlayerControlsActionTrigger>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(MovementHandlerAgentPlayerControlsActionTrigger, __vftable) == 0x0);
@@ -972,6 +1008,7 @@ pub struct MovementHandlerAgentSpeedPassThrough {
     pub field_10: u64,
     /// +0x18 `vtbl:MovementHandlerAgentSpeedPassThrough:18`, rtti
     pub __vftable_18: *const crate::raw::vtables::MovementHandlerAgentSpeedPassThrough_vtable_18,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<MovementHandlerAgentSpeedPassThrough>() == 0x20);
 const _: () = assert!(core::mem::offset_of!(MovementHandlerAgentSpeedPassThrough, __vftable) == 0x0);
@@ -1004,6 +1041,7 @@ pub struct MovementHandlerAgentSprintActionTrigger {
     /// +0x3C `undefined2`, ctor store
     pub field_3C: u16,
     pub unknown_3E: [u8; 2],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<MovementHandlerAgentSprintActionTrigger>() == 0x40);
 const _: () = assert!(core::mem::offset_of!(MovementHandlerAgentSprintActionTrigger, __vftable) == 0x0);
@@ -1033,6 +1071,7 @@ pub struct MovementHandlerAgentStairsHelper {
     /// +0x20 `undefined8`, ctor store
     pub field_20: u64,
     pub unknown_28: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<MovementHandlerAgentStairsHelper>() == 0x30);
 const _: () = assert!(core::mem::offset_of!(MovementHandlerAgentStairsHelper, __vftable) == 0x0);
@@ -1055,6 +1094,7 @@ pub struct MovementHandlerAgentStrafing {
     pub field_10: u64,
     /// +0x18 `vtbl:MovementHandlerAgentStrafing:18`, rtti
     pub __vftable_18: *const crate::raw::vtables::MovementHandlerAgentStrafing_vtable_18,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<MovementHandlerAgentStrafing>() == 0x20);
 const _: () = assert!(core::mem::offset_of!(MovementHandlerAgentStrafing, __vftable) == 0x0);
@@ -1086,6 +1126,7 @@ pub struct MovementHandlerAgentTranslationController {
     /// +0x38 `undefined4`, ctor store
     pub field_38: u32,
     pub unknown_3C: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<MovementHandlerAgentTranslationController>() == 0x40);
 const _: () = assert!(core::mem::offset_of!(MovementHandlerAgentTranslationController, __vftable) == 0x0);
@@ -1131,6 +1172,7 @@ pub struct MovementHandlerArbiter {
     pub field_70: u64,
     /// +0x78 `undefined8`, ctor store
     pub field_78: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<MovementHandlerArbiter>() == 0x80);
 const _: () = assert!(core::mem::offset_of!(MovementHandlerArbiter, __vftable) == 0x0);
@@ -1153,6 +1195,7 @@ const _: () = assert!(core::mem::offset_of!(MovementHandlerArbiter, field_78) ==
 pub struct MovementMessage {
     /// +0x0 `vtbl:MovementMessage:0`, rtti
     pub __vftable: *const crate::raw::vtables::MovementMessage_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<MovementMessage>() == 0x8);
 const _: () = assert!(core::mem::offset_of!(MovementMessage, __vftable) == 0x0);
@@ -1171,6 +1214,7 @@ pub struct MovementMessageActivateDoor {
     pub field_10: u64,
     /// +0x18 `vtbl:MovementMessageActivateDoor:18`, rtti
     pub __vftable_18: *const crate::raw::vtables::MovementMessageActivateDoor_vtable_18,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<MovementMessageActivateDoor>() == 0x20);
 const _: () = assert!(core::mem::offset_of!(MovementMessageActivateDoor, __vftable) == 0x0);
@@ -1191,6 +1235,7 @@ pub struct MovementMessageActorCollision {
     /// +0x10 `undefined4`, ctor store
     pub field_10: u32,
     pub unknown_14: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<MovementMessageActorCollision>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(MovementMessageActorCollision, __vftable) == 0x0);
@@ -1204,6 +1249,7 @@ const _: () = assert!(core::mem::offset_of!(MovementMessageActorCollision, field
 pub struct MovementMessageApproachingDoor {
     /// +0x0 `vtbl:MovementMessageApproachingDoor:0`, rtti
     pub __vftable: *const crate::raw::vtables::MovementMessageApproachingDoor_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(MovementMessageApproachingDoor, __vftable) == 0x0);
 
@@ -1217,6 +1263,7 @@ pub struct MovementMessageBlocked {
     /// +0x8 `undefined4`, ctor store
     pub field_8: u32,
     pub unknown_C: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<MovementMessageBlocked>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(MovementMessageBlocked, __vftable) == 0x0);
@@ -1229,6 +1276,7 @@ const _: () = assert!(core::mem::offset_of!(MovementMessageBlocked, field_8) == 
 pub struct MovementMessageDoor {
     /// +0x0 `vtbl:MovementMessageDoor:0`, rtti
     pub __vftable: *const crate::raw::vtables::MovementMessageDoor_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<MovementMessageDoor>() == 0x8);
 const _: () = assert!(core::mem::offset_of!(MovementMessageDoor, __vftable) == 0x0);
@@ -1246,6 +1294,7 @@ pub struct MovementMessageFreezeDirection {
     /// +0x10 `undefined4`, ctor store
     pub field_10: u32,
     pub unknown_14: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(MovementMessageFreezeDirection, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(MovementMessageFreezeDirection, field_8) == 0x8);
@@ -1266,6 +1315,7 @@ pub struct MovementMessageJump {
     /// +0x18 `float`, ctor store
     pub field_18: f32,
     pub unknown_1C: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(MovementMessageJump, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(MovementMessageJump, field_8) == 0x8);
@@ -1282,6 +1332,7 @@ pub struct MovementMessageMovementTypeChange {
     /// +0x8 `undefined4`, ctor store
     pub field_8: u32,
     pub unknown_C: [u8; 132],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<MovementMessageMovementTypeChange>() == 0x90);
 const _: () = assert!(core::mem::offset_of!(MovementMessageMovementTypeChange, __vftable) == 0x0);
@@ -1299,6 +1350,7 @@ pub struct MovementMessageNewPath {
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base MovementMessagePathEvent
     pub field_10: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<MovementMessageNewPath>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(MovementMessageNewPath, __vftable) == 0x0);
@@ -1319,6 +1371,7 @@ pub struct MovementMessagePathCleared {
     pub field_10: u64,
     /// +0x18 `undefined8`, ctor store
     pub field_18: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(MovementMessagePathCleared, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(MovementMessagePathCleared, field_8) == 0x8);
@@ -1339,6 +1392,7 @@ pub struct MovementMessagePathComplete {
     pub field_10: u64,
     /// +0x18 `undefined8`, ctor store
     pub field_18: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<MovementMessagePathComplete>() == 0x20);
 const _: () = assert!(core::mem::offset_of!(MovementMessagePathComplete, __vftable) == 0x0);
@@ -1358,6 +1412,7 @@ pub struct MovementMessagePathEvent {
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined8`, ctor store
     pub field_10: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<MovementMessagePathEvent>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(MovementMessagePathEvent, __vftable) == 0x0);
@@ -1378,6 +1433,7 @@ pub struct MovementMessagePathFailed {
     pub field_10: u64,
     /// +0x18 `undefined8`, ctor store
     pub field_18: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<MovementMessagePathFailed>() == 0x20);
 const _: () = assert!(core::mem::offset_of!(MovementMessagePathFailed, __vftable) == 0x0);
@@ -1397,6 +1453,7 @@ pub struct MovementMessagePlayIdle {
     pub unknown_C: [u8; 148],
     /// +0xA0 `undefined8`, ctor store
     pub field_A0: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<MovementMessagePlayIdle>() == 0xA8);
 const _: () = assert!(core::mem::offset_of!(MovementMessagePlayIdle, __vftable) == 0x0);
@@ -1416,6 +1473,7 @@ pub struct MovementMessageSetStaticPath {
     /// +0x10 `undefined1`, ctor store
     pub field_10: u8,
     pub unknown_11: [u8; 7],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(MovementMessageSetStaticPath, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(MovementMessageSetStaticPath, field_8) == 0x8);
@@ -1438,6 +1496,7 @@ pub struct MovementMessageWarpToLocation {
     /// +0x48 `float`, ctor store (widths [4, 4])
     pub field_48: f32,
     pub unknown_4C: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<MovementMessageWarpToLocation>() == 0x50);
 const _: () = assert!(core::mem::offset_of!(MovementMessageWarpToLocation, __vftable) == 0x0);
@@ -1456,6 +1515,7 @@ pub struct MovementMessageWarpToMultiple {
     /// +0x8 `undefined4`, ctor store
     pub field_8: u32,
     pub unknown_C: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(MovementMessageWarpToMultiple, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(MovementMessageWarpToMultiple, field_8) == 0x8);
@@ -1468,6 +1528,7 @@ pub struct MovementParameters {
     /// +0x0 `vtbl:MovementParameters:0`, rtti
     pub __vftable: *const crate::raw::vtables::MovementParameters_vtable,
     pub unknown_8: [u8; 32],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<MovementParameters>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(MovementParameters, __vftable) == 0x0);
@@ -1479,6 +1540,7 @@ const _: () = assert!(core::mem::offset_of!(MovementParameters, __vftable) == 0x
 pub struct MovementParametersFixed {
     /// +0x0 `vtbl:MovementParametersFixed:0`, rtti
     pub __vftable: *const crate::raw::vtables::MovementParametersFixed_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(MovementParametersFixed, __vftable) == 0x0);
 
@@ -1496,6 +1558,7 @@ pub struct MovementPathManagerAgent {
     pub field_10: u64,
     /// +0x18 `vtbl:MovementPathManagerAgent:18`, rtti
     pub __vftable_18: *const crate::raw::vtables::MovementPathManagerAgent_vtable_18,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<MovementPathManagerAgent>() == 0x20);
 const _: () = assert!(core::mem::offset_of!(MovementPathManagerAgent, __vftable) == 0x0);
@@ -1545,6 +1608,7 @@ pub struct MovementPathManagerAgentAvoidBox {
     /// +0xA0 `undefined8`, ctor store
     pub field_A0: u64,
     pub unknown_A8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<MovementPathManagerAgentAvoidBox>() == 0xB0);
 const _: () = assert!(core::mem::offset_of!(MovementPathManagerAgentAvoidBox, __vftable) == 0x0);
@@ -1582,6 +1646,7 @@ pub struct MovementPathManagerAgentLoadedAreaMonitor {
     pub unknown_24: [u8; 4],
     /// +0x28 `undefined8`, ctor store
     pub field_28: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<MovementPathManagerAgentLoadedAreaMonitor>() == 0x30);
 const _: () = assert!(core::mem::offset_of!(MovementPathManagerAgentLoadedAreaMonitor, __vftable) == 0x0);
@@ -1625,6 +1690,7 @@ pub struct MovementPathManagerAgentStaticAvoider {
     /// +0xB8 `undefined4`, ctor store
     pub field_B8: u32,
     pub unknown_BC: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<MovementPathManagerAgentStaticAvoider>() == 0xC0);
 const _: () = assert!(core::mem::offset_of!(MovementPathManagerAgentStaticAvoider, __vftable) == 0x0);
@@ -1674,6 +1740,7 @@ pub struct MovementPathManagerArbiter {
     pub unknown_74: [u8; 4],
     /// +0x78 `undefined8`, ctor store
     pub field_78: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<MovementPathManagerArbiter>() == 0x80);
 const _: () = assert!(core::mem::offset_of!(MovementPathManagerArbiter, __vftable) == 0x0);
@@ -1696,6 +1763,7 @@ const _: () = assert!(core::mem::offset_of!(MovementPathManagerArbiter, field_78
 pub struct MovementPathManagerNullTracker {
     /// +0x0 `vtbl:MovementPathManagerNullTracker:0`, rtti
     pub __vftable: *const crate::raw::vtables::MovementPathManagerNullTracker_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(MovementPathManagerNullTracker, __vftable) == 0x0);
 
@@ -1713,6 +1781,7 @@ pub struct MovementPlannerAgent {
     pub field_10: u64,
     /// +0x18 `vtbl:MovementPlannerAgent:18`, rtti
     pub __vftable_18: *const crate::raw::vtables::MovementPlannerAgent_vtable_18,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<MovementPlannerAgent>() == 0x20);
 const _: () = assert!(core::mem::offset_of!(MovementPlannerAgent, __vftable) == 0x0);
@@ -1751,6 +1820,7 @@ pub struct MovementPlannerAgentDirectControl {
     /// +0x48 `float`, ctor store
     pub field_48: f32,
     pub unknown_4C: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<MovementPlannerAgentDirectControl>() == 0x50);
 const _: () = assert!(core::mem::offset_of!(MovementPlannerAgentDirectControl, __vftable) == 0x0);
@@ -1781,6 +1851,7 @@ pub struct MovementPlannerAgentHorseControls {
     pub __vftable_18: *const crate::raw::vtables::MovementPlannerAgentHorseControls_vtable_18,
     /// +0x20 `undefined8`, ctor store
     pub field_20: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<MovementPlannerAgentHorseControls>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(MovementPlannerAgentHorseControls, __vftable) == 0x0);
@@ -1826,6 +1897,7 @@ pub struct MovementPlannerAgentKeepOffset {
     /// +0x54 `undefined8`, ctor store
     pub field_54: u64,
     pub unknown_5C: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<MovementPlannerAgentKeepOffset>() == 0x60);
 const _: () = assert!(core::mem::offset_of!(MovementPlannerAgentKeepOffset, __vftable) == 0x0);
@@ -1882,6 +1954,7 @@ pub struct MovementPlannerAgentNavmeshBounds {
     /// +0x310 `undefined4`, ctor store
     pub field_310: u32,
     pub unknown_314: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<MovementPlannerAgentNavmeshBounds>() == 0x318);
 const _: () = assert!(core::mem::offset_of!(MovementPlannerAgentNavmeshBounds, __vftable) == 0x0);
@@ -1931,6 +2004,7 @@ pub struct MovementPlannerAgentWarp {
     pub field_B0: u64,
     /// +0xB8 `undefined8`, ctor store
     pub field_B8: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<MovementPlannerAgentWarp>() == 0xC0);
 const _: () = assert!(core::mem::offset_of!(MovementPlannerAgentWarp, __vftable) == 0x0);
@@ -1978,6 +2052,7 @@ pub struct MovementPlannerArbiter {
     pub field_60: u64,
     /// +0x68 `undefined8`, ctor store
     pub field_68: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<MovementPlannerArbiter>() == 0x70);
 const _: () = assert!(core::mem::offset_of!(MovementPlannerArbiter, __vftable) == 0x0);
@@ -2037,6 +2112,7 @@ pub struct MovementPostUpdateArbiter {
     pub field_54: u32,
     /// +0x58 `undefined8`, ctor store
     pub field_58: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<MovementPostUpdateArbiter>() == 0x60);
 const _: () = assert!(core::mem::offset_of!(MovementPostUpdateArbiter, __vftable) == 0x0);
@@ -2066,6 +2142,7 @@ const _: () = assert!(core::mem::offset_of!(MovementPostUpdateArbiter, field_58)
 pub struct MovementSelectIdleUtils__SelectClosestIdleToPath {
     /// +0x0 `vtbl:MovementSelectIdleUtils::SelectClosestIdleToPath:0`, rtti
     pub __vftable: *const crate::raw::vtables::MovementSelectIdleUtils__SelectClosestIdleToPath_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(MovementSelectIdleUtils__SelectClosestIdleToPath, __vftable) == 0x0);
 
@@ -2076,6 +2153,7 @@ const _: () = assert!(core::mem::offset_of!(MovementSelectIdleUtils__SelectClose
 pub struct MovementSelectIdleUtils__SelectFirstIdleFilter {
     /// +0x0 `vtbl:MovementSelectIdleUtils::SelectFirstIdleFilter:0`, rtti
     pub __vftable: *const crate::raw::vtables::MovementSelectIdleUtils__SelectFirstIdleFilter_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(MovementSelectIdleUtils__SelectFirstIdleFilter, __vftable) == 0x0);
 
@@ -2095,6 +2173,7 @@ pub struct MovementStateFollowPath {
     pub __vftable_18: *const crate::raw::vtables::MovementStateFollowPath_vtable_18,
     /// +0x20 `undefined8`, ctor store
     pub field_20: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<MovementStateFollowPath>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(MovementStateFollowPath, __vftable) == 0x0);
@@ -2119,6 +2198,7 @@ pub struct MovementStateTweener {
     pub __vftable_18: *const crate::raw::vtables::MovementStateTweener_vtable_18,
     /// +0x20 `undefined8`, ctor store
     pub field_20: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<MovementStateTweener>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(MovementStateTweener, __vftable) == 0x0);
@@ -2141,6 +2221,7 @@ pub struct MovementTweenerAgent {
     pub field_10: u64,
     /// +0x18 `vtbl:MovementTweenerAgent:18`, rtti
     pub __vftable_18: *const crate::raw::vtables::MovementTweenerAgent_vtable_18,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<MovementTweenerAgent>() == 0x20);
 const _: () = assert!(core::mem::offset_of!(MovementTweenerAgent, __vftable) == 0x0);
@@ -2169,6 +2250,7 @@ pub struct MovementTweenerAgentAnimationDriven {
     /// +0x30 `undefined4`, ctor store
     pub field_30: u32,
     pub unknown_34: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<MovementTweenerAgentAnimationDriven>() == 0x38);
 const _: () = assert!(core::mem::offset_of!(MovementTweenerAgentAnimationDriven, __vftable) == 0x0);
@@ -2250,6 +2332,7 @@ pub struct MovementTweenerAgentFixedDelta {
     pub field_A4: u32,
     /// +0xA8 `undefined8`, ctor store
     pub field_A8: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<MovementTweenerAgentFixedDelta>() == 0xB0);
 const _: () = assert!(core::mem::offset_of!(MovementTweenerAgentFixedDelta, __vftable) == 0x0);
@@ -2310,6 +2393,7 @@ pub struct MovementTweenerAgentNodeFollower {
     /// +0x38 `undefined8`, ctor store
     pub field_38: u64,
     pub unknown_40: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<MovementTweenerAgentNodeFollower>() == 0x48);
 const _: () = assert!(core::mem::offset_of!(MovementTweenerAgentNodeFollower, __vftable) == 0x0);
@@ -2371,6 +2455,7 @@ pub struct MovementTweenerArbiter {
     pub field_178: u64,
     /// +0x180 `undefined8`, ctor store
     pub field_180: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<MovementTweenerArbiter>() == 0x188);
 const _: () = assert!(core::mem::offset_of!(MovementTweenerArbiter, __vftable) == 0x0);
@@ -2406,6 +2491,7 @@ pub struct PathFollowerStateFollowPathToParameter {
     pub unknown_14: [u8; 4],
     /// +0x18 `undefined8`, ctor store
     pub field_18: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(PathFollowerStateFollowPathToParameter, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(PathFollowerStateFollowPathToParameter, field_8) == 0x8);
@@ -2429,6 +2515,7 @@ pub struct PathFollowerStateKeepLastDirection {
     pub field_14: u32,
     /// +0x18 `undefined8`, ctor store
     pub field_18: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(PathFollowerStateKeepLastDirection, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(PathFollowerStateKeepLastDirection, field_8) == 0x8);
@@ -2449,6 +2536,7 @@ pub struct PathFollowerStatePlayIdle {
     /// +0x10 `undefined4`, ctor store
     pub field_10: u32,
     pub unknown_14: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(PathFollowerStatePlayIdle, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(PathFollowerStatePlayIdle, field_8) == 0x8);
@@ -2473,6 +2561,7 @@ pub struct PathFollowerStateTurnToAngle {
     pub field_18: u32,
     /// +0x1C `undefined4`, ctor store
     pub field_1C: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(PathFollowerStateTurnToAngle, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(PathFollowerStateTurnToAngle, field_8) == 0x8);
@@ -2497,6 +2586,7 @@ pub struct PathManagerPositionPlayerAdapter {
     pub __vftable_18: *const crate::raw::vtables::PathManagerPositionPlayerAdapter_vtable_18,
     /// +0x20 `vtbl:PathManagerPositionPlayerAdapter:20`, rtti
     pub __vftable_20: *const crate::raw::vtables::PathManagerPositionPlayerAdapter_vtable_20,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(PathManagerPositionPlayerAdapter, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(PathManagerPositionPlayerAdapter, __vftable_8) == 0x8);
@@ -2513,6 +2603,7 @@ pub struct PathSmootherRayCastUsePreferredTris {
     pub __vftable: *const crate::raw::vtables::PathSmootherRayCastUsePreferredTris_vtable,
     /// +0x8 `undefined8`, ctor store
     pub field_8: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(PathSmootherRayCastUsePreferredTris, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(PathSmootherRayCastUsePreferredTris, field_8) == 0x8);
@@ -2540,6 +2631,7 @@ pub struct PathSmootherRayCastUseTrianglePath {
     pub field_38: u64,
     /// +0x40 `undefined8`, ctor store
     pub field_40: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(PathSmootherRayCastUseTrianglePath, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(PathSmootherRayCastUseTrianglePath, field_8) == 0x8);
@@ -2582,6 +2674,7 @@ pub struct Pathing {
     pub unknown_90: [u8; 8],
     /// +0x98 `undefined8`, ctor store
     pub field_98: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(Pathing, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(Pathing, m_FindTriangleForLocationFilterCheckDeltaZ_8) == 0x8);
@@ -2610,6 +2703,7 @@ pub struct PathingCell {
     pub field_10: u32,
     /// +0x14 `undefined4`, ctor store
     pub field_14: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<PathingCell>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(PathingCell, __vftable) == 0x0);
@@ -2636,6 +2730,7 @@ pub struct PathingCoverLocation {
     /// +0x58 `undefined4`, ctor store
     pub field_58: u32,
     pub unknown_5C: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(PathingCoverLocation, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(PathingCoverLocation, field_38) == 0x38);
@@ -2659,6 +2754,7 @@ pub struct PathingDoor {
     /// +0x14 `undefined4`, ctor store
     pub field_14: u32,
     pub unknown_18: [u8; 96],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<PathingDoor>() == 0x78);
 const _: () = assert!(core::mem::offset_of!(PathingDoor, __vftable) == 0x0);
@@ -2682,6 +2778,7 @@ pub struct PathingLockData {
     /// +0x40 `undefined1`, ctor store
     pub field_40: u8,
     pub unknown_41: [u8; 7],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<PathingLockData>() == 0x48);
 const _: () = assert!(core::mem::offset_of!(PathingLockData, __vftable) == 0x0);
@@ -2696,6 +2793,7 @@ const _: () = assert!(core::mem::offset_of!(PathingLockData, field_40) == 0x40);
 pub struct PathingNumericIDVisitor {
     /// +0x0 `vtbl:PathingNumericIDVisitor:0`, rtti
     pub __vftable: *const crate::raw::vtables::PathingNumericIDVisitor_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(PathingNumericIDVisitor, __vftable) == 0x0);
 
@@ -2754,6 +2852,7 @@ pub struct PathingRequest {
     pub unknown_D4: [u8; 36],
     /// +0xF8 `undefined8`, base BSPathingRequest
     pub field_F8: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<PathingRequest>() == 0x100);
 const _: () = assert!(core::mem::offset_of!(PathingRequest, __vftable) == 0x0);
@@ -2845,6 +2944,7 @@ pub struct PathingRequestClosePoint {
     /// +0x13A `undefined1`, ctor store
     pub field_13A: u8,
     pub unknown_13B: [u8; 5],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<PathingRequestClosePoint>() == 0x140);
 const _: () = assert!(core::mem::offset_of!(PathingRequestClosePoint, __vftable) == 0x0);
@@ -2933,6 +3033,7 @@ pub struct PathingRequestClosestGoal {
     /// +0x118 `undefined4`, ctor store
     pub field_118: u32,
     pub unknown_11C: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<PathingRequestClosestGoal>() == 0x120);
 const _: () = assert!(core::mem::offset_of!(PathingRequestClosestGoal, __vftable) == 0x0);
@@ -3043,6 +3144,7 @@ pub struct PathingRequestCover {
     /// +0x138 `float`, ctor store
     pub field_138: f32,
     pub unknown_13C: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<PathingRequestCover>() == 0x140);
 const _: () = assert!(core::mem::offset_of!(PathingRequestCover, __vftable) == 0x0);
@@ -3139,6 +3241,7 @@ pub struct PathingRequestFlee {
     /// +0x100 `undefined4`, ctor store
     pub field_100: u32,
     pub unknown_104: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<PathingRequestFlee>() == 0x108);
 const _: () = assert!(core::mem::offset_of!(PathingRequestFlee, __vftable) == 0x0);
@@ -3236,6 +3339,7 @@ pub struct PathingRequestFly {
     /// +0x120 `undefined1`, ctor store
     pub field_120: u8,
     pub unknown_121: [u8; 7],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<PathingRequestFly>() == 0x128);
 const _: () = assert!(core::mem::offset_of!(PathingRequestFly, __vftable) == 0x0);
@@ -3361,6 +3465,7 @@ pub struct PathingRequestFlyAction {
     pub unknown_159: [u8; 3],
     /// +0x15C `undefined4`, ctor store
     pub field_15C: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<PathingRequestFlyAction>() == 0x160);
 const _: () = assert!(core::mem::offset_of!(PathingRequestFlyAction, __vftable) == 0x0);
@@ -3481,6 +3586,7 @@ pub struct PathingRequestFlyHover {
     /// +0x130 `float`, ctor store (widths [4, 4])
     pub field_130: f32,
     pub unknown_134: [u8; 28],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<PathingRequestFlyHover>() == 0x150);
 const _: () = assert!(core::mem::offset_of!(PathingRequestFlyHover, __vftable) == 0x0);
@@ -3602,6 +3708,7 @@ pub struct PathingRequestFlyLand {
     /// +0x140 `undefined1`, ctor store
     pub field_140: u8,
     pub unknown_141: [u8; 7],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<PathingRequestFlyLand>() == 0x148);
 const _: () = assert!(core::mem::offset_of!(PathingRequestFlyLand, __vftable) == 0x0);
@@ -3723,6 +3830,7 @@ pub struct PathingRequestFlyOrbit {
     /// +0x138 `float`, ctor store (widths [4, 4])
     pub field_138: f32,
     pub unknown_13C: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<PathingRequestFlyOrbit>() == 0x140);
 const _: () = assert!(core::mem::offset_of!(PathingRequestFlyOrbit, __vftable) == 0x0);
@@ -3831,6 +3939,7 @@ pub struct PathingRequestFlyTakeOff {
     /// +0x120 `undefined1`, base PathingRequestFly
     pub field_120: u8,
     pub unknown_121: [u8; 7],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<PathingRequestFlyTakeOff>() == 0x128);
 const _: () = assert!(core::mem::offset_of!(PathingRequestFlyTakeOff, __vftable) == 0x0);
@@ -3921,6 +4030,7 @@ pub struct PathingRequestHide {
     /// +0x130 `float`, ctor store (widths [4, 4])
     pub field_130: f32,
     pub unknown_134: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<PathingRequestHide>() == 0x138);
 const _: () = assert!(core::mem::offset_of!(PathingRequestHide, __vftable) == 0x0);
@@ -4015,6 +4125,7 @@ pub struct PathingRequestLOS {
     /// +0x130 `float`, ctor store (widths [4, 4])
     pub field_130: f32,
     pub unknown_134: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<PathingRequestLOS>() == 0x138);
 const _: () = assert!(core::mem::offset_of!(PathingRequestLOS, __vftable) == 0x0);
@@ -4108,6 +4219,7 @@ pub struct PathingRequestOptimalLocation {
     pub field_108: u32,
     /// +0x10C `undefined4`, ctor store
     pub field_10C: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<PathingRequestOptimalLocation>() == 0x110);
 const _: () = assert!(core::mem::offset_of!(PathingRequestOptimalLocation, __vftable) == 0x0);
@@ -4191,6 +4303,7 @@ pub struct PathingRequestRotate {
     pub unknown_D4: [u8; 36],
     /// +0xF8 `undefined8`, base BSPathingRequest
     pub field_F8: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<PathingRequestRotate>() == 0x100);
 const _: () = assert!(core::mem::offset_of!(PathingRequestRotate, __vftable) == 0x0);
@@ -4284,6 +4397,7 @@ pub struct PathingRequestSafeStraightLine {
     pub unknown_13B: [u8; 5],
     /// +0x140 `undefined8`, ctor store
     pub field_140: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<PathingRequestSafeStraightLine>() == 0x148);
 const _: () = assert!(core::mem::offset_of!(PathingRequestSafeStraightLine, __vftable) == 0x0);
@@ -4369,6 +4483,7 @@ pub struct PathingRequestStopMoving {
     pub unknown_D4: [u8; 36],
     /// +0xF8 `undefined8`, base BSPathingRequest
     pub field_F8: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<PathingRequestStopMoving>() == 0x100);
 const _: () = assert!(core::mem::offset_of!(PathingRequestStopMoving, __vftable) == 0x0);
@@ -4408,6 +4523,7 @@ pub struct PathingSpace {
     /// +0x18 `undefined4`, ctor store
     pub field_18: u32,
     pub unknown_1C: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(PathingSpace, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(PathingSpace, field_8) == 0x8);
@@ -4423,6 +4539,7 @@ pub struct PathingStreamLoadGame {
     pub __vftable: *const crate::raw::vtables::PathingStreamLoadGame_vtable,
     /// +0x8 `undefined8`, ctor store
     pub field_8: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(PathingStreamLoadGame, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(PathingStreamLoadGame, field_8) == 0x8);
@@ -4434,6 +4551,7 @@ const _: () = assert!(core::mem::offset_of!(PathingStreamLoadGame, field_8) == 0
 pub struct PathingStreamMasterFileRead {
     /// +0x0 `vtbl:PathingStreamMasterFileRead:0`, rtti
     pub __vftable: *const crate::raw::vtables::PathingStreamMasterFileRead_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(PathingStreamMasterFileRead, __vftable) == 0x0);
 
@@ -4446,6 +4564,7 @@ pub struct PathingStreamSaveGame {
     pub __vftable: *const crate::raw::vtables::PathingStreamSaveGame_vtable,
     /// +0x8 `undefined8`, ctor store
     pub field_8: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(PathingStreamSaveGame, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(PathingStreamSaveGame, field_8) == 0x8);
@@ -4491,6 +4610,7 @@ pub struct PathingTaskData {
     /// +0x88 `undefined2`, ctor store
     pub field_88: u16,
     pub unknown_8A: [u8; 6],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<PathingTaskData>() == 0x90);
 const _: () = assert!(core::mem::offset_of!(PathingTaskData, __vftable) == 0x0);
@@ -4515,6 +4635,7 @@ const _: () = assert!(core::mem::offset_of!(PathingTaskData, field_88) == 0x88);
 pub struct _anon_6854232C__PathSmootherRayCastBuildNodesForLargeZDelta {
     /// +0x0 `vtbl:_anon_6854232C::PathSmootherRayCastBuildNodesForLargeZDelta:0`, rtti
     pub __vftable: *const crate::raw::vtables::_anon_6854232C__PathSmootherRayCastBuildNodesForLargeZDelta_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(_anon_6854232C__PathSmootherRayCastBuildNodesForLargeZDelta, __vftable) == 0x0);
 
@@ -4525,6 +4646,7 @@ const _: () = assert!(core::mem::offset_of!(_anon_6854232C__PathSmootherRayCastB
 pub struct _anon_75FC35B2__MovementControllerAIAdapter {
     /// +0x0 `vtbl:_anon_75FC35B2::MovementControllerAIAdapter:0`, rtti
     pub __vftable: *const crate::raw::vtables::_anon_75FC35B2__MovementControllerAIAdapter_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(_anon_75FC35B2__MovementControllerAIAdapter, __vftable) == 0x0);
 

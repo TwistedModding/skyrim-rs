@@ -10,6 +10,7 @@ use core::ffi::c_void;
 pub struct std___Func_impl_no_alloc_lambda_011e18ed6303dee988fa3bd3cbcd3f6c_void_BSPlatform__BNetResult_uns_dbdcb9fd46a6 {
     /// +0x0 `vtbl:std::_Func_impl_no_alloc<<lambda_011e18ed6303dee988fa3bd3cbcd3f6c>,void,BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSUserContent,BSTArrayHeapAllocator>_const&___ptr64>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Func_impl_no_alloc_lambda_011e18ed6303dee988fa3bd3cbcd3f6c_void_BSPlatform__BNetResult_uns_dbdcb9fd46a6_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_011e18ed6303dee988fa3bd3cbcd3f6c_void_BSPlatform__BNetResult_uns_dbdcb9fd46a6, __vftable) == 0x0);
 
@@ -20,6 +21,7 @@ const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_011e
 pub struct std___Func_impl_no_alloc_lambda_02b6bb394f6fb3644a63315e6f3f7efd_void_bool {
     /// +0x0 `vtbl:std::_Func_impl_no_alloc<<lambda_02b6bb394f6fb3644a63315e6f3f7efd>,void,bool>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Func_impl_no_alloc_lambda_02b6bb394f6fb3644a63315e6f3f7efd_void_bool_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_02b6bb394f6fb3644a63315e6f3f7efd_void_bool, __vftable) == 0x0);
 
@@ -30,6 +32,7 @@ const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_02b6
 pub struct std___Func_impl_no_alloc_lambda_036154eed72d9c42e5223ffe217c5027_void_BSPlatform__BNetResult_uns_d73b15857d44 {
     /// +0x0 `vtbl:std::_Func_impl_no_alloc<<lambda_036154eed72d9c42e5223ffe217c5027>,void,BSPlatform::BNetResult,unsigned___int64,BSPlatform::BSUserContent_const&___ptr64>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Func_impl_no_alloc_lambda_036154eed72d9c42e5223ffe217c5027_void_BSPlatform__BNetResult_uns_d73b15857d44_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_036154eed72d9c42e5223ffe217c5027_void_BSPlatform__BNetResult_uns_d73b15857d44, __vftable) == 0x0);
 
@@ -40,6 +43,7 @@ const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_0361
 pub struct std___Func_impl_no_alloc_lambda_03d3a8b15f925bd903d7b06efad3fb55_void_BSPlatform__BNetResult_uns_f35a0e419fe4 {
     /// +0x0 `vtbl:std::_Func_impl_no_alloc<<lambda_03d3a8b15f925bd903d7b06efad3fb55>,void,BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSUserContent,BSTArrayHeapAllocator>_const&___ptr64>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Func_impl_no_alloc_lambda_03d3a8b15f925bd903d7b06efad3fb55_void_BSPlatform__BNetResult_uns_f35a0e419fe4_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_03d3a8b15f925bd903d7b06efad3fb55_void_BSPlatform__BNetResult_uns_f35a0e419fe4, __vftable) == 0x0);
 
@@ -50,6 +54,7 @@ const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_03d3
 pub struct std___Func_impl_no_alloc_lambda_04bc9a1c79420d36ffe38d26cfb5a23d_void_BSPlatform__BNetResult_unsigned___int64 {
     /// +0x0 `vtbl:std::_Func_impl_no_alloc<<lambda_04bc9a1c79420d36ffe38d26cfb5a23d>,void,BSPlatform::BNetResult,unsigned___int64>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Func_impl_no_alloc_lambda_04bc9a1c79420d36ffe38d26cfb5a23d_void_BSPlatform__BNetResult_unsigned___int64_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_04bc9a1c79420d36ffe38d26cfb5a23d_void_BSPlatform__BNetResult_unsigned___int64, __vftable) == 0x0);
 
@@ -60,6 +65,7 @@ const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_04bc
 pub struct std___Func_impl_no_alloc_lambda_04f36db2968287a0c0d9e7d195a436aa_void_BSPlatform__BNetResult_uns_f163962b4da6 {
     /// +0x0 `vtbl:std::_Func_impl_no_alloc<<lambda_04f36db2968287a0c0d9e7d195a436aa>,void,BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSUserContent,BSTArrayHeapAllocator>_const&___ptr64>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Func_impl_no_alloc_lambda_04f36db2968287a0c0d9e7d195a436aa_void_BSPlatform__BNetResult_uns_f163962b4da6_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_04f36db2968287a0c0d9e7d195a436aa_void_BSPlatform__BNetResult_uns_f163962b4da6, __vftable) == 0x0);
 
@@ -70,6 +76,7 @@ const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_04f3
 pub struct std___Func_impl_no_alloc_lambda_06ccc8604b61f2cd09364280ed33d423_void_BSPlatform__BNetResult_unsigned___int64 {
     /// +0x0 `vtbl:std::_Func_impl_no_alloc<<lambda_06ccc8604b61f2cd09364280ed33d423>,void,BSPlatform::BNetResult,unsigned___int64>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Func_impl_no_alloc_lambda_06ccc8604b61f2cd09364280ed33d423_void_BSPlatform__BNetResult_unsigned___int64_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_06ccc8604b61f2cd09364280ed33d423_void_BSPlatform__BNetResult_unsigned___int64, __vftable) == 0x0);
 
@@ -80,6 +87,7 @@ const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_06cc
 pub struct std___Func_impl_no_alloc_lambda_0953dfb8f7118e3584490d219265f7c4_void_BSPlatform__BNetResult_std_98165b05daf8 {
     /// +0x0 `vtbl:std::_Func_impl_no_alloc<<lambda_0953dfb8f7118e3584490d219265f7c4>,void,BSPlatform::BNetResult,std::shared_ptr<unsigned_char>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Func_impl_no_alloc_lambda_0953dfb8f7118e3584490d219265f7c4_void_BSPlatform__BNetResult_std_98165b05daf8_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_0953dfb8f7118e3584490d219265f7c4_void_BSPlatform__BNetResult_std_98165b05daf8, __vftable) == 0x0);
 
@@ -90,6 +98,7 @@ const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_0953
 pub struct std___Func_impl_no_alloc_lambda_0a603243aa86bc7d99aec086fc12477d_void_BSPlatform__BNetResult_uns_c005a53dd154 {
     /// +0x0 `vtbl:std::_Func_impl_no_alloc<<lambda_0a603243aa86bc7d99aec086fc12477d>,void,BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSUserContent,BSTArrayHeapAllocator>_const&___ptr64>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Func_impl_no_alloc_lambda_0a603243aa86bc7d99aec086fc12477d_void_BSPlatform__BNetResult_uns_c005a53dd154_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_0a603243aa86bc7d99aec086fc12477d_void_BSPlatform__BNetResult_uns_c005a53dd154, __vftable) == 0x0);
 
@@ -100,6 +109,7 @@ const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_0a60
 pub struct std___Func_impl_no_alloc_lambda_0c648407e70a9229a1b3ce9d97bcca04_void_BSPlatform__BNetResult_uns_9473059ef2f8 {
     /// +0x0 `vtbl:std::_Func_impl_no_alloc<<lambda_0c648407e70a9229a1b3ce9d97bcca04>,void,BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSUserContent,BSTArrayHeapAllocator>_const&___ptr64>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Func_impl_no_alloc_lambda_0c648407e70a9229a1b3ce9d97bcca04_void_BSPlatform__BNetResult_uns_9473059ef2f8_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_0c648407e70a9229a1b3ce9d97bcca04_void_BSPlatform__BNetResult_uns_9473059ef2f8, __vftable) == 0x0);
 
@@ -110,6 +120,7 @@ const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_0c64
 pub struct std___Func_impl_no_alloc_lambda_0d571499518f8715e82f53b46306a92d_void_BSPlatform__BNetResult_unsigned___int64 {
     /// +0x0 `vtbl:std::_Func_impl_no_alloc<<lambda_0d571499518f8715e82f53b46306a92d>,void,BSPlatform::BNetResult,unsigned___int64>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Func_impl_no_alloc_lambda_0d571499518f8715e82f53b46306a92d_void_BSPlatform__BNetResult_unsigned___int64_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_0d571499518f8715e82f53b46306a92d_void_BSPlatform__BNetResult_unsigned___int64, __vftable) == 0x0);
 
@@ -120,6 +131,7 @@ const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_0d57
 pub struct std___Func_impl_no_alloc_lambda_0e231cd8cf900bd09dcd943935073dd3_void_BSPlatform__BNetResult_uns_ab304cd14f93 {
     /// +0x0 `vtbl:std::_Func_impl_no_alloc<<lambda_0e231cd8cf900bd09dcd943935073dd3>,void,BSPlatform::BNetResult,unsigned___int64,BSPlatform::BSContentId>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Func_impl_no_alloc_lambda_0e231cd8cf900bd09dcd943935073dd3_void_BSPlatform__BNetResult_uns_ab304cd14f93_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_0e231cd8cf900bd09dcd943935073dd3_void_BSPlatform__BNetResult_uns_ab304cd14f93, __vftable) == 0x0);
 
@@ -131,6 +143,7 @@ pub struct std___Func_impl_no_alloc_lambda_1459e3345bd16f8390f2a6d7e256b9ad_void
     /// +0x0 `vtbl:std::_Func_impl_no_alloc<<lambda_1459e3345bd16f8390f2a6d7e256b9ad>,void,BSPlatform::BNetResult,unsigned___int64>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Func_impl_no_alloc_lambda_1459e3345bd16f8390f2a6d7e256b9ad_void_BSPlatform__BNetResult_unsigned___int64_vtable,
     pub unknown_8: [u8; 72],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<std___Func_impl_no_alloc_lambda_1459e3345bd16f8390f2a6d7e256b9ad_void_BSPlatform__BNetResult_unsigned___int64>() == 0x50);
 const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_1459e3345bd16f8390f2a6d7e256b9ad_void_BSPlatform__BNetResult_unsigned___int64, __vftable) == 0x0);
@@ -142,6 +155,7 @@ const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_1459
 pub struct std___Func_impl_no_alloc_lambda_22f0981d1513a8d820276f9cffe90da2_void {
     /// +0x0 `vtbl:std::_Func_impl_no_alloc<<lambda_22f0981d1513a8d820276f9cffe90da2>,void>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Func_impl_no_alloc_lambda_22f0981d1513a8d820276f9cffe90da2_void_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_22f0981d1513a8d820276f9cffe90da2_void, __vftable) == 0x0);
 
@@ -152,6 +166,7 @@ const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_22f0
 pub struct std___Func_impl_no_alloc_lambda_23d324676b0d8e2ba7635d310c5354c1_void_BSPlatform__BNetResult_uns_ced6255ae264 {
     /// +0x0 `vtbl:std::_Func_impl_no_alloc<<lambda_23d324676b0d8e2ba7635d310c5354c1>,void,BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSUserContent,BSTArrayHeapAllocator>_const&___ptr64>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Func_impl_no_alloc_lambda_23d324676b0d8e2ba7635d310c5354c1_void_BSPlatform__BNetResult_uns_ced6255ae264_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_23d324676b0d8e2ba7635d310c5354c1_void_BSPlatform__BNetResult_uns_ced6255ae264, __vftable) == 0x0);
 
@@ -162,6 +177,7 @@ const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_23d3
 pub struct std___Func_impl_no_alloc_lambda_24101325cc54bf1cb4d42a0539f4477f_void_BSPlatform__BNetResult_uns_7fd5f3ffaba9 {
     /// +0x0 `vtbl:std::_Func_impl_no_alloc<<lambda_24101325cc54bf1cb4d42a0539f4477f>,void,BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSUserContentCollection,BSTArrayHeapAllocator>_const&___ptr64>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Func_impl_no_alloc_lambda_24101325cc54bf1cb4d42a0539f4477f_void_BSPlatform__BNetResult_uns_7fd5f3ffaba9_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_24101325cc54bf1cb4d42a0539f4477f_void_BSPlatform__BNetResult_uns_7fd5f3ffaba9, __vftable) == 0x0);
 
@@ -172,6 +188,7 @@ const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_2410
 pub struct std___Func_impl_no_alloc_lambda_251388fb3230f29c41fffc8873556525_void_BSPlatform__BNetResult_unsigned___int64 {
     /// +0x0 `vtbl:std::_Func_impl_no_alloc<<lambda_251388fb3230f29c41fffc8873556525>,void,BSPlatform::BNetResult,unsigned___int64>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Func_impl_no_alloc_lambda_251388fb3230f29c41fffc8873556525_void_BSPlatform__BNetResult_unsigned___int64_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_251388fb3230f29c41fffc8873556525_void_BSPlatform__BNetResult_unsigned___int64, __vftable) == 0x0);
 
@@ -182,6 +199,7 @@ const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_2513
 pub struct std___Func_impl_no_alloc_lambda_25dd7bd36f4ce5cbdf46332e97a46139_void_BSPlatform__BNetResult_unsigned___int64_bool {
     /// +0x0 `vtbl:std::_Func_impl_no_alloc<<lambda_25dd7bd36f4ce5cbdf46332e97a46139>,void,BSPlatform::BNetResult,unsigned___int64,bool>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Func_impl_no_alloc_lambda_25dd7bd36f4ce5cbdf46332e97a46139_void_BSPlatform__BNetResult_unsigned___int64_bool_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_25dd7bd36f4ce5cbdf46332e97a46139_void_BSPlatform__BNetResult_unsigned___int64_bool, __vftable) == 0x0);
 
@@ -192,6 +210,7 @@ const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_25dd
 pub struct std___Func_impl_no_alloc_lambda_272eb9f99de14b04e8a95a64d1179f9a_void_BSPlatform__BNetResult_uns_11410d8afff0 {
     /// +0x0 `vtbl:std::_Func_impl_no_alloc<<lambda_272eb9f99de14b04e8a95a64d1179f9a>,void,BSPlatform::BNetResult,unsigned___int64,BSTArray<unsigned___int64,BSTArrayHeapAllocator>_const&___ptr64>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Func_impl_no_alloc_lambda_272eb9f99de14b04e8a95a64d1179f9a_void_BSPlatform__BNetResult_uns_11410d8afff0_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_272eb9f99de14b04e8a95a64d1179f9a_void_BSPlatform__BNetResult_uns_11410d8afff0, __vftable) == 0x0);
 
@@ -202,6 +221,7 @@ const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_272e
 pub struct std___Func_impl_no_alloc_lambda_27b8c99d352fae81ae145c8e448efd98_void_BSPlatform__BNetResult_uns_39720f55f870 {
     /// +0x0 `vtbl:std::_Func_impl_no_alloc<<lambda_27b8c99d352fae81ae145c8e448efd98>,void,BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSLegalDocument,BSTArrayHeapAllocator>_const&___ptr64>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Func_impl_no_alloc_lambda_27b8c99d352fae81ae145c8e448efd98_void_BSPlatform__BNetResult_uns_39720f55f870_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_27b8c99d352fae81ae145c8e448efd98_void_BSPlatform__BNetResult_uns_39720f55f870, __vftable) == 0x0);
 
@@ -212,6 +232,7 @@ const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_27b8
 pub struct std___Func_impl_no_alloc_lambda_283e5167131aef4ee36236d8f1638693_void_BSPlatform__BNetResult_unsigned___int64 {
     /// +0x0 `vtbl:std::_Func_impl_no_alloc<<lambda_283e5167131aef4ee36236d8f1638693>,void,BSPlatform::BNetResult,unsigned___int64>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Func_impl_no_alloc_lambda_283e5167131aef4ee36236d8f1638693_void_BSPlatform__BNetResult_unsigned___int64_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_283e5167131aef4ee36236d8f1638693_void_BSPlatform__BNetResult_unsigned___int64, __vftable) == 0x0);
 
@@ -222,6 +243,7 @@ const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_283e
 pub struct std___Func_impl_no_alloc_lambda_2ae18812d988cfa360817fe04af29e22_void_bool {
     /// +0x0 `vtbl:std::_Func_impl_no_alloc<<lambda_2ae18812d988cfa360817fe04af29e22>,void,bool>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Func_impl_no_alloc_lambda_2ae18812d988cfa360817fe04af29e22_void_bool_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_2ae18812d988cfa360817fe04af29e22_void_bool, __vftable) == 0x0);
 
@@ -232,6 +254,7 @@ const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_2ae1
 pub struct std___Func_impl_no_alloc_lambda_2bb8a2fdec3e2af3a230c268838d13f1_void_char_const____ptr64_char_const____ptr64 {
     /// +0x0 `vtbl:std::_Func_impl_no_alloc<<lambda_2bb8a2fdec3e2af3a230c268838d13f1>,void,char_const*___ptr64,char_const*___ptr64>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Func_impl_no_alloc_lambda_2bb8a2fdec3e2af3a230c268838d13f1_void_char_const____ptr64_char_const____ptr64_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_2bb8a2fdec3e2af3a230c268838d13f1_void_char_const____ptr64_char_const____ptr64, __vftable) == 0x0);
 
@@ -242,6 +265,7 @@ const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_2bb8
 pub struct std___Func_impl_no_alloc_lambda_2fb3c22ae0ee0fad541140d4c38cbdaa_void_BSPlatform__BNetResult_uns_a76a972714e9 {
     /// +0x0 `vtbl:std::_Func_impl_no_alloc<<lambda_2fb3c22ae0ee0fad541140d4c38cbdaa>,void,BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSUserContent,BSTArrayHeapAllocator>_const&___ptr64>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Func_impl_no_alloc_lambda_2fb3c22ae0ee0fad541140d4c38cbdaa_void_BSPlatform__BNetResult_uns_a76a972714e9_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_2fb3c22ae0ee0fad541140d4c38cbdaa_void_BSPlatform__BNetResult_uns_a76a972714e9, __vftable) == 0x0);
 
@@ -252,6 +276,7 @@ const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_2fb3
 pub struct std___Func_impl_no_alloc_lambda_31de5e3e8679927c34930336093e3fc8_void_BSPlatform__BNetResult_uns_ef288d7921f8 {
     /// +0x0 `vtbl:std::_Func_impl_no_alloc<<lambda_31de5e3e8679927c34930336093e3fc8>,void,BSPlatform::BNetResult,unsigned___int64,BSPlatform::BSUserContentCollection_const&___ptr64>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Func_impl_no_alloc_lambda_31de5e3e8679927c34930336093e3fc8_void_BSPlatform__BNetResult_uns_ef288d7921f8_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_31de5e3e8679927c34930336093e3fc8_void_BSPlatform__BNetResult_uns_ef288d7921f8, __vftable) == 0x0);
 
@@ -262,6 +287,7 @@ const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_31de
 pub struct std___Func_impl_no_alloc_lambda_341b1c9d0e86cae838e573fdd1bf7c90_void_BSPlatform__BNetResult_uns_10757868cd6c {
     /// +0x0 `vtbl:std::_Func_impl_no_alloc<<lambda_341b1c9d0e86cae838e573fdd1bf7c90>,void,BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSUserContent,BSTArrayHeapAllocator>_const&___ptr64>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Func_impl_no_alloc_lambda_341b1c9d0e86cae838e573fdd1bf7c90_void_BSPlatform__BNetResult_uns_10757868cd6c_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_341b1c9d0e86cae838e573fdd1bf7c90_void_BSPlatform__BNetResult_uns_10757868cd6c, __vftable) == 0x0);
 
@@ -272,6 +298,7 @@ const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_341b
 pub struct std___Func_impl_no_alloc_lambda_3422424728f1eecb457ac27802457a3c_void_BSPlatform__BNetResult_std_9b37a45f6b4a {
     /// +0x0 `vtbl:std::_Func_impl_no_alloc<<lambda_3422424728f1eecb457ac27802457a3c>,void,BSPlatform::BNetResult,std::shared_ptr<unsigned_char>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Func_impl_no_alloc_lambda_3422424728f1eecb457ac27802457a3c_void_BSPlatform__BNetResult_std_9b37a45f6b4a_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_3422424728f1eecb457ac27802457a3c_void_BSPlatform__BNetResult_std_9b37a45f6b4a, __vftable) == 0x0);
 
@@ -282,6 +309,7 @@ const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_3422
 pub struct std___Func_impl_no_alloc_lambda_34ef93d00fcdfb554b33700544d29f91_void_BSPlatform__BNetResult_unsigned___int64 {
     /// +0x0 `vtbl:std::_Func_impl_no_alloc<<lambda_34ef93d00fcdfb554b33700544d29f91>,void,BSPlatform::BNetResult,unsigned___int64>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Func_impl_no_alloc_lambda_34ef93d00fcdfb554b33700544d29f91_void_BSPlatform__BNetResult_unsigned___int64_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_34ef93d00fcdfb554b33700544d29f91_void_BSPlatform__BNetResult_unsigned___int64, __vftable) == 0x0);
 
@@ -292,6 +320,7 @@ const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_34ef
 pub struct std___Func_impl_no_alloc_lambda_356e13d31b5385eb982268ef318f9b2c_void_BSPlatform__BNetResult_unsigned___int64 {
     /// +0x0 `vtbl:std::_Func_impl_no_alloc<<lambda_356e13d31b5385eb982268ef318f9b2c>,void,BSPlatform::BNetResult,unsigned___int64>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Func_impl_no_alloc_lambda_356e13d31b5385eb982268ef318f9b2c_void_BSPlatform__BNetResult_unsigned___int64_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_356e13d31b5385eb982268ef318f9b2c_void_BSPlatform__BNetResult_unsigned___int64, __vftable) == 0x0);
 
@@ -302,6 +331,7 @@ const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_356e
 pub struct std___Func_impl_no_alloc_lambda_3f72cc610160381ccdd158818d8dba86_void_BSPlatform__BNetResult_uns_f20bc82aa7ab {
     /// +0x0 `vtbl:std::_Func_impl_no_alloc<<lambda_3f72cc610160381ccdd158818d8dba86>,void,BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSUserContent,BSTArrayHeapAllocator>_const&___ptr64>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Func_impl_no_alloc_lambda_3f72cc610160381ccdd158818d8dba86_void_BSPlatform__BNetResult_uns_f20bc82aa7ab_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_3f72cc610160381ccdd158818d8dba86_void_BSPlatform__BNetResult_uns_f20bc82aa7ab, __vftable) == 0x0);
 
@@ -312,6 +342,7 @@ const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_3f72
 pub struct std___Func_impl_no_alloc_lambda_4184050498090430133fbc8cba7aea38_void_BSPlatform__BNetResult_uns_1f569f47ef86 {
     /// +0x0 `vtbl:std::_Func_impl_no_alloc<<lambda_4184050498090430133fbc8cba7aea38>,void,BSPlatform::BNetResult,unsigned___int64,BSPlatform::BSUserContent_const&___ptr64>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Func_impl_no_alloc_lambda_4184050498090430133fbc8cba7aea38_void_BSPlatform__BNetResult_uns_1f569f47ef86_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_4184050498090430133fbc8cba7aea38_void_BSPlatform__BNetResult_uns_1f569f47ef86, __vftable) == 0x0);
 
@@ -322,6 +353,7 @@ const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_4184
 pub struct std___Func_impl_no_alloc_lambda_43772032f348a7d25a53934cb89c2c42_void_BSPlatform__BNetResult_uns_559fd6220355 {
     /// +0x0 `vtbl:std::_Func_impl_no_alloc<<lambda_43772032f348a7d25a53934cb89c2c42>,void,BSPlatform::BNetResult,unsigned___int64,char_const*___ptr64>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Func_impl_no_alloc_lambda_43772032f348a7d25a53934cb89c2c42_void_BSPlatform__BNetResult_uns_559fd6220355_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_43772032f348a7d25a53934cb89c2c42_void_BSPlatform__BNetResult_uns_559fd6220355, __vftable) == 0x0);
 
@@ -332,6 +364,7 @@ const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_4377
 pub struct std___Func_impl_no_alloc_lambda_4b7cf2aed8fefcef307916bb669dedaf_void_BSPlatform__BNetResult_uns_161b3c62d627 {
     /// +0x0 `vtbl:std::_Func_impl_no_alloc<<lambda_4b7cf2aed8fefcef307916bb669dedaf>,void,BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSUserContent,BSTArrayHeapAllocator>_const&___ptr64>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Func_impl_no_alloc_lambda_4b7cf2aed8fefcef307916bb669dedaf_void_BSPlatform__BNetResult_uns_161b3c62d627_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_4b7cf2aed8fefcef307916bb669dedaf_void_BSPlatform__BNetResult_uns_161b3c62d627, __vftable) == 0x0);
 
@@ -342,6 +375,7 @@ const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_4b7c
 pub struct std___Func_impl_no_alloc_lambda_54f23f4954501cbea2e903cb19af9154_void_BSPlatform__BNetResult_uns_781defef2d49 {
     /// +0x0 `vtbl:std::_Func_impl_no_alloc<<lambda_54f23f4954501cbea2e903cb19af9154>,void,BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSLegalDocument,BSTArrayHeapAllocator>_const&___ptr64>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Func_impl_no_alloc_lambda_54f23f4954501cbea2e903cb19af9154_void_BSPlatform__BNetResult_uns_781defef2d49_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_54f23f4954501cbea2e903cb19af9154_void_BSPlatform__BNetResult_uns_781defef2d49, __vftable) == 0x0);
 
@@ -352,6 +386,7 @@ const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_54f2
 pub struct std___Func_impl_no_alloc_lambda_557b40f586b94fbf09a5bf079a199c6b_void_BSPlatform__BNetResult_uns_a2cd493f4f27 {
     /// +0x0 `vtbl:std::_Func_impl_no_alloc<<lambda_557b40f586b94fbf09a5bf079a199c6b>,void,BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSUserContent,BSTArrayHeapAllocator>_const&___ptr64>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Func_impl_no_alloc_lambda_557b40f586b94fbf09a5bf079a199c6b_void_BSPlatform__BNetResult_uns_a2cd493f4f27_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_557b40f586b94fbf09a5bf079a199c6b_void_BSPlatform__BNetResult_uns_a2cd493f4f27, __vftable) == 0x0);
 
@@ -362,6 +397,7 @@ const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_557b
 pub struct std___Func_impl_no_alloc_lambda_558dbc05176e681898996975ea8f068c_void_BSPlatform__BNetResult_uns_fb99107b1bcf {
     /// +0x0 `vtbl:std::_Func_impl_no_alloc<<lambda_558dbc05176e681898996975ea8f068c>,void,BSPlatform::BNetResult,unsigned___int64,BSPlatform::BSUserContent_const&___ptr64>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Func_impl_no_alloc_lambda_558dbc05176e681898996975ea8f068c_void_BSPlatform__BNetResult_uns_fb99107b1bcf_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_558dbc05176e681898996975ea8f068c_void_BSPlatform__BNetResult_uns_fb99107b1bcf, __vftable) == 0x0);
 
@@ -372,6 +408,7 @@ const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_558d
 pub struct std___Func_impl_no_alloc_lambda_567f4c186cbdc9c14654bbf3a65bc3f4_void_BSPlatform__BNetResult_uns_f53bacc5852b {
     /// +0x0 `vtbl:std::_Func_impl_no_alloc<<lambda_567f4c186cbdc9c14654bbf3a65bc3f4>,void,BSPlatform::BNetResult,unsigned___int64,char_const*___ptr64>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Func_impl_no_alloc_lambda_567f4c186cbdc9c14654bbf3a65bc3f4_void_BSPlatform__BNetResult_uns_f53bacc5852b_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_567f4c186cbdc9c14654bbf3a65bc3f4_void_BSPlatform__BNetResult_uns_f53bacc5852b, __vftable) == 0x0);
 
@@ -382,6 +419,7 @@ const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_567f
 pub struct std___Func_impl_no_alloc_lambda_5745a6f5aa7c37155a76c02c085037fc_void_BSPlatform__BNetResult_uns_35647446bdfe {
     /// +0x0 `vtbl:std::_Func_impl_no_alloc<<lambda_5745a6f5aa7c37155a76c02c085037fc>,void,BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSUserContent,BSTArrayHeapAllocator>_const&___ptr64>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Func_impl_no_alloc_lambda_5745a6f5aa7c37155a76c02c085037fc_void_BSPlatform__BNetResult_uns_35647446bdfe_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_5745a6f5aa7c37155a76c02c085037fc_void_BSPlatform__BNetResult_uns_35647446bdfe, __vftable) == 0x0);
 
@@ -392,6 +430,7 @@ const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_5745
 pub struct std___Func_impl_no_alloc_lambda_58d13940c48784d3b1554372249df947_void_BSPlatform__BNetResult_unsigned___int64_int {
     /// +0x0 `vtbl:std::_Func_impl_no_alloc<<lambda_58d13940c48784d3b1554372249df947>,void,BSPlatform::BNetResult,unsigned___int64,int>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Func_impl_no_alloc_lambda_58d13940c48784d3b1554372249df947_void_BSPlatform__BNetResult_unsigned___int64_int_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_58d13940c48784d3b1554372249df947_void_BSPlatform__BNetResult_unsigned___int64_int, __vftable) == 0x0);
 
@@ -402,6 +441,7 @@ const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_58d1
 pub struct std___Func_impl_no_alloc_lambda_5bf28152be4cdf3664be1ebf94acd6a9_void_BSPlatform__BNetResult_std_658e8cb37972 {
     /// +0x0 `vtbl:std::_Func_impl_no_alloc<<lambda_5bf28152be4cdf3664be1ebf94acd6a9>,void,BSPlatform::BNetResult,std::shared_ptr<unsigned_char>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Func_impl_no_alloc_lambda_5bf28152be4cdf3664be1ebf94acd6a9_void_BSPlatform__BNetResult_std_658e8cb37972_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_5bf28152be4cdf3664be1ebf94acd6a9_void_BSPlatform__BNetResult_std_658e8cb37972, __vftable) == 0x0);
 
@@ -412,6 +452,7 @@ const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_5bf2
 pub struct std___Func_impl_no_alloc_lambda_6173dd9659d92d6f597568663888ac12_void_BSPlatform__BNetResult_unsigned___int64 {
     /// +0x0 `vtbl:std::_Func_impl_no_alloc<<lambda_6173dd9659d92d6f597568663888ac12>,void,BSPlatform::BNetResult,unsigned___int64>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Func_impl_no_alloc_lambda_6173dd9659d92d6f597568663888ac12_void_BSPlatform__BNetResult_unsigned___int64_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_6173dd9659d92d6f597568663888ac12_void_BSPlatform__BNetResult_unsigned___int64, __vftable) == 0x0);
 
@@ -422,6 +463,7 @@ const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_6173
 pub struct std___Func_impl_no_alloc_lambda_656b621cf6ae8cbbc1a7618a10febb60_void_BSPlatform__BNetResult_unsigned___int64 {
     /// +0x0 `vtbl:std::_Func_impl_no_alloc<<lambda_656b621cf6ae8cbbc1a7618a10febb60>,void,BSPlatform::BNetResult,unsigned___int64>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Func_impl_no_alloc_lambda_656b621cf6ae8cbbc1a7618a10febb60_void_BSPlatform__BNetResult_unsigned___int64_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_656b621cf6ae8cbbc1a7618a10febb60_void_BSPlatform__BNetResult_unsigned___int64, __vftable) == 0x0);
 
@@ -432,6 +474,7 @@ const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_656b
 pub struct std___Func_impl_no_alloc_lambda_65f0a42787bcc48f5885a0f534c1f490_void_BSPlatform__BNetResult_unsigned___int64 {
     /// +0x0 `vtbl:std::_Func_impl_no_alloc<<lambda_65f0a42787bcc48f5885a0f534c1f490>,void,BSPlatform::BNetResult,unsigned___int64>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Func_impl_no_alloc_lambda_65f0a42787bcc48f5885a0f534c1f490_void_BSPlatform__BNetResult_unsigned___int64_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_65f0a42787bcc48f5885a0f534c1f490_void_BSPlatform__BNetResult_unsigned___int64, __vftable) == 0x0);
 
@@ -442,6 +485,7 @@ const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_65f0
 pub struct std___Func_impl_no_alloc_lambda_683144de807f557e3c17db6968054403_void_BSPlatform__BNetResult_unsigned___int64 {
     /// +0x0 `vtbl:std::_Func_impl_no_alloc<<lambda_683144de807f557e3c17db6968054403>,void,BSPlatform::BNetResult,unsigned___int64>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Func_impl_no_alloc_lambda_683144de807f557e3c17db6968054403_void_BSPlatform__BNetResult_unsigned___int64_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_683144de807f557e3c17db6968054403_void_BSPlatform__BNetResult_unsigned___int64, __vftable) == 0x0);
 
@@ -452,6 +496,7 @@ const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_6831
 pub struct std___Func_impl_no_alloc_lambda_6a0c3a393c69013088aad0e7095ccab0_void_BSPlatform__BNetResult_uns_0ff030521708 {
     /// +0x0 `vtbl:std::_Func_impl_no_alloc<<lambda_6a0c3a393c69013088aad0e7095ccab0>,void,BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::ContentIdResolution,BSTArrayHeapAllocator>_const&___ptr64>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Func_impl_no_alloc_lambda_6a0c3a393c69013088aad0e7095ccab0_void_BSPlatform__BNetResult_uns_0ff030521708_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_6a0c3a393c69013088aad0e7095ccab0_void_BSPlatform__BNetResult_uns_0ff030521708, __vftable) == 0x0);
 
@@ -462,6 +507,7 @@ const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_6a0c
 pub struct std___Func_impl_no_alloc_lambda_6ac90b518bffa21d659a446523df54bd_void_BSPlatform__BNetResult_unsigned___int64 {
     /// +0x0 `vtbl:std::_Func_impl_no_alloc<<lambda_6ac90b518bffa21d659a446523df54bd>,void,BSPlatform::BNetResult,unsigned___int64>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Func_impl_no_alloc_lambda_6ac90b518bffa21d659a446523df54bd_void_BSPlatform__BNetResult_unsigned___int64_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_6ac90b518bffa21d659a446523df54bd_void_BSPlatform__BNetResult_unsigned___int64, __vftable) == 0x0);
 
@@ -472,6 +518,7 @@ const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_6ac9
 pub struct std___Func_impl_no_alloc_lambda_7062cf54c77ddd4c2745d392c48a20b5_void_BSPlatform__BNetResult_uns_55f2df281895 {
     /// +0x0 `vtbl:std::_Func_impl_no_alloc<<lambda_7062cf54c77ddd4c2745d392c48a20b5>,void,BSPlatform::BNetResult,unsigned___int64,char_const*___ptr64,char_const*___ptr64>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Func_impl_no_alloc_lambda_7062cf54c77ddd4c2745d392c48a20b5_void_BSPlatform__BNetResult_uns_55f2df281895_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_7062cf54c77ddd4c2745d392c48a20b5_void_BSPlatform__BNetResult_uns_55f2df281895, __vftable) == 0x0);
 
@@ -482,6 +529,7 @@ const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_7062
 pub struct std___Func_impl_no_alloc_lambda_74d989c5e6c5291c3c2a6d515570cb1b_void_BSPlatform__BNetResult_unsigned___int64 {
     /// +0x0 `vtbl:std::_Func_impl_no_alloc<<lambda_74d989c5e6c5291c3c2a6d515570cb1b>,void,BSPlatform::BNetResult,unsigned___int64>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Func_impl_no_alloc_lambda_74d989c5e6c5291c3c2a6d515570cb1b_void_BSPlatform__BNetResult_unsigned___int64_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_74d989c5e6c5291c3c2a6d515570cb1b_void_BSPlatform__BNetResult_unsigned___int64, __vftable) == 0x0);
 
@@ -492,6 +540,7 @@ const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_74d9
 pub struct std___Func_impl_no_alloc_lambda_7882fc97923f24ea60a428f5bf949adc_void_BSPlatform__BNetResult_unsigned___int64 {
     /// +0x0 `vtbl:std::_Func_impl_no_alloc<<lambda_7882fc97923f24ea60a428f5bf949adc>,void,BSPlatform::BNetResult,unsigned___int64>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Func_impl_no_alloc_lambda_7882fc97923f24ea60a428f5bf949adc_void_BSPlatform__BNetResult_unsigned___int64_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_7882fc97923f24ea60a428f5bf949adc_void_BSPlatform__BNetResult_unsigned___int64, __vftable) == 0x0);
 
@@ -502,6 +551,7 @@ const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_7882
 pub struct std___Func_impl_no_alloc_lambda_7addd3036b14267912edb4ab0ea8095f_void_BSPlatform__BNetResult_unsigned___int64 {
     /// +0x0 `vtbl:std::_Func_impl_no_alloc<<lambda_7addd3036b14267912edb4ab0ea8095f>,void,BSPlatform::BNetResult,unsigned___int64>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Func_impl_no_alloc_lambda_7addd3036b14267912edb4ab0ea8095f_void_BSPlatform__BNetResult_unsigned___int64_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_7addd3036b14267912edb4ab0ea8095f_void_BSPlatform__BNetResult_unsigned___int64, __vftable) == 0x0);
 
@@ -512,6 +562,7 @@ const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_7add
 pub struct std___Func_impl_no_alloc_lambda_80e2e0f50672477a8675c2e7f942e847_void_BSPlatform__BNetResult_unsigned___int64 {
     /// +0x0 `vtbl:std::_Func_impl_no_alloc<<lambda_80e2e0f50672477a8675c2e7f942e847>,void,BSPlatform::BNetResult,unsigned___int64>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Func_impl_no_alloc_lambda_80e2e0f50672477a8675c2e7f942e847_void_BSPlatform__BNetResult_unsigned___int64_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_80e2e0f50672477a8675c2e7f942e847_void_BSPlatform__BNetResult_unsigned___int64, __vftable) == 0x0);
 
@@ -522,6 +573,7 @@ const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_80e2
 pub struct std___Func_impl_no_alloc_lambda_815893ffb8f0db46286add1b3bf1dd3e_void_BSPlatform__BNetResult_unsigned___int64 {
     /// +0x0 `vtbl:std::_Func_impl_no_alloc<<lambda_815893ffb8f0db46286add1b3bf1dd3e>,void,BSPlatform::BNetResult,unsigned___int64>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Func_impl_no_alloc_lambda_815893ffb8f0db46286add1b3bf1dd3e_void_BSPlatform__BNetResult_unsigned___int64_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_815893ffb8f0db46286add1b3bf1dd3e_void_BSPlatform__BNetResult_unsigned___int64, __vftable) == 0x0);
 
@@ -532,6 +584,7 @@ const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_8158
 pub struct std___Func_impl_no_alloc_lambda_830e43bc1c5da115f8fd2b8b993d5848_void_BSPlatform__BNetResult_uns_4cb16cd804b5 {
     /// +0x0 `vtbl:std::_Func_impl_no_alloc<<lambda_830e43bc1c5da115f8fd2b8b993d5848>,void,BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSUserContent,BSTArrayHeapAllocator>_const&___ptr64>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Func_impl_no_alloc_lambda_830e43bc1c5da115f8fd2b8b993d5848_void_BSPlatform__BNetResult_uns_4cb16cd804b5_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_830e43bc1c5da115f8fd2b8b993d5848_void_BSPlatform__BNetResult_uns_4cb16cd804b5, __vftable) == 0x0);
 
@@ -542,6 +595,7 @@ const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_830e
 pub struct std___Func_impl_no_alloc_lambda_85b754086fa1198379c27d253847d508_void_BSPlatform__BNetResult_uns_cc33223ef2a9 {
     /// +0x0 `vtbl:std::_Func_impl_no_alloc<<lambda_85b754086fa1198379c27d253847d508>,void,BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSUserContent,BSTArrayHeapAllocator>_const&___ptr64>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Func_impl_no_alloc_lambda_85b754086fa1198379c27d253847d508_void_BSPlatform__BNetResult_uns_cc33223ef2a9_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_85b754086fa1198379c27d253847d508_void_BSPlatform__BNetResult_uns_cc33223ef2a9, __vftable) == 0x0);
 
@@ -552,6 +606,7 @@ const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_85b7
 pub struct std___Func_impl_no_alloc_lambda_8605220698b359760e63c3af1e046120_void_BSPlatform__BNetResult_uns_26f2f85f6da8 {
     /// +0x0 `vtbl:std::_Func_impl_no_alloc<<lambda_8605220698b359760e63c3af1e046120>,void,BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSUserContent,BSTArrayHeapAllocator>_const&___ptr64>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Func_impl_no_alloc_lambda_8605220698b359760e63c3af1e046120_void_BSPlatform__BNetResult_uns_26f2f85f6da8_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_8605220698b359760e63c3af1e046120_void_BSPlatform__BNetResult_uns_26f2f85f6da8, __vftable) == 0x0);
 
@@ -562,6 +617,7 @@ const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_8605
 pub struct std___Func_impl_no_alloc_lambda_898c6c168e279f373b2c8ce5205111b5_void_BSPlatform__BNetResult_unsigned___int64 {
     /// +0x0 `vtbl:std::_Func_impl_no_alloc<<lambda_898c6c168e279f373b2c8ce5205111b5>,void,BSPlatform::BNetResult,unsigned___int64>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Func_impl_no_alloc_lambda_898c6c168e279f373b2c8ce5205111b5_void_BSPlatform__BNetResult_unsigned___int64_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_898c6c168e279f373b2c8ce5205111b5_void_BSPlatform__BNetResult_unsigned___int64, __vftable) == 0x0);
 
@@ -572,6 +628,7 @@ const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_898c
 pub struct std___Func_impl_no_alloc_lambda_8fad2c034f9e2984e0579126ca8623cd_void_BSPlatform__BNetResult_unsigned___int64 {
     /// +0x0 `vtbl:std::_Func_impl_no_alloc<<lambda_8fad2c034f9e2984e0579126ca8623cd>,void,BSPlatform::BNetResult,unsigned___int64>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Func_impl_no_alloc_lambda_8fad2c034f9e2984e0579126ca8623cd_void_BSPlatform__BNetResult_unsigned___int64_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_8fad2c034f9e2984e0579126ca8623cd_void_BSPlatform__BNetResult_unsigned___int64, __vftable) == 0x0);
 
@@ -582,6 +639,7 @@ const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_8fad
 pub struct std___Func_impl_no_alloc_lambda_97bc35a1ba2ee23c2af7169581b29e77_void_BSPlatform__BNetResult_uns_f4fe028c83f2 {
     /// +0x0 `vtbl:std::_Func_impl_no_alloc<<lambda_97bc35a1ba2ee23c2af7169581b29e77>,void,BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSUserContent,BSTArrayHeapAllocator>_const&___ptr64>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Func_impl_no_alloc_lambda_97bc35a1ba2ee23c2af7169581b29e77_void_BSPlatform__BNetResult_uns_f4fe028c83f2_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_97bc35a1ba2ee23c2af7169581b29e77_void_BSPlatform__BNetResult_uns_f4fe028c83f2, __vftable) == 0x0);
 
@@ -592,6 +650,7 @@ const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_97bc
 pub struct std___Func_impl_no_alloc_lambda_983460786c90069a37842147b2ff4c60_void_BSPlatform__BNetResult_uns_a5f2ba71744e {
     /// +0x0 `vtbl:std::_Func_impl_no_alloc<<lambda_983460786c90069a37842147b2ff4c60>,void,BSPlatform::BNetResult,unsigned___int64,char_const*___ptr64>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Func_impl_no_alloc_lambda_983460786c90069a37842147b2ff4c60_void_BSPlatform__BNetResult_uns_a5f2ba71744e_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_983460786c90069a37842147b2ff4c60_void_BSPlatform__BNetResult_uns_a5f2ba71744e, __vftable) == 0x0);
 
@@ -602,6 +661,7 @@ const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_9834
 pub struct std___Func_impl_no_alloc_lambda_9a7616d9a37f73ea5291ed72e5e157d5_void_BSPlatform__BNetResult_uns_63f382b46fe4 {
     /// +0x0 `vtbl:std::_Func_impl_no_alloc<<lambda_9a7616d9a37f73ea5291ed72e5e157d5>,void,BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSUserContent,BSTArrayHeapAllocator>_const&___ptr64>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Func_impl_no_alloc_lambda_9a7616d9a37f73ea5291ed72e5e157d5_void_BSPlatform__BNetResult_uns_63f382b46fe4_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_9a7616d9a37f73ea5291ed72e5e157d5_void_BSPlatform__BNetResult_uns_63f382b46fe4, __vftable) == 0x0);
 
@@ -612,6 +672,7 @@ const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_9a76
 pub struct std___Func_impl_no_alloc_lambda_9c9513acee83105d52dafa92ec70d9fe_void_BSPlatform__BNetResult_unsigned___int64_int {
     /// +0x0 `vtbl:std::_Func_impl_no_alloc<<lambda_9c9513acee83105d52dafa92ec70d9fe>,void,BSPlatform::BNetResult,unsigned___int64,int>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Func_impl_no_alloc_lambda_9c9513acee83105d52dafa92ec70d9fe_void_BSPlatform__BNetResult_unsigned___int64_int_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_9c9513acee83105d52dafa92ec70d9fe_void_BSPlatform__BNetResult_unsigned___int64_int, __vftable) == 0x0);
 
@@ -622,6 +683,7 @@ const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_9c95
 pub struct std___Func_impl_no_alloc_lambda_a32478ff7700186eaafd9232bb13353c_void_BSPlatform__BNetResult_unsigned___int64 {
     /// +0x0 `vtbl:std::_Func_impl_no_alloc<<lambda_a32478ff7700186eaafd9232bb13353c>,void,BSPlatform::BNetResult,unsigned___int64>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Func_impl_no_alloc_lambda_a32478ff7700186eaafd9232bb13353c_void_BSPlatform__BNetResult_unsigned___int64_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_a32478ff7700186eaafd9232bb13353c_void_BSPlatform__BNetResult_unsigned___int64, __vftable) == 0x0);
 
@@ -632,6 +694,7 @@ const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_a324
 pub struct std___Func_impl_no_alloc_lambda_a728a0d653b4ad9c1fa81f08c34fde92_void_BSPlatform__BNetResult_uns_836110073739 {
     /// +0x0 `vtbl:std::_Func_impl_no_alloc<<lambda_a728a0d653b4ad9c1fa81f08c34fde92>,void,BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSEntitlement,BSTArrayHeapAllocator>_const&___ptr64>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Func_impl_no_alloc_lambda_a728a0d653b4ad9c1fa81f08c34fde92_void_BSPlatform__BNetResult_uns_836110073739_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_a728a0d653b4ad9c1fa81f08c34fde92_void_BSPlatform__BNetResult_uns_836110073739, __vftable) == 0x0);
 
@@ -642,6 +705,7 @@ const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_a728
 pub struct std___Func_impl_no_alloc_lambda_a7a558bcbf84466d538f532fa9386187_void_BSPlatform__BNetResult_uns_4ec7e0f70f90 {
     /// +0x0 `vtbl:std::_Func_impl_no_alloc<<lambda_a7a558bcbf84466d538f532fa9386187>,void,BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSUserContent,BSTArrayHeapAllocator>_const&___ptr64>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Func_impl_no_alloc_lambda_a7a558bcbf84466d538f532fa9386187_void_BSPlatform__BNetResult_uns_4ec7e0f70f90_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_a7a558bcbf84466d538f532fa9386187_void_BSPlatform__BNetResult_uns_4ec7e0f70f90, __vftable) == 0x0);
 
@@ -652,6 +716,7 @@ const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_a7a5
 pub struct std___Func_impl_no_alloc_lambda_a7f72a51e724fbe431bed4fb483d2746_void_BSPlatform__BNetResult_std_8133f8ad1c0b {
     /// +0x0 `vtbl:std::_Func_impl_no_alloc<<lambda_a7f72a51e724fbe431bed4fb483d2746>,void,BSPlatform::BNetResult,std::shared_ptr<unsigned_char>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Func_impl_no_alloc_lambda_a7f72a51e724fbe431bed4fb483d2746_void_BSPlatform__BNetResult_std_8133f8ad1c0b_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_a7f72a51e724fbe431bed4fb483d2746_void_BSPlatform__BNetResult_std_8133f8ad1c0b, __vftable) == 0x0);
 
@@ -662,6 +727,7 @@ const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_a7f7
 pub struct std___Func_impl_no_alloc_lambda_b2ed23b10d46bbc149572a2e7226f03f_void_BSPlatform__BNetResult_unsigned___int64 {
     /// +0x0 `vtbl:std::_Func_impl_no_alloc<<lambda_b2ed23b10d46bbc149572a2e7226f03f>,void,BSPlatform::BNetResult,unsigned___int64>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Func_impl_no_alloc_lambda_b2ed23b10d46bbc149572a2e7226f03f_void_BSPlatform__BNetResult_unsigned___int64_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_b2ed23b10d46bbc149572a2e7226f03f_void_BSPlatform__BNetResult_unsigned___int64, __vftable) == 0x0);
 
@@ -672,6 +738,7 @@ const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_b2ed
 pub struct std___Func_impl_no_alloc_lambda_b348a33bd2dd1f4c2011fd2884e0447a_void_BSPlatform__BNetResult_unsigned___int64 {
     /// +0x0 `vtbl:std::_Func_impl_no_alloc<<lambda_b348a33bd2dd1f4c2011fd2884e0447a>,void,BSPlatform::BNetResult,unsigned___int64>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Func_impl_no_alloc_lambda_b348a33bd2dd1f4c2011fd2884e0447a_void_BSPlatform__BNetResult_unsigned___int64_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_b348a33bd2dd1f4c2011fd2884e0447a_void_BSPlatform__BNetResult_unsigned___int64, __vftable) == 0x0);
 
@@ -682,6 +749,7 @@ const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_b348
 pub struct std___Func_impl_no_alloc_lambda_b64ea9afd7628eb1d55a13b60b73111d_void_BSPlatform__BNetResult_unsigned___int64 {
     /// +0x0 `vtbl:std::_Func_impl_no_alloc<<lambda_b64ea9afd7628eb1d55a13b60b73111d>,void,BSPlatform::BNetResult,unsigned___int64>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Func_impl_no_alloc_lambda_b64ea9afd7628eb1d55a13b60b73111d_void_BSPlatform__BNetResult_unsigned___int64_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_b64ea9afd7628eb1d55a13b60b73111d_void_BSPlatform__BNetResult_unsigned___int64, __vftable) == 0x0);
 
@@ -692,6 +760,7 @@ const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_b64e
 pub struct std___Func_impl_no_alloc_lambda_b7cf2f509a861ae9a1eab3a20d084b1b_void_BSPlatform__BNetResult_uns_7ae5992590c5 {
     /// +0x0 `vtbl:std::_Func_impl_no_alloc<<lambda_b7cf2f509a861ae9a1eab3a20d084b1b>,void,BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSEntitlement,BSTArrayHeapAllocator>_const&___ptr64>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Func_impl_no_alloc_lambda_b7cf2f509a861ae9a1eab3a20d084b1b_void_BSPlatform__BNetResult_uns_7ae5992590c5_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_b7cf2f509a861ae9a1eab3a20d084b1b_void_BSPlatform__BNetResult_uns_7ae5992590c5, __vftable) == 0x0);
 
@@ -702,6 +771,7 @@ const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_b7cf
 pub struct std___Func_impl_no_alloc_lambda_bc3a6cb4cbd59fecd9f9e552232bc2e4_void_BSPlatform__BNetResult_unsigned___int64 {
     /// +0x0 `vtbl:std::_Func_impl_no_alloc<<lambda_bc3a6cb4cbd59fecd9f9e552232bc2e4>,void,BSPlatform::BNetResult,unsigned___int64>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Func_impl_no_alloc_lambda_bc3a6cb4cbd59fecd9f9e552232bc2e4_void_BSPlatform__BNetResult_unsigned___int64_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_bc3a6cb4cbd59fecd9f9e552232bc2e4_void_BSPlatform__BNetResult_unsigned___int64, __vftable) == 0x0);
 
@@ -712,6 +782,7 @@ const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_bc3a
 pub struct std___Func_impl_no_alloc_lambda_bd4587c5bcdedc284e65124eb2a89b37_void_BSPlatform__BNetResult_uns_a895f74392df {
     /// +0x0 `vtbl:std::_Func_impl_no_alloc<<lambda_bd4587c5bcdedc284e65124eb2a89b37>,void,BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSUserContent,BSTArrayHeapAllocator>_const&___ptr64>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Func_impl_no_alloc_lambda_bd4587c5bcdedc284e65124eb2a89b37_void_BSPlatform__BNetResult_uns_a895f74392df_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_bd4587c5bcdedc284e65124eb2a89b37_void_BSPlatform__BNetResult_uns_a895f74392df, __vftable) == 0x0);
 
@@ -722,6 +793,7 @@ const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_bd45
 pub struct std___Func_impl_no_alloc_lambda_bdc90a1f2ded0bb10cb0ca84e1e02309_void_BSPlatform__BNetResult_uns_b9d646d91a29 {
     /// +0x0 `vtbl:std::_Func_impl_no_alloc<<lambda_bdc90a1f2ded0bb10cb0ca84e1e02309>,void,BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSUserContent,BSTArrayHeapAllocator>_const&___ptr64>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Func_impl_no_alloc_lambda_bdc90a1f2ded0bb10cb0ca84e1e02309_void_BSPlatform__BNetResult_uns_b9d646d91a29_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_bdc90a1f2ded0bb10cb0ca84e1e02309_void_BSPlatform__BNetResult_uns_b9d646d91a29, __vftable) == 0x0);
 
@@ -732,6 +804,7 @@ const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_bdc9
 pub struct std___Func_impl_no_alloc_lambda_bf6fca9bd34847c8454f6faee1131438_void {
     /// +0x0 `vtbl:std::_Func_impl_no_alloc<<lambda_bf6fca9bd34847c8454f6faee1131438>,void>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Func_impl_no_alloc_lambda_bf6fca9bd34847c8454f6faee1131438_void_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_bf6fca9bd34847c8454f6faee1131438_void, __vftable) == 0x0);
 
@@ -742,6 +815,7 @@ const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_bf6f
 pub struct std___Func_impl_no_alloc_lambda_bfb1ab4e1b67fe4917494ce948904dda_void_BSPlatform__BNetResult_unsigned___int64 {
     /// +0x0 `vtbl:std::_Func_impl_no_alloc<<lambda_bfb1ab4e1b67fe4917494ce948904dda>,void,BSPlatform::BNetResult,unsigned___int64>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Func_impl_no_alloc_lambda_bfb1ab4e1b67fe4917494ce948904dda_void_BSPlatform__BNetResult_unsigned___int64_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_bfb1ab4e1b67fe4917494ce948904dda_void_BSPlatform__BNetResult_unsigned___int64, __vftable) == 0x0);
 
@@ -752,6 +826,7 @@ const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_bfb1
 pub struct std___Func_impl_no_alloc_lambda_c4992977bc83d23dd7ddc83777ebf0f9_void_BSPlatform__BNetResult_uns_31561388aead {
     /// +0x0 `vtbl:std::_Func_impl_no_alloc<<lambda_c4992977bc83d23dd7ddc83777ebf0f9>,void,BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSUserContent,BSTArrayHeapAllocator>_const&___ptr64>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Func_impl_no_alloc_lambda_c4992977bc83d23dd7ddc83777ebf0f9_void_BSPlatform__BNetResult_uns_31561388aead_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_c4992977bc83d23dd7ddc83777ebf0f9_void_BSPlatform__BNetResult_uns_31561388aead, __vftable) == 0x0);
 
@@ -762,6 +837,7 @@ const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_c499
 pub struct std___Func_impl_no_alloc_lambda_c50f3fc9fa3024e7b3f4780f5bd55f23_void_BSPlatform__BNetResult_unsigned___int64 {
     /// +0x0 `vtbl:std::_Func_impl_no_alloc<<lambda_c50f3fc9fa3024e7b3f4780f5bd55f23>,void,BSPlatform::BNetResult,unsigned___int64>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Func_impl_no_alloc_lambda_c50f3fc9fa3024e7b3f4780f5bd55f23_void_BSPlatform__BNetResult_unsigned___int64_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_c50f3fc9fa3024e7b3f4780f5bd55f23_void_BSPlatform__BNetResult_unsigned___int64, __vftable) == 0x0);
 
@@ -772,6 +848,7 @@ const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_c50f
 pub struct std___Func_impl_no_alloc_lambda_d07cb6c2f5ce4c327a90d2b0288f0754_void_BSPlatform__BNetResult_uns_d822f97a827c {
     /// +0x0 `vtbl:std::_Func_impl_no_alloc<<lambda_d07cb6c2f5ce4c327a90d2b0288f0754>,void,BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSUserContent,BSTArrayHeapAllocator>_const&___ptr64>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Func_impl_no_alloc_lambda_d07cb6c2f5ce4c327a90d2b0288f0754_void_BSPlatform__BNetResult_uns_d822f97a827c_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_d07cb6c2f5ce4c327a90d2b0288f0754_void_BSPlatform__BNetResult_uns_d822f97a827c, __vftable) == 0x0);
 
@@ -782,6 +859,7 @@ const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_d07c
 pub struct std___Func_impl_no_alloc_lambda_d2c774bcda7859add07b8ed7e6680145_void_BSPlatform__BNetResult_unsigned___int64 {
     /// +0x0 `vtbl:std::_Func_impl_no_alloc<<lambda_d2c774bcda7859add07b8ed7e6680145>,void,BSPlatform::BNetResult,unsigned___int64>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Func_impl_no_alloc_lambda_d2c774bcda7859add07b8ed7e6680145_void_BSPlatform__BNetResult_unsigned___int64_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_d2c774bcda7859add07b8ed7e6680145_void_BSPlatform__BNetResult_unsigned___int64, __vftable) == 0x0);
 
@@ -792,6 +870,7 @@ const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_d2c7
 pub struct std___Func_impl_no_alloc_lambda_d72033449d9173136745a0e5ecb5b47c_void_BSPlatform__BNetResult_uns_3a33309a55db {
     /// +0x0 `vtbl:std::_Func_impl_no_alloc<<lambda_d72033449d9173136745a0e5ecb5b47c>,void,BSPlatform::BNetResult,unsigned___int64,BSPlatform::BSUserContent_const&___ptr64>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Func_impl_no_alloc_lambda_d72033449d9173136745a0e5ecb5b47c_void_BSPlatform__BNetResult_uns_3a33309a55db_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_d72033449d9173136745a0e5ecb5b47c_void_BSPlatform__BNetResult_uns_3a33309a55db, __vftable) == 0x0);
 
@@ -802,6 +881,7 @@ const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_d720
 pub struct std___Func_impl_no_alloc_lambda_dcc72c94beace030fae718713f8d3938_void_BSPlatform__BNetResult_uns_c047cdca98a6 {
     /// +0x0 `vtbl:std::_Func_impl_no_alloc<<lambda_dcc72c94beace030fae718713f8d3938>,void,BSPlatform::BNetResult,unsigned___int64,BSPlatform::BSUserContent_const&___ptr64>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Func_impl_no_alloc_lambda_dcc72c94beace030fae718713f8d3938_void_BSPlatform__BNetResult_uns_c047cdca98a6_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_dcc72c94beace030fae718713f8d3938_void_BSPlatform__BNetResult_uns_c047cdca98a6, __vftable) == 0x0);
 
@@ -812,6 +892,7 @@ const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_dcc7
 pub struct std___Func_impl_no_alloc_lambda_e0fe5a86a1e5b944659f1772d2145b3f_void_BSPlatform__BNetResult_uns_8b9142e749f7 {
     /// +0x0 `vtbl:std::_Func_impl_no_alloc<<lambda_e0fe5a86a1e5b944659f1772d2145b3f>,void,BSPlatform::BNetResult,unsigned___int64,BSPlatform::BSContentId>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Func_impl_no_alloc_lambda_e0fe5a86a1e5b944659f1772d2145b3f_void_BSPlatform__BNetResult_uns_8b9142e749f7_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_e0fe5a86a1e5b944659f1772d2145b3f_void_BSPlatform__BNetResult_uns_8b9142e749f7, __vftable) == 0x0);
 
@@ -827,6 +908,7 @@ pub struct std___Func_impl_no_alloc_lambda_e6c73e78bebc5eef6f32d9f780dca163_void
     pub field_40: u64,
     /// +0x48 `undefined8`, ctor store
     pub field_48: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_e6c73e78bebc5eef6f32d9f780dca163_void_BSPlatform__BNetResult_uns_252272a7e61b, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_e6c73e78bebc5eef6f32d9f780dca163_void_BSPlatform__BNetResult_uns_252272a7e61b, field_40) == 0x40);
@@ -839,6 +921,7 @@ const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_e6c7
 pub struct std___Func_impl_no_alloc_lambda_eb57f6243b870ea53db33c15a455940e_void_BSPlatform__BNetResult_uns_a0ff933ee8c1 {
     /// +0x0 `vtbl:std::_Func_impl_no_alloc<<lambda_eb57f6243b870ea53db33c15a455940e>,void,BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSUserContent,BSTArrayHeapAllocator>_const&___ptr64>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Func_impl_no_alloc_lambda_eb57f6243b870ea53db33c15a455940e_void_BSPlatform__BNetResult_uns_a0ff933ee8c1_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_eb57f6243b870ea53db33c15a455940e_void_BSPlatform__BNetResult_uns_a0ff933ee8c1, __vftable) == 0x0);
 
@@ -849,6 +932,7 @@ const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_eb57
 pub struct std___Func_impl_no_alloc_lambda_ed12f3f97c740fc4efe6fbad43373cdf_void_BSPlatform__BNetResult_uns_4d396f3e88d9 {
     /// +0x0 `vtbl:std::_Func_impl_no_alloc<<lambda_ed12f3f97c740fc4efe6fbad43373cdf>,void,BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSUserContent,BSTArrayHeapAllocator>_const&___ptr64>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Func_impl_no_alloc_lambda_ed12f3f97c740fc4efe6fbad43373cdf_void_BSPlatform__BNetResult_uns_4d396f3e88d9_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_ed12f3f97c740fc4efe6fbad43373cdf_void_BSPlatform__BNetResult_uns_4d396f3e88d9, __vftable) == 0x0);
 
@@ -859,6 +943,7 @@ const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_ed12
 pub struct std___Func_impl_no_alloc_lambda_f0df72efa3b74284f064342daac2cf7c_void_BSPlatform__BNetResult_uns_987c0adaf2cf {
     /// +0x0 `vtbl:std::_Func_impl_no_alloc<<lambda_f0df72efa3b74284f064342daac2cf7c>,void,BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSUserContent,BSTArrayHeapAllocator>_const&___ptr64>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Func_impl_no_alloc_lambda_f0df72efa3b74284f064342daac2cf7c_void_BSPlatform__BNetResult_uns_987c0adaf2cf_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_f0df72efa3b74284f064342daac2cf7c_void_BSPlatform__BNetResult_uns_987c0adaf2cf, __vftable) == 0x0);
 
@@ -869,6 +954,7 @@ const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_f0df
 pub struct std___Func_impl_no_alloc_lambda_f21a81f64b85badbc171b3f0231051b9_void_BSPlatform__BNetResult_unsigned___int64 {
     /// +0x0 `vtbl:std::_Func_impl_no_alloc<<lambda_f21a81f64b85badbc171b3f0231051b9>,void,BSPlatform::BNetResult,unsigned___int64>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Func_impl_no_alloc_lambda_f21a81f64b85badbc171b3f0231051b9_void_BSPlatform__BNetResult_unsigned___int64_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_f21a81f64b85badbc171b3f0231051b9_void_BSPlatform__BNetResult_unsigned___int64, __vftable) == 0x0);
 
@@ -879,6 +965,7 @@ const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_f21a
 pub struct std___Func_impl_no_alloc_lambda_f9fed838dd5c57d1ab73ed7dfab6f2b4_void_BSPlatform__BNetResult_uns_896b6f612d24 {
     /// +0x0 `vtbl:std::_Func_impl_no_alloc<<lambda_f9fed838dd5c57d1ab73ed7dfab6f2b4>,void,BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSUserContent,BSTArrayHeapAllocator>_const&___ptr64>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Func_impl_no_alloc_lambda_f9fed838dd5c57d1ab73ed7dfab6f2b4_void_BSPlatform__BNetResult_uns_896b6f612d24_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_f9fed838dd5c57d1ab73ed7dfab6f2b4_void_BSPlatform__BNetResult_uns_896b6f612d24, __vftable) == 0x0);
 
@@ -889,6 +976,7 @@ const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_f9fe
 pub struct std___Func_impl_no_alloc_lambda_ff26ef2c8de59f0e95bcb7d77631d366_void_BSPlatform__BNetResult_uns_38b55c08c79e {
     /// +0x0 `vtbl:std::_Func_impl_no_alloc<<lambda_ff26ef2c8de59f0e95bcb7d77631d366>,void,BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSUserContent,BSTArrayHeapAllocator>_const&___ptr64>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Func_impl_no_alloc_lambda_ff26ef2c8de59f0e95bcb7d77631d366_void_BSPlatform__BNetResult_uns_38b55c08c79e_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_ff26ef2c8de59f0e95bcb7d77631d366_void_BSPlatform__BNetResult_uns_38b55c08c79e, __vftable) == 0x0);
 
@@ -903,6 +991,7 @@ pub struct std___Func_impl_no_alloc_lambda_ff9fd72b76d084838a2f7283e5859cbe_void
     /// +0x30 `undefined4`, ctor store
     pub field_30: u32,
     pub unknown_34: [u8; 68],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<std___Func_impl_no_alloc_lambda_ff9fd72b76d084838a2f7283e5859cbe_void_BSPlatform__BNetResult_uns_9fe4280c756d>() == 0x78);
 const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_ff9fd72b76d084838a2f7283e5859cbe_void_BSPlatform__BNetResult_uns_9fe4280c756d, __vftable) == 0x0);
@@ -915,6 +1004,7 @@ const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_lambda_ff9f
 pub struct std___Func_impl_no_alloc_bool____cdecl_TextureCreator__createTask____ptr64_bool_TextureCreator__createTask____ptr64 {
     /// +0x0 `vtbl:std::_Func_impl_no_alloc<bool_(__cdecl*)(TextureCreator::createTask*___ptr64),bool,TextureCreator::createTask*___ptr64>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Func_impl_no_alloc_bool____cdecl_TextureCreator__createTask____ptr64_bool_TextureCreator__createTask____ptr64_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_bool____cdecl_TextureCreator__createTask____ptr64_bool_TextureCreator__createTask____ptr64, __vftable) == 0x0);
 
@@ -925,6 +1015,7 @@ const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_bool____cde
 pub struct std___Func_impl_no_alloc_std___Binder_std___Unforced_bool____cdecl_SearchPage___void____ptr64_SearchPage____ptr64_void {
     /// +0x0 `vtbl:std::_Func_impl_no_alloc<std::_Binder<std::_Unforced,bool_(__cdecl_SearchPage::*)(void)___ptr64,SearchPage*___ptr64>,void>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Func_impl_no_alloc_std___Binder_std___Unforced_bool____cdecl_SearchPage___void____ptr64_SearchPage____ptr64_void_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_std___Binder_std___Unforced_bool____cdecl_SearchPage___void____ptr64_SearchPage____ptr64_void, __vftable) == 0x0);
 
@@ -935,6 +1026,7 @@ const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_std___Binde
 pub struct std___Func_impl_no_alloc_std___Binder_std___Unforced_void____cdecl_DescriptionBox___void____ptr6_01cf4126f39a {
     /// +0x0 `vtbl:std::_Func_impl_no_alloc<std::_Binder<std::_Unforced,void_(__cdecl_DescriptionBox::*)(void)___ptr64,DescriptionBox*___ptr64>,void>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Func_impl_no_alloc_std___Binder_std___Unforced_void____cdecl_DescriptionBox___void____ptr6_01cf4126f39a_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_std___Binder_std___Unforced_void____cdecl_DescriptionBox___void____ptr6_01cf4126f39a, __vftable) == 0x0);
 
@@ -945,6 +1037,7 @@ const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_std___Binde
 pub struct std___Func_impl_no_alloc_std___Binder_std___Unforced_void____cdecl_DownloadProgressBar___Marketp_9c8d847795d9 {
     /// +0x0 `vtbl:std::_Func_impl_no_alloc<std::_Binder<std::_Unforced,void_(__cdecl_DownloadProgressBar::*)(MarketplaceEvent::MARKETPLACE_EVENT_TYPE,std::vector<MarketplaceEvent::MarketplaceEventDetail,std::allocator<MarketplaceEvent::MarketplaceEventDetail>_>&___ptr64,MarketplaceEvent::MARKETPLACE_REQUEST_RESULT)___ptr64,DownloadProgressBar*___ptr64,std::_Ph<1>_const&___ptr64,std::_Ph<2>_const&___ptr64,std::_Ph<3>_const&___ptr64>,void,MarketplaceEvent::MARKETPLACE_EVENT_TYPE,std::vector<MarketplaceEvent::MarketplaceEventDetail,std::allocator<MarketplaceEvent::MarketplaceEventDetail>_>&___ptr64,MarketplaceEvent::MARKETPLACE_REQUEST_RESULT>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Func_impl_no_alloc_std___Binder_std___Unforced_void____cdecl_DownloadProgressBar___Marketp_9c8d847795d9_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_std___Binder_std___Unforced_void____cdecl_DownloadProgressBar___Marketp_9c8d847795d9, __vftable) == 0x0);
 
@@ -955,6 +1048,7 @@ const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_std___Binde
 pub struct std___Func_impl_no_alloc_std___Binder_std___Unforced_void____cdecl_FilterSideBar___void____ptr64_c54017669aac {
     /// +0x0 `vtbl:std::_Func_impl_no_alloc<std::_Binder<std::_Unforced,void_(__cdecl_FilterSideBar::*)(void)___ptr64,FilterSideBar*___ptr64>,void>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Func_impl_no_alloc_std___Binder_std___Unforced_void____cdecl_FilterSideBar___void____ptr64_c54017669aac_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_std___Binder_std___Unforced_void____cdecl_FilterSideBar___void____ptr64_c54017669aac, __vftable) == 0x0);
 
@@ -965,6 +1059,7 @@ const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_std___Binde
 pub struct std___Func_impl_no_alloc_std___Binder_std___Unforced_void____cdecl_LoadOrder___MarketplaceEvent__c91691698f1c {
     /// +0x0 `vtbl:std::_Func_impl_no_alloc<std::_Binder<std::_Unforced,void_(__cdecl_LoadOrder::*)(MarketplaceEvent::MARKETPLACE_EVENT_TYPE,std::vector<MarketplaceEvent::MarketplaceEventDetail,std::allocator<MarketplaceEvent::MarketplaceEventDetail>_>&___ptr64,MarketplaceEvent::MARKETPLACE_REQUEST_RESULT)___ptr64,LoadOrder*___ptr64,std::_Ph<1>_const&___ptr64,std::_Ph<2>_const&___ptr64,std::_Ph<3>_const&___ptr64>,void,MarketplaceEvent::MARKETPLACE_EVENT_TYPE,std::vector<MarketplaceEvent::MarketplaceEventDetail,std::allocator<MarketplaceEvent::MarketplaceEventDetail>_>&___ptr64,MarketplaceEvent::MARKETPLACE_REQUEST_RESULT>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Func_impl_no_alloc_std___Binder_std___Unforced_void____cdecl_LoadOrder___MarketplaceEvent__c91691698f1c_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_std___Binder_std___Unforced_void____cdecl_LoadOrder___MarketplaceEvent__c91691698f1c, __vftable) == 0x0);
 
@@ -975,6 +1070,7 @@ const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_std___Binde
 pub struct std___Func_impl_no_alloc_std___Binder_std___Unforced_void____cdecl_LoadOrder___void____ptr64_LoadOrder____ptr64_void {
     /// +0x0 `vtbl:std::_Func_impl_no_alloc<std::_Binder<std::_Unforced,void_(__cdecl_LoadOrder::*)(void)___ptr64,LoadOrder*___ptr64>,void>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Func_impl_no_alloc_std___Binder_std___Unforced_void____cdecl_LoadOrder___void____ptr64_LoadOrder____ptr64_void_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_std___Binder_std___Unforced_void____cdecl_LoadOrder___void____ptr64_LoadOrder____ptr64_void, __vftable) == 0x0);
 
@@ -985,6 +1081,7 @@ const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_std___Binde
 pub struct std___Func_impl_no_alloc_std___Binder_std___Unforced_void____cdecl_LoadOrderArchive___Marketplac_95a7a5644def {
     /// +0x0 `vtbl:std::_Func_impl_no_alloc<std::_Binder<std::_Unforced,void_(__cdecl_LoadOrderArchive::*)(MarketplaceEvent::MARKETPLACE_EVENT_TYPE,std::vector<MarketplaceEvent::MarketplaceEventDetail,std::allocator<MarketplaceEvent::MarketplaceEventDetail>_>&___ptr64,MarketplaceEvent::MARKETPLACE_REQUEST_RESULT)___ptr64,LoadOrderArchive*___ptr64,std::_Ph<1>_const&___ptr64,std::_Ph<2>_const&___ptr64,std::_Ph<3>_const&___ptr64>,void,MarketplaceEvent::MARKETPLACE_EVENT_TYPE,std::vector<MarketplaceEvent::MarketplaceEventDetail,std::allocator<MarketplaceEvent::MarketplaceEventDetail>_>&___ptr64,MarketplaceEvent::MARKETPLACE_REQUEST_RESULT>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Func_impl_no_alloc_std___Binder_std___Unforced_void____cdecl_LoadOrderArchive___Marketplac_95a7a5644def_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_std___Binder_std___Unforced_void____cdecl_LoadOrderArchive___Marketplac_95a7a5644def, __vftable) == 0x0);
 
@@ -995,6 +1092,7 @@ const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_std___Binde
 pub struct std___Func_impl_no_alloc_std___Binder_std___Unforced_void____cdecl_LoadOrderArchive___void____pt_0d27df75115b {
     /// +0x0 `vtbl:std::_Func_impl_no_alloc<std::_Binder<std::_Unforced,void_(__cdecl_LoadOrderArchive::*)(void)___ptr64,LoadOrderArchive*___ptr64>,void>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Func_impl_no_alloc_std___Binder_std___Unforced_void____cdecl_LoadOrderArchive___void____pt_0d27df75115b_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_std___Binder_std___Unforced_void____cdecl_LoadOrderArchive___void____pt_0d27df75115b, __vftable) == 0x0);
 
@@ -1005,6 +1103,7 @@ const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_std___Binde
 pub struct std___Func_impl_no_alloc_std___Binder_std___Unforced_void____cdecl_LoadOrderBox___void____ptr64__63c52738cb24 {
     /// +0x0 `vtbl:std::_Func_impl_no_alloc<std::_Binder<std::_Unforced,void_(__cdecl_LoadOrderBox::*)(void)___ptr64,LoadOrderBox*___ptr64>,void>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Func_impl_no_alloc_std___Binder_std___Unforced_void____cdecl_LoadOrderBox___void____ptr64__63c52738cb24_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_std___Binder_std___Unforced_void____cdecl_LoadOrderBox___void____ptr64__63c52738cb24, __vftable) == 0x0);
 
@@ -1015,6 +1114,7 @@ const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_std___Binde
 pub struct std___Func_impl_no_alloc_std___Binder_std___Unforced_void____cdecl_MissingContent___MarketplaceE_ec8fa5016d33 {
     /// +0x0 `vtbl:std::_Func_impl_no_alloc<std::_Binder<std::_Unforced,void_(__cdecl_MissingContent::*)(MarketplaceEvent::MARKETPLACE_EVENT_TYPE,std::vector<MarketplaceEvent::MarketplaceEventDetail,std::allocator<MarketplaceEvent::MarketplaceEventDetail>_>&___ptr64,MarketplaceEvent::MARKETPLACE_REQUEST_RESULT)___ptr64,MissingContent*___ptr64,std::_Ph<1>_const&___ptr64,std::_Ph<2>_const&___ptr64,std::_Ph<3>_const&___ptr64>,void,MarketplaceEvent::MARKETPLACE_EVENT_TYPE,std::vector<MarketplaceEvent::MarketplaceEventDetail,std::allocator<MarketplaceEvent::MarketplaceEventDetail>_>&___ptr64,MarketplaceEvent::MARKETPLACE_REQUEST_RESULT>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Func_impl_no_alloc_std___Binder_std___Unforced_void____cdecl_MissingContent___MarketplaceE_ec8fa5016d33_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_std___Binder_std___Unforced_void____cdecl_MissingContent___MarketplaceE_ec8fa5016d33, __vftable) == 0x0);
 
@@ -1025,6 +1125,7 @@ const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_std___Binde
 pub struct std___Func_impl_no_alloc_std___Binder_std___Unforced_void____cdecl_OfflineLoadOrder___Marketplac_ce7db16faf7d {
     /// +0x0 `vtbl:std::_Func_impl_no_alloc<std::_Binder<std::_Unforced,void_(__cdecl_OfflineLoadOrder::*)(MarketplaceEvent::MARKETPLACE_EVENT_TYPE,std::vector<MarketplaceEvent::MarketplaceEventDetail,std::allocator<MarketplaceEvent::MarketplaceEventDetail>_>&___ptr64,MarketplaceEvent::MARKETPLACE_REQUEST_RESULT)___ptr64,OfflineLoadOrder*___ptr64,std::_Ph<1>_const&___ptr64,std::_Ph<2>_const&___ptr64,std::_Ph<3>_const&___ptr64>,void,MarketplaceEvent::MARKETPLACE_EVENT_TYPE,std::vector<MarketplaceEvent::MarketplaceEventDetail,std::allocator<MarketplaceEvent::MarketplaceEventDetail>_>&___ptr64,MarketplaceEvent::MARKETPLACE_REQUEST_RESULT>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Func_impl_no_alloc_std___Binder_std___Unforced_void____cdecl_OfflineLoadOrder___Marketplac_ce7db16faf7d_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_std___Binder_std___Unforced_void____cdecl_OfflineLoadOrder___Marketplac_ce7db16faf7d, __vftable) == 0x0);
 
@@ -1035,6 +1136,7 @@ const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_std___Binde
 pub struct std___Func_impl_no_alloc_std___Binder_std___Unforced_void____cdecl_OfflineLoadOrder___void____pt_0bd5d6ce83a2 {
     /// +0x0 `vtbl:std::_Func_impl_no_alloc<std::_Binder<std::_Unforced,void_(__cdecl_OfflineLoadOrder::*)(void)___ptr64,OfflineLoadOrder*___ptr64>,void>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Func_impl_no_alloc_std___Binder_std___Unforced_void____cdecl_OfflineLoadOrder___void____pt_0bd5d6ce83a2_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_std___Binder_std___Unforced_void____cdecl_OfflineLoadOrder___void____pt_0bd5d6ce83a2, __vftable) == 0x0);
 
@@ -1045,6 +1147,7 @@ const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_std___Binde
 pub struct std___Func_impl_no_alloc_std___Binder_std___Unforced_void____cdecl_Options___void____ptr64_Optio_4890ccc62c17 {
     /// +0x0 `vtbl:std::_Func_impl_no_alloc<std::_Binder<std::_Unforced,void_(__cdecl_Options::*)(void)___ptr64,Options*___ptr64&___ptr64>,void>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Func_impl_no_alloc_std___Binder_std___Unforced_void____cdecl_Options___void____ptr64_Optio_4890ccc62c17_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_std___Binder_std___Unforced_void____cdecl_Options___void____ptr64_Optio_4890ccc62c17, __vftable) == 0x0);
 
@@ -1055,6 +1158,7 @@ const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_std___Binde
 pub struct std___Func_impl_no_alloc_std___Binder_std___Unforced_void____cdecl_Options___void____ptr64_Options____ptr64_void {
     /// +0x0 `vtbl:std::_Func_impl_no_alloc<std::_Binder<std::_Unforced,void_(__cdecl_Options::*)(void)___ptr64,Options*___ptr64>,void>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Func_impl_no_alloc_std___Binder_std___Unforced_void____cdecl_Options___void____ptr64_Options____ptr64_void_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_std___Binder_std___Unforced_void____cdecl_Options___void____ptr64_Options____ptr64_void, __vftable) == 0x0);
 
@@ -1065,6 +1169,7 @@ const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_std___Binde
 pub struct std___Func_impl_no_alloc_std___Binder_std___Unforced_void____cdecl_SearchPage___void____ptr64_SearchPage____ptr64_void {
     /// +0x0 `vtbl:std::_Func_impl_no_alloc<std::_Binder<std::_Unforced,void_(__cdecl_SearchPage::*)(void)___ptr64,SearchPage*___ptr64>,void>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Func_impl_no_alloc_std___Binder_std___Unforced_void____cdecl_SearchPage___void____ptr64_SearchPage____ptr64_void_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_std___Binder_std___Unforced_void____cdecl_SearchPage___void____ptr64_SearchPage____ptr64_void, __vftable) == 0x0);
 
@@ -1075,6 +1180,7 @@ const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_std___Binde
 pub struct std___Func_impl_no_alloc_std___Binder_std___Unforced_void____cdecl_SearchResultsPage___void____p_c2608d08907d {
     /// +0x0 `vtbl:std::_Func_impl_no_alloc<std::_Binder<std::_Unforced,void_(__cdecl_SearchResultsPage::*)(void)___ptr64,SearchResultsPage*___ptr64>,void>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Func_impl_no_alloc_std___Binder_std___Unforced_void____cdecl_SearchResultsPage___void____p_c2608d08907d_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_std___Binder_std___Unforced_void____cdecl_SearchResultsPage___void____p_c2608d08907d, __vftable) == 0x0);
 
@@ -1085,6 +1191,7 @@ const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_std___Binde
 pub struct std___Func_impl_no_alloc_std___Binder_std___Unforced_void____cdecl_SideBar___void____ptr64_SideBar____ptr64_void {
     /// +0x0 `vtbl:std::_Func_impl_no_alloc<std::_Binder<std::_Unforced,void_(__cdecl_SideBar::*)(void)___ptr64,SideBar*___ptr64>,void>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Func_impl_no_alloc_std___Binder_std___Unforced_void____cdecl_SideBar___void____ptr64_SideBar____ptr64_void_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_std___Binder_std___Unforced_void____cdecl_SideBar___void____ptr64_SideBar____ptr64_void, __vftable) == 0x0);
 
@@ -1095,6 +1202,7 @@ const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_std___Binde
 pub struct std___Func_impl_no_alloc_std___Binder_std___Unforced_void____cdecl_StorageSpaceBar___Marketplace_d9af8e26045a {
     /// +0x0 `vtbl:std::_Func_impl_no_alloc<std::_Binder<std::_Unforced,void_(__cdecl_StorageSpaceBar::*)(MarketplaceEvent::MARKETPLACE_EVENT_TYPE,std::vector<MarketplaceEvent::MarketplaceEventDetail,std::allocator<MarketplaceEvent::MarketplaceEventDetail>_>&___ptr64,MarketplaceEvent::MARKETPLACE_REQUEST_RESULT)___ptr64,StorageSpaceBar*___ptr64,std::_Ph<1>_const&___ptr64,std::_Ph<2>_const&___ptr64,std::_Ph<3>_const&___ptr64>,void,MarketplaceEvent::MARKETPLACE_EVENT_TYPE,std::vector<MarketplaceEvent::MarketplaceEventDetail,std::allocator<MarketplaceEvent::MarketplaceEventDetail>_>&___ptr64,MarketplaceEvent::MARKETPLACE_REQUEST_RESULT>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Func_impl_no_alloc_std___Binder_std___Unforced_void____cdecl_StorageSpaceBar___Marketplace_d9af8e26045a_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_std___Binder_std___Unforced_void____cdecl_StorageSpaceBar___Marketplace_d9af8e26045a, __vftable) == 0x0);
 
@@ -1105,6 +1213,7 @@ const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_std___Binde
 pub struct std___Func_impl_no_alloc_std___Binder_std___Unforced_void____cdecl_UI_DialogDownloadCC___Marketp_82f417ef7389 {
     /// +0x0 `vtbl:std::_Func_impl_no_alloc<std::_Binder<std::_Unforced,void_(__cdecl_UI_DialogDownloadCC::*)(MarketplaceEvent::MARKETPLACE_EVENT_TYPE,std::vector<MarketplaceEvent::MarketplaceEventDetail,std::allocator<MarketplaceEvent::MarketplaceEventDetail>_>&___ptr64,MarketplaceEvent::MARKETPLACE_REQUEST_RESULT)___ptr64,UI_DialogDownloadCC*___ptr64,std::_Ph<1>_const&___ptr64,std::_Ph<2>_const&___ptr64,std::_Ph<3>_const&___ptr64>,void,MarketplaceEvent::MARKETPLACE_EVENT_TYPE,std::vector<MarketplaceEvent::MarketplaceEventDetail,std::allocator<MarketplaceEvent::MarketplaceEventDetail>_>&___ptr64,MarketplaceEvent::MARKETPLACE_REQUEST_RESULT>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Func_impl_no_alloc_std___Binder_std___Unforced_void____cdecl_UI_DialogDownloadCC___Marketp_82f417ef7389_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_std___Binder_std___Unforced_void____cdecl_UI_DialogDownloadCC___Marketp_82f417ef7389, __vftable) == 0x0);
 
@@ -1115,6 +1224,7 @@ const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_std___Binde
 pub struct std___Func_impl_no_alloc_std___Binder_std___Unforced_void____cdecl_UI_DialogDownloadCC___void____4bc9760e66f2 {
     /// +0x0 `vtbl:std::_Func_impl_no_alloc<std::_Binder<std::_Unforced,void_(__cdecl_UI_DialogDownloadCC::*)(void)___ptr64,UI_DialogDownloadCC*___ptr64>,void>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Func_impl_no_alloc_std___Binder_std___Unforced_void____cdecl_UI_DialogDownloadCC___void____4bc9760e66f2_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_std___Binder_std___Unforced_void____cdecl_UI_DialogDownloadCC___void____4bc9760e66f2, __vftable) == 0x0);
 
@@ -1125,6 +1235,7 @@ const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_std___Binde
 pub struct std___Func_impl_no_alloc_std___Binder_std___Unforced_void____cdecl_UI_DialogMessage___void____pt_cb91d58c1401 {
     /// +0x0 `vtbl:std::_Func_impl_no_alloc<std::_Binder<std::_Unforced,void_(__cdecl_UI_DialogMessage::*)(void)___ptr64,UI_DialogMessage*___ptr64>,void>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Func_impl_no_alloc_std___Binder_std___Unforced_void____cdecl_UI_DialogMessage___void____pt_cb91d58c1401_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_std___Binder_std___Unforced_void____cdecl_UI_DialogMessage___void____pt_cb91d58c1401, __vftable) == 0x0);
 
@@ -1135,6 +1246,7 @@ const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_std___Binde
 pub struct std___Func_impl_no_alloc_std___Binder_std___Unforced_void____cdecl_UI_DialogYesNo___void____ptr6_d356177146ab {
     /// +0x0 `vtbl:std::_Func_impl_no_alloc<std::_Binder<std::_Unforced,void_(__cdecl_UI_DialogYesNo::*)(void)___ptr64,UI_DialogYesNo*___ptr64>,void>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Func_impl_no_alloc_std___Binder_std___Unforced_void____cdecl_UI_DialogYesNo___void____ptr6_d356177146ab_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_std___Binder_std___Unforced_void____cdecl_UI_DialogYesNo___void____ptr6_d356177146ab, __vftable) == 0x0);
 
@@ -1145,6 +1257,7 @@ const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_std___Binde
 pub struct std___Func_impl_no_alloc_std___Binder_std___Unforced_void____cdecl_UI_Manager___MarketplaceEvent_166e7056e2c5 {
     /// +0x0 `vtbl:std::_Func_impl_no_alloc<std::_Binder<std::_Unforced,void_(__cdecl_UI_Manager::*)(MarketplaceEvent::MARKETPLACE_EVENT_TYPE,std::vector<MarketplaceEvent::MarketplaceEventDetail,std::allocator<MarketplaceEvent::MarketplaceEventDetail>_>&___ptr64,MarketplaceEvent::MARKETPLACE_REQUEST_RESULT)___ptr64,UI_Manager*___ptr64,std::_Ph<1>_const&___ptr64,std::_Ph<2>_const&___ptr64,std::_Ph<3>_const&___ptr64>,void,MarketplaceEvent::MARKETPLACE_EVENT_TYPE,std::vector<MarketplaceEvent::MarketplaceEventDetail,std::allocator<MarketplaceEvent::MarketplaceEventDetail>_>&___ptr64,MarketplaceEvent::MARKETPLACE_REQUEST_RESULT>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Func_impl_no_alloc_std___Binder_std___Unforced_void____cdecl_UI_Manager___MarketplaceEvent_166e7056e2c5_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_std___Binder_std___Unforced_void____cdecl_UI_Manager___MarketplaceEvent_166e7056e2c5, __vftable) == 0x0);
 
@@ -1155,6 +1268,7 @@ const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_std___Binde
 pub struct std___Func_impl_no_alloc_std___Binder_std___Unforced_void____cdecl_UI_ScrollingList___void____pt_8eab750cdbdf {
     /// +0x0 `vtbl:std::_Func_impl_no_alloc<std::_Binder<std::_Unforced,void_(__cdecl_UI_ScrollingList::*)(void)___ptr64,UI_ScrollingList*___ptr64>,void>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Func_impl_no_alloc_std___Binder_std___Unforced_void____cdecl_UI_ScrollingList___void____pt_8eab750cdbdf_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_std___Binder_std___Unforced_void____cdecl_UI_ScrollingList___void____pt_8eab750cdbdf, __vftable) == 0x0);
 
@@ -1165,6 +1279,7 @@ const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_std___Binde
 pub struct std___Func_impl_no_alloc_std___Binder_std___Unforced_void____cdecl_UI_bottomBar___void____ptr64__8a29c5c3c681 {
     /// +0x0 `vtbl:std::_Func_impl_no_alloc<std::_Binder<std::_Unforced,void_(__cdecl_UI_bottomBar::*)(void)___ptr64,UI_bottomBar*___ptr64&___ptr64>,void>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Func_impl_no_alloc_std___Binder_std___Unforced_void____cdecl_UI_bottomBar___void____ptr64__8a29c5c3c681_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_std___Binder_std___Unforced_void____cdecl_UI_bottomBar___void____ptr64__8a29c5c3c681, __vftable) == 0x0);
 
@@ -1175,6 +1290,7 @@ const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_std___Binde
 pub struct std___Func_impl_no_alloc_std___Binder_std___Unforced_void____cdecl_UI_detailsPage___MarketplaceE_e1430945679c {
     /// +0x0 `vtbl:std::_Func_impl_no_alloc<std::_Binder<std::_Unforced,void_(__cdecl_UI_detailsPage::*)(MarketplaceEvent::MARKETPLACE_EVENT_TYPE,std::vector<MarketplaceEvent::MarketplaceEventDetail,std::allocator<MarketplaceEvent::MarketplaceEventDetail>_>&___ptr64,MarketplaceEvent::MARKETPLACE_REQUEST_RESULT)___ptr64,UI_detailsPage*___ptr64,std::_Ph<1>_const&___ptr64,std::_Ph<2>_const&___ptr64,std::_Ph<3>_const&___ptr64>,void,MarketplaceEvent::MARKETPLACE_EVENT_TYPE,std::vector<MarketplaceEvent::MarketplaceEventDetail,std::allocator<MarketplaceEvent::MarketplaceEventDetail>_>&___ptr64,MarketplaceEvent::MARKETPLACE_REQUEST_RESULT>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Func_impl_no_alloc_std___Binder_std___Unforced_void____cdecl_UI_detailsPage___MarketplaceE_e1430945679c_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_std___Binder_std___Unforced_void____cdecl_UI_detailsPage___MarketplaceE_e1430945679c, __vftable) == 0x0);
 
@@ -1185,6 +1301,7 @@ const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_std___Binde
 pub struct std___Func_impl_no_alloc_std___Binder_std___Unforced_void____cdecl_UI_detailsPage___void____ptr6_9fb5a397f47f {
     /// +0x0 `vtbl:std::_Func_impl_no_alloc<std::_Binder<std::_Unforced,void_(__cdecl_UI_detailsPage::*)(void)___ptr64,UI_detailsPage*___ptr64>,void>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Func_impl_no_alloc_std___Binder_std___Unforced_void____cdecl_UI_detailsPage___void____ptr6_9fb5a397f47f_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_std___Binder_std___Unforced_void____cdecl_UI_detailsPage___void____ptr6_9fb5a397f47f, __vftable) == 0x0);
 
@@ -1195,6 +1312,7 @@ const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_std___Binde
 pub struct std___Func_impl_no_alloc_std___Binder_std___Unforced_void____cdecl_UI_homePage___void____ptr64_UI_homePage____ptr64_void {
     /// +0x0 `vtbl:std::_Func_impl_no_alloc<std::_Binder<std::_Unforced,void_(__cdecl_UI_homePage::*)(void)___ptr64,UI_homePage*___ptr64>,void>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Func_impl_no_alloc_std___Binder_std___Unforced_void____cdecl_UI_homePage___void____ptr64_UI_homePage____ptr64_void_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_std___Binder_std___Unforced_void____cdecl_UI_homePage___void____ptr64_UI_homePage____ptr64_void, __vftable) == 0x0);
 
@@ -1205,6 +1323,7 @@ const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_std___Binde
 pub struct std___Func_impl_no_alloc_std___Binder_std___Unforced_void____cdecl_UI_topBar___void____ptr64_UI_topBar____ptr64_void {
     /// +0x0 `vtbl:std::_Func_impl_no_alloc<std::_Binder<std::_Unforced,void_(__cdecl_UI_topBar::*)(void)___ptr64,UI_topBar*___ptr64>,void>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Func_impl_no_alloc_std___Binder_std___Unforced_void____cdecl_UI_topBar___void____ptr64_UI_topBar____ptr64_void_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_std___Binder_std___Unforced_void____cdecl_UI_topBar___void____ptr64_UI_topBar____ptr64_void, __vftable) == 0x0);
 
@@ -1215,6 +1334,7 @@ const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_std___Binde
 pub struct std___Func_impl_no_alloc_std___Binder_std___Unforced_void____cdecl_Warning___MarketplaceEvent__M_5609978ec864 {
     /// +0x0 `vtbl:std::_Func_impl_no_alloc<std::_Binder<std::_Unforced,void_(__cdecl_Warning::*)(MarketplaceEvent::MARKETPLACE_EVENT_TYPE,std::vector<MarketplaceEvent::MarketplaceEventDetail,std::allocator<MarketplaceEvent::MarketplaceEventDetail>_>&___ptr64,MarketplaceEvent::MARKETPLACE_REQUEST_RESULT)___ptr64,Warning*___ptr64,std::_Ph<1>_const&___ptr64,std::_Ph<2>_const&___ptr64,std::_Ph<3>_const&___ptr64>,void,MarketplaceEvent::MARKETPLACE_EVENT_TYPE,std::vector<MarketplaceEvent::MarketplaceEventDetail,std::allocator<MarketplaceEvent::MarketplaceEventDetail>_>&___ptr64,MarketplaceEvent::MARKETPLACE_REQUEST_RESULT>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Func_impl_no_alloc_std___Binder_std___Unforced_void____cdecl_Warning___MarketplaceEvent__M_5609978ec864_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_std___Binder_std___Unforced_void____cdecl_Warning___MarketplaceEvent__M_5609978ec864, __vftable) == 0x0);
 
@@ -1225,6 +1345,7 @@ const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_std___Binde
 pub struct std___Func_impl_no_alloc_void____cdecl_BSPlatform__BNetResult_void_BSPlatform__BNetResult {
     /// +0x0 `vtbl:std::_Func_impl_no_alloc<void_(__cdecl*)(BSPlatform::BNetResult),void,BSPlatform::BNetResult>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Func_impl_no_alloc_void____cdecl_BSPlatform__BNetResult_void_BSPlatform__BNetResult_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_void____cdecl_BSPlatform__BNetResult_void_BSPlatform__BNetResult, __vftable) == 0x0);
 
@@ -1235,6 +1356,7 @@ const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_void____cde
 pub struct std___Func_impl_no_alloc_void____cdecl_BSPlatform__BNetResult_unsigned___int64_void_BSPlatform___1a625f6f840c {
     /// +0x0 `vtbl:std::_Func_impl_no_alloc<void_(__cdecl*)(BSPlatform::BNetResult,unsigned___int64),void,BSPlatform::BNetResult,unsigned___int64>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Func_impl_no_alloc_void____cdecl_BSPlatform__BNetResult_unsigned___int64_void_BSPlatform___1a625f6f840c_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_void____cdecl_BSPlatform__BNetResult_unsigned___int64_void_BSPlatform___1a625f6f840c, __vftable) == 0x0);
 
@@ -1245,6 +1367,7 @@ const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_void____cde
 pub struct std___Func_impl_no_alloc_void____cdecl_BSPlatform__BNetResult_unsigned___int64_BSPlatform__BNetS_728d7a27a8db {
     /// +0x0 `vtbl:std::_Func_impl_no_alloc<void_(__cdecl*)(BSPlatform::BNetResult,unsigned___int64,BSPlatform::BNetStreamStatus,unsigned_char*___ptr64,unsigned___int64),void,BSPlatform::BNetResult,unsigned___int64,BSPlatform::BNetStreamStatus,unsigned_char*___ptr64,unsigned___int64>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Func_impl_no_alloc_void____cdecl_BSPlatform__BNetResult_unsigned___int64_BSPlatform__BNetS_728d7a27a8db_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_void____cdecl_BSPlatform__BNetResult_unsigned___int64_BSPlatform__BNetS_728d7a27a8db, __vftable) == 0x0);
 
@@ -1255,6 +1378,7 @@ const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_void____cde
 pub struct std___Func_impl_no_alloc_void____cdecl_BSPlatform__BNetResult_unsigned___int64_BSPlatform__BSUse_c2299907cab0 {
     /// +0x0 `vtbl:std::_Func_impl_no_alloc<void_(__cdecl*)(BSPlatform::BNetResult,unsigned___int64,BSPlatform::BSUserContentCollection_const&___ptr64),void,BSPlatform::BNetResult,unsigned___int64,BSPlatform::BSUserContentCollection_const&___ptr64>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Func_impl_no_alloc_void____cdecl_BSPlatform__BNetResult_unsigned___int64_BSPlatform__BSUse_c2299907cab0_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_void____cdecl_BSPlatform__BNetResult_unsigned___int64_BSPlatform__BSUse_c2299907cab0, __vftable) == 0x0);
 
@@ -1265,6 +1389,7 @@ const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_void____cde
 pub struct std___Func_impl_no_alloc_void____cdecl_BSPlatform__BNetResult_unsigned___int64_BSPlatform__BSUse_a84448d83a3a {
     /// +0x0 `vtbl:std::_Func_impl_no_alloc<void_(__cdecl*)(BSPlatform::BNetResult,unsigned___int64,BSPlatform::BSUserContent_const&___ptr64),void,BSPlatform::BNetResult,unsigned___int64,BSPlatform::BSUserContent_const&___ptr64>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Func_impl_no_alloc_void____cdecl_BSPlatform__BNetResult_unsigned___int64_BSPlatform__BSUse_a84448d83a3a_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_void____cdecl_BSPlatform__BNetResult_unsigned___int64_BSPlatform__BSUse_a84448d83a3a, __vftable) == 0x0);
 
@@ -1275,6 +1400,7 @@ const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_void____cde
 pub struct std___Func_impl_no_alloc_void____cdecl_BSPlatform__BNetResult_unsigned___int64_BSPlatform__Vccs__18b48ece7f6b {
     /// +0x0 `vtbl:std::_Func_impl_no_alloc<void_(__cdecl*)(BSPlatform::BNetResult,unsigned___int64,BSPlatform::Vccs::BundlePreviewInfo&&___ptr64),void,BSPlatform::BNetResult,unsigned___int64,BSPlatform::Vccs::BundlePreviewInfo&&___ptr64>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Func_impl_no_alloc_void____cdecl_BSPlatform__BNetResult_unsigned___int64_BSPlatform__Vccs__18b48ece7f6b_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_void____cdecl_BSPlatform__BNetResult_unsigned___int64_BSPlatform__Vccs__18b48ece7f6b, __vftable) == 0x0);
 
@@ -1285,6 +1411,7 @@ const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_void____cde
 pub struct std___Func_impl_no_alloc_void____cdecl_BSPlatform__BNetResult_unsigned___int64_BSTArray_BSFixedS_f7bae00e7436 {
     /// +0x0 `vtbl:std::_Func_impl_no_alloc<void_(__cdecl*)(BSPlatform::BNetResult,unsigned___int64,BSTArray<BSFixedString,BSTArrayHeapAllocator>_const&___ptr64),void,BSPlatform::BNetResult,unsigned___int64,BSTArray<class_BSFixedString,class_BSTArrayHeapAllocator>_const&___ptr64>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Func_impl_no_alloc_void____cdecl_BSPlatform__BNetResult_unsigned___int64_BSTArray_BSFixedS_f7bae00e7436_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_void____cdecl_BSPlatform__BNetResult_unsigned___int64_BSTArray_BSFixedS_f7bae00e7436, __vftable) == 0x0);
 
@@ -1295,6 +1422,7 @@ const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_void____cde
 pub struct std___Func_impl_no_alloc_void____cdecl_BSPlatform__BNetResult_unsigned___int64_BSTArray_BSPlatfo_dc6af402cb28 {
     /// +0x0 `vtbl:std::_Func_impl_no_alloc<void_(__cdecl*)(BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSEntitlement,BSTArrayHeapAllocator>_const&___ptr64),void,BSPlatform::BNetResult,unsigned___int64,BSTArray<class_BSPlatform::BSEntitlement,class_BSTArrayHeapAllocator>_const&___ptr64>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Func_impl_no_alloc_void____cdecl_BSPlatform__BNetResult_unsigned___int64_BSTArray_BSPlatfo_dc6af402cb28_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_void____cdecl_BSPlatform__BNetResult_unsigned___int64_BSTArray_BSPlatfo_dc6af402cb28, __vftable) == 0x0);
 
@@ -1305,6 +1433,7 @@ const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_void____cde
 pub struct std___Func_impl_no_alloc_void____cdecl_BSPlatform__BNetResult_unsigned___int64_BSTArray_BSPlatfo_2b704a199dd5 {
     /// +0x0 `vtbl:std::_Func_impl_no_alloc<void_(__cdecl*)(BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSLegalDocument,BSTArrayHeapAllocator>_const&___ptr64),void,BSPlatform::BNetResult,unsigned___int64,BSTArray<class_BSPlatform::BSLegalDocument,class_BSTArrayHeapAllocator>_const&___ptr64>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Func_impl_no_alloc_void____cdecl_BSPlatform__BNetResult_unsigned___int64_BSTArray_BSPlatfo_2b704a199dd5_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_void____cdecl_BSPlatform__BNetResult_unsigned___int64_BSTArray_BSPlatfo_2b704a199dd5, __vftable) == 0x0);
 
@@ -1315,6 +1444,7 @@ const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_void____cde
 pub struct std___Func_impl_no_alloc_void____cdecl_BSPlatform__BNetResult_unsigned___int64_BSTArray_BSPlatfo_807e20753dfa {
     /// +0x0 `vtbl:std::_Func_impl_no_alloc<void_(__cdecl*)(BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSUserContent,BSTArrayHeapAllocator>_const&___ptr64),void,BSPlatform::BNetResult,unsigned___int64,BSTArray<class_BSPlatform::BSUserContent,class_BSTArrayHeapAllocator>_const&___ptr64>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Func_impl_no_alloc_void____cdecl_BSPlatform__BNetResult_unsigned___int64_BSTArray_BSPlatfo_807e20753dfa_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_void____cdecl_BSPlatform__BNetResult_unsigned___int64_BSTArray_BSPlatfo_807e20753dfa, __vftable) == 0x0);
 
@@ -1325,6 +1455,7 @@ const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_void____cde
 pub struct std___Func_impl_no_alloc_void____cdecl_BSPlatform__BNetResult_unsigned___int64_BSTArray_BSPlatfo_c1f2d756a39b {
     /// +0x0 `vtbl:std::_Func_impl_no_alloc<void_(__cdecl*)(BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSUserContentCollection,BSTArrayHeapAllocator>_const&___ptr64),void,BSPlatform::BNetResult,unsigned___int64,BSTArray<class_BSPlatform::BSUserContentCollection,class_BSTArrayHeapAllocator>_const&___ptr64>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Func_impl_no_alloc_void____cdecl_BSPlatform__BNetResult_unsigned___int64_BSTArray_BSPlatfo_c1f2d756a39b_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_void____cdecl_BSPlatform__BNetResult_unsigned___int64_BSTArray_BSPlatfo_c1f2d756a39b, __vftable) == 0x0);
 
@@ -1335,6 +1466,7 @@ const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_void____cde
 pub struct std___Func_impl_no_alloc_void____cdecl_BSPlatform__BNetResult_unsigned___int64_BSTArray_BSString_ec234410e442 {
     /// +0x0 `vtbl:std::_Func_impl_no_alloc<void_(__cdecl*)(BSPlatform::BNetResult,unsigned___int64,BSTArray<BSStringT<char,4294967295,DynamicMemoryManagementPol>,BSTArrayHeapAllocator>_const&___ptr64),void,BSPlatform::BNetResult,unsigned___int64,BSTArray<class_BSStringT<char,4294967295,class_DynamicMemoryManagementPol>,class_BSTArrayHeapAllocator>_const&___ptr64>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Func_impl_no_alloc_void____cdecl_BSPlatform__BNetResult_unsigned___int64_BSTArray_BSString_ec234410e442_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_void____cdecl_BSPlatform__BNetResult_unsigned___int64_BSTArray_BSString_ec234410e442, __vftable) == 0x0);
 
@@ -1345,6 +1477,7 @@ const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_void____cde
 pub struct std___Func_impl_no_alloc_void____cdecl_BSPlatform__BNetResult_unsigned___int64_BSTArray_unsigned_383b18a394a4 {
     /// +0x0 `vtbl:std::_Func_impl_no_alloc<void_(__cdecl*)(BSPlatform::BNetResult,unsigned___int64,BSTArray<unsigned_int,BSTArrayHeapAllocator>_const&___ptr64),void,BSPlatform::BNetResult,unsigned___int64,BSTArray<unsigned_int,class_BSTArrayHeapAllocator>_const&___ptr64>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Func_impl_no_alloc_void____cdecl_BSPlatform__BNetResult_unsigned___int64_BSTArray_unsigned_383b18a394a4_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_void____cdecl_BSPlatform__BNetResult_unsigned___int64_BSTArray_unsigned_383b18a394a4, __vftable) == 0x0);
 
@@ -1355,6 +1488,7 @@ const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_void____cde
 pub struct std___Func_impl_no_alloc_void____cdecl_BSPlatform__BNetResult_unsigned___int64_char_const____ptr_90cb6e1add36 {
     /// +0x0 `vtbl:std::_Func_impl_no_alloc<void_(__cdecl*)(BSPlatform::BNetResult,unsigned___int64,char_const*___ptr64),void,BSPlatform::BNetResult,unsigned___int64,char_const*___ptr64>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Func_impl_no_alloc_void____cdecl_BSPlatform__BNetResult_unsigned___int64_char_const____ptr_90cb6e1add36_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_void____cdecl_BSPlatform__BNetResult_unsigned___int64_char_const____ptr_90cb6e1add36, __vftable) == 0x0);
 
@@ -1365,6 +1499,7 @@ const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_void____cde
 pub struct std___Func_impl_no_alloc_void____cdecl_BSPlatform__BNetResult_unsigned___int64_char_const____ptr_b092a6f33704 {
     /// +0x0 `vtbl:std::_Func_impl_no_alloc<void_(__cdecl*)(BSPlatform::BNetResult,unsigned___int64,char_const*___ptr64,char_const*___ptr64),void,BSPlatform::BNetResult,unsigned___int64,char_const*___ptr64,char_const*___ptr64>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Func_impl_no_alloc_void____cdecl_BSPlatform__BNetResult_unsigned___int64_char_const____ptr_b092a6f33704_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_void____cdecl_BSPlatform__BNetResult_unsigned___int64_char_const____ptr_b092a6f33704, __vftable) == 0x0);
 
@@ -1375,6 +1510,7 @@ const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_void____cde
 pub struct std___Func_impl_no_alloc_void____cdecl_BSPlatform__BNetResult_unsigned___int64_char_const____ptr_2180cbceb7da {
     /// +0x0 `vtbl:std::_Func_impl_no_alloc<void_(__cdecl*)(BSPlatform::BNetResult,unsigned___int64,char_const*___ptr64,std::vector<BSPlatform::BNetEntitlementMapping,std::allocator<BSPlatform::BNetEntitlementMapping>_>&&___ptr64),void,BSPlatform::BNetResult,unsigned___int64,char_const*___ptr64,std::vector<class_BSPlatform::BNetEntitlementMapping,class_std::allocator<class_BSPlatform::BNetEntitlementMapping>_>&&___ptr64>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Func_impl_no_alloc_void____cdecl_BSPlatform__BNetResult_unsigned___int64_char_const____ptr_2180cbceb7da_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_void____cdecl_BSPlatform__BNetResult_unsigned___int64_char_const____ptr_2180cbceb7da, __vftable) == 0x0);
 
@@ -1385,6 +1521,7 @@ const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_void____cde
 pub struct std___Func_impl_no_alloc_void____cdecl_BSPlatform__BNetResult_unsigned___int64_int_void_BSPlatfo_281134485e71 {
     /// +0x0 `vtbl:std::_Func_impl_no_alloc<void_(__cdecl*)(BSPlatform::BNetResult,unsigned___int64,int),void,BSPlatform::BNetResult,unsigned___int64,int>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Func_impl_no_alloc_void____cdecl_BSPlatform__BNetResult_unsigned___int64_int_void_BSPlatfo_281134485e71_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_void____cdecl_BSPlatform__BNetResult_unsigned___int64_int_void_BSPlatfo_281134485e71, __vftable) == 0x0);
 
@@ -1395,6 +1532,7 @@ const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_void____cde
 pub struct std___Func_impl_no_alloc_void____cdecl_BSPlatform__BNetResult_unsigned___int64_std__shared_ptr_v_6c807864c766 {
     /// +0x0 `vtbl:std::_Func_impl_no_alloc<void_(__cdecl*)(BSPlatform::BNetResult,unsigned___int64,std::shared_ptr<void>,unsigned___int64),void,BSPlatform::BNetResult,unsigned___int64,std::shared_ptr<void>,unsigned___int64>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Func_impl_no_alloc_void____cdecl_BSPlatform__BNetResult_unsigned___int64_std__shared_ptr_v_6c807864c766_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_void____cdecl_BSPlatform__BNetResult_unsigned___int64_std__shared_ptr_v_6c807864c766, __vftable) == 0x0);
 
@@ -1405,6 +1543,7 @@ const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_void____cde
 pub struct std___Func_impl_no_alloc_void____cdecl_BSPlatform__BNetResult_unsigned_int_void_BSPlatform__BNetResult_unsigned_int {
     /// +0x0 `vtbl:std::_Func_impl_no_alloc<void_(__cdecl*)(BSPlatform::BNetResult,unsigned_int),void,BSPlatform::BNetResult,unsigned_int>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Func_impl_no_alloc_void____cdecl_BSPlatform__BNetResult_unsigned_int_void_BSPlatform__BNetResult_unsigned_int_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_void____cdecl_BSPlatform__BNetResult_unsigned_int_void_BSPlatform__BNetResult_unsigned_int, __vftable) == 0x0);
 
@@ -1415,6 +1554,7 @@ const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_void____cde
 pub struct std___Func_impl_no_alloc_void____cdecl_BSPlatform__BNetUGCServicesStatus_void_BSPlatform__BNetUGCServicesStatus {
     /// +0x0 `vtbl:std::_Func_impl_no_alloc<void_(__cdecl*)(BSPlatform::BNetUGCServicesStatus),void,BSPlatform::BNetUGCServicesStatus>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Func_impl_no_alloc_void____cdecl_BSPlatform__BNetUGCServicesStatus_void_BSPlatform__BNetUGCServicesStatus_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_void____cdecl_BSPlatform__BNetUGCServicesStatus_void_BSPlatform__BNetUGCServicesStatus, __vftable) == 0x0);
 
@@ -1425,6 +1565,7 @@ const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_void____cde
 pub struct std___Func_impl_no_alloc_void____cdecl_BSTArray_BSPlatform__BSContentId_BSTArrayHeapAllocator__c_fcce2a10d6fd {
     /// +0x0 `vtbl:std::_Func_impl_no_alloc<void_(__cdecl*)(BSTArray<BSPlatform::BSContentId,BSTArrayHeapAllocator>_const&___ptr64),void,BSTArray<class_BSPlatform::BSContentId,class_BSTArrayHeapAllocator>_const&___ptr64>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Func_impl_no_alloc_void____cdecl_BSTArray_BSPlatform__BSContentId_BSTArrayHeapAllocator__c_fcce2a10d6fd_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_void____cdecl_BSTArray_BSPlatform__BSContentId_BSTArrayHeapAllocator__c_fcce2a10d6fd, __vftable) == 0x0);
 
@@ -1435,6 +1576,7 @@ const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_void____cde
 pub struct std___Func_impl_no_alloc_void____cdecl_DownloadAll__DownloadAllResult_BSPlatform__BNetResult_uns_d25726db9657 {
     /// +0x0 `vtbl:std::_Func_impl_no_alloc<void_(__cdecl*)(DownloadAll::DownloadAllResult,BSPlatform::BNetResult,unsigned_int),void,DownloadAll::DownloadAllResult,BSPlatform::BNetResult,unsigned_int>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Func_impl_no_alloc_void____cdecl_DownloadAll__DownloadAllResult_BSPlatform__BNetResult_uns_d25726db9657_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_void____cdecl_DownloadAll__DownloadAllResult_BSPlatform__BNetResult_uns_d25726db9657, __vftable) == 0x0);
 
@@ -1445,6 +1587,7 @@ const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_void____cde
 pub struct std___Func_impl_no_alloc_void____cdecl_DownloadableContent__DownloadableContentResult_BSPlatform_68c6fcd79a29 {
     /// +0x0 `vtbl:std::_Func_impl_no_alloc<void_(__cdecl*)(DownloadableContent::DownloadableContentResult,BSPlatform::BNetResult),void,DownloadableContent::DownloadableContentResult,BSPlatform::BNetResult>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Func_impl_no_alloc_void____cdecl_DownloadableContent__DownloadableContentResult_BSPlatform_68c6fcd79a29_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_void____cdecl_DownloadableContent__DownloadableContentResult_BSPlatform_68c6fcd79a29, __vftable) == 0x0);
 
@@ -1455,6 +1598,7 @@ const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_void____cde
 pub struct std___Func_impl_no_alloc_void____cdecl_DownloadableContent__DownloadableContentResult_char_const_adfca1eb4eda {
     /// +0x0 `vtbl:std::_Func_impl_no_alloc<void_(__cdecl*)(DownloadableContent::DownloadableContentResult,char_const*___ptr64),void,DownloadableContent::DownloadableContentResult,char_const*___ptr64>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Func_impl_no_alloc_void____cdecl_DownloadableContent__DownloadableContentResult_char_const_adfca1eb4eda_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_void____cdecl_DownloadableContent__DownloadableContentResult_char_const_adfca1eb4eda, __vftable) == 0x0);
 
@@ -1465,6 +1609,7 @@ const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_void____cde
 pub struct std___Func_impl_no_alloc_void____cdecl_MarketplaceEvent__MARKETPLACE_EVENT_TYPE_std__vector_Mark_818ec7eecccb {
     /// +0x0 `vtbl:std::_Func_impl_no_alloc<void_(__cdecl*)(MarketplaceEvent::MARKETPLACE_EVENT_TYPE,std::vector<MarketplaceEvent::MarketplaceEventDetail,std::allocator<MarketplaceEvent::MarketplaceEventDetail>_>&___ptr64,MarketplaceEvent::MARKETPLACE_REQUEST_RESULT),void,MarketplaceEvent::MARKETPLACE_EVENT_TYPE,std::vector<union_MarketplaceEvent::MarketplaceEventDetail,class_std::allocator<union_MarketplaceEvent::MarketplaceEventDetail>_>&___ptr64,MarketplaceEvent::MARKETPLACE_REQUEST_RESULT>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Func_impl_no_alloc_void____cdecl_MarketplaceEvent__MARKETPLACE_EVENT_TYPE_std__vector_Mark_818ec7eecccb_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_void____cdecl_MarketplaceEvent__MARKETPLACE_EVENT_TYPE_std__vector_Mark_818ec7eecccb, __vftable) == 0x0);
 
@@ -1475,6 +1620,7 @@ const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_void____cde
 pub struct std___Func_impl_no_alloc_void____cdecl_Upsell__UpsellResult_bool_void_Upsell__UpsellResult_bool {
     /// +0x0 `vtbl:std::_Func_impl_no_alloc<void_(__cdecl*)(Upsell::UpsellResult,bool),void,Upsell::UpsellResult,bool>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Func_impl_no_alloc_void____cdecl_Upsell__UpsellResult_bool_void_Upsell__UpsellResult_bool_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_void____cdecl_Upsell__UpsellResult_bool_void_Upsell__UpsellResult_bool, __vftable) == 0x0);
 
@@ -1485,6 +1631,7 @@ const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_void____cde
 pub struct std___Func_impl_no_alloc_void____cdecl_char_const____ptr64_bool_void_char_const____ptr64_bool {
     /// +0x0 `vtbl:std::_Func_impl_no_alloc<void_(__cdecl*)(char_const*___ptr64,bool),void,char_const*___ptr64,bool>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Func_impl_no_alloc_void____cdecl_char_const____ptr64_bool_void_char_const____ptr64_bool_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_void____cdecl_char_const____ptr64_bool_void_char_const____ptr64_bool, __vftable) == 0x0);
 
@@ -1495,6 +1642,7 @@ const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_void____cde
 pub struct std___Func_impl_no_alloc_void____cdecl_void____ptr64_BSPlatform__BNetResult_void_void____ptr64_BSPlatform__BNetResult {
     /// +0x0 `vtbl:std::_Func_impl_no_alloc<void_(__cdecl*)(void*___ptr64,BSPlatform::BNetResult),void,void*___ptr64,BSPlatform::BNetResult>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Func_impl_no_alloc_void____cdecl_void____ptr64_BSPlatform__BNetResult_void_void____ptr64_BSPlatform__BNetResult_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_void____cdecl_void____ptr64_BSPlatform__BNetResult_void_void____ptr64_BSPlatform__BNetResult, __vftable) == 0x0);
 
@@ -1505,6 +1653,7 @@ const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_void____cde
 pub struct std___Func_impl_no_alloc_void____cdecl_void____ptr64_bool_char_const____ptr64_GFxValue____ptr64__fd3100eb0a8b {
     /// +0x0 `vtbl:std::_Func_impl_no_alloc<void_(__cdecl*)(void*___ptr64,bool,char_const*___ptr64,GFxValue&___ptr64),void,void*___ptr64,bool,char_const*___ptr64,GFxValue&___ptr64>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Func_impl_no_alloc_void____cdecl_void____ptr64_bool_char_const____ptr64_GFxValue____ptr64__fd3100eb0a8b_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_void____cdecl_void____ptr64_bool_char_const____ptr64_GFxValue____ptr64__fd3100eb0a8b, __vftable) == 0x0);
 
@@ -1515,6 +1664,7 @@ const _: () = assert!(core::mem::offset_of!(std___Func_impl_no_alloc_void____cde
 pub struct std___Ref_count_BSPlatform__BSReleaseNote {
     /// +0x0 `vtbl:std::_Ref_count<BSPlatform::BSReleaseNote>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Ref_count_BSPlatform__BSReleaseNote_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Ref_count_BSPlatform__BSReleaseNote, __vftable) == 0x0);
 
@@ -1526,6 +1676,7 @@ pub struct std___Ref_count_obj_BNETRequester__BundlePreviewRequestResponse {
     /// +0x0 `vtbl:std::_Ref_count_obj<BNETRequester::BundlePreviewRequestResponse>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Ref_count_obj_BNETRequester__BundlePreviewRequestResponse_vtable,
     pub unknown_8: [u8; 376],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<std___Ref_count_obj_BNETRequester__BundlePreviewRequestResponse>() == 0x180);
 const _: () = assert!(core::mem::offset_of!(std___Ref_count_obj_BNETRequester__BundlePreviewRequestResponse, __vftable) == 0x0);
@@ -1537,6 +1688,7 @@ const _: () = assert!(core::mem::offset_of!(std___Ref_count_obj_BNETRequester__B
 pub struct std___Ref_count_obj_BNETRequester__CollectionListRequestResponse {
     /// +0x0 `vtbl:std::_Ref_count_obj<BNETRequester::CollectionListRequestResponse>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Ref_count_obj_BNETRequester__CollectionListRequestResponse_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Ref_count_obj_BNETRequester__CollectionListRequestResponse, __vftable) == 0x0);
 
@@ -1548,6 +1700,7 @@ pub struct std___Ref_count_obj_BNETRequester__CollectionRequestResponse {
     /// +0x0 `vtbl:std::_Ref_count_obj<BNETRequester::CollectionRequestResponse>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Ref_count_obj_BNETRequester__CollectionRequestResponse_vtable,
     pub unknown_8: [u8; 472],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<std___Ref_count_obj_BNETRequester__CollectionRequestResponse>() == 0x1E0);
 const _: () = assert!(core::mem::offset_of!(std___Ref_count_obj_BNETRequester__CollectionRequestResponse, __vftable) == 0x0);
@@ -1559,6 +1712,7 @@ const _: () = assert!(core::mem::offset_of!(std___Ref_count_obj_BNETRequester__C
 pub struct std___Ref_count_obj_BNETRequester__CreationListRequestResponse {
     /// +0x0 `vtbl:std::_Ref_count_obj<BNETRequester::CreationListRequestResponse>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Ref_count_obj_BNETRequester__CreationListRequestResponse_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Ref_count_obj_BNETRequester__CreationListRequestResponse, __vftable) == 0x0);
 
@@ -1570,6 +1724,7 @@ pub struct std___Ref_count_obj_BNETRequester__CreationRequestResponse {
     /// +0x0 `vtbl:std::_Ref_count_obj<BNETRequester::CreationRequestResponse>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Ref_count_obj_BNETRequester__CreationRequestResponse_vtable,
     pub unknown_8: [u8; 744],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<std___Ref_count_obj_BNETRequester__CreationRequestResponse>() == 0x2F0);
 const _: () = assert!(core::mem::offset_of!(std___Ref_count_obj_BNETRequester__CreationRequestResponse, __vftable) == 0x0);
@@ -1581,6 +1736,7 @@ const _: () = assert!(core::mem::offset_of!(std___Ref_count_obj_BNETRequester__C
 pub struct std___Ref_count_obj_BNETRequester__EntitlementListRequestResponse {
     /// +0x0 `vtbl:std::_Ref_count_obj<BNETRequester::EntitlementListRequestResponse>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Ref_count_obj_BNETRequester__EntitlementListRequestResponse_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Ref_count_obj_BNETRequester__EntitlementListRequestResponse, __vftable) == 0x0);
 
@@ -1591,6 +1747,7 @@ const _: () = assert!(core::mem::offset_of!(std___Ref_count_obj_BNETRequester__E
 pub struct std___Ref_count_obj_BNETRequester__ImageRequestResponse {
     /// +0x0 `vtbl:std::_Ref_count_obj<BNETRequester::ImageRequestResponse>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Ref_count_obj_BNETRequester__ImageRequestResponse_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Ref_count_obj_BNETRequester__ImageRequestResponse, __vftable) == 0x0);
 
@@ -1601,6 +1758,7 @@ const _: () = assert!(core::mem::offset_of!(std___Ref_count_obj_BNETRequester__I
 pub struct std___Ref_count_obj_BNETRequester__IntRequestResponse {
     /// +0x0 `vtbl:std::_Ref_count_obj<BNETRequester::IntRequestResponse>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Ref_count_obj_BNETRequester__IntRequestResponse_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Ref_count_obj_BNETRequester__IntRequestResponse, __vftable) == 0x0);
 
@@ -1611,6 +1769,7 @@ const _: () = assert!(core::mem::offset_of!(std___Ref_count_obj_BNETRequester__I
 pub struct std___Ref_count_obj_BNETRequester__LegalDocumentListRequestResponse {
     /// +0x0 `vtbl:std::_Ref_count_obj<BNETRequester::LegalDocumentListRequestResponse>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Ref_count_obj_BNETRequester__LegalDocumentListRequestResponse_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Ref_count_obj_BNETRequester__LegalDocumentListRequestResponse, __vftable) == 0x0);
 
@@ -1621,6 +1780,7 @@ const _: () = assert!(core::mem::offset_of!(std___Ref_count_obj_BNETRequester__L
 pub struct std___Ref_count_obj_BNETRequester__ModListRequestResponse {
     /// +0x0 `vtbl:std::_Ref_count_obj<BNETRequester::ModListRequestResponse>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Ref_count_obj_BNETRequester__ModListRequestResponse_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Ref_count_obj_BNETRequester__ModListRequestResponse, __vftable) == 0x0);
 
@@ -1632,6 +1792,7 @@ pub struct std___Ref_count_obj_BNETRequester__ModRequestResponse {
     /// +0x0 `vtbl:std::_Ref_count_obj<BNETRequester::ModRequestResponse>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Ref_count_obj_BNETRequester__ModRequestResponse_vtable,
     pub unknown_8: [u8; 744],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<std___Ref_count_obj_BNETRequester__ModRequestResponse>() == 0x2F0);
 const _: () = assert!(core::mem::offset_of!(std___Ref_count_obj_BNETRequester__ModRequestResponse, __vftable) == 0x0);
@@ -1643,6 +1804,7 @@ const _: () = assert!(core::mem::offset_of!(std___Ref_count_obj_BNETRequester__M
 pub struct std___Ref_count_obj_BNETRequester__RequestResponse {
     /// +0x0 `vtbl:std::_Ref_count_obj<BNETRequester::RequestResponse>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Ref_count_obj_BNETRequester__RequestResponse_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Ref_count_obj_BNETRequester__RequestResponse, __vftable) == 0x0);
 
@@ -1653,6 +1815,7 @@ const _: () = assert!(core::mem::offset_of!(std___Ref_count_obj_BNETRequester__R
 pub struct std___Ref_count_obj_BNETRequester__StreamRequestResponse {
     /// +0x0 `vtbl:std::_Ref_count_obj<BNETRequester::StreamRequestResponse>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Ref_count_obj_BNETRequester__StreamRequestResponse_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Ref_count_obj_BNETRequester__StreamRequestResponse, __vftable) == 0x0);
 
@@ -1663,6 +1826,7 @@ const _: () = assert!(core::mem::offset_of!(std___Ref_count_obj_BNETRequester__S
 pub struct std___Ref_count_obj_BNETRequester__StringListRequestResponse {
     /// +0x0 `vtbl:std::_Ref_count_obj<BNETRequester::StringListRequestResponse>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Ref_count_obj_BNETRequester__StringListRequestResponse_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Ref_count_obj_BNETRequester__StringListRequestResponse, __vftable) == 0x0);
 
@@ -1673,6 +1837,7 @@ const _: () = assert!(core::mem::offset_of!(std___Ref_count_obj_BNETRequester__S
 pub struct std___Ref_count_obj_BNETRequester__StringRequestResponse {
     /// +0x0 `vtbl:std::_Ref_count_obj<BNETRequester::StringRequestResponse>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Ref_count_obj_BNETRequester__StringRequestResponse_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Ref_count_obj_BNETRequester__StringRequestResponse, __vftable) == 0x0);
 
@@ -1683,6 +1848,7 @@ const _: () = assert!(core::mem::offset_of!(std___Ref_count_obj_BNETRequester__S
 pub struct std___Ref_count_obj_BNETRequester__StringStringRequestResponse {
     /// +0x0 `vtbl:std::_Ref_count_obj<BNETRequester::StringStringRequestResponse>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Ref_count_obj_BNETRequester__StringStringRequestResponse_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Ref_count_obj_BNETRequester__StringStringRequestResponse, __vftable) == 0x0);
 
@@ -1693,6 +1859,7 @@ const _: () = assert!(core::mem::offset_of!(std___Ref_count_obj_BNETRequester__S
 pub struct std___Ref_count_obj_BNETRequester__UInt32ListRequestResponse {
     /// +0x0 `vtbl:std::_Ref_count_obj<BNETRequester::UInt32ListRequestResponse>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Ref_count_obj_BNETRequester__UInt32ListRequestResponse_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Ref_count_obj_BNETRequester__UInt32ListRequestResponse, __vftable) == 0x0);
 
@@ -1703,6 +1870,7 @@ const _: () = assert!(core::mem::offset_of!(std___Ref_count_obj_BNETRequester__U
 pub struct std___Ref_count_obj_BSPlatform__BSMarketplaceImage {
     /// +0x0 `vtbl:std::_Ref_count_obj<BSPlatform::BSMarketplaceImage>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Ref_count_obj_BSPlatform__BSMarketplaceImage_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Ref_count_obj_BSPlatform__BSMarketplaceImage, __vftable) == 0x0);
 
@@ -1714,6 +1882,7 @@ pub struct std___Ref_count_obj_BSPlatform__contentFetchHandler {
     /// +0x0 `vtbl:std::_Ref_count_obj<BSPlatform::contentFetchHandler>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Ref_count_obj_BSPlatform__contentFetchHandler_vtable,
     pub unknown_8: [u8; 792],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<std___Ref_count_obj_BSPlatform__contentFetchHandler>() == 0x320);
 const _: () = assert!(core::mem::offset_of!(std___Ref_count_obj_BSPlatform__contentFetchHandler, __vftable) == 0x0);
@@ -1726,6 +1895,7 @@ pub struct std___Ref_count_obj_BSPlatform__pagedAuthorContentSearch {
     /// +0x0 `vtbl:std::_Ref_count_obj<BSPlatform::pagedAuthorContentSearch>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Ref_count_obj_BSPlatform__pagedAuthorContentSearch_vtable,
     pub unknown_8: [u8; 2384],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<std___Ref_count_obj_BSPlatform__pagedAuthorContentSearch>() == 0x958);
 const _: () = assert!(core::mem::offset_of!(std___Ref_count_obj_BSPlatform__pagedAuthorContentSearch, __vftable) == 0x0);
@@ -1738,6 +1908,7 @@ pub struct std___Ref_count_obj_BSPlatform__pagedContentSearch {
     /// +0x0 `vtbl:std::_Ref_count_obj<BSPlatform::pagedContentSearch>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Ref_count_obj_BSPlatform__pagedContentSearch_vtable,
     pub unknown_8: [u8; 1824],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<std___Ref_count_obj_BSPlatform__pagedContentSearch>() == 0x728);
 const _: () = assert!(core::mem::offset_of!(std___Ref_count_obj_BSPlatform__pagedContentSearch, __vftable) == 0x0);
@@ -1750,6 +1921,7 @@ pub struct std___Ref_count_obj_BSPlatform__pagedPlayerContentSearch {
     /// +0x0 `vtbl:std::_Ref_count_obj<BSPlatform::pagedPlayerContentSearch>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Ref_count_obj_BSPlatform__pagedPlayerContentSearch_vtable,
     pub unknown_8: [u8; 1792],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<std___Ref_count_obj_BSPlatform__pagedPlayerContentSearch>() == 0x708);
 const _: () = assert!(core::mem::offset_of!(std___Ref_count_obj_BSPlatform__pagedPlayerContentSearch, __vftable) == 0x0);
@@ -1762,6 +1934,7 @@ pub struct std___Ref_count_obj_BSPlatform__pagedPlayerContentSearchBundles {
     /// +0x0 `vtbl:std::_Ref_count_obj<BSPlatform::pagedPlayerContentSearchBundles>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Ref_count_obj_BSPlatform__pagedPlayerContentSearchBundles_vtable,
     pub unknown_8: [u8; 1720],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<std___Ref_count_obj_BSPlatform__pagedPlayerContentSearchBundles>() == 0x6C0);
 const _: () = assert!(core::mem::offset_of!(std___Ref_count_obj_BSPlatform__pagedPlayerContentSearchBundles, __vftable) == 0x0);
@@ -1796,6 +1969,7 @@ pub struct std___Ref_count_obj_BSPlatform__searchResultHandler {
     /// +0xA8 `undefined4`, ctor store
     pub field_A8: u32,
     pub unknown_AC: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<std___Ref_count_obj_BSPlatform__searchResultHandler>() == 0xB0);
 const _: () = assert!(core::mem::offset_of!(std___Ref_count_obj_BSPlatform__searchResultHandler, __vftable) == 0x0);
@@ -1817,6 +1991,7 @@ pub struct std___Ref_count_obj_BSPlatform__titleStorageDownload {
     /// +0x0 `vtbl:std::_Ref_count_obj<BSPlatform::titleStorageDownload>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Ref_count_obj_BSPlatform__titleStorageDownload_vtable,
     pub unknown_8: [u8; 104],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<std___Ref_count_obj_BSPlatform__titleStorageDownload>() == 0x70);
 const _: () = assert!(core::mem::offset_of!(std___Ref_count_obj_BSPlatform__titleStorageDownload, __vftable) == 0x0);
@@ -1837,6 +2012,7 @@ pub struct std___Ref_count_obj_MarketplaceEvent__make_EventHandlerEnabler {
     pub unknown_14: [u8; 60],
     /// +0x50 `undefined8`, ctor store
     pub field_50: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Ref_count_obj_MarketplaceEvent__make_EventHandlerEnabler, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(std___Ref_count_obj_MarketplaceEvent__make_EventHandlerEnabler, field_8) == 0x8);
@@ -1852,6 +2028,7 @@ pub struct std___Ref_count_obj_bnet__Account__SteamExternalAuthInfo {
     /// +0x0 `vtbl:std::_Ref_count_obj<bnet::Account::SteamExternalAuthInfo>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Ref_count_obj_bnet__Account__SteamExternalAuthInfo_vtable,
     pub unknown_8: [u8; 1120],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<std___Ref_count_obj_bnet__Account__SteamExternalAuthInfo>() == 0x468);
 const _: () = assert!(core::mem::offset_of!(std___Ref_count_obj_bnet__Account__SteamExternalAuthInfo, __vftable) == 0x0);
@@ -1864,6 +2041,7 @@ pub struct std___Ref_count_resource_unsigned_char____ptr64_lambda_407b4391a4cb96
     /// +0x0 `vtbl:std::_Ref_count_resource<unsigned_char*___ptr64,<lambda_407b4391a4cb964ac5cc57d63e7e618f>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Ref_count_resource_unsigned_char____ptr64_lambda_407b4391a4cb964ac5cc57d63e7e618f___vtable,
     pub unknown_8: [u8; 16],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<std___Ref_count_resource_unsigned_char____ptr64_lambda_407b4391a4cb964ac5cc57d63e7e618f__>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(std___Ref_count_resource_unsigned_char____ptr64_lambda_407b4391a4cb964ac5cc57d63e7e618f__, __vftable) == 0x0);
@@ -1875,6 +2053,7 @@ const _: () = assert!(core::mem::offset_of!(std___Ref_count_resource_unsigned_ch
 pub struct std___Ref_count_resource_unsigned_char____ptr64_lambda_8116ba4fa2d997d4c55ff5306dc2e0ef__ {
     /// +0x0 `vtbl:std::_Ref_count_resource<unsigned_char*___ptr64,<lambda_8116ba4fa2d997d4c55ff5306dc2e0ef>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Ref_count_resource_unsigned_char____ptr64_lambda_8116ba4fa2d997d4c55ff5306dc2e0ef___vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Ref_count_resource_unsigned_char____ptr64_lambda_8116ba4fa2d997d4c55ff5306dc2e0ef__, __vftable) == 0x0);
 
@@ -1885,6 +2064,7 @@ const _: () = assert!(core::mem::offset_of!(std___Ref_count_resource_unsigned_ch
 pub struct std___Ref_count_resource_unsigned_char____ptr64_lambda_d87e5165e8580a06382cfba18d28ca5f__ {
     /// +0x0 `vtbl:std::_Ref_count_resource<unsigned_char*___ptr64,<lambda_d87e5165e8580a06382cfba18d28ca5f>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Ref_count_resource_unsigned_char____ptr64_lambda_d87e5165e8580a06382cfba18d28ca5f___vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Ref_count_resource_unsigned_char____ptr64_lambda_d87e5165e8580a06382cfba18d28ca5f__, __vftable) == 0x0);
 
@@ -1895,6 +2075,7 @@ const _: () = assert!(core::mem::offset_of!(std___Ref_count_resource_unsigned_ch
 pub struct std___Ref_count_resource_unsigned_char____ptr64_lambda_dc2c6e289b47090a5dc26099a3758499__ {
     /// +0x0 `vtbl:std::_Ref_count_resource<unsigned_char*___ptr64,<lambda_dc2c6e289b47090a5dc26099a3758499>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std___Ref_count_resource_unsigned_char____ptr64_lambda_dc2c6e289b47090a5dc26099a3758499___vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std___Ref_count_resource_unsigned_char____ptr64_lambda_dc2c6e289b47090a5dc26099a3758499__, __vftable) == 0x0);
 
@@ -1905,6 +2086,7 @@ const _: () = assert!(core::mem::offset_of!(std___Ref_count_resource_unsigned_ch
 pub struct std__basic_filebuf_char_std__char_traits_char__ {
     /// +0x0 `vtbl:std::basic_filebuf<char,std::char_traits<char>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::std__basic_filebuf_char_std__char_traits_char___vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std__basic_filebuf_char_std__char_traits_char__, __vftable) == 0x0);
 
@@ -1916,6 +2098,7 @@ pub struct std__basic_ifstream_char_std__char_traits_char__ {
     pub unknown_0: [u8; 176],
     /// +0xB0 `vtbl:std::basic_ifstream<char,std::char_traits<char>_>:B0`, rtti
     pub __vftable_B0: *const crate::raw::vtables::std__basic_ifstream_char_std__char_traits_char___vtable_B0,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std__basic_ifstream_char_std__char_traits_char__, __vftable_B0) == 0xB0);
 
@@ -1927,6 +2110,7 @@ pub struct std__basic_ostringstream_char_std__char_traits_char_std__allocator_ch
     pub unknown_0: [u8; 136],
     /// +0x88 `vtbl:std::basic_ostringstream<char,std::char_traits<char>,std::allocator<char>_>:88`, rtti
     pub __vftable_88: *const crate::raw::vtables::std__basic_ostringstream_char_std__char_traits_char_std__allocator_char___vtable_88,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std__basic_ostringstream_char_std__char_traits_char_std__allocator_char__, __vftable_88) == 0x88);
 
@@ -1943,6 +2127,7 @@ pub struct std__basic_stringbuf_char_std__char_traits_char_std__allocator_char__
     /// +0x70 `undefined4`, ctor store
     pub field_70: u32,
     pub unknown_74: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std__basic_stringbuf_char_std__char_traits_char_std__allocator_char__, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(std__basic_stringbuf_char_std__char_traits_char_std__allocator_char__, field_68) == 0x68);
@@ -1956,6 +2141,7 @@ pub struct std__basic_stringstream_char_std__char_traits_char_std__allocator_cha
     pub unknown_0: [u8; 152],
     /// +0x98 `vtbl:std::basic_stringstream<char,std::char_traits<char>,std::allocator<char>_>:98`, rtti
     pub __vftable_98: *const crate::raw::vtables::std__basic_stringstream_char_std__char_traits_char_std__allocator_char___vtable_98,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std__basic_stringstream_char_std__char_traits_char_std__allocator_char__, __vftable_98) == 0x98);
 
@@ -1969,6 +2155,7 @@ pub struct std__exception {
     pub field_8: u64,
     /// +0x10 `undefined8`, ctor store
     pub field_10: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(std__exception, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(std__exception, field_8) == 0x8);

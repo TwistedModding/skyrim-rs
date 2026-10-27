@@ -12,6 +12,8 @@ use core::ffi::{CStr, c_char};
 use std::ffi::CString;
 use std::fmt;
 
+use sre::raw::fns;
+
 /// The reference count of a pinned entry, never counted up or down.
 pub const PINNED: u32 = 0x7FFF;
 
@@ -26,8 +28,9 @@ impl BSFixedString {
     #[must_use]
     pub fn new(text: &str) -> Self {
         let text = CString::new(text.split('\0').next().unwrap_or("")).unwrap_or_default();
-        let s = Self::empty();
-        unsafe { s.0.ctor(text.as_ptr()) };
+        let mut s = Self::empty();
+        let ctor: fns::BSFixedString__ctor_fn = unsafe { crate::engine_fn(fns::BSFixedString__ctor) };
+        unsafe { ctor(&raw mut s.0, text.as_ptr()) };
         s
     }
 
@@ -35,7 +38,7 @@ impl BSFixedString {
     /// pointer comparisons such as a native's state name need.
     #[must_use]
     pub const fn empty() -> Self {
-        Self(sre::BSFixedString { data: core::ptr::null_mut() })
+        Self(sre::BSFixedString { data: core::ptr::null_mut(), __engine: sre::Engine::new() })
     }
 
     /// The string a field of an engine object holds, borrowed without touching its count.
@@ -47,7 +50,7 @@ impl BSFixedString {
     /// Gives the reference up to an engine object that will hold it from now on.
     #[must_use]
     pub fn into_raw(self) -> sre::BSFixedString {
-        let raw = sre::BSFixedString { data: self.0.data };
+        let raw = sre::BSFixedString { data: self.0.data, __engine: sre::Engine::new() };
         core::mem::forget(self);
         raw
     }
@@ -126,8 +129,9 @@ impl BSFixedString {
 impl Clone for BSFixedString {
     /// Adds a reference through `BSFixedString::copy` (id 69162).
     fn clone(&self) -> Self {
-        let s = Self::empty();
-        s.0.copy(&self.0);
+        let mut s = Self::empty();
+        let copy: fns::BSFixedString__copy_fn = unsafe { crate::engine_fn(fns::BSFixedString__copy) };
+        unsafe { copy(&raw mut s.0, &raw const self.0) };
         s
     }
 }
@@ -136,7 +140,8 @@ impl Drop for BSFixedString {
     /// Drops the reference through `BSFixedString::release` (id 69164).
     fn drop(&mut self) {
         if !self.is_empty() {
-            self.0.release();
+            let release: fns::BSFixedString__release_fn = unsafe { crate::engine_fn(fns::BSFixedString__release) };
+            unsafe { release(&raw mut self.0) };
         }
     }
 }

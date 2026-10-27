@@ -35,6 +35,7 @@ pub struct CombatAimController {
     pub field_3C: u64,
     /// +0x44 `undefined4`, ctor store
     pub field_44: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatAimController>() == 0x48);
 const _: () = assert!(core::mem::offset_of!(CombatAimController, __vftable) == 0x0);
@@ -57,6 +58,7 @@ const _: () = assert!(core::mem::offset_of!(CombatAimController, field_44) == 0x
 pub struct CombatAimControllerBase {
     /// +0x0 `vtbl:CombatAimControllerBase:0`, rtti
     pub __vftable: *const crate::raw::vtables::CombatAimControllerBase_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatAimControllerBase>() == 0x8);
 const _: () = assert!(core::mem::offset_of!(CombatAimControllerBase, __vftable) == 0x0);
@@ -69,6 +71,7 @@ pub struct CombatApproachTargetSpeedController {
     /// +0x0 `vtbl:CombatApproachTargetSpeedController:0`, rtti
     pub __vftable: *const crate::raw::vtables::CombatApproachTargetSpeedController_vtable,
     pub unknown_8: [u8; 40],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatApproachTargetSpeedController>() == 0x30);
 const _: () = assert!(core::mem::offset_of!(CombatApproachTargetSpeedController, __vftable) == 0x0);
@@ -80,6 +83,7 @@ const _: () = assert!(core::mem::offset_of!(CombatApproachTargetSpeedController,
 pub struct CombatArea {
     /// +0x0 `vtbl:CombatArea:0`, rtti
     pub __vftable: *const crate::raw::vtables::CombatArea_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatArea>() == 0x8);
 const _: () = assert!(core::mem::offset_of!(CombatArea, __vftable) == 0x0);
@@ -125,6 +129,7 @@ pub struct CombatAreaHoldPosition {
     /// +0x58 `undefined4`, base CombatAreaReference
     pub field_58: u32,
     pub unknown_5C: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CombatAreaHoldPosition, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(CombatAreaHoldPosition, field_8) == 0x8);
@@ -149,6 +154,7 @@ const _: () = assert!(core::mem::offset_of!(CombatAreaHoldPosition, field_58) ==
 pub struct CombatAreaRadius {
     /// +0x0 `vtbl:CombatAreaRadius:0`, rtti
     pub __vftable: *const crate::raw::vtables::CombatAreaRadius_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatAreaRadius>() == 0x8);
 const _: () = assert!(core::mem::offset_of!(CombatAreaRadius, __vftable) == 0x0);
@@ -194,6 +200,7 @@ pub struct CombatAreaReference {
     /// +0x58 `undefined4`, ctor store
     pub field_58: u32,
     pub unknown_5C: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CombatAreaReference, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(CombatAreaReference, field_8) == 0x8);
@@ -244,6 +251,7 @@ pub struct CombatAreaStandard {
     /// +0x48 `float`, ctor store
     pub field_48: f32,
     pub unknown_4C: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatAreaStandard>() == 0x50);
 const _: () = assert!(core::mem::offset_of!(CombatAreaStandard, __vftable) == 0x0);
@@ -275,6 +283,7 @@ pub struct CombatBehaviorResource {
     /// +0x20 `undefined8`, ctor store
     pub field_20: u64,
     pub unknown_28: [u8; 48],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorResource>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorResource, __vftable) == 0x0);
@@ -291,6 +300,7 @@ pub struct CombatBehaviorTree {
     pub unknown_8: [u8; 8],
     /// +0x10 `undefined8`, ctor store
     pub field_10: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTree, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTree, field_10) == 0x10);
@@ -305,6 +315,7 @@ pub struct CombatBehaviorTreeAcquireWeapon {
     pub unknown_8: [u8; 8],
     /// +0x10 `undefined8`, base CombatBehaviorTree
     pub field_10: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeAcquireWeapon, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeAcquireWeapon, field_10) == 0x10);
@@ -319,6 +330,7 @@ pub struct CombatBehaviorTreeAction {
     pub unknown_8: [u8; 8],
     /// +0x10 `undefined8`, base CombatBehaviorTree
     pub field_10: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeAction, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeAction, field_10) == 0x10);
@@ -333,6 +345,7 @@ pub struct CombatBehaviorTreeActionEquipmentSelector {
     pub unknown_8: [u8; 8],
     /// +0x10 `undefined8`, base CombatBehaviorTree
     pub field_10: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeActionEquipmentSelector, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeActionEquipmentSelector, field_10) == 0x10);
@@ -347,6 +360,7 @@ pub struct CombatBehaviorTreeBlock {
     pub unknown_8: [u8; 8],
     /// +0x10 `undefined8`, base CombatBehaviorTree
     pub field_10: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeBlock, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeBlock, field_10) == 0x10);
@@ -361,6 +375,7 @@ pub struct CombatBehaviorTreeCheckUnreachableTarget {
     pub unknown_8: [u8; 8],
     /// +0x10 `undefined8`, base CombatBehaviorTree
     pub field_10: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeCheckUnreachableTarget, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeCheckUnreachableTarget, field_10) == 0x10);
@@ -375,6 +390,7 @@ pub struct CombatBehaviorTreeCloseMovement {
     pub unknown_8: [u8; 8],
     /// +0x10 `undefined8`, base CombatBehaviorTree
     pub field_10: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeCloseMovement, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeCloseMovement, field_10) == 0x10);
@@ -389,6 +405,7 @@ pub struct CombatBehaviorTreeCombat {
     pub unknown_8: [u8; 8],
     /// +0x10 `undefined8`, base CombatBehaviorTree
     pub field_10: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeCombat, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeCombat, field_10) == 0x10);
@@ -409,6 +426,7 @@ pub struct CombatBehaviorTreeConditionalNode_CombatBehaviorExpression_CombatBeha
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 28],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeConditionalNode_CombatBehaviorExpression_CombatBehaviorBinaryExpression_Combat_6c58f13c6208>() == 0x40);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeConditionalNode_CombatBehaviorExpression_CombatBehaviorBinaryExpression_Combat_6c58f13c6208, __vftable) == 0x0);
@@ -433,6 +451,7 @@ pub struct CombatBehaviorTreeConditionalNode_CombatBehaviorExpression_CombatBeha
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 28],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeConditionalNode_CombatBehaviorExpression_CombatBehaviorBinaryExpression_Combat_bba70b461b8c>() == 0x40);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeConditionalNode_CombatBehaviorExpression_CombatBehaviorBinaryExpression_Combat_bba70b461b8c, __vftable) == 0x0);
@@ -457,6 +476,7 @@ pub struct CombatBehaviorTreeConditionalNode_CombatBehaviorExpression_CombatBeha
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 28],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeConditionalNode_CombatBehaviorExpression_CombatBehaviorFunc1_bool____cdecl_Act_e0b72764f19e>() == 0x40);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeConditionalNode_CombatBehaviorExpression_CombatBehaviorFunc1_bool____cdecl_Act_e0b72764f19e, __vftable) == 0x0);
@@ -481,6 +501,7 @@ pub struct CombatBehaviorTreeConditionalNode_CombatBehaviorExpression_CombatBeha
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 36],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeConditionalNode_CombatBehaviorExpression_CombatBehaviorFunc1_bool____cdecl_flo_79ec62363972>() == 0x48);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeConditionalNode_CombatBehaviorExpression_CombatBehaviorFunc1_bool____cdecl_flo_79ec62363972, __vftable) == 0x0);
@@ -505,6 +526,7 @@ pub struct CombatBehaviorTreeConditionalNode_CombatBehaviorExpression_CombatBeha
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 36],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeConditionalNode_CombatBehaviorExpression_CombatBehaviorFunc1_bool____cdecl_flo_a290dddddc4f>() == 0x48);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeConditionalNode_CombatBehaviorExpression_CombatBehaviorFunc1_bool____cdecl_flo_a290dddddc4f, __vftable) == 0x0);
@@ -529,6 +551,7 @@ pub struct CombatBehaviorTreeConditionalNode_CombatBehaviorExpression_CombatBeha
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 28],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeConditionalNode_CombatBehaviorExpression_CombatBehaviorFunc1_bool____cdecl_flo_d048c89f072b>() == 0x40);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeConditionalNode_CombatBehaviorExpression_CombatBehaviorFunc1_bool____cdecl_flo_d048c89f072b, __vftable) == 0x0);
@@ -553,6 +576,7 @@ pub struct CombatBehaviorTreeConditionalNode_CombatBehaviorExpression_CombatBeha
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 28],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeConditionalNode_CombatBehaviorExpression_CombatBehaviorFunc1_bool____cdecl_flo_0b3166788f32>() == 0x40);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeConditionalNode_CombatBehaviorExpression_CombatBehaviorFunc1_bool____cdecl_flo_0b3166788f32, __vftable) == 0x0);
@@ -577,6 +601,7 @@ pub struct CombatBehaviorTreeConditionalNode_CombatBehaviorExpression_CombatBeha
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 28],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeConditionalNode_CombatBehaviorExpression_CombatBehaviorFunc1_bool____cdecl_flo_f872d0436d98>() == 0x40);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeConditionalNode_CombatBehaviorExpression_CombatBehaviorFunc1_bool____cdecl_flo_f872d0436d98, __vftable) == 0x0);
@@ -601,6 +626,7 @@ pub struct CombatBehaviorTreeConditionalNode_CombatBehaviorExpression_CombatBeha
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 20],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeConditionalNode_CombatBehaviorExpression_CombatBehaviorMemberFunc_CombatBehavi_857dfb5bfcfe>() == 0x38);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeConditionalNode_CombatBehaviorExpression_CombatBehaviorMemberFunc_CombatBehavi_857dfb5bfcfe, __vftable) == 0x0);
@@ -625,6 +651,7 @@ pub struct CombatBehaviorTreeConditionalNode_CombatBehaviorExpression_CombatBeha
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 20],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeConditionalNode_CombatBehaviorExpression_CombatBehaviorMemberFunc_CombatBehavi_c8871d43435a>() == 0x38);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeConditionalNode_CombatBehaviorExpression_CombatBehaviorMemberFunc_CombatBehavi_c8871d43435a, __vftable) == 0x0);
@@ -649,6 +676,7 @@ pub struct CombatBehaviorTreeConditionalNode_CombatBehaviorExpression_CombatBeha
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 20],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeConditionalNode_CombatBehaviorExpression_CombatBehaviorMemberFunc_CombatBehavi_544a8403a2cd>() == 0x38);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeConditionalNode_CombatBehaviorExpression_CombatBehaviorMemberFunc_CombatBehavi_544a8403a2cd, __vftable) == 0x0);
@@ -673,6 +701,7 @@ pub struct CombatBehaviorTreeConditionalNode_CombatBehaviorExpression_CombatBeha
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 20],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeConditionalNode_CombatBehaviorExpression_CombatBehaviorMemberFunc_CombatBehavi_2fb82517e770>() == 0x38);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeConditionalNode_CombatBehaviorExpression_CombatBehaviorMemberFunc_CombatBehavi_2fb82517e770, __vftable) == 0x0);
@@ -697,6 +726,7 @@ pub struct CombatBehaviorTreeConditionalNode_CombatBehaviorExpression_CombatBeha
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 20],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeConditionalNode_CombatBehaviorExpression_CombatBehaviorMemberFunc_CombatBehavi_604a93390606>() == 0x38);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeConditionalNode_CombatBehaviorExpression_CombatBehaviorMemberFunc_CombatBehavi_604a93390606, __vftable) == 0x0);
@@ -721,6 +751,7 @@ pub struct CombatBehaviorTreeConditionalNode_CombatBehaviorExpression_CombatBeha
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 20],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeConditionalNode_CombatBehaviorExpression_CombatBehaviorMemberFunc_CombatBehavi_fbbe5889e054>() == 0x38);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeConditionalNode_CombatBehaviorExpression_CombatBehaviorMemberFunc_CombatBehavi_fbbe5889e054, __vftable) == 0x0);
@@ -745,6 +776,7 @@ pub struct CombatBehaviorTreeConditionalNode_CombatBehaviorExpression_CombatBeha
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 28],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeConditionalNode_CombatBehaviorExpression_CombatBehaviorUnaryExpression_CombatB_e5fe12a9a83b>() == 0x40);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeConditionalNode_CombatBehaviorExpression_CombatBehaviorUnaryExpression_CombatB_e5fe12a9a83b, __vftable) == 0x0);
@@ -769,6 +801,7 @@ pub struct CombatBehaviorTreeCreateContextNode1_CombatBehaviorContextMagic_Comba
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 12],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeCreateContextNode1_CombatBehaviorContextMagic_CombatBehaviorExpression_CombatB_106cafc696bb>() == 0x30);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeCreateContextNode1_CombatBehaviorContextMagic_CombatBehaviorExpression_CombatB_106cafc696bb, __vftable) == 0x0);
@@ -793,6 +826,7 @@ pub struct CombatBehaviorTreeCreateContextNode1_CombatBehaviorContextRanged_Comb
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 12],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeCreateContextNode1_CombatBehaviorContextRanged_CombatBehaviorExpression_Combat_990d8cbd8e2b>() == 0x30);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeCreateContextNode1_CombatBehaviorContextRanged_CombatBehaviorExpression_Combat_990d8cbd8e2b, __vftable) == 0x0);
@@ -817,6 +851,7 @@ pub struct CombatBehaviorTreeCreateContextNode1_CombatBehaviorContextShout_Comba
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 12],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeCreateContextNode1_CombatBehaviorContextShout_CombatBehaviorExpression_CombatB_88dc13a1268a>() == 0x30);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeCreateContextNode1_CombatBehaviorContextShout_CombatBehaviorExpression_CombatB_88dc13a1268a, __vftable) == 0x0);
@@ -841,6 +876,7 @@ pub struct CombatBehaviorTreeCreateContextNode1_CombatBehaviorContextUsePotion_C
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 12],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeCreateContextNode1_CombatBehaviorContextUsePotion_CombatBehaviorExpression_Com_b0b9be882c91>() == 0x30);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeCreateContextNode1_CombatBehaviorContextUsePotion_CombatBehaviorExpression_Com_b0b9be882c91, __vftable) == 0x0);
@@ -865,6 +901,7 @@ pub struct CombatBehaviorTreeCreateContextNode1_CombatBehaviorEquipContext_Comba
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 12],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeCreateContextNode1_CombatBehaviorEquipContext_CombatBehaviorExpression_CombatB_56df56ace77a>() == 0x30);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeCreateContextNode1_CombatBehaviorEquipContext_CombatBehaviorExpression_CombatB_56df56ace77a, __vftable) == 0x0);
@@ -889,6 +926,7 @@ pub struct CombatBehaviorTreeCreateContextNode2_CombatBehaviorContextBlock_Comba
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 20],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeCreateContextNode2_CombatBehaviorContextBlock_CombatBehaviorExpression_CombatB_5e5643ec7339>() == 0x38);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeCreateContextNode2_CombatBehaviorContextBlock_CombatBehaviorExpression_CombatB_5e5643ec7339, __vftable) == 0x0);
@@ -913,6 +951,7 @@ pub struct CombatBehaviorTreeCreateContextNode2_CombatBehaviorContextMelee_Comba
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 20],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeCreateContextNode2_CombatBehaviorContextMelee_CombatBehaviorExpression_CombatB_0a99bae699cc>() == 0x38);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeCreateContextNode2_CombatBehaviorContextMelee_CombatBehaviorExpression_CombatB_0a99bae699cc, __vftable) == 0x0);
@@ -937,6 +976,7 @@ pub struct CombatBehaviorTreeCreateContextNode_CombatBehaviorContextAcquireWeapo
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeCreateContextNode_CombatBehaviorContextAcquireWeapon>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeCreateContextNode_CombatBehaviorContextAcquireWeapon, __vftable) == 0x0);
@@ -961,6 +1001,7 @@ pub struct CombatBehaviorTreeCreateContextNode_CombatBehaviorContextCloseMovemen
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeCreateContextNode_CombatBehaviorContextCloseMovement>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeCreateContextNode_CombatBehaviorContextCloseMovement, __vftable) == 0x0);
@@ -985,6 +1026,7 @@ pub struct CombatBehaviorTreeCreateContextNode_CombatBehaviorContextCover {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeCreateContextNode_CombatBehaviorContextCover>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeCreateContextNode_CombatBehaviorContextCover, __vftable) == 0x0);
@@ -1009,6 +1051,7 @@ pub struct CombatBehaviorTreeCreateContextNode_CombatBehaviorContextDodgeThreat 
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeCreateContextNode_CombatBehaviorContextDodgeThreat>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeCreateContextNode_CombatBehaviorContextDodgeThreat, __vftable) == 0x0);
@@ -1033,6 +1076,7 @@ pub struct CombatBehaviorTreeCreateContextNode_CombatBehaviorContextFindAttackLo
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeCreateContextNode_CombatBehaviorContextFindAttackLocation>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeCreateContextNode_CombatBehaviorContextFindAttackLocation, __vftable) == 0x0);
@@ -1057,6 +1101,7 @@ pub struct CombatBehaviorTreeCreateContextNode_CombatBehaviorContextFlankingMove
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeCreateContextNode_CombatBehaviorContextFlankingMovement>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeCreateContextNode_CombatBehaviorContextFlankingMovement, __vftable) == 0x0);
@@ -1081,6 +1126,7 @@ pub struct CombatBehaviorTreeCreateContextNode_CombatBehaviorContextFlee {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeCreateContextNode_CombatBehaviorContextFlee>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeCreateContextNode_CombatBehaviorContextFlee, __vftable) == 0x0);
@@ -1105,6 +1151,7 @@ pub struct CombatBehaviorTreeCreateContextNode_CombatBehaviorContextHide {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeCreateContextNode_CombatBehaviorContextHide>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeCreateContextNode_CombatBehaviorContextHide, __vftable) == 0x0);
@@ -1129,6 +1176,7 @@ pub struct CombatBehaviorTreeCreateContextNode_CombatBehaviorContextRangedMoveme
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeCreateContextNode_CombatBehaviorContextRangedMovement>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeCreateContextNode_CombatBehaviorContextRangedMovement, __vftable) == 0x0);
@@ -1153,6 +1201,7 @@ pub struct CombatBehaviorTreeCreateContextNode_CombatBehaviorContextSearch {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeCreateContextNode_CombatBehaviorContextSearch>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeCreateContextNode_CombatBehaviorContextSearch, __vftable) == 0x0);
@@ -1177,6 +1226,7 @@ pub struct CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextAcquireW
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextAcquireWeapon>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextAcquireWeapon, __vftable) == 0x0);
@@ -1201,6 +1251,7 @@ pub struct CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextBlock {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 20],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextBlock>() == 0x38);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextBlock, __vftable) == 0x0);
@@ -1225,6 +1276,7 @@ pub struct CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextCloseMov
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextCloseMovement>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextCloseMovement, __vftable) == 0x0);
@@ -1249,6 +1301,7 @@ pub struct CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextCover {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextCover>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextCover, __vftable) == 0x0);
@@ -1273,6 +1326,7 @@ pub struct CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextDodgeThr
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextDodgeThreat>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextDodgeThreat, __vftable) == 0x0);
@@ -1297,6 +1351,7 @@ pub struct CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextFindAtta
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextFindAttackLocation>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextFindAttackLocation, __vftable) == 0x0);
@@ -1321,6 +1376,7 @@ pub struct CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextFlanking
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextFlankingMovement>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextFlankingMovement, __vftable) == 0x0);
@@ -1345,6 +1401,7 @@ pub struct CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextFlee {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextFlee>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextFlee, __vftable) == 0x0);
@@ -1369,6 +1426,7 @@ pub struct CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextHide {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextHide>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextHide, __vftable) == 0x0);
@@ -1393,6 +1451,7 @@ pub struct CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextMagic {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 12],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextMagic>() == 0x30);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextMagic, __vftable) == 0x0);
@@ -1417,6 +1476,7 @@ pub struct CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextMelee {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 20],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextMelee>() == 0x38);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextMelee, __vftable) == 0x0);
@@ -1441,6 +1501,7 @@ pub struct CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextRanged {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 12],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextRanged>() == 0x30);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextRanged, __vftable) == 0x0);
@@ -1465,6 +1526,7 @@ pub struct CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextRangedMo
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextRangedMovement>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextRangedMovement, __vftable) == 0x0);
@@ -1489,6 +1551,7 @@ pub struct CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextSearch {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextSearch>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextSearch, __vftable) == 0x0);
@@ -1513,6 +1576,7 @@ pub struct CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextShout {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 12],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextShout>() == 0x30);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextShout, __vftable) == 0x0);
@@ -1537,6 +1601,7 @@ pub struct CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextUsePotio
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 12],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextUsePotion>() == 0x30);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextUsePotion, __vftable) == 0x0);
@@ -1561,6 +1626,7 @@ pub struct CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorEquipContext {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 12],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorEquipContext>() == 0x30);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorEquipContext, __vftable) == 0x0);
@@ -1579,6 +1645,7 @@ pub struct CombatBehaviorTreeDodgeThreat {
     pub unknown_8: [u8; 8],
     /// +0x10 `undefined8`, base CombatBehaviorTree
     pub field_10: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeDodgeThreat, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeDodgeThreat, field_10) == 0x10);
@@ -1593,6 +1660,7 @@ pub struct CombatBehaviorTreeExitWater {
     pub unknown_8: [u8; 8],
     /// +0x10 `undefined8`, base CombatBehaviorTree
     pub field_10: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeExitWater, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeExitWater, field_10) == 0x10);
@@ -1607,6 +1675,7 @@ pub struct CombatBehaviorTreeFindAttackLocation {
     pub unknown_8: [u8; 8],
     /// +0x10 `undefined8`, base CombatBehaviorTree
     pub field_10: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeFindAttackLocation, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeFindAttackLocation, field_10) == 0x10);
@@ -1621,6 +1690,7 @@ pub struct CombatBehaviorTreeFlankingMovement {
     pub unknown_8: [u8; 8],
     /// +0x10 `undefined8`, base CombatBehaviorTree
     pub field_10: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeFlankingMovement, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeFlankingMovement, field_10) == 0x10);
@@ -1635,6 +1705,7 @@ pub struct CombatBehaviorTreeFlee {
     pub unknown_8: [u8; 8],
     /// +0x10 `undefined8`, base CombatBehaviorTree
     pub field_10: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeFlee, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeFlee, field_10) == 0x10);
@@ -1649,6 +1720,7 @@ pub struct CombatBehaviorTreeFlight {
     pub unknown_8: [u8; 8],
     /// +0x10 `undefined8`, base CombatBehaviorTree
     pub field_10: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeFlight, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeFlight, field_10) == 0x10);
@@ -1663,6 +1735,7 @@ pub struct CombatBehaviorTreeHide {
     pub unknown_8: [u8; 8],
     /// +0x10 `undefined8`, base CombatBehaviorTree
     pub field_10: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeHide, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeHide, field_10) == 0x10);
@@ -1683,6 +1756,7 @@ pub struct CombatBehaviorTreeLinkNode {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 12],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeLinkNode>() == 0x30);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeLinkNode, __vftable) == 0x0);
@@ -1701,6 +1775,7 @@ pub struct CombatBehaviorTreeLowCombat {
     pub unknown_8: [u8; 8],
     /// +0x10 `undefined8`, base CombatBehaviorTree
     pub field_10: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeLowCombat, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeLowCombat, field_10) == 0x10);
@@ -1715,6 +1790,7 @@ pub struct CombatBehaviorTreeMagic {
     pub unknown_8: [u8; 8],
     /// +0x10 `undefined8`, base CombatBehaviorTree
     pub field_10: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeMagic, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeMagic, field_10) == 0x10);
@@ -1729,6 +1805,7 @@ pub struct CombatBehaviorTreeMelee {
     pub unknown_8: [u8; 8],
     /// +0x10 `undefined8`, base CombatBehaviorTree
     pub field_10: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeMelee, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeMelee, field_10) == 0x10);
@@ -1743,6 +1820,7 @@ pub struct CombatBehaviorTreeMovement {
     pub unknown_8: [u8; 8],
     /// +0x10 `undefined8`, base CombatBehaviorTree
     pub field_10: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeMovement, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeMovement, field_10) == 0x10);
@@ -1762,6 +1840,7 @@ pub struct CombatBehaviorTreeNode {
     /// +0x20 `undefined4`, ctor store
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNode>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNode, __vftable) == 0x0);
@@ -1786,6 +1865,7 @@ pub struct CombatBehaviorTreeNodeCondition_CombatBehaviorExpression_CombatBehavi
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 20],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeCondition_CombatBehaviorExpression_CombatBehaviorBinaryExpression_CombatBe_1690a8ac69fd>() == 0x38);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeCondition_CombatBehaviorExpression_CombatBehaviorBinaryExpression_CombatBe_1690a8ac69fd, __vftable) == 0x0);
@@ -1810,6 +1890,7 @@ pub struct CombatBehaviorTreeNodeEvaluateFunction_CombatBehaviorExpression_Comba
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 12],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeEvaluateFunction_CombatBehaviorExpression_CombatBehaviorMemberFunc_CombatB_e165ddd51b22>() == 0x30);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeEvaluateFunction_CombatBehaviorExpression_CombatBehaviorMemberFunc_CombatB_e165ddd51b22, __vftable) == 0x0);
@@ -1834,6 +1915,7 @@ pub struct CombatBehaviorTreeNodeEvaluateFunction_CombatBehaviorExpression_Comba
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 12],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeEvaluateFunction_CombatBehaviorExpression_CombatBehaviorMemberFunc_CombatB_e7d77284249e>() == 0x30);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeEvaluateFunction_CombatBehaviorExpression_CombatBehaviorMemberFunc_CombatB_e7d77284249e, __vftable) == 0x0);
@@ -1858,6 +1940,7 @@ pub struct CombatBehaviorTreeNodeEvaluateFunction_CombatBehaviorExpression_Comba
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 12],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeEvaluateFunction_CombatBehaviorExpression_CombatBehaviorMemberFunc_CombatB_ee8240c87d75>() == 0x30);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeEvaluateFunction_CombatBehaviorExpression_CombatBehaviorMemberFunc_CombatB_ee8240c87d75, __vftable) == 0x0);
@@ -1882,6 +1965,7 @@ pub struct CombatBehaviorTreeNodeEvaluateFunction_CombatBehaviorExpression_Comba
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 12],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeEvaluateFunction_CombatBehaviorExpression_CombatBehaviorMemberFunc_CombatS_4e8815b6fe98>() == 0x30);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeEvaluateFunction_CombatBehaviorExpression_CombatBehaviorMemberFunc_CombatS_4e8815b6fe98, __vftable) == 0x0);
@@ -1906,6 +1990,7 @@ pub struct CombatBehaviorTreeNodeEvaluateFunction_CombatBehaviorExpression_Comba
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 12],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeEvaluateFunction_CombatBehaviorExpression_CombatBehaviorUnaryExpression_Co_6982da244da7>() == 0x30);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeEvaluateFunction_CombatBehaviorExpression_CombatBehaviorUnaryExpression_Co_6982da244da7, __vftable) == 0x0);
@@ -1930,6 +2015,7 @@ pub struct CombatBehaviorTreeNodeObject1_CombatBehaviorAcquireItem_CombatBehavio
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 12],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObject1_CombatBehaviorAcquireItem_CombatBehaviorExpression_CombatBehaviorM_5a407fb5ae45>() == 0x30);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObject1_CombatBehaviorAcquireItem_CombatBehaviorExpression_CombatBehaviorM_5a407fb5ae45, __vftable) == 0x0);
@@ -1954,6 +2040,7 @@ pub struct CombatBehaviorTreeNodeObject1_CombatBehaviorCastConcentrationSpell_bo
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 12],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObject1_CombatBehaviorCastConcentrationSpell_bool>() == 0x30);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObject1_CombatBehaviorCastConcentrationSpell_bool, __vftable) == 0x0);
@@ -1978,6 +2065,7 @@ pub struct CombatBehaviorTreeNodeObject1_CombatBehaviorCastImmediateSpell_bool {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 12],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObject1_CombatBehaviorCastImmediateSpell_bool>() == 0x30);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObject1_CombatBehaviorCastImmediateSpell_bool, __vftable) == 0x0);
@@ -2002,6 +2090,7 @@ pub struct CombatBehaviorTreeNodeObject1_CombatBehaviorDisableAim_CombatAimContr
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 12],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObject1_CombatBehaviorDisableAim_CombatAimController__PRIORITY>() == 0x30);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObject1_CombatBehaviorDisableAim_CombatAimController__PRIORITY, __vftable) == 0x0);
@@ -2026,6 +2115,7 @@ pub struct CombatBehaviorTreeNodeObject1_CombatBehaviorDynamicSelector_Condition
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 12],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObject1_CombatBehaviorDynamicSelector_ConditionalChildSelector_float>() == 0x30);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObject1_CombatBehaviorDynamicSelector_ConditionalChildSelector_float, __vftable) == 0x0);
@@ -2050,6 +2140,7 @@ pub struct CombatBehaviorTreeNodeObject1_CombatBehaviorEnableBlackboardFlag_Comb
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 12],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObject1_CombatBehaviorEnableBlackboardFlag_CombatBlackboardFlag____ptr64>() == 0x30);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObject1_CombatBehaviorEnableBlackboardFlag_CombatBlackboardFlag____ptr64, __vftable) == 0x0);
@@ -2074,6 +2165,7 @@ pub struct CombatBehaviorTreeNodeObject1_CombatBehaviorFlee_float {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 12],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObject1_CombatBehaviorFlee_float>() == 0x30);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObject1_CombatBehaviorFlee_float, __vftable) == 0x0);
@@ -2098,6 +2190,7 @@ pub struct CombatBehaviorTreeNodeObject1_CombatBehaviorFollowPath_CombatBehavior
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 12],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObject1_CombatBehaviorFollowPath_CombatBehaviorExpression_CombatBehaviorMe_1dfae98b9d9b>() == 0x30);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObject1_CombatBehaviorFollowPath_CombatBehaviorExpression_CombatBehaviorMe_1dfae98b9d9b, __vftable) == 0x0);
@@ -2122,6 +2215,7 @@ pub struct CombatBehaviorTreeNodeObject1_CombatBehaviorIdle_CombatBehaviorExpres
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 20],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObject1_CombatBehaviorIdle_CombatBehaviorExpression_CombatBehaviorFunc1_fl_d0032cd29a8c>() == 0x38);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObject1_CombatBehaviorIdle_CombatBehaviorExpression_CombatBehaviorFunc1_fl_d0032cd29a8c, __vftable) == 0x0);
@@ -2146,6 +2240,7 @@ pub struct CombatBehaviorTreeNodeObject1_CombatBehaviorIdle_float {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 12],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObject1_CombatBehaviorIdle_float>() == 0x30);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObject1_CombatBehaviorIdle_float, __vftable) == 0x0);
@@ -2170,6 +2265,7 @@ pub struct CombatBehaviorTreeNodeObject1_CombatBehaviorLand_float {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 12],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObject1_CombatBehaviorLand_float>() == 0x30);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObject1_CombatBehaviorLand_float, __vftable) == 0x0);
@@ -2194,6 +2290,7 @@ pub struct CombatBehaviorTreeNodeObject1_CombatBehaviorLandNearby_float {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 12],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObject1_CombatBehaviorLandNearby_float>() == 0x30);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObject1_CombatBehaviorLandNearby_float, __vftable) == 0x0);
@@ -2218,6 +2315,7 @@ pub struct CombatBehaviorTreeNodeObject1_CombatBehaviorRepeat_CombatBehaviorRepe
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 12],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObject1_CombatBehaviorRepeat_CombatBehaviorRepeat__FLAGS>() == 0x30);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObject1_CombatBehaviorRepeat_CombatBehaviorRepeat__FLAGS, __vftable) == 0x0);
@@ -2242,6 +2340,7 @@ pub struct CombatBehaviorTreeNodeObject1_CombatBehaviorRepeat_float {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 12],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObject1_CombatBehaviorRepeat_float>() == 0x30);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObject1_CombatBehaviorRepeat_float, __vftable) == 0x0);
@@ -2266,6 +2365,7 @@ pub struct CombatBehaviorTreeNodeObject1_CombatBehaviorSearch_COMBAT_SEARCH_PRIO
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 12],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObject1_CombatBehaviorSearch_COMBAT_SEARCH_PRIORITY>() == 0x30);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObject1_CombatBehaviorSearch_COMBAT_SEARCH_PRIORITY, __vftable) == 0x0);
@@ -2290,6 +2390,7 @@ pub struct CombatBehaviorTreeNodeObject1_CombatBehaviorSearchCenter_COMBAT_SEARC
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 12],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObject1_CombatBehaviorSearchCenter_COMBAT_SEARCH_PRIORITY>() == 0x30);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObject1_CombatBehaviorSearchCenter_COMBAT_SEARCH_PRIORITY, __vftable) == 0x0);
@@ -2314,6 +2415,7 @@ pub struct CombatBehaviorTreeNodeObject1_CombatBehaviorSearchLocation_COMBAT_SEA
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 12],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObject1_CombatBehaviorSearchLocation_COMBAT_SEARCH_PRIORITY>() == 0x30);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObject1_CombatBehaviorSearchLocation_COMBAT_SEARCH_PRIORITY, __vftable) == 0x0);
@@ -2338,6 +2440,7 @@ pub struct CombatBehaviorTreeNodeObject1_CombatBehaviorSearchWander_COMBAT_SEARC
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 12],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObject1_CombatBehaviorSearchWander_COMBAT_SEARCH_PRIORITY>() == 0x30);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObject1_CombatBehaviorSearchWander_COMBAT_SEARCH_PRIORITY, __vftable) == 0x0);
@@ -2362,6 +2465,7 @@ pub struct CombatBehaviorTreeNodeObject1_CombatBehaviorWatchTarget_float {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 12],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObject1_CombatBehaviorWatchTarget_float>() == 0x30);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObject1_CombatBehaviorWatchTarget_float, __vftable) == 0x0);
@@ -2386,6 +2490,7 @@ pub struct CombatBehaviorTreeNodeObject2_CombatBehaviorAcquireResource_BSFixedSt
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 20],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObject2_CombatBehaviorAcquireResource_BSFixedString_int>() == 0x38);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObject2_CombatBehaviorAcquireResource_BSFixedString_int, __vftable) == 0x0);
@@ -2410,6 +2515,7 @@ pub struct CombatBehaviorTreeNodeObject2_CombatBehaviorFaceAngle_float_bool {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 12],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObject2_CombatBehaviorFaceAngle_float_bool>() == 0x30);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObject2_CombatBehaviorFaceAngle_float_bool, __vftable) == 0x0);
@@ -2434,6 +2540,7 @@ pub struct CombatBehaviorTreeNodeObject2_CombatBehaviorRepeat_float_CombatBehavi
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 12],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObject2_CombatBehaviorRepeat_float_CombatBehaviorRepeat__FLAGS>() == 0x30);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObject2_CombatBehaviorRepeat_float_CombatBehaviorRepeat__FLAGS, __vftable) == 0x0);
@@ -2458,6 +2565,7 @@ pub struct CombatBehaviorTreeNodeObject2_CombatBehaviorSetBlackboardData_CombatB
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 20],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObject2_CombatBehaviorSetBlackboardData_CombatBlackboardKey_AITimeStamp____e7d67e303a4d>() == 0x38);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObject2_CombatBehaviorSetBlackboardData_CombatBlackboardKey_AITimeStamp____e7d67e303a4d, __vftable) == 0x0);
@@ -2482,6 +2590,7 @@ pub struct CombatBehaviorTreeNodeObject2_CombatBehaviorSpawnParallel_unsigned_in
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 12],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObject2_CombatBehaviorSpawnParallel_unsigned_int_CombatBehaviorParallel__FLAGS>() == 0x30);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObject2_CombatBehaviorSpawnParallel_unsigned_int_CombatBehaviorParallel__FLAGS, __vftable) == 0x0);
@@ -2506,6 +2615,7 @@ pub struct CombatBehaviorTreeNodeObject3_CombatBehaviorAcquireResource_BSFixedSt
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 20],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObject3_CombatBehaviorAcquireResource_BSFixedString_int_CombatBehaviorAcquireResource__FLAG>() == 0x38);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObject3_CombatBehaviorAcquireResource_BSFixedString_int_CombatBehaviorAcquireResource__FLAG, __vftable) == 0x0);
@@ -2530,6 +2640,7 @@ pub struct CombatBehaviorTreeNodeObject_CombatBehaviorAdvance {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObject_CombatBehaviorAdvance>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObject_CombatBehaviorAdvance, __vftable) == 0x0);
@@ -2554,6 +2665,7 @@ pub struct CombatBehaviorTreeNodeObject_CombatBehaviorAttack {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObject_CombatBehaviorAttack>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObject_CombatBehaviorAttack, __vftable) == 0x0);
@@ -2578,6 +2690,7 @@ pub struct CombatBehaviorTreeNodeObject_CombatBehaviorAttackFromCover {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObject_CombatBehaviorAttackFromCover>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObject_CombatBehaviorAttackFromCover, __vftable) == 0x0);
@@ -2602,6 +2715,7 @@ pub struct CombatBehaviorTreeNodeObject_CombatBehaviorAttackLow {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObject_CombatBehaviorAttackLow>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObject_CombatBehaviorAttackLow, __vftable) == 0x0);
@@ -2626,6 +2740,7 @@ pub struct CombatBehaviorTreeNodeObject_CombatBehaviorBackoff {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObject_CombatBehaviorBackoff>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObject_CombatBehaviorBackoff, __vftable) == 0x0);
@@ -2650,6 +2765,7 @@ pub struct CombatBehaviorTreeNodeObject_CombatBehaviorBash {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObject_CombatBehaviorBash>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObject_CombatBehaviorBash, __vftable) == 0x0);
@@ -2674,6 +2790,7 @@ pub struct CombatBehaviorTreeNodeObject_CombatBehaviorBlock {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObject_CombatBehaviorBlock>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObject_CombatBehaviorBlock, __vftable) == 0x0);
@@ -2698,6 +2815,7 @@ pub struct CombatBehaviorTreeNodeObject_CombatBehaviorBlockAttack {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObject_CombatBehaviorBlockAttack>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObject_CombatBehaviorBlockAttack, __vftable) == 0x0);
@@ -2722,6 +2840,7 @@ pub struct CombatBehaviorTreeNodeObject_CombatBehaviorCastConcentrationSpell {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObject_CombatBehaviorCastConcentrationSpell>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObject_CombatBehaviorCastConcentrationSpell, __vftable) == 0x0);
@@ -2746,6 +2865,7 @@ pub struct CombatBehaviorTreeNodeObject_CombatBehaviorCastImmediateSpell {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObject_CombatBehaviorCastImmediateSpell>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObject_CombatBehaviorCastImmediateSpell, __vftable) == 0x0);
@@ -2770,6 +2890,7 @@ pub struct CombatBehaviorTreeNodeObject_CombatBehaviorCastShout {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObject_CombatBehaviorCastShout>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObject_CombatBehaviorCastShout, __vftable) == 0x0);
@@ -2794,6 +2915,7 @@ pub struct CombatBehaviorTreeNodeObject_CombatBehaviorChase {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObject_CombatBehaviorChase>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObject_CombatBehaviorChase, __vftable) == 0x0);
@@ -2818,6 +2940,7 @@ pub struct CombatBehaviorTreeNodeObject_CombatBehaviorCheckUnreachableTarget {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObject_CombatBehaviorCheckUnreachableTarget>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObject_CombatBehaviorCheckUnreachableTarget, __vftable) == 0x0);
@@ -2842,6 +2965,7 @@ pub struct CombatBehaviorTreeNodeObject_CombatBehaviorChildSelector_ConditionalC
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObject_CombatBehaviorChildSelector_ConditionalChildSelector__>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObject_CombatBehaviorChildSelector_ConditionalChildSelector__, __vftable) == 0x0);
@@ -2866,6 +2990,7 @@ pub struct CombatBehaviorTreeNodeObject_CombatBehaviorChildSelector_RandomValueC
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObject_CombatBehaviorChildSelector_RandomValueChildSelector__>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObject_CombatBehaviorChildSelector_RandomValueChildSelector__, __vftable) == 0x0);
@@ -2890,6 +3015,7 @@ pub struct CombatBehaviorTreeNodeObject_CombatBehaviorChildSelector_ValueChildSe
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObject_CombatBehaviorChildSelector_ValueChildSelector__>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObject_CombatBehaviorChildSelector_ValueChildSelector__, __vftable) == 0x0);
@@ -2914,6 +3040,7 @@ pub struct CombatBehaviorTreeNodeObject_CombatBehaviorCircle {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObject_CombatBehaviorCircle>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObject_CombatBehaviorCircle, __vftable) == 0x0);
@@ -2938,6 +3065,7 @@ pub struct CombatBehaviorTreeNodeObject_CombatBehaviorCircleDistant {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObject_CombatBehaviorCircleDistant>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObject_CombatBehaviorCircleDistant, __vftable) == 0x0);
@@ -2962,6 +3090,7 @@ pub struct CombatBehaviorTreeNodeObject_CombatBehaviorDiveBomb {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObject_CombatBehaviorDiveBomb>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObject_CombatBehaviorDiveBomb, __vftable) == 0x0);
@@ -2986,6 +3115,7 @@ pub struct CombatBehaviorTreeNodeObject_CombatBehaviorDodgeThreat {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObject_CombatBehaviorDodgeThreat>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObject_CombatBehaviorDodgeThreat, __vftable) == 0x0);
@@ -3010,6 +3140,7 @@ pub struct CombatBehaviorTreeNodeObject_CombatBehaviorDrinkPotion {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObject_CombatBehaviorDrinkPotion>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObject_CombatBehaviorDrinkPotion, __vftable) == 0x0);
@@ -3034,6 +3165,7 @@ pub struct CombatBehaviorTreeNodeObject_CombatBehaviorDynamicConditionalNode {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObject_CombatBehaviorDynamicConditionalNode>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObject_CombatBehaviorDynamicConditionalNode, __vftable) == 0x0);
@@ -3058,6 +3190,7 @@ pub struct CombatBehaviorTreeNodeObject_CombatBehaviorEquipObject {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObject_CombatBehaviorEquipObject>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObject_CombatBehaviorEquipObject, __vftable) == 0x0);
@@ -3082,6 +3215,7 @@ pub struct CombatBehaviorTreeNodeObject_CombatBehaviorEquipRangedWeapon {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObject_CombatBehaviorEquipRangedWeapon>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObject_CombatBehaviorEquipRangedWeapon, __vftable) == 0x0);
@@ -3106,6 +3240,7 @@ pub struct CombatBehaviorTreeNodeObject_CombatBehaviorEquipShout {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObject_CombatBehaviorEquipShout>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObject_CombatBehaviorEquipShout, __vftable) == 0x0);
@@ -3130,6 +3265,7 @@ pub struct CombatBehaviorTreeNodeObject_CombatBehaviorEquipSpell {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObject_CombatBehaviorEquipSpell>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObject_CombatBehaviorEquipSpell, __vftable) == 0x0);
@@ -3154,6 +3290,7 @@ pub struct CombatBehaviorTreeNodeObject_CombatBehaviorExitWater {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObject_CombatBehaviorExitWater>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObject_CombatBehaviorExitWater, __vftable) == 0x0);
@@ -3178,6 +3315,7 @@ pub struct CombatBehaviorTreeNodeObject_CombatBehaviorFallback {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObject_CombatBehaviorFallback>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObject_CombatBehaviorFallback, __vftable) == 0x0);
@@ -3202,6 +3340,7 @@ pub struct CombatBehaviorTreeNodeObject_CombatBehaviorFallbackSelector_NextChild
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObject_CombatBehaviorFallbackSelector_NextChildSelector__>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObject_CombatBehaviorFallbackSelector_NextChildSelector__, __vftable) == 0x0);
@@ -3226,6 +3365,7 @@ pub struct CombatBehaviorTreeNodeObject_CombatBehaviorFallbackSelector_WeightedR
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObject_CombatBehaviorFallbackSelector_WeightedRandomChildSelector__>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObject_CombatBehaviorFallbackSelector_WeightedRandomChildSelector__, __vftable) == 0x0);
@@ -3250,6 +3390,7 @@ pub struct CombatBehaviorTreeNodeObject_CombatBehaviorFallbackToRanged {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObject_CombatBehaviorFallbackToRanged>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObject_CombatBehaviorFallbackToRanged, __vftable) == 0x0);
@@ -3274,6 +3415,7 @@ pub struct CombatBehaviorTreeNodeObject_CombatBehaviorFindAllyAttackLocation {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObject_CombatBehaviorFindAllyAttackLocation>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObject_CombatBehaviorFindAllyAttackLocation, __vftable) == 0x0);
@@ -3298,6 +3440,7 @@ pub struct CombatBehaviorTreeNodeObject_CombatBehaviorFindAttackLocation {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObject_CombatBehaviorFindAttackLocation>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObject_CombatBehaviorFindAttackLocation, __vftable) == 0x0);
@@ -3322,6 +3465,7 @@ pub struct CombatBehaviorTreeNodeObject_CombatBehaviorFindCover {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObject_CombatBehaviorFindCover>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObject_CombatBehaviorFindCover, __vftable) == 0x0);
@@ -3346,6 +3490,7 @@ pub struct CombatBehaviorTreeNodeObject_CombatBehaviorFindLateralAttackLocation 
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObject_CombatBehaviorFindLateralAttackLocation>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObject_CombatBehaviorFindLateralAttackLocation, __vftable) == 0x0);
@@ -3370,6 +3515,7 @@ pub struct CombatBehaviorTreeNodeObject_CombatBehaviorFindWeapon {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObject_CombatBehaviorFindWeapon>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObject_CombatBehaviorFindWeapon, __vftable) == 0x0);
@@ -3394,6 +3540,7 @@ pub struct CombatBehaviorTreeNodeObject_CombatBehaviorFlank {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObject_CombatBehaviorFlank>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObject_CombatBehaviorFlank, __vftable) == 0x0);
@@ -3418,6 +3565,7 @@ pub struct CombatBehaviorTreeNodeObject_CombatBehaviorFlankDistant {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObject_CombatBehaviorFlankDistant>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObject_CombatBehaviorFlankDistant, __vftable) == 0x0);
@@ -3442,6 +3590,7 @@ pub struct CombatBehaviorTreeNodeObject_CombatBehaviorFlee {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObject_CombatBehaviorFlee>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObject_CombatBehaviorFlee, __vftable) == 0x0);
@@ -3466,6 +3615,7 @@ pub struct CombatBehaviorTreeNodeObject_CombatBehaviorFleeThroughDoor {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObject_CombatBehaviorFleeThroughDoor>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObject_CombatBehaviorFleeThroughDoor, __vftable) == 0x0);
@@ -3490,6 +3640,7 @@ pub struct CombatBehaviorTreeNodeObject_CombatBehaviorFleeToAlly {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObject_CombatBehaviorFleeToAlly>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObject_CombatBehaviorFleeToAlly, __vftable) == 0x0);
@@ -3514,6 +3665,7 @@ pub struct CombatBehaviorTreeNodeObject_CombatBehaviorFleeToCover {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObject_CombatBehaviorFleeToCover>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObject_CombatBehaviorFleeToCover, __vftable) == 0x0);
@@ -3538,6 +3690,7 @@ pub struct CombatBehaviorTreeNodeObject_CombatBehaviorFlyingAttack {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObject_CombatBehaviorFlyingAttack>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObject_CombatBehaviorFlyingAttack, __vftable) == 0x0);
@@ -3562,6 +3715,7 @@ pub struct CombatBehaviorTreeNodeObject_CombatBehaviorForceFail {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObject_CombatBehaviorForceFail>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObject_CombatBehaviorForceFail, __vftable) == 0x0);
@@ -3586,6 +3740,7 @@ pub struct CombatBehaviorTreeNodeObject_CombatBehaviorForceSuccess {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObject_CombatBehaviorForceSuccess>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObject_CombatBehaviorForceSuccess, __vftable) == 0x0);
@@ -3610,6 +3765,7 @@ pub struct CombatBehaviorTreeNodeObject_CombatBehaviorGroundAttack {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObject_CombatBehaviorGroundAttack>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObject_CombatBehaviorGroundAttack, __vftable) == 0x0);
@@ -3634,6 +3790,7 @@ pub struct CombatBehaviorTreeNodeObject_CombatBehaviorHide {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObject_CombatBehaviorHide>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObject_CombatBehaviorHide, __vftable) == 0x0);
@@ -3658,6 +3815,7 @@ pub struct CombatBehaviorTreeNodeObject_CombatBehaviorHover {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObject_CombatBehaviorHover>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObject_CombatBehaviorHover, __vftable) == 0x0);
@@ -3682,6 +3840,7 @@ pub struct CombatBehaviorTreeNodeObject_CombatBehaviorLand {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObject_CombatBehaviorLand>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObject_CombatBehaviorLand, __vftable) == 0x0);
@@ -3706,6 +3865,7 @@ pub struct CombatBehaviorTreeNodeObject_CombatBehaviorMaintainOptimalRange {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObject_CombatBehaviorMaintainOptimalRange>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObject_CombatBehaviorMaintainOptimalRange, __vftable) == 0x0);
@@ -3730,6 +3890,7 @@ pub struct CombatBehaviorTreeNodeObject_CombatBehaviorOrbit {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObject_CombatBehaviorOrbit>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObject_CombatBehaviorOrbit, __vftable) == 0x0);
@@ -3754,6 +3915,7 @@ pub struct CombatBehaviorTreeNodeObject_CombatBehaviorOrbitDistant {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObject_CombatBehaviorOrbitDistant>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObject_CombatBehaviorOrbitDistant, __vftable) == 0x0);
@@ -3778,6 +3940,7 @@ pub struct CombatBehaviorTreeNodeObject_CombatBehaviorParallel {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObject_CombatBehaviorParallel>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObject_CombatBehaviorParallel, __vftable) == 0x0);
@@ -3802,6 +3965,7 @@ pub struct CombatBehaviorTreeNodeObject_CombatBehaviorPause {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObject_CombatBehaviorPause>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObject_CombatBehaviorPause, __vftable) == 0x0);
@@ -3826,6 +3990,7 @@ pub struct CombatBehaviorTreeNodeObject_CombatBehaviorPerchAttack {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObject_CombatBehaviorPerchAttack>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObject_CombatBehaviorPerchAttack, __vftable) == 0x0);
@@ -3850,6 +4015,7 @@ pub struct CombatBehaviorTreeNodeObject_CombatBehaviorPrepareDualCast {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObject_CombatBehaviorPrepareDualCast>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObject_CombatBehaviorPrepareDualCast, __vftable) == 0x0);
@@ -3874,6 +4040,7 @@ pub struct CombatBehaviorTreeNodeObject_CombatBehaviorPursueTarget {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObject_CombatBehaviorPursueTarget>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObject_CombatBehaviorPursueTarget, __vftable) == 0x0);
@@ -3898,6 +4065,7 @@ pub struct CombatBehaviorTreeNodeObject_CombatBehaviorRangedAttack {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObject_CombatBehaviorRangedAttack>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObject_CombatBehaviorRangedAttack, __vftable) == 0x0);
@@ -3922,6 +4090,7 @@ pub struct CombatBehaviorTreeNodeObject_CombatBehaviorRepeat {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObject_CombatBehaviorRepeat>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObject_CombatBehaviorRepeat, __vftable) == 0x0);
@@ -3946,6 +4115,7 @@ pub struct CombatBehaviorTreeNodeObject_CombatBehaviorReposition {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObject_CombatBehaviorReposition>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObject_CombatBehaviorReposition, __vftable) == 0x0);
@@ -3970,6 +4140,7 @@ pub struct CombatBehaviorTreeNodeObject_CombatBehaviorReturnToCombatArea {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObject_CombatBehaviorReturnToCombatArea>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObject_CombatBehaviorReturnToCombatArea, __vftable) == 0x0);
@@ -3994,6 +4165,7 @@ pub struct CombatBehaviorTreeNodeObject_CombatBehaviorSearchInvestigateDoor {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObject_CombatBehaviorSearchInvestigateDoor>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObject_CombatBehaviorSearchInvestigateDoor, __vftable) == 0x0);
@@ -4018,6 +4190,7 @@ pub struct CombatBehaviorTreeNodeObject_CombatBehaviorSequence {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObject_CombatBehaviorSequence>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObject_CombatBehaviorSequence, __vftable) == 0x0);
@@ -4042,6 +4215,7 @@ pub struct CombatBehaviorTreeNodeObject_CombatBehaviorSpecialAttack {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObject_CombatBehaviorSpecialAttack>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObject_CombatBehaviorSpecialAttack, __vftable) == 0x0);
@@ -4066,6 +4240,7 @@ pub struct CombatBehaviorTreeNodeObject_CombatBehaviorStalk {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObject_CombatBehaviorStalk>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObject_CombatBehaviorStalk, __vftable) == 0x0);
@@ -4090,6 +4265,7 @@ pub struct CombatBehaviorTreeNodeObject_CombatBehaviorStrafe {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObject_CombatBehaviorStrafe>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObject_CombatBehaviorStrafe, __vftable) == 0x0);
@@ -4114,6 +4290,7 @@ pub struct CombatBehaviorTreeNodeObject_CombatBehaviorSurround {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObject_CombatBehaviorSurround>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObject_CombatBehaviorSurround, __vftable) == 0x0);
@@ -4138,6 +4315,7 @@ pub struct CombatBehaviorTreeNodeObject_CombatBehaviorTakeoff {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObject_CombatBehaviorTakeoff>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObject_CombatBehaviorTakeoff, __vftable) == 0x0);
@@ -4162,6 +4340,7 @@ pub struct CombatBehaviorTreeNodeObject_CombatBehaviorTrackTarget {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObject_CombatBehaviorTrackTarget>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObject_CombatBehaviorTrackTarget, __vftable) == 0x0);
@@ -4186,6 +4365,7 @@ pub struct CombatBehaviorTreeNodeObject_CombatBehaviorWaitBehindCover {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObject_CombatBehaviorWaitBehindCover>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObject_CombatBehaviorWaitBehindCover, __vftable) == 0x0);
@@ -4210,6 +4390,7 @@ pub struct CombatBehaviorTreeNodeObjectBase_CombatBehaviorAcquireItem {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 12],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObjectBase_CombatBehaviorAcquireItem>() == 0x30);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObjectBase_CombatBehaviorAcquireItem, __vftable) == 0x0);
@@ -4234,6 +4415,7 @@ pub struct CombatBehaviorTreeNodeObjectBase_CombatBehaviorAcquireResource {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 20],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObjectBase_CombatBehaviorAcquireResource>() == 0x38);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObjectBase_CombatBehaviorAcquireResource, __vftable) == 0x0);
@@ -4258,6 +4440,7 @@ pub struct CombatBehaviorTreeNodeObjectBase_CombatBehaviorAdvance {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObjectBase_CombatBehaviorAdvance>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObjectBase_CombatBehaviorAdvance, __vftable) == 0x0);
@@ -4282,6 +4465,7 @@ pub struct CombatBehaviorTreeNodeObjectBase_CombatBehaviorAttack {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObjectBase_CombatBehaviorAttack>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObjectBase_CombatBehaviorAttack, __vftable) == 0x0);
@@ -4306,6 +4490,7 @@ pub struct CombatBehaviorTreeNodeObjectBase_CombatBehaviorAttackFromCover {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObjectBase_CombatBehaviorAttackFromCover>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObjectBase_CombatBehaviorAttackFromCover, __vftable) == 0x0);
@@ -4330,6 +4515,7 @@ pub struct CombatBehaviorTreeNodeObjectBase_CombatBehaviorAttackLow {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObjectBase_CombatBehaviorAttackLow>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObjectBase_CombatBehaviorAttackLow, __vftable) == 0x0);
@@ -4354,6 +4540,7 @@ pub struct CombatBehaviorTreeNodeObjectBase_CombatBehaviorBackoff {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObjectBase_CombatBehaviorBackoff>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObjectBase_CombatBehaviorBackoff, __vftable) == 0x0);
@@ -4378,6 +4565,7 @@ pub struct CombatBehaviorTreeNodeObjectBase_CombatBehaviorBash {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObjectBase_CombatBehaviorBash>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObjectBase_CombatBehaviorBash, __vftable) == 0x0);
@@ -4402,6 +4590,7 @@ pub struct CombatBehaviorTreeNodeObjectBase_CombatBehaviorBlock {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObjectBase_CombatBehaviorBlock>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObjectBase_CombatBehaviorBlock, __vftable) == 0x0);
@@ -4426,6 +4615,7 @@ pub struct CombatBehaviorTreeNodeObjectBase_CombatBehaviorBlockAttack {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObjectBase_CombatBehaviorBlockAttack>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObjectBase_CombatBehaviorBlockAttack, __vftable) == 0x0);
@@ -4450,6 +4640,7 @@ pub struct CombatBehaviorTreeNodeObjectBase_CombatBehaviorCastConcentrationSpell
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObjectBase_CombatBehaviorCastConcentrationSpell>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObjectBase_CombatBehaviorCastConcentrationSpell, __vftable) == 0x0);
@@ -4474,6 +4665,7 @@ pub struct CombatBehaviorTreeNodeObjectBase_CombatBehaviorCastImmediateSpell {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObjectBase_CombatBehaviorCastImmediateSpell>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObjectBase_CombatBehaviorCastImmediateSpell, __vftable) == 0x0);
@@ -4498,6 +4690,7 @@ pub struct CombatBehaviorTreeNodeObjectBase_CombatBehaviorCastShout {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObjectBase_CombatBehaviorCastShout>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObjectBase_CombatBehaviorCastShout, __vftable) == 0x0);
@@ -4522,6 +4715,7 @@ pub struct CombatBehaviorTreeNodeObjectBase_CombatBehaviorChase {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObjectBase_CombatBehaviorChase>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObjectBase_CombatBehaviorChase, __vftable) == 0x0);
@@ -4546,6 +4740,7 @@ pub struct CombatBehaviorTreeNodeObjectBase_CombatBehaviorCheckUnreachableTarget
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObjectBase_CombatBehaviorCheckUnreachableTarget>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObjectBase_CombatBehaviorCheckUnreachableTarget, __vftable) == 0x0);
@@ -4570,6 +4765,7 @@ pub struct CombatBehaviorTreeNodeObjectBase_CombatBehaviorChildSelector_Conditio
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObjectBase_CombatBehaviorChildSelector_ConditionalChildSelector__>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObjectBase_CombatBehaviorChildSelector_ConditionalChildSelector__, __vftable) == 0x0);
@@ -4594,6 +4790,7 @@ pub struct CombatBehaviorTreeNodeObjectBase_CombatBehaviorChildSelector_RandomVa
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObjectBase_CombatBehaviorChildSelector_RandomValueChildSelector__>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObjectBase_CombatBehaviorChildSelector_RandomValueChildSelector__, __vftable) == 0x0);
@@ -4618,6 +4815,7 @@ pub struct CombatBehaviorTreeNodeObjectBase_CombatBehaviorChildSelector_ValueChi
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObjectBase_CombatBehaviorChildSelector_ValueChildSelector__>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObjectBase_CombatBehaviorChildSelector_ValueChildSelector__, __vftable) == 0x0);
@@ -4642,6 +4840,7 @@ pub struct CombatBehaviorTreeNodeObjectBase_CombatBehaviorCircle {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObjectBase_CombatBehaviorCircle>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObjectBase_CombatBehaviorCircle, __vftable) == 0x0);
@@ -4666,6 +4865,7 @@ pub struct CombatBehaviorTreeNodeObjectBase_CombatBehaviorCircleDistant {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObjectBase_CombatBehaviorCircleDistant>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObjectBase_CombatBehaviorCircleDistant, __vftable) == 0x0);
@@ -4690,6 +4890,7 @@ pub struct CombatBehaviorTreeNodeObjectBase_CombatBehaviorDisableAim {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 12],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObjectBase_CombatBehaviorDisableAim>() == 0x30);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObjectBase_CombatBehaviorDisableAim, __vftable) == 0x0);
@@ -4714,6 +4915,7 @@ pub struct CombatBehaviorTreeNodeObjectBase_CombatBehaviorDiveBomb {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObjectBase_CombatBehaviorDiveBomb>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObjectBase_CombatBehaviorDiveBomb, __vftable) == 0x0);
@@ -4738,6 +4940,7 @@ pub struct CombatBehaviorTreeNodeObjectBase_CombatBehaviorDodgeThreat {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObjectBase_CombatBehaviorDodgeThreat>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObjectBase_CombatBehaviorDodgeThreat, __vftable) == 0x0);
@@ -4762,6 +4965,7 @@ pub struct CombatBehaviorTreeNodeObjectBase_CombatBehaviorDrinkPotion {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObjectBase_CombatBehaviorDrinkPotion>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObjectBase_CombatBehaviorDrinkPotion, __vftable) == 0x0);
@@ -4786,6 +4990,7 @@ pub struct CombatBehaviorTreeNodeObjectBase_CombatBehaviorDynamicConditionalNode
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObjectBase_CombatBehaviorDynamicConditionalNode>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObjectBase_CombatBehaviorDynamicConditionalNode, __vftable) == 0x0);
@@ -4810,6 +5015,7 @@ pub struct CombatBehaviorTreeNodeObjectBase_CombatBehaviorDynamicSelector_Condit
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 12],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObjectBase_CombatBehaviorDynamicSelector_ConditionalChildSelector__>() == 0x30);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObjectBase_CombatBehaviorDynamicSelector_ConditionalChildSelector__, __vftable) == 0x0);
@@ -4834,6 +5040,7 @@ pub struct CombatBehaviorTreeNodeObjectBase_CombatBehaviorEnableBlackboardFlag {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 12],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObjectBase_CombatBehaviorEnableBlackboardFlag>() == 0x30);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObjectBase_CombatBehaviorEnableBlackboardFlag, __vftable) == 0x0);
@@ -4858,6 +5065,7 @@ pub struct CombatBehaviorTreeNodeObjectBase_CombatBehaviorEquipObject {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObjectBase_CombatBehaviorEquipObject>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObjectBase_CombatBehaviorEquipObject, __vftable) == 0x0);
@@ -4882,6 +5090,7 @@ pub struct CombatBehaviorTreeNodeObjectBase_CombatBehaviorEquipRangedWeapon {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObjectBase_CombatBehaviorEquipRangedWeapon>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObjectBase_CombatBehaviorEquipRangedWeapon, __vftable) == 0x0);
@@ -4906,6 +5115,7 @@ pub struct CombatBehaviorTreeNodeObjectBase_CombatBehaviorEquipShout {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObjectBase_CombatBehaviorEquipShout>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObjectBase_CombatBehaviorEquipShout, __vftable) == 0x0);
@@ -4930,6 +5140,7 @@ pub struct CombatBehaviorTreeNodeObjectBase_CombatBehaviorEquipSpell {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObjectBase_CombatBehaviorEquipSpell>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObjectBase_CombatBehaviorEquipSpell, __vftable) == 0x0);
@@ -4954,6 +5165,7 @@ pub struct CombatBehaviorTreeNodeObjectBase_CombatBehaviorExitWater {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObjectBase_CombatBehaviorExitWater>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObjectBase_CombatBehaviorExitWater, __vftable) == 0x0);
@@ -4978,6 +5190,7 @@ pub struct CombatBehaviorTreeNodeObjectBase_CombatBehaviorFaceAngle {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 12],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObjectBase_CombatBehaviorFaceAngle>() == 0x30);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObjectBase_CombatBehaviorFaceAngle, __vftable) == 0x0);
@@ -5002,6 +5215,7 @@ pub struct CombatBehaviorTreeNodeObjectBase_CombatBehaviorFallback {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObjectBase_CombatBehaviorFallback>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObjectBase_CombatBehaviorFallback, __vftable) == 0x0);
@@ -5026,6 +5240,7 @@ pub struct CombatBehaviorTreeNodeObjectBase_CombatBehaviorFallbackSelector_NextC
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObjectBase_CombatBehaviorFallbackSelector_NextChildSelector__>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObjectBase_CombatBehaviorFallbackSelector_NextChildSelector__, __vftable) == 0x0);
@@ -5050,6 +5265,7 @@ pub struct CombatBehaviorTreeNodeObjectBase_CombatBehaviorFallbackSelector_Weigh
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObjectBase_CombatBehaviorFallbackSelector_WeightedRandomChildSelector__>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObjectBase_CombatBehaviorFallbackSelector_WeightedRandomChildSelector__, __vftable) == 0x0);
@@ -5074,6 +5290,7 @@ pub struct CombatBehaviorTreeNodeObjectBase_CombatBehaviorFallbackToRanged {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObjectBase_CombatBehaviorFallbackToRanged>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObjectBase_CombatBehaviorFallbackToRanged, __vftable) == 0x0);
@@ -5098,6 +5315,7 @@ pub struct CombatBehaviorTreeNodeObjectBase_CombatBehaviorFindAllyAttackLocation
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObjectBase_CombatBehaviorFindAllyAttackLocation>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObjectBase_CombatBehaviorFindAllyAttackLocation, __vftable) == 0x0);
@@ -5122,6 +5340,7 @@ pub struct CombatBehaviorTreeNodeObjectBase_CombatBehaviorFindAttackLocation {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObjectBase_CombatBehaviorFindAttackLocation>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObjectBase_CombatBehaviorFindAttackLocation, __vftable) == 0x0);
@@ -5146,6 +5365,7 @@ pub struct CombatBehaviorTreeNodeObjectBase_CombatBehaviorFindCover {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObjectBase_CombatBehaviorFindCover>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObjectBase_CombatBehaviorFindCover, __vftable) == 0x0);
@@ -5170,6 +5390,7 @@ pub struct CombatBehaviorTreeNodeObjectBase_CombatBehaviorFindLateralAttackLocat
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObjectBase_CombatBehaviorFindLateralAttackLocation>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObjectBase_CombatBehaviorFindLateralAttackLocation, __vftable) == 0x0);
@@ -5194,6 +5415,7 @@ pub struct CombatBehaviorTreeNodeObjectBase_CombatBehaviorFindWeapon {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObjectBase_CombatBehaviorFindWeapon>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObjectBase_CombatBehaviorFindWeapon, __vftable) == 0x0);
@@ -5218,6 +5440,7 @@ pub struct CombatBehaviorTreeNodeObjectBase_CombatBehaviorFlank {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObjectBase_CombatBehaviorFlank>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObjectBase_CombatBehaviorFlank, __vftable) == 0x0);
@@ -5242,6 +5465,7 @@ pub struct CombatBehaviorTreeNodeObjectBase_CombatBehaviorFlankDistant {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObjectBase_CombatBehaviorFlankDistant>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObjectBase_CombatBehaviorFlankDistant, __vftable) == 0x0);
@@ -5266,6 +5490,7 @@ pub struct CombatBehaviorTreeNodeObjectBase_CombatBehaviorFlee {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObjectBase_CombatBehaviorFlee>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObjectBase_CombatBehaviorFlee, __vftable) == 0x0);
@@ -5290,6 +5515,7 @@ pub struct CombatBehaviorTreeNodeObjectBase_CombatBehaviorFleeThroughDoor {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObjectBase_CombatBehaviorFleeThroughDoor>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObjectBase_CombatBehaviorFleeThroughDoor, __vftable) == 0x0);
@@ -5314,6 +5540,7 @@ pub struct CombatBehaviorTreeNodeObjectBase_CombatBehaviorFleeToAlly {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObjectBase_CombatBehaviorFleeToAlly>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObjectBase_CombatBehaviorFleeToAlly, __vftable) == 0x0);
@@ -5338,6 +5565,7 @@ pub struct CombatBehaviorTreeNodeObjectBase_CombatBehaviorFleeToCover {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObjectBase_CombatBehaviorFleeToCover>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObjectBase_CombatBehaviorFleeToCover, __vftable) == 0x0);
@@ -5362,6 +5590,7 @@ pub struct CombatBehaviorTreeNodeObjectBase_CombatBehaviorFlyingAttack {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObjectBase_CombatBehaviorFlyingAttack>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObjectBase_CombatBehaviorFlyingAttack, __vftable) == 0x0);
@@ -5386,6 +5615,7 @@ pub struct CombatBehaviorTreeNodeObjectBase_CombatBehaviorFollowPath {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 12],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObjectBase_CombatBehaviorFollowPath>() == 0x30);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObjectBase_CombatBehaviorFollowPath, __vftable) == 0x0);
@@ -5410,6 +5640,7 @@ pub struct CombatBehaviorTreeNodeObjectBase_CombatBehaviorForceFail {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObjectBase_CombatBehaviorForceFail>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObjectBase_CombatBehaviorForceFail, __vftable) == 0x0);
@@ -5434,6 +5665,7 @@ pub struct CombatBehaviorTreeNodeObjectBase_CombatBehaviorForceSuccess {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObjectBase_CombatBehaviorForceSuccess>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObjectBase_CombatBehaviorForceSuccess, __vftable) == 0x0);
@@ -5458,6 +5690,7 @@ pub struct CombatBehaviorTreeNodeObjectBase_CombatBehaviorGroundAttack {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObjectBase_CombatBehaviorGroundAttack>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObjectBase_CombatBehaviorGroundAttack, __vftable) == 0x0);
@@ -5482,6 +5715,7 @@ pub struct CombatBehaviorTreeNodeObjectBase_CombatBehaviorHide {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObjectBase_CombatBehaviorHide>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObjectBase_CombatBehaviorHide, __vftable) == 0x0);
@@ -5506,6 +5740,7 @@ pub struct CombatBehaviorTreeNodeObjectBase_CombatBehaviorHover {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObjectBase_CombatBehaviorHover>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObjectBase_CombatBehaviorHover, __vftable) == 0x0);
@@ -5530,6 +5765,7 @@ pub struct CombatBehaviorTreeNodeObjectBase_CombatBehaviorIdle {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 12],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObjectBase_CombatBehaviorIdle>() == 0x30);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObjectBase_CombatBehaviorIdle, __vftable) == 0x0);
@@ -5554,6 +5790,7 @@ pub struct CombatBehaviorTreeNodeObjectBase_CombatBehaviorLand {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObjectBase_CombatBehaviorLand>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObjectBase_CombatBehaviorLand, __vftable) == 0x0);
@@ -5578,6 +5815,7 @@ pub struct CombatBehaviorTreeNodeObjectBase_CombatBehaviorLandNearby {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 12],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObjectBase_CombatBehaviorLandNearby>() == 0x30);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObjectBase_CombatBehaviorLandNearby, __vftable) == 0x0);
@@ -5602,6 +5840,7 @@ pub struct CombatBehaviorTreeNodeObjectBase_CombatBehaviorMaintainOptimalRange {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObjectBase_CombatBehaviorMaintainOptimalRange>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObjectBase_CombatBehaviorMaintainOptimalRange, __vftable) == 0x0);
@@ -5626,6 +5865,7 @@ pub struct CombatBehaviorTreeNodeObjectBase_CombatBehaviorOrbit {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObjectBase_CombatBehaviorOrbit>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObjectBase_CombatBehaviorOrbit, __vftable) == 0x0);
@@ -5650,6 +5890,7 @@ pub struct CombatBehaviorTreeNodeObjectBase_CombatBehaviorOrbitDistant {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObjectBase_CombatBehaviorOrbitDistant>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObjectBase_CombatBehaviorOrbitDistant, __vftable) == 0x0);
@@ -5674,6 +5915,7 @@ pub struct CombatBehaviorTreeNodeObjectBase_CombatBehaviorParallel {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObjectBase_CombatBehaviorParallel>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObjectBase_CombatBehaviorParallel, __vftable) == 0x0);
@@ -5698,6 +5940,7 @@ pub struct CombatBehaviorTreeNodeObjectBase_CombatBehaviorPause {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObjectBase_CombatBehaviorPause>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObjectBase_CombatBehaviorPause, __vftable) == 0x0);
@@ -5722,6 +5965,7 @@ pub struct CombatBehaviorTreeNodeObjectBase_CombatBehaviorPerchAttack {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObjectBase_CombatBehaviorPerchAttack>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObjectBase_CombatBehaviorPerchAttack, __vftable) == 0x0);
@@ -5746,6 +5990,7 @@ pub struct CombatBehaviorTreeNodeObjectBase_CombatBehaviorPrepareDualCast {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObjectBase_CombatBehaviorPrepareDualCast>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObjectBase_CombatBehaviorPrepareDualCast, __vftable) == 0x0);
@@ -5770,6 +6015,7 @@ pub struct CombatBehaviorTreeNodeObjectBase_CombatBehaviorPursueTarget {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObjectBase_CombatBehaviorPursueTarget>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObjectBase_CombatBehaviorPursueTarget, __vftable) == 0x0);
@@ -5794,6 +6040,7 @@ pub struct CombatBehaviorTreeNodeObjectBase_CombatBehaviorRangedAttack {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObjectBase_CombatBehaviorRangedAttack>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObjectBase_CombatBehaviorRangedAttack, __vftable) == 0x0);
@@ -5818,6 +6065,7 @@ pub struct CombatBehaviorTreeNodeObjectBase_CombatBehaviorRepeat {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObjectBase_CombatBehaviorRepeat>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObjectBase_CombatBehaviorRepeat, __vftable) == 0x0);
@@ -5842,6 +6090,7 @@ pub struct CombatBehaviorTreeNodeObjectBase_CombatBehaviorReposition {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObjectBase_CombatBehaviorReposition>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObjectBase_CombatBehaviorReposition, __vftable) == 0x0);
@@ -5866,6 +6115,7 @@ pub struct CombatBehaviorTreeNodeObjectBase_CombatBehaviorReturnToCombatArea {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObjectBase_CombatBehaviorReturnToCombatArea>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObjectBase_CombatBehaviorReturnToCombatArea, __vftable) == 0x0);
@@ -5890,6 +6140,7 @@ pub struct CombatBehaviorTreeNodeObjectBase_CombatBehaviorSearch {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 12],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObjectBase_CombatBehaviorSearch>() == 0x30);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObjectBase_CombatBehaviorSearch, __vftable) == 0x0);
@@ -5914,6 +6165,7 @@ pub struct CombatBehaviorTreeNodeObjectBase_CombatBehaviorSearchCenter {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 12],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObjectBase_CombatBehaviorSearchCenter>() == 0x30);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObjectBase_CombatBehaviorSearchCenter, __vftable) == 0x0);
@@ -5938,6 +6190,7 @@ pub struct CombatBehaviorTreeNodeObjectBase_CombatBehaviorSearchInvestigateDoor 
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObjectBase_CombatBehaviorSearchInvestigateDoor>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObjectBase_CombatBehaviorSearchInvestigateDoor, __vftable) == 0x0);
@@ -5962,6 +6215,7 @@ pub struct CombatBehaviorTreeNodeObjectBase_CombatBehaviorSearchLocation {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 12],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObjectBase_CombatBehaviorSearchLocation>() == 0x30);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObjectBase_CombatBehaviorSearchLocation, __vftable) == 0x0);
@@ -5986,6 +6240,7 @@ pub struct CombatBehaviorTreeNodeObjectBase_CombatBehaviorSearchWander {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 12],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObjectBase_CombatBehaviorSearchWander>() == 0x30);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObjectBase_CombatBehaviorSearchWander, __vftable) == 0x0);
@@ -6010,6 +6265,7 @@ pub struct CombatBehaviorTreeNodeObjectBase_CombatBehaviorSequence {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObjectBase_CombatBehaviorSequence>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObjectBase_CombatBehaviorSequence, __vftable) == 0x0);
@@ -6034,6 +6290,7 @@ pub struct CombatBehaviorTreeNodeObjectBase_CombatBehaviorSetBlackboardData {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 20],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObjectBase_CombatBehaviorSetBlackboardData>() == 0x38);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObjectBase_CombatBehaviorSetBlackboardData, __vftable) == 0x0);
@@ -6058,6 +6315,7 @@ pub struct CombatBehaviorTreeNodeObjectBase_CombatBehaviorSpawnParallel {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 12],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObjectBase_CombatBehaviorSpawnParallel>() == 0x30);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObjectBase_CombatBehaviorSpawnParallel, __vftable) == 0x0);
@@ -6082,6 +6340,7 @@ pub struct CombatBehaviorTreeNodeObjectBase_CombatBehaviorSpecialAttack {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObjectBase_CombatBehaviorSpecialAttack>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObjectBase_CombatBehaviorSpecialAttack, __vftable) == 0x0);
@@ -6106,6 +6365,7 @@ pub struct CombatBehaviorTreeNodeObjectBase_CombatBehaviorStalk {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObjectBase_CombatBehaviorStalk>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObjectBase_CombatBehaviorStalk, __vftable) == 0x0);
@@ -6130,6 +6390,7 @@ pub struct CombatBehaviorTreeNodeObjectBase_CombatBehaviorStrafe {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObjectBase_CombatBehaviorStrafe>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObjectBase_CombatBehaviorStrafe, __vftable) == 0x0);
@@ -6154,6 +6415,7 @@ pub struct CombatBehaviorTreeNodeObjectBase_CombatBehaviorSurround {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObjectBase_CombatBehaviorSurround>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObjectBase_CombatBehaviorSurround, __vftable) == 0x0);
@@ -6178,6 +6440,7 @@ pub struct CombatBehaviorTreeNodeObjectBase_CombatBehaviorTakeoff {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObjectBase_CombatBehaviorTakeoff>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObjectBase_CombatBehaviorTakeoff, __vftable) == 0x0);
@@ -6202,6 +6465,7 @@ pub struct CombatBehaviorTreeNodeObjectBase_CombatBehaviorTrackTarget {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObjectBase_CombatBehaviorTrackTarget>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObjectBase_CombatBehaviorTrackTarget, __vftable) == 0x0);
@@ -6226,6 +6490,7 @@ pub struct CombatBehaviorTreeNodeObjectBase_CombatBehaviorWaitBehindCover {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObjectBase_CombatBehaviorWaitBehindCover>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObjectBase_CombatBehaviorWaitBehindCover, __vftable) == 0x0);
@@ -6250,6 +6515,7 @@ pub struct CombatBehaviorTreeNodeObjectBase_CombatBehaviorWatchTarget {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 12],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeObjectBase_CombatBehaviorWatchTarget>() == 0x30);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeObjectBase_CombatBehaviorWatchTarget, __vftable) == 0x0);
@@ -6274,6 +6540,7 @@ pub struct CombatBehaviorTreeNodeUpdateFunction_CombatBehaviorExpression_CombatB
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 12],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeNodeUpdateFunction_CombatBehaviorExpression_CombatBehaviorMemberFunc_CombatBeh_a3cfc55c0041>() == 0x30);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeNodeUpdateFunction_CombatBehaviorExpression_CombatBehaviorMemberFunc_CombatBeh_a3cfc55c0041, __vftable) == 0x0);
@@ -6292,6 +6559,7 @@ pub struct CombatBehaviorTreeRanged {
     pub unknown_8: [u8; 8],
     /// +0x10 `undefined8`, base CombatBehaviorTree
     pub field_10: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeRanged, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeRanged, field_10) == 0x10);
@@ -6306,6 +6574,7 @@ pub struct CombatBehaviorTreeRangedMovement {
     pub unknown_8: [u8; 8],
     /// +0x10 `undefined8`, base CombatBehaviorTree
     pub field_10: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeRangedMovement, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeRangedMovement, field_10) == 0x10);
@@ -6320,6 +6589,7 @@ pub struct CombatBehaviorTreeReturnToCombatArea {
     pub unknown_8: [u8; 8],
     /// +0x10 `undefined8`, base CombatBehaviorTree
     pub field_10: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeReturnToCombatArea, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeReturnToCombatArea, field_10) == 0x10);
@@ -6340,6 +6610,7 @@ pub struct CombatBehaviorTreeRootNode {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeRootNode>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeRootNode, __vftable) == 0x0);
@@ -6358,6 +6629,7 @@ pub struct CombatBehaviorTreeSearch {
     pub unknown_8: [u8; 8],
     /// +0x10 `undefined8`, base CombatBehaviorTree
     pub field_10: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeSearch, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeSearch, field_10) == 0x10);
@@ -6372,6 +6644,7 @@ pub struct CombatBehaviorTreeShout {
     pub unknown_8: [u8; 8],
     /// +0x10 `undefined8`, base CombatBehaviorTree
     pub field_10: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeShout, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeShout, field_10) == 0x10);
@@ -6386,6 +6659,7 @@ pub struct CombatBehaviorTreeUseCover {
     pub unknown_8: [u8; 8],
     /// +0x10 `undefined8`, base CombatBehaviorTree
     pub field_10: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeUseCover, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeUseCover, field_10) == 0x10);
@@ -6400,6 +6674,7 @@ pub struct CombatBehaviorTreeUsePotion {
     pub unknown_8: [u8; 8],
     /// +0x10 `undefined8`, base CombatBehaviorTree
     pub field_10: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeUsePotion, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeUsePotion, field_10) == 0x10);
@@ -6420,6 +6695,7 @@ pub struct CombatBehaviorTreeValueNode_float {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 28],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeValueNode_float>() == 0x40);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeValueNode_float, __vftable) == 0x0);
@@ -6444,6 +6720,7 @@ pub struct CombatBehaviorTreeValueNode_unsigned_int {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 20],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeValueNode_unsigned_int>() == 0x38);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeValueNode_unsigned_int, __vftable) == 0x0);
@@ -6468,6 +6745,7 @@ pub struct CombatBehaviorTreeValueNodeT_float_CombatBehaviorExpression_CombatBeh
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 28],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeValueNodeT_float_CombatBehaviorExpression_CombatBehaviorFunc1_float____cdecl_A_290de2083adb>() == 0x40);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeValueNodeT_float_CombatBehaviorExpression_CombatBehaviorFunc1_float____cdecl_A_290de2083adb, __vftable) == 0x0);
@@ -6492,6 +6770,7 @@ pub struct CombatBehaviorTreeValueNodeT_unsigned_int_CombatBehaviorExpression_Co
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 44],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeValueNodeT_unsigned_int_CombatBehaviorExpression_CombatBehaviorBinaryExpressio_f2293e921c58>() == 0x50);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeValueNodeT_unsigned_int_CombatBehaviorExpression_CombatBehaviorBinaryExpressio_f2293e921c58, __vftable) == 0x0);
@@ -6516,6 +6795,7 @@ pub struct CombatBehaviorTreeValueNodeT_unsigned_int_CombatBehaviorExpression_Co
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 44],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeValueNodeT_unsigned_int_CombatBehaviorExpression_CombatBehaviorBinaryExpressio_71459ea40504>() == 0x50);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeValueNodeT_unsigned_int_CombatBehaviorExpression_CombatBehaviorBinaryExpressio_71459ea40504, __vftable) == 0x0);
@@ -6540,6 +6820,7 @@ pub struct CombatBehaviorTreeValueNodeT_unsigned_int_CombatBehaviorExpression_Co
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 28],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeValueNodeT_unsigned_int_CombatBehaviorExpression_CombatBehaviorBinaryExpressio_1d5b567f0fa9>() == 0x40);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeValueNodeT_unsigned_int_CombatBehaviorExpression_CombatBehaviorBinaryExpressio_1d5b567f0fa9, __vftable) == 0x0);
@@ -6564,6 +6845,7 @@ pub struct CombatBehaviorTreeValueNodeT_unsigned_int_CombatBehaviorExpression_Co
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 28],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeValueNodeT_unsigned_int_CombatBehaviorExpression_CombatBehaviorBinaryExpressio_58f6484c27a9>() == 0x40);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeValueNodeT_unsigned_int_CombatBehaviorExpression_CombatBehaviorBinaryExpressio_58f6484c27a9, __vftable) == 0x0);
@@ -6588,6 +6870,7 @@ pub struct CombatBehaviorTreeValueNodeT_unsigned_int_CombatBehaviorExpression_Co
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 36],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeValueNodeT_unsigned_int_CombatBehaviorExpression_CombatBehaviorBinaryExpressio_db517d61dab9>() == 0x48);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeValueNodeT_unsigned_int_CombatBehaviorExpression_CombatBehaviorBinaryExpressio_db517d61dab9, __vftable) == 0x0);
@@ -6612,6 +6895,7 @@ pub struct CombatBehaviorTreeValueNodeT_unsigned_int_CombatBehaviorExpression_Co
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 44],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeValueNodeT_unsigned_int_CombatBehaviorExpression_CombatBehaviorBinaryExpressio_61d7dc492bca>() == 0x50);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeValueNodeT_unsigned_int_CombatBehaviorExpression_CombatBehaviorBinaryExpressio_61d7dc492bca, __vftable) == 0x0);
@@ -6636,6 +6920,7 @@ pub struct CombatBehaviorTreeValueNodeT_unsigned_int_CombatBehaviorExpression_Co
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 28],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeValueNodeT_unsigned_int_CombatBehaviorExpression_CombatBehaviorMemberFunc1_TES_e82ddc1e497a>() == 0x40);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeValueNodeT_unsigned_int_CombatBehaviorExpression_CombatBehaviorMemberFunc1_TES_e82ddc1e497a, __vftable) == 0x0);
@@ -6660,6 +6945,7 @@ pub struct CombatBehaviorTreeValueNodeT_unsigned_int_CombatBehaviorExpression_Co
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 28],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeValueNodeT_unsigned_int_CombatBehaviorExpression_CombatBehaviorMemberFunc_Acto_af2bf312f720>() == 0x40);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeValueNodeT_unsigned_int_CombatBehaviorExpression_CombatBehaviorMemberFunc_Acto_af2bf312f720, __vftable) == 0x0);
@@ -6684,6 +6970,7 @@ pub struct CombatBehaviorTreeValueNodeT_unsigned_int_CombatBehaviorExpression_Co
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 28],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeValueNodeT_unsigned_int_CombatBehaviorExpression_CombatBehaviorMemberFunc_Acto_357b7e71c1b6>() == 0x40);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeValueNodeT_unsigned_int_CombatBehaviorExpression_CombatBehaviorMemberFunc_Acto_357b7e71c1b6, __vftable) == 0x0);
@@ -6708,6 +6995,7 @@ pub struct CombatBehaviorTreeValueNodeT_unsigned_int_CombatBehaviorExpression_Co
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 20],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeValueNodeT_unsigned_int_CombatBehaviorExpression_CombatBehaviorMemberFunc_Acto_29436ebb51ad>() == 0x38);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeValueNodeT_unsigned_int_CombatBehaviorExpression_CombatBehaviorMemberFunc_Acto_29436ebb51ad, __vftable) == 0x0);
@@ -6732,6 +7020,7 @@ pub struct CombatBehaviorTreeValueNodeT_unsigned_int_CombatBehaviorExpression_Co
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 20],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeValueNodeT_unsigned_int_CombatBehaviorExpression_CombatBehaviorMemberFunc_Acto_b7d8e739ec8a>() == 0x38);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeValueNodeT_unsigned_int_CombatBehaviorExpression_CombatBehaviorMemberFunc_Acto_b7d8e739ec8a, __vftable) == 0x0);
@@ -6756,6 +7045,7 @@ pub struct CombatBehaviorTreeValueNodeT_unsigned_int_CombatBehaviorExpression_Co
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 20],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeValueNodeT_unsigned_int_CombatBehaviorExpression_CombatBehaviorMemberFunc_Comb_143ba0471c1b>() == 0x38);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeValueNodeT_unsigned_int_CombatBehaviorExpression_CombatBehaviorMemberFunc_Comb_143ba0471c1b, __vftable) == 0x0);
@@ -6780,6 +7070,7 @@ pub struct CombatBehaviorTreeValueNodeT_unsigned_int_CombatBehaviorExpression_Co
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 20],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeValueNodeT_unsigned_int_CombatBehaviorExpression_CombatBehaviorMemberFunc_Comb_8aaeadc63fef>() == 0x38);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeValueNodeT_unsigned_int_CombatBehaviorExpression_CombatBehaviorMemberFunc_Comb_8aaeadc63fef, __vftable) == 0x0);
@@ -6804,6 +7095,7 @@ pub struct CombatBehaviorTreeValueNodeT_unsigned_int_CombatBehaviorExpression_Co
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 20],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeValueNodeT_unsigned_int_CombatBehaviorExpression_CombatBehaviorMemberFunc_Comb_a29d20d43b50>() == 0x38);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeValueNodeT_unsigned_int_CombatBehaviorExpression_CombatBehaviorMemberFunc_Comb_a29d20d43b50, __vftable) == 0x0);
@@ -6828,6 +7120,7 @@ pub struct CombatBehaviorTreeValueNodeT_unsigned_int_CombatBehaviorExpression_Co
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 20],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeValueNodeT_unsigned_int_CombatBehaviorExpression_CombatBehaviorMemberFunc_Comb_2c173f751088>() == 0x38);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeValueNodeT_unsigned_int_CombatBehaviorExpression_CombatBehaviorMemberFunc_Comb_2c173f751088, __vftable) == 0x0);
@@ -6852,6 +7145,7 @@ pub struct CombatBehaviorTreeValueNodeT_unsigned_int_CombatBehaviorExpression_Co
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 20],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeValueNodeT_unsigned_int_CombatBehaviorExpression_CombatBehaviorMemberFunc_Comb_f4a3ff37032c>() == 0x38);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeValueNodeT_unsigned_int_CombatBehaviorExpression_CombatBehaviorMemberFunc_Comb_f4a3ff37032c, __vftable) == 0x0);
@@ -6876,6 +7170,7 @@ pub struct CombatBehaviorTreeValueNodeT_unsigned_int_CombatBehaviorExpression_Co
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 20],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeValueNodeT_unsigned_int_CombatBehaviorExpression_CombatBehaviorMemberFunc_Comb_8378075c7c0b>() == 0x38);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeValueNodeT_unsigned_int_CombatBehaviorExpression_CombatBehaviorMemberFunc_Comb_8378075c7c0b, __vftable) == 0x0);
@@ -6900,6 +7195,7 @@ pub struct CombatBehaviorTreeValueNodeT_unsigned_int_CombatBehaviorExpression_Co
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 28],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeValueNodeT_unsigned_int_CombatBehaviorExpression_CombatBehaviorUnaryExpression_7f9d39806b9d>() == 0x40);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeValueNodeT_unsigned_int_CombatBehaviorExpression_CombatBehaviorUnaryExpression_7f9d39806b9d, __vftable) == 0x0);
@@ -6924,6 +7220,7 @@ pub struct CombatBehaviorTreeValueNodeT_unsigned_int_CombatBehaviorExpression_Co
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 20],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeValueNodeT_unsigned_int_CombatBehaviorExpression_CombatBehaviorUnaryExpression_530a31857890>() == 0x38);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeValueNodeT_unsigned_int_CombatBehaviorExpression_CombatBehaviorUnaryExpression_530a31857890, __vftable) == 0x0);
@@ -6948,6 +7245,7 @@ pub struct CombatBehaviorTreeValueNodeT_unsigned_int_CombatBehaviorExpression_Co
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 20],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeValueNodeT_unsigned_int_CombatBehaviorExpression_CombatBehaviorUnaryExpression_3646cd9dae2c>() == 0x38);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeValueNodeT_unsigned_int_CombatBehaviorExpression_CombatBehaviorUnaryExpression_3646cd9dae2c, __vftable) == 0x0);
@@ -6972,6 +7270,7 @@ pub struct CombatBehaviorTreeValueNodeT_unsigned_int_CombatInventoryItem__TYPE {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 20],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeValueNodeT_unsigned_int_CombatInventoryItem__TYPE>() == 0x38);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeValueNodeT_unsigned_int_CombatInventoryItem__TYPE, __vftable) == 0x0);
@@ -6996,6 +7295,7 @@ pub struct CombatBehaviorTreeValueNodeT_unsigned_int_MagicSystem__CastingType {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 20],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeValueNodeT_unsigned_int_MagicSystem__CastingType>() == 0x38);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeValueNodeT_unsigned_int_MagicSystem__CastingType, __vftable) == 0x0);
@@ -7020,6 +7320,7 @@ pub struct CombatBehaviorTreeValueNodeT_unsigned_int_int {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 20],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeValueNodeT_unsigned_int_int>() == 0x38);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeValueNodeT_unsigned_int_int, __vftable) == 0x0);
@@ -7044,6 +7345,7 @@ pub struct CombatBehaviorTreeWrapperNode {
     /// +0x20 `undefined4`, base CombatBehaviorTreeNode
     pub field_20: u32,
     pub unknown_24: [u8; 20],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatBehaviorTreeWrapperNode>() == 0x38);
 const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeWrapperNode, __vftable) == 0x0);
@@ -7059,6 +7361,7 @@ const _: () = assert!(core::mem::offset_of!(CombatBehaviorTreeWrapperNode, field
 pub struct CombatBlackboardKey_AITimeStamp {
     /// +0x0 `vtbl:CombatBlackboardKey<AITimeStamp>:0`, rtti
     pub __vftable: *const crate::raw::vtables::CombatBlackboardKey_AITimeStamp_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CombatBlackboardKey_AITimeStamp, __vftable) == 0x0);
 
@@ -7069,6 +7372,7 @@ const _: () = assert!(core::mem::offset_of!(CombatBlackboardKey_AITimeStamp, __v
 pub struct CombatBlackboardKey_AITimer {
     /// +0x0 `vtbl:CombatBlackboardKey<AITimer>:0`, rtti
     pub __vftable: *const crate::raw::vtables::CombatBlackboardKey_AITimer_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CombatBlackboardKey_AITimer, __vftable) == 0x0);
 
@@ -7079,6 +7383,7 @@ const _: () = assert!(core::mem::offset_of!(CombatBlackboardKey_AITimer, __vftab
 pub struct CombatBlackboardKey_BSTTuple_TESObjectREFR____ptr64_AITimeStamp__ {
     /// +0x0 `vtbl:CombatBlackboardKey<BSTTuple<TESObjectREFR*___ptr64,AITimeStamp>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::CombatBlackboardKey_BSTTuple_TESObjectREFR____ptr64_AITimeStamp___vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CombatBlackboardKey_BSTTuple_TESObjectREFR____ptr64_AITimeStamp__, __vftable) == 0x0);
 
@@ -7089,6 +7394,7 @@ const _: () = assert!(core::mem::offset_of!(CombatBlackboardKey_BSTTuple_TESObje
 pub struct CombatBlackboardKey_float {
     /// +0x0 `vtbl:CombatBlackboardKey<float>:0`, rtti
     pub __vftable: *const crate::raw::vtables::CombatBlackboardKey_float_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CombatBlackboardKey_float, __vftable) == 0x0);
 
@@ -7098,6 +7404,7 @@ const _: () = assert!(core::mem::offset_of!(CombatBlackboardKey_float, __vftable
 pub struct CombatBlackboardKeyBase {
     /// +0x0 `vtbl:CombatBlackboardKeyBase:0`, rtti
     pub __vftable: *const crate::raw::vtables::CombatBlackboardKeyBase_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CombatBlackboardKeyBase, __vftable) == 0x0);
 
@@ -7177,6 +7484,7 @@ pub struct CombatCoverLocation {
     /// +0x98 `float`, ctor store
     pub field_98: f32,
     pub unknown_9C: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatCoverLocation>() == 0xA0);
 const _: () = assert!(core::mem::offset_of!(CombatCoverLocation, __vftable) == 0x0);
@@ -7233,6 +7541,7 @@ pub struct CombatCoverSearch {
     pub field_7C: u64,
     /// +0x84 `undefined4`, ctor store
     pub field_84: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatCoverSearch>() == 0x88);
 const _: () = assert!(core::mem::offset_of!(CombatCoverSearch, __vftable) == 0x0);
@@ -7249,6 +7558,7 @@ const _: () = assert!(core::mem::offset_of!(CombatCoverSearch, field_84) == 0x84
 pub struct CombatCoverSearchDebugData {
     /// +0x0 `vtbl:CombatCoverSearchDebugData:0`, rtti
     pub __vftable: *const crate::raw::vtables::CombatCoverSearchDebugData_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CombatCoverSearchDebugData, __vftable) == 0x0);
 
@@ -7266,6 +7576,7 @@ pub struct CombatCoverSearchResult {
     pub field_10: u64,
     /// +0x18 `undefined8`, ctor store
     pub field_18: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CombatCoverSearchResult, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(CombatCoverSearchResult, field_8) == 0x8);
@@ -7282,6 +7593,7 @@ pub struct CombatDisableActionController {
     /// +0x8 `undefined4`, ctor store
     pub field_8: u32,
     pub unknown_C: [u8; 12],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatDisableActionController>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(CombatDisableActionController, __vftable) == 0x0);
@@ -7319,6 +7631,7 @@ pub struct CombatDisableAimController {
     pub field_3C: u64,
     /// +0x44 `undefined4`, base CombatAimController
     pub field_44: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatDisableAimController>() == 0x48);
 const _: () = assert!(core::mem::offset_of!(CombatDisableAimController, __vftable) == 0x0);
@@ -7341,6 +7654,7 @@ const _: () = assert!(core::mem::offset_of!(CombatDisableAimController, field_44
 pub struct CombatFlankingSearchData {
     /// +0x0 `vtbl:CombatFlankingSearchData:0`, rtti
     pub __vftable: *const crate::raw::vtables::CombatFlankingSearchData_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CombatFlankingSearchData, __vftable) == 0x0);
 
@@ -7352,6 +7666,7 @@ pub struct CombatGroupDetectionListener {
     /// +0x0 `vtbl:CombatGroupDetectionListener:0`, rtti
     pub __vftable: *const crate::raw::vtables::CombatGroupDetectionListener_vtable,
     pub unknown_8: [u8; 16],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatGroupDetectionListener>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(CombatGroupDetectionListener, __vftable) == 0x0);
@@ -7376,6 +7691,7 @@ pub struct CombatInventoryItem {
     /// +0x28 `undefined4`, ctor store
     pub field_28: u32,
     pub unknown_2C: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatInventoryItem>() == 0x30);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItem, __vftable) == 0x0);
@@ -7405,6 +7721,7 @@ pub struct CombatInventoryItemComposite {
     /// +0x28 `undefined4`, base CombatInventoryItem
     pub field_28: u32,
     pub unknown_2C: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatInventoryItemComposite>() == 0x30);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemComposite, __vftable) == 0x0);
@@ -7441,6 +7758,7 @@ pub struct CombatInventoryItemMagic {
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, ctor store
     pub field_48: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagic, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagic, field_8) == 0x8);
@@ -7479,6 +7797,7 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterA
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
     pub field_48: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterArmor, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterArmor, field_8) == 0x8);
@@ -7517,6 +7836,7 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterB
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
     pub field_48: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterBoundItem, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterBoundItem, field_8) == 0x8);
@@ -7555,6 +7875,7 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterC
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
     pub field_48: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterCloak, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterCloak, field_8) == 0x8);
@@ -7593,6 +7914,7 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterD
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
     pub field_48: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterDisarm, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterDisarm, field_8) == 0x8);
@@ -7631,6 +7953,7 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterI
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
     pub field_48: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterInvisibility, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterInvisibility, field_8) == 0x8);
@@ -7669,6 +7992,7 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterL
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
     pub field_48: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterLight, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterLight, field_8) == 0x8);
@@ -7707,6 +8031,7 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterO
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
     pub field_48: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterOffensive, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterOffensive, field_8) == 0x8);
@@ -7745,6 +8070,7 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterP
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
     pub field_48: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterParalyze, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterParalyze, field_8) == 0x8);
@@ -7783,6 +8109,7 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterR
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
     pub field_48: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterReanimate, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterReanimate, field_8) == 0x8);
@@ -7821,6 +8148,7 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterR
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
     pub field_48: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterRestore, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterRestore, field_8) == 0x8);
@@ -7859,6 +8187,7 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterS
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
     pub field_48: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterScript, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterScript, field_8) == 0x8);
@@ -7897,6 +8226,7 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterS
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
     pub field_48: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterStagger, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterStagger, field_8) == 0x8);
@@ -7935,6 +8265,7 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterS
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
     pub field_48: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterSummon, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterSummon, field_8) == 0x8);
@@ -7973,6 +8304,7 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterT
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
     pub field_48: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterTargetEffect, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterTargetEffect, field_8) == 0x8);
@@ -8011,6 +8343,7 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterW
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
     pub field_48: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterWard, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterWard, field_8) == 0x8);
@@ -8049,6 +8382,7 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCaster
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
     pub field_48: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterArmor, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterArmor, field_8) == 0x8);
@@ -8087,6 +8421,7 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCaster
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
     pub field_48: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterBoundItem, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterBoundItem, field_8) == 0x8);
@@ -8125,6 +8460,7 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCaster
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
     pub field_48: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterCloak, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterCloak, field_8) == 0x8);
@@ -8163,6 +8499,7 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCaster
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
     pub field_48: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterDisarm, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterDisarm, field_8) == 0x8);
@@ -8201,6 +8538,7 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCaster
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
     pub field_48: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterInvisibility, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterInvisibility, field_8) == 0x8);
@@ -8239,6 +8577,7 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCaster
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
     pub field_48: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterLight, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterLight, field_8) == 0x8);
@@ -8277,6 +8616,7 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCaster
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
     pub field_48: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterOffensive, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterOffensive, field_8) == 0x8);
@@ -8315,6 +8655,7 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCaster
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
     pub field_48: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterParalyze, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterParalyze, field_8) == 0x8);
@@ -8353,6 +8694,7 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCaster
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
     pub field_48: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterReanimate, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterReanimate, field_8) == 0x8);
@@ -8391,6 +8733,7 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCaster
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
     pub field_48: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterRestore, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterRestore, field_8) == 0x8);
@@ -8429,6 +8772,7 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCaster
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
     pub field_48: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterScript, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterScript, field_8) == 0x8);
@@ -8467,6 +8811,7 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCaster
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
     pub field_48: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterStagger, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterStagger, field_8) == 0x8);
@@ -8505,6 +8850,7 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCaster
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
     pub field_48: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterSummon, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterSummon, field_8) == 0x8);
@@ -8543,6 +8889,7 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCaster
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
     pub field_48: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterTargetEffect, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterTargetEffect, field_8) == 0x8);
@@ -8581,6 +8928,7 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCaster
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
     pub field_48: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterWard, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterWard, field_8) == 0x8);
@@ -8619,6 +8967,7 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCaster
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
     pub field_48: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterArmor, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterArmor, field_8) == 0x8);
@@ -8657,6 +9006,7 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCaster
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
     pub field_48: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterBoundItem, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterBoundItem, field_8) == 0x8);
@@ -8695,6 +9045,7 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCaster
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
     pub field_48: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterCloak, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterCloak, field_8) == 0x8);
@@ -8733,6 +9084,7 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCaster
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
     pub field_48: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterDisarm, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterDisarm, field_8) == 0x8);
@@ -8771,6 +9123,7 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCaster
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
     pub field_48: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterInvisibility, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterInvisibility, field_8) == 0x8);
@@ -8809,6 +9162,7 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCaster
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
     pub field_48: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterLight, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterLight, field_8) == 0x8);
@@ -8847,6 +9201,7 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCaster
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
     pub field_48: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterOffensive, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterOffensive, field_8) == 0x8);
@@ -8885,6 +9240,7 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCaster
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
     pub field_48: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterParalyze, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterParalyze, field_8) == 0x8);
@@ -8923,6 +9279,7 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCaster
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
     pub field_48: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterReanimate, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterReanimate, field_8) == 0x8);
@@ -8961,6 +9318,7 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCaster
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
     pub field_48: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterRestore, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterRestore, field_8) == 0x8);
@@ -8999,6 +9357,7 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCaster
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
     pub field_48: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterScript, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterScript, field_8) == 0x8);
@@ -9037,6 +9396,7 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCaster
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
     pub field_48: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterStagger, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterStagger, field_8) == 0x8);
@@ -9075,6 +9435,7 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCaster
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
     pub field_48: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterSummon, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterSummon, field_8) == 0x8);
@@ -9113,6 +9474,7 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCaster
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
     pub field_48: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterTargetEffect, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterTargetEffect, field_8) == 0x8);
@@ -9151,6 +9513,7 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCaster
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
     pub field_48: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterWard, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterWard, field_8) == 0x8);
@@ -9189,6 +9552,7 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterA
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
     pub field_48: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterArmor, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterArmor, field_8) == 0x8);
@@ -9227,6 +9591,7 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterB
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
     pub field_48: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterBoundItem, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterBoundItem, field_8) == 0x8);
@@ -9265,6 +9630,7 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterC
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
     pub field_48: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterCloak, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterCloak, field_8) == 0x8);
@@ -9303,6 +9669,7 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterD
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
     pub field_48: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterDisarm, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterDisarm, field_8) == 0x8);
@@ -9341,6 +9708,7 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterI
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
     pub field_48: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterInvisibility, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterInvisibility, field_8) == 0x8);
@@ -9379,6 +9747,7 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterL
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
     pub field_48: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterLight, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterLight, field_8) == 0x8);
@@ -9417,6 +9786,7 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterO
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
     pub field_48: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterOffensive, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterOffensive, field_8) == 0x8);
@@ -9455,6 +9825,7 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterP
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
     pub field_48: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterParalyze, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterParalyze, field_8) == 0x8);
@@ -9493,6 +9864,7 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterR
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
     pub field_48: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterReanimate, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterReanimate, field_8) == 0x8);
@@ -9531,6 +9903,7 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterR
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
     pub field_48: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterRestore, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterRestore, field_8) == 0x8);
@@ -9569,6 +9942,7 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterS
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
     pub field_48: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterScript, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterScript, field_8) == 0x8);
@@ -9607,6 +9981,7 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterS
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
     pub field_48: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterStagger, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterStagger, field_8) == 0x8);
@@ -9645,6 +10020,7 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterS
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
     pub field_48: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterSummon, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterSummon, field_8) == 0x8);
@@ -9683,6 +10059,7 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterT
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
     pub field_48: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterTargetEffect, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterTargetEffect, field_8) == 0x8);
@@ -9721,6 +10098,7 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterW
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
     pub field_48: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterWard, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterWard, field_8) == 0x8);
@@ -9759,6 +10137,7 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterA
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
     pub field_48: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterArmor, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterArmor, field_8) == 0x8);
@@ -9797,6 +10176,7 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterB
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
     pub field_48: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterBoundItem, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterBoundItem, field_8) == 0x8);
@@ -9835,6 +10215,7 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterC
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
     pub field_48: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterCloak, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterCloak, field_8) == 0x8);
@@ -9873,6 +10254,7 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterD
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
     pub field_48: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterDisarm, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterDisarm, field_8) == 0x8);
@@ -9911,6 +10293,7 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterI
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
     pub field_48: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterInvisibility, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterInvisibility, field_8) == 0x8);
@@ -9949,6 +10332,7 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterL
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
     pub field_48: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterLight, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterLight, field_8) == 0x8);
@@ -9987,6 +10371,7 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterO
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
     pub field_48: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterOffensive, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterOffensive, field_8) == 0x8);
@@ -10025,6 +10410,7 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterP
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
     pub field_48: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterParalyze, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterParalyze, field_8) == 0x8);
@@ -10063,6 +10449,7 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterR
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
     pub field_48: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterReanimate, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterReanimate, field_8) == 0x8);
@@ -10101,6 +10488,7 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterR
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
     pub field_48: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterRestore, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterRestore, field_8) == 0x8);
@@ -10139,6 +10527,7 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterS
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
     pub field_48: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterScript, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterScript, field_8) == 0x8);
@@ -10177,6 +10566,7 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterS
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
     pub field_48: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterStagger, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterStagger, field_8) == 0x8);
@@ -10215,6 +10605,7 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterS
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
     pub field_48: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterSummon, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterSummon, field_8) == 0x8);
@@ -10253,6 +10644,7 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterT
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
     pub field_48: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterTargetEffect, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterTargetEffect, field_8) == 0x8);
@@ -10291,6 +10683,7 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterW
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
     pub field_48: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterWard, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterWard, field_8) == 0x8);
@@ -10325,6 +10718,7 @@ pub struct CombatInventoryItemMelee {
     /// +0x30 `float`, ctor store
     pub field_30: f32,
     pub unknown_34: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatInventoryItemMelee>() == 0x38);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMelee, __vftable) == 0x0);
@@ -10358,6 +10752,7 @@ pub struct CombatInventoryItemOneHandedBlock {
     /// +0x30 `float`, base CombatInventoryItemShield
     pub field_30: f32,
     pub unknown_34: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemOneHandedBlock, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemOneHandedBlock, field_8) == 0x8);
@@ -10394,6 +10789,7 @@ pub struct CombatInventoryItemPotion {
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
     pub field_48: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemPotion, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemPotion, field_8) == 0x8);
@@ -10431,6 +10827,7 @@ pub struct CombatInventoryItemRanged {
     pub field_38: f32,
     /// +0x3C `float`, ctor store
     pub field_3C: f32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemRanged, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemRanged, field_8) == 0x8);
@@ -10469,6 +10866,7 @@ pub struct CombatInventoryItemScroll {
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
     pub field_48: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemScroll, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemScroll, field_8) == 0x8);
@@ -10503,6 +10901,7 @@ pub struct CombatInventoryItemShield {
     /// +0x30 `float`, ctor store
     pub field_30: f32,
     pub unknown_34: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemShield, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemShield, field_8) == 0x8);
@@ -10539,6 +10938,7 @@ pub struct CombatInventoryItemShout {
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
     pub field_48: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemShout, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemShout, field_8) == 0x8);
@@ -10577,6 +10977,7 @@ pub struct CombatInventoryItemStaff {
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
     pub field_48: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemStaff, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemStaff, field_8) == 0x8);
@@ -10611,6 +11012,7 @@ pub struct CombatInventoryItemTorch {
     /// +0x30 `float`, ctor store
     pub field_30: f32,
     pub unknown_34: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemTorch, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemTorch, field_8) == 0x8);
@@ -10634,6 +11036,7 @@ pub struct CombatMagicCaster {
     pub field_10: u64,
     /// +0x18 `undefined8`, ctor store
     pub field_18: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatMagicCaster>() == 0x20);
 const _: () = assert!(core::mem::offset_of!(CombatMagicCaster, __vftable) == 0x0);
@@ -10655,6 +11058,7 @@ pub struct CombatMagicCasterArmor {
     pub field_10: u64,
     /// +0x18 `undefined8`, base CombatMagicCaster
     pub field_18: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CombatMagicCasterArmor, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(CombatMagicCasterArmor, field_8) == 0x8);
@@ -10675,6 +11079,7 @@ pub struct CombatMagicCasterBoundItem {
     pub field_10: u64,
     /// +0x18 `undefined8`, base CombatMagicCaster
     pub field_18: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CombatMagicCasterBoundItem, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(CombatMagicCasterBoundItem, field_8) == 0x8);
@@ -10695,6 +11100,7 @@ pub struct CombatMagicCasterCloak {
     pub field_10: u64,
     /// +0x18 `undefined8`, base CombatMagicCaster
     pub field_18: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CombatMagicCasterCloak, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(CombatMagicCasterCloak, field_8) == 0x8);
@@ -10715,6 +11121,7 @@ pub struct CombatMagicCasterDisarm {
     pub field_10: u64,
     /// +0x18 `undefined8`, base CombatMagicCaster
     pub field_18: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CombatMagicCasterDisarm, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(CombatMagicCasterDisarm, field_8) == 0x8);
@@ -10735,6 +11142,7 @@ pub struct CombatMagicCasterInvisibility {
     pub field_10: u64,
     /// +0x18 `undefined8`, base CombatMagicCaster
     pub field_18: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CombatMagicCasterInvisibility, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(CombatMagicCasterInvisibility, field_8) == 0x8);
@@ -10755,6 +11163,7 @@ pub struct CombatMagicCasterLight {
     pub field_10: u64,
     /// +0x18 `undefined8`, base CombatMagicCaster
     pub field_18: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CombatMagicCasterLight, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(CombatMagicCasterLight, field_8) == 0x8);
@@ -10779,6 +11188,7 @@ pub struct CombatMagicCasterOffensive {
     pub field_20: u64,
     /// +0x28 `undefined8`, ctor store
     pub field_28: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CombatMagicCasterOffensive, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(CombatMagicCasterOffensive, field_8) == 0x8);
@@ -10801,6 +11211,7 @@ pub struct CombatMagicCasterParalyze {
     pub field_10: u64,
     /// +0x18 `undefined8`, base CombatMagicCaster
     pub field_18: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CombatMagicCasterParalyze, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(CombatMagicCasterParalyze, field_8) == 0x8);
@@ -10826,6 +11237,7 @@ pub struct CombatMagicCasterReanimate {
     /// +0x28 `undefined4`, ctor store
     pub field_28: u32,
     pub unknown_2C: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CombatMagicCasterReanimate, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(CombatMagicCasterReanimate, field_8) == 0x8);
@@ -10855,6 +11267,7 @@ pub struct CombatMagicCasterRestore {
     /// +0x28 `undefined4`, ctor store
     pub field_28: u32,
     pub unknown_2C: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CombatMagicCasterRestore, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(CombatMagicCasterRestore, field_8) == 0x8);
@@ -10878,6 +11291,7 @@ pub struct CombatMagicCasterScript {
     pub field_10: u64,
     /// +0x18 `undefined8`, base CombatMagicCaster
     pub field_18: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CombatMagicCasterScript, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(CombatMagicCasterScript, field_8) == 0x8);
@@ -10898,6 +11312,7 @@ pub struct CombatMagicCasterStagger {
     pub field_10: u64,
     /// +0x18 `undefined8`, base CombatMagicCaster
     pub field_18: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CombatMagicCasterStagger, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(CombatMagicCasterStagger, field_8) == 0x8);
@@ -10918,6 +11333,7 @@ pub struct CombatMagicCasterSummon {
     pub field_10: u64,
     /// +0x18 `undefined8`, base CombatMagicCaster
     pub field_18: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CombatMagicCasterSummon, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(CombatMagicCasterSummon, field_8) == 0x8);
@@ -10938,6 +11354,7 @@ pub struct CombatMagicCasterTargetEffect {
     pub field_10: u64,
     /// +0x18 `undefined8`, base CombatMagicCaster
     pub field_18: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CombatMagicCasterTargetEffect, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(CombatMagicCasterTargetEffect, field_8) == 0x8);
@@ -10960,6 +11377,7 @@ pub struct CombatMagicCasterWard {
     pub field_18: u64,
     /// +0x20 `undefined8`, ctor store
     pub field_20: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CombatMagicCasterWard, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(CombatMagicCasterWard, field_8) == 0x8);
@@ -10998,6 +11416,7 @@ pub struct CombatMagicItemData {
     /// +0x4D `undefined1`, ctor store
     pub field_4D: u8,
     pub unknown_4E: [u8; 2],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CombatMagicItemData, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(CombatMagicItemData, field_8) == 0x8);
@@ -11028,6 +11447,7 @@ pub struct CombatMagicItemSkillChecker {
     /// +0x20 `undefined1`, ctor store
     pub field_20: u8,
     pub unknown_21: [u8; 7],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(CombatMagicItemSkillChecker, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(CombatMagicItemSkillChecker, field_8) == 0x8);
@@ -11075,6 +11495,7 @@ pub struct CombatMeleeAimController {
     /// +0x50 `float`, ctor store
     pub field_50: f32,
     pub unknown_54: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatMeleeAimController>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(CombatMeleeAimController, __vftable) == 0x0);
@@ -11159,6 +11580,7 @@ pub struct CombatNavmeshSearch {
     /// +0x1E0 `undefined4`, ctor store
     pub field_1E0: u32,
     pub unknown_1E4: [u8; 92],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatNavmeshSearch>() == 0x240);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearch, __vftable) == 0x0);
@@ -11271,6 +11693,7 @@ pub struct CombatNavmeshSearchT_CombatPathingGoalPolicyExitWater_CombatPathingSe
     /// +0x20B `undefined1`, ctor store
     pub field_20B: u8,
     pub unknown_20C: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatNavmeshSearchT_CombatPathingGoalPolicyExitWater_CombatPathingSearchPolicyStandard>() == 0x210);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyExitWater_CombatPathingSearchPolicyStandard, __vftable) == 0x0);
@@ -11398,6 +11821,7 @@ pub struct CombatNavmeshSearchT_CombatPathingGoalPolicyFindAttackLocation_Combat
     /// +0x243 `undefined1`, ctor store
     pub field_243: u8,
     pub unknown_244: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatNavmeshSearchT_CombatPathingGoalPolicyFindAttackLocation_CombatPathingSearchPolicyStandard>() == 0x248);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindAttackLocation_CombatPathingSearchPolicyStandard, __vftable) == 0x0);
@@ -11513,6 +11937,7 @@ pub struct CombatNavmeshSearchT_CombatPathingGoalPolicyFindCover_CombatPathingSe
     /// +0x1FB `undefined1`, ctor store
     pub field_1FB: u8,
     pub unknown_1FC: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatNavmeshSearchT_CombatPathingGoalPolicyFindCover_CombatPathingSearchPolicyStandard>() == 0x200);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindCover_CombatPathingSearchPolicyStandard, __vftable) == 0x0);
@@ -11622,6 +12047,7 @@ pub struct CombatNavmeshSearchT_CombatPathingGoalPolicyFindHideCover_CombatPathi
     /// +0x1FB `undefined1`, ctor store
     pub field_1FB: u8,
     pub unknown_1FC: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatNavmeshSearchT_CombatPathingGoalPolicyFindHideCover_CombatPathingSearchPolicyStandard>() == 0x200);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindHideCover_CombatPathingSearchPolicyStandard, __vftable) == 0x0);
@@ -11738,6 +12164,7 @@ pub struct CombatNavmeshSearchT_CombatPathingGoalPolicyFindTargetLocation_Combat
     /// +0x223 `undefined1`, ctor store
     pub field_223: u8,
     pub unknown_224: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatNavmeshSearchT_CombatPathingGoalPolicyFindTargetLocation_CombatPathingSearchPolicyStandard>() == 0x228);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindTargetLocation_CombatPathingSearchPolicyStandard, __vftable) == 0x0);
@@ -11874,6 +12301,7 @@ pub struct CombatNavmeshSearchT_CombatPathingGoalPolicyFlank_CombatPathingSearch
     /// +0x268 `undefined8`, ctor store
     pub field_268: u64,
     pub unknown_270: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatNavmeshSearchT_CombatPathingGoalPolicyFlank_CombatPathingSearchPolicyFlank>() == 0x278);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlank_CombatPathingSearchPolicyFlank, __vftable) == 0x0);
@@ -12004,6 +12432,7 @@ pub struct CombatNavmeshSearchT_CombatPathingGoalPolicyFlankDistant_CombatPathin
     /// +0x213 `undefined1`, ctor store
     pub field_213: u8,
     pub unknown_214: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatNavmeshSearchT_CombatPathingGoalPolicyFlankDistant_CombatPathingSearchPolicyStandard>() == 0x218);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlankDistant_CombatPathingSearchPolicyStandard, __vftable) == 0x0);
@@ -12126,6 +12555,7 @@ pub struct CombatNavmeshSearchT_CombatPathingGoalPolicyFlee_CombatPathingSearchP
     /// +0x20B `undefined1`, ctor store
     pub field_20B: u8,
     pub unknown_20C: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatNavmeshSearchT_CombatPathingGoalPolicyFlee_CombatPathingSearchPolicyStandard>() == 0x210);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlee_CombatPathingSearchPolicyStandard, __vftable) == 0x0);
@@ -12242,6 +12672,7 @@ pub struct CombatNavmeshSearchT_CombatPathingGoalPolicyLocation_CombatPathingSea
     /// +0x213 `undefined1`, ctor store
     pub field_213: u8,
     pub unknown_214: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatNavmeshSearchT_CombatPathingGoalPolicyLocation_CombatPathingSearchPolicyStandard>() == 0x218);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyLocation_CombatPathingSearchPolicyStandard, __vftable) == 0x0);
@@ -12358,6 +12789,7 @@ pub struct CombatNavmeshSearchT_CombatPathingGoalPolicyRetreat_CombatPathingSear
     /// +0x203 `undefined1`, ctor store
     pub field_203: u8,
     pub unknown_204: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatNavmeshSearchT_CombatPathingGoalPolicyRetreat_CombatPathingSearchPolicyStandard>() == 0x208);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyRetreat_CombatPathingSearchPolicyStandard, __vftable) == 0x0);
@@ -12480,6 +12912,7 @@ pub struct CombatNavmeshSearchT_CombatPathingGoalPolicyReturnToCombatArea_Combat
     /// +0x22B `undefined1`, ctor store
     pub field_22B: u8,
     pub unknown_22C: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatNavmeshSearchT_CombatPathingGoalPolicyReturnToCombatArea_CombatPathingSearchPolicyStandard>() == 0x230);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyReturnToCombatArea_CombatPathingSearchPolicyStandard, __vftable) == 0x0);
@@ -12591,6 +13024,7 @@ pub struct CombatNavmeshSearchT_CombatPathingGoalPolicySearch_CombatPathingSearc
     /// +0x23B `undefined1`, ctor store
     pub field_23B: u8,
     pub unknown_23C: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatNavmeshSearchT_CombatPathingGoalPolicySearch_CombatPathingSearchPolicyStandard>() == 0x240);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicySearch_CombatPathingSearchPolicyStandard, __vftable) == 0x0);
@@ -12710,6 +13144,7 @@ pub struct CombatNavmeshSearchT_CombatPathingGoalPolicySearchWander_CombatPathin
     /// +0x22B `undefined1`, ctor store
     pub field_22B: u8,
     pub unknown_22C: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatNavmeshSearchT_CombatPathingGoalPolicySearchWander_CombatPathingSearchPolicyStandard>() == 0x230);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicySearchWander_CombatPathingSearchPolicyStandard, __vftable) == 0x0);
@@ -12826,6 +13261,7 @@ pub struct CombatNavmeshSearchT_CombatPathingGoalPolicyStandard_CombatPathingSea
     /// +0x213 `undefined1`, ctor store
     pub field_213: u8,
     pub unknown_214: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatNavmeshSearchT_CombatPathingGoalPolicyStandard_CombatPathingSearchPolicyStandard>() == 0x218);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyStandard_CombatPathingSearchPolicyStandard, __vftable) == 0x0);
@@ -12867,6 +13303,7 @@ const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGo
 pub struct CombatObject {
     /// +0x0 `vtbl:CombatObject:0`, rtti
     pub __vftable: *const crate::raw::vtables::CombatObject_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatObject>() == 0x8);
 const _: () = assert!(core::mem::offset_of!(CombatObject, __vftable) == 0x0);
@@ -12896,6 +13333,7 @@ pub struct CombatPath {
     /// +0x30 `undefined8`, ctor store
     pub field_30: u64,
     pub unknown_38: [u8; 88],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatPath>() == 0x90);
 const _: () = assert!(core::mem::offset_of!(CombatPath, __vftable) == 0x0);
@@ -12921,6 +13359,7 @@ pub struct CombatPathBuilder {
     pub unknown_18: [u8; 48],
     /// +0x48 `undefined8`, ctor store
     pub field_48: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatPathBuilder>() == 0x50);
 const _: () = assert!(core::mem::offset_of!(CombatPathBuilder, __vftable) == 0x0);
@@ -12945,6 +13384,7 @@ pub struct CombatPathBuilderOpen {
     /// +0x50 `undefined8`, ctor store
     pub field_50: u64,
     pub unknown_58: [u8; 128],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatPathBuilderOpen>() == 0xD8);
 const _: () = assert!(core::mem::offset_of!(CombatPathBuilderOpen, __vftable) == 0x0);
@@ -12982,6 +13422,7 @@ pub struct CombatPathBuilderStandard {
     /// +0x118 `undefined8`, ctor store
     pub field_118: u64,
     pub unknown_120: [u8; 128],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatPathBuilderStandard>() == 0x1A0);
 const _: () = assert!(core::mem::offset_of!(CombatPathBuilderStandard, __vftable) == 0x0);
@@ -13012,6 +13453,7 @@ pub struct CombatPathBuilderT_CombatPathBuilderOpen_CombatPathingGoalPolicyExitW
     /// +0x50 `undefined8`, base CombatPathBuilderOpen
     pub field_50: u64,
     pub unknown_58: [u8; 128],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatPathBuilderT_CombatPathBuilderOpen_CombatPathingGoalPolicyExitWater_CombatPathingSearchPolicyStandard>() == 0xD8);
 const _: () = assert!(core::mem::offset_of!(CombatPathBuilderT_CombatPathBuilderOpen_CombatPathingGoalPolicyExitWater_CombatPathingSearchPolicyStandard, __vftable) == 0x0);
@@ -13037,6 +13479,7 @@ pub struct CombatPathBuilderT_CombatPathBuilderOpen_CombatPathingGoalPolicyFindA
     /// +0x50 `undefined8`, base CombatPathBuilderOpen
     pub field_50: u64,
     pub unknown_58: [u8; 128],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatPathBuilderT_CombatPathBuilderOpen_CombatPathingGoalPolicyFindAttackLocation_CombatPathingSearchPolicyStandard>() == 0xD8);
 const _: () = assert!(core::mem::offset_of!(CombatPathBuilderT_CombatPathBuilderOpen_CombatPathingGoalPolicyFindAttackLocation_CombatPathingSearchPolicyStandard, __vftable) == 0x0);
@@ -13062,6 +13505,7 @@ pub struct CombatPathBuilderT_CombatPathBuilderOpen_CombatPathingGoalPolicyFindC
     /// +0x50 `undefined8`, base CombatPathBuilderOpen
     pub field_50: u64,
     pub unknown_58: [u8; 128],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatPathBuilderT_CombatPathBuilderOpen_CombatPathingGoalPolicyFindCover_CombatPathingSearchPolicyStandard>() == 0xD8);
 const _: () = assert!(core::mem::offset_of!(CombatPathBuilderT_CombatPathBuilderOpen_CombatPathingGoalPolicyFindCover_CombatPathingSearchPolicyStandard, __vftable) == 0x0);
@@ -13087,6 +13531,7 @@ pub struct CombatPathBuilderT_CombatPathBuilderOpen_CombatPathingGoalPolicyFindH
     /// +0x50 `undefined8`, base CombatPathBuilderOpen
     pub field_50: u64,
     pub unknown_58: [u8; 128],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatPathBuilderT_CombatPathBuilderOpen_CombatPathingGoalPolicyFindHideCover_CombatPathingSearchPolicyStandard>() == 0xD8);
 const _: () = assert!(core::mem::offset_of!(CombatPathBuilderT_CombatPathBuilderOpen_CombatPathingGoalPolicyFindHideCover_CombatPathingSearchPolicyStandard, __vftable) == 0x0);
@@ -13112,6 +13557,7 @@ pub struct CombatPathBuilderT_CombatPathBuilderOpen_CombatPathingGoalPolicyFlank
     /// +0x50 `undefined8`, base CombatPathBuilderOpen
     pub field_50: u64,
     pub unknown_58: [u8; 128],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatPathBuilderT_CombatPathBuilderOpen_CombatPathingGoalPolicyFlankDistant_CombatPathingSearchPolicyStandard>() == 0xD8);
 const _: () = assert!(core::mem::offset_of!(CombatPathBuilderT_CombatPathBuilderOpen_CombatPathingGoalPolicyFlankDistant_CombatPathingSearchPolicyStandard, __vftable) == 0x0);
@@ -13137,6 +13583,7 @@ pub struct CombatPathBuilderT_CombatPathBuilderOpen_CombatPathingGoalPolicyFlee_
     /// +0x50 `undefined8`, base CombatPathBuilderOpen
     pub field_50: u64,
     pub unknown_58: [u8; 128],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatPathBuilderT_CombatPathBuilderOpen_CombatPathingGoalPolicyFlee_CombatPathingSearchPolicyStandard>() == 0xD8);
 const _: () = assert!(core::mem::offset_of!(CombatPathBuilderT_CombatPathBuilderOpen_CombatPathingGoalPolicyFlee_CombatPathingSearchPolicyStandard, __vftable) == 0x0);
@@ -13162,6 +13609,7 @@ pub struct CombatPathBuilderT_CombatPathBuilderOpen_CombatPathingGoalPolicyLocat
     /// +0x50 `undefined8`, base CombatPathBuilderOpen
     pub field_50: u64,
     pub unknown_58: [u8; 128],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatPathBuilderT_CombatPathBuilderOpen_CombatPathingGoalPolicyLocation_CombatPathingSearchPolicyStandard>() == 0xD8);
 const _: () = assert!(core::mem::offset_of!(CombatPathBuilderT_CombatPathBuilderOpen_CombatPathingGoalPolicyLocation_CombatPathingSearchPolicyStandard, __vftable) == 0x0);
@@ -13187,6 +13635,7 @@ pub struct CombatPathBuilderT_CombatPathBuilderOpen_CombatPathingGoalPolicyRetre
     /// +0x50 `undefined8`, base CombatPathBuilderOpen
     pub field_50: u64,
     pub unknown_58: [u8; 128],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatPathBuilderT_CombatPathBuilderOpen_CombatPathingGoalPolicyRetreat_CombatPathingSearchPolicyStandard>() == 0xD8);
 const _: () = assert!(core::mem::offset_of!(CombatPathBuilderT_CombatPathBuilderOpen_CombatPathingGoalPolicyRetreat_CombatPathingSearchPolicyStandard, __vftable) == 0x0);
@@ -13212,6 +13661,7 @@ pub struct CombatPathBuilderT_CombatPathBuilderOpen_CombatPathingGoalPolicySearc
     /// +0x50 `undefined8`, base CombatPathBuilderOpen
     pub field_50: u64,
     pub unknown_58: [u8; 128],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatPathBuilderT_CombatPathBuilderOpen_CombatPathingGoalPolicySearch_CombatPathingSearchPolicyStandard>() == 0xD8);
 const _: () = assert!(core::mem::offset_of!(CombatPathBuilderT_CombatPathBuilderOpen_CombatPathingGoalPolicySearch_CombatPathingSearchPolicyStandard, __vftable) == 0x0);
@@ -13237,6 +13687,7 @@ pub struct CombatPathBuilderT_CombatPathBuilderOpen_CombatPathingGoalPolicySearc
     /// +0x50 `undefined8`, base CombatPathBuilderOpen
     pub field_50: u64,
     pub unknown_58: [u8; 128],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatPathBuilderT_CombatPathBuilderOpen_CombatPathingGoalPolicySearchWander_CombatPathingSearchPolicyStandard>() == 0xD8);
 const _: () = assert!(core::mem::offset_of!(CombatPathBuilderT_CombatPathBuilderOpen_CombatPathingGoalPolicySearchWander_CombatPathingSearchPolicyStandard, __vftable) == 0x0);
@@ -13274,6 +13725,7 @@ pub struct CombatPathBuilderT_CombatPathBuilderStandard_CombatPathingGoalPolicyF
     /// +0x118 `undefined8`, base CombatPathBuilderStandard
     pub field_118: u64,
     pub unknown_120: [u8; 128],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatPathBuilderT_CombatPathBuilderStandard_CombatPathingGoalPolicyFindTargetLocation_CombatPathingSearchPolicyStandard>() == 0x1A0);
 const _: () = assert!(core::mem::offset_of!(CombatPathBuilderT_CombatPathBuilderStandard_CombatPathingGoalPolicyFindTargetLocation_CombatPathingSearchPolicyStandard, __vftable) == 0x0);
@@ -13316,6 +13768,7 @@ pub struct CombatPathBuilderT_CombatPathBuilderStandard_CombatPathingGoalPolicyF
     /// +0x118 `undefined8`, base CombatPathBuilderStandard
     pub field_118: u64,
     pub unknown_120: [u8; 128],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatPathBuilderT_CombatPathBuilderStandard_CombatPathingGoalPolicyFlank_CombatPathingSearchPolicyFlank>() == 0x1A0);
 const _: () = assert!(core::mem::offset_of!(CombatPathBuilderT_CombatPathBuilderStandard_CombatPathingGoalPolicyFlank_CombatPathingSearchPolicyFlank, __vftable) == 0x0);
@@ -13358,6 +13811,7 @@ pub struct CombatPathBuilderT_CombatPathBuilderStandard_CombatPathingGoalPolicyR
     /// +0x118 `undefined8`, base CombatPathBuilderStandard
     pub field_118: u64,
     pub unknown_120: [u8; 128],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatPathBuilderT_CombatPathBuilderStandard_CombatPathingGoalPolicyReturnToCombatArea_CombatPathingSearchPolicyStandard>() == 0x1A0);
 const _: () = assert!(core::mem::offset_of!(CombatPathBuilderT_CombatPathBuilderStandard_CombatPathingGoalPolicyReturnToCombatArea_CombatPathingSearchPolicyStandard, __vftable) == 0x0);
@@ -13370,194 +13824,4 @@ const _: () = assert!(core::mem::offset_of!(CombatPathBuilderT_CombatPathBuilder
 const _: () = assert!(core::mem::offset_of!(CombatPathBuilderT_CombatPathBuilderStandard_CombatPathingGoalPolicyReturnToCombatArea_CombatPathingSearchPolicyStandard, field_8C) == 0x8C);
 const _: () = assert!(core::mem::offset_of!(CombatPathBuilderT_CombatPathBuilderStandard_CombatPathingGoalPolicyReturnToCombatArea_CombatPathingSearchPolicyStandard, field_90) == 0x90);
 const _: () = assert!(core::mem::offset_of!(CombatPathBuilderT_CombatPathBuilderStandard_CombatPathingGoalPolicyReturnToCombatArea_CombatPathingSearchPolicyStandard, field_118) == 0x118);
-
-/// `CombatPathBuilderT<CombatPathBuilderStandard,CombatPathingGoalPolicyStandard,CombatPathingSearchPolicyStandard>`: size 0x1A0 (exact, high); primary base `CombatPathBuilderStandard`.
-/// Evidence: runtime: 0x1A0 at 2 allocation sites; agrees with the static allocation sites.
-/// Bases: `CombatPathBuilderStandard`@0x0, `CombatPathBuilder`@0x0, `IPathBuilder`@0x0.
-#[repr(C)]
-pub struct CombatPathBuilderT_CombatPathBuilderStandard_CombatPathingGoalPolicyStandard_CombatPathingSearchPolicyStandard {
-    /// +0x0 `vtbl:CombatPathBuilderT<CombatPathBuilderStandard,CombatPathingGoalPolicyStandard,CombatPathingSearchPolicyStandard>:0`, rtti
-    pub __vftable: *const crate::raw::vtables::CombatPathBuilderT_CombatPathBuilderStandard_CombatPathingGoalPolicyStandard_CombatPathingSearchPolicyStandard_vtable,
-    /// +0x8 `undefined8`, base CombatPathBuilder
-    pub field_8: u64,
-    /// +0x10 `undefined8`, base CombatPathBuilder
-    pub field_10: u64,
-    pub unknown_18: [u8; 48],
-    /// +0x48 `undefined8`, base CombatPathBuilder
-    pub field_48: u64,
-    pub unknown_50: [u8; 48],
-    /// +0x80 `float`, base CombatPathBuilderStandard
-    pub field_80: f32,
-    /// +0x84 `float`, base CombatPathBuilderStandard
-    pub field_84: f32,
-    /// +0x88 `float`, base CombatPathBuilderStandard
-    pub field_88: f32,
-    /// +0x8C `undefined4`, base CombatPathBuilderStandard
-    pub field_8C: u32,
-    /// +0x90 `undefined8`, base CombatPathBuilderStandard
-    pub field_90: u64,
-    pub unknown_98: [u8; 128],
-    /// +0x118 `undefined8`, base CombatPathBuilderStandard
-    pub field_118: u64,
-    pub unknown_120: [u8; 128],
-}
-const _: () = assert!(size_of::<CombatPathBuilderT_CombatPathBuilderStandard_CombatPathingGoalPolicyStandard_CombatPathingSearchPolicyStandard>() == 0x1A0);
-const _: () = assert!(core::mem::offset_of!(CombatPathBuilderT_CombatPathBuilderStandard_CombatPathingGoalPolicyStandard_CombatPathingSearchPolicyStandard, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(CombatPathBuilderT_CombatPathBuilderStandard_CombatPathingGoalPolicyStandard_CombatPathingSearchPolicyStandard, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(CombatPathBuilderT_CombatPathBuilderStandard_CombatPathingGoalPolicyStandard_CombatPathingSearchPolicyStandard, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(CombatPathBuilderT_CombatPathBuilderStandard_CombatPathingGoalPolicyStandard_CombatPathingSearchPolicyStandard, field_48) == 0x48);
-const _: () = assert!(core::mem::offset_of!(CombatPathBuilderT_CombatPathBuilderStandard_CombatPathingGoalPolicyStandard_CombatPathingSearchPolicyStandard, field_80) == 0x80);
-const _: () = assert!(core::mem::offset_of!(CombatPathBuilderT_CombatPathBuilderStandard_CombatPathingGoalPolicyStandard_CombatPathingSearchPolicyStandard, field_84) == 0x84);
-const _: () = assert!(core::mem::offset_of!(CombatPathBuilderT_CombatPathBuilderStandard_CombatPathingGoalPolicyStandard_CombatPathingSearchPolicyStandard, field_88) == 0x88);
-const _: () = assert!(core::mem::offset_of!(CombatPathBuilderT_CombatPathBuilderStandard_CombatPathingGoalPolicyStandard_CombatPathingSearchPolicyStandard, field_8C) == 0x8C);
-const _: () = assert!(core::mem::offset_of!(CombatPathBuilderT_CombatPathBuilderStandard_CombatPathingGoalPolicyStandard_CombatPathingSearchPolicyStandard, field_90) == 0x90);
-const _: () = assert!(core::mem::offset_of!(CombatPathBuilderT_CombatPathBuilderStandard_CombatPathingGoalPolicyStandard_CombatPathingSearchPolicyStandard, field_118) == 0x118);
-
-/// `CombatPathSpeedController`: size 0x30 (exact, medium); primary base `CombatObject`.
-/// Evidence: lower bound CombatApproachTargetSpeedController (size 0x30 at 0x0) adds no fields or bases meets upper bound derived CombatApproachTargetSpeedController size 0x30 at 0x0.
-/// Bases: `CombatObject`@0x0, `NiRefObject`@0x0.
-#[repr(C)]
-pub struct CombatPathSpeedController {
-    /// +0x0 `vtbl:CombatPathSpeedController:0`, rtti
-    pub __vftable: *const crate::raw::vtables::CombatPathSpeedController_vtable,
-    pub unknown_8: [u8; 40],
-}
-const _: () = assert!(size_of::<CombatPathSpeedController>() == 0x30);
-const _: () = assert!(core::mem::offset_of!(CombatPathSpeedController, __vftable) == 0x0);
-
-/// `CombatPathT<CombatPathRequestFlight,CombatPathDestinationLocation>`: size >= 0x38 (lower bound); partial, the struct stops at the lower bound; primary base `CombatPath`.
-/// Evidence: field field_30.
-/// Bases: `CombatPath`@0x0, `CombatObject`@0x0, `NiRefObject`@0x0, `CombatPathRequestFlight`@0x38, `CombatPathRequestAdapter<PathingRequestFly>`@0x38, `CombatPathRequest<CombatPathingRequestAdapter>`@0x38, `CombatPathDestinationLocation`@0x48, `CombatPathDestination`@0x48.
-/// Packed: a field lies below its natural alignment.
-#[repr(C, packed)]
-pub struct CombatPathT_CombatPathRequestFlight_CombatPathDestinationLocation {
-    /// +0x0 `vtbl:CombatPathT<CombatPathRequestFlight,CombatPathDestinationLocation>:0`, rtti
-    pub __vftable: *const crate::raw::vtables::CombatPathT_CombatPathRequestFlight_CombatPathDestinationLocation_vtable,
-    /// +0x8 `undefined4`, base CombatPath
-    pub field_8: u32,
-    pub unknown_C: [u8; 4],
-    /// +0x10 `undefined4`, base CombatPath
-    pub field_10: u32,
-    pub unknown_14: [u8; 4],
-    /// +0x18 `undefined4`, base CombatPath
-    pub field_18: u32,
-    /// +0x1C `undefined8`, base CombatPath
-    pub field_1C: u64,
-    /// +0x24 `undefined8`, base CombatPath
-    pub field_24: u64,
-    /// +0x2C `undefined4`, base CombatPath
-    pub field_2C: u32,
-    /// +0x30 `undefined8`, base CombatPath
-    pub field_30: u64,
-}
-const _: () = assert!(core::mem::offset_of!(CombatPathT_CombatPathRequestFlight_CombatPathDestinationLocation, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(CombatPathT_CombatPathRequestFlight_CombatPathDestinationLocation, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(CombatPathT_CombatPathRequestFlight_CombatPathDestinationLocation, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(CombatPathT_CombatPathRequestFlight_CombatPathDestinationLocation, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(CombatPathT_CombatPathRequestFlight_CombatPathDestinationLocation, field_1C) == 0x1C);
-const _: () = assert!(core::mem::offset_of!(CombatPathT_CombatPathRequestFlight_CombatPathDestinationLocation, field_24) == 0x24);
-const _: () = assert!(core::mem::offset_of!(CombatPathT_CombatPathRequestFlight_CombatPathDestinationLocation, field_2C) == 0x2C);
-const _: () = assert!(core::mem::offset_of!(CombatPathT_CombatPathRequestFlight_CombatPathDestinationLocation, field_30) == 0x30);
-
-/// `CombatPathT<CombatPathRequestFlight,CombatPathDestinationRef>`: size >= 0x38 (lower bound); partial, the struct stops at the lower bound; primary base `CombatPath`.
-/// Evidence: field field_30.
-/// Bases: `CombatPath`@0x0, `CombatObject`@0x0, `NiRefObject`@0x0, `CombatPathRequestFlight`@0x38, `CombatPathRequestAdapter<PathingRequestFly>`@0x38, `CombatPathRequest<CombatPathingRequestAdapter>`@0x38, `CombatPathDestinationRef`@0x48, `CombatPathDestination`@0x48.
-/// Packed: a field lies below its natural alignment.
-#[repr(C, packed)]
-pub struct CombatPathT_CombatPathRequestFlight_CombatPathDestinationRef {
-    /// +0x0 `vtbl:CombatPathT<CombatPathRequestFlight,CombatPathDestinationRef>:0`, rtti
-    pub __vftable: *const crate::raw::vtables::CombatPathT_CombatPathRequestFlight_CombatPathDestinationRef_vtable,
-    /// +0x8 `undefined4`, base CombatPath
-    pub field_8: u32,
-    pub unknown_C: [u8; 4],
-    /// +0x10 `undefined4`, base CombatPath
-    pub field_10: u32,
-    pub unknown_14: [u8; 4],
-    /// +0x18 `undefined4`, base CombatPath
-    pub field_18: u32,
-    /// +0x1C `undefined8`, base CombatPath
-    pub field_1C: u64,
-    /// +0x24 `undefined8`, base CombatPath
-    pub field_24: u64,
-    /// +0x2C `undefined4`, base CombatPath
-    pub field_2C: u32,
-    /// +0x30 `undefined8`, base CombatPath
-    pub field_30: u64,
-}
-const _: () = assert!(core::mem::offset_of!(CombatPathT_CombatPathRequestFlight_CombatPathDestinationRef, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(CombatPathT_CombatPathRequestFlight_CombatPathDestinationRef, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(CombatPathT_CombatPathRequestFlight_CombatPathDestinationRef, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(CombatPathT_CombatPathRequestFlight_CombatPathDestinationRef, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(CombatPathT_CombatPathRequestFlight_CombatPathDestinationRef, field_1C) == 0x1C);
-const _: () = assert!(core::mem::offset_of!(CombatPathT_CombatPathRequestFlight_CombatPathDestinationRef, field_24) == 0x24);
-const _: () = assert!(core::mem::offset_of!(CombatPathT_CombatPathRequestFlight_CombatPathDestinationRef, field_2C) == 0x2C);
-const _: () = assert!(core::mem::offset_of!(CombatPathT_CombatPathRequestFlight_CombatPathDestinationRef, field_30) == 0x30);
-
-/// `CombatPathT<CombatPathRequestFlyingAttack,CombatPathDestinationNone>`: size >= 0x38 (lower bound); partial, the struct stops at the lower bound; primary base `CombatPath`.
-/// Evidence: field field_30.
-/// Bases: `CombatPath`@0x0, `CombatObject`@0x0, `NiRefObject`@0x0, `CombatPathRequestFlyingAttack`@0x38, `CombatPathRequestAdapter<PathingRequestFlyAction>`@0x38, `CombatPathRequest<CombatPathingRequestAdapter>`@0x38, `CombatPathDestinationNone`@0x48, `CombatPathDestination`@0x48.
-/// Packed: a field lies below its natural alignment.
-#[repr(C, packed)]
-pub struct CombatPathT_CombatPathRequestFlyingAttack_CombatPathDestinationNone {
-    /// +0x0 `vtbl:CombatPathT<CombatPathRequestFlyingAttack,CombatPathDestinationNone>:0`, rtti
-    pub __vftable: *const crate::raw::vtables::CombatPathT_CombatPathRequestFlyingAttack_CombatPathDestinationNone_vtable,
-    /// +0x8 `undefined4`, base CombatPath
-    pub field_8: u32,
-    pub unknown_C: [u8; 4],
-    /// +0x10 `undefined4`, base CombatPath
-    pub field_10: u32,
-    pub unknown_14: [u8; 4],
-    /// +0x18 `undefined4`, base CombatPath
-    pub field_18: u32,
-    /// +0x1C `undefined8`, base CombatPath
-    pub field_1C: u64,
-    /// +0x24 `undefined8`, base CombatPath
-    pub field_24: u64,
-    /// +0x2C `undefined4`, base CombatPath
-    pub field_2C: u32,
-    /// +0x30 `undefined8`, base CombatPath
-    pub field_30: u64,
-}
-const _: () = assert!(core::mem::offset_of!(CombatPathT_CombatPathRequestFlyingAttack_CombatPathDestinationNone, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(CombatPathT_CombatPathRequestFlyingAttack_CombatPathDestinationNone, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(CombatPathT_CombatPathRequestFlyingAttack_CombatPathDestinationNone, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(CombatPathT_CombatPathRequestFlyingAttack_CombatPathDestinationNone, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(CombatPathT_CombatPathRequestFlyingAttack_CombatPathDestinationNone, field_1C) == 0x1C);
-const _: () = assert!(core::mem::offset_of!(CombatPathT_CombatPathRequestFlyingAttack_CombatPathDestinationNone, field_24) == 0x24);
-const _: () = assert!(core::mem::offset_of!(CombatPathT_CombatPathRequestFlyingAttack_CombatPathDestinationNone, field_2C) == 0x2C);
-const _: () = assert!(core::mem::offset_of!(CombatPathT_CombatPathRequestFlyingAttack_CombatPathDestinationNone, field_30) == 0x30);
-
-/// `CombatPathT<CombatPathRequestGeneric<CombatPathingGoalPolicyExitWater,CombatPathingSearchPolicyStandard>,CombatPathDestinationNone>`: size >= 0x38 (lower bound); partial, the struct stops at the lower bound; primary base `CombatPath`.
-/// Evidence: field field_30.
-/// Bases: `CombatPath`@0x0, `CombatObject`@0x0, `NiRefObject`@0x0, `CombatPathRequestGeneric<CombatPathingGoalPolicyExitWater,CombatPathingSearchPolicyStandard>`@0x38, `CombatPathRequest<CombatPathingRequestGeneric<CombatPathingGoalPolicyExitWater,CombatPathingSearchPolicyStandard>_>`@0x38, `CombatPathDestinationNone`@0x69, `CombatPathDestination`@0x69.
-/// Packed: a field lies below its natural alignment.
-#[repr(C, packed)]
-pub struct CombatPathT_CombatPathRequestGeneric_CombatPathingGoalPolicyExitWater_CombatPathingSearchPolicyS_80a9fb2c615e {
-    /// +0x0 `vtbl:CombatPathT<CombatPathRequestGeneric<CombatPathingGoalPolicyExitWater,CombatPathingSearchPolicyStandard>,CombatPathDestinationNone>:0`, rtti
-    pub __vftable: *const crate::raw::vtables::CombatPathT_CombatPathRequestGeneric_CombatPathingGoalPolicyExitWater_CombatPathingSearchPolicyS_80a9fb2c615e_vtable,
-    /// +0x8 `undefined4`, base CombatPath
-    pub field_8: u32,
-    pub unknown_C: [u8; 4],
-    /// +0x10 `undefined4`, base CombatPath
-    pub field_10: u32,
-    pub unknown_14: [u8; 4],
-    /// +0x18 `undefined4`, base CombatPath
-    pub field_18: u32,
-    /// +0x1C `undefined8`, base CombatPath
-    pub field_1C: u64,
-    /// +0x24 `undefined8`, base CombatPath
-    pub field_24: u64,
-    /// +0x2C `undefined4`, base CombatPath
-    pub field_2C: u32,
-    /// +0x30 `undefined8`, base CombatPath
-    pub field_30: u64,
-}
-const _: () = assert!(core::mem::offset_of!(CombatPathT_CombatPathRequestGeneric_CombatPathingGoalPolicyExitWater_CombatPathingSearchPolicyS_80a9fb2c615e, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(CombatPathT_CombatPathRequestGeneric_CombatPathingGoalPolicyExitWater_CombatPathingSearchPolicyS_80a9fb2c615e, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(CombatPathT_CombatPathRequestGeneric_CombatPathingGoalPolicyExitWater_CombatPathingSearchPolicyS_80a9fb2c615e, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(CombatPathT_CombatPathRequestGeneric_CombatPathingGoalPolicyExitWater_CombatPathingSearchPolicyS_80a9fb2c615e, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(CombatPathT_CombatPathRequestGeneric_CombatPathingGoalPolicyExitWater_CombatPathingSearchPolicyS_80a9fb2c615e, field_1C) == 0x1C);
-const _: () = assert!(core::mem::offset_of!(CombatPathT_CombatPathRequestGeneric_CombatPathingGoalPolicyExitWater_CombatPathingSearchPolicyS_80a9fb2c615e, field_24) == 0x24);
-const _: () = assert!(core::mem::offset_of!(CombatPathT_CombatPathRequestGeneric_CombatPathingGoalPolicyExitWater_CombatPathingSearchPolicyS_80a9fb2c615e, field_2C) == 0x2C);
-const _: () = assert!(core::mem::offset_of!(CombatPathT_CombatPathRequestGeneric_CombatPathingGoalPolicyExitWater_CombatPathingSearchPolicyS_80a9fb2c615e, field_30) == 0x30);
 

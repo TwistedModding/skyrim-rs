@@ -438,6 +438,7 @@ fn class_rs(c: &Class, classes: &BTreeMap<&str, Class>, stats: &mut Stats) -> St
     if pos < extent {
         writeln!(out, "    pub unknown_{pos:X}: [u8; {}],", extent - pos).unwrap();
     }
+    writeln!(out, "    pub __engine: crate::Engine,").unwrap();
     writeln!(out, "}}").unwrap();
     if let Size::Exact { size, .. } = c.size {
         writeln!(out, "const _: () = assert!(size_of::<{}>() == {size:#X});", c.ident).unwrap();

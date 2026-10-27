@@ -12,6 +12,7 @@ pub struct ActivateHandler {
     /// +0x0 `vtbl:ActivateHandler:0`, rtti
     pub __vftable: *const crate::raw::vtables::ActivateHandler_vtable,
     pub unknown_8: [u8; 24],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ActivateHandler>() == 0x20);
 const _: () = assert!(core::mem::offset_of!(ActivateHandler, __vftable) == 0x0);
@@ -25,6 +26,7 @@ pub struct AmiiboEvent {
     /// +0x0 `vtbl:AmiiboEvent:0`, rtti
     pub __vftable: *const crate::raw::vtables::AmiiboEvent_vtable,
     pub unknown_8: [u8; 56],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<AmiiboEvent>() == 0x40);
 const _: () = assert!(core::mem::offset_of!(AmiiboEvent, __vftable) == 0x0);
@@ -38,6 +40,7 @@ pub struct AttackBlockHandler {
     /// +0x0 `vtbl:AttackBlockHandler:0`, rtti
     pub __vftable: *const crate::raw::vtables::AttackBlockHandler_vtable,
     pub unknown_8: [u8; 184],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<AttackBlockHandler>() == 0xC0);
 const _: () = assert!(core::mem::offset_of!(AttackBlockHandler, __vftable) == 0x0);
@@ -51,6 +54,7 @@ pub struct AutoMoveHandler {
     /// +0x0 `vtbl:AutoMoveHandler:0`, rtti
     pub __vftable: *const crate::raw::vtables::AutoMoveHandler_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<AutoMoveHandler>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(AutoMoveHandler, __vftable) == 0x0);
@@ -93,6 +97,7 @@ pub struct BSGamepadDevice {
     /// +0xCC `undefined1`, semantic; set by the detector (high)
     pub connected: u8,
     pub unknown_CD: [u8; 3],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSGamepadDevice>() == 0xD0);
 const _: () = assert!(core::mem::offset_of!(BSGamepadDevice, __vftable) == 0x0);
@@ -124,6 +129,7 @@ pub struct BSInputDevice {
     pub idToKey: [u8; 48],
     /// +0x48 `undefined1`, semantic; key name (BSFixedString) -> id (+0x4c capacity, +0x58 sentinel, +0x68 entries) (high)
     pub nameToId: [u8; 40],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSInputDevice>() == 0x70);
 const _: () = assert!(core::mem::offset_of!(BSInputDevice, __vftable) == 0x0);
@@ -162,6 +168,7 @@ pub struct BSKeyboardDevice {
     pub unknown_60: [u8; 8],
     /// +0x68 `undefined8`, ctor store
     pub field_68: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSKeyboardDevice>() == 0x70);
 const _: () = assert!(core::mem::offset_of!(BSKeyboardDevice, __vftable) == 0x0);
@@ -206,6 +213,7 @@ pub struct BSMouseDevice {
     pub unknown_60: [u8; 8],
     /// +0x68 `undefined8`, ctor store
     pub field_68: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSMouseDevice>() == 0x70);
 const _: () = assert!(core::mem::offset_of!(BSMouseDevice, __vftable) == 0x0);
@@ -229,6 +237,7 @@ pub struct BSPCGamepadDeviceHandler {
     pub __vftable: *const crate::raw::vtables::BSPCGamepadDeviceHandler_vtable,
     /// +0x8 `ptr:BSGamepadDevice`, semantic; the pad (BSWin32GamepadDevice or BSPCOrbisGamepadDevice) or null (high)
     pub device: *mut crate::BSGamepadDevice,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSPCGamepadDeviceHandler>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSPCGamepadDeviceHandler, __vftable) == 0x0);
@@ -272,6 +281,7 @@ pub struct BSPCOrbisGamepadDevice {
     /// +0xCC `undefined1`, base BSGamepadDevice, semantic; set by the detector (high)
     pub connected: u8,
     pub unknown_CD: [u8; 299],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSPCOrbisGamepadDevice>() == 0x1F8);
 const _: () = assert!(core::mem::offset_of!(BSPCOrbisGamepadDevice, __vftable) == 0x0);
@@ -338,6 +348,7 @@ pub struct BSWin32GamepadDevice {
     pub leftStick: u64,
     /// +0x120 `undefined8`, semantic; x, y floats (high)
     pub rightStick: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSWin32GamepadDevice>() == 0x128);
 const _: () = assert!(core::mem::offset_of!(BSWin32GamepadDevice, __vftable) == 0x0);
@@ -402,6 +413,7 @@ pub struct BSWin32KeyboardDevice {
     /// +0x368 `undefined1`, semantic; Caps Lock toggle for character translation (high)
     pub capsLockOn: u8,
     pub unknown_369: [u8; 7],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSWin32KeyboardDevice>() == 0x370);
 const _: () = assert!(core::mem::offset_of!(BSWin32KeyboardDevice, __vftable) == 0x0);
@@ -466,6 +478,7 @@ pub struct BSWin32MouseDevice {
     /// +0xAC `class:BSSpinLock`, semantic; owner thread +0xac, count +0xb0 (high)
     pub lock: crate::BSSpinLock,
     pub unknown_B4: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSWin32MouseDevice>() == 0xB8);
 const _: () = assert!(core::mem::offset_of!(BSWin32MouseDevice, __vftable) == 0x0);
@@ -516,6 +529,7 @@ pub struct BSWin32VirtualKeyboardDevice {
     pub unknown_60: [u8; 8],
     /// +0x68 `undefined8`, base BSKeyboardDevice
     pub field_68: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSWin32VirtualKeyboardDevice>() == 0x70);
 const _: () = assert!(core::mem::offset_of!(BSWin32VirtualKeyboardDevice, __vftable) == 0x0);
@@ -541,6 +555,7 @@ pub struct CharEvent {
     /// +0x18 `undefined4`, semantic; UTF-16 unit from ToUnicode, or the numpad character with Num Lock (high)
     pub charCode: u32,
     pub unknown_1C: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CharEvent>() == 0x20);
 const _: () = assert!(core::mem::offset_of!(CharEvent, __vftable) == 0x0);
@@ -555,6 +570,7 @@ pub struct ClickHandler {
     /// +0x0 `vtbl:ClickHandler:0`, rtti
     pub __vftable: *const crate::raw::vtables::ClickHandler_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ClickHandler>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(ClickHandler, __vftable) == 0x0);
@@ -594,6 +610,7 @@ pub struct CommandTableEntry {
     pub flags: u32,
     /// +0x4C `undefined4`, semantic; padding (high)
     pub pad4c: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CommandTableEntry>() == 0x50);
 const _: () = assert!(core::mem::offset_of!(CommandTableEntry, name) == 0x0);
@@ -623,6 +640,7 @@ pub struct ConsoleCommandTask {
     pub ref_: *mut crate::TESObjectREFR,
     /// +0x10 `pointer`, semantic; g_ScriptCompiler (high)
     pub compiler: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ConsoleCommandTask>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(ConsoleCommandTask, script) == 0x0);
@@ -638,6 +656,7 @@ pub struct ConsoleOpenHandler {
     /// +0x0 `vtbl:ConsoleOpenHandler:0`, rtti
     pub __vftable: *const crate::raw::vtables::ConsoleOpenHandler_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ConsoleOpenHandler>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(ConsoleOpenHandler, __vftable) == 0x0);
@@ -654,6 +673,7 @@ pub struct DeviceConnectEvent {
     /// +0x18 `undefined1`, semantic;  (high)
     pub connected: u8,
     pub unknown_19: [u8; 7],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<DeviceConnectEvent>() == 0x20);
 const _: () = assert!(core::mem::offset_of!(DeviceConnectEvent, __vftable) == 0x0);
@@ -668,6 +688,7 @@ pub struct DirectionHandler {
     /// +0x0 `vtbl:DirectionHandler:0`, rtti
     pub __vftable: *const crate::raw::vtables::DirectionHandler_vtable,
     pub unknown_8: [u8; 40],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<DirectionHandler>() == 0x30);
 const _: () = assert!(core::mem::offset_of!(DirectionHandler, __vftable) == 0x0);
@@ -699,6 +720,7 @@ pub struct EventSourceHolder_User {
     pub unknown_12B: [u8; 1],
     /// +0x12C `undefined4`, semantic; gamepad button layout the gamepad codes are currently expressed in (0 Win32/XInput device, 1 Orbis device) (high)
     pub gamepadLayout: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<EventSourceHolder_User>() == 0x130);
 const _: () = assert!(core::mem::offset_of!(EventSourceHolder_User, source_UserEventEnabledEvent) == 0x8);
@@ -721,6 +743,7 @@ pub struct FavoritesHandler {
     /// +0x0 `vtbl:FavoritesHandler:0`, rtti
     pub __vftable: *const crate::raw::vtables::FavoritesHandler_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<FavoritesHandler>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(FavoritesHandler, __vftable) == 0x0);
@@ -739,6 +762,7 @@ pub struct HeldStateHandler {
     /// +0x11 `undefined1`, semantic; a synthetic ForceRelease must be sent (high)
     pub releasePending: u8,
     pub unknown_12: [u8; 6],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<HeldStateHandler>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(HeldStateHandler, __vftable) == 0x0);
@@ -758,6 +782,7 @@ pub struct InputContext {
     pub gamepadMappings: crate::BSTArray,
     /// +0x48 `undefined1`, semantic; three more BSTArrays constructed and destroyed but never read (low)
     pub unusedArrays: [u8; 72],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<InputContext>() == 0x90);
 const _: () = assert!(core::mem::offset_of!(InputContext, keyboardMappings) == 0x0);
@@ -812,6 +837,7 @@ pub struct InputEventQueue {
     pub head: *mut crate::InputEvent,
     /// +0x560 `ptr:InputEvent`, semantic; last appended event; Add* link tail->next (+0x10) (high)
     pub tail: *mut crate::InputEvent,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<InputEventQueue>() == 0x568);
 const _: () = assert!(core::mem::offset_of!(InputEventQueue, unknown0) == 0x0);
@@ -845,6 +871,7 @@ pub struct JumpHandler {
     /// +0x0 `vtbl:JumpHandler:0`, rtti
     pub __vftable: *const crate::raw::vtables::JumpHandler_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<JumpHandler>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(JumpHandler, __vftable) == 0x0);
@@ -863,6 +890,7 @@ pub struct KinectEvent {
     pub unknown_24: [u8; 4],
     /// +0x28 `class:BSFixedString`, semantic; second string of the recognition (medium)
     pub heard: crate::BSFixedString,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<KinectEvent>() == 0x30);
 const _: () = assert!(core::mem::offset_of!(KinectEvent, __vftable) == 0x0);
@@ -885,6 +913,7 @@ pub struct LinkedMapping {
     pub unknown_14: [u8; 4],
     /// +0x18 `class:BSFixedString`, semantic; user event whose key is copied (high)
     pub linkedUserEvent: crate::BSFixedString,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<LinkedMapping>() == 0x20);
 const _: () = assert!(core::mem::offset_of!(LinkedMapping, userEvent) == 0x0);
@@ -919,6 +948,7 @@ pub struct LookHandler {
     pub lastMotionSample: u32,
     /// +0xB4 `u32`, semantic; count of processed motion events since the last reset (high)
     pub motionSampleCount: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<LookHandler>() == 0xB8);
 const _: () = assert!(core::mem::offset_of!(LookHandler, __vftable) == 0x0);
@@ -959,6 +989,7 @@ pub struct MotionGestureEvent {
     pub unknown_31: [u8; 3],
     /// +0x34 `undefined4`, semantic;  (low)
     pub unk34: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<MotionGestureEvent>() == 0x38);
 const _: () = assert!(core::mem::offset_of!(MotionGestureEvent, __vftable) == 0x0);
@@ -987,6 +1018,7 @@ pub struct MouseMoveEvent {
     pub dx: u32,
     /// +0x2C `undefined4`, semantic; int lY (high)
     pub dy: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<MouseMoveEvent>() == 0x30);
 const _: () = assert!(core::mem::offset_of!(MouseMoveEvent, __vftable) == 0x0);
@@ -1003,6 +1035,7 @@ pub struct MovementHandler {
     /// +0x0 `vtbl:MovementHandler:0`, rtti
     pub __vftable: *const crate::raw::vtables::MovementHandler_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<MovementHandler>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(MovementHandler, __vftable) == 0x0);
@@ -1019,6 +1052,7 @@ pub struct ParamInfo {
     /// +0xC `undefined1`, semantic; 1 = may be omitted; parsing stops at the first missing optional and stores the parsed count (high)
     pub optional: u8,
     pub unknown_D: [u8; 3],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ParamInfo>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(ParamInfo, name) == 0x0);
@@ -1087,6 +1121,7 @@ pub struct PlayerControls {
     pub unknown_1D9: [u8; 3],
     /// +0x1DC `undefined4`, ctor store
     pub field_1DC: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<PlayerControls>() == 0x1E0);
 const _: () = assert!(core::mem::offset_of!(PlayerControls, __vftable) == 0x0);
@@ -1124,6 +1159,7 @@ pub struct QuickSaveLoadHandler {
     /// +0x0 `vtbl:QuickSaveLoadHandler:0`, rtti
     pub __vftable: *const crate::raw::vtables::QuickSaveLoadHandler_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<QuickSaveLoadHandler>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(QuickSaveLoadHandler, __vftable) == 0x0);
@@ -1137,6 +1173,7 @@ pub struct ReadyWeaponHandler {
     /// +0x0 `vtbl:ReadyWeaponHandler:0`, rtti
     pub __vftable: *const crate::raw::vtables::ReadyWeaponHandler_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ReadyWeaponHandler>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(ReadyWeaponHandler, __vftable) == 0x0);
@@ -1150,6 +1187,7 @@ pub struct RunHandler {
     /// +0x0 `vtbl:RunHandler:0`, rtti
     pub __vftable: *const crate::raw::vtables::RunHandler_vtable,
     pub unknown_8: [u8; 16],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<RunHandler>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(RunHandler, __vftable) == 0x0);
@@ -1168,6 +1206,7 @@ pub struct ScreenshotHandler {
     /// +0x11 `undefined1`, semantic; Multi-Screenshot pressed (high)
     pub multiScreenshotRequested: u8,
     pub unknown_12: [u8; 6],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ScreenshotHandler>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(ScreenshotHandler, __vftable) == 0x0);
@@ -1222,6 +1261,7 @@ pub struct Script {
     pub refVariables: [u8; 16],
     /// +0x70 `undefined1`, semantic; local variable descriptions (0x28 entries) (low)
     pub variables: [u8; 16],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<Script>() == 0x80);
 const _: () = assert!(core::mem::offset_of!(Script, __vftable) == 0x0);
@@ -1266,6 +1306,7 @@ pub struct ScriptLineBuffer {
     /// +0x414 `undefined4`, semantic; explicit reference variable ('player.' prefix), 0 for none (high)
     pub refIndex: u32,
     pub unknown_418: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ScriptLineBuffer>() == 0x41C);
 const _: () = assert!(core::mem::offset_of!(ScriptLineBuffer, lineNumber) == 0x0);
@@ -1289,6 +1330,7 @@ pub struct ScriptParamTypeInfo {
     /// +0x5 `undefined1`, semantic; form argument, compiled as 'r' + u16 reference-variable index (high)
     pub isForm: u8,
     pub unknown_6: [u8; 2],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ScriptParamTypeInfo>() == 0x8);
 const _: () = assert!(core::mem::offset_of!(ScriptParamTypeInfo, typeCode) == 0x0);
@@ -1316,6 +1358,7 @@ pub struct ScriptRunContext {
     /// +0x5D `undefined1`, semantic; set when a command with flags byte +0x49 ran; Run's return value (medium)
     pub reportFlag: u8,
     pub unknown_5E: [u8; 2],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ScriptRunContext>() == 0x60);
 const _: () = assert!(core::mem::offset_of!(ScriptRunContext, containingObj) == 0x0);
@@ -1334,6 +1377,7 @@ pub struct ShoutHandler {
     /// +0x0 `vtbl:ShoutHandler:0`, rtti
     pub __vftable: *const crate::raw::vtables::ShoutHandler_vtable,
     pub unknown_8: [u8; 24],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ShoutHandler>() == 0x20);
 const _: () = assert!(core::mem::offset_of!(ShoutHandler, __vftable) == 0x0);
@@ -1389,6 +1433,7 @@ pub struct SixaxisEvent {
     pub field_7C: u32,
     /// +0x80 `undefined1`, semantic; quaternion (pass 6 row: LookHandler reads it) (low)
     pub orientation: [u8; 16],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<SixaxisEvent>() == 0x90);
 const _: () = assert!(core::mem::offset_of!(SixaxisEvent, __vftable) == 0x0);
@@ -1422,6 +1467,7 @@ pub struct SneakHandler {
     /// +0x0 `vtbl:SneakHandler:0`, rtti
     pub __vftable: *const crate::raw::vtables::SneakHandler_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<SneakHandler>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(SneakHandler, __vftable) == 0x0);
@@ -1435,6 +1481,7 @@ pub struct SprintHandler {
     /// +0x0 `vtbl:SprintHandler:0`, rtti
     pub __vftable: *const crate::raw::vtables::SprintHandler_vtable,
     pub unknown_8: [u8; 16],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<SprintHandler>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(SprintHandler, __vftable) == 0x0);
@@ -1455,6 +1502,7 @@ pub struct ThumbstickEvent {
     pub x: f32,
     /// +0x2C `float`, semantic;  (high)
     pub y: f32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ThumbstickEvent>() == 0x30);
 const _: () = assert!(core::mem::offset_of!(ThumbstickEvent, __vftable) == 0x0);
@@ -1484,6 +1532,7 @@ pub struct TogglePOVHandler {
     pub pressed: u8,
     /// +0x19 `undefined1`, semantic; tail padding after pressed (+0x18) to 0x20 (high)
     pub pad_19: [u8; 7],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TogglePOVHandler>() == 0x20);
 const _: () = assert!(core::mem::offset_of!(TogglePOVHandler, __vftable) == 0x0);
@@ -1504,6 +1553,7 @@ pub struct ToggleRunHandler {
     /// +0x0 `vtbl:ToggleRunHandler:0`, rtti
     pub __vftable: *const crate::raw::vtables::ToggleRunHandler_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ToggleRunHandler>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(ToggleRunHandler, __vftable) == 0x0);
@@ -1517,6 +1567,7 @@ pub struct UserEventEnabledEvent {
     pub newEnabled: u32,
     /// +0x4 `undefined4`, semantic; enabledControls before the change (high)
     pub oldEnabled: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<UserEventEnabledEvent>() == 0x8);
 const _: () = assert!(core::mem::offset_of!(UserEventEnabledEvent, newEnabled) == 0x0);
@@ -1541,6 +1592,7 @@ pub struct UserEventMapping {
     /// +0x10 `undefined4`, semantic; control-group bits the mapping needs enabled; -1 = always (default when the column is missing) (high)
     pub groupFlags: u32,
     pub unknown_14: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<UserEventMapping>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(UserEventMapping, userEvent) == 0x0);
@@ -1559,6 +1611,7 @@ pub struct UserEventNames {
     /// +0x8 `undefined1`, semantic; 102 BSFixedString slots +0x8..+0x338 (+0x318 is a zero qword); see enum (high)
     pub names: [u8; 816],
     pub unknown_338: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<UserEventNames>() == 0x340);
 const _: () = assert!(core::mem::offset_of!(UserEventNames, names) == 0x8);

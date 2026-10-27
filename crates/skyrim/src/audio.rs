@@ -23,7 +23,7 @@ fn c_string(text: &str) -> CString {
 }
 
 const fn invalid() -> SoundHandle {
-    SoundHandle { id: u32::MAX, assumeState: 0, unknown_5: [0; 3], requestedState: 0 }
+    SoundHandle { id: u32::MAX, assumeState: 0, unknown_5: [0; 3], requestedState: 0, __engine: sre::Engine::new() }
 }
 
 fn built(handle: SoundHandle) -> Option<SoundHandle> {

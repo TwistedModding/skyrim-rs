@@ -120,6 +120,7 @@ pub struct TES {
     pub field_2B0: u64,
     /// +0x2B8 `undefined8`, ctor store
     pub field_2B8: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TES>() == 0x2C0);
 const _: () = assert!(core::mem::offset_of!(TES, __vftable) == 0x0);
@@ -184,6 +185,7 @@ pub struct TES__SystemEventAdapter {
     /// +0x8 `undefined1`, ctor store
     pub field_8: u8,
     pub unknown_9: [u8; 7],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(TES__SystemEventAdapter, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(TES__SystemEventAdapter, field_8) == 0x8);
@@ -202,6 +204,7 @@ pub struct TESAIForm {
     /// +0x10 `undefined2`, ctor store
     pub field_10: u16,
     pub unknown_12: [u8; 6],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(TESAIForm, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(TESAIForm, field_8) == 0x8);
@@ -247,6 +250,7 @@ pub struct TESActionData {
     /// +0x80 `undefined4`, ctor store
     pub field_80: u32,
     pub unknown_84: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(TESActionData, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(TESActionData, field_8) == 0x8);
@@ -368,6 +372,7 @@ pub struct TESActorBase {
     /// +0x148 `undefined4`, base BGSPerkRankArray
     pub field_148: u32,
     pub unknown_14C: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESActorBase>() == 0x150);
 const _: () = assert!(core::mem::offset_of!(TESActorBase, __vftable) == 0x0);
@@ -425,6 +430,7 @@ pub struct TESAmbushPackageData {
     pub __vftable: *const crate::raw::vtables::TESAmbushPackageData_vtable,
     /// +0x8 `undefined8`, ctor store
     pub field_8: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESAmbushPackageData>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(TESAmbushPackageData, __vftable) == 0x0);
@@ -505,6 +511,7 @@ pub struct TESAmmo {
     /// +0x108 `undefined4`, base BGSKeywordForm, semantic; number of keywords (high)
     pub numKeywords: u32,
     pub unknown_10C: [u8; 28],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESAmmo>() == 0x128);
 const _: () = assert!(core::mem::offset_of!(TESAmmo, __vftable) == 0x0);
@@ -566,6 +573,7 @@ pub struct TESAnimGroup {
     pub unknown_4C: [u8; 4],
     /// +0x50 `undefined8`, ctor store
     pub field_50: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(TESAnimGroup, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(TESAnimGroup, field_8) == 0x8);
@@ -588,6 +596,7 @@ pub struct TESAttackDamageForm {
     /// +0x8 `undefined2`, ctor store
     pub field_8: u16,
     pub unknown_A: [u8; 6],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESAttackDamageForm>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(TESAttackDamageForm, __vftable) == 0x0);
@@ -603,6 +612,7 @@ pub struct TESBipedModelForm {
     pub unknown_8: [u8; 192],
     /// +0xC8 `undefined8`, member ctor TESModelRDT
     pub m_TESModelRDT_C8: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(TESBipedModelForm, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(TESBipedModelForm, m_TESModelRDT_C8) == 0xC8);
@@ -638,6 +648,7 @@ pub struct TESBoundAnimObject {
     /// +0x2A `undefined2`, base TESBoundObject
     pub field_2A: u16,
     pub unknown_2C: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESBoundAnimObject>() == 0x30);
 const _: () = assert!(core::mem::offset_of!(TESBoundAnimObject, __vftable) == 0x0);
@@ -684,6 +695,7 @@ pub struct TESBoundObject {
     /// +0x2A `undefined2`, ctor store
     pub field_2A: u16,
     pub unknown_2C: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESBoundObject>() == 0x30);
 const _: () = assert!(core::mem::offset_of!(TESBoundObject, __vftable) == 0x0);
@@ -705,6 +717,7 @@ const _: () = assert!(core::mem::offset_of!(TESBoundObject, field_2A) == 0x2A);
 pub struct TESChildCell {
     /// +0x0 `vtbl:TESChildCell:0`, rtti
     pub __vftable: *const crate::raw::vtables::TESChildCell_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESChildCell>() == 0x8);
 const _: () = assert!(core::mem::offset_of!(TESChildCell, __vftable) == 0x0);
@@ -751,6 +764,7 @@ pub struct TESClass {
     /// +0x70 `undefined4`, ctor store
     pub field_70: u32,
     pub unknown_74: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESClass>() == 0x78);
 const _: () = assert!(core::mem::offset_of!(TESClass, __vftable) == 0x0);
@@ -796,6 +810,7 @@ pub struct TESClimate {
     /// +0x7C `undefined2`, ctor store
     pub field_7C: u16,
     pub unknown_7E: [u8; 2],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESClimate>() == 0x80);
 const _: () = assert!(core::mem::offset_of!(TESClimate, __vftable) == 0x0);
@@ -890,6 +905,7 @@ pub struct TESCombatStyle {
     pub field_98: u32,
     /// +0x9C `undefined4`, ctor store
     pub field_9C: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESCombatStyle>() == 0xA0);
 const _: () = assert!(core::mem::offset_of!(TESCombatStyle, __vftable) == 0x0);
@@ -948,6 +964,7 @@ pub struct TESCustomPackageData {
     /// +0x38 `undefined2`, ctor store
     pub field_38: u16,
     pub unknown_3A: [u8; 6],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESCustomPackageData>() == 0x40);
 const _: () = assert!(core::mem::offset_of!(TESCustomPackageData, __vftable) == 0x0);
@@ -966,6 +983,7 @@ pub struct TESDescription {
     /// +0x8 `undefined4`, ctor store
     pub field_8: u32,
     pub unknown_C: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESDescription>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(TESDescription, __vftable) == 0x0);
@@ -997,6 +1015,7 @@ pub struct TESDialoguePackageData {
     pub unknown_29: [u8; 3],
     /// +0x2C `undefined4`, ctor store
     pub field_2C: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESDialoguePackageData>() == 0x30);
 const _: () = assert!(core::mem::offset_of!(TESDialoguePackageData, __vftable) == 0x0);
@@ -1018,6 +1037,7 @@ pub struct TESEatPackageData {
     pub __vftable: *const crate::raw::vtables::TESEatPackageData_vtable,
     /// +0x8 `undefined8`, ctor store
     pub field_8: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESEatPackageData>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(TESEatPackageData, __vftable) == 0x0);
@@ -1049,6 +1069,7 @@ pub struct TESEffectShader {
     /// +0xC4 `undefined8`, ctor store
     pub field_C4: u64,
     pub unknown_CC: [u8; 340],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESEffectShader>() == 0x220);
 const _: () = assert!(core::mem::offset_of!(TESEffectShader, __vftable) == 0x0);
@@ -1073,6 +1094,7 @@ pub struct TESEnchantableForm {
     /// +0x10 `undefined4`, ctor store
     pub field_10: u32,
     pub unknown_14: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESEnchantableForm>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(TESEnchantableForm, __vftable) == 0x0);
@@ -1091,6 +1113,7 @@ pub struct TESEscortPackageData {
     /// +0x10 `undefined4`, ctor store
     pub field_10: u32,
     pub unknown_14: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESEscortPackageData>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(TESEscortPackageData, __vftable) == 0x0);
@@ -1124,6 +1147,7 @@ pub struct TESEyes {
     /// +0x40 `undefined1`, ctor store
     pub field_40: u8,
     pub unknown_41: [u8; 7],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESEyes>() == 0x48);
 const _: () = assert!(core::mem::offset_of!(TESEyes, __vftable) == 0x0);
@@ -1215,6 +1239,7 @@ pub struct TESFaction {
     pub field_F8: u32,
     /// +0xFC `undefined4`, ctor store
     pub field_FC: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESFaction>() == 0x100);
 const _: () = assert!(core::mem::offset_of!(TESFaction, __vftable) == 0x0);
@@ -1320,6 +1345,7 @@ pub struct TESFlora {
     /// +0xE0 `undefined4`, base TESProduceForm
     pub field_E0: u32,
     pub unknown_E4: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESFlora>() == 0xE8);
 const _: () = assert!(core::mem::offset_of!(TESFlora, __vftable) == 0x0);
@@ -1362,6 +1388,7 @@ pub struct TESFollowPackageData {
     /// +0x10 `undefined4`, ctor store
     pub field_10: u32,
     pub unknown_14: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESFollowPackageData>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(TESFollowPackageData, __vftable) == 0x0);
@@ -1376,6 +1403,7 @@ pub struct TESFormUIData {
     /// +0x0 `vtbl:TESFormUIData:0`, rtti
     pub __vftable: *const crate::raw::vtables::TESFormUIData_vtable,
     pub unknown_8: [u8; 16],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESFormUIData>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(TESFormUIData, __vftable) == 0x0);
@@ -1438,6 +1466,7 @@ pub struct TESGrass {
     /// +0x74 `undefined1`, ctor store
     pub field_74: u8,
     pub unknown_75: [u8; 3],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESGrass>() == 0x78);
 const _: () = assert!(core::mem::offset_of!(TESGrass, __vftable) == 0x0);
@@ -1471,6 +1500,7 @@ const _: () = assert!(core::mem::offset_of!(TESGrass, field_74) == 0x74);
 pub struct TESHealthForm {
     /// +0x0 `vtbl:TESHealthForm:0`, rtti
     pub __vftable: *const crate::raw::vtables::TESHealthForm_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(TESHealthForm, __vftable) == 0x0);
 
@@ -1481,6 +1511,7 @@ const _: () = assert!(core::mem::offset_of!(TESHealthForm, __vftable) == 0x0);
 pub struct TESIcon {
     /// +0x0 `vtbl:TESIcon:0`, rtti
     pub __vftable: *const crate::raw::vtables::TESIcon_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(TESIcon, __vftable) == 0x0);
 
@@ -1524,6 +1555,7 @@ pub struct TESIdleForm {
     /// +0x60 `undefined4`, ctor store
     pub field_60: u32,
     pub unknown_64: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESIdleForm>() == 0x68);
 const _: () = assert!(core::mem::offset_of!(TESIdleForm, __vftable) == 0x0);
@@ -1592,6 +1624,7 @@ pub struct TESImageSpace {
     /// +0x64 `undefined8`, ctor store
     pub field_64: u64,
     pub unknown_6C: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESImageSpace>() == 0x70);
 const _: () = assert!(core::mem::offset_of!(TESImageSpace, __vftable) == 0x0);
@@ -1625,6 +1658,7 @@ pub struct TESImageSpaceModifiableForm {
     pub __vftable: *const crate::raw::vtables::TESImageSpaceModifiableForm_vtable,
     /// +0x8 `undefined8`, ctor store
     pub field_8: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESImageSpaceModifiableForm>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(TESImageSpaceModifiableForm, __vftable) == 0x0);
@@ -1696,6 +1730,7 @@ pub struct TESImageSpaceModifier {
     /// +0x2D8 `undefined4`, ctor store
     pub field_2D8: u32,
     pub unknown_2DC: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESImageSpaceModifier>() == 0x2E0);
 const _: () = assert!(core::mem::offset_of!(TESImageSpaceModifier, __vftable) == 0x0);
@@ -1796,6 +1831,7 @@ pub struct TESKey {
     /// +0xF8 `undefined4`, base BGSKeywordForm, semantic; number of keywords (high)
     pub numKeywords: u32,
     pub unknown_FC: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESKey>() == 0x100);
 const _: () = assert!(core::mem::offset_of!(TESKey, __vftable) == 0x0);
@@ -1860,6 +1896,7 @@ pub struct TESLandTexture {
     pub field_40: u64,
     /// +0x48 `undefined8`, ctor store
     pub field_48: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESLandTexture>() == 0x50);
 const _: () = assert!(core::mem::offset_of!(TESLandTexture, __vftable) == 0x0);
@@ -1929,6 +1966,7 @@ pub struct TESLevCharacter {
     /// +0x88 `undefined4`, base TESModelTextureSwap
     pub field_88: u32,
     pub unknown_8C: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESLevCharacter>() == 0x90);
 const _: () = assert!(core::mem::offset_of!(TESLevCharacter, __vftable) == 0x0);
@@ -1995,6 +2033,7 @@ pub struct TESLevItem {
     pub field_48: u64,
     /// +0x50 `undefined8`, base TESLeveledList
     pub field_50: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESLevItem>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(TESLevItem, __vftable) == 0x0);
@@ -2057,6 +2096,7 @@ pub struct TESLevSpell {
     pub field_48: u64,
     /// +0x50 `undefined8`, base TESLeveledList
     pub field_50: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESLevSpell>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(TESLevSpell, __vftable) == 0x0);
@@ -2093,6 +2133,7 @@ pub struct TESLeveledList {
     pub field_18: u64,
     /// +0x20 `undefined8`, ctor store
     pub field_20: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESLeveledList>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(TESLeveledList, __vftable) == 0x0);
@@ -2122,6 +2163,7 @@ pub struct TESLoadScreen {
     /// +0x28 `undefined8`, ctor store
     pub field_28: u64,
     pub unknown_30: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESLoadScreen>() == 0x38);
 const _: () = assert!(core::mem::offset_of!(TESLoadScreen, __vftable) == 0x0);
@@ -2142,6 +2184,7 @@ pub struct TESModel {
     pub unknown_8: [u8; 8],
     /// +0x10 `undefined8`, ctor store
     pub field_10: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESModel>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(TESModel, __vftable) == 0x0);
@@ -2182,6 +2225,7 @@ pub struct TESModelDB__TESQueuedHandles {
     /// +0x54 `undefined2`, base BSQueuedResourceCollectionBase
     pub field_54: u16,
     pub unknown_56: [u8; 50],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESModelDB__TESQueuedHandles>() == 0x88);
 const _: () = assert!(core::mem::offset_of!(TESModelDB__TESQueuedHandles, __vftable) == 0x0);
@@ -2205,6 +2249,7 @@ const _: () = assert!(core::mem::offset_of!(TESModelDB__TESQueuedHandles, field_
 pub struct TESModelDB___anon_42B16DF0__TESProcessor {
     /// +0x0 `vtbl:TESModelDB::_anon_42B16DF0::TESProcessor:0`, rtti
     pub __vftable: *const crate::raw::vtables::TESModelDB___anon_42B16DF0__TESProcessor_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESModelDB___anon_42B16DF0__TESProcessor>() == 0x8);
 const _: () = assert!(core::mem::offset_of!(TESModelDB___anon_42B16DF0__TESProcessor, __vftable) == 0x0);
@@ -2216,6 +2261,7 @@ const _: () = assert!(core::mem::offset_of!(TESModelDB___anon_42B16DF0__TESProce
 pub struct TESModelLODList {
     /// +0x0 `vtbl:TESModelLODList:0`, rtti
     pub __vftable: *const crate::raw::vtables::TESModelLODList_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(TESModelLODList, __vftable) == 0x0);
 
@@ -2229,6 +2275,7 @@ pub struct TESModelPSA {
     pub unknown_8: [u8; 8],
     /// +0x10 `undefined8`, base TESModel
     pub field_10: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(TESModelPSA, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(TESModelPSA, field_10) == 0x10);
@@ -2243,6 +2290,7 @@ pub struct TESModelRDT {
     pub unknown_8: [u8; 8],
     /// +0x10 `undefined8`, base TESModel
     pub field_10: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(TESModelRDT, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(TESModelRDT, field_10) == 0x10);
@@ -2263,6 +2311,7 @@ pub struct TESModelTextureSwap {
     /// +0x30 `undefined4`, ctor store
     pub field_30: u32,
     pub unknown_34: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESModelTextureSwap>() == 0x38);
 const _: () = assert!(core::mem::offset_of!(TESModelTextureSwap, __vftable) == 0x0);
@@ -2280,6 +2329,7 @@ pub struct TESModelTri {
     pub unknown_8: [u8; 8],
     /// +0x10 `undefined8`, base TESModel
     pub field_10: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(TESModelTri, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(TESModelTri, field_10) == 0x10);
@@ -2302,6 +2352,7 @@ pub struct TESObject {
     /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
     pub unknown_1B: [u8; 5],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESObject>() == 0x20);
 const _: () = assert!(core::mem::offset_of!(TESObject, __vftable) == 0x0);
@@ -2370,6 +2421,7 @@ pub struct TESObjectACTI {
     /// +0xC0 `undefined2`, ctor store
     pub field_C0: u16,
     pub unknown_C2: [u8; 6],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESObjectACTI>() == 0xC8);
 const _: () = assert!(core::mem::offset_of!(TESObjectACTI, __vftable) == 0x0);
@@ -2428,6 +2480,7 @@ pub struct TESObjectANIO {
     /// +0x58 `undefined8`, ctor store
     pub field_58: u64,
     pub unknown_60: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESObjectANIO>() == 0x68);
 const _: () = assert!(core::mem::offset_of!(TESObjectANIO, __vftable) == 0x0);
@@ -2496,6 +2549,7 @@ pub struct TESObjectARMA {
     pub field_168: u64,
     /// +0x170 `undefined8`, ctor store
     pub field_170: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESObjectARMA>() == 0x178);
 const _: () = assert!(core::mem::offset_of!(TESObjectARMA, __vftable) == 0x0);
@@ -2612,6 +2666,7 @@ pub struct TESObjectARMO {
     /// +0x1F8 `undefined4`, base TESDescription
     pub field_1F8: u32,
     pub unknown_1FC: [u8; 44],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESObjectARMO>() == 0x228);
 const _: () = assert!(core::mem::offset_of!(TESObjectARMO, __vftable) == 0x0);
@@ -2728,6 +2783,7 @@ pub struct TESObjectBOOK {
     /// +0x108 `undefined4`, base BGSKeywordForm, semantic; number of keywords (high)
     pub numKeywords: u32,
     pub unknown_10C: [u8; 44],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESObjectBOOK>() == 0x138);
 const _: () = assert!(core::mem::offset_of!(TESObjectBOOK, __vftable) == 0x0);
@@ -2840,6 +2896,7 @@ pub struct TESObjectCELL {
     pub field_138: u64,
     /// +0x140 `undefined8`, ctor store
     pub field_140: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESObjectCELL>() == 0x148);
 const _: () = assert!(core::mem::offset_of!(TESObjectCELL, __vftable) == 0x0);
@@ -2882,6 +2939,7 @@ const _: () = assert!(core::mem::offset_of!(TESObjectCELL, field_140) == 0x140);
 pub struct TESObjectCELL__IDecalRefFunctor {
     /// +0x0 `vtbl:TESObjectCELL::IDecalRefFunctor:0`, rtti
     pub __vftable: *const crate::raw::vtables::TESObjectCELL__IDecalRefFunctor_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(TESObjectCELL__IDecalRefFunctor, __vftable) == 0x0);
 
@@ -2958,6 +3016,7 @@ pub struct TESObjectCONT {
     pub field_C0: u64,
     /// +0xC8 `undefined8`, ctor store
     pub field_C8: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESObjectCONT>() == 0xD0);
 const _: () = assert!(core::mem::offset_of!(TESObjectCONT, __vftable) == 0x0);
@@ -3051,6 +3110,7 @@ pub struct TESObjectDOOR {
     /// +0xB0 `undefined1`, ctor store
     pub field_B0: u8,
     pub unknown_B1: [u8; 31],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESObjectDOOR>() == 0xD0);
 const _: () = assert!(core::mem::offset_of!(TESObjectDOOR, __vftable) == 0x0);
@@ -3107,6 +3167,7 @@ pub struct TESObjectLAND {
     pub field_38: u64,
     /// +0x40 `undefined8`, ctor store
     pub field_40: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESObjectLAND>() == 0x48);
 const _: () = assert!(core::mem::offset_of!(TESObjectLAND, __vftable) == 0x0);
@@ -3191,6 +3252,7 @@ pub struct TESObjectLIGH {
     /// +0xD8 `undefined8`, base BGSEquipType
     pub field_D8: u64,
     pub unknown_E0: [u8; 80],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESObjectLIGH>() == 0x130);
 const _: () = assert!(core::mem::offset_of!(TESObjectLIGH, __vftable) == 0x0);
@@ -3291,6 +3353,7 @@ pub struct TESObjectMISC {
     /// +0xF8 `undefined4`, base BGSKeywordForm, semantic; number of keywords (high)
     pub numKeywords: u32,
     pub unknown_FC: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESObjectMISC>() == 0x100);
 const _: () = assert!(core::mem::offset_of!(TESObjectMISC, __vftable) == 0x0);
@@ -3327,6 +3390,7 @@ const _: () = assert!(core::mem::offset_of!(TESObjectMISC, numKeywords) == 0xF8)
 pub struct TESObjectREFRDef__IAliasFunctor {
     /// +0x0 `vtbl:TESObjectREFRDef::IAliasFunctor:0`, rtti
     pub __vftable: *const crate::raw::vtables::TESObjectREFRDef__IAliasFunctor_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(TESObjectREFRDef__IAliasFunctor, __vftable) == 0x0);
 
@@ -3336,6 +3400,7 @@ const _: () = assert!(core::mem::offset_of!(TESObjectREFRDef__IAliasFunctor, __v
 pub struct TESObjectREFRDef__ILinkedReferenceFunctor {
     /// +0x0 `vtbl:TESObjectREFRDef::ILinkedReferenceFunctor:0`, rtti
     pub __vftable: *const crate::raw::vtables::TESObjectREFRDef__ILinkedReferenceFunctor_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(TESObjectREFRDef__ILinkedReferenceFunctor, __vftable) == 0x0);
 
@@ -3395,6 +3460,7 @@ pub struct TESObjectREFRSync__REFRSyncController {
     /// +0x90 `undefined4`, ctor store
     pub field_90: u32,
     pub unknown_94: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESObjectREFRSync__REFRSyncController>() == 0x98);
 const _: () = assert!(core::mem::offset_of!(TESObjectREFRSync__REFRSyncController, __vftable) == 0x0);
@@ -3476,6 +3542,7 @@ pub struct TESObjectSTAT {
     /// +0x7B `undefined1`, ctor store
     pub field_7B: u8,
     pub unknown_7C: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESObjectSTAT>() == 0x80);
 const _: () = assert!(core::mem::offset_of!(TESObjectSTAT, __vftable) == 0x0);
@@ -3578,6 +3645,7 @@ pub struct TESObjectTREE {
     /// +0xC0 `undefined4`, ctor store
     pub field_C0: u32,
     pub unknown_C4: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESObjectTREE>() == 0xC8);
 const _: () = assert!(core::mem::offset_of!(TESObjectTREE, __vftable) == 0x0);
@@ -3713,6 +3781,7 @@ pub struct TESObjectWEAP {
     /// +0x160 `undefined4`, base TESDescription
     pub field_160: u32,
     pub unknown_164: [u8; 188],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESObjectWEAP>() == 0x220);
 const _: () = assert!(core::mem::offset_of!(TESObjectWEAP, __vftable) == 0x0);
@@ -3803,6 +3872,7 @@ pub struct TESPackage {
     pub field_D8: u32,
     /// +0xDC `undefined4`, ctor store
     pub field_DC: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESPackage>() == 0xE0);
 const _: () = assert!(core::mem::offset_of!(TESPackage, __vftable) == 0x0);
@@ -3830,6 +3900,7 @@ const _: () = assert!(core::mem::offset_of!(TESPackage, field_DC) == 0xDC);
 pub struct TESPackageData {
     /// +0x0 `vtbl:TESPackageData:0`, rtti
     pub __vftable: *const crate::raw::vtables::TESPackageData_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESPackageData>() == 0x8);
 const _: () = assert!(core::mem::offset_of!(TESPackageData, __vftable) == 0x0);
@@ -3846,6 +3917,7 @@ pub struct TESPatrolPackageData {
     /// +0x9 `undefined1`, ctor store
     pub field_9: u8,
     pub unknown_A: [u8; 6],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESPatrolPackageData>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(TESPatrolPackageData, __vftable) == 0x0);
@@ -3866,6 +3938,7 @@ pub struct TESProduceForm {
     /// +0x18 `undefined4`, ctor store
     pub field_18: u32,
     pub unknown_1C: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESProduceForm>() == 0x20);
 const _: () = assert!(core::mem::offset_of!(TESProduceForm, __vftable) == 0x0);
@@ -3883,6 +3956,7 @@ pub struct TESQualityForm {
     /// +0x8 `undefined4`, ctor store
     pub field_8: u32,
     pub unknown_C: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESQualityForm>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(TESQualityForm, __vftable) == 0x0);
@@ -3994,6 +4068,7 @@ pub struct TESQuest {
     /// +0x260 `undefined4`, ctor store
     pub field_260: u32,
     pub unknown_264: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESQuest>() == 0x268);
 const _: () = assert!(core::mem::offset_of!(TESQuest, __vftable) == 0x0);
@@ -4101,6 +4176,7 @@ pub struct TESRace {
     /// +0x2E0 `undefined8`, ctor store
     pub field_2E0: u64,
     pub unknown_2E8: [u8; 464],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESRace>() == 0x4B8);
 const _: () = assert!(core::mem::offset_of!(TESRace, __vftable) == 0x0);
@@ -4139,6 +4215,7 @@ pub struct TESRaceForm {
     pub __vftable: *const crate::raw::vtables::TESRaceForm_vtable,
     /// +0x8 `undefined8`, ctor store
     pub field_8: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESRaceForm>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(TESRaceForm, __vftable) == 0x0);
@@ -4158,6 +4235,7 @@ pub struct TESReactionForm {
     /// +0x18 `undefined1`, ctor store
     pub field_18: u8,
     pub unknown_19: [u8; 7],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESReactionForm>() == 0x20);
 const _: () = assert!(core::mem::offset_of!(TESReactionForm, __vftable) == 0x0);
@@ -4196,6 +4274,7 @@ pub struct TESRegion {
     /// +0x48 `undefined4`, ctor store
     pub field_48: u32,
     pub unknown_4C: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESRegion>() == 0x50);
 const _: () = assert!(core::mem::offset_of!(TESRegion, __vftable) == 0x0);
@@ -4224,6 +4303,7 @@ pub struct TESRegionData {
     /// +0xA `undefined1`, ctor store
     pub field_A: u8,
     pub unknown_B: [u8; 5],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESRegionData>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(TESRegionData, __vftable) == 0x0);
@@ -4247,6 +4327,7 @@ pub struct TESRegionDataGrass {
     pub unknown_B: [u8; 5],
     /// +0x10 `undefined8`, ctor store
     pub field_10: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(TESRegionDataGrass, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(TESRegionDataGrass, field_8) == 0x8);
@@ -4270,6 +4351,7 @@ pub struct TESRegionDataLandscape {
     pub unknown_B: [u8; 5],
     /// +0x10 `undefined8`, ctor store
     pub field_10: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESRegionDataLandscape>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(TESRegionDataLandscape, __vftable) == 0x0);
@@ -4286,6 +4368,7 @@ pub struct TESRegionDataManager {
     pub __vftable: *const crate::raw::vtables::TESRegionDataManager_vtable,
     /// +0x8 `undefined8`, ctor store
     pub field_8: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESRegionDataManager>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(TESRegionDataManager, __vftable) == 0x0);
@@ -4305,6 +4388,7 @@ pub struct TESRegionDataMap {
     /// +0xA `undefined1`, base TESRegionData
     pub field_A: u8,
     pub unknown_B: [u8; 13],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESRegionDataMap>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(TESRegionDataMap, __vftable) == 0x0);
@@ -4331,6 +4415,7 @@ pub struct TESRegionDataObjects {
     /// +0x18 `undefined1`, ctor store
     pub field_18: u8,
     pub unknown_19: [u8; 7],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(TESRegionDataObjects, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(TESRegionDataObjects, field_8) == 0x8);
@@ -4359,6 +4444,7 @@ pub struct TESRegionDataSound {
     /// +0x28 `undefined4`, ctor store
     pub field_28: u32,
     pub unknown_2C: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESRegionDataSound>() == 0x30);
 const _: () = assert!(core::mem::offset_of!(TESRegionDataSound, __vftable) == 0x0);
@@ -4382,6 +4468,7 @@ pub struct TESRegionDataWeather {
     /// +0xA `undefined1`, base TESRegionData
     pub field_A: u8,
     pub unknown_B: [u8; 21],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESRegionDataWeather>() == 0x20);
 const _: () = assert!(core::mem::offset_of!(TESRegionDataWeather, __vftable) == 0x0);
@@ -4400,6 +4487,7 @@ pub struct TESRegionGrassObject {
     pub field_8: u64,
     /// +0x10 `undefined8`, ctor store
     pub field_10: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(TESRegionGrassObject, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(TESRegionGrassObject, field_8) == 0x8);
@@ -4421,6 +4509,7 @@ pub struct TESRegionGrassObjectList {
     pub unknown_19: [u8; 3],
     /// +0x1C `undefined4`, ctor store
     pub field_1C: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(TESRegionGrassObjectList, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(TESRegionGrassObjectList, field_8) == 0x8);
@@ -4442,6 +4531,7 @@ pub struct TESRegionList {
     /// +0x18 `undefined1`, ctor store
     pub field_18: u8,
     pub unknown_19: [u8; 7],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESRegionList>() == 0x20);
 const _: () = assert!(core::mem::offset_of!(TESRegionList, __vftable) == 0x0);
@@ -4455,6 +4545,7 @@ const _: () = assert!(core::mem::offset_of!(TESRegionList, field_18) == 0x18);
 pub struct TESRegionNoiseFunction {
     /// +0x0 `vtbl:TESRegionNoiseFunction:0`, rtti
     pub __vftable: *const crate::raw::vtables::TESRegionNoiseFunction_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(TESRegionNoiseFunction, __vftable) == 0x0);
 
@@ -4505,6 +4596,7 @@ pub struct TESRegionObject {
     pub field_40: u64,
     /// +0x48 `undefined8`, ctor store
     pub field_48: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(TESRegionObject, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(TESRegionObject, field_8) == 0x8);
@@ -4533,6 +4625,7 @@ const _: () = assert!(core::mem::offset_of!(TESRegionObject, field_48) == 0x48);
 pub struct TESRegionObjectBase {
     /// +0x0 `vtbl:TESRegionObjectBase:0`, rtti
     pub __vftable: *const crate::raw::vtables::TESRegionObjectBase_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESRegionObjectBase>() == 0x8);
 const _: () = assert!(core::mem::offset_of!(TESRegionObjectBase, __vftable) == 0x0);
@@ -4553,6 +4646,7 @@ pub struct TESRegionObjectList {
     pub unknown_19: [u8; 3],
     /// +0x1C `undefined4`, ctor store
     pub field_1C: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESRegionObjectList>() == 0x20);
 const _: () = assert!(core::mem::offset_of!(TESRegionObjectList, __vftable) == 0x0);
@@ -4616,6 +4710,7 @@ pub struct TESShout {
     /// +0xA0 `undefined4`, ctor store
     pub field_A0: u32,
     pub unknown_A4: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESShout>() == 0xA8);
 const _: () = assert!(core::mem::offset_of!(TESShout, __vftable) == 0x0);
@@ -4711,6 +4806,7 @@ pub struct TESSoulGem {
     /// +0xF8 `undefined4`, base BGSKeywordForm, semantic; number of keywords (high)
     pub numKeywords: u32,
     pub unknown_FC: [u8; 20],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESSoulGem>() == 0x110);
 const _: () = assert!(core::mem::offset_of!(TESSoulGem, __vftable) == 0x0);
@@ -4774,6 +4870,7 @@ pub struct TESSound {
     pub unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, ctor store
     pub field_30: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESSound>() == 0x38);
 const _: () = assert!(core::mem::offset_of!(TESSound, __vftable) == 0x0);
@@ -4799,6 +4896,7 @@ pub struct TESSpellList {
     pub __vftable: *const crate::raw::vtables::TESSpellList_vtable,
     /// +0x8 `undefined8`, ctor store
     pub field_8: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESSpellList>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(TESSpellList, __vftable) == 0x0);
@@ -4812,6 +4910,7 @@ pub struct TESTexture {
     /// +0x0 `vtbl:TESTexture:0`, rtti
     pub __vftable: *const crate::raw::vtables::TESTexture_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESTexture>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(TESTexture, __vftable) == 0x0);
@@ -4823,6 +4922,7 @@ const _: () = assert!(core::mem::offset_of!(TESTexture, __vftable) == 0x0);
 pub struct TESTexture1024 {
     /// +0x0 `vtbl:TESTexture1024:0`, rtti
     pub __vftable: *const crate::raw::vtables::TESTexture1024_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(TESTexture1024, __vftable) == 0x0);
 
@@ -4866,6 +4966,7 @@ pub struct TESTopic {
     pub field_50: u64,
     /// +0x58 `undefined8`, ctor store
     pub field_58: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESTopic>() == 0x60);
 const _: () = assert!(core::mem::offset_of!(TESTopic, __vftable) == 0x0);
@@ -4917,6 +5018,7 @@ pub struct TESTopicInfo {
     /// +0x44 `undefined8`, ctor store
     pub field_44: u64,
     pub unknown_4C: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESTopicInfo>() == 0x50);
 const _: () = assert!(core::mem::offset_of!(TESTopicInfo, __vftable) == 0x0);
@@ -4956,6 +5058,7 @@ pub struct TESTrapListener {
     /// +0x38 `undefined1`, ctor store
     pub field_38: u8,
     pub unknown_39: [u8; 7],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESTrapListener>() == 0x40);
 const _: () = assert!(core::mem::offset_of!(TESTrapListener, __vftable) == 0x0);
@@ -4977,6 +5080,7 @@ pub struct TESUseItemPackageData {
     pub __vftable: *const crate::raw::vtables::TESUseItemPackageData_vtable,
     /// +0x8 `undefined8`, ctor store
     pub field_8: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESUseItemPackageData>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(TESUseItemPackageData, __vftable) == 0x0);
@@ -5018,6 +5122,7 @@ pub struct TESUseWeaponPackageData {
     pub unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, ctor store
     pub field_30: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESUseWeaponPackageData>() == 0x38);
 const _: () = assert!(core::mem::offset_of!(TESUseWeaponPackageData, __vftable) == 0x0);
@@ -5046,6 +5151,7 @@ pub struct TESValueForm {
     /// +0x8 `undefined4`, ctor store
     pub field_8: u32,
     pub unknown_C: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESValueForm>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(TESValueForm, __vftable) == 0x0);
@@ -5072,6 +5178,7 @@ pub struct TESWaterDisplacement {
     pub unknown_21: [u8; 7],
     /// +0x28 `undefined8`, ctor store
     pub field_28: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESWaterDisplacement>() == 0x30);
 const _: () = assert!(core::mem::offset_of!(TESWaterDisplacement, __vftable) == 0x0);
@@ -5186,6 +5293,7 @@ pub struct TESWaterForm {
     pub field_258: f32,
     /// +0x25C `float`, ctor store
     pub field_25C: f32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESWaterForm>() == 0x260);
 const _: () = assert!(core::mem::offset_of!(TESWaterForm, __vftable) == 0x0);
@@ -5262,6 +5370,7 @@ pub struct TESWaterNormals {
     pub field_40: u64,
     /// +0x48 `undefined8`, ctor store
     pub field_48: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESWaterNormals>() == 0x50);
 const _: () = assert!(core::mem::offset_of!(TESWaterNormals, __vftable) == 0x0);
@@ -5303,6 +5412,7 @@ pub struct TESWaterObject {
     /// +0x70 `undefined1`, ctor store
     pub field_70: u8,
     pub unknown_71: [u8; 7],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESWaterObject>() == 0x78);
 const _: () = assert!(core::mem::offset_of!(TESWaterObject, __vftable) == 0x0);
@@ -5369,6 +5479,7 @@ pub struct TESWaterReflections {
     /// +0x80 `undefined1`, ctor store
     pub field_80: u8,
     pub unknown_81: [u8; 7],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESWaterReflections>() == 0x88);
 const _: () = assert!(core::mem::offset_of!(TESWaterReflections, __vftable) == 0x0);
@@ -5518,6 +5629,7 @@ pub struct TESWeather {
     pub field_8C8: u64,
     /// +0x8D0 `undefined8`, ctor store
     pub field_8D0: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESWeather>() == 0x8D8);
 const _: () = assert!(core::mem::offset_of!(TESWeather, __vftable) == 0x0);
@@ -5583,6 +5695,7 @@ const _: () = assert!(core::mem::offset_of!(TESWeather, field_8D0) == 0x8D0);
 pub struct TESWeather__SkyStaticFunctor {
     /// +0x0 `vtbl:TESWeather::SkyStaticFunctor:0`, rtti
     pub __vftable: *const crate::raw::vtables::TESWeather__SkyStaticFunctor_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(TESWeather__SkyStaticFunctor, __vftable) == 0x0);
 
@@ -5596,6 +5709,7 @@ pub struct TESWeightForm {
     /// +0x8 `undefined4`, ctor store
     pub field_8: u32,
     pub unknown_C: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESWeightForm>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(TESWeightForm, __vftable) == 0x0);
@@ -5615,6 +5729,7 @@ pub struct TESWindListener {
     pub unknown_D: [u8; 3],
     /// +0x10 `undefined8`, base hkpEntityListener
     pub field_10: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESWindListener>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(TESWindListener, __vftable) == 0x0);
@@ -5651,6 +5766,7 @@ pub struct TESWordOfPower {
     /// +0x32 `undefined2`, base TESFullName
     pub field_32: u16,
     pub unknown_34: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESWordOfPower>() == 0x38);
 const _: () = assert!(core::mem::offset_of!(TESWordOfPower, __vftable) == 0x0);
@@ -5820,6 +5936,7 @@ pub struct TESWorldSpace {
     pub unknown_34C: [u8; 4],
     /// +0x350 `undefined8`, ctor store
     pub field_350: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESWorldSpace>() == 0x358);
 const _: () = assert!(core::mem::offset_of!(TESWorldSpace, __vftable) == 0x0);
@@ -5895,6 +6012,7 @@ const _: () = assert!(core::mem::offset_of!(TESWorldSpace, field_350) == 0x350);
 pub struct _anon_7816FE07__TESObjectREFRFactory {
     /// +0x0 `vtbl:_anon_7816FE07::TESObjectREFRFactory:0`, rtti
     pub __vftable: *const crate::raw::vtables::_anon_7816FE07__TESObjectREFRFactory_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(_anon_7816FE07__TESObjectREFRFactory, __vftable) == 0x0);
 

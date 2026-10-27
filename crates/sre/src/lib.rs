@@ -4,6 +4,22 @@
 
 use core::sync::atomic::{AtomicUsize, Ordering};
 
+/// The last field of every class: the engine writes its objects through any pointer it is handed,
+/// so a reference to one must not promise the compiler that the memory behind it stays unchanged.
+/// This zero-sized cell makes every class interior-mutable, which drops that promise.
+#[derive(Default)]
+pub struct Engine(core::cell::UnsafeCell<()>);
+
+impl Engine {
+    #[must_use]
+    pub const fn new() -> Self {
+        Self(core::cell::UnsafeCell::new(()))
+    }
+}
+
+// SAFETY: the marker holds no data; a class's own fields decide whether it is Send or Sync.
+unsafe impl Sync for Engine {}
+
 /// An Address Library id of the running game, resolved on first use and cached.
 #[doc(hidden)]
 pub struct Relocation {

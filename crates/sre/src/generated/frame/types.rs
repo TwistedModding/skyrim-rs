@@ -25,6 +25,7 @@ pub struct AutoVanityState {
     pub yaw: f32,
     /// +0x24 `undefined4`, semantic; tail padding (size 0x28, 8-aligned) (high)
     pub pad24: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<AutoVanityState>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(AutoVanityState, __vftable) == 0x0);
@@ -67,6 +68,7 @@ pub struct BSBatchRenderer {
     pub field_F8: u64,
     /// +0x100 `undefined8`, ctor store
     pub field_100: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSBatchRenderer>() == 0x108);
 const _: () = assert!(core::mem::offset_of!(BSBatchRenderer, __vftable) == 0x0);
@@ -122,6 +124,7 @@ pub struct BSEffectShaderMaterial {
     /// +0x80 `undefined1`, semantic; 3 by default (medium)
     pub textureClampMode: u8,
     pub unknown_81: [u8; 7],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSEffectShaderMaterial>() == 0x88);
 const _: () = assert!(core::mem::offset_of!(BSEffectShaderMaterial, __vftable) == 0x0);
@@ -192,6 +195,7 @@ pub struct BSEffectShaderProperty {
     pub field_88: u64,
     /// +0x90 `undefined1`, semantic; pass list released by the dtor (low)
     pub extraPasses: [u8; 16],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSEffectShaderProperty>() == 0xA0);
 const _: () = assert!(core::mem::offset_of!(BSEffectShaderProperty, __vftable) == 0x0);
@@ -296,6 +300,7 @@ pub struct BSFadeNode {
     /// +0x154 `u8`, semantic; the depth pre-pass (mode 0xc) may draw this subtree while it is fading (bEnableStippleFade) (medium)
     pub stippleFade: u8,
     pub unknown_155: [u8; 3],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSFadeNode>() == 0x158);
 const _: () = assert!(core::mem::offset_of!(BSFadeNode, __vftable) == 0x0);
@@ -401,6 +406,7 @@ pub struct BSLightingShader {
     /// +0xF0 `undefined1`, ctor store
     pub field_F0: u8,
     pub unknown_F1: [u8; 7],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSLightingShader>() == 0xF8);
 const _: () = assert!(core::mem::offset_of!(BSLightingShader, __vftable) == 0x0);
@@ -485,6 +491,7 @@ pub struct BSLightingShaderMaterialBase {
     /// +0x98 `undefined4`, semantic; spin lock of slot 8 (medium)
     pub textureLoadLock: u32,
     pub unknown_9C: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSLightingShaderMaterialBase>() == 0xA0);
 const _: () = assert!(core::mem::offset_of!(BSLightingShaderMaterialBase, __vftable) == 0x0);
@@ -548,6 +555,7 @@ pub struct BSShader {
     pub field_80: u64,
     /// +0x88 `undefined8`, ctor store
     pub field_88: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSShader>() == 0x90);
 const _: () = assert!(core::mem::offset_of!(BSShader, __vftable) == 0x0);
@@ -585,6 +593,7 @@ pub struct BSShaderMaterial {
     /// +0x2C `undefined4`, semantic; cached hash (0xffffffff = not computed) (low)
     pub hash: u32,
     pub unknown_30: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSShaderMaterial>() == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSShaderMaterial, __vftable) == 0x0);
@@ -608,6 +617,7 @@ pub struct BSShaderTextureSet {
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined1`, semantic, runtime; BSFixedString[9]; slot i at +0x10 + 8*i: 0 diffuse, 1 normal, 2 glow/rim/soft, 3 height, 4 environment (cube), 5 environment mask, 6 multilayer inner / facegen extra, 7 specular / back lighting, 8 not read by the lighting materials (high)
     pub texturePaths: [u8; 72],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSShaderTextureSet>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSShaderTextureSet, __vftable) == 0x0);
@@ -630,6 +640,7 @@ pub struct BSXFlags {
     /// +0x18 `undefined4`, semantic; the BSX flag word (the inherited integer value); see the flag rows (high)
     pub flags: u32,
     pub unknown_1C: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSXFlags>() == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSXFlags, __vftable) == 0x0);
@@ -743,6 +754,7 @@ pub struct BleedoutCameraState {
     pub followHeading: u8,
     /// +0x135 `undefined1`, semantic; tail padding (size 0x138) (high)
     pub pad135: [u8; 3],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BleedoutCameraState>() == 0x138);
 const _: () = assert!(core::mem::offset_of!(BleedoutCameraState, __vftable) == 0x0);
@@ -807,6 +819,7 @@ pub struct CubeMapRecord {
     pub faceRTV: [u8; 48],
     /// +0x38 `pointer`, semantic; TextureCube SRV (high)
     pub srv: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CubeMapRecord>() == 0x40);
 const _: () = assert!(core::mem::offset_of!(CubeMapRecord, texture) == 0x0);
@@ -831,6 +844,7 @@ pub struct DepthStencilProperties {
     /// +0xE `undefined1`, semantic; 16-bit depth (R16/D16) (high)
     pub use16BitDepth: u8,
     pub unknown_F: [u8; 1],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<DepthStencilProperties>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(DepthStencilProperties, width) == 0x0);
@@ -855,6 +869,7 @@ pub struct DepthStencilRecord {
     pub srv: *mut c_void,
     /// +0x90 `pointer`, semantic; stencil SRV, only with stencil (high)
     pub stencilSRV: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<DepthStencilRecord>() == 0x98);
 const _: () = assert!(core::mem::offset_of!(DepthStencilRecord, texture) == 0x0);
@@ -963,6 +978,7 @@ pub struct DragonCameraState {
     pub dollyTo: [u8; 8],
     /// +0x10C `undefined4`, semantic; ObjectRefHandle (low)
     pub targetHandle: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<DragonCameraState>() == 0x110);
 const _: () = assert!(core::mem::offset_of!(DragonCameraState, __vftable) == 0x0);
@@ -1073,6 +1089,7 @@ pub struct FirstPersonState {
     pub togglePOVPressed: u8,
     /// +0x8D `undefined1`, semantic; tail padding (size 0x90) (high)
     pub pad8D: [u8; 3],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<FirstPersonState>() == 0x90);
 const _: () = assert!(core::mem::offset_of!(FirstPersonState, __vftable) == 0x0);
@@ -1149,6 +1166,7 @@ pub struct FrameState {
     /// +0x12E `u8`, semantic; set by the DynamicResolution console command when a value != 1 was typed: auto adjustment stops (high)
     pub manualRatio: u8,
     pub unknown_12F: [u8; 1],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<FrameState>() == 0x130);
 const _: () = assert!(core::mem::offset_of!(FrameState, screenWidth) == 0x24);
@@ -1205,6 +1223,7 @@ pub struct FreeCameraState {
     pub run: u8,
     /// +0x4F `undefined1`, semantic; toggle: move ignoring pitch (medium)
     pub horizontalMove: u8,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<FreeCameraState>() == 0x50);
 const _: () = assert!(core::mem::offset_of!(FreeCameraState, __vftable) == 0x0);
@@ -1259,6 +1278,7 @@ pub struct FurnitureCameraState {
     pub savedAutoVanityAllowed: u8,
     /// +0x3F `undefined1`, semantic; tail padding (size 0x40) (high)
     pub pad3F: u8,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<FurnitureCameraState>() == 0x40);
 const _: () = assert!(core::mem::offset_of!(FurnitureCameraState, __vftable) == 0x0);
@@ -1365,6 +1385,7 @@ pub struct HorseCameraState {
     pub turning: u8,
     /// +0xF1 `undefined1`, semantic; tail padding (size 0xf8) (high)
     pub padF1: [u8; 7],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<HorseCameraState>() == 0xF8);
 const _: () = assert!(core::mem::offset_of!(HorseCameraState, __vftable) == 0x0);
@@ -1488,6 +1509,7 @@ pub struct ImageSpaceEffectDepthOfField {
     /// +0x148 `undefined1`, ctor store
     pub field_148: u8,
     pub unknown_149: [u8; 15],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ImageSpaceEffectDepthOfField>() == 0x158);
 const _: () = assert!(core::mem::offset_of!(ImageSpaceEffectDepthOfField, __vftable) == 0x0);
@@ -1579,6 +1601,7 @@ pub struct ImageSpaceEffectHDR {
     /// +0x88 `undefined1`, base ImageSpaceEffect
     pub field_88: u8,
     pub unknown_89: [u8; 7],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ImageSpaceEffectHDR>() == 0x90);
 const _: () = assert!(core::mem::offset_of!(ImageSpaceEffectHDR, __vftable) == 0x0);
@@ -1622,6 +1645,7 @@ pub struct ImageSpaceState {
     /// +0x1F0 `undefined8`, semantic; object whose +0x18 byte enables the TAA jitter (medium)
     pub taaSettings: u64,
     pub unknown_1F8: [u8; 40],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ImageSpaceState>() == 0x220);
 const _: () = assert!(core::mem::offset_of!(ImageSpaceState, effects) == 0x20);
@@ -1649,6 +1673,7 @@ pub struct IronSightsState {
     pub pad1c: u32,
     /// +0x20 `ptr:NiAVObject`, semantic; node whose world rotation (+0x7c) and translation (+0xa0) are the pose (high)
     pub sightNode: *mut crate::NiAVObject,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<IronSightsState>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(IronSightsState, __vftable) == 0x0);
@@ -1686,6 +1711,7 @@ pub struct NiAlphaProperty {
     /// +0x32 `undefined1`, semantic; alpha test threshold (0..255) (high)
     pub alphaTestRef: u8,
     pub unknown_33: [u8; 5],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiAlphaProperty>() == 0x38);
 const _: () = assert!(core::mem::offset_of!(NiAlphaProperty, __vftable) == 0x0);
@@ -1784,6 +1810,7 @@ pub struct NiCamera {
     pub portBottom: f32,
     /// +0x184 `float`, semantic; fov / reference FOV, written only when the 'set LOD adjust' flag is passed (world camera: fDefaultFOV:Display 80) (high)
     pub lodAdjust: f32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiCamera>() == 0x188);
 const _: () = assert!(core::mem::offset_of!(NiCamera, __vftable) == 0x0);
@@ -1840,6 +1867,7 @@ pub struct NiExtraData {
     pub unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, semantic; the key the owner's sorted array is ordered by (high)
     pub name: crate::BSFixedString,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiExtraData>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(NiExtraData, __vftable) == 0x0);
@@ -1862,6 +1890,7 @@ pub struct NiIntegerExtraData {
     /// +0x18 `undefined4`, semantic; the integer (high)
     pub value: u32,
     pub unknown_1C: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiIntegerExtraData>() == 0x20);
 const _: () = assert!(core::mem::offset_of!(NiIntegerExtraData, __vftable) == 0x0);
@@ -1891,6 +1920,7 @@ pub struct NiObjectNET {
     /// +0x2A `undefined2`, semantic; allocated slots of the extra data array (high)
     pub extraDataCapacity: u16,
     pub unknown_2C: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiObjectNET>() == 0x30);
 const _: () = assert!(core::mem::offset_of!(NiObjectNET, __vftable) == 0x0);
@@ -1916,6 +1946,7 @@ pub struct NiStringExtraData {
     pub name: crate::BSFixedString,
     /// +0x18 `class:BSFixedString`, semantic; the string value; *(char**)(this+0x18) is the C string (high)
     pub value: crate::BSFixedString,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiStringExtraData>() == 0x20);
 const _: () = assert!(core::mem::offset_of!(NiStringExtraData, __vftable) == 0x0);
@@ -1995,6 +2026,7 @@ pub struct PlayerCamera {
     pub popOnAIDrivenEnd: u8,
     /// +0x166 `undefined1`, semantic; tail padding to the 8-aligned size 0x168 (high)
     pub pad_166: [u8; 2],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<PlayerCamera>() == 0x168);
 const _: () = assert!(core::mem::offset_of!(PlayerCamera, __vftable) == 0x0);
@@ -2065,6 +2097,7 @@ pub struct PlayerCameraTransitionState {
     pub updateTo: u8,
     /// +0x3E `undefined2`, semantic; tail padding (size 0x40) (high)
     pub pad3E: u16,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<PlayerCameraTransitionState>() == 0x40);
 const _: () = assert!(core::mem::offset_of!(PlayerCameraTransitionState, __vftable) == 0x0);
@@ -2093,6 +2126,7 @@ pub struct PlayerInputHandler {
     pub enabled: u8,
     /// +0x9 `undefined1`, semantic; tail padding after enabled (+0x8) to 0x10 (high)
     pub pad_9: [u8; 7],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<PlayerInputHandler>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(PlayerInputHandler, __vftable) == 0x0);
@@ -2132,6 +2166,7 @@ pub struct RenderPass {
     /// +0x40 `undefined4`, semantic; pool the pass came from (TLS +0x9f4 at alloc); the release drain returns it there (high)
     pub poolIndex: u32,
     pub unknown_44: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<RenderPass>() == 0x48);
 const _: () = assert!(core::mem::offset_of!(RenderPass, shader) == 0x0);
@@ -2179,6 +2214,7 @@ pub struct RenderStateCache {
     /// +0x70 `float`, semantic; D3D11_VIEWPORT applied with RSSetViewports when dirty bit 2 (high)
     pub viewport: [u8; 24],
     pub unknown_88: [u8; 696],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<RenderStateCache>() == 0x340);
 const _: () = assert!(core::mem::offset_of!(RenderStateCache, dirty) == 0x0);
@@ -2206,6 +2242,7 @@ pub struct RenderTargetManager {
     /// +0xD70 `undefined1`, semantic; cube properties of 0xc {width, height, format} (high)
     pub cubeMapProperties: [u8; 24],
     pub unknown_D88: [u8; 24],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<RenderTargetManager>() == 0xDA0);
 const _: () = assert!(core::mem::offset_of!(RenderTargetManager, renderTargetProperties) == 0x0);
@@ -2237,6 +2274,7 @@ pub struct RenderTargetProperties {
     /// +0x18 `undefined2`, semantic; 1 in every call, 0x101 for id 0x4c; not read by the creator (low)
     pub unknown18: u16,
     pub unknown_1A: [u8; 2],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<RenderTargetProperties>() == 0x1C);
 const _: () = assert!(core::mem::offset_of!(RenderTargetProperties, width) == 0x0);
@@ -2266,6 +2304,7 @@ pub struct RenderTargetRecord {
     pub copySRV: *mut c_void,
     /// +0x28 `pointer`, semantic; UAV (high)
     pub uav: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<RenderTargetRecord>() == 0x30);
 const _: () = assert!(core::mem::offset_of!(RenderTargetRecord, texture) == 0x0);
@@ -2302,6 +2341,7 @@ pub struct RenderWindow {
     pub unknown_40: [u8; 8],
     /// +0x48 `pointer`, semantic; copied into render target 0's UAV after a resize (low)
     pub backBufferUAV: *mut c_void,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<RenderWindow>() == 0x50);
 const _: () = assert!(core::mem::offset_of!(RenderWindow, hwnd) == 0x0);
@@ -2378,6 +2418,7 @@ pub struct Renderer {
     pub windowClassName: u64,
     /// +0x2820 `undefined8`, semantic; HINSTANCE (high)
     pub hInstance: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<Renderer>() == 0x2828);
 const _: () = assert!(core::mem::offset_of!(Renderer, onResizeCallback) == 0x8);
@@ -2609,6 +2650,7 @@ pub struct Sky {
     /// +0x2C0 `undefined4`, ctor store
     pub field_2C0: u32,
     pub unknown_2C4: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<Sky>() == 0x2C8);
 const _: () = assert!(core::mem::offset_of!(Sky, __vftable) == 0x0);
@@ -2737,6 +2779,7 @@ pub struct Sun {
     pub unknown_4D: [u8; 3],
     /// +0x50 `ptr:BSShaderAccumulator`, semantic;  (high)
     pub accumulator: *mut crate::BSShaderAccumulator,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<Sun>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(Sun, __vftable) == 0x0);
@@ -2770,6 +2813,7 @@ pub struct TESCameraState {
     pub id: u32,
     /// +0x1C `undefined1`, semantic; tail padding after the 32-bit id (+0x18) to 0x20 (high)
     pub pad_1c: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESCameraState>() == 0x20);
 const _: () = assert!(core::mem::offset_of!(TESCameraState, __vftable) == 0x0);
@@ -2859,6 +2903,7 @@ pub struct ThirdPersonState {
     pub togglePOVPressed: u8,
     /// +0xE3 `undefined1`, semantic; tail padding (size 0xe8) (high)
     pub padE3: [u8; 5],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ThirdPersonState>() == 0xE8);
 const _: () = assert!(core::mem::offset_of!(ThirdPersonState, __vftable) == 0x0);
@@ -2933,6 +2978,7 @@ pub struct TweenMenuCameraState {
     pub closing: u8,
     /// +0x4D `undefined1`, semantic; tail padding (size 0x50) (high)
     pub pad4D: [u8; 3],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TweenMenuCameraState>() == 0x50);
 const _: () = assert!(core::mem::offset_of!(TweenMenuCameraState, __vftable) == 0x0);
@@ -2972,6 +3018,7 @@ pub struct VATSCameraState {
     pub rotationEuler: [u8; 12],
     /// +0x2C `float`, semantic, runtime; camera position (slot 5 GetTranslation) (high)
     pub position: [u8; 12],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<VATSCameraState>() == 0x38);
 const _: () = assert!(core::mem::offset_of!(VATSCameraState, __vftable) == 0x0);

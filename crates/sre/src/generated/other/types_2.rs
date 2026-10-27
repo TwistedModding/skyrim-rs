@@ -3,6 +3,190 @@
 
 use core::ffi::c_void;
 
+/// `Json::StreamWriter`: size 0xE0 (exact, medium).
+/// Evidence: lower bound Json::BuiltStyledStreamWriter (size 0xE0 at 0x0) adds no fields or bases meets upper bound derived Json::BuiltStyledStreamWriter size 0xE0 at 0x0.
+#[repr(C)]
+pub struct Json__StreamWriter {
+    /// +0x0 `vtbl:Json::StreamWriter:0`, rtti
+    pub __vftable: *const crate::raw::vtables::Json__StreamWriter_vtable,
+    pub unknown_8: [u8; 32],
+    /// +0x28 `undefined1`, ctor store
+    pub field_28: u8,
+    pub unknown_29: [u8; 15],
+    /// +0x38 `undefined8`, ctor store
+    pub field_38: u64,
+    /// +0x40 `undefined8`, ctor store
+    pub field_40: u64,
+    pub unknown_48: [u8; 8],
+    /// +0x50 `undefined1`, ctor store
+    pub field_50: u8,
+    pub unknown_51: [u8; 15],
+    /// +0x60 `undefined8`, ctor store
+    pub field_60: u64,
+    /// +0x68 `undefined8`, ctor store
+    pub field_68: u64,
+    pub unknown_70: [u8; 8],
+    /// +0x78 `undefined1`, ctor store
+    pub field_78: u8,
+    pub unknown_79: [u8; 15],
+    /// +0x88 `undefined8`, ctor store
+    pub field_88: u64,
+    /// +0x90 `undefined8`, ctor store
+    pub field_90: u64,
+    /// +0x98 `undefined1`, ctor store
+    pub field_98: u8,
+    pub unknown_99: [u8; 15],
+    /// +0xA8 `undefined8`, ctor store
+    pub field_A8: u64,
+    /// +0xB0 `undefined8`, ctor store
+    pub field_B0: u64,
+    /// +0xB8 `undefined1`, ctor store
+    pub field_B8: u8,
+    pub unknown_B9: [u8; 15],
+    /// +0xC8 `undefined8`, ctor store
+    pub field_C8: u64,
+    /// +0xD0 `undefined8`, ctor store
+    pub field_D0: u64,
+    pub unknown_D8: [u8; 8],
+    pub __engine: crate::Engine,
+}
+const _: () = assert!(size_of::<Json__StreamWriter>() == 0xE0);
+const _: () = assert!(core::mem::offset_of!(Json__StreamWriter, __vftable) == 0x0);
+const _: () = assert!(core::mem::offset_of!(Json__StreamWriter, field_28) == 0x28);
+const _: () = assert!(core::mem::offset_of!(Json__StreamWriter, field_38) == 0x38);
+const _: () = assert!(core::mem::offset_of!(Json__StreamWriter, field_40) == 0x40);
+const _: () = assert!(core::mem::offset_of!(Json__StreamWriter, field_50) == 0x50);
+const _: () = assert!(core::mem::offset_of!(Json__StreamWriter, field_60) == 0x60);
+const _: () = assert!(core::mem::offset_of!(Json__StreamWriter, field_68) == 0x68);
+const _: () = assert!(core::mem::offset_of!(Json__StreamWriter, field_78) == 0x78);
+const _: () = assert!(core::mem::offset_of!(Json__StreamWriter, field_88) == 0x88);
+const _: () = assert!(core::mem::offset_of!(Json__StreamWriter, field_90) == 0x90);
+const _: () = assert!(core::mem::offset_of!(Json__StreamWriter, field_98) == 0x98);
+const _: () = assert!(core::mem::offset_of!(Json__StreamWriter, field_A8) == 0xA8);
+const _: () = assert!(core::mem::offset_of!(Json__StreamWriter, field_B0) == 0xB0);
+const _: () = assert!(core::mem::offset_of!(Json__StreamWriter, field_B8) == 0xB8);
+const _: () = assert!(core::mem::offset_of!(Json__StreamWriter, field_C8) == 0xC8);
+const _: () = assert!(core::mem::offset_of!(Json__StreamWriter, field_D0) == 0xD0);
+
+/// `Json::StreamWriter::Factory`: size >= 0x8 (lower bound, upper bound 0x10); partial, the struct stops at the lower bound.
+/// Evidence: lower vptr at 0x0; upper first own field of Json::StreamWriterBuilder at 0x10 (soft).
+#[repr(C)]
+pub struct Json__StreamWriter__Factory {
+    /// +0x0 `vtbl:Json::StreamWriter::Factory:0`, rtti
+    pub __vftable: *const crate::raw::vtables::Json__StreamWriter__Factory_vtable,
+    pub __engine: crate::Engine,
+}
+const _: () = assert!(core::mem::offset_of!(Json__StreamWriter__Factory, __vftable) == 0x0);
+
+/// `Json::StreamWriterBuilder`: size >= 0x30 (lower bound); partial, the struct stops at the lower bound; primary base `Json::StreamWriter::Factory`.
+/// Evidence: field field_28.
+/// Bases: `Json::StreamWriter::Factory`@0x0.
+#[repr(C)]
+pub struct Json__StreamWriterBuilder {
+    /// +0x0 `vtbl:Json::StreamWriterBuilder:0`, rtti
+    pub __vftable: *const crate::raw::vtables::Json__StreamWriterBuilder_vtable,
+    pub unknown_8: [u8; 8],
+    /// +0x10 `undefined1`, ctor store
+    pub field_10: u8,
+    pub unknown_11: [u8; 7],
+    /// +0x18 `undefined8`, ctor store
+    pub field_18: u64,
+    /// +0x20 `undefined8`, ctor store
+    pub field_20: u64,
+    /// +0x28 `undefined8`, ctor store
+    pub field_28: u64,
+    pub __engine: crate::Engine,
+}
+const _: () = assert!(core::mem::offset_of!(Json__StreamWriterBuilder, __vftable) == 0x0);
+const _: () = assert!(core::mem::offset_of!(Json__StreamWriterBuilder, field_10) == 0x10);
+const _: () = assert!(core::mem::offset_of!(Json__StreamWriterBuilder, field_18) == 0x18);
+const _: () = assert!(core::mem::offset_of!(Json__StreamWriterBuilder, field_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(Json__StreamWriterBuilder, field_28) == 0x28);
+
+/// `Json::StyledWriter`: size >= 0x8 (lower bound); partial, the struct stops at the lower bound; primary base `Json::Writer`.
+/// Evidence: vptr at 0x0.
+/// Bases: `Json::Writer`@0x0.
+#[repr(C)]
+pub struct Json__StyledWriter {
+    /// +0x0 `vtbl:Json::StyledWriter:0`, rtti
+    pub __vftable: *const crate::raw::vtables::Json__StyledWriter_vtable,
+    pub __engine: crate::Engine,
+}
+const _: () = assert!(core::mem::offset_of!(Json__StyledWriter, __vftable) == 0x0);
+
+/// `Json::Writer`: size >= 0x8 (lower bound); partial, the struct stops at the lower bound.
+/// Evidence: vptr at 0x0.
+#[repr(C)]
+pub struct Json__Writer {
+    /// +0x0 `vtbl:Json::Writer:0`, rtti
+    pub __vftable: *const crate::raw::vtables::Json__Writer_vtable,
+    pub __engine: crate::Engine,
+}
+const _: () = assert!(core::mem::offset_of!(Json__Writer, __vftable) == 0x0);
+
+/// `JumpAnimEventHandler`: size 0x10 (exact, medium); primary base `IHandlerFunctor<Actor,BSFixedStringCI>`.
+/// Evidence: runtime: 0x10 at 1 allocation sites.
+/// Bases: `IHandlerFunctor<Actor,BSFixedStringCI>`@0x0, `BSIntrusiveRefCounted`@0x8.
+#[repr(C)]
+pub struct JumpAnimEventHandler {
+    /// +0x0 `vtbl:JumpAnimEventHandler:0`, rtti
+    pub __vftable: *const crate::raw::vtables::JumpAnimEventHandler_vtable,
+    pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
+}
+const _: () = assert!(size_of::<JumpAnimEventHandler>() == 0x10);
+const _: () = assert!(core::mem::offset_of!(JumpAnimEventHandler, __vftable) == 0x0);
+
+/// `KeywordDispelFunctor`: size >= 0x8 (lower bound); partial, the struct stops at the lower bound; primary base `MagicTarget::ForEachActiveEffectVisitor`.
+/// Evidence: vptr at 0x0.
+/// Bases: `MagicTarget::ForEachActiveEffectVisitor`@0x0.
+#[repr(C)]
+pub struct KeywordDispelFunctor {
+    /// +0x0 `vtbl:KeywordDispelFunctor:0`, rtti
+    pub __vftable: *const crate::raw::vtables::KeywordDispelFunctor_vtable,
+    pub __engine: crate::Engine,
+}
+const _: () = assert!(core::mem::offset_of!(KeywordDispelFunctor, __vftable) == 0x0);
+
+/// `KillActorHandler`: size 0x10 (exact, medium); primary base `IHandlerFunctor<Actor,BSFixedStringCI>`.
+/// Evidence: runtime: 0x10 at 1 allocation sites.
+/// Bases: `IHandlerFunctor<Actor,BSFixedStringCI>`@0x0, `BSIntrusiveRefCounted`@0x8.
+#[repr(C)]
+pub struct KillActorHandler {
+    /// +0x0 `vtbl:KillActorHandler:0`, rtti
+    pub __vftable: *const crate::raw::vtables::KillActorHandler_vtable,
+    pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
+}
+const _: () = assert!(size_of::<KillActorHandler>() == 0x10);
+const _: () = assert!(core::mem::offset_of!(KillActorHandler, __vftable) == 0x0);
+
+/// `KillMoveEndHandler`: size 0x10 (exact, medium); primary base `IHandlerFunctor<Actor,BSFixedStringCI>`.
+/// Evidence: runtime: 0x10 at 1 allocation sites.
+/// Bases: `IHandlerFunctor<Actor,BSFixedStringCI>`@0x0, `BSIntrusiveRefCounted`@0x8.
+#[repr(C)]
+pub struct KillMoveEndHandler {
+    /// +0x0 `vtbl:KillMoveEndHandler:0`, rtti
+    pub __vftable: *const crate::raw::vtables::KillMoveEndHandler_vtable,
+    pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
+}
+const _: () = assert!(size_of::<KillMoveEndHandler>() == 0x10);
+const _: () = assert!(core::mem::offset_of!(KillMoveEndHandler, __vftable) == 0x0);
+
+/// `KillMoveStartHandler`: size 0x10 (exact, medium); primary base `IHandlerFunctor<Actor,BSFixedStringCI>`.
+/// Evidence: runtime: 0x10 at 1 allocation sites.
+/// Bases: `IHandlerFunctor<Actor,BSFixedStringCI>`@0x0, `BSIntrusiveRefCounted`@0x8.
+#[repr(C)]
+pub struct KillMoveStartHandler {
+    /// +0x0 `vtbl:KillMoveStartHandler:0`, rtti
+    pub __vftable: *const crate::raw::vtables::KillMoveStartHandler_vtable,
+    pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
+}
+const _: () = assert!(size_of::<KillMoveStartHandler>() == 0x10);
+const _: () = assert!(core::mem::offset_of!(KillMoveStartHandler, __vftable) == 0x0);
+
 /// `KinectMenu`: size >= 0xC0 (lower bound); partial, the struct stops at the lower bound; primary base `IMenu`.
 /// Evidence: field field_BC.
 /// Bases: `IMenu`@0x0, `FxDelegateHandler`@0x0, `GRefCountBase<FxDelegateHandler,2>`@0x0, `GRefCountBaseStatImpl<GRefCountImpl,2>`@0x0, `GRefCountImpl`@0x0, `GRefCountImplCore`@0x0, `BSTEventSink<MenuOpenCloseEvent>`@0x30.
@@ -121,6 +305,7 @@ pub struct KinectMenu {
     pub unknown_B9: [u8; 3],
     /// +0xBC `undefined4`, base GRefCountImplCore
     pub field_BC: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(KinectMenu, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(KinectMenu, field_8) == 0x8);
@@ -178,6 +363,7 @@ const _: () = assert!(core::mem::offset_of!(KinectMenu, field_BC) == 0xBC);
 pub struct KinectStateChangeData {
     /// +0x0 `vtbl:KinectStateChangeData:0`, rtti
     pub __vftable: *const crate::raw::vtables::KinectStateChangeData_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(KinectStateChangeData, __vftable) == 0x0);
 
@@ -188,6 +374,7 @@ const _: () = assert!(core::mem::offset_of!(KinectStateChangeData, __vftable) ==
 pub struct KinectUserEventData {
     /// +0x0 `vtbl:KinectUserEventData:0`, rtti
     pub __vftable: *const crate::raw::vtables::KinectUserEventData_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(KinectUserEventData, __vftable) == 0x0);
 
@@ -198,6 +385,7 @@ const _: () = assert!(core::mem::offset_of!(KinectUserEventData, __vftable) == 0
 pub struct LargestAreaFunctor {
     /// +0x0 `vtbl:LargestAreaFunctor:0`, rtti
     pub __vftable: *const crate::raw::vtables::LargestAreaFunctor_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(LargestAreaFunctor, __vftable) == 0x0);
 
@@ -209,6 +397,7 @@ pub struct LeftHandSpellCastHandler {
     /// +0x0 `vtbl:LeftHandSpellCastHandler:0`, rtti
     pub __vftable: *const crate::raw::vtables::LeftHandSpellCastHandler_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<LeftHandSpellCastHandler>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(LeftHandSpellCastHandler, __vftable) == 0x0);
@@ -221,6 +410,7 @@ pub struct LeftHandSpellFireHandler {
     /// +0x0 `vtbl:LeftHandSpellFireHandler:0`, rtti
     pub __vftable: *const crate::raw::vtables::LeftHandSpellFireHandler_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<LeftHandSpellFireHandler>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(LeftHandSpellFireHandler, __vftable) == 0x0);
@@ -348,6 +538,7 @@ pub struct LevelUpMenu {
     pub unknown_B9: [u8; 3],
     /// +0xBC `undefined4`, base GRefCountImplCore
     pub field_BC: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(LevelUpMenu, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(LevelUpMenu, field_8) == 0x8);
@@ -458,6 +649,7 @@ pub struct LightEffect {
     pub unknown_8C: [u8; 4],
     /// +0x90 `undefined8`, ctor store
     pub field_90: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<LightEffect>() == 0x98);
 const _: () = assert!(core::mem::offset_of!(LightEffect, __vftable) == 0x0);
@@ -493,6 +685,7 @@ const _: () = assert!(core::mem::offset_of!(LightEffect, field_90) == 0x90);
 pub struct LightEffect__AttachBestLightVisitor {
     /// +0x0 `vtbl:LightEffect::AttachBestLightVisitor:0`, rtti
     pub __vftable: *const crate::raw::vtables::LightEffect__AttachBestLightVisitor_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(LightEffect__AttachBestLightVisitor, __vftable) == 0x0);
 
@@ -539,6 +732,7 @@ pub struct Likes {
     pub field_58: u64,
     /// +0x60 `undefined8`, ctor store
     pub field_60: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(Likes, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(Likes, field_8) == 0x8);
@@ -569,6 +763,7 @@ pub struct LineNode {
     pub field_8: u64,
     /// +0x10 `undefined8`, base SimpleAnimationGraphManagerHolder
     pub field_10: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(LineNode, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(LineNode, field_8) == 0x8);
@@ -581,6 +776,7 @@ const _: () = assert!(core::mem::offset_of!(LineNode, field_10) == 0x10);
 pub struct LipSynchAnimDB__LipAudioInterface {
     /// +0x0 `vtbl:LipSynchAnimDB::LipAudioInterface:0`, rtti
     pub __vftable: *const crate::raw::vtables::LipSynchAnimDB__LipAudioInterface_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(LipSynchAnimDB__LipAudioInterface, __vftable) == 0x0);
 
@@ -592,6 +788,7 @@ pub struct LoadGameDifferentLoadOrderCallBack {
     /// +0x0 `vtbl:LoadGameDifferentLoadOrderCallBack:0`, rtti
     pub __vftable: *const crate::raw::vtables::LoadGameDifferentLoadOrderCallBack_vtable,
     pub unknown_8: [u8; 24],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<LoadGameDifferentLoadOrderCallBack>() == 0x20);
 const _: () = assert!(core::mem::offset_of!(LoadGameDifferentLoadOrderCallBack, __vftable) == 0x0);
@@ -604,6 +801,7 @@ pub struct LoadGameInactiveContentCallBack {
     /// +0x0 `vtbl:LoadGameInactiveContentCallBack:0`, rtti
     pub __vftable: *const crate::raw::vtables::LoadGameInactiveContentCallBack_vtable,
     pub unknown_8: [u8; 96],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<LoadGameInactiveContentCallBack>() == 0x68);
 const _: () = assert!(core::mem::offset_of!(LoadGameInactiveContentCallBack, __vftable) == 0x0);
@@ -615,6 +813,7 @@ const _: () = assert!(core::mem::offset_of!(LoadGameInactiveContentCallBack, __v
 pub struct LoadGameMagicCasterVisitor {
     /// +0x0 `vtbl:LoadGameMagicCasterVisitor:0`, rtti
     pub __vftable: *const crate::raw::vtables::LoadGameMagicCasterVisitor_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(LoadGameMagicCasterVisitor, __vftable) == 0x0);
 
@@ -626,6 +825,7 @@ pub struct LoadGameMissingContentCallBack {
     /// +0x0 `vtbl:LoadGameMissingContentCallBack:0`, rtti
     pub __vftable: *const crate::raw::vtables::LoadGameMissingContentCallBack_vtable,
     pub unknown_8: [u8; 24],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<LoadGameMissingContentCallBack>() == 0x20);
 const _: () = assert!(core::mem::offset_of!(LoadGameMissingContentCallBack, __vftable) == 0x0);
@@ -637,6 +837,7 @@ const _: () = assert!(core::mem::offset_of!(LoadGameMissingContentCallBack, __vf
 pub struct LoadGameMissingContentDownloadCallBack {
     /// +0x0 `vtbl:LoadGameMissingContentDownloadCallBack:0`, rtti
     pub __vftable: *const crate::raw::vtables::LoadGameMissingContentDownloadCallBack_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(LoadGameMissingContentDownloadCallBack, __vftable) == 0x0);
 
@@ -647,6 +848,7 @@ const _: () = assert!(core::mem::offset_of!(LoadGameMissingContentDownloadCallBa
 pub struct LoadGameUnrecognizedContentCallBack {
     /// +0x0 `vtbl:LoadGameUnrecognizedContentCallBack:0`, rtti
     pub __vftable: *const crate::raw::vtables::LoadGameUnrecognizedContentCallBack_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(LoadGameUnrecognizedContentCallBack, __vftable) == 0x0);
 
@@ -714,6 +916,7 @@ pub struct LoadOrder {
     /// +0xC0 `undefined4`, ctor store
     pub field_C0: u32,
     pub unknown_C4: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<LoadOrder>() == 0xC8);
 const _: () = assert!(core::mem::offset_of!(LoadOrder, __vftable) == 0x0);
@@ -803,6 +1006,7 @@ pub struct LoadOrderArchive {
     /// +0xF8 `undefined4`, ctor store
     pub field_F8: u32,
     pub unknown_FC: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<LoadOrderArchive>() == 0x100);
 const _: () = assert!(core::mem::offset_of!(LoadOrderArchive, __vftable) == 0x0);
@@ -880,6 +1084,7 @@ pub struct LoadOrderBox {
     /// +0x7C `undefined4`, ctor store
     pub field_7C: u32,
     pub unknown_80: [u8; 56],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<LoadOrderBox>() == 0xB8);
 const _: () = assert!(core::mem::offset_of!(LoadOrderBox, __vftable) == 0x0);
@@ -970,6 +1175,7 @@ pub struct LoadOrderEntry {
     /// +0xD8 `undefined1`, ctor store
     pub field_D8: u8,
     pub unknown_D9: [u8; 7],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<LoadOrderEntry>() == 0xE0);
 const _: () = assert!(core::mem::offset_of!(LoadOrderEntry, __vftable) == 0x0);
@@ -1068,6 +1274,7 @@ pub struct LoadOrderEntry_CC {
     /// +0xD8 `undefined1`, base LoadOrderEntry
     pub field_D8: u8,
     pub unknown_D9: [u8; 7],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<LoadOrderEntry_CC>() == 0xE0);
 const _: () = assert!(core::mem::offset_of!(LoadOrderEntry_CC, __vftable) == 0x0);
@@ -1169,6 +1376,7 @@ pub struct LoadOrder_SSB {
     /// +0xD0 `undefined4`, base StorageSpaceBar
     pub field_D0: u32,
     pub unknown_D4: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<LoadOrder_SSB>() == 0xD8);
 const _: () = assert!(core::mem::offset_of!(LoadOrder_SSB, __vftable) == 0x0);
@@ -1223,6 +1431,7 @@ pub struct LoadStorageWrapper {
     /// +0x28 `undefined4`, ctor store
     pub field_28: u32,
     pub unknown_2C: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(LoadStorageWrapper, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(LoadStorageWrapper, field_8) == 0x8);
@@ -1344,6 +1553,7 @@ pub struct LoadWaitSpinner {
     pub unknown_B9: [u8; 3],
     /// +0xBC `undefined4`, base GRefCountImplCore
     pub field_BC: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(LoadWaitSpinner, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(LoadWaitSpinner, field_8) == 0x8);
@@ -1438,6 +1648,7 @@ pub struct LoadedAreaBound {
     pub field_98: f32,
     /// +0x9C `float`, ctor store
     pub field_9C: f32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<LoadedAreaBound>() == 0xA0);
 const _: () = assert!(core::mem::offset_of!(LoadedAreaBound, __vftable) == 0x0);
@@ -1467,6 +1678,7 @@ pub struct LoadingMenuData {
     /// +0x0 `vtbl:LoadingMenuData:0`, rtti
     pub __vftable: *const crate::raw::vtables::LoadingMenuData_vtable,
     pub unknown_8: [u8; 24],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<LoadingMenuData>() == 0x20);
 const _: () = assert!(core::mem::offset_of!(LoadingMenuData, __vftable) == 0x0);
@@ -1479,6 +1691,7 @@ pub struct LocalMapMenu__InputHandler {
     /// +0x0 `vtbl:LocalMapMenu::InputHandler:0`, rtti
     pub __vftable: *const crate::raw::vtables::LocalMapMenu__InputHandler_vtable,
     pub unknown_8: [u8; 16],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<LocalMapMenu__InputHandler>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(LocalMapMenu__InputHandler, __vftable) == 0x0);
@@ -1539,6 +1752,7 @@ pub struct LockEffect {
     /// +0x88 `undefined4`, base ActiveEffect
     pub field_88: u32,
     pub unknown_8C: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<LockEffect>() == 0x90);
 const _: () = assert!(core::mem::offset_of!(LockEffect, __vftable) == 0x0);
@@ -1724,6 +1938,7 @@ pub struct LockpickingMenu {
     /// +0x122 `undefined1`, ctor store
     pub field_122: u8,
     pub unknown_123: [u8; 5],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<LockpickingMenu>() == 0x128);
 const _: () = assert!(core::mem::offset_of!(LockpickingMenu, __vftable) == 0x0);
@@ -1800,6 +2015,7 @@ const _: () = assert!(core::mem::offset_of!(LockpickingMenu, field_122) == 0x122
 pub struct LoginMenu__errorCallback {
     /// +0x0 `vtbl:LoginMenu::errorCallback:0`, rtti
     pub __vftable: *const crate::raw::vtables::LoginMenu__errorCallback_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(LoginMenu__errorCallback, __vftable) == 0x0);
 
@@ -1956,6 +2172,7 @@ pub struct LoginMenu__loginMenu {
     pub unknown_E9: [u8; 3],
     /// +0xEC `undefined4`, base GRefCountBaseStatImpl<GRefCountImpl,2>
     pub field_EC: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(LoginMenu__loginMenu, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(LoginMenu__loginMenu, field_8) == 0x8);
@@ -2029,6 +2246,7 @@ const _: () = assert!(core::mem::offset_of!(LoginMenu__loginMenu, field_EC) == 0
 pub struct LongestDurationFunctor {
     /// +0x0 `vtbl:LongestDurationFunctor:0`, rtti
     pub __vftable: *const crate::raw::vtables::LongestDurationFunctor_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(LongestDurationFunctor, __vftable) == 0x0);
 
@@ -2040,6 +2258,7 @@ pub struct MTStateHandler {
     /// +0x0 `vtbl:MTStateHandler:0`, rtti
     pub __vftable: *const crate::raw::vtables::MTStateHandler_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<MTStateHandler>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(MTStateHandler, __vftable) == 0x0);
@@ -2070,6 +2289,7 @@ pub struct MagicCaster {
     pub field_3C: u64,
     /// +0x44 `undefined4`, ctor store
     pub field_44: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<MagicCaster>() == 0x48);
 const _: () = assert!(core::mem::offset_of!(MagicCaster, __vftable) == 0x0);
@@ -2111,6 +2331,7 @@ pub struct MagicCaster__PostCreationCallback {
     /// +0x42 `undefined1`, ctor store
     pub field_42: u8,
     pub unknown_43: [u8; 5],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(MagicCaster__PostCreationCallback, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(MagicCaster__PostCreationCallback, field_8) == 0x8);
@@ -2138,6 +2359,7 @@ pub struct MagicFavorites {
     /// +0x38 `undefined4`, ctor store
     pub field_38: u32,
     pub unknown_3C: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(MagicFavorites, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(MagicFavorites, field_20) == 0x20);
@@ -2186,6 +2408,7 @@ pub struct MagicItem {
     pub unknown_84: [u8; 4],
     /// +0x88 `undefined8`, ctor store
     pub field_88: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<MagicItem>() == 0x90);
 const _: () = assert!(core::mem::offset_of!(MagicItem, __vftable) == 0x0);
@@ -2211,6 +2434,7 @@ const _: () = assert!(core::mem::offset_of!(MagicItem, field_88) == 0x88);
 pub struct MagicItem__PreloadableVisitor {
     /// +0x0 `vtbl:MagicItem::PreloadableVisitor:0`, rtti
     pub __vftable: *const crate::raw::vtables::MagicItem__PreloadableVisitor_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(MagicItem__PreloadableVisitor, __vftable) == 0x0);
 
@@ -2232,6 +2456,7 @@ pub struct MagicItemData {
     /// +0x28 `undefined4`, ctor store
     pub field_28: u32,
     pub unknown_2C: [u8; 28],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<MagicItemData>() == 0x48);
 const _: () = assert!(core::mem::offset_of!(MagicItemData, __vftable) == 0x0);
@@ -2248,6 +2473,7 @@ const _: () = assert!(core::mem::offset_of!(MagicItemData, field_28) == 0x28);
 pub struct MagicItemDataCollector {
     /// +0x0 `vtbl:MagicItemDataCollector:0`, rtti
     pub __vftable: *const crate::raw::vtables::MagicItemDataCollector_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(MagicItemDataCollector, __vftable) == 0x0);
 
@@ -2258,6 +2484,7 @@ const _: () = assert!(core::mem::offset_of!(MagicItemDataCollector, __vftable) =
 pub struct MagicItemFindFunctor {
     /// +0x0 `vtbl:MagicItemFindFunctor:0`, rtti
     pub __vftable: *const crate::raw::vtables::MagicItemFindFunctor_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(MagicItemFindFunctor, __vftable) == 0x0);
 
@@ -2268,6 +2495,7 @@ const _: () = assert!(core::mem::offset_of!(MagicItemFindFunctor, __vftable) == 
 pub struct MagicItemFindKeywordFunctor {
     /// +0x0 `vtbl:MagicItemFindKeywordFunctor:0`, rtti
     pub __vftable: *const crate::raw::vtables::MagicItemFindKeywordFunctor_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(MagicItemFindKeywordFunctor, __vftable) == 0x0);
 
@@ -2277,6 +2505,7 @@ const _: () = assert!(core::mem::offset_of!(MagicItemFindKeywordFunctor, __vftab
 pub struct MagicItemTraversalFunctor {
     /// +0x0 `vtbl:MagicItemTraversalFunctor:0`, rtti
     pub __vftable: *const crate::raw::vtables::MagicItemTraversalFunctor_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<MagicItemTraversalFunctor>() == 0x8);
 const _: () = assert!(core::mem::offset_of!(MagicItemTraversalFunctor, __vftable) == 0x0);
@@ -2287,6 +2516,7 @@ const _: () = assert!(core::mem::offset_of!(MagicItemTraversalFunctor, __vftable
 pub struct MagicTarget {
     /// +0x0 `vtbl:MagicTarget:0`, rtti
     pub __vftable: *const crate::raw::vtables::MagicTarget_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<MagicTarget>() == 0x8);
 const _: () = assert!(core::mem::offset_of!(MagicTarget, __vftable) == 0x0);
@@ -2298,6 +2528,7 @@ const _: () = assert!(core::mem::offset_of!(MagicTarget, __vftable) == 0x0);
 pub struct MagicTarget__DispelFromBoundObject {
     /// +0x0 `vtbl:MagicTarget::DispelFromBoundObject:0`, rtti
     pub __vftable: *const crate::raw::vtables::MagicTarget__DispelFromBoundObject_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(MagicTarget__DispelFromBoundObject, __vftable) == 0x0);
 
@@ -2307,6 +2538,7 @@ const _: () = assert!(core::mem::offset_of!(MagicTarget__DispelFromBoundObject, 
 pub struct MagicTarget__ForEachActiveEffectVisitor {
     /// +0x0 `vtbl:MagicTarget::ForEachActiveEffectVisitor:0`, rtti
     pub __vftable: *const crate::raw::vtables::MagicTarget__ForEachActiveEffectVisitor_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<MagicTarget__ForEachActiveEffectVisitor>() == 0x8);
 const _: () = assert!(core::mem::offset_of!(MagicTarget__ForEachActiveEffectVisitor, __vftable) == 0x0);
@@ -2317,6 +2549,7 @@ const _: () = assert!(core::mem::offset_of!(MagicTarget__ForEachActiveEffectVisi
 pub struct MagicTarget__IPostCreationModification {
     /// +0x0 `vtbl:MagicTarget::IPostCreationModification:0`, rtti
     pub __vftable: *const crate::raw::vtables::MagicTarget__IPostCreationModification_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<MagicTarget__IPostCreationModification>() == 0x8);
 const _: () = assert!(core::mem::offset_of!(MagicTarget__IPostCreationModification, __vftable) == 0x0);
@@ -2424,6 +2657,7 @@ pub struct Main {
     pub unknown_264: [u8; 4],
     /// +0x268 `undefined8`, ctor store
     pub field_268: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<Main>() == 0x270);
 const _: () = assert!(core::mem::offset_of!(Main, __vftable) == 0x0);
@@ -2478,6 +2712,7 @@ pub struct MapInputHandler {
     /// +0x0 `vtbl:MapInputHandler:0`, rtti
     pub __vftable: *const crate::raw::vtables::MapInputHandler_vtable,
     pub unknown_8: [u8; 16],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<MapInputHandler>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(MapInputHandler, __vftable) == 0x0);
@@ -2490,6 +2725,7 @@ pub struct MapLookHandler {
     /// +0x0 `vtbl:MapLookHandler:0`, rtti
     pub __vftable: *const crate::raw::vtables::MapLookHandler_vtable,
     pub unknown_8: [u8; 24],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<MapLookHandler>() == 0x20);
 const _: () = assert!(core::mem::offset_of!(MapLookHandler, __vftable) == 0x0);
@@ -2662,6 +2898,7 @@ pub struct MapMenu {
     /// +0x3058D `undefined4`, ctor store
     pub field_3058D: u32,
     pub unknown_30591: [u8; 7],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<MapMenu>() == 0x30598);
 const _: () = assert!(core::mem::offset_of!(MapMenu, __vftable) == 0x0);
@@ -2742,6 +2979,7 @@ pub struct MapMoveHandler {
     /// +0x0 `vtbl:MapMoveHandler:0`, rtti
     pub __vftable: *const crate::raw::vtables::MapMoveHandler_vtable,
     pub unknown_8: [u8; 24],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<MapMoveHandler>() == 0x20);
 const _: () = assert!(core::mem::offset_of!(MapMoveHandler, __vftable) == 0x0);
@@ -2754,6 +2992,7 @@ pub struct MapZoomHandler {
     /// +0x0 `vtbl:MapZoomHandler:0`, rtti
     pub __vftable: *const crate::raw::vtables::MapZoomHandler_vtable,
     pub unknown_8: [u8; 16],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<MapZoomHandler>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(MapZoomHandler, __vftable) == 0x0);
@@ -2808,6 +3047,7 @@ pub struct MarketplaceBundleContent {
     /// +0xF8 `undefined4`, ctor store
     pub field_F8: u32,
     pub unknown_FC: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<MarketplaceBundleContent>() == 0x100);
 const _: () = assert!(core::mem::offset_of!(MarketplaceBundleContent, __vftable) == 0x0);
@@ -2875,6 +3115,7 @@ pub struct MarketplaceContent {
     /// +0xC0 `undefined8`, ctor store
     pub field_C0: u64,
     pub unknown_C8: [u8; 48],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<MarketplaceContent>() == 0xF8);
 const _: () = assert!(core::mem::offset_of!(MarketplaceContent, __vftable) == 0x0);
@@ -2945,6 +3186,7 @@ pub struct MarketplaceContentCollection {
     /// +0xD8 `undefined4`, ctor store
     pub field_D8: u32,
     pub unknown_DC: [u8; 28],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<MarketplaceContentCollection>() == 0xF8);
 const _: () = assert!(core::mem::offset_of!(MarketplaceContentCollection, __vftable) == 0x0);
@@ -2983,6 +3225,7 @@ pub struct MarketplaceDataProducer {
     /// +0x50 `undefined4`, ctor store
     pub field_50: u32,
     pub unknown_54: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(MarketplaceDataProducer, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(MarketplaceDataProducer, field_8) == 0x8);
@@ -3143,6 +3386,7 @@ pub struct MarketplaceMenu {
     pub unknown_E9: [u8; 3],
     /// +0xEC `undefined4`, base GRefCountBaseStatImpl<GRefCountImpl,2>
     pub field_EC: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(MarketplaceMenu, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(MarketplaceMenu, field_8) == 0x8);
@@ -3216,6 +3460,7 @@ const _: () = assert!(core::mem::offset_of!(MarketplaceMenu, field_EC) == 0xEC);
 pub struct MarketplaceMenu__InputHandler {
     /// +0x0 `vtbl:MarketplaceMenu::InputHandler:0`, rtti
     pub __vftable: *const crate::raw::vtables::MarketplaceMenu__InputHandler_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(MarketplaceMenu__InputHandler, __vftable) == 0x0);
 
@@ -3226,6 +3471,7 @@ const _: () = assert!(core::mem::offset_of!(MarketplaceMenu__InputHandler, __vft
 pub struct MarketplaceMenu__errorCallback {
     /// +0x0 `vtbl:MarketplaceMenu::errorCallback:0`, rtti
     pub __vftable: *const crate::raw::vtables::MarketplaceMenu__errorCallback_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(MarketplaceMenu__errorCallback, __vftable) == 0x0);
 
@@ -3278,6 +3524,7 @@ pub struct MemoryHeap {
     /// +0x2A8 `undefined1`, ctor store
     pub field_2A8: u8,
     pub unknown_2A9: [u8; 7],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<MemoryHeap>() == 0x2B0);
 const _: () = assert!(core::mem::offset_of!(MemoryHeap, __vftable) == 0x0);
@@ -3308,6 +3555,7 @@ const _: () = assert!(core::mem::offset_of!(MemoryHeap, field_2A8) == 0x2A8);
 pub struct MemoryManagerFile {
     /// +0x0 `vtbl:MemoryManagerFile:0`, rtti
     pub __vftable: *const crate::raw::vtables::MemoryManagerFile_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(MemoryManagerFile, __vftable) == 0x0);
 
@@ -3352,6 +3600,7 @@ pub struct MenuTopicManager {
     /// +0xBB `undefined1`, ctor store
     pub field_BB: u8,
     pub unknown_BC: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(MenuTopicManager, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(MenuTopicManager, __vftable_8) == 0x8);
@@ -3383,6 +3632,7 @@ pub struct MessageHandler {
     /// +0x20 `undefined1`, ctor store
     pub field_20: u8,
     pub unknown_21: [u8; 7],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<MessageHandler>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(MessageHandler, __vftable) == 0x0);
@@ -3396,6 +3646,7 @@ const _: () = assert!(core::mem::offset_of!(MessageHandler, field_20) == 0x20);
 pub struct MiscStatManager__FindStatByCRC {
     /// +0x0 `vtbl:MiscStatManager::FindStatByCRC:0`, rtti
     pub __vftable: *const crate::raw::vtables::MiscStatManager__FindStatByCRC_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(MiscStatManager__FindStatByCRC, __vftable) == 0x0);
 
@@ -3405,6 +3656,7 @@ const _: () = assert!(core::mem::offset_of!(MiscStatManager__FindStatByCRC, __vf
 pub struct MiscStatManager__IMiscStatVisitor {
     /// +0x0 `vtbl:MiscStatManager::IMiscStatVisitor:0`, rtti
     pub __vftable: *const crate::raw::vtables::MiscStatManager__IMiscStatVisitor_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(MiscStatManager__IMiscStatVisitor, __vftable) == 0x0);
 
@@ -3415,6 +3667,7 @@ const _: () = assert!(core::mem::offset_of!(MiscStatManager__IMiscStatVisitor, _
 pub struct MiscStatManager___anon_9E4AB784__RevertStatVisitor {
     /// +0x0 `vtbl:MiscStatManager::_anon_9E4AB784::RevertStatVisitor:0`, rtti
     pub __vftable: *const crate::raw::vtables::MiscStatManager___anon_9E4AB784__RevertStatVisitor_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(MiscStatManager___anon_9E4AB784__RevertStatVisitor, __vftable) == 0x0);
 
@@ -3425,6 +3678,7 @@ const _: () = assert!(core::mem::offset_of!(MiscStatManager___anon_9E4AB784__Rev
 pub struct MiscStatManager___anon_9E4AB784__SaveStatVisitor {
     /// +0x0 `vtbl:MiscStatManager::_anon_9E4AB784::SaveStatVisitor:0`, rtti
     pub __vftable: *const crate::raw::vtables::MiscStatManager___anon_9E4AB784__SaveStatVisitor_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(MiscStatManager___anon_9E4AB784__SaveStatVisitor, __vftable) == 0x0);
 
@@ -3585,6 +3839,7 @@ pub struct MissileProjectile {
     /// +0x1E4 `undefined1`, ctor store
     pub field_1E4: u8,
     pub unknown_1E5: [u8; 3],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<MissileProjectile>() == 0x1E8);
 const _: () = assert!(core::mem::offset_of!(MissileProjectile, __vftable) == 0x0);
@@ -3741,6 +3996,7 @@ pub struct MissingContent {
     pub field_100: u64,
     /// +0x108 `undefined8`, ctor store
     pub field_108: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(MissingContent, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(MissingContent, field_8) == 0x8);
@@ -3927,6 +4183,7 @@ pub struct MistMenu {
     /// +0x138 `undefined4`, ctor store
     pub field_138: u32,
     pub unknown_13C: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<MistMenu>() == 0x140);
 const _: () = assert!(core::mem::offset_of!(MistMenu, __vftable) == 0x0);
@@ -3999,6 +4256,7 @@ const _: () = assert!(core::mem::offset_of!(MistMenu, field_138) == 0x138);
 pub struct MobIterOperator {
     /// +0x0 `vtbl:MobIterOperator:0`, rtti
     pub __vftable: *const crate::raw::vtables::MobIterOperator_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<MobIterOperator>() == 0x8);
 const _: () = assert!(core::mem::offset_of!(MobIterOperator, __vftable) == 0x0);
@@ -4010,6 +4268,7 @@ const _: () = assert!(core::mem::offset_of!(MobIterOperator, __vftable) == 0x0);
 pub struct ModManager__CloseModManager_ConfirmCallback {
     /// +0x0 `vtbl:ModManager::CloseModManager_ConfirmCallback:0`, rtti
     pub __vftable: *const crate::raw::vtables::ModManager__CloseModManager_ConfirmCallback_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(ModManager__CloseModManager_ConfirmCallback, __vftable) == 0x0);
 
@@ -4020,6 +4279,7 @@ const _: () = assert!(core::mem::offset_of!(ModManager__CloseModManager_ConfirmC
 pub struct ModManager__DeleteAllModsConfirmCallback {
     /// +0x0 `vtbl:ModManager::DeleteAllModsConfirmCallback:0`, rtti
     pub __vftable: *const crate::raw::vtables::ModManager__DeleteAllModsConfirmCallback_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(ModManager__DeleteAllModsConfirmCallback, __vftable) == 0x0);
 
@@ -4030,6 +4290,7 @@ const _: () = assert!(core::mem::offset_of!(ModManager__DeleteAllModsConfirmCall
 pub struct ModManager__DeleteLibraryModConfirmCallback {
     /// +0x0 `vtbl:ModManager::DeleteLibraryModConfirmCallback:0`, rtti
     pub __vftable: *const crate::raw::vtables::ModManager__DeleteLibraryModConfirmCallback_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(ModManager__DeleteLibraryModConfirmCallback, __vftable) == 0x0);
 
@@ -4040,6 +4301,7 @@ const _: () = assert!(core::mem::offset_of!(ModManager__DeleteLibraryModConfirmC
 pub struct ModManager__DeleteMod_ConfirmCallback {
     /// +0x0 `vtbl:ModManager::DeleteMod_ConfirmCallback:0`, rtti
     pub __vftable: *const crate::raw::vtables::ModManager__DeleteMod_ConfirmCallback_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(ModManager__DeleteMod_ConfirmCallback, __vftable) == 0x0);
 
@@ -4050,6 +4312,7 @@ const _: () = assert!(core::mem::offset_of!(ModManager__DeleteMod_ConfirmCallbac
 pub struct ModManager__ModsChanged_ConfirmResetCallback {
     /// +0x0 `vtbl:ModManager::ModsChanged_ConfirmResetCallback:0`, rtti
     pub __vftable: *const crate::raw::vtables::ModManager__ModsChanged_ConfirmResetCallback_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(ModManager__ModsChanged_ConfirmResetCallback, __vftable) == 0x0);
 
@@ -4060,6 +4323,7 @@ const _: () = assert!(core::mem::offset_of!(ModManager__ModsChanged_ConfirmReset
 pub struct ModManager__ReportMod_CategoryCallback {
     /// +0x0 `vtbl:ModManager::ReportMod_CategoryCallback:0`, rtti
     pub __vftable: *const crate::raw::vtables::ModManager__ReportMod_CategoryCallback_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(ModManager__ReportMod_CategoryCallback, __vftable) == 0x0);
 
@@ -4070,6 +4334,7 @@ const _: () = assert!(core::mem::offset_of!(ModManager__ReportMod_CategoryCallba
 pub struct ModManager__ReportMod_ConfirmCallback {
     /// +0x0 `vtbl:ModManager::ReportMod_ConfirmCallback:0`, rtti
     pub __vftable: *const crate::raw::vtables::ModManager__ReportMod_ConfirmCallback_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(ModManager__ReportMod_ConfirmCallback, __vftable) == 0x0);
 
@@ -4080,6 +4345,7 @@ const _: () = assert!(core::mem::offset_of!(ModManager__ReportMod_ConfirmCallbac
 pub struct ModManagerData {
     /// +0x0 `vtbl:ModManagerData:0`, rtti
     pub __vftable: *const crate::raw::vtables::ModManagerData_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(ModManagerData, __vftable) == 0x0);
 
@@ -4239,6 +4505,7 @@ pub struct ModManagerMenu {
     pub unknown_F9: [u8; 3],
     /// +0xFC `undefined4`, base GRefCountBaseStatImpl<GRefCountImpl,2>
     pub field_FC: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(ModManagerMenu, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(ModManagerMenu, field_8) == 0x8);
@@ -4377,6 +4644,7 @@ pub struct ModelReferenceEffect {
     /// +0xD0 `undefined4`, ctor store
     pub field_D0: u32,
     pub unknown_D4: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ModelReferenceEffect>() == 0xD8);
 const _: () = assert!(core::mem::offset_of!(ModelReferenceEffect, __vftable) == 0x0);
@@ -4446,6 +4714,7 @@ pub struct Moon {
     /// +0xD0 `undefined4`, ctor store
     pub field_D0: u32,
     pub unknown_D4: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<Moon>() == 0xD8);
 const _: () = assert!(core::mem::offset_of!(Moon, __vftable) == 0x0);
@@ -4472,6 +4741,7 @@ pub struct MotionDrivenHandler {
     /// +0x0 `vtbl:MotionDrivenHandler:0`, rtti
     pub __vftable: *const crate::raw::vtables::MotionDrivenHandler_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<MotionDrivenHandler>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(MotionDrivenHandler, __vftable) == 0x0);
@@ -4484,6 +4754,7 @@ pub struct MountDismountEndHandler {
     /// +0x0 `vtbl:MountDismountEndHandler:0`, rtti
     pub __vftable: *const crate::raw::vtables::MountDismountEndHandler_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<MountDismountEndHandler>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(MountDismountEndHandler, __vftable) == 0x0);
@@ -4505,6 +4776,7 @@ pub struct MountInteraction {
     /// +0x18 `undefined1`, base RefrInteraction
     pub field_18: u8,
     pub unknown_19: [u8; 7],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(MountInteraction, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(MountInteraction, field_8) == 0x8);
@@ -4543,6 +4815,7 @@ pub struct MoviePlayer {
     /// +0x48 `undefined8`, ctor store
     pub field_48: u64,
     pub unknown_50: [u8; 112],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<MoviePlayer>() == 0xC0);
 const _: () = assert!(core::mem::offset_of!(MoviePlayer, __vftable) == 0x0);
@@ -4574,6 +4847,7 @@ pub struct MultiBoundMarkerData {
     /// +0x18 `float`, ctor store (widths [4, 4])
     pub field_18: f32,
     pub unknown_1C: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<MultiBoundMarkerData>() == 0x20);
 const _: () = assert!(core::mem::offset_of!(MultiBoundMarkerData, __vftable) == 0x0);
@@ -4590,6 +4864,7 @@ pub struct NPCAttachHandler {
     /// +0x0 `vtbl:NPCAttachHandler:0`, rtti
     pub __vftable: *const crate::raw::vtables::NPCAttachHandler_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NPCAttachHandler>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(NPCAttachHandler, __vftable) == 0x0);
@@ -4602,6 +4877,7 @@ pub struct NPCDetachHandler {
     /// +0x0 `vtbl:NPCDetachHandler:0`, rtti
     pub __vftable: *const crate::raw::vtables::NPCDetachHandler_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NPCDetachHandler>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(NPCDetachHandler, __vftable) == 0x0);
@@ -4638,6 +4914,7 @@ pub struct NavMesh {
     pub field_130: u64,
     /// +0x138 `undefined8`, base BSNavmesh
     pub field_138: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NavMesh>() == 0x140);
 const _: () = assert!(core::mem::offset_of!(NavMesh, __vftable) == 0x0);
@@ -4701,6 +4978,7 @@ pub struct NavMeshInfoMap {
     /// +0xE8 `undefined1`, ctor store
     pub field_E8: u8,
     pub unknown_E9: [u8; 7],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NavMeshInfoMap>() == 0xF0);
 const _: () = assert!(core::mem::offset_of!(NavMeshInfoMap, __vftable) == 0x0);
@@ -4796,6 +5074,7 @@ pub struct NavMeshObstacleManager {
     pub field_240: u32,
     /// +0x244 `undefined4`, ctor store
     pub field_244: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NavMeshObstacleManager, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(NavMeshObstacleManager, field_9) == 0x9);
@@ -4894,6 +5173,7 @@ pub struct NavMeshSearchClosePoint {
     pub unknown_1B0: [u8; 8],
     /// +0x1B8 `undefined8`, ctor store
     pub field_1B8: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NavMeshSearchClosePoint, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(NavMeshSearchClosePoint, field_8) == 0x8);
@@ -4984,6 +5264,7 @@ pub struct NavMeshSearchFitSphere {
     /// +0x198 `undefined2`, ctor store
     pub field_198: u16,
     pub unknown_19A: [u8; 6],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NavMeshSearchFitSphere, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(NavMeshSearchFitSphere, field_8) == 0x8);
@@ -5077,6 +5358,7 @@ pub struct NavMeshSearchFlee {
     pub field_19C: u64,
     /// +0x1A4 `undefined4`, ctor store
     pub field_1A4: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NavMeshSearchFlee, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(NavMeshSearchFlee, field_8) == 0x8);
@@ -5189,6 +5471,7 @@ pub struct NavMeshSearchHide {
     /// +0x200 `undefined4`, ctor store
     pub field_200: u32,
     pub unknown_204: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NavMeshSearchHide, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(NavMeshSearchHide, field_8) == 0x8);
@@ -5301,6 +5584,7 @@ pub struct NavMeshSearchLOS {
     /// +0x1D8 `undefined4`, ctor store
     pub field_1D8: u32,
     pub unknown_1DC: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NavMeshSearchLOS, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(NavMeshSearchLOS, field_8) == 0x8);
@@ -5406,6 +5690,7 @@ pub struct NavMeshSearchMaxCost {
     /// +0x1CC `undefined1`, ctor store
     pub field_1CC: u8,
     pub unknown_1CD: [u8; 3],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NavMeshSearchMaxCost, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(NavMeshSearchMaxCost, field_8) == 0x8);
@@ -5512,6 +5797,7 @@ pub struct NavMeshSearchMultipleGoals {
     /// +0x1D0 `undefined4`, ctor store
     pub field_1D0: u32,
     pub unknown_1D4: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NavMeshSearchMultipleGoals, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(NavMeshSearchMultipleGoals, field_8) == 0x8);
@@ -5626,6 +5912,7 @@ pub struct NavMeshSearchSLPoint {
     pub field_1F0: f32,
     /// +0x1F4 `float`, ctor store
     pub field_1F4: f32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NavMeshSearchSLPoint, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(NavMeshSearchSLPoint, field_8) == 0x8);
@@ -5670,6 +5957,7 @@ pub struct NeedToUpdateCreationClubCallback {
     /// +0x0 `vtbl:NeedToUpdateCreationClubCallback:0`, rtti
     pub __vftable: *const crate::raw::vtables::NeedToUpdateCreationClubCallback_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NeedToUpdateCreationClubCallback>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(NeedToUpdateCreationClubCallback, __vftable) == 0x0);
@@ -5709,6 +5997,7 @@ pub struct NewInventoryMenuItemLoadTask {
     /// +0x54 `undefined2`, base BSQueuedResourceCollectionBase
     pub field_54: u16,
     pub unknown_56: [u8; 58],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NewInventoryMenuItemLoadTask>() == 0x90);
 const _: () = assert!(core::mem::offset_of!(NewInventoryMenuItemLoadTask, __vftable) == 0x0);
@@ -5785,6 +6074,7 @@ pub struct NightEyeEffect {
     pub field_90: u32,
     /// +0x94 `undefined4`, base ValueModifierEffect
     pub field_94: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NightEyeEffect>() == 0x98);
 const _: () = assert!(core::mem::offset_of!(NightEyeEffect, __vftable) == 0x0);
@@ -5820,6 +6110,7 @@ const _: () = assert!(core::mem::offset_of!(NightEyeEffect, field_94) == 0x94);
 pub struct NoInitializationPolicy_BSTSmartPointer_IHandlerFunctor_Actor_BSFixedStringCI_BSTSmartPointerIntr_57ac8ba49fb1 {
     /// +0x0 `vtbl:NoInitializationPolicy<BSTSmartPointer<IHandlerFunctor<Actor,BSFixedStringCI>,BSTSmartPointerIntrusiveRefCount>,BSFixedStringCI>:0`, rtti
     pub __vftable: *const crate::raw::vtables::NoInitializationPolicy_BSTSmartPointer_IHandlerFunctor_Actor_BSFixedStringCI_BSTSmartPointerIntr_57ac8ba49fb1_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NoInitializationPolicy_BSTSmartPointer_IHandlerFunctor_Actor_BSFixedStringCI_BSTSmartPointerIntr_57ac8ba49fb1, __vftable) == 0x0);
 
@@ -5859,6 +6150,7 @@ pub struct NonActorMagicCaster {
     /// +0x60 `undefined4`, ctor store
     pub field_60: u32,
     pub unknown_64: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NonActorMagicCaster>() == 0x68);
 const _: () = assert!(core::mem::offset_of!(NonActorMagicCaster, __vftable) == 0x0);
@@ -5886,6 +6178,7 @@ pub struct NonActorMagicTarget {
     /// +0x10 `vtbl:NonActorMagicTarget:10`, rtti
     pub __vftable_10: *const crate::raw::vtables::NonActorMagicTarget_vtable_10,
     pub unknown_18: [u8; 40],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NonActorMagicTarget>() == 0x40);
 const _: () = assert!(core::mem::offset_of!(NonActorMagicTarget, __vftable) == 0x0);
@@ -5898,6 +6191,7 @@ const _: () = assert!(core::mem::offset_of!(NonActorMagicTarget, __vftable_10) =
 pub struct NullMovementSelectIdleResult {
     /// +0x0 `vtbl:NullMovementSelectIdleResult:0`, rtti
     pub __vftable: *const crate::raw::vtables::NullMovementSelectIdleResult_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NullMovementSelectIdleResult>() == 0x8);
 const _: () = assert!(core::mem::offset_of!(NullMovementSelectIdleResult, __vftable) == 0x0);
@@ -5909,6 +6203,7 @@ const _: () = assert!(core::mem::offset_of!(NullMovementSelectIdleResult, __vfta
 pub struct NullMovementState {
     /// +0x0 `vtbl:NullMovementState:0`, rtti
     pub __vftable: *const crate::raw::vtables::NullMovementState_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NullMovementState, __vftable) == 0x0);
 
@@ -5919,6 +6214,7 @@ const _: () = assert!(core::mem::offset_of!(NullMovementState, __vftable) == 0x0
 pub struct NullPathBuilderTracker {
     /// +0x0 `vtbl:NullPathBuilderTracker:0`, rtti
     pub __vftable: *const crate::raw::vtables::NullPathBuilderTracker_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NullPathBuilderTracker, __vftable) == 0x0);
 
@@ -5944,6 +6240,7 @@ pub struct ObjectListItem {
     pub field_28: u32,
     /// +0x2C `float`, ctor store
     pub field_2C: f32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(ObjectListItem, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(ObjectListItem, __vftable_8) == 0x8);
@@ -5982,6 +6279,7 @@ pub struct ObstacleTaskData {
     /// +0x88 `undefined1`, ctor store
     pub field_88: u8,
     pub unknown_89: [u8; 7],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ObstacleTaskData>() == 0x90);
 const _: () = assert!(core::mem::offset_of!(ObstacleTaskData, __vftable) == 0x0);
@@ -6054,6 +6352,7 @@ pub struct OfflineLoadOrder {
     /// +0xA8 `undefined4`, ctor store
     pub field_A8: u32,
     pub unknown_AC: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<OfflineLoadOrder>() == 0xB0);
 const _: () = assert!(core::mem::offset_of!(OfflineLoadOrder, __vftable) == 0x0);
@@ -6136,6 +6435,7 @@ pub struct OpenEffect {
     /// +0x88 `undefined4`, base ActiveEffect
     pub field_88: u32,
     pub unknown_8C: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<OpenEffect>() == 0x90);
 const _: () = assert!(core::mem::offset_of!(OpenEffect, __vftable) == 0x0);
@@ -6216,6 +6516,7 @@ pub struct Options {
     /// +0xB8 `undefined8`, ctor store
     pub field_B8: u64,
     pub unknown_C0: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<Options>() == 0xC8);
 const _: () = assert!(core::mem::offset_of!(Options, __vftable) == 0x0);
@@ -6247,6 +6548,7 @@ const _: () = assert!(core::mem::offset_of!(Options, field_B8) == 0xB8);
 pub struct OwnedController {
     /// +0x0 `vtbl:OwnedController:0`, rtti
     pub __vftable: *const crate::raw::vtables::OwnedController_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<OwnedController>() == 0x8);
 const _: () = assert!(core::mem::offset_of!(OwnedController, __vftable) == 0x0);
@@ -6263,6 +6565,7 @@ pub struct PArrayPoint {
     pub unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base NiExtraData, semantic; the key the owner's sorted array is ordered by (high)
     pub name: crate::BSFixedString,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(PArrayPoint, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(PArrayPoint, field_8) == 0x8);
@@ -6274,6 +6577,7 @@ const _: () = assert!(core::mem::offset_of!(PArrayPoint, name) == 0x10);
 pub struct PackageList__IPackageVisitor {
     /// +0x0 `vtbl:PackageList::IPackageVisitor:0`, rtti
     pub __vftable: *const crate::raw::vtables::PackageList__IPackageVisitor_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(PackageList__IPackageVisitor, __vftable) == 0x0);
 
@@ -6292,6 +6596,7 @@ pub struct PackageLocation {
     /// +0x10 `undefined1`, ctor store (widths [1, 4, 8])
     pub field_10: u8,
     pub unknown_11: [u8; 7],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<PackageLocation>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(PackageLocation, __vftable) == 0x0);
@@ -6307,6 +6612,7 @@ pub struct PairedStopHandler {
     /// +0x0 `vtbl:PairedStopHandler:0`, rtti
     pub __vftable: *const crate::raw::vtables::PairedStopHandler_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<PairedStopHandler>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(PairedStopHandler, __vftable) == 0x0);
@@ -6371,6 +6677,7 @@ pub struct ParalysisEffect {
     pub field_90: u32,
     /// +0x94 `undefined4`, base ValueModifierEffect
     pub field_94: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ParalysisEffect>() == 0x98);
 const _: () = assert!(core::mem::offset_of!(ParalysisEffect, __vftable) == 0x0);
@@ -6416,6 +6723,7 @@ pub struct PatrolActorPackageData {
     /// +0x28 `undefined4`, ctor store
     pub field_28: u32,
     pub unknown_2C: [u8; 20],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<PatrolActorPackageData>() == 0x40);
 const _: () = assert!(core::mem::offset_of!(PatrolActorPackageData, __vftable) == 0x0);
@@ -6485,6 +6793,7 @@ pub struct PeakValueModifierEffect {
     pub field_94: u32,
     /// +0x98 `undefined8`, ctor store
     pub field_98: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<PeakValueModifierEffect>() == 0xA0);
 const _: () = assert!(core::mem::offset_of!(PeakValueModifierEffect, __vftable) == 0x0);
@@ -6521,6 +6830,7 @@ const _: () = assert!(core::mem::offset_of!(PeakValueModifierEffect, field_98) =
 pub struct PerkEntryVisitor {
     /// +0x0 `vtbl:PerkEntryVisitor:0`, rtti
     pub __vftable: *const crate::raw::vtables::PerkEntryVisitor_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(PerkEntryVisitor, __vftable) == 0x0);
 
@@ -6530,6 +6840,7 @@ const _: () = assert!(core::mem::offset_of!(PerkEntryVisitor, __vftable) == 0x0)
 pub struct PerkRankVisitor {
     /// +0x0 `vtbl:PerkRankVisitor:0`, rtti
     pub __vftable: *const crate::raw::vtables::PerkRankVisitor_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(PerkRankVisitor, __vftable) == 0x0);
 
@@ -6541,6 +6852,7 @@ pub struct PickNewIdleHandler {
     /// +0x0 `vtbl:PickNewIdleHandler:0`, rtti
     pub __vftable: *const crate::raw::vtables::PickNewIdleHandler_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<PickNewIdleHandler>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(PickNewIdleHandler, __vftable) == 0x0);
@@ -6553,6 +6865,7 @@ pub struct PitchOverrideEndHandler {
     /// +0x0 `vtbl:PitchOverrideEndHandler:0`, rtti
     pub __vftable: *const crate::raw::vtables::PitchOverrideEndHandler_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<PitchOverrideEndHandler>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(PitchOverrideEndHandler, __vftable) == 0x0);
@@ -6565,6 +6878,7 @@ pub struct PitchOverrideStartHandler {
     /// +0x0 `vtbl:PitchOverrideStartHandler:0`, rtti
     pub __vftable: *const crate::raw::vtables::PitchOverrideStartHandler_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<PitchOverrideStartHandler>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(PitchOverrideStartHandler, __vftable) == 0x0);
@@ -6577,6 +6891,7 @@ pub struct PlayerBedEnterHandler {
     /// +0x0 `vtbl:PlayerBedEnterHandler:0`, rtti
     pub __vftable: *const crate::raw::vtables::PlayerBedEnterHandler_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<PlayerBedEnterHandler>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(PlayerBedEnterHandler, __vftable) == 0x0);
@@ -6589,6 +6904,7 @@ pub struct PlayerChairEnterHandler {
     /// +0x0 `vtbl:PlayerChairEnterHandler:0`, rtti
     pub __vftable: *const crate::raw::vtables::PlayerChairEnterHandler_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<PlayerChairEnterHandler>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(PlayerChairEnterHandler, __vftable) == 0x0);
@@ -6601,6 +6917,7 @@ pub struct PlayerFurnitureExitHandler {
     /// +0x0 `vtbl:PlayerFurnitureExitHandler:0`, rtti
     pub __vftable: *const crate::raw::vtables::PlayerFurnitureExitHandler_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<PlayerFurnitureExitHandler>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(PlayerFurnitureExitHandler, __vftable) == 0x0);
@@ -6622,6 +6939,7 @@ pub struct PlayerRegionState {
     pub field_50: u64,
     /// +0x58 `undefined8`, ctor store
     pub field_58: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(PlayerRegionState, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(PlayerRegionState, field_40) == 0x40);
@@ -6644,6 +6962,7 @@ pub struct PlayerSleepWaitMovementControllerAdapter {
     pub __vftable_18: *const crate::raw::vtables::PlayerSleepWaitMovementControllerAdapter_vtable_18,
     /// +0x20 `vtbl:PlayerSleepWaitMovementControllerAdapter:20`, rtti
     pub __vftable_20: *const crate::raw::vtables::PlayerSleepWaitMovementControllerAdapter_vtable_20,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(PlayerSleepWaitMovementControllerAdapter, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(PlayerSleepWaitMovementControllerAdapter, __vftable_8) == 0x8);
@@ -6657,6 +6976,7 @@ const _: () = assert!(core::mem::offset_of!(PlayerSleepWaitMovementControllerAda
 pub struct PlayerSleepWaitMovementControllerAdapter__SwitchToLoadedSetControllerFunctor {
     /// +0x0 `vtbl:PlayerSleepWaitMovementControllerAdapter::SwitchToLoadedSetControllerFunctor:0`, rtti
     pub __vftable: *const crate::raw::vtables::PlayerSleepWaitMovementControllerAdapter__SwitchToLoadedSetControllerFunctor_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(PlayerSleepWaitMovementControllerAdapter__SwitchToLoadedSetControllerFunctor, __vftable) == 0x0);
 
@@ -6667,6 +6987,7 @@ const _: () = assert!(core::mem::offset_of!(PlayerSleepWaitMovementControllerAda
 pub struct PlayerSleepWaitMovementControllerAdapter__SwitchToUnloadedSetControllerFunctor {
     /// +0x0 `vtbl:PlayerSleepWaitMovementControllerAdapter::SwitchToUnloadedSetControllerFunctor:0`, rtti
     pub __vftable: *const crate::raw::vtables::PlayerSleepWaitMovementControllerAdapter__SwitchToUnloadedSetControllerFunctor_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(PlayerSleepWaitMovementControllerAdapter__SwitchToUnloadedSetControllerFunctor, __vftable) == 0x0);
 
@@ -6689,6 +7010,7 @@ pub struct PointerArrayImplementation {
     pub field_20: u64,
     /// +0x28 `undefined8`, ctor store
     pub field_28: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(PointerArrayImplementation, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(PointerArrayImplementation, field_8) == 0x8);
@@ -6716,6 +7038,7 @@ pub struct Precipitation {
     /// +0x88 `undefined4`, ctor store
     pub field_88: u32,
     pub unknown_8C: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<Precipitation>() == 0x90);
 const _: () = assert!(core::mem::offset_of!(Precipitation, __vftable) == 0x0);
@@ -6731,6 +7054,7 @@ const _: () = assert!(core::mem::offset_of!(Precipitation, field_88) == 0x88);
 pub struct PreloadResponsesInitializationPolicy_BSTSmartPointer_BSResponse_BSFixedStringCI_Actor_BSFixedStr_0325684f56b3 {
     /// +0x0 `vtbl:PreloadResponsesInitializationPolicy<BSTSmartPointer<BSResponse<BSFixedStringCI,Actor,BSFixedStringCI,DoNothingUnhandledPolicy>,BSTSmartPointerIntrusiveRefCount>,BSFixedStringCI>:0`, rtti
     pub __vftable: *const crate::raw::vtables::PreloadResponsesInitializationPolicy_BSTSmartPointer_BSResponse_BSFixedStringCI_Actor_BSFixedStr_0325684f56b3_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(PreloadResponsesInitializationPolicy_BSTSmartPointer_BSResponse_BSFixedStringCI_Actor_BSFixedStr_0325684f56b3, __vftable) == 0x0);
 
@@ -6741,6 +7065,7 @@ const _: () = assert!(core::mem::offset_of!(PreloadResponsesInitializationPolicy
 pub struct ProcessCallbackAdapter {
     /// +0x0 `vtbl:ProcessCallbackAdapter:0`, rtti
     pub __vftable: *const crate::raw::vtables::ProcessCallbackAdapter_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(ProcessCallbackAdapter, __vftable) == 0x0);
 
@@ -6751,6 +7076,7 @@ const _: () = assert!(core::mem::offset_of!(ProcessCallbackAdapter, __vftable) =
 pub struct ProcessListMovementInterface {
     /// +0x0 `vtbl:ProcessListMovementInterface:0`, rtti
     pub __vftable: *const crate::raw::vtables::ProcessListMovementInterface_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(ProcessListMovementInterface, __vftable) == 0x0);
 
@@ -6760,6 +7086,7 @@ const _: () = assert!(core::mem::offset_of!(ProcessListMovementInterface, __vfta
 pub struct ProcessLists__GetActorsFilter {
     /// +0x0 `vtbl:ProcessLists::GetActorsFilter:0`, rtti
     pub __vftable: *const crate::raw::vtables::ProcessLists__GetActorsFilter_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(ProcessLists__GetActorsFilter, __vftable) == 0x0);
 
@@ -6915,6 +7242,7 @@ pub struct Projectile {
     /// +0x1D8 `undefined2`, ctor store
     pub field_1D8: u16,
     pub unknown_1DA: [u8; 6],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<Projectile>() == 0x1E0);
 const _: () = assert!(core::mem::offset_of!(Projectile, __vftable) == 0x0);
@@ -7046,6 +7374,7 @@ pub struct Projectile__LaunchData {
     /// +0xA2 `undefined1`, ctor store
     pub field_A2: u8,
     pub unknown_A3: [u8; 5],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(Projectile__LaunchData, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(Projectile__LaunchData, field_8) == 0x8);
@@ -7090,6 +7419,7 @@ pub struct ProjectilePickCache {
     /// +0x18 `undefined4`, ctor store
     pub field_18: u32,
     pub unknown_1C: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(ProjectilePickCache, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(ProjectilePickCache, field_8) == 0x8);
@@ -7147,6 +7477,7 @@ pub struct QueuedActor {
     /// +0x2D8 `undefined1`, base QueuedReference
     pub field_2D8: u8,
     pub unknown_2D9: [u8; 7],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<QueuedActor>() == 0x2E0);
 const _: () = assert!(core::mem::offset_of!(QueuedActor, __vftable) == 0x0);
@@ -7212,6 +7543,7 @@ pub struct QueuedAnimationObject {
     pub unknown_8C: [u8; 4],
     /// +0x90 `undefined8`, ctor store
     pub field_90: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<QueuedAnimationObject>() == 0x98);
 const _: () = assert!(core::mem::offset_of!(QueuedAnimationObject, __vftable) == 0x0);
@@ -7286,6 +7618,7 @@ pub struct QueuedCharacter {
     pub field_2E0: u64,
     /// +0x2E8 `undefined8`, ctor store
     pub field_2E8: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<QueuedCharacter>() == 0x2F0);
 const _: () = assert!(core::mem::offset_of!(QueuedCharacter, __vftable) == 0x0);
@@ -7333,6 +7666,7 @@ pub struct QueuedFile {
     /// +0x30 `undefined4`, ctor store
     pub field_30: u32,
     pub unknown_34: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<QueuedFile>() == 0x38);
 const _: () = assert!(core::mem::offset_of!(QueuedFile, __vftable) == 0x0);
@@ -7374,6 +7708,7 @@ pub struct QueuedHead {
     pub field_40: u64,
     /// +0x48 `undefined8`, ctor store
     pub field_48: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<QueuedHead>() == 0x50);
 const _: () = assert!(core::mem::offset_of!(QueuedHead, __vftable) == 0x0);
@@ -7432,6 +7767,7 @@ pub struct QueuedHelmet {
     /// +0x5B0 `undefined4`, ctor store
     pub field_5B0: u32,
     pub unknown_5B4: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(QueuedHelmet, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(QueuedHelmet, field_8) == 0x8);
@@ -7491,6 +7827,7 @@ pub struct QueuedModel {
     /// +0x88 `undefined4`, ctor store
     pub field_88: u32,
     pub unknown_8C: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<QueuedModel>() == 0x90);
 const _: () = assert!(core::mem::offset_of!(QueuedModel, __vftable) == 0x0);
@@ -7532,6 +7869,7 @@ pub struct QueuedNamedFile {
     /// +0x30 `undefined4`, base QueuedFile
     pub field_30: u32,
     pub unknown_34: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(QueuedNamedFile, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(QueuedNamedFile, field_8) == 0x8);
@@ -7597,6 +7935,7 @@ pub struct QueuedPlayer {
     pub field_2E0: u64,
     /// +0x2E8 `undefined8`, base QueuedCharacter
     pub field_2E8: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<QueuedPlayer>() == 0x2F0);
 const _: () = assert!(core::mem::offset_of!(QueuedPlayer, __vftable) == 0x0);
@@ -7640,6 +7979,7 @@ pub struct QueuedPromoteLargeReferencesTask {
     /// +0x50 `undefined4`, ctor store
     pub field_50: u32,
     pub unknown_54: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<QueuedPromoteLargeReferencesTask>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(QueuedPromoteLargeReferencesTask, __vftable) == 0x0);
@@ -7657,6 +7997,7 @@ pub struct QueuedPromoteLocationReferencesTask {
     /// +0x0 `vtbl:QueuedPromoteLocationReferencesTask:0`, rtti
     pub __vftable: *const crate::raw::vtables::QueuedPromoteLocationReferencesTask_vtable,
     pub unknown_8: [u8; 80],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<QueuedPromoteLocationReferencesTask>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(QueuedPromoteLocationReferencesTask, __vftable) == 0x0);
@@ -7669,6 +8010,7 @@ pub struct QueuedPromoteQuestTask {
     /// +0x0 `vtbl:QueuedPromoteQuestTask:0`, rtti
     pub __vftable: *const crate::raw::vtables::QueuedPromoteQuestTask_vtable,
     pub unknown_8: [u8; 104],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<QueuedPromoteQuestTask>() == 0x70);
 const _: () = assert!(core::mem::offset_of!(QueuedPromoteQuestTask, __vftable) == 0x0);
@@ -7680,6 +8022,7 @@ const _: () = assert!(core::mem::offset_of!(QueuedPromoteQuestTask, __vftable) =
 pub struct QueuedPromoteReferencesTask {
     /// +0x0 `vtbl:QueuedPromoteReferencesTask:0`, rtti
     pub __vftable: *const crate::raw::vtables::QueuedPromoteReferencesTask_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<QueuedPromoteReferencesTask>() == 0x8);
 const _: () = assert!(core::mem::offset_of!(QueuedPromoteReferencesTask, __vftable) == 0x0);
@@ -7735,6 +8078,7 @@ pub struct QueuedReference {
     /// +0x2D8 `undefined1`, ctor store
     pub field_2D8: u8,
     pub unknown_2D9: [u8; 7],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<QueuedReference>() == 0x2E0);
 const _: () = assert!(core::mem::offset_of!(QueuedReference, __vftable) == 0x0);
@@ -7772,6 +8116,7 @@ pub struct QueuedTempEffect {
     pub field_10: u64,
     /// +0x18 `undefined8`, ctor store
     pub field_18: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<QueuedTempEffect>() == 0x20);
 const _: () = assert!(core::mem::offset_of!(QueuedTempEffect, __vftable) == 0x0);
@@ -7831,6 +8176,7 @@ pub struct QueuedTree {
     /// +0x2D8 `undefined1`, base QueuedReference
     pub field_2D8: u8,
     pub unknown_2D9: [u8; 7],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<QueuedTree>() == 0x2E0);
 const _: () = assert!(core::mem::offset_of!(QueuedTree, __vftable) == 0x0);
@@ -7860,6 +8206,7 @@ const _: () = assert!(core::mem::offset_of!(QueuedTree, field_2D8) == 0x2D8);
 pub struct REFREventCallbacks__ConcreteEventCallbackFactory__anon_01A9FA1F__SceneResultsCallBack {
     /// +0x0 `vtbl:REFREventCallbacks::ConcreteEventCallbackFactory<_anon_01A9FA1F::SceneResultsCallBack>:0`, rtti
     pub __vftable: *const crate::raw::vtables::REFREventCallbacks__ConcreteEventCallbackFactory__anon_01A9FA1F__SceneResultsCallBack_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(REFREventCallbacks__ConcreteEventCallbackFactory__anon_01A9FA1F__SceneResultsCallBack, __vftable) == 0x0);
 
@@ -7870,6 +8217,7 @@ const _: () = assert!(core::mem::offset_of!(REFREventCallbacks__ConcreteEventCal
 pub struct REFREventCallbacks__ConcreteEventCallbackFactory__anon_7174C251__TopicResultCallBack {
     /// +0x0 `vtbl:REFREventCallbacks::ConcreteEventCallbackFactory<_anon_7174C251::TopicResultCallBack>:0`, rtti
     pub __vftable: *const crate::raw::vtables::REFREventCallbacks__ConcreteEventCallbackFactory__anon_7174C251__TopicResultCallBack_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(REFREventCallbacks__ConcreteEventCallbackFactory__anon_7174C251__TopicResultCallBack, __vftable) == 0x0);
 
@@ -7880,6 +8228,7 @@ const _: () = assert!(core::mem::offset_of!(REFREventCallbacks__ConcreteEventCal
 pub struct REFREventCallbacks__ConcreteEventCallbackFactory__anon_77E528F2__SceneActionResultsCallBack {
     /// +0x0 `vtbl:REFREventCallbacks::ConcreteEventCallbackFactory<_anon_77E528F2::SceneActionResultsCallBack>:0`, rtti
     pub __vftable: *const crate::raw::vtables::REFREventCallbacks__ConcreteEventCallbackFactory__anon_77E528F2__SceneActionResultsCallBack_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(REFREventCallbacks__ConcreteEventCallbackFactory__anon_77E528F2__SceneActionResultsCallBack, __vftable) == 0x0);
 
@@ -7890,6 +8239,7 @@ const _: () = assert!(core::mem::offset_of!(REFREventCallbacks__ConcreteEventCal
 pub struct REFREventCallbacks__ConcreteEventCallbackFactory__anon_A5EEF477__StageItemFinishedCallback {
     /// +0x0 `vtbl:REFREventCallbacks::ConcreteEventCallbackFactory<_anon_A5EEF477::StageItemFinishedCallback>:0`, rtti
     pub __vftable: *const crate::raw::vtables::REFREventCallbacks__ConcreteEventCallbackFactory__anon_A5EEF477__StageItemFinishedCallback_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(REFREventCallbacks__ConcreteEventCallbackFactory__anon_A5EEF477__StageItemFinishedCallback, __vftable) == 0x0);
 
@@ -7900,6 +8250,7 @@ const _: () = assert!(core::mem::offset_of!(REFREventCallbacks__ConcreteEventCal
 pub struct REFREventCallbacks__ConcreteEventCallbackFactory__anon_A86607C4__ScenePhaseResultsCallBack {
     /// +0x0 `vtbl:REFREventCallbacks::ConcreteEventCallbackFactory<_anon_A86607C4::ScenePhaseResultsCallBack>:0`, rtti
     pub __vftable: *const crate::raw::vtables::REFREventCallbacks__ConcreteEventCallbackFactory__anon_A86607C4__ScenePhaseResultsCallBack_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(REFREventCallbacks__ConcreteEventCallbackFactory__anon_A86607C4__ScenePhaseResultsCallBack, __vftable) == 0x0);
 
@@ -7911,6 +8262,7 @@ pub struct REFREventCallbacks__IEventCallback {
     /// +0x0 `vtbl:REFREventCallbacks::IEventCallback:0`, rtti
     pub __vftable: *const crate::raw::vtables::REFREventCallbacks__IEventCallback_vtable,
     pub unknown_8: [u8; 16],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<REFREventCallbacks__IEventCallback>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(REFREventCallbacks__IEventCallback, __vftable) == 0x0);
@@ -7921,6 +8273,7 @@ const _: () = assert!(core::mem::offset_of!(REFREventCallbacks__IEventCallback, 
 pub struct REFREventCallbacks__IEventCallbackFactory {
     /// +0x0 `vtbl:REFREventCallbacks::IEventCallbackFactory:0`, rtti
     pub __vftable: *const crate::raw::vtables::REFREventCallbacks__IEventCallbackFactory_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(REFREventCallbacks__IEventCallbackFactory, __vftable) == 0x0);
 
@@ -8075,6 +8428,7 @@ pub struct RaceSexMenu {
     /// +0x1A2 `undefined4`, ctor store
     pub field_1A2: u32,
     pub unknown_1A6: [u8; 2],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<RaceSexMenu>() == 0x1A8);
 const _: () = assert!(core::mem::offset_of!(RaceSexMenu, __vftable) == 0x0);
@@ -8151,6 +8505,7 @@ pub struct RagdollFurnitureListener {
     pub unknown_10: [u8; 8],
     /// +0x18 `undefined8`, base hkpEntityListener
     pub field_18: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(RagdollFurnitureListener, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(RagdollFurnitureListener, __vftable_8) == 0x8);
@@ -8164,6 +8519,7 @@ pub struct RagdollStartHandler {
     /// +0x0 `vtbl:RagdollStartHandler:0`, rtti
     pub __vftable: *const crate::raw::vtables::RagdollStartHandler_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<RagdollStartHandler>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(RagdollStartHandler, __vftable) == 0x0);
@@ -8228,6 +8584,7 @@ pub struct RallyEffect {
     pub field_90: u32,
     /// +0x94 `undefined4`, base ValueModifierEffect
     pub field_94: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<RallyEffect>() == 0x98);
 const _: () = assert!(core::mem::offset_of!(RallyEffect, __vftable) == 0x0);
@@ -8265,6 +8622,7 @@ pub struct RealArrayImplementation {
     /// +0x0 `vtbl:RealArrayImplementation:0`, rtti
     pub __vftable: *const crate::raw::vtables::RealArrayImplementation_vtable,
     pub unknown_8: [u8; 32],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<RealArrayImplementation>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(RealArrayImplementation, __vftable) == 0x0);
@@ -8328,6 +8686,7 @@ pub struct ReanimateEffect {
     /// +0x90 `undefined4`, base CommandEffect
     pub field_90: u32,
     pub unknown_94: [u8; 12],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ReanimateEffect>() == 0xA0);
 const _: () = assert!(core::mem::offset_of!(ReanimateEffect, __vftable) == 0x0);
@@ -8364,6 +8723,7 @@ pub struct RecoilStopHandler {
     /// +0x0 `vtbl:RecoilStopHandler:0`, rtti
     pub __vftable: *const crate::raw::vtables::RecoilStopHandler_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<RecoilStopHandler>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(RecoilStopHandler, __vftable) == 0x0);
@@ -8375,6 +8735,7 @@ const _: () = assert!(core::mem::offset_of!(RecoilStopHandler, __vftable) == 0x0
 pub struct RefAttachTechniqueInput {
     /// +0x0 `vtbl:RefAttachTechniqueInput:0`, rtti
     pub __vftable: *const crate::raw::vtables::RefAttachTechniqueInput_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(RefAttachTechniqueInput, __vftable) == 0x0);
 
@@ -8385,6 +8746,7 @@ const _: () = assert!(core::mem::offset_of!(RefAttachTechniqueInput, __vftable) 
 pub struct RefHandleUIData {
     /// +0x0 `vtbl:RefHandleUIData:0`, rtti
     pub __vftable: *const crate::raw::vtables::RefHandleUIData_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(RefHandleUIData, __vftable) == 0x0);
 
@@ -8420,6 +8782,7 @@ pub struct ReferenceEffect {
     /// +0x40 `undefined2`, ctor store
     pub field_40: u16,
     pub unknown_42: [u8; 6],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ReferenceEffect>() == 0x48);
 const _: () = assert!(core::mem::offset_of!(ReferenceEffect, __vftable) == 0x0);
@@ -8440,6 +8803,7 @@ const _: () = assert!(core::mem::offset_of!(ReferenceEffect, field_40) == 0x40);
 pub struct ReferenceEffectController {
     /// +0x0 `vtbl:ReferenceEffectController:0`, rtti
     pub __vftable: *const crate::raw::vtables::ReferenceEffectController_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ReferenceEffectController>() == 0x8);
 const _: () = assert!(core::mem::offset_of!(ReferenceEffectController, __vftable) == 0x0);
@@ -8461,6 +8825,7 @@ pub struct RefrInteraction {
     /// +0x18 `undefined1`, ctor store
     pub field_18: u8,
     pub unknown_19: [u8; 7],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(RefrInteraction, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(RefrInteraction, field_8) == 0x8);
@@ -8476,6 +8841,7 @@ pub struct RegSettingCollection {
     /// +0x0 `vtbl:RegSettingCollection:0`, rtti
     pub __vftable: *const crate::raw::vtables::RegSettingCollection_vtable,
     pub unknown_8: [u8; 288],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<RegSettingCollection>() == 0x128);
 const _: () = assert!(core::mem::offset_of!(RegSettingCollection, __vftable) == 0x0);
@@ -8487,6 +8853,7 @@ const _: () = assert!(core::mem::offset_of!(RegSettingCollection, __vftable) == 
 pub struct RemoveCallbackVisitor {
     /// +0x0 `vtbl:RemoveCallbackVisitor:0`, rtti
     pub __vftable: *const crate::raw::vtables::RemoveCallbackVisitor_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(RemoveCallbackVisitor, __vftable) == 0x0);
 
@@ -8498,6 +8865,7 @@ pub struct RemoveRagdollHandler {
     /// +0x0 `vtbl:RemoveRagdollHandler:0`, rtti
     pub __vftable: *const crate::raw::vtables::RemoveRagdollHandler_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<RemoveRagdollHandler>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(RemoveRagdollHandler, __vftable) == 0x0);
@@ -8509,6 +8877,7 @@ const _: () = assert!(core::mem::offset_of!(RemoveRagdollHandler, __vftable) == 
 pub struct Reset3DMobIterator {
     /// +0x0 `vtbl:Reset3DMobIterator:0`, rtti
     pub __vftable: *const crate::raw::vtables::Reset3DMobIterator_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(Reset3DMobIterator, __vftable) == 0x0);
 
@@ -8518,6 +8887,7 @@ const _: () = assert!(core::mem::offset_of!(Reset3DMobIterator, __vftable) == 0x
 pub struct ResponseDefinitionMissPolicy_BSTSmartPointer_BSResponse_BSFixedStringCI_Actor_BSFixedStringCI_Do_e393846d9604 {
     /// +0x0 `vtbl:ResponseDefinitionMissPolicy<BSTSmartPointer<BSResponse<BSFixedStringCI,Actor,BSFixedStringCI,DoNothingUnhandledPolicy>,BSTSmartPointerIntrusiveRefCount>,BSFixedStringCI>:0`, rtti
     pub __vftable: *const crate::raw::vtables::ResponseDefinitionMissPolicy_BSTSmartPointer_BSResponse_BSFixedStringCI_Actor_BSFixedStringCI_Do_e393846d9604_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ResponseDefinitionMissPolicy_BSTSmartPointer_BSResponse_BSFixedStringCI_Actor_BSFixedStringCI_Do_e393846d9604>() == 0x8);
 const _: () = assert!(core::mem::offset_of!(ResponseDefinitionMissPolicy_BSTSmartPointer_BSResponse_BSFixedStringCI_Actor_BSFixedStringCI_Do_e393846d9604, __vftable) == 0x0);
@@ -8529,6 +8899,7 @@ const _: () = assert!(core::mem::offset_of!(ResponseDefinitionMissPolicy_BSTSmar
 pub struct RevertSelectedSpellFunctor {
     /// +0x0 `vtbl:RevertSelectedSpellFunctor:0`, rtti
     pub __vftable: *const crate::raw::vtables::RevertSelectedSpellFunctor_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(RevertSelectedSpellFunctor, __vftable) == 0x0);
 
@@ -8540,6 +8911,7 @@ pub struct RightHandSpellCastHandler {
     /// +0x0 `vtbl:RightHandSpellCastHandler:0`, rtti
     pub __vftable: *const crate::raw::vtables::RightHandSpellCastHandler_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<RightHandSpellCastHandler>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(RightHandSpellCastHandler, __vftable) == 0x0);
@@ -8552,6 +8924,7 @@ pub struct RightHandSpellFireHandler {
     /// +0x0 `vtbl:RightHandSpellFireHandler:0`, rtti
     pub __vftable: *const crate::raw::vtables::RightHandSpellFireHandler_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<RightHandSpellFireHandler>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(RightHandSpellFireHandler, __vftable) == 0x0);
@@ -8564,6 +8937,7 @@ pub struct RightHandWeaponDrawHandler {
     /// +0x0 `vtbl:RightHandWeaponDrawHandler:0`, rtti
     pub __vftable: *const crate::raw::vtables::RightHandWeaponDrawHandler_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<RightHandWeaponDrawHandler>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(RightHandWeaponDrawHandler, __vftable) == 0x0);
@@ -8576,6 +8950,7 @@ pub struct RightHandWeaponSheatheHandler {
     /// +0x0 `vtbl:RightHandWeaponSheatheHandler:0`, rtti
     pub __vftable: *const crate::raw::vtables::RightHandWeaponSheatheHandler_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<RightHandWeaponSheatheHandler>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(RightHandWeaponSheatheHandler, __vftable) == 0x0);
@@ -8606,6 +8981,7 @@ pub struct RunActionAnimationLoadedCallback {
     pub unknown_4C: [u8; 4],
     /// +0x50 `undefined8`, ctor store
     pub field_50: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<RunActionAnimationLoadedCallback>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(RunActionAnimationLoadedCallback, __vftable) == 0x0);
@@ -8741,6 +9117,7 @@ pub struct SafeZoneMenu {
     pub unknown_B9: [u8; 3],
     /// +0xBC `undefined4`, base GRefCountImplCore
     pub field_BC: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(SafeZoneMenu, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(SafeZoneMenu, field_8) == 0x8);
@@ -8843,6 +9220,7 @@ pub struct SandBoxActorPackageData {
     /// +0x72 `undefined1`, ctor store
     pub field_72: u8,
     pub unknown_73: [u8; 5],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<SandBoxActorPackageData>() == 0x78);
 const _: () = assert!(core::mem::offset_of!(SandBoxActorPackageData, __vftable) == 0x0);
@@ -8872,6 +9250,7 @@ const _: () = assert!(core::mem::offset_of!(SandBoxActorPackageData, field_72) =
 pub struct SaveGameMagicCasterVisitor {
     /// +0x0 `vtbl:SaveGameMagicCasterVisitor:0`, rtti
     pub __vftable: *const crate::raw::vtables::SaveGameMagicCasterVisitor_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(SaveGameMagicCasterVisitor, __vftable) == 0x0);
 
@@ -8881,6 +9260,7 @@ const _: () = assert!(core::mem::offset_of!(SaveGameMagicCasterVisitor, __vftabl
 pub struct SaveLoadMagicCasterVisitor {
     /// +0x0 `vtbl:SaveLoadMagicCasterVisitor:0`, rtti
     pub __vftable: *const crate::raw::vtables::SaveLoadMagicCasterVisitor_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(SaveLoadMagicCasterVisitor, __vftable) == 0x0);
 
@@ -8906,6 +9286,7 @@ pub struct SaveStorageWrapper {
     /// +0x28 `undefined4`, ctor store
     pub field_28: u32,
     pub unknown_2C: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(SaveStorageWrapper, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(SaveStorageWrapper, field_8) == 0x8);
@@ -8978,6 +9359,7 @@ pub struct SceneGraph {
     /// +0x148 `undefined2`, ctor store
     pub field_148: u16,
     pub unknown_14A: [u8; 6],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<SceneGraph>() == 0x150);
 const _: () = assert!(core::mem::offset_of!(SceneGraph, __vftable) == 0x0);
@@ -9049,6 +9431,7 @@ pub struct ScrapHeap {
     /// +0x88 `undefined4`, ctor store
     pub field_88: u32,
     pub unknown_8C: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(ScrapHeap, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(ScrapHeap, field_8) == 0x8);
@@ -9129,6 +9512,7 @@ pub struct ScriptEffect {
     pub field_90: u64,
     /// +0x98 `undefined8`, ctor store
     pub field_98: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ScriptEffect>() == 0xA0);
 const _: () = assert!(core::mem::offset_of!(ScriptEffect, __vftable) == 0x0);
@@ -9218,6 +9602,7 @@ pub struct ScriptedRefEffect {
     pub field_90: u64,
     /// +0x98 `undefined8`, base ScriptEffect
     pub field_98: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(ScriptedRefEffect, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(ScriptedRefEffect, m_ActiveEffectReferenceEffectController_8) == 0x8);
@@ -9348,6 +9733,7 @@ pub struct ScrollItem {
     /// +0x160 `undefined4`, base TESValueForm
     pub field_160: u32,
     pub unknown_164: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ScrollItem>() == 0x168);
 const _: () = assert!(core::mem::offset_of!(ScrollItem, __vftable) == 0x0);
@@ -9458,6 +9844,7 @@ pub struct SearchPage {
     pub unknown_D8: [u8; 12],
     /// +0xE4 `undefined4`, ctor store
     pub field_E4: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<SearchPage>() == 0xE8);
 const _: () = assert!(core::mem::offset_of!(SearchPage, __vftable) == 0x0);
@@ -9540,6 +9927,7 @@ pub struct SearchResultsPage {
     /// +0xC0 `undefined4`, ctor store
     pub field_C0: u32,
     pub unknown_C4: [u8; 52],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<SearchResultsPage>() == 0xF8);
 const _: () = assert!(core::mem::offset_of!(SearchResultsPage, __vftable) == 0x0);
@@ -9578,6 +9966,7 @@ pub struct SeenData {
     pub field_18: u64,
     /// +0x20 `undefined8`, ctor store
     pub field_20: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<SeenData>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(SeenData, __vftable) == 0x0);
@@ -9609,6 +9998,7 @@ pub struct ShoutMeter {
     /// +0x40 `undefined4`, base HUDMeter
     pub field_40: u32,
     pub unknown_44: [u8; 12],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ShoutMeter>() == 0x50);
 const _: () = assert!(core::mem::offset_of!(ShoutMeter, __vftable) == 0x0);
@@ -9681,6 +10071,7 @@ pub struct SideBar {
     /// +0xE0 `undefined8`, ctor store
     pub field_E0: u64,
     pub unknown_E8: [u8; 16],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<SideBar>() == 0xF8);
 const _: () = assert!(core::mem::offset_of!(SideBar, __vftable) == 0x0);
@@ -9720,6 +10111,7 @@ pub struct SimpleAnimationGraphManagerHolder {
     pub field_8: u64,
     /// +0x10 `undefined8`, ctor store
     pub field_10: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<SimpleAnimationGraphManagerHolder>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(SimpleAnimationGraphManagerHolder, __vftable) == 0x0);
@@ -9772,6 +10164,7 @@ pub struct SimpleAnimationGraphManagerLoadingTask {
     /// +0x2C8 `undefined4`, base IAnimationGraphManagerLoadingTask
     pub field_2C8: u32,
     pub unknown_2CC: [u8; 12],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<SimpleAnimationGraphManagerLoadingTask>() == 0x2D8);
 const _: () = assert!(core::mem::offset_of!(SimpleAnimationGraphManagerLoadingTask, __vftable) == 0x0);
@@ -9841,6 +10234,7 @@ pub struct Sizing__mpBoxSizer {
     /// +0x78 `undefined4`, ctor store
     pub field_78: u32,
     pub unknown_7C: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<Sizing__mpBoxSizer>() == 0x80);
 const _: () = assert!(core::mem::offset_of!(Sizing__mpBoxSizer, __vftable) == 0x0);
@@ -9908,6 +10302,7 @@ pub struct Sizing__mpSizer {
     pub field_60: u64,
     /// +0x68 `undefined8`, ctor store
     pub field_68: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(Sizing__mpSizer, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(Sizing__mpSizer, field_8) == 0x8);
@@ -9935,6 +10330,7 @@ const _: () = assert!(core::mem::offset_of!(Sizing__mpSizer, field_68) == 0x68);
 pub struct SkyEffectController {
     /// +0x0 `vtbl:SkyEffectController:0`, rtti
     pub __vftable: *const crate::raw::vtables::SkyEffectController_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(SkyEffectController, __vftable) == 0x0);
 
@@ -9946,6 +10342,7 @@ pub struct SkyObject {
     pub __vftable: *const crate::raw::vtables::SkyObject_vtable,
     /// +0x8 `undefined8`, ctor store
     pub field_8: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<SkyObject>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(SkyObject, __vftable) == 0x0);
@@ -9958,6 +10355,7 @@ const _: () = assert!(core::mem::offset_of!(SkyObject, field_8) == 0x8);
 pub struct SkyStaticFindFunctor {
     /// +0x0 `vtbl:SkyStaticFindFunctor:0`, rtti
     pub __vftable: *const crate::raw::vtables::SkyStaticFindFunctor_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(SkyStaticFindFunctor, __vftable) == 0x0);
 
@@ -9986,6 +10384,7 @@ pub struct SkyrimSpeechRecognition {
     pub field_30: u64,
     /// +0x38 `undefined8`, ctor store
     pub field_38: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(SkyrimSpeechRecognition, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(SkyrimSpeechRecognition, __vftable_8) == 0x8);
@@ -10120,6 +10519,7 @@ pub struct SleepWaitMenu {
     pub unknown_B9: [u8; 3],
     /// +0xBC `undefined4`, base GRefCountImplCore
     pub field_BC: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(SleepWaitMenu, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(SleepWaitMenu, field_8) == 0x8);
@@ -10240,6 +10640,7 @@ pub struct SlowTimeEffect {
     /// +0xA8 `undefined4`, ctor store
     pub field_A8: u32,
     pub unknown_AC: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<SlowTimeEffect>() == 0xB0);
 const _: () = assert!(core::mem::offset_of!(SlowTimeEffect, __vftable) == 0x0);
@@ -10328,6 +10729,7 @@ pub struct SoulTrapEffect {
     /// +0x88 `undefined4`, base ActiveEffect
     pub field_88: u32,
     pub unknown_8C: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<SoulTrapEffect>() == 0x90);
 const _: () = assert!(core::mem::offset_of!(SoulTrapEffect, __vftable) == 0x0);
@@ -10411,6 +10813,7 @@ pub struct SpawnHazardEffect {
     /// +0x88 `undefined4`, base ActiveEffect
     pub field_88: u32,
     pub unknown_8C: [u8; 20],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<SpawnHazardEffect>() == 0xA0);
 const _: () = assert!(core::mem::offset_of!(SpawnHazardEffect, __vftable) == 0x0);
@@ -10467,6 +10870,7 @@ pub struct SpecificItemCollector {
     pub field_70: u32,
     /// +0x74 `undefined4`, ctor store
     pub field_74: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(SpecificItemCollector, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(SpecificItemCollector, field_8) == 0x8);
@@ -10545,6 +10949,7 @@ pub struct SpectatorPackage {
     pub unknown_114: [u8; 4],
     /// +0x118 `undefined8`, ctor store
     pub field_118: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<SpectatorPackage>() == 0x120);
 const _: () = assert!(core::mem::offset_of!(SpectatorPackage, __vftable) == 0x0);
@@ -10645,6 +11050,7 @@ pub struct SpellItem {
     pub field_DC: u32,
     /// +0xE0 `undefined8`, ctor store
     pub field_E0: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<SpellItem>() == 0xE8);
 const _: () = assert!(core::mem::offset_of!(SpellItem, __vftable) == 0x0);
@@ -10733,6 +11139,7 @@ pub struct StaggerEffect {
     /// +0x88 `undefined4`, base ActiveEffect
     pub field_88: u32,
     pub unknown_8C: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<StaggerEffect>() == 0x90);
 const _: () = assert!(core::mem::offset_of!(StaggerEffect, __vftable) == 0x0);
@@ -10768,6 +11175,7 @@ pub struct StaggeredStopHandler {
     /// +0x0 `vtbl:StaggeredStopHandler:0`, rtti
     pub __vftable: *const crate::raw::vtables::StaggeredStopHandler_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<StaggeredStopHandler>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(StaggeredStopHandler, __vftable) == 0x0);
@@ -10786,6 +11194,7 @@ pub struct Stars {
     /// +0x18 `undefined4`, ctor store
     pub field_18: u32,
     pub unknown_1C: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<Stars>() == 0x20);
 const _: () = assert!(core::mem::offset_of!(Stars, __vftable) == 0x0);
@@ -10800,6 +11209,7 @@ const _: () = assert!(core::mem::offset_of!(Stars, field_18) == 0x18);
 pub struct StartSpellHelpers__DoneEffectGatherFunctor {
     /// +0x0 `vtbl:StartSpellHelpers::DoneEffectGatherFunctor:0`, rtti
     pub __vftable: *const crate::raw::vtables::StartSpellHelpers__DoneEffectGatherFunctor_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(StartSpellHelpers__DoneEffectGatherFunctor, __vftable) == 0x0);
 
@@ -10810,6 +11220,7 @@ const _: () = assert!(core::mem::offset_of!(StartSpellHelpers__DoneEffectGatherF
 pub struct StartSpellHelpers__EffectGatherFunctor {
     /// +0x0 `vtbl:StartSpellHelpers::EffectGatherFunctor:0`, rtti
     pub __vftable: *const crate::raw::vtables::StartSpellHelpers__EffectGatherFunctor_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(StartSpellHelpers__EffectGatherFunctor, __vftable) == 0x0);
 
@@ -10820,6 +11231,7 @@ const _: () = assert!(core::mem::offset_of!(StartSpellHelpers__EffectGatherFunct
 pub struct StartSpellHelpers__SpellEffectGatherFunctor {
     /// +0x0 `vtbl:StartSpellHelpers::SpellEffectGatherFunctor:0`, rtti
     pub __vftable: *const crate::raw::vtables::StartSpellHelpers__SpellEffectGatherFunctor_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(StartSpellHelpers__SpellEffectGatherFunctor, __vftable) == 0x0);
 
@@ -10845,6 +11257,7 @@ pub struct StaticAvoidNodeManager {
     pub field_40: u64,
     /// +0x48 `undefined8`, ctor store
     pub field_48: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(StaticAvoidNodeManager, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(StaticAvoidNodeManager, __vftable_8) == 0x8);
@@ -11136,6 +11549,7 @@ pub struct StatsMenu {
     /// +0x324 `undefined2`, ctor store
     pub field_324: u16,
     pub unknown_326: [u8; 2],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<StatsMenu>() == 0x328);
 const _: () = assert!(core::mem::offset_of!(StatsMenu, __vftable) == 0x0);
@@ -11294,6 +11708,7 @@ pub struct StatsNode {
     /// +0x60 `undefined1`, ctor store
     pub field_60: u8,
     pub unknown_61: [u8; 7],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(StatsNode, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(StatsNode, field_8) == 0x8);
@@ -11315,6 +11730,7 @@ pub struct StealthMeter {
     /// +0x0 `vtbl:StealthMeter:0`, rtti
     pub __vftable: *const crate::raw::vtables::StealthMeter_vtable,
     pub unknown_8: [u8; 144],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<StealthMeter>() == 0x98);
 const _: () = assert!(core::mem::offset_of!(StealthMeter, __vftable) == 0x0);
@@ -11390,6 +11806,7 @@ pub struct StorageSpaceBar {
     /// +0xD0 `undefined4`, ctor store
     pub field_D0: u32,
     pub unknown_D4: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<StorageSpaceBar>() == 0xD8);
 const _: () = assert!(core::mem::offset_of!(StorageSpaceBar, __vftable) == 0x0);
@@ -11428,6 +11845,7 @@ const _: () = assert!(core::mem::offset_of!(StorageSpaceBar, field_D0) == 0xD0);
 pub struct StreamingInstallMenu {
     /// +0x0 `vtbl:StreamingInstallMenu:0`, rtti
     pub __vftable: *const crate::raw::vtables::StreamingInstallMenu_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(StreamingInstallMenu, __vftable) == 0x0);
 
@@ -11453,6 +11871,7 @@ pub struct StructArrayImplementation {
     pub unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, ctor store
     pub field_30: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(StructArrayImplementation, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(StructArrayImplementation, field_8) == 0x8);
@@ -11471,6 +11890,7 @@ pub struct StructArrayImplementation__Object {
     /// +0x0 `vtbl:StructArrayImplementation::Object:0`, rtti
     pub __vftable: *const crate::raw::vtables::StructArrayImplementation__Object_vtable,
     pub unknown_8: [u8; 24],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<StructArrayImplementation__Object>() == 0x20);
 const _: () = assert!(core::mem::offset_of!(StructArrayImplementation__Object, __vftable) == 0x0);
@@ -11482,6 +11902,7 @@ const _: () = assert!(core::mem::offset_of!(StructArrayImplementation__Object, _
 pub struct SumHostileEffectsFunctor {
     /// +0x0 `vtbl:SumHostileEffectsFunctor:0`, rtti
     pub __vftable: *const crate::raw::vtables::SumHostileEffectsFunctor_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(SumHostileEffectsFunctor, __vftable) == 0x0);
 
@@ -11563,6 +11984,7 @@ pub struct SummonCreatureEffect {
     /// +0xBA `undefined1`, ctor store
     pub field_BA: u8,
     pub unknown_BB: [u8; 5],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<SummonCreatureEffect>() == 0xC0);
 const _: () = assert!(core::mem::offset_of!(SummonCreatureEffect, __vftable) == 0x0);
@@ -11658,6 +12080,7 @@ pub struct SummonPlacementEffect {
     /// +0x98 `undefined1`, ctor store
     pub field_98: u8,
     pub unknown_99: [u8; 7],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<SummonPlacementEffect>() == 0xA0);
 const _: () = assert!(core::mem::offset_of!(SummonPlacementEffect, __vftable) == 0x0);
@@ -11691,6 +12114,7 @@ const _: () = assert!(core::mem::offset_of!(SummonPlacementEffect, field_98) == 
 pub struct SyncQueueObj {
     /// +0x0 `vtbl:SyncQueueObj:0`, rtti
     pub __vftable: *const crate::raw::vtables::SyncQueueObj_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<SyncQueueObj>() == 0x8);
 const _: () = assert!(core::mem::offset_of!(SyncQueueObj, __vftable) == 0x0);
@@ -11720,6 +12144,7 @@ pub struct SynchronizedMap___int64_NiPointer_BSTask__ {
     /// +0x34 `undefined8`, ctor store
     pub field_34: u64,
     pub unknown_3C: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<SynchronizedMap___int64_NiPointer_BSTask__>() == 0x40);
 const _: () = assert!(core::mem::offset_of!(SynchronizedMap___int64_NiPointer_BSTask__, __vftable) == 0x0);
@@ -11737,6 +12162,7 @@ const _: () = assert!(core::mem::offset_of!(SynchronizedMap___int64_NiPointer_BS
 pub struct SynchronizedMap___int64_NiPointer_BSTask____SynchronizedMapIterator {
     /// +0x0 `vtbl:SynchronizedMap<__int64,NiPointer<BSTask>_>::SynchronizedMapIterator:0`, rtti
     pub __vftable: *const crate::raw::vtables::SynchronizedMap___int64_NiPointer_BSTask____SynchronizedMapIterator_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(SynchronizedMap___int64_NiPointer_BSTask____SynchronizedMapIterator, __vftable) == 0x0);
 
@@ -11752,6 +12178,7 @@ pub struct SynchronizedPriorityQueue_NiPointer_IOTask__ {
     pub field_10: u32,
     /// +0x14 `undefined4`, ctor store
     pub field_14: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<SynchronizedPriorityQueue_NiPointer_IOTask__>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(SynchronizedPriorityQueue_NiPointer_IOTask__, __vftable) == 0x0);
@@ -11783,6 +12210,7 @@ pub struct SynchronizedQueue_NiPointer_AttachDistant3DTask__ {
     /// +0x34 `undefined8`, ctor store
     pub field_34: u64,
     pub unknown_3C: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<SynchronizedQueue_NiPointer_AttachDistant3DTask__>() == 0x40);
 const _: () = assert!(core::mem::offset_of!(SynchronizedQueue_NiPointer_AttachDistant3DTask__, __vftable) == 0x0);
@@ -11818,6 +12246,7 @@ pub struct SynchronizedQueue_NiPointer_IOTask__ {
     /// +0x34 `undefined8`, ctor store
     pub field_34: u64,
     pub unknown_3C: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<SynchronizedQueue_NiPointer_IOTask__>() == 0x40);
 const _: () = assert!(core::mem::offset_of!(SynchronizedQueue_NiPointer_IOTask__, __vftable) == 0x0);
@@ -11853,6 +12282,7 @@ pub struct SynchronizedQueue_TextureCreator__createTask____ptr64 {
     /// +0x34 `undefined8`, ctor store
     pub field_34: u64,
     pub unknown_3C: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(SynchronizedQueue_TextureCreator__createTask____ptr64, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(SynchronizedQueue_TextureCreator__createTask____ptr64, field_8) == 0x8);
@@ -11870,6 +12300,7 @@ const _: () = assert!(core::mem::offset_of!(SynchronizedQueue_TextureCreator__cr
 pub struct SystemEventAdapter {
     /// +0x0 `vtbl:SystemEventAdapter:0`, rtti
     pub __vftable: *const crate::raw::vtables::SystemEventAdapter_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(SystemEventAdapter, __vftable) == 0x0);
 
@@ -11918,6 +12349,7 @@ pub struct TagField {
     pub field_60: u64,
     /// +0x68 `undefined8`, ctor store
     pub field_68: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(TagField, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(TagField, field_8) == 0x8);
@@ -11951,6 +12383,7 @@ pub struct TailAnimationGraphManagerHolder {
     /// +0x10 `undefined8`, base WeaponAnimationGraphManagerHolder
     pub field_10: u64,
     pub unknown_18: [u8; 24],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TailAnimationGraphManagerHolder>() == 0x30);
 const _: () = assert!(core::mem::offset_of!(TailAnimationGraphManagerHolder, __vftable) == 0x0);
@@ -11965,6 +12398,7 @@ pub struct TargetEntry {
     /// +0x0 `vtbl:TargetEntry:0`, rtti
     pub __vftable: *const crate::raw::vtables::TargetEntry_vtable,
     pub unknown_8: [u8; 88],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TargetEntry>() == 0x60);
 const _: () = assert!(core::mem::offset_of!(TargetEntry, __vftable) == 0x0);
@@ -11976,6 +12410,7 @@ const _: () = assert!(core::mem::offset_of!(TargetEntry, __vftable) == 0x0);
 pub struct TargetLock__SetTargetLockFilter {
     /// +0x0 `vtbl:TargetLock::SetTargetLockFilter:0`, rtti
     pub __vftable: *const crate::raw::vtables::TargetLock__SetTargetLockFilter_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(TargetLock__SetTargetLockFilter, __vftable) == 0x0);
 
@@ -12039,6 +12474,7 @@ pub struct TargetValueModifierEffect {
     pub field_90: u32,
     /// +0x94 `undefined4`, base ValueModifierEffect
     pub field_94: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TargetValueModifierEffect>() == 0x98);
 const _: () = assert!(core::mem::offset_of!(TargetValueModifierEffect, __vftable) == 0x0);
@@ -12124,6 +12560,7 @@ pub struct TelekinesisEffect {
     /// +0x88 `undefined4`, base ActiveEffect
     pub field_88: u32,
     pub unknown_8C: [u8; 36],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TelekinesisEffect>() == 0xB0);
 const _: () = assert!(core::mem::offset_of!(TelekinesisEffect, __vftable) == 0x0);
@@ -12198,6 +12635,7 @@ pub struct TeleportDoorSearch {
     /// +0x148 `undefined1`, base AStarSearch<ParentSpaceNode,TeleportLink,1>
     pub field_148: u8,
     pub unknown_149: [u8; 7],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(TeleportDoorSearch, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(TeleportDoorSearch, field_8) == 0x8);
@@ -12234,6 +12672,7 @@ pub struct TempLoadGameBuffer {
     pub unknown_1C: [u8; 8],
     /// +0x24 `undefined4`, base BGSLoadGameBuffer, semantic; read offset (high)
     pub position: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(TempLoadGameBuffer, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(TempLoadGameBuffer, data) == 0x8);
@@ -12364,6 +12803,7 @@ pub struct TitleSequenceMenu {
     pub unknown_B9: [u8; 3],
     /// +0xBC `undefined4`, base GRefCountImplCore
     pub field_BC: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(TitleSequenceMenu, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(TitleSequenceMenu, field_8) == 0x8);
@@ -12544,6 +12984,7 @@ pub struct TrainingMenu {
     /// +0xE0 `undefined4`, ctor store
     pub field_E0: u32,
     pub unknown_E4: [u8; 12],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TrainingMenu>() == 0xF0);
 const _: () = assert!(core::mem::offset_of!(TrainingMenu, __vftable) == 0x0);
@@ -12618,6 +13059,7 @@ pub struct TrapEntry {
     pub unknown_24: [u8; 4],
     /// +0x28 `undefined8`, base ZoneEntry
     pub field_28: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(TrapEntry, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(TrapEntry, field_8) == 0x8);
@@ -12634,6 +13076,7 @@ pub struct TrapTargetEntry {
     /// +0x0 `vtbl:TrapTargetEntry:0`, rtti
     pub __vftable: *const crate::raw::vtables::TrapTargetEntry_vtable,
     pub unknown_8: [u8; 104],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TrapTargetEntry>() == 0x70);
 const _: () = assert!(core::mem::offset_of!(TrapTargetEntry, __vftable) == 0x0);
@@ -12696,6 +13139,7 @@ pub struct TrespassPackage {
     /// +0xF8 `undefined4`, ctor store
     pub field_F8: u32,
     pub unknown_FC: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TrespassPackage>() == 0x100);
 const _: () = assert!(core::mem::offset_of!(TrespassPackage, __vftable) == 0x0);
@@ -12748,6 +13192,7 @@ pub struct TrianglePathWaterAndLedgeSplitter {
     /// +0x58 `undefined4`, ctor store
     pub field_58: u32,
     pub unknown_5C: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(TrianglePathWaterAndLedgeSplitter, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(TrianglePathWaterAndLedgeSplitter, field_8) == 0x8);
@@ -12767,6 +13212,7 @@ pub struct TriggerEntry {
     /// +0x0 `vtbl:TriggerEntry:0`, rtti
     pub __vftable: *const crate::raw::vtables::TriggerEntry_vtable,
     pub unknown_8: [u8; 88],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TriggerEntry>() == 0x60);
 const _: () = assert!(core::mem::offset_of!(TriggerEntry, __vftable) == 0x0);
@@ -12831,6 +13277,7 @@ pub struct TurnUndeadEffect {
     pub field_90: u32,
     /// +0x94 `undefined4`, base ValueModifierEffect
     pub field_94: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TurnUndeadEffect>() == 0x98);
 const _: () = assert!(core::mem::offset_of!(TurnUndeadEffect, __vftable) == 0x0);
@@ -12983,6 +13430,7 @@ pub struct TutorialMenu {
     pub unknown_B9: [u8; 3],
     /// +0xBC `undefined4`, base GRefCountImplCore
     pub field_BC: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(TutorialMenu, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(TutorialMenu, field_8) == 0x8);
@@ -13046,6 +13494,7 @@ pub struct UIBlurManager {
     /// +0x18 `undefined2`, ctor store
     pub field_18: u16,
     pub unknown_1A: [u8; 6],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(UIBlurManager, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(UIBlurManager, field_18) == 0x18);
@@ -13057,6 +13506,7 @@ const _: () = assert!(core::mem::offset_of!(UIBlurManager, field_18) == 0x18);
 pub struct UIMessageDataPtr_Actor {
     /// +0x0 `vtbl:UIMessageDataPtr<Actor>:0`, rtti
     pub __vftable: *const crate::raw::vtables::UIMessageDataPtr_Actor_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(UIMessageDataPtr_Actor, __vftable) == 0x0);
 
@@ -13082,6 +13532,7 @@ pub struct UISaveLoadManager {
     /// +0x60 `undefined2`, ctor store
     pub field_60: u16,
     pub unknown_62: [u8; 6],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(UISaveLoadManager, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(UISaveLoadManager, __vftable_8) == 0x8);
@@ -13156,6 +13607,7 @@ pub struct UI_Button3 {
     /// +0xA0 `undefined4`, ctor store
     pub field_A0: u32,
     pub unknown_A4: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<UI_Button3>() == 0xA8);
 const _: () = assert!(core::mem::offset_of!(UI_Button3, __vftable) == 0x0);
@@ -13248,6 +13700,7 @@ pub struct UI_Dialog {
     /// +0xA0 `undefined1`, ctor store
     pub field_A0: u8,
     pub unknown_A1: [u8; 7],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<UI_Dialog>() == 0xA8);
 const _: () = assert!(core::mem::offset_of!(UI_Dialog, __vftable) == 0x0);
@@ -13348,6 +13801,7 @@ pub struct UI_DialogDownloadCC {
     /// +0xD0 `undefined4`, ctor store
     pub field_D0: u32,
     pub unknown_D4: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<UI_DialogDownloadCC>() == 0xD8);
 const _: () = assert!(core::mem::offset_of!(UI_DialogDownloadCC, __vftable) == 0x0);
@@ -13444,6 +13898,7 @@ pub struct UI_DialogMessage {
     pub unknown_A1: [u8; 7],
     /// +0xA8 `undefined8`, ctor store
     pub field_A8: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<UI_DialogMessage>() == 0xB0);
 const _: () = assert!(core::mem::offset_of!(UI_DialogMessage, __vftable) == 0x0);
@@ -13548,6 +14003,7 @@ pub struct UI_DialogYesNo {
     pub unknown_108: [u8; 56],
     /// +0x140 `undefined8`, ctor store
     pub field_140: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<UI_DialogYesNo>() == 0x148);
 const _: () = assert!(core::mem::offset_of!(UI_DialogYesNo, __vftable) == 0x0);
@@ -13636,6 +14092,7 @@ pub struct UI_MarkdownText {
     /// +0x90 `undefined4`, ctor store
     pub field_90: u32,
     pub unknown_94: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<UI_MarkdownText>() == 0x98);
 const _: () = assert!(core::mem::offset_of!(UI_MarkdownText, __vftable) == 0x0);
@@ -13751,6 +14208,7 @@ pub struct UI_ScrollingList {
     pub field_F0: u64,
     /// +0xF8 `undefined8`, ctor store
     pub field_F8: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<UI_ScrollingList>() == 0x100);
 const _: () = assert!(core::mem::offset_of!(UI_ScrollingList, __vftable) == 0x0);
@@ -13867,6 +14325,7 @@ pub struct UI_Text {
     /// +0xE0 `undefined1`, ctor store
     pub field_E0: u8,
     pub unknown_E1: [u8; 7],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<UI_Text>() == 0xE8);
 const _: () = assert!(core::mem::offset_of!(UI_Text, __vftable) == 0x0);
@@ -13974,6 +14433,7 @@ pub struct UI_Text2 {
     /// +0xE0 `undefined1`, ctor store
     pub field_E0: u8,
     pub unknown_E1: [u8; 7],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<UI_Text2>() == 0xE8);
 const _: () = assert!(core::mem::offset_of!(UI_Text2, __vftable) == 0x0);
@@ -14085,6 +14545,7 @@ pub struct UI_Text3 {
     pub field_E8: u64,
     /// +0xF0 `undefined8`, ctor store
     pub field_F0: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(UI_Text3, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(UI_Text3, field_8) == 0x8);
@@ -14243,6 +14704,7 @@ pub struct UI_bannerEntry {
     pub field_168: u64,
     /// +0x170 `undefined8`, ctor store
     pub field_170: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<UI_bannerEntry>() == 0x178);
 const _: () = assert!(core::mem::offset_of!(UI_bannerEntry, __vftable) == 0x0);
@@ -14343,6 +14805,7 @@ pub struct UI_bar {
     pub unknown_54: [u8; 12],
     /// +0x60 `undefined8`, ctor store
     pub field_60: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<UI_bar>() == 0x68);
 const _: () = assert!(core::mem::offset_of!(UI_bar, __vftable) == 0x0);
@@ -14407,6 +14870,7 @@ pub struct UI_bottomBar {
     /// +0x70 `undefined8`, ctor store
     pub field_70: u64,
     pub unknown_78: [u8; 24],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<UI_bottomBar>() == 0x90);
 const _: () = assert!(core::mem::offset_of!(UI_bottomBar, __vftable) == 0x0);
@@ -14488,6 +14952,7 @@ pub struct UI_button2 {
     pub field_94: u64,
     /// +0x9C `undefined4`, ctor store
     pub field_9C: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<UI_button2>() == 0xA0);
 const _: () = assert!(core::mem::offset_of!(UI_button2, __vftable) == 0x0);
@@ -14630,6 +15095,7 @@ pub struct UI_detailsPage {
     /// +0x220 `undefined4`, ctor store
     pub field_220: u32,
     pub unknown_224: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<UI_detailsPage>() == 0x228);
 const _: () = assert!(core::mem::offset_of!(UI_detailsPage, __vftable) == 0x0);
@@ -14731,6 +15197,7 @@ pub struct UI_detailsPage__OnSale {
     /// +0x78 `undefined2`, ctor store
     pub field_78: u16,
     pub unknown_7A: [u8; 6],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<UI_detailsPage__OnSale>() == 0x80);
 const _: () = assert!(core::mem::offset_of!(UI_detailsPage__OnSale, __vftable) == 0x0);
@@ -14792,6 +15259,7 @@ pub struct UI_element {
     /// +0x50 `undefined4`, ctor store
     pub field_50: u32,
     pub unknown_54: [u8; 60],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<UI_element>() == 0x90);
 const _: () = assert!(core::mem::offset_of!(UI_element, __vftable) == 0x0);
@@ -14849,6 +15317,7 @@ pub struct UI_element2 {
     /// +0x50 `undefined4`, base UI_element
     pub field_50: u32,
     pub unknown_54: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<UI_element2>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(UI_element2, __vftable) == 0x0);
@@ -14923,6 +15392,7 @@ pub struct UI_homePage {
     /// +0xA8 `undefined8`, ctor store
     pub field_A8: u64,
     pub unknown_B0: [u8; 88],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<UI_homePage>() == 0x108);
 const _: () = assert!(core::mem::offset_of!(UI_homePage, __vftable) == 0x0);
@@ -15029,6 +15499,7 @@ pub struct UI_image {
     pub unknown_AC: [u8; 4],
     /// +0xB0 `undefined8`, ctor store
     pub field_B0: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<UI_image>() == 0xB8);
 const _: () = assert!(core::mem::offset_of!(UI_image, __vftable) == 0x0);
@@ -15147,6 +15618,7 @@ pub struct UI_image2 {
     pub unknown_AC: [u8; 4],
     /// +0xB0 `undefined8`, ctor store
     pub field_B0: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<UI_image2>() == 0xB8);
 const _: () = assert!(core::mem::offset_of!(UI_image2, __vftable) == 0x0);
@@ -15265,6 +15737,7 @@ pub struct UI_image3 {
     pub unknown_AC: [u8; 4],
     /// +0xB0 `undefined8`, base UI_image
     pub field_B0: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<UI_image3>() == 0xB8);
 const _: () = assert!(core::mem::offset_of!(UI_image3, __vftable) == 0x0);
@@ -15415,6 +15888,7 @@ pub struct UI_listEntry {
     /// +0x13C `undefined8`, ctor store
     pub field_13C: u64,
     pub unknown_144: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<UI_listEntry>() == 0x148);
 const _: () = assert!(core::mem::offset_of!(UI_listEntry, __vftable) == 0x0);
@@ -15518,6 +15992,7 @@ pub struct UI_listEntry__OnSale {
     /// +0x78 `undefined1`, ctor store
     pub field_78: u8,
     pub unknown_79: [u8; 7],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<UI_listEntry__OnSale>() == 0x80);
 const _: () = assert!(core::mem::offset_of!(UI_listEntry__OnSale, __vftable) == 0x0);
@@ -15580,6 +16055,7 @@ pub struct UI_page {
     /// +0x50 `undefined4`, base UI_element
     pub field_50: u32,
     pub unknown_54: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<UI_page>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(UI_page, __vftable) == 0x0);
@@ -15641,6 +16117,7 @@ pub struct UI_tag {
     pub field_58: u64,
     /// +0x60 `undefined8`, ctor store
     pub field_60: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(UI_tag, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(UI_tag, field_8) == 0x8);
@@ -15706,6 +16183,7 @@ pub struct UI_topBar {
     pub unknown_6C: [u8; 4],
     /// +0x70 `undefined8`, ctor store
     pub field_70: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(UI_topBar, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(UI_topBar, field_8) == 0x8);
@@ -15775,6 +16253,7 @@ pub struct UnitTestMemoryHeap {
     /// +0x2A8 `undefined1`, base MemoryHeap
     pub field_2A8: u8,
     pub unknown_2A9: [u8; 7],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(UnitTestMemoryHeap, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(UnitTestMemoryHeap, field_30) == 0x30);
@@ -15817,6 +16296,7 @@ pub struct UnitTestZeroOverheadHeap {
     /// +0x30 `undefined4`, base ZeroOverheadHeap
     pub field_30: u32,
     pub unknown_34: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(UnitTestZeroOverheadHeap, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(UnitTestZeroOverheadHeap, field_8) == 0x8);
@@ -15835,6 +16315,7 @@ pub struct UnitTest_BSStreamParserData {
     pub __vftable: *const crate::raw::vtables::UnitTest_BSStreamParserData_vtable,
     /// +0x8 `undefined8`, ctor store
     pub field_8: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(UnitTest_BSStreamParserData, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(UnitTest_BSStreamParserData, field_8) == 0x8);
@@ -15853,6 +16334,7 @@ pub struct UnitTest_BSStreamParserStream {
     pub field_10: u64,
     /// +0x18 `undefined8`, base NiBinaryStream
     pub field_18: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(UnitTest_BSStreamParserStream, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(UnitTest_BSStreamParserStream, field_8) == 0x8);
@@ -15869,6 +16351,7 @@ pub struct UseWeaponActorPackageData {
     /// +0x8 `undefined4`, ctor store
     pub field_8: u32,
     pub unknown_C: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<UseWeaponActorPackageData>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(UseWeaponActorPackageData, __vftable) == 0x0);
@@ -15880,6 +16363,7 @@ const _: () = assert!(core::mem::offset_of!(UseWeaponActorPackageData, field_8) 
 pub struct VATS__ICommandListVisitor {
     /// +0x0 `vtbl:VATS::ICommandListVisitor:0`, rtti
     pub __vftable: *const crate::raw::vtables::VATS__ICommandListVisitor_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(VATS__ICommandListVisitor, __vftable) == 0x0);
 
@@ -15946,6 +16430,7 @@ pub struct ValueAndConditionsEffect {
     /// +0x98 `undefined4`, ctor store
     pub field_98: u32,
     pub unknown_9C: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ValueAndConditionsEffect>() == 0xA0);
 const _: () = assert!(core::mem::offset_of!(ValueAndConditionsEffect, __vftable) == 0x0);
@@ -16036,6 +16521,7 @@ pub struct ValueModifierEffect {
     pub field_90: u32,
     /// +0x94 `undefined4`, ctor store
     pub field_94: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ValueModifierEffect>() == 0x98);
 const _: () = assert!(core::mem::offset_of!(ValueModifierEffect, __vftable) == 0x0);
@@ -16073,6 +16559,7 @@ pub struct VampireFeedEndHandler {
     /// +0x0 `vtbl:VampireFeedEndHandler:0`, rtti
     pub __vftable: *const crate::raw::vtables::VampireFeedEndHandler_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<VampireFeedEndHandler>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(VampireFeedEndHandler, __vftable) == 0x0);
@@ -16133,6 +16620,7 @@ pub struct VampireLordEffect {
     /// +0x88 `undefined4`, base ActiveEffect
     pub field_88: u32,
     pub unknown_8C: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<VampireLordEffect>() == 0x90);
 const _: () = assert!(core::mem::offset_of!(VampireLordEffect, __vftable) == 0x0);
@@ -16168,6 +16656,7 @@ pub struct VariableIntArrayImplementation {
     /// +0x0 `vtbl:VariableIntArrayImplementation:0`, rtti
     pub __vftable: *const crate::raw::vtables::VariableIntArrayImplementation_vtable,
     pub unknown_8: [u8; 64],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<VariableIntArrayImplementation>() == 0x48);
 const _: () = assert!(core::mem::offset_of!(VariableIntArrayImplementation, __vftable) == 0x0);
@@ -16180,6 +16669,7 @@ pub struct VecArrayImplementation {
     /// +0x0 `vtbl:VecArrayImplementation:0`, rtti
     pub __vftable: *const crate::raw::vtables::VecArrayImplementation_vtable,
     pub unknown_8: [u8; 40],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<VecArrayImplementation>() == 0x30);
 const _: () = assert!(core::mem::offset_of!(VecArrayImplementation, __vftable) == 0x0);
@@ -16191,6 +16681,7 @@ const _: () = assert!(core::mem::offset_of!(VecArrayImplementation, __vftable) =
 pub struct VelocityObstacle__Utilities__BuildOpenEdgeListsVisitor {
     /// +0x0 `vtbl:VelocityObstacle::Utilities::BuildOpenEdgeListsVisitor:0`, rtti
     pub __vftable: *const crate::raw::vtables::VelocityObstacle__Utilities__BuildOpenEdgeListsVisitor_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(VelocityObstacle__Utilities__BuildOpenEdgeListsVisitor, __vftable) == 0x0);
 
@@ -16309,6 +16800,7 @@ pub struct ViewAllEntry {
     pub unknown_144: [u8; 4],
     /// +0x148 `undefined8`, ctor store
     pub field_148: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(ViewAllEntry, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(ViewAllEntry, field_8) == 0x8);
@@ -16369,6 +16861,7 @@ const _: () = assert!(core::mem::offset_of!(ViewAllEntry, field_148) == 0x148);
 pub struct VisitReturnData_BSTSmartPointer_IMovementParameters_BSTSmartPointerIntrusiveRefCount_BSScrapArrayAllocator {
     /// +0x0 `vtbl:VisitReturnData<BSTSmartPointer<IMovementParameters,BSTSmartPointerIntrusiveRefCount>,BSScrapArrayAllocator>:0`, rtti
     pub __vftable: *const crate::raw::vtables::VisitReturnData_BSTSmartPointer_IMovementParameters_BSTSmartPointerIntrusiveRefCount_BSScrapArrayAllocator_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(VisitReturnData_BSTSmartPointer_IMovementParameters_BSTSmartPointerIntrusiveRefCount_BSScrapArrayAllocator, __vftable) == 0x0);
 
@@ -16379,6 +16872,7 @@ const _: () = assert!(core::mem::offset_of!(VisitReturnData_BSTSmartPointer_IMov
 pub struct VisitReturnData_MovementVector_BSScrapArrayAllocator {
     /// +0x0 `vtbl:VisitReturnData<MovementVector,BSScrapArrayAllocator>:0`, rtti
     pub __vftable: *const crate::raw::vtables::VisitReturnData_MovementVector_BSScrapArrayAllocator_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(VisitReturnData_MovementVector_BSScrapArrayAllocator, __vftable) == 0x0);
 
@@ -16389,6 +16883,7 @@ const _: () = assert!(core::mem::offset_of!(VisitReturnData_MovementVector_BSScr
 pub struct VisitReturnData_NiPoint3_BSScrapArrayAllocator {
     /// +0x0 `vtbl:VisitReturnData<NiPoint3,BSScrapArrayAllocator>:0`, rtti
     pub __vftable: *const crate::raw::vtables::VisitReturnData_NiPoint3_BSScrapArrayAllocator_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(VisitReturnData_NiPoint3_BSScrapArrayAllocator, __vftable) == 0x0);
 
@@ -16400,6 +16895,7 @@ pub struct VoiceSpellCastHandler {
     /// +0x0 `vtbl:VoiceSpellCastHandler:0`, rtti
     pub __vftable: *const crate::raw::vtables::VoiceSpellCastHandler_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<VoiceSpellCastHandler>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(VoiceSpellCastHandler, __vftable) == 0x0);
@@ -16412,6 +16908,7 @@ pub struct VoiceSpellFireHandler {
     /// +0x0 `vtbl:VoiceSpellFireHandler:0`, rtti
     pub __vftable: *const crate::raw::vtables::VoiceSpellFireHandler_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<VoiceSpellFireHandler>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(VoiceSpellFireHandler, __vftable) == 0x0);
@@ -16443,6 +16940,7 @@ pub struct WaterPathPathingNodeGenerator {
     pub field_30: u32,
     /// +0x34 `undefined4`, ctor store
     pub field_34: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<WaterPathPathingNodeGenerator>() == 0x38);
 const _: () = assert!(core::mem::offset_of!(WaterPathPathingNodeGenerator, __vftable) == 0x0);
@@ -16464,6 +16962,7 @@ const _: () = assert!(core::mem::offset_of!(WaterPathPathingNodeGenerator, field
 pub struct WaterPathRayValidator {
     /// +0x0 `vtbl:WaterPathRayValidator:0`, rtti
     pub __vftable: *const crate::raw::vtables::WaterPathRayValidator_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<WaterPathRayValidator>() == 0x8);
 const _: () = assert!(core::mem::offset_of!(WaterPathRayValidator, __vftable) == 0x0);
@@ -16480,6 +16979,7 @@ pub struct WeaponAnimationGraphManagerHolder {
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined8`, ctor store
     pub field_10: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<WeaponAnimationGraphManagerHolder>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(WeaponAnimationGraphManagerHolder, __vftable) == 0x0);
@@ -16502,6 +17002,7 @@ pub struct WeaponAnimationLoadedCallback {
     pub field_18: u64,
     /// +0x20 `undefined8`, ctor store
     pub field_20: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<WeaponAnimationLoadedCallback>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(WeaponAnimationLoadedCallback, __vftable) == 0x0);
@@ -16518,6 +17019,7 @@ pub struct WeaponBeginDrawRightHandler {
     /// +0x0 `vtbl:WeaponBeginDrawRightHandler:0`, rtti
     pub __vftable: *const crate::raw::vtables::WeaponBeginDrawRightHandler_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<WeaponBeginDrawRightHandler>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(WeaponBeginDrawRightHandler, __vftable) == 0x0);
@@ -16530,6 +17032,7 @@ pub struct WeaponBeginSheatheRightHandler {
     /// +0x0 `vtbl:WeaponBeginSheatheRightHandler:0`, rtti
     pub __vftable: *const crate::raw::vtables::WeaponBeginSheatheRightHandler_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<WeaponBeginSheatheRightHandler>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(WeaponBeginSheatheRightHandler, __vftable) == 0x0);
@@ -16556,6 +17059,7 @@ pub struct WeaponEnchantmentController {
     /// +0x38 `undefined1`, ctor store
     pub field_38: u8,
     pub unknown_39: [u8; 7],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<WeaponEnchantmentController>() == 0x40);
 const _: () = assert!(core::mem::offset_of!(WeaponEnchantmentController, __vftable) == 0x0);
@@ -16575,6 +17079,7 @@ pub struct WeaponLeftSwingHandler {
     /// +0x0 `vtbl:WeaponLeftSwingHandler:0`, rtti
     pub __vftable: *const crate::raw::vtables::WeaponLeftSwingHandler_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<WeaponLeftSwingHandler>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(WeaponLeftSwingHandler, __vftable) == 0x0);
@@ -16608,6 +17113,7 @@ pub struct WeaponObject {
     /// +0x40 `undefined4`, base bhkBlendCollisionObject
     pub field_40: u32,
     pub unknown_44: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(WeaponObject, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(WeaponObject, field_8) == 0x8);
@@ -16628,6 +17134,7 @@ pub struct WeaponRightSwingHandler {
     /// +0x0 `vtbl:WeaponRightSwingHandler:0`, rtti
     pub __vftable: *const crate::raw::vtables::WeaponRightSwingHandler_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<WeaponRightSwingHandler>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(WeaponRightSwingHandler, __vftable) == 0x0);
@@ -16638,6 +17145,7 @@ const _: () = assert!(core::mem::offset_of!(WeaponRightSwingHandler, __vftable) 
 pub struct WeightedModifierVisitor_BSTSmartPointer_IMovementParameters_BSTSmartPointerIntrusiveRefCount__ {
     /// +0x0 `vtbl:WeightedModifierVisitor<BSTSmartPointer<IMovementParameters,BSTSmartPointerIntrusiveRefCount>_>:0`, rtti
     pub __vftable: *const crate::raw::vtables::WeightedModifierVisitor_BSTSmartPointer_IMovementParameters_BSTSmartPointerIntrusiveRefCount___vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(WeightedModifierVisitor_BSTSmartPointer_IMovementParameters_BSTSmartPointerIntrusiveRefCount__, __vftable) == 0x0);
 
@@ -16647,6 +17155,7 @@ const _: () = assert!(core::mem::offset_of!(WeightedModifierVisitor_BSTSmartPoin
 pub struct WeightedModifierVisitor_MovementVector {
     /// +0x0 `vtbl:WeightedModifierVisitor<MovementVector>:0`, rtti
     pub __vftable: *const crate::raw::vtables::WeightedModifierVisitor_MovementVector_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(WeightedModifierVisitor_MovementVector, __vftable) == 0x0);
 
@@ -16656,6 +17165,7 @@ const _: () = assert!(core::mem::offset_of!(WeightedModifierVisitor_MovementVect
 pub struct WeightedModifierVisitor_NiPoint3 {
     /// +0x0 `vtbl:WeightedModifierVisitor<NiPoint3>:0`, rtti
     pub __vftable: *const crate::raw::vtables::WeightedModifierVisitor_NiPoint3_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(WeightedModifierVisitor_NiPoint3, __vftable) == 0x0);
 
@@ -16715,6 +17225,7 @@ pub struct WerewolfEffect {
     /// +0x88 `undefined4`, base ActiveEffect
     pub field_88: u32,
     pub unknown_8C: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<WerewolfEffect>() == 0x90);
 const _: () = assert!(core::mem::offset_of!(WerewolfEffect, __vftable) == 0x0);
@@ -16798,6 +17309,7 @@ pub struct WerewolfFeedEffect {
     /// +0x88 `undefined4`, base ActiveEffect
     pub field_88: u32,
     pub unknown_8C: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<WerewolfFeedEffect>() == 0x90);
 const _: () = assert!(core::mem::offset_of!(WerewolfFeedEffect, __vftable) == 0x0);
@@ -16845,6 +17357,7 @@ pub struct ZeroOverheadHeap {
     /// +0x30 `undefined4`, ctor store
     pub field_30: u32,
     pub unknown_34: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(ZeroOverheadHeap, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(ZeroOverheadHeap, field_8) == 0x8);
@@ -16862,6 +17375,7 @@ pub struct ZeroPitchHandler {
     /// +0x0 `vtbl:ZeroPitchHandler:0`, rtti
     pub __vftable: *const crate::raw::vtables::ZeroPitchHandler_vtable,
     pub unknown_8: [u8; 8],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ZeroPitchHandler>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(ZeroPitchHandler, __vftable) == 0x0);
@@ -16885,6 +17399,7 @@ pub struct ZoneEntry {
     pub unknown_24: [u8; 4],
     /// +0x28 `undefined8`, ctor store
     pub field_28: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(ZoneEntry, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(ZoneEntry, field_8) == 0x8);
@@ -16901,6 +17416,7 @@ pub struct _anon_01A9FA1F__SceneResultsCallBack {
     /// +0x0 `vtbl:_anon_01A9FA1F::SceneResultsCallBack:0`, rtti
     pub __vftable: *const crate::raw::vtables::_anon_01A9FA1F__SceneResultsCallBack_vtable,
     pub unknown_8: [u8; 16],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<_anon_01A9FA1F__SceneResultsCallBack>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(_anon_01A9FA1F__SceneResultsCallBack, __vftable) == 0x0);
@@ -16912,6 +17428,7 @@ const _: () = assert!(core::mem::offset_of!(_anon_01A9FA1F__SceneResultsCallBack
 pub struct _anon_025735F6__ActiveMagicEffectEventArguments {
     /// +0x0 `vtbl:_anon_025735F6::ActiveMagicEffectEventArguments:0`, rtti
     pub __vftable: *const crate::raw::vtables::_anon_025735F6__ActiveMagicEffectEventArguments_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(_anon_025735F6__ActiveMagicEffectEventArguments, __vftable) == 0x0);
 
@@ -16922,6 +17439,7 @@ const _: () = assert!(core::mem::offset_of!(_anon_025735F6__ActiveMagicEffectEve
 pub struct _anon_025735F6__ActorEquipArguments {
     /// +0x0 `vtbl:_anon_025735F6::ActorEquipArguments:0`, rtti
     pub __vftable: *const crate::raw::vtables::_anon_025735F6__ActorEquipArguments_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(_anon_025735F6__ActorEquipArguments, __vftable) == 0x0);
 
@@ -16932,6 +17450,7 @@ const _: () = assert!(core::mem::offset_of!(_anon_025735F6__ActorEquipArguments,
 pub struct _anon_025735F6__ActorLocationChangeArguments {
     /// +0x0 `vtbl:_anon_025735F6::ActorLocationChangeArguments:0`, rtti
     pub __vftable: *const crate::raw::vtables::_anon_025735F6__ActorLocationChangeArguments_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(_anon_025735F6__ActorLocationChangeArguments, __vftable) == 0x0);
 
@@ -16942,6 +17461,7 @@ const _: () = assert!(core::mem::offset_of!(_anon_025735F6__ActorLocationChangeA
 pub struct _anon_025735F6__AmiiboTouchArguments {
     /// +0x0 `vtbl:_anon_025735F6::AmiiboTouchArguments:0`, rtti
     pub __vftable: *const crate::raw::vtables::_anon_025735F6__AmiiboTouchArguments_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(_anon_025735F6__AmiiboTouchArguments, __vftable) == 0x0);
 
@@ -16952,6 +17472,7 @@ const _: () = assert!(core::mem::offset_of!(_anon_025735F6__AmiiboTouchArguments
 pub struct _anon_025735F6__AnimationEventArguments {
     /// +0x0 `vtbl:_anon_025735F6::AnimationEventArguments:0`, rtti
     pub __vftable: *const crate::raw::vtables::_anon_025735F6__AnimationEventArguments_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(_anon_025735F6__AnimationEventArguments, __vftable) == 0x0);
 
@@ -16962,6 +17483,7 @@ const _: () = assert!(core::mem::offset_of!(_anon_025735F6__AnimationEventArgume
 pub struct _anon_025735F6__ContainerChangedEventArguments {
     /// +0x0 `vtbl:_anon_025735F6::ContainerChangedEventArguments:0`, rtti
     pub __vftable: *const crate::raw::vtables::_anon_025735F6__ContainerChangedEventArguments_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(_anon_025735F6__ContainerChangedEventArguments, __vftable) == 0x0);
 
@@ -16972,6 +17494,7 @@ const _: () = assert!(core::mem::offset_of!(_anon_025735F6__ContainerChangedEven
 pub struct _anon_025735F6__ContainerEventArguments {
     /// +0x0 `vtbl:_anon_025735F6::ContainerEventArguments:0`, rtti
     pub __vftable: *const crate::raw::vtables::_anon_025735F6__ContainerEventArguments_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(_anon_025735F6__ContainerEventArguments, __vftable) == 0x0);
 
@@ -16982,6 +17505,7 @@ const _: () = assert!(core::mem::offset_of!(_anon_025735F6__ContainerEventArgume
 pub struct _anon_025735F6__DestructionStageChangedArguments {
     /// +0x0 `vtbl:_anon_025735F6::DestructionStageChangedArguments:0`, rtti
     pub __vftable: *const crate::raw::vtables::_anon_025735F6__DestructionStageChangedArguments_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(_anon_025735F6__DestructionStageChangedArguments, __vftable) == 0x0);
 
@@ -16993,6 +17517,7 @@ pub struct _anon_025735F6__EventCallbackAdapter {
     /// +0x0 `vtbl:_anon_025735F6::EventCallbackAdapter:0`, rtti
     pub __vftable: *const crate::raw::vtables::_anon_025735F6__EventCallbackAdapter_vtable,
     pub unknown_8: [u8; 32],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<_anon_025735F6__EventCallbackAdapter>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(_anon_025735F6__EventCallbackAdapter, __vftable) == 0x0);
@@ -17004,6 +17529,7 @@ const _: () = assert!(core::mem::offset_of!(_anon_025735F6__EventCallbackAdapter
 pub struct _anon_025735F6__HitArguments {
     /// +0x0 `vtbl:_anon_025735F6::HitArguments:0`, rtti
     pub __vftable: *const crate::raw::vtables::_anon_025735F6__HitArguments_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(_anon_025735F6__HitArguments, __vftable) == 0x0);
 
@@ -17014,6 +17540,7 @@ const _: () = assert!(core::mem::offset_of!(_anon_025735F6__HitArguments, __vfta
 pub struct _anon_025735F6__LOSEventArguments {
     /// +0x0 `vtbl:_anon_025735F6::LOSEventArguments:0`, rtti
     pub __vftable: *const crate::raw::vtables::_anon_025735F6__LOSEventArguments_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(_anon_025735F6__LOSEventArguments, __vftable) == 0x0);
 
@@ -17024,6 +17551,7 @@ const _: () = assert!(core::mem::offset_of!(_anon_025735F6__LOSEventArguments, _
 pub struct _anon_025735F6__MagicEffectApplyArguments {
     /// +0x0 `vtbl:_anon_025735F6::MagicEffectApplyArguments:0`, rtti
     pub __vftable: *const crate::raw::vtables::_anon_025735F6__MagicEffectApplyArguments_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(_anon_025735F6__MagicEffectApplyArguments, __vftable) == 0x0);
 
@@ -17034,6 +17562,7 @@ const _: () = assert!(core::mem::offset_of!(_anon_025735F6__MagicEffectApplyArgu
 pub struct _anon_025735F6__MagicWardHitArguments {
     /// +0x0 `vtbl:_anon_025735F6::MagicWardHitArguments:0`, rtti
     pub __vftable: *const crate::raw::vtables::_anon_025735F6__MagicWardHitArguments_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(_anon_025735F6__MagicWardHitArguments, __vftable) == 0x0);
 
@@ -17044,6 +17573,7 @@ const _: () = assert!(core::mem::offset_of!(_anon_025735F6__MagicWardHitArgument
 pub struct _anon_025735F6__OnCombatStateChangedArguments {
     /// +0x0 `vtbl:_anon_025735F6::OnCombatStateChangedArguments:0`, rtti
     pub __vftable: *const crate::raw::vtables::_anon_025735F6__OnCombatStateChangedArguments_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(_anon_025735F6__OnCombatStateChangedArguments, __vftable) == 0x0);
 
@@ -17054,6 +17584,7 @@ const _: () = assert!(core::mem::offset_of!(_anon_025735F6__OnCombatStateChanged
 pub struct _anon_025735F6__PerkFragmentArguments {
     /// +0x0 `vtbl:_anon_025735F6::PerkFragmentArguments:0`, rtti
     pub __vftable: *const crate::raw::vtables::_anon_025735F6__PerkFragmentArguments_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(_anon_025735F6__PerkFragmentArguments, __vftable) == 0x0);
 
@@ -17064,6 +17595,7 @@ const _: () = assert!(core::mem::offset_of!(_anon_025735F6__PerkFragmentArgument
 pub struct _anon_025735F6__PlayerBowShotArguments {
     /// +0x0 `vtbl:_anon_025735F6::PlayerBowShotArguments:0`, rtti
     pub __vftable: *const crate::raw::vtables::_anon_025735F6__PlayerBowShotArguments_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(_anon_025735F6__PlayerBowShotArguments, __vftable) == 0x0);
 
@@ -17074,6 +17606,7 @@ const _: () = assert!(core::mem::offset_of!(_anon_025735F6__PlayerBowShotArgumen
 pub struct _anon_025735F6__ScriptFoundCallback {
     /// +0x0 `vtbl:_anon_025735F6::ScriptFoundCallback:0`, rtti
     pub __vftable: *const crate::raw::vtables::_anon_025735F6__ScriptFoundCallback_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(_anon_025735F6__ScriptFoundCallback, __vftable) == 0x0);
 
@@ -17084,6 +17617,7 @@ const _: () = assert!(core::mem::offset_of!(_anon_025735F6__ScriptFoundCallback,
 pub struct _anon_025735F6__SingleActorArgument {
     /// +0x0 `vtbl:_anon_025735F6::SingleActorArgument:0`, rtti
     pub __vftable: *const crate::raw::vtables::_anon_025735F6__SingleActorArgument_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(_anon_025735F6__SingleActorArgument, __vftable) == 0x0);
 
@@ -17094,6 +17628,7 @@ const _: () = assert!(core::mem::offset_of!(_anon_025735F6__SingleActorArgument,
 pub struct _anon_025735F6__SingleObjectRefrHandleArgument {
     /// +0x0 `vtbl:_anon_025735F6::SingleObjectRefrHandleArgument:0`, rtti
     pub __vftable: *const crate::raw::vtables::_anon_025735F6__SingleObjectRefrHandleArgument_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(_anon_025735F6__SingleObjectRefrHandleArgument, __vftable) == 0x0);
 
@@ -17104,6 +17639,7 @@ const _: () = assert!(core::mem::offset_of!(_anon_025735F6__SingleObjectRefrHand
 pub struct _anon_025735F6__SinglePackageArgument {
     /// +0x0 `vtbl:_anon_025735F6::SinglePackageArgument:0`, rtti
     pub __vftable: *const crate::raw::vtables::_anon_025735F6__SinglePackageArgument_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(_anon_025735F6__SinglePackageArgument, __vftable) == 0x0);
 
@@ -17114,6 +17650,7 @@ const _: () = assert!(core::mem::offset_of!(_anon_025735F6__SinglePackageArgumen
 pub struct _anon_025735F6__SingleRefAliasFunctionArguments {
     /// +0x0 `vtbl:_anon_025735F6::SingleRefAliasFunctionArguments:0`, rtti
     pub __vftable: *const crate::raw::vtables::_anon_025735F6__SingleRefAliasFunctionArguments_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(_anon_025735F6__SingleRefAliasFunctionArguments, __vftable) == 0x0);
 
@@ -17124,6 +17661,7 @@ const _: () = assert!(core::mem::offset_of!(_anon_025735F6__SingleRefAliasFuncti
 pub struct _anon_025735F6__SingleSimpleArgument_bool {
     /// +0x0 `vtbl:_anon_025735F6::SingleSimpleArgument<bool>:0`, rtti
     pub __vftable: *const crate::raw::vtables::_anon_025735F6__SingleSimpleArgument_bool_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(_anon_025735F6__SingleSimpleArgument_bool, __vftable) == 0x0);
 
@@ -17134,6 +17672,7 @@ const _: () = assert!(core::mem::offset_of!(_anon_025735F6__SingleSimpleArgument
 pub struct _anon_025735F6__SingleSimpleArgument_float {
     /// +0x0 `vtbl:_anon_025735F6::SingleSimpleArgument<float>:0`, rtti
     pub __vftable: *const crate::raw::vtables::_anon_025735F6__SingleSimpleArgument_float_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(_anon_025735F6__SingleSimpleArgument_float, __vftable) == 0x0);
 
@@ -17144,6 +17683,7 @@ const _: () = assert!(core::mem::offset_of!(_anon_025735F6__SingleSimpleArgument
 pub struct _anon_025735F6__SpellCastArguments {
     /// +0x0 `vtbl:_anon_025735F6::SpellCastArguments:0`, rtti
     pub __vftable: *const crate::raw::vtables::_anon_025735F6__SpellCastArguments_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(_anon_025735F6__SpellCastArguments, __vftable) == 0x0);
 
@@ -17154,6 +17694,7 @@ const _: () = assert!(core::mem::offset_of!(_anon_025735F6__SpellCastArguments, 
 pub struct _anon_025735F6__TrackedStatsEventFunctor {
     /// +0x0 `vtbl:_anon_025735F6::TrackedStatsEventFunctor:0`, rtti
     pub __vftable: *const crate::raw::vtables::_anon_025735F6__TrackedStatsEventFunctor_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(_anon_025735F6__TrackedStatsEventFunctor, __vftable) == 0x0);
 
@@ -17164,6 +17705,7 @@ const _: () = assert!(core::mem::offset_of!(_anon_025735F6__TrackedStatsEventFun
 pub struct _anon_025735F6__TrapHitArguments {
     /// +0x0 `vtbl:_anon_025735F6::TrapHitArguments:0`, rtti
     pub __vftable: *const crate::raw::vtables::_anon_025735F6__TrapHitArguments_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(_anon_025735F6__TrapHitArguments, __vftable) == 0x0);
 
@@ -17174,6 +17716,7 @@ const _: () = assert!(core::mem::offset_of!(_anon_025735F6__TrapHitArguments, __
 pub struct _anon_03AF8C4C__AttachLightHitEffectVisitor {
     /// +0x0 `vtbl:_anon_03AF8C4C::AttachLightHitEffectVisitor:0`, rtti
     pub __vftable: *const crate::raw::vtables::_anon_03AF8C4C__AttachLightHitEffectVisitor_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(_anon_03AF8C4C__AttachLightHitEffectVisitor, __vftable) == 0x0);
 
@@ -17184,6 +17727,7 @@ const _: () = assert!(core::mem::offset_of!(_anon_03AF8C4C__AttachLightHitEffect
 pub struct _anon_11669552__InitItemPerkRankDataVisitor {
     /// +0x0 `vtbl:_anon_11669552::InitItemPerkRankDataVisitor:0`, rtti
     pub __vftable: *const crate::raw::vtables::_anon_11669552__InitItemPerkRankDataVisitor_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(_anon_11669552__InitItemPerkRankDataVisitor, __vftable) == 0x0);
 
@@ -17194,6 +17738,7 @@ const _: () = assert!(core::mem::offset_of!(_anon_11669552__InitItemPerkRankData
 pub struct _anon_11B7475C__PlayerParentCellListener {
     /// +0x0 `vtbl:_anon_11B7475C::PlayerParentCellListener:0`, rtti
     pub __vftable: *const crate::raw::vtables::_anon_11B7475C__PlayerParentCellListener_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(_anon_11B7475C__PlayerParentCellListener, __vftable) == 0x0);
 
@@ -17204,6 +17749,7 @@ const _: () = assert!(core::mem::offset_of!(_anon_11B7475C__PlayerParentCellList
 pub struct _anon_1613A816__ConsoleHotkeyManager {
     /// +0x0 `vtbl:_anon_1613A816::ConsoleHotkeyManager:0`, rtti
     pub __vftable: *const crate::raw::vtables::_anon_1613A816__ConsoleHotkeyManager_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(_anon_1613A816__ConsoleHotkeyManager, __vftable) == 0x0);
 
@@ -17214,6 +17760,7 @@ const _: () = assert!(core::mem::offset_of!(_anon_1613A816__ConsoleHotkeyManager
 pub struct _anon_1613A816__ConsoleLogPrinter {
     /// +0x0 `vtbl:_anon_1613A816::ConsoleLogPrinter:0`, rtti
     pub __vftable: *const crate::raw::vtables::_anon_1613A816__ConsoleLogPrinter_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(_anon_1613A816__ConsoleLogPrinter, __vftable) == 0x0);
 
@@ -17240,6 +17787,7 @@ pub struct _anon_207FFA87__AudioLoadTask {
     /// +0x30 `undefined4`, base QueuedFile
     pub field_30: u32,
     pub unknown_34: [u8; 12],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<_anon_207FFA87__AudioLoadTask>() == 0x40);
 const _: () = assert!(core::mem::offset_of!(_anon_207FFA87__AudioLoadTask, __vftable) == 0x0);
@@ -17258,6 +17806,7 @@ const _: () = assert!(core::mem::offset_of!(_anon_207FFA87__AudioLoadTask, field
 pub struct _anon_228DD50F__AutoDoorFadeCallback {
     /// +0x0 `vtbl:_anon_228DD50F::AutoDoorFadeCallback:0`, rtti
     pub __vftable: *const crate::raw::vtables::_anon_228DD50F__AutoDoorFadeCallback_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(_anon_228DD50F__AutoDoorFadeCallback, __vftable) == 0x0);
 
@@ -17268,6 +17817,7 @@ const _: () = assert!(core::mem::offset_of!(_anon_228DD50F__AutoDoorFadeCallback
 pub struct _anon_228DD50F__NormalDoorFadeCallback {
     /// +0x0 `vtbl:_anon_228DD50F::NormalDoorFadeCallback:0`, rtti
     pub __vftable: *const crate::raw::vtables::_anon_228DD50F__NormalDoorFadeCallback_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(_anon_228DD50F__NormalDoorFadeCallback, __vftable) == 0x0);
 
@@ -17278,6 +17828,7 @@ const _: () = assert!(core::mem::offset_of!(_anon_228DD50F__NormalDoorFadeCallba
 pub struct _anon_279BB6B4__CheckNavmeshPathFilter {
     /// +0x0 `vtbl:_anon_279BB6B4::CheckNavmeshPathFilter:0`, rtti
     pub __vftable: *const crate::raw::vtables::_anon_279BB6B4__CheckNavmeshPathFilter_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(_anon_279BB6B4__CheckNavmeshPathFilter, __vftable) == 0x0);
 
@@ -17289,6 +17840,7 @@ pub struct _anon_27F66FDE__MonitorAPO {
     /// +0x0 `vtbl:_anon_27F66FDE::MonitorAPO:0`, rtti
     pub __vftable: *const crate::raw::vtables::_anon_27F66FDE__MonitorAPO_vtable,
     pub unknown_8: [u8; 48],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<_anon_27F66FDE__MonitorAPO>() == 0x38);
 const _: () = assert!(core::mem::offset_of!(_anon_27F66FDE__MonitorAPO, __vftable) == 0x0);
@@ -17300,6 +17852,7 @@ const _: () = assert!(core::mem::offset_of!(_anon_27F66FDE__MonitorAPO, __vftabl
 pub struct _anon_27F66FDE__ReverbModCallback {
     /// +0x0 `vtbl:_anon_27F66FDE::ReverbModCallback:0`, rtti
     pub __vftable: *const crate::raw::vtables::_anon_27F66FDE__ReverbModCallback_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(_anon_27F66FDE__ReverbModCallback, __vftable) == 0x0);
 
@@ -17310,6 +17863,7 @@ const _: () = assert!(core::mem::offset_of!(_anon_27F66FDE__ReverbModCallback, _
 pub struct _anon_2CC1437D__ActorTargetCheck {
     /// +0x0 `vtbl:_anon_2CC1437D::ActorTargetCheck:0`, rtti
     pub __vftable: *const crate::raw::vtables::_anon_2CC1437D__ActorTargetCheck_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(_anon_2CC1437D__ActorTargetCheck, __vftable) == 0x0);
 
@@ -17320,6 +17874,7 @@ const _: () = assert!(core::mem::offset_of!(_anon_2CC1437D__ActorTargetCheck, __
 pub struct _anon_2DBBCB74__WarmthCalcFunc {
     /// +0x0 `vtbl:_anon_2DBBCB74::WarmthCalcFunc:0`, rtti
     pub __vftable: *const crate::raw::vtables::_anon_2DBBCB74__WarmthCalcFunc_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(_anon_2DBBCB74__WarmthCalcFunc, __vftable) == 0x0);
 
@@ -17330,6 +17885,7 @@ const _: () = assert!(core::mem::offset_of!(_anon_2DBBCB74__WarmthCalcFunc, __vf
 pub struct _anon_2E811767__ActivateChoiceMenuCallbackFunctor {
     /// +0x0 `vtbl:_anon_2E811767::ActivateChoiceMenuCallbackFunctor:0`, rtti
     pub __vftable: *const crate::raw::vtables::_anon_2E811767__ActivateChoiceMenuCallbackFunctor_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(_anon_2E811767__ActivateChoiceMenuCallbackFunctor, __vftable) == 0x0);
 
@@ -17340,6 +17896,7 @@ const _: () = assert!(core::mem::offset_of!(_anon_2E811767__ActivateChoiceMenuCa
 pub struct _anon_2E811767__PlayerControlsEGMClear {
     /// +0x0 `vtbl:_anon_2E811767::PlayerControlsEGMClear:0`, rtti
     pub __vftable: *const crate::raw::vtables::_anon_2E811767__PlayerControlsEGMClear_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(_anon_2E811767__PlayerControlsEGMClear, __vftable) == 0x0);
 
@@ -17350,6 +17907,7 @@ const _: () = assert!(core::mem::offset_of!(_anon_2E811767__PlayerControlsEGMCle
 pub struct _anon_2E88EB60__UnequipAllVisitor {
     /// +0x0 `vtbl:_anon_2E88EB60::UnequipAllVisitor:0`, rtti
     pub __vftable: *const crate::raw::vtables::_anon_2E88EB60__UnequipAllVisitor_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(_anon_2E88EB60__UnequipAllVisitor, __vftable) == 0x0);
 
@@ -17360,6 +17918,7 @@ const _: () = assert!(core::mem::offset_of!(_anon_2E88EB60__UnequipAllVisitor, _
 pub struct _anon_2F998B1B__FadeThenMainMenuCallback {
     /// +0x0 `vtbl:_anon_2F998B1B::FadeThenMainMenuCallback:0`, rtti
     pub __vftable: *const crate::raw::vtables::_anon_2F998B1B__FadeThenMainMenuCallback_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(_anon_2F998B1B__FadeThenMainMenuCallback, __vftable) == 0x0);
 
@@ -17370,6 +17929,7 @@ const _: () = assert!(core::mem::offset_of!(_anon_2F998B1B__FadeThenMainMenuCall
 pub struct _anon_39D57269__FindPreferredConnectedNavmeshInfosWithinRadiusVisitor {
     /// +0x0 `vtbl:_anon_39D57269::FindPreferredConnectedNavmeshInfosWithinRadiusVisitor:0`, rtti
     pub __vftable: *const crate::raw::vtables::_anon_39D57269__FindPreferredConnectedNavmeshInfosWithinRadiusVisitor_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(_anon_39D57269__FindPreferredConnectedNavmeshInfosWithinRadiusVisitor, __vftable) == 0x0);
 
@@ -17380,6 +17940,7 @@ const _: () = assert!(core::mem::offset_of!(_anon_39D57269__FindPreferredConnect
 pub struct _anon_3A66EA0E__iStateTaggingFunctor {
     /// +0x0 `vtbl:_anon_3A66EA0E::iStateTaggingFunctor:0`, rtti
     pub __vftable: *const crate::raw::vtables::_anon_3A66EA0E__iStateTaggingFunctor_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(_anon_3A66EA0E__iStateTaggingFunctor, __vftable) == 0x0);
 
@@ -17504,6 +18065,7 @@ pub struct _anon_3B91968A__DejaGFxLogger {
     pub unknown_B9: [u8; 3],
     /// +0xBC `undefined4`, base GRefCountImplCore
     pub field_BC: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(_anon_3B91968A__DejaGFxLogger, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(_anon_3B91968A__DejaGFxLogger, field_8) == 0x8);
@@ -17562,6 +18124,7 @@ const _: () = assert!(core::mem::offset_of!(_anon_3B91968A__DejaGFxLogger, field
 pub struct _anon_3C34B62B__DispelAppropriateEffectsVisitor {
     /// +0x0 `vtbl:_anon_3C34B62B::DispelAppropriateEffectsVisitor:0`, rtti
     pub __vftable: *const crate::raw::vtables::_anon_3C34B62B__DispelAppropriateEffectsVisitor_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(_anon_3C34B62B__DispelAppropriateEffectsVisitor, __vftable) == 0x0);
 
@@ -17572,6 +18135,7 @@ const _: () = assert!(core::mem::offset_of!(_anon_3C34B62B__DispelAppropriateEff
 pub struct _anon_3D37F7D5__ClipAddingFunctor {
     /// +0x0 `vtbl:_anon_3D37F7D5::ClipAddingFunctor:0`, rtti
     pub __vftable: *const crate::raw::vtables::_anon_3D37F7D5__ClipAddingFunctor_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(_anon_3D37F7D5__ClipAddingFunctor, __vftable) == 0x0);
 
@@ -17582,6 +18146,7 @@ const _: () = assert!(core::mem::offset_of!(_anon_3D37F7D5__ClipAddingFunctor, _
 pub struct _anon_3D37F7D5__CompileExpressionFunctor {
     /// +0x0 `vtbl:_anon_3D37F7D5::CompileExpressionFunctor:0`, rtti
     pub __vftable: *const crate::raw::vtables::_anon_3D37F7D5__CompileExpressionFunctor_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(_anon_3D37F7D5__CompileExpressionFunctor, __vftable) == 0x0);
 
@@ -17592,6 +18157,7 @@ const _: () = assert!(core::mem::offset_of!(_anon_3D37F7D5__CompileExpressionFun
 pub struct _anon_3D37F7D5__MapEventFindFunctor {
     /// +0x0 `vtbl:_anon_3D37F7D5::MapEventFindFunctor:0`, rtti
     pub __vftable: *const crate::raw::vtables::_anon_3D37F7D5__MapEventFindFunctor_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(_anon_3D37F7D5__MapEventFindFunctor, __vftable) == 0x0);
 
@@ -17690,6 +18256,7 @@ pub struct _anon_3D37F7D5__NullAssetLoader {
     pub field_110: u32,
     /// +0x114 `undefined4`, base hkBaseObject
     pub field_114: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(_anon_3D37F7D5__NullAssetLoader, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(_anon_3D37F7D5__NullAssetLoader, m_hkpCollidableCollidableFilter_10) == 0x10);
@@ -17743,6 +18310,7 @@ const _: () = assert!(core::mem::offset_of!(_anon_3D37F7D5__NullAssetLoader, fie
 pub struct _anon_3F954FDF__CollectUsedUniqueIDsVisitor {
     /// +0x0 `vtbl:_anon_3F954FDF::CollectUsedUniqueIDsVisitor:0`, rtti
     pub __vftable: *const crate::raw::vtables::_anon_3F954FDF__CollectUsedUniqueIDsVisitor_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(_anon_3F954FDF__CollectUsedUniqueIDsVisitor, __vftable) == 0x0);
 
@@ -17753,6 +18321,7 @@ const _: () = assert!(core::mem::offset_of!(_anon_3F954FDF__CollectUsedUniqueIDs
 pub struct _anon_3F954FDF__CountObjectsWithKeywordFunctor {
     /// +0x0 `vtbl:_anon_3F954FDF::CountObjectsWithKeywordFunctor:0`, rtti
     pub __vftable: *const crate::raw::vtables::_anon_3F954FDF__CountObjectsWithKeywordFunctor_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(_anon_3F954FDF__CountObjectsWithKeywordFunctor, __vftable) == 0x0);
 
@@ -17763,6 +18332,7 @@ const _: () = assert!(core::mem::offset_of!(_anon_3F954FDF__CountObjectsWithKeyw
 pub struct _anon_3F954FDF__GetArmorInSlotFunctor {
     /// +0x0 `vtbl:_anon_3F954FDF::GetArmorInSlotFunctor:0`, rtti
     pub __vftable: *const crate::raw::vtables::_anon_3F954FDF__GetArmorInSlotFunctor_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(_anon_3F954FDF__GetArmorInSlotFunctor, __vftable) == 0x0);
 
@@ -17773,6 +18343,7 @@ const _: () = assert!(core::mem::offset_of!(_anon_3F954FDF__GetArmorInSlotFuncto
 pub struct _anon_3F954FDF__UnequipArmorFunctor {
     /// +0x0 `vtbl:_anon_3F954FDF::UnequipArmorFunctor:0`, rtti
     pub __vftable: *const crate::raw::vtables::_anon_3F954FDF__UnequipArmorFunctor_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(_anon_3F954FDF__UnequipArmorFunctor, __vftable) == 0x0);
 
@@ -17871,6 +18442,7 @@ pub struct _anon_4076B7E2__ForwardingPackfileListerer {
     pub field_110: u32,
     /// +0x114 `undefined4`, base hkBaseObject
     pub field_114: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(_anon_4076B7E2__ForwardingPackfileListerer, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(_anon_4076B7E2__ForwardingPackfileListerer, m_hkpCollidableCollidableFilter_10) == 0x10);
@@ -18014,6 +18586,7 @@ pub struct _anon_422024B4__Clear1nTracksFilter {
     pub field_110: u32,
     /// +0x114 `undefined4`, base hkBaseObject
     pub field_114: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(_anon_422024B4__Clear1nTracksFilter, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(_anon_422024B4__Clear1nTracksFilter, field_8) == 0x8);
@@ -18158,6 +18731,7 @@ pub struct _anon_422024B4__NeverCollideFilter {
     pub field_110: u32,
     /// +0x114 `undefined4`, base hkBaseObject
     pub field_114: u32,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(_anon_422024B4__NeverCollideFilter, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(_anon_422024B4__NeverCollideFilter, field_8) == 0x8);
@@ -18212,6 +18786,7 @@ const _: () = assert!(core::mem::offset_of!(_anon_422024B4__NeverCollideFilter, 
 pub struct _anon_47E0B371__NullMapCameraCallbacks {
     /// +0x0 `vtbl:_anon_47E0B371::NullMapCameraCallbacks:0`, rtti
     pub __vftable: *const crate::raw::vtables::_anon_47E0B371__NullMapCameraCallbacks_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(_anon_47E0B371__NullMapCameraCallbacks, __vftable) == 0x0);
 
@@ -18222,6 +18797,7 @@ const _: () = assert!(core::mem::offset_of!(_anon_47E0B371__NullMapCameraCallbac
 pub struct _anon_498DB440__NearestHitCollector {
     /// +0x0 `vtbl:_anon_498DB440::NearestHitCollector:0`, rtti
     pub __vftable: *const crate::raw::vtables::_anon_498DB440__NearestHitCollector_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(_anon_498DB440__NearestHitCollector, __vftable) == 0x0);
 
@@ -18232,6 +18808,7 @@ const _: () = assert!(core::mem::offset_of!(_anon_498DB440__NearestHitCollector,
 pub struct _anon_498DB440__RotateNormalHitCollector {
     /// +0x0 `vtbl:_anon_498DB440::RotateNormalHitCollector:0`, rtti
     pub __vftable: *const crate::raw::vtables::_anon_498DB440__RotateNormalHitCollector_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(_anon_498DB440__RotateNormalHitCollector, __vftable) == 0x0);
 
@@ -18242,6 +18819,7 @@ const _: () = assert!(core::mem::offset_of!(_anon_498DB440__RotateNormalHitColle
 pub struct _anon_569CF5D7__PreloadCountVisitor {
     /// +0x0 `vtbl:_anon_569CF5D7::PreloadCountVisitor:0`, rtti
     pub __vftable: *const crate::raw::vtables::_anon_569CF5D7__PreloadCountVisitor_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(_anon_569CF5D7__PreloadCountVisitor, __vftable) == 0x0);
 
@@ -18252,6 +18830,7 @@ const _: () = assert!(core::mem::offset_of!(_anon_569CF5D7__PreloadCountVisitor,
 pub struct _anon_569CF5D7__PreloadModelsVisitor {
     /// +0x0 `vtbl:_anon_569CF5D7::PreloadModelsVisitor:0`, rtti
     pub __vftable: *const crate::raw::vtables::_anon_569CF5D7__PreloadModelsVisitor_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(_anon_569CF5D7__PreloadModelsVisitor, __vftable) == 0x0);
 
@@ -18298,6 +18877,7 @@ pub struct _anon_569CF5D7__QueuedMagicItem {
     /// +0x90 `undefined8`, base AnimationSystemUtils::TESModelAndAnimationHandles
     pub field_90: u64,
     pub unknown_98: [u8; 16],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<_anon_569CF5D7__QueuedMagicItem>() == 0xA8);
 const _: () = assert!(core::mem::offset_of!(_anon_569CF5D7__QueuedMagicItem, __vftable) == 0x0);
@@ -18324,6 +18904,7 @@ const _: () = assert!(core::mem::offset_of!(_anon_569CF5D7__QueuedMagicItem, fie
 pub struct _anon_5C8159CE__FavoriteItemHandler_MagicItem_SpellAttack__Event {
     /// +0x0 `vtbl:_anon_5C8159CE::FavoriteItemHandler<MagicItem,SpellAttack::Event>:0`, rtti
     pub __vftable: *const crate::raw::vtables::_anon_5C8159CE__FavoriteItemHandler_MagicItem_SpellAttack__Event_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(_anon_5C8159CE__FavoriteItemHandler_MagicItem_SpellAttack__Event, __vftable) == 0x0);
 
@@ -18334,6 +18915,7 @@ const _: () = assert!(core::mem::offset_of!(_anon_5C8159CE__FavoriteItemHandler_
 pub struct _anon_5C8159CE__FavoriteItemHandler_TESObjectWEAP_WeaponAttack__Event {
     /// +0x0 `vtbl:_anon_5C8159CE::FavoriteItemHandler<TESObjectWEAP,WeaponAttack::Event>:0`, rtti
     pub __vftable: *const crate::raw::vtables::_anon_5C8159CE__FavoriteItemHandler_TESObjectWEAP_WeaponAttack__Event_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(_anon_5C8159CE__FavoriteItemHandler_TESObjectWEAP_WeaponAttack__Event, __vftable) == 0x0);
 
@@ -18344,6 +18926,7 @@ const _: () = assert!(core::mem::offset_of!(_anon_5C8159CE__FavoriteItemHandler_
 pub struct _anon_5C8159CE__FavoriteItemHandler_TESShout_ShoutAttack__Event {
     /// +0x0 `vtbl:_anon_5C8159CE::FavoriteItemHandler<TESShout,ShoutAttack::Event>:0`, rtti
     pub __vftable: *const crate::raw::vtables::_anon_5C8159CE__FavoriteItemHandler_TESShout_ShoutAttack__Event_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(_anon_5C8159CE__FavoriteItemHandler_TESShout_ShoutAttack__Event, __vftable) == 0x0);
 
@@ -18354,6 +18937,7 @@ const _: () = assert!(core::mem::offset_of!(_anon_5C8159CE__FavoriteItemHandler_
 pub struct _anon_5C8159CE__FavoriteShoutHandler {
     /// +0x0 `vtbl:_anon_5C8159CE::FavoriteShoutHandler:0`, rtti
     pub __vftable: *const crate::raw::vtables::_anon_5C8159CE__FavoriteShoutHandler_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(_anon_5C8159CE__FavoriteShoutHandler, __vftable) == 0x0);
 
@@ -18364,6 +18948,7 @@ const _: () = assert!(core::mem::offset_of!(_anon_5C8159CE__FavoriteShoutHandler
 pub struct _anon_5C8159CE__FavoriteSpellHandler {
     /// +0x0 `vtbl:_anon_5C8159CE::FavoriteSpellHandler:0`, rtti
     pub __vftable: *const crate::raw::vtables::_anon_5C8159CE__FavoriteSpellHandler_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(_anon_5C8159CE__FavoriteSpellHandler, __vftable) == 0x0);
 
@@ -18374,6 +18959,7 @@ const _: () = assert!(core::mem::offset_of!(_anon_5C8159CE__FavoriteSpellHandler
 pub struct _anon_5C8159CE__FavoriteWeaponHandler {
     /// +0x0 `vtbl:_anon_5C8159CE::FavoriteWeaponHandler:0`, rtti
     pub __vftable: *const crate::raw::vtables::_anon_5C8159CE__FavoriteWeaponHandler_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(_anon_5C8159CE__FavoriteWeaponHandler, __vftable) == 0x0);
 
@@ -18384,6 +18970,7 @@ const _: () = assert!(core::mem::offset_of!(_anon_5C8159CE__FavoriteWeaponHandle
 pub struct _anon_5C8159CE__GetMiscStatInfoFunc {
     /// +0x0 `vtbl:_anon_5C8159CE::GetMiscStatInfoFunc:0`, rtti
     pub __vftable: *const crate::raw::vtables::_anon_5C8159CE__GetMiscStatInfoFunc_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(_anon_5C8159CE__GetMiscStatInfoFunc, __vftable) == 0x0);
 
@@ -18394,6 +18981,7 @@ const _: () = assert!(core::mem::offset_of!(_anon_5C8159CE__GetMiscStatInfoFunc,
 pub struct _anon_5E019490__DecalApplier {
     /// +0x0 `vtbl:_anon_5E019490::DecalApplier:0`, rtti
     pub __vftable: *const crate::raw::vtables::_anon_5E019490__DecalApplier_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(_anon_5E019490__DecalApplier, __vftable) == 0x0);
 
@@ -18403,6 +18991,7 @@ const _: () = assert!(core::mem::offset_of!(_anon_5E019490__DecalApplier, __vfta
 pub struct _anon_5FBDCD4E__Compression {
     /// +0x0 `vtbl:_anon_5FBDCD4E::Compression:0`, rtti
     pub __vftable: *const crate::raw::vtables::_anon_5FBDCD4E__Compression_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(_anon_5FBDCD4E__Compression, __vftable) == 0x0);
 
@@ -18413,6 +19002,7 @@ const _: () = assert!(core::mem::offset_of!(_anon_5FBDCD4E__Compression, __vftab
 pub struct _anon_5FBDCD4E__LZ4Compression {
     /// +0x0 `vtbl:_anon_5FBDCD4E::LZ4Compression:0`, rtti
     pub __vftable: *const crate::raw::vtables::_anon_5FBDCD4E__LZ4Compression_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(_anon_5FBDCD4E__LZ4Compression, __vftable) == 0x0);
 
@@ -18423,6 +19013,7 @@ const _: () = assert!(core::mem::offset_of!(_anon_5FBDCD4E__LZ4Compression, __vf
 pub struct _anon_5FBDCD4E__ZLibCompression {
     /// +0x0 `vtbl:_anon_5FBDCD4E::ZLibCompression:0`, rtti
     pub __vftable: *const crate::raw::vtables::_anon_5FBDCD4E__ZLibCompression_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(_anon_5FBDCD4E__ZLibCompression, __vftable) == 0x0);
 
@@ -18433,6 +19024,7 @@ const _: () = assert!(core::mem::offset_of!(_anon_5FBDCD4E__ZLibCompression, __v
 pub struct _anon_64C0A5C9__CellAcousticSpaceListener {
     /// +0x0 `vtbl:_anon_64C0A5C9::CellAcousticSpaceListener:0`, rtti
     pub __vftable: *const crate::raw::vtables::_anon_64C0A5C9__CellAcousticSpaceListener_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(_anon_64C0A5C9__CellAcousticSpaceListener, __vftable) == 0x0);
 
@@ -18443,6 +19035,7 @@ const _: () = assert!(core::mem::offset_of!(_anon_64C0A5C9__CellAcousticSpaceLis
 pub struct _anon_64C0A5C9__DefaultObjectInitListener {
     /// +0x0 `vtbl:_anon_64C0A5C9::DefaultObjectInitListener:0`, rtti
     pub __vftable: *const crate::raw::vtables::_anon_64C0A5C9__DefaultObjectInitListener_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(_anon_64C0A5C9__DefaultObjectInitListener, __vftable) == 0x0);
 
@@ -18453,6 +19046,7 @@ const _: () = assert!(core::mem::offset_of!(_anon_64C0A5C9__DefaultObjectInitLis
 pub struct _anon_64C0A5C9__LoadMenuOpenCloseListener {
     /// +0x0 `vtbl:_anon_64C0A5C9::LoadMenuOpenCloseListener:0`, rtti
     pub __vftable: *const crate::raw::vtables::_anon_64C0A5C9__LoadMenuOpenCloseListener_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(_anon_64C0A5C9__LoadMenuOpenCloseListener, __vftable) == 0x0);
 
@@ -18463,6 +19057,7 @@ const _: () = assert!(core::mem::offset_of!(_anon_64C0A5C9__LoadMenuOpenCloseLis
 pub struct _anon_64C0A5C9__MenuModeChangeListener {
     /// +0x0 `vtbl:_anon_64C0A5C9::MenuModeChangeListener:0`, rtti
     pub __vftable: *const crate::raw::vtables::_anon_64C0A5C9__MenuModeChangeListener_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(_anon_64C0A5C9__MenuModeChangeListener, __vftable) == 0x0);
 
@@ -18473,6 +19068,7 @@ const _: () = assert!(core::mem::offset_of!(_anon_64C0A5C9__MenuModeChangeListen
 pub struct _anon_64C0A5C9__NonDialogSubCategory {
     /// +0x0 `vtbl:_anon_64C0A5C9::NonDialogSubCategory:0`, rtti
     pub __vftable: *const crate::raw::vtables::_anon_64C0A5C9__NonDialogSubCategory_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(_anon_64C0A5C9__NonDialogSubCategory, __vftable) == 0x0);
 
@@ -18483,6 +19079,7 @@ const _: () = assert!(core::mem::offset_of!(_anon_64C0A5C9__NonDialogSubCategory
 pub struct _anon_6854232C__CheckSphereVisitor {
     /// +0x0 `vtbl:_anon_6854232C::CheckSphereVisitor:0`, rtti
     pub __vftable: *const crate::raw::vtables::_anon_6854232C__CheckSphereVisitor_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(_anon_6854232C__CheckSphereVisitor, __vftable) == 0x0);
 
@@ -18493,6 +19090,7 @@ const _: () = assert!(core::mem::offset_of!(_anon_6854232C__CheckSphereVisitor, 
 pub struct _anon_6854232C__FindClosestOpenEdgeFunctor {
     /// +0x0 `vtbl:_anon_6854232C::FindClosestOpenEdgeFunctor:0`, rtti
     pub __vftable: *const crate::raw::vtables::_anon_6854232C__FindClosestOpenEdgeFunctor_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(_anon_6854232C__FindClosestOpenEdgeFunctor, __vftable) == 0x0);
 
@@ -18503,6 +19101,7 @@ const _: () = assert!(core::mem::offset_of!(_anon_6854232C__FindClosestOpenEdgeF
 pub struct _anon_6854232C__SortIntersectingEdgesFunctor {
     /// +0x0 `vtbl:_anon_6854232C::SortIntersectingEdgesFunctor:0`, rtti
     pub __vftable: *const crate::raw::vtables::_anon_6854232C__SortIntersectingEdgesFunctor_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(_anon_6854232C__SortIntersectingEdgesFunctor, __vftable) == 0x0);
 
@@ -18513,6 +19112,7 @@ const _: () = assert!(core::mem::offset_of!(_anon_6854232C__SortIntersectingEdge
 pub struct _anon_69ACCFBB__CastWornEnchantmentsVisitor {
     /// +0x0 `vtbl:_anon_69ACCFBB::CastWornEnchantmentsVisitor:0`, rtti
     pub __vftable: *const crate::raw::vtables::_anon_69ACCFBB__CastWornEnchantmentsVisitor_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(_anon_69ACCFBB__CastWornEnchantmentsVisitor, __vftable) == 0x0);
 
@@ -18523,6 +19123,7 @@ const _: () = assert!(core::mem::offset_of!(_anon_69ACCFBB__CastWornEnchantments
 pub struct _anon_69ACCFBB__CountActorValueEffects {
     /// +0x0 `vtbl:_anon_69ACCFBB::CountActorValueEffects:0`, rtti
     pub __vftable: *const crate::raw::vtables::_anon_69ACCFBB__CountActorValueEffects_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(_anon_69ACCFBB__CountActorValueEffects, __vftable) == 0x0);
 
@@ -18533,6 +19134,7 @@ const _: () = assert!(core::mem::offset_of!(_anon_69ACCFBB__CountActorValueEffec
 pub struct _anon_69ACCFBB__DispelWornItemEnchantsVisitor {
     /// +0x0 `vtbl:_anon_69ACCFBB::DispelWornItemEnchantsVisitor:0`, rtti
     pub __vftable: *const crate::raw::vtables::_anon_69ACCFBB__DispelWornItemEnchantsVisitor_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(_anon_69ACCFBB__DispelWornItemEnchantsVisitor, __vftable) == 0x0);
 
@@ -18543,6 +19145,7 @@ const _: () = assert!(core::mem::offset_of!(_anon_69ACCFBB__DispelWornItemEnchan
 pub struct _anon_69ACCFBB__PreloadWornItemEnchantsVisitor {
     /// +0x0 `vtbl:_anon_69ACCFBB::PreloadWornItemEnchantsVisitor:0`, rtti
     pub __vftable: *const crate::raw::vtables::_anon_69ACCFBB__PreloadWornItemEnchantsVisitor_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(_anon_69ACCFBB__PreloadWornItemEnchantsVisitor, __vftable) == 0x0);
 
@@ -18553,6 +19156,7 @@ const _: () = assert!(core::mem::offset_of!(_anon_69ACCFBB__PreloadWornItemEncha
 pub struct _anon_69ACCFBB__UnloadWornItemEnchantsVisitor {
     /// +0x0 `vtbl:_anon_69ACCFBB::UnloadWornItemEnchantsVisitor:0`, rtti
     pub __vftable: *const crate::raw::vtables::_anon_69ACCFBB__UnloadWornItemEnchantsVisitor_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(_anon_69ACCFBB__UnloadWornItemEnchantsVisitor, __vftable) == 0x0);
 
@@ -18563,6 +19167,7 @@ const _: () = assert!(core::mem::offset_of!(_anon_69ACCFBB__UnloadWornItemEnchan
 pub struct _anon_6A635D9D__SynchronizedClipGenVisitor {
     /// +0x0 `vtbl:_anon_6A635D9D::SynchronizedClipGenVisitor:0`, rtti
     pub __vftable: *const crate::raw::vtables::_anon_6A635D9D__SynchronizedClipGenVisitor_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(_anon_6A635D9D__SynchronizedClipGenVisitor, __vftable) == 0x0);
 
@@ -18605,6 +19210,7 @@ pub struct _anon_705FD51E__MagicMenuAddActiveEffectVisitor {
     pub field_78: u64,
     /// +0x80 `undefined8`, ctor store
     pub field_80: u64,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(_anon_705FD51E__MagicMenuAddActiveEffectVisitor, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(_anon_705FD51E__MagicMenuAddActiveEffectVisitor, field_8) == 0x8);
@@ -18628,6 +19234,7 @@ const _: () = assert!(core::mem::offset_of!(_anon_705FD51E__MagicMenuAddActiveEf
 pub struct _anon_705FD51E__MagicMenuAddSpellVisitor {
     /// +0x0 `vtbl:_anon_705FD51E::MagicMenuAddSpellVisitor:0`, rtti
     pub __vftable: *const crate::raw::vtables::_anon_705FD51E__MagicMenuAddSpellVisitor_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(_anon_705FD51E__MagicMenuAddSpellVisitor, __vftable) == 0x0);
 
@@ -18638,6 +19245,7 @@ const _: () = assert!(core::mem::offset_of!(_anon_705FD51E__MagicMenuAddSpellVis
 pub struct _anon_705FD51E__SpendSoulCallback {
     /// +0x0 `vtbl:_anon_705FD51E::SpendSoulCallback:0`, rtti
     pub __vftable: *const crate::raw::vtables::_anon_705FD51E__SpendSoulCallback_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(_anon_705FD51E__SpendSoulCallback, __vftable) == 0x0);
 
@@ -18648,6 +19256,7 @@ const _: () = assert!(core::mem::offset_of!(_anon_705FD51E__SpendSoulCallback, _
 pub struct _anon_705FD51E__StoreEnchantedItemsVisitor {
     /// +0x0 `vtbl:_anon_705FD51E::StoreEnchantedItemsVisitor:0`, rtti
     pub __vftable: *const crate::raw::vtables::_anon_705FD51E__StoreEnchantedItemsVisitor_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(_anon_705FD51E__StoreEnchantedItemsVisitor, __vftable) == 0x0);
 
@@ -18658,6 +19267,7 @@ const _: () = assert!(core::mem::offset_of!(_anon_705FD51E__StoreEnchantedItemsV
 pub struct _anon_7174C251__TopicResultCallBack {
     /// +0x0 `vtbl:_anon_7174C251::TopicResultCallBack:0`, rtti
     pub __vftable: *const crate::raw::vtables::_anon_7174C251__TopicResultCallBack_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(_anon_7174C251__TopicResultCallBack, __vftable) == 0x0);
 
@@ -18780,6 +19390,7 @@ pub struct _anon_71CE6E17__DeepCopyStream {
     /// +0x414 `undefined1`, base NiStream
     pub field_414: u8,
     pub unknown_415: [u8; 3],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(_anon_71CE6E17__DeepCopyStream, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(_anon_71CE6E17__DeepCopyStream, field_8) == 0x8);
@@ -18839,6 +19450,7 @@ const _: () = assert!(core::mem::offset_of!(_anon_71CE6E17__DeepCopyStream, fiel
 pub struct _anon_748233AE__CloakEffectCallbackFunctor {
     /// +0x0 `vtbl:_anon_748233AE::CloakEffectCallbackFunctor:0`, rtti
     pub __vftable: *const crate::raw::vtables::_anon_748233AE__CloakEffectCallbackFunctor_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(_anon_748233AE__CloakEffectCallbackFunctor, __vftable) == 0x0);
 
@@ -18865,6 +19477,7 @@ pub struct _anon_75DEF1F1__LogWriteThread {
     /// +0x70 `undefined4`, ctor store
     pub field_70: u32,
     pub unknown_74: [u8; 4],
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(_anon_75DEF1F1__LogWriteThread, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(_anon_75DEF1F1__LogWriteThread, field_30) == 0x30);
@@ -18881,6 +19494,7 @@ const _: () = assert!(core::mem::offset_of!(_anon_75DEF1F1__LogWriteThread, fiel
 pub struct _anon_76CA921F__ActorItemEquippedToMiscStatHandler {
     /// +0x0 `vtbl:_anon_76CA921F::ActorItemEquippedToMiscStatHandler:0`, rtti
     pub __vftable: *const crate::raw::vtables::_anon_76CA921F__ActorItemEquippedToMiscStatHandler_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(_anon_76CA921F__ActorItemEquippedToMiscStatHandler, __vftable) == 0x0);
 
@@ -18891,6 +19505,7 @@ const _: () = assert!(core::mem::offset_of!(_anon_76CA921F__ActorItemEquippedToM
 pub struct _anon_76CA921F__ActorKillToMiscStatHandler {
     /// +0x0 `vtbl:_anon_76CA921F::ActorKillToMiscStatHandler:0`, rtti
     pub __vftable: *const crate::raw::vtables::_anon_76CA921F__ActorKillToMiscStatHandler_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(_anon_76CA921F__ActorKillToMiscStatHandler, __vftable) == 0x0);
 
@@ -18901,6 +19516,7 @@ const _: () = assert!(core::mem::offset_of!(_anon_76CA921F__ActorKillToMiscStatH
 pub struct _anon_76CA921F__BookReadToMiscStatHandler {
     /// +0x0 `vtbl:_anon_76CA921F::BookReadToMiscStatHandler:0`, rtti
     pub __vftable: *const crate::raw::vtables::_anon_76CA921F__BookReadToMiscStatHandler_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(_anon_76CA921F__BookReadToMiscStatHandler, __vftable) == 0x0);
 
@@ -18911,6 +19527,7 @@ const _: () = assert!(core::mem::offset_of!(_anon_76CA921F__BookReadToMiscStatHa
 pub struct _anon_76CA921F__BountyToMiscStatHandler {
     /// +0x0 `vtbl:_anon_76CA921F::BountyToMiscStatHandler:0`, rtti
     pub __vftable: *const crate::raw::vtables::_anon_76CA921F__BountyToMiscStatHandler_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(_anon_76CA921F__BountyToMiscStatHandler, __vftable) == 0x0);
 
@@ -18921,6 +19538,7 @@ const _: () = assert!(core::mem::offset_of!(_anon_76CA921F__BountyToMiscStatHand
 pub struct _anon_76CA921F__CriticalHitToMiscStatHandler {
     /// +0x0 `vtbl:_anon_76CA921F::CriticalHitToMiscStatHandler:0`, rtti
     pub __vftable: *const crate::raw::vtables::_anon_76CA921F__CriticalHitToMiscStatHandler_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(_anon_76CA921F__CriticalHitToMiscStatHandler, __vftable) == 0x0);
 
@@ -18931,356 +19549,7 @@ const _: () = assert!(core::mem::offset_of!(_anon_76CA921F__CriticalHitToMiscSta
 pub struct _anon_76CA921F__DaysJailedToMiscStatHandler {
     /// +0x0 `vtbl:_anon_76CA921F::DaysJailedToMiscStatHandler:0`, rtti
     pub __vftable: *const crate::raw::vtables::_anon_76CA921F__DaysJailedToMiscStatHandler_vtable,
+    pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(_anon_76CA921F__DaysJailedToMiscStatHandler, __vftable) == 0x0);
-
-/// `_anon_76CA921F::DaysPassedToMiscStatHandler`: size >= 0x8 (lower bound); partial, the struct stops at the lower bound; primary base `BSTEventSink<DaysPassed::Event>`.
-/// Evidence: vptr at 0x0.
-/// Bases: `BSTEventSink<DaysPassed::Event>`@0x0.
-#[repr(C)]
-pub struct _anon_76CA921F__DaysPassedToMiscStatHandler {
-    /// +0x0 `vtbl:_anon_76CA921F::DaysPassedToMiscStatHandler:0`, rtti
-    pub __vftable: *const crate::raw::vtables::_anon_76CA921F__DaysPassedToMiscStatHandler_vtable,
-}
-const _: () = assert!(core::mem::offset_of!(_anon_76CA921F__DaysPassedToMiscStatHandler, __vftable) == 0x0);
-
-/// `_anon_76CA921F::DisarmedToMiscStatHandler`: size >= 0x8 (lower bound); partial, the struct stops at the lower bound; primary base `BSTEventSink<DisarmedEvent::Event>`.
-/// Evidence: vptr at 0x0.
-/// Bases: `BSTEventSink<DisarmedEvent::Event>`@0x0.
-#[repr(C)]
-pub struct _anon_76CA921F__DisarmedToMiscStatHandler {
-    /// +0x0 `vtbl:_anon_76CA921F::DisarmedToMiscStatHandler:0`, rtti
-    pub __vftable: *const crate::raw::vtables::_anon_76CA921F__DisarmedToMiscStatHandler_vtable,
-}
-const _: () = assert!(core::mem::offset_of!(_anon_76CA921F__DisarmedToMiscStatHandler, __vftable) == 0x0);
-
-/// `_anon_76CA921F::FinesPaidToMiscStatHandler`: size >= 0x8 (lower bound); partial, the struct stops at the lower bound; primary base `BSTEventSink<FinePaid::Event>`.
-/// Evidence: vptr at 0x0.
-/// Bases: `BSTEventSink<FinePaid::Event>`@0x0.
-#[repr(C)]
-pub struct _anon_76CA921F__FinesPaidToMiscStatHandler {
-    /// +0x0 `vtbl:_anon_76CA921F::FinesPaidToMiscStatHandler:0`, rtti
-    pub __vftable: *const crate::raw::vtables::_anon_76CA921F__FinesPaidToMiscStatHandler_vtable,
-}
-const _: () = assert!(core::mem::offset_of!(_anon_76CA921F__FinesPaidToMiscStatHandler, __vftable) == 0x0);
-
-/// `_anon_76CA921F::HarvestToMiscStatHandler`: size >= 0x8 (lower bound); partial, the struct stops at the lower bound; primary base `BSTEventSink<TESHarvestEvent::ItemHarvested>`.
-/// Evidence: vptr at 0x0.
-/// Bases: `BSTEventSink<TESHarvestEvent::ItemHarvested>`@0x0.
-#[repr(C)]
-pub struct _anon_76CA921F__HarvestToMiscStatHandler {
-    /// +0x0 `vtbl:_anon_76CA921F::HarvestToMiscStatHandler:0`, rtti
-    pub __vftable: *const crate::raw::vtables::_anon_76CA921F__HarvestToMiscStatHandler_vtable,
-}
-const _: () = assert!(core::mem::offset_of!(_anon_76CA921F__HarvestToMiscStatHandler, __vftable) == 0x0);
-
-/// `_anon_76CA921F::HoursPassedToMiscStatHandler`: size >= 0x8 (lower bound); partial, the struct stops at the lower bound; primary base `BSTEventSink<HoursPassed::Event>`.
-/// Evidence: vptr at 0x0.
-/// Bases: `BSTEventSink<HoursPassed::Event>`@0x0.
-#[repr(C)]
-pub struct _anon_76CA921F__HoursPassedToMiscStatHandler {
-    /// +0x0 `vtbl:_anon_76CA921F::HoursPassedToMiscStatHandler:0`, rtti
-    pub __vftable: *const crate::raw::vtables::_anon_76CA921F__HoursPassedToMiscStatHandler_vtable,
-}
-const _: () = assert!(core::mem::offset_of!(_anon_76CA921F__HoursPassedToMiscStatHandler, __vftable) == 0x0);
-
-/// `_anon_76CA921F::InventoryToMiscStatHandler`: size >= 0x8 (lower bound); partial, the struct stops at the lower bound; primary base `BSTEventSink<Inventory::Event>`.
-/// Evidence: vptr at 0x0.
-/// Bases: `BSTEventSink<Inventory::Event>`@0x0.
-#[repr(C)]
-pub struct _anon_76CA921F__InventoryToMiscStatHandler {
-    /// +0x0 `vtbl:_anon_76CA921F::InventoryToMiscStatHandler:0`, rtti
-    pub __vftable: *const crate::raw::vtables::_anon_76CA921F__InventoryToMiscStatHandler_vtable,
-}
-const _: () = assert!(core::mem::offset_of!(_anon_76CA921F__InventoryToMiscStatHandler, __vftable) == 0x0);
-
-/// `_anon_76CA921F::ItemCraftedToMiscStatHandler`: size >= 0x8 (lower bound); partial, the struct stops at the lower bound; primary base `BSTEventSink<ItemCrafted::Event>`.
-/// Evidence: vptr at 0x0.
-/// Bases: `BSTEventSink<ItemCrafted::Event>`@0x0.
-#[repr(C)]
-pub struct _anon_76CA921F__ItemCraftedToMiscStatHandler {
-    /// +0x0 `vtbl:_anon_76CA921F::ItemCraftedToMiscStatHandler:0`, rtti
-    pub __vftable: *const crate::raw::vtables::_anon_76CA921F__ItemCraftedToMiscStatHandler_vtable,
-}
-const _: () = assert!(core::mem::offset_of!(_anon_76CA921F__ItemCraftedToMiscStatHandler, __vftable) == 0x0);
-
-/// `_anon_76CA921F::ItemsPickpocketedToMiscStatHandler`: size >= 0x8 (lower bound); partial, the struct stops at the lower bound; primary base `BSTEventSink<ItemsPickpocketed::Event>`.
-/// Evidence: vptr at 0x0.
-/// Bases: `BSTEventSink<ItemsPickpocketed::Event>`@0x0.
-#[repr(C)]
-pub struct _anon_76CA921F__ItemsPickpocketedToMiscStatHandler {
-    /// +0x0 `vtbl:_anon_76CA921F::ItemsPickpocketedToMiscStatHandler:0`, rtti
-    pub __vftable: *const crate::raw::vtables::_anon_76CA921F__ItemsPickpocketedToMiscStatHandler_vtable,
-}
-const _: () = assert!(core::mem::offset_of!(_anon_76CA921F__ItemsPickpocketedToMiscStatHandler, __vftable) == 0x0);
-
-/// `_anon_76CA921F::ItemsStolenToMiscStatHandler`: size >= 0x8 (lower bound); partial, the struct stops at the lower bound; primary base `BSTEventSink<ItemSteal::Event>`.
-/// Evidence: vptr at 0x0.
-/// Bases: `BSTEventSink<ItemSteal::Event>`@0x0.
-#[repr(C)]
-pub struct _anon_76CA921F__ItemsStolenToMiscStatHandler {
-    /// +0x0 `vtbl:_anon_76CA921F::ItemsStolenToMiscStatHandler:0`, rtti
-    pub __vftable: *const crate::raw::vtables::_anon_76CA921F__ItemsStolenToMiscStatHandler_vtable,
-}
-const _: () = assert!(core::mem::offset_of!(_anon_76CA921F__ItemsStolenToMiscStatHandler, __vftable) == 0x0);
-
-/// `_anon_76CA921F::LevelIncreaseToMiscStatHandler`: size >= 0x8 (lower bound); partial, the struct stops at the lower bound; primary base `BSTEventSink<LevelIncrease::Event>`.
-/// Evidence: vptr at 0x0.
-/// Bases: `BSTEventSink<LevelIncrease::Event>`@0x0.
-#[repr(C)]
-pub struct _anon_76CA921F__LevelIncreaseToMiscStatHandler {
-    /// +0x0 `vtbl:_anon_76CA921F::LevelIncreaseToMiscStatHandler:0`, rtti
-    pub __vftable: *const crate::raw::vtables::_anon_76CA921F__LevelIncreaseToMiscStatHandler_vtable,
-}
-const _: () = assert!(core::mem::offset_of!(_anon_76CA921F__LevelIncreaseToMiscStatHandler, __vftable) == 0x0);
-
-/// `_anon_76CA921F::LocationDiscoveryToMiscStatHandler`: size >= 0x8 (lower bound); partial, the struct stops at the lower bound; primary base `BSTEventSink<LocationDiscovery::Event>`.
-/// Evidence: vptr at 0x0.
-/// Bases: `BSTEventSink<LocationDiscovery::Event>`@0x0.
-#[repr(C)]
-pub struct _anon_76CA921F__LocationDiscoveryToMiscStatHandler {
-    /// +0x0 `vtbl:_anon_76CA921F::LocationDiscoveryToMiscStatHandler:0`, rtti
-    pub __vftable: *const crate::raw::vtables::_anon_76CA921F__LocationDiscoveryToMiscStatHandler_vtable,
-}
-const _: () = assert!(core::mem::offset_of!(_anon_76CA921F__LocationDiscoveryToMiscStatHandler, __vftable) == 0x0);
-
-/// `_anon_76CA921F::MiscStatIncrementer<AssaultCrime::Event>`: size >= 0x8 (lower bound); partial, the struct stops at the lower bound; primary base `BSTEventSink<AssaultCrime::Event>`.
-/// Evidence: vptr at 0x0.
-/// Bases: `BSTEventSink<AssaultCrime::Event>`@0x0.
-#[repr(C)]
-pub struct _anon_76CA921F__MiscStatIncrementer_AssaultCrime__Event {
-    /// +0x0 `vtbl:_anon_76CA921F::MiscStatIncrementer<AssaultCrime::Event>:0`, rtti
-    pub __vftable: *const crate::raw::vtables::_anon_76CA921F__MiscStatIncrementer_AssaultCrime__Event_vtable,
-}
-const _: () = assert!(core::mem::offset_of!(_anon_76CA921F__MiscStatIncrementer_AssaultCrime__Event, __vftable) == 0x0);
-
-/// `_anon_76CA921F::MiscStatIncrementer<ChestsLooted::Event>`: size >= 0x8 (lower bound); partial, the struct stops at the lower bound; primary base `BSTEventSink<ChestsLooted::Event>`.
-/// Evidence: vptr at 0x0.
-/// Bases: `BSTEventSink<ChestsLooted::Event>`@0x0.
-#[repr(C)]
-pub struct _anon_76CA921F__MiscStatIncrementer_ChestsLooted__Event {
-    /// +0x0 `vtbl:_anon_76CA921F::MiscStatIncrementer<ChestsLooted::Event>:0`, rtti
-    pub __vftable: *const crate::raw::vtables::_anon_76CA921F__MiscStatIncrementer_ChestsLooted__Event_vtable,
-}
-const _: () = assert!(core::mem::offset_of!(_anon_76CA921F__MiscStatIncrementer_ChestsLooted__Event, __vftable) == 0x0);
-
-/// `_anon_76CA921F::MiscStatIncrementer<ContractedDisease::Event>`: size >= 0x8 (lower bound); partial, the struct stops at the lower bound; primary base `BSTEventSink<ContractedDisease::Event>`.
-/// Evidence: vptr at 0x0.
-/// Bases: `BSTEventSink<ContractedDisease::Event>`@0x0.
-#[repr(C)]
-pub struct _anon_76CA921F__MiscStatIncrementer_ContractedDisease__Event {
-    /// +0x0 `vtbl:_anon_76CA921F::MiscStatIncrementer<ContractedDisease::Event>:0`, rtti
-    pub __vftable: *const crate::raw::vtables::_anon_76CA921F__MiscStatIncrementer_ContractedDisease__Event_vtable,
-}
-const _: () = assert!(core::mem::offset_of!(_anon_76CA921F__MiscStatIncrementer_ContractedDisease__Event, __vftable) == 0x0);
-
-/// `_anon_76CA921F::MiscStatIncrementer<DragonSoulGained::Event>`: size >= 0x8 (lower bound); partial, the struct stops at the lower bound; primary base `BSTEventSink<DragonSoulGained::Event>`.
-/// Evidence: vptr at 0x0.
-/// Bases: `BSTEventSink<DragonSoulGained::Event>`@0x0.
-#[repr(C)]
-pub struct _anon_76CA921F__MiscStatIncrementer_DragonSoulGained__Event {
-    /// +0x0 `vtbl:_anon_76CA921F::MiscStatIncrementer<DragonSoulGained::Event>:0`, rtti
-    pub __vftable: *const crate::raw::vtables::_anon_76CA921F__MiscStatIncrementer_DragonSoulGained__Event_vtable,
-}
-const _: () = assert!(core::mem::offset_of!(_anon_76CA921F__MiscStatIncrementer_DragonSoulGained__Event, __vftable) == 0x0);
-
-/// `_anon_76CA921F::MiscStatIncrementer<GrandTheftHorse::Event>`: size >= 0x8 (lower bound); partial, the struct stops at the lower bound; primary base `BSTEventSink<GrandTheftHorse::Event>`.
-/// Evidence: vptr at 0x0.
-/// Bases: `BSTEventSink<GrandTheftHorse::Event>`@0x0.
-#[repr(C)]
-pub struct _anon_76CA921F__MiscStatIncrementer_GrandTheftHorse__Event {
-    /// +0x0 `vtbl:_anon_76CA921F::MiscStatIncrementer<GrandTheftHorse::Event>:0`, rtti
-    pub __vftable: *const crate::raw::vtables::_anon_76CA921F__MiscStatIncrementer_GrandTheftHorse__Event_vtable,
-}
-const _: () = assert!(core::mem::offset_of!(_anon_76CA921F__MiscStatIncrementer_GrandTheftHorse__Event, __vftable) == 0x0);
-
-/// `_anon_76CA921F::MiscStatIncrementer<JailEscape::Event>`: size >= 0x8 (lower bound); partial, the struct stops at the lower bound; primary base `BSTEventSink<JailEscape::Event>`.
-/// Evidence: vptr at 0x0.
-/// Bases: `BSTEventSink<JailEscape::Event>`@0x0.
-#[repr(C)]
-pub struct _anon_76CA921F__MiscStatIncrementer_JailEscape__Event {
-    /// +0x0 `vtbl:_anon_76CA921F::MiscStatIncrementer<JailEscape::Event>:0`, rtti
-    pub __vftable: *const crate::raw::vtables::_anon_76CA921F__MiscStatIncrementer_JailEscape__Event_vtable,
-}
-const _: () = assert!(core::mem::offset_of!(_anon_76CA921F__MiscStatIncrementer_JailEscape__Event, __vftable) == 0x0);
-
-/// `_anon_76CA921F::MiscStatIncrementer<Jailing::Event>`: size >= 0x8 (lower bound); partial, the struct stops at the lower bound; primary base `BSTEventSink<Jailing::Event>`.
-/// Evidence: vptr at 0x0.
-/// Bases: `BSTEventSink<Jailing::Event>`@0x0.
-#[repr(C)]
-pub struct _anon_76CA921F__MiscStatIncrementer_Jailing__Event {
-    /// +0x0 `vtbl:_anon_76CA921F::MiscStatIncrementer<Jailing::Event>:0`, rtti
-    pub __vftable: *const crate::raw::vtables::_anon_76CA921F__MiscStatIncrementer_Jailing__Event_vtable,
-}
-const _: () = assert!(core::mem::offset_of!(_anon_76CA921F__MiscStatIncrementer_Jailing__Event, __vftable) == 0x0);
-
-/// `_anon_76CA921F::MiscStatIncrementer<LocationCleared::Event>`: size >= 0x8 (lower bound); partial, the struct stops at the lower bound; primary base `BSTEventSink<LocationCleared::Event>`.
-/// Evidence: vptr at 0x0.
-/// Bases: `BSTEventSink<LocationCleared::Event>`@0x0.
-#[repr(C)]
-pub struct _anon_76CA921F__MiscStatIncrementer_LocationCleared__Event {
-    /// +0x0 `vtbl:_anon_76CA921F::MiscStatIncrementer<LocationCleared::Event>:0`, rtti
-    pub __vftable: *const crate::raw::vtables::_anon_76CA921F__MiscStatIncrementer_LocationCleared__Event_vtable,
-}
-const _: () = assert!(core::mem::offset_of!(_anon_76CA921F__MiscStatIncrementer_LocationCleared__Event, __vftable) == 0x0);
-
-/// `_anon_76CA921F::MiscStatIncrementer<LocksPicked::Event>`: size >= 0x8 (lower bound); partial, the struct stops at the lower bound; primary base `BSTEventSink<LocksPicked::Event>`.
-/// Evidence: vptr at 0x0.
-/// Bases: `BSTEventSink<LocksPicked::Event>`@0x0.
-#[repr(C)]
-pub struct _anon_76CA921F__MiscStatIncrementer_LocksPicked__Event {
-    /// +0x0 `vtbl:_anon_76CA921F::MiscStatIncrementer<LocksPicked::Event>:0`, rtti
-    pub __vftable: *const crate::raw::vtables::_anon_76CA921F__MiscStatIncrementer_LocksPicked__Event_vtable,
-}
-const _: () = assert!(core::mem::offset_of!(_anon_76CA921F__MiscStatIncrementer_LocksPicked__Event, __vftable) == 0x0);
-
-/// `_anon_76CA921F::MiscStatIncrementer<MurderCrime::Event>`: size >= 0x8 (lower bound); partial, the struct stops at the lower bound; primary base `BSTEventSink<MurderCrime::Event>`.
-/// Evidence: vptr at 0x0.
-/// Bases: `BSTEventSink<MurderCrime::Event>`@0x0.
-#[repr(C)]
-pub struct _anon_76CA921F__MiscStatIncrementer_MurderCrime__Event {
-    /// +0x0 `vtbl:_anon_76CA921F::MiscStatIncrementer<MurderCrime::Event>:0`, rtti
-    pub __vftable: *const crate::raw::vtables::_anon_76CA921F__MiscStatIncrementer_MurderCrime__Event_vtable,
-}
-const _: () = assert!(core::mem::offset_of!(_anon_76CA921F__MiscStatIncrementer_MurderCrime__Event, __vftable) == 0x0);
-
-/// `_anon_76CA921F::MiscStatIncrementer<PoisonedWeapon::Event>`: size >= 0x8 (lower bound); partial, the struct stops at the lower bound; primary base `BSTEventSink<PoisonedWeapon::Event>`.
-/// Evidence: vptr at 0x0.
-/// Bases: `BSTEventSink<PoisonedWeapon::Event>`@0x0.
-#[repr(C)]
-pub struct _anon_76CA921F__MiscStatIncrementer_PoisonedWeapon__Event {
-    /// +0x0 `vtbl:_anon_76CA921F::MiscStatIncrementer<PoisonedWeapon::Event>:0`, rtti
-    pub __vftable: *const crate::raw::vtables::_anon_76CA921F__MiscStatIncrementer_PoisonedWeapon__Event_vtable,
-}
-const _: () = assert!(core::mem::offset_of!(_anon_76CA921F__MiscStatIncrementer_PoisonedWeapon__Event, __vftable) == 0x0);
-
-/// `_anon_76CA921F::MiscStatIncrementer<ShoutAttack::Event>`: size >= 0x8 (lower bound); partial, the struct stops at the lower bound; primary base `BSTEventSink<ShoutAttack::Event>`.
-/// Evidence: vptr at 0x0.
-/// Bases: `BSTEventSink<ShoutAttack::Event>`@0x0.
-#[repr(C)]
-pub struct _anon_76CA921F__MiscStatIncrementer_ShoutAttack__Event {
-    /// +0x0 `vtbl:_anon_76CA921F::MiscStatIncrementer<ShoutAttack::Event>:0`, rtti
-    pub __vftable: *const crate::raw::vtables::_anon_76CA921F__MiscStatIncrementer_ShoutAttack__Event_vtable,
-}
-const _: () = assert!(core::mem::offset_of!(_anon_76CA921F__MiscStatIncrementer_ShoutAttack__Event, __vftable) == 0x0);
-
-/// `_anon_76CA921F::MiscStatIncrementer<ShoutMastered::Event>`: size >= 0x8 (lower bound); partial, the struct stops at the lower bound; primary base `BSTEventSink<ShoutMastered::Event>`.
-/// Evidence: vptr at 0x0.
-/// Bases: `BSTEventSink<ShoutMastered::Event>`@0x0.
-#[repr(C)]
-pub struct _anon_76CA921F__MiscStatIncrementer_ShoutMastered__Event {
-    /// +0x0 `vtbl:_anon_76CA921F::MiscStatIncrementer<ShoutMastered::Event>:0`, rtti
-    pub __vftable: *const crate::raw::vtables::_anon_76CA921F__MiscStatIncrementer_ShoutMastered__Event_vtable,
-}
-const _: () = assert!(core::mem::offset_of!(_anon_76CA921F__MiscStatIncrementer_ShoutMastered__Event, __vftable) == 0x0);
-
-/// `_anon_76CA921F::MiscStatIncrementer<SoulGemsUsed::Event>`: size >= 0x8 (lower bound); partial, the struct stops at the lower bound; primary base `BSTEventSink<SoulGemsUsed::Event>`.
-/// Evidence: vptr at 0x0.
-/// Bases: `BSTEventSink<SoulGemsUsed::Event>`@0x0.
-#[repr(C)]
-pub struct _anon_76CA921F__MiscStatIncrementer_SoulGemsUsed__Event {
-    /// +0x0 `vtbl:_anon_76CA921F::MiscStatIncrementer<SoulGemsUsed::Event>:0`, rtti
-    pub __vftable: *const crate::raw::vtables::_anon_76CA921F__MiscStatIncrementer_SoulGemsUsed__Event_vtable,
-}
-const _: () = assert!(core::mem::offset_of!(_anon_76CA921F__MiscStatIncrementer_SoulGemsUsed__Event, __vftable) == 0x0);
-
-/// `_anon_76CA921F::MiscStatIncrementer<SoulsTrapped::Event>`: size >= 0x8 (lower bound); partial, the struct stops at the lower bound; primary base `BSTEventSink<SoulsTrapped::Event>`.
-/// Evidence: vptr at 0x0.
-/// Bases: `BSTEventSink<SoulsTrapped::Event>`@0x0.
-#[repr(C)]
-pub struct _anon_76CA921F__MiscStatIncrementer_SoulsTrapped__Event {
-    /// +0x0 `vtbl:_anon_76CA921F::MiscStatIncrementer<SoulsTrapped::Event>:0`, rtti
-    pub __vftable: *const crate::raw::vtables::_anon_76CA921F__MiscStatIncrementer_SoulsTrapped__Event_vtable,
-}
-const _: () = assert!(core::mem::offset_of!(_anon_76CA921F__MiscStatIncrementer_SoulsTrapped__Event, __vftable) == 0x0);
-
-/// `_anon_76CA921F::MiscStatIncrementer<SpellsLearned::Event>`: size >= 0x8 (lower bound); partial, the struct stops at the lower bound; primary base `BSTEventSink<SpellsLearned::Event>`.
-/// Evidence: vptr at 0x0.
-/// Bases: `BSTEventSink<SpellsLearned::Event>`@0x0.
-#[repr(C)]
-pub struct _anon_76CA921F__MiscStatIncrementer_SpellsLearned__Event {
-    /// +0x0 `vtbl:_anon_76CA921F::MiscStatIncrementer<SpellsLearned::Event>:0`, rtti
-    pub __vftable: *const crate::raw::vtables::_anon_76CA921F__MiscStatIncrementer_SpellsLearned__Event_vtable,
-}
-const _: () = assert!(core::mem::offset_of!(_anon_76CA921F__MiscStatIncrementer_SpellsLearned__Event, __vftable) == 0x0);
-
-/// `_anon_76CA921F::MiscStatIncrementer<TimesBartered::Event>`: size >= 0x8 (lower bound); partial, the struct stops at the lower bound; primary base `BSTEventSink<TimesBartered::Event>`.
-/// Evidence: vptr at 0x0.
-/// Bases: `BSTEventSink<TimesBartered::Event>`@0x0.
-#[repr(C)]
-pub struct _anon_76CA921F__MiscStatIncrementer_TimesBartered__Event {
-    /// +0x0 `vtbl:_anon_76CA921F::MiscStatIncrementer<TimesBartered::Event>:0`, rtti
-    pub __vftable: *const crate::raw::vtables::_anon_76CA921F__MiscStatIncrementer_TimesBartered__Event_vtable,
-}
-const _: () = assert!(core::mem::offset_of!(_anon_76CA921F__MiscStatIncrementer_TimesBartered__Event, __vftable) == 0x0);
-
-/// `_anon_76CA921F::MiscStatIncrementer<TimesTrained::Event>`: size >= 0x8 (lower bound); partial, the struct stops at the lower bound; primary base `BSTEventSink<TimesTrained::Event>`.
-/// Evidence: vptr at 0x0.
-/// Bases: `BSTEventSink<TimesTrained::Event>`@0x0.
-#[repr(C)]
-pub struct _anon_76CA921F__MiscStatIncrementer_TimesTrained__Event {
-    /// +0x0 `vtbl:_anon_76CA921F::MiscStatIncrementer<TimesTrained::Event>:0`, rtti
-    pub __vftable: *const crate::raw::vtables::_anon_76CA921F__MiscStatIncrementer_TimesTrained__Event_vtable,
-}
-const _: () = assert!(core::mem::offset_of!(_anon_76CA921F__MiscStatIncrementer_TimesTrained__Event, __vftable) == 0x0);
-
-/// `_anon_76CA921F::ObjectiveStateToMiscStatHandler`: size >= 0x8 (lower bound); partial, the struct stops at the lower bound; primary base `BSTEventSink<ObjectiveState::Event>`.
-/// Evidence: vptr at 0x0.
-/// Bases: `BSTEventSink<ObjectiveState::Event>`@0x0.
-#[repr(C)]
-pub struct _anon_76CA921F__ObjectiveStateToMiscStatHandler {
-    /// +0x0 `vtbl:_anon_76CA921F::ObjectiveStateToMiscStatHandler:0`, rtti
-    pub __vftable: *const crate::raw::vtables::_anon_76CA921F__ObjectiveStateToMiscStatHandler_vtable,
-}
-const _: () = assert!(core::mem::offset_of!(_anon_76CA921F__ObjectiveStateToMiscStatHandler, __vftable) == 0x0);
-
-/// `_anon_76CA921F::PickpocketToMiscStatHandler`: size >= 0x8 (lower bound); partial, the struct stops at the lower bound; primary base `BSTEventSink<Pickpocket::Event>`.
-/// Evidence: vptr at 0x0.
-/// Bases: `BSTEventSink<Pickpocket::Event>`@0x0.
-#[repr(C)]
-pub struct _anon_76CA921F__PickpocketToMiscStatHandler {
-    /// +0x0 `vtbl:_anon_76CA921F::PickpocketToMiscStatHandler:0`, rtti
-    pub __vftable: *const crate::raw::vtables::_anon_76CA921F__PickpocketToMiscStatHandler_vtable,
-}
-const _: () = assert!(core::mem::offset_of!(_anon_76CA921F__PickpocketToMiscStatHandler, __vftable) == 0x0);
-
-/// `_anon_76CA921F::QuestStatusToMiscStatHandler`: size >= 0x8 (lower bound); partial, the struct stops at the lower bound; primary base `BSTEventSink<QuestStatus::Event>`.
-/// Evidence: vptr at 0x0.
-/// Bases: `BSTEventSink<QuestStatus::Event>`@0x0.
-#[repr(C)]
-pub struct _anon_76CA921F__QuestStatusToMiscStatHandler {
-    /// +0x0 `vtbl:_anon_76CA921F::QuestStatusToMiscStatHandler:0`, rtti
-    pub __vftable: *const crate::raw::vtables::_anon_76CA921F__QuestStatusToMiscStatHandler_vtable,
-}
-const _: () = assert!(core::mem::offset_of!(_anon_76CA921F__QuestStatusToMiscStatHandler, __vftable) == 0x0);
-
-/// `_anon_76CA921F::SkillIncreaseToMiscStatHandler`: size >= 0x8 (lower bound); partial, the struct stops at the lower bound; primary base `BSTEventSink<SkillIncrease::Event>`.
-/// Evidence: vptr at 0x0.
-/// Bases: `BSTEventSink<SkillIncrease::Event>`@0x0.
-#[repr(C)]
-pub struct _anon_76CA921F__SkillIncreaseToMiscStatHandler {
-    /// +0x0 `vtbl:_anon_76CA921F::SkillIncreaseToMiscStatHandler:0`, rtti
-    pub __vftable: *const crate::raw::vtables::_anon_76CA921F__SkillIncreaseToMiscStatHandler_vtable,
-}
-const _: () = assert!(core::mem::offset_of!(_anon_76CA921F__SkillIncreaseToMiscStatHandler, __vftable) == 0x0);
-
-/// `_anon_76CA921F::TrespassToMiscStatHandler`: size >= 0x8 (lower bound); partial, the struct stops at the lower bound; primary base `BSTEventSink<Trespass::Event>`.
-/// Evidence: vptr at 0x0.
-/// Bases: `BSTEventSink<Trespass::Event>`@0x0.
-#[repr(C)]
-pub struct _anon_76CA921F__TrespassToMiscStatHandler {
-    /// +0x0 `vtbl:_anon_76CA921F::TrespassToMiscStatHandler:0`, rtti
-    pub __vftable: *const crate::raw::vtables::_anon_76CA921F__TrespassToMiscStatHandler_vtable,
-}
-const _: () = assert!(core::mem::offset_of!(_anon_76CA921F__TrespassToMiscStatHandler, __vftable) == 0x0);
-
-/// `_anon_76CA921F::WordLearnedToMiscStatHandler`: size >= 0x8 (lower bound); partial, the struct stops at the lower bound; primary base `BSTEventSink<WordLearned::Event>`.
-/// Evidence: vptr at 0x0.
-/// Bases: `BSTEventSink<WordLearned::Event>`@0x0.
-#[repr(C)]
-pub struct _anon_76CA921F__WordLearnedToMiscStatHandler {
-    /// +0x0 `vtbl:_anon_76CA921F::WordLearnedToMiscStatHandler:0`, rtti
-    pub __vftable: *const crate::raw::vtables::_anon_76CA921F__WordLearnedToMiscStatHandler_vtable,
-}
-const _: () = assert!(core::mem::offset_of!(_anon_76CA921F__WordLearnedToMiscStatHandler, __vftable) == 0x0);
 
