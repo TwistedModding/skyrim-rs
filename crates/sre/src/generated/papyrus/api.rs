@@ -27,6 +27,22 @@ impl core::ops::Deref for crate::SkyrimScript__HandlePolicy {
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
+impl crate::ActiveEffect {
+    /// `ActiveEffect::target` at +0x50: the target's MagicTarget subobject (Actor+0xa0 for an actor)
+    ///
+    /// Semantic field, papyrus pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn target(&self) -> Option<&crate::MagicTarget> { unsafe { { self.target }.as_ref() } }
+}
+
+impl crate::BGSBaseAlias {
+    /// `BGSBaseAlias::owningQuest` at +0x10: the quest that owns the alias
+    ///
+    /// Semantic field, papyrus pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn owning_quest(&self) -> Option<&crate::TESQuest> { unsafe { { self.owningQuest }.as_ref() } }
+}
+
 impl crate::BSScript__Array {
     /// `InitTypedArrayObject`: count 0, element type (an array type reduced to its element type), size, +0x14..+0x1b zero, every element {elementType, 0}
     ///
@@ -385,6 +401,16 @@ impl crate::BSScript__Internal__VirtualMachine {
     /// `void (const BSScript::Stack* stack, BSScript::ErrorLogger* logger)`
     #[inline]
     pub fn dump_stack_to_log(stack: &crate::BSScript__Stack, logger: &crate::BSScript__ErrorLogger) { unsafe { function!(104491, (&crate::BSScript__Stack, &crate::BSScript__ErrorLogger))(stack, logger) } }
+    /// `BSScript::Internal::VirtualMachine::frozenStacks` at +0x9390: BSTSmartPointer<Stack>: head of the frozen list, linked through Stack+0x98
+    ///
+    /// Semantic field, papyrus pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn frozen_stacks(&self) -> Option<&crate::BSScript__Stack> { unsafe { { self.frozenStacks }.as_ref() } }
+    /// `BSScript::Internal::VirtualMachine::handlePolicy` at +0x90: BSScript::IObjectHandlePolicy* (SkyrimVM+0x338): GetObjectHandlePolicy returns it
+    ///
+    /// Semantic field, papyrus pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn handle_policy(&self) -> Option<&crate::SkyrimScript__HandlePolicy> { unsafe { { self.handlePolicy }.as_ref() } }
 }
 
 impl crate::BSScript__NF_util__NativeFunctionBase {
@@ -559,6 +585,11 @@ impl crate::BSScript__NF_util__NativeFunctionBase {
     /// It constructs or destroys an object in place.
     #[inline]
     pub unsafe fn ctor(&self, name: *const c_char, className: *const c_char, isStatic: bool, paramCount: u32) -> *mut Self { unsafe { function!(104653, (&Self, *const c_char, *const c_char, bool, u32) -> *mut Self)(self, name, className, isStatic, paramCount) } }
+    /// `BSScript::NF_util::NativeFunctionBase::params` at +0x30: the parameter array, 0x10 per entry, allocated as count*0x10+8 with the count stored in front
+    ///
+    /// Semantic field, papyrus pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn params(&self) -> Option<&crate::BSScript__NF_util__ParamInfo> { unsafe { { self.params }.as_ref() } }
 }
 
 impl crate::BSScript__Object {
@@ -598,6 +629,11 @@ impl crate::BSScript__Object {
     /// It constructs or destroys an object in place.
     #[inline]
     pub unsafe fn ctor(&self, type_: *mut c_void, policy: *mut crate::BSScript__IObjectHandlePolicy, variableCount: u32) -> *mut Self { unsafe { function!(104255, (&Self, *mut c_void, *mut crate::BSScript__IObjectHandlePolicy, u32) -> *mut Self)(self, type_, policy, variableCount) } }
+    /// `BSScript::Object::type` at +0x8: BSTSmartPointer<ObjectTypeInfo>
+    ///
+    /// Semantic field, papyrus pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn type_(&self) -> Option<&crate::BSScript__ObjectTypeInfo> { unsafe { { self.type_ }.as_ref() } }
 }
 
 impl crate::BSScript__ObjectTypeInfo {
@@ -631,6 +667,11 @@ impl crate::BSScript__ObjectTypeInfo {
     /// The pass rates the signature medium.
     #[inline]
     pub unsafe fn dtor(&self) { unsafe { function!(104299, (&Self))(self) } }
+    /// `BSScript::ObjectTypeInfo::parent` at +0x10: the parent class (Actor -> ObjectReference -> Form), null for roots
+    ///
+    /// Semantic field, papyrus pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn parent(&self) -> Option<&crate::BSScript__ObjectTypeInfo> { unsafe { { self.parent }.as_ref() } }
 }
 
 impl crate::BSScript__Stack {
@@ -655,6 +696,34 @@ impl crate::BSScript__Stack {
     /// It constructs or destroys an object in place.
     #[inline]
     pub unsafe fn ctor(&self, pagePolicy: *mut c_void, profilePolicy: *mut c_void, a3: u32, a4: u32, callback: *mut c_void) -> *mut Self { unsafe { function!(104479, (&Self, *mut c_void, *mut c_void, u32, u32, *mut c_void) -> *mut Self)(self, pagePolicy, profilePolicy, a3, a4, callback) } }
+    /// `BSScript::Stack::frozenNext` at +0x98: BSTSmartPointer<Stack>: next stack in the VM's frozen list (VM+0x9390)
+    ///
+    /// Semantic field, papyrus pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn frozen_next(&self) -> Option<&crate::BSScript__Stack> { unsafe { { self.frozenNext }.as_ref() } }
+    /// `BSScript::Stack::tasklet` at +0x88: BSTSmartPointer<CodeTasklet> that interprets this stack's script frames
+    ///
+    /// Semantic field, papyrus pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn tasklet(&self) -> Option<&crate::BSScript__Internal__CodeTasklet> { unsafe { { self.tasklet }.as_ref() } }
+    /// `BSScript::Stack::top` at +0x60: the innermost frame
+    ///
+    /// Semantic field, papyrus pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn top(&self) -> Option<&crate::BSScript__StackFrame> { unsafe { { self.top }.as_ref() } }
+}
+
+impl crate::BSScript__StackFrame {
+    /// `BSScript::StackFrame::owningObjectType` at +0x18: the class the function belongs to
+    ///
+    /// Semantic field, papyrus pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn owning_object_type(&self) -> Option<&crate::BSScript__ObjectTypeInfo> { unsafe { { self.owningObjectType }.as_ref() } }
+    /// `BSScript::StackFrame::owningStack` at +0x0: the stack the frame belongs to
+    ///
+    /// Semantic field, papyrus pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn owning_stack(&self) -> Option<&crate::BSScript__Stack> { unsafe { { self.owningStack }.as_ref() } }
 }
 
 impl crate::BSScript__Variable {
@@ -706,6 +775,19 @@ impl crate::ExtraAliasInstanceArray {
     /// `functor` must point to what the engine expects.
     #[inline]
     pub unsafe fn for_each_alias(&self, functor: *mut c_void) { unsafe { function!(12720, (&Self, *mut c_void))(self, functor) } }
+}
+
+impl crate::ExtraAliasInstanceArray__Entry {
+    /// `ExtraAliasInstanceArray::Entry::alias` at +0x8: the alias (BGSRefAlias for a reference alias)
+    ///
+    /// Semantic field, papyrus pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn alias(&self) -> Option<&crate::BGSBaseAlias> { unsafe { { self.alias }.as_ref() } }
+    /// `ExtraAliasInstanceArray::Entry::quest` at +0x0: the quest
+    ///
+    /// Semantic field, papyrus pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn quest(&self) -> Option<&crate::TESQuest> { unsafe { { self.quest }.as_ref() } }
 }
 
 impl crate::SkyrimScript__HandlePolicy {

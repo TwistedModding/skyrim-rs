@@ -148,6 +148,11 @@ impl crate::BSFaceGenNiNode {
     /// The pass rates the signature medium.
     #[inline]
     pub unsafe fn update_face_animation(&self, data: *mut crate::NiUpdateData) { unsafe { function!(26998, (&Self, *mut crate::NiUpdateData))(self, data) } }
+    /// `BSFaceGenNiNode::animationData` at +0x150: face keyframe channels
+    ///
+    /// Semantic field, animation pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn animation_data(&self) -> Option<&crate::BSFaceGenAnimationData> { unsafe { { self.animationData }.as_ref() } }
 }
 
 impl crate::BShkbAnimationGraph {
@@ -334,6 +339,26 @@ impl crate::BShkbAnimationGraph {
     /// `flag` must point to what the engine expects.
     #[inline]
     pub unsafe fn write_pose_to_nodes(&self, flag: *mut bool) { unsafe { function!(63589, (&Self, *mut bool))(self, flag) } }
+    /// `BShkbAnimationGraph::behaviorGraph` at +0x208: this graph's cloned hkbBehaviorGraph: +0xd8 hkbVariableValueSet (values +0x10, count +0x18), +0x12c active byte, vtable+0x30 handleEvent
+    ///
+    /// Semantic field, animation pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn behavior_graph(&self) -> Option<&crate::hkbBehaviorGraph> { unsafe { { self.behaviorGraph }.as_ref() } }
+    /// `BShkbAnimationGraph::owner` at +0x210: the reference that owns the graph (holder - 0x38); copied into every BSAnimationGraphEvent as its +8
+    ///
+    /// Semantic field, animation pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn owner(&self) -> Option<&crate::TESObjectREFR> { unsafe { { self.owner }.as_ref() } }
+    /// `BShkbAnimationGraph::projectData` at +0x200: per-project data: +0x70 BSTHashMap<BSFixedString,int> variable name -> index (capacity +0x7c, sentinel +0x88, entries +0x98, entry {key, int, next} stride 0x18), +0xa0 event name -> id map (capacity +0xac, sentinel +0xb8, entries +0xc8), +0xd0 BSFixedString event names by id (count +0xe0)
+    ///
+    /// Semantic field, animation pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn project_data(&self) -> Option<&crate::BShkbHkxDB__ProjectDBData> { unsafe { { self.projectData }.as_ref() } }
+    /// `BShkbAnimationGraph::rootNode` at +0x218: the 3D root the graph drives (NiRefObject reference)
+    ///
+    /// Semantic field, animation pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn root_node(&self) -> Option<&crate::NiNode> { unsafe { { self.rootNode }.as_ref() } }
 }
 
 impl crate::IAnimationGraphManagerHolder {
@@ -694,6 +719,16 @@ impl crate::hkbBehaviorGraph {
     /// `st` must point to what the engine expects.
     #[inline]
     pub unsafe fn pre_generate(&self, st: *mut c_void, updateActiveNodes: bool, analyzeRecycling: bool) { unsafe { function!(58355, (&Self, *mut c_void, bool, bool))(self, st, updateActiveNodes, analyzeRecycling) } }
+    /// `hkbBehaviorGraph::data` at +0x88: graph data: variable count (+0x28), initial variable values (+0x70), attribute defaults (+0x10, count +0x18)
+    ///
+    /// Semantic field, animation pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn data(&self) -> Option<&crate::hkbBehaviorGraphData> { unsafe { { self.data }.as_ref() } }
+    /// `hkbBehaviorGraph::variableValueSet` at +0xD8: current values of the graph variables
+    ///
+    /// Semantic field, animation pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn variable_value_set(&self) -> Option<&crate::hkbVariableValueSet> { unsafe { { self.variableValueSet }.as_ref() } }
 }
 
 impl crate::hkbCharacter {
@@ -751,6 +786,26 @@ impl crate::hkbCharacter {
     /// The pass rates the signature medium.
     #[inline]
     pub unsafe fn set_world_from_model_buffer(&self, buffer: *mut c_void, owned: bool) { unsafe { function!(58461, (&Self, *mut c_void, bool))(self, buffer, owned) } }
+    /// `hkbCharacter::footIkDriver` at +0x40: foot IK driver
+    ///
+    /// Semantic field, animation pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn foot_ik_driver(&self) -> Option<&crate::hkbFootIkDriver> { unsafe { { self.footIkDriver }.as_ref() } }
+    /// `hkbCharacter::handIkDriver` at +0x48: hand IK driver
+    ///
+    /// Semantic field, animation pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn hand_ik_driver(&self) -> Option<&crate::hkbHandIkDriver> { unsafe { { self.handIkDriver }.as_ref() } }
+    /// `hkbCharacter::ragdollDriver` at +0x30: ragdoll driver; its +0x88 is the hkaRagdollInstance
+    ///
+    /// Semantic field, animation pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn ragdoll_driver(&self) -> Option<&crate::hkbRagdollDriver> { unsafe { { self.ragdollDriver }.as_ref() } }
+    /// `hkbCharacter::setup` at +0x50: character setup; its +0x20 is the animation skeleton
+    ///
+    /// Semantic field, animation pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn setup(&self) -> Option<&crate::hkbCharacterSetup> { unsafe { { self.setup }.as_ref() } }
 }
 
 impl crate::hkbRagdollDriver {
@@ -760,6 +815,11 @@ impl crate::hkbRagdollDriver {
     /// `hkaRagdollInstance* (hkbRagdollDriver* this)`
     #[inline]
     pub fn get_ragdoll_instance(&self) -> Option<&'static crate::hkaRagdollInstance> { unsafe { function!(58286, (&Self) -> Option<&'static crate::hkaRagdollInstance>)(self) } }
+    /// `hkbRagdollDriver::ragdollInstance` at +0x88: the character's ragdoll (rigid bodies, constraints)
+    ///
+    /// Semantic field, animation pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn ragdoll_instance(&self) -> Option<&crate::hkaRagdollInstance> { unsafe { { self.ragdollInstance }.as_ref() } }
 }
 
 /// `ApplyFaceMorphJob`: job body: ApplyMorphs(node, faceFlags bit 0), then drops the queue's reference

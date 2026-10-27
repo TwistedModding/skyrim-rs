@@ -58,8 +58,8 @@ fn generate() -> ExitCode {
     );
     let api = &stats.api;
     println!(
-        "derefs {} ({} refused), base accessors {}, singletons {}, statics {}, functions reached only as slots {}, left out: vfunc_<n> names {}, CRT initializers {}",
-        api.derefs, api.derefs_refused, api.base_accessors, api.singletons, api.statics, api.virtual_only, api.vfunc_names, api.initializers
+        "derefs {} ({} refused), base accessors {}, field accessors {}, singletons {}, statics {}, functions reached only as slots {}, left out: vfunc_<n> names {}, CRT initializers {}",
+        api.derefs, api.derefs_refused, api.base_accessors, api.field_accessors, api.singletons, api.statics, api.virtual_only, api.vfunc_names, api.initializers
     );
     for (tier, t) in &api.tiers {
         println!(

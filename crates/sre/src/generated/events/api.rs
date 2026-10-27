@@ -9,6 +9,14 @@ impl core::ops::Deref for crate::ButtonEvent {
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
+impl crate::BSAnimationGraphEvent {
+    /// `BSAnimationGraphEvent::owner` at +0x8: the reference whose graph raised the event (its IAnimationGraphManagerHolder is at +0x38)
+    ///
+    /// Semantic field, events pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn owner(&self) -> Option<&crate::TESObjectREFR> { unsafe { { self.owner }.as_ref() } }
+}
+
 impl crate::BSFixedString {
     /// `BSFixedString::assign`: replaces the string: adds a reference to the new entry, releases the old one
     ///
@@ -207,6 +215,21 @@ impl crate::EventSourceHolder_Input {
     /// It constructs or destroys an object in place.
     #[inline]
     pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(524129, (&Self) -> *mut Self)(self) } }
+    /// `EventSourceHolder_Input::gamepadHandler` at +0x70: device slot 2: owner of the current pad device
+    ///
+    /// Semantic field, events pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn gamepad_handler(&self) -> Option<&crate::BSPCGamepadDeviceHandler> { unsafe { { self.gamepadHandler }.as_ref() } }
+    /// `EventSourceHolder_Input::mouse` at +0x68: device slot 1
+    ///
+    /// Semantic field, events pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn mouse(&self) -> Option<&crate::BSWin32MouseDevice> { unsafe { { self.mouse }.as_ref() } }
+    /// `EventSourceHolder_Input::virtualKeyboard` at +0x88: device slot 5
+    ///
+    /// Semantic field, events pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn virtual_keyboard(&self) -> Option<&crate::BSWin32VirtualKeyboardDevice> { unsafe { { self.virtualKeyboard }.as_ref() } }
 }
 
 impl crate::EventSourceHolder_MenuOpenClose {
@@ -374,6 +397,124 @@ impl crate::InputEvent {
     /// `const BSFixedString* (InputEvent* this)`
     #[inline]
     pub fn q_user_event(&self) -> Option<&'static crate::BSFixedString> { unsafe { virtual_function!(self, 2, (&Self) -> Option<&'static crate::BSFixedString>)(self) } }
+}
+
+impl crate::TESActivateEvent {
+    /// `TESActivateEvent::actionRef` at +0x8: the activating reference
+    ///
+    /// Semantic field, events pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn action_ref(&self) -> Option<&crate::TESObjectREFR> { unsafe { { self.actionRef }.as_ref() } }
+    /// `TESActivateEvent::objectActivated` at +0x0: the reference being activated (a NiPointer: the sender adds a reference)
+    ///
+    /// Semantic field, events pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn object_activated(&self) -> Option<&crate::TESObjectREFR> { unsafe { { self.objectActivated }.as_ref() } }
+}
+
+impl crate::TESActorLocationChangeEvent {
+    /// `TESActorLocationChangeEvent::actor` at +0x0: the actor (NiPointer)
+    ///
+    /// Semantic field, events pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn actor(&self) -> Option<&crate::TESObjectREFR> { unsafe { { self.actor }.as_ref() } }
+    /// `TESActorLocationChangeEvent::newLoc` at +0x10: the location entered, null when none
+    ///
+    /// Semantic field, events pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn new_loc(&self) -> Option<&crate::BGSLocation> { unsafe { { self.newLoc }.as_ref() } }
+    /// `TESActorLocationChangeEvent::oldLoc` at +0x8: the location left, null when none
+    ///
+    /// Semantic field, events pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn old_loc(&self) -> Option<&crate::BGSLocation> { unsafe { { self.oldLoc }.as_ref() } }
+}
+
+impl crate::TESCellAttachDetachEvent {
+    /// `TESCellAttachDetachEvent::reference` at +0x0: the reference being attached to or detached from its cell (NiPointer)
+    ///
+    /// Semantic field, events pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn reference(&self) -> Option<&crate::TESObjectREFR> { unsafe { { self.reference }.as_ref() } }
+}
+
+impl crate::TESCombatEvent {
+    /// `TESCombatEvent::actor` at +0x0: the actor whose combat state changed (NiPointer)
+    ///
+    /// Semantic field, events pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn actor(&self) -> Option<&crate::TESObjectREFR> { unsafe { { self.actor }.as_ref() } }
+    /// `TESCombatEvent::targetActor` at +0x8: the combat target (NiPointer), null when leaving combat
+    ///
+    /// Semantic field, events pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn target_actor(&self) -> Option<&crate::TESObjectREFR> { unsafe { { self.targetActor }.as_ref() } }
+}
+
+impl crate::TESEquipEvent {
+    /// `TESEquipEvent::actor` at +0x0: the actor equipping or unequipping (NiPointer)
+    ///
+    /// Semantic field, events pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn actor(&self) -> Option<&crate::TESObjectREFR> { unsafe { { self.actor }.as_ref() } }
+}
+
+impl crate::TESFurnitureEvent {
+    /// `TESFurnitureEvent::actor` at +0x0: the actor using the furniture (NiPointer)
+    ///
+    /// Semantic field, events pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn actor(&self) -> Option<&crate::TESObjectREFR> { unsafe { { self.actor }.as_ref() } }
+    /// `TESFurnitureEvent::targetFurniture` at +0x8: the furniture reference (NiPointer)
+    ///
+    /// Semantic field, events pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn target_furniture(&self) -> Option<&crate::TESObjectREFR> { unsafe { { self.targetFurniture }.as_ref() } }
+}
+
+impl crate::TESHitEvent {
+    /// `TESHitEvent::cause` at +0x8: the aggressor (NiPointer)
+    ///
+    /// Semantic field, events pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn cause(&self) -> Option<&crate::TESObjectREFR> { unsafe { { self.cause }.as_ref() } }
+    /// `TESHitEvent::target` at +0x0: the reference hit (NiPointer)
+    ///
+    /// Semantic field, events pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn target(&self) -> Option<&crate::TESObjectREFR> { unsafe { { self.target }.as_ref() } }
+}
+
+impl crate::TESInitScriptEvent {
+    /// `TESInitScriptEvent::reference` at +0x0: the reference whose scripts initialise (NiPointer)
+    ///
+    /// Semantic field, events pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn reference(&self) -> Option<&crate::TESObjectREFR> { unsafe { { self.reference }.as_ref() } }
+}
+
+impl crate::TESLockChangedEvent {
+    /// `TESLockChangedEvent::lockedObject` at +0x0: the reference whose lock state changed (NiPointer)
+    ///
+    /// Semantic field, events pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn locked_object(&self) -> Option<&crate::TESObjectREFR> { unsafe { { self.lockedObject }.as_ref() } }
+}
+
+impl crate::TESObjectREFRTranslationEvent {
+    /// `TESObjectREFRTranslationEvent::ref` at +0x0: the translating reference (NiPointer)
+    ///
+    /// Semantic field, events pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn ref_(&self) -> Option<&crate::TESObjectREFR> { unsafe { { self.ref_ }.as_ref() } }
+}
+
+impl crate::TESPackageEvent {
+    /// `TESPackageEvent::actor` at +0x0: the actor (NiPointer)
+    ///
+    /// Semantic field, events pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn actor(&self) -> Option<&crate::TESObjectREFR> { unsafe { { self.actor }.as_ref() } }
 }
 
 /// `ActorItemEquipped::GetEventSource`: the one source of ActorItemEquipped::Event events

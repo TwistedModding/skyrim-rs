@@ -202,6 +202,11 @@ impl crate::AutoVanityState {
     /// `out`, `rotation` must point to what the engine expects.
     #[inline]
     pub unsafe fn compute_auto_vanity_camera_position(&self, out: *mut c_void, rotation: *const c_void) { unsafe { function!(50713, (&Self, *mut c_void, *const c_void))(self, out, rotation) } }
+    /// `AutoVanityState::camera` at +0x10: owning camera
+    ///
+    /// Semantic field, frame pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn camera(&self) -> Option<&crate::PlayerCamera> { unsafe { { self.camera }.as_ref() } }
 }
 
 impl crate::BSBatchRenderer {
@@ -391,6 +396,11 @@ impl crate::BSLightingShaderMaterialBase {
     /// The pass rates the signature medium.
     #[inline]
     pub unsafe fn set_default_textures(&self, a1: bool, a2: bool, a3: bool, a4: bool, a5: bool) { unsafe { virtual_function!(self, 10, (&Self, bool, bool, bool, bool, bool))(self, a1, a2, a3, a4, a5) } }
+    /// `BSLightingShaderMaterialBase::textureSet` at +0x78: texture paths (a BSShaderTextureSet)
+    ///
+    /// Semantic field, frame pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn texture_set(&self) -> Option<&crate::BSTextureSet> { unsafe { { self.textureSet }.as_ref() } }
 }
 
 impl crate::BSShader {
@@ -538,6 +548,21 @@ impl crate::BleedoutCameraState {
     /// It constructs or destroys an object in place.
     #[inline]
     pub unsafe fn dtor(&self) { unsafe { function!(50860, (&Self))(self) } }
+    /// `BleedoutCameraState::cam3Node` at +0x30: 'Camera3rd [Cam3]' node of the target's third-person 3D
+    ///
+    /// Semantic field, frame pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn cam3_node(&self) -> Option<&crate::NiAVObject> { unsafe { { self.cam3Node }.as_ref() } }
+    /// `BleedoutCameraState::camera` at +0x10: owning camera
+    ///
+    /// Semantic field, frame pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn camera(&self) -> Option<&crate::PlayerCamera> { unsafe { { self.camera }.as_ref() } }
+    /// `BleedoutCameraState::cameraControlNode` at +0x38: 'Camera Control' node of the target's third-person 3D; its local translation is read every frame
+    ///
+    /// Semantic field, frame pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn camera_control_node(&self) -> Option<&crate::NiNode> { unsafe { { self.cameraControlNode }.as_ref() } }
 }
 
 impl crate::DragonCameraState {
@@ -550,6 +575,21 @@ impl crate::DragonCameraState {
     /// It constructs or destroys an object in place.
     #[inline]
     pub unsafe fn ctor(&self, camera: *mut crate::PlayerCamera, id: u32) -> *mut Self { unsafe { function!(33107, (&Self, *mut crate::PlayerCamera, u32) -> *mut Self)(self, camera, id) } }
+    /// `DragonCameraState::cam3Node` at +0x30: 'Camera3rd [Cam3]' node of the target's third-person 3D
+    ///
+    /// Semantic field, frame pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn cam3_node(&self) -> Option<&crate::NiAVObject> { unsafe { { self.cam3Node }.as_ref() } }
+    /// `DragonCameraState::camera` at +0x10: owning camera
+    ///
+    /// Semantic field, frame pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn camera(&self) -> Option<&crate::PlayerCamera> { unsafe { { self.camera }.as_ref() } }
+    /// `DragonCameraState::cameraControlNode` at +0x38: 'Camera Control' node of the target's third-person 3D; its local translation is read every frame
+    ///
+    /// Semantic field, frame pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn camera_control_node(&self) -> Option<&crate::NiNode> { unsafe { { self.cameraControlNode }.as_ref() } }
 }
 
 impl crate::FirstPersonState {
@@ -595,6 +635,21 @@ impl crate::FirstPersonState {
     /// It constructs or destroys an object in place.
     #[inline]
     pub unsafe fn dtor(&self) { unsafe { function!(50721, (&Self))(self) } }
+    /// `FirstPersonState::camera` at +0x10: owning camera
+    ///
+    /// Semantic field, frame pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn camera(&self) -> Option<&crate::PlayerCamera> { unsafe { { self.camera }.as_ref() } }
+    /// `FirstPersonState::cameraControlNode` at +0x60: 'Camera Control' node of the first-person skeleton (FOV offset and image space, as ThirdPersonState+0x38)
+    ///
+    /// Semantic field, frame pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn camera_control_node(&self) -> Option<&crate::NiNode> { unsafe { { self.cameraControlNode }.as_ref() } }
+    /// `FirstPersonState::cameraNode` at +0x58: first-person camera node: world rotation (+0x7c) and translation (+0xa0) are the camera pose
+    ///
+    /// Semantic field, frame pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn camera_node(&self) -> Option<&crate::NiAVObject> { unsafe { { self.cameraNode }.as_ref() } }
 }
 
 impl crate::FrameState {
@@ -697,6 +752,11 @@ impl crate::FreeCameraState {
     /// It constructs or destroys an object in place.
     #[inline]
     pub unsafe fn dtor(&self) { unsafe { function!(50740, (&Self))(self) } }
+    /// `FreeCameraState::camera` at +0x10: owning camera
+    ///
+    /// Semantic field, frame pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn camera(&self) -> Option<&crate::PlayerCamera> { unsafe { { self.camera }.as_ref() } }
 }
 
 impl crate::FurnitureCameraState {
@@ -724,6 +784,11 @@ impl crate::FurnitureCameraState {
     /// It constructs or destroys an object in place.
     #[inline]
     pub unsafe fn dtor(&self) { unsafe { function!(50750, (&Self))(self) } }
+    /// `FurnitureCameraState::camera` at +0x10: owning camera
+    ///
+    /// Semantic field, frame pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn camera(&self) -> Option<&crate::PlayerCamera> { unsafe { { self.camera }.as_ref() } }
 }
 
 impl crate::HorseCameraState {
@@ -736,6 +801,21 @@ impl crate::HorseCameraState {
     /// It constructs or destroys an object in place.
     #[inline]
     pub unsafe fn ctor(&self, camera: *mut crate::PlayerCamera, id: u32) -> *mut Self { unsafe { function!(50759, (&Self, *mut crate::PlayerCamera, u32) -> *mut Self)(self, camera, id) } }
+    /// `HorseCameraState::cam3Node` at +0x30: 'Camera3rd [Cam3]' node of the target's third-person 3D
+    ///
+    /// Semantic field, frame pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn cam3_node(&self) -> Option<&crate::NiAVObject> { unsafe { { self.cam3Node }.as_ref() } }
+    /// `HorseCameraState::camera` at +0x10: owning camera
+    ///
+    /// Semantic field, frame pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn camera(&self) -> Option<&crate::PlayerCamera> { unsafe { { self.camera }.as_ref() } }
+    /// `HorseCameraState::cameraControlNode` at +0x38: 'Camera Control' node of the target's third-person 3D; its local translation is read every frame
+    ///
+    /// Semantic field, frame pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn camera_control_node(&self) -> Option<&crate::NiNode> { unsafe { { self.cameraControlNode }.as_ref() } }
 }
 
 impl crate::ImageSpaceEffectDepthOfField {
@@ -769,6 +849,16 @@ impl crate::IronSightsState {
     /// It constructs or destroys an object in place.
     #[inline]
     pub unsafe fn dtor(&self) { unsafe { function!(50776, (&Self))(self) } }
+    /// `IronSightsState::camera` at +0x10: owning camera
+    ///
+    /// Semantic field, frame pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn camera(&self) -> Option<&crate::PlayerCamera> { unsafe { { self.camera }.as_ref() } }
+    /// `IronSightsState::sightNode` at +0x20: node whose world rotation (+0x7c) and translation (+0xa0) are the pose
+    ///
+    /// Semantic field, frame pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn sight_node(&self) -> Option<&crate::NiAVObject> { unsafe { { self.sightNode }.as_ref() } }
 }
 
 impl crate::NiCamera {
@@ -832,6 +922,26 @@ impl crate::NiCamera {
     /// It constructs or destroys an object in place.
     #[inline]
     pub unsafe fn dtor(&self) { unsafe { function!(70625, (&Self))(self) } }
+    /// `NiCamera::collisionObject` at +0x40: collision object; NiCamera's RegisterStreamables (slot 26) forwards to it
+    ///
+    /// Semantic field, frame pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn collision_object(&self) -> Option<&crate::NiCollisionObject> { unsafe { { self.collisionObject }.as_ref() } }
+    /// `NiCamera::controllers` at +0x18: controller list head (a BSFrustumFOVController targets a camera)
+    ///
+    /// Semantic field, frame pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn controllers(&self) -> Option<&crate::NiTimeController> { unsafe { { self.controllers }.as_ref() } }
+    /// `NiCamera::extraData` at +0x20: sorted extra data array
+    ///
+    /// Semantic field, frame pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn extra_data(&self) -> Option<&crate::NiExtraData> { unsafe { { self.extraData }.as_ref() } }
+    /// `NiCamera::parent` at +0x30: parent node
+    ///
+    /// Semantic field, frame pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn parent(&self) -> Option<&crate::NiNode> { unsafe { { self.parent }.as_ref() } }
 }
 
 impl crate::NiExtraData {
@@ -991,6 +1101,16 @@ impl crate::NiObjectNET {
     /// `void (NiObjectNET* this, const BSFixedString* name)`
     #[inline]
     pub fn set_name(&self, name: &crate::BSFixedString) { unsafe { function!(70507, (&Self, &crate::BSFixedString))(self, name) } }
+    /// `NiObjectNET::controllers` at +0x18: head of the controller list (refcounted); the next controller is at controller+0x40
+    ///
+    /// Semantic field, frame pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn controllers(&self) -> Option<&crate::NiTimeController> { unsafe { { self.controllers }.as_ref() } }
+    /// `NiObjectNET::extraData` at +0x20: heap array of NiExtraData*, sorted ascending by name pointer
+    ///
+    /// Semantic field, frame pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn extra_data(&self) -> Option<&crate::NiExtraData> { unsafe { { self.extraData }.as_ref() } }
 }
 
 impl crate::PlayerCamera {
@@ -1482,6 +1602,16 @@ impl crate::PlayerCamera {
     /// It constructs or destroys an object in place.
     #[inline]
     pub unsafe fn dtor(&self) { unsafe { function!(50782, (&Self))(self) } }
+    /// `PlayerCamera::cameraCaster` at +0x120: the camera's collision object: a 0x10-byte holder of two bhkSimpleShapePhantoms sharing one sphere of radius fCameraCasterSize; null = no collision cast
+    ///
+    /// Semantic field, frame pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn camera_caster(&self) -> Option<&crate::CameraCasterHolder> { unsafe { { self.cameraCaster }.as_ref() } }
+    /// `PlayerCamera::cameraRoot` at +0x20: the camera root every player state writes
+    ///
+    /// Semantic field, frame pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn camera_root(&self) -> Option<&crate::NiNode> { unsafe { { self.cameraRoot }.as_ref() } }
 }
 
 impl crate::PlayerCameraTransitionState {
@@ -1503,6 +1633,21 @@ impl crate::PlayerCameraTransitionState {
     /// `from`, `to` must point to what the engine expects.
     #[inline]
     pub unsafe fn configure(&self, from: *mut c_void, to: *mut c_void, durationMs: u32, easing: u32) { unsafe { function!(50888, (&Self, *mut c_void, *mut c_void, u32, u32))(self, from, to, durationMs, easing) } }
+    /// `PlayerCameraTransitionState::camera` at +0x10: owning camera
+    ///
+    /// Semantic field, frame pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn camera(&self) -> Option<&crate::PlayerCamera> { unsafe { { self.camera }.as_ref() } }
+    /// `PlayerCameraTransitionState::fromState` at +0x28: source state
+    ///
+    /// Semantic field, frame pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn from_state(&self) -> Option<&crate::TESCameraState> { unsafe { { self.fromState }.as_ref() } }
+    /// `PlayerCameraTransitionState::toState` at +0x30: destination; returned as next at t = 1
+    ///
+    /// Semantic field, frame pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn to_state(&self) -> Option<&crate::TESCameraState> { unsafe { { self.toState }.as_ref() } }
 }
 
 impl crate::PlayerInputHandler {
@@ -1656,6 +1801,39 @@ impl crate::PlayerInputHandler {
     /// `data` must point to what the engine expects.
     #[inline]
     pub unsafe fn process_button_6(&self, event: *mut crate::ButtonEvent, data: *mut c_void) { unsafe { function!(50906, (&Self, *mut crate::ButtonEvent, *mut c_void))(self, event, data) } }
+}
+
+impl crate::RenderPass {
+    /// `RenderPass::batchNext` at +0x30: link inside a BSBatchRenderer bucket or a list-mode group
+    ///
+    /// Semantic field, frame pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn batch_next(&self) -> Option<&crate::RenderPass> { unsafe { { self.batchNext }.as_ref() } }
+    /// `RenderPass::geometry` at +0x10: geometry drawn
+    ///
+    /// Semantic field, frame pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn geometry(&self) -> Option<&crate::BSGeometry> { unsafe { { self.geometry }.as_ref() } }
+    /// `RenderPass::next` at +0x28: next pass of the property's pass list (what GetRenderPasses returns)
+    ///
+    /// Semantic field, frame pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn next(&self) -> Option<&crate::RenderPass> { unsafe { { self.next }.as_ref() } }
+    /// `RenderPass::property` at +0x8: owning shader property
+    ///
+    /// Semantic field, frame pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn property(&self) -> Option<&crate::BSShaderProperty> { unsafe { { self.property }.as_ref() } }
+    /// `RenderPass::sceneLights` at +0x38: pointer to this pass's 16-slot BSLight* array (first numLights used); preassigned per pool entry
+    ///
+    /// Semantic field, frame pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn scene_lights(&self) -> Option<&crate::BSLight> { unsafe { { self.sceneLights }.as_ref() } }
+    /// `RenderPass::shader` at +0x0: shader whose slots 2-7 draw the pass
+    ///
+    /// Semantic field, frame pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn shader(&self) -> Option<&crate::BSShader> { unsafe { { self.shader }.as_ref() } }
 }
 
 impl crate::RenderTargetManager {
@@ -1820,6 +1998,31 @@ impl crate::Sky {
     /// `void (Sky* this)`
     #[inline]
     pub fn update_fog_distances(&self) { unsafe { function!(26233, (&Self))(self) } }
+    /// `Sky::atmosphere` at +0x70: 
+    ///
+    /// Semantic field, frame pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn atmosphere(&self) -> Option<&crate::Atmosphere> { unsafe { { self.atmosphere }.as_ref() } }
+    /// `Sky::precipitation` at +0xA0: null when bPrecipitation:Weather is off
+    ///
+    /// Semantic field, frame pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn precipitation(&self) -> Option<&crate::Precipitation> { unsafe { { self.precipitation }.as_ref() } }
+    /// `Sky::root` at +0x8: sky root (0x138)
+    ///
+    /// Semantic field, frame pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn root(&self) -> Option<&crate::BSMultiBoundNode> { unsafe { { self.root }.as_ref() } }
+    /// `Sky::stars` at +0x78: 
+    ///
+    /// Semantic field, frame pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn stars(&self) -> Option<&crate::Stars> { unsafe { { self.stars }.as_ref() } }
+    /// `Sky::sun` at +0x80: the sun
+    ///
+    /// Semantic field, frame pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn sun(&self) -> Option<&crate::Sun> { unsafe { { self.sun }.as_ref() } }
 }
 
 impl crate::Sun {
@@ -1838,6 +2041,16 @@ impl crate::Sun {
     /// `void (Sun* this, Sky* sky, float delta)`
     #[inline]
     pub fn update(&self, sky: &crate::Sky, delta: f32) { unsafe { virtual_function!(self, 3, (&Self, &crate::Sky, f32))(self, sky, delta) } }
+    /// `Sun::accumulator` at +0x50: 
+    ///
+    /// Semantic field, frame pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn accumulator(&self) -> Option<&crate::BSShaderAccumulator> { unsafe { { self.accumulator }.as_ref() } }
+    /// `Sun::light` at +0x38: directional light; its local rotation (+0x48, 3x3) is the sun direction from the hour and fSunX/Y/ZExtreme
+    ///
+    /// Semantic field, frame pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn light(&self) -> Option<&crate::NiDirectionalLight> { unsafe { { self.light }.as_ref() } }
 }
 
 impl crate::TESCameraState {
@@ -1904,6 +2117,11 @@ impl crate::TESCameraState {
     /// `next` must point to what the engine expects.
     #[inline]
     pub unsafe fn update(&self, next: *mut c_void) { unsafe { virtual_function!(self, 3, (&Self, *mut c_void))(self, next) } }
+    /// `TESCameraState::camera` at +0x10: owning camera
+    ///
+    /// Semantic field, frame pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn camera(&self) -> Option<&crate::TESCamera> { unsafe { { self.camera }.as_ref() } }
 }
 
 impl crate::ThirdPersonState {
@@ -2018,6 +2236,26 @@ impl crate::ThirdPersonState {
     /// It constructs or destroys an object in place.
     #[inline]
     pub unsafe fn dtor(&self) { unsafe { function!(33122, (&Self))(self) } }
+    /// `ThirdPersonState::animatedNode` at +0xA0: node of the player's third-person 3D the camera blends to (animated camera)
+    ///
+    /// Semantic field, frame pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn animated_node(&self) -> Option<&crate::NiAVObject> { unsafe { { self.animatedNode }.as_ref() } }
+    /// `ThirdPersonState::cam3Node` at +0x30: 'Camera3rd [Cam3]' node of the target's third-person 3D
+    ///
+    /// Semantic field, frame pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn cam3_node(&self) -> Option<&crate::NiAVObject> { unsafe { { self.cam3Node }.as_ref() } }
+    /// `ThirdPersonState::camera` at +0x10: owning camera
+    ///
+    /// Semantic field, frame pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn camera(&self) -> Option<&crate::PlayerCamera> { unsafe { { self.camera }.as_ref() } }
+    /// `ThirdPersonState::cameraControlNode` at +0x38: 'Camera Control' node of the target's third-person 3D; its local translation is read every frame
+    ///
+    /// Semantic field, frame pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn camera_control_node(&self) -> Option<&crate::NiNode> { unsafe { { self.cameraControlNode }.as_ref() } }
 }
 
 impl crate::TweenMenuCameraState {
@@ -2048,6 +2286,11 @@ impl crate::TweenMenuCameraState {
     /// It constructs or destroys an object in place.
     #[inline]
     pub unsafe fn ctor(&self, camera: *mut crate::PlayerCamera, id: u32) -> *mut Self { unsafe { function!(50922, (&Self, *mut crate::PlayerCamera, u32) -> *mut Self)(self, camera, id) } }
+    /// `TweenMenuCameraState::camera` at +0x10: owning camera
+    ///
+    /// Semantic field, frame pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn camera(&self) -> Option<&crate::PlayerCamera> { unsafe { { self.camera }.as_ref() } }
 }
 
 impl crate::VATSCameraState {
@@ -2075,6 +2318,11 @@ impl crate::VATSCameraState {
     /// It constructs or destroys an object in place.
     #[inline]
     pub unsafe fn ctor(&self, camera: *mut crate::TESCamera, id: u32) -> *mut Self { unsafe { function!(50933, (&Self, *mut crate::TESCamera, u32) -> *mut Self)(self, camera, id) } }
+    /// `VATSCameraState::camera` at +0x10: TESCameraState base: owning camera (PlayerCamera)
+    ///
+    /// Semantic field, frame pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn camera(&self) -> Option<&crate::TESCamera> { unsafe { { self.camera }.as_ref() } }
 }
 
 /// `AppendRenderPass`: allocates a pass and appends it to a property's pass list (+0x28 chain)

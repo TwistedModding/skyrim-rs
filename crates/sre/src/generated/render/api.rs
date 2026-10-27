@@ -133,6 +133,11 @@ impl crate::BSCullingProcess {
     /// `void (BSCullingProcess* this, NiAVObject* node, i32 groupIndex)`
     #[inline]
     pub fn test_planes_and_visit(&self, node: &crate::NiAVObject, groupIndex: i32) { unsafe { function!(71083, (&Self, &crate::NiAVObject, i32))(self, node, groupIndex) } }
+    /// `BSCullingProcess::camera` at +0x18: the camera of the current walk
+    ///
+    /// Semantic field, render pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn camera(&self) -> Option<&crate::NiCamera> { unsafe { { self.camera }.as_ref() } }
 }
 
 impl crate::BSGeometry {
@@ -145,6 +150,11 @@ impl crate::BSGeometry {
     /// The pass rates the signature low.
     #[inline]
     pub unsafe fn slot54_returns_null(&self) -> *mut c_void { unsafe { virtual_function!(self, 54, (&Self) -> *mut c_void)(self) } }
+    /// `BSGeometry::skinInstance` at +0x130: skin instance of a skinned geometry, null otherwise
+    ///
+    /// Semantic field, render pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn skin_instance(&self) -> Option<&crate::NiSkinInstance> { unsafe { { self.skinInstance }.as_ref() } }
 }
 
 impl crate::BSLight {
@@ -154,6 +164,16 @@ impl crate::BSLight {
     /// `bool (BSLight* this)`
     #[inline]
     pub fn is_shadow_light(&self) -> bool { unsafe { virtual_function!(self, 3, (&Self) -> bool)(self) } }
+    /// `BSLight::light` at +0x48: the scene graph light
+    ///
+    /// Semantic field, render pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn light(&self) -> Option<&crate::NiLight> { unsafe { { self.light }.as_ref() } }
+    /// `BSLight::portalGraph` at +0x120: the scene's portal graph at the last update
+    ///
+    /// Semantic field, render pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn portal_graph(&self) -> Option<&crate::BSPortalGraph> { unsafe { { self.portalGraph }.as_ref() } }
 }
 
 impl crate::BSLightingShaderProperty {
@@ -193,6 +213,16 @@ impl crate::BSLightingShaderProperty {
     /// The pass rates the signature medium.
     #[inline]
     pub unsafe fn update_flags_from_geometry(&self, g: *mut crate::BSGeometry) -> bool { unsafe { virtual_function!(self, 39, (&Self, *mut crate::BSGeometry) -> bool)(self, g) } }
+    /// `BSLightingShaderProperty::fadeNode` at +0x60: fade node whose currentFade (+0x130) gates depth and shadow passes
+    ///
+    /// Semantic field, render pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn fade_node(&self) -> Option<&crate::BSFadeNode> { unsafe { { self.fadeNode }.as_ref() } }
+    /// `BSLightingShaderProperty::material` at +0x78: (existing row) +0x80 material alpha
+    ///
+    /// Semantic field, render pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn material(&self) -> Option<&crate::BSShaderMaterial> { unsafe { { self.material }.as_ref() } }
 }
 
 impl crate::BSShaderAccumulator {
@@ -361,6 +391,16 @@ impl crate::BSShaderAccumulator {
     /// `void (BSShaderAccumulator* this, u32 flags)`
     #[inline]
     pub fn render_transparent_passes(&self, flags: u32) { unsafe { function!(106584, (&Self, u32))(self, flags) } }
+    /// `BSShaderAccumulator::batchRenderer` at +0x130: batch renderer the passes are sorted into
+    ///
+    /// Semantic field, render pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn batch_renderer(&self) -> Option<&crate::BSBatchRenderer> { unsafe { { self.batchRenderer }.as_ref() } }
+    /// `BSShaderAccumulator::camera` at +0x10: camera of the current draw
+    ///
+    /// Semantic field, render pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn camera(&self) -> Option<&crate::NiCamera> { unsafe { { self.camera }.as_ref() } }
 }
 
 impl crate::BSShaderProperty {
@@ -499,6 +539,16 @@ impl crate::BSShaderProperty {
     /// `void (BSShaderProperty* this, BSShaderMaterial* material, bool unique)`
     #[inline]
     pub fn set_material(&self, material: &crate::BSShaderMaterial, unique: bool) { unsafe { function!(105544, (&Self, &crate::BSShaderMaterial, bool))(self, material, unique) } }
+    /// `BSShaderProperty::fadeNode` at +0x60: fade node whose fade (+0x130) scales the alpha; g_DefaultFadeNode (fade 1.0) by default
+    ///
+    /// Semantic field, render pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn fade_node(&self) -> Option<&crate::BSFadeNode> { unsafe { { self.fadeNode }.as_ref() } }
+    /// `BSShaderProperty::material` at +0x78: material entry from the shared material cache (0x32309d8)
+    ///
+    /// Semantic field, render pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn material(&self) -> Option<&crate::BSShaderMaterial> { unsafe { { self.material }.as_ref() } }
 }
 
 impl crate::BSShadowDirectionalLight {
@@ -544,6 +594,11 @@ impl crate::BSShadowDirectionalLight {
     /// The pass rates the signature medium.
     #[inline]
     pub unsafe fn build_cull_planes(&self, outPlanes: *mut f32, corners: *mut f32, hull: *mut u32, hullCount: u32, lightAxes: *mut f32, origin: *mut f32, farCorner: u32) { unsafe { function!(108499, (&Self, *mut f32, *mut f32, *mut u32, u32, *mut f32, *mut f32, u32))(self, outPlanes, corners, hull, hullCount, lightAxes, origin, farCorner) } }
+    /// `BSShadowDirectionalLight::lightCamera` at +0x578: camera looking along the sun used by the geometry list cull (0x157ed80)
+    ///
+    /// Semantic field, render pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn light_camera(&self) -> Option<&crate::NiCamera> { unsafe { { self.lightCamera }.as_ref() } }
 }
 
 impl crate::BSShadowFrustumLight {
@@ -856,6 +911,11 @@ impl crate::NiAVObject {
     /// `void (NiAVObject* this)`
     #[inline]
     pub fn update_world_transform_from_parent(&self) { unsafe { function!(70540, (&Self))(self) } }
+    /// `NiAVObject::collisionObject` at +0x40: physics object of this node (refcounted); when set it, not the parent, produces the world transform
+    ///
+    /// Semantic field, render pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn collision_object(&self) -> Option<&crate::NiCollisionObject> { unsafe { { self.collisionObject }.as_ref() } }
 }
 
 impl crate::NiNode {
@@ -1003,6 +1063,39 @@ impl crate::NiSkinInstance {
     /// `geometryWorld` must point to what the engine expects.
     #[inline]
     pub unsafe fn update_palette(&self, geometryWorld: *const c_void) { unsafe { function!(77461, (&Self, *const c_void))(self, geometryWorld) } }
+    /// `NiSkinInstance::rootParent` at +0x20: the node the skin is bound to (the actor's root BSFadeNode for body parts)
+    ///
+    /// Semantic field, render pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn root_parent(&self) -> Option<&crate::NiAVObject> { unsafe { { self.rootParent }.as_ref() } }
+    /// `NiSkinInstance::skinData` at +0x10: bind data: bone count at +0x58, per-bone transforms at +0x50 (0x58 each)
+    ///
+    /// Semantic field, render pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn skin_data(&self) -> Option<&crate::NiSkinData> { unsafe { { self.skinData }.as_ref() } }
+    /// `NiSkinInstance::skinPartition` at +0x18: the partitions slot 37 draws
+    ///
+    /// Semantic field, render pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn skin_partition(&self) -> Option<&crate::NiSkinPartition> { unsafe { { self.skinPartition }.as_ref() } }
+}
+
+impl crate::ShadowMapData {
+    /// `ShadowMapData::accumulator` at +0x48: the accumulator the map's casters are gathered into
+    ///
+    /// Semantic field, render pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn accumulator(&self) -> Option<&crate::BSShaderAccumulator> { unsafe { { self.accumulator }.as_ref() } }
+    /// `ShadowMapData::camera` at +0x40: the map's camera (the cascade or hemisphere view)
+    ///
+    /// Semantic field, render pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn camera(&self) -> Option<&crate::NiCamera> { unsafe { { self.camera }.as_ref() } }
+    /// `ShadowMapData::culler` at +0xE0: per-map culling process (0x301f8)
+    ///
+    /// Semantic field, render pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn culler(&self) -> Option<&crate::BSCullingProcess> { unsafe { { self.culler }.as_ref() } }
 }
 
 impl crate::ShadowSceneNode {
@@ -1078,6 +1171,21 @@ impl crate::ShadowSceneNode {
     /// `void (ShadowSceneNode* this, BSLight* light)`
     #[inline]
     pub fn update_light(&self, light: &crate::BSLight) { unsafe { function!(106342, (&Self, &crate::BSLight))(self, light) } }
+    /// `ShadowSceneNode::fogProperty` at +0x220: fog property shared by the scene
+    ///
+    /// Semantic field, render pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn fog_property(&self) -> Option<&crate::BSFogProperty> { unsafe { { self.fogProperty }.as_ref() } }
+    /// `ShadowSceneNode::sunLight` at +0x200: the sun as a plain BSLight over the scene's NiDirectionalLight
+    ///
+    /// Semantic field, render pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn sun_light(&self) -> Option<&crate::BSLight> { unsafe { { self.sunLight }.as_ref() } }
+    /// `ShadowSceneNode::sunShadowLight` at +0x210: the sun's cascaded shadow light; the frame's shadow step updates and culls it first
+    ///
+    /// Semantic field, render pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn sun_shadow_light(&self) -> Option<&crate::BSShadowDirectionalLight> { unsafe { { self.sunShadowLight }.as_ref() } }
 }
 
 impl crate::TESCamera {
@@ -1135,6 +1243,11 @@ impl crate::TESCamera {
     /// It constructs or destroys an object in place.
     #[inline]
     pub unsafe fn dtor(&self) { unsafe { function!(33019, (&Self))(self) } }
+    /// `TESCamera::cameraRoot` at +0x20: the camera's scene graph node
+    ///
+    /// Semantic field, render pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn camera_root(&self) -> Option<&crate::NiNode> { unsafe { { self.cameraRoot }.as_ref() } }
 }
 
 /// `CullShadowLights`: updates and culls the casters of the scene's shadow lights and runs the sun's slot 9 (cascade caster cull) while the main camera cull jobs run

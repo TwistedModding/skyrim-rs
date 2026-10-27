@@ -87,6 +87,8 @@ pub struct ApiStats {
     pub derefs: usize,
     pub derefs_refused: usize,
     pub base_accessors: usize,
+    /// Pointer fields a pass names with high confidence, read as `Option<&X>`.
+    pub field_accessors: usize,
     pub singletons: usize,
     pub statics: usize,
     /// Functions reached as a named slot of the same class, so not emitted as a direct call.
@@ -410,6 +412,8 @@ fn render_call(doc_lines: &str, shape: Shape, safe: bool, sig: &Sig, callee: &st
 /// One emitted item before naming: `text` holds `@NAME@` where its unique name goes.
 struct Entry {
     tier: Tier,
+    /// Left out when a callable of the same class has the name.
+    yields: bool,
     group: String,
     owner: Option<String>,
     order: (u8, String, u64),
@@ -513,7 +517,7 @@ pub(crate) fn emit(inp: &Inputs, ctx: &Ctx, items: &mut Items) -> ApiStats {
                 "    /// The `{b}` base at +{off:#X}.\n    #[inline]\n    pub fn @NAME@(&self) -> &{} {{ unsafe {{ &*core::ptr::from_ref(self).byte_add({off:#X}).cast() }} }}\n",
                 base.path()
             );
-            entries.push(Entry { tier: Tier::Semantic, group: ctx.group(c.name).to_owned(), owner: Some(c.name.to_owned()), order: (0, b.to_owned(), off), base: format!("as_{}", snake(b)), text });
+            entries.push(Entry { tier: Tier::Semantic, yields: false, group: ctx.group(c.name).to_owned(), owner: Some(c.name.to_owned()), order: (0, b.to_owned(), off), base: format!("as_{}", snake(b)), text });
             stats.base_accessors += 1;
         }
     }
@@ -521,6 +525,7 @@ pub(crate) fn emit(inp: &Inputs, ctx: &Ctx, items: &mut Items) -> ApiStats {
     let virtual_targets = slots(inp, classes, ctx, &by_rva, &deref_target, &mut entries, &mut stats);
     functions(inp, ctx, &by_id, &virtual_targets, &mut entries, &mut stats);
     let statics = globals(inp, ctx, &mut entries, &mut stats);
+    fields(inp, ctx, &mut entries);
 
     let mut by_owner: BTreeMap<Option<String>, Vec<Entry>> = BTreeMap::new();
     for e in entries {
@@ -528,6 +533,9 @@ pub(crate) fn emit(inp: &Inputs, ctx: &Ctx, items: &mut Items) -> ApiStats {
     }
     let mut free: BTreeMap<(String, Tier), Vec<String>> = BTreeMap::new();
     for (owner, mut list) in by_owner {
+        let taken: HashSet<String> = list.iter().filter(|e| !e.yields).map(|e| e.base.clone()).collect();
+        list.retain(|e| !e.yields || !taken.contains(&e.base));
+        stats.field_accessors += list.iter().filter(|e| e.yields).count();
         list.sort_by(|a, b| (a.tier, &a.order).cmp(&(b.tier, &b.order)));
         let mut names: Vec<String> = list.iter().map(|e| e.base.clone()).collect();
         unique(&mut names);
@@ -647,7 +655,7 @@ fn slots(
             let text = render_call(&doc_block("    ", &lines), Shape::Method, reason.is_none(), &sig, &format!("virtual_function!(self, {i}, "), Some(class), ctx);
             let t = stats.tiers.entry(tier).or_default();
             if reason.is_none() { t.safe_slots += 1 } else { t.unsafe_slots += 1 }
-            entries.push(Entry { tier, group: ctx.group(class).to_owned(), owner: Some(class.to_owned()), order: (1, engine, i as u64), base, text });
+            entries.push(Entry { tier, yields: false, group: ctx.group(class).to_owned(), owner: Some(class.to_owned()), order: (1, engine, i as u64), base, text });
         }
     }
     targets
@@ -763,7 +771,35 @@ fn functions(
             (None, Some((_, pass))) => pass,
             (None, None) => family(name),
         };
-        entries.push(Entry { tier, group: group.to_owned(), owner: owner.map(str::to_owned), order: (2, name.to_owned(), id), base, text });
+        entries.push(Entry { tier, yields: false, group: group.to_owned(), owner: owner.map(str::to_owned), order: (2, name.to_owned(), id), base, text });
+    }
+}
+
+/// `Option<&X>` readers for the pointer fields a pass names with high confidence on its own class;
+/// a derived class reaches them through `Deref`.
+fn fields(inp: &Inputs, ctx: &Ctx, entries: &mut Vec<Entry>) {
+    for pass in &inp.semantic {
+        for sc in &pass.classes {
+            let Some(class) = ctx.classes.get(sc.name.as_str()) else { continue };
+            for sf in sc.fields.iter().filter(|f| f.confidence == "high") {
+                let Some(fo) = class.fields.iter().find(|fo| fo.f.off == sf.offset && fo.f.name == sf.name) else { continue };
+                let crate::emit::Ty::Ptr(target) = &fo.ty else { continue };
+                let lines = [
+                    format!("`{}::{}` at +{:#X}: {}", sc.name, sf.name, sf.offset, sf.meaning),
+                    String::new(),
+                    format!("Semantic field, {} pass, high; `None` while the pointer is null.", pass.subsystem),
+                ];
+                let text = format!(
+                    "{}    #[inline]
+    pub fn @NAME@(&self) -> Option<&{}> {{ unsafe {{ {{ self.{} }}.as_ref() }} }}
+",
+                    doc_block("    ", &lines),
+                    ctx.classes[target.as_str()].path(),
+                    fo.ident
+                );
+                entries.push(Entry { tier: Tier::Semantic, yields: true, group: ctx.group(class.name).to_owned(), owner: Some(class.name.to_owned()), order: (3, sf.name.clone(), sf.offset), base: snake(&sf.name), text });
+            }
+        }
     }
 }
 
@@ -838,7 +874,7 @@ fn globals(inp: &Inputs, ctx: &Ctx, entries: &mut Vec<Entry>, stats: &mut ApiSta
             lines.push(String::new());
             lines.push("`None` until the engine creates it.".into());
             let text = format!("{}    #[inline]\n    pub fn @NAME@() -> Option<&'static Self> {{ unsafe {{ *(address!({id}) as *const Option<&'static Self>) }} }}\n", doc_block("    ", &lines));
-            entries.push(Entry { tier: Tier::Semantic, group: ctx.group(c).to_owned(), owner: Some(c.clone()), order: (0, String::new(), id), base: "singleton".into(), text });
+            entries.push(Entry { tier: Tier::Semantic, yields: false, group: ctx.group(c).to_owned(), owner: Some(c.clone()), order: (0, String::new(), id), base: "singleton".into(), text });
             stats.singletons += 1;
             continue;
         }

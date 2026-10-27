@@ -289,6 +289,21 @@ impl crate::AIProcess {
     /// `event` must point to what the engine expects.
     #[inline]
     pub unsafe fn dispatch_event_to_field8_sinks(&self, event: *const c_void) { unsafe { function!(40028, (&Self, *const c_void))(self, event) } }
+    /// `AIProcess::equippedLeft` at +0xF0: object in the left hand
+    ///
+    /// Semantic field, actors pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn equipped_left(&self) -> Option<&crate::TESForm> { unsafe { { self.equippedLeft }.as_ref() } }
+    /// `AIProcess::equippedRight` at +0xF8: object in the right hand
+    ///
+    /// Semantic field, actors pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn equipped_right(&self) -> Option<&crate::TESForm> { unsafe { { self.equippedRight }.as_ref() } }
+    /// `AIProcess::middleHigh` at +0x8: middle-high process data
+    ///
+    /// Semantic field, actors pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn middle_high(&self) -> Option<&crate::MiddleHighProcessData> { unsafe { { self.middleHigh }.as_ref() } }
 }
 
 impl crate::Actor {
@@ -568,6 +583,16 @@ impl crate::Actor {
     /// `void (Actor* actor, float delta)`
     #[inline]
     pub fn update_stamina_regen(&self, delta: f32) { unsafe { function!(38452, (&Self, f32))(self, delta) } }
+    /// `Actor::currentProcess` at +0xF8: the AI process; null for actors without AI
+    ///
+    /// Semantic field, actors pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn current_process(&self) -> Option<&crate::AIProcess> { unsafe { { self.currentProcess }.as_ref() } }
+    /// `Actor::race` at +0x1F8: the actor's race
+    ///
+    /// Semantic field, actors pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn race(&self) -> Option<&crate::TESRace> { unsafe { { self.race }.as_ref() } }
 }
 
 impl crate::ActorState {
@@ -788,6 +813,14 @@ impl crate::ActorValueStorage {
     pub unsafe fn find_modifiers(&self, value: c_char) -> *mut f32 { unsafe { function!(39020, (&Self, c_char) -> *mut f32)(self, value) } }
 }
 
+impl crate::BSExtraData {
+    /// `BSExtraData::next` at +0x8: next node
+    ///
+    /// Semantic field, actors pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn next(&self) -> Option<&crate::BSExtraData> { unsafe { { self.next }.as_ref() } }
+}
+
 impl crate::BaseExtraList {
     /// `BaseExtraList::GetByType`: the node of a type, or null
     ///
@@ -843,6 +876,27 @@ impl crate::BaseExtraList {
     /// `changes` must point to what the engine expects.
     #[inline]
     pub unsafe fn set_inventory_changes(&self, changes: *mut crate::InventoryChanges) { unsafe { function!(11629, (&Self, *mut crate::InventoryChanges))(self, changes) } }
+    /// `BaseExtraList::head` at +0x8: first extra data node
+    ///
+    /// Semantic field, actors pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn head(&self) -> Option<&crate::BSExtraData> { unsafe { { self.head }.as_ref() } }
+}
+
+impl crate::ContainerEntry {
+    /// `ContainerEntry::form` at +0x8: the item
+    ///
+    /// Semantic field, actors pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn form(&self) -> Option<&crate::TESForm> { unsafe { { self.form }.as_ref() } }
+}
+
+impl crate::ExtraContainerChanges {
+    /// `ExtraContainerChanges::changes` at +0x10: the inventory changes
+    ///
+    /// Semantic field, actors pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn changes(&self) -> Option<&crate::InventoryChanges> { unsafe { { self.changes }.as_ref() } }
 }
 
 impl crate::InventoryChanges {
@@ -870,6 +924,60 @@ impl crate::InventoryChanges {
     /// `int InventoryChanges::GetItemCount(InventoryChanges* this, TESForm* item)`
     #[inline]
     pub fn get_item_count(&self, item: &crate::TESForm) -> i32 { unsafe { function!(16108, (&Self, &crate::TESForm) -> i32)(self, item) } }
+    /// `InventoryChanges::entries` at +0x0: list of InventoryEntry*
+    ///
+    /// Semantic field, actors pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn entries(&self) -> Option<&crate::BSSimpleListNode> { unsafe { { self.entries }.as_ref() } }
+    /// `InventoryChanges::owner` at +0x8: the reference owning the changes
+    ///
+    /// Semantic field, actors pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn owner(&self) -> Option<&crate::TESObjectREFR> { unsafe { { self.owner }.as_ref() } }
+}
+
+impl crate::InventoryEntry {
+    /// `InventoryEntry::extraLists` at +0x8: head node of the list of BaseExtraList* of the stacks (one per stack with its own extra data); walk item/next until a null node or a null item; the list has no count
+    ///
+    /// Semantic field, actors pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn extra_lists(&self) -> Option<&crate::BSSimpleListNode> { unsafe { { self.extraLists }.as_ref() } }
+    /// `InventoryEntry::object` at +0x0: the item (TESBoundObject)
+    ///
+    /// Semantic field, actors pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn object(&self) -> Option<&crate::TESForm> { unsafe { { self.object }.as_ref() } }
+}
+
+impl crate::LoadedReferenceData {
+    /// `LoadedReferenceData::node3D` at +0x68: root node of the reference's 3D
+    ///
+    /// Semantic field, actors pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn node3_d(&self) -> Option<&crate::NiNode> { unsafe { { self.node3D }.as_ref() } }
+}
+
+impl crate::MiddleHighProcessData {
+    /// `MiddleHighProcessData::animationGraphManager` at +0x1A8: the actor's graph manager (BSTSmartPointer, ref count at manager+8)
+    ///
+    /// Semantic field, actors pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn animation_graph_manager(&self) -> Option<&crate::BSAnimationGraphManager> { unsafe { { self.animationGraphManager }.as_ref() } }
+    /// `MiddleHighProcessData::charController` at +0x250: the actor's character controller
+    ///
+    /// Semantic field, actors pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn char_controller(&self) -> Option<&crate::bhkCharacterController> { unsafe { { self.charController }.as_ref() } }
+    /// `MiddleHighProcessData::leftHandEntry` at +0x220: inventory entry equipped in the left hand
+    ///
+    /// Semantic field, actors pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn left_hand_entry(&self) -> Option<&crate::InventoryEntry> { unsafe { { self.leftHandEntry }.as_ref() } }
+    /// `MiddleHighProcessData::rightHandEntry` at +0x260: inventory entry equipped in the right hand
+    ///
+    /// Semantic field, actors pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn right_hand_entry(&self) -> Option<&crate::InventoryEntry> { unsafe { { self.rightHandEntry }.as_ref() } }
 }
 
 impl crate::PlayerCharacter {
@@ -1188,6 +1296,16 @@ impl crate::PlayerCharacter {
     /// It constructs or destroys an object in place.
     #[inline]
     pub unsafe fn dtor(&self) { unsafe { function!(40412, (&Self))(self) } }
+    /// `PlayerCharacter::currentLocation` at +0xAD8: the player's current location
+    ///
+    /// Semantic field, actors pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn current_location(&self) -> Option<&crate::BGSLocation> { unsafe { { self.currentLocation }.as_ref() } }
+    /// `PlayerCharacter::firstPersonRoot` at +0x900: the first-person skeleton root (arms and weapon); Get3DFor(true) returns it
+    ///
+    /// Semantic field, actors pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn first_person_root(&self) -> Option<&crate::BSFadeNode> { unsafe { { self.firstPersonRoot }.as_ref() } }
 }
 
 impl crate::TESActorBaseData {
@@ -1197,6 +1315,11 @@ impl crate::TESActorBaseData {
     /// `uint TESActorBaseData::GetLevel(const TESActorBaseData* this)`
     #[inline]
     pub fn get_level(&self) -> u32 { unsafe { function!(14384, (&Self) -> u32)(self) } }
+    /// `TESActorBaseData::voiceType` at +0x28: voice type
+    ///
+    /// Semantic field, actors pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn voice_type(&self) -> Option<&crate::BGSVoiceType> { unsafe { { self.voiceType }.as_ref() } }
 }
 
 impl crate::TESContainer {
@@ -1263,6 +1386,16 @@ impl crate::TESNPC {
     /// `void (TESNPC* this, BGSOutfit* outfit)`
     #[inline]
     pub fn set_sleep_outfit(&self, outfit: &crate::BGSOutfit) { unsafe { function!(24695, (&Self, &crate::BGSOutfit))(self, outfit) } }
+    /// `TESNPC::npcClass` at +0x1C0: the NPC's class
+    ///
+    /// Semantic field, actors pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn npc_class(&self) -> Option<&crate::TESClass> { unsafe { { self.npcClass }.as_ref() } }
+    /// `TESNPC::race` at +0x158: the NPC's race
+    ///
+    /// Semantic field, actors pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn race(&self) -> Option<&crate::TESRace> { unsafe { { self.race }.as_ref() } }
 }
 
 impl crate::TESObjectREFR {
@@ -1344,6 +1477,21 @@ impl crate::TESObjectREFR {
     /// `void (TESObjectREFR* this, float delta)`
     #[inline]
     pub fn update_animation_graphs(&self, delta: f32) { unsafe { function!(20123, (&Self, f32))(self, delta) } }
+    /// `TESObjectREFR::baseObject` at +0x40: the base form (TESNPC for actors)
+    ///
+    /// Semantic field, actors pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn base_object(&self) -> Option<&crate::TESForm> { unsafe { { self.baseObject }.as_ref() } }
+    /// `TESObjectREFR::loadedData` at +0x68: loaded-state data holding the 3D root; null when the reference has no 3D
+    ///
+    /// Semantic field, actors pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn loaded_data(&self) -> Option<&crate::LoadedReferenceData> { unsafe { { self.loadedData }.as_ref() } }
+    /// `TESObjectREFR::parentCell` at +0x60: the cell the reference is in; null when not loaded
+    ///
+    /// Semantic field, actors pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn parent_cell(&self) -> Option<&crate::TESObjectCELL> { unsafe { { self.parentCell }.as_ref() } }
 }
 
 /// `BSPointerHandleManager::CreateHandle`: allocates a handle table entry for a reference

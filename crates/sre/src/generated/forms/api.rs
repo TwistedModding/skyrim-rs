@@ -168,6 +168,16 @@ impl crate::TESDataHandler {
     /// It constructs or destroys an object in place.
     #[inline]
     pub unsafe fn dtor(&self) { unsafe { function!(13689, (&Self))(self) } }
+    /// `TESDataHandler::regionDataManager` at +0xDB0: region data manager
+    ///
+    /// Semantic field, forms pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn region_data_manager(&self) -> Option<&crate::TESRegionDataManager> { unsafe { { self.regionDataManager }.as_ref() } }
+    /// `TESDataHandler::regionList` at +0xD00: region list
+    ///
+    /// Semantic field, forms pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn region_list(&self) -> Option<&crate::TESRegionList> { unsafe { { self.regionList }.as_ref() } }
 }
 
 impl crate::TESEditorIDMap {
@@ -203,6 +213,14 @@ impl crate::TESEditorIDMap {
     /// `editorID` must point to what the engine expects.
     #[inline]
     pub unsafe fn insert_editor_id(&self, editorID: *const c_char, form: *mut crate::TESForm) -> bool { unsafe { function!(13907, (&Self, *const c_char, *mut crate::TESForm) -> bool)(self, editorID, form) } }
+}
+
+impl crate::TESEditorIDMapEntry {
+    /// `TESEditorIDMapEntry::form` at +0x8: value
+    ///
+    /// Semantic field, forms pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn form(&self) -> Option<&crate::TESForm> { unsafe { { self.form }.as_ref() } }
 }
 
 impl crate::TESFile {
@@ -428,6 +446,11 @@ impl crate::TESForm {
     /// It constructs or destroys an object in place.
     #[inline]
     pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(14593, (&Self) -> *mut Self)(self) } }
+    /// `TESForm::sourceFiles` at +0x8: array of the files this form was read from; null for runtime-created forms
+    ///
+    /// Semantic field, forms pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn source_files(&self) -> Option<&crate::TESFileArray> { unsafe { { self.sourceFiles }.as_ref() } }
 }
 
 impl crate::TESFormIDMap {
@@ -454,6 +477,14 @@ impl crate::TESFormIDMap {
     /// `formID`, `out` must point to what the engine expects.
     #[inline]
     pub unsafe fn remove(&self, formID: *const u32, out: *mut *mut crate::TESForm) -> bool { unsafe { function!(14710, (&Self, *const u32, *mut *mut crate::TESForm) -> bool)(self, formID, out) } }
+}
+
+impl crate::TESFormIDMapEntry {
+    /// `TESFormIDMapEntry::form` at +0x8: value
+    ///
+    /// Semantic field, forms pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn form(&self) -> Option<&crate::TESForm> { unsafe { { self.form }.as_ref() } }
 }
 
 /// `FindFormByEditorID`: returns the form registered under that editor id or null; only the 31 classes overriding slot 50 register

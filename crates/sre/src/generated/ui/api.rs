@@ -63,6 +63,16 @@ impl crate::BSScaleformManager {
     /// It constructs or destroys an object in place.
     #[inline]
     pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(82323, (&Self) -> *mut Self)(self) } }
+    /// `BSScaleformManager::imageLoader` at +0x20: image loader, loader state 5
+    ///
+    /// Semantic field, ui pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn image_loader(&self) -> Option<&crate::BSScaleformImageLoader> { unsafe { { self.imageLoader }.as_ref() } }
+    /// `BSScaleformManager::translator` at +0x38: translator for Interface\Translate_<sLanguage>.txt, loader state 3
+    ///
+    /// Semantic field, ui pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn translator(&self) -> Option<&crate::BSScaleformTranslator> { unsafe { { self.translator }.as_ref() } }
 }
 
 impl crate::Console {
@@ -153,6 +163,11 @@ impl crate::ContainerMenu {
     /// `IMenu* ()`
     #[inline]
     pub fn create() -> Option<&'static crate::IMenu> { unsafe { function!(51177, () -> Option<&'static crate::IMenu>)() } }
+    /// `ContainerMenu::itemList` at +0x48: the item list
+    ///
+    /// Semantic field, ui pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn item_list(&self) -> Option<&crate::ItemList> { unsafe { { self.itemList }.as_ref() } }
 }
 
 impl crate::CursorMenu {
@@ -186,6 +201,19 @@ impl crate::GFxFunctionHandler {
     /// `GFxFunctionHandler* (GFxFunctionHandler* this, uint flags)`
     #[inline]
     pub fn destroy(&self, flags: u32) -> Option<&'static Self> { unsafe { virtual_function!(self, 0, (&Self, u32) -> Option<&'static Self>)(self, flags) } }
+}
+
+impl crate::GFxFunctionHandler__Params {
+    /// `GFxFunctionHandler::Params::args` at +0x20: first argument (argsWithThis + 1), null when none
+    ///
+    /// Semantic field, ui pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn args(&self) -> Option<&crate::GFxValue> { unsafe { { self.args }.as_ref() } }
+    /// `GFxFunctionHandler::Params::retVal` at +0x0: return value; converted back when its type is not undefined
+    ///
+    /// Semantic field, ui pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn ret_val(&self) -> Option<&crate::GFxValue> { unsafe { { self.retVal }.as_ref() } }
 }
 
 impl crate::GFxMovieView {
@@ -318,6 +346,36 @@ impl crate::HUDMenu {
     /// It constructs or destroys an object in place.
     #[inline]
     pub unsafe fn dtor_2(&self) { unsafe { function!(51611, (&Self))(self) } }
+    /// `HUDMenu::healthMeter` at +0x58: health bar (actor value 0x18 = Health)
+    ///
+    /// Semantic field, ui pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn health_meter(&self) -> Option<&crate::ActorValueMeter> { unsafe { { self.healthMeter }.as_ref() } }
+    /// `HUDMenu::magickaMeter` at +0x68: magicka bar (actor value 0x19 = Magicka)
+    ///
+    /// Semantic field, ui pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn magicka_meter(&self) -> Option<&crate::ActorValueMeter> { unsafe { { self.magickaMeter }.as_ref() } }
+    /// `HUDMenu::remoteGamepadSink` at +0x38: vtable 0x1976770
+    ///
+    /// Semantic field, ui pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn remote_gamepad_sink(&self) -> Option<&crate::BSTEventSink_BSRemoteGamepadEvent> { unsafe { { self.remoteGamepadSink }.as_ref() } }
+    /// `HUDMenu::shoutMeter` at +0x70: shout cooldown meter
+    ///
+    /// Semantic field, ui pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn shout_meter(&self) -> Option<&crate::ShoutMeter> { unsafe { { self.shoutMeter }.as_ref() } }
+    /// `HUDMenu::staminaMeter` at +0x60: stamina bar (actor value 0x1a = Stamina)
+    ///
+    /// Semantic field, ui pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn stamina_meter(&self) -> Option<&crate::ActorValueMeter> { unsafe { { self.staminaMeter }.as_ref() } }
+    /// `HUDMenu::userEventEnabledSink` at +0x30: vtable 0x1976758
+    ///
+    /// Semantic field, ui pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn user_event_enabled_sink(&self) -> Option<&crate::BSTEventSink_UserEventEnabledEvent> { unsafe { { self.userEventEnabledSink }.as_ref() } }
 }
 
 impl crate::HUDNotifications {
@@ -390,6 +448,11 @@ impl crate::HUDObject {
     /// `args` must point to what the engine expects.
     #[inline]
     pub unsafe fn register_hud_component(&self, args: *mut c_void) { unsafe { virtual_function!(self, 3, (&Self, *mut c_void))(self, args) } }
+    /// `HUDObject::view` at +0x8: the HUD movie (ref counted)
+    ///
+    /// Semantic field, ui pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn view(&self) -> Option<&crate::GFxMovieView> { unsafe { { self.view }.as_ref() } }
 }
 
 impl crate::IMenu {
@@ -474,6 +537,11 @@ impl crate::IMenu {
     /// The pass rates the signature low.
     #[inline]
     pub unsafe fn unregister_fx_delegate(&self) { unsafe { function!(82311, (&Self))(self) } }
+    /// `IMenu::movie` at +0x10: the menu's Scaleform movie view, null when the movie failed to load
+    ///
+    /// Semantic field, ui pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn movie(&self) -> Option<&crate::GFxMovieView> { unsafe { { self.movie }.as_ref() } }
 }
 
 impl crate::IMessageBoxCallback {
@@ -510,6 +578,11 @@ impl crate::InventoryMenu {
     /// `void (InventoryMenu* this)`
     #[inline]
     pub fn update_item_list(&self) { unsafe { function!(51866, (&Self))(self) } }
+    /// `InventoryMenu::itemList` at +0x48: the item list handed to Scaleform
+    ///
+    /// Semantic field, ui pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn item_list(&self) -> Option<&crate::ItemList> { unsafe { { self.itemList }.as_ref() } }
 }
 
 impl crate::ItemList {
@@ -549,6 +622,11 @@ impl crate::ItemList {
     /// The pass rates the signature medium.
     #[inline]
     pub unsafe fn invalidate(&self, ref_: *mut crate::TESObjectREFR) { unsafe { function!(51031, (&Self, *mut crate::TESObjectREFR))(self, ref_) } }
+    /// `ItemList::view` at +0x0: the menu's movie (ref counted)
+    ///
+    /// Semantic field, ui pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn view(&self) -> Option<&crate::GFxMovieView> { unsafe { { self.view }.as_ref() } }
 }
 
 impl crate::LoadingMenu {
@@ -576,6 +654,11 @@ impl crate::MagicMenu {
     /// `IMenu* ()`
     #[inline]
     pub fn create() -> Option<&'static crate::IMenu> { unsafe { function!(52087, () -> Option<&'static crate::IMenu>)() } }
+    /// `MagicMenu::itemList` at +0x30: the spell list (same 0x58 list object)
+    ///
+    /// Semantic field, ui pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn item_list(&self) -> Option<&crate::ItemList> { unsafe { { self.itemList }.as_ref() } }
 }
 
 impl crate::MainMenu {
@@ -659,6 +742,46 @@ impl crate::MenuControls {
     /// `bool (MenuControls* this)`
     #[inline]
     pub fn test_and_clear_flag11(&self) -> bool { unsafe { function!(52211, (&Self) -> bool)(self) } }
+    /// `MenuControls::clickHandler` at +0x48: 
+    ///
+    /// Semantic field, ui pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn click_handler(&self) -> Option<&crate::ClickHandler> { unsafe { { self.clickHandler }.as_ref() } }
+    /// `MenuControls::consoleOpenHandler` at +0x58: 
+    ///
+    /// Semantic field, ui pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn console_open_handler(&self) -> Option<&crate::ConsoleOpenHandler> { unsafe { { self.consoleOpenHandler }.as_ref() } }
+    /// `MenuControls::directionHandler` at +0x50: key-repeat handler (fMenuKeyRepeatLong/Short); TweenMenu saves and restores its rates
+    ///
+    /// Semantic field, ui pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn direction_handler(&self) -> Option<&crate::DirectionHandler> { unsafe { { self.directionHandler }.as_ref() } }
+    /// `MenuControls::favoritesHandler` at +0x70: 
+    ///
+    /// Semantic field, ui pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn favorites_handler(&self) -> Option<&crate::FavoritesHandler> { unsafe { { self.favoritesHandler }.as_ref() } }
+    /// `MenuControls::menuModeChangeSink` at +0x8: vtable 0x197c200 of the second base
+    ///
+    /// Semantic field, ui pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn menu_mode_change_sink(&self) -> Option<&crate::BSTEventSink_MenuModeChangeEvent> { unsafe { { self.menuModeChangeSink }.as_ref() } }
+    /// `MenuControls::menuOpenHandler` at +0x68: 
+    ///
+    /// Semantic field, ui pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn menu_open_handler(&self) -> Option<&crate::MenuOpenHandler> { unsafe { { self.menuOpenHandler }.as_ref() } }
+    /// `MenuControls::quickSaveLoadHandler` at +0x60: 
+    ///
+    /// Semantic field, ui pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn quick_save_load_handler(&self) -> Option<&crate::QuickSaveLoadHandler> { unsafe { { self.quickSaveLoadHandler }.as_ref() } }
+    /// `MenuControls::screenshotHandler` at +0x78: its +0x10/+0x11 bytes are the screenshot and camera-path requests RenderFrame tests and clears
+    ///
+    /// Semantic field, ui pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn screenshot_handler(&self) -> Option<&crate::ScreenshotHandler> { unsafe { { self.screenshotHandler }.as_ref() } }
 }
 
 impl crate::MenuEventHandler {
@@ -757,6 +880,19 @@ impl crate::MenuOpenHandler {
     pub fn open_tween_menu() { unsafe { function!(52714, ())() } }
 }
 
+impl crate::MenuTableEntry {
+    /// `MenuTableEntry::menu` at +0x8: reference-holding pointer to the menu object, null when not created or unloaded
+    ///
+    /// Semantic field, ui pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn menu(&self) -> Option<&crate::IMenu> { unsafe { { self.menu }.as_ref() } }
+    /// `MenuTableEntry::next` at +0x18: bucket chain; null = empty slot, the chain ends at the table sentinel
+    ///
+    /// Semantic field, ui pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn next(&self) -> Option<&crate::MenuTableEntry> { unsafe { { self.next }.as_ref() } }
+}
+
 impl crate::MessageBoxData {
     /// `MessageBoxData::ctor`: 
     ///
@@ -767,6 +903,11 @@ impl crate::MessageBoxData {
     /// It constructs or destroys an object in place.
     #[inline]
     pub unsafe fn ctor(&self, text: *const c_void, buttons: *const c_void, cb: *mut *mut crate::IMessageBoxCallback, buttonBase: u8, type_: u32, depth: u32) -> *mut Self { unsafe { function!(52292, (&Self, *const c_void, *const c_void, *mut *mut crate::IMessageBoxCallback, u8, u32, u32) -> *mut Self)(self, text, buttons, cb, buttonBase, type_, depth) } }
+    /// `MessageBoxData::callback` at +0x40: answer callback (ref counted)
+    ///
+    /// Semantic field, ui pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn callback(&self) -> Option<&crate::IMessageBoxCallback> { unsafe { { self.callback }.as_ref() } }
 }
 
 impl crate::MessageBoxMenu {
@@ -902,6 +1043,11 @@ impl crate::StandardItemData {
     /// It constructs or destroys an object in place.
     #[inline]
     pub unsafe fn dtor(&self) { unsafe { function!(50992, (&Self))(self) } }
+    /// `StandardItemData::entry` at +0x8: owned inventory entry (object, count, extra lists)
+    ///
+    /// Semantic field, ui pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn entry(&self) -> Option<&crate::InventoryEntry> { unsafe { { self.entry }.as_ref() } }
 }
 
 impl crate::TaskQueueHolder {
@@ -940,6 +1086,14 @@ impl crate::TweenMenu {
     /// `void (TweenMenu* this, i32 selection)`
     #[inline]
     pub fn on_menu_selected(&self, selection: i32) { unsafe { function!(52718, (&Self, i32))(self, selection) } }
+}
+
+impl crate::UIMessage {
+    /// `UIMessage::data` at +0x10: optional payload, created by the data factory 0x62e6a0 or acquired from the queue's pool
+    ///
+    /// Semantic field, ui pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn data(&self) -> Option<&crate::IUIMessageData> { unsafe { { self.data }.as_ref() } }
 }
 
 impl crate::UIMessageQueue {

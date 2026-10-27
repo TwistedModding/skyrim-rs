@@ -9,6 +9,14 @@ impl core::ops::Deref for crate::ImageSpaceModifierInstanceForm {
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
+impl crate::CameraMatrixEntry {
+    /// `CameraMatrixEntry::camera` at +0x0: lookup key
+    ///
+    /// Semantic field, graphics pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn camera(&self) -> Option<&crate::NiCamera> { unsafe { { self.camera }.as_ref() } }
+}
+
 impl crate::ImageSpaceModifierInstanceForm {
     /// `ImageSpaceModifierInstanceForm::Apply`, vtable slot 38: blends the form's curves at (clock - startTime) into g_ImageSpaceState's parameters +0xc8
     ///
@@ -22,6 +30,11 @@ impl crate::ImageSpaceModifierInstanceForm {
     /// `bool (ImageSpaceModifierInstanceForm* this)`
     #[inline]
     pub fn is_finished(&self) -> bool { unsafe { virtual_function!(self, 37, (&Self) -> bool)(self) } }
+    /// `ImageSpaceModifierInstanceForm::imod` at +0x28: the form
+    ///
+    /// Semantic field, graphics pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn imod(&self) -> Option<&crate::TESImageSpaceModifier> { unsafe { { self.imod }.as_ref() } }
 }
 
 /// `AddFocusShadowNode`: appends {key, node} (refcounted) to g_FocusShadowNodes

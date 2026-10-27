@@ -137,7 +137,7 @@ pub(crate) enum Ty {
 
 pub(crate) struct FieldOut<'a> {
     pub(crate) f: &'a Field,
-    ident: String,
+    pub(crate) ident: String,
     pub(crate) ty: Ty,
     meaning: String,
 }

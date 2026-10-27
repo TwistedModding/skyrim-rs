@@ -142,6 +142,24 @@ impl crate::BSScript__Internal__CodeTasklet {
     /// It constructs or destroys an object in place.
     #[inline]
     pub unsafe fn ctor(&self, stack: *mut crate::BSScript__Stack, vm: *mut crate::BSScript__Internal__VirtualMachine, logger: *mut crate::BSScript__ErrorLogger) -> *mut Self { unsafe { function!(105175, (&Self, *mut crate::BSScript__Stack, *mut crate::BSScript__Internal__VirtualMachine, *mut crate::BSScript__ErrorLogger) -> *mut Self)(self, stack, vm, logger) } }
+    /// `BSScript::Internal::CodeTasklet::stack` at +0x10: the stack (not reference counted)
+    ///
+    /// Semantic field, vmstack pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn stack(&self) -> Option<&crate::BSScript__Stack> { unsafe { { self.stack }.as_ref() } }
+    /// `BSScript::Internal::CodeTasklet::vm` at +0x18: the VM
+    ///
+    /// Semantic field, vmstack pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn vm(&self) -> Option<&crate::BSScript__Internal__VirtualMachine> { unsafe { { self.vm }.as_ref() } }
+}
+
+impl crate::BSScript__Internal__FunctionMessage {
+    /// `BSScript::Internal::FunctionMessage::stack` at +0x8: BSTSmartPointer<Stack>
+    ///
+    /// Semantic field, vmstack pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn stack(&self) -> Option<&crate::BSScript__Stack> { unsafe { { self.stack }.as_ref() } }
 }
 
 impl crate::BSScript__Internal__NativeFunctionStub {
@@ -334,6 +352,22 @@ impl crate::BSScript__Internal__ScriptFunction {
     /// It constructs or destroys an object in place.
     #[inline]
     pub unsafe fn ctor(&self, unlinkedFunction: *mut c_void) -> *mut Self { unsafe { function!(105450, (&Self, *mut c_void) -> *mut Self)(self, unlinkedFunction) } }
+}
+
+impl crate::BSScript__Internal__StackMapEntry {
+    /// `BSScript::Internal::StackMapEntry::stack` at +0x8: BSTSmartPointer<Stack> (the map holds a reference)
+    ///
+    /// Semantic field, vmstack pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn stack(&self) -> Option<&crate::BSScript__Stack> { unsafe { { self.stack }.as_ref() } }
+}
+
+impl crate::BSScript__Internal__SuspendedStack {
+    /// `BSScript::Internal::SuspendedStack::stack` at +0x0: BSTSmartPointer<Stack>
+    ///
+    /// Semantic field, vmstack pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn stack(&self) -> Option<&crate::BSScript__Stack> { unsafe { { self.stack }.as_ref() } }
 }
 
 /// `AllocateStackFrame`: finds (size + 4) * 0x10 bytes in the last page or a new page from the page policy, InitStackFrameAndClearVariables, frame+8 = top, top = frame, frameCount + 1; 0 ok, 1 failed, 2 retry later

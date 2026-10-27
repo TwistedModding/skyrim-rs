@@ -70,6 +70,11 @@ impl crate::BGSSaveFormBuffer {
     /// The pass rates the signature medium.
     #[inline]
     pub unsafe fn get_reference(&self) -> *mut crate::TESObjectREFR { unsafe { virtual_function!(self, 2, (&Self) -> *mut crate::TESObjectREFR)(self) } }
+    /// `BGSSaveFormBuffer::form` at +0x28: form being written
+    ///
+    /// Semantic field, save pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn form(&self) -> Option<&crate::TESForm> { unsafe { { self.form }.as_ref() } }
 }
 
 impl crate::BGSSaveLoadGame {
@@ -287,6 +292,30 @@ impl crate::ChangeFormMap {
     /// `void (ChangeFormMap* map, u32 formID, u32 flags)`
     #[inline]
     pub fn add_flags(&self, formID: u32, flags: u32) { unsafe { function!(35507, (&Self, u32, u32))(self, formID, flags) } }
+}
+
+impl crate::SavedChangeFormRecord {
+    /// `SavedChangeFormRecord::form` at +0x10: the resolved form (cached)
+    ///
+    /// Semantic field, save pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn form(&self) -> Option<&crate::TESForm> { unsafe { { self.form }.as_ref() } }
+}
+
+impl crate::bgs__saveload__LoadRequest {
+    /// `bgs::saveload::LoadRequest::stream` at +0x18: save read into memory
+    ///
+    /// Semantic field, save pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn stream(&self) -> Option<&crate::_anon_14F04957__Win32FileType> { unsafe { { self.stream }.as_ref() } }
+}
+
+impl crate::bgs__saveload__SaveOperationRequest {
+    /// `bgs::saveload::SaveOperationRequest::stream` at +0x148: the built save (0x40000001)
+    ///
+    /// Semantic field, save pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn stream(&self) -> Option<&crate::_anon_14F04957__Win32FileType> { unsafe { { self.stream }.as_ref() } }
 }
 
 /// `BaseHandleReaderWriter::ReadHandle`: reads the two u16 and the id through slot 5 (SaveFile: DecodeThreeByteFormID, i.e. remapped); rebuilds 1<<48 / 2<<48 handles; invalid = 0xffff00000000

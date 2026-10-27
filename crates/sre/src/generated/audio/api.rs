@@ -79,6 +79,11 @@ impl crate::BGSMusicTrackFormWrapper {
     /// The `BSIMusicTrack` base at +0x20.
     #[inline]
     pub fn as_bsi_music_track(&self) -> &crate::BSIMusicTrack { unsafe { &*core::ptr::from_ref(self).byte_add(0x20).cast() } }
+    /// `BGSMusicTrackFormWrapper::track` at +0x30: the real track (BGSMusicSingleTrack, BGSMusicPaletteTrack or BGSMusicSilenceTrack)
+    ///
+    /// Semantic field, audio pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn track(&self) -> Option<&crate::BSIMusicTrack> { unsafe { { self.track }.as_ref() } }
 }
 
 impl crate::BGSMusicType {
@@ -160,6 +165,11 @@ impl crate::BGSSoundDescriptor {
     /// `file` must point to what the engine expects.
     #[inline]
     pub unsafe fn load_chunk(&self, file: *mut crate::TESFile) { unsafe { virtual_function!(self, 4, (&Self, *mut crate::TESFile))(self, file) } }
+    /// `BGSSoundDescriptor::category` at +0x8: the sound's category (GNAM form id, resolved in InitItem)
+    ///
+    /// Semantic field, audio pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn category(&self) -> Option<&crate::BGSSoundCategory> { unsafe { { self.category }.as_ref() } }
 }
 
 impl crate::BGSSoundDescriptorForm {
@@ -199,6 +209,11 @@ impl crate::BGSSoundDescriptorForm {
     /// `file` must point to what the engine expects.
     #[inline]
     pub unsafe fn load(&self, file: *mut crate::TESFile) -> bool { unsafe { virtual_function!(self, 6, (&Self, *mut crate::TESFile) -> bool)(self, file) } }
+    /// `BGSSoundDescriptorForm::descriptor` at +0x28: the descriptor object (BGSStandardSoundDef in 1.7.104), created from CNAM's type CRC
+    ///
+    /// Semantic field, audio pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn descriptor(&self) -> Option<&crate::BGSSoundDescriptor> { unsafe { { self.descriptor }.as_ref() } }
 }
 
 impl crate::BGSSoundOutput {
@@ -226,6 +241,11 @@ impl crate::BGSSoundOutput {
     /// `file` must point to what the engine expects.
     #[inline]
     pub unsafe fn load(&self, file: *mut crate::TESFile) -> bool { unsafe { virtual_function!(self, 6, (&Self, *mut crate::TESFile) -> bool)(self, file) } }
+    /// `BGSSoundOutput::attenuation` at +0x30: ANAM attenuation: min/max distance and a 5-point curve
+    ///
+    /// Semantic field, audio pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn attenuation(&self) -> Option<&crate::BGSSoundOutput__DynamicAttenuationCharacteristics> { unsafe { { self.attenuation }.as_ref() } }
 }
 
 impl crate::BGSStandardSoundDef {
@@ -235,6 +255,11 @@ impl crate::BGSStandardSoundDef {
     /// `float (BGSStandardSoundDef* this)`
     #[inline]
     pub fn get_max_distance(&self) -> f32 { unsafe { virtual_function!(self, 6, (&Self) -> f32)(self) } }
+    /// `BGSStandardSoundDef::outputModel` at +0x48: ONAM: output model (spatialisation and attenuation)
+    ///
+    /// Semantic field, audio pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn output_model(&self) -> Option<&crate::BGSSoundOutput> { unsafe { { self.outputModel }.as_ref() } }
 }
 
 impl crate::BSAudioManager {
@@ -427,6 +452,11 @@ impl crate::BSAudioManager {
     /// It constructs or destroys an object in place.
     #[inline]
     pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(67723, (&Self) -> *mut Self)(self) } }
+    /// `BSAudioManager::thread` at +0xF8: the audio thread object
+    ///
+    /// Semantic field, audio pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn thread(&self) -> Option<&crate::BSAudioManagerThread> { unsafe { { self.thread }.as_ref() } }
 }
 
 impl crate::BSAudioManagerThread {

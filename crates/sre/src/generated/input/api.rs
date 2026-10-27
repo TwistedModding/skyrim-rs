@@ -220,6 +220,11 @@ impl crate::BSPCGamepadDeviceHandler {
     /// `void (BSPCGamepadDeviceHandler* this)`
     #[inline]
     pub fn release_device(&self) { unsafe { function!(68761, (&Self))(self) } }
+    /// `BSPCGamepadDeviceHandler::device` at +0x8: the pad (BSWin32GamepadDevice or BSPCOrbisGamepadDevice) or null
+    ///
+    /// Semantic field, input pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn device(&self) -> Option<&crate::BSGamepadDevice> { unsafe { { self.device }.as_ref() } }
 }
 
 impl crate::BSPCOrbisGamepadDevice {
@@ -351,6 +356,14 @@ impl crate::ClickHandler {
     pub fn process_button_event(&self, event: &crate::ButtonEvent) -> bool { unsafe { virtual_function!(self, 7, (&Self, &crate::ButtonEvent) -> bool)(self, event) } }
 }
 
+impl crate::CommandTableEntry {
+    /// `CommandTableEntry::params` at +0x28: parameter array (null when numParams == 0)
+    ///
+    /// Semantic field, input pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn params(&self) -> Option<&crate::ParamInfo> { unsafe { { self.params }.as_ref() } }
+}
+
 impl crate::ConsoleCommandTask {
     /// `ConsoleCommandTask::ctor`: fills the 0x18 task
     ///
@@ -361,6 +374,11 @@ impl crate::ConsoleCommandTask {
     /// It constructs or destroys an object in place.
     #[inline]
     pub unsafe fn ctor(&self, script: *mut *mut crate::Script, ref_: *mut *mut crate::TESObjectREFR, compiler: *mut c_void) -> *mut Self { unsafe { function!(52948, (&Self, *mut *mut crate::Script, *mut *mut crate::TESObjectREFR, *mut c_void) -> *mut Self)(self, script, ref_, compiler) } }
+    /// `ConsoleCommandTask::script` at +0x0: owned Script with the line as text; deleted through slot 0 after running
+    ///
+    /// Semantic field, input pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn script(&self) -> Option<&crate::Script> { unsafe { { self.script }.as_ref() } }
 }
 
 impl crate::ConsoleOpenHandler {
@@ -479,6 +497,16 @@ impl crate::InputEventQueue {
     /// `void (InputEventQueue* q)`
     #[inline]
     pub fn reset(&self) { unsafe { function!(68691, (&Self))(self) } }
+    /// `InputEventQueue::head` at +0x558: first event of the frame
+    ///
+    /// Semantic field, input pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn head(&self) -> Option<&crate::InputEvent> { unsafe { { self.head }.as_ref() } }
+    /// `InputEventQueue::tail` at +0x560: last appended event; Add* link tail->next (+0x10)
+    ///
+    /// Semantic field, input pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn tail(&self) -> Option<&crate::InputEvent> { unsafe { { self.tail }.as_ref() } }
 }
 
 impl crate::JumpHandler {
@@ -736,6 +764,11 @@ impl crate::Script {
     /// It constructs or destroys an object in place.
     #[inline]
     pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(441580, (&Self) -> *mut Self)(self) } }
+    /// `Script::ownerQuest` at +0x58: quest scope; console lines get g_ConsoleScopeQuest
+    ///
+    /// Semantic field, input pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn owner_quest(&self) -> Option<&crate::TESQuest> { unsafe { { self.ownerQuest }.as_ref() } }
 }
 
 impl crate::ShoutHandler {
