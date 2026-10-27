@@ -1162,9 +1162,10 @@ pub trait VirtualMachineExt {
     /// Slot 21 `CreateObject`: a new, unbound script object of `class` (its `.pex` must load).
     fn new_object(&self, class: &str) -> Option<ObjectPtr>;
     /// Binds `object` to the form `handle` names through the VM's bind policy (slot 47,
-    /// `ObjectBindPolicy::BindObject` id 104184), which hands `VirtualMachine::BindObject` a counted
-    /// copy of the pointer that the VM releases: from then on [`bound_object`](Self::bound_object)
-    /// returns it and calls with that form as `self` run its methods.
+    /// `ObjectBindPolicy::BindObject` id 104184): from then on [`bound_object`](Self::bound_object)
+    /// returns it and calls with that form as `self` run its methods. The policy passes
+    /// `VirtualMachine::BindObject` a fourth argument, a bool the generated method lacks; called
+    /// without it, a stray value in r9 is or'ed into the pointer the VM stores and later releases.
     fn bind_to_handle(&self, thread: &GameThread, object: &ObjectPtr, handle: Handle);
 }
 
