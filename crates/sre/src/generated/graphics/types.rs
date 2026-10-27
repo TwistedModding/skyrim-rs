@@ -21,10 +21,10 @@ pub struct CameraMatrixEntry {
     pub viewProjection: [u8; 64],
     /// +0x100 `undefined1`, semantic; unjittered view-projection of the previous update (low)
     pub previousViewProjection: [u8; 64],
-    /// +0x140 `undefined1`, semantic;  (medium)
+    /// +0x140 `undefined1`, semantic (medium)
     pub viewProjectionUnjittered: [u8; 64],
     pub unknown_180: [u8; 64],
-    /// +0x1C0 `undefined1`, semantic;  (high)
+    /// +0x1C0 `undefined1`, semantic (high)
     pub projectionUnjittered: [u8; 64],
     pub unknown_200: [u8; 96],
     /// +0x260 `class:NiPoint3`, semantic; camera world translation at the update; +0x26c and +0x278 hold the two previous ones (medium); retyped float -> class:NiPoint3: UpdateCameraMatricesWithJitter 0x101e4e0 copies camera +0xa0..+0xa8

@@ -670,7 +670,7 @@ pub struct DeviceConnectEvent {
     /// +0x0 `vtbl:DeviceConnectEvent:0`, rtti
     pub __vftable: *const crate::raw::vtables::DeviceConnectEvent_vtable,
     pub unknown_8: [u8; 16],
-    /// +0x18 `undefined1`, semantic;  (high)
+    /// +0x18 `undefined1`, semantic (high)
     pub connected: u8,
     pub unknown_19: [u8; 7],
     pub __engine: crate::Engine,
@@ -980,14 +980,14 @@ pub struct MotionGestureEvent {
     /// +0x20 `undefined4`, ctor store
     pub field_20: u32,
     pub unknown_24: [u8; 4],
-    /// +0x28 `undefined4`, semantic;  (low)
+    /// +0x28 `undefined4`, semantic (low)
     pub unk28: u32,
-    /// +0x2C `undefined4`, semantic;  (low)
+    /// +0x2C `undefined4`, semantic (low)
     pub unk2C: u32,
-    /// +0x30 `undefined1`, semantic;  (low)
+    /// +0x30 `undefined1`, semantic (low)
     pub unk30: u8,
     pub unknown_31: [u8; 3],
-    /// +0x34 `undefined4`, semantic;  (low)
+    /// +0x34 `undefined4`, semantic (low)
     pub unk34: u32,
     pub __engine: crate::Engine,
 }
@@ -1498,9 +1498,9 @@ pub struct ThumbstickEvent {
     /// +0x20 `undefined4`, semantic; 0xb left, 0xc right (high)
     pub idCode: u32,
     pub unknown_24: [u8; 4],
-    /// +0x28 `float`, semantic;  (high)
+    /// +0x28 `float`, semantic (high)
     pub x: f32,
-    /// +0x2C `float`, semantic;  (high)
+    /// +0x2C `float`, semantic (high)
     pub y: f32,
     pub __engine: crate::Engine,
 }

@@ -4219,11 +4219,11 @@ pub const hkbBehaviorClient__hkRemoteObjectClientSideListener_vfunc_1_sub9: u64 
 pub const hkbBehaviorClient__vdtor: u64 = 81072;
 /// `hkbBehaviorEventsInfo::vdtor` at 0x10d1810 (layout_inference, medium); signature (low): `hkbBehaviorEventsInfo * vdtor(hkbBehaviorEventsInfo * this, uint param_1, undefined8 param_2, undefined8 param_3)`
 pub const hkbBehaviorEventsInfo__vdtor: u64 = 80355;
-/// `hkbBehaviorGraph::EnsureVariableValueSet` at 0xacd680 (semantic, high); signature (untiered): `undefined EnsureVariableValueSet(longlong param_1)`; creates variableValueSet (+0xd8) from data+0x70 when the graph data has variables (high); semantic signature: `void (hkbBehaviorGraph* this)`
+/// `hkbBehaviorGraph::EnsureVariableValueSet` at 0xacd680 (semantic, high); signature (untiered): `undefined EnsureVariableValueSet(longlong param_1)`; semantic: creates variableValueSet (+0xd8) from data+0x70 when the graph data has variables (high); signature `void (hkbBehaviorGraph* this)`
 pub const hkbBehaviorGraph__EnsureVariableValueSet: u64 = 58346;
 /// `hkbBehaviorGraph::EnsureVariableValueSet` as a function pointer type (high).
 pub type hkbBehaviorGraph__EnsureVariableValueSet_fn = unsafe extern "C" fn(this: *mut crate::hkbBehaviorGraph);
-/// `hkbBehaviorGraph::GetVariableValueSet` at 0xbdf360 (semantic, medium); signature (untiered): `longlong GetVariableValueSet(longlong param_1)`; returns graph+0xd8, creating it (0xacd680) when absent and +0x12c is clear (medium); semantic signature: `hkbVariableValueSet* (hkbBehaviorGraph* graph)`
+/// `hkbBehaviorGraph::GetVariableValueSet` at 0xbdf360 (semantic, medium); signature (untiered): `longlong GetVariableValueSet(longlong param_1)`; semantic: returns graph+0xd8, creating it (0xacd680) when absent and +0x12c is clear (medium); signature `hkbVariableValueSet* (hkbBehaviorGraph* graph)`
 pub const hkbBehaviorGraph__GetVariableValueSet: u64 = 63851;
 /// `hkbBehaviorGraph::GlobalTransitionData::dtor` at 0xacc7e0 (layout_inference, high); signature (high): `undefined dtor(GlobalTransitionData * this)`
 pub const hkbBehaviorGraph__GlobalTransitionData__dtor: u64 = 58338;
@@ -4241,15 +4241,15 @@ pub const hkbBehaviorGraph__ctor_3: u64 = 58374;
 pub const hkbBehaviorGraph__ctor_4: u64 = 58387;
 /// `hkbBehaviorGraph::dtor` at 0xacb5a0 (layout_inference, high); signature (high): `undefined dtor(hkbBehaviorGraph * this)`
 pub const hkbBehaviorGraph__dtor: u64 = 58326;
-/// `hkbBehaviorGraph::generate` at 0xacd1d0 (semantic, high); signature (low): `undefined generate(hkbBehaviorGraph * this, undefined8 param_1, undefined8 param_2, undefined1 param_3, undefined4 param_4, undefined1 param_5)`; preGenerate, generateInternal (0xacf480), postGenerate (0xacdd80) (high); semantic signature: `void (hkbBehaviorGraph* this, const hkbContext* ctx, hkbGeneratorOutput* out, bool, u32, bool)`
+/// `hkbBehaviorGraph::generate` at 0xacd1d0 (semantic, high); signature (low): `undefined generate(hkbBehaviorGraph * this, undefined8 param_1, undefined8 param_2, undefined1 param_3, undefined4 param_4, undefined1 param_5)`; semantic: preGenerate, generateInternal (0xacf480), postGenerate (0xacdd80) (high); signature `void (hkbBehaviorGraph* this, const hkbContext* ctx, hkbGeneratorOutput* out, bool, u32, bool)`
 pub const hkbBehaviorGraph__generate: u64 = 58343;
 /// `hkbBehaviorGraph::generate` as a function pointer type (high).
 pub type hkbBehaviorGraph__generate_fn = unsafe extern "C" fn(this: *mut crate::hkbBehaviorGraph, ctx: *const c_void, out: *mut c_void, a3: bool, a4: u32, a5: bool);
-/// `hkbBehaviorGraph::generateInternal` at 0xacf480 (semantic, medium); signature (untiered): `undefined generateInternal(longlong param_1, longlong * param_2)`; generates the active nodes into the output (medium); semantic signature: `void (hkbBehaviorGraph* this, GenerateState* st)`
+/// `hkbBehaviorGraph::generateInternal` at 0xacf480 (semantic, medium); signature (untiered): `undefined generateInternal(longlong param_1, longlong * param_2)`; semantic: generates the active nodes into the output (medium); signature `void (hkbBehaviorGraph* this, GenerateState* st)`
 pub const hkbBehaviorGraph__generateInternal: u64 = 58376;
-/// `hkbBehaviorGraph::postGenerate` at 0xacdd80 (semantic, medium); signature (untiered): `undefined postGenerate(undefined8 param_1, longlong param_2)`; post-generate step (medium); semantic signature: `void (hkbBehaviorGraph* this, GenerateState* st)`
+/// `hkbBehaviorGraph::postGenerate` at 0xacdd80 (semantic, medium); signature (untiered): `undefined postGenerate(undefined8 param_1, longlong param_2)`; semantic: post-generate step (medium); signature `void (hkbBehaviorGraph* this, GenerateState* st)`
 pub const hkbBehaviorGraph__postGenerate: u64 = 58356;
-/// `hkbBehaviorGraph::preGenerate` at 0xacd8f0 (semantic, high); signature (low): `undefined preGenerate(hkbBehaviorGraph * this, longlong param_1, char param_2, char param_3)`; copies variables to members, updates the active node list, writes attribute defaults into output track 10, computes per-node timesteps (high); semantic signature: `void (hkbBehaviorGraph* this, GenerateState* st, bool updateActiveNodes, bool analyzeRecycling)`
+/// `hkbBehaviorGraph::preGenerate` at 0xacd8f0 (semantic, high); signature (low): `undefined preGenerate(hkbBehaviorGraph * this, longlong param_1, char param_2, char param_3)`; semantic: copies variables to members, updates the active node list, writes attribute defaults into output track 10, computes per-node timesteps (high); signature `void (hkbBehaviorGraph* this, GenerateState* st, bool updateActiveNodes, bool analyzeRecycling)`
 pub const hkbBehaviorGraph__preGenerate: u64 = 58355;
 /// `hkbBehaviorGraph::preGenerate` as a function pointer type (high).
 pub type hkbBehaviorGraph__preGenerate_fn = unsafe extern "C" fn(this: *mut crate::hkbBehaviorGraph, st: *mut c_void, updateActiveNodes: bool, analyzeRecycling: bool);
@@ -4457,15 +4457,15 @@ pub const hkbBoolVariableSequencedData__ctor: u64 = 59937;
 pub const hkbBoolVariableSequencedData__vdtor: u64 = 59008;
 /// `hkbBoolVariableSequencedData::vfunc_3` at 0xb1b2a0 (rtti, high); signature (low): `undefined vfunc_3(hkbBoolVariableSequencedData * this, undefined8 param_1, longlong * param_2, float param_3, undefined8 param_4, longlong param_5, int * param_6)`
 pub const hkbBoolVariableSequencedData__vfunc_3: u64 = 59938;
-/// `hkbCameraShakeEventPayload::Destroy` at 0x10d19d0 (semantic, high); signature (untiered): `hkbCameraShakeEventPayload * Destroy(hkbCameraShakeEventPayload * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`; Havok deleting dtor: base vtable; flags & 1 frees, through the default heap (0x18 bytes) when flags & 4, else the thread's memory router with memSizeAndFlags (+8 u16, 0xffff -> 0x18) (high); semantic signature: `hkbCameraShakeEventPayload* (hkbCameraShakeEventPayload* this, u32 flags)`
+/// `hkbCameraShakeEventPayload::Destroy` at 0x10d19d0 (semantic, high); signature (untiered): `hkbCameraShakeEventPayload * Destroy(hkbCameraShakeEventPayload * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`; semantic: Havok deleting dtor: base vtable; flags & 1 frees, through the default heap (0x18 bytes) when flags & 4, else the thread's memory router with memSizeAndFlags (+8 u16, 0xffff -> 0x18) (high); signature `hkbCameraShakeEventPayload* (hkbCameraShakeEventPayload* this, u32 flags)`
 pub const hkbCameraShakeEventPayload__Destroy: u64 = 80358;
 /// `hkbCameraShakeEventPayload::Destroy` as a function pointer type (high).
 pub type hkbCameraShakeEventPayload__Destroy_fn = unsafe extern "C" fn(this: *mut crate::hkbCameraShakeEventPayload, flags: u32) -> *mut crate::hkbCameraShakeEventPayload;
-/// `hkbCharacter::FreePoseLocal` at 0xad80f0 (semantic, high); signature (untiered): `undefined FreePoseLocal(longlong param_1)`; frees poseLocal when owned (high); semantic signature: `void (hkbCharacter* this)`
+/// `hkbCharacter::FreePoseLocal` at 0xad80f0 (semantic, high); signature (untiered): `undefined FreePoseLocal(longlong param_1)`; semantic: frees poseLocal when owned (high); signature `void (hkbCharacter* this)`
 pub const hkbCharacter__FreePoseLocal: u64 = 58467;
 /// `hkbCharacter::FreePoseLocal` as a function pointer type (high).
 pub type hkbCharacter__FreePoseLocal_fn = unsafe extern "C" fn(this: *mut crate::hkbCharacter);
-/// `hkbCharacter::GetAnimationBindingSet` at 0xad7d40 (semantic, high); signature (untiered): `longlong GetAnimationBindingSet(longlong param_1)`; returns +0x68, else setup+0x38 (created on demand) (high); semantic signature: `hkbAnimationBindingSet* (hkbCharacter* this)`
+/// `hkbCharacter::GetAnimationBindingSet` at 0xad7d40 (semantic, high); signature (untiered): `longlong GetAnimationBindingSet(longlong param_1)`; semantic: returns +0x68, else setup+0x38 (created on demand) (high); signature `hkbAnimationBindingSet* (hkbCharacter* this)`
 pub const hkbCharacter__GetAnimationBindingSet: u64 = 58459;
 /// `hkbCharacter::GetAnimationBindingSet` as a function pointer type (high).
 pub type hkbCharacter__GetAnimationBindingSet_fn = unsafe extern "C" fn(this: *mut crate::hkbCharacter) -> *mut crate::hkbAnimationBindingSet;
@@ -4473,15 +4473,15 @@ pub type hkbCharacter__GetAnimationBindingSet_fn = unsafe extern "C" fn(this: *m
 pub const hkbCharacter__GetNearbyCharacters: u64 = 58452;
 /// `hkbCharacter::GetNearbyRigidBodies` at 0xad7660 (semantic, medium); signature (untiered): `undefined GetNearbyRigidBodies(hkbCharacter * this, undefined8 param_1, float param_2, longlong param_3, longlong * param_4, undefined4 param_5, char param_6, char param_7)`
 pub const hkbCharacter__GetNearbyRigidBodies: u64 = 58451;
-/// `hkbCharacter::GetPoseLocal` at 0xad7d00 (semantic, high); signature (untiered): `undefined8 GetPoseLocal(longlong param_1)`; returns poseLocal (+0x90), creating it from the reference pose first (high); semantic signature: `hkQsTransform* (hkbCharacter* this)`
+/// `hkbCharacter::GetPoseLocal` at 0xad7d00 (semantic, high); signature (untiered): `undefined8 GetPoseLocal(longlong param_1)`; semantic: returns poseLocal (+0x90), creating it from the reference pose first (high); signature `hkQsTransform* (hkbCharacter* this)`
 pub const hkbCharacter__GetPoseLocal: u64 = 58458;
 /// `hkbCharacter::GetPoseLocal` as a function pointer type (high).
 pub type hkbCharacter__GetPoseLocal_fn = unsafe extern "C" fn(this: *mut crate::hkbCharacter) -> *mut crate::hkQsTransform;
-/// `hkbCharacter::InitPoseLocalFromReferencePose` at 0xad8060 (semantic, high); signature (untiered): `undefined InitPoseLocalFromReferencePose(longlong param_1)`; allocates poseLocal = skeleton bone count * 0x30 and copies the skeleton's reference pose (high); semantic signature: `void (hkbCharacter* this)`
+/// `hkbCharacter::InitPoseLocalFromReferencePose` at 0xad8060 (semantic, high); signature (untiered): `undefined InitPoseLocalFromReferencePose(longlong param_1)`; semantic: allocates poseLocal = skeleton bone count * 0x30 and copies the skeleton's reference pose (high); signature `void (hkbCharacter* this)`
 pub const hkbCharacter__InitPoseLocalFromReferencePose: u64 = 58466;
 /// `hkbCharacter::InitPoseLocalFromReferencePose` as a function pointer type (high).
 pub type hkbCharacter__InitPoseLocalFromReferencePose_fn = unsafe extern "C" fn(this: *mut crate::hkbCharacter);
-/// `hkbCharacter::SetWorldFromModelBuffer` at 0xad7e30 (semantic, medium); signature (untiered): `undefined SetWorldFromModelBuffer(longlong param_1, undefined8 param_2, undefined1 param_3)`; replaces worldFromModel, freeing the old 0x30-byte buffer when owned (medium); semantic signature: `void (hkbCharacter* this, hkQsTransform* buffer, bool owned)`
+/// `hkbCharacter::SetWorldFromModelBuffer` at 0xad7e30 (semantic, medium); signature (untiered): `undefined SetWorldFromModelBuffer(longlong param_1, undefined8 param_2, undefined1 param_3)`; semantic: replaces worldFromModel, freeing the old 0x30-byte buffer when owned (medium); signature `void (hkbCharacter* this, hkQsTransform* buffer, bool owned)`
 pub const hkbCharacter__SetWorldFromModelBuffer: u64 = 58461;
 /// `hkbCharacter::ctor` at 0xad72f0 (layout_inference, medium); signature (high): `hkbCharacter * ctor(hkbCharacter * this)`
 pub const hkbCharacter__ctor: u64 = 58449;
@@ -4975,7 +4975,7 @@ pub const hkbFootIkControlsModifier__vfunc_23_sub0: u64 = 60056;
 pub const hkbFootIkControlsModifier__vfunc_4: u64 = 59733;
 /// `hkbFootIkControlsModifier::vfunc_5` at 0xb0a750 (rtti, high); signature (low): `undefined vfunc_5(hkbFootIkControlsModifier * this, longlong * param_1)`
 pub const hkbFootIkControlsModifier__vfunc_5: u64 = 59734;
-/// `hkbFootIkDriver::SetDisabled` at 0xad4260 (semantic, high); signature (untiered): `undefined SetDisabled(longlong param_1, char param_2)`; writes disabled to +0x4a; when true also resets the driver's leg entries (ClearEntriesAndResetState 0xad42a0: releases each 0x30-byte leg entry's +0x20 object, zeroes +0x40/+0x48/+0x4c) (high); semantic signature: `void (hkbFootIkDriver* this, bool disabled)`
+/// `hkbFootIkDriver::SetDisabled` at 0xad4260 (semantic, high); signature (untiered): `undefined SetDisabled(longlong param_1, char param_2)`; semantic: writes disabled to +0x4a; when true also resets the driver's leg entries (ClearEntriesAndResetState 0xad42a0: releases each 0x30-byte leg entry's +0x20 object, zeroes +0x40/+0x48/+0x4c) (high); signature `void (hkbFootIkDriver* this, bool disabled)`
 pub const hkbFootIkDriver__SetDisabled: u64 = 58428;
 /// `hkbFootIkDriver::SetDisabled` as a function pointer type (high).
 pub type hkbFootIkDriver__SetDisabled_fn = unsafe extern "C" fn(this: *mut crate::hkbFootIkDriver, disabled: bool);
@@ -5555,7 +5555,7 @@ pub const hkbProxyModifier__vfunc_4: u64 = 59828;
 pub const hkbProxyModifier__vfunc_5: u64 = 59829;
 /// `hkbProxyModifier::vfunc_7` at 0xb14ed0 (rtti, high); signature (low): `undefined vfunc_7(hkbProxyModifier * this, longlong * param_1)`
 pub const hkbProxyModifier__vfunc_7: u64 = 59830;
-/// `hkbRagdollDriver::GetRagdollInstance` at 0xac6cb0 (semantic, high); signature (untiered): `undefined8 GetRagdollInstance(longlong param_1)`; returns +0x88 (high); semantic signature: `hkaRagdollInstance* (hkbRagdollDriver* this)`
+/// `hkbRagdollDriver::GetRagdollInstance` at 0xac6cb0 (semantic, high); signature (untiered): `undefined8 GetRagdollInstance(longlong param_1)`; semantic: returns +0x88 (high); signature `hkaRagdollInstance* (hkbRagdollDriver* this)`
 pub const hkbRagdollDriver__GetRagdollInstance: u64 = 58286;
 /// `hkbRagdollDriver::GetRagdollInstance` as a function pointer type (high).
 pub type hkbRagdollDriver__GetRagdollInstance_fn = unsafe extern "C" fn(this: *mut crate::hkbRagdollDriver) -> *mut crate::hkaRagdollInstance;
@@ -7309,7 +7309,7 @@ pub const hkpConvexTranslateShape__vfunc_9: u64 = 60711;
 pub const hkpConvexVerticesConnectivity__vdtor: u64 = 60532;
 /// `hkpConvexVerticesConnectivity::vfunc_3` at 0xb428b0 (rtti, high); signature (high): `undefined vfunc_3(hkpConvexVerticesConnectivity * this)`
 pub const hkpConvexVerticesConnectivity__vfunc_3: u64 = 60718;
-/// `hkpConvexVerticesShape::UnpackSoAVerticesToVector4Array` at 0xc3abd0 (semantic, high); signature (untiered): `undefined UnpackSoAVerticesToVector4Array(longlong param_1, longlong * param_2)`; copies the shape's vertices out of its 4-wide SoA blocks (+0x50, 0x30 bytes per block: x[4], y[4], z[4]; count +0x60) into outVertices as (x, y, z, 0), growing the array (data +0, size +8, capacity|flags +0xc) to the count (high); semantic signature: `void (const hkpConvexVerticesShape* this, hkArray<hkVector4>* outVertices)`
+/// `hkpConvexVerticesShape::UnpackSoAVerticesToVector4Array` at 0xc3abd0 (semantic, high); signature (untiered): `undefined UnpackSoAVerticesToVector4Array(longlong param_1, longlong * param_2)`; semantic: copies the shape's vertices out of its 4-wide SoA blocks (+0x50, 0x30 bytes per block: x[4], y[4], z[4]; count +0x60) into outVertices as (x, y, z, 0), growing the array (data +0, size +8, capacity|flags +0xc) to the count (high); signature `void (const hkpConvexVerticesShape* this, hkArray<hkVector4>* outVertices)`
 pub const hkpConvexVerticesShape__UnpackSoAVerticesToVector4Array: u64 = 65093;
 /// `hkpConvexVerticesShape::UnpackSoAVerticesToVector4Array` as a function pointer type (high).
 pub type hkpConvexVerticesShape__UnpackSoAVerticesToVector4Array_fn = unsafe extern "C" fn(this: *const crate::hkpConvexVerticesShape, outVertices: *mut c_void);
@@ -7319,7 +7319,7 @@ pub const hkpConvexVerticesShape__ctor: u64 = 65089;
 pub const hkpConvexVerticesShape__ctor_2: u64 = 65090;
 /// `hkpConvexVerticesShape::ctor` at 0xc3aac0 (layout_inference, high); signature (low): `hkpConvexVerticesShape * ctor(hkpConvexVerticesShape * this, int param_1)`
 pub const hkpConvexVerticesShape__ctor_3: u64 = 65091;
-/// `hkpConvexVerticesShape::ctor` at 0x10ee650 (semantic, high); signature (low): `hkpConvexVerticesShape * ctor(hkpConvexVerticesShape * this, ulonglong * param_1, char * param_2)`; builds the shape from a convex hull of the vertices. vertices = {const float* data +0, i32 count +8, i32 strideBytes +0xc} (12 bytes read per vertex). config (0x18 bytes) = {u8 createConnectivity +0 (builds an hkpConvexVerticesConnectivity, else deletes it), u8 shrinkByRadius +1 (with radius > 0), u8 shrinkOption +2 (passed to the shrinker 0x10c3e20), float convexRadius +4 (-> this+0x20), i32 maxVertices +8 (hull reduced when > 3), float shrinkParamA +0xc, float shrinkParamB +0x10, float +0x14 (default -0.1, not read here)} (high); semantic signature: `hkpConvexVerticesShape* (hkpConvexVerticesShape* this, const StridedVertices* vertices, const ConvexVerticesBuildConfig* config)`
+/// `hkpConvexVerticesShape::ctor` at 0x10ee650 (semantic, high); signature (low): `hkpConvexVerticesShape * ctor(hkpConvexVerticesShape * this, ulonglong * param_1, char * param_2)`; semantic: builds the shape from a convex hull of the vertices. vertices = {const float* data +0, i32 count +8, i32 strideBytes +0xc} (12 bytes read per vertex). config (0x18 bytes) = {u8 createConnectivity +0 (builds an hkpConvexVerticesConnectivity, else deletes it), u8 shrinkByRadius +1 (with radius > 0), u8 shrinkOption +2 (passed to the shrinker 0x10c3e20), float convexRadius +4 (-> this+0x20), i32 maxVertices +8 (hull reduced when > 3), float shrinkParamA +0xc, float shrinkParamB +0x10, float +0x14 (default -0.1, not read here)} (high); signature `hkpConvexVerticesShape* (hkpConvexVerticesShape* this, const StridedVertices* vertices, const ConvexVerticesBuildConfig* config)`
 pub const hkpConvexVerticesShape__ctor_4: u64 = 80831;
 /// `hkpConvexVerticesShape::ctor` as a function pointer type (high).
 pub type hkpConvexVerticesShape__ctor_4_fn = unsafe extern "C" fn(this: *mut crate::hkpConvexVerticesShape, vertices: *const c_void, config: *const c_void) -> *mut crate::hkpConvexVerticesShape;
@@ -7631,43 +7631,43 @@ pub const hkpFastMeshShape__vdtor: u64 = 64884;
 pub const hkpFirstCdBodyPairCollector__vdtor: u64 = 40950;
 /// `hkpFirstCdBodyPairCollector::vfunc_1` at 0xb3b180 (rtti, high); signature (low): `undefined vfunc_1(hkpFirstCdBodyPairCollector * this, hkpFirstCdBodyPairCollector_vtbl * param_1, hkpFirstCdBodyPairCollector_vtbl * param_2)`
 pub const hkpFirstCdBodyPairCollector__vfunc_1: u64 = 60364;
-/// `hkpFirstPersonGun::GetName` at 0xba6be0 (semantic, high); signature (untiered): `ulonglong GetName(hkpFirstPersonGun * this)`; slot 7: the name string pointer +0x18 with its ownership tag bit 0 cleared (high); semantic signature: `const char* (hkpFirstPersonGun* this)`
+/// `hkpFirstPersonGun::GetName` at 0xba6be0 (semantic, high); signature (untiered): `ulonglong GetName(hkpFirstPersonGun * this)`; semantic: slot 7: the name string pointer +0x18 with its ownership tag bit 0 cleared (high); signature `const char* (hkpFirstPersonGun* this)`
 pub const hkpFirstPersonGun__GetName: u64 = 62780;
 /// `hkpFirstPersonGun::GetName` as a function pointer type (high).
 pub type hkpFirstPersonGun__GetName_fn = unsafe extern "C" fn(this: *mut crate::hkpFirstPersonGun) -> *const c_char;
-/// `hkpFirstPersonGun::Slot3_NoOp` at 0xba6f50 (semantic, high); signature (untiered): `undefined Slot3_NoOp(void)`; slot 3: empty (ret) (high); semantic signature: `void (hkpFirstPersonGun* this)`
+/// `hkpFirstPersonGun::Slot3_NoOp` at 0xba6f50 (semantic, high); signature (untiered): `undefined Slot3_NoOp(void)`; semantic: slot 3: empty (ret) (high); signature `void (hkpFirstPersonGun* this)`
 pub const hkpFirstPersonGun__Slot3_NoOp: u64 = 62785;
 /// `hkpFirstPersonGun::Slot3_NoOp` as a function pointer type (high).
 pub type hkpFirstPersonGun__Slot3_NoOp_fn = unsafe extern "C" fn(this: *mut crate::hkpFirstPersonGun);
-/// `hkpFirstPersonGun::Slot4_NoOp` at 0xba6f40 (semantic, high); signature (untiered): `undefined Slot4_NoOp(void)`; slot 4: empty (ret) (high); semantic signature: `void (hkpFirstPersonGun* this)`
+/// `hkpFirstPersonGun::Slot4_NoOp` at 0xba6f40 (semantic, high); signature (untiered): `undefined Slot4_NoOp(void)`; semantic: slot 4: empty (ret) (high); signature `void (hkpFirstPersonGun* this)`
 pub const hkpFirstPersonGun__Slot4_NoOp: u64 = 62784;
 /// `hkpFirstPersonGun::Slot4_NoOp` as a function pointer type (high).
 pub type hkpFirstPersonGun__Slot4_NoOp_fn = unsafe extern "C" fn(this: *mut crate::hkpFirstPersonGun);
-/// `hkpFirstPersonGun::Slot5_NoOp` at 0xba6f70 (semantic, high); signature (untiered): `undefined Slot5_NoOp(void)`; slot 5: empty (ret) (high); semantic signature: `void (hkpFirstPersonGun* this)`
+/// `hkpFirstPersonGun::Slot5_NoOp` at 0xba6f70 (semantic, high); signature (untiered): `undefined Slot5_NoOp(void)`; semantic: slot 5: empty (ret) (high); signature `void (hkpFirstPersonGun* this)`
 pub const hkpFirstPersonGun__Slot5_NoOp: u64 = 62787;
 /// `hkpFirstPersonGun::Slot5_NoOp` as a function pointer type (high).
 pub type hkpFirstPersonGun__Slot5_NoOp_fn = unsafe extern "C" fn(this: *mut crate::hkpFirstPersonGun);
-/// `hkpFirstPersonGun::Slot6_ForwardToSlot8` at 0xba6bd0 (semantic, high); signature (untiered): `undefined Slot6_ForwardToSlot8(hkpFirstPersonGun * this)`; slot 6: tail-jumps to slot 8 (+0x40) with the same registers (high); semantic signature: `void (hkpFirstPersonGun* this)`
+/// `hkpFirstPersonGun::Slot6_ForwardToSlot8` at 0xba6bd0 (semantic, high); signature (untiered): `undefined Slot6_ForwardToSlot8(hkpFirstPersonGun * this)`; semantic: slot 6: tail-jumps to slot 8 (+0x40) with the same registers (high); signature `void (hkpFirstPersonGun* this)`
 pub const hkpFirstPersonGun__Slot6_ForwardToSlot8: u64 = 62779;
 /// `hkpFirstPersonGun::Slot6_ForwardToSlot8` as a function pointer type (high).
 pub type hkpFirstPersonGun__Slot6_ForwardToSlot8_fn = unsafe extern "C" fn(this: *mut crate::hkpFirstPersonGun);
-/// `hkpFirstPersonGun::Slot8_NoOp` at 0xba6f60 (semantic, high); signature (untiered): `undefined Slot8_NoOp(void)`; slot 8: empty (ret) in the base (high); semantic signature: `void (hkpFirstPersonGun* this)`
+/// `hkpFirstPersonGun::Slot8_NoOp` at 0xba6f60 (semantic, high); signature (untiered): `undefined Slot8_NoOp(void)`; semantic: slot 8: empty (ret) in the base (high); signature `void (hkpFirstPersonGun* this)`
 pub const hkpFirstPersonGun__Slot8_NoOp: u64 = 62786;
 /// `hkpFirstPersonGun::Slot8_NoOp` as a function pointer type (high).
 pub type hkpFirstPersonGun__Slot8_NoOp_fn = unsafe extern "C" fn(this: *mut crate::hkpFirstPersonGun);
-/// `hkpFirstPersonGun::ctor` at 0xba6a70 (semantic, high); signature (high): `hkpFirstPersonGun * ctor(hkpFirstPersonGun * this)`; default constructor: memSizeAndFlags +8 = 0x1ffff, vtable, +0x10 = 0, name +0x18 = "", +0x20 = 0x71, listener array +0x28 (data null, size +0x30 = 0, capacity +0x34 = 0x80000000) (high); semantic signature: `hkpFirstPersonGun* (hkpFirstPersonGun* this)`
+/// `hkpFirstPersonGun::ctor` at 0xba6a70 (semantic, high); signature (high): `hkpFirstPersonGun * ctor(hkpFirstPersonGun * this)`; semantic: default constructor: memSizeAndFlags +8 = 0x1ffff, vtable, +0x10 = 0, name +0x18 = "", +0x20 = 0x71, listener array +0x28 (data null, size +0x30 = 0, capacity +0x34 = 0x80000000) (high); signature `hkpFirstPersonGun* (hkpFirstPersonGun* this)`
 pub const hkpFirstPersonGun__ctor: u64 = 62776;
 /// `hkpFirstPersonGun::ctor` as a function pointer type (high).
 pub type hkpFirstPersonGun__ctor_fn = unsafe extern "C" fn(this: *mut crate::hkpFirstPersonGun) -> *mut crate::hkpFirstPersonGun;
-/// `hkpFirstPersonGun::ctor_finish` at 0xba6ad0 (semantic, high); signature (untiered): `hkpFirstPersonGun * ctor_finish(hkpFirstPersonGun * this, int param_1)`; serialization constructor: vtable, name pointer fix-up, empty listener array; +0x10 = 0 only when finishing != 0 (high); semantic signature: `hkpFirstPersonGun* (hkpFirstPersonGun* this, i32 finishing)`
+/// `hkpFirstPersonGun::ctor_finish` at 0xba6ad0 (semantic, high); signature (untiered): `hkpFirstPersonGun * ctor_finish(hkpFirstPersonGun * this, int param_1)`; semantic: serialization constructor: vtable, name pointer fix-up, empty listener array; +0x10 = 0 only when finishing != 0 (high); signature `hkpFirstPersonGun* (hkpFirstPersonGun* this, i32 finishing)`
 pub const hkpFirstPersonGun__ctor_finish: u64 = 62777;
 /// `hkpFirstPersonGun::ctor_finish` as a function pointer type (high).
 pub type hkpFirstPersonGun__ctor_finish_fn = unsafe extern "C" fn(this: *mut crate::hkpFirstPersonGun, finishing: i32) -> *mut crate::hkpFirstPersonGun;
-/// `hkpFirstPersonGun::dtor` at 0xba6b20 (layout_inference, high); signature (high): `undefined dtor(hkpFirstPersonGun * this)`; releases every listener (+0x28[i], ReleaseRefCounted16UnderLock), frees the array through the container heap allocator when owned, clears the name, resets the vtable to hkBaseObject (high); semantic signature: `void (hkpFirstPersonGun* this)`
+/// `hkpFirstPersonGun::dtor` at 0xba6b20 (layout_inference, high); signature (high): `undefined dtor(hkpFirstPersonGun * this)`; semantic: releases every listener (+0x28[i], ReleaseRefCounted16UnderLock), frees the array through the container heap allocator when owned, clears the name, resets the vtable to hkBaseObject (high); signature `void (hkpFirstPersonGun* this)`
 pub const hkpFirstPersonGun__dtor: u64 = 62778;
 /// `hkpFirstPersonGun::dtor` as a function pointer type (high).
 pub type hkpFirstPersonGun__dtor_fn = unsafe extern "C" fn(this: *mut crate::hkpFirstPersonGun);
-/// `hkpFirstPersonGun::vdtor` at 0xba6ec0 (semantic, high); signature (low): `hkpFirstPersonGun * vdtor(hkpFirstPersonGun * this, uint param_1, undefined8 param_2, undefined8 param_3)`; slot 0: dtor, then when flags bit 0: frees 0x38 bytes (memory router of the thread, or the default heap with bit 2) (high); semantic signature: `hkpFirstPersonGun* (hkpFirstPersonGun* this, u32 flags)`
+/// `hkpFirstPersonGun::vdtor` at 0xba6ec0 (semantic, high); signature (low): `hkpFirstPersonGun * vdtor(hkpFirstPersonGun * this, uint param_1, undefined8 param_2, undefined8 param_3)`; semantic: slot 0: dtor, then when flags bit 0: frees 0x38 bytes (memory router of the thread, or the default heap with bit 2) (high); signature `hkpFirstPersonGun* (hkpFirstPersonGun* this, u32 flags)`
 pub const hkpFirstPersonGun__vdtor: u64 = 62783;
 /// `hkpFirstPersonGun::vdtor` as a function pointer type (high).
 pub type hkpFirstPersonGun__vdtor_fn = unsafe extern "C" fn(this: *mut crate::hkpFirstPersonGun, flags: u32) -> *mut crate::hkpFirstPersonGun;

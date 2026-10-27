@@ -5499,15 +5499,15 @@ pub const CompareItemsByScoreThenFormID: u64 = 44909;
 pub const CompareJsonValues: u64 = 443089;
 /// `CompareMappedWideStrings` at 0xe46c70 (decompiler, medium); signature (medium): `int CompareMappedWideStrings(longlong param_1, longlong param_2, ushort * param_3, longlong param_4)`
 pub const CompareMappedWideStrings: u64 = 524176;
-/// `CompareMappingKey` at 0xcf1770 (semantic, high); signature (untiered): `ulonglong CompareMappingKey(longlong param_1, longlong param_2)`; orders by key low word, then high word (high); semantic signature: `int (const UserEventMapping* a, const UserEventMapping* b)`
+/// `CompareMappingKey` at 0xcf1770 (semantic, high); signature (untiered): `ulonglong CompareMappingKey(longlong param_1, longlong param_2)`; semantic: orders by key low word, then high word (high); signature `int (const UserEventMapping* a, const UserEventMapping* b)`
 pub const CompareMappingKey: u64 = 68573;
 /// `CompareMappingKey` as a function pointer type (high).
 pub type CompareMappingKey_fn = unsafe extern "C" fn(a: *const crate::UserEventMapping, b: *const crate::UserEventMapping) -> i32;
-/// `CompareMenuDepth` at 0x116bed0 (semantic, high); signature (untiered): `undefined4 CompareMenuDepth(longlong * param_1, longlong * param_2)`; 1 / 0 / -1 by the depth byte +0x18 (high); semantic signature: `i32 (IMenu** a, IMenu** b)`
+/// `CompareMenuDepth` at 0x116bed0 (semantic, high); signature (untiered): `undefined4 CompareMenuDepth(longlong * param_1, longlong * param_2)`; semantic: 1 / 0 / -1 by the depth byte +0x18 (high); signature `i32 (IMenu** a, IMenu** b)`
 pub const CompareMenuDepth: u64 = 82098;
 /// `CompareMenuDepth` as a function pointer type (high).
 pub type CompareMenuDepth_fn = unsafe extern "C" fn(a: *mut *mut crate::IMenu, b: *mut *mut crate::IMenu) -> i32;
-/// `CompareMessageBoxDepth` at 0x963ca0 (semantic, medium); signature (untiered): `undefined8 CompareMessageBoxDepth(longlong param_1, longlong param_2)`; queue order by +0x48 (medium); semantic signature: `i32 (const MessageBoxData* a, const MessageBoxData* b)`
+/// `CompareMessageBoxDepth` at 0x963ca0 (semantic, medium); signature (untiered): `undefined8 CompareMessageBoxDepth(longlong param_1, longlong param_2)`; semantic: queue order by +0x48 (medium); signature `i32 (const MessageBoxData* a, const MessageBoxData* b)`
 pub const CompareMessageBoxDepth: u64 = 52286;
 /// `CompareNamesAt20CaseInsensitive` at 0x1c50d0 (decompiler, medium); signature (medium): `int CompareNamesAt20CaseInsensitive(longlong param_1, longlong param_2)`
 pub const CompareNamesAt20CaseInsensitive: u64 = 13791;
@@ -5551,7 +5551,7 @@ pub const CompareWideCharArrays: u64 = 524803;
 pub const CompareWideCharBuffers: u64 = 524801;
 /// `CompareWideToNarrowNoCase` at 0xe37a40 (decompiler, medium); signature (medium): `int CompareWideToNarrowNoCase(ushort * param_1, char * param_2, longlong param_3)`
 pub const CompareWideToNarrowNoCase: u64 = 88524;
-/// `Compass::Update` at 0x9385b0 (semantic, high); signature (untiered): `undefined Update(Compass * this)`; HUD compass: adds the quest target marker, uploads the markers ('SetCompassMarkers'), then 'SetCompassAngle' with the heading PlayerCamera.yaw in degrees (times 57.2958) and the same plus the cell's north rotation, both wrapped to [0, 360), and bShowCompass:Interface (high); semantic signature: `void (Compass* this)`
+/// `Compass::Update` at 0x9385b0 (semantic, high); signature (untiered): `undefined Update(Compass * this)`; semantic: HUD compass: adds the quest target marker, uploads the markers ('SetCompassMarkers'), then 'SetCompassAngle' with the heading PlayerCamera.yaw in degrees (times 57.2958) and the same plus the cell's north rotation, both wrapped to [0, 360), and bShowCompass:Interface (high); signature `void (Compass* this)`
 pub const Compass__Update: u64 = 51668;
 /// `Compass::Update` as a function pointer type (high).
 pub type Compass__Update_fn = unsafe extern "C" fn(this: *mut crate::Compass);
@@ -5559,17 +5559,17 @@ pub type Compass__Update_fn = unsafe extern "C" fn(this: *mut crate::Compass);
 pub const Compass__vfunc_0: u64 = 51711;
 /// `Compass::vfunc_3` at 0x9388c0 (rtti, high); signature (low): `undefined vfunc_3(Compass * this, longlong param_1)`
 pub const Compass__vfunc_3: u64 = 51669;
-/// `CompileAndRunScript` at 0x343d00 (runtime, high); signature (untiered): `undefined CompileAndRunScript(longlong * param_1, undefined8 param_2, uint param_3, longlong param_4)`; compiles script->text and, when the result is non-empty, runs it on thisRef; compileType 1 (console) sets TLS+0x600 for the run (high); semantic signature: `void (Script* script, ScriptCompiler* compiler, ScriptCompileType compileType, TESObjectREFR* thisRef)`
+/// `CompileAndRunScript` at 0x343d00 (runtime, high); signature (untiered): `undefined CompileAndRunScript(longlong * param_1, undefined8 param_2, uint param_3, longlong param_4)`; semantic: compiles script->text and, when the result is non-empty, runs it on thisRef; compileType 1 (console) sets TLS+0x600 for the run (high); signature `void (Script* script, ScriptCompiler* compiler, ScriptCompileType compileType, TESObjectREFR* thisRef)`
 pub const CompileAndRunScript: u64 = 441582;
 /// `CompileAndRunScript` as a function pointer type (high).
 pub type CompileAndRunScript_fn = unsafe extern "C" fn(script: *mut crate::Script, compiler: *mut c_void, compileType: u32, thisRef: *mut crate::TESObjectREFR);
-/// `CompileExpressionTokens` at 0x34b9f0 (semantic, medium); signature (untiered): `int CompileExpressionTokens(undefined8 param_1, longlong param_2, undefined4 * param_3, longlong param_4, longlong param_5)`; compiles function calls inside set/if expressions as 'X' u16 opcode u16 len params, variables as 'r'/'G'/'Z' tokens (medium); semantic signature: `int (ScriptCompiler*, ScriptCompileBuffer*, uint* lineNo, const char* expr, char* out)`
+/// `CompileExpressionTokens` at 0x34b9f0 (semantic, medium); signature (untiered): `int CompileExpressionTokens(undefined8 param_1, longlong param_2, undefined4 * param_3, longlong param_4, longlong param_5)`; semantic: compiles function calls inside set/if expressions as 'X' u16 opcode u16 len params, variables as 'r'/'G'/'Z' tokens (medium); signature `int (ScriptCompiler*, ScriptCompileBuffer*, uint* lineNo, const char* expr, char* out)`
 pub const CompileExpressionTokens: u64 = 21971;
-/// `CompileNextLine` at 0x34b150 (semantic, high); signature (untiered): `int CompileNextLine(undefined8 param_1, longlong * param_2, undefined8 param_3, undefined8 param_4)`; reads the next line into a ScriptLineBuffer (0x41c), reads its first token and looks the command up; returns the line's opcode or 0xffff (high); semantic signature: `uint (ScriptCompileBuffer* buf)`
+/// `CompileNextLine` at 0x34b150 (semantic, high); signature (untiered): `int CompileNextLine(undefined8 param_1, longlong * param_2, undefined8 param_3, undefined8 param_4)`; semantic: reads the next line into a ScriptLineBuffer (0x41c), reads its first token and looks the command up; returns the line's opcode or 0xffff (high); signature `uint (ScriptCompileBuffer* buf)`
 pub const CompileNextLine: u64 = 21966;
 /// `CompileNextLine` as a function pointer type (high).
 pub type CompileNextLine_fn = unsafe extern "C" fn(buf: *mut c_void) -> u32;
-/// `CompileScriptLine` at 0x34a4e0 (semantic, high); signature (untiered): `undefined8 CompileScriptLine(undefined8 param_1, longlong param_2, TypeDescriptor * param_3, TypeDescriptor * param_4)`; per-opcode compile of a line; for a command: reference checks, then entry->parse(numParams, params, line, buf) when params != 0, then emits [u16 0x1c, u16 refIndex] u16 opcode, u16 dataLen, data (MAX_SCRIPT_SIZE 0x4000) (high); semantic signature: `bool (ScriptCompiler*, Script*, ScriptCompileBuffer* buf, ScriptLineBuffer* line)`
+/// `CompileScriptLine` at 0x34a4e0 (semantic, high); signature (untiered): `undefined8 CompileScriptLine(undefined8 param_1, longlong param_2, TypeDescriptor * param_3, TypeDescriptor * param_4)`; semantic: per-opcode compile of a line; for a command: reference checks, then entry->parse(numParams, params, line, buf) when params != 0, then emits [u16 0x1c, u16 refIndex] u16 opcode, u16 dataLen, data (MAX_SCRIPT_SIZE 0x4000) (high); signature `bool (ScriptCompiler*, Script*, ScriptCompileBuffer* buf, ScriptLineBuffer* line)`
 pub const CompileScriptLine: u64 = 21965;
 /// `CompileScriptLine` as a function pointer type (high).
 pub type CompileScriptLine_fn = unsafe extern "C" fn(a0: *mut c_void, a1: *mut crate::Script, buf: *mut c_void, line: *mut crate::ScriptLineBuffer) -> bool;
@@ -5593,7 +5593,7 @@ pub const CompletePendingRequest502069AndResetSecondaryOperation: u64 = 441984;
 pub const CompletePendingRequestAndNotifyWhenAllDone: u64 = 525074;
 /// `CompletePendingRequestsAndClearArray503228` at 0x597720 (decompiler, medium); signature (untiered): `undefined CompletePendingRequestsAndClearArray503228(undefined8 param_1, undefined8 param_2, longlong * param_3, undefined8 param_4)`
 pub const CompletePendingRequestsAndClearArray503228: u64 = 523735;
-/// `CompleteStack` at 0x14bae50 (runtime, high); signature (untiered): `undefined8 CompleteStack(longlong param_1, uint * param_2, undefined8 param_3, char * param_4)`; the stack's return path: pops the returning frame, and when no frame is left sets +0x68 to 1, copies the return Variable (+0x70) and calls the callback's slot 1 with the copy, then removes the stack from the VM (high); semantic signature: `bool (BSScript::Internal::VirtualMachine* vm, BSScript::Stack* stack, bool popFrame, bool fromQueue)`
+/// `CompleteStack` at 0x14bae50 (runtime, high); signature (untiered): `undefined8 CompleteStack(longlong param_1, uint * param_2, undefined8 param_3, char * param_4)`; semantic: the stack's return path: pops the returning frame, and when no frame is left sets +0x68 to 1, copies the return Variable (+0x70) and calls the callback's slot 1 with the copy, then removes the stack from the VM (high); signature `bool (BSScript::Internal::VirtualMachine* vm, BSScript::Stack* stack, bool popFrame, bool fromQueue)`
 pub const CompleteStack: u64 = 104854;
 /// `CompleteStack` as a function pointer type (high).
 pub type CompleteStack_fn = unsafe extern "C" fn(vm: *mut crate::BSScript__Internal__VirtualMachine, stack: *mut crate::BSScript__Stack, popFrame: bool, fromQueue: bool) -> bool;
@@ -5611,7 +5611,7 @@ pub const ComposeQuatTransforms: u64 = 72647;
 pub const ComposeScaledTransformFromField50: u64 = 64076;
 /// `ComposeTranslationRotation` at 0xb27140 (decompiler, medium); signature (medium): `undefined ComposeTranslationRotation(float * param_1, float * param_2, float * param_3, float * param_4, float * param_5, float * param_6)`
 pub const ComposeTranslationRotation: u64 = 60052;
-/// `CompressAndWritePayload` at 0x159b530 (runtime, high); signature (untiered): `undefined CompressAndWritePayload(ulonglong * param_1)`; compresses data[headerEnd..size] (zlib or LZ4 by +0xbc8) and rewrites it in place after u32 uncompressed size, u32 compressed size (high); semantic signature: `void (Win32FileType*)`
+/// `CompressAndWritePayload` at 0x159b530 (runtime, high); signature (untiered): `undefined CompressAndWritePayload(ulonglong * param_1)`; semantic: compresses data[headerEnd..size] (zlib or LZ4 by +0xbc8) and rewrites it in place after u32 uncompressed size, u32 compressed size (high); signature `void (Win32FileType*)`
 pub const CompressAndWritePayload: u64 = 109333;
 /// `CompressAndWritePayload` as a function pointer type (high).
 pub type CompressAndWritePayload_fn = unsafe extern "C" fn(a0: *mut c_void);
@@ -5719,9 +5719,9 @@ pub const ComputeAttackRangeToTarget: u64 = 47338;
 pub const ComputeAttackStagger: u64 = 26422;
 /// `ComputeAttackStaminaCost` at 0x41f760 (decompiler, medium); signature (untiered): `float ComputeAttackStaminaCost(longlong param_1, longlong param_2)`
 pub const ComputeAttackStaminaCost: u64 = 26429;
-/// `ComputeAutoAimAngles` at 0x777c00 (semantic, medium); signature (untiered): `undefined ComputeAutoAimAngles(longlong * param_1, longlong * param_2, longlong param_3, float * param_4, float * param_5, float * param_6, float param_7, float param_8)`; turns the shooter's aim toward the auto-aim target: computes yaw/pitch deltas from origin to the target and adds them to the base angles (FLT_MIN base = add to current) (medium); semantic signature: `void (Actor* shooter, Projectile* projectile, NiAVObject* aimNode, float* yawInOut, float* pitchInOut, const NiPoint3* origin, float baseYaw, float basePitch)`
+/// `ComputeAutoAimAngles` at 0x777c00 (semantic, medium); signature (untiered): `undefined ComputeAutoAimAngles(longlong * param_1, longlong * param_2, longlong param_3, float * param_4, float * param_5, float * param_6, float param_7, float param_8)`; semantic: turns the shooter's aim toward the auto-aim target: computes yaw/pitch deltas from origin to the target and adds them to the base angles (FLT_MIN base = add to current) (medium); signature `void (Actor* shooter, Projectile* projectile, NiAVObject* aimNode, float* yawInOut, float* pitchInOut, const NiPoint3* origin, float baseYaw, float basePitch)`
 pub const ComputeAutoAimAngles: u64 = 41248;
-/// `ComputeAutoVanityCameraPosition` at 0x8f3a10 (semantic, high); signature (untiered): `undefined ComputeAutoVanityCameraPosition(longlong param_1, float * param_2, longlong param_3, undefined8 param_4)`; out = target 3D world translation + (0, 0, eye height) - fDefaultAutoVanityZoom:Camera * rotation column 1 (forward), then ComputeCameraCasterCollision(camera, out, true); zero point when there is no target (high); semantic signature: `void (AutoVanityState* this, NiPoint3* out, const NiMatrix3* rotation)`
+/// `ComputeAutoVanityCameraPosition` at 0x8f3a10 (semantic, high); signature (untiered): `undefined ComputeAutoVanityCameraPosition(longlong param_1, float * param_2, longlong param_3, undefined8 param_4)`; semantic: out = target 3D world translation + (0, 0, eye height) - fDefaultAutoVanityZoom:Camera * rotation column 1 (forward), then ComputeCameraCasterCollision(camera, out, true); zero point when there is no target (high); signature `void (AutoVanityState* this, NiPoint3* out, const NiMatrix3* rotation)`
 pub const ComputeAutoVanityCameraPosition: u64 = 50713;
 /// `ComputeAutoVanityCameraPosition` as a function pointer type (high).
 pub type ComputeAutoVanityCameraPosition_fn = unsafe extern "C" fn(this: *mut crate::AutoVanityState, out: *mut crate::NiPoint3, rotation: *const crate::NiMatrix3);
@@ -5761,11 +5761,11 @@ pub const ComputeBoundsOfStridedPoints: u64 = 57239;
 pub const ComputeBoxMassProperties: u64 = 65065;
 /// `ComputeBudgetCategoryUsage` at 0x213d70 (decompiler, medium); signature (medium): `float ComputeBudgetCategoryUsage(longlong param_1, uint param_2)`
 pub const ComputeBudgetCategoryUsage: u64 = 15568;
-/// `ComputeCameraCasterCollision` at 0x8fa5d0 (runtime, high); signature (untiered): `undefined8 ComputeCameraCasterCollision(longlong param_1, float * param_2, undefined8 param_3, undefined8 param_4)`; clip cameraPos against the world between the target point and the camera; returns true when moved; manages fadedActorHandle (high); semantic signature: `bool (PlayerCamera* this, NiPoint3* cameraPos, bool fadeActors)`
+/// `ComputeCameraCasterCollision` at 0x8fa5d0 (runtime, high); signature (untiered): `undefined8 ComputeCameraCasterCollision(longlong param_1, float * param_2, undefined8 param_3, undefined8 param_4)`; semantic: clip cameraPos against the world between the target point and the camera; returns true when moved; manages fadedActorHandle (high); signature `bool (PlayerCamera* this, NiPoint3* cameraPos, bool fadeActors)`
 pub const ComputeCameraCasterCollision: u64 = 50832;
 /// `ComputeCameraCasterCollision` as a function pointer type (high).
 pub type ComputeCameraCasterCollision_fn = unsafe extern "C" fn(this: *mut crate::PlayerCamera, cameraPos: *mut crate::NiPoint3, fadeActors: bool) -> bool;
-/// `ComputeCameraShakeRotation` at 0x558600 (runtime, high); signature (untiered): `float ComputeCameraShakeRotation(undefined4 param_1, float * param_2)`; when strength and time left are > 1e-4: UpdateNode the CameraShake.nif root at the time stored at (root+0x18)+0x1c (its reference pose), keep that local rotation R0, UpdateNode again at `time`, outDelta = inverse(R0) * R(time); timeLeft -= g_FrameDelta; returns strength, faded linearly over the last fCameraShakeFadeTime; else zeroes both and returns 0 (high); semantic signature: `float (float time, NiMatrix3* outDelta)`
+/// `ComputeCameraShakeRotation` at 0x558600 (runtime, high); signature (untiered): `float ComputeCameraShakeRotation(undefined4 param_1, float * param_2)`; semantic: when strength and time left are > 1e-4: UpdateNode the CameraShake.nif root at the time stored at (root+0x18)+0x1c (its reference pose), keep that local rotation R0, UpdateNode again at `time`, outDelta = inverse(R0) * R(time); timeLeft -= g_FrameDelta; returns strength, faded linearly over the last fCameraShakeFadeTime; else zeroes both and returns 0 (high); signature `float (float time, NiMatrix3* outDelta)`
 pub const ComputeCameraShakeRotation: u64 = 33013;
 /// `ComputeCameraShakeRotation` as a function pointer type (high).
 pub type ComputeCameraShakeRotation_fn = unsafe extern "C" fn(time: f32, outDelta: *mut crate::NiMatrix3) -> f32;

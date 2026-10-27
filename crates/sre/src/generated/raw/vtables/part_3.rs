@@ -2676,7 +2676,7 @@ pub struct AutoVanityState_vtable {
     pub slot_0: *const c_void,
     /// `AutoVanityState::Begin` at 0x8f3770 (semantic, high); signature (untiered): `undefined Begin(AutoVanityState * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`; `Begin`: SetFirstPerson(false), yaw = heading, queues the 'AutoVanity' message (high); semantic signature: `void (TESCameraState* this)`
     pub slot_1: *const c_void,
-    /// `AutoVanityState::End` at 0x8f3980 (semantic, high); signature (untiered): `undefined End(void)`; `End`:  (high); semantic signature: `void (AutoVanityState* this)`
+    /// `AutoVanityState::End` at 0x8f3980 (semantic, high); signature (untiered): `undefined End(void)`; `End` (high); semantic signature: `void (AutoVanityState* this)`
     pub slot_2: *const c_void,
     /// `AutoVanityState::Update` at 0x8f3810 (semantic, high); signature (untiered): `undefined Update(AutoVanityState * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`; `Update`: position from ComputeAutoVanityCameraPosition 0x8f3a10, writes the root, advances yaw (high); semantic signature: `void (TESCameraState* this, BSTSmartPointer<TESCameraState>* next)`
     pub slot_3: *const c_void,
@@ -2734,7 +2734,7 @@ impl AutoVanityState_vtable {
 pub type AutoVanityState_vtable_Destroy = unsafe extern "C" fn(this: *mut crate::AutoVanityState, flags: u32) -> *mut crate::AutoVanityState;
 /// `AutoVanityState::Begin`, slot 1: SetFirstPerson(false), yaw = heading, queues the 'AutoVanity' message (high).
 pub type AutoVanityState_vtable_Begin = unsafe extern "C" fn(this: *mut crate::TESCameraState);
-/// `AutoVanityState::End`, slot 2:  (high).
+/// `AutoVanityState::End`, slot 2 (high).
 pub type AutoVanityState_vtable_End = unsafe extern "C" fn(this: *mut crate::AutoVanityState);
 /// `AutoVanityState::Update`, slot 3: position from ComputeAutoVanityCameraPosition 0x8f3a10, writes the root, advances yaw (high).
 pub type AutoVanityState_vtable_Update = unsafe extern "C" fn(this: *mut crate::TESCameraState, next: *mut c_void);

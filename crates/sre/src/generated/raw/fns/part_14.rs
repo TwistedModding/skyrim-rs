@@ -3,7 +3,7 @@
 
 use core::ffi::{c_char, c_void};
 
-/// `IsAnotherThreadInUpdatePhase` at 0x6e49e0 (semantic, medium); signature (untiered): `ulonglong IsAnotherThreadInUpdatePhase(void)`; true when a global state holds (ID_403107+0x6c == 1) and a thread other than the caller has its bit in the mask 0x3244170; callers then queue the work instead of doing it (medium); semantic signature: `bool ()`
+/// `IsAnotherThreadInUpdatePhase` at 0x6e49e0 (semantic, medium); signature (untiered): `ulonglong IsAnotherThreadInUpdatePhase(void)`; semantic: true when a global state holds (ID_403107+0x6c == 1) and a thread other than the caller has its bit in the mask 0x3244170; callers then queue the work instead of doing it (medium); signature `bool ()`
 pub const IsAnotherThreadInUpdatePhase: u64 = 39033;
 /// `IsAnyMagicCasterCasting` at 0x6d6780 (decompiler, medium); signature (medium): `undefined8 IsAnyMagicCasterCasting(longlong param_1, longlong param_2)`
 pub const IsAnyMagicCasterCasting: u64 = 38759;
@@ -17,7 +17,7 @@ pub const IsArmorCasterUsable: u64 = 45416;
 pub const IsArrested: u64 = 39445;
 /// `IsAsciiAlphanumeric` at 0x128eeb0 (decompiler, high); signature (high): `longlong IsAsciiAlphanumeric(int param_1)`
 pub const IsAsciiAlphanumeric: u64 = 444445;
-/// `IsAudioReady` at 0xcca630 (semantic, high); signature (untiered): `undefined1 IsAudioReady(void)`; manager and backend both exist (high); semantic signature: `bool ()`
+/// `IsAudioReady` at 0xcca630 (semantic, high); signature (untiered): `undefined1 IsAudioReady(void)`; semantic: manager and backend both exist (high); signature `bool ()`
 pub const IsAudioReady: u64 = 67654;
 /// `IsAudioReady` as a function pointer type (high).
 pub type IsAudioReady_fn = unsafe extern "C" fn() -> bool;
@@ -201,7 +201,7 @@ pub const IsByteC7Set: u64 = 58283;
 pub const IsByteField8Zero: u64 = 443179;
 /// `IsCJKCodepointWithHangulOption` at 0xe4f000 (decompiler, medium); signature (medium): `ulonglong IsCJKCodepointWithHangulOption(ulonglong param_1, int param_2)`
 pub const IsCJKCodepointWithHangulOption: u64 = 88006;
-/// `IsCameraCasterOverlapping` at 0x557ad0 (semantic, high); signature (untiered): `bool IsCameraCasterOverlapping(longlong * param_1, longlong param_2, float * param_3, undefined4 param_4, float param_5)`; pair test of the camera phantom placed at cameraPos (radius radiusHavok) against the target's character controller shape, lowered by heightOffset when above it; under the world read and write locks (high); semantic signature: `bool (CameraCollisionHolder* holder, Actor* target, const NiPoint3* cameraPos, float radiusHavok, float heightOffset)`
+/// `IsCameraCasterOverlapping` at 0x557ad0 (semantic, high); signature (untiered): `bool IsCameraCasterOverlapping(longlong * param_1, longlong param_2, float * param_3, undefined4 param_4, float param_5)`; semantic: pair test of the camera phantom placed at cameraPos (radius radiusHavok) against the target's character controller shape, lowered by heightOffset when above it; under the world read and write locks (high); signature `bool (CameraCollisionHolder* holder, Actor* target, const NiPoint3* cameraPos, float radiusHavok, float heightOffset)`
 pub const IsCameraCasterOverlapping: u64 = 33008;
 /// `IsCameraCasterOverlapping` as a function pointer type (high).
 pub type IsCameraCasterOverlapping_fn = unsafe extern "C" fn(holder: *mut c_void, target: *mut crate::Actor, cameraPos: *const crate::NiPoint3, radiusHavok: f32, heightOffset: f32) -> bool;
@@ -697,7 +697,7 @@ pub const IsHandleEqual: u64 = 60013;
 pub const IsHandleNull: u64 = 65812;
 /// `IsHandleOfRef` at 0x7e3b80 (decompiler, medium); signature (medium): `ulonglong IsHandleOfRef(uint * param_1, longlong param_2)`
 pub const IsHandleOfRef: u64 = 43825;
-/// `IsHandleSlotOccupied` at 0x391da0 (semantic, high); signature (untiered): `bool IsHandleSlotOccupied(longlong * param_1)`; *slot != 0 (high); semantic signature: `bool (void** slot)`
+/// `IsHandleSlotOccupied` at 0x391da0 (semantic, high); signature (untiered): `bool IsHandleSlotOccupied(longlong * param_1)`; semantic: *slot != 0 (high); signature `bool (void** slot)`
 pub const IsHandleSlotOccupied: u64 = 23687;
 /// `IsHandleSlotOccupied` as a function pointer type (high).
 pub type IsHandleSlotOccupied_fn = unsafe extern "C" fn(slot: *mut *mut c_void) -> bool;
@@ -963,7 +963,7 @@ pub const IsPointWithinRangeAndHeadingTolerance: u64 = 47006;
 pub const IsPointeeField14Equal: u64 = 15156;
 /// `IsPointeeField28Equal2` at 0x11f3b10 (decompiler, high); signature (high): `undefined8 IsPointeeField28Equal2(longlong * param_1)`
 pub const IsPointeeField28Equal2: u64 = 91403;
-/// `IsPointeeField4EqualGlobal` at 0x242d70 (semantic, high); signature (medium): `ulonglong IsPointeeField4EqualGlobal(longlong * param_1)`; true when *entrySlot is non-null and its +4 equals ID_400641 (0x31a431c) (high); semantic signature: `bool (void** entrySlot)`
+/// `IsPointeeField4EqualGlobal` at 0x242d70 (semantic, high); signature (medium): `ulonglong IsPointeeField4EqualGlobal(longlong * param_1)`; semantic: true when *entrySlot is non-null and its +4 equals ID_400641 (0x31a431c) (high); signature `bool (void** entrySlot)`
 pub const IsPointeeField4EqualGlobal: u64 = 16257;
 /// `IsPointeeField4EqualGlobal` as a function pointer type (high).
 pub type IsPointeeField4EqualGlobal_fn = unsafe extern "C" fn(entrySlot: *mut *mut c_void) -> bool;
@@ -981,7 +981,7 @@ pub const IsPositionInLoadedGrid: u64 = 13306;
 pub const IsPositionWithinGridRadiusOfFixedCenter: u64 = 20467;
 /// `IsPositionWithinSoundRangeOfListener` at 0x559bc0 (decompiler, medium); signature (medium): `undefined8 IsPositionWithinSoundRangeOfListener(longlong param_1, float * param_2)`
 pub const IsPositionWithinSoundRangeOfListener: u64 = 33047;
-/// `IsPowerAttacking` at 0x6cb980 (semantic, high); signature (untiered): `ulonglong IsPowerAttacking(longlong param_1)`; attack state bits (flags1 +0xc8 > 0x0fffffff) and the current attack data's flags (+0x28) bit 2 (high); semantic signature: `bool (Actor* actor)`
+/// `IsPowerAttacking` at 0x6cb980 (semantic, high); signature (untiered): `ulonglong IsPowerAttacking(longlong param_1)`; semantic: attack state bits (flags1 +0xc8 > 0x0fffffff) and the current attack data's flags (+0x28) bit 2 (high); signature `bool (Actor* actor)`
 pub const IsPowerAttacking: u64 = 38592;
 /// `IsPowerAttacking` as a function pointer type (high).
 pub type IsPowerAttacking_fn = unsafe extern "C" fn(actor: *mut crate::Actor) -> bool;
@@ -1215,7 +1215,7 @@ pub const IsVfunc298Value1Or4Or10: u64 = 11290;
 pub const IsVfunc2B8ResultOutside2To4: u64 = 523462;
 /// `IsVfuncStringNotLessNoCase` at 0x3f0590 (decompiler, medium); signature (medium): `undefined8 IsVfuncStringNotLessNoCase(longlong * param_1, longlong * param_2)`
 pub const IsVfuncStringNotLessNoCase: u64 = 25560;
-/// `IsVisibleInMainCameraOrMultiBound` at 0x52c6f0 (runtime, high); signature (untiered): `ulonglong IsVisibleInMainCameraOrMultiBound(undefined8 param_1, longlong param_2)`; false for null; when the object's parent (+0x30) is a BSMultiBoundNode returns (parent+0x128)->+0x18->+0x10 == 1; otherwise IsFieldE4SphereInsideFrustum(object, GetMainCamera()) (world bound +0xe4 against the main camera's frustum) (high); semantic signature: `bool (void* unused, NiAVObject* object)`
+/// `IsVisibleInMainCameraOrMultiBound` at 0x52c6f0 (runtime, high); signature (untiered): `ulonglong IsVisibleInMainCameraOrMultiBound(undefined8 param_1, longlong param_2)`; semantic: false for null; when the object's parent (+0x30) is a BSMultiBoundNode returns (parent+0x128)->+0x18->+0x10 == 1; otherwise IsFieldE4SphereInsideFrustum(object, GetMainCamera()) (world bound +0xe4 against the main camera's frustum) (high); signature `bool (void* unused, NiAVObject* object)`
 pub const IsVisibleInMainCameraOrMultiBound: u64 = 32188;
 /// `IsVisibleInMainCameraOrMultiBound` as a function pointer type (high).
 pub type IsVisibleInMainCameraOrMultiBound_fn = unsafe extern "C" fn(unused: *mut c_void, object: *mut crate::NiAVObject) -> bool;
@@ -1275,57 +1275,57 @@ pub const IssueUserContentCollectionRequest: u64 = 419047;
 pub const IssueUserContentListPlatformRequest: u64 = 419043;
 /// `IssueUserContentListPlatformRequestWithString` at 0x5f4e00 (decompiler, medium); signature (untiered): `longlong IssueUserContentListPlatformRequestWithString(longlong param_1, undefined4 param_2, undefined1 * param_3, undefined8 param_4, undefined8 * param_5)`
 pub const IssueUserContentListPlatformRequestWithString: u64 = 442262;
-/// `ItemCrafted::GetEventSource` at 0x924920 (semantic, medium); signature (untiered): `undefined8 * GetEventSource(void)`; the one source of ItemCrafted::Event events (medium); semantic signature: `BSTEventSource<ItemCrafted::Event>* ()`
+/// `ItemCrafted::GetEventSource` at 0x924920 (semantic, medium); signature (untiered): `undefined8 * GetEventSource(void)`; semantic: the one source of ItemCrafted::Event events (medium); signature `BSTEventSource<ItemCrafted::Event>* ()`
 pub const ItemCrafted__GetEventSource: u64 = 51403;
-/// `ItemCrafted::RegisterSink` at 0x915fe0 (semantic, medium); signature (untiered): `undefined RegisterSink(undefined8 param_1)`; registers a ItemCrafted::Event sink with the singleton source (medium); semantic signature: `void (BSTEventSink<ItemCrafted::Event>* sink)`
+/// `ItemCrafted::RegisterSink` at 0x915fe0 (semantic, medium); signature (untiered): `undefined RegisterSink(undefined8 param_1)`; semantic: registers a ItemCrafted::Event sink with the singleton source (medium); signature `void (BSTEventSink<ItemCrafted::Event>* sink)`
 pub const ItemCrafted__RegisterSink: u64 = 51196;
-/// `ItemCrafted::UnregisterSink` at 0x916010 (semantic, medium); signature (untiered): `undefined UnregisterSink(undefined8 param_1)`; unregisters a ItemCrafted::Event sink with the singleton source (medium); semantic signature: `void (BSTEventSink<ItemCrafted::Event>* sink)`
+/// `ItemCrafted::UnregisterSink` at 0x916010 (semantic, medium); signature (untiered): `undefined UnregisterSink(undefined8 param_1)`; semantic: unregisters a ItemCrafted::Event sink with the singleton source (medium); signature `void (BSTEventSink<ItemCrafted::Event>* sink)`
 pub const ItemCrafted__UnregisterSink: u64 = 51197;
-/// `ItemList::AddItem` at 0x904df0 (semantic, high); signature (untiered): `undefined8 AddItem(longlong param_1, undefined8 param_2, undefined8 param_3)`; allocates a StandardItemData (0x40) and appends it to list+0x38 (high); semantic signature: `StandardItemData* (ItemList* list, InventoryEntry* entry, const RefHandle* owner)`
+/// `ItemList::AddItem` at 0x904df0 (semantic, high); signature (untiered): `undefined8 AddItem(longlong param_1, undefined8 param_2, undefined8 param_3)`; semantic: allocates a StandardItemData (0x40) and appends it to list+0x38 (high); signature `StandardItemData* (ItemList* list, InventoryEntry* entry, const RefHandle* owner)`
 pub const ItemList__AddItem: u64 = 51011;
 /// `ItemList::AddItem` as a function pointer type (high).
 pub type ItemList__AddItem_fn = unsafe extern "C" fn(list: *mut crate::ItemList, entry: *mut crate::InventoryEntry, owner: *const c_void) -> *mut crate::StandardItemData;
-/// `ItemList::Clear` at 0x904f70 (semantic, high); signature (untiered): `undefined Clear(longlong param_1)`; empties entryList and deletes every entry (high); semantic signature: `void (ItemList* list)`
+/// `ItemList::Clear` at 0x904f70 (semantic, high); signature (untiered): `undefined Clear(longlong param_1)`; semantic: empties entryList and deletes every entry (high); signature `void (ItemList* list)`
 pub const ItemList__Clear: u64 = 51014;
 /// `ItemList::Clear` as a function pointer type (high).
 pub type ItemList__Clear_fn = unsafe extern "C" fn(list: *mut crate::ItemList);
-/// `ItemList::GetSelectedEntry` at 0x905370 (semantic, high); signature (untiered): `undefined8 GetSelectedEntry(longlong param_1)`; GetSelectedItem()->entry (high); semantic signature: `InventoryEntry* (ItemList* list)`
+/// `ItemList::GetSelectedEntry` at 0x905370 (semantic, high); signature (untiered): `undefined8 GetSelectedEntry(longlong param_1)`; semantic: GetSelectedItem()->entry (high); signature `InventoryEntry* (ItemList* list)`
 pub const ItemList__GetSelectedEntry: u64 = 51018;
 /// `ItemList::GetSelectedEntry` as a function pointer type (high).
 pub type ItemList__GetSelectedEntry_fn = unsafe extern "C" fn(list: *mut crate::ItemList) -> *mut crate::InventoryEntry;
-/// `ItemList::GetSelectedItem` at 0x905290 (semantic, high); signature (untiered): `undefined8 GetSelectedItem(longlong param_1)`; reads root.selectedIndex (number) and returns items[index], null when stale or out of range (high); semantic signature: `StandardItemData* (ItemList* list)`
+/// `ItemList::GetSelectedItem` at 0x905290 (semantic, high); signature (untiered): `undefined8 GetSelectedItem(longlong param_1)`; semantic: reads root.selectedIndex (number) and returns items[index], null when stale or out of range (high); signature `StandardItemData* (ItemList* list)`
 pub const ItemList__GetSelectedItem: u64 = 51017;
 /// `ItemList::GetSelectedItem` as a function pointer type (high).
 pub type ItemList__GetSelectedItem_fn = unsafe extern "C" fn(list: *mut crate::ItemList) -> *mut crate::StandardItemData;
-/// `ItemList::Invalidate` at 0x905930 (semantic, medium); signature (untiered): `undefined Invalidate(longlong param_1, longlong param_2)`; marks the list stale and queues an inventory update for ref (medium); semantic signature: `void (ItemList* list, TESObjectREFR* ref)`
+/// `ItemList::Invalidate` at 0x905930 (semantic, medium); signature (untiered): `undefined Invalidate(longlong param_1, longlong param_2)`; semantic: marks the list stale and queues an inventory update for ref (medium); signature `void (ItemList* list, TESObjectREFR* ref)`
 pub const ItemList__Invalidate: u64 = 51031;
-/// `ItemSteal::GetEventSource` at 0x76ebb0 (semantic, medium); signature (untiered): `undefined8 * GetEventSource(void)`; the one source of ItemSteal::Event events (medium); semantic signature: `BSTEventSource<ItemSteal::Event>* ()`
+/// `ItemSteal::GetEventSource` at 0x76ebb0 (semantic, medium); signature (untiered): `undefined8 * GetEventSource(void)`; semantic: the one source of ItemSteal::Event events (medium); signature `BSTEventSource<ItemSteal::Event>* ()`
 pub const ItemSteal__GetEventSource: u64 = 41064;
-/// `ItemSteal::RegisterSink` at 0x73e150 (semantic, medium); signature (untiered): `undefined RegisterSink(undefined8 param_1)`; registers a ItemSteal::Event sink with the singleton source (medium); semantic signature: `void (BSTEventSink<ItemSteal::Event>* sink)`
+/// `ItemSteal::RegisterSink` at 0x73e150 (semantic, medium); signature (untiered): `undefined RegisterSink(undefined8 param_1)`; semantic: registers a ItemSteal::Event sink with the singleton source (medium); signature `void (BSTEventSink<ItemSteal::Event>* sink)`
 pub const ItemSteal__RegisterSink: u64 = 40374;
-/// `ItemSteal::UnregisterSink` at 0x73e180 (semantic, medium); signature (untiered): `undefined UnregisterSink(undefined8 param_1)`; unregisters a ItemSteal::Event sink with the singleton source (medium); semantic signature: `void (BSTEventSink<ItemSteal::Event>* sink)`
+/// `ItemSteal::UnregisterSink` at 0x73e180 (semantic, medium); signature (untiered): `undefined UnregisterSink(undefined8 param_1)`; semantic: unregisters a ItemSteal::Event sink with the singleton source (medium); signature `void (BSTEventSink<ItemSteal::Event>* sink)`
 pub const ItemSteal__UnregisterSink: u64 = 40375;
-/// `ItemsPickpocketed::GetEventSource` at 0x915710 (semantic, medium); signature (untiered): `undefined8 * GetEventSource(void)`; the one source of ItemsPickpocketed::Event events (medium); semantic signature: `BSTEventSource<ItemsPickpocketed::Event>* ()`
+/// `ItemsPickpocketed::GetEventSource` at 0x915710 (semantic, medium); signature (untiered): `undefined8 * GetEventSource(void)`; semantic: the one source of ItemsPickpocketed::Event events (medium); signature `BSTEventSource<ItemsPickpocketed::Event>* ()`
 pub const ItemsPickpocketed__GetEventSource: u64 = 51183;
-/// `ItemsPickpocketed::RegisterSink` at 0x90fbd0 (semantic, medium); signature (untiered): `undefined RegisterSink(undefined8 param_1)`; registers a ItemsPickpocketed::Event sink with the singleton source (medium); semantic signature: `void (BSTEventSink<ItemsPickpocketed::Event>* sink)`
+/// `ItemsPickpocketed::RegisterSink` at 0x90fbd0 (semantic, medium); signature (untiered): `undefined RegisterSink(undefined8 param_1)`; semantic: registers a ItemsPickpocketed::Event sink with the singleton source (medium); signature `void (BSTEventSink<ItemsPickpocketed::Event>* sink)`
 pub const ItemsPickpocketed__RegisterSink: u64 = 51122;
-/// `ItemsPickpocketed::UnregisterSink` at 0x90fc00 (semantic, medium); signature (untiered): `undefined UnregisterSink(undefined8 param_1)`; unregisters a ItemsPickpocketed::Event sink with the singleton source (medium); semantic signature: `void (BSTEventSink<ItemsPickpocketed::Event>* sink)`
+/// `ItemsPickpocketed::UnregisterSink` at 0x90fc00 (semantic, medium); signature (untiered): `undefined UnregisterSink(undefined8 param_1)`; semantic: unregisters a ItemsPickpocketed::Event sink with the singleton source (medium); signature `void (BSTEventSink<ItemsPickpocketed::Event>* sink)`
 pub const ItemsPickpocketed__UnregisterSink: u64 = 51123;
 /// `JacobiDiagonalizeMatrix3` at 0xaab710 (decompiler, medium); signature (untiered): `bool JacobiDiagonalizeMatrix3(float * param_1, undefined8 * param_2, undefined1[16] * param_3, int param_4, float param_5)`
 pub const JacobiDiagonalizeMatrix3: u64 = 57393;
-/// `JailEscape::GetEventSource` at 0x76eca0 (semantic, medium); signature (untiered): `undefined8 * GetEventSource(void)`; the one source of JailEscape::Event events (medium); semantic signature: `BSTEventSource<JailEscape::Event>* ()`
+/// `JailEscape::GetEventSource` at 0x76eca0 (semantic, medium); signature (untiered): `undefined8 * GetEventSource(void)`; semantic: the one source of JailEscape::Event events (medium); signature `BSTEventSource<JailEscape::Event>* ()`
 pub const JailEscape__GetEventSource: u64 = 41065;
-/// `JailEscape::RegisterSink` at 0x73e360 (semantic, medium); signature (untiered): `undefined RegisterSink(undefined8 param_1)`; registers a JailEscape::Event sink with the singleton source (medium); semantic signature: `void (BSTEventSink<JailEscape::Event>* sink)`
+/// `JailEscape::RegisterSink` at 0x73e360 (semantic, medium); signature (untiered): `undefined RegisterSink(undefined8 param_1)`; semantic: registers a JailEscape::Event sink with the singleton source (medium); signature `void (BSTEventSink<JailEscape::Event>* sink)`
 pub const JailEscape__RegisterSink: u64 = 40385;
-/// `JailEscape::UnregisterSink` at 0x73e390 (semantic, medium); signature (untiered): `undefined UnregisterSink(undefined8 param_1)`; unregisters a JailEscape::Event sink with the singleton source (medium); semantic signature: `void (BSTEventSink<JailEscape::Event>* sink)`
+/// `JailEscape::UnregisterSink` at 0x73e390 (semantic, medium); signature (untiered): `undefined UnregisterSink(undefined8 param_1)`; semantic: unregisters a JailEscape::Event sink with the singleton source (medium); signature `void (BSTEventSink<JailEscape::Event>* sink)`
 pub const JailEscape__UnregisterSink: u64 = 40386;
-/// `Jailing::GetEventSource` at 0x76ed90 (semantic, medium); signature (untiered): `undefined8 * GetEventSource(void)`; the one source of Jailing::Event events (medium); semantic signature: `BSTEventSource<Jailing::Event>* ()`
+/// `Jailing::GetEventSource` at 0x76ed90 (semantic, medium); signature (untiered): `undefined8 * GetEventSource(void)`; semantic: the one source of Jailing::Event events (medium); signature `BSTEventSource<Jailing::Event>* ()`
 pub const Jailing__GetEventSource: u64 = 41066;
-/// `Jailing::RegisterSink` at 0x73e300 (semantic, medium); signature (untiered): `undefined RegisterSink(undefined8 param_1)`; registers a Jailing::Event sink with the singleton source (medium); semantic signature: `void (BSTEventSink<Jailing::Event>* sink)`
+/// `Jailing::RegisterSink` at 0x73e300 (semantic, medium); signature (untiered): `undefined RegisterSink(undefined8 param_1)`; semantic: registers a Jailing::Event sink with the singleton source (medium); signature `void (BSTEventSink<Jailing::Event>* sink)`
 pub const Jailing__RegisterSink: u64 = 40383;
-/// `Jailing::UnregisterSink` at 0x73e330 (semantic, medium); signature (untiered): `undefined UnregisterSink(undefined8 param_1)`; unregisters a Jailing::Event sink with the singleton source (medium); semantic signature: `void (BSTEventSink<Jailing::Event>* sink)`
+/// `Jailing::UnregisterSink` at 0x73e330 (semantic, medium); signature (untiered): `undefined UnregisterSink(undefined8 param_1)`; semantic: unregisters a Jailing::Event sink with the singleton source (medium); signature `void (BSTEventSink<Jailing::Event>* sink)`
 pub const Jailing__UnregisterSink: u64 = 40384;
-/// `JobListManager::ServingThread::Run` at 0x60f1e0 (semantic, high); signature (untiered): `undefined8 Run(ServingThread * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`; game update thread: per frame waits its start event, runs the 7 segment job lists in order (start, wait completion event, call the segment's end callback), signals done (high); semantic signature: `u64 (ServingThread* this)`
+/// `JobListManager::ServingThread::Run` at 0x60f1e0 (semantic, high); signature (untiered): `undefined8 Run(ServingThread * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`; semantic: game update thread: per frame waits its start event, runs the 7 segment job lists in order (start, wait completion event, call the segment's end callback), signals done (high); signature `u64 (ServingThread* this)`
 pub const JobListManager__ServingThread__Run: u64 = 35423;
 /// `JobListManager::ServingThread::Run` as a function pointer type (high).
 pub type JobListManager__ServingThread__Run_fn = unsafe extern "C" fn(this: *mut c_void) -> u64;
@@ -1339,21 +1339,21 @@ pub const JobListManager__ServingThread__vfunc_1_sub1: u64 = 39046;
 pub const JobListManager__ServingThread__vfunc_1_sub2: u64 = 39076;
 /// `JobListManager::ServingThread::vfunc_1_sub3` at 0x6e6200 (runtime, medium); signature (untiered): `undefined vfunc_1_sub3(void)`
 pub const JobListManager__ServingThread__vfunc_1_sub3: u64 = 39094;
-/// `Job_ActorAnimation` at 0x6e5170 (semantic, high); signature (untiered): `undefined Job_ActorAnimation(void)`; job 'Actor animation': fills job list 5 (DynamicActorAnim) with one job per high actor, runs it, waits, signals job-side phase 7 (high); semantic signature: `void ()`
+/// `Job_ActorAnimation` at 0x6e5170 (semantic, high); signature (untiered): `undefined Job_ActorAnimation(void)`; semantic: job 'Actor animation': fills job list 5 (DynamicActorAnim) with one job per high actor, runs it, waits, signals job-side phase 7 (high); signature `void ()`
 pub const Job_ActorAnimation: u64 = 39054;
 /// `Job_ActorAnimation` as a function pointer type (high).
 pub type Job_ActorAnimation_fn = unsafe extern "C" fn();
-/// `Job_AnimatedCellObjectUpdate` at 0x6e6310 (semantic, medium); signature (untiered): `undefined Job_AnimatedCellObjectUpdate(void)`; segment 'Main render end': per cell child node job 0x66c180 calls slot 49 (0x188, transforms and bound) with flags 0x2000: the world transforms of NPC skeletons (medium); semantic signature: `void ()`
+/// `Job_AnimatedCellObjectUpdate` at 0x6e6310 (semantic, medium); signature (untiered): `undefined Job_AnimatedCellObjectUpdate(void)`; semantic: segment 'Main render end': per cell child node job 0x66c180 calls slot 49 (0x188, transforms and bound) with flags 0x2000: the world transforms of NPC skeletons (medium); signature `void ()`
 pub const Job_AnimatedCellObjectUpdate: u64 = 39100;
 /// `Job_GarbageCollector` at 0x6e59c0 (decompiler, medium); signature (untiered): `undefined Job_GarbageCollector(void)`
 pub const Job_GarbageCollector: u64 = 39077;
 /// `Job_NavMeshObstacleManagerUpdate` at 0x6e5ab0 (decompiler, medium); signature (untiered): `undefined Job_NavMeshObstacleManagerUpdate(undefined8 param_1, undefined8 param_2, longlong * * param_3, undefined1 * param_4)`
 pub const Job_NavMeshObstacleManagerUpdate: u64 = 39079;
-/// `Job_NonRenderSafeAI` at 0x6e5db0 (semantic, high); signature (untiered): `undefined Job_NonRenderSafeAI(void)`; first job of segment 'Main render end': NPC per-actor jobs (job list 9), then the player's node update (high); semantic signature: `void ()`
+/// `Job_NonRenderSafeAI` at 0x6e5db0 (semantic, high); signature (untiered): `undefined Job_NonRenderSafeAI(void)`; semantic: first job of segment 'Main render end': NPC per-actor jobs (job list 9), then the player's node update (high); signature `void ()`
 pub const Job_NonRenderSafeAI: u64 = 39089;
 /// `Job_NonRenderSafeAI` as a function pointer type (high).
 pub type Job_NonRenderSafeAI_fn = unsafe extern "C" fn();
-/// `Job_PlayerAnimation` at 0x6e5280 (runtime, high); signature (untiered): `undefined Job_PlayerAnimation(void)`; job 'Player animation' of segment 'Main prepare render': resets graph channel flags, then updates the player's animation (high); semantic signature: `void ()`
+/// `Job_PlayerAnimation` at 0x6e5280 (runtime, high); signature (untiered): `undefined Job_PlayerAnimation(void)`; semantic: job 'Player animation' of segment 'Main prepare render': resets graph channel flags, then updates the player's animation (high); signature `void ()`
 pub const Job_PlayerAnimation: u64 = 39055;
 /// `Job_PlayerAnimation` as a function pointer type (high).
 pub type Job_PlayerAnimation_fn = unsafe extern "C" fn();
@@ -1361,11 +1361,11 @@ pub type Job_PlayerAnimation_fn = unsafe extern "C" fn();
 pub const Job_ProcessHandleList30: u64 = 39050;
 /// `Job_SkyrimVMUpdate` at 0x6e57d0 (decompiler, medium); signature (untiered): `undefined Job_SkyrimVMUpdate(undefined8 param_1, undefined8 param_2, ulonglong * param_3, IFunctionArguments * param_4)`
 pub const Job_SkyrimVMUpdate: u64 = 39074;
-/// `Job_UI` at 0x6e4e80 (semantic, high); signature (untiered): `undefined Job_UI(undefined8 param_1, undefined8 param_2, undefined8 param_3, longlong * param_4)`; the job named 'UI' of segment 'Main render scene': unless the game is suspended for a load, ProcessMessages + AdvanceMenus + RunQueuedScriptCalls on the UI-thread-safe script call queue; then SignalFramePhase(2) (high); semantic signature: `void ()`
+/// `Job_UI` at 0x6e4e80 (semantic, high); signature (untiered): `undefined Job_UI(undefined8 param_1, undefined8 param_2, undefined8 param_3, longlong * param_4)`; semantic: the job named 'UI' of segment 'Main render scene': unless the game is suspended for a load, ProcessMessages + AdvanceMenus + RunQueuedScriptCalls on the UI-thread-safe script call queue; then SignalFramePhase(2) (high); signature `void ()`
 pub const Job_UI: u64 = 39042;
 /// `Job_UI` as a function pointer type (high).
 pub type Job_UI_fn = unsafe extern "C" fn();
-/// `Job_UpdateActorAnimation` at 0x7898e0 (semantic, high); signature (untiered): `undefined Job_UpdateActorAnimation(uint param_1, undefined8 param_2, ulonglong param_3, TypeDescriptor * param_4)`; per-actor animation job: collision transforms, reference anim bookkeeping, graph update with the VATS-scaled delta, knock state (high); semantic signature: `void (u32 actorHandle)`
+/// `Job_UpdateActorAnimation` at 0x7898e0 (semantic, high); signature (untiered): `undefined Job_UpdateActorAnimation(uint param_1, undefined8 param_2, ulonglong param_3, TypeDescriptor * param_4)`; semantic: per-actor animation job: collision transforms, reference anim bookkeeping, graph update with the VATS-scaled delta, knock state (high); signature `void (u32 actorHandle)`
 pub const Job_UpdateActorAnimation: u64 = 41453;
 /// `Job_UpdateActorAnimation` as a function pointer type (high).
 pub type Job_UpdateActorAnimation_fn = unsafe extern "C" fn(actorHandle: u32);
@@ -1385,7 +1385,7 @@ pub const JournalInputMapping__RemapHandler__vfunc_1: u64 = 524028;
 pub const JournalMenu__BSTEventSink_BSSystemEvent_vdtor: u64 = 53338;
 /// `JournalMenu::BSTEventSink_BSSystemEvent_vfunc_1` at 0x9ad160 (rtti, high); signature (low): `undefined8 BSTEventSink_BSSystemEvent_vfunc_1(JournalMenu * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
 pub const JournalMenu__BSTEventSink_BSSystemEvent_vfunc_1: u64 = 53331;
-/// `JournalMenu::CloseTweenAndResetCamera` at 0x9885a0 (semantic, high); signature (untiered): `undefined CloseTweenAndResetCamera(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`; releases the UI blur image space, hides the TweenMenu, PlayerCamera::PopTweenMenu and ResetFOVToDefaults (high); semantic signature: `void ()`
+/// `JournalMenu::CloseTweenAndResetCamera` at 0x9885a0 (semantic, high); signature (untiered): `undefined CloseTweenAndResetCamera(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`; semantic: releases the UI blur image space, hides the TweenMenu, PlayerCamera::PopTweenMenu and ResetFOVToDefaults (high); signature `void ()`
 pub const JournalMenu__CloseTweenAndResetCamera: u64 = 52713;
 /// `JournalMenu::CloseTweenAndResetCamera` as a function pointer type (high).
 pub type JournalMenu__CloseTweenAndResetCamera_fn = unsafe extern "C" fn();
@@ -1395,7 +1395,7 @@ pub const JournalMenu__MenuEventHandler_vdtor: u64 = 53337;
 pub const JournalMenu__MenuEventHandler_vfunc_1: u64 = 53325;
 /// `JournalMenu::MenuEventHandler_vfunc_5` at 0x9acd90 (rtti, high); signature (low): `undefined8 MenuEventHandler_vfunc_5(JournalMenu * this, longlong param_1)`
 pub const JournalMenu__MenuEventHandler_vfunc_5: u64 = 53326;
-/// `JournalMenu::PostDisplay` at 0x9ac480 (semantic, high); signature (untiered): `undefined PostDisplay(JournalMenu * this)`; JournalMenu's slot 6: the movie view's display (+0x10 -> vtable +0x130), then when menu flags (+0x1c) bit 7 is set UI3DScene::Render(g_UI3DScene, 0, null, false) (high); semantic signature: `void (JournalMenu* this)`
+/// `JournalMenu::PostDisplay` at 0x9ac480 (semantic, high); signature (untiered): `undefined PostDisplay(JournalMenu * this)`; semantic: JournalMenu's slot 6: the movie view's display (+0x10 -> vtable +0x130), then when menu flags (+0x1c) bit 7 is set UI3DScene::Render(g_UI3DScene, 0, null, false) (high); signature `void (JournalMenu* this)`
 pub const JournalMenu__PostDisplay: u64 = 53317;
 /// `JournalMenu::PostDisplay` as a function pointer type (high).
 pub type JournalMenu__PostDisplay_fn = unsafe extern "C" fn(this: *mut crate::JournalMenu);
@@ -1421,7 +1421,7 @@ pub const JournalMenu__vfunc_4_sub0: u64 = 53262;
 pub const JournalMenu__vfunc_4_sub1: u64 = 53263;
 /// `JournalMenu::vfunc_5` at 0x9ac440 (rtti, high); signature (low): `undefined vfunc_5(JournalMenu * this, undefined4 param_2, uint param_3)`
 pub const JournalMenu__vfunc_5: u64 = 53316;
-/// `JournalRemapHandler::ProcessEvent` at 0x9a8af0 (semantic, high); signature (untiered): `undefined8 ProcessEvent(longlong param_1, longlong * param_2)`; while the System tab waits for a key: first event, a ButtonEvent press on keyboard/mouse (or gamepad when active) -> RemapUserEvent(name, device, idCode); returns 0. Suppression of the key comes from MenuControls+0x82 and PlayerControls+0x50, set when this sink is added (0x9a8620) and cleared when removed (0x9a8330) (high); semantic signature: `BSEventNotifyControl (void* this, InputEvent* const* head, ...)`
+/// `JournalRemapHandler::ProcessEvent` at 0x9a8af0 (semantic, high); signature (untiered): `undefined8 ProcessEvent(longlong param_1, longlong * param_2)`; semantic: while the System tab waits for a key: first event, a ButtonEvent press on keyboard/mouse (or gamepad when active) -> RemapUserEvent(name, device, idCode); returns 0. Suppression of the key comes from MenuControls+0x82 and PlayerControls+0x50, set when this sink is added (0x9a8620) and cleared when removed (0x9a8330) (high); signature `BSEventNotifyControl (void* this, InputEvent* const* head, ...)`
 pub const JournalRemapHandler__ProcessEvent: u64 = 524031;
 /// `JournalTab::dtor` at 0x9a30c0 (layout_inference, high); signature (high): `undefined dtor(JournalTab * this)`
 pub const JournalTab__dtor: u64 = 53182;
@@ -1473,7 +1473,7 @@ pub const Journal_SystemTab__BSTEventSink_BSSaveDataEvent_vdtor: u64 = 53283;
 pub const Journal_SystemTab__BSTEventSink_BSSaveDataEvent_vfunc_1: u64 = 53278;
 /// `Journal_SystemTab::BSTEventSink_BSSaveDataEvent_vfunc_1_sub0` at 0x6233b0 (callgraph, medium); signature (untiered): `undefined BSTEventSink_BSSaveDataEvent_vfunc_1_sub0(longlong param_1, undefined1 param_2)`
 pub const Journal_SystemTab__BSTEventSink_BSSaveDataEvent_vfunc_1_sub0: u64 = 442572;
-/// `Journal_SystemTab::OnOptionChanged` at 0x9ab260 (semantic, high); signature (untiered): `undefined OnOptionChanged(longlong param_1, char * param_2, undefined8 param_3, IMAGE_DOS_HEADER * param_4)`; the settings menu's change callback: ids 0..0x1b are fixed options (0x1b master volume: audio manager +0x170 and command 0x10 via 0xcd0db0, plus the AudioMasterVolume setting); any other id is a form id, and an SNCT form gets SetCategoryVolume(&p with p = form+0x30, (float)value) (high); semantic signature: `void (FxDelegateArgs* args)`
+/// `Journal_SystemTab::OnOptionChanged` at 0x9ab260 (semantic, high); signature (untiered): `undefined OnOptionChanged(longlong param_1, char * param_2, undefined8 param_3, IMAGE_DOS_HEADER * param_4)`; semantic: the settings menu's change callback: ids 0..0x1b are fixed options (0x1b master volume: audio manager +0x170 and command 0x10 via 0xcd0db0, plus the AudioMasterVolume setting); any other id is a form id, and an SNCT form gets SetCategoryVolume(&p with p = form+0x30, (float)value) (high); signature `void (FxDelegateArgs* args)`
 pub const Journal_SystemTab__OnOptionChanged: u64 = 53310;
 /// `Journal_SystemTab::OnOptionChanged` as a function pointer type (high).
 pub type Journal_SystemTab__OnOptionChanged_fn = unsafe extern "C" fn(args: *mut c_void);
@@ -1613,7 +1613,7 @@ pub const JumpHandler__vfunc_6_sub1: u64 = 40711;
 pub const KeywordDispelFunctor__vdtor: u64 = 34595;
 /// `KeywordDispelFunctor::vfunc_1` at 0x5d4570 (rtti, high); signature (low): `undefined8 vfunc_1(KeywordDispelFunctor * this, longlong param_1)`
 pub const KeywordDispelFunctor__vfunc_1: u64 = 34580;
-/// `KickServingThreadFrame` at 0x60eaf0 (runtime, high); signature (untiered): `undefined KickServingThreadFrame(void)`; main loop: resets the 13 dynamic job lists and starts the serving thread's frame (mode 1) (high); semantic signature: `void ()`
+/// `KickServingThreadFrame` at 0x60eaf0 (runtime, high); signature (untiered): `undefined KickServingThreadFrame(void)`; semantic: main loop: resets the 13 dynamic job lists and starts the serving thread's frame (mode 1) (high); signature `void ()`
 pub const KickServingThreadFrame: u64 = 35408;
 /// `KickServingThreadFrame` as a function pointer type (high).
 pub type KickServingThreadFrame_fn = unsafe extern "C" fn();
@@ -1677,7 +1677,7 @@ pub const LargestAreaFunctor__vfunc_1: u64 = 11363;
 pub const LatchField38FromField338Once: u64 = 452014;
 /// `LaunchProjectileAtTarget` at 0x64c1d0 (decompiler, medium); signature (untiered): `undefined LaunchProjectileAtTarget(longlong param_1, undefined8 param_2, undefined8 param_3, BeamProjectile * * param_4)`
 pub const LaunchProjectileAtTarget: u64 = 36419;
-/// `LaunchProjectileFromCaster` at 0x5ce8b0 (semantic, high); signature (untiered): `undefined8 LaunchProjectileFromCaster(longlong * param_1, longlong param_2, longlong param_3, BeamProjectile * * param_4, float * param_5, uint param_6, uint param_7, uint param_8, longlong param_9)`; builds a Projectile::LaunchData (origin = *origin, +0x48/+0x4c = angleZ/angleX, +0x90 = area, +0x70 = caster->currentSpell (+0x28), +0x78 = caster slot 21 (+0xa8), +0x20/+0x28/+0x30 = projectile/shooter/combatController, cell = shooter's or the flying-mount world cell, VATS target, dual-cast power, hitRecord +0x30 -> +0x14) and calls CreateProjectileByType at +0x354; then VATS follow and the hit record's impact; always returns true (high); semantic signature: `bool (MagicCaster* caster, BGSProjectile* projectile, TESObjectREFR* shooter, CombatController* combatController, const NiPoint3* origin, float angleZ, float angleX, u32 area, const void* hitRecord)`
+/// `LaunchProjectileFromCaster` at 0x5ce8b0 (semantic, high); signature (untiered): `undefined8 LaunchProjectileFromCaster(longlong * param_1, longlong param_2, longlong param_3, BeamProjectile * * param_4, float * param_5, uint param_6, uint param_7, uint param_8, longlong param_9)`; semantic: builds a Projectile::LaunchData (origin = *origin, +0x48/+0x4c = angleZ/angleX, +0x90 = area, +0x70 = caster->currentSpell (+0x28), +0x78 = caster slot 21 (+0xa8), +0x20/+0x28/+0x30 = projectile/shooter/combatController, cell = shooter's or the flying-mount world cell, VATS target, dual-cast power, hitRecord +0x30 -> +0x14) and calls CreateProjectileByType at +0x354; then VATS follow and the hit record's impact; always returns true (high); signature `bool (MagicCaster* caster, BGSProjectile* projectile, TESObjectREFR* shooter, CombatController* combatController, const NiPoint3* origin, float angleZ, float angleX, u32 area, const void* hitRecord)`
 pub const LaunchProjectileFromCaster: u64 = 34452;
 /// `LaunchProjectileFromCaster` as a function pointer type (high).
 pub type LaunchProjectileFromCaster_fn = unsafe extern "C" fn(caster: *mut crate::MagicCaster, projectile: *mut crate::BGSProjectile, shooter: *mut crate::TESObjectREFR, combatController: *mut c_void, origin: *const crate::NiPoint3, angleZ: f32, angleX: f32, area: u32, hitRecord: *const c_void) -> bool;
@@ -1721,11 +1721,11 @@ pub const LessBySharedPtrField18: u64 = 505863;
 pub const LessBySharedPtrField18_2: u64 = 524481;
 /// `LessBySharedPtrField18_3` at 0x127a680 (decompiler, medium); signature (medium): `bool LessBySharedPtrField18_3(undefined8 param_1, longlong * param_2, longlong * param_3)`
 pub const LessBySharedPtrField18_3: u64 = 505882;
-/// `LevelIncrease::GetEventSource` at 0x73b800 (semantic, medium); signature (untiered): `undefined8 * GetEventSource(void)`; the one source of LevelIncrease::Event events (medium); semantic signature: `BSTEventSource<LevelIncrease::Event>* ()`
+/// `LevelIncrease::GetEventSource` at 0x73b800 (semantic, medium); signature (untiered): `undefined8 * GetEventSource(void)`; semantic: the one source of LevelIncrease::Event events (medium); signature `BSTEventSource<LevelIncrease::Event>* ()`
 pub const LevelIncrease__GetEventSource: u64 = 40319;
-/// `LevelIncrease::RegisterSink` at 0x73af80 (semantic, medium); signature (untiered): `undefined RegisterSink(undefined8 param_1)`; registers a LevelIncrease::Event sink with the singleton source (medium); semantic signature: `void (BSTEventSink<LevelIncrease::Event>* sink)`
+/// `LevelIncrease::RegisterSink` at 0x73af80 (semantic, medium); signature (untiered): `undefined RegisterSink(undefined8 param_1)`; semantic: registers a LevelIncrease::Event sink with the singleton source (medium); signature `void (BSTEventSink<LevelIncrease::Event>* sink)`
 pub const LevelIncrease__RegisterSink: u64 = 40304;
-/// `LevelIncrease::UnregisterSink` at 0x73afb0 (semantic, medium); signature (untiered): `undefined UnregisterSink(undefined8 param_1)`; unregisters a LevelIncrease::Event sink with the singleton source (medium); semantic signature: `void (BSTEventSink<LevelIncrease::Event>* sink)`
+/// `LevelIncrease::UnregisterSink` at 0x73afb0 (semantic, medium); signature (untiered): `undefined UnregisterSink(undefined8 param_1)`; semantic: unregisters a LevelIncrease::Event sink with the singleton source (medium); signature `void (BSTEventSink<LevelIncrease::Event>* sink)`
 pub const LevelIncrease__UnregisterSink: u64 = 40305;
 /// `LevelUpMenu::ctor` at 0x94a920 (layout_inference, high); signature (high): `LevelUpMenu * ctor(LevelUpMenu * this)`
 pub const LevelUpMenu__ctor: u64 = 51908;
@@ -1841,7 +1841,7 @@ pub const LoadAnimationGraphState: u64 = 32881;
 pub const LoadArchivesFromListAndPluginsTxt: u64 = 69237;
 /// `LoadAttackDataChunk` at 0x44a1c0 (decompiler, medium); signature (untiered): `undefined LoadAttackDataChunk(longlong param_1, undefined8 param_2, longlong param_3, undefined8 param_4)`
 pub const LoadAttackDataChunk: u64 = 27404;
-/// `LoadAudioGlobalData` at 0x5e9d80 (semantic, high); signature (untiered): `undefined LoadAudioGlobalData(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`; stops/releases handle 0x20b4bd0, reads the descriptor; for save version > 0x2d reloads scripted music types (0x5ea150, re-sends add events, drops types with flags bit 0) and the player music changer (high); semantic signature: `void (BGSLoadFormBuffer* buf)`
+/// `LoadAudioGlobalData` at 0x5e9d80 (semantic, high); signature (untiered): `undefined LoadAudioGlobalData(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`; semantic: stops/releases handle 0x20b4bd0, reads the descriptor; for save version > 0x2d reloads scripted music types (0x5ea150, re-sends add events, drops types with flags bit 0) and the player music changer (high); signature `void (BGSLoadFormBuffer* buf)`
 pub const LoadAudioGlobalData: u64 = 35142;
 /// `LoadAudioGlobalData` as a function pointer type (high).
 pub type LoadAudioGlobalData_fn = unsafe extern "C" fn(buf: *mut crate::BGSLoadFormBuffer);
@@ -2007,7 +2007,7 @@ pub const LoadGameUnrecognizedContentCallBack__dtor: u64 = 442590;
 pub const LoadGameUnrecognizedContentCallBack__vdtor: u64 = 442601;
 /// `LoadGameUnrecognizedContentCallBack::vfunc_1` at 0x62d810 (rtti, high); signature (low): `undefined vfunc_1(LoadGameUnrecognizedContentCallBack * this, undefined8 param_1, undefined8 param_2, ulonglong param_3)`
 pub const LoadGameUnrecognizedContentCallBack__vfunc_1: u64 = 442596;
-/// `LoadGlobalData` at 0x61c2f0 (semantic, high); signature (untiered): `undefined8 LoadGlobalData(uint param_1, ulonglong * param_2, undefined8 param_3, TypeDescriptor * param_4)`; global data reader switch (high); semantic signature: `bool (GlobalDataType type, BGSLoadGameBuffer* buf)`
+/// `LoadGlobalData` at 0x61c2f0 (semantic, high); signature (untiered): `undefined8 LoadGlobalData(uint param_1, ulonglong * param_2, undefined8 param_3, TypeDescriptor * param_4)`; semantic: global data reader switch (high); signature `bool (GlobalDataType type, BGSLoadGameBuffer* buf)`
 pub const LoadGlobalData: u64 = 35642;
 /// `LoadGlobalData` as a function pointer type (high).
 pub type LoadGlobalData_fn = unsafe extern "C" fn(type_: u32, buf: *mut crate::BGSLoadGameBuffer) -> bool;
@@ -2265,7 +2265,7 @@ pub const LoadRefStringEntries: u64 = 32788;
 pub const LoadResourceFromFile: u64 = 84469;
 /// `LoadResponseTableFromFile` at 0x7c7370 (decompiler, medium); signature (untiered): `uint LoadResponseTableFromFile(undefined8 * param_1, undefined8 param_2, undefined8 * param_3)`
 pub const LoadResponseTableFromFile: u64 = 42790;
-/// `LoadSaveEntry` at 0x614660 (semantic, high); signature (untiered): `undefined LoadSaveEntry(undefined8 * param_1)`; RequestLoad(mgr, entry->name, entry+0x60, 0, false) (high); semantic signature: `void (Entry*)`
+/// `LoadSaveEntry` at 0x614660 (semantic, high); signature (untiered): `undefined LoadSaveEntry(undefined8 * param_1)`; semantic: RequestLoad(mgr, entry->name, entry+0x60, 0, false) (high); signature `void (Entry*)`
 pub const LoadSaveEntry: u64 = 35534;
 /// `LoadSaveEntry` as a function pointer type (high).
 pub type LoadSaveEntry_fn = unsafe extern "C" fn(a0: *mut c_void);
@@ -2489,7 +2489,7 @@ pub const LoadedAreaBound__ctor_sub0: u64 = 25961;
 pub const LoadedAreaBound__dtor: u64 = 25945;
 /// `LoadedAreaBound::vdtor` at 0x403440 (slot_propagation, medium); signature (low): `LoadedAreaBound * vdtor(LoadedAreaBound * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const LoadedAreaBound__vdtor: u64 = 25970;
-/// `LoadingMenu::Create` at 0x94cc20 (semantic, high); signature (untiered): `void Create(void)`; menu creator registered under 'Loading Menu' (ctor inlined except ContainerMenu) (high); semantic signature: `IMenu* ()`
+/// `LoadingMenu::Create` at 0x94cc20 (semantic, high); signature (untiered): `void Create(void)`; semantic: menu creator registered under 'Loading Menu' (ctor inlined except ContainerMenu) (high); signature `IMenu* ()`
 pub const LoadingMenu__Create: u64 = 51943;
 /// `LoadingMenu::Create` as a function pointer type (high).
 pub type LoadingMenu__Create_fn = unsafe extern "C" fn() -> *mut crate::IMenu;
@@ -2519,35 +2519,35 @@ pub const LocalMapCamera__DefaultState__Destroy: u64 = 16345;
 pub const LocalMapCamera__DefaultState__Update: u64 = 16337;
 /// `LocalMapCamera::Destroy` at 0x249f90 (semantic, high); signature (untiered): `LocalMapCamera * Destroy(LocalMapCamera * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const LocalMapCamera__Destroy: u64 = 16346;
-/// `LocalMapCamera::SetAreaBounds` at 0x248230 (runtime, high); signature (untiered): `undefined SetAreaBounds(longlong param_1, undefined4 * param_2, undefined4 * param_3)`; boundMax = upper with z + fMapLocalHeight, boundMin = lower (high); semantic signature: `void (LocalMapCamera* this, const NiPoint3* upper, const NiPoint3* lower)`
+/// `LocalMapCamera::SetAreaBounds` at 0x248230 (runtime, high); signature (untiered): `undefined SetAreaBounds(longlong param_1, undefined4 * param_2, undefined4 * param_3)`; semantic: boundMax = upper with z + fMapLocalHeight, boundMin = lower (high); signature `void (LocalMapCamera* this, const NiPoint3* upper, const NiPoint3* lower)`
 pub const LocalMapCamera__SetAreaBounds: u64 = 16331;
 /// `LocalMapCamera::SetAreaBounds` as a function pointer type (high).
 pub type LocalMapCamera__SetAreaBounds_fn = unsafe extern "C" fn(this: *mut crate::LocalMapCamera, upper: *const crate::NiPoint3, lower: *const crate::NiPoint3);
-/// `LocalMapCamera::SetCenter` at 0x248100 (semantic, high); signature (untiered): `undefined SetCenter(longlong param_1, undefined4 * param_2)`; defaultState->center = (x, y, z + fMapLocalHeight) (high); semantic signature: `void (LocalMapCamera* this, const NiPoint3* point)`
+/// `LocalMapCamera::SetCenter` at 0x248100 (semantic, high); signature (untiered): `undefined SetCenter(longlong param_1, undefined4 * param_2)`; semantic: defaultState->center = (x, y, z + fMapLocalHeight) (high); signature `void (LocalMapCamera* this, const NiPoint3* point)`
 pub const LocalMapCamera__SetCenter: u64 = 16328;
 /// `LocalMapCamera::SetCenter` as a function pointer type (high).
 pub type LocalMapCamera__SetCenter_fn = unsafe extern "C" fn(this: *mut crate::LocalMapCamera, point: *const crate::NiPoint3);
-/// `LocalMapCamera::SetNorthRotation` at 0x248170 (semantic, high); signature (untiered): `undefined SetNorthRotation(longlong param_1, uint param_2)`; northRotation = angle; root local rotation from SinCos(angle); UpdateNode (high); semantic signature: `void (LocalMapCamera* this, float angle)`
+/// `LocalMapCamera::SetNorthRotation` at 0x248170 (semantic, high); signature (untiered): `undefined SetNorthRotation(longlong param_1, uint param_2)`; semantic: northRotation = angle; root local rotation from SinCos(angle); UpdateNode (high); signature `void (LocalMapCamera* this, float angle)`
 pub const LocalMapCamera__SetNorthRotation: u64 = 16330;
 /// `LocalMapCamera::SetNorthRotation` as a function pointer type (high).
 pub type LocalMapCamera__SetNorthRotation_fn = unsafe extern "C" fn(this: *mut crate::LocalMapCamera, angle: f32);
-/// `LocalMapCamera::SetOffsetToPoint` at 0x248130 (semantic, high); signature (untiered): `undefined SetOffsetToPoint(longlong param_1, float * param_2)`; defaultState->panOffset = point - center (high); semantic signature: `void (LocalMapCamera* this, const NiPoint3* point)`
+/// `LocalMapCamera::SetOffsetToPoint` at 0x248130 (semantic, high); signature (untiered): `undefined SetOffsetToPoint(longlong param_1, float * param_2)`; semantic: defaultState->panOffset = point - center (high); signature `void (LocalMapCamera* this, const NiPoint3* point)`
 pub const LocalMapCamera__SetOffsetToPoint: u64 = 16329;
 /// `LocalMapCamera::SetOffsetToPoint` as a function pointer type (high).
 pub type LocalMapCamera__SetOffsetToPoint_fn = unsafe extern "C" fn(this: *mut crate::LocalMapCamera, point: *const crate::NiPoint3);
-/// `LocalMapCamera::SetViewSize` at 0x248270 (semantic, high); signature (untiered): `undefined SetViewSize(longlong param_1, float param_2, float param_3)`; defaultState minHalfWidth = width/2, minHalfHeight = height/2 (high); semantic signature: `void (LocalMapCamera* this, float width, float height)`
+/// `LocalMapCamera::SetViewSize` at 0x248270 (semantic, high); signature (untiered): `undefined SetViewSize(longlong param_1, float param_2, float param_3)`; semantic: defaultState minHalfWidth = width/2, minHalfHeight = height/2 (high); signature `void (LocalMapCamera* this, float width, float height)`
 pub const LocalMapCamera__SetViewSize: u64 = 16332;
 /// `LocalMapCamera::SetViewSize` as a function pointer type (high).
 pub type LocalMapCamera__SetViewSize_fn = unsafe extern "C" fn(this: *mut crate::LocalMapCamera, width: f32, height: f32);
-/// `LocalMapCamera::ctor` at 0x247d20 (layout_inference, high); signature (low): `LocalMapCamera * ctor(LocalMapCamera * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`; builds the local map camera: zero bounds, NiCamera at +0x58 attached to a new NiNode root, root rotation from northRotation (0), DefaultState (id 0) made current (high); semantic signature: `LocalMapCamera* (LocalMapCamera* this)`
+/// `LocalMapCamera::ctor` at 0x247d20 (layout_inference, high); signature (low): `LocalMapCamera * ctor(LocalMapCamera * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`; semantic: builds the local map camera: zero bounds, NiCamera at +0x58 attached to a new NiNode root, root rotation from northRotation (0), DefaultState (id 0) made current (high); signature `LocalMapCamera* (LocalMapCamera* this)`
 pub const LocalMapCamera__ctor: u64 = 16325;
 /// `LocalMapCamera::ctor` as a function pointer type (high).
 pub type LocalMapCamera__ctor_fn = unsafe extern "C" fn(this: *mut crate::LocalMapCamera) -> *mut crate::LocalMapCamera;
-/// `LocalMapCamera::dtor` at 0x248060 (layout_inference, high); signature (low): `undefined dtor(LocalMapCamera * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`; releases camera and defaultState, TESCamera::dtor (high); semantic signature: `void (LocalMapCamera* this)`
+/// `LocalMapCamera::dtor` at 0x248060 (layout_inference, high); signature (low): `undefined dtor(LocalMapCamera * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`; semantic: releases camera and defaultState, TESCamera::dtor (high); signature `void (LocalMapCamera* this)`
 pub const LocalMapCamera__dtor: u64 = 16326;
 /// `LocalMapCamera::dtor` as a function pointer type (high).
 pub type LocalMapCamera__dtor_fn = unsafe extern "C" fn(this: *mut crate::LocalMapCamera);
-/// `LocalMapMenu::InputHandler::ProcessButtonEvent` at 0x994a30 (semantic, high); signature (untiered): `undefined8 ProcessButtonEvent(InputHandler * this, longlong * param_1)`; 'Zoom In'/'Zoom Out': zoom input of the local map camera (owner+0x302a0, TESCamera+0x1c) += value * fMapLocalMouseZoomSpeed (mouse) or fMapLocalGamepadZoomSpeed (gamepad):MapMenu, negated for Zoom Out; 'LocalMapMoveMode': owner+0x303fd = 1 on a press with the cursor (address-library id 403551, +4 x, +8 y) inside the map rectangle (owner+0x30..+0x3c), 0 on release (high); semantic signature: `bool (LocalMapMenu::InputHandler* this, ButtonEvent* event)`
+/// `LocalMapMenu::InputHandler::ProcessButtonEvent` at 0x994a30 (semantic, high); signature (untiered): `undefined8 ProcessButtonEvent(InputHandler * this, longlong * param_1)`; semantic: 'Zoom In'/'Zoom Out': zoom input of the local map camera (owner+0x302a0, TESCamera+0x1c) += value * fMapLocalMouseZoomSpeed (mouse) or fMapLocalGamepadZoomSpeed (gamepad):MapMenu, negated for Zoom Out; 'LocalMapMoveMode': owner+0x303fd = 1 on a press with the cursor (address-library id 403551, +4 x, +8 y) inside the map rectangle (owner+0x30..+0x3c), 0 on release (high); signature `bool (LocalMapMenu::InputHandler* this, ButtonEvent* event)`
 pub const LocalMapMenu__InputHandler__ProcessButtonEvent: u64 = 52978;
 /// `LocalMapMenu::InputHandler::ProcessButtonEvent` as a function pointer type (high).
 pub type LocalMapMenu__InputHandler__ProcessButtonEvent_fn = unsafe extern "C" fn(this: *mut crate::LocalMapMenu__InputHandler, event: *mut crate::ButtonEvent) -> bool;
@@ -2559,17 +2559,17 @@ pub const LocalMapMenu__InputHandler__vfunc_1: u64 = 52976;
 pub const LocalMapMenu__InputHandler__vfunc_5: u64 = 52977;
 /// `LocalMapMenu::InputHandler::vfunc_6` at 0x994bd0 (rtti, high); signature (low): `undefined8 vfunc_6(InputHandler * this, longlong param_1)`
 pub const LocalMapMenu__InputHandler__vfunc_6: u64 = 52979;
-/// `LocationCleared::GetEventSource` at 0x29d2a0 (semantic, medium); signature (untiered): `undefined8 * GetEventSource(void)`; the one source of LocationCleared::Event events (medium); semantic signature: `BSTEventSource<LocationCleared::Event>* ()`
+/// `LocationCleared::GetEventSource` at 0x29d2a0 (semantic, medium); signature (untiered): `undefined8 * GetEventSource(void)`; semantic: the one source of LocationCleared::Event events (medium); signature `BSTEventSource<LocationCleared::Event>* ()`
 pub const LocationCleared__GetEventSource: u64 = 18435;
-/// `LocationCleared::RegisterSink` at 0x298090 (semantic, medium); signature (untiered): `undefined RegisterSink(undefined8 param_1)`; registers a LocationCleared::Event sink with the singleton source (medium); semantic signature: `void (BSTEventSink<LocationCleared::Event>* sink)`
+/// `LocationCleared::RegisterSink` at 0x298090 (semantic, medium); signature (untiered): `undefined RegisterSink(undefined8 param_1)`; semantic: registers a LocationCleared::Event sink with the singleton source (medium); signature `void (BSTEventSink<LocationCleared::Event>* sink)`
 pub const LocationCleared__RegisterSink: u64 = 18348;
-/// `LocationCleared::UnregisterSink` at 0x2980c0 (semantic, medium); signature (untiered): `undefined UnregisterSink(undefined8 param_1)`; unregisters a LocationCleared::Event sink with the singleton source (medium); semantic signature: `void (BSTEventSink<LocationCleared::Event>* sink)`
+/// `LocationCleared::UnregisterSink` at 0x2980c0 (semantic, medium); signature (untiered): `undefined UnregisterSink(undefined8 param_1)`; semantic: unregisters a LocationCleared::Event sink with the singleton source (medium); signature `void (BSTEventSink<LocationCleared::Event>* sink)`
 pub const LocationCleared__UnregisterSink: u64 = 18349;
-/// `LocationDiscovery::GetEventSource` at 0x76ee80 (semantic, medium); signature (untiered): `undefined8 * GetEventSource(void)`; the one source of LocationDiscovery::Event events (medium); semantic signature: `BSTEventSource<LocationDiscovery::Event>* ()`
+/// `LocationDiscovery::GetEventSource` at 0x76ee80 (semantic, medium); signature (untiered): `undefined8 * GetEventSource(void)`; semantic: the one source of LocationDiscovery::Event events (medium); signature `BSTEventSource<LocationDiscovery::Event>* ()`
 pub const LocationDiscovery__GetEventSource: u64 = 41067;
-/// `LocationDiscovery::RegisterSink` at 0x73e1e0 (semantic, medium); signature (untiered): `undefined RegisterSink(undefined8 param_1)`; registers a LocationDiscovery::Event sink with the singleton source (medium); semantic signature: `void (BSTEventSink<LocationDiscovery::Event>* sink)`
+/// `LocationDiscovery::RegisterSink` at 0x73e1e0 (semantic, medium); signature (untiered): `undefined RegisterSink(undefined8 param_1)`; semantic: registers a LocationDiscovery::Event sink with the singleton source (medium); signature `void (BSTEventSink<LocationDiscovery::Event>* sink)`
 pub const LocationDiscovery__RegisterSink: u64 = 40377;
-/// `LocationDiscovery::UnregisterSink` at 0x73e210 (semantic, medium); signature (untiered): `undefined UnregisterSink(undefined8 param_1)`; unregisters a LocationDiscovery::Event sink with the singleton source (medium); semantic signature: `void (BSTEventSink<LocationDiscovery::Event>* sink)`
+/// `LocationDiscovery::UnregisterSink` at 0x73e210 (semantic, medium); signature (untiered): `undefined UnregisterSink(undefined8 param_1)`; semantic: unregisters a LocationDiscovery::Event sink with the singleton source (medium); signature `void (BSTEventSink<LocationDiscovery::Event>* sink)`
 pub const LocationDiscovery__UnregisterSink: u64 = 40378;
 /// `LockAndCoalesceFreeBlocks` at 0xce57b0 (decompiler, medium); signature (medium): `undefined LockAndCoalesceFreeBlocks(longlong param_1)`
 pub const LockAndCoalesceFreeBlocks: u64 = 68303;
@@ -2659,11 +2659,11 @@ pub const LockpickingMenu__vfunc_4_sub2: u64 = 51968;
 pub const LockpickingMenu__vfunc_6: u64 = 51951;
 /// `LockpickingMenu::vfunc_8` at 0x94d630 (rtti, high); signature (untiered): `undefined vfunc_8(LockpickingMenu * this, undefined8 param_1, longlong param_2, undefined * param_3)`
 pub const LockpickingMenu__vfunc_8: u64 = 524005;
-/// `LocksPicked::GetEventSource` at 0x950ba0 (semantic, medium); signature (untiered): `undefined8 * GetEventSource(void)`; the one source of LocksPicked::Event events (medium); semantic signature: `BSTEventSource<LocksPicked::Event>* ()`
+/// `LocksPicked::GetEventSource` at 0x950ba0 (semantic, medium); signature (untiered): `undefined8 * GetEventSource(void)`; semantic: the one source of LocksPicked::Event events (medium); signature `BSTEventSource<LocksPicked::Event>* ()`
 pub const LocksPicked__GetEventSource: u64 = 51997;
-/// `LocksPicked::RegisterSink` at 0x94cdc0 (semantic, medium); signature (untiered): `undefined RegisterSink(undefined8 param_1)`; registers a LocksPicked::Event sink with the singleton source (medium); semantic signature: `void (BSTEventSink<LocksPicked::Event>* sink)`
+/// `LocksPicked::RegisterSink` at 0x94cdc0 (semantic, medium); signature (untiered): `undefined RegisterSink(undefined8 param_1)`; semantic: registers a LocksPicked::Event sink with the singleton source (medium); signature `void (BSTEventSink<LocksPicked::Event>* sink)`
 pub const LocksPicked__RegisterSink: u64 = 51946;
-/// `LocksPicked::UnregisterSink` at 0x94cdf0 (semantic, medium); signature (untiered): `undefined UnregisterSink(undefined8 param_1)`; unregisters a LocksPicked::Event sink with the singleton source (medium); semantic signature: `void (BSTEventSink<LocksPicked::Event>* sink)`
+/// `LocksPicked::UnregisterSink` at 0x94cdf0 (semantic, medium); signature (untiered): `undefined UnregisterSink(undefined8 param_1)`; semantic: unregisters a LocksPicked::Event sink with the singleton source (medium); signature `void (BSTEventSink<LocksPicked::Event>* sink)`
 pub const LocksPicked__UnregisterSink: u64 = 51947;
 /// `LogBDKNetworkMessage` at 0x12f8170 (decompiler, medium); signature (untiered): `undefined LogBDKNetworkMessage(undefined4 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const LogBDKNetworkMessage: u64 = 446928;
@@ -2787,7 +2787,7 @@ pub const LookupAudioStatusField18: u64 = 67702;
 pub const LookupByFixedString: u64 = 14295;
 /// `LookupCachedMeshByPath` at 0xfc93d0 (decompiler, medium); signature (untiered): `undefined1 * LookupCachedMeshByPath(char * param_1, undefined8 * param_2)`
 pub const LookupCachedMeshByPath: u64 = 75783;
-/// `LookupCommandByName` at 0x34be50 (runtime, high); signature (untiered): `ulonglong LookupCommandByName(char * param_1)`; linear _stricmp of the token against name and short name of the 16 keywords (0x207e590), then the 737 script functions (0x207ea90..), then the 449 console commands (0x208d130..); on a hit sets token+0x204 = 'X' and token+0x208 = opcode (high); semantic signature: `bool (ScriptToken* token)`
+/// `LookupCommandByName` at 0x34be50 (runtime, high); signature (untiered): `ulonglong LookupCommandByName(char * param_1)`; semantic: linear _stricmp of the token against name and short name of the 16 keywords (0x207e590), then the 737 script functions (0x207ea90..), then the 449 console commands (0x208d130..); on a hit sets token+0x204 = 'X' and token+0x208 = opcode (high); signature `bool (ScriptToken* token)`
 pub const LookupCommandByName: u64 = 21973;
 /// `LookupCommandByName` as a function pointer type (high).
 pub type LookupCommandByName_fn = unsafe extern "C" fn(token: *mut c_void) -> bool;
@@ -2863,7 +2863,7 @@ pub const LookupMap330ValueByKeyField14: u64 = 35579;
 pub const LookupMappedStringOrKey: u64 = 445169;
 /// `LookupNamedNodeD8` at 0x7215e0 (decompiler, medium); signature (untiered): `undefined8 LookupNamedNodeD8(longlong param_1, longlong * param_2)`
 pub const LookupNamedNodeD8: u64 = 39833;
-/// `LookupNamedObject` at 0xfddac0 (semantic, medium); signature (untiered): `undefined8 LookupNamedObject(longlong * param_1, ulonglong * param_2, char param_3)`; the game's non-virtual named lookup: empty name -> null; null when root carries a particular extra data (key 0x332e3e0, BSBoneMap related) whose check passes; searchTree -> root->GetObjectByName (slot 42); otherwise only BSFlattenedBoneTree's own lookup (medium); semantic signature: `NiAVObject* (NiAVObject* root, const BSFixedString* name, bool searchTree)`
+/// `LookupNamedObject` at 0xfddac0 (semantic, medium); signature (untiered): `undefined8 LookupNamedObject(longlong * param_1, ulonglong * param_2, char param_3)`; semantic: the game's non-virtual named lookup: empty name -> null; null when root carries a particular extra data (key 0x332e3e0, BSBoneMap related) whose check passes; searchTree -> root->GetObjectByName (slot 42); otherwise only BSFlattenedBoneTree's own lookup (medium); signature `NiAVObject* (NiAVObject* root, const BSFixedString* name, bool searchTree)`
 pub const LookupNamedObject: u64 = 76207;
 /// `LookupNamedObjectByCString` at 0x736190 (decompiler, high); signature (untiered): `undefined8 LookupNamedObjectByCString(undefined8 param_1, longlong * param_2, char * param_3)`
 pub const LookupNamedObjectByCString: u64 = 40152;
@@ -2897,7 +2897,7 @@ pub const LookupRefPtrByU16InMapE8: u64 = 91166;
 pub const LookupSignedByteTable381692: u64 = 41278;
 /// `LookupSlotByHandle` at 0xea4380 (decompiler, high); signature (untiered): `char * LookupSlotByHandle(int param_1, undefined8 * param_2, char param_3)`
 pub const LookupSlotByHandle: u64 = 68864;
-/// `LookupSoundDescriptorByEditorId` at 0x559a70 (semantic, high); signature (untiered): `longlong * LookupSoundDescriptorByEditorId(void)`; editor-id map lookup: TESSound (type 0x0f) -> its +0x30 after its slot 0x98; BGSSoundDescriptorForm (0x80) -> itself (high); semantic signature: `BGSSoundDescriptorForm* (const char* editorId)`
+/// `LookupSoundDescriptorByEditorId` at 0x559a70 (semantic, high); signature (untiered): `longlong * LookupSoundDescriptorByEditorId(void)`; semantic: editor-id map lookup: TESSound (type 0x0f) -> its +0x30 after its slot 0x98; BGSSoundDescriptorForm (0x80) -> itself (high); signature `BGSSoundDescriptorForm* (const char* editorId)`
 pub const LookupSoundDescriptorByEditorId: u64 = 33044;
 /// `LookupSoundDescriptorByEditorId` as a function pointer type (high).
 pub type LookupSoundDescriptorByEditorId_fn = unsafe extern "C" fn(editorId: *const c_char) -> *mut crate::BGSSoundDescriptorForm;
@@ -3187,11 +3187,11 @@ pub const MagicItemTraversalFunctor__dtor_15: u64 = 44943;
 pub const MagicItemTraversalFunctor__dtor_16: u64 = 51904;
 /// `MagicItemTraversalFunctor::vdtor` at 0x1527c0 (layout_inference, medium); signature (low): `MagicItemTraversalFunctor * vdtor(MagicItemTraversalFunctor * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const MagicItemTraversalFunctor__vdtor: u64 = 11383;
-/// `MagicMenu::CloseTweenMenuCallback` at 0x953410 (semantic, high); signature (untiered): `undefined CloseTweenMenuCallback(void)`; the 'CloseTweenMenu' callback of the MagicMenu: PlayerCamera::BeginCloseTweenMenu and hide the TweenMenu (high); semantic signature: `void (const FxDelegateArgs* args)`
+/// `MagicMenu::CloseTweenMenuCallback` at 0x953410 (semantic, high); signature (untiered): `undefined CloseTweenMenuCallback(void)`; semantic: the 'CloseTweenMenu' callback of the MagicMenu: PlayerCamera::BeginCloseTweenMenu and hide the TweenMenu (high); signature `void (const FxDelegateArgs* args)`
 pub const MagicMenu__CloseTweenMenuCallback: u64 = 52035;
 /// `MagicMenu::CloseTweenMenuCallback` as a function pointer type (high).
 pub type MagicMenu__CloseTweenMenuCallback_fn = unsafe extern "C" fn(args: *const c_void);
-/// `MagicMenu::Create` at 0x956a60 (semantic, high); signature (untiered): `void Create(void)`; menu creator registered under 'MagicMenu' (ctor inlined except ContainerMenu) (high); semantic signature: `IMenu* ()`
+/// `MagicMenu::Create` at 0x956a60 (semantic, high); signature (untiered): `void Create(void)`; semantic: menu creator registered under 'MagicMenu' (ctor inlined except ContainerMenu) (high); signature `IMenu* ()`
 pub const MagicMenu__Create: u64 = 52087;
 /// `MagicMenu::Create` as a function pointer type (high).
 pub type MagicMenu__Create_fn = unsafe extern "C" fn() -> *mut crate::IMenu;
@@ -3331,19 +3331,19 @@ pub const Main__BSTEventSink_BSGamerProfileEvent_vdtor: u64 = 36728;
 pub const Main__BSTEventSink_BSGamerProfileEvent_vfunc_1: u64 = 36624;
 /// `Main::BSTEventSink_BSGamerProfileEvent_vfunc_1_sub0` at 0xcfac50 (callgraph, medium); signature (untiered): `undefined2 BSTEventSink_BSGamerProfileEvent_vfunc_1_sub0(longlong param_1)`
 pub const Main__BSTEventSink_BSGamerProfileEvent_vfunc_1_sub0: u64 = 68663;
-/// `Main::Update` at 0x658870 (semantic, high); signature (untiered): `undefined Update(longlong * param_1, undefined8 param_2, TESObjectCELL_vtbl * param_3, TESObjectCELL * param_4)`; The main thread's per-frame step: save/load requests, file caching, scene and calendar time, the player update, process and world updates, VM and input when unpaused, LOD fade multipliers, grid update, frame phase signals, world FOV, main culler setup, UI messages, RenderFrame, audio, script queues and the task queue. (high); semantic signature: `void (Main* this)`
+/// `Main::Update` at 0x658870 (semantic, high); signature (untiered): `undefined Update(longlong * param_1, undefined8 param_2, TESObjectCELL_vtbl * param_3, TESObjectCELL * param_4)`; semantic: The main thread's per-frame step: save/load requests, file caching, scene and calendar time, the player update, process and world updates, VM and input when unpaused, LOD fade multipliers, grid update, frame phase signals, world FOV, main culler setup, UI messages, RenderFrame, audio, script queues and the task queue. (high); signature `void (Main* this)`
 pub const Main__Update: u64 = 36564;
 /// `Main::Update` as a function pointer type (high).
 pub type Main__Update_fn = unsafe extern "C" fn(this: *mut crate::Main);
-/// `Main::UpdatePlayer` at 0x659ea0 (runtime, high); signature (untiered): `undefined UpdatePlayer(longlong param_1, undefined8 param_2, ulonglong param_3, TypeDescriptor * param_4)`; free camera current (cameraStates[3]): UpdateActorWithCamera(player, g_FrameDelta, Main+0x16) when the player has 3D; else unless paused (0x32303b3): player slot 173 (vtable +0x568) with g_FrameDelta * time scale, cell attach; paused: 0x743c10(player, camera) (high); semantic signature: `void (Main* this)`
+/// `Main::UpdatePlayer` at 0x659ea0 (runtime, high); signature (untiered): `undefined UpdatePlayer(longlong param_1, undefined8 param_2, ulonglong param_3, TypeDescriptor * param_4)`; semantic: free camera current (cameraStates[3]): UpdateActorWithCamera(player, g_FrameDelta, Main+0x16) when the player has 3D; else unless paused (0x32303b3): player slot 173 (vtable +0x568) with g_FrameDelta * time scale, cell attach; paused: 0x743c10(player, camera) (high); signature `void (Main* this)`
 pub const Main__UpdatePlayer: u64 = 36581;
 /// `Main::UpdatePlayer` as a function pointer type (high).
 pub type Main__UpdatePlayer_fn = unsafe extern "C" fn(this: *mut crate::Main);
-/// `Main::UpdateTimer` at 0x659d10 (semantic, high); signature (untiered): `undefined UpdateTimer(void)`; eases the time multiplier (0xce39d0), updates g_FrameTimer from QueryPerformanceCounter, hands the delta to havok (0x104ab70) (high); semantic signature: `void (void)`
+/// `Main::UpdateTimer` at 0x659d10 (semantic, high); signature (untiered): `undefined UpdateTimer(void)`; semantic: eases the time multiplier (0xce39d0), updates g_FrameTimer from QueryPerformanceCounter, hands the delta to havok (0x104ab70) (high); signature `void (void)`
 pub const Main__UpdateTimer: u64 = 36577;
 /// `Main::UpdateTimer` as a function pointer type (high).
 pub type Main__UpdateTimer_fn = unsafe extern "C" fn();
-/// `Main::ctor` at 0x6514e0 (semantic, high); signature (low): `Main * ctor(Main * this, undefined8 param_1, undefined8 param_2)`; constructs the 0x270-byte Main: stores the window (+0x18) and instance (+0x20), creates DirectInput from the instance, the main cullers and accumulators (g_MainCullers 0x34362a0 / 0x3436048), the scene lists and the camera FOV offset (high); semantic signature: `Main* (Main* this, HWND window, HINSTANCE instance)`
+/// `Main::ctor` at 0x6514e0 (semantic, high); signature (low): `Main * ctor(Main * this, undefined8 param_1, undefined8 param_2)`; semantic: constructs the 0x270-byte Main: stores the window (+0x18) and instance (+0x20), creates DirectInput from the instance, the main cullers and accumulators (g_MainCullers 0x34362a0 / 0x3436048), the scene lists and the camera FOV offset (high); signature `Main* (Main* this, HWND window, HINSTANCE instance)`
 pub const Main__ctor: u64 = 36545;
 /// `Main::ctor` as a function pointer type (high).
 pub type Main__ctor_fn = unsafe extern "C" fn(this: *mut crate::Main, window: *mut c_void, instance: *mut c_void) -> *mut crate::Main;
@@ -3357,11 +3357,11 @@ pub const Main__dtor_sub2: u64 = 69244;
 pub const Main__vdtor: u64 = 36740;
 /// `Main::vfunc_1` at 0x65cde0 (rtti, high); signature (low): `undefined8 vfunc_1(void)`
 pub const Main__vfunc_1: u64 = 36623;
-/// `MainCullingCamera::Destroy` at 0x661e60 (semantic, high); signature (untiered): `MainCullingCamera * Destroy(void * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`; clears the singleton pointer 0x32309c0 and frees 0x10 (high); semantic signature: `BSTreeManager::IQueryCullingCamera* (BSTreeManager::IQueryCullingCamera* this, u32 flags)`
+/// `MainCullingCamera::Destroy` at 0x661e60 (semantic, high); signature (untiered): `MainCullingCamera * Destroy(void * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`; semantic: clears the singleton pointer 0x32309c0 and frees 0x10 (high); signature `BSTreeManager::IQueryCullingCamera* (BSTreeManager::IQueryCullingCamera* this, u32 flags)`
 pub const MainCullingCamera__Destroy: u64 = 36741;
 /// `MainCullingCamera::Destroy` as a function pointer type (high).
 pub type MainCullingCamera__Destroy_fn = unsafe extern "C" fn(this: *mut crate::BSTreeManager__IQueryCullingCamera, flags: u32) -> *mut crate::BSTreeManager__IQueryCullingCamera;
-/// `MainCullingCamera::GetCamera` at 0x6629e0 (semantic, high); signature (untiered): `undefined8 GetCamera(void)`; returns g_SceneGraph+0x128, the frame camera: the tree LOD manager culls with the main camera (high); semantic signature: `NiCamera* (const BSTreeManager::IQueryCullingCamera* this)`
+/// `MainCullingCamera::GetCamera` at 0x6629e0 (semantic, high); signature (untiered): `undefined8 GetCamera(void)`; semantic: returns g_SceneGraph+0x128, the frame camera: the tree LOD manager culls with the main camera (high); signature `NiCamera* (const BSTreeManager::IQueryCullingCamera* this)`
 pub const MainCullingCamera__GetCamera: u64 = 36773;
 /// `MainCullingCamera::GetCamera` as a function pointer type (high).
 pub type MainCullingCamera__GetCamera_fn = unsafe extern "C" fn(this: *const crate::BSTreeManager__IQueryCullingCamera) -> *mut crate::NiCamera;
@@ -3373,7 +3373,7 @@ pub const MainMenu__BSTEventSink_BSSaveDataEvent_vfunc_1: u64 = 52112;
 pub const MainMenu__BSTEventSink_BSSystemEvent_vdtor: u64 = 52174;
 /// `MainMenu::BSTEventSink_BSSystemEvent_vfunc_1` at 0x958340 (rtti, high); signature (low): `undefined8 BSTEventSink_BSSystemEvent_vfunc_1(MainMenu * this, longlong param_1, ulonglong param_2, ulonglong param_3)`
 pub const MainMenu__BSTEventSink_BSSystemEvent_vfunc_1: u64 = 52111;
-/// `MainMenu::Create` at 0x95e790 (semantic, high); signature (untiered): `void Create(void)`; menu creator registered under 'Main Menu' (ctor inlined except ContainerMenu) (high); semantic signature: `IMenu* ()`
+/// `MainMenu::Create` at 0x95e790 (semantic, high); signature (untiered): `void Create(void)`; semantic: menu creator registered under 'Main Menu' (ctor inlined except ContainerMenu) (high); signature `IMenu* ()`
 pub const MainMenu__Create: u64 = 52183;
 /// `MainMenu::Create` as a function pointer type (high).
 pub type MainMenu__Create_fn = unsafe extern "C" fn() -> *mut crate::IMenu;
@@ -3391,7 +3391,7 @@ pub const MainMenu__GFxFunctionHandler_vfunc_1_sub1: u64 = 35429;
 pub const MainMenu__GFxFunctionHandler_vfunc_1_sub2: u64 = 524018;
 /// `MainMenu::OpenCreationClubMenu` at 0x959b90 (decompiler, high); signature (high): `undefined OpenCreationClubMenu(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const MainMenu__OpenCreationClubMenu: u64 = 442713;
-/// `MainMenu::StartNewGame` at 0x959160 (semantic, high); signature (untiered): `undefined StartNewGame(undefined8 param_1, undefined8 param_2, undefined8 param_3, TESObjectCELL * param_4)`; New: RunPostLoadGameInitOnce, FindFormByID(sscanf(sCharGenQuest)), TryStartQuest(quest, &started, true) at 0x9591b9 (S1 kind 7: rcx = TESQuest*), modded flag on the player, GenerateUniquePlayerID(mgr) (high); semantic signature: `void ()`
+/// `MainMenu::StartNewGame` at 0x959160 (semantic, high); signature (untiered): `undefined StartNewGame(undefined8 param_1, undefined8 param_2, undefined8 param_3, TESObjectCELL * param_4)`; semantic: New: RunPostLoadGameInitOnce, FindFormByID(sscanf(sCharGenQuest)), TryStartQuest(quest, &started, true) at 0x9591b9 (S1 kind 7: rcx = TESQuest*), modded flag on the player, GenerateUniquePlayerID(mgr) (high); signature `void ()`
 pub const MainMenu__StartNewGame: u64 = 52118;
 /// `MainMenu::StartNewGame` as a function pointer type (high).
 pub type MainMenu__StartNewGame_fn = unsafe extern "C" fn();
@@ -3447,7 +3447,7 @@ pub const MainMenu__vfunc_5_sub1: u64 = 442542;
 pub const MainMenu__vfunc_5_sub2: u64 = 35479;
 /// `MainMenu::vfunc_5_sub3` at 0x95e9b0 (runtime, medium); signature (untiered): `undefined vfunc_5_sub3(void)`
 pub const MainMenu__vfunc_5_sub3: u64 = 416420;
-/// `MainWindowProc` at 0x65f270 (semantic, high); signature (untiered): `LRESULT MainWindowProc(HWND param_1, uint param_2, WPARAM param_3, int * param_4)`; the game window's WNDPROC (ledger: Err_ThisApplicationCannotBeRunFrom_cb2): WM_ACTIVATE app activation, WM_NCACTIVATE, WM_SIZE/WM_WINDOWPOSCHANGED -> resize request and SetWindowPosition, WM_NCHITTEST, WM_DESTROY (high); semantic signature: `LRESULT (HWND hwnd, u32 msg, WPARAM wParam, LPARAM lParam)`
+/// `MainWindowProc` at 0x65f270 (semantic, high); signature (untiered): `LRESULT MainWindowProc(HWND param_1, uint param_2, WPARAM param_3, int * param_4)`; semantic: the game window's WNDPROC (ledger: Err_ThisApplicationCannotBeRunFrom_cb2): WM_ACTIVATE app activation, WM_NCACTIVATE, WM_SIZE/WM_WINDOWPOSCHANGED -> resize request and SetWindowPosition, WM_NCHITTEST, WM_DESTROY (high); signature `LRESULT (HWND hwnd, u32 msg, WPARAM wParam, LPARAM lParam)`
 pub const MainWindowProc: u64 = 36649;
 /// `MainWindowProc` as a function pointer type (high).
 pub type MainWindowProc_fn = unsafe extern "C" fn(hwnd: *mut c_void, msg: u32, wParam: usize, lParam: isize) -> isize;
@@ -3487,7 +3487,7 @@ pub const MakeLegalDocumentListRequestResponse: u64 = 419132;
 pub const MakeObjectVariableForTypeId0: u64 = 53835;
 /// `MakeObjectVariableForTypeId0x68` at 0x9d1ed0 (decompiler, medium); signature (untiered): `ulonglong * MakeObjectVariableForTypeId0x68(ulonglong * param_1, longlong param_2, longlong * param_3, undefined8 param_4)`
 pub const MakeObjectVariableForTypeId0x68: u64 = 53834;
-/// `MakePlaneFromNormalAndPoint` at 0xef74a0 (semantic, high); signature (high): `float * MakePlaneFromNormalAndPoint(float * param_1, float * param_2, float * param_3)`; out = {normal, dot(normal, point)}; returns out (high); semantic signature: `NiPlane* (NiPlane* out, const NiPoint3* normal, const NiPoint3* point)`
+/// `MakePlaneFromNormalAndPoint` at 0xef74a0 (semantic, high); signature (high): `float * MakePlaneFromNormalAndPoint(float * param_1, float * param_2, float * param_3)`; semantic: out = {normal, dot(normal, point)}; returns out (high); signature `NiPlane* (NiPlane* out, const NiPoint3* normal, const NiPoint3* point)`
 pub const MakePlaneFromNormalAndPoint: u64 = 70803;
 /// `MakePlaneFromNormalAndPoint` as a function pointer type (high).
 pub type MakePlaneFromNormalAndPoint_fn = unsafe extern "C" fn(out: *mut crate::NiPlane, normal: *const crate::NiPoint3, point: *const crate::NiPoint3) -> *mut crate::NiPlane;
@@ -3531,31 +3531,31 @@ pub const MapBitValueToTable389660Entry: u64 = 83291;
 pub const MapCamera__Destroy: u64 = 53030;
 /// `MapCamera::Enter` at 0x996740 (runtime, high); signature (untiered): `undefined Enter(MapCamera * this, longlong * param_1, float * param_2)`
 pub const MapCamera__Enter: u64 = 53015;
-/// `MapCamera::HideOrRestorePlayer3D` at 0x996b00 (semantic, high); signature (untiered): `undefined HideOrRestorePlayer3D(longlong param_1, char param_2)`; restore false: save the player's first-person 3D hidden bit to +0x88 and hide it; restore true: set the bit back from +0x88 (high); semantic signature: `void (MapCamera* this, bool restore)`
+/// `MapCamera::HideOrRestorePlayer3D` at 0x996b00 (semantic, high); signature (untiered): `undefined HideOrRestorePlayer3D(longlong param_1, char param_2)`; semantic: restore false: save the player's first-person 3D hidden bit to +0x88 and hide it; restore true: set the bit back from +0x88 (high); signature `void (MapCamera* this, bool restore)`
 pub const MapCamera__HideOrRestorePlayer3D: u64 = 53019;
 /// `MapCamera::HideOrRestorePlayer3D` as a function pointer type (high).
 pub type MapCamera__HideOrRestorePlayer3D_fn = unsafe extern "C" fn(this: *mut crate::MapCamera, restore: bool);
-/// `MapCamera::IsInWorldState` at 0x996a00 (semantic, high); signature (untiered): `undefined4 IsInWorldState(longlong param_1)`; currentState == worldStates[worldStateIndex] (high); semantic signature: `bool (const MapCamera* this)`
+/// `MapCamera::IsInWorldState` at 0x996a00 (semantic, high); signature (untiered): `undefined4 IsInWorldState(longlong param_1)`; semantic: currentState == worldStates[worldStateIndex] (high); signature `bool (const MapCamera* this)`
 pub const MapCamera__IsInWorldState: u64 = 53017;
 /// `MapCamera::IsInWorldState` as a function pointer type (high).
 pub type MapCamera__IsInWorldState_fn = unsafe extern "C" fn(this: *const crate::MapCamera) -> bool;
-/// `MapCamera::StartExitTransition` at 0x996a20 (semantic, high); signature (untiered): `undefined StartExitTransition(longlong param_1)`; transition mode 2, target Exit, duration fMapTransitionSpeed * 1000 ms, SetState(transition) (high); semantic signature: `void (MapCamera* this)`
+/// `MapCamera::StartExitTransition` at 0x996a20 (semantic, high); signature (untiered): `undefined StartExitTransition(longlong param_1)`; semantic: transition mode 2, target Exit, duration fMapTransitionSpeed * 1000 ms, SetState(transition) (high); signature `void (MapCamera* this)`
 pub const MapCamera__StartExitTransition: u64 = 53018;
 /// `MapCamera::StartExitTransition` as a function pointer type (high).
 pub type MapCamera__StartExitTransition_fn = unsafe extern "C" fn(this: *mut crate::MapCamera);
-/// `MapCamera::TransitionToAlternateWorldState` at 0x997010 (semantic, high); signature (untiered): `undefined TransitionToAlternateWorldState(longlong param_1, undefined8 param_2, float param_3)`; when in the World state: configure the other World state around position (notifyOnBegin cleared), transition mode 0 with duration * 1000 ms, SetState(transition), flip worldStateIndex (high); semantic signature: `void (MapCamera* this, const NiPoint3* position, float durationSeconds)`
+/// `MapCamera::TransitionToAlternateWorldState` at 0x997010 (semantic, high); signature (untiered): `undefined TransitionToAlternateWorldState(longlong param_1, undefined8 param_2, float param_3)`; semantic: when in the World state: configure the other World state around position (notifyOnBegin cleared), transition mode 0 with duration * 1000 ms, SetState(transition), flip worldStateIndex (high); signature `void (MapCamera* this, const NiPoint3* position, float durationSeconds)`
 pub const MapCamera__TransitionToAlternateWorldState: u64 = 53022;
 /// `MapCamera::TransitionToAlternateWorldState` as a function pointer type (high).
 pub type MapCamera__TransitionToAlternateWorldState_fn = unsafe extern "C" fn(this: *mut crate::MapCamera, position: *const crate::NiPoint3, durationSeconds: f32);
-/// `MapCamera::ctor` at 0x996170 (layout_inference, high); signature (high): `MapCamera * ctor(MapCamera * this)`; MapCamera with the NullMapCameraCallbacks singleton (high); semantic signature: `MapCamera* (MapCamera* this)`
+/// `MapCamera::ctor` at 0x996170 (layout_inference, high); signature (high): `MapCamera * ctor(MapCamera * this)`; semantic: MapCamera with the NullMapCameraCallbacks singleton (high); signature `MapCamera* (MapCamera* this)`
 pub const MapCamera__ctor: u64 = 53011;
 /// `MapCamera::ctor` as a function pointer type (high).
 pub type MapCamera__ctor_fn = unsafe extern "C" fn(this: *mut crate::MapCamera) -> *mut crate::MapCamera;
-/// `MapCamera::ctor` at 0x9962b0 (layout_inference, high); signature (low): `MapCamera * ctor(MapCamera * this, undefined8 param_1)`; MapCamera with the given callbacks (high); semantic signature: `MapCamera* (MapCamera* this, IMapCameraCallbacks* callbacks)`
+/// `MapCamera::ctor` at 0x9962b0 (layout_inference, high); signature (low): `MapCamera * ctor(MapCamera * this, undefined8 param_1)`; semantic: MapCamera with the given callbacks (high); signature `MapCamera* (MapCamera* this, IMapCameraCallbacks* callbacks)`
 pub const MapCamera__ctor_2: u64 = 53012;
 /// `MapCamera::ctor` as a function pointer type (high).
 pub type MapCamera__ctor_2_fn = unsafe extern "C" fn(this: *mut crate::MapCamera, callbacks: *mut crate::IMapCameraCallbacks) -> *mut crate::MapCamera;
-/// `MapCamera::dtor` at 0x9966a0 (layout_inference, high); signature (low): `undefined dtor(MapCamera * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`; releases transition and exit, destroys worldStates, TESCamera::dtor (high); semantic signature: `void (MapCamera* this)`
+/// `MapCamera::dtor` at 0x9966a0 (layout_inference, high); signature (low): `undefined dtor(MapCamera * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`; semantic: releases transition and exit, destroys worldStates, TESCamera::dtor (high); signature `void (MapCamera* this)`
 pub const MapCamera__dtor: u64 = 53014;
 /// `MapCamera::dtor` as a function pointer type (high).
 pub type MapCamera__dtor_fn = unsafe extern "C" fn(this: *mut crate::MapCamera);
@@ -3577,7 +3577,7 @@ pub const MapCameraStates__Transition__Destroy: u64 = 53032;
 pub const MapCameraStates__Transition__Update: u64 = 53050;
 /// `MapCameraStates::World::Begin` at 0x997f50 (semantic, high); signature (untiered): `undefined Begin(World * this)`
 pub const MapCameraStates__World__Begin: u64 = 53044;
-/// `MapCameraStates::World::ComputeOffsetToBoundsPolygon` at 0x998580 (semantic, high); signature (untiered): `undefined ComputeOffsetToBoundsPolygon(longlong param_1, float * param_2, float * param_3)`; zero when point is inside the polygon (or no polygon), else the vector to the nearest point on the nearest edge (high); semantic signature: `void (const MapCameraStates::World* this, NiPoint2* outOffset, const NiPoint2* point)`
+/// `MapCameraStates::World::ComputeOffsetToBoundsPolygon` at 0x998580 (semantic, high); signature (untiered): `undefined ComputeOffsetToBoundsPolygon(longlong param_1, float * param_2, float * param_3)`; semantic: zero when point is inside the polygon (or no polygon), else the vector to the nearest point on the nearest edge (high); signature `void (const MapCameraStates::World* this, NiPoint2* outOffset, const NiPoint2* point)`
 pub const MapCameraStates__World__ComputeOffsetToBoundsPolygon: u64 = 53048;
 /// `MapCameraStates::World::ComputeOffsetToBoundsPolygon` as a function pointer type (high).
 pub type MapCameraStates__World__ComputeOffsetToBoundsPolygon_fn = unsafe extern "C" fn(this: *const crate::MapCameraStates__World, outOffset: *mut crate::NiPoint2, point: *const crate::NiPoint2);
@@ -3587,25 +3587,25 @@ pub const MapCameraStates__World__Destroy: u64 = 53055;
 pub const MapCameraStates__World__GetRotation: u64 = 53041;
 /// `MapCameraStates::World::GetTranslation` at 0x9979e0 (semantic, high); signature (untiered): `undefined GetTranslation(World * this, float * param_1)`
 pub const MapCameraStates__World__GetTranslation: u64 = 53042;
-/// `MapCameraStates::World::ResetPositionAndOffsetVectors` at 0x9984b0 (semantic, high); signature (untiered): `undefined ResetPositionAndOffsetVectors(longlong param_1)`; zeroes the four vectors and yaw/pitch, zoom 0.25, field_5c 0, terrainHeight 0 (high); semantic signature: `void (MapCameraStates::World* this)`
+/// `MapCameraStates::World::ResetPositionAndOffsetVectors` at 0x9984b0 (semantic, high); signature (untiered): `undefined ResetPositionAndOffsetVectors(longlong param_1)`; semantic: zeroes the four vectors and yaw/pitch, zoom 0.25, field_5c 0, terrainHeight 0 (high); signature `void (MapCameraStates::World* this)`
 pub const MapCameraStates__World__ResetPositionAndOffsetVectors: u64 = 53047;
 /// `MapCameraStates::World::ResetPositionAndOffsetVectors` as a function pointer type (high).
 pub type MapCameraStates__World__ResetPositionAndOffsetVectors_fn = unsafe extern "C" fn(this: *mut crate::MapCameraStates__World);
-/// `MapCameraStates::World::SetPositionAndBounds` at 0x998060 (semantic, high); signature (untiered): `undefined SetPositionAndBounds(longlong param_1, undefined4 * param_2, undefined8 param_3, undefined8 param_4)`; Reset, basePosition = position; from the map data: bounds polygon of the cell rectangle, heightOffset.z = min height, zoomAxis.z = max - min, panOffset.y for the default pitch; push into the polygon; pick terrainHeight (high); semantic signature: `void (MapCameraStates::World* this, const NiPoint3* position)`
+/// `MapCameraStates::World::SetPositionAndBounds` at 0x998060 (semantic, high); signature (untiered): `undefined SetPositionAndBounds(longlong param_1, undefined4 * param_2, undefined8 param_3, undefined8 param_4)`; semantic: Reset, basePosition = position; from the map data: bounds polygon of the cell rectangle, heightOffset.z = min height, zoomAxis.z = max - min, panOffset.y for the default pitch; push into the polygon; pick terrainHeight (high); signature `void (MapCameraStates::World* this, const NiPoint3* position)`
 pub const MapCameraStates__World__SetPositionAndBounds: u64 = 53045;
 /// `MapCameraStates::World::SetPositionAndBounds` as a function pointer type (high).
 pub type MapCameraStates__World__SetPositionAndBounds_fn = unsafe extern "C" fn(this: *mut crate::MapCameraStates__World, position: *const crate::NiPoint3);
 /// `MapCameraStates::World::Update` at 0x997a50 (runtime, high); signature (untiered): `undefined Update(World * this)`
 pub const MapCameraStates__World__Update: u64 = 53043;
-/// `MapCameraStates::World::UpdateHeightAtClampedPosition` at 0x998410 (semantic, high); signature (untiered): `undefined UpdateHeightAtClampedPosition(longlong param_1)`; terrainHeight = PickTerrainHeightAt(basePosition.xy + panOffset.xy pushed into the polygon) (high); semantic signature: `void (MapCameraStates::World* this)`
+/// `MapCameraStates::World::UpdateHeightAtClampedPosition` at 0x998410 (semantic, high); signature (untiered): `undefined UpdateHeightAtClampedPosition(longlong param_1)`; semantic: terrainHeight = PickTerrainHeightAt(basePosition.xy + panOffset.xy pushed into the polygon) (high); signature `void (MapCameraStates::World* this)`
 pub const MapCameraStates__World__UpdateHeightAtClampedPosition: u64 = 53046;
 /// `MapCameraStates::World::UpdateHeightAtClampedPosition` as a function pointer type (high).
 pub type MapCameraStates__World__UpdateHeightAtClampedPosition_fn = unsafe extern "C" fn(this: *mut crate::MapCameraStates__World);
-/// `MapCameraStates::World::ctor` at 0x997600 (semantic, high); signature (low): `World * ctor(World * this, undefined8 param_1)`; id 0, camera, vectors zeroed, boundsPolygon null, notifyOnBegin 1, Reset (high); semantic signature: `MapCameraStates::World* (MapCameraStates::World* this, MapCamera* camera)`
+/// `MapCameraStates::World::ctor` at 0x997600 (semantic, high); signature (low): `World * ctor(World * this, undefined8 param_1)`; semantic: id 0, camera, vectors zeroed, boundsPolygon null, notifyOnBegin 1, Reset (high); signature `MapCameraStates::World* (MapCameraStates::World* this, MapCamera* camera)`
 pub const MapCameraStates__World__ctor: u64 = 53038;
 /// `MapCameraStates::World::ctor` as a function pointer type (high).
 pub type MapCameraStates__World__ctor_fn = unsafe extern "C" fn(this: *mut crate::MapCameraStates__World, camera: *mut crate::MapCamera) -> *mut crate::MapCameraStates__World;
-/// `MapCameraStates::World::dtor` at 0x997660 (layout_inference, high); signature (low): `undefined dtor(World * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`; frees boundsPolygon (high); semantic signature: `void (MapCameraStates::World* this)`
+/// `MapCameraStates::World::dtor` at 0x997660 (layout_inference, high); signature (low): `undefined dtor(World * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`; semantic: frees boundsPolygon (high); signature `void (MapCameraStates::World* this)`
 pub const MapCameraStates__World__dtor: u64 = 53039;
 /// `MapCameraStates::World::dtor` as a function pointer type (high).
 pub type MapCameraStates__World__dtor_fn = unsafe extern "C" fn(this: *mut crate::MapCameraStates__World);
@@ -3629,7 +3629,7 @@ pub const MapLookHandler__vfunc_5: u64 = 53064;
 pub const MapLookHandler__vfunc_6: u64 = 53063;
 /// `MapLookHandler::vfunc_7` at 0x998c10 (rtti, high); signature (low): `undefined8 vfunc_7(MapLookHandler * this, longlong * param_1)`
 pub const MapLookHandler__vfunc_7: u64 = 53062;
-/// `MapMenu::AdvanceMovie` at 0x99bd30 (semantic, high); signature (untiered): `undefined AdvanceMovie(MapMenu * this, float param_1, float * param_2, char * param_3)`; IMenu slot 5. While the map camera has no root (the first frame): near override fMapMenuNearClipPlane (128), far override kFarDistanceWithLOD, SetFieldOfView(fDefaultFOV, force), MapCamera::Enter(scene graph child 0, map position). Every frame: UpdateMapCamera 0x9969f0 unless the Console menu is open, markers, pending pick (high); semantic signature: `void (MapMenu* this, float interval, u32 currentTimeMs)`
+/// `MapMenu::AdvanceMovie` at 0x99bd30 (semantic, high); signature (untiered): `undefined AdvanceMovie(MapMenu * this, float param_1, float * param_2, char * param_3)`; semantic: IMenu slot 5. While the map camera has no root (the first frame): near override fMapMenuNearClipPlane (128), far override kFarDistanceWithLOD, SetFieldOfView(fDefaultFOV, force), MapCamera::Enter(scene graph child 0, map position). Every frame: UpdateMapCamera 0x9969f0 unless the Console menu is open, markers, pending pick (high); signature `void (MapMenu* this, float interval, u32 currentTimeMs)`
 pub const MapMenu__AdvanceMovie: u64 = 53101;
 /// `MapMenu::AdvanceMovie` as a function pointer type (high).
 pub type MapMenu__AdvanceMovie_fn = unsafe extern "C" fn(this: *mut crate::MapMenu, interval: f32, currentTimeMs: u32);
@@ -3637,23 +3637,23 @@ pub type MapMenu__AdvanceMovie_fn = unsafe extern "C" fn(this: *mut crate::MapMe
 pub const MapMenu__BSTEventSink_MenuOpenCloseEvent_vdtor: u64 = 53129;
 /// `MapMenu::BSTEventSink_MenuOpenCloseEvent_vfunc_1` at 0x99d000 (rtti, high); signature (low): `undefined8 BSTEventSink_MenuOpenCloseEvent_vfunc_1(MapMenu * this, longlong * param_1)`
 pub const MapMenu__BSTEventSink_MenuOpenCloseEvent_vfunc_1: u64 = 53106;
-/// `MapMenu::IMapCameraCallbacks_Destroy` at 0x99f87c (semantic, high); signature (untiered): `undefined IMapCameraCallbacks_Destroy(MapMenu * this, uint param_1, undefined8 param_2, undefined8 param_3)`; this-adjusting thunk (-0x38) to MapMenu::vdtor 0x99f950 (high); semantic signature: `MapMenu* (IMapCameraCallbacks* this, u32 flags)`
+/// `MapMenu::IMapCameraCallbacks_Destroy` at 0x99f87c (semantic, high); signature (untiered): `undefined IMapCameraCallbacks_Destroy(MapMenu * this, uint param_1, undefined8 param_2, undefined8 param_3)`; semantic: this-adjusting thunk (-0x38) to MapMenu::vdtor 0x99f950 (high); signature `MapMenu* (IMapCameraCallbacks* this, u32 flags)`
 pub const MapMenu__IMapCameraCallbacks_Destroy: u64 = 53130;
 /// `MapMenu::IMapCameraCallbacks_Destroy` as a function pointer type (high).
 pub type MapMenu__IMapCameraCallbacks_Destroy_fn = unsafe extern "C" fn(this: *mut crate::IMapCameraCallbacks, flags: u32) -> *mut crate::MapMenu;
-/// `MapMenu::OnExitBegin` at 0x99f170 (semantic, high); signature (untiered): `undefined OnExitBegin(void)`; empty (high); semantic signature: `void (IMapCameraCallbacks* this)`
+/// `MapMenu::OnExitBegin` at 0x99f170 (semantic, high); signature (untiered): `undefined OnExitBegin(void)`; semantic: empty (high); signature `void (IMapCameraCallbacks* this)`
 pub const MapMenu__OnExitBegin: u64 = 53120;
 /// `MapMenu::OnExitBegin` as a function pointer type (high).
 pub type MapMenu__OnExitBegin_fn = unsafe extern "C" fn(this: *mut crate::IMapCameraCallbacks);
-/// `MapMenu::OnWorldStateBegin` at 0x99f000 (runtime, high); signature (untiered): `undefined OnWorldStateBegin(MapMenu * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`; MapMenu (this - 0x38): menu flags |= 4, movie vfunc +0x1c0(true), {Cursor Menu, show}, tutorial 0xfb; suspends map input when the target is the player in an interior (or ID_406634), or centres the local map on a marker in the player's cell (high); semantic signature: `void (IMapCameraCallbacks* this)`
+/// `MapMenu::OnWorldStateBegin` at 0x99f000 (runtime, high); signature (untiered): `undefined OnWorldStateBegin(MapMenu * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`; semantic: MapMenu (this - 0x38): menu flags |= 4, movie vfunc +0x1c0(true), {Cursor Menu, show}, tutorial 0xfb; suspends map input when the target is the player in an interior (or ID_406634), or centres the local map on a marker in the player's cell (high); signature `void (IMapCameraCallbacks* this)`
 pub const MapMenu__OnWorldStateBegin: u64 = 53119;
 /// `MapMenu::OnWorldStateBegin` as a function pointer type (high).
 pub type MapMenu__OnWorldStateBegin_fn = unsafe extern "C" fn(this: *mut crate::IMapCameraCallbacks);
-/// `MapMenu::ProcessMessage` at 0x99c180 (runtime, high); signature (untiered): `undefined8 ProcessMessage(MapMenu * this, longlong param_1, longlong * param_2, undefined8 param_3)`; The world map's UI message handler: update (0) centres the map camera on a marker reference; show (1) records the target handle, sets the cursor rect, hides cell nodes, enters WorldMapMode, fades and sets the date string; hide (3) restores world rendering, shadows, cursor and fade; Scaleform, user and Kinect events select markers, fast travel, zoom or the local map. (high); semantic signature: `u32 (MapMenu* this, UIMessage* message)`
+/// `MapMenu::ProcessMessage` at 0x99c180 (runtime, high); signature (untiered): `undefined8 ProcessMessage(MapMenu * this, longlong param_1, longlong * param_2, undefined8 param_3)`; semantic: The world map's UI message handler: update (0) centres the map camera on a marker reference; show (1) records the target handle, sets the cursor rect, hides cell nodes, enters WorldMapMode, fades and sets the date string; hide (3) restores world rendering, shadows, cursor and fade; Scaleform, user and Kinect events select markers, fast travel, zoom or the local map. (high); signature `u32 (MapMenu* this, UIMessage* message)`
 pub const MapMenu__ProcessMessage: u64 = 53102;
 /// `MapMenu::ProcessMessage` as a function pointer type (high).
 pub type MapMenu__ProcessMessage_fn = unsafe extern "C" fn(this: *mut crate::MapMenu, message: *mut crate::UIMessage) -> u32;
-/// `MapMenu::UpdateMapCamera` at 0x9969f0 (runtime, high); signature (untiered): `undefined UpdateMapCamera(TESCamera * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`; camera+0x4c = delta; tail-jump TESCamera::Update (high); semantic signature: `void (MapCamera* camera, float delta)`
+/// `MapMenu::UpdateMapCamera` at 0x9969f0 (runtime, high); signature (untiered): `undefined UpdateMapCamera(TESCamera * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`; semantic: camera+0x4c = delta; tail-jump TESCamera::Update (high); signature `void (MapCamera* camera, float delta)`
 pub const MapMenu__UpdateMapCamera: u64 = 53016;
 /// `MapMenu::UpdateMapCamera` as a function pointer type (high).
 pub type MapMenu__UpdateMapCamera_fn = unsafe extern "C" fn(camera: *mut crate::MapCamera, delta: f32);
@@ -3669,7 +3669,7 @@ pub const MapMenu__ctor_sub2: u64 = 53124;
 pub const MapMenu__ctor_sub2_2: u64 = 53145;
 /// `MapMenu::ctor_sub3` at 0x99f250 (callgraph, medium); signature (untiered): `undefined ctor_sub3(longlong * param_1)`
 pub const MapMenu__ctor_sub3: u64 = 53125;
-/// `MapMenu::dtor` at 0x99b220 (semantic, high); signature (untiered): `undefined dtor(MapMenu * this)`; removes the map input handlers, hides the cursor, clears the scene graph near/far overrides, SetFieldOfView(fDefaultFOV, force), restores the sky, MapCamera::dtor, releases the rest (high); semantic signature: `void (MapMenu* this)`
+/// `MapMenu::dtor` at 0x99b220 (semantic, high); signature (untiered): `undefined dtor(MapMenu * this)`; semantic: removes the map input handlers, hides the cursor, clears the scene graph near/far overrides, SetFieldOfView(fDefaultFOV, force), restores the sky, MapCamera::dtor, releases the rest (high); signature `void (MapMenu* this)`
 pub const MapMenu__dtor: u64 = 53094;
 /// `MapMenu::dtor` as a function pointer type (high).
 pub type MapMenu__dtor_fn = unsafe extern "C" fn(this: *mut crate::MapMenu);
@@ -3735,15 +3735,15 @@ pub const MapWin32ErrorToFileError: u64 = 69603;
 pub const MapZeroToTwoElseThree: u64 = 525013;
 /// `MapZeroToTwoElseThree_2` at 0x12b4ab0 (decompiler, medium); signature (medium): `undefined8 MapZeroToTwoElseThree_2(int param_1)`
 pub const MapZeroToTwoElseThree_2: u64 = 525014;
-/// `MapZoomHandler::CanProcess` at 0x998f80 (semantic, high); signature (untiered): `undefined8 CanProcess(MapZoomHandler * this, longlong * param_1)`; true for the 'Zoom In' and 'Zoom Out' user events (high); semantic signature: `bool (MapZoomHandler* this, InputEvent* event)`
+/// `MapZoomHandler::CanProcess` at 0x998f80 (semantic, high); signature (untiered): `undefined8 CanProcess(MapZoomHandler * this, longlong * param_1)`; semantic: true for the 'Zoom In' and 'Zoom Out' user events (high); signature `bool (MapZoomHandler* this, InputEvent* event)`
 pub const MapZoomHandler__CanProcess: u64 = 53067;
 /// `MapZoomHandler::CanProcess` as a function pointer type (high).
 pub type MapZoomHandler__CanProcess_fn = unsafe extern "C" fn(this: *mut crate::MapZoomHandler, event: *mut crate::InputEvent) -> bool;
-/// `MapZoomHandler::Destroy` at 0x99f9f0 (semantic, high); signature (untiered): `MapZoomHandler * Destroy(MapZoomHandler * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`; vtable = MenuEventHandler::vftable, frees 0x18 (high); semantic signature: `MapZoomHandler* (MapZoomHandler* this, u32 flags)`
+/// `MapZoomHandler::Destroy` at 0x99f9f0 (semantic, high); signature (untiered): `MapZoomHandler * Destroy(MapZoomHandler * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`; semantic: vtable = MenuEventHandler::vftable, frees 0x18 (high); signature `MapZoomHandler* (MapZoomHandler* this, u32 flags)`
 pub const MapZoomHandler__Destroy: u64 = 53137;
 /// `MapZoomHandler::Destroy` as a function pointer type (high).
 pub type MapZoomHandler__Destroy_fn = unsafe extern "C" fn(this: *mut crate::MapZoomHandler, flags: u32) -> *mut crate::MapZoomHandler;
-/// `MapZoomHandler::ProcessButtonEvent` at 0x998ff0 (semantic, high); signature (untiered): `undefined8 ProcessButtonEvent(MapZoomHandler * this, longlong * param_1)`; zoom input of the world map camera (MapMenu+0x304a0, TESCamera+0x1c) += value (* fMapZoomMouseSpeed:MapMenu for the mouse) * real delta, negated for 'Zoom Out'; returns true (high); semantic signature: `bool (MapZoomHandler* this, ButtonEvent* event)`
+/// `MapZoomHandler::ProcessButtonEvent` at 0x998ff0 (semantic, high); signature (untiered): `undefined8 ProcessButtonEvent(MapZoomHandler * this, longlong * param_1)`; semantic: zoom input of the world map camera (MapMenu+0x304a0, TESCamera+0x1c) += value (* fMapZoomMouseSpeed:MapMenu for the mouse) * real delta, negated for 'Zoom Out'; returns true (high); signature `bool (MapZoomHandler* this, ButtonEvent* event)`
 pub const MapZoomHandler__ProcessButtonEvent: u64 = 53068;
 /// `MapZoomHandler::ProcessButtonEvent` as a function pointer type (high).
 pub type MapZoomHandler__ProcessButtonEvent_fn = unsafe extern "C" fn(this: *mut crate::MapZoomHandler, event: *mut crate::ButtonEvent) -> bool;
@@ -3943,7 +3943,7 @@ pub const MatchesScheduleDayOfWeek: u64 = 29615;
 pub const MatchesStringAt0x80AndFreeArg: u64 = 523105;
 /// `Matrix4FromMatrix2x3` at 0xd008a0 (decompiler, medium); signature (medium): `undefined4 * Matrix4FromMatrix2x3(undefined4 * param_1, undefined4 * param_2)`
 pub const Matrix4FromMatrix2x3: u64 = 82669;
-/// `MatrixToQuaternion` at 0xef9250 (semantic, high); signature (high): `undefined MatrixToQuaternion(float * param_1, float * param_2)`; quaternion of a rotation matrix (high); semantic signature: `void (NiQuaternion* out, const NiMatrix3* m)`
+/// `MatrixToQuaternion` at 0xef9250 (semantic, high); signature (high): `undefined MatrixToQuaternion(float * param_1, float * param_2)`; semantic: quaternion of a rotation matrix (high); signature `void (NiQuaternion* out, const NiMatrix3* m)`
 pub const MatrixToQuaternion: u64 = 70844;
 /// `MatrixToQuaternion` as a function pointer type (high).
 pub type MatrixToQuaternion_fn = unsafe extern "C" fn(out: *mut crate::NiQuaternion, m: *const crate::NiMatrix3);
@@ -4081,7 +4081,7 @@ pub const MemoryManagerFile__vfunc_3: u64 = 36828;
 pub const MemoryManagerFile__vfunc_4: u64 = 36829;
 /// `MemoryManagerFree` at 0x10ba70 (decompiler, high); signature (high): `undefined MemoryManagerFree(void * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const MemoryManagerFree: u64 = 36098;
-/// `MenuControls::AddHandler` at 0x95f4b0 (semantic, high); signature (untiered): `undefined AddHandler(longlong param_1, longlong param_2)`; appends and enables the handler, or queues the add while dispatching (high); semantic signature: `void (MenuControls* this, MenuEventHandler* handler)`
+/// `MenuControls::AddHandler` at 0x95f4b0 (semantic, high); signature (untiered): `undefined AddHandler(longlong param_1, longlong param_2)`; semantic: appends and enables the handler, or queues the add while dispatching (high); signature `void (MenuControls* this, MenuEventHandler* handler)`
 pub const MenuControls__AddHandler: u64 = 52202;
 /// `MenuControls::AddHandler` as a function pointer type (high).
 pub type MenuControls__AddHandler_fn = unsafe extern "C" fn(this: *mut crate::MenuControls, handler: *mut crate::MenuEventHandler);
@@ -4089,21 +4089,21 @@ pub type MenuControls__AddHandler_fn = unsafe extern "C" fn(this: *mut crate::Me
 pub const MenuControls__BSTEventSink_MenuModeChangeEvent_vdtor: u64 = 52232;
 /// `MenuControls::BSTEventSink_MenuModeChangeEvent_vfunc_1` at 0x95f490 (rtti, high); signature (low): `undefined8 BSTEventSink_MenuModeChangeEvent_vfunc_1(MenuControls * this, longlong param_1)`
 pub const MenuControls__BSTEventSink_MenuModeChangeEvent_vfunc_1: u64 = 52201;
-/// `MenuControls::CreateHandlers` at 0x960440 (semantic, high); signature (untiered): `undefined CreateHandlers(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`; creates and registers the seven built-in handlers (+0x48..+0x78) (high); semantic signature: `void (MenuControls* this)`
+/// `MenuControls::CreateHandlers` at 0x960440 (semantic, high); signature (untiered): `undefined CreateHandlers(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`; semantic: creates and registers the seven built-in handlers (+0x48..+0x78) (high); signature `void (MenuControls* this)`
 pub const MenuControls__CreateHandlers: u64 = 52224;
 /// `MenuControls::CreateHandlers` as a function pointer type (high).
 pub type MenuControls__CreateHandlers_fn = unsafe extern "C" fn(this: *mut crate::MenuControls);
 /// `MenuControls::ProcessEvent` at 0x95f020 (semantic, high); signature (untiered): `undefined8 ProcessEvent(MenuControls * this, longlong * param_1, longlong * param_2, undefined8 param_3)`
 pub const MenuControls__ProcessEvent: u64 = 52200;
-/// `MenuControls::RemoveHandler` at 0x95f580 (semantic, high); signature (untiered): `undefined RemoveHandler(longlong param_1, longlong param_2)`; removes the handler, or disables and queues the removal while dispatching (high); semantic signature: `void (MenuControls* this, MenuEventHandler* handler)`
+/// `MenuControls::RemoveHandler` at 0x95f580 (semantic, high); signature (untiered): `undefined RemoveHandler(longlong param_1, longlong param_2)`; semantic: removes the handler, or disables and queues the removal while dispatching (high); signature `void (MenuControls* this, MenuEventHandler* handler)`
 pub const MenuControls__RemoveHandler: u64 = 52203;
 /// `MenuControls::RemoveHandler` as a function pointer type (high).
 pub type MenuControls__RemoveHandler_fn = unsafe extern "C" fn(this: *mut crate::MenuControls, handler: *mut crate::MenuEventHandler);
-/// `MenuControls::TestAndClearFlag10` at 0x95f740 (semantic, high); signature (untiered): `longlong TestAndClearFlag10(longlong param_1)`; when +0x78 exists and its byte +0x10 is set: clears it and returns true (high); semantic signature: `bool (MenuControls* this)`
+/// `MenuControls::TestAndClearFlag10` at 0x95f740 (semantic, high); signature (untiered): `longlong TestAndClearFlag10(longlong param_1)`; semantic: when +0x78 exists and its byte +0x10 is set: clears it and returns true (high); signature `bool (MenuControls* this)`
 pub const MenuControls__TestAndClearFlag10: u64 = 52210;
 /// `MenuControls::TestAndClearFlag10` as a function pointer type (high).
 pub type MenuControls__TestAndClearFlag10_fn = unsafe extern "C" fn(this: *mut crate::MenuControls) -> bool;
-/// `MenuControls::TestAndClearFlag11` at 0x95f760 (semantic, high); signature (untiered): `longlong TestAndClearFlag11(longlong param_1)`; as 0x95f740 for byte +0x11 (high); semantic signature: `bool (MenuControls* this)`
+/// `MenuControls::TestAndClearFlag11` at 0x95f760 (semantic, high); signature (untiered): `longlong TestAndClearFlag11(longlong param_1)`; semantic: as 0x95f740 for byte +0x11 (high); signature `bool (MenuControls* this)`
 pub const MenuControls__TestAndClearFlag11: u64 = 52211;
 /// `MenuControls::TestAndClearFlag11` as a function pointer type (high).
 pub type MenuControls__TestAndClearFlag11_fn = unsafe extern "C" fn(this: *mut crate::MenuControls) -> bool;
@@ -4133,13 +4133,13 @@ pub const MenuEventHandler__ProcessThumbstickEvent: u64 = 523618;
 pub const MenuEventHandler__dtor: u64 = 33577;
 /// `MenuEventHandler::vdtor` at 0x582480 (semantic, high); signature (low): `MenuEventHandler * vdtor(MenuEventHandler * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const MenuEventHandler__vdtor: u64 = 33611;
-/// `MenuModeChangeListener::ProcessEvent` at 0x5e80d0 (semantic, high); signature (untiered): `undefined8 ProcessEvent(void * this, longlong * param_1, longlong param_2, undefined8 param_3)`; menu mode: pause categories default objects 0x8b (fade fMenuModeFadeOutTime) and 0x8c, MenuMode sleep; back: unpause, GameMode sleep (high); semantic signature: `BSEventNotifyControl (MenuModeChangeListener* this, const void* event, void* source)`
+/// `MenuModeChangeListener::ProcessEvent` at 0x5e80d0 (semantic, high); signature (untiered): `undefined8 ProcessEvent(void * this, longlong * param_1, longlong param_2, undefined8 param_3)`; semantic: menu mode: pause categories default objects 0x8b (fade fMenuModeFadeOutTime) and 0x8c, MenuMode sleep; back: unpause, GameMode sleep (high); signature `BSEventNotifyControl (MenuModeChangeListener* this, const void* event, void* source)`
 pub const MenuModeChangeListener__ProcessEvent: u64 = 35103;
 /// `MenuModeChangeListener::ProcessEvent` as a function pointer type (high).
 pub type MenuModeChangeListener__ProcessEvent_fn = unsafe extern "C" fn(this: *mut c_void, event: *const c_void, source: *mut c_void) -> u32;
 /// `MenuOpenHandler::CanProcess` at 0x962180 (semantic, high); signature (untiered): `char CanProcess(MenuOpenHandler * this, longlong * param_1)`
 pub const MenuOpenHandler__CanProcess: u64 = 52259;
-/// `MenuOpenHandler::OpenTweenMenu` at 0x988600 (semantic, high); signature (untiered): `undefined OpenTweenMenu(undefined8 param_1, undefined8 param_2, undefined8 param_3)`; opens the TweenMenu (UIStrings+0xf0 'TweenMenu') and closes the FavoritesMenu (+0x158) unless VATS is active, the player is busy, the camera is in cameraStates[8] or the +0xe0/+0x48 check holds (save-on-pause option) (high); semantic signature: `void ()`
+/// `MenuOpenHandler::OpenTweenMenu` at 0x988600 (semantic, high); signature (untiered): `undefined OpenTweenMenu(undefined8 param_1, undefined8 param_2, undefined8 param_3)`; semantic: opens the TweenMenu (UIStrings+0xf0 'TweenMenu') and closes the FavoritesMenu (+0x158) unless VATS is active, the player is busy, the camera is in cameraStates[8] or the +0xe0/+0x48 check holds (save-on-pause option) (high); signature `void ()`
 pub const MenuOpenHandler__OpenTweenMenu: u64 = 52714;
 /// `MenuOpenHandler::OpenTweenMenu` as a function pointer type (high).
 pub type MenuOpenHandler__OpenTweenMenu_fn = unsafe extern "C" fn();
@@ -4151,11 +4151,11 @@ pub const MenuOpenHandler__ProcessKinectEvent: u64 = 52250;
 pub const MenuOpenHandler__vdtor: u64 = 52238;
 /// `MenuOpenHandler::vfunc_7_sub0` at 0x978140 (callgraph, medium); signature (untiered): `undefined vfunc_7_sub0(undefined1 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const MenuOpenHandler__vfunc_7_sub0: u64 = 52516;
-/// `MenuTable::Find` at 0x116cda0 (semantic, high); signature (untiered): `undefined8 Find(longlong param_1, ulonglong * param_2, ulonglong * param_3)`; table lookup: returns 1 and copies {menu, create} when the name is registered; this is the engine's GetMenu / IsMenuRegistered (no dedicated wrappers exist) (high); semantic signature: `bool (MenuTable* table /* ui+0x128 */, const BSFixedString* menuName, MenuTableEntryValue* out /* {IMenu* menu (AddRef'd), create} */)`
+/// `MenuTable::Find` at 0x116cda0 (semantic, high); signature (untiered): `undefined8 Find(longlong param_1, ulonglong * param_2, ulonglong * param_3)`; semantic: table lookup: returns 1 and copies {menu, create} when the name is registered; this is the engine's GetMenu / IsMenuRegistered (no dedicated wrappers exist) (high); signature `bool (MenuTable* table /* ui+0x128 */, const BSFixedString* menuName, MenuTableEntryValue* out /* {IMenu* menu (AddRef'd), create} */)`
 pub const MenuTable__Find: u64 = 82135;
 /// `MenuTable::Find` as a function pointer type (high).
 pub type MenuTable__Find_fn = unsafe extern "C" fn(table: *mut c_void, menuName: *const crate::BSFixedString, out: *mut c_void) -> bool;
-/// `MenuTable::InsertOrAssign` at 0x116bfb0 (runtime, high); signature (untiered): `undefined8 InsertOrAssign(longlong param_1, ulonglong * param_2, ulonglong * param_3)`; inserts or replaces {menu, create} for the name, growing and rehashing when full (high); semantic signature: `bool (BSTHashMapBase* map /* ui+0x130 */, const BSFixedString* menuName, const MenuTableEntryValue* value)`
+/// `MenuTable::InsertOrAssign` at 0x116bfb0 (runtime, high); signature (untiered): `undefined8 InsertOrAssign(longlong param_1, ulonglong * param_2, ulonglong * param_3)`; semantic: inserts or replaces {menu, create} for the name, growing and rehashing when full (high); signature `bool (BSTHashMapBase* map /* ui+0x130 */, const BSFixedString* menuName, const MenuTableEntryValue* value)`
 pub const MenuTable__InsertOrAssign: u64 = 82100;
 /// `MenuTable::InsertOrAssign` as a function pointer type (high).
 pub type MenuTable__InsertOrAssign_fn = unsafe extern "C" fn(map: *mut c_void, menuName: *const crate::BSFixedString, value: *const c_void) -> bool;
@@ -4243,7 +4243,7 @@ pub const MergeTextFormatArgIntoFields38And30: u64 = 85510;
 pub const MergeWeightedParams: u64 = 107120;
 /// `MersenneTwisterNextUInt32` at 0x12fa610 (decompiler, high); signature (high): `uint MersenneTwisterNextUInt32(uint * param_1)`
 pub const MersenneTwisterNextUInt32: u64 = 96150;
-/// `MessageBoxData::ctor` at 0x963f40 (semantic, high); signature (low): `MessageBoxData * ctor(MessageBoxData * this, longlong * param_1, longlong * param_2, longlong * param_3, undefined1 param_4, undefined4 param_5, undefined4 param_6)`;  (high); semantic signature: `MessageBoxData* (MessageBoxData* this, const BSString* text, const BSTArray<BSString>* buttons, IMessageBoxCallback** cb, u8 buttonBase, u32 type, u32 depth)`
+/// `MessageBoxData::ctor` at 0x963f40 (semantic, high); signature (low): `MessageBoxData * ctor(MessageBoxData * this, longlong * param_1, longlong * param_2, longlong * param_3, undefined1 param_4, undefined4 param_5, undefined4 param_6)`; semantic (high); signature `MessageBoxData* (MessageBoxData* this, const BSString* text, const BSTArray<BSString>* buttons, IMessageBoxCallback** cb, u8 buttonBase, u32 type, u32 depth)`
 pub const MessageBoxData__ctor: u64 = 52292;
 /// `MessageBoxData::ctor` as a function pointer type (high).
 pub type MessageBoxData__ctor_fn = unsafe extern "C" fn(this: *mut crate::MessageBoxData, text: *const c_void, buttons: *const c_void, cb: *mut *mut crate::IMessageBoxCallback, buttonBase: u8, type_: u32, depth: u32) -> *mut crate::MessageBoxData;
@@ -4253,15 +4253,15 @@ pub const MessageBoxData__ctor_2: u64 = 418922;
 pub const MessageBoxData__vdtor: u64 = 33612;
 /// `MessageBoxMenu::Accept` at 0x962e80 (semantic, high); signature (untiered): `undefined Accept(MessageBoxMenu * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
 pub const MessageBoxMenu__Accept: u64 = 52278;
-/// `MessageBoxMenu::ButtonPress` at 0x962f50 (semantic, high); signature (untiered): `undefined ButtonPress(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`; AS 'buttonPress' callback: button = top.buttonBase + (u32)args[0]; stores top.type in g_LastMessageBoxType, plays 'UIMenuOK', removes and deletes the top box, showing=0, ShowNextMessage, then callback->Run(button) (high); semantic signature: `void (FxDelegateArgs* args)`
+/// `MessageBoxMenu::ButtonPress` at 0x962f50 (semantic, high); signature (untiered): `undefined ButtonPress(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`; semantic: AS 'buttonPress' callback: button = top.buttonBase + (u32)args[0]; stores top.type in g_LastMessageBoxType, plays 'UIMenuOK', removes and deletes the top box, showing=0, ShowNextMessage, then callback->Run(button) (high); signature `void (FxDelegateArgs* args)`
 pub const MessageBoxMenu__ButtonPress: u64 = 52279;
 /// `MessageBoxMenu::ButtonPress` as a function pointer type (high).
 pub type MessageBoxMenu__ButtonPress_fn = unsafe extern "C" fn(args: *mut c_void);
-/// `MessageBoxMenu::Create` at 0x964260 (semantic, high); signature (untiered): `void Create(void)`; creator registered under 'MessageBoxMenu' (high); semantic signature: `IMenu* ()`
+/// `MessageBoxMenu::Create` at 0x964260 (semantic, high); signature (untiered): `void Create(void)`; semantic: creator registered under 'MessageBoxMenu' (high); signature `IMenu* ()`
 pub const MessageBoxMenu__Create: u64 = 52297;
 /// `MessageBoxMenu::Create` as a function pointer type (high).
 pub type MessageBoxMenu__Create_fn = unsafe extern "C" fn() -> *mut crate::IMenu;
-/// `MessageBoxMenu::DismissMessage` at 0x963370 (semantic, high); signature (untiered): `undefined DismissMessage(undefined8 * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`; removes data from the queue, shows the next and calls data's callback with button 0 (no-op when g_MessageBoxMenu is null) (high); semantic signature: `void (MessageBoxData* data)`
+/// `MessageBoxMenu::DismissMessage` at 0x963370 (semantic, high); signature (untiered): `undefined DismissMessage(undefined8 * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`; semantic: removes data from the queue, shows the next and calls data's callback with button 0 (no-op when g_MessageBoxMenu is null) (high); signature `void (MessageBoxData* data)`
 pub const MessageBoxMenu__DismissMessage: u64 = 442727;
 /// `MessageBoxMenu::DismissMessage` as a function pointer type (high).
 pub type MessageBoxMenu__DismissMessage_fn = unsafe extern "C" fn(data: *mut crate::MessageBoxData);
@@ -4269,17 +4269,17 @@ pub type MessageBoxMenu__DismissMessage_fn = unsafe extern "C" fn(data: *mut cra
 pub const MessageBoxMenu__Dtor: u64 = 52295;
 /// `MessageBoxMenu::ProcessMessage` at 0x963050 (semantic, high); signature (untiered): `undefined8 ProcessMessage(MessageBoxMenu * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
 pub const MessageBoxMenu__ProcessMessage: u64 = 52280;
-/// `MessageBoxMenu::RemoveMessage` at 0x963410 (runtime, high); signature (untiered): `DWORD RemoveMessage(undefined8 param_1, undefined8 * param_2)`; removes data from g_MessageBoxQueue and deletes it (high); semantic signature: `void (MessageBoxMenu* this, MessageBoxData* data)`
+/// `MessageBoxMenu::RemoveMessage` at 0x963410 (runtime, high); signature (untiered): `DWORD RemoveMessage(undefined8 param_1, undefined8 * param_2)`; semantic: removes data from g_MessageBoxQueue and deletes it (high); signature `void (MessageBoxMenu* this, MessageBoxData* data)`
 pub const MessageBoxMenu__RemoveMessage: u64 = 52284;
 /// `MessageBoxMenu::RemoveMessage` as a function pointer type (high).
 pub type MessageBoxMenu__RemoveMessage_fn = unsafe extern "C" fn(this: *mut crate::MessageBoxMenu, data: *mut crate::MessageBoxData);
-/// `MessageBoxMenu::ShowNextMessage` at 0x963530 (semantic, high); signature (untiered): `undefined ShowNextMessage(longlong param_1)`; shows the last (highest-depth) queued box: Invokes setMessageText/setIsVertical/setIsCancellable/setButtons, sets the menu depth from +0x48, showing=1; drops disabled types; hides the menu (3) when nothing is left (high); semantic signature: `void (MessageBoxMenu* this)`
+/// `MessageBoxMenu::ShowNextMessage` at 0x963530 (semantic, high); signature (untiered): `undefined ShowNextMessage(longlong param_1)`; semantic: shows the last (highest-depth) queued box: Invokes setMessageText/setIsVertical/setIsCancellable/setButtons, sets the menu depth from +0x48, showing=1; drops disabled types; hides the menu (3) when nothing is left (high); signature `void (MessageBoxMenu* this)`
 pub const MessageBoxMenu__ShowNextMessage: u64 = 52285;
 /// `MessageBoxMenu::ShowNextMessage` as a function pointer type (high).
 pub type MessageBoxMenu__ShowNextMessage_fn = unsafe extern "C" fn(this: *mut crate::MessageBoxMenu);
 /// `MessageBoxMenu::ctor` at 0x9624b0 (layout_inference, high); signature (high): `MessageBoxMenu * ctor(MessageBoxMenu * this)`
 pub const MessageBoxMenu__ctor: u64 = 52267;
-/// `MessageBoxMenu::dtor` at 0x962550 (semantic, high); signature (untiered): `undefined dtor(MessageBoxMenu * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`; destructor (currently named MessageBoxMenu::ctor) (high); semantic signature: `void (MessageBoxMenu* this)`
+/// `MessageBoxMenu::dtor` at 0x962550 (semantic, high); signature (untiered): `undefined dtor(MessageBoxMenu * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`; semantic: destructor (currently named MessageBoxMenu::ctor) (high); signature `void (MessageBoxMenu* this)`
 pub const MessageBoxMenu__dtor: u64 = 52268;
 /// `MessageBoxMenu::dtor` as a function pointer type (high).
 pub type MessageBoxMenu__dtor_fn = unsafe extern "C" fn(this: *mut crate::MessageBoxMenu);
@@ -4369,9 +4369,9 @@ pub const MissingContent__vdtor: u64 = 441357;
 pub const MissingContent__vfunc_2: u64 = 454897;
 /// `MissingContent::vfunc_3` at 0x16214b0 (rtti, high); signature (low): `undefined vfunc_3(MissingContent * this, float param_1, undefined8 param_2, undefined8 param_3)`
 pub const MissingContent__vfunc_3: u64 = 454896;
-/// `MistMenu::AdjustLogoZoomFOV` at 0x966890 (semantic, medium); signature (untiered): `undefined AdjustLogoZoomFOV(longlong param_1, float param_2)`; changes the main-menu logo camera FOV (+0x100) by delta within limits (medium); semantic signature: `void (MistMenu* this, float delta)`
+/// `MistMenu::AdjustLogoZoomFOV` at 0x966890 (semantic, medium); signature (untiered): `undefined AdjustLogoZoomFOV(longlong param_1, float param_2)`; semantic: changes the main-menu logo camera FOV (+0x100) by delta within limits (medium); signature `void (MistMenu* this, float delta)`
 pub const MistMenu__AdjustLogoZoomFOV: u64 = 52325;
-/// `MistMenu::AdvanceMovie` at 0x964c80 (runtime, high); signature (untiered): `undefined AdvanceMovie(MistMenu * this, float param_1, float * param_2, float * param_3)`; IMenu slot 5: logo fade, first-frame model setup (fUIMistModel_* transform, AttachNodeToCurrentUI3DScene, InitMistMenuCameraAndModel), per-frame UI3DScene root update and, when a camera node exists in the model, the UI camera follows it: translate = fUIMistMenu_Camera(X - node.x, Y - node.y, Z + node.z), rotate = node world rotation * saved base rotation (+0x110) (high); semantic signature: `void (MistMenu* this, float interval, u32 currentTimeMs)`
+/// `MistMenu::AdvanceMovie` at 0x964c80 (runtime, high); signature (untiered): `undefined AdvanceMovie(MistMenu * this, float param_1, float * param_2, float * param_3)`; semantic: IMenu slot 5: logo fade, first-frame model setup (fUIMistModel_* transform, AttachNodeToCurrentUI3DScene, InitMistMenuCameraAndModel), per-frame UI3DScene root update and, when a camera node exists in the model, the UI camera follows it: translate = fUIMistMenu_Camera(X - node.x, Y - node.y, Z + node.z), rotate = node world rotation * saved base rotation (+0x110) (high); signature `void (MistMenu* this, float interval, u32 currentTimeMs)`
 pub const MistMenu__AdvanceMovie: u64 = 52307;
 /// `MistMenu::AdvanceMovie` as a function pointer type (high).
 pub type MistMenu__AdvanceMovie_fn = unsafe extern "C" fn(this: *mut crate::MistMenu, interval: f32, currentTimeMs: u32);
@@ -5127,7 +5127,7 @@ pub const MoveFixedString: u64 = 69163;
 pub const MoveFixedString512IntoField880: u64 = 100967;
 /// `MoveFlag1C6Bit3ToFlag1C8Bit1` at 0xe48b10 (decompiler, high); signature (high): `undefined MoveFlag1C6Bit3ToFlag1C8Bit1(longlong param_1)`
 pub const MoveFlag1C6Bit3ToFlag1C8Bit1: u64 = 88566;
-/// `MoveFollowingCameraPathAfterInArray` at 0x316b90 (semantic, high); signature (medium): `undefined MoveFollowingCameraPathAfterInArray(longlong * param_1, longlong param_2)`; find the sibling whose previousSibling is path and move it directly behind path (recursively for its own follower); two claimants log an error (high); semantic signature: `void (BGSCameraPath* path, NiTPrimitiveArray<TESForm*>* siblings)`
+/// `MoveFollowingCameraPathAfterInArray` at 0x316b90 (semantic, high); signature (medium): `undefined MoveFollowingCameraPathAfterInArray(longlong * param_1, longlong param_2)`; semantic: find the sibling whose previousSibling is path and move it directly behind path (recursively for its own follower); two claimants log an error (high); signature `void (BGSCameraPath* path, NiTPrimitiveArray<TESForm*>* siblings)`
 pub const MoveFollowingCameraPathAfterInArray: u64 = 20641;
 /// `MoveFollowingCameraPathAfterInArray` as a function pointer type (high).
 pub type MoveFollowingCameraPathAfterInArray_fn = unsafe extern "C" fn(path: *mut crate::BGSCameraPath, siblings: *mut c_void);
@@ -5167,7 +5167,7 @@ pub const MoveNamedEntryToSecondaryArray: u64 = 418817;
 pub const MoveOrSwapEntryByField24: u64 = 83642;
 /// `MovePairRange16` at 0x1307350 (decompiler, medium); signature (untiered): `undefined8 * MovePairRange16(undefined8 param_1, longlong param_2, longlong param_3, undefined8 * param_4)`
 pub const MovePairRange16: u64 = 447030;
-/// `MovePlayerToCellAndPosition` at 0x75ed50 (semantic, high); signature (untiered): `undefined MovePlayerToCellAndPosition(Actor * param_1, TESObjectCELL * param_2, float * param_3, TESObjectCELL * param_4, float param_5)`; moves the player to a cell and position: sets the angle, changes the current cell or moves the grid, optionally flags the sky (bit 4 of Sky+0x1dc), parent cell reset, AddReferenceToCell, grass/cell visits, terrain LOD (UpdateTerrainLOD), PlayerCharacter::UpdateCamera, audio listener (high); semantic signature: `void (PlayerCharacter* player, const NiPoint3* position, const NiPoint3* angle, TESObjectCELL* cell, bool refreshSky)`
+/// `MovePlayerToCellAndPosition` at 0x75ed50 (semantic, high); signature (untiered): `undefined MovePlayerToCellAndPosition(Actor * param_1, TESObjectCELL * param_2, float * param_3, TESObjectCELL * param_4, float param_5)`; semantic: moves the player to a cell and position: sets the angle, changes the current cell or moves the grid, optionally flags the sky (bit 4 of Sky+0x1dc), parent cell reset, AddReferenceToCell, grass/cell visits, terrain LOD (UpdateTerrainLOD), PlayerCharacter::UpdateCamera, audio listener (high); signature `void (PlayerCharacter* player, const NiPoint3* position, const NiPoint3* angle, TESObjectCELL* cell, bool refreshSky)`
 pub const MovePlayerToCellAndPosition: u64 = 40744;
 /// `MovePlayerToCellAndPosition` as a function pointer type (high).
 pub type MovePlayerToCellAndPosition_fn = unsafe extern "C" fn(player: *mut crate::PlayerCharacter, position: *const crate::NiPoint3, angle: *const crate::NiPoint3, cell: *mut crate::TESObjectCELL, refreshSky: bool);
@@ -6063,7 +6063,7 @@ pub const MovementHandlerAgentLargeDeltaIdle__vfunc_2: u64 = 92675;
 pub const MovementHandlerAgentLargeDeltaIdle__vfunc_4: u64 = 92670;
 /// `MovementHandlerAgentLargeDeltaIdle::vfunc_6` at 0x122cef0 (rtti, high); signature (high): `undefined vfunc_6(MovementHandlerAgentLargeDeltaIdle * this)`
 pub const MovementHandlerAgentLargeDeltaIdle__vfunc_6: u64 = 92672;
-/// `MovementHandlerAgentPlayerControls::HandleMovement` at 0x7a3fd0 (semantic, high); signature (untiered): `undefined HandleMovement(MovementHandlerAgentPlayerControls * this, longlong * param_1, undefined1 * param_2, float * param_3)`; the player controls movement agent: from PlayerControls move/look input (+0x24, look), the camera state and the horse clamp, computes heading = atan2(move) and speed = |move|, feeds the direction history (subobject +0x28, freeze direction thresholds, fControllerBufferDepth) only when the player is in third person (+0x303), dampens by fControllerDampenTime/fMaxMoveRampDownDelta, and writes args->output: {+0 NiPoint3 = 0 with +8 heading, +0xc speed, +0x10 NiPoint3 = 0 with +0x18 rotation speed (look x * factor)} by mode (subobject +0x20: 0 both, 1 heading and rotation only) (high); semantic signature: `void (IMovementHandlerAgent* this, MovementHandlerArgs* args)`
+/// `MovementHandlerAgentPlayerControls::HandleMovement` at 0x7a3fd0 (semantic, high); signature (untiered): `undefined HandleMovement(MovementHandlerAgentPlayerControls * this, longlong * param_1, undefined1 * param_2, float * param_3)`; semantic: the player controls movement agent: from PlayerControls move/look input (+0x24, look), the camera state and the horse clamp, computes heading = atan2(move) and speed = |move|, feeds the direction history (subobject +0x28, freeze direction thresholds, fControllerBufferDepth) only when the player is in third person (+0x303), dampens by fControllerDampenTime/fMaxMoveRampDownDelta, and writes args->output: {+0 NiPoint3 = 0 with +8 heading, +0xc speed, +0x10 NiPoint3 = 0 with +0x18 rotation speed (look x * factor)} by mode (subobject +0x20: 0 both, 1 heading and rotation only) (high); signature `void (IMovementHandlerAgent* this, MovementHandlerArgs* args)`
 pub const MovementHandlerAgentPlayerControls__HandleMovement: u64 = 41996;
 /// `MovementHandlerAgentPlayerControls::HandleMovement` as a function pointer type (high).
 pub type MovementHandlerAgentPlayerControls__HandleMovement_fn = unsafe extern "C" fn(this: *mut crate::IMovementHandlerAgent, args: *mut c_void);
@@ -6791,7 +6791,7 @@ pub const MovementPlannerAgentDirectControl__vfunc_2: u64 = 42134;
 pub const MovementPlannerAgentDirectControl__vfunc_4: u64 = 42130;
 /// `MovementPlannerAgentHorseControls::IMovementPlannerAgent_vfunc_0` at 0x7a820c (rtti, high); signature (high): `undefined IMovementPlannerAgent_vfunc_0(MovementPlannerAgentHorseControls * this)`
 pub const MovementPlannerAgentHorseControls__IMovementPlannerAgent_vfunc_0: u64 = 42166;
-/// `MovementPlannerAgentHorseControls::IMovementPlannerAgent_vfunc_2` at 0x7a8060 (rtti, high); signature (low): `undefined IMovementPlannerAgent_vfunc_2(MovementPlannerAgentHorseControls * this, undefined8 param_1, undefined8 * param_2)`; horse-control movement planning: reads the rider's input (dead zone 1e-06, 0.1 scale) and writes a 0x24-byte movement result into r8 (medium); semantic signature: `void (IMovementPlannerAgent* this, void* context, void* outMovement)`
+/// `MovementPlannerAgentHorseControls::IMovementPlannerAgent_vfunc_2` at 0x7a8060 (rtti, high); signature (low): `undefined IMovementPlannerAgent_vfunc_2(MovementPlannerAgentHorseControls * this, undefined8 param_1, undefined8 * param_2)`; semantic: horse-control movement planning: reads the rider's input (dead zone 1e-06, 0.1 scale) and writes a 0x24-byte movement result into r8 (medium); signature `void (IMovementPlannerAgent* this, void* context, void* outMovement)`
 pub const MovementPlannerAgentHorseControls__IMovementPlannerAgent_vfunc_2: u64 = 42162;
 /// `MovementPlannerAgentHorseControls::IMovementPlannerAgent_vfunc_3` at 0x7a81e0 (rtti, high); signature (low): `undefined IMovementPlannerAgent_vfunc_3(void)`
 pub const MovementPlannerAgentHorseControls__IMovementPlannerAgent_vfunc_3: u64 = 42163;
@@ -7313,9 +7313,9 @@ pub const MoviePlayer__dtor: u64 = 90262;
 pub const MoviePlayer__vdtor: u64 = 90281;
 /// `MoviePlayer::vfunc_13` at 0x11b2870 (rtti, high); signature (high): `bool vfunc_13(MoviePlayer * this)`
 pub const MoviePlayer__vfunc_13: u64 = 90273;
-/// `Msg_ClearLists_sub0_sub1_sub5` at 0x5282a0 (semantic, high); signature (untiered): `ulonglong Msg_ClearLists_sub0_sub1_sub5(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`; water cube-map camera: copies only the main camera's far (GetMainCamera +0x164) into its own frustum; near unaffected (high); semantic signature: `bool (void* water, ...)`
+/// `Msg_ClearLists_sub0_sub1_sub5` at 0x5282a0 (semantic, high); signature (untiered): `ulonglong Msg_ClearLists_sub0_sub1_sub5(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`; semantic: water cube-map camera: copies only the main camera's far (GetMainCamera +0x164) into its own frustum; near unaffected (high); signature `bool (void* water, ...)`
 pub const Msg_ClearLists_sub0_sub1_sub5: u64 = 32160;
-/// `Msg_ClearLists_sub22` at 0x15436b0 (semantic, medium); signature (untiered): `undefined Msg_ClearLists_sub22(undefined8 * param_1, longlong param_2)`; uploads the depth linearisation pair (far * near, near - far) and the projection scale of the given camera before image space (medium); semantic signature: `void (void* params, NiCamera* camera)`
+/// `Msg_ClearLists_sub22` at 0x15436b0 (semantic, medium); signature (untiered): `undefined Msg_ClearLists_sub22(undefined8 * param_1, longlong param_2)`; semantic: uploads the depth linearisation pair (far * near, near - far) and the projection scale of the given camera before image space (medium); signature `void (void* params, NiCamera* camera)`
 pub const Msg_ClearLists_sub22: u64 = 107252;
 /// `Msg_NecromancerGrimoireAkaNecromanticArts_sub0` at 0x604de0 (callgraph, medium); signature (untiered): `undefined4 * Msg_NecromancerGrimoireAkaNecromanticArts_sub0(undefined4 * param_1, undefined1 * param_2, undefined1 * param_3, undefined8 param_4, undefined8 param_5, undefined8 param_6, undefined8 param_7, undefined8 param_8, undefined8 param_9, undefined8 param_10)`
 pub const Msg_NecromancerGrimoireAkaNecromanticArts_sub0: u64 = 523888;
@@ -7357,7 +7357,7 @@ pub const MultiplyFloatArraysElementwise: u64 = 67224;
 pub const MultiplyMatrix3: u64 = 57381;
 /// `MultiplyMatrix3_2` at 0xaabb20 (decompiler, medium); signature (medium): `undefined MultiplyMatrix3_2(longlong param_1, float * param_2, longlong param_3)`
 pub const MultiplyMatrix3_2: u64 = 57394;
-/// `MultiplyMatrix3x3` at 0x1d6580 (semantic, high); signature (high): `float * MultiplyMatrix3x3(float * param_1, float * param_2, float * param_3)`; out = lhs * rhs (row-major); returns out (high); semantic signature: `NiMatrix3* (const NiMatrix3* lhs, NiMatrix3* out, const NiMatrix3* rhs)`
+/// `MultiplyMatrix3x3` at 0x1d6580 (semantic, high); signature (high): `float * MultiplyMatrix3x3(float * param_1, float * param_2, float * param_3)`; semantic: out = lhs * rhs (row-major); returns out (high); signature `NiMatrix3* (const NiMatrix3* lhs, NiMatrix3* out, const NiMatrix3* rhs)`
 pub const MultiplyMatrix3x3: u64 = 14189;
 /// `MultiplyMatrix3x3` as a function pointer type (high).
 pub type MultiplyMatrix3x3_fn = unsafe extern "C" fn(lhs: *const crate::NiMatrix3, out: *mut crate::NiMatrix3, rhs: *const crate::NiMatrix3) -> *mut crate::NiMatrix3;
@@ -7379,7 +7379,7 @@ pub const MultiplyPaddedMatrixVector: u64 = 64209;
 pub const MultiplyQuaternionArrays: u64 = 67226;
 /// `MultiplyQuaternionInPlace` at 0xb26400 (decompiler, high); signature (high): `undefined MultiplyQuaternionInPlace(float * param_1, float * param_2)`
 pub const MultiplyQuaternionInPlace: u64 = 60044;
-/// `MultiplyQuaternions` at 0xef96e0 (semantic, high); signature (medium): `float * MultiplyQuaternions(float * param_1, float * param_2, float * param_3)`; out = lhs * rhs; returns out (high); semantic signature: `NiQuaternion* (const NiQuaternion* lhs, NiQuaternion* out, const NiQuaternion* rhs)`
+/// `MultiplyQuaternions` at 0xef96e0 (semantic, high); signature (medium): `float * MultiplyQuaternions(float * param_1, float * param_2, float * param_3)`; semantic: out = lhs * rhs; returns out (high); signature `NiQuaternion* (const NiQuaternion* lhs, NiQuaternion* out, const NiQuaternion* rhs)`
 pub const MultiplyQuaternions: u64 = 70852;
 /// `MultiplyQuaternions` as a function pointer type (high).
 pub type MultiplyQuaternions_fn = unsafe extern "C" fn(lhs: *const crate::NiQuaternion, out: *mut crate::NiQuaternion, rhs: *const crate::NiQuaternion) -> *mut crate::NiQuaternion;
@@ -7403,13 +7403,13 @@ pub const MultiplyTransposedMatrix3ByMatrix3: u64 = 70227;
 pub const MultiplyValueByNumber: u64 = 85843;
 /// `MultiplyVec4ArraysElementwise` at 0xca56e0 (decompiler, high); signature (high): `undefined MultiplyVec4ArraysElementwise(longlong param_1, longlong param_2, longlong param_3, int param_4)`
 pub const MultiplyVec4ArraysElementwise: u64 = 67225;
-/// `MurderCrime::GetEventSource` at 0x6c1080 (semantic, medium); signature (untiered): `undefined8 * GetEventSource(void)`; the one source of MurderCrime::Event events (medium); semantic signature: `BSTEventSource<MurderCrime::Event>* ()`
+/// `MurderCrime::GetEventSource` at 0x6c1080 (semantic, medium); signature (untiered): `undefined8 * GetEventSource(void)`; semantic: the one source of MurderCrime::Event events (medium); signature `BSTEventSource<MurderCrime::Event>* ()`
 pub const MurderCrime__GetEventSource: u64 = 38343;
-/// `MurderCrime::RegisterSink` at 0x66fac0 (semantic, medium); signature (untiered): `undefined RegisterSink(undefined8 param_1)`; registers a MurderCrime::Event sink with the singleton source (medium); semantic signature: `void (BSTEventSink<MurderCrime::Event>* sink)`
+/// `MurderCrime::RegisterSink` at 0x66fac0 (semantic, medium); signature (untiered): `undefined RegisterSink(undefined8 param_1)`; semantic: registers a MurderCrime::Event sink with the singleton source (medium); signature `void (BSTEventSink<MurderCrime::Event>* sink)`
 pub const MurderCrime__RegisterSink: u64 = 37158;
-/// `MurderCrime::UnregisterSink` at 0x66faf0 (semantic, medium); signature (untiered): `undefined UnregisterSink(undefined8 param_1)`; unregisters a MurderCrime::Event sink with the singleton source (medium); semantic signature: `void (BSTEventSink<MurderCrime::Event>* sink)`
+/// `MurderCrime::UnregisterSink` at 0x66faf0 (semantic, medium); signature (untiered): `undefined UnregisterSink(undefined8 param_1)`; semantic: unregisters a MurderCrime::Event sink with the singleton source (medium); signature `void (BSTEventSink<MurderCrime::Event>* sink)`
 pub const MurderCrime__UnregisterSink: u64 = 37159;
-/// `MuteCategory` at 0xcd49d0 (semantic, high); signature (untiered): `undefined MuteCategory(longlong * param_1, ushort param_2)`; slot 11 SetMuted(true) then command 0x33/0xc with the fade (high); semantic signature: `void (BSISoundCategory** handle, u16 fadeMs)`
+/// `MuteCategory` at 0xcd49d0 (semantic, high); signature (untiered): `undefined MuteCategory(longlong * param_1, ushort param_2)`; semantic: slot 11 SetMuted(true) then command 0x33/0xc with the fade (high); signature `void (BSISoundCategory** handle, u16 fadeMs)`
 pub const MuteCategory: u64 = 67842;
 /// `MuteCategory` as a function pointer type (high).
 pub type MuteCategory_fn = unsafe extern "C" fn(handle: *mut *mut crate::BSISoundCategory, fadeMs: u16);
@@ -7637,13 +7637,13 @@ pub const NextTokenWithHash: u64 = 69199;
 pub const NiAVObject__AcceptVisitor: u64 = 70254;
 /// `NiAVObject::CreateClone` at 0xedc740 (semantic, high); signature (untiered): `NiObject * CreateClone(NiAVObject * this)`
 pub const NiAVObject__CreateClone: u64 = 70180;
-/// `NiAVObject::Cull` at 0xee0f30 (runtime, high); signature (untiered): `undefined Cull(longlong param_1, longlong * param_2)`; the per-node gate of the tree walks (pass 12: the sun's cascade replay of its geometry lists, 0xfee650, and the focus maps, 0x1521ad0, do not call it): does nothing when flags bit 0 (hidden) is set, else tail-calls culler slot 22 CullNode(culler, node, orderedGroup) with r8 untouched; r8 is the BSOrderedNode group index (0xffffffff outside an ordered node; BSOrderedNode::OnVisible 0x1570700 hands its children 0, 1, 2 ...) that slot 24 uses to queue geometry for in-order drawing, not a plane mask (pass 6; the frustum mask is BSCullingProcess +0x9c) (high); semantic signature: `void (NiAVObject* this, NiCullingProcess* culler, u32 orderedGroup)`
+/// `NiAVObject::Cull` at 0xee0f30 (runtime, high); signature (untiered): `undefined Cull(longlong param_1, longlong * param_2)`; semantic: the per-node gate of the tree walks (pass 12: the sun's cascade replay of its geometry lists, 0xfee650, and the focus maps, 0x1521ad0, do not call it): does nothing when flags bit 0 (hidden) is set, else tail-calls culler slot 22 CullNode(culler, node, orderedGroup) with r8 untouched; r8 is the BSOrderedNode group index (0xffffffff outside an ordered node; BSOrderedNode::OnVisible 0x1570700 hands its children 0, 1, 2 ...) that slot 24 uses to queue geometry for in-order drawing, not a plane mask (pass 6; the frustum mask is BSCullingProcess +0x9c) (high); signature `void (NiAVObject* this, NiCullingProcess* culler, u32 orderedGroup)`
 pub const NiAVObject__Cull: u64 = 70267;
 /// `NiAVObject::Cull` as a function pointer type (high).
 pub type NiAVObject__Cull_fn = unsafe extern "C" fn(this: *mut crate::NiAVObject, culler: *mut crate::NiCullingProcess, orderedGroup: u32);
 /// `NiAVObject::GetObjectByName` at 0xee0a40 (semantic, high); signature (untiered): `NiAVObject * GetObjectByName(NiAVObject * this, longlong * param_1)`
 pub const NiAVObject__GetObjectByName: u64 = 70257;
-/// `NiAVObject::SetParentDetachingFromOld` at 0xee0ef0 (semantic, high); signature (untiered): `undefined SetParentDetachingFromOld(longlong param_1, undefined8 param_2)`; old parent's slot 56 DetachChild(child), then child->parent = newParent (high); semantic signature: `void (NiAVObject* child, NiNode* newParent)`
+/// `NiAVObject::SetParentDetachingFromOld` at 0xee0ef0 (semantic, high); signature (untiered): `undefined SetParentDetachingFromOld(longlong param_1, undefined8 param_2)`; semantic: old parent's slot 56 DetachChild(child), then child->parent = newParent (high); signature `void (NiAVObject* child, NiNode* newParent)`
 pub const NiAVObject__SetParentDetachingFromOld: u64 = 70266;
 /// `NiAVObject::SetParentDetachingFromOld` as a function pointer type (high).
 pub type NiAVObject__SetParentDetachingFromOld_fn = unsafe extern "C" fn(child: *mut crate::NiAVObject, newParent: *mut crate::NiNode);
@@ -7655,7 +7655,7 @@ pub const NiAVObject__UpdateControllers: u64 = 70253;
 pub const NiAVObject__UpdateDownwardPass: u64 = 70259;
 /// `NiAVObject::UpdateDownwardPassUnderParent` at 0xee0e90 (semantic, medium); signature (untiered): `undefined UpdateDownwardPassUnderParent(NiAVObject * this, undefined8 param_1, undefined8 param_2)`
 pub const NiAVObject__UpdateDownwardPassUnderParent: u64 = 70264;
-/// `NiAVObject::UpdateNode` at 0xee0930 (semantic, high); signature (untiered): `undefined UpdateNode(longlong * param_1, undefined8 param_2)`; slot 44 (+0x160) with (data, 0), then tail jump to the parent's (+0x30) slot 61 (+0x1e8); the call to make after writing a local transform (all camera states use it with a zeroed 8-byte record) (high); semantic signature: `void (NiAVObject* this, NiUpdateData* data)`
+/// `NiAVObject::UpdateNode` at 0xee0930 (semantic, high); signature (untiered): `undefined UpdateNode(longlong * param_1, undefined8 param_2)`; semantic: slot 44 (+0x160) with (data, 0), then tail jump to the parent's (+0x30) slot 61 (+0x1e8); the call to make after writing a local transform (all camera states use it with a zeroed 8-byte record) (high); signature `void (NiAVObject* this, NiUpdateData* data)`
 pub const NiAVObject__UpdateNode: u64 = 70251;
 /// `NiAVObject::UpdateNode` as a function pointer type (high).
 pub type NiAVObject__UpdateNode_fn = unsafe extern "C" fn(this: *mut crate::NiAVObject, data: *mut crate::NiUpdateData);
@@ -7671,7 +7671,7 @@ pub const NiAVObject__UpdateUpwardPass: u64 = 70265;
 pub const NiAVObject__UpdateWorldBound: u64 = 70278;
 /// `NiAVObject::UpdateWorldData` at 0xeebf40 (semantic, high); signature (untiered): `undefined UpdateWorldData(NiAVObject * this, longlong param_1)`
 pub const NiAVObject__UpdateWorldData: u64 = 70539;
-/// `NiAVObject::UpdateWorldTransformFromParent` at 0xeec1a0 (semantic, high); signature (untiered): `undefined UpdateWorldTransformFromParent(longlong param_1)`; world = parent.world * local (or local, or parent.world with flags bit 9) without the frame snapshot, controllers or children (high); semantic signature: `void (NiAVObject* this)`
+/// `NiAVObject::UpdateWorldTransformFromParent` at 0xeec1a0 (semantic, high); signature (untiered): `undefined UpdateWorldTransformFromParent(longlong param_1)`; semantic: world = parent.world * local (or local, or parent.world with flags bit 9) without the frame snapshot, controllers or children (high); signature `void (NiAVObject* this)`
 pub const NiAVObject__UpdateWorldTransformFromParent: u64 = 70540;
 /// `NiAVObject::UpdateWorldTransformFromParent` as a function pointer type (high).
 pub type NiAVObject__UpdateWorldTransformFromParent_fn = unsafe extern "C" fn(this: *mut crate::NiAVObject);

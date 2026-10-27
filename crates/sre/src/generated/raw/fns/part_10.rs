@@ -593,25 +593,25 @@ pub const FreeCameraState__End: u64 = 50742;
 pub const FreeCameraState__GetRotation: u64 = 50744;
 /// `FreeCameraState::GetTranslation` at 0x8f60a0 (semantic, high); signature (untiered): `undefined GetTranslation(FreeCameraState * this, undefined4 * param_1)`
 pub const FreeCameraState__GetTranslation: u64 = 50745;
-/// `FreeCameraState::InputHandler::CanProcess` at 0x8f6100 (semantic, high); signature (untiered): `undefined8 CanProcess(void * this, longlong * param_1)`; slot 1 of the free camera handler: the event is Run (+0xb0) or one of CameraZUp, CameraZDown, WorldZUp, WorldZDown, LockToZPlane (0x3255ac8..0x3255ae8) (high); semantic signature: `bool (PlayerInputHandler* this, InputEvent* event)`
+/// `FreeCameraState::InputHandler::CanProcess` at 0x8f6100 (semantic, high); signature (untiered): `undefined8 CanProcess(void * this, longlong * param_1)`; semantic: slot 1 of the free camera handler: the event is Run (+0xb0) or one of CameraZUp, CameraZDown, WorldZUp, WorldZDown, LockToZPlane (0x3255ac8..0x3255ae8) (high); signature `bool (PlayerInputHandler* this, InputEvent* event)`
 pub const FreeCameraState__InputHandler__CanProcess: u64 = 50747;
 /// `FreeCameraState::InputHandler::CanProcess` as a function pointer type (high).
 pub type FreeCameraState__InputHandler__CanProcess_fn = unsafe extern "C" fn(this: *mut crate::PlayerInputHandler, event: *mut crate::InputEvent) -> bool;
-/// `FreeCameraState::InputHandler::Destroy` at 0x8fc470 (semantic, high); signature (untiered): `undefined Destroy(void * this)`; slot 0 adjustor thunk: rcx -= 0x20, jump to FreeCameraState::vdtor 0x8fc5b0 (high); semantic signature: `FreeCameraState* (PlayerInputHandler* this, u32 flags)`
+/// `FreeCameraState::InputHandler::Destroy` at 0x8fc470 (semantic, high); signature (untiered): `undefined Destroy(void * this)`; semantic: slot 0 adjustor thunk: rcx -= 0x20, jump to FreeCameraState::vdtor 0x8fc5b0 (high); signature `FreeCameraState* (PlayerInputHandler* this, u32 flags)`
 pub const FreeCameraState__InputHandler__Destroy: u64 = 50864;
 /// `FreeCameraState::InputHandler::Destroy` as a function pointer type (high).
 pub type FreeCameraState__InputHandler__Destroy_fn = unsafe extern "C" fn(this: *mut crate::PlayerInputHandler, flags: u32) -> *mut crate::FreeCameraState;
-/// `FreeCameraState::InputHandler::ProcessButton` at 0x8f6170 (semantic, high); signature (untiered): `undefined ProcessButton(void * this, longlong * param_1)`; slot 6: CameraZUp -> state+0x44 = value; CameraZDown -> state+0x48 = -value; Run -> state+0x4e = held; WorldZUp -> state+0x4c (i16) = held ? 1 : 0; WorldZDown -> +0x4c = held ? -1 : 0; LockToZPlane -> toggle +0x4f on the press (value != 0, held time 0) (high); semantic signature: `void (PlayerInputHandler* this, ButtonEvent* event, PlayerControlsData* data)`
+/// `FreeCameraState::InputHandler::ProcessButton` at 0x8f6170 (semantic, high); signature (untiered): `undefined ProcessButton(void * this, longlong * param_1)`; semantic: slot 6: CameraZUp -> state+0x44 = value; CameraZDown -> state+0x48 = -value; Run -> state+0x4e = held; WorldZUp -> state+0x4c (i16) = held ? 1 : 0; WorldZDown -> +0x4c = held ? -1 : 0; LockToZPlane -> toggle +0x4f on the press (value != 0, held time 0) (high); signature `void (PlayerInputHandler* this, ButtonEvent* event, PlayerControlsData* data)`
 pub const FreeCameraState__InputHandler__ProcessButton: u64 = 50748;
 /// `FreeCameraState::InputHandler::ProcessButton` as a function pointer type (high).
 pub type FreeCameraState__InputHandler__ProcessButton_fn = unsafe extern "C" fn(this: *mut crate::PlayerInputHandler, event: *mut crate::ButtonEvent, data: *mut c_void);
-/// `FreeCameraState::Integrate` at 0x8f62c0 (semantic, high); signature (untiered): `undefined Integrate(longlong param_1)`; per frame: yaw += look.x * fFreeCameraRotationSpeed:Camera * real delta, pitch -= look.y * same, both wrapped to [0, 2pi); position += the yaw/pitch basis applied to (move.x, move.y, trigger sum +0x44 + +0x48) * fFreeCameraTranslationSpeed:Camera (* fFreeCameraRunSpeed:Camera while run +0x4e); horizontalMove (+0x4f) drops the pitch from the basis; verticalInput (+0x4c) replaces the z step (high); semantic signature: `void (FreeCameraState* this)`
+/// `FreeCameraState::Integrate` at 0x8f62c0 (semantic, high); signature (untiered): `undefined Integrate(longlong param_1)`; semantic: per frame: yaw += look.x * fFreeCameraRotationSpeed:Camera * real delta, pitch -= look.y * same, both wrapped to [0, 2pi); position += the yaw/pitch basis applied to (move.x, move.y, trigger sum +0x44 + +0x48) * fFreeCameraTranslationSpeed:Camera (* fFreeCameraRunSpeed:Camera while run +0x4e); horizontalMove (+0x4f) drops the pitch from the basis; verticalInput (+0x4c) replaces the z step (high); signature `void (FreeCameraState* this)`
 pub const FreeCameraState__Integrate: u64 = 50749;
 /// `FreeCameraState::Integrate` as a function pointer type (high).
 pub type FreeCameraState__Integrate_fn = unsafe extern "C" fn(this: *mut crate::FreeCameraState);
 /// `FreeCameraState::Update` at 0x8f5f50 (runtime, high); signature (untiered): `undefined Update(FreeCameraState * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
 pub const FreeCameraState__Update: u64 = 50743;
-/// `FreeCameraState::dtor` at 0x8f5e10 (semantic, high); signature (untiered): `undefined dtor(FreeCameraState * this)`; non-deleting destructor: +0x20 handler vtable = PlayerInputHandler's, vtable = TESCameraState's (high); semantic signature: `void (FreeCameraState* this)`
+/// `FreeCameraState::dtor` at 0x8f5e10 (semantic, high); signature (untiered): `undefined dtor(FreeCameraState * this)`; semantic: non-deleting destructor: +0x20 handler vtable = PlayerInputHandler's, vtable = TESCameraState's (high); signature `void (FreeCameraState* this)`
 pub const FreeCameraState__dtor: u64 = 50740;
 /// `FreeCameraState::dtor` as a function pointer type (high).
 pub type FreeCameraState__dtor_fn = unsafe extern "C" fn(this: *mut crate::FreeCameraState);
@@ -1971,7 +1971,7 @@ pub const FreeWithOptionalCallback: u64 = 90109;
 pub const FreeWithStoredMemSize: u64 = 25747;
 /// `FreeWordVector` at 0x15a3c70 (decompiler, high); signature (high): `undefined FreeWordVector(longlong * param_1, undefined8 param_2, void * param_3, undefined8 param_4)`
 pub const FreeWordVector: u64 = 109510;
-/// `FreezeStack` at 0x14b9dc0 (semantic, high); signature (untiered): `uint * FreezeStack(longlong param_1, int * param_2, undefined8 param_3, undefined8 param_4)`; stack+0x6c = 2, links the stack at the head of the frozen list (+0x9390, via stack+0x98) under freezeLock, frozenCount + 1 (high); semantic signature: `void (BSScript::Internal::VirtualMachine* vm, BSScript::Stack* stack)`
+/// `FreezeStack` at 0x14b9dc0 (semantic, high); signature (untiered): `uint * FreezeStack(longlong param_1, int * param_2, undefined8 param_3, undefined8 param_4)`; semantic: stack+0x6c = 2, links the stack at the head of the frozen list (+0x9390, via stack+0x98) under freezeLock, frozenCount + 1 (high); signature `void (BSScript::Internal::VirtualMachine* vm, BSScript::Stack* stack)`
 pub const FreezeStack: u64 = 104850;
 /// `FreezeStack` as a function pointer type (high).
 pub type FreezeStack_fn = unsafe extern "C" fn(vm: *mut crate::BSScript__Internal__VirtualMachine, stack: *mut crate::BSScript__Stack);
@@ -1989,7 +1989,7 @@ pub const FrenzyEffect__vfunc_21_sub0: u64 = 35034;
 pub const FrenzyEffect__vfunc_33: u64 = 35044;
 /// `FurnitureCameraState::Begin` at 0x8f6630 (semantic, high); signature (untiered): `undefined Begin(FurnitureCameraState * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
 pub const FurnitureCameraState__Begin: u64 = 50751;
-/// `FurnitureCameraState::Configure` at 0x8f69b0 (runtime, high); signature (untiered): `undefined Configure(longlong param_1, longlong param_2)`; furniture without byte +0xe0: zoom = fFurnitureCameraZoom:Camera, pitch = fFurnitureCameraAngle:Camera, yawOffset 0, translate 0, followHeading 0; with +0xe0: the fWorkbenchCamera{Zoom,Pitch,Yaw,TranslateX/Y/Z}:Camera values and followHeading 1 (high); semantic signature: `void (FurnitureCameraState* this, TESFurniture* furniture)`
+/// `FurnitureCameraState::Configure` at 0x8f69b0 (runtime, high); signature (untiered): `undefined Configure(longlong param_1, longlong param_2)`; semantic: furniture without byte +0xe0: zoom = fFurnitureCameraZoom:Camera, pitch = fFurnitureCameraAngle:Camera, yawOffset 0, translate 0, followHeading 0; with +0xe0: the fWorkbenchCamera{Zoom,Pitch,Yaw,TranslateX/Y/Z}:Camera values and followHeading 1 (high); signature `void (FurnitureCameraState* this, TESFurniture* furniture)`
 pub const FurnitureCameraState__Configure: u64 = 50756;
 /// `FurnitureCameraState::Configure` as a function pointer type (high).
 pub type FurnitureCameraState__Configure_fn = unsafe extern "C" fn(this: *mut crate::FurnitureCameraState, furniture: *mut crate::TESFurniture);
@@ -2003,7 +2003,7 @@ pub const FurnitureCameraState__GetRotation: u64 = 50754;
 pub const FurnitureCameraState__GetTranslation: u64 = 50755;
 /// `FurnitureCameraState::Update` at 0x8f66f0 (semantic, high); signature (untiered): `undefined Update(FurnitureCameraState * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
 pub const FurnitureCameraState__Update: u64 = 50752;
-/// `FurnitureCameraState::dtor` at 0x8f6610 (semantic, high); signature (untiered): `undefined dtor(FurnitureCameraState * this)`; non-deleting destructor: vtable = TESCameraState's (high); semantic signature: `void (FurnitureCameraState* this)`
+/// `FurnitureCameraState::dtor` at 0x8f6610 (semantic, high); signature (untiered): `undefined dtor(FurnitureCameraState * this)`; semantic: non-deleting destructor: vtable = TESCameraState's (high); signature `void (FurnitureCameraState* this)`
 pub const FurnitureCameraState__dtor: u64 = 50750;
 /// `FurnitureCameraState::dtor` as a function pointer type (high).
 pub type FurnitureCameraState__dtor_fn = unsafe extern "C" fn(this: *mut crate::FurnitureCameraState);
@@ -2161,15 +2161,15 @@ pub const GFxFileOpenerBase__vdtor: u64 = 82435;
 pub const GFxFunctionHandler__Destroy: u64 = 33604;
 /// `GFxFunctionHandler::dtor` at 0x57dee0 (layout_inference, high); signature (high): `undefined dtor(GFxFunctionHandler * this)`
 pub const GFxFunctionHandler__dtor: u64 = 418782;
-/// `GFxFunctionObject::Call` at 0xcf5ff0 (semantic, medium); signature (untiered): `undefined Call(longlong param_1, longlong param_2)`; AS call entry of a function object made by CreateFunction (slot 10 of vtable 0x1a235b8) (medium); semantic signature: `void (GFxFunctionObject* this, void* fnCall)`
+/// `GFxFunctionObject::Call` at 0xcf5ff0 (semantic, medium); signature (untiered): `undefined Call(longlong param_1, longlong param_2)`; semantic: AS call entry of a function object made by CreateFunction (slot 10 of vtable 0x1a235b8) (medium); signature `void (GFxFunctionObject* this, void* fnCall)`
 pub const GFxFunctionObject__Call: u64 = 82255;
-/// `GFxFunctionObject::CallHandler` at 0xcf63c0 (semantic, high); signature (untiered): `undefined CallHandler(longlong param_1, longlong param_2)`; converts this and the arguments, builds Params (0x38), calls handler->Call, converts retVal back (high); semantic signature: `void (GFxFunctionObject* this, void* fnCall)`
+/// `GFxFunctionObject::CallHandler` at 0xcf63c0 (semantic, high); signature (untiered): `undefined CallHandler(longlong param_1, longlong param_2)`; semantic: converts this and the arguments, builds Params (0x38), calls handler->Call, converts retVal back (high); signature `void (GFxFunctionObject* this, void* fnCall)`
 pub const GFxFunctionObject__CallHandler: u64 = 82257;
 /// `GFxFunctionObject::CallHandler` as a function pointer type (high).
 pub type GFxFunctionObject__CallHandler_fn = unsafe extern "C" fn(this: *mut c_void, fnCall: *mut c_void);
 /// `GFxImageLoader::vdtor` at 0x1173ae0 (layout_inference, medium); signature (low): `GFxImageLoader * vdtor(GFxImageLoader * this, uint param_1, undefined8 param_2, undefined8 param_3)`
 pub const GFxImageLoader__vdtor: u64 = 84485;
-/// `GFxLoader::CreateMovie` at 0xdf2c10 (semantic, medium); signature (untiered): `undefined8 * CreateMovie(longlong param_1, char * param_2, uint param_3, undefined8 param_4)`; creates or finds a movie definition from a path; flags ORed with loader+0x18 (medium); semantic signature: `void* (GFxLoader* this, const char* path, uint flags, uint)`
+/// `GFxLoader::CreateMovie` at 0xdf2c10 (semantic, medium); signature (untiered): `undefined8 * CreateMovie(longlong param_1, char * param_2, uint param_3, undefined8 param_4)`; semantic: creates or finds a movie definition from a path; flags ORed with loader+0x18 (medium); signature `void* (GFxLoader* this, const char* path, uint flags, uint)`
 pub const GFxLoader__CreateMovie: u64 = 84640;
 /// `GFxLog::GFxLogBase_GFxLog_vdtor` at 0xdf3c64 (slot_propagation, medium); signature (high): `undefined GFxLogBase_GFxLog_vdtor(GFxLog * this)`
 pub const GFxLog__GFxLogBase_GFxLog_vdtor: u64 = 82358;
@@ -2207,17 +2207,17 @@ pub const GFxMovieView__GetVariableArraySize: u64 = 83866;
 pub const GFxMovieView__HandleEvent: u64 = 83874;
 /// `GFxMovieView::Invoke` at 0xd4b150 (semantic, high); signature (untiered): `undefined Invoke(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4, undefined4 param_5)`
 pub const GFxMovieView__Invoke: u64 = 83885;
-/// `GFxMovieView::InvokeArgsToString` at 0xd00380 (semantic, high); signature (untiered): `undefined8 InvokeArgsToString(longlong param_1, longlong param_2, longlong param_3, int param_4)`; non-virtual Invoke with a GFxValue array, result returned as string (high); semantic signature: `const char* (GFxMovieView* this, const char* path, const GFxValue* args, int argCount)`
+/// `GFxMovieView::InvokeArgsToString` at 0xd00380 (semantic, high); signature (untiered): `undefined8 InvokeArgsToString(longlong param_1, longlong param_2, longlong param_3, int param_4)`; semantic: non-virtual Invoke with a GFxValue array, result returned as string (high); signature `const char* (GFxMovieView* this, const char* path, const GFxValue* args, int argCount)`
 pub const GFxMovieView__InvokeArgsToString: u64 = 82665;
 /// `GFxMovieView::InvokeArgsToString` as a function pointer type (high).
 pub type GFxMovieView__InvokeArgsToString_fn = unsafe extern "C" fn(this: *mut crate::GFxMovieView, path: *const c_char, args: *const crate::GFxValue, argCount: i32) -> *const c_char;
 /// `GFxMovieView::InvokeFmt` at 0xd4b070 (semantic, high); signature (untiered): `ulonglong InvokeFmt(longlong param_1, longlong param_2, undefined8 * param_3, undefined8 param_4)`
 pub const GFxMovieView__InvokeFmt: u64 = 83884;
-/// `GFxMovieView::InvokeFmtToString` at 0xd00200 (semantic, high); signature (untiered): `undefined8 InvokeFmtToString(longlong param_1, longlong param_2, undefined8 param_3, undefined8 param_4)`; non-virtual Invoke whose result is returned as a string kept in +0x24a8 (high); semantic signature: `const char* (GFxMovieView* this, const char* path, const char* argFmt, ...)`
+/// `GFxMovieView::InvokeFmtToString` at 0xd00200 (semantic, high); signature (untiered): `undefined8 InvokeFmtToString(longlong param_1, longlong param_2, undefined8 param_3, undefined8 param_4)`; semantic: non-virtual Invoke whose result is returned as a string kept in +0x24a8 (high); signature `const char* (GFxMovieView* this, const char* path, const char* argFmt, ...)`
 pub const GFxMovieView__InvokeFmtToString: u64 = 82664;
 /// `GFxMovieView::InvokeFmtV` at 0xd4b430 (semantic, high); signature (untiered): `ulonglong InvokeFmtV(longlong param_1, longlong param_2, undefined8 * param_3, undefined8 param_4, undefined8 param_5)`
 pub const GFxMovieView__InvokeFmtV: u64 = 83888;
-/// `GFxMovieView::InvokeOnLevel` at 0xd4adb0 (semantic, high); signature (untiered): `ulonglong InvokeOnLevel(longlong param_1, longlong * param_2, longlong param_3, undefined8 * param_4, longlong param_5, int param_6)`; implementation behind Invoke slot 23 (high); semantic signature: `bool (GFxMovieView* this, void* level, const char* path, GFxValue* result, const GFxValue* args, int argCount)`
+/// `GFxMovieView::InvokeOnLevel` at 0xd4adb0 (semantic, high); signature (untiered): `ulonglong InvokeOnLevel(longlong param_1, longlong * param_2, longlong param_3, undefined8 * param_4, longlong param_5, int param_6)`; semantic: implementation behind Invoke slot 23 (high); signature `bool (GFxMovieView* this, void* level, const char* path, GFxValue* result, const GFxValue* args, int argCount)`
 pub const GFxMovieView__InvokeOnLevel: u64 = 83883;
 /// `GFxMovieView::InvokeOnLevel` as a function pointer type (high).
 pub type GFxMovieView__InvokeOnLevel_fn = unsafe extern "C" fn(this: *mut crate::GFxMovieView, level: *mut c_void, path: *const c_char, result: *mut crate::GFxValue, args: *const crate::GFxValue, argCount: i32) -> bool;
@@ -2233,11 +2233,11 @@ pub const GFxMovieView__SetVariable: u64 = 83982;
 pub const GFxMovieView__SetVariableArraySize: u64 = 83984;
 /// `GFxMovieView::SetViewport` at 0xd53280 (semantic, high); signature (untiered): `undefined SetViewport(longlong param_1, undefined8 * param_2)`
 pub const GFxMovieView__SetViewport: u64 = 83989;
-/// `GFxMovieView::UpdateViewport` at 0xd54c00 (semantic, high); signature (untiered): `undefined UpdateViewport(longlong param_1)`; computes the visible frame rect and scale from viewport, scale mode and alignment (high); semantic signature: `void (GFxMovieView* this)`
+/// `GFxMovieView::UpdateViewport` at 0xd54c00 (semantic, high); signature (untiered): `undefined UpdateViewport(longlong param_1)`; semantic: computes the visible frame rect and scale from viewport, scale mode and alignment (high); signature `void (GFxMovieView* this)`
 pub const GFxMovieView__UpdateViewport: u64 = 84012;
 /// `GFxMovieView::UpdateViewport` as a function pointer type (high).
 pub type GFxMovieView__UpdateViewport_fn = unsafe extern "C" fn(this: *mut crate::GFxMovieView);
-/// `GFxMovieView::ctor` at 0xd3e830 (semantic, high); signature (untiered): `GRefCountImplCore * ctor(void * this, longlong param_1)`; sets vtable 0x1a2ade8 and initialises the view (high); semantic signature: `GFxMovieView* (GFxMovieView* this, void* movieDefImpl)`
+/// `GFxMovieView::ctor` at 0xd3e830 (semantic, high); signature (untiered): `GRefCountImplCore * ctor(void * this, longlong param_1)`; semantic: sets vtable 0x1a2ade8 and initialises the view (high); signature `GFxMovieView* (GFxMovieView* this, void* movieDefImpl)`
 pub const GFxMovieView__ctor: u64 = 83671;
 /// `GFxMovieView::ctor` as a function pointer type (high).
 pub type GFxMovieView__ctor_fn = unsafe extern "C" fn(this: *mut crate::GFxMovieView, movieDefImpl: *mut c_void) -> *mut crate::GFxMovieView;
@@ -2283,91 +2283,91 @@ pub const GFxTranslator__vfunc_1: u64 = 82381;
 pub const GFxTranslator__vfunc_2: u64 = 82398;
 /// `GFxTranslator::vfunc_3` at 0xdf60b0 (rtti, medium); signature (low): `undefined8 vfunc_3(GFxTranslator * this, longlong * param_1)`
 pub const GFxTranslator__vfunc_3: u64 = 84602;
-/// `GFxValue::Assign` at 0x5759c0 (semantic, high); signature (untiered): `undefined8 * Assign(undefined8 * param_1, undefined8 * param_2)`; copy-assign with AddRef/Release (high); semantic signature: `GFxValue* (GFxValue* this, const GFxValue* other)`
+/// `GFxValue::Assign` at 0x5759c0 (semantic, high); signature (untiered): `undefined8 * Assign(undefined8 * param_1, undefined8 * param_2)`; semantic: copy-assign with AddRef/Release (high); signature `GFxValue* (GFxValue* this, const GFxValue* other)`
 pub const GFxValue__Assign: u64 = 33582;
 /// `GFxValue::Assign` as a function pointer type (high).
 pub type GFxValue__Assign_fn = unsafe extern "C" fn(this: *mut crate::GFxValue, other: *const crate::GFxValue) -> *mut crate::GFxValue;
-/// `GFxValue::ObjectInterface::CreateEmptyMovieClip` at 0xcf4380 (semantic, medium); signature (untiered): `undefined CreateEmptyMovieClip(longlong * param_1, longlong param_2, undefined8 * param_3, longlong param_4, int param_5)`; adds an empty sprite child (depth < 0: next free) (medium); semantic signature: `bool (ObjectInterface* this, void* data, GFxValue* out, const char* instanceName, int depth)`
+/// `GFxValue::ObjectInterface::CreateEmptyMovieClip` at 0xcf4380 (semantic, medium); signature (untiered): `undefined CreateEmptyMovieClip(longlong * param_1, longlong param_2, undefined8 * param_3, longlong param_4, int param_5)`; semantic: adds an empty sprite child (depth < 0: next free) (medium); signature `bool (ObjectInterface* this, void* data, GFxValue* out, const char* instanceName, int depth)`
 pub const GFxValue__ObjectInterface__CreateEmptyMovieClip: u64 = 82224;
-/// `GFxValue::ObjectInterface::GetArraySize` at 0xcf54a0 (semantic, high); signature (untiered): `undefined4 GetArraySize(undefined8 param_1, longlong param_2)`; *(data+0x58) (high); semantic signature: `uint (ObjectInterface* this, void* data)`
+/// `GFxValue::ObjectInterface::GetArraySize` at 0xcf54a0 (semantic, high); signature (untiered): `undefined4 GetArraySize(undefined8 param_1, longlong param_2)`; semantic: *(data+0x58) (high); signature `uint (ObjectInterface* this, void* data)`
 pub const GFxValue__ObjectInterface__GetArraySize: u64 = 82237;
 /// `GFxValue::ObjectInterface::GetArraySize` as a function pointer type (high).
 pub type GFxValue__ObjectInterface__GetArraySize_fn = unsafe extern "C" fn(this: *mut c_void, data: *mut c_void) -> u32;
-/// `GFxValue::ObjectInterface::GetDisplayInfo` at 0xcf5500 (semantic, high); signature (untiered): `undefined GetDisplayInfo(undefined8 * param_1, longlong param_2, double * param_3)`; reads transform, alpha, visibility (high); semantic signature: `bool (ObjectInterface* this, void* data, GFxValue::DisplayInfo* out)`
+/// `GFxValue::ObjectInterface::GetDisplayInfo` at 0xcf5500 (semantic, high); signature (untiered): `undefined GetDisplayInfo(undefined8 * param_1, longlong param_2, double * param_3)`; semantic: reads transform, alpha, visibility (high); signature `bool (ObjectInterface* this, void* data, GFxValue::DisplayInfo* out)`
 pub const GFxValue__ObjectInterface__GetDisplayInfo: u64 = 82239;
 /// `GFxValue::ObjectInterface::GetDisplayInfo` as a function pointer type (high).
 pub type GFxValue__ObjectInterface__GetDisplayInfo_fn = unsafe extern "C" fn(this: *mut c_void, data: *mut c_void, out: *mut crate::GFxValue__DisplayInfo) -> bool;
-/// `GFxValue::ObjectInterface::GetElement` at 0xcf5820 (semantic, high); signature (untiered): `undefined8 GetElement(longlong * param_1, longlong param_2, uint param_3, undefined8 * param_4)`; array element (high); semantic signature: `bool (ObjectInterface* this, void* data, uint index, GFxValue* out)`
+/// `GFxValue::ObjectInterface::GetElement` at 0xcf5820 (semantic, high); signature (untiered): `undefined8 GetElement(longlong * param_1, longlong param_2, uint param_3, undefined8 * param_4)`; semantic: array element (high); signature `bool (ObjectInterface* this, void* data, uint index, GFxValue* out)`
 pub const GFxValue__ObjectInterface__GetElement: u64 = 82241;
 /// `GFxValue::ObjectInterface::GetElement` as a function pointer type (high).
 pub type GFxValue__ObjectInterface__GetElement_fn = unsafe extern "C" fn(this: *mut c_void, data: *mut c_void, index: u32, out: *mut crate::GFxValue) -> bool;
-/// `GFxValue::ObjectInterface::GetMember` at 0xcf5a40 (semantic, high); signature (untiered): `ulonglong GetMember(longlong * param_1, longlong * param_2, longlong param_3, undefined8 * param_4, char param_5)`; reads a member (resolves the display handle first) (high); semantic signature: `bool (ObjectInterface* this, void* data, const char* name, GFxValue* out, bool isDisplayObject)`
+/// `GFxValue::ObjectInterface::GetMember` at 0xcf5a40 (semantic, high); signature (untiered): `ulonglong GetMember(longlong * param_1, longlong * param_2, longlong param_3, undefined8 * param_4, char param_5)`; semantic: reads a member (resolves the display handle first) (high); signature `bool (ObjectInterface* this, void* data, const char* name, GFxValue* out, bool isDisplayObject)`
 pub const GFxValue__ObjectInterface__GetMember: u64 = 82245;
 /// `GFxValue::ObjectInterface::GetMember` as a function pointer type (high).
 pub type GFxValue__ObjectInterface__GetMember_fn = unsafe extern "C" fn(this: *mut c_void, data: *mut c_void, name: *const c_char, out: *mut crate::GFxValue, isDisplayObject: bool) -> bool;
-/// `GFxValue::ObjectInterface::GetText` at 0xcf5c00 (semantic, high); signature (untiered): `ulonglong GetText(longlong * param_1, longlong * param_2, undefined8 * param_3, char param_4)`; reads text/htmlText (high); semantic signature: `bool (ObjectInterface* this, void* data, GFxValue* out, bool isHtml)`
+/// `GFxValue::ObjectInterface::GetText` at 0xcf5c00 (semantic, high); signature (untiered): `ulonglong GetText(longlong * param_1, longlong * param_2, undefined8 * param_3, char param_4)`; semantic: reads text/htmlText (high); signature `bool (ObjectInterface* this, void* data, GFxValue* out, bool isHtml)`
 pub const GFxValue__ObjectInterface__GetText: u64 = 82248;
 /// `GFxValue::ObjectInterface::GetText` as a function pointer type (high).
 pub type GFxValue__ObjectInterface__GetText_fn = unsafe extern "C" fn(this: *mut c_void, data: *mut c_void, out: *mut crate::GFxValue, isHtml: bool) -> bool;
-/// `GFxValue::ObjectInterface::GotoFrame` at 0xcf5dc0 (semantic, medium); signature (untiered): `undefined8 GotoFrame(undefined8 * param_1, longlong param_2, int param_3, undefined1 param_4)`; sprite goto (frame-1) then play state (medium); semantic signature: `bool (ObjectInterface* this, void* data, uint frame, bool playState)`
+/// `GFxValue::ObjectInterface::GotoFrame` at 0xcf5dc0 (semantic, medium); signature (untiered): `undefined8 GotoFrame(undefined8 * param_1, longlong param_2, int param_3, undefined1 param_4)`; semantic: sprite goto (frame-1) then play state (medium); signature `bool (ObjectInterface* this, void* data, uint frame, bool playState)`
 pub const GFxValue__ObjectInterface__GotoFrame: u64 = 82252;
-/// `GFxValue::ObjectInterface::GotoLabeledFrame` at 0xcf5e50 (semantic, medium); signature (untiered): `undefined8 GotoLabeledFrame(undefined8 * param_1, longlong param_2, undefined8 param_3, undefined1 param_4)`; label lookup (vt[0x280]) then goto and play state (medium); semantic signature: `bool (ObjectInterface* this, void* data, const char* label, bool playState)`
+/// `GFxValue::ObjectInterface::GotoLabeledFrame` at 0xcf5e50 (semantic, medium); signature (untiered): `undefined8 GotoLabeledFrame(undefined8 * param_1, longlong param_2, undefined8 param_3, undefined1 param_4)`; semantic: label lookup (vt[0x280]) then goto and play state (medium); signature `bool (ObjectInterface* this, void* data, const char* label, bool playState)`
 pub const GFxValue__ObjectInterface__GotoLabeledFrame: u64 = 82253;
-/// `GFxValue::ObjectInterface::HasMember` at 0xcf5ef0 (semantic, high); signature (untiered): `ulonglong HasMember(longlong * param_1, longlong * param_2, char * param_3, char param_4)`; true when the member exists (high); semantic signature: `bool (ObjectInterface* this, void* data, const char* name, bool isDisplayObject)`
+/// `GFxValue::ObjectInterface::HasMember` at 0xcf5ef0 (semantic, high); signature (untiered): `ulonglong HasMember(longlong * param_1, longlong * param_2, char * param_3, char param_4)`; semantic: true when the member exists (high); signature `bool (ObjectInterface* this, void* data, const char* name, bool isDisplayObject)`
 pub const GFxValue__ObjectInterface__HasMember: u64 = 82254;
 /// `GFxValue::ObjectInterface::HasMember` as a function pointer type (high).
 pub type GFxValue__ObjectInterface__HasMember_fn = unsafe extern "C" fn(this: *mut c_void, data: *mut c_void, name: *const c_char, isDisplayObject: bool) -> bool;
-/// `GFxValue::ObjectInterface::Invoke` at 0xcf6160 (runtime, high); signature (untiered): `ulonglong Invoke(longlong * param_1, longlong * param_2, longlong param_3, char * param_4, longlong param_5, uint param_6, char param_7)`; calls a method of the object (high); semantic signature: `bool (ObjectInterface* this, void* data, GFxValue* result, const char* name, const GFxValue* args, uint argCount, bool isDisplayObject)`
+/// `GFxValue::ObjectInterface::Invoke` at 0xcf6160 (runtime, high); signature (untiered): `ulonglong Invoke(longlong * param_1, longlong * param_2, longlong param_3, char * param_4, longlong param_5, uint param_6, char param_7)`; semantic: calls a method of the object (high); signature `bool (ObjectInterface* this, void* data, GFxValue* result, const char* name, const GFxValue* args, uint argCount, bool isDisplayObject)`
 pub const GFxValue__ObjectInterface__Invoke: u64 = 82256;
 /// `GFxValue::ObjectInterface::Invoke` as a function pointer type (high).
 pub type GFxValue__ObjectInterface__Invoke_fn = unsafe extern "C" fn(this: *mut c_void, data: *mut c_void, result: *mut crate::GFxValue, name: *const c_char, args: *const crate::GFxValue, argCount: u32, isDisplayObject: bool) -> bool;
-/// `GFxValue::ObjectInterface::ObjectAddRef` at 0xcf6830 (semantic, high); signature (untiered): `undefined ObjectAddRef(undefined8 param_1, longlong param_2, longlong * param_3)`; AddRef by type: 4 string node +0x10, 5 wide header (data-0x18), 6/7 AS object (data-0x20)+0x10, 8 display handle +0 (high); semantic signature: `void (ObjectInterface* this, GFxValue* v, void* data)`
+/// `GFxValue::ObjectInterface::ObjectAddRef` at 0xcf6830 (semantic, high); signature (untiered): `undefined ObjectAddRef(undefined8 param_1, longlong param_2, longlong * param_3)`; semantic: AddRef by type: 4 string node +0x10, 5 wide header (data-0x18), 6/7 AS object (data-0x20)+0x10, 8 display handle +0 (high); signature `void (ObjectInterface* this, GFxValue* v, void* data)`
 pub const GFxValue__ObjectInterface__ObjectAddRef: u64 = 82269;
 /// `GFxValue::ObjectInterface::ObjectAddRef` as a function pointer type (high).
 pub type GFxValue__ObjectInterface__ObjectAddRef_fn = unsafe extern "C" fn(this: *mut c_void, v: *mut crate::GFxValue, data: *mut c_void);
-/// `GFxValue::ObjectInterface::ObjectRelease` at 0xcf6890 (semantic, high); signature (untiered): `undefined ObjectRelease(undefined8 param_1, longlong param_2, longlong * param_3)`; Release by type, frees at zero (high); semantic signature: `void (ObjectInterface* this, GFxValue* v, void* data)`
+/// `GFxValue::ObjectInterface::ObjectRelease` at 0xcf6890 (semantic, high); signature (untiered): `undefined ObjectRelease(undefined8 param_1, longlong param_2, longlong * param_3)`; semantic: Release by type, frees at zero (high); signature `void (ObjectInterface* this, GFxValue* v, void* data)`
 pub const GFxValue__ObjectInterface__ObjectRelease: u64 = 82270;
 /// `GFxValue::ObjectInterface::ObjectRelease` as a function pointer type (high).
 pub type GFxValue__ObjectInterface__ObjectRelease_fn = unsafe extern "C" fn(this: *mut c_void, v: *mut crate::GFxValue, data: *mut c_void);
-/// `GFxValue::ObjectInterface::PushBack` at 0xcf6ab0 (semantic, high); signature (untiered): `undefined8 PushBack(longlong * param_1, longlong param_2, longlong param_3)`; appends to the array (high); semantic signature: `bool (ObjectInterface* this, void* data, const GFxValue* v)`
+/// `GFxValue::ObjectInterface::PushBack` at 0xcf6ab0 (semantic, high); signature (untiered): `undefined8 PushBack(longlong * param_1, longlong param_2, longlong param_3)`; semantic: appends to the array (high); signature `bool (ObjectInterface* this, void* data, const GFxValue* v)`
 pub const GFxValue__ObjectInterface__PushBack: u64 = 82273;
 /// `GFxValue::ObjectInterface::PushBack` as a function pointer type (high).
 pub type GFxValue__ObjectInterface__PushBack_fn = unsafe extern "C" fn(this: *mut c_void, data: *mut c_void, v: *const crate::GFxValue) -> bool;
-/// `GFxValue::ObjectInterface::RemoveElements` at 0xcf6f40 (semantic, high); signature (untiered): `undefined8 RemoveElements(undefined8 param_1, longlong param_2, uint param_3, uint param_4)`; removes count elements (count < 0: to the end) (high); semantic signature: `bool (ObjectInterface* this, void* data, uint index, int count)`
+/// `GFxValue::ObjectInterface::RemoveElements` at 0xcf6f40 (semantic, high); signature (untiered): `undefined8 RemoveElements(undefined8 param_1, longlong param_2, uint param_3, uint param_4)`; semantic: removes count elements (count < 0: to the end) (high); signature `bool (ObjectInterface* this, void* data, uint index, int count)`
 pub const GFxValue__ObjectInterface__RemoveElements: u64 = 82280;
 /// `GFxValue::ObjectInterface::RemoveElements` as a function pointer type (high).
 pub type GFxValue__ObjectInterface__RemoveElements_fn = unsafe extern "C" fn(this: *mut c_void, data: *mut c_void, index: u32, count: i32) -> bool;
-/// `GFxValue::ObjectInterface::SetArraySize` at 0xcf72b0 (semantic, high); signature (untiered): `undefined8 SetArraySize(undefined8 param_1, longlong param_2, int param_3)`; resizes the array (high); semantic signature: `bool (ObjectInterface* this, void* data, uint n)`
+/// `GFxValue::ObjectInterface::SetArraySize` at 0xcf72b0 (semantic, high); signature (untiered): `undefined8 SetArraySize(undefined8 param_1, longlong param_2, int param_3)`; semantic: resizes the array (high); signature `bool (ObjectInterface* this, void* data, uint n)`
 pub const GFxValue__ObjectInterface__SetArraySize: u64 = 82285;
 /// `GFxValue::ObjectInterface::SetArraySize` as a function pointer type (high).
 pub type GFxValue__ObjectInterface__SetArraySize_fn = unsafe extern "C" fn(this: *mut c_void, data: *mut c_void, n: u32) -> bool;
-/// `GFxValue::ObjectInterface::SetDisplayInfo` at 0xcf7330 (semantic, high); signature (untiered): `undefined SetDisplayInfo(undefined8 * param_1, longlong param_2, undefined8 * param_3)`; applies the fields whose mask bit is set (high); semantic signature: `bool (ObjectInterface* this, void* data, const GFxValue::DisplayInfo* info)`
+/// `GFxValue::ObjectInterface::SetDisplayInfo` at 0xcf7330 (semantic, high); signature (untiered): `undefined SetDisplayInfo(undefined8 * param_1, longlong param_2, undefined8 * param_3)`; semantic: applies the fields whose mask bit is set (high); signature `bool (ObjectInterface* this, void* data, const GFxValue::DisplayInfo* info)`
 pub const GFxValue__ObjectInterface__SetDisplayInfo: u64 = 82287;
 /// `GFxValue::ObjectInterface::SetDisplayInfo` as a function pointer type (high).
 pub type GFxValue__ObjectInterface__SetDisplayInfo_fn = unsafe extern "C" fn(this: *mut c_void, data: *mut c_void, info: *const crate::GFxValue__DisplayInfo) -> bool;
-/// `GFxValue::ObjectInterface::SetElement` at 0xcf8100 (semantic, high); signature (untiered): `undefined8 SetElement(longlong * param_1, longlong param_2, undefined4 param_3, longlong param_4)`; sets an array element (high); semantic signature: `bool (ObjectInterface* this, void* data, uint index, const GFxValue* v)`
+/// `GFxValue::ObjectInterface::SetElement` at 0xcf8100 (semantic, high); signature (untiered): `undefined8 SetElement(longlong * param_1, longlong param_2, undefined4 param_3, longlong param_4)`; semantic: sets an array element (high); signature `bool (ObjectInterface* this, void* data, uint index, const GFxValue* v)`
 pub const GFxValue__ObjectInterface__SetElement: u64 = 82289;
 /// `GFxValue::ObjectInterface::SetElement` as a function pointer type (high).
 pub type GFxValue__ObjectInterface__SetElement_fn = unsafe extern "C" fn(this: *mut c_void, data: *mut c_void, index: u32, v: *const crate::GFxValue) -> bool;
-/// `GFxValue::ObjectInterface::SetMember` at 0xcf8350 (semantic, high); signature (untiered): `ulonglong SetMember(longlong * param_1, longlong * param_2, longlong param_3, longlong param_4, char param_5)`; writes a member (high); semantic signature: `bool (ObjectInterface* this, void* data, const char* name, const GFxValue* value, bool isDisplayObject)`
+/// `GFxValue::ObjectInterface::SetMember` at 0xcf8350 (semantic, high); signature (untiered): `ulonglong SetMember(longlong * param_1, longlong * param_2, longlong param_3, longlong param_4, char param_5)`; semantic: writes a member (high); signature `bool (ObjectInterface* this, void* data, const char* name, const GFxValue* value, bool isDisplayObject)`
 pub const GFxValue__ObjectInterface__SetMember: u64 = 82292;
 /// `GFxValue::ObjectInterface::SetMember` as a function pointer type (high).
 pub type GFxValue__ObjectInterface__SetMember_fn = unsafe extern "C" fn(this: *mut c_void, data: *mut c_void, name: *const c_char, value: *const crate::GFxValue, isDisplayObject: bool) -> bool;
-/// `GFxValue::ObjectInterface::SetText` at 0xcf8450 (semantic, high); signature (untiered): `ulonglong SetText(longlong * param_1, longlong * param_2, undefined8 param_3, char param_4)`; text or htmlText of a text field (falls back to SetMember 'text'/'htmlText') (high); semantic signature: `bool (ObjectInterface* this, void* data, const char* text, bool isHtml)`
+/// `GFxValue::ObjectInterface::SetText` at 0xcf8450 (semantic, high); signature (untiered): `ulonglong SetText(longlong * param_1, longlong * param_2, undefined8 param_3, char param_4)`; semantic: text or htmlText of a text field (falls back to SetMember 'text'/'htmlText') (high); signature `bool (ObjectInterface* this, void* data, const char* text, bool isHtml)`
 pub const GFxValue__ObjectInterface__SetText: u64 = 82293;
 /// `GFxValue::ObjectInterface::SetText` as a function pointer type (high).
 pub type GFxValue__ObjectInterface__SetText_fn = unsafe extern "C" fn(this: *mut c_void, data: *mut c_void, text: *const c_char, isHtml: bool) -> bool;
-/// `GFxValue::ReleaseInternal` at 0xcf6e60 (semantic, high); signature (untiered): `undefined ReleaseInternal(undefined8 * param_1)`; GFx-side release of a managed value; clears +0 (high); semantic signature: `void (GFxValue* v)`
+/// `GFxValue::ReleaseInternal` at 0xcf6e60 (semantic, high); signature (untiered): `undefined ReleaseInternal(undefined8 * param_1)`; semantic: GFx-side release of a managed value; clears +0 (high); signature `void (GFxValue* v)`
 pub const GFxValue__ReleaseInternal: u64 = 82279;
 /// `GFxValue::ReleaseInternal` as a function pointer type (high).
 pub type GFxValue__ReleaseInternal_fn = unsafe extern "C" fn(v: *mut crate::GFxValue);
-/// `GFxValue::ReleaseManaged` at 0x575960 (semantic, high); signature (untiered): `undefined ReleaseManaged(undefined8 * param_1)`; engine-side value destructor body (high); semantic signature: `void (GFxValue* v)`
+/// `GFxValue::ReleaseManaged` at 0x575960 (semantic, high); signature (untiered): `undefined ReleaseManaged(undefined8 * param_1)`; semantic: engine-side value destructor body (high); signature `void (GFxValue* v)`
 pub const GFxValue__ReleaseManaged: u64 = 441651;
 /// `GFxValue::ReleaseManaged` as a function pointer type (high).
 pub type GFxValue__ReleaseManaged_fn = unsafe extern "C" fn(v: *mut crate::GFxValue);
-/// `GFxValueArray::PushBack` at 0x905790 (semantic, medium); signature (untiered): `undefined PushBack(longlong * param_1, undefined8 * param_2)`; appends a copy to an engine array of GFxValue (stride 0x18) (medium); semantic signature: `void (BSTArray<GFxValue>* arr, const GFxValue* v)`
+/// `GFxValueArray::PushBack` at 0x905790 (semantic, medium); signature (untiered): `undefined PushBack(longlong * param_1, undefined8 * param_2)`; semantic: appends a copy to an engine array of GFxValue (stride 0x18) (medium); signature `void (BSTArray<GFxValue>* arr, const GFxValue* v)`
 pub const GFxValueArray__PushBack: u64 = 51029;
-/// `GFxValueToASValue` at 0xcf4ee0 (semantic, high); signature (untiered): `undefined GFxValueToASValue(longlong param_1, longlong param_2, byte * param_3)`; GFxValue to internal AS value (high); semantic signature: `void (GFxMovieView* movie, const GFxValue* v, void* asOut)`
+/// `GFxValueToASValue` at 0xcf4ee0 (semantic, high); signature (untiered): `undefined GFxValueToASValue(longlong param_1, longlong param_2, byte * param_3)`; semantic: GFxValue to internal AS value (high); signature `void (GFxMovieView* movie, const GFxValue* v, void* asOut)`
 pub const GFxValueToASValue: u64 = 82233;
 /// `GFxValueToASValue` as a function pointer type (high).
 pub type GFxValueToASValue_fn = unsafe extern "C" fn(movie: *mut crate::GFxMovieView, v: *const crate::GFxValue, asOut: *mut c_void);
@@ -2383,7 +2383,7 @@ pub const GFxZlibSupport__vfunc_2_sub0: u64 = 88106;
 pub const GFxZlibSupportBase__vdtor: u64 = 82372;
 /// `GFx_DefineFontInfoLoader` at 0xe0b840 (decompiler, medium); signature (untiered): `undefined GFx_DefineFontInfoLoader(longlong param_1, undefined4 * param_2, undefined8 param_3, undefined8 param_4)`
 pub const GFx_DefineFontInfoLoader: u64 = 87621;
-/// `GFx_GetButtonFromUserEvent` at 0x991e30 (semantic, high); signature (untiered): `undefined GFx_GetButtonFromUserEvent(undefined8 * param_1)`; Scaleform callback 'GetButtonFromUserEvent' registered by HUDMenu, TutorialMenu and Journal: answers the key name of a user event (gamepad device 2 when the gamepad is active, else keyboard then mouse) (high); semantic signature: `void (FxDelegateArgs* args)`
+/// `GFx_GetButtonFromUserEvent` at 0x991e30 (semantic, high); signature (untiered): `undefined GFx_GetButtonFromUserEvent(undefined8 * param_1)`; semantic: Scaleform callback 'GetButtonFromUserEvent' registered by HUDMenu, TutorialMenu and Journal: answers the key name of a user event (gamepad device 2 when the gamepad is active, else keyboard then mouse) (high); signature `void (FxDelegateArgs* args)`
 pub const GFx_GetButtonFromUserEvent: u64 = 52937;
 /// `GFx_GetButtonFromUserEvent` as a function pointer type (high).
 pub type GFx_GetButtonFromUserEvent_fn = unsafe extern "C" fn(args: *mut c_void);

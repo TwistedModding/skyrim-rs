@@ -831,9 +831,9 @@ const _: () = assert!(core::mem::offset_of!(CubeMapRecord, srv) == 0x38);
 /// Evidence: creation parameters of a depth-stencil target; read by 0x100a980; size: 0x1015470 copies 0x10 bytes per id.
 #[repr(C)]
 pub struct DepthStencilProperties {
-    /// +0x0 `undefined4`, semantic;  (high)
+    /// +0x0 `undefined4`, semantic (high)
     pub width: u32,
-    /// +0x4 `undefined4`, semantic;  (high)
+    /// +0x4 `undefined4`, semantic (high)
     pub height: u32,
     /// +0x8 `undefined4`, semantic; array size; >1 gives per-slice Texture2DArray views (8 DSV slots) (high)
     pub slices: u32,
@@ -958,17 +958,17 @@ pub struct DragonCameraState {
     pub togglePOVPressed: u8,
     /// +0xE3 `undefined1`, semantic; tail padding (size 0xe8) (high)
     pub padE3: [u8; 5],
-    /// +0xE8 `u32`, semantic;  (high)
+    /// +0xE8 `u32`, semantic (high)
     pub mountHandle: u32,
-    /// +0xEC `float`, semantic;  (high)
+    /// +0xEC `float`, semantic (high)
     pub mountHeading: f32,
-    /// +0xF0 `undefined1`, semantic;  (medium)
+    /// +0xF0 `undefined1`, semantic (medium)
     pub turning: u8,
     /// +0xF1 `undefined1`, semantic; alignment padding after the byte +0xf0, before the float +0xf4 (high)
     pub padF1: [u8; 3],
     /// +0xF4 `float`, semantic; 0..1 by g_FrameDelta / fDragonCameraDollyTime (high)
     pub dollyProgress: f32,
-    /// +0xF8 `undefined1`, semantic;  (medium)
+    /// +0xF8 `undefined1`, semantic (medium)
     pub combatTargetMode: u8,
     /// +0xF9 `undefined1`, semantic; alignment padding after the byte +0xf8, before the NiPoint2 +0xfc (high)
     pub padF9: [u8; 3],
@@ -1266,9 +1266,9 @@ pub struct FurnitureCameraState {
     pub translate: crate::NiPoint3,
     /// +0x30 `float`, semantic, runtime; distance back along the view (high)
     pub zoom: f32,
-    /// +0x34 `float`, semantic;  (high)
+    /// +0x34 `float`, semantic (high)
     pub pitch: f32,
-    /// +0x38 `float`, semantic;  (high)
+    /// +0x38 `float`, semantic (high)
     pub yawOffset: f32,
     /// +0x3C `undefined1`, semantic, runtime; the furniture camera survives the sit/bed-enter animation event (high)
     pub keepAfterSitEnter: u8,
@@ -1377,7 +1377,7 @@ pub struct HorseCameraState {
     pub togglePOVPressed: u8,
     /// +0xE3 `undefined1`, semantic; tail padding (size 0xe8) (high)
     pub padE3: [u8; 5],
-    /// +0xE8 `u32`, semantic;  (high)
+    /// +0xE8 `u32`, semantic (high)
     pub mountHandle: u32,
     /// +0xEC `float`, semantic; mount heading at Begin / last frame (high)
     pub mountHeading: f32,
@@ -1780,17 +1780,17 @@ pub struct NiCamera {
     pub padding10A: [u8; 6],
     /// +0x110 `undefined1`, semantic, runtime; 4x4 float matrix, rows clip x (+0x110), clip y (+0x120), depth (+0x130), w (+0x140); clip = M * (p, 1) (high)
     pub worldToCam: [u8; 64],
-    /// +0x150 `float`, semantic;  (high)
+    /// +0x150 `float`, semantic (high)
     pub frustumLeft: f32,
-    /// +0x154 `float`, ctor store, semantic, runtime;  (high)
+    /// +0x154 `float`, ctor store, semantic, runtime (high)
     pub frustumRight: f32,
-    /// +0x158 `float`, ctor store, semantic, runtime;  (high)
+    /// +0x158 `float`, ctor store, semantic, runtime (high)
     pub frustumTop: f32,
-    /// +0x15C `float`, semantic;  (high)
+    /// +0x15C `float`, semantic (high)
     pub frustumBottom: f32,
     /// +0x160 `float`, ctor store, semantic, runtime; clamped up to far / maxFarNearRatio and to minNear (high)
     pub frustumNear: f32,
-    /// +0x164 `float`, ctor store, semantic, runtime;  (high)
+    /// +0x164 `float`, ctor store, semantic, runtime (high)
     pub frustumFar: f32,
     /// +0x168 `undefined1`, semantic; true for an orthographic frustum (high)
     pub frustumOrtho: u8,
@@ -2254,9 +2254,9 @@ const _: () = assert!(core::mem::offset_of!(RenderTargetManager, cubeMapProperti
 /// Evidence: creation parameters of a colour render target; read by 0x100a590; size: 0x1015420 copies 0x1c bytes per id.
 #[repr(C)]
 pub struct RenderTargetProperties {
-    /// +0x0 `undefined4`, semantic;  (high)
+    /// +0x0 `undefined4`, semantic (high)
     pub width: u32,
-    /// +0x4 `undefined4`, semantic;  (high)
+    /// +0x4 `undefined4`, semantic (high)
     pub height: u32,
     /// +0x8 `undefined4`, semantic; DXGI_FORMAT of texture and views (high)
     pub format: u32,
@@ -2484,9 +2484,9 @@ pub struct Sky {
     pub field_60: u64,
     /// +0x68 `undefined8`, ctor store
     pub field_68: u64,
-    /// +0x70 `ptr:Atmosphere`, semantic;  (high)
+    /// +0x70 `ptr:Atmosphere`, semantic (high)
     pub atmosphere: *mut crate::Atmosphere,
-    /// +0x78 `ptr:Stars`, semantic;  (high)
+    /// +0x78 `ptr:Stars`, semantic (high)
     pub stars: *mut crate::Stars,
     /// +0x80 `ptr:Sun`, ctor store, semantic, runtime; the sun (high)
     pub sun: *mut crate::Sun,
@@ -2758,9 +2758,9 @@ pub struct Sun {
     pub __vftable: *const crate::raw::vtables::Sun_vtable,
     /// +0x8 `ptr:NiNode`, base SkyObject, semantic; sun root (medium)
     pub root: *mut crate::NiNode,
-    /// +0x10 `ptr:NiBillboardNode`, semantic;  (medium)
+    /// +0x10 `ptr:NiBillboardNode`, semantic (medium)
     pub sunBillboard: *mut crate::NiBillboardNode,
-    /// +0x18 `ptr:NiBillboardNode`, semantic;  (medium)
+    /// +0x18 `ptr:NiBillboardNode`, semantic (medium)
     pub glareBillboard: *mut crate::NiBillboardNode,
     /// +0x20 `ptr:BSTriShape`, semantic; sun disc with BSSkyShaderProperty (medium)
     pub sunBase: *mut crate::BSTriShape,
@@ -2777,7 +2777,7 @@ pub struct Sun {
     /// +0x4C `undefined1`, ctor store
     pub field_4C: u8,
     pub unknown_4D: [u8; 3],
-    /// +0x50 `ptr:BSShaderAccumulator`, semantic;  (high)
+    /// +0x50 `ptr:BSShaderAccumulator`, semantic (high)
     pub accumulator: *mut crate::BSShaderAccumulator,
     pub __engine: crate::Engine,
 }
@@ -2970,11 +2970,11 @@ pub struct TweenMenuCameraState {
     pub currentAngles: crate::NiPoint2,
     /// +0x3C `class:NiPoint2`, semantic; NiPoint2 (high); retyped undefined1 -> class:NiPoint2: meaning: NiPoint2; SetDirection 0x8ff750 writes +0x3c/+0x40
     pub targetAngles: crate::NiPoint2,
-    /// +0x44 `float`, semantic;  (high)
+    /// +0x44 `float`, semantic (high)
     pub currentZoomFOV: f32,
     /// +0x48 `float`, semantic; fTweenCamZoomFOVMod at Begin, 0 when closing (high)
     pub targetZoomFOV: f32,
-    /// +0x4C `undefined1`, semantic;  (high)
+    /// +0x4C `undefined1`, semantic (high)
     pub closing: u8,
     /// +0x4D `undefined1`, semantic; tail padding (size 0x50) (high)
     pub pad4D: [u8; 3],

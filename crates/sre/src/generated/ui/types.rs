@@ -713,9 +713,9 @@ pub struct GFxViewport {
     pub left: u32,
     /// +0xC `undefined4`, semantic; y (letterbox offset) (medium)
     pub top: u32,
-    /// +0x10 `undefined4`, semantic;  (medium)
+    /// +0x10 `undefined4`, semantic (medium)
     pub width: u32,
-    /// +0x14 `undefined4`, semantic;  (medium)
+    /// +0x14 `undefined4`, semantic (medium)
     pub height: u32,
     /// +0x18 `undefined1`, semantic; four ints, zero at the engine's call (low)
     pub scissorRect: [u8; 16],
@@ -1346,9 +1346,9 @@ pub struct MainMenu {
     pub unknown_29: [u8; 3],
     /// +0x2C `undefined4`, base GRefCountImplCore
     pub field_2C: u32,
-    /// +0x30 `class:BSTEventSink<BSSystemEvent>`, semantic;  (high)
+    /// +0x30 `class:BSTEventSink<BSSystemEvent>`, semantic (high)
     pub systemEventSink: crate::BSTEventSink_BSSystemEvent,
-    /// +0x38 `class:BSTEventSink<BSSaveDataEvent>`, semantic;  (high)
+    /// +0x38 `class:BSTEventSink<BSSaveDataEvent>`, semantic (high)
     pub saveDataEventSink: crate::BSTEventSink_BSSaveDataEvent,
     /// +0x40 `class:GFxFunctionHandler`, semantic; GFxFunctionHandler subobject (ref count +0x48 = 1) (high)
     pub functionHandler: crate::GFxFunctionHandler,
@@ -1415,17 +1415,17 @@ pub struct MenuControls {
     pub handlers: crate::BSTArray,
     /// +0x30 `class:BSTArray`, semantic; {handler, add} 0x10-byte entries queued while a dispatch is running; applied after it (data +0x30, capacity +0x38, size +0x40) (high)
     pub pendingHandlerChanges: crate::BSTArray,
-    /// +0x48 `ptr:ClickHandler`, semantic;  (high)
+    /// +0x48 `ptr:ClickHandler`, semantic (high)
     pub clickHandler: *mut crate::ClickHandler,
     /// +0x50 `ptr:DirectionHandler`, semantic; key-repeat handler (fMenuKeyRepeatLong/Short); TweenMenu saves and restores its rates (high)
     pub directionHandler: *mut crate::DirectionHandler,
-    /// +0x58 `ptr:ConsoleOpenHandler`, semantic;  (high)
+    /// +0x58 `ptr:ConsoleOpenHandler`, semantic (high)
     pub consoleOpenHandler: *mut crate::ConsoleOpenHandler,
-    /// +0x60 `ptr:QuickSaveLoadHandler`, semantic;  (high)
+    /// +0x60 `ptr:QuickSaveLoadHandler`, semantic (high)
     pub quickSaveLoadHandler: *mut crate::QuickSaveLoadHandler,
-    /// +0x68 `ptr:MenuOpenHandler`, semantic;  (high)
+    /// +0x68 `ptr:MenuOpenHandler`, semantic (high)
     pub menuOpenHandler: *mut crate::MenuOpenHandler,
-    /// +0x70 `ptr:FavoritesHandler`, semantic;  (high)
+    /// +0x70 `ptr:FavoritesHandler`, semantic (high)
     pub favoritesHandler: *mut crate::FavoritesHandler,
     /// +0x78 `ptr:ScreenshotHandler`, semantic; its +0x10/+0x11 bytes are the screenshot and camera-path requests RenderFrame tests and clears (high)
     pub screenshotHandler: *mut crate::ScreenshotHandler,

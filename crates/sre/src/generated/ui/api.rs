@@ -844,7 +844,7 @@ impl crate::MenuControls {
     /// `head`, `source` must point to what the engine expects.
     #[inline]
     pub unsafe fn process_event(&self, head: *mut *mut crate::InputEvent, source: *mut c_void) -> Result<crate::BSEventNotifyControl, u32> { unsafe { let raw = virtual_function!(self, 1, (*const Self, *mut *mut crate::InputEvent, *mut c_void) -> u32)(core::ptr::from_ref(self), head, source); crate::BSEventNotifyControl::from_u32(raw).ok_or(raw) } }
-    /// `MenuControls::vdtor`, vtable slot 0: 
+    /// `MenuControls::vdtor`, vtable slot 0
     ///
     /// Semantic, ui pass, high; called through the object's vtable.
     /// `MenuControls* (MenuControls* this, u32 flags)`
@@ -884,12 +884,12 @@ impl crate::MenuControls {
     /// `bool (MenuControls* this)`
     #[inline]
     pub fn test_and_clear_flag11(&self) -> bool { unsafe { function!(52211, (*const Self) -> bool)(core::ptr::from_ref(self)) } }
-    /// `MenuControls::clickHandler` at +0x48: 
+    /// `MenuControls::clickHandler` at +0x48
     ///
     /// Semantic field, ui pass, high; `None` while the pointer is null.
     #[inline]
     pub fn click_handler(&self) -> Option<&crate::ClickHandler> { unsafe { { self.clickHandler }.as_ref() } }
-    /// `MenuControls::consoleOpenHandler` at +0x58: 
+    /// `MenuControls::consoleOpenHandler` at +0x58
     ///
     /// Semantic field, ui pass, high; `None` while the pointer is null.
     #[inline]
@@ -899,7 +899,7 @@ impl crate::MenuControls {
     /// Semantic field, ui pass, high; `None` while the pointer is null.
     #[inline]
     pub fn direction_handler(&self) -> Option<&crate::DirectionHandler> { unsafe { { self.directionHandler }.as_ref() } }
-    /// `MenuControls::favoritesHandler` at +0x70: 
+    /// `MenuControls::favoritesHandler` at +0x70
     ///
     /// Semantic field, ui pass, high; `None` while the pointer is null.
     #[inline]
@@ -909,12 +909,12 @@ impl crate::MenuControls {
     /// Semantic field, ui pass, high; `None` while the pointer is null.
     #[inline]
     pub fn menu_mode_change_sink(&self) -> Option<&crate::BSTEventSink_MenuModeChangeEvent> { unsafe { { self.menuModeChangeSink }.as_ref() } }
-    /// `MenuControls::menuOpenHandler` at +0x68: 
+    /// `MenuControls::menuOpenHandler` at +0x68
     ///
     /// Semantic field, ui pass, high; `None` while the pointer is null.
     #[inline]
     pub fn menu_open_handler(&self) -> Option<&crate::MenuOpenHandler> { unsafe { { self.menuOpenHandler }.as_ref() } }
-    /// `MenuControls::quickSaveLoadHandler` at +0x60: 
+    /// `MenuControls::quickSaveLoadHandler` at +0x60
     ///
     /// Semantic field, ui pass, high; `None` while the pointer is null.
     #[inline]
@@ -999,7 +999,7 @@ impl crate::MenuEventHandler {
 }
 
 impl crate::MenuOpenHandler {
-    /// `MenuOpenHandler::CanProcess`, vtable slot 1: 
+    /// `MenuOpenHandler::CanProcess`, vtable slot 1
     ///
     /// Semantic, ui pass, high; called through the object's vtable.
     /// `bool (MenuOpenHandler* this, InputEvent* event)`
@@ -1028,7 +1028,7 @@ impl crate::MenuTableEntry {
 }
 
 impl crate::MessageBoxData {
-    /// `MessageBoxData::ctor`: 
+    /// `MessageBoxData::ctor`
     ///
     /// Semantic, ui pass, high; ledger semantic evidence, name high; id 52292, rva 0x963f40.
     /// `MessageBoxData* (MessageBoxData* this, const BSString* text, const BSTArray<BSString>* buttons, IMessageBoxCallback** cb, u8 buttonBase, u32 type, u32 depth)`
@@ -1156,7 +1156,7 @@ impl crate::StandardItemData {
     /// `const char* (StandardItemData* this)`
     #[inline]
     pub fn get_name(&self) -> *const c_char { unsafe { virtual_function!(self, 1, (*const Self) -> *const c_char)(core::ptr::from_ref(self)) } }
-    /// `StandardItemData::ctor`: 
+    /// `StandardItemData::ctor`
     ///
     /// Semantic, ui pass, high; ledger semantic evidence, name high; id 50981, rva 0x903e60.
     /// `StandardItemData* (StandardItemData* this, GFxMovieView** view, InventoryEntry* entry, const RefHandle* owner)`

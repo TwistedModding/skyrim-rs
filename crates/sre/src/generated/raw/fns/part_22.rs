@@ -1233,7 +1233,7 @@ pub const hkxAttributeHolder__ctor: u64 = 67151;
 pub const hkxAttributeHolder__dtor: u64 = 67152;
 /// `hkxAttributeHolder::vdtor` at 0xc486a0 (slot_propagation, medium); signature (low): `hkxAttributeHolder * vdtor(hkxAttributeHolder * this, uint param_1, undefined8 param_2, undefined8 param_3)`
 pub const hkxAttributeHolder__vdtor: u64 = 65442;
-/// `hkxCamera::vdtor` at 0xc48720 (semantic, high); signature (low): `hkxCamera * vdtor(hkxCamera * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`; slot 0: resets the vtable to hkBaseObject; when flags bit 0: frees 0x50 bytes (memory router, or the default heap with bit 2) (high); semantic signature: `hkxCamera* (hkxCamera* this, u64 flags)`
+/// `hkxCamera::vdtor` at 0xc48720 (semantic, high); signature (low): `hkxCamera * vdtor(hkxCamera * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`; semantic: slot 0: resets the vtable to hkBaseObject; when flags bit 0: frees 0x50 bytes (memory router, or the default heap with bit 2) (high); signature `hkxCamera* (hkxCamera* this, u64 flags)`
 pub const hkxCamera__vdtor: u64 = 65443;
 /// `hkxCamera::vdtor` as a function pointer type (high).
 pub type hkxCamera__vdtor_fn = unsafe extern "C" fn(this: *mut crate::hkxCamera, flags: u64) -> *mut crate::hkxCamera;
@@ -1361,7 +1361,7 @@ pub const memcpy_s_9: u64 = 447699;
 pub const noCreationsDownloadedCallback__vdtor: u64 = 505799;
 /// `noCreationsDownloadedCallback::vfunc_1` at 0x606ec0 (rtti, high); signature (low): `undefined vfunc_1(noCreationsDownloadedCallback * this, undefined8 param_1, undefined8 param_2, ulonglong param_3)`
 pub const noCreationsDownloadedCallback__vfunc_1: u64 = 505798;
-/// `processGenerateBehaviorGraphJob` at 0xc41730 (semantic, high); signature (untiered): `undefined processGenerateBehaviorGraphJob(undefined8 param_1, longlong param_2)`; job body: generate(job+0x40 graph, +0x48 ctx, +0x50 output, +0x7a, +0x70) (high); semantic signature: `void (void* jobQueue, Job* job)`
+/// `processGenerateBehaviorGraphJob` at 0xc41730 (semantic, high); signature (untiered): `undefined processGenerateBehaviorGraphJob(undefined8 param_1, longlong param_2)`; semantic: job body: generate(job+0x40 graph, +0x48 ctx, +0x50 output, +0x7a, +0x70) (high); signature `void (void* jobQueue, Job* job)`
 pub const processGenerateBehaviorGraphJob: u64 = 65198;
 /// `processGenerateBehaviorGraphJob` as a function pointer type (high).
 pub type processGenerateBehaviorGraphJob_fn = unsafe extern "C" fn(jobQueue: *mut c_void, job: *mut c_void);

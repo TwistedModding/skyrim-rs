@@ -8106,7 +8106,7 @@ impl REFREventCallbacks__IEventCallbackFactory_vtable {
 /// `RaceSexCamera::vftable` at 0x197ed90, id 215883 (rtti, high); 3 slots.
 #[repr(C)]
 pub struct RaceSexCamera_vtable {
-    /// `RaceSexCamera::Destroy` at 0x972ee0 (semantic, high); signature (untiered): `RaceSexCamera * Destroy(RaceSexCamera * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`; `Destroy`:  (high); semantic signature: `RaceSexCamera* (RaceSexCamera* this, u32 flags)`
+    /// `RaceSexCamera::Destroy` at 0x972ee0 (semantic, high); signature (untiered): `RaceSexCamera * Destroy(RaceSexCamera * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`; `Destroy` (high); semantic signature: `RaceSexCamera* (RaceSexCamera* this, u32 flags)`
     pub slot_0: *const c_void,
     /// `RaceSexCamera::SetCameraRoot` at 0x9677d0 (runtime, high); signature (untiered): `undefined SetCameraRoot(RaceSexCamera * this, longlong * param_1)`; `SetCameraRoot`: stores the root, records its pose, offsets local y by a constant (high); semantic signature: `void (RaceSexCamera* this, NiNode* root)`
     pub slot_1: *const c_void,
@@ -8134,7 +8134,7 @@ impl RaceSexCamera_vtable {
         unsafe { core::mem::transmute::<*const c_void, Option<RaceSexCamera_vtable_Update>>(self.slot_2) }
     }
 }
-/// `RaceSexCamera::Destroy`, slot 0:  (high).
+/// `RaceSexCamera::Destroy`, slot 0 (high).
 pub type RaceSexCamera_vtable_Destroy = unsafe extern "C" fn(this: *mut crate::RaceSexCamera, flags: u32) -> *mut crate::RaceSexCamera;
 /// `RaceSexCamera::SetCameraRoot`, slot 1: stores the root, records its pose, offsets local y by a constant (high).
 pub type RaceSexCamera_vtable_SetCameraRoot = unsafe extern "C" fn(this: *mut crate::RaceSexCamera, root: *mut crate::NiNode);

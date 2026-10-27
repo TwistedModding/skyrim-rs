@@ -1499,17 +1499,17 @@ pub struct BSCubeMapCamera {
     pub padding10A: [u8; 6],
     /// +0x110 `undefined1`, base NiCamera, semantic; 4x4 float matrix, rows clip x (+0x110), clip y (+0x120), depth (+0x130), w (+0x140); clip = M * (p, 1) (high)
     pub worldToCam: [u8; 64],
-    /// +0x150 `float`, base NiCamera, semantic;  (high)
+    /// +0x150 `float`, base NiCamera, semantic (high)
     pub frustumLeft: f32,
-    /// +0x154 `float`, base NiCamera, semantic;  (high)
+    /// +0x154 `float`, base NiCamera, semantic (high)
     pub frustumRight: f32,
-    /// +0x158 `float`, base NiCamera, semantic;  (high)
+    /// +0x158 `float`, base NiCamera, semantic (high)
     pub frustumTop: f32,
-    /// +0x15C `float`, base NiCamera, semantic;  (high)
+    /// +0x15C `float`, base NiCamera, semantic (high)
     pub frustumBottom: f32,
     /// +0x160 `float`, base NiCamera, semantic; clamped up to far / maxFarNearRatio and to minNear (high)
     pub frustumNear: f32,
-    /// +0x164 `float`, base NiCamera, semantic;  (high)
+    /// +0x164 `float`, base NiCamera, semantic (high)
     pub frustumFar: f32,
     /// +0x168 `undefined1`, base NiCamera, semantic; true for an orthographic frustum (high)
     pub frustumOrtho: u8,

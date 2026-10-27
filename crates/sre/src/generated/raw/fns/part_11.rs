@@ -8309,7 +8309,7 @@ pub const GenerateRandomUInt32: u64 = 17588;
 pub const GenerateRgba8MipChain: u64 = 27043;
 /// `GenerateStaticRandomBelow` at 0x1b53a0 (decompiler, high); signature (untiered): `undefined GenerateStaticRandomBelow(uint param_1)`
 pub const GenerateStaticRandomBelow: u64 = 13669;
-/// `GenerateUniquePlayerID` at 0x624840 (semantic, high); signature (untiered): `undefined GenerateUniquePlayerID(longlong param_1)`; random u32 not already in +0x70, stored in +0xd0 and +0xd8, record added in +0xe8 (high); semantic signature: `void (BGSSaveLoadManager*)`
+/// `GenerateUniquePlayerID` at 0x624840 (semantic, high); signature (untiered): `undefined GenerateUniquePlayerID(longlong param_1)`; semantic: random u32 not already in +0x70, stored in +0xd0 and +0xd8, record added in +0xe8 (high); signature `void (BGSSaveLoadManager*)`
 pub const GenerateUniquePlayerID: u64 = 35757;
 /// `GenerateUniquePlayerID` as a function pointer type (high).
 pub type GenerateUniquePlayerID_fn = unsafe extern "C" fn(a0: *mut crate::BGSSaveLoadManager);
@@ -8439,11 +8439,11 @@ pub const GetArrayEntryAddRefLocked: u64 = 19342;
 pub const GetArrayField58IntoResult: u64 = 84397;
 /// `GetAssociatedFormIfType13` at 0x148a20 (decompiler, medium); signature (untiered): `longlong GetAssociatedFormIfType13(longlong param_1)`
 pub const GetAssociatedFormIfType13: u64 = 11016;
-/// `GetAudioBackend` at 0xcca620 (semantic, high); signature (untiered): `undefined8 GetAudioBackend(void)`; returns the pointer at 0x3273938 (high); semantic signature: `BSAudio* ()`
+/// `GetAudioBackend` at 0xcca620 (semantic, high); signature (untiered): `undefined8 GetAudioBackend(void)`; semantic: returns the pointer at 0x3273938 (high); signature `BSAudio* ()`
 pub const GetAudioBackend: u64 = 67653;
 /// `GetAudioBackend` as a function pointer type (high).
 pub type GetAudioBackend_fn = unsafe extern "C" fn() -> *mut crate::BSAudio;
-/// `GetAudioManager` at 0xcca610 (semantic, high); signature (untiered): `undefined8 GetAudioManager(void)`; returns the pointer at 0x3273930 (high); semantic signature: `BSAudioManager* ()`
+/// `GetAudioManager` at 0xcca610 (semantic, high); signature (untiered): `undefined8 GetAudioManager(void)`; semantic: returns the pointer at 0x3273930 (high); signature `BSAudioManager* ()`
 pub const GetAudioManager: u64 = 67652;
 /// `GetAudioManager` as a function pointer type (high).
 pub type GetAudioManager_fn = unsafe extern "C" fn() -> *mut crate::BSAudioManager;
@@ -8677,11 +8677,11 @@ pub const GetCachedStringLength: u64 = 24642;
 pub const GetCachedVfunc758Value: u64 = 37588;
 /// `GetCachedVfunc770Value` at 0x6924f0 (decompiler, medium); signature (untiered): `ulonglong GetCachedVfunc770Value(longlong * param_1)`
 pub const GetCachedVfunc770Value: u64 = 37591;
-/// `GetCameraShakeStrength` at 0x558c30 (runtime, high); signature (untiered): `undefined4 GetCameraShakeStrength(void)`; returns g_CameraShakeStrength (0x3204860) (high); semantic signature: `float (void)`
+/// `GetCameraShakeStrength` at 0x558c30 (runtime, high); signature (untiered): `undefined4 GetCameraShakeStrength(void)`; semantic: returns g_CameraShakeStrength (0x3204860) (high); signature `float (void)`
 pub const GetCameraShakeStrength: u64 = 33014;
 /// `GetCameraShakeStrength` as a function pointer type (high).
 pub type GetCameraShakeStrength_fn = unsafe extern "C" fn() -> f32;
-/// `GetCameraShakeTimeRemaining` at 0x558c40 (semantic, high); signature (untiered): `undefined4 GetCameraShakeTimeRemaining(void)`; returns g_CameraShakeTimeRemaining (0x3204864) (high); semantic signature: `float (void)`
+/// `GetCameraShakeTimeRemaining` at 0x558c40 (semantic, high); signature (untiered): `undefined4 GetCameraShakeTimeRemaining(void)`; semantic: returns g_CameraShakeTimeRemaining (0x3204864) (high); signature `float (void)`
 pub const GetCameraShakeTimeRemaining: u64 = 33015;
 /// `GetCameraShakeTimeRemaining` as a function pointer type (high).
 pub type GetCameraShakeTimeRemaining_fn = unsafe extern "C" fn() -> f32;
@@ -8701,7 +8701,7 @@ pub const GetCellEncounterZone: u64 = 18988;
 pub const GetCellImageSpaceData: u64 = 19008;
 /// `GetCellIndexInWorldBounds` at 0x30cde0 (decompiler, medium); signature (medium): `int GetCellIndexInWorldBounds(undefined8 param_1, undefined8 param_2, int param_3, int param_4)`
 pub const GetCellIndexInWorldBounds: u64 = 20457;
-/// `GetChangeFormInitialType` at 0x6204c0 (semantic, high); signature (untiered): `byte GetChangeFormInitialType(longlong param_1, uint param_2)`; kind of initial data a record carries: refs 5 created, 6 bits 3|25, 4 bits 1|2, else 0; cells with bit 30: 1 if bit 29, 2 if bit 28, else 3 (high); semantic signature: `ChangeFormInitialType (TESForm* form, u32 changeFlags)`
+/// `GetChangeFormInitialType` at 0x6204c0 (semantic, high); signature (untiered): `byte GetChangeFormInitialType(longlong param_1, uint param_2)`; semantic: kind of initial data a record carries: refs 5 created, 6 bits 3|25, 4 bits 1|2, else 0; cells with bit 30: 1 if bit 29, 2 if bit 28, else 3 (high); signature `ChangeFormInitialType (TESForm* form, u32 changeFlags)`
 pub const GetChangeFormInitialType: u64 = 35708;
 /// `GetChangeFormInitialType` as a function pointer type (high).
 pub type GetChangeFormInitialType_fn = unsafe extern "C" fn(form: *mut crate::TESForm, changeFlags: u32) -> u32;
@@ -8811,7 +8811,7 @@ pub const GetCombinedBoxCenterAndDiagonalSq: u64 = 44752;
 pub const GetCommandLineProgramName: u64 = 68971;
 /// `GetCommandNumParams` at 0x4a8bf0 (decompiler, medium); signature (medium): `ushort GetCommandNumParams(ushort * param_1)`
 pub const GetCommandNumParams: u64 = 29937;
-/// `GetCommandTableEntryByOpcode` at 0x34a230 (semantic, high); signature (high): `CommandTableEntry * GetCommandTableEntryByOpcode(int param_1)`; op-0x100 < 0x1c1 -> console table, op-0x1000 < 0x2e1 -> script table, else null (high); semantic signature: `CommandTableEntry* (int opcode)`
+/// `GetCommandTableEntryByOpcode` at 0x34a230 (semantic, high); signature (high): `CommandTableEntry * GetCommandTableEntryByOpcode(int param_1)`; semantic: op-0x100 < 0x1c1 -> console table, op-0x1000 < 0x2e1 -> script table, else null (high); signature `CommandTableEntry* (int opcode)`
 pub const GetCommandTableEntryByOpcode: u64 = 21963;
 /// `GetCommandTableEntryByOpcode` as a function pointer type (high).
 pub type GetCommandTableEntryByOpcode_fn = unsafe extern "C" fn(opcode: i32) -> *mut crate::CommandTableEntry;
@@ -8823,7 +8823,7 @@ pub const GetComponentByFormType: u64 = 14218;
 pub const GetComponentForFormType1AOr66: u64 = 14121;
 /// `GetConcatenatedText` at 0xe413d0 (decompiler, medium); signature (medium): `ulonglong * GetConcatenatedText(longlong param_1, ulonglong * param_2)`
 pub const GetConcatenatedText: u64 = 88441;
-/// `GetConsoleCommandQueue` at 0x992740 (semantic, medium); signature (untiered): `undefined * GetConsoleCommandQueue(void)`; returns the static queue 0x3258bc8 (thread-safe static init) (medium); semantic signature: `ConsoleCommandQueue* ()`
+/// `GetConsoleCommandQueue` at 0x992740 (semantic, medium); signature (untiered): `undefined * GetConsoleCommandQueue(void)`; semantic: returns the static queue 0x3258bc8 (thread-safe static init) (medium); signature `ConsoleCommandQueue* ()`
 pub const GetConsoleCommandQueue: u64 = 52950;
 /// `GetConstant0x4000000` at 0x63bce0 (decompiler, high); signature (high): `undefined8 GetConstant0x4000000(void)`
 pub const GetConstant0x4000000: u64 = 36095;
@@ -8881,7 +8881,7 @@ pub const GetCountryCodeString: u64 = 448048;
 pub const GetCrimeFaction: u64 = 37380;
 /// `GetCrimeFactionValueForCrimeType` at 0x69dab0 (decompiler, medium); signature (medium): `uint GetCrimeFactionValueForCrimeType(longlong param_1, undefined4 param_2, longlong param_3, uint param_4)`
 pub const GetCrimeFactionValueForCrimeType: u64 = 37680;
-/// `GetCurrentAccumulator` at 0x14ecb90 (semantic, medium); signature (untiered): `undefined8 GetCurrentAccumulator(void)`; returns 0x33d3da8 (set by RenderAccumulator / BeginAccumulatorDraw) (medium); semantic signature: `BSShaderAccumulator* (void)`
+/// `GetCurrentAccumulator` at 0x14ecb90 (semantic, medium); signature (untiered): `undefined8 GetCurrentAccumulator(void)`; semantic: returns 0x33d3da8 (set by RenderAccumulator / BeginAccumulatorDraw) (medium); signature `BSShaderAccumulator* (void)`
 pub const GetCurrentAccumulator: u64 = 105651;
 /// `GetCurrentChunkType` at 0x1cdc10 (decompiler, medium); signature (untiered): `undefined4 GetCurrentChunkType(longlong param_1)`
 pub const GetCurrentChunkType: u64 = 13988;
@@ -8963,7 +8963,7 @@ pub const GetDayWithinMonth: u64 = 15837;
 pub const GetDdsMetadataFromFile: u64 = 77570;
 /// `GetDdsMetadataFromMemory` at 0x1021ea0 (decompiler, high); signature (untiered): `undefined8 GetDdsMetadataFromMemory(int * param_1, ulonglong param_2, uint param_3, ulonglong * param_4)`
 pub const GetDdsMetadataFromMemory: u64 = 77569;
-/// `GetDefaultCameraPath` at 0x318010 (semantic, high); signature (untiered): `undefined8 GetDefaultCameraPath(void)`; returns the default camera path pointer 0x31df550 (high); semantic signature: `BGSCameraPath* (void)`
+/// `GetDefaultCameraPath` at 0x318010 (semantic, high); signature (untiered): `undefined8 GetDefaultCameraPath(void)`; semantic: returns the default camera path pointer 0x31df550 (high); signature `BGSCameraPath* (void)`
 pub const GetDefaultCameraPath: u64 = 20681;
 /// `GetDefaultCameraPath` as a function pointer type (high).
 pub type GetDefaultCameraPath_fn = unsafe extern "C" fn() -> *mut crate::BGSCameraPath;
@@ -9001,7 +9001,7 @@ pub const GetDerefField0: u64 = 47512;
 pub const GetDescriptorDataPointer: u64 = 67193;
 /// `GetDescriptorDataPointer_2` at 0xca3af0 (decompiler, medium); signature (untiered): `longlong GetDescriptorDataPointer_2(longlong param_1, uint * param_2)`
 pub const GetDescriptorDataPointer_2: u64 = 67194;
-/// `GetDialogueSpeakerYawOffset` at 0x74a350 (semantic, high); signature (untiered): `float GetDialogueSpeakerYawOffset(longlong * param_1)`; while the topic manager has a speaker (MenuTopicManager +0xb1 and the byte 0x20b763c): the yaw from actor's look position to the speaker's (slot 91 on both) minus PlayerCamera.yaw (+0x154), wrapped to [-pi, pi]; else FLT_MAX (0x17ed6a8) (high); semantic signature: `float (Actor* actor)`
+/// `GetDialogueSpeakerYawOffset` at 0x74a350 (semantic, high); signature (untiered): `float GetDialogueSpeakerYawOffset(longlong * param_1)`; semantic: while the topic manager has a speaker (MenuTopicManager +0xb1 and the byte 0x20b763c): the yaw from actor's look position to the speaker's (slot 91 on both) minus PlayerCamera.yaw (+0x154), wrapped to [-pi, pi]; else FLT_MAX (0x17ed6a8) (high); signature `float (Actor* actor)`
 pub const GetDialogueSpeakerYawOffset: u64 = 40498;
 /// `GetDialogueSpeakerYawOffset` as a function pointer type (high).
 pub type GetDialogueSpeakerYawOffset_fn = unsafe extern "C" fn(actor: *mut crate::Actor) -> f32;

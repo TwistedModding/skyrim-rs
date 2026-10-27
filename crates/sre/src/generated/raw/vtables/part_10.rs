@@ -9768,9 +9768,9 @@ impl BedFurnitureExitHandler_vtable {
 pub struct BleedoutCameraState_vtable {
     /// `BleedoutCameraState::Destroy` at 0x8fc4f0 (semantic, high); signature (untiered): `BleedoutCameraState * Destroy(BleedoutCameraState * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`; `Destroy`: scalar deleting destructor: own vtables, releases focusNode (+0x120), ThirdPersonState::dtor, frees 0x138 (high); semantic signature: `BleedoutCameraState* (BleedoutCameraState* this, u32 flags)`
     pub slot_0: *const c_void,
-    /// `BleedoutCameraState::Begin` at 0x8f3b90 (semantic, high); signature (untiered): `undefined Begin(BleedoutCameraState * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`; `Begin`:  (high); semantic signature: `void (BleedoutCameraState* this)`
+    /// `BleedoutCameraState::Begin` at 0x8f3b90 (semantic, high); signature (untiered): `undefined Begin(BleedoutCameraState * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`; `Begin` (high); semantic signature: `void (BleedoutCameraState* this)`
     pub slot_1: *const c_void,
-    /// `BleedoutCameraState::End` at 0x8f3cd0 (runtime, high); signature (untiered): `undefined End(BleedoutCameraState * this)`; `End`:  (high); semantic signature: `void (BleedoutCameraState* this)`
+    /// `BleedoutCameraState::End` at 0x8f3cd0 (runtime, high); signature (untiered): `undefined End(BleedoutCameraState * this)`; `End` (high); semantic signature: `void (BleedoutCameraState* this)`
     pub slot_2: *const c_void,
     /// `BleedoutCameraState::Update` at 0x8f3d40 (semantic, high); signature (untiered): `undefined Update(BleedoutCameraState * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`; `Update`: SetFirstPerson(false) once, orbit pose with collision retries, writes root, UpdateNode (high); semantic signature: `void (BleedoutCameraState* this, BSTSmartPointer<TESCameraState>* nextState)`
     pub slot_3: *const c_void,
@@ -9828,9 +9828,9 @@ impl BleedoutCameraState_vtable {
 }
 /// `BleedoutCameraState::Destroy`, slot 0: scalar deleting destructor: own vtables, releases focusNode (+0x120), ThirdPersonState::dtor, frees 0x138 (high).
 pub type BleedoutCameraState_vtable_Destroy = unsafe extern "C" fn(this: *mut crate::BleedoutCameraState, flags: u32) -> *mut crate::BleedoutCameraState;
-/// `BleedoutCameraState::Begin`, slot 1:  (high).
+/// `BleedoutCameraState::Begin`, slot 1 (high).
 pub type BleedoutCameraState_vtable_Begin = unsafe extern "C" fn(this: *mut crate::BleedoutCameraState);
-/// `BleedoutCameraState::End`, slot 2:  (high).
+/// `BleedoutCameraState::End`, slot 2 (high).
 pub type BleedoutCameraState_vtable_End = unsafe extern "C" fn(this: *mut crate::BleedoutCameraState);
 /// `BleedoutCameraState::Update`, slot 3: SetFirstPerson(false) once, orbit pose with collision retries, writes root, UpdateNode (high).
 pub type BleedoutCameraState_vtable_Update = unsafe extern "C" fn(this: *mut crate::BleedoutCameraState, nextState: *mut c_void);

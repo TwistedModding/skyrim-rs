@@ -2590,7 +2590,7 @@ impl TempLoadGameBuffer_vtable {
 /// `ThirdPersonState::vftable` at 0x18ecc08, id 205236 (rtti, high); 16 slots.
 #[repr(C)]
 pub struct ThirdPersonState_vtable {
-    /// `ThirdPersonState::Destroy` at 0x55d4e0 (semantic, high); signature (untiered): `ThirdPersonState * Destroy(ThirdPersonState * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`; `Destroy`:  (high); semantic signature: `ThirdPersonState* (ThirdPersonState* this, u32 flags)`
+    /// `ThirdPersonState::Destroy` at 0x55d4e0 (semantic, high); signature (untiered): `ThirdPersonState * Destroy(ThirdPersonState * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`; `Destroy` (high); semantic signature: `ThirdPersonState* (ThirdPersonState* this, u32 flags)`
     pub slot_0: *const c_void,
     /// `ThirdPersonState::Begin` at 0x8fd390 (semantic, high); signature (untiered): `undefined Begin(ThirdPersonState * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`; `Begin`: target heading into both yaws, registers the handler, schedules SetFirstPerson(false), looks up animatedNode (high); semantic signature: `void (ThirdPersonState* this)`
     pub slot_1: *const c_void,
@@ -2722,7 +2722,7 @@ impl ThirdPersonState_vtable {
         unsafe { core::mem::transmute::<*const c_void, Option<ThirdPersonState_vtable_ProcessLookInput>>(self.slot_15) }
     }
 }
-/// `ThirdPersonState::Destroy`, slot 0:  (high).
+/// `ThirdPersonState::Destroy`, slot 0 (high).
 pub type ThirdPersonState_vtable_Destroy = unsafe extern "C" fn(this: *mut crate::ThirdPersonState, flags: u32) -> *mut crate::ThirdPersonState;
 /// `ThirdPersonState::Begin`, slot 1: target heading into both yaws, registers the handler, schedules SetFirstPerson(false), looks up animatedNode (high).
 pub type ThirdPersonState_vtable_Begin = unsafe extern "C" fn(this: *mut crate::ThirdPersonState);
@@ -2820,7 +2820,7 @@ impl TitleSequenceMenu_vtable {
 /// `TogglePOVHandler::vftable` at 0x1935568, id 208737 (rtti, high); 9 slots.
 #[repr(C)]
 pub struct TogglePOVHandler_vtable {
-    /// `TogglePOVHandler::Destroy` at 0x7b1de0 (semantic, high); signature (untiered): `TogglePOVHandler * Destroy(TogglePOVHandler * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`; `Destroy`:  (high); semantic signature: `TogglePOVHandler* (TogglePOVHandler* this, u32 flags)`
+    /// `TogglePOVHandler::Destroy` at 0x7b1de0 (semantic, high); signature (untiered): `TogglePOVHandler * Destroy(TogglePOVHandler * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`; `Destroy` (high); semantic signature: `TogglePOVHandler* (TogglePOVHandler* this, u32 flags)`
     pub slot_0: *const c_void,
     /// `TogglePOVHandler::CanProcess` at 0x7b51a0 (semantic, high); signature (untiered): `bool CanProcess(TogglePOVHandler * this, longlong * param_1)`; `CanProcess`: Toggle POV (high); semantic signature: `bool (TogglePOVHandler* this, InputEvent* event)`
     pub slot_1: *const c_void,
@@ -2860,7 +2860,7 @@ impl TogglePOVHandler_vtable {
         unsafe { core::mem::transmute::<*const c_void, Option<TogglePOVHandler_vtable_ProcessButton>>(self.slot_6) }
     }
 }
-/// `TogglePOVHandler::Destroy`, slot 0:  (high).
+/// `TogglePOVHandler::Destroy`, slot 0 (high).
 pub type TogglePOVHandler_vtable_Destroy = unsafe extern "C" fn(this: *mut crate::TogglePOVHandler, flags: u32) -> *mut crate::TogglePOVHandler;
 /// `TogglePOVHandler::CanProcess`, slot 1: Toggle POV (high).
 pub type TogglePOVHandler_vtable_CanProcess = unsafe extern "C" fn(this: *mut crate::TogglePOVHandler, event: *mut crate::InputEvent) -> bool;
@@ -3327,7 +3327,7 @@ pub struct TweenMenuCameraState_vtable {
     pub slot_1: *const c_void,
     /// `TweenMenuCameraState::End` at 0x8ff380 (semantic, high); signature (untiered): `undefined End(TweenMenuCameraState * this)`; `End`: worldFOV = baseFOV (high); semantic signature: `void (TweenMenuCameraState* this)`
     pub slot_2: *const c_void,
-    /// `TweenMenuCameraState::Update` at 0x8ff3a0 (semantic, high); signature (untiered): `undefined Update(TweenMenuCameraState * this, undefined8 param_1, float param_2)`; `Update`:  (high); semantic signature: `void (TweenMenuCameraState* this, BSTSmartPointer<TESCameraState>* nextState)`
+    /// `TweenMenuCameraState::Update` at 0x8ff3a0 (semantic, high); signature (untiered): `undefined Update(TweenMenuCameraState * this, undefined8 param_1, float param_2)`; `Update` (high); semantic signature: `void (TweenMenuCameraState* this, BSTSmartPointer<TESCameraState>* nextState)`
     pub slot_3: *const c_void,
     /// `TweenMenuCameraState::GetRotation` at 0x8ff5b0 (semantic, high); signature (untiered): `undefined GetRotation(TweenMenuCameraState * this, float * param_1)`; `GetRotation`: baseRotation * euler(currentAngles) (high); semantic signature: `void (TweenMenuCameraState* this, NiQuaternion* out)`
     pub slot_4: *const c_void,
@@ -3379,7 +3379,7 @@ pub type TweenMenuCameraState_vtable_Destroy = unsafe extern "C" fn(this: *mut c
 pub type TweenMenuCameraState_vtable_Begin = unsafe extern "C" fn(this: *mut crate::TweenMenuCameraState);
 /// `TweenMenuCameraState::End`, slot 2: worldFOV = baseFOV (high).
 pub type TweenMenuCameraState_vtable_End = unsafe extern "C" fn(this: *mut crate::TweenMenuCameraState);
-/// `TweenMenuCameraState::Update`, slot 3:  (high).
+/// `TweenMenuCameraState::Update`, slot 3 (high).
 pub type TweenMenuCameraState_vtable_Update = unsafe extern "C" fn(this: *mut crate::TweenMenuCameraState, nextState: *mut c_void);
 /// `TweenMenuCameraState::GetRotation`, slot 4: baseRotation * euler(currentAngles) (high).
 pub type TweenMenuCameraState_vtable_GetRotation = unsafe extern "C" fn(this: *mut crate::TweenMenuCameraState, out: *mut crate::NiQuaternion);
@@ -11200,7 +11200,7 @@ impl bgs__saveload__BuildSaveListRequest_vtable {
 /// `bgs::saveload::LoadEntryRequest::vftable` at 0x190ac18, id 206602 (rtti, high); 1 slots.
 #[repr(C)]
 pub struct bgs__saveload__LoadEntryRequest_vtable {
-    /// `bgs::saveload::LoadEntryRequest::vdtor` at 0x62df80 (semantic, high); signature (low): `LoadEntryRequest * vdtor(LoadEntryRequest * this, uint param_1, undefined8 param_2, undefined8 param_3)`; `vdtor`:  (high); semantic signature: ``
+    /// `bgs::saveload::LoadEntryRequest::vdtor` at 0x62df80 (semantic, high); signature (low): `LoadEntryRequest * vdtor(LoadEntryRequest * this, uint param_1, undefined8 param_2, undefined8 param_3)`; `vdtor` (high); semantic signature: ``
     pub slot_0: *const c_void,
 }
 impl bgs__saveload__LoadEntryRequest_vtable {
@@ -11211,7 +11211,7 @@ impl bgs__saveload__LoadEntryRequest_vtable {
 /// `bgs::saveload::LoadRequest::vftable` at 0x190ac08, id 206600 (rtti, high); 1 slots.
 #[repr(C)]
 pub struct bgs__saveload__LoadRequest_vtable {
-    /// `bgs::saveload::LoadRequest::vdtor` at 0x62e200 (semantic, high); signature (low): `LoadRequest * vdtor(LoadRequest * this, uint param_1, undefined8 param_2, undefined8 param_3)`; `vdtor`:  (high); semantic signature: ``
+    /// `bgs::saveload::LoadRequest::vdtor` at 0x62e200 (semantic, high); signature (low): `LoadRequest * vdtor(LoadRequest * this, uint param_1, undefined8 param_2, undefined8 param_3)`; `vdtor` (high); semantic signature: ``
     pub slot_0: *const c_void,
 }
 impl bgs__saveload__LoadRequest_vtable {
@@ -11233,7 +11233,7 @@ impl bgs__saveload__Request_vtable {
 /// `bgs::saveload::SaveOperationRequest::vftable` at 0x190abf8, id 206598 (rtti, high); 1 slots.
 #[repr(C)]
 pub struct bgs__saveload__SaveOperationRequest_vtable {
-    /// `bgs::saveload::SaveOperationRequest::vdtor` at 0x62e240 (semantic, high); signature (low): `SaveOperationRequest * vdtor(SaveOperationRequest * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`; `vdtor`:  (high); semantic signature: ``
+    /// `bgs::saveload::SaveOperationRequest::vdtor` at 0x62e240 (semantic, high); signature (low): `SaveOperationRequest * vdtor(SaveOperationRequest * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`; `vdtor` (high); semantic signature: ``
     pub slot_0: *const c_void,
 }
 impl bgs__saveload__SaveOperationRequest_vtable {

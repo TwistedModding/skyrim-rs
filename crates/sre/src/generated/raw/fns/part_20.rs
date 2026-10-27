@@ -1147,7 +1147,7 @@ pub const bhkCharRigidBodyControllerCinfo__vfunc_4: u64 = 79180;
 pub const bhkCharRigidBodyControllerCinfo__vfunc_5: u64 = 79182;
 /// `bhkCharacterCollisionHandler::vdtor` at 0x793480 (layout_inference, medium); signature (low): `bhkCharacterCollisionHandler * vdtor(bhkCharacterCollisionHandler * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const bhkCharacterCollisionHandler__vdtor: u64 = 41660;
-/// `bhkCharacterController::SetDistanceToCamera` at 0x1064c90 (semantic, high); signature (untiered): `undefined SetDistanceToCamera(longlong param_1, float * param_2, longlong param_3)`; +0x29c = max(0, |cameraPosition - actor3D world bound centre (+0xe4)| - bound radius (+0xf0)); nothing when actor3D is null (high); semantic signature: `void (bhkCharacterController* this, const NiPoint3* cameraPosition, NiAVObject* actor3D)`
+/// `bhkCharacterController::SetDistanceToCamera` at 0x1064c90 (semantic, high); signature (untiered): `undefined SetDistanceToCamera(longlong param_1, float * param_2, longlong param_3)`; semantic: +0x29c = max(0, |cameraPosition - actor3D world bound centre (+0xe4)| - bound radius (+0xf0)); nothing when actor3D is null (high); signature `void (bhkCharacterController* this, const NiPoint3* cameraPosition, NiAVObject* actor3D)`
 pub const bhkCharacterController__SetDistanceToCamera: u64 = 78274;
 /// `bhkCharacterController::SetDistanceToCamera` as a function pointer type (high).
 pub type bhkCharacterController__SetDistanceToCamera_fn = unsafe extern "C" fn(this: *mut crate::bhkCharacterController, cameraPosition: *const crate::NiPoint3, actor3D: *mut crate::NiAVObject);
@@ -5441,7 +5441,7 @@ pub const g_ConcreteExplosionFactory_ChainExplosion_1__init_sub0: u64 = 43817;
 pub const g_ConcreteExplosionFactory_Explosion_0__atexit: u64 = 171837;
 /// `g_ConcreteExplosionFactory_Explosion_0__init` at 0xac8c0 (crt_init, medium); signature (high): `void g_ConcreteExplosionFactory_Explosion_0__init(void)`
 pub const g_ConcreteExplosionFactory_Explosion_0__init: u64 = 6505;
-/// `g_ConcreteFormFactory_BGSCameraPath_97__atexit` at 0x17499b0 (semantic, high); signature (untiered): `void g_ConcreteFormFactory_BGSCameraPath_97__atexit(void)`; static destructor of the BGSCameraPath form factory: clears factory slot 0x61 (0x1e2e40) and restores the IFormFactory vtable (high); semantic signature: `void (void)`
+/// `g_ConcreteFormFactory_BGSCameraPath_97__atexit` at 0x17499b0 (semantic, high); signature (untiered): `void g_ConcreteFormFactory_BGSCameraPath_97__atexit(void)`; semantic: static destructor of the BGSCameraPath form factory: clears factory slot 0x61 (0x1e2e40) and restores the IFormFactory vtable (high); signature `void (void)`
 pub const g_ConcreteFormFactory_BGSCameraPath_97__atexit: u64 = 166295;
 /// `g_ConcreteFormFactory_BGSCameraPath_97__atexit` as a function pointer type (high).
 pub type g_ConcreteFormFactory_BGSCameraPath_97__atexit_fn = unsafe extern "C" fn();
@@ -5527,7 +5527,7 @@ pub const g_ConcreteObjectFormFactory_BGSAssociationType_123_82_5__init_cb0: u64
 pub const g_ConcreteObjectFormFactory_BGSBodyPartData_93_40_0__init: u64 = 1249;
 /// `g_ConcreteObjectFormFactory_BGSBodyPartData_93_40_0__init_cb0` at 0x174afd0 (callgraph, medium); signature (untiered): `void g_ConcreteObjectFormFactory_BGSBodyPartData_93_40_0__init_cb0(void)`
 pub const g_ConcreteObjectFormFactory_BGSBodyPartData_93_40_0__init_cb0: u64 = 166462;
-/// `g_ConcreteObjectFormFactory_BGSCameraShot_96_43_6__atexit` at 0x1749ae0 (semantic, high); signature (untiered): `void g_ConcreteObjectFormFactory_BGSCameraShot_96_43_6__atexit(void)`; static destructor of the BGSCameraShot form factory: clears factory slot 0x60 (high); semantic signature: `void (void)`
+/// `g_ConcreteObjectFormFactory_BGSCameraShot_96_43_6__atexit` at 0x1749ae0 (semantic, high); signature (untiered): `void g_ConcreteObjectFormFactory_BGSCameraShot_96_43_6__atexit(void)`; semantic: static destructor of the BGSCameraShot form factory: clears factory slot 0x60 (high); signature `void (void)`
 pub const g_ConcreteObjectFormFactory_BGSCameraShot_96_43_6__atexit: u64 = 166299;
 /// `g_ConcreteObjectFormFactory_BGSCameraShot_96_43_6__atexit` as a function pointer type (high).
 pub type g_ConcreteObjectFormFactory_BGSCameraShot_96_43_6__atexit_fn = unsafe extern "C" fn();

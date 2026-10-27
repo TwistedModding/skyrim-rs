@@ -11,7 +11,7 @@ use core::ffi::c_void;
 pub struct BGSLoadFormBuffer {
     /// +0x0 `vtbl:BGSLoadFormBuffer:0`, rtti
     pub __vftable: *const crate::raw::vtables::BGSLoadFormBuffer_vtable,
-    /// +0x8 `ptr`, base BGSLoadGameBuffer, semantic;  (high)
+    /// +0x8 `ptr`, base BGSLoadGameBuffer, semantic (high)
     pub data: [u8; 8],
     /// +0x10 `undefined8`, base BGSLoadGameBuffer
     pub field_10: u64,
@@ -39,7 +39,7 @@ const _: () = assert!(core::mem::offset_of!(BGSLoadFormBuffer, record) == 0x28);
 pub struct BGSLoadGameBuffer {
     /// +0x0 `vtbl:BGSLoadGameBuffer:0`, rtti
     pub __vftable: *const crate::raw::vtables::BGSLoadGameBuffer_vtable,
-    /// +0x8 `ptr`, semantic;  (high)
+    /// +0x8 `ptr`, semantic (high)
     pub data: [u8; 8],
     /// +0x10 `undefined8`, ctor store
     pub field_10: u64,
@@ -68,7 +68,7 @@ pub struct BGSSaveFormBuffer {
     pub __vftable: *const crate::raw::vtables::BGSSaveFormBuffer_vtable,
     /// +0x8 `ptr`, base BGSSaveGameBuffer, semantic; heap buffer (high)
     pub data: [u8; 8],
-    /// +0x10 `undefined4`, base BGSSaveGameBuffer, semantic;  (medium)
+    /// +0x10 `undefined4`, base BGSSaveGameBuffer, semantic (medium)
     pub capacity: u32,
     /// +0x14 `undefined4`, semantic; bytes written (high)
     pub size: u32,
@@ -105,7 +105,7 @@ pub struct BGSSaveGameBuffer {
     pub __vftable: *const crate::raw::vtables::BGSSaveGameBuffer_vtable,
     /// +0x8 `ptr`, semantic; heap buffer (high)
     pub data: [u8; 8],
-    /// +0x10 `undefined4`, semantic;  (medium)
+    /// +0x10 `undefined4`, semantic (medium)
     pub capacity: u32,
     /// +0x14 `undefined4`, semantic; bytes written (high)
     pub size: u32,

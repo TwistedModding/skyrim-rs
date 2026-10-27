@@ -1113,7 +1113,7 @@ pub const GetFirstOccupiedIndex: u64 = 57763;
 pub const GetFirstOfField18: u64 = 35224;
 /// `GetFirstOfField40` at 0x5edf10 (decompiler, high); signature (untiered): `undefined8 GetFirstOfField40(longlong param_1)`
 pub const GetFirstOfField40: u64 = 35262;
-/// `GetFirstPersonRenderContext` at 0x1537410 (semantic, high); signature (untiered): `undefined4 * GetFirstPersonRenderContext(void)`; returns &g_FirstPersonViewParams (0x34362c0) (high); semantic signature: `FirstPersonRenderContext* (void)`
+/// `GetFirstPersonRenderContext` at 0x1537410 (semantic, high); signature (untiered): `undefined4 * GetFirstPersonRenderContext(void)`; semantic: returns &g_FirstPersonViewParams (0x34362c0) (high); signature `FirstPersonRenderContext* (void)`
 pub const GetFirstPersonRenderContext: u64 = 107121;
 /// `GetFirstPersonRenderContext` as a function pointer type (high).
 pub type GetFirstPersonRenderContext_fn = unsafe extern "C" fn() -> *mut crate::FirstPersonRenderContext;
@@ -1445,7 +1445,7 @@ pub const GetInt32AtIndex: u64 = 67258;
 pub const GetInt32ElementAddress: u64 = 67259;
 /// `GetIntAtPtrMinus8` at 0xaa3a50 (decompiler, high); signature (high): `longlong GetIntAtPtrMinus8(undefined8 param_1, longlong param_2)`
 pub const GetIntAtPtrMinus8: u64 = 57057;
-/// `GetInteriorCellBufferSetting` at 0x1a7fa0 (semantic, high); signature (untiered): `undefined4 GetInteriorCellBufferSetting(void)`; returns the value of uInterior Cell Buffer:General (INISetting object 0x2077748, value 0x2077750) (high); semantic signature: `u32 (void)`
+/// `GetInteriorCellBufferSetting` at 0x1a7fa0 (semantic, high); signature (untiered): `undefined4 GetInteriorCellBufferSetting(void)`; semantic: returns the value of uInterior Cell Buffer:General (INISetting object 0x2077748, value 0x2077750) (high); signature `u32 (void)`
 pub const GetInteriorCellBufferSetting: u64 = 13386;
 /// `GetInteriorCellBufferSetting` as a function pointer type (high).
 pub type GetInteriorCellBufferSetting_fn = unsafe extern "C" fn() -> u32;
@@ -1591,7 +1591,7 @@ pub const GetListE0EntryStringAtIndex: u64 = 24500;
 pub const GetListE0EntryTextureStringAtIndex: u64 = 24502;
 /// `GetListItemAtIndexInFieldB0Slot` at 0x7828c0 (decompiler, medium); signature (untiered): `longlong GetListItemAtIndexInFieldB0Slot(longlong param_1, int param_2, short param_3)`
 pub const GetListItemAtIndexInFieldB0Slot: u64 = 41362;
-/// `GetListenerPosition` at 0xcccf30 (semantic, high); signature (untiered): `undefined GetListenerPosition(void)`; listener+8 or a static zero vector (high); semantic signature: `const float* ()`
+/// `GetListenerPosition` at 0xcccf30 (semantic, high); signature (untiered): `undefined GetListenerPosition(void)`; semantic: listener+8 or a static zero vector (high); signature `const float* ()`
 pub const GetListenerPosition: u64 = 67710;
 /// `GetListenerPosition` as a function pointer type (high).
 pub type GetListenerPosition_fn = unsafe extern "C" fn() -> *const f32;
@@ -1629,7 +1629,7 @@ pub const GetMagicItemDescriptionFunctor__vdtor: u64 = 11434;
 pub const GetMagicItemDescriptionFunctor__vfunc_1: u64 = 11433;
 /// `GetMagicItemDescriptionFunctor::vfunc_1_sub0` at 0x148b40 (callgraph, medium); signature (untiered): `undefined vfunc_1_sub0(longlong param_1, longlong * param_2, undefined8 param_3, undefined8 param_4)`
 pub const GetMagicItemDescriptionFunctor__vfunc_1_sub0: u64 = 11020;
-/// `GetMainCamera` at 0x65c480 (semantic, high); signature (untiered): `undefined8 GetMainCamera(void)`; returns *(g_WorldSceneGraph_ptr)+0x128 (high); semantic signature: `NiCamera* ()`
+/// `GetMainCamera` at 0x65c480 (semantic, high); signature (untiered): `undefined8 GetMainCamera(void)`; semantic: returns *(g_WorldSceneGraph_ptr)+0x128 (high); signature `NiCamera* ()`
 pub const GetMainCamera: u64 = 36609;
 /// `GetMainCamera` as a function pointer type (high).
 pub type GetMainCamera_fn = unsafe extern "C" fn() -> *mut crate::NiCamera;
@@ -1879,7 +1879,7 @@ pub const GetOpenState: u64 = 14288;
 pub const GetOptionalByteValue: u64 = 524613;
 /// `GetOptionalQwordValue` at 0x133a0c0 (decompiler, medium); signature (untiered): `longlong GetOptionalQwordValue(longlong param_1)`
 pub const GetOptionalQwordValue: u64 = 526298;
-/// `GetOrAssignFormIDIndex` at 0x614cf0 (semantic, high); signature (medium): `ulonglong GetOrAssignFormIDIndex(longlong param_1, uint param_2)`; index of a form id, assigning the next one; 0xFF ids return themselves (high); semantic signature: `u32 (FormIDIndexMap* map, u32 formID)`
+/// `GetOrAssignFormIDIndex` at 0x614cf0 (semantic, high); signature (medium): `ulonglong GetOrAssignFormIDIndex(longlong param_1, uint param_2)`; semantic: index of a form id, assigning the next one; 0xFF ids return themselves (high); signature `u32 (FormIDIndexMap* map, u32 formID)`
 pub const GetOrAssignFormIDIndex: u64 = 35554;
 /// `GetOrAssignFormIDIndex` as a function pointer type (high).
 pub type GetOrAssignFormIDIndex_fn = unsafe extern "C" fn(map: *mut c_void, formID: u32) -> u32;
@@ -2039,7 +2039,7 @@ pub const GetOrCreateRefHandle_2: u64 = 36435;
 pub const GetOrCreateRefHandle_3: u64 = 34361;
 /// `GetOrCreateRegionList` at 0x2bec60 (decompiler, medium); signature (untiered): `TESRegionList * GetOrCreateRegionList(longlong param_1, char param_2, undefined8 param_3, undefined8 param_4)`
 pub const GetOrCreateRegionList: u64 = 18999;
-/// `GetOrCreateStackById` at 0x14bcd00 (semantic, high); signature (untiered): `int * GetOrCreateStackById(longlong param_1, uint param_2, undefined4 param_3, undefined4 * * param_4, int * * param_5)`; finds the id in runningStacks or allocates 0xa0, constructs (page policy VM+0x88, profiler VM+0xb0) and inserts it (high); semantic signature: `void (BSScript::Internal::VirtualMachine* vm, u32 stackID, u32 kind, BSTSmartPointer<BSScript::IStackCallbackFunctor>* callback, BSTSmartPointer<BSScript::Stack>* out)`
+/// `GetOrCreateStackById` at 0x14bcd00 (semantic, high); signature (untiered): `int * GetOrCreateStackById(longlong param_1, uint param_2, undefined4 param_3, undefined4 * * param_4, int * * param_5)`; semantic: finds the id in runningStacks or allocates 0xa0, constructs (page policy VM+0x88, profiler VM+0xb0) and inserts it (high); signature `void (BSScript::Internal::VirtualMachine* vm, u32 stackID, u32 kind, BSTSmartPointer<BSScript::IStackCallbackFunctor>* callback, BSTSmartPointer<BSScript::Stack>* out)`
 pub const GetOrCreateStackById: u64 = 104871;
 /// `GetOrCreateStackById` as a function pointer type (high).
 pub type GetOrCreateStackById_fn = unsafe extern "C" fn(vm: *mut crate::BSScript__Internal__VirtualMachine, stackID: u32, kind: u32, callback: *mut c_void, out: *mut c_void);
@@ -2523,7 +2523,7 @@ pub const GetSoundLevelValueOfFieldE0: u64 = 16987;
 pub const GetSourceTextureField20: u64 = 76211;
 /// `GetSpanBetweenColonAndSlash` at 0x13dc0c0 (decompiler, medium); signature (untiered): `longlong * GetSpanBetweenColonAndSlash(longlong * param_1, longlong * param_2)`
 pub const GetSpanBetweenColonAndSlash: u64 = 449409;
-/// `GetSpeechDelay` at 0x423e20 (semantic, high); signature (high): `undefined4 GetSpeechDelay(void)`; returns fSpeechDelay (GameSetting value 0x20b0330) (high); semantic signature: `float (void)`
+/// `GetSpeechDelay` at 0x423e20 (semantic, high); signature (high): `undefined4 GetSpeechDelay(void)`; semantic: returns fSpeechDelay (GameSetting value 0x20b0330) (high); signature `float (void)`
 pub const GetSpeechDelay: u64 = 26565;
 /// `GetSpeechDelay` as a function pointer type (high).
 pub type GetSpeechDelay_fn = unsafe extern "C" fn() -> f32;
@@ -2933,9 +2933,9 @@ pub const GiftMenu__vfunc_4_sub2: u64 = 51579;
 pub const GiftMenu__vfunc_6: u64 = 51566;
 /// `Global369702HashMapContainsKey` at 0x3c3e40 (decompiler, medium); signature (medium): `undefined1 Global369702HashMapContainsKey(ulonglong param_1)`
 pub const Global369702HashMapContainsKey: u64 = 24733;
-/// `GlobalDataAfterChangeForms` at 0x61c830 (semantic, medium); signature (untiered): `undefined GlobalDataAfterChangeForms(uint param_1, uint param_2, undefined8 param_3, undefined8 param_4)`; post-change-form step per type: 100 RebuildActorHandleList, 103 PruneGlobalListUnderLock (medium); semantic signature: `void (u32 first, u32 end)`
+/// `GlobalDataAfterChangeForms` at 0x61c830 (semantic, medium); signature (untiered): `undefined GlobalDataAfterChangeForms(uint param_1, uint param_2, undefined8 param_3, undefined8 param_4)`; semantic: post-change-form step per type: 100 RebuildActorHandleList, 103 PruneGlobalListUnderLock (medium); signature `void (u32 first, u32 end)`
 pub const GlobalDataAfterChangeForms: u64 = 35644;
-/// `GlobalDataFinishLoad` at 0x61caa0 (semantic, medium); signature (untiered): `undefined GlobalDataFinishLoad(uint param_1, BGSLoadGameBuffer * param_2, longlong * * param_3, longlong * param_4)`; finish step per type: 2 RefreshLoadedCellsAndNotifyObjectLoaded (TES), 4 DestroyFormsInTableAndFree, 6 sky refresh, 101, 102 input sink, 110 PlayerControls interrupt, 1000 ProcessLists (medium); semantic signature: `void (u32 first, u32 end)`
+/// `GlobalDataFinishLoad` at 0x61caa0 (semantic, medium); signature (untiered): `undefined GlobalDataFinishLoad(uint param_1, BGSLoadGameBuffer * param_2, longlong * * param_3, longlong * param_4)`; semantic: finish step per type: 2 RefreshLoadedCellsAndNotifyObjectLoaded (TES), 4 DestroyFormsInTableAndFree, 6 sky refresh, 101, 102 input sink, 110 PlayerControls interrupt, 1000 ProcessLists (medium); signature `void (u32 first, u32 end)`
 pub const GlobalDataFinishLoad: u64 = 35646;
 /// `GlobalQwordMapListContains` at 0x3f2e80 (decompiler, medium); signature (medium): `ulonglong GlobalQwordMapListContains(ulonglong param_1, longlong param_2)`
 pub const GlobalQwordMapListContains: u64 = 25620;
@@ -2963,13 +2963,13 @@ pub const GrabActorEffect__vfunc_4_sub0: u64 = 34341;
 pub const GrabActorEffect__vfunc_8: u64 = 34336;
 /// `GrabOrReleaseFlightTarget` at 0x7cf6d0 (decompiler, medium); signature (untiered): `undefined8 GrabOrReleaseFlightTarget(TESObjectREFR * param_1, longlong * param_2, undefined8 param_3, undefined8 param_4)`
 pub const GrabOrReleaseFlightTarget: u64 = 42907;
-/// `GrandTheftHorse::GetEventSource` at 0x6c0f90 (semantic, medium); signature (untiered): `undefined8 * GetEventSource(void)`; the one source of GrandTheftHorse::Event events (medium); semantic signature: `BSTEventSource<GrandTheftHorse::Event>* ()`
+/// `GrandTheftHorse::GetEventSource` at 0x6c0f90 (semantic, medium); signature (untiered): `undefined8 * GetEventSource(void)`; semantic: the one source of GrandTheftHorse::Event events (medium); signature `BSTEventSource<GrandTheftHorse::Event>* ()`
 pub const GrandTheftHorse__GetEventSource: u64 = 38342;
-/// `GrandTheftHorse::RegisterSink` at 0x66fb20 (semantic, medium); signature (untiered): `undefined RegisterSink(undefined8 param_1)`; registers a GrandTheftHorse::Event sink with the singleton source (medium); semantic signature: `void (BSTEventSink<GrandTheftHorse::Event>* sink)`
+/// `GrandTheftHorse::RegisterSink` at 0x66fb20 (semantic, medium); signature (untiered): `undefined RegisterSink(undefined8 param_1)`; semantic: registers a GrandTheftHorse::Event sink with the singleton source (medium); signature `void (BSTEventSink<GrandTheftHorse::Event>* sink)`
 pub const GrandTheftHorse__RegisterSink: u64 = 37160;
-/// `GrandTheftHorse::UnregisterSink` at 0x66fb50 (semantic, medium); signature (untiered): `undefined UnregisterSink(undefined8 param_1)`; unregisters a GrandTheftHorse::Event sink with the singleton source (medium); semantic signature: `void (BSTEventSink<GrandTheftHorse::Event>* sink)`
+/// `GrandTheftHorse::UnregisterSink` at 0x66fb50 (semantic, medium); signature (untiered): `undefined UnregisterSink(undefined8 param_1)`; semantic: unregisters a GrandTheftHorse::Event sink with the singleton source (medium); signature `void (BSTEventSink<GrandTheftHorse::Event>* sink)`
 pub const GrandTheftHorse__UnregisterSink: u64 = 37161;
-/// `GraphPhysicsStepListener::ApplyRagdollPose` at 0xbcab40 (semantic, medium); signature (untiered): `undefined ApplyRagdollPose(longlong param_1, ulonglong * param_2)`; after a physics step: blends outputs, drives the ragdoll (ID_58293), copies the driven pose into the character pose and writes the bones (0xbdfa20) (medium); semantic signature: `void (BShkbAnimationGraph* graph, void* scratch)`
+/// `GraphPhysicsStepListener::ApplyRagdollPose` at 0xbcab40 (semantic, medium); signature (untiered): `undefined ApplyRagdollPose(longlong param_1, ulonglong * param_2)`; semantic: after a physics step: blends outputs, drives the ragdoll (ID_58293), copies the driven pose into the character pose and writes the bones (0xbdfa20) (medium); signature `void (BShkbAnimationGraph* graph, void* scratch)`
 pub const GraphPhysicsStepListener__ApplyRagdollPose: u64 = 63563;
 /// `GrenadeProjectile::BSHandleRefObject_vdtor` at 0x7eccfc (slot_propagation, medium); signature (high): `undefined BSHandleRefObject_vdtor(GrenadeProjectile * this)`
 pub const GrenadeProjectile__BSHandleRefObject_vdtor: u64 = 43937;
@@ -3551,7 +3551,7 @@ pub const HUDMenu__BSTEventSink_BSRemoteGamepadEvent_vfunc_1: u64 = 51644;
 pub const HUDMenu__BSTEventSink_UserEventEnabledEvent_vdtor: u64 = 51707;
 /// `HUDMenu::BSTEventSink_UserEventEnabledEvent_vfunc_1` at 0x936410 (rtti, high); signature (low): `undefined8 BSTEventSink_UserEventEnabledEvent_vfunc_1(HUDMenu * this, byte * param_1, undefined8 param_2, undefined8 param_3)`
 pub const HUDMenu__BSTEventSink_UserEventEnabledEvent_vfunc_1: u64 = 51643;
-/// `HUDMenu::Create` at 0x93c8a0 (semantic, high); signature (untiered): `void Create(void)`; menu creator registered under 'HUD Menu' (high); semantic signature: `IMenu* ()`
+/// `HUDMenu::Create` at 0x93c8a0 (semantic, high); signature (untiered): `void Create(void)`; semantic: menu creator registered under 'HUD Menu' (high); signature `IMenu* ()`
 pub const HUDMenu__Create: u64 = 51730;
 /// `HUDMenu::Create` as a function pointer type (high).
 pub type HUDMenu__Create_fn = unsafe extern "C" fn() -> *mut crate::IMenu;
@@ -3559,11 +3559,11 @@ pub type HUDMenu__Create_fn = unsafe extern "C" fn() -> *mut crate::IMenu;
 pub const HUDMenu__Dtor: u64 = 51715;
 /// `HUDMenu::ProcessMessage` at 0x933180 (semantic, high); signature (untiered): `undefined8 ProcessMessage(HUDMenu * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
 pub const HUDMenu__ProcessMessage: u64 = 51612;
-/// `HUDMenu::RegisterHUDComponents` at 0x934e20 (semantic, high); signature (untiered): `undefined RegisterHUDComponents(longlong param_1)`; FxDelegate callback: stores args[0] as the HUD root (+0x78) and gives the args to every HUDObject's slot 3 (high); semantic signature: `void (FxDelegateArgs* args)`
+/// `HUDMenu::RegisterHUDComponents` at 0x934e20 (semantic, high); signature (untiered): `undefined RegisterHUDComponents(longlong param_1)`; semantic: FxDelegate callback: stores args[0] as the HUD root (+0x78) and gives the args to every HUDObject's slot 3 (high); signature `void (FxDelegateArgs* args)`
 pub const HUDMenu__RegisterHUDComponents: u64 = 51616;
 /// `HUDMenu::RegisterHUDComponents` as a function pointer type (high).
 pub type HUDMenu__RegisterHUDComponents_fn = unsafe extern "C" fn(args: *mut c_void);
-/// `HUDMenu::ctor` at 0x932540 (layout_inference, high); signature (high): `HUDMenu * ctor(HUDMenu * this)`; loads 'HUDMenu', builds the 10 HUD objects, Invokes 'HUDMovieBaseInstance.RegisterComponents', registers the two sinks (high); semantic signature: `HUDMenu* (HUDMenu* this)`
+/// `HUDMenu::ctor` at 0x932540 (layout_inference, high); signature (high): `HUDMenu * ctor(HUDMenu * this)`; semantic: loads 'HUDMenu', builds the 10 HUD objects, Invokes 'HUDMovieBaseInstance.RegisterComponents', registers the two sinks (high); signature `HUDMenu* (HUDMenu* this)`
 pub const HUDMenu__ctor: u64 = 51610;
 /// `HUDMenu::ctor` as a function pointer type (high).
 pub type HUDMenu__ctor_fn = unsafe extern "C" fn(this: *mut crate::HUDMenu) -> *mut crate::HUDMenu;
@@ -3571,7 +3571,7 @@ pub type HUDMenu__ctor_fn = unsafe extern "C" fn(this: *mut crate::HUDMenu) -> *
 pub const HUDMenu__ctor_sub0: u64 = 51677;
 /// `HUDMenu::ctor_sub1` at 0x93b710 (callgraph, medium); signature (untiered): `undefined ctor_sub1(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const HUDMenu__ctor_sub1: u64 = 51694;
-/// `HUDMenu::dtor` at 0x933000 (semantic, high); signature (untiered): `undefined dtor(HUDMenu * this, undefined8 param_1, longlong * param_2, undefined8 param_3)`; destructor (currently named HUDMenu::ctor): deletes the objects, removes the sinks, releases the root (high); semantic signature: `void (HUDMenu* this)`
+/// `HUDMenu::dtor` at 0x933000 (semantic, high); signature (untiered): `undefined dtor(HUDMenu * this, undefined8 param_1, longlong * param_2, undefined8 param_3)`; semantic: destructor (currently named HUDMenu::ctor): deletes the objects, removes the sinks, releases the root (high); signature `void (HUDMenu* this)`
 pub const HUDMenu__dtor: u64 = 51611;
 /// `HUDMenu::dtor` as a function pointer type (high).
 pub type HUDMenu__dtor_fn = unsafe extern "C" fn(this: *mut crate::HUDMenu);
@@ -3639,7 +3639,7 @@ pub const HandleCommerceResponseWithoutBody: u64 = 449027;
 pub const HandleCompletionAndStartNextPrimaryOperation: u64 = 441990;
 /// `HandleCompletionAndStartNextSecondaryOperation` at 0x5994b0 (decompiler, medium); signature (untiered): `undefined8 HandleCompletionAndStartNextSecondaryOperation(longlong * param_1, undefined8 param_2, undefined1 * param_3, undefined4 * param_4)`
 pub const HandleCompletionAndStartNextSecondaryOperation: u64 = 441991;
-/// `HandleConsoleMacroCommand` at 0x90d680 (semantic, medium); signature (untiered): `bool HandleConsoleMacroCommand(char * param_1, char * param_2, uint param_3, undefined8 param_4)`; console macro/hotkey/reload preprocessor; returns whether the (expanded) line still has to run (medium); semantic signature: `bool (const char* line, char* expanded, uint size)`
+/// `HandleConsoleMacroCommand` at 0x90d680 (semantic, medium); signature (untiered): `bool HandleConsoleMacroCommand(char * param_1, char * param_2, uint param_3, undefined8 param_4)`; semantic: console macro/hotkey/reload preprocessor; returns whether the (expanded) line still has to run (medium); signature `bool (const char* line, char* expanded, uint size)`
 pub const HandleConsoleMacroCommand: u64 = 442699;
 /// `HandleContentInfoResultForPrimaryOperation` at 0x59a480 (decompiler, medium); signature (untiered): `undefined8 HandleContentInfoResultForPrimaryOperation(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 * param_4)`
 pub const HandleContentInfoResultForPrimaryOperation: u64 = 441999;
@@ -4483,11 +4483,11 @@ pub const HorseCameraState__Begin: u64 = 50760;
 pub const HorseCameraState__Destroy: u64 = 50774;
 /// `HorseCameraState::End` at 0x8f6ce0 (semantic, high); signature (untiered): `undefined End(HorseCameraState * this)`
 pub const HorseCameraState__End: u64 = 50761;
-/// `HorseCameraState::InputHandler::Destroy` at 0x8f763c (semantic, high); signature (untiered): `undefined Destroy(void * this)`; slot 0 adjustor thunk: rcx -= 0x20, jump to HorseCameraState::vdtor 0x8f7650 (high); semantic signature: `HorseCameraState* (PlayerInputHandler* this, u32 flags)`
+/// `HorseCameraState::InputHandler::Destroy` at 0x8f763c (semantic, high); signature (untiered): `undefined Destroy(void * this)`; semantic: slot 0 adjustor thunk: rcx -= 0x20, jump to HorseCameraState::vdtor 0x8f7650 (high); signature `HorseCameraState* (PlayerInputHandler* this, u32 flags)`
 pub const HorseCameraState__InputHandler__Destroy: u64 = 50773;
 /// `HorseCameraState::InputHandler::Destroy` as a function pointer type (high).
 pub type HorseCameraState__InputHandler__Destroy_fn = unsafe extern "C" fn(this: *mut crate::PlayerInputHandler, flags: u32) -> *mut crate::HorseCameraState;
-/// `HorseCameraState::InputHandler::ProcessButton` at 0x8f6d20 (semantic, high); signature (untiered): `undefined ProcessButton(void * this, longlong * param_1, undefined8 param_2, longlong param_3)`; slot 6: same body as the dragon handler: Toggle POV release with +0xe2 set zeroes freeRotation, else ThirdPersonState's ProcessButton (high); semantic signature: `void (PlayerInputHandler* this, ButtonEvent* event, PlayerControlsData* data)`
+/// `HorseCameraState::InputHandler::ProcessButton` at 0x8f6d20 (semantic, high); signature (untiered): `undefined ProcessButton(void * this, longlong * param_1, undefined8 param_2, longlong param_3)`; semantic: slot 6: same body as the dragon handler: Toggle POV release with +0xe2 set zeroes freeRotation, else ThirdPersonState's ProcessButton (high); signature `void (PlayerInputHandler* this, ButtonEvent* event, PlayerControlsData* data)`
 pub const HorseCameraState__InputHandler__ProcessButton: u64 = 50763;
 /// `HorseCameraState::InputHandler::ProcessButton` as a function pointer type (high).
 pub type HorseCameraState__InputHandler__ProcessButton_fn = unsafe extern "C" fn(this: *mut crate::PlayerInputHandler, event: *mut crate::ButtonEvent, data: *mut c_void);
@@ -4511,15 +4511,15 @@ pub const HorseCameraState__SetFreeRotationMode: u64 = 50762;
 pub const HorseCameraState__SetTargetHandle: u64 = 50768;
 /// `HorseCameraState::UpdateRotation` at 0x8f7360 (semantic, high); signature (untiered): `undefined UpdateRotation(HorseCameraState * this)`
 pub const HorseCameraState__UpdateRotation: u64 = 50771;
-/// `HorseCameraState::ctor` at 0x8f6c00 (layout_inference, high); signature (low): `HorseCameraState * ctor(HorseCameraState * this, undefined8 param_1, undefined4 param_2)`; ThirdPersonState::ctor, own vtables, mountHandle invalid, mountHeading 0, turning 0 (high); semantic signature: `HorseCameraState* (HorseCameraState* this, PlayerCamera* camera, CameraState id)`
+/// `HorseCameraState::ctor` at 0x8f6c00 (layout_inference, high); signature (low): `HorseCameraState * ctor(HorseCameraState * this, undefined8 param_1, undefined4 param_2)`; semantic: ThirdPersonState::ctor, own vtables, mountHandle invalid, mountHeading 0, turning 0 (high); signature `HorseCameraState* (HorseCameraState* this, PlayerCamera* camera, CameraState id)`
 pub const HorseCameraState__ctor: u64 = 50759;
 /// `HorseCameraState::ctor` as a function pointer type (high).
 pub type HorseCameraState__ctor_fn = unsafe extern "C" fn(this: *mut crate::HorseCameraState, camera: *mut crate::PlayerCamera, id: u32) -> *mut crate::HorseCameraState;
-/// `HoursPassed::GetEventSource` at 0x975b40 (semantic, medium); signature (untiered): `undefined8 * GetEventSource(void)`; the one source of HoursPassed::Event events (medium); semantic signature: `BSTEventSource<HoursPassed::Event>* ()`
+/// `HoursPassed::GetEventSource` at 0x975b40 (semantic, medium); signature (untiered): `undefined8 * GetEventSource(void)`; semantic: the one source of HoursPassed::Event events (medium); signature `BSTEventSource<HoursPassed::Event>* ()`
 pub const HoursPassed__GetEventSource: u64 = 52501;
-/// `HoursPassed::RegisterSink` at 0x974c20 (semantic, medium); signature (untiered): `undefined RegisterSink(undefined8 param_1)`; registers a HoursPassed::Event sink with the singleton source (medium); semantic signature: `void (BSTEventSink<HoursPassed::Event>* sink)`
+/// `HoursPassed::RegisterSink` at 0x974c20 (semantic, medium); signature (untiered): `undefined RegisterSink(undefined8 param_1)`; semantic: registers a HoursPassed::Event sink with the singleton source (medium); signature `void (BSTEventSink<HoursPassed::Event>* sink)`
 pub const HoursPassed__RegisterSink: u64 = 52482;
-/// `HoursPassed::UnregisterSink` at 0x974c50 (semantic, medium); signature (untiered): `undefined UnregisterSink(undefined8 param_1)`; unregisters a HoursPassed::Event sink with the singleton source (medium); semantic signature: `void (BSTEventSink<HoursPassed::Event>* sink)`
+/// `HoursPassed::UnregisterSink` at 0x974c50 (semantic, medium); signature (untiered): `undefined UnregisterSink(undefined8 param_1)`; semantic: unregisters a HoursPassed::Event sink with the singleton source (medium); signature `void (BSTEventSink<HoursPassed::Event>* sink)`
 pub const HoursPassed__UnregisterSink: u64 = 52483;
 /// `IAITarget::IPackageData_vdtor` at 0x44e7d8 (slot_propagation, medium); signature (low): `undefined IPackageData_vdtor(IAITarget * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const IAITarget__IPackageData_vdtor: u64 = 27546;
@@ -4559,7 +4559,7 @@ pub const IAnimationGraphManagerHolder__GetGraphVariableBool: u64 = 32914;
 pub const IAnimationGraphManagerHolder__GetGraphVariableCacheSize: u64 = 32913;
 /// `IAnimationGraphManagerHolder::GetGraphVariableFloat` at 0x554650 (runtime, high); signature (untiered): `undefined1 GetGraphVariableFloat(IAnimationGraphManagerHolder * this, undefined8 param_1, undefined8 param_2)`
 pub const IAnimationGraphManagerHolder__GetGraphVariableFloat: u64 = 32916;
-/// `IAnimationGraphManagerHolder::GetGraphVariableFloatDirect` at 0x555160 (semantic, medium); signature (untiered): `undefined1 GetGraphVariableFloatDirect(longlong * param_1, ulonglong * param_2, undefined4 * param_3)`; non-virtual copy of the base slot-16 body (active graph, no actor cache) (medium); semantic signature: `bool (IAnimationGraphManagerHolder* this, const BSFixedString& name, float& out)`
+/// `IAnimationGraphManagerHolder::GetGraphVariableFloatDirect` at 0x555160 (semantic, medium); signature (untiered): `undefined1 GetGraphVariableFloatDirect(longlong * param_1, ulonglong * param_2, undefined4 * param_3)`; semantic: non-virtual copy of the base slot-16 body (active graph, no actor cache) (medium); signature `bool (IAnimationGraphManagerHolder* this, const BSFixedString& name, float& out)`
 pub const IAnimationGraphManagerHolder__GetGraphVariableFloatDirect: u64 = 32929;
 /// `IAnimationGraphManagerHolder::GetGraphVariableInt` at 0x554520 (semantic, high); signature (untiered): `undefined1 GetGraphVariableInt(IAnimationGraphManagerHolder * this, ulonglong * param_1, undefined4 * param_2)`
 pub const IAnimationGraphManagerHolder__GetGraphVariableInt: u64 = 32915;
@@ -4575,37 +4575,37 @@ pub const IAnimationGraphManagerHolder__OnGraphLoadFailed: u64 = 32906;
 pub const IAnimationGraphManagerHolder__PostBuildAnimationGraphManager: u64 = 32909;
 /// `IAnimationGraphManagerHolder::RegisterGraphEventSinks` at 0x554350 (semantic, high); signature (untiered): `undefined1 RegisterGraphEventSinks(void)`
 pub const IAnimationGraphManagerHolder__RegisterGraphEventSinks: u64 = 32905;
-/// `IAnimationGraphManagerHolder::SetAnimationGraphManagerAndNotify` at 0x554060 (semantic, high); signature (untiered): `char SetAnimationGraphManagerAndNotify(longlong * param_1, longlong * param_2, undefined8 param_3, undefined8 param_4)`; installs a manager through slot 3 and, when it changed, calls slot 13(new, old) (high); semantic signature: `bool (IAnimationGraphManagerHolder* this, BSTSmartPointer<BSAnimationGraphManager>& newMgr)`
+/// `IAnimationGraphManagerHolder::SetAnimationGraphManagerAndNotify` at 0x554060 (semantic, high); signature (untiered): `char SetAnimationGraphManagerAndNotify(longlong * param_1, longlong * param_2, undefined8 param_3, undefined8 param_4)`; semantic: installs a manager through slot 3 and, when it changed, calls slot 13(new, old) (high); signature `bool (IAnimationGraphManagerHolder* this, BSTSmartPointer<BSAnimationGraphManager>& newMgr)`
 pub const IAnimationGraphManagerHolder__SetAnimationGraphManagerAndNotify: u64 = 32900;
 /// `IAnimationGraphManagerHolder::SetAnimationGraphManagerAndNotify` as a function pointer type (high).
 pub type IAnimationGraphManagerHolder__SetAnimationGraphManagerAndNotify_fn = unsafe extern "C" fn(this: *mut crate::IAnimationGraphManagerHolder, newMgr: *mut c_void) -> bool;
-/// `IAnimationGraphManagerHolder::SetGraphVariableBool` at 0x553560 (semantic, high); signature (untiered): `undefined SetGraphVariableBool(undefined8 param_1, undefined8 param_2, undefined1 param_3)`; sets a bool variable on every graph of the manager; returns true whenever the holder yields a manager (the result starts at 1 and is only ORed) (high); semantic signature: `bool (IAnimationGraphManagerHolder* this, const BSFixedString& name, bool value)`
+/// `IAnimationGraphManagerHolder::SetGraphVariableBool` at 0x553560 (semantic, high); signature (untiered): `undefined SetGraphVariableBool(undefined8 param_1, undefined8 param_2, undefined1 param_3)`; semantic: sets a bool variable on every graph of the manager; returns true whenever the holder yields a manager (the result starts at 1 and is only ORed) (high); signature `bool (IAnimationGraphManagerHolder* this, const BSFixedString& name, bool value)`
 pub const IAnimationGraphManagerHolder__SetGraphVariableBool: u64 = 32885;
 /// `IAnimationGraphManagerHolder::SetGraphVariableBool` as a function pointer type (high).
 pub type IAnimationGraphManagerHolder__SetGraphVariableBool_fn = unsafe extern "C" fn(this: *mut crate::IAnimationGraphManagerHolder, name: *const crate::BSFixedString, value: bool) -> bool;
-/// `IAnimationGraphManagerHolder::SetGraphVariableBoolOnAllGraphs` at 0x555ac0 (semantic, high); signature (untiered): `char SetGraphVariableBoolOnAllGraphs(longlong * param_1, longlong * param_2, undefined1 * param_3)`; implementation of 0x553560 (high); semantic signature: `bool (IAnimationGraphManagerHolder* this, const BSFixedString& name, bool* value)`
+/// `IAnimationGraphManagerHolder::SetGraphVariableBoolOnAllGraphs` at 0x555ac0 (semantic, high); signature (untiered): `char SetGraphVariableBoolOnAllGraphs(longlong * param_1, longlong * param_2, undefined1 * param_3)`; semantic: implementation of 0x553560 (high); signature `bool (IAnimationGraphManagerHolder* this, const BSFixedString& name, bool* value)`
 pub const IAnimationGraphManagerHolder__SetGraphVariableBoolOnAllGraphs: u64 = 32936;
 /// `IAnimationGraphManagerHolder::SetGraphVariableBoolOnAllGraphs` as a function pointer type (high).
 pub type IAnimationGraphManagerHolder__SetGraphVariableBoolOnAllGraphs_fn = unsafe extern "C" fn(this: *mut crate::IAnimationGraphManagerHolder, name: *const crate::BSFixedString, value: *mut bool) -> bool;
-/// `IAnimationGraphManagerHolder::SetGraphVariableFloat` at 0x5535a0 (semantic, high); signature (untiered): `undefined SetGraphVariableFloat(undefined8 param_1, undefined8 param_2, undefined4 param_3)`; sets a float variable on every graph (high); semantic signature: `bool (IAnimationGraphManagerHolder* this, const BSFixedString& name, float value)`
+/// `IAnimationGraphManagerHolder::SetGraphVariableFloat` at 0x5535a0 (semantic, high); signature (untiered): `undefined SetGraphVariableFloat(undefined8 param_1, undefined8 param_2, undefined4 param_3)`; semantic: sets a float variable on every graph (high); signature `bool (IAnimationGraphManagerHolder* this, const BSFixedString& name, float value)`
 pub const IAnimationGraphManagerHolder__SetGraphVariableFloat: u64 = 32887;
 /// `IAnimationGraphManagerHolder::SetGraphVariableFloat` as a function pointer type (high).
 pub type IAnimationGraphManagerHolder__SetGraphVariableFloat_fn = unsafe extern "C" fn(this: *mut crate::IAnimationGraphManagerHolder, name: *const crate::BSFixedString, value: f32) -> bool;
-/// `IAnimationGraphManagerHolder::SetGraphVariableFloatOnAllGraphs` at 0x555650 (semantic, high); signature (untiered): `char SetGraphVariableFloatOnAllGraphs(longlong * param_1, longlong * param_2, undefined4 * param_3)`; implementation of 0x5535a0 (high); semantic signature: `bool (IAnimationGraphManagerHolder* this, const BSFixedString& name, float* value)`
+/// `IAnimationGraphManagerHolder::SetGraphVariableFloatOnAllGraphs` at 0x555650 (semantic, high); signature (untiered): `char SetGraphVariableFloatOnAllGraphs(longlong * param_1, longlong * param_2, undefined4 * param_3)`; semantic: implementation of 0x5535a0 (high); signature `bool (IAnimationGraphManagerHolder* this, const BSFixedString& name, float* value)`
 pub const IAnimationGraphManagerHolder__SetGraphVariableFloatOnAllGraphs: u64 = 32933;
 /// `IAnimationGraphManagerHolder::SetGraphVariableFloatOnAllGraphs` as a function pointer type (high).
 pub type IAnimationGraphManagerHolder__SetGraphVariableFloatOnAllGraphs_fn = unsafe extern "C" fn(this: *mut crate::IAnimationGraphManagerHolder, name: *const crate::BSFixedString, value: *mut f32) -> bool;
-/// `IAnimationGraphManagerHolder::SetGraphVariableInt` at 0x553580 (semantic, high); signature (untiered): `undefined SetGraphVariableInt(undefined8 param_1, undefined8 param_2, undefined4 param_3)`; sets an int variable on every graph (high); semantic signature: `bool (IAnimationGraphManagerHolder* this, const BSFixedString& name, int value)`
+/// `IAnimationGraphManagerHolder::SetGraphVariableInt` at 0x553580 (semantic, high); signature (untiered): `undefined SetGraphVariableInt(undefined8 param_1, undefined8 param_2, undefined4 param_3)`; semantic: sets an int variable on every graph (high); signature `bool (IAnimationGraphManagerHolder* this, const BSFixedString& name, int value)`
 pub const IAnimationGraphManagerHolder__SetGraphVariableInt: u64 = 32886;
 /// `IAnimationGraphManagerHolder::SetGraphVariableInt` as a function pointer type (high).
 pub type IAnimationGraphManagerHolder__SetGraphVariableInt_fn = unsafe extern "C" fn(this: *mut crate::IAnimationGraphManagerHolder, name: *const crate::BSFixedString, value: i32) -> bool;
-/// `IAnimationGraphManagerHolder::SetGraphVariableIntOnAllGraphs` at 0x5554f0 (semantic, high); signature (untiered): `char SetGraphVariableIntOnAllGraphs(longlong * param_1, longlong * param_2, undefined4 * param_3)`; implementation of 0x553580 (high); semantic signature: `bool (IAnimationGraphManagerHolder* this, const BSFixedString& name, int* value)`
+/// `IAnimationGraphManagerHolder::SetGraphVariableIntOnAllGraphs` at 0x5554f0 (semantic, high); signature (untiered): `char SetGraphVariableIntOnAllGraphs(longlong * param_1, longlong * param_2, undefined4 * param_3)`; semantic: implementation of 0x553580 (high); signature `bool (IAnimationGraphManagerHolder* this, const BSFixedString& name, int* value)`
 pub const IAnimationGraphManagerHolder__SetGraphVariableIntOnAllGraphs: u64 = 32932;
 /// `IAnimationGraphManagerHolder::SetGraphVariableIntOnAllGraphs` as a function pointer type (high).
 pub type IAnimationGraphManagerHolder__SetGraphVariableIntOnAllGraphs_fn = unsafe extern "C" fn(this: *mut crate::IAnimationGraphManagerHolder, name: *const crate::BSFixedString, value: *mut i32) -> bool;
 /// `IAnimationGraphManagerHolder::ShouldUpdateAnimation` at 0x5543d0 (semantic, medium); signature (untiered): `undefined1 ShouldUpdateAnimation(void)`
 pub const IAnimationGraphManagerHolder__ShouldUpdateAnimation: u64 = 32912;
-/// `IAnimationGraphManagerHolder::UpdateAnimationGraphManager` at 0x553fc0 (semantic, high); signature (untiered): `undefined1 UpdateAnimationGraphManager(longlong * param_1, longlong param_2)`; gets the manager (slot 2) and calls BSAnimationGraphManager::Update, gated by slot 14 unless data+0x2a (high); semantic signature: `bool (IAnimationGraphManagerHolder* this, BSAnimationUpdateData* data)`
+/// `IAnimationGraphManagerHolder::UpdateAnimationGraphManager` at 0x553fc0 (semantic, high); signature (untiered): `undefined1 UpdateAnimationGraphManager(longlong * param_1, longlong param_2)`; semantic: gets the manager (slot 2) and calls BSAnimationGraphManager::Update, gated by slot 14 unless data+0x2a (high); signature `bool (IAnimationGraphManagerHolder* this, BSAnimationUpdateData* data)`
 pub const IAnimationGraphManagerHolder__UpdateAnimationGraphManager: u64 = 32899;
 /// `IAnimationGraphManagerHolder::UpdateAnimationGraphManager` as a function pointer type (high).
 pub type IAnimationGraphManagerHolder__UpdateAnimationGraphManager_fn = unsafe extern "C" fn(this: *mut crate::IAnimationGraphManagerHolder, data: *mut c_void) -> bool;
@@ -5881,7 +5881,7 @@ pub const IGiftMenuScriptCallback__vdtor: u64 = 54912;
 pub const IHandlerFunctor_Actor_BSFixedStringCI__vdtor: u64 = 43282;
 /// `IMapCameraCallbacks::Destroy` at 0x997210 (semantic, high); signature (untiered): `IMapCameraCallbacks * Destroy(IMapCameraCallbacks * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const IMapCameraCallbacks__Destroy: u64 = 53029;
-/// `IMapCameraCallbacks::dtor` at 0x9971d0 (layout_inference, high); signature (high): `undefined dtor(IMapCameraCallbacks * this)`; resets the vtable (high); semantic signature: `void (IMapCameraCallbacks* this)`
+/// `IMapCameraCallbacks::dtor` at 0x9971d0 (layout_inference, high); signature (high): `undefined dtor(IMapCameraCallbacks * this)`; semantic: resets the vtable (high); signature `void (IMapCameraCallbacks* this)`
 pub const IMapCameraCallbacks__dtor: u64 = 53027;
 /// `IMapCameraCallbacks::dtor` as a function pointer type (high).
 pub type IMapCameraCallbacks__dtor_fn = unsafe extern "C" fn(this: *mut crate::IMapCameraCallbacks);
@@ -5917,7 +5917,7 @@ pub const IMemoryStoreBase__vdtor: u64 = 68475;
 pub const IMenu__Accept: u64 = 33615;
 /// `IMenu::AdvanceMovie` at 0x116ee30 (semantic, high); signature (untiered): `undefined AdvanceMovie(IMenu * this, undefined4 param_2, uint param_3)`
 pub const IMenu__AdvanceMovie: u64 = 82307;
-/// `IMenu::CreateFxDelegate` at 0x116f2a0 (semantic, medium); signature (untiered): `undefined CreateFxDelegate(longlong * param_1, longlong param_2, undefined8 param_3, undefined8 param_4)`; creates the FxDelegate at +0x28, registers the menu with it (slot 1 Accept) and installs it on the movie (medium); semantic signature: `void (IMenu* menu, GFxMovieView* movie)`
+/// `IMenu::CreateFxDelegate` at 0x116f2a0 (semantic, medium); signature (untiered): `undefined CreateFxDelegate(longlong * param_1, longlong param_2, undefined8 param_3, undefined8 param_4)`; semantic: creates the FxDelegate at +0x28, registers the menu with it (slot 1 Accept) and installs it on the movie (medium); signature `void (IMenu* menu, GFxMovieView* movie)`
 pub const IMenu__CreateFxDelegate: u64 = 82313;
 /// `IMenu::PostCreate` at 0x57b440 (semantic, high); signature (untiered): `undefined PostCreate(void)`
 pub const IMenu__PostCreate: u64 = 33639;
@@ -5929,7 +5929,7 @@ pub const IMenu__PreDisplay: u64 = 82308;
 pub const IMenu__ProcessMessage: u64 = 82306;
 /// `IMenu::RefreshPlatform` at 0x116eef0 (semantic, high); signature (untiered): `undefined RefreshPlatform(IMenu * this, undefined8 param_1, longlong param_2, undefined * param_3)`
 pub const IMenu__RefreshPlatform: u64 = 524269;
-/// `IMenu::RegisterNativeFunction` at 0x929ca0 (semantic, medium); signature (untiered): `undefined RegisterNativeFunction(longlong param_1, longlong param_2, int param_3, undefined8 * param_4)`; view->CreateFunction(&fn, menu+0x30 handler, userData) then target.SetMember(name, fn) (medium); semantic signature: `void (IMenu* menu, const char* name, int userData, GFxValue* target)`
+/// `IMenu::RegisterNativeFunction` at 0x929ca0 (semantic, medium); signature (untiered): `undefined RegisterNativeFunction(longlong param_1, longlong param_2, int param_3, undefined8 * param_4)`; semantic: view->CreateFunction(&fn, menu+0x30 handler, userData) then target.SetMember(name, fn) (medium); signature `void (IMenu* menu, const char* name, int userData, GFxValue* target)`
 pub const IMenu__RegisterNativeFunction: u64 = 524002;
 /// `IMenu::ctor` at 0x116ed40 (layout_inference, high); signature (high): `IMenu * ctor(IMenu * this)`
 pub const IMenu__ctor: u64 = 82304;

@@ -1172,7 +1172,7 @@ impl crate::PlayerCamera {
     /// `void (PlayerCamera* this)`
     #[inline]
     pub fn begin_close_tween_menu(&self) { unsafe { function!(50818, (*const Self))(core::ptr::from_ref(self)) } }
-    /// `PlayerCamera::ClearFirstPersonCameraNodes`: 
+    /// `PlayerCamera::ClearFirstPersonCameraNodes`
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 50792, rva 0x8f8e70.
     /// `void (PlayerCamera* this)`
@@ -1425,7 +1425,7 @@ impl crate::PlayerCamera {
     /// `void (PlayerCamera* this)`
     #[inline]
     pub fn reset_fov_to_defaults(&self) { unsafe { function!(50836, (*const Self))(core::ptr::from_ref(self)) } }
-    /// `PlayerCamera::Revert`: 
+    /// `PlayerCamera::Revert`
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 50848, rva 0x8fbf00.
     /// `void (PlayerCamera* this, BGSLoadFormBuffer* buffer)`
@@ -2016,7 +2016,7 @@ impl crate::Sky {
     /// `void (Sky* this)`
     #[inline]
     pub fn update_fog_distances(&self) { unsafe { function!(26233, (*const Self))(core::ptr::from_ref(self)) } }
-    /// `Sky::atmosphere` at +0x70: 
+    /// `Sky::atmosphere` at +0x70
     ///
     /// Semantic field, frame pass, high; `None` while the pointer is null.
     #[inline]
@@ -2031,7 +2031,7 @@ impl crate::Sky {
     /// Semantic field, frame pass, high; `None` while the pointer is null.
     #[inline]
     pub fn root(&self) -> Option<&crate::BSMultiBoundNode> { unsafe { { self.root }.as_ref() } }
-    /// `Sky::stars` at +0x78: 
+    /// `Sky::stars` at +0x78
     ///
     /// Semantic field, frame pass, high; `None` while the pointer is null.
     #[inline]
@@ -2061,7 +2061,7 @@ impl crate::Sun {
     /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
     #[inline]
     pub fn update(&self, sky: &crate::Sky, delta: f32) { unsafe { virtual_function!(self, 3, (*const Self, *const crate::Sky, f32))(core::ptr::from_ref(self), core::ptr::from_ref(sky), delta) } }
-    /// `Sun::accumulator` at +0x50: 
+    /// `Sun::accumulator` at +0x50
     ///
     /// Semantic field, frame pass, high; `None` while the pointer is null.
     #[inline]

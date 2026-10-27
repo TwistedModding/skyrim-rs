@@ -311,7 +311,7 @@ impl crate::BGSSaveLoadManager {
     /// `name` must point to what the engine expects.
     #[inline]
     pub unsafe fn set_current_save_name(&self, name: *const c_char, index: u32) { unsafe { function!(35765, (*const Self, *const c_char, u32))(core::ptr::from_ref(self), name, index) } }
-    /// `BGSSaveLoadManager::ctor`: 
+    /// `BGSSaveLoadManager::ctor`
     ///
     /// Semantic, save pass, high; ledger layout_inference evidence, name high; id 35720, rva 0x621be0.
     /// `BGSSaveLoadManager* (BGSSaveLoadManager*)`

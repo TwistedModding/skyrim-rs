@@ -91,7 +91,7 @@ pub const CallVfunc48: u64 = 109218;
 pub const CallVfunc498OnResolvedHandles: u64 = 19012;
 /// `CallVfunc50` at 0x15993f0 (decompiler, medium); signature (untiered): `undefined CallVfunc50(longlong * param_1)`
 pub const CallVfunc50: u64 = 109219;
-/// `CallVfunc5B8IfFlag1D4Bit0` at 0x7fadd0 (semantic, high); signature (untiered): `undefined CallVfunc5B8IfFlag1D4Bit0(longlong * param_1)`; when +0x1d4 bit 0 is set, tail-calls slot 183 (+0x5b8) (high); semantic signature: `void (Projectile* this)`
+/// `CallVfunc5B8IfFlag1D4Bit0` at 0x7fadd0 (semantic, high); signature (untiered): `undefined CallVfunc5B8IfFlag1D4Bit0(longlong * param_1)`; semantic: when +0x1d4 bit 0 is set, tail-calls slot 183 (+0x5b8) (high); signature `void (Projectile* this)`
 pub const CallVfunc5B8IfFlag1D4Bit0: u64 = 44124;
 /// `CallVfunc5B8IfFlag1D4Bit0` as a function pointer type (high).
 pub type CallVfunc5B8IfFlag1D4Bit0_fn = unsafe extern "C" fn(this: *mut crate::Projectile);
@@ -233,7 +233,7 @@ pub const CalmEffect__vdtor: u64 = 35036;
 pub const CalmEffect__vfunc_20: u64 = 35031;
 /// `CalmEffect::vfunc_33` at 0x5e5bf0 (rtti, high); signature (low): `undefined4 vfunc_33(void)`
 pub const CalmEffect__vfunc_33: u64 = 35042;
-/// `CameraCasterHolder::ctor` at 0x5573c0 (semantic, high); signature (untiered): `undefined8 * ctor(undefined8 * param_1)`; zero both pointers, CreateSpherePhantom(this, radius) (high); semantic signature: `CameraCasterHolder* (CameraCasterHolder* this, float radius)`
+/// `CameraCasterHolder::ctor` at 0x5573c0 (semantic, high); signature (untiered): `undefined8 * ctor(undefined8 * param_1)`; semantic: zero both pointers, CreateSpherePhantom(this, radius) (high); signature `CameraCasterHolder* (CameraCasterHolder* this, float radius)`
 pub const CameraCasterHolder__ctor: u64 = 33005;
 /// `CameraCasterHolder::ctor` as a function pointer type (high).
 pub type CameraCasterHolder__ctor_fn = unsafe extern "C" fn(this: *mut crate::CameraCasterHolder, radius: f32) -> *mut crate::CameraCasterHolder;
@@ -245,19 +245,19 @@ pub const CameraOverrideStartHandler__Handle: u64 = 42826;
 pub const CameraOverrideStopHandler__Destroy: u64 = 43306;
 /// `CameraOverrideStopHandler::Handle` at 0x7ccc80 (semantic, high); signature (untiered): `undefined8 Handle(CameraOverrideStopHandler * this, longlong param_1)`
 pub const CameraOverrideStopHandler__Handle: u64 = 42827;
-/// `CameraPathOffsetRef_atexit` at 0x1796f20 (semantic, high); signature (untiered): `undefined CameraPathOffsetRef_atexit(void)`; atexit destructor of g_CameraPathOffsetRef 0x32307f0: releases the held reference (high); semantic signature: `void (void)`
+/// `CameraPathOffsetRef_atexit` at 0x1796f20 (semantic, high); signature (untiered): `undefined CameraPathOffsetRef_atexit(void)`; semantic: atexit destructor of g_CameraPathOffsetRef 0x32307f0: releases the held reference (high); signature `void (void)`
 pub const CameraPathOffsetRef_atexit: u64 = 170963;
 /// `CameraPathOffsetRef_atexit` as a function pointer type (high).
 pub type CameraPathOffsetRef_atexit_fn = unsafe extern "C" fn();
-/// `CameraShake::ClearModelHolderPtr` at 0x558c70 (semantic, high); signature (untiered): `undefined ClearModelHolderPtr(void)`; unwind funclet of CameraShake::LoadModel 0x5582f0: stores null into g_CameraShakeModel_ptr 0x3204868 (high); semantic signature: `void (void)`
+/// `CameraShake::ClearModelHolderPtr` at 0x558c70 (semantic, high); signature (untiered): `undefined ClearModelHolderPtr(void)`; semantic: unwind funclet of CameraShake::LoadModel 0x5582f0: stores null into g_CameraShakeModel_ptr 0x3204868 (high); signature `void (void)`
 pub const CameraShake__ClearModelHolderPtr: u64 = 33017;
 /// `CameraShake::ClearModelHolderPtr` as a function pointer type (high).
 pub type CameraShake__ClearModelHolderPtr_fn = unsafe extern "C" fn();
-/// `CameraShake::LoadModel` at 0x5582f0 (semantic, high); signature (untiered): `undefined LoadModel(void)`; once: points g_CameraShakeModel_ptr 0x3204868 at the static holder 0x3204870, loads the mesh named by sCameraShakeFilename (formatted with "Meshes") into holder+8 and keeps its root object (+0x28 of the loaded data, refcounted) at holder+0x10, named after the path (high); semantic signature: `void (void)`
+/// `CameraShake::LoadModel` at 0x5582f0 (semantic, high); signature (untiered): `undefined LoadModel(void)`; semantic: once: points g_CameraShakeModel_ptr 0x3204868 at the static holder 0x3204870, loads the mesh named by sCameraShakeFilename (formatted with "Meshes") into holder+8 and keeps its root object (+0x28 of the loaded data, refcounted) at holder+0x10, named after the path (high); signature `void (void)`
 pub const CameraShake__LoadModel: u64 = 33010;
 /// `CameraShake::LoadModel` as a function pointer type (high).
 pub type CameraShake__LoadModel_fn = unsafe extern "C" fn();
-/// `CameraShake::UnloadModel` at 0x558420 (semantic, high); signature (untiered): `undefined UnloadModel(void)`; releases the camera shake model: holder+8 (deferred release), holder+0x10 (refcount, slot 1), then g_CameraShakeModel_ptr 0x3204868 = null (high); semantic signature: `void (void)`
+/// `CameraShake::UnloadModel` at 0x558420 (semantic, high); signature (untiered): `undefined UnloadModel(void)`; semantic: releases the camera shake model: holder+8 (deferred release), holder+0x10 (refcount, slot 1), then g_CameraShakeModel_ptr 0x3204868 = null (high); signature `void (void)`
 pub const CameraShake__UnloadModel: u64 = 33011;
 /// `CameraShake::UnloadModel` as a function pointer type (high).
 pub type CameraShake__UnloadModel_fn = unsafe extern "C" fn();
@@ -273,7 +273,7 @@ pub const CanCastIfContextActorFieldF8Field10Zero: u64 = 49759;
 pub const CanConnectVerticesWithoutCrossing: u64 = 93339;
 /// `CanOpenNiFile` at 0xeaf720 (decompiler, medium); signature (medium): `undefined1 CanOpenNiFile(char * param_1, int param_2)`
 pub const CanOpenNiFile: u64 = 69094;
-/// `CanOpenTweenMenu` at 0x988e30 (semantic, high); signature (untiered): `undefined8 CanOpenTweenMenu(void)`; VATS idle (+0x20 == 0), player +0x204 bit 3 clear, the player not in the list 0x31df410, and the camera neither in state 8 nor in a furniture camera (high); semantic signature: `bool (void)`
+/// `CanOpenTweenMenu` at 0x988e30 (semantic, high); signature (untiered): `undefined8 CanOpenTweenMenu(void)`; semantic: VATS idle (+0x20 == 0), player +0x204 bit 3 clear, the player not in the list 0x31df410, and the camera neither in state 8 nor in a furniture camera (high); signature `bool (void)`
 pub const CanOpenTweenMenu: u64 = 52719;
 /// `CanOpenTweenMenu` as a function pointer type (high).
 pub type CanOpenTweenMenu_fn = unsafe extern "C" fn() -> bool;
@@ -331,7 +331,7 @@ pub const CarveSegmentIntoSizeClassList: u64 = 87857;
 pub const CastAliasSpells: u64 = 38753;
 /// `CastAttackHitSpells` at 0x6d5ab0 (decompiler, medium); signature (untiered): `undefined CastAttackHitSpells(longlong * param_1, undefined8 * param_2, undefined4 * param_3, longlong * param_4)`
 pub const CastAttackHitSpells: u64 = 38748;
-/// `CastCameraLinearAndCollectHits` at 0x5574f0 (runtime, high); signature (untiered): `ulonglong CastCameraLinearAndCollectHits(longlong * param_1, longlong * param_2, float * param_3, float * param_4, float * param_5, undefined8 * param_6, float param_7)`; sphere cast of caster+0 from 'from' to 'to' in havok units under the world read lock; 'to' comes back clipped; hitRecord gets the hit data; *hitRef the hit reference (high); semantic signature: `bool (CameraCasterHolder* caster, bhkWorld* world, NiPoint3* from, NiPoint3* to, float* hitRecord, TESObjectREFR** hitRef, float radius)`
+/// `CastCameraLinearAndCollectHits` at 0x5574f0 (runtime, high); signature (untiered): `ulonglong CastCameraLinearAndCollectHits(longlong * param_1, longlong * param_2, float * param_3, float * param_4, float * param_5, undefined8 * param_6, float param_7)`; semantic: sphere cast of caster+0 from 'from' to 'to' in havok units under the world read lock; 'to' comes back clipped; hitRecord gets the hit data; *hitRef the hit reference (high); signature `bool (CameraCasterHolder* caster, bhkWorld* world, NiPoint3* from, NiPoint3* to, float* hitRecord, TESObjectREFR** hitRef, float radius)`
 pub const CastCameraLinearAndCollectHits: u64 = 33007;
 /// `CastCameraLinearAndCollectHits` as a function pointer type (high).
 pub type CastCameraLinearAndCollectHits_fn = unsafe extern "C" fn(caster: *mut crate::CameraCasterHolder, world: *mut crate::bhkWorld, from: *mut crate::NiPoint3, to: *mut crate::NiPoint3, hitRecord: *mut f32, hitRef: *mut *mut crate::TESObjectREFR, radius: f32) -> bool;
@@ -447,7 +447,7 @@ pub const ChairFurnitureExitHandler__vdtor: u64 = 43309;
 pub const ChairFurnitureExitHandler__vfunc_1: u64 = 42835;
 /// `ChangeElementFormatIfEmpty` at 0xe87430 (decompiler, medium); signature (untiered): `ulonglong ChangeElementFormatIfEmpty(int * param_1, int param_2)`
 pub const ChangeElementFormatIfEmpty: u64 = 89908;
-/// `ChangeFormMap::AddFlags` at 0x613570 (semantic, high); signature (untiered): `undefined AddFlags(longlong param_1, uint param_2, uint param_3)`; write-locked OR of flags into the entry (skipped when the entry holds pending data) (high); semantic signature: `void (ChangeFormMap* map, u32 formID, u32 flags)`
+/// `ChangeFormMap::AddFlags` at 0x613570 (semantic, high); signature (untiered): `undefined AddFlags(longlong param_1, uint param_2, uint param_3)`; semantic: write-locked OR of flags into the entry (skipped when the entry holds pending data) (high); signature `void (ChangeFormMap* map, u32 formID, u32 flags)`
 pub const ChangeFormMap__AddFlags: u64 = 35507;
 /// `ChangeFormMap::AddFlags` as a function pointer type (high).
 pub type ChangeFormMap__AddFlags_fn = unsafe extern "C" fn(map: *mut crate::ChangeFormMap, formID: u32, flags: u32);
@@ -677,7 +677,7 @@ pub const CheckSupport_2: u64 = 62643;
 pub const CheckTriangleDegenerateOrWindingMismatch: u64 = 60318;
 /// `CheckUsableAttackItemsForTypeMask` at 0x86d570 (decompiler, medium); signature (medium): `undefined CheckUsableAttackItemsForTypeMask(longlong param_1, uint * param_2)`
 pub const CheckUsableAttackItemsForTypeMask: u64 = 47349;
-/// `CheckVATSTargetVisibleInDirection` at 0x6a07c0 (semantic, high); signature (untiered): `undefined CheckVATSTargetVisibleInDirection(longlong * param_1, longlong * param_2, float param_3)`; for i = 1..fVATSSmartCameraCheckStepCount (5): point = subject position stepped i * fVATSSmartCameraCheckStepDistance (128) along heading + angleOffset at +fVATSSmartCameraCheckHeight; ray to the target's 3D world translate; stop at the first step whose ray hits something other than the target at fraction <= 0.85 (an actor hit only within 256 units); returns i * fVATSSmartCameraCheckStepDistance of the last step evaluated (StepCount * StepDistance = 640 when no step stopped) (high); semantic signature: `float (Actor* subject, TESObjectREFR* target, float angleOffset)`
+/// `CheckVATSTargetVisibleInDirection` at 0x6a07c0 (semantic, high); signature (untiered): `undefined CheckVATSTargetVisibleInDirection(longlong * param_1, longlong * param_2, float param_3)`; semantic: for i = 1..fVATSSmartCameraCheckStepCount (5): point = subject position stepped i * fVATSSmartCameraCheckStepDistance (128) along heading + angleOffset at +fVATSSmartCameraCheckHeight; ray to the target's 3D world translate; stop at the first step whose ray hits something other than the target at fraction <= 0.85 (an actor hit only within 256 units); returns i * fVATSSmartCameraCheckStepDistance of the last step evaluated (StepCount * StepDistance = 640 when no step stopped) (high); signature `float (Actor* subject, TESObjectREFR* target, float angleOffset)`
 pub const CheckVATSTargetVisibleInDirection: u64 = 37727;
 /// `CheckVATSTargetVisibleInDirection` as a function pointer type (high).
 pub type CheckVATSTargetVisibleInDirection_fn = unsafe extern "C" fn(subject: *mut crate::Actor, target: *mut crate::TESObjectREFR, angleOffset: f32) -> f32;
@@ -705,17 +705,17 @@ pub const CheckedMemcpy_4: u64 = 100346;
 pub const CheckedMemcpy_5: u64 = 451342;
 /// `CheckedMemcpy_6` at 0x13ac3c0 (decompiler, high); signature (high): `undefined8 CheckedMemcpy_6(void * param_1, ulonglong param_2, void * param_3, ulonglong param_4)`
 pub const CheckedMemcpy_6: u64 = 450474;
-/// `ChestsLooted::GetEventSource` at 0x915620 (semantic, medium); signature (untiered): `undefined8 * GetEventSource(void)`; the one source of ChestsLooted::Event events (medium); semantic signature: `BSTEventSource<ChestsLooted::Event>* ()`
+/// `ChestsLooted::GetEventSource` at 0x915620 (semantic, medium); signature (untiered): `undefined8 * GetEventSource(void)`; semantic: the one source of ChestsLooted::Event events (medium); signature `BSTEventSource<ChestsLooted::Event>* ()`
 pub const ChestsLooted__GetEventSource: u64 = 51182;
-/// `ChestsLooted::RegisterSink` at 0x90fb70 (semantic, medium); signature (untiered): `undefined RegisterSink(undefined8 param_1)`; registers a ChestsLooted::Event sink with the singleton source (medium); semantic signature: `void (BSTEventSink<ChestsLooted::Event>* sink)`
+/// `ChestsLooted::RegisterSink` at 0x90fb70 (semantic, medium); signature (untiered): `undefined RegisterSink(undefined8 param_1)`; semantic: registers a ChestsLooted::Event sink with the singleton source (medium); signature `void (BSTEventSink<ChestsLooted::Event>* sink)`
 pub const ChestsLooted__RegisterSink: u64 = 51120;
-/// `ChestsLooted::UnregisterSink` at 0x90fba0 (semantic, medium); signature (untiered): `undefined UnregisterSink(undefined8 param_1)`; unregisters a ChestsLooted::Event sink with the singleton source (medium); semantic signature: `void (BSTEventSink<ChestsLooted::Event>* sink)`
+/// `ChestsLooted::UnregisterSink` at 0x90fba0 (semantic, medium); signature (untiered): `undefined UnregisterSink(undefined8 param_1)`; semantic: unregisters a ChestsLooted::Event sink with the singleton source (medium); signature `void (BSTEventSink<ChestsLooted::Event>* sink)`
 pub const ChestsLooted__UnregisterSink: u64 = 51121;
 /// `ChooseWeightedAttackAndPerform` at 0x8b7d60 (decompiler, medium); signature (untiered): `void * ChooseWeightedAttackAndPerform(float * param_1, longlong * * param_2, undefined8 param_3, undefined8 param_4)`
 pub const ChooseWeightedAttackAndPerform: u64 = 49170;
 /// `ClampByteRangeToParentRecursive` at 0x258070 (decompiler, medium); signature (untiered): `undefined ClampByteRangeToParentRecursive(longlong param_1)`
 pub const ClampByteRangeToParentRecursive: u64 = 16678;
-/// `ClampColorComponentsToOne` at 0xef2e80 (semantic, high); signature (medium): `undefined ClampColorComponentsToOne(float * param_1)`; clamps r, g, b to at most 1.0 (high); semantic signature: `void (NiColor* c)`
+/// `ClampColorComponentsToOne` at 0xef2e80 (semantic, high); signature (medium): `undefined ClampColorComponentsToOne(float * param_1)`; semantic: clamps r, g, b to at most 1.0 (high); signature `void (NiColor* c)`
 pub const ClampColorComponentsToOne: u64 = 70690;
 /// `ClampColorComponentsToOne` as a function pointer type (high).
 pub type ClampColorComponentsToOne_fn = unsafe extern "C" fn(c: *mut crate::NiColor);
@@ -1307,7 +1307,7 @@ pub const ClearBytes20And21Locked: u64 = 85128;
 pub const ClearBytesA0ToA3AndFreeArrays: u64 = 25211;
 /// `ClearCallableVector` at 0x131400 (decompiler, medium); signature (medium): `undefined ClearCallableVector(longlong * param_1)`
 pub const ClearCallableVector: u64 = 441003;
-/// `ClearCameraShotList` at 0x317b50 (semantic, high); signature (untiered): `undefined ClearCameraShotList(undefined8 * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`; delete every node after the head (0x10 each), head item = 0 (high); semantic signature: `void (BSSimpleList<BGSCameraShot*>* list)`
+/// `ClearCameraShotList` at 0x317b50 (semantic, high); signature (untiered): `undefined ClearCameraShotList(undefined8 * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`; semantic: delete every node after the head (0x10 each), head item = 0 (high); signature `void (BSSimpleList<BGSCameraShot*>* list)`
 pub const ClearCameraShotList: u64 = 20669;
 /// `ClearCameraShotList` as a function pointer type (high).
 pub type ClearCameraShotList_fn = unsafe extern "C" fn(list: *mut c_void);
@@ -1579,7 +1579,7 @@ pub const ClearField8HashMap: u64 = 52578;
 pub const ClearField8IfField9SetLocked: u64 = 85139;
 /// `ClearField8_2` at 0x12a37f0 (decompiler, high); signature (high): `undefined ClearField8_2(longlong param_1)`
 pub const ClearField8_2: u64 = 445315;
-/// `ClearFieldF8Field130State` at 0x691a10 (semantic, high); signature (untiered): `undefined ClearFieldF8Field130State(longlong param_1)`; starts the fade back in (process fade state 1) (high); semantic signature: `void (Actor* actor)`
+/// `ClearFieldF8Field130State` at 0x691a10 (semantic, high); signature (untiered): `undefined ClearFieldF8Field130State(longlong param_1)`; semantic: starts the fade back in (process fade state 1) (high); signature `void (Actor* actor)`
 pub const ClearFieldF8Field130State: u64 = 37574;
 /// `ClearFieldF8Field130State` as a function pointer type (high).
 pub type ClearFieldF8Field130State_fn = unsafe extern "C" fn(actor: *mut crate::Actor);
@@ -2525,11 +2525,11 @@ pub const ClearLockedHashMap: u64 = 35500;
 pub const ClearLockedHashMapFreeingValues: u64 = 35501;
 /// `ClearLockedTableValues382913And382912` at 0x950560 (decompiler, medium); signature (medium): `undefined ClearLockedTableValues382913And382912(void)`
 pub const ClearLockedTableValues382913And382912: u64 = 524010;
-/// `ClearLowHealthIModActive` at 0x757410 (semantic, high); signature (untiered): `undefined ClearLowHealthIModActive(void)`; 0x3244a94 (low-health image space modifier active flag) = 0 (high); semantic signature: `void (void)`
+/// `ClearLowHealthIModActive` at 0x757410 (semantic, high); signature (untiered): `undefined ClearLowHealthIModActive(void)`; semantic: 0x3244a94 (low-health image space modifier active flag) = 0 (high); signature `void (void)`
 pub const ClearLowHealthIModActive: u64 = 40609;
 /// `ClearLowHealthIModActive` as a function pointer type (high).
 pub type ClearLowHealthIModActive_fn = unsafe extern "C" fn();
-/// `ClearLowHealthIModCache` at 0x757420 (semantic, high); signature (untiered): `undefined ClearLowHealthIModCache(void)`; 0x3244a98 (cached low-health ImageSpaceModifier, default object 0x84) = 0 (high); semantic signature: `void (void)`
+/// `ClearLowHealthIModCache` at 0x757420 (semantic, high); signature (untiered): `undefined ClearLowHealthIModCache(void)`; semantic: 0x3244a98 (cached low-health ImageSpaceModifier, default object 0x84) = 0 (high); signature `void (void)`
 pub const ClearLowHealthIModCache: u64 = 40610;
 /// `ClearLowHealthIModCache` as a function pointer type (high).
 pub type ClearLowHealthIModCache_fn = unsafe extern "C" fn();
@@ -3451,7 +3451,7 @@ pub const Cmd__BuildBNetModArchive_Execute_sub3: u64 = 69532;
 pub const Cmd__CalcLowPathToPoint_Execute: u64 = 22088;
 /// `Cmd::CalcPathToPoint_Execute` at 0x3520f0 (console_cmd, high); signature (low): `undefined1 CalcPathToPoint_Execute(void)`
 pub const Cmd__CalcPathToPoint_Execute: u64 = 22087;
-/// `Cmd::CameraShake_Execute` at 0x368890 (console_cmd, high); signature (low): `undefined8 CameraShake_Execute(longlong param_1, longlong param_2, longlong param_3, ulonglong param_4, longlong param_5, longlong param_6, undefined8 param_7, uint * param_8)`; console CameraShake: strength (default 0.5, clamped 0..1), duration (default 0 = fCameraShakeTime); origin = the calling reference's position (+0x54) or the player's; StartCameraShake (high); semantic signature: `bool (void* paramInfo, void* scriptData, TESObjectREFR* thisObj, void* containingObj, void* script, void* locals, double* result, u32* opcodeOffset)`
+/// `Cmd::CameraShake_Execute` at 0x368890 (console_cmd, high); signature (low): `undefined8 CameraShake_Execute(longlong param_1, longlong param_2, longlong param_3, ulonglong param_4, longlong param_5, longlong param_6, undefined8 param_7, uint * param_8)`; semantic: console CameraShake: strength (default 0.5, clamped 0..1), duration (default 0 = fCameraShakeTime); origin = the calling reference's position (+0x54) or the player's; StartCameraShake (high); signature `bool (void* paramInfo, void* scriptData, TESObjectREFR* thisObj, void* containingObj, void* script, void* locals, double* result, u32* opcodeOffset)`
 pub const Cmd__CameraShake_Execute: u64 = 22643;
 /// `Cmd::CameraShake_Execute` as a function pointer type (high).
 pub type Cmd__CameraShake_Execute_fn = unsafe extern "C" fn(paramInfo: *mut c_void, scriptData: *mut c_void, thisObj: *mut crate::TESObjectREFR, containingObj: *mut c_void, script: *mut c_void, locals: *mut c_void, result: *mut f64, opcodeOffset: *mut u32) -> bool;
@@ -3631,7 +3631,7 @@ pub const Cmd__DuplicateAllItems_Execute: u64 = 22421;
 pub const Cmd__DuplicateAllItems_Execute_sub0: u64 = 16119;
 /// `Cmd::DuplicateNPCStats_Execute` at 0x35f190 (console_cmd, high); signature (low): `ulonglong DuplicateNPCStats_Execute(longlong param_1, longlong param_2, longlong * param_3, ulonglong param_4, longlong param_5, longlong param_6, undefined8 param_7, uint * param_8)`
 pub const Cmd__DuplicateNPCStats_Execute: u64 = 22426;
-/// `Cmd::DynamicResolution_Execute` at 0x380ee0 (console_cmd, high); signature (low): `ulonglong DynamicResolution_Execute(longlong param_1, longlong param_2, ulonglong param_3, ulonglong param_4, longlong param_5, longlong param_6, undefined8 param_7, uint * param_8)`; console 'DynamicResolution [w|h <ratio>|toggle]' (high); semantic signature: `bool (console callback)`
+/// `Cmd::DynamicResolution_Execute` at 0x380ee0 (console_cmd, high); signature (low): `ulonglong DynamicResolution_Execute(longlong param_1, longlong param_2, ulonglong param_3, ulonglong param_4, longlong param_5, longlong param_6, undefined8 param_7, uint * param_8)`; semantic: console 'DynamicResolution [w|h <ratio>|toggle]' (high); signature `bool (console callback)`
 pub const Cmd__DynamicResolution_Execute: u64 = 23220;
 /// `Cmd::EPAlchemyEffectHasKeyword_Eval` at 0x33ed80 (console_cmd, high); signature (low): `undefined8 EPAlchemyEffectHasKeyword_Eval(undefined8 param_1, longlong param_2, undefined8 param_3, undefined8 * param_4)`
 pub const Cmd__EPAlchemyEffectHasKeyword_Eval: u64 = 21756;
@@ -4569,7 +4569,7 @@ pub const Cmd__GetPlayerTeammate_Eval: u64 = 21623;
 pub const Cmd__GetPlayerTeammate_Execute: u64 = 22524;
 /// `Cmd::GetPos_Eval` at 0x3303d0 (console_cmd, high); signature (low): `undefined8 GetPos_Eval(longlong param_1, uint param_2, undefined8 param_3, double * param_4)`
 pub const Cmd__GetPos_Eval: u64 = 21407;
-/// `Cmd::GetPos_Execute` at 0x3501a0 (console_cmd, high); signature (low): `undefined GetPos_Execute(longlong param_1, longlong param_2, longlong param_3, ulonglong param_4, longlong param_5, longlong param_6, double * param_7, uint * param_8)`; UnpackCommandArguments(.., &axis) then GetPos_Eval(thisRef, axis, 0, result); the eval 0x3303d0 reads ref +0x54/+0x58/+0x5c and prints 'GetPos: %c >> %0.2f' only when TLS+0x600 (console run) is set (high); semantic signature: `bool (execute args)`
+/// `Cmd::GetPos_Execute` at 0x3501a0 (console_cmd, high); signature (low): `undefined GetPos_Execute(longlong param_1, longlong param_2, longlong param_3, ulonglong param_4, longlong param_5, longlong param_6, double * param_7, uint * param_8)`; semantic: UnpackCommandArguments(.., &axis) then GetPos_Eval(thisRef, axis, 0, result); the eval 0x3303d0 reads ref +0x54/+0x58/+0x5c and prints 'GetPos: %c >> %0.2f' only when TLS+0x600 (console run) is set (high); signature `bool (execute args)`
 pub const Cmd__GetPos_Execute: u64 = 22045;
 /// `Cmd::GetQuestCompleted_Eval` at 0x332260 (console_cmd, high); signature (low): `undefined8 GetQuestCompleted_Eval(undefined8 param_1, longlong param_2, undefined8 param_3, undefined8 * param_4)`
 pub const Cmd__GetQuestCompleted_Eval: u64 = 21448;
@@ -4885,7 +4885,7 @@ pub const Cmd__HasTwoHandedWeaponEquipped_Eval: u64 = 21728;
 pub const Cmd__HasTwoHandedWeaponEquipped_Execute: u64 = 22652;
 /// `Cmd::HavokVDBCapture_Execute` at 0x371fd0 (console_cmd, high); signature (low): `undefined1 HavokVDBCapture_Execute(void)`
 pub const Cmd__HavokVDBCapture_Execute: u64 = 22890;
-/// `Cmd::Help_Execute` at 0x36efb0 (console_cmd, high); signature (low): `undefined8 Help_Execute(longlong param_1, longlong param_2, _Func_impl_no_alloc<<lambda_2bb8a2fdec3e2af3a230c268838d13f1>,void,char_const*___ptr64,char_const*___ptr64>_vtbl * param_3, ulonglong param_4, longlong param_5, longlong param_6, undefined8 param_7, uint * param_8)`; Unpack(String search, Integer filter, String formType); an empty search prints 'usage: help <search word> <filter> <form type>' and two more lines; walks exactly 0x1c1 console and 0x2e1 script entries (high); semantic signature: `bool (execute args)`
+/// `Cmd::Help_Execute` at 0x36efb0 (console_cmd, high); signature (low): `undefined8 Help_Execute(longlong param_1, longlong param_2, _Func_impl_no_alloc<<lambda_2bb8a2fdec3e2af3a230c268838d13f1>,void,char_const*___ptr64,char_const*___ptr64>_vtbl * param_3, ulonglong param_4, longlong param_5, longlong param_6, undefined8 param_7, uint * param_8)`; semantic: Unpack(String search, Integer filter, String formType); an empty search prints 'usage: help <search word> <filter> <form type>' and two more lines; walks exactly 0x1c1 console and 0x2e1 script entries (high); signature `bool (execute args)`
 pub const Cmd__Help_Execute: u64 = 22839;
 /// `Cmd::Help_Execute_sub0` at 0x1bb570 (callgraph, medium); signature (untiered): `undefined Help_Execute_sub0(longlong param_1, longlong param_2, char param_3, undefined8 param_4)`
 pub const Cmd__Help_Execute_sub0: u64 = 441527;
@@ -5211,11 +5211,11 @@ pub const Cmd__IsOverEncumbered_Execute: u64 = 22141;
 pub const Cmd__IsOwner_Eval: u64 = 21567;
 /// `Cmd::IsOwner_Execute` at 0x35d370 (console_cmd, high); signature (low): `ulonglong IsOwner_Execute(longlong param_1, longlong param_2, longlong param_3, ulonglong param_4, longlong param_5, longlong param_6, undefined8 * param_7, uint * param_8)`
 pub const Cmd__IsOwner_Execute: u64 = 22371;
-/// `Cmd::IsPC1stPerson_Eval` at 0x3389c0 (console_cmd, high); signature (low): `undefined8 IsPC1stPerson_Eval(void)`; the engine's own 'is first person' test (high); semantic signature: `bool (double* result)`
+/// `Cmd::IsPC1stPerson_Eval` at 0x3389c0 (console_cmd, high); signature (low): `undefined8 IsPC1stPerson_Eval(void)`; semantic: the engine's own 'is first person' test (high); signature `bool (double* result)`
 pub const Cmd__IsPC1stPerson_Eval: u64 = 21600;
 /// `Cmd::IsPC1stPerson_Eval` as a function pointer type (high).
 pub type Cmd__IsPC1stPerson_Eval_fn = unsafe extern "C" fn(result: *mut f64) -> bool;
-/// `Cmd::IsPC1stPerson_Execute` at 0x360890 (console_cmd, high); signature (low): `undefined8 IsPC1stPerson_Execute(void)`; console 'IsPC1stPerson' ('pc1st'): runs the condition IsPC1stPerson_Eval (0x3389c0) into *result and prints "IsPC1stPerson >> %0.2f" when the console echo flag (TLS +0x600) is set; returns true (high); semantic signature: `bool (void* paramInfo, void* scriptData, TESObjectREFR* thisObj, void* containingObj, void* script, void* locals, double* result, u32* opcodeOffset)`
+/// `Cmd::IsPC1stPerson_Execute` at 0x360890 (console_cmd, high); signature (low): `undefined8 IsPC1stPerson_Execute(void)`; semantic: console 'IsPC1stPerson' ('pc1st'): runs the condition IsPC1stPerson_Eval (0x3389c0) into *result and prints "IsPC1stPerson >> %0.2f" when the console echo flag (TLS +0x600) is set; returns true (high); signature `bool (void* paramInfo, void* scriptData, TESObjectREFR* thisObj, void* containingObj, void* script, void* locals, double* result, u32* opcodeOffset)`
 pub const Cmd__IsPC1stPerson_Execute: u64 = 22460;
 /// `Cmd::IsPC1stPerson_Execute` as a function pointer type (high).
 pub type Cmd__IsPC1stPerson_Execute_fn = unsafe extern "C" fn(paramInfo: *mut c_void, scriptData: *mut c_void, thisObj: *mut crate::TESObjectREFR, containingObj: *mut c_void, script: *mut c_void, locals: *mut c_void, result: *mut f64, opcodeOffset: *mut u32) -> bool;
@@ -5579,7 +5579,7 @@ pub const Cmd__PlaySound_Execute: u64 = 22082;
 pub const Cmd__PlaySyncAnim_Execute: u64 = 22891;
 /// `Cmd::PlayTerrainEffect_Execute` at 0x379f60 (console_cmd, high); signature (low): `ulonglong PlayTerrainEffect_Execute(longlong param_1, longlong param_2, longlong param_3, ulonglong param_4, longlong param_5, longlong param_6, undefined8 param_7, uint * param_8)`
 pub const Cmd__PlayTerrainEffect_Execute: u64 = 23056;
-/// `Cmd::PlayVATSCameras_Execute` at 0x376c10 (console_cmd, high); signature (low): `ulonglong PlayVATSCameras_Execute(longlong param_1, longlong param_2, longlong param_3, ulonglong param_4, longlong param_5, longlong param_6, undefined8 param_7, uint * param_8)`; console PlayVATSCameras <editorID>: g_VATSConsoleCameraPath 0x3252a30 = the BGSCameraPath (or null); prints "queued for next VATS playback" / "not found" (high); semantic signature: `bool (void* paramInfo, void* scriptData, TESObjectREFR* thisObj, void* containingObj, void* script, void* locals, double* result, u32* opcodeOffset)`
+/// `Cmd::PlayVATSCameras_Execute` at 0x376c10 (console_cmd, high); signature (low): `ulonglong PlayVATSCameras_Execute(longlong param_1, longlong param_2, longlong param_3, ulonglong param_4, longlong param_5, longlong param_6, undefined8 param_7, uint * param_8)`; semantic: console PlayVATSCameras <editorID>: g_VATSConsoleCameraPath 0x3252a30 = the BGSCameraPath (or null); prints "queued for next VATS playback" / "not found" (high); signature `bool (void* paramInfo, void* scriptData, TESObjectREFR* thisObj, void* containingObj, void* script, void* locals, double* result, u32* opcodeOffset)`
 pub const Cmd__PlayVATSCameras_Execute: u64 = 22970;
 /// `Cmd::PlayVATSCameras_Execute` as a function pointer type (high).
 pub type Cmd__PlayVATSCameras_Execute_fn = unsafe extern "C" fn(paramInfo: *mut c_void, scriptData: *mut c_void, thisObj: *mut crate::TESObjectREFR, containingObj: *mut c_void, script: *mut c_void, locals: *mut c_void, result: *mut f64, opcodeOffset: *mut u32) -> bool;
@@ -5629,7 +5629,7 @@ pub const Cmd__Quest_Execute: u64 = 23044;
 pub const Cmd__QuitGame_Execute: u64 = 22896;
 /// `Cmd::RecvAnimEvent_Execute` at 0x3663b0 (console_cmd, high); signature (low): `ulonglong RecvAnimEvent_Execute(longlong param_1, longlong param_2, longlong param_3, ulonglong param_4, longlong param_5, longlong param_6, undefined8 param_7, uint * param_8)`
 pub const Cmd__RecvAnimEvent_Execute: u64 = 22585;
-/// `Cmd::RecvAnimEvent_Send` at 0x36d9e0 (semantic, high); signature (untiered): `undefined8 RecvAnimEvent_Send(longlong * param_1, char * param_2, char * param_3, undefined8 param_4)`; console RecvAnimEvent: builds {tag, holder, payload} and notifies every graph's +0x68 without the behaviour graph (high); semantic signature: `bool (BSTSmartPointer<BSAnimationGraphManager>& mgr, const char* tag, const char* payload, TESObjectREFR* holder)`
+/// `Cmd::RecvAnimEvent_Send` at 0x36d9e0 (semantic, high); signature (untiered): `undefined8 RecvAnimEvent_Send(longlong * param_1, char * param_2, char * param_3, undefined8 param_4)`; semantic: console RecvAnimEvent: builds {tag, holder, payload} and notifies every graph's +0x68 without the behaviour graph (high); signature `bool (BSTSmartPointer<BSAnimationGraphManager>& mgr, const char* tag, const char* payload, TESObjectREFR* holder)`
 pub const Cmd__RecvAnimEvent_Send: u64 = 22789;
 /// `Cmd::RecvAnimEvent_Send` as a function pointer type (high).
 pub type Cmd__RecvAnimEvent_Send_fn = unsafe extern "C" fn(mgr: *mut c_void, tag: *const c_char, payload: *const c_char, holder: *mut crate::TESObjectREFR) -> bool;
@@ -5893,7 +5893,7 @@ pub const Cmd__SetBloodParam_Execute: u64 = 23038;
 pub const Cmd__SetBloodParam_Execute_sub0: u64 = 30156;
 /// `Cmd::SetBroadcastState_Execute` at 0x363780 (console_cmd, high); signature (low): `bool SetBroadcastState_Execute(longlong param_1, longlong param_2, longlong param_3, ulonglong param_4, longlong param_5, longlong param_6, undefined8 param_7, uint * param_8)`
 pub const Cmd__SetBroadcastState_Execute: u64 = 22514;
-/// `Cmd::SetCameraFOV_Execute` at 0x3757c0 (console_cmd, high); signature (low): `ulonglong SetCameraFOV_Execute(longlong param_1, longlong param_2, longlong param_3, ulonglong param_4, longlong param_5, longlong param_6, undefined8 param_7, uint * param_8)`; SetFieldOfView on g_SceneGraph, global tangent, worldFOV = firstPersonFOV = fov, and both INI default values (high); semantic signature: `bool (void* paramInfo, void* scriptData, TESObjectREFR* thisObj, void* containingObj, void* script, void* locals, double* result, u32* opcodeOffset)`
+/// `Cmd::SetCameraFOV_Execute` at 0x3757c0 (console_cmd, high); signature (low): `ulonglong SetCameraFOV_Execute(longlong param_1, longlong param_2, longlong param_3, ulonglong param_4, longlong param_5, longlong param_6, undefined8 param_7, uint * param_8)`; semantic: SetFieldOfView on g_SceneGraph, global tangent, worldFOV = firstPersonFOV = fov, and both INI default values (high); signature `bool (void* paramInfo, void* scriptData, TESObjectREFR* thisObj, void* containingObj, void* script, void* locals, double* result, u32* opcodeOffset)`
 pub const Cmd__SetCameraFOV_Execute: u64 = 22949;
 /// `Cmd::SetCameraFOV_Execute` as a function pointer type (high).
 pub type Cmd__SetCameraFOV_Execute_fn = unsafe extern "C" fn(paramInfo: *mut c_void, scriptData: *mut c_void, thisObj: *mut crate::TESObjectREFR, containingObj: *mut c_void, script: *mut c_void, locals: *mut c_void, result: *mut f64, opcodeOffset: *mut u32) -> bool;
@@ -5911,7 +5911,7 @@ pub const Cmd__SetCellPublicFlag_Execute: u64 = 22170;
 pub const Cmd__SetCinematicParam_Execute: u64 = 22962;
 /// `Cmd::SetClass_Execute` at 0x35ca40 (console_cmd, high); signature (low): `ulonglong SetClass_Execute(longlong param_1, longlong param_2, longlong param_3, ulonglong param_4, longlong param_5, longlong param_6, undefined8 param_7, uint * param_8)`
 pub const Cmd__SetClass_Execute: u64 = 22355;
-/// `Cmd::SetClipDist_Execute` at 0x370110 (console_cmd, high); signature (low): `ulonglong SetClipDist_Execute(longlong param_1, longlong param_2, longlong param_3, ulonglong param_4, longlong param_5, longlong param_6, undefined8 param_7, uint * param_8)`; SetClipDist: new far into the frame camera with +0x170 = far / near and SetFrustum (near kept), then flags the sky for an update (medium); semantic signature: `bool (...console execute...)`
+/// `Cmd::SetClipDist_Execute` at 0x370110 (console_cmd, high); signature (low): `ulonglong SetClipDist_Execute(longlong param_1, longlong param_2, longlong param_3, ulonglong param_4, longlong param_5, longlong param_6, undefined8 param_7, uint * param_8)`; semantic: SetClipDist: new far into the frame camera with +0x170 = far / near and SetFrustum (near kept), then flags the sky for an update (medium); signature `bool (...console execute...)`
 pub const Cmd__SetClipDist_Execute: u64 = 22849;
 /// `Cmd::SetCombatStyle_Execute` at 0x359b30 (console_cmd, high); signature (low): `ulonglong SetCombatStyle_Execute(longlong param_1, longlong param_2, longlong param_3, ulonglong param_4, longlong param_5, longlong param_6, undefined8 param_7, uint * param_8)`
 pub const Cmd__SetCombatStyle_Execute: u64 = 22285;
@@ -6173,7 +6173,7 @@ pub const Cmd__SetTreeWindMagnitude_Execute: u64 = 23036;
 pub const Cmd__SetTreeWindMagnitude_Execute_sub0: u64 = 27100;
 /// `Cmd::SetTriLinearThreshold_Execute` at 0x3729f0 (console_cmd, high); signature (low): `ulonglong SetTriLinearThreshold_Execute(longlong param_1, longlong param_2, longlong param_3, ulonglong param_4, longlong param_5, longlong param_6, undefined8 param_7, uint * param_8)`
 pub const Cmd__SetTriLinearThreshold_Execute: u64 = 22906;
-/// `Cmd::SetUFOCamSpeedMult_Execute` at 0x372d90 (console_cmd, high); signature (low): `ulonglong SetUFOCamSpeedMult_Execute(longlong param_1, longlong param_2, longlong param_3, ulonglong param_4, longlong param_5, longlong param_6, undefined8 param_7, uint * param_8)`; writes the fFreeCameraTranslationSpeed:Camera value (value address 0x20ba1f8 per the requirements list) (high); semantic signature: `bool (void* paramInfo, void* scriptData, TESObjectREFR* thisObj, void* containingObj, void* script, void* locals, double* result, u32* opcodeOffset)`
+/// `Cmd::SetUFOCamSpeedMult_Execute` at 0x372d90 (console_cmd, high); signature (low): `ulonglong SetUFOCamSpeedMult_Execute(longlong param_1, longlong param_2, longlong param_3, ulonglong param_4, longlong param_5, longlong param_6, undefined8 param_7, uint * param_8)`; semantic: writes the fFreeCameraTranslationSpeed:Camera value (value address 0x20ba1f8 per the requirements list) (high); signature `bool (void* paramInfo, void* scriptData, TESObjectREFR* thisObj, void* containingObj, void* script, void* locals, double* result, u32* opcodeOffset)`
 pub const Cmd__SetUFOCamSpeedMult_Execute: u64 = 22915;
 /// `Cmd::SetUFOCamSpeedMult_Execute` as a function pointer type (high).
 pub type Cmd__SetUFOCamSpeedMult_Execute_fn = unsafe extern "C" fn(paramInfo: *mut c_void, scriptData: *mut c_void, thisObj: *mut crate::TESObjectREFR, containingObj: *mut c_void, script: *mut c_void, locals: *mut c_void, result: *mut f64, opcodeOffset: *mut u32) -> bool;
@@ -6221,7 +6221,7 @@ pub const Cmd__ShouldAttackKill_Eval: u64 = 21744;
 pub const Cmd__ShouldAttackKill_Execute: u64 = 22677;
 /// `Cmd::Shout_Execute` at 0x359e90 (console_cmd, high); signature (low): `undefined8 Shout_Execute(longlong param_1, longlong param_2, longlong param_3, ulonglong param_4, longlong param_5, longlong param_6, undefined8 param_7, uint * param_8)`
 pub const Cmd__Shout_Execute: u64 = 22288;
-/// `Cmd::Show1stPerson_Execute` at 0x374c80 (console_cmd, high); signature (low): `undefined8 Show1stPerson_Execute(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`; console 'Show1stPerson' ('S1ST'): in first person ForceThirdPerson ("Showing 1st person model in 3rd person camera."); in third person with the third-person root hidden (+0xf4 bit 0) ForceFirstPerson ("Normal 1st person mode."); otherwise clears bit 0 of the first-person root when it is set ("Showing 1st and 3rd person models.") and sets it when clear ("Normal 3rd person mode."); in third person the engine sets bit 0 again within 2 s (writer not identified), so the first-person model does not stay drawn and every S1ST in third person prints 'Showing 1st and 3rd person models.' (high); semantic signature: `bool (void* paramInfo, void* scriptData, TESObjectREFR* thisObj, void* containingObj, void* script, void* locals, double* result, u32* opcodeOffset)`
+/// `Cmd::Show1stPerson_Execute` at 0x374c80 (console_cmd, high); signature (low): `undefined8 Show1stPerson_Execute(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`; semantic: console 'Show1stPerson' ('S1ST'): in first person ForceThirdPerson ("Showing 1st person model in 3rd person camera."); in third person with the third-person root hidden (+0xf4 bit 0) ForceFirstPerson ("Normal 1st person mode."); otherwise clears bit 0 of the first-person root when it is set ("Showing 1st and 3rd person models.") and sets it when clear ("Normal 3rd person mode."); in third person the engine sets bit 0 again within 2 s (writer not identified), so the first-person model does not stay drawn and every S1ST in third person prints 'Showing 1st and 3rd person models.' (high); signature `bool (void* paramInfo, void* scriptData, TESObjectREFR* thisObj, void* containingObj, void* script, void* locals, double* result, u32* opcodeOffset)`
 pub const Cmd__Show1stPerson_Execute: u64 = 22938;
 /// `Cmd::Show1stPerson_Execute` as a function pointer type (high).
 pub type Cmd__Show1stPerson_Execute_fn = unsafe extern "C" fn(paramInfo: *mut c_void, scriptData: *mut c_void, thisObj: *mut crate::TESObjectREFR, containingObj: *mut c_void, script: *mut c_void, locals: *mut c_void, result: *mut f64, opcodeOffset: *mut u32) -> bool;
@@ -6429,7 +6429,7 @@ pub const Cmd__ToggleAlphaEffectJittering_Execute: u64 = 23188;
 pub const Cmd__ToggleAmiiboDetection_Execute: u64 = 523551;
 /// `Cmd::ToggleAnimations_Execute` at 0x370bd0 (console_cmd, high); signature (low): `undefined8 ToggleAnimations_Execute(void)`
 pub const Cmd__ToggleAnimations_Execute: u64 = 22857;
-/// `Cmd::ToggleAnimatorCam_Execute` at 0x371fa0 (console_cmd, high); signature (low): `undefined1 ToggleAnimatorCam_Execute(void)`; toggles ThirdPersonState(9)+0xe0 through 0x8f90e0 (high); semantic signature: `bool (void)`
+/// `Cmd::ToggleAnimatorCam_Execute` at 0x371fa0 (console_cmd, high); signature (low): `undefined1 ToggleAnimatorCam_Execute(void)`; semantic: toggles ThirdPersonState(9)+0xe0 through 0x8f90e0 (high); signature `bool (void)`
 pub const Cmd__ToggleAnimatorCam_Execute: u64 = 22888;
 /// `Cmd::ToggleAnimatorCam_Execute` as a function pointer type (high).
 pub type Cmd__ToggleAnimatorCam_Execute_fn = unsafe extern "C" fn() -> bool;
@@ -6465,7 +6465,7 @@ pub const Cmd__ToggleCombatDebug_Execute_sub0: u64 = 46901;
 pub const Cmd__ToggleCombatStats_Execute: u64 = 22812;
 /// `Cmd::ToggleContextOverlay_Execute` at 0x37a8d0 (console_cmd, high); signature (low): `undefined1 ToggleContextOverlay_Execute(void)`
 pub const Cmd__ToggleContextOverlay_Execute: u64 = 23070;
-/// `Cmd::ToggleControlsDriven_Execute` at 0x37b3a0 (console_cmd, high); signature (low): `undefined8 ToggleControlsDriven_Execute(longlong param_1, longlong param_2, uint * param_3, uint * param_4, longlong param_5, longlong param_6, undefined8 param_7, uint * param_8)`; console 'ToggleControlsDriven' on an actor: toggles its movement controller (+0x150) between AI-driven (slot 13) and controls-driven (slot 12) and points the camera at it (PlayerCamera::SetTarget) when controls-driven, back at the player when AI-driven; prints the result (high); semantic signature: `bool (execute args)`
+/// `Cmd::ToggleControlsDriven_Execute` at 0x37b3a0 (console_cmd, high); signature (low): `undefined8 ToggleControlsDriven_Execute(longlong param_1, longlong param_2, uint * param_3, uint * param_4, longlong param_5, longlong param_6, undefined8 param_7, uint * param_8)`; semantic: console 'ToggleControlsDriven' on an actor: toggles its movement controller (+0x150) between AI-driven (slot 13) and controls-driven (slot 12) and points the camera at it (PlayerCamera::SetTarget) when controls-driven, back at the player when AI-driven; prints the result (high); signature `bool (execute args)`
 pub const Cmd__ToggleControlsDriven_Execute: u64 = 23089;
 /// `Cmd::ToggleConversations_Execute` at 0x36e200 (console_cmd, high); signature (low): `undefined1 ToggleConversations_Execute(void)`
 pub const Cmd__ToggleConversations_Execute: u64 = 22810;
@@ -6489,7 +6489,7 @@ pub const Cmd__ToggleDecalRendering_Execute: u64 = 23003;
 pub const Cmd__ToggleDecompressToCopy_Execute: u64 = 23200;
 /// `Cmd::ToggleDepthBias_Execute` at 0x378240 (console_cmd, high); signature (low): `undefined1 ToggleDepthBias_Execute(void)`
 pub const Cmd__ToggleDepthBias_Execute: u64 = 23011;
-/// `Cmd::ToggleDepthShift_Execute` at 0x380300 (console_cmd, high); signature (low): `undefined1 ToggleDepthShift_Execute(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`; flips g_DepthShiftEnabled 0x20d72c0 (high); semantic signature: `bool (...console execute...)`
+/// `Cmd::ToggleDepthShift_Execute` at 0x380300 (console_cmd, high); signature (low): `undefined1 ToggleDepthShift_Execute(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`; semantic: flips g_DepthShiftEnabled 0x20d72c0 (high); signature `bool (...console execute...)`
 pub const Cmd__ToggleDepthShift_Execute: u64 = 23195;
 /// `Cmd::ToggleDetectionStats_Execute` at 0x372630 (console_cmd, high); signature (low): `ulonglong ToggleDetectionStats_Execute(longlong param_1, longlong param_2, longlong param_3, ulonglong param_4, longlong param_5, longlong param_6, undefined8 param_7, uint * param_8)`
 pub const Cmd__ToggleDetectionStats_Execute: u64 = 22901;
@@ -6507,7 +6507,7 @@ pub const Cmd__ToggleEmotions_Execute: u64 = 22868;
 pub const Cmd__ToggleEventLog_Execute: u64 = 22828;
 /// `Cmd::ToggleFXAA_Execute` at 0x37cde0 (console_cmd, high); signature (low): `undefined8 ToggleFXAA_Execute(void)`
 pub const Cmd__ToggleFXAA_Execute: u64 = 23123;
-/// `Cmd::ToggleFlyCam_Execute` at 0x372c20 (console_cmd, high); signature (low): `ulonglong ToggleFlyCam_Execute(longlong param_1, longlong param_2, longlong param_3, ulonglong param_4, longlong param_5, longlong param_6, undefined8 param_7, uint * param_8)`; console 'ToggleFlyCam' (tfc): ToggleFreeCamera(camera, false); pushes input context 0xd when the free camera (+0xd0) is now current, else pops it; prints 'Fly Camera Is %s' (high); semantic signature: `bool (execute args)`
+/// `Cmd::ToggleFlyCam_Execute` at 0x372c20 (console_cmd, high); signature (low): `ulonglong ToggleFlyCam_Execute(longlong param_1, longlong param_2, longlong param_3, ulonglong param_4, longlong param_5, longlong param_6, undefined8 param_7, uint * param_8)`; semantic: console 'ToggleFlyCam' (tfc): ToggleFreeCamera(camera, false); pushes input context 0xd when the free camera (+0xd0) is now current, else pops it; prints 'Fly Camera Is %s' (high); signature `bool (execute args)`
 pub const Cmd__ToggleFlyCam_Execute: u64 = 441593;
 /// `Cmd::ToggleFogOfWar_Execute` at 0x3777d0 (console_cmd, high); signature (low): `undefined8 ToggleFogOfWar_Execute(void)`
 pub const Cmd__ToggleFogOfWar_Execute: u64 = 22988;
@@ -6817,17 +6817,17 @@ pub const CoalesceFreeBlockWithFollowing: u64 = 80660;
 pub const CoalesceFreeBlockWithNeighbors: u64 = 80659;
 /// `CoalesceFreeBlockWithNext` at 0xce64a0 (decompiler, medium); signature (untiered): `ulonglong CoalesceFreeBlockWithNext(longlong param_1, ulonglong * param_2)`
 pub const CoalesceFreeBlockWithNext: u64 = 68322;
-/// `CodeTasklet_ExecuteCallOpcode` at 0x14d2fa0 (semantic, medium); signature (untiered): `undefined8 CodeTasklet_ExecuteCallOpcode(ulonglong * * * * param_1, longlong * param_2, undefined8 param_3, undefined8 param_4)`; the call-opcode sequence of the interpreter as a function (save ip, VM_ExecuteFunctionCall with fromTasklet 1, reload or resume) (medium); semantic signature: `bool (BSScript::Internal::CodeTasklet* tasklet, void* ipCursor)`
+/// `CodeTasklet_ExecuteCallOpcode` at 0x14d2fa0 (semantic, medium); signature (untiered): `undefined8 CodeTasklet_ExecuteCallOpcode(ulonglong * * * * param_1, longlong * param_2, undefined8 param_3, undefined8 param_4)`; semantic: the call-opcode sequence of the interpreter as a function (save ip, VM_ExecuteFunctionCall with fromTasklet 1, reload or resume) (medium); signature `bool (BSScript::Internal::CodeTasklet* tasklet, void* ipCursor)`
 pub const CodeTasklet_ExecuteCallOpcode: u64 = 105204;
-/// `CodeTasklet_Interpret` at 0x14ce660 (runtime, high); signature (untiered): `undefined CodeTasklet_Interpret(ulonglong * * * * param_1, undefined8 param_2, ulonglong * * * * * param_3, IMAGE_DOS_HEADER * param_4)`; the bytecode interpreter: loads the top frame, runs up to 100 opcodes (switch on the 6-bit opcode), handles call opcodes through VM_ExecuteFunctionCall, return opcode 0x1a through CompleteStack, then yields (state 1, re-queued in pendingTasklets) (high); semantic signature: `void (BSScript::Internal::CodeTasklet* tasklet)`
+/// `CodeTasklet_Interpret` at 0x14ce660 (runtime, high); signature (untiered): `undefined CodeTasklet_Interpret(ulonglong * * * * param_1, undefined8 param_2, ulonglong * * * * * param_3, IMAGE_DOS_HEADER * param_4)`; semantic: the bytecode interpreter: loads the top frame, runs up to 100 opcodes (switch on the 6-bit opcode), handles call opcodes through VM_ExecuteFunctionCall, return opcode 0x1a through CompleteStack, then yields (state 1, re-queued in pendingTasklets) (high); signature `void (BSScript::Internal::CodeTasklet* tasklet)`
 pub const CodeTasklet_Interpret: u64 = 105176;
 /// `CodeTasklet_Interpret` as a function pointer type (high).
 pub type CodeTasklet_Interpret_fn = unsafe extern "C" fn(tasklet: *mut crate::BSScript__Internal__CodeTasklet);
-/// `CodeTasklet_LoadFrame` at 0x14d6330 (semantic, high); signature (untiered): `undefined CodeTasklet_LoadFrame(longlong param_1, longlong * param_2)`; tasklet+0x30 = stack top; when frame+0x3c != 0 copies the function's code block (bits, widths, word pointer) and sets the cursor {word, bit} from frame+0x20; caches the frame's page index (high); semantic signature: `void (BSScript::Internal::CodeTasklet* tasklet, void* ipCursor)`
+/// `CodeTasklet_LoadFrame` at 0x14d6330 (semantic, high); signature (untiered): `undefined CodeTasklet_LoadFrame(longlong param_1, longlong * param_2)`; semantic: tasklet+0x30 = stack top; when frame+0x3c != 0 copies the function's code block (bits, widths, word pointer) and sets the cursor {word, bit} from frame+0x20; caches the frame's page index (high); signature `void (BSScript::Internal::CodeTasklet* tasklet, void* ipCursor)`
 pub const CodeTasklet_LoadFrame: u64 = 105221;
 /// `CodeTasklet_LoadFrame` as a function pointer type (high).
 pub type CodeTasklet_LoadFrame_fn = unsafe extern "C" fn(tasklet: *mut crate::BSScript__Internal__CodeTasklet, ipCursor: *mut c_void);
-/// `CodeTasklet_ResumeAfterCall` at 0x14cfb10 (semantic, high); signature (untiered): `undefined CodeTasklet_ResumeAfterCall(longlong param_1, longlong * param_2)`; re-decodes the call instruction at the cursor and stores the stack's return value into its result operand; logs 'Instruction pointer is invalid after returning from a function call.' (high); semantic signature: `void (BSScript::Internal::CodeTasklet* tasklet, void* ipCursor)`
+/// `CodeTasklet_ResumeAfterCall` at 0x14cfb10 (semantic, high); signature (untiered): `undefined CodeTasklet_ResumeAfterCall(longlong param_1, longlong * param_2)`; semantic: re-decodes the call instruction at the cursor and stores the stack's return value into its result operand; logs 'Instruction pointer is invalid after returning from a function call.' (high); signature `void (BSScript::Internal::CodeTasklet* tasklet, void* ipCursor)`
 pub const CodeTasklet_ResumeAfterCall: u64 = 105181;
 /// `CodeTasklet_ResumeAfterCall` as a function pointer type (high).
 pub type CodeTasklet_ResumeAfterCall_fn = unsafe extern "C" fn(tasklet: *mut crate::BSScript__Internal__CodeTasklet, ipCursor: *mut c_void);

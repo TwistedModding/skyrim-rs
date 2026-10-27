@@ -4765,11 +4765,11 @@ pub const ImageSpaceEffectBlur__vfunc_12: u64 = 108570;
 pub const ImageSpaceEffectBlur__vfunc_2: u64 = 108557;
 /// `ImageSpaceEffectBlur::vfunc_7` at 0x15836d0 (rtti, high); signature (high): `ulonglong vfunc_7(ImageSpaceEffectBlur * this)`
 pub const ImageSpaceEffectBlur__vfunc_7: u64 = 108558;
-/// `ImageSpaceEffectDepthOfField::EnableEntries0To2DisableEntries3To4` at 0x52f6a0 (semantic, high); signature (untiered): `undefined EnableEntries0To2DisableEntries3To4(longlong param_1)`; sets entries 0..2 and clears entries 3..4 of the effect's bool array at +0x98 (size +0xa2, set count +0xa4), growing the size to 5; used when the depth-of-field override fades out (high); semantic signature: `void (ImageSpaceEffectDepthOfField* this)`
+/// `ImageSpaceEffectDepthOfField::EnableEntries0To2DisableEntries3To4` at 0x52f6a0 (semantic, high); signature (untiered): `undefined EnableEntries0To2DisableEntries3To4(longlong param_1)`; semantic: sets entries 0..2 and clears entries 3..4 of the effect's bool array at +0x98 (size +0xa2, set count +0xa4), growing the size to 5; used when the depth-of-field override fades out (high); signature `void (ImageSpaceEffectDepthOfField* this)`
 pub const ImageSpaceEffectDepthOfField__EnableEntries0To2DisableEntries3To4: u64 = 32269;
 /// `ImageSpaceEffectDepthOfField::EnableEntries0To2DisableEntries3To4` as a function pointer type (high).
 pub type ImageSpaceEffectDepthOfField__EnableEntries0To2DisableEntries3To4_fn = unsafe extern "C" fn(this: *mut crate::ImageSpaceEffectDepthOfField);
-/// `ImageSpaceEffectDepthOfField::Render` at 0x15512f0 (semantic, medium); signature (untiered): `undefined8 Render(ImageSpaceEffectDepthOfField * this)`; slot 7 (0x1b48050): DOF constants from g_CurrentRenderCamera near/far (and 0x1551b90 the same); RenderImageSpace also copies g_FirstPersonCamera near/far into an effect's +0x14c/+0x150 (medium); semantic signature: `void (ImageSpaceEffectDepthOfField* this, ...)`
+/// `ImageSpaceEffectDepthOfField::Render` at 0x15512f0 (semantic, medium); signature (untiered): `undefined8 Render(ImageSpaceEffectDepthOfField * this)`; semantic: slot 7 (0x1b48050): DOF constants from g_CurrentRenderCamera near/far (and 0x1551b90 the same); RenderImageSpace also copies g_FirstPersonCamera near/far into an effect's +0x14c/+0x150 (medium); signature `void (ImageSpaceEffectDepthOfField* this, ...)`
 pub const ImageSpaceEffectDepthOfField__Render: u64 = 107388;
 /// `ImageSpaceEffectDepthOfField::ctor` at 0x15504c0 (layout_inference, high); signature (high): `ImageSpaceEffectDepthOfField * ctor(ImageSpaceEffectDepthOfField * this)`
 pub const ImageSpaceEffectDepthOfField__ctor: u64 = 107383;
@@ -4909,7 +4909,7 @@ pub const ImageSpaceEffectRefraction__vfunc_2: u64 = 107743;
 pub const ImageSpaceEffectRefraction__vfunc_6: u64 = 107747;
 /// `ImageSpaceEffectRefraction::vfunc_7` at 0x1565a20 (rtti, high); signature (high): `undefined8 vfunc_7(ImageSpaceEffectRefraction * this)`
 pub const ImageSpaceEffectRefraction__vfunc_7: u64 = 107745;
-/// `ImageSpaceEffectVolumetricLighting::Render` at 0x1550010 (semantic, medium); signature (untiered): `undefined8 Render(ImageSpaceEffectVolumetricLighting * this)`; slot 7 (0x1b479a8): inverse of the cached view-projection of entry 0x415133's camera, and the first split recomputed from g_CurrentRenderCamera near/far (pow(g_ShadowDistance / n, 1 / cascades)) and converted to depth (medium); semantic signature: `void (ImageSpaceEffectVolumetricLighting* this, ...)`
+/// `ImageSpaceEffectVolumetricLighting::Render` at 0x1550010 (semantic, medium); signature (untiered): `undefined8 Render(ImageSpaceEffectVolumetricLighting * this)`; semantic: slot 7 (0x1b479a8): inverse of the cached view-projection of entry 0x415133's camera, and the first split recomputed from g_CurrentRenderCamera near/far (pow(g_ShadowDistance / n, 1 / cascades)) and converted to depth (medium); signature `void (ImageSpaceEffectVolumetricLighting* this, ...)`
 pub const ImageSpaceEffectVolumetricLighting__Render: u64 = 107379;
 /// `ImageSpaceEffectVolumetricLighting::ctor` at 0x154fa30 (layout_inference, high); signature (high): `ImageSpaceEffectVolumetricLighting * ctor(ImageSpaceEffectVolumetricLighting * this)`
 pub const ImageSpaceEffectVolumetricLighting__ctor: u64 = 107375;
@@ -4947,27 +4947,27 @@ pub const ImageSpaceEffectWorldMap__vfunc_2: u64 = 107801;
 pub const ImageSpaceEffectWorldMap__vfunc_5: u64 = 107803;
 /// `ImageSpaceEffectWorldMap::vfunc_7` at 0x156a510 (rtti, high); signature (high): `undefined8 vfunc_7(ImageSpaceEffectWorldMap * this)`
 pub const ImageSpaceEffectWorldMap__vfunc_7: u64 = 107802;
-/// `ImageSpaceManager::RenderEffect` at 0x14ee060 (semantic, high); signature (untiered): `undefined RenderEffect(longlong param_1, uint param_2, undefined4 param_3, undefined4 param_4, longlong param_5)`; runs effect effectId from colour target sourceTarget into destTarget (effect input slot 1 = source, output slot 0 = dest) (high); semantic signature: `void (ImageSpaceManager* this, u32 effectId, i32 sourceTarget, i32 destTarget, ImageSpaceShaderParam* params)`
+/// `ImageSpaceManager::RenderEffect` at 0x14ee060 (semantic, high); signature (untiered): `undefined RenderEffect(longlong param_1, uint param_2, undefined4 param_3, undefined4 param_4, longlong param_5)`; semantic: runs effect effectId from colour target sourceTarget into destTarget (effect input slot 1 = source, output slot 0 = dest) (high); signature `void (ImageSpaceManager* this, u32 effectId, i32 sourceTarget, i32 destTarget, ImageSpaceShaderParam* params)`
 pub const ImageSpaceManager__RenderEffect: u64 = 105676;
 /// `ImageSpaceManager::RenderEffect` as a function pointer type (high).
 pub type ImageSpaceManager__RenderEffect_fn = unsafe extern "C" fn(this: *mut c_void, effectId: u32, sourceTarget: i32, destTarget: i32, params: *mut crate::ImageSpaceShaderParam);
-/// `ImageSpaceManager::ctor` at 0x14ed370 (semantic, high); signature (untiered): `undefined8 * ctor(undefined8 * param_1)`; constructs the manager, then the effect setup 0x14ed620 -> 0x14eee10 (high); semantic signature: `ImageSpaceManager* (ImageSpaceManager* this)`
+/// `ImageSpaceManager::ctor` at 0x14ed370 (semantic, high); signature (untiered): `undefined8 * ctor(undefined8 * param_1)`; semantic: constructs the manager, then the effect setup 0x14ed620 -> 0x14eee10 (high); signature `ImageSpaceManager* (ImageSpaceManager* this)`
 pub const ImageSpaceManager__ctor: u64 = 105666;
 /// `ImageSpaceManager::ctor` as a function pointer type (high).
 pub type ImageSpaceManager__ctor_fn = unsafe extern "C" fn(this: *mut c_void) -> *mut c_void;
-/// `ImageSpaceModifier::Apply` at 0x2a3940 (runtime, high); signature (untiered): `longlong * Apply(longlong param_1, undefined4 param_2, undefined8 param_3, undefined8 param_4)`; trigger: allocates an instance (0x50), appends it to g_TES+0x108, returns it (not addref'd for the caller) (high); semantic signature: `ImageSpaceModifierInstanceForm* (TESImageSpaceModifier* imod, float strength, NiAVObject* target)`
+/// `ImageSpaceModifier::Apply` at 0x2a3940 (runtime, high); signature (untiered): `longlong * Apply(longlong param_1, undefined4 param_2, undefined8 param_3, undefined8 param_4)`; semantic: trigger: allocates an instance (0x50), appends it to g_TES+0x108, returns it (not addref'd for the caller) (high); signature `ImageSpaceModifierInstanceForm* (TESImageSpaceModifier* imod, float strength, NiAVObject* target)`
 pub const ImageSpaceModifier__Apply: u64 = 18570;
 /// `ImageSpaceModifier::Apply` as a function pointer type (high).
 pub type ImageSpaceModifier__Apply_fn = unsafe extern "C" fn(imod: *mut crate::TESImageSpaceModifier, strength: f32, target: *mut crate::NiAVObject) -> *mut crate::ImageSpaceModifierInstanceForm;
-/// `ImageSpaceModifier::ApplyIfAbsent` at 0x2a3bc0 (semantic, high); signature (untiered): `ImageSpaceModifierInstanceForm * ApplyIfAbsent(longlong param_1, float param_2, longlong param_3, undefined8 param_4)`; as Apply but returns null without adding when an instance of imod is already on the list (high); semantic signature: `ImageSpaceModifierInstanceForm* (TESImageSpaceModifier* imod, float strength, NiAVObject* target)`
+/// `ImageSpaceModifier::ApplyIfAbsent` at 0x2a3bc0 (semantic, high); signature (untiered): `ImageSpaceModifierInstanceForm * ApplyIfAbsent(longlong param_1, float param_2, longlong param_3, undefined8 param_4)`; semantic: as Apply but returns null without adding when an instance of imod is already on the list (high); signature `ImageSpaceModifierInstanceForm* (TESImageSpaceModifier* imod, float strength, NiAVObject* target)`
 pub const ImageSpaceModifier__ApplyIfAbsent: u64 = 18572;
 /// `ImageSpaceModifier::ApplyIfAbsent` as a function pointer type (high).
 pub type ImageSpaceModifier__ApplyIfAbsent_fn = unsafe extern "C" fn(imod: *mut crate::TESImageSpaceModifier, strength: f32, target: *mut crate::NiAVObject) -> *mut crate::ImageSpaceModifierInstanceForm;
-/// `ImageSpaceModifier::Remove` at 0x2a3dd0 (semantic, high); signature (untiered): `undefined Remove(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`; stop: unlinks and releases every instance of imod from g_TES+0x108 (high); semantic signature: `void (TESImageSpaceModifier* imod)`
+/// `ImageSpaceModifier::Remove` at 0x2a3dd0 (semantic, high); signature (untiered): `undefined Remove(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`; semantic: stop: unlinks and releases every instance of imod from g_TES+0x108 (high); signature `void (TESImageSpaceModifier* imod)`
 pub const ImageSpaceModifier__Remove: u64 = 18573;
 /// `ImageSpaceModifier::Remove` as a function pointer type (high).
 pub type ImageSpaceModifier__Remove_fn = unsafe extern "C" fn(imod: *mut crate::TESImageSpaceModifier);
-/// `ImageSpaceModifier::RemoveCrossFade` at 0x2a4400 (semantic, medium); signature (untiered): `undefined RemoveCrossFade(undefined4 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`; Papyrus RemoveCrossFade 0xa3abe0 (medium); semantic signature: `void (float seconds)`
+/// `ImageSpaceModifier::RemoveCrossFade` at 0x2a4400 (semantic, medium); signature (untiered): `undefined RemoveCrossFade(undefined4 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`; semantic: Papyrus RemoveCrossFade 0xa3abe0 (medium); signature `void (float seconds)`
 pub const ImageSpaceModifier__RemoveCrossFade: u64 = 18577;
 /// `ImageSpaceModifierInstance::dtor` at 0x2a52d0 (layout_inference, high); signature (high): `undefined dtor(ImageSpaceModifierInstance * this)`
 pub const ImageSpaceModifierInstance__dtor: u64 = 18592;
@@ -5359,7 +5359,7 @@ pub const InitDefaultsWithIdentityColorTransform: u64 = 83658;
 pub const InitDefaults_2: u64 = 106891;
 /// `InitDirectoryWildcardPattern` at 0xec0db0 (decompiler, medium); signature (untiered): `undefined4 InitDirectoryWildcardPattern(undefined8 * param_1, char * param_2)`
 pub const InitDirectoryWildcardPattern: u64 = 69485;
-/// `InitDragonMaxTurnAngle` at 0x90f30 (semantic, high); signature (untiered): `void InitDragonMaxTurnAngle(void)`; g_DragonMaxTurnAngle = fDragonMaxAngleBeforeTurn:Camera (90 in the image) * pi/180 (high); semantic signature: `void (void)`
+/// `InitDragonMaxTurnAngle` at 0x90f30 (semantic, high); signature (untiered): `void InitDragonMaxTurnAngle(void)`; semantic: g_DragonMaxTurnAngle = fDragonMaxAngleBeforeTurn:Camera (90 in the image) * pi/180 (high); signature `void (void)`
 pub const InitDragonMaxTurnAngle: u64 = 5325;
 /// `InitDragonMaxTurnAngle` as a function pointer type (high).
 pub type InitDragonMaxTurnAngle_fn = unsafe extern "C" fn();
@@ -5563,11 +5563,11 @@ pub const InitFormFromRecordHeader: u64 = 13996;
 pub const InitFormTypeIteratorWithRefHandle: u64 = 18316;
 /// `InitFormTypeMapIterator` at 0x296110 (decompiler, medium); signature (untiered): `undefined InitFormTypeMapIterator(undefined4 * param_1)`
 pub const InitFormTypeMapIterator: u64 = 18317;
-/// `InitFreeCameraEventName_CameraZDown` at 0xb1f50 (semantic, high); signature (untiered): `void InitFreeCameraEventName_CameraZDown(void)`; CRT initializer: constructs the BSFixedString "CameraZDown" in g_FreeCameraEventNames[1] (0x3255ad0) and registers its atexit destructor (high); semantic signature: `void (void)`
+/// `InitFreeCameraEventName_CameraZDown` at 0xb1f50 (semantic, high); signature (untiered): `void InitFreeCameraEventName_CameraZDown(void)`; semantic: CRT initializer: constructs the BSFixedString "CameraZDown" in g_FreeCameraEventNames[1] (0x3255ad0) and registers its atexit destructor (high); signature `void (void)`
 pub const InitFreeCameraEventName_CameraZDown: u64 = 6706;
 /// `InitFreeCameraEventName_CameraZDown` as a function pointer type (high).
 pub type InitFreeCameraEventName_CameraZDown_fn = unsafe extern "C" fn();
-/// `InitFreeCameraEventName_CameraZUp` at 0xb1f80 (semantic, high); signature (untiered): `void InitFreeCameraEventName_CameraZUp(void)`; CRT initializer: constructs the BSFixedString "CameraZUp" in g_FreeCameraEventNames[0] (0x3255ac8) and registers its atexit destructor (high); semantic signature: `void (void)`
+/// `InitFreeCameraEventName_CameraZUp` at 0xb1f80 (semantic, high); signature (untiered): `void InitFreeCameraEventName_CameraZUp(void)`; semantic: CRT initializer: constructs the BSFixedString "CameraZUp" in g_FreeCameraEventNames[0] (0x3255ac8) and registers its atexit destructor (high); signature `void (void)`
 pub const InitFreeCameraEventName_CameraZUp: u64 = 6707;
 /// `InitFreeCameraEventName_CameraZUp` as a function pointer type (high).
 pub type InitFreeCameraEventName_CameraZUp_fn = unsafe extern "C" fn();
@@ -5671,7 +5671,7 @@ pub const InitHitData_2: u64 = 44002;
 pub const InitHkArraysAndDefaults: u64 = 65251;
 /// `InitHkThreadMemoryEntry` at 0x10a0d10 (decompiler, medium); signature (untiered): `undefined4 * InitHkThreadMemoryEntry(undefined4 * param_1, longlong * param_2, undefined4 param_3, char param_4, undefined4 param_5)`
 pub const InitHkThreadMemoryEntry: u64 = 79336;
-/// `InitHorseMaxTurnAngle` at 0xb24c0 (semantic, high); signature (untiered): `void InitHorseMaxTurnAngle(void)`; g_HorseMaxTurnAngle = fHorseMaxAngleBeforeTurn:Camera (90 in the image) * pi/180 (high); semantic signature: `void (void)`
+/// `InitHorseMaxTurnAngle` at 0xb24c0 (semantic, high); signature (untiered): `void InitHorseMaxTurnAngle(void)`; semantic: g_HorseMaxTurnAngle = fHorseMaxAngleBeforeTurn:Camera (90 in the image) * pi/180 (high); signature `void (void)`
 pub const InitHorseMaxTurnAngle: u64 = 6720;
 /// `InitHorseMaxTurnAngle` as a function pointer type (high).
 pub type InitHorseMaxTurnAngle_fn = unsafe extern "C" fn();
@@ -5783,7 +5783,7 @@ pub const InitLockedHashMap: u64 = 35499;
 pub const InitLockedRefFromPointer: u64 = 68284;
 /// `InitLogFile` at 0xff9ac0 (decompiler, medium); signature (untiered): `longlong * InitLogFile(longlong * param_1, char * param_2, char * param_3, undefined8 param_4, int param_5, uint param_6)`
 pub const InitLogFile: u64 = 76853;
-/// `InitMapCameraStates` at 0x996390 (semantic, high); signature (untiered): `undefined InitMapCameraStates(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`; creates two World states (+0x68, +0x70), Exit (+0x78, id 1), Transition (+0x80, id 2, transitionHeight = fMapWorldTransitionHeight) (high); semantic signature: `void (MapCamera* camera)`
+/// `InitMapCameraStates` at 0x996390 (semantic, high); signature (untiered): `undefined InitMapCameraStates(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`; semantic: creates two World states (+0x68, +0x70), Exit (+0x78, id 1), Transition (+0x80, id 2, transitionHeight = fMapWorldTransitionHeight) (high); signature `void (MapCamera* camera)`
 pub const InitMapCameraStates: u64 = 53013;
 /// `InitMapCameraStates` as a function pointer type (high).
 pub type InitMapCameraStates_fn = unsafe extern "C" fn(camera: *mut crate::MapCamera);
@@ -5817,7 +5817,7 @@ pub const InitMessageRecordFromThirdPipeToken: u64 = 524826;
 pub const InitMessageRecordWithPrefix: u64 = 524378;
 /// `InitMessageRecordWithPrefixFromGlobal469614` at 0x125b5f0 (decompiler, medium); signature (untiered): `int * InitMessageRecordWithPrefixFromGlobal469614(int * param_1, undefined8 param_2, ulonglong param_3, undefined8 param_4)`
 pub const InitMessageRecordWithPrefixFromGlobal469614: u64 = 524375;
-/// `InitMistMenuCameraAndModel` at 0x966320 (semantic, high); signature (untiered): `undefined InitMistMenuCameraAndModel(longlong param_1, char * param_2)`; UI 3D camera at fUIMistMenu_Camera X/Y/Z (-50, 600, 80) looking at fUIMistMenu_CameraLookAt (-50, 0, 0), SetCameraFrustumFromFOV(fUIMistMenu_CameraFOV 75), saves the FOV (+0x100) and camera world rotation (+0x110..+0x133); loads modelPath, finds its controller manager (+0xe0) and starts sequence ID_406374, finds node ID_406375 as the camera node (+0xd0) and moves the camera onto it (high); semantic signature: `void (MistMenu* this, const char* modelPath)`
+/// `InitMistMenuCameraAndModel` at 0x966320 (semantic, high); signature (untiered): `undefined InitMistMenuCameraAndModel(longlong param_1, char * param_2)`; semantic: UI 3D camera at fUIMistMenu_Camera X/Y/Z (-50, 600, 80) looking at fUIMistMenu_CameraLookAt (-50, 0, 0), SetCameraFrustumFromFOV(fUIMistMenu_CameraFOV 75), saves the FOV (+0x100) and camera world rotation (+0x110..+0x133); loads modelPath, finds its controller manager (+0xe0) and starts sequence ID_406374, finds node ID_406375 as the camera node (+0xd0) and moves the camera onto it (high); signature `void (MistMenu* this, const char* modelPath)`
 pub const InitMistMenuCameraAndModel: u64 = 52323;
 /// `InitMistMenuCameraAndModel` as a function pointer type (high).
 pub type InitMistMenuCameraAndModel_fn = unsafe extern "C" fn(this: *mut crate::MistMenu, modelPath: *const c_char);
@@ -5959,7 +5959,7 @@ pub const InitQuantizedCopyFrom: u64 = 91294;
 pub const InitQwordAndCode0xBE: u64 = 524519;
 /// `InitQwordPair` at 0x44d790 (decompiler, high); signature (high): `undefined8 * InitQwordPair(undefined8 * param_1, undefined8 param_2, undefined8 param_3)`
 pub const InitQwordPair: u64 = 27484;
-/// `InitRaceMenuCameraTargets` at 0x971640 (runtime, high); signature (untiered): `undefined InitRaceMenuCameraTargets(void)`; body target 0x3258500 = ScreenPoint(0.5, 0.5, yaw -10, z -20, fPlayerBodyEditDistance); face target 0x3258520 = ScreenPoint(0.5, 0.4, yaw -10, z -4, fPlayerFaceEditDistance); when dot(quaternion 0x325856c, face rotation) < 0 both the face and the body rotations are negated (one hemisphere for the ease) (high); semantic signature: `void (void)`
+/// `InitRaceMenuCameraTargets` at 0x971640 (runtime, high); signature (untiered): `undefined InitRaceMenuCameraTargets(void)`; semantic: body target 0x3258500 = ScreenPoint(0.5, 0.5, yaw -10, z -20, fPlayerBodyEditDistance); face target 0x3258520 = ScreenPoint(0.5, 0.4, yaw -10, z -4, fPlayerFaceEditDistance); when dot(quaternion 0x325856c, face rotation) < 0 both the face and the body rotations are negated (one hemisphere for the ease) (high); signature `void (void)`
 pub const InitRaceMenuCameraTargets: u64 = 52413;
 /// `InitRaceMenuCameraTargets` as a function pointer type (high).
 pub type InitRaceMenuCameraTargets_fn = unsafe extern "C" fn();
@@ -6057,7 +6057,7 @@ pub const InitRefHandle_3: u64 = 32307;
 pub const InitRefPtrAndArray: u64 = 49962;
 /// `InitRefPtrAndCopyRefCountedArrays` at 0xbf51f0 (decompiler, medium); signature (untiered): `undefined InitRefPtrAndCopyRefCountedArrays(longlong param_1, longlong * param_2, longlong * param_3, longlong param_4)`
 pub const InitRefPtrAndCopyRefCountedArrays: u64 = 64162;
-/// `InitRenderPassPools` at 0x1555a10 (semantic, high); signature (untiered): `undefined InitRenderPassPools(undefined8 param_1, undefined8 param_2, ulonglong param_3, ulonglong param_4)`; allocates the two render-pass pools (0xffff passes of 0x48 and 16 light slots each) (high); semantic signature: `void ()`
+/// `InitRenderPassPools` at 0x1555a10 (semantic, high); signature (untiered): `undefined InitRenderPassPools(undefined8 param_1, undefined8 param_2, ulonglong param_3, ulonglong param_4)`; semantic: allocates the two render-pass pools (0xffff passes of 0x48 and 16 light slots each) (high); signature `void ()`
 pub const InitRenderPassPools: u64 = 107500;
 /// `InitRenderPassPools` as a function pointer type (high).
 pub type InitRenderPassPools_fn = unsafe extern "C" fn();
@@ -6119,7 +6119,7 @@ pub const InitSecurityCookie: u64 = 109670;
 pub const InitSegmentWithLengthSquared: u64 = 33316;
 /// `InitSenseHandleModifier` at 0xb17450 (decompiler, medium); signature (untiered): `undefined8 * InitSenseHandleModifier(undefined8 * param_1)`
 pub const InitSenseHandleModifier: u64 = 59876;
-/// `InitShaders` at 0x14ea2d0 (semantic, medium); signature (untiered): `undefined InitShaders(undefined8 param_1, undefined8 param_2, ulonglong param_3, undefined8 param_4)`; creates the shader singletons, reads SHADERSFX/Shaders%03d.fxp into each, creates the 0x220 shader state 0x33d40a0, registers the shader property factories, fills the mode tables, allocates the accumulator array 0x33d3dc0 (medium); semantic signature: `void ()`
+/// `InitShaders` at 0x14ea2d0 (semantic, medium); signature (untiered): `undefined InitShaders(undefined8 param_1, undefined8 param_2, ulonglong param_3, undefined8 param_4)`; semantic: creates the shader singletons, reads SHADERSFX/Shaders%03d.fxp into each, creates the 0x220 shader state 0x33d40a0, registers the shader property factories, fills the mode tables, allocates the accumulator array 0x33d3dc0 (medium); signature `void ()`
 pub const InitShaders: u64 = 105624;
 /// `InitSharedByteBufferPtr` at 0x1280eb0 (decompiler, medium); signature (medium): `undefined InitSharedByteBufferPtr(undefined8 * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const InitSharedByteBufferPtr: u64 = 444189;
@@ -6147,7 +6147,7 @@ pub const InitSpectatorThreatEntry: u64 = 42646;
 pub const InitSphereSphereAgentFuncs: u64 = 66795;
 /// `InitSplineTranslation` at 0x18b4c0 (decompiler, medium); signature (untiered): `undefined InitSplineTranslation(longlong param_1, undefined4 * param_2, uint * param_3, undefined4 * param_4, uint * param_5, float param_6, undefined4 param_7, float param_8)`
 pub const InitSplineTranslation: u64 = 12809;
-/// `InitStackFrameAndClearVariables` at 0x149c7d0 (semantic, high); signature (untiered): `uint * InitStackFrameAndClearVariables(uint * param_1, longlong param_2, uint param_3)`; frame+0 = stack, +0x8..+0x37 = 0 (previous, function, type, ip, self), +0x38 = variableCount, +0x3c = 1, every variable None (high); semantic signature: `BSScript::StackFrame* (BSScript::StackFrame* frame, BSScript::Stack* stack, u32 variableCount)`
+/// `InitStackFrameAndClearVariables` at 0x149c7d0 (semantic, high); signature (untiered): `uint * InitStackFrameAndClearVariables(uint * param_1, longlong param_2, uint param_3)`; semantic: frame+0 = stack, +0x8..+0x37 = 0 (previous, function, type, ip, self), +0x38 = variableCount, +0x3c = 1, every variable None (high); signature `BSScript::StackFrame* (BSScript::StackFrame* frame, BSScript::Stack* stack, u32 variableCount)`
 pub const InitStackFrameAndClearVariables: u64 = 104474;
 /// `InitStackFrameAndClearVariables` as a function pointer type (high).
 pub type InitStackFrameAndClearVariables_fn = unsafe extern "C" fn(frame: *mut crate::BSScript__StackFrame, stack: *mut crate::BSScript__Stack, variableCount: u32) -> *mut crate::BSScript__StackFrame;
@@ -6163,11 +6163,11 @@ pub const InitStaticTree505605: u64 = 440107;
 pub const InitStaticTree505605_2: u64 = 440119;
 /// `InitStaticTree505605_3` at 0x1147e0 (decompiler, high); signature (untiered): `undefined8 * InitStaticTree505605_3(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const InitStaticTree505605_3: u64 = 440124;
-/// `InitStatsMenuEventName_CameraIntro` at 0xbd8b0 (semantic, high); signature (untiered): `void InitStatsMenuEventName_CameraIntro(void)`; CRT initializer: BSFixedString "CameraIntro" at 0x32589f8 (ID_406573) plus its atexit destructor (high); semantic signature: `void (void)`
+/// `InitStatsMenuEventName_CameraIntro` at 0xbd8b0 (semantic, high); signature (untiered): `void InitStatsMenuEventName_CameraIntro(void)`; semantic: CRT initializer: BSFixedString "CameraIntro" at 0x32589f8 (ID_406573) plus its atexit destructor (high); signature `void (void)`
 pub const InitStatsMenuEventName_CameraIntro: u64 = 7337;
 /// `InitStatsMenuEventName_CameraIntro` as a function pointer type (high).
 pub type InitStatsMenuEventName_CameraIntro_fn = unsafe extern "C" fn();
-/// `InitStatsMenuEventName_CameraOutro` at 0xbd8e0 (semantic, high); signature (untiered): `void InitStatsMenuEventName_CameraOutro(void)`; CRT initializer: BSFixedString "CameraOutro" at 0x3258a00 (ID_406574) plus its atexit destructor (high); semantic signature: `void (void)`
+/// `InitStatsMenuEventName_CameraOutro` at 0xbd8e0 (semantic, high); signature (untiered): `void InitStatsMenuEventName_CameraOutro(void)`; semantic: CRT initializer: BSFixedString "CameraOutro" at 0x3258a00 (ID_406574) plus its atexit destructor (high); signature `void (void)`
 pub const InitStatsMenuEventName_CameraOutro: u64 = 7338;
 /// `InitStatsMenuEventName_CameraOutro` as a function pointer type (high).
 pub type InitStatsMenuEventName_CameraOutro_fn = unsafe extern "C" fn();
@@ -6305,7 +6305,7 @@ pub const InitTwoEmptyArrays: u64 = 108234;
 pub const InitTwoEmptyArrays_2: u64 = 91297;
 /// `InitTwoVec3FromGlobalAndZero` at 0x11ecb00 (decompiler, medium); signature (untiered): `undefined4 * InitTwoVec3FromGlobalAndZero(undefined4 * param_1)`
 pub const InitTwoVec3FromGlobalAndZero: u64 = 91292;
-/// `InitTypedArrayObject` at 0x149c290 (semantic, high); signature (untiered): `undefined4 * InitTypedArrayObject(undefined4 * param_1, ulonglong * param_2, undefined4 param_3)`; count 0, element type (an array type reduced to its element type), size, +0x14..+0x1b zero, every element {elementType, 0} (high); semantic signature: `BSScript::Array* (BSScript::Array* this, const BSScript::TypeInfo* elementType, u32 size)`
+/// `InitTypedArrayObject` at 0x149c290 (semantic, high); signature (untiered): `undefined4 * InitTypedArrayObject(undefined4 * param_1, ulonglong * param_2, undefined4 param_3)`; semantic: count 0, element type (an array type reduced to its element type), size, +0x14..+0x1b zero, every element {elementType, 0} (high); signature `BSScript::Array* (BSScript::Array* this, const BSScript::TypeInfo* elementType, u32 size)`
 pub const InitTypedArrayObject: u64 = 104468;
 /// `InitTypedArrayObject` as a function pointer type (high).
 pub type InitTypedArrayObject_fn = unsafe extern "C" fn(this: *mut crate::BSScript__Array, elementType: *const crate::BSScript__TypeInfo, size: u32) -> *mut crate::BSScript__Array;
@@ -6521,31 +6521,31 @@ pub const InputEvent__dtor_4: u64 = 523960;
 pub const InputEvent__dtor_5: u64 = 523961;
 /// `InputEvent::vdtor` at 0x7b1b60 (layout_inference, medium); signature (low): `InputEvent * vdtor(InputEvent * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const InputEvent__vdtor: u64 = 42400;
-/// `InputEventQueue::AddButtonEvent` at 0xcfb340 (semantic, high); signature (untiered): `undefined AddButtonEvent(longlong param_1, undefined8 param_2, undefined8 param_3, undefined4 param_4, undefined4 param_5)`; next of 10 ButtonEvents: device, idCode, value, held, user event ''; append (high); semantic signature: `void (InputEventQueue* q, InputDevice device, u32 idCode, float value, float heldDownSecs)`
+/// `InputEventQueue::AddButtonEvent` at 0xcfb340 (semantic, high); signature (untiered): `undefined AddButtonEvent(longlong param_1, undefined8 param_2, undefined8 param_3, undefined4 param_4, undefined4 param_5)`; semantic: next of 10 ButtonEvents: device, idCode, value, held, user event ''; append (high); signature `void (InputEventQueue* q, InputDevice device, u32 idCode, float value, float heldDownSecs)`
 pub const InputEventQueue__AddButtonEvent: u64 = 68685;
 /// `InputEventQueue::AddButtonEvent` as a function pointer type (high).
 pub type InputEventQueue__AddButtonEvent_fn = unsafe extern "C" fn(q: *mut crate::InputEventQueue, device: u32, idCode: u32, value: f32, heldDownSecs: f32);
-/// `InputEventQueue::AddCharEvent` at 0xcfb3f0 (runtime, high); signature (untiered): `undefined AddCharEvent(longlong param_1, undefined4 param_2)`; next of 5 CharEvents, device 0, the UTF-16 code at +0x18; the keyboard poll is its only caller, so character input exists only for keys DirectInput reports (real or SendInput keystrokes, not events injected into the queue) (high); semantic signature: `void (InputEventQueue* q, u32 charCode)`
+/// `InputEventQueue::AddCharEvent` at 0xcfb3f0 (runtime, high); signature (untiered): `undefined AddCharEvent(longlong param_1, undefined4 param_2)`; semantic: next of 5 CharEvents, device 0, the UTF-16 code at +0x18; the keyboard poll is its only caller, so character input exists only for keys DirectInput reports (real or SendInput keystrokes, not events injected into the queue) (high); signature `void (InputEventQueue* q, u32 charCode)`
 pub const InputEventQueue__AddCharEvent: u64 = 68686;
 /// `InputEventQueue::AddCharEvent` as a function pointer type (high).
 pub type InputEventQueue__AddCharEvent_fn = unsafe extern "C" fn(q: *mut crate::InputEventQueue, charCode: u32);
-/// `InputEventQueue::AddDeviceConnectEvent` at 0xcfb5d0 (semantic, high); signature (untiered): `undefined AddDeviceConnectEvent(longlong param_1, undefined4 param_2, undefined1 param_3)`; the single DeviceConnectEvent (high); semantic signature: `void (InputEventQueue* q, InputDevice device, bool connected)`
+/// `InputEventQueue::AddDeviceConnectEvent` at 0xcfb5d0 (semantic, high); signature (untiered): `undefined AddDeviceConnectEvent(longlong param_1, undefined4 param_2, undefined1 param_3)`; semantic: the single DeviceConnectEvent (high); signature `void (InputEventQueue* q, InputDevice device, bool connected)`
 pub const InputEventQueue__AddDeviceConnectEvent: u64 = 68689;
 /// `InputEventQueue::AddDeviceConnectEvent` as a function pointer type (high).
 pub type InputEventQueue__AddDeviceConnectEvent_fn = unsafe extern "C" fn(q: *mut crate::InputEventQueue, device: u32, connected: bool);
-/// `InputEventQueue::AddKinectEvent` at 0xcfb640 (semantic, medium); signature (untiered): `undefined AddKinectEvent(longlong param_1, longlong * param_2, longlong * param_3, undefined8 param_4)`; the single KinectEvent (medium); semantic signature: `void (InputEventQueue* q, const BSFixedString* userEvent, const BSFixedString* heard)`
+/// `InputEventQueue::AddKinectEvent` at 0xcfb640 (semantic, medium); signature (untiered): `undefined AddKinectEvent(longlong param_1, longlong * param_2, longlong * param_3, undefined8 param_4)`; semantic: the single KinectEvent (medium); signature `void (InputEventQueue* q, const BSFixedString* userEvent, const BSFixedString* heard)`
 pub const InputEventQueue__AddKinectEvent: u64 = 68690;
-/// `InputEventQueue::AddMotionGestureEvent` at 0xcfb830 (semantic, medium); signature (untiered): `undefined AddMotionGestureEvent(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4, undefined1 param_5, undefined4 param_6)`; next of 2 (no static caller) (medium); semantic signature: `void (InputEventQueue* q, u32 id, u32 a, u32 b, u8 flag, u32 c)`
+/// `InputEventQueue::AddMotionGestureEvent` at 0xcfb830 (semantic, medium); signature (untiered): `undefined AddMotionGestureEvent(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4, undefined1 param_5, undefined4 param_6)`; semantic: next of 2 (no static caller) (medium); signature `void (InputEventQueue* q, u32 id, u32 a, u32 b, u8 flag, u32 c)`
 pub const InputEventQueue__AddMotionGestureEvent: u64 = 524148;
-/// `InputEventQueue::AddMouseMoveEvent` at 0xcfb460 (semantic, high); signature (untiered): `undefined AddMouseMoveEvent(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`; the single MouseMoveEvent, device 1 (high); semantic signature: `void (InputEventQueue* q, int dx, int dy)`
+/// `InputEventQueue::AddMouseMoveEvent` at 0xcfb460 (semantic, high); signature (untiered): `undefined AddMouseMoveEvent(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`; semantic: the single MouseMoveEvent, device 1 (high); signature `void (InputEventQueue* q, int dx, int dy)`
 pub const InputEventQueue__AddMouseMoveEvent: u64 = 68687;
 /// `InputEventQueue::AddMouseMoveEvent` as a function pointer type (high).
 pub type InputEventQueue__AddMouseMoveEvent_fn = unsafe extern "C" fn(q: *mut crate::InputEventQueue, dx: i32, dy: i32);
-/// `InputEventQueue::AddThumbstickEvent` at 0xcfb510 (semantic, high); signature (untiered): `undefined AddThumbstickEvent(longlong param_1, undefined8 param_2, undefined4 param_3, undefined4 param_4)`; next of 2, device 2 (high); semantic signature: `void (InputEventQueue* q, u32 idCode, float x, float y)`
+/// `InputEventQueue::AddThumbstickEvent` at 0xcfb510 (semantic, high); signature (untiered): `undefined AddThumbstickEvent(longlong param_1, undefined8 param_2, undefined4 param_3, undefined4 param_4)`; semantic: next of 2, device 2 (high); signature `void (InputEventQueue* q, u32 idCode, float x, float y)`
 pub const InputEventQueue__AddThumbstickEvent: u64 = 68688;
 /// `InputEventQueue::AddThumbstickEvent` as a function pointer type (high).
 pub type InputEventQueue__AddThumbstickEvent_fn = unsafe extern "C" fn(q: *mut crate::InputEventQueue, idCode: u32, x: f32, y: f32);
-/// `InputEventQueue::Reset` at 0xcfba10 (semantic, high); signature (untiered): `undefined Reset(longlong param_1)`; zero the nine counts and head/tail (high); semantic signature: `void (InputEventQueue* q)`
+/// `InputEventQueue::Reset` at 0xcfba10 (semantic, high); signature (untiered): `undefined Reset(longlong param_1)`; semantic: zero the nine counts and head/tail (high); signature `void (InputEventQueue* q)`
 pub const InputEventQueue__Reset: u64 = 68691;
 /// `InputEventQueue::Reset` as a function pointer type (high).
 pub type InputEventQueue__Reset_fn = unsafe extern "C" fn(q: *mut crate::InputEventQueue);
@@ -7613,7 +7613,7 @@ pub const InstallModAndNotifyDataObjectChange: u64 = 442216;
 pub const InstallModFiles: u64 = 33790;
 /// `InstallYesToAllCbtHook` at 0xfdcd70 (decompiler, high); signature (high): `undefined InstallYesToAllCbtHook(void)`
 pub const InstallYesToAllCbtHook: u64 = 76180;
-/// `InstalledContent::ProcessLoadGameEvent` at 0x609560 (runtime, high); signature (untiered): `undefined8 ProcessLoadGameEvent(InstalledContent * this, BSTArrayAllocatorFunctor<BSTArrayHeapAllocator>_vtbl * * param_1, undefined8 * * param_2, undefined8 param_3)`; forwards to 0x60b6c0 when the byte at +0x18 is set; returns 0 (high); semantic signature: `BSEventNotifyControl (InstalledContent* this, const TESLoadGameEvent* event, BSTEventSource<TESLoadGameEvent>* source)`
+/// `InstalledContent::ProcessLoadGameEvent` at 0x609560 (runtime, high); signature (untiered): `undefined8 ProcessLoadGameEvent(InstalledContent * this, BSTArrayAllocatorFunctor<BSTArrayHeapAllocator>_vtbl * * param_1, undefined8 * * param_2, undefined8 param_3)`; semantic: forwards to 0x60b6c0 when the byte at +0x18 is set; returns 0 (high); signature `BSEventNotifyControl (InstalledContent* this, const TESLoadGameEvent* event, BSTEventSource<TESLoadGameEvent>* source)`
 pub const InstalledContent__ProcessLoadGameEvent: u64 = 442465;
 /// `InstalledContent::ProcessLoadGameEvent` as a function pointer type (high).
 pub type InstalledContent__ProcessLoadGameEvent_fn = unsafe extern "C" fn(this: *mut crate::InstalledContent, event: *const crate::TESLoadGameEvent, source: *mut c_void) -> u32;
@@ -7805,7 +7805,7 @@ pub const IntrosortQwordsWithPredicate: u64 = 440688;
 pub const InvalidateField28: u64 = 90372;
 /// `InvalidateRefHandleInGlobalList433262` at 0x4420d0 (decompiler, medium); signature (untiered): `DWORD InvalidateRefHandleInGlobalList433262(longlong param_1)`
 pub const InvalidateRefHandleInGlobalList433262: u64 = 418633;
-/// `Inventory3DManager::UpdateItemZoom` at 0x93efe0 (semantic, high); signature (untiered): `undefined UpdateItemZoom(longlong param_1)`; while zoom direction (+0x150) != 0: progress (+0x154) += fInventory3DItemZoomSpeed:Interface * real delta * direction, clamped to [0,1] (direction cleared at an end); item position (+0x14..+0x1c) = lerp(+0x20..+0x28, fInventory3DItemZoomX/Y/Z:Interface), scale (+0x2c) = lerp(+0x30, fInventory3DItemZoomScale:Interface); re-applies the last loaded item's scale/position (array +0x68, count +0x148, stride 0x20); +0x162 = 0 (high); semantic signature: `void (Inventory3DManager* this)`
+/// `Inventory3DManager::UpdateItemZoom` at 0x93efe0 (semantic, high); signature (untiered): `undefined UpdateItemZoom(longlong param_1)`; semantic: while zoom direction (+0x150) != 0: progress (+0x154) += fInventory3DItemZoomSpeed:Interface * real delta * direction, clamped to [0,1] (direction cleared at an end); item position (+0x14..+0x1c) = lerp(+0x20..+0x28, fInventory3DItemZoomX/Y/Z:Interface), scale (+0x2c) = lerp(+0x30, fInventory3DItemZoomScale:Interface); re-applies the last loaded item's scale/position (array +0x68, count +0x148, stride 0x20); +0x162 = 0 (high); signature `void (Inventory3DManager* this)`
 pub const Inventory3DManager__UpdateItemZoom: u64 = 51777;
 /// `Inventory3DManager::UpdateItemZoom` as a function pointer type (high).
 pub type Inventory3DManager__UpdateItemZoom_fn = unsafe extern "C" fn(this: *mut crate::Inventory3DManager);
@@ -7823,27 +7823,27 @@ pub const Inventory3DManager__vfunc_1: u64 = 51768;
 pub const Inventory3DManager__vfunc_5: u64 = 51769;
 /// `Inventory3DManager::vfunc_6` at 0x93e620 (rtti, high); signature (low): `undefined1 vfunc_6(Inventory3DManager * this, longlong param_1)`
 pub const Inventory3DManager__vfunc_6: u64 = 51770;
-/// `Inventory::GetEventSource` at 0x241aa0 (semantic, medium); signature (untiered): `undefined8 * GetEventSource(void)`; the one source of Inventory::Event events (medium); semantic signature: `BSTEventSource<Inventory::Event>* ()`
+/// `Inventory::GetEventSource` at 0x241aa0 (semantic, medium); signature (untiered): `undefined8 * GetEventSource(void)`; semantic: the one source of Inventory::Event events (medium); signature `BSTEventSource<Inventory::Event>* ()`
 pub const Inventory__GetEventSource: u64 = 16225;
-/// `Inventory::RegisterSink` at 0x227e00 (semantic, medium); signature (untiered): `undefined RegisterSink(undefined8 param_1)`; registers a Inventory::Event sink with the singleton source (medium); semantic signature: `void (BSTEventSink<Inventory::Event>* sink)`
+/// `Inventory::RegisterSink` at 0x227e00 (semantic, medium); signature (untiered): `undefined RegisterSink(undefined8 param_1)`; semantic: registers a Inventory::Event sink with the singleton source (medium); signature `void (BSTEventSink<Inventory::Event>* sink)`
 pub const Inventory__RegisterSink: u64 = 15978;
 /// `Inventory::StatInventoryVisitor::vdtor` at 0x240740 (layout_inference, medium); signature (low): `StatInventoryVisitor * vdtor(StatInventoryVisitor * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const Inventory__StatInventoryVisitor__vdtor: u64 = 16191;
 /// `Inventory::StatInventoryVisitor::vfunc_1` at 0x242440 (rtti, high); signature (low): `undefined8 vfunc_1(StatInventoryVisitor * this, longlong param_1)`
 pub const Inventory__StatInventoryVisitor__vfunc_1: u64 = 16236;
-/// `Inventory::UnregisterSink` at 0x227e30 (semantic, medium); signature (untiered): `undefined UnregisterSink(undefined8 param_1)`; unregisters a Inventory::Event sink with the singleton source (medium); semantic signature: `void (BSTEventSink<Inventory::Event>* sink)`
+/// `Inventory::UnregisterSink` at 0x227e30 (semantic, medium); signature (untiered): `undefined UnregisterSink(undefined8 param_1)`; semantic: unregisters a Inventory::Event sink with the singleton source (medium); signature `void (BSTEventSink<Inventory::Event>* sink)`
 pub const Inventory__UnregisterSink: u64 = 15979;
-/// `InventoryChanges::CountItem` at 0x240fe0 (runtime, high); signature (untiered): `int CountItem(longlong param_1, undefined8 * param_2, longlong * param_3)`; count of an item, base plus delta (high); semantic signature: `int InventoryChanges::CountItem(TESForm* item, InventoryChanges* changes, ItemFilter* filter)`
+/// `InventoryChanges::CountItem` at 0x240fe0 (runtime, high); signature (untiered): `int CountItem(longlong param_1, undefined8 * param_2, longlong * param_3)`; semantic: count of an item, base plus delta (high); signature `int InventoryChanges::CountItem(TESForm* item, InventoryChanges* changes, ItemFilter* filter)`
 pub const InventoryChanges__CountItem: u64 = 16214;
 /// `InventoryChanges::CountItem` as a function pointer type (high).
 pub type InventoryChanges__CountItem_fn = unsafe extern "C" fn(item: *mut crate::TESForm, changes: *mut crate::InventoryChanges, filter: *mut c_void) -> i32;
-/// `InventoryChanges::CountItemsWithKeyword` at 0x239750 (semantic, medium); signature (untiered): `ulonglong CountItemsWithKeyword(undefined8 * param_1, longlong param_2)`; count of items carrying a keyword (medium); semantic signature: `uint InventoryChanges::CountItemsWithKeyword(InventoryChanges* this, BGSKeyword* keyword)`
+/// `InventoryChanges::CountItemsWithKeyword` at 0x239750 (semantic, medium); signature (untiered): `ulonglong CountItemsWithKeyword(undefined8 * param_1, longlong param_2)`; semantic: count of items carrying a keyword (medium); signature `uint InventoryChanges::CountItemsWithKeyword(InventoryChanges* this, BGSKeyword* keyword)`
 pub const InventoryChanges__CountItemsWithKeyword: u64 = 16111;
 /// `InventoryChanges::FindBestSoulGemVisitor::vdtor` at 0x6daba0 (layout_inference, medium); signature (low): `FindBestSoulGemVisitor * vdtor(FindBestSoulGemVisitor * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const InventoryChanges__FindBestSoulGemVisitor__vdtor: u64 = 38858;
 /// `InventoryChanges::FindBestSoulGemVisitor::vfunc_1` at 0x237180 (rtti, high); signature (low): `undefined8 vfunc_1(FindBestSoulGemVisitor * this, longlong * param_1)`
 pub const InventoryChanges__FindBestSoulGemVisitor__vfunc_1: u64 = 16094;
-/// `InventoryChanges::GetItemCount` at 0x2395c0 (runtime, high); signature (untiered): `undefined GetItemCount(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`; count of an item in the inventory (high); semantic signature: `int InventoryChanges::GetItemCount(InventoryChanges* this, TESForm* item)`
+/// `InventoryChanges::GetItemCount` at 0x2395c0 (runtime, high); signature (untiered): `undefined GetItemCount(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`; semantic: count of an item in the inventory (high); signature `int InventoryChanges::GetItemCount(InventoryChanges* this, TESForm* item)`
 pub const InventoryChanges__GetItemCount: u64 = 16108;
 /// `InventoryChanges::GetItemCount` as a function pointer type (high).
 pub type InventoryChanges__GetItemCount_fn = unsafe extern "C" fn(this: *mut crate::InventoryChanges, item: *mut crate::TESForm) -> i32;
@@ -7909,15 +7909,15 @@ pub const InventoryChanges__IItemChangeVisitor__vdtor: u64 = 16187;
 pub const InventoryChanges__IItemChangeVisitor__vfunc_2: u64 = 16215;
 /// `InventoryChanges::IItemChangeVisitor::vfunc_3` at 0x242500 (rtti, medium); signature (low): `undefined vfunc_3(IItemChangeVisitor * this, undefined8 param_1, undefined8 param_2, undefined1 * param_3)`
 pub const InventoryChanges__IItemChangeVisitor__vfunc_3: u64 = 16238;
-/// `InventoryMenu::CloseTweenMenuCallback` at 0x943ed0 (runtime, high); signature (untiered): `undefined CloseTweenMenuCallback(longlong param_1)`; the 'CloseTweenMenu' callback of the InventoryMenu: PlayerCamera::BeginCloseTweenMenu, hide the TweenMenu, mark the menu (+0x81 = 1) (high); semantic signature: `void (const FxDelegateArgs* args)`
+/// `InventoryMenu::CloseTweenMenuCallback` at 0x943ed0 (runtime, high); signature (untiered): `undefined CloseTweenMenuCallback(longlong param_1)`; semantic: the 'CloseTweenMenu' callback of the InventoryMenu: PlayerCamera::BeginCloseTweenMenu, hide the TweenMenu, mark the menu (+0x81 = 1) (high); signature `void (const FxDelegateArgs* args)`
 pub const InventoryMenu__CloseTweenMenuCallback: u64 = 51855;
 /// `InventoryMenu::CloseTweenMenuCallback` as a function pointer type (high).
 pub type InventoryMenu__CloseTweenMenuCallback_fn = unsafe extern "C" fn(args: *const c_void);
-/// `InventoryMenu::Create` at 0x946710 (semantic, high); signature (untiered): `void Create(void)`; menu creator registered under 'InventoryMenu' (ctor inlined except ContainerMenu) (high); semantic signature: `IMenu* ()`
+/// `InventoryMenu::Create` at 0x946710 (semantic, high); signature (untiered): `void Create(void)`; semantic: menu creator registered under 'InventoryMenu' (ctor inlined except ContainerMenu) (high); signature `IMenu* ()`
 pub const InventoryMenu__Create: u64 = 51886;
 /// `InventoryMenu::Create` as a function pointer type (high).
 pub type InventoryMenu__Create_fn = unsafe extern "C" fn() -> *mut crate::IMenu;
-/// `InventoryMenu::UpdateItemList` at 0x9452b0 (semantic, high); signature (untiered): `undefined UpdateItemList(longlong param_1, undefined8 param_2, uint * param_3, undefined8 param_4)`; rebuilds the player's item list, sorts by sortMode, pushes each entry's GFxValue into entryList and Invokes 'InvalidateListData' (high); semantic signature: `void (InventoryMenu* this)`
+/// `InventoryMenu::UpdateItemList` at 0x9452b0 (semantic, high); signature (untiered): `undefined UpdateItemList(longlong param_1, undefined8 param_2, uint * param_3, undefined8 param_4)`; semantic: rebuilds the player's item list, sorts by sortMode, pushes each entry's GFxValue into entryList and Invokes 'InvalidateListData' (high); signature `void (InventoryMenu* this)`
 pub const InventoryMenu__UpdateItemList: u64 = 51866;
 /// `InventoryMenu::UpdateItemList` as a function pointer type (high).
 pub type InventoryMenu__UpdateItemList_fn = unsafe extern "C" fn(this: *mut crate::InventoryMenu);
@@ -8379,7 +8379,7 @@ pub const IronSightsState__GetRotation: u64 = 50779;
 pub const IronSightsState__GetTranslation: u64 = 50780;
 /// `IronSightsState::Update` at 0x8f7700 (semantic, high); signature (untiered): `undefined Update(IronSightsState * this, undefined8 param_2, undefined4 param_3, undefined4 param_4)`
 pub const IronSightsState__Update: u64 = 50778;
-/// `IronSightsState::dtor` at 0x8f76c0 (semantic, high); signature (untiered): `undefined dtor(IronSightsState * this)`; non-deleting destructor: vtable = TESCameraState's (high); semantic signature: `void (IronSightsState* this)`
+/// `IronSightsState::dtor` at 0x8f76c0 (semantic, high); signature (untiered): `undefined dtor(IronSightsState * this)`; semantic: non-deleting destructor: vtable = TESCameraState's (high); signature `void (IronSightsState* this)`
 pub const IronSightsState__dtor: u64 = 50776;
 /// `IronSightsState::dtor` as a function pointer type (high).
 pub type IronSightsState__dtor_fn = unsafe extern "C" fn(this: *mut crate::IronSightsState);

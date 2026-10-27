@@ -8331,7 +8331,7 @@ pub struct BGSSaveLoadManager__Thread_vtable {
     pub slot_0: *const c_void,
     /// `BGSSaveLoadManager::Thread::Run` at 0x62a030 (semantic, high); signature (untiered): `undefined8 Run(Thread * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`; `Run`: thread body (high); semantic signature: `u32 (Thread*)`
     pub slot_1: *const c_void,
-    /// `BGSSaveLoadManager::Thread::vfunc_2` at 0x630420 (rtti, high); signature (high): `undefined vfunc_2(Thread * this)`; `vfunc_2`:  (low); semantic signature: ``
+    /// `BGSSaveLoadManager::Thread::vfunc_2` at 0x630420 (rtti, high); signature (high): `undefined vfunc_2(Thread * this)`; `vfunc_2` (low); semantic signature: ``
     pub slot_2: *const c_void,
 }
 impl BGSSaveLoadManager__Thread_vtable {

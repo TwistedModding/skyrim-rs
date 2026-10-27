@@ -1686,7 +1686,7 @@ impl MemoryManagerFile_vtable {
 /// `MenuControls::vftable` at 0x197c1e8, id 215773 (rtti, high); 2 slots.
 #[repr(C)]
 pub struct MenuControls_vtable {
-    /// `MenuControls::vdtor` at 0x960be0 (semantic, high); signature (low): `MenuControls * vdtor(MenuControls * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`; `vdtor`:  (high); semantic signature: `MenuControls* (MenuControls* this, u32 flags)`
+    /// `MenuControls::vdtor` at 0x960be0 (semantic, high); signature (low): `MenuControls * vdtor(MenuControls * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`; `vdtor` (high); semantic signature: `MenuControls* (MenuControls* this, u32 flags)`
     pub slot_0: *const c_void,
     /// `MenuControls::ProcessEvent` at 0x95f020 (semantic, high); signature (untiered): `undefined8 ProcessEvent(MenuControls * this, longlong * param_1, longlong * param_2, undefined8 param_3)`; `ProcessEvent`: walks the frame's InputEvent list (next at +0x10) and dispatches (see answers); returns 0 (high); semantic signature: `BSEventNotifyControl (MenuControls* this, InputEvent* const* head, BSTEventSource<InputEvent*>* source)`
     pub slot_1: *const c_void,
@@ -1706,7 +1706,7 @@ impl MenuControls_vtable {
         unsafe { core::mem::transmute::<*const c_void, Option<MenuControls_vtable_ProcessEvent>>(self.slot_1) }
     }
 }
-/// `MenuControls::vdtor`, slot 0:  (high).
+/// `MenuControls::vdtor`, slot 0 (high).
 pub type MenuControls_vtable_vdtor = unsafe extern "C" fn(this: *mut crate::MenuControls, flags: u32) -> *mut crate::MenuControls;
 /// `MenuControls::ProcessEvent`, slot 1: walks the frame's InputEvent list (next at +0x10) and dispatches (see answers); returns 0 (high).
 pub type MenuControls_vtable_ProcessEvent = unsafe extern "C" fn(this: *mut crate::MenuControls, head: *mut *mut crate::InputEvent, source: *mut c_void) -> u32;
@@ -1766,19 +1766,19 @@ pub type MenuEventHandler_vtable_vdtor = unsafe extern "C" fn(this: *mut crate::
 pub struct MenuOpenHandler_vtable {
     /// `MenuOpenHandler::vdtor` at 0x960c20 (layout_inference, medium); signature (low): `MenuOpenHandler * vdtor(MenuOpenHandler * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `MenuOpenHandler::CanProcess` at 0x962180 (semantic, high); signature (untiered): `char CanProcess(MenuOpenHandler * this, longlong * param_1)`; `CanProcess`:  (high); semantic signature: `bool (MenuOpenHandler* this, InputEvent* event)`
+    /// `MenuOpenHandler::CanProcess` at 0x962180 (semantic, high); signature (untiered): `char CanProcess(MenuOpenHandler * this, longlong * param_1)`; `CanProcess` (high); semantic signature: `bool (MenuOpenHandler* this, InputEvent* event)`
     pub slot_1: *const c_void,
     /// `MenuEventHandler::Unk2` at 0x5825e0 (semantic, low); signature (untiered): `undefined1 Unk2(void)`
     pub slot_2: *const c_void,
     /// `MenuEventHandler::ProcessSixaxisEvent` at 0x582600 (semantic, medium); signature (untiered): `undefined1 ProcessSixaxisEvent(void)`
     pub slot_3: *const c_void,
-    /// `MenuOpenHandler::ProcessKinectEvent` at 0x961a90 (semantic, medium); signature (untiered): `byte ProcessKinectEvent(MenuOpenHandler * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`; `ProcessKinectEvent`:  (medium); semantic signature: `bool (MenuOpenHandler* this, KinectEvent* event)`
+    /// `MenuOpenHandler::ProcessKinectEvent` at 0x961a90 (semantic, medium); signature (untiered): `byte ProcessKinectEvent(MenuOpenHandler * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`; `ProcessKinectEvent` (medium); semantic signature: `bool (MenuOpenHandler* this, KinectEvent* event)`
     pub slot_4: *const c_void,
     /// `MenuEventHandler::ProcessThumbstickEvent` at 0x582610 (semantic, medium); signature (untiered): `undefined1 ProcessThumbstickEvent(void)`
     pub slot_5: *const c_void,
     /// `MenuEventHandler::ProcessMouseMoveEvent` at 0x5825f0 (semantic, medium); signature (untiered): `undefined1 ProcessMouseMoveEvent(void)`
     pub slot_6: *const c_void,
-    /// `MenuOpenHandler::ProcessButtonEvent` at 0x961580 (semantic, high); signature (untiered): `undefined1 ProcessButtonEvent(MenuOpenHandler * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`; `ProcessButtonEvent`:  (high); semantic signature: `bool (MenuOpenHandler* this, ButtonEvent* event)`
+    /// `MenuOpenHandler::ProcessButtonEvent` at 0x961580 (semantic, high); signature (untiered): `undefined1 ProcessButtonEvent(MenuOpenHandler * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`; `ProcessButtonEvent` (high); semantic signature: `bool (MenuOpenHandler* this, ButtonEvent* event)`
     pub slot_7: *const c_void,
 }
 impl MenuOpenHandler_vtable {
@@ -1797,9 +1797,9 @@ impl MenuOpenHandler_vtable {
         unsafe { core::mem::transmute::<*const c_void, Option<MenuOpenHandler_vtable_ProcessButtonEvent>>(self.slot_7) }
     }
 }
-/// `MenuOpenHandler::CanProcess`, slot 1:  (high).
+/// `MenuOpenHandler::CanProcess`, slot 1 (high).
 pub type MenuOpenHandler_vtable_CanProcess = unsafe extern "C" fn(this: *mut crate::MenuOpenHandler, event: *mut crate::InputEvent) -> bool;
-/// `MenuOpenHandler::ProcessButtonEvent`, slot 7:  (high).
+/// `MenuOpenHandler::ProcessButtonEvent`, slot 7 (high).
 pub type MenuOpenHandler_vtable_ProcessButtonEvent = unsafe extern "C" fn(this: *mut crate::MenuOpenHandler, event: *mut crate::ButtonEvent) -> bool;
 
 /// `MenuTopicManager::vftable` at 0x18fea40, id 206215 (rtti, high); 2 slots.

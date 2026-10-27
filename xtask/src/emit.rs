@@ -115,6 +115,11 @@ pub(crate) fn doc(text: &str) -> String {
     text.replace(['\r', '\n'], " ")
 }
 
+/// `: <meaning>` after an item's name, or nothing when the pass gives it no meaning.
+pub(crate) fn colon(meaning: &str) -> String {
+    if meaning.trim().is_empty() { String::new() } else { format!(": {}", doc(meaning)) }
+}
+
 pub(crate) enum Size {
     Exact { size: u64, conf: Option<String>, evidence: String },
     Partial { lower: u64, upper: Option<u64>, evidence: String },
@@ -344,7 +349,8 @@ fn build_classes(inp: &Inputs) -> BTreeMap<&str, Class<'_>> {
             for sf in &s.fields {
                 let off = u64::try_from(disp).unwrap() + sf.offset;
                 if let Some(fo) = class.fields.iter_mut().find(|fo| fo.f.off == off && fo.f.name == sf.name) {
-                    fo.meaning = format!("{} ({}){}", doc(&sf.meaning), sf.confidence, sf.retyped.as_ref().map(|r| format!("; retyped {}", doc(r))).unwrap_or_default());
+                    let text = if sf.meaning.trim().is_empty() { String::new() } else { format!("; {}", doc(&sf.meaning)) };
+                    fo.meaning = format!("{text} ({}){}", sf.confidence, sf.retyped.as_ref().map(|r| format!("; retyped {}", doc(r))).unwrap_or_default());
                 }
             }
         }
@@ -429,13 +435,10 @@ fn class_rs(c: &Class, value: bool, classes: &BTreeMap<&str, Class>, stats: &mut
             writeln!(out, "    pub unknown_{pos:X}: [u8; {}],", f.off - pos).unwrap();
         }
         let src = if f.src.is_empty() { String::new() } else { format!(", {}", doc(&f.src)) };
-        let meaning = if fo.meaning.is_empty() {
-            String::new()
-        } else {
+        if !fo.meaning.is_empty() {
             stats.field_meanings += 1;
-            format!("; {}", fo.meaning)
-        };
-        writeln!(out, "    /// +{:#X} `{}`{src}{meaning}", f.off, doc(&f.ty)).unwrap();
+        }
+        writeln!(out, "    /// +{:#X} `{}`{src}{}", f.off, doc(&f.ty), fo.meaning).unwrap();
         writeln!(out, "    pub {}: {},", fo.ident, ty_str(&fo.ty, classes)).unwrap();
         pos = f.off + f.size;
         stats.fields += 1;
@@ -509,7 +512,7 @@ pub struct {vt} {{").unwrap();
                 let slot = if col.offset == 0 { named.get(&(class.name.as_str(), i as u64)) } else { None };
                 if let Some(slot) = slot {
                     let name = ident(&slot.name);
-                    write!(d, "; `{}`: {} ({}); semantic signature: `{}`", slot.name, doc(&slot.meaning), slot.confidence, doc(&slot.signature)).unwrap();
+                    write!(d, "; `{}`{} ({}); semantic signature: `{}`", slot.name, colon(&slot.meaning), slot.confidence, doc(&slot.signature)).unwrap();
                     writeln!(members, "    pub const SLOT_{name}: usize = {i};").unwrap();
                     stats.named_slots += 1;
                     if slot.confidence == "high"
@@ -521,8 +524,8 @@ pub struct {vt} {{").unwrap();
     pub fn {name}(&self) -> Option<{alias}> {{
         unsafe {{ core::mem::transmute::<*const c_void, Option<{alias}>>(self.slot_{i}) }}
     }}").unwrap();
-                        writeln!(aliases, "/// `{}::{}`, slot {i}: {} ({}).
-pub type {alias} = {ty};", class.name, slot.name, doc(&slot.meaning), slot.confidence).unwrap();
+                        writeln!(aliases, "/// `{}::{}`, slot {i}{} ({}).
+pub type {alias} = {ty};", class.name, slot.name, colon(&slot.meaning), slot.confidence).unwrap();
                         stats.typed_slots += 1;
                     }
                 }
@@ -610,7 +613,7 @@ fn fns_rs(inp: &Inputs, ctx: &Ctx, stats: &mut Stats) -> Vec<(String, String)> {
         })
         .collect();
     let docs = |s: &Symbol| match semantic.get(&s.id.unwrap()) {
-        Some(f) => format!("{}; {} ({}); semantic signature: `{}`", symbol_doc(s), doc(&f.meaning), f.confidence, doc(&f.signature)),
+        Some(f) => format!("{}; semantic{} ({}); signature `{}`", symbol_doc(s), colon(&f.meaning), f.confidence, doc(&f.signature)),
         None => symbol_doc(s),
     };
     let typed = std::cell::Cell::new(0);

@@ -12663,7 +12663,7 @@ const _: () = assert!(core::mem::offset_of!(TeleportDoorSearch, field_148) == 0x
 pub struct TempLoadGameBuffer {
     /// +0x0 `vtbl:TempLoadGameBuffer:0`, rtti
     pub __vftable: *const crate::raw::vtables::TempLoadGameBuffer_vtable,
-    /// +0x8 `ptr`, base BGSLoadGameBuffer, semantic;  (high)
+    /// +0x8 `ptr`, base BGSLoadGameBuffer, semantic (high)
     pub data: [u8; 8],
     /// +0x10 `undefined8`, base BGSLoadGameBuffer
     pub field_10: u64,

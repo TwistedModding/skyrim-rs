@@ -1817,9 +1817,9 @@ impl DownloadProgressBar_vtable {
 pub struct DragonCameraState_vtable {
     /// `DragonCameraState::Destroy` at 0x55d460 (semantic, high); signature (untiered): `DragonCameraState * Destroy(DragonCameraState * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`; `Destroy`: scalar deleting destructor: own vtables, ThirdPersonState::dtor 0x55d3d0, frees 0x110 (high); semantic signature: `DragonCameraState* (DragonCameraState* this, u32 flags)`
     pub slot_0: *const c_void,
-    /// `DragonCameraState::Begin` at 0x55c740 (semantic, high); signature (untiered): `undefined Begin(DragonCameraState * this)`; `Begin`:  (high); semantic signature: `void (DragonCameraState* this)`
+    /// `DragonCameraState::Begin` at 0x55c740 (semantic, high); signature (untiered): `undefined Begin(DragonCameraState * this)`; `Begin` (high); semantic signature: `void (DragonCameraState* this)`
     pub slot_1: *const c_void,
-    /// `DragonCameraState::End` at 0x55c770 (semantic, high); signature (untiered): `undefined End(DragonCameraState * this)`; `End`:  (high); semantic signature: `void (DragonCameraState* this)`
+    /// `DragonCameraState::End` at 0x55c770 (semantic, high); signature (untiered): `undefined End(DragonCameraState * this)`; `End` (high); semantic signature: `void (DragonCameraState* this)`
     pub slot_2: *const c_void,
     /// `ThirdPersonState::Update` at 0x8fd590 (runtime, high); signature (untiered): `undefined Update(ThirdPersonState * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_3: *const c_void,
@@ -1827,25 +1827,25 @@ pub struct DragonCameraState_vtable {
     pub slot_4: *const c_void,
     /// `ThirdPersonState::GetTranslation` at 0x8fd880 (semantic, high); signature (untiered): `undefined GetTranslation(ThirdPersonState * this, float * param_1)`
     pub slot_5: *const c_void,
-    /// `DragonCameraState::SaveGame` at 0x55c8a0 (semantic, high); signature (untiered): `undefined SaveGame(DragonCameraState * this, longlong param_1)`; `SaveGame`:  (high); semantic signature: `void (DragonCameraState* this, BGSSaveFormBuffer* buffer)`
+    /// `DragonCameraState::SaveGame` at 0x55c8a0 (semantic, high); signature (untiered): `undefined SaveGame(DragonCameraState * this, longlong param_1)`; `SaveGame` (high); semantic signature: `void (DragonCameraState* this, BGSSaveFormBuffer* buffer)`
     pub slot_6: *const c_void,
-    /// `DragonCameraState::LoadGame` at 0x55c980 (semantic, high); signature (untiered): `undefined LoadGame(DragonCameraState * this, longlong param_1)`; `LoadGame`:  (high); semantic signature: `void (DragonCameraState* this, BGSLoadFormBuffer* buffer)`
+    /// `DragonCameraState::LoadGame` at 0x55c980 (semantic, high); signature (untiered): `undefined LoadGame(DragonCameraState * this, longlong param_1)`; `LoadGame` (high); semantic signature: `void (DragonCameraState* this, BGSLoadFormBuffer* buffer)`
     pub slot_7: *const c_void,
-    /// `DragonCameraState::Revert` at 0x55cab0 (semantic, high); signature (untiered): `undefined Revert(DragonCameraState * this)`; `Revert`:  (high); semantic signature: `void (DragonCameraState* this, BGSLoadFormBuffer* buffer)`
+    /// `DragonCameraState::Revert` at 0x55cab0 (semantic, high); signature (untiered): `undefined Revert(DragonCameraState * this)`; `Revert` (high); semantic signature: `void (DragonCameraState* this, BGSLoadFormBuffer* buffer)`
     pub slot_8: *const c_void,
-    /// `DragonCameraState::SetTargetHandle` at 0x55cbb0 (semantic, high); signature (untiered): `undefined SetTargetHandle(DragonCameraState * this, undefined4 * param_1)`; `SetTargetHandle`:  (high); semantic signature: `void (DragonCameraState* this, ObjectRefHandle* handle)`
+    /// `DragonCameraState::SetTargetHandle` at 0x55cbb0 (semantic, high); signature (untiered): `undefined SetTargetHandle(DragonCameraState * this, undefined4 * param_1)`; `SetTargetHandle` (high); semantic signature: `void (DragonCameraState* this, ObjectRefHandle* handle)`
     pub slot_9: *const c_void,
     /// `DragonCameraState::ResetOffsets` at 0x55cbc0 (semantic, high); signature (untiered): `undefined ResetOffsets(DragonCameraState * this)`; `ResetOffsets`: fOverShoulderDragon* and dolly reset (high); semantic signature: `void (DragonCameraState* this)`
     pub slot_10: *const c_void,
-    /// `DragonCameraState::SetCombatOffsets` at 0x55cb50 (semantic, high); signature (untiered): `undefined SetCombatOffsets(DragonCameraState * this, char param_1)`; `SetCombatOffsets`:  (high); semantic signature: `void (DragonCameraState* this, bool weaponDrawn)`
+    /// `DragonCameraState::SetCombatOffsets` at 0x55cb50 (semantic, high); signature (untiered): `undefined SetCombatOffsets(DragonCameraState * this, char param_1)`; `SetCombatOffsets` (high); semantic signature: `void (DragonCameraState* this, bool weaponDrawn)`
     pub slot_11: *const c_void,
-    /// `DragonCameraState::IsFreeLookActive` at 0x55c7a0 (semantic, high); signature (untiered): `ulonglong IsFreeLookActive(DragonCameraState * this)`; `IsFreeLookActive`:  (high); semantic signature: `bool (DragonCameraState* this)`
+    /// `DragonCameraState::IsFreeLookActive` at 0x55c7a0 (semantic, high); signature (untiered): `ulonglong IsFreeLookActive(DragonCameraState * this)`; `IsFreeLookActive` (high); semantic signature: `bool (DragonCameraState* this)`
     pub slot_12: *const c_void,
     /// `DragonCameraState::SetFreeRotationMode` at 0x55c7e0 (semantic, high); signature (untiered): `undefined SetFreeRotationMode(void)`; `SetFreeRotationMode`: empty (high); semantic signature: `void (DragonCameraState* this, bool allow)`
     pub slot_13: *const c_void,
-    /// `DragonCameraState::UpdateRotation` at 0x55cdf0 (semantic, high); signature (untiered): `undefined UpdateRotation(DragonCameraState * this)`; `UpdateRotation`:  (high); semantic signature: `void (DragonCameraState* this)`
+    /// `DragonCameraState::UpdateRotation` at 0x55cdf0 (semantic, high); signature (untiered): `undefined UpdateRotation(DragonCameraState * this)`; `UpdateRotation` (high); semantic signature: `void (DragonCameraState* this)`
     pub slot_14: *const c_void,
-    /// `DragonCameraState::ProcessLookInput` at 0x55cc60 (semantic, high); signature (untiered): `undefined ProcessLookInput(DragonCameraState * this, undefined8 * param_1)`; `ProcessLookInput`:  (high); semantic signature: `void (DragonCameraState* this, NiPoint2* look)`
+    /// `DragonCameraState::ProcessLookInput` at 0x55cc60 (semantic, high); signature (untiered): `undefined ProcessLookInput(DragonCameraState * this, undefined8 * param_1)`; `ProcessLookInput` (high); semantic signature: `void (DragonCameraState* this, NiPoint2* look)`
     pub slot_15: *const c_void,
 }
 impl DragonCameraState_vtable {
@@ -1931,29 +1931,29 @@ impl DragonCameraState_vtable {
 }
 /// `DragonCameraState::Destroy`, slot 0: scalar deleting destructor: own vtables, ThirdPersonState::dtor 0x55d3d0, frees 0x110 (high).
 pub type DragonCameraState_vtable_Destroy = unsafe extern "C" fn(this: *mut crate::DragonCameraState, flags: u32) -> *mut crate::DragonCameraState;
-/// `DragonCameraState::Begin`, slot 1:  (high).
+/// `DragonCameraState::Begin`, slot 1 (high).
 pub type DragonCameraState_vtable_Begin = unsafe extern "C" fn(this: *mut crate::DragonCameraState);
-/// `DragonCameraState::End`, slot 2:  (high).
+/// `DragonCameraState::End`, slot 2 (high).
 pub type DragonCameraState_vtable_End = unsafe extern "C" fn(this: *mut crate::DragonCameraState);
-/// `DragonCameraState::SaveGame`, slot 6:  (high).
+/// `DragonCameraState::SaveGame`, slot 6 (high).
 pub type DragonCameraState_vtable_SaveGame = unsafe extern "C" fn(this: *mut crate::DragonCameraState, buffer: *mut crate::BGSSaveFormBuffer);
-/// `DragonCameraState::LoadGame`, slot 7:  (high).
+/// `DragonCameraState::LoadGame`, slot 7 (high).
 pub type DragonCameraState_vtable_LoadGame = unsafe extern "C" fn(this: *mut crate::DragonCameraState, buffer: *mut crate::BGSLoadFormBuffer);
-/// `DragonCameraState::Revert`, slot 8:  (high).
+/// `DragonCameraState::Revert`, slot 8 (high).
 pub type DragonCameraState_vtable_Revert = unsafe extern "C" fn(this: *mut crate::DragonCameraState, buffer: *mut crate::BGSLoadFormBuffer);
-/// `DragonCameraState::SetTargetHandle`, slot 9:  (high).
+/// `DragonCameraState::SetTargetHandle`, slot 9 (high).
 pub type DragonCameraState_vtable_SetTargetHandle = unsafe extern "C" fn(this: *mut crate::DragonCameraState, handle: *mut c_void);
 /// `DragonCameraState::ResetOffsets`, slot 10: fOverShoulderDragon* and dolly reset (high).
 pub type DragonCameraState_vtable_ResetOffsets = unsafe extern "C" fn(this: *mut crate::DragonCameraState);
-/// `DragonCameraState::SetCombatOffsets`, slot 11:  (high).
+/// `DragonCameraState::SetCombatOffsets`, slot 11 (high).
 pub type DragonCameraState_vtable_SetCombatOffsets = unsafe extern "C" fn(this: *mut crate::DragonCameraState, weaponDrawn: bool);
-/// `DragonCameraState::IsFreeLookActive`, slot 12:  (high).
+/// `DragonCameraState::IsFreeLookActive`, slot 12 (high).
 pub type DragonCameraState_vtable_IsFreeLookActive = unsafe extern "C" fn(this: *mut crate::DragonCameraState) -> bool;
 /// `DragonCameraState::SetFreeRotationMode`, slot 13: empty (high).
 pub type DragonCameraState_vtable_SetFreeRotationMode = unsafe extern "C" fn(this: *mut crate::DragonCameraState, allow: bool);
-/// `DragonCameraState::UpdateRotation`, slot 14:  (high).
+/// `DragonCameraState::UpdateRotation`, slot 14 (high).
 pub type DragonCameraState_vtable_UpdateRotation = unsafe extern "C" fn(this: *mut crate::DragonCameraState);
-/// `DragonCameraState::ProcessLookInput`, slot 15:  (high).
+/// `DragonCameraState::ProcessLookInput`, slot 15 (high).
 pub type DragonCameraState_vtable_ProcessLookInput = unsafe extern "C" fn(this: *mut crate::DragonCameraState, look: *mut crate::NiPoint2);
 
 /// `DragonCameraState::vftable_20` at 0x18ecd58, id 205242 (rtti, high); 7 slots.
@@ -5949,7 +5949,7 @@ pub struct FirstPersonState_vtable {
     pub slot_6: *const c_void,
     /// `FirstPersonState::LoadGame` at 0x8f56a0 (semantic, high); signature (untiered): `undefined LoadGame(FirstPersonState * this, longlong * param_1)`; `LoadGame`: same, the last four only for buffer version > 0x14 (high); semantic signature: `void (FirstPersonState* this, BGSLoadFormBuffer* buffer)`
     pub slot_7: *const c_void,
-    /// `FirstPersonState::Revert` at 0x8f5740 (semantic, high); signature (untiered): `undefined Revert(FirstPersonState * this)`; `Revert`:  (high); semantic signature: `void (FirstPersonState* this, BGSLoadFormBuffer* buffer)`
+    /// `FirstPersonState::Revert` at 0x8f5740 (semantic, high); signature (untiered): `undefined Revert(FirstPersonState * this)`; `Revert` (high); semantic signature: `void (FirstPersonState* this, BGSLoadFormBuffer* buffer)`
     pub slot_8: *const c_void,
 }
 impl FirstPersonState_vtable {
@@ -6025,7 +6025,7 @@ pub type FirstPersonState_vtable_GetTranslation = unsafe extern "C" fn(this: *mu
 pub type FirstPersonState_vtable_SaveGame = unsafe extern "C" fn(this: *mut crate::FirstPersonState, buffer: *mut crate::BGSSaveFormBuffer);
 /// `FirstPersonState::LoadGame`, slot 7: same, the last four only for buffer version > 0x14 (high).
 pub type FirstPersonState_vtable_LoadGame = unsafe extern "C" fn(this: *mut crate::FirstPersonState, buffer: *mut crate::BGSLoadFormBuffer);
-/// `FirstPersonState::Revert`, slot 8:  (high).
+/// `FirstPersonState::Revert`, slot 8 (high).
 pub type FirstPersonState_vtable_Revert = unsafe extern "C" fn(this: *mut crate::FirstPersonState, buffer: *mut crate::BGSLoadFormBuffer);
 
 /// `FirstPersonState::vftable_20` at 0x196d940, id 214857 (rtti, high); 7 slots.
@@ -9498,11 +9498,11 @@ pub struct HorseCameraState_vtable {
     pub slot_4: *const c_void,
     /// `ThirdPersonState::GetTranslation` at 0x8fd880 (semantic, high); signature (untiered): `undefined GetTranslation(ThirdPersonState * this, float * param_1)`
     pub slot_5: *const c_void,
-    /// `HorseCameraState::SaveGame` at 0x8f6dd0 (semantic, high); signature (untiered): `undefined SaveGame(HorseCameraState * this, longlong param_1)`; `SaveGame`:  (high); semantic signature: `void (HorseCameraState* this, BGSSaveFormBuffer* buffer)`
+    /// `HorseCameraState::SaveGame` at 0x8f6dd0 (semantic, high); signature (untiered): `undefined SaveGame(HorseCameraState * this, longlong param_1)`; `SaveGame` (high); semantic signature: `void (HorseCameraState* this, BGSSaveFormBuffer* buffer)`
     pub slot_6: *const c_void,
     /// `HorseCameraState::LoadGame` at 0x8f6eb0 (semantic, high); signature (untiered): `undefined LoadGame(HorseCameraState * this, longlong param_1)`; `LoadGame`: also SetTarget(mount) (high); semantic signature: `void (HorseCameraState* this, BGSLoadFormBuffer* buffer)`
     pub slot_7: *const c_void,
-    /// `HorseCameraState::Revert` at 0x8f6fd0 (semantic, high); signature (untiered): `undefined Revert(HorseCameraState * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`; `Revert`:  (high); semantic signature: `void (HorseCameraState* this, BGSLoadFormBuffer* buffer)`
+    /// `HorseCameraState::Revert` at 0x8f6fd0 (semantic, high); signature (untiered): `undefined Revert(HorseCameraState * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`; `Revert` (high); semantic signature: `void (HorseCameraState* this, BGSLoadFormBuffer* buffer)`
     pub slot_8: *const c_void,
     /// `HorseCameraState::SetTargetHandle` at 0x8f7100 (semantic, high); signature (untiered): `undefined SetTargetHandle(HorseCameraState * this, undefined4 * param_1)`; `SetTargetHandle`: mountHandle = *handle (high); semantic signature: `void (HorseCameraState* this, ObjectRefHandle* handle)`
     pub slot_9: *const c_void,
@@ -9510,13 +9510,13 @@ pub struct HorseCameraState_vtable {
     pub slot_10: *const c_void,
     /// `HorseCameraState::SetCombatOffsets` at 0x8f7010 (semantic, high); signature (untiered): `undefined SetCombatOffsets(HorseCameraState * this, char param_1)`; `SetCombatOffsets`: fOverShoulderRangedMounted* or the mount offsets (high); semantic signature: `void (HorseCameraState* this, bool weaponDrawn)`
     pub slot_11: *const c_void,
-    /// `HorseCameraState::IsFreeLookActive` at 0x8f76a0 (semantic, high); signature (untiered): `undefined8 IsFreeLookActive(HorseCameraState * this)`; `IsFreeLookActive`:  (high); semantic signature: `bool (HorseCameraState* this)`
+    /// `HorseCameraState::IsFreeLookActive` at 0x8f76a0 (semantic, high); signature (untiered): `undefined8 IsFreeLookActive(HorseCameraState * this)`; `IsFreeLookActive` (high); semantic signature: `bool (HorseCameraState* this)`
     pub slot_12: *const c_void,
     /// `HorseCameraState::SetFreeRotationMode` at 0x8f6d10 (semantic, high); signature (untiered): `undefined SetFreeRotationMode(void)`; `SetFreeRotationMode`: empty (high); semantic signature: `void (HorseCameraState* this, bool allow)`
     pub slot_13: *const c_void,
-    /// `HorseCameraState::UpdateRotation` at 0x8f7360 (semantic, high); signature (untiered): `undefined UpdateRotation(HorseCameraState * this)`; `UpdateRotation`:  (high); semantic signature: `void (HorseCameraState* this)`
+    /// `HorseCameraState::UpdateRotation` at 0x8f7360 (semantic, high); signature (untiered): `undefined UpdateRotation(HorseCameraState * this)`; `UpdateRotation` (high); semantic signature: `void (HorseCameraState* this)`
     pub slot_14: *const c_void,
-    /// `HorseCameraState::ProcessLookInput` at 0x8f71e0 (semantic, high); signature (untiered): `undefined ProcessLookInput(HorseCameraState * this, undefined8 * param_1)`; `ProcessLookInput`:  (high); semantic signature: `void (HorseCameraState* this, NiPoint2* look)`
+    /// `HorseCameraState::ProcessLookInput` at 0x8f71e0 (semantic, high); signature (untiered): `undefined ProcessLookInput(HorseCameraState * this, undefined8 * param_1)`; `ProcessLookInput` (high); semantic signature: `void (HorseCameraState* this, NiPoint2* look)`
     pub slot_15: *const c_void,
 }
 impl HorseCameraState_vtable {
@@ -9606,11 +9606,11 @@ pub type HorseCameraState_vtable_Destroy = unsafe extern "C" fn(this: *mut crate
 pub type HorseCameraState_vtable_Begin = unsafe extern "C" fn(this: *mut crate::HorseCameraState);
 /// `HorseCameraState::End`, slot 2: ThirdPersonState::End, +0xf0 = 0 (high).
 pub type HorseCameraState_vtable_End = unsafe extern "C" fn(this: *mut crate::HorseCameraState);
-/// `HorseCameraState::SaveGame`, slot 6:  (high).
+/// `HorseCameraState::SaveGame`, slot 6 (high).
 pub type HorseCameraState_vtable_SaveGame = unsafe extern "C" fn(this: *mut crate::HorseCameraState, buffer: *mut crate::BGSSaveFormBuffer);
 /// `HorseCameraState::LoadGame`, slot 7: also SetTarget(mount) (high).
 pub type HorseCameraState_vtable_LoadGame = unsafe extern "C" fn(this: *mut crate::HorseCameraState, buffer: *mut crate::BGSLoadFormBuffer);
-/// `HorseCameraState::Revert`, slot 8:  (high).
+/// `HorseCameraState::Revert`, slot 8 (high).
 pub type HorseCameraState_vtable_Revert = unsafe extern "C" fn(this: *mut crate::HorseCameraState, buffer: *mut crate::BGSLoadFormBuffer);
 /// `HorseCameraState::SetTargetHandle`, slot 9: mountHandle = *handle (high).
 pub type HorseCameraState_vtable_SetTargetHandle = unsafe extern "C" fn(this: *mut crate::HorseCameraState, handle: *mut c_void);
@@ -9618,13 +9618,13 @@ pub type HorseCameraState_vtable_SetTargetHandle = unsafe extern "C" fn(this: *m
 pub type HorseCameraState_vtable_ResetOffsets = unsafe extern "C" fn(this: *mut crate::HorseCameraState);
 /// `HorseCameraState::SetCombatOffsets`, slot 11: fOverShoulderRangedMounted* or the mount offsets (high).
 pub type HorseCameraState_vtable_SetCombatOffsets = unsafe extern "C" fn(this: *mut crate::HorseCameraState, weaponDrawn: bool);
-/// `HorseCameraState::IsFreeLookActive`, slot 12:  (high).
+/// `HorseCameraState::IsFreeLookActive`, slot 12 (high).
 pub type HorseCameraState_vtable_IsFreeLookActive = unsafe extern "C" fn(this: *mut crate::HorseCameraState) -> bool;
 /// `HorseCameraState::SetFreeRotationMode`, slot 13: empty (high).
 pub type HorseCameraState_vtable_SetFreeRotationMode = unsafe extern "C" fn(this: *mut crate::HorseCameraState, allow: bool);
-/// `HorseCameraState::UpdateRotation`, slot 14:  (high).
+/// `HorseCameraState::UpdateRotation`, slot 14 (high).
 pub type HorseCameraState_vtable_UpdateRotation = unsafe extern "C" fn(this: *mut crate::HorseCameraState);
-/// `HorseCameraState::ProcessLookInput`, slot 15:  (high).
+/// `HorseCameraState::ProcessLookInput`, slot 15 (high).
 pub type HorseCameraState_vtable_ProcessLookInput = unsafe extern "C" fn(this: *mut crate::HorseCameraState, look: *mut crate::NiPoint2);
 
 /// `HorseCameraState::vftable_20` at 0x196ced0, id 214839 (rtti, high); 7 slots.
@@ -14219,9 +14219,9 @@ pub struct IronSightsState_vtable {
     pub slot_2: *const c_void,
     /// `IronSightsState::Update` at 0x8f7700 (semantic, high); signature (untiered): `undefined Update(IronSightsState * this, undefined8 param_2, undefined4 param_3, undefined4 param_4)`; `Update`: writes the root from slots 4/5 (high); semantic signature: `void (TESCameraState* this, BSTSmartPointer<TESCameraState>* next)`
     pub slot_3: *const c_void,
-    /// `IronSightsState::GetRotation` at 0x8f7970 (semantic, high); signature (untiered): `undefined GetRotation(IronSightsState * this, float * param_1)`; `GetRotation`:  (high); semantic signature: `void (IronSightsState* this, NiQuaternion* out)`
+    /// `IronSightsState::GetRotation` at 0x8f7970 (semantic, high); signature (untiered): `undefined GetRotation(IronSightsState * this, float * param_1)`; `GetRotation` (high); semantic signature: `void (IronSightsState* this, NiQuaternion* out)`
     pub slot_4: *const c_void,
-    /// `IronSightsState::GetTranslation` at 0x8f79a0 (semantic, high); signature (untiered): `undefined GetTranslation(IronSightsState * this, undefined4 * param_1)`; `GetTranslation`:  (high); semantic signature: `void (IronSightsState* this, NiPoint3* out)`
+    /// `IronSightsState::GetTranslation` at 0x8f79a0 (semantic, high); signature (untiered): `undefined GetTranslation(IronSightsState * this, undefined4 * param_1)`; `GetTranslation` (high); semantic signature: `void (IronSightsState* this, NiPoint3* out)`
     pub slot_5: *const c_void,
     /// `TESCameraState::SaveGame` at 0x24a080 (semantic, high); signature (untiered): `undefined SaveGame(void)`
     pub slot_6: *const c_void,
@@ -14269,9 +14269,9 @@ pub type IronSightsState_vtable_Destroy = unsafe extern "C" fn(this: *mut crate:
 pub type IronSightsState_vtable_Begin = unsafe extern "C" fn(this: *mut crate::TESCameraState);
 /// `IronSightsState::Update`, slot 3: writes the root from slots 4/5 (high).
 pub type IronSightsState_vtable_Update = unsafe extern "C" fn(this: *mut crate::TESCameraState, next: *mut c_void);
-/// `IronSightsState::GetRotation`, slot 4:  (high).
+/// `IronSightsState::GetRotation`, slot 4 (high).
 pub type IronSightsState_vtable_GetRotation = unsafe extern "C" fn(this: *mut crate::IronSightsState, out: *mut crate::NiQuaternion);
-/// `IronSightsState::GetTranslation`, slot 5:  (high).
+/// `IronSightsState::GetTranslation`, slot 5 (high).
 pub type IronSightsState_vtable_GetTranslation = unsafe extern "C" fn(this: *mut crate::IronSightsState, out: *mut crate::NiPoint3);
 
 /// `IsSpellTargetFunctor::vftable` at 0x18f8d60, id 205918 (rtti, high); 2 slots.

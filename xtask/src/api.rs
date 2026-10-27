@@ -4,7 +4,7 @@
 use std::collections::{BTreeMap, HashMap, HashSet};
 use std::fmt::Write;
 
-use crate::emit::{Class, KEYWORDS, doc, ident, is_funclet, is_placeholder, screaming, unique};
+use crate::emit::{Class, KEYWORDS, colon, doc, ident, is_funclet, is_placeholder, screaming, unique};
 use crate::groups::{Items, Kind, family};
 use crate::inputs::{Inputs, SemFunction, SemGlobal, SemSlot, Symbol};
 
@@ -713,7 +713,7 @@ fn slots(
             let sym = by_rva.get(&target).copied();
             let (tier, engine, sig, lines, safe_conf) = if let Some((slot, pass)) = semantic.get(&(class, i as u64)) {
                 let mut lines = vec![
-                    format!("`{class}::{}`, vtable slot {i}: {}", slot.name, slot.meaning),
+                    format!("`{class}::{}`, vtable slot {i}{}", slot.name, colon(&slot.meaning)),
                     String::new(),
                     format!("Semantic, {pass} pass, {}; called through the object's vtable.", slot.confidence),
                     format!("`{}`", slot.signature),
@@ -863,7 +863,7 @@ fn functions(
         let id = s.id.unwrap();
         let (mut lines, reason) = match sem {
             Some((f, pass)) => (
-                [format!("`{name}`: {}", f.meaning), String::new(), format!("Semantic, {pass} pass, {}; {}.", f.confidence, ledger(s, name)), format!("`{signature}`")]
+                [format!("`{name}`{}", colon(&f.meaning)), String::new(), format!("Semantic, {pass} pass, {}; {}.", f.confidence, ledger(s, name)), format!("`{signature}`")]
                     .into_iter()
                     .chain(notes)
                     .collect(),
@@ -954,7 +954,7 @@ fn fields(inp: &Inputs, ctx: &Ctx, entries: &mut Vec<Entry>) {
                 let Some(fo) = class.fields.iter().find(|fo| fo.f.off == sf.offset && fo.f.name == sf.name) else { continue };
                 let crate::emit::Ty::Ptr(target) = &fo.ty else { continue };
                 let lines = [
-                    format!("`{}::{}` at +{:#X}: {}", sc.name, sf.name, sf.offset, sf.meaning),
+                    format!("`{}::{}` at +{:#X}{}", sc.name, sf.name, sf.offset, colon(&sf.meaning)),
                     String::new(),
                     format!("Semantic field, {} pass, high; `None` while the pointer is null.", pass.subsystem),
                 ];

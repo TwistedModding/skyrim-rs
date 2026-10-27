@@ -1555,7 +1555,7 @@ pub const AutoVanityState__GetRotation: u64 = 50711;
 pub const AutoVanityState__GetTranslation: u64 = 50712;
 /// `AutoVanityState::Update` at 0x8f3810 (semantic, high); signature (untiered): `undefined Update(AutoVanityState * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
 pub const AutoVanityState__Update: u64 = 50709;
-/// `AutoVanityState::dtor` at 0x8f3750 (semantic, high); signature (untiered): `undefined dtor(AutoVanityState * this)`; non-deleting destructor: restores TESCameraState's vtable (no members to release) (high); semantic signature: `void (AutoVanityState* this)`
+/// `AutoVanityState::dtor` at 0x8f3750 (semantic, high); signature (untiered): `undefined dtor(AutoVanityState * this)`; semantic: non-deleting destructor: restores TESCameraState's vtable (no members to release) (high); signature `void (AutoVanityState* this)`
 pub const AutoVanityState__dtor: u64 = 50707;
 /// `AutoVanityState::dtor` as a function pointer type (high).
 pub type AutoVanityState__dtor_fn = unsafe extern "C" fn(this: *mut crate::AutoVanityState);
@@ -1935,7 +1935,7 @@ pub const BGSBodyPartData__BGSPreloadable_vdtor: u64 = 23491;
 pub const BGSBodyPartData__BGSPreloadable_vfunc_4: u64 = 23484;
 /// `BGSBodyPartData::BGSPreloadable_vfunc_4_sub0` at 0x38aca0 (callgraph, medium); signature (untiered): `undefined BGSPreloadable_vfunc_4_sub0(longlong param_1, longlong param_2, ulonglong param_3, undefined8 param_4)`
 pub const BGSBodyPartData__BGSPreloadable_vfunc_4_sub0: u64 = 23453;
-/// `BGSBodyPartData::GetPart` at 0x38b720 (semantic, high); signature (untiered): `undefined8 GetPart(longlong param_1, uint param_2)`; returns parts[partIndex] (+0x50 + 8 * index) for index 0..5, else null (high); semantic signature: `BGSBodyPart* (const BGSBodyPartData* this, i32 partIndex)`
+/// `BGSBodyPartData::GetPart` at 0x38b720 (semantic, high); signature (untiered): `undefined8 GetPart(longlong param_1, uint param_2)`; semantic: returns parts[partIndex] (+0x50 + 8 * index) for index 0..5, else null (high); signature `BGSBodyPart* (const BGSBodyPartData* this, i32 partIndex)`
 pub const BGSBodyPartData__GetPart: u64 = 23473;
 /// `BGSBodyPartData::GetPart` as a function pointer type (high).
 pub type BGSBodyPartData__GetPart_fn = unsafe extern "C" fn(this: *const crate::BGSBodyPartData, partIndex: i32) -> *mut c_void;
@@ -1961,7 +1961,7 @@ pub const BGSBodyPartData__vfunc_6: u64 = 23469;
 pub const BGSBodyPartData__vfunc_6_sub0: u64 = 23442;
 /// `BGSBodyPartData::vfunc_6_sub1` at 0x389ed0 (callgraph, medium); signature (untiered): `bool vfunc_6_sub1(longlong * param_1, longlong param_2, undefined8 param_3, char * param_4)`
 pub const BGSBodyPartData__vfunc_6_sub1: u64 = 23446;
-/// `BGSCameraPath::AreDataFlagBits01Clear` at 0x316fe0 (runtime, high); signature (untiered): `bool AreDataFlagBits01Clear(longlong param_1)`; (DATA flags byte +0x38 & 3) == 0 (high); semantic signature: `bool (BGSCameraPath* this)`
+/// `BGSCameraPath::AreDataFlagBits01Clear` at 0x316fe0 (runtime, high); signature (untiered): `bool AreDataFlagBits01Clear(longlong param_1)`; semantic: (DATA flags byte +0x38 & 3) == 0 (high); signature `bool (BGSCameraPath* this)`
 pub const BGSCameraPath__AreDataFlagBits01Clear: u64 = 20645;
 /// `BGSCameraPath::AreDataFlagBits01Clear` as a function pointer type (high).
 pub type BGSCameraPath__AreDataFlagBits01Clear_fn = unsafe extern "C" fn(this: *mut crate::BGSCameraPath) -> bool;
@@ -1971,15 +1971,15 @@ pub const BGSCameraPath__ClearData: u64 = 20636;
 pub const BGSCameraPath__CreateDuplicateForm: u64 = 20637;
 /// `BGSCameraPath::Destroy` at 0x317ce0 (semantic, high); signature (untiered): `BGSCameraPath * Destroy(BGSCameraPath * this, ulonglong param_1, undefined8 * param_2, TypeDescriptor * param_3)`
 pub const BGSCameraPath__Destroy: u64 = 20674;
-/// `BGSCameraPath::GetChildAt` at 0x317180 (semantic, high); signature (untiered): `undefined8 GetChildAt(longlong param_1, uint param_2)`; children[index] cast to BGSCameraPath, or null (high); semantic signature: `BGSCameraPath* (BGSCameraPath* this, u32 index)`
+/// `BGSCameraPath::GetChildAt` at 0x317180 (semantic, high); signature (untiered): `undefined8 GetChildAt(longlong param_1, uint param_2)`; semantic: children[index] cast to BGSCameraPath, or null (high); signature `BGSCameraPath* (BGSCameraPath* this, u32 index)`
 pub const BGSCameraPath__GetChildAt: u64 = 20651;
 /// `BGSCameraPath::GetChildAt` as a function pointer type (high).
 pub type BGSCameraPath__GetChildAt_fn = unsafe extern "C" fn(this: *mut crate::BGSCameraPath, index: u32) -> *mut crate::BGSCameraPath;
-/// `BGSCameraPath::GetDataFlagBit0` at 0x317000 (semantic, high); signature (untiered): `byte GetDataFlagBit0(longlong param_1)`; DATA flags (+0x38) bit 0 (high); semantic signature: `bool (BGSCameraPath* this)`
+/// `BGSCameraPath::GetDataFlagBit0` at 0x317000 (semantic, high); signature (untiered): `byte GetDataFlagBit0(longlong param_1)`; semantic: DATA flags (+0x38) bit 0 (high); signature `bool (BGSCameraPath* this)`
 pub const BGSCameraPath__GetDataFlagBit0: u64 = 20646;
 /// `BGSCameraPath::GetDataFlagBit0` as a function pointer type (high).
 pub type BGSCameraPath__GetDataFlagBit0_fn = unsafe extern "C" fn(this: *mut crate::BGSCameraPath) -> bool;
-/// `BGSCameraPath::GetDataFlagBit1` at 0x317030 (semantic, high); signature (untiered): `byte GetDataFlagBit1(longlong param_1)`; DATA flags (+0x38) bit 1 (high); semantic signature: `bool (BGSCameraPath* this)`
+/// `BGSCameraPath::GetDataFlagBit1` at 0x317030 (semantic, high); signature (untiered): `byte GetDataFlagBit1(longlong param_1)`; semantic: DATA flags (+0x38) bit 1 (high); signature `bool (BGSCameraPath* this)`
 pub const BGSCameraPath__GetDataFlagBit1: u64 = 20647;
 /// `BGSCameraPath::GetDataFlagBit1` as a function pointer type (high).
 pub type BGSCameraPath__GetDataFlagBit1_fn = unsafe extern "C" fn(this: *mut crate::BGSCameraPath) -> bool;
@@ -1987,35 +1987,35 @@ pub type BGSCameraPath__GetDataFlagBit1_fn = unsafe extern "C" fn(this: *mut cra
 pub const BGSCameraPath__InitItem: u64 = 20639;
 /// `BGSCameraPath::InitializeData` at 0x316110 (semantic, high); signature (untiered): `undefined InitializeData(BGSCameraPath * this)`
 pub const BGSCameraPath__InitializeData: u64 = 20635;
-/// `BGSCameraPath::InsertChildAfter` at 0x317340 (semantic, high); signature (untiered): `undefined InsertChildAfter(longlong param_1, longlong param_2, longlong param_3, undefined8 param_4)`; as InsertChildAt with index = index of after + 1 (0 when after is null) (high); semantic signature: `void (BGSCameraPath* this, BGSCameraPath* after, BGSCameraPath* child)`
+/// `BGSCameraPath::InsertChildAfter` at 0x317340 (semantic, high); signature (untiered): `undefined InsertChildAfter(longlong param_1, longlong param_2, longlong param_3, undefined8 param_4)`; semantic: as InsertChildAt with index = index of after + 1 (0 when after is null) (high); signature `void (BGSCameraPath* this, BGSCameraPath* after, BGSCameraPath* child)`
 pub const BGSCameraPath__InsertChildAfter: u64 = 20654;
 /// `BGSCameraPath::InsertChildAfter` as a function pointer type (high).
 pub type BGSCameraPath__InsertChildAfter_fn = unsafe extern "C" fn(this: *mut crate::BGSCameraPath, after: *mut crate::BGSCameraPath, child: *mut crate::BGSCameraPath);
-/// `BGSCameraPath::InsertChildAt` at 0x3171f0 (semantic, high); signature (untiered): `undefined InsertChildAt(longlong param_1, uint param_2, longlong param_3, undefined8 param_4)`; create children if needed; index -1 = append; set child->parent, child->previousSibling = children[index-1], children[index]->previousSibling = child; insert (high); semantic signature: `void (BGSCameraPath* this, u32 index, BGSCameraPath* child)`
+/// `BGSCameraPath::InsertChildAt` at 0x3171f0 (semantic, high); signature (untiered): `undefined InsertChildAt(longlong param_1, uint param_2, longlong param_3, undefined8 param_4)`; semantic: create children if needed; index -1 = append; set child->parent, child->previousSibling = children[index-1], children[index]->previousSibling = child; insert (high); signature `void (BGSCameraPath* this, u32 index, BGSCameraPath* child)`
 pub const BGSCameraPath__InsertChildAt: u64 = 20653;
 /// `BGSCameraPath::InsertChildAt` as a function pointer type (high).
 pub type BGSCameraPath__InsertChildAt_fn = unsafe extern "C" fn(this: *mut crate::BGSCameraPath, index: u32, child: *mut crate::BGSCameraPath);
 /// `BGSCameraPath::Load` at 0x316460 (semantic, high); signature (untiered): `undefined8 Load(BGSCameraPath * this, uint * param_1, undefined1 * param_2, ulonglong param_3)`
 pub const BGSCameraPath__Load: u64 = 20638;
-/// `BGSCameraPath::RemoveChild` at 0x317590 (semantic, high); signature (untiered): `undefined RemoveChild(longlong param_1, longlong param_2)`; find child in children, relink its follower's previousSibling, remove and compact (high); semantic signature: `void (BGSCameraPath* this, BGSCameraPath* child)`
+/// `BGSCameraPath::RemoveChild` at 0x317590 (semantic, high); signature (untiered): `undefined RemoveChild(longlong param_1, longlong param_2)`; semantic: find child in children, relink its follower's previousSibling, remove and compact (high); signature `void (BGSCameraPath* this, BGSCameraPath* child)`
 pub const BGSCameraPath__RemoveChild: u64 = 20656;
 /// `BGSCameraPath::RemoveChild` as a function pointer type (high).
 pub type BGSCameraPath__RemoveChild_fn = unsafe extern "C" fn(this: *mut crate::BGSCameraPath, child: *mut crate::BGSCameraPath);
-/// `BGSCameraPath::RemoveChildAt` at 0x3174b0 (semantic, high); signature (untiered): `undefined RemoveChildAt(longlong param_1, uint param_2)`; children[index+1]->previousSibling = children[index-1]; null the slot and compact (high); semantic signature: `void (BGSCameraPath* this, u32 index)`
+/// `BGSCameraPath::RemoveChildAt` at 0x3174b0 (semantic, high); signature (untiered): `undefined RemoveChildAt(longlong param_1, uint param_2)`; semantic: children[index+1]->previousSibling = children[index-1]; null the slot and compact (high); signature `void (BGSCameraPath* this, u32 index)`
 pub const BGSCameraPath__RemoveChildAt: u64 = 20655;
 /// `BGSCameraPath::RemoveChildAt` as a function pointer type (high).
 pub type BGSCameraPath__RemoveChildAt_fn = unsafe extern "C" fn(this: *mut crate::BGSCameraPath, index: u32);
-/// `BGSCameraPath::ctor` at 0x315ed0 (layout_inference, high); signature (low): `BGSCameraPath * ctor(BGSCameraPath * this, undefined8 param_1, uint * param_2, longlong * param_3)`; TESForm::ctor, vtable 0x182cc30, conditions ctor, zero list/flags/children/links, formType 0x61 (high); semantic signature: `BGSCameraPath* (BGSCameraPath* this)`
+/// `BGSCameraPath::ctor` at 0x315ed0 (layout_inference, high); signature (low): `BGSCameraPath * ctor(BGSCameraPath * this, undefined8 param_1, uint * param_2, longlong * param_3)`; semantic: TESForm::ctor, vtable 0x182cc30, conditions ctor, zero list/flags/children/links, formType 0x61 (high); signature `BGSCameraPath* (BGSCameraPath* this)`
 pub const BGSCameraPath__ctor: u64 = 20633;
 /// `BGSCameraPath::ctor` as a function pointer type (high).
 pub type BGSCameraPath__ctor_fn = unsafe extern "C" fn(this: *mut crate::BGSCameraPath) -> *mut crate::BGSCameraPath;
-/// `BGSCameraPath::dtor` at 0x315f30 (semantic, high); signature (untiered): `undefined dtor(BGSCameraPath * this, undefined8 param_1, undefined8 * param_2, TypeDescriptor * param_3)`; destructor: detach from the parent (or the root list, fixing the next sibling's previousSibling) unless TESDataHandler+0xda5 is set, delete every child (child->parent = 0, child vdtor 1) and the children array, free shots and conditions, TESForm::dtor (high); semantic signature: `void (BGSCameraPath* this)`
+/// `BGSCameraPath::dtor` at 0x315f30 (semantic, high); signature (untiered): `undefined dtor(BGSCameraPath * this, undefined8 param_1, undefined8 * param_2, TypeDescriptor * param_3)`; semantic: destructor: detach from the parent (or the root list, fixing the next sibling's previousSibling) unless TESDataHandler+0xda5 is set, delete every child (child->parent = 0, child vdtor 1) and the children array, free shots and conditions, TESForm::dtor (high); signature `void (BGSCameraPath* this)`
 pub const BGSCameraPath__dtor: u64 = 20634;
 /// `BGSCameraPath::dtor` as a function pointer type (high).
 pub type BGSCameraPath__dtor_fn = unsafe extern "C" fn(this: *mut crate::BGSCameraPath);
 /// `BGSCameraShot::Destroy` at 0x31a0c0 (semantic, high); signature (untiered): `BGSCameraShot * Destroy(BGSCameraShot * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const BGSCameraShot__Destroy: u64 = 20715;
-/// `BGSCameraShot::GetLookAtPoint` at 0x319f60 (semantic, high); signature (untiered): `undefined4 * GetLookAtPoint(longlong param_1, undefined4 * param_2)`; out = lookAtNode world translate (targetPercent <= 0) or ComputeVATSCameraTargetPosition(g_VATS, targetPercent); also pushes rotationEuler (animated root rotation or 0) to the VATS state (high); semantic signature: `NiPoint3* (BGSCameraShot* shot, NiPoint3* out)`
+/// `BGSCameraShot::GetLookAtPoint` at 0x319f60 (semantic, high); signature (untiered): `undefined4 * GetLookAtPoint(longlong param_1, undefined4 * param_2)`; semantic: out = lookAtNode world translate (targetPercent <= 0) or ComputeVATSCameraTargetPosition(g_VATS, targetPercent); also pushes rotationEuler (animated root rotation or 0) to the VATS state (high); signature `NiPoint3* (BGSCameraShot* shot, NiPoint3* out)`
 pub const BGSCameraShot__GetLookAtPoint: u64 = 20711;
 /// `BGSCameraShot::GetLookAtPoint` as a function pointer type (high).
 pub type BGSCameraShot__GetLookAtPoint_fn = unsafe extern "C" fn(shot: *mut crate::BGSCameraShot, out: *mut crate::NiPoint3) -> *mut crate::NiPoint3;
@@ -2025,23 +2025,23 @@ pub const BGSCameraShot__InitItem: u64 = 20703;
 pub const BGSCameraShot__InitializeData: u64 = 20702;
 /// `BGSCameraShot::Load` at 0x318ca0 (semantic, high); signature (untiered): `undefined8 Load(BGSCameraShot * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
 pub const BGSCameraShot__Load: u64 = 20704;
-/// `BGSCameraShot::ReleaseRuntime` at 0x319370 (semantic, high); signature (untiered): `undefined ReleaseRuntime(longlong param_1)`; release +0x88, +0x90, +0xa8, +0xa0, +0xb8; +0x98 = invalid handle; cutAway = 0; UIVATSCameraOut when the in-sound flag is set and no VATS command is queued (high); semantic signature: `void (BGSCameraShot* shot)`
+/// `BGSCameraShot::ReleaseRuntime` at 0x319370 (semantic, high); signature (untiered): `undefined ReleaseRuntime(longlong param_1)`; semantic: release +0x88, +0x90, +0xa8, +0xa0, +0xb8; +0x98 = invalid handle; cutAway = 0; UIVATSCameraOut when the in-sound flag is set and no VATS command is queued (high); signature `void (BGSCameraShot* shot)`
 pub const BGSCameraShot__ReleaseRuntime: u64 = 20707;
 /// `BGSCameraShot::ReleaseRuntime` as a function pointer type (high).
 pub type BGSCameraShot__ReleaseRuntime_fn = unsafe extern "C" fn(shot: *mut crate::BGSCameraShot);
-/// `BGSCameraShot::TESImageSpaceModifiableForm_Destroy` at 0x31a0b0 (semantic, high); signature (untiered): `undefined TESImageSpaceModifiableForm_Destroy(BGSCameraShot * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`; this-adjusting thunk (this - 0x48) to BGSCameraShot::Destroy (high); semantic signature: `BGSCameraShot* (TESImageSpaceModifiableForm* this, u32 flags)`
+/// `BGSCameraShot::TESImageSpaceModifiableForm_Destroy` at 0x31a0b0 (semantic, high); signature (untiered): `undefined TESImageSpaceModifiableForm_Destroy(BGSCameraShot * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`; semantic: this-adjusting thunk (this - 0x48) to BGSCameraShot::Destroy (high); signature `BGSCameraShot* (TESImageSpaceModifiableForm* this, u32 flags)`
 pub const BGSCameraShot__TESImageSpaceModifiableForm_Destroy: u64 = 20714;
 /// `BGSCameraShot::TESImageSpaceModifiableForm_Destroy` as a function pointer type (high).
 pub type BGSCameraShot__TESImageSpaceModifiableForm_Destroy_fn = unsafe extern "C" fn(this: *mut crate::TESImageSpaceModifiableForm, flags: u32) -> *mut crate::BGSCameraShot;
-/// `BGSCameraShot::TESModel_Destroy` at 0x31a0a4 (semantic, high); signature (untiered): `undefined TESModel_Destroy(BGSCameraShot * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`; this-adjusting thunk (this - 0x20) to BGSCameraShot::Destroy (high); semantic signature: `BGSCameraShot* (TESModel* this, u32 flags)`
+/// `BGSCameraShot::TESModel_Destroy` at 0x31a0a4 (semantic, high); signature (untiered): `undefined TESModel_Destroy(BGSCameraShot * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`; semantic: this-adjusting thunk (this - 0x20) to BGSCameraShot::Destroy (high); signature `BGSCameraShot* (TESModel* this, u32 flags)`
 pub const BGSCameraShot__TESModel_Destroy: u64 = 20713;
 /// `BGSCameraShot::TESModel_Destroy` as a function pointer type (high).
 pub type BGSCameraShot__TESModel_Destroy_fn = unsafe extern "C" fn(this: *mut crate::TESModel, flags: u32) -> *mut crate::BGSCameraShot;
-/// `BGSCameraShot::ctor` at 0x318900 (layout_inference, high); signature (low): `BGSCameraShot * ctor(BGSCameraShot * this, undefined8 param_1, uint * param_2, longlong * param_3)`; TESForm/TESModel/TESImageSpaceModifiableForm ctors, three vtables, runtime fields cleared (+0x98 invalid handle, +0xb0 = 0x00ff), formType 0x60, DATA defaults (high); semantic signature: `BGSCameraShot* (BGSCameraShot* this)`
+/// `BGSCameraShot::ctor` at 0x318900 (layout_inference, high); signature (low): `BGSCameraShot * ctor(BGSCameraShot * this, undefined8 param_1, uint * param_2, longlong * param_3)`; semantic: TESForm/TESModel/TESImageSpaceModifiableForm ctors, three vtables, runtime fields cleared (+0x98 invalid handle, +0xb0 = 0x00ff), formType 0x60, DATA defaults (high); signature `BGSCameraShot* (BGSCameraShot* this)`
 pub const BGSCameraShot__ctor: u64 = 20700;
 /// `BGSCameraShot::ctor` as a function pointer type (high).
 pub type BGSCameraShot__ctor_fn = unsafe extern "C" fn(this: *mut crate::BGSCameraShot) -> *mut crate::BGSCameraShot;
-/// `BGSCameraShot::dtor` at 0x3189e0 (layout_inference, high); signature (low): `undefined dtor(BGSCameraShot * this, int * param_1, char * param_2, undefined1 * param_3)`; release locationNode, lookAtNode, focusNode, cameraRoot, modelHandle; play "UIVATSCameraOut" when the camera-in sound flag 0x31df561 is set and the VATS command count (+0x18) is 0; TESModel and TESForm dtors (high); semantic signature: `void (BGSCameraShot* this)`
+/// `BGSCameraShot::dtor` at 0x3189e0 (layout_inference, high); signature (low): `undefined dtor(BGSCameraShot * this, int * param_1, char * param_2, undefined1 * param_3)`; semantic: release locationNode, lookAtNode, focusNode, cameraRoot, modelHandle; play "UIVATSCameraOut" when the camera-in sound flag 0x31df561 is set and the VATS command count (+0x18) is 0; TESModel and TESForm dtors (high); signature `void (BGSCameraShot* this)`
 pub const BGSCameraShot__dtor: u64 = 20701;
 /// `BGSCameraShot::dtor` as a function pointer type (high).
 pub type BGSCameraShot__dtor_fn = unsafe extern "C" fn(this: *mut crate::BGSCameraShot);
@@ -2641,15 +2641,15 @@ pub const BGSLightingTemplate__vfunc_19: u64 = 18308;
 pub const BGSLightingTemplate__vfunc_4: u64 = 18286;
 /// `BGSLightingTemplate::vfunc_6` at 0x295990 (rtti, high); signature (low): `undefined8 vfunc_6(BGSLightingTemplate * this, uint * param_1, undefined8 param_2, undefined8 param_3)`
 pub const BGSLightingTemplate__vfunc_6: u64 = 18307;
-/// `BGSListForm::Find` at 0x320140 (runtime, high); signature (untiered): `uint Find(longlong param_1, longlong param_2)`; index of a form or -1 (high); semantic signature: `int BGSListForm::Find(BGSListForm* this, TESForm* form)`
+/// `BGSListForm::Find` at 0x320140 (runtime, high); signature (untiered): `uint Find(longlong param_1, longlong param_2)`; semantic: index of a form or -1 (high); signature `int BGSListForm::Find(BGSListForm* this, TESForm* form)`
 pub const BGSListForm__Find: u64 = 20906;
 /// `BGSListForm::Find` as a function pointer type (high).
 pub type BGSListForm__Find_fn = unsafe extern "C" fn(this: *mut crate::BGSListForm, form: *mut crate::TESForm) -> i32;
-/// `BGSListForm::GetAt` at 0x320210 (semantic, high); signature (untiered): `longlong GetAt(longlong param_1, ulonglong param_2, undefined8 param_3, undefined8 param_4)`; entry at index counting added forms first (high); semantic signature: `TESForm* BGSListForm::GetAt(BGSListForm* this, uint index)`
+/// `BGSListForm::GetAt` at 0x320210 (semantic, high); signature (untiered): `longlong GetAt(longlong param_1, ulonglong param_2, undefined8 param_3, undefined8 param_4)`; semantic: entry at index counting added forms first (high); signature `TESForm* BGSListForm::GetAt(BGSListForm* this, uint index)`
 pub const BGSListForm__GetAt: u64 = 20907;
 /// `BGSListForm::GetAt` as a function pointer type (high).
 pub type BGSListForm__GetAt_fn = unsafe extern "C" fn(this: *mut crate::BGSListForm, index: u32) -> *mut crate::TESForm;
-/// `BGSListForm::GetFormsSize` at 0x320390 (runtime, high); signature (untiered): `undefined4 GetFormsSize(longlong param_1)`; number of entries in the forms array (high); semantic signature: `uint BGSListForm::GetFormsSize(BGSListForm* this)`
+/// `BGSListForm::GetFormsSize` at 0x320390 (runtime, high); signature (untiered): `undefined4 GetFormsSize(longlong param_1)`; semantic: number of entries in the forms array (high); signature `uint BGSListForm::GetFormsSize(BGSListForm* this)`
 pub const BGSListForm__GetFormsSize: u64 = 20911;
 /// `BGSListForm::GetFormsSize` as a function pointer type (high).
 pub type BGSListForm__GetFormsSize_fn = unsafe extern "C" fn(this: *mut crate::BGSListForm) -> u32;
@@ -2863,7 +2863,7 @@ pub const BGSMovementType__vfunc_4: u64 = 23723;
 pub const BGSMovementType__vfunc_6: u64 = 23724;
 /// `BGSMoviePlayer::BSTEventSink_InputEvent____ptr64_vdtor` at 0x644ad8 (slot_propagation, medium); signature (high): `undefined BSTEventSink_InputEvent____ptr64_vdtor(BGSMoviePlayer * this)`
 pub const BGSMoviePlayer__BSTEventSink_InputEvent____ptr64_vdtor: u64 = 36264;
-/// `BGSMoviePlayer::ProcessEvent` at 0x6449d0 (semantic, high); signature (untiered): `undefined8 ProcessEvent(BGSMoviePlayer * this, undefined8 * param_1)`; sets a skip flag when an Activate press is in the list; returns 0 (high); semantic signature: `BSEventNotifyControl (BGSMoviePlayer* this+0x58, InputEvent* const* head, ...)`
+/// `BGSMoviePlayer::ProcessEvent` at 0x6449d0 (semantic, high); signature (untiered): `undefined8 ProcessEvent(BGSMoviePlayer * this, undefined8 * param_1)`; semantic: sets a skip flag when an Activate press is in the list; returns 0 (high); signature `BSEventNotifyControl (BGSMoviePlayer* this+0x58, InputEvent* const* head, ...)`
 pub const BGSMoviePlayer__ProcessEvent: u64 = 36261;
 /// `BGSMoviePlayer::ctor` at 0x644690 (layout_inference, high); signature (high): `BGSMoviePlayer * ctor(BGSMoviePlayer * this)`
 pub const BGSMoviePlayer__ctor: u64 = 36248;
@@ -3685,9 +3685,9 @@ pub const BGSPickupPutdownSounds__vfunc_2: u64 = 14331;
 pub const BGSPickupPutdownSounds__vfunc_3: u64 = 14332;
 /// `BGSPlayerMusicChanger::BSTEventSink_BGSActorDeathEvent_vdtor` at 0x5eaedc (slot_propagation, medium); signature (high): `undefined BSTEventSink_BGSActorDeathEvent_vdtor(BGSPlayerMusicChanger * this)`
 pub const BGSPlayerMusicChanger__BSTEventSink_BGSActorDeathEvent_vdtor: u64 = 35170;
-/// `BGSPlayerMusicChanger::ProcessActorCellEvent` at 0x737360 (semantic, medium); signature (untiered): `undefined8 ProcessActorCellEvent(BGSPlayerMusicChanger * this, uint * param_1, undefined8 param_2, TypeDescriptor * param_3)`; for the player entering a cell: resolves the cell's music type and, when it changed, notifies its BSMusicEvent source with {old,1} then {new,0} (medium); semantic signature: `BSEventNotifyControl (BGSPlayerMusicChanger* this, const BGSActorCellEvent* e, ...)`
+/// `BGSPlayerMusicChanger::ProcessActorCellEvent` at 0x737360 (semantic, medium); signature (untiered): `undefined8 ProcessActorCellEvent(BGSPlayerMusicChanger * this, uint * param_1, undefined8 param_2, TypeDescriptor * param_3)`; semantic: for the player entering a cell: resolves the cell's music type and, when it changed, notifies its BSMusicEvent source with {old,1} then {new,0} (medium); signature `BSEventNotifyControl (BGSPlayerMusicChanger* this, const BGSActorCellEvent* e, ...)`
 pub const BGSPlayerMusicChanger__ProcessActorCellEvent: u64 = 40175;
-/// `BGSPlayerMusicChanger::ProcessActorDeathEvent` at 0x737470 (semantic, medium); signature (untiered): `undefined8 ProcessActorDeathEvent(BGSPlayerMusicChanger * this, uint * param_1, undefined8 param_2, undefined8 param_3)`; on the player's death notifies {default music type 0x400193 global, 0} when that type has flags bit 0 (medium); semantic signature: `BSEventNotifyControl (...)`
+/// `BGSPlayerMusicChanger::ProcessActorDeathEvent` at 0x737470 (semantic, medium); signature (untiered): `undefined8 ProcessActorDeathEvent(BGSPlayerMusicChanger * this, uint * param_1, undefined8 param_2, undefined8 param_3)`; semantic: on the player's death notifies {default music type 0x400193 global, 0} when that type has flags bit 0 (medium); signature `BSEventNotifyControl (...)`
 pub const BGSPlayerMusicChanger__ProcessActorDeathEvent: u64 = 40176;
 /// `BGSPlayerMusicChanger::vdtor` at 0x5eaf20 (layout_inference, medium); signature (low): `BGSPlayerMusicChanger * vdtor(BGSPlayerMusicChanger * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const BGSPlayerMusicChanger__vdtor: u64 = 35172;
