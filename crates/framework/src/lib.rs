@@ -16,8 +16,9 @@
 //! What a plugin gets from its [`Host`]: the SKSE interface the host was loaded with, forwarded
 //! (`QueryInterface` answers as for the host, and the plugin handle is the host's, valid only while
 //! `load` runs), its [`settings`], its hotkeys ([`Host::action`]), and every registration it makes
-//! in the game: loader messages, a per-frame callback, the Papyrus registration pass, windows on the
-//! host's overlay, event sinks, Papyrus natives, console commands and hook subscriptions ([`Host::hooks`]). The host owns the object the engine keeps for each of
+//! in the game: loader messages, a per-frame callback, the Papyrus registration pass, a tab in the
+//! host's window ([`Host::add_tab`]), event sinks, Papyrus natives, console commands and hook
+//! subscriptions ([`Host::hooks`]). The host owns the object the engine keeps for each of
 //! them and knows which plugin it belongs to, so the plugin's DLL can be unloaded and replaced
 //! while the game runs: the host loads every plugin from a shadow copy, watches the author's file
 //! and swaps generations at a frame boundary (`docs/subsystems/reload.md`). A plugin calls
@@ -41,7 +42,7 @@ pub mod settings;
 use settings::{Setting, Settings};
 
 /// The descriptor's layout version.
-pub const ABI: u32 = 3;
+pub const ABI: u32 = 4;
 
 /// This crate's version, a hash of the sources whose types cross the host-plugin boundary (this
 /// crate, `overlay`, `skyrim`, `hook`, `skse`, `sre`, `versionlib` and `Cargo.lock`) and the
@@ -58,8 +59,8 @@ pub type MessageFn = fn(&skse::Message);
 pub type PapyrusFn = fn(&'static VirtualMachine);
 /// Runs once a frame on the main thread.
 pub type FrameFn = fn();
-/// Draws one window: gets the `egui::Window` the host set up and shows it.
-pub type DrawFn = Box<dyn for<'a> FnMut(egui::Window<'a>, &egui::Context) + Send>;
+/// Draws one section of a plugin's tab in the host's window.
+pub type DrawFn = Box<dyn FnMut(&mut egui::Ui) + Send>;
 
 /// What [`plugin!`] exports as `SkyrimRs_Plugin`. The host reads `abi` and `build` before anything
 /// else, so they stay first and C-typed in every future ABI.
@@ -68,6 +69,8 @@ pub struct Descriptor {
     pub abi: u32,
     pub build: *const c_char,
     pub name: *const c_char,
+    /// The plugin crate's version, as the Plugins tab shows it.
+    pub version: *const c_char,
     pub load: LoadFn,
     /// Plugin names this one loads before; [`order::ALL`] for every other plugin.
     pub load_before: &'static [&'static str],
@@ -88,6 +91,7 @@ unsafe impl Sync for Descriptor {}
 #[derive(Clone, Debug, PartialEq, Eq)]
 pub struct Plugin {
     pub name: String,
+    pub version: String,
     pub file: String,
     pub constraints: order::Constraints,
 }
@@ -156,9 +160,9 @@ pub(crate) struct Table {
     pub action: fn(&'static str, &str, &str, Scope) -> usize,
     pub action_fired: fn(usize) -> bool,
     pub action_key: fn(usize) -> Option<Hotkey>,
-    pub add_window: fn(&'static str, &str, &str, DrawFn),
-    pub window_open: fn(&'static str, &str) -> bool,
-    pub set_window_open: fn(&'static str, &str, bool),
+    pub set_tab_title: fn(&'static str, &str),
+    pub add_section: fn(&'static str, &str, DrawFn),
+    pub show_tab: fn(&'static str),
     pub setting: fn(&str, &str) -> Option<Setting>,
     pub set_setting: fn(&str, &str, Setting),
     pub add_sink: fn(&'static str, ErasedSource, ErasedHandler),
@@ -205,7 +209,7 @@ impl Host {
 
     /// Declares a hotkey named `<plugin>.<name>` in the host's binding table, bound to `default`
     /// (`"F10"`, `"Ctrl+Shift+K"`, as [`Hotkey`] reads it) until the player binds another key in
-    /// the host file (`key.<plugin>.<name>`) or the Keys section of the host's window. `scope` says
+    /// the host file (`key.<plugin>.<name>`) or the host window's Settings tab. `scope` says
     /// who must have the key: [`Scope::Overlay`] fires while the overlay is open with no widget
     /// focused and keeps the key from the game while it is open; [`Scope::Game`] fires when the
     /// press reached the game, which acts on it too. A key another action holds is refused, and
@@ -227,32 +231,29 @@ impl Host {
         (self.table.on_papyrus)(self.name, f);
     }
 
-    /// Adds a window to the host's overlay. `id` names it within the plugin: a later generation
-    /// adding the same id gets the same place and open state. Every frame the overlay is open,
-    /// `draw` runs on the main thread with an `egui::Window` the host has set up (the `title`, a
-    /// close button bound to the window's open state, the framework theme) and shows it, after
-    /// changing it through `egui`'s builder if it wants to (`default_pos`, `resizable`, `frame`
-    /// for a look of its own):
+    /// This plugin's tab in the host's window, titled `title` (a second call renames it). The tab
+    /// shows once it has a section; with two or more, each section is a tab of its own inside it.
+    /// The plugins' tabs come first, in load order, then the host's Plugins, Legacy plugins and
+    /// Settings. While the overlay is open, the selected section's `draw` runs every frame on the
+    /// main thread inside the window's scroll area, in the framework theme:
     ///
     /// ```ignore
-    /// host.add_window("main", "My mod", |window, ctx| {
-    ///     window.show(ctx, |ui| ui.label("hello"));
-    /// });
+    /// host.add_tab("My mod")
+    ///     .section("General", |ui| { ui.label("hello"); })
+    ///     .section("About", |ui| { ui.label("version 1"); });
     /// ```
-    pub fn add_window(&self, id: &str, title: &str, draw: impl for<'a> FnMut(egui::Window<'a>, &egui::Context) + Send + 'static) {
-        (self.table.add_window)(self.name, id, title, Box::new(draw));
+    ///
+    /// The host keeps the tab and drops it with the plugin's generation; a reloaded generation
+    /// adding the same section names finds the same one selected.
+    #[must_use = "a tab shows once it has a section"]
+    pub fn add_tab(&self, title: &str) -> Tab {
+        (self.table.set_tab_title)(self.name, title);
+        Tab { owner: self.name, table: self.table }
     }
 
-    /// Whether the window `id` is open: shown while the overlay is. A window starts open, and
-    /// the player closes it with its close button or reopens it from the host's window; the
-    /// state is kept in the host's settings across reloads and game sessions.
-    #[must_use]
-    pub fn is_window_open(&self, id: &str) -> bool {
-        (self.table.window_open)(self.name, id)
-    }
-
-    pub fn set_window_open(&self, id: &str, open: bool) {
-        (self.table.set_window_open)(self.name, id, open);
+    /// Opens the overlay on this plugin's tab.
+    pub fn show_tab(&self) {
+        (self.table.show_tab)(self.name);
     }
 
     /// This plugin's settings, read from its file before `load` and kept by the host across reloads.
@@ -317,6 +318,21 @@ impl Host {
     }
 }
 
+/// A plugin's tab from [`Host::add_tab`].
+#[derive(Clone, Copy)]
+pub struct Tab {
+    owner: &'static str,
+    table: &'static Table,
+}
+
+impl Tab {
+    /// Adds a section named `name`, unique within the tab, after those added before.
+    pub fn section(&self, name: &str, draw: impl FnMut(&mut egui::Ui) + Send + 'static) -> &Self {
+        (self.table.add_section)(self.owner, name, Box::new(draw));
+        self
+    }
+}
+
 /// A hotkey from [`Host::action`].
 #[derive(Clone, Copy)]
 pub struct Action {
@@ -340,7 +356,8 @@ impl Action {
     }
 }
 
-/// Declares a framework plugin: exports its [`Descriptor`]. Everything after `load` is optional,
+/// Declares a framework plugin: exports its [`Descriptor`], with the version of the crate it is
+/// invoked in. Everything after `load` is optional,
 /// in this order: the ordering fields (defaults: no constraints, priority 0) and the reload
 /// functions (defaults: none).
 ///
@@ -369,6 +386,7 @@ macro_rules! plugin {
             abi: $crate::ABI,
             build: $crate::BUILD.as_ptr(),
             name: concat!($name, "\0").as_ptr().cast(),
+            version: concat!(env!("CARGO_PKG_VERSION"), "\0").as_ptr().cast(),
             load: $load,
             load_before: &[$($($before),*)?],
             load_after: &[$($($after),*)?],

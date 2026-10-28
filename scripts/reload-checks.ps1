@@ -11,7 +11,7 @@ $hostLog = if (Test-Path "$OutDir\skyrim-rs.log") { Get-Content "$OutDir\skyrim-
 $loaded = @($hostLog | Where-Object { $_ -match '^loaded skyrim_rs_reload_test\.dll: skyrim-rs-reload-test$' })
 $changed = @($hostLog | Where-Object { $_ -match '^skyrim-rs-reload-test: skyrim_rs_reload_test\.dll changed, reloading as generation [234]$' })
 $saved = @($hostLog | Where-Object { $_ -match '^skyrim-rs-reload-test: generation [123]: 4 bytes of state saved$' })
-$detached = @($hostLog | Where-Object { $_ -match '^skyrim-rs-reload-test: generation [123]: 1 hook subscriptions, 1 sinks, 1 natives stubbed, 1 commands stubbed, 1 windows, 1 message handlers, 1 Papyrus callbacks, 0 frame callbacks detached$' })
+$detached = @($hostLog | Where-Object { $_ -match '^skyrim-rs-reload-test: generation [123]: 1 hook subscriptions, 1 sinks, 1 natives stubbed, 1 commands stubbed, 1 tab sections, 1 message handlers, 1 Papyrus callbacks, 0 frame callbacks detached$' })
 $unloaded = @($hostLog | Where-Object { $_ -match '^skyrim-rs-reload-test: generation [123] unloaded$' })
 $reloaded = @($hostLog | Where-Object { $_ -match '^skyrim-rs-reload-test: generation [234] loaded, image at 0x[0-9a-f]+$' })
 $restored = @($hostLog | Where-Object { $_ -match '^skyrim-rs-reload-test: generation [234]: 4 bytes of state restored$' })
@@ -50,8 +50,8 @@ $rows = @(
        ok = (PhaseOk "sink") }
     @{ name = "command";       plugin = (PhaseDetails "command"); devbench = "$($commandLines -join ' | '); (host log) re-pointed $($commandRepointed.Count) times";
        ok = ((PhaseOk "command") -and $commandOk -and $commandRepointed.Count -eq 3) }
-    @{ name = "window";        plugin = (PhaseDetails "window"); devbench = "F11 taps ok per part: $($f11 -join ', ')";
-       ok = ((PhaseOk "window") -and $f11 -notcontains $false) }
+    @{ name = "tab";           plugin = (PhaseDetails "tab"); devbench = "F11 taps ok per part: $($f11 -join ', ')";
+       ok = ((PhaseOk "tab") -and $f11 -notcontains $false) }
     @{ name = "messages";      plugin = (PhaseDetails "messages"); devbench = "waitFor saveGame satisfied per part: $($saves -join ', ')";
        ok = ((PhaseOk "messages") -and $saves -notcontains $false -and $saves.Count -eq 4) }
 )

@@ -11,8 +11,9 @@
 # plain SKSE plugins of its own that hook the same functions (legacy-patch-a before the host by file name,
 # legacy-patch-z after it), with skyrim-rs.ini setting the host's compatibility mode to -Compat. The legacy suite copies
 # the third-party SKSE plugins it lists from -LegacyDir into Data\SKSE\Plugins for the run, next to the host. The gui
-# suite installs the host with the example mod and the two hook plugins, copies the example's build in again between its
-# two parts (a reload) and keeps the settings files the host wrote; then it launches the game twice more on the same
+# suite installs the host with the example mod and the two hook plugins, captures each page of the host's window, copies
+# the example's build in again between its two parts (a reload) and keeps the settings files the host wrote; then it
+# launches the game twice more on the same
 # install (its sessions: the host's settings file edited by hand to rebind the toggle, then malformed), each with
 # scripts/gui-<session>-steps.json and its logs and settings files in <OutDir>\<session>. The camera suite installs the camera-demo plugin,
 # drives it through its console command and reads its report log. The crash suite installs the host with its crash-test
@@ -73,7 +74,7 @@ $Mods = @{
                      $text = Get-Content $file -Raw
                      if ($text -notmatch '"key\.skyrim-rs\.toggle": "F11"') { throw "$file does not bind the toggle to F11" }
                      ($text -replace '"key\.skyrim-rs\.toggle": "F11"', '"key.skyrim-rs.toggle": 68') -replace '^\{', "{`n  `"by.hand`": `"kept`"," | Set-Content $file -Encoding ascii -NoNewline }
-                 malformed = { param($file) Set-Content $file "{`n  `"key.skyrim-rs.toggle`": `"F10`"`n  `"window.skyrim-rs.inspector`": true`n}`n" -Encoding ascii -NoNewline }
+                 malformed = { param($file) Set-Content $file "{`n  `"key.skyrim-rs.toggle`": `"F10`"`n  `"overlay.capture`": `"focus`"`n}`n" -Encoding ascii -NoNewline }
              } }
     crash = @{ crate = "crash-test"; dll = "skyrim_rs_crash_test.dll"; log = "skyrim-rs-crash-test.log"; dir = "skyrim-rs"; report = $true;
                scenarios = @("null", "hook", "overflow", "write", "form", "deleted", "script")

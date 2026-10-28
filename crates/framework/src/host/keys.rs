@@ -19,7 +19,9 @@ pub(super) const CLOSE: usize = 1;
 
 #[derive(Clone)]
 pub(super) struct Binding {
+    /// `<owner>.<action>`.
     pub name: String,
+    pub owner: String,
     pub default: Option<Hotkey>,
     pub key: Option<Hotkey>,
     pub scope: Scope,
@@ -27,8 +29,14 @@ pub(super) struct Binding {
     pub game: String,
 }
 
+impl Binding {
+    pub fn action(&self) -> &str {
+        &self.name[self.owner.len() + 1..]
+    }
+}
+
 static BINDINGS: Mutex<Vec<Binding>> = Mutex::new(Vec::new());
-/// The last assignment or refusal, for the Keys section and `SkyrimRs keys`.
+/// The last assignment or refusal, for the Settings tab and `SkyrimRs keys`.
 static LAST: Mutex<String> = Mutex::new(String::new());
 /// The binding a capture is armed for, `usize::MAX` for none.
 static CAPTURE_FOR: AtomicUsize = AtomicUsize::new(usize::MAX);
@@ -97,7 +105,7 @@ pub(super) fn declare(owner: &str, action: &str, default: &str, scope: Scope) ->
     {
         settings::set(NAME, &setting_key(&name), Setting::Text(k.to_string()));
     }
-    list.push(Binding { name, default: default_key, key, scope, game: String::new() });
+    list.push(Binding { name, owner: owner.to_owned(), default: default_key, key, scope, game: String::new() });
     let index = list.len() - 1;
     drop(list);
     describe_game_use(index);

@@ -99,7 +99,7 @@ fn load(host: &'static Host) -> bool {
     log(format!("tag {TAG}: sink {sink:?}"));
     host.on_papyrus(on_papyrus);
     host.on_message(on_message);
-    host.add_window("main", "skyrim-rs reload test", window);
+    host.add_tab("skyrim-rs reload test").section("main", tab);
     true
 }
 
@@ -165,17 +165,17 @@ fn on_message(msg: &skse::Message) {
             let registered = HOST.get().expect("set in load").register_command::<ReloadCommand>();
             *COMMAND.lock().unwrap() = Some(registered.map(|slot| format!("SkyrimRsReload on console opcode {:#x} ({})", slot.opcode, slot.replaced)).map_err(|e| e.to_string()));
         }
-        skse::MessagingInterface::SAVE_GAME => run(&format!("tag{TAG}"), &[("generation", generation), ("hook", hook), ("native", native), ("sink", sink), ("command", command), ("window", drawn), ("messages", messages)]),
+        skse::MessagingInterface::SAVE_GAME => run(&format!("tag{TAG}"), &[("generation", generation), ("hook", hook), ("native", native), ("sink", sink), ("command", command), ("tab", drawn), ("messages", messages)]),
         _ => {}
     }
 }
 
-fn window(window: egui::Window<'_>, ctx: &egui::Context) {
+fn tab(ui: &mut egui::Ui) {
     let frames = FRAMES.fetch_add(1, Ordering::Relaxed) + 1;
     if frames == 1 {
-        log(format!("tag {TAG}: first window frame"));
+        log(format!("tag {TAG}: first tab frame"));
     }
-    window.default_pos([40.0, 80.0]).show(ctx, |ui| ui.label(format!("tag {TAG}, reloads {}, frame {frames}", RELOADS.load(Ordering::Relaxed))));
+    ui.label(format!("tag {TAG}, reloads {}, frame {frames}", RELOADS.load(Ordering::Relaxed)));
 }
 
 /// The reload counter the previous generation handed over equals the number of reloads this tag is behind.
@@ -215,8 +215,8 @@ fn command() -> Result<String, String> {
 
 fn drawn() -> Result<String, String> {
     let frames = FRAMES.load(Ordering::Relaxed);
-    check(frames > 0, "the window never ran")?;
-    Ok(format!("window ran in {frames} frames"))
+    check(frames > 0, "the tab never ran")?;
+    Ok(format!("tab ran in {frames} frames"))
 }
 
 fn messages() -> Result<String, String> {

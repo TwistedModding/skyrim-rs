@@ -1,11 +1,10 @@
 //! The host's side: [`load`] is `skyrim_rs.dll`'s `SKSEPlugin_Load`. The host owns what the
 //! engine and the loader keep for every plugin (one message listener and one Papyrus callback,
-//! one overlay window, one sink per event source, the native function objects, the console
-//! entries and the hook sites) and tags each registration with its plugin, so `reload` can
-//! detach a plugin and unload its DLL. It keeps every plugin's settings, its own in
-//! `skyrim-rs.settings.json` (window states, the capture rule, every hotkey of the binding table
-//! `keys`), and draws its own window, the inspector (`inspector`), also reachable through the
-//! console command `SkyrimRs`.
+//! the plugins' tabs in its window, one sink per event source, the native function objects, the
+//! console entries and the hook sites) and tags each registration with its plugin, so `reload`
+//! can detach a plugin and unload its DLL. It keeps every plugin's settings, its own in
+//! `skyrim-rs.settings.json` (the capture rule and every hotkey of the binding table `keys`),
+//! draws the overlay's one window (`gui`) and answers the console command `SkyrimRs` (`console`).
 
 use core::ffi::{CStr, c_void};
 use core::sync::atomic::{AtomicU32, AtomicU64, AtomicUsize, Ordering};
@@ -22,16 +21,16 @@ use sre::BSEventNotifyControl;
 use skyrim::input::{CommandSlot, ErasedCommand};
 use skyrim::papyrus::{ErasedNative, NativeFunction, VirtualMachine};
 use windows_sys::Win32::Foundation::{FreeLibrary, HMODULE};
-use windows_sys::Win32::System::LibraryLoader::{GetModuleHandleW, GetProcAddress, LoadLibraryW};
+use windows_sys::Win32::System::LibraryLoader::{DONT_RESOLVE_DLL_REFERENCES, GetModuleHandleW, GetProcAddress, LoadLibraryExW, LoadLibraryW};
 use windows_sys::Win32::System::SystemInformation::GetTickCount64;
 
 use crate::hooks::{Compat, Hooks};
 use crate::order::{self, Constraints};
-use crate::settings::{self, Setting};
-use crate::{ABI, BUILD, CommandRequest, Descriptor, DrawFn, Error, FrameFn, Host, MessageFn, NativeRequest, PapyrusFn, Plugin, Table};
+use crate::settings;
+use crate::{ABI, BUILD, CommandRequest, Descriptor, Error, FrameFn, Host, MessageFn, NativeRequest, PapyrusFn, Plugin, Table};
 
 static LOG: Mutex<Option<File>> = Mutex::new(None);
-/// The SKSE log folder, where the host writes its log and the inspector its frame captures.
+/// The SKSE log folder, where the host writes its log and `SkyrimRs capture` its frame captures.
 static LOG_DIR: OnceLock<PathBuf> = OnceLock::new();
 /// The last host log lines, for the crash log.
 static RECENT: Mutex<VecDeque<String>> = Mutex::new(VecDeque::new());
@@ -54,7 +53,8 @@ macro_rules! log {
     };
 }
 
-mod inspector;
+mod console;
+mod gui;
 mod keys;
 mod owned;
 mod reload;
@@ -69,12 +69,11 @@ pub const CONFIG: &str = "skyrim-rs.ini";
 pub const NAME: &str = "skyrim-rs";
 
 static PLUGINS: OnceLock<Vec<Plugin>> = OnceLock::new();
+/// The DLLs in the plugin folder the host did not load, each with the reason.
+static REFUSED: Mutex<Vec<(String, String)>> = Mutex::new(Vec::new());
 static MESSAGES: Owned<MessageFn> = Owned::new();
 static FRAMES: Owned<FrameFn> = Owned::new();
 static PAPYRUS: Owned<PapyrusFn> = Owned::new();
-static WINDOWS: Owned<PluginWindow> = Owned::new();
-/// Every window added, as the inspector lists them: owner, id, title.
-static WINDOW_LIST: Mutex<Vec<(&'static str, String, String)>> = Mutex::new(Vec::new());
 static SINKS: Mutex<Vec<SourceSinks>> = Mutex::new(Vec::new());
 static NATIVES: Mutex<Vec<Native>> = Mutex::new(Vec::new());
 static COMMANDS: Mutex<Vec<ConsoleCommand>> = Mutex::new(Vec::new());
@@ -87,8 +86,8 @@ static HOSTED_BY: OnceLock<&'static str> = OnceLock::new();
 /// The last loader message's kind (`u32::MAX` before the first) and the tick it arrived at.
 static LAST_MESSAGE: AtomicU32 = AtomicU32::new(u32::MAX);
 static LAST_MESSAGE_AT: AtomicU64 = AtomicU64::new(0);
-/// The SKSE plugins in `Data\SKSE\Plugins` with their version data, read once they are all loaded.
-static SKSE_PLUGINS: Mutex<Vec<String>> = Mutex::new(Vec::new());
+/// The SKSE plugins in `Data\SKSE\Plugins`, read once the loader has loaded them all.
+static SKSE_PLUGINS: Mutex<Vec<LegacyPlugin>> = Mutex::new(Vec::new());
 static HOOKS: Hooks = Hooks::HOST;
 static TABLE: Table = Table {
     on_message,
@@ -97,9 +96,9 @@ static TABLE: Table = Table {
     action: keys::declare,
     action_fired: keys::fired,
     action_key: keys::key,
-    add_window,
-    window_open,
-    set_window_open,
+    set_tab_title: gui::set_title,
+    add_section: gui::add_section,
+    show_tab: gui::show_tab,
     setting: settings::get,
     set_setting: settings::set,
     add_sink,
@@ -108,15 +107,37 @@ static TABLE: Table = Table {
     plugins,
 };
 
-/// A plugin's window; only the main thread runs it, under the entry's exclusive lock.
-struct PluginWindow {
-    owner: &'static str,
-    id: String,
-    title: String,
-    draw: DrawFn,
+/// An SKSE plugin in `Data\SKSE\Plugins`: a DLL exporting `SKSEPlugin_Version` or `SKSEPlugin_Load`.
+#[derive(Clone)]
+struct LegacyPlugin {
+    file: String,
+    /// Whether the loader kept it mapped, which it does only for the plugins it accepted.
+    loaded: bool,
+    /// What its `SKSEPlugin_Version` holds; `None` when it exports none.
+    data: Option<VersionData>,
 }
 
-unsafe impl Sync for PluginWindow {}
+#[derive(Clone)]
+struct VersionData {
+    name: String,
+    version: u32,
+    author: String,
+    flags: u32,
+    method: u32,
+}
+
+impl core::fmt::Display for LegacyPlugin {
+    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
+        match &self.data {
+            Some(d) => write!(f, "{}: {} version {:#x} by {}, flags {:#x}, method {:#x}", self.file, d.name, d.version, d.author, d.flags, d.method)?,
+            None => write!(f, "{}: no version data", self.file)?,
+        }
+        if !self.loaded {
+            f.write_str(", not loaded")?;
+        }
+        Ok(())
+    }
+}
 
 /// The host's sink on one source and the plugins' handlers behind it.
 struct SourceSinks {
@@ -180,7 +201,7 @@ pub fn load(skse: &skse::Interface) -> bool {
         Err(e) => log!("overlay: {e}"),
     }
     log!("overlay font: {}", overlay::font_source());
-    inspector::apply_capture();
+    gui::apply_capture();
     let (Some(messaging), Some(papyrus)) = (skse.messaging(), skse.papyrus()) else {
         log!("no messaging or Papyrus interface");
         return false;
@@ -189,8 +210,7 @@ pub fn load(skse: &skse::Interface) -> bool {
         log!("the loader refused the message listener or the Papyrus callback");
         return false;
     }
-    overlay::add(|ctx| WINDOWS.each_mut(|window| draw_window(window, ctx)));
-    add_window(NAME, inspector::ID, NAME, Box::new(inspector::draw));
+    overlay::add(gui::draw);
     let shadow = reload::clean(&dir);
     let mut read = Vec::new();
     for path in plugin_files(&dir) {
@@ -198,11 +218,11 @@ pub fn load(skse: &skse::Interface) -> bool {
         let loaded = reload::copy(&path, &shadow, 1).map_err(|e| format!("copy: {e}")).and_then(|copy| read_descriptor(&copy).map(|(module, descriptor)| (module, descriptor, copy)));
         match loaded {
             Ok((module, descriptor, _)) if plugin_name(descriptor) == NAME => {
-                log!("skipped {file}: {NAME} is the host's own name, which its settings file and keys use");
+                refuse(file, format!("{NAME} is the host's own name, which its settings file and keys use"));
                 unsafe { FreeLibrary(module) };
             }
             Ok((module, descriptor, copy)) => read.push((module, descriptor, describe(descriptor, file), path, copy)),
-            Err(e) => log!("skipped {file}: {e}"),
+            Err(e) => refuse(file, e),
         }
     }
     let items: Vec<(&str, &Constraints)> = read.iter().map(|(_, _, p, _, _)| (p.name.as_str(), &p.constraints)).collect();
@@ -213,7 +233,7 @@ pub fn load(skse: &skse::Interface) -> bool {
     let in_cycle: Vec<&str> = order.cycle.iter().map(|&i| read[i].2.name.as_str()).collect();
     for &i in &order.cycle {
         let (module, _, plugin, _, _) = &read[i];
-        log!("skipped {}: {} is in a load order cycle with {}", plugin.file, plugin.name, in_cycle.iter().filter(|n| **n != plugin.name).copied().collect::<Vec<_>>().join(", "));
+        refuse(plugin.file.clone(), format!("{} is in a load order cycle with {}", plugin.name, in_cycle.iter().filter(|n| **n != plugin.name).copied().collect::<Vec<_>>().join(", ")));
         unsafe { FreeLibrary(*module) };
     }
     let sorted: Vec<Plugin> = order.sorted.iter().map(|&i| read[i].2.clone()).collect();
@@ -277,30 +297,18 @@ fn flush_settings(owner: Option<&str>) {
     }
 }
 
-/// The key of a window's open state in the host's settings.
-fn window_key(owner: &str, id: &str) -> String {
-    format!("window.{owner}.{id}")
+/// Logs a plugin file the host does not load and keeps it for the Plugins tab.
+fn refuse(file: String, reason: String) {
+    log!("skipped {file}: {reason}");
+    REFUSED.lock().unwrap_or_else(PoisonError::into_inner).push((file, reason));
 }
 
-/// Shows one window while it is open, with the `egui::Window` set up for it.
-fn draw_window(window: &mut PluginWindow, ctx: &overlay::egui::Context) {
-    if !window_open(window.owner, &window.id) {
-        return;
-    }
-    let mut open = true;
-    let frame = overlay::egui::Window::new(window.title.as_str()).id(overlay::egui::Id::unique((NAME, window.owner, window.id.as_str()))).open(&mut open);
-    (window.draw)(frame, ctx);
-    if !open {
-        set_window_open(window.owner, &window.id, false);
-    }
+fn refused() -> Vec<(String, String)> {
+    REFUSED.lock().unwrap_or_else(PoisonError::into_inner).clone()
 }
 
-fn window_open(owner: &str, id: &str) -> bool {
-    settings::get(NAME, &window_key(owner, id)).and_then(|s| <bool as settings::Value>::from_setting(&s)).unwrap_or(true)
-}
-
-fn set_window_open(owner: &str, id: &str, open: bool) {
-    settings::set(NAME, &window_key(owner, id), Setting::Bool(open));
+fn skse_plugins() -> Vec<LegacyPlugin> {
+    SKSE_PLUGINS.lock().unwrap_or_else(PoisonError::into_inner).clone()
 }
 
 /// The accepted plugins in load order, empty before [`load`] resolved it.
@@ -377,26 +385,33 @@ fn message_name(kind: u32) -> &'static str {
     }
 }
 
-/// Reads the version data of every SKSE plugin DLL in `Data\SKSE\Plugins` the loader has mapped.
+/// Reads every SKSE plugin DLL in `Data\SKSE\Plugins`: whether the loader kept it, and its version
+/// data. A DLL the loader did not keep is mapped without running any of its code to read it.
 fn snapshot_skse_plugins() {
-    let mut lines = Vec::new();
+    let mut found = Vec::new();
     for path in plugin_files(&plugins_dir()) {
         let file = path.file_name().map(|f| f.to_string_lossy().into_owned()).unwrap_or_default();
         let wide: Vec<u16> = path.as_os_str().encode_wide().chain([0]).collect();
-        let module = unsafe { GetModuleHandleW(wide.as_ptr()) };
+        let mapped = unsafe { GetModuleHandleW(wide.as_ptr()) };
+        let module = if mapped.is_null() { unsafe { LoadLibraryExW(wide.as_ptr(), core::ptr::null_mut(), DONT_RESOLVE_DLL_REFERENCES) } } else { mapped };
         if module.is_null() {
-            lines.push(format!("{file}: not loaded"));
             continue;
         }
-        let Some(version) = (unsafe { GetProcAddress(module, c"SKSEPlugin_Version".as_ptr().cast()) }) else {
-            lines.push(format!("{file}: no version data"));
-            continue;
-        };
-        let data = unsafe { &*(version as *const skse::PluginVersionData) };
+        let export = |name: &CStr| unsafe { GetProcAddress(module, name.as_ptr().cast()) };
         let text = |bytes: &[u8]| CStr::from_bytes_until_nul(bytes).ok().map(|s| s.to_string_lossy().into_owned()).unwrap_or_default();
-        lines.push(format!("{file}: {} version {:#x} by {}, flags {:#x}, method {:#x}", text(&data.name), data.plugin_version, text(&data.author), data.flags, data.method));
+        let data = export(c"SKSEPlugin_Version").map(|version| {
+            let data = unsafe { &*(version as *const skse::PluginVersionData) };
+            VersionData { name: text(&data.name), version: data.plugin_version, author: text(&data.author), flags: data.flags, method: data.method }
+        });
+        let is_plugin = data.is_some() || export(c"SKSEPlugin_Load").is_some();
+        if mapped.is_null() {
+            unsafe { FreeLibrary(module) };
+        }
+        if is_plugin {
+            found.push(LegacyPlugin { file, loaded: !mapped.is_null(), data });
+        }
     }
-    *SKSE_PLUGINS.lock().unwrap_or_else(PoisonError::into_inner) = lines;
+    *SKSE_PLUGINS.lock().unwrap_or_else(PoisonError::into_inner) = found;
 }
 
 /// The host's facts for the crash log, on the watchdog thread: locks are tried, never waited for.
@@ -421,13 +436,13 @@ fn crash_facts(w: &mut crash::Writer<'_>, crash: &crash::Crash, section: crash::
                 }
             }
             match SKSE_PLUGINS.try_lock() {
-                Ok(lines) if lines.is_empty() => {
+                Ok(plugins) if plugins.is_empty() => {
                     let _ = writeln!(w, "SKSE plugins: not read yet (before PLUGINS_LOADED_2)");
                 }
-                Ok(lines) => {
+                Ok(plugins) => {
                     let _ = writeln!(w, "SKSE plugins:");
-                    for line in lines.iter() {
-                        let _ = writeln!(w, "  {line}");
+                    for plugin in plugins.iter() {
+                        let _ = writeln!(w, "  {plugin}");
                     }
                 }
                 Err(_) => {
@@ -467,7 +482,8 @@ fn plugin_name(descriptor: &Descriptor) -> String {
 
 fn describe(descriptor: &Descriptor, file: String) -> Plugin {
     let owned = |names: &[&str]| names.iter().map(|n| (*n).to_owned()).collect();
-    Plugin { name: plugin_name(descriptor), file, constraints: Constraints { before: owned(descriptor.load_before), after: owned(descriptor.load_after), priority: descriptor.priority } }
+    let version = if descriptor.version.is_null() { String::new() } else { unsafe { CStr::from_ptr(descriptor.version) }.to_string_lossy().into_owned() };
+    Plugin { name: plugin_name(descriptor), version, file, constraints: Constraints { before: owned(descriptor.load_before), after: owned(descriptor.load_after), priority: descriptor.priority } }
 }
 
 /// Removes every registration of `owner` and returns what went, with every call inside them
@@ -494,15 +510,14 @@ fn detach(owner: &str) -> String {
         }));
     }
     let (natives, commands) = (natives.len(), commands.len());
-    let windows = WINDOWS.remove_owner(owner);
-    WINDOW_LIST.lock().unwrap_or_else(PoisonError::into_inner).retain(|(o, _, _)| *o != owner);
-    if windows > 0 {
+    let sections = gui::remove(owner);
+    if sections > 0 {
         overlay::reset_context();
     }
     let messages = MESSAGES.remove_owner(owner);
     let papyrus = PAPYRUS.remove_owner(owner);
     let frames = FRAMES.remove_owner(owner);
-    format!("{hooks} hook subscriptions, {sinks} sinks, {natives} natives stubbed, {commands} commands stubbed, {windows} windows, {messages} message handlers, {papyrus} Papyrus callbacks, {frames} frame callbacks")
+    format!("{hooks} hook subscriptions, {sinks} sinks, {natives} natives stubbed, {commands} commands stubbed, {sections} tab sections, {messages} message handlers, {papyrus} Papyrus callbacks, {frames} frame callbacks")
 }
 
 fn vm() -> Option<&'static VirtualMachine> {
@@ -523,7 +538,7 @@ unsafe extern "C" fn on_skse_message(msg: *mut skse::Message) {
         _ => {}
     }
     if msg.kind == skse::MessagingInterface::DATA_LOADED {
-        match skyrim::input::register::<inspector::Command>() {
+        match skyrim::input::register::<console::Command>() {
             Ok(slot) => log!("command SkyrimRs took over console opcode {:#x} ({})", slot.opcode, slot.replaced),
             Err(e) => log!("command SkyrimRs: {e}"),
         }
@@ -569,11 +584,6 @@ fn on_papyrus(owner: &'static str, f: PapyrusFn) {
     if let Some(vm) = vm() {
         f(vm);
     }
-}
-
-fn add_window(owner: &'static str, id: &str, title: &str, draw: DrawFn) {
-    WINDOW_LIST.lock().unwrap_or_else(PoisonError::into_inner).push((owner, id.to_owned(), title.to_owned()));
-    WINDOWS.add(owner, PluginWindow { owner, id: id.to_owned(), title: title.to_owned(), draw });
 }
 
 fn add_sink(owner: &'static str, source: ErasedSource, handler: ErasedHandler) {

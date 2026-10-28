@@ -69,7 +69,7 @@ fn load(host: &'static Host) -> bool {
     run("load", &[("interface", interface), ("order", order)]);
     host.on_message(on_message);
     host.on_papyrus(on_papyrus);
-    host.add_window("main", "skyrim-rs framework test", window);
+    host.add_tab("skyrim-rs framework test").section("main", tab);
     true
 }
 
@@ -100,7 +100,7 @@ fn on_message(msg: &skse::Message) {
     match msg.kind {
         skse::MessagingInterface::DATA_LOADED => run("dataLoaded", &[("startup_messages", startup_messages), ("papyrus", papyrus)]),
         skse::MessagingInterface::POST_LOAD_GAME => run("postLoadGame", &[("load_messages", load_messages)]),
-        skse::MessagingInterface::SAVE_GAME => run("saveGame", &[("native", native), ("window", drawn)]),
+        skse::MessagingInterface::SAVE_GAME => run("saveGame", &[("native", native), ("tab", drawn)]),
         _ => {}
     }
 }
@@ -116,9 +116,9 @@ fn on_papyrus(vm: &'static VirtualMachine) {
     *REGISTERED.lock().unwrap() = Some(registered.map(|f| format!("{CLASS}.{} bound through the host, refs {}", f.name(), f.ref_count())));
 }
 
-fn window(window: egui::Window<'_>, ctx: &egui::Context) {
+fn tab(ui: &mut egui::Ui) {
     let frames = FRAMES.fetch_add(1, Ordering::Relaxed) + 1;
-    window.default_pos([40.0, 80.0]).show(ctx, |ui| ui.label(format!("drawn by a framework plugin, frame {frames}")));
+    ui.label(format!("drawn by a framework plugin, frame {frames}"));
 }
 
 fn startup_messages() -> Result<String, String> {
@@ -145,6 +145,6 @@ fn native() -> Result<String, String> {
 
 fn drawn() -> Result<String, String> {
     let frames = FRAMES.load(Ordering::Relaxed);
-    check(frames > 0, "the window never ran")?;
-    Ok(format!("window ran in {frames} frames"))
+    check(frames > 0, "the tab never ran")?;
+    Ok(format!("tab ran in {frames} frames"))
 }

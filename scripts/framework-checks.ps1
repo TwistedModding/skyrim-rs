@@ -28,8 +28,8 @@ $rows = @(
        ok = ($plugin["startup_messages"].ok -and $plugin["load_messages"].ok) }
     @{ name = "native";       plugin = "$(Detail 'papyrus') | $(Detail 'native')"; devbench = "SkyrimRsFrameworkTest.Twice(21) = $(Returned 4) ($((Step 4).returnedType))";
        ok = ($plugin["native"].ok -and (Returned 4) -eq 42) }
-    @{ name = "window";       plugin = (Detail "window"); devbench = "F11 taps ok = $((Step 5) -ne $null), $((Step 7) -ne $null)";
-       ok = ($plugin["window"].ok -and (Step 5) -ne $null -and (Step 7) -ne $null) }
+    @{ name = "tab";          plugin = (Detail "tab"); devbench = "F11 taps ok = $((Step 5) -ne $null), $((Step 7) -ne $null)";
+       ok = ($plugin["tab"].ok -and (Step 5) -ne $null -and (Step 7) -ne $null) }
     @{ name = "save trigger"; plugin = ($summaries -match 'framework saveGame') -join ' '; devbench = "waitFor saveGame satisfied: $(($steps | Where-Object { $_.index -eq 10 }).satisfied)";
        ok = (($steps | Where-Object { $_.index -eq 10 }).satisfied -eq $true) }
 )
