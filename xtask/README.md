@@ -25,7 +25,7 @@ The crate reads like one namespace: every class, enum, flag set, free function a
 
 Every class, enum, flag set, free function and global goes to one group module, by this rule:
 
-0. A class that is or derives from `TESCamera` or `TESCameraState` goes to `camera`, whichever pass describes it: the frame pass laid out the camera states and `PlayerCamera`, the render pass `TESCamera`, and a reader looks for all of them next to the map cameras the camera pass describes (16 classes moved, `FurnitureCameraState` among them; their methods now come with the `camera` feature, which `skyrim` enables). A class is described by one pass, so no pass order is involved.
+0. A class that is or derives from `TESCamera` or `TESCameraState` goes to `camera`, whichever pass describes it: the frame pass laid out the camera states and `PlayerCamera`, the render pass `TESCamera`, and a reader looks for all of them next to the map cameras the camera pass describes (16 classes moved, `FurnitureCameraState` among them; their methods now come with the `camera` feature, which `skyrim`'s `camera` and `render` features enable). A class is described by one pass, so no pass order is involved.
 1. A class a semantic pass describes, an enum of a pass, and a free function or global a pass names go to the pass's group (`actors`, `animation`, `audio`, `camera`, `events`, `forms`, `frame`, `graphics`, `input`, `moments`, `nimath`, `papyrus`, `render`, `save`, `ui`, `vmstack`). `FormType` goes with `TESForm`, a flag set with its class.
 2. A method, slot, `Deref` impl, base accessor and `singleton()` goes with its class. A global no pass names goes with the class it holds or points to, when it has one.
 3. Every other name goes by its outermost namespace when it has one (leading anonymous namespaces skipped), else by the name, to the first of: `script` (`BSScript`, `SkyrimScript`, `SkyrimVM`), `bnet` (`bnet...`), `stl` (`std`), `scaleform` (`Scaleform`, `GFx`, `GAS`), `havok` (`hk...`, `bhk...`), `ni` (`Ni`), `bgs` (`BGS`), `tes` (`TES`), `bs` (`BS`), `combat` (`Combat`), `pathing` (`Movement`, `Pathing`, `Path`), `extra` (`Extra`), `settings` (`Setting`, `GameSetting`, `INISetting`, `INIPrefSetting`), `factory` (`AutoRegister...`, `Concrete...`, any `...Factory` or `...Creator`), else `other`. A prefix counts when an uppercase letter, a digit, `_` or the end follows it (`NiNode` is `ni`, `Night` is not); a global's name is matched without its `g_`.
@@ -69,7 +69,7 @@ Structs, enums, flag sets and `raw` are always compiled. The callable layer is n
 - one feature per group (`actors`, ..., `ui`, `bs`, `havok`, `other`, ...): that group's semantic tier, so its methods, `Deref` impls, base accessors, singletons, free functions and global accessors;
 - `tier-high`, `tier-medium`, `tier-low`, `untiered`: in every enabled group, the decompiler-typed functions of that rating.
 
-`default` is every group plus `tier-high`, so `sre = { workspace = true }` gives the whole API. A crate that needs less writes `sre = { workspace = true, default-features = false, features = ["forms", "actors"] }`; `framework` and `crash` use no feature, `overlay` the two groups it calls (`events`, `frame`), and `skyrim`, which calls the engine across every subsystem, the 17 groups it builds on (`actors`, `animation`, `audio`, `bs`, `camera`, `events`, `forms`, `frame`, `graphics`, `input`, `other`, `papyrus`, `render`, `save`, `script`, `settings`, `ui`), so a mod on `skyrim` compiles those whatever it names itself. A method reached through `Deref` needs its own class's group: `Actor` methods come with `actors`, the `TESForm` methods an `Actor` derefs to with `forms`. Features never move a type: every struct is always compiled at the same path, so the type names the hook dispatcher compares are the same in a host and a plugin built with other features.
+`default` is empty: `sre = { workspace = true }` compiles the structs, enums and `raw` and no callable, and a crate names the groups it calls, `sre = { workspace = true, features = ["forms", "actors"] }`. `skyrim` has one feature per module, each enabling the groups that module's code calls (found by building each feature alone; the table is in `docs/MODS.md`), so a mod on `skyrim` compiles only the groups of the modules it names plus its own. A method reached through `Deref` needs both the group of the class that defines it and the group holding each `Deref` impl on the way, which is the derived class's: `Actor` methods come with `actors`, the `TESForm` methods an `Actor` derefs to with `forms`, `SceneGraph::set_field_of_view` (a `BSSceneGraph` method in `bs`) also needs `other`, where `SceneGraph`'s `Deref` sits. Features never move a type: every struct is always compiled at the same path, so the type names the hook dispatcher compares are the same in a host and a plugin built with other features.
 
 Gating the structs too was measured and left out: following pointer and embedded fields, the structs of `forms` reach 15 of the 29 groups with types, 65 % of the struct source, and every pass group reaches the same set; only `bnet`, `combat`, `extra`, `factory`, `pathing`, `scaleform`, `settings` and `stl` stand alone, together under 20 %. Feature dependencies derived from those edges would save little and tie every group to every other.
 
@@ -79,13 +79,22 @@ Measured on 2026-10-26 on the development machine (16 threads, shared with other
 
 | features | debug `cargo build -p skyrim-sre` | baseline `layout` | release `cargo build --release -p sample-plugin` | baseline |
 |---|---|---|---|---|
-| none (`default-features = false`) | 25.4 s | 34.3 s (semantic tier always on) | 22.0 s | |
+| none (the default since 2026-10-28) | 25.4 s | 34.3 s (semantic tier always on) | 22.0 s | |
 | `forms` | 25.5 s | | 22.6 s | |
 | `forms`, `tier-high` | 25.3 s | | 23.2 s | |
-| default (every group, `tier-high`) | 33.4 s | 35.0 s | 29.8 s | 28.5 s |
+| every group, `tier-high` (the default until 2026-10-28) | 33.4 s | 35.0 s | 29.8 s | 28.5 s |
 | everything (`--all-features`) | 50.0 s | 57.1 s | 42.0 s | 47.2 s |
 
 The floor is the always-compiled part, 7,539 structs with 75,000 asserts and the raw tables; stripping every doc comment from `raw` did not move it. The split itself costs nothing measurable. Every method is `#[inline]` and is code-generated only in the plugin that calls it, so the sample plugin's DLL is the same size whatever the features.
+
+Empty default and per-module `skyrim` features, measured on 2026-10-28 against master `6c1da73` in a detached worktree the same hour, before and after in alternating order, the fastest of two or three runs (the machine was shared; single runs strayed by up to 20 s). `sre` alone is a build after `cargo clean -p skyrim-sre` with its dependencies built; a plugin is a clean build into an empty target directory, every dependency included (`testplugin` pulls the overlay's egui and the crash crate).
+
+| build | debug before | debug after | `--profile verify` before | `--profile verify` after |
+|---|---|---|---|---|
+| `cargo build -p skyrim-sre` (before: every group and `tier-high`; after: no feature) | 38.5 s | 28.0 s | 44.1 s | 29.2 s |
+| the same after, with the old default named (`--features actors,...,vmstack,tier-high`) | | 38.0 s | | 42.2 s |
+| clean `cargo build -p sample-plugin` (after: `skyrim` `actors`, `events`, `forms`, `input`; `sre` `tes`) | 41.0 s | 30.7 s | 40.5 s | 30.7 s |
+| clean `cargo build -p testplugin` (every `skyrim` feature) | 45.6 s | 40.3 s | 47.1 s | 42.0 s |
 
 ### Signatures
 
