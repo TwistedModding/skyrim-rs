@@ -97,7 +97,7 @@ $Ini = "$Plugins\skyrim-rs.ini"
 
 if ($Suite -eq "overlay") { $Mode = "overlay" }
 if (-not $CheckOnly) {
-& "$PSScriptRoot\game-free.ps1"
+$tookLock = & "$PSScriptRoot\game-free.ps1"
 Push-Location $Root
 $crates = @(@("testplugin") + @(if ($Mod) { $Mod.crate }) + @(if ($Mod.crates) { $Mod.crates }) + @(if ($Mod.dir) { "host" }) + @(if ($Launch -ne "skse") { "standalone" }) | Where-Object { $_ })
 try {
@@ -257,6 +257,7 @@ try {
         if (Test-Path "$Backup\$f") { Copy-Item "$Backup\$f" "$SkseLogs\$f" -Force }
         elseif ($f -in @($PluginLog) + $ModLogs) { Remove-Item "$SkseLogs\$f" -ErrorAction SilentlyContinue }
     }
+    if ($tookLock) { & "$PSScriptRoot\game-free.ps1" -Release }
 }
 }
 $OutDir = (Resolve-Path $OutDir).Path

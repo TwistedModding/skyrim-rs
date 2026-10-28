@@ -115,7 +115,7 @@ function Wait-Run($Tool, $RunId) {
 }
 
 if (-not $Replay -and -not $Steps) { throw "give -Replay <recording> or -Steps <steps.json>" }
-& "$PSScriptRoot\game-free.ps1"
+$tookLock = & "$PSScriptRoot\game-free.ps1"
 New-Item -ItemType Directory -Force $OutDir | Out-Null
 $Shell = New-Object -ComObject WScript.Shell
 $Game = $null
@@ -169,5 +169,6 @@ try {
 } finally {
     if ($Game) { Stop-Process -Id $Game.Id -Force -ErrorAction SilentlyContinue; $Game.WaitForExit(15000) | Out-Null }
     foreach ($f in "skse64.log", "devbench.log") { if (Test-Path "$SkseLogs\$f") { Copy-Item "$SkseLogs\$f" "$OutDir\$f" -Force } }
+    if ($tookLock) { & "$PSScriptRoot\game-free.ps1" -Release }
 }
 if (-not $ok) { exit 1 }
