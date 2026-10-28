@@ -158,21 +158,32 @@ pub(crate) fn file(dir: &Path, owner: &str) -> PathBuf {
 }
 
 /// Reads `owner`'s file once; a later call (a reload) keeps the values in memory. Returns how many
-/// values were read, or why the file was not used (it is then left alone until a value changes).
+/// values were read, or why the file was not used. A file that does not parse is renamed to
+/// `<file>.bad` and replaced by the values set from then on, written at the next flush; a file that
+/// cannot be read is left alone until a value changes.
 pub(crate) fn open(owner: &str, dir: &Path) -> Result<usize, String> {
     let mut stores = stores();
     if let Some(store) = stores.get(owner) {
         return Ok(store.values.len());
     }
     let path = file(dir, owner);
-    let read = match std::fs::read_to_string(&path) {
-        Ok(text) => decode(&text).map_err(|e| format!("{}: {e}", path.display())),
-        Err(e) if e.kind() == std::io::ErrorKind::NotFound => Ok(BTreeMap::new()),
-        Err(e) => Err(format!("{}: {e}", path.display())),
+    let (values, dirty, read) = match std::fs::read_to_string(&path).map(|text| decode(&text)) {
+        Ok(Ok(values)) => {
+            let count = values.len();
+            (values, false, Ok(count))
+        }
+        Ok(Err(e)) => {
+            let bad = path.with_extension("json.bad");
+            match std::fs::rename(&path, &bad) {
+                Ok(()) => (BTreeMap::new(), true, Err(format!("{}: malformed at {e}; renamed to {}, the defaults are used", path.display(), bad.display()))),
+                Err(r) => (BTreeMap::new(), false, Err(format!("{}: malformed at {e}; not renamed ({r}), the defaults are used and the file is left alone until a value changes", path.display()))),
+            }
+        }
+        Err(e) if e.kind() == std::io::ErrorKind::NotFound => (BTreeMap::new(), false, Ok(0)),
+        Err(e) => (BTreeMap::new(), false, Err(format!("{}: {e}", path.display()))),
     };
-    let count = read.as_ref().map_or(0, BTreeMap::len);
-    stores.insert(owner.to_owned(), Store { path, values: read.clone().unwrap_or_default(), dirty: false });
-    read.map(|_| count)
+    stores.insert(owner.to_owned(), Store { path, values, dirty });
+    read
 }
 
 pub(crate) fn get(owner: &str, key: &str) -> Option<Setting> {
@@ -238,8 +249,10 @@ fn encode(values: &BTreeMap<String, Setting>) -> String {
     out
 }
 
-/// A flat JSON object of booleans, numbers and strings; `null` values are skipped.
+/// A flat JSON object of booleans, numbers and strings; `null` values are skipped. A byte order
+/// mark (Notepad and `PowerShell` write one) is allowed. An error names its line and column.
 fn decode(text: &str) -> Result<BTreeMap<String, Setting>, String> {
+    let text = text.strip_prefix('\u{feff}').unwrap_or(text);
     let mut p = Parser { chars: text.char_indices().peekable(), text };
     let mut values = BTreeMap::new();
     p.expect('{')?;
@@ -275,27 +288,42 @@ impl Parser<'_> {
     }
 
     fn expect(&mut self, c: char) -> Result<(), String> {
-        if self.eat(c) { Ok(()) } else { Err(format!("expected '{c}' at byte {}", self.position())) }
+        if self.eat(c) {
+            Ok(())
+        } else {
+            let at = self.position();
+            Err(self.error(at, &format!("expected '{c}'")))
+        }
     }
 
     fn position(&mut self) -> usize {
         self.chars.peek().map_or(self.text.len(), |&(i, _)| i)
     }
 
+    /// `what` at the byte `at`, as a line and a column counted from 1.
+    fn error(&self, at: usize, what: &str) -> String {
+        let before = &self.text[..at];
+        let line = before.matches('\n').count() + 1;
+        let column = before.rsplit('\n').next().unwrap_or_default().chars().count() + 1;
+        format!("line {line}, column {column}: {what}")
+    }
+
     fn end(&mut self) -> Result<(), String> {
         self.skip();
-        if self.chars.peek().is_none() { Ok(()) } else { Err(format!("unexpected text at byte {}", self.position())) }
+        let at = self.position();
+        if at == self.text.len() { Ok(()) } else { Err(self.error(at, "unexpected text after the object")) }
     }
 
     fn string(&mut self) -> Result<String, String> {
         self.expect('"')?;
         let mut out = String::new();
+        let unterminated = |p: &Self| p.error(p.text.len(), "unterminated string");
         loop {
-            let (_, c) = self.chars.next().ok_or("unterminated string")?;
+            let (_, c) = self.chars.next().ok_or_else(|| unterminated(self))?;
             match c {
                 '"' => return Ok(out),
                 '\\' => {
-                    let (_, e) = self.chars.next().ok_or("unterminated string")?;
+                    let (at, e) = self.chars.next().ok_or_else(|| unterminated(self))?;
                     out.push(match e {
                         'n' => '\n',
                         'r' => '\r',
@@ -304,7 +332,7 @@ impl Parser<'_> {
                         'f' => '\u{c}',
                         'u' => {
                             let hex: String = (0..4).filter_map(|_| self.chars.next().map(|(_, c)| c)).collect();
-                            u32::from_str_radix(&hex, 16).ok().and_then(char::from_u32).ok_or("bad \\u escape")?
+                            u32::from_str_radix(&hex, 16).ok().and_then(char::from_u32).ok_or_else(|| self.error(at, "bad \\u escape"))?
                         }
                         other => other,
                     });
@@ -325,14 +353,14 @@ impl Parser<'_> {
                     "true" => Ok(Some(Setting::Bool(true))),
                     "false" => Ok(Some(Setting::Bool(false))),
                     "null" => Ok(None),
-                    other => Err(format!("unknown value {other} at byte {start}")),
+                    other => Err(self.error(start, &format!("unknown value {other}"))),
                 };
             }
             _ => {}
         }
         while self.chars.next_if(|(_, c)| c.is_ascii_digit() || "+-.eE".contains(*c)).is_some() {}
-        let number = &self.text[start..self.position()];
-        number.parse::<f64>().map(|n| Some(Setting::Number(n))).map_err(|_| format!("bad value at byte {start}"))
+        let end = self.position();
+        self.text[start..end].parse::<f64>().map(|n| Some(Setting::Number(n))).map_err(|_| self.error(start, "expected a value"))
     }
 }
 
@@ -352,9 +380,13 @@ mod tests {
         assert_eq!(decode(&text).unwrap(), values);
         assert_eq!(decode("{}").unwrap(), BTreeMap::new());
         assert_eq!(decode(" { \"a\" : null , \"b\":-2e1 } ").unwrap().get("b"), Some(&Setting::Number(-20.0)));
-        assert!(decode("{\"a\": 1").is_err());
-        assert!(decode("{\"a\": yes}").is_err());
+        assert_eq!(decode("{\"a\": 1"), Err("line 1, column 8: expected ','".to_owned()));
+        assert_eq!(decode("{\"a\": 1,\n  \"b\" true\n}"), Err("line 2, column 7: expected ':'".to_owned()));
+        assert_eq!(decode("{\"a\": yes}"), Err("line 1, column 7: expected a value".to_owned()));
+        assert_eq!(decode("{\"a\": nope}"), Err("line 1, column 7: unknown value nope".to_owned()));
+        assert_eq!(decode("{\"a\": \"x"), Err("line 1, column 9: unterminated string".to_owned()));
         assert!(decode("{\"a\": 1} x").is_err());
+        assert_eq!(decode("\u{feff}{\"a\": 1}").unwrap().len(), 1);
     }
 
     #[test]
@@ -383,9 +415,15 @@ mod tests {
         assert_eq!(flush(Some(owner)), [Ok(path.clone())]);
         assert_eq!(decode(&std::fs::read_to_string(&path).unwrap()).unwrap().len(), 2);
         assert!(open("settings-test-bad", &dir).is_ok());
-        std::fs::write(file(&dir, "settings-test-broken"), "{").unwrap();
-        assert!(open("settings-test-broken", &dir).is_err());
+        let broken = file(&dir, "settings-test-broken");
+        std::fs::write(&broken, "{").unwrap();
+        let error = open("settings-test-broken", &dir).unwrap_err();
+        assert!(error.contains("malformed at line 1, column 2: expected '\"'") && error.contains("renamed to"), "{error}");
+        assert_eq!(std::fs::read_to_string(broken.with_extension("json.bad")).unwrap(), "{");
         assert_eq!(get("settings-test-broken", "x"), None);
+        set("settings-test-broken", "x", Setting::Bool(true));
+        assert_eq!(flush(Some("settings-test-broken")), [Ok(broken.clone())]);
+        assert_eq!(std::fs::read_to_string(&broken).unwrap(), "{\n  \"x\": true\n}\n");
         let _ = std::fs::remove_dir_all(&dir);
     }
 }
