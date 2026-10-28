@@ -137,10 +137,10 @@ struct Keys {
     capturing: bool,
 }
 
-/// This frame's key presses with who had each, and the frame they belong to.
+/// Key presses with who had each: those since the last present, and those the current present reports.
 struct Presses {
-    frame: u64,
-    keys: Vec<(Hotkey, Scope)>,
+    pending: Vec<(Hotkey, Scope)>,
+    current: Vec<(Hotkey, Scope)>,
 }
 
 struct Pending {
@@ -158,7 +158,7 @@ struct Pending {
 
 static PENDING: Mutex<Pending> = Mutex::new(Pending { events: Vec::new(), modifiers: Modifiers::NONE, pointer: Pos2::ZERO, screen: Vec2::ZERO, pixels_per_point: 1.0, game_held: [false; 256], taken: [false; 256] });
 static KEYS: Mutex<Keys> = Mutex::new(Keys { toggle: Some(DEFAULT_TOGGLE), close: Some(DEFAULT_CLOSE), overlay: Vec::new(), capturing: false });
-static PRESSES: Mutex<Presses> = Mutex::new(Presses { frame: 0, keys: Vec::new() });
+static PRESSES: Mutex<Presses> = Mutex::new(Presses { pending: Vec::new(), current: Vec::new() });
 static LISTENER: OnceLock<fn(KeyUse)> = OnceLock::new();
 static INSTALLED: AtomicBool = AtomicBool::new(false);
 static SINK: Sink<InputEventList, Gate> = Sink::new(Gate);
@@ -196,12 +196,18 @@ pub fn on_key(f: fn(KeyUse)) {
     let _ = LISTENER.set(f);
 }
 
-/// Whether `key` was pressed in this frame while `scope` had it: from the input dispatch that saw
-/// the press to the end of the frame's present.
+/// Whether `key` was pressed while `scope` had it before this frame's present and after the
+/// previous one's: true from the start of the present after the press (its frame callbacks and
+/// windows) to the start of the next.
 #[must_use]
 pub fn pressed(key: Hotkey, scope: Scope) -> bool {
-    let presses = PRESSES.lock().unwrap();
-    presses.frame == crate::frame_number() && presses.keys.contains(&(key, scope))
+    PRESSES.lock().unwrap().current.contains(&(key, scope))
+}
+
+/// Makes the presses since the last present the ones [`pressed`] reports; at the start of every present.
+pub(crate) fn begin_frame() {
+    let mut presses = PRESSES.lock().unwrap();
+    presses.current = core::mem::take(&mut presses.pending);
 }
 
 pub(crate) fn installed() -> bool {
@@ -321,14 +327,7 @@ impl EventSink<InputEventList> for Gate {
             }
         }
         drop((keys, p));
-        let mut log = PRESSES.lock().unwrap();
-        let frame = crate::frame_number();
-        if log.frame != frame {
-            log.frame = frame;
-            log.keys.clear();
-        }
-        log.keys.extend(presses.into_iter().filter(|(_, scope)| *scope == Scope::Overlay || !stop));
-        drop(log);
+        PRESSES.lock().unwrap().pending.extend(presses.into_iter().filter(|(_, scope)| *scope == Scope::Overlay || !stop));
         if let Some(listener) = LISTENER.get() {
             for report in reports {
                 listener(report);

@@ -18,7 +18,7 @@
 //! fonts are not under a license the workspace allows).
 
 use std::fmt;
-use std::sync::atomic::{AtomicBool, AtomicU64, Ordering};
+use std::sync::atomic::{AtomicBool, Ordering};
 use std::sync::{Mutex, OnceLock};
 use std::time::Instant;
 
@@ -84,8 +84,6 @@ static FAILURE: OnceLock<String> = OnceLock::new();
 static FRAME: OnceLock<fn()> = OnceLock::new();
 static FONTS: OnceLock<Option<(egui::FontDefinitions, String)>> = OnceLock::new();
 static KEYBOARD_FOCUS: AtomicBool = AtomicBool::new(false);
-/// Counts the presents the overlay saw; the input dispatch and the present of one frame share a number.
-static FRAME_NUMBER: AtomicU64 = AtomicU64::new(0);
 
 /// Installs the overlay. Call it once from `SKSEPlugin_Load`, after `skyrim::init`, before the
 /// first frame is drawn: the call site is patched in place.
@@ -163,18 +161,14 @@ pub fn captures_input() -> bool {
 
 unsafe extern "C" fn present_detour() {
     input::ensure_sink();
+    input::begin_frame();
     if let Some(frame) = FRAME.get() {
         frame();
     }
     if is_open() && FAILURE.get().is_none() {
         draw();
     }
-    FRAME_NUMBER.fetch_add(1, Ordering::Relaxed);
     unsafe { SITE.get().expect("stored before the call site was patched").original()() }
-}
-
-pub(crate) fn frame_number() -> u64 {
-    FRAME_NUMBER.load(Ordering::Relaxed)
 }
 
 #[allow(clippy::cast_precision_loss)]

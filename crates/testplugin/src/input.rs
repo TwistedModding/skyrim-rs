@@ -219,6 +219,7 @@ fn key_tab() -> Result<String, String> {
 /// Every key the sink saw since the load, for the suites that check which keys reached the game.
 fn keys() -> Result<String, String> {
     let keys = KEYS.lock().unwrap().clone();
+    check(!keys.is_empty(), "no key reached the sink since the load")?;
     Ok(keys.iter().map(|(id, s)| format!("{id:#04x}: {}", describe(s))).collect::<Vec<_>>().join("; "))
 }
 

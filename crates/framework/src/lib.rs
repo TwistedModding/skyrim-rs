@@ -325,9 +325,9 @@ pub struct Action {
 }
 
 impl Action {
-    /// Whether the key was pressed in this frame while the declared side had it: true from the
-    /// input dispatch that saw the press to the end of the frame's present, so once per press
-    /// for a [`Host::on_frame`] callback.
+    /// Whether the key was pressed while the declared side had it since the previous frame: true
+    /// from the start of the next present (its [`Host::on_frame`] callbacks and windows) to the
+    /// start of the one after, so once per press for a frame callback.
     #[must_use]
     pub fn fired(&self) -> bool {
         (self.table.action_fired)(self.index)
