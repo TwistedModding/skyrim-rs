@@ -1,7 +1,8 @@
 //! The example mod of `docs/MODS.md`: a framework plugin that scales the health damage the player
 //! takes. The factor is a setting that persists, shown as a slider in the plugin's overlay window,
 //! applied by a hook on `Actor::ModActorValueImpl` and settable from Papyrus through the native
-//! `SkyrimRsExample.SetDamageScale`.
+//! `SkyrimRsExample.SetDamageScale`. A hotkey, Shift+K unless the player binds another, shows and
+//! hides the window while the overlay is open.
 
 use core::ffi::c_void;
 use std::io::Write as _;
@@ -10,7 +11,7 @@ use std::sync::atomic::{AtomicU32, Ordering};
 
 use framework::hooks::Options;
 use framework::hooks::ops::Actor__ModActorValueImpl;
-use framework::{Host, egui, theme};
+use framework::{Action, Host, Scope, egui, theme};
 use skyrim::actors::Modifier;
 use skyrim::papyrus::VirtualMachine;
 
@@ -23,6 +24,7 @@ framework::plugin! {
 const SCALE: &str = "damage_scale";
 
 static HOST: OnceLock<&'static Host> = OnceLock::new();
+static TOGGLE_WINDOW: OnceLock<Action> = OnceLock::new();
 /// The factor as `f32` bits: the hook reads it on every call without a lock.
 static SCALE_BITS: AtomicU32 = AtomicU32::new(0x3F80_0000);
 /// The last damage scaled, before and after, as `f32` bits.
@@ -89,7 +91,23 @@ fn load(host: &'static Host) -> bool {
             }
             let (before, after) = (f32::from_bits(LAST[0].load(Ordering::Relaxed)), f32::from_bits(LAST[1].load(Ordering::Relaxed)));
             ui.label(egui::RichText::new(format!("Last hit: {before} became {after}")).color(theme::DIM));
+            if let Some(key) = TOGGLE_WINDOW.get().and_then(Action::key) {
+                ui.label(egui::RichText::new(format!("{key} hides this window")).color(theme::DIM));
+            }
         });
     });
+
+    let _ = TOGGLE_WINDOW.set(host.action("toggle-window", "Shift+K", Scope::Overlay));
+    host.on_frame(toggle_window);
     true
+}
+
+/// Shows or hides the window on the action's key; polled every frame.
+fn toggle_window() {
+    let (Some(host), Some(action)) = (HOST.get(), TOGGLE_WINDOW.get()) else { return };
+    if action.fired() {
+        let open = !host.is_window_open("main");
+        host.set_window_open("main", open);
+        log(&format!("toggle-window fired on {}: window {}", action.key().map(|k| k.to_string()).unwrap_or_default(), if open { "shown" } else { "hidden" }));
+    }
 }
