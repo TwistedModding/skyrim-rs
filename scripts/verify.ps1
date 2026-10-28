@@ -262,6 +262,7 @@ try {
 $OutDir = (Resolve-Path $OutDir).Path
 
 # The plugin's PASS/FAIL lines per "<suite> <phase>" run (the summary line closes a run) and, for the chosen suite, the last one per test.
+# Their keys are read through PSBase: the input suite's test named "keys" would shadow the .Keys property.
 $plugin = @{}
 $runs = @{}
 $pending = @{}
@@ -272,7 +273,7 @@ foreach ($line in $ReportLines) {
     if ($line -match '^(PASS|FAIL) (\w+): (.*)$') { $pending[$Matches[2]] = @{ ok = ($Matches[1] -eq "PASS"); detail = $Matches[3] } }
     elseif ($line -match '^summary (\w+ \w+): ') {
         $runs[$Matches[1]] = $pending
-        if ($Matches[1] -like "$Suite *") { foreach ($k in $pending.Keys) { $plugin[$k] = $pending[$k] } }
+        if ($Matches[1] -like "$Suite *") { foreach ($k in $pending.PSBase.Keys) { $plugin[$k] = $pending[$k] } }
         $pending = @{}
         $summaries += $line
     }
@@ -315,7 +316,7 @@ foreach ($r in $rows) {
     "     plugin:   $($r.plugin)"
     "     devbench: $($r.devbench)"
 }
-foreach ($name in ($plugin.Keys | Sort-Object)) { if (-not $plugin[$name].ok) { "FAIL $name`: $($plugin[$name].detail)"; $allOk = $false } }
+foreach ($name in ($plugin.PSBase.Keys | Sort-Object)) { if (-not $plugin[$name].ok) { "FAIL $name`: $($plugin[$name].detail)"; $allOk = $false } }
 ""
 "logs in $OutDir"
 if (-not $allOk) { exit 1 }
