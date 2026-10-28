@@ -12,7 +12,7 @@ crate-type = ["cdylib"]
 skse.workspace = true
 hook.workspace = true
 sre.workspace = true
-skyrim.workspace = true
+skyrim = { workspace = true, features = ["render"] }
 
 [lints]
 workspace = true

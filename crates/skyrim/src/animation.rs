@@ -17,7 +17,7 @@ use sre::{BSAnimationGraphEvent, BSAnimationGraphManager, BShkbAnimationGraph, I
 
 use crate::BSFixedString;
 use crate::events::BSTEventSource;
-use crate::forms::ptr_slice;
+use crate::ptr_slice;
 
 pub use fns::PlayerCharacter__UpdateNodesAfterRender_fn as UpdateNodesAfterRenderFn;
 

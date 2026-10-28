@@ -6,22 +6,12 @@
 //! handler's arrays and the form fields without a lock. References stay valid while the game keeps
 //! the form registered: forms read from files are never freed, runtime-created ones (`0xFF` ids) can be.
 
-use core::ffi::{CStr, c_void};
+use core::ffi::CStr;
 use std::ffi::CString;
 
 use sre::{Actor, BGSKeyword, BGSListForm, BGSLocation, BGSSoundCategory, Character, FormType, PlayerCharacter, TESClass, TESDataHandler, TESFile, TESForm, TESGlobal, TESNPC, TESObjectCELL, TESObjectREFR, TESObjectWEAP, TESRace, TESWorldSpace, VMTypeID};
 
-/// `len` pointers at `data` as optional references.
-///
-/// # Safety
-/// `data` must point to `len` pointers that stay readable and unchanged for `'a`, each null or
-/// pointing to a live `T`.
-pub(crate) unsafe fn ptr_slice<'a, T>(data: *const c_void, len: u32) -> &'a [Option<&'a T>] {
-    if data.is_null() || len == 0 {
-        return &[];
-    }
-    unsafe { core::slice::from_raw_parts(data.cast::<Option<&'a T>>(), len as usize) }
-}
+use crate::ptr_slice;
 
 /// The form registered under an editor id, through `FindFormByEditorID` (id 14620).
 ///

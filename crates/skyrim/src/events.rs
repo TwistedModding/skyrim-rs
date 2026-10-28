@@ -216,7 +216,7 @@ impl<E: Event> BSTEventSource<E> {
     /// source's lock, so it waits for a running notification and must not be called from a sink
     /// of this source.
     pub fn add_sink_first<S: EventSink<E>>(&'static self, sink: &'static Sink<E, S>) -> Registration<E> {
-        let _lock = crate::SpinGuard::lock(&self.0.lock);
+        let _lock = crate::spin::SpinGuard::lock(&self.0.lock);
         let registration = self.add_sink(sink);
         if !self.0.sinks.is_null() {
             let sinks = unsafe { core::slice::from_raw_parts_mut(self.0.sinks.cast::<*const c_void>(), self.0.sinkCount as usize) };

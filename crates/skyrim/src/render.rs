@@ -17,7 +17,7 @@ use core::sync::atomic::{AtomicU32, Ordering};
 use sre::raw::{fns, vtables};
 use sre::{BSCullingProcess, BSGeometry, BSLight, BSLightingShaderMaterialBase, BSShaderMaterial, BSShaderProperty, BSShaderTextureSet, BSShadowLight, BSTextureSet, CameraMatrixEntry, NiAVObject, NiCamera, NiNode, NiTransform, ShaderMaterialType, ShadowMapData, ShadowSceneNode, TextureSetSlot};
 
-use crate::forms::ptr_slice;
+use crate::ptr_slice;
 
 pub use fns::BSShaderAccumulator__RegisterDepthGeometry_fn as RegisterDepthGeometryFn;
 pub use fns::PlayerCharacter__SetFirstPerson_fn as SetFirstPersonFn;

@@ -16,7 +16,7 @@ use sre::raw::fns;
 use sre::{BGSSaveLoadGame, BGSSaveLoadManager, SaveLoadEventKind, TESFile};
 
 use crate::events::{BSTEventSource, Event};
-use crate::forms::ptr_slice;
+use crate::ptr_slice;
 
 type SaveFn = unsafe extern "C" fn(manager: *mut BGSSaveLoadManager, kind: i32, value: u32, name: *const c_char) -> bool;
 

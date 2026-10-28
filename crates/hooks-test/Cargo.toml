@@ -6,7 +6,7 @@ publish.workspace = true
 
 [dependencies]
 skse.workspace = true
-skyrim.workspace = true
+skyrim = { workspace = true, features = ["actors"] }
 framework.workspace = true
 sre.workspace = true
 

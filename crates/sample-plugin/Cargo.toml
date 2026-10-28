@@ -10,7 +10,7 @@ crate-type = ["cdylib"]
 
 [dependencies]
 skse.workspace = true
-skyrim.workspace = true
+skyrim = { workspace = true, features = ["actors", "events", "forms", "input"] }
 sre.workspace = true
 
 [lints]

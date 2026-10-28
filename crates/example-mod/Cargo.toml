@@ -10,7 +10,7 @@ crate-type = ["cdylib"]
 
 [dependencies]
 skse.workspace = true
-skyrim.workspace = true
+skyrim = { workspace = true, features = ["actors", "papyrus"] }
 framework.workspace = true
 sre.workspace = true
 

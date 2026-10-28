@@ -8,7 +8,7 @@ publish.workspace = true
 skse.workspace = true
 hook.workspace = true
 sre.workspace = true
-skyrim.workspace = true
+skyrim = { workspace = true, features = ["actors"] }
 
 [lints]
 workspace = true

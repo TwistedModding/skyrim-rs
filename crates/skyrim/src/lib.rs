@@ -8,38 +8,55 @@
 //! `&str`, an engine array as a slice, a checked cast), as extension traits collected in [`prelude`].
 //! [`init`] checks the running game against the runtime `sre` describes.
 
-use core::sync::atomic::{AtomicU32, Ordering};
 use std::fmt;
 use std::sync::OnceLock;
 
-use windows_sys::Win32::System::Threading::{GetCurrentThreadId, Sleep};
-
+#[cfg(feature = "actors")]
 pub mod actors;
+#[cfg(feature = "animation")]
 pub mod animation;
+#[cfg(feature = "audio")]
 pub mod audio;
+#[cfg(feature = "camera")]
 pub mod camera;
+#[cfg(feature = "events")]
 pub mod events;
+#[cfg(feature = "forms")]
 pub mod forms;
+#[cfg(feature = "input")]
 pub mod input;
+#[cfg(feature = "papyrus")]
 pub mod papyrus;
+#[cfg(feature = "render")]
 pub mod render;
+#[cfg(feature = "save")]
 pub mod save;
 pub mod string;
+#[cfg(feature = "ui")]
 pub mod ui;
 
 pub use string::BSFixedString;
 
-/// The extension traits, so one `use skyrim::prelude::*;` puts the safe helpers next to the
-/// generated methods in completion.
+/// The extension traits of the enabled modules, so one `use skyrim::prelude::*;` puts the safe
+/// helpers next to the generated methods in completion.
 pub mod prelude {
+    #[cfg(feature = "actors")]
     pub use crate::actors::{ActorValueListExt, InventoryChangesExt, TESContainerExt, TESFullNameExt, TESObjectREFRExt};
+    #[cfg(feature = "animation")]
     pub use crate::animation::{BSAnimationGraphManagerExt, BShkbAnimationGraphExt, IAnimationGraphManagerHolderExt};
+    #[cfg(feature = "camera")]
     pub use crate::camera::{PlayerCameraExt, TESCameraStateExt};
+    #[cfg(feature = "forms")]
     pub use crate::forms::{FormClass, TESDataHandlerExt, TESFileExt, TESFormExt};
+    #[cfg(feature = "input")]
     pub use crate::input::{ControlMapExt, InputEventExt, InputManagerExt};
+    #[cfg(feature = "papyrus")]
     pub use crate::papyrus::VirtualMachineExt;
+    #[cfg(feature = "render")]
     pub use crate::render::{BSCullingProcessExt, BSShaderMaterialExt, BSShaderPropertyExt, BSShadowLightExt, BSTextureSetExt, NiAVObjectExt, NiNodeExt, NodeClass, ShadowSceneNodeExt};
+    #[cfg(feature = "save")]
     pub use crate::save::{BGSSaveLoadGameExt, BGSSaveLoadManagerExt};
+    #[cfg(feature = "ui")]
     pub use crate::ui::{GFxMovieViewExt, MenuManagerExt, UIMessageQueueExt};
 }
 
@@ -122,39 +139,59 @@ pub fn store<T: Copy>(field: &T, value: T) {
     unsafe { core::ptr::from_ref(field).cast_mut().write_volatile(value) }
 }
 
-/// A held `BSSpinLock`, the engine's recursive lock (owner thread id at +0, recursion count at +4),
-/// spun on the way the engine does (`Sleep(0)`, then `Sleep(1)` after 10,000 tries) and released on drop.
-pub(crate) struct SpinGuard(*const sre::BSSpinLock);
+/// `len` pointers at `data` as optional references.
+///
+/// # Safety
+/// `data` must point to `len` pointers that stay readable and unchanged for `'a`, each null or
+/// pointing to a live `T`.
+#[cfg(any(feature = "actors", feature = "animation", feature = "forms", feature = "render", feature = "save"))]
+pub(crate) unsafe fn ptr_slice<'a, T>(data: *const core::ffi::c_void, len: u32) -> &'a [Option<&'a T>] {
+    if data.is_null() || len == 0 {
+        return &[];
+    }
+    unsafe { core::slice::from_raw_parts(data.cast::<Option<&'a T>>(), len as usize) }
+}
 
-impl SpinGuard {
-    pub(crate) fn lock(lock: &sre::BSSpinLock) -> Self {
-        let (owner, count) = Self::words(lock);
-        let me = unsafe { GetCurrentThreadId() };
-        let mut spins = 0u32;
-        loop {
-            if owner.load(Ordering::Acquire) == me {
-                count.fetch_add(1, Ordering::Relaxed);
-                return Self(lock);
+#[cfg(any(feature = "events", feature = "ui"))]
+mod spin {
+    use core::sync::atomic::{AtomicU32, Ordering};
+
+    use windows_sys::Win32::System::Threading::{GetCurrentThreadId, Sleep};
+
+    /// A held `BSSpinLock`, the engine's recursive lock (owner thread id at +0, recursion count at +4),
+    /// spun on the way the engine does (`Sleep(0)`, then `Sleep(1)` after 10,000 tries) and released on drop.
+    pub(crate) struct SpinGuard(*const sre::BSSpinLock);
+
+    impl SpinGuard {
+        pub(crate) fn lock(lock: &sre::BSSpinLock) -> Self {
+            let (owner, count) = Self::words(lock);
+            let me = unsafe { GetCurrentThreadId() };
+            let mut spins = 0u32;
+            loop {
+                if owner.load(Ordering::Acquire) == me {
+                    count.fetch_add(1, Ordering::Relaxed);
+                    return Self(lock);
+                }
+                if owner.compare_exchange(0, me, Ordering::Acquire, Ordering::Relaxed).is_ok() {
+                    count.store(1, Ordering::Relaxed);
+                    return Self(lock);
+                }
+                spins += 1;
+                unsafe { Sleep(u32::from(spins > 10_000)) };
             }
-            if owner.compare_exchange(0, me, Ordering::Acquire, Ordering::Relaxed).is_ok() {
-                count.store(1, Ordering::Relaxed);
-                return Self(lock);
-            }
-            spins += 1;
-            unsafe { Sleep(u32::from(spins > 10_000)) };
+        }
+
+        fn words(lock: &sre::BSSpinLock) -> (&AtomicU32, &AtomicU32) {
+            unsafe { (AtomicU32::from_ptr((&raw const lock.owningThread).cast_mut()), AtomicU32::from_ptr((&raw const lock.lockCount).cast_mut())) }
         }
     }
 
-    fn words(lock: &sre::BSSpinLock) -> (&AtomicU32, &AtomicU32) {
-        unsafe { (AtomicU32::from_ptr((&raw const lock.owningThread).cast_mut()), AtomicU32::from_ptr((&raw const lock.lockCount).cast_mut())) }
-    }
-}
-
-impl Drop for SpinGuard {
-    fn drop(&mut self) {
-        let (owner, count) = Self::words(unsafe { &*self.0 });
-        if count.fetch_sub(1, Ordering::Relaxed) == 1 {
-            owner.store(0, Ordering::Release);
+    impl Drop for SpinGuard {
+        fn drop(&mut self) {
+            let (owner, count) = Self::words(unsafe { &*self.0 });
+            if count.fetch_sub(1, Ordering::Relaxed) == 1 {
+                owner.store(0, Ordering::Release);
+            }
         }
     }
 }

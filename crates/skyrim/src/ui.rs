@@ -21,7 +21,7 @@ use sre::raw::{fns, vtables};
 use sre::{EventSourceHolder_MenuOpenClose, GFxMovieView, GFxScaleMode, HUDMenu, IMenu, UIMessage, UIMessageQueue, UIMessageResult};
 
 use crate::BSFixedString;
-use crate::SpinGuard;
+use crate::spin::SpinGuard;
 
 pub type RenderMenuStackFn = fns::RenderMenuStack_fn;
 pub type AddMessageFn = fns::UIMessageQueue__AddMessage_fn;

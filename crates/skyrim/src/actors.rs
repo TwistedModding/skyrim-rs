@@ -14,7 +14,7 @@ use std::fmt;
 
 use sre::{ActorValue, ActorValueInfo, ActorValueList, ContainerEntry, InventoryChanges, InventoryEntry, TESContainer, TESFullName, TESObjectREFR};
 
-use crate::forms::ptr_slice;
+use crate::ptr_slice;
 
 /// The modifier slots of an actor value, the `modifier` of `ActorValueOwner::ModActorValue` and
 /// `Actor::GetActorValueModifier`.

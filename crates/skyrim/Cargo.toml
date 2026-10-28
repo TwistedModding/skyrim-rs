@@ -7,8 +7,24 @@ publish.workspace = true
 [dependencies]
 skse.workspace = true
 hook.workspace = true
-sre = { workspace = true, default-features = false, features = ["actors", "animation", "audio", "bs", "camera", "events", "forms", "frame", "graphics", "input", "other", "papyrus", "render", "save", "script", "settings", "ui"] }
+sre = { workspace = true, default-features = false }
 windows-sys = { workspace = true, features = ["Win32_System_Threading"] }
+
+# One feature per module, each with the `sre` groups its code calls. `init`, `reloc`, `class_of`,
+# `store` and `BSFixedString` are always compiled and need none.
+[features]
+default = []
+actors = ["sre/actors"]
+animation = ["events", "sre/actors", "sre/animation"]
+audio = ["sre/audio"]
+camera = ["sre/camera", "sre/frame"]
+events = ["sre/actors", "sre/events"]
+forms = ["sre/forms"]
+input = ["sre/events", "sre/input", "sre/ui"]
+papyrus = ["forms", "sre/actors", "sre/events", "sre/papyrus", "sre/script"]
+render = ["camera", "sre/bs", "sre/camera", "sre/frame", "sre/graphics", "sre/other", "sre/render", "sre/settings"]
+save = ["events", "sre/save"]
+ui = ["sre/events", "sre/ui"]
 
 [lints]
 workspace = true
