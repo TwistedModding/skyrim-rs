@@ -58,6 +58,24 @@ pub fn generate(re_dir: &Path, commit: &str) -> Result<(BTreeMap<String, String>
     Ok((files, stats))
 }
 
+/// Every file under the generated module directory, relative to the workspace root with `/` separators.
+#[must_use]
+pub fn generated_on_disk(root: &Path) -> Vec<String> {
+    let mut found = Vec::new();
+    let mut dirs = vec![root.join(MODULE_DIR)];
+    while let Some(dir) = dirs.pop() {
+        for entry in std::fs::read_dir(&dir).into_iter().flatten().flatten() {
+            let path = entry.path();
+            if path.is_dir() {
+                dirs.push(path);
+            } else {
+                found.push(path.strip_prefix(root).unwrap().to_string_lossy().replace('\\', "/"));
+            }
+        }
+    }
+    found
+}
+
 /// The crash log of a minidump the crash logger wrote: the record from its user stream (or what
 /// the dump's own streams give) formatted by the logger's own `report`, with DLL symbols from
 /// `DbgHelp` where their PDBs are found.
@@ -93,17 +111,8 @@ mod tests {
             let on_disk = std::fs::read_to_string(root.join(path)).unwrap_or_default();
             assert!(on_disk == *text, "{path} is stale; run `cargo xtask gen`");
         }
-        let mut dirs = vec![root.join(MODULE_DIR)];
-        while let Some(dir) = dirs.pop() {
-            for entry in std::fs::read_dir(&dir).unwrap().flatten() {
-                let path = entry.path();
-                let relative = path.strip_prefix(&root).unwrap().to_string_lossy().replace('\\', "/");
-                if path.is_dir() {
-                    dirs.push(path);
-                } else {
-                    assert!(files.contains_key(&relative), "{relative} is not generated any more; run `cargo xtask gen`");
-                }
-            }
+        for relative in generated_on_disk(&root) {
+            assert!(files.contains_key(&relative), "{relative} is not generated any more; run `cargo xtask gen`");
         }
     }
 }

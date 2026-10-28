@@ -24,19 +24,24 @@ fn generate() -> ExitCode {
         }
     };
     let root = xtask::workspace_root();
-    match std::fs::remove_dir_all(root.join(xtask::MODULE_DIR)) {
-        Err(e) if e.kind() != std::io::ErrorKind::NotFound => {
-            eprintln!("{}: {e}", xtask::MODULE_DIR);
-            return ExitCode::FAILURE;
-        }
-        _ => {}
+    for stale in xtask::generated_on_disk(&root).into_iter().filter(|p| !files.contains_key(p)) {
+        let path = root.join(&stale);
+        std::fs::remove_file(&path).unwrap();
+        let _ = std::fs::remove_dir(path.parent().unwrap());
+        println!("removed {}", path.display());
     }
+    let mut unchanged = 0;
     for (path, text) in &files {
         let path = root.join(path);
+        if std::fs::read(&path).is_ok_and(|old| old == text.as_bytes()) {
+            unchanged += 1;
+            continue;
+        }
         std::fs::create_dir_all(path.parent().unwrap()).unwrap();
         std::fs::write(&path, text).unwrap();
         println!("wrote {} ({} bytes)", path.display(), text.len());
     }
+    println!("{unchanged} files unchanged");
     println!(
         "classes {} exact + {} partial, fields {} ({} with a semantic meaning), asserts {} size + {} offset, vtables {} with {} slots ({} named, {} typed), functions {} ({} typed), globals {}, enum values {}, flags {}, symbol table {}",
         stats.exact_classes,
