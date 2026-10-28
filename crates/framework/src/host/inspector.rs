@@ -1,10 +1,12 @@
 //! The host's own window, "skyrim-rs": the hook compatibility mode, the plugins in load order with
-//! their generation, the windows with their open state, the overlay's capture rule, every hook site
-//! with its entry state, the module behind another module's patch and whether the site broke, its
-//! subscribers (each one switchable) and the dispatcher's last messages. The console command `SkyrimRs` prints
-//! the same and drives it: `window` opens the overlay on it, `hooks` lists the sites, `toggle <id>`
-//! switches a subscriber, `capture` writes the next overlay frame to `skyrim-rs-overlay.bmp` in the
-//! SKSE log folder.
+//! their generation, the windows with their open state, the overlay's capture rule, the hotkeys
+//! (each one settable by capturing the next key pressed), every hook site with its entry state, the
+//! module behind another module's patch and whether the site broke, its subscribers (each one
+//! switchable) and the dispatcher's last messages. The console command `SkyrimRs` prints the same
+//! and drives it: `window` opens the overlay on it, `hooks` lists the sites, `toggle <id>` switches
+//! a subscriber, `keys` lists the hotkeys, `bind <n>` captures the next key pressed for hotkey `n`
+//! as the window's "set" button does, `capture` writes the next overlay frame to
+//! `skyrim-rs-overlay.bmp` in the SKSE log folder.
 
 use std::sync::{Mutex, PoisonError};
 use std::time::{Duration, Instant};
@@ -14,7 +16,7 @@ use overlay::theme;
 use skyrim::input::{Arg, CommandContext, Param};
 use sre::ScriptParamType;
 
-use super::{HOOKS, NAME, WINDOW_LIST, flush_settings, plugins, reload, set_window_open, window_open};
+use super::{HOOKS, NAME, WINDOW_LIST, flush_settings, keys, plugins, reload, set_window_open, window_open};
 use crate::hooks::{Hooks, SiteReport, SubscriptionId};
 use crate::order::Constraints;
 use crate::settings::{self, Setting, Value};
@@ -51,9 +53,13 @@ fn focus_capture() -> bool {
     settings::get(NAME, CAPTURE).and_then(|s| String::from_setting(&s)).is_none_or(|v| v != "all")
 }
 
-/// Sets the overlay's capture rule from the host's settings.
+/// Sets the overlay's capture rule from the host's settings, where it is written when missing.
 pub(super) fn apply_capture() {
-    overlay::set_capture(if focus_capture() { overlay::Capture::Focus } else { overlay::Capture::All });
+    let focus = focus_capture();
+    if settings::get(NAME, CAPTURE).is_none() {
+        settings::set(NAME, CAPTURE, Setting::Text("focus".to_owned()));
+    }
+    overlay::set_capture(if focus { overlay::Capture::Focus } else { overlay::Capture::All });
 }
 
 fn constraints(c: &Constraints) -> String {
@@ -89,6 +95,26 @@ fn plugin_lines() -> Vec<String> {
             format!("plugin {rank}: {} {state} ({}; {})", p.name, p.file, constraints(&p.constraints))
         })
         .collect()
+}
+
+fn key_lines() -> Vec<String> {
+    let focus = if overlay::keyboard_focus() { "a widget has the keyboard focus" } else { "no widget has the keyboard focus" };
+    let mut lines = vec![format!("SkyrimRs: overlay {}, {focus}", if overlay::is_open() { "open" } else { "closed" })];
+    for (i, b) in keys::list().iter().enumerate() {
+        let game = if b.game.is_empty() { String::new() } else { format!(", game: {}", b.game) };
+        lines.push(format!("key {i} {}: {} (default {}, {:?}{game})", b.name, keys::show(b.key), keys::show(b.default), b.scope));
+    }
+    let last = keys::last_message();
+    if !last.is_empty() {
+        lines.push(format!("keys: {last}"));
+    }
+    lines
+}
+
+/// Opens the overlay on the host's window.
+fn open_window() {
+    overlay::set_open(true);
+    set_window_open(NAME, ID, true);
 }
 
 fn window_lines() -> Vec<String> {
@@ -162,6 +188,25 @@ pub(super) fn draw(window: egui::Window<'_>, ctx: &egui::Context) {
             }
             ui.label(dim(format!("Font: {}", overlay::font_source())).small());
 
+            heading(ui, "Keys");
+            let capturing = keys::capturing();
+            egui::Grid::new("keys").striped(true).spacing([18.0, 4.0]).show(ui, |ui| {
+                for (i, b) in keys::list().iter().enumerate() {
+                    ui.label(&b.name).on_hover_text(format!("default {}, {:?}", keys::show(b.default), b.scope));
+                    ui.label(if b.key.is_some() { RichText::new(keys::show(b.key)) } else { RichText::new("unbound").color(ui.visuals().warn_fg_color) });
+                    let armed = capturing == Some(i);
+                    if ui.button(if armed { "press a key" } else { "set" }).clicked() {
+                        keys::capture((!armed).then_some(i));
+                    }
+                    ui.label(dim(if b.game.is_empty() { String::new() } else { format!("game: {}", b.game) }));
+                    ui.end_row();
+                }
+            });
+            let message = keys::last_message();
+            if !message.is_empty() {
+                ui.label(if message.contains("refused") || message.contains("unbound") { RichText::new(message).color(ui.visuals().warn_fg_color) } else { dim(message) });
+            }
+
             heading(ui, "Hooks");
             let (sites, messages) = snapshot(|s| (s.sites.clone(), s.messages.clone()));
             if sites.is_empty() {
@@ -201,19 +246,30 @@ pub(super) fn draw(window: egui::Window<'_>, ctx: &egui::Context) {
 
 static PARAMS: [Param; 2] = [Param::new(c"what", ScriptParamType::String, false), Param::new(c"id", ScriptParamType::Integer, true)];
 
-/// `SkyrimRs window | hooks | toggle <id> | capture`.
+/// `SkyrimRs window | hooks | toggle <id> | keys | bind <n> | capture`.
 pub(super) struct Command;
 
 impl skyrim::input::Command for Command {
     const NAME: &'static core::ffi::CStr = c"SkyrimRs";
-    const HELP: &'static core::ffi::CStr = c"skyrim-rs: window, hooks, toggle <subscription id>, capture";
+    const HELP: &'static core::ffi::CStr = c"skyrim-rs: window, hooks, toggle <subscription id>, keys, bind <key number>, capture";
     const PARAMS: &'static [Param] = &PARAMS;
 
     fn execute(context: &mut CommandContext<'_>) -> bool {
         let lines = match context.args() {
+            [Arg::Str(what), ..] if what.eq_ignore_ascii_case("keys") => key_lines(),
+            [Arg::Str(what), Arg::Int(n)] if what.eq_ignore_ascii_case("bind") => {
+                let action = usize::try_from(*n).ok().and_then(|n| keys::list().get(n).map(|b| (n, b.name.clone())));
+                vec![match action {
+                    Some((n, name)) => {
+                        open_window();
+                        keys::capture(Some(n));
+                        format!("SkyrimRs: press the key for {name}")
+                    }
+                    None => format!("SkyrimRs: no key {n}"),
+                }]
+            }
             [Arg::Str(what), ..] if what.eq_ignore_ascii_case("window") => {
-                overlay::set_open(true);
-                set_window_open(NAME, ID, true);
+                open_window();
                 let mut lines = vec![format!("SkyrimRs: overlay open, font {}, capture {:?}", overlay::font_source(), overlay::capture())];
                 lines.extend(plugin_lines());
                 lines.extend(window_lines());
@@ -229,7 +285,7 @@ impl skyrim::input::Command for Command {
                 });
                 vec![format!("SkyrimRs: the next overlay frame goes to {}", path.display())]
             }
-            _ => vec!["SkyrimRs: window, hooks, toggle <subscription id> or capture".to_owned()],
+            _ => vec!["SkyrimRs: window, hooks, toggle <subscription id>, keys, bind <key number> or capture".to_owned()],
         };
         flush_settings(Some(NAME));
         for line in lines {

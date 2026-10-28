@@ -15,9 +15,9 @@
 //!
 //! What a plugin gets from its [`Host`]: the SKSE interface the host was loaded with, forwarded
 //! (`QueryInterface` answers as for the host, and the plugin handle is the host's, valid only while
-//! `load` runs), its [`settings`], and every registration it makes in the game: loader messages, the
-//! Papyrus registration pass, windows on the host's overlay, event sinks, Papyrus natives, console
-//! commands and hook subscriptions ([`Host::hooks`]). The host owns the object the engine keeps for each of
+//! `load` runs), its [`settings`], its hotkeys ([`Host::action`]), and every registration it makes
+//! in the game: loader messages, a per-frame callback, the Papyrus registration pass, windows on the
+//! host's overlay, event sinks, Papyrus natives, console commands and hook subscriptions ([`Host::hooks`]). The host owns the object the engine keeps for each of
 //! them and knows which plugin it belongs to, so the plugin's DLL can be unloaded and replaced
 //! while the game runs: the host loads every plugin from a shadow copy, watches the author's file
 //! and swaps generations at a frame boundary (`docs/subsystems/reload.md`). A plugin calls
@@ -27,7 +27,7 @@
 use core::ffi::{CStr, c_char};
 use std::fmt;
 
-pub use overlay::{egui, theme};
+pub use overlay::{Hotkey, Scope, egui, theme};
 use skyrim::events::{BSTEventSource, ErasedHandler, ErasedSource, Event};
 use sre::BSEventNotifyControl;
 use skyrim::input::{Command, CommandSlot, ErasedExecute, Param};
@@ -56,6 +56,8 @@ pub type LoadFn = fn(&'static Host) -> bool;
 pub type MessageFn = fn(&skse::Message);
 /// Receives the VM at the loader's Papyrus registration pass.
 pub type PapyrusFn = fn(&'static VirtualMachine);
+/// Runs once a frame on the main thread.
+pub type FrameFn = fn();
 /// Draws one window: gets the `egui::Window` the host set up and shows it.
 pub type DrawFn = Box<dyn for<'a> FnMut(egui::Window<'a>, &egui::Context) + Send>;
 
@@ -149,7 +151,11 @@ pub(crate) struct CommandRequest<'a> {
 /// The host's functions, one table shared by every plugin's [`Host`]; the owner comes first.
 pub(crate) struct Table {
     pub on_message: fn(&'static str, MessageFn),
+    pub on_frame: fn(&'static str, FrameFn),
     pub on_papyrus: fn(&'static str, PapyrusFn),
+    pub action: fn(&'static str, &str, &str, Scope) -> usize,
+    pub action_fired: fn(usize) -> bool,
+    pub action_key: fn(usize) -> Option<Hotkey>,
     pub add_window: fn(&'static str, &str, &str, DrawFn),
     pub window_open: fn(&'static str, &str) -> bool,
     pub set_window_open: fn(&'static str, &str, bool),
@@ -189,6 +195,30 @@ impl Host {
     /// so setup done at `DATA_LOADED` is done again.
     pub fn on_message(&self, f: MessageFn) {
         (self.table.on_message)(self.name, f);
+    }
+
+    /// Calls `f` once a frame on the main thread, at the frame's present whether the overlay is
+    /// open or not, before the overlay's windows draw: the place to poll [`Action::fired`].
+    pub fn on_frame(&self, f: FrameFn) {
+        (self.table.on_frame)(self.name, f);
+    }
+
+    /// Declares a hotkey named `<plugin>.<name>` in the host's binding table, bound to `default`
+    /// (`"F10"`, `"Ctrl+Shift+K"`, as [`Hotkey`] reads it) until the player binds another key in
+    /// the host file (`key.<plugin>.<name>`) or the Keys section of the host's window. `scope` says
+    /// who must have the key: [`Scope::Overlay`] fires while the overlay is open with no widget
+    /// focused and keeps the key from the game while it is open; [`Scope::Game`] fires when the
+    /// press reached the game, which acts on it too. A key another action holds is refused, and
+    /// the action stays unbound until one is set. A later generation of the plugin declaring the
+    /// same name gets the same action and binding.
+    ///
+    /// ```ignore
+    /// let toggle = host.action("toggle-window", "Shift+K", framework::Scope::Overlay);
+    /// host.on_frame(|| if TOGGLE.get().is_some_and(|a| a.fired()) { /* ... */ });
+    /// ```
+    #[must_use]
+    pub fn action(&self, name: &str, default: &str, scope: Scope) -> Action {
+        Action { index: (self.table.action)(self.name, name, default, scope), table: self.table }
     }
 
     /// Calls `f` with the VM at the Papyrus registration pass, or at once when the pass has run
@@ -284,6 +314,29 @@ impl Host {
     #[must_use]
     pub fn hooks(&self) -> &'static hooks::Hooks {
         self.hooks
+    }
+}
+
+/// A hotkey from [`Host::action`].
+#[derive(Clone, Copy)]
+pub struct Action {
+    index: usize,
+    table: &'static Table,
+}
+
+impl Action {
+    /// Whether the key was pressed in this frame while the declared side had it: true from the
+    /// input dispatch that saw the press to the end of the frame's present, so once per press
+    /// for a [`Host::on_frame`] callback.
+    #[must_use]
+    pub fn fired(&self) -> bool {
+        (self.table.action_fired)(self.index)
+    }
+
+    /// The key bound now; `None` while a conflict leaves the action unbound.
+    #[must_use]
+    pub fn key(&self) -> Option<Hotkey> {
+        (self.table.action_key)(self.index)
     }
 }
 

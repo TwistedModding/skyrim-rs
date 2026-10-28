@@ -2,8 +2,10 @@
 //! engine and the loader keep for every plugin (one message listener and one Papyrus callback,
 //! one overlay window, one sink per event source, the native function objects, the console
 //! entries and the hook sites) and tags each registration with its plugin, so `reload` can
-//! detach a plugin and unload its DLL. It keeps every plugin's settings and draws its own window,
-//! the inspector (`inspector`), also reachable through the console command `SkyrimRs`.
+//! detach a plugin and unload its DLL. It keeps every plugin's settings, its own in
+//! `skyrim-rs.settings.json` (window states, the capture rule, every hotkey of the binding table
+//! `keys`), and draws its own window, the inspector (`inspector`), also reachable through the
+//! console command `SkyrimRs`.
 
 use core::ffi::{CStr, c_void};
 use core::sync::atomic::{AtomicU32, AtomicU64, AtomicUsize, Ordering};
@@ -26,7 +28,7 @@ use windows_sys::Win32::System::SystemInformation::GetTickCount64;
 use crate::hooks::{Compat, Hooks};
 use crate::order::{self, Constraints};
 use crate::settings::{self, Setting};
-use crate::{ABI, BUILD, CommandRequest, Descriptor, DrawFn, Error, Host, MessageFn, NativeRequest, PapyrusFn, Plugin, Table};
+use crate::{ABI, BUILD, CommandRequest, Descriptor, DrawFn, Error, FrameFn, Host, MessageFn, NativeRequest, PapyrusFn, Plugin, Table};
 
 static LOG: Mutex<Option<File>> = Mutex::new(None);
 /// The SKSE log folder, where the host writes its log and the inspector its frame captures.
@@ -53,6 +55,7 @@ macro_rules! log {
 }
 
 mod inspector;
+mod keys;
 mod owned;
 mod reload;
 
@@ -67,6 +70,7 @@ pub const NAME: &str = "skyrim-rs";
 
 static PLUGINS: OnceLock<Vec<Plugin>> = OnceLock::new();
 static MESSAGES: Owned<MessageFn> = Owned::new();
+static FRAMES: Owned<FrameFn> = Owned::new();
 static PAPYRUS: Owned<PapyrusFn> = Owned::new();
 static WINDOWS: Owned<PluginWindow> = Owned::new();
 /// Every window added, as the inspector lists them: owner, id, title.
@@ -86,7 +90,23 @@ static LAST_MESSAGE_AT: AtomicU64 = AtomicU64::new(0);
 /// The SKSE plugins in `Data\SKSE\Plugins` with their version data, read once they are all loaded.
 static SKSE_PLUGINS: Mutex<Vec<String>> = Mutex::new(Vec::new());
 static HOOKS: Hooks = Hooks::HOST;
-static TABLE: Table = Table { on_message, on_papyrus, add_window, window_open, set_window_open, setting: settings::get, set_setting: settings::set, add_sink, register_native, register_command, plugins };
+static TABLE: Table = Table {
+    on_message,
+    on_frame,
+    on_papyrus,
+    action: keys::declare,
+    action_fired: keys::fired,
+    action_key: keys::key,
+    add_window,
+    window_open,
+    set_window_open,
+    setting: settings::get,
+    set_setting: settings::set,
+    add_sink,
+    register_native,
+    register_command,
+    plugins,
+};
 
 /// A plugin's window; only the main thread runs it, under the entry's exclusive lock.
 struct PluginWindow {
@@ -154,8 +174,9 @@ pub fn load(skse: &skse::Interface) -> bool {
     Hooks::revalidate("startup");
     let dir = plugins_dir().join(PLUGIN_DIR);
     open_settings(NAME, &dir);
-    match overlay::install(overlay::DEFAULT_TOGGLE) {
-        Ok(()) => log!("overlay installed, toggled with scan code {:#x}", overlay::DEFAULT_TOGGLE),
+    keys::declare_host();
+    match overlay::install() {
+        Ok(()) => log!("overlay installed, toggled with {}, closed with {}", keys::show(keys::key(keys::TOGGLE)), keys::show(keys::key(keys::CLOSE))),
         Err(e) => log!("overlay: {e}"),
     }
     log!("overlay font: {}", overlay::font_source());
@@ -176,6 +197,10 @@ pub fn load(skse: &skse::Interface) -> bool {
         let file = path.file_name().map(|f| f.to_string_lossy().into_owned()).unwrap_or_default();
         let loaded = reload::copy(&path, &shadow, 1).map_err(|e| format!("copy: {e}")).and_then(|copy| read_descriptor(&copy).map(|(module, descriptor)| (module, descriptor, copy)));
         match loaded {
+            Ok((module, descriptor, _)) if plugin_name(descriptor) == NAME => {
+                log!("skipped {file}: {NAME} is the host's own name, which its settings file and keys use");
+                unsafe { FreeLibrary(module) };
+            }
             Ok((module, descriptor, copy)) => read.push((module, descriptor, describe(descriptor, file), path, copy)),
             Err(e) => log!("skipped {file}: {e}"),
         }
@@ -215,8 +240,22 @@ pub fn load(skse: &skse::Interface) -> bool {
         loaded.push(reload::Loaded::new(plugin.clone(), host, *module, descriptor, live, source.clone(), copy.clone()));
     }
     reload::watch(loaded);
-    overlay::on_frame(reload::tick);
+    overlay::on_frame(frame);
     true
+}
+
+/// The overlay's frame callback: reloads first, then every plugin's [`Host::on_frame`].
+fn frame() {
+    reload::tick();
+    FRAMES.each(|f| {
+        f();
+        true
+    });
+}
+
+/// Whether the loader's `DATA_LOADED` message has arrived (the control map is loaded by then).
+fn data_loaded() -> bool {
+    STARTUP.lock().unwrap_or_else(PoisonError::into_inner).contains(&skse::MessagingInterface::DATA_LOADED)
 }
 
 /// Reads a plugin's settings file and logs what came of it.
@@ -462,7 +501,8 @@ fn detach(owner: &str) -> String {
     }
     let messages = MESSAGES.remove_owner(owner);
     let papyrus = PAPYRUS.remove_owner(owner);
-    format!("{hooks} hook subscriptions, {sinks} sinks, {natives} natives stubbed, {commands} commands stubbed, {windows} windows, {messages} message handlers, {papyrus} Papyrus callbacks")
+    let frames = FRAMES.remove_owner(owner);
+    format!("{hooks} hook subscriptions, {sinks} sinks, {natives} natives stubbed, {commands} commands stubbed, {windows} windows, {messages} message handlers, {papyrus} Papyrus callbacks, {frames} frame callbacks")
 }
 
 fn vm() -> Option<&'static VirtualMachine> {
@@ -491,6 +531,9 @@ unsafe extern "C" fn on_skse_message(msg: *mut skse::Message) {
     if matches!(msg.kind, skse::MessagingInterface::PLUGINS_LOADED | skse::MessagingInterface::PLUGINS_LOADED_2 | skse::MessagingInterface::CONTROLS_READY | skse::MessagingInterface::DATA_LOADED) {
         STARTUP.lock().unwrap_or_else(PoisonError::into_inner).push(msg.kind);
     }
+    if msg.kind == skse::MessagingInterface::DATA_LOADED {
+        keys::describe_game_uses();
+    }
     MESSAGES.each(|f| {
         f(msg);
         true
@@ -515,6 +558,10 @@ fn on_message(owner: &'static str, f: MessageFn) {
     for kind in seen {
         f(&skse::Message { sender: c"SKSE".as_ptr(), kind, data_len: 0, data: core::ptr::null_mut() });
     }
+}
+
+fn on_frame(owner: &'static str, f: FrameFn) {
+    FRAMES.add(owner, f);
 }
 
 fn on_papyrus(owner: &'static str, f: PapyrusFn) {

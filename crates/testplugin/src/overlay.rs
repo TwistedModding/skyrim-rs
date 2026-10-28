@@ -87,7 +87,7 @@ static TYPING_WITNESS: Sink<InputEventList, TypingWitness> = Sink::new(TypingWit
 
 /// Installs the probe and the overlay with the suite's window; from `SKSEPlugin_Load`, before any frame.
 pub fn install() -> Result<String, String> {
-    overlay::install(overlay::DEFAULT_TOGGLE).map_err(|e| format!("overlay: {e}"))?;
+    overlay::install().map_err(|e| format!("overlay: {e}"))?;
     overlay::add(window);
     let probe = unsafe { skyrim::render::hook_present(probe) }.map_err(|e| format!("probe: {e}"))?;
     let target = probe.target();

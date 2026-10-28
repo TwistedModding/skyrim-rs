@@ -4,10 +4,13 @@
 //! [`install`] redirects `RenderFrame`'s call to `PresentFrame` (the frame pass: the frame's
 //! present on the main thread, after the world, the menus and the screenshot; the loading screen
 //! and the Bink loop present through other callers and are left alone) and, once the input
-//! manager exists, puts a sink at the front of the input source. The toggle key opens and closes
-//! the overlay; while it is open the sink turns the frame's keys, characters, mouse moves, buttons
-//! and wheel steps into `egui` events and ends the walk, so neither the game's handlers nor other
-//! plugins' sinks see them. Every frame the overlay is open, the windows added with [`add`] run
+//! manager exists, puts a sink at the front of the input source. The toggle key (F11) opens and
+//! closes the overlay and the close key (Escape) closes it once no widget has the focus; neither
+//! key's press nor its release reaches the game while the overlay uses it. While the overlay is
+//! open the sink turns the frame's keys, characters, mouse moves, buttons and wheel steps into
+//! `egui` events and ends the walk, so neither the game's handlers nor other plugins' sinks see
+//! them. A host binds other keys, and keys of its own actions, through [`set_toggle`],
+//! [`set_close`] and [`set_overlay_keys`]. Every frame the overlay is open, the windows added with [`add`] run
 //! on the main thread and the result is painted into the back buffer with a Direct3D 11 pipeline
 //! of this crate's own, in the framework [`theme`]: the look of the game's menus, with the game's
 //! own Futura Condensed converted from `Interfaceonts_en.swf` at startup when it can be read and
@@ -15,7 +18,7 @@
 //! fonts are not under a license the workspace allows).
 
 use std::fmt;
-use std::sync::atomic::{AtomicBool, Ordering};
+use std::sync::atomic::{AtomicBool, AtomicU64, Ordering};
 use std::sync::{Mutex, OnceLock};
 use std::time::Instant;
 
@@ -31,7 +34,7 @@ pub mod theme;
 mod vanilla;
 
 pub use frame::{Frame, read_back, save_next_frame};
-pub use input::{Capture, DEFAULT_TOGGLE, capture, set_capture};
+pub use input::{Capture, DEFAULT_CLOSE, DEFAULT_TOGGLE, Hotkey, KeyUse, Scope, capture, capture_next_key, capturing, on_key, pressed, set_capture, set_close, set_overlay_keys, set_toggle};
 
 /// How far into `RenderFrame` its one call to `PresentFrame` is looked for (it sits at +0x601).
 const RENDER_FRAME_LEN: usize = 0x800;
@@ -81,11 +84,12 @@ static FAILURE: OnceLock<String> = OnceLock::new();
 static FRAME: OnceLock<fn()> = OnceLock::new();
 static FONTS: OnceLock<Option<(egui::FontDefinitions, String)>> = OnceLock::new();
 static KEYBOARD_FOCUS: AtomicBool = AtomicBool::new(false);
+/// Counts the presents the overlay saw; the input dispatch and the present of one frame share a number.
+static FRAME_NUMBER: AtomicU64 = AtomicU64::new(0);
 
-/// Installs the overlay with `toggle` (a keyboard scan code, [`DEFAULT_TOGGLE`] is F11) as the key
-/// that opens and closes it. Call it once from `SKSEPlugin_Load`, after `skyrim::init`, before the
+/// Installs the overlay. Call it once from `SKSEPlugin_Load`, after `skyrim::init`, before the
 /// first frame is drawn: the call site is patched in place.
-pub fn install(toggle: u32) -> Result<(), Error> {
+pub fn install() -> Result<(), Error> {
     let ctx = new_context().ok_or(Error::NoFont)?;
     let reloc = skyrim::reloc();
     let render_frame = reloc.address(fns::RenderFrame)?;
@@ -96,7 +100,6 @@ pub fn install(toggle: u32) -> Result<(), Error> {
         return Err(Error::AlreadyInstalled);
     }
     *state = Some(State { ctx, painter: None, start: Instant::now() });
-    input::set_toggle(toggle);
     let _ = SITE.set(unsafe { hook::CallSite::install(site, present_detour as PresentFn) }?);
     Ok(())
 }
@@ -166,7 +169,12 @@ unsafe extern "C" fn present_detour() {
     if is_open() && FAILURE.get().is_none() {
         draw();
     }
+    FRAME_NUMBER.fetch_add(1, Ordering::Relaxed);
     unsafe { SITE.get().expect("stored before the call site was patched").original()() }
+}
+
+pub(crate) fn frame_number() -> u64 {
+    FRAME_NUMBER.load(Ordering::Relaxed)
 }
 
 #[allow(clippy::cast_precision_loss)]
