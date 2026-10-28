@@ -145,7 +145,7 @@ struct Presses {
 
 struct Pending {
     events: Vec<Event>,
-    /// The modifiers held, tracked whether the overlay is open or not.
+    /// The modifiers held in the frame being read.
     modifiers: Modifiers,
     pointer: Pos2,
     screen: Vec2,
@@ -250,6 +250,7 @@ impl EventSink<InputEventList> for Gate {
     fn process(&self, list: &InputEventList, _: &BSTEventSource<InputEventList>) -> BSEventNotifyControl {
         let mut keys = KEYS.lock().unwrap();
         let mut p = PENDING.lock().unwrap();
+        p.modifiers = held_modifiers(list);
         let focus = crate::keyboard_focus();
         let mut stop = crate::is_open();
         let (mut taken, mut keyboard, mut overlay_only, mut game_release) = (false, false, false, false);
@@ -306,9 +307,6 @@ impl EventSink<InputEventList> for Gate {
             }
             if to_egui {
                 p.translate(event);
-            }
-            if let Some(b) = key {
-                set_modifier(&mut p.modifiers, b.idCode, b.value != 0.0);
             }
         }
         if taken {
@@ -384,17 +382,24 @@ fn is_modifier(scan_code: u32) -> bool {
     matches!(scan_code, 0x2A | 0x36 | 0x1D | 0x9D | 0x38 | 0xB8)
 }
 
-/// Records a shift, control or alt key going down or up; any other key is ignored.
-fn set_modifier(m: &mut Modifiers, scan_code: u32, down: bool) {
-    match scan_code {
-        0x2A | 0x36 => m.shift = down,
-        0x1D | 0x9D => {
-            m.ctrl = down;
-            m.command = down;
+/// The shift, control and alt keys down in a frame. The engine reports every key down in every
+/// frame's list (a press, then a hold event each frame), so a release the game never saw (the
+/// window lost the focus while Alt was down) leaves no modifier stuck.
+fn held_modifiers(list: &InputEventList) -> Modifiers {
+    let mut m = Modifiers::NONE;
+    let down = list.iter().filter(|e| InputDevice::from_u32(e.device) == Some(InputDevice::Keyboard)).filter_map(|e| e.as_button()).filter(|b| b.value != 0.0);
+    for b in down {
+        match b.idCode {
+            0x2A | 0x36 => m.shift = true,
+            0x1D | 0x9D => {
+                m.ctrl = true;
+                m.command = true;
+            }
+            0x38 | 0xB8 => m.alt = true,
+            _ => {}
         }
-        0x38 | 0xB8 => m.alt = down,
-        _ => {}
     }
+    m
 }
 
 /// The name of a scan code: its `egui` key's name, when no lower scan code maps to the same key.
