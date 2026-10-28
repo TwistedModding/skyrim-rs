@@ -12,7 +12,9 @@
 # legacy-patch-z after it), with skyrim-rs.ini setting the host's compatibility mode to -Compat. The legacy suite copies
 # the third-party SKSE plugins it lists from -LegacyDir into Data\SKSE\Plugins for the run, next to the host. The gui
 # suite installs the host with the example mod and the two hook plugins, copies the example's build in again between its
-# two parts (a reload) and keeps the settings files the host wrote. The camera suite installs the camera-demo plugin,
+# two parts (a reload) and keeps the settings files the host wrote; then it launches the game twice more on the same
+# install (its sessions: the host's settings file edited by hand to rebind the toggle, then malformed), each with
+# scripts/gui-<session>-steps.json and its logs and settings files in <OutDir>\<session>. The camera suite installs the camera-demo plugin,
 # drives it through its console command and reads its report log. The crash suite installs the host with its crash-test
 # plugin and runs one game session per scenario (null, hook, overflow, write, form, deleted, script), each ending in the crash the plugin's
 # console command armed; the host's crash log and minidump of each session go to <OutDir>\<scenario>. Any suite's run
@@ -64,7 +66,15 @@ $Mods = @{
     # (DevBench is the other one; it is installed for every suite).
     legacy = @{ dir = "skyrim-rs"; legacy = @("CrashLogger") }
     gui = @{ crate = "example-mod"; dll = "skyrim_rs_example_mod.dll"; log = "skyrim-rs-example.log"; dir = "skyrim-rs"; report = $true; tags = @(2);
-             crates = @("hooks-test-a", "hooks-test-b"); dlls = @("skyrim_rs_hooks_a.dll", "skyrim_rs_hooks_b.dll") }
+             crates = @("hooks-test-a", "hooks-test-b"); dlls = @("skyrim_rs_hooks_a.dll", "skyrim_rs_hooks_b.dll")
+             # Each session's edit of the host's settings file before its launch.
+             sessions = [ordered]@{
+                 rebind = { param($file)
+                     $text = Get-Content $file -Raw
+                     if ($text -notmatch '"key\.skyrim-rs\.toggle": "F11"') { throw "$file does not bind the toggle to F11" }
+                     ($text -replace '"key\.skyrim-rs\.toggle": "F11"', '"key.skyrim-rs.toggle": 68') -replace '^\{', "{`n  `"by.hand`": `"kept`"," | Set-Content $file -Encoding ascii -NoNewline }
+                 malformed = { param($file) Set-Content $file "{`n  `"key.skyrim-rs.toggle`": `"F10`"`n  `"window.skyrim-rs.inspector`": true`n}`n" -Encoding ascii -NoNewline }
+             } }
     crash = @{ crate = "crash-test"; dll = "skyrim_rs_crash_test.dll"; log = "skyrim-rs-crash-test.log"; dir = "skyrim-rs"; report = $true;
                scenarios = @("null", "hook", "overflow", "write", "form", "deleted", "script")
                # The step that triggers each armed crash, as the scenario's JSON.
@@ -200,10 +210,26 @@ try {
     } else {
         & "$PSScriptRoot\devbench.ps1" -Steps "$PSScriptRoot\$StepsName-steps.json" -Between $(if ($Mod.tags) { $Between }) -OutDir $OutDir -Launch $DevBenchLaunch
         $scenarioOk = $LASTEXITCODE -eq 0
+        if ($Mod.sessions) {
+            # Every session's logs leave the SKSE folder with it, so the next starts fresh and the cleanup below keeps them.
+            $keep = { param($to)
+                foreach ($f in @($PluginLog) + $ModLogs) { if (Test-Path "$SkseLogs\$f") { Move-Item "$SkseLogs\$f" "$to\$f" -Force } }
+                Get-ChildItem "$Plugins\$($Mod.dir)" -Filter "*.settings.json*" | Copy-Item -Destination $to -Force
+            }
+            & $keep $OutDir
+            foreach ($s in $Mod.sessions.Keys) {
+                $runDir = "$OutDir\$s"
+                New-Item -ItemType Directory -Force $runDir | Out-Null
+                & $Mod.sessions[$s] "$Plugins\$($Mod.dir)\skyrim-rs.settings.json"
+                & "$PSScriptRoot\devbench.ps1" -Steps "$PSScriptRoot\$StepsName-$s-steps.json" -OutDir $runDir -Launch $DevBenchLaunch
+                $scenarioOk = $scenarioOk -and $LASTEXITCODE -eq 0
+                & $keep $runDir
+            }
+        }
     }
 } finally {
     Get-ChildItem "$SkseLogs" -Filter "skyrim-rs-crash-????????-??????.*" | Move-Item -Destination $OutDir -Force
-    if ($Mod.dir) { Get-ChildItem "$Plugins\$($Mod.dir)" -Filter "*.settings.json" -ErrorAction SilentlyContinue | Copy-Item -Destination $OutDir -Force }
+    if ($Mod.dir -and -not $Mod.sessions) { Get-ChildItem "$Plugins\$($Mod.dir)" -Filter "*.settings.json" -ErrorAction SilentlyContinue | Copy-Item -Destination $OutDir -Force }
     # A game that crashed may still hold the installed DLLs for a few seconds after Stop-Process.
     for ($try = 0; $try -lt 10; $try++) {
         foreach ($f in @("skyrim_rs_test.dll", "skyrim-rs-test.mode", $HostDll) + @($Mods.Values | ForEach-Object { $_.dll }) + @($Mod.plugins)) { if ($f) { Remove-Item "$Plugins\$f" -ErrorAction SilentlyContinue } }

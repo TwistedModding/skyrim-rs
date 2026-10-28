@@ -1,0 +1,20 @@
+[
+  {"tool": "console", "args": {"command": "load retrace-base"}},
+  {"waitFor": "postLoadGame"},
+  {"waitUntil": "playerLoaded"},
+  {"wait": 5000},
+  {"tool": "menu", "args": {"action": "list"}},
+  {"tool": "input", "args": {"device": "keyboard", "action": "tap", "key": 87, "owner": "verify"}},
+  {"wait": 1500},
+  {"tool": "console", "args": {"command": "SkyrimRs keys", "capture": true}},
+  {"tool": "menu", "args": {"action": "list"}},
+  {"tool": "input", "args": {"device": "keyboard", "action": "tap", "key": 68, "owner": "verify"}},
+  {"wait": 1000},
+  {"tool": "console", "args": {"command": "SkyrimRs keys", "capture": true}},
+  {"tool": "input", "args": {"device": "keyboard", "action": "tap", "key": 68, "owner": "verify"}},
+  {"wait": 1000},
+  {"tool": "console", "args": {"command": "SkyrimRs keys", "capture": true}},
+  {"tool": "console", "args": {"command": "save skyrim-rs-gui-4"}},
+  {"waitFor": "saveGame"},
+  {"wait": 2000}
+]

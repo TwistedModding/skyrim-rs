@@ -3,7 +3,8 @@
 //! `DataLoaded`; the sink records every keyboard `ButtonEvent` per key and the context stacks it
 //! sees; `TESTS` read the devices, the sink order, the control map, the player controls and the
 //! command entry after a load; `SAVE_TESTS` check the keystrokes `DevBench` injected and the console
-//! command, which opens and closes the ui suite's menu.
+//! command, which opens and closes the ui suite's menu, and list every key the sink saw (the gui
+//! suite reads that list for the keys the overlay must keep from the game).
 
 use std::collections::BTreeMap;
 use std::sync::Mutex;
@@ -23,7 +24,7 @@ const KEY_W: u32 = 0x11;
 const KEY_TAB: u32 = 0xF;
 
 pub const TESTS: &[(&str, Test)] = &[("devices", devices), ("sinks", sinks), ("control_map", control_map), ("player_controls", player_controls), ("command_entry", command_entry)];
-pub const SAVE_TESTS: &[(&str, Test)] = &[("key_e", key_e), ("key_w", key_w), ("key_tab", key_tab), ("contexts", contexts), ("polling", polling), ("command", command)];
+pub const SAVE_TESTS: &[(&str, Test)] = &[("key_e", key_e), ("key_w", key_w), ("key_tab", key_tab), ("contexts", contexts), ("polling", polling), ("command", command), ("keys", keys)];
 
 /// The frames of one key: press, hold and release counts, the longest hold, the user event names
 /// in the order they appeared, and the hold frames on which the keyboard read the key down.
@@ -213,6 +214,12 @@ fn key_tab() -> Result<String, String> {
     check(s.presses == 2 && s.releases == 2, &describe(&s))?;
     check(s.user_events.first().map(String::as_str) == Some("Tween Menu") && s.user_events.iter().any(|u| u == "Cancel"), &describe(&s))?;
     Ok(describe(&s))
+}
+
+/// Every key the sink saw since the load, for the suites that check which keys reached the game.
+fn keys() -> Result<String, String> {
+    let keys = KEYS.lock().unwrap().clone();
+    Ok(keys.iter().map(|(id, s)| format!("{id:#04x}: {}", describe(s))).collect::<Vec<_>>().join("; "))
 }
 
 fn contexts() -> Result<String, String> {
