@@ -41,3 +41,14 @@ strip = "symbols"
 [profile.release.package.crash-test]
 debug = "line-tables-only"
 strip = "none"
+
+# Iteration builds for the in-game suites: release code without the LTO link.
+[profile.verify]
+inherits = "release"
+lto = "off"
+codegen-units = 16
+incremental = true
+
+[profile.verify.package.crash-test]
+debug = "line-tables-only"
+strip = "none"

@@ -34,7 +34,9 @@ param(
     # Compares the logs an earlier run left in -OutDir again, without building, installing or launching.
     [switch]$CheckOnly,
     # Runs only these scenarios of a scenario suite (the crash suite), to retry one.
-    [string[]]$Scenarios = @()
+    [string[]]$Scenarios = @(),
+    # Cargo profile for the build: verify (release code, no LTO) for iteration, release for a shipping check.
+    [ValidateSet("verify", "release")][string]$Profile = "verify"
 )
 $ErrorActionPreference = "Stop"
 $MyGames = "$env:USERPROFILE\Documents\My Games\Skyrim Special Edition"
@@ -42,7 +44,7 @@ $SkseLogs = "$MyGames\SKSE"
 $Plugins = "$GameDir\Data\SKSE\Plugins"
 $Scripts = "$GameDir\Data\Scripts"
 $Root = Split-Path $PSScriptRoot -Parent
-$Dll = "$Root\target\release\skyrim_rs_test.dll"
+$Dll = "$Root\target\$Profile\skyrim_rs_test.dll"
 $Mods = @{
     papyrus = @{ crate = "equip-counter"; dll = "skyrim_rs_equip_counter.dll"; log = "skyrim-rs-equip-counter.log" }
     shadows = @{ crate = "first-person-shadows"; dll = "skyrim_rs_first_person_shadows.dll"; log = "skyrim-rs-first-person-shadows.log" }
@@ -70,7 +72,7 @@ $Mods = @{
                              hook = '{"tool": "console", "args": {"command": "player.damageactorvalue health 1"}}'; form = '{"tool": "console", "args": {"command": "save skyrim-rs-crash"}}'; deleted = '{"tool": "console", "args": {"command": "save skyrim-rs-crash"}}'
                              script = '{"tool": "papyrus", "args": {"action": "call", "script": "SkyrimRsCrashTest", "function": "CrashFromScript"}}' } }
 }
-$TagDir = "$Root\target\release\reload-tags"
+$TagDir = "$Root\target\$Profile\reload-tags"
 $Mod = $Mods[$Suite]
 if ($Suite -eq "legacy" -and $Legacy) { $Mod.legacy = @($Legacy -split ",") }
 if ($Mod.scenarios -and $Scenarios) { $Mod.scenarios = @($Scenarios -split ",") }
@@ -96,11 +98,11 @@ try {
             $env:SKYRIM_RS_RELOAD_TAG = "$t"
             # The last tag enables an sre feature the host lacks, so its crates hash differently from the host's.
             $features = if ($t -eq $Mod.tags[-1]) { @("--features", "sre/tier-low") } else { @() }
-            try { cargo build --release -p $Mod.crate @features; if ($LASTEXITCODE -ne 0) { throw "cargo build failed for tag $t" } } finally { Remove-Item env:SKYRIM_RS_RELOAD_TAG }
-            Copy-Item "$Root\target\release\$($Mod.dll)" "$TagDir\$t.dll" -Force
+            try { cargo build --profile $Profile -p $Mod.crate @features; if ($LASTEXITCODE -ne 0) { throw "cargo build failed for tag $t" } } finally { Remove-Item env:SKYRIM_RS_RELOAD_TAG }
+            Copy-Item "$Root\target\$Profile\$($Mod.dll)" "$TagDir\$t.dll" -Force
         }
     }
-    cargo build --release @($crates | ForEach-Object { "-p"; $_ }); if ($LASTEXITCODE -ne 0) { throw "cargo build failed" }
+    cargo build --profile $Profile @($crates | ForEach-Object { "-p"; $_ }); if ($LASTEXITCODE -ne 0) { throw "cargo build failed" }
 } finally { Pop-Location }
 $Pex = @()
 if ($Suite -eq "papyrus") { $Pex = @(& "$PSScriptRoot\compile-papyrus.ps1" -Source @("$Root\crates\testplugin\papyrus", "$Root\crates\equip-counter\papyrus")) }
@@ -120,7 +122,7 @@ if ($Mod.legacy) {
 
 if ($Launch -ne "skse") {
     if (Test-Path $Proxy) { throw "$Proxy already exists" }
-    Copy-Item "$Root\target\release\dinput8.dll" $Proxy
+    Copy-Item "$Root\target\$Profile\dinput8.dll" $Proxy
 }
 # Started directly, the game asks Steam to relaunch it through its launcher unless it finds its app id next to it.
 $AppId = "$GameDir\steam_appid.txt"
@@ -136,11 +138,11 @@ if ($Mod.dir) {
     $ModDir = "$Plugins\$($Mod.dir)"
     New-Item -ItemType Directory $ModDir | Out-Null
     # A plugin built with its PDB (the crash suite's) gets it next to the DLL, for the crash log's names.
-    foreach ($d in @($Mod.dll) + @(if ($Mod.dlls) { $Mod.dlls })) { if ($d) { Copy-Item "$Root\target\release\$d" $ModDir; $pdb = "$Root\target\release\$([IO.Path]::ChangeExtension($d, 'pdb'))"; if (Test-Path $pdb) { Copy-Item $pdb $ModDir } } }
+    foreach ($d in @($Mod.dll) + @(if ($Mod.dlls) { $Mod.dlls })) { if ($d) { Copy-Item "$Root\target\$Profile\$d" $ModDir; $pdb = "$Root\target\$Profile\$([IO.Path]::ChangeExtension($d, 'pdb'))"; if (Test-Path $pdb) { Copy-Item $pdb $ModDir } } }
     Copy-Item $Dll "$ModDir\decoy.dll"
-    Copy-Item "$Root\target\release\$HostDll" "$Plugins\$HostDll" -Force
-} elseif ($Mod) { Copy-Item "$Root\target\release\$($Mod.dll)" "$Plugins\$($Mod.dll)" -Force }
-foreach ($d in @($Mod.plugins)) { if ($d) { Copy-Item "$Root\target\release\$d" "$Plugins\$d" -Force } }
+    Copy-Item "$Root\target\$Profile\$HostDll" "$Plugins\$HostDll" -Force
+} elseif ($Mod) { Copy-Item "$Root\target\$Profile\$($Mod.dll)" "$Plugins\$($Mod.dll)" -Force }
+foreach ($d in @($Mod.plugins)) { if ($d) { Copy-Item "$Root\target\$Profile\$d" "$Plugins\$d" -Force } }
 $LegacyItems = @()
 $LegacyMissing = @()
 $PluginsBefore = @(Get-ChildItem $Plugins -Name)
