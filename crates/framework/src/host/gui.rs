@@ -1,8 +1,9 @@
-//! The overlay's one window, in the look of the game's journal: a row of tabs, one per plugin that
-//! adds sections ([`crate::Host::add_tab`], in load order; two or more sections are tabs of their
-//! own inside it), then the host's Plugins (the framework plugins with their version, file and
-//! state, and the files it did not load), Legacy plugins (the SKSE plugins in `Data\SKSE\Plugins`)
-//! and Settings (every hotkey, set by capturing the next key pressed, and the capture rule).
+//! The overlay's one window, in the look of the game's journal: a row of tabs across the top, Mods,
+//! Plugins (the framework plugins with their version, file and state, and the files the host did
+//! not load), Legacy plugins (the SKSE plugins in `Data\SKSE\Plugins`) and Settings (every hotkey,
+//! set by capturing the next key pressed, and the capture rule). Mods has a sidebar of every plugin
+//! that added a tab ([`crate::Host::add_tab`], in load order), the selected one's sections under
+//! it when it has two or more, and the selected section beside it.
 
 use std::sync::{Mutex, PoisonError};
 
@@ -32,26 +33,29 @@ static SECTIONS: Owned<Section> = Owned::new();
 /// Each plugin's tab title.
 static TITLES: Mutex<Vec<(&'static str, String)>> = Mutex::new(Vec::new());
 
-#[derive(Clone, PartialEq, Eq)]
+#[derive(Clone, Copy, PartialEq, Eq)]
 enum Tab {
-    Plugin(String),
+    Mods,
     Plugins,
     Legacy,
     Settings,
 }
 
-/// The selected tab (the first while `None`) and each plugin's selected section, by name, so a
-/// reloaded generation finds its own again.
+const TABS: [(Tab, &str); 4] = [(Tab::Mods, "Mods"), (Tab::Plugins, "Plugins"), (Tab::Legacy, "Legacy plugins"), (Tab::Settings, "Settings")];
+
+/// The selected tab, the selected mod (the first while `None`) and each mod's selected section, by
+/// name, so a reloaded generation finds its own again.
 struct Shown {
-    tab: Option<Tab>,
+    tab: Tab,
+    plugin: Option<String>,
     sections: Vec<(String, String)>,
 }
 
-static SHOWN: Mutex<Shown> = Mutex::new(Shown { tab: None, sections: Vec::new() });
+static SHOWN: Mutex<Shown> = Mutex::new(Shown { tab: Tab::Mods, plugin: None, sections: Vec::new() });
 
-/// A tab as the window lists it, with its sections when it is a plugin's.
-struct Entry {
-    tab: Tab,
+/// A plugin's tab as the sidebar lists it.
+struct Mod {
+    owner: String,
     title: String,
     sections: Vec<String>,
 }
@@ -69,7 +73,7 @@ pub(super) fn add_section(owner: &'static str, name: &str, draw: DrawFn) {
 }
 
 pub(super) fn show_tab(owner: &'static str) {
-    select(Tab::Plugin(owner.to_owned()), None);
+    select(Tab::Mods, Some(owner.to_owned()), None);
     overlay::set_open(true);
 }
 
@@ -83,66 +87,71 @@ fn title_of(owner: &str) -> String {
     TITLES.lock().unwrap_or_else(PoisonError::into_inner).iter().find(|(o, _)| *o == owner).map_or_else(|| owner.to_owned(), |(_, t)| t.clone())
 }
 
-fn entries() -> Vec<Entry> {
+fn mods() -> Vec<Mod> {
     let mut sections: Vec<(&'static str, String)> = Vec::new();
     SECTIONS.each(|s| {
         sections.push((s.owner, s.name.clone()));
         true
     });
-    let mut list: Vec<Entry> = plugins()
+    plugins()
         .iter()
         .filter_map(|p| {
             let names: Vec<String> = sections.iter().filter(|(o, _)| *o == p.name).map(|(_, n)| n.clone()).collect();
-            (!names.is_empty()).then(|| Entry { tab: Tab::Plugin(p.name.clone()), title: title_of(&p.name), sections: names })
+            (!names.is_empty()).then(|| Mod { owner: p.name.clone(), title: title_of(&p.name), sections: names })
         })
-        .collect();
-    list.extend([(Tab::Plugins, "Plugins"), (Tab::Legacy, "Legacy plugins"), (Tab::Settings, "Settings")].map(|(tab, title)| Entry { tab, title: title.to_owned(), sections: Vec::new() }));
-    list
+        .collect()
 }
 
-/// The selected tab's index and its selected section's.
-fn selection(entries: &[Entry]) -> (usize, usize) {
+/// The selected tab, and the selected mod's index and its selected section's (none while no mod has a tab).
+fn selection(mods: &[Mod]) -> (Tab, Option<(usize, usize)>) {
     let shown = SHOWN.lock().unwrap_or_else(PoisonError::into_inner);
-    let tab = shown.tab.as_ref().and_then(|t| entries.iter().position(|e| e.tab == *t)).unwrap_or(0);
-    let section = match &entries[tab].tab {
-        Tab::Plugin(owner) => shown.sections.iter().find(|(o, _)| o == owner).and_then(|(_, name)| entries[tab].sections.iter().position(|n| n == name)).unwrap_or(0),
-        _ => 0,
-    };
-    (tab, section)
+    let index = shown.plugin.as_ref().and_then(|p| mods.iter().position(|m| m.owner == *p)).unwrap_or(0);
+    let selected = mods.get(index).map(|m| (index, shown.sections.iter().find(|(o, _)| *o == m.owner).and_then(|(_, name)| m.sections.iter().position(|n| n == name)).unwrap_or(0)));
+    (shown.tab, selected)
 }
 
-/// Selects `tab` and, for a plugin's tab, `section` (the one selected before when `None`).
-fn select(tab: Tab, section: Option<String>) {
+/// Selects `tab` and, when given, the mod `plugin` and its `section` (the one selected before when `None`).
+fn select(tab: Tab, plugin: Option<String>, section: Option<String>) {
     let mut shown = SHOWN.lock().unwrap_or_else(PoisonError::into_inner);
-    if let (Tab::Plugin(owner), Some(section)) = (&tab, section) {
+    if let (Some(owner), Some(section)) = (&plugin, section) {
         shown.sections.retain(|(o, _)| o != owner);
         shown.sections.push((owner.clone(), section));
     }
-    shown.tab = Some(tab);
+    if plugin.is_some() {
+        shown.plugin = plugin;
+    }
+    shown.tab = tab;
 }
 
-/// Every tab, or every section of a plugin's tab, as `SkyrimRs gui` numbers them, and whether it is shown.
-pub(super) fn pages() -> Vec<(String, bool)> {
-    let entries = entries();
-    let (tab, section) = selection(&entries);
+/// The pages `SkyrimRs gui` numbers: each mod's sections (Mods itself while no mod has a tab), then
+/// the other tabs; each with whether it is shown, and what selects it.
+#[allow(clippy::type_complexity)]
+fn page_list() -> Vec<(String, bool, (Tab, Option<String>, Option<String>))> {
+    let mods = mods();
+    let (tab, selected) = selection(&mods);
     let mut pages = Vec::new();
-    for (i, e) in entries.iter().enumerate() {
-        if e.sections.is_empty() {
-            pages.push((e.title.clone(), i == tab));
-        }
-        for (j, s) in e.sections.iter().enumerate() {
-            pages.push((format!("{} / {s}", e.title), i == tab && j == section));
+    if mods.is_empty() {
+        pages.push(("Mods".to_owned(), tab == Tab::Mods, (Tab::Mods, None, None)));
+    }
+    for (i, m) in mods.iter().enumerate() {
+        for (j, s) in m.sections.iter().enumerate() {
+            pages.push((format!("{} / {s}", m.title), tab == Tab::Mods && selected == Some((i, j)), (Tab::Mods, Some(m.owner.clone()), Some(s.clone()))));
         }
     }
+    pages.extend(TABS[1..].iter().map(|(t, title)| ((*title).to_owned(), tab == *t, (*t, None, None))));
     pages
+}
+
+/// Every page as `SkyrimRs gui` numbers them, and whether it is shown.
+pub(super) fn pages() -> Vec<(String, bool)> {
+    page_list().into_iter().map(|(title, shown, _)| (title, shown)).collect()
 }
 
 /// Selects page `n` of [`pages`]; false when there is none.
 pub(super) fn show_page(n: usize) -> bool {
-    let mut pages = entries().into_iter().flat_map(|e| if e.sections.is_empty() { vec![(e.tab, None)] } else { e.sections.into_iter().map(|s| (e.tab.clone(), Some(s))).collect() });
-    match pages.nth(n) {
-        Some((tab, section)) => {
-            select(tab, section);
+    match page_list().into_iter().nth(n) {
+        Some((_, _, (tab, plugin, section))) => {
+            select(tab, plugin, section);
             true
         }
         None => false,
@@ -150,7 +159,7 @@ pub(super) fn show_page(n: usize) -> bool {
 }
 
 pub(super) fn select_settings() {
-    select(Tab::Settings, None);
+    select(Tab::Settings, None, None);
 }
 
 fn focus_capture() -> bool {
@@ -219,38 +228,83 @@ fn heading(ui: &mut egui::Ui, text: &str) {
     ui.separator();
 }
 
-/// A row of tab names, centred, the selected one white: between the journal's arrows on the top
-/// row, on the highlight below it. Returns the one clicked.
+/// The row of tab names, centred, the selected one white between the journal's arrows. Returns the one clicked.
 #[allow(clippy::cast_precision_loss)]
-fn tab_row(ui: &mut egui::Ui, names: &[String], selected: usize, top: bool) -> Option<usize> {
-    let style = if top { TextStyle::Heading } else { TextStyle::Body };
-    let galleys: Vec<_> = names.iter().map(|n| WidgetText::from(n.as_str()).into_galley(ui, Some(TextWrapMode::Extend), f32::INFINITY, style.clone())).collect();
-    let (pad, gap) = if top { (vec2(26.0, 4.0), 30.0) } else { (vec2(14.0, 2.0), 6.0) };
-    let total = galleys.iter().map(|g| g.size().x + 2.0 * pad.x).sum::<f32>() + gap * names.len().saturating_sub(1) as f32;
+fn tab_row(ui: &mut egui::Ui, selected: Tab) -> Option<Tab> {
+    let galleys: Vec<_> = TABS.iter().map(|(_, n)| WidgetText::from(n.to_uppercase()).into_galley(ui, Some(TextWrapMode::Extend), f32::INFINITY, TextStyle::Heading)).collect();
+    let (pad, gap) = (vec2(26.0, 4.0), 30.0);
+    let total = galleys.iter().map(|g| g.size().x + 2.0 * pad.x).sum::<f32>() + gap * (TABS.len() - 1) as f32;
     let mut clicked = None;
     ui.horizontal(|ui| {
         ui.spacing_mut().item_spacing.x = gap;
         ui.add_space(((ui.available_width() - total) / 2.0).max(0.0));
-        for (i, galley) in galleys.into_iter().enumerate() {
+        for ((tab, _), galley) in TABS.iter().zip(galleys) {
             let (rect, response) = ui.allocate_exact_size(galley.size() + 2.0 * pad, Sense::click());
-            let on = i == selected;
+            let on = *tab == selected;
             let color = if on || response.hovered() { theme::TEXT } else { theme::DIM };
             let painter = ui.painter();
-            if on && top {
+            if on {
                 let (y, stroke) = (rect.center().y, egui::Stroke::new(1.5, color));
                 let (l, r) = (rect.left() + 4.0, rect.right() - 4.0);
                 painter.add(egui::Shape::convex_polygon(vec![egui::pos2(l, y), egui::pos2(l + 10.0, y - 7.0), egui::pos2(l + 10.0, y + 7.0)], egui::Color32::TRANSPARENT, stroke));
                 painter.add(egui::Shape::convex_polygon(vec![egui::pos2(r, y), egui::pos2(r - 10.0, y + 7.0), egui::pos2(r - 10.0, y - 7.0)], egui::Color32::TRANSPARENT, stroke));
-            } else if on {
-                painter.rect_filled(rect, 0.0, theme::HIGHLIGHT);
             }
             painter.galley(rect.min + pad, galley, color);
             if response.clicked() {
-                clicked = Some(i);
+                clicked = Some(*tab);
             }
         }
     });
     clicked
+}
+
+/// One line of the sidebar across its width, white when selected, on the highlight when `marked`. Returns whether it was clicked.
+fn sidebar_row(ui: &mut egui::Ui, text: &str, selected: bool, marked: bool, indent: f32) -> bool {
+    let pad = vec2(10.0 + indent, 4.0);
+    let galley = WidgetText::from(text).into_galley(ui, Some(TextWrapMode::Truncate), ui.available_width() - pad.x - 10.0, TextStyle::Body);
+    let (rect, response) = ui.allocate_exact_size(vec2(ui.available_width(), galley.size().y + 2.0 * pad.y), Sense::click());
+    if marked {
+        ui.painter().rect_filled(rect, 0.0, theme::HIGHLIGHT);
+    }
+    ui.painter().galley(rect.min + pad, galley, if selected || response.hovered() { theme::TEXT } else { theme::DIM });
+    response.clicked()
+}
+
+/// The Mods page: the sidebar of mods, the selected one's sections under it, and its selected section.
+fn mods_tab(ui: &mut egui::Ui, mods: &[Mod], selected: Option<(usize, usize)>) {
+    let Some((index, section)) = selected else {
+        ui.label(dim("No mod has added a tab. A framework plugin adds one with Host::add_tab."));
+        return;
+    };
+    egui::Panel::left("mods").resizable(false).exact_size(250.0).frame(egui::Frame::NONE).show(ui, |ui| {
+        egui::ScrollArea::vertical().id_salt("mod list").auto_shrink(false).show(ui, |ui| {
+            ui.spacing_mut().item_spacing.y = 2.0;
+            for (i, m) in mods.iter().enumerate() {
+                if sidebar_row(ui, &m.title, i == index, i == index && m.sections.len() < 2, 0.0) {
+                    select(Tab::Mods, Some(m.owner.clone()), None);
+                }
+                if i == index && m.sections.len() > 1 {
+                    for (j, name) in m.sections.iter().enumerate() {
+                        if sidebar_row(ui, name, j == section, j == section, 18.0) {
+                            select(Tab::Mods, Some(m.owner.clone()), Some(name.clone()));
+                        }
+                    }
+                }
+            }
+        });
+    });
+    let (owner, name) = (&mods[index].owner, &mods[index].sections[section]);
+    egui::CentralPanel::no_frame().show(ui, |ui| {
+        ui.add_space(2.0);
+        egui::ScrollArea::vertical().id_salt((owner, name)).auto_shrink(false).show(ui, |ui| {
+            ui.add_space(4.0);
+            SECTIONS.each_mut(|s| {
+                if s.owner == owner && s.name == *name {
+                    (s.draw)(ui);
+                }
+            });
+        });
+    });
 }
 
 /// A striped table under a dim header row; each cell with its hover text, empty for none.
@@ -361,35 +415,27 @@ fn footer(ui: &mut egui::Ui) {
 
 /// Draws the window; the overlay's one window callback.
 pub(super) fn draw(ctx: &egui::Context) {
-    let entries = entries();
-    let (tab, section) = selection(&entries);
-    let entry = &entries[tab];
+    let mods = mods();
+    let (tab, selected) = selection(&mods);
     let window = egui::Window::new(NAME).id(egui::Id::unique((NAME, "gui"))).title_bar(false).pivot(Align2::CENTER_CENTER).default_pos(ctx.content_rect().center()).fixed_size([1120.0, 680.0]);
     window.show(ctx, |ui| {
-        let titles: Vec<String> = entries.iter().map(|e| e.title.to_uppercase()).collect();
-        if let Some(i) = tab_row(ui, &titles, tab, true) {
-            select(entries[i].tab.clone(), None);
+        if let Some(clicked) = tab_row(ui, tab) {
+            select(clicked, None, None);
         }
         ui.separator();
-        if entry.sections.len() > 1
-            && let Some(j) = tab_row(ui, &entry.sections, section, false)
-        {
-            select(entry.tab.clone(), Some(entry.sections[j].clone()));
-        }
-        ui.add_space(4.0);
-        let height = (ui.available_height() - FOOTER).max(80.0);
-        egui::ScrollArea::vertical().id_salt((tab, section)).auto_shrink(false).max_height(height).show(ui, |ui| match &entry.tab {
-            Tab::Plugin(owner) => {
-                let name = &entry.sections[section];
-                SECTIONS.each_mut(|s| {
-                    if s.owner == owner && s.name == *name {
-                        (s.draw)(ui);
-                    }
-                });
+        let size = vec2(ui.available_width(), (ui.available_height() - FOOTER).max(80.0));
+        ui.allocate_ui(size, |ui| {
+            ui.set_min_size(size);
+            match tab {
+                Tab::Mods => mods_tab(ui, &mods, selected),
+                _ => {
+                    egui::ScrollArea::vertical().id_salt(TABS.iter().position(|(t, _)| *t == tab)).auto_shrink(false).show(ui, |ui| match tab {
+                        Tab::Plugins => plugins_tab(ui),
+                        Tab::Legacy => legacy_tab(ui),
+                        _ => settings_tab(ui),
+                    });
+                }
             }
-            Tab::Plugins => plugins_tab(ui),
-            Tab::Legacy => legacy_tab(ui),
-            Tab::Settings => settings_tab(ui),
         });
         footer(ui);
     });

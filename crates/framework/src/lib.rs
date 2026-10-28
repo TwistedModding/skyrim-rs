@@ -231,11 +231,11 @@ impl Host {
         (self.table.on_papyrus)(self.name, f);
     }
 
-    /// This plugin's tab in the host's window, titled `title` (a second call renames it). The tab
-    /// shows once it has a section; with two or more, each section is a tab of its own inside it.
-    /// The plugins' tabs come first, in load order, then the host's Plugins, Legacy plugins and
-    /// Settings. While the overlay is open, the selected section's `draw` runs every frame on the
-    /// main thread inside the window's scroll area, in the framework theme:
+    /// This plugin's tab in the host's window, titled `title` (a second call renames it): an entry
+    /// in the sidebar of the window's Mods page, in load order, shown once it has a section; with
+    /// two or more, the sections are listed under it while it is selected. While the overlay is
+    /// open, the selected section's `draw` runs every frame on the main thread, in a scroll area
+    /// beside the sidebar, in the framework theme:
     ///
     /// ```ignore
     /// host.add_tab("My mod")
