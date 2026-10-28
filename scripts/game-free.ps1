@@ -1,5 +1,5 @@
 # Throws unless the shared Steam install is free, and takes the modding toolchain's game lock for this process:
-# %TEMP%\modding-toolchain\game.lock holds the holder's PID, created only if absent, a dead holder's lock is stale.
+# %TEMP%\modding-toolchain\game.lock holds the holder's PID, created only if absent; only a dead holder's lock is stale.
 # The RE session takes no lock, so a running SkyrimSE also counts as busy. Returns whether the lock was taken now;
 # the caller that took it gives it back with -Release, and a script run inside one that holds it takes nothing.
 param([switch]$Release)
@@ -21,9 +21,10 @@ for ($try = 0; ; $try++) {
         break
     } catch [IO.IOException] {
         $other = (& $holder).Trim()
-        if ($other -match '^\d+$' -and (Get-Process -Id ([int]$other) -ErrorAction SilentlyContinue)) { throw "$lock is held by live process $other" }
-        # An empty file is a holder still writing its PID; give it a moment before calling it stale.
-        if (-not $other -and $try -lt 5) { Start-Sleep -Milliseconds 200; continue }
+        # Like the toolchain, only a file naming a dead process is stale; an empty or unreadable one is a holder
+        # still writing its PID.
+        if ($other -notmatch '^\d+$') { throw "$lock is being taken by another process" }
+        if (Get-Process -Id ([int]$other) -ErrorAction SilentlyContinue) { throw "$lock is held by live process $other" }
         if ($try -ge 20) { throw "$lock could not be taken" }
         Remove-Item $lock -ErrorAction SilentlyContinue
     }
