@@ -143,6 +143,7 @@ if ($Launch -eq "standalone") {
 }
 # Another run's install (its game not started yet) must not be touched, and nothing is copied before that is known.
 if ($Mod.dir -and (Test-Path "$Plugins\$($Mod.dir)")) { throw "$Plugins\$($Mod.dir) already exists" }
+foreach ($p in $Pex) { if (Test-Path "$Scripts\$(Split-Path $p -Leaf)") { throw "$Scripts already holds $(Split-Path $p -Leaf)" } }
 Copy-Item $Dll "$Plugins\skyrim_rs_test.dll" -Force
 if ($Mode) { Set-Content "$Plugins\skyrim-rs-test.mode" $Mode -Encoding ascii }
 if ($Mod.dir) {
@@ -190,7 +191,7 @@ $Between = {
     }
     Start-Sleep -Seconds 2
 }.GetNewClosure()
-foreach ($p in $Pex) { if (Test-Path "$Scripts\$(Split-Path $p -Leaf)") { throw "$Scripts already holds $(Split-Path $p -Leaf)" }; Copy-Item $p $Scripts -Force }
+foreach ($p in $Pex) { Copy-Item $p $Scripts -Force }
 $retraceOff = Test-Path "$Plugins\retrace.dll"
 if ($retraceOff) { Rename-Item "$Plugins\retrace.dll" "retrace.dll.off" }
 $DevBenchLaunch = if ($Launch -eq "standalone") { "standalone" } else { "skse" }
