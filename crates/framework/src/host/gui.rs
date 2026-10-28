@@ -364,7 +364,7 @@ pub(super) fn draw(ctx: &egui::Context) {
     let entries = entries();
     let (tab, section) = selection(&entries);
     let entry = &entries[tab];
-    let window = egui::Window::new(NAME).id(egui::Id::unique((NAME, "gui"))).title_bar(false).pivot(Align2::CENTER_CENTER).default_pos(ctx.content_rect().center()).default_size([1120.0, 680.0]);
+    let window = egui::Window::new(NAME).id(egui::Id::unique((NAME, "gui"))).title_bar(false).pivot(Align2::CENTER_CENTER).default_pos(ctx.content_rect().center()).fixed_size([1120.0, 680.0]);
     window.show(ctx, |ui| {
         let titles: Vec<String> = entries.iter().map(|e| e.title.to_uppercase()).collect();
         if let Some(i) = tab_row(ui, &titles, tab, true) {
