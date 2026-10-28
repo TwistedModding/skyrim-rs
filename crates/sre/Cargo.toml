@@ -14,9 +14,9 @@ versionlib.workspace = true
 
 # A group's feature compiles its methods, free functions and global accessors; a tier feature adds,
 # in every enabled group, the functions typed only by a decompiler prototype of that rating.
-# Structs, enums and `raw` are always compiled.
+# Structs, enums and `raw` are always compiled; no feature is on by default.
 [features]
-default = ["actors", "animation", "audio", "bgs", "bnet", "bs", "camera", "combat", "events", "extra", "factory", "forms", "frame", "graphics", "havok", "input", "moments", "ni", "nimath", "other", "papyrus", "pathing", "render", "save", "scaleform", "script", "settings", "stl", "tes", "ui", "vmstack", "tier-high"]
+default = []
 actors = []
 animation = []
 audio = []

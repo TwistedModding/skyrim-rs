@@ -11,7 +11,7 @@ crate-type = ["cdylib"]
 [dependencies]
 skse.workspace = true
 hook.workspace = true
-sre.workspace = true
+sre = { workspace = true, features = ["bgs", "tes"] }
 skyrim = { workspace = true, features = ["actors", "animation", "audio", "camera", "events", "forms", "input", "papyrus", "render", "save", "ui"] }
 overlay.workspace = true
 crash.workspace = true
