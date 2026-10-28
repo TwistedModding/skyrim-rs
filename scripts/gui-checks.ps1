@@ -25,6 +25,7 @@ $hostLog = if (Test-Path "$OutDir\skyrim-rs.log") { Get-Content "$OutDir\skyrim-
 function HostLines($pattern) { @($hostLog | Where-Object { $_ -match $pattern }) }
 $loaded = HostLines '^loaded skyrim_rs_(example_mod|hooks_a|hooks_b)\.dll: skyrim-rs-(example|hooks-a|hooks-b)$'
 $font = HostLines '^overlay font: Futura CondensedLight from .*fonts_en\.swf$'
+$cursorLine = HostLines "^overlay cursor: the game's, from .*cursormenu\.swf$"
 $command = HostLines '^command SkyrimRs took over console opcode 0x[0-9a-f]+'
 $reloading = HostLines '^skyrim-rs-example: skyrim_rs_example_mod\.dll changed, reloading as generation 2$'
 $detached = HostLines '^skyrim-rs-example: generation 1: 1 hook subscriptions, 0 sinks, 1 natives stubbed, 0 commands stubbed, 2 tab sections, 0 message handlers, 1 Papyrus callbacks, 1 frame callbacks detached$'
@@ -102,12 +103,14 @@ $rows = @(
        ok = ($loaded.Count -eq 3 -and $command.Count -eq 1 -and $gui1 -match 'plugin 0: skyrim-rs-example 0\.1\.0 \(skyrim_rs_example_mod\.dll\): Running( \||$)' -and $gui1 -match 'plugin 1: skyrim-rs-hooks-a 0\.1\.0 \(skyrim_rs_hooks_a\.dll\): Running' -and $gui1 -match 'plugin 2: skyrim-rs-hooks-b 0\.1\.0 \(skyrim_rs_hooks_b\.dll\): Running') }
     @{ name = "font"; plugin = "(host log) $($font -join ' | ')"; devbench = "SkyrimRs gui says font $(Captured $gui1 'font (.*?), capture')";
        ok = ($font.Count -eq 1 -and $gui1 -match 'font Futura CondensedLight from') }
+    @{ name = "cursor"; plugin = "(host log) $($cursorLine -join ' | ')"; devbench = "(drawn in the captures)";
+       ok = ($cursorLine.Count -eq 1) }
     @{ name = "pages"; plugin = "SkyrimRs gui lists $($pages.Count) pages"; devbench = ($pages -join ' | ');
        ok = (($pages -join '|') -eq ($expectedPages -join '|')) }
     @{ name = "page selection"; plugin = "SkyrimRs gui 1 to 4"; devbench = ($shownPages -join ' | ');
        ok = (($shownPages -join '|') -eq 'page 1: Example mod / About|page 2: Plugins|page 3: Legacy plugins|page 4: Settings') }
     @{ name = "legacy plugins"; plugin = "(from SkyrimRs gui)"; devbench = (@($gui1 -split ' \| ' | Where-Object { $_ -match '^legacy' }) -join ' | ');
-       ok = ($gui1 -match 'legacy plugins, loaded by the script extender:' -and $gui1 -match 'legacy devbench\.dll: devbench 1\.28\.0 by alandtse, loaded' -and $gui1 -match 'legacy skyrim_rs\.dll: skyrim-rs [\d.]+ by \w+, loaded' -and $gui1 -match 'legacy skyrim_rs_test\.dll: skyrim-rs-test [\d.]+ by \w+, loaded' -and $gui1 -notmatch 'not loaded') }
+       ok = ($gui1 -match 'legacy plugins, loaded by the script extender:' -and $gui1 -match 'legacy devbench\.dll: devbench 1\.28\.0 by alandtse, loaded' -and $gui1 -match 'legacy skyrim_rs\.dll: skyrim-rs [\d.]+ by \w+, loaded' -and $gui1 -match 'legacy skyrim_rs_test\.dll: skyrim-rs-test [\d.]+ by \w+, loaded' -and @($gui1 -split ' \| ' | Where-Object { $_ -match '^legacy .*, not loaded$' }).Count -eq 0) }
     @{ name = "captures"; plugin = "(host log) $($framesWritten.Count) frames written"; devbench = "kept as gui-<page>-1.7.104.jpg: $($shots -join ', '); journal captured by DevBench, kept as gui-vanilla-1.7.104.jpg: $vanilla";
        ok = ($framesWritten.Count -eq 5 -and @($shots | Where-Object { $_ }).Count -eq 5 -and $vanilla) }
     @{ name = "focus capture"; plugin = "overlay open with nothing focused, capture $(Captured $gui1 'capture (\w+)')"; devbench = "player moved $([math]::Round($moved, 1)) units during the 2 s W hold (x $(Pos 9) -> $(Pos 15), y $(Pos 10) -> $(Pos 16))";

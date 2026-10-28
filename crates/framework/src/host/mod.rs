@@ -201,6 +201,7 @@ pub fn load(skse: &skse::Interface) -> bool {
         Err(e) => log!("overlay: {e}"),
     }
     log!("overlay font: {}", overlay::font_source());
+    log!("overlay cursor: {}", overlay::cursor_source());
     gui::apply_capture();
     let (Some(messaging), Some(papyrus)) = (skse.messaging(), skse.papyrus()) else {
         log!("no messaging or Papyrus interface");

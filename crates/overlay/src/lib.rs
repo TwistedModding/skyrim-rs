@@ -13,9 +13,10 @@
 //! [`set_close`] and [`set_overlay_keys`]. Every frame the overlay is open, the windows added with [`add`] run
 //! on the main thread and the result is painted into the back buffer with a Direct3D 11 pipeline
 //! of this crate's own, in the framework [`theme`]: the look of the game's menus, with the game's
-//! own Futura Condensed converted from `Interfaceonts_en.swf` at startup when it can be read and
+//! own Futura Condensed converted from `Interface\fonts_en.swf` at startup when it can be read and
 //! Segoe UI and Consolas from the Windows font folder otherwise and for monospace (`egui`'s bundled
-//! fonts are not under a license the workspace allows).
+//! fonts are not under a license the workspace allows), and the game's own mouse cursor from
+//! `Interface\cursormenu.swf`.
 
 use std::fmt;
 use std::sync::atomic::{AtomicBool, Ordering};
@@ -74,6 +75,8 @@ struct State {
     ctx: Context,
     painter: Option<paint::Painter>,
     start: Instant,
+    /// The game's cursor as a texture of `ctx`, made at the first frame drawn with it.
+    cursor: Option<egui::TextureHandle>,
 }
 
 static SITE: OnceLock<hook::CallSite<PresentFn>> = OnceLock::new();
@@ -83,6 +86,7 @@ static OPEN: AtomicBool = AtomicBool::new(false);
 static FAILURE: OnceLock<String> = OnceLock::new();
 static FRAME: OnceLock<fn()> = OnceLock::new();
 static FONTS: OnceLock<Option<(egui::FontDefinitions, String)>> = OnceLock::new();
+static CURSOR: OnceLock<Result<vanilla::Cursor, String>> = OnceLock::new();
 static KEYBOARD_FOCUS: AtomicBool = AtomicBool::new(false);
 
 /// Installs the overlay. Call it once from `SKSEPlugin_Load`, after `skyrim::init`, before the
@@ -97,7 +101,7 @@ pub fn install() -> Result<(), Error> {
     if state.is_some() {
         return Err(Error::AlreadyInstalled);
     }
-    *state = Some(State { ctx, painter: None, start: Instant::now() });
+    *state = Some(State { ctx, painter: None, start: Instant::now(), cursor: None });
     let _ = SITE.set(unsafe { hook::CallSite::install(site, present_detour as PresentFn) }?);
     Ok(())
 }
@@ -122,6 +126,7 @@ pub fn reset_context() {
     let Some(ctx) = new_context() else { return };
     if let Some(state) = STATE.lock().unwrap().as_mut() {
         state.ctx = ctx;
+        state.cursor = None;
     }
 }
 
@@ -129,6 +134,24 @@ pub fn reset_context() {
 #[must_use]
 pub fn font_source() -> &'static str {
     fonts().map_or("no font", |(_, source)| source.as_str())
+}
+
+/// Where the cursor's shape came from, or why the game's was not read and the overlay draws its own arrow.
+#[must_use]
+pub fn cursor_source() -> String {
+    match cursor() {
+        Ok(c) => format!("the game's, from {}", c.source),
+        Err(e) => format!("the overlay's arrow, the game's cursor was not read: {e}"),
+    }
+}
+
+fn cursor() -> &'static Result<vanilla::Cursor, String> {
+    CURSOR.get_or_init(|| game_data().ok_or_else(|| "no game folder".to_owned()).and_then(|d| vanilla::cursor(&d)))
+}
+
+/// `Data` next to the executable.
+fn game_data() -> Option<std::path::PathBuf> {
+    std::env::current_exe().ok().and_then(|exe| Some(exe.parent()?.join("Data")))
 }
 
 /// Whether a widget held the keyboard focus at the end of the last frame drawn.
@@ -198,7 +221,13 @@ fn draw() {
     };
     let ppp = (size[1] as f32 / 1080.0).max(1.0);
     let screen = egui::vec2(size[0] as f32, size[1] as f32) / ppp;
-    let (events, cursor) = input::take(screen, ppp);
+    let (events, mouse) = input::take(screen, ppp);
+    if state.cursor.is_none()
+        && let Ok(c) = cursor()
+    {
+        state.cursor = Some(state.ctx.load_texture("game cursor", c.image.clone(), egui::TextureOptions::LINEAR));
+    }
+    let cursor = state.cursor.as_ref().zip(cursor().as_ref().ok()).map(|(texture, c)| (texture.id(), c.size));
     let mut raw = RawInput { screen_rect: Some(Rect::from_min_size(Pos2::ZERO, screen)), time: Some(state.start.elapsed().as_secs_f64()), events, focused: true, ..RawInput::default() };
     raw.viewports.insert(ViewportId::ROOT, ViewportInfo { native_pixels_per_point: Some(ppp), focused: Some(true), ..ViewportInfo::default() });
     let mut windows = core::mem::take(&mut *WINDOWS.lock().unwrap());
@@ -206,7 +235,7 @@ fn draw() {
         for window in &mut windows {
             window(ctx);
         }
-        input::draw_cursor(ctx, cursor);
+        input::draw_cursor(ctx, mouse, cursor);
     });
     let mut added = WINDOWS.lock().unwrap();
     windows.append(&mut added);
@@ -244,8 +273,7 @@ fn load_fonts() -> Option<(egui::FontDefinitions, String)> {
             }
         }
     }
-    let data = std::env::current_exe().ok().and_then(|exe| Some(exe.parent()?.join("Data")));
-    let source = match data.ok_or_else(|| "no game folder".to_owned()).and_then(|d| vanilla::load(&d)) {
+    let source = match game_data().ok_or_else(|| "no game folder".to_owned()).and_then(|d| vanilla::load(&d)) {
         Ok(v) => {
             fonts.font_data.insert(vanilla::BODY.to_owned(), egui::FontData::from_owned(v.body).into());
             fonts.font_data.insert(vanilla::HEADING.to_owned(), egui::FontData::from_owned(v.heading).into());

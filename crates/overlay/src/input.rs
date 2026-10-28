@@ -237,9 +237,14 @@ pub(crate) fn take(screen: Vec2, pixels_per_point: f32) -> (Vec<Event>, Pos2) {
     (core::mem::take(&mut p.events), p.pointer)
 }
 
-/// The game hides the system cursor, so the overlay draws its own.
-pub(crate) fn draw_cursor(ctx: &Context, at: Pos2) {
+/// The game hides the system cursor, so the overlay draws one: the game's (its texture and size in
+/// points, its top left corner the point), or an arrow of its own.
+pub(crate) fn draw_cursor(ctx: &Context, at: Pos2, game: Option<(egui::TextureId, Vec2)>) {
     let painter = ctx.layer_painter(egui::LayerId::new(egui::Order::Tooltip, egui::Id::unique("overlay cursor")));
+    if let Some((texture, size)) = game {
+        painter.image(texture, egui::Rect::from_min_size(at, size), egui::Rect::from_min_max(Pos2::ZERO, egui::pos2(1.0, 1.0)), egui::Color32::WHITE);
+        return;
+    }
     let points = vec![at, at + egui::vec2(0.0, 18.0), at + egui::vec2(5.0, 13.5), at + egui::vec2(12.5, 13.0)];
     painter.add(egui::Shape::convex_polygon(points, egui::Color32::WHITE, egui::Stroke::new(1.0, egui::Color32::BLACK)));
 }
