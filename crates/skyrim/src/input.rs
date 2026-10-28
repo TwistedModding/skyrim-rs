@@ -93,6 +93,9 @@ pub trait ControlMapExt {
     fn context_stack(&self) -> &[u32];
     /// The name of the key `device` maps to `user_event` in the first context that maps it.
     fn button_name(&self, user_event: &str, device: InputDevice) -> Option<String>;
+    /// Every line of the parsed control map that maps key `id` of `device` (keyboard, mouse or
+    /// gamepad): the context, the user event and the modifier key the line pairs with it (0 for none).
+    fn user_events(&self, device: InputDevice, id: u32) -> Vec<(u32, String, u32)>;
 }
 
 impl ControlMapExt for EventSourceHolder_User {
@@ -110,6 +113,28 @@ impl ControlMapExt for EventSourceHolder_User {
         let get: GetButtonNameFn = unsafe { crate::engine_fn(fns::ControlMap__GetButtonNameForUserEvent) };
         let found = unsafe { get(core::ptr::from_ref(self).cast_mut(), name.raw(), device as u32, (&raw mut out).cast()) };
         found.then(|| out.to_string())
+    }
+
+    fn user_events(&self, device: InputDevice, id: u32) -> Vec<(u32, String, u32)> {
+        const LINKED: u32 = 0x7FFF_FFFF;
+        let mut found = Vec::new();
+        for (index, pointer) in (0u32..).zip(self.contexts.as_chunks::<8>().0) {
+            let Some(context) = (unsafe { (usize::from_le_bytes(*pointer) as *const sre::InputContext).as_ref() }) else { continue };
+            let mappings = match device {
+                InputDevice::Keyboard => &context.keyboardMappings,
+                InputDevice::Mouse => &context.mouseMappings,
+                InputDevice::Gamepad => &context.gamepadMappings,
+                _ => return found,
+            };
+            if mappings.data.is_null() {
+                continue;
+            }
+            let mappings = unsafe { core::slice::from_raw_parts(mappings.data.cast::<sre::UserEventMapping>(), mappings.size as usize) };
+            for m in mappings.iter().filter(|m| m.inputKey != LINKED && m.inputKey & 0xFFFF == id) {
+                found.push((index, BSFixedString::view(&m.userEvent).to_string(), m.inputKey >> 16));
+            }
+        }
+        found
     }
 }
 
