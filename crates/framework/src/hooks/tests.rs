@@ -9,10 +9,12 @@ use super::*;
 
 type Fn2 = unsafe extern "C" fn(usize, usize) -> usize;
 
+// Each body holds its own name so the linker's identical-code folding keeps one address per target.
 macro_rules! targets {
     ($($name:ident) => {$(
         #[inline(never)]
         unsafe extern "C" fn $name(a: usize, b: usize) -> usize {
+            black_box(stringify!($name));
             black_box(a).wrapping_add(black_box(b))
         }
     };
