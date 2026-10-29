@@ -7,7 +7,7 @@
 
 use std::sync::{Mutex, PoisonError};
 
-use overlay::egui::{self, Align, Align2, Layout, RichText, Sense, TextStyle, TextWrapMode, WidgetText, vec2};
+use overlay::egui::{self, Align, Layout, RichText, Sense, TextStyle, TextWrapMode, WidgetText, vec2};
 use overlay::theme;
 
 use super::owned::Owned;
@@ -17,8 +17,12 @@ use crate::settings::{self, Setting, Value};
 
 /// The host setting holding the capture rule: `focus` (the default) or `all`.
 const CAPTURE: &str = "overlay.capture";
-/// Room kept under the scroll area for the footer.
-const FOOTER: f32 = 44.0;
+/// The window's size until the player drags its corner, and the smallest it gets.
+const DEFAULT_SIZE: egui::Vec2 = vec2(1120.0, 680.0);
+const MIN_SIZE: egui::Vec2 = vec2(820.0, 500.0);
+/// Space between the window's frame and its contents, and above and below the rules.
+const MARGIN: egui::Margin = egui::Margin { left: 36, right: 36, top: 22, bottom: 18 };
+const RULE_SPACE: f32 = 12.0;
 
 /// One section of a plugin's tab; only the main thread draws it, under the entry's exclusive lock.
 struct Section {
@@ -43,15 +47,16 @@ enum Tab {
 
 const TABS: [(Tab, &str); 4] = [(Tab::Mods, "Mods"), (Tab::Plugins, "Plugins"), (Tab::Legacy, "Legacy plugins"), (Tab::Settings, "Settings")];
 
-/// The selected tab, the selected mod (the first while `None`) and each mod's selected section, by
-/// name, so a reloaded generation finds its own again.
+/// The selected tab, the selected mod (the first while `None`), each mod's selected section, by
+/// name, so a reloaded generation finds its own again, and the window's size.
 struct Shown {
     tab: Tab,
     plugin: Option<String>,
     sections: Vec<(String, String)>,
+    size: egui::Vec2,
 }
 
-static SHOWN: Mutex<Shown> = Mutex::new(Shown { tab: Tab::Mods, plugin: None, sections: Vec::new() });
+static SHOWN: Mutex<Shown> = Mutex::new(Shown { tab: Tab::Mods, plugin: None, sections: Vec::new(), size: DEFAULT_SIZE });
 
 /// A plugin's tab as the sidebar lists it.
 struct Mod {
@@ -223,9 +228,9 @@ fn warn(ui: &egui::Ui, text: impl Into<String>) -> RichText {
 }
 
 fn heading(ui: &mut egui::Ui, text: &str) {
-    ui.add_space(6.0);
     ui.label(RichText::new(text.to_uppercase()).text_style(TextStyle::Heading).size(22.0));
     ui.separator();
+    ui.add_space(4.0);
 }
 
 /// The row of tab names, centred, the selected one white between the journal's arrows. Returns the one clicked.
@@ -260,7 +265,7 @@ fn tab_row(ui: &mut egui::Ui, selected: Tab) -> Option<Tab> {
 
 /// One line of the sidebar across its width, white when selected, on the highlight when `marked`. Returns whether it was clicked.
 fn sidebar_row(ui: &mut egui::Ui, text: &str, selected: bool, marked: bool, indent: f32) -> bool {
-    let pad = vec2(10.0 + indent, 4.0);
+    let pad = vec2(12.0 + indent, 7.0);
     let galley = WidgetText::from(text).into_galley(ui, Some(TextWrapMode::Truncate), ui.available_width() - pad.x - 10.0, TextStyle::Body);
     let (rect, response) = ui.allocate_exact_size(vec2(ui.available_width(), galley.size().y + 2.0 * pad.y), Sense::click());
     if marked {
@@ -276,7 +281,7 @@ fn mods_tab(ui: &mut egui::Ui, mods: &[Mod], selected: Option<(usize, usize)>) {
         ui.label(dim("No mod has added a tab. A framework plugin adds one with Host::add_tab."));
         return;
     };
-    egui::Panel::left("mods").resizable(false).exact_size(250.0).frame(egui::Frame::NONE).show(ui, |ui| {
+    egui::Panel::left("mods").resizable(false).exact_size(260.0).frame(egui::Frame::NONE.inner_margin(egui::Margin { right: 16, ..egui::Margin::ZERO })).show(ui, |ui| {
         egui::ScrollArea::vertical().id_salt("mod list").auto_shrink(false).show(ui, |ui| {
             ui.spacing_mut().item_spacing.y = 2.0;
             for (i, m) in mods.iter().enumerate() {
@@ -294,10 +299,8 @@ fn mods_tab(ui: &mut egui::Ui, mods: &[Mod], selected: Option<(usize, usize)>) {
         });
     });
     let (owner, name) = (&mods[index].owner, &mods[index].sections[section]);
-    egui::CentralPanel::no_frame().show(ui, |ui| {
-        ui.add_space(2.0);
+    egui::CentralPanel::no_frame().frame(egui::Frame::NONE.inner_margin(egui::Margin { left: 28, right: 8, top: 4, bottom: 0 })).show(ui, |ui| {
         egui::ScrollArea::vertical().id_salt((owner, name)).auto_shrink(false).show(ui, |ui| {
-            ui.add_space(4.0);
             SECTIONS.each_mut(|s| {
                 if s.owner == owner && s.name == *name {
                     (s.draw)(ui);
@@ -309,7 +312,7 @@ fn mods_tab(ui: &mut egui::Ui, mods: &[Mod], selected: Option<(usize, usize)>) {
 
 /// A striped table under a dim header row; each cell with its hover text, empty for none.
 fn table(ui: &mut egui::Ui, id: &str, header: &[&str], rows: Vec<Vec<(RichText, String)>>) {
-    egui::Grid::new(id).striped(true).spacing([28.0, 6.0]).show(ui, |ui| {
+    egui::Grid::new(id).striped(true).spacing([36.0, 10.0]).show(ui, |ui| {
         for h in header {
             ui.label(dim(*h).small());
         }
@@ -328,7 +331,7 @@ fn table(ui: &mut egui::Ui, id: &str, header: &[&str], rows: Vec<Vec<(RichText, 
 
 fn plugins_tab(ui: &mut egui::Ui) {
     ui.label(dim(format!("skyrim-rs {}, loaded by {}. Framework plugins are read from Data\\SKSE\\Plugins\\skyrim-rs.", env!("CARGO_PKG_VERSION"), hosted_by())));
-    ui.add_space(8.0);
+    ui.add_space(RULE_SPACE);
     let rows: Vec<_> = plugin_rows()
         .into_iter()
         .map(|r| {
@@ -346,7 +349,7 @@ fn plugins_tab(ui: &mut egui::Ui) {
 fn legacy_tab(ui: &mut egui::Ui) {
     let log = if hosted_by() == "the script extender" { "skse64.log" } else { "skyrim-rs-standalone.log" };
     ui.label(dim(format!("SKSE plugins in Data\\SKSE\\Plugins, loaded by {}. The reason a plugin was not loaded is in {log}.", hosted_by())));
-    ui.add_space(8.0);
+    ui.add_space(RULE_SPACE);
     let rows: Vec<_> = skse_plugins()
         .into_iter()
         .map(|p| {
@@ -374,7 +377,7 @@ fn binding_label(index: usize, b: &keys::Binding) -> String {
 fn settings_tab(ui: &mut egui::Ui) {
     heading(ui, "Keys");
     let capturing = keys::capturing();
-    egui::Grid::new("keys").striped(true).spacing([28.0, 6.0]).show(ui, |ui| {
+    egui::Grid::new("keys").striped(true).spacing([40.0, 10.0]).min_col_width(90.0).show(ui, |ui| {
         for (i, b) in keys::list().iter().enumerate() {
             ui.label(binding_label(i, b)).on_hover_text(format!("Default: {}", keys::show(b.default)));
             let key = ui.label(if b.key.is_some() { RichText::new(keys::show(b.key)) } else { warn(ui, "Unbound") });
@@ -390,8 +393,10 @@ fn settings_tab(ui: &mut egui::Ui) {
     });
     let message = keys::last_message();
     if !message.is_empty() {
+        ui.add_space(4.0);
         ui.label(if message.contains("refused") || message.contains("unbound") { warn(ui, message) } else { dim(message) });
     }
+    ui.add_space(2.0 * RULE_SPACE);
     heading(ui, "Input");
     let mut focus = focus_capture();
     if ui.checkbox(&mut focus, "Keys reach the game while no field in this menu has the focus").changed() {
@@ -402,7 +407,9 @@ fn settings_tab(ui: &mut egui::Ui) {
 
 /// The journal's key hint at the bottom right: the close key and "Exit", which closes the overlay when clicked.
 fn footer(ui: &mut egui::Ui) {
+    ui.add_space(RULE_SPACE);
     ui.separator();
+    ui.add_space(4.0);
     ui.with_layout(Layout::right_to_left(Align::Center), |ui| {
         if ui.add(egui::Label::new(dim("Exit")).sense(Sense::click()).selectable(false)).clicked() {
             overlay::set_open(false);
@@ -413,30 +420,54 @@ fn footer(ui: &mut egui::Ui) {
     });
 }
 
-/// Draws the window; the overlay's one window callback.
+/// The grip at the window's bottom right corner: dragging it resizes the window, down to [`MIN_SIZE`] and up to the screen.
+fn resize_grip(ctx: &egui::Context, window: egui::Rect) {
+    let size = vec2(18.0, 18.0);
+    egui::Area::new(egui::Id::unique((NAME, "resize"))).order(egui::Order::Foreground).fixed_pos(window.max - size).show(ctx, |ui| {
+        let (rect, response) = ui.allocate_exact_size(size, Sense::drag());
+        let color = if response.hovered() || response.dragged() { theme::TEXT } else { theme::DIM };
+        for inset in [4.0, 9.0, 14.0] {
+            ui.painter().line_segment([egui::pos2(rect.right() - 3.0, rect.top() + inset), egui::pos2(rect.left() + inset, rect.bottom() - 3.0)], egui::Stroke::new(1.0, color));
+        }
+        if response.dragged() {
+            let max = ctx.content_rect().size() - vec2(16.0, 16.0);
+            let mut shown = SHOWN.lock().unwrap_or_else(PoisonError::into_inner);
+            shown.size = (shown.size + response.drag_delta()).clamp(MIN_SIZE, max.max(MIN_SIZE));
+        }
+    });
+}
+
+/// Draws the window; the overlay's one window callback. The window's size is the host's (the grip
+/// sets it), so its contents fill it and never grow it.
 pub(super) fn draw(ctx: &egui::Context) {
     let mods = mods();
     let (tab, selected) = selection(&mods);
-    let window = egui::Window::new(NAME).id(egui::Id::unique((NAME, "gui"))).title_bar(false).pivot(Align2::CENTER_CENTER).default_pos(ctx.content_rect().center()).fixed_size([1120.0, 680.0]);
-    window.show(ctx, |ui| {
-        if let Some(clicked) = tab_row(ui, tab) {
-            select(clicked, None, None);
-        }
-        ui.separator();
-        let size = vec2(ui.available_width(), (ui.available_height() - FOOTER).max(80.0));
-        ui.allocate_ui(size, |ui| {
-            ui.set_min_size(size);
-            match tab {
-                Tab::Mods => mods_tab(ui, &mods, selected),
-                _ => {
-                    egui::ScrollArea::vertical().id_salt(TABS.iter().position(|(t, _)| *t == tab)).auto_shrink(false).show(ui, |ui| match tab {
-                        Tab::Plugins => plugins_tab(ui),
-                        Tab::Legacy => legacy_tab(ui),
-                        _ => settings_tab(ui),
-                    });
-                }
+    let size = SHOWN.lock().unwrap_or_else(PoisonError::into_inner).size;
+    let frame = egui::Frame::window(&ctx.global_style()).inner_margin(MARGIN);
+    let window = egui::Window::new(NAME).id(egui::Id::unique((NAME, "gui"))).title_bar(false).frame(frame).default_pos(ctx.content_rect().center() - DEFAULT_SIZE / 2.0).fixed_size(size);
+    let shown = window.show(ctx, |ui| {
+        ui.spacing_mut().item_spacing = vec2(12.0, 9.0);
+        egui::Panel::top("tabs").frame(egui::Frame::NONE).show_separator_line(false).show(ui, |ui| {
+            if let Some(clicked) = tab_row(ui, tab) {
+                select(clicked, None, None);
+            }
+            ui.add_space(4.0);
+            ui.separator();
+            ui.add_space(RULE_SPACE);
+        });
+        egui::Panel::bottom("footer").frame(egui::Frame::NONE).show_separator_line(false).show(ui, footer);
+        egui::CentralPanel::no_frame().show(ui, |ui| match tab {
+            Tab::Mods => mods_tab(ui, &mods, selected),
+            _ => {
+                egui::ScrollArea::vertical().id_salt(TABS.iter().position(|(t, _)| *t == tab)).auto_shrink(false).show(ui, |ui| match tab {
+                    Tab::Plugins => plugins_tab(ui),
+                    Tab::Legacy => legacy_tab(ui),
+                    _ => settings_tab(ui),
+                });
             }
         });
-        footer(ui);
     });
+    if let Some(shown) = shown {
+        resize_grip(ctx, shown.response.rect);
+    }
 }
