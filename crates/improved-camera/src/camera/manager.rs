@@ -30,7 +30,7 @@ use crate::body::state::hands::HandsType;
 use crate::body::state::movement::MovementType;
 use crate::body::state::race::RaceType;
 use crate::settings::{self, Advanced, Profile, Stab};
-use crate::util::math_util::{damped_alpha, lerp, normalize_relative_angle, smoother_step};
+use crate::util::math_util::{damped_alpha, lerp, normalize_relative_angle, rotation_from_angles, smoother_step};
 use crate::util::point::{self, IDENTITY, M3, P3};
 use crate::util::quaternion_util::{self, Quat};
 use crate::util::skyrim_util::{self as util, FAKE_FIRST_PERSON_ZOOM};
@@ -613,9 +613,10 @@ impl Manager {
         crate::log(&format!("<Camera> Enter: {next:?}"));
     }
 
-    /// `CaptureCameraState`. IC's position fix while leaving furniture in an animation reads the
-    /// sit/sleep phase (request IC3) and is absent, as are the dialogue speaker focus and the idle
-    /// camera's authored shots (ray casts and the dialogue target, not in the RE).
+    /// `CaptureCameraState`, with its fix while getting up from furniture in an animation in fake
+    /// first person: the player's position and angles stand in for the camera's. The dialogue
+    /// speaker focus and the idle camera's authored shots (ray casts and the dialogue target, not
+    /// in the RE) are absent.
     fn capture_camera_state(&mut self, camera: &PlayerCamera, profile: &Profile) {
         self.previous = self.current;
         self.frame += 1;
@@ -627,6 +628,15 @@ impl Manager {
         if let Some(root) = camera.camera_root() {
             let local = root.local_transform();
             (position, rotation) = (local.translation, local.rotation);
+            if util::is_leaving_interaction()
+                && self.current.camera == CameraType::Animation
+                && camera.third_person().is_some_and(|t| t.currentZoom <= FAKE_FIRST_PERSON_ZOOM)
+                && let Some(player) = util::player()
+            {
+                position[0] = player.posX;
+                position[1] = player.posY;
+                rotation = rotation_from_angles(player.rotX, player.rotY, player.rotZ);
+            }
             if self.look.mode != LookMode::Disabled {
                 let o = Quat::from_matrix(&rotation).orientation();
                 self.look.update(o.yaw, o.pitch);
