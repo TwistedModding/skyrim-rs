@@ -3,6 +3,34 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `AutoRegisterCreator<CombatMagicCasterWard,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_>::vftable` at 0x1949460, id 210665 (rtti, high); 3 slots.
+#[repr(C)]
+pub struct AutoRegisterCreator_CombatMagicCasterWard_BSTCreateFactoryManager_unsigned_int_CombatObject_256___vtable {
+    /// `AutoRegisterCreator<CombatMagicCasterWard,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_>::vdtor` at 0x8327c0 (layout_inference, medium); signature (low): `AutoRegisterCreator<CombatMagicCasterWard,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_> * vdtor(AutoRegisterCreator<CombatMagicCasterWard,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_0: *const c_void,
+    /// `BSTDerivedCreator<CombatMagicCasterWard,CombatObject>::vfunc_1` at 0x8326c0 (rtti, medium); signature (low): `undefined8 * vfunc_1(BSTDerivedCreator<CombatMagicCasterWard,CombatObject> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_1: *const c_void,
+    /// `BSTDerivedCreator<CombatMagicCasterWard,CombatObject>::vfunc_2` at 0x832740 (rtti, medium); signature (low): `undefined vfunc_2(BSTDerivedCreator<CombatMagicCasterWard,CombatObject> * this, undefined8 * param_1)`
+    pub slot_2: *const c_void,
+}
+impl AutoRegisterCreator_CombatMagicCasterWard_BSTCreateFactoryManager_unsigned_int_CombatObject_256___vtable {
+    pub const ID: u64 = 210665;
+}
+
+/// `AutoRegisterCreator<CombatMeleeAimController,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_>::vftable` at 0x1943ce8, id 210045 (rtti, high); 3 slots.
+#[repr(C)]
+pub struct AutoRegisterCreator_CombatMeleeAimController_BSTCreateFactoryManager_unsigned_int_CombatObject_256___vtable {
+    /// `AutoRegisterCreator<CombatMeleeAimController,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_>::vdtor` at 0x809b40 (layout_inference, medium); signature (low): `AutoRegisterCreator<CombatMeleeAimController,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_> * vdtor(AutoRegisterCreator<CombatMeleeAimController,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_0: *const c_void,
+    /// `BSTDerivedCreator<CombatMeleeAimController,CombatObject>::vfunc_1` at 0x809a40 (rtti, medium); signature (low): `undefined8 * vfunc_1(BSTDerivedCreator<CombatMeleeAimController,CombatObject> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_1: *const c_void,
+    /// `BSTDerivedCreator<CombatMeleeAimController,CombatObject>::vfunc_2` at 0x809ac0 (rtti, medium); signature (low): `undefined vfunc_2(BSTDerivedCreator<CombatMeleeAimController,CombatObject> * this, undefined8 * param_1)`
+    pub slot_2: *const c_void,
+}
+impl AutoRegisterCreator_CombatMeleeAimController_BSTCreateFactoryManager_unsigned_int_CombatObject_256___vtable {
+    pub const ID: u64 = 210045;
+}
+
 /// `AutoRegisterCreator<CombatPathT<CombatPathRequestFlight,CombatPathDestinationLocation>,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_>::vftable` at 0x19696f8, id 214640 (rtti, high); 3 slots.
 #[repr(C)]
 pub struct AutoRegisterCreator_CombatPathT_CombatPathRequestFlight_CombatPathDestinationLocation_BSTCreateF_f3efdc55c6e1_vtable {
@@ -7743,19 +7771,5 @@ pub struct AutoRegisterFactory_BSTDerivedCreator_MovementMessageActivateDoor_Mov
 }
 impl AutoRegisterFactory_BSTDerivedCreator_MovementMessageActivateDoor_MovementMessage_BSTSmartPointe_9ac5f45d5dc8_vtable {
     pub const ID: u64 = 246126;
-}
-
-/// `AutoRegisterFactory<BSTDerivedCreator<MovementMessageActorCollision,MovementMessage>,BSTSmartPointerPathingFactoryManager<MovementMessage,64>_>::vftable` at 0x1930e68, id 208453 (rtti, high); 3 slots.
-#[repr(C)]
-pub struct AutoRegisterFactory_BSTDerivedCreator_MovementMessageActorCollision_MovementMessage_BSTSmartPoin_2ca5c238e9f2_vtable {
-    /// `AutoRegisterFactory<BSTDerivedCreator<MovementMessageActorCollision,MovementMessage>,BSTSmartPointerPathingFactoryManager<MovementMessage,64>_>::vdtor` at 0x7a6a20 (layout_inference, medium); signature (low): `AutoRegisterFactory<BSTDerivedCreator<MovementMessageActorCollision,MovementMessage>,BSTSmartPointerPathingFactoryManager<MovementMessage,64>_> * vdtor(AutoRegisterFactory<BSTDerivedCreator<MovementMessageActorCollision,MovementMessage>,BSTSmartPointerPathingFactoryManager<MovementMessage,64>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `BSTDerivedCreator<MovementMessageActorCollision,MovementMessage>::vfunc_1` at 0x7a6960 (rtti, medium); signature (low): `undefined vfunc_1(BSTDerivedCreator<MovementMessageActorCollision,MovementMessage> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_1: *const c_void,
-    /// `BSTDerivedCreator<MovementMessageActorCollision,MovementMessage>::vfunc_2` at 0x7a69d0 (rtti, medium); signature (low): `undefined vfunc_2(BSTDerivedCreator<MovementMessageActorCollision,MovementMessage> * this, undefined8 * param_1)`
-    pub slot_2: *const c_void,
-}
-impl AutoRegisterFactory_BSTDerivedCreator_MovementMessageActorCollision_MovementMessage_BSTSmartPoin_2ca5c238e9f2_vtable {
-    pub const ID: u64 = 208453;
 }
 

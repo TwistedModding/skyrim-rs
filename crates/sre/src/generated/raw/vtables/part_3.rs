@@ -3,6 +3,20 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `AutoRegisterFactory<BSTDerivedCreator<MovementMessageActorCollision,MovementMessage>,BSTSmartPointerPathingFactoryManager<MovementMessage,64>_>::vftable` at 0x1930e68, id 208453 (rtti, high); 3 slots.
+#[repr(C)]
+pub struct AutoRegisterFactory_BSTDerivedCreator_MovementMessageActorCollision_MovementMessage_BSTSmartPoin_2ca5c238e9f2_vtable {
+    /// `AutoRegisterFactory<BSTDerivedCreator<MovementMessageActorCollision,MovementMessage>,BSTSmartPointerPathingFactoryManager<MovementMessage,64>_>::vdtor` at 0x7a6a20 (layout_inference, medium); signature (low): `AutoRegisterFactory<BSTDerivedCreator<MovementMessageActorCollision,MovementMessage>,BSTSmartPointerPathingFactoryManager<MovementMessage,64>_> * vdtor(AutoRegisterFactory<BSTDerivedCreator<MovementMessageActorCollision,MovementMessage>,BSTSmartPointerPathingFactoryManager<MovementMessage,64>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_0: *const c_void,
+    /// `BSTDerivedCreator<MovementMessageActorCollision,MovementMessage>::vfunc_1` at 0x7a6960 (rtti, medium); signature (low): `undefined vfunc_1(BSTDerivedCreator<MovementMessageActorCollision,MovementMessage> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_1: *const c_void,
+    /// `BSTDerivedCreator<MovementMessageActorCollision,MovementMessage>::vfunc_2` at 0x7a69d0 (rtti, medium); signature (low): `undefined vfunc_2(BSTDerivedCreator<MovementMessageActorCollision,MovementMessage> * this, undefined8 * param_1)`
+    pub slot_2: *const c_void,
+}
+impl AutoRegisterFactory_BSTDerivedCreator_MovementMessageActorCollision_MovementMessage_BSTSmartPoin_2ca5c238e9f2_vtable {
+    pub const ID: u64 = 208453;
+}
+
 /// `AutoRegisterFactory<BSTDerivedCreator<MovementMessageBlocked,MovementMessage>,BSTSmartPointerPathingFactoryManager<MovementMessage,64>_>::vftable` at 0x1ac4938, id 246181 (rtti, high); 3 slots.
 #[repr(C)]
 pub struct AutoRegisterFactory_BSTDerivedCreator_MovementMessageBlocked_MovementMessage_BSTSmartPointerPath_f85652925317_vtable {
@@ -12151,41 +12165,5 @@ pub struct BGSPackageDataRefOLD_vtable_8 {
 }
 impl BGSPackageDataRefOLD_vtable_8 {
     pub const ID: u64 = 200904;
-}
-
-/// `BGSPackageDataSaveableTemplate<IPackageData,float,&class_BSFixedString_const_kPackageDataFloatTypeName,&float_const_fPackageDataFloatDefault>::vftable` at 0x18c4858, id 200821 (rtti, high); 14 slots.
-#[repr(C)]
-pub struct BGSPackageDataSaveableTemplate_IPackageData_float_class_BSFixedString_const_kPackageDataFloatTyp_0cb254898459_vtable {
-    /// `BGSPackageDataSaveableTemplate<IPackageData,float,&class_BSFixedString_const_kPackageDataFloatTypeName,&float_const_fPackageDataFloatDefault>::vdtor` at 0x44e8c0 (layout_inference, medium); signature (low): `BGSPackageDataSaveableTemplate<IPackageData,float,&class_BSFixedString_const_kPackageDataFloatTypeName,&float_const_fPackageDataFloatDefault> * vdtor(BGSPackageDataSaveableTemplate<IPackageData,float,&class_BSFixedString_const_kPackageDataFloatTypeName,&float_const_fPackageDataFloatDefault> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `BGSNamedPackageData<IPackageData>::vfunc_1` at 0x44d5c0 (rtti, medium); signature (low): `undefined vfunc_1(void)`
-    pub slot_1: *const c_void,
-    /// `BGSPackageDataBasicTemplate<IPackageData,float,&class_BSFixedString_const_kPackageDataFloatTypeName,&float_const_fPackageDataFloatDefault>::vfunc_2` at 0x44e790 (rtti, medium); signature (low): `undefined vfunc_2(BGSPackageDataBasicTemplate<IPackageData,float,&class_BSFixedString_const_kPackageDataFloatTypeName,&float_const_fPackageDataFloatDefault> * this, longlong param_1, undefined8 param_2, ulonglong param_3)`
-    pub slot_2: *const c_void,
-    /// `BGSPackageDataBasicTemplate<IPackageData,float,&class_BSFixedString_const_kPackageDataFloatTypeName,&float_const_fPackageDataFloatDefault>::vfunc_3` at 0x44e6c0 (rtti, medium); signature (low): `undefined vfunc_3(BGSPackageDataBasicTemplate<IPackageData,float,&class_BSFixedString_const_kPackageDataFloatTypeName,&float_const_fPackageDataFloatDefault> * this, undefined8 param_1)`
-    pub slot_3: *const c_void,
-    /// `BGSPackageDataBasicTemplate<IPackageData,float,&class_BSFixedString_const_kPackageDataFloatTypeName,&float_const_fPackageDataFloatDefault>::vfunc_4` at 0x44e700 (rtti, medium); signature (low): `undefined8 vfunc_4(BGSPackageDataBasicTemplate<IPackageData,float,&class_BSFixedString_const_kPackageDataFloatTypeName,&float_const_fPackageDataFloatDefault> * this, undefined8 param_1)`
-    pub slot_4: *const c_void,
-    /// `BGSPackageDataBasicTemplate<IPackageData,float,&class_BSFixedString_const_kPackageDataFloatTypeName,&float_const_fPackageDataFloatDefault>::vfunc_5` at 0x44e7c0 (rtti, medium); signature (low): `undefined1 vfunc_5(void)`
-    pub slot_5: *const c_void,
-    /// `IPackageData::vfunc_6` at 0x44d510 (rtti, medium); signature (low): `undefined vfunc_6(void)`
-    pub slot_6: *const c_void,
-    /// `IPackageData::vfunc_7` at 0x44d520 (rtti, medium); signature (low): `undefined vfunc_7(void)`
-    pub slot_7: *const c_void,
-    /// `IPackageData::vfunc_8` at 0x44d530 (rtti, medium); signature (low): `undefined vfunc_8(void)`
-    pub slot_8: *const c_void,
-    /// `IPackageData::vfunc_9` at 0x44d540 (rtti, medium); signature (low): `undefined vfunc_9(void)`
-    pub slot_9: *const c_void,
-    /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    pub slot_10: *const c_void,
-    /// `BGSPackageDataBasicTemplate<IPackageData,float,&class_BSFixedString_const_kPackageDataFloatTypeName,&float_const_fPackageDataFloatDefault>::vfunc_11` at 0x44e7d0 (rtti, medium); signature (low): `undefined8 * vfunc_11(void)`
-    pub slot_11: *const c_void,
-    /// `IPackageData::vfunc_12` at 0x44d550 (rtti, medium); signature (low): `undefined1 vfunc_12(void)`
-    pub slot_12: *const c_void,
-    /// `BGSPackageDataSaveableTemplate<IPackageData,float,&class_BSFixedString_const_kPackageDataFloatTypeName,&float_const_fPackageDataFloatDefault>::vfunc_13` at 0x44e850 (rtti, medium); signature (low): `undefined vfunc_13(BGSPackageDataSaveableTemplate<IPackageData,float,&class_BSFixedString_const_kPackageDataFloatTypeName,&float_const_fPackageDataFloatDefault> * this, longlong param_1)`
-    pub slot_13: *const c_void,
-}
-impl BGSPackageDataSaveableTemplate_IPackageData_float_class_BSFixedString_const_kPackageDataFloatTyp_0cb254898459_vtable {
-    pub const ID: u64 = 200821;
 }
 

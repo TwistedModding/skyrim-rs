@@ -1161,7 +1161,8 @@ pub struct PlayerControls {
     pub hadInput: u8,
     /// +0x4B `undefined1`, semantic, runtime; while set, third person uses look input (or the left stick with a gamepad) for zoom and free rotation instead of pitch; also one of IsFreeLookActive's terms (medium)
     pub field_4B: u8,
-    pub unknown_4C: [u8; 2],
+    /// +0x4C `u8[2]`, semantic, runtime; POV switch locks: [0] 'Script' (povScriptMode), [1] 'Werewolf'. Non-zero in either makes CanSwitchPOV false (high)
+    pub bDisablePOVChange: [u8; 2],
     /// +0x4E `undefined1`, semantic; send a synthetic 'ForceRelease' ButtonEvent to every held-state handler marked +0x11 (high)
     pub releaseHeldPending: u8,
     /// +0x4F `undefined1`, semantic; mark every active held-state handler (+0x10) for release (+0x11) (high)
@@ -1231,6 +1232,7 @@ const _: () = assert!(core::mem::offset_of!(PlayerControls, autoMove) == 0x48);
 const _: () = assert!(core::mem::offset_of!(PlayerControls, alwaysRun) == 0x49);
 const _: () = assert!(core::mem::offset_of!(PlayerControls, hadInput) == 0x4A);
 const _: () = assert!(core::mem::offset_of!(PlayerControls, field_4B) == 0x4B);
+const _: () = assert!(core::mem::offset_of!(PlayerControls, bDisablePOVChange) == 0x4C);
 const _: () = assert!(core::mem::offset_of!(PlayerControls, releaseHeldPending) == 0x4E);
 const _: () = assert!(core::mem::offset_of!(PlayerControls, markHeldForRelease) == 0x4F);
 const _: () = assert!(core::mem::offset_of!(PlayerControls, ignoreInput) == 0x50);

@@ -3,6 +3,42 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `BGSPackageDataSaveableTemplate<IPackageData,float,&class_BSFixedString_const_kPackageDataFloatTypeName,&float_const_fPackageDataFloatDefault>::vftable` at 0x18c4858, id 200821 (rtti, high); 14 slots.
+#[repr(C)]
+pub struct BGSPackageDataSaveableTemplate_IPackageData_float_class_BSFixedString_const_kPackageDataFloatTyp_0cb254898459_vtable {
+    /// `BGSPackageDataSaveableTemplate<IPackageData,float,&class_BSFixedString_const_kPackageDataFloatTypeName,&float_const_fPackageDataFloatDefault>::vdtor` at 0x44e8c0 (layout_inference, medium); signature (low): `BGSPackageDataSaveableTemplate<IPackageData,float,&class_BSFixedString_const_kPackageDataFloatTypeName,&float_const_fPackageDataFloatDefault> * vdtor(BGSPackageDataSaveableTemplate<IPackageData,float,&class_BSFixedString_const_kPackageDataFloatTypeName,&float_const_fPackageDataFloatDefault> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_0: *const c_void,
+    /// `BGSNamedPackageData<IPackageData>::vfunc_1` at 0x44d5c0 (rtti, medium); signature (low): `undefined vfunc_1(void)`
+    pub slot_1: *const c_void,
+    /// `BGSPackageDataBasicTemplate<IPackageData,float,&class_BSFixedString_const_kPackageDataFloatTypeName,&float_const_fPackageDataFloatDefault>::vfunc_2` at 0x44e790 (rtti, medium); signature (low): `undefined vfunc_2(BGSPackageDataBasicTemplate<IPackageData,float,&class_BSFixedString_const_kPackageDataFloatTypeName,&float_const_fPackageDataFloatDefault> * this, longlong param_1, undefined8 param_2, ulonglong param_3)`
+    pub slot_2: *const c_void,
+    /// `BGSPackageDataBasicTemplate<IPackageData,float,&class_BSFixedString_const_kPackageDataFloatTypeName,&float_const_fPackageDataFloatDefault>::vfunc_3` at 0x44e6c0 (rtti, medium); signature (low): `undefined vfunc_3(BGSPackageDataBasicTemplate<IPackageData,float,&class_BSFixedString_const_kPackageDataFloatTypeName,&float_const_fPackageDataFloatDefault> * this, undefined8 param_1)`
+    pub slot_3: *const c_void,
+    /// `BGSPackageDataBasicTemplate<IPackageData,float,&class_BSFixedString_const_kPackageDataFloatTypeName,&float_const_fPackageDataFloatDefault>::vfunc_4` at 0x44e700 (rtti, medium); signature (low): `undefined8 vfunc_4(BGSPackageDataBasicTemplate<IPackageData,float,&class_BSFixedString_const_kPackageDataFloatTypeName,&float_const_fPackageDataFloatDefault> * this, undefined8 param_1)`
+    pub slot_4: *const c_void,
+    /// `BGSPackageDataBasicTemplate<IPackageData,float,&class_BSFixedString_const_kPackageDataFloatTypeName,&float_const_fPackageDataFloatDefault>::vfunc_5` at 0x44e7c0 (rtti, medium); signature (low): `undefined1 vfunc_5(void)`
+    pub slot_5: *const c_void,
+    /// `IPackageData::vfunc_6` at 0x44d510 (rtti, medium); signature (low): `undefined vfunc_6(void)`
+    pub slot_6: *const c_void,
+    /// `IPackageData::vfunc_7` at 0x44d520 (rtti, medium); signature (low): `undefined vfunc_7(void)`
+    pub slot_7: *const c_void,
+    /// `IPackageData::vfunc_8` at 0x44d530 (rtti, medium); signature (low): `undefined vfunc_8(void)`
+    pub slot_8: *const c_void,
+    /// `IPackageData::vfunc_9` at 0x44d540 (rtti, medium); signature (low): `undefined vfunc_9(void)`
+    pub slot_9: *const c_void,
+    /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
+    pub slot_10: *const c_void,
+    /// `BGSPackageDataBasicTemplate<IPackageData,float,&class_BSFixedString_const_kPackageDataFloatTypeName,&float_const_fPackageDataFloatDefault>::vfunc_11` at 0x44e7d0 (rtti, medium); signature (low): `undefined8 * vfunc_11(void)`
+    pub slot_11: *const c_void,
+    /// `IPackageData::vfunc_12` at 0x44d550 (rtti, medium); signature (low): `undefined1 vfunc_12(void)`
+    pub slot_12: *const c_void,
+    /// `BGSPackageDataSaveableTemplate<IPackageData,float,&class_BSFixedString_const_kPackageDataFloatTypeName,&float_const_fPackageDataFloatDefault>::vfunc_13` at 0x44e850 (rtti, medium); signature (low): `undefined vfunc_13(BGSPackageDataSaveableTemplate<IPackageData,float,&class_BSFixedString_const_kPackageDataFloatTypeName,&float_const_fPackageDataFloatDefault> * this, longlong param_1)`
+    pub slot_13: *const c_void,
+}
+impl BGSPackageDataSaveableTemplate_IPackageData_float_class_BSFixedString_const_kPackageDataFloatTyp_0cb254898459_vtable {
+    pub const ID: u64 = 200821;
+}
+
 /// `BGSPackageDataSaveableTemplate<IPackageData,int,&class_BSFixedString_const_kPackageDataIntTypeName,&int_const_iPackageDataIntDefault>::vftable` at 0x18c49c0, id 200853 (rtti, high); 14 slots.
 #[repr(C)]
 pub struct BGSPackageDataSaveableTemplate_IPackageData_int_class_BSFixedString_const_kPackageDataIntTypeNam_68f14969af7c_vtable {
@@ -12491,131 +12527,5 @@ pub struct BGSVoiceType_vtable {
 }
 impl BGSVoiceType_vtable {
     pub const ID: u64 = 195406;
-}
-
-/// `BGSVolumetricLighting::vftable` at 0x180d9b8, id 189109 (rtti, high); 59 slots.
-#[repr(C)]
-pub struct BGSVolumetricLighting_vtable {
-    /// `BGSVolumetricLighting::vdtor` at 0x263d40 (layout_inference, medium); signature (low): `BGSVolumetricLighting * vdtor(BGSVolumetricLighting * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `TESForm::vfunc_1` at 0x1e35c0 (rtti, medium); signature (low): `undefined vfunc_1(void)`
-    pub slot_1: *const c_void,
-    /// `TESForm::vfunc_2` at 0x1e36c0 (rtti, medium); signature (high): `undefined vfunc_2(TESForm * this)`
-    pub slot_2: *const c_void,
-    /// `TESForm::vfunc_3` at 0x1e6930 (rtti, medium); signature (low): `undefined vfunc_3(TESForm * this, undefined8 param_1)`
-    pub slot_3: *const c_void,
-    /// `TESForm::vfunc_4` at 0x1e35b0 (rtti, medium); signature (low): `undefined vfunc_4(void)`
-    pub slot_4: *const c_void,
-    /// `BGSVolumetricLighting::vfunc_5` at 0x263cf0 (rtti, high); signature (low): `undefined vfunc_5(void)`
-    pub slot_5: *const c_void,
-    /// `BGSVolumetricLighting::vfunc_6` at 0x2638c0 (rtti, high); signature (low): `ulonglong vfunc_6(BGSVolumetricLighting * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_6: *const c_void,
-    /// `TESForm::vfunc_7` at 0x1469b0 (rtti, medium); signature (low): `undefined1 vfunc_7(void)`
-    pub slot_7: *const c_void,
-    /// `TESForm::vfunc_8` at 0x1469a0 (rtti, medium); signature (high): `undefined vfunc_8(TESForm * this)`
-    pub slot_8: *const c_void,
-    /// `TESForm::vfunc_9` at 0x1e51a0 (rtti, medium); signature (low): `longlong * vfunc_9(TESForm * this, undefined8 param_1, longlong * param_2, undefined8 param_3)`
-    pub slot_9: *const c_void,
-    /// `TESForm::vfunc_10` at 0x1e5650 (rtti, medium); signature (low): `ulonglong vfunc_10(TESForm * this, undefined4 param_1)`
-    pub slot_10: *const c_void,
-    /// `TESForm::vfunc_11` at 0x1e56b0 (rtti, medium); signature (low): `undefined vfunc_11(TESForm * this, undefined4 param_1)`
-    pub slot_11: *const c_void,
-    /// `TESForm::vfunc_12` at 0x1e56e0 (rtti, medium); signature (low): `undefined1 vfunc_12(void)`
-    pub slot_12: *const c_void,
-    /// `TESForm::vfunc_13` at 0x1e56f0 (rtti, medium); signature (low): `undefined1 vfunc_13(void)`
-    pub slot_13: *const c_void,
-    /// `TESForm::SaveGame` at 0x1e5700 (semantic, medium); signature (untiered): `undefined SaveGame(TESForm * this, longlong param_1)`
-    pub slot_14: *const c_void,
-    /// `TESForm::LoadGame` at 0x1e5770 (semantic, medium); signature (untiered): `undefined LoadGame(TESForm * this, longlong param_1)`
-    pub slot_15: *const c_void,
-    /// `TESForm::vfunc_16` at 0x1e5830 (rtti, medium); signature (low): `undefined vfunc_16(void)`
-    pub slot_16: *const c_void,
-    /// `TESForm::vfunc_17` at 0x1e5840 (rtti, medium); signature (low): `undefined vfunc_17(void)`
-    pub slot_17: *const c_void,
-    /// `TESForm::vfunc_18` at 0x1e5850 (rtti, medium); signature (low): `undefined vfunc_18(void)`
-    pub slot_18: *const c_void,
-    /// `BGSVolumetricLighting::vfunc_19` at 0x263c80 (rtti, high); signature (high): `undefined vfunc_19(BGSVolumetricLighting * this)`
-    pub slot_19: *const c_void,
-    /// `TESForm::GetLastFile` at 0x1466f0 (semantic, medium); signature (untiered): `undefined GetLastFile(TESForm * this)`
-    pub slot_20: *const c_void,
-    /// `TESForm::GetFormType` at 0x146820 (runtime, high); signature (untiered): `undefined1 GetFormType(TESForm * this)`
-    pub slot_21: *const c_void,
-    /// `TESForm::GetFormDetailedString` at 0x1e5d10 (semantic, high); signature (untiered): `undefined GetFormDetailedString(TESForm * this, undefined8 param_1, ulonglong param_2)`
-    pub slot_22: *const c_void,
-    /// `TESForm::PlayerKnows` at 0x146750 (semantic, medium); signature (untiered): `uint PlayerKnows(TESForm * this)`
-    pub slot_23: *const c_void,
-    /// `TESForm::vfunc_24` at 0x146800 (rtti, medium); signature (high): `byte vfunc_24(TESForm * this)`
-    pub slot_24: *const c_void,
-    /// `TESForm::vfunc_25` at 0x1467f0 (rtti, medium); signature (high): `uint vfunc_25(TESForm * this)`
-    pub slot_25: *const c_void,
-    /// `TESForm::vfunc_26` at 0x1467a0 (rtti, medium); signature (low): `undefined1 vfunc_26(void)`
-    pub slot_26: *const c_void,
-    /// `TESForm::vfunc_27` at 0x1466a0 (rtti, medium); signature (high): `uint vfunc_27(TESForm * this)`
-    pub slot_27: *const c_void,
-    /// `TESForm::vfunc_28` at 0x146a10 (rtti, medium); signature (high): `uint vfunc_28(TESForm * this)`
-    pub slot_28: *const c_void,
-    /// `TESForm::vfunc_29` at 0x1467d0 (rtti, medium); signature (high): `uint vfunc_29(TESForm * this)`
-    pub slot_29: *const c_void,
-    /// `TESForm::vfunc_30` at 0x146a20 (rtti, medium); signature (low): `undefined1 vfunc_30(void)`
-    pub slot_30: *const c_void,
-    /// `TESForm::vfunc_31` at 0x1467e0 (rtti, medium); signature (high): `uint vfunc_31(TESForm * this)`
-    pub slot_31: *const c_void,
-    /// `TESForm::vfunc_32` at 0x146790 (rtti, medium); signature (high): `uint vfunc_32(TESForm * this)`
-    pub slot_32: *const c_void,
-    /// `TESForm::vfunc_33` at 0x1e5fd0 (rtti, medium); signature (low): `undefined vfunc_33(TESForm * this, char param_1)`
-    pub slot_33: *const c_void,
-    /// `TESForm::vfunc_34` at 0x146740 (rtti, medium); signature (low): `undefined1 vfunc_34(void)`
-    pub slot_34: *const c_void,
-    /// `TESForm::vfunc_35` at 0x1e6070 (rtti, medium); signature (low): `undefined vfunc_35(TESForm * this, byte param_1)`
-    pub slot_35: *const c_void,
-    /// `TESForm::vfunc_36` at 0x1e60d0 (rtti, medium); signature (low): `undefined vfunc_36(TESForm * this, char param_1)`
-    pub slot_36: *const c_void,
-    /// `TESForm::vfunc_37` at 0x146a30 (rtti, medium); signature (low): `undefined vfunc_37(void)`
-    pub slot_37: *const c_void,
-    /// `TESForm::vfunc_38` at 0x14c900 (rtti, medium); signature (low): `undefined vfunc_38(void)`
-    pub slot_38: *const c_void,
-    /// `TESForm::vfunc_39` at 0x14c8e0 (rtti, medium); signature (low): `undefined1 vfunc_39(void)`
-    pub slot_39: *const c_void,
-    /// `TESForm::vfunc_40` at 0x14c8f0 (rtti, medium); signature (low): `undefined1 vfunc_40(void)`
-    pub slot_40: *const c_void,
-    /// `TESForm::vfunc_41` at 0x147560 (rtti, medium); signature (low): `undefined1 vfunc_41(void)`
-    pub slot_41: *const c_void,
-    /// `TESForm::vfunc_42` at 0x146980 (rtti, medium); signature (low): `undefined1 vfunc_42(void)`
-    pub slot_42: *const c_void,
-    /// `TESForm::vfunc_43` at 0x146970 (rtti, medium); signature (low): `undefined8 vfunc_43(void)`
-    pub slot_43: *const c_void,
-    /// `TESForm::AsReference` at 0x146960 (semantic, medium); signature (untiered): `undefined8 AsReference(void)`
-    pub slot_44: *const c_void,
-    /// `TESForm::vfunc_45` at 0x14c8d0 (rtti, medium); signature (low): `undefined8 vfunc_45(void)`
-    pub slot_45: *const c_void,
-    /// `TESForm::vfunc_46` at 0x1e68f0 (rtti, medium); signature (untiered): `undefined1 * vfunc_46(undefined8 param_1)`
-    pub slot_46: *const c_void,
-    /// `TESForm::vfunc_47` at 0x1e6920 (rtti, medium); signature (low): `undefined vfunc_47(void)`
-    pub slot_47: *const c_void,
-    /// `TESForm::vfunc_48` at 0x1e6ab0 (rtti, medium); signature (low): `undefined1 vfunc_48(TESForm * this, int * param_1)`
-    pub slot_48: *const c_void,
-    /// `TESForm::vfunc_49` at 0x1e6b00 (rtti, medium); signature (low): `undefined vfunc_49(TESForm * this, undefined4 * param_1, longlong param_2)`
-    pub slot_49: *const c_void,
-    /// `TESForm::GetFormEditorID` at 0x146710 (runtime, high); signature (untiered): `undefined1 * GetFormEditorID(void)`
-    pub slot_50: *const c_void,
-    /// `TESForm::SetFormEditorID` at 0x146a60 (semantic, high); signature (untiered): `undefined1 SetFormEditorID(void)`
-    pub slot_51: *const c_void,
-    /// `TESForm::vfunc_52` at 0x1e6b40 (rtti, medium); signature (low): `undefined1 vfunc_52(void)`
-    pub slot_52: *const c_void,
-    /// `TESForm::vfunc_53` at 0x1e6b50 (rtti, medium); signature (low): `undefined1 vfunc_53(void)`
-    pub slot_53: *const c_void,
-    /// `TESForm::vfunc_54` at 0x1468f0 (rtti, medium); signature (low): `undefined1 vfunc_54(void)`
-    pub slot_54: *const c_void,
-    /// `TESForm::vfunc_55` at 0x14c860 (rtti, medium); signature (low): `undefined1 vfunc_55(void)`
-    pub slot_55: *const c_void,
-    /// `TESForm::SetFormID` at 0x1e6bd0 (semantic, high); signature (untiered): `undefined SetFormID(TESForm * this, int param_1, char param_2)`
-    pub slot_56: *const c_void,
-    /// `TESForm::vfunc_57` at 0x1467b0 (rtti, medium); signature (low): `undefined1 * vfunc_57(void)`
-    pub slot_57: *const c_void,
-    /// `TESForm::vfunc_58` at 0x146a00 (rtti, medium); signature (low): `undefined1 vfunc_58(void)`
-    pub slot_58: *const c_void,
-}
-impl BGSVolumetricLighting_vtable {
-    pub const ID: u64 = 189109;
 }
 

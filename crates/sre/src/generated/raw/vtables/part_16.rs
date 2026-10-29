@@ -3230,7 +3230,7 @@ pub struct NightEyeEffect_vtable {
     pub slot_3: *const c_void,
     /// `NightEyeEffect::vfunc_4` at 0x5d8c50 (rtti, high); signature (untiered): `undefined vfunc_4(NightEyeEffect * this, float param_1)`
     pub slot_4: *const c_void,
-    /// `ActiveEffect::vfunc_5` at 0x5bb6c0 (rtti, medium); signature (low): `undefined vfunc_5(ActiveEffect * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    /// `ActiveEffect::UpdateConditions` at 0x5bb6c0 (semantic, medium); signature (untiered): `undefined UpdateConditions(ActiveEffect * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_5: *const c_void,
     /// `ValueModifierEffect::vfunc_6` at 0x5e7000 (rtti, medium); signature (high): `undefined8 vfunc_6(ValueModifierEffect * this)`
     pub slot_6: *const c_void,
@@ -3652,7 +3652,7 @@ pub struct OpenEffect_vtable {
     pub slot_3: *const c_void,
     /// `ActiveEffect::vfunc_4` at 0x5bf0c0 (rtti, medium); signature (low): `undefined vfunc_4(void)`
     pub slot_4: *const c_void,
-    /// `ActiveEffect::vfunc_5` at 0x5bb6c0 (rtti, medium); signature (low): `undefined vfunc_5(ActiveEffect * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    /// `ActiveEffect::UpdateConditions` at 0x5bb6c0 (semantic, medium); signature (untiered): `undefined UpdateConditions(ActiveEffect * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_5: *const c_void,
     /// `ActiveEffect::vfunc_6` at 0x5bb9c0 (rtti, medium); signature (low): `undefined1 vfunc_6(void)`
     pub slot_6: *const c_void,
@@ -4110,7 +4110,7 @@ pub struct ParalysisEffect_vtable {
     pub slot_3: *const c_void,
     /// `ParalysisEffect::vfunc_4` at 0x5d9cf0 (rtti, high); signature (medium): `undefined vfunc_4(ParalysisEffect * this, float param_1)`
     pub slot_4: *const c_void,
-    /// `ActiveEffect::vfunc_5` at 0x5bb6c0 (rtti, medium); signature (low): `undefined vfunc_5(ActiveEffect * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    /// `ActiveEffect::UpdateConditions` at 0x5bb6c0 (semantic, medium); signature (untiered): `undefined UpdateConditions(ActiveEffect * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_5: *const c_void,
     /// `ValueModifierEffect::vfunc_6` at 0x5e7000 (rtti, medium); signature (high): `undefined8 vfunc_6(ValueModifierEffect * this)`
     pub slot_6: *const c_void,
@@ -5516,7 +5516,7 @@ pub struct PlayerCharacter_vtable {
     pub slot_90: *const c_void,
     /// `PlayerCharacter::GetLookAtPosition` at 0x75ad40 (semantic, high); signature (untiered): `float * GetLookAtPosition(PlayerCharacter * this, float * param_1)`
     pub slot_91: *const c_void,
-    /// `Actor::vfunc_92` at 0x6d4b90 (rtti, medium); signature (low): `ActorMagicCaster * vfunc_92(Actor * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+    /// `Actor::GetMagicCaster` at 0x6d4b90 (semantic, high); signature (untiered): `ActorMagicCaster * GetMagicCaster(Actor * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_92: *const c_void,
     /// `Actor::vfunc_93` at 0x6d8550 (rtti, medium); signature (high): `Actor_vtbl_A0 * * vfunc_93(Actor * this)`
     pub slot_93: *const c_void,
@@ -5664,7 +5664,7 @@ pub struct PlayerCharacter_vtable {
     pub slot_164: *const c_void,
     /// `Actor::vfunc_165` at 0x675350 (rtti, medium); signature (low): `undefined vfunc_165(void)`
     pub slot_165: *const c_void,
-    /// `PlayerCharacter::vfunc_166` at 0x7766b0 (rtti, high); signature (low): `undefined vfunc_166(PlayerCharacter * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    /// `PlayerCharacter::RequestWeaponDrawn` at 0x7766b0 (semantic, high); signature (untiered): `undefined RequestWeaponDrawn(PlayerCharacter * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_166: *const c_void,
     /// `Actor::vfunc_167` at 0x676e30 (rtti, medium); signature (low): `undefined8 vfunc_167(Actor * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_167: *const c_void,
@@ -6162,7 +6162,7 @@ pub struct PlayerCharacter_vtable_A0 {
     pub slot_5: *const c_void,
     /// `Actor::MagicTarget_vfunc_6` at 0x6d8570 (rtti, medium); signature (high): `undefined8 MagicTarget_vfunc_6(Actor * this)`
     pub slot_6: *const c_void,
-    /// `Actor::GetActiveEffectList` at 0x6d85b0 (runtime, high); signature (untiered): `undefined8 GetActiveEffectList(Actor * this)`
+    /// `MagicTarget::GetActiveEffectList` at 0x6d85b0 (runtime, high); signature (untiered): `undefined8 GetActiveEffectList(MagicTarget * this)`
     pub slot_7: *const c_void,
     /// `PlayerCharacter::MagicTarget_vfunc_8` at 0x761690 (rtti, high); signature (low): `undefined MagicTarget_vfunc_8(PlayerCharacter * this, longlong param_1, undefined8 param_2, TypeDescriptor * param_3)`
     pub slot_8: *const c_void,
@@ -6240,13 +6240,13 @@ pub struct PlayerCharacter_vtable_C0 {
     pub slot_15: *const c_void,
     /// `Actor::ActorState_vfunc_16` at 0x6b5bc0 (rtti, medium); signature (low): `undefined1 ActorState_vfunc_16(Actor * this, undefined8 * param_1)`
     pub slot_16: *const c_void,
-    /// `Actor::ActorState_vfunc_17` at 0x6b5bf0 (rtti, medium); signature (high): `undefined4 ActorState_vfunc_17(Actor * this)`
+    /// `Actor::ActorState_GetCharacterState` at 0x6b5bf0 (semantic, high); signature (untiered): `undefined4 ActorState_GetCharacterState(Actor * this)`
     pub slot_17: *const c_void,
     /// `Actor::ActorState_vfunc_18` at 0x6b5c30 (rtti, medium); signature (high): `undefined8 ActorState_vfunc_18(Actor * this)`
     pub slot_18: *const c_void,
     /// `Actor::ActorState_vfunc_19` at 0x6b5cb0 (rtti, medium); signature (high): `byte ActorState_vfunc_19(Actor * this)`
     pub slot_19: *const c_void,
-    /// `PlayerCharacter::ActorState_vfunc_20` at 0x75e4a0 (rtti, high); signature (low): `undefined8 ActorState_vfunc_20(PlayerCharacter * this, uint param_1)`
+    /// `PlayerCharacter::SetSitSleepState` at 0x75e4a0 (semantic, high); signature (untiered): `undefined8 SetSitSleepState(PlayerCharacter * this, uint param_1)`
     pub slot_20: *const c_void,
     /// `PlayerCharacter::SetWeaponDrawnState` at 0x760e00 (runtime, high); signature (untiered): `undefined SetWeaponDrawnState(PlayerCharacter * this, byte param_1, undefined8 param_2, ulonglong param_3)`
     pub slot_21: *const c_void,
@@ -8324,7 +8324,7 @@ pub struct RallyEffect_vtable {
     pub slot_3: *const c_void,
     /// `ValueModifierEffect::vfunc_4` at 0x5e73c0 (rtti, medium); signature (medium): `undefined vfunc_4(ValueModifierEffect * this, float param_1)`
     pub slot_4: *const c_void,
-    /// `ActiveEffect::vfunc_5` at 0x5bb6c0 (rtti, medium); signature (low): `undefined vfunc_5(ActiveEffect * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    /// `ActiveEffect::UpdateConditions` at 0x5bb6c0 (semantic, medium); signature (untiered): `undefined UpdateConditions(ActiveEffect * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_5: *const c_void,
     /// `ValueModifierEffect::vfunc_6` at 0x5e7000 (rtti, medium); signature (high): `undefined8 vfunc_6(ValueModifierEffect * this)`
     pub slot_6: *const c_void,
@@ -8512,7 +8512,7 @@ pub struct ReanimateEffect_vtable {
     pub slot_3: *const c_void,
     /// `ReanimateEffect::vfunc_4` at 0x5da5b0 (rtti, high); signature (low): `undefined vfunc_4(ReanimateEffect * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_4: *const c_void,
-    /// `ActiveEffect::vfunc_5` at 0x5bb6c0 (rtti, medium); signature (low): `undefined vfunc_5(ActiveEffect * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    /// `ActiveEffect::UpdateConditions` at 0x5bb6c0 (semantic, medium); signature (untiered): `undefined UpdateConditions(ActiveEffect * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_5: *const c_void,
     /// `ActiveEffect::vfunc_6` at 0x5bb9c0 (rtti, medium); signature (low): `undefined1 vfunc_6(void)`
     pub slot_6: *const c_void,
@@ -8562,7 +8562,7 @@ impl ReanimateEffect_vtable {
 pub struct RecoilStopHandler_vtable {
     /// `RecoilStopHandler::vdtor` at 0x7d45a0 (layout_inference, medium); signature (low): `RecoilStopHandler * vdtor(RecoilStopHandler * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `RecoilStopHandler::vfunc_1` at 0x7cc690 (rtti, high); signature (low): `undefined1 vfunc_1(RecoilStopHandler * this, longlong param_1)`
+    /// `RecoilStopHandler::Handle` at 0x7cc690 (semantic, high); signature (untiered): `undefined1 Handle(RecoilStopHandler * this, longlong param_1)`
     pub slot_1: *const c_void,
 }
 impl RecoilStopHandler_vtable {
@@ -9496,7 +9496,7 @@ pub struct ScriptEffect_vtable {
     pub slot_3: *const c_void,
     /// `ScriptEffect::vfunc_4` at 0x5dd590 (rtti, medium); signature (low): `undefined vfunc_4(ScriptEffect * this, undefined4 param_2)`
     pub slot_4: *const c_void,
-    /// `ActiveEffect::vfunc_5` at 0x5bb6c0 (rtti, medium); signature (low): `undefined vfunc_5(ActiveEffect * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    /// `ActiveEffect::UpdateConditions` at 0x5bb6c0 (semantic, medium); signature (untiered): `undefined UpdateConditions(ActiveEffect * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_5: *const c_void,
     /// `ActiveEffect::vfunc_6` at 0x5bb9c0 (rtti, medium); signature (low): `undefined1 vfunc_6(void)`
     pub slot_6: *const c_void,
@@ -9554,7 +9554,7 @@ pub struct ScriptedRefEffect_vtable {
     pub slot_3: *const c_void,
     /// `ScriptEffect::vfunc_4` at 0x5dd590 (rtti, medium); signature (low): `undefined vfunc_4(ScriptEffect * this, undefined4 param_2)`
     pub slot_4: *const c_void,
-    /// `ActiveEffect::vfunc_5` at 0x5bb6c0 (rtti, medium); signature (low): `undefined vfunc_5(ActiveEffect * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    /// `ActiveEffect::UpdateConditions` at 0x5bb6c0 (semantic, medium); signature (untiered): `undefined UpdateConditions(ActiveEffect * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_5: *const c_void,
     /// `ActiveEffect::vfunc_6` at 0x5bb9c0 (rtti, medium); signature (low): `undefined1 vfunc_6(void)`
     pub slot_6: *const c_void,

@@ -249,6 +249,18 @@ impl core::ops::Deref for crate::TESFurniture {
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
+/// `TESObjectWEAP` is laid out from its primary base `TESBoundObject`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::TESObjectWEAP {
+    type Target = crate::TESBoundObject;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `TESQuest` is laid out from its primary base `BGSStoryManagerTreeForm`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::TESQuest {
+    type Target = crate::BGSStoryManagerTreeForm;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
 /// `ThirdPersonState` is laid out from its primary base `TESCameraState`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::ThirdPersonState {
     type Target = crate::TESCameraState;
@@ -1336,6 +1348,33 @@ impl crate::LocalMapCamera__DefaultState {
     pub fn camera(&self) -> Option<&crate::TESCamera> { unsafe { { self.camera }.as_ref() } }
 }
 
+impl crate::MagicTarget {
+    /// `MagicTarget::GetActiveEffectList`, vtable slot 7: the actor's list (see the function row)
+    ///
+    /// Semantic, camera pass, high; called through the object's vtable.
+    /// `BSSimpleList<ActiveEffect*>* (MagicTarget* this)`
+    ///
+    /// # Safety
+    /// The result is an untyped pointer.
+    #[inline]
+    pub unsafe fn get_active_effect_list(&self) -> *mut c_void { unsafe { virtual_function!(self, 7, (*const Self) -> *mut c_void)(core::ptr::from_ref(self)) } }
+    /// `MagicTarget::HasActiveEffectWithBase`: the engine's own walk of the list: node = slot 7; stop when node is null or (node->item == null && node->next == null); skip null items; match ActiveEffect::GetBaseObject(item) == base. Takes no lock and does not test the effect's flags (inactive and finishing effects match too)
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 34517, rva 0x5d16d0.
+    /// `bool (MagicTarget* this, EffectSetting* base)`
+    #[inline]
+    pub fn has_active_effect_with_base(&self, base: &crate::EffectSetting) -> bool { unsafe { function!(34517, (*const Self, *const crate::EffectSetting) -> bool)(core::ptr::from_ref(self), core::ptr::from_ref(base)) } }
+    /// `MagicTarget::HasMagicEffectWithKeyword`: visitor walk over the same list with FindEffectKeywordOnTargetFunctor: continues while node and the functor returns 1; the head node's null item ends the walk at once
+    ///
+    /// Semantic, camera pass, medium; ledger semantic evidence, name medium; id 34518, rva 0x5d1760.
+    /// `bool (MagicTarget* this, BGSKeyword* keyword, ActiveEffect** outFound)`
+    ///
+    /// # Safety
+    /// The pass rates the signature medium.
+    #[inline]
+    pub unsafe fn has_magic_effect_with_keyword(&self, keyword: *mut crate::BGSKeyword, outFound: *mut *mut crate::ActiveEffect) -> bool { unsafe { function!(34518, (*const Self, *mut crate::BGSKeyword, *mut *mut crate::ActiveEffect) -> bool)(core::ptr::from_ref(self), keyword, outFound) } }
+}
+
 impl crate::MapCamera {
     /// `MapCamera::Enter`, vtable slot 3: sets the root; with a root and a worldspace: hides the player's first-person 3D, orients the root by the map's default pitch, places it at position, configures worldStates[index] around position, starts the Transition (mode 1) into it
     ///
@@ -1552,6 +1591,30 @@ impl crate::MovementControllerNPC {
     /// `void (MovementControllerNPC* this)`
     #[inline]
     pub fn set_controls_driven(&self) { unsafe { virtual_function!(self, 13, (*const Self))(core::ptr::from_ref(self)) } }
+    /// `MovementControllerNPC::IMovementMotionDrivenControl_IsMotionDriven`: slot 6 of the +0x128 sub-object: mode (this+0x98 = controller+0x1c0) in {1,2,3,7,8,10..14}
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 41706, rva 0x7968b0.
+    /// `bool (IMovementMotionDrivenControl* this)`
+    #[inline]
+    pub fn i_movement_motion_driven_control_is_motion_driven(&self) -> bool { unsafe { function!(41706, (*const Self) -> bool)(core::ptr::from_ref(self).byte_add(0x128)) } }
+    /// `MovementControllerNPC::IMovementMotionDrivenControl_StartAnimationDriven`: slot 3 of the +0x128 sub-object: switch to animation-driven movement; AnimationDrivenHandler 0x7ce7e0 calls it
+    ///
+    /// Semantic, camera pass, medium; ledger semantic evidence, name medium; id 41704, rva 0x796760.
+    /// `void (IMovementMotionDrivenControl* this)`
+    ///
+    /// # Safety
+    /// The pass rates the signature medium.
+    #[inline]
+    pub unsafe fn i_movement_motion_driven_control_start_animation_driven(&self) { unsafe { function!(41704, (*const Self))(core::ptr::from_ref(self).byte_add(0x128)) } }
+    /// `MovementControllerNPC::IMovementMotionDrivenControl_StartMotionDriven`: slot 4 of the +0x128 sub-object: switch to motion-driven movement; MotionDrivenHandler 0x7ce770 calls it
+    ///
+    /// Semantic, camera pass, medium; ledger semantic evidence, name medium; id 41703, rva 0x796550.
+    /// `void (IMovementMotionDrivenControl* this)`
+    ///
+    /// # Safety
+    /// The pass rates the signature medium.
+    #[inline]
+    pub unsafe fn i_movement_motion_driven_control_start_motion_driven(&self) { unsafe { function!(41703, (*const Self))(core::ptr::from_ref(self).byte_add(0x128)) } }
 }
 
 impl crate::OwnedCameraEffectController {
@@ -2459,6 +2522,138 @@ impl crate::TESFurniture {
     pub fn associated_spell(&self) -> Option<&crate::SpellItem> { unsafe { { self.associatedSpell }.as_ref() } }
 }
 
+impl crate::TESObjectWEAP {
+    /// The `BGSBlockBashData` base at +0x128.
+    #[inline]
+    pub fn as_bgs_block_bash_data(&self) -> &crate::BGSBlockBashData { unsafe { &*core::ptr::from_ref(self).byte_add(0x128).cast() } }
+    /// The `BGSDestructibleObjectForm` base at +0xD0.
+    #[inline]
+    pub fn as_bgs_destructible_object_form(&self) -> &crate::BGSDestructibleObjectForm { unsafe { &*core::ptr::from_ref(self).byte_add(0xD0).cast() } }
+    /// The `BGSEquipType` base at +0xE0.
+    #[inline]
+    pub fn as_bgs_equip_type(&self) -> &crate::BGSEquipType { unsafe { &*core::ptr::from_ref(self).byte_add(0xE0).cast() } }
+    /// The `BGSKeywordForm` base at +0x140.
+    #[inline]
+    pub fn as_bgs_keyword_form(&self) -> &crate::BGSKeywordForm { unsafe { &*core::ptr::from_ref(self).byte_add(0x140).cast() } }
+    /// The `BGSMessageIcon` base at +0xF8.
+    #[inline]
+    pub fn as_bgs_message_icon(&self) -> &crate::BGSMessageIcon { unsafe { &*core::ptr::from_ref(self).byte_add(0xF8).cast() } }
+    /// The `BGSPickupPutdownSounds` base at +0x110.
+    #[inline]
+    pub fn as_bgs_pickup_putdown_sounds(&self) -> &crate::BGSPickupPutdownSounds { unsafe { &*core::ptr::from_ref(self).byte_add(0x110).cast() } }
+    /// The `BGSPreloadable` base at +0xF0.
+    #[inline]
+    pub fn as_bgs_preloadable(&self) -> &crate::BGSPreloadable { unsafe { &*core::ptr::from_ref(self).byte_add(0xF0).cast() } }
+    /// The `BaseFormComponent` base at +0x30.
+    #[inline]
+    pub fn as_base_form_component(&self) -> &crate::BaseFormComponent { unsafe { &*core::ptr::from_ref(self).byte_add(0x30).cast() } }
+    /// The `BaseFormComponent` base at +0x40.
+    #[inline]
+    pub fn as_base_form_component_2(&self) -> &crate::BaseFormComponent { unsafe { &*core::ptr::from_ref(self).byte_add(0x40).cast() } }
+    /// The `BaseFormComponent` base at +0x78.
+    #[inline]
+    pub fn as_base_form_component_3(&self) -> &crate::BaseFormComponent { unsafe { &*core::ptr::from_ref(self).byte_add(0x78).cast() } }
+    /// The `BaseFormComponent` base at +0x88.
+    #[inline]
+    pub fn as_base_form_component_4(&self) -> &crate::BaseFormComponent { unsafe { &*core::ptr::from_ref(self).byte_add(0x88).cast() } }
+    /// The `BaseFormComponent` base at +0xA0.
+    #[inline]
+    pub fn as_base_form_component_5(&self) -> &crate::BaseFormComponent { unsafe { &*core::ptr::from_ref(self).byte_add(0xA0).cast() } }
+    /// The `BaseFormComponent` base at +0xB0.
+    #[inline]
+    pub fn as_base_form_component_6(&self) -> &crate::BaseFormComponent { unsafe { &*core::ptr::from_ref(self).byte_add(0xB0).cast() } }
+    /// The `BaseFormComponent` base at +0xC0.
+    #[inline]
+    pub fn as_base_form_component_7(&self) -> &crate::BaseFormComponent { unsafe { &*core::ptr::from_ref(self).byte_add(0xC0).cast() } }
+    /// The `BaseFormComponent` base at +0xD0.
+    #[inline]
+    pub fn as_base_form_component_8(&self) -> &crate::BaseFormComponent { unsafe { &*core::ptr::from_ref(self).byte_add(0xD0).cast() } }
+    /// The `BaseFormComponent` base at +0xE0.
+    #[inline]
+    pub fn as_base_form_component_9(&self) -> &crate::BaseFormComponent { unsafe { &*core::ptr::from_ref(self).byte_add(0xE0).cast() } }
+    /// The `BaseFormComponent` base at +0xF0.
+    #[inline]
+    pub fn as_base_form_component_10(&self) -> &crate::BaseFormComponent { unsafe { &*core::ptr::from_ref(self).byte_add(0xF0).cast() } }
+    /// The `BaseFormComponent` base at +0xF8.
+    #[inline]
+    pub fn as_base_form_component_11(&self) -> &crate::BaseFormComponent { unsafe { &*core::ptr::from_ref(self).byte_add(0xF8).cast() } }
+    /// The `BaseFormComponent` base at +0x110.
+    #[inline]
+    pub fn as_base_form_component_12(&self) -> &crate::BaseFormComponent { unsafe { &*core::ptr::from_ref(self).byte_add(0x110).cast() } }
+    /// The `BaseFormComponent` base at +0x128.
+    #[inline]
+    pub fn as_base_form_component_13(&self) -> &crate::BaseFormComponent { unsafe { &*core::ptr::from_ref(self).byte_add(0x128).cast() } }
+    /// The `BaseFormComponent` base at +0x140.
+    #[inline]
+    pub fn as_base_form_component_14(&self) -> &crate::BaseFormComponent { unsafe { &*core::ptr::from_ref(self).byte_add(0x140).cast() } }
+    /// The `BaseFormComponent` base at +0x158.
+    #[inline]
+    pub fn as_base_form_component_15(&self) -> &crate::BaseFormComponent { unsafe { &*core::ptr::from_ref(self).byte_add(0x158).cast() } }
+    /// The `TESAttackDamageForm` base at +0xC0.
+    #[inline]
+    pub fn as_tes_attack_damage_form(&self) -> &crate::TESAttackDamageForm { unsafe { &*core::ptr::from_ref(self).byte_add(0xC0).cast() } }
+    /// The `TESDescription` base at +0x158.
+    #[inline]
+    pub fn as_tes_description(&self) -> &crate::TESDescription { unsafe { &*core::ptr::from_ref(self).byte_add(0x158).cast() } }
+    /// The `TESEnchantableForm` base at +0x88.
+    #[inline]
+    pub fn as_tes_enchantable_form(&self) -> &crate::TESEnchantableForm { unsafe { &*core::ptr::from_ref(self).byte_add(0x88).cast() } }
+    /// The `TESFullName` base at +0x30.
+    #[inline]
+    pub fn as_tes_full_name(&self) -> &crate::TESFullName { unsafe { &*core::ptr::from_ref(self).byte_add(0x30).cast() } }
+    /// The `TESIcon` base at +0x78.
+    #[inline]
+    pub fn as_tes_icon(&self) -> &crate::TESIcon { unsafe { &*core::ptr::from_ref(self).byte_add(0x78).cast() } }
+    /// The `TESModel` base at +0x40.
+    #[inline]
+    pub fn as_tes_model(&self) -> &crate::TESModel { unsafe { &*core::ptr::from_ref(self).byte_add(0x40).cast() } }
+    /// The `TESModelTextureSwap` base at +0x40.
+    #[inline]
+    pub fn as_tes_model_texture_swap(&self) -> &crate::TESModelTextureSwap { unsafe { &*core::ptr::from_ref(self).byte_add(0x40).cast() } }
+    /// The `TESTexture` base at +0x78.
+    #[inline]
+    pub fn as_tes_texture(&self) -> &crate::TESTexture { unsafe { &*core::ptr::from_ref(self).byte_add(0x78).cast() } }
+    /// The `TESValueForm` base at +0xA0.
+    #[inline]
+    pub fn as_tes_value_form(&self) -> &crate::TESValueForm { unsafe { &*core::ptr::from_ref(self).byte_add(0xA0).cast() } }
+    /// The `TESWeightForm` base at +0xB0.
+    #[inline]
+    pub fn as_tes_weight_form(&self) -> &crate::TESWeightForm { unsafe { &*core::ptr::from_ref(self).byte_add(0xB0).cast() } }
+    /// `TESObjectWEAP::GetWeaponTypeName`, vtable slot 57: long type name from 0x207b200
+    ///
+    /// Semantic, camera pass, high; called through the object's vtable.
+    /// `const char* (TESObjectWEAP* this)`
+    #[inline]
+    pub fn get_weapon_type_name(&self) -> *const c_char { unsafe { virtual_function!(self, 57, (*const Self) -> *const c_char)(core::ptr::from_ref(self)) } }
+}
+
+impl crate::TESQuest {
+    /// The `BaseFormComponent` base at +0x28.
+    #[inline]
+    pub fn as_base_form_component(&self) -> &crate::BaseFormComponent { unsafe { &*core::ptr::from_ref(self).byte_add(0x28).cast() } }
+    /// The `TESFullName` base at +0x28.
+    #[inline]
+    pub fn as_tes_full_name(&self) -> &crate::TESFullName { unsafe { &*core::ptr::from_ref(self).byte_add(0x28).cast() } }
+    /// `TESQuest::GetCurrentStage`: returns the u16 at +0x228
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 25013, rva 0x3d1220.
+    /// `u16 (TESQuest* this)`
+    #[inline]
+    pub fn get_current_stage(&self) -> u16 { unsafe { function!(25013, (*const Self) -> u16)(core::ptr::from_ref(self)) } }
+    /// `TESQuest::IsStageDone`: walks the stage list at +0xe8 ({stage entry*, next}) for the entry whose u16 +0 matches and returns its byte +2 bit 0
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 25011, rva 0x3d0ec0.
+    /// `bool (TESQuest* this, u16 stage)`
+    #[inline]
+    pub fn is_stage_done(&self, stage: u16) -> bool { unsafe { function!(25011, (*const Self, u16) -> bool)(core::ptr::from_ref(self), stage) } }
+    /// `TESQuest::SetStage`: only for a running quest (+0xdc bit 0): finds the stage entry in the list at +0xe8, raises currentStage +0x228 to stage when stage is larger, runs the stage items and marks the form changed (slot 10, 0x80000000)
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 25004, rva 0x3d0dc0.
+    /// `bool (TESQuest* this, u16 stage)`
+    #[inline]
+    pub fn set_stage(&self, stage: u16) -> bool { unsafe { function!(25004, (*const Self, u16) -> bool)(core::ptr::from_ref(self), stage) } }
+}
+
 impl crate::ThirdPersonState {
     /// The `PlayerInputHandler` base at +0x20.
     #[inline]
@@ -2681,15 +2876,15 @@ impl crate::VATSCameraState {
 /// May be null: `activator`, `object`.
 #[inline]
 pub fn activate_reference(target: &crate::TESObjectREFR, activator: Option<&crate::TESObjectREFR>, activateFlag: u8, object: Option<&crate::TESBoundObject>, count: i32, defaultProcessingOnly: bool) -> bool { unsafe { function!(19796, (*const crate::TESObjectREFR, *const crate::TESObjectREFR, u8, *const crate::TESBoundObject, i32, bool) -> bool)(core::ptr::from_ref(target), activator.map_or(core::ptr::null(), core::ptr::from_ref), activateFlag, object.map_or(core::ptr::null(), core::ptr::from_ref), count, defaultProcessingOnly) } }
-/// `ApplyActionAnimEventEffects`: after an action's anim event: sheathe/draw, kill moves ('pa_Kill'), weapon and mount side effects on the action's subject actor
+/// `ApplyActionAnimEventEffects`: applies an action's animation event to the actor state: attack state 1/6/8, 0xa -> 0xb on attackRelease, recoil bits, sit/sleep phases, sneak and the block want-bit
 ///
-/// Semantic, camera pass, medium; ledger semantic evidence, name medium; id 39004, rva 0x6e2250.
-/// `void (void* owner, BGSActionData* action, bool performed)`
+/// Semantic, camera pass, high; ledger semantic evidence, name high; id 39004, rva 0x6e2250.
+/// `void (void* unused, BGSActionData* action, bool isEnd, void* p4)`
 ///
 /// # Safety
-/// The pass rates the signature medium.
+/// `unused`, `p4` must point to what the engine expects.
 #[inline]
-pub unsafe fn apply_action_anim_event_effects(owner: *mut c_void, action: *mut crate::BGSActionData, performed: bool) { unsafe { function!(39004, (*mut c_void, *mut crate::BGSActionData, bool))(owner, action, performed) } }
+pub unsafe fn apply_action_anim_event_effects(unused: *mut c_void, action: *mut crate::BGSActionData, isEnd: bool, p4: *mut c_void) { unsafe { function!(39004, (*mut c_void, *mut crate::BGSActionData, bool, *mut c_void))(unused, action, isEnd, p4) } }
 /// `ApplyClampedPitchDelta`: as SetClampedPitch with actor+0x48 + pitchDelta; the 'ja' at +0x7f
 ///
 /// Semantic, camera pass, high; ledger runtime evidence, name high; id 37611, rva 0x693050.
@@ -2811,6 +3006,123 @@ pub fn clear_low_health_i_mod_cache() { unsafe { function!(40610, ())() } }
 /// `paramInfo`, `scriptData`, `containingObj`, `script`, `locals`, `result`, `opcodeOffset` must point to what the engine expects.
 #[inline]
 pub unsafe fn cmd__camera_shake_execute(paramInfo: *mut c_void, scriptData: *mut c_void, thisObj: *mut crate::TESObjectREFR, containingObj: *mut c_void, script: *mut c_void, locals: *mut c_void, result: *mut f64, opcodeOffset: *mut u32) -> bool { unsafe { function!(22643, (*mut c_void, *mut c_void, *mut crate::TESObjectREFR, *mut c_void, *mut c_void, *mut c_void, *mut f64, *mut u32) -> bool)(paramInfo, scriptData, thisObj, containingObj, script, locals, result, opcodeOffset) } }
+/// `Cmd::DisablePlayerControls_Execute`: console 'DisablePlayerControls'/'dpc': same as the Papyrus native; with the pov argument writes byte [PlayerControls+0x4c+POV Type] = 1
+///
+/// Semantic, camera pass, high; ledger console_cmd evidence, name high; id 22239, rva 0x358320.
+/// `bool (const SCRIPT_PARAMETER* params, const char* line, TESObjectREFR* ref, TESObjectREFR* container, Script* script, ScriptLocals* locals, double* result, u32* offset)`
+///
+/// # Safety
+/// `params`, `line`, `locals`, `result`, `offset` must point to what the engine expects.
+#[inline]
+pub unsafe fn cmd__disable_player_controls_execute(params: *const c_void, line: *const c_char, ref_: *mut crate::TESObjectREFR, container: *mut crate::TESObjectREFR, script: *mut crate::Script, locals: *mut c_void, result: *mut f64, offset: *mut u32) -> bool { unsafe { function!(22239, (*const c_void, *const c_char, *mut crate::TESObjectREFR, *mut crate::TESObjectREFR, *mut crate::Script, *mut c_void, *mut f64, *mut u32) -> bool)(params, line, ref_, container, script, locals, result, offset) } }
+/// `Cmd::EnablePlayerControls_Execute`: console 'EnablePlayerControls'/'epc': the pov argument (default 1) clears byte [PlayerControls+0x4c+POV Type] (default index 0)
+///
+/// Semantic, camera pass, high; ledger console_cmd evidence, name high; id 22238, rva 0x3581b0.
+/// `bool (const SCRIPT_PARAMETER* params, const char* line, TESObjectREFR* ref, TESObjectREFR* container, Script* script, ScriptLocals* locals, double* result, u32* offset)`
+///
+/// # Safety
+/// `params`, `line`, `locals`, `result`, `offset` must point to what the engine expects.
+#[inline]
+pub unsafe fn cmd__enable_player_controls_execute(params: *const c_void, line: *const c_char, ref_: *mut crate::TESObjectREFR, container: *mut crate::TESObjectREFR, script: *mut crate::Script, locals: *mut c_void, result: *mut f64, offset: *mut u32) -> bool { unsafe { function!(22238, (*const c_void, *const c_char, *mut crate::TESObjectREFR, *mut crate::TESObjectREFR, *mut crate::Script, *mut c_void, *mut f64, *mut u32) -> bool)(params, line, ref_, container, script, locals, result, offset) } }
+/// `Cmd::GetAttackState_Eval`: condition GetAttackState: flags1 >> 28
+///
+/// Semantic, camera pass, high; ledger console_cmd evidence, name high; id 21509, rva 0x334f70.
+/// `bool (TESObjectREFR* ref, void* p1, void* p2, double* result)`
+///
+/// # Safety
+/// `p1`, `p2`, `result` must point to what the engine expects.
+#[inline]
+pub unsafe fn cmd__get_attack_state_eval(ref_: *mut crate::TESObjectREFR, p1: *mut c_void, p2: *mut c_void, result: *mut f64) -> bool { unsafe { function!(21509, (*mut crate::TESObjectREFR, *mut c_void, *mut c_void, *mut f64) -> bool)(ref_, p1, p2, result) } }
+/// `Cmd::GetKnockStateEnum_Eval`: condition GetKnockStateEnum: (flags1 >> 25) & 7, -1 for a non-actor
+///
+/// Semantic, camera pass, high; ledger console_cmd evidence, name high; id 21508, rva 0x334ee0.
+/// `bool (TESObjectREFR* ref, void* p1, void* p2, double* result)`
+///
+/// # Safety
+/// `p1`, `p2`, `result` must point to what the engine expects.
+#[inline]
+pub unsafe fn cmd__get_knock_state_enum_eval(ref_: *mut crate::TESObjectREFR, p1: *mut c_void, p2: *mut c_void, result: *mut f64) -> bool { unsafe { function!(21508, (*mut crate::TESObjectREFR, *mut c_void, *mut c_void, *mut f64) -> bool)(ref_, p1, p2, result) } }
+/// `Cmd::GetKnockedState_Eval`: condition GetKnockedState: 1.0 when the knock state (flags1 bits 25-27) is 3 or 4
+///
+/// Semantic, camera pass, high; ledger console_cmd evidence, name high; id 21507, rva 0x334e30.
+/// `bool (TESObjectREFR* ref, void* p1, void* p2, double* result)`
+///
+/// # Safety
+/// `p1`, `p2`, `result` must point to what the engine expects.
+#[inline]
+pub unsafe fn cmd__get_knocked_state_eval(ref_: *mut crate::TESObjectREFR, p1: *mut c_void, p2: *mut c_void, result: *mut f64) -> bool { unsafe { function!(21507, (*mut crate::TESObjectREFR, *mut c_void, *mut c_void, *mut f64) -> bool)(ref_, p1, p2, result) } }
+/// `Cmd::GetPlayerControlsDisabled_Eval`: condition/console 'GetPlayerControlsDisabled': the result is only (ControlMap+0x120 & mask) == mask; in console print mode it also lists 'PlayerControls::bDisablePOVChange[%s] - %d' for Script and Werewolf
+///
+/// Semantic, camera pass, high; ledger console_cmd evidence, name high; id 21499, rva 0x334590.
+/// `bool (TESObjectREFR* ref, u32 mask, void* param2, double* result)`
+///
+/// # Safety
+/// `param2`, `result` must point to what the engine expects.
+#[inline]
+pub unsafe fn cmd__get_player_controls_disabled_eval(ref_: *mut crate::TESObjectREFR, mask: u32, param2: *mut c_void, result: *mut f64) -> bool { unsafe { function!(21499, (*mut crate::TESObjectREFR, u32, *mut c_void, *mut f64) -> bool)(ref_, mask, param2, result) } }
+/// `Cmd::GetSitting_Eval`: condition GetSitting: sit/sleep state 1 or 2 -> 2, 3 -> 3, 4 -> 4, otherwise 0
+///
+/// Semantic, camera pass, high; ledger console_cmd evidence, name high; id 21441, rva 0x331cf0.
+/// `bool (TESObjectREFR* ref, void* p1, void* p2, double* result)`
+///
+/// # Safety
+/// `p1`, `p2`, `result` must point to what the engine expects.
+#[inline]
+pub unsafe fn cmd__get_sitting_eval(ref_: *mut crate::TESObjectREFR, p1: *mut c_void, p2: *mut c_void, result: *mut f64) -> bool { unsafe { function!(21441, (*mut crate::TESObjectREFR, *mut c_void, *mut c_void, *mut f64) -> bool)(ref_, p1, p2, result) } }
+/// `Cmd::GetSleeping_Eval`: condition GetSleeping: state 5 or 6 -> 2, 7 -> 3, 8 -> 4, otherwise 0
+///
+/// Semantic, camera pass, high; ledger console_cmd evidence, name high; id 21440, rva 0x331c10.
+/// `bool (TESObjectREFR* ref, void* p1, void* p2, double* result)`
+///
+/// # Safety
+/// `p1`, `p2`, `result` must point to what the engine expects.
+#[inline]
+pub unsafe fn cmd__get_sleeping_eval(ref_: *mut crate::TESObjectREFR, p1: *mut c_void, p2: *mut c_void, result: *mut f64) -> bool { unsafe { function!(21440, (*mut crate::TESObjectREFR, *mut c_void, *mut c_void, *mut f64) -> bool)(ref_, p1, p2, result) } }
+/// `Cmd::GetWantBlocking_Eval`: condition GetWantBlocking: flags2 bit 8 (0x100)
+///
+/// Semantic, camera pass, high; ledger console_cmd evidence, name high; id 21573, rva 0x337c20.
+/// `bool (TESObjectREFR* ref, void* p1, void* p2, double* result)`
+///
+/// # Safety
+/// `p1`, `p2`, `result` must point to what the engine expects.
+#[inline]
+pub unsafe fn cmd__get_want_blocking_eval(ref_: *mut crate::TESObjectREFR, p1: *mut c_void, p2: *mut c_void, result: *mut f64) -> bool { unsafe { function!(21573, (*mut crate::TESObjectREFR, *mut c_void, *mut c_void, *mut f64) -> bool)(ref_, p1, p2, result) } }
+/// `Cmd::GetWeaponAnimType_Eval`: condition GetWeaponAnimType: the right-hand weapon's type byte (+0x19d), +3 when >= 9 (Crossbow -> 12)
+///
+/// Semantic, camera pass, high; ledger console_cmd evidence, name high; id 21510, rva 0x334ff0.
+/// `bool (TESObjectREFR* ref, void* p1, void* p2, double* result)`
+///
+/// # Safety
+/// `p1`, `p2`, `result` must point to what the engine expects.
+#[inline]
+pub unsafe fn cmd__get_weapon_anim_type_eval(ref_: *mut crate::TESObjectREFR, p1: *mut c_void, p2: *mut c_void, result: *mut f64) -> bool { unsafe { function!(21510, (*mut crate::TESObjectREFR, *mut c_void, *mut c_void, *mut f64) -> bool)(ref_, p1, p2, result) } }
+/// `Cmd::IsAnimPlaying_Execute`: console 'IsAnimPlaying': Gamebryo controller-sequence test on the reference's 3D: 1.0 when any NiControllerSequence (array +0x50, count u16 +0x5a of the controller manager) has a non-zero state (+0x68); with an argument other than 0xff it tests one animation group by name. It does not look at the Havok behaviour graph, so it says nothing about an actor's idles
+///
+/// Semantic, camera pass, medium; ledger console_cmd evidence, name high; id 22393, rva 0x35e190.
+/// `bool (const SCRIPT_PARAMETER* params, const char* line, TESObjectREFR* ref, TESObjectREFR* container, Script* script, ScriptLocals* locals, double* result, u32* offset)`
+///
+/// # Safety
+/// The pass rates the signature medium.
+#[inline]
+pub unsafe fn cmd__is_anim_playing_execute(params: *const c_void, line: *const c_char, ref_: *mut crate::TESObjectREFR, container: *mut crate::TESObjectREFR, script: *mut crate::Script, locals: *mut c_void, result: *mut f64, offset: *mut u32) -> bool { unsafe { function!(22393, (*const c_void, *const c_char, *mut crate::TESObjectREFR, *mut crate::TESObjectREFR, *mut crate::Script, *mut c_void, *mut f64, *mut u32) -> bool)(params, line, ref_, container, script, locals, result, offset) } }
+/// `Cmd::IsIdlePlaying_Eval`: stub: always stores 0.0 and prints 'Is Idle Playing >> %0.2f'
+///
+/// Semantic, camera pass, high; ledger console_cmd evidence, name high; id 21514, rva 0x3354d0.
+/// `bool (TESObjectREFR* ref, void* param1, void* param2, double* result)`
+///
+/// # Safety
+/// `param1`, `param2`, `result` must point to what the engine expects.
+#[inline]
+pub unsafe fn cmd__is_idle_playing_eval(ref_: *mut crate::TESObjectREFR, param1: *mut c_void, param2: *mut c_void, result: *mut f64) -> bool { unsafe { function!(21514, (*mut crate::TESObjectREFR, *mut c_void, *mut c_void, *mut f64) -> bool)(ref_, param1, param2, result) } }
+/// `Cmd::IsLastIdlePlayed_Eval`: 1.0 when ref is an actor (formType 0x3e at +0x1a) and its MiddleHighProcessData lastIdle (+0x280) equals the idle argument
+///
+/// Semantic, camera pass, high; ledger console_cmd evidence, name high; id 21621, rva 0x339440.
+/// `bool (TESObjectREFR* ref, TESIdleForm* idle, void* param2, double* result)`
+///
+/// # Safety
+/// `param2`, `result` must point to what the engine expects.
+#[inline]
+pub unsafe fn cmd__is_last_idle_played_eval(ref_: *mut crate::TESObjectREFR, idle: *mut crate::TESIdleForm, param2: *mut c_void, result: *mut f64) -> bool { unsafe { function!(21621, (*mut crate::TESObjectREFR, *mut crate::TESIdleForm, *mut c_void, *mut f64) -> bool)(ref_, idle, param2, result) } }
 /// `Cmd::IsPC1stPerson_Eval`: the engine's own 'is first person' test
 ///
 /// Semantic, camera pass, high; ledger console_cmd evidence, name high; id 21600, rva 0x3389c0.
@@ -2829,6 +3141,24 @@ pub unsafe fn cmd__is_pc1st_person_eval(result: *mut f64) -> bool { unsafe { fun
 /// `paramInfo`, `scriptData`, `containingObj`, `script`, `locals`, `result`, `opcodeOffset` must point to what the engine expects.
 #[inline]
 pub unsafe fn cmd__is_pc1st_person_execute(paramInfo: *mut c_void, scriptData: *mut c_void, thisObj: *mut crate::TESObjectREFR, containingObj: *mut c_void, script: *mut c_void, locals: *mut c_void, result: *mut f64, opcodeOffset: *mut u32) -> bool { unsafe { function!(22460, (*mut c_void, *mut c_void, *mut crate::TESObjectREFR, *mut c_void, *mut c_void, *mut c_void, *mut f64, *mut u32) -> bool)(paramInfo, scriptData, thisObj, containingObj, script, locals, result, opcodeOffset) } }
+/// `Cmd::IsRecoiling_Eval`: condition IsRecoiling: 1.0 when flags2 & 0xc00 (bit 10 recoil or bit 11 large recoil)
+///
+/// Semantic, camera pass, high; ledger console_cmd evidence, name high; id 21771, rva 0x33f790.
+/// `bool (TESObjectREFR* ref, void* p1, void* p2, double* result)`
+///
+/// # Safety
+/// `p1`, `p2`, `result` must point to what the engine expects.
+#[inline]
+pub unsafe fn cmd__is_recoiling_eval(ref_: *mut crate::TESObjectREFR, p1: *mut c_void, p2: *mut c_void, result: *mut f64) -> bool { unsafe { function!(21771, (*mut crate::TESObjectREFR, *mut c_void, *mut c_void, *mut f64) -> bool)(ref_, p1, p2, result) } }
+/// `Cmd::IsStaggered_Eval`: condition IsStaggered: 1.0 when the actor's flags2 (Actor+0xcc) bit 13 (0x2000) is set
+///
+/// Semantic, camera pass, high; ledger console_cmd evidence, name high; id 21770, rva 0x33f700.
+/// `bool (TESObjectREFR* ref, void* p1, void* p2, double* result)`
+///
+/// # Safety
+/// `p1`, `p2`, `result` must point to what the engine expects.
+#[inline]
+pub unsafe fn cmd__is_staggered_eval(ref_: *mut crate::TESObjectREFR, p1: *mut c_void, p2: *mut c_void, result: *mut f64) -> bool { unsafe { function!(21770, (*mut crate::TESObjectREFR, *mut c_void, *mut c_void, *mut f64) -> bool)(ref_, p1, p2, result) } }
 /// `Cmd::PlayVATSCameras_Execute`: console PlayVATSCameras <editorID>: g_VATSConsoleCameraPath 0x3252a30 = the BGSCameraPath (or null); prints "queued for next VATS playback" / "not found"
 ///
 /// Semantic, camera pass, high; ledger console_cmd evidence, name high; id 22970, rva 0x376c10.
@@ -3089,6 +3419,12 @@ pub fn get_default_camera_path() -> Option<&'static crate::BGSCameraPath> { unsa
 /// `float (Actor* actor)`
 #[inline]
 pub fn get_dialogue_speaker_yaw_offset(actor: &crate::Actor) -> f32 { unsafe { function!(40498, (*const crate::Actor) -> f32)(core::ptr::from_ref(actor)) } }
+/// `GetEquippedItemType`: item type of an equipped object: weapon types 0..8 as stored, Crossbow 9 -> 12, spell 9, shield 10, torch 11, else 0
+///
+/// Semantic, camera pass, high; ledger semantic evidence, name high; id 14220, rva 0x1d74a0.
+/// `int (TESForm* item)`
+#[inline]
+pub fn get_equipped_item_type(item: &crate::TESForm) -> i32 { unsafe { function!(14220, (*const crate::TESForm) -> i32)(core::ptr::from_ref(item)) } }
 /// `GetFirstPersonRenderContext`: returns &g_FirstPersonViewParams (0x34362c0)
 ///
 /// Semantic, camera pass, high; ledger semantic evidence, name high; id 107121, rva 0x1537410.
@@ -3298,6 +3634,24 @@ pub fn offset_subtree_world_translation(node: Option<&crate::NiAVObject>, offset
 /// `vm` must point to what the engine expects.
 #[inline]
 pub unsafe fn papyrus__actor__get_equipped_item_type(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor, hand: u32) -> i32 { unsafe { function!(54685, (*mut c_void, u32, *mut crate::Actor, u32) -> i32)(vm, stackId, self_, hand) } }
+/// `Papyrus::Game::DisablePlayerControls`: clears ControlMap bits (movement 0x401, fighting 0x40, looking 2, sneaking 0x80, menu 0x100) and, when camSwitch is set, writes PlayerControls.bDisablePOVChange[disablePOVType] = 1; it never touches ControlMap bit 5
+///
+/// Semantic, camera pass, high; ledger papyrus_native evidence, name high; id 55454, rva 0xa23ee0.
+/// `void (IVirtualMachine* vm, u32 stackId, StaticFunctionTag*, bool movement, bool fighting, bool camSwitch, bool looking, bool sneaking, bool menu, bool activate, bool journalTabs, u32 disablePOVType)`
+///
+/// # Safety
+/// `vm`, `a2` must point to what the engine expects.
+#[inline]
+pub unsafe fn papyrus__game__disable_player_controls(vm: *mut c_void, stackId: u32, a2: *mut c_void, movement: bool, fighting: bool, camSwitch: bool, looking: bool, sneaking: bool, menu: bool, activate: bool, journalTabs: bool, disablePOVType: u32) { unsafe { function!(55454, (*mut c_void, u32, *mut c_void, bool, bool, bool, bool, bool, bool, bool, bool, u32))(vm, stackId, a2, movement, fighting, camSwitch, looking, sneaking, menu, activate, journalTabs, disablePOVType) } }
+/// `Papyrus::Game::EnablePlayerControls`: sets the same ControlMap bits and, when camSwitch is set, writes bDisablePOVChange[disablePOVType] = 0
+///
+/// Semantic, camera pass, high; ledger papyrus_native evidence, name high; id 55455, rva 0xa23fc0.
+/// `void (IVirtualMachine* vm, u32 stackId, StaticFunctionTag*, bool movement, bool fighting, bool camSwitch, bool looking, bool sneaking, bool menu, bool activate, bool journalTabs, u32 disablePOVType)`
+///
+/// # Safety
+/// `vm`, `a2` must point to what the engine expects.
+#[inline]
+pub unsafe fn papyrus__game__enable_player_controls(vm: *mut c_void, stackId: u32, a2: *mut c_void, movement: bool, fighting: bool, camSwitch: bool, looking: bool, sneaking: bool, menu: bool, activate: bool, journalTabs: bool, disablePOVType: u32) { unsafe { function!(55455, (*mut c_void, u32, *mut c_void, bool, bool, bool, bool, bool, bool, bool, bool, u32))(vm, stackId, a2, movement, fighting, camSwitch, looking, sneaking, menu, activate, journalTabs, disablePOVType) } }
 /// `Papyrus::Game::ForceFirstPerson`: exactly 12 bytes: 48 8B 0D <rel32> (mov rcx,[g_PlayerCamera_ptr]) + E9 <rel32> (jmp 0x8f8de0)
 ///
 /// Semantic, camera pass, high; ledger papyrus_native evidence, name high; id 55564, rva 0xa2ad20.
@@ -3316,6 +3670,15 @@ pub unsafe fn papyrus__game__force_first_person(vm: *mut c_void, stackId: u32, u
 /// `vm`, `unused` must point to what the engine expects.
 #[inline]
 pub unsafe fn papyrus__game__force_third_person(vm: *mut c_void, stackId: u32, unused: *mut c_void) { unsafe { function!(55565, (*mut c_void, u32, *mut c_void))(vm, stackId, unused) } }
+/// `Papyrus::Game::IsMovementControlsEnabled`: the engine's movement-controls test: (g_EventSourceHolder_User_ptr->enabledControls (+0x120) & 0x401) == 0x401
+///
+/// Semantic, camera pass, high; ledger papyrus_native evidence, name high; id 55485, rva 0xa25270.
+/// `bool (IVirtualMachine* vm, u32 stackId, void* unused)`
+///
+/// # Safety
+/// `vm`, `unused` must point to what the engine expects.
+#[inline]
+pub unsafe fn papyrus__game__is_movement_controls_enabled(vm: *mut c_void, stackId: u32, unused: *mut c_void) -> bool { unsafe { function!(55485, (*mut c_void, u32, *mut c_void) -> bool)(vm, stackId, unused) } }
 /// `Papyrus::Game::SetBeastForm`: Papyrus Game.SetBeastForm: MenuControls +0x81 = beastForm; when false, PlayerCamera::SetCombatOffsets(camera, false)
 ///
 /// Semantic, camera pass, high; ledger papyrus_native evidence, name high; id 55497, rva 0xa25610.
@@ -3669,6 +4032,12 @@ pub fn start_game_in_initial_cell_or_save(loadLastSave: bool) { unsafe { functio
 /// `void (void)`
 #[inline]
 pub fn static_init_camera_path_node_string() { unsafe { function!(7320, ())() } }
+/// `TriggerStagger`: starts a stagger: graph floats staggerMagnitude (clamped to 1) and staggerDirection, then 'Action Stagger Start'; when the action is accepted, flags2 |= 0x2000 and the process stagger timer starts
+///
+/// Semantic, camera pass, high; ledger semantic evidence, name high; id 37710, rva 0x69fc00.
+/// `void (Actor* actor, float magnitude, Actor* source)`
+#[inline]
+pub fn trigger_stagger(actor: &crate::Actor, magnitude: f32, source: &crate::Actor) { unsafe { function!(37710, (*const crate::Actor, f32, *const crate::Actor))(core::ptr::from_ref(actor), magnitude, core::ptr::from_ref(source)) } }
 /// `TryPlayIdleAnimation`: plays a random idle (PlayIdle with 0x40) when the actor is in range (fAIIdleAnimationDistance, large-creature mult), has 3D, is not sitting or busy, and for the player only while the camera is in cameraStates[1] (auto vanity)
 ///
 /// Semantic, camera pass, high; ledger semantic evidence, name high; id 39281, rva 0x6f22f0.
@@ -3727,6 +4096,21 @@ pub fn update_camera_path_playback() { unsafe { function!(36591, ())() } }
 /// The pass rates the signature medium.
 #[inline]
 pub unsafe fn update_fade_alpha(node: *mut crate::BSFadeNode, fadeAmount: f32, cameraPosAndLod: *const f32) -> bool { unsafe { function!(105486, (*mut crate::BSFadeNode, f32, *const f32) -> bool)(node, fadeAmount, cameraPosAndLod) } }
+/// `UpdateFurnitureState`: process-level furniture/mount state change; its callers pass 1/5 on activation, 2/6 for the entry animation, 3/7 seated or in bed, 4/8 leaving, 0 done
+///
+/// Semantic, camera pass, medium; ledger semantic evidence, name medium; id 39912, rva 0x7246a0.
+/// `void (AIProcess* process, Actor* actor, u32 state, u32* furnitureHandle, u32 marker)`
+///
+/// # Safety
+/// The pass rates the signature medium.
+#[inline]
+pub unsafe fn update_furniture_state(process: *mut crate::AIProcess, actor: *mut crate::Actor, state: u32, furnitureHandle: *mut u32, marker: u32) { unsafe { function!(39912, (*mut crate::AIProcess, *mut crate::Actor, u32, *mut u32, u32))(process, actor, state, furnitureHandle, marker) } }
+/// `UpdateFurnitureStateOrForward`: sets a sit/sleep state through the process's UpdateFurnitureState 0x7246a0 when the process level < 2, otherwise directly through ActorState slot 20
+///
+/// Semantic, camera pass, high; ledger semantic evidence, name high; id 39000, rva 0x6e1bd0.
+/// `void (Actor* actor, u32 state)`
+#[inline]
+pub fn update_furniture_state_or_forward(actor: &crate::Actor, state: u32) { unsafe { function!(39000, (*const crate::Actor, u32))(core::ptr::from_ref(actor), state) } }
 /// `UpdateHandleArrayWithFrameDelta`: tail call UpdateHandleArrayRefsAndPruneDeleted(manager, g_FrameDelta)
 ///
 /// Semantic, camera pass, high; ledger semantic evidence, name high; id 43946, rva 0x7ed390.
@@ -3736,6 +4120,21 @@ pub unsafe fn update_fade_alpha(node: *mut crate::BSFadeNode, fadeAmount: f32, c
 /// `manager` must point to what the engine expects.
 #[inline]
 pub unsafe fn update_handle_array_with_frame_delta(manager: *mut c_void) { unsafe { function!(43946, (*mut c_void))(manager) } }
+/// `UpdateKnockState`: per-update knock state machine: 2 -> ragdoll and 1, 4 -> ragdoll and 3; 1 (and 3 unless bleeding out) begin the get-up once the body is still; 5 turns the actor to the body heading and goes to 6
+///
+/// Semantic, camera pass, medium; ledger semantic evidence, name medium; id 39896, rva 0x723b60.
+/// `void (AIProcess* process, Actor* actor)`
+///
+/// # Safety
+/// The pass rates the signature medium.
+#[inline]
+pub unsafe fn update_knock_state(process: *mut crate::AIProcess, actor: *mut crate::Actor) { unsafe { function!(39896, (*mut crate::AIProcess, *mut crate::Actor))(process, actor) } }
+/// `UpdateMotionDrivenAnimationMode`: each movement step: reads graph bools bAnimationDriven and bAllowRotation and, when they disagree with the controller's mode, sends StartMotionDriven / StartAnimationDriven / StartAllowRotation to the graph
+///
+/// Semantic, camera pass, high; ledger semantic evidence, name high; id 37355, rva 0x67c210.
+/// `void (Actor* actor)`
+#[inline]
+pub fn update_motion_driven_animation_mode(actor: &crate::Actor) { unsafe { function!(37355, (*const crate::Actor))(core::ptr::from_ref(actor)) } }
 /// `UpdateTeleportFade`: advances the process fade (process+0x10 data: state +0x130, alpha +0x134, activate target +0x138): states 1/3 fade in, 2 fade out, 4 fade out then activate, 5/6 fade out then move/disable; then the actor's slot 224 UpdateAlpha
 ///
 /// Semantic, camera pass, high; ledger semantic evidence, name high; id 39457, rva 0x6fe1f0.
@@ -3956,6 +4355,9 @@ pub fn g_default_max_pitch_up() -> *mut f32 { address!(189822) as *mut f32 }
 /// `g_DefaultObjectNameTable` at 0x207bf40, id 360630 (semantic, high); the default object names: 0x174 records of 0x18 bytes {const char* name; u32 formType; char signature[4]; u64}, indexed like GetDefaultObjectByIndex (manager +0x20 + i*8, present flag +0xbc0 + i) (high, camera pass), type `undefined1`
 #[inline]
 pub fn g_default_object_name_table() -> *mut u8 { address!(360630) as *mut u8 }
+/// `g_DefaultObjectRecords` at 0x207bee0, id 360620 (semantic, high); default object descriptors of 0x18 bytes {name, type, signature, flags}; index i matches BGSDefaultObjectManager (0x219d180) objects +0x20+8i and loaded flags +0xbc0+i (high, camera pass), type `record[]`
+#[inline]
+pub fn g_default_object_records() -> *mut c_void { address!(360620) as *mut c_void }
 /// `g_DialogueTurnStartYaw` at 0x20b7624, id 381588 (semantic, high); dialogue turn blend: start yaw (PlayerCamera.yaw); +4 (0x20b7628) start pitch; 0x20b762c / 0x20b7630 target yaw / pitch; 0x20b7634 duration ms (fDialogueRotationSecs * 1000); 0x20b7638 start time (g_FrameTimeMs); byte 0x20b763c done (high, camera pass), type `float`
 #[inline]
 pub fn g_dialogue_turn_start_yaw() -> *mut f32 { address!(381588) as *mut f32 }
@@ -4001,6 +4403,9 @@ pub fn g_havok_world_scale_inverse() -> *mut f32 { address!(187407) as *mut f32 
 /// `g_HorseMaxTurnAngle` at 0x3255af0, id 405797 (runtime, high); fHorseMaxAngleBeforeTurn:Camera in radians (pi/2 by default) (high, camera pass), type `float`
 #[inline]
 pub fn g_horse_max_turn_angle() -> *mut f32 { address!(405797) as *mut f32 }
+/// `g_InterfaceId_IMovementMotionDrivenControl` at 0x324f0b0, id 404489 (semantic, high); interface id passed to MovementControllerNPC slot 3 to get its motion-driven control (high, camera pass), type `BSFixedString`
+#[inline]
+pub fn g_interface_id_i_movement_motion_driven_control() -> &'static crate::BSFixedString { unsafe { &*(address!(404489) as *const crate::BSFixedString) } }
 /// `g_LastPlayerPosition` at 0x3244c90, id 404241 (semantic, high); player position cached by Main::UpdatePlayer each frame (the flying mount code reads it) (high, camera pass), type `class:NiPoint3`
 #[inline]
 pub fn g_last_player_position() -> &'static crate::NiPoint3 { unsafe { &*(address!(404241) as *const crate::NiPoint3) } }

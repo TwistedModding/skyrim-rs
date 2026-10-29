@@ -4945,13 +4945,6 @@ pub unsafe fn is_field_c8_top_nibble_in1_to3_or6_or8_to12(param_1: i64) -> u64 {
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn is_field_c8_top_nibble_in1_to5(param_1: i64) -> u32 { unsafe { function!(38593, (i64) -> u32)(param_1) } }
-/// `IsFieldC8TopNibbleNonZero` (decompiler signature, tier high; ledger decompiler evidence, name high; id 38590, rva 0x6cb920).
-/// `bool IsFieldC8TopNibbleNonZero(longlong param_1)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn is_field_c8_top_nibble_non_zero(param_1: i64) -> u8 { unsafe { function!(38590, (i64) -> u8)(param_1) } }
 /// `IsFieldE4SphereInsideFrustum` (decompiler signature, tier high; ledger decompiler evidence, name high; id 15898, rva 0x224640).
 /// `ulonglong IsFieldE4SphereInsideFrustum(longlong param_1, longlong param_2)`
 ///
@@ -16348,3 +16341,10 @@ pub unsafe fn set_ref_counted_field30_2(param_1: i64, param_2: *mut i64) -> u64 
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn set_ref_counted_field30_3(param_1: i64, param_2: i64) -> u64 { unsafe { function!(61922, (i64, i64) -> u64)(param_1, param_2) } }
+/// `SetRefCountedField30_4` (decompiler signature, tier high; ledger decompiler evidence, name high; id 61967, rva 0xb76210).
+/// `undefined SetRefCountedField30_4(longlong param_1, longlong param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn set_ref_counted_field30_4(param_1: i64, param_2: i64) -> u64 { unsafe { function!(61967, (i64, i64) -> u64)(param_1, param_2) } }

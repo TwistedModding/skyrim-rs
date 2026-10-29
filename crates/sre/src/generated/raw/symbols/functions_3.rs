@@ -1893,9 +1893,9 @@ pub(super) const ROWS: &[Function] = &[
     Function { rva: 0x3d0bb0, id: 25001, confidence: Confidence::Medium, name: "RunQuestStagesWithFlag4" },
     Function { rva: 0x3d0c40, id: 25002, confidence: Confidence::Medium, name: "RefreshActionsForAliasHandleKeyOnActiveEntries" },
     Function { rva: 0x3d0cb0, id: 25003, confidence: Confidence::Medium, name: "TryStartQuest" },
-    Function { rva: 0x3d0dc0, id: 25004, confidence: Confidence::Medium, name: "SetQuestStage" },
-    Function { rva: 0x3d0ec0, id: 25011, confidence: Confidence::Medium, name: "IsStageDone" },
-    Function { rva: 0x3d1220, id: 25013, confidence: Confidence::Medium, name: "GetCurrentStage" },
+    Function { rva: 0x3d0dc0, id: 25004, confidence: Confidence::High, name: "TESQuest::SetStage" },
+    Function { rva: 0x3d0ec0, id: 25011, confidence: Confidence::High, name: "TESQuest::IsStageDone" },
+    Function { rva: 0x3d1220, id: 25013, confidence: Confidence::High, name: "TESQuest::GetCurrentStage" },
     Function { rva: 0x3d1230, id: 25014, confidence: Confidence::Medium, name: "ResetQuestState" },
     Function { rva: 0x3d1480, id: 25015, confidence: Confidence::Medium, name: "StartFlaggedScenesInField208" },
     Function { rva: 0x3d14e0, id: 25016, confidence: Confidence::Medium, name: "DeactivateScenesInArray208" },
@@ -8132,5 +8132,4 @@ pub(super) const ROWS: &[Function] = &[
     Function { rva: 0x584b00, id: 441840, confidence: Confidence::Medium, name: "CopyConstructRecordWithTwoStrings" },
     Function { rva: 0x584ba0, id: 441841, confidence: Confidence::Medium, name: "BSPlatform::BSUserContent::ctor" },
     Function { rva: 0x585550, id: 441845, confidence: Confidence::Medium, name: "FreeSharedPtrArray" },
-    Function { rva: 0x585610, id: 441846, confidence: Confidence::Medium, name: "FreeRecordArray28" },
 ];

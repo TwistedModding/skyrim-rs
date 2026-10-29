@@ -3,6 +3,50 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `BSTDerivedCreator<BGSProcedureUseWeaponExecState,IProcedureTreeExecState>::vfunc_1` at 0x45a530 (rtti, medium); signature (low): `undefined8 vfunc_1(BSTDerivedCreator<BGSProcedureUseWeaponExecState,IProcedureTreeExecState> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+pub const BSTDerivedCreator_BGSProcedureUseWeaponExecState_IProcedureTreeExecState__vfunc_1: u64 = 28078;
+/// `BSTDerivedCreator<BGSProcedureUseWeaponExecState,IProcedureTreeExecState>::vfunc_2` at 0x45aaf0 (rtti, medium); signature (low): `undefined vfunc_2(BSTDerivedCreator<BGSProcedureUseWeaponExecState,IProcedureTreeExecState> * this, undefined8 * param_1)`
+pub const BSTDerivedCreator_BGSProcedureUseWeaponExecState_IProcedureTreeExecState__vfunc_2: u64 = 28118;
+/// `BSTDerivedCreator<BGSProcedureWait,IProcedure>::vdtor` at 0x4948e0 (layout_inference, medium); signature (low): `BSTDerivedCreator<BGSProcedureWait,IProcedure> * vdtor(BSTDerivedCreator<BGSProcedureWait,IProcedure> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const BSTDerivedCreator_BGSProcedureWait_IProcedure__vdtor: u64 = 29425;
+/// `BSTDerivedCreator<BGSProcedureWait,IProcedure>::vfunc_1` at 0x494950 (rtti, medium); signature (low): `BGSProcedureBase * vfunc_1(BSTDerivedCreator<BGSProcedureWait,IProcedure> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+pub const BSTDerivedCreator_BGSProcedureWait_IProcedure__vfunc_1: u64 = 29427;
+/// `BSTDerivedCreator<BGSProcedureWait,IProcedure>::vfunc_2` at 0x4949d0 (rtti, medium); signature (low): `undefined vfunc_2(BSTDerivedCreator<BGSProcedureWait,IProcedure> * this, undefined8 * param_1)`
+pub const BSTDerivedCreator_BGSProcedureWait_IProcedure__vfunc_2: u64 = 29428;
+/// `BSTDerivedCreator<BGSProcedureWaitExecState,IProcedureTreeExecState>::vdtor` at 0x458bd0 (layout_inference, medium); signature (low): `BSTDerivedCreator<BGSProcedureWaitExecState,IProcedureTreeExecState> * vdtor(BSTDerivedCreator<BGSProcedureWaitExecState,IProcedureTreeExecState> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const BSTDerivedCreator_BGSProcedureWaitExecState_IProcedureTreeExecState__vdtor: u64 = 28006;
+/// `BSTDerivedCreator<BGSProcedureWaitExecState,IProcedureTreeExecState>::vfunc_1` at 0x45a590 (rtti, medium); signature (low): `undefined vfunc_1(BSTDerivedCreator<BGSProcedureWaitExecState,IProcedureTreeExecState> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+pub const BSTDerivedCreator_BGSProcedureWaitExecState_IProcedureTreeExecState__vfunc_1: u64 = 28079;
+/// `BSTDerivedCreator<BGSProcedureWaitExecState,IProcedureTreeExecState>::vfunc_2` at 0x45ab10 (rtti, medium); signature (low): `undefined vfunc_2(BSTDerivedCreator<BGSProcedureWaitExecState,IProcedureTreeExecState> * this, undefined8 * param_1)`
+pub const BSTDerivedCreator_BGSProcedureWaitExecState_IProcedureTreeExecState__vfunc_2: u64 = 28119;
+/// `BSTDerivedCreator<BGSProcedureWander,IProcedure>::vdtor` at 0x496140 (layout_inference, medium); signature (low): `BSTDerivedCreator<BGSProcedureWander,IProcedure> * vdtor(BSTDerivedCreator<BGSProcedureWander,IProcedure> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const BSTDerivedCreator_BGSProcedureWander_IProcedure__vdtor: u64 = 29459;
+/// `BSTDerivedCreator<BGSProcedureWander,IProcedure>::vfunc_1` at 0x4962a0 (rtti, medium); signature (low): `BGSProcedureBase * vfunc_1(BSTDerivedCreator<BGSProcedureWander,IProcedure> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+pub const BSTDerivedCreator_BGSProcedureWander_IProcedure__vfunc_1: u64 = 29462;
+/// `BSTDerivedCreator<BGSProcedureWander,IProcedure>::vfunc_2` at 0x496320 (rtti, medium); signature (low): `undefined vfunc_2(BSTDerivedCreator<BGSProcedureWander,IProcedure> * this, undefined8 * param_1)`
+pub const BSTDerivedCreator_BGSProcedureWander_IProcedure__vfunc_2: u64 = 29463;
+/// `BSTDerivedCreator<BGSProcedureWanderExecState,IProcedureTreeExecState>::vdtor` at 0x458c00 (layout_inference, medium); signature (low): `BSTDerivedCreator<BGSProcedureWanderExecState,IProcedureTreeExecState> * vdtor(BSTDerivedCreator<BGSProcedureWanderExecState,IProcedureTreeExecState> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const BSTDerivedCreator_BGSProcedureWanderExecState_IProcedureTreeExecState__vdtor: u64 = 28007;
+/// `BSTDerivedCreator<BGSProcedureWanderExecState,IProcedureTreeExecState>::vfunc_1` at 0x45a5f0 (rtti, medium); signature (low): `BGSProcedureWanderExecState * vfunc_1(BSTDerivedCreator<BGSProcedureWanderExecState,IProcedureTreeExecState> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+pub const BSTDerivedCreator_BGSProcedureWanderExecState_IProcedureTreeExecState__vfunc_1: u64 = 28080;
+/// `BSTDerivedCreator<BGSProcedureWanderExecState,IProcedureTreeExecState>::vfunc_2` at 0x45ab30 (rtti, medium); signature (low): `undefined vfunc_2(BSTDerivedCreator<BGSProcedureWanderExecState,IProcedureTreeExecState> * this, undefined8 * param_1)`
+pub const BSTDerivedCreator_BGSProcedureWanderExecState_IProcedureTreeExecState__vfunc_2: u64 = 28120;
+/// `BSTDerivedCreator<BGSStandardSoundDef,BGSSoundDescriptor>::vdtor` at 0x32bc30 (layout_inference, medium); signature (low): `BSTDerivedCreator<BGSStandardSoundDef,BGSSoundDescriptor> * vdtor(BSTDerivedCreator<BGSStandardSoundDef,BGSSoundDescriptor> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const BSTDerivedCreator_BGSStandardSoundDef_BGSSoundDescriptor__vdtor: u64 = 21308;
+/// `BSTDerivedCreator<BGSStandardSoundDef,BGSSoundDescriptor>::vfunc_1` at 0x32bb30 (rtti, medium); signature (low): `undefined8 * vfunc_1(BSTDerivedCreator<BGSStandardSoundDef,BGSSoundDescriptor> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+pub const BSTDerivedCreator_BGSStandardSoundDef_BGSSoundDescriptor__vfunc_1: u64 = 21306;
+/// `BSTDerivedCreator<BGSStandardSoundDef,BGSSoundDescriptor>::vfunc_2` at 0x32bc10 (rtti, medium); signature (low): `undefined vfunc_2(BSTDerivedCreator<BGSStandardSoundDef,BGSSoundDescriptor> * this, undefined8 * param_1)`
+pub const BSTDerivedCreator_BGSStandardSoundDef_BGSSoundDescriptor__vfunc_2: u64 = 21307;
+/// `BSTDerivedCreator<BGShkMatFadeController,BShkNonTransformController>::vdtor` at 0x7db4e0 (layout_inference, medium); signature (low): `BSTDerivedCreator<BGShkMatFadeController,BShkNonTransformController> * vdtor(BSTDerivedCreator<BGShkMatFadeController,BShkNonTransformController> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const BSTDerivedCreator_BGShkMatFadeController_BShkNonTransformController__vdtor: u64 = 43651;
+/// `BSTDerivedCreator<BGShkMatFadeController,BShkNonTransformController>::vfunc_1` at 0x7db450 (rtti, medium); signature (low): `undefined vfunc_1(BSTDerivedCreator<BGShkMatFadeController,BShkNonTransformController> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+pub const BSTDerivedCreator_BGShkMatFadeController_BShkNonTransformController__vfunc_1: u64 = 43649;
+/// `BSTDerivedCreator<BGShkMatFadeController,BShkNonTransformController>::vfunc_2` at 0x7db4c0 (rtti, medium); signature (low): `undefined vfunc_2(BSTDerivedCreator<BGShkMatFadeController,BShkNonTransformController> * this, undefined8 * param_1)`
+pub const BSTDerivedCreator_BGShkMatFadeController_BShkNonTransformController__vfunc_2: u64 = 43650;
+/// `BSTDerivedCreator<BGShkPhonemeController,BShkNonTransformController>::vdtor` at 0x422930 (layout_inference, medium); signature (low): `BSTDerivedCreator<BGShkPhonemeController,BShkNonTransformController> * vdtor(BSTDerivedCreator<BGShkPhonemeController,BShkNonTransformController> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const BSTDerivedCreator_BGShkPhonemeController_BShkNonTransformController__vdtor: u64 = 26539;
+/// `BSTDerivedCreator<BGShkPhonemeController,BShkNonTransformController>::vfunc_1` at 0x4228a0 (rtti, medium); signature (low): `undefined8 * vfunc_1(BSTDerivedCreator<BGShkPhonemeController,BShkNonTransformController> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+pub const BSTDerivedCreator_BGShkPhonemeController_BShkNonTransformController__vfunc_1: u64 = 26537;
 /// `BSTDerivedCreator<BGShkPhonemeController,BShkNonTransformController>::vfunc_2` at 0x422910 (rtti, medium); signature (low): `undefined vfunc_2(BSTDerivedCreator<BGShkPhonemeController,BShkNonTransformController> * this, undefined8 * param_1)`
 pub const BSTDerivedCreator_BGShkPhonemeController_BShkNonTransformController__vfunc_2: u64 = 26538;
 /// `BSTDerivedCreator<BSNullImplAudio,BSAudio>::vdtor` at 0xcd63b0 (layout_inference, medium); signature (low): `BSTDerivedCreator<BSNullImplAudio,BSAudio> * vdtor(BSTDerivedCreator<BSNullImplAudio,BSAudio> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
@@ -5189,14 +5233,18 @@ pub const Bounty__GetEventSource: u64 = 41061;
 pub const Bounty__RegisterSink: u64 = 40387;
 /// `Bounty::UnregisterSink` at 0x73e3f0 (semantic, medium); signature (untiered): `undefined UnregisterSink(undefined8 param_1)`; semantic: unregisters a Bounty::Event sink with the singleton source (medium); signature `void (BSTEventSink<Bounty::Event>* sink)`
 pub const Bounty__UnregisterSink: u64 = 40388;
+/// `BowDrawnHandler::Handle` at 0x7cdb70 (semantic, high); signature (untiered): `undefined1 Handle(BowDrawnHandler * this, longlong param_1)`; semantic: attack state = 0xa (bow fully drawn) (high); signature `bool (BowDrawnHandler* this, Actor* actor)`
+pub const BowDrawnHandler__Handle: u64 = 42855;
+/// `BowDrawnHandler::Handle` as a function pointer type (high).
+pub type BowDrawnHandler__Handle_fn = unsafe extern "C" fn(this: *mut crate::BowDrawnHandler, actor: *mut crate::Actor) -> bool;
 /// `BowDrawnHandler::vdtor` at 0x7d3a90 (layout_inference, medium); signature (low): `BowDrawnHandler * vdtor(BowDrawnHandler * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const BowDrawnHandler__vdtor: u64 = 43301;
-/// `BowDrawnHandler::vfunc_1` at 0x7cdb70 (rtti, high); signature (low): `undefined1 vfunc_1(BowDrawnHandler * this, longlong param_1)`
-pub const BowDrawnHandler__vfunc_1: u64 = 42855;
+/// `BowReleaseHandler::Handle` at 0x7cdb90 (semantic, high); signature (untiered): `undefined1 Handle(BowReleaseHandler * this, longlong param_1)`; semantic: attack state = 0xb (bow releasing) (high); signature `bool (BowReleaseHandler* this, Actor* actor)`
+pub const BowReleaseHandler__Handle: u64 = 42856;
+/// `BowReleaseHandler::Handle` as a function pointer type (high).
+pub type BowReleaseHandler__Handle_fn = unsafe extern "C" fn(this: *mut crate::BowReleaseHandler, actor: *mut crate::Actor) -> bool;
 /// `BowReleaseHandler::vdtor` at 0x7d3ac0 (layout_inference, medium); signature (low): `BowReleaseHandler * vdtor(BowReleaseHandler * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const BowReleaseHandler__vdtor: u64 = 43302;
-/// `BowReleaseHandler::vfunc_1` at 0x7cdb90 (rtti, high); signature (low): `undefined1 vfunc_1(BowReleaseHandler * this, longlong param_1)`
-pub const BowReleaseHandler__vfunc_1: u64 = 42856;
 /// `BowZoomStartHandler::Destroy` at 0x7d3af0 (semantic, high); signature (untiered): `BowZoomStartHandler * Destroy(BowZoomStartHandler * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`; semantic: slot 0: resets the vtable to IHandlerFunctor<Actor,BSFixedStringCI>'s and frees 0x10 bytes when flags bit 0 (high); signature `BowZoomStartHandler* (BowZoomStartHandler* this, u32 flags)`
 pub const BowZoomStartHandler__Destroy: u64 = 43303;
 /// `BowZoomStartHandler::Destroy` as a function pointer type (high).
@@ -5651,87 +5699,3 @@ pub const CallBSCoreMessageVfunc1WithTlsChannel: u64 = 68193;
 pub const CallBSCoreMessageVfunc2Formatted: u64 = 68195;
 /// `CallBSCoreMessageVfunc3Formatted` at 0xce19b0 (decompiler, medium); signature (untiered): `undefined CallBSCoreMessageVfunc3Formatted(undefined4 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const CallBSCoreMessageVfunc3Formatted: u64 = 68198;
-/// `CallBSCoreMessageVfunc3WithTlsChannel` at 0xce1940 (decompiler, medium); signature (untiered): `undefined CallBSCoreMessageVfunc3WithTlsChannel(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const CallBSCoreMessageVfunc3WithTlsChannel: u64 = 68197;
-/// `CallBindScriptObjectWithErrorReport` at 0x9bf290 (decompiler, medium); signature (untiered): `undefined8 CallBindScriptObjectWithErrorReport(undefined8 * param_1, undefined8 param_2)`
-pub const CallBindScriptObjectWithErrorReport: u64 = 53584;
-/// `CallCatalogGetPlayerItem` at 0x132d540 (decompiler, medium); signature (untiered): `undefined8 CallCatalogGetPlayerItem(undefined8 param_1, longlong * param_2, longlong * param_3, undefined8 param_4)`
-pub const CallCatalogGetPlayerItem: u64 = 448566;
-/// `CallContentVfunc58ByKey` at 0x589070 (decompiler, medium); signature (untiered): `undefined CallContentVfunc58ByKey(longlong param_1, ulonglong param_2, undefined8 param_3, undefined8 param_4)`
-pub const CallContentVfunc58ByKey: u64 = 441797;
-/// `CallContentVfunc68ByKey` at 0x5890f0 (decompiler, medium); signature (untiered): `undefined CallContentVfunc68ByKey(longlong param_1, ulonglong param_2, ulonglong param_3, undefined8 param_4)`
-pub const CallContentVfunc68ByKey: u64 = 523692;
-/// `CallField0IfField8NonNull` at 0x14799b0 (decompiler, medium); signature (medium): `undefined CallField0IfField8NonNull(undefined8 * param_1)`
-pub const CallField0IfField8NonNull: u64 = 453148;
-/// `CallField10CallbackIfSet` at 0xc01350 (decompiler, medium); signature (untiered): `undefined CallField10CallbackIfSet(longlong param_1, undefined8 param_2, undefined4 param_3)`
-pub const CallField10CallbackIfSet: u64 = 64464;
-/// `CallField10ObjectVfunc20AndReturnSelf` at 0xabb550 (decompiler, high); signature (untiered): `longlong CallField10ObjectVfunc20AndReturnSelf(longlong param_1)`
-pub const CallField10ObjectVfunc20AndReturnSelf: u64 = 57927;
-/// `CallField10Vfunc0AndFreeViaGlobal414364` at 0x139b310 (decompiler, medium); signature (medium): `undefined CallField10Vfunc0AndFreeViaGlobal414364(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const CallField10Vfunc0AndFreeViaGlobal414364: u64 = 450239;
-/// `CallField10Vfunc0WithZero` at 0x139b300 (decompiler, medium); signature (medium): `undefined CallField10Vfunc0WithZero(longlong param_1)`
-pub const CallField10Vfunc0WithZero: u64 = 450238;
-/// `CallField10Vfunc2` at 0x6e0620 (decompiler, medium); signature (untiered): `undefined8 CallField10Vfunc2(longlong param_1)`
-pub const CallField10Vfunc2: u64 = 38962;
-/// `CallField10Vfunc20ThenPadToWidth` at 0xac0b60 (decompiler, medium); signature (untiered): `undefined CallField10Vfunc20ThenPadToWidth(longlong param_1, int * param_2, int param_3)`
-pub const CallField10Vfunc20ThenPadToWidth: u64 = 58087;
-/// `CallField10Vfunc20UnderLock` at 0xb5b150 (decompiler, medium); signature (untiered): `undefined4 CallField10Vfunc20UnderLock(longlong param_1, undefined4 param_2)`
-pub const CallField10Vfunc20UnderLock: u64 = 61411;
-/// `CallField10Vfunc28UnderLock` at 0xb5b1a0 (decompiler, medium); signature (untiered): `undefined4 CallField10Vfunc28UnderLock(longlong param_1)`
-pub const CallField10Vfunc28UnderLock: u64 = 61412;
-/// `CallField10Vfunc3` at 0x6e0640 (decompiler, medium); signature (untiered): `undefined CallField10Vfunc3(longlong param_1)`
-pub const CallField10Vfunc3: u64 = 38963;
-/// `CallField10Vfunc3AndReturnArg` at 0xcc0700 (decompiler, medium); signature (untiered): `undefined8 CallField10Vfunc3AndReturnArg(longlong param_1, undefined8 param_2)`
-pub const CallField10Vfunc3AndReturnArg: u64 = 67480;
-/// `CallField10Vfunc4` at 0xab7e30 (decompiler, medium); signature (untiered): `undefined CallField10Vfunc4(longlong param_1)`
-pub const CallField10Vfunc4: u64 = 57841;
-/// `CallField10Vfunc4_2` at 0xcc06e0 (decompiler, medium); signature (untiered): `undefined CallField10Vfunc4_2(longlong param_1)`
-pub const CallField10Vfunc4_2: u64 = 67479;
-/// `CallField10Vfunc58` at 0xb57f70 (decompiler, medium); signature (untiered): `undefined CallField10Vfunc58(longlong param_1)`
-pub const CallField10Vfunc58: u64 = 61327;
-/// `CallField150Vfunc18` at 0xb4cdd0 (decompiler, medium); signature (untiered): `undefined CallField150Vfunc18(longlong param_1)`
-pub const CallField150Vfunc18: u64 = 60891;
-/// `CallField150Vfunc20` at 0xb4cdf0 (decompiler, medium); signature (untiered): `undefined CallField150Vfunc20(longlong param_1)`
-pub const CallField150Vfunc20: u64 = 60892;
-/// `CallField150Vfunc38` at 0xb4ce10 (decompiler, medium); signature (untiered): `undefined CallField150Vfunc38(longlong param_1)`
-pub const CallField150Vfunc38: u64 = 60893;
-/// `CallField150Vfunc8WithCode0C` at 0xdc1ae0 (decompiler, medium); signature (untiered): `undefined8 CallField150Vfunc8WithCode0C(longlong param_1, undefined4 param_2, undefined4 param_3)`
-pub const CallField150Vfunc8WithCode0C: u64 = 86462;
-/// `CallField18CallbackIfSet` at 0xc01330 (decompiler, medium); signature (untiered): `undefined CallField18CallbackIfSet(longlong param_1, undefined8 param_2)`
-pub const CallField18CallbackIfSet: u64 = 64463;
-/// `CallField210Vfunc38IfFlag690Set` at 0x9dafe0 (decompiler, medium); signature (untiered): `undefined1 CallField210Vfunc38IfFlag690Set(longlong param_1)`
-pub const CallField210Vfunc38IfFlag690Set: u64 = 53958;
-/// `CallField30VfuncA8OrNull` at 0xd33ef0 (decompiler, high); signature (untiered): `undefined8 CallField30VfuncA8OrNull(longlong param_1)`
-pub const CallField30VfuncA8OrNull: u64 = 83492;
-/// `CallFieldB0Vfunc8OrFalse` at 0xcd5de0 (decompiler, medium); signature (medium): `undefined8 CallFieldB0Vfunc8OrFalse(longlong param_1)`
-pub const CallFieldB0Vfunc8OrFalse: u64 = 67891;
-/// `CallFieldB8OrB0Vfunc0` at 0x1048a70 (decompiler, medium); signature (untiered): `undefined CallFieldB8OrB0Vfunc0(longlong param_1)`
-pub const CallFieldB8OrB0Vfunc0: u64 = 77827;
-/// `CallFirstChildVfunc30` at 0x14e9650 (decompiler, medium); signature (untiered): `undefined8 CallFirstChildVfunc30(longlong param_1)`
-pub const CallFirstChildVfunc30: u64 = 105606;
-/// `CallFreeBufferAndResetFields` at 0xffe260 (decompiler, high); signature (untiered): `undefined CallFreeBufferAndResetFields(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const CallFreeBufferAndResetFields: u64 = 76947;
-/// `CallFuncOnStridedElementPairs` at 0x812bd0 (decompiler, medium); signature (medium): `undefined CallFuncOnStridedElementPairs(longlong param_1, longlong param_2, longlong param_3, longlong param_4, undefined * param_5)`
-pub const CallFuncOnStridedElementPairs: u64 = 44558;
-/// `CallFunctionWithArgArray` at 0xd15060 (decompiler, medium); signature (untiered): `undefined CallFunctionWithArgArray(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const CallFunctionWithArgArray: u64 = 83048;
-/// `CallFunctionWithStackArgs` at 0xd15460 (decompiler, medium); signature (untiered): `undefined CallFunctionWithStackArgs(longlong param_1)`
-pub const CallFunctionWithStackArgs: u64 = 83049;
-/// `CallGlobal414364` at 0x1348fb0 (decompiler, high); signature (untiered): `undefined CallGlobal414364(undefined8 param_1, undefined8 param_2)`
-pub const CallGlobal414364: u64 = 447429;
-/// `CallGlobal414364IfGlobal414363Set` at 0x143b540 (decompiler, medium); signature (untiered): `undefined CallGlobal414364IfGlobal414363Set(undefined8 param_1, undefined8 param_2)`
-pub const CallGlobal414364IfGlobal414363Set: u64 = 452349;
-/// `CallGlobal414364IfGlobal414363Set_2` at 0x143ea30 (decompiler, medium); signature (untiered): `undefined CallGlobal414364IfGlobal414363Set_2(undefined8 param_1, undefined8 param_2)`
-pub const CallGlobal414364IfGlobal414363Set_2: u64 = 452400;
-/// `CallGlobal414364IfNonNull` at 0x14261c0 (decompiler, medium); signature (untiered): `undefined CallGlobal414364IfNonNull(longlong param_1)`
-pub const CallGlobal414364IfNonNull: u64 = 452030;
-/// `CallGlobal414364IfSet` at 0x12ea400 (decompiler, medium); signature (untiered): `undefined CallGlobal414364IfSet(undefined8 param_1, undefined8 param_2)`
-pub const CallGlobal414364IfSet: u64 = 444898;
-/// `CallGlobal414364IfSet_10` at 0x13cd6f0 (decompiler, medium); signature (untiered): `undefined CallGlobal414364IfSet_10(undefined8 param_1, undefined8 param_2)`
-pub const CallGlobal414364IfSet_10: u64 = 99739;
-/// `CallGlobal414364IfSet_11` at 0x13d0720 (decompiler, medium); signature (untiered): `undefined CallGlobal414364IfSet_11(undefined8 param_1, undefined8 param_2)`
-pub const CallGlobal414364IfSet_11: u64 = 99698;
-/// `CallGlobal414364IfSet_12` at 0x14186e0 (decompiler, medium); signature (untiered): `undefined CallGlobal414364IfSet_12(undefined8 param_1, undefined8 param_2)`
-pub const CallGlobal414364IfSet_12: u64 = 100904;
-/// `CallGlobal414364IfSet_13` at 0x142ba40 (decompiler, medium); signature (untiered): `undefined CallGlobal414364IfSet_13(undefined8 param_1, undefined8 param_2)`
-pub const CallGlobal414364IfSet_13: u64 = 452139;

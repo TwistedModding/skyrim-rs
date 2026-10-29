@@ -4,6 +4,12 @@
 use crate::raw::*;
 
 pub(super) const ROWS: &[Function] = &[
+    Function { rva: 0x1771af0, id: 168609, confidence: Confidence::Medium, name: "GameSetting_fPartialPickHard__atexit" },
+    Function { rva: 0x1771b40, id: 168610, confidence: Confidence::Medium, name: "GameSetting_fPartialPickVeryEasy__atexit" },
+    Function { rva: 0x1771b90, id: 168611, confidence: Confidence::Medium, name: "GameSetting_fPartialPickVeryHard__atexit" },
+    Function { rva: 0x1771be0, id: 168612, confidence: Confidence::Medium, name: "GameSetting_fPerkHeavyArmorExpertSpeedMult__atexit" },
+    Function { rva: 0x1771c30, id: 168613, confidence: Confidence::Medium, name: "GameSetting_fPerkHeavyArmorJourneymanDamageMult__atexit" },
+    Function { rva: 0x1771c80, id: 168614, confidence: Confidence::Medium, name: "GameSetting_fPerkHeavyArmorMasterSpeedMult__atexit" },
     Function { rva: 0x1771cd0, id: 168615, confidence: Confidence::Medium, name: "GameSetting_fPerkHeavyArmorNoviceDamageMult__atexit" },
     Function { rva: 0x1771d20, id: 168616, confidence: Confidence::Medium, name: "GameSetting_fPerkHeavyArmorSinkGravityMult__atexit" },
     Function { rva: 0x1771d70, id: 168617, confidence: Confidence::Medium, name: "GameSetting_fPerkLightArmorExpertSpeedMult__atexit" },

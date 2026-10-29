@@ -762,7 +762,7 @@ impl crate::PlayerControls {
     /// The pass rates the signature medium.
     #[inline]
     pub unsafe fn apply_look_input_with_dialogue_limits(&self) { unsafe { function!(42372, (*const Self))(core::ptr::from_ref(self)) } }
-    /// `PlayerControls::CanSwitchPOV`: ControlMap enabledControls bit 5 && PlayerControls +0x4c == 0 && +0x4d == 0
+    /// `PlayerControls::CanSwitchPOV`: true only when ControlMap enabledControls (+0x120) bit 5 (POV Switch) is set and both bDisablePOVChange bytes (+0x4c Script, +0x4d Werewolf) are 0
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 42342, rva 0x7ae030.
     /// `bool (PlayerControls* this)`
@@ -825,6 +825,12 @@ impl crate::PlayerControls {
     /// `bool (const PlayerControls* this)`
     #[inline]
     pub fn is_activate_enabled(&self) -> bool { unsafe { function!(42346, (*const Self) -> bool)(core::ptr::from_ref(self)) } }
+    /// `PlayerControls::LoadGame`: reads the same fields; bDisablePOVChange is read as 2 bytes only from save version >= 0x23 (older saves carry one byte that is discarded)
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 42363, rva 0x7af9b0.
+    /// `void (PlayerControls* this, BGSLoadFormBuffer* buffer)`
+    #[inline]
+    pub fn load_game(&self, buffer: &crate::BGSLoadFormBuffer) { unsafe { function!(42363, (*const Self, *const crate::BGSLoadFormBuffer))(core::ptr::from_ref(self), core::ptr::from_ref(buffer)) } }
     /// `PlayerControls::LoadResponseGraph`: reads f%sGraphX%d/f%sGraphY%d:Controls into one of two curves
     ///
     /// Semantic, input pass, medium; ledger semantic evidence, name medium; id 42366, rva 0x7afd10.
@@ -840,6 +846,18 @@ impl crate::PlayerControls {
     /// `void (PlayerControls* this, PlayerInputHandler* handler)`
     #[inline]
     pub fn remove_handler(&self, handler: &crate::PlayerInputHandler) { unsafe { function!(42357, (*const Self, *const crate::PlayerInputHandler))(core::ptr::from_ref(self), core::ptr::from_ref(handler)) } }
+    /// `PlayerControls::Revert`: resets the handler states, writes word +0x4c = 0 (both POV locks) and ActivateHandler+0x1b = 0
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 42365, rva 0x7afcb0.
+    /// `void (PlayerControls* this)`
+    #[inline]
+    pub fn revert(&self) { unsafe { function!(42365, (*const Self))(core::ptr::from_ref(self)) } }
+    /// `PlayerControls::SaveGame`: writes the sprint/attack-block/run handler states, the 2 bDisablePOVChange bytes and ActivateHandler+0x1b to the save
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 42362, rva 0x7af8c0.
+    /// `void (PlayerControls* this, BGSSaveFormBuffer* buffer)`
+    #[inline]
+    pub fn save_game(&self, buffer: &crate::BGSSaveFormBuffer) { unsafe { function!(42362, (*const Self, *const crate::BGSSaveFormBuffer))(core::ptr::from_ref(self), core::ptr::from_ref(buffer)) } }
     /// `PlayerControls::SetActivateEnabled`: ActivateHandler (PlayerControls+0x1a0) byte +0x1b = !enabled, when the handler exists
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 42345, rva 0x7ae150.

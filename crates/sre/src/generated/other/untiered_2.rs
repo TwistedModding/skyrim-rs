@@ -3,6 +3,76 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `AssignPointerValueToTarget` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 23542, rva 0x38de50).
+/// `undefined AssignPointerValueToTarget(undefined8 param_1, int param_2, byte param_3, longlong * param_4, longlong * param_5)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn assign_pointer_value_to_target(param_1: u64, param_2: i32, param_3: u8, param_4: *mut i64, param_5: *mut i64) -> u64 { unsafe { function!(23542, (u64, i32, u8, *mut i64, *mut i64) -> u64)(param_1, param_2, param_3, param_4, param_5) } }
+/// `AssignPooledStringFromCString` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 69175, rva 0xeb1430).
+/// `undefined AssignPooledStringFromCString(longlong * param_1, char * param_2, char * param_3, char * param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn assign_pooled_string_from_c_string(param_1: *mut i64, param_2: *mut c_char, param_3: *mut c_char, param_4: *mut c_char) -> u64 { unsafe { function!(69175, (*mut i64, *mut c_char, *mut c_char, *mut c_char) -> u64)(param_1, param_2, param_3, param_4) } }
+/// `AssignPooledWideString` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 69179, rva 0xeb1a90).
+/// `ulonglong * AssignPooledWideString(ulonglong * param_1, wchar_t * param_2, ulonglong param_3, ulonglong param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn assign_pooled_wide_string(param_1: *mut u64, param_2: *mut u16, param_3: u64, param_4: u64) -> *mut u64 { unsafe { function!(69179, (*mut u64, *mut u16, u64, u64) -> *mut u64)(param_1, param_2, param_3, param_4) } }
+/// `AssignPostOrderIndexDfs` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 66530, rva 0xc75250).
+/// `int AssignPostOrderIndexDfs(int param_1, longlong * param_2, longlong * param_3, int param_4, longlong * param_5, undefined8 param_6)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn assign_post_order_index_dfs(param_1: i32, param_2: *mut i64, param_3: *mut i64, param_4: i32, param_5: *mut i64, param_6: u64) -> i32 { unsafe { function!(66530, (i32, *mut i64, *mut i64, i32, *mut i64, u64) -> i32)(param_1, param_2, param_3, param_4, param_5, param_6) } }
+/// `AssignQwordVector` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 526253, rva 0x1337440).
+/// `longlong * AssignQwordVector(longlong * param_1, longlong * param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn assign_qword_vector(param_1: *mut i64, param_2: *mut i64) -> *mut i64 { unsafe { function!(526253, (*mut i64, *mut i64) -> *mut i64)(param_1, param_2) } }
+/// `AssignRangeRecord0x170Vector` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 523445, rva 0x141db0).
+/// `undefined AssignRangeRecord0x170Vector(ulonglong * param_1, longlong param_2, longlong param_3)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn assign_range_record0x170_vector(param_1: *mut u64, param_2: i64, param_3: i64) -> u64 { unsafe { function!(523445, (*mut u64, i64, i64) -> u64)(param_1, param_2, param_3) } }
+/// `AssignRangeVector2040` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 449202, rva 0x13764f0).
+/// `undefined AssignRangeVector2040(longlong * param_1, longlong param_2, longlong param_3)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn assign_range_vector2040(param_1: *mut i64, param_2: i64, param_3: i64) -> u64 { unsafe { function!(449202, (*mut i64, i64, i64) -> u64)(param_1, param_2, param_3) } }
+/// `AssignRangeVector50` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 96342, rva 0x1457d80).
+/// `undefined AssignRangeVector50(longlong * param_1, longlong * param_2, longlong * param_3)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn assign_range_vector50(param_1: *mut i64, param_2: *mut i64, param_3: *mut i64) -> u64 { unsafe { function!(96342, (*mut i64, *mut i64, *mut i64) -> u64)(param_1, param_2, param_3) } }
+/// `AssignRecord0x170Vector` (decompiler signature, tier untiered; ledger decompiler evidence, name high; id 523440, rva 0x1417a0).
+/// `undefined8 * AssignRecord0x170Vector(undefined8 * param_1, undefined8 * param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn assign_record0x170_vector(param_1: *mut u64, param_2: *mut u64) -> *mut u64 { unsafe { function!(523440, (*mut u64, *mut u64) -> *mut u64)(param_1, param_2) } }
+/// `AssignRecord28Array` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 523749, rva 0x5ac3b0).
+/// `undefined8 AssignRecord28Array(longlong * param_1, longlong * param_2, undefined8 param_3, ulonglong param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn assign_record28_array(param_1: *mut i64, param_2: *mut i64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(523749, (*mut i64, *mut i64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
 /// `AssignRefCountedBufferPtr` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 87420, rva 0xdfd6d0).
 /// `undefined8 * AssignRefCountedBufferPtr(undefined8 * param_1, undefined8 * param_2)`
 ///
@@ -10594,13 +10664,6 @@ pub unsafe fn cmd__is_furniture_entry_type_eval_sub0(param_1: i64) -> u32 { unsa
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn cmd__is_in_furniture_state_eval_sub0(param_1: i64, param_2: i32) -> u8 { unsafe { function!(37328, (i64, i32) -> u8)(param_1, param_2) } }
-/// `Cmd::IsLastIdlePlayed_Eval_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 39869, rva 0x7232d0).
-/// `undefined8 IsLastIdlePlayed_Eval_sub0(longlong param_1)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn cmd__is_last_idle_played_eval_sub0(param_1: i64) -> u64 { unsafe { function!(39869, (i64) -> u64)(param_1) } }
 /// `Cmd::IsLeftUp_Eval_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 78387, rva 0x106b6a0).
 /// `bool IsLeftUp_Eval_sub0(longlong * param_1, char * param_2, undefined8 param_3, undefined8 param_4)`
 ///
@@ -13261,80 +13324,3 @@ pub unsafe fn compute_linear_jacobian_and_eff_mass(param_1: *mut f32, param_2: *
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn compute_local_transforms_from_model_space(param_1: *mut i64) -> u64 { unsafe { function!(56986, (*mut i64) -> u64)(param_1) } }
-/// `ComputeLockCenterOffset` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 51962, rva 0x94e3d0).
-/// `uint * ComputeLockCenterOffset(longlong param_1, uint * param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn compute_lock_center_offset(param_1: i64, param_2: *mut u32) -> *mut u32 { unsafe { function!(51962, (i64, *mut u32) -> *mut u32)(param_1, param_2) } }
-/// `ComputeLogOfArg0` (decompiler signature, tier untiered; ledger decompiler evidence, name high; id 86214, rva 0xdb6c90).
-/// `undefined ComputeLogOfArg0(longlong param_1)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn compute_log_of_arg0(param_1: i64) -> u64 { unsafe { function!(86214, (i64) -> u64)(param_1) } }
-/// `ComputeMagicItemScore` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 45084, rva 0x82eaf0).
-/// `float ComputeMagicItemScore(longlong param_1, longlong param_2, int param_3, float param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn compute_magic_item_score(param_1: i64, param_2: i64, param_3: i32, param_4: f32) -> f32 { unsafe { function!(45084, (i64, i64, i32, f32) -> f32)(param_1, param_2, param_3, param_4) } }
-/// `ComputeMagicItemScoreForOwner` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 45083, rva 0x82e9f0).
-/// `undefined8 ComputeMagicItemScoreForOwner(longlong param_1, longlong * param_2, undefined4 param_3)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn compute_magic_item_score_for_owner(param_1: i64, param_2: *mut i64, param_3: u32) -> u64 { unsafe { function!(45083, (i64, *mut i64, u32) -> u64)(param_1, param_2, param_3) } }
-/// `ComputeMassAdjustedStagger` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 26428, rva 0x41f5e0).
-/// `float ComputeMassAdjustedStagger(longlong * param_1, longlong * param_2, longlong param_3, float param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn compute_mass_adjusted_stagger(param_1: *mut i64, param_2: *mut i64, param_3: i64, param_4: f32) -> f32 { unsafe { function!(26428, (*mut i64, *mut i64, i64, f32) -> f32)(param_1, param_2, param_3, param_4) } }
-/// `ComputeMassWeightedCenter` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 78108, rva 0x105a510).
-/// `undefined ComputeMassWeightedCenter(longlong * param_1, float * param_2, undefined4 * param_3)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn compute_mass_weighted_center(param_1: *mut i64, param_2: *mut f32, param_3: *mut u32) -> u64 { unsafe { function!(78108, (*mut i64, *mut f32, *mut u32) -> u64)(param_1, param_2, param_3) } }
-/// `ComputeMatrix1C0FromMatrix2x3` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 84940, rva 0x11884f0).
-/// `undefined ComputeMatrix1C0FromMatrix2x3(longlong * param_1, float * param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn compute_matrix1_c0_from_matrix2x3(param_1: *mut i64, param_2: *mut f32) -> u64 { unsafe { function!(84940, (*mut i64, *mut f32) -> u64)(param_1, param_2) } }
-/// `ComputeMaxExtentBitCount` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 81508, rva 0x112ee00).
-/// `undefined ComputeMaxExtentBitCount(longlong param_1)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn compute_max_extent_bit_count(param_1: i64) -> u64 { unsafe { function!(81508, (i64) -> u64)(param_1) } }
-/// `ComputeMaxOfArgs` (decompiler signature, tier untiered; ledger decompiler evidence, name high; id 86219, rva 0xdb6e40).
-/// `undefined ComputeMaxOfArgs(longlong param_1)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn compute_max_of_args(param_1: i64) -> u64 { unsafe { function!(86219, (i64) -> u64)(param_1) } }
-/// `ComputeMaximumOptimalRange` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 50704, rva 0x8f3680).
-/// `undefined ComputeMaximumOptimalRange(longlong param_1)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn compute_maximum_optimal_range(param_1: i64) -> u64 { unsafe { function!(50704, (i64) -> u64)(param_1) } }
-/// `ComputeMemberAlignment` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 57604, rva 0xab0c10).
-/// `int ComputeMemberAlignment(longlong param_1)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn compute_member_alignment(param_1: i64) -> i32 { unsafe { function!(57604, (i64) -> i32)(param_1) } }

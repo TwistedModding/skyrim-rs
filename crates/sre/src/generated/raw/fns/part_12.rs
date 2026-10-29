@@ -3,6 +3,174 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `GetExtraMultiBoundRefAtField70` at 0x301da0 (decompiler, high); signature (untiered): `undefined GetExtraMultiBoundRefAtField70(longlong param_1)`
+pub const GetExtraMultiBoundRefAtField70: u64 = 20243;
+/// `GetExtraOcclusionPlaneRefDataEntry` at 0x16af10 (decompiler, medium); signature (untiered): `undefined4 * GetExtraOcclusionPlaneRefDataEntry(longlong param_1, undefined4 * param_2, int param_3)`
+pub const GetExtraOcclusionPlaneRefDataEntry: u64 = 11848;
+/// `GetExtraOcclusionPlaneRefDataValue` at 0x16b070 (decompiler, medium); signature (medium): `longlong GetExtraOcclusionPlaneRefDataValue(longlong param_1)`
+pub const GetExtraOcclusionPlaneRefDataValue: u64 = 11850;
+/// `GetExtraOwnershipOwner` at 0x164570 (decompiler, medium); signature (medium): `longlong GetExtraOwnershipOwner(longlong param_1)`
+pub const GetExtraOwnershipOwner: u64 = 11692;
+/// `GetExtraOwnershipOwnerAt70` at 0x300730 (decompiler, high); signature (untiered): `undefined GetExtraOwnershipOwnerAt70(longlong param_1)`
+pub const GetExtraOwnershipOwnerAt70: u64 = 20197;
+/// `GetExtraPackageStartLocationData` at 0x164c50 (decompiler, high); signature (untiered): `longlong * GetExtraPackageStartLocationData(longlong param_1)`
+pub const GetExtraPackageStartLocationData: u64 = 11718;
+/// `GetExtraPortalRefDataHandleAt` at 0x16b1b0 (decompiler, medium); signature (medium): `undefined4 * GetExtraPortalRefDataHandleAt(longlong param_1, undefined4 * param_2, int param_3)`
+pub const GetExtraPortalRefDataHandleAt: u64 = 11852;
+/// `GetExtraRadius` at 0x16c300 (decompiler, medium); signature (medium): `undefined4 GetExtraRadius(longlong param_1)`
+pub const GetExtraRadius: u64 = 11875;
+/// `GetExtraRank` at 0x164600 (decompiler, high); signature (high): `undefined4 GetExtraRank(longlong param_1)`
+pub const GetExtraRank: u64 = 11695;
+/// `GetExtraRankOrZero` at 0x2be5e0 (decompiler, high); signature (high): `int GetExtraRankOrZero(longlong param_1)`
+pub const GetExtraRankOrZero: u64 = 18984;
+/// `GetExtraReflectorRefsField10Ptr` at 0x16cbf0 (decompiler, medium); signature (untiered): `longlong * GetExtraReflectorRefsField10Ptr(longlong param_1)`
+pub const GetExtraReflectorRefsField10Ptr: u64 = 11887;
+/// `GetExtraRoomRefDataField10Ptr` at 0x16b4d0 (decompiler, medium); signature (untiered): `longlong GetExtraRoomRefDataField10Ptr(longlong param_1)`
+pub const GetExtraRoomRefDataField10Ptr: u64 = 11854;
+/// `GetExtraRoomRefDataField28` at 0x16bb70 (decompiler, high); signature (untiered): `undefined8 GetExtraRoomRefDataField28(longlong param_1)`
+pub const GetExtraRoomRefDataField28: u64 = 11864;
+/// `GetExtraRoomRefDataValue` at 0x16b6b0 (decompiler, medium); signature (medium): `longlong GetExtraRoomRefDataValue(longlong param_1)`
+pub const GetExtraRoomRefDataValue: u64 = 11856;
+/// `GetExtraRoomRefDataValue_2` at 0x16bf70 (decompiler, medium); signature (medium): `longlong GetExtraRoomRefDataValue_2(longlong param_1)`
+pub const GetExtraRoomRefDataValue_2: u64 = 11870;
+/// `GetExtraScale` at 0x164a10 (decompiler, high); signature (high): `undefined4 GetExtraScale(longlong param_1)`
+pub const GetExtraScale: u64 = 11710;
+/// `GetExtraSeenDataValue` at 0x16e590 (decompiler, medium); signature (untiered): `longlong GetExtraSeenDataValue(longlong param_1)`
+pub const GetExtraSeenDataValue: u64 = 11921;
+/// `GetExtraShouldWear` at 0x164740 (decompiler, high); signature (high): `bool GetExtraShouldWear(longlong param_1, undefined1 * param_2)`
+pub const GetExtraShouldWear: u64 = 11697;
+/// `GetExtraSoul` at 0x164980 (decompiler, high); signature (untiered): `int GetExtraSoul(longlong param_1)`
+pub const GetExtraSoul: u64 = 11707;
+/// `GetExtraSoundData` at 0x164a40 (decompiler, medium); signature (untiered): `undefined GetExtraSoundData(longlong param_1, undefined4 * param_2)`
+pub const GetExtraSoundData: u64 = 11711;
+/// `GetExtraStartingPositionField10Ptr` at 0x164390 (decompiler, medium); signature (untiered): `longlong * GetExtraStartingPositionField10Ptr(longlong param_1)`
+pub const GetExtraStartingPositionField10Ptr: u64 = 11684;
+/// `GetExtraStartingPositionField28` at 0x16a340 (decompiler, medium); signature (untiered): `longlong GetExtraStartingPositionField28(longlong param_1)`
+pub const GetExtraStartingPositionField28: u64 = 11832;
+/// `GetExtraTerminalStateField10` at 0x163470 (decompiler, medium); signature (medium): `undefined1 GetExtraTerminalStateField10(longlong param_1)`
+pub const GetExtraTerminalStateField10: u64 = 11659;
+/// `GetExtraTerminalStateField11` at 0x1635e0 (decompiler, medium); signature (medium): `undefined1 GetExtraTerminalStateField11(longlong param_1)`
+pub const GetExtraTerminalStateField11: u64 = 11661;
+/// `GetExtraTimeLeft` at 0x164920 (decompiler, medium); signature (untiered): `undefined4 GetExtraTimeLeft(longlong param_1)`
+pub const GetExtraTimeLeft: u64 = 11705;
+/// `GetExtraType0x01Value` at 0x16f140 (decompiler, medium); signature (untiered): `longlong * GetExtraType0x01Value(longlong param_1)`
+pub const GetExtraType0x01Value: u64 = 11954;
+/// `GetExtraType0x54` at 0x1702b0 (decompiler, medium); signature (untiered): `undefined GetExtraType0x54(longlong param_1)`
+pub const GetExtraType0x54: u64 = 11982;
+/// `GetExtraType0x9BValue` at 0x1732b0 (decompiler, medium); signature (untiered): `longlong GetExtraType0x9BValue(longlong param_1)`
+pub const GetExtraType0x9BValue: u64 = 12061;
+/// `GetExtraType0xA9Pointer` at 0x173aa0 (decompiler, medium); signature (untiered): `undefined GetExtraType0xA9Pointer(longlong param_1, longlong * param_2)`
+pub const GetExtraType0xA9Pointer: u64 = 12075;
+/// `GetExtraType11Field10OrDefault` at 0x1643c0 (decompiler, medium); signature (untiered): `longlong * GetExtraType11Field10OrDefault(longlong param_1)`
+pub const GetExtraType11Field10OrDefault: u64 = 11685;
+/// `GetExtraType19Field10` at 0x164cc0 (decompiler, high); signature (untiered): `longlong GetExtraType19Field10(longlong param_1)`
+pub const GetExtraType19Field10: u64 = 11720;
+/// `GetExtraType1AField10` at 0x164d50 (decompiler, high); signature (high): `longlong GetExtraType1AField10(longlong param_1)`
+pub const GetExtraType1AField10: u64 = 11723;
+/// `GetExtraType1BValueForKey` at 0x1650a0 (decompiler, medium); signature (untiered): `undefined1 GetExtraType1BValueForKey(longlong param_1, longlong param_2)`
+pub const GetExtraType1BValueForKey: u64 = 11734;
+/// `GetExtraType1D` at 0x162d00 (decompiler, high); signature (untiered): `undefined GetExtraType1D(longlong param_1)`
+pub const GetExtraType1D: u64 = 11651;
+/// `GetExtraType1EField10` at 0x1693b0 (decompiler, high); signature (high): `undefined4 GetExtraType1EField10(longlong param_1)`
+pub const GetExtraType1EField10: u64 = 11805;
+/// `GetExtraType1EValuesOrDefaults` at 0x169350 (decompiler, medium); signature (medium): `undefined GetExtraType1EValuesOrDefaults(longlong param_1, undefined4 * param_2, undefined4 * param_3)`
+pub const GetExtraType1EValuesOrDefaults: u64 = 11804;
+/// `GetExtraType20Handle` at 0x1642a0 (decompiler, high); signature (untiered): `undefined4 * GetExtraType20Handle(longlong param_1, undefined4 * param_2)`
+pub const GetExtraType20Handle: u64 = 11682;
+/// `GetExtraType21Field10IfByte1AIs0B` at 0x164540 (decompiler, medium); signature (untiered): `longlong GetExtraType21Field10IfByte1AIs0B(longlong param_1)`
+pub const GetExtraType21Field10IfByte1AIs0B: u64 = 11691;
+/// `GetExtraType21Field10IfByte1AIs2B` at 0x164510 (decompiler, medium); signature (untiered): `longlong GetExtraType21Field10IfByte1AIs2B(longlong param_1)`
+pub const GetExtraType21Field10IfByte1AIs2B: u64 = 11690;
+/// `GetExtraType22Field10` at 0x1645d0 (decompiler, high); signature (untiered): `longlong GetExtraType22Field10(longlong param_1)`
+pub const GetExtraType22Field10: u64 = 11694;
+/// `GetExtraType22Field10FromExtraList` at 0x2be5d0 (decompiler, high); signature (untiered): `undefined GetExtraType22Field10FromExtraList(longlong param_1)`
+pub const GetExtraType22Field10FromExtraList: u64 = 18983;
+/// `GetExtraType22ValueFromRefOrLinkedRef` at 0x300560 (decompiler, medium); signature (untiered): `longlong GetExtraType22ValueFromRefOrLinkedRef(longlong param_1)`
+pub const GetExtraType22ValueFromRefOrLinkedRef: u64 = 20195;
+/// `GetExtraType24Value` at 0x1648f0 (decompiler, high); signature (high): `undefined2 GetExtraType24Value(longlong param_1)`
+pub const GetExtraType24Value: u64 = 11704;
+/// `GetExtraType28Value` at 0x164950 (decompiler, medium); signature (medium): `undefined4 GetExtraType28Value(longlong param_1)`
+pub const GetExtraType28Value: u64 = 11706;
+/// `GetExtraType29Field10` at 0x164450 (decompiler, high); signature (untiered): `longlong GetExtraType29Field10(longlong param_1)`
+pub const GetExtraType29Field10: u64 = 11686;
+/// `GetExtraType2AFromSelfOrLinkedRef` at 0x301580 (decompiler, medium); signature (untiered): `longlong * GetExtraType2AFromSelfOrLinkedRef(longlong param_1)`
+pub const GetExtraType2AFromSelfOrLinkedRef: u64 = 20228;
+/// `GetExtraType2AValue` at 0x164480 (decompiler, high); signature (high): `longlong GetExtraType2AValue(longlong param_1)`
+pub const GetExtraType2AValue: u64 = 11687;
+/// `GetExtraType2BValue` at 0x1644b0 (decompiler, high); signature (high): `longlong GetExtraType2BValue(longlong param_1)`
+pub const GetExtraType2BValue: u64 = 11688;
+/// `GetExtraType2BValueFromRefHandle` at 0x304bd0 (decompiler, high); signature (untiered): `longlong GetExtraType2BValueFromRefHandle(uint * param_1)`
+pub const GetExtraType2BValueFromRefHandle: u64 = 20302;
+/// `GetExtraType2DField18` at 0x1696a0 (decompiler, high); signature (high): `longlong GetExtraType2DField18(longlong param_1)`
+pub const GetExtraType2DField18: u64 = 11811;
+/// `GetExtraType2EShortField10` at 0x164e20 (decompiler, high); signature (high): `int GetExtraType2EShortField10(longlong param_1)`
+pub const GetExtraType2EShortField10: u64 = 11727;
+/// `GetExtraType34Field10` at 0x164df0 (decompiler, high); signature (untiered): `longlong GetExtraType34Field10(longlong param_1)`
+pub const GetExtraType34Field10: u64 = 11726;
+/// `GetExtraType39Field10` at 0x166270 (decompiler, high); signature (high): `longlong * GetExtraType39Field10(longlong param_1)`
+pub const GetExtraType39Field10: u64 = 11758;
+/// `GetExtraType3EField10` at 0x169c30 (decompiler, medium); signature (untiered): `undefined GetExtraType3EField10(longlong param_1)`
+pub const GetExtraType3EField10: u64 = 11821;
+/// `GetExtraType3EField18` at 0x169d90 (decompiler, high); signature (high): `undefined4 GetExtraType3EField18(longlong param_1)`
+pub const GetExtraType3EField18: u64 = 11823;
+/// `GetExtraType3FField10` at 0x169dc0 (decompiler, high); signature (untiered): `longlong GetExtraType3FField10(longlong param_1)`
+pub const GetExtraType3FField10: u64 = 11824;
+/// `GetExtraType3FField10FromField70` at 0x2e76f0 (decompiler, high); signature (untiered): `undefined GetExtraType3FField10FromField70(longlong param_1)`
+pub const GetExtraType3FField10FromField70: u64 = 19675;
+/// `GetExtraType41DataOrDefault` at 0x16fe90 (decompiler, high); signature (high): `longlong * GetExtraType41DataOrDefault(longlong param_1)`
+pub const GetExtraType41DataOrDefault: u64 = 11974;
+/// `GetExtraType42Field10` at 0x16e440 (decompiler, high); signature (high): `undefined4 GetExtraType42Field10(longlong param_1)`
+pub const GetExtraType42Field10: u64 = 11919;
+/// `GetExtraType48Field10` at 0x1708d0 (decompiler, high); signature (untiered): `longlong GetExtraType48Field10(longlong param_1)`
+pub const GetExtraType48Field10: u64 = 11993;
+/// `GetExtraType49Byte` at 0x163960 (decompiler, high); signature (high): `undefined1 GetExtraType49Byte(longlong param_1)`
+pub const GetExtraType49Byte: u64 = 11666;
+/// `GetExtraType4Data` at 0x16f540 (decompiler, high); signature (untiered): `longlong GetExtraType4Data(longlong param_1)`
+pub const GetExtraType4Data: u64 = 11958;
+/// `GetExtraType52Data` at 0x168070 (decompiler, high); signature (high): `longlong * GetExtraType52Data(longlong param_1)`
+pub const GetExtraType52Data: u64 = 11788;
+/// `GetExtraType52ValueForRefHandle` at 0x168730 (decompiler, medium); signature (untiered): `int GetExtraType52ValueForRefHandle(longlong param_1, longlong param_2)`
+pub const GetExtraType52ValueForRefHandle: u64 = 11792;
+/// `GetExtraType53Field10` at 0x168b00 (decompiler, high); signature (untiered): `longlong * GetExtraType53Field10(longlong param_1)`
+pub const GetExtraType53Field10: u64 = 11796;
+/// `GetExtraType53Field20OrDefault` at 0x169100 (decompiler, high); signature (untiered): `undefined4 GetExtraType53Field20OrDefault(longlong param_1)`
+pub const GetExtraType53Field20OrDefault: u64 = 11800;
+/// `GetExtraType55Value` at 0x170dc0 (decompiler, high); signature (untiered): `undefined4 GetExtraType55Value(longlong param_1)`
+pub const GetExtraType55Value: u64 = 12004;
+/// `GetExtraType56Data` at 0x16fa80 (decompiler, high); signature (untiered): `longlong GetExtraType56Data(longlong param_1)`
+pub const GetExtraType56Data: u64 = 11966;
+/// `GetExtraType57` at 0x16fc10 (decompiler, medium); signature (untiered): `undefined GetExtraType57(longlong param_1)`
+pub const GetExtraType57: u64 = 11970;
+/// `GetExtraType58Field10` at 0x16fbd0 (decompiler, high); signature (untiered): `longlong GetExtraType58Field10(longlong param_1)`
+pub const GetExtraType58Field10: u64 = 11968;
+/// `GetExtraType5CField18` at 0x2ef7d0 (decompiler, medium); signature (untiered): `undefined8 GetExtraType5CField18(longlong param_1)`
+pub const GetExtraType5CField18: u64 = 19767;
+/// `GetExtraType61Field10Ptr` at 0x16cbc0 (decompiler, high); signature (untiered): `longlong * GetExtraType61Field10Ptr(longlong param_1)`
+pub const GetExtraType61Field10Ptr: u64 = 11886;
+/// `GetExtraType65Field10` at 0x171550 (decompiler, high); signature (untiered): `longlong GetExtraType65Field10(longlong param_1)`
+pub const GetExtraType65Field10: u64 = 12017;
+/// `GetExtraType67Value` at 0x16d850 (decompiler, high); signature (high): `longlong GetExtraType67Value(longlong param_1)`
+pub const GetExtraType67Value: u64 = 11898;
+/// `GetExtraType68Value` at 0x169130 (decompiler, high); signature (high): `undefined4 * GetExtraType68Value(longlong param_1, undefined4 * param_2)`
+pub const GetExtraType68Value: u64 = 11801;
+/// `GetExtraType6BField10` at 0x16d980 (decompiler, high); signature (high): `longlong GetExtraType6BField10(longlong param_1)`
+pub const GetExtraType6BField10: u64 = 11900;
+/// `GetExtraType6DValue` at 0x16aa20 (decompiler, high); signature (high): `longlong GetExtraType6DValue(longlong param_1)`
+pub const GetExtraType6DValue: u64 = 11842;
+/// `GetExtraType6EValue` at 0x16c0b0 (decompiler, high); signature (high): `longlong GetExtraType6EValue(longlong param_1)`
+pub const GetExtraType6EValue: u64 = 11872;
+/// `GetExtraType73Value` at 0x16be30 (decompiler, high); signature (high): `longlong GetExtraType73Value(longlong param_1)`
+pub const GetExtraType73Value: u64 = 11868;
+/// `GetExtraType74Value` at 0x16abc0 (decompiler, high); signature (high): `longlong GetExtraType74Value(longlong param_1)`
+pub const GetExtraType74Value: u64 = 11844;
+/// `GetExtraType75Value` at 0x16ad60 (decompiler, high); signature (high): `longlong GetExtraType75Value(longlong param_1)`
+pub const GetExtraType75Value: u64 = 11846;
+/// `GetExtraType77Field10Field30` at 0x16bbb0 (decompiler, medium); signature (untiered): `undefined8 GetExtraType77Field10Field30(longlong param_1)`
+pub const GetExtraType77Field10Field30: u64 = 11865;
+/// `GetExtraType7BHandle` at 0x172130 (decompiler, high); signature (high): `undefined4 * GetExtraType7BHandle(longlong param_1, undefined4 * param_2)`
+pub const GetExtraType7BHandle: u64 = 12033;
+/// `GetExtraType80Field10Ptr` at 0x16cfa0 (decompiler, high); signature (untiered): `longlong * GetExtraType80Field10Ptr(longlong param_1)`
+pub const GetExtraType80Field10Ptr: u64 = 11891;
 /// `GetExtraType81Data` at 0x16cfd0 (decompiler, high); signature (untiered): `longlong * GetExtraType81Data(longlong param_1)`
 pub const GetExtraType81Data: u64 = 11892;
 /// `GetExtraType85Field10` at 0x1672a0 (decompiler, high); signature (untiered): `undefined4 * GetExtraType85Field10(longlong param_1, undefined4 * param_2)`
@@ -795,8 +963,6 @@ pub const GetField48: u64 = 37609;
 pub const GetField48AsNumber: u64 = 86302;
 /// `GetField48AsNumber_2` at 0xdbc380 (decompiler, medium); signature (untiered): `undefined GetField48AsNumber_2(longlong param_1)`
 pub const GetField48AsNumber_2: u64 = 86332;
-/// `GetField48Field10` at 0x5bb090 (decompiler, high); signature (untiered): `undefined8 GetField48Field10(longlong param_1)`
-pub const GetField48Field10: u64 = 34056;
 /// `GetField48Field10Field70IfByte1AIs4` at 0x5da320 (decompiler, medium); signature (untiered): `undefined GetField48Field10Field70IfByte1AIs4(longlong param_1)`
 pub const GetField48Field10Field70IfByte1AIs4: u64 = 34741;
 /// `GetField48Pair` at 0x1010920 (decompiler, high); signature (untiered): `undefined GetField48Pair(longlong param_1, undefined8 * param_2)`
@@ -3847,8 +4013,6 @@ pub const HandleWinHttpStatusCallback_2: u64 = 527629;
 pub const HandlerCreationMissPolicy_BSTSmartPointer_IHandlerFunctor_Actor_BSFixedStringCI_BSTSmartPointerI_1bbf49d2990a: u64 = 43641;
 /// `HarvestIntoReference` at 0x1ee5b0 (decompiler, medium); signature (untiered): `undefined1 HarvestIntoReference(longlong param_1, longlong * param_2, longlong * param_3)`
 pub const HarvestIntoReference: u64 = 14864;
-/// `HasActiveEffectWithBase` at 0x5d16d0 (decompiler, medium); signature (untiered): `char HasActiveEffectWithBase(longlong * param_1, longlong param_2)`
-pub const HasActiveEffectWithBase: u64 = 34517;
 /// `HasAllMastersAndNoneAllowedByPlatform` at 0x5b5970 (decompiler, medium); signature (medium): `ulonglong HasAllMastersAndNoneAllowedByPlatform(longlong param_1)`
 pub const HasAllMastersAndNoneAllowedByPlatform: u64 = 442223;
 /// `HasAllRequiredItems` at 0x25e420 (decompiler, medium); signature (medium): `bool HasAllRequiredItems(longlong param_1)`
@@ -4049,8 +4213,6 @@ pub const HasLineOfSightToRef: u64 = 40520;
 pub const HasLineOfSightToRef_2: u64 = 37767;
 /// `HasListItemWithByte16Set` at 0x3e1970 (decompiler, medium); signature (medium): `undefined HasListItemWithByte16Set(longlong param_1)`
 pub const HasListItemWithByte16Set: u64 = 25251;
-/// `HasMagicEffectWithKeyword` at 0x5d1760 (decompiler, medium); signature (medium): `bool HasMagicEffectWithKeyword(longlong * param_1, undefined8 param_2, undefined8 * param_3)`
-pub const HasMagicEffectWithKeyword: u64 = 34518;
 /// `HasMappedEntryWithField32` at 0x38ce30 (decompiler, medium); signature (medium): `char HasMappedEntryWithField32(longlong param_1, uint param_2)`
 pub const HasMappedEntryWithField32: u64 = 23521;
 /// `HasMappedRefWithField14` at 0x3d5c70 (decompiler, medium); signature (medium): `char HasMappedRefWithField14(longlong param_1, int param_2)`
@@ -4555,10 +4717,12 @@ pub const HighActorCuller__dtor: u64 = 40333;
 pub const HighActorCuller__vdtor: u64 = 40337;
 /// `HighActorCuller::vfunc_1` at 0x73c5c0 (rtti, high); signature (low): `undefined vfunc_1(HighActorCuller * this, TESObjectREFR * param_1)`
 pub const HighActorCuller__vfunc_1: u64 = 40335;
+/// `HitFrameHandler::Handle` at 0x7cccc0 (semantic, high); signature (untiered): `longlong Handle(HitFrameHandler * this, Actor * param_1, longlong * param_2, undefined8 param_3)`; semantic: processes the melee hit frame and moves attack state 2 (Swing) to 3 (Hit) (high); signature `bool (HitFrameHandler* this, Actor* actor, BSFixedString* tag)`
+pub const HitFrameHandler__Handle: u64 = 42828;
+/// `HitFrameHandler::Handle` as a function pointer type (high).
+pub type HitFrameHandler__Handle_fn = unsafe extern "C" fn(this: *mut crate::HitFrameHandler, actor: *mut crate::Actor, tag: *mut crate::BSFixedString) -> bool;
 /// `HitFrameHandler::vdtor` at 0x7d4150 (layout_inference, medium); signature (low): `HitFrameHandler * vdtor(HitFrameHandler * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const HitFrameHandler__vdtor: u64 = 43337;
-/// `HitFrameHandler::vfunc_1` at 0x7cccc0 (rtti, high); signature (low): `longlong vfunc_1(HitFrameHandler * this, Actor * param_1, longlong * param_2, undefined8 param_3)`
-pub const HitFrameHandler__vfunc_1: u64 = 42828;
 /// `HitTestChildrenAtPoint` at 0xd64200 (decompiler, medium); signature (untiered): `undefined HitTestChildrenAtPoint(longlong * param_1, float * param_2, byte param_3)`
 pub const HitTestChildrenAtPoint: u64 = 84268;
 /// `HitTestPackedPathEdges` at 0xe227b0 (decompiler, medium); signature (untiered): `undefined HitTestPackedPathEdges(longlong * param_1, longlong param_2, longlong param_3, float param_4, float param_5)`
@@ -8903,129 +9067,3 @@ pub const INISetting_fDecalLODFadeStart_LightingShader__atexit: u64 = 174446;
 pub const INISetting_fDecalLODFadeStart_LightingShader__init: u64 = 10283;
 /// `INISetting_fDecalLifetime_Display__atexit` at 0x1741970 (crt_init, medium); signature (high): `void INISetting_fDecalLifetime_Display__atexit(void)`
 pub const INISetting_fDecalLifetime_Display__atexit: u64 = 165670;
-/// `INISetting_fDecalLifetime_Display__init` at 0xfe60 (crt_init, medium); signature (high): `void INISetting_fDecalLifetime_Display__init(void)`
-pub const INISetting_fDecalLifetime_Display__init: u64 = 463;
-/// `INISetting_fDecapInitialSpeed_Combat__atexit` at 0x1798de0 (crt_init, medium); signature (high): `void INISetting_fDecapInitialSpeed_Combat__atexit(void)`
-pub const INISetting_fDecapInitialSpeed_Combat__atexit: u64 = 171204;
-/// `INISetting_fDecapInitialSpeed_Combat__init` at 0xa16d0 (crt_init, medium); signature (high): `void INISetting_fDecapInitialSpeed_Combat__init(void)`
-pub const INISetting_fDecapInitialSpeed_Combat__init: u64 = 6023;
-/// `INISetting_fDecreaseDRMilliseconds_Display__atexit` at 0x17b31b0 (crt_init, medium); signature (high): `void INISetting_fDecreaseDRMilliseconds_Display__atexit(void)`
-pub const INISetting_fDecreaseDRMilliseconds_Display__atexit: u64 = 173826;
-/// `INISetting_fDecreaseDRMilliseconds_Display__init` at 0xe9ef0 (crt_init, medium); signature (high): `void INISetting_fDecreaseDRMilliseconds_Display__init(void)`
-pub const INISetting_fDecreaseDRMilliseconds_Display__init: u64 = 9566;
-/// `INISetting_fDefault1stPersonFOV_Display__atexit` at 0x17b2750 (crt_init, medium); signature (high): `void INISetting_fDefault1stPersonFOV_Display__atexit(void)`
-pub const INISetting_fDefault1stPersonFOV_Display__atexit: u64 = 173781;
-/// `INISetting_fDefault1stPersonFOV_Display__init` at 0xe8c50 (crt_init, medium); signature (high): `void INISetting_fDefault1stPersonFOV_Display__init(void)`
-pub const INISetting_fDefault1stPersonFOV_Display__init: u64 = 9499;
-/// `INISetting_fDefaultAutoVanityZoom_Camera__atexit` at 0x17a2e50 (crt_init, medium); signature (high): `void INISetting_fDefaultAutoVanityZoom_Camera__atexit(void)`
-pub const INISetting_fDefaultAutoVanityZoom_Camera__atexit: u64 = 172144;
-/// `INISetting_fDefaultAutoVanityZoom_Camera__init` at 0xb13a0 (crt_init, medium); signature (high): `void INISetting_fDefaultAutoVanityZoom_Camera__init(void)`
-pub const INISetting_fDefaultAutoVanityZoom_Camera__init: u64 = 6684;
-/// `INISetting_fDefaultAvoidBoxAvoidNodeRadius_Pathfinding__atexit` at 0x17b77b0 (crt_init, medium); signature (high): `void INISetting_fDefaultAvoidBoxAvoidNodeRadius_Pathfinding__atexit(void)`
-pub const INISetting_fDefaultAvoidBoxAvoidNodeRadius_Pathfinding__atexit: u64 = 174223;
-/// `INISetting_fDefaultAvoidBoxAvoidNodeRadius_Pathfinding__init` at 0xf52e0 (crt_init, medium); signature (high): `void INISetting_fDefaultAvoidBoxAvoidNodeRadius_Pathfinding__init(void)`
-pub const INISetting_fDefaultAvoidBoxAvoidNodeRadius_Pathfinding__init: u64 = 10078;
-/// `INISetting_fDefaultAvoidNodeCost_Pathfinding__atexit` at 0x17b6c40 (crt_init, medium); signature (high): `void INISetting_fDefaultAvoidNodeCost_Pathfinding__atexit(void)`
-pub const INISetting_fDefaultAvoidNodeCost_Pathfinding__atexit: u64 = 174148;
-/// `INISetting_fDefaultAvoidNodeCost_Pathfinding__init` at 0xf3240 (crt_init, medium); signature (high): `void INISetting_fDefaultAvoidNodeCost_Pathfinding__init(void)`
-pub const INISetting_fDefaultAvoidNodeCost_Pathfinding__init: u64 = 10025;
-/// `INISetting_fDefaultFOV_Display__atexit` at 0x17c1740 (crt_init, medium); signature (high): `void INISetting_fDefaultFOV_Display__atexit(void)`
-pub const INISetting_fDefaultFOV_Display__atexit: u64 = 174439;
-/// `INISetting_fDefaultFOV_Display__init` at 0x100400 (crt_init, medium); signature (high): `void INISetting_fDefaultFOV_Display__init(void)`
-pub const INISetting_fDefaultFOV_Display__init: u64 = 10276;
-/// `INISetting_fDefaultMasterVolume_Audio__atexit` at 0x17957c0 (crt_init, medium); signature (high): `void INISetting_fDefaultMasterVolume_Audio__atexit(void)`
-pub const INISetting_fDefaultMasterVolume_Audio__atexit: u64 = 170885;
-/// `INISetting_fDefaultMasterVolume_Audio__init` at 0x9c5d0 (crt_init, medium); signature (high): `void INISetting_fDefaultMasterVolume_Audio__init(void)`
-pub const INISetting_fDefaultMasterVolume_Audio__init: u64 = 5712;
-/// `INISetting_fDefaultPreferredFactor_Pathfinding__atexit` at 0x17b7b00 (crt_init, medium); signature (high): `void INISetting_fDefaultPreferredFactor_Pathfinding__atexit(void)`
-pub const INISetting_fDefaultPreferredFactor_Pathfinding__atexit: u64 = 174245;
-/// `INISetting_fDefaultPreferredFactor_Pathfinding__init` at 0xf5bc0 (crt_init, medium); signature (high): `void INISetting_fDefaultPreferredFactor_Pathfinding__init(void)`
-pub const INISetting_fDefaultPreferredFactor_Pathfinding__init: u64 = 10095;
-/// `INISetting_fDefaultStaticAvoidNodeRadius_Pathfinding__atexit` at 0x17b6c90 (crt_init, medium); signature (high): `void INISetting_fDefaultStaticAvoidNodeRadius_Pathfinding__atexit(void)`
-pub const INISetting_fDefaultStaticAvoidNodeRadius_Pathfinding__atexit: u64 = 174149;
-/// `INISetting_fDefaultStaticAvoidNodeRadius_Pathfinding__init` at 0xf32c0 (crt_init, medium); signature (high): `void INISetting_fDefaultStaticAvoidNodeRadius_Pathfinding__init(void)`
-pub const INISetting_fDefaultStaticAvoidNodeRadius_Pathfinding__init: u64 = 10026;
-/// `INISetting_fDefaultTangentSmoothingFactor_Pathfinding__atexit` at 0x17b7b50 (crt_init, medium); signature (high): `void INISetting_fDefaultTangentSmoothingFactor_Pathfinding__atexit(void)`
-pub const INISetting_fDefaultTangentSmoothingFactor_Pathfinding__atexit: u64 = 174246;
-/// `INISetting_fDefaultTangentSmoothingFactor_Pathfinding__init` at 0xf5c40 (crt_init, medium); signature (high): `void INISetting_fDefaultTangentSmoothingFactor_Pathfinding__init(void)`
-pub const INISetting_fDefaultTangentSmoothingFactor_Pathfinding__init: u64 = 10096;
-/// `INISetting_fDefaultWaterfallCurrentVelocity_HAVOK__atexit` at 0x17494c0 (crt_init, medium); signature (high): `void INISetting_fDefaultWaterfallCurrentVelocity_HAVOK__atexit(void)`
-pub const INISetting_fDefaultWaterfallCurrentVelocity_HAVOK__atexit: u64 = 166270;
-/// `INISetting_fDefaultWaterfallCurrentVelocity_HAVOK__init` at 0x1b9a0 (crt_init, medium); signature (high): `void INISetting_fDefaultWaterfallCurrentVelocity_HAVOK__init(void)`
-pub const INISetting_fDefaultWaterfallCurrentVelocity_HAVOK__init: u64 = 1060;
-/// `INISetting_fDefaultWorldFOV_Display__atexit` at 0x17b27a0 (crt_init, medium); signature (high): `void INISetting_fDefaultWorldFOV_Display__atexit(void)`
-pub const INISetting_fDefaultWorldFOV_Display__atexit: u64 = 173782;
-/// `INISetting_fDefaultWorldFOV_Display__init` at 0xe8cd0 (crt_init, medium); signature (high): `void INISetting_fDefaultWorldFOV_Display__init(void)`
-pub const INISetting_fDefaultWorldFOV_Display__init: u64 = 9500;
-/// `INISetting_fDesiredVel_RagdollAnim__atexit` at 0x17b3c30 (crt_init, medium); signature (high): `void INISetting_fDesiredVel_RagdollAnim__atexit(void)`
-pub const INISetting_fDesiredVel_RagdollAnim__atexit: u64 = 173865;
-/// `INISetting_fDesiredVel_RagdollAnim__init` at 0xeaf60 (crt_init, medium); signature (high): `void INISetting_fDesiredVel_RagdollAnim__init(void)`
-pub const INISetting_fDesiredVel_RagdollAnim__init: u64 = 9609;
-/// `INISetting_fDetectionUpdateTimeSec_RagdollAnim__atexit` at 0x17b3c80 (crt_init, medium); signature (high): `void INISetting_fDetectionUpdateTimeSec_RagdollAnim__atexit(void)`
-pub const INISetting_fDetectionUpdateTimeSec_RagdollAnim__atexit: u64 = 173866;
-/// `INISetting_fDetectionUpdateTimeSec_RagdollAnim__init` at 0xeafe0 (crt_init, medium); signature (high): `void INISetting_fDetectionUpdateTimeSec_RagdollAnim__init(void)`
-pub const INISetting_fDetectionUpdateTimeSec_RagdollAnim__init: u64 = 9610;
-/// `INISetting_fDialogueHardStopAngle1P_Controls__atexit` at 0x179e810 (crt_init, medium); signature (high): `void INISetting_fDialogueHardStopAngle1P_Controls__atexit(void)`
-pub const INISetting_fDialogueHardStopAngle1P_Controls__atexit: u64 = 171655;
-/// `INISetting_fDialogueHardStopAngle1P_Controls__init` at 0xaa1a0 (crt_init, medium); signature (high): `void INISetting_fDialogueHardStopAngle1P_Controls__init(void)`
-pub const INISetting_fDialogueHardStopAngle1P_Controls__init: u64 = 6423;
-/// `INISetting_fDialogueHardStopAngle3P_Controls__atexit` at 0x179e860 (crt_init, medium); signature (high): `void INISetting_fDialogueHardStopAngle3P_Controls__atexit(void)`
-pub const INISetting_fDialogueHardStopAngle3P_Controls__atexit: u64 = 171656;
-/// `INISetting_fDialogueHardStopAngle3P_Controls__init` at 0xaa220 (crt_init, medium); signature (high): `void INISetting_fDialogueHardStopAngle3P_Controls__init(void)`
-pub const INISetting_fDialogueHardStopAngle3P_Controls__init: u64 = 6424;
-/// `INISetting_fDialogueHeadPitchExaggeration_Audio__atexit` at 0x1743890 (crt_init, medium); signature (high): `void INISetting_fDialogueHeadPitchExaggeration_Audio__atexit(void)`
-pub const INISetting_fDialogueHeadPitchExaggeration_Audio__atexit: u64 = 165783;
-/// `INISetting_fDialogueHeadPitchExaggeration_Audio__init` at 0x12a50 (crt_init, medium); signature (high): `void INISetting_fDialogueHeadPitchExaggeration_Audio__init(void)`
-pub const INISetting_fDialogueHeadPitchExaggeration_Audio__init: u64 = 579;
-/// `INISetting_fDialogueHeadRollExaggeration_Audio__atexit` at 0x17438e0 (crt_init, medium); signature (high): `void INISetting_fDialogueHeadRollExaggeration_Audio__atexit(void)`
-pub const INISetting_fDialogueHeadRollExaggeration_Audio__atexit: u64 = 165784;
-/// `INISetting_fDialogueHeadRollExaggeration_Audio__init` at 0x12ad0 (crt_init, medium); signature (high): `void INISetting_fDialogueHeadRollExaggeration_Audio__init(void)`
-pub const INISetting_fDialogueHeadRollExaggeration_Audio__init: u64 = 580;
-/// `INISetting_fDialogueHeadYawExaggeration_Audio__atexit` at 0x1743930 (crt_init, medium); signature (high): `void INISetting_fDialogueHeadYawExaggeration_Audio__atexit(void)`
-pub const INISetting_fDialogueHeadYawExaggeration_Audio__atexit: u64 = 165785;
-/// `INISetting_fDialogueHeadYawExaggeration_Audio__init` at 0x12b50 (crt_init, medium); signature (high): `void INISetting_fDialogueHeadYawExaggeration_Audio__init(void)`
-pub const INISetting_fDialogueHeadYawExaggeration_Audio__init: u64 = 581;
-/// `INISetting_fDialogueRotationPitchOffset_Dialogue__atexit` at 0x179be40 (crt_init, medium); signature (high): `void INISetting_fDialogueRotationPitchOffset_Dialogue__atexit(void)`
-pub const INISetting_fDialogueRotationPitchOffset_Dialogue__atexit: u64 = 171441;
-/// `INISetting_fDialogueRotationPitchOffset_Dialogue__init` at 0xa51b0 (crt_init, medium); signature (high): `void INISetting_fDialogueRotationPitchOffset_Dialogue__init(void)`
-pub const INISetting_fDialogueRotationPitchOffset_Dialogue__init: u64 = 6227;
-/// `INISetting_fDialogueRotationSecs_Dialogue__atexit` at 0x179be90 (crt_init, medium); signature (high): `void INISetting_fDialogueRotationSecs_Dialogue__atexit(void)`
-pub const INISetting_fDialogueRotationSecs_Dialogue__atexit: u64 = 171442;
-/// `INISetting_fDialogueRotationSecs_Dialogue__init` at 0xa5230 (crt_init, medium); signature (high): `void INISetting_fDialogueRotationSecs_Dialogue__init(void)`
-pub const INISetting_fDialogueRotationSecs_Dialogue__init: u64 = 6228;
-/// `INISetting_fDialogueSoftStopAngle1P_Controls__atexit` at 0x179e8b0 (crt_init, medium); signature (high): `void INISetting_fDialogueSoftStopAngle1P_Controls__atexit(void)`
-pub const INISetting_fDialogueSoftStopAngle1P_Controls__atexit: u64 = 171657;
-/// `INISetting_fDialogueSoftStopAngle1P_Controls__init` at 0xaa2a0 (crt_init, medium); signature (high): `void INISetting_fDialogueSoftStopAngle1P_Controls__init(void)`
-pub const INISetting_fDialogueSoftStopAngle1P_Controls__init: u64 = 6425;
-/// `INISetting_fDialogueSoftStopAngle3P_Controls__atexit` at 0x179e900 (crt_init, medium); signature (high): `void INISetting_fDialogueSoftStopAngle3P_Controls__atexit(void)`
-pub const INISetting_fDialogueSoftStopAngle3P_Controls__atexit: u64 = 171658;
-/// `INISetting_fDialogueSoftStopAngle3P_Controls__init` at 0xaa320 (crt_init, medium); signature (high): `void INISetting_fDialogueSoftStopAngle3P_Controls__init(void)`
-pub const INISetting_fDialogueSoftStopAngle3P_Controls__init: u64 = 6426;
-/// `INISetting_fDirectionalDeadzone_Controls__atexit` at 0x17a8790 (crt_init, medium); signature (high): `void INISetting_fDirectionalDeadzone_Controls__atexit(void)`
-pub const INISetting_fDirectionalDeadzone_Controls__atexit: u64 = 172707;
-/// `INISetting_fDirectionalDeadzone_Controls__init` at 0xbbaf0 (crt_init, medium); signature (high): `void INISetting_fDirectionalDeadzone_Controls__init(void)`
-pub const INISetting_fDirectionalDeadzone_Controls__init: u64 = 7268;
-/// `INISetting_fDistFromPathForFollowingRadiusMult_Pathfinding__atexit` at 0x17b7bf0 (crt_init, medium); signature (high): `void INISetting_fDistFromPathForFollowingRadiusMult_Pathfinding__atexit(void)`
-pub const INISetting_fDistFromPathForFollowingRadiusMult_Pathfinding__atexit: u64 = 174248;
-/// `INISetting_fDistFromPathForFollowingRadiusMult_Pathfinding__init` at 0xf5d30 (crt_init, medium); signature (high): `void INISetting_fDistFromPathForFollowingRadiusMult_Pathfinding__init(void)`
-pub const INISetting_fDistFromPathForFollowingRadiusMult_Pathfinding__init: u64 = 10098;
-/// `INISetting_fDistanceMultiplier_LOD__atexit` at 0x173ef60 (crt_init, medium); signature (high): `void INISetting_fDistanceMultiplier_LOD__atexit(void)`
-pub const INISetting_fDistanceMultiplier_LOD__atexit: u64 = 165463;
-/// `INISetting_fDistanceMultiplier_LOD__init` at 0xbc70 (crt_init, medium); signature (high): `void INISetting_fDistanceMultiplier_LOD__init(void)`
-pub const INISetting_fDistanceMultiplier_LOD__init: u64 = 268;
-/// `INISetting_fDragonCameraDollyTime_Camera__atexit` at 0x17908f0 (crt_init, medium); signature (high): `void INISetting_fDragonCameraDollyTime_Camera__atexit(void)`
-pub const INISetting_fDragonCameraDollyTime_Camera__atexit: u64 = 170554;
-/// `INISetting_fDragonCameraDollyTime_Camera__init` at 0x90e30 (crt_init, medium); signature (high): `void INISetting_fDragonCameraDollyTime_Camera__init(void)`
-pub const INISetting_fDragonCameraDollyTime_Camera__init: u64 = 5323;
-/// `INISetting_fDragonLandingForPlayerNavMeshSize_GENERAL__atexit` at 0x179a300 (crt_init, medium); signature (high): `void INISetting_fDragonLandingForPlayerNavMeshSize_GENERAL__atexit(void)`
-pub const INISetting_fDragonLandingForPlayerNavMeshSize_GENERAL__atexit: u64 = 171344;
-/// `INISetting_fDragonLandingForPlayerNavMeshSize_GENERAL__init` at 0xa3920 (crt_init, medium); signature (high): `void INISetting_fDragonLandingForPlayerNavMeshSize_GENERAL__init(void)`
-pub const INISetting_fDragonLandingForPlayerNavMeshSize_GENERAL__init: u64 = 6150;
-/// `INISetting_fDragonLandingForPlayerSearchDist_GENERAL__atexit` at 0x179a350 (crt_init, medium); signature (high): `void INISetting_fDragonLandingForPlayerSearchDist_GENERAL__atexit(void)`
-pub const INISetting_fDragonLandingForPlayerSearchDist_GENERAL__atexit: u64 = 171345;
-/// `INISetting_fDragonLandingForPlayerSearchDist_GENERAL__init` at 0xa39a0 (crt_init, medium); signature (high): `void INISetting_fDragonLandingForPlayerSearchDist_GENERAL__init(void)`
-pub const INISetting_fDragonLandingForPlayerSearchDist_GENERAL__init: u64 = 6151;
-/// `INISetting_fDragonMaxAngleBeforeTurn_Camera__atexit` at 0x1790940 (crt_init, medium); signature (high): `void INISetting_fDragonMaxAngleBeforeTurn_Camera__atexit(void)`
-pub const INISetting_fDragonMaxAngleBeforeTurn_Camera__atexit: u64 = 170555;
-/// `INISetting_fDragonMaxAngleBeforeTurn_Camera__init` at 0x90eb0 (crt_init, medium); signature (high): `void INISetting_fDragonMaxAngleBeforeTurn_Camera__init(void)`
-pub const INISetting_fDragonMaxAngleBeforeTurn_Camera__init: u64 = 5324;

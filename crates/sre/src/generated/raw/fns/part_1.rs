@@ -39,6 +39,10 @@ pub type AIProcess__GetHighField3B8Address_fn = unsafe extern "C" fn(this: *mut 
 pub const AIProcess__GetHighPoint424: u64 = 39597;
 /// `AIProcess::GetHighPoint424` as a function pointer type (high).
 pub type AIProcess__GetHighPoint424_fn = unsafe extern "C" fn(this: *mut crate::AIProcess) -> *mut crate::NiPoint3;
+/// `AIProcess::GetLastIdlePlayed` at 0x7232d0 (semantic, high); signature (untiered): `undefined8 GetLastIdlePlayed(longlong param_1)`; semantic: middleHigh (+8) ->+0x280, or null without middle-high data (high); signature `TESIdleForm* (AIProcess* this)`
+pub const AIProcess__GetLastIdlePlayed: u64 = 39869;
+/// `AIProcess::GetLastIdlePlayed` as a function pointer type (high).
+pub type AIProcess__GetLastIdlePlayed_fn = unsafe extern "C" fn(this: *mut crate::AIProcess) -> *mut crate::TESIdleForm;
 /// `AIProcess::GetLoadingMenuClosed` at 0x700d60 (semantic, high); signature (untiered): `longlong GetLoadingMenuClosed(longlong param_1)`; semantic: high process data (+0x10) byte +0x45e != 0 (false without high data) (high); signature `bool (AIProcess* this)`
 pub const AIProcess__GetLoadingMenuClosed: u64 = 39543;
 /// `AIProcess::GetLoadingMenuClosed` as a function pointer type (high).
@@ -51,6 +55,8 @@ pub type AIProcess__GetMovementSpeed_fn = unsafe extern "C" fn(this: *const crat
 pub const AIProcess__HasMiddleHighField210: u64 = 39792;
 /// `AIProcess::HasMiddleHighField210` as a function pointer type (high).
 pub type AIProcess__HasMiddleHighField210_fn = unsafe extern "C" fn(this: *mut crate::AIProcess) -> bool;
+/// `AIProcess::PlayIdle` at 0x6f0a20 (semantic, medium); signature (untiered): `ulonglong PlayIdle(longlong param_1, longlong * param_2, longlong param_3, longlong * param_4, char param_5, char param_6, longlong param_7)`; semantic: builds a TESActionData for the default-object action (0x40 from Papyrus) carrying the idle (+0x48) and runs it through LoadActionAnimationWithCallback 0x703360; returns whether the graph accepted it. Refuses during player VATS playback (VATS+0x20 == 4) and for actors in some states; it stores no 'current idle' pointer (medium); signature `bool (AIProcess* this, Actor* actor, u32 actionDefaultObject, TESIdleForm* idle, bool checkConditions, bool force, TESObjectREFR* target)`
+pub const AIProcess__PlayIdle: u64 = 39256;
 /// `AIProcess::ResetHighField3F8Pair` at 0x6ffef0 (semantic, high); signature (untiered): `undefined ResetHighField3F8Pair(longlong param_1)`; semantic: high data +0x3f8 = +0x3fa = 0xffff (high); signature `void (AIProcess* this)`
 pub const AIProcess__ResetHighField3F8Pair: u64 = 39522;
 /// `AIProcess::ResetHighField3F8Pair` as a function pointer type (high).
@@ -369,6 +375,14 @@ pub const ActiveEffect__ForEachHitEffectVisitor__dtor: u64 = 34110;
 pub const ActiveEffect__ForEachHitEffectVisitor__dtor_2: u64 = 34386;
 /// `ActiveEffect::ForEachHitEffectVisitor::vdtor` at 0x5beca0 (layout_inference, medium); signature (low): `ForEachHitEffectVisitor * vdtor(ForEachHitEffectVisitor * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const ActiveEffect__ForEachHitEffectVisitor__vdtor: u64 = 34123;
+/// `ActiveEffect::GetBaseObject` at 0x5bb090 (runtime, high); signature (untiered): `undefined8 GetBaseObject(longlong param_1)`; semantic: this->effect (+0x48) ->+0x10, no null check (high); signature `EffectSetting* (ActiveEffect* this)`
+pub const ActiveEffect__GetBaseObject: u64 = 34056;
+/// `ActiveEffect::GetBaseObject` as a function pointer type (high).
+pub type ActiveEffect__GetBaseObject_fn = unsafe extern "C" fn(this: *mut crate::ActiveEffect) -> *mut crate::EffectSetting;
+/// `ActiveEffect::Update` at 0x5bcde0 (semantic, high); signature (untiered): `undefined Update(longlong * param_1, float param_2, longlong * param_3, ulonglong param_4)`; semantic: per-frame effect update: drops the effect (+0x7c |= 0x40000) when its caster stops casting the spell (IsAnyMagicCasterCasting(caster, +0x40)) for concentration-type effects; advances elapsed +0x70 by dt (clamped to the duration +0x74 when the duration is > 0 and flags & 0x4100 == 0); flags the effect for removal when duration <= elapsed and the EffectSetting has no 'no duration' bit (flags +0x68 bit 9) (high); signature `void (ActiveEffect* this, float dt, ...)`
+pub const ActiveEffect__Update: u64 = 34092;
+/// `ActiveEffect::UpdateConditions` at 0x5bb6c0 (semantic, medium); signature (untiered): `undefined UpdateConditions(ActiveEffect * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+pub const ActiveEffect__UpdateConditions: u64 = 34063;
 /// `ActiveEffect::ctor` at 0x5baa30 (layout_inference, medium); signature (low): `ActiveEffect * ctor(ActiveEffect * this, longlong param_1, undefined8 param_2, undefined4 * param_3)`
 pub const ActiveEffect__ctor: u64 = 34049;
 /// `ActiveEffect::dtor` at 0x5ba7a0 (callgraph, high); signature (untiered): `undefined dtor(ActiveEffect * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
@@ -415,8 +429,6 @@ pub const ActiveEffect__vfunc_24: u64 = 34103;
 pub const ActiveEffect__vfunc_3: u64 = 34055;
 /// `ActiveEffect::vfunc_4` at 0x5bf0c0 (rtti, medium); signature (low): `undefined vfunc_4(void)`
 pub const ActiveEffect__vfunc_4: u64 = 34131;
-/// `ActiveEffect::vfunc_5` at 0x5bb6c0 (rtti, medium); signature (low): `undefined vfunc_5(ActiveEffect * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-pub const ActiveEffect__vfunc_5: u64 = 34063;
 /// `ActiveEffect::vfunc_6` at 0x5bb9c0 (rtti, medium); signature (low): `undefined1 vfunc_6(void)`
 pub const ActiveEffect__vfunc_6: u64 = 34069;
 /// `ActiveEffect::vfunc_7` at 0x5ba0a0 (rtti, medium); signature (low): `undefined vfunc_7(void)`
@@ -475,6 +487,10 @@ pub const ActiveEffectReferenceEffectController__vfunc_7: u64 = 34840;
 pub const ActiveEffectReferenceEffectController__vfunc_8: u64 = 34841;
 /// `ActiveEffectReferenceEffectController::vfunc_9` at 0x5dc830 (rtti, high); signature (high): `uint vfunc_9(ActiveEffectReferenceEffectController * this)`
 pub const ActiveEffectReferenceEffectController__vfunc_9: u64 = 34842;
+/// `Actor::ActorState_GetCharacterState` at 0x6b5bf0 (semantic, high); signature (untiered): `undefined4 ActorState_GetCharacterState(Actor * this)`; semantic: Actor's ActorState slot 17: the character controller state (charController+0x200), 0 without a process or controller (high); signature `u32 (ActorState* this)`
+pub const Actor__ActorState_GetCharacterState: u64 = 38038;
+/// `Actor::ActorState_GetCharacterState` as a function pointer type (high).
+pub type Actor__ActorState_GetCharacterState_fn = unsafe extern "C" fn(this: *mut crate::ActorState) -> u32;
 /// `Actor::ActorState_GetMovementSpeed` at 0x6b5860 (semantic, high); signature (untiered): `undefined4 ActorState_GetMovementSpeed(Actor * this)`; semantic: Actor's ActorState slot 5 (this = Actor+0xc0): the process's movement speed, 0 without a process (high); signature `float (const ActorState* this)`
 pub const Actor__ActorState_GetMovementSpeed: u64 = 38028;
 /// `Actor::ActorState_GetMovementSpeed` as a function pointer type (high).
@@ -497,8 +513,6 @@ pub const Actor__ActorState_vfunc_14: u64 = 38032;
 pub const Actor__ActorState_vfunc_15: u64 = 38033;
 /// `Actor::ActorState_vfunc_16` at 0x6b5bc0 (rtti, medium); signature (low): `undefined1 ActorState_vfunc_16(Actor * this, undefined8 * param_1)`
 pub const Actor__ActorState_vfunc_16: u64 = 38037;
-/// `Actor::ActorState_vfunc_17` at 0x6b5bf0 (rtti, medium); signature (high): `undefined4 ActorState_vfunc_17(Actor * this)`
-pub const Actor__ActorState_vfunc_17: u64 = 38038;
 /// `Actor::ActorState_vfunc_18` at 0x6b5c30 (rtti, medium); signature (high): `undefined8 ActorState_vfunc_18(Actor * this)`
 pub const Actor__ActorState_vfunc_18: u64 = 38039;
 /// `Actor::ActorState_vfunc_19` at 0x6b5cb0 (rtti, medium); signature (high): `byte ActorState_vfunc_19(Actor * this)`
@@ -585,10 +599,6 @@ pub const Actor__ForEachSpellVisitor__dtor_3: u64 = 44945;
 pub const Actor__ForEachSpellVisitor__dtor_4: u64 = 52069;
 /// `Actor::ForEachSpellVisitor::vdtor` at 0x6dabd0 (layout_inference, medium); signature (low): `ForEachSpellVisitor * vdtor(ForEachSpellVisitor * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const Actor__ForEachSpellVisitor__vdtor: u64 = 38859;
-/// `Actor::GetActiveEffectList` at 0x6d85b0 (runtime, high); signature (untiered): `undefined8 GetActiveEffectList(Actor * this)`; semantic: MagicTarget slot 7 on an actor: the list at +0x1a0 of the process's middle-high data (Actor+0xf8, then +8), null for an actor without one; nodes are {effect, next} (high); signature `BSSimpleList<ActiveEffect*>* (MagicTarget* this)`
-pub const Actor__GetActiveEffectList: u64 = 38795;
-/// `Actor::GetActiveEffectList` as a function pointer type (high).
-pub type Actor__GetActiveEffectList_fn = unsafe extern "C" fn(this: *mut crate::MagicTarget) -> *mut c_void;
 /// `Actor::GetActorValueModifier` at 0x6c5440 (semantic, high); signature (untiered): `undefined4 GetActorValueModifier(longlong param_1, int param_2, int param_3)`; semantic: one modifier of a value (high); signature `float Actor::GetActorValueModifier(Actor* this, int modifier, ActorValue value)`
 pub const Actor__GetActorValueModifier: u64 = 38469;
 /// `Actor::GetActorValueModifier` as a function pointer type (high).
@@ -631,6 +641,8 @@ pub type Actor__GetLevel_fn = unsafe extern "C" fn(this: *mut crate::Actor) -> u
 pub const Actor__GetLookOriginAndDirection: u64 = 37479;
 /// `Actor::GetLookOriginAndDirection` as a function pointer type (high).
 pub type Actor__GetLookOriginAndDirection_fn = unsafe extern "C" fn(this: *mut crate::Actor, origin: *mut crate::NiPoint3, direction: *mut crate::NiPoint3);
+/// `Actor::GetMagicCaster` at 0x6d4b90 (semantic, high); signature (untiered): `ActorMagicCaster * GetMagicCaster(Actor * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+pub const Actor__GetMagicCaster: u64 = 38732;
 /// `Actor::GetMountRef` at 0x6d32c0 (semantic, high); signature (untiered): `bool GetMountRef(longlong param_1, longlong * param_2, undefined8 param_3, undefined8 param_4)`; semantic: for a rider (boolFlags2 bit 1 clear) with an ExtraInteraction: the interaction's +0x10 reference as a Character whose boolFlags2 bit 1 is set; returns out != null (high); signature `bool (const Actor* this, NiPointer<Actor>* outMount)`
 pub const Actor__GetMountRef: u64 = 38702;
 /// `Actor::GetMountRef` as a function pointer type (high).
@@ -691,20 +703,38 @@ pub const Actor__IPostAnimationChannelUpdateFunctor_vfunc_0: u64 = 38197;
 pub const Actor__IPostAnimationChannelUpdateFunctor_vfunc_1: u64 = 38053;
 /// `Actor::IPostAnimationChannelUpdateFunctor_vfunc_1_sub0` at 0x6f31a0 (callgraph, medium); signature (untiered): `undefined IPostAnimationChannelUpdateFunctor_vfunc_1_sub0(longlong param_1, longlong param_2, undefined8 param_3, ulonglong param_4)`
 pub const Actor__IPostAnimationChannelUpdateFunctor_vfunc_1_sub0: u64 = 39299;
+/// `Actor::IsAnimationDriven` at 0x687ac0 (semantic, high); signature (untiered): `undefined8 IsAnimationDriven(longlong param_1)`; semantic: true when the movement controller's IMovementMotionDrivenControl reports not motion-driven (high); signature `bool (Actor* actor)`
+pub const Actor__IsAnimationDriven: u64 = 37486;
+/// `Actor::IsAnimationDriven` as a function pointer type (high).
+pub type Actor__IsAnimationDriven_fn = unsafe extern "C" fn(actor: *mut crate::Actor) -> bool;
+/// `Actor::IsAttacking` at 0x6cb920 (semantic, high); signature (untiered): `bool IsAttacking(longlong param_1)`; semantic: attack state (flags1 bits 28-31) != 0 (high); signature `bool (Actor* actor)`
+pub const Actor__IsAttacking: u64 = 38590;
+/// `Actor::IsAttacking` as a function pointer type (high).
+pub type Actor__IsAttacking_fn = unsafe extern "C" fn(actor: *mut crate::Actor) -> bool;
 /// `Actor::IsBeingRidden` at 0x6be200 (semantic, high); signature (untiered): `undefined8 IsBeingRidden(longlong param_1)`; semantic: boolFlags2 (+0x204) bit 1 set and an ExtraInteraction (0xa9) in the extra list (read under the extra list lock) (high); signature `bool (const Actor* this)`
 pub const Actor__IsBeingRidden: u64 = 38303;
 /// `Actor::IsBeingRidden` as a function pointer type (high).
 pub type Actor__IsBeingRidden_fn = unsafe extern "C" fn(this: *const crate::Actor) -> bool;
+/// `Actor::IsBlocking` at 0x6aef60 (semantic, high); signature (untiered): `undefined1 IsBlocking(longlong param_1)`; semantic: graph bool 'IsBlocking' through the actor's IAnimationGraphManagerHolder (Actor+0x38) slot 18; false when no graph has it (high); signature `bool (Actor* actor)`
+pub const Actor__IsBlocking: u64 = 37952;
+/// `Actor::IsBlocking` as a function pointer type (high).
+pub type Actor__IsBlocking_fn = unsafe extern "C" fn(actor: *mut crate::Actor) -> bool;
 /// `Actor::IsBoolFlags2Bit3Clear` at 0x75e150 (semantic, high); signature (untiered): `uint IsBoolFlags2Bit3Clear(longlong param_1)`; semantic: !(boolFlags2 (+0x204) bit 3) (high); signature `bool (Actor* this)`
 pub const Actor__IsBoolFlags2Bit3Clear: u64 = 40729;
 /// `Actor::IsBoolFlags2Bit3Clear` as a function pointer type (high).
 pub type Actor__IsBoolFlags2Bit3Clear_fn = unsafe extern "C" fn(this: *mut crate::Actor) -> bool;
+/// `Actor::IsCasting` at 0x6d6780 (semantic, high); signature (untiered): `undefined8 IsCasting(longlong param_1, longlong param_2)`; semantic: true when any of the four magic casters (Actor+0x1a8[0..3]) has a current spell (+0x28), optionally equal to spell (high); signature `bool (Actor* actor, MagicItem* spell)`
+pub const Actor__IsCasting: u64 = 38759;
+/// `Actor::IsCasting` as a function pointer type (high).
+pub type Actor__IsCasting_fn = unsafe extern "C" fn(actor: *mut crate::Actor, spell: *mut crate::MagicItem) -> bool;
 /// `Actor::IsChild` at 0x6be280 (semantic, high); signature (untiered): `undefined1 IsChild(void)`
 pub const Actor__IsChild: u64 = 38304;
 /// `Actor::IsDead` at 0x6879a0 (runtime, high); signature (untiered): `ulonglong IsDead(Actor * this, char param_1)`; semantic: whether dead or dying (high); signature `bool Actor::IsDead(const Actor* this, bool ignoreBleedout)`
 pub const Actor__IsDead: u64 = 37483;
 /// `Actor::IsDead` as a function pointer type (high).
 pub type Actor__IsDead_fn = unsafe extern "C" fn(this: *const crate::Actor, ignoreBleedout: bool) -> bool;
+/// `Actor::IsDualCasting` at 0x6d6b30 (semantic, medium); signature (untiered): `ulonglong IsDualCasting(longlong param_1)`; semantic: condition IsDualCasting: byte +0x45f of the process data at AIProcess+0x10 (medium); signature `bool (Actor* actor)`
+pub const Actor__IsDualCasting: u64 = 38764;
 /// `Actor::IsGhost` at 0x6756b0 (semantic, medium); signature (untiered): `uint IsGhost(longlong param_1)`; semantic: whether the actor is a ghost (medium); signature `bool Actor::IsGhost(Actor* this)`
 pub const Actor__IsGhost: u64 = 37275;
 /// `Actor::IsInCombat` at 0x6c9850 (runtime, high); signature (untiered): `longlong IsInCombat(Actor * this)`; semantic: whether in combat (high); signature `bool Actor::IsInCombat(const Actor* this)`
@@ -713,6 +743,10 @@ pub const Actor__IsInCombat: u64 = 38562;
 pub type Actor__IsInCombat_fn = unsafe extern "C" fn(this: *const crate::Actor) -> bool;
 /// `Actor::IsInCombatGroupWith` at 0x6c9f60 (semantic, medium); signature (untiered): `undefined IsInCombatGroupWith(longlong * param_1, undefined8 param_2)`; semantic: Actor slot 212 (the combat controller's (+0x160) first pointer, null out of combat), then ContainsRefHandle(group, other): other's handle is in that object's 0xa8-byte entry list (medium); signature `bool (Actor* this, TESObjectREFR* other)`
 pub const Actor__IsInCombatGroupWith: u64 = 38571;
+/// `Actor::IsInMidAir` at 0x6747f0 (semantic, high); signature (untiered): `undefined8 IsInMidAir(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`; semantic: true when the character controller of the actor's mount (or of the actor itself) is in state 2 (bhkCharacterStateInAir) (high); signature `bool (Actor* actor)`
+pub const Actor__IsInMidAir: u64 = 37243;
+/// `Actor::IsInMidAir` as a function pointer type (high).
+pub type Actor__IsInMidAir_fn = unsafe extern "C" fn(actor: *mut crate::Actor) -> bool;
 /// `Actor::IsOnMount` at 0x285a30 (runtime, high); signature (untiered): `undefined8 IsOnMount(longlong param_1)`; semantic: whether riding (high); signature `bool Actor::IsOnMount(Actor* this)`
 pub const Actor__IsOnMount: u64 = 17965;
 /// `Actor::IsOnMount` as a function pointer type (high).
@@ -759,20 +793,26 @@ pub type Actor__NotifyAnimationGraph_fn = unsafe extern "C" fn(this: *mut crate:
 pub const Actor__PerformKnockdownAction: u64 = 40151;
 /// `Actor::PerformKnockdownAction` as a function pointer type (high).
 pub type Actor__PerformKnockdownAction_fn = unsafe extern "C" fn(actor: *mut crate::Actor);
+/// `Actor::PlayIdle_Impl` at 0xa12e60 (semantic, high); signature (low): `ulonglong PlayIdle_Impl(Actor * this, longlong * param_1, longlong param_2, longlong * param_3, uint param_4)`; semantic: Papyrus Actor.PlayIdle (0xa01930, target null) and PlayIdleWithTarget: logs and fails on a None actor, a None idle or no AI process; otherwise AIProcess::PlayIdle(process, actor, 0x40, idle, 1, 0, target) (high); signature `bool (Actor* this, TESIdleForm* idle, TESObjectREFR* target, IVirtualMachine* vm, u32 stackId)`
+pub const Actor__PlayIdle_Impl: u64 = 55105;
+/// `Actor::PlayIdle_Impl` as a function pointer type (high).
+pub type Actor__PlayIdle_Impl_fn = unsafe extern "C" fn(this: *mut crate::Actor, idle: *mut crate::TESIdleForm, target: *mut crate::TESObjectREFR, vm: *mut c_void, stackId: u32) -> bool;
 /// `Actor::PrepareAnimationUpdate` at 0x6b6300 (semantic, medium); signature (untiered): `undefined PrepareAnimationUpdate(Actor * this, longlong param_1)`; semantic: Actor slot 121: fills the per-actor animation update record: +0x10 actor, +0x18 main camera position, +0x2c 'considered visible' (3D present and not (race +0x108 bit 7 clear and root flags bit 20 set); otherwise g_RenderFrameCounter - <process object>+0x80 < fMaxFrameCounterDifferenceToConsiderVisible:Animation), +0x28 bone limit, +0x2a/+0x2b/+0x2d/+0x2e flags (medium); signature `void (Actor* this, void* animUpdateParams)`
 pub const Actor__PrepareAnimationUpdate: u64 = 38054;
 /// `Actor::ProcessAnimationGraphEvent` at 0x6b2000 (runtime, high); signature (untiered): `ulonglong ProcessAnimationGraphEvent(Actor * this, ulonglong * param_2, undefined8 param_3, undefined8 param_4)`; semantic: handles the actor's own animation events after TESObjectREFR's handler; a tag found in the footstep source's filter list (BSTArray<BSFixedString> at source+0x60, tested by 0x737040) is re-sent as a BGSFootstepEvent {actor handle, tag} through g_FootstepEventSource_ptr (high); signature `BSEventNotifyControl (Actor::sink_30* this, const BSAnimationGraphEvent* event, BSTEventSource<BSAnimationGraphEvent>* source)`
 pub const Actor__ProcessAnimationGraphEvent: u64 = 37997;
 /// `Actor::ProcessAnimationGraphEvent` as a function pointer type (high).
 pub type Actor__ProcessAnimationGraphEvent_fn = unsafe extern "C" fn(this: *mut c_void, event: *const crate::BSAnimationGraphEvent, source: *mut c_void) -> u32;
-/// `Actor::ReapplySlot166FromFlags2` at 0x675b90 (semantic, high); signature (untiered): `undefined ReapplySlot166FromFlags2(longlong * param_1)`; semantic: when flags2 (+0xcc) bits 5-7 are 0x20 or 0x80, tail-calls Actor slot 166 (+0x530) with (bits == 0x20) (high); signature `void (Actor* this)`
-pub const Actor__ReapplySlot166FromFlags2: u64 = 37280;
-/// `Actor::ReapplySlot166FromFlags2` as a function pointer type (high).
-pub type Actor__ReapplySlot166FromFlags2_fn = unsafe extern "C" fn(this: *mut crate::Actor);
 /// `Actor::RefreshNPCKeywordFlag` at 0x6acb90 (semantic, high); signature (untiered): `undefined RefreshNPCKeywordFlag(Actor * this)`; semantic: Actor slot 278: caches HasKeyword(default object 0x9d 'Keyword - NPC') in the process: currentProcess+0x50 -> +0x28 bit 1 set or cleared, and +0x2c |= 0x2000000 (high); signature `void (Actor* this)`
 pub const Actor__RefreshNPCKeywordFlag: u64 = 37915;
 /// `Actor::RefreshNPCKeywordFlag` as a function pointer type (high).
 pub type Actor__RefreshNPCKeywordFlag_fn = unsafe extern "C" fn(this: *mut crate::Actor);
+/// `Actor::RequestWeaponDrawn` at 0x675930 (semantic, high); signature (untiered): `undefined RequestWeaponDrawn(Actor * this, char param_1)`
+pub const Actor__RequestWeaponDrawn: u64 = 37279;
+/// `Actor::RetryPendingWeaponRequest` at 0x675b90 (semantic, high); signature (untiered): `undefined RetryPendingWeaponRequest(longlong * param_1)`; semantic: when the weapon state is 1 (want draw) or 4 (want sheathe), calls slot 166 with draw = (state == 1) (high); signature `void (Actor* this)`
+pub const Actor__RetryPendingWeaponRequest: u64 = 37280;
+/// `Actor::RetryPendingWeaponRequest` as a function pointer type (high).
+pub type Actor__RetryPendingWeaponRequest_fn = unsafe extern "C" fn(this: *mut crate::Actor);
 /// `Actor::SaveGame` at 0x699230 (slot_propagation, medium); signature (untiered): `undefined SaveGame(Actor * this, longlong * param_1)`
 pub const Actor__SaveGame: u64 = 37649;
 /// `Actor::SendAssaultAlarm` at 0x682e70 (decompiler, medium); signature (medium): `undefined SendAssaultAlarm(Actor * param_1, longlong * * * * * * * param_2, char param_3)`
@@ -941,8 +981,6 @@ pub const Actor__vfunc_163: u64 = 37196;
 pub const Actor__vfunc_164: u64 = 37206;
 /// `Actor::vfunc_165` at 0x675350 (rtti, medium); signature (low): `undefined vfunc_165(void)`
 pub const Actor__vfunc_165: u64 = 37260;
-/// `Actor::vfunc_166` at 0x675930 (rtti, medium); signature (low): `undefined vfunc_166(Actor * this, char param_1)`
-pub const Actor__vfunc_166: u64 = 37279;
 /// `Actor::vfunc_167` at 0x676e30 (rtti, medium); signature (low): `undefined8 vfunc_167(Actor * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
 pub const Actor__vfunc_167: u64 = 37305;
 /// `Actor::vfunc_168` at 0x676e90 (rtti, medium); signature (high): `undefined1 vfunc_168(Actor * this)`
@@ -1269,8 +1307,6 @@ pub const Actor__vfunc_89: u64 = 37508;
 pub const Actor__vfunc_90: u64 = 37525;
 /// `Actor::vfunc_91` at 0x692c20 (rtti, medium); signature (low): `float * vfunc_91(Actor * this, float * param_1)`
 pub const Actor__vfunc_91: u64 = 37605;
-/// `Actor::vfunc_92` at 0x6d4b90 (rtti, medium); signature (low): `ActorMagicCaster * vfunc_92(Actor * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-pub const Actor__vfunc_92: u64 = 38732;
 /// `Actor::vfunc_93` at 0x6d8550 (rtti, medium); signature (high): `Actor_vtbl_A0 * * vfunc_93(Actor * this)`
 pub const Actor__vfunc_93: u64 = 38793;
 /// `Actor::vfunc_99` at 0x69bba0 (rtti, high); signature (high): `longlong vfunc_99(Actor * this)`
@@ -5077,8 +5113,10 @@ pub const AppendZeroedEntryBB0IfEquippedType7: u64 = 40545;
 pub const AppendZeroedEntryToSmallArray16: u64 = 40773;
 /// `ApplyAIMeleeHandOrWeaponMult` at 0x41e7f0 (decompiler, medium); signature (untiered): `float ApplyAIMeleeHandOrWeaponMult(float param_1, undefined8 param_2, char param_3)`
 pub const ApplyAIMeleeHandOrWeaponMult: u64 = 26405;
-/// `ApplyActionAnimEventEffects` at 0x6e2250 (semantic, medium); signature (untiered): `undefined ApplyActionAnimEventEffects(undefined8 param_1, BSTArrayAllocatorFunctor<BSTSmallArrayHeapAllocator<8>_>_vtbl * * param_2, BSTArrayAllocatorFunctor<BSTSmallArrayHeapAllocator<8>_>_vtbl * * param_3, longlong * * param_4)`; semantic: after an action's anim event: sheathe/draw, kill moves ('pa_Kill'), weapon and mount side effects on the action's subject actor (medium); signature `void (void* owner, BGSActionData* action, bool performed)`
+/// `ApplyActionAnimEventEffects` at 0x6e2250 (semantic, high); signature (untiered): `undefined ApplyActionAnimEventEffects(undefined8 param_1, BSTArrayAllocatorFunctor<BSTSmallArrayHeapAllocator<8>_>_vtbl * * param_2, BSTArrayAllocatorFunctor<BSTSmallArrayHeapAllocator<8>_>_vtbl * * param_3, longlong * * param_4)`; semantic: applies an action's animation event to the actor state: attack state 1/6/8, 0xa -> 0xb on attackRelease, recoil bits, sit/sleep phases, sneak and the block want-bit (high); signature `void (void* unused, BGSActionData* action, bool isEnd, void* p4)`
 pub const ApplyActionAnimEventEffects: u64 = 39004;
+/// `ApplyActionAnimEventEffects` as a function pointer type (high).
+pub type ApplyActionAnimEventEffects_fn = unsafe extern "C" fn(unused: *mut c_void, action: *mut crate::BGSActionData, isEnd: bool, p4: *mut c_void);
 /// `ApplyActiveFlagsToDataFiles` at 0xa6a940 (decompiler, medium); signature (untiered): `undefined ApplyActiveFlagsToDataFiles(longlong param_1, BSTArrayAllocatorFunctor<BSTArrayHeapAllocator>_vtbl * * param_2, ulonglong param_3, undefined8 param_4)`
 pub const ApplyActiveFlagsToDataFiles: u64 = 524069;
 /// `ApplyActorValueRegenForElapsedTime` at 0x6c48b0 (decompiler, medium); signature (medium): `undefined ApplyActorValueRegenForElapsedTime(longlong param_1, int param_2, float param_3)`
@@ -5621,14 +5659,18 @@ pub const ArrayToString_2: u64 = 84346;
 pub const ArrayUnshift: u64 = 84345;
 /// `ArraysDifferByElementByte` at 0x45c2e0 (decompiler, medium); signature (medium): `bool ArraysDifferByElementByte(longlong * param_1, longlong * param_2)`
 pub const ArraysDifferByElementByte: u64 = 28184;
+/// `ArrowAttachHandler::Handle` at 0x7cdbb0 (semantic, high); signature (untiered): `undefined8 Handle(ArrowAttachHandler * this, longlong * param_1)`; semantic: bow/crossbow: attaches the projectile and sets attack state 9 (nocked) when the equipped ammo matches the weapon (high); signature `bool (ArrowAttachHandler* this, Actor* actor)`
+pub const ArrowAttachHandler__Handle: u64 = 42857;
+/// `ArrowAttachHandler::Handle` as a function pointer type (high).
+pub type ArrowAttachHandler__Handle_fn = unsafe extern "C" fn(this: *mut crate::ArrowAttachHandler, actor: *mut crate::Actor) -> bool;
 /// `ArrowAttachHandler::vdtor` at 0x7d3910 (layout_inference, medium); signature (low): `ArrowAttachHandler * vdtor(ArrowAttachHandler * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const ArrowAttachHandler__vdtor: u64 = 43293;
-/// `ArrowAttachHandler::vfunc_1` at 0x7cdbb0 (rtti, high); signature (low): `undefined8 vfunc_1(ArrowAttachHandler * this, longlong * param_1)`
-pub const ArrowAttachHandler__vfunc_1: u64 = 42857;
+/// `ArrowDetachHandler::Handle` at 0x7cdc70 (semantic, high); signature (untiered): `undefined8 Handle(ArrowDetachHandler * this, longlong * param_1)`; semantic: attack state >= 9 (or ammo not matching the weapon): detaches the projectile and sets attack state 0 (high); signature `bool (ArrowDetachHandler* this, Actor* actor)`
+pub const ArrowDetachHandler__Handle: u64 = 42858;
+/// `ArrowDetachHandler::Handle` as a function pointer type (high).
+pub type ArrowDetachHandler__Handle_fn = unsafe extern "C" fn(this: *mut crate::ArrowDetachHandler, actor: *mut crate::Actor) -> bool;
 /// `ArrowDetachHandler::vdtor` at 0x7d3940 (layout_inference, medium); signature (low): `ArrowDetachHandler * vdtor(ArrowDetachHandler * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const ArrowDetachHandler__vdtor: u64 = 43294;
-/// `ArrowDetachHandler::vfunc_1` at 0x7cdc70 (rtti, high); signature (low): `undefined8 vfunc_1(ArrowDetachHandler * this, longlong * param_1)`
-pub const ArrowDetachHandler__vfunc_1: u64 = 42858;
 /// `ArrowProjectile::BSHandleRefObject_vdtor` at 0x7de724 (slot_propagation, medium); signature (low): `undefined BSHandleRefObject_vdtor(ArrowProjectile * this, longlong * param_1, void * param_2, undefined8 param_3)`
 pub const ArrowProjectile__BSHandleRefObject_vdtor: u64 = 43711;
 /// `ArrowProjectile::BSTEventSink_BSAnimationGraphEvent_vdtor` at 0x7de730 (slot_propagation, medium); signature (low): `undefined BSTEventSink_BSAnimationGraphEvent_vdtor(ArrowProjectile * this, longlong * param_1, void * param_2, undefined8 param_3)`
@@ -5679,10 +5721,12 @@ pub const ArrowProjectile__vfunc_192: u64 = 43709;
 pub const ArrowProjectile__vfunc_194: u64 = 43715;
 /// `ArrowProjectile::vfunc_195` at 0x7ddfd0 (rtti, high); signature (low): `undefined1 vfunc_195(void)`
 pub const ArrowProjectile__vfunc_195: u64 = 43701;
+/// `ArrowReleaseHandler::Handle` at 0x7cdd40 (semantic, high); signature (untiered): `undefined8 Handle(ArrowReleaseHandler * this, uint * param_1)`; semantic: bow or crossbow in attack state >= 9: fires the projectile (FireWeapon) and sets attack state 0xc (released) (high); signature `bool (ArrowReleaseHandler* this, Actor* actor)`
+pub const ArrowReleaseHandler__Handle: u64 = 42859;
+/// `ArrowReleaseHandler::Handle` as a function pointer type (high).
+pub type ArrowReleaseHandler__Handle_fn = unsafe extern "C" fn(this: *mut crate::ArrowReleaseHandler, actor: *mut crate::Actor) -> bool;
 /// `ArrowReleaseHandler::vdtor` at 0x7d3970 (layout_inference, medium); signature (low): `ArrowReleaseHandler * vdtor(ArrowReleaseHandler * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const ArrowReleaseHandler__vdtor: u64 = 43295;
-/// `ArrowReleaseHandler::vfunc_1` at 0x7cdd40 (rtti, high); signature (low): `undefined8 vfunc_1(ArrowReleaseHandler * this, uint * param_1)`
-pub const ArrowReleaseHandler__vfunc_1: u64 = 42859;
 /// `ArrowScroller::ctor` at 0x15ec7e0 (layout_inference, high); signature (low): `ArrowScroller * ctor(ArrowScroller * this, undefined8 param_1)`
 pub const ArrowScroller__ctor: u64 = 454236;
 /// `ArrowScroller::vdtor` at 0x12e590 (layout_inference, medium); signature (low): `ArrowScroller * vdtor(ArrowScroller * this, ulonglong param_1, void * param_2, undefined8 param_3)`
@@ -6305,20 +6349,26 @@ pub const AttackBlockHandler__vfunc_6_sub4: u64 = 42438;
 pub const AttackBlockHandler__vfunc_7: u64 = 42469;
 /// `AttackBlockHandler::vfunc_8` at 0x7b4e20 (rtti, high); signature (low): `undefined vfunc_8(AttackBlockHandler * this, char param_1)`
 pub const AttackBlockHandler__vfunc_8: u64 = 523972;
+/// `AttackStopHandler::Handle` at 0x7cc650 (semantic, high); signature (untiered): `undefined1 Handle(AttackStopHandler * this, longlong param_1)`; semantic: attack state = 0 (None) (high); signature `bool (AttackStopHandler* this, Actor* actor)`
+pub const AttackStopHandler__Handle: u64 = 42814;
+/// `AttackStopHandler::Handle` as a function pointer type (high).
+pub type AttackStopHandler__Handle_fn = unsafe extern "C" fn(this: *mut crate::AttackStopHandler, actor: *mut crate::Actor) -> bool;
 /// `AttackStopHandler::vdtor` at 0x7d39a0 (layout_inference, medium); signature (low): `AttackStopHandler * vdtor(AttackStopHandler * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const AttackStopHandler__vdtor: u64 = 43296;
-/// `AttackStopHandler::vfunc_1` at 0x7cc650 (rtti, high); signature (low): `undefined1 vfunc_1(AttackStopHandler * this, longlong param_1)`
-pub const AttackStopHandler__vfunc_1: u64 = 42814;
 /// `AttackStopHandler::vfunc_1_sub0` at 0x700d20 (callgraph, medium); signature (untiered): `undefined vfunc_1_sub0(longlong param_1)`
 pub const AttackStopHandler__vfunc_1_sub0: u64 = 39542;
+/// `AttackWinEndHandler::Handle` at 0x7cc610 (semantic, high); signature (untiered): `undefined8 Handle(AttackWinEndHandler * this, longlong param_1)`; semantic: while attacking: attack state = 5 (Follow Through) from 1..8, 0xe from 9..15 (high); signature `bool (AttackWinEndHandler* this, Actor* actor)`
+pub const AttackWinEndHandler__Handle: u64 = 42813;
+/// `AttackWinEndHandler::Handle` as a function pointer type (high).
+pub type AttackWinEndHandler__Handle_fn = unsafe extern "C" fn(this: *mut crate::AttackWinEndHandler, actor: *mut crate::Actor) -> bool;
 /// `AttackWinEndHandler::vdtor` at 0x7d39d0 (layout_inference, medium); signature (low): `AttackWinEndHandler * vdtor(AttackWinEndHandler * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const AttackWinEndHandler__vdtor: u64 = 43297;
-/// `AttackWinEndHandler::vfunc_1` at 0x7cc610 (rtti, high); signature (low): `undefined8 vfunc_1(AttackWinEndHandler * this, longlong param_1)`
-pub const AttackWinEndHandler__vfunc_1: u64 = 42813;
+/// `AttackWinStartHandler::Handle` at 0x7cc5d0 (semantic, high); signature (untiered): `undefined8 Handle(AttackWinStartHandler * this, longlong param_1)`; semantic: attack state = 4 (Next Attack) from states 0..8, 0xd (bow next attack) from 9..15 (high); signature `bool (AttackWinStartHandler* this, Actor* actor)`
+pub const AttackWinStartHandler__Handle: u64 = 42812;
+/// `AttackWinStartHandler::Handle` as a function pointer type (high).
+pub type AttackWinStartHandler__Handle_fn = unsafe extern "C" fn(this: *mut crate::AttackWinStartHandler, actor: *mut crate::Actor) -> bool;
 /// `AttackWinStartHandler::vdtor` at 0x7d3a00 (layout_inference, medium); signature (low): `AttackWinStartHandler * vdtor(AttackWinStartHandler * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const AttackWinStartHandler__vdtor: u64 = 43298;
-/// `AttackWinStartHandler::vfunc_1` at 0x7cc5d0 (rtti, high); signature (low): `undefined8 vfunc_1(AttackWinStartHandler * this, longlong param_1)`
-pub const AttackWinStartHandler__vfunc_1: u64 = 42812;
 /// `AudioLoadForPlaybackTask::vdtor` at 0xcd2a20 (layout_inference, medium); signature (low): `AudioLoadForPlaybackTask * vdtor(AudioLoadForPlaybackTask * this, uint param_1, undefined8 param_2, undefined8 param_3)`
 pub const AudioLoadForPlaybackTask__vdtor: u64 = 67779;
 /// `AudioLoadForPlaybackTask::vfunc_1` at 0xcd0e00 (rtti, high); signature (high): `undefined vfunc_1(AudioLoadForPlaybackTask * this)`
@@ -7203,23 +7253,3 @@ pub const AutoRegisterCreator_CombatPathT_CombatPathRequestGeneric_CombatPathing
 pub const AutoRegisterCreator_CombatPathT_CombatPathRequestGeneric_CombatPathingGoalPolicyFindTargetLocati_dd6ff5e7aaaf: u64 = 47080;
 /// `AutoRegisterCreator<CombatPathT<CombatPathRequestGeneric<CombatPathingGoalPolicyFlank,CombatPathingSearchPolicyFlank>,CombatPathDestinationRef>,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_>::vdtor` at 0x893910 (layout_inference, medium); signature (low): `AutoRegisterCreator<CombatPathT<CombatPathRequestGeneric<CombatPathingGoalPolicyFlank,CombatPathingSearchPolicyFlank>,CombatPathDestinationRef>,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_> * vdtor(AutoRegisterCreator<CombatPathT<CombatPathRequestGeneric<CombatPathingGoalPolicyFlank,CombatPathingSearchPolicyFlank>,CombatPathDestinationRef>,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const AutoRegisterCreator_CombatPathT_CombatPathRequestGeneric_CombatPathingGoalPolicyFlank_CombatPath_e9cdc7a3d3ec: u64 = 48281;
-/// `AutoRegisterCreator<CombatPathT<CombatPathRequestGeneric<CombatPathingGoalPolicyFlankDistant,CombatPathingSearchPolicyStandard>,CombatPathDestinationLocation>,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_>::vdtor` at 0x893dd0 (layout_inference, medium); signature (low): `AutoRegisterCreator<CombatPathT<CombatPathRequestGeneric<CombatPathingGoalPolicyFlankDistant,CombatPathingSearchPolicyStandard>,CombatPathDestinationLocation>,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_> * vdtor(AutoRegisterCreator<CombatPathT<CombatPathRequestGeneric<CombatPathingGoalPolicyFlankDistant,CombatPathingSearchPolicyStandard>,CombatPathDestinationLocation>,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const AutoRegisterCreator_CombatPathT_CombatPathRequestGeneric_CombatPathingGoalPolicyFlankDistant_Com_b7800aa5013d: u64 = 48296;
-/// `AutoRegisterCreator<CombatPathT<CombatPathRequestGeneric<CombatPathingGoalPolicyFlee,CombatPathingSearchPolicyStandard>,CombatPathDestinationNone>,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_>::vdtor` at 0x8a41f0 (layout_inference, medium); signature (low): `AutoRegisterCreator<CombatPathT<CombatPathRequestGeneric<CombatPathingGoalPolicyFlee,CombatPathingSearchPolicyStandard>,CombatPathDestinationNone>,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_> * vdtor(AutoRegisterCreator<CombatPathT<CombatPathRequestGeneric<CombatPathingGoalPolicyFlee,CombatPathingSearchPolicyStandard>,CombatPathDestinationNone>,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const AutoRegisterCreator_CombatPathT_CombatPathRequestGeneric_CombatPathingGoalPolicyFlee_CombatPathi_2934f685b516: u64 = 48611;
-/// `AutoRegisterCreator<CombatPathT<CombatPathRequestGeneric<CombatPathingGoalPolicyRetreat,CombatPathingSearchPolicyStandard>,CombatPathDestinationNone>,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_>::vdtor` at 0x8ec9a0 (layout_inference, medium); signature (low): `AutoRegisterCreator<CombatPathT<CombatPathRequestGeneric<CombatPathingGoalPolicyRetreat,CombatPathingSearchPolicyStandard>,CombatPathDestinationNone>,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_> * vdtor(AutoRegisterCreator<CombatPathT<CombatPathRequestGeneric<CombatPathingGoalPolicyRetreat,CombatPathingSearchPolicyStandard>,CombatPathDestinationNone>,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const AutoRegisterCreator_CombatPathT_CombatPathRequestGeneric_CombatPathingGoalPolicyRetreat_CombatPa_33136f17c167: u64 = 50513;
-/// `AutoRegisterCreator<CombatPathT<CombatPathRequestGeneric<CombatPathingGoalPolicyReturnToCombatArea,CombatPathingSearchPolicyStandard>,CombatPathDestinationLocation>,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_>::vdtor` at 0x8bda90 (layout_inference, medium); signature (low): `AutoRegisterCreator<CombatPathT<CombatPathRequestGeneric<CombatPathingGoalPolicyReturnToCombatArea,CombatPathingSearchPolicyStandard>,CombatPathDestinationLocation>,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_> * vdtor(AutoRegisterCreator<CombatPathT<CombatPathRequestGeneric<CombatPathingGoalPolicyReturnToCombatArea,CombatPathingSearchPolicyStandard>,CombatPathDestinationLocation>,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const AutoRegisterCreator_CombatPathT_CombatPathRequestGeneric_CombatPathingGoalPolicyReturnToCombatAr_2a92945788ef: u64 = 49290;
-/// `AutoRegisterCreator<CombatPathT<CombatPathRequestGeneric<CombatPathingGoalPolicySearch,CombatPathingSearchPolicyStandard>,CombatPathDestinationNone>,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_>::vdtor` at 0x8cbea0 (layout_inference, medium); signature (low): `AutoRegisterCreator<CombatPathT<CombatPathRequestGeneric<CombatPathingGoalPolicySearch,CombatPathingSearchPolicyStandard>,CombatPathDestinationNone>,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_> * vdtor(AutoRegisterCreator<CombatPathT<CombatPathRequestGeneric<CombatPathingGoalPolicySearch,CombatPathingSearchPolicyStandard>,CombatPathDestinationNone>,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const AutoRegisterCreator_CombatPathT_CombatPathRequestGeneric_CombatPathingGoalPolicySearch_CombatPat_044c4cc9ef55: u64 = 49568;
-/// `AutoRegisterCreator<CombatPathT<CombatPathRequestGeneric<CombatPathingGoalPolicySearchWander,CombatPathingSearchPolicyStandard>,CombatPathDestinationNone>,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_>::vdtor` at 0x8cc4c0 (layout_inference, medium); signature (low): `AutoRegisterCreator<CombatPathT<CombatPathRequestGeneric<CombatPathingGoalPolicySearchWander,CombatPathingSearchPolicyStandard>,CombatPathDestinationNone>,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_> * vdtor(AutoRegisterCreator<CombatPathT<CombatPathRequestGeneric<CombatPathingGoalPolicySearchWander,CombatPathingSearchPolicyStandard>,CombatPathDestinationNone>,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const AutoRegisterCreator_CombatPathT_CombatPathRequestGeneric_CombatPathingGoalPolicySearchWander_Com_521bfc61f23d: u64 = 49592;
-/// `AutoRegisterCreator<CombatPathT<CombatPathRequestHover,CombatPathDestinationNone>,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_>::vdtor` at 0x8ea190 (layout_inference, medium); signature (low): `AutoRegisterCreator<CombatPathT<CombatPathRequestHover,CombatPathDestinationNone>,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_> * vdtor(AutoRegisterCreator<CombatPathT<CombatPathRequestHover,CombatPathDestinationNone>,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const AutoRegisterCreator_CombatPathT_CombatPathRequestHover_CombatPathDestinationNone_BSTCreateFactor_c38796870bf0: u64 = 50319;
-/// `AutoRegisterCreator<CombatPathT<CombatPathRequestLanding,CombatPathDestinationLocation>,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_>::vdtor` at 0x8ea010 (layout_inference, medium); signature (low): `AutoRegisterCreator<CombatPathT<CombatPathRequestLanding,CombatPathDestinationLocation>,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_> * vdtor(AutoRegisterCreator<CombatPathT<CombatPathRequestLanding,CombatPathDestinationLocation>,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const AutoRegisterCreator_CombatPathT_CombatPathRequestLanding_CombatPathDestinationLocation_BSTCreate_56db50c79abc: u64 = 50313;
-/// `AutoRegisterCreator<CombatPathT<CombatPathRequestMultiGoal,CombatPathDestinationLocations>,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_>::vdtor` at 0x8e9090 (layout_inference, medium); signature (low): `AutoRegisterCreator<CombatPathT<CombatPathRequestMultiGoal,CombatPathDestinationLocations>,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_> * vdtor(AutoRegisterCreator<CombatPathT<CombatPathRequestMultiGoal,CombatPathDestinationLocations>,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const AutoRegisterCreator_CombatPathT_CombatPathRequestMultiGoal_CombatPathDestinationLocations_BSTCre_5f0b389c2d29: u64 = 50259;
-/// `AutoRegisterCreator<CombatPathT<CombatPathRequestMultiGoal,CombatPathDestinationRefs>,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_>::vdtor` at 0x8e9220 (layout_inference, medium); signature (low): `AutoRegisterCreator<CombatPathT<CombatPathRequestMultiGoal,CombatPathDestinationRefs>,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_> * vdtor(AutoRegisterCreator<CombatPathT<CombatPathRequestMultiGoal,CombatPathDestinationRefs>,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const AutoRegisterCreator_CombatPathT_CombatPathRequestMultiGoal_CombatPathDestinationRefs_BSTCreateFa_f8eff1e1a0e9: u64 = 50265;

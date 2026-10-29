@@ -5435,13 +5435,6 @@ pub unsafe fn get_current_file_position(param_1: i64, param_2: *mut c_void) -> u
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn get_current_handle_or_invalid(param_1: i64, param_2: *mut u32) -> *mut u32 { unsafe { function!(42596, (i64, *mut u32) -> *mut u32)(param_1, param_2) } }
-/// `GetCurrentStage` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 25013, rva 0x3d1220).
-/// `undefined2 GetCurrentStage(longlong param_1)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn get_current_stage(param_1: i64) -> u16 { unsafe { function!(25013, (i64) -> u16)(param_1) } }
 /// `GetCurrentValueOfEffectWithBase` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 34521, rva 0x5d1930).
 /// `float GetCurrentValueOfEffectWithBase(longlong * param_1, longlong param_2)`
 ///
@@ -5645,13 +5638,6 @@ pub unsafe fn get_entry_pointer_locked(param_1: i64, param_2: i32) -> u64 { unsa
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn get_entry_soul_level_value(param_1: *mut i64) -> i32 { unsafe { function!(15997, (*mut i64) -> i32)(param_1) } }
-/// `GetEquippedItemType` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 14220, rva 0x1d74a0).
-/// `int GetEquippedItemType(longlong param_1)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn get_equipped_item_type(param_1: i64) -> i32 { unsafe { function!(14220, (i64) -> i32)(param_1) } }
 /// `GetEulerAnglesFromMatrix` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 70232, rva 0xedf800).
 /// `undefined1 GetEulerAnglesFromMatrix(uint * param_1, uint * param_2, float * param_3, uint * param_4)`
 ///
@@ -8151,13 +8137,6 @@ pub unsafe fn has_key_in_field_b8_array(param_1: i64, param_2: i32) -> u64 { uns
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn has_list_item_with_byte16_set(param_1: i64) -> u64 { unsafe { function!(25251, (i64) -> u64)(param_1) } }
-/// `HasMagicEffectWithKeyword` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 34518, rva 0x5d1760).
-/// `bool HasMagicEffectWithKeyword(longlong * param_1, undefined8 param_2, undefined8 * param_3)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn has_magic_effect_with_keyword(param_1: *mut i64, param_2: u64, param_3: *mut u64) -> u8 { unsafe { function!(34518, (*mut i64, u64, *mut u64) -> u8)(param_1, param_2, param_3) } }
 /// `HasMappedEntryWithField32` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 23521, rva 0x38ce30).
 /// `char HasMappedEntryWithField32(longlong param_1, uint param_2)`
 ///
@@ -10790,13 +10769,6 @@ pub unsafe fn is_address_in_non_writable_image_section(param_1: i64) -> u64 { un
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn is_ancestor_or_null(param_1: i64, param_2: i64) -> u64 { unsafe { function!(47490, (i64, i64) -> u64)(param_1, param_2) } }
-/// `IsAnyMagicCasterCasting` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 38759, rva 0x6d6780).
-/// `undefined8 IsAnyMagicCasterCasting(longlong param_1, longlong param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn is_any_magic_caster_casting(param_1: i64, param_2: i64) -> u64 { unsafe { function!(38759, (i64, i64) -> u64)(param_1, param_2) } }
 /// `IsBaseFormType24WithFlag200` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 19556, rva 0x2e3c40).
 /// `longlong IsBaseFormType24WithFlag200(longlong param_1)`
 ///
@@ -11497,13 +11469,6 @@ pub unsafe fn is_flag32_set_and_field20_mask_clear(param_1: i64) -> u8 { unsafe 
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn is_flag38_or39_set_locked(param_1: i64) -> u64 { unsafe { function!(449147, (i64) -> u64)(param_1) } }
-/// `IsFlag45FSetOnFieldF8Field10` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 38764, rva 0x6d6b30).
-/// `ulonglong IsFlag45FSetOnFieldF8Field10(longlong param_1)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn is_flag45_f_set_on_field_f8_field10(param_1: i64) -> u64 { unsafe { function!(38764, (i64) -> u64)(param_1) } }
 /// `IsFlag8000OrBoundRadiusAboveThreshold` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 19726, rva 0x2e9e40).
 /// `bool IsFlag8000OrBoundRadiusAboveThreshold(longlong param_1)`
 ///
@@ -12365,13 +12330,6 @@ pub unsafe fn is_sphere_within_light_radius(param_1: i64, param_2: *mut f32, par
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn is_srgb_format(param_1: u32) -> u64 { unsafe { function!(77669, (u32) -> u64)(param_1) } }
-/// `IsStageDone` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 25011, rva 0x3d0ec0).
-/// `ulonglong IsStageDone(longlong param_1, short param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn is_stage_done(param_1: i64, param_2: i16) -> u64 { unsafe { function!(25011, (i64, i16) -> u64)(param_1, param_2) } }
 /// `IsStripTriangleDegenerate` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 78710, rva 0x10843d0).
 /// `longlong IsStripTriangleDegenerate(longlong param_1, uint param_2)`
 ///
@@ -14150,3 +14108,38 @@ pub unsafe fn open_wide_char_gap_at(param_1: *mut i64, param_2: i64, param_3: i6
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn operator_delete(param_1: *mut c_void, param_2: u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(109588, (*mut c_void, u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
+/// `OrthonormalizeMatrix3x3` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 70226, rva 0xede960).
+/// `undefined1 OrthonormalizeMatrix3x3(float * param_1)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn orthonormalize_matrix3x3(param_1: *mut f32) -> u8 { unsafe { function!(70226, (*mut f32) -> u8)(param_1) } }
+/// `OutputReportQueueThreadProc` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 68931, rva 0xea7880).
+/// `undefined OutputReportQueueThreadProc(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn output_report_queue_thread_proc() -> u64 { unsafe { function!(68931, () -> u64)() } }
+/// `PackByteArrayToBits` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 66393, rva 0xc6ce10).
+/// `undefined PackByteArrayToBits(longlong * param_1, byte * param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn pack_byte_array_to_bits(param_1: *mut i64, param_2: *mut u8) -> u64 { unsafe { function!(66393, (*mut i64, *mut u8) -> u64)(param_1, param_2) } }
+/// `PackPixels32To24` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 77601, rva 0x1025650).
+/// `undefined PackPixels32To24(undefined1 * param_1, longlong param_2, undefined4 * param_3, ulonglong param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn pack_pixels32_to24(param_1: *mut u8, param_2: i64, param_3: *mut u32, param_4: u64) -> u64 { unsafe { function!(77601, (*mut u8, i64, *mut u32, u64) -> u64)(param_1, param_2, param_3, param_4) } }
+/// `PackPixelsInRow` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 90214, rva 0x11affa0).
+/// `undefined PackPixelsInRow(uint * param_1, byte * param_2, int param_3)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn pack_pixels_in_row(param_1: *mut u32, param_2: *mut u8, param_3: i32) -> u64 { unsafe { function!(90214, (*mut u32, *mut u8, i32) -> u64)(param_1, param_2, param_3) } }

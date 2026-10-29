@@ -3,69 +3,6 @@
 
 use core::ffi::{c_char, c_void};
 
-/// `ResizeSmallDwordArrayZeroFilled` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 67818, rva 0xcd45b0).
-/// `char ResizeSmallDwordArrayZeroFilled(uint * param_1, uint param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn resize_small_dword_array_zero_filled(param_1: *mut u32, param_2: u32) -> c_char { unsafe { function!(67818, (*mut u32, u32) -> c_char)(param_1, param_2) } }
-/// `ResizeSmallPointerArray` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 35187, rva 0x5eb9c0).
-/// `undefined8 ResizeSmallPointerArray(uint * param_1, ulonglong param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn resize_small_pointer_array(param_1: *mut u32, param_2: u64) -> u64 { unsafe { function!(35187, (*mut u32, u64) -> u64)(param_1, param_2) } }
-/// `ResizeSparsePointerArray` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 13910, rva 0x1c9750).
-/// `undefined ResizeSparsePointerArray(longlong param_1, uint param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn resize_sparse_pointer_array(param_1: i64, param_2: u32) -> u64 { unsafe { function!(13910, (i64, u32) -> u64)(param_1, param_2) } }
-/// `ResizeStringHashMap` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 58052, rva 0xabf970).
-/// `undefined ResizeStringHashMap(longlong * param_1, int param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn resize_string_hash_map(param_1: *mut i64, param_2: i32) -> u64 { unsafe { function!(58052, (*mut i64, i32) -> u64)(param_1, param_2) } }
-/// `ResizeStringKeyedHashTable_3` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 87222, rva 0xdecb10).
-/// `undefined ResizeStringKeyedHashTable_3(longlong * param_1, undefined8 param_2, ulonglong param_3)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn resize_string_keyed_hash_table_3(param_1: *mut i64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(87222, (*mut i64, u64, u64) -> u64)(param_1, param_2, param_3) } }
-/// `ResizeStringNodeArray` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 82668, rva 0xd007c0).
-/// `undefined ResizeStringNodeArray(longlong * param_1, ulonglong param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn resize_string_node_array(param_1: *mut i64, param_2: u64) -> u64 { unsafe { function!(82668, (*mut i64, u64) -> u64)(param_1, param_2) } }
-/// `ResizeStringPairHashTable` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 84688, rva 0xd9eb10).
-/// `undefined ResizeStringPairHashTable(longlong * param_1, undefined8 param_2, ulonglong param_3)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn resize_string_pair_hash_table(param_1: *mut i64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(84688, (*mut i64, u64, u64) -> u64)(param_1, param_2, param_3) } }
-/// `ResizeTaggedStringArray` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 89164, rva 0xe5f9c0).
-/// `undefined ResizeTaggedStringArray(longlong * param_1, ulonglong param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn resize_tagged_string_array(param_1: *mut i64, param_2: u64) -> u64 { unsafe { function!(89164, (*mut i64, u64) -> u64)(param_1, param_2) } }
-/// `ResizeTwelveByteEntryArray` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 77209, rva 0x1006fe0).
-/// `bool ResizeTwelveByteEntryArray(longlong * param_1, uint param_2, undefined8 param_3, undefined8 param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn resize_twelve_byte_entry_array(param_1: *mut i64, param_2: u32, param_3: u64, param_4: u64) -> u8 { unsafe { function!(77209, (*mut i64, u32, u64, u64) -> u8)(param_1, param_2, param_3, param_4) } }
 /// `ResizeTypedValuePointerArray` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 84428, rva 0xd6d6a0).
 /// `undefined ResizeTypedValuePointerArray(longlong param_1, int param_2)`
 ///

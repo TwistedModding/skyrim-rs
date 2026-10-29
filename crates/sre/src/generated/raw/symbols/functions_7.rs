@@ -4,6 +4,14 @@
 use crate::raw::*;
 
 pub(super) const ROWS: &[Function] = &[
+    Function { rva: 0xb592c0, id: 61373, confidence: Confidence::Medium, name: "AppendToField248Array" },
+    Function { rva: 0xb59380, id: 61378, confidence: Confidence::Medium, name: "AppendToField238Array" },
+    Function { rva: 0xb59440, id: 61383, confidence: Confidence::High, name: "AppendToArray258" },
+    Function { rva: 0xb59500, id: 61388, confidence: Confidence::High, name: "AppendToArrayAtField1E8" },
+    Function { rva: 0xb59560, id: 61389, confidence: Confidence::High, name: "ClearEntryInArrayAtField1E8" },
+    Function { rva: 0xb595c0, id: 61390, confidence: Confidence::Medium, name: "AppendToField268Array" },
+    Function { rva: 0xb59680, id: 61395, confidence: Confidence::Medium, name: "AttachObjectToArray278" },
+    Function { rva: 0xb59700, id: 61396, confidence: Confidence::Medium, name: "DetachObjectFromArray278" },
     Function { rva: 0xb597b0, id: 61397, confidence: Confidence::Medium, name: "FindArray278EntryByField18" },
     Function { rva: 0xb59b00, id: 61401, confidence: Confidence::Medium, name: "QueueJobBatchesType10301AndWait" },
     Function { rva: 0xb59f30, id: 61403, confidence: Confidence::Medium, name: "QueueJobBatchesType10204AndWait" },
@@ -8897,9 +8905,4 @@ pub(super) const ROWS: &[Function] = &[
     Function { rva: 0xee8110, id: 70405, confidence: Confidence::Medium, name: "NiStream::vfunc_16_sub1" },
     Function { rva: 0xee86b0, id: 70417, confidence: Confidence::Medium, name: "NiStream::vfunc_13_sub2" },
     Function { rva: 0xee88f0, id: 70426, confidence: Confidence::Medium, name: "NiStream::ctor_sub0" },
-    Function { rva: 0xee8940, id: 70427, confidence: Confidence::High, name: "DeleteOwnedObject_3" },
-    Function { rva: 0xee8960, id: 70428, confidence: Confidence::Medium, name: "NiTArray<void_(__cdecl*)(NiStream&___ptr64,NiObject*___ptr64),NiTMallocInterface<void_(__cdecl*)(NiStream&___ptr64,NiObject*___ptr64)>_>::ctor" },
-    Function { rva: 0xee8990, id: 70429, confidence: Confidence::Medium, name: "NiTLargeArray<unsigned_int,NiTMallocInterface<unsigned_int>_>::ctor" },
-    Function { rva: 0xee89c0, id: 70430, confidence: Confidence::Medium, name: "NiTLargeArray<NiPointer<NiObject>,NiTNewInterface<NiPointer<NiObject>_>_>::ctor" },
-    Function { rva: 0xee8a20, id: 70431, confidence: Confidence::Medium, name: "NiTLargeArray<BSFixedString,NiTNewInterface<BSFixedString>_>::ctor" },
 ];

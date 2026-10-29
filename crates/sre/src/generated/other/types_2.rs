@@ -3,6 +3,362 @@
 
 use core::ffi::c_void;
 
+/// `Journal_QuestsTab`: size >= 0xC0 (lower bound); partial, the struct stops at the lower bound; primary base `JournalTab`.
+/// Evidence: field field_BC.
+/// Bases: `JournalTab`@0x0, `FxDelegateHandler`@0x0, `GRefCountBase<FxDelegateHandler,2>`@0x0, `GRefCountBaseStatImpl<GRefCountImpl,2>`@0x0, `GRefCountImpl`@0x0, `GRefCountImplCore`@0x0.
+#[repr(C)]
+pub struct Journal_QuestsTab {
+    /// +0x0 `vtbl:Journal_QuestsTab:0`, rtti
+    #[doc(hidden)]
+    pub __vftable: *const crate::raw::vtables::Journal_QuestsTab_vtable,
+    /// +0x8 `undefined4`, base GRefCountImplCore
+    pub field_8: u32,
+    pub unknown_C: [u8; 4],
+    /// +0x10 `undefined1`, base GRefCountImplCore
+    pub field_10: u8,
+    /// +0x11 `undefined1`, base GRefCountImplCore
+    pub field_11: u8,
+    /// +0x12 `undefined2`, base GRefCountImplCore
+    pub field_12: u16,
+    /// +0x14 `undefined4`, base GRefCountImplCore
+    pub field_14: u32,
+    /// +0x18 `undefined4`, base GRefCountImplCore
+    pub field_18: u32,
+    /// +0x1C `undefined4`, base GRefCountImplCore
+    pub field_1C: u32,
+    /// +0x20 `undefined1`, base GRefCountImplCore
+    pub field_20: u8,
+    pub unknown_21: [u8; 3],
+    /// +0x24 `undefined4`, base GRefCountImplCore
+    pub field_24: u32,
+    /// +0x28 `undefined1`, base GRefCountImplCore
+    pub field_28: u8,
+    pub unknown_29: [u8; 3],
+    /// +0x2C `undefined4`, base GRefCountImplCore
+    pub field_2C: u32,
+    /// +0x30 `undefined4`, base GRefCountImplCore
+    pub field_30: u32,
+    /// +0x34 `undefined1`, base GRefCountImplCore
+    pub field_34: u8,
+    /// +0x35 `undefined1`, base GRefCountImplCore
+    pub field_35: u8,
+    pub unknown_36: [u8; 2],
+    /// +0x38 `undefined1`, base GRefCountImplCore
+    pub field_38: u8,
+    pub unknown_39: [u8; 3],
+    /// +0x3C `undefined4`, base GRefCountImplCore
+    pub field_3C: u32,
+    /// +0x40 `undefined1`, base GRefCountImplCore
+    pub field_40: u8,
+    pub unknown_41: [u8; 3],
+    /// +0x44 `undefined4`, base GRefCountImplCore
+    pub field_44: u32,
+    /// +0x48 `undefined1`, base GRefCountImplCore
+    pub field_48: u8,
+    pub unknown_49: [u8; 3],
+    /// +0x4C `undefined4`, base GRefCountImplCore
+    pub field_4C: u32,
+    /// +0x50 `undefined2`, base GRefCountImplCore
+    pub field_50: u16,
+    pub unknown_52: [u8; 2],
+    /// +0x54 `undefined4`, base GRefCountImplCore
+    pub field_54: u32,
+    /// +0x58 `float`, base GRefCountImplCore
+    pub field_58: f32,
+    /// +0x5C `float`, base GRefCountImplCore
+    pub field_5C: f32,
+    /// +0x60 `undefined1`, base GRefCountImplCore
+    pub field_60: u8,
+    pub unknown_61: [u8; 3],
+    /// +0x64 `undefined1`, base GRefCountImplCore
+    pub field_64: u8,
+    pub unknown_65: [u8; 3],
+    /// +0x68 `undefined4`, base GRefCountImplCore
+    pub field_68: u32,
+    /// +0x6C `undefined4`, base GRefCountImplCore
+    pub field_6C: u32,
+    /// +0x70 `undefined1`, base GRefCountImplCore
+    pub field_70: u8,
+    pub unknown_71: [u8; 3],
+    /// +0x74 `undefined4`, base GRefCountImplCore
+    pub field_74: u32,
+    /// +0x78 `undefined1`, base GRefCountImplCore
+    pub field_78: u8,
+    pub unknown_79: [u8; 1],
+    /// +0x7A `undefined2`, base GRefCountImplCore
+    pub field_7A: u16,
+    /// +0x7C `undefined4`, base GRefCountImplCore
+    pub field_7C: u32,
+    /// +0x80 `undefined1`, base GRefCountImplCore
+    pub field_80: u8,
+    pub unknown_81: [u8; 3],
+    /// +0x84 `undefined4`, base GRefCountImplCore
+    pub field_84: u32,
+    /// +0x88 `undefined1`, base GRefCountImplCore
+    pub field_88: u8,
+    pub unknown_89: [u8; 3],
+    /// +0x8C `undefined4`, base GRefCountImplCore
+    pub field_8C: u32,
+    /// +0x90 `undefined2`, base GRefCountImplCore
+    pub field_90: u16,
+    pub unknown_92: [u8; 2],
+    /// +0x94 `undefined4`, base GRefCountImplCore
+    pub field_94: u32,
+    /// +0x98 `undefined1`, base GRefCountImplCore
+    pub field_98: u8,
+    pub unknown_99: [u8; 3],
+    /// +0x9C `undefined4`, base GRefCountImplCore
+    pub field_9C: u32,
+    /// +0xA0 `undefined4`, base GRefCountImplCore
+    pub field_A0: u32,
+    /// +0xA4 `undefined4`, base GRefCountImplCore
+    pub field_A4: u32,
+    /// +0xA8 `undefined1`, base GRefCountImplCore
+    pub field_A8: u8,
+    pub unknown_A9: [u8; 3],
+    /// +0xAC `undefined4`, base GRefCountImplCore
+    pub field_AC: u32,
+    /// +0xB0 `undefined4`, base GRefCountImplCore
+    pub field_B0: u32,
+    /// +0xB4 `undefined4`, base GRefCountImplCore
+    pub field_B4: u32,
+    /// +0xB8 `undefined1`, base GRefCountImplCore
+    pub field_B8: u8,
+    pub unknown_B9: [u8; 3],
+    /// +0xBC `undefined4`, base GRefCountImplCore
+    pub field_BC: u32,
+    #[doc(hidden)]
+    pub __engine: crate::Engine,
+}
+const _: () = assert!(core::mem::offset_of!(Journal_QuestsTab, __vftable) == 0x0);
+const _: () = assert!(core::mem::offset_of!(Journal_QuestsTab, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(Journal_QuestsTab, field_10) == 0x10);
+const _: () = assert!(core::mem::offset_of!(Journal_QuestsTab, field_11) == 0x11);
+const _: () = assert!(core::mem::offset_of!(Journal_QuestsTab, field_12) == 0x12);
+const _: () = assert!(core::mem::offset_of!(Journal_QuestsTab, field_14) == 0x14);
+const _: () = assert!(core::mem::offset_of!(Journal_QuestsTab, field_18) == 0x18);
+const _: () = assert!(core::mem::offset_of!(Journal_QuestsTab, field_1C) == 0x1C);
+const _: () = assert!(core::mem::offset_of!(Journal_QuestsTab, field_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(Journal_QuestsTab, field_24) == 0x24);
+const _: () = assert!(core::mem::offset_of!(Journal_QuestsTab, field_28) == 0x28);
+const _: () = assert!(core::mem::offset_of!(Journal_QuestsTab, field_2C) == 0x2C);
+const _: () = assert!(core::mem::offset_of!(Journal_QuestsTab, field_30) == 0x30);
+const _: () = assert!(core::mem::offset_of!(Journal_QuestsTab, field_34) == 0x34);
+const _: () = assert!(core::mem::offset_of!(Journal_QuestsTab, field_35) == 0x35);
+const _: () = assert!(core::mem::offset_of!(Journal_QuestsTab, field_38) == 0x38);
+const _: () = assert!(core::mem::offset_of!(Journal_QuestsTab, field_3C) == 0x3C);
+const _: () = assert!(core::mem::offset_of!(Journal_QuestsTab, field_40) == 0x40);
+const _: () = assert!(core::mem::offset_of!(Journal_QuestsTab, field_44) == 0x44);
+const _: () = assert!(core::mem::offset_of!(Journal_QuestsTab, field_48) == 0x48);
+const _: () = assert!(core::mem::offset_of!(Journal_QuestsTab, field_4C) == 0x4C);
+const _: () = assert!(core::mem::offset_of!(Journal_QuestsTab, field_50) == 0x50);
+const _: () = assert!(core::mem::offset_of!(Journal_QuestsTab, field_54) == 0x54);
+const _: () = assert!(core::mem::offset_of!(Journal_QuestsTab, field_58) == 0x58);
+const _: () = assert!(core::mem::offset_of!(Journal_QuestsTab, field_5C) == 0x5C);
+const _: () = assert!(core::mem::offset_of!(Journal_QuestsTab, field_60) == 0x60);
+const _: () = assert!(core::mem::offset_of!(Journal_QuestsTab, field_64) == 0x64);
+const _: () = assert!(core::mem::offset_of!(Journal_QuestsTab, field_68) == 0x68);
+const _: () = assert!(core::mem::offset_of!(Journal_QuestsTab, field_6C) == 0x6C);
+const _: () = assert!(core::mem::offset_of!(Journal_QuestsTab, field_70) == 0x70);
+const _: () = assert!(core::mem::offset_of!(Journal_QuestsTab, field_74) == 0x74);
+const _: () = assert!(core::mem::offset_of!(Journal_QuestsTab, field_78) == 0x78);
+const _: () = assert!(core::mem::offset_of!(Journal_QuestsTab, field_7A) == 0x7A);
+const _: () = assert!(core::mem::offset_of!(Journal_QuestsTab, field_7C) == 0x7C);
+const _: () = assert!(core::mem::offset_of!(Journal_QuestsTab, field_80) == 0x80);
+const _: () = assert!(core::mem::offset_of!(Journal_QuestsTab, field_84) == 0x84);
+const _: () = assert!(core::mem::offset_of!(Journal_QuestsTab, field_88) == 0x88);
+const _: () = assert!(core::mem::offset_of!(Journal_QuestsTab, field_8C) == 0x8C);
+const _: () = assert!(core::mem::offset_of!(Journal_QuestsTab, field_90) == 0x90);
+const _: () = assert!(core::mem::offset_of!(Journal_QuestsTab, field_94) == 0x94);
+const _: () = assert!(core::mem::offset_of!(Journal_QuestsTab, field_98) == 0x98);
+const _: () = assert!(core::mem::offset_of!(Journal_QuestsTab, field_9C) == 0x9C);
+const _: () = assert!(core::mem::offset_of!(Journal_QuestsTab, field_A0) == 0xA0);
+const _: () = assert!(core::mem::offset_of!(Journal_QuestsTab, field_A4) == 0xA4);
+const _: () = assert!(core::mem::offset_of!(Journal_QuestsTab, field_A8) == 0xA8);
+const _: () = assert!(core::mem::offset_of!(Journal_QuestsTab, field_AC) == 0xAC);
+const _: () = assert!(core::mem::offset_of!(Journal_QuestsTab, field_B0) == 0xB0);
+const _: () = assert!(core::mem::offset_of!(Journal_QuestsTab, field_B4) == 0xB4);
+const _: () = assert!(core::mem::offset_of!(Journal_QuestsTab, field_B8) == 0xB8);
+const _: () = assert!(core::mem::offset_of!(Journal_QuestsTab, field_BC) == 0xBC);
+
+/// `Journal_StatsTab`: size >= 0xC0 (lower bound); partial, the struct stops at the lower bound; primary base `JournalTab`.
+/// Evidence: field field_BC.
+/// Bases: `JournalTab`@0x0, `FxDelegateHandler`@0x0, `GRefCountBase<FxDelegateHandler,2>`@0x0, `GRefCountBaseStatImpl<GRefCountImpl,2>`@0x0, `GRefCountImpl`@0x0, `GRefCountImplCore`@0x0.
+#[repr(C)]
+pub struct Journal_StatsTab {
+    /// +0x0 `vtbl:Journal_StatsTab:0`, rtti
+    #[doc(hidden)]
+    pub __vftable: *const crate::raw::vtables::Journal_StatsTab_vtable,
+    /// +0x8 `undefined4`, base GRefCountImplCore
+    pub field_8: u32,
+    pub unknown_C: [u8; 4],
+    /// +0x10 `undefined1`, base GRefCountImplCore
+    pub field_10: u8,
+    /// +0x11 `undefined1`, base GRefCountImplCore
+    pub field_11: u8,
+    /// +0x12 `undefined2`, base GRefCountImplCore
+    pub field_12: u16,
+    /// +0x14 `undefined4`, base GRefCountImplCore
+    pub field_14: u32,
+    /// +0x18 `undefined4`, base GRefCountImplCore
+    pub field_18: u32,
+    /// +0x1C `undefined4`, base GRefCountImplCore
+    pub field_1C: u32,
+    /// +0x20 `undefined1`, base GRefCountImplCore
+    pub field_20: u8,
+    pub unknown_21: [u8; 3],
+    /// +0x24 `undefined4`, base GRefCountImplCore
+    pub field_24: u32,
+    /// +0x28 `undefined1`, base GRefCountImplCore
+    pub field_28: u8,
+    pub unknown_29: [u8; 3],
+    /// +0x2C `undefined4`, base GRefCountImplCore
+    pub field_2C: u32,
+    /// +0x30 `undefined4`, base GRefCountImplCore
+    pub field_30: u32,
+    /// +0x34 `undefined1`, base GRefCountImplCore
+    pub field_34: u8,
+    /// +0x35 `undefined1`, base GRefCountImplCore
+    pub field_35: u8,
+    pub unknown_36: [u8; 2],
+    /// +0x38 `undefined1`, base GRefCountImplCore
+    pub field_38: u8,
+    pub unknown_39: [u8; 3],
+    /// +0x3C `undefined4`, base GRefCountImplCore
+    pub field_3C: u32,
+    /// +0x40 `undefined1`, base GRefCountImplCore
+    pub field_40: u8,
+    pub unknown_41: [u8; 3],
+    /// +0x44 `undefined4`, base GRefCountImplCore
+    pub field_44: u32,
+    /// +0x48 `undefined1`, base GRefCountImplCore
+    pub field_48: u8,
+    pub unknown_49: [u8; 3],
+    /// +0x4C `undefined4`, base GRefCountImplCore
+    pub field_4C: u32,
+    /// +0x50 `undefined2`, base GRefCountImplCore
+    pub field_50: u16,
+    pub unknown_52: [u8; 2],
+    /// +0x54 `undefined4`, base GRefCountImplCore
+    pub field_54: u32,
+    /// +0x58 `float`, base GRefCountImplCore
+    pub field_58: f32,
+    /// +0x5C `float`, base GRefCountImplCore
+    pub field_5C: f32,
+    /// +0x60 `undefined1`, base GRefCountImplCore
+    pub field_60: u8,
+    pub unknown_61: [u8; 3],
+    /// +0x64 `undefined1`, base GRefCountImplCore
+    pub field_64: u8,
+    pub unknown_65: [u8; 3],
+    /// +0x68 `undefined4`, base GRefCountImplCore
+    pub field_68: u32,
+    /// +0x6C `undefined4`, base GRefCountImplCore
+    pub field_6C: u32,
+    /// +0x70 `undefined1`, base GRefCountImplCore
+    pub field_70: u8,
+    pub unknown_71: [u8; 3],
+    /// +0x74 `undefined4`, base GRefCountImplCore
+    pub field_74: u32,
+    /// +0x78 `undefined1`, base GRefCountImplCore
+    pub field_78: u8,
+    pub unknown_79: [u8; 1],
+    /// +0x7A `undefined2`, base GRefCountImplCore
+    pub field_7A: u16,
+    /// +0x7C `undefined4`, base GRefCountImplCore
+    pub field_7C: u32,
+    /// +0x80 `undefined1`, base GRefCountImplCore
+    pub field_80: u8,
+    pub unknown_81: [u8; 3],
+    /// +0x84 `undefined4`, base GRefCountImplCore
+    pub field_84: u32,
+    /// +0x88 `undefined1`, base GRefCountImplCore
+    pub field_88: u8,
+    pub unknown_89: [u8; 3],
+    /// +0x8C `undefined4`, base GRefCountImplCore
+    pub field_8C: u32,
+    /// +0x90 `undefined2`, base GRefCountImplCore
+    pub field_90: u16,
+    pub unknown_92: [u8; 2],
+    /// +0x94 `undefined4`, base GRefCountImplCore
+    pub field_94: u32,
+    /// +0x98 `undefined1`, base GRefCountImplCore
+    pub field_98: u8,
+    pub unknown_99: [u8; 3],
+    /// +0x9C `undefined4`, base GRefCountImplCore
+    pub field_9C: u32,
+    /// +0xA0 `undefined4`, base GRefCountImplCore
+    pub field_A0: u32,
+    /// +0xA4 `undefined4`, base GRefCountImplCore
+    pub field_A4: u32,
+    /// +0xA8 `undefined1`, base GRefCountImplCore
+    pub field_A8: u8,
+    pub unknown_A9: [u8; 3],
+    /// +0xAC `undefined4`, base GRefCountImplCore
+    pub field_AC: u32,
+    /// +0xB0 `undefined4`, base GRefCountImplCore
+    pub field_B0: u32,
+    /// +0xB4 `undefined4`, base GRefCountImplCore
+    pub field_B4: u32,
+    /// +0xB8 `undefined1`, base GRefCountImplCore
+    pub field_B8: u8,
+    pub unknown_B9: [u8; 3],
+    /// +0xBC `undefined4`, base GRefCountImplCore
+    pub field_BC: u32,
+    #[doc(hidden)]
+    pub __engine: crate::Engine,
+}
+const _: () = assert!(core::mem::offset_of!(Journal_StatsTab, __vftable) == 0x0);
+const _: () = assert!(core::mem::offset_of!(Journal_StatsTab, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(Journal_StatsTab, field_10) == 0x10);
+const _: () = assert!(core::mem::offset_of!(Journal_StatsTab, field_11) == 0x11);
+const _: () = assert!(core::mem::offset_of!(Journal_StatsTab, field_12) == 0x12);
+const _: () = assert!(core::mem::offset_of!(Journal_StatsTab, field_14) == 0x14);
+const _: () = assert!(core::mem::offset_of!(Journal_StatsTab, field_18) == 0x18);
+const _: () = assert!(core::mem::offset_of!(Journal_StatsTab, field_1C) == 0x1C);
+const _: () = assert!(core::mem::offset_of!(Journal_StatsTab, field_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(Journal_StatsTab, field_24) == 0x24);
+const _: () = assert!(core::mem::offset_of!(Journal_StatsTab, field_28) == 0x28);
+const _: () = assert!(core::mem::offset_of!(Journal_StatsTab, field_2C) == 0x2C);
+const _: () = assert!(core::mem::offset_of!(Journal_StatsTab, field_30) == 0x30);
+const _: () = assert!(core::mem::offset_of!(Journal_StatsTab, field_34) == 0x34);
+const _: () = assert!(core::mem::offset_of!(Journal_StatsTab, field_35) == 0x35);
+const _: () = assert!(core::mem::offset_of!(Journal_StatsTab, field_38) == 0x38);
+const _: () = assert!(core::mem::offset_of!(Journal_StatsTab, field_3C) == 0x3C);
+const _: () = assert!(core::mem::offset_of!(Journal_StatsTab, field_40) == 0x40);
+const _: () = assert!(core::mem::offset_of!(Journal_StatsTab, field_44) == 0x44);
+const _: () = assert!(core::mem::offset_of!(Journal_StatsTab, field_48) == 0x48);
+const _: () = assert!(core::mem::offset_of!(Journal_StatsTab, field_4C) == 0x4C);
+const _: () = assert!(core::mem::offset_of!(Journal_StatsTab, field_50) == 0x50);
+const _: () = assert!(core::mem::offset_of!(Journal_StatsTab, field_54) == 0x54);
+const _: () = assert!(core::mem::offset_of!(Journal_StatsTab, field_58) == 0x58);
+const _: () = assert!(core::mem::offset_of!(Journal_StatsTab, field_5C) == 0x5C);
+const _: () = assert!(core::mem::offset_of!(Journal_StatsTab, field_60) == 0x60);
+const _: () = assert!(core::mem::offset_of!(Journal_StatsTab, field_64) == 0x64);
+const _: () = assert!(core::mem::offset_of!(Journal_StatsTab, field_68) == 0x68);
+const _: () = assert!(core::mem::offset_of!(Journal_StatsTab, field_6C) == 0x6C);
+const _: () = assert!(core::mem::offset_of!(Journal_StatsTab, field_70) == 0x70);
+const _: () = assert!(core::mem::offset_of!(Journal_StatsTab, field_74) == 0x74);
+const _: () = assert!(core::mem::offset_of!(Journal_StatsTab, field_78) == 0x78);
+const _: () = assert!(core::mem::offset_of!(Journal_StatsTab, field_7A) == 0x7A);
+const _: () = assert!(core::mem::offset_of!(Journal_StatsTab, field_7C) == 0x7C);
+const _: () = assert!(core::mem::offset_of!(Journal_StatsTab, field_80) == 0x80);
+const _: () = assert!(core::mem::offset_of!(Journal_StatsTab, field_84) == 0x84);
+const _: () = assert!(core::mem::offset_of!(Journal_StatsTab, field_88) == 0x88);
+const _: () = assert!(core::mem::offset_of!(Journal_StatsTab, field_8C) == 0x8C);
+const _: () = assert!(core::mem::offset_of!(Journal_StatsTab, field_90) == 0x90);
+const _: () = assert!(core::mem::offset_of!(Journal_StatsTab, field_94) == 0x94);
+const _: () = assert!(core::mem::offset_of!(Journal_StatsTab, field_98) == 0x98);
+const _: () = assert!(core::mem::offset_of!(Journal_StatsTab, field_9C) == 0x9C);
+const _: () = assert!(core::mem::offset_of!(Journal_StatsTab, field_A0) == 0xA0);
+const _: () = assert!(core::mem::offset_of!(Journal_StatsTab, field_A4) == 0xA4);
+const _: () = assert!(core::mem::offset_of!(Journal_StatsTab, field_A8) == 0xA8);
+const _: () = assert!(core::mem::offset_of!(Journal_StatsTab, field_AC) == 0xAC);
+const _: () = assert!(core::mem::offset_of!(Journal_StatsTab, field_B0) == 0xB0);
+const _: () = assert!(core::mem::offset_of!(Journal_StatsTab, field_B4) == 0xB4);
+const _: () = assert!(core::mem::offset_of!(Journal_StatsTab, field_B8) == 0xB8);
+const _: () = assert!(core::mem::offset_of!(Journal_StatsTab, field_BC) == 0xBC);
+
 /// `Journal_SystemTab`: size >= 0xC0 (lower bound); partial, the struct stops at the lower bound; primary base `JournalTab`.
 /// Evidence: field field_BC.
 /// Bases: `JournalTab`@0x0, `FxDelegateHandler`@0x0, `GRefCountBase<FxDelegateHandler,2>`@0x0, `GRefCountBaseStatImpl<GRefCountImpl,2>`@0x0, `GRefCountImpl`@0x0, `GRefCountImplCore`@0x0, `BSTEventSink<BSSaveDataEvent>`@0x18, `BSTEventSink<BSGamerProfileEvent>`@0x20, `BSTEventSink<BGSSaveLoadManagerEvent>`@0x28, `BSTEventSink<BSRemoteGamepadEvent>`@0x30.
@@ -1028,9 +1384,9 @@ pub struct LightEffect {
     pub casterHandle: u32,
     /// +0x38 `undefined8`, base ActiveEffect
     pub field_38: u64,
-    /// +0x40 `pointer`, base ActiveEffect, semantic; the caster's MagicCaster (medium)
-    pub casterMagic: *mut c_void,
-    /// +0x48 `pointer`, base ActiveEffect, semantic; the spell's effect entry; +0x10 is its EffectSetting (medium)
+    /// +0x40 `ptr:MagicItem`, base ActiveEffect, semantic; the spell, enchantment, potion, scroll or ingredient that applied the effect (high)
+    pub spell: *mut crate::MagicItem,
+    /// +0x48 `pointer`, base ActiveEffect, semantic; the spell's effect entry: +0 magnitude (float), +4 area (s32), +8 duration (s32), +0x10 EffectSetting* (high)
     pub effect: *mut c_void,
     /// +0x50 `ptr:MagicTarget`, base ActiveEffect, semantic; the target's MagicTarget subobject (Actor+0xa0 for an actor) (high)
     pub target: *mut crate::MagicTarget,
@@ -1040,16 +1396,16 @@ pub struct LightEffect {
     pub field_60: u64,
     /// +0x68 `undefined8`, base ActiveEffect
     pub field_68: u64,
-    /// +0x70 `undefined4`, base ActiveEffect
-    pub field_70: u32,
-    /// +0x74 `float`, base ActiveEffect
-    pub field_74: f32,
-    /// +0x78 `float`, base ActiveEffect
-    pub field_78: f32,
-    /// +0x7C `undefined4`, base ActiveEffect, semantic; state bits (0x40000 marks an effect to remove, 0x10000/0x20000 stages of its start) (low)
+    /// +0x70 `float`, base ActiveEffect, semantic; seconds the effect has run; 0 at creation (high)
+    pub elapsedSeconds: f32,
+    /// +0x74 `float`, base ActiveEffect, semantic; the effect's duration in seconds (effect duration + EffectSetting+0xb8 unless MGEF flags & 0x600); the effect ends when duration <= elapsedSeconds unless the MGEF has flag bit 9 or the effect flags 0x4100 (high)
+    pub duration: f32,
+    /// +0x78 `float`, base ActiveEffect, semantic; the effect magnitude, initialised from the effect entry's +0 (medium)
+    pub magnitude: f32,
+    /// +0x7C `undefined4`, base ActiveEffect, semantic; state bits: 0x80 the effect entry has conditions, 0x10000/0x20000 stages of its start; see the flag rows (medium)
     pub flags: u32,
-    /// +0x80 `undefined4`, base ActiveEffect
-    pub field_80: u32,
+    /// +0x80 `u32`, base ActiveEffect, semantic; result of the effect's condition check; 1 at creation, 0 makes the effect inactive (flags 0x8000) (medium)
+    pub conditionsTrue: u32,
     /// +0x84 `undefined2`, base ActiveEffect, semantic; per-target id, bits 32-47 of the effect's script handle; 0 means no handle (high)
     pub uniqueID: u16,
     pub unknown_86: [u8; 2],
@@ -1073,17 +1429,17 @@ const _: () = assert!(core::mem::offset_of!(LightEffect, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(LightEffect, field_2C) == 0x2C);
 const _: () = assert!(core::mem::offset_of!(LightEffect, casterHandle) == 0x34);
 const _: () = assert!(core::mem::offset_of!(LightEffect, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(LightEffect, casterMagic) == 0x40);
+const _: () = assert!(core::mem::offset_of!(LightEffect, spell) == 0x40);
 const _: () = assert!(core::mem::offset_of!(LightEffect, effect) == 0x48);
 const _: () = assert!(core::mem::offset_of!(LightEffect, target) == 0x50);
 const _: () = assert!(core::mem::offset_of!(LightEffect, field_58) == 0x58);
 const _: () = assert!(core::mem::offset_of!(LightEffect, field_60) == 0x60);
 const _: () = assert!(core::mem::offset_of!(LightEffect, field_68) == 0x68);
-const _: () = assert!(core::mem::offset_of!(LightEffect, field_70) == 0x70);
-const _: () = assert!(core::mem::offset_of!(LightEffect, field_74) == 0x74);
-const _: () = assert!(core::mem::offset_of!(LightEffect, field_78) == 0x78);
+const _: () = assert!(core::mem::offset_of!(LightEffect, elapsedSeconds) == 0x70);
+const _: () = assert!(core::mem::offset_of!(LightEffect, duration) == 0x74);
+const _: () = assert!(core::mem::offset_of!(LightEffect, magnitude) == 0x78);
 const _: () = assert!(core::mem::offset_of!(LightEffect, flags) == 0x7C);
-const _: () = assert!(core::mem::offset_of!(LightEffect, field_80) == 0x80);
+const _: () = assert!(core::mem::offset_of!(LightEffect, conditionsTrue) == 0x80);
 const _: () = assert!(core::mem::offset_of!(LightEffect, uniqueID) == 0x84);
 const _: () = assert!(core::mem::offset_of!(LightEffect, field_88) == 0x88);
 const _: () = assert!(core::mem::offset_of!(LightEffect, field_90) == 0x90);
@@ -2180,9 +2536,9 @@ pub struct LockEffect {
     pub casterHandle: u32,
     /// +0x38 `undefined8`, base ActiveEffect
     pub field_38: u64,
-    /// +0x40 `pointer`, base ActiveEffect, semantic; the caster's MagicCaster (medium)
-    pub casterMagic: *mut c_void,
-    /// +0x48 `pointer`, base ActiveEffect, semantic; the spell's effect entry; +0x10 is its EffectSetting (medium)
+    /// +0x40 `ptr:MagicItem`, base ActiveEffect, semantic; the spell, enchantment, potion, scroll or ingredient that applied the effect (high)
+    pub spell: *mut crate::MagicItem,
+    /// +0x48 `pointer`, base ActiveEffect, semantic; the spell's effect entry: +0 magnitude (float), +4 area (s32), +8 duration (s32), +0x10 EffectSetting* (high)
     pub effect: *mut c_void,
     /// +0x50 `ptr:MagicTarget`, base ActiveEffect, semantic; the target's MagicTarget subobject (Actor+0xa0 for an actor) (high)
     pub target: *mut crate::MagicTarget,
@@ -2192,16 +2548,16 @@ pub struct LockEffect {
     pub field_60: u64,
     /// +0x68 `undefined8`, base ActiveEffect
     pub field_68: u64,
-    /// +0x70 `undefined4`, base ActiveEffect
-    pub field_70: u32,
-    /// +0x74 `float`, base ActiveEffect
-    pub field_74: f32,
-    /// +0x78 `float`, base ActiveEffect
-    pub field_78: f32,
-    /// +0x7C `undefined4`, base ActiveEffect, semantic; state bits (0x40000 marks an effect to remove, 0x10000/0x20000 stages of its start) (low)
+    /// +0x70 `float`, base ActiveEffect, semantic; seconds the effect has run; 0 at creation (high)
+    pub elapsedSeconds: f32,
+    /// +0x74 `float`, base ActiveEffect, semantic; the effect's duration in seconds (effect duration + EffectSetting+0xb8 unless MGEF flags & 0x600); the effect ends when duration <= elapsedSeconds unless the MGEF has flag bit 9 or the effect flags 0x4100 (high)
+    pub duration: f32,
+    /// +0x78 `float`, base ActiveEffect, semantic; the effect magnitude, initialised from the effect entry's +0 (medium)
+    pub magnitude: f32,
+    /// +0x7C `undefined4`, base ActiveEffect, semantic; state bits: 0x80 the effect entry has conditions, 0x10000/0x20000 stages of its start; see the flag rows (medium)
     pub flags: u32,
-    /// +0x80 `undefined4`, base ActiveEffect
-    pub field_80: u32,
+    /// +0x80 `u32`, base ActiveEffect, semantic; result of the effect's condition check; 1 at creation, 0 makes the effect inactive (flags 0x8000) (medium)
+    pub conditionsTrue: u32,
     /// +0x84 `undefined2`, base ActiveEffect, semantic; per-target id, bits 32-47 of the effect's script handle; 0 means no handle (high)
     pub uniqueID: u16,
     pub unknown_86: [u8; 2],
@@ -2223,17 +2579,17 @@ const _: () = assert!(core::mem::offset_of!(LockEffect, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(LockEffect, field_2C) == 0x2C);
 const _: () = assert!(core::mem::offset_of!(LockEffect, casterHandle) == 0x34);
 const _: () = assert!(core::mem::offset_of!(LockEffect, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(LockEffect, casterMagic) == 0x40);
+const _: () = assert!(core::mem::offset_of!(LockEffect, spell) == 0x40);
 const _: () = assert!(core::mem::offset_of!(LockEffect, effect) == 0x48);
 const _: () = assert!(core::mem::offset_of!(LockEffect, target) == 0x50);
 const _: () = assert!(core::mem::offset_of!(LockEffect, field_58) == 0x58);
 const _: () = assert!(core::mem::offset_of!(LockEffect, field_60) == 0x60);
 const _: () = assert!(core::mem::offset_of!(LockEffect, field_68) == 0x68);
-const _: () = assert!(core::mem::offset_of!(LockEffect, field_70) == 0x70);
-const _: () = assert!(core::mem::offset_of!(LockEffect, field_74) == 0x74);
-const _: () = assert!(core::mem::offset_of!(LockEffect, field_78) == 0x78);
+const _: () = assert!(core::mem::offset_of!(LockEffect, elapsedSeconds) == 0x70);
+const _: () = assert!(core::mem::offset_of!(LockEffect, duration) == 0x74);
+const _: () = assert!(core::mem::offset_of!(LockEffect, magnitude) == 0x78);
 const _: () = assert!(core::mem::offset_of!(LockEffect, flags) == 0x7C);
-const _: () = assert!(core::mem::offset_of!(LockEffect, field_80) == 0x80);
+const _: () = assert!(core::mem::offset_of!(LockEffect, conditionsTrue) == 0x80);
 const _: () = assert!(core::mem::offset_of!(LockEffect, uniqueID) == 0x84);
 const _: () = assert!(core::mem::offset_of!(LockEffect, field_88) == 0x88);
 
@@ -3001,19 +3357,6 @@ pub struct MagicItemTraversalFunctor {
 }
 const _: () = assert!(size_of::<MagicItemTraversalFunctor>() == 0x8);
 const _: () = assert!(core::mem::offset_of!(MagicItemTraversalFunctor, __vftable) == 0x0);
-
-/// `MagicTarget`: size 0x8 (exact, low).
-/// Evidence: lower bound vptr at 0x0 meets upper bound first own field of Actor at 0xA8 (soft).
-#[repr(C)]
-pub struct MagicTarget {
-    /// +0x0 `vtbl:MagicTarget:0`, rtti
-    #[doc(hidden)]
-    pub __vftable: *const crate::raw::vtables::MagicTarget_vtable,
-    #[doc(hidden)]
-    pub __engine: crate::Engine,
-}
-const _: () = assert!(size_of::<MagicTarget>() == 0x8);
-const _: () = assert!(core::mem::offset_of!(MagicTarget, __vftable) == 0x0);
 
 /// `MagicTarget::DispelFromBoundObject`: size >= 0x8 (lower bound); partial, the struct stops at the lower bound; primary base `MagicTarget::ForEachActiveEffectVisitor`.
 /// Evidence: vptr at 0x0.
@@ -6646,9 +6989,9 @@ pub struct NightEyeEffect {
     pub casterHandle: u32,
     /// +0x38 `undefined8`, base ActiveEffect
     pub field_38: u64,
-    /// +0x40 `pointer`, base ActiveEffect, semantic; the caster's MagicCaster (medium)
-    pub casterMagic: *mut c_void,
-    /// +0x48 `pointer`, base ActiveEffect, semantic; the spell's effect entry; +0x10 is its EffectSetting (medium)
+    /// +0x40 `ptr:MagicItem`, base ActiveEffect, semantic; the spell, enchantment, potion, scroll or ingredient that applied the effect (high)
+    pub spell: *mut crate::MagicItem,
+    /// +0x48 `pointer`, base ActiveEffect, semantic; the spell's effect entry: +0 magnitude (float), +4 area (s32), +8 duration (s32), +0x10 EffectSetting* (high)
     pub effect: *mut c_void,
     /// +0x50 `ptr:MagicTarget`, base ActiveEffect, semantic; the target's MagicTarget subobject (Actor+0xa0 for an actor) (high)
     pub target: *mut crate::MagicTarget,
@@ -6658,16 +7001,16 @@ pub struct NightEyeEffect {
     pub field_60: u64,
     /// +0x68 `undefined8`, base ActiveEffect
     pub field_68: u64,
-    /// +0x70 `undefined4`, base ActiveEffect
-    pub field_70: u32,
-    /// +0x74 `float`, base ActiveEffect
-    pub field_74: f32,
-    /// +0x78 `float`, base ActiveEffect
-    pub field_78: f32,
-    /// +0x7C `undefined4`, base ActiveEffect, semantic; state bits (0x40000 marks an effect to remove, 0x10000/0x20000 stages of its start) (low)
+    /// +0x70 `float`, base ActiveEffect, semantic; seconds the effect has run; 0 at creation (high)
+    pub elapsedSeconds: f32,
+    /// +0x74 `float`, base ActiveEffect, semantic; the effect's duration in seconds (effect duration + EffectSetting+0xb8 unless MGEF flags & 0x600); the effect ends when duration <= elapsedSeconds unless the MGEF has flag bit 9 or the effect flags 0x4100 (high)
+    pub duration: f32,
+    /// +0x78 `float`, base ActiveEffect, semantic; the effect magnitude, initialised from the effect entry's +0 (medium)
+    pub magnitude: f32,
+    /// +0x7C `undefined4`, base ActiveEffect, semantic; state bits: 0x80 the effect entry has conditions, 0x10000/0x20000 stages of its start; see the flag rows (medium)
     pub flags: u32,
-    /// +0x80 `undefined4`, base ActiveEffect
-    pub field_80: u32,
+    /// +0x80 `u32`, base ActiveEffect, semantic; result of the effect's condition check; 1 at creation, 0 makes the effect inactive (flags 0x8000) (medium)
+    pub conditionsTrue: u32,
     /// +0x84 `undefined2`, base ActiveEffect, semantic; per-target id, bits 32-47 of the effect's script handle; 0 means no handle (high)
     pub uniqueID: u16,
     pub unknown_86: [u8; 2],
@@ -6693,17 +7036,17 @@ const _: () = assert!(core::mem::offset_of!(NightEyeEffect, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(NightEyeEffect, field_2C) == 0x2C);
 const _: () = assert!(core::mem::offset_of!(NightEyeEffect, casterHandle) == 0x34);
 const _: () = assert!(core::mem::offset_of!(NightEyeEffect, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(NightEyeEffect, casterMagic) == 0x40);
+const _: () = assert!(core::mem::offset_of!(NightEyeEffect, spell) == 0x40);
 const _: () = assert!(core::mem::offset_of!(NightEyeEffect, effect) == 0x48);
 const _: () = assert!(core::mem::offset_of!(NightEyeEffect, target) == 0x50);
 const _: () = assert!(core::mem::offset_of!(NightEyeEffect, field_58) == 0x58);
 const _: () = assert!(core::mem::offset_of!(NightEyeEffect, field_60) == 0x60);
 const _: () = assert!(core::mem::offset_of!(NightEyeEffect, field_68) == 0x68);
-const _: () = assert!(core::mem::offset_of!(NightEyeEffect, field_70) == 0x70);
-const _: () = assert!(core::mem::offset_of!(NightEyeEffect, field_74) == 0x74);
-const _: () = assert!(core::mem::offset_of!(NightEyeEffect, field_78) == 0x78);
+const _: () = assert!(core::mem::offset_of!(NightEyeEffect, elapsedSeconds) == 0x70);
+const _: () = assert!(core::mem::offset_of!(NightEyeEffect, duration) == 0x74);
+const _: () = assert!(core::mem::offset_of!(NightEyeEffect, magnitude) == 0x78);
 const _: () = assert!(core::mem::offset_of!(NightEyeEffect, flags) == 0x7C);
-const _: () = assert!(core::mem::offset_of!(NightEyeEffect, field_80) == 0x80);
+const _: () = assert!(core::mem::offset_of!(NightEyeEffect, conditionsTrue) == 0x80);
 const _: () = assert!(core::mem::offset_of!(NightEyeEffect, uniqueID) == 0x84);
 const _: () = assert!(core::mem::offset_of!(NightEyeEffect, field_88) == 0x88);
 const _: () = assert!(core::mem::offset_of!(NightEyeEffect, field_90) == 0x90);
@@ -7034,9 +7377,9 @@ pub struct OpenEffect {
     pub casterHandle: u32,
     /// +0x38 `undefined8`, base ActiveEffect
     pub field_38: u64,
-    /// +0x40 `pointer`, base ActiveEffect, semantic; the caster's MagicCaster (medium)
-    pub casterMagic: *mut c_void,
-    /// +0x48 `pointer`, base ActiveEffect, semantic; the spell's effect entry; +0x10 is its EffectSetting (medium)
+    /// +0x40 `ptr:MagicItem`, base ActiveEffect, semantic; the spell, enchantment, potion, scroll or ingredient that applied the effect (high)
+    pub spell: *mut crate::MagicItem,
+    /// +0x48 `pointer`, base ActiveEffect, semantic; the spell's effect entry: +0 magnitude (float), +4 area (s32), +8 duration (s32), +0x10 EffectSetting* (high)
     pub effect: *mut c_void,
     /// +0x50 `ptr:MagicTarget`, base ActiveEffect, semantic; the target's MagicTarget subobject (Actor+0xa0 for an actor) (high)
     pub target: *mut crate::MagicTarget,
@@ -7046,16 +7389,16 @@ pub struct OpenEffect {
     pub field_60: u64,
     /// +0x68 `undefined8`, base ActiveEffect
     pub field_68: u64,
-    /// +0x70 `undefined4`, base ActiveEffect
-    pub field_70: u32,
-    /// +0x74 `float`, base ActiveEffect
-    pub field_74: f32,
-    /// +0x78 `float`, base ActiveEffect
-    pub field_78: f32,
-    /// +0x7C `undefined4`, base ActiveEffect, semantic; state bits (0x40000 marks an effect to remove, 0x10000/0x20000 stages of its start) (low)
+    /// +0x70 `float`, base ActiveEffect, semantic; seconds the effect has run; 0 at creation (high)
+    pub elapsedSeconds: f32,
+    /// +0x74 `float`, base ActiveEffect, semantic; the effect's duration in seconds (effect duration + EffectSetting+0xb8 unless MGEF flags & 0x600); the effect ends when duration <= elapsedSeconds unless the MGEF has flag bit 9 or the effect flags 0x4100 (high)
+    pub duration: f32,
+    /// +0x78 `float`, base ActiveEffect, semantic; the effect magnitude, initialised from the effect entry's +0 (medium)
+    pub magnitude: f32,
+    /// +0x7C `undefined4`, base ActiveEffect, semantic; state bits: 0x80 the effect entry has conditions, 0x10000/0x20000 stages of its start; see the flag rows (medium)
     pub flags: u32,
-    /// +0x80 `undefined4`, base ActiveEffect
-    pub field_80: u32,
+    /// +0x80 `u32`, base ActiveEffect, semantic; result of the effect's condition check; 1 at creation, 0 makes the effect inactive (flags 0x8000) (medium)
+    pub conditionsTrue: u32,
     /// +0x84 `undefined2`, base ActiveEffect, semantic; per-target id, bits 32-47 of the effect's script handle; 0 means no handle (high)
     pub uniqueID: u16,
     pub unknown_86: [u8; 2],
@@ -7077,17 +7420,17 @@ const _: () = assert!(core::mem::offset_of!(OpenEffect, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(OpenEffect, field_2C) == 0x2C);
 const _: () = assert!(core::mem::offset_of!(OpenEffect, casterHandle) == 0x34);
 const _: () = assert!(core::mem::offset_of!(OpenEffect, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(OpenEffect, casterMagic) == 0x40);
+const _: () = assert!(core::mem::offset_of!(OpenEffect, spell) == 0x40);
 const _: () = assert!(core::mem::offset_of!(OpenEffect, effect) == 0x48);
 const _: () = assert!(core::mem::offset_of!(OpenEffect, target) == 0x50);
 const _: () = assert!(core::mem::offset_of!(OpenEffect, field_58) == 0x58);
 const _: () = assert!(core::mem::offset_of!(OpenEffect, field_60) == 0x60);
 const _: () = assert!(core::mem::offset_of!(OpenEffect, field_68) == 0x68);
-const _: () = assert!(core::mem::offset_of!(OpenEffect, field_70) == 0x70);
-const _: () = assert!(core::mem::offset_of!(OpenEffect, field_74) == 0x74);
-const _: () = assert!(core::mem::offset_of!(OpenEffect, field_78) == 0x78);
+const _: () = assert!(core::mem::offset_of!(OpenEffect, elapsedSeconds) == 0x70);
+const _: () = assert!(core::mem::offset_of!(OpenEffect, duration) == 0x74);
+const _: () = assert!(core::mem::offset_of!(OpenEffect, magnitude) == 0x78);
 const _: () = assert!(core::mem::offset_of!(OpenEffect, flags) == 0x7C);
-const _: () = assert!(core::mem::offset_of!(OpenEffect, field_80) == 0x80);
+const _: () = assert!(core::mem::offset_of!(OpenEffect, conditionsTrue) == 0x80);
 const _: () = assert!(core::mem::offset_of!(OpenEffect, uniqueID) == 0x84);
 const _: () = assert!(core::mem::offset_of!(OpenEffect, field_88) == 0x88);
 
@@ -7286,9 +7629,9 @@ pub struct ParalysisEffect {
     pub casterHandle: u32,
     /// +0x38 `undefined8`, base ActiveEffect
     pub field_38: u64,
-    /// +0x40 `pointer`, base ActiveEffect, semantic; the caster's MagicCaster (medium)
-    pub casterMagic: *mut c_void,
-    /// +0x48 `pointer`, base ActiveEffect, semantic; the spell's effect entry; +0x10 is its EffectSetting (medium)
+    /// +0x40 `ptr:MagicItem`, base ActiveEffect, semantic; the spell, enchantment, potion, scroll or ingredient that applied the effect (high)
+    pub spell: *mut crate::MagicItem,
+    /// +0x48 `pointer`, base ActiveEffect, semantic; the spell's effect entry: +0 magnitude (float), +4 area (s32), +8 duration (s32), +0x10 EffectSetting* (high)
     pub effect: *mut c_void,
     /// +0x50 `ptr:MagicTarget`, base ActiveEffect, semantic; the target's MagicTarget subobject (Actor+0xa0 for an actor) (high)
     pub target: *mut crate::MagicTarget,
@@ -7298,16 +7641,16 @@ pub struct ParalysisEffect {
     pub field_60: u64,
     /// +0x68 `undefined8`, base ActiveEffect
     pub field_68: u64,
-    /// +0x70 `undefined4`, base ActiveEffect
-    pub field_70: u32,
-    /// +0x74 `float`, base ActiveEffect
-    pub field_74: f32,
-    /// +0x78 `float`, base ActiveEffect
-    pub field_78: f32,
-    /// +0x7C `undefined4`, base ActiveEffect, semantic; state bits (0x40000 marks an effect to remove, 0x10000/0x20000 stages of its start) (low)
+    /// +0x70 `float`, base ActiveEffect, semantic; seconds the effect has run; 0 at creation (high)
+    pub elapsedSeconds: f32,
+    /// +0x74 `float`, base ActiveEffect, semantic; the effect's duration in seconds (effect duration + EffectSetting+0xb8 unless MGEF flags & 0x600); the effect ends when duration <= elapsedSeconds unless the MGEF has flag bit 9 or the effect flags 0x4100 (high)
+    pub duration: f32,
+    /// +0x78 `float`, base ActiveEffect, semantic; the effect magnitude, initialised from the effect entry's +0 (medium)
+    pub magnitude: f32,
+    /// +0x7C `undefined4`, base ActiveEffect, semantic; state bits: 0x80 the effect entry has conditions, 0x10000/0x20000 stages of its start; see the flag rows (medium)
     pub flags: u32,
-    /// +0x80 `undefined4`, base ActiveEffect
-    pub field_80: u32,
+    /// +0x80 `u32`, base ActiveEffect, semantic; result of the effect's condition check; 1 at creation, 0 makes the effect inactive (flags 0x8000) (medium)
+    pub conditionsTrue: u32,
     /// +0x84 `undefined2`, base ActiveEffect, semantic; per-target id, bits 32-47 of the effect's script handle; 0 means no handle (high)
     pub uniqueID: u16,
     pub unknown_86: [u8; 2],
@@ -7333,17 +7676,17 @@ const _: () = assert!(core::mem::offset_of!(ParalysisEffect, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(ParalysisEffect, field_2C) == 0x2C);
 const _: () = assert!(core::mem::offset_of!(ParalysisEffect, casterHandle) == 0x34);
 const _: () = assert!(core::mem::offset_of!(ParalysisEffect, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(ParalysisEffect, casterMagic) == 0x40);
+const _: () = assert!(core::mem::offset_of!(ParalysisEffect, spell) == 0x40);
 const _: () = assert!(core::mem::offset_of!(ParalysisEffect, effect) == 0x48);
 const _: () = assert!(core::mem::offset_of!(ParalysisEffect, target) == 0x50);
 const _: () = assert!(core::mem::offset_of!(ParalysisEffect, field_58) == 0x58);
 const _: () = assert!(core::mem::offset_of!(ParalysisEffect, field_60) == 0x60);
 const _: () = assert!(core::mem::offset_of!(ParalysisEffect, field_68) == 0x68);
-const _: () = assert!(core::mem::offset_of!(ParalysisEffect, field_70) == 0x70);
-const _: () = assert!(core::mem::offset_of!(ParalysisEffect, field_74) == 0x74);
-const _: () = assert!(core::mem::offset_of!(ParalysisEffect, field_78) == 0x78);
+const _: () = assert!(core::mem::offset_of!(ParalysisEffect, elapsedSeconds) == 0x70);
+const _: () = assert!(core::mem::offset_of!(ParalysisEffect, duration) == 0x74);
+const _: () = assert!(core::mem::offset_of!(ParalysisEffect, magnitude) == 0x78);
 const _: () = assert!(core::mem::offset_of!(ParalysisEffect, flags) == 0x7C);
-const _: () = assert!(core::mem::offset_of!(ParalysisEffect, field_80) == 0x80);
+const _: () = assert!(core::mem::offset_of!(ParalysisEffect, conditionsTrue) == 0x80);
 const _: () = assert!(core::mem::offset_of!(ParalysisEffect, uniqueID) == 0x84);
 const _: () = assert!(core::mem::offset_of!(ParalysisEffect, field_88) == 0x88);
 const _: () = assert!(core::mem::offset_of!(ParalysisEffect, field_90) == 0x90);
@@ -7404,9 +7747,9 @@ pub struct PeakValueModifierEffect {
     pub casterHandle: u32,
     /// +0x38 `undefined8`, base ActiveEffect
     pub field_38: u64,
-    /// +0x40 `pointer`, base ActiveEffect, semantic; the caster's MagicCaster (medium)
-    pub casterMagic: *mut c_void,
-    /// +0x48 `pointer`, base ActiveEffect, semantic; the spell's effect entry; +0x10 is its EffectSetting (medium)
+    /// +0x40 `ptr:MagicItem`, base ActiveEffect, semantic; the spell, enchantment, potion, scroll or ingredient that applied the effect (high)
+    pub spell: *mut crate::MagicItem,
+    /// +0x48 `pointer`, base ActiveEffect, semantic; the spell's effect entry: +0 magnitude (float), +4 area (s32), +8 duration (s32), +0x10 EffectSetting* (high)
     pub effect: *mut c_void,
     /// +0x50 `ptr:MagicTarget`, base ActiveEffect, semantic; the target's MagicTarget subobject (Actor+0xa0 for an actor) (high)
     pub target: *mut crate::MagicTarget,
@@ -7416,16 +7759,16 @@ pub struct PeakValueModifierEffect {
     pub field_60: u64,
     /// +0x68 `undefined8`, base ActiveEffect
     pub field_68: u64,
-    /// +0x70 `undefined4`, base ActiveEffect
-    pub field_70: u32,
-    /// +0x74 `float`, base ActiveEffect
-    pub field_74: f32,
-    /// +0x78 `float`, base ActiveEffect
-    pub field_78: f32,
-    /// +0x7C `undefined4`, base ActiveEffect, semantic; state bits (0x40000 marks an effect to remove, 0x10000/0x20000 stages of its start) (low)
+    /// +0x70 `float`, base ActiveEffect, semantic; seconds the effect has run; 0 at creation (high)
+    pub elapsedSeconds: f32,
+    /// +0x74 `float`, base ActiveEffect, semantic; the effect's duration in seconds (effect duration + EffectSetting+0xb8 unless MGEF flags & 0x600); the effect ends when duration <= elapsedSeconds unless the MGEF has flag bit 9 or the effect flags 0x4100 (high)
+    pub duration: f32,
+    /// +0x78 `float`, base ActiveEffect, semantic; the effect magnitude, initialised from the effect entry's +0 (medium)
+    pub magnitude: f32,
+    /// +0x7C `undefined4`, base ActiveEffect, semantic; state bits: 0x80 the effect entry has conditions, 0x10000/0x20000 stages of its start; see the flag rows (medium)
     pub flags: u32,
-    /// +0x80 `undefined4`, base ActiveEffect
-    pub field_80: u32,
+    /// +0x80 `u32`, base ActiveEffect, semantic; result of the effect's condition check; 1 at creation, 0 makes the effect inactive (flags 0x8000) (medium)
+    pub conditionsTrue: u32,
     /// +0x84 `undefined2`, base ActiveEffect, semantic; per-target id, bits 32-47 of the effect's script handle; 0 means no handle (high)
     pub uniqueID: u16,
     pub unknown_86: [u8; 2],
@@ -7453,17 +7796,17 @@ const _: () = assert!(core::mem::offset_of!(PeakValueModifierEffect, field_28) =
 const _: () = assert!(core::mem::offset_of!(PeakValueModifierEffect, field_2C) == 0x2C);
 const _: () = assert!(core::mem::offset_of!(PeakValueModifierEffect, casterHandle) == 0x34);
 const _: () = assert!(core::mem::offset_of!(PeakValueModifierEffect, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(PeakValueModifierEffect, casterMagic) == 0x40);
+const _: () = assert!(core::mem::offset_of!(PeakValueModifierEffect, spell) == 0x40);
 const _: () = assert!(core::mem::offset_of!(PeakValueModifierEffect, effect) == 0x48);
 const _: () = assert!(core::mem::offset_of!(PeakValueModifierEffect, target) == 0x50);
 const _: () = assert!(core::mem::offset_of!(PeakValueModifierEffect, field_58) == 0x58);
 const _: () = assert!(core::mem::offset_of!(PeakValueModifierEffect, field_60) == 0x60);
 const _: () = assert!(core::mem::offset_of!(PeakValueModifierEffect, field_68) == 0x68);
-const _: () = assert!(core::mem::offset_of!(PeakValueModifierEffect, field_70) == 0x70);
-const _: () = assert!(core::mem::offset_of!(PeakValueModifierEffect, field_74) == 0x74);
-const _: () = assert!(core::mem::offset_of!(PeakValueModifierEffect, field_78) == 0x78);
+const _: () = assert!(core::mem::offset_of!(PeakValueModifierEffect, elapsedSeconds) == 0x70);
+const _: () = assert!(core::mem::offset_of!(PeakValueModifierEffect, duration) == 0x74);
+const _: () = assert!(core::mem::offset_of!(PeakValueModifierEffect, magnitude) == 0x78);
 const _: () = assert!(core::mem::offset_of!(PeakValueModifierEffect, flags) == 0x7C);
-const _: () = assert!(core::mem::offset_of!(PeakValueModifierEffect, field_80) == 0x80);
+const _: () = assert!(core::mem::offset_of!(PeakValueModifierEffect, conditionsTrue) == 0x80);
 const _: () = assert!(core::mem::offset_of!(PeakValueModifierEffect, uniqueID) == 0x84);
 const _: () = assert!(core::mem::offset_of!(PeakValueModifierEffect, field_88) == 0x88);
 const _: () = assert!(core::mem::offset_of!(PeakValueModifierEffect, field_90) == 0x90);
@@ -9310,9 +9653,9 @@ pub struct RallyEffect {
     pub casterHandle: u32,
     /// +0x38 `undefined8`, base ActiveEffect
     pub field_38: u64,
-    /// +0x40 `pointer`, base ActiveEffect, semantic; the caster's MagicCaster (medium)
-    pub casterMagic: *mut c_void,
-    /// +0x48 `pointer`, base ActiveEffect, semantic; the spell's effect entry; +0x10 is its EffectSetting (medium)
+    /// +0x40 `ptr:MagicItem`, base ActiveEffect, semantic; the spell, enchantment, potion, scroll or ingredient that applied the effect (high)
+    pub spell: *mut crate::MagicItem,
+    /// +0x48 `pointer`, base ActiveEffect, semantic; the spell's effect entry: +0 magnitude (float), +4 area (s32), +8 duration (s32), +0x10 EffectSetting* (high)
     pub effect: *mut c_void,
     /// +0x50 `ptr:MagicTarget`, base ActiveEffect, semantic; the target's MagicTarget subobject (Actor+0xa0 for an actor) (high)
     pub target: *mut crate::MagicTarget,
@@ -9322,16 +9665,16 @@ pub struct RallyEffect {
     pub field_60: u64,
     /// +0x68 `undefined8`, base ActiveEffect
     pub field_68: u64,
-    /// +0x70 `undefined4`, base ActiveEffect
-    pub field_70: u32,
-    /// +0x74 `float`, base ActiveEffect
-    pub field_74: f32,
-    /// +0x78 `float`, base ActiveEffect
-    pub field_78: f32,
-    /// +0x7C `undefined4`, base ActiveEffect, semantic; state bits (0x40000 marks an effect to remove, 0x10000/0x20000 stages of its start) (low)
+    /// +0x70 `float`, base ActiveEffect, semantic; seconds the effect has run; 0 at creation (high)
+    pub elapsedSeconds: f32,
+    /// +0x74 `float`, base ActiveEffect, semantic; the effect's duration in seconds (effect duration + EffectSetting+0xb8 unless MGEF flags & 0x600); the effect ends when duration <= elapsedSeconds unless the MGEF has flag bit 9 or the effect flags 0x4100 (high)
+    pub duration: f32,
+    /// +0x78 `float`, base ActiveEffect, semantic; the effect magnitude, initialised from the effect entry's +0 (medium)
+    pub magnitude: f32,
+    /// +0x7C `undefined4`, base ActiveEffect, semantic; state bits: 0x80 the effect entry has conditions, 0x10000/0x20000 stages of its start; see the flag rows (medium)
     pub flags: u32,
-    /// +0x80 `undefined4`, base ActiveEffect
-    pub field_80: u32,
+    /// +0x80 `u32`, base ActiveEffect, semantic; result of the effect's condition check; 1 at creation, 0 makes the effect inactive (flags 0x8000) (medium)
+    pub conditionsTrue: u32,
     /// +0x84 `undefined2`, base ActiveEffect, semantic; per-target id, bits 32-47 of the effect's script handle; 0 means no handle (high)
     pub uniqueID: u16,
     pub unknown_86: [u8; 2],
@@ -9357,17 +9700,17 @@ const _: () = assert!(core::mem::offset_of!(RallyEffect, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(RallyEffect, field_2C) == 0x2C);
 const _: () = assert!(core::mem::offset_of!(RallyEffect, casterHandle) == 0x34);
 const _: () = assert!(core::mem::offset_of!(RallyEffect, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(RallyEffect, casterMagic) == 0x40);
+const _: () = assert!(core::mem::offset_of!(RallyEffect, spell) == 0x40);
 const _: () = assert!(core::mem::offset_of!(RallyEffect, effect) == 0x48);
 const _: () = assert!(core::mem::offset_of!(RallyEffect, target) == 0x50);
 const _: () = assert!(core::mem::offset_of!(RallyEffect, field_58) == 0x58);
 const _: () = assert!(core::mem::offset_of!(RallyEffect, field_60) == 0x60);
 const _: () = assert!(core::mem::offset_of!(RallyEffect, field_68) == 0x68);
-const _: () = assert!(core::mem::offset_of!(RallyEffect, field_70) == 0x70);
-const _: () = assert!(core::mem::offset_of!(RallyEffect, field_74) == 0x74);
-const _: () = assert!(core::mem::offset_of!(RallyEffect, field_78) == 0x78);
+const _: () = assert!(core::mem::offset_of!(RallyEffect, elapsedSeconds) == 0x70);
+const _: () = assert!(core::mem::offset_of!(RallyEffect, duration) == 0x74);
+const _: () = assert!(core::mem::offset_of!(RallyEffect, magnitude) == 0x78);
 const _: () = assert!(core::mem::offset_of!(RallyEffect, flags) == 0x7C);
-const _: () = assert!(core::mem::offset_of!(RallyEffect, field_80) == 0x80);
+const _: () = assert!(core::mem::offset_of!(RallyEffect, conditionsTrue) == 0x80);
 const _: () = assert!(core::mem::offset_of!(RallyEffect, uniqueID) == 0x84);
 const _: () = assert!(core::mem::offset_of!(RallyEffect, field_88) == 0x88);
 const _: () = assert!(core::mem::offset_of!(RallyEffect, field_90) == 0x90);
@@ -9417,9 +9760,9 @@ pub struct ReanimateEffect {
     pub casterHandle: u32,
     /// +0x38 `undefined8`, base ActiveEffect
     pub field_38: u64,
-    /// +0x40 `pointer`, base ActiveEffect, semantic; the caster's MagicCaster (medium)
-    pub casterMagic: *mut c_void,
-    /// +0x48 `pointer`, base ActiveEffect, semantic; the spell's effect entry; +0x10 is its EffectSetting (medium)
+    /// +0x40 `ptr:MagicItem`, base ActiveEffect, semantic; the spell, enchantment, potion, scroll or ingredient that applied the effect (high)
+    pub spell: *mut crate::MagicItem,
+    /// +0x48 `pointer`, base ActiveEffect, semantic; the spell's effect entry: +0 magnitude (float), +4 area (s32), +8 duration (s32), +0x10 EffectSetting* (high)
     pub effect: *mut c_void,
     /// +0x50 `ptr:MagicTarget`, base ActiveEffect, semantic; the target's MagicTarget subobject (Actor+0xa0 for an actor) (high)
     pub target: *mut crate::MagicTarget,
@@ -9429,16 +9772,16 @@ pub struct ReanimateEffect {
     pub field_60: u64,
     /// +0x68 `undefined8`, base ActiveEffect
     pub field_68: u64,
-    /// +0x70 `undefined4`, base ActiveEffect
-    pub field_70: u32,
-    /// +0x74 `float`, base ActiveEffect
-    pub field_74: f32,
-    /// +0x78 `float`, base ActiveEffect
-    pub field_78: f32,
-    /// +0x7C `undefined4`, base ActiveEffect, semantic; state bits (0x40000 marks an effect to remove, 0x10000/0x20000 stages of its start) (low)
+    /// +0x70 `float`, base ActiveEffect, semantic; seconds the effect has run; 0 at creation (high)
+    pub elapsedSeconds: f32,
+    /// +0x74 `float`, base ActiveEffect, semantic; the effect's duration in seconds (effect duration + EffectSetting+0xb8 unless MGEF flags & 0x600); the effect ends when duration <= elapsedSeconds unless the MGEF has flag bit 9 or the effect flags 0x4100 (high)
+    pub duration: f32,
+    /// +0x78 `float`, base ActiveEffect, semantic; the effect magnitude, initialised from the effect entry's +0 (medium)
+    pub magnitude: f32,
+    /// +0x7C `undefined4`, base ActiveEffect, semantic; state bits: 0x80 the effect entry has conditions, 0x10000/0x20000 stages of its start; see the flag rows (medium)
     pub flags: u32,
-    /// +0x80 `undefined4`, base ActiveEffect
-    pub field_80: u32,
+    /// +0x80 `u32`, base ActiveEffect, semantic; result of the effect's condition check; 1 at creation, 0 makes the effect inactive (flags 0x8000) (medium)
+    pub conditionsTrue: u32,
     /// +0x84 `undefined2`, base ActiveEffect, semantic; per-target id, bits 32-47 of the effect's script handle; 0 means no handle (high)
     pub uniqueID: u16,
     pub unknown_86: [u8; 2],
@@ -9463,17 +9806,17 @@ const _: () = assert!(core::mem::offset_of!(ReanimateEffect, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(ReanimateEffect, field_2C) == 0x2C);
 const _: () = assert!(core::mem::offset_of!(ReanimateEffect, casterHandle) == 0x34);
 const _: () = assert!(core::mem::offset_of!(ReanimateEffect, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(ReanimateEffect, casterMagic) == 0x40);
+const _: () = assert!(core::mem::offset_of!(ReanimateEffect, spell) == 0x40);
 const _: () = assert!(core::mem::offset_of!(ReanimateEffect, effect) == 0x48);
 const _: () = assert!(core::mem::offset_of!(ReanimateEffect, target) == 0x50);
 const _: () = assert!(core::mem::offset_of!(ReanimateEffect, field_58) == 0x58);
 const _: () = assert!(core::mem::offset_of!(ReanimateEffect, field_60) == 0x60);
 const _: () = assert!(core::mem::offset_of!(ReanimateEffect, field_68) == 0x68);
-const _: () = assert!(core::mem::offset_of!(ReanimateEffect, field_70) == 0x70);
-const _: () = assert!(core::mem::offset_of!(ReanimateEffect, field_74) == 0x74);
-const _: () = assert!(core::mem::offset_of!(ReanimateEffect, field_78) == 0x78);
+const _: () = assert!(core::mem::offset_of!(ReanimateEffect, elapsedSeconds) == 0x70);
+const _: () = assert!(core::mem::offset_of!(ReanimateEffect, duration) == 0x74);
+const _: () = assert!(core::mem::offset_of!(ReanimateEffect, magnitude) == 0x78);
 const _: () = assert!(core::mem::offset_of!(ReanimateEffect, flags) == 0x7C);
-const _: () = assert!(core::mem::offset_of!(ReanimateEffect, field_80) == 0x80);
+const _: () = assert!(core::mem::offset_of!(ReanimateEffect, conditionsTrue) == 0x80);
 const _: () = assert!(core::mem::offset_of!(ReanimateEffect, uniqueID) == 0x84);
 const _: () = assert!(core::mem::offset_of!(ReanimateEffect, field_88) == 0x88);
 const _: () = assert!(core::mem::offset_of!(ReanimateEffect, field_90) == 0x90);
@@ -10292,9 +10635,9 @@ pub struct ScriptEffect {
     pub casterHandle: u32,
     /// +0x38 `undefined8`, base ActiveEffect
     pub field_38: u64,
-    /// +0x40 `pointer`, base ActiveEffect, semantic; the caster's MagicCaster (medium)
-    pub casterMagic: *mut c_void,
-    /// +0x48 `pointer`, base ActiveEffect, semantic; the spell's effect entry; +0x10 is its EffectSetting (medium)
+    /// +0x40 `ptr:MagicItem`, base ActiveEffect, semantic; the spell, enchantment, potion, scroll or ingredient that applied the effect (high)
+    pub spell: *mut crate::MagicItem,
+    /// +0x48 `pointer`, base ActiveEffect, semantic; the spell's effect entry: +0 magnitude (float), +4 area (s32), +8 duration (s32), +0x10 EffectSetting* (high)
     pub effect: *mut c_void,
     /// +0x50 `ptr:MagicTarget`, base ActiveEffect, semantic; the target's MagicTarget subobject (Actor+0xa0 for an actor) (high)
     pub target: *mut crate::MagicTarget,
@@ -10304,16 +10647,16 @@ pub struct ScriptEffect {
     pub field_60: u64,
     /// +0x68 `undefined8`, base ActiveEffect
     pub field_68: u64,
-    /// +0x70 `undefined4`, base ActiveEffect
-    pub field_70: u32,
-    /// +0x74 `float`, base ActiveEffect
-    pub field_74: f32,
-    /// +0x78 `float`, base ActiveEffect
-    pub field_78: f32,
-    /// +0x7C `undefined4`, base ActiveEffect, semantic; state bits (0x40000 marks an effect to remove, 0x10000/0x20000 stages of its start) (low)
+    /// +0x70 `float`, base ActiveEffect, semantic; seconds the effect has run; 0 at creation (high)
+    pub elapsedSeconds: f32,
+    /// +0x74 `float`, base ActiveEffect, semantic; the effect's duration in seconds (effect duration + EffectSetting+0xb8 unless MGEF flags & 0x600); the effect ends when duration <= elapsedSeconds unless the MGEF has flag bit 9 or the effect flags 0x4100 (high)
+    pub duration: f32,
+    /// +0x78 `float`, base ActiveEffect, semantic; the effect magnitude, initialised from the effect entry's +0 (medium)
+    pub magnitude: f32,
+    /// +0x7C `undefined4`, base ActiveEffect, semantic; state bits: 0x80 the effect entry has conditions, 0x10000/0x20000 stages of its start; see the flag rows (medium)
     pub flags: u32,
-    /// +0x80 `undefined4`, base ActiveEffect
-    pub field_80: u32,
+    /// +0x80 `u32`, base ActiveEffect, semantic; result of the effect's condition check; 1 at creation, 0 makes the effect inactive (flags 0x8000) (medium)
+    pub conditionsTrue: u32,
     /// +0x84 `undefined2`, base ActiveEffect, semantic; per-target id, bits 32-47 of the effect's script handle; 0 means no handle (high)
     pub uniqueID: u16,
     pub unknown_86: [u8; 2],
@@ -10339,17 +10682,17 @@ const _: () = assert!(core::mem::offset_of!(ScriptEffect, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(ScriptEffect, field_2C) == 0x2C);
 const _: () = assert!(core::mem::offset_of!(ScriptEffect, casterHandle) == 0x34);
 const _: () = assert!(core::mem::offset_of!(ScriptEffect, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(ScriptEffect, casterMagic) == 0x40);
+const _: () = assert!(core::mem::offset_of!(ScriptEffect, spell) == 0x40);
 const _: () = assert!(core::mem::offset_of!(ScriptEffect, effect) == 0x48);
 const _: () = assert!(core::mem::offset_of!(ScriptEffect, target) == 0x50);
 const _: () = assert!(core::mem::offset_of!(ScriptEffect, field_58) == 0x58);
 const _: () = assert!(core::mem::offset_of!(ScriptEffect, field_60) == 0x60);
 const _: () = assert!(core::mem::offset_of!(ScriptEffect, field_68) == 0x68);
-const _: () = assert!(core::mem::offset_of!(ScriptEffect, field_70) == 0x70);
-const _: () = assert!(core::mem::offset_of!(ScriptEffect, field_74) == 0x74);
-const _: () = assert!(core::mem::offset_of!(ScriptEffect, field_78) == 0x78);
+const _: () = assert!(core::mem::offset_of!(ScriptEffect, elapsedSeconds) == 0x70);
+const _: () = assert!(core::mem::offset_of!(ScriptEffect, duration) == 0x74);
+const _: () = assert!(core::mem::offset_of!(ScriptEffect, magnitude) == 0x78);
 const _: () = assert!(core::mem::offset_of!(ScriptEffect, flags) == 0x7C);
-const _: () = assert!(core::mem::offset_of!(ScriptEffect, field_80) == 0x80);
+const _: () = assert!(core::mem::offset_of!(ScriptEffect, conditionsTrue) == 0x80);
 const _: () = assert!(core::mem::offset_of!(ScriptEffect, uniqueID) == 0x84);
 const _: () = assert!(core::mem::offset_of!(ScriptEffect, field_88) == 0x88);
 const _: () = assert!(core::mem::offset_of!(ScriptEffect, field_90) == 0x90);
@@ -10384,9 +10727,9 @@ pub struct ScriptedRefEffect {
     pub casterHandle: u32,
     /// +0x38 `undefined8`, base ActiveEffect
     pub field_38: u64,
-    /// +0x40 `pointer`, base ActiveEffect, semantic; the caster's MagicCaster (medium)
-    pub casterMagic: *mut c_void,
-    /// +0x48 `pointer`, base ActiveEffect, semantic; the spell's effect entry; +0x10 is its EffectSetting (medium)
+    /// +0x40 `ptr:MagicItem`, base ActiveEffect, semantic; the spell, enchantment, potion, scroll or ingredient that applied the effect (high)
+    pub spell: *mut crate::MagicItem,
+    /// +0x48 `pointer`, base ActiveEffect, semantic; the spell's effect entry: +0 magnitude (float), +4 area (s32), +8 duration (s32), +0x10 EffectSetting* (high)
     pub effect: *mut c_void,
     /// +0x50 `ptr:MagicTarget`, base ActiveEffect, semantic; the target's MagicTarget subobject (Actor+0xa0 for an actor) (high)
     pub target: *mut crate::MagicTarget,
@@ -10396,16 +10739,16 @@ pub struct ScriptedRefEffect {
     pub field_60: u64,
     /// +0x68 `undefined8`, base ActiveEffect
     pub field_68: u64,
-    /// +0x70 `undefined4`, base ActiveEffect
-    pub field_70: u32,
-    /// +0x74 `float`, base ActiveEffect
-    pub field_74: f32,
-    /// +0x78 `float`, base ActiveEffect
-    pub field_78: f32,
-    /// +0x7C `undefined4`, base ActiveEffect, semantic; state bits (0x40000 marks an effect to remove, 0x10000/0x20000 stages of its start) (low)
+    /// +0x70 `float`, base ActiveEffect, semantic; seconds the effect has run; 0 at creation (high)
+    pub elapsedSeconds: f32,
+    /// +0x74 `float`, base ActiveEffect, semantic; the effect's duration in seconds (effect duration + EffectSetting+0xb8 unless MGEF flags & 0x600); the effect ends when duration <= elapsedSeconds unless the MGEF has flag bit 9 or the effect flags 0x4100 (high)
+    pub duration: f32,
+    /// +0x78 `float`, base ActiveEffect, semantic; the effect magnitude, initialised from the effect entry's +0 (medium)
+    pub magnitude: f32,
+    /// +0x7C `undefined4`, base ActiveEffect, semantic; state bits: 0x80 the effect entry has conditions, 0x10000/0x20000 stages of its start; see the flag rows (medium)
     pub flags: u32,
-    /// +0x80 `undefined4`, base ActiveEffect
-    pub field_80: u32,
+    /// +0x80 `u32`, base ActiveEffect, semantic; result of the effect's condition check; 1 at creation, 0 makes the effect inactive (flags 0x8000) (medium)
+    pub conditionsTrue: u32,
     /// +0x84 `undefined2`, base ActiveEffect, semantic; per-target id, bits 32-47 of the effect's script handle; 0 means no handle (high)
     pub uniqueID: u16,
     pub unknown_86: [u8; 2],
@@ -10430,17 +10773,17 @@ const _: () = assert!(core::mem::offset_of!(ScriptedRefEffect, field_28) == 0x28
 const _: () = assert!(core::mem::offset_of!(ScriptedRefEffect, field_2C) == 0x2C);
 const _: () = assert!(core::mem::offset_of!(ScriptedRefEffect, casterHandle) == 0x34);
 const _: () = assert!(core::mem::offset_of!(ScriptedRefEffect, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(ScriptedRefEffect, casterMagic) == 0x40);
+const _: () = assert!(core::mem::offset_of!(ScriptedRefEffect, spell) == 0x40);
 const _: () = assert!(core::mem::offset_of!(ScriptedRefEffect, effect) == 0x48);
 const _: () = assert!(core::mem::offset_of!(ScriptedRefEffect, target) == 0x50);
 const _: () = assert!(core::mem::offset_of!(ScriptedRefEffect, field_58) == 0x58);
 const _: () = assert!(core::mem::offset_of!(ScriptedRefEffect, field_60) == 0x60);
 const _: () = assert!(core::mem::offset_of!(ScriptedRefEffect, field_68) == 0x68);
-const _: () = assert!(core::mem::offset_of!(ScriptedRefEffect, field_70) == 0x70);
-const _: () = assert!(core::mem::offset_of!(ScriptedRefEffect, field_74) == 0x74);
-const _: () = assert!(core::mem::offset_of!(ScriptedRefEffect, field_78) == 0x78);
+const _: () = assert!(core::mem::offset_of!(ScriptedRefEffect, elapsedSeconds) == 0x70);
+const _: () = assert!(core::mem::offset_of!(ScriptedRefEffect, duration) == 0x74);
+const _: () = assert!(core::mem::offset_of!(ScriptedRefEffect, magnitude) == 0x78);
 const _: () = assert!(core::mem::offset_of!(ScriptedRefEffect, flags) == 0x7C);
-const _: () = assert!(core::mem::offset_of!(ScriptedRefEffect, field_80) == 0x80);
+const _: () = assert!(core::mem::offset_of!(ScriptedRefEffect, conditionsTrue) == 0x80);
 const _: () = assert!(core::mem::offset_of!(ScriptedRefEffect, uniqueID) == 0x84);
 const _: () = assert!(core::mem::offset_of!(ScriptedRefEffect, field_88) == 0x88);
 const _: () = assert!(core::mem::offset_of!(ScriptedRefEffect, field_90) == 0x90);
@@ -11461,9 +11804,9 @@ pub struct SlowTimeEffect {
     pub casterHandle: u32,
     /// +0x38 `undefined8`, base ActiveEffect
     pub field_38: u64,
-    /// +0x40 `pointer`, base ActiveEffect, semantic; the caster's MagicCaster (medium)
-    pub casterMagic: *mut c_void,
-    /// +0x48 `pointer`, base ActiveEffect, semantic; the spell's effect entry; +0x10 is its EffectSetting (medium)
+    /// +0x40 `ptr:MagicItem`, base ActiveEffect, semantic; the spell, enchantment, potion, scroll or ingredient that applied the effect (high)
+    pub spell: *mut crate::MagicItem,
+    /// +0x48 `pointer`, base ActiveEffect, semantic; the spell's effect entry: +0 magnitude (float), +4 area (s32), +8 duration (s32), +0x10 EffectSetting* (high)
     pub effect: *mut c_void,
     /// +0x50 `ptr:MagicTarget`, base ActiveEffect, semantic; the target's MagicTarget subobject (Actor+0xa0 for an actor) (high)
     pub target: *mut crate::MagicTarget,
@@ -11473,16 +11816,16 @@ pub struct SlowTimeEffect {
     pub field_60: u64,
     /// +0x68 `undefined8`, base ActiveEffect
     pub field_68: u64,
-    /// +0x70 `undefined4`, base ActiveEffect
-    pub field_70: u32,
-    /// +0x74 `float`, base ActiveEffect
-    pub field_74: f32,
-    /// +0x78 `float`, base ActiveEffect
-    pub field_78: f32,
-    /// +0x7C `undefined4`, base ActiveEffect, semantic; state bits (0x40000 marks an effect to remove, 0x10000/0x20000 stages of its start) (low)
+    /// +0x70 `float`, base ActiveEffect, semantic; seconds the effect has run; 0 at creation (high)
+    pub elapsedSeconds: f32,
+    /// +0x74 `float`, base ActiveEffect, semantic; the effect's duration in seconds (effect duration + EffectSetting+0xb8 unless MGEF flags & 0x600); the effect ends when duration <= elapsedSeconds unless the MGEF has flag bit 9 or the effect flags 0x4100 (high)
+    pub duration: f32,
+    /// +0x78 `float`, base ActiveEffect, semantic; the effect magnitude, initialised from the effect entry's +0 (medium)
+    pub magnitude: f32,
+    /// +0x7C `undefined4`, base ActiveEffect, semantic; state bits: 0x80 the effect entry has conditions, 0x10000/0x20000 stages of its start; see the flag rows (medium)
     pub flags: u32,
-    /// +0x80 `undefined4`, base ActiveEffect
-    pub field_80: u32,
+    /// +0x80 `u32`, base ActiveEffect, semantic; result of the effect's condition check; 1 at creation, 0 makes the effect inactive (flags 0x8000) (medium)
+    pub conditionsTrue: u32,
     /// +0x84 `undefined2`, base ActiveEffect, semantic; per-target id, bits 32-47 of the effect's script handle; 0 means no handle (high)
     pub uniqueID: u16,
     pub unknown_86: [u8; 2],
@@ -11516,17 +11859,17 @@ const _: () = assert!(core::mem::offset_of!(SlowTimeEffect, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(SlowTimeEffect, field_2C) == 0x2C);
 const _: () = assert!(core::mem::offset_of!(SlowTimeEffect, casterHandle) == 0x34);
 const _: () = assert!(core::mem::offset_of!(SlowTimeEffect, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(SlowTimeEffect, casterMagic) == 0x40);
+const _: () = assert!(core::mem::offset_of!(SlowTimeEffect, spell) == 0x40);
 const _: () = assert!(core::mem::offset_of!(SlowTimeEffect, effect) == 0x48);
 const _: () = assert!(core::mem::offset_of!(SlowTimeEffect, target) == 0x50);
 const _: () = assert!(core::mem::offset_of!(SlowTimeEffect, field_58) == 0x58);
 const _: () = assert!(core::mem::offset_of!(SlowTimeEffect, field_60) == 0x60);
 const _: () = assert!(core::mem::offset_of!(SlowTimeEffect, field_68) == 0x68);
-const _: () = assert!(core::mem::offset_of!(SlowTimeEffect, field_70) == 0x70);
-const _: () = assert!(core::mem::offset_of!(SlowTimeEffect, field_74) == 0x74);
-const _: () = assert!(core::mem::offset_of!(SlowTimeEffect, field_78) == 0x78);
+const _: () = assert!(core::mem::offset_of!(SlowTimeEffect, elapsedSeconds) == 0x70);
+const _: () = assert!(core::mem::offset_of!(SlowTimeEffect, duration) == 0x74);
+const _: () = assert!(core::mem::offset_of!(SlowTimeEffect, magnitude) == 0x78);
 const _: () = assert!(core::mem::offset_of!(SlowTimeEffect, flags) == 0x7C);
-const _: () = assert!(core::mem::offset_of!(SlowTimeEffect, field_80) == 0x80);
+const _: () = assert!(core::mem::offset_of!(SlowTimeEffect, conditionsTrue) == 0x80);
 const _: () = assert!(core::mem::offset_of!(SlowTimeEffect, uniqueID) == 0x84);
 const _: () = assert!(core::mem::offset_of!(SlowTimeEffect, field_88) == 0x88);
 const _: () = assert!(core::mem::offset_of!(SlowTimeEffect, field_90) == 0x90);
@@ -11564,9 +11907,9 @@ pub struct SoulTrapEffect {
     pub casterHandle: u32,
     /// +0x38 `undefined8`, base ActiveEffect
     pub field_38: u64,
-    /// +0x40 `pointer`, base ActiveEffect, semantic; the caster's MagicCaster (medium)
-    pub casterMagic: *mut c_void,
-    /// +0x48 `pointer`, base ActiveEffect, semantic; the spell's effect entry; +0x10 is its EffectSetting (medium)
+    /// +0x40 `ptr:MagicItem`, base ActiveEffect, semantic; the spell, enchantment, potion, scroll or ingredient that applied the effect (high)
+    pub spell: *mut crate::MagicItem,
+    /// +0x48 `pointer`, base ActiveEffect, semantic; the spell's effect entry: +0 magnitude (float), +4 area (s32), +8 duration (s32), +0x10 EffectSetting* (high)
     pub effect: *mut c_void,
     /// +0x50 `ptr:MagicTarget`, base ActiveEffect, semantic; the target's MagicTarget subobject (Actor+0xa0 for an actor) (high)
     pub target: *mut crate::MagicTarget,
@@ -11576,16 +11919,16 @@ pub struct SoulTrapEffect {
     pub field_60: u64,
     /// +0x68 `undefined8`, base ActiveEffect
     pub field_68: u64,
-    /// +0x70 `undefined4`, base ActiveEffect
-    pub field_70: u32,
-    /// +0x74 `float`, base ActiveEffect
-    pub field_74: f32,
-    /// +0x78 `float`, base ActiveEffect
-    pub field_78: f32,
-    /// +0x7C `undefined4`, base ActiveEffect, semantic; state bits (0x40000 marks an effect to remove, 0x10000/0x20000 stages of its start) (low)
+    /// +0x70 `float`, base ActiveEffect, semantic; seconds the effect has run; 0 at creation (high)
+    pub elapsedSeconds: f32,
+    /// +0x74 `float`, base ActiveEffect, semantic; the effect's duration in seconds (effect duration + EffectSetting+0xb8 unless MGEF flags & 0x600); the effect ends when duration <= elapsedSeconds unless the MGEF has flag bit 9 or the effect flags 0x4100 (high)
+    pub duration: f32,
+    /// +0x78 `float`, base ActiveEffect, semantic; the effect magnitude, initialised from the effect entry's +0 (medium)
+    pub magnitude: f32,
+    /// +0x7C `undefined4`, base ActiveEffect, semantic; state bits: 0x80 the effect entry has conditions, 0x10000/0x20000 stages of its start; see the flag rows (medium)
     pub flags: u32,
-    /// +0x80 `undefined4`, base ActiveEffect
-    pub field_80: u32,
+    /// +0x80 `u32`, base ActiveEffect, semantic; result of the effect's condition check; 1 at creation, 0 makes the effect inactive (flags 0x8000) (medium)
+    pub conditionsTrue: u32,
     /// +0x84 `undefined2`, base ActiveEffect, semantic; per-target id, bits 32-47 of the effect's script handle; 0 means no handle (high)
     pub uniqueID: u16,
     pub unknown_86: [u8; 2],
@@ -11607,17 +11950,17 @@ const _: () = assert!(core::mem::offset_of!(SoulTrapEffect, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(SoulTrapEffect, field_2C) == 0x2C);
 const _: () = assert!(core::mem::offset_of!(SoulTrapEffect, casterHandle) == 0x34);
 const _: () = assert!(core::mem::offset_of!(SoulTrapEffect, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(SoulTrapEffect, casterMagic) == 0x40);
+const _: () = assert!(core::mem::offset_of!(SoulTrapEffect, spell) == 0x40);
 const _: () = assert!(core::mem::offset_of!(SoulTrapEffect, effect) == 0x48);
 const _: () = assert!(core::mem::offset_of!(SoulTrapEffect, target) == 0x50);
 const _: () = assert!(core::mem::offset_of!(SoulTrapEffect, field_58) == 0x58);
 const _: () = assert!(core::mem::offset_of!(SoulTrapEffect, field_60) == 0x60);
 const _: () = assert!(core::mem::offset_of!(SoulTrapEffect, field_68) == 0x68);
-const _: () = assert!(core::mem::offset_of!(SoulTrapEffect, field_70) == 0x70);
-const _: () = assert!(core::mem::offset_of!(SoulTrapEffect, field_74) == 0x74);
-const _: () = assert!(core::mem::offset_of!(SoulTrapEffect, field_78) == 0x78);
+const _: () = assert!(core::mem::offset_of!(SoulTrapEffect, elapsedSeconds) == 0x70);
+const _: () = assert!(core::mem::offset_of!(SoulTrapEffect, duration) == 0x74);
+const _: () = assert!(core::mem::offset_of!(SoulTrapEffect, magnitude) == 0x78);
 const _: () = assert!(core::mem::offset_of!(SoulTrapEffect, flags) == 0x7C);
-const _: () = assert!(core::mem::offset_of!(SoulTrapEffect, field_80) == 0x80);
+const _: () = assert!(core::mem::offset_of!(SoulTrapEffect, conditionsTrue) == 0x80);
 const _: () = assert!(core::mem::offset_of!(SoulTrapEffect, uniqueID) == 0x84);
 const _: () = assert!(core::mem::offset_of!(SoulTrapEffect, field_88) == 0x88);
 
@@ -11650,9 +11993,9 @@ pub struct SpawnHazardEffect {
     pub casterHandle: u32,
     /// +0x38 `undefined8`, base ActiveEffect
     pub field_38: u64,
-    /// +0x40 `pointer`, base ActiveEffect, semantic; the caster's MagicCaster (medium)
-    pub casterMagic: *mut c_void,
-    /// +0x48 `pointer`, base ActiveEffect, semantic; the spell's effect entry; +0x10 is its EffectSetting (medium)
+    /// +0x40 `ptr:MagicItem`, base ActiveEffect, semantic; the spell, enchantment, potion, scroll or ingredient that applied the effect (high)
+    pub spell: *mut crate::MagicItem,
+    /// +0x48 `pointer`, base ActiveEffect, semantic; the spell's effect entry: +0 magnitude (float), +4 area (s32), +8 duration (s32), +0x10 EffectSetting* (high)
     pub effect: *mut c_void,
     /// +0x50 `ptr:MagicTarget`, base ActiveEffect, semantic; the target's MagicTarget subobject (Actor+0xa0 for an actor) (high)
     pub target: *mut crate::MagicTarget,
@@ -11662,16 +12005,16 @@ pub struct SpawnHazardEffect {
     pub field_60: u64,
     /// +0x68 `undefined8`, base ActiveEffect
     pub field_68: u64,
-    /// +0x70 `undefined4`, base ActiveEffect
-    pub field_70: u32,
-    /// +0x74 `float`, base ActiveEffect
-    pub field_74: f32,
-    /// +0x78 `float`, base ActiveEffect
-    pub field_78: f32,
-    /// +0x7C `undefined4`, base ActiveEffect, semantic; state bits (0x40000 marks an effect to remove, 0x10000/0x20000 stages of its start) (low)
+    /// +0x70 `float`, base ActiveEffect, semantic; seconds the effect has run; 0 at creation (high)
+    pub elapsedSeconds: f32,
+    /// +0x74 `float`, base ActiveEffect, semantic; the effect's duration in seconds (effect duration + EffectSetting+0xb8 unless MGEF flags & 0x600); the effect ends when duration <= elapsedSeconds unless the MGEF has flag bit 9 or the effect flags 0x4100 (high)
+    pub duration: f32,
+    /// +0x78 `float`, base ActiveEffect, semantic; the effect magnitude, initialised from the effect entry's +0 (medium)
+    pub magnitude: f32,
+    /// +0x7C `undefined4`, base ActiveEffect, semantic; state bits: 0x80 the effect entry has conditions, 0x10000/0x20000 stages of its start; see the flag rows (medium)
     pub flags: u32,
-    /// +0x80 `undefined4`, base ActiveEffect
-    pub field_80: u32,
+    /// +0x80 `u32`, base ActiveEffect, semantic; result of the effect's condition check; 1 at creation, 0 makes the effect inactive (flags 0x8000) (medium)
+    pub conditionsTrue: u32,
     /// +0x84 `undefined2`, base ActiveEffect, semantic; per-target id, bits 32-47 of the effect's script handle; 0 means no handle (high)
     pub uniqueID: u16,
     pub unknown_86: [u8; 2],
@@ -11693,17 +12036,17 @@ const _: () = assert!(core::mem::offset_of!(SpawnHazardEffect, field_28) == 0x28
 const _: () = assert!(core::mem::offset_of!(SpawnHazardEffect, field_2C) == 0x2C);
 const _: () = assert!(core::mem::offset_of!(SpawnHazardEffect, casterHandle) == 0x34);
 const _: () = assert!(core::mem::offset_of!(SpawnHazardEffect, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(SpawnHazardEffect, casterMagic) == 0x40);
+const _: () = assert!(core::mem::offset_of!(SpawnHazardEffect, spell) == 0x40);
 const _: () = assert!(core::mem::offset_of!(SpawnHazardEffect, effect) == 0x48);
 const _: () = assert!(core::mem::offset_of!(SpawnHazardEffect, target) == 0x50);
 const _: () = assert!(core::mem::offset_of!(SpawnHazardEffect, field_58) == 0x58);
 const _: () = assert!(core::mem::offset_of!(SpawnHazardEffect, field_60) == 0x60);
 const _: () = assert!(core::mem::offset_of!(SpawnHazardEffect, field_68) == 0x68);
-const _: () = assert!(core::mem::offset_of!(SpawnHazardEffect, field_70) == 0x70);
-const _: () = assert!(core::mem::offset_of!(SpawnHazardEffect, field_74) == 0x74);
-const _: () = assert!(core::mem::offset_of!(SpawnHazardEffect, field_78) == 0x78);
+const _: () = assert!(core::mem::offset_of!(SpawnHazardEffect, elapsedSeconds) == 0x70);
+const _: () = assert!(core::mem::offset_of!(SpawnHazardEffect, duration) == 0x74);
+const _: () = assert!(core::mem::offset_of!(SpawnHazardEffect, magnitude) == 0x78);
 const _: () = assert!(core::mem::offset_of!(SpawnHazardEffect, flags) == 0x7C);
-const _: () = assert!(core::mem::offset_of!(SpawnHazardEffect, field_80) == 0x80);
+const _: () = assert!(core::mem::offset_of!(SpawnHazardEffect, conditionsTrue) == 0x80);
 const _: () = assert!(core::mem::offset_of!(SpawnHazardEffect, uniqueID) == 0x84);
 const _: () = assert!(core::mem::offset_of!(SpawnHazardEffect, field_88) == 0x88);
 
@@ -11989,9 +12332,9 @@ pub struct StaggerEffect {
     pub casterHandle: u32,
     /// +0x38 `undefined8`, base ActiveEffect
     pub field_38: u64,
-    /// +0x40 `pointer`, base ActiveEffect, semantic; the caster's MagicCaster (medium)
-    pub casterMagic: *mut c_void,
-    /// +0x48 `pointer`, base ActiveEffect, semantic; the spell's effect entry; +0x10 is its EffectSetting (medium)
+    /// +0x40 `ptr:MagicItem`, base ActiveEffect, semantic; the spell, enchantment, potion, scroll or ingredient that applied the effect (high)
+    pub spell: *mut crate::MagicItem,
+    /// +0x48 `pointer`, base ActiveEffect, semantic; the spell's effect entry: +0 magnitude (float), +4 area (s32), +8 duration (s32), +0x10 EffectSetting* (high)
     pub effect: *mut c_void,
     /// +0x50 `ptr:MagicTarget`, base ActiveEffect, semantic; the target's MagicTarget subobject (Actor+0xa0 for an actor) (high)
     pub target: *mut crate::MagicTarget,
@@ -12001,16 +12344,16 @@ pub struct StaggerEffect {
     pub field_60: u64,
     /// +0x68 `undefined8`, base ActiveEffect
     pub field_68: u64,
-    /// +0x70 `undefined4`, base ActiveEffect
-    pub field_70: u32,
-    /// +0x74 `float`, base ActiveEffect
-    pub field_74: f32,
-    /// +0x78 `float`, base ActiveEffect
-    pub field_78: f32,
-    /// +0x7C `undefined4`, base ActiveEffect, semantic; state bits (0x40000 marks an effect to remove, 0x10000/0x20000 stages of its start) (low)
+    /// +0x70 `float`, base ActiveEffect, semantic; seconds the effect has run; 0 at creation (high)
+    pub elapsedSeconds: f32,
+    /// +0x74 `float`, base ActiveEffect, semantic; the effect's duration in seconds (effect duration + EffectSetting+0xb8 unless MGEF flags & 0x600); the effect ends when duration <= elapsedSeconds unless the MGEF has flag bit 9 or the effect flags 0x4100 (high)
+    pub duration: f32,
+    /// +0x78 `float`, base ActiveEffect, semantic; the effect magnitude, initialised from the effect entry's +0 (medium)
+    pub magnitude: f32,
+    /// +0x7C `undefined4`, base ActiveEffect, semantic; state bits: 0x80 the effect entry has conditions, 0x10000/0x20000 stages of its start; see the flag rows (medium)
     pub flags: u32,
-    /// +0x80 `undefined4`, base ActiveEffect
-    pub field_80: u32,
+    /// +0x80 `u32`, base ActiveEffect, semantic; result of the effect's condition check; 1 at creation, 0 makes the effect inactive (flags 0x8000) (medium)
+    pub conditionsTrue: u32,
     /// +0x84 `undefined2`, base ActiveEffect, semantic; per-target id, bits 32-47 of the effect's script handle; 0 means no handle (high)
     pub uniqueID: u16,
     pub unknown_86: [u8; 2],
@@ -12032,17 +12375,17 @@ const _: () = assert!(core::mem::offset_of!(StaggerEffect, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(StaggerEffect, field_2C) == 0x2C);
 const _: () = assert!(core::mem::offset_of!(StaggerEffect, casterHandle) == 0x34);
 const _: () = assert!(core::mem::offset_of!(StaggerEffect, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(StaggerEffect, casterMagic) == 0x40);
+const _: () = assert!(core::mem::offset_of!(StaggerEffect, spell) == 0x40);
 const _: () = assert!(core::mem::offset_of!(StaggerEffect, effect) == 0x48);
 const _: () = assert!(core::mem::offset_of!(StaggerEffect, target) == 0x50);
 const _: () = assert!(core::mem::offset_of!(StaggerEffect, field_58) == 0x58);
 const _: () = assert!(core::mem::offset_of!(StaggerEffect, field_60) == 0x60);
 const _: () = assert!(core::mem::offset_of!(StaggerEffect, field_68) == 0x68);
-const _: () = assert!(core::mem::offset_of!(StaggerEffect, field_70) == 0x70);
-const _: () = assert!(core::mem::offset_of!(StaggerEffect, field_74) == 0x74);
-const _: () = assert!(core::mem::offset_of!(StaggerEffect, field_78) == 0x78);
+const _: () = assert!(core::mem::offset_of!(StaggerEffect, elapsedSeconds) == 0x70);
+const _: () = assert!(core::mem::offset_of!(StaggerEffect, duration) == 0x74);
+const _: () = assert!(core::mem::offset_of!(StaggerEffect, magnitude) == 0x78);
 const _: () = assert!(core::mem::offset_of!(StaggerEffect, flags) == 0x7C);
-const _: () = assert!(core::mem::offset_of!(StaggerEffect, field_80) == 0x80);
+const _: () = assert!(core::mem::offset_of!(StaggerEffect, conditionsTrue) == 0x80);
 const _: () = assert!(core::mem::offset_of!(StaggerEffect, uniqueID) == 0x84);
 const _: () = assert!(core::mem::offset_of!(StaggerEffect, field_88) == 0x88);
 
@@ -12416,9 +12759,9 @@ pub struct SummonCreatureEffect {
     pub casterHandle: u32,
     /// +0x38 `undefined8`, base ActiveEffect
     pub field_38: u64,
-    /// +0x40 `pointer`, base ActiveEffect, semantic; the caster's MagicCaster (medium)
-    pub casterMagic: *mut c_void,
-    /// +0x48 `pointer`, base ActiveEffect, semantic; the spell's effect entry; +0x10 is its EffectSetting (medium)
+    /// +0x40 `ptr:MagicItem`, base ActiveEffect, semantic; the spell, enchantment, potion, scroll or ingredient that applied the effect (high)
+    pub spell: *mut crate::MagicItem,
+    /// +0x48 `pointer`, base ActiveEffect, semantic; the spell's effect entry: +0 magnitude (float), +4 area (s32), +8 duration (s32), +0x10 EffectSetting* (high)
     pub effect: *mut c_void,
     /// +0x50 `ptr:MagicTarget`, base ActiveEffect, semantic; the target's MagicTarget subobject (Actor+0xa0 for an actor) (high)
     pub target: *mut crate::MagicTarget,
@@ -12428,16 +12771,16 @@ pub struct SummonCreatureEffect {
     pub field_60: u64,
     /// +0x68 `undefined8`, base ActiveEffect
     pub field_68: u64,
-    /// +0x70 `undefined4`, base ActiveEffect
-    pub field_70: u32,
-    /// +0x74 `float`, base ActiveEffect
-    pub field_74: f32,
-    /// +0x78 `float`, base ActiveEffect
-    pub field_78: f32,
-    /// +0x7C `undefined4`, base ActiveEffect, semantic; state bits (0x40000 marks an effect to remove, 0x10000/0x20000 stages of its start) (low)
+    /// +0x70 `float`, base ActiveEffect, semantic; seconds the effect has run; 0 at creation (high)
+    pub elapsedSeconds: f32,
+    /// +0x74 `float`, base ActiveEffect, semantic; the effect's duration in seconds (effect duration + EffectSetting+0xb8 unless MGEF flags & 0x600); the effect ends when duration <= elapsedSeconds unless the MGEF has flag bit 9 or the effect flags 0x4100 (high)
+    pub duration: f32,
+    /// +0x78 `float`, base ActiveEffect, semantic; the effect magnitude, initialised from the effect entry's +0 (medium)
+    pub magnitude: f32,
+    /// +0x7C `undefined4`, base ActiveEffect, semantic; state bits: 0x80 the effect entry has conditions, 0x10000/0x20000 stages of its start; see the flag rows (medium)
     pub flags: u32,
-    /// +0x80 `undefined4`, base ActiveEffect
-    pub field_80: u32,
+    /// +0x80 `u32`, base ActiveEffect, semantic; result of the effect's condition check; 1 at creation, 0 makes the effect inactive (flags 0x8000) (medium)
+    pub conditionsTrue: u32,
     /// +0x84 `undefined2`, base ActiveEffect, semantic; per-target id, bits 32-47 of the effect's script handle; 0 means no handle (high)
     pub uniqueID: u16,
     pub unknown_86: [u8; 2],
@@ -12481,17 +12824,17 @@ const _: () = assert!(core::mem::offset_of!(SummonCreatureEffect, field_28) == 0
 const _: () = assert!(core::mem::offset_of!(SummonCreatureEffect, field_2C) == 0x2C);
 const _: () = assert!(core::mem::offset_of!(SummonCreatureEffect, casterHandle) == 0x34);
 const _: () = assert!(core::mem::offset_of!(SummonCreatureEffect, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(SummonCreatureEffect, casterMagic) == 0x40);
+const _: () = assert!(core::mem::offset_of!(SummonCreatureEffect, spell) == 0x40);
 const _: () = assert!(core::mem::offset_of!(SummonCreatureEffect, effect) == 0x48);
 const _: () = assert!(core::mem::offset_of!(SummonCreatureEffect, target) == 0x50);
 const _: () = assert!(core::mem::offset_of!(SummonCreatureEffect, field_58) == 0x58);
 const _: () = assert!(core::mem::offset_of!(SummonCreatureEffect, field_60) == 0x60);
 const _: () = assert!(core::mem::offset_of!(SummonCreatureEffect, field_68) == 0x68);
-const _: () = assert!(core::mem::offset_of!(SummonCreatureEffect, field_70) == 0x70);
-const _: () = assert!(core::mem::offset_of!(SummonCreatureEffect, field_74) == 0x74);
-const _: () = assert!(core::mem::offset_of!(SummonCreatureEffect, field_78) == 0x78);
+const _: () = assert!(core::mem::offset_of!(SummonCreatureEffect, elapsedSeconds) == 0x70);
+const _: () = assert!(core::mem::offset_of!(SummonCreatureEffect, duration) == 0x74);
+const _: () = assert!(core::mem::offset_of!(SummonCreatureEffect, magnitude) == 0x78);
 const _: () = assert!(core::mem::offset_of!(SummonCreatureEffect, flags) == 0x7C);
-const _: () = assert!(core::mem::offset_of!(SummonCreatureEffect, field_80) == 0x80);
+const _: () = assert!(core::mem::offset_of!(SummonCreatureEffect, conditionsTrue) == 0x80);
 const _: () = assert!(core::mem::offset_of!(SummonCreatureEffect, uniqueID) == 0x84);
 const _: () = assert!(core::mem::offset_of!(SummonCreatureEffect, field_88) == 0x88);
 const _: () = assert!(core::mem::offset_of!(SummonCreatureEffect, field_90) == 0x90);
@@ -12954,9 +13297,9 @@ pub struct TargetValueModifierEffect {
     pub casterHandle: u32,
     /// +0x38 `undefined8`, base ActiveEffect
     pub field_38: u64,
-    /// +0x40 `pointer`, base ActiveEffect, semantic; the caster's MagicCaster (medium)
-    pub casterMagic: *mut c_void,
-    /// +0x48 `pointer`, base ActiveEffect, semantic; the spell's effect entry; +0x10 is its EffectSetting (medium)
+    /// +0x40 `ptr:MagicItem`, base ActiveEffect, semantic; the spell, enchantment, potion, scroll or ingredient that applied the effect (high)
+    pub spell: *mut crate::MagicItem,
+    /// +0x48 `pointer`, base ActiveEffect, semantic; the spell's effect entry: +0 magnitude (float), +4 area (s32), +8 duration (s32), +0x10 EffectSetting* (high)
     pub effect: *mut c_void,
     /// +0x50 `ptr:MagicTarget`, base ActiveEffect, semantic; the target's MagicTarget subobject (Actor+0xa0 for an actor) (high)
     pub target: *mut crate::MagicTarget,
@@ -12966,16 +13309,16 @@ pub struct TargetValueModifierEffect {
     pub field_60: u64,
     /// +0x68 `undefined8`, base ActiveEffect
     pub field_68: u64,
-    /// +0x70 `undefined4`, base ActiveEffect
-    pub field_70: u32,
-    /// +0x74 `float`, base ActiveEffect
-    pub field_74: f32,
-    /// +0x78 `float`, base ActiveEffect
-    pub field_78: f32,
-    /// +0x7C `undefined4`, base ActiveEffect, semantic; state bits (0x40000 marks an effect to remove, 0x10000/0x20000 stages of its start) (low)
+    /// +0x70 `float`, base ActiveEffect, semantic; seconds the effect has run; 0 at creation (high)
+    pub elapsedSeconds: f32,
+    /// +0x74 `float`, base ActiveEffect, semantic; the effect's duration in seconds (effect duration + EffectSetting+0xb8 unless MGEF flags & 0x600); the effect ends when duration <= elapsedSeconds unless the MGEF has flag bit 9 or the effect flags 0x4100 (high)
+    pub duration: f32,
+    /// +0x78 `float`, base ActiveEffect, semantic; the effect magnitude, initialised from the effect entry's +0 (medium)
+    pub magnitude: f32,
+    /// +0x7C `undefined4`, base ActiveEffect, semantic; state bits: 0x80 the effect entry has conditions, 0x10000/0x20000 stages of its start; see the flag rows (medium)
     pub flags: u32,
-    /// +0x80 `undefined4`, base ActiveEffect
-    pub field_80: u32,
+    /// +0x80 `u32`, base ActiveEffect, semantic; result of the effect's condition check; 1 at creation, 0 makes the effect inactive (flags 0x8000) (medium)
+    pub conditionsTrue: u32,
     /// +0x84 `undefined2`, base ActiveEffect, semantic; per-target id, bits 32-47 of the effect's script handle; 0 means no handle (high)
     pub uniqueID: u16,
     pub unknown_86: [u8; 2],
@@ -13001,17 +13344,17 @@ const _: () = assert!(core::mem::offset_of!(TargetValueModifierEffect, field_28)
 const _: () = assert!(core::mem::offset_of!(TargetValueModifierEffect, field_2C) == 0x2C);
 const _: () = assert!(core::mem::offset_of!(TargetValueModifierEffect, casterHandle) == 0x34);
 const _: () = assert!(core::mem::offset_of!(TargetValueModifierEffect, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(TargetValueModifierEffect, casterMagic) == 0x40);
+const _: () = assert!(core::mem::offset_of!(TargetValueModifierEffect, spell) == 0x40);
 const _: () = assert!(core::mem::offset_of!(TargetValueModifierEffect, effect) == 0x48);
 const _: () = assert!(core::mem::offset_of!(TargetValueModifierEffect, target) == 0x50);
 const _: () = assert!(core::mem::offset_of!(TargetValueModifierEffect, field_58) == 0x58);
 const _: () = assert!(core::mem::offset_of!(TargetValueModifierEffect, field_60) == 0x60);
 const _: () = assert!(core::mem::offset_of!(TargetValueModifierEffect, field_68) == 0x68);
-const _: () = assert!(core::mem::offset_of!(TargetValueModifierEffect, field_70) == 0x70);
-const _: () = assert!(core::mem::offset_of!(TargetValueModifierEffect, field_74) == 0x74);
-const _: () = assert!(core::mem::offset_of!(TargetValueModifierEffect, field_78) == 0x78);
+const _: () = assert!(core::mem::offset_of!(TargetValueModifierEffect, elapsedSeconds) == 0x70);
+const _: () = assert!(core::mem::offset_of!(TargetValueModifierEffect, duration) == 0x74);
+const _: () = assert!(core::mem::offset_of!(TargetValueModifierEffect, magnitude) == 0x78);
 const _: () = assert!(core::mem::offset_of!(TargetValueModifierEffect, flags) == 0x7C);
-const _: () = assert!(core::mem::offset_of!(TargetValueModifierEffect, field_80) == 0x80);
+const _: () = assert!(core::mem::offset_of!(TargetValueModifierEffect, conditionsTrue) == 0x80);
 const _: () = assert!(core::mem::offset_of!(TargetValueModifierEffect, uniqueID) == 0x84);
 const _: () = assert!(core::mem::offset_of!(TargetValueModifierEffect, field_88) == 0x88);
 const _: () = assert!(core::mem::offset_of!(TargetValueModifierEffect, field_90) == 0x90);
@@ -13046,9 +13389,9 @@ pub struct TelekinesisEffect {
     pub casterHandle: u32,
     /// +0x38 `undefined8`, base ActiveEffect
     pub field_38: u64,
-    /// +0x40 `pointer`, base ActiveEffect, semantic; the caster's MagicCaster (medium)
-    pub casterMagic: *mut c_void,
-    /// +0x48 `pointer`, base ActiveEffect, semantic; the spell's effect entry; +0x10 is its EffectSetting (medium)
+    /// +0x40 `ptr:MagicItem`, base ActiveEffect, semantic; the spell, enchantment, potion, scroll or ingredient that applied the effect (high)
+    pub spell: *mut crate::MagicItem,
+    /// +0x48 `pointer`, base ActiveEffect, semantic; the spell's effect entry: +0 magnitude (float), +4 area (s32), +8 duration (s32), +0x10 EffectSetting* (high)
     pub effect: *mut c_void,
     /// +0x50 `ptr:MagicTarget`, base ActiveEffect, semantic; the target's MagicTarget subobject (Actor+0xa0 for an actor) (high)
     pub target: *mut crate::MagicTarget,
@@ -13058,16 +13401,16 @@ pub struct TelekinesisEffect {
     pub field_60: u64,
     /// +0x68 `undefined8`, base ActiveEffect
     pub field_68: u64,
-    /// +0x70 `undefined4`, base ActiveEffect
-    pub field_70: u32,
-    /// +0x74 `float`, base ActiveEffect
-    pub field_74: f32,
-    /// +0x78 `float`, base ActiveEffect
-    pub field_78: f32,
-    /// +0x7C `undefined4`, base ActiveEffect, semantic; state bits (0x40000 marks an effect to remove, 0x10000/0x20000 stages of its start) (low)
+    /// +0x70 `float`, base ActiveEffect, semantic; seconds the effect has run; 0 at creation (high)
+    pub elapsedSeconds: f32,
+    /// +0x74 `float`, base ActiveEffect, semantic; the effect's duration in seconds (effect duration + EffectSetting+0xb8 unless MGEF flags & 0x600); the effect ends when duration <= elapsedSeconds unless the MGEF has flag bit 9 or the effect flags 0x4100 (high)
+    pub duration: f32,
+    /// +0x78 `float`, base ActiveEffect, semantic; the effect magnitude, initialised from the effect entry's +0 (medium)
+    pub magnitude: f32,
+    /// +0x7C `undefined4`, base ActiveEffect, semantic; state bits: 0x80 the effect entry has conditions, 0x10000/0x20000 stages of its start; see the flag rows (medium)
     pub flags: u32,
-    /// +0x80 `undefined4`, base ActiveEffect
-    pub field_80: u32,
+    /// +0x80 `u32`, base ActiveEffect, semantic; result of the effect's condition check; 1 at creation, 0 makes the effect inactive (flags 0x8000) (medium)
+    pub conditionsTrue: u32,
     /// +0x84 `undefined2`, base ActiveEffect, semantic; per-target id, bits 32-47 of the effect's script handle; 0 means no handle (high)
     pub uniqueID: u16,
     pub unknown_86: [u8; 2],
@@ -13089,17 +13432,17 @@ const _: () = assert!(core::mem::offset_of!(TelekinesisEffect, field_28) == 0x28
 const _: () = assert!(core::mem::offset_of!(TelekinesisEffect, field_2C) == 0x2C);
 const _: () = assert!(core::mem::offset_of!(TelekinesisEffect, casterHandle) == 0x34);
 const _: () = assert!(core::mem::offset_of!(TelekinesisEffect, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(TelekinesisEffect, casterMagic) == 0x40);
+const _: () = assert!(core::mem::offset_of!(TelekinesisEffect, spell) == 0x40);
 const _: () = assert!(core::mem::offset_of!(TelekinesisEffect, effect) == 0x48);
 const _: () = assert!(core::mem::offset_of!(TelekinesisEffect, target) == 0x50);
 const _: () = assert!(core::mem::offset_of!(TelekinesisEffect, field_58) == 0x58);
 const _: () = assert!(core::mem::offset_of!(TelekinesisEffect, field_60) == 0x60);
 const _: () = assert!(core::mem::offset_of!(TelekinesisEffect, field_68) == 0x68);
-const _: () = assert!(core::mem::offset_of!(TelekinesisEffect, field_70) == 0x70);
-const _: () = assert!(core::mem::offset_of!(TelekinesisEffect, field_74) == 0x74);
-const _: () = assert!(core::mem::offset_of!(TelekinesisEffect, field_78) == 0x78);
+const _: () = assert!(core::mem::offset_of!(TelekinesisEffect, elapsedSeconds) == 0x70);
+const _: () = assert!(core::mem::offset_of!(TelekinesisEffect, duration) == 0x74);
+const _: () = assert!(core::mem::offset_of!(TelekinesisEffect, magnitude) == 0x78);
 const _: () = assert!(core::mem::offset_of!(TelekinesisEffect, flags) == 0x7C);
-const _: () = assert!(core::mem::offset_of!(TelekinesisEffect, field_80) == 0x80);
+const _: () = assert!(core::mem::offset_of!(TelekinesisEffect, conditionsTrue) == 0x80);
 const _: () = assert!(core::mem::offset_of!(TelekinesisEffect, uniqueID) == 0x84);
 const _: () = assert!(core::mem::offset_of!(TelekinesisEffect, field_88) == 0x88);
 
@@ -13780,9 +14123,9 @@ pub struct TurnUndeadEffect {
     pub casterHandle: u32,
     /// +0x38 `undefined8`, base ActiveEffect
     pub field_38: u64,
-    /// +0x40 `pointer`, base ActiveEffect, semantic; the caster's MagicCaster (medium)
-    pub casterMagic: *mut c_void,
-    /// +0x48 `pointer`, base ActiveEffect, semantic; the spell's effect entry; +0x10 is its EffectSetting (medium)
+    /// +0x40 `ptr:MagicItem`, base ActiveEffect, semantic; the spell, enchantment, potion, scroll or ingredient that applied the effect (high)
+    pub spell: *mut crate::MagicItem,
+    /// +0x48 `pointer`, base ActiveEffect, semantic; the spell's effect entry: +0 magnitude (float), +4 area (s32), +8 duration (s32), +0x10 EffectSetting* (high)
     pub effect: *mut c_void,
     /// +0x50 `ptr:MagicTarget`, base ActiveEffect, semantic; the target's MagicTarget subobject (Actor+0xa0 for an actor) (high)
     pub target: *mut crate::MagicTarget,
@@ -13792,16 +14135,16 @@ pub struct TurnUndeadEffect {
     pub field_60: u64,
     /// +0x68 `undefined8`, base ActiveEffect
     pub field_68: u64,
-    /// +0x70 `undefined4`, base ActiveEffect
-    pub field_70: u32,
-    /// +0x74 `float`, base ActiveEffect
-    pub field_74: f32,
-    /// +0x78 `float`, base ActiveEffect
-    pub field_78: f32,
-    /// +0x7C `undefined4`, base ActiveEffect, semantic; state bits (0x40000 marks an effect to remove, 0x10000/0x20000 stages of its start) (low)
+    /// +0x70 `float`, base ActiveEffect, semantic; seconds the effect has run; 0 at creation (high)
+    pub elapsedSeconds: f32,
+    /// +0x74 `float`, base ActiveEffect, semantic; the effect's duration in seconds (effect duration + EffectSetting+0xb8 unless MGEF flags & 0x600); the effect ends when duration <= elapsedSeconds unless the MGEF has flag bit 9 or the effect flags 0x4100 (high)
+    pub duration: f32,
+    /// +0x78 `float`, base ActiveEffect, semantic; the effect magnitude, initialised from the effect entry's +0 (medium)
+    pub magnitude: f32,
+    /// +0x7C `undefined4`, base ActiveEffect, semantic; state bits: 0x80 the effect entry has conditions, 0x10000/0x20000 stages of its start; see the flag rows (medium)
     pub flags: u32,
-    /// +0x80 `undefined4`, base ActiveEffect
-    pub field_80: u32,
+    /// +0x80 `u32`, base ActiveEffect, semantic; result of the effect's condition check; 1 at creation, 0 makes the effect inactive (flags 0x8000) (medium)
+    pub conditionsTrue: u32,
     /// +0x84 `undefined2`, base ActiveEffect, semantic; per-target id, bits 32-47 of the effect's script handle; 0 means no handle (high)
     pub uniqueID: u16,
     pub unknown_86: [u8; 2],
@@ -13827,17 +14170,17 @@ const _: () = assert!(core::mem::offset_of!(TurnUndeadEffect, field_28) == 0x28)
 const _: () = assert!(core::mem::offset_of!(TurnUndeadEffect, field_2C) == 0x2C);
 const _: () = assert!(core::mem::offset_of!(TurnUndeadEffect, casterHandle) == 0x34);
 const _: () = assert!(core::mem::offset_of!(TurnUndeadEffect, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(TurnUndeadEffect, casterMagic) == 0x40);
+const _: () = assert!(core::mem::offset_of!(TurnUndeadEffect, spell) == 0x40);
 const _: () = assert!(core::mem::offset_of!(TurnUndeadEffect, effect) == 0x48);
 const _: () = assert!(core::mem::offset_of!(TurnUndeadEffect, target) == 0x50);
 const _: () = assert!(core::mem::offset_of!(TurnUndeadEffect, field_58) == 0x58);
 const _: () = assert!(core::mem::offset_of!(TurnUndeadEffect, field_60) == 0x60);
 const _: () = assert!(core::mem::offset_of!(TurnUndeadEffect, field_68) == 0x68);
-const _: () = assert!(core::mem::offset_of!(TurnUndeadEffect, field_70) == 0x70);
-const _: () = assert!(core::mem::offset_of!(TurnUndeadEffect, field_74) == 0x74);
-const _: () = assert!(core::mem::offset_of!(TurnUndeadEffect, field_78) == 0x78);
+const _: () = assert!(core::mem::offset_of!(TurnUndeadEffect, elapsedSeconds) == 0x70);
+const _: () = assert!(core::mem::offset_of!(TurnUndeadEffect, duration) == 0x74);
+const _: () = assert!(core::mem::offset_of!(TurnUndeadEffect, magnitude) == 0x78);
 const _: () = assert!(core::mem::offset_of!(TurnUndeadEffect, flags) == 0x7C);
-const _: () = assert!(core::mem::offset_of!(TurnUndeadEffect, field_80) == 0x80);
+const _: () = assert!(core::mem::offset_of!(TurnUndeadEffect, conditionsTrue) == 0x80);
 const _: () = assert!(core::mem::offset_of!(TurnUndeadEffect, uniqueID) == 0x84);
 const _: () = assert!(core::mem::offset_of!(TurnUndeadEffect, field_88) == 0x88);
 const _: () = assert!(core::mem::offset_of!(TurnUndeadEffect, field_90) == 0x90);
@@ -17007,9 +17350,9 @@ pub struct ValueAndConditionsEffect {
     pub casterHandle: u32,
     /// +0x38 `undefined8`, base ActiveEffect
     pub field_38: u64,
-    /// +0x40 `pointer`, base ActiveEffect, semantic; the caster's MagicCaster (medium)
-    pub casterMagic: *mut c_void,
-    /// +0x48 `pointer`, base ActiveEffect, semantic; the spell's effect entry; +0x10 is its EffectSetting (medium)
+    /// +0x40 `ptr:MagicItem`, base ActiveEffect, semantic; the spell, enchantment, potion, scroll or ingredient that applied the effect (high)
+    pub spell: *mut crate::MagicItem,
+    /// +0x48 `pointer`, base ActiveEffect, semantic; the spell's effect entry: +0 magnitude (float), +4 area (s32), +8 duration (s32), +0x10 EffectSetting* (high)
     pub effect: *mut c_void,
     /// +0x50 `ptr:MagicTarget`, base ActiveEffect, semantic; the target's MagicTarget subobject (Actor+0xa0 for an actor) (high)
     pub target: *mut crate::MagicTarget,
@@ -17019,16 +17362,16 @@ pub struct ValueAndConditionsEffect {
     pub field_60: u64,
     /// +0x68 `undefined8`, base ActiveEffect
     pub field_68: u64,
-    /// +0x70 `undefined4`, base ActiveEffect
-    pub field_70: u32,
-    /// +0x74 `float`, base ActiveEffect
-    pub field_74: f32,
-    /// +0x78 `float`, base ActiveEffect
-    pub field_78: f32,
-    /// +0x7C `undefined4`, base ActiveEffect, semantic; state bits (0x40000 marks an effect to remove, 0x10000/0x20000 stages of its start) (low)
+    /// +0x70 `float`, base ActiveEffect, semantic; seconds the effect has run; 0 at creation (high)
+    pub elapsedSeconds: f32,
+    /// +0x74 `float`, base ActiveEffect, semantic; the effect's duration in seconds (effect duration + EffectSetting+0xb8 unless MGEF flags & 0x600); the effect ends when duration <= elapsedSeconds unless the MGEF has flag bit 9 or the effect flags 0x4100 (high)
+    pub duration: f32,
+    /// +0x78 `float`, base ActiveEffect, semantic; the effect magnitude, initialised from the effect entry's +0 (medium)
+    pub magnitude: f32,
+    /// +0x7C `undefined4`, base ActiveEffect, semantic; state bits: 0x80 the effect entry has conditions, 0x10000/0x20000 stages of its start; see the flag rows (medium)
     pub flags: u32,
-    /// +0x80 `undefined4`, base ActiveEffect
-    pub field_80: u32,
+    /// +0x80 `u32`, base ActiveEffect, semantic; result of the effect's condition check; 1 at creation, 0 makes the effect inactive (flags 0x8000) (medium)
+    pub conditionsTrue: u32,
     /// +0x84 `undefined2`, base ActiveEffect, semantic; per-target id, bits 32-47 of the effect's script handle; 0 means no handle (high)
     pub uniqueID: u16,
     pub unknown_86: [u8; 2],
@@ -17057,17 +17400,17 @@ const _: () = assert!(core::mem::offset_of!(ValueAndConditionsEffect, field_28) 
 const _: () = assert!(core::mem::offset_of!(ValueAndConditionsEffect, field_2C) == 0x2C);
 const _: () = assert!(core::mem::offset_of!(ValueAndConditionsEffect, casterHandle) == 0x34);
 const _: () = assert!(core::mem::offset_of!(ValueAndConditionsEffect, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(ValueAndConditionsEffect, casterMagic) == 0x40);
+const _: () = assert!(core::mem::offset_of!(ValueAndConditionsEffect, spell) == 0x40);
 const _: () = assert!(core::mem::offset_of!(ValueAndConditionsEffect, effect) == 0x48);
 const _: () = assert!(core::mem::offset_of!(ValueAndConditionsEffect, target) == 0x50);
 const _: () = assert!(core::mem::offset_of!(ValueAndConditionsEffect, field_58) == 0x58);
 const _: () = assert!(core::mem::offset_of!(ValueAndConditionsEffect, field_60) == 0x60);
 const _: () = assert!(core::mem::offset_of!(ValueAndConditionsEffect, field_68) == 0x68);
-const _: () = assert!(core::mem::offset_of!(ValueAndConditionsEffect, field_70) == 0x70);
-const _: () = assert!(core::mem::offset_of!(ValueAndConditionsEffect, field_74) == 0x74);
-const _: () = assert!(core::mem::offset_of!(ValueAndConditionsEffect, field_78) == 0x78);
+const _: () = assert!(core::mem::offset_of!(ValueAndConditionsEffect, elapsedSeconds) == 0x70);
+const _: () = assert!(core::mem::offset_of!(ValueAndConditionsEffect, duration) == 0x74);
+const _: () = assert!(core::mem::offset_of!(ValueAndConditionsEffect, magnitude) == 0x78);
 const _: () = assert!(core::mem::offset_of!(ValueAndConditionsEffect, flags) == 0x7C);
-const _: () = assert!(core::mem::offset_of!(ValueAndConditionsEffect, field_80) == 0x80);
+const _: () = assert!(core::mem::offset_of!(ValueAndConditionsEffect, conditionsTrue) == 0x80);
 const _: () = assert!(core::mem::offset_of!(ValueAndConditionsEffect, uniqueID) == 0x84);
 const _: () = assert!(core::mem::offset_of!(ValueAndConditionsEffect, field_88) == 0x88);
 const _: () = assert!(core::mem::offset_of!(ValueAndConditionsEffect, field_90) == 0x90);
@@ -17103,9 +17446,9 @@ pub struct ValueModifierEffect {
     pub casterHandle: u32,
     /// +0x38 `undefined8`, base ActiveEffect
     pub field_38: u64,
-    /// +0x40 `pointer`, base ActiveEffect, semantic; the caster's MagicCaster (medium)
-    pub casterMagic: *mut c_void,
-    /// +0x48 `pointer`, base ActiveEffect, semantic; the spell's effect entry; +0x10 is its EffectSetting (medium)
+    /// +0x40 `ptr:MagicItem`, base ActiveEffect, semantic; the spell, enchantment, potion, scroll or ingredient that applied the effect (high)
+    pub spell: *mut crate::MagicItem,
+    /// +0x48 `pointer`, base ActiveEffect, semantic; the spell's effect entry: +0 magnitude (float), +4 area (s32), +8 duration (s32), +0x10 EffectSetting* (high)
     pub effect: *mut c_void,
     /// +0x50 `ptr:MagicTarget`, base ActiveEffect, semantic; the target's MagicTarget subobject (Actor+0xa0 for an actor) (high)
     pub target: *mut crate::MagicTarget,
@@ -17115,16 +17458,16 @@ pub struct ValueModifierEffect {
     pub field_60: u64,
     /// +0x68 `undefined8`, base ActiveEffect
     pub field_68: u64,
-    /// +0x70 `undefined4`, base ActiveEffect
-    pub field_70: u32,
-    /// +0x74 `float`, base ActiveEffect
-    pub field_74: f32,
-    /// +0x78 `float`, base ActiveEffect
-    pub field_78: f32,
-    /// +0x7C `undefined4`, base ActiveEffect, semantic; state bits (0x40000 marks an effect to remove, 0x10000/0x20000 stages of its start) (low)
+    /// +0x70 `float`, base ActiveEffect, semantic; seconds the effect has run; 0 at creation (high)
+    pub elapsedSeconds: f32,
+    /// +0x74 `float`, base ActiveEffect, semantic; the effect's duration in seconds (effect duration + EffectSetting+0xb8 unless MGEF flags & 0x600); the effect ends when duration <= elapsedSeconds unless the MGEF has flag bit 9 or the effect flags 0x4100 (high)
+    pub duration: f32,
+    /// +0x78 `float`, base ActiveEffect, semantic; the effect magnitude, initialised from the effect entry's +0 (medium)
+    pub magnitude: f32,
+    /// +0x7C `undefined4`, base ActiveEffect, semantic; state bits: 0x80 the effect entry has conditions, 0x10000/0x20000 stages of its start; see the flag rows (medium)
     pub flags: u32,
-    /// +0x80 `undefined4`, base ActiveEffect
-    pub field_80: u32,
+    /// +0x80 `u32`, base ActiveEffect, semantic; result of the effect's condition check; 1 at creation, 0 makes the effect inactive (flags 0x8000) (medium)
+    pub conditionsTrue: u32,
     /// +0x84 `undefined2`, base ActiveEffect, semantic; per-target id, bits 32-47 of the effect's script handle; 0 means no handle (high)
     pub uniqueID: u16,
     pub unknown_86: [u8; 2],
@@ -17150,17 +17493,17 @@ const _: () = assert!(core::mem::offset_of!(ValueModifierEffect, field_28) == 0x
 const _: () = assert!(core::mem::offset_of!(ValueModifierEffect, field_2C) == 0x2C);
 const _: () = assert!(core::mem::offset_of!(ValueModifierEffect, casterHandle) == 0x34);
 const _: () = assert!(core::mem::offset_of!(ValueModifierEffect, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(ValueModifierEffect, casterMagic) == 0x40);
+const _: () = assert!(core::mem::offset_of!(ValueModifierEffect, spell) == 0x40);
 const _: () = assert!(core::mem::offset_of!(ValueModifierEffect, effect) == 0x48);
 const _: () = assert!(core::mem::offset_of!(ValueModifierEffect, target) == 0x50);
 const _: () = assert!(core::mem::offset_of!(ValueModifierEffect, field_58) == 0x58);
 const _: () = assert!(core::mem::offset_of!(ValueModifierEffect, field_60) == 0x60);
 const _: () = assert!(core::mem::offset_of!(ValueModifierEffect, field_68) == 0x68);
-const _: () = assert!(core::mem::offset_of!(ValueModifierEffect, field_70) == 0x70);
-const _: () = assert!(core::mem::offset_of!(ValueModifierEffect, field_74) == 0x74);
-const _: () = assert!(core::mem::offset_of!(ValueModifierEffect, field_78) == 0x78);
+const _: () = assert!(core::mem::offset_of!(ValueModifierEffect, elapsedSeconds) == 0x70);
+const _: () = assert!(core::mem::offset_of!(ValueModifierEffect, duration) == 0x74);
+const _: () = assert!(core::mem::offset_of!(ValueModifierEffect, magnitude) == 0x78);
 const _: () = assert!(core::mem::offset_of!(ValueModifierEffect, flags) == 0x7C);
-const _: () = assert!(core::mem::offset_of!(ValueModifierEffect, field_80) == 0x80);
+const _: () = assert!(core::mem::offset_of!(ValueModifierEffect, conditionsTrue) == 0x80);
 const _: () = assert!(core::mem::offset_of!(ValueModifierEffect, uniqueID) == 0x84);
 const _: () = assert!(core::mem::offset_of!(ValueModifierEffect, field_88) == 0x88);
 const _: () = assert!(core::mem::offset_of!(ValueModifierEffect, field_90) == 0x90);
@@ -17210,9 +17553,9 @@ pub struct VampireLordEffect {
     pub casterHandle: u32,
     /// +0x38 `undefined8`, base ActiveEffect
     pub field_38: u64,
-    /// +0x40 `pointer`, base ActiveEffect, semantic; the caster's MagicCaster (medium)
-    pub casterMagic: *mut c_void,
-    /// +0x48 `pointer`, base ActiveEffect, semantic; the spell's effect entry; +0x10 is its EffectSetting (medium)
+    /// +0x40 `ptr:MagicItem`, base ActiveEffect, semantic; the spell, enchantment, potion, scroll or ingredient that applied the effect (high)
+    pub spell: *mut crate::MagicItem,
+    /// +0x48 `pointer`, base ActiveEffect, semantic; the spell's effect entry: +0 magnitude (float), +4 area (s32), +8 duration (s32), +0x10 EffectSetting* (high)
     pub effect: *mut c_void,
     /// +0x50 `ptr:MagicTarget`, base ActiveEffect, semantic; the target's MagicTarget subobject (Actor+0xa0 for an actor) (high)
     pub target: *mut crate::MagicTarget,
@@ -17222,16 +17565,16 @@ pub struct VampireLordEffect {
     pub field_60: u64,
     /// +0x68 `undefined8`, base ActiveEffect
     pub field_68: u64,
-    /// +0x70 `undefined4`, base ActiveEffect
-    pub field_70: u32,
-    /// +0x74 `float`, base ActiveEffect
-    pub field_74: f32,
-    /// +0x78 `float`, base ActiveEffect
-    pub field_78: f32,
-    /// +0x7C `undefined4`, base ActiveEffect, semantic; state bits (0x40000 marks an effect to remove, 0x10000/0x20000 stages of its start) (low)
+    /// +0x70 `float`, base ActiveEffect, semantic; seconds the effect has run; 0 at creation (high)
+    pub elapsedSeconds: f32,
+    /// +0x74 `float`, base ActiveEffect, semantic; the effect's duration in seconds (effect duration + EffectSetting+0xb8 unless MGEF flags & 0x600); the effect ends when duration <= elapsedSeconds unless the MGEF has flag bit 9 or the effect flags 0x4100 (high)
+    pub duration: f32,
+    /// +0x78 `float`, base ActiveEffect, semantic; the effect magnitude, initialised from the effect entry's +0 (medium)
+    pub magnitude: f32,
+    /// +0x7C `undefined4`, base ActiveEffect, semantic; state bits: 0x80 the effect entry has conditions, 0x10000/0x20000 stages of its start; see the flag rows (medium)
     pub flags: u32,
-    /// +0x80 `undefined4`, base ActiveEffect
-    pub field_80: u32,
+    /// +0x80 `u32`, base ActiveEffect, semantic; result of the effect's condition check; 1 at creation, 0 makes the effect inactive (flags 0x8000) (medium)
+    pub conditionsTrue: u32,
     /// +0x84 `undefined2`, base ActiveEffect, semantic; per-target id, bits 32-47 of the effect's script handle; 0 means no handle (high)
     pub uniqueID: u16,
     pub unknown_86: [u8; 2],
@@ -17253,17 +17596,17 @@ const _: () = assert!(core::mem::offset_of!(VampireLordEffect, field_28) == 0x28
 const _: () = assert!(core::mem::offset_of!(VampireLordEffect, field_2C) == 0x2C);
 const _: () = assert!(core::mem::offset_of!(VampireLordEffect, casterHandle) == 0x34);
 const _: () = assert!(core::mem::offset_of!(VampireLordEffect, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(VampireLordEffect, casterMagic) == 0x40);
+const _: () = assert!(core::mem::offset_of!(VampireLordEffect, spell) == 0x40);
 const _: () = assert!(core::mem::offset_of!(VampireLordEffect, effect) == 0x48);
 const _: () = assert!(core::mem::offset_of!(VampireLordEffect, target) == 0x50);
 const _: () = assert!(core::mem::offset_of!(VampireLordEffect, field_58) == 0x58);
 const _: () = assert!(core::mem::offset_of!(VampireLordEffect, field_60) == 0x60);
 const _: () = assert!(core::mem::offset_of!(VampireLordEffect, field_68) == 0x68);
-const _: () = assert!(core::mem::offset_of!(VampireLordEffect, field_70) == 0x70);
-const _: () = assert!(core::mem::offset_of!(VampireLordEffect, field_74) == 0x74);
-const _: () = assert!(core::mem::offset_of!(VampireLordEffect, field_78) == 0x78);
+const _: () = assert!(core::mem::offset_of!(VampireLordEffect, elapsedSeconds) == 0x70);
+const _: () = assert!(core::mem::offset_of!(VampireLordEffect, duration) == 0x74);
+const _: () = assert!(core::mem::offset_of!(VampireLordEffect, magnitude) == 0x78);
 const _: () = assert!(core::mem::offset_of!(VampireLordEffect, flags) == 0x7C);
-const _: () = assert!(core::mem::offset_of!(VampireLordEffect, field_80) == 0x80);
+const _: () = assert!(core::mem::offset_of!(VampireLordEffect, conditionsTrue) == 0x80);
 const _: () = assert!(core::mem::offset_of!(VampireLordEffect, uniqueID) == 0x84);
 const _: () = assert!(core::mem::offset_of!(VampireLordEffect, field_88) == 0x88);
 
@@ -17861,9 +18204,9 @@ pub struct WerewolfEffect {
     pub casterHandle: u32,
     /// +0x38 `undefined8`, base ActiveEffect
     pub field_38: u64,
-    /// +0x40 `pointer`, base ActiveEffect, semantic; the caster's MagicCaster (medium)
-    pub casterMagic: *mut c_void,
-    /// +0x48 `pointer`, base ActiveEffect, semantic; the spell's effect entry; +0x10 is its EffectSetting (medium)
+    /// +0x40 `ptr:MagicItem`, base ActiveEffect, semantic; the spell, enchantment, potion, scroll or ingredient that applied the effect (high)
+    pub spell: *mut crate::MagicItem,
+    /// +0x48 `pointer`, base ActiveEffect, semantic; the spell's effect entry: +0 magnitude (float), +4 area (s32), +8 duration (s32), +0x10 EffectSetting* (high)
     pub effect: *mut c_void,
     /// +0x50 `ptr:MagicTarget`, base ActiveEffect, semantic; the target's MagicTarget subobject (Actor+0xa0 for an actor) (high)
     pub target: *mut crate::MagicTarget,
@@ -17873,16 +18216,16 @@ pub struct WerewolfEffect {
     pub field_60: u64,
     /// +0x68 `undefined8`, base ActiveEffect
     pub field_68: u64,
-    /// +0x70 `undefined4`, base ActiveEffect
-    pub field_70: u32,
-    /// +0x74 `float`, base ActiveEffect
-    pub field_74: f32,
-    /// +0x78 `float`, base ActiveEffect
-    pub field_78: f32,
-    /// +0x7C `undefined4`, base ActiveEffect, semantic; state bits (0x40000 marks an effect to remove, 0x10000/0x20000 stages of its start) (low)
+    /// +0x70 `float`, base ActiveEffect, semantic; seconds the effect has run; 0 at creation (high)
+    pub elapsedSeconds: f32,
+    /// +0x74 `float`, base ActiveEffect, semantic; the effect's duration in seconds (effect duration + EffectSetting+0xb8 unless MGEF flags & 0x600); the effect ends when duration <= elapsedSeconds unless the MGEF has flag bit 9 or the effect flags 0x4100 (high)
+    pub duration: f32,
+    /// +0x78 `float`, base ActiveEffect, semantic; the effect magnitude, initialised from the effect entry's +0 (medium)
+    pub magnitude: f32,
+    /// +0x7C `undefined4`, base ActiveEffect, semantic; state bits: 0x80 the effect entry has conditions, 0x10000/0x20000 stages of its start; see the flag rows (medium)
     pub flags: u32,
-    /// +0x80 `undefined4`, base ActiveEffect
-    pub field_80: u32,
+    /// +0x80 `u32`, base ActiveEffect, semantic; result of the effect's condition check; 1 at creation, 0 makes the effect inactive (flags 0x8000) (medium)
+    pub conditionsTrue: u32,
     /// +0x84 `undefined2`, base ActiveEffect, semantic; per-target id, bits 32-47 of the effect's script handle; 0 means no handle (high)
     pub uniqueID: u16,
     pub unknown_86: [u8; 2],
@@ -17904,17 +18247,17 @@ const _: () = assert!(core::mem::offset_of!(WerewolfEffect, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(WerewolfEffect, field_2C) == 0x2C);
 const _: () = assert!(core::mem::offset_of!(WerewolfEffect, casterHandle) == 0x34);
 const _: () = assert!(core::mem::offset_of!(WerewolfEffect, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(WerewolfEffect, casterMagic) == 0x40);
+const _: () = assert!(core::mem::offset_of!(WerewolfEffect, spell) == 0x40);
 const _: () = assert!(core::mem::offset_of!(WerewolfEffect, effect) == 0x48);
 const _: () = assert!(core::mem::offset_of!(WerewolfEffect, target) == 0x50);
 const _: () = assert!(core::mem::offset_of!(WerewolfEffect, field_58) == 0x58);
 const _: () = assert!(core::mem::offset_of!(WerewolfEffect, field_60) == 0x60);
 const _: () = assert!(core::mem::offset_of!(WerewolfEffect, field_68) == 0x68);
-const _: () = assert!(core::mem::offset_of!(WerewolfEffect, field_70) == 0x70);
-const _: () = assert!(core::mem::offset_of!(WerewolfEffect, field_74) == 0x74);
-const _: () = assert!(core::mem::offset_of!(WerewolfEffect, field_78) == 0x78);
+const _: () = assert!(core::mem::offset_of!(WerewolfEffect, elapsedSeconds) == 0x70);
+const _: () = assert!(core::mem::offset_of!(WerewolfEffect, duration) == 0x74);
+const _: () = assert!(core::mem::offset_of!(WerewolfEffect, magnitude) == 0x78);
 const _: () = assert!(core::mem::offset_of!(WerewolfEffect, flags) == 0x7C);
-const _: () = assert!(core::mem::offset_of!(WerewolfEffect, field_80) == 0x80);
+const _: () = assert!(core::mem::offset_of!(WerewolfEffect, conditionsTrue) == 0x80);
 const _: () = assert!(core::mem::offset_of!(WerewolfEffect, uniqueID) == 0x84);
 const _: () = assert!(core::mem::offset_of!(WerewolfEffect, field_88) == 0x88);
 
@@ -17947,9 +18290,9 @@ pub struct WerewolfFeedEffect {
     pub casterHandle: u32,
     /// +0x38 `undefined8`, base ActiveEffect
     pub field_38: u64,
-    /// +0x40 `pointer`, base ActiveEffect, semantic; the caster's MagicCaster (medium)
-    pub casterMagic: *mut c_void,
-    /// +0x48 `pointer`, base ActiveEffect, semantic; the spell's effect entry; +0x10 is its EffectSetting (medium)
+    /// +0x40 `ptr:MagicItem`, base ActiveEffect, semantic; the spell, enchantment, potion, scroll or ingredient that applied the effect (high)
+    pub spell: *mut crate::MagicItem,
+    /// +0x48 `pointer`, base ActiveEffect, semantic; the spell's effect entry: +0 magnitude (float), +4 area (s32), +8 duration (s32), +0x10 EffectSetting* (high)
     pub effect: *mut c_void,
     /// +0x50 `ptr:MagicTarget`, base ActiveEffect, semantic; the target's MagicTarget subobject (Actor+0xa0 for an actor) (high)
     pub target: *mut crate::MagicTarget,
@@ -17959,16 +18302,16 @@ pub struct WerewolfFeedEffect {
     pub field_60: u64,
     /// +0x68 `undefined8`, base ActiveEffect
     pub field_68: u64,
-    /// +0x70 `undefined4`, base ActiveEffect
-    pub field_70: u32,
-    /// +0x74 `float`, base ActiveEffect
-    pub field_74: f32,
-    /// +0x78 `float`, base ActiveEffect
-    pub field_78: f32,
-    /// +0x7C `undefined4`, base ActiveEffect, semantic; state bits (0x40000 marks an effect to remove, 0x10000/0x20000 stages of its start) (low)
+    /// +0x70 `float`, base ActiveEffect, semantic; seconds the effect has run; 0 at creation (high)
+    pub elapsedSeconds: f32,
+    /// +0x74 `float`, base ActiveEffect, semantic; the effect's duration in seconds (effect duration + EffectSetting+0xb8 unless MGEF flags & 0x600); the effect ends when duration <= elapsedSeconds unless the MGEF has flag bit 9 or the effect flags 0x4100 (high)
+    pub duration: f32,
+    /// +0x78 `float`, base ActiveEffect, semantic; the effect magnitude, initialised from the effect entry's +0 (medium)
+    pub magnitude: f32,
+    /// +0x7C `undefined4`, base ActiveEffect, semantic; state bits: 0x80 the effect entry has conditions, 0x10000/0x20000 stages of its start; see the flag rows (medium)
     pub flags: u32,
-    /// +0x80 `undefined4`, base ActiveEffect
-    pub field_80: u32,
+    /// +0x80 `u32`, base ActiveEffect, semantic; result of the effect's condition check; 1 at creation, 0 makes the effect inactive (flags 0x8000) (medium)
+    pub conditionsTrue: u32,
     /// +0x84 `undefined2`, base ActiveEffect, semantic; per-target id, bits 32-47 of the effect's script handle; 0 means no handle (high)
     pub uniqueID: u16,
     pub unknown_86: [u8; 2],
@@ -17990,17 +18333,17 @@ const _: () = assert!(core::mem::offset_of!(WerewolfFeedEffect, field_28) == 0x2
 const _: () = assert!(core::mem::offset_of!(WerewolfFeedEffect, field_2C) == 0x2C);
 const _: () = assert!(core::mem::offset_of!(WerewolfFeedEffect, casterHandle) == 0x34);
 const _: () = assert!(core::mem::offset_of!(WerewolfFeedEffect, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(WerewolfFeedEffect, casterMagic) == 0x40);
+const _: () = assert!(core::mem::offset_of!(WerewolfFeedEffect, spell) == 0x40);
 const _: () = assert!(core::mem::offset_of!(WerewolfFeedEffect, effect) == 0x48);
 const _: () = assert!(core::mem::offset_of!(WerewolfFeedEffect, target) == 0x50);
 const _: () = assert!(core::mem::offset_of!(WerewolfFeedEffect, field_58) == 0x58);
 const _: () = assert!(core::mem::offset_of!(WerewolfFeedEffect, field_60) == 0x60);
 const _: () = assert!(core::mem::offset_of!(WerewolfFeedEffect, field_68) == 0x68);
-const _: () = assert!(core::mem::offset_of!(WerewolfFeedEffect, field_70) == 0x70);
-const _: () = assert!(core::mem::offset_of!(WerewolfFeedEffect, field_74) == 0x74);
-const _: () = assert!(core::mem::offset_of!(WerewolfFeedEffect, field_78) == 0x78);
+const _: () = assert!(core::mem::offset_of!(WerewolfFeedEffect, elapsedSeconds) == 0x70);
+const _: () = assert!(core::mem::offset_of!(WerewolfFeedEffect, duration) == 0x74);
+const _: () = assert!(core::mem::offset_of!(WerewolfFeedEffect, magnitude) == 0x78);
 const _: () = assert!(core::mem::offset_of!(WerewolfFeedEffect, flags) == 0x7C);
-const _: () = assert!(core::mem::offset_of!(WerewolfFeedEffect, field_80) == 0x80);
+const _: () = assert!(core::mem::offset_of!(WerewolfFeedEffect, conditionsTrue) == 0x80);
 const _: () = assert!(core::mem::offset_of!(WerewolfFeedEffect, uniqueID) == 0x84);
 const _: () = assert!(core::mem::offset_of!(WerewolfFeedEffect, field_88) == 0x88);
 
@@ -19427,707 +19770,4 @@ const _: () = assert!(core::mem::offset_of!(_anon_422024B4__Clear1nTracksFilter,
 const _: () = assert!(core::mem::offset_of!(_anon_422024B4__Clear1nTracksFilter, field_108) == 0x108);
 const _: () = assert!(core::mem::offset_of!(_anon_422024B4__Clear1nTracksFilter, field_110) == 0x110);
 const _: () = assert!(core::mem::offset_of!(_anon_422024B4__Clear1nTracksFilter, field_114) == 0x114);
-
-/// `_anon_422024B4::NeverCollideFilter`: size >= 0x118 (lower bound); partial, the struct stops at the lower bound; primary base `hkpCollisionFilter`.
-/// Evidence: field field_114.
-/// Bases: `hkpCollisionFilter`@0x0, `hkReferencedObject`@0x0, `hkBaseObject`@0x0, `hkpCollidableCollidableFilter`@0x10, `hkpShapeCollectionFilter`@0x18, `hkpRayShapeCollectionFilter`@0x20, `hkpRayCollidableFilter`@0x28.
-#[repr(C)]
-pub struct _anon_422024B4__NeverCollideFilter {
-    /// +0x0 `vtbl:_anon_422024B4::NeverCollideFilter:0`, rtti
-    #[doc(hidden)]
-    pub __vftable: *const crate::raw::vtables::_anon_422024B4__NeverCollideFilter_vtable,
-    /// +0x8 `undefined4`, base hkpCollisionFilter
-    pub field_8: u32,
-    pub unknown_C: [u8; 4],
-    /// +0x10 `vtbl:_anon_422024B4::NeverCollideFilter:10`, rtti
-    #[doc(hidden)]
-    pub __vftable_10: *const crate::raw::vtables::_anon_422024B4__NeverCollideFilter_vtable_10,
-    /// +0x18 `vtbl:_anon_422024B4::NeverCollideFilter:18`, rtti
-    #[doc(hidden)]
-    pub __vftable_18: *const crate::raw::vtables::_anon_422024B4__NeverCollideFilter_vtable_18,
-    /// +0x20 `vtbl:_anon_422024B4::NeverCollideFilter:20`, rtti
-    #[doc(hidden)]
-    pub __vftable_20: *const crate::raw::vtables::_anon_422024B4__NeverCollideFilter_vtable_20,
-    /// +0x28 `vtbl:_anon_422024B4::NeverCollideFilter:28`, rtti
-    #[doc(hidden)]
-    pub __vftable_28: *const crate::raw::vtables::_anon_422024B4__NeverCollideFilter_vtable_28,
-    /// +0x30 `undefined4`, base hkBaseObject
-    pub field_30: u32,
-    /// +0x34 `undefined4`, base hkBaseObject
-    pub field_34: u32,
-    /// +0x38 `undefined4`, base hkBaseObject
-    pub field_38: u32,
-    /// +0x3C `undefined4`, base hkBaseObject
-    pub field_3C: u32,
-    /// +0x40 `undefined4`, base hkBaseObject
-    pub field_40: u32,
-    /// +0x44 `undefined4`, base hkBaseObject
-    pub field_44: u32,
-    /// +0x48 `undefined4`, base hkBaseObject
-    pub field_48: u32,
-    /// +0x4C `undefined4`, base hkBaseObject
-    pub field_4C: u32,
-    /// +0x50 `undefined4`, base hkBaseObject
-    pub field_50: u32,
-    /// +0x54 `undefined4`, base hkBaseObject
-    pub field_54: u32,
-    /// +0x58 `undefined4`, base hkBaseObject
-    pub field_58: u32,
-    /// +0x5C `undefined4`, base hkBaseObject
-    pub field_5C: u32,
-    /// +0x60 `undefined4`, base hkBaseObject
-    pub field_60: u32,
-    /// +0x64 `undefined4`, base hkBaseObject
-    pub field_64: u32,
-    /// +0x68 `undefined4`, base hkBaseObject
-    pub field_68: u32,
-    /// +0x6C `undefined4`, base hkBaseObject
-    pub field_6C: u32,
-    /// +0x70 `undefined4`, base hkBaseObject
-    pub field_70: u32,
-    /// +0x74 `undefined4`, base hkBaseObject
-    pub field_74: u32,
-    /// +0x78 `undefined4`, base hkBaseObject
-    pub field_78: u32,
-    /// +0x7C `undefined4`, base hkBaseObject
-    pub field_7C: u32,
-    /// +0x80 `undefined4`, base hkBaseObject
-    pub field_80: u32,
-    /// +0x84 `undefined4`, base hkBaseObject
-    pub field_84: u32,
-    /// +0x88 `undefined4`, base hkBaseObject
-    pub field_88: u32,
-    /// +0x8C `undefined4`, base hkBaseObject
-    pub field_8C: u32,
-    /// +0x90 `undefined4`, base hkBaseObject
-    pub field_90: u32,
-    /// +0x94 `undefined4`, base hkBaseObject
-    pub field_94: u32,
-    /// +0x98 `undefined4`, base hkBaseObject
-    pub field_98: u32,
-    /// +0x9C `undefined4`, base hkBaseObject
-    pub field_9C: u32,
-    /// +0xA0 `undefined4`, base hkBaseObject
-    pub field_A0: u32,
-    /// +0xA4 `undefined4`, base hkBaseObject
-    pub field_A4: u32,
-    /// +0xA8 `undefined8`, base hkBaseObject
-    pub field_A8: u64,
-    /// +0xB0 `undefined4`, base hkBaseObject
-    pub field_B0: u32,
-    /// +0xB4 `undefined4`, base hkBaseObject
-    pub field_B4: u32,
-    /// +0xB8 `undefined8`, base hkBaseObject
-    pub field_B8: u64,
-    /// +0xC0 `undefined4`, base hkBaseObject
-    pub field_C0: u32,
-    /// +0xC4 `undefined4`, base hkBaseObject
-    pub field_C4: u32,
-    pub unknown_C8: [u8; 64],
-    /// +0x108 `undefined8`, base hkBaseObject
-    pub field_108: u64,
-    /// +0x110 `undefined4`, base hkBaseObject
-    pub field_110: u32,
-    /// +0x114 `undefined4`, base hkBaseObject
-    pub field_114: u32,
-    #[doc(hidden)]
-    pub __engine: crate::Engine,
-}
-const _: () = assert!(core::mem::offset_of!(_anon_422024B4__NeverCollideFilter, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(_anon_422024B4__NeverCollideFilter, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(_anon_422024B4__NeverCollideFilter, __vftable_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(_anon_422024B4__NeverCollideFilter, __vftable_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(_anon_422024B4__NeverCollideFilter, __vftable_20) == 0x20);
-const _: () = assert!(core::mem::offset_of!(_anon_422024B4__NeverCollideFilter, __vftable_28) == 0x28);
-const _: () = assert!(core::mem::offset_of!(_anon_422024B4__NeverCollideFilter, field_30) == 0x30);
-const _: () = assert!(core::mem::offset_of!(_anon_422024B4__NeverCollideFilter, field_34) == 0x34);
-const _: () = assert!(core::mem::offset_of!(_anon_422024B4__NeverCollideFilter, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(_anon_422024B4__NeverCollideFilter, field_3C) == 0x3C);
-const _: () = assert!(core::mem::offset_of!(_anon_422024B4__NeverCollideFilter, field_40) == 0x40);
-const _: () = assert!(core::mem::offset_of!(_anon_422024B4__NeverCollideFilter, field_44) == 0x44);
-const _: () = assert!(core::mem::offset_of!(_anon_422024B4__NeverCollideFilter, field_48) == 0x48);
-const _: () = assert!(core::mem::offset_of!(_anon_422024B4__NeverCollideFilter, field_4C) == 0x4C);
-const _: () = assert!(core::mem::offset_of!(_anon_422024B4__NeverCollideFilter, field_50) == 0x50);
-const _: () = assert!(core::mem::offset_of!(_anon_422024B4__NeverCollideFilter, field_54) == 0x54);
-const _: () = assert!(core::mem::offset_of!(_anon_422024B4__NeverCollideFilter, field_58) == 0x58);
-const _: () = assert!(core::mem::offset_of!(_anon_422024B4__NeverCollideFilter, field_5C) == 0x5C);
-const _: () = assert!(core::mem::offset_of!(_anon_422024B4__NeverCollideFilter, field_60) == 0x60);
-const _: () = assert!(core::mem::offset_of!(_anon_422024B4__NeverCollideFilter, field_64) == 0x64);
-const _: () = assert!(core::mem::offset_of!(_anon_422024B4__NeverCollideFilter, field_68) == 0x68);
-const _: () = assert!(core::mem::offset_of!(_anon_422024B4__NeverCollideFilter, field_6C) == 0x6C);
-const _: () = assert!(core::mem::offset_of!(_anon_422024B4__NeverCollideFilter, field_70) == 0x70);
-const _: () = assert!(core::mem::offset_of!(_anon_422024B4__NeverCollideFilter, field_74) == 0x74);
-const _: () = assert!(core::mem::offset_of!(_anon_422024B4__NeverCollideFilter, field_78) == 0x78);
-const _: () = assert!(core::mem::offset_of!(_anon_422024B4__NeverCollideFilter, field_7C) == 0x7C);
-const _: () = assert!(core::mem::offset_of!(_anon_422024B4__NeverCollideFilter, field_80) == 0x80);
-const _: () = assert!(core::mem::offset_of!(_anon_422024B4__NeverCollideFilter, field_84) == 0x84);
-const _: () = assert!(core::mem::offset_of!(_anon_422024B4__NeverCollideFilter, field_88) == 0x88);
-const _: () = assert!(core::mem::offset_of!(_anon_422024B4__NeverCollideFilter, field_8C) == 0x8C);
-const _: () = assert!(core::mem::offset_of!(_anon_422024B4__NeverCollideFilter, field_90) == 0x90);
-const _: () = assert!(core::mem::offset_of!(_anon_422024B4__NeverCollideFilter, field_94) == 0x94);
-const _: () = assert!(core::mem::offset_of!(_anon_422024B4__NeverCollideFilter, field_98) == 0x98);
-const _: () = assert!(core::mem::offset_of!(_anon_422024B4__NeverCollideFilter, field_9C) == 0x9C);
-const _: () = assert!(core::mem::offset_of!(_anon_422024B4__NeverCollideFilter, field_A0) == 0xA0);
-const _: () = assert!(core::mem::offset_of!(_anon_422024B4__NeverCollideFilter, field_A4) == 0xA4);
-const _: () = assert!(core::mem::offset_of!(_anon_422024B4__NeverCollideFilter, field_A8) == 0xA8);
-const _: () = assert!(core::mem::offset_of!(_anon_422024B4__NeverCollideFilter, field_B0) == 0xB0);
-const _: () = assert!(core::mem::offset_of!(_anon_422024B4__NeverCollideFilter, field_B4) == 0xB4);
-const _: () = assert!(core::mem::offset_of!(_anon_422024B4__NeverCollideFilter, field_B8) == 0xB8);
-const _: () = assert!(core::mem::offset_of!(_anon_422024B4__NeverCollideFilter, field_C0) == 0xC0);
-const _: () = assert!(core::mem::offset_of!(_anon_422024B4__NeverCollideFilter, field_C4) == 0xC4);
-const _: () = assert!(core::mem::offset_of!(_anon_422024B4__NeverCollideFilter, field_108) == 0x108);
-const _: () = assert!(core::mem::offset_of!(_anon_422024B4__NeverCollideFilter, field_110) == 0x110);
-const _: () = assert!(core::mem::offset_of!(_anon_422024B4__NeverCollideFilter, field_114) == 0x114);
-
-/// `_anon_47E0B371::NullMapCameraCallbacks`: size >= 0x8 (lower bound); partial, the struct stops at the lower bound; primary base `IMapCameraCallbacks`.
-/// Evidence: vptr at 0x0.
-/// Bases: `IMapCameraCallbacks`@0x0, `BSTSingletonImplicit<_anon_47E0B371::NullMapCameraCallbacks>`@0x8.
-#[repr(C)]
-pub struct _anon_47E0B371__NullMapCameraCallbacks {
-    /// +0x0 `vtbl:_anon_47E0B371::NullMapCameraCallbacks:0`, rtti
-    #[doc(hidden)]
-    pub __vftable: *const crate::raw::vtables::_anon_47E0B371__NullMapCameraCallbacks_vtable,
-    #[doc(hidden)]
-    pub __engine: crate::Engine,
-}
-const _: () = assert!(core::mem::offset_of!(_anon_47E0B371__NullMapCameraCallbacks, __vftable) == 0x0);
-
-/// `_anon_498DB440::NearestHitCollector`: size >= 0x8 (lower bound); partial, the struct stops at the lower bound; primary base `hkpRayHitCollector`.
-/// Evidence: vptr at 0x0.
-/// Bases: `hkpRayHitCollector`@0x0.
-#[repr(C)]
-pub struct _anon_498DB440__NearestHitCollector {
-    /// +0x0 `vtbl:_anon_498DB440::NearestHitCollector:0`, rtti
-    #[doc(hidden)]
-    pub __vftable: *const crate::raw::vtables::_anon_498DB440__NearestHitCollector_vtable,
-    #[doc(hidden)]
-    pub __engine: crate::Engine,
-}
-const _: () = assert!(core::mem::offset_of!(_anon_498DB440__NearestHitCollector, __vftable) == 0x0);
-
-/// `_anon_498DB440::RotateNormalHitCollector`: size >= 0x8 (lower bound); partial, the struct stops at the lower bound; primary base `hkpRayHitCollector`.
-/// Evidence: vptr at 0x0.
-/// Bases: `hkpRayHitCollector`@0x0.
-#[repr(C)]
-pub struct _anon_498DB440__RotateNormalHitCollector {
-    /// +0x0 `vtbl:_anon_498DB440::RotateNormalHitCollector:0`, rtti
-    #[doc(hidden)]
-    pub __vftable: *const crate::raw::vtables::_anon_498DB440__RotateNormalHitCollector_vtable,
-    #[doc(hidden)]
-    pub __engine: crate::Engine,
-}
-const _: () = assert!(core::mem::offset_of!(_anon_498DB440__RotateNormalHitCollector, __vftable) == 0x0);
-
-/// `_anon_569CF5D7::PreloadCountVisitor`: size >= 0x8 (lower bound); partial, the struct stops at the lower bound; primary base `MagicItem::PreloadableVisitor`.
-/// Evidence: vptr at 0x0.
-/// Bases: `MagicItem::PreloadableVisitor`@0x0.
-#[repr(C)]
-pub struct _anon_569CF5D7__PreloadCountVisitor {
-    /// +0x0 `vtbl:_anon_569CF5D7::PreloadCountVisitor:0`, rtti
-    #[doc(hidden)]
-    pub __vftable: *const crate::raw::vtables::_anon_569CF5D7__PreloadCountVisitor_vtable,
-    #[doc(hidden)]
-    pub __engine: crate::Engine,
-}
-const _: () = assert!(core::mem::offset_of!(_anon_569CF5D7__PreloadCountVisitor, __vftable) == 0x0);
-
-/// `_anon_569CF5D7::PreloadModelsVisitor`: size >= 0x8 (lower bound); partial, the struct stops at the lower bound; primary base `MagicItem::PreloadableVisitor`.
-/// Evidence: vptr at 0x0.
-/// Bases: `MagicItem::PreloadableVisitor`@0x0.
-#[repr(C)]
-pub struct _anon_569CF5D7__PreloadModelsVisitor {
-    /// +0x0 `vtbl:_anon_569CF5D7::PreloadModelsVisitor:0`, rtti
-    #[doc(hidden)]
-    pub __vftable: *const crate::raw::vtables::_anon_569CF5D7__PreloadModelsVisitor_vtable,
-    #[doc(hidden)]
-    pub __engine: crate::Engine,
-}
-const _: () = assert!(core::mem::offset_of!(_anon_569CF5D7__PreloadModelsVisitor, __vftable) == 0x0);
-
-/// `_anon_569CF5D7::QueuedMagicItem`: size 0xA8 (exact, medium); primary base `AnimationSystemUtils::TESModelAndAnimationHandles`.
-/// Evidence: runtime: 0xA8 at 1 allocation sites; agrees with the static allocation sites.
-/// Bases: `AnimationSystemUtils::TESModelAndAnimationHandles`@0x0, `TESModelDB::TESQueuedHandles`@0x0, `BSModelDB::QueuedHandles`@0x0, `BSQueuedResourceCollection<BSResource::EntryDB<BSModelDB::DBTraits>,2>`@0x0, `BSQueuedResourceCollectionBase`@0x0, `QueuedFile`@0x0, `IOTask`@0x0, `BSTask`@0x0, `BSResource::IEntryDB::PostFlushNotify`@0x38.
-#[repr(C)]
-pub struct _anon_569CF5D7__QueuedMagicItem {
-    /// +0x0 `vtbl:_anon_569CF5D7::QueuedMagicItem:0`, rtti
-    #[doc(hidden)]
-    pub __vftable: *const crate::raw::vtables::_anon_569CF5D7__QueuedMagicItem_vtable,
-    /// +0x8 `undefined4`, base QueuedFile
-    pub field_8: u32,
-    /// +0xC `undefined4`, base QueuedFile
-    pub field_C: u32,
-    /// +0x10 `undefined8`, base QueuedFile
-    pub field_10: u64,
-    /// +0x18 `undefined4`, base QueuedFile
-    pub field_18: u32,
-    pub unknown_1C: [u8; 4],
-    /// +0x20 `undefined8`, base QueuedFile
-    pub field_20: u64,
-    /// +0x28 `undefined8`, base QueuedFile
-    pub field_28: u64,
-    /// +0x30 `undefined4`, base QueuedFile
-    pub field_30: u32,
-    pub unknown_34: [u8; 4],
-    /// +0x38 `vtbl:_anon_569CF5D7::QueuedMagicItem:38`, rtti
-    #[doc(hidden)]
-    pub __vftable_38: *const crate::raw::vtables::_anon_569CF5D7__QueuedMagicItem_vtable_38,
-    /// +0x40 `undefined4`, base BSResource::IEntryDB::PostFlushNotify
-    pub field_40: u32,
-    pub unknown_44: [u8; 4],
-    /// +0x48 `undefined8`, base BSResource::IEntryDB::PostFlushNotify
-    pub field_48: u64,
-    /// +0x50 `undefined4`, base BSQueuedResourceCollectionBase
-    pub field_50: u32,
-    /// +0x54 `undefined2`, base BSQueuedResourceCollectionBase
-    pub field_54: u16,
-    pub unknown_56: [u8; 2],
-    /// +0x58 `undefined4`, base AnimationSystemUtils::TESModelAndAnimationHandles
-    pub field_58: u32,
-    pub unknown_5C: [u8; 44],
-    /// +0x88 `undefined8`, base AnimationSystemUtils::TESModelAndAnimationHandles
-    pub field_88: u64,
-    /// +0x90 `undefined8`, base AnimationSystemUtils::TESModelAndAnimationHandles
-    pub field_90: u64,
-    pub unknown_98: [u8; 16],
-    #[doc(hidden)]
-    pub __engine: crate::Engine,
-}
-const _: () = assert!(size_of::<_anon_569CF5D7__QueuedMagicItem>() == 0xA8);
-const _: () = assert!(core::mem::offset_of!(_anon_569CF5D7__QueuedMagicItem, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(_anon_569CF5D7__QueuedMagicItem, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(_anon_569CF5D7__QueuedMagicItem, field_C) == 0xC);
-const _: () = assert!(core::mem::offset_of!(_anon_569CF5D7__QueuedMagicItem, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(_anon_569CF5D7__QueuedMagicItem, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(_anon_569CF5D7__QueuedMagicItem, field_20) == 0x20);
-const _: () = assert!(core::mem::offset_of!(_anon_569CF5D7__QueuedMagicItem, field_28) == 0x28);
-const _: () = assert!(core::mem::offset_of!(_anon_569CF5D7__QueuedMagicItem, field_30) == 0x30);
-const _: () = assert!(core::mem::offset_of!(_anon_569CF5D7__QueuedMagicItem, __vftable_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(_anon_569CF5D7__QueuedMagicItem, field_40) == 0x40);
-const _: () = assert!(core::mem::offset_of!(_anon_569CF5D7__QueuedMagicItem, field_48) == 0x48);
-const _: () = assert!(core::mem::offset_of!(_anon_569CF5D7__QueuedMagicItem, field_50) == 0x50);
-const _: () = assert!(core::mem::offset_of!(_anon_569CF5D7__QueuedMagicItem, field_54) == 0x54);
-const _: () = assert!(core::mem::offset_of!(_anon_569CF5D7__QueuedMagicItem, field_58) == 0x58);
-const _: () = assert!(core::mem::offset_of!(_anon_569CF5D7__QueuedMagicItem, field_88) == 0x88);
-const _: () = assert!(core::mem::offset_of!(_anon_569CF5D7__QueuedMagicItem, field_90) == 0x90);
-
-/// `_anon_5C8159CE::FavoriteItemHandler<MagicItem,SpellAttack::Event>`: size >= 0x8 (lower bound); partial, the struct stops at the lower bound; primary base `BSTEventSink<SpellAttack::Event>`.
-/// Evidence: vptr at 0x0.
-/// Bases: `BSTEventSink<SpellAttack::Event>`@0x0.
-#[repr(C)]
-pub struct _anon_5C8159CE__FavoriteItemHandler_MagicItem_SpellAttack__Event {
-    /// +0x0 `vtbl:_anon_5C8159CE::FavoriteItemHandler<MagicItem,SpellAttack::Event>:0`, rtti
-    #[doc(hidden)]
-    pub __vftable: *const crate::raw::vtables::_anon_5C8159CE__FavoriteItemHandler_MagicItem_SpellAttack__Event_vtable,
-    #[doc(hidden)]
-    pub __engine: crate::Engine,
-}
-const _: () = assert!(core::mem::offset_of!(_anon_5C8159CE__FavoriteItemHandler_MagicItem_SpellAttack__Event, __vftable) == 0x0);
-
-/// `_anon_5C8159CE::FavoriteItemHandler<TESObjectWEAP,WeaponAttack::Event>`: size >= 0x8 (lower bound); partial, the struct stops at the lower bound; primary base `BSTEventSink<WeaponAttack::Event>`.
-/// Evidence: vptr at 0x0.
-/// Bases: `BSTEventSink<WeaponAttack::Event>`@0x0.
-#[repr(C)]
-pub struct _anon_5C8159CE__FavoriteItemHandler_TESObjectWEAP_WeaponAttack__Event {
-    /// +0x0 `vtbl:_anon_5C8159CE::FavoriteItemHandler<TESObjectWEAP,WeaponAttack::Event>:0`, rtti
-    #[doc(hidden)]
-    pub __vftable: *const crate::raw::vtables::_anon_5C8159CE__FavoriteItemHandler_TESObjectWEAP_WeaponAttack__Event_vtable,
-    #[doc(hidden)]
-    pub __engine: crate::Engine,
-}
-const _: () = assert!(core::mem::offset_of!(_anon_5C8159CE__FavoriteItemHandler_TESObjectWEAP_WeaponAttack__Event, __vftable) == 0x0);
-
-/// `_anon_5C8159CE::FavoriteItemHandler<TESShout,ShoutAttack::Event>`: size >= 0x8 (lower bound); partial, the struct stops at the lower bound; primary base `BSTEventSink<ShoutAttack::Event>`.
-/// Evidence: vptr at 0x0.
-/// Bases: `BSTEventSink<ShoutAttack::Event>`@0x0.
-#[repr(C)]
-pub struct _anon_5C8159CE__FavoriteItemHandler_TESShout_ShoutAttack__Event {
-    /// +0x0 `vtbl:_anon_5C8159CE::FavoriteItemHandler<TESShout,ShoutAttack::Event>:0`, rtti
-    #[doc(hidden)]
-    pub __vftable: *const crate::raw::vtables::_anon_5C8159CE__FavoriteItemHandler_TESShout_ShoutAttack__Event_vtable,
-    #[doc(hidden)]
-    pub __engine: crate::Engine,
-}
-const _: () = assert!(core::mem::offset_of!(_anon_5C8159CE__FavoriteItemHandler_TESShout_ShoutAttack__Event, __vftable) == 0x0);
-
-/// `_anon_5C8159CE::FavoriteShoutHandler`: size >= 0x8 (lower bound); partial, the struct stops at the lower bound; primary base `_anon_5C8159CE::FavoriteItemHandler<TESShout,ShoutAttack::Event>`.
-/// Evidence: vptr at 0x0.
-/// Bases: `_anon_5C8159CE::FavoriteItemHandler<TESShout,ShoutAttack::Event>`@0x0, `BSTEventSink<ShoutAttack::Event>`@0x0.
-#[repr(C)]
-pub struct _anon_5C8159CE__FavoriteShoutHandler {
-    /// +0x0 `vtbl:_anon_5C8159CE::FavoriteShoutHandler:0`, rtti
-    #[doc(hidden)]
-    pub __vftable: *const crate::raw::vtables::_anon_5C8159CE__FavoriteShoutHandler_vtable,
-    #[doc(hidden)]
-    pub __engine: crate::Engine,
-}
-const _: () = assert!(core::mem::offset_of!(_anon_5C8159CE__FavoriteShoutHandler, __vftable) == 0x0);
-
-/// `_anon_5C8159CE::FavoriteSpellHandler`: size >= 0x8 (lower bound); partial, the struct stops at the lower bound; primary base `_anon_5C8159CE::FavoriteItemHandler<MagicItem,SpellAttack::Event>`.
-/// Evidence: vptr at 0x0.
-/// Bases: `_anon_5C8159CE::FavoriteItemHandler<MagicItem,SpellAttack::Event>`@0x0, `BSTEventSink<SpellAttack::Event>`@0x0.
-#[repr(C)]
-pub struct _anon_5C8159CE__FavoriteSpellHandler {
-    /// +0x0 `vtbl:_anon_5C8159CE::FavoriteSpellHandler:0`, rtti
-    #[doc(hidden)]
-    pub __vftable: *const crate::raw::vtables::_anon_5C8159CE__FavoriteSpellHandler_vtable,
-    #[doc(hidden)]
-    pub __engine: crate::Engine,
-}
-const _: () = assert!(core::mem::offset_of!(_anon_5C8159CE__FavoriteSpellHandler, __vftable) == 0x0);
-
-/// `_anon_5C8159CE::FavoriteWeaponHandler`: size >= 0x8 (lower bound); partial, the struct stops at the lower bound; primary base `_anon_5C8159CE::FavoriteItemHandler<TESObjectWEAP,WeaponAttack::Event>`.
-/// Evidence: vptr at 0x0.
-/// Bases: `_anon_5C8159CE::FavoriteItemHandler<TESObjectWEAP,WeaponAttack::Event>`@0x0, `BSTEventSink<WeaponAttack::Event>`@0x0.
-#[repr(C)]
-pub struct _anon_5C8159CE__FavoriteWeaponHandler {
-    /// +0x0 `vtbl:_anon_5C8159CE::FavoriteWeaponHandler:0`, rtti
-    #[doc(hidden)]
-    pub __vftable: *const crate::raw::vtables::_anon_5C8159CE__FavoriteWeaponHandler_vtable,
-    #[doc(hidden)]
-    pub __engine: crate::Engine,
-}
-const _: () = assert!(core::mem::offset_of!(_anon_5C8159CE__FavoriteWeaponHandler, __vftable) == 0x0);
-
-/// `_anon_5C8159CE::GetMiscStatInfoFunc`: size >= 0x8 (lower bound); partial, the struct stops at the lower bound; primary base `MiscStatManager::IMiscStatVisitor`.
-/// Evidence: vptr at 0x0.
-/// Bases: `MiscStatManager::IMiscStatVisitor`@0x0.
-#[repr(C)]
-pub struct _anon_5C8159CE__GetMiscStatInfoFunc {
-    /// +0x0 `vtbl:_anon_5C8159CE::GetMiscStatInfoFunc:0`, rtti
-    #[doc(hidden)]
-    pub __vftable: *const crate::raw::vtables::_anon_5C8159CE__GetMiscStatInfoFunc_vtable,
-    #[doc(hidden)]
-    pub __engine: crate::Engine,
-}
-const _: () = assert!(core::mem::offset_of!(_anon_5C8159CE__GetMiscStatInfoFunc, __vftable) == 0x0);
-
-/// `_anon_5E019490::DecalApplier`: size >= 0x8 (lower bound); partial, the struct stops at the lower bound; primary base `BSTEventSink<TESCellReadyToApplyDecalsEvent>`.
-/// Evidence: vptr at 0x0.
-/// Bases: `BSTEventSink<TESCellReadyToApplyDecalsEvent>`@0x0.
-#[repr(C)]
-pub struct _anon_5E019490__DecalApplier {
-    /// +0x0 `vtbl:_anon_5E019490::DecalApplier:0`, rtti
-    #[doc(hidden)]
-    pub __vftable: *const crate::raw::vtables::_anon_5E019490__DecalApplier_vtable,
-    #[doc(hidden)]
-    pub __engine: crate::Engine,
-}
-const _: () = assert!(core::mem::offset_of!(_anon_5E019490__DecalApplier, __vftable) == 0x0);
-
-/// `_anon_5FBDCD4E::Compression`: size >= 0x8 (lower bound); partial, the struct stops at the lower bound.
-/// Evidence: vptr at 0x0.
-#[repr(C)]
-pub struct _anon_5FBDCD4E__Compression {
-    /// +0x0 `vtbl:_anon_5FBDCD4E::Compression:0`, rtti
-    #[doc(hidden)]
-    pub __vftable: *const crate::raw::vtables::_anon_5FBDCD4E__Compression_vtable,
-    #[doc(hidden)]
-    pub __engine: crate::Engine,
-}
-const _: () = assert!(core::mem::offset_of!(_anon_5FBDCD4E__Compression, __vftable) == 0x0);
-
-/// `_anon_5FBDCD4E::LZ4Compression`: size >= 0x8 (lower bound); partial, the struct stops at the lower bound; primary base `_anon_5FBDCD4E::Compression`.
-/// Evidence: vptr at 0x0.
-/// Bases: `_anon_5FBDCD4E::Compression`@0x0.
-#[repr(C)]
-pub struct _anon_5FBDCD4E__LZ4Compression {
-    /// +0x0 `vtbl:_anon_5FBDCD4E::LZ4Compression:0`, rtti
-    #[doc(hidden)]
-    pub __vftable: *const crate::raw::vtables::_anon_5FBDCD4E__LZ4Compression_vtable,
-    #[doc(hidden)]
-    pub __engine: crate::Engine,
-}
-const _: () = assert!(core::mem::offset_of!(_anon_5FBDCD4E__LZ4Compression, __vftable) == 0x0);
-
-/// `_anon_5FBDCD4E::ZLibCompression`: size >= 0x8 (lower bound); partial, the struct stops at the lower bound; primary base `_anon_5FBDCD4E::Compression`.
-/// Evidence: vptr at 0x0.
-/// Bases: `_anon_5FBDCD4E::Compression`@0x0.
-#[repr(C)]
-pub struct _anon_5FBDCD4E__ZLibCompression {
-    /// +0x0 `vtbl:_anon_5FBDCD4E::ZLibCompression:0`, rtti
-    #[doc(hidden)]
-    pub __vftable: *const crate::raw::vtables::_anon_5FBDCD4E__ZLibCompression_vtable,
-    #[doc(hidden)]
-    pub __engine: crate::Engine,
-}
-const _: () = assert!(core::mem::offset_of!(_anon_5FBDCD4E__ZLibCompression, __vftable) == 0x0);
-
-/// `_anon_64C0A5C9::CellAcousticSpaceListener`: size >= 0x8 (lower bound); partial, the struct stops at the lower bound; primary base `BSTEventSink<BGSActorCellEvent>`.
-/// Evidence: vptr at 0x0.
-/// Bases: `BSTEventSink<BGSActorCellEvent>`@0x0.
-#[repr(C)]
-pub struct _anon_64C0A5C9__CellAcousticSpaceListener {
-    /// +0x0 `vtbl:_anon_64C0A5C9::CellAcousticSpaceListener:0`, rtti
-    #[doc(hidden)]
-    pub __vftable: *const crate::raw::vtables::_anon_64C0A5C9__CellAcousticSpaceListener_vtable,
-    #[doc(hidden)]
-    pub __engine: crate::Engine,
-}
-const _: () = assert!(core::mem::offset_of!(_anon_64C0A5C9__CellAcousticSpaceListener, __vftable) == 0x0);
-
-/// `_anon_64C0A5C9::DefaultObjectInitListener`: size >= 0x8 (lower bound); partial, the struct stops at the lower bound; primary base `BSTEventSink<DefaultObjectsReadyEvent::Event>`.
-/// Evidence: vptr at 0x0.
-/// Bases: `BSTEventSink<DefaultObjectsReadyEvent::Event>`@0x0.
-#[repr(C)]
-pub struct _anon_64C0A5C9__DefaultObjectInitListener {
-    /// +0x0 `vtbl:_anon_64C0A5C9::DefaultObjectInitListener:0`, rtti
-    #[doc(hidden)]
-    pub __vftable: *const crate::raw::vtables::_anon_64C0A5C9__DefaultObjectInitListener_vtable,
-    #[doc(hidden)]
-    pub __engine: crate::Engine,
-}
-const _: () = assert!(core::mem::offset_of!(_anon_64C0A5C9__DefaultObjectInitListener, __vftable) == 0x0);
-
-/// `_anon_64C0A5C9::LoadMenuOpenCloseListener`: size >= 0x8 (lower bound); partial, the struct stops at the lower bound; primary base `BSTEventSink<MenuOpenCloseEvent>`.
-/// Evidence: vptr at 0x0.
-/// Bases: `BSTEventSink<MenuOpenCloseEvent>`@0x0.
-#[repr(C)]
-pub struct _anon_64C0A5C9__LoadMenuOpenCloseListener {
-    /// +0x0 `vtbl:_anon_64C0A5C9::LoadMenuOpenCloseListener:0`, rtti
-    #[doc(hidden)]
-    pub __vftable: *const crate::raw::vtables::_anon_64C0A5C9__LoadMenuOpenCloseListener_vtable,
-    #[doc(hidden)]
-    pub __engine: crate::Engine,
-}
-const _: () = assert!(core::mem::offset_of!(_anon_64C0A5C9__LoadMenuOpenCloseListener, __vftable) == 0x0);
-
-/// `_anon_64C0A5C9::MenuModeChangeListener`: size >= 0x8 (lower bound); partial, the struct stops at the lower bound; primary base `BSTEventSink<MenuModeChangeEvent>`.
-/// Evidence: vptr at 0x0.
-/// Bases: `BSTEventSink<MenuModeChangeEvent>`@0x0.
-#[repr(C)]
-pub struct _anon_64C0A5C9__MenuModeChangeListener {
-    /// +0x0 `vtbl:_anon_64C0A5C9::MenuModeChangeListener:0`, rtti
-    #[doc(hidden)]
-    pub __vftable: *const crate::raw::vtables::_anon_64C0A5C9__MenuModeChangeListener_vtable,
-    #[doc(hidden)]
-    pub __engine: crate::Engine,
-}
-const _: () = assert!(core::mem::offset_of!(_anon_64C0A5C9__MenuModeChangeListener, __vftable) == 0x0);
-
-/// `_anon_64C0A5C9::NonDialogSubCategory`: size >= 0x8 (lower bound); partial, the struct stops at the lower bound; primary base `BSISoundCategory`.
-/// Evidence: vptr at 0x0.
-/// Bases: `BSISoundCategory`@0x0.
-#[repr(C)]
-pub struct _anon_64C0A5C9__NonDialogSubCategory {
-    /// +0x0 `vtbl:_anon_64C0A5C9::NonDialogSubCategory:0`, rtti
-    #[doc(hidden)]
-    pub __vftable: *const crate::raw::vtables::_anon_64C0A5C9__NonDialogSubCategory_vtable,
-    #[doc(hidden)]
-    pub __engine: crate::Engine,
-}
-const _: () = assert!(core::mem::offset_of!(_anon_64C0A5C9__NonDialogSubCategory, __vftable) == 0x0);
-
-/// `_anon_6854232C::CheckSphereVisitor`: size >= 0x8 (lower bound); partial, the struct stops at the lower bound; primary base `BSPathing::EdgeFoundVisitor`.
-/// Evidence: vptr at 0x0.
-/// Bases: `BSPathing::EdgeFoundVisitor`@0x0.
-#[repr(C)]
-pub struct _anon_6854232C__CheckSphereVisitor {
-    /// +0x0 `vtbl:_anon_6854232C::CheckSphereVisitor:0`, rtti
-    #[doc(hidden)]
-    pub __vftable: *const crate::raw::vtables::_anon_6854232C__CheckSphereVisitor_vtable,
-    #[doc(hidden)]
-    pub __engine: crate::Engine,
-}
-const _: () = assert!(core::mem::offset_of!(_anon_6854232C__CheckSphereVisitor, __vftable) == 0x0);
-
-/// `_anon_6854232C::FindClosestOpenEdgeFunctor`: size >= 0x8 (lower bound); partial, the struct stops at the lower bound; primary base `BSPathing::EdgeFoundVisitor`.
-/// Evidence: vptr at 0x0.
-/// Bases: `BSPathing::EdgeFoundVisitor`@0x0.
-#[repr(C)]
-pub struct _anon_6854232C__FindClosestOpenEdgeFunctor {
-    /// +0x0 `vtbl:_anon_6854232C::FindClosestOpenEdgeFunctor:0`, rtti
-    #[doc(hidden)]
-    pub __vftable: *const crate::raw::vtables::_anon_6854232C__FindClosestOpenEdgeFunctor_vtable,
-    #[doc(hidden)]
-    pub __engine: crate::Engine,
-}
-const _: () = assert!(core::mem::offset_of!(_anon_6854232C__FindClosestOpenEdgeFunctor, __vftable) == 0x0);
-
-/// `_anon_6854232C::SortIntersectingEdgesFunctor`: size >= 0x8 (lower bound); partial, the struct stops at the lower bound; primary base `BSPathing::EdgeFoundVisitor`.
-/// Evidence: vptr at 0x0.
-/// Bases: `BSPathing::EdgeFoundVisitor`@0x0.
-#[repr(C)]
-pub struct _anon_6854232C__SortIntersectingEdgesFunctor {
-    /// +0x0 `vtbl:_anon_6854232C::SortIntersectingEdgesFunctor:0`, rtti
-    #[doc(hidden)]
-    pub __vftable: *const crate::raw::vtables::_anon_6854232C__SortIntersectingEdgesFunctor_vtable,
-    #[doc(hidden)]
-    pub __engine: crate::Engine,
-}
-const _: () = assert!(core::mem::offset_of!(_anon_6854232C__SortIntersectingEdgesFunctor, __vftable) == 0x0);
-
-/// `_anon_69ACCFBB::CastWornEnchantmentsVisitor`: size >= 0x8 (lower bound); partial, the struct stops at the lower bound; primary base `InventoryChanges::IItemChangeVisitor`.
-/// Evidence: vptr at 0x0.
-/// Bases: `InventoryChanges::IItemChangeVisitor`@0x0.
-#[repr(C)]
-pub struct _anon_69ACCFBB__CastWornEnchantmentsVisitor {
-    /// +0x0 `vtbl:_anon_69ACCFBB::CastWornEnchantmentsVisitor:0`, rtti
-    #[doc(hidden)]
-    pub __vftable: *const crate::raw::vtables::_anon_69ACCFBB__CastWornEnchantmentsVisitor_vtable,
-    #[doc(hidden)]
-    pub __engine: crate::Engine,
-}
-const _: () = assert!(core::mem::offset_of!(_anon_69ACCFBB__CastWornEnchantmentsVisitor, __vftable) == 0x0);
-
-/// `_anon_69ACCFBB::CountActorValueEffects`: size >= 0x8 (lower bound); partial, the struct stops at the lower bound; primary base `MagicTarget::ForEachActiveEffectVisitor`.
-/// Evidence: vptr at 0x0.
-/// Bases: `MagicTarget::ForEachActiveEffectVisitor`@0x0.
-#[repr(C)]
-pub struct _anon_69ACCFBB__CountActorValueEffects {
-    /// +0x0 `vtbl:_anon_69ACCFBB::CountActorValueEffects:0`, rtti
-    #[doc(hidden)]
-    pub __vftable: *const crate::raw::vtables::_anon_69ACCFBB__CountActorValueEffects_vtable,
-    #[doc(hidden)]
-    pub __engine: crate::Engine,
-}
-const _: () = assert!(core::mem::offset_of!(_anon_69ACCFBB__CountActorValueEffects, __vftable) == 0x0);
-
-/// `_anon_69ACCFBB::DispelWornItemEnchantsVisitor`: size >= 0x8 (lower bound); partial, the struct stops at the lower bound; primary base `InventoryChanges::IItemChangeVisitor`.
-/// Evidence: vptr at 0x0.
-/// Bases: `InventoryChanges::IItemChangeVisitor`@0x0.
-#[repr(C)]
-pub struct _anon_69ACCFBB__DispelWornItemEnchantsVisitor {
-    /// +0x0 `vtbl:_anon_69ACCFBB::DispelWornItemEnchantsVisitor:0`, rtti
-    #[doc(hidden)]
-    pub __vftable: *const crate::raw::vtables::_anon_69ACCFBB__DispelWornItemEnchantsVisitor_vtable,
-    #[doc(hidden)]
-    pub __engine: crate::Engine,
-}
-const _: () = assert!(core::mem::offset_of!(_anon_69ACCFBB__DispelWornItemEnchantsVisitor, __vftable) == 0x0);
-
-/// `_anon_69ACCFBB::PreloadWornItemEnchantsVisitor`: size >= 0x8 (lower bound); partial, the struct stops at the lower bound; primary base `InventoryChanges::IItemChangeVisitor`.
-/// Evidence: vptr at 0x0.
-/// Bases: `InventoryChanges::IItemChangeVisitor`@0x0.
-#[repr(C)]
-pub struct _anon_69ACCFBB__PreloadWornItemEnchantsVisitor {
-    /// +0x0 `vtbl:_anon_69ACCFBB::PreloadWornItemEnchantsVisitor:0`, rtti
-    #[doc(hidden)]
-    pub __vftable: *const crate::raw::vtables::_anon_69ACCFBB__PreloadWornItemEnchantsVisitor_vtable,
-    #[doc(hidden)]
-    pub __engine: crate::Engine,
-}
-const _: () = assert!(core::mem::offset_of!(_anon_69ACCFBB__PreloadWornItemEnchantsVisitor, __vftable) == 0x0);
-
-/// `_anon_69ACCFBB::UnloadWornItemEnchantsVisitor`: size >= 0x8 (lower bound); partial, the struct stops at the lower bound; primary base `InventoryChanges::IItemChangeVisitor`.
-/// Evidence: vptr at 0x0.
-/// Bases: `InventoryChanges::IItemChangeVisitor`@0x0.
-#[repr(C)]
-pub struct _anon_69ACCFBB__UnloadWornItemEnchantsVisitor {
-    /// +0x0 `vtbl:_anon_69ACCFBB::UnloadWornItemEnchantsVisitor:0`, rtti
-    #[doc(hidden)]
-    pub __vftable: *const crate::raw::vtables::_anon_69ACCFBB__UnloadWornItemEnchantsVisitor_vtable,
-    #[doc(hidden)]
-    pub __engine: crate::Engine,
-}
-const _: () = assert!(core::mem::offset_of!(_anon_69ACCFBB__UnloadWornItemEnchantsVisitor, __vftable) == 0x0);
-
-/// `_anon_6A635D9D::SynchronizedClipGenVisitor`: size >= 0x8 (lower bound); partial, the struct stops at the lower bound; primary base `BSAnimGraphVisit::BShkbVisitor`.
-/// Evidence: vptr at 0x0.
-/// Bases: `BSAnimGraphVisit::BShkbVisitor`@0x0.
-#[repr(C)]
-pub struct _anon_6A635D9D__SynchronizedClipGenVisitor {
-    /// +0x0 `vtbl:_anon_6A635D9D::SynchronizedClipGenVisitor:0`, rtti
-    #[doc(hidden)]
-    pub __vftable: *const crate::raw::vtables::_anon_6A635D9D__SynchronizedClipGenVisitor_vtable,
-    #[doc(hidden)]
-    pub __engine: crate::Engine,
-}
-const _: () = assert!(core::mem::offset_of!(_anon_6A635D9D__SynchronizedClipGenVisitor, __vftable) == 0x0);
-
-/// `_anon_705FD51E::MagicMenuAddActiveEffectVisitor`: size >= 0x88 (lower bound); partial, the struct stops at the lower bound; primary base `MagicTarget::ForEachActiveEffectVisitor`.
-/// Evidence: field field_80.
-/// Bases: `MagicTarget::ForEachActiveEffectVisitor`@0x0.
-/// Packed: a field lies below its natural alignment.
-#[repr(C, packed)]
-pub struct _anon_705FD51E__MagicMenuAddActiveEffectVisitor {
-    /// +0x0 `vtbl:_anon_705FD51E::MagicMenuAddActiveEffectVisitor:0`, rtti
-    #[doc(hidden)]
-    pub __vftable: *const crate::raw::vtables::_anon_705FD51E__MagicMenuAddActiveEffectVisitor_vtable,
-    /// +0x8 `undefined8`, ctor store
-    pub field_8: u64,
-    /// +0x10 `undefined2`, ctor store (widths [2, 4])
-    pub field_10: u16,
-    /// +0x12 `undefined2`, ctor store
-    pub field_12: u16,
-    pub unknown_14: [u8; 4],
-    /// +0x18 `undefined8`, ctor store
-    pub field_18: u64,
-    pub unknown_20: [u8; 12],
-    /// +0x2C `undefined8`, ctor store
-    pub field_2C: u64,
-    /// +0x34 `undefined4`, ctor store
-    pub field_34: u32,
-    /// +0x38 `undefined8`, ctor store
-    pub field_38: u64,
-    pub unknown_40: [u8; 8],
-    /// +0x48 `undefined8`, ctor store
-    pub field_48: u64,
-    pub unknown_50: [u8; 12],
-    /// +0x5C `undefined8`, ctor store
-    pub field_5C: u64,
-    /// +0x64 `undefined4`, ctor store
-    pub field_64: u32,
-    /// +0x68 `undefined8`, ctor store
-    pub field_68: u64,
-    pub unknown_70: [u8; 8],
-    /// +0x78 `undefined8`, ctor store
-    pub field_78: u64,
-    /// +0x80 `undefined8`, ctor store
-    pub field_80: u64,
-    #[doc(hidden)]
-    pub __engine: crate::Engine,
-}
-const _: () = assert!(core::mem::offset_of!(_anon_705FD51E__MagicMenuAddActiveEffectVisitor, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(_anon_705FD51E__MagicMenuAddActiveEffectVisitor, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(_anon_705FD51E__MagicMenuAddActiveEffectVisitor, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(_anon_705FD51E__MagicMenuAddActiveEffectVisitor, field_12) == 0x12);
-const _: () = assert!(core::mem::offset_of!(_anon_705FD51E__MagicMenuAddActiveEffectVisitor, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(_anon_705FD51E__MagicMenuAddActiveEffectVisitor, field_2C) == 0x2C);
-const _: () = assert!(core::mem::offset_of!(_anon_705FD51E__MagicMenuAddActiveEffectVisitor, field_34) == 0x34);
-const _: () = assert!(core::mem::offset_of!(_anon_705FD51E__MagicMenuAddActiveEffectVisitor, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(_anon_705FD51E__MagicMenuAddActiveEffectVisitor, field_48) == 0x48);
-const _: () = assert!(core::mem::offset_of!(_anon_705FD51E__MagicMenuAddActiveEffectVisitor, field_5C) == 0x5C);
-const _: () = assert!(core::mem::offset_of!(_anon_705FD51E__MagicMenuAddActiveEffectVisitor, field_64) == 0x64);
-const _: () = assert!(core::mem::offset_of!(_anon_705FD51E__MagicMenuAddActiveEffectVisitor, field_68) == 0x68);
-const _: () = assert!(core::mem::offset_of!(_anon_705FD51E__MagicMenuAddActiveEffectVisitor, field_78) == 0x78);
-const _: () = assert!(core::mem::offset_of!(_anon_705FD51E__MagicMenuAddActiveEffectVisitor, field_80) == 0x80);
-
-/// `_anon_705FD51E::MagicMenuAddSpellVisitor`: size >= 0x8 (lower bound); partial, the struct stops at the lower bound; primary base `Actor::ForEachSpellVisitor`.
-/// Evidence: vptr at 0x0.
-/// Bases: `Actor::ForEachSpellVisitor`@0x0.
-#[repr(C)]
-pub struct _anon_705FD51E__MagicMenuAddSpellVisitor {
-    /// +0x0 `vtbl:_anon_705FD51E::MagicMenuAddSpellVisitor:0`, rtti
-    #[doc(hidden)]
-    pub __vftable: *const crate::raw::vtables::_anon_705FD51E__MagicMenuAddSpellVisitor_vtable,
-    #[doc(hidden)]
-    pub __engine: crate::Engine,
-}
-const _: () = assert!(core::mem::offset_of!(_anon_705FD51E__MagicMenuAddSpellVisitor, __vftable) == 0x0);
-
-/// `_anon_705FD51E::SpendSoulCallback`: size >= 0x8 (lower bound); partial, the struct stops at the lower bound; primary base `IMessageBoxCallback`.
-/// Evidence: vptr at 0x0.
-/// Bases: `IMessageBoxCallback`@0x0, `BSIntrusiveRefCounted`@0x8.
-#[repr(C)]
-pub struct _anon_705FD51E__SpendSoulCallback {
-    /// +0x0 `vtbl:_anon_705FD51E::SpendSoulCallback:0`, rtti
-    #[doc(hidden)]
-    pub __vftable: *const crate::raw::vtables::_anon_705FD51E__SpendSoulCallback_vtable,
-    #[doc(hidden)]
-    pub __engine: crate::Engine,
-}
-const _: () = assert!(core::mem::offset_of!(_anon_705FD51E__SpendSoulCallback, __vftable) == 0x0);
-
-/// `_anon_705FD51E::StoreEnchantedItemsVisitor`: size >= 0x8 (lower bound); partial, the struct stops at the lower bound; primary base `InventoryChanges::IItemChangeVisitor`.
-/// Evidence: vptr at 0x0.
-/// Bases: `InventoryChanges::IItemChangeVisitor`@0x0.
-#[repr(C)]
-pub struct _anon_705FD51E__StoreEnchantedItemsVisitor {
-    /// +0x0 `vtbl:_anon_705FD51E::StoreEnchantedItemsVisitor:0`, rtti
-    #[doc(hidden)]
-    pub __vftable: *const crate::raw::vtables::_anon_705FD51E__StoreEnchantedItemsVisitor_vtable,
-    #[doc(hidden)]
-    pub __engine: crate::Engine,
-}
-const _: () = assert!(core::mem::offset_of!(_anon_705FD51E__StoreEnchantedItemsVisitor, __vftable) == 0x0);
 

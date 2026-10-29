@@ -3,6 +3,144 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `BSImagespaceShaderISSAOCompositeSAO::vftable` at 0x1b3b918, id 254392 (rtti, high); 15 slots.
+#[repr(C)]
+pub struct BSImagespaceShaderISSAOCompositeSAO_vtable {
+    /// `BSImagespaceShaderISSAOCompositeSAO::vdtor` at 0x1508ed0 (slot_propagation, medium); signature (low): `BSImagespaceShaderISSAOCompositeSAO * vdtor(BSImagespaceShaderISSAOCompositeSAO * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_0: *const c_void,
+    /// `NiRefObject::vfunc_1` at 0xeebf20 (rtti, medium); signature (high): `undefined vfunc_1(NiRefObject * this)`
+    pub slot_1: *const c_void,
+    /// `BSImagespaceShader::vfunc_2` at 0x1564960 (rtti, medium); signature (high): `undefined vfunc_2(BSImagespaceShader * this)`
+    pub slot_2: *const c_void,
+    /// `BSImagespaceShader::vfunc_3` at 0x1564a00 (rtti, medium); signature (low): `undefined vfunc_3(void)`
+    pub slot_3: *const c_void,
+    /// `BSShader::SetupMaterial` at 0x1578910 (semantic, high); signature (untiered): `undefined SetupMaterial(void)`
+    pub slot_4: *const c_void,
+    /// `BSShader::RestoreMaterial` at 0x1578920 (semantic, low); signature (untiered): `undefined RestoreMaterial(void)`
+    pub slot_5: *const c_void,
+    /// `BSImagespaceShader::vfunc_6` at 0x1564a80 (rtti, medium); signature (high): `undefined vfunc_6(BSImagespaceShader * this)`
+    pub slot_6: *const c_void,
+    /// `BSImagespaceShader::vfunc_7` at 0x1564d90 (rtti, medium); signature (high): `undefined vfunc_7(BSImagespaceShader * this)`
+    pub slot_7: *const c_void,
+    /// `BSShader::vfunc_8` at 0x1578ac0 (semantic, high); signature (low): `undefined vfunc_8(void)`
+    pub slot_8: *const c_void,
+    /// `BSImagespaceShader::vfunc_9` at 0x1564df0 (rtti, medium); signature (low): `undefined vfunc_9(BSImagespaceShader * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_9: *const c_void,
+    /// `BSImagespaceShader::vfunc_10` at 0x150b510 (rtti, medium); signature (low): `undefined vfunc_10(void)`
+    pub slot_10: *const c_void,
+    /// `BSImagespaceShader::vfunc_11` at 0x150b490 (rtti, medium); signature (low): `undefined vfunc_11(void)`
+    pub slot_11: *const c_void,
+    /// `BSImagespaceShader::vfunc_12` at 0x1565170 (rtti, medium); signature (low): `undefined vfunc_12(BSImagespaceShader * this, undefined4 param_1, undefined4 param_2, undefined4 param_3)`
+    pub slot_12: *const c_void,
+    /// `BSImagespaceShaderISSAOCompositeSAO::vfunc_13` at 0x150aaf0 (rtti, high); signature (low): `undefined8 * vfunc_13(BSImagespaceShaderISSAOCompositeSAO * this, undefined8 * param_1)`
+    pub slot_13: *const c_void,
+    /// `BSImagespaceShader::vfunc_14` at 0x1565200 (rtti, medium); signature (low): `undefined vfunc_14(BSImagespaceShader * this, undefined8 param_1, undefined8 param_2, undefined1 * param_3)`
+    pub slot_14: *const c_void,
+}
+impl BSImagespaceShaderISSAOCompositeSAO_vtable {
+    pub const ID: u64 = 254392;
+}
+
+/// `BSImagespaceShaderISSAOCompositeSAO::vftable_10` at 0x1b3b998, id 254394 (rtti, high); 2 slots.
+#[repr(C)]
+pub struct BSImagespaceShaderISSAOCompositeSAO_vtable_10 {
+    /// `BSImagespaceShaderISSAOCompositeSAO::NiBoneMatrixSetterI_vdtor` at 0x1507768 (slot_propagation, medium); signature (high): `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderISSAOCompositeSAO * this)`
+    pub slot_0: *const c_void,
+    /// `BSShader::NiBoneMatrixSetterI::SetBoneMatrices` at 0x1578c80 (semantic, high); signature (untiered): `undefined SetBoneMatrices(void * this, longlong param_1, longlong param_2, float * param_3)`
+    pub slot_1: *const c_void,
+}
+impl BSImagespaceShaderISSAOCompositeSAO_vtable_10 {
+    pub const ID: u64 = 254394;
+}
+
+/// `BSImagespaceShaderISSAOCompositeSAO::vftable_18` at 0x1b3b9b0, id 254396 (rtti, high); 1 slots.
+#[repr(C)]
+pub struct BSImagespaceShaderISSAOCompositeSAO_vtable_18 {
+    /// `BSShader::BSReloadShaderI_vfunc_0` at 0x1578e50 (rtti, medium); signature (low): `undefined BSReloadShaderI_vfunc_0(BSShader * this, longlong param_1, undefined8 param_2, undefined1 * param_3)`
+    pub slot_0: *const c_void,
+}
+impl BSImagespaceShaderISSAOCompositeSAO_vtable_18 {
+    pub const ID: u64 = 254396;
+}
+
+/// `BSImagespaceShaderISSAOCompositeSAO::vftable_90` at 0x1b3b9c0, id 254398 (rtti, high); 10 slots.
+#[repr(C)]
+pub struct BSImagespaceShaderISSAOCompositeSAO_vtable_90 {
+    /// `BSImagespaceShaderISSAOCompositeSAO::ImageSpaceEffect_vdtor` at 0x1507774 (slot_propagation, medium); signature (high): `undefined ImageSpaceEffect_vdtor(BSImagespaceShaderISSAOCompositeSAO * this)`
+    pub slot_0: *const c_void,
+    /// `BSImagespaceShader::ImageSpaceEffect_vfunc_1` at 0x1564e30 (rtti, medium); signature (low): `undefined ImageSpaceEffect_vfunc_1(BSImagespaceShader * this, undefined8 param_1, undefined * param_2)`
+    pub slot_1: *const c_void,
+    /// `ImageSpaceEffect::vfunc_2` at 0x150b9f0 (rtti, medium); signature (low): `undefined vfunc_2(void)`
+    pub slot_2: *const c_void,
+    /// `BSImagespaceShader::ImageSpaceEffect_vfunc_3` at 0x15652a0 (rtti, medium); signature (low): `undefined ImageSpaceEffect_vfunc_3(BSImagespaceShader * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_3: *const c_void,
+    /// `ImageSpaceEffect::vfunc_4` at 0x1509bc0 (rtti, medium); signature (low): `undefined vfunc_4(void)`
+    pub slot_4: *const c_void,
+    /// `ImageSpaceEffect::vfunc_5` at 0x150b820 (rtti, medium); signature (low): `undefined vfunc_5(void)`
+    pub slot_5: *const c_void,
+    /// `ImageSpaceEffect::vfunc_6` at 0x150b480 (rtti, medium); signature (high): `undefined1 vfunc_6(ImageSpaceEffect * this)`
+    pub slot_6: *const c_void,
+    /// `ImageSpaceEffect::vfunc_7` at 0x150ba40 (rtti, medium); signature (low): `undefined1 vfunc_7(void)`
+    pub slot_7: *const c_void,
+    /// `ImageSpaceEffect::vfunc_8` at 0x150b8e0 (rtti, medium); signature (low): `undefined1 vfunc_8(void)`
+    pub slot_8: *const c_void,
+    /// `ImageSpaceEffect::vfunc_9` at 0x150b810 (rtti, medium); signature (low): `undefined1 vfunc_9(void)`
+    pub slot_9: *const c_void,
+}
+impl BSImagespaceShaderISSAOCompositeSAO_vtable_90 {
+    pub const ID: u64 = 254398;
+}
+
+/// `BSImagespaceShaderISSAOCompositeSAOFog::vftable` at 0x1b3bc98, id 254426 (rtti, high); 15 slots.
+#[repr(C)]
+pub struct BSImagespaceShaderISSAOCompositeSAOFog_vtable {
+    /// `BSImagespaceShaderISSAOCompositeSAOFog::vdtor` at 0x1508f10 (slot_propagation, medium); signature (low): `BSImagespaceShaderISSAOCompositeSAOFog * vdtor(BSImagespaceShaderISSAOCompositeSAOFog * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_0: *const c_void,
+    /// `NiRefObject::vfunc_1` at 0xeebf20 (rtti, medium); signature (high): `undefined vfunc_1(NiRefObject * this)`
+    pub slot_1: *const c_void,
+    /// `BSImagespaceShader::vfunc_2` at 0x1564960 (rtti, medium); signature (high): `undefined vfunc_2(BSImagespaceShader * this)`
+    pub slot_2: *const c_void,
+    /// `BSImagespaceShader::vfunc_3` at 0x1564a00 (rtti, medium); signature (low): `undefined vfunc_3(void)`
+    pub slot_3: *const c_void,
+    /// `BSShader::SetupMaterial` at 0x1578910 (semantic, high); signature (untiered): `undefined SetupMaterial(void)`
+    pub slot_4: *const c_void,
+    /// `BSShader::RestoreMaterial` at 0x1578920 (semantic, low); signature (untiered): `undefined RestoreMaterial(void)`
+    pub slot_5: *const c_void,
+    /// `BSImagespaceShader::vfunc_6` at 0x1564a80 (rtti, medium); signature (high): `undefined vfunc_6(BSImagespaceShader * this)`
+    pub slot_6: *const c_void,
+    /// `BSImagespaceShader::vfunc_7` at 0x1564d90 (rtti, medium); signature (high): `undefined vfunc_7(BSImagespaceShader * this)`
+    pub slot_7: *const c_void,
+    /// `BSShader::vfunc_8` at 0x1578ac0 (semantic, high); signature (low): `undefined vfunc_8(void)`
+    pub slot_8: *const c_void,
+    /// `BSImagespaceShader::vfunc_9` at 0x1564df0 (rtti, medium); signature (low): `undefined vfunc_9(BSImagespaceShader * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_9: *const c_void,
+    /// `BSImagespaceShader::vfunc_10` at 0x150b510 (rtti, medium); signature (low): `undefined vfunc_10(void)`
+    pub slot_10: *const c_void,
+    /// `BSImagespaceShader::vfunc_11` at 0x150b490 (rtti, medium); signature (low): `undefined vfunc_11(void)`
+    pub slot_11: *const c_void,
+    /// `BSImagespaceShader::vfunc_12` at 0x1565170 (rtti, medium); signature (low): `undefined vfunc_12(BSImagespaceShader * this, undefined4 param_1, undefined4 param_2, undefined4 param_3)`
+    pub slot_12: *const c_void,
+    /// `BSImagespaceShaderISSAOCompositeSAOFog::vfunc_13` at 0x150ab20 (rtti, high); signature (low): `undefined8 * vfunc_13(BSImagespaceShaderISSAOCompositeSAOFog * this, undefined8 * param_1)`
+    pub slot_13: *const c_void,
+    /// `BSImagespaceShader::vfunc_14` at 0x1565200 (rtti, medium); signature (low): `undefined vfunc_14(BSImagespaceShader * this, undefined8 param_1, undefined8 param_2, undefined1 * param_3)`
+    pub slot_14: *const c_void,
+}
+impl BSImagespaceShaderISSAOCompositeSAOFog_vtable {
+    pub const ID: u64 = 254426;
+}
+
+/// `BSImagespaceShaderISSAOCompositeSAOFog::vftable_10` at 0x1b3bd18, id 254428 (rtti, high); 2 slots.
+#[repr(C)]
+pub struct BSImagespaceShaderISSAOCompositeSAOFog_vtable_10 {
+    /// `BSImagespaceShaderISSAOCompositeSAOFog::NiBoneMatrixSetterI_vdtor` at 0x1507780 (slot_propagation, medium); signature (high): `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderISSAOCompositeSAOFog * this)`
+    pub slot_0: *const c_void,
+    /// `BSShader::NiBoneMatrixSetterI::SetBoneMatrices` at 0x1578c80 (semantic, high); signature (untiered): `undefined SetBoneMatrices(void * this, longlong param_1, longlong param_2, float * param_3)`
+    pub slot_1: *const c_void,
+}
+impl BSImagespaceShaderISSAOCompositeSAOFog_vtable_10 {
+    pub const ID: u64 = 254428;
+}
+
 /// `BSImagespaceShaderISSAOCompositeSAOFog::vftable_18` at 0x1b3bd30, id 254430 (rtti, high); 1 slots.
 #[repr(C)]
 pub struct BSImagespaceShaderISSAOCompositeSAOFog_vtable_18 {
@@ -13604,19 +13742,5 @@ pub struct BSPrecomputedNavmeshInfoPathMap__INavmeshInfoVisitor_vtable {
 }
 impl BSPrecomputedNavmeshInfoPathMap__INavmeshInfoVisitor_vtable {
     pub const ID: u64 = 245918;
-}
-
-/// `BSPrecomputedNavmeshInfoSearch::vftable` at 0x1abcd78, id 245685 (rtti, high); 3 slots.
-#[repr(C)]
-pub struct BSPrecomputedNavmeshInfoSearch_vtable {
-    /// `BSPrecomputedNavmeshInfoSearch::vdtor` at 0x11c95d0 (layout_inference, medium); signature (low): `BSPrecomputedNavmeshInfoSearch * vdtor(BSPrecomputedNavmeshInfoSearch * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `BSNavmeshInfoSearch::vfunc_1` at 0x11c7ec0 (rtti, medium); signature (low): `undefined8 vfunc_1(BSNavmeshInfoSearch * this, float * param_1, float * * param_2, undefined1 * param_3)`
-    pub slot_1: *const c_void,
-    /// `BSPrecomputedNavmeshInfoSearch::vfunc_2` at 0x11c8b50 (rtti, high); signature (low): `longlong vfunc_2(BSPrecomputedNavmeshInfoSearch * this, longlong param_1)`
-    pub slot_2: *const c_void,
-}
-impl BSPrecomputedNavmeshInfoSearch_vtable {
-    pub const ID: u64 = 245685;
 }
 

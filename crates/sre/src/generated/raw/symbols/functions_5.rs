@@ -4,6 +4,13 @@
 use crate::raw::*;
 
 pub(super) const ROWS: &[Function] = &[
+    Function { rva: 0x7e27e0, id: 43803, confidence: Confidence::High, name: "ConeProjectile::vfunc_192" },
+    Function { rva: 0x7e2920, id: 43804, confidence: Confidence::Medium, name: "ConeProjectile::vfunc_190_sub0" },
+    Function { rva: 0x7e2e50, id: 43806, confidence: Confidence::Medium, name: "ConeProjectile::vfunc_171_sub0" },
+    Function { rva: 0x7e3350, id: 43808, confidence: Confidence::Medium, name: "ConeProjectile::BSHandleRefObject_vdtor" },
+    Function { rva: 0x7e335c, id: 43809, confidence: Confidence::Medium, name: "ConeProjectile::BSTEventSink_BSAnimationGraphEvent_vdtor" },
+    Function { rva: 0x7e3368, id: 43810, confidence: Confidence::Medium, name: "ConeProjectile::IAnimationGraphManagerHolder_vdtor" },
+    Function { rva: 0x7e3380, id: 43811, confidence: Confidence::Medium, name: "ConeProjectile::vdtor" },
     Function { rva: 0x7e3470, id: 43812, confidence: Confidence::High, name: "ConcreteExplosionFactory<Explosion,0>::vfunc_1" },
     Function { rva: 0x7e34e0, id: 43813, confidence: Confidence::Medium, name: "ConcreteExplosionFactory<Explosion,0>::vdtor" },
     Function { rva: 0x7e3530, id: 43814, confidence: Confidence::High, name: "IExplosionFactory::dtor" },
@@ -6430,11 +6437,4 @@ pub(super) const ROWS: &[Function] = &[
     Function { rva: 0x91bfc0, id: 51262, confidence: Confidence::High, name: "ReleaseRefPtr_19" },
     Function { rva: 0x91bfe0, id: 51263, confidence: Confidence::High, name: "DecRefPtrIfSet" },
     Function { rva: 0x91c000, id: 51264, confidence: Confidence::Medium, name: "CraftingSubMenus::AlchemyMenu::ctor" },
-    Function { rva: 0x91c1b0, id: 51265, confidence: Confidence::Medium, name: "DeleteOwnedList8_2" },
-    Function { rva: 0x91c1f0, id: 51267, confidence: Confidence::High, name: "CraftingSubMenus::CraftingSubMenu::dtor" },
-    Function { rva: 0x91c470, id: 51268, confidence: Confidence::High, name: "CraftingSubMenus::EnchantConstructMenu::CreateEffectFunctor::dtor" },
-    Function { rva: 0x91c4b0, id: 51269, confidence: Confidence::Medium, name: "FreeArrayStorageAtField8" },
-    Function { rva: 0x91c4f0, id: 51270, confidence: Confidence::Medium, name: "CraftingSubMenus::EnchantConstructMenu::ctor_sub1" },
-    Function { rva: 0x91c550, id: 51271, confidence: Confidence::High, name: "FxDelegateHandler::dtor" },
-    Function { rva: 0x91c560, id: 51272, confidence: Confidence::Medium, name: "FreeArrayBufferAndClearSize_11" },
 ];

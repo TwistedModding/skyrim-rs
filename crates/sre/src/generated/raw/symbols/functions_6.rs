@@ -4,6 +4,13 @@
 use crate::raw::*;
 
 pub(super) const ROWS: &[Function] = &[
+    Function { rva: 0x91c1b0, id: 51265, confidence: Confidence::Medium, name: "DeleteOwnedList8_2" },
+    Function { rva: 0x91c1f0, id: 51267, confidence: Confidence::High, name: "CraftingSubMenus::CraftingSubMenu::dtor" },
+    Function { rva: 0x91c470, id: 51268, confidence: Confidence::High, name: "CraftingSubMenus::EnchantConstructMenu::CreateEffectFunctor::dtor" },
+    Function { rva: 0x91c4b0, id: 51269, confidence: Confidence::Medium, name: "FreeArrayStorageAtField8" },
+    Function { rva: 0x91c4f0, id: 51270, confidence: Confidence::Medium, name: "CraftingSubMenus::EnchantConstructMenu::ctor_sub1" },
+    Function { rva: 0x91c550, id: 51271, confidence: Confidence::High, name: "FxDelegateHandler::dtor" },
+    Function { rva: 0x91c560, id: 51272, confidence: Confidence::Medium, name: "FreeArrayBufferAndClearSize_11" },
     Function { rva: 0x91c5b0, id: 51273, confidence: Confidence::Medium, name: "CraftingSubMenus::AlchemyMenu::ctor_sub0" },
     Function { rva: 0x91c600, id: 51274, confidence: Confidence::High, name: "ClearAndFreeHashMap16AtField8" },
     Function { rva: 0x91c610, id: 51275, confidence: Confidence::High, name: "CraftingSubMenus::AlchemyMenu::ModEffectivenessFunctor::dtor" },
@@ -3042,6 +3049,7 @@ pub(super) const ROWS: &[Function] = &[
     Function { rva: 0xa124f0, id: 55102, confidence: Confidence::High, name: "BSScript::NativeFunction3<Actor,void,bool,bool,bool>::vfunc_22" },
     Function { rva: 0xa126f0, id: 55103, confidence: Confidence::Medium, name: "BSScript::NativeFunction4<Actor,bool,bool,BGSListForm*___ptr64,bool,bool>::vfunc_22" },
     Function { rva: 0xa129d0, id: 55104, confidence: Confidence::High, name: "BSScript::NativeFunction9<Actor,void,Actor*___ptr64,float,float,float,float,float,float,float,float>::vfunc_22" },
+    Function { rva: 0xa12e60, id: 55105, confidence: Confidence::High, name: "Actor::PlayIdle_Impl" },
     Function { rva: 0xa12f00, id: 55106, confidence: Confidence::Medium, name: "GetScriptTypeForFormType5C" },
     Function { rva: 0xa12fc0, id: 55107, confidence: Confidence::Medium, name: "GetScriptTypeForFormType16" },
     Function { rva: 0xa13080, id: 55108, confidence: Confidence::Medium, name: "GetScriptTypeForFormTypeB" },
@@ -7992,12 +8000,4 @@ pub(super) const ROWS: &[Function] = &[
     Function { rva: 0xb59140, id: 61366, confidence: Confidence::High, name: "AppendToArray208" },
     Function { rva: 0xb591a0, id: 61367, confidence: Confidence::Medium, name: "ClearPointerInField208Array" },
     Function { rva: 0xb59200, id: 61368, confidence: Confidence::Medium, name: "AppendToField218Array" },
-    Function { rva: 0xb592c0, id: 61373, confidence: Confidence::Medium, name: "AppendToField248Array" },
-    Function { rva: 0xb59380, id: 61378, confidence: Confidence::Medium, name: "AppendToField238Array" },
-    Function { rva: 0xb59440, id: 61383, confidence: Confidence::High, name: "AppendToArray258" },
-    Function { rva: 0xb59500, id: 61388, confidence: Confidence::High, name: "AppendToArrayAtField1E8" },
-    Function { rva: 0xb59560, id: 61389, confidence: Confidence::High, name: "ClearEntryInArrayAtField1E8" },
-    Function { rva: 0xb595c0, id: 61390, confidence: Confidence::Medium, name: "AppendToField268Array" },
-    Function { rva: 0xb59680, id: 61395, confidence: Confidence::Medium, name: "AttachObjectToArray278" },
-    Function { rva: 0xb59700, id: 61396, confidence: Confidence::Medium, name: "DetachObjectFromArray278" },
 ];

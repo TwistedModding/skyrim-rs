@@ -374,13 +374,6 @@ impl crate::PlayerCharacter {
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
     pub unsafe fn actor_state_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(40936, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self).byte_add(0xC0), param_1, param_2, param_3) } }
-    /// `PlayerCharacter::ActorState_vfunc_20` (decompiler signature, tier low; ledger rtti evidence, name high; id 40735, rva 0x75e4a0).
-    /// `undefined8 ActorState_vfunc_20(PlayerCharacter * this, uint param_1)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn actor_state_vfunc_20(&self, param_1: u32) -> u64 { unsafe { function!(40735, (*const Self, u32) -> u64)(core::ptr::from_ref(self).byte_add(0xC0), param_1) } }
     /// `PlayerCharacter::ActorState_vfunc_4` (decompiler signature, tier low; ledger rtti evidence, name high; id 40743, rva 0x75ed30).
     /// `undefined ActorState_vfunc_4(PlayerCharacter * this, undefined4 * param_1)`
     ///

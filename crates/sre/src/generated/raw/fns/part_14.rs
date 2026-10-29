@@ -3,6 +3,128 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `InvokeFunctionPointerWithDerefArgs_2` at 0x131190 (decompiler, medium); signature (untiered): `undefined InvokeFunctionPointerWithDerefArgs_2(undefined8 * param_1, undefined8 * param_2, undefined4 * param_3, undefined8 param_4, undefined4 * param_5)`
+pub const InvokeFunctionPointerWithDerefArgs_2: u64 = 523363;
+/// `InvokeFunctionPointerWithDerefArgs_3` at 0x1311f0 (decompiler, medium); signature (untiered): `undefined InvokeFunctionPointerWithDerefArgs_3(undefined8 * param_1, undefined8 * param_2, undefined4 * param_3, undefined8 param_4, undefined4 * param_5)`
+pub const InvokeFunctionPointerWithDerefArgs_3: u64 = 523364;
+/// `InvokeFunctionPointerWithDerefArgs_4` at 0x131250 (decompiler, medium); signature (untiered): `undefined InvokeFunctionPointerWithDerefArgs_4(undefined8 * param_1, undefined8 * param_2, undefined4 * param_3, undefined8 param_4, undefined4 * param_5)`
+pub const InvokeFunctionPointerWithDerefArgs_4: u64 = 523365;
+/// `InvokeFunctionPointerWithDerefArgs_5` at 0x132d00 (decompiler, medium); signature (untiered): `undefined InvokeFunctionPointerWithDerefArgs_5(undefined * UNRECOVERED_JUMPTABLE, undefined8 * param_2, undefined4 * param_3, undefined8 param_4, undefined4 * param_5)`
+pub const InvokeFunctionPointerWithDerefArgs_5: u64 = 523371;
+/// `InvokeFunctionPointerWithDerefArgs_6` at 0x133b40 (decompiler, medium); signature (untiered): `undefined InvokeFunctionPointerWithDerefArgs_6(undefined * UNRECOVERED_JUMPTABLE, undefined8 * param_2, undefined4 * param_3, undefined8 param_4, undefined4 * param_5)`
+pub const InvokeFunctionPointerWithDerefArgs_6: u64 = 441245;
+/// `InvokeFunctionPointerWithDerefArgs_7` at 0x13fa30 (decompiler, medium); signature (untiered): `undefined InvokeFunctionPointerWithDerefArgs_7(undefined * UNRECOVERED_JUMPTABLE, undefined8 * param_2, undefined4 * param_3, undefined8 param_4, undefined4 * param_5)`
+pub const InvokeFunctionPointerWithDerefArgs_7: u64 = 441100;
+/// `InvokeFunctionPointerWithDereferencedArgs` at 0x142c70 (decompiler, medium); signature (untiered): `undefined InvokeFunctionPointerWithDereferencedArgs(undefined * UNRECOVERED_JUMPTABLE, undefined8 * param_2, undefined4 * param_3, undefined8 param_4, undefined4 * param_5)`
+pub const InvokeFunctionPointerWithDereferencedArgs: u64 = 523457;
+/// `InvokeFunctionPointerWithDereferencedArgs_2` at 0x144f30 (decompiler, medium); signature (untiered): `undefined InvokeFunctionPointerWithDereferencedArgs_2(undefined * UNRECOVERED_JUMPTABLE, undefined8 * param_2, undefined4 * param_3, undefined8 param_4, undefined4 * param_5)`
+pub const InvokeFunctionPointerWithDereferencedArgs_2: u64 = 441373;
+/// `InvokeFunctionWithDerefArgs` at 0x131280 (decompiler, medium); signature (untiered): `undefined InvokeFunctionWithDerefArgs(undefined * UNRECOVERED_JUMPTABLE, undefined8 * param_2, undefined4 * param_3, undefined8 param_4, undefined4 * param_5)`
+pub const InvokeFunctionWithDerefArgs: u64 = 523366;
+/// `InvokeFunctionWithDerefArgs_2` at 0x1312b0 (decompiler, medium); signature (untiered): `undefined InvokeFunctionWithDerefArgs_2(undefined * UNRECOVERED_JUMPTABLE, undefined8 * param_2, undefined4 * param_3, undefined8 param_4, undefined4 * param_5)`
+pub const InvokeFunctionWithDerefArgs_2: u64 = 523367;
+/// `InvokeFunctorWithResolvedRefHandle` at 0x2bfcc0 (decompiler, medium); signature (untiered): `ulonglong InvokeFunctorWithResolvedRefHandle(longlong * param_1, uint * param_2, undefined8 param_3, undefined8 param_4)`
+pub const InvokeFunctorWithResolvedRefHandle: u64 = 19030;
+/// `InvokeGlobal410621` at 0xf25ea0 (decompiler, medium); signature (untiered): `undefined InvokeGlobal410621(longlong param_1)`
+pub const InvokeGlobal410621: u64 = 71994;
+/// `InvokeGlobal503840Callback80` at 0x6061a0 (decompiler, medium); signature (untiered): `undefined InvokeGlobal503840Callback80(undefined4 param_1, undefined8 param_2)`
+pub const InvokeGlobal503840Callback80: u64 = 416373;
+/// `InvokeGlobalCallbackIfSet` at 0x10542b0 (decompiler, medium); signature (medium): `undefined InvokeGlobalCallbackIfSet(void)`
+pub const InvokeGlobalCallbackIfSet: u64 = 78008;
+/// `InvokeGlobalCallbackWithItemNames` at 0x15c17a0 (decompiler, medium); signature (untiered): `undefined InvokeGlobalCallbackWithItemNames(undefined4 param_1, longlong * param_2, undefined1 * * param_3, undefined8 * param_4)`
+pub const InvokeGlobalCallbackWithItemNames: u64 = 453944;
+/// `InvokeGlobalStringCallback` at 0x15c1cc0 (decompiler, medium); signature (untiered): `undefined InvokeGlobalStringCallback(undefined4 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const InvokeGlobalStringCallback: u64 = 453948;
+/// `InvokeHandlerChainForType` at 0x129e60 (decompiler, medium); signature (untiered): `undefined InvokeHandlerChainForType(int * param_1, int param_2, undefined8 param_3, undefined4 param_4)`
+pub const InvokeHandlerChainForType: u64 = 440643;
+/// `InvokeHandlersForTypeInTable505637` at 0x12a390 (decompiler, medium); signature (untiered): `undefined1 InvokeHandlersForTypeInTable505637(int param_1, undefined8 param_2, undefined4 param_3)`
+pub const InvokeHandlersForTypeInTable505637: u64 = 440652;
+/// `InvokeHeldObjectVfunc1` at 0xc5b450 (decompiler, high); signature (untiered): `undefined InvokeHeldObjectVfunc1(undefined8 * param_1)`
+pub const InvokeHeldObjectVfunc1: u64 = 65854;
+/// `InvokeHeldObjectVfunc10` at 0xc5b540 (decompiler, high); signature (untiered): `undefined InvokeHeldObjectVfunc10(undefined8 * param_1)`
+pub const InvokeHeldObjectVfunc10: u64 = 65859;
+/// `InvokeHeldObjectVfunc11` at 0xc5b550 (decompiler, high); signature (untiered): `undefined InvokeHeldObjectVfunc11(undefined8 * param_1)`
+pub const InvokeHeldObjectVfunc11: u64 = 65860;
+/// `InvokeHeldObjectVfunc2` at 0xc5b400 (decompiler, medium); signature (untiered): `undefined InvokeHeldObjectVfunc2(undefined8 * param_1)`
+pub const InvokeHeldObjectVfunc2: u64 = 65851;
+/// `InvokeHideDialogueText` at 0x92b040 (decompiler, medium); signature (untiered): `undefined InvokeHideDialogueText(longlong param_1)`
+pub const InvokeHideDialogueText: u64 = 51514;
+/// `InvokeIfQuadShapeIntersectsSphere` at 0x2b3c30 (decompiler, medium); signature (untiered): `undefined InvokeIfQuadShapeIntersectsSphere(longlong param_1, int param_2, float * param_3, undefined * param_4, undefined8 param_5)`
+pub const InvokeIfQuadShapeIntersectsSphere: u64 = 18799;
+/// `InvokeInlineEntryDeleters` at 0x1382b50 (decompiler, medium); signature (untiered): `undefined InvokeInlineEntryDeleters(longlong param_1)`
+pub const InvokeInlineEntryDeleters: u64 = 95920;
+/// `InvokeInvalidateListData` at 0x905700 (decompiler, medium); signature (untiered): `undefined InvokeInvalidateListData(undefined8 * param_1)`
+pub const InvokeInvalidateListData: u64 = 51028;
+/// `InvokeInvalidateListData_2` at 0x956e60 (decompiler, medium); signature (untiered): `undefined InvokeInvalidateListData_2(undefined8 * param_1)`
+pub const InvokeInvalidateListData_2: u64 = 52097;
+/// `InvokeLockedCallbackList` at 0xd759b0 (decompiler, medium); signature (untiered): `undefined InvokeLockedCallbackList(longlong param_1)`
+pub const InvokeLockedCallbackList: u64 = 85097;
+/// `InvokeMemberFunction2D0Or2D8` at 0xd364b0 (decompiler, medium); signature (untiered): `undefined InvokeMemberFunction2D0Or2D8(longlong * param_1, int param_2, longlong param_3, uint param_4)`
+pub const InvokeMemberFunction2D0Or2D8: u64 = 83548;
+/// `InvokeMethodOnEachMemberArrayElement` at 0xdb8f90 (decompiler, medium); signature (untiered): `undefined8 InvokeMethodOnEachMemberArrayElement(longlong * param_1, longlong * param_2, longlong * param_3, longlong * param_4)`
+pub const InvokeMethodOnEachMemberArrayElement: u64 = 86277;
+/// `InvokeMethodOnMemberArrayAtIndex` at 0xdc0cf0 (decompiler, medium); signature (untiered): `undefined InvokeMethodOnMemberArrayAtIndex(longlong param_1, longlong * param_2, undefined4 param_3, int param_4, undefined8 param_5, undefined4 param_6, undefined4 param_7, undefined1 param_8)`
+pub const InvokeMethodOnMemberArrayAtIndex: u64 = 86454;
+/// `InvokeNativeCallback68` at 0xd170b0 (decompiler, medium); signature (untiered): `undefined InvokeNativeCallback68(longlong param_1, longlong param_2)`
+pub const InvokeNativeCallback68: u64 = 83103;
+/// `InvokeNativeFunctionWithArgs` at 0xd32620 (decompiler, medium); signature (untiered): `undefined1 * InvokeNativeFunctionWithArgs(longlong * param_1, undefined * param_2, longlong * param_3)`
+pub const InvokeNativeFunctionWithArgs: u64 = 83451;
+/// `InvokeOnDataWithString` at 0xd88200 (decompiler, medium); signature (untiered): `undefined InvokeOnDataWithString(longlong param_1, longlong param_2, longlong * param_3)`
+pub const InvokeOnDataWithString: u64 = 85500;
+/// `InvokeOnLoadWithBoolArg` at 0xd883f0 (decompiler, medium); signature (untiered): `undefined InvokeOnLoadWithBoolArg(longlong param_1, longlong param_2, undefined1 param_3)`
+pub const InvokeOnLoadWithBoolArg: u64 = 85502;
+/// `InvokeOnResize` at 0xdb1060 (decompiler, medium); signature (untiered): `undefined InvokeOnResize(longlong param_1)`
+pub const InvokeOnResize: u64 = 86077;
+/// `InvokeOnceForEntriesAboveThreshold` at 0xba8e10 (decompiler, medium); signature (untiered): `undefined InvokeOnceForEntriesAboveThreshold(longlong param_1, float param_2)`
+pub const InvokeOnceForEntriesAboveThreshold: u64 = 62831;
+/// `InvokeOrQueueCallback` at 0x60f560 (decompiler, medium); signature (untiered): `undefined InvokeOrQueueCallback(longlong * param_1, longlong * param_2)`
+pub const InvokeOrQueueCallback: u64 = 442534;
+/// `InvokePairCallbacksInBothOrders` at 0xf23b90 (decompiler, medium); signature (untiered): `undefined8 InvokePairCallbacksInBothOrders(longlong param_1, longlong * param_2, uint param_3, uint param_4)`
+pub const InvokePairCallbacksInBothOrders: u64 = 71952;
+/// `InvokePendingCallbackOnGlobal402773` at 0x649a60 (decompiler, medium); signature (untiered): `undefined InvokePendingCallbackOnGlobal402773(undefined4 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const InvokePendingCallbackOnGlobal402773: u64 = 36364;
+/// `InvokePendingCallbackWithResult` at 0x649b50 (decompiler, medium); signature (untiered): `undefined InvokePendingCallbackWithResult(longlong param_1, undefined4 param_2, undefined8 param_3, undefined8 param_4)`
+pub const InvokePendingCallbackWithResult: u64 = 36369;
+/// `InvokePendingCallbackWithResultAndFlag` at 0x6497b0 (decompiler, medium); signature (untiered): `undefined InvokePendingCallbackWithResultAndFlag(longlong param_1, undefined4 param_2, undefined8 param_3, undefined8 param_4)`
+pub const InvokePendingCallbackWithResultAndFlag: u64 = 36365;
+/// `InvokePendingOnVKBTextEntered` at 0x95dfe0 (decompiler, medium); signature (medium): `undefined InvokePendingOnVKBTextEntered(void)`
+pub const InvokePendingOnVKBTextEntered: u64 = 52165;
+/// `InvokeProxyAt390IfSet` at 0x146f920 (decompiler, medium); signature (untiered): `undefined InvokeProxyAt390IfSet(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const InvokeProxyAt390IfSet: u64 = 452976;
+/// `InvokeRigidBodyVfunc41ForLayers` at 0x108d610 (decompiler, medium); signature (untiered): `undefined InvokeRigidBodyVfunc41ForLayers(longlong param_1)`
+pub const InvokeRigidBodyVfunc41ForLayers: u64 = 78914;
+/// `InvokeSelectCategory` at 0x942370 (decompiler, medium); signature (untiered): `undefined8 InvokeSelectCategory(undefined8 * param_1, longlong * param_2)`
+pub const InvokeSelectCategory: u64 = 51835;
+/// `InvokeSetMotionTypeCallbacksAndCompact` at 0xb6a420 (decompiler, medium); signature (untiered): `undefined InvokeSetMotionTypeCallbacksAndCompact(longlong param_1, undefined8 param_2)`
+pub const InvokeSetMotionTypeCallbacksAndCompact: u64 = 61762;
+/// `InvokeSetMotionTypeCallbacksOfField2B8` at 0xb68560 (decompiler, medium); signature (medium): `undefined InvokeSetMotionTypeCallbacksOfField2B8(longlong param_1)`
+pub const InvokeSetMotionTypeCallbacksOfField2B8: u64 = 61705;
+/// `InvokeShowDialogueText` at 0x92af00 (decompiler, medium); signature (untiered): `undefined InvokeShowDialogueText(longlong param_1, undefined8 * param_2)`
+pub const InvokeShowDialogueText: u64 = 51513;
+/// `InvokeShowGamerTagAndIcon` at 0x95c2c0 (decompiler, medium); signature (untiered): `undefined InvokeShowGamerTagAndIcon(longlong param_1, char param_2)`
+pub const InvokeShowGamerTagAndIcon: u64 = 52147;
+/// `InvokeStoredCallable4` at 0x123390 (decompiler, medium); signature (untiered): `undefined InvokeStoredCallable4(undefined8 * param_1, undefined8 * param_2, undefined4 * param_3, undefined8 param_4, undefined4 * param_5)`
+pub const InvokeStoredCallable4: u64 = 523251;
+/// `InvokeStoredCallable4_2` at 0x123480 (decompiler, medium); signature (untiered): `undefined InvokeStoredCallable4_2(undefined8 * param_1, undefined8 * param_2, undefined4 * param_3, undefined8 param_4, undefined4 * param_5)`
+pub const InvokeStoredCallable4_2: u64 = 523252;
+/// `InvokeStoredFunctionPointer` at 0x132c70 (decompiler, medium); signature (untiered): `undefined InvokeStoredFunctionPointer(undefined8 * param_1, undefined8 * param_2, undefined4 * param_3, undefined8 param_4, undefined4 * param_5)`
+pub const InvokeStoredFunctionPointer: u64 = 523369;
+/// `InvokeStoredFunctionPointer_10` at 0x144f00 (decompiler, medium); signature (untiered): `undefined InvokeStoredFunctionPointer_10(undefined8 * param_1, undefined8 * param_2, undefined4 * param_3, undefined8 param_4, undefined4 * param_5)`
+pub const InvokeStoredFunctionPointer_10: u64 = 441372;
+/// `InvokeStoredFunctionPointer_2` at 0x132cd0 (decompiler, medium); signature (untiered): `undefined InvokeStoredFunctionPointer_2(undefined8 * param_1, undefined8 * param_2, undefined4 * param_3, undefined8 param_4, undefined4 * param_5)`
+pub const InvokeStoredFunctionPointer_2: u64 = 523370;
+/// `InvokeStoredFunctionPointer_3` at 0x133a50 (decompiler, medium); signature (untiered): `undefined InvokeStoredFunctionPointer_3(undefined8 * param_1, undefined8 * param_2, undefined4 * param_3, undefined8 param_4, undefined4 * param_5)`
+pub const InvokeStoredFunctionPointer_3: u64 = 441243;
+/// `InvokeStoredFunctionPointer_4` at 0x133ae0 (decompiler, medium); signature (untiered): `undefined InvokeStoredFunctionPointer_4(undefined8 * param_1, undefined8 * param_2, undefined4 * param_3, undefined8 param_4, undefined4 * param_5)`
+pub const InvokeStoredFunctionPointer_4: u64 = 441244;
+/// `InvokeStoredFunctionPointer_5` at 0x13f960 (decompiler, medium); signature (untiered): `undefined InvokeStoredFunctionPointer_5(undefined8 * param_1, undefined8 * param_2, undefined4 * param_3, undefined8 param_4, undefined4 * param_5)`
+pub const InvokeStoredFunctionPointer_5: u64 = 441098;
+/// `InvokeStoredFunctionPointer_6` at 0x13f9f0 (decompiler, medium); signature (untiered): `undefined InvokeStoredFunctionPointer_6(undefined8 * param_1, undefined8 * param_2, undefined4 * param_3, undefined8 param_4, undefined4 * param_5)`
+pub const InvokeStoredFunctionPointer_6: u64 = 441099;
+/// `InvokeStoredFunctionPointer_7` at 0x142b80 (decompiler, medium); signature (untiered): `undefined InvokeStoredFunctionPointer_7(undefined8 * param_1, undefined8 * param_2, undefined4 * param_3, undefined8 param_4, undefined4 * param_5)`
+pub const InvokeStoredFunctionPointer_7: u64 = 523455;
+/// `InvokeStoredFunctionPointer_8` at 0x142c10 (decompiler, medium); signature (untiered): `undefined InvokeStoredFunctionPointer_8(undefined8 * param_1, undefined8 * param_2, undefined4 * param_3, undefined8 param_4, undefined4 * param_5)`
+pub const InvokeStoredFunctionPointer_8: u64 = 523456;
 /// `InvokeStoredFunctionPointer_9` at 0x144ea0 (decompiler, medium); signature (untiered): `undefined InvokeStoredFunctionPointer_9(undefined8 * param_1, undefined8 * param_2, undefined4 * param_3, undefined8 param_4, undefined4 * param_5)`
 pub const InvokeStoredFunctionPointer_9: u64 = 441371;
 /// `InvokeType9Or10EntriesForRef` at 0x785130 (decompiler, medium); signature (untiered): `undefined InvokeType9Or10EntriesForRef(longlong param_1, longlong param_2)`
@@ -95,8 +217,6 @@ pub const IsAllowedWhileOnFlyingMount: u64 = 40996;
 pub const IsAncestorOrNull: u64 = 47490;
 /// `IsAnotherThreadInUpdatePhase` at 0x6e49e0 (semantic, medium); signature (untiered): `ulonglong IsAnotherThreadInUpdatePhase(void)`; semantic: true when a global state holds (ID_403107+0x6c == 1) and a thread other than the caller has its bit in the mask 0x3244170; callers then queue the work instead of doing it (medium); signature `bool ()`
 pub const IsAnotherThreadInUpdatePhase: u64 = 39033;
-/// `IsAnyMagicCasterCasting` at 0x6d6780 (decompiler, medium); signature (medium): `undefined8 IsAnyMagicCasterCasting(longlong param_1, longlong param_2)`
-pub const IsAnyMagicCasterCasting: u64 = 38759;
 /// `IsArgFinite` at 0xd18d10 (decompiler, high); signature (untiered): `undefined IsArgFinite(longlong param_1)`
 pub const IsArgFinite: u64 = 83133;
 /// `IsArgNaN` at 0xd18c70 (decompiler, high); signature (untiered): `undefined IsArgNaN(longlong param_1)`
@@ -663,8 +783,6 @@ pub const IsFieldC8TopNibble6: u64 = 38595;
 pub const IsFieldC8TopNibbleIn1To3Or6Or8To12: u64 = 38591;
 /// `IsFieldC8TopNibbleIn1To5` at 0x6cb9d0 (decompiler, high); signature (high): `undefined4 IsFieldC8TopNibbleIn1To5(longlong param_1)`
 pub const IsFieldC8TopNibbleIn1To5: u64 = 38593;
-/// `IsFieldC8TopNibbleNonZero` at 0x6cb920 (decompiler, high); signature (high): `bool IsFieldC8TopNibbleNonZero(longlong param_1)`
-pub const IsFieldC8TopNibbleNonZero: u64 = 38590;
 /// `IsFieldCCBit13SetOrMode2` at 0x86aa30 (decompiler, medium); signature (medium): `ulonglong IsFieldCCBit13SetOrMode2(longlong param_1)`
 pub const IsFieldCCBit13SetOrMode2: u64 = 47328;
 /// `IsFieldD8InFlagMask` at 0x49d1c0 (decompiler, medium); signature (medium): `longlong IsFieldD8InFlagMask(longlong param_1)`
@@ -703,8 +821,6 @@ pub const IsFlag211SetOrHasField218: u64 = 105695;
 pub const IsFlag32SetAndField20MaskClear: u64 = 443424;
 /// `IsFlag38Or39SetLocked` at 0x1387dd0 (decompiler, medium); signature (medium): `undefined8 IsFlag38Or39SetLocked(longlong param_1)`
 pub const IsFlag38Or39SetLocked: u64 = 449147;
-/// `IsFlag45FSetOnFieldF8Field10` at 0x6d6b30 (decompiler, medium); signature (medium): `ulonglong IsFlag45FSetOnFieldF8Field10(longlong param_1)`
-pub const IsFlag45FSetOnFieldF8Field10: u64 = 38764;
 /// `IsFlag49SetAndFlag48Clear` at 0x1396780 (decompiler, high); signature (high): `undefined8 IsFlag49SetAndFlag48Clear(longlong param_1)`
 pub const IsFlag49SetAndFlag48Clear: u64 = 97299;
 /// `IsFlag8000OrBoundRadiusAboveThreshold` at 0x2e9e40 (decompiler, medium); signature (medium): `bool IsFlag8000OrBoundRadiusAboveThreshold(longlong param_1)`
@@ -1175,8 +1291,6 @@ pub const IsSphereInsideFrustumPlanes: u64 = 15899;
 pub const IsSphereWithinLightRadius: u64 = 108286;
 /// `IsSrgbFormat` at 0x10307c0 (decompiler, medium); signature (medium): `undefined8 IsSrgbFormat(undefined4 param_1)`
 pub const IsSrgbFormat: u64 = 77669;
-/// `IsStageDone` at 0x3d0ec0 (decompiler, medium); signature (medium): `ulonglong IsStageDone(longlong param_1, short param_2)`
-pub const IsStageDone: u64 = 25011;
 /// `IsStateBits481Equal81` at 0x674250 (decompiler, medium); signature (untiered): `ulonglong IsStateBits481Equal81(longlong param_1)`
 pub const IsStateBits481Equal81: u64 = 37233;
 /// `IsStateFlag200SetWithoutExtraA9` at 0x3ccaa0 (decompiler, medium); signature (untiered): `undefined8 IsStateFlag200SetWithoutExtraA9(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
@@ -3369,6 +3483,16 @@ pub const MagicTarget__ForEachActiveEffectVisitor__dtor_27: u64 = 53536;
 pub const MagicTarget__ForEachActiveEffectVisitor__dtor_28: u64 = 54199;
 /// `MagicTarget::ForEachActiveEffectVisitor::vdtor` at 0x384a70 (layout_inference, medium); signature (low): `ForEachActiveEffectVisitor * vdtor(ForEachActiveEffectVisitor * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const MagicTarget__ForEachActiveEffectVisitor__vdtor: u64 = 23284;
+/// `MagicTarget::GetActiveEffectList` at 0x6d85b0 (runtime, high); signature (untiered): `undefined8 GetActiveEffectList(MagicTarget * this)`; semantic: MagicTarget slot 7 on an actor: the list at +0x1a0 of the process's middle-high data (Actor+0xf8, then +8), null for an actor without one; nodes are {effect, next} (high); signature `BSSimpleList<ActiveEffect*>* (MagicTarget* this)`
+pub const MagicTarget__GetActiveEffectList: u64 = 38795;
+/// `Actor::GetActiveEffectList` as a function pointer type (high).
+pub type MagicTarget__GetActiveEffectList_fn = unsafe extern "C" fn(this: *mut crate::MagicTarget) -> *mut c_void;
+/// `MagicTarget::HasActiveEffectWithBase` at 0x5d16d0 (semantic, high); signature (untiered): `char HasActiveEffectWithBase(longlong * param_1, longlong param_2)`; semantic: the engine's own walk of the list: node = slot 7; stop when node is null or (node->item == null && node->next == null); skip null items; match ActiveEffect::GetBaseObject(item) == base. Takes no lock and does not test the effect's flags (inactive and finishing effects match too) (high); signature `bool (MagicTarget* this, EffectSetting* base)`
+pub const MagicTarget__HasActiveEffectWithBase: u64 = 34517;
+/// `MagicTarget::HasActiveEffectWithBase` as a function pointer type (high).
+pub type MagicTarget__HasActiveEffectWithBase_fn = unsafe extern "C" fn(this: *mut crate::MagicTarget, base: *mut crate::EffectSetting) -> bool;
+/// `MagicTarget::HasMagicEffectWithKeyword` at 0x5d1760 (semantic, medium); signature (untiered): `bool HasMagicEffectWithKeyword(longlong * param_1, undefined8 param_2, undefined8 * param_3)`; semantic: visitor walk over the same list with FindEffectKeywordOnTargetFunctor: continues while node and the functor returns 1; the head node's null item ends the walk at once (medium); signature `bool (MagicTarget* this, BGSKeyword* keyword, ActiveEffect** outFound)`
+pub const MagicTarget__HasMagicEffectWithKeyword: u64 = 34518;
 /// `MagicTarget::IPostCreationModification::dtor` at 0x5c4610 (callgraph, high); signature (untiered): `undefined dtor(IPostCreationModification * this)`
 pub const MagicTarget__IPostCreationModification__dtor: u64 = 34246;
 /// `MagicTarget::IPostCreationModification::dtor` at 0x5d01d0 (callgraph, high); signature (untiered): `undefined dtor(IPostCreationModification * this)`
@@ -3377,6 +3501,8 @@ pub const MagicTarget__IPostCreationModification__dtor_2: u64 = 34473;
 pub const MagicTarget__IPostCreationModification__dtor_3: u64 = 34523;
 /// `MagicTarget::IPostCreationModification::vfunc_0` at 0x5c46a0 (rtti, high); signature (low): `IPostCreationModification * vfunc_0(IPostCreationModification * this, uint param_1, undefined8 param_2, undefined8 param_3)`
 pub const MagicTarget__IPostCreationModification__vfunc_0: u64 = 34249;
+/// `MagicTarget::UpdateActiveEffectList` at 0x5d2080 (semantic, medium); signature (untiered): `undefined UpdateActiveEffectList(longlong * param_1, float param_2, TypeDescriptor * param_3, TypeDescriptor * param_4)`; semantic: walks the list, updates each effect, removes effects whose flags have bit 31 set (RemoveEffectFromList); sets MagicTarget+0x10 bit 0 during the walk and applies queued changes from MagicTarget+8 afterwards (medium); signature `void (MagicTarget* this, float dt, ...)`
+pub const MagicTarget__UpdateActiveEffectList: u64 = 34527;
 /// `MagicTarget::dtor` at 0x5d0d60 (layout_inference, high); signature (low): `undefined dtor(MagicTarget * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
 pub const MagicTarget__dtor: u64 = 34502;
 /// `MagicTarget::vfunc_0` at 0x17df70 (rtti, high); signature (low): `MagicTarget * vfunc_0(MagicTarget * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
@@ -5887,16 +6013,20 @@ pub const MovementControllerNPC__IMovementMessageInterface_vfunc_1: u64 = 41761;
 pub const MovementControllerNPC__IMovementMessageInterface_vfunc_2: u64 = 41762;
 /// `MovementControllerNPC::IMovementMessageInterface_vfunc_3` at 0x798ef0 (rtti, high); signature (low): `undefined8 * IMovementMessageInterface_vfunc_3(MovementControllerNPC * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
 pub const MovementControllerNPC__IMovementMessageInterface_vfunc_3: u64 = 41763;
+/// `MovementControllerNPC::IMovementMotionDrivenControl_IsMotionDriven` at 0x7968b0 (semantic, high); signature (untiered): `longlong IMovementMotionDrivenControl_IsMotionDriven(MovementControllerNPC * this)`; semantic: slot 6 of the +0x128 sub-object: mode (this+0x98 = controller+0x1c0) in {1,2,3,7,8,10..14} (high); signature `bool (IMovementMotionDrivenControl* this)`
+pub const MovementControllerNPC__IMovementMotionDrivenControl_IsMotionDriven: u64 = 41706;
+/// `MovementControllerNPC::IMovementMotionDrivenControl_IsMotionDriven` as a function pointer type (high).
+pub type MovementControllerNPC__IMovementMotionDrivenControl_IsMotionDriven_fn = unsafe extern "C" fn(this: *mut crate::IMovementMotionDrivenControl) -> bool;
+/// `MovementControllerNPC::IMovementMotionDrivenControl_StartAnimationDriven` at 0x796760 (semantic, medium); signature (untiered): `undefined IMovementMotionDrivenControl_StartAnimationDriven(MovementControllerNPC * this)`; semantic: slot 3 of the +0x128 sub-object: switch to animation-driven movement; AnimationDrivenHandler 0x7ce7e0 calls it (medium); signature `void (IMovementMotionDrivenControl* this)`
+pub const MovementControllerNPC__IMovementMotionDrivenControl_StartAnimationDriven: u64 = 41704;
+/// `MovementControllerNPC::IMovementMotionDrivenControl_StartMotionDriven` at 0x796550 (semantic, medium); signature (untiered): `undefined IMovementMotionDrivenControl_StartMotionDriven(MovementControllerNPC * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`; semantic: slot 4 of the +0x128 sub-object: switch to motion-driven movement; MotionDrivenHandler 0x7ce770 calls it (medium); signature `void (IMovementMotionDrivenControl* this)`
+pub const MovementControllerNPC__IMovementMotionDrivenControl_StartMotionDriven: u64 = 41703;
 /// `MovementControllerNPC::IMovementMotionDrivenControl_vdtor` at 0x79a634 (slot_propagation, medium); signature (high): `undefined IMovementMotionDrivenControl_vdtor(MovementControllerNPC * this)`
 pub const MovementControllerNPC__IMovementMotionDrivenControl_vdtor: u64 = 41796;
 /// `MovementControllerNPC::IMovementMotionDrivenControl_vfunc_1` at 0x796460 (rtti, high); signature (high): `undefined IMovementMotionDrivenControl_vfunc_1(MovementControllerNPC * this)`
 pub const MovementControllerNPC__IMovementMotionDrivenControl_vfunc_1: u64 = 41701;
 /// `MovementControllerNPC::IMovementMotionDrivenControl_vfunc_2` at 0x7964d0 (rtti, high); signature (high): `undefined IMovementMotionDrivenControl_vfunc_2(MovementControllerNPC * this)`
 pub const MovementControllerNPC__IMovementMotionDrivenControl_vfunc_2: u64 = 41702;
-/// `MovementControllerNPC::IMovementMotionDrivenControl_vfunc_3` at 0x796760 (rtti, high); signature (high): `undefined IMovementMotionDrivenControl_vfunc_3(MovementControllerNPC * this)`
-pub const MovementControllerNPC__IMovementMotionDrivenControl_vfunc_3: u64 = 41704;
-/// `MovementControllerNPC::IMovementMotionDrivenControl_vfunc_4` at 0x796550 (rtti, high); signature (low): `undefined IMovementMotionDrivenControl_vfunc_4(MovementControllerNPC * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-pub const MovementControllerNPC__IMovementMotionDrivenControl_vfunc_4: u64 = 41703;
 /// `MovementControllerNPC::IMovementMotionDrivenControl_vfunc_4_sub0` at 0x798450 (callgraph, medium); signature (untiered): `undefined IMovementMotionDrivenControl_vfunc_4_sub0(longlong * param_1)`
 pub const MovementControllerNPC__IMovementMotionDrivenControl_vfunc_4_sub0: u64 = 41736;
 /// `MovementControllerNPC::IMovementMotionDrivenControl_vfunc_4_sub1` at 0x798570 (callgraph, medium); signature (untiered): `undefined IMovementMotionDrivenControl_vfunc_4_sub1(longlong * param_1)`
@@ -5909,8 +6039,6 @@ pub const MovementControllerNPC__IMovementMotionDrivenControl_vfunc_4_sub3: u64 
 pub const MovementControllerNPC__IMovementMotionDrivenControl_vfunc_4_sub4: u64 = 41751;
 /// `MovementControllerNPC::IMovementMotionDrivenControl_vfunc_5` at 0x7967d0 (rtti, high); signature (low): `undefined IMovementMotionDrivenControl_vfunc_5(MovementControllerNPC * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
 pub const MovementControllerNPC__IMovementMotionDrivenControl_vfunc_5: u64 = 41705;
-/// `MovementControllerNPC::IMovementMotionDrivenControl_vfunc_6` at 0x7968b0 (rtti, high); signature (high): `longlong IMovementMotionDrivenControl_vfunc_6(MovementControllerNPC * this)`
-pub const MovementControllerNPC__IMovementMotionDrivenControl_vfunc_6: u64 = 41706;
 /// `MovementControllerNPC::IMovementMotionDrivenControl_vfunc_7` at 0x7968e0 (rtti, high); signature (high): `longlong IMovementMotionDrivenControl_vfunc_7(MovementControllerNPC * this)`
 pub const MovementControllerNPC__IMovementMotionDrivenControl_vfunc_7: u64 = 41707;
 /// `MovementControllerNPC::IMovementMotionDrivenControl_vfunc_8` at 0x796910 (rtti, high); signature (high): `longlong IMovementMotionDrivenControl_vfunc_8(MovementControllerNPC * this)`
@@ -8387,171 +8515,3 @@ pub const NiBackToFrontAccumulator__vfunc_2: u64 = 71818;
 pub const NiBackToFrontAccumulator__vfunc_23: u64 = 71796;
 /// `NiBackToFrontAccumulator::vfunc_24` at 0xf1e640 (rtti, high); signature (untiered): `undefined vfunc_24(void)`
 pub const NiBackToFrontAccumulator__vfunc_24: u64 = 71798;
-/// `NiBackToFrontAccumulator::vfunc_25` at 0xf1e650 (rtti, high); signature (untiered): `undefined vfunc_25(void)`
-pub const NiBackToFrontAccumulator__vfunc_25: u64 = 71799;
-/// `NiBackToFrontAccumulator::vfunc_26` at 0xf1e660 (rtti, high); signature (untiered): `undefined vfunc_26(NiBackToFrontAccumulator * this, longlong * param_1)`
-pub const NiBackToFrontAccumulator__vfunc_26: u64 = 71800;
-/// `NiBackToFrontAccumulator::vfunc_27` at 0xf1e670 (rtti, high); signature (untiered): `undefined vfunc_27(void)`
-pub const NiBackToFrontAccumulator__vfunc_27: u64 = 71801;
-/// `NiBackToFrontAccumulator::vfunc_28` at 0xf1e680 (rtti, high); signature (low): `bool vfunc_28(NiBackToFrontAccumulator * this, longlong * param_1)`
-pub const NiBackToFrontAccumulator__vfunc_28: u64 = 71802;
-/// `NiBackToFrontAccumulator::vfunc_38` at 0xf1e980 (rtti, medium); signature (low): `undefined vfunc_38(void)`
-pub const NiBackToFrontAccumulator__vfunc_38: u64 = 71807;
-/// `NiBackToFrontAccumulator::vfunc_39` at 0xf1e8a0 (rtti, high); signature (low): `undefined vfunc_39(NiBackToFrontAccumulator * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
-pub const NiBackToFrontAccumulator__vfunc_39: u64 = 71806;
-/// `NiBillboardNode::Create` at 0xf02e10 (string, high); signature (low): `NiNode * Create(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const NiBillboardNode__Create: u64 = 71058;
-/// `NiBillboardNode::vdtor` at 0x41cc60 (slot_propagation, medium); signature (low): `NiBillboardNode * vdtor(NiBillboardNode * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-pub const NiBillboardNode__vdtor: u64 = 26360;
-/// `NiBillboardNode::vfunc_2` at 0x41cce0 (rtti, high); signature (low): `TypeNode * vfunc_2(void)`
-pub const NiBillboardNode__vfunc_2: u64 = 26362;
-/// `NiBillboardNode::vfunc_23` at 0xf02bb0 (rtti, high); signature (low): `NiNode * vfunc_23(NiBillboardNode * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-pub const NiBillboardNode__vfunc_23: u64 = 71051;
-/// `NiBillboardNode::vfunc_24` at 0xf02ce0 (rtti, high); signature (low): `undefined vfunc_24(NiBillboardNode * this, longlong param_1)`
-pub const NiBillboardNode__vfunc_24: u64 = 71053;
-/// `NiBillboardNode::vfunc_25` at 0xf02d40 (rtti, high); signature (untiered): `undefined vfunc_25(NiBillboardNode * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
-pub const NiBillboardNode__vfunc_25: u64 = 71054;
-/// `NiBillboardNode::vfunc_26` at 0xf02d50 (rtti, high); signature (untiered): `undefined1 vfunc_26(NiBillboardNode * this, undefined8 param_1)`
-pub const NiBillboardNode__vfunc_26: u64 = 71055;
-/// `NiBillboardNode::vfunc_27` at 0xf02d60 (rtti, high); signature (low): `undefined vfunc_27(NiBillboardNode * this, longlong * param_1)`
-pub const NiBillboardNode__vfunc_27: u64 = 71056;
-/// `NiBillboardNode::vfunc_28` at 0xf02dc0 (rtti, high); signature (low): `ulonglong vfunc_28(NiBillboardNode * this, longlong param_1)`
-pub const NiBillboardNode__vfunc_28: u64 = 71057;
-/// `NiBillboardNode::vfunc_47` at 0xf02ed0 (rtti, high); signature (high): `undefined vfunc_47(NiBillboardNode * this)`
-pub const NiBillboardNode__vfunc_47: u64 = 71059;
-/// `NiBillboardNode::vfunc_48` at 0xf02f60 (rtti, high); signature (high): `undefined vfunc_48(NiBillboardNode * this)`
-pub const NiBillboardNode__vfunc_48: u64 = 71060;
-/// `NiBillboardNode::vfunc_52` at 0xf041d0 (rtti, high); signature (low): `undefined vfunc_52(NiBillboardNode * this, longlong * param_1)`
-pub const NiBillboardNode__vfunc_52: u64 = 71063;
-/// `NiBillboardNode::vfunc_52_sub0` at 0xf030a0 (callgraph, medium); signature (untiered): `undefined vfunc_52_sub0(longlong param_1, longlong param_2)`
-pub const NiBillboardNode__vfunc_52_sub0: u64 = 71061;
-/// `NiBinaryExtraData::Create` at 0xf0fb70 (string, high); signature (low): `NiExtraData * Create(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const NiBinaryExtraData__Create: u64 = 71347;
-/// `NiBinaryExtraData::vdtor` at 0xf0fcf0 (layout_inference, medium); signature (low): `NiBinaryExtraData * vdtor(NiBinaryExtraData * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-pub const NiBinaryExtraData__vdtor: u64 = 71349;
-/// `NiBinaryExtraData::vfunc_2` at 0xf0fd50 (rtti, high); signature (low): `TypeNode * vfunc_2(void)`
-pub const NiBinaryExtraData__vfunc_2: u64 = 71350;
-/// `NiBinaryExtraData::vfunc_23` at 0xf0f830 (rtti, high); signature (low): `NiExtraData * vfunc_23(NiBinaryExtraData * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
-pub const NiBinaryExtraData__vfunc_23: u64 = 71340;
-/// `NiBinaryExtraData::vfunc_24` at 0xf0f9c0 (rtti, high); signature (low): `undefined vfunc_24(NiBinaryExtraData * this, longlong param_1)`
-pub const NiBinaryExtraData__vfunc_24: u64 = 71342;
-/// `NiBinaryExtraData::vfunc_25` at 0xf0fa70 (rtti, high); signature (untiered): `undefined vfunc_25(void)`
-pub const NiBinaryExtraData__vfunc_25: u64 = 71343;
-/// `NiBinaryExtraData::vfunc_26` at 0xf0fa80 (rtti, high); signature (untiered): `undefined8 vfunc_26(NiBinaryExtraData * this, longlong * param_1)`
-pub const NiBinaryExtraData__vfunc_26: u64 = 71344;
-/// `NiBinaryExtraData::vfunc_27` at 0xf0fa90 (rtti, high); signature (low): `undefined vfunc_27(NiBinaryExtraData * this, longlong param_1)`
-pub const NiBinaryExtraData__vfunc_27: u64 = 71345;
-/// `NiBinaryExtraData::vfunc_28` at 0xf0fb30 (rtti, high); signature (low): `ulonglong vfunc_28(NiBinaryExtraData * this, longlong param_1)`
-pub const NiBinaryExtraData__vfunc_28: u64 = 71346;
-/// `NiBinaryStream::ctor` at 0xeae130 (layout_inference, medium); signature (high): `NiBinaryStream * ctor(NiBinaryStream * this)`
-pub const NiBinaryStream__ctor: u64 = 69032;
-/// `NiBinaryStream::dtor` at 0xeae160 (layout_inference, high); signature (high): `undefined dtor(NiBinaryStream * this)`
-pub const NiBinaryStream__dtor: u64 = 69033;
-/// `NiBinaryStream::vdtor` at 0xeae4a0 (layout_inference, medium); signature (low): `NiBinaryStream * vdtor(NiBinaryStream * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const NiBinaryStream__vdtor: u64 = 69040;
-/// `NiBinaryStream::vfunc_3` at 0xeae180 (rtti, medium); signature (high): `undefined4 vfunc_3(NiBinaryStream * this)`
-pub const NiBinaryStream__vfunc_3: u64 = 69034;
-/// `NiBinaryStream::vfunc_4` at 0xeae190 (rtti, medium); signature (low): `undefined vfunc_4(NiBinaryStream * this, undefined8 * param_1)`
-pub const NiBinaryStream__vfunc_4: u64 = 69035;
-/// `NiBlendAccumTransformInterpolator::Create` at 0xf6caa0 (string, medium); signature (low): `undefined Create(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const NiBlendAccumTransformInterpolator__Create: u64 = 72986;
-/// `NiBlendAccumTransformInterpolator::ctor` at 0xf6b010 (layout_inference, medium); signature (low): `undefined ctor(NiBlendAccumTransformInterpolator * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-pub const NiBlendAccumTransformInterpolator__ctor: u64 = 72974;
-/// `NiBlendAccumTransformInterpolator::ctor` at 0xf6cb30 (layout_inference, high); signature (high): `NiBlendAccumTransformInterpolator * ctor(NiBlendAccumTransformInterpolator * this)`
-pub const NiBlendAccumTransformInterpolator__ctor_2: u64 = 72987;
-/// `NiBlendAccumTransformInterpolator::vdtor` at 0xf6a130 (slot_propagation, medium); signature (low): `NiBlendAccumTransformInterpolator * vdtor(NiBlendAccumTransformInterpolator * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const NiBlendAccumTransformInterpolator__vdtor: u64 = 72943;
-/// `NiBlendAccumTransformInterpolator::vfunc_2` at 0xf6a1e0 (rtti, high); signature (low): `TypeNode * vfunc_2(void)`
-pub const NiBlendAccumTransformInterpolator__vfunc_2: u64 = 72945;
-/// `NiBlendAccumTransformInterpolator::vfunc_23` at 0xf6a910 (rtti, high); signature (low): `undefined8 vfunc_23(NiBlendAccumTransformInterpolator * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-pub const NiBlendAccumTransformInterpolator__vfunc_23: u64 = 72966;
-/// `NiBlendAccumTransformInterpolator::vfunc_23_sub0` at 0xf6a9e0 (callgraph, medium); signature (untiered): `undefined vfunc_23_sub0(longlong param_1, longlong param_2, longlong param_3, undefined8 param_4)`
-pub const NiBlendAccumTransformInterpolator__vfunc_23_sub0: u64 = 72967;
-/// `NiBlendAccumTransformInterpolator::vfunc_24` at 0xf6ac50 (rtti, high); signature (low): `undefined vfunc_24(NiBlendAccumTransformInterpolator * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
-pub const NiBlendAccumTransformInterpolator__vfunc_24: u64 = 72968;
-/// `NiBlendAccumTransformInterpolator::vfunc_25` at 0xf6ae20 (rtti, high); signature (untiered): `undefined vfunc_25(void)`
-pub const NiBlendAccumTransformInterpolator__vfunc_25: u64 = 72969;
-/// `NiBlendAccumTransformInterpolator::vfunc_26` at 0xf6ae30 (rtti, high); signature (untiered): `undefined1 vfunc_26(NiBlendAccumTransformInterpolator * this, longlong * param_1)`
-pub const NiBlendAccumTransformInterpolator__vfunc_26: u64 = 72970;
-/// `NiBlendAccumTransformInterpolator::vfunc_27` at 0xf6ae40 (rtti, high); signature (low): `undefined vfunc_27(NiBlendAccumTransformInterpolator * this, longlong * param_1)`
-pub const NiBlendAccumTransformInterpolator__vfunc_27: u64 = 72971;
-/// `NiBlendAccumTransformInterpolator::vfunc_28` at 0xf6aed0 (rtti, high); signature (low): `undefined8 vfunc_28(NiBlendAccumTransformInterpolator * this, longlong * param_1)`
-pub const NiBlendAccumTransformInterpolator__vfunc_28: u64 = 72972;
-/// `NiBlendAccumTransformInterpolator::vfunc_37` at 0xf6b080 (rtti, high); signature (low): `undefined8 vfunc_37(NiBlendAccumTransformInterpolator * this, float param_1, undefined8 param_2, undefined8 param_3)`
-pub const NiBlendAccumTransformInterpolator__vfunc_37: u64 = 72975;
-/// `NiBlendAccumTransformInterpolator::vfunc_37_sub0` at 0xf6b530 (callgraph, medium); signature (untiered): `ulonglong vfunc_37_sub0(longlong param_1, float param_2, undefined8 param_3, float * param_4)`
-pub const NiBlendAccumTransformInterpolator__vfunc_37_sub0: u64 = 72981;
-/// `NiBlendAccumTransformInterpolator::vfunc_37_sub1` at 0xf6b930 (callgraph, medium); signature (untiered): `ulonglong vfunc_37_sub1(longlong param_1, undefined8 param_2, undefined8 param_3, undefined4 * param_4)`
-pub const NiBlendAccumTransformInterpolator__vfunc_37_sub1: u64 = 72982;
-/// `NiBlendAccumTransformInterpolator::vfunc_37_sub2` at 0xf6c410 (callgraph, medium); signature (untiered): `undefined vfunc_37_sub2(longlong param_1, byte param_2, float param_3, undefined8 param_4)`
-pub const NiBlendAccumTransformInterpolator__vfunc_37_sub2: u64 = 72985;
-/// `NiBlendAccumTransformInterpolator::vfunc_38` at 0xf6a210 (rtti, high); signature (untiered): `undefined1 vfunc_38(void)`
-pub const NiBlendAccumTransformInterpolator__vfunc_38: u64 = 72948;
-/// `NiBlendAccumTransformInterpolator::vfunc_39` at 0xf6a220 (rtti, high); signature (untiered): `undefined1 vfunc_39(void)`
-pub const NiBlendAccumTransformInterpolator__vfunc_39: u64 = 72949;
-/// `NiBlendAccumTransformInterpolator::vfunc_40` at 0xf6a230 (rtti, high); signature (untiered): `undefined1 vfunc_40(void)`
-pub const NiBlendAccumTransformInterpolator__vfunc_40: u64 = 72950;
-/// `NiBlendAccumTransformInterpolator::vfunc_41` at 0xf6a200 (rtti, high); signature (untiered): `undefined1 vfunc_41(void)`
-pub const NiBlendAccumTransformInterpolator__vfunc_41: u64 = 72947;
-/// `NiBlendAccumTransformInterpolator::vfunc_42` at 0xf6a240 (rtti, high); signature (untiered): `undefined1 vfunc_42(void)`
-pub const NiBlendAccumTransformInterpolator__vfunc_42: u64 = 72951;
-/// `NiBlendAccumTransformInterpolator::vfunc_48` at 0xf6b220 (rtti, high); signature (low): `undefined1 vfunc_48(void)`
-pub const NiBlendAccumTransformInterpolator__vfunc_48: u64 = 72977;
-/// `NiBlendAccumTransformInterpolator::vfunc_57` at 0xf6b230 (rtti, high); signature (low): `byte vfunc_57(NiBlendAccumTransformInterpolator * this, longlong * param_2, undefined4 param_3, char param_4, undefined4 param_5)`
-pub const NiBlendAccumTransformInterpolator__vfunc_57: u64 = 72978;
-/// `NiBlendAccumTransformInterpolator::vfunc_58` at 0xf6b3e0 (rtti, high); signature (low): `undefined vfunc_58(NiBlendAccumTransformInterpolator * this, byte param_1)`
-pub const NiBlendAccumTransformInterpolator__vfunc_58: u64 = 72979;
-/// `NiBlendAccumTransformInterpolator::vfunc_59` at 0xf6b510 (rtti, high); signature (low): `undefined vfunc_59(NiBlendAccumTransformInterpolator * this, longlong * param_1)`
-pub const NiBlendAccumTransformInterpolator__vfunc_59: u64 = 72980;
-/// `NiBlendAccumTransformInterpolator::vfunc_60` at 0xf6bf60 (rtti, high); signature (low): `ulonglong vfunc_60(NiBlendAccumTransformInterpolator * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-pub const NiBlendAccumTransformInterpolator__vfunc_60: u64 = 72983;
-/// `NiBlendAccumTransformInterpolator::vfunc_61` at 0xf6b170 (rtti, high); signature (low): `undefined8 vfunc_61(NiBlendAccumTransformInterpolator * this, float * param_1)`
-pub const NiBlendAccumTransformInterpolator__vfunc_61: u64 = 72976;
-/// `NiBlendBoolInterpolator::Create` at 0xf73050 (string, high); signature (low): `NiBlendInterpolator * Create(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const NiBlendBoolInterpolator__Create: u64 = 73181;
-/// `NiBlendBoolInterpolator::ctor` at 0xf72bc0 (layout_inference, high); signature (low): `NiBlendBoolInterpolator * ctor(NiBlendBoolInterpolator * this, char param_1, undefined8 param_2, ulonglong param_3)`
-pub const NiBlendBoolInterpolator__ctor: u64 = 73174;
-/// `NiBlendBoolInterpolator::ctor` at 0xf72df0 (layout_inference, high); signature (high): `NiBlendBoolInterpolator * ctor(NiBlendBoolInterpolator * this)`
-pub const NiBlendBoolInterpolator__ctor_2: u64 = 73177;
-/// `NiBlendBoolInterpolator::vdtor` at 0xf73110 (slot_propagation, medium); signature (low): `NiBlendBoolInterpolator * vdtor(NiBlendBoolInterpolator * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-pub const NiBlendBoolInterpolator__vdtor: u64 = 73182;
-/// `NiBlendBoolInterpolator::vfunc_2` at 0xf73150 (rtti, high); signature (low): `TypeNode * vfunc_2(void)`
-pub const NiBlendBoolInterpolator__vfunc_2: u64 = 73183;
-/// `NiBlendBoolInterpolator::vfunc_23` at 0xf728c0 (rtti, high); signature (low): `NiBlendInterpolator * vfunc_23(NiBlendBoolInterpolator * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
-pub const NiBlendBoolInterpolator__vfunc_23: u64 = 73166;
-/// `NiBlendBoolInterpolator::vfunc_24` at 0xf729d0 (rtti, high); signature (low): `undefined vfunc_24(NiBlendBoolInterpolator * this, longlong param_1)`
-pub const NiBlendBoolInterpolator__vfunc_24: u64 = 73168;
-/// `NiBlendBoolInterpolator::vfunc_25` at 0xf72a30 (rtti, high); signature (untiered): `undefined vfunc_25(void)`
-pub const NiBlendBoolInterpolator__vfunc_25: u64 = 73169;
-/// `NiBlendBoolInterpolator::vfunc_26` at 0xf72a40 (rtti, high); signature (untiered): `undefined1 vfunc_26(NiBlendBoolInterpolator * this, longlong * param_1)`
-pub const NiBlendBoolInterpolator__vfunc_26: u64 = 73170;
-/// `NiBlendBoolInterpolator::vfunc_27` at 0xf72a50 (rtti, high); signature (low): `undefined vfunc_27(NiBlendBoolInterpolator * this, longlong * param_1)`
-pub const NiBlendBoolInterpolator__vfunc_27: u64 = 73171;
-/// `NiBlendBoolInterpolator::vfunc_28` at 0xf72ab0 (rtti, high); signature (low): `ulonglong vfunc_28(NiBlendBoolInterpolator * this, longlong * param_1)`
-pub const NiBlendBoolInterpolator__vfunc_28: u64 = 73172;
-/// `NiBlendBoolInterpolator::vfunc_37` at 0xf73190 (rtti, high); signature (untiered): `undefined1 vfunc_37(void)`
-pub const NiBlendBoolInterpolator__vfunc_37: u64 = 73187;
-/// `NiBlendBoolInterpolator::vfunc_38` at 0xf73170 (rtti, high); signature (untiered): `undefined1 vfunc_38(void)`
-pub const NiBlendBoolInterpolator__vfunc_38: u64 = 73185;
-/// `NiBlendBoolInterpolator::vfunc_39` at 0xf73180 (rtti, high); signature (untiered): `undefined1 vfunc_39(void)`
-pub const NiBlendBoolInterpolator__vfunc_39: u64 = 73186;
-/// `NiBlendBoolInterpolator::vfunc_40` at 0xf731a0 (rtti, high); signature (untiered): `undefined1 vfunc_40(void)`
-pub const NiBlendBoolInterpolator__vfunc_40: u64 = 73188;
-/// `NiBlendBoolInterpolator::vfunc_41` at 0xf73160 (rtti, high); signature (untiered): `undefined1 vfunc_41(void)`
-pub const NiBlendBoolInterpolator__vfunc_41: u64 = 73184;
-/// `NiBlendBoolInterpolator::vfunc_42` at 0xf72c00 (rtti, high); signature (low): `undefined8 vfunc_42(NiBlendBoolInterpolator * this, float param_1, undefined8 param_2, undefined1 * param_3)`
-pub const NiBlendBoolInterpolator__vfunc_42: u64 = 73175;
-/// `NiBlendBoolInterpolator::vfunc_43` at 0xf72de0 (rtti, high); signature (low): `undefined1 vfunc_43(void)`
-pub const NiBlendBoolInterpolator__vfunc_43: u64 = 73176;
-/// `NiBlendBoolInterpolator::vfunc_59` at 0xf72e30 (rtti, high); signature (low): `undefined vfunc_59(NiBlendBoolInterpolator * this, longlong * param_1)`
-pub const NiBlendBoolInterpolator__vfunc_59: u64 = 73178;
-/// `NiBlendColorInterpolator::Create` at 0xf738a0 (string, high); signature (low): `NiBlendInterpolator * Create(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const NiBlendColorInterpolator__Create: u64 = 73204;
-/// `NiBlendColorInterpolator::ctor` at 0xf734f0 (layout_inference, high); signature (low): `NiBlendColorInterpolator * ctor(NiBlendColorInterpolator * this, char param_1, undefined8 param_2, ulonglong param_3)`
-pub const NiBlendColorInterpolator__ctor: u64 = 73197;
-/// `NiBlendColorInterpolator::ctor` at 0xf73600 (layout_inference, high); signature (high): `NiBlendColorInterpolator * ctor(NiBlendColorInterpolator * this)`
-pub const NiBlendColorInterpolator__ctor_2: u64 = 73200;
-/// `NiBlendColorInterpolator::vdtor` at 0xf73960 (slot_propagation, medium); signature (low): `NiBlendColorInterpolator * vdtor(NiBlendColorInterpolator * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-pub const NiBlendColorInterpolator__vdtor: u64 = 73205;
-/// `NiBlendColorInterpolator::vfunc_2` at 0xf739a0 (rtti, high); signature (low): `TypeNode * vfunc_2(void)`
-pub const NiBlendColorInterpolator__vfunc_2: u64 = 73206;

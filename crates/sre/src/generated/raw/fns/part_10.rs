@@ -3,6 +3,142 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `FreeAndClearPointer_2` at 0x1e2c50 (decompiler, high); signature (high): `undefined FreeAndClearPointer_2(undefined8 * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const FreeAndClearPointer_2: u64 = 14583;
+/// `FreeAndClearPointer_3` at 0x1184c0 (decompiler, medium); signature (medium): `undefined FreeAndClearPointer_3(undefined8 param_1, undefined8 * param_2, undefined8 param_3, undefined8 param_4)`
+pub const FreeAndClearPointer_3: u64 = 440085;
+/// `FreeAndNullBuffer` at 0xebfb40 (decompiler, high); signature (untiered): `undefined FreeAndNullBuffer(undefined8 param_1, undefined8 * param_2, undefined8 param_3, undefined8 param_4)`
+pub const FreeAndNullBuffer: u64 = 69443;
+/// `FreeAndNullPointer` at 0xec2020 (decompiler, high); signature (high): `undefined FreeAndNullPointer(undefined8 * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const FreeAndNullPointer: u64 = 69525;
+/// `FreeAndNullPointer_2` at 0x117f200 (decompiler, high); signature (untiered): `undefined FreeAndNullPointer_2(undefined8 * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const FreeAndNullPointer_2: u64 = 84660;
+/// `FreeAndReplacePointer` at 0xf819c0 (decompiler, high); signature (high): `undefined FreeAndReplacePointer(undefined8 * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const FreeAndReplacePointer: u64 = 73759;
+/// `FreeAndSetField58` at 0xf14d40 (decompiler, medium); signature (untiered): `undefined FreeAndSetField58(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const FreeAndSetField58: u64 = 71495;
+/// `FreeArchiveDirectoryNameCache` at 0xeb92d0 (decompiler, medium); signature (untiered): `undefined FreeArchiveDirectoryNameCache(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const FreeArchiveDirectoryNameCache: u64 = 69292;
+/// `FreeArchiveDirectoryTable` at 0xeb9500 (decompiler, medium); signature (untiered): `undefined FreeArchiveDirectoryTable(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const FreeArchiveDirectoryTable: u64 = 69294;
+/// `FreeArchiveFileNameCache` at 0xeb93b0 (decompiler, medium); signature (untiered): `undefined FreeArchiveFileNameCache(longlong param_1, char param_2, undefined8 param_3, undefined8 param_4)`
+pub const FreeArchiveFileNameCache: u64 = 69293;
+/// `FreeArchiveNameCaches` at 0xeb73b0 (decompiler, medium); signature (medium): `undefined FreeArchiveNameCaches(void)`
+pub const FreeArchiveNameCaches: u64 = 69263;
+/// `FreeArg2ViaGlobal414364` at 0x139ba40 (decompiler, high); signature (high): `undefined FreeArg2ViaGlobal414364(undefined8 param_1, undefined8 param_2)`
+pub const FreeArg2ViaGlobal414364: u64 = 97375;
+/// `FreeArg2ViaGlobal414364_2` at 0x139baa0 (decompiler, high); signature (high): `undefined FreeArg2ViaGlobal414364_2(undefined8 param_1, undefined8 param_2)`
+pub const FreeArg2ViaGlobal414364_2: u64 = 97379;
+/// `FreeArg2ViaGlobal414364_3` at 0x139bac0 (decompiler, high); signature (high): `undefined FreeArg2ViaGlobal414364_3(undefined8 param_1, undefined8 param_2)`
+pub const FreeArg2ViaGlobal414364_3: u64 = 97380;
+/// `FreeArg2ViaGlobal414364_4` at 0x13a0470 (decompiler, high); signature (high): `undefined FreeArg2ViaGlobal414364_4(undefined8 param_1, undefined8 param_2)`
+pub const FreeArg2ViaGlobal414364_4: u64 = 526921;
+/// `FreeArray` at 0x767bb0 (decompiler, high); signature (untiered): `undefined FreeArray(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const FreeArray: u64 = 40895;
+/// `FreeArray18ReleasingField10` at 0xe3b6a0 (decompiler, medium); signature (untiered): `undefined FreeArray18ReleasingField10(longlong * param_1)`
+pub const FreeArray18ReleasingField10: u64 = 88374;
+/// `FreeArray18Storage` at 0xad18d0 (decompiler, medium); signature (untiered): `undefined FreeArray18Storage(undefined8 * param_1)`
+pub const FreeArray18Storage: u64 = 58389;
+/// `FreeArray18StorageAndReset` at 0xab27e0 (decompiler, high); signature (untiered): `undefined FreeArray18StorageAndReset(undefined8 * param_1)`
+pub const FreeArray18StorageAndReset: u64 = 57673;
+/// `FreeArray18StorageAndReset_2` at 0xab27d0 (decompiler, high); signature (untiered): `undefined FreeArray18StorageAndReset_2(undefined8 * param_1)`
+pub const FreeArray18StorageAndReset_2: u64 = 57672;
+/// `FreeArray20ReleasingField10` at 0xd8df00 (decompiler, medium); signature (untiered): `undefined FreeArray20ReleasingField10(longlong * param_1)`
+pub const FreeArray20ReleasingField10: u64 = 85556;
+/// `FreeArray38AndEntryField18Buffers` at 0xe78250 (decompiler, medium); signature (untiered): `undefined FreeArray38AndEntryField18Buffers(longlong * param_1)`
+pub const FreeArray38AndEntryField18Buffers: u64 = 89367;
+/// `FreeArray38ReleasingEntries` at 0xe25070 (decompiler, medium); signature (untiered): `undefined FreeArray38ReleasingEntries(longlong * param_1)`
+pub const FreeArray38ReleasingEntries: u64 = 88147;
+/// `FreeArray60AndEntryBuffers` at 0xdd6910 (decompiler, medium); signature (untiered): `undefined FreeArray60AndEntryBuffers(longlong * param_1)`
+pub const FreeArray60AndEntryBuffers: u64 = 86852;
+/// `FreeArrayAndClearCount` at 0x4f86b0 (decompiler, high); signature (untiered): `undefined FreeArrayAndClearCount(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const FreeArrayAndClearCount: u64 = 31411;
+/// `FreeArrayAndClearCount_2` at 0x11f74a0 (decompiler, high); signature (untiered): `undefined FreeArrayAndClearCount_2(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const FreeArrayAndClearCount_2: u64 = 91455;
+/// `FreeArrayAndClearCount_3` at 0x293ab0 (decompiler, high); signature (untiered): `undefined FreeArrayAndClearCount_3(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const FreeArrayAndClearCount_3: u64 = 18250;
+/// `FreeArrayAndClearCount_4` at 0x136040 (decompiler, medium); signature (untiered): `undefined FreeArrayAndClearCount_4(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const FreeArrayAndClearCount_4: u64 = 523399;
+/// `FreeArrayAndClearSize` at 0x2855f0 (decompiler, high); signature (high): `undefined FreeArrayAndClearSize(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const FreeArrayAndClearSize: u64 = 17951;
+/// `FreeArrayAndClearSize_2` at 0x5279a0 (decompiler, medium); signature (untiered): `undefined FreeArrayAndClearSize_2(longlong * param_1)`
+pub const FreeArrayAndClearSize_2: u64 = 32136;
+/// `FreeArrayAndClearSize_3` at 0xa2a370 (decompiler, medium); signature (untiered): `undefined FreeArrayAndClearSize_3(longlong * param_1)`
+pub const FreeArrayAndClearSize_3: u64 = 55526;
+/// `FreeArrayAndDeleteIfField38Below2` at 0x3db240 (decompiler, medium); signature (untiered): `undefined8 FreeArrayAndDeleteIfField38Below2(undefined8 param_1, longlong param_2, longlong * param_3, undefined8 param_4)`
+pub const FreeArrayAndDeleteIfField38Below2: u64 = 25100;
+/// `FreeArrayAndResetCount` at 0x46cf60 (decompiler, medium); signature (medium): `undefined FreeArrayAndResetCount(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const FreeArrayAndResetCount: u64 = 28559;
+/// `FreeArrayAndResetCount_2` at 0x874420 (decompiler, high); signature (high): `undefined FreeArrayAndResetCount_2(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const FreeArrayAndResetCount_2: u64 = 47521;
+/// `FreeArrayAndResetCount_3` at 0x26fd80 (decompiler, high); signature (high): `undefined FreeArrayAndResetCount_3(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const FreeArrayAndResetCount_3: u64 = 17430;
+/// `FreeArrayAndResetCount_4` at 0x27d340 (decompiler, high); signature (high): `undefined FreeArrayAndResetCount_4(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const FreeArrayAndResetCount_4: u64 = 17769;
+/// `FreeArrayAndResetCount_5` at 0x5d01b0 (decompiler, high); signature (untiered): `undefined FreeArrayAndResetCount_5(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const FreeArrayAndResetCount_5: u64 = 34471;
+/// `FreeArrayAndResetCount_6` at 0x23ff10 (decompiler, high); signature (untiered): `undefined FreeArrayAndResetCount_6(longlong * param_1)`
+pub const FreeArrayAndResetCount_6: u64 = 16159;
+/// `FreeArrayAndResetCount_7` at 0x23ff50 (decompiler, high); signature (untiered): `undefined FreeArrayAndResetCount_7(longlong * param_1)`
+pub const FreeArrayAndResetCount_7: u64 = 16160;
+/// `FreeArrayAndResetCount_8` at 0x2b5ee0 (decompiler, high); signature (untiered): `undefined FreeArrayAndResetCount_8(longlong * param_1)`
+pub const FreeArrayAndResetCount_8: u64 = 18810;
+/// `FreeArrayAndResetCount_9` at 0x2d0c60 (decompiler, high); signature (untiered): `undefined FreeArrayAndResetCount_9(longlong * param_1)`
+pub const FreeArrayAndResetCount_9: u64 = 19241;
+/// `FreeArrayAndResetSize` at 0xcf2400 (decompiler, medium); signature (untiered): `undefined FreeArrayAndResetSize(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const FreeArrayAndResetSize: u64 = 68583;
+/// `FreeArrayAndResetSize_2` at 0x6ba0c0 (decompiler, high); signature (high): `undefined FreeArrayAndResetSize_2(longlong * param_1)`
+pub const FreeArrayAndResetSize_2: u64 = 38107;
+/// `FreeArrayAndResetSize_3` at 0x6df820 (decompiler, high); signature (high): `undefined FreeArrayAndResetSize_3(longlong * param_1)`
+pub const FreeArrayAndResetSize_3: u64 = 38937;
+/// `FreeArrayAndResetSize_4` at 0x12c2f0 (decompiler, medium); signature (untiered): `undefined FreeArrayAndResetSize_4(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const FreeArrayAndResetSize_4: u64 = 440872;
+/// `FreeArrayAndResetSize_5` at 0x136120 (decompiler, medium); signature (untiered): `undefined FreeArrayAndResetSize_5(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const FreeArrayAndResetSize_5: u64 = 523401;
+/// `FreeArrayAtField10` at 0x6efbd0 (decompiler, medium); signature (untiered): `undefined FreeArrayAtField10(longlong param_1)`
+pub const FreeArrayAtField10: u64 = 39236;
+/// `FreeArrayAtField10_2` at 0x1833f0 (decompiler, medium); signature (untiered): `undefined FreeArrayAtField10_2(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const FreeArrayAtField10_2: u64 = 12553;
+/// `FreeArrayAtField10_3` at 0x183940 (decompiler, medium); signature (untiered): `undefined FreeArrayAtField10_3(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const FreeArrayAtField10_3: u64 = 12560;
+/// `FreeArrayAtField28` at 0x6efb90 (decompiler, medium); signature (untiered): `undefined FreeArrayAtField28(longlong param_1)`
+pub const FreeArrayAtField28: u64 = 39235;
+/// `FreeArrayAtField30` at 0x8ef630 (decompiler, medium); signature (untiered): `undefined FreeArrayAtField30(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const FreeArrayAtField30: u64 = 50573;
+/// `FreeArrayAtField8` at 0x735160 (decompiler, high); signature (untiered): `undefined FreeArrayAtField8(longlong param_1)`
+pub const FreeArrayAtField8: u64 = 40135;
+/// `FreeArrayBuffer` at 0xce0ed0 (decompiler, medium); signature (untiered): `undefined FreeArrayBuffer(undefined8 * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const FreeArrayBuffer: u64 = 68170;
+/// `FreeArrayBufferAndClearCount` at 0x60ad80 (decompiler, high); signature (high): `undefined FreeArrayBufferAndClearCount(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const FreeArrayBufferAndClearCount: u64 = 419146;
+/// `FreeArrayBufferAndClearCount_10` at 0x3de200 (decompiler, medium); signature (untiered): `undefined FreeArrayBufferAndClearCount_10(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const FreeArrayBufferAndClearCount_10: u64 = 25142;
+/// `FreeArrayBufferAndClearCount_11` at 0x441000 (decompiler, high); signature (untiered): `undefined FreeArrayBufferAndClearCount_11(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const FreeArrayBufferAndClearCount_11: u64 = 27117;
+/// `FreeArrayBufferAndClearCount_12` at 0x4bffe0 (decompiler, high); signature (untiered): `undefined FreeArrayBufferAndClearCount_12(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const FreeArrayBufferAndClearCount_12: u64 = 30275;
+/// `FreeArrayBufferAndClearCount_13` at 0x4e7450 (decompiler, high); signature (untiered): `undefined FreeArrayBufferAndClearCount_13(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const FreeArrayBufferAndClearCount_13: u64 = 30985;
+/// `FreeArrayBufferAndClearCount_14` at 0x4e74b0 (decompiler, high); signature (untiered): `undefined FreeArrayBufferAndClearCount_14(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const FreeArrayBufferAndClearCount_14: u64 = 30986;
+/// `FreeArrayBufferAndClearCount_15` at 0x4ebb30 (decompiler, high); signature (untiered): `undefined FreeArrayBufferAndClearCount_15(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const FreeArrayBufferAndClearCount_15: u64 = 31072;
+/// `FreeArrayBufferAndClearCount_16` at 0x860b40 (decompiler, high); signature (untiered): `undefined FreeArrayBufferAndClearCount_16(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const FreeArrayBufferAndClearCount_16: u64 = 47145;
+/// `FreeArrayBufferAndClearCount_17` at 0x8ba240 (decompiler, high); signature (untiered): `undefined FreeArrayBufferAndClearCount_17(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const FreeArrayBufferAndClearCount_17: u64 = 49184;
+/// `FreeArrayBufferAndClearCount_18` at 0x8ef5e0 (decompiler, high); signature (untiered): `undefined FreeArrayBufferAndClearCount_18(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const FreeArrayBufferAndClearCount_18: u64 = 50572;
+/// `FreeArrayBufferAndClearCount_19` at 0x904240 (decompiler, high); signature (untiered): `undefined FreeArrayBufferAndClearCount_19(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const FreeArrayBufferAndClearCount_19: u64 = 50983;
+/// `FreeArrayBufferAndClearCount_2` at 0x111a20 (decompiler, high); signature (high): `undefined FreeArrayBufferAndClearCount_2(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const FreeArrayBufferAndClearCount_2: u64 = 439988;
+/// `FreeArrayBufferAndClearCount_20` at 0x9148d0 (decompiler, high); signature (untiered): `undefined FreeArrayBufferAndClearCount_20(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const FreeArrayBufferAndClearCount_20: u64 = 51165;
+/// `FreeArrayBufferAndClearCount_21` at 0x914930 (decompiler, high); signature (untiered): `undefined FreeArrayBufferAndClearCount_21(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const FreeArrayBufferAndClearCount_21: u64 = 51166;
+/// `FreeArrayBufferAndClearCount_22` at 0x91b860 (decompiler, high); signature (untiered): `undefined FreeArrayBufferAndClearCount_22(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const FreeArrayBufferAndClearCount_22: u64 = 51246;
 /// `FreeArrayBufferAndClearCount_23` at 0x942660 (decompiler, high); signature (untiered): `undefined FreeArrayBufferAndClearCount_23(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const FreeArrayBufferAndClearCount_23: u64 = 51838;
 /// `FreeArrayBufferAndClearCount_24` at 0x9463a0 (decompiler, high); signature (untiered): `undefined FreeArrayBufferAndClearCount_24(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
@@ -8435,139 +8571,3 @@ pub const GameSetting_fMagicCEEnchantMagOffset__atexit: u64 = 168900;
 pub const GameSetting_fMagicCEEnchantMagOffset__init: u64 = 3690;
 /// `GameSetting_fMagicCasterPCSkillCostBase__atexit` at 0x1777630 (crt_init, medium); signature (high): `void GameSetting_fMagicCasterPCSkillCostBase__atexit(void)`
 pub const GameSetting_fMagicCasterPCSkillCostBase__atexit: u64 = 168901;
-/// `GameSetting_fMagicCasterPCSkillCostBase__init` at 0x65400 (crt_init, medium); signature (high): `void GameSetting_fMagicCasterPCSkillCostBase__init(void)`
-pub const GameSetting_fMagicCasterPCSkillCostBase__init: u64 = 3691;
-/// `GameSetting_fMagicCasterPCSkillCostMult__atexit` at 0x1777680 (crt_init, medium); signature (high): `void GameSetting_fMagicCasterPCSkillCostMult__atexit(void)`
-pub const GameSetting_fMagicCasterPCSkillCostMult__atexit: u64 = 168902;
-/// `GameSetting_fMagicCasterPCSkillCostMult__init` at 0x65480 (crt_init, medium); signature (high): `void GameSetting_fMagicCasterPCSkillCostMult__init(void)`
-pub const GameSetting_fMagicCasterPCSkillCostMult__init: u64 = 3692;
-/// `GameSetting_fMagicCasterSkillCostBase__atexit` at 0x17776d0 (crt_init, medium); signature (high): `void GameSetting_fMagicCasterSkillCostBase__atexit(void)`
-pub const GameSetting_fMagicCasterSkillCostBase__atexit: u64 = 168903;
-/// `GameSetting_fMagicCasterSkillCostBase__init` at 0x65500 (crt_init, medium); signature (high): `void GameSetting_fMagicCasterSkillCostBase__init(void)`
-pub const GameSetting_fMagicCasterSkillCostBase__init: u64 = 3693;
-/// `GameSetting_fMagicCasterSkillCostMult__atexit` at 0x1777720 (crt_init, medium); signature (high): `void GameSetting_fMagicCasterSkillCostMult__atexit(void)`
-pub const GameSetting_fMagicCasterSkillCostMult__atexit: u64 = 168904;
-/// `GameSetting_fMagicCasterSkillCostMult__init` at 0x65580 (crt_init, medium); signature (high): `void GameSetting_fMagicCasterSkillCostMult__init(void)`
-pub const GameSetting_fMagicCasterSkillCostMult__init: u64 = 3694;
-/// `GameSetting_fMagicCasterTargetUpdateInterval__atexit` at 0x173cbf0 (crt_init, medium); signature (high): `void GameSetting_fMagicCasterTargetUpdateInterval__atexit(void)`
-pub const GameSetting_fMagicCasterTargetUpdateInterval__atexit: u64 = 165343;
-/// `GameSetting_fMagicCasterTargetUpdateInterval__init` at 0x8aa0 (crt_init, medium); signature (high): `void GameSetting_fMagicCasterTargetUpdateInterval__init(void)`
-pub const GameSetting_fMagicCasterTargetUpdateInterval__init: u64 = 153;
-/// `GameSetting_fMagicChainExplosionEffectivenessDelta__atexit` at 0x1777770 (crt_init, medium); signature (high): `void GameSetting_fMagicChainExplosionEffectivenessDelta__atexit(void)`
-pub const GameSetting_fMagicChainExplosionEffectivenessDelta__atexit: u64 = 168905;
-/// `GameSetting_fMagicChainExplosionEffectivenessDelta__init` at 0x65600 (crt_init, medium); signature (high): `void GameSetting_fMagicChainExplosionEffectivenessDelta__init(void)`
-pub const GameSetting_fMagicChainExplosionEffectivenessDelta__init: u64 = 3695;
-/// `GameSetting_fMagicCloudAreaMin__atexit` at 0x17777c0 (crt_init, medium); signature (high): `void GameSetting_fMagicCloudAreaMin__atexit(void)`
-pub const GameSetting_fMagicCloudAreaMin__atexit: u64 = 168906;
-/// `GameSetting_fMagicCloudAreaMin__init` at 0x65680 (crt_init, medium); signature (high): `void GameSetting_fMagicCloudAreaMin__init(void)`
-pub const GameSetting_fMagicCloudAreaMin__init: u64 = 3696;
-/// `GameSetting_fMagicCloudDurationMin__atexit` at 0x1777810 (crt_init, medium); signature (high): `void GameSetting_fMagicCloudDurationMin__atexit(void)`
-pub const GameSetting_fMagicCloudDurationMin__atexit: u64 = 168907;
-/// `GameSetting_fMagicCloudDurationMin__init` at 0x65700 (crt_init, medium); signature (high): `void GameSetting_fMagicCloudDurationMin__init(void)`
-pub const GameSetting_fMagicCloudDurationMin__init: u64 = 3697;
-/// `GameSetting_fMagicCloudFindTargetTime__atexit` at 0x1777860 (crt_init, medium); signature (high): `void GameSetting_fMagicCloudFindTargetTime__atexit(void)`
-pub const GameSetting_fMagicCloudFindTargetTime__atexit: u64 = 168908;
-/// `GameSetting_fMagicCloudFindTargetTime__init` at 0x65780 (crt_init, medium); signature (high): `void GameSetting_fMagicCloudFindTargetTime__init(void)`
-pub const GameSetting_fMagicCloudFindTargetTime__init: u64 = 3698;
-/// `GameSetting_fMagicCloudLifeScale__atexit` at 0x17778b0 (crt_init, medium); signature (high): `void GameSetting_fMagicCloudLifeScale__atexit(void)`
-pub const GameSetting_fMagicCloudLifeScale__atexit: u64 = 168909;
-/// `GameSetting_fMagicCloudLifeScale__init` at 0x65800 (crt_init, medium); signature (high): `void GameSetting_fMagicCloudLifeScale__init(void)`
-pub const GameSetting_fMagicCloudLifeScale__init: u64 = 3699;
-/// `GameSetting_fMagicCloudSizeScale__atexit` at 0x1777900 (crt_init, medium); signature (high): `void GameSetting_fMagicCloudSizeScale__atexit(void)`
-pub const GameSetting_fMagicCloudSizeScale__atexit: u64 = 168910;
-/// `GameSetting_fMagicCloudSizeScale__init` at 0x65880 (crt_init, medium); signature (high): `void GameSetting_fMagicCloudSizeScale__init(void)`
-pub const GameSetting_fMagicCloudSizeScale__init: u64 = 3700;
-/// `GameSetting_fMagicCloudSlowdownRate__atexit` at 0x1777950 (crt_init, medium); signature (high): `void GameSetting_fMagicCloudSlowdownRate__atexit(void)`
-pub const GameSetting_fMagicCloudSlowdownRate__atexit: u64 = 168911;
-/// `GameSetting_fMagicCloudSlowdownRate__init` at 0x65900 (crt_init, medium); signature (high): `void GameSetting_fMagicCloudSlowdownRate__init(void)`
-pub const GameSetting_fMagicCloudSlowdownRate__init: u64 = 3701;
-/// `GameSetting_fMagicCloudSpeedBase__atexit` at 0x17779a0 (crt_init, medium); signature (high): `void GameSetting_fMagicCloudSpeedBase__atexit(void)`
-pub const GameSetting_fMagicCloudSpeedBase__atexit: u64 = 168912;
-/// `GameSetting_fMagicCloudSpeedBase__init` at 0x65980 (crt_init, medium); signature (high): `void GameSetting_fMagicCloudSpeedBase__init(void)`
-pub const GameSetting_fMagicCloudSpeedBase__init: u64 = 3702;
-/// `GameSetting_fMagicCloudSpeedScale__atexit` at 0x17779f0 (crt_init, medium); signature (high): `void GameSetting_fMagicCloudSpeedScale__atexit(void)`
-pub const GameSetting_fMagicCloudSpeedScale__atexit: u64 = 168913;
-/// `GameSetting_fMagicCloudSpeedScale__init` at 0x65a00 (crt_init, medium); signature (high): `void GameSetting_fMagicCloudSpeedScale__init(void)`
-pub const GameSetting_fMagicCloudSpeedScale__init: u64 = 3703;
-/// `GameSetting_fMagicCostScale__atexit` at 0x1777a40 (crt_init, medium); signature (high): `void GameSetting_fMagicCostScale__atexit(void)`
-pub const GameSetting_fMagicCostScale__atexit: u64 = 168914;
-/// `GameSetting_fMagicCostScale__init` at 0x65a80 (crt_init, medium); signature (high): `void GameSetting_fMagicCostScale__init(void)`
-pub const GameSetting_fMagicCostScale__init: u64 = 3704;
-/// `GameSetting_fMagicDefaultAccumulatingModifierEffectRate__atexit` at 0x1777a90 (crt_init, medium); signature (high): `void GameSetting_fMagicDefaultAccumulatingModifierEffectRate__atexit(void)`
-pub const GameSetting_fMagicDefaultAccumulatingModifierEffectRate__atexit: u64 = 168915;
-/// `GameSetting_fMagicDefaultAccumulatingModifierEffectRate__init` at 0x65b00 (crt_init, medium); signature (high): `void GameSetting_fMagicDefaultAccumulatingModifierEffectRate__init(void)`
-pub const GameSetting_fMagicDefaultAccumulatingModifierEffectRate__init: u64 = 3705;
-/// `GameSetting_fMagicDefaultCEBarterFactor__atexit` at 0x173cc40 (crt_init, medium); signature (high): `void GameSetting_fMagicDefaultCEBarterFactor__atexit(void)`
-pub const GameSetting_fMagicDefaultCEBarterFactor__atexit: u64 = 165344;
-/// `GameSetting_fMagicDefaultCEBarterFactor__init` at 0x8b20 (crt_init, medium); signature (high): `void GameSetting_fMagicDefaultCEBarterFactor__init(void)`
-pub const GameSetting_fMagicDefaultCEBarterFactor__init: u64 = 154;
-/// `GameSetting_fMagicDefaultTouchDistance__atexit` at 0x1777ae0 (crt_init, medium); signature (high): `void GameSetting_fMagicDefaultTouchDistance__atexit(void)`
-pub const GameSetting_fMagicDefaultTouchDistance__atexit: u64 = 168916;
-/// `GameSetting_fMagicDefaultTouchDistance__init` at 0x65b80 (crt_init, medium); signature (high): `void GameSetting_fMagicDefaultTouchDistance__init(void)`
-pub const GameSetting_fMagicDefaultTouchDistance__init: u64 = 3706;
-/// `GameSetting_fMagicDiseaseTransferBase__atexit` at 0x1777b30 (crt_init, medium); signature (high): `void GameSetting_fMagicDiseaseTransferBase__atexit(void)`
-pub const GameSetting_fMagicDiseaseTransferBase__atexit: u64 = 168917;
-/// `GameSetting_fMagicDiseaseTransferBase__init` at 0x65c00 (crt_init, medium); signature (high): `void GameSetting_fMagicDiseaseTransferBase__init(void)`
-pub const GameSetting_fMagicDiseaseTransferBase__init: u64 = 3707;
-/// `GameSetting_fMagicDiseaseTransferMult__atexit` at 0x1777b80 (crt_init, medium); signature (high): `void GameSetting_fMagicDiseaseTransferMult__atexit(void)`
-pub const GameSetting_fMagicDiseaseTransferMult__atexit: u64 = 168918;
-/// `GameSetting_fMagicDiseaseTransferMult__init` at 0x65c80 (crt_init, medium); signature (high): `void GameSetting_fMagicDiseaseTransferMult__init(void)`
-pub const GameSetting_fMagicDiseaseTransferMult__init: u64 = 3708;
-/// `GameSetting_fMagicDispelMagnitudeMult__atexit` at 0x1777bd0 (crt_init, medium); signature (high): `void GameSetting_fMagicDispelMagnitudeMult__atexit(void)`
-pub const GameSetting_fMagicDispelMagnitudeMult__atexit: u64 = 168919;
-/// `GameSetting_fMagicDispelMagnitudeMult__init` at 0x65d00 (crt_init, medium); signature (high): `void GameSetting_fMagicDispelMagnitudeMult__init(void)`
-pub const GameSetting_fMagicDispelMagnitudeMult__init: u64 = 3709;
-/// `GameSetting_fMagicDualCastingCostBase__atexit` at 0x1777c20 (crt_init, medium); signature (high): `void GameSetting_fMagicDualCastingCostBase__atexit(void)`
-pub const GameSetting_fMagicDualCastingCostBase__atexit: u64 = 168920;
-/// `GameSetting_fMagicDualCastingCostBase__init` at 0x65d80 (crt_init, medium); signature (high): `void GameSetting_fMagicDualCastingCostBase__init(void)`
-pub const GameSetting_fMagicDualCastingCostBase__init: u64 = 3710;
-/// `GameSetting_fMagicDualCastingCostMult__atexit` at 0x1777c70 (crt_init, medium); signature (high): `void GameSetting_fMagicDualCastingCostMult__atexit(void)`
-pub const GameSetting_fMagicDualCastingCostMult__atexit: u64 = 168921;
-/// `GameSetting_fMagicDualCastingCostMult__init` at 0x65e00 (crt_init, medium); signature (high): `void GameSetting_fMagicDualCastingCostMult__init(void)`
-pub const GameSetting_fMagicDualCastingCostMult__init: u64 = 3711;
-/// `GameSetting_fMagicDualCastingEffectivenessBase__atexit` at 0x1777cc0 (crt_init, medium); signature (high): `void GameSetting_fMagicDualCastingEffectivenessBase__atexit(void)`
-pub const GameSetting_fMagicDualCastingEffectivenessBase__atexit: u64 = 168922;
-/// `GameSetting_fMagicDualCastingEffectivenessBase__init` at 0x65e80 (crt_init, medium); signature (high): `void GameSetting_fMagicDualCastingEffectivenessBase__init(void)`
-pub const GameSetting_fMagicDualCastingEffectivenessBase__init: u64 = 3712;
-/// `GameSetting_fMagicDualCastingEffectivenessMult__atexit` at 0x1777d10 (crt_init, medium); signature (high): `void GameSetting_fMagicDualCastingEffectivenessMult__atexit(void)`
-pub const GameSetting_fMagicDualCastingEffectivenessMult__atexit: u64 = 168923;
-/// `GameSetting_fMagicDualCastingEffectivenessMult__init` at 0x65f00 (crt_init, medium); signature (high): `void GameSetting_fMagicDualCastingEffectivenessMult__init(void)`
-pub const GameSetting_fMagicDualCastingEffectivenessMult__init: u64 = 3713;
-/// `GameSetting_fMagicDualCastingTimeBase__atexit` at 0x1777d60 (crt_init, medium); signature (high): `void GameSetting_fMagicDualCastingTimeBase__atexit(void)`
-pub const GameSetting_fMagicDualCastingTimeBase__atexit: u64 = 168924;
-/// `GameSetting_fMagicDualCastingTimeBase__init` at 0x65f80 (crt_init, medium); signature (high): `void GameSetting_fMagicDualCastingTimeBase__init(void)`
-pub const GameSetting_fMagicDualCastingTimeBase__init: u64 = 3714;
-/// `GameSetting_fMagicDualCastingTimeMult__atexit` at 0x1777db0 (crt_init, medium); signature (high): `void GameSetting_fMagicDualCastingTimeMult__atexit(void)`
-pub const GameSetting_fMagicDualCastingTimeMult__atexit: u64 = 168925;
-/// `GameSetting_fMagicDualCastingTimeMult__init` at 0x66000 (crt_init, medium); signature (high): `void GameSetting_fMagicDualCastingTimeMult__init(void)`
-pub const GameSetting_fMagicDualCastingTimeMult__init: u64 = 3715;
-/// `GameSetting_fMagicDurMagBaseCostMult__atexit` at 0x1777e00 (crt_init, medium); signature (high): `void GameSetting_fMagicDurMagBaseCostMult__atexit(void)`
-pub const GameSetting_fMagicDurMagBaseCostMult__atexit: u64 = 168926;
-/// `GameSetting_fMagicDurMagBaseCostMult__init` at 0x66080 (crt_init, medium); signature (high): `void GameSetting_fMagicDurMagBaseCostMult__init(void)`
-pub const GameSetting_fMagicDurMagBaseCostMult__init: u64 = 3716;
-/// `GameSetting_fMagicEnchantmentChargeBase__atexit` at 0x1777e50 (crt_init, medium); signature (high): `void GameSetting_fMagicEnchantmentChargeBase__atexit(void)`
-pub const GameSetting_fMagicEnchantmentChargeBase__atexit: u64 = 168927;
-/// `GameSetting_fMagicEnchantmentChargeBase__init` at 0x66100 (crt_init, medium); signature (high): `void GameSetting_fMagicEnchantmentChargeBase__init(void)`
-pub const GameSetting_fMagicEnchantmentChargeBase__init: u64 = 3717;
-/// `GameSetting_fMagicEnchantmentChargeMult__atexit` at 0x1777ea0 (crt_init, medium); signature (high): `void GameSetting_fMagicEnchantmentChargeMult__atexit(void)`
-pub const GameSetting_fMagicEnchantmentChargeMult__atexit: u64 = 168928;
-/// `GameSetting_fMagicEnchantmentChargeMult__init` at 0x66180 (crt_init, medium); signature (high): `void GameSetting_fMagicEnchantmentChargeMult__init(void)`
-pub const GameSetting_fMagicEnchantmentChargeMult__init: u64 = 3718;
-/// `GameSetting_fMagicEnchantmentDrainBase__atexit` at 0x1777ef0 (crt_init, medium); signature (high): `void GameSetting_fMagicEnchantmentDrainBase__atexit(void)`
-pub const GameSetting_fMagicEnchantmentDrainBase__atexit: u64 = 168929;
-/// `GameSetting_fMagicEnchantmentDrainBase__init` at 0x66200 (crt_init, medium); signature (high): `void GameSetting_fMagicEnchantmentDrainBase__init(void)`
-pub const GameSetting_fMagicEnchantmentDrainBase__init: u64 = 3719;
-/// `GameSetting_fMagicEnchantmentDrainMult__atexit` at 0x1777f40 (crt_init, medium); signature (high): `void GameSetting_fMagicEnchantmentDrainMult__atexit(void)`
-pub const GameSetting_fMagicEnchantmentDrainMult__atexit: u64 = 168930;
-/// `GameSetting_fMagicEnchantmentDrainMult__init` at 0x66280 (crt_init, medium); signature (high): `void GameSetting_fMagicEnchantmentDrainMult__init(void)`
-pub const GameSetting_fMagicEnchantmentDrainMult__init: u64 = 3720;
-/// `GameSetting_fMagicExplosionAgilityMult__atexit` at 0x1777f90 (crt_init, medium); signature (high): `void GameSetting_fMagicExplosionAgilityMult__atexit(void)`
-pub const GameSetting_fMagicExplosionAgilityMult__atexit: u64 = 168931;
-/// `GameSetting_fMagicExplosionAgilityMult__init` at 0x66300 (crt_init, medium); signature (high): `void GameSetting_fMagicExplosionAgilityMult__init(void)`
-pub const GameSetting_fMagicExplosionAgilityMult__init: u64 = 3721;
-/// `GameSetting_fMagicExplosionClutterMult__atexit` at 0x1777fe0 (crt_init, medium); signature (high): `void GameSetting_fMagicExplosionClutterMult__atexit(void)`
-pub const GameSetting_fMagicExplosionClutterMult__atexit: u64 = 168932;
-/// `GameSetting_fMagicExplosionClutterMult__init` at 0x66380 (crt_init, medium); signature (high): `void GameSetting_fMagicExplosionClutterMult__init(void)`
-pub const GameSetting_fMagicExplosionClutterMult__init: u64 = 3722;
-/// `GameSetting_fMagicExplosionIncorporealMult__atexit` at 0x1778030 (crt_init, medium); signature (high): `void GameSetting_fMagicExplosionIncorporealMult__atexit(void)`
-pub const GameSetting_fMagicExplosionIncorporealMult__atexit: u64 = 168933;

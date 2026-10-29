@@ -3,6 +3,48 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `ReleaseTwoRefCountedPointers` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 47889, rva 0x882200).
+/// `undefined ReleaseTwoRefCountedPointers(longlong * param_1)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn release_two_ref_counted_pointers(param_1: *mut i64) -> u64 { unsafe { function!(47889, (*mut i64) -> u64)(param_1) } }
+/// `ReleaseTwoRefCountedPointers_2` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 49251, rva 0x8bc350).
+/// `undefined ReleaseTwoRefCountedPointers_2(longlong * param_1)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn release_two_ref_counted_pointers_2(param_1: *mut i64) -> u64 { unsafe { function!(49251, (*mut i64) -> u64)(param_1) } }
+/// `ReleaseTwoRefPtrs` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 49866, rva 0x8d6710).
+/// `undefined ReleaseTwoRefPtrs(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn release_two_ref_ptrs(param_1: *mut i64, param_2: u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(49866, (*mut i64, u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
+/// `ReleaseTwoRefPtrsClearingFlag10` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 51349, rva 0x91f7a0).
+/// `undefined ReleaseTwoRefPtrsClearingFlag10(longlong * param_1)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn release_two_ref_ptrs_clearing_flag10(param_1: *mut i64) -> u64 { unsafe { function!(51349, (*mut i64) -> u64)(param_1) } }
+/// `ReleaseTwoRefPtrs_2` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 48683, rva 0x8a66b0).
+/// `undefined ReleaseTwoRefPtrs_2(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn release_two_ref_ptrs_2(param_1: *mut i64, param_2: u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(48683, (*mut i64, u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
+/// `ReleaseTwoRefsAndDecrementCounter` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 48880, rva 0x8af2b0).
+/// `undefined ReleaseTwoRefsAndDecrementCounter(longlong * param_1)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn release_two_refs_and_decrement_counter(param_1: *mut i64) -> u64 { unsafe { function!(48880, (*mut i64) -> u64)(param_1) } }
 /// `ReleaseTypedArrays30To40` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 73051, rva 0xf6e4c0).
 /// `undefined ReleaseTypedArrays30To40(longlong param_1)`
 ///
@@ -14164,38 +14206,3 @@ pub unsafe fn set3_d_and_notify_object_loaded(param_1: i64, param_2: *mut i64, p
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn set_acquire_weapon_search_ai_timer() -> u64 { unsafe { function!(47584, () -> u64)() } }
-/// `SetActiveSlotField278` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 78267, rva 0x10647b0).
-/// `undefined SetActiveSlotField278(longlong * param_1, int param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn set_active_slot_field278(param_1: *mut i64, param_2: i32) -> u64 { unsafe { function!(78267, (*mut i64, i32) -> u64)(param_1, param_2) } }
-/// `SetActorHandle2C` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 33235, rva 0x5614a0).
-/// `undefined SetActorHandle2C(longlong * param_1, longlong * param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn set_actor_handle2_c(param_1: *mut i64, param_2: *mut i64) -> u64 { unsafe { function!(33235, (*mut i64, *mut i64) -> u64)(param_1, param_2) } }
-/// `SetActorRace` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 37925, rva 0x6ad970).
-/// `undefined SetActorRace(longlong * param_1, longlong param_2, undefined4 * param_3, undefined8 param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn set_actor_race(param_1: *mut i64, param_2: i64, param_3: *mut u32, param_4: u64) -> u64 { unsafe { function!(37925, (*mut i64, i64, *mut u32, u64) -> u64)(param_1, param_2, param_3, param_4) } }
-/// `SetActorValueEntryAndNotify` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 38508, rva 0x6c6fe0).
-/// `undefined SetActorValueEntryAndNotify(longlong param_1, int param_2, longlong * param_3, undefined8 param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn set_actor_value_entry_and_notify(param_1: i64, param_2: i32, param_3: *mut i64, param_4: u64) -> u64 { unsafe { function!(38508, (i64, i32, *mut i64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
-/// `SetAllConstraintsEnabled` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 78477, rva 0x1074b40).
-/// `undefined SetAllConstraintsEnabled(longlong param_1, char param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn set_all_constraints_enabled(param_1: i64, param_2: c_char) -> u64 { unsafe { function!(78477, (i64, c_char) -> u64)(param_1, param_2) } }

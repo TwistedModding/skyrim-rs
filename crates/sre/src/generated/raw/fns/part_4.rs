@@ -3,6 +3,82 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `BSRagdollContactListenerModifier::vdtor` at 0xbb28d0 (slot_propagation, medium); signature (low): `BSRagdollContactListenerModifier * vdtor(BSRagdollContactListenerModifier * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+pub const BSRagdollContactListenerModifier__vdtor: u64 = 63097;
+/// `BSRagdollContactListenerModifier::vfunc_1` at 0xbb1f00 (rtti, high); signature (untiered): `undefined * vfunc_1(void)`
+pub const BSRagdollContactListenerModifier__vfunc_1: u64 = 63085;
+/// `BSRagdollContactListenerModifier::vfunc_10` at 0xbb1fe0 (rtti, high); signature (low): `ulonglong vfunc_10(BSRagdollContactListenerModifier * this, ulonglong * param_1)`
+pub const BSRagdollContactListenerModifier__vfunc_10: u64 = 63090;
+/// `BSRagdollContactListenerModifier::vfunc_12` at 0xbb1f50 (rtti, high); signature (high): `undefined vfunc_12(BSRagdollContactListenerModifier * this)`
+pub const BSRagdollContactListenerModifier__vfunc_12: u64 = 63087;
+/// `BSRagdollContactListenerModifier::vfunc_3` at 0xbb1f10 (rtti, high); signature (low): `undefined vfunc_3(BSRagdollContactListenerModifier * this, undefined8 * param_1)`
+pub const BSRagdollContactListenerModifier__vfunc_3: u64 = 63086;
+/// `BSRagdollContactListenerModifier::vfunc_4` at 0xbb1fa0 (rtti, high); signature (low): `undefined vfunc_4(BSRagdollContactListenerModifier * this, undefined8 param_1)`
+pub const BSRagdollContactListenerModifier__vfunc_4: u64 = 63088;
+/// `BSRagdollContactListenerModifier::vfunc_5` at 0xbb2370 (rtti, high); signature (low): `undefined vfunc_5(BSRagdollContactListenerModifier * this, longlong * param_1)`
+pub const BSRagdollContactListenerModifier__vfunc_5: u64 = 63091;
+/// `BSRagdollContactListenerModifier::vfunc_7` at 0xbb1fc0 (rtti, high); signature (low): `undefined vfunc_7(BSRagdollContactListenerModifier * this, undefined8 param_1)`
+pub const BSRagdollContactListenerModifier__vfunc_7: u64 = 63089;
+/// `BSRagdollContactListenerModifierInterface::ctor` at 0x7dc930 (layout_inference, high); signature (high): `BSRagdollContactListenerModifierInterface * ctor(BSRagdollContactListenerModifierInterface * this)`
+pub const BSRagdollContactListenerModifierInterface__ctor: u64 = 43678;
+/// `BSRagdollContactListenerModifierInterface::vdtor` at 0x7dcf90 (layout_inference, medium); signature (low): `BSRagdollContactListenerModifierInterface * vdtor(BSRagdollContactListenerModifierInterface * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const BSRagdollContactListenerModifierInterface__vdtor: u64 = 43685;
+/// `BSRagdollContactListenerModifierInterface::vfunc_1` at 0x7dcc30 (rtti, high); signature (low): `DWORD vfunc_1(BSRagdollContactListenerModifierInterface * this, longlong * param_1, longlong param_2, char param_3)`
+pub const BSRagdollContactListenerModifierInterface__vfunc_1: u64 = 43681;
+/// `BSRagdollContactListenerModifierInterface::vfunc_1_sub0` at 0x7dcf30 (callgraph, medium); signature (untiered): `undefined vfunc_1_sub0(undefined8 * param_1)`
+pub const BSRagdollContactListenerModifierInterface__vfunc_1_sub0: u64 = 43683;
+/// `BSRangeNode::ctor` at 0xfdd7e0 (layout_inference, high); signature (low): `BSRangeNode * ctor(BSRangeNode * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+pub const BSRangeNode__ctor: u64 = 76201;
+/// `BSRangeNode::vdtor` at 0xfdd9c0 (slot_propagation, medium); signature (low): `BSRangeNode * vdtor(BSRangeNode * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+pub const BSRangeNode__vdtor: u64 = 76204;
+/// `BSRangeNode::vfunc_2` at 0xfdda00 (rtti, high); signature (low): `TypeNode * vfunc_2(void)`
+pub const BSRangeNode__vfunc_2: u64 = 76205;
+/// `BSRangeNode::vfunc_23` at 0xfdd3b0 (rtti, high); signature (low): `BSNiNode * vfunc_23(BSRangeNode * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+pub const BSRangeNode__vfunc_23: u64 = 76193;
+/// `BSRangeNode::vfunc_24` at 0xfdd4d0 (rtti, high); signature (low): `undefined vfunc_24(BSRangeNode * this, longlong param_1)`
+pub const BSRangeNode__vfunc_24: u64 = 76195;
+/// `BSRangeNode::vfunc_25` at 0xfdd5c0 (rtti, high); signature (untiered): `undefined vfunc_25(BSRangeNode * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
+pub const BSRangeNode__vfunc_25: u64 = 76196;
+/// `BSRangeNode::vfunc_26` at 0xfdd5d0 (rtti, high); signature (low): `bool vfunc_26(BSRangeNode * this, undefined8 param_1)`
+pub const BSRangeNode__vfunc_26: u64 = 76197;
+/// `BSRangeNode::vfunc_27` at 0xfdd5f0 (rtti, high); signature (low): `undefined vfunc_27(BSRangeNode * this, longlong * param_1)`
+pub const BSRangeNode__vfunc_27: u64 = 76198;
+/// `BSRangeNode::vfunc_28` at 0xfdd6e0 (rtti, high); signature (low): `undefined8 vfunc_28(BSRangeNode * this, longlong param_1)`
+pub const BSRangeNode__vfunc_28: u64 = 76199;
+/// `BSRangeNode::vfunc_62` at 0xfdd8c0 (rtti, medium); signature (high): `undefined vfunc_62(BSRangeNode * this)`
+pub const BSRangeNode__vfunc_62: u64 = 76203;
+/// `BSReadWriteLock::LockForRead` at 0xce3250 (semantic, high); signature (untiered): `undefined LockForRead(DWORD * param_1)`; semantic: shared lock (high); signature `void BSReadWriteLock::LockForRead(BSReadWriteLock* this)`
+pub const BSReadWriteLock__LockForRead: u64 = 68233;
+/// `BSReadWriteLock::LockForRead` as a function pointer type (high).
+pub type BSReadWriteLock__LockForRead_fn = unsafe extern "C" fn(this: *mut crate::BSReadWriteLock);
+/// `BSReadWriteLock::LockForWrite` at 0xce32d0 (semantic, high); signature (untiered): `DWORD LockForWrite(DWORD * param_1)`; semantic: exclusive lock (high); signature `void BSReadWriteLock::LockForWrite(BSReadWriteLock* this)`
+pub const BSReadWriteLock__LockForWrite: u64 = 68234;
+/// `BSReadWriteLock::LockForWrite` as a function pointer type (high).
+pub type BSReadWriteLock__LockForWrite_fn = unsafe extern "C" fn(this: *mut crate::BSReadWriteLock);
+/// `BSReadWriteLock::UnlockForRead` at 0xce3510 (semantic, high); signature (untiered): `undefined UnlockForRead(longlong param_1)`; semantic: release shared lock (high); signature `void BSReadWriteLock::UnlockForRead(BSReadWriteLock* this)`
+pub const BSReadWriteLock__UnlockForRead: u64 = 68239;
+/// `BSReadWriteLock::UnlockForRead` as a function pointer type (high).
+pub type BSReadWriteLock__UnlockForRead_fn = unsafe extern "C" fn(this: *mut crate::BSReadWriteLock);
+/// `BSReadWriteLock::UnlockForWrite` at 0xce3520 (semantic, high); signature (untiered): `int UnlockForWrite(undefined4 * param_1)`; semantic: release exclusive lock (high); signature `void BSReadWriteLock::UnlockForWrite(BSReadWriteLock* this)`
+pub const BSReadWriteLock__UnlockForWrite: u64 = 68240;
+/// `BSReadWriteLock::UnlockForWrite` as a function pointer type (high).
+pub type BSReadWriteLock__UnlockForWrite_fn = unsafe extern "C" fn(this: *mut crate::BSReadWriteLock);
+/// `BSReference::Create` at 0x10006b0 (string, high); signature (low): `NiObject * Create(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const BSReference__Create: u64 = 77033;
+/// `BSReference::vdtor` at 0xfd2a10 (layout_inference, medium); signature (low): `BSReference * vdtor(BSReference * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+pub const BSReference__vdtor: u64 = 524231;
+/// `BSReference::vfunc_2` at 0xfd2b10 (rtti, high); signature (low): `TypeNode * vfunc_2(void)`
+pub const BSReference__vfunc_2: u64 = 75970;
+/// `BSReference::vfunc_24` at 0x1000110 (rtti, high); signature (low): `undefined vfunc_24(BSReference * this, longlong * param_1)`
+pub const BSReference__vfunc_24: u64 = 77019;
+/// `BSReference::vfunc_25` at 0x1000160 (rtti, high); signature (low): `undefined vfunc_25(void)`
+pub const BSReference__vfunc_25: u64 = 77020;
+/// `BSReference::vfunc_26` at 0x1000170 (rtti, high); signature (low): `undefined1 vfunc_26(void)`
+pub const BSReference__vfunc_26: u64 = 77021;
+/// `BSReference::vfunc_27` at 0x1000180 (rtti, high); signature (low): `undefined vfunc_27(BSReference * this, longlong param_1)`
+pub const BSReference__vfunc_27: u64 = 77022;
+/// `BSReference::vfunc_28` at 0x10001c0 (rtti, high); signature (low): `ulonglong vfunc_28(BSReference * this, longlong * param_1)`
+pub const BSReference__vfunc_28: u64 = 77023;
 /// `BSRenderPass::Alloc` at 0x1555820 (semantic, high); signature (untiered): `undefined Alloc(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined4 param_4, byte param_5, longlong param_6)`; semantic: takes a pass from this thread's pool (index TLS+0x9f4) and initialises it (high); signature `BSRenderPass* (BSShader* shader, BSShaderProperty* property, BSGeometry* geometry, u32 techniqueId, u8 numLights, BSLight** lights)`
 pub const BSRenderPass__Alloc: u64 = 107497;
 /// `BSRenderPass::Alloc` as a function pointer type (high).
@@ -6197,47 +6273,3 @@ pub const BSTDerivedCreator_BGSProcedureUseWeapon_IProcedure__vfunc_1: u64 = 294
 pub const BSTDerivedCreator_BGSProcedureUseWeapon_IProcedure__vfunc_2: u64 = 29405;
 /// `BSTDerivedCreator<BGSProcedureUseWeaponExecState,IProcedureTreeExecState>::vdtor` at 0x458ba0 (layout_inference, medium); signature (low): `BSTDerivedCreator<BGSProcedureUseWeaponExecState,IProcedureTreeExecState> * vdtor(BSTDerivedCreator<BGSProcedureUseWeaponExecState,IProcedureTreeExecState> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const BSTDerivedCreator_BGSProcedureUseWeaponExecState_IProcedureTreeExecState__vdtor: u64 = 28005;
-/// `BSTDerivedCreator<BGSProcedureUseWeaponExecState,IProcedureTreeExecState>::vfunc_1` at 0x45a530 (rtti, medium); signature (low): `undefined8 vfunc_1(BSTDerivedCreator<BGSProcedureUseWeaponExecState,IProcedureTreeExecState> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-pub const BSTDerivedCreator_BGSProcedureUseWeaponExecState_IProcedureTreeExecState__vfunc_1: u64 = 28078;
-/// `BSTDerivedCreator<BGSProcedureUseWeaponExecState,IProcedureTreeExecState>::vfunc_2` at 0x45aaf0 (rtti, medium); signature (low): `undefined vfunc_2(BSTDerivedCreator<BGSProcedureUseWeaponExecState,IProcedureTreeExecState> * this, undefined8 * param_1)`
-pub const BSTDerivedCreator_BGSProcedureUseWeaponExecState_IProcedureTreeExecState__vfunc_2: u64 = 28118;
-/// `BSTDerivedCreator<BGSProcedureWait,IProcedure>::vdtor` at 0x4948e0 (layout_inference, medium); signature (low): `BSTDerivedCreator<BGSProcedureWait,IProcedure> * vdtor(BSTDerivedCreator<BGSProcedureWait,IProcedure> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const BSTDerivedCreator_BGSProcedureWait_IProcedure__vdtor: u64 = 29425;
-/// `BSTDerivedCreator<BGSProcedureWait,IProcedure>::vfunc_1` at 0x494950 (rtti, medium); signature (low): `BGSProcedureBase * vfunc_1(BSTDerivedCreator<BGSProcedureWait,IProcedure> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-pub const BSTDerivedCreator_BGSProcedureWait_IProcedure__vfunc_1: u64 = 29427;
-/// `BSTDerivedCreator<BGSProcedureWait,IProcedure>::vfunc_2` at 0x4949d0 (rtti, medium); signature (low): `undefined vfunc_2(BSTDerivedCreator<BGSProcedureWait,IProcedure> * this, undefined8 * param_1)`
-pub const BSTDerivedCreator_BGSProcedureWait_IProcedure__vfunc_2: u64 = 29428;
-/// `BSTDerivedCreator<BGSProcedureWaitExecState,IProcedureTreeExecState>::vdtor` at 0x458bd0 (layout_inference, medium); signature (low): `BSTDerivedCreator<BGSProcedureWaitExecState,IProcedureTreeExecState> * vdtor(BSTDerivedCreator<BGSProcedureWaitExecState,IProcedureTreeExecState> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const BSTDerivedCreator_BGSProcedureWaitExecState_IProcedureTreeExecState__vdtor: u64 = 28006;
-/// `BSTDerivedCreator<BGSProcedureWaitExecState,IProcedureTreeExecState>::vfunc_1` at 0x45a590 (rtti, medium); signature (low): `undefined vfunc_1(BSTDerivedCreator<BGSProcedureWaitExecState,IProcedureTreeExecState> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-pub const BSTDerivedCreator_BGSProcedureWaitExecState_IProcedureTreeExecState__vfunc_1: u64 = 28079;
-/// `BSTDerivedCreator<BGSProcedureWaitExecState,IProcedureTreeExecState>::vfunc_2` at 0x45ab10 (rtti, medium); signature (low): `undefined vfunc_2(BSTDerivedCreator<BGSProcedureWaitExecState,IProcedureTreeExecState> * this, undefined8 * param_1)`
-pub const BSTDerivedCreator_BGSProcedureWaitExecState_IProcedureTreeExecState__vfunc_2: u64 = 28119;
-/// `BSTDerivedCreator<BGSProcedureWander,IProcedure>::vdtor` at 0x496140 (layout_inference, medium); signature (low): `BSTDerivedCreator<BGSProcedureWander,IProcedure> * vdtor(BSTDerivedCreator<BGSProcedureWander,IProcedure> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const BSTDerivedCreator_BGSProcedureWander_IProcedure__vdtor: u64 = 29459;
-/// `BSTDerivedCreator<BGSProcedureWander,IProcedure>::vfunc_1` at 0x4962a0 (rtti, medium); signature (low): `BGSProcedureBase * vfunc_1(BSTDerivedCreator<BGSProcedureWander,IProcedure> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-pub const BSTDerivedCreator_BGSProcedureWander_IProcedure__vfunc_1: u64 = 29462;
-/// `BSTDerivedCreator<BGSProcedureWander,IProcedure>::vfunc_2` at 0x496320 (rtti, medium); signature (low): `undefined vfunc_2(BSTDerivedCreator<BGSProcedureWander,IProcedure> * this, undefined8 * param_1)`
-pub const BSTDerivedCreator_BGSProcedureWander_IProcedure__vfunc_2: u64 = 29463;
-/// `BSTDerivedCreator<BGSProcedureWanderExecState,IProcedureTreeExecState>::vdtor` at 0x458c00 (layout_inference, medium); signature (low): `BSTDerivedCreator<BGSProcedureWanderExecState,IProcedureTreeExecState> * vdtor(BSTDerivedCreator<BGSProcedureWanderExecState,IProcedureTreeExecState> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const BSTDerivedCreator_BGSProcedureWanderExecState_IProcedureTreeExecState__vdtor: u64 = 28007;
-/// `BSTDerivedCreator<BGSProcedureWanderExecState,IProcedureTreeExecState>::vfunc_1` at 0x45a5f0 (rtti, medium); signature (low): `BGSProcedureWanderExecState * vfunc_1(BSTDerivedCreator<BGSProcedureWanderExecState,IProcedureTreeExecState> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-pub const BSTDerivedCreator_BGSProcedureWanderExecState_IProcedureTreeExecState__vfunc_1: u64 = 28080;
-/// `BSTDerivedCreator<BGSProcedureWanderExecState,IProcedureTreeExecState>::vfunc_2` at 0x45ab30 (rtti, medium); signature (low): `undefined vfunc_2(BSTDerivedCreator<BGSProcedureWanderExecState,IProcedureTreeExecState> * this, undefined8 * param_1)`
-pub const BSTDerivedCreator_BGSProcedureWanderExecState_IProcedureTreeExecState__vfunc_2: u64 = 28120;
-/// `BSTDerivedCreator<BGSStandardSoundDef,BGSSoundDescriptor>::vdtor` at 0x32bc30 (layout_inference, medium); signature (low): `BSTDerivedCreator<BGSStandardSoundDef,BGSSoundDescriptor> * vdtor(BSTDerivedCreator<BGSStandardSoundDef,BGSSoundDescriptor> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const BSTDerivedCreator_BGSStandardSoundDef_BGSSoundDescriptor__vdtor: u64 = 21308;
-/// `BSTDerivedCreator<BGSStandardSoundDef,BGSSoundDescriptor>::vfunc_1` at 0x32bb30 (rtti, medium); signature (low): `undefined8 * vfunc_1(BSTDerivedCreator<BGSStandardSoundDef,BGSSoundDescriptor> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-pub const BSTDerivedCreator_BGSStandardSoundDef_BGSSoundDescriptor__vfunc_1: u64 = 21306;
-/// `BSTDerivedCreator<BGSStandardSoundDef,BGSSoundDescriptor>::vfunc_2` at 0x32bc10 (rtti, medium); signature (low): `undefined vfunc_2(BSTDerivedCreator<BGSStandardSoundDef,BGSSoundDescriptor> * this, undefined8 * param_1)`
-pub const BSTDerivedCreator_BGSStandardSoundDef_BGSSoundDescriptor__vfunc_2: u64 = 21307;
-/// `BSTDerivedCreator<BGShkMatFadeController,BShkNonTransformController>::vdtor` at 0x7db4e0 (layout_inference, medium); signature (low): `BSTDerivedCreator<BGShkMatFadeController,BShkNonTransformController> * vdtor(BSTDerivedCreator<BGShkMatFadeController,BShkNonTransformController> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const BSTDerivedCreator_BGShkMatFadeController_BShkNonTransformController__vdtor: u64 = 43651;
-/// `BSTDerivedCreator<BGShkMatFadeController,BShkNonTransformController>::vfunc_1` at 0x7db450 (rtti, medium); signature (low): `undefined vfunc_1(BSTDerivedCreator<BGShkMatFadeController,BShkNonTransformController> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-pub const BSTDerivedCreator_BGShkMatFadeController_BShkNonTransformController__vfunc_1: u64 = 43649;
-/// `BSTDerivedCreator<BGShkMatFadeController,BShkNonTransformController>::vfunc_2` at 0x7db4c0 (rtti, medium); signature (low): `undefined vfunc_2(BSTDerivedCreator<BGShkMatFadeController,BShkNonTransformController> * this, undefined8 * param_1)`
-pub const BSTDerivedCreator_BGShkMatFadeController_BShkNonTransformController__vfunc_2: u64 = 43650;
-/// `BSTDerivedCreator<BGShkPhonemeController,BShkNonTransformController>::vdtor` at 0x422930 (layout_inference, medium); signature (low): `BSTDerivedCreator<BGShkPhonemeController,BShkNonTransformController> * vdtor(BSTDerivedCreator<BGShkPhonemeController,BShkNonTransformController> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const BSTDerivedCreator_BGShkPhonemeController_BShkNonTransformController__vdtor: u64 = 26539;
-/// `BSTDerivedCreator<BGShkPhonemeController,BShkNonTransformController>::vfunc_1` at 0x4228a0 (rtti, medium); signature (low): `undefined8 * vfunc_1(BSTDerivedCreator<BGShkPhonemeController,BShkNonTransformController> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-pub const BSTDerivedCreator_BGShkPhonemeController_BShkNonTransformController__vfunc_1: u64 = 26537;

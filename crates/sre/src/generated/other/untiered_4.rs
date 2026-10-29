@@ -3,6 +3,55 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `DeletingDtorRefCountSize10` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 89097, rva 0xe59d90).
+/// `GRefCountImplCore * DeletingDtorRefCountSize10(GRefCountImplCore * param_1, uint param_2, undefined8 param_3, undefined8 param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn deleting_dtor_ref_count_size10(param_1: *mut crate::GRefCountImplCore, param_2: u32, param_3: u64, param_4: u64) -> *mut crate::GRefCountImplCore { unsafe { function!(89097, (*mut crate::GRefCountImplCore, u32, u64, u64) -> *mut crate::GRefCountImplCore)(param_1, param_2, param_3, param_4) } }
+/// `DeletingDtorRefCountSize10_10` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 89107, rva 0xe5a150).
+/// `GRefCountImplCore * DeletingDtorRefCountSize10_10(GRefCountImplCore * param_1, uint param_2, undefined8 param_3, undefined8 param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn deleting_dtor_ref_count_size10_10(param_1: *mut crate::GRefCountImplCore, param_2: u32, param_3: u64, param_4: u64) -> *mut crate::GRefCountImplCore { unsafe { function!(89107, (*mut crate::GRefCountImplCore, u32, u64, u64) -> *mut crate::GRefCountImplCore)(param_1, param_2, param_3, param_4) } }
+/// `DeletingDtorRefCountSize10_11` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 87725, rva 0xe6c440).
+/// `GRefCountImplCore * DeletingDtorRefCountSize10_11(GRefCountImplCore * param_1, uint param_2, undefined8 param_3, undefined8 param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn deleting_dtor_ref_count_size10_11(param_1: *mut crate::GRefCountImplCore, param_2: u32, param_3: u64, param_4: u64) -> *mut crate::GRefCountImplCore { unsafe { function!(87725, (*mut crate::GRefCountImplCore, u32, u64, u64) -> *mut crate::GRefCountImplCore)(param_1, param_2, param_3, param_4) } }
+/// `DeletingDtorRefCountSize10_12` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 524198, rva 0xe73be0).
+/// `GRefCountImplCore * DeletingDtorRefCountSize10_12(GRefCountImplCore * param_1, uint param_2, undefined8 param_3, undefined8 param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn deleting_dtor_ref_count_size10_12(param_1: *mut crate::GRefCountImplCore, param_2: u32, param_3: u64, param_4: u64) -> *mut crate::GRefCountImplCore { unsafe { function!(524198, (*mut crate::GRefCountImplCore, u32, u64, u64) -> *mut crate::GRefCountImplCore)(param_1, param_2, param_3, param_4) } }
+/// `DeletingDtorRefCountSize10_2` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 89098, rva 0xe59df0).
+/// `GRefCountImplCore * DeletingDtorRefCountSize10_2(GRefCountImplCore * param_1, uint param_2, undefined8 param_3, undefined8 param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn deleting_dtor_ref_count_size10_2(param_1: *mut crate::GRefCountImplCore, param_2: u32, param_3: u64, param_4: u64) -> *mut crate::GRefCountImplCore { unsafe { function!(89098, (*mut crate::GRefCountImplCore, u32, u64, u64) -> *mut crate::GRefCountImplCore)(param_1, param_2, param_3, param_4) } }
+/// `DeletingDtorRefCountSize10_3` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 89100, rva 0xe59eb0).
+/// `GRefCountImplCore * DeletingDtorRefCountSize10_3(GRefCountImplCore * param_1, uint param_2, undefined8 param_3, undefined8 param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn deleting_dtor_ref_count_size10_3(param_1: *mut crate::GRefCountImplCore, param_2: u32, param_3: u64, param_4: u64) -> *mut crate::GRefCountImplCore { unsafe { function!(89100, (*mut crate::GRefCountImplCore, u32, u64, u64) -> *mut crate::GRefCountImplCore)(param_1, param_2, param_3, param_4) } }
+/// `DeletingDtorRefCountSize10_4` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 89101, rva 0xe59f10).
+/// `GRefCountImplCore * DeletingDtorRefCountSize10_4(GRefCountImplCore * param_1, uint param_2, undefined8 param_3, undefined8 param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn deleting_dtor_ref_count_size10_4(param_1: *mut crate::GRefCountImplCore, param_2: u32, param_3: u64, param_4: u64) -> *mut crate::GRefCountImplCore { unsafe { function!(89101, (*mut crate::GRefCountImplCore, u32, u64, u64) -> *mut crate::GRefCountImplCore)(param_1, param_2, param_3, param_4) } }
 /// `DeletingDtorRefCountSize10_5` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 89102, rva 0xe59f70).
 /// `GRefCountImplCore * DeletingDtorRefCountSize10_5(GRefCountImplCore * param_1, uint param_2, undefined8 param_3, undefined8 param_4)`
 ///
@@ -13107,66 +13156,3 @@ pub unsafe fn free_block_list_and_reset(param_1: *mut u64) -> u64 { unsafe { fun
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn free_block_locked(param_1: i64, param_2: u64, param_3: i64, param_4: u64) -> u64 { unsafe { function!(80656, (i64, u64, i64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
-/// `FreeBlockLocked_2` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 69148, rva 0xeb0970).
-/// `undefined FreeBlockLocked_2(ulonglong * param_1, undefined1 * param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn free_block_locked_2(param_1: *mut u64, param_2: *mut u8) -> u64 { unsafe { function!(69148, (*mut u64, *mut u8) -> u64)(param_1, param_2) } }
-/// `FreeBlockToBinLocked` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 68372, rva 0xce8960).
-/// `undefined FreeBlockToBinLocked(longlong param_1, longlong param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn free_block_to_bin_locked(param_1: i64, param_2: i64) -> u64 { unsafe { function!(68372, (i64, i64) -> u64)(param_1, param_2) } }
-/// `FreeBlockToFreeList` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 89677, rva 0x11a5ba0).
-/// `undefined FreeBlockToFreeList(undefined8 * param_1, ulonglong param_2, ulonglong * param_3, ulonglong param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn free_block_to_free_list(param_1: *mut u64, param_2: u64, param_3: *mut u64, param_4: u64) -> u64 { unsafe { function!(89677, (*mut u64, u64, *mut u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
-/// `FreeBlockToFreeListTwoBitMap` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 89683, rva 0x11a6260).
-/// `undefined FreeBlockToFreeListTwoBitMap(undefined8 * param_1, ulonglong param_2, ulonglong * param_3)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn free_block_to_free_list_two_bit_map(param_1: *mut u64, param_2: u64, param_3: *mut u64) -> u64 { unsafe { function!(89683, (*mut u64, u64, *mut u64) -> u64)(param_1, param_2, param_3) } }
-/// `FreeBlockToPoolPage` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 68413, rva 0xce9510).
-/// `ulonglong FreeBlockToPoolPage(longlong * param_1, longlong * param_2, longlong * param_3)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn free_block_to_pool_page(param_1: *mut i64, param_2: *mut i64, param_3: *mut i64) -> u64 { unsafe { function!(68413, (*mut i64, *mut i64, *mut i64) -> u64)(param_1, param_2, param_3) } }
-/// `FreeBlockWithSizeHeaderArgsSwapped` (decompiler signature, tier untiered; ledger decompiler evidence, name high; id 57142, rva 0xaa5e30).
-/// `undefined FreeBlockWithSizeHeaderArgsSwapped(longlong param_1, longlong * param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn free_block_with_size_header_args_swapped(param_1: i64, param_2: *mut i64) -> u64 { unsafe { function!(57142, (i64, *mut i64) -> u64)(param_1, param_2) } }
-/// `FreeBufferAndClearCount` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 32826, rva 0x5514f0).
-/// `undefined FreeBufferAndClearCount(int * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn free_buffer_and_clear_count(param_1: *mut i32, param_2: u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(32826, (*mut i32, u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
-/// `FreeBufferAndClearFlag38` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 68251, rva 0xce3e00).
-/// `undefined FreeBufferAndClearFlag38(undefined8 * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn free_buffer_and_clear_flag38(param_1: *mut u64, param_2: u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(68251, (*mut u64, u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
-/// `FreeBufferAndClearGlobal403903` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 43666, rva 0x7dbdc0).
-/// `undefined FreeBufferAndClearGlobal403903(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn free_buffer_and_clear_global403903(param_1: i64, param_2: u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(43666, (i64, u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }

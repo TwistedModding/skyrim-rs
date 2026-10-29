@@ -3,41 +3,6 @@
 
 use core::ffi::{c_char, c_void};
 
-/// `OrthonormalizeMatrix3x3` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 70226, rva 0xede960).
-/// `undefined1 OrthonormalizeMatrix3x3(float * param_1)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn orthonormalize_matrix3x3(param_1: *mut f32) -> u8 { unsafe { function!(70226, (*mut f32) -> u8)(param_1) } }
-/// `OutputReportQueueThreadProc` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 68931, rva 0xea7880).
-/// `undefined OutputReportQueueThreadProc(void)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn output_report_queue_thread_proc() -> u64 { unsafe { function!(68931, () -> u64)() } }
-/// `PackByteArrayToBits` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 66393, rva 0xc6ce10).
-/// `undefined PackByteArrayToBits(longlong * param_1, byte * param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn pack_byte_array_to_bits(param_1: *mut i64, param_2: *mut u8) -> u64 { unsafe { function!(66393, (*mut i64, *mut u8) -> u64)(param_1, param_2) } }
-/// `PackPixels32To24` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 77601, rva 0x1025650).
-/// `undefined PackPixels32To24(undefined1 * param_1, longlong param_2, undefined4 * param_3, ulonglong param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn pack_pixels32_to24(param_1: *mut u8, param_2: i64, param_3: *mut u32, param_4: u64) -> u64 { unsafe { function!(77601, (*mut u8, i64, *mut u32, u64) -> u64)(param_1, param_2, param_3, param_4) } }
-/// `PackPixelsInRow` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 90214, rva 0x11affa0).
-/// `undefined PackPixelsInRow(uint * param_1, byte * param_2, int param_3)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn pack_pixels_in_row(param_1: *mut u32, param_2: *mut u8, param_3: i32) -> u64 { unsafe { function!(90214, (*mut u32, *mut u8, i32) -> u64)(param_1, param_2, param_3) } }
 /// `PackPositionToGridCoords` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 20503, rva 0x30e860).
 /// `uint PackPositionToGridCoords(float * param_1)`
 ///
@@ -2369,13 +2334,6 @@ pub unsafe fn papyrus__game__clear_prison(vm: *mut c_void, stackId: u32, unused:
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn papyrus__game__clear_temp_effects(vm: *mut c_void, stackId: u32, unused: *mut c_void) { unsafe { function!(55562, (*mut c_void, u32, *mut c_void))(vm, stackId, unused) } }
-/// `Papyrus::Game::DisablePlayerControls` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55454, rva 0xa23ee0).
-/// `void DisablePlayerControls(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, bool a0, bool a1, bool a2, bool a3, bool a4, bool a5, bool a6, bool a7, uint a8)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn papyrus__game__disable_player_controls(vm: *mut c_void, stackId: u32, unused: *mut c_void, a0: u8, a1: u8, a2: u8, a3: u8, a4: u8, a5: u8, a6: u8, a7: u8, a8: u32) { unsafe { function!(55454, (*mut c_void, u32, *mut c_void, u8, u8, u8, u8, u8, u8, u8, u8, u32))(vm, stackId, unused, a0, a1, a2, a3, a4, a5, a6, a7, a8) } }
 /// `Papyrus::Game::EnableFastTravel` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55563, rva 0xa2ad00).
 /// `void EnableFastTravel(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, bool a0)`
 ///
@@ -2383,13 +2341,6 @@ pub unsafe fn papyrus__game__disable_player_controls(vm: *mut c_void, stackId: u
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn papyrus__game__enable_fast_travel(vm: *mut c_void, stackId: u32, unused: *mut c_void, a0: u8) { unsafe { function!(55563, (*mut c_void, u32, *mut c_void, u8))(vm, stackId, unused, a0) } }
-/// `Papyrus::Game::EnablePlayerControls` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55455, rva 0xa23fc0).
-/// `void EnablePlayerControls(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, bool a0, bool a1, bool a2, bool a3, bool a4, bool a5, bool a6, bool a7, uint a8)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn papyrus__game__enable_player_controls(vm: *mut c_void, stackId: u32, unused: *mut c_void, a0: u8, a1: u8, a2: u8, a3: u8, a4: u8, a5: u8, a6: u8, a7: u8, a8: u32) { unsafe { function!(55455, (*mut c_void, u32, *mut c_void, u8, u8, u8, u8, u8, u8, u8, u8, u32))(vm, stackId, unused, a0, a1, a2, a3, a4, a5, a6, a7, a8) } }
 /// `Papyrus::Game::FadeOutGame` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55456, rva 0xa24070).
 /// `void FadeOutGame(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, bool a0, bool a1, float a2, float a3)`
 ///
@@ -2635,13 +2586,6 @@ pub unsafe fn papyrus__game__is_looking_controls_enabled(vm: *mut c_void, stackI
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn papyrus__game__is_menu_controls_enabled(vm: *mut c_void, stackId: u32, unused: *mut c_void) -> u8 { unsafe { function!(55484, (*mut c_void, u32, *mut c_void) -> u8)(vm, stackId, unused) } }
-/// `Papyrus::Game::IsMovementControlsEnabled` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55485, rva 0xa25270).
-/// `bool IsMovementControlsEnabled(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn papyrus__game__is_movement_controls_enabled(vm: *mut c_void, stackId: u32, unused: *mut c_void) -> u8 { unsafe { function!(55485, (*mut c_void, u32, *mut c_void) -> u8)(vm, stackId, unused) } }
 /// `Papyrus::Game::IsPlayerSungazing` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55486, rva 0xa252a0).
 /// `bool IsPlayerSungazing(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused)`
 ///
@@ -13471,3 +13415,66 @@ pub unsafe fn resize_small_array12(param_1: *mut u32, param_2: u64) -> c_char { 
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn resize_small_array4(param_1: *mut u32, param_2: u64) -> u64 { unsafe { function!(34213, (*mut u32, u64) -> u64)(param_1, param_2) } }
+/// `ResizeSmallDwordArrayZeroFilled` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 67818, rva 0xcd45b0).
+/// `char ResizeSmallDwordArrayZeroFilled(uint * param_1, uint param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn resize_small_dword_array_zero_filled(param_1: *mut u32, param_2: u32) -> c_char { unsafe { function!(67818, (*mut u32, u32) -> c_char)(param_1, param_2) } }
+/// `ResizeSmallPointerArray` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 35187, rva 0x5eb9c0).
+/// `undefined8 ResizeSmallPointerArray(uint * param_1, ulonglong param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn resize_small_pointer_array(param_1: *mut u32, param_2: u64) -> u64 { unsafe { function!(35187, (*mut u32, u64) -> u64)(param_1, param_2) } }
+/// `ResizeSparsePointerArray` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 13910, rva 0x1c9750).
+/// `undefined ResizeSparsePointerArray(longlong param_1, uint param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn resize_sparse_pointer_array(param_1: i64, param_2: u32) -> u64 { unsafe { function!(13910, (i64, u32) -> u64)(param_1, param_2) } }
+/// `ResizeStringHashMap` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 58052, rva 0xabf970).
+/// `undefined ResizeStringHashMap(longlong * param_1, int param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn resize_string_hash_map(param_1: *mut i64, param_2: i32) -> u64 { unsafe { function!(58052, (*mut i64, i32) -> u64)(param_1, param_2) } }
+/// `ResizeStringKeyedHashTable_3` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 87222, rva 0xdecb10).
+/// `undefined ResizeStringKeyedHashTable_3(longlong * param_1, undefined8 param_2, ulonglong param_3)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn resize_string_keyed_hash_table_3(param_1: *mut i64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(87222, (*mut i64, u64, u64) -> u64)(param_1, param_2, param_3) } }
+/// `ResizeStringNodeArray` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 82668, rva 0xd007c0).
+/// `undefined ResizeStringNodeArray(longlong * param_1, ulonglong param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn resize_string_node_array(param_1: *mut i64, param_2: u64) -> u64 { unsafe { function!(82668, (*mut i64, u64) -> u64)(param_1, param_2) } }
+/// `ResizeStringPairHashTable` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 84688, rva 0xd9eb10).
+/// `undefined ResizeStringPairHashTable(longlong * param_1, undefined8 param_2, ulonglong param_3)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn resize_string_pair_hash_table(param_1: *mut i64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(84688, (*mut i64, u64, u64) -> u64)(param_1, param_2, param_3) } }
+/// `ResizeTaggedStringArray` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 89164, rva 0xe5f9c0).
+/// `undefined ResizeTaggedStringArray(longlong * param_1, ulonglong param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn resize_tagged_string_array(param_1: *mut i64, param_2: u64) -> u64 { unsafe { function!(89164, (*mut i64, u64) -> u64)(param_1, param_2) } }
+/// `ResizeTwelveByteEntryArray` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 77209, rva 0x1006fe0).
+/// `bool ResizeTwelveByteEntryArray(longlong * param_1, uint param_2, undefined8 param_3, undefined8 param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn resize_twelve_byte_entry_array(param_1: *mut i64, param_2: u32, param_3: u64, param_4: u64) -> u8 { unsafe { function!(77209, (*mut i64, u32, u64, u64) -> u8)(param_1, param_2, param_3, param_4) } }

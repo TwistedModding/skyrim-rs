@@ -3,6 +3,132 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `INISetting_fDecalLifetime_Display__init` at 0xfe60 (crt_init, medium); signature (high): `void INISetting_fDecalLifetime_Display__init(void)`
+pub const INISetting_fDecalLifetime_Display__init: u64 = 463;
+/// `INISetting_fDecapInitialSpeed_Combat__atexit` at 0x1798de0 (crt_init, medium); signature (high): `void INISetting_fDecapInitialSpeed_Combat__atexit(void)`
+pub const INISetting_fDecapInitialSpeed_Combat__atexit: u64 = 171204;
+/// `INISetting_fDecapInitialSpeed_Combat__init` at 0xa16d0 (crt_init, medium); signature (high): `void INISetting_fDecapInitialSpeed_Combat__init(void)`
+pub const INISetting_fDecapInitialSpeed_Combat__init: u64 = 6023;
+/// `INISetting_fDecreaseDRMilliseconds_Display__atexit` at 0x17b31b0 (crt_init, medium); signature (high): `void INISetting_fDecreaseDRMilliseconds_Display__atexit(void)`
+pub const INISetting_fDecreaseDRMilliseconds_Display__atexit: u64 = 173826;
+/// `INISetting_fDecreaseDRMilliseconds_Display__init` at 0xe9ef0 (crt_init, medium); signature (high): `void INISetting_fDecreaseDRMilliseconds_Display__init(void)`
+pub const INISetting_fDecreaseDRMilliseconds_Display__init: u64 = 9566;
+/// `INISetting_fDefault1stPersonFOV_Display__atexit` at 0x17b2750 (crt_init, medium); signature (high): `void INISetting_fDefault1stPersonFOV_Display__atexit(void)`
+pub const INISetting_fDefault1stPersonFOV_Display__atexit: u64 = 173781;
+/// `INISetting_fDefault1stPersonFOV_Display__init` at 0xe8c50 (crt_init, medium); signature (high): `void INISetting_fDefault1stPersonFOV_Display__init(void)`
+pub const INISetting_fDefault1stPersonFOV_Display__init: u64 = 9499;
+/// `INISetting_fDefaultAutoVanityZoom_Camera__atexit` at 0x17a2e50 (crt_init, medium); signature (high): `void INISetting_fDefaultAutoVanityZoom_Camera__atexit(void)`
+pub const INISetting_fDefaultAutoVanityZoom_Camera__atexit: u64 = 172144;
+/// `INISetting_fDefaultAutoVanityZoom_Camera__init` at 0xb13a0 (crt_init, medium); signature (high): `void INISetting_fDefaultAutoVanityZoom_Camera__init(void)`
+pub const INISetting_fDefaultAutoVanityZoom_Camera__init: u64 = 6684;
+/// `INISetting_fDefaultAvoidBoxAvoidNodeRadius_Pathfinding__atexit` at 0x17b77b0 (crt_init, medium); signature (high): `void INISetting_fDefaultAvoidBoxAvoidNodeRadius_Pathfinding__atexit(void)`
+pub const INISetting_fDefaultAvoidBoxAvoidNodeRadius_Pathfinding__atexit: u64 = 174223;
+/// `INISetting_fDefaultAvoidBoxAvoidNodeRadius_Pathfinding__init` at 0xf52e0 (crt_init, medium); signature (high): `void INISetting_fDefaultAvoidBoxAvoidNodeRadius_Pathfinding__init(void)`
+pub const INISetting_fDefaultAvoidBoxAvoidNodeRadius_Pathfinding__init: u64 = 10078;
+/// `INISetting_fDefaultAvoidNodeCost_Pathfinding__atexit` at 0x17b6c40 (crt_init, medium); signature (high): `void INISetting_fDefaultAvoidNodeCost_Pathfinding__atexit(void)`
+pub const INISetting_fDefaultAvoidNodeCost_Pathfinding__atexit: u64 = 174148;
+/// `INISetting_fDefaultAvoidNodeCost_Pathfinding__init` at 0xf3240 (crt_init, medium); signature (high): `void INISetting_fDefaultAvoidNodeCost_Pathfinding__init(void)`
+pub const INISetting_fDefaultAvoidNodeCost_Pathfinding__init: u64 = 10025;
+/// `INISetting_fDefaultFOV_Display__atexit` at 0x17c1740 (crt_init, medium); signature (high): `void INISetting_fDefaultFOV_Display__atexit(void)`
+pub const INISetting_fDefaultFOV_Display__atexit: u64 = 174439;
+/// `INISetting_fDefaultFOV_Display__init` at 0x100400 (crt_init, medium); signature (high): `void INISetting_fDefaultFOV_Display__init(void)`
+pub const INISetting_fDefaultFOV_Display__init: u64 = 10276;
+/// `INISetting_fDefaultMasterVolume_Audio__atexit` at 0x17957c0 (crt_init, medium); signature (high): `void INISetting_fDefaultMasterVolume_Audio__atexit(void)`
+pub const INISetting_fDefaultMasterVolume_Audio__atexit: u64 = 170885;
+/// `INISetting_fDefaultMasterVolume_Audio__init` at 0x9c5d0 (crt_init, medium); signature (high): `void INISetting_fDefaultMasterVolume_Audio__init(void)`
+pub const INISetting_fDefaultMasterVolume_Audio__init: u64 = 5712;
+/// `INISetting_fDefaultPreferredFactor_Pathfinding__atexit` at 0x17b7b00 (crt_init, medium); signature (high): `void INISetting_fDefaultPreferredFactor_Pathfinding__atexit(void)`
+pub const INISetting_fDefaultPreferredFactor_Pathfinding__atexit: u64 = 174245;
+/// `INISetting_fDefaultPreferredFactor_Pathfinding__init` at 0xf5bc0 (crt_init, medium); signature (high): `void INISetting_fDefaultPreferredFactor_Pathfinding__init(void)`
+pub const INISetting_fDefaultPreferredFactor_Pathfinding__init: u64 = 10095;
+/// `INISetting_fDefaultStaticAvoidNodeRadius_Pathfinding__atexit` at 0x17b6c90 (crt_init, medium); signature (high): `void INISetting_fDefaultStaticAvoidNodeRadius_Pathfinding__atexit(void)`
+pub const INISetting_fDefaultStaticAvoidNodeRadius_Pathfinding__atexit: u64 = 174149;
+/// `INISetting_fDefaultStaticAvoidNodeRadius_Pathfinding__init` at 0xf32c0 (crt_init, medium); signature (high): `void INISetting_fDefaultStaticAvoidNodeRadius_Pathfinding__init(void)`
+pub const INISetting_fDefaultStaticAvoidNodeRadius_Pathfinding__init: u64 = 10026;
+/// `INISetting_fDefaultTangentSmoothingFactor_Pathfinding__atexit` at 0x17b7b50 (crt_init, medium); signature (high): `void INISetting_fDefaultTangentSmoothingFactor_Pathfinding__atexit(void)`
+pub const INISetting_fDefaultTangentSmoothingFactor_Pathfinding__atexit: u64 = 174246;
+/// `INISetting_fDefaultTangentSmoothingFactor_Pathfinding__init` at 0xf5c40 (crt_init, medium); signature (high): `void INISetting_fDefaultTangentSmoothingFactor_Pathfinding__init(void)`
+pub const INISetting_fDefaultTangentSmoothingFactor_Pathfinding__init: u64 = 10096;
+/// `INISetting_fDefaultWaterfallCurrentVelocity_HAVOK__atexit` at 0x17494c0 (crt_init, medium); signature (high): `void INISetting_fDefaultWaterfallCurrentVelocity_HAVOK__atexit(void)`
+pub const INISetting_fDefaultWaterfallCurrentVelocity_HAVOK__atexit: u64 = 166270;
+/// `INISetting_fDefaultWaterfallCurrentVelocity_HAVOK__init` at 0x1b9a0 (crt_init, medium); signature (high): `void INISetting_fDefaultWaterfallCurrentVelocity_HAVOK__init(void)`
+pub const INISetting_fDefaultWaterfallCurrentVelocity_HAVOK__init: u64 = 1060;
+/// `INISetting_fDefaultWorldFOV_Display__atexit` at 0x17b27a0 (crt_init, medium); signature (high): `void INISetting_fDefaultWorldFOV_Display__atexit(void)`
+pub const INISetting_fDefaultWorldFOV_Display__atexit: u64 = 173782;
+/// `INISetting_fDefaultWorldFOV_Display__init` at 0xe8cd0 (crt_init, medium); signature (high): `void INISetting_fDefaultWorldFOV_Display__init(void)`
+pub const INISetting_fDefaultWorldFOV_Display__init: u64 = 9500;
+/// `INISetting_fDesiredVel_RagdollAnim__atexit` at 0x17b3c30 (crt_init, medium); signature (high): `void INISetting_fDesiredVel_RagdollAnim__atexit(void)`
+pub const INISetting_fDesiredVel_RagdollAnim__atexit: u64 = 173865;
+/// `INISetting_fDesiredVel_RagdollAnim__init` at 0xeaf60 (crt_init, medium); signature (high): `void INISetting_fDesiredVel_RagdollAnim__init(void)`
+pub const INISetting_fDesiredVel_RagdollAnim__init: u64 = 9609;
+/// `INISetting_fDetectionUpdateTimeSec_RagdollAnim__atexit` at 0x17b3c80 (crt_init, medium); signature (high): `void INISetting_fDetectionUpdateTimeSec_RagdollAnim__atexit(void)`
+pub const INISetting_fDetectionUpdateTimeSec_RagdollAnim__atexit: u64 = 173866;
+/// `INISetting_fDetectionUpdateTimeSec_RagdollAnim__init` at 0xeafe0 (crt_init, medium); signature (high): `void INISetting_fDetectionUpdateTimeSec_RagdollAnim__init(void)`
+pub const INISetting_fDetectionUpdateTimeSec_RagdollAnim__init: u64 = 9610;
+/// `INISetting_fDialogueHardStopAngle1P_Controls__atexit` at 0x179e810 (crt_init, medium); signature (high): `void INISetting_fDialogueHardStopAngle1P_Controls__atexit(void)`
+pub const INISetting_fDialogueHardStopAngle1P_Controls__atexit: u64 = 171655;
+/// `INISetting_fDialogueHardStopAngle1P_Controls__init` at 0xaa1a0 (crt_init, medium); signature (high): `void INISetting_fDialogueHardStopAngle1P_Controls__init(void)`
+pub const INISetting_fDialogueHardStopAngle1P_Controls__init: u64 = 6423;
+/// `INISetting_fDialogueHardStopAngle3P_Controls__atexit` at 0x179e860 (crt_init, medium); signature (high): `void INISetting_fDialogueHardStopAngle3P_Controls__atexit(void)`
+pub const INISetting_fDialogueHardStopAngle3P_Controls__atexit: u64 = 171656;
+/// `INISetting_fDialogueHardStopAngle3P_Controls__init` at 0xaa220 (crt_init, medium); signature (high): `void INISetting_fDialogueHardStopAngle3P_Controls__init(void)`
+pub const INISetting_fDialogueHardStopAngle3P_Controls__init: u64 = 6424;
+/// `INISetting_fDialogueHeadPitchExaggeration_Audio__atexit` at 0x1743890 (crt_init, medium); signature (high): `void INISetting_fDialogueHeadPitchExaggeration_Audio__atexit(void)`
+pub const INISetting_fDialogueHeadPitchExaggeration_Audio__atexit: u64 = 165783;
+/// `INISetting_fDialogueHeadPitchExaggeration_Audio__init` at 0x12a50 (crt_init, medium); signature (high): `void INISetting_fDialogueHeadPitchExaggeration_Audio__init(void)`
+pub const INISetting_fDialogueHeadPitchExaggeration_Audio__init: u64 = 579;
+/// `INISetting_fDialogueHeadRollExaggeration_Audio__atexit` at 0x17438e0 (crt_init, medium); signature (high): `void INISetting_fDialogueHeadRollExaggeration_Audio__atexit(void)`
+pub const INISetting_fDialogueHeadRollExaggeration_Audio__atexit: u64 = 165784;
+/// `INISetting_fDialogueHeadRollExaggeration_Audio__init` at 0x12ad0 (crt_init, medium); signature (high): `void INISetting_fDialogueHeadRollExaggeration_Audio__init(void)`
+pub const INISetting_fDialogueHeadRollExaggeration_Audio__init: u64 = 580;
+/// `INISetting_fDialogueHeadYawExaggeration_Audio__atexit` at 0x1743930 (crt_init, medium); signature (high): `void INISetting_fDialogueHeadYawExaggeration_Audio__atexit(void)`
+pub const INISetting_fDialogueHeadYawExaggeration_Audio__atexit: u64 = 165785;
+/// `INISetting_fDialogueHeadYawExaggeration_Audio__init` at 0x12b50 (crt_init, medium); signature (high): `void INISetting_fDialogueHeadYawExaggeration_Audio__init(void)`
+pub const INISetting_fDialogueHeadYawExaggeration_Audio__init: u64 = 581;
+/// `INISetting_fDialogueRotationPitchOffset_Dialogue__atexit` at 0x179be40 (crt_init, medium); signature (high): `void INISetting_fDialogueRotationPitchOffset_Dialogue__atexit(void)`
+pub const INISetting_fDialogueRotationPitchOffset_Dialogue__atexit: u64 = 171441;
+/// `INISetting_fDialogueRotationPitchOffset_Dialogue__init` at 0xa51b0 (crt_init, medium); signature (high): `void INISetting_fDialogueRotationPitchOffset_Dialogue__init(void)`
+pub const INISetting_fDialogueRotationPitchOffset_Dialogue__init: u64 = 6227;
+/// `INISetting_fDialogueRotationSecs_Dialogue__atexit` at 0x179be90 (crt_init, medium); signature (high): `void INISetting_fDialogueRotationSecs_Dialogue__atexit(void)`
+pub const INISetting_fDialogueRotationSecs_Dialogue__atexit: u64 = 171442;
+/// `INISetting_fDialogueRotationSecs_Dialogue__init` at 0xa5230 (crt_init, medium); signature (high): `void INISetting_fDialogueRotationSecs_Dialogue__init(void)`
+pub const INISetting_fDialogueRotationSecs_Dialogue__init: u64 = 6228;
+/// `INISetting_fDialogueSoftStopAngle1P_Controls__atexit` at 0x179e8b0 (crt_init, medium); signature (high): `void INISetting_fDialogueSoftStopAngle1P_Controls__atexit(void)`
+pub const INISetting_fDialogueSoftStopAngle1P_Controls__atexit: u64 = 171657;
+/// `INISetting_fDialogueSoftStopAngle1P_Controls__init` at 0xaa2a0 (crt_init, medium); signature (high): `void INISetting_fDialogueSoftStopAngle1P_Controls__init(void)`
+pub const INISetting_fDialogueSoftStopAngle1P_Controls__init: u64 = 6425;
+/// `INISetting_fDialogueSoftStopAngle3P_Controls__atexit` at 0x179e900 (crt_init, medium); signature (high): `void INISetting_fDialogueSoftStopAngle3P_Controls__atexit(void)`
+pub const INISetting_fDialogueSoftStopAngle3P_Controls__atexit: u64 = 171658;
+/// `INISetting_fDialogueSoftStopAngle3P_Controls__init` at 0xaa320 (crt_init, medium); signature (high): `void INISetting_fDialogueSoftStopAngle3P_Controls__init(void)`
+pub const INISetting_fDialogueSoftStopAngle3P_Controls__init: u64 = 6426;
+/// `INISetting_fDirectionalDeadzone_Controls__atexit` at 0x17a8790 (crt_init, medium); signature (high): `void INISetting_fDirectionalDeadzone_Controls__atexit(void)`
+pub const INISetting_fDirectionalDeadzone_Controls__atexit: u64 = 172707;
+/// `INISetting_fDirectionalDeadzone_Controls__init` at 0xbbaf0 (crt_init, medium); signature (high): `void INISetting_fDirectionalDeadzone_Controls__init(void)`
+pub const INISetting_fDirectionalDeadzone_Controls__init: u64 = 7268;
+/// `INISetting_fDistFromPathForFollowingRadiusMult_Pathfinding__atexit` at 0x17b7bf0 (crt_init, medium); signature (high): `void INISetting_fDistFromPathForFollowingRadiusMult_Pathfinding__atexit(void)`
+pub const INISetting_fDistFromPathForFollowingRadiusMult_Pathfinding__atexit: u64 = 174248;
+/// `INISetting_fDistFromPathForFollowingRadiusMult_Pathfinding__init` at 0xf5d30 (crt_init, medium); signature (high): `void INISetting_fDistFromPathForFollowingRadiusMult_Pathfinding__init(void)`
+pub const INISetting_fDistFromPathForFollowingRadiusMult_Pathfinding__init: u64 = 10098;
+/// `INISetting_fDistanceMultiplier_LOD__atexit` at 0x173ef60 (crt_init, medium); signature (high): `void INISetting_fDistanceMultiplier_LOD__atexit(void)`
+pub const INISetting_fDistanceMultiplier_LOD__atexit: u64 = 165463;
+/// `INISetting_fDistanceMultiplier_LOD__init` at 0xbc70 (crt_init, medium); signature (high): `void INISetting_fDistanceMultiplier_LOD__init(void)`
+pub const INISetting_fDistanceMultiplier_LOD__init: u64 = 268;
+/// `INISetting_fDragonCameraDollyTime_Camera__atexit` at 0x17908f0 (crt_init, medium); signature (high): `void INISetting_fDragonCameraDollyTime_Camera__atexit(void)`
+pub const INISetting_fDragonCameraDollyTime_Camera__atexit: u64 = 170554;
+/// `INISetting_fDragonCameraDollyTime_Camera__init` at 0x90e30 (crt_init, medium); signature (high): `void INISetting_fDragonCameraDollyTime_Camera__init(void)`
+pub const INISetting_fDragonCameraDollyTime_Camera__init: u64 = 5323;
+/// `INISetting_fDragonLandingForPlayerNavMeshSize_GENERAL__atexit` at 0x179a300 (crt_init, medium); signature (high): `void INISetting_fDragonLandingForPlayerNavMeshSize_GENERAL__atexit(void)`
+pub const INISetting_fDragonLandingForPlayerNavMeshSize_GENERAL__atexit: u64 = 171344;
+/// `INISetting_fDragonLandingForPlayerNavMeshSize_GENERAL__init` at 0xa3920 (crt_init, medium); signature (high): `void INISetting_fDragonLandingForPlayerNavMeshSize_GENERAL__init(void)`
+pub const INISetting_fDragonLandingForPlayerNavMeshSize_GENERAL__init: u64 = 6150;
+/// `INISetting_fDragonLandingForPlayerSearchDist_GENERAL__atexit` at 0x179a350 (crt_init, medium); signature (high): `void INISetting_fDragonLandingForPlayerSearchDist_GENERAL__atexit(void)`
+pub const INISetting_fDragonLandingForPlayerSearchDist_GENERAL__atexit: u64 = 171345;
+/// `INISetting_fDragonLandingForPlayerSearchDist_GENERAL__init` at 0xa39a0 (crt_init, medium); signature (high): `void INISetting_fDragonLandingForPlayerSearchDist_GENERAL__init(void)`
+pub const INISetting_fDragonLandingForPlayerSearchDist_GENERAL__init: u64 = 6151;
+/// `INISetting_fDragonMaxAngleBeforeTurn_Camera__atexit` at 0x1790940 (crt_init, medium); signature (high): `void INISetting_fDragonMaxAngleBeforeTurn_Camera__atexit(void)`
+pub const INISetting_fDragonMaxAngleBeforeTurn_Camera__atexit: u64 = 170555;
+/// `INISetting_fDragonMaxAngleBeforeTurn_Camera__init` at 0x90eb0 (crt_init, medium); signature (high): `void INISetting_fDragonMaxAngleBeforeTurn_Camera__init(void)`
+pub const INISetting_fDragonMaxAngleBeforeTurn_Camera__init: u64 = 5324;
 /// `INISetting_fDriveGain_GrabIK__atexit` at 0x17b4420 (crt_init, medium); signature (high): `void INISetting_fDriveGain_GrabIK__atexit(void)`
 pub const INISetting_fDriveGain_GrabIK__atexit: u64 = 173893;
 /// `INISetting_fDriveGain_GrabIK__init` at 0xebb20 (crt_init, medium); signature (high): `void INISetting_fDriveGain_GrabIK__init(void)`
@@ -8285,125 +8411,3 @@ pub const InvokeFunctionField38AndReleaseSharedArg: u64 = 444234;
 pub const InvokeFunctionObjectWithArgs: u64 = 83453;
 /// `InvokeFunctionPointerWithDerefArgs` at 0x131110 (decompiler, medium); signature (untiered): `undefined InvokeFunctionPointerWithDerefArgs(undefined8 * param_1, undefined8 * param_2, undefined4 * param_3, undefined8 param_4, undefined4 * param_5)`
 pub const InvokeFunctionPointerWithDerefArgs: u64 = 523362;
-/// `InvokeFunctionPointerWithDerefArgs_2` at 0x131190 (decompiler, medium); signature (untiered): `undefined InvokeFunctionPointerWithDerefArgs_2(undefined8 * param_1, undefined8 * param_2, undefined4 * param_3, undefined8 param_4, undefined4 * param_5)`
-pub const InvokeFunctionPointerWithDerefArgs_2: u64 = 523363;
-/// `InvokeFunctionPointerWithDerefArgs_3` at 0x1311f0 (decompiler, medium); signature (untiered): `undefined InvokeFunctionPointerWithDerefArgs_3(undefined8 * param_1, undefined8 * param_2, undefined4 * param_3, undefined8 param_4, undefined4 * param_5)`
-pub const InvokeFunctionPointerWithDerefArgs_3: u64 = 523364;
-/// `InvokeFunctionPointerWithDerefArgs_4` at 0x131250 (decompiler, medium); signature (untiered): `undefined InvokeFunctionPointerWithDerefArgs_4(undefined8 * param_1, undefined8 * param_2, undefined4 * param_3, undefined8 param_4, undefined4 * param_5)`
-pub const InvokeFunctionPointerWithDerefArgs_4: u64 = 523365;
-/// `InvokeFunctionPointerWithDerefArgs_5` at 0x132d00 (decompiler, medium); signature (untiered): `undefined InvokeFunctionPointerWithDerefArgs_5(undefined * UNRECOVERED_JUMPTABLE, undefined8 * param_2, undefined4 * param_3, undefined8 param_4, undefined4 * param_5)`
-pub const InvokeFunctionPointerWithDerefArgs_5: u64 = 523371;
-/// `InvokeFunctionPointerWithDerefArgs_6` at 0x133b40 (decompiler, medium); signature (untiered): `undefined InvokeFunctionPointerWithDerefArgs_6(undefined * UNRECOVERED_JUMPTABLE, undefined8 * param_2, undefined4 * param_3, undefined8 param_4, undefined4 * param_5)`
-pub const InvokeFunctionPointerWithDerefArgs_6: u64 = 441245;
-/// `InvokeFunctionPointerWithDerefArgs_7` at 0x13fa30 (decompiler, medium); signature (untiered): `undefined InvokeFunctionPointerWithDerefArgs_7(undefined * UNRECOVERED_JUMPTABLE, undefined8 * param_2, undefined4 * param_3, undefined8 param_4, undefined4 * param_5)`
-pub const InvokeFunctionPointerWithDerefArgs_7: u64 = 441100;
-/// `InvokeFunctionPointerWithDereferencedArgs` at 0x142c70 (decompiler, medium); signature (untiered): `undefined InvokeFunctionPointerWithDereferencedArgs(undefined * UNRECOVERED_JUMPTABLE, undefined8 * param_2, undefined4 * param_3, undefined8 param_4, undefined4 * param_5)`
-pub const InvokeFunctionPointerWithDereferencedArgs: u64 = 523457;
-/// `InvokeFunctionPointerWithDereferencedArgs_2` at 0x144f30 (decompiler, medium); signature (untiered): `undefined InvokeFunctionPointerWithDereferencedArgs_2(undefined * UNRECOVERED_JUMPTABLE, undefined8 * param_2, undefined4 * param_3, undefined8 param_4, undefined4 * param_5)`
-pub const InvokeFunctionPointerWithDereferencedArgs_2: u64 = 441373;
-/// `InvokeFunctionWithDerefArgs` at 0x131280 (decompiler, medium); signature (untiered): `undefined InvokeFunctionWithDerefArgs(undefined * UNRECOVERED_JUMPTABLE, undefined8 * param_2, undefined4 * param_3, undefined8 param_4, undefined4 * param_5)`
-pub const InvokeFunctionWithDerefArgs: u64 = 523366;
-/// `InvokeFunctionWithDerefArgs_2` at 0x1312b0 (decompiler, medium); signature (untiered): `undefined InvokeFunctionWithDerefArgs_2(undefined * UNRECOVERED_JUMPTABLE, undefined8 * param_2, undefined4 * param_3, undefined8 param_4, undefined4 * param_5)`
-pub const InvokeFunctionWithDerefArgs_2: u64 = 523367;
-/// `InvokeFunctorWithResolvedRefHandle` at 0x2bfcc0 (decompiler, medium); signature (untiered): `ulonglong InvokeFunctorWithResolvedRefHandle(longlong * param_1, uint * param_2, undefined8 param_3, undefined8 param_4)`
-pub const InvokeFunctorWithResolvedRefHandle: u64 = 19030;
-/// `InvokeGlobal410621` at 0xf25ea0 (decompiler, medium); signature (untiered): `undefined InvokeGlobal410621(longlong param_1)`
-pub const InvokeGlobal410621: u64 = 71994;
-/// `InvokeGlobal503840Callback80` at 0x6061a0 (decompiler, medium); signature (untiered): `undefined InvokeGlobal503840Callback80(undefined4 param_1, undefined8 param_2)`
-pub const InvokeGlobal503840Callback80: u64 = 416373;
-/// `InvokeGlobalCallbackIfSet` at 0x10542b0 (decompiler, medium); signature (medium): `undefined InvokeGlobalCallbackIfSet(void)`
-pub const InvokeGlobalCallbackIfSet: u64 = 78008;
-/// `InvokeGlobalCallbackWithItemNames` at 0x15c17a0 (decompiler, medium); signature (untiered): `undefined InvokeGlobalCallbackWithItemNames(undefined4 param_1, longlong * param_2, undefined1 * * param_3, undefined8 * param_4)`
-pub const InvokeGlobalCallbackWithItemNames: u64 = 453944;
-/// `InvokeGlobalStringCallback` at 0x15c1cc0 (decompiler, medium); signature (untiered): `undefined InvokeGlobalStringCallback(undefined4 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const InvokeGlobalStringCallback: u64 = 453948;
-/// `InvokeHandlerChainForType` at 0x129e60 (decompiler, medium); signature (untiered): `undefined InvokeHandlerChainForType(int * param_1, int param_2, undefined8 param_3, undefined4 param_4)`
-pub const InvokeHandlerChainForType: u64 = 440643;
-/// `InvokeHandlersForTypeInTable505637` at 0x12a390 (decompiler, medium); signature (untiered): `undefined1 InvokeHandlersForTypeInTable505637(int param_1, undefined8 param_2, undefined4 param_3)`
-pub const InvokeHandlersForTypeInTable505637: u64 = 440652;
-/// `InvokeHeldObjectVfunc1` at 0xc5b450 (decompiler, high); signature (untiered): `undefined InvokeHeldObjectVfunc1(undefined8 * param_1)`
-pub const InvokeHeldObjectVfunc1: u64 = 65854;
-/// `InvokeHeldObjectVfunc10` at 0xc5b540 (decompiler, high); signature (untiered): `undefined InvokeHeldObjectVfunc10(undefined8 * param_1)`
-pub const InvokeHeldObjectVfunc10: u64 = 65859;
-/// `InvokeHeldObjectVfunc11` at 0xc5b550 (decompiler, high); signature (untiered): `undefined InvokeHeldObjectVfunc11(undefined8 * param_1)`
-pub const InvokeHeldObjectVfunc11: u64 = 65860;
-/// `InvokeHeldObjectVfunc2` at 0xc5b400 (decompiler, medium); signature (untiered): `undefined InvokeHeldObjectVfunc2(undefined8 * param_1)`
-pub const InvokeHeldObjectVfunc2: u64 = 65851;
-/// `InvokeHideDialogueText` at 0x92b040 (decompiler, medium); signature (untiered): `undefined InvokeHideDialogueText(longlong param_1)`
-pub const InvokeHideDialogueText: u64 = 51514;
-/// `InvokeIfQuadShapeIntersectsSphere` at 0x2b3c30 (decompiler, medium); signature (untiered): `undefined InvokeIfQuadShapeIntersectsSphere(longlong param_1, int param_2, float * param_3, undefined * param_4, undefined8 param_5)`
-pub const InvokeIfQuadShapeIntersectsSphere: u64 = 18799;
-/// `InvokeInlineEntryDeleters` at 0x1382b50 (decompiler, medium); signature (untiered): `undefined InvokeInlineEntryDeleters(longlong param_1)`
-pub const InvokeInlineEntryDeleters: u64 = 95920;
-/// `InvokeInvalidateListData` at 0x905700 (decompiler, medium); signature (untiered): `undefined InvokeInvalidateListData(undefined8 * param_1)`
-pub const InvokeInvalidateListData: u64 = 51028;
-/// `InvokeInvalidateListData_2` at 0x956e60 (decompiler, medium); signature (untiered): `undefined InvokeInvalidateListData_2(undefined8 * param_1)`
-pub const InvokeInvalidateListData_2: u64 = 52097;
-/// `InvokeLockedCallbackList` at 0xd759b0 (decompiler, medium); signature (untiered): `undefined InvokeLockedCallbackList(longlong param_1)`
-pub const InvokeLockedCallbackList: u64 = 85097;
-/// `InvokeMemberFunction2D0Or2D8` at 0xd364b0 (decompiler, medium); signature (untiered): `undefined InvokeMemberFunction2D0Or2D8(longlong * param_1, int param_2, longlong param_3, uint param_4)`
-pub const InvokeMemberFunction2D0Or2D8: u64 = 83548;
-/// `InvokeMethodOnEachMemberArrayElement` at 0xdb8f90 (decompiler, medium); signature (untiered): `undefined8 InvokeMethodOnEachMemberArrayElement(longlong * param_1, longlong * param_2, longlong * param_3, longlong * param_4)`
-pub const InvokeMethodOnEachMemberArrayElement: u64 = 86277;
-/// `InvokeMethodOnMemberArrayAtIndex` at 0xdc0cf0 (decompiler, medium); signature (untiered): `undefined InvokeMethodOnMemberArrayAtIndex(longlong param_1, longlong * param_2, undefined4 param_3, int param_4, undefined8 param_5, undefined4 param_6, undefined4 param_7, undefined1 param_8)`
-pub const InvokeMethodOnMemberArrayAtIndex: u64 = 86454;
-/// `InvokeNativeCallback68` at 0xd170b0 (decompiler, medium); signature (untiered): `undefined InvokeNativeCallback68(longlong param_1, longlong param_2)`
-pub const InvokeNativeCallback68: u64 = 83103;
-/// `InvokeNativeFunctionWithArgs` at 0xd32620 (decompiler, medium); signature (untiered): `undefined1 * InvokeNativeFunctionWithArgs(longlong * param_1, undefined * param_2, longlong * param_3)`
-pub const InvokeNativeFunctionWithArgs: u64 = 83451;
-/// `InvokeOnDataWithString` at 0xd88200 (decompiler, medium); signature (untiered): `undefined InvokeOnDataWithString(longlong param_1, longlong param_2, longlong * param_3)`
-pub const InvokeOnDataWithString: u64 = 85500;
-/// `InvokeOnLoadWithBoolArg` at 0xd883f0 (decompiler, medium); signature (untiered): `undefined InvokeOnLoadWithBoolArg(longlong param_1, longlong param_2, undefined1 param_3)`
-pub const InvokeOnLoadWithBoolArg: u64 = 85502;
-/// `InvokeOnResize` at 0xdb1060 (decompiler, medium); signature (untiered): `undefined InvokeOnResize(longlong param_1)`
-pub const InvokeOnResize: u64 = 86077;
-/// `InvokeOnceForEntriesAboveThreshold` at 0xba8e10 (decompiler, medium); signature (untiered): `undefined InvokeOnceForEntriesAboveThreshold(longlong param_1, float param_2)`
-pub const InvokeOnceForEntriesAboveThreshold: u64 = 62831;
-/// `InvokeOrQueueCallback` at 0x60f560 (decompiler, medium); signature (untiered): `undefined InvokeOrQueueCallback(longlong * param_1, longlong * param_2)`
-pub const InvokeOrQueueCallback: u64 = 442534;
-/// `InvokePairCallbacksInBothOrders` at 0xf23b90 (decompiler, medium); signature (untiered): `undefined8 InvokePairCallbacksInBothOrders(longlong param_1, longlong * param_2, uint param_3, uint param_4)`
-pub const InvokePairCallbacksInBothOrders: u64 = 71952;
-/// `InvokePendingCallbackOnGlobal402773` at 0x649a60 (decompiler, medium); signature (untiered): `undefined InvokePendingCallbackOnGlobal402773(undefined4 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const InvokePendingCallbackOnGlobal402773: u64 = 36364;
-/// `InvokePendingCallbackWithResult` at 0x649b50 (decompiler, medium); signature (untiered): `undefined InvokePendingCallbackWithResult(longlong param_1, undefined4 param_2, undefined8 param_3, undefined8 param_4)`
-pub const InvokePendingCallbackWithResult: u64 = 36369;
-/// `InvokePendingCallbackWithResultAndFlag` at 0x6497b0 (decompiler, medium); signature (untiered): `undefined InvokePendingCallbackWithResultAndFlag(longlong param_1, undefined4 param_2, undefined8 param_3, undefined8 param_4)`
-pub const InvokePendingCallbackWithResultAndFlag: u64 = 36365;
-/// `InvokePendingOnVKBTextEntered` at 0x95dfe0 (decompiler, medium); signature (medium): `undefined InvokePendingOnVKBTextEntered(void)`
-pub const InvokePendingOnVKBTextEntered: u64 = 52165;
-/// `InvokeProxyAt390IfSet` at 0x146f920 (decompiler, medium); signature (untiered): `undefined InvokeProxyAt390IfSet(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const InvokeProxyAt390IfSet: u64 = 452976;
-/// `InvokeRigidBodyVfunc41ForLayers` at 0x108d610 (decompiler, medium); signature (untiered): `undefined InvokeRigidBodyVfunc41ForLayers(longlong param_1)`
-pub const InvokeRigidBodyVfunc41ForLayers: u64 = 78914;
-/// `InvokeSelectCategory` at 0x942370 (decompiler, medium); signature (untiered): `undefined8 InvokeSelectCategory(undefined8 * param_1, longlong * param_2)`
-pub const InvokeSelectCategory: u64 = 51835;
-/// `InvokeSetMotionTypeCallbacksAndCompact` at 0xb6a420 (decompiler, medium); signature (untiered): `undefined InvokeSetMotionTypeCallbacksAndCompact(longlong param_1, undefined8 param_2)`
-pub const InvokeSetMotionTypeCallbacksAndCompact: u64 = 61762;
-/// `InvokeSetMotionTypeCallbacksOfField2B8` at 0xb68560 (decompiler, medium); signature (medium): `undefined InvokeSetMotionTypeCallbacksOfField2B8(longlong param_1)`
-pub const InvokeSetMotionTypeCallbacksOfField2B8: u64 = 61705;
-/// `InvokeShowDialogueText` at 0x92af00 (decompiler, medium); signature (untiered): `undefined InvokeShowDialogueText(longlong param_1, undefined8 * param_2)`
-pub const InvokeShowDialogueText: u64 = 51513;
-/// `InvokeShowGamerTagAndIcon` at 0x95c2c0 (decompiler, medium); signature (untiered): `undefined InvokeShowGamerTagAndIcon(longlong param_1, char param_2)`
-pub const InvokeShowGamerTagAndIcon: u64 = 52147;
-/// `InvokeStoredCallable4` at 0x123390 (decompiler, medium); signature (untiered): `undefined InvokeStoredCallable4(undefined8 * param_1, undefined8 * param_2, undefined4 * param_3, undefined8 param_4, undefined4 * param_5)`
-pub const InvokeStoredCallable4: u64 = 523251;
-/// `InvokeStoredCallable4_2` at 0x123480 (decompiler, medium); signature (untiered): `undefined InvokeStoredCallable4_2(undefined8 * param_1, undefined8 * param_2, undefined4 * param_3, undefined8 param_4, undefined4 * param_5)`
-pub const InvokeStoredCallable4_2: u64 = 523252;
-/// `InvokeStoredFunctionPointer` at 0x132c70 (decompiler, medium); signature (untiered): `undefined InvokeStoredFunctionPointer(undefined8 * param_1, undefined8 * param_2, undefined4 * param_3, undefined8 param_4, undefined4 * param_5)`
-pub const InvokeStoredFunctionPointer: u64 = 523369;
-/// `InvokeStoredFunctionPointer_10` at 0x144f00 (decompiler, medium); signature (untiered): `undefined InvokeStoredFunctionPointer_10(undefined8 * param_1, undefined8 * param_2, undefined4 * param_3, undefined8 param_4, undefined4 * param_5)`
-pub const InvokeStoredFunctionPointer_10: u64 = 441372;
-/// `InvokeStoredFunctionPointer_2` at 0x132cd0 (decompiler, medium); signature (untiered): `undefined InvokeStoredFunctionPointer_2(undefined8 * param_1, undefined8 * param_2, undefined4 * param_3, undefined8 param_4, undefined4 * param_5)`
-pub const InvokeStoredFunctionPointer_2: u64 = 523370;
-/// `InvokeStoredFunctionPointer_3` at 0x133a50 (decompiler, medium); signature (untiered): `undefined InvokeStoredFunctionPointer_3(undefined8 * param_1, undefined8 * param_2, undefined4 * param_3, undefined8 param_4, undefined4 * param_5)`
-pub const InvokeStoredFunctionPointer_3: u64 = 441243;
-/// `InvokeStoredFunctionPointer_4` at 0x133ae0 (decompiler, medium); signature (untiered): `undefined InvokeStoredFunctionPointer_4(undefined8 * param_1, undefined8 * param_2, undefined4 * param_3, undefined8 param_4, undefined4 * param_5)`
-pub const InvokeStoredFunctionPointer_4: u64 = 441244;
-/// `InvokeStoredFunctionPointer_5` at 0x13f960 (decompiler, medium); signature (untiered): `undefined InvokeStoredFunctionPointer_5(undefined8 * param_1, undefined8 * param_2, undefined4 * param_3, undefined8 param_4, undefined4 * param_5)`
-pub const InvokeStoredFunctionPointer_5: u64 = 441098;
-/// `InvokeStoredFunctionPointer_6` at 0x13f9f0 (decompiler, medium); signature (untiered): `undefined InvokeStoredFunctionPointer_6(undefined8 * param_1, undefined8 * param_2, undefined4 * param_3, undefined8 param_4, undefined4 * param_5)`
-pub const InvokeStoredFunctionPointer_6: u64 = 441099;
-/// `InvokeStoredFunctionPointer_7` at 0x142b80 (decompiler, medium); signature (untiered): `undefined InvokeStoredFunctionPointer_7(undefined8 * param_1, undefined8 * param_2, undefined4 * param_3, undefined8 param_4, undefined4 * param_5)`
-pub const InvokeStoredFunctionPointer_7: u64 = 523455;
-/// `InvokeStoredFunctionPointer_8` at 0x142c10 (decompiler, medium); signature (untiered): `undefined InvokeStoredFunctionPointer_8(undefined8 * param_1, undefined8 * param_2, undefined4 * param_3, undefined8 param_4, undefined4 * param_5)`
-pub const InvokeStoredFunctionPointer_8: u64 = 523456;

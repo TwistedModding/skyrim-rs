@@ -3,6 +3,220 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `TESLevItem::vfunc_18` at 0x2721b0 (rtti, high); signature (low): `undefined vfunc_18(TESLevItem * this, longlong param_1, ulonglong param_2, undefined * param_3)`
+pub const TESLevItem__vfunc_18: u64 = 17559;
+/// `TESLevItem::vfunc_19` at 0x272030 (rtti, high); signature (low): `undefined vfunc_19(TESLevItem * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+pub const TESLevItem__vfunc_19: u64 = 17553;
+/// `TESLevItem::vfunc_6` at 0x271c30 (rtti, high); signature (low): `undefined8 vfunc_6(TESLevItem * this, longlong param_1, size_t param_2, undefined1 * param_3)`
+pub const TESLevItem__vfunc_6: u64 = 17552;
+/// `TESLevSpell::LoadGame` at 0x272f20 (slot_propagation, medium); signature (untiered): `undefined LoadGame(TESLevSpell * this, longlong param_1)`
+pub const TESLevSpell__LoadGame: u64 = 17580;
+/// `TESLevSpell::SaveGame` at 0x272ee0 (slot_propagation, medium); signature (untiered): `undefined SaveGame(TESLevSpell * this, longlong param_1)`
+pub const TESLevSpell__SaveGame: u64 = 17579;
+/// `TESLevSpell::TESLeveledList_vdtor` at 0x273274 (slot_propagation, medium); signature (high): `undefined TESLeveledList_vdtor(TESLevSpell * this)`
+pub const TESLevSpell__TESLeveledList_vdtor: u64 = 17585;
+/// `TESLevSpell::TESLeveledList_vfunc_7` at 0x272ec0 (rtti, high); signature (low): `undefined1 TESLeveledList_vfunc_7(TESLevSpell * this, char param_1)`
+pub const TESLevSpell__TESLeveledList_vfunc_7: u64 = 17578;
+/// `TESLevSpell::ctor` at 0x272440 (layout_inference, high); signature (high): `TESLevSpell * ctor(TESLevSpell * this)`
+pub const TESLevSpell__ctor: u64 = 17571;
+/// `TESLevSpell::dtor` at 0x2724b0 (layout_inference, high); signature (high): `undefined dtor(TESLevSpell * this)`
+pub const TESLevSpell__dtor: u64 = 17572;
+/// `TESLevSpell::vdtor` at 0x273310 (layout_inference, medium); signature (low): `TESLevSpell * vdtor(TESLevSpell * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+pub const TESLevSpell__vdtor: u64 = 17587;
+/// `TESLevSpell::vfunc_18` at 0x272f60 (rtti, high); signature (low): `undefined vfunc_18(TESLevSpell * this, longlong param_1, ulonglong param_2, undefined * param_3)`
+pub const TESLevSpell__vfunc_18: u64 = 17581;
+/// `TESLevSpell::vfunc_19` at 0x272910 (rtti, high); signature (low): `undefined vfunc_19(TESLevSpell * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+pub const TESLevSpell__vfunc_19: u64 = 17574;
+/// `TESLevSpell::vfunc_6` at 0x272510 (rtti, high); signature (low): `undefined8 vfunc_6(TESLevSpell * this, longlong param_1, size_t param_2, undefined1 * param_3)`
+pub const TESLevSpell__vfunc_6: u64 = 17573;
+/// `TESLeveledList::ctor` at 0x1e87e0 (layout_inference, medium); signature (high): `TESLeveledList * ctor(TESLeveledList * this)`
+pub const TESLeveledList__ctor: u64 = 14739;
+/// `TESLeveledList::dtor` at 0x1e8810 (layout_inference, high); signature (high): `undefined dtor(TESLeveledList * this)`
+pub const TESLeveledList__dtor: u64 = 14740;
+/// `TESLeveledList::vdtor` at 0x1ea760 (layout_inference, medium); signature (low): `TESLeveledList * vdtor(TESLeveledList * this, ulonglong param_1, longlong param_2, undefined * param_3)`
+pub const TESLeveledList__vdtor: u64 = 14770;
+/// `TESLeveledList::vfunc_1` at 0x1e8850 (rtti, medium); signature (high): `undefined vfunc_1(TESLeveledList * this)`
+pub const TESLeveledList__vfunc_1: u64 = 14741;
+/// `TESLeveledList::vfunc_2` at 0x1e8870 (rtti, medium); signature (untiered): `undefined vfunc_2(longlong param_1, undefined8 param_2, longlong param_3, undefined * param_4)`
+pub const TESLeveledList__vfunc_2: u64 = 14742;
+/// `TESLeveledList::vfunc_3` at 0x1e9ae0 (rtti, medium); signature (low): `undefined vfunc_3(TESLeveledList * this, undefined8 param_1)`
+pub const TESLeveledList__vfunc_3: u64 = 14760;
+/// `TESLeveledList::vfunc_4` at 0x1e8880 (rtti, medium); signature (high): `uint vfunc_4(TESLeveledList * this)`
+pub const TESLeveledList__vfunc_4: u64 = 14743;
+/// `TESLeveledList::vfunc_5` at 0x1e88f0 (rtti, medium); signature (high): `byte vfunc_5(TESLeveledList * this)`
+pub const TESLeveledList__vfunc_5: u64 = 14746;
+/// `TESLeveledList::vfunc_6` at 0x1ea840 (rtti, medium); signature (low): `undefined8 vfunc_6(void)`
+pub const TESLeveledList__vfunc_6: u64 = 14773;
+/// `TESLoadScreen::ctor` at 0x340dd0 (layout_inference, high); signature (low): `TESLoadScreen * ctor(TESLoadScreen * this, undefined8 param_1, uint * param_2, longlong * param_3)`
+pub const TESLoadScreen__ctor: u64 = 21826;
+/// `TESLoadScreen::dtor` at 0x340e30 (layout_inference, high); signature (low): `undefined dtor(TESLoadScreen * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+pub const TESLoadScreen__dtor: u64 = 21827;
+/// `TESLoadScreen::vdtor` at 0x3417e0 (layout_inference, medium); signature (low): `TESLoadScreen * vdtor(TESLoadScreen * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const TESLoadScreen__vdtor: u64 = 21841;
+/// `TESLoadScreen::vfunc_19` at 0x3414c0 (rtti, high); signature (low): `undefined vfunc_19(TESLoadScreen * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+pub const TESLoadScreen__vfunc_19: u64 = 21831;
+/// `TESLoadScreen::vfunc_4` at 0x340eb0 (rtti, high); signature (low): `undefined vfunc_4(void)`
+pub const TESLoadScreen__vfunc_4: u64 = 21828;
+/// `TESLoadScreen::vfunc_5` at 0x340ec0 (rtti, high); signature (low): `undefined vfunc_5(TESLoadScreen * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+pub const TESLoadScreen__vfunc_5: u64 = 21829;
+/// `TESLoadScreen::vfunc_6` at 0x340f00 (rtti, high); signature (low): `undefined8 vfunc_6(TESLoadScreen * this, longlong param_1, ulonglong param_2, char * param_3)`
+pub const TESLoadScreen__vfunc_6: u64 = 21830;
+/// `TESLoadScreen::vfunc_6_sub0` at 0x341730 (callgraph, medium); signature (untiered): `undefined8 * vfunc_6_sub0(undefined8 * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const TESLoadScreen__vfunc_6_sub0: u64 = 21839;
+/// `TESModel::ctor` at 0x1ea8e0 (layout_inference, medium); signature (low): `TESModel * ctor(TESModel * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+pub const TESModel__ctor: u64 = 14775;
+/// `TESModel::dtor` at 0x1dfc20 (callgraph, high); signature (untiered): `undefined dtor(TESModel * this, undefined8 param_1, longlong param_2, undefined1 * param_3)`
+pub const TESModel__dtor: u64 = 14503;
+/// `TESModel::dtor` at 0x1ea9e0 (layout_inference, high); signature (low): `undefined dtor(TESModel * this, undefined8 param_1, longlong param_2, undefined1 * param_3)`
+pub const TESModel__dtor_2: u64 = 14776;
+/// `TESModel::dtor` at 0x38af50 (callgraph, high); signature (untiered): `undefined dtor(TESModel * this, undefined8 param_1, longlong param_2, undefined1 * param_3)`
+pub const TESModel__dtor_3: u64 = 23455;
+/// `TESModel::vdtor` at 0x1ec350 (slot_propagation, medium); signature (low): `TESModel * vdtor(TESModel * this, uint param_1, undefined8 param_2, undefined1 * param_3)`
+pub const TESModel__vdtor: u64 = 14806;
+/// `TESModel::vfunc_1` at 0x1eaaf0 (rtti, medium); signature (low): `undefined vfunc_1(TESModel * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+pub const TESModel__vfunc_1: u64 = 14777;
+/// `TESModel::vfunc_2` at 0x1eabc0 (rtti, medium); signature (low): `undefined vfunc_2(TESModel * this, undefined8 param_1, longlong param_2, undefined1 * param_3)`
+pub const TESModel__vfunc_2: u64 = 14778;
+/// `TESModel::vfunc_3` at 0x1eacb0 (rtti, medium); signature (low): `undefined vfunc_3(TESModel * this, undefined8 param_1)`
+pub const TESModel__vfunc_3: u64 = 14779;
+/// `TESModel::vfunc_4` at 0x146780 (rtti, medium); signature (high): `undefined8 vfunc_4(TESModel * this)`
+pub const TESModel__vfunc_4: u64 = 10886;
+/// `TESModel::vfunc_5` at 0x1ead10 (rtti, medium); signature (low): `undefined vfunc_5(TESModel * this, char * param_1)`
+pub const TESModel__vfunc_5: u64 = 14780;
+/// `TESModel::vfunc_6` at 0x1dfd80 (rtti, medium); signature (low): `undefined8 vfunc_6(void)`
+pub const TESModel__vfunc_6: u64 = 14506;
+/// `TESModelDB::TESQueuedHandles::BSResource_IEntryDB_PostFlushNotify_vdtor` at 0x152460 (slot_propagation, medium); signature (high): `undefined BSResource_IEntryDB_PostFlushNotify_vdtor(TESQueuedHandles * this)`
+pub const TESModelDB__TESQueuedHandles__BSResource_IEntryDB_PostFlushNotify_vdtor: u64 = 11372;
+/// `TESModelDB::TESQueuedHandles::dtor` at 0x152110 (layout_inference, high); signature (high): `undefined dtor(TESQueuedHandles * this)`
+pub const TESModelDB__TESQueuedHandles__dtor: u64 = 11359;
+/// `TESModelDB::TESQueuedHandles::dtor` at 0x192ee0 (layout_inference, high); signature (high): `undefined dtor(TESQueuedHandles * this)`
+pub const TESModelDB__TESQueuedHandles__dtor_2: u64 = 13006;
+/// `TESModelDB::TESQueuedHandles::vdtor` at 0x1528e0 (layout_inference, medium); signature (low): `TESQueuedHandles * vdtor(TESQueuedHandles * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+pub const TESModelDB__TESQueuedHandles__vdtor: u64 = 11388;
+/// `TESModelDB::_anon_42B16DF0::TESProcessor::vfunc_0` at 0x1d1880 (rtti, high); signature (low): `TESProcessor * vfunc_0(TESProcessor * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+pub const TESModelDB___anon_42B16DF0__TESProcessor__vfunc_0: u64 = 14090;
+/// `TESModelDB::_anon_42B16DF0::TESProcessor::vfunc_1` at 0x1d18c0 (rtti, high); signature (low): `undefined vfunc_1(TESProcessor * this, undefined4 * param_1, undefined8 param_2, longlong * param_3, undefined4 * param_4)`
+pub const TESModelDB___anon_42B16DF0__TESProcessor__vfunc_1: u64 = 14091;
+/// `TESModelDB::_anon_42B16DF0::TESProcessor::vfunc_1_sub0` at 0x223940 (callgraph, medium); signature (untiered): `undefined8 vfunc_1_sub0(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const TESModelDB___anon_42B16DF0__TESProcessor__vfunc_1_sub0: u64 = 15874;
+/// `TESModelDB::_anon_42B16DF0::TESProcessor::vfunc_1_sub1` at 0x25bbb0 (callgraph, medium); signature (untiered): `undefined vfunc_1_sub1(longlong param_1)`
+pub const TESModelDB___anon_42B16DF0__TESProcessor__vfunc_1_sub1: u64 = 16816;
+/// `TESModelLODList::ctor` at 0x1ec530 (layout_inference, medium); signature (high): `TESModelLODList * ctor(TESModelLODList * this)`
+pub const TESModelLODList__ctor: u64 = 14810;
+/// `TESModelLODList::dtor` at 0x1ec590 (layout_inference, high); signature (low): `undefined dtor(TESModelLODList * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+pub const TESModelLODList__dtor: u64 = 14811;
+/// `TESModelLODList::vdtor` at 0x1ecb00 (layout_inference, medium); signature (low): `TESModelLODList * vdtor(TESModelLODList * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const TESModelLODList__vdtor: u64 = 14818;
+/// `TESModelLODList::vfunc_1` at 0x1ec610 (rtti, high); signature (low): `undefined vfunc_1(void)`
+pub const TESModelLODList__vfunc_1: u64 = 14812;
+/// `TESModelLODList::vfunc_2` at 0x1ec620 (rtti, high); signature (untiered): `undefined vfunc_2(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const TESModelLODList__vfunc_2: u64 = 14813;
+/// `TESModelLODList::vfunc_3` at 0x1ec8e0 (rtti, high); signature (low): `undefined vfunc_3(TESModelLODList * this, undefined8 param_1)`
+pub const TESModelLODList__vfunc_3: u64 = 14816;
+/// `TESModelPSA::vdtor` at 0x38af60 (slot_propagation, medium); signature (low): `TESModelPSA * vdtor(TESModelPSA * this, ulonglong param_1, longlong param_2, undefined1 * param_3)`
+pub const TESModelPSA__vdtor: u64 = 23456;
+/// `TESModelRDT::vdtor` at 0x1dfd40 (slot_propagation, medium); signature (low): `TESModelRDT * vdtor(TESModelRDT * this, ulonglong param_1, longlong param_2, undefined1 * param_3)`
+pub const TESModelRDT__vdtor: u64 = 14505;
+/// `TESModelTextureSwap::ctor` at 0x1ecce0 (layout_inference, medium); signature (high): `TESModelTextureSwap * ctor(TESModelTextureSwap * this)`
+pub const TESModelTextureSwap__ctor: u64 = 14822;
+/// `TESModelTextureSwap::dtor` at 0x1ecd30 (layout_inference, high); signature (high): `undefined dtor(TESModelTextureSwap * this)`
+pub const TESModelTextureSwap__dtor: u64 = 14823;
+/// `TESModelTextureSwap::vdtor` at 0x1edef0 (layout_inference, medium); signature (low): `TESModelTextureSwap * vdtor(TESModelTextureSwap * this, ulonglong param_1, longlong param_2, undefined1 * param_3)`
+pub const TESModelTextureSwap__vdtor: u64 = 14847;
+/// `TESModelTextureSwap::vfunc_1` at 0x1ecd70 (rtti, medium); signature (low): `undefined vfunc_1(TESModelTextureSwap * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+pub const TESModelTextureSwap__vfunc_1: u64 = 14824;
+/// `TESModelTextureSwap::vfunc_2` at 0x1ecd90 (rtti, medium); signature (low): `undefined vfunc_2(TESModelTextureSwap * this, undefined8 param_1, longlong param_2, undefined1 * param_3)`
+pub const TESModelTextureSwap__vfunc_2: u64 = 14825;
+/// `TESModelTextureSwap::vfunc_3` at 0x1ed240 (rtti, medium); signature (low): `undefined vfunc_3(TESModelTextureSwap * this, undefined8 param_1)`
+pub const TESModelTextureSwap__vfunc_3: u64 = 14829;
+/// `TESModelTextureSwap::vfunc_6` at 0x146650 (rtti, medium); signature (high): `TESModelTextureSwap * vfunc_6(TESModelTextureSwap * this)`
+pub const TESModelTextureSwap__vfunc_6: u64 = 10867;
+/// `TESModelTri::ctor` at 0x390cc0 (layout_inference, high); signature (low): `TESModelTri * ctor(TESModelTri * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+pub const TESModelTri__ctor: u64 = 23640;
+/// `TESModelTri::vdtor` at 0x390fa0 (slot_propagation, medium); signature (low): `TESModelTri * vdtor(TESModelTri * this, ulonglong param_1, longlong param_2, undefined1 * param_3)`
+pub const TESModelTri__vdtor: u64 = 23648;
+/// `TESModelTri::vfunc_5` at 0x1ee380 (rtti, high); signature (low): `undefined vfunc_5(TESModelTri * this, char * param_1)`
+pub const TESModelTri__vfunc_5: u64 = 14856;
+/// `TESNPC::ActorValueOwner_GetActorValue` at 0x3c71f0 (slot_propagation, high); signature (untiered): `undefined ActorValueOwner_GetActorValue(TESNPC * this, int param_1)`
+pub const TESNPC__ActorValueOwner_GetActorValue: u64 = 24774;
+/// `TESNPC::ActorValueOwner_SetActorValue` at 0x3c7460 (slot_propagation, high); signature (untiered): `undefined ActorValueOwner_SetActorValue(TESNPC * this, int param_1, float param_2)`
+pub const TESNPC__ActorValueOwner_SetActorValue: u64 = 24775;
+/// `TESNPC::ActorValueOwner_vdtor` at 0x3cbaf0 (slot_propagation, medium); signature (high): `undefined ActorValueOwner_vdtor(TESNPC * this)`
+pub const TESNPC__ActorValueOwner_vdtor: u64 = 24880;
+/// `TESNPC::BGSAttackDataForm_vdtor` at 0x3cba78 (slot_propagation, medium); signature (high): `undefined BGSAttackDataForm_vdtor(TESNPC * this)`
+pub const TESNPC__BGSAttackDataForm_vdtor: u64 = 24870;
+/// `TESNPC::BGSDestructibleObjectForm_vdtor` at 0x3cbafc (slot_propagation, medium); signature (high): `undefined BGSDestructibleObjectForm_vdtor(TESNPC * this)`
+pub const TESNPC__BGSDestructibleObjectForm_vdtor: u64 = 24881;
+/// `TESNPC::BGSKeywordForm_vdtor` at 0x3cba6c (slot_propagation, medium); signature (high): `undefined BGSKeywordForm_vdtor(TESNPC * this)`
+pub const TESNPC__BGSKeywordForm_vdtor: u64 = 24869;
+/// `TESNPC::BGSOverridePackCollection_vdtor` at 0x3cba9c (slot_propagation, medium); signature (high): `undefined BGSOverridePackCollection_vdtor(TESNPC * this)`
+pub const TESNPC__BGSOverridePackCollection_vdtor: u64 = 24873;
+/// `TESNPC::BGSPerkRankArray_vdtor` at 0x3cba84 (slot_propagation, medium); signature (high): `undefined BGSPerkRankArray_vdtor(TESNPC * this)`
+pub const TESNPC__BGSPerkRankArray_vdtor: u64 = 24871;
+/// `TESNPC::BGSSkinForm_vdtor` at 0x3cba60 (slot_propagation, medium); signature (high): `undefined BGSSkinForm_vdtor(TESNPC * this)`
+pub const TESNPC__BGSSkinForm_vdtor: u64 = 24868;
+/// `TESNPC::BSTEventSink_MenuOpenCloseEvent_vdtor` at 0x3cbaa8 (slot_propagation, medium); signature (high): `undefined BSTEventSink_MenuOpenCloseEvent_vdtor(TESNPC * this)`
+pub const TESNPC__BSTEventSink_MenuOpenCloseEvent_vdtor: u64 = 24874;
+/// `TESNPC::BSTEventSink_MenuOpenCloseEvent_vfunc_1` at 0x3beed0 (rtti, high); signature (low): `undefined8 BSTEventSink_MenuOpenCloseEvent_vfunc_1(TESNPC * this, longlong * param_1)`
+pub const TESNPC__BSTEventSink_MenuOpenCloseEvent_vfunc_1: u64 = 24681;
+/// `TESNPC::GetHeight` at 0x3c65c0 (semantic, high); signature (untiered): `float GetHeight(longlong param_1)`; semantic: race height times the NPC height multiplier (high); signature `float TESNPC::GetHeight(const TESNPC* this)`
+pub const TESNPC__GetHeight: u64 = 24763;
+/// `TESNPC::GetHeight` as a function pointer type (high).
+pub type TESNPC__GetHeight_fn = unsafe extern "C" fn(this: *const crate::TESNPC) -> f32;
+/// `TESNPC::GetSex` at 0x3afeb0 (runtime, high); signature (untiered): `uint GetSex(longlong param_1)`; semantic: 0 male, 1 female, -1 for a non-NPC form (high); signature `uint TESNPC::GetSex(const TESNPC* this)`
+pub const TESNPC__GetSex: u64 = 24374;
+/// `TESNPC::GetSex` as a function pointer type (high).
+pub type TESNPC__GetSex_fn = unsafe extern "C" fn(this: *const crate::TESNPC) -> u32;
+/// `TESNPC::LoadGame` at 0x3c7b10 (slot_propagation, medium); signature (untiered): `undefined LoadGame(TESNPC * this, undefined8 * param_1, TypeDescriptor * param_2, TypeDescriptor * param_3)`
+pub const TESNPC__LoadGame: u64 = 24778;
+/// `TESNPC::SaveGame` at 0x3c7640 (slot_propagation, medium); signature (untiered): `undefined SaveGame(TESNPC * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
+pub const TESNPC__SaveGame: u64 = 24777;
+/// `TESNPC::SetDefaultOutfit` at 0x3bf500 (semantic, high); signature (untiered): `undefined SetDefaultOutfit(longlong * param_1, longlong param_2)`; semantic: stores +0x218 and tail-calls slot 10 (AddChange) with 0x1000 (high); signature `void (TESNPC* this, BGSOutfit* outfit)`
+pub const TESNPC__SetDefaultOutfit: u64 = 24694;
+/// `TESNPC::SetDefaultOutfit` as a function pointer type (high).
+pub type TESNPC__SetDefaultOutfit_fn = unsafe extern "C" fn(this: *mut crate::TESNPC, outfit: *mut crate::BGSOutfit);
+/// `TESNPC::SetSleepOutfit` at 0x3bf520 (semantic, high); signature (untiered): `undefined SetSleepOutfit(longlong * param_1, longlong param_2)`; semantic: stores +0x220 and tail-calls slot 10 with 0x2000 (high); signature `void (TESNPC* this, BGSOutfit* outfit)`
+pub const TESNPC__SetSleepOutfit: u64 = 24695;
+/// `TESNPC::SetSleepOutfit` as a function pointer type (high).
+pub type TESNPC__SetSleepOutfit_fn = unsafe extern "C" fn(this: *mut crate::TESNPC, outfit: *mut crate::BGSOutfit);
+/// `TESNPC::TESAIForm_vdtor` at 0x3cbad8 (slot_propagation, medium); signature (high): `undefined TESAIForm_vdtor(TESNPC * this)`
+pub const TESNPC__TESAIForm_vdtor: u64 = 24878;
+/// `TESNPC::TESActorBaseData_vdtor` at 0x3cbab4 (slot_propagation, medium); signature (high): `undefined TESActorBaseData_vdtor(TESNPC * this)`
+pub const TESNPC__TESActorBaseData_vdtor: u64 = 24875;
+/// `TESNPC::TESActorBaseData_vfunc_4` at 0x3c1e30 (rtti, high); signature (low): `undefined TESActorBaseData_vfunc_4(TESNPC * this, TESNPC * param_1, ulonglong param_2, longlong * param_3)`
+pub const TESNPC__TESActorBaseData_vfunc_4: u64 = 24720;
+/// `TESNPC::TESActorBaseData_vfunc_4_sub0` at 0x1dca70 (callgraph, medium); signature (untiered): `ushort TESActorBaseData_vfunc_4_sub0(longlong param_1)`
+pub const TESNPC__TESActorBaseData_vfunc_4_sub0: u64 = 14364;
+/// `TESNPC::TESActorBaseData_vfunc_4_sub1` at 0x1dca80 (callgraph, medium); signature (untiered): `undefined TESActorBaseData_vfunc_4_sub1(longlong param_1, char param_2)`
+pub const TESNPC__TESActorBaseData_vfunc_4_sub1: u64 = 14365;
+/// `TESNPC::TESActorBaseData_vfunc_4_sub10` at 0x1de8f0 (callgraph, medium); signature (untiered): `undefined TESActorBaseData_vfunc_4_sub10(longlong param_1, longlong param_2)`
+pub const TESNPC__TESActorBaseData_vfunc_4_sub10: u64 = 14449;
+/// `TESNPC::TESActorBaseData_vfunc_4_sub11` at 0x1de940 (callgraph, medium); signature (untiered): `undefined TESActorBaseData_vfunc_4_sub11(longlong param_1, longlong param_2)`
+pub const TESNPC__TESActorBaseData_vfunc_4_sub11: u64 = 14450;
+/// `TESNPC::TESActorBaseData_vfunc_4_sub2` at 0x1dcb30 (callgraph, medium); signature (untiered): `undefined TESActorBaseData_vfunc_4_sub2(longlong param_1, undefined8 param_2)`
+pub const TESNPC__TESActorBaseData_vfunc_4_sub2: u64 = 14370;
+/// `TESNPC::TESActorBaseData_vfunc_4_sub3` at 0x1dcb50 (callgraph, medium); signature (untiered): `undefined TESActorBaseData_vfunc_4_sub3(longlong param_1, undefined2 param_2)`
+pub const TESNPC__TESActorBaseData_vfunc_4_sub3: u64 = 14371;
+/// `TESNPC::TESActorBaseData_vfunc_4_sub4` at 0x1dcb80 (callgraph, medium); signature (untiered): `longlong TESActorBaseData_vfunc_4_sub4(longlong param_1)`
+pub const TESNPC__TESActorBaseData_vfunc_4_sub4: u64 = 14373;
+/// `TESNPC::TESActorBaseData_vfunc_4_sub5` at 0x1dd260 (callgraph, medium); signature (untiered): `longlong TESActorBaseData_vfunc_4_sub5(longlong param_1, ushort * param_2)`
+pub const TESNPC__TESActorBaseData_vfunc_4_sub5: u64 = 14381;
+/// `TESNPC::TESActorBaseData_vfunc_4_sub6` at 0x1dd2a0 (callgraph, medium); signature (untiered): `undefined TESActorBaseData_vfunc_4_sub6(longlong param_1, undefined4 param_2)`
+pub const TESNPC__TESActorBaseData_vfunc_4_sub6: u64 = 14382;
+/// `TESNPC::TESActorBaseData_vfunc_4_sub7` at 0x1dd490 (callgraph, medium); signature (untiered): `undefined TESActorBaseData_vfunc_4_sub7(longlong param_1, undefined2 param_2)`
+pub const TESNPC__TESActorBaseData_vfunc_4_sub7: u64 = 14388;
+/// `TESNPC::TESActorBaseData_vfunc_4_sub8` at 0x1dd980 (callgraph, medium); signature (untiered): `undefined TESActorBaseData_vfunc_4_sub8(longlong param_1, undefined8 param_2)`
+pub const TESNPC__TESActorBaseData_vfunc_4_sub8: u64 = 14405;
+/// `TESNPC::TESActorBaseData_vfunc_4_sub9` at 0x1ddfe0 (callgraph, medium); signature (untiered): `undefined TESActorBaseData_vfunc_4_sub9(longlong param_1, longlong param_2)`
+pub const TESNPC__TESActorBaseData_vfunc_4_sub9: u64 = 14415;
+/// `TESNPC::TESActorBaseData_vfunc_7` at 0x3cc6e0 (rtti, high); signature (high): `uint TESActorBaseData_vfunc_7(TESNPC * this)`
+pub const TESNPC__TESActorBaseData_vfunc_7: u64 = 24908;
+/// `TESNPC::TESContainer_vdtor` at 0x3cbac0 (slot_propagation, medium); signature (high): `undefined TESContainer_vdtor(TESNPC * this)`
+pub const TESNPC__TESContainer_vdtor: u64 = 24876;
+/// `TESNPC::TESFullName_vdtor` at 0x3cbae4 (slot_propagation, medium); signature (high): `undefined TESFullName_vdtor(TESNPC * this)`
+pub const TESNPC__TESFullName_vdtor: u64 = 24879;
+/// `TESNPC::TESRaceForm_vdtor` at 0x3cba90 (slot_propagation, medium); signature (high): `undefined TESRaceForm_vdtor(TESNPC * this)`
+pub const TESNPC__TESRaceForm_vdtor: u64 = 24872;
 /// `TESNPC::TESSpellList_vdtor` at 0x3cbacc (slot_propagation, medium); signature (high): `undefined TESSpellList_vdtor(TESNPC * this)`
 pub const TESNPC__TESSpellList_vdtor: u64 = 24877;
 /// `TESNPC::ctor` at 0x3bb820 (decompiler, high); signature (high): `TESNPC * ctor(TESNPC * param_1, undefined8 param_2, uint * param_3, longlong * param_4)`
@@ -1005,6 +1219,8 @@ pub const TESObjectWEAP__BGSPreloadable_vdtor: u64 = 18138;
 pub const TESObjectWEAP__BGSPreloadable_vfunc_4: u64 = 18105;
 /// `TESObjectWEAP::GetLastFile` at 0x28e7b0 (slot_propagation, medium); signature (untiered): `undefined GetLastFile(TESObjectWEAP * this)`
 pub const TESObjectWEAP__GetLastFile: u64 = 18145;
+/// `TESObjectWEAP::GetWeaponTypeName` at 0x28e7f0 (semantic, high); signature (untiered): `undefined * GetWeaponTypeName(TESObjectWEAP * this)`
+pub const TESObjectWEAP__GetWeaponTypeName: u64 = 18147;
 /// `TESObjectWEAP::LoadGame` at 0x28d7b0 (slot_propagation, medium); signature (untiered): `undefined LoadGame(TESObjectWEAP * this, longlong param_1)`
 pub const TESObjectWEAP__LoadGame: u64 = 18104;
 /// `TESObjectWEAP::SaveGame` at 0x28d770 (slot_propagation, medium); signature (untiered): `undefined SaveGame(TESObjectWEAP * this, longlong param_1)`
@@ -1041,8 +1257,6 @@ pub const TESObjectWEAP__vfunc_4: u64 = 18072;
 pub const TESObjectWEAP__vfunc_5: u64 = 18073;
 /// `TESObjectWEAP::vfunc_55` at 0x28c440 (rtti, high); signature (untiered): `undefined1 vfunc_55(TESObjectWEAP * this, longlong param_1, undefined8 param_2, undefined1 param_3, undefined8 param_4, undefined4 param_5)`
 pub const TESObjectWEAP__vfunc_55: u64 = 18101;
-/// `TESObjectWEAP::vfunc_57` at 0x28e7f0 (rtti, high); signature (high): `undefined * vfunc_57(TESObjectWEAP * this)`
-pub const TESObjectWEAP__vfunc_57: u64 = 18147;
 /// `TESObjectWEAP::vfunc_6` at 0x289810 (rtti, high); signature (low): `ulonglong vfunc_6(TESObjectWEAP * this, uint * param_1, IMAGE_DOS_HEADER * param_2, ulonglong param_3)`
 pub const TESObjectWEAP__vfunc_6: u64 = 18074;
 /// `TESObjectWEAP::vfunc_6_sub0` at 0x28dba0 (callgraph, medium); signature (untiered): `undefined vfunc_6_sub0(longlong param_1, longlong * param_2, undefined1 * param_3, undefined8 param_4)`
@@ -1135,14 +1349,26 @@ pub const TESQualityForm__vfunc_1: u64 = 14884;
 pub const TESQualityForm__vfunc_2: u64 = 14885;
 /// `TESQualityForm::vfunc_3` at 0x1ef670 (rtti, medium); signature (low): `undefined vfunc_3(TESQualityForm * this, undefined8 param_1)`
 pub const TESQualityForm__vfunc_3: u64 = 14886;
+/// `TESQuest::GetCurrentStage` at 0x3d1220 (semantic, high); signature (untiered): `undefined2 GetCurrentStage(longlong param_1)`; semantic: returns the u16 at +0x228 (high); signature `u16 (TESQuest* this)`
+pub const TESQuest__GetCurrentStage: u64 = 25013;
+/// `TESQuest::GetCurrentStage` as a function pointer type (high).
+pub type TESQuest__GetCurrentStage_fn = unsafe extern "C" fn(this: *mut crate::TESQuest) -> u16;
 /// `TESQuest::GetFormEditorID` at 0x3df9b0 (slot_propagation, high); signature (untiered): `undefined1 * GetFormEditorID(TESQuest * this)`
 pub const TESQuest__GetFormEditorID: u64 = 25188;
+/// `TESQuest::IsStageDone` at 0x3d0ec0 (semantic, high); signature (untiered): `ulonglong IsStageDone(longlong param_1, short param_2)`; semantic: walks the stage list at +0xe8 ({stage entry*, next}) for the entry whose u16 +0 matches and returns its byte +2 bit 0 (high); signature `bool (TESQuest* this, u16 stage)`
+pub const TESQuest__IsStageDone: u64 = 25011;
+/// `TESQuest::IsStageDone` as a function pointer type (high).
+pub type TESQuest__IsStageDone_fn = unsafe extern "C" fn(this: *mut crate::TESQuest, stage: u16) -> bool;
 /// `TESQuest::LoadGame` at 0x3d1f50 (slot_propagation, medium); signature (untiered): `undefined LoadGame(TESQuest * this, char * param_1)`
 pub const TESQuest__LoadGame: u64 = 25030;
 /// `TESQuest::SaveGame` at 0x3d1b30 (slot_propagation, medium); signature (untiered): `undefined SaveGame(TESQuest * this, longlong param_1, ulonglong param_2, undefined8 param_3)`
 pub const TESQuest__SaveGame: u64 = 25029;
 /// `TESQuest::SetFormEditorID` at 0x3d1a40 (slot_propagation, high); signature (untiered): `ulonglong SetFormEditorID(TESQuest * this, char * param_1, undefined8 param_2, undefined8 param_3)`
 pub const TESQuest__SetFormEditorID: u64 = 25027;
+/// `TESQuest::SetStage` at 0x3d0dc0 (semantic, high); signature (untiered): `ulonglong SetStage(longlong * param_1, ushort param_2)`; semantic: only for a running quest (+0xdc bit 0): finds the stage entry in the list at +0xe8, raises currentStage +0x228 to stage when stage is larger, runs the stage items and marks the form changed (slot 10, 0x80000000) (high); signature `bool (TESQuest* this, u16 stage)`
+pub const TESQuest__SetStage: u64 = 25004;
+/// `TESQuest::SetStage` as a function pointer type (high).
+pub type TESQuest__SetStage_fn = unsafe extern "C" fn(this: *mut crate::TESQuest, stage: u16) -> bool;
 /// `TESQuest::TESFullName_vdtor` at 0x3dece8 (slot_propagation, medium); signature (high): `undefined TESFullName_vdtor(TESQuest * this)`
 pub const TESQuest__TESFullName_vdtor: u64 = 25161;
 /// `TESQuest::ctor` at 0x3cdf70 (layout_inference, high); signature (low): `TESQuest * ctor(TESQuest * this, undefined8 param_1, uint * param_2, longlong * param_3)`
@@ -2613,8 +2839,10 @@ pub const TrianglePathWaterAndLedgeSplitter__vfunc_2: u64 = 90447;
 pub const TriggerCombatFleeDialogue: u64 = 28555;
 /// `TriggerEntry::vdtor` at 0x408a30 (layout_inference, medium); signature (low): `TriggerEntry * vdtor(TriggerEntry * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const TriggerEntry__vdtor: u64 = 26087;
-/// `TriggerStagger` at 0x69fc00 (decompiler, medium); signature (untiered): `undefined TriggerStagger(longlong * param_1, float param_2, longlong * param_3)`
+/// `TriggerStagger` at 0x69fc00 (semantic, high); signature (untiered): `undefined TriggerStagger(longlong * param_1, float param_2, longlong * param_3)`; semantic: starts a stagger: graph floats staggerMagnitude (clamped to 1) and staggerDirection, then 'Action Stagger Start'; when the action is accepted, flags2 |= 0x2000 and the process stagger timer starts (high); signature `void (Actor* actor, float magnitude, Actor* source)`
 pub const TriggerStagger: u64 = 37710;
+/// `TriggerStagger` as a function pointer type (high).
+pub type TriggerStagger_fn = unsafe extern "C" fn(actor: *mut crate::Actor, magnitude: f32, source: *mut crate::Actor);
 /// `TriggerTutorialIfNotShown` at 0x987240 (decompiler, medium); signature (medium): `undefined TriggerTutorialIfNotShown(int param_1)`
 pub const TriggerTutorialIfNotShown: u64 = 52692;
 /// `TrimTrailingFreeBlocks` at 0xcecf20 (decompiler, medium); signature (untiered): `undefined TrimTrailingFreeBlocks(longlong * param_1)`
@@ -3971,12 +4199,8 @@ pub const UpdateAabbLeafQ32: u64 = 81642;
 pub const UpdateActivateTargetProcedure_2: u64 = 39264;
 /// `UpdateActiveChildFlags` at 0xb027f0 (decompiler, medium); signature (untiered): `char UpdateActiveChildFlags(longlong param_1)`
 pub const UpdateActiveChildFlags: u64 = 59534;
-/// `UpdateActiveEffect` at 0x5bcde0 (decompiler, medium); signature (untiered): `undefined UpdateActiveEffect(longlong * param_1, float param_2, longlong * param_3, ulonglong param_4)`
-pub const UpdateActiveEffect: u64 = 34092;
 /// `UpdateActiveEffectConditionStatus` at 0x5bb470 (decompiler, medium); signature (untiered): `undefined UpdateActiveEffectConditionStatus(longlong param_1, float param_2, undefined8 param_3, undefined4 param_4)`
 pub const UpdateActiveEffectConditionStatus: u64 = 34062;
-/// `UpdateActiveEffectList` at 0x5d2080 (decompiler, medium); signature (untiered): `undefined UpdateActiveEffectList(longlong * param_1, float param_2, TypeDescriptor * param_3, TypeDescriptor * param_4)`
-pub const UpdateActiveEffectList: u64 = 34527;
 /// `UpdateActiveEffectsWhilePaused` at 0x75d390 (decompiler, medium); signature (untiered): `undefined UpdateActiveEffectsWhilePaused(longlong param_1, undefined8 param_2, TypeDescriptor * param_3, TypeDescriptor * param_4)`
 pub const UpdateActiveEffectsWhilePaused: u64 = 40704;
 /// `UpdateActiveSequences` at 0x94f380 (decompiler, medium); signature (untiered): `undefined UpdateActiveSequences(longlong param_1)`
@@ -4233,6 +4457,12 @@ pub const UpdateFollowTargetPathWithFlags: u64 = 40074;
 pub const UpdateFormFileArrayWithFile: u64 = 14623;
 /// `UpdateFrustumVisibilityAndFade` at 0x1575d20 (decompiler, medium); signature (untiered): `undefined UpdateFrustumVisibilityAndFade(longlong param_1, longlong param_2)`
 pub const UpdateFrustumVisibilityAndFade: u64 = 108278;
+/// `UpdateFurnitureState` at 0x7246a0 (semantic, medium); signature (untiered): `undefined UpdateFurnitureState(longlong param_1, TESObjectREFR * param_2, TESObjectREFR * param_3, uint * param_4, uint param_5)`; semantic: process-level furniture/mount state change; its callers pass 1/5 on activation, 2/6 for the entry animation, 3/7 seated or in bed, 4/8 leaving, 0 done (medium); signature `void (AIProcess* process, Actor* actor, u32 state, u32* furnitureHandle, u32 marker)`
+pub const UpdateFurnitureState: u64 = 39912;
+/// `UpdateFurnitureStateOrForward` at 0x6e1bd0 (semantic, high); signature (low): `undefined UpdateFurnitureStateOrForward(longlong param_1, undefined4 param_2)`; semantic: sets a sit/sleep state through the process's UpdateFurnitureState 0x7246a0 when the process level < 2, otherwise directly through ActorState slot 20 (high); signature `void (Actor* actor, u32 state)`
+pub const UpdateFurnitureStateOrForward: u64 = 39000;
+/// `UpdateFurnitureStateOrForward` as a function pointer type (high).
+pub type UpdateFurnitureStateOrForward_fn = unsafe extern "C" fn(actor: *mut crate::Actor, state: u32);
 /// `UpdateGamepadRumble` at 0xcee700 (semantic, medium); signature (untiered): `DWORD UpdateGamepadRumble(float param_1)`; semantic: ages the two motor queues, XInputSetState(0, ...) (medium); signature `void (float realDelta)`
 pub const UpdateGamepadRumble: u64 = 68532;
 /// `UpdateGcScheduleAndCollect` at 0xd1deb0 (decompiler, medium); signature (untiered): `undefined UpdateGcScheduleAndCollect(longlong param_1, uint * param_2, int * param_3)`
@@ -4287,7 +4517,7 @@ pub const UpdateItemInfoAndRequirementsText: u64 = 51460;
 pub const UpdateItemInfoObjectFromEntry: u64 = 51218;
 /// `UpdateItemInfoObjectFromForm` at 0x917610 (decompiler, medium); signature (untiered): `undefined UpdateItemInfoObjectFromForm(longlong * param_1, longlong param_2)`
 pub const UpdateItemInfoObjectFromForm: u64 = 51219;
-/// `UpdateKnockState` at 0x723b60 (decompiler, medium); signature (untiered): `undefined UpdateKnockState(longlong param_1, TESObjectREFR * param_2, undefined8 param_3, undefined8 param_4)`
+/// `UpdateKnockState` at 0x723b60 (semantic, medium); signature (untiered): `undefined UpdateKnockState(longlong param_1, TESObjectREFR * param_2, undefined8 param_3, undefined8 param_4)`; semantic: per-update knock state machine: 2 -> ragdoll and 1, 4 -> ragdoll and 3; 1 (and 3 unless bleeding out) begin the get-up once the body is still; 5 turns the actor to the body heading and goes to 6 (medium); signature `void (AIProcess* process, Actor* actor)`
 pub const UpdateKnockState: u64 = 39896;
 /// `UpdateKnowledgeEntryForTargetViaProcess` at 0x6ad340 (decompiler, medium); signature (untiered): `undefined UpdateKnowledgeEntryForTargetViaProcess(longlong * param_1, undefined8 param_2)`
 pub const UpdateKnowledgeEntryForTargetViaProcess: u64 = 37920;
@@ -4329,8 +4559,10 @@ pub const UpdateMembershipInList2B68: u64 = 84066;
 pub const UpdateMeterValue: u64 = 51656;
 /// `UpdateMeterValue` as a function pointer type (high).
 pub type UpdateMeterValue_fn = unsafe extern "C" fn(meter: *mut crate::HUDMeter, force: bool);
-/// `UpdateMotionDrivenAnimationMode` at 0x67c210 (decompiler, medium); signature (untiered): `undefined UpdateMotionDrivenAnimationMode(longlong param_1, undefined8 param_2, undefined8 param_3, longlong param_4)`
+/// `UpdateMotionDrivenAnimationMode` at 0x67c210 (semantic, high); signature (untiered): `undefined UpdateMotionDrivenAnimationMode(longlong param_1, undefined8 param_2, undefined8 param_3, longlong param_4)`; semantic: each movement step: reads graph bools bAnimationDriven and bAllowRotation and, when they disagree with the controller's mode, sends StartMotionDriven / StartAnimationDriven / StartAllowRotation to the graph (high); signature `void (Actor* actor)`
 pub const UpdateMotionDrivenAnimationMode: u64 = 37355;
+/// `UpdateMotionDrivenAnimationMode` as a function pointer type (high).
+pub type UpdateMotionDrivenAnimationMode_fn = unsafe extern "C" fn(actor: *mut crate::Actor);
 /// `UpdateMovementParameters` at 0x6f5b00 (decompiler, medium); signature (untiered): `undefined UpdateMovementParameters(longlong param_1, longlong param_2, undefined8 param_3, undefined8 param_4)`
 pub const UpdateMovementParameters: u64 = 39363;
 /// `UpdateMultiGoalPathAndStoreSelectedGoal` at 0x876dd0 (decompiler, medium); signature (untiered): `undefined UpdateMultiGoalPathAndStoreSelectedGoal(longlong * param_1)`
@@ -5423,10 +5655,12 @@ pub const WeaponObject__vfunc_2: u64 = 78596;
 pub const WeaponObject__vfunc_23: u64 = 78578;
 /// `WeaponObject::vfunc_48` at 0x1080e50 (rtti, high); signature (low): `undefined1 vfunc_48(void)`
 pub const WeaponObject__vfunc_48: u64 = 78600;
+/// `WeaponRightSwingHandler::Handle` at 0x7cc4b0 (semantic, high); signature (untiered): `undefined8 Handle(WeaponRightSwingHandler * this, longlong * param_1)`; semantic: attack state = 2 (Swing); plays the weapon's swing sound (high); signature `bool (WeaponRightSwingHandler* this, Actor* actor)`
+pub const WeaponRightSwingHandler__Handle: u64 = 42810;
+/// `WeaponRightSwingHandler::Handle` as a function pointer type (high).
+pub type WeaponRightSwingHandler__Handle_fn = unsafe extern "C" fn(this: *mut crate::WeaponRightSwingHandler, actor: *mut crate::Actor) -> bool;
 /// `WeaponRightSwingHandler::vdtor` at 0x7d4840 (layout_inference, medium); signature (low): `WeaponRightSwingHandler * vdtor(WeaponRightSwingHandler * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const WeaponRightSwingHandler__vdtor: u64 = 43374;
-/// `WeaponRightSwingHandler::vfunc_1` at 0x7cc4b0 (rtti, high); signature (low): `undefined8 vfunc_1(WeaponRightSwingHandler * this, longlong * param_1)`
-pub const WeaponRightSwingHandler__vfunc_1: u64 = 42810;
 /// `WeightedModifierVisitor<BSTSmartPointer<IMovementParameters,BSTSmartPointerIntrusiveRefCount>_>::dtor` at 0x1226a30 (layout_inference, high); signature (high): `undefined dtor(WeightedModifierVisitor<BSTSmartPointer<IMovementParameters,BSTSmartPointerIntrusiveRefCount>_> * this)`
 pub const WeightedModifierVisitor_BSTSmartPointer_IMovementParameters_BSTSmartPointerIntrusiveRefCount____dtor: u64 = 92420;
 /// `WeightedModifierVisitor<BSTSmartPointer<IMovementParameters,BSTSmartPointerIntrusiveRefCount>_>::vdtor` at 0x1226be0 (layout_inference, medium); signature (low): `WeightedModifierVisitor<BSTSmartPointer<IMovementParameters,BSTSmartPointerIntrusiveRefCount>_> * vdtor(WeightedModifierVisitor<BSTSmartPointer<IMovementParameters,BSTSmartPointerIntrusiveRefCount>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
@@ -7295,8 +7529,6 @@ pub const WriteSaveBufferBytes: u64 = 36053;
 pub const WriteSaveBufferDword: u64 = 50698;
 /// `WriteSaveDecalsAndLockedArrays` at 0x786d80 (decompiler, medium); signature (untiered): `DWORD WriteSaveDecalsAndLockedArrays(longlong param_1, longlong param_2)`
 pub const WriteSaveDecalsAndLockedArrays: u64 = 41418;
-/// `WriteSaveFields180To1C0` at 0x7af8c0 (decompiler, medium); signature (untiered): `undefined WriteSaveFields180To1C0(longlong param_1, longlong param_2)`
-pub const WriteSaveFields180To1C0: u64 = 42362;
 /// `WriteSaveFieldsAndListsB0` at 0x786930 (decompiler, medium); signature (untiered): `undefined WriteSaveFieldsAndListsB0(longlong param_1, longlong param_2)`
 pub const WriteSaveFieldsAndListsB0: u64 = 41414;
 /// `WriteSaveHeader` at 0x61e9e0 (runtime, high); signature (untiered): `int WriteSaveHeader(ulonglong param_1)`; semantic: writes 'TESV_SAVEGAME' then a length-prefixed header {u32 version, u32 save number, wstring player name, u32 level, wstring location, wstring play time, wstring race, u16 sex, f32 xp, f32 xp needed, FILETIME, u32 width, u32 height, u16 compression} and the screenshot; returns bytes written (high); signature `u32 (Win32FileType* stream)`
@@ -8621,187 +8853,3 @@ pub const _anon_7CE6448C__hkEntitySelectorListed__vdtor: u64 = 62863;
 pub const _anon_7CE6448C__hkEntitySelectorListed__vfunc_1: u64 = 62867;
 /// `_anon_860CB2AF::InternedStringRefCounted::vdtor` at 0xc5b7f0 (layout_inference, medium); signature (low): `InternedStringRefCounted * vdtor(InternedStringRefCounted * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const _anon_860CB2AF__InternedStringRefCounted__vdtor: u64 = 65875;
-/// `_anon_865AF130::GetVMConditionalVariableValueFunc::vfunc_0` at 0x340570 (rtti, high); signature (low): `GetVMConditionalVariableValueFunc * vfunc_0(GetVMConditionalVariableValueFunc * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-pub const _anon_865AF130__GetVMConditionalVariableValueFunc__vfunc_0: u64 = 21797;
-/// `_anon_865AF130::GetVMConditionalVariableValueFunc::vfunc_1` at 0x3402a0 (rtti, high); signature (low): `bool vfunc_1(GetVMConditionalVariableValueFunc * this, longlong param_1, undefined8 param_2, ulonglong param_3)`
-pub const _anon_865AF130__GetVMConditionalVariableValueFunc__vfunc_1: u64 = 21789;
-/// `_anon_865AF130::GetVMConditionalVariableValueFunc::vfunc_1_sub0` at 0x1491e50 (callgraph, medium); signature (untiered): `ulonglong vfunc_1_sub0(longlong param_1, undefined8 * param_2, char param_3)`
-pub const _anon_865AF130__GetVMConditionalVariableValueFunc__vfunc_1_sub0: u64 = 104300;
-/// `_anon_8B4A4C54::DeferredUpdate::vdtor` at 0xbc3c70 (layout_inference, medium); signature (low): `DeferredUpdate * vdtor(DeferredUpdate * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const _anon_8B4A4C54__DeferredUpdate__vdtor: u64 = 63412;
-/// `_anon_9196AC74::CheckLineOfSightTriangleFlagFiltersAdapter::vdtor` at 0x1209ff0 (layout_inference, medium); signature (low): `CheckLineOfSightTriangleFlagFiltersAdapter * vdtor(CheckLineOfSightTriangleFlagFiltersAdapter * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const _anon_9196AC74__CheckLineOfSightTriangleFlagFiltersAdapter__vdtor: u64 = 91745;
-/// `_anon_9196AC74::CheckLineOfSightTriangleFlagFiltersAdapter::vfunc_1` at 0x120a420 (rtti, high); signature (low): `ulonglong vfunc_1(CheckLineOfSightTriangleFlagFiltersAdapter * this, ulonglong * param_1, longlong * param_2)`
-pub const _anon_9196AC74__CheckLineOfSightTriangleFlagFiltersAdapter__vfunc_1: u64 = 91751;
-/// `_anon_92F68B4D::FadeThenLoadCallback::vdtor` at 0x9ad320 (layout_inference, medium); signature (low): `FadeThenLoadCallback * vdtor(FadeThenLoadCallback * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const _anon_92F68B4D__FadeThenLoadCallback__vdtor: u64 = 53339;
-/// `_anon_92F68B4D::FadeThenLoadCallback::vfunc_1` at 0x9ad820 (rtti, high); signature (high): `undefined vfunc_1(FadeThenLoadCallback * this)`
-pub const _anon_92F68B4D__FadeThenLoadCallback__vfunc_1: u64 = 53344;
-/// `_anon_9334B8D7::bhkConstraintDisabler::vdtor` at 0x1091030 (layout_inference, medium); signature (low): `bhkConstraintDisabler * vdtor(bhkConstraintDisabler * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const _anon_9334B8D7__bhkConstraintDisabler__vdtor: u64 = 79007;
-/// `_anon_9334B8D7::bhkConstraintDisabler::vfunc_1` at 0x1090ff0 (rtti, high); signature (low): `undefined vfunc_1(bhkConstraintDisabler * this, longlong param_1)`
-pub const _anon_9334B8D7__bhkConstraintDisabler__vfunc_1: u64 = 79006;
-/// `_anon_9360C2E5::GetMagicItemDescriptionFunctor::vdtor` at 0x94a8f0 (layout_inference, medium); signature (low): `GetMagicItemDescriptionFunctor * vdtor(GetMagicItemDescriptionFunctor * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const _anon_9360C2E5__GetMagicItemDescriptionFunctor__vdtor: u64 = 51907;
-/// `_anon_9360C2E5::GetMagicItemDescriptionFunctor::vfunc_1` at 0x94a7b0 (rtti, high); signature (low): `undefined8 vfunc_1(GetMagicItemDescriptionFunctor * this, longlong param_1)`
-pub const _anon_9360C2E5__GetMagicItemDescriptionFunctor__vfunc_1: u64 = 51906;
-/// `_anon_9360C2E5::GetMagicItemDescriptionFunctor::vfunc_1_sub0` at 0x949e40 (callgraph, medium); signature (untiered): `undefined vfunc_1_sub0(longlong * param_1, undefined8 param_2, undefined8 param_3, char * param_4)`
-pub const _anon_9360C2E5__GetMagicItemDescriptionFunctor__vfunc_1_sub0: u64 = 51902;
-/// `_anon_952B14FD::LooseAudioRegistrar::vdtor` at 0x559dd0 (layout_inference, medium); signature (low): `LooseAudioRegistrar * vdtor(LooseAudioRegistrar * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const _anon_952B14FD__LooseAudioRegistrar__vdtor: u64 = 33054;
-/// `_anon_952B14FD::LooseAudioRegistrar::vfunc_1` at 0x559e30 (rtti, high); signature (low): `undefined8 vfunc_1(LooseAudioRegistrar * this, longlong * param_1)`
-pub const _anon_952B14FD__LooseAudioRegistrar__vfunc_1: u64 = 33055;
-/// `_anon_9542C6A2::ObjectFactoryVisitor::vdtor` at 0x1e78b0 (layout_inference, medium); signature (low): `ObjectFactoryVisitor * vdtor(ObjectFactoryVisitor * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const _anon_9542C6A2__ObjectFactoryVisitor__vdtor: u64 = 14701;
-/// `_anon_9542C6A2::ObjectFactoryVisitor::vfunc_1` at 0x1e8160 (rtti, high); signature (low): `undefined8 vfunc_1(ObjectFactoryVisitor * this, longlong * param_1)`
-pub const _anon_9542C6A2__ObjectFactoryVisitor__vfunc_1: u64 = 14712;
-/// `_anon_9542C6A2::ObjectTypeFinder::vdtor` at 0x1e78e0 (layout_inference, medium); signature (low): `ObjectTypeFinder * vdtor(ObjectTypeFinder * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const _anon_9542C6A2__ObjectTypeFinder__vdtor: u64 = 14702;
-/// `_anon_9542C6A2::ObjectTypeFinder::vfunc_1` at 0x1e81b0 (rtti, high); signature (low): `undefined8 vfunc_1(ObjectTypeFinder * this, ObjectTypeFinder_vtbl * param_1)`
-pub const _anon_9542C6A2__ObjectTypeFinder__vfunc_1: u64 = 14713;
-/// `_anon_9A252DE4::DispelBoundItemEffects::vdtor` at 0x5d46c0 (layout_inference, medium); signature (low): `DispelBoundItemEffects * vdtor(DispelBoundItemEffects * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const _anon_9A252DE4__DispelBoundItemEffects__vdtor: u64 = 34584;
-/// `_anon_9A252DE4::DispelBoundItemEffects::vfunc_1` at 0x5d4230 (rtti, high); signature (low): `undefined8 vfunc_1(DispelBoundItemEffects * this, longlong param_1)`
-pub const _anon_9A252DE4__DispelBoundItemEffects__vfunc_1: u64 = 34572;
-/// `_anon_9A252DE4::DispelEffectFunctor::vdtor` at 0x5d46f0 (layout_inference, medium); signature (low): `DispelEffectFunctor * vdtor(DispelEffectFunctor * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const _anon_9A252DE4__DispelEffectFunctor__vdtor: u64 = 34585;
-/// `_anon_9A252DE4::DispelEffectFunctor::vfunc_1` at 0x5d4290 (rtti, high); signature (low): `undefined8 vfunc_1(DispelEffectFunctor * this, longlong param_1)`
-pub const _anon_9A252DE4__DispelEffectFunctor__vfunc_1: u64 = 34573;
-/// `_anon_9A252DE4::HasSameUsageEffect::vdtor` at 0x5d48f0 (layout_inference, medium); signature (low): `HasSameUsageEffect * vdtor(HasSameUsageEffect * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const _anon_9A252DE4__HasSameUsageEffect__vdtor: u64 = 34592;
-/// `_anon_9A252DE4::HasSameUsageEffect::vfunc_1` at 0x5d44b0 (rtti, high); signature (low): `undefined8 vfunc_1(HasSameUsageEffect * this, HasSameUsageEffect_vtbl * param_1)`
-pub const _anon_9A252DE4__HasSameUsageEffect__vfunc_1: u64 = 34577;
-/// `_anon_9A252DE4::ResetElapsedTimeMatchingEffects::vdtor` at 0x5d49b0 (layout_inference, medium); signature (low): `ResetElapsedTimeMatchingEffects * vdtor(ResetElapsedTimeMatchingEffects * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const _anon_9A252DE4__ResetElapsedTimeMatchingEffects__vdtor: u64 = 34596;
-/// `_anon_9A252DE4::ResetElapsedTimeMatchingEffects::vfunc_1` at 0x5d45e0 (rtti, high); signature (low): `undefined8 vfunc_1(ResetElapsedTimeMatchingEffects * this, longlong * param_1)`
-pub const _anon_9A252DE4__ResetElapsedTimeMatchingEffects__vfunc_1: u64 = 34581;
-/// `_anon_9A252DE4::ResetElapsedTimeMatchingEffects::vfunc_1_sub0` at 0x5bb120 (callgraph, medium); signature (untiered): `undefined vfunc_1_sub0(longlong param_1)`
-pub const _anon_9A252DE4__ResetElapsedTimeMatchingEffects__vfunc_1_sub0: u64 = 34058;
-/// `_anon_9D0D3146::IsTeleportDoorOnPath::vdtor` at 0x1230400 (slot_propagation, medium); signature (low): `IsTeleportDoorOnPath * vdtor(IsTeleportDoorOnPath * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-pub const _anon_9D0D3146__IsTeleportDoorOnPath__vdtor: u64 = 92769;
-/// `_anon_9D0D3146::IsTeleportDoorOnPath::vfunc_1` at 0x12302c0 (rtti, high); signature (low): `undefined8 vfunc_1(IsTeleportDoorOnPath * this, longlong param_1)`
-pub const _anon_9D0D3146__IsTeleportDoorOnPath__vfunc_1: u64 = 92766;
-/// `_anon_9D0D3146::SkipJumpNode::vdtor` at 0x1230480 (slot_propagation, medium); signature (low): `SkipJumpNode * vdtor(SkipJumpNode * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-pub const _anon_9D0D3146__SkipJumpNode__vdtor: u64 = 92771;
-/// `_anon_9D0D3146::SkipJumpNode::vfunc_1` at 0x1230310 (rtti, high); signature (low): `undefined8 vfunc_1(SkipJumpNode * this, undefined4 * param_1, undefined8 param_2, float param_3)`
-pub const _anon_9D0D3146__SkipJumpNode__vfunc_1: u64 = 92767;
-/// `_anon_9F6D6E70::ApplyAllDecalsRefFunctor::vdtor` at 0x2dc990 (slot_propagation, medium); signature (low): `ApplyAllDecalsRefFunctor * vdtor(ApplyAllDecalsRefFunctor * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-pub const _anon_9F6D6E70__ApplyAllDecalsRefFunctor__vdtor: u64 = 19473;
-/// `_anon_9F6D6E70::ApplyAllDecalsRefFunctor::vfunc_1` at 0x2dc600 (rtti, high); signature (low): `undefined8 vfunc_1(ApplyAllDecalsRefFunctor * this, longlong param_1)`
-pub const _anon_9F6D6E70__ApplyAllDecalsRefFunctor__vfunc_1: u64 = 19467;
-/// `_anon_9F6D6E70::UpdateAllDecalsRefFunctor::vdtor` at 0x2dc9d0 (slot_propagation, medium); signature (low): `UpdateAllDecalsRefFunctor * vdtor(UpdateAllDecalsRefFunctor * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-pub const _anon_9F6D6E70__UpdateAllDecalsRefFunctor__vdtor: u64 = 19474;
-/// `_anon_9F6D6E70::UpdateAllDecalsRefFunctor::vfunc_1` at 0x2dc810 (rtti, high); signature (low): `undefined8 vfunc_1(UpdateAllDecalsRefFunctor * this, longlong param_1)`
-pub const _anon_9F6D6E70__UpdateAllDecalsRefFunctor__vfunc_1: u64 = 19469;
-/// `_anon_9F6D6E70::UpdateAllDecalsRefFunctor::vfunc_1_sub0` at 0x2e4040 (callgraph, medium); signature (untiered): `undefined vfunc_1_sub0(longlong * param_1, ulonglong param_2, ulonglong param_3, undefined8 param_4)`
-pub const _anon_9F6D6E70__UpdateAllDecalsRefFunctor__vfunc_1_sub0: u64 = 19573;
-/// `_anon_A5798209::bhkClosestRBRayHitCollector::vdtor` at 0x10ca950 (layout_inference, medium); signature (low): `bhkClosestRBRayHitCollector * vdtor(bhkClosestRBRayHitCollector * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const _anon_A5798209__bhkClosestRBRayHitCollector__vdtor: u64 = 80145;
-/// `_anon_A5798209::bhkClosestRBRayHitCollector::vfunc_0` at 0x10caa50 (rtti, high); signature (low): `undefined vfunc_0(bhkClosestRBRayHitCollector * this, longlong param_1, undefined4 * param_2)`
-pub const _anon_A5798209__bhkClosestRBRayHitCollector__vfunc_0: u64 = 80147;
-/// `_anon_A5EEF477::StageItemFinishedCallback::vdtor` at 0x3e1370 (slot_propagation, medium); signature (low): `StageItemFinishedCallback * vdtor(StageItemFinishedCallback * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-pub const _anon_A5EEF477__StageItemFinishedCallback__vdtor: u64 = 25238;
-/// `_anon_A5EEF477::StageItemFinishedCallback::vfunc_1` at 0x3e1120 (rtti, high); signature (high): `undefined vfunc_1(StageItemFinishedCallback * this)`
-pub const _anon_A5EEF477__StageItemFinishedCallback__vfunc_1: u64 = 25234;
-/// `_anon_A5EEF477::StageItemFinishedCallback::vfunc_2` at 0x3e1170 (rtti, high); signature (low): `undefined8 vfunc_2(StageItemFinishedCallback * this, longlong * param_1)`
-pub const _anon_A5EEF477__StageItemFinishedCallback__vfunc_2: u64 = 25235;
-/// `_anon_A5EEF477::StageItemFinishedCallback::vfunc_3` at 0x3e12a0 (rtti, high); signature (low): `undefined8 * vfunc_3(void)`
-pub const _anon_A5EEF477__StageItemFinishedCallback__vfunc_3: u64 = 25236;
-/// `_anon_A5EEF477::StageItemFinishedCallback::vfunc_4` at 0x3e12b0 (rtti, high); signature (low): `ulonglong vfunc_4(StageItemFinishedCallback * this, longlong * param_1)`
-pub const _anon_A5EEF477__StageItemFinishedCallback__vfunc_4: u64 = 25237;
-/// `_anon_A6FE82F0::EmptyCallbackFunctor::vdtor` at 0xbe7140 (layout_inference, medium); signature (low): `EmptyCallbackFunctor * vdtor(EmptyCallbackFunctor * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const _anon_A6FE82F0__EmptyCallbackFunctor__vdtor: u64 = 63965;
-/// `_anon_A6FE82F0::EmptyCallbackFunctor::vfunc_1` at 0xbe7130 (rtti, high); signature (low): `undefined vfunc_1(void)`
-pub const _anon_A6FE82F0__EmptyCallbackFunctor__vfunc_1: u64 = 63964;
-/// `_anon_A6FE82F0::NullCallbackFunctor::vdtor` at 0xbeb380 (layout_inference, medium); signature (low): `NullCallbackFunctor * vdtor(NullCallbackFunctor * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const _anon_A6FE82F0__NullCallbackFunctor__vdtor: u64 = 64033;
-/// `_anon_A6FE82F0::NullCallbackFunctor::vfunc_1` at 0xbeb630 (rtti, high); signature (low): `undefined vfunc_1(void)`
-pub const _anon_A6FE82F0__NullCallbackFunctor__vfunc_1: u64 = 64040;
-/// `_anon_A86607C4::ScenePhaseResultsCallBack::vdtor` at 0x3ad960 (slot_propagation, medium); signature (low): `ScenePhaseResultsCallBack * vdtor(ScenePhaseResultsCallBack * this, uint param_1)`
-pub const _anon_A86607C4__ScenePhaseResultsCallBack__vdtor: u64 = 24293;
-/// `_anon_A86607C4::ScenePhaseResultsCallBack::vfunc_1` at 0x3ad770 (rtti, high); signature (low): `undefined vfunc_1(ScenePhaseResultsCallBack * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-pub const _anon_A86607C4__ScenePhaseResultsCallBack__vfunc_1: u64 = 24289;
-/// `_anon_A86607C4::ScenePhaseResultsCallBack::vfunc_2` at 0x3ad7b0 (rtti, high); signature (low): `undefined8 vfunc_2(ScenePhaseResultsCallBack * this, longlong * param_1)`
-pub const _anon_A86607C4__ScenePhaseResultsCallBack__vfunc_2: u64 = 24290;
-/// `_anon_A86607C4::ScenePhaseResultsCallBack::vfunc_3` at 0x3ad8a0 (rtti, high); signature (low): `undefined8 * vfunc_3(void)`
-pub const _anon_A86607C4__ScenePhaseResultsCallBack__vfunc_3: u64 = 24291;
-/// `_anon_A86607C4::ScenePhaseResultsCallBack::vfunc_4` at 0x3ad8b0 (rtti, high); signature (low): `ulonglong vfunc_4(ScenePhaseResultsCallBack * this, longlong * param_1)`
-pub const _anon_A86607C4__ScenePhaseResultsCallBack__vfunc_4: u64 = 24292;
-/// `_anon_A8BC47B4::RandomDialogueStoryEventProcessor::vdtor` at 0x6f0060 (layout_inference, medium); signature (low): `RandomDialogueStoryEventProcessor * vdtor(RandomDialogueStoryEventProcessor * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const _anon_A8BC47B4__RandomDialogueStoryEventProcessor__vdtor: u64 = 39248;
-/// `_anon_A8BC47B4::RandomDialogueStoryEventProcessor::vfunc_1` at 0x6f0030 (rtti, high); signature (low): `undefined8 vfunc_1(RandomDialogueStoryEventProcessor * this, undefined4 * param_1)`
-pub const _anon_A8BC47B4__RandomDialogueStoryEventProcessor__vfunc_1: u64 = 39247;
-/// `_anon_A8BC47B4::RandomDialogueStoryEventProcessor::vfunc_1_sub0` at 0x71afe0 (callgraph, medium); signature (untiered): `undefined vfunc_1_sub0(longlong param_1, int * param_2)`
-pub const _anon_A8BC47B4__RandomDialogueStoryEventProcessor__vfunc_1_sub0: u64 = 39696;
-/// `_anon_A8BC47B4::StandardDetectionListener::vdtor` at 0x71d300 (layout_inference, medium); signature (low): `StandardDetectionListener * vdtor(StandardDetectionListener * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const _anon_A8BC47B4__StandardDetectionListener__vdtor: u64 = 39741;
-/// `_anon_A8BC47B4::StandardDetectionListener::vfunc_2` at 0x71de30 (rtti, high); signature (low): `undefined8 vfunc_2(StandardDetectionListener * this, longlong param_1)`
-pub const _anon_A8BC47B4__StandardDetectionListener__vfunc_2: u64 = 39761;
-/// `_anon_A8BC47B4::StandardDetectionListener::vfunc_2_sub0` at 0x71e230 (callgraph, medium); signature (untiered): `undefined8 vfunc_2_sub0(longlong param_1, undefined8 param_2, longlong * * * * * * * param_3, TypeDescriptor * param_4)`
-pub const _anon_A8BC47B4__StandardDetectionListener__vfunc_2_sub0: u64 = 39765;
-/// `_anon_A8BC47B4::StandardDetectionListener::vfunc_3` at 0x71de10 (rtti, high); signature (low): `undefined vfunc_3(StandardDetectionListener * this, longlong param_1)`
-pub const _anon_A8BC47B4__StandardDetectionListener__vfunc_3: u64 = 39759;
-/// `_anon_A8BC47B4::StandardDetectionListener::vfunc_4` at 0x71de20 (rtti, high); signature (low): `undefined vfunc_4(StandardDetectionListener * this, longlong param_1)`
-pub const _anon_A8BC47B4__StandardDetectionListener__vfunc_4: u64 = 39760;
-/// `_anon_AC7D7EFF::FindFormTypeHelper::vdtor` at 0x34c640 (layout_inference, medium); signature (low): `FindFormTypeHelper * vdtor(FindFormTypeHelper * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const _anon_AC7D7EFF__FindFormTypeHelper__vdtor: u64 = 21986;
-/// `_anon_AC7D7EFF::FindFormTypeHelper::vfunc_1` at 0x34c750 (rtti, high); signature (low): `undefined8 vfunc_1(FindFormTypeHelper * this, longlong * param_1)`
-pub const _anon_AC7D7EFF__FindFormTypeHelper__vfunc_1: u64 = 21990;
-/// `_anon_AF90DAB6::CheckEndReachedFunctorMapper::ctor` at 0x11d2490 (layout_inference, medium); signature (low): `CheckEndReachedFunctorMapper * ctor(CheckEndReachedFunctorMapper * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-pub const _anon_AF90DAB6__CheckEndReachedFunctorMapper__ctor: u64 = 90784;
-/// `_anon_AF90DAB6::CheckEndReachedFunctorMapper::dtor` at 0x11d27d0 (layout_inference, high); signature (high): `undefined dtor(CheckEndReachedFunctorMapper * this)`
-pub const _anon_AF90DAB6__CheckEndReachedFunctorMapper__dtor: u64 = 90792;
-/// `_anon_AF90DAB6::CheckEndReachedFunctorMapper::vdtor` at 0x11d2a50 (layout_inference, medium); signature (low): `CheckEndReachedFunctorMapper * vdtor(CheckEndReachedFunctorMapper * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-pub const _anon_AF90DAB6__CheckEndReachedFunctorMapper__vdtor: u64 = 90806;
-/// `_anon_AF90DAB6::CheckEndReachedFunctorMapper::vfunc_1` at 0x11d2f10 (rtti, high); signature (low): `undefined vfunc_1(CheckEndReachedFunctorMapper * this, longlong param_1)`
-pub const _anon_AF90DAB6__CheckEndReachedFunctorMapper__vfunc_1: u64 = 90825;
-/// `_anon_AF90DAB6::CheckEndReachedFunctorMapper::vfunc_2` at 0x11d2ef0 (rtti, high); signature (low): `undefined8 vfunc_2(CheckEndReachedFunctorMapper * this, uint param_1)`
-pub const _anon_AF90DAB6__CheckEndReachedFunctorMapper__vfunc_2: u64 = 90824;
-/// `_anon_AFCBE69D::AddPackagesToListFunc::vfunc_0` at 0x6c3d70 (rtti, high); signature (low): `undefined8 vfunc_0(AddPackagesToListFunc * this, longlong param_1)`
-pub const _anon_AFCBE69D__AddPackagesToListFunc__vfunc_0: u64 = 38412;
-/// `_anon_AFCBE69D::AliasAddPackagesToListFunc::vdtor` at 0x6bc6f0 (layout_inference, medium); signature (low): `AliasAddPackagesToListFunc * vdtor(AliasAddPackagesToListFunc * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const _anon_AFCBE69D__AliasAddPackagesToListFunc__vdtor: u64 = 38230;
-/// `_anon_AFCBE69D::AliasAddPackagesToListFunc::vfunc_1` at 0x6bb650 (rtti, high); signature (low): `undefined8 vfunc_1(AliasAddPackagesToListFunc * this, undefined8 param_1)`
-pub const _anon_AFCBE69D__AliasAddPackagesToListFunc__vfunc_1: u64 = 38183;
-/// `_anon_AFCBE69D::AliasAddPackagesToListFunc::vfunc_1_sub0` at 0x6c0a60 (callgraph, medium); signature (untiered): `ulonglong vfunc_1_sub0(ulonglong param_1)`
-pub const _anon_AFCBE69D__AliasAddPackagesToListFunc__vfunc_1_sub0: u64 = 38336;
-/// `_anon_AFCBE69D::NavmeshMovementPostPhysicsListener::vdtor` at 0x66f8f0 (layout_inference, medium); signature (low): `NavmeshMovementPostPhysicsListener * vdtor(NavmeshMovementPostPhysicsListener * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const _anon_AFCBE69D__NavmeshMovementPostPhysicsListener__vdtor: u64 = 37149;
-/// `_anon_AFCBE69D::NavmeshMovementPostPhysicsListener::vfunc_1` at 0x66f750 (rtti, high); signature (low): `undefined vfunc_1(NavmeshMovementPostPhysicsListener * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
-pub const _anon_AFCBE69D__NavmeshMovementPostPhysicsListener__vfunc_1: u64 = 37148;
-/// `_anon_AFCBE69D::QualifyAsCurrentPackage::vfunc_0` at 0x6c3e20 (rtti, high); signature (low): `undefined8 vfunc_0(QualifyAsCurrentPackage * this, QualifyAsCurrentPackage_vtbl * param_1)`
-pub const _anon_AFCBE69D__QualifyAsCurrentPackage__vfunc_0: u64 = 38413;
-/// `_anon_B19E5BB3::ApparelUnequipper::vdtor` at 0x972e20 (layout_inference, medium); signature (low): `ApparelUnequipper * vdtor(ApparelUnequipper * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const _anon_B19E5BB3__ApparelUnequipper__vdtor: u64 = 52445;
-/// `_anon_B19E5BB3::ApparelUnequipper::vfunc_1` at 0x974850 (rtti, high); signature (low): `undefined8 vfunc_1(ApparelUnequipper * this, longlong * param_1)`
-pub const _anon_B19E5BB3__ApparelUnequipper__vfunc_1: u64 = 52470;
-/// `_anon_B19E5BB3::ConfirmAndNameCallback::vdtor` at 0x972e50 (layout_inference, medium); signature (low): `ConfirmAndNameCallback * vdtor(ConfirmAndNameCallback * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const _anon_B19E5BB3__ConfirmAndNameCallback__vdtor: u64 = 52446;
-/// `_anon_B19E5BB3::ConfirmAndNameCallback::vfunc_1` at 0x972a30 (rtti, high); signature (low): `undefined vfunc_1(ConfirmAndNameCallback * this, char param_1, undefined8 param_2, undefined8 param_3)`
-pub const _anon_B19E5BB3__ConfirmAndNameCallback__vfunc_1: u64 = 52440;
-/// `_anon_B19E5BB3::ConfirmAndNameCallback::vfunc_1_sub0` at 0x96af50 (callgraph, medium); signature (untiered): `undefined vfunc_1_sub0(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const _anon_B19E5BB3__ConfirmAndNameCallback__vfunc_1_sub0: u64 = 52383;
-/// `_anon_B19E5BB3::ConfirmCloseRaceSexMenuCallback::vdtor` at 0x972e80 (layout_inference, medium); signature (low): `ConfirmCloseRaceSexMenuCallback * vdtor(ConfirmCloseRaceSexMenuCallback * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const _anon_B19E5BB3__ConfirmCloseRaceSexMenuCallback__vdtor: u64 = 52447;
-/// `_anon_B19E5BB3::ConfirmCloseRaceSexMenuCallback::vfunc_1` at 0x972a80 (rtti, high); signature (low): `undefined vfunc_1(ConfirmCloseRaceSexMenuCallback * this, char param_1, undefined8 param_2, undefined8 param_3)`
-pub const _anon_B19E5BB3__ConfirmCloseRaceSexMenuCallback__vfunc_1: u64 = 52441;
-/// `_anon_B19E5BB3::ConfirmDestructiveChangesCallback::vdtor` at 0x972eb0 (layout_inference, medium); signature (low): `ConfirmDestructiveChangesCallback * vdtor(ConfirmDestructiveChangesCallback * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const _anon_B19E5BB3__ConfirmDestructiveChangesCallback__vdtor: u64 = 52448;
-/// `_anon_B19E5BB3::ConfirmDestructiveChangesCallback::vfunc_1` at 0x972ad0 (rtti, high); signature (low): `undefined vfunc_1(ConfirmDestructiveChangesCallback * this, char param_1, undefined8 param_2, undefined8 param_3)`
-pub const _anon_B19E5BB3__ConfirmDestructiveChangesCallback__vfunc_1: u64 = 52442;
-/// `_anon_C0BCB154::UpdateArmorWornVisitor::vdtor` at 0x735a20 (layout_inference, medium); signature (low): `UpdateArmorWornVisitor * vdtor(UpdateArmorWornVisitor * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const _anon_C0BCB154__UpdateArmorWornVisitor__vdtor: u64 = 40143;
-/// `_anon_C0BCB154::UpdateArmorWornVisitor::vfunc_1` at 0x736d80 (rtti, high); signature (low): `bool vfunc_1(UpdateArmorWornVisitor * this, longlong * param_1)`
-pub const _anon_C0BCB154__UpdateArmorWornVisitor__vfunc_1: u64 = 40160;
-/// `_anon_C46CEF40::HandleEntryPointVisitor::vfunc_0` at 0x38d170 (rtti, high); signature (low): `undefined8 vfunc_0(HandleEntryPointVisitor * this, longlong * param_1)`
-pub const _anon_C46CEF40__HandleEntryPointVisitor__vfunc_0: u64 = 23527;
-/// `_anon_C46CEF40::HandleEntryPointVisitor::vfunc_0_sub0` at 0x38d1f0 (callgraph, medium); signature (untiered): `undefined vfunc_0_sub0(int param_1, undefined8 param_2, undefined4 param_3, undefined1 param_4, undefined8 param_5, undefined8 param_6)`
-pub const _anon_C46CEF40__HandleEntryPointVisitor__vfunc_0_sub0: u64 = 23528;
-/// `_anon_CE40B4D9::AutoRegisterCombatMagicCaster<CombatMagicCasterArmor>::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterArmor_vdtor` at 0x831e7c (slot_propagation, medium); signature (high): `undefined AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterArmor_vdtor(AutoRegisterCombatMagicCaster<CombatMagicCasterArmor> * this)`
-pub const _anon_CE40B4D9__AutoRegisterCombatMagicCaster_CombatMagicCasterArmor__AutoRegisterCombatObject_C_682c04ac5005: u64 = 45255;
-/// `_anon_CE40B4D9::AutoRegisterCombatMagicCaster<CombatMagicCasterArmor>::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterArmor_vdtor` at 0x831f48 (slot_propagation, medium); signature (high): `undefined AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterArmor_vdtor(AutoRegisterCombatMagicCaster<CombatMagicCasterArmor> * this)`
-pub const _anon_CE40B4D9__AutoRegisterCombatMagicCaster_CombatMagicCasterArmor__AutoRegisterCombatObject_C_7f4c2dbd2e88: u64 = 45260;
-/// `_anon_CE40B4D9::AutoRegisterCombatMagicCaster<CombatMagicCasterArmor>::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterArmor_vdtor` at 0x831f54 (slot_propagation, medium); signature (high): `undefined AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterArmor_vdtor(AutoRegisterCombatMagicCaster<CombatMagicCasterArmor> * this)`
-pub const _anon_CE40B4D9__AutoRegisterCombatMagicCaster_CombatMagicCasterArmor__AutoRegisterCombatObject_C_e6ee66f078c8: u64 = 45261;
-/// `_anon_CE40B4D9::AutoRegisterCombatMagicCaster<CombatMagicCasterArmor>::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterArmor_vdtor` at 0x831e88 (slot_propagation, medium); signature (high): `undefined AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterArmor_vdtor(AutoRegisterCombatMagicCaster<CombatMagicCasterArmor> * this)`
-pub const _anon_CE40B4D9__AutoRegisterCombatMagicCaster_CombatMagicCasterArmor__AutoRegisterCombatObject_C_6a1c03e85051: u64 = 45256;

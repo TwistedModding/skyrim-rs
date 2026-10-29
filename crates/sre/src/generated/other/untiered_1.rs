@@ -294,6 +294,26 @@ impl crate::AppResourceCaching___anon_AE50F340__Manager {
     pub unsafe fn bst_event_sink_bs_resource_archive_registered_event_vfunc_1_sub3(param_1: *mut i32, param_2: *mut i64, param_3: *mut c_char, param_4: u64) -> u64 { unsafe { function!(69632, (*mut i32, *mut i64, *mut c_char, u64) -> u64)(param_1, param_2, param_3, param_4) } }
 }
 
+impl crate::ArrowAttachHandler {
+    /// `ArrowAttachHandler::Handle`, vtable slot 1, through the object's vtable (decompiler signature, tier untiered; ledger semantic evidence, name high; id 42857, rva 0x7cdbb0).
+    /// `undefined8 Handle(ArrowAttachHandler * this, longlong * param_1)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn handle(&self, param_1: *mut i64) -> u64 { unsafe { virtual_function!(self, 1, (*const Self, *mut i64) -> u64)(core::ptr::from_ref(self), param_1) } }
+}
+
+impl crate::ArrowDetachHandler {
+    /// `ArrowDetachHandler::Handle`, vtable slot 1, through the object's vtable (decompiler signature, tier untiered; ledger semantic evidence, name high; id 42858, rva 0x7cdc70).
+    /// `undefined8 Handle(ArrowDetachHandler * this, longlong * param_1)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn handle(&self, param_1: *mut i64) -> u64 { unsafe { virtual_function!(self, 1, (*const Self, *mut i64) -> u64)(core::ptr::from_ref(self), param_1) } }
+}
+
 impl crate::ArrowProjectile {
     /// `ArrowProjectile::LoadGame` (decompiler signature, tier untiered; ledger slot_propagation evidence, name medium; id 43708, rva 0x7de190).
     /// `undefined LoadGame(ArrowProjectile * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
@@ -332,7 +352,24 @@ impl crate::ArrowProjectile {
     pub unsafe fn vfunc_189_sub0(param_1: i64, param_2: *mut i64) -> u64 { unsafe { function!(44167, (i64, *mut i64) -> u64)(param_1, param_2) } }
 }
 
+impl crate::ArrowReleaseHandler {
+    /// `ArrowReleaseHandler::Handle`, vtable slot 1, through the object's vtable (decompiler signature, tier untiered; ledger semantic evidence, name high; id 42859, rva 0x7cdd40).
+    /// `undefined8 Handle(ArrowReleaseHandler * this, uint * param_1)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn handle(&self, param_1: *mut u32) -> u64 { unsafe { virtual_function!(self, 1, (*const Self, *mut u32) -> u64)(core::ptr::from_ref(self), param_1) } }
+}
+
 impl crate::AttackStopHandler {
+    /// `AttackStopHandler::Handle`, vtable slot 1, through the object's vtable (decompiler signature, tier untiered; ledger semantic evidence, name high; id 42814, rva 0x7cc650).
+    /// `undefined1 Handle(AttackStopHandler * this, longlong param_1)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn handle(&self, param_1: i64) -> u8 { unsafe { virtual_function!(self, 1, (*const Self, i64) -> u8)(core::ptr::from_ref(self), param_1) } }
     /// `AttackStopHandler::vfunc_1_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 39542, rva 0x700d20).
     /// `undefined vfunc_1_sub0(longlong param_1)`
     ///
@@ -340,6 +377,26 @@ impl crate::AttackStopHandler {
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
     pub unsafe fn vfunc_1_sub0(param_1: i64) -> u64 { unsafe { function!(39542, (i64) -> u64)(param_1) } }
+}
+
+impl crate::AttackWinEndHandler {
+    /// `AttackWinEndHandler::Handle`, vtable slot 1, through the object's vtable (decompiler signature, tier untiered; ledger semantic evidence, name high; id 42813, rva 0x7cc610).
+    /// `undefined8 Handle(AttackWinEndHandler * this, longlong param_1)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn handle(&self, param_1: i64) -> u64 { unsafe { virtual_function!(self, 1, (*const Self, i64) -> u64)(core::ptr::from_ref(self), param_1) } }
+}
+
+impl crate::AttackWinStartHandler {
+    /// `AttackWinStartHandler::Handle`, vtable slot 1, through the object's vtable (decompiler signature, tier untiered; ledger semantic evidence, name high; id 42812, rva 0x7cc5d0).
+    /// `undefined8 Handle(AttackWinStartHandler * this, longlong param_1)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn handle(&self, param_1: i64) -> u64 { unsafe { virtual_function!(self, 1, (*const Self, i64) -> u64)(core::ptr::from_ref(self), param_1) } }
 }
 
 impl crate::BGShkPhonemeController {
@@ -594,6 +651,26 @@ impl crate::BoundItemEffect {
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
     pub unsafe fn vfunc_9_sub0(param_1: *mut u64, param_2: *mut i64) -> u64 { unsafe { function!(38917, (*mut u64, *mut i64) -> u64)(param_1, param_2) } }
+}
+
+impl crate::BowDrawnHandler {
+    /// `BowDrawnHandler::Handle`, vtable slot 1, through the object's vtable (decompiler signature, tier untiered; ledger semantic evidence, name high; id 42855, rva 0x7cdb70).
+    /// `undefined1 Handle(BowDrawnHandler * this, longlong param_1)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn handle(&self, param_1: i64) -> u8 { unsafe { virtual_function!(self, 1, (*const Self, i64) -> u8)(core::ptr::from_ref(self), param_1) } }
+}
+
+impl crate::BowReleaseHandler {
+    /// `BowReleaseHandler::Handle`, vtable slot 1, through the object's vtable (decompiler signature, tier untiered; ledger semantic evidence, name high; id 42856, rva 0x7cdb90).
+    /// `undefined1 Handle(BowReleaseHandler * this, longlong param_1)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn handle(&self, param_1: i64) -> u8 { unsafe { virtual_function!(self, 1, (*const Self, i64) -> u8)(core::ptr::from_ref(self), param_1) } }
 }
 
 impl crate::BowZoomStartHandler {
@@ -1822,6 +1899,16 @@ impl crate::HeadTrackingOffHandler {
     pub unsafe fn vfunc_1_sub0(param_1: i64) -> u64 { unsafe { function!(37798, (i64) -> u64)(param_1) } }
 }
 
+impl crate::HitFrameHandler {
+    /// `HitFrameHandler::Handle`, vtable slot 1, through the object's vtable (decompiler signature, tier untiered; ledger semantic evidence, name high; id 42828, rva 0x7cccc0).
+    /// `longlong Handle(HitFrameHandler * this, Actor * param_1, longlong * param_2, undefined8 param_3)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn handle(&self, param_1: *mut crate::Actor, param_2: *mut i64, param_3: u64) -> i64 { unsafe { virtual_function!(self, 1, (*const Self, *mut crate::Actor, *mut i64, u64) -> i64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+}
+
 impl crate::HoldWardSpellsActiveEffectVisitor {
     /// `HoldWardSpellsActiveEffectVisitor::vfunc_1_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 34033, rva 0x5ba3d0).
     /// `undefined vfunc_1_sub0(longlong param_1)`
@@ -2535,23 +2622,6 @@ impl crate::MagicItemDataCollector {
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
     pub unsafe fn vfunc_1_sub0(param_1: i64, param_2: i32, param_3: c_char, param_4: *mut i64, param_5: *mut i32) -> u64 { unsafe { function!(11342, (i64, i32, c_char, *mut i64, *mut i32) -> u64)(param_1, param_2, param_3, param_4, param_5) } }
-}
-
-impl crate::MagicTarget {
-    /// `MagicTarget::vfunc_1_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 34547, rva 0x5d30d0).
-    /// `char vfunc_1_sub0(longlong * param_1, longlong * param_2, ActiveEffect * * param_3, longlong param_4)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn vfunc_1_sub0(param_1: *mut i64, param_2: *mut i64, param_3: *mut *mut crate::ActiveEffect, param_4: i64) -> c_char { unsafe { function!(34547, (*mut i64, *mut i64, *mut *mut crate::ActiveEffect, i64) -> c_char)(param_1, param_2, param_3, param_4) } }
-    /// `MagicTarget::vfunc_1_sub1` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 34570, rva 0x5d4180).
-    /// `undefined vfunc_1_sub1(longlong * param_1)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn vfunc_1_sub1(param_1: *mut i64) -> u64 { unsafe { function!(34570, (*mut i64) -> u64)(param_1) } }
 }
 
 impl crate::MagicTarget__IPostCreationModification {
@@ -3904,6 +3974,16 @@ impl crate::ReanimateEffect {
     pub unsafe fn vfunc_20_sub1(param_1: i64, param_2: i64, param_3: u64) -> u64 { unsafe { function!(39577, (i64, i64, u64) -> u64)(param_1, param_2, param_3) } }
 }
 
+impl crate::RecoilStopHandler {
+    /// `RecoilStopHandler::Handle`, vtable slot 1, through the object's vtable (decompiler signature, tier untiered; ledger semantic evidence, name high; id 42815, rva 0x7cc690).
+    /// `undefined1 Handle(RecoilStopHandler * this, longlong param_1)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn handle(&self, param_1: i64) -> u8 { unsafe { virtual_function!(self, 1, (*const Self, i64) -> u8)(core::ptr::from_ref(self), param_1) } }
+}
+
 impl crate::RemoveCallbackVisitor {
     /// `RemoveCallbackVisitor::vfunc_1_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 82658, rva 0x117b3e0).
     /// `undefined vfunc_1_sub0(undefined8 * param_1)`
@@ -4109,6 +4189,16 @@ impl crate::SpellItem {
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
     pub unsafe fn vfunc_111_sub0(param_1: *mut u32, param_2: i64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(11504, (*mut u32, i64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
+}
+
+impl crate::StaggeredStopHandler {
+    /// `StaggeredStopHandler::Handle`, vtable slot 1, through the object's vtable (decompiler signature, tier untiered; ledger semantic evidence, name high; id 42830, rva 0x7ccd90).
+    /// `undefined1 Handle(StaggeredStopHandler * this, longlong param_1)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn handle(&self, param_1: i64) -> u8 { unsafe { virtual_function!(self, 1, (*const Self, i64) -> u8)(core::ptr::from_ref(self), param_1) } }
 }
 
 impl crate::Stars {
@@ -4642,6 +4732,16 @@ impl crate::WeaponEnchantmentController {
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
     pub unsafe fn vfunc_15_sub0(param_1: i64) -> u64 { unsafe { function!(34871, (i64) -> u64)(param_1) } }
+}
+
+impl crate::WeaponRightSwingHandler {
+    /// `WeaponRightSwingHandler::Handle`, vtable slot 1, through the object's vtable (decompiler signature, tier untiered; ledger semantic evidence, name high; id 42810, rva 0x7cc4b0).
+    /// `undefined8 Handle(WeaponRightSwingHandler * this, longlong * param_1)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn handle(&self, param_1: *mut i64) -> u64 { unsafe { virtual_function!(self, 1, (*const Self, *mut i64) -> u64)(core::ptr::from_ref(self), param_1) } }
 }
 
 impl crate::_anon_025735F6__ActorLocationChangeArguments {
@@ -13816,73 +13916,3 @@ pub unsafe fn assign_player_target_package_to_actor(param_1: i64, param_2: *mut 
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn assign_pointer_clearing_handle(param_1: *mut i32, param_2: i64) -> *mut i32 { unsafe { function!(87498, (*mut i32, i64) -> *mut i32)(param_1, param_2) } }
-/// `AssignPointerValueToTarget` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 23542, rva 0x38de50).
-/// `undefined AssignPointerValueToTarget(undefined8 param_1, int param_2, byte param_3, longlong * param_4, longlong * param_5)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn assign_pointer_value_to_target(param_1: u64, param_2: i32, param_3: u8, param_4: *mut i64, param_5: *mut i64) -> u64 { unsafe { function!(23542, (u64, i32, u8, *mut i64, *mut i64) -> u64)(param_1, param_2, param_3, param_4, param_5) } }
-/// `AssignPooledStringFromCString` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 69175, rva 0xeb1430).
-/// `undefined AssignPooledStringFromCString(longlong * param_1, char * param_2, char * param_3, char * param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn assign_pooled_string_from_c_string(param_1: *mut i64, param_2: *mut c_char, param_3: *mut c_char, param_4: *mut c_char) -> u64 { unsafe { function!(69175, (*mut i64, *mut c_char, *mut c_char, *mut c_char) -> u64)(param_1, param_2, param_3, param_4) } }
-/// `AssignPooledWideString` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 69179, rva 0xeb1a90).
-/// `ulonglong * AssignPooledWideString(ulonglong * param_1, wchar_t * param_2, ulonglong param_3, ulonglong param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn assign_pooled_wide_string(param_1: *mut u64, param_2: *mut u16, param_3: u64, param_4: u64) -> *mut u64 { unsafe { function!(69179, (*mut u64, *mut u16, u64, u64) -> *mut u64)(param_1, param_2, param_3, param_4) } }
-/// `AssignPostOrderIndexDfs` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 66530, rva 0xc75250).
-/// `int AssignPostOrderIndexDfs(int param_1, longlong * param_2, longlong * param_3, int param_4, longlong * param_5, undefined8 param_6)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn assign_post_order_index_dfs(param_1: i32, param_2: *mut i64, param_3: *mut i64, param_4: i32, param_5: *mut i64, param_6: u64) -> i32 { unsafe { function!(66530, (i32, *mut i64, *mut i64, i32, *mut i64, u64) -> i32)(param_1, param_2, param_3, param_4, param_5, param_6) } }
-/// `AssignQwordVector` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 526253, rva 0x1337440).
-/// `longlong * AssignQwordVector(longlong * param_1, longlong * param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn assign_qword_vector(param_1: *mut i64, param_2: *mut i64) -> *mut i64 { unsafe { function!(526253, (*mut i64, *mut i64) -> *mut i64)(param_1, param_2) } }
-/// `AssignRangeRecord0x170Vector` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 523445, rva 0x141db0).
-/// `undefined AssignRangeRecord0x170Vector(ulonglong * param_1, longlong param_2, longlong param_3)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn assign_range_record0x170_vector(param_1: *mut u64, param_2: i64, param_3: i64) -> u64 { unsafe { function!(523445, (*mut u64, i64, i64) -> u64)(param_1, param_2, param_3) } }
-/// `AssignRangeVector2040` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 449202, rva 0x13764f0).
-/// `undefined AssignRangeVector2040(longlong * param_1, longlong param_2, longlong param_3)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn assign_range_vector2040(param_1: *mut i64, param_2: i64, param_3: i64) -> u64 { unsafe { function!(449202, (*mut i64, i64, i64) -> u64)(param_1, param_2, param_3) } }
-/// `AssignRangeVector50` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 96342, rva 0x1457d80).
-/// `undefined AssignRangeVector50(longlong * param_1, longlong * param_2, longlong * param_3)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn assign_range_vector50(param_1: *mut i64, param_2: *mut i64, param_3: *mut i64) -> u64 { unsafe { function!(96342, (*mut i64, *mut i64, *mut i64) -> u64)(param_1, param_2, param_3) } }
-/// `AssignRecord0x170Vector` (decompiler signature, tier untiered; ledger decompiler evidence, name high; id 523440, rva 0x1417a0).
-/// `undefined8 * AssignRecord0x170Vector(undefined8 * param_1, undefined8 * param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn assign_record0x170_vector(param_1: *mut u64, param_2: *mut u64) -> *mut u64 { unsafe { function!(523440, (*mut u64, *mut u64) -> *mut u64)(param_1, param_2) } }
-/// `AssignRecord28Array` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 523749, rva 0x5ac3b0).
-/// `undefined8 AssignRecord28Array(longlong * param_1, longlong * param_2, undefined8 param_3, ulonglong param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn assign_record28_array(param_1: *mut i64, param_2: *mut i64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(523749, (*mut i64, *mut i64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }

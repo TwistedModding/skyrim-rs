@@ -3,13 +3,6 @@
 
 use core::ffi::{c_char, c_void};
 
-/// `SetRefCountedField30_4` (decompiler signature, tier high; ledger decompiler evidence, name high; id 61967, rva 0xb76210).
-/// `undefined SetRefCountedField30_4(longlong param_1, longlong param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn set_ref_counted_field30_4(param_1: i64, param_2: i64) -> u64 { unsafe { function!(61967, (i64, i64) -> u64)(param_1, param_2) } }
 /// `SetRefCountedField40` (decompiler signature, tier high; ledger decompiler evidence, name high; id 59479, rva 0xaffe70).
 /// `undefined SetRefCountedField40(longlong param_1, longlong param_2)`
 ///

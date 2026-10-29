@@ -3,6 +3,90 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `CallBSCoreMessageVfunc3WithTlsChannel` at 0xce1940 (decompiler, medium); signature (untiered): `undefined CallBSCoreMessageVfunc3WithTlsChannel(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const CallBSCoreMessageVfunc3WithTlsChannel: u64 = 68197;
+/// `CallBindScriptObjectWithErrorReport` at 0x9bf290 (decompiler, medium); signature (untiered): `undefined8 CallBindScriptObjectWithErrorReport(undefined8 * param_1, undefined8 param_2)`
+pub const CallBindScriptObjectWithErrorReport: u64 = 53584;
+/// `CallCatalogGetPlayerItem` at 0x132d540 (decompiler, medium); signature (untiered): `undefined8 CallCatalogGetPlayerItem(undefined8 param_1, longlong * param_2, longlong * param_3, undefined8 param_4)`
+pub const CallCatalogGetPlayerItem: u64 = 448566;
+/// `CallContentVfunc58ByKey` at 0x589070 (decompiler, medium); signature (untiered): `undefined CallContentVfunc58ByKey(longlong param_1, ulonglong param_2, undefined8 param_3, undefined8 param_4)`
+pub const CallContentVfunc58ByKey: u64 = 441797;
+/// `CallContentVfunc68ByKey` at 0x5890f0 (decompiler, medium); signature (untiered): `undefined CallContentVfunc68ByKey(longlong param_1, ulonglong param_2, ulonglong param_3, undefined8 param_4)`
+pub const CallContentVfunc68ByKey: u64 = 523692;
+/// `CallField0IfField8NonNull` at 0x14799b0 (decompiler, medium); signature (medium): `undefined CallField0IfField8NonNull(undefined8 * param_1)`
+pub const CallField0IfField8NonNull: u64 = 453148;
+/// `CallField10CallbackIfSet` at 0xc01350 (decompiler, medium); signature (untiered): `undefined CallField10CallbackIfSet(longlong param_1, undefined8 param_2, undefined4 param_3)`
+pub const CallField10CallbackIfSet: u64 = 64464;
+/// `CallField10ObjectVfunc20AndReturnSelf` at 0xabb550 (decompiler, high); signature (untiered): `longlong CallField10ObjectVfunc20AndReturnSelf(longlong param_1)`
+pub const CallField10ObjectVfunc20AndReturnSelf: u64 = 57927;
+/// `CallField10Vfunc0AndFreeViaGlobal414364` at 0x139b310 (decompiler, medium); signature (medium): `undefined CallField10Vfunc0AndFreeViaGlobal414364(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const CallField10Vfunc0AndFreeViaGlobal414364: u64 = 450239;
+/// `CallField10Vfunc0WithZero` at 0x139b300 (decompiler, medium); signature (medium): `undefined CallField10Vfunc0WithZero(longlong param_1)`
+pub const CallField10Vfunc0WithZero: u64 = 450238;
+/// `CallField10Vfunc2` at 0x6e0620 (decompiler, medium); signature (untiered): `undefined8 CallField10Vfunc2(longlong param_1)`
+pub const CallField10Vfunc2: u64 = 38962;
+/// `CallField10Vfunc20ThenPadToWidth` at 0xac0b60 (decompiler, medium); signature (untiered): `undefined CallField10Vfunc20ThenPadToWidth(longlong param_1, int * param_2, int param_3)`
+pub const CallField10Vfunc20ThenPadToWidth: u64 = 58087;
+/// `CallField10Vfunc20UnderLock` at 0xb5b150 (decompiler, medium); signature (untiered): `undefined4 CallField10Vfunc20UnderLock(longlong param_1, undefined4 param_2)`
+pub const CallField10Vfunc20UnderLock: u64 = 61411;
+/// `CallField10Vfunc28UnderLock` at 0xb5b1a0 (decompiler, medium); signature (untiered): `undefined4 CallField10Vfunc28UnderLock(longlong param_1)`
+pub const CallField10Vfunc28UnderLock: u64 = 61412;
+/// `CallField10Vfunc3` at 0x6e0640 (decompiler, medium); signature (untiered): `undefined CallField10Vfunc3(longlong param_1)`
+pub const CallField10Vfunc3: u64 = 38963;
+/// `CallField10Vfunc3AndReturnArg` at 0xcc0700 (decompiler, medium); signature (untiered): `undefined8 CallField10Vfunc3AndReturnArg(longlong param_1, undefined8 param_2)`
+pub const CallField10Vfunc3AndReturnArg: u64 = 67480;
+/// `CallField10Vfunc4` at 0xab7e30 (decompiler, medium); signature (untiered): `undefined CallField10Vfunc4(longlong param_1)`
+pub const CallField10Vfunc4: u64 = 57841;
+/// `CallField10Vfunc4_2` at 0xcc06e0 (decompiler, medium); signature (untiered): `undefined CallField10Vfunc4_2(longlong param_1)`
+pub const CallField10Vfunc4_2: u64 = 67479;
+/// `CallField10Vfunc58` at 0xb57f70 (decompiler, medium); signature (untiered): `undefined CallField10Vfunc58(longlong param_1)`
+pub const CallField10Vfunc58: u64 = 61327;
+/// `CallField150Vfunc18` at 0xb4cdd0 (decompiler, medium); signature (untiered): `undefined CallField150Vfunc18(longlong param_1)`
+pub const CallField150Vfunc18: u64 = 60891;
+/// `CallField150Vfunc20` at 0xb4cdf0 (decompiler, medium); signature (untiered): `undefined CallField150Vfunc20(longlong param_1)`
+pub const CallField150Vfunc20: u64 = 60892;
+/// `CallField150Vfunc38` at 0xb4ce10 (decompiler, medium); signature (untiered): `undefined CallField150Vfunc38(longlong param_1)`
+pub const CallField150Vfunc38: u64 = 60893;
+/// `CallField150Vfunc8WithCode0C` at 0xdc1ae0 (decompiler, medium); signature (untiered): `undefined8 CallField150Vfunc8WithCode0C(longlong param_1, undefined4 param_2, undefined4 param_3)`
+pub const CallField150Vfunc8WithCode0C: u64 = 86462;
+/// `CallField18CallbackIfSet` at 0xc01330 (decompiler, medium); signature (untiered): `undefined CallField18CallbackIfSet(longlong param_1, undefined8 param_2)`
+pub const CallField18CallbackIfSet: u64 = 64463;
+/// `CallField210Vfunc38IfFlag690Set` at 0x9dafe0 (decompiler, medium); signature (untiered): `undefined1 CallField210Vfunc38IfFlag690Set(longlong param_1)`
+pub const CallField210Vfunc38IfFlag690Set: u64 = 53958;
+/// `CallField30VfuncA8OrNull` at 0xd33ef0 (decompiler, high); signature (untiered): `undefined8 CallField30VfuncA8OrNull(longlong param_1)`
+pub const CallField30VfuncA8OrNull: u64 = 83492;
+/// `CallFieldB0Vfunc8OrFalse` at 0xcd5de0 (decompiler, medium); signature (medium): `undefined8 CallFieldB0Vfunc8OrFalse(longlong param_1)`
+pub const CallFieldB0Vfunc8OrFalse: u64 = 67891;
+/// `CallFieldB8OrB0Vfunc0` at 0x1048a70 (decompiler, medium); signature (untiered): `undefined CallFieldB8OrB0Vfunc0(longlong param_1)`
+pub const CallFieldB8OrB0Vfunc0: u64 = 77827;
+/// `CallFirstChildVfunc30` at 0x14e9650 (decompiler, medium); signature (untiered): `undefined8 CallFirstChildVfunc30(longlong param_1)`
+pub const CallFirstChildVfunc30: u64 = 105606;
+/// `CallFreeBufferAndResetFields` at 0xffe260 (decompiler, high); signature (untiered): `undefined CallFreeBufferAndResetFields(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const CallFreeBufferAndResetFields: u64 = 76947;
+/// `CallFuncOnStridedElementPairs` at 0x812bd0 (decompiler, medium); signature (medium): `undefined CallFuncOnStridedElementPairs(longlong param_1, longlong param_2, longlong param_3, longlong param_4, undefined * param_5)`
+pub const CallFuncOnStridedElementPairs: u64 = 44558;
+/// `CallFunctionWithArgArray` at 0xd15060 (decompiler, medium); signature (untiered): `undefined CallFunctionWithArgArray(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const CallFunctionWithArgArray: u64 = 83048;
+/// `CallFunctionWithStackArgs` at 0xd15460 (decompiler, medium); signature (untiered): `undefined CallFunctionWithStackArgs(longlong param_1)`
+pub const CallFunctionWithStackArgs: u64 = 83049;
+/// `CallGlobal414364` at 0x1348fb0 (decompiler, high); signature (untiered): `undefined CallGlobal414364(undefined8 param_1, undefined8 param_2)`
+pub const CallGlobal414364: u64 = 447429;
+/// `CallGlobal414364IfGlobal414363Set` at 0x143b540 (decompiler, medium); signature (untiered): `undefined CallGlobal414364IfGlobal414363Set(undefined8 param_1, undefined8 param_2)`
+pub const CallGlobal414364IfGlobal414363Set: u64 = 452349;
+/// `CallGlobal414364IfGlobal414363Set_2` at 0x143ea30 (decompiler, medium); signature (untiered): `undefined CallGlobal414364IfGlobal414363Set_2(undefined8 param_1, undefined8 param_2)`
+pub const CallGlobal414364IfGlobal414363Set_2: u64 = 452400;
+/// `CallGlobal414364IfNonNull` at 0x14261c0 (decompiler, medium); signature (untiered): `undefined CallGlobal414364IfNonNull(longlong param_1)`
+pub const CallGlobal414364IfNonNull: u64 = 452030;
+/// `CallGlobal414364IfSet` at 0x12ea400 (decompiler, medium); signature (untiered): `undefined CallGlobal414364IfSet(undefined8 param_1, undefined8 param_2)`
+pub const CallGlobal414364IfSet: u64 = 444898;
+/// `CallGlobal414364IfSet_10` at 0x13cd6f0 (decompiler, medium); signature (untiered): `undefined CallGlobal414364IfSet_10(undefined8 param_1, undefined8 param_2)`
+pub const CallGlobal414364IfSet_10: u64 = 99739;
+/// `CallGlobal414364IfSet_11` at 0x13d0720 (decompiler, medium); signature (untiered): `undefined CallGlobal414364IfSet_11(undefined8 param_1, undefined8 param_2)`
+pub const CallGlobal414364IfSet_11: u64 = 99698;
+/// `CallGlobal414364IfSet_12` at 0x14186e0 (decompiler, medium); signature (untiered): `undefined CallGlobal414364IfSet_12(undefined8 param_1, undefined8 param_2)`
+pub const CallGlobal414364IfSet_12: u64 = 100904;
+/// `CallGlobal414364IfSet_13` at 0x142ba40 (decompiler, medium); signature (untiered): `undefined CallGlobal414364IfSet_13(undefined8 param_1, undefined8 param_2)`
+pub const CallGlobal414364IfSet_13: u64 = 452139;
 /// `CallGlobal414364IfSet_14` at 0x142ba60 (decompiler, medium); signature (untiered): `undefined CallGlobal414364IfSet_14(undefined8 param_1, undefined8 param_2)`
 pub const CallGlobal414364IfSet_14: u64 = 452140;
 /// `CallGlobal414364IfSet_15` at 0x142ba80 (decompiler, medium); signature (untiered): `undefined CallGlobal414364IfSet_15(undefined8 param_1, undefined8 param_2)`
@@ -3637,8 +3721,10 @@ pub const Cmd__DisableAllActors_Execute: u64 = 22101;
 pub const Cmd__DisableAllMines_Execute: u64 = 22583;
 /// `Cmd::DisableLinkedPathPoints_Execute` at 0x35e350 (console_cmd, high); signature (low): `undefined1 DisableLinkedPathPoints_Execute(void)`
 pub const Cmd__DisableLinkedPathPoints_Execute: u64 = 22395;
-/// `Cmd::DisablePlayerControls_Execute` at 0x358320 (console_cmd, high); signature (low): `ulonglong DisablePlayerControls_Execute(longlong param_1, longlong param_2, longlong param_3, ulonglong param_4, longlong param_5, longlong param_6, undefined8 param_7, uint * param_8)`
+/// `Cmd::DisablePlayerControls_Execute` at 0x358320 (console_cmd, high); signature (low): `ulonglong DisablePlayerControls_Execute(longlong param_1, longlong param_2, longlong param_3, ulonglong param_4, longlong param_5, longlong param_6, undefined8 param_7, uint * param_8)`; semantic: console 'DisablePlayerControls'/'dpc': same as the Papyrus native; with the pov argument writes byte [PlayerControls+0x4c+POV Type] = 1 (high); signature `bool (const SCRIPT_PARAMETER* params, const char* line, TESObjectREFR* ref, TESObjectREFR* container, Script* script, ScriptLocals* locals, double* result, u32* offset)`
 pub const Cmd__DisablePlayerControls_Execute: u64 = 22239;
+/// `Cmd::DisablePlayerControls_Execute` as a function pointer type (high).
+pub type Cmd__DisablePlayerControls_Execute_fn = unsafe extern "C" fn(params: *const c_void, line: *const c_char, ref_: *mut crate::TESObjectREFR, container: *mut crate::TESObjectREFR, script: *mut crate::Script, locals: *mut c_void, result: *mut f64, offset: *mut u32) -> bool;
 /// `Cmd::Disable_Execute` at 0x353160 (console_cmd, high); signature (low): `ulonglong Disable_Execute(longlong param_1, longlong param_2, longlong param_3, ulonglong param_4, longlong param_5, longlong param_6, undefined8 param_7, uint * param_8)`
 pub const Cmd__Disable_Execute: u64 = 22096;
 /// `Cmd::DismountActor_Execute` at 0x36a6d0 (console_cmd, high); signature (low): `char DismountActor_Execute(longlong param_1, longlong param_2, longlong * param_3, ulonglong param_4, longlong param_5, longlong param_6, undefined8 param_7, uint * param_8)`
@@ -3735,8 +3821,10 @@ pub const Cmd__EmptyRefAlias_Execute: u64 = 22609;
 pub const Cmd__EnableFastTravel_Execute: u64 = 22370;
 /// `Cmd::EnableLinkedPathPoints_Execute` at 0x35e340 (console_cmd, high); signature (low): `undefined1 EnableLinkedPathPoints_Execute(void)`
 pub const Cmd__EnableLinkedPathPoints_Execute: u64 = 22394;
-/// `Cmd::EnablePlayerControls_Execute` at 0x3581b0 (console_cmd, high); signature (low): `ulonglong EnablePlayerControls_Execute(longlong param_1, longlong param_2, longlong param_3, ulonglong param_4, longlong param_5, longlong param_6, undefined8 param_7, uint * param_8)`
+/// `Cmd::EnablePlayerControls_Execute` at 0x3581b0 (console_cmd, high); signature (low): `ulonglong EnablePlayerControls_Execute(longlong param_1, longlong param_2, longlong param_3, ulonglong param_4, longlong param_5, longlong param_6, undefined8 param_7, uint * param_8)`; semantic: console 'EnablePlayerControls'/'epc': the pov argument (default 1) clears byte [PlayerControls+0x4c+POV Type] (default index 0) (high); signature `bool (const SCRIPT_PARAMETER* params, const char* line, TESObjectREFR* ref, TESObjectREFR* container, Script* script, ScriptLocals* locals, double* result, u32* offset)`
 pub const Cmd__EnablePlayerControls_Execute: u64 = 22238;
+/// `Cmd::EnablePlayerControls_Execute` as a function pointer type (high).
+pub type Cmd__EnablePlayerControls_Execute_fn = unsafe extern "C" fn(params: *const c_void, line: *const c_char, ref_: *mut crate::TESObjectREFR, container: *mut crate::TESObjectREFR, script: *mut crate::Script, locals: *mut c_void, result: *mut f64, offset: *mut u32) -> bool;
 /// `Cmd::EnableRumble_Execute` at 0x3781d0 (console_cmd, high); signature (low): `ulonglong EnableRumble_Execute(longlong param_1, longlong param_2, longlong param_3, ulonglong param_4, longlong param_5, longlong param_6, undefined8 param_7, uint * param_8)`
 pub const Cmd__EnableRumble_Execute: u64 = 23010;
 /// `Cmd::EnableStoryManagerLogging_Execute` at 0x37aa00 (console_cmd, high); signature (low): `undefined8 EnableStoryManagerLogging_Execute(longlong param_1, longlong param_2, longlong param_3, ulonglong param_4, longlong param_5, longlong param_6, undefined8 param_7, uint * param_8)`
@@ -3909,8 +3997,10 @@ pub const Cmd__GetArrestedState_Execute: u64 = 22661;
 pub const Cmd__GetArrestingActor_Eval: u64 = 21737;
 /// `Cmd::GetArrestingActor_Execute` at 0x369060 (console_cmd, high); signature (low): `undefined GetArrestingActor_Execute(undefined8 param_1, undefined8 param_2, Actor * param_3)`
 pub const Cmd__GetArrestingActor_Execute: u64 = 22662;
-/// `Cmd::GetAttackState_Eval` at 0x334f70 (console_cmd, high); signature (low): `undefined8 GetAttackState_Eval(longlong param_1, undefined8 param_2, undefined8 param_3, double * param_4)`
+/// `Cmd::GetAttackState_Eval` at 0x334f70 (console_cmd, high); signature (low): `undefined8 GetAttackState_Eval(longlong param_1, undefined8 param_2, undefined8 param_3, double * param_4)`; semantic: condition GetAttackState: flags1 >> 28 (high); signature `bool (TESObjectREFR* ref, void* p1, void* p2, double* result)`
 pub const Cmd__GetAttackState_Eval: u64 = 21509;
+/// `Cmd::GetAttackState_Eval` as a function pointer type (high).
+pub type Cmd__GetAttackState_Eval_fn = unsafe extern "C" fn(ref_: *mut crate::TESObjectREFR, p1: *mut c_void, p2: *mut c_void, result: *mut f64) -> bool;
 /// `Cmd::GetAttackState_Execute` at 0x358a20 (console_cmd, high); signature (low): `undefined8 GetAttackState_Execute(undefined8 param_1, undefined8 param_2, longlong param_3)`
 pub const Cmd__GetAttackState_Execute: u64 = 22252;
 /// `Cmd::GetAttacked_Eval` at 0x3331e0 (console_cmd, high); signature (low): `undefined8 GetAttacked_Eval(longlong * param_1, undefined8 param_2, undefined8 param_3, double * param_4)`
@@ -4417,12 +4507,16 @@ pub const Cmd__GetKillingBlowLimb_Eval: u64 = 21604;
 pub const Cmd__GetKillingBlowLimb_Eval_sub0: u64 = 19768;
 /// `Cmd::GetKillingBlowLimb_Execute` at 0x360c00 (console_cmd, high); signature (low): `undefined GetKillingBlowLimb_Execute(undefined8 param_1, undefined8 param_2, longlong param_3)`
 pub const Cmd__GetKillingBlowLimb_Execute: u64 = 22466;
-/// `Cmd::GetKnockStateEnum_Eval` at 0x334ee0 (console_cmd, high); signature (low): `undefined8 GetKnockStateEnum_Eval(longlong param_1, undefined8 param_2, undefined8 param_3, double * param_4)`
+/// `Cmd::GetKnockStateEnum_Eval` at 0x334ee0 (console_cmd, high); signature (low): `undefined8 GetKnockStateEnum_Eval(longlong param_1, undefined8 param_2, undefined8 param_3, double * param_4)`; semantic: condition GetKnockStateEnum: (flags1 >> 25) & 7, -1 for a non-actor (high); signature `bool (TESObjectREFR* ref, void* p1, void* p2, double* result)`
 pub const Cmd__GetKnockStateEnum_Eval: u64 = 21508;
+/// `Cmd::GetKnockStateEnum_Eval` as a function pointer type (high).
+pub type Cmd__GetKnockStateEnum_Eval_fn = unsafe extern "C" fn(ref_: *mut crate::TESObjectREFR, p1: *mut c_void, p2: *mut c_void, result: *mut f64) -> bool;
 /// `Cmd::GetKnockStateEnum_Execute` at 0x3589f0 (console_cmd, high); signature (low): `undefined8 GetKnockStateEnum_Execute(undefined8 param_1, undefined8 param_2, longlong param_3)`
 pub const Cmd__GetKnockStateEnum_Execute: u64 = 22251;
-/// `Cmd::GetKnockedState_Eval` at 0x334e30 (console_cmd, high); signature (low): `undefined8 GetKnockedState_Eval(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 * param_4)`
+/// `Cmd::GetKnockedState_Eval` at 0x334e30 (console_cmd, high); signature (low): `undefined8 GetKnockedState_Eval(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 * param_4)`; semantic: condition GetKnockedState: 1.0 when the knock state (flags1 bits 25-27) is 3 or 4 (high); signature `bool (TESObjectREFR* ref, void* p1, void* p2, double* result)`
 pub const Cmd__GetKnockedState_Eval: u64 = 21507;
+/// `Cmd::GetKnockedState_Eval` as a function pointer type (high).
+pub type Cmd__GetKnockedState_Eval_fn = unsafe extern "C" fn(ref_: *mut crate::TESObjectREFR, p1: *mut c_void, p2: *mut c_void, result: *mut f64) -> bool;
 /// `Cmd::GetKnockedState_Execute` at 0x3589c0 (console_cmd, high); signature (low): `undefined8 GetKnockedState_Execute(undefined8 param_1, undefined8 param_2, longlong param_3)`
 pub const Cmd__GetKnockedState_Execute: u64 = 22250;
 /// `Cmd::GetLastBumpDirection_Eval` at 0x33df60 (console_cmd, high); signature (low): `undefined8 GetLastBumpDirection_Eval(longlong param_1, undefined8 param_2, undefined8 param_3, double * param_4)`
@@ -4625,8 +4719,10 @@ pub const Cmd__GetPlayerAction_Eval: u64 = 21717;
 pub const Cmd__GetPlayerAction_Eval_sub0: u64 = 39549;
 /// `Cmd::GetPlayerAction_Execute` at 0x3686a0 (console_cmd, high); signature (low): `undefined GetPlayerAction_Execute(undefined8 param_1, undefined8 param_2, longlong param_3)`
 pub const Cmd__GetPlayerAction_Execute: u64 = 22638;
-/// `Cmd::GetPlayerControlsDisabled_Eval` at 0x334590 (console_cmd, high); signature (low): `undefined8 GetPlayerControlsDisabled_Eval(undefined8 param_1, uint param_2, undefined8 param_3, undefined8 * param_4)`
+/// `Cmd::GetPlayerControlsDisabled_Eval` at 0x334590 (console_cmd, high); signature (low): `undefined8 GetPlayerControlsDisabled_Eval(undefined8 param_1, uint param_2, undefined8 param_3, undefined8 * param_4)`; semantic: condition/console 'GetPlayerControlsDisabled': the result is only (ControlMap+0x120 & mask) == mask; in console print mode it also lists 'PlayerControls::bDisablePOVChange[%s] - %d' for Script and Werewolf (high); signature `bool (TESObjectREFR* ref, u32 mask, void* param2, double* result)`
 pub const Cmd__GetPlayerControlsDisabled_Eval: u64 = 21499;
+/// `Cmd::GetPlayerControlsDisabled_Eval` as a function pointer type (high).
+pub type Cmd__GetPlayerControlsDisabled_Eval_fn = unsafe extern "C" fn(ref_: *mut crate::TESObjectREFR, mask: u32, param2: *mut c_void, result: *mut f64) -> bool;
 /// `Cmd::GetPlayerControlsDisabled_Execute` at 0x358480 (console_cmd, high); signature (low): `ulonglong GetPlayerControlsDisabled_Execute(longlong param_1, longlong param_2, longlong param_3, ulonglong param_4, longlong param_5, longlong param_6, undefined8 * param_7, uint * param_8)`
 pub const Cmd__GetPlayerControlsDisabled_Execute: u64 = 22240;
 /// `Cmd::GetPlayerGrabbedRef_Execute` at 0x363cd0 (console_cmd, high); signature (low): `undefined8 GetPlayerGrabbedRef_Execute(void)`
@@ -4715,12 +4811,16 @@ pub const Cmd__GetShouldAttack_Execute: u64 = 22164;
 pub const Cmd__GetShouldHelp_Eval: u64 = 21473;
 /// `Cmd::GetShouldHelp_Execute` at 0x354c50 (console_cmd, high); signature (low): `undefined GetShouldHelp_Execute(longlong param_1, longlong param_2, longlong * * * * * * * param_3, ulonglong param_4, longlong param_5, longlong param_6, double * param_7, uint * param_8)`
 pub const Cmd__GetShouldHelp_Execute: u64 = 22165;
-/// `Cmd::GetSitting_Eval` at 0x331cf0 (console_cmd, high); signature (low): `undefined8 GetSitting_Eval(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 * param_4)`
+/// `Cmd::GetSitting_Eval` at 0x331cf0 (console_cmd, high); signature (low): `undefined8 GetSitting_Eval(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 * param_4)`; semantic: condition GetSitting: sit/sleep state 1 or 2 -> 2, 3 -> 3, 4 -> 4, otherwise 0 (high); signature `bool (TESObjectREFR* ref, void* p1, void* p2, double* result)`
 pub const Cmd__GetSitting_Eval: u64 = 21441;
+/// `Cmd::GetSitting_Eval` as a function pointer type (high).
+pub type Cmd__GetSitting_Eval_fn = unsafe extern "C" fn(ref_: *mut crate::TESObjectREFR, p1: *mut c_void, p2: *mut c_void, result: *mut f64) -> bool;
 /// `Cmd::GetSitting_Execute` at 0x353f30 (console_cmd, high); signature (low): `undefined GetSitting_Execute(undefined8 param_1, undefined8 param_2, longlong param_3)`
 pub const Cmd__GetSitting_Execute: u64 = 22126;
-/// `Cmd::GetSleeping_Eval` at 0x331c10 (console_cmd, high); signature (low): `undefined8 GetSleeping_Eval(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 * param_4)`
+/// `Cmd::GetSleeping_Eval` at 0x331c10 (console_cmd, high); signature (low): `undefined8 GetSleeping_Eval(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 * param_4)`; semantic: condition GetSleeping: state 5 or 6 -> 2, 7 -> 3, 8 -> 4, otherwise 0 (high); signature `bool (TESObjectREFR* ref, void* p1, void* p2, double* result)`
 pub const Cmd__GetSleeping_Eval: u64 = 21440;
+/// `Cmd::GetSleeping_Eval` as a function pointer type (high).
+pub type Cmd__GetSleeping_Eval_fn = unsafe extern "C" fn(ref_: *mut crate::TESObjectREFR, p1: *mut c_void, p2: *mut c_void, result: *mut f64) -> bool;
 /// `Cmd::GetSleeping_Execute` at 0x353f10 (console_cmd, high); signature (low): `undefined GetSleeping_Execute(undefined8 param_1, undefined8 param_2, longlong param_3)`
 pub const Cmd__GetSleeping_Execute: u64 = 22125;
 /// `Cmd::GetSpellUsageNum_Eval` at 0x336dc0 (console_cmd, high); signature (low): `undefined8 GetSpellUsageNum_Eval(longlong param_1, longlong param_2, undefined8 param_3, double * param_4)`
@@ -4847,12 +4947,16 @@ pub const Cmd__GetVelocity_Execute: u64 = 22520;
 pub const Cmd__GetWalkSpeed_Eval: u64 = 21520;
 /// `Cmd::GetWalkSpeed_Execute` at 0x358bd0 (console_cmd, high); signature (low): `undefined GetWalkSpeed_Execute(undefined8 param_1, undefined8 param_2, longlong * param_3)`
 pub const Cmd__GetWalkSpeed_Execute: u64 = 22259;
-/// `Cmd::GetWantBlocking_Eval` at 0x337c20 (console_cmd, high); signature (low): `undefined8 GetWantBlocking_Eval(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 * param_4)`
+/// `Cmd::GetWantBlocking_Eval` at 0x337c20 (console_cmd, high); signature (low): `undefined8 GetWantBlocking_Eval(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 * param_4)`; semantic: condition GetWantBlocking: flags2 bit 8 (0x100) (high); signature `bool (TESObjectREFR* ref, void* p1, void* p2, double* result)`
 pub const Cmd__GetWantBlocking_Eval: u64 = 21573;
+/// `Cmd::GetWantBlocking_Eval` as a function pointer type (high).
+pub type Cmd__GetWantBlocking_Eval_fn = unsafe extern "C" fn(ref_: *mut crate::TESObjectREFR, p1: *mut c_void, p2: *mut c_void, result: *mut f64) -> bool;
 /// `Cmd::GetWantBlocking_Execute` at 0x35d860 (console_cmd, high); signature (low): `undefined8 GetWantBlocking_Execute(undefined8 param_1, undefined8 param_2, longlong param_3)`
 pub const Cmd__GetWantBlocking_Execute: u64 = 22381;
-/// `Cmd::GetWeaponAnimType_Eval` at 0x334ff0 (console_cmd, high); signature (low): `undefined8 GetWeaponAnimType_Eval(longlong param_1, undefined8 param_2, undefined8 param_3, double * param_4)`
+/// `Cmd::GetWeaponAnimType_Eval` at 0x334ff0 (console_cmd, high); signature (low): `undefined8 GetWeaponAnimType_Eval(longlong param_1, undefined8 param_2, undefined8 param_3, double * param_4)`; semantic: condition GetWeaponAnimType: the right-hand weapon's type byte (+0x19d), +3 when >= 9 (Crossbow -> 12) (high); signature `bool (TESObjectREFR* ref, void* p1, void* p2, double* result)`
 pub const Cmd__GetWeaponAnimType_Eval: u64 = 21510;
+/// `Cmd::GetWeaponAnimType_Eval` as a function pointer type (high).
+pub type Cmd__GetWeaponAnimType_Eval_fn = unsafe extern "C" fn(ref_: *mut crate::TESObjectREFR, p1: *mut c_void, p2: *mut c_void, result: *mut f64) -> bool;
 /// `Cmd::GetWeaponAnimType_Execute` at 0x358a50 (console_cmd, high); signature (low): `undefined8 GetWeaponAnimType_Execute(undefined8 param_1, undefined8 param_2, longlong param_3)`
 pub const Cmd__GetWeaponAnimType_Execute: u64 = 22253;
 /// `Cmd::GetWindSpeed_Eval` at 0x3328a0 (console_cmd, high); signature (low): `undefined8 GetWindSpeed_Eval(void)`
@@ -5013,7 +5117,7 @@ pub const Cmd__IsActorsAIOff_Execute: u64 = 22400;
 pub const Cmd__IsAllowedToFly_Eval: u64 = 21462;
 /// `Cmd::IsAllowedToFly_Execute` at 0x3542b0 (console_cmd, high); signature (low): `undefined IsAllowedToFly_Execute(undefined8 param_1, undefined8 param_2, longlong param_3)`
 pub const Cmd__IsAllowedToFly_Execute: u64 = 22136;
-/// `Cmd::IsAnimPlaying_Execute` at 0x35e190 (console_cmd, high); signature (low): `ulonglong IsAnimPlaying_Execute(longlong param_1, longlong param_2, longlong * param_3, ulonglong param_4, longlong param_5, longlong param_6, undefined8 * param_7, uint * param_8)`
+/// `Cmd::IsAnimPlaying_Execute` at 0x35e190 (console_cmd, high); signature (low): `ulonglong IsAnimPlaying_Execute(longlong param_1, longlong param_2, longlong * param_3, ulonglong param_4, longlong param_5, longlong param_6, undefined8 * param_7, uint * param_8)`; semantic: console 'IsAnimPlaying': Gamebryo controller-sequence test on the reference's 3D: 1.0 when any NiControllerSequence (array +0x50, count u16 +0x5a of the controller manager) has a non-zero state (+0x68); with an argument other than 0xff it tests one animation group by name. It does not look at the Havok behaviour graph, so it says nothing about an actor's idles (medium); signature `bool (const SCRIPT_PARAMETER* params, const char* line, TESObjectREFR* ref, TESObjectREFR* container, Script* script, ScriptLocals* locals, double* result, u32* offset)`
 pub const Cmd__IsAnimPlaying_Execute: u64 = 22393;
 /// `Cmd::IsAttackType_Eval` at 0x33f070 (console_cmd, high); signature (low): `undefined8 IsAttackType_Eval(longlong param_1, longlong param_2, undefined8 param_3, undefined8 * param_4)`
 pub const Cmd__IsAttackType_Eval: u64 = 21762;
@@ -5157,8 +5261,10 @@ pub const Cmd__IsHorseStolen_Execute: u64 = 22375;
 pub const Cmd__IsHostileToActor_Eval: u64 = 21472;
 /// `Cmd::IsHostileToActor_Execute` at 0x354cd0 (console_cmd, high); signature (low): `undefined IsHostileToActor_Execute(longlong param_1, longlong param_2, longlong * * * * * * * param_3, ulonglong param_4, longlong param_5, longlong param_6, double * param_7, uint * param_8)`
 pub const Cmd__IsHostileToActor_Execute: u64 = 22166;
-/// `Cmd::IsIdlePlaying_Eval` at 0x3354d0 (console_cmd, high); signature (low): `undefined8 IsIdlePlaying_Eval(void)`
+/// `Cmd::IsIdlePlaying_Eval` at 0x3354d0 (console_cmd, high); signature (low): `undefined8 IsIdlePlaying_Eval(void)`; semantic: stub: always stores 0.0 and prints 'Is Idle Playing >> %0.2f' (high); signature `bool (TESObjectREFR* ref, void* param1, void* param2, double* result)`
 pub const Cmd__IsIdlePlaying_Eval: u64 = 21514;
+/// `Cmd::IsIdlePlaying_Eval` as a function pointer type (high).
+pub type Cmd__IsIdlePlaying_Eval_fn = unsafe extern "C" fn(ref_: *mut crate::TESObjectREFR, param1: *mut c_void, param2: *mut c_void, result: *mut f64) -> bool;
 /// `Cmd::IsIdlePlaying_Execute` at 0x358b70 (console_cmd, high); signature (low): `undefined8 IsIdlePlaying_Execute(undefined8 param_1, undefined8 param_2, longlong param_3)`
 pub const Cmd__IsIdlePlaying_Execute: u64 = 22257;
 /// `Cmd::IsIgnoringCombat_Eval` at 0x33ff20 (console_cmd, high); signature (low): `undefined8 IsIgnoringCombat_Eval(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 * param_4)`
@@ -5239,10 +5345,10 @@ pub const Cmd__IsKiller_Execute: u64 = 22476;
 pub const Cmd__IsLastHostileActor_Eval: u64 = 21743;
 /// `Cmd::IsLastHostileActor_Execute` at 0x369950 (console_cmd, high); signature (low): `ulonglong IsLastHostileActor_Execute(undefined8 param_1, undefined8 param_2, longlong param_3)`
 pub const Cmd__IsLastHostileActor_Execute: u64 = 22676;
-/// `Cmd::IsLastIdlePlayed_Eval` at 0x339440 (console_cmd, high); signature (low): `undefined8 IsLastIdlePlayed_Eval(longlong param_1, longlong param_2, undefined8 param_3, undefined8 * param_4)`
+/// `Cmd::IsLastIdlePlayed_Eval` at 0x339440 (console_cmd, high); signature (low): `undefined8 IsLastIdlePlayed_Eval(longlong param_1, longlong param_2, undefined8 param_3, undefined8 * param_4)`; semantic: 1.0 when ref is an actor (formType 0x3e at +0x1a) and its MiddleHighProcessData lastIdle (+0x280) equals the idle argument (high); signature `bool (TESObjectREFR* ref, TESIdleForm* idle, void* param2, double* result)`
 pub const Cmd__IsLastIdlePlayed_Eval: u64 = 21621;
-/// `Cmd::IsLastIdlePlayed_Eval_sub0` at 0x7232d0 (callgraph, medium); signature (untiered): `undefined8 IsLastIdlePlayed_Eval_sub0(longlong param_1)`
-pub const Cmd__IsLastIdlePlayed_Eval_sub0: u64 = 39869;
+/// `Cmd::IsLastIdlePlayed_Eval` as a function pointer type (high).
+pub type Cmd__IsLastIdlePlayed_Eval_fn = unsafe extern "C" fn(ref_: *mut crate::TESObjectREFR, idle: *mut crate::TESIdleForm, param2: *mut c_void, result: *mut f64) -> bool;
 /// `Cmd::IsLastIdlePlayed_Execute` at 0x363a10 (console_cmd, high); signature (low): `ulonglong IsLastIdlePlayed_Execute(longlong param_1, longlong param_2, longlong param_3, ulonglong param_4, longlong param_5, longlong param_6, undefined8 param_7, uint * param_8)`
 pub const Cmd__IsLastIdlePlayed_Execute: u64 = 22522;
 /// `Cmd::IsLeftUp_Eval` at 0x334d50 (console_cmd, high); signature (low): `undefined8 IsLeftUp_Eval(TESObjectREFR * param_1, undefined8 param_2, undefined8 param_3, undefined8 * param_4)`
@@ -5353,8 +5459,10 @@ pub const Cmd__IsProtected_Execute: u64 = 22689;
 pub const Cmd__IsRaining_Eval: u64 = 21455;
 /// `Cmd::IsRaining_Execute` at 0x354a90 (console_cmd, high); signature (low): `undefined IsRaining_Execute(undefined8 param_1, undefined8 param_2, undefined8 param_3)`
 pub const Cmd__IsRaining_Execute: u64 = 22157;
-/// `Cmd::IsRecoiling_Eval` at 0x33f790 (console_cmd, high); signature (low): `undefined8 IsRecoiling_Eval(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 * param_4)`
+/// `Cmd::IsRecoiling_Eval` at 0x33f790 (console_cmd, high); signature (low): `undefined8 IsRecoiling_Eval(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 * param_4)`; semantic: condition IsRecoiling: 1.0 when flags2 & 0xc00 (bit 10 recoil or bit 11 large recoil) (high); signature `bool (TESObjectREFR* ref, void* p1, void* p2, double* result)`
 pub const Cmd__IsRecoiling_Eval: u64 = 21771;
+/// `Cmd::IsRecoiling_Eval` as a function pointer type (high).
+pub type Cmd__IsRecoiling_Eval_fn = unsafe extern "C" fn(ref_: *mut crate::TESObjectREFR, p1: *mut c_void, p2: *mut c_void, result: *mut f64) -> bool;
 /// `Cmd::IsRecoiling_Execute` at 0x36c730 (console_cmd, high); signature (low): `undefined IsRecoiling_Execute(undefined8 param_1, undefined8 param_2, longlong param_3)`
 pub const Cmd__IsRecoiling_Execute: u64 = 22753;
 /// `Cmd::IsRidingMount_Eval` at 0x3383d0 (console_cmd, high); signature (low): `undefined8 IsRidingMount_Eval(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 * param_4)`
@@ -5405,8 +5513,10 @@ pub const Cmd__IsSpellTarget_Execute: u64 = 22329;
 pub const Cmd__IsSprinting_Eval: u64 = 21572;
 /// `Cmd::IsSprinting_Execute` at 0x35d830 (console_cmd, high); signature (low): `undefined8 IsSprinting_Execute(undefined8 param_1, undefined8 param_2, longlong param_3)`
 pub const Cmd__IsSprinting_Execute: u64 = 22380;
-/// `Cmd::IsStaggered_Eval` at 0x33f700 (console_cmd, high); signature (low): `undefined8 IsStaggered_Eval(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 * param_4)`
+/// `Cmd::IsStaggered_Eval` at 0x33f700 (console_cmd, high); signature (low): `undefined8 IsStaggered_Eval(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 * param_4)`; semantic: condition IsStaggered: 1.0 when the actor's flags2 (Actor+0xcc) bit 13 (0x2000) is set (high); signature `bool (TESObjectREFR* ref, void* p1, void* p2, double* result)`
 pub const Cmd__IsStaggered_Eval: u64 = 21770;
+/// `Cmd::IsStaggered_Eval` as a function pointer type (high).
+pub type Cmd__IsStaggered_Eval_fn = unsafe extern "C" fn(ref_: *mut crate::TESObjectREFR, p1: *mut c_void, p2: *mut c_void, result: *mut f64) -> bool;
 /// `Cmd::IsStaggered_Execute` at 0x36c710 (console_cmd, high); signature (low): `undefined IsStaggered_Execute(undefined8 param_1, undefined8 param_2, longlong param_3)`
 pub const Cmd__IsStaggered_Execute: u64 = 22752;
 /// `Cmd::IsSwimming_Eval` at 0x3367a0 (console_cmd, high); signature (low): `undefined8 IsSwimming_Eval(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 * param_4)`
@@ -7717,103 +7827,3 @@ pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextMelee__vf
 pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextRanged__vdtor: u64 = 33158;
 /// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextRanged>::vfunc_3` at 0x55f510 (rtti, medium); signature (low): `undefined vfunc_3(CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextRanged> * this, longlong * param_1)`
 pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextRanged__vfunc_3: u64 = 33179;
-/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextRanged>::vfunc_6` at 0x55fcd0 (rtti, medium); signature (low): `undefined vfunc_6(CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextRanged> * this, longlong * param_1, longlong param_2, undefined8 param_3)`
-pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextRanged__vfunc_6: u64 = 33199;
-/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextRanged>::vfunc_7` at 0x55f9e0 (rtti, medium); signature (low): `undefined vfunc_7(CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextRanged> * this, longlong * param_1, longlong param_2, undefined8 param_3)`
-pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextRanged__vfunc_7: u64 = 33192;
-/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextRanged>::vfunc_8` at 0x55fe90 (rtti, medium); signature (low): `bool vfunc_8(CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextRanged> * this, longlong param_1)`
-pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextRanged__vfunc_8: u64 = 33209;
-/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextRanged>::vfunc_9` at 0x55f6f0 (rtti, medium); signature (low): `undefined * vfunc_9(void)`
-pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextRanged__vfunc_9: u64 = 33186;
-/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextRangedMovement>::vdtor` at 0x8c5a50 (slot_propagation, medium); signature (low): `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextRangedMovement> * vdtor(CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextRangedMovement> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextRangedMovement__vdtor: u64 = 49473;
-/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextRangedMovement>::vfunc_3` at 0x8c5e80 (rtti, medium); signature (low): `undefined vfunc_3(CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextRangedMovement> * this, longlong * param_1)`
-pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextRangedMovement__vfunc_3: u64 = 49485;
-/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextRangedMovement>::vfunc_6` at 0x8c63e0 (rtti, medium); signature (low): `undefined vfunc_6(CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextRangedMovement> * this, longlong * param_1, longlong param_2)`
-pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextRangedMovement__vfunc_6: u64 = 49496;
-/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextRangedMovement>::vfunc_7` at 0x8c61d0 (rtti, medium); signature (low): `undefined vfunc_7(CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextRangedMovement> * this, longlong * param_1, longlong param_2, undefined8 param_3)`
-pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextRangedMovement__vfunc_7: u64 = 49493;
-/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextRangedMovement>::vfunc_8` at 0x8c64d0 (rtti, medium); signature (low): `bool vfunc_8(CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextRangedMovement> * this, longlong param_1)`
-pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextRangedMovement__vfunc_8: u64 = 49501;
-/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextRangedMovement>::vfunc_9` at 0x8c5f80 (rtti, medium); signature (low): `undefined * vfunc_9(void)`
-pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextRangedMovement__vfunc_9: u64 = 49488;
-/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextSearch>::vdtor` at 0x8ceaa0 (slot_propagation, medium); signature (low): `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextSearch> * vdtor(CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextSearch> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextSearch__vdtor: u64 = 49673;
-/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextSearch>::vfunc_3` at 0x8cf410 (rtti, medium); signature (low): `undefined vfunc_3(CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextSearch> * this, longlong * param_1)`
-pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextSearch__vfunc_3: u64 = 49704;
-/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextSearch>::vfunc_6` at 0x8d0680 (rtti, medium); signature (low): `undefined vfunc_6(CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextSearch> * this, longlong * param_1, longlong param_2)`
-pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextSearch__vfunc_6: u64 = 49735;
-/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextSearch>::vfunc_7` at 0x8d0130 (rtti, medium); signature (low): `undefined vfunc_7(CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextSearch> * this, longlong * param_1, longlong param_2, undefined8 param_3)`
-pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextSearch__vfunc_7: u64 = 49727;
-/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextSearch>::vfunc_8` at 0x8d0a90 (rtti, medium); signature (low): `bool vfunc_8(CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextSearch> * this, longlong param_1)`
-pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextSearch__vfunc_8: u64 = 49750;
-/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextSearch>::vfunc_9` at 0x8cfcb0 (rtti, medium); signature (low): `undefined * vfunc_9(void)`
-pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextSearch__vfunc_9: u64 = 49719;
-/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextShout>::vdtor` at 0x8d1d00 (slot_propagation, medium); signature (low): `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextShout> * vdtor(CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextShout> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextShout__vdtor: u64 = 49770;
-/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextShout>::vfunc_3` at 0x8d1f20 (rtti, medium); signature (low): `undefined vfunc_3(CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextShout> * this, longlong * param_1)`
-pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextShout__vfunc_3: u64 = 49777;
-/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextShout>::vfunc_6` at 0x8d2230 (rtti, medium); signature (low): `undefined vfunc_6(CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextShout> * this, longlong * param_1, longlong param_2, undefined8 param_3)`
-pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextShout__vfunc_6: u64 = 49784;
-/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextShout>::vfunc_7` at 0x8d2120 (rtti, medium); signature (low): `undefined vfunc_7(CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextShout> * this, longlong * param_1, longlong param_2, undefined8 param_3)`
-pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextShout__vfunc_7: u64 = 49782;
-/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextShout>::vfunc_8` at 0x8d23b0 (rtti, medium); signature (low): `bool vfunc_8(CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextShout> * this, longlong param_1)`
-pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextShout__vfunc_8: u64 = 49788;
-/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextShout>::vfunc_9` at 0x8d2000 (rtti, medium); signature (low): `undefined * vfunc_9(void)`
-pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextShout__vfunc_9: u64 = 49780;
-/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextUsePotion>::vdtor` at 0x8d8530 (slot_propagation, medium); signature (low): `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextUsePotion> * vdtor(CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextUsePotion> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextUsePotion__vdtor: u64 = 49923;
-/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextUsePotion>::vfunc_3` at 0x8d8880 (rtti, medium); signature (low): `undefined vfunc_3(CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextUsePotion> * this, longlong * param_1)`
-pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextUsePotion__vfunc_3: u64 = 49929;
-/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextUsePotion>::vfunc_6` at 0x8d8b00 (rtti, medium); signature (low): `undefined vfunc_6(CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextUsePotion> * this, longlong * param_1, longlong param_2, undefined8 param_3)`
-pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextUsePotion__vfunc_6: u64 = 49935;
-/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextUsePotion>::vfunc_7` at 0x8d89f0 (rtti, medium); signature (low): `undefined vfunc_7(CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextUsePotion> * this, longlong * param_1, longlong param_2, undefined8 param_3)`
-pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextUsePotion__vfunc_7: u64 = 49933;
-/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextUsePotion>::vfunc_8` at 0x8d8b80 (rtti, medium); signature (low): `bool vfunc_8(CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextUsePotion> * this, longlong param_1)`
-pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextUsePotion__vfunc_8: u64 = 49938;
-/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextUsePotion>::vfunc_9` at 0x8d88d0 (rtti, medium); signature (low): `undefined * vfunc_9(void)`
-pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextUsePotion__vfunc_9: u64 = 49931;
-/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorEquipContext>::vdtor` at 0x87c030 (slot_propagation, medium); signature (low): `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorEquipContext> * vdtor(CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorEquipContext> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorEquipContext__vdtor: u64 = 47693;
-/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorEquipContext>::vfunc_3` at 0x87cbe0 (rtti, medium); signature (low): `undefined vfunc_3(CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorEquipContext> * this, longlong * param_1)`
-pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorEquipContext__vfunc_3: u64 = 47737;
-/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorEquipContext>::vfunc_6` at 0x87d830 (rtti, medium); signature (low): `undefined vfunc_6(CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorEquipContext> * this, longlong * param_1, undefined8 param_2)`
-pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorEquipContext__vfunc_6: u64 = 47772;
-/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorEquipContext>::vfunc_7` at 0x87d5e0 (rtti, medium); signature (low): `undefined vfunc_7(CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorEquipContext> * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
-pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorEquipContext__vfunc_7: u64 = 47762;
-/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorEquipContext>::vfunc_8` at 0x87dab0 (rtti, medium); signature (low): `bool vfunc_8(CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorEquipContext> * this, longlong param_1)`
-pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorEquipContext__vfunc_8: u64 = 47792;
-/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorEquipContext>::vfunc_9` at 0x87ce10 (rtti, medium); signature (low): `undefined * vfunc_9(void)`
-pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorEquipContext__vfunc_9: u64 = 47748;
-/// `CombatBehaviorTreeDodgeThreat::vfunc_0` at 0x87ebf0 (rtti, high); signature (low): `undefined vfunc_0(CombatBehaviorTreeDodgeThreat * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-pub const CombatBehaviorTreeDodgeThreat__vfunc_0: u64 = 47807;
-/// `CombatBehaviorTreeDodgeThreat::vfunc_0_cb0` at 0x87db70 (callgraph, medium); signature (untiered): `undefined1 vfunc_0_cb0(void)`
-pub const CombatBehaviorTreeDodgeThreat__vfunc_0_cb0: u64 = 47801;
-/// `CombatBehaviorTreeExitWater::vfunc_0` at 0x8bd190 (rtti, high); signature (low): `undefined vfunc_0(CombatBehaviorTreeExitWater * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-pub const CombatBehaviorTreeExitWater__vfunc_0: u64 = 49272;
-/// `CombatBehaviorTreeFindAttackLocation::vfunc_0` at 0x88ec40 (rtti, high); signature (low): `undefined vfunc_0(CombatBehaviorTreeFindAttackLocation * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-pub const CombatBehaviorTreeFindAttackLocation__vfunc_0: u64 = 48143;
-/// `CombatBehaviorTreeFlankingMovement::vfunc_0` at 0x899130 (rtti, high); signature (low): `undefined vfunc_0(CombatBehaviorTreeFlankingMovement * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-pub const CombatBehaviorTreeFlankingMovement__vfunc_0: u64 = 48379;
-/// `CombatBehaviorTreeFlankingMovement::vfunc_0_cb0` at 0x896ce0 (callgraph, medium); signature (untiered): `bool vfunc_0_cb0(void)`
-pub const CombatBehaviorTreeFlankingMovement__vfunc_0_cb0: u64 = 48357;
-/// `CombatBehaviorTreeFlee::vfunc_0` at 0x8a1230 (rtti, high); signature (low): `undefined vfunc_0(CombatBehaviorTreeFlee * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-pub const CombatBehaviorTreeFlee__vfunc_0: u64 = 48563;
-/// `CombatBehaviorTreeFlee::vfunc_0_cb0` at 0x856a80 (callgraph, medium); signature (untiered): `undefined1 vfunc_0_cb0(longlong param_1)`
-pub const CombatBehaviorTreeFlee__vfunc_0_cb0: u64 = 46954;
-/// `CombatBehaviorTreeFlee::vfunc_0_cb1` at 0x89edc0 (callgraph, medium); signature (untiered): `undefined8 vfunc_0_cb1(void)`
-pub const CombatBehaviorTreeFlee__vfunc_0_cb1: u64 = 48538;
-/// `CombatBehaviorTreeFlee::vfunc_0_cb2` at 0x89ef40 (callgraph, medium); signature (untiered): `undefined8 vfunc_0_cb2(void)`
-pub const CombatBehaviorTreeFlee__vfunc_0_cb2: u64 = 48539;
-/// `CombatBehaviorTreeFlight::vfunc_0` at 0x8ad1c0 (rtti, high); signature (low): `undefined vfunc_0(CombatBehaviorTreeFlight * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-pub const CombatBehaviorTreeFlight__vfunc_0: u64 = 48854;
-/// `CombatBehaviorTreeFlight::vfunc_0_cb0` at 0x8ae790 (callgraph, medium); signature (untiered): `undefined vfunc_0_cb0(longlong param_1, longlong param_2)`
-pub const CombatBehaviorTreeFlight__vfunc_0_cb0: u64 = 48855;
-/// `CombatBehaviorTreeFlight::vfunc_0_cb1` at 0x8ae7d0 (callgraph, medium); signature (untiered): `longlong vfunc_0_cb1(longlong param_1)`
-pub const CombatBehaviorTreeFlight__vfunc_0_cb1: u64 = 48856;
-/// `CombatBehaviorTreeFlight::vfunc_0_cb2` at 0x8f2310 (callgraph, medium); signature (untiered): `undefined vfunc_0_cb2(longlong param_1)`
-pub const CombatBehaviorTreeFlight__vfunc_0_cb2: u64 = 50659;
-/// `CombatBehaviorTreeFlight::vfunc_0_cb3` at 0x8f2340 (callgraph, medium); signature (untiered): `undefined vfunc_0_cb3(longlong param_1)`
-pub const CombatBehaviorTreeFlight__vfunc_0_cb3: u64 = 50660;
-/// `CombatBehaviorTreeFlight::vfunc_0_cb4` at 0x8f23b0 (callgraph, medium); signature (untiered): `undefined vfunc_0_cb4(longlong param_1)`
-pub const CombatBehaviorTreeFlight__vfunc_0_cb4: u64 = 50662;

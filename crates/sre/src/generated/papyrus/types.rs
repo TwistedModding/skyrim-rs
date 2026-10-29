@@ -32,9 +32,9 @@ pub struct ActiveEffect {
     pub casterHandle: u32,
     /// +0x38 `undefined8`, ctor store
     pub field_38: u64,
-    /// +0x40 `pointer`, semantic; the caster's MagicCaster (medium)
-    pub casterMagic: *mut c_void,
-    /// +0x48 `pointer`, semantic; the spell's effect entry; +0x10 is its EffectSetting (medium)
+    /// +0x40 `ptr:MagicItem`, semantic; the spell, enchantment, potion, scroll or ingredient that applied the effect (high)
+    pub spell: *mut crate::MagicItem,
+    /// +0x48 `pointer`, semantic; the spell's effect entry: +0 magnitude (float), +4 area (s32), +8 duration (s32), +0x10 EffectSetting* (high)
     pub effect: *mut c_void,
     /// +0x50 `ptr:MagicTarget`, ctor store, semantic, runtime; the target's MagicTarget subobject (Actor+0xa0 for an actor) (high)
     pub target: *mut crate::MagicTarget,
@@ -44,16 +44,16 @@ pub struct ActiveEffect {
     pub field_60: u64,
     /// +0x68 `undefined8`, ctor store
     pub field_68: u64,
-    /// +0x70 `undefined4`, ctor store
-    pub field_70: u32,
-    /// +0x74 `float`, ctor store
-    pub field_74: f32,
-    /// +0x78 `float`, ctor store
-    pub field_78: f32,
-    /// +0x7C `undefined4`, semantic; state bits (0x40000 marks an effect to remove, 0x10000/0x20000 stages of its start) (low)
+    /// +0x70 `float`, semantic; seconds the effect has run; 0 at creation (high)
+    pub elapsedSeconds: f32,
+    /// +0x74 `float`, semantic; the effect's duration in seconds (effect duration + EffectSetting+0xb8 unless MGEF flags & 0x600); the effect ends when duration <= elapsedSeconds unless the MGEF has flag bit 9 or the effect flags 0x4100 (high)
+    pub duration: f32,
+    /// +0x78 `float`, semantic; the effect magnitude, initialised from the effect entry's +0 (medium)
+    pub magnitude: f32,
+    /// +0x7C `undefined4`, semantic; state bits: 0x80 the effect entry has conditions, 0x10000/0x20000 stages of its start; see the flag rows (medium)
     pub flags: u32,
-    /// +0x80 `undefined4`, ctor store
-    pub field_80: u32,
+    /// +0x80 `u32`, semantic; result of the effect's condition check; 1 at creation, 0 makes the effect inactive (flags 0x8000) (medium)
+    pub conditionsTrue: u32,
     /// +0x84 `undefined2`, ctor store, semantic, runtime; per-target id, bits 32-47 of the effect's script handle; 0 means no handle (high)
     pub uniqueID: u16,
     pub unknown_86: [u8; 2],
@@ -75,17 +75,17 @@ const _: () = assert!(core::mem::offset_of!(ActiveEffect, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(ActiveEffect, field_2C) == 0x2C);
 const _: () = assert!(core::mem::offset_of!(ActiveEffect, casterHandle) == 0x34);
 const _: () = assert!(core::mem::offset_of!(ActiveEffect, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(ActiveEffect, casterMagic) == 0x40);
+const _: () = assert!(core::mem::offset_of!(ActiveEffect, spell) == 0x40);
 const _: () = assert!(core::mem::offset_of!(ActiveEffect, effect) == 0x48);
 const _: () = assert!(core::mem::offset_of!(ActiveEffect, target) == 0x50);
 const _: () = assert!(core::mem::offset_of!(ActiveEffect, field_58) == 0x58);
 const _: () = assert!(core::mem::offset_of!(ActiveEffect, field_60) == 0x60);
 const _: () = assert!(core::mem::offset_of!(ActiveEffect, field_68) == 0x68);
-const _: () = assert!(core::mem::offset_of!(ActiveEffect, field_70) == 0x70);
-const _: () = assert!(core::mem::offset_of!(ActiveEffect, field_74) == 0x74);
-const _: () = assert!(core::mem::offset_of!(ActiveEffect, field_78) == 0x78);
+const _: () = assert!(core::mem::offset_of!(ActiveEffect, elapsedSeconds) == 0x70);
+const _: () = assert!(core::mem::offset_of!(ActiveEffect, duration) == 0x74);
+const _: () = assert!(core::mem::offset_of!(ActiveEffect, magnitude) == 0x78);
 const _: () = assert!(core::mem::offset_of!(ActiveEffect, flags) == 0x7C);
-const _: () = assert!(core::mem::offset_of!(ActiveEffect, field_80) == 0x80);
+const _: () = assert!(core::mem::offset_of!(ActiveEffect, conditionsTrue) == 0x80);
 const _: () = assert!(core::mem::offset_of!(ActiveEffect, uniqueID) == 0x84);
 const _: () = assert!(core::mem::offset_of!(ActiveEffect, field_88) == 0x88);
 
@@ -1086,6 +1086,30 @@ impl VMTypeID {
             142 => Some(Self::ActiveMagicEffect),
             _ => None,
         }
+    }
+}
+
+/// Named bits of `ActiveEffect.flags` (papyrus pass); unnamed bits pass through `bits`.
+#[repr(transparent)]
+#[derive(Clone, Copy, PartialEq, Eq, Debug, Default)]
+pub struct ActiveEffect_flags(pub u32);
+
+impl ActiveEffect_flags {
+    /// inactive (medium)
+    pub const INACTIVE: Self = Self(0x8000);
+    /// finishRequested (medium)
+    pub const FINISH_REQUESTED: Self = Self(0x40000);
+    /// removing (medium)
+    pub const REMOVING: Self = Self(0x80000000);
+
+    #[must_use]
+    pub const fn bits(self) -> u32 {
+        self.0
+    }
+
+    #[must_use]
+    pub const fn contains(self, other: Self) -> bool {
+        self.0 & other.0 == other.0
     }
 }
 

@@ -3,6 +3,41 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `SetActiveSlotField278` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 78267, rva 0x10647b0).
+/// `undefined SetActiveSlotField278(longlong * param_1, int param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn set_active_slot_field278(param_1: *mut i64, param_2: i32) -> u64 { unsafe { function!(78267, (*mut i64, i32) -> u64)(param_1, param_2) } }
+/// `SetActorHandle2C` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 33235, rva 0x5614a0).
+/// `undefined SetActorHandle2C(longlong * param_1, longlong * param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn set_actor_handle2_c(param_1: *mut i64, param_2: *mut i64) -> u64 { unsafe { function!(33235, (*mut i64, *mut i64) -> u64)(param_1, param_2) } }
+/// `SetActorRace` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 37925, rva 0x6ad970).
+/// `undefined SetActorRace(longlong * param_1, longlong param_2, undefined4 * param_3, undefined8 param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn set_actor_race(param_1: *mut i64, param_2: i64, param_3: *mut u32, param_4: u64) -> u64 { unsafe { function!(37925, (*mut i64, i64, *mut u32, u64) -> u64)(param_1, param_2, param_3, param_4) } }
+/// `SetActorValueEntryAndNotify` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 38508, rva 0x6c6fe0).
+/// `undefined SetActorValueEntryAndNotify(longlong param_1, int param_2, longlong * param_3, undefined8 param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn set_actor_value_entry_and_notify(param_1: i64, param_2: i32, param_3: *mut i64, param_4: u64) -> u64 { unsafe { function!(38508, (i64, i32, *mut i64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
+/// `SetAllConstraintsEnabled` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 78477, rva 0x1074b40).
+/// `undefined SetAllConstraintsEnabled(longlong param_1, char param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn set_all_constraints_enabled(param_1: i64, param_2: c_char) -> u64 { unsafe { function!(78477, (i64, c_char) -> u64)(param_1, param_2) } }
 /// `SetAnglesFromMatrix` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 44138, rva 0x7fbf30).
 /// `undefined SetAnglesFromMatrix(longlong * param_1, uint * param_2)`
 ///
@@ -5393,13 +5428,6 @@ pub unsafe fn set_ptr_array_element_at_grow(param_1: i64, param_2: u32, param_3:
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn set_quad_tree_node_flags_recursive(param_1: i64, param_2: u32) -> u64 { unsafe { function!(31840, (i64, u32) -> u64)(param_1, param_2) } }
-/// `SetQuestStage` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 25004, rva 0x3d0dc0).
-/// `ulonglong SetQuestStage(longlong * param_1, ushort param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn set_quest_stage(param_1: *mut i64, param_2: u16) -> u64 { unsafe { function!(25004, (*mut i64, u16) -> u64)(param_1, param_2) } }
 /// `SetQwordKeyHashMapEntry` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 78315, rva 0x10688d0).
 /// `undefined8 SetQwordKeyHashMapEntry(longlong param_1, ulonglong * param_2, ulonglong * param_3)`
 ///
@@ -13639,13 +13667,6 @@ pub unsafe fn tree_has_bs_value_node_with_field124(param_1: *mut i64) -> u64 { u
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn trigger_combat_flee_dialogue(param_1: i64, param_2: *mut u64) -> u64 { unsafe { function!(28555, (i64, *mut u64) -> u64)(param_1, param_2) } }
-/// `TriggerStagger` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 37710, rva 0x69fc00).
-/// `undefined TriggerStagger(longlong * param_1, float param_2, longlong * param_3)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn trigger_stagger(param_1: *mut i64, param_2: f32, param_3: *mut i64) -> u64 { unsafe { function!(37710, (*mut i64, f32, *mut i64) -> u64)(param_1, param_2, param_3) } }
 /// `TrimTrailingFreeBlocks` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 68497, rva 0xcecf20).
 /// `undefined TrimTrailingFreeBlocks(longlong * param_1)`
 ///
@@ -13933,24 +13954,3 @@ pub unsafe fn try_get_entry_vec3_and_form40_if_age_below(param_1: i64, param_2: 
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn try_get_field10_field10_field130_ref(param_1: i64, param_2: *mut i64) -> u8 { unsafe { function!(26878, (i64, *mut i64) -> u8)(param_1, param_2) } }
-/// `TryGetField28RefOfField10` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 90358, rva 0x11b6e50).
-/// `bool TryGetField28RefOfField10(longlong param_1, longlong * param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn try_get_field28_ref_of_field10(param_1: i64, param_2: *mut i64) -> u8 { unsafe { function!(90358, (i64, *mut i64) -> u8)(param_1, param_2) } }
-/// `TryGetField38ManagerEntryAtIndex` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 40852, rva 0x765d60).
-/// `bool TryGetField38ManagerEntryAtIndex(longlong param_1, undefined8 * param_2, undefined8 param_3, undefined8 param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn try_get_field38_manager_entry_at_index(param_1: i64, param_2: *mut u64, param_3: u64, param_4: u64) -> u8 { unsafe { function!(40852, (i64, *mut u64, u64, u64) -> u8)(param_1, param_2, param_3, param_4) } }
-/// `TryGetFields30To40IfField3CIsOne` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 83821, rva 0xd482e0).
-/// `longlong TryGetFields30To40IfField3CIsOne(longlong param_1, ulonglong * param_2, undefined4 * param_3, undefined1 * param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn try_get_fields30_to40_if_field3_c_is_one(param_1: i64, param_2: *mut u64, param_3: *mut u32, param_4: *mut u8) -> i64 { unsafe { function!(83821, (i64, *mut u64, *mut u32, *mut u8) -> i64)(param_1, param_2, param_3, param_4) } }

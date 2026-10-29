@@ -28,6 +28,26 @@ impl core::ops::Deref for crate::SkyrimScript__HandlePolicy {
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
 impl crate::ActiveEffect {
+    /// `ActiveEffect::UpdateConditions`, vtable slot 5: re-evaluates the conditions and sets or clears flags 0x8000
+    ///
+    /// Semantic, papyrus pass, medium; called through the object's vtable.
+    /// `void (ActiveEffect* this, float dt)`
+    ///
+    /// # Safety
+    /// The pass rates the signature medium.
+    #[inline]
+    pub unsafe fn update_conditions(&self, dt: f32) { unsafe { virtual_function!(self, 5, (*const Self, f32))(core::ptr::from_ref(self), dt) } }
+    /// `ActiveEffect::GetBaseObject`: this->effect (+0x48) ->+0x10, no null check
+    ///
+    /// Semantic, camera pass, high; ledger runtime evidence, name high; id 34056, rva 0x5bb090.
+    /// `EffectSetting* (ActiveEffect* this)`
+    #[inline]
+    pub fn get_base_object(&self) -> Option<&'static crate::EffectSetting> { unsafe { function!(34056, (*const Self) -> Option<&'static crate::EffectSetting>)(core::ptr::from_ref(self)) } }
+    /// `ActiveEffect::spell` at +0x40: the spell, enchantment, potion, scroll or ingredient that applied the effect
+    ///
+    /// Semantic field, papyrus pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn spell(&self) -> Option<&crate::MagicItem> { unsafe { { self.spell }.as_ref() } }
     /// `ActiveEffect::target` at +0x50: the target's MagicTarget subobject (Actor+0xa0 for an actor)
     ///
     /// Semantic field, papyrus pass, high; `None` while the pointer is null.

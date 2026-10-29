@@ -2069,6 +2069,27 @@ const _: () = assert!(core::mem::offset_of!(LocalMapCamera__DefaultState, minHal
 const _: () = assert!(core::mem::offset_of!(LocalMapCamera__DefaultState, minHalfHeight) == 0x40);
 const _: () = assert!(core::mem::offset_of!(LocalMapCamera__DefaultState, padding44) == 0x44);
 
+/// `MagicTarget`: size 0x18 (exact, medium).
+/// Meaning: the effect-target interface (Actor+0xa0) (medium, camera pass).
+/// Evidence: camera pass (semantic): IC3 G (static-Q).; size: Actor's MagicTarget subobject at +0xa0 is followed by its ActorValueOwner subobject at +0xb8 (rtti.json cols), and UpdateActiveEffectList uses +0x8 and +0x10; layouts.json's 8 (low) was the vtable alone.
+#[repr(C)]
+pub struct MagicTarget {
+    /// +0x0 `vtbl:MagicTarget:0`, rtti
+    #[doc(hidden)]
+    pub __vftable: *const crate::raw::vtables::MagicTarget_vtable,
+    /// +0x8 `pointer`, semantic; queued list changes applied after a walk (low)
+    pub pendingChanges: *mut c_void,
+    /// +0x10 `u8`, semantic; bit 0 set while UpdateActiveEffectList walks the list (medium)
+    pub walkFlags: u8,
+    pub unknown_11: [u8; 7],
+    #[doc(hidden)]
+    pub __engine: crate::Engine,
+}
+const _: () = assert!(size_of::<MagicTarget>() == 0x18);
+const _: () = assert!(core::mem::offset_of!(MagicTarget, __vftable) == 0x0);
+const _: () = assert!(core::mem::offset_of!(MagicTarget, pendingChanges) == 0x8);
+const _: () = assert!(core::mem::offset_of!(MagicTarget, walkFlags) == 0x10);
+
 /// `MapCamera`: size 0x90 (exact, high); primary base `TESCamera`.
 /// Meaning: world map camera: a TESCamera with two World states (double-buffered so a jump to a marker can transition world-to-world), an Exit and a Transition state; driven by MapMenu (high, camera pass).
 /// Evidence: camera pass (runtime): states built by InitMapCameraStates 0x996390: two MapCameraStates::World (0x78) at +0x68/+0x70, Exit (0x20, id 1) at +0x78, Transition (0x88, id 2) at +0x80. Updated by MapMenu 0x9969f0: 'movss [rcx+0x4c],xmm1' then a 5-byte E9 JMP (tail call) to TESCamera::Update at +0x5 -- not an E8 call; a hook there must keep tail-jump semantics (a CALL written there returns into +0xa, past the function's end). MapMenu slot 4 also runs PlayerCamera::Update; size: vdtor 0x997240 frees 0x90; ctors 0x996170 / 0x9962b0 (MapMenu ctor); run-cam map menu: the map camera update ran 255 times on an object with MapCamera's vtable, never on PlayerCamera.
@@ -2342,7 +2363,7 @@ const _: () = assert!(core::mem::offset_of!(MountInteraction, actorHandle) == 0x
 const _: () = assert!(core::mem::offset_of!(MountInteraction, field_18) == 0x18);
 
 /// `MovementControllerNPC`: size 0x1D0 (exact, high); primary base `MovementControllerAI`.
-/// Meaning: the actor's movement controller (Actor+0x150, refcounted); its controlsDriven byte decides whether the player's controls or the AI drive the actor's movement (high, camera pass).
+/// Meaning: the IMovementMotionDrivenControl sub-object (animation- versus motion-driven) (high, camera pass).
 /// Evidence: runtime: 0x1D0 at 2 allocation sites; agrees with the static allocation sites.
 /// Bases: `MovementControllerAI`@0x0, `BSIntrusiveRefCounted`@0x8, `IMovementControllerRegisterInterface`@0x0, `IMovementMessageInterface`@0x120, `IMovementInterface`@0x120, `IMovementMotionDrivenControl`@0x128, `IMovementInterface`@0x128, `IMovementSelectIdle`@0x130, `IMovementInterface`@0x130, `IMovementDirectControl`@0x138, `IMovementInterface`@0x138, `IMovementPlannerDirectControl`@0x140, `IMovementInterface`@0x140, `IAnimationSetCallbackFunctor`@0x148.
 #[repr(C)]
@@ -2392,7 +2413,9 @@ pub struct MovementControllerNPC {
     pub field_1B0: u64,
     /// +0x1B8 `undefined8`, ctor store
     pub field_1B8: u64,
-    pub unknown_1C0: [u8; 5],
+    /// +0x1C0 `u32`, semantic; movement drive mode; IsMotionDriven = mode in {1,2,3,7,8,10,11,12,13,14} (medium)
+    pub motionMode: u32,
+    pub unknown_1C4: [u8; 1],
     /// +0x1C5 `u8`, semantic, runtime; 1 = movement driven by the player's controls, 0 = AI-driven (high)
     pub controlsDriven: u8,
     pub unknown_1C6: [u8; 2],
@@ -2420,6 +2443,7 @@ const _: () = assert!(core::mem::offset_of!(MovementControllerNPC, field_1A0) ==
 const _: () = assert!(core::mem::offset_of!(MovementControllerNPC, field_1A8) == 0x1A8);
 const _: () = assert!(core::mem::offset_of!(MovementControllerNPC, field_1B0) == 0x1B0);
 const _: () = assert!(core::mem::offset_of!(MovementControllerNPC, field_1B8) == 0x1B8);
+const _: () = assert!(core::mem::offset_of!(MovementControllerNPC, motionMode) == 0x1C0);
 const _: () = assert!(core::mem::offset_of!(MovementControllerNPC, controlsDriven) == 0x1C5);
 const _: () = assert!(core::mem::offset_of!(MovementControllerNPC, field_1C8) == 0x1C8);
 
@@ -3445,6 +3469,324 @@ const _: () = assert!(core::mem::offset_of!(TESFurniture, workbenchSkill) == 0xE
 const _: () = assert!(core::mem::offset_of!(TESFurniture, activeMarkerFlags) == 0xE4);
 const _: () = assert!(core::mem::offset_of!(TESFurniture, associatedSpell) == 0xE8);
 
+/// `TESObjectWEAP`: size 0x220 (exact, high); primary base `TESBoundObject`.
+/// Meaning: weapon form: the weapon (animation) type byte (high, camera pass).
+/// Evidence: runtime: 0x220 at 3 allocation sites.
+/// Bases: `TESBoundObject`@0x0, `TESObject`@0x0, `TESForm`@0x0, `BaseFormComponent`@0x0, `TESFullName`@0x30, `BaseFormComponent`@0x30, `TESModelTextureSwap`@0x40, `TESModel`@0x40, `BaseFormComponent`@0x40, `TESIcon`@0x78, `TESTexture`@0x78, `BaseFormComponent`@0x78, `TESEnchantableForm`@0x88, `BaseFormComponent`@0x88, `TESValueForm`@0xA0, `BaseFormComponent`@0xA0, `TESWeightForm`@0xB0, `BaseFormComponent`@0xB0, `TESAttackDamageForm`@0xC0, `BaseFormComponent`@0xC0, `BGSDestructibleObjectForm`@0xD0, `BaseFormComponent`@0xD0, `BGSEquipType`@0xE0, `BaseFormComponent`@0xE0, `BGSPreloadable`@0xF0, `BaseFormComponent`@0xF0, `BGSMessageIcon`@0xF8, `BaseFormComponent`@0xF8, `BGSPickupPutdownSounds`@0x110, `BaseFormComponent`@0x110, `BGSBlockBashData`@0x128, `BaseFormComponent`@0x128, `BGSKeywordForm`@0x140, `BaseFormComponent`@0x140, `TESDescription`@0x158, `BaseFormComponent`@0x158.
+#[repr(C)]
+pub struct TESObjectWEAP {
+    /// +0x0 `vtbl:TESObjectWEAP:0`, rtti
+    #[doc(hidden)]
+    pub __vftable: *const crate::raw::vtables::TESObjectWEAP_vtable,
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
+    pub sourceFiles: *mut crate::TESFileArray,
+    /// +0x10 `undefined4`, base TESForm, semantic; record flags; see the flag rows (high)
+    pub formFlags: u32,
+    /// +0x14 `undefined4`, base TESForm, semantic; the form id (high)
+    pub formID: u32,
+    /// +0x18 `undefined2`, base TESForm, semantic; 16-bit flag word saved with the form; low 6 bits restored on load (medium)
+    pub inGameFlags: u16,
+    /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
+    pub formType: u8,
+    pub unknown_1B: [u8; 13],
+    /// +0x28 `undefined2`, base TESBoundObject
+    pub field_28: u16,
+    /// +0x2A `undefined2`, base TESBoundObject
+    pub field_2A: u16,
+    pub unknown_2C: [u8; 4],
+    /// +0x30 `vtbl:TESObjectWEAP:30`, rtti
+    #[doc(hidden)]
+    pub __vftable_30: *const crate::raw::vtables::TESObjectWEAP_vtable_30,
+    pub unknown_38: [u8; 8],
+    /// +0x40 `vtbl:TESObjectWEAP:40`, rtti
+    #[doc(hidden)]
+    pub __vftable_40: *const crate::raw::vtables::TESObjectWEAP_vtable_40,
+    pub unknown_48: [u8; 8],
+    /// +0x50 `undefined8`, base TESModelTextureSwap
+    pub field_50: u64,
+    pub unknown_58: [u8; 16],
+    /// +0x68 `undefined8`, base TESModelTextureSwap
+    pub field_68: u64,
+    /// +0x70 `undefined4`, base TESModelTextureSwap
+    pub field_70: u32,
+    pub unknown_74: [u8; 4],
+    /// +0x78 `vtbl:TESObjectWEAP:78`, rtti
+    #[doc(hidden)]
+    pub __vftable_78: *const crate::raw::vtables::TESObjectWEAP_vtable_78,
+    pub unknown_80: [u8; 8],
+    /// +0x88 `vtbl:TESObjectWEAP:88`, rtti
+    #[doc(hidden)]
+    pub __vftable_88: *const crate::raw::vtables::TESObjectWEAP_vtable_88,
+    /// +0x90 `undefined8`, base TESEnchantableForm
+    pub field_90: u64,
+    /// +0x98 `undefined4`, base TESEnchantableForm
+    pub field_98: u32,
+    pub unknown_9C: [u8; 4],
+    /// +0xA0 `vtbl:TESObjectWEAP:A0`, rtti
+    #[doc(hidden)]
+    pub __vftable_A0: *const crate::raw::vtables::TESObjectWEAP_vtable_A0,
+    /// +0xA8 `undefined4`, base TESValueForm
+    pub field_A8: u32,
+    pub unknown_AC: [u8; 4],
+    /// +0xB0 `vtbl:TESObjectWEAP:B0`, rtti
+    #[doc(hidden)]
+    pub __vftable_B0: *const crate::raw::vtables::TESObjectWEAP_vtable_B0,
+    /// +0xB8 `undefined4`, base TESWeightForm
+    pub field_B8: u32,
+    pub unknown_BC: [u8; 4],
+    /// +0xC0 `vtbl:TESObjectWEAP:C0`, rtti
+    #[doc(hidden)]
+    pub __vftable_C0: *const crate::raw::vtables::TESObjectWEAP_vtable_C0,
+    /// +0xC8 `undefined2`, base TESAttackDamageForm
+    pub field_C8: u16,
+    pub unknown_CA: [u8; 6],
+    /// +0xD0 `vtbl:TESObjectWEAP:D0`, rtti
+    #[doc(hidden)]
+    pub __vftable_D0: *const crate::raw::vtables::TESObjectWEAP_vtable_D0,
+    /// +0xD8 `undefined8`, base BGSDestructibleObjectForm
+    pub field_D8: u64,
+    /// +0xE0 `vtbl:TESObjectWEAP:E0`, rtti
+    #[doc(hidden)]
+    pub __vftable_E0: *const crate::raw::vtables::TESObjectWEAP_vtable_E0,
+    /// +0xE8 `undefined8`, base BGSEquipType
+    pub field_E8: u64,
+    /// +0xF0 `vtbl:TESObjectWEAP:F0`, rtti
+    #[doc(hidden)]
+    pub __vftable_F0: *const crate::raw::vtables::TESObjectWEAP_vtable_F0,
+    /// +0xF8 `vtbl:TESObjectWEAP:F8`, rtti
+    #[doc(hidden)]
+    pub __vftable_F8: *const crate::raw::vtables::TESObjectWEAP_vtable_F8,
+    pub unknown_100: [u8; 16],
+    /// +0x110 `vtbl:TESObjectWEAP:110`, rtti
+    #[doc(hidden)]
+    pub __vftable_110: *const crate::raw::vtables::TESObjectWEAP_vtable_110,
+    /// +0x118 `undefined8`, base BGSPickupPutdownSounds
+    pub field_118: u64,
+    /// +0x120 `undefined8`, base BGSPickupPutdownSounds
+    pub field_120: u64,
+    /// +0x128 `vtbl:TESObjectWEAP:128`, rtti
+    #[doc(hidden)]
+    pub __vftable_128: *const crate::raw::vtables::TESObjectWEAP_vtable_128,
+    /// +0x130 `undefined8`, base BGSBlockBashData
+    pub field_130: u64,
+    /// +0x138 `undefined8`, base BGSBlockBashData
+    pub field_138: u64,
+    /// +0x140 `vtbl:TESObjectWEAP:140`, rtti
+    #[doc(hidden)]
+    pub __vftable_140: *const crate::raw::vtables::TESObjectWEAP_vtable_140,
+    /// +0x148 `pointer`, base BGSKeywordForm, semantic; BGSKeyword*[numKeywords] (high)
+    pub keywords: *mut c_void,
+    /// +0x150 `undefined4`, base BGSKeywordForm, semantic; number of keywords (high)
+    pub numKeywords: u32,
+    pub unknown_154: [u8; 4],
+    /// +0x158 `vtbl:TESObjectWEAP:158`, rtti
+    #[doc(hidden)]
+    pub __vftable_158: *const crate::raw::vtables::TESObjectWEAP_vtable_158,
+    /// +0x160 `undefined4`, base TESDescription
+    pub field_160: u32,
+    pub unknown_164: [u8; 57],
+    /// +0x19D `i8`, semantic, runtime; WeaponType: 0 HandToHandMelee .. 9 Crossbow (high)
+    pub weaponType: u8,
+    pub unknown_19E: [u8; 130],
+    #[doc(hidden)]
+    pub __engine: crate::Engine,
+}
+const _: () = assert!(size_of::<TESObjectWEAP>() == 0x220);
+const _: () = assert!(core::mem::offset_of!(TESObjectWEAP, __vftable) == 0x0);
+const _: () = assert!(core::mem::offset_of!(TESObjectWEAP, sourceFiles) == 0x8);
+const _: () = assert!(core::mem::offset_of!(TESObjectWEAP, formFlags) == 0x10);
+const _: () = assert!(core::mem::offset_of!(TESObjectWEAP, formID) == 0x14);
+const _: () = assert!(core::mem::offset_of!(TESObjectWEAP, inGameFlags) == 0x18);
+const _: () = assert!(core::mem::offset_of!(TESObjectWEAP, formType) == 0x1A);
+const _: () = assert!(core::mem::offset_of!(TESObjectWEAP, field_28) == 0x28);
+const _: () = assert!(core::mem::offset_of!(TESObjectWEAP, field_2A) == 0x2A);
+const _: () = assert!(core::mem::offset_of!(TESObjectWEAP, __vftable_30) == 0x30);
+const _: () = assert!(core::mem::offset_of!(TESObjectWEAP, __vftable_40) == 0x40);
+const _: () = assert!(core::mem::offset_of!(TESObjectWEAP, field_50) == 0x50);
+const _: () = assert!(core::mem::offset_of!(TESObjectWEAP, field_68) == 0x68);
+const _: () = assert!(core::mem::offset_of!(TESObjectWEAP, field_70) == 0x70);
+const _: () = assert!(core::mem::offset_of!(TESObjectWEAP, __vftable_78) == 0x78);
+const _: () = assert!(core::mem::offset_of!(TESObjectWEAP, __vftable_88) == 0x88);
+const _: () = assert!(core::mem::offset_of!(TESObjectWEAP, field_90) == 0x90);
+const _: () = assert!(core::mem::offset_of!(TESObjectWEAP, field_98) == 0x98);
+const _: () = assert!(core::mem::offset_of!(TESObjectWEAP, __vftable_A0) == 0xA0);
+const _: () = assert!(core::mem::offset_of!(TESObjectWEAP, field_A8) == 0xA8);
+const _: () = assert!(core::mem::offset_of!(TESObjectWEAP, __vftable_B0) == 0xB0);
+const _: () = assert!(core::mem::offset_of!(TESObjectWEAP, field_B8) == 0xB8);
+const _: () = assert!(core::mem::offset_of!(TESObjectWEAP, __vftable_C0) == 0xC0);
+const _: () = assert!(core::mem::offset_of!(TESObjectWEAP, field_C8) == 0xC8);
+const _: () = assert!(core::mem::offset_of!(TESObjectWEAP, __vftable_D0) == 0xD0);
+const _: () = assert!(core::mem::offset_of!(TESObjectWEAP, field_D8) == 0xD8);
+const _: () = assert!(core::mem::offset_of!(TESObjectWEAP, __vftable_E0) == 0xE0);
+const _: () = assert!(core::mem::offset_of!(TESObjectWEAP, field_E8) == 0xE8);
+const _: () = assert!(core::mem::offset_of!(TESObjectWEAP, __vftable_F0) == 0xF0);
+const _: () = assert!(core::mem::offset_of!(TESObjectWEAP, __vftable_F8) == 0xF8);
+const _: () = assert!(core::mem::offset_of!(TESObjectWEAP, __vftable_110) == 0x110);
+const _: () = assert!(core::mem::offset_of!(TESObjectWEAP, field_118) == 0x118);
+const _: () = assert!(core::mem::offset_of!(TESObjectWEAP, field_120) == 0x120);
+const _: () = assert!(core::mem::offset_of!(TESObjectWEAP, __vftable_128) == 0x128);
+const _: () = assert!(core::mem::offset_of!(TESObjectWEAP, field_130) == 0x130);
+const _: () = assert!(core::mem::offset_of!(TESObjectWEAP, field_138) == 0x138);
+const _: () = assert!(core::mem::offset_of!(TESObjectWEAP, __vftable_140) == 0x140);
+const _: () = assert!(core::mem::offset_of!(TESObjectWEAP, keywords) == 0x148);
+const _: () = assert!(core::mem::offset_of!(TESObjectWEAP, numKeywords) == 0x150);
+const _: () = assert!(core::mem::offset_of!(TESObjectWEAP, __vftable_158) == 0x158);
+const _: () = assert!(core::mem::offset_of!(TESObjectWEAP, field_160) == 0x160);
+const _: () = assert!(core::mem::offset_of!(TESObjectWEAP, weaponType) == 0x19D);
+
+/// `TESQuest`: size 0x268 (exact, medium); primary base `BGSStoryManagerTreeForm`.
+/// Meaning: a quest form (high, camera pass).
+/// Evidence: runtime: 0x268 at 1 allocation sites; agrees with the static allocation sites.
+/// Bases: `BGSStoryManagerTreeForm`@0x0, `TESForm`@0x0, `BaseFormComponent`@0x0, `TESFullName`@0x28, `BaseFormComponent`@0x28.
+/// Packed: a field lies below its natural alignment.
+#[repr(C, packed)]
+pub struct TESQuest {
+    /// +0x0 `vtbl:TESQuest:0`, rtti
+    #[doc(hidden)]
+    pub __vftable: *const crate::raw::vtables::TESQuest_vtable,
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
+    pub sourceFiles: *mut crate::TESFileArray,
+    /// +0x10 `undefined4`, base TESForm, semantic; record flags; see the flag rows (high)
+    pub formFlags: u32,
+    /// +0x14 `undefined4`, base TESForm, semantic; the form id (high)
+    pub formID: u32,
+    /// +0x18 `undefined2`, base TESForm, semantic; 16-bit flag word saved with the form; low 6 bits restored on load (medium)
+    pub inGameFlags: u16,
+    /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
+    pub formType: u8,
+    pub unknown_1B: [u8; 5],
+    /// +0x20 `undefined4`, ctor store
+    pub field_20: u32,
+    pub unknown_24: [u8; 4],
+    /// +0x28 `vtbl:TESQuest:28`, rtti
+    #[doc(hidden)]
+    pub __vftable_28: *const crate::raw::vtables::TESQuest_vtable_28,
+    /// +0x30 `pointer`, base TESFullName, semantic; BSFixedString full name (high)
+    pub name: *mut c_void,
+    /// +0x38 `undefined1`, base TESFullName
+    pub field_38: u8,
+    /// +0x39 `undefined1`, base TESFullName
+    pub field_39: u8,
+    /// +0x3A `undefined2`, base TESFullName
+    pub field_3A: u16,
+    pub unknown_3C: [u8; 12],
+    /// +0x48 `undefined4`, ctor store
+    pub field_48: u32,
+    pub unknown_4C: [u8; 4],
+    /// +0x50 `undefined4`, ctor store
+    pub field_50: u32,
+    pub unknown_54: [u8; 20],
+    /// +0x68 `undefined4`, ctor store
+    pub field_68: u32,
+    pub unknown_6C: [u8; 16],
+    /// +0x7C `undefined8`, ctor store
+    pub field_7C: u64,
+    /// +0x84 `undefined4`, ctor store
+    pub field_84: u32,
+    /// +0x88 `undefined8`, ctor store
+    pub field_88: u64,
+    pub unknown_90: [u8; 8],
+    /// +0x98 `undefined8`, ctor store
+    pub field_98: u64,
+    pub unknown_A0: [u8; 12],
+    /// +0xAC `undefined8`, ctor store
+    pub field_AC: u64,
+    /// +0xB4 `undefined4`, ctor store
+    pub field_B4: u32,
+    /// +0xB8 `undefined8`, ctor store
+    pub field_B8: u64,
+    pub unknown_C0: [u8; 8],
+    /// +0xC8 `undefined8`, ctor store
+    pub field_C8: u64,
+    pub unknown_D0: [u8; 12],
+    /// +0xDC `u8`, semantic; bit 0 running (SetStage requires it), bit 7 tested by IsRunning (medium)
+    pub questFlags: u8,
+    pub unknown_DD: [u8; 3],
+    /// +0xE0 `undefined4`, ctor store
+    pub field_E0: u32,
+    pub unknown_E4: [u8; 4],
+    /// +0xE8 `class:BSSimpleListNode`, semantic; embedded list head of the quest's stages: entry {u16 stage +0, u8 flags +2 (bit 0 done; bit 1 is the one the start-up runner 0x3d0b20 runs)} (high)
+    pub stages: crate::BSSimpleListNode,
+    /// +0xF8 `undefined8`, ctor store
+    pub field_F8: u64,
+    /// +0x100 `undefined8`, ctor store
+    pub field_100: u64,
+    pub unknown_108: [u8; 28],
+    /// +0x124 `undefined4`, ctor store
+    pub field_124: u32,
+    /// +0x128 `undefined4`, ctor store
+    pub field_128: u32,
+    /// +0x12C `undefined4`, ctor store
+    pub field_12C: u32,
+    pub unknown_130: [u8; 232],
+    /// +0x218 `undefined4`, ctor store
+    pub field_218: u32,
+    pub unknown_21C: [u8; 4],
+    /// +0x220 `undefined8`, ctor store
+    pub field_220: u64,
+    /// +0x228 `u16`, semantic; the current stage (the highest stage set since the quest started); 0 when reset (high)
+    pub currentStage: u16,
+    /// +0x22A `undefined1`, ctor store
+    pub field_22A: u8,
+    pub unknown_22B: [u8; 5],
+    /// +0x230 `undefined8`, ctor store
+    pub field_230: u64,
+    /// +0x238 `undefined4`, ctor store
+    pub field_238: u32,
+    pub unknown_23C: [u8; 4],
+    /// +0x240 `undefined8`, ctor store
+    pub field_240: u64,
+    /// +0x248 `undefined8`, ctor store
+    pub field_248: u64,
+    pub unknown_250: [u8; 16],
+    /// +0x260 `undefined4`, ctor store
+    pub field_260: u32,
+    pub unknown_264: [u8; 4],
+    #[doc(hidden)]
+    pub __engine: crate::Engine,
+}
+const _: () = assert!(size_of::<TESQuest>() == 0x268);
+const _: () = assert!(core::mem::offset_of!(TESQuest, __vftable) == 0x0);
+const _: () = assert!(core::mem::offset_of!(TESQuest, sourceFiles) == 0x8);
+const _: () = assert!(core::mem::offset_of!(TESQuest, formFlags) == 0x10);
+const _: () = assert!(core::mem::offset_of!(TESQuest, formID) == 0x14);
+const _: () = assert!(core::mem::offset_of!(TESQuest, inGameFlags) == 0x18);
+const _: () = assert!(core::mem::offset_of!(TESQuest, formType) == 0x1A);
+const _: () = assert!(core::mem::offset_of!(TESQuest, field_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(TESQuest, __vftable_28) == 0x28);
+const _: () = assert!(core::mem::offset_of!(TESQuest, name) == 0x30);
+const _: () = assert!(core::mem::offset_of!(TESQuest, field_38) == 0x38);
+const _: () = assert!(core::mem::offset_of!(TESQuest, field_39) == 0x39);
+const _: () = assert!(core::mem::offset_of!(TESQuest, field_3A) == 0x3A);
+const _: () = assert!(core::mem::offset_of!(TESQuest, field_48) == 0x48);
+const _: () = assert!(core::mem::offset_of!(TESQuest, field_50) == 0x50);
+const _: () = assert!(core::mem::offset_of!(TESQuest, field_68) == 0x68);
+const _: () = assert!(core::mem::offset_of!(TESQuest, field_7C) == 0x7C);
+const _: () = assert!(core::mem::offset_of!(TESQuest, field_84) == 0x84);
+const _: () = assert!(core::mem::offset_of!(TESQuest, field_88) == 0x88);
+const _: () = assert!(core::mem::offset_of!(TESQuest, field_98) == 0x98);
+const _: () = assert!(core::mem::offset_of!(TESQuest, field_AC) == 0xAC);
+const _: () = assert!(core::mem::offset_of!(TESQuest, field_B4) == 0xB4);
+const _: () = assert!(core::mem::offset_of!(TESQuest, field_B8) == 0xB8);
+const _: () = assert!(core::mem::offset_of!(TESQuest, field_C8) == 0xC8);
+const _: () = assert!(core::mem::offset_of!(TESQuest, questFlags) == 0xDC);
+const _: () = assert!(core::mem::offset_of!(TESQuest, field_E0) == 0xE0);
+const _: () = assert!(core::mem::offset_of!(TESQuest, stages) == 0xE8);
+const _: () = assert!(core::mem::offset_of!(TESQuest, field_F8) == 0xF8);
+const _: () = assert!(core::mem::offset_of!(TESQuest, field_100) == 0x100);
+const _: () = assert!(core::mem::offset_of!(TESQuest, field_124) == 0x124);
+const _: () = assert!(core::mem::offset_of!(TESQuest, field_128) == 0x128);
+const _: () = assert!(core::mem::offset_of!(TESQuest, field_12C) == 0x12C);
+const _: () = assert!(core::mem::offset_of!(TESQuest, field_218) == 0x218);
+const _: () = assert!(core::mem::offset_of!(TESQuest, field_220) == 0x220);
+const _: () = assert!(core::mem::offset_of!(TESQuest, currentStage) == 0x228);
+const _: () = assert!(core::mem::offset_of!(TESQuest, field_22A) == 0x22A);
+const _: () = assert!(core::mem::offset_of!(TESQuest, field_230) == 0x230);
+const _: () = assert!(core::mem::offset_of!(TESQuest, field_238) == 0x238);
+const _: () = assert!(core::mem::offset_of!(TESQuest, field_240) == 0x240);
+const _: () = assert!(core::mem::offset_of!(TESQuest, field_248) == 0x248);
+const _: () = assert!(core::mem::offset_of!(TESQuest, field_260) == 0x260);
+
 /// `ThirdPersonState`: size 0xE8 (exact, high); primary base `TESCameraState`.
 /// Meaning: orbit camera behind the target with zoom, shoulder offsets, chase yaw, free rotation and collision recovery; ids 8 and 9 (9 the gameplay one with +0xe1 = 1) (high, frame pass).
 /// Evidence: runtime: 0xE8 at 2 allocation sites; agrees with the static allocation sites.
@@ -3714,6 +4056,300 @@ const _: () = assert!(core::mem::offset_of!(VATSCameraState, id) == 0x18);
 const _: () = assert!(core::mem::offset_of!(VATSCameraState, pad1C) == 0x1C);
 const _: () = assert!(core::mem::offset_of!(VATSCameraState, rotationEuler) == 0x20);
 const _: () = assert!(core::mem::offset_of!(VATSCameraState, position) == 0x2C);
+
+/// values in data/actorattackstates.json (camera pass).
+#[repr(u32)]
+#[derive(Clone, Copy, PartialEq, Eq, Debug)]
+pub enum ActorAttackState {
+    /// `None`
+    None = 0,
+    /// `Draw`
+    Draw = 1,
+    /// `Swing`
+    Swing = 2,
+    /// `Hit`
+    Hit = 3,
+    /// `NextAttack`
+    NextAttack = 4,
+    /// `FollowThrough`
+    FollowThrough = 5,
+    /// `Bash`
+    Bash = 6,
+    /// `BowDraw`
+    BowDraw = 8,
+    /// `BowAttached`
+    BowAttached = 9,
+    /// `BowDrawn`
+    BowDrawn = 10,
+    /// `BowReleasing`
+    BowReleasing = 11,
+    /// `BowReleased`
+    BowReleased = 12,
+    /// `BowNextAttack`
+    BowNextAttack = 13,
+    /// `BowFollowThrough`
+    BowFollowThrough = 14,
+}
+
+impl ActorAttackState {
+    #[must_use]
+    pub const fn from_u32(value: u32) -> Option<Self> {
+        match value {
+            0 => Some(Self::None),
+            1 => Some(Self::Draw),
+            2 => Some(Self::Swing),
+            3 => Some(Self::Hit),
+            4 => Some(Self::NextAttack),
+            5 => Some(Self::FollowThrough),
+            6 => Some(Self::Bash),
+            8 => Some(Self::BowDraw),
+            9 => Some(Self::BowAttached),
+            10 => Some(Self::BowDrawn),
+            11 => Some(Self::BowReleasing),
+            12 => Some(Self::BowReleased),
+            13 => Some(Self::BowNextAttack),
+            14 => Some(Self::BowFollowThrough),
+            _ => None,
+        }
+    }
+}
+
+/// values in data/actorknockstates.json (camera pass).
+#[repr(u32)]
+#[derive(Clone, Copy, PartialEq, Eq, Debug)]
+pub enum ActorKnockState {
+    /// `Normal`
+    Normal = 0,
+    /// `Down`
+    Down = 1,
+    /// `KnockQueued`
+    KnockQueued = 2,
+    /// `DownHeld`
+    DownHeld = 3,
+    /// `KnockQueuedHeld`
+    KnockQueuedHeld = 4,
+    /// `GetUpQueued`
+    GetUpQueued = 5,
+    /// `GettingUp`
+    GettingUp = 6,
+}
+
+impl ActorKnockState {
+    #[must_use]
+    pub const fn from_u32(value: u32) -> Option<Self> {
+        match value {
+            0 => Some(Self::Normal),
+            1 => Some(Self::Down),
+            2 => Some(Self::KnockQueued),
+            3 => Some(Self::DownHeld),
+            4 => Some(Self::KnockQueuedHeld),
+            5 => Some(Self::GetUpQueued),
+            6 => Some(Self::GettingUp),
+            _ => None,
+        }
+    }
+}
+
+/// values in data/actorsitsleepstates.json (camera pass).
+#[repr(u32)]
+#[derive(Clone, Copy, PartialEq, Eq, Debug)]
+pub enum ActorSitSleepState {
+    /// `None`
+    None = 0,
+    /// `WantToSit`
+    WantToSit = 1,
+    /// `EnteringSit`
+    EnteringSit = 2,
+    /// `Sitting`
+    Sitting = 3,
+    /// `ExitingSit`
+    ExitingSit = 4,
+    /// `WantToSleep`
+    WantToSleep = 5,
+    /// `EnteringBed`
+    EnteringBed = 6,
+    /// `Sleeping`
+    Sleeping = 7,
+    /// `ExitingBed`
+    ExitingBed = 8,
+}
+
+impl ActorSitSleepState {
+    #[must_use]
+    pub const fn from_u32(value: u32) -> Option<Self> {
+        match value {
+            0 => Some(Self::None),
+            1 => Some(Self::WantToSit),
+            2 => Some(Self::EnteringSit),
+            3 => Some(Self::Sitting),
+            4 => Some(Self::ExitingSit),
+            5 => Some(Self::WantToSleep),
+            6 => Some(Self::EnteringBed),
+            7 => Some(Self::Sleeping),
+            8 => Some(Self::ExitingBed),
+            _ => None,
+        }
+    }
+}
+
+/// values in data/actorweaponstates.json (camera pass).
+#[repr(u32)]
+#[derive(Clone, Copy, PartialEq, Eq, Debug)]
+pub enum ActorWeaponState {
+    /// `Sheathed`
+    Sheathed = 0,
+    /// `WantToDraw`
+    WantToDraw = 1,
+    /// `Drawing`
+    Drawing = 2,
+    /// `Drawn`
+    Drawn = 3,
+    /// `WantToSheathe`
+    WantToSheathe = 4,
+    /// `Sheathing`
+    Sheathing = 5,
+}
+
+impl ActorWeaponState {
+    #[must_use]
+    pub const fn from_u32(value: u32) -> Option<Self> {
+        match value {
+            0 => Some(Self::Sheathed),
+            1 => Some(Self::WantToDraw),
+            2 => Some(Self::Drawing),
+            3 => Some(Self::Drawn),
+            4 => Some(Self::WantToSheathe),
+            5 => Some(Self::Sheathing),
+            _ => None,
+        }
+    }
+}
+
+/// values in data/actorflyingstates.json (camera pass).
+#[repr(u32)]
+#[derive(Clone, Copy, PartialEq, Eq, Debug)]
+pub enum ActorFlyingState {
+    /// `NotFlying`
+    NotFlying = 0,
+    /// `Unknown3`
+    Unknown3 = 3,
+    /// `Landing`
+    Landing = 4,
+    /// `Unknown5`
+    Unknown5 = 5,
+}
+
+impl ActorFlyingState {
+    #[must_use]
+    pub const fn from_u32(value: u32) -> Option<Self> {
+        match value {
+            0 => Some(Self::NotFlying),
+            3 => Some(Self::Unknown3),
+            4 => Some(Self::Landing),
+            5 => Some(Self::Unknown5),
+            _ => None,
+        }
+    }
+}
+
+/// values in data/characterstates.json (camera pass).
+#[repr(u32)]
+#[derive(Clone, Copy, PartialEq, Eq, Debug)]
+pub enum CharacterState {
+    /// `OnGround`
+    OnGround = 0,
+    /// `Jumping`
+    Jumping = 1,
+    /// `InAir`
+    InAir = 2,
+    /// `Climbing`
+    Climbing = 3,
+    /// `Flying`
+    Flying = 4,
+    /// `Swimming`
+    Swimming = 5,
+}
+
+impl CharacterState {
+    #[must_use]
+    pub const fn from_u32(value: u32) -> Option<Self> {
+        match value {
+            0 => Some(Self::OnGround),
+            1 => Some(Self::Jumping),
+            2 => Some(Self::InAir),
+            3 => Some(Self::Climbing),
+            4 => Some(Self::Flying),
+            5 => Some(Self::Swimming),
+            _ => None,
+        }
+    }
+}
+
+/// values in data/weapontypes.json (camera pass).
+#[repr(u32)]
+#[derive(Clone, Copy, PartialEq, Eq, Debug)]
+pub enum WeaponType {
+    /// `HandToHandMelee`
+    HandToHandMelee = 0,
+    /// `OneHandSword`
+    OneHandSword = 1,
+    /// `OneHandDagger`
+    OneHandDagger = 2,
+    /// `OneHandAxe`
+    OneHandAxe = 3,
+    /// `OneHandMace`
+    OneHandMace = 4,
+    /// `TwoHandSword`
+    TwoHandSword = 5,
+    /// `TwoHandAxe`
+    TwoHandAxe = 6,
+    /// `Bow`
+    Bow = 7,
+    /// `Staff`
+    Staff = 8,
+    /// `Crossbow`
+    Crossbow = 9,
+}
+
+impl WeaponType {
+    #[must_use]
+    pub const fn from_u32(value: u32) -> Option<Self> {
+        match value {
+            0 => Some(Self::HandToHandMelee),
+            1 => Some(Self::OneHandSword),
+            2 => Some(Self::OneHandDagger),
+            3 => Some(Self::OneHandAxe),
+            4 => Some(Self::OneHandMace),
+            5 => Some(Self::TwoHandSword),
+            6 => Some(Self::TwoHandAxe),
+            7 => Some(Self::Bow),
+            8 => Some(Self::Staff),
+            9 => Some(Self::Crossbow),
+            _ => None,
+        }
+    }
+}
+
+/// values in data/disablepovtypes.json (camera pass).
+#[repr(u32)]
+#[derive(Clone, Copy, PartialEq, Eq, Debug)]
+pub enum DisablePOVType {
+    /// `Script`
+    Script = 0,
+    /// `Werewolf`
+    Werewolf = 1,
+}
+
+impl DisablePOVType {
+    #[must_use]
+    pub const fn from_u32(value: u32) -> Option<Self> {
+        match value {
+            0 => Some(Self::Script),
+            1 => Some(Self::Werewolf),
+            _ => None,
+        }
+    }
+}
 
 /// Named bits of `BGSCameraPath.pathFlags` (camera pass); unnamed bits pass through `bits`.
 #[repr(transparent)]

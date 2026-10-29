@@ -4,6 +4,11 @@
 use crate::raw::*;
 
 pub(super) const ROWS: &[Function] = &[
+    Function { rva: 0xee8940, id: 70427, confidence: Confidence::High, name: "DeleteOwnedObject_3" },
+    Function { rva: 0xee8960, id: 70428, confidence: Confidence::Medium, name: "NiTArray<void_(__cdecl*)(NiStream&___ptr64,NiObject*___ptr64),NiTMallocInterface<void_(__cdecl*)(NiStream&___ptr64,NiObject*___ptr64)>_>::ctor" },
+    Function { rva: 0xee8990, id: 70429, confidence: Confidence::Medium, name: "NiTLargeArray<unsigned_int,NiTMallocInterface<unsigned_int>_>::ctor" },
+    Function { rva: 0xee89c0, id: 70430, confidence: Confidence::Medium, name: "NiTLargeArray<NiPointer<NiObject>,NiTNewInterface<NiPointer<NiObject>_>_>::ctor" },
+    Function { rva: 0xee8a20, id: 70431, confidence: Confidence::Medium, name: "NiTLargeArray<BSFixedString,NiTNewInterface<BSFixedString>_>::ctor" },
     Function { rva: 0xee8a80, id: 75294, confidence: Confidence::High, name: "NiTLargeArray<NiPointer<NiObject>,NiTNewInterface<NiPointer<NiObject>_>_>::dtor" },
     Function { rva: 0xee8ae0, id: 75295, confidence: Confidence::High, name: "NiTLargeArray<BSFixedString,NiTNewInterface<BSFixedString>_>::dtor" },
     Function { rva: 0xee8b40, id: 70434, confidence: Confidence::High, name: "NiTLargeArray<unsigned_int,NiTMallocInterface<unsigned_int>_>::dtor" },
@@ -8689,10 +8694,4 @@ pub(super) const ROWS: &[Function] = &[
     Function { rva: 0x1172150, id: 82347, confidence: Confidence::High, name: "DecRefIfNotNull" },
     Function { rva: 0x1172170, id: 82348, confidence: Confidence::High, name: "DecRefIfNotNull_2" },
     Function { rva: 0x11721b0, id: 82350, confidence: Confidence::High, name: "ReleaseRefIfNotNull" },
-    Function { rva: 0x11721f0, id: 82352, confidence: Confidence::High, name: "_anon_3B91968A::BSScaleformAllocatorPaged::dtor" },
-    Function { rva: 0x1172250, id: 82353, confidence: Confidence::High, name: "GSysMemoryMap::dtor" },
-    Function { rva: 0x1172270, id: 82354, confidence: Confidence::High, name: "GSysAllocBase::dtor" },
-    Function { rva: 0x11722b4, id: 82357, confidence: Confidence::Medium, name: "BSResourceStreamParser::BSStreamParserData_vdtor" },
-    Function { rva: 0x11722c0, id: 82361, confidence: Confidence::Medium, name: "BSResourceStreamParser::vdtor" },
-    Function { rva: 0x1172300, id: 524272, confidence: Confidence::Medium, name: "_anon_3B91968A::BSScaleformAllocatorPaged::vdtor" },
 ];

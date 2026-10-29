@@ -3,6 +3,106 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextRanged>::vfunc_6` at 0x55fcd0 (rtti, medium); signature (low): `undefined vfunc_6(CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextRanged> * this, longlong * param_1, longlong param_2, undefined8 param_3)`
+pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextRanged__vfunc_6: u64 = 33199;
+/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextRanged>::vfunc_7` at 0x55f9e0 (rtti, medium); signature (low): `undefined vfunc_7(CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextRanged> * this, longlong * param_1, longlong param_2, undefined8 param_3)`
+pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextRanged__vfunc_7: u64 = 33192;
+/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextRanged>::vfunc_8` at 0x55fe90 (rtti, medium); signature (low): `bool vfunc_8(CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextRanged> * this, longlong param_1)`
+pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextRanged__vfunc_8: u64 = 33209;
+/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextRanged>::vfunc_9` at 0x55f6f0 (rtti, medium); signature (low): `undefined * vfunc_9(void)`
+pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextRanged__vfunc_9: u64 = 33186;
+/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextRangedMovement>::vdtor` at 0x8c5a50 (slot_propagation, medium); signature (low): `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextRangedMovement> * vdtor(CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextRangedMovement> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextRangedMovement__vdtor: u64 = 49473;
+/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextRangedMovement>::vfunc_3` at 0x8c5e80 (rtti, medium); signature (low): `undefined vfunc_3(CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextRangedMovement> * this, longlong * param_1)`
+pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextRangedMovement__vfunc_3: u64 = 49485;
+/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextRangedMovement>::vfunc_6` at 0x8c63e0 (rtti, medium); signature (low): `undefined vfunc_6(CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextRangedMovement> * this, longlong * param_1, longlong param_2)`
+pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextRangedMovement__vfunc_6: u64 = 49496;
+/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextRangedMovement>::vfunc_7` at 0x8c61d0 (rtti, medium); signature (low): `undefined vfunc_7(CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextRangedMovement> * this, longlong * param_1, longlong param_2, undefined8 param_3)`
+pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextRangedMovement__vfunc_7: u64 = 49493;
+/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextRangedMovement>::vfunc_8` at 0x8c64d0 (rtti, medium); signature (low): `bool vfunc_8(CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextRangedMovement> * this, longlong param_1)`
+pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextRangedMovement__vfunc_8: u64 = 49501;
+/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextRangedMovement>::vfunc_9` at 0x8c5f80 (rtti, medium); signature (low): `undefined * vfunc_9(void)`
+pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextRangedMovement__vfunc_9: u64 = 49488;
+/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextSearch>::vdtor` at 0x8ceaa0 (slot_propagation, medium); signature (low): `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextSearch> * vdtor(CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextSearch> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextSearch__vdtor: u64 = 49673;
+/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextSearch>::vfunc_3` at 0x8cf410 (rtti, medium); signature (low): `undefined vfunc_3(CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextSearch> * this, longlong * param_1)`
+pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextSearch__vfunc_3: u64 = 49704;
+/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextSearch>::vfunc_6` at 0x8d0680 (rtti, medium); signature (low): `undefined vfunc_6(CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextSearch> * this, longlong * param_1, longlong param_2)`
+pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextSearch__vfunc_6: u64 = 49735;
+/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextSearch>::vfunc_7` at 0x8d0130 (rtti, medium); signature (low): `undefined vfunc_7(CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextSearch> * this, longlong * param_1, longlong param_2, undefined8 param_3)`
+pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextSearch__vfunc_7: u64 = 49727;
+/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextSearch>::vfunc_8` at 0x8d0a90 (rtti, medium); signature (low): `bool vfunc_8(CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextSearch> * this, longlong param_1)`
+pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextSearch__vfunc_8: u64 = 49750;
+/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextSearch>::vfunc_9` at 0x8cfcb0 (rtti, medium); signature (low): `undefined * vfunc_9(void)`
+pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextSearch__vfunc_9: u64 = 49719;
+/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextShout>::vdtor` at 0x8d1d00 (slot_propagation, medium); signature (low): `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextShout> * vdtor(CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextShout> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextShout__vdtor: u64 = 49770;
+/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextShout>::vfunc_3` at 0x8d1f20 (rtti, medium); signature (low): `undefined vfunc_3(CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextShout> * this, longlong * param_1)`
+pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextShout__vfunc_3: u64 = 49777;
+/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextShout>::vfunc_6` at 0x8d2230 (rtti, medium); signature (low): `undefined vfunc_6(CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextShout> * this, longlong * param_1, longlong param_2, undefined8 param_3)`
+pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextShout__vfunc_6: u64 = 49784;
+/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextShout>::vfunc_7` at 0x8d2120 (rtti, medium); signature (low): `undefined vfunc_7(CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextShout> * this, longlong * param_1, longlong param_2, undefined8 param_3)`
+pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextShout__vfunc_7: u64 = 49782;
+/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextShout>::vfunc_8` at 0x8d23b0 (rtti, medium); signature (low): `bool vfunc_8(CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextShout> * this, longlong param_1)`
+pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextShout__vfunc_8: u64 = 49788;
+/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextShout>::vfunc_9` at 0x8d2000 (rtti, medium); signature (low): `undefined * vfunc_9(void)`
+pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextShout__vfunc_9: u64 = 49780;
+/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextUsePotion>::vdtor` at 0x8d8530 (slot_propagation, medium); signature (low): `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextUsePotion> * vdtor(CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextUsePotion> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextUsePotion__vdtor: u64 = 49923;
+/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextUsePotion>::vfunc_3` at 0x8d8880 (rtti, medium); signature (low): `undefined vfunc_3(CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextUsePotion> * this, longlong * param_1)`
+pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextUsePotion__vfunc_3: u64 = 49929;
+/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextUsePotion>::vfunc_6` at 0x8d8b00 (rtti, medium); signature (low): `undefined vfunc_6(CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextUsePotion> * this, longlong * param_1, longlong param_2, undefined8 param_3)`
+pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextUsePotion__vfunc_6: u64 = 49935;
+/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextUsePotion>::vfunc_7` at 0x8d89f0 (rtti, medium); signature (low): `undefined vfunc_7(CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextUsePotion> * this, longlong * param_1, longlong param_2, undefined8 param_3)`
+pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextUsePotion__vfunc_7: u64 = 49933;
+/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextUsePotion>::vfunc_8` at 0x8d8b80 (rtti, medium); signature (low): `bool vfunc_8(CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextUsePotion> * this, longlong param_1)`
+pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextUsePotion__vfunc_8: u64 = 49938;
+/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextUsePotion>::vfunc_9` at 0x8d88d0 (rtti, medium); signature (low): `undefined * vfunc_9(void)`
+pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextUsePotion__vfunc_9: u64 = 49931;
+/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorEquipContext>::vdtor` at 0x87c030 (slot_propagation, medium); signature (low): `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorEquipContext> * vdtor(CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorEquipContext> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorEquipContext__vdtor: u64 = 47693;
+/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorEquipContext>::vfunc_3` at 0x87cbe0 (rtti, medium); signature (low): `undefined vfunc_3(CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorEquipContext> * this, longlong * param_1)`
+pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorEquipContext__vfunc_3: u64 = 47737;
+/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorEquipContext>::vfunc_6` at 0x87d830 (rtti, medium); signature (low): `undefined vfunc_6(CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorEquipContext> * this, longlong * param_1, undefined8 param_2)`
+pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorEquipContext__vfunc_6: u64 = 47772;
+/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorEquipContext>::vfunc_7` at 0x87d5e0 (rtti, medium); signature (low): `undefined vfunc_7(CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorEquipContext> * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
+pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorEquipContext__vfunc_7: u64 = 47762;
+/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorEquipContext>::vfunc_8` at 0x87dab0 (rtti, medium); signature (low): `bool vfunc_8(CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorEquipContext> * this, longlong param_1)`
+pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorEquipContext__vfunc_8: u64 = 47792;
+/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorEquipContext>::vfunc_9` at 0x87ce10 (rtti, medium); signature (low): `undefined * vfunc_9(void)`
+pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorEquipContext__vfunc_9: u64 = 47748;
+/// `CombatBehaviorTreeDodgeThreat::vfunc_0` at 0x87ebf0 (rtti, high); signature (low): `undefined vfunc_0(CombatBehaviorTreeDodgeThreat * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+pub const CombatBehaviorTreeDodgeThreat__vfunc_0: u64 = 47807;
+/// `CombatBehaviorTreeDodgeThreat::vfunc_0_cb0` at 0x87db70 (callgraph, medium); signature (untiered): `undefined1 vfunc_0_cb0(void)`
+pub const CombatBehaviorTreeDodgeThreat__vfunc_0_cb0: u64 = 47801;
+/// `CombatBehaviorTreeExitWater::vfunc_0` at 0x8bd190 (rtti, high); signature (low): `undefined vfunc_0(CombatBehaviorTreeExitWater * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+pub const CombatBehaviorTreeExitWater__vfunc_0: u64 = 49272;
+/// `CombatBehaviorTreeFindAttackLocation::vfunc_0` at 0x88ec40 (rtti, high); signature (low): `undefined vfunc_0(CombatBehaviorTreeFindAttackLocation * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+pub const CombatBehaviorTreeFindAttackLocation__vfunc_0: u64 = 48143;
+/// `CombatBehaviorTreeFlankingMovement::vfunc_0` at 0x899130 (rtti, high); signature (low): `undefined vfunc_0(CombatBehaviorTreeFlankingMovement * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+pub const CombatBehaviorTreeFlankingMovement__vfunc_0: u64 = 48379;
+/// `CombatBehaviorTreeFlankingMovement::vfunc_0_cb0` at 0x896ce0 (callgraph, medium); signature (untiered): `bool vfunc_0_cb0(void)`
+pub const CombatBehaviorTreeFlankingMovement__vfunc_0_cb0: u64 = 48357;
+/// `CombatBehaviorTreeFlee::vfunc_0` at 0x8a1230 (rtti, high); signature (low): `undefined vfunc_0(CombatBehaviorTreeFlee * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+pub const CombatBehaviorTreeFlee__vfunc_0: u64 = 48563;
+/// `CombatBehaviorTreeFlee::vfunc_0_cb0` at 0x856a80 (callgraph, medium); signature (untiered): `undefined1 vfunc_0_cb0(longlong param_1)`
+pub const CombatBehaviorTreeFlee__vfunc_0_cb0: u64 = 46954;
+/// `CombatBehaviorTreeFlee::vfunc_0_cb1` at 0x89edc0 (callgraph, medium); signature (untiered): `undefined8 vfunc_0_cb1(void)`
+pub const CombatBehaviorTreeFlee__vfunc_0_cb1: u64 = 48538;
+/// `CombatBehaviorTreeFlee::vfunc_0_cb2` at 0x89ef40 (callgraph, medium); signature (untiered): `undefined8 vfunc_0_cb2(void)`
+pub const CombatBehaviorTreeFlee__vfunc_0_cb2: u64 = 48539;
+/// `CombatBehaviorTreeFlight::vfunc_0` at 0x8ad1c0 (rtti, high); signature (low): `undefined vfunc_0(CombatBehaviorTreeFlight * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+pub const CombatBehaviorTreeFlight__vfunc_0: u64 = 48854;
+/// `CombatBehaviorTreeFlight::vfunc_0_cb0` at 0x8ae790 (callgraph, medium); signature (untiered): `undefined vfunc_0_cb0(longlong param_1, longlong param_2)`
+pub const CombatBehaviorTreeFlight__vfunc_0_cb0: u64 = 48855;
+/// `CombatBehaviorTreeFlight::vfunc_0_cb1` at 0x8ae7d0 (callgraph, medium); signature (untiered): `longlong vfunc_0_cb1(longlong param_1)`
+pub const CombatBehaviorTreeFlight__vfunc_0_cb1: u64 = 48856;
+/// `CombatBehaviorTreeFlight::vfunc_0_cb2` at 0x8f2310 (callgraph, medium); signature (untiered): `undefined vfunc_0_cb2(longlong param_1)`
+pub const CombatBehaviorTreeFlight__vfunc_0_cb2: u64 = 50659;
+/// `CombatBehaviorTreeFlight::vfunc_0_cb3` at 0x8f2340 (callgraph, medium); signature (untiered): `undefined vfunc_0_cb3(longlong param_1)`
+pub const CombatBehaviorTreeFlight__vfunc_0_cb3: u64 = 50660;
+/// `CombatBehaviorTreeFlight::vfunc_0_cb4` at 0x8f23b0 (callgraph, medium); signature (untiered): `undefined vfunc_0_cb4(longlong param_1)`
+pub const CombatBehaviorTreeFlight__vfunc_0_cb4: u64 = 50662;
 /// `CombatBehaviorTreeFlight::vfunc_0_cb5` at 0x8f2420 (callgraph, medium); signature (untiered): `undefined vfunc_0_cb5(longlong param_1)`
 pub const CombatBehaviorTreeFlight__vfunc_0_cb5: u64 = 50664;
 /// `CombatBehaviorTreeFlight::vfunc_0_cb6` at 0x8f2490 (callgraph, medium); signature (untiered): `undefined vfunc_0_cb6(longlong param_1)`
@@ -5647,139 +5747,3 @@ pub type CompileNextLine_fn = unsafe extern "C" fn(buf: *mut c_void) -> u32;
 pub const CompileScriptLine: u64 = 21965;
 /// `CompileScriptLine` as a function pointer type (high).
 pub type CompileScriptLine_fn = unsafe extern "C" fn(a0: *mut c_void, a1: *mut crate::Script, buf: *mut c_void, line: *mut crate::ScriptLineBuffer) -> bool;
-/// `CompileScriptWithLocalBuffer` at 0x347a30 (decompiler, medium); signature (untiered): `ulonglong CompileScriptWithLocalBuffer(undefined8 param_1, longlong * param_2, undefined8 param_3, undefined4 * param_4)`
-pub const CompileScriptWithLocalBuffer: u64 = 21955;
-/// `CompleteAsyncRequest` at 0x12c6490 (decompiler, medium); signature (untiered): `undefined CompleteAsyncRequest(void * param_1, undefined8 param_2, undefined4 param_3)`
-pub const CompleteAsyncRequest: u64 = 446110;
-/// `CompleteAsyncRequestMappedStatus` at 0x12bd630 (decompiler, medium); signature (untiered): `undefined CompleteAsyncRequestMappedStatus(void * param_1, longlong param_2)`
-pub const CompleteAsyncRequestMappedStatus: u64 = 445932;
-/// `CompleteAsyncRequestWithMappedResult` at 0x129b460 (decompiler, medium); signature (untiered): `undefined CompleteAsyncRequestWithMappedResult(void * param_1, longlong param_2)`
-pub const CompleteAsyncRequestWithMappedResult: u64 = 445116;
-/// `CompleteHttpRequest` at 0x1447230 (decompiler, medium); signature (untiered): `undefined CompleteHttpRequest(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const CompleteHttpRequest: u64 = 451744;
-/// `CompleteLegalDocumentsRequest` at 0x12a6910 (decompiler, medium); signature (untiered): `undefined CompleteLegalDocumentsRequest(undefined8 * param_1, IAllocatorFunctor_vtbl * param_2, longlong * param_3, longlong param_4)`
-pub const CompleteLegalDocumentsRequest: u64 = 94638;
-/// `CompletePendingRequest502068AndReset` at 0x5982f0 (decompiler, medium); signature (untiered): `undefined CompletePendingRequest502068AndReset(longlong param_1, undefined8 param_2, longlong * param_3, ulonglong param_4)`
-pub const CompletePendingRequest502068AndReset: u64 = 441977;
-/// `CompletePendingRequest502069AndResetSecondaryOperation` at 0x598c90 (decompiler, medium); signature (untiered): `undefined CompletePendingRequest502069AndResetSecondaryOperation(longlong param_1, undefined8 param_2, longlong * param_3, ulonglong param_4)`
-pub const CompletePendingRequest502069AndResetSecondaryOperation: u64 = 441984;
-/// `CompletePendingRequestAndNotifyWhenAllDone` at 0x12c2400 (decompiler, medium); signature (untiered): `undefined CompletePendingRequestAndNotifyWhenAllDone(longlong param_1, int param_2, longlong param_3, longlong param_4)`
-pub const CompletePendingRequestAndNotifyWhenAllDone: u64 = 525074;
-/// `CompletePendingRequestsAndClearArray503228` at 0x597720 (decompiler, medium); signature (untiered): `undefined CompletePendingRequestsAndClearArray503228(undefined8 param_1, undefined8 param_2, longlong * param_3, undefined8 param_4)`
-pub const CompletePendingRequestsAndClearArray503228: u64 = 523735;
-/// `CompleteStack` at 0x14bae50 (runtime, high); signature (untiered): `undefined8 CompleteStack(longlong param_1, uint * param_2, undefined8 param_3, char * param_4)`; semantic: the stack's return path: pops the returning frame, and when no frame is left sets +0x68 to 1, copies the return Variable (+0x70) and calls the callback's slot 1 with the copy, then removes the stack from the VM (high); signature `bool (BSScript::Internal::VirtualMachine* vm, BSScript::Stack* stack, bool popFrame, bool fromQueue)`
-pub const CompleteStack: u64 = 104854;
-/// `CompleteStack` as a function pointer type (high).
-pub type CompleteStack_fn = unsafe extern "C" fn(vm: *mut crate::BSScript__Internal__VirtualMachine, stack: *mut crate::BSScript__Stack, popFrame: bool, fromQueue: bool) -> bool;
-/// `CompleteUserContentListRequest` at 0x133d380 (decompiler, medium); signature (untiered): `undefined CompleteUserContentListRequest(void * param_1, longlong param_2, longlong param_3)`
-pub const CompleteUserContentListRequest: u64 = 526356;
-/// `CompleteUserContentListRequest_2` at 0x133d630 (decompiler, medium); signature (untiered): `undefined CompleteUserContentListRequest_2(char param_1, char param_2, void * param_3, longlong param_4, longlong param_5)`
-pub const CompleteUserContentListRequest_2: u64 = 526357;
-/// `CompleteWinHttpRequest` at 0x1343c60 (decompiler, medium); signature (untiered): `undefined CompleteWinHttpRequest(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const CompleteWinHttpRequest: u64 = 447343;
-/// `ComposePathFromComponents` at 0xeb0170 (decompiler, medium); signature (untiered): `ulonglong ComposePathFromComponents(char * param_1, char * param_2, ulonglong param_3)`
-pub const ComposePathFromComponents: u64 = 69117;
-/// `ComposeQuatTransforms` at 0xf5fe60 (decompiler, medium); signature (medium): `float * ComposeQuatTransforms(float * param_1, float * param_2, float * param_3)`
-pub const ComposeQuatTransforms: u64 = 72647;
-/// `ComposeScaledTransformFromField50` at 0xbedfc0 (decompiler, high); signature (untiered): `undefined ComposeScaledTransformFromField50(longlong param_1, undefined8 param_2, undefined8 param_3)`
-pub const ComposeScaledTransformFromField50: u64 = 64076;
-/// `ComposeTranslationRotation` at 0xb27140 (decompiler, medium); signature (medium): `undefined ComposeTranslationRotation(float * param_1, float * param_2, float * param_3, float * param_4, float * param_5, float * param_6)`
-pub const ComposeTranslationRotation: u64 = 60052;
-/// `CompressAndWritePayload` at 0x159b530 (runtime, high); signature (untiered): `undefined CompressAndWritePayload(ulonglong * param_1)`; semantic: compresses data[headerEnd..size] (zlib or LZ4 by +0xbc8) and rewrites it in place after u32 uncompressed size, u32 compressed size (high); signature `void (Win32FileType*)`
-pub const CompressAndWritePayload: u64 = 109333;
-/// `CompressAndWritePayload` as a function pointer type (high).
-pub type CompressAndWritePayload_fn = unsafe extern "C" fn(a0: *mut c_void);
-/// `CompressDeflateFast` at 0xa97c30 (decompiler, medium); signature (untiered): `char CompressDeflateFast(longlong * param_1, int param_2)`
-pub const CompressDeflateFast: u64 = 56902;
-/// `CompressLZ4BlockWithState` at 0x15b0a70 (decompiler, medium); signature (untiered): `int CompressLZ4BlockWithState(void * param_1, longlong * param_2, short * param_3, uint param_4, uint param_5, int param_6)`
-pub const CompressLZ4BlockWithState: u64 = 110021;
-/// `CompressRowAndAdvance` at 0x11ad560 (decompiler, medium); signature (untiered): `undefined CompressRowAndAdvance(longlong param_1, undefined8 param_2)`
-pub const CompressRowAndAdvance: u64 = 90194;
-/// `CompressSaveGameBuffer` at 0x635910 (decompiler, medium); signature (untiered): `int CompressSaveGameBuffer(undefined8 param_1, longlong param_2, char * param_3, undefined8 param_4)`
-pub const CompressSaveGameBuffer: u64 = 35944;
-/// `CompressSaveGameBuffer_2` at 0x632e60 (decompiler, medium); signature (medium): `int CompressSaveGameBuffer_2(undefined8 param_1, uint param_2, undefined8 param_3, undefined8 param_4)`
-pub const CompressSaveGameBuffer_2: u64 = 35932;
-/// `CompressZeroRunsInPlace` at 0x244500 (decompiler, medium); signature (medium): `ulonglong CompressZeroRunsInPlace(undefined8 param_1, void * param_2, uint * param_3, undefined8 param_4)`
-pub const CompressZeroRunsInPlace: u64 = 16279;
-/// `CompressedArchiveFile::ctor` at 0xeb9da0 (layout_inference, medium); signature (low): `undefined ctor(CompressedArchiveFile * this, void * param_1, undefined8 param_2, undefined8 param_3)`
-pub const CompressedArchiveFile__ctor: u64 = 69309;
-/// `CompressedArchiveFile::ctor` at 0xeb9f70 (layout_inference, high); signature (low): `CompressedArchiveFile * ctor(CompressedArchiveFile * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-pub const CompressedArchiveFile__ctor_2: u64 = 69319;
-/// `CompressedArchiveFile::vdtor` at 0xeba680 (slot_propagation, medium); signature (low): `CompressedArchiveFile * vdtor(CompressedArchiveFile * this, void * param_1, undefined8 param_2, undefined8 param_3)`
-pub const CompressedArchiveFile__vdtor: u64 = 69332;
-/// `CompressedArchiveFile::vfunc_10` at 0xeb9ee0 (rtti, high); signature (high): `undefined4 vfunc_10(CompressedArchiveFile * this)`
-pub const CompressedArchiveFile__vfunc_10: u64 = 69313;
-/// `CompressedArchiveFile::vfunc_11` at 0xeba2b0 (rtti, high); signature (low): `undefined8 vfunc_11(void)`
-pub const CompressedArchiveFile__vfunc_11: u64 = 69323;
-/// `CompressedArchiveFile::vfunc_12` at 0xeba2a0 (rtti, high); signature (low): `undefined8 vfunc_12(void)`
-pub const CompressedArchiveFile__vfunc_12: u64 = 69322;
-/// `CompressedArchiveFile::vfunc_16` at 0xeb9f10 (rtti, high); signature (high): `bool vfunc_16(CompressedArchiveFile * this)`
-pub const CompressedArchiveFile__vfunc_16: u64 = 69316;
-/// `CompressedArchiveFile::vfunc_17` at 0xeba0a0 (rtti, high); signature (untiered): `ulonglong vfunc_17(longlong param_1, void * param_2, uint param_3)`
-pub const CompressedArchiveFile__vfunc_17: u64 = 69320;
-/// `CompressedArchiveFile::vfunc_18` at 0xeb9f00 (rtti, high); signature (low): `undefined8 vfunc_18(void)`
-pub const CompressedArchiveFile__vfunc_18: u64 = 69315;
-/// `CompressedArchiveFile::vfunc_2` at 0xeb9ea0 (rtti, high); signature (low): `undefined vfunc_2(CompressedArchiveFile * this, undefined8 param_1)`
-pub const CompressedArchiveFile__vfunc_2: u64 = 69311;
-/// `CompressedArchiveFile::vfunc_5` at 0xeb9f40 (rtti, high); signature (low): `undefined vfunc_5(CompressedArchiveFile * this, char param_1)`
-pub const CompressedArchiveFile__vfunc_5: u64 = 69318;
-/// `CompressedArchiveFile::vfunc_6` at 0xeb9ec0 (rtti, high); signature (low): `undefined vfunc_6(CompressedArchiveFile * this, undefined4 param_1)`
-pub const CompressedArchiveFile__vfunc_6: u64 = 69312;
-/// `CompressedArchiveFile::vfunc_7` at 0xeb9ef0 (rtti, high); signature (high): `undefined4 vfunc_7(CompressedArchiveFile * this)`
-pub const CompressedArchiveFile__vfunc_7: u64 = 69314;
-/// `CompressedArchiveFile::vfunc_8` at 0xeb9e60 (rtti, high); signature (low): `undefined8 vfunc_8(CompressedArchiveFile * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-pub const CompressedArchiveFile__vfunc_8: u64 = 69310;
-/// `ComputeAabbExtentsAndRadius` at 0xb4d4a0 (decompiler, medium); signature (medium): `undefined ComputeAabbExtentsAndRadius(longlong param_1, longlong * param_2, float * param_3)`
-pub const ComputeAabbExtentsAndRadius: u64 = 60911;
-/// `ComputeAabbFromPoints` at 0xaa7c30 (decompiler, medium); signature (untiered): `undefined ComputeAabbFromPoints(longlong * param_1, int param_2, undefined1[16] * param_3)`
-pub const ComputeAabbFromPoints: u64 = 57241;
-/// `ComputeAabbOfPoints` at 0xaa7bb0 (decompiler, medium); signature (medium): `undefined ComputeAabbOfPoints(undefined1[16] * param_1, int param_2, uint * param_3)`
-pub const ComputeAabbOfPoints: u64 = 57240;
-/// `ComputeAabbOfPoints_2` at 0x11193e0 (decompiler, high); signature (high): `undefined ComputeAabbOfPoints_2(longlong * param_1, float * param_2)`
-pub const ComputeAabbOfPoints_2: u64 = 81251;
-/// `ComputeAccumulatedScale` at 0xbf2d40 (decompiler, medium); signature (medium): `undefined ComputeAccumulatedScale(longlong param_1, longlong param_2, int param_3, float * param_4)`
-pub const ComputeAccumulatedScale: u64 = 64140;
-/// `ComputeAcosOfArg0` at 0xdb6a60 (decompiler, high); signature (untiered): `undefined ComputeAcosOfArg0(longlong param_1)`
-pub const ComputeAcosOfArg0: u64 = 86207;
-/// `ComputeActorValueRegenRate` at 0x6c4960 (decompiler, medium); signature (medium): `float ComputeActorValueRegenRate(longlong * param_1, int param_2, undefined8 param_3, undefined8 param_4)`
-pub const ComputeActorValueRegenRate: u64 = 38460;
-/// `ComputeActorValueWithModifierSum` at 0x6c61b0 (decompiler, medium); signature (medium): `float ComputeActorValueWithModifierSum(longlong param_1, int param_2)`
-pub const ComputeActorValueWithModifierSum: u64 = 38482;
-/// `ComputeAdler32` at 0xa9a8b0 (decompiler, high); signature (high): `uint ComputeAdler32(uint param_1, byte * param_2, uint param_3)`
-pub const ComputeAdler32: u64 = 56938;
-/// `ComputeAlignedBitByteSize` at 0xaedb60 (decompiler, medium); signature (medium): `uint ComputeAlignedBitByteSize(int param_1)`
-pub const ComputeAlignedBitByteSize: u64 = 59305;
-/// `ComputeAlignedSizeOfType22Members` at 0xc66110 (decompiler, medium); signature (untiered): `int ComputeAlignedSizeOfType22Members(longlong param_1, undefined8 * param_2)`
-pub const ComputeAlignedSizeOfType22Members: u64 = 66248;
-/// `ComputeAllocatedByteSize` at 0xe67110 (decompiler, medium); signature (medium): `longlong ComputeAllocatedByteSize(longlong param_1)`
-pub const ComputeAllocatedByteSize: u64 = 89249;
-/// `ComputeAndCacheScaledExtentX` at 0x6a79d0 (decompiler, medium); signature (medium): `float ComputeAndCacheScaledExtentX(longlong * param_1)`
-pub const ComputeAndCacheScaledExtentX: u64 = 37866;
-/// `ComputeAndCacheScaledExtentY` at 0x6a7a80 (decompiler, medium); signature (medium): `float ComputeAndCacheScaledExtentY(longlong * param_1)`
-pub const ComputeAndCacheScaledExtentY: u64 = 37867;
-/// `ComputeAndCacheScaledMaxXYExtent` at 0x6a7910 (decompiler, medium); signature (medium): `float ComputeAndCacheScaledMaxXYExtent(longlong * param_1)`
-pub const ComputeAndCacheScaledMaxXYExtent: u64 = 37865;
-/// `ComputeAnglesBetweenPoints` at 0x867050 (decompiler, medium); signature (medium): `float * ComputeAnglesBetweenPoints(float * param_1, float * param_2, float * param_3)`
-pub const ComputeAnglesBetweenPoints: u64 = 47287;
-/// `ComputeAngularJacobianAndEffMass` at 0xc22be0 (decompiler, medium); signature (untiered): `undefined ComputeAngularJacobianAndEffMass(float * param_1, longlong param_2, float * param_3, float * param_4)`
-pub const ComputeAngularJacobianAndEffMass: u64 = 64771;
-/// `ComputeAnimDeltasAndTweenerTiming` at 0x799110 (decompiler, medium); signature (untiered): `char ComputeAnimDeltasAndTweenerTiming(undefined8 param_1, longlong * param_2, longlong param_3, longlong param_4)`
-pub const ComputeAnimDeltasAndTweenerTiming: u64 = 41767;
-/// `ComputeAnticipatedDistance` at 0x86a460 (decompiler, high); signature (high): `float ComputeAnticipatedDistance(longlong * param_1, longlong * param_2, float param_3)`
-pub const ComputeAnticipatedDistance: u64 = 47319;
-/// `ComputeAnticipatedDistanceSquared` at 0x86a530 (decompiler, high); signature (high): `float ComputeAnticipatedDistanceSquared(longlong * param_1, longlong * param_2, float param_3)`
-pub const ComputeAnticipatedDistanceSquared: u64 = 47320;
-/// `ComputeAnticipatedLocation` at 0x869020 (decompiler, medium); signature (medium): `undefined ComputeAnticipatedLocation(longlong * param_1, float param_2, float * param_3)`
-pub const ComputeAnticipatedLocation: u64 = 47309;
-/// `ComputeArmorRatingFactor` at 0x41f450 (decompiler, medium); signature (medium): `float ComputeArmorRatingFactor(longlong * param_1, float param_2)`
-pub const ComputeArmorRatingFactor: u64 = 26424;
-/// `ComputeArmorRatingForItem` at 0x739610 (decompiler, medium); signature (untiered): `float ComputeArmorRatingForItem(longlong * param_1, longlong * param_2, undefined8 param_3, undefined8 param_4)`
-pub const ComputeArmorRatingForItem: u64 = 40249;
-/// `ComputeArmorScaledCombatStrength` at 0x6c9130 (decompiler, medium); signature (untiered): `undefined8 ComputeArmorScaledCombatStrength(longlong * param_1, undefined8 param_2)`
-pub const ComputeArmorScaledCombatStrength: u64 = 38558;
-/// `ComputeArrowBowVelocityScale` at 0x41fba0 (decompiler, medium); signature (medium): `float ComputeArrowBowVelocityScale(float param_1)`
-pub const ComputeArrowBowVelocityScale: u64 = 26437;
-/// `ComputeArrowPowerFromDrawTime` at 0x41faf0 (decompiler, medium); signature (medium): `float ComputeArrowPowerFromDrawTime(float param_1, float param_2)`
-pub const ComputeArrowPowerFromDrawTime: u64 = 26435;
-/// `ComputeAsinOfArg0` at 0xdb6ab0 (decompiler, high); signature (untiered): `undefined ComputeAsinOfArg0(longlong param_1)`
-pub const ComputeAsinOfArg0: u64 = 86208;

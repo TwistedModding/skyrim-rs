@@ -222,7 +222,7 @@ pub struct LockEffect_vtable {
     pub slot_3: *const c_void,
     /// `ActiveEffect::vfunc_4` at 0x5bf0c0 (rtti, medium); signature (low): `undefined vfunc_4(void)`
     pub slot_4: *const c_void,
-    /// `ActiveEffect::vfunc_5` at 0x5bb6c0 (rtti, medium); signature (low): `undefined vfunc_5(ActiveEffect * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    /// `ActiveEffect::UpdateConditions` at 0x5bb6c0 (semantic, medium); signature (untiered): `undefined UpdateConditions(ActiveEffect * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_5: *const c_void,
     /// `ActiveEffect::vfunc_6` at 0x5bb9c0 (rtti, medium); signature (low): `undefined1 vfunc_6(void)`
     pub slot_6: *const c_void,
@@ -956,7 +956,7 @@ pub struct MagicTarget_vtable {
     pub slot_5: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
     pub slot_6: *const c_void,
-    /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
+    /// `_purecall_thunk` at 0x15a97c8 (os_api, high); `GetActiveEffectList`: the actor's list (see the function row) (high); semantic signature: `BSSimpleList<ActiveEffect*>* (MagicTarget* this)`
     pub slot_7: *const c_void,
     /// `MagicTarget::vfunc_8` at 0x5d2fc0 (rtti, medium); signature (low): `undefined vfunc_8(void)`
     pub slot_8: *const c_void,
@@ -969,7 +969,15 @@ pub struct MagicTarget_vtable {
 }
 impl MagicTarget_vtable {
     pub const ID: u64 = 186653;
+    pub const SLOT_GetActiveEffectList: usize = 7;
+    /// Slot 7 as `MagicTarget_vtable_GetActiveEffectList`, `None` when the slot is null.
+    #[must_use]
+    pub fn GetActiveEffectList(&self) -> Option<MagicTarget_vtable_GetActiveEffectList> {
+        unsafe { core::mem::transmute::<*const c_void, Option<MagicTarget_vtable_GetActiveEffectList>>(self.slot_7) }
+    }
 }
+/// `MagicTarget::GetActiveEffectList`, slot 7: the actor's list (see the function row) (high).
+pub type MagicTarget_vtable_GetActiveEffectList = unsafe extern "C" fn(this: *mut crate::MagicTarget) -> *mut c_void;
 
 /// `MagicTarget::DispelFromBoundObject::vftable` at 0x18f8d30, id 205914 (rtti, high); 2 slots.
 #[repr(C)]
@@ -4099,13 +4107,13 @@ pub struct MovementControllerNPC_vtable_128 {
     pub slot_1: *const c_void,
     /// `MovementControllerNPC::IMovementMotionDrivenControl_vfunc_2` at 0x7964d0 (rtti, high); signature (high): `undefined IMovementMotionDrivenControl_vfunc_2(MovementControllerNPC * this)`
     pub slot_2: *const c_void,
-    /// `MovementControllerNPC::IMovementMotionDrivenControl_vfunc_3` at 0x796760 (rtti, high); signature (high): `undefined IMovementMotionDrivenControl_vfunc_3(MovementControllerNPC * this)`
+    /// `MovementControllerNPC::IMovementMotionDrivenControl_StartAnimationDriven` at 0x796760 (semantic, medium); signature (untiered): `undefined IMovementMotionDrivenControl_StartAnimationDriven(MovementControllerNPC * this)`
     pub slot_3: *const c_void,
-    /// `MovementControllerNPC::IMovementMotionDrivenControl_vfunc_4` at 0x796550 (rtti, high); signature (low): `undefined IMovementMotionDrivenControl_vfunc_4(MovementControllerNPC * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    /// `MovementControllerNPC::IMovementMotionDrivenControl_StartMotionDriven` at 0x796550 (semantic, medium); signature (untiered): `undefined IMovementMotionDrivenControl_StartMotionDriven(MovementControllerNPC * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_4: *const c_void,
     /// `MovementControllerNPC::IMovementMotionDrivenControl_vfunc_5` at 0x7967d0 (rtti, high); signature (low): `undefined IMovementMotionDrivenControl_vfunc_5(MovementControllerNPC * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_5: *const c_void,
-    /// `MovementControllerNPC::IMovementMotionDrivenControl_vfunc_6` at 0x7968b0 (rtti, high); signature (high): `longlong IMovementMotionDrivenControl_vfunc_6(MovementControllerNPC * this)`
+    /// `MovementControllerNPC::IMovementMotionDrivenControl_IsMotionDriven` at 0x7968b0 (semantic, high); signature (untiered): `longlong IMovementMotionDrivenControl_IsMotionDriven(MovementControllerNPC * this)`
     pub slot_6: *const c_void,
     /// `MovementControllerNPC::IMovementMotionDrivenControl_vfunc_7` at 0x7968e0 (rtti, high); signature (high): `longlong IMovementMotionDrivenControl_vfunc_7(MovementControllerNPC * this)`
     pub slot_7: *const c_void,

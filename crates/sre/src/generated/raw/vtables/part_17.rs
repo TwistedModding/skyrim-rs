@@ -1436,7 +1436,7 @@ pub struct SlowTimeEffect_vtable {
     pub slot_3: *const c_void,
     /// `ScriptEffect::vfunc_4` at 0x5dd590 (rtti, medium); signature (low): `undefined vfunc_4(ScriptEffect * this, undefined4 param_2)`
     pub slot_4: *const c_void,
-    /// `ActiveEffect::vfunc_5` at 0x5bb6c0 (rtti, medium); signature (low): `undefined vfunc_5(ActiveEffect * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    /// `ActiveEffect::UpdateConditions` at 0x5bb6c0 (semantic, medium); signature (untiered): `undefined UpdateConditions(ActiveEffect * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_5: *const c_void,
     /// `ActiveEffect::vfunc_6` at 0x5bb9c0 (rtti, medium); signature (low): `undefined1 vfunc_6(void)`
     pub slot_6: *const c_void,
@@ -1524,7 +1524,7 @@ pub struct SoulTrapEffect_vtable {
     pub slot_3: *const c_void,
     /// `SoulTrapEffect::vfunc_4` at 0x5e2a10 (rtti, high); signature (high): `undefined vfunc_4(SoulTrapEffect * this)`
     pub slot_4: *const c_void,
-    /// `ActiveEffect::vfunc_5` at 0x5bb6c0 (rtti, medium); signature (low): `undefined vfunc_5(ActiveEffect * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    /// `ActiveEffect::UpdateConditions` at 0x5bb6c0 (semantic, medium); signature (untiered): `undefined UpdateConditions(ActiveEffect * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_5: *const c_void,
     /// `ActiveEffect::vfunc_6` at 0x5bb9c0 (rtti, medium); signature (low): `undefined1 vfunc_6(void)`
     pub slot_6: *const c_void,
@@ -1582,7 +1582,7 @@ pub struct SpawnHazardEffect_vtable {
     pub slot_3: *const c_void,
     /// `ActiveEffect::vfunc_4` at 0x5bf0c0 (rtti, medium); signature (low): `undefined vfunc_4(void)`
     pub slot_4: *const c_void,
-    /// `ActiveEffect::vfunc_5` at 0x5bb6c0 (rtti, medium); signature (low): `undefined vfunc_5(ActiveEffect * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    /// `ActiveEffect::UpdateConditions` at 0x5bb6c0 (semantic, medium); signature (untiered): `undefined UpdateConditions(ActiveEffect * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_5: *const c_void,
     /// `ActiveEffect::vfunc_6` at 0x5bb9c0 (rtti, medium); signature (low): `undefined1 vfunc_6(void)`
     pub slot_6: *const c_void,
@@ -2150,7 +2150,7 @@ pub struct StaggerEffect_vtable {
     pub slot_3: *const c_void,
     /// `ActiveEffect::vfunc_4` at 0x5bf0c0 (rtti, medium); signature (low): `undefined vfunc_4(void)`
     pub slot_4: *const c_void,
-    /// `ActiveEffect::vfunc_5` at 0x5bb6c0 (rtti, medium); signature (low): `undefined vfunc_5(ActiveEffect * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    /// `ActiveEffect::UpdateConditions` at 0x5bb6c0 (semantic, medium); signature (untiered): `undefined UpdateConditions(ActiveEffect * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_5: *const c_void,
     /// `ActiveEffect::vfunc_6` at 0x5bb9c0 (rtti, medium); signature (low): `undefined1 vfunc_6(void)`
     pub slot_6: *const c_void,
@@ -2200,7 +2200,7 @@ impl StaggerEffect_vtable {
 pub struct StaggeredStopHandler_vtable {
     /// `StaggeredStopHandler::vdtor` at 0x7d46c0 (layout_inference, medium); signature (low): `StaggeredStopHandler * vdtor(StaggeredStopHandler * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `StaggeredStopHandler::vfunc_1` at 0x7ccd90 (rtti, high); signature (low): `undefined1 vfunc_1(StaggeredStopHandler * this, longlong param_1)`
+    /// `StaggeredStopHandler::Handle` at 0x7ccd90 (semantic, high); signature (untiered): `undefined1 Handle(StaggeredStopHandler * this, longlong param_1)`
     pub slot_1: *const c_void,
 }
 impl StaggeredStopHandler_vtable {
@@ -2776,7 +2776,7 @@ pub struct SummonCreatureEffect_vtable {
     pub slot_3: *const c_void,
     /// `SummonCreatureEffect::vfunc_4` at 0x5e3740 (rtti, high); signature (low): `undefined vfunc_4(SummonCreatureEffect * this, undefined8 param_1, longlong * param_2, SummonCreatureEffect * param_3)`
     pub slot_4: *const c_void,
-    /// `ActiveEffect::vfunc_5` at 0x5bb6c0 (rtti, medium); signature (low): `undefined vfunc_5(ActiveEffect * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    /// `ActiveEffect::UpdateConditions` at 0x5bb6c0 (semantic, medium); signature (untiered): `undefined UpdateConditions(ActiveEffect * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_5: *const c_void,
     /// `ActiveEffect::vfunc_6` at 0x5bb9c0 (rtti, medium); signature (low): `undefined1 vfunc_6(void)`
     pub slot_6: *const c_void,
@@ -13196,7 +13196,7 @@ pub struct TESObjectWEAP_vtable {
     pub slot_55: *const c_void,
     /// `TESForm::SetFormID` at 0x1e6bd0 (semantic, high); signature (untiered): `undefined SetFormID(TESForm * this, int param_1, char param_2)`
     pub slot_56: *const c_void,
-    /// `TESObjectWEAP::vfunc_57` at 0x28e7f0 (rtti, high); signature (high): `undefined * vfunc_57(TESObjectWEAP * this)`
+    /// `TESObjectWEAP::GetWeaponTypeName` at 0x28e7f0 (semantic, high); signature (untiered): `undefined * GetWeaponTypeName(TESObjectWEAP * this)`; `GetWeaponTypeName`: long type name from 0x207b200 (high); semantic signature: `const char* (TESObjectWEAP* this)`
     pub slot_57: *const c_void,
     /// `TESForm::vfunc_58` at 0x146a00 (rtti, medium); signature (low): `undefined1 vfunc_58(void)`
     pub slot_58: *const c_void,
@@ -13251,7 +13251,15 @@ pub struct TESObjectWEAP_vtable {
 }
 impl TESObjectWEAP_vtable {
     pub const ID: u64 = 189786;
+    pub const SLOT_GetWeaponTypeName: usize = 57;
+    /// Slot 57 as `TESObjectWEAP_vtable_GetWeaponTypeName`, `None` when the slot is null.
+    #[must_use]
+    pub fn GetWeaponTypeName(&self) -> Option<TESObjectWEAP_vtable_GetWeaponTypeName> {
+        unsafe { core::mem::transmute::<*const c_void, Option<TESObjectWEAP_vtable_GetWeaponTypeName>>(self.slot_57) }
+    }
 }
+/// `TESObjectWEAP::GetWeaponTypeName`, slot 57: long type name from 0x207b200 (high).
+pub type TESObjectWEAP_vtable_GetWeaponTypeName = unsafe extern "C" fn(this: *mut crate::TESObjectWEAP) -> *const c_char;
 
 /// `TESObjectWEAP::vftable_30` at 0x181a8c0, id 189788 (rtti, high); 6 slots.
 #[repr(C)]
@@ -14029,21 +14037,5 @@ pub struct TESRace_vtable_20 {
 }
 impl TESRace_vtable_20 {
     pub const ID: u64 = 195943;
-}
-
-/// `TESRace::vftable_30` at 0x1861f80, id 195945 (rtti, high); 4 slots.
-#[repr(C)]
-pub struct TESRace_vtable_30 {
-    /// `TESRace::TESDescription_vdtor` at 0x3eb724 (slot_propagation, medium); signature (high): `undefined TESDescription_vdtor(TESRace * this)`
-    pub slot_0: *const c_void,
-    /// `TESDescription::vfunc_1` at 0x1e1240 (rtti, medium); signature (high): `undefined vfunc_1(TESDescription * this)`
-    pub slot_1: *const c_void,
-    /// `TESDescription::vfunc_2` at 0x1e1250 (rtti, medium); signature (low): `undefined vfunc_2(void)`
-    pub slot_2: *const c_void,
-    /// `TESDescription::vfunc_3` at 0x1e1260 (rtti, medium); signature (low): `undefined vfunc_3(TESDescription * this, undefined8 param_1)`
-    pub slot_3: *const c_void,
-}
-impl TESRace_vtable_30 {
-    pub const ID: u64 = 195945;
 }
 

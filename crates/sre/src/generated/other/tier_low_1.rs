@@ -6910,16 +6910,6 @@ impl crate::MagicItemTraversalFunctor {
     pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { virtual_function!(self, 0, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
-impl crate::MagicTarget {
-    /// `MagicTarget::dtor` (decompiler signature, tier low; ledger layout_inference evidence, name high; id 34502, rva 0x5d0d60).
-    /// `undefined dtor(MagicTarget * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn dtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(34502, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
-}
-
 impl crate::MagicTarget__DispelFromBoundObject {
     /// `MagicTarget::DispelFromBoundObject::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 34586, rva 0x5d4720).
     /// `DispelFromBoundObject * vdtor(DispelFromBoundObject * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
@@ -13812,3 +13802,10 @@ pub unsafe fn cmd__clear_playstation_mod_space_execute() -> u8 { unsafe { functi
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn cmd__clear_quest_aliases_execute(param_1: i64, param_2: i64, param_3: i64, param_4: u64, param_5: i64, param_6: i64, param_7: u64, param_8: *mut u32) -> u64 { unsafe { function!(22935, (i64, i64, i64, u64, i64, i64, u64, *mut u32) -> u64)(param_1, param_2, param_3, param_4, param_5, param_6, param_7, param_8) } }
+/// `Cmd::ClearScreenBlood_Execute` (decompiler signature, tier low; ledger console_cmd evidence, name high; id 23006, rva 0x377f80).
+/// `undefined1 ClearScreenBlood_Execute(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn cmd__clear_screen_blood_execute() -> u8 { unsafe { function!(23006, () -> u8)() } }

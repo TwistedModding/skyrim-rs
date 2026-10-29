@@ -12093,6 +12093,8 @@ pub const g_DefaultMaxPitchDown: u64 = 189817;
 pub const g_DefaultMaxPitchUp: u64 = 189822;
 /// `g_DefaultObjectNameTable` at 0x207bf40 (semantic, high); the default object names: 0x174 records of 0x18 bytes {const char* name; u32 formType; char signature[4]; u64}, indexed like GetDefaultObjectByIndex (manager +0x20 + i*8, present flag +0xbc0 + i) (high); type `undefined1`
 pub const g_DefaultObjectNameTable: u64 = 360630;
+/// `g_DefaultObjectRecords` at 0x207bee0 (semantic, high); default object descriptors of 0x18 bytes {name, type, signature, flags}; index i matches BGSDefaultObjectManager (0x219d180) objects +0x20+8i and loaded flags +0xbc0+i (high); type `record[]`
+pub const g_DefaultObjectRecords: u64 = 360620;
 /// `g_DefaultShaderMaterial` at 0x3698be8 (xref_inference, medium); pointer to `BSShaderMaterial`: default base material; default base material (medium); type `ptr:BSShaderMaterial`
 pub const g_DefaultShaderMaterial: u64 = 415311;
 /// `g_DepthAccumulator2` at 0x3436248 (runtime, high); pointer to `BSShaderAccumulator`: renderMode 0xc, decals off; only Main and Msg_LODTrees reference it; renderMode 0xc, decals off; only Main and Msg_LODTrees reference it (high); type `ptr:BSShaderAccumulator`
@@ -12303,6 +12305,8 @@ pub const g_InputEventQueue: u64 = 564417;
 pub const g_InputEventQueue_ptr: u64 = 407374;
 /// `g_InstalledContent_ptr` at 0x3210eb0 (xref_inference, medium)
 pub const g_InstalledContent_ptr: u64 = 503225;
+/// `g_InterfaceId_IMovementMotionDrivenControl` at 0x324f0b0 (semantic, high); interface id passed to MovementControllerNPC slot 3 to get its motion-driven control (high); type `BSFixedString`
+pub const g_InterfaceId_IMovementMotionDrivenControl: u64 = 404489;
 /// `g_InvalidRefHandle` at 0x219e55c (runtime, high); the null handle value (0) (high); type `undefined4`
 pub const g_InvalidRefHandle: u64 = 400312;
 /// `g_Inventory3DManager_ptr` at 0x32309f8 (xref_inference, medium)
@@ -13601,7 +13605,3 @@ pub const g_VATSConsoleCameraPath: u64 = 404864;
 pub const g_VATSCurrentCameraPath: u64 = 404870;
 /// `g_VATSDefaultCameraPathOnce` at 0x3252a38 (xref_inference, medium); pointer to `BGSCameraPath`: one-shot path override (consumed by UpdateVATS); one-shot path override (consumed by UpdateVATS) (medium); type `ptr:BGSCameraPath`
 pub const g_VATSDefaultCameraPathOnce: u64 = 404865;
-/// `g_VATSPathTotalTime` at 0x3252a60 (semantic, high); sum of the path's shot maxTime (fVATSSafetyMaxTime 20 when ~0; fVATSSafetyMaxTimeRanged 6 for a ranged command whose target is alive) (high); type `float`
-pub const g_VATSPathTotalTime: u64 = 404873;
-/// `g_VATSPathTransitionMode` at 0x3252a40 (semantic, high); shot transition mode from the path's flags: 0 dolly, 1 cut (bit 0), 2 dolly only into action-3 shots (bit 1) (high); type `i32`
-pub const g_VATSPathTransitionMode: u64 = 404866;

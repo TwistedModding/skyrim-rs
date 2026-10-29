@@ -3,6 +3,142 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `GameSetting_fMagicCasterPCSkillCostBase__init` at 0x65400 (crt_init, medium); signature (high): `void GameSetting_fMagicCasterPCSkillCostBase__init(void)`
+pub const GameSetting_fMagicCasterPCSkillCostBase__init: u64 = 3691;
+/// `GameSetting_fMagicCasterPCSkillCostMult__atexit` at 0x1777680 (crt_init, medium); signature (high): `void GameSetting_fMagicCasterPCSkillCostMult__atexit(void)`
+pub const GameSetting_fMagicCasterPCSkillCostMult__atexit: u64 = 168902;
+/// `GameSetting_fMagicCasterPCSkillCostMult__init` at 0x65480 (crt_init, medium); signature (high): `void GameSetting_fMagicCasterPCSkillCostMult__init(void)`
+pub const GameSetting_fMagicCasterPCSkillCostMult__init: u64 = 3692;
+/// `GameSetting_fMagicCasterSkillCostBase__atexit` at 0x17776d0 (crt_init, medium); signature (high): `void GameSetting_fMagicCasterSkillCostBase__atexit(void)`
+pub const GameSetting_fMagicCasterSkillCostBase__atexit: u64 = 168903;
+/// `GameSetting_fMagicCasterSkillCostBase__init` at 0x65500 (crt_init, medium); signature (high): `void GameSetting_fMagicCasterSkillCostBase__init(void)`
+pub const GameSetting_fMagicCasterSkillCostBase__init: u64 = 3693;
+/// `GameSetting_fMagicCasterSkillCostMult__atexit` at 0x1777720 (crt_init, medium); signature (high): `void GameSetting_fMagicCasterSkillCostMult__atexit(void)`
+pub const GameSetting_fMagicCasterSkillCostMult__atexit: u64 = 168904;
+/// `GameSetting_fMagicCasterSkillCostMult__init` at 0x65580 (crt_init, medium); signature (high): `void GameSetting_fMagicCasterSkillCostMult__init(void)`
+pub const GameSetting_fMagicCasterSkillCostMult__init: u64 = 3694;
+/// `GameSetting_fMagicCasterTargetUpdateInterval__atexit` at 0x173cbf0 (crt_init, medium); signature (high): `void GameSetting_fMagicCasterTargetUpdateInterval__atexit(void)`
+pub const GameSetting_fMagicCasterTargetUpdateInterval__atexit: u64 = 165343;
+/// `GameSetting_fMagicCasterTargetUpdateInterval__init` at 0x8aa0 (crt_init, medium); signature (high): `void GameSetting_fMagicCasterTargetUpdateInterval__init(void)`
+pub const GameSetting_fMagicCasterTargetUpdateInterval__init: u64 = 153;
+/// `GameSetting_fMagicChainExplosionEffectivenessDelta__atexit` at 0x1777770 (crt_init, medium); signature (high): `void GameSetting_fMagicChainExplosionEffectivenessDelta__atexit(void)`
+pub const GameSetting_fMagicChainExplosionEffectivenessDelta__atexit: u64 = 168905;
+/// `GameSetting_fMagicChainExplosionEffectivenessDelta__init` at 0x65600 (crt_init, medium); signature (high): `void GameSetting_fMagicChainExplosionEffectivenessDelta__init(void)`
+pub const GameSetting_fMagicChainExplosionEffectivenessDelta__init: u64 = 3695;
+/// `GameSetting_fMagicCloudAreaMin__atexit` at 0x17777c0 (crt_init, medium); signature (high): `void GameSetting_fMagicCloudAreaMin__atexit(void)`
+pub const GameSetting_fMagicCloudAreaMin__atexit: u64 = 168906;
+/// `GameSetting_fMagicCloudAreaMin__init` at 0x65680 (crt_init, medium); signature (high): `void GameSetting_fMagicCloudAreaMin__init(void)`
+pub const GameSetting_fMagicCloudAreaMin__init: u64 = 3696;
+/// `GameSetting_fMagicCloudDurationMin__atexit` at 0x1777810 (crt_init, medium); signature (high): `void GameSetting_fMagicCloudDurationMin__atexit(void)`
+pub const GameSetting_fMagicCloudDurationMin__atexit: u64 = 168907;
+/// `GameSetting_fMagicCloudDurationMin__init` at 0x65700 (crt_init, medium); signature (high): `void GameSetting_fMagicCloudDurationMin__init(void)`
+pub const GameSetting_fMagicCloudDurationMin__init: u64 = 3697;
+/// `GameSetting_fMagicCloudFindTargetTime__atexit` at 0x1777860 (crt_init, medium); signature (high): `void GameSetting_fMagicCloudFindTargetTime__atexit(void)`
+pub const GameSetting_fMagicCloudFindTargetTime__atexit: u64 = 168908;
+/// `GameSetting_fMagicCloudFindTargetTime__init` at 0x65780 (crt_init, medium); signature (high): `void GameSetting_fMagicCloudFindTargetTime__init(void)`
+pub const GameSetting_fMagicCloudFindTargetTime__init: u64 = 3698;
+/// `GameSetting_fMagicCloudLifeScale__atexit` at 0x17778b0 (crt_init, medium); signature (high): `void GameSetting_fMagicCloudLifeScale__atexit(void)`
+pub const GameSetting_fMagicCloudLifeScale__atexit: u64 = 168909;
+/// `GameSetting_fMagicCloudLifeScale__init` at 0x65800 (crt_init, medium); signature (high): `void GameSetting_fMagicCloudLifeScale__init(void)`
+pub const GameSetting_fMagicCloudLifeScale__init: u64 = 3699;
+/// `GameSetting_fMagicCloudSizeScale__atexit` at 0x1777900 (crt_init, medium); signature (high): `void GameSetting_fMagicCloudSizeScale__atexit(void)`
+pub const GameSetting_fMagicCloudSizeScale__atexit: u64 = 168910;
+/// `GameSetting_fMagicCloudSizeScale__init` at 0x65880 (crt_init, medium); signature (high): `void GameSetting_fMagicCloudSizeScale__init(void)`
+pub const GameSetting_fMagicCloudSizeScale__init: u64 = 3700;
+/// `GameSetting_fMagicCloudSlowdownRate__atexit` at 0x1777950 (crt_init, medium); signature (high): `void GameSetting_fMagicCloudSlowdownRate__atexit(void)`
+pub const GameSetting_fMagicCloudSlowdownRate__atexit: u64 = 168911;
+/// `GameSetting_fMagicCloudSlowdownRate__init` at 0x65900 (crt_init, medium); signature (high): `void GameSetting_fMagicCloudSlowdownRate__init(void)`
+pub const GameSetting_fMagicCloudSlowdownRate__init: u64 = 3701;
+/// `GameSetting_fMagicCloudSpeedBase__atexit` at 0x17779a0 (crt_init, medium); signature (high): `void GameSetting_fMagicCloudSpeedBase__atexit(void)`
+pub const GameSetting_fMagicCloudSpeedBase__atexit: u64 = 168912;
+/// `GameSetting_fMagicCloudSpeedBase__init` at 0x65980 (crt_init, medium); signature (high): `void GameSetting_fMagicCloudSpeedBase__init(void)`
+pub const GameSetting_fMagicCloudSpeedBase__init: u64 = 3702;
+/// `GameSetting_fMagicCloudSpeedScale__atexit` at 0x17779f0 (crt_init, medium); signature (high): `void GameSetting_fMagicCloudSpeedScale__atexit(void)`
+pub const GameSetting_fMagicCloudSpeedScale__atexit: u64 = 168913;
+/// `GameSetting_fMagicCloudSpeedScale__init` at 0x65a00 (crt_init, medium); signature (high): `void GameSetting_fMagicCloudSpeedScale__init(void)`
+pub const GameSetting_fMagicCloudSpeedScale__init: u64 = 3703;
+/// `GameSetting_fMagicCostScale__atexit` at 0x1777a40 (crt_init, medium); signature (high): `void GameSetting_fMagicCostScale__atexit(void)`
+pub const GameSetting_fMagicCostScale__atexit: u64 = 168914;
+/// `GameSetting_fMagicCostScale__init` at 0x65a80 (crt_init, medium); signature (high): `void GameSetting_fMagicCostScale__init(void)`
+pub const GameSetting_fMagicCostScale__init: u64 = 3704;
+/// `GameSetting_fMagicDefaultAccumulatingModifierEffectRate__atexit` at 0x1777a90 (crt_init, medium); signature (high): `void GameSetting_fMagicDefaultAccumulatingModifierEffectRate__atexit(void)`
+pub const GameSetting_fMagicDefaultAccumulatingModifierEffectRate__atexit: u64 = 168915;
+/// `GameSetting_fMagicDefaultAccumulatingModifierEffectRate__init` at 0x65b00 (crt_init, medium); signature (high): `void GameSetting_fMagicDefaultAccumulatingModifierEffectRate__init(void)`
+pub const GameSetting_fMagicDefaultAccumulatingModifierEffectRate__init: u64 = 3705;
+/// `GameSetting_fMagicDefaultCEBarterFactor__atexit` at 0x173cc40 (crt_init, medium); signature (high): `void GameSetting_fMagicDefaultCEBarterFactor__atexit(void)`
+pub const GameSetting_fMagicDefaultCEBarterFactor__atexit: u64 = 165344;
+/// `GameSetting_fMagicDefaultCEBarterFactor__init` at 0x8b20 (crt_init, medium); signature (high): `void GameSetting_fMagicDefaultCEBarterFactor__init(void)`
+pub const GameSetting_fMagicDefaultCEBarterFactor__init: u64 = 154;
+/// `GameSetting_fMagicDefaultTouchDistance__atexit` at 0x1777ae0 (crt_init, medium); signature (high): `void GameSetting_fMagicDefaultTouchDistance__atexit(void)`
+pub const GameSetting_fMagicDefaultTouchDistance__atexit: u64 = 168916;
+/// `GameSetting_fMagicDefaultTouchDistance__init` at 0x65b80 (crt_init, medium); signature (high): `void GameSetting_fMagicDefaultTouchDistance__init(void)`
+pub const GameSetting_fMagicDefaultTouchDistance__init: u64 = 3706;
+/// `GameSetting_fMagicDiseaseTransferBase__atexit` at 0x1777b30 (crt_init, medium); signature (high): `void GameSetting_fMagicDiseaseTransferBase__atexit(void)`
+pub const GameSetting_fMagicDiseaseTransferBase__atexit: u64 = 168917;
+/// `GameSetting_fMagicDiseaseTransferBase__init` at 0x65c00 (crt_init, medium); signature (high): `void GameSetting_fMagicDiseaseTransferBase__init(void)`
+pub const GameSetting_fMagicDiseaseTransferBase__init: u64 = 3707;
+/// `GameSetting_fMagicDiseaseTransferMult__atexit` at 0x1777b80 (crt_init, medium); signature (high): `void GameSetting_fMagicDiseaseTransferMult__atexit(void)`
+pub const GameSetting_fMagicDiseaseTransferMult__atexit: u64 = 168918;
+/// `GameSetting_fMagicDiseaseTransferMult__init` at 0x65c80 (crt_init, medium); signature (high): `void GameSetting_fMagicDiseaseTransferMult__init(void)`
+pub const GameSetting_fMagicDiseaseTransferMult__init: u64 = 3708;
+/// `GameSetting_fMagicDispelMagnitudeMult__atexit` at 0x1777bd0 (crt_init, medium); signature (high): `void GameSetting_fMagicDispelMagnitudeMult__atexit(void)`
+pub const GameSetting_fMagicDispelMagnitudeMult__atexit: u64 = 168919;
+/// `GameSetting_fMagicDispelMagnitudeMult__init` at 0x65d00 (crt_init, medium); signature (high): `void GameSetting_fMagicDispelMagnitudeMult__init(void)`
+pub const GameSetting_fMagicDispelMagnitudeMult__init: u64 = 3709;
+/// `GameSetting_fMagicDualCastingCostBase__atexit` at 0x1777c20 (crt_init, medium); signature (high): `void GameSetting_fMagicDualCastingCostBase__atexit(void)`
+pub const GameSetting_fMagicDualCastingCostBase__atexit: u64 = 168920;
+/// `GameSetting_fMagicDualCastingCostBase__init` at 0x65d80 (crt_init, medium); signature (high): `void GameSetting_fMagicDualCastingCostBase__init(void)`
+pub const GameSetting_fMagicDualCastingCostBase__init: u64 = 3710;
+/// `GameSetting_fMagicDualCastingCostMult__atexit` at 0x1777c70 (crt_init, medium); signature (high): `void GameSetting_fMagicDualCastingCostMult__atexit(void)`
+pub const GameSetting_fMagicDualCastingCostMult__atexit: u64 = 168921;
+/// `GameSetting_fMagicDualCastingCostMult__init` at 0x65e00 (crt_init, medium); signature (high): `void GameSetting_fMagicDualCastingCostMult__init(void)`
+pub const GameSetting_fMagicDualCastingCostMult__init: u64 = 3711;
+/// `GameSetting_fMagicDualCastingEffectivenessBase__atexit` at 0x1777cc0 (crt_init, medium); signature (high): `void GameSetting_fMagicDualCastingEffectivenessBase__atexit(void)`
+pub const GameSetting_fMagicDualCastingEffectivenessBase__atexit: u64 = 168922;
+/// `GameSetting_fMagicDualCastingEffectivenessBase__init` at 0x65e80 (crt_init, medium); signature (high): `void GameSetting_fMagicDualCastingEffectivenessBase__init(void)`
+pub const GameSetting_fMagicDualCastingEffectivenessBase__init: u64 = 3712;
+/// `GameSetting_fMagicDualCastingEffectivenessMult__atexit` at 0x1777d10 (crt_init, medium); signature (high): `void GameSetting_fMagicDualCastingEffectivenessMult__atexit(void)`
+pub const GameSetting_fMagicDualCastingEffectivenessMult__atexit: u64 = 168923;
+/// `GameSetting_fMagicDualCastingEffectivenessMult__init` at 0x65f00 (crt_init, medium); signature (high): `void GameSetting_fMagicDualCastingEffectivenessMult__init(void)`
+pub const GameSetting_fMagicDualCastingEffectivenessMult__init: u64 = 3713;
+/// `GameSetting_fMagicDualCastingTimeBase__atexit` at 0x1777d60 (crt_init, medium); signature (high): `void GameSetting_fMagicDualCastingTimeBase__atexit(void)`
+pub const GameSetting_fMagicDualCastingTimeBase__atexit: u64 = 168924;
+/// `GameSetting_fMagicDualCastingTimeBase__init` at 0x65f80 (crt_init, medium); signature (high): `void GameSetting_fMagicDualCastingTimeBase__init(void)`
+pub const GameSetting_fMagicDualCastingTimeBase__init: u64 = 3714;
+/// `GameSetting_fMagicDualCastingTimeMult__atexit` at 0x1777db0 (crt_init, medium); signature (high): `void GameSetting_fMagicDualCastingTimeMult__atexit(void)`
+pub const GameSetting_fMagicDualCastingTimeMult__atexit: u64 = 168925;
+/// `GameSetting_fMagicDualCastingTimeMult__init` at 0x66000 (crt_init, medium); signature (high): `void GameSetting_fMagicDualCastingTimeMult__init(void)`
+pub const GameSetting_fMagicDualCastingTimeMult__init: u64 = 3715;
+/// `GameSetting_fMagicDurMagBaseCostMult__atexit` at 0x1777e00 (crt_init, medium); signature (high): `void GameSetting_fMagicDurMagBaseCostMult__atexit(void)`
+pub const GameSetting_fMagicDurMagBaseCostMult__atexit: u64 = 168926;
+/// `GameSetting_fMagicDurMagBaseCostMult__init` at 0x66080 (crt_init, medium); signature (high): `void GameSetting_fMagicDurMagBaseCostMult__init(void)`
+pub const GameSetting_fMagicDurMagBaseCostMult__init: u64 = 3716;
+/// `GameSetting_fMagicEnchantmentChargeBase__atexit` at 0x1777e50 (crt_init, medium); signature (high): `void GameSetting_fMagicEnchantmentChargeBase__atexit(void)`
+pub const GameSetting_fMagicEnchantmentChargeBase__atexit: u64 = 168927;
+/// `GameSetting_fMagicEnchantmentChargeBase__init` at 0x66100 (crt_init, medium); signature (high): `void GameSetting_fMagicEnchantmentChargeBase__init(void)`
+pub const GameSetting_fMagicEnchantmentChargeBase__init: u64 = 3717;
+/// `GameSetting_fMagicEnchantmentChargeMult__atexit` at 0x1777ea0 (crt_init, medium); signature (high): `void GameSetting_fMagicEnchantmentChargeMult__atexit(void)`
+pub const GameSetting_fMagicEnchantmentChargeMult__atexit: u64 = 168928;
+/// `GameSetting_fMagicEnchantmentChargeMult__init` at 0x66180 (crt_init, medium); signature (high): `void GameSetting_fMagicEnchantmentChargeMult__init(void)`
+pub const GameSetting_fMagicEnchantmentChargeMult__init: u64 = 3718;
+/// `GameSetting_fMagicEnchantmentDrainBase__atexit` at 0x1777ef0 (crt_init, medium); signature (high): `void GameSetting_fMagicEnchantmentDrainBase__atexit(void)`
+pub const GameSetting_fMagicEnchantmentDrainBase__atexit: u64 = 168929;
+/// `GameSetting_fMagicEnchantmentDrainBase__init` at 0x66200 (crt_init, medium); signature (high): `void GameSetting_fMagicEnchantmentDrainBase__init(void)`
+pub const GameSetting_fMagicEnchantmentDrainBase__init: u64 = 3719;
+/// `GameSetting_fMagicEnchantmentDrainMult__atexit` at 0x1777f40 (crt_init, medium); signature (high): `void GameSetting_fMagicEnchantmentDrainMult__atexit(void)`
+pub const GameSetting_fMagicEnchantmentDrainMult__atexit: u64 = 168930;
+/// `GameSetting_fMagicEnchantmentDrainMult__init` at 0x66280 (crt_init, medium); signature (high): `void GameSetting_fMagicEnchantmentDrainMult__init(void)`
+pub const GameSetting_fMagicEnchantmentDrainMult__init: u64 = 3720;
+/// `GameSetting_fMagicExplosionAgilityMult__atexit` at 0x1777f90 (crt_init, medium); signature (high): `void GameSetting_fMagicExplosionAgilityMult__atexit(void)`
+pub const GameSetting_fMagicExplosionAgilityMult__atexit: u64 = 168931;
+/// `GameSetting_fMagicExplosionAgilityMult__init` at 0x66300 (crt_init, medium); signature (high): `void GameSetting_fMagicExplosionAgilityMult__init(void)`
+pub const GameSetting_fMagicExplosionAgilityMult__init: u64 = 3721;
+/// `GameSetting_fMagicExplosionClutterMult__atexit` at 0x1777fe0 (crt_init, medium); signature (high): `void GameSetting_fMagicExplosionClutterMult__atexit(void)`
+pub const GameSetting_fMagicExplosionClutterMult__atexit: u64 = 168932;
+/// `GameSetting_fMagicExplosionClutterMult__init` at 0x66380 (crt_init, medium); signature (high): `void GameSetting_fMagicExplosionClutterMult__init(void)`
+pub const GameSetting_fMagicExplosionClutterMult__init: u64 = 3722;
+/// `GameSetting_fMagicExplosionIncorporealMult__atexit` at 0x1778030 (crt_init, medium); signature (high): `void GameSetting_fMagicExplosionIncorporealMult__atexit(void)`
+pub const GameSetting_fMagicExplosionIncorporealMult__atexit: u64 = 168933;
 /// `GameSetting_fMagicExplosionIncorporealMult__init` at 0x66400 (crt_init, medium); signature (high): `void GameSetting_fMagicExplosionIncorporealMult__init(void)`
 pub const GameSetting_fMagicExplosionIncorporealMult__init: u64 = 3723;
 /// `GameSetting_fMagicExplosionIncorporealTime__atexit` at 0x1778080 (crt_init, medium); signature (high): `void GameSetting_fMagicExplosionIncorporealTime__atexit(void)`
@@ -8985,8 +9121,6 @@ pub const GetCurrentPackage_2: u64 = 37399;
 pub const GetCurrentProcessByte137: u64 = 37965;
 /// `GetCurrentShoutVariation` at 0x700080 (decompiler, medium); signature (untiered): `undefined4 GetCurrentShoutVariation(longlong param_1)`
 pub const GetCurrentShoutVariation: u64 = 39528;
-/// `GetCurrentStage` at 0x3d1220 (decompiler, medium); signature (medium): `undefined2 GetCurrentStage(longlong param_1)`
-pub const GetCurrentStage: u64 = 25013;
 /// `GetCurrentThreadAttackerActor` at 0x86ec30 (decompiler, medium); signature (untiered): `longlong GetCurrentThreadAttackerActor(void)`
 pub const GetCurrentThreadAttackerActor: u64 = 47379;
 /// `GetCurrentThreadAttackerActor_2` at 0x8742a0 (decompiler, medium); signature (untiered): `longlong GetCurrentThreadAttackerActor_2(void)`
@@ -9235,8 +9369,10 @@ pub const GetEquipBackupField20: u64 = 40703;
 pub const GetEquipSlotOfEquippedObject: u64 = 38912;
 /// `GetEquippedItemEnchantment` at 0x6ca170 (decompiler, medium); signature (untiered): `longlong GetEquippedItemEnchantment(longlong param_1, char param_2)`
 pub const GetEquippedItemEnchantment: u64 = 38575;
-/// `GetEquippedItemType` at 0x1d74a0 (decompiler, medium); signature (medium): `int GetEquippedItemType(longlong param_1)`
+/// `GetEquippedItemType` at 0x1d74a0 (semantic, high); signature (medium): `int GetEquippedItemType(longlong param_1)`; semantic: item type of an equipped object: weapon types 0..8 as stored, Crossbow 9 -> 12, spell 9, shield 10, torch 11, else 0 (high); signature `int (TESForm* item)`
 pub const GetEquippedItemType: u64 = 14220;
+/// `GetEquippedItemType` as a function pointer type (high).
+pub type GetEquippedItemType_fn = unsafe extern "C" fn(item: *mut crate::TESForm) -> i32;
 /// `GetEquippedObjectOfType29` at 0x66fc60 (decompiler, medium); signature (untiered): `longlong GetEquippedObjectOfType29(longlong param_1, int * param_2)`
 pub const GetEquippedObjectOfType29: u64 = 37168;
 /// `GetEquippedShout` at 0x6d7070 (decompiler, medium); signature (untiered): `longlong GetEquippedShout(longlong param_1)`
@@ -9325,171 +9461,3 @@ pub const GetExtraMultiBoundField10: u64 = 11840;
 pub const GetExtraMultiBoundMarkerData: u64 = 11838;
 /// `GetExtraMultiBoundRef` at 0x16a610 (decompiler, medium); signature (medium): `longlong GetExtraMultiBoundRef(longlong param_1)`
 pub const GetExtraMultiBoundRef: u64 = 11836;
-/// `GetExtraMultiBoundRefAtField70` at 0x301da0 (decompiler, high); signature (untiered): `undefined GetExtraMultiBoundRefAtField70(longlong param_1)`
-pub const GetExtraMultiBoundRefAtField70: u64 = 20243;
-/// `GetExtraOcclusionPlaneRefDataEntry` at 0x16af10 (decompiler, medium); signature (untiered): `undefined4 * GetExtraOcclusionPlaneRefDataEntry(longlong param_1, undefined4 * param_2, int param_3)`
-pub const GetExtraOcclusionPlaneRefDataEntry: u64 = 11848;
-/// `GetExtraOcclusionPlaneRefDataValue` at 0x16b070 (decompiler, medium); signature (medium): `longlong GetExtraOcclusionPlaneRefDataValue(longlong param_1)`
-pub const GetExtraOcclusionPlaneRefDataValue: u64 = 11850;
-/// `GetExtraOwnershipOwner` at 0x164570 (decompiler, medium); signature (medium): `longlong GetExtraOwnershipOwner(longlong param_1)`
-pub const GetExtraOwnershipOwner: u64 = 11692;
-/// `GetExtraOwnershipOwnerAt70` at 0x300730 (decompiler, high); signature (untiered): `undefined GetExtraOwnershipOwnerAt70(longlong param_1)`
-pub const GetExtraOwnershipOwnerAt70: u64 = 20197;
-/// `GetExtraPackageStartLocationData` at 0x164c50 (decompiler, high); signature (untiered): `longlong * GetExtraPackageStartLocationData(longlong param_1)`
-pub const GetExtraPackageStartLocationData: u64 = 11718;
-/// `GetExtraPortalRefDataHandleAt` at 0x16b1b0 (decompiler, medium); signature (medium): `undefined4 * GetExtraPortalRefDataHandleAt(longlong param_1, undefined4 * param_2, int param_3)`
-pub const GetExtraPortalRefDataHandleAt: u64 = 11852;
-/// `GetExtraRadius` at 0x16c300 (decompiler, medium); signature (medium): `undefined4 GetExtraRadius(longlong param_1)`
-pub const GetExtraRadius: u64 = 11875;
-/// `GetExtraRank` at 0x164600 (decompiler, high); signature (high): `undefined4 GetExtraRank(longlong param_1)`
-pub const GetExtraRank: u64 = 11695;
-/// `GetExtraRankOrZero` at 0x2be5e0 (decompiler, high); signature (high): `int GetExtraRankOrZero(longlong param_1)`
-pub const GetExtraRankOrZero: u64 = 18984;
-/// `GetExtraReflectorRefsField10Ptr` at 0x16cbf0 (decompiler, medium); signature (untiered): `longlong * GetExtraReflectorRefsField10Ptr(longlong param_1)`
-pub const GetExtraReflectorRefsField10Ptr: u64 = 11887;
-/// `GetExtraRoomRefDataField10Ptr` at 0x16b4d0 (decompiler, medium); signature (untiered): `longlong GetExtraRoomRefDataField10Ptr(longlong param_1)`
-pub const GetExtraRoomRefDataField10Ptr: u64 = 11854;
-/// `GetExtraRoomRefDataField28` at 0x16bb70 (decompiler, high); signature (untiered): `undefined8 GetExtraRoomRefDataField28(longlong param_1)`
-pub const GetExtraRoomRefDataField28: u64 = 11864;
-/// `GetExtraRoomRefDataValue` at 0x16b6b0 (decompiler, medium); signature (medium): `longlong GetExtraRoomRefDataValue(longlong param_1)`
-pub const GetExtraRoomRefDataValue: u64 = 11856;
-/// `GetExtraRoomRefDataValue_2` at 0x16bf70 (decompiler, medium); signature (medium): `longlong GetExtraRoomRefDataValue_2(longlong param_1)`
-pub const GetExtraRoomRefDataValue_2: u64 = 11870;
-/// `GetExtraScale` at 0x164a10 (decompiler, high); signature (high): `undefined4 GetExtraScale(longlong param_1)`
-pub const GetExtraScale: u64 = 11710;
-/// `GetExtraSeenDataValue` at 0x16e590 (decompiler, medium); signature (untiered): `longlong GetExtraSeenDataValue(longlong param_1)`
-pub const GetExtraSeenDataValue: u64 = 11921;
-/// `GetExtraShouldWear` at 0x164740 (decompiler, high); signature (high): `bool GetExtraShouldWear(longlong param_1, undefined1 * param_2)`
-pub const GetExtraShouldWear: u64 = 11697;
-/// `GetExtraSoul` at 0x164980 (decompiler, high); signature (untiered): `int GetExtraSoul(longlong param_1)`
-pub const GetExtraSoul: u64 = 11707;
-/// `GetExtraSoundData` at 0x164a40 (decompiler, medium); signature (untiered): `undefined GetExtraSoundData(longlong param_1, undefined4 * param_2)`
-pub const GetExtraSoundData: u64 = 11711;
-/// `GetExtraStartingPositionField10Ptr` at 0x164390 (decompiler, medium); signature (untiered): `longlong * GetExtraStartingPositionField10Ptr(longlong param_1)`
-pub const GetExtraStartingPositionField10Ptr: u64 = 11684;
-/// `GetExtraStartingPositionField28` at 0x16a340 (decompiler, medium); signature (untiered): `longlong GetExtraStartingPositionField28(longlong param_1)`
-pub const GetExtraStartingPositionField28: u64 = 11832;
-/// `GetExtraTerminalStateField10` at 0x163470 (decompiler, medium); signature (medium): `undefined1 GetExtraTerminalStateField10(longlong param_1)`
-pub const GetExtraTerminalStateField10: u64 = 11659;
-/// `GetExtraTerminalStateField11` at 0x1635e0 (decompiler, medium); signature (medium): `undefined1 GetExtraTerminalStateField11(longlong param_1)`
-pub const GetExtraTerminalStateField11: u64 = 11661;
-/// `GetExtraTimeLeft` at 0x164920 (decompiler, medium); signature (untiered): `undefined4 GetExtraTimeLeft(longlong param_1)`
-pub const GetExtraTimeLeft: u64 = 11705;
-/// `GetExtraType0x01Value` at 0x16f140 (decompiler, medium); signature (untiered): `longlong * GetExtraType0x01Value(longlong param_1)`
-pub const GetExtraType0x01Value: u64 = 11954;
-/// `GetExtraType0x54` at 0x1702b0 (decompiler, medium); signature (untiered): `undefined GetExtraType0x54(longlong param_1)`
-pub const GetExtraType0x54: u64 = 11982;
-/// `GetExtraType0x9BValue` at 0x1732b0 (decompiler, medium); signature (untiered): `longlong GetExtraType0x9BValue(longlong param_1)`
-pub const GetExtraType0x9BValue: u64 = 12061;
-/// `GetExtraType0xA9Pointer` at 0x173aa0 (decompiler, medium); signature (untiered): `undefined GetExtraType0xA9Pointer(longlong param_1, longlong * param_2)`
-pub const GetExtraType0xA9Pointer: u64 = 12075;
-/// `GetExtraType11Field10OrDefault` at 0x1643c0 (decompiler, medium); signature (untiered): `longlong * GetExtraType11Field10OrDefault(longlong param_1)`
-pub const GetExtraType11Field10OrDefault: u64 = 11685;
-/// `GetExtraType19Field10` at 0x164cc0 (decompiler, high); signature (untiered): `longlong GetExtraType19Field10(longlong param_1)`
-pub const GetExtraType19Field10: u64 = 11720;
-/// `GetExtraType1AField10` at 0x164d50 (decompiler, high); signature (high): `longlong GetExtraType1AField10(longlong param_1)`
-pub const GetExtraType1AField10: u64 = 11723;
-/// `GetExtraType1BValueForKey` at 0x1650a0 (decompiler, medium); signature (untiered): `undefined1 GetExtraType1BValueForKey(longlong param_1, longlong param_2)`
-pub const GetExtraType1BValueForKey: u64 = 11734;
-/// `GetExtraType1D` at 0x162d00 (decompiler, high); signature (untiered): `undefined GetExtraType1D(longlong param_1)`
-pub const GetExtraType1D: u64 = 11651;
-/// `GetExtraType1EField10` at 0x1693b0 (decompiler, high); signature (high): `undefined4 GetExtraType1EField10(longlong param_1)`
-pub const GetExtraType1EField10: u64 = 11805;
-/// `GetExtraType1EValuesOrDefaults` at 0x169350 (decompiler, medium); signature (medium): `undefined GetExtraType1EValuesOrDefaults(longlong param_1, undefined4 * param_2, undefined4 * param_3)`
-pub const GetExtraType1EValuesOrDefaults: u64 = 11804;
-/// `GetExtraType20Handle` at 0x1642a0 (decompiler, high); signature (untiered): `undefined4 * GetExtraType20Handle(longlong param_1, undefined4 * param_2)`
-pub const GetExtraType20Handle: u64 = 11682;
-/// `GetExtraType21Field10IfByte1AIs0B` at 0x164540 (decompiler, medium); signature (untiered): `longlong GetExtraType21Field10IfByte1AIs0B(longlong param_1)`
-pub const GetExtraType21Field10IfByte1AIs0B: u64 = 11691;
-/// `GetExtraType21Field10IfByte1AIs2B` at 0x164510 (decompiler, medium); signature (untiered): `longlong GetExtraType21Field10IfByte1AIs2B(longlong param_1)`
-pub const GetExtraType21Field10IfByte1AIs2B: u64 = 11690;
-/// `GetExtraType22Field10` at 0x1645d0 (decompiler, high); signature (untiered): `longlong GetExtraType22Field10(longlong param_1)`
-pub const GetExtraType22Field10: u64 = 11694;
-/// `GetExtraType22Field10FromExtraList` at 0x2be5d0 (decompiler, high); signature (untiered): `undefined GetExtraType22Field10FromExtraList(longlong param_1)`
-pub const GetExtraType22Field10FromExtraList: u64 = 18983;
-/// `GetExtraType22ValueFromRefOrLinkedRef` at 0x300560 (decompiler, medium); signature (untiered): `longlong GetExtraType22ValueFromRefOrLinkedRef(longlong param_1)`
-pub const GetExtraType22ValueFromRefOrLinkedRef: u64 = 20195;
-/// `GetExtraType24Value` at 0x1648f0 (decompiler, high); signature (high): `undefined2 GetExtraType24Value(longlong param_1)`
-pub const GetExtraType24Value: u64 = 11704;
-/// `GetExtraType28Value` at 0x164950 (decompiler, medium); signature (medium): `undefined4 GetExtraType28Value(longlong param_1)`
-pub const GetExtraType28Value: u64 = 11706;
-/// `GetExtraType29Field10` at 0x164450 (decompiler, high); signature (untiered): `longlong GetExtraType29Field10(longlong param_1)`
-pub const GetExtraType29Field10: u64 = 11686;
-/// `GetExtraType2AFromSelfOrLinkedRef` at 0x301580 (decompiler, medium); signature (untiered): `longlong * GetExtraType2AFromSelfOrLinkedRef(longlong param_1)`
-pub const GetExtraType2AFromSelfOrLinkedRef: u64 = 20228;
-/// `GetExtraType2AValue` at 0x164480 (decompiler, high); signature (high): `longlong GetExtraType2AValue(longlong param_1)`
-pub const GetExtraType2AValue: u64 = 11687;
-/// `GetExtraType2BValue` at 0x1644b0 (decompiler, high); signature (high): `longlong GetExtraType2BValue(longlong param_1)`
-pub const GetExtraType2BValue: u64 = 11688;
-/// `GetExtraType2BValueFromRefHandle` at 0x304bd0 (decompiler, high); signature (untiered): `longlong GetExtraType2BValueFromRefHandle(uint * param_1)`
-pub const GetExtraType2BValueFromRefHandle: u64 = 20302;
-/// `GetExtraType2DField18` at 0x1696a0 (decompiler, high); signature (high): `longlong GetExtraType2DField18(longlong param_1)`
-pub const GetExtraType2DField18: u64 = 11811;
-/// `GetExtraType2EShortField10` at 0x164e20 (decompiler, high); signature (high): `int GetExtraType2EShortField10(longlong param_1)`
-pub const GetExtraType2EShortField10: u64 = 11727;
-/// `GetExtraType34Field10` at 0x164df0 (decompiler, high); signature (untiered): `longlong GetExtraType34Field10(longlong param_1)`
-pub const GetExtraType34Field10: u64 = 11726;
-/// `GetExtraType39Field10` at 0x166270 (decompiler, high); signature (high): `longlong * GetExtraType39Field10(longlong param_1)`
-pub const GetExtraType39Field10: u64 = 11758;
-/// `GetExtraType3EField10` at 0x169c30 (decompiler, medium); signature (untiered): `undefined GetExtraType3EField10(longlong param_1)`
-pub const GetExtraType3EField10: u64 = 11821;
-/// `GetExtraType3EField18` at 0x169d90 (decompiler, high); signature (high): `undefined4 GetExtraType3EField18(longlong param_1)`
-pub const GetExtraType3EField18: u64 = 11823;
-/// `GetExtraType3FField10` at 0x169dc0 (decompiler, high); signature (untiered): `longlong GetExtraType3FField10(longlong param_1)`
-pub const GetExtraType3FField10: u64 = 11824;
-/// `GetExtraType3FField10FromField70` at 0x2e76f0 (decompiler, high); signature (untiered): `undefined GetExtraType3FField10FromField70(longlong param_1)`
-pub const GetExtraType3FField10FromField70: u64 = 19675;
-/// `GetExtraType41DataOrDefault` at 0x16fe90 (decompiler, high); signature (high): `longlong * GetExtraType41DataOrDefault(longlong param_1)`
-pub const GetExtraType41DataOrDefault: u64 = 11974;
-/// `GetExtraType42Field10` at 0x16e440 (decompiler, high); signature (high): `undefined4 GetExtraType42Field10(longlong param_1)`
-pub const GetExtraType42Field10: u64 = 11919;
-/// `GetExtraType48Field10` at 0x1708d0 (decompiler, high); signature (untiered): `longlong GetExtraType48Field10(longlong param_1)`
-pub const GetExtraType48Field10: u64 = 11993;
-/// `GetExtraType49Byte` at 0x163960 (decompiler, high); signature (high): `undefined1 GetExtraType49Byte(longlong param_1)`
-pub const GetExtraType49Byte: u64 = 11666;
-/// `GetExtraType4Data` at 0x16f540 (decompiler, high); signature (untiered): `longlong GetExtraType4Data(longlong param_1)`
-pub const GetExtraType4Data: u64 = 11958;
-/// `GetExtraType52Data` at 0x168070 (decompiler, high); signature (high): `longlong * GetExtraType52Data(longlong param_1)`
-pub const GetExtraType52Data: u64 = 11788;
-/// `GetExtraType52ValueForRefHandle` at 0x168730 (decompiler, medium); signature (untiered): `int GetExtraType52ValueForRefHandle(longlong param_1, longlong param_2)`
-pub const GetExtraType52ValueForRefHandle: u64 = 11792;
-/// `GetExtraType53Field10` at 0x168b00 (decompiler, high); signature (untiered): `longlong * GetExtraType53Field10(longlong param_1)`
-pub const GetExtraType53Field10: u64 = 11796;
-/// `GetExtraType53Field20OrDefault` at 0x169100 (decompiler, high); signature (untiered): `undefined4 GetExtraType53Field20OrDefault(longlong param_1)`
-pub const GetExtraType53Field20OrDefault: u64 = 11800;
-/// `GetExtraType55Value` at 0x170dc0 (decompiler, high); signature (untiered): `undefined4 GetExtraType55Value(longlong param_1)`
-pub const GetExtraType55Value: u64 = 12004;
-/// `GetExtraType56Data` at 0x16fa80 (decompiler, high); signature (untiered): `longlong GetExtraType56Data(longlong param_1)`
-pub const GetExtraType56Data: u64 = 11966;
-/// `GetExtraType57` at 0x16fc10 (decompiler, medium); signature (untiered): `undefined GetExtraType57(longlong param_1)`
-pub const GetExtraType57: u64 = 11970;
-/// `GetExtraType58Field10` at 0x16fbd0 (decompiler, high); signature (untiered): `longlong GetExtraType58Field10(longlong param_1)`
-pub const GetExtraType58Field10: u64 = 11968;
-/// `GetExtraType5CField18` at 0x2ef7d0 (decompiler, medium); signature (untiered): `undefined8 GetExtraType5CField18(longlong param_1)`
-pub const GetExtraType5CField18: u64 = 19767;
-/// `GetExtraType61Field10Ptr` at 0x16cbc0 (decompiler, high); signature (untiered): `longlong * GetExtraType61Field10Ptr(longlong param_1)`
-pub const GetExtraType61Field10Ptr: u64 = 11886;
-/// `GetExtraType65Field10` at 0x171550 (decompiler, high); signature (untiered): `longlong GetExtraType65Field10(longlong param_1)`
-pub const GetExtraType65Field10: u64 = 12017;
-/// `GetExtraType67Value` at 0x16d850 (decompiler, high); signature (high): `longlong GetExtraType67Value(longlong param_1)`
-pub const GetExtraType67Value: u64 = 11898;
-/// `GetExtraType68Value` at 0x169130 (decompiler, high); signature (high): `undefined4 * GetExtraType68Value(longlong param_1, undefined4 * param_2)`
-pub const GetExtraType68Value: u64 = 11801;
-/// `GetExtraType6BField10` at 0x16d980 (decompiler, high); signature (high): `longlong GetExtraType6BField10(longlong param_1)`
-pub const GetExtraType6BField10: u64 = 11900;
-/// `GetExtraType6DValue` at 0x16aa20 (decompiler, high); signature (high): `longlong GetExtraType6DValue(longlong param_1)`
-pub const GetExtraType6DValue: u64 = 11842;
-/// `GetExtraType6EValue` at 0x16c0b0 (decompiler, high); signature (high): `longlong GetExtraType6EValue(longlong param_1)`
-pub const GetExtraType6EValue: u64 = 11872;
-/// `GetExtraType73Value` at 0x16be30 (decompiler, high); signature (high): `longlong GetExtraType73Value(longlong param_1)`
-pub const GetExtraType73Value: u64 = 11868;
-/// `GetExtraType74Value` at 0x16abc0 (decompiler, high); signature (high): `longlong GetExtraType74Value(longlong param_1)`
-pub const GetExtraType74Value: u64 = 11844;
-/// `GetExtraType75Value` at 0x16ad60 (decompiler, high); signature (high): `longlong GetExtraType75Value(longlong param_1)`
-pub const GetExtraType75Value: u64 = 11846;
-/// `GetExtraType77Field10Field30` at 0x16bbb0 (decompiler, medium); signature (untiered): `undefined8 GetExtraType77Field10Field30(longlong param_1)`
-pub const GetExtraType77Field10Field30: u64 = 11865;
-/// `GetExtraType7BHandle` at 0x172130 (decompiler, high); signature (high): `undefined4 * GetExtraType7BHandle(longlong param_1, undefined4 * param_2)`
-pub const GetExtraType7BHandle: u64 = 12033;
-/// `GetExtraType80Field10Ptr` at 0x16cfa0 (decompiler, high); signature (untiered): `longlong * GetExtraType80Field10Ptr(longlong param_1)`
-pub const GetExtraType80Field10Ptr: u64 = 11891;

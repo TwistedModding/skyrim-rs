@@ -387,12 +387,6 @@ impl core::ops::Deref for crate::TESObjectTREE {
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
-/// `TESObjectWEAP` is laid out from its primary base `TESBoundObject`, so its methods and fields are reachable through it.
-impl core::ops::Deref for crate::TESObjectWEAP {
-    type Target = crate::TESBoundObject;
-    #[inline]
-    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
-}
 /// `TESPackage` is laid out from its primary base `TESForm`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::TESPackage {
     type Target = crate::TESForm;
@@ -414,12 +408,6 @@ impl core::ops::Deref for crate::TESProduceForm {
 /// `TESQualityForm` is laid out from its primary base `BaseFormComponent`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::TESQualityForm {
     type Target = crate::BaseFormComponent;
-    #[inline]
-    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
-}
-/// `TESQuest` is laid out from its primary base `BGSStoryManagerTreeForm`, so its methods and fields are reachable through it.
-impl core::ops::Deref for crate::TESQuest {
-    type Target = crate::BGSStoryManagerTreeForm;
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
@@ -1361,114 +1349,6 @@ impl crate::TESObjectTREE {
     /// The `TESProduceForm` base at +0x68.
     #[inline]
     pub fn as_tes_produce_form(&self) -> &crate::TESProduceForm { unsafe { &*core::ptr::from_ref(self).byte_add(0x68).cast() } }
-}
-
-impl crate::TESObjectWEAP {
-    /// The `BGSBlockBashData` base at +0x128.
-    #[inline]
-    pub fn as_bgs_block_bash_data(&self) -> &crate::BGSBlockBashData { unsafe { &*core::ptr::from_ref(self).byte_add(0x128).cast() } }
-    /// The `BGSDestructibleObjectForm` base at +0xD0.
-    #[inline]
-    pub fn as_bgs_destructible_object_form(&self) -> &crate::BGSDestructibleObjectForm { unsafe { &*core::ptr::from_ref(self).byte_add(0xD0).cast() } }
-    /// The `BGSEquipType` base at +0xE0.
-    #[inline]
-    pub fn as_bgs_equip_type(&self) -> &crate::BGSEquipType { unsafe { &*core::ptr::from_ref(self).byte_add(0xE0).cast() } }
-    /// The `BGSKeywordForm` base at +0x140.
-    #[inline]
-    pub fn as_bgs_keyword_form(&self) -> &crate::BGSKeywordForm { unsafe { &*core::ptr::from_ref(self).byte_add(0x140).cast() } }
-    /// The `BGSMessageIcon` base at +0xF8.
-    #[inline]
-    pub fn as_bgs_message_icon(&self) -> &crate::BGSMessageIcon { unsafe { &*core::ptr::from_ref(self).byte_add(0xF8).cast() } }
-    /// The `BGSPickupPutdownSounds` base at +0x110.
-    #[inline]
-    pub fn as_bgs_pickup_putdown_sounds(&self) -> &crate::BGSPickupPutdownSounds { unsafe { &*core::ptr::from_ref(self).byte_add(0x110).cast() } }
-    /// The `BGSPreloadable` base at +0xF0.
-    #[inline]
-    pub fn as_bgs_preloadable(&self) -> &crate::BGSPreloadable { unsafe { &*core::ptr::from_ref(self).byte_add(0xF0).cast() } }
-    /// The `BaseFormComponent` base at +0x30.
-    #[inline]
-    pub fn as_base_form_component(&self) -> &crate::BaseFormComponent { unsafe { &*core::ptr::from_ref(self).byte_add(0x30).cast() } }
-    /// The `BaseFormComponent` base at +0x40.
-    #[inline]
-    pub fn as_base_form_component_2(&self) -> &crate::BaseFormComponent { unsafe { &*core::ptr::from_ref(self).byte_add(0x40).cast() } }
-    /// The `BaseFormComponent` base at +0x78.
-    #[inline]
-    pub fn as_base_form_component_3(&self) -> &crate::BaseFormComponent { unsafe { &*core::ptr::from_ref(self).byte_add(0x78).cast() } }
-    /// The `BaseFormComponent` base at +0x88.
-    #[inline]
-    pub fn as_base_form_component_4(&self) -> &crate::BaseFormComponent { unsafe { &*core::ptr::from_ref(self).byte_add(0x88).cast() } }
-    /// The `BaseFormComponent` base at +0xA0.
-    #[inline]
-    pub fn as_base_form_component_5(&self) -> &crate::BaseFormComponent { unsafe { &*core::ptr::from_ref(self).byte_add(0xA0).cast() } }
-    /// The `BaseFormComponent` base at +0xB0.
-    #[inline]
-    pub fn as_base_form_component_6(&self) -> &crate::BaseFormComponent { unsafe { &*core::ptr::from_ref(self).byte_add(0xB0).cast() } }
-    /// The `BaseFormComponent` base at +0xC0.
-    #[inline]
-    pub fn as_base_form_component_7(&self) -> &crate::BaseFormComponent { unsafe { &*core::ptr::from_ref(self).byte_add(0xC0).cast() } }
-    /// The `BaseFormComponent` base at +0xD0.
-    #[inline]
-    pub fn as_base_form_component_8(&self) -> &crate::BaseFormComponent { unsafe { &*core::ptr::from_ref(self).byte_add(0xD0).cast() } }
-    /// The `BaseFormComponent` base at +0xE0.
-    #[inline]
-    pub fn as_base_form_component_9(&self) -> &crate::BaseFormComponent { unsafe { &*core::ptr::from_ref(self).byte_add(0xE0).cast() } }
-    /// The `BaseFormComponent` base at +0xF0.
-    #[inline]
-    pub fn as_base_form_component_10(&self) -> &crate::BaseFormComponent { unsafe { &*core::ptr::from_ref(self).byte_add(0xF0).cast() } }
-    /// The `BaseFormComponent` base at +0xF8.
-    #[inline]
-    pub fn as_base_form_component_11(&self) -> &crate::BaseFormComponent { unsafe { &*core::ptr::from_ref(self).byte_add(0xF8).cast() } }
-    /// The `BaseFormComponent` base at +0x110.
-    #[inline]
-    pub fn as_base_form_component_12(&self) -> &crate::BaseFormComponent { unsafe { &*core::ptr::from_ref(self).byte_add(0x110).cast() } }
-    /// The `BaseFormComponent` base at +0x128.
-    #[inline]
-    pub fn as_base_form_component_13(&self) -> &crate::BaseFormComponent { unsafe { &*core::ptr::from_ref(self).byte_add(0x128).cast() } }
-    /// The `BaseFormComponent` base at +0x140.
-    #[inline]
-    pub fn as_base_form_component_14(&self) -> &crate::BaseFormComponent { unsafe { &*core::ptr::from_ref(self).byte_add(0x140).cast() } }
-    /// The `BaseFormComponent` base at +0x158.
-    #[inline]
-    pub fn as_base_form_component_15(&self) -> &crate::BaseFormComponent { unsafe { &*core::ptr::from_ref(self).byte_add(0x158).cast() } }
-    /// The `TESAttackDamageForm` base at +0xC0.
-    #[inline]
-    pub fn as_tes_attack_damage_form(&self) -> &crate::TESAttackDamageForm { unsafe { &*core::ptr::from_ref(self).byte_add(0xC0).cast() } }
-    /// The `TESDescription` base at +0x158.
-    #[inline]
-    pub fn as_tes_description(&self) -> &crate::TESDescription { unsafe { &*core::ptr::from_ref(self).byte_add(0x158).cast() } }
-    /// The `TESEnchantableForm` base at +0x88.
-    #[inline]
-    pub fn as_tes_enchantable_form(&self) -> &crate::TESEnchantableForm { unsafe { &*core::ptr::from_ref(self).byte_add(0x88).cast() } }
-    /// The `TESFullName` base at +0x30.
-    #[inline]
-    pub fn as_tes_full_name(&self) -> &crate::TESFullName { unsafe { &*core::ptr::from_ref(self).byte_add(0x30).cast() } }
-    /// The `TESIcon` base at +0x78.
-    #[inline]
-    pub fn as_tes_icon(&self) -> &crate::TESIcon { unsafe { &*core::ptr::from_ref(self).byte_add(0x78).cast() } }
-    /// The `TESModel` base at +0x40.
-    #[inline]
-    pub fn as_tes_model(&self) -> &crate::TESModel { unsafe { &*core::ptr::from_ref(self).byte_add(0x40).cast() } }
-    /// The `TESModelTextureSwap` base at +0x40.
-    #[inline]
-    pub fn as_tes_model_texture_swap(&self) -> &crate::TESModelTextureSwap { unsafe { &*core::ptr::from_ref(self).byte_add(0x40).cast() } }
-    /// The `TESTexture` base at +0x78.
-    #[inline]
-    pub fn as_tes_texture(&self) -> &crate::TESTexture { unsafe { &*core::ptr::from_ref(self).byte_add(0x78).cast() } }
-    /// The `TESValueForm` base at +0xA0.
-    #[inline]
-    pub fn as_tes_value_form(&self) -> &crate::TESValueForm { unsafe { &*core::ptr::from_ref(self).byte_add(0xA0).cast() } }
-    /// The `TESWeightForm` base at +0xB0.
-    #[inline]
-    pub fn as_tes_weight_form(&self) -> &crate::TESWeightForm { unsafe { &*core::ptr::from_ref(self).byte_add(0xB0).cast() } }
-}
-
-impl crate::TESQuest {
-    /// The `BaseFormComponent` base at +0x28.
-    #[inline]
-    pub fn as_base_form_component(&self) -> &crate::BaseFormComponent { unsafe { &*core::ptr::from_ref(self).byte_add(0x28).cast() } }
-    /// The `TESFullName` base at +0x28.
-    #[inline]
-    pub fn as_tes_full_name(&self) -> &crate::TESFullName { unsafe { &*core::ptr::from_ref(self).byte_add(0x28).cast() } }
 }
 
 impl crate::TESRace {

@@ -3,6 +3,27 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `TryGetField28RefOfField10` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 90358, rva 0x11b6e50).
+/// `bool TryGetField28RefOfField10(longlong param_1, longlong * param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn try_get_field28_ref_of_field10(param_1: i64, param_2: *mut i64) -> u8 { unsafe { function!(90358, (i64, *mut i64) -> u8)(param_1, param_2) } }
+/// `TryGetField38ManagerEntryAtIndex` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 40852, rva 0x765d60).
+/// `bool TryGetField38ManagerEntryAtIndex(longlong param_1, undefined8 * param_2, undefined8 param_3, undefined8 param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn try_get_field38_manager_entry_at_index(param_1: i64, param_2: *mut u64, param_3: u64, param_4: u64) -> u8 { unsafe { function!(40852, (i64, *mut u64, u64, u64) -> u8)(param_1, param_2, param_3, param_4) } }
+/// `TryGetFields30To40IfField3CIsOne` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 83821, rva 0xd482e0).
+/// `longlong TryGetFields30To40IfField3CIsOne(longlong param_1, ulonglong * param_2, undefined4 * param_3, undefined1 * param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn try_get_fields30_to40_if_field3_c_is_one(param_1: i64, param_2: *mut u64, param_3: *mut u32, param_4: *mut u8) -> i64 { unsafe { function!(83821, (i64, *mut u64, *mut u32, *mut u8) -> i64)(param_1, param_2, param_3, param_4) } }
 /// `TryGetFixedStringForKey` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 32572, rva 0x53f9d0).
 /// `undefined8 TryGetFixedStringForKey(longlong param_1, longlong * param_2, longlong * param_3, undefined8 param_4)`
 ///
@@ -1648,13 +1669,6 @@ pub unsafe fn update_activate_target_procedure_2(param_1: i64, param_2: *mut *mu
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn update_active_child_flags(param_1: i64) -> c_char { unsafe { function!(59534, (i64) -> c_char)(param_1) } }
-/// `UpdateActiveEffect` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 34092, rva 0x5bcde0).
-/// `undefined UpdateActiveEffect(longlong * param_1, float param_2, longlong * param_3, ulonglong param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn update_active_effect(param_1: *mut i64, param_2: f32, param_3: *mut i64, param_4: u64) -> u64 { unsafe { function!(34092, (*mut i64, f32, *mut i64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
 /// `UpdateActiveEffectConditionStatus` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 34062, rva 0x5bb470).
 /// `undefined UpdateActiveEffectConditionStatus(longlong param_1, float param_2, undefined8 param_3, undefined4 param_4)`
 ///
@@ -1662,13 +1676,6 @@ pub unsafe fn update_active_effect(param_1: *mut i64, param_2: f32, param_3: *mu
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn update_active_effect_condition_status(param_1: i64, param_2: f32, param_3: u64, param_4: u32) -> u64 { unsafe { function!(34062, (i64, f32, u64, u32) -> u64)(param_1, param_2, param_3, param_4) } }
-/// `UpdateActiveEffectList` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 34527, rva 0x5d2080).
-/// `undefined UpdateActiveEffectList(longlong * param_1, float param_2, TypeDescriptor * param_3, TypeDescriptor * param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn update_active_effect_list(param_1: *mut i64, param_2: f32, param_3: *mut c_void, param_4: *mut c_void) -> u64 { unsafe { function!(34527, (*mut i64, f32, *mut c_void, *mut c_void) -> u64)(param_1, param_2, param_3, param_4) } }
 /// `UpdateActiveEffectsWhilePaused` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 40704, rva 0x75d390).
 /// `undefined UpdateActiveEffectsWhilePaused(longlong param_1, undefined8 param_2, TypeDescriptor * param_3, TypeDescriptor * param_4)`
 ///
@@ -2537,13 +2544,6 @@ pub unsafe fn update_item_info_object_from_entry(param_1: *mut i64, param_2: *mu
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn update_item_info_object_from_form(param_1: *mut i64, param_2: i64) -> u64 { unsafe { function!(51219, (*mut i64, i64) -> u64)(param_1, param_2) } }
-/// `UpdateKnockState` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 39896, rva 0x723b60).
-/// `undefined UpdateKnockState(longlong param_1, TESObjectREFR * param_2, undefined8 param_3, undefined8 param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn update_knock_state(param_1: i64, param_2: *mut crate::TESObjectREFR, param_3: u64, param_4: u64) -> u64 { unsafe { function!(39896, (i64, *mut crate::TESObjectREFR, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
 /// `UpdateKnowledgeEntryForTargetViaProcess` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 37920, rva 0x6ad340).
 /// `undefined UpdateKnowledgeEntryForTargetViaProcess(longlong * param_1, undefined8 param_2)`
 ///
@@ -2628,13 +2628,6 @@ pub unsafe fn update_member_detection_of_targets(param_1: i64) -> u64 { unsafe {
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn update_membership_in_list2_b68(param_1: *mut i64, param_2: i64) -> u64 { unsafe { function!(84066, (*mut i64, i64) -> u64)(param_1, param_2) } }
-/// `UpdateMotionDrivenAnimationMode` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 37355, rva 0x67c210).
-/// `undefined UpdateMotionDrivenAnimationMode(longlong param_1, undefined8 param_2, undefined8 param_3, longlong param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn update_motion_driven_animation_mode(param_1: i64, param_2: u64, param_3: u64, param_4: i64) -> u64 { unsafe { function!(37355, (i64, u64, u64, i64) -> u64)(param_1, param_2, param_3, param_4) } }
 /// `UpdateMovementParameters` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 39363, rva 0x6f5b00).
 /// `undefined UpdateMovementParameters(longlong param_1, longlong param_2, undefined8 param_3, undefined8 param_4)`
 ///
@@ -6401,13 +6394,6 @@ pub unsafe fn write_row_array_to_sound_file_c_str(param_1: u64, param_2: *mut c_
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn write_save_decals_and_locked_arrays(param_1: i64, param_2: i64) -> u32 { unsafe { function!(41418, (i64, i64) -> u32)(param_1, param_2) } }
-/// `WriteSaveFields180To1C0` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 42362, rva 0x7af8c0).
-/// `undefined WriteSaveFields180To1C0(longlong param_1, longlong param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn write_save_fields180_to1_c0(param_1: i64, param_2: i64) -> u64 { unsafe { function!(42362, (i64, i64) -> u64)(param_1, param_2) } }
 /// `WriteSaveFieldsAndListsB0` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 41414, rva 0x786930).
 /// `undefined WriteSaveFieldsAndListsB0(longlong param_1, longlong param_2)`
 ///

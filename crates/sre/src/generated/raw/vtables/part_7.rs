@@ -3,6 +3,20 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `BSPrecomputedNavmeshInfoSearch::vftable` at 0x1abcd78, id 245685 (rtti, high); 3 slots.
+#[repr(C)]
+pub struct BSPrecomputedNavmeshInfoSearch_vtable {
+    /// `BSPrecomputedNavmeshInfoSearch::vdtor` at 0x11c95d0 (layout_inference, medium); signature (low): `BSPrecomputedNavmeshInfoSearch * vdtor(BSPrecomputedNavmeshInfoSearch * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_0: *const c_void,
+    /// `BSNavmeshInfoSearch::vfunc_1` at 0x11c7ec0 (rtti, medium); signature (low): `undefined8 vfunc_1(BSNavmeshInfoSearch * this, float * param_1, float * * param_2, undefined1 * param_3)`
+    pub slot_1: *const c_void,
+    /// `BSPrecomputedNavmeshInfoSearch::vfunc_2` at 0x11c8b50 (rtti, high); signature (low): `longlong vfunc_2(BSPrecomputedNavmeshInfoSearch * this, longlong param_1)`
+    pub slot_2: *const c_void,
+}
+impl BSPrecomputedNavmeshInfoSearch_vtable {
+    pub const ID: u64 = 245685;
+}
+
 /// `BSProceduralLightningController::vftable` at 0x1a71e30, id 238536 (rtti, high); 60 slots.
 #[repr(C)]
 pub struct BSProceduralLightningController_vtable {

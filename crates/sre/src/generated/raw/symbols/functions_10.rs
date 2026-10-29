@@ -4,6 +4,13 @@
 use crate::raw::*;
 
 pub(super) const ROWS: &[Function] = &[
+    Function { rva: 0x13c9240, id: 451051, confidence: Confidence::High, name: "ScalarDeletingDtorSize10_81" },
+    Function { rva: 0x13c9750, id: 451063, confidence: Confidence::Medium, name: "DestroyViaVfunc0AndFree_51" },
+    Function { rva: 0x13c9810, id: 451065, confidence: Confidence::Medium, name: "ConstructFunctionalStorage10_11" },
+    Function { rva: 0x13c9dd0, id: 451071, confidence: Confidence::High, name: "ScalarDeletingDtorSize10_82" },
+    Function { rva: 0x13c9e00, id: 451072, confidence: Confidence::High, name: "ScalarDeletingDtorSize10_83" },
+    Function { rva: 0x13ca280, id: 451084, confidence: Confidence::Medium, name: "DestroyViaVfunc0AndFree_52" },
+    Function { rva: 0x13ca340, id: 451086, confidence: Confidence::Medium, name: "ConstructFunctionalStorage10_12" },
     Function { rva: 0x13ca7b0, id: 451092, confidence: Confidence::High, name: "ScalarDeletingDtorSize10_84" },
     Function { rva: 0x13ca7e0, id: 451093, confidence: Confidence::High, name: "ScalarDeletingDtorSize10_85" },
     Function { rva: 0x13cac10, id: 451105, confidence: Confidence::Medium, name: "DestroyViaVfunc0AndFree_53" },
@@ -8186,10 +8193,4 @@ pub(super) const ROWS: &[Function] = &[
     Function { rva: 0x1771a00, id: 168606, confidence: Confidence::Medium, name: "GameSetting_fPainDelay__atexit" },
     Function { rva: 0x1771a50, id: 168607, confidence: Confidence::Medium, name: "GameSetting_fPartialPickAverage__atexit" },
     Function { rva: 0x1771aa0, id: 168608, confidence: Confidence::Medium, name: "GameSetting_fPartialPickEasy__atexit" },
-    Function { rva: 0x1771af0, id: 168609, confidence: Confidence::Medium, name: "GameSetting_fPartialPickHard__atexit" },
-    Function { rva: 0x1771b40, id: 168610, confidence: Confidence::Medium, name: "GameSetting_fPartialPickVeryEasy__atexit" },
-    Function { rva: 0x1771b90, id: 168611, confidence: Confidence::Medium, name: "GameSetting_fPartialPickVeryHard__atexit" },
-    Function { rva: 0x1771be0, id: 168612, confidence: Confidence::Medium, name: "GameSetting_fPerkHeavyArmorExpertSpeedMult__atexit" },
-    Function { rva: 0x1771c30, id: 168613, confidence: Confidence::Medium, name: "GameSetting_fPerkHeavyArmorJourneymanDamageMult__atexit" },
-    Function { rva: 0x1771c80, id: 168614, confidence: Confidence::Medium, name: "GameSetting_fPerkHeavyArmorMasterSpeedMult__atexit" },
 ];

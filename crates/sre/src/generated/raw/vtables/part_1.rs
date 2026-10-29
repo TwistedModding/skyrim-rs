@@ -86,7 +86,7 @@ pub struct AbsorbEffect_vtable {
     pub slot_3: *const c_void,
     /// `ValueModifierEffect::vfunc_4` at 0x5e73c0 (rtti, medium); signature (medium): `undefined vfunc_4(ValueModifierEffect * this, float param_1)`
     pub slot_4: *const c_void,
-    /// `ActiveEffect::vfunc_5` at 0x5bb6c0 (rtti, medium); signature (low): `undefined vfunc_5(ActiveEffect * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    /// `ActiveEffect::UpdateConditions` at 0x5bb6c0 (semantic, medium); signature (untiered): `undefined UpdateConditions(ActiveEffect * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_5: *const c_void,
     /// `ValueModifierEffect::vfunc_6` at 0x5e7000 (rtti, medium); signature (high): `undefined8 vfunc_6(ValueModifierEffect * this)`
     pub slot_6: *const c_void,
@@ -210,7 +210,7 @@ pub struct AccumulatingValueModifierEffect_vtable {
     pub slot_3: *const c_void,
     /// `ValueModifierEffect::vfunc_4` at 0x5e73c0 (rtti, medium); signature (medium): `undefined vfunc_4(ValueModifierEffect * this, float param_1)`
     pub slot_4: *const c_void,
-    /// `ActiveEffect::vfunc_5` at 0x5bb6c0 (rtti, medium); signature (low): `undefined vfunc_5(ActiveEffect * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    /// `ActiveEffect::UpdateConditions` at 0x5bb6c0 (semantic, medium); signature (untiered): `undefined UpdateConditions(ActiveEffect * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_5: *const c_void,
     /// `ValueModifierEffect::vfunc_6` at 0x5e7000 (rtti, medium); signature (high): `undefined8 vfunc_6(ValueModifierEffect * this)`
     pub slot_6: *const c_void,
@@ -346,7 +346,7 @@ pub struct ActiveEffect_vtable {
     pub slot_3: *const c_void,
     /// `ActiveEffect::vfunc_4` at 0x5bf0c0 (rtti, medium); signature (low): `undefined vfunc_4(void)`
     pub slot_4: *const c_void,
-    /// `ActiveEffect::vfunc_5` at 0x5bb6c0 (rtti, medium); signature (low): `undefined vfunc_5(ActiveEffect * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    /// `ActiveEffect::UpdateConditions` at 0x5bb6c0 (semantic, medium); signature (untiered): `undefined UpdateConditions(ActiveEffect * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`; `UpdateConditions`: re-evaluates the conditions and sets or clears flags 0x8000 (medium); semantic signature: `void (ActiveEffect* this, float dt)`
     pub slot_5: *const c_void,
     /// `ActiveEffect::vfunc_6` at 0x5bb9c0 (rtti, medium); signature (low): `undefined1 vfunc_6(void)`
     pub slot_6: *const c_void,
@@ -389,6 +389,7 @@ pub struct ActiveEffect_vtable {
 }
 impl ActiveEffect_vtable {
     pub const ID: u64 = 205813;
+    pub const SLOT_UpdateConditions: usize = 5;
 }
 
 /// `ActiveEffect::ForEachHitEffectVisitor::vftable` at 0x18f5b80, id 205811 (rtti, high); 2 slots.
@@ -668,7 +669,7 @@ pub struct Actor_vtable {
     pub slot_90: *const c_void,
     /// `Actor::vfunc_91` at 0x692c20 (rtti, medium); signature (low): `float * vfunc_91(Actor * this, float * param_1)`
     pub slot_91: *const c_void,
-    /// `Actor::vfunc_92` at 0x6d4b90 (rtti, medium); signature (low): `ActorMagicCaster * vfunc_92(Actor * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+    /// `Actor::GetMagicCaster` at 0x6d4b90 (semantic, high); signature (untiered): `ActorMagicCaster * GetMagicCaster(Actor * this, uint param_1, undefined8 param_2, undefined8 param_3)`; `GetMagicCaster`: returns or creates the caster at +0x1a8[source] (high); semantic signature: `ActorMagicCaster* (Actor* this, u32 source)`
     pub slot_92: *const c_void,
     /// `Actor::vfunc_93` at 0x6d8550 (rtti, medium); signature (high): `Actor_vtbl_A0 * * vfunc_93(Actor * this)`
     pub slot_93: *const c_void,
@@ -816,7 +817,7 @@ pub struct Actor_vtable {
     pub slot_164: *const c_void,
     /// `Actor::vfunc_165` at 0x675350 (rtti, medium); signature (low): `undefined vfunc_165(void)`
     pub slot_165: *const c_void,
-    /// `Actor::vfunc_166` at 0x675930 (rtti, medium); signature (low): `undefined vfunc_166(Actor * this, char param_1)`
+    /// `Actor::RequestWeaponDrawn` at 0x675930 (semantic, high); signature (untiered): `undefined RequestWeaponDrawn(Actor * this, char param_1)`; `RequestWeaponDrawn`: draw/sheathe request through the Draw/Sheath actions (weapon states 1, 2, 4, 5) (high); semantic signature: `void (Actor* this, bool draw)`
     pub slot_166: *const c_void,
     /// `Actor::vfunc_167` at 0x676e30 (rtti, medium); signature (low): `undefined8 vfunc_167(Actor * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_167: *const c_void,
@@ -1079,6 +1080,12 @@ pub struct Actor_vtable {
 }
 impl Actor_vtable {
     pub const ID: u64 = 207511;
+    pub const SLOT_GetMagicCaster: usize = 92;
+    /// Slot 92 as `Actor_vtable_GetMagicCaster`, `None` when the slot is null.
+    #[must_use]
+    pub fn GetMagicCaster(&self) -> Option<Actor_vtable_GetMagicCaster> {
+        unsafe { core::mem::transmute::<*const c_void, Option<Actor_vtable_GetMagicCaster>>(self.slot_92) }
+    }
     pub const SLOT_IsChild: usize = 94;
     /// Slot 94 as `Actor_vtable_IsChild`, `None` when the slot is null.
     #[must_use]
@@ -1096,6 +1103,12 @@ impl Actor_vtable {
     #[must_use]
     pub fn IsDead(&self) -> Option<Actor_vtable_IsDead> {
         unsafe { core::mem::transmute::<*const c_void, Option<Actor_vtable_IsDead>>(self.slot_153) }
+    }
+    pub const SLOT_RequestWeaponDrawn: usize = 166;
+    /// Slot 166 as `Actor_vtable_RequestWeaponDrawn`, `None` when the slot is null.
+    #[must_use]
+    pub fn RequestWeaponDrawn(&self) -> Option<Actor_vtable_RequestWeaponDrawn> {
+        unsafe { core::mem::transmute::<*const c_void, Option<Actor_vtable_RequestWeaponDrawn>>(self.slot_166) }
     }
     pub const SLOT_Update: usize = 173;
     /// Slot 173 as `Actor_vtable_Update`, `None` when the slot is null.
@@ -1142,12 +1155,16 @@ impl Actor_vtable {
         unsafe { core::mem::transmute::<*const c_void, Option<Actor_vtable_UpdateHeadTracking>>(self.slot_290) }
     }
 }
+/// `Actor::GetMagicCaster`, slot 92: returns or creates the caster at +0x1a8[source] (high).
+pub type Actor_vtable_GetMagicCaster = unsafe extern "C" fn(this: *mut crate::Actor, source: u32) -> *mut crate::ActorMagicCaster;
 /// `Actor::IsChild`, slot 94: whether the actor is a child (high).
 pub type Actor_vtable_IsChild = unsafe extern "C" fn(this: *const crate::Actor) -> bool;
 /// `Actor::SetMiddleHighProcessField150`, slot 140: stores value in currentProcess->middleHigh (+8) +0x150 when both exist (high).
 pub type Actor_vtable_SetMiddleHighProcessField150 = unsafe extern "C" fn(this: *mut crate::Actor, value: *mut c_void);
 /// `Actor::IsDead`, slot 153: whether the actor is dead or dying (high).
 pub type Actor_vtable_IsDead = unsafe extern "C" fn(this: *const crate::Actor, ignoreBleedout: bool) -> bool;
+/// `Actor::RequestWeaponDrawn`, slot 166: draw/sheathe request through the Draw/Sheath actions (weapon states 1, 2, 4, 5) (high).
+pub type Actor_vtable_RequestWeaponDrawn = unsafe extern "C" fn(this: *mut crate::Actor, draw: bool);
 /// `Actor::Update`, slot 173: the actor's per-frame update (movement, water, process, animation); PlayerCharacter::Update chains to it (high).
 pub type Actor_vtable_Update = unsafe extern "C" fn(this: *mut crate::Actor, delta: f32);
 /// `Actor::UpdateEquippedWeaponAnimations`, slot 178: re-reads the equipped hand types into the graph variables iLeftHandType/iRightHandType (g_AnimationVariableNames +0x388/+0x390), handles the mounted (war horse) case and the camera's combat offsets, and when the flag is set runs default object 0x51 'Action Force Equip' (high).
@@ -1250,7 +1267,7 @@ pub struct Actor_vtable_A0 {
     pub slot_5: *const c_void,
     /// `Actor::MagicTarget_vfunc_6` at 0x6d8570 (rtti, medium); signature (high): `undefined8 MagicTarget_vfunc_6(Actor * this)`
     pub slot_6: *const c_void,
-    /// `Actor::GetActiveEffectList` at 0x6d85b0 (runtime, high); signature (untiered): `undefined8 GetActiveEffectList(Actor * this)`
+    /// `MagicTarget::GetActiveEffectList` at 0x6d85b0 (runtime, high); signature (untiered): `undefined8 GetActiveEffectList(MagicTarget * this)`
     pub slot_7: *const c_void,
     /// `Actor::MagicTarget_vfunc_8` at 0x6d50c0 (rtti, medium); signature (low): `undefined MagicTarget_vfunc_8(Actor * this, longlong param_1, ulonglong param_2, TypeDescriptor * param_3)`
     pub slot_8: *const c_void,
@@ -1328,7 +1345,7 @@ pub struct Actor_vtable_C0 {
     pub slot_15: *const c_void,
     /// `Actor::ActorState_vfunc_16` at 0x6b5bc0 (rtti, medium); signature (low): `undefined1 ActorState_vfunc_16(Actor * this, undefined8 * param_1)`
     pub slot_16: *const c_void,
-    /// `Actor::ActorState_vfunc_17` at 0x6b5bf0 (rtti, medium); signature (high): `undefined4 ActorState_vfunc_17(Actor * this)`
+    /// `Actor::ActorState_GetCharacterState` at 0x6b5bf0 (semantic, high); signature (untiered): `undefined4 ActorState_GetCharacterState(Actor * this)`
     pub slot_17: *const c_void,
     /// `Actor::ActorState_vfunc_18` at 0x6b5c30 (rtti, medium); signature (high): `undefined8 ActorState_vfunc_18(Actor * this)`
     pub slot_18: *const c_void,
@@ -3458,7 +3475,7 @@ impl ArrayOfTuplesImplementation__View_vtable {
 pub struct ArrowAttachHandler_vtable {
     /// `ArrowAttachHandler::vdtor` at 0x7d3910 (layout_inference, medium); signature (low): `ArrowAttachHandler * vdtor(ArrowAttachHandler * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `ArrowAttachHandler::vfunc_1` at 0x7cdbb0 (rtti, high); signature (low): `undefined8 vfunc_1(ArrowAttachHandler * this, longlong * param_1)`
+    /// `ArrowAttachHandler::Handle` at 0x7cdbb0 (semantic, high); signature (untiered): `undefined8 Handle(ArrowAttachHandler * this, longlong * param_1)`
     pub slot_1: *const c_void,
 }
 impl ArrowAttachHandler_vtable {
@@ -3470,7 +3487,7 @@ impl ArrowAttachHandler_vtable {
 pub struct ArrowDetachHandler_vtable {
     /// `ArrowDetachHandler::vdtor` at 0x7d3940 (layout_inference, medium); signature (low): `ArrowDetachHandler * vdtor(ArrowDetachHandler * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `ArrowDetachHandler::vfunc_1` at 0x7cdc70 (rtti, high); signature (low): `undefined8 vfunc_1(ArrowDetachHandler * this, longlong * param_1)`
+    /// `ArrowDetachHandler::Handle` at 0x7cdc70 (semantic, high); signature (untiered): `undefined8 Handle(ArrowDetachHandler * this, longlong * param_1)`
     pub slot_1: *const c_void,
 }
 impl ArrowDetachHandler_vtable {
@@ -3952,7 +3969,7 @@ impl ArrowProjectile_vtable_38 {
 pub struct ArrowReleaseHandler_vtable {
     /// `ArrowReleaseHandler::vdtor` at 0x7d3970 (layout_inference, medium); signature (low): `ArrowReleaseHandler * vdtor(ArrowReleaseHandler * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `ArrowReleaseHandler::vfunc_1` at 0x7cdd40 (rtti, high); signature (low): `undefined8 vfunc_1(ArrowReleaseHandler * this, uint * param_1)`
+    /// `ArrowReleaseHandler::Handle` at 0x7cdd40 (semantic, high); signature (untiered): `undefined8 Handle(ArrowReleaseHandler * this, uint * param_1)`
     pub slot_1: *const c_void,
 }
 impl ArrowReleaseHandler_vtable {
@@ -4090,7 +4107,7 @@ pub type AttackBlockHandler_vtable_CanProcess = unsafe extern "C" fn(this: *mut 
 pub struct AttackStopHandler_vtable {
     /// `AttackStopHandler::vdtor` at 0x7d39a0 (layout_inference, medium); signature (low): `AttackStopHandler * vdtor(AttackStopHandler * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `AttackStopHandler::vfunc_1` at 0x7cc650 (rtti, high); signature (low): `undefined1 vfunc_1(AttackStopHandler * this, longlong param_1)`
+    /// `AttackStopHandler::Handle` at 0x7cc650 (semantic, high); signature (untiered): `undefined1 Handle(AttackStopHandler * this, longlong param_1)`
     pub slot_1: *const c_void,
 }
 impl AttackStopHandler_vtable {
@@ -4102,7 +4119,7 @@ impl AttackStopHandler_vtable {
 pub struct AttackWinEndHandler_vtable {
     /// `AttackWinEndHandler::vdtor` at 0x7d39d0 (layout_inference, medium); signature (low): `AttackWinEndHandler * vdtor(AttackWinEndHandler * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `AttackWinEndHandler::vfunc_1` at 0x7cc610 (rtti, high); signature (low): `undefined8 vfunc_1(AttackWinEndHandler * this, longlong param_1)`
+    /// `AttackWinEndHandler::Handle` at 0x7cc610 (semantic, high); signature (untiered): `undefined8 Handle(AttackWinEndHandler * this, longlong param_1)`
     pub slot_1: *const c_void,
 }
 impl AttackWinEndHandler_vtable {
@@ -4114,7 +4131,7 @@ impl AttackWinEndHandler_vtable {
 pub struct AttackWinStartHandler_vtable {
     /// `AttackWinStartHandler::vdtor` at 0x7d3a00 (layout_inference, medium); signature (low): `AttackWinStartHandler * vdtor(AttackWinStartHandler * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `AttackWinStartHandler::vfunc_1` at 0x7cc5d0 (rtti, high); signature (low): `undefined8 vfunc_1(AttackWinStartHandler * this, longlong param_1)`
+    /// `AttackWinStartHandler::Handle` at 0x7cc5d0 (semantic, high); signature (untiered): `undefined8 Handle(AttackWinStartHandler * this, longlong param_1)`
     pub slot_1: *const c_void,
 }
 impl AttackWinStartHandler_vtable {
@@ -9943,33 +9960,5 @@ pub struct AutoRegisterCreator_CombatMagicCasterTargetEffect_BSTCreateFactoryMan
 }
 impl AutoRegisterCreator_CombatMagicCasterTargetEffect_BSTCreateFactoryManager_unsigned_int_CombatObject_256___vtable {
     pub const ID: u64 = 211813;
-}
-
-/// `AutoRegisterCreator<CombatMagicCasterWard,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_>::vftable` at 0x1949460, id 210665 (rtti, high); 3 slots.
-#[repr(C)]
-pub struct AutoRegisterCreator_CombatMagicCasterWard_BSTCreateFactoryManager_unsigned_int_CombatObject_256___vtable {
-    /// `AutoRegisterCreator<CombatMagicCasterWard,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_>::vdtor` at 0x8327c0 (layout_inference, medium); signature (low): `AutoRegisterCreator<CombatMagicCasterWard,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_> * vdtor(AutoRegisterCreator<CombatMagicCasterWard,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `BSTDerivedCreator<CombatMagicCasterWard,CombatObject>::vfunc_1` at 0x8326c0 (rtti, medium); signature (low): `undefined8 * vfunc_1(BSTDerivedCreator<CombatMagicCasterWard,CombatObject> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_1: *const c_void,
-    /// `BSTDerivedCreator<CombatMagicCasterWard,CombatObject>::vfunc_2` at 0x832740 (rtti, medium); signature (low): `undefined vfunc_2(BSTDerivedCreator<CombatMagicCasterWard,CombatObject> * this, undefined8 * param_1)`
-    pub slot_2: *const c_void,
-}
-impl AutoRegisterCreator_CombatMagicCasterWard_BSTCreateFactoryManager_unsigned_int_CombatObject_256___vtable {
-    pub const ID: u64 = 210665;
-}
-
-/// `AutoRegisterCreator<CombatMeleeAimController,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_>::vftable` at 0x1943ce8, id 210045 (rtti, high); 3 slots.
-#[repr(C)]
-pub struct AutoRegisterCreator_CombatMeleeAimController_BSTCreateFactoryManager_unsigned_int_CombatObject_256___vtable {
-    /// `AutoRegisterCreator<CombatMeleeAimController,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_>::vdtor` at 0x809b40 (layout_inference, medium); signature (low): `AutoRegisterCreator<CombatMeleeAimController,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_> * vdtor(AutoRegisterCreator<CombatMeleeAimController,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `BSTDerivedCreator<CombatMeleeAimController,CombatObject>::vfunc_1` at 0x809a40 (rtti, medium); signature (low): `undefined8 * vfunc_1(BSTDerivedCreator<CombatMeleeAimController,CombatObject> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_1: *const c_void,
-    /// `BSTDerivedCreator<CombatMeleeAimController,CombatObject>::vfunc_2` at 0x809ac0 (rtti, medium); signature (low): `undefined vfunc_2(BSTDerivedCreator<CombatMeleeAimController,CombatObject> * this, undefined8 * param_1)`
-    pub slot_2: *const c_void,
-}
-impl AutoRegisterCreator_CombatMeleeAimController_BSTCreateFactoryManager_unsigned_int_CombatObject_256___vtable {
-    pub const ID: u64 = 210045;
 }
 

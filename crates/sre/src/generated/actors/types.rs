@@ -104,9 +104,9 @@ pub struct Actor {
     /// +0xC0 `vtbl:Actor:C0`, rtti
     #[doc(hidden)]
     pub __vftable_C0: *const crate::raw::vtables::Actor_vtable_C0,
-    /// +0xC8 `undefined4`, base ActorState, semantic; movement flags: bits 8-10 sprint/sneak/swim, 18-20 flying state, 21-24 life state (1 dying, 2 dead, 5 essential down, 7-8 bleedout); see the flag rows (high)
+    /// +0xC8 `undefined4`, base ActorState, semantic; movement flags: bits 8-10 sprint/sneak/swim, 14-17 sit/sleep state (ActorSitSleepState), 18-20 flying state (ActorFlyingState), 21-24 life state (1 dying, 2 dead, 5 essential down, 7-8 bleedout), 25-27 knock state (ActorKnockState), 28-31 attack state (ActorAttackState); see the flag rows (high)
     pub flags1: u32,
-    /// +0xCC `undefined4`, base ActorState, semantic; state flags: bits 5-7 weapon state, drawn when >= 3 (high)
+    /// +0xCC `undefined4`, base ActorState, semantic; state flags: bits 5-7 weapon state (ActorWeaponState; drawn when >= 3), bit 8 wants to block (blockStart / blockStop), bits 10-11 recoil and large recoil (IsRecoiling tests 0xc00), bit 13 staggered (IsStaggered 0x33f700) (high)
     pub flags2: u32,
     /// +0xD0 `vtbl:Actor:D0`, rtti
     #[doc(hidden)]
@@ -145,7 +145,12 @@ pub struct Actor {
     pub unknown_174: [u8; 28],
     /// +0x190 `undefined4`, ctor store
     pub field_190: u32,
-    pub unknown_194: [u8; 92],
+    pub unknown_194: [u8; 20],
+    /// +0x1A8 `pointer`, semantic; per-source casters created on demand by slot 92: [0] left hand, [1] right hand, [2] other (voice), [3] fourth source (medium)
+    pub magicCasters: [u8; 32],
+    /// +0x1C8 `pointer`, semantic; the spell selected for each casting source ([0] left, [1] right) (medium)
+    pub selectedSpells: [u8; 32],
+    pub unknown_1E8: [u8; 8],
     /// +0x1F0 `undefined4`, ctor store
     pub field_1F0: u32,
     pub unknown_1F4: [u8; 4],
@@ -225,6 +230,8 @@ const _: () = assert!(core::mem::offset_of!(Actor, movementController) == 0x150)
 const _: () = assert!(core::mem::offset_of!(Actor, combatController) == 0x160);
 const _: () = assert!(core::mem::offset_of!(Actor, field_170) == 0x170);
 const _: () = assert!(core::mem::offset_of!(Actor, field_190) == 0x190);
+const _: () = assert!(core::mem::offset_of!(Actor, magicCasters) == 0x1A8);
+const _: () = assert!(core::mem::offset_of!(Actor, selectedSpells) == 0x1C8);
 const _: () = assert!(core::mem::offset_of!(Actor, field_1F0) == 0x1F0);
 const _: () = assert!(core::mem::offset_of!(Actor, race) == 0x1F8);
 const _: () = assert!(core::mem::offset_of!(Actor, boolFlags2) == 0x204);
@@ -247,9 +254,9 @@ pub struct ActorState {
     /// +0x0 `vtbl:ActorState:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::ActorState_vtable,
-    /// +0x8 `undefined4`, ctor store, semantic, runtime; movement flags: bits 8-10 sprint/sneak/swim, 18-20 flying state, 21-24 life state (1 dying, 2 dead, 5 essential down, 7-8 bleedout); see the flag rows (high)
+    /// +0x8 `undefined4`, ctor store, semantic, runtime; movement flags: bits 8-10 sprint/sneak/swim, 14-17 sit/sleep state (ActorSitSleepState), 18-20 flying state (ActorFlyingState), 21-24 life state (1 dying, 2 dead, 5 essential down, 7-8 bleedout), 25-27 knock state (ActorKnockState), 28-31 attack state (ActorAttackState); see the flag rows (high)
     pub flags1: u32,
-    /// +0xC `undefined4`, ctor store, semantic, runtime; state flags: bits 5-7 weapon state, drawn when >= 3 (high)
+    /// +0xC `undefined4`, ctor store, semantic, runtime; state flags: bits 5-7 weapon state (ActorWeaponState; drawn when >= 3), bit 8 wants to block (blockStart / blockStop), bits 10-11 recoil and large recoil (IsRecoiling tests 0xc00), bit 13 staggered (IsStaggered 0x33f700) (high)
     pub flags2: u32,
     #[doc(hidden)]
     pub __engine: crate::Engine,
@@ -592,9 +599,9 @@ pub struct Character {
     /// +0xC0 `vtbl:Character:C0`, rtti
     #[doc(hidden)]
     pub __vftable_C0: *const crate::raw::vtables::Character_vtable_C0,
-    /// +0xC8 `undefined4`, base ActorState, semantic; movement flags: bits 8-10 sprint/sneak/swim, 18-20 flying state, 21-24 life state (1 dying, 2 dead, 5 essential down, 7-8 bleedout); see the flag rows (high)
+    /// +0xC8 `undefined4`, base ActorState, semantic; movement flags: bits 8-10 sprint/sneak/swim, 14-17 sit/sleep state (ActorSitSleepState), 18-20 flying state (ActorFlyingState), 21-24 life state (1 dying, 2 dead, 5 essential down, 7-8 bleedout), 25-27 knock state (ActorKnockState), 28-31 attack state (ActorAttackState); see the flag rows (high)
     pub flags1: u32,
-    /// +0xCC `undefined4`, base ActorState, semantic; state flags: bits 5-7 weapon state, drawn when >= 3 (high)
+    /// +0xCC `undefined4`, base ActorState, semantic; state flags: bits 5-7 weapon state (ActorWeaponState; drawn when >= 3), bit 8 wants to block (blockStart / blockStop), bits 10-11 recoil and large recoil (IsRecoiling tests 0xc00), bit 13 staggered (IsStaggered 0x33f700) (high)
     pub flags2: u32,
     /// +0xD0 `vtbl:Character:D0`, rtti
     #[doc(hidden)]
@@ -636,7 +643,12 @@ pub struct Character {
     pub unknown_174: [u8; 28],
     /// +0x190 `undefined4`, base Actor
     pub field_190: u32,
-    pub unknown_194: [u8; 92],
+    pub unknown_194: [u8; 20],
+    /// +0x1A8 `pointer`, base Actor, semantic; per-source casters created on demand by slot 92: [0] left hand, [1] right hand, [2] other (voice), [3] fourth source (medium)
+    pub magicCasters: [u8; 32],
+    /// +0x1C8 `pointer`, base Actor, semantic; the spell selected for each casting source ([0] left, [1] right) (medium)
+    pub selectedSpells: [u8; 32],
+    pub unknown_1E8: [u8; 8],
     /// +0x1F0 `undefined4`, base Actor
     pub field_1F0: u32,
     pub unknown_1F4: [u8; 4],
@@ -724,6 +736,8 @@ const _: () = assert!(core::mem::offset_of!(Character, movementController) == 0x
 const _: () = assert!(core::mem::offset_of!(Character, combatController) == 0x160);
 const _: () = assert!(core::mem::offset_of!(Character, field_170) == 0x170);
 const _: () = assert!(core::mem::offset_of!(Character, field_190) == 0x190);
+const _: () = assert!(core::mem::offset_of!(Character, magicCasters) == 0x1A8);
+const _: () = assert!(core::mem::offset_of!(Character, selectedSpells) == 0x1C8);
 const _: () = assert!(core::mem::offset_of!(Character, field_1F0) == 0x1F0);
 const _: () = assert!(core::mem::offset_of!(Character, race) == 0x1F8);
 const _: () = assert!(core::mem::offset_of!(Character, boolFlags2) == 0x204);
@@ -867,7 +881,9 @@ pub struct MiddleHighProcessData {
     pub movementDirection: f32,
     /// +0xBC `float`, semantic; fed to graph variable PitchDelta (scaled) (high)
     pub pitchDelta: f32,
-    pub unknown_C0: [u8; 232],
+    pub unknown_C0: [u8; 224],
+    /// +0x1A0 `pointer`, semantic; head node of the actor's active-effect list ({item +0, next +8}) (high)
+    pub activeEffects: *mut c_void,
     /// +0x1A8 `ptr:BSAnimationGraphManager`, semantic; the actor's graph manager (BSTSmartPointer, ref count at manager+8) (high)
     pub animationGraphManager: *mut crate::BSAnimationGraphManager,
     /// +0x1B0 `pointer`, semantic; manager+0x70 of the current manager, null when none (medium)
@@ -884,7 +900,10 @@ pub struct MiddleHighProcessData {
     pub unknown_258: [u8; 8],
     /// +0x260 `ptr:InventoryEntry`, semantic; inventory entry equipped in the right hand (high)
     pub rightHandEntry: *mut crate::InventoryEntry,
-    pub unknown_268: [u8; 64],
+    pub unknown_268: [u8; 24],
+    /// +0x280 `ptr:TESIdleForm`, semantic; the idle IsLastIdlePlayed compares; written only by AIProcess load (0x6f9b22, from the save), the process reset 0x6fcb68 (0) and InitDefaults 0x7331d2 (0) (medium)
+    pub lastIdlePlayed: *mut crate::TESIdleForm,
+    pub unknown_288: [u8; 32],
     /// +0x2A8 `float`, semantic; current movement speed, fed to graph variable Speed (divided by the channel's scale) (high)
     pub speed: f32,
     /// +0x2AC `float`, semantic; fed to graph variable TargetSpeed (high)
@@ -909,12 +928,14 @@ const _: () = assert!(core::mem::offset_of!(MiddleHighProcessData, pitch) == 0xB
 const _: () = assert!(core::mem::offset_of!(MiddleHighProcessData, roll) == 0xB4);
 const _: () = assert!(core::mem::offset_of!(MiddleHighProcessData, movementDirection) == 0xB8);
 const _: () = assert!(core::mem::offset_of!(MiddleHighProcessData, pitchDelta) == 0xBC);
+const _: () = assert!(core::mem::offset_of!(MiddleHighProcessData, activeEffects) == 0x1A0);
 const _: () = assert!(core::mem::offset_of!(MiddleHighProcessData, animationGraphManager) == 0x1A8);
 const _: () = assert!(core::mem::offset_of!(MiddleHighProcessData, animationGraphManagerData) == 0x1B0);
 const _: () = assert!(core::mem::offset_of!(MiddleHighProcessData, lock) == 0x1E8);
 const _: () = assert!(core::mem::offset_of!(MiddleHighProcessData, leftHandEntry) == 0x220);
 const _: () = assert!(core::mem::offset_of!(MiddleHighProcessData, charController) == 0x250);
 const _: () = assert!(core::mem::offset_of!(MiddleHighProcessData, rightHandEntry) == 0x260);
+const _: () = assert!(core::mem::offset_of!(MiddleHighProcessData, lastIdlePlayed) == 0x280);
 const _: () = assert!(core::mem::offset_of!(MiddleHighProcessData, speed) == 0x2A8);
 const _: () = assert!(core::mem::offset_of!(MiddleHighProcessData, targetSpeed) == 0x2AC);
 const _: () = assert!(core::mem::offset_of!(MiddleHighProcessData, wardMagnitude) == 0x2BC);
@@ -998,9 +1019,9 @@ pub struct PlayerCharacter {
     /// +0xC0 `vtbl:PlayerCharacter:C0`, rtti
     #[doc(hidden)]
     pub __vftable_C0: *const crate::raw::vtables::PlayerCharacter_vtable_C0,
-    /// +0xC8 `undefined4`, base ActorState, semantic; movement flags: bits 8-10 sprint/sneak/swim, 18-20 flying state, 21-24 life state (1 dying, 2 dead, 5 essential down, 7-8 bleedout); see the flag rows (high)
+    /// +0xC8 `undefined4`, base ActorState, semantic; movement flags: bits 8-10 sprint/sneak/swim, 14-17 sit/sleep state (ActorSitSleepState), 18-20 flying state (ActorFlyingState), 21-24 life state (1 dying, 2 dead, 5 essential down, 7-8 bleedout), 25-27 knock state (ActorKnockState), 28-31 attack state (ActorAttackState); see the flag rows (high)
     pub flags1: u32,
-    /// +0xCC `undefined4`, base ActorState, semantic; state flags: bits 5-7 weapon state, drawn when >= 3 (high)
+    /// +0xCC `undefined4`, base ActorState, semantic; state flags: bits 5-7 weapon state (ActorWeaponState; drawn when >= 3), bit 8 wants to block (blockStart / blockStop), bits 10-11 recoil and large recoil (IsRecoiling tests 0xc00), bit 13 staggered (IsStaggered 0x33f700) (high)
     pub flags2: u32,
     /// +0xD0 `vtbl:PlayerCharacter:D0`, rtti
     #[doc(hidden)]
@@ -1044,12 +1065,12 @@ pub struct PlayerCharacter {
     pub unknown_174: [u8; 28],
     /// +0x190 `undefined4`, base Actor
     pub field_190: u32,
-    pub unknown_194: [u8; 36],
-    /// +0x1B8 `ptr:ActorMagicCaster`, runtime
-    pub field_1B8: *mut crate::ActorMagicCaster,
-    /// +0x1C0 `ptr:ActorMagicCaster`, runtime
-    pub field_1C0: *mut crate::ActorMagicCaster,
-    pub unknown_1C8: [u8; 40],
+    pub unknown_194: [u8; 20],
+    /// +0x1A8 `pointer`, base Actor, semantic; per-source casters created on demand by slot 92: [0] left hand, [1] right hand, [2] other (voice), [3] fourth source (medium)
+    pub magicCasters: [u8; 32],
+    /// +0x1C8 `pointer`, base Actor, semantic; the spell selected for each casting source ([0] left, [1] right) (medium)
+    pub selectedSpells: [u8; 32],
+    pub unknown_1E8: [u8; 8],
     /// +0x1F0 `undefined4`, base Actor
     pub field_1F0: u32,
     pub unknown_1F4: [u8; 4],
@@ -1626,8 +1647,8 @@ const _: () = assert!(core::mem::offset_of!(PlayerCharacter, movementController)
 const _: () = assert!(core::mem::offset_of!(PlayerCharacter, combatController) == 0x160);
 const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_170) == 0x170);
 const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_190) == 0x190);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_1B8) == 0x1B8);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_1C0) == 0x1C0);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, magicCasters) == 0x1A8);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, selectedSpells) == 0x1C8);
 const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_1F0) == 0x1F0);
 const _: () = assert!(core::mem::offset_of!(PlayerCharacter, race) == 0x1F8);
 const _: () = assert!(core::mem::offset_of!(PlayerCharacter, boolFlags2) == 0x204);

@@ -136,6 +136,12 @@ impl crate::AIProcess {
     /// `NiPoint3* (AIProcess* this)`
     #[inline]
     pub fn get_high_point424(&self) -> Option<&'static crate::NiPoint3> { unsafe { function!(39597, (*const Self) -> Option<&'static crate::NiPoint3>)(core::ptr::from_ref(self)) } }
+    /// `AIProcess::GetLastIdlePlayed`: middleHigh (+8) ->+0x280, or null without middle-high data
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 39869, rva 0x7232d0.
+    /// `TESIdleForm* (AIProcess* this)`
+    #[inline]
+    pub fn get_last_idle_played(&self) -> Option<&'static crate::TESIdleForm> { unsafe { function!(39869, (*const Self) -> Option<&'static crate::TESIdleForm>)(core::ptr::from_ref(self)) } }
     /// `AIProcess::GetLoadingMenuClosed`: high process data (+0x10) byte +0x45e != 0 (false without high data)
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 39543, rva 0x700d60.
@@ -154,6 +160,15 @@ impl crate::AIProcess {
     /// `bool (AIProcess* this)`
     #[inline]
     pub fn has_middle_high_field210(&self) -> bool { unsafe { function!(39792, (*const Self) -> bool)(core::ptr::from_ref(self)) } }
+    /// `AIProcess::PlayIdle`: builds a TESActionData for the default-object action (0x40 from Papyrus) carrying the idle (+0x48) and runs it through LoadActionAnimationWithCallback 0x703360; returns whether the graph accepted it. Refuses during player VATS playback (VATS+0x20 == 4) and for actors in some states; it stores no 'current idle' pointer
+    ///
+    /// Semantic, camera pass, medium; ledger semantic evidence, name medium; id 39256, rva 0x6f0a20.
+    /// `bool (AIProcess* this, Actor* actor, u32 actionDefaultObject, TESIdleForm* idle, bool checkConditions, bool force, TESObjectREFR* target)`
+    ///
+    /// # Safety
+    /// The pass rates the signature medium.
+    #[inline]
+    pub unsafe fn play_idle(&self, actor: *mut crate::Actor, actionDefaultObject: u32, idle: *mut crate::TESIdleForm, checkConditions: bool, force: bool, target: *mut crate::TESObjectREFR) -> bool { unsafe { function!(39256, (*const Self, *mut crate::Actor, u32, *mut crate::TESIdleForm, bool, bool, *mut crate::TESObjectREFR) -> bool)(core::ptr::from_ref(self), actor, actionDefaultObject, idle, checkConditions, force, target) } }
     /// `AIProcess::ResetHighField3F8Pair`: high data +0x3f8 = +0x3fa = 0xffff
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 39522, rva 0x6ffef0.
@@ -346,6 +361,12 @@ impl crate::Actor {
     /// The pass rates the signature medium.
     #[inline]
     pub unsafe fn get_alpha_multiplier(&self) -> f32 { unsafe { virtual_function!(self, 226, (*const Self) -> f32)(core::ptr::from_ref(self)) } }
+    /// `Actor::GetMagicCaster`, vtable slot 92: returns or creates the caster at +0x1a8[source]
+    ///
+    /// Semantic, actors pass, high; called through the object's vtable.
+    /// `ActorMagicCaster* (Actor* this, u32 source)`
+    #[inline]
+    pub fn get_magic_caster(&self, source: u32) -> Option<&'static crate::ActorMagicCaster> { unsafe { virtual_function!(self, 92, (*const Self, u32) -> Option<&'static crate::ActorMagicCaster>)(core::ptr::from_ref(self), source) } }
     /// `Actor::IsChild`, vtable slot 94: whether the actor is a child
     ///
     /// Semantic, actors pass, high; called through the object's vtable.
@@ -371,6 +392,12 @@ impl crate::Actor {
     /// May be null: `killer`.
     #[inline]
     pub fn kill(&self, killer: Option<&Self>, deathEventValue: f32, sendStoryEvent: bool, skipDeathAction: bool) { unsafe { virtual_function!(self, 270, (*const Self, *const Self, f32, bool, bool))(core::ptr::from_ref(self), killer.map_or(core::ptr::null(), core::ptr::from_ref), deathEventValue, sendStoryEvent, skipDeathAction) } }
+    /// `Actor::RequestWeaponDrawn`, vtable slot 166: draw/sheathe request through the Draw/Sheath actions (weapon states 1, 2, 4, 5)
+    ///
+    /// Semantic, actors pass, high; called through the object's vtable.
+    /// `void (Actor* this, bool draw)`
+    #[inline]
+    pub fn request_weapon_drawn(&self, draw: bool) { unsafe { virtual_function!(self, 166, (*const Self, bool))(core::ptr::from_ref(self), draw) } }
     /// `Actor::SetAlpha`, vtable slot 225: stores the alpha in the process and in NiAVObject.fadeAmount (+0x100) of the 3D; for the player (this == ID_401069) on both roots
     ///
     /// Semantic, actors pass, high; called through the object's vtable.
@@ -413,6 +440,12 @@ impl crate::Actor {
     /// `void (Actor* this, float delta)`
     #[inline]
     pub fn update_head_tracking(&self, delta: f32) { unsafe { virtual_function!(self, 290, (*const Self, f32))(core::ptr::from_ref(self), delta) } }
+    /// `Actor::ActorState_GetCharacterState`: Actor's ActorState slot 17: the character controller state (charController+0x200), 0 without a process or controller
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 38038, rva 0x6b5bf0.
+    /// `u32 (ActorState* this)`
+    #[inline]
+    pub fn actor_state_get_character_state(&self) -> u32 { unsafe { function!(38038, (*const Self) -> u32)(core::ptr::from_ref(self).byte_add(0xC0)) } }
     /// `Actor::ActorState_GetMovementSpeed`: Actor's ActorState slot 5 (this = Actor+0xc0): the process's movement speed, 0 without a process
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 38028, rva 0x6b5860.
@@ -490,7 +523,7 @@ impl crate::Actor {
     pub unsafe fn create_animation_channels(&self, out: *mut c_void) { unsafe { function!(37984, (*const Self, *mut c_void))(core::ptr::from_ref(self).byte_add(0x38), out) } }
     /// `Actor::GetActiveEffectList`: MagicTarget slot 7 on an actor: the list at +0x1a0 of the process's middle-high data (Actor+0xf8, then +8), null for an actor without one; nodes are {effect, next}
     ///
-    /// Semantic, papyrus pass, high; ledger runtime evidence, name high; id 38795, rva 0x6d85b0.
+    /// Semantic, papyrus pass, high; ledger `MagicTarget::GetActiveEffectList` runtime evidence, name high; id 38795, rva 0x6d85b0.
     /// `BSSimpleList<ActiveEffect*>* (MagicTarget* this)`
     ///
     /// # Safety
@@ -617,18 +650,51 @@ impl crate::Actor {
     /// `bool (const Actor* this, const BGSKeyword* keyword)`
     #[inline]
     pub fn has_keyword(&self, keyword: &crate::BGSKeyword) -> bool { unsafe { function!(37183, (*const Self, *const crate::BGSKeyword) -> bool)(core::ptr::from_ref(self), core::ptr::from_ref(keyword)) } }
+    /// `Actor::IsAnimationDriven`: true when the movement controller's IMovementMotionDrivenControl reports not motion-driven
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 37486, rva 0x687ac0.
+    /// `bool (Actor* actor)`
+    #[inline]
+    pub fn is_animation_driven(&self) -> bool { unsafe { function!(37486, (*const Self) -> bool)(core::ptr::from_ref(self)) } }
+    /// `Actor::IsAttacking`: attack state (flags1 bits 28-31) != 0
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 38590, rva 0x6cb920.
+    /// `bool (Actor* actor)`
+    #[inline]
+    pub fn is_attacking(&self) -> bool { unsafe { function!(38590, (*const Self) -> bool)(core::ptr::from_ref(self)) } }
     /// `Actor::IsBeingRidden`: boolFlags2 (+0x204) bit 1 set and an ExtraInteraction (0xa9) in the extra list (read under the extra list lock)
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 38303, rva 0x6be200.
     /// `bool (const Actor* this)`
     #[inline]
     pub fn is_being_ridden(&self) -> bool { unsafe { function!(38303, (*const Self) -> bool)(core::ptr::from_ref(self)) } }
+    /// `Actor::IsBlocking`: graph bool 'IsBlocking' through the actor's IAnimationGraphManagerHolder (Actor+0x38) slot 18; false when no graph has it
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 37952, rva 0x6aef60.
+    /// `bool (Actor* actor)`
+    #[inline]
+    pub fn is_blocking(&self) -> bool { unsafe { function!(37952, (*const Self) -> bool)(core::ptr::from_ref(self)) } }
     /// `Actor::IsBoolFlags2Bit3Clear`: !(boolFlags2 (+0x204) bit 3)
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 40729, rva 0x75e150.
     /// `bool (Actor* this)`
     #[inline]
     pub fn is_bool_flags2_bit3_clear(&self) -> bool { unsafe { function!(40729, (*const Self) -> bool)(core::ptr::from_ref(self)) } }
+    /// `Actor::IsCasting`: true when any of the four magic casters (Actor+0x1a8[0..3]) has a current spell (+0x28), optionally equal to spell
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 38759, rva 0x6d6780.
+    /// `bool (Actor* actor, MagicItem* spell)`
+    #[inline]
+    pub fn is_casting(&self, spell: &crate::MagicItem) -> bool { unsafe { function!(38759, (*const Self, *const crate::MagicItem) -> bool)(core::ptr::from_ref(self), core::ptr::from_ref(spell)) } }
+    /// `Actor::IsDualCasting`: condition IsDualCasting: byte +0x45f of the process data at AIProcess+0x10
+    ///
+    /// Semantic, camera pass, medium; ledger semantic evidence, name medium; id 38764, rva 0x6d6b30.
+    /// `bool (Actor* actor)`
+    ///
+    /// # Safety
+    /// The pass rates the signature medium.
+    #[inline]
+    pub unsafe fn is_dual_casting(&self) -> bool { unsafe { function!(38764, (*const Self) -> bool)(core::ptr::from_ref(self)) } }
     /// `Actor::IsGhost`: whether the actor is a ghost
     ///
     /// Semantic, actors pass, medium; ledger semantic evidence, name medium; id 37275, rva 0x6756b0.
@@ -647,6 +713,12 @@ impl crate::Actor {
     /// The pass rates the signature medium.
     #[inline]
     pub unsafe fn is_in_combat_group_with(&self, other: *mut crate::TESObjectREFR) -> bool { unsafe { function!(38571, (*const Self, *mut crate::TESObjectREFR) -> bool)(core::ptr::from_ref(self), other) } }
+    /// `Actor::IsInMidAir`: true when the character controller of the actor's mount (or of the actor itself) is in state 2 (bhkCharacterStateInAir)
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 37243, rva 0x6747f0.
+    /// `bool (Actor* actor)`
+    #[inline]
+    pub fn is_in_mid_air(&self) -> bool { unsafe { function!(37243, (*const Self) -> bool)(core::ptr::from_ref(self)) } }
     /// `Actor::IsOnMount`: whether riding
     ///
     /// Semantic, actors pass, high; ledger runtime evidence, name high; id 17965, rva 0x285a30.
@@ -682,6 +754,15 @@ impl crate::Actor {
     /// `void (Actor* actor)`
     #[inline]
     pub fn perform_knockdown_action(&self) { unsafe { function!(40151, (*const Self))(core::ptr::from_ref(self)) } }
+    /// `Actor::PlayIdle_Impl`: Papyrus Actor.PlayIdle (0xa01930, target null) and PlayIdleWithTarget: logs and fails on a None actor, a None idle or no AI process; otherwise AIProcess::PlayIdle(process, actor, 0x40, idle, 1, 0, target)
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 55105, rva 0xa12e60.
+    /// `bool (Actor* this, TESIdleForm* idle, TESObjectREFR* target, IVirtualMachine* vm, u32 stackId)`
+    ///
+    /// # Safety
+    /// `vm` must point to what the engine expects.
+    #[inline]
+    pub unsafe fn play_idle_impl(&self, idle: *mut crate::TESIdleForm, target: *mut crate::TESObjectREFR, vm: *mut c_void, stackId: u32) -> bool { unsafe { function!(55105, (*const Self, *mut crate::TESIdleForm, *mut crate::TESObjectREFR, *mut c_void, u32) -> bool)(core::ptr::from_ref(self), idle, target, vm, stackId) } }
     /// `Actor::ProcessAnimationGraphEvent`: handles the actor's own animation events after TESObjectREFR's handler; a tag found in the footstep source's filter list (BSTArray<BSFixedString> at source+0x60, tested by 0x737040) is re-sent as a BGSFootstepEvent {actor handle, tag} through g_FootstepEventSource_ptr
     ///
     /// Semantic, events pass, high; ledger runtime evidence, name high; id 37997, rva 0x6b2000.
@@ -692,12 +773,12 @@ impl crate::Actor {
     /// `source` must point to what the engine expects.
     #[inline]
     pub unsafe fn process_animation_graph_event(&self, event: *const crate::BSAnimationGraphEvent, source: *mut c_void) -> Result<crate::BSEventNotifyControl, u32> { unsafe { let raw = function!(37997, (*const Self, *const crate::BSAnimationGraphEvent, *mut c_void) -> u32)(core::ptr::from_ref(self).byte_add(0x30), event, source); crate::BSEventNotifyControl::from_u32(raw).ok_or(raw) } }
-    /// `Actor::ReapplySlot166FromFlags2`: when flags2 (+0xcc) bits 5-7 are 0x20 or 0x80, tail-calls Actor slot 166 (+0x530) with (bits == 0x20)
+    /// `Actor::RetryPendingWeaponRequest`: when the weapon state is 1 (want draw) or 4 (want sheathe), calls slot 166 with draw = (state == 1)
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 37280, rva 0x675b90.
     /// `void (Actor* this)`
     #[inline]
-    pub fn reapply_slot166_from_flags2(&self) { unsafe { function!(37280, (*const Self))(core::ptr::from_ref(self)) } }
+    pub fn retry_pending_weapon_request(&self) { unsafe { function!(37280, (*const Self))(core::ptr::from_ref(self)) } }
     /// `Actor::SetLifeState`: stores the life state into bits 21..24 of Actor+0xc8 (flags1) and applies the transition: state 2 (dead) stops sounds and 3D effects; entering/leaving bleedout (states 7/8) pushes or leaves the player's bleedout camera
     ///
     /// Semantic, camera pass, high; ledger runtime evidence, name high; id 37612, rva 0x693200.
@@ -1312,6 +1393,12 @@ impl crate::PlayerCharacter {
     /// `source` must point to what the engine expects.
     #[inline]
     pub unsafe fn process_menu_open_close_event(&self, event: *const crate::MenuOpenCloseEvent, source: *mut c_void) -> Result<crate::BSEventNotifyControl, u32> { unsafe { let raw = function!(40740, (*const Self, *const crate::MenuOpenCloseEvent, *mut c_void) -> u32)(core::ptr::from_ref(self).byte_add(0x2B8), event, source); crate::BSEventNotifyControl::from_u32(raw).ok_or(raw) } }
+    /// `PlayerCharacter::RequestWeaponDrawn`: PlayerCharacter slot 166: performs 'Action Draw'/'Action Sheath' and only on acceptance sets 2 (Drawing) or 5 (Sheathing) and arms the draw/sheathe timeout +0xa28; a refused request leaves the state unchanged (the player never gets 1 or 4 from here)
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 41235, rva 0x7766b0.
+    /// `void (PlayerCharacter* this, bool draw)`
+    #[inline]
+    pub fn request_weapon_drawn(&self, draw: bool) { unsafe { function!(41235, (*const Self, bool))(core::ptr::from_ref(self), draw) } }
     /// `PlayerCharacter::ResetField9C0Block`: ResetField9C0Block_impl(*holder)
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 41571, rva 0x78e930.
@@ -1348,6 +1435,12 @@ impl crate::PlayerCharacter {
     /// `void (PlayerCharacter* this, bool firstPerson)`
     #[inline]
     pub fn set_first_person(&self, firstPerson: bool) { unsafe { function!(40476, (*const Self, bool))(core::ptr::from_ref(self), firstPerson) } }
+    /// `PlayerCharacter::SetSitSleepState`: PlayerCharacter's ActorState slot 20: writes bits 14-17 like the base and, for states 0, 3 and 7, calls 0x756950 with 0.0
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 40735, rva 0x75e4a0.
+    /// `bool (ActorState* this, u32 state)`
+    #[inline]
+    pub fn set_sit_sleep_state(&self, state: u32) -> bool { unsafe { function!(40735, (*const Self, u32) -> bool)(core::ptr::from_ref(self).byte_add(0xC0), state) } }
     /// `PlayerCharacter::SetWeaponDrawnState`: PlayerCamera+0x162 = !drawn when the player is the camera target or mounted; Actor::SetWeaponDrawn
     ///
     /// Semantic, camera pass, high; ledger runtime evidence, name high; id 40752, rva 0x760e00.

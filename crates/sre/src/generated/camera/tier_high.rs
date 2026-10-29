@@ -173,20 +173,6 @@ impl crate::MovementControllerNPC {
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
     pub unsafe fn i_movement_motion_driven_control_vfunc_2(&self) -> u64 { unsafe { function!(41702, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x128)) } }
-    /// `MovementControllerNPC::IMovementMotionDrivenControl_vfunc_3` (decompiler signature, tier high; ledger rtti evidence, name high; id 41704, rva 0x796760).
-    /// `undefined IMovementMotionDrivenControl_vfunc_3(MovementControllerNPC * this)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn i_movement_motion_driven_control_vfunc_3(&self) -> u64 { unsafe { function!(41704, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x128)) } }
-    /// `MovementControllerNPC::IMovementMotionDrivenControl_vfunc_6` (decompiler signature, tier high; ledger rtti evidence, name high; id 41706, rva 0x7968b0).
-    /// `longlong IMovementMotionDrivenControl_vfunc_6(MovementControllerNPC * this)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn i_movement_motion_driven_control_vfunc_6(&self) -> i64 { unsafe { function!(41706, (*const Self) -> i64)(core::ptr::from_ref(self).byte_add(0x128)) } }
     /// `MovementControllerNPC::IMovementMotionDrivenControl_vfunc_7` (decompiler signature, tier high; ledger rtti evidence, name high; id 41707, rva 0x7968e0).
     /// `longlong IMovementMotionDrivenControl_vfunc_7(MovementControllerNPC * this)`
     ///
@@ -277,5 +263,46 @@ impl crate::TESFurniture {
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
     pub unsafe fn tes_model_texture_swap_vdtor(&self) -> u64 { unsafe { function!(17435, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x40)) } }
+}
+
+impl crate::TESObjectWEAP {
+    /// `TESObjectWEAP::BGSBlockBashData_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 18126, rva 0x28e454).
+    /// `undefined BGSBlockBashData_vdtor(TESObjectWEAP * this)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn bgs_block_bash_data_vdtor(&self) -> u64 { unsafe { function!(18126, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x128)) } }
+    /// `TESObjectWEAP::BGSKeywordForm_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 18127, rva 0x28e460).
+    /// `undefined BGSKeywordForm_vdtor(TESObjectWEAP * this)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn bgs_keyword_form_vdtor(&self) -> u64 { unsafe { function!(18127, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x140)) } }
+    /// `TESObjectWEAP::BGSPickupPutdownSounds_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 18125, rva 0x28e448).
+    /// `undefined BGSPickupPutdownSounds_vdtor(TESObjectWEAP * this)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn bgs_pickup_putdown_sounds_vdtor(&self) -> u64 { unsafe { function!(18125, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x110)) } }
+    /// `TESObjectWEAP::ctor` (decompiler signature, tier high; ledger decompiler evidence, name high; id 18070, rva 0x288f40).
+    /// `TESBoundObject * ctor(TESBoundObject * param_1, undefined8 param_2, longlong param_3, undefined1 * param_4)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn ctor(param_1: *mut crate::TESBoundObject, param_2: u64, param_3: i64, param_4: *mut u8) -> *mut crate::TESBoundObject { unsafe { function!(18070, (*mut crate::TESBoundObject, u64, i64, *mut u8) -> *mut crate::TESBoundObject)(param_1, param_2, param_3, param_4) } }
+}
+
+impl crate::TESQuest {
+    /// `TESQuest::TESFullName_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 25161, rva 0x3dece8).
+    /// `undefined TESFullName_vdtor(TESQuest * this)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn tes_full_name_vdtor(&self) -> u64 { unsafe { function!(25161, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x28)) } }
 }
 
