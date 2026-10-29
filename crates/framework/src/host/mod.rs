@@ -102,6 +102,7 @@ static TABLE: Table = Table {
     key_held: overlay::game_key_held,
     key_released: overlay::game_key_released,
     game_mouse: overlay::game_mouse,
+    game_pad: overlay::game_pad,
     input_filter: filters::declare,
     filter_set_active: filters::set_active,
     filter_active: filters::is_active,

@@ -28,7 +28,7 @@
 use core::ffi::{CStr, c_char};
 use std::fmt;
 
-pub use overlay::{GameMouse, Hotkey, Scope, View, egui, theme};
+pub use overlay::{GameMouse, GamePad, Hotkey, Scope, View, egui, theme};
 use skyrim::events::{BSTEventSource, ErasedHandler, ErasedSource, Event};
 use sre::{BSEventNotifyControl, InputDevice};
 use skyrim::input::{Command, CommandSlot, ErasedExecute, Param};
@@ -169,6 +169,7 @@ pub(crate) struct Table {
     pub key_held: fn(u32) -> bool,
     pub key_released: fn(u32) -> Option<f32>,
     pub game_mouse: fn() -> GameMouse,
+    pub game_pad: fn() -> GamePad,
     pub input_filter: DeclareFilterFn,
     pub filter_set_active: fn(usize, bool),
     pub filter_active: fn(usize) -> bool,
@@ -246,6 +247,14 @@ impl Host {
     #[must_use]
     pub fn mouse(&self) -> GameMouse {
         (self.table.game_mouse)()
+    }
+
+    /// What the gamepad did in the events that reached the game, in the same window as
+    /// [`mouse`](Self::mouse): the button presses and releases in order (`XInput` masks, see
+    /// [`GamePad`]), and the buttons held, the triggers and the sticks as the last event left them.
+    #[must_use]
+    pub fn gamepad(&self) -> GamePad {
+        (self.table.game_pad)()
     }
 
     /// Whether the keyboard key with this `DirectInput` scan code is down in the game (its press

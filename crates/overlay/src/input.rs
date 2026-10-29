@@ -148,16 +148,64 @@ pub struct GameMouse {
     pub buttons: Vec<(u32, bool)>,
 }
 
-/// What one present reports: key presses with who had each, the game's mouse and the keyboard
-/// releases that reached the game with the seconds each key was held.
+/// The gamepad as the game saw it between two presents: the button presses (`true`) and releases
+/// (`false`) in order, and the buttons, triggers and sticks as the last event left them. Buttons
+/// are `XInput` masks: 0x1 d-pad up, 0x2 down, 0x4 left, 0x8 right, 0x10 start, 0x20 back, 0x40
+/// left stick, 0x80 right stick, 0x100 left shoulder, 0x200 right shoulder, 0x1000 A, 0x2000 B,
+/// 0x4000 X, 0x8000 Y.
+#[derive(Clone, Debug, Default, PartialEq)]
+pub struct GamePad {
+    pub buttons: Vec<(u32, bool)>,
+    /// The buttons down, as a mask.
+    pub held: u32,
+    /// Left and right trigger (button ids 9 and 10), 0 released to 1.
+    pub triggers: [f32; 2],
+    /// Left and right stick (thumbstick ids 0xb and 0xc), x and y.
+    pub sticks: [[f32; 2]; 2],
+}
+
+impl GamePad {
+    const IDLE: Self = Self { buttons: Vec::new(), held: 0, triggers: [0.0; 2], sticks: [[0.0; 2]; 2] };
+
+    /// A button event: the triggers carry their axis in the value; a button is pressed on its
+    /// first frame and released when its value drops to 0.
+    fn button(&mut self, id: u32, value: f32, held_secs: f32) {
+        match id {
+            TRIGGER_LEFT | TRIGGER_RIGHT => self.triggers[(id - TRIGGER_LEFT) as usize] = value,
+            _ if value != 0.0 && held_secs == 0.0 => {
+                self.buttons.push((id, true));
+                self.held |= id;
+            }
+            _ if value == 0.0 => {
+                self.buttons.push((id, false));
+                self.held &= !id;
+            }
+            _ => {}
+        }
+    }
+
+    fn stick(&mut self, id: u32, x: f32, y: f32) {
+        if let Some(stick) = id.checked_sub(STICK_LEFT).and_then(|i| self.sticks.get_mut(i as usize)) {
+            *stick = [x, y];
+        }
+    }
+}
+
+const TRIGGER_LEFT: u32 = 9;
+const TRIGGER_RIGHT: u32 = 10;
+const STICK_LEFT: u32 = 0xB;
+
+/// What one present reports: key presses with who had each, the game's mouse and gamepad, and
+/// the keyboard releases that reached the game with the seconds each key was held.
 struct Reported {
     presses: Vec<(Hotkey, Scope)>,
     mouse: GameMouse,
+    pad: GamePad,
     releases: Vec<(u32, f32)>,
 }
 
 impl Reported {
-    const EMPTY: Self = Self { presses: Vec::new(), mouse: GameMouse { dx: 0, dy: 0, buttons: Vec::new() }, releases: Vec::new() };
+    const EMPTY: Self = Self { presses: Vec::new(), mouse: GameMouse { dx: 0, dy: 0, buttons: Vec::new() }, pad: GamePad::IDLE, releases: Vec::new() };
 }
 
 /// Those since the last present, and those the current present reports.
@@ -243,6 +291,13 @@ pub fn game_mouse() -> GameMouse {
     PRESSES.lock().unwrap().current.mouse.clone()
 }
 
+/// What the gamepad did in the events that reached the game, in the same window as [`game_mouse`];
+/// the held buttons, triggers and sticks carry over from window to window.
+#[must_use]
+pub fn game_pad() -> GamePad {
+    PRESSES.lock().unwrap().current.pad.clone()
+}
+
 /// Whether the keyboard key `scan_code` was released in the game in the same window as
 /// [`game_mouse`], with the seconds it was held (the event's own count, from its press frame).
 #[must_use]
@@ -260,17 +315,24 @@ pub fn game_key_held(scan_code: u32) -> bool {
 /// Makes the presses since the last present the ones [`pressed`] reports; at the start of every present.
 pub(crate) fn begin_frame() {
     let mut presses = PRESSES.lock().unwrap();
-    presses.current = core::mem::replace(&mut presses.pending, Reported::EMPTY);
+    let pad = GamePad { buttons: Vec::new(), ..presses.pending.pad.clone() };
+    presses.current = core::mem::replace(&mut presses.pending, Reported { pad, ..Reported::EMPTY });
 }
 
 impl Reported {
-    /// Adds the mouse events and the keyboard releases of a frame's list that reached the game.
+    /// Adds the mouse and gamepad events and the keyboard releases of a frame's list that reached the game.
     fn record(&mut self, list: &InputEventList) {
         for event in list.iter() {
             match (InputDevice::from_u32(event.device), event.as_button(), event.as_mouse_move()) {
                 (Some(InputDevice::Mouse), _, Some(m)) => self.mouse.moved(m.dx.cast_signed(), m.dy.cast_signed()),
                 (Some(InputDevice::Mouse), Some(b), _) => self.mouse.button(b.idCode, b.value, b.heldDownSecs),
                 (Some(InputDevice::Keyboard), Some(b), _) => self.key(b.idCode, b.value, b.heldDownSecs),
+                (Some(InputDevice::Gamepad), Some(b), _) => self.pad.button(b.idCode, b.value, b.heldDownSecs),
+                (Some(InputDevice::Gamepad), _, _) => {
+                    if let Some(s) = event.as_thumbstick() {
+                        self.pad.stick(s.idCode, s.x, s.y);
+                    }
+                }
                 _ => {}
             }
         }
@@ -607,6 +669,19 @@ mod tests {
         m.button(8, 1.0, 0.0);
         m.button(0, 0.0, 0.2);
         assert_eq!(m, GameMouse { dx: 7, dy: 3, buttons: vec![(0, true), (8, true), (0, false)] });
+    }
+
+    #[test]
+    fn the_gamepad_keeps_edges_held_buttons_triggers_and_sticks() {
+        let mut p = GamePad::IDLE;
+        p.button(0x100, 1.0, 0.0);
+        p.button(0x100, 1.0, 0.02);
+        p.button(0x1000, 1.0, 0.0);
+        p.button(TRIGGER_RIGHT, 0.6, 0.0);
+        p.button(0x100, 0.0, 0.3);
+        p.stick(0xC, 0.5, -1.0);
+        p.stick(0xD, 1.0, 1.0);
+        assert_eq!(p, GamePad { buttons: vec![(0x100, true), (0x1000, true), (0x100, false)], held: 0x1000, triggers: [0.0, 0.6], sticks: [[0.0, 0.0], [0.5, -1.0]] });
     }
 
     #[test]
