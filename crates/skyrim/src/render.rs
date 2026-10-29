@@ -353,6 +353,9 @@ pub trait NiAVObjectExt {
     /// Writes the local scale alone, under the same rules as [`set_local_transform`](Self::set_local_transform).
     fn set_local_scale(&self, scale: f32);
     fn world_transform(&self) -> Transform;
+    /// Writes the transform motion vectors take as last frame's (`previousWorld`, stashed by the
+    /// object's first world update of a render frame). Main thread, after the frame's updates.
+    fn set_previous_world(&self, world: Transform);
     /// Recomputes the world transforms and bounds after a local transform change
     /// (`NiAVObject::UpdateNode`: slot 44 on the object, then the parent's slot 61). Main thread, between frames.
     fn update_transforms(&self);
@@ -392,6 +395,10 @@ impl NiAVObjectExt for NiAVObject {
 
     fn world_transform(&self) -> Transform {
         Transform::from(&self.world)
+    }
+
+    fn set_previous_world(&self, world: Transform) {
+        unsafe { core::ptr::from_ref(&self.previousWorld).cast::<Transform>().cast_mut().write_volatile(world) }
     }
 
     fn update_transforms(&self) {
@@ -497,13 +504,13 @@ impl BSFlattenedBoneTreeExt for BSFlattenedBoneTree {
     fn rechain_bones(&self) {
         let bones = self.bones();
         for bone in bones {
-            let world = match unsafe { bone.node.as_ref() } {
-                Some(node) => node.world_transform(),
-                None => {
+            let world = unsafe { bone.node.as_ref() }.map_or_else(
+                || {
                     let parent = usize::try_from(bone.parent).ok().and_then(|i| bones.get(i)).map_or(&self.world, |p| &p.world);
                     Transform::from(parent).compose(&Transform::from(&bone.local))
-                }
-            };
+                },
+                NiAVObjectExt::world_transform,
+            );
             unsafe { core::ptr::from_ref(&bone.world).cast::<Transform>().cast_mut().write_volatile(world) }
         }
     }
