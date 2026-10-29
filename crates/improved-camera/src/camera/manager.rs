@@ -7,12 +7,9 @@
 //! (`UpdateNearDistance`); then the snapshot, and the body anchored to the camera
 //! (`BODY::Manager::AnchorCamera`).
 //!
-//! The near plane is handled one of two ways (`Advanced.bNearFirstPersonPass`). The consistent
-//! writes (the default): IC's pitch-driven near, written into `fNearDistance` and the frame camera
+//! The near plane is IC's pitch-driven near, written into `fNearDistance` and the frame camera
 //! together (`skyrim::render::set_near_plane`, RE `graphics.md` section 3), only when it moved a
-//! whole step or settled on an end of its range. The first-person pass: the world near stays the
-//! engine's and the body would be drawn by the first-person pass instead; that routing is not
-//! built, so this way only keeps the engine's near.
+//! whole step or settled on an end of its range.
 
 use std::sync::Mutex;
 use std::sync::atomic::{AtomicU32, Ordering};
@@ -997,11 +994,8 @@ impl Manager {
         root.update_transforms();
     }
 
-    /// `UpdateNearDistance` with the consistent writes; nothing while the first-person pass is chosen.
+    /// `UpdateNearDistance`.
     fn update_near_distance(&mut self, camera: &PlayerCamera, advanced: &Advanced) {
-        if advanced.bNearFirstPersonPass {
-            return;
-        }
         let body = body_snapshot::get();
         let pitch = camera.camera_root().map_or(0.0, |root| -quaternion_util::pitch(&root.local_transform().rotation).to_degrees());
         let Some(target) = near_target(advanced, self.present.camera, util::current_third_person_zoom(camera), body.hands != HandsType::None, body.action == ActionType::Sex, pitch) else { return };

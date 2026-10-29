@@ -77,9 +77,8 @@ pub(crate) fn log(line: &str) {
 
 /// Makes `profile` the active one and stores it; a change of the body option applies or restores
 /// the `SetFirstPerson` patch and the root's visibility at once, and turning it off puts the
-/// engine's FOV and near plane back, as does choosing the first-person pass for the near plane.
-/// Switching the first-person arms makes the magic casters find their node again, and turning
-/// them off turns head bob off (IC's General menu).
+/// engine's FOV and near plane back. Switching the first-person arms makes the magic casters find
+/// their node again, and turning them off turns head bob off (IC's General menu).
 fn apply_profile(profile: &settings::Profile) {
     let before = *settings::profile();
     let mut profile = *profile;
@@ -101,11 +100,8 @@ fn apply_profile(profile: &settings::Profile) {
         hook::fixes::apply_body_visibility();
         if !body {
             camera::manager::reset_fov();
+            camera::manager::reset_near();
         }
-    }
-    let pass = profile.Advanced.bNearFirstPersonPass;
-    if (before.General.bEnableBody && !body) || (!before.Advanced.bNearFirstPersonPass && pass) {
-        camera::manager::reset_near();
     }
 }
 
