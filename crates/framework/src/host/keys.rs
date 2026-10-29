@@ -68,6 +68,7 @@ pub(super) fn declare_host() {
 pub(super) fn declare(owner: &str, action: &str, default: &str, scope: Scope) -> usize {
     let name = format!("{owner}.{action}");
     let default_key = match default.parse::<Hotkey>() {
+        _ if default.is_empty() => None,
         Ok(key) => Some(key),
         Err(e) => {
             report(format!("{name}: the default {default:?} is not a key: {e}"));
@@ -255,6 +256,12 @@ mod tests {
         assert_eq!(settings::get(NAME, "key.test.a"), Some(Setting::Text("Shift+K".to_owned())));
         assert_eq!(settings::get(NAME, "by.hand"), Some(Setting::Text("kept".to_owned())));
         assert!(!fired(a));
+        let last = last_message();
+        let c = declare("test", "c", "", Scope::Game);
+        assert_eq!(key(c), None);
+        assert_eq!(last_message(), last, "no default is not a bad default");
+        assert_eq!(settings::get(NAME, "key.test.c"), None);
+        assert_eq!(set(c, "M".parse().unwrap()), Ok("test.c set to M".to_owned()));
         let _ = std::fs::remove_dir_all(&dir);
     }
 }
