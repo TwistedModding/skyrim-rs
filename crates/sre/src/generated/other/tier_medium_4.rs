@@ -3,27 +3,6 @@
 
 use core::ffi::{c_char, c_void};
 
-/// `ResolveHandleToCachedRef_2` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 34362, rva 0x5c8c10).
-/// `bool ResolveHandleToCachedRef_2(uint * param_1, longlong * param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn resolve_handle_to_cached_ref_2(param_1: *mut u32, param_2: *mut i64) -> u8 { unsafe { function!(34362, (*mut u32, *mut i64) -> u8)(param_1, param_2) } }
-/// `ResolveHandleToCachedRef_3` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 34902, rva 0x5ddca0).
-/// `bool ResolveHandleToCachedRef_3(uint * param_1, longlong * param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn resolve_handle_to_cached_ref_3(param_1: *mut u32, param_2: *mut i64) -> u8 { unsafe { function!(34902, (*mut u32, *mut i64) -> u8)(param_1, param_2) } }
-/// `ResolveListFormIDs` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 14309, rva 0x1dacd0).
-/// `undefined ResolveListFormIDs(longlong param_1, longlong param_2, TypeDescriptor * param_3, TypeDescriptor * param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn resolve_list_form_i_ds(param_1: i64, param_2: i64, param_3: *mut c_void, param_4: *mut c_void) -> u64 { unsafe { function!(14309, (i64, i64, *mut c_void, *mut c_void) -> u64)(param_1, param_2, param_3, param_4) } }
 /// `ResolveMastersForFileListD60` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 13746, rva 0x1be710).
 /// `undefined ResolveMastersForFileListD60(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 ///
@@ -1655,13 +1634,6 @@ pub unsafe fn set_actor_base_data_flag(param_1: i64, param_2: u32, param_3: c_ch
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn set_actor_base_level(param_1: i64, param_2: u16) -> u64 { unsafe { function!(14385, (i64, u16) -> u64)(param_1, param_2) } }
-/// `SetActorStateFlag400` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 37946, rva 0x6ae890).
-/// `ulonglong SetActorStateFlag400(longlong param_1, char param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn set_actor_state_flag400(param_1: i64, param_2: c_char) -> u64 { unsafe { function!(37946, (i64, c_char) -> u64)(param_1, param_2) } }
 /// `SetAndPlaySoundHandle698` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 40564, rva 0x754690).
 /// `undefined SetAndPlaySoundHandle698(longlong * param_1, int param_2)`
 ///

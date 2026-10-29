@@ -3,6 +3,86 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `NiBSplineCompTransformInterpolator::vfunc_37` at 0xf79dc0 (rtti, high); signature (low): `ulonglong vfunc_37(NiBSplineCompTransformInterpolator * this, float param_1, undefined8 param_2, float * param_3)`
+pub const NiBSplineCompTransformInterpolator__vfunc_37: u64 = 73471;
+/// `NiBSplineCompTransformInterpolator::vfunc_38` at 0xf7a2f0 (rtti, high); signature (untiered): `undefined1 vfunc_38(void)`
+pub const NiBSplineCompTransformInterpolator__vfunc_38: u64 = 73490;
+/// `NiBSplineCompTransformInterpolator::vfunc_39` at 0xf7a300 (rtti, high); signature (untiered): `undefined1 vfunc_39(void)`
+pub const NiBSplineCompTransformInterpolator__vfunc_39: u64 = 73491;
+/// `NiBSplineCompTransformInterpolator::vfunc_40` at 0xf7a310 (rtti, high); signature (untiered): `undefined1 vfunc_40(void)`
+pub const NiBSplineCompTransformInterpolator__vfunc_40: u64 = 73492;
+/// `NiBSplineCompTransformInterpolator::vfunc_41` at 0xf7a2e0 (rtti, high); signature (untiered): `undefined1 vfunc_41(void)`
+pub const NiBSplineCompTransformInterpolator__vfunc_41: u64 = 73489;
+/// `NiBSplineCompTransformInterpolator::vfunc_42` at 0xf7a320 (rtti, high); signature (untiered): `undefined1 vfunc_42(void)`
+pub const NiBSplineCompTransformInterpolator__vfunc_42: u64 = 73493;
+/// `NiBSplineCompTransformInterpolator::vfunc_62` at 0xf7a190 (rtti, high); signature (low): `undefined1 vfunc_62(void)`
+pub const NiBSplineCompTransformInterpolator__vfunc_62: u64 = 73485;
+/// `NiBSplineData::Create` at 0xf776d0 (string, high); signature (low): `NiObject * Create(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const NiBSplineData__Create: u64 = 73353;
+/// `NiBSplineData::ctor` at 0xf76eb0 (layout_inference, high); signature (high): `NiBSplineData * ctor(NiBSplineData * this)`
+pub const NiBSplineData__ctor: u64 = 73346;
+/// `NiBSplineData::dtor` at 0xf76ef0 (layout_inference, high); signature (high): `undefined dtor(NiBSplineData * this)`
+pub const NiBSplineData__dtor: u64 = 73347;
+/// `NiBSplineData::vdtor` at 0xf77810 (layout_inference, medium); signature (low): `NiBSplineData * vdtor(NiBSplineData * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+pub const NiBSplineData__vdtor: u64 = 73356;
+/// `NiBSplineData::vfunc_2` at 0xf77e10 (rtti, high); signature (low): `TypeNode * vfunc_2(void)`
+pub const NiBSplineData__vfunc_2: u64 = 73358;
+/// `NiBSplineData::vfunc_24` at 0xf76b40 (rtti, high); signature (low): `undefined vfunc_24(NiBSplineData * this, longlong param_1)`
+pub const NiBSplineData__vfunc_24: u64 = 73340;
+/// `NiBSplineData::vfunc_25` at 0xf76c70 (rtti, high); signature (untiered): `undefined vfunc_25(void)`
+pub const NiBSplineData__vfunc_25: u64 = 73341;
+/// `NiBSplineData::vfunc_26` at 0xf76c80 (rtti, high); signature (untiered): `undefined vfunc_26(NiBSplineData * this, longlong * param_1)`
+pub const NiBSplineData__vfunc_26: u64 = 73342;
+/// `NiBSplineData::vfunc_27` at 0xf76c90 (rtti, high); signature (low): `undefined vfunc_27(NiBSplineData * this, longlong param_1)`
+pub const NiBSplineData__vfunc_27: u64 = 73343;
+/// `NiBSplineData::vfunc_28` at 0xf76da0 (rtti, high); signature (low): `ulonglong vfunc_28(NiBSplineData * this, longlong * param_1)`
+pub const NiBSplineData__vfunc_28: u64 = 73344;
+/// `NiBSplineFloatInterpolator::Create` at 0xf7a8f0 (string, high); signature (low): `NiBSplineInterpolator * Create(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const NiBSplineFloatInterpolator__Create: u64 = 73513;
+/// `NiBSplineFloatInterpolator::ctor` at 0xf7a6c0 (layout_inference, high); signature (low): `NiBSplineFloatInterpolator * ctor(NiBSplineFloatInterpolator * this, longlong param_1, undefined4 param_2, longlong param_3)`
+pub const NiBSplineFloatInterpolator__ctor: u64 = 73502;
+/// `NiBSplineFloatInterpolator::ctor` at 0xf7a700 (layout_inference, high); signature (medium): `NiBSplineFloatInterpolator * ctor(NiBSplineFloatInterpolator * this, float param_1)`
+pub const NiBSplineFloatInterpolator__ctor_2: u64 = 73503;
+/// `NiBSplineFloatInterpolator::vdtor` at 0xf7a9b0 (slot_propagation, medium); signature (low): `NiBSplineFloatInterpolator * vdtor(NiBSplineFloatInterpolator * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+pub const NiBSplineFloatInterpolator__vdtor: u64 = 79734;
+/// `NiBSplineFloatInterpolator::vfunc_2` at 0xf7a9f0 (rtti, high); signature (low): `TypeNode * vfunc_2(void)`
+pub const NiBSplineFloatInterpolator__vfunc_2: u64 = 73515;
+/// `NiBSplineFloatInterpolator::vfunc_23` at 0xf7a330 (rtti, high); signature (low): `NiBSplineInterpolator * vfunc_23(NiBSplineFloatInterpolator * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
+pub const NiBSplineFloatInterpolator__vfunc_23: u64 = 73494;
+/// `NiBSplineFloatInterpolator::vfunc_24` at 0xf7a460 (rtti, high); signature (low): `undefined vfunc_24(NiBSplineFloatInterpolator * this, longlong param_1)`
+pub const NiBSplineFloatInterpolator__vfunc_24: u64 = 73496;
+/// `NiBSplineFloatInterpolator::vfunc_25` at 0xf7a4f0 (rtti, high); signature (untiered): `undefined vfunc_25(void)`
+pub const NiBSplineFloatInterpolator__vfunc_25: u64 = 73497;
+/// `NiBSplineFloatInterpolator::vfunc_26` at 0xf7a500 (rtti, high); signature (low): `bool vfunc_26(NiBSplineFloatInterpolator * this, longlong * param_1)`
+pub const NiBSplineFloatInterpolator__vfunc_26: u64 = 73498;
+/// `NiBSplineFloatInterpolator::vfunc_27` at 0xf7a520 (rtti, high); signature (low): `undefined vfunc_27(NiBSplineFloatInterpolator * this, longlong * param_1)`
+pub const NiBSplineFloatInterpolator__vfunc_27: u64 = 73499;
+/// `NiBSplineFloatInterpolator::vfunc_28` at 0xf7a5b0 (rtti, high); signature (low): `ulonglong vfunc_28(NiBSplineFloatInterpolator * this, longlong * param_1)`
+pub const NiBSplineFloatInterpolator__vfunc_28: u64 = 73500;
+/// `NiBSplineFloatInterpolator::vfunc_37` at 0xf7aa20 (rtti, high); signature (untiered): `undefined1 vfunc_37(void)`
+pub const NiBSplineFloatInterpolator__vfunc_37: u64 = 73518;
+/// `NiBSplineFloatInterpolator::vfunc_38` at 0xf7aa00 (rtti, high); signature (untiered): `undefined1 vfunc_38(void)`
+pub const NiBSplineFloatInterpolator__vfunc_38: u64 = 73516;
+/// `NiBSplineFloatInterpolator::vfunc_39` at 0xf7aa10 (rtti, high); signature (untiered): `undefined1 vfunc_39(void)`
+pub const NiBSplineFloatInterpolator__vfunc_39: u64 = 73517;
+/// `NiBSplineFloatInterpolator::vfunc_40` at 0xf7aa30 (rtti, high); signature (untiered): `undefined1 vfunc_40(void)`
+pub const NiBSplineFloatInterpolator__vfunc_40: u64 = 73519;
+/// `NiBSplineFloatInterpolator::vfunc_41` at 0xf7a750 (rtti, high); signature (low): `undefined8 vfunc_41(NiBSplineFloatInterpolator * this, float param_1, undefined8 param_2, float * param_3)`
+pub const NiBSplineFloatInterpolator__vfunc_41: u64 = 73504;
+/// `NiBSplineFloatInterpolator::vfunc_42` at 0xf7aa40 (rtti, high); signature (untiered): `undefined1 vfunc_42(void)`
+pub const NiBSplineFloatInterpolator__vfunc_42: u64 = 73520;
+/// `NiBSplineFloatInterpolator::vfunc_44` at 0xf7a7f0 (rtti, medium); signature (low): `undefined1 vfunc_44(void)`
+pub const NiBSplineFloatInterpolator__vfunc_44: u64 = 73505;
+/// `NiBSplineFloatInterpolator::vfunc_57` at 0xf7a840 (rtti, medium); signature (low): `undefined8 vfunc_57(void)`
+pub const NiBSplineFloatInterpolator__vfunc_57: u64 = 73507;
+/// `NiBSplineFloatInterpolator::vfunc_59` at 0xf7a850 (rtti, medium); signature (low): `bool vfunc_59(NiBSplineFloatInterpolator * this, short param_1)`
+pub const NiBSplineFloatInterpolator__vfunc_59: u64 = 73508;
+/// `NiBSplineFloatInterpolator::vfunc_60` at 0xf7a870 (rtti, medium); signature (low): `undefined8 vfunc_60(NiBSplineFloatInterpolator * this, short param_1)`
+pub const NiBSplineFloatInterpolator__vfunc_60: u64 = 73509;
+/// `NiBSplineFloatInterpolator::vfunc_61` at 0xf7a890 (rtti, medium); signature (low): `bool vfunc_61(NiBSplineFloatInterpolator * this, short param_1)`
+pub const NiBSplineFloatInterpolator__vfunc_61: u64 = 73510;
+/// `NiBSplineFloatInterpolator::vfunc_64` at 0xf7a8c0 (rtti, medium); signature (low): `undefined4 vfunc_64(NiBSplineFloatInterpolator * this, short param_1)`
+pub const NiBSplineFloatInterpolator__vfunc_64: u64 = 73511;
 /// `NiBSplineFloatInterpolator::vfunc_65` at 0xf7a8e0 (rtti, medium); signature (low): `undefined vfunc_65(NiBSplineFloatInterpolator * this, undefined4 param_1, short param_2)`
 pub const NiBSplineFloatInterpolator__vfunc_65: u64 = 73512;
 /// `NiBSplineInterpolator::ctor` at 0xf977d0 (layout_inference, medium); signature (high): `undefined ctor(NiBSplineInterpolator * this)`
@@ -7805,8 +7885,10 @@ pub const Papyrus__Actor__DispelSpell: u64 = 54648;
 pub const Papyrus__Actor__DispelSpell_sub0: u64 = 36963;
 /// `Papyrus::Actor::DoCombatSpellApply` at 0xa0d4a0 (papyrus_native, high); signature (medium): `void DoCombatSpellApply(IVirtualMachine * vm, uint stackId, Actor * self, SpellItem * a0, TESObjectREFR * a1)`
 pub const Papyrus__Actor__DoCombatSpellApply: u64 = 54918;
-/// `Papyrus::Actor::DrawWeapon` at 0xa03b70 (papyrus_native, high); signature (medium): `void DrawWeapon(IVirtualMachine * vm, uint stackId, Actor * self)`
+/// `Papyrus::Actor::DrawWeapon` at 0xa03b70 (papyrus_native, high); signature (medium): `void DrawWeapon(IVirtualMachine * vm, uint stackId, Actor * self)`; semantic: slot 166 with 1 (tail jump) (high); signature `void (VM*, uint, Actor* self)`
 pub const Papyrus__Actor__DrawWeapon: u64 = 54779;
+/// `Papyrus::Actor::DrawWeapon` as a function pointer type (high).
+pub type Papyrus__Actor__DrawWeapon_fn = unsafe extern "C" fn(a0: *mut c_void, a1: u32, self_: *mut crate::Actor);
 /// `Papyrus::Actor::EnableAI` at 0xa0d4b0 (papyrus_native, high); signature (medium): `void EnableAI(IVirtualMachine * vm, uint stackId, Actor * self, bool a0)`
 pub const Papyrus__Actor__EnableAI: u64 = 54919;
 /// `Papyrus::Actor::EndDeferredKill` at 0xa03ba0 (papyrus_native, high); signature (medium): `void EndDeferredKill(IVirtualMachine * vm, uint stackId, Actor * self)`
@@ -8587,65 +8669,3 @@ pub const Papyrus__Game__IsMenuControlsEnabled: u64 = 55484;
 pub const Papyrus__Game__IsMovementControlsEnabled: u64 = 55485;
 /// `Papyrus::Game::IsMovementControlsEnabled` as a function pointer type (high).
 pub type Papyrus__Game__IsMovementControlsEnabled_fn = unsafe extern "C" fn(vm: *mut c_void, stackId: u32, unused: *mut c_void) -> bool;
-/// `Papyrus::Game::IsPlayerSungazing` at 0xa252a0 (papyrus_native, high); signature (medium): `bool IsPlayerSungazing(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused)`
-pub const Papyrus__Game__IsPlayerSungazing: u64 = 55486;
-/// `Papyrus::Game::IsSneakingControlsEnabled` at 0xa252c0 (papyrus_native, high); signature (medium): `bool IsSneakingControlsEnabled(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused)`
-pub const Papyrus__Game__IsSneakingControlsEnabled: u64 = 55487;
-/// `Papyrus::Game::IsWordUnlocked` at 0xa25940 (papyrus_native, high); signature (medium): `bool IsWordUnlocked(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, TESWordOfPower * a0)`
-pub const Papyrus__Game__IsWordUnlocked: u64 = 55502;
-/// `Papyrus::Game::PlayBink` at 0xa252e0 (papyrus_native, high); signature (medium): `void PlayBink(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, BSFixedString * a0, bool a1, bool a2, bool a3, bool a4)`
-pub const Papyrus__Game__PlayBink: u64 = 55488;
-/// `Papyrus::Game::PrecacheCharGen` at 0xa2ad80 (papyrus_native, high); signature (medium): `void PrecacheCharGen(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused)`
-pub const Papyrus__Game__PrecacheCharGen: u64 = 55570;
-/// `Papyrus::Game::PrecacheCharGenClear` at 0xa2ad90 (papyrus_native, high); signature (medium): `void PrecacheCharGenClear(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused)`
-pub const Papyrus__Game__PrecacheCharGenClear: u64 = 55571;
-/// `Papyrus::Game::QueryStat` at 0xa25360 (papyrus_native, high); signature (medium): `int QueryStat(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, BSFixedString * a0)`
-pub const Papyrus__Game__QueryStat: u64 = 55489;
-/// `Papyrus::Game::QuitToMainMenu` at 0xa253e0 (papyrus_native, high); signature (medium): `void QuitToMainMenu(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused)`
-pub const Papyrus__Game__QuitToMainMenu: u64 = 55490;
-/// `Papyrus::Game::RegisterFuncs` at 0xa25a70 (xref_inference, medium); signature (low): `undefined RegisterFuncs(int * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const Papyrus__Game__RegisterFuncs: u64 = 55503;
-/// `Papyrus::Game::RemoveHavokConstraints` at 0xa23a70 (papyrus_native, high); signature (medium): `bool RemoveHavokConstraints(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, TESObjectREFR * a0, BSFixedString * a1, TESObjectREFR * a2, BSFixedString * a3)`
-pub const Papyrus__Game__RemoveHavokConstraints: u64 = 55448;
-/// `Papyrus::Game::RequestAutosave` at 0xa25460 (papyrus_native, high); signature (medium): `void RequestAutosave(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused)`
-pub const Papyrus__Game__RequestAutosave: u64 = 55491;
-/// `Papyrus::Game::RequestModel` at 0xa25480 (papyrus_native, high); signature (medium): `void RequestModel(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, BSFixedString * a0)`
-pub const Papyrus__Game__RequestModel: u64 = 55492;
-/// `Papyrus::Game::RequestSave` at 0xa254e0 (papyrus_native, high); signature (medium): `void RequestSave(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused)`
-pub const Papyrus__Game__RequestSave: u64 = 55493;
-/// `Papyrus::Game::SaveSuccessfulAmiiboUsage` at 0xa25a60 (papyrus_native, high); signature (medium): `void SaveSuccessfulAmiiboUsage(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, uint a0)`
-pub const Papyrus__Game__SaveSuccessfulAmiiboUsage: u64 = 524053;
-/// `Papyrus::Game::SendWereWolfTransformation` at 0xa2ada0 (papyrus_native, high); signature (medium): `void SendWereWolfTransformation(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused)`
-pub const Papyrus__Game__SendWereWolfTransformation: u64 = 55572;
-/// `Papyrus::Game::ServeTime` at 0xa2adb0 (papyrus_native, high); signature (medium): `void ServeTime(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused)`
-pub const Papyrus__Game__ServeTime: u64 = 55573;
-/// `Papyrus::Game::SetAllowFlyingMountLandingRequests` at 0xa2add0 (papyrus_native, high); signature (medium): `void SetAllowFlyingMountLandingRequests(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, bool a0)`
-pub const Papyrus__Game__SetAllowFlyingMountLandingRequests: u64 = 55574;
-/// `Papyrus::Game::SetBeastForm` at 0xa25610 (papyrus_native, high); signature (medium): `void SetBeastForm(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, bool a0)`; semantic: Papyrus Game.SetBeastForm: MenuControls +0x81 = beastForm; when false, PlayerCamera::SetCombatOffsets(camera, false) (high); signature `void (IVirtualMachine* vm, u32 stackId, void* unused, bool beastForm)`
-pub const Papyrus__Game__SetBeastForm: u64 = 55497;
-/// `Papyrus::Game::SetBeastForm` as a function pointer type (high).
-pub type Papyrus__Game__SetBeastForm_fn = unsafe extern "C" fn(vm: *mut c_void, stackId: u32, unused: *mut c_void, beastForm: bool);
-/// `Papyrus::Game::SetCameraTarget` at 0xa2ade0 (papyrus_native, high); signature (medium): `void SetCameraTarget(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, Actor * a0)`; semantic: PlayerCamera::SetTarget(target) (high); signature `void (IVirtualMachine* vm, u32 stackId, void* unused, Actor* target)`
-pub const Papyrus__Game__SetCameraTarget: u64 = 55575;
-/// `Papyrus::Game::SetCameraTarget` as a function pointer type (high).
-pub type Papyrus__Game__SetCameraTarget_fn = unsafe extern "C" fn(vm: *mut c_void, stackId: u32, unused: *mut c_void, target: *mut crate::Actor);
-/// `Papyrus::Game::SetHudCartMode` at 0xa25650 (papyrus_native, high); signature (medium): `void SetHudCartMode(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, bool a0)`
-pub const Papyrus__Game__SetHudCartMode: u64 = 55498;
-/// `Papyrus::Game::SetInChargen` at 0xa2adf0 (papyrus_native, high); signature (medium): `void SetInChargen(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, bool a0, bool a1, bool a2)`
-pub const Papyrus__Game__SetInChargen: u64 = 55576;
-/// `Papyrus::Game::SetPlayerAIDriven` at 0xa2ae50 (papyrus_native, high); signature (medium): `void SetPlayerAIDriven(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, bool a0)`
-pub const Papyrus__Game__SetPlayerAIDriven: u64 = 55577;
-/// `Papyrus::Game::SetPlayerReportCrime` at 0xa2ae60 (papyrus_native, high); signature (medium): `void SetPlayerReportCrime(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, bool a0)`
-pub const Papyrus__Game__SetPlayerReportCrime: u64 = 55578;
-/// `Papyrus::Game::SetSittingRotation` at 0xa25670 (papyrus_native, high); signature (medium): `void SetSittingRotation(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, float a0)`; semantic: FirstPersonState.sittingYaw = degrees * K (0x8f8eb0) (high); signature `void (IVirtualMachine* vm, u32 stackId, void* unused, float degrees)`
-pub const Papyrus__Game__SetSittingRotation: u64 = 55499;
-/// `Papyrus::Game::SetSittingRotation` as a function pointer type (high).
-pub type Papyrus__Game__SetSittingRotation_fn = unsafe extern "C" fn(vm: *mut c_void, stackId: u32, unused: *mut c_void, degrees: f32);
-/// `Papyrus::Game::SetSunGazeImageSpaceModifier` at 0xa255f0 (papyrus_native, high); signature (medium): `void SetSunGazeImageSpaceModifier(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, TESImageSpaceModifier * a0)`
-pub const Papyrus__Game__SetSunGazeImageSpaceModifier: u64 = 55496;
-/// `Papyrus::Game::ShakeCamera` at 0xa25500 (papyrus_native, high); signature (medium): `void ShakeCamera(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, TESObjectREFR * a0, float a1, float a2)`; semantic: Game.ShakeCamera(source, strength, duration): strength clamped to [0, 1], origin = source position (+0x54..+0x5c) or the player's, then StartCameraShake(strength, &origin, duration) (high); signature `void (BSScript::IVirtualMachine* vm, u32 stackId, StaticFunctionTag* tag, TESObjectREFR* source, float strength, float duration)`
-pub const Papyrus__Game__ShakeCamera: u64 = 55494;
-/// `Papyrus::Game::ShakeCamera` as a function pointer type (high).
-pub type Papyrus__Game__ShakeCamera_fn = unsafe extern "C" fn(vm: *mut crate::BSScript__IVirtualMachine, stackId: u32, tag: *mut c_void, source: *mut crate::TESObjectREFR, strength: f32, duration: f32);
-/// `Papyrus::Game::ShakeController` at 0xa25590 (papyrus_native, high); signature (medium): `void ShakeController(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, float a0, float a1, float a2)`
-pub const Papyrus__Game__ShakeController: u64 = 55495;

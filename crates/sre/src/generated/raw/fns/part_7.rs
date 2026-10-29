@@ -3,6 +3,38 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextFlankingMovement>::vfunc_6` at 0x89e680 (rtti, medium); signature (low): `undefined vfunc_6(CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextFlankingMovement> * this, longlong * param_1, longlong param_2)`
+pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextFlankingMovement__vfunc_6: u64 = 48504;
+/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextFlankingMovement>::vfunc_7` at 0x89de90 (rtti, medium); signature (low): `undefined vfunc_7(CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextFlankingMovement> * this, longlong * param_1, longlong param_2, undefined8 param_3)`
+pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextFlankingMovement__vfunc_7: u64 = 48494;
+/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextFlankingMovement>::vfunc_8` at 0x89e8e0 (rtti, medium); signature (low): `bool vfunc_8(CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextFlankingMovement> * this, longlong param_1)`
+pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextFlankingMovement__vfunc_8: u64 = 48516;
+/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextFlankingMovement>::vfunc_9` at 0x89db30 (rtti, medium); signature (low): `undefined * vfunc_9(void)`
+pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextFlankingMovement__vfunc_9: u64 = 48488;
+/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextFlee>::vdtor` at 0x8a6830 (slot_propagation, medium); signature (low): `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextFlee> * vdtor(CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextFlee> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextFlee__vdtor: u64 = 48689;
+/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextFlee>::vfunc_3` at 0x8a75f0 (rtti, medium); signature (low): `undefined vfunc_3(CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextFlee> * this, longlong * param_1)`
+pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextFlee__vfunc_3: u64 = 48735;
+/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextFlee>::vfunc_6` at 0x8a8d60 (rtti, medium); signature (low): `undefined vfunc_6(CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextFlee> * this, longlong * param_1, longlong param_2)`
+pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextFlee__vfunc_6: u64 = 48780;
+/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextFlee>::vfunc_7` at 0x8a8720 (rtti, medium); signature (low): `undefined vfunc_7(CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextFlee> * this, longlong * param_1, longlong param_2, undefined8 param_3)`
+pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextFlee__vfunc_7: u64 = 48769;
+/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextFlee>::vfunc_8` at 0x8a9300 (rtti, medium); signature (low): `bool vfunc_8(CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextFlee> * this, longlong param_1)`
+pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextFlee__vfunc_8: u64 = 48804;
+/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextFlee>::vfunc_9` at 0x8a7f40 (rtti, medium); signature (low): `undefined * vfunc_9(void)`
+pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextFlee__vfunc_9: u64 = 48755;
+/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextHide>::vdtor` at 0x8a6870 (slot_propagation, medium); signature (low): `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextHide> * vdtor(CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextHide> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextHide__vdtor: u64 = 48690;
+/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextHide>::vfunc_3` at 0x8a7690 (rtti, medium); signature (low): `undefined vfunc_3(CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextHide> * this, longlong * param_1)`
+pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextHide__vfunc_3: u64 = 48736;
+/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextHide>::vfunc_6` at 0x8a8d80 (rtti, medium); signature (low): `undefined vfunc_6(CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextHide> * this, longlong * param_1, longlong param_2)`
+pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextHide__vfunc_6: u64 = 48781;
+/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextHide>::vfunc_7` at 0x8a8800 (rtti, medium); signature (low): `undefined vfunc_7(CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextHide> * this, longlong * param_1, longlong param_2, undefined8 param_3)`
+pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextHide__vfunc_7: u64 = 48770;
+/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextHide>::vfunc_8` at 0x8a9310 (rtti, medium); signature (low): `bool vfunc_8(CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextHide> * this, longlong param_1)`
+pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextHide__vfunc_8: u64 = 48805;
+/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextHide>::vfunc_9` at 0x8a7fd0 (rtti, medium); signature (low): `undefined * vfunc_9(void)`
+pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextHide__vfunc_9: u64 = 48756;
 /// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextMagic>::vdtor` at 0x8b6830 (slot_propagation, medium); signature (low): `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextMagic> * vdtor(CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextMagic> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
 pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextMagic__vdtor: u64 = 49118;
 /// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextMagic>::vfunc_3` at 0x8b6e50 (rtti, medium); signature (low): `undefined vfunc_3(CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextMagic> * this, longlong * param_1)`
@@ -5687,55 +5719,3 @@ pub const CompareFloatsByOperator: u64 = 29891;
 pub const CompareFloatsDescending: u64 = 44911;
 /// `CompareFormIDsByCastString` at 0x922160 (decompiler, medium); signature (untiered): `uint CompareFormIDsByCastString(int * param_1, int * param_2, undefined8 param_3, undefined8 param_4)`
 pub const CompareFormIDsByCastString: u64 = 51365;
-/// `CompareFunctionSignatures` at 0x14e1900 (decompiler, medium); signature (untiered): `ulonglong CompareFunctionSignatures(undefined8 param_1, longlong * param_2, ulonglong * param_3, undefined8 param_4)`
-pub const CompareFunctionSignatures: u64 = 105391;
-/// `CompareHashKeysWithWildcard` at 0xeba9e0 (decompiler, medium); signature (medium): `undefined8 CompareHashKeysWithWildcard(byte * param_1, byte * param_2)`
-pub const CompareHashKeysWithWildcard: u64 = 69340;
-/// `CompareImagesMeanSquaredError` at 0x10291b0 (decompiler, medium); signature (untiered): `ulonglong CompareImagesMeanSquaredError(ulonglong * param_1, ulonglong * param_2, ulonglong * param_3, undefined8 param_4)`
-pub const CompareImagesMeanSquaredError: u64 = 77635;
-/// `CompareIndirectString` at 0xaad980 (decompiler, high); signature (untiered): `undefined CompareIndirectString(undefined8 * param_1, longlong param_2)`
-pub const CompareIndirectString: u64 = 57470;
-/// `CompareItemsByScoreThenFormID` at 0x82a100 (decompiler, medium); signature (medium): `undefined8 CompareItemsByScoreThenFormID(longlong * param_1, longlong * param_2)`
-pub const CompareItemsByScoreThenFormID: u64 = 44909;
-/// `CompareJsonValues` at 0xa818e0 (decompiler, high); signature (high): `ulonglong CompareJsonValues(double * param_1, double * param_2)`
-pub const CompareJsonValues: u64 = 443089;
-/// `CompareMappedWideStrings` at 0xe46c70 (decompiler, medium); signature (medium): `int CompareMappedWideStrings(longlong param_1, longlong param_2, ushort * param_3, longlong param_4)`
-pub const CompareMappedWideStrings: u64 = 524176;
-/// `CompareMappingKey` at 0xcf1770 (semantic, high); signature (untiered): `ulonglong CompareMappingKey(longlong param_1, longlong param_2)`; semantic: orders by key low word, then high word (high); signature `int (const UserEventMapping* a, const UserEventMapping* b)`
-pub const CompareMappingKey: u64 = 68573;
-/// `CompareMappingKey` as a function pointer type (high).
-pub type CompareMappingKey_fn = unsafe extern "C" fn(a: *const crate::UserEventMapping, b: *const crate::UserEventMapping) -> i32;
-/// `CompareMenuDepth` at 0x116bed0 (semantic, high); signature (untiered): `undefined4 CompareMenuDepth(longlong * param_1, longlong * param_2)`; semantic: 1 / 0 / -1 by the depth byte +0x18 (high); signature `i32 (IMenu** a, IMenu** b)`
-pub const CompareMenuDepth: u64 = 82098;
-/// `CompareMenuDepth` as a function pointer type (high).
-pub type CompareMenuDepth_fn = unsafe extern "C" fn(a: *mut *mut crate::IMenu, b: *mut *mut crate::IMenu) -> i32;
-/// `CompareMessageBoxDepth` at 0x963ca0 (semantic, medium); signature (untiered): `undefined8 CompareMessageBoxDepth(longlong param_1, longlong param_2)`; semantic: queue order by +0x48 (medium); signature `i32 (const MessageBoxData* a, const MessageBoxData* b)`
-pub const CompareMessageBoxDepth: u64 = 52286;
-/// `CompareNamesAt20CaseInsensitive` at 0x1c50d0 (decompiler, medium); signature (medium): `int CompareNamesAt20CaseInsensitive(longlong param_1, longlong param_2)`
-pub const CompareNamesAt20CaseInsensitive: u64 = 13791;
-/// `ComparePackedShapeRecords` at 0xe21b80 (decompiler, medium); signature (untiered): `undefined ComparePackedShapeRecords(longlong * param_1, longlong * param_2)`
-pub const ComparePackedShapeRecords: u64 = 88123;
-/// `ComparePngSignature` at 0x1196a80 (decompiler, high); signature (untiered): `undefined ComparePngSignature(void * param_1, int param_2)`
-pub const ComparePngSignature: u64 = 89419;
-/// `ComparePointsEqual` at 0xdad610 (decompiler, medium); signature (untiered): `undefined ComparePointsEqual(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const ComparePointsEqual: u64 = 86001;
-/// `CompareQwordArraysEqual` at 0x18d600 (decompiler, medium); signature (medium): `char CompareQwordArraysEqual(longlong * param_1, longlong * param_2)`
-pub const CompareQwordArraysEqual: u64 = 12855;
-/// `CompareResolvedField40FormIDs` at 0x3efda0 (decompiler, medium); signature (medium): `bool CompareResolvedField40FormIDs(longlong param_1, longlong param_2)`
-pub const CompareResolvedField40FormIDs: u64 = 25551;
-/// `CompareScriptVariables` at 0x14d5f10 (decompiler, medium); signature (untiered): `int CompareScriptVariables(undefined8 param_1, ulonglong * param_2, uint * param_3)`
-pub const CompareScriptVariables: u64 = 105220;
-/// `CompareSmallArrays16Equal` at 0x18d700 (decompiler, medium); signature (medium): `ulonglong CompareSmallArrays16Equal(int * param_1, int * param_2)`
-pub const CompareSmallArrays16Equal: u64 = 12857;
-/// `CompareSmallArrays16Equal_2` at 0x18d7c0 (decompiler, medium); signature (medium): `ulonglong CompareSmallArrays16Equal_2(int * param_1, int * param_2)`
-pub const CompareSmallArrays16Equal_2: u64 = 12858;
-/// `CompareStrings` at 0xaa58f0 (decompiler, high); signature (high): `uint CompareStrings(byte * param_1, longlong param_2)`
-pub const CompareStrings: u64 = 57118;
-/// `CompareStringsCaseInsensitiveN` at 0xaa59b0 (decompiler, medium); signature (medium): `undefined8 CompareStringsCaseInsensitiveN(longlong param_1, byte * param_2, int param_3)`
-pub const CompareStringsCaseInsensitiveN: u64 = 57121;
-/// `CompareStringsNoCase` at 0xaa5930 (decompiler, medium); signature (medium): `undefined8 CompareStringsNoCase(longlong param_1, byte * param_2)`
-pub const CompareStringsNoCase: u64 = 57120;
-/// `CompareStringsNoCaseN` at 0xcfe300 (decompiler, medium); signature (medium): `int CompareStringsNoCaseN(char * param_1, char * param_2, longlong param_3)`
-pub const CompareStringsNoCaseN: u64 = 82611;
-/// `CompareValuesByFields` at 0xd6b8e0 (decompiler, medium); signature (untiered): `int CompareValuesByFields(longlong param_1, byte * param_2, byte * param_3)`
-pub const CompareValuesByFields: u64 = 84385;

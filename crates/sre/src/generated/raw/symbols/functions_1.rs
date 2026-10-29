@@ -7443,7 +7443,7 @@ pub(super) const ROWS: &[Function] = &[
     Function { rva: 0x146750, id: 10883, confidence: Confidence::Medium, name: "TESForm::PlayerKnows" },
     Function { rva: 0x146760, id: 10884, confidence: Confidence::Medium, name: "TESTexture::vfunc_4" },
     Function { rva: 0x146770, id: 10885, confidence: Confidence::Medium, name: "MagicItem::vfunc_101" },
-    Function { rva: 0x146780, id: 10886, confidence: Confidence::Medium, name: "TESModel::vfunc_4" },
+    Function { rva: 0x146780, id: 10886, confidence: Confidence::High, name: "TESModel::GetModel" },
     Function { rva: 0x146790, id: 10887, confidence: Confidence::Medium, name: "TESForm::vfunc_32" },
     Function { rva: 0x1467a0, id: 10888, confidence: Confidence::Medium, name: "TESForm::vfunc_26" },
     Function { rva: 0x1467b0, id: 10889, confidence: Confidence::Medium, name: "TESForm::vfunc_57" },

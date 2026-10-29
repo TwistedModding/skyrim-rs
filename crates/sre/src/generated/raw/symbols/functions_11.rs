@@ -4,6 +4,15 @@
 use crate::raw::*;
 
 pub(super) const ROWS: &[Function] = &[
+    Function { rva: 0x17714b0, id: 168589, confidence: Confidence::Medium, name: "GameSetting_fMoveFlyWalkMult__atexit" },
+    Function { rva: 0x1771500, id: 168590, confidence: Confidence::Medium, name: "GameSetting_fMoveSprintMult__atexit" },
+    Function { rva: 0x1771550, id: 168591, confidence: Confidence::Medium, name: "GameSetting_fMoveSwimMult__atexit" },
+    Function { rva: 0x17715a0, id: 168592, confidence: Confidence::Medium, name: "GameSetting_fMoveWeightMax__atexit" },
+    Function { rva: 0x17715f0, id: 168593, confidence: Confidence::Medium, name: "GameSetting_fMoveWeightMin__atexit" },
+    Function { rva: 0x1771640, id: 168594, confidence: Confidence::Medium, name: "GameSetting_fNPCAttributeHealthMult__atexit" },
+    Function { rva: 0x1771690, id: 168595, confidence: Confidence::Medium, name: "GameSetting_fNPCBaseMagickaMult__atexit" },
+    Function { rva: 0x17716e0, id: 168596, confidence: Confidence::Medium, name: "GameSetting_fNPCHealthLevelBonus__atexit" },
+    Function { rva: 0x1771730, id: 168597, confidence: Confidence::Medium, name: "GameSetting_fDiffMultXPVH__atexit" },
     Function { rva: 0x1771780, id: 168598, confidence: Confidence::Medium, name: "GameSetting_fDiffMultXPH__atexit" },
     Function { rva: 0x17717d0, id: 168599, confidence: Confidence::Medium, name: "GameSetting_fObjectHitH2HReach__atexit" },
     Function { rva: 0x1771820, id: 168600, confidence: Confidence::Medium, name: "GameSetting_fObjectHitTwoHandReach__atexit" },

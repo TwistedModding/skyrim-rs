@@ -306,10 +306,9 @@ pub struct BGSBodyPartData {
     /// +0x20 `vtbl:BGSBodyPartData:20`, rtti
     #[doc(hidden)]
     pub __vftable_20: *const crate::raw::vtables::BGSBodyPartData_vtable_20,
-    pub unknown_28: [u8; 8],
-    /// +0x30 `undefined8`, base TESModel
-    pub field_30: u64,
-    pub unknown_38: [u8; 16],
+    /// +0x28 `class:BSFixedString`, base TESModel, semantic; model path relative to Data\Meshes\ (the loader prepends "Data\\Meshes\\"); the qword is the pooled C string pointer (high)
+    pub model: crate::BSFixedString,
+    pub unknown_30: [u8; 24],
     /// +0x48 `vtbl:BGSBodyPartData:48`, rtti
     #[doc(hidden)]
     pub __vftable_48: *const crate::raw::vtables::BGSBodyPartData_vtable_48,
@@ -328,7 +327,7 @@ const _: () = assert!(core::mem::offset_of!(BGSBodyPartData, formID) == 0x14);
 const _: () = assert!(core::mem::offset_of!(BGSBodyPartData, inGameFlags) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BGSBodyPartData, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(BGSBodyPartData, __vftable_20) == 0x20);
-const _: () = assert!(core::mem::offset_of!(BGSBodyPartData, field_30) == 0x30);
+const _: () = assert!(core::mem::offset_of!(BGSBodyPartData, model) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BGSBodyPartData, __vftable_48) == 0x48);
 const _: () = assert!(core::mem::offset_of!(BGSBodyPartData, partsByType) == 0x50);
 const _: () = assert!(core::mem::offset_of!(BGSBodyPartData, field_80) == 0x80);
@@ -409,7 +408,7 @@ pub struct BGSCameraShot {
     /// +0x1B `undefined1`, semantic; padding to the next 8-byte member (medium)
     pub pad1B: [u8; 5],
     /// +0x20 `class:TESModel`, semantic; TESModel base subobject: the camera NIF path (+0x28 BSFixedString) loaded by SetupVATSCameraFromMesh (high)
-    pub model: [u8; 40],
+    pub model: crate::TESModel,
     /// +0x48 `pointer`, semantic; TESImageSpaceModifiableForm base vtable (0x182d5a0) (high)
     pub imageSpaceModifiableVtbl: *mut c_void,
     /// +0x50 `ptr:TESImageSpaceModifier`, base TESImageSpaceModifiableForm, semantic; IMAD applied while the shot plays (MNAM) (high)
@@ -3798,6 +3797,107 @@ const _: () = assert!(core::mem::offset_of!(TESFurniture, workbenchType) == 0xE0
 const _: () = assert!(core::mem::offset_of!(TESFurniture, workbenchSkill) == 0xE1);
 const _: () = assert!(core::mem::offset_of!(TESFurniture, activeMarkerFlags) == 0xE4);
 const _: () = assert!(core::mem::offset_of!(TESFurniture, associatedSpell) == 0xE8);
+
+/// `TESIdleForm`: size 0x68 (exact, medium); primary base `TESForm`.
+/// Meaning: an IDLE record: a node of the idle tree with conditions and the graph event it sends (high, camera pass).
+/// Evidence: runtime: 0x68 at 1 allocation sites.
+/// Bases: `TESForm`@0x0, `BaseFormComponent`@0x0.
+#[repr(C)]
+pub struct TESIdleForm {
+    /// +0x0 `vtbl:TESIdleForm:0`, rtti
+    #[doc(hidden)]
+    pub __vftable: *const crate::raw::vtables::TESIdleForm_vtable,
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
+    pub sourceFiles: *mut crate::TESFileArray,
+    /// +0x10 `undefined4`, base TESForm, semantic; record flags; see the flag rows (high)
+    pub formFlags: u32,
+    /// +0x14 `undefined4`, base TESForm, semantic; the form id (high)
+    pub formID: u32,
+    /// +0x18 `undefined2`, base TESForm, semantic; 16-bit flag word saved with the form; low 6 bits restored on load (medium)
+    pub inGameFlags: u16,
+    /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
+    pub formType: u8,
+    pub unknown_1B: [u8; 5],
+    /// +0x20 `pointer`, semantic; CTDA condition list head (checked by AIProcess::PlayIdle when checkConditions and by the idle-tree selection) (high)
+    pub conditions: *mut c_void,
+    /// +0x28 `undefined1`, semantic; DATA byte 0: lower bound of the random fIdleTimer set for 'Action Idle' (medium)
+    pub loopMin: u8,
+    /// +0x29 `undefined1`, semantic; DATA byte 1: upper bound (medium)
+    pub loopMax: u8,
+    /// +0x2A `undefined1`, semantic; DATA byte 2 (flags; not read here) (low)
+    pub field_2A: u8,
+    pub unknown_2B: [u8; 1],
+    /// +0x2C `undefined2`, semantic; DATA u16: when > 0 the performed idle is recorded with this value (float) in an actor-side recent-idle array (medium)
+    pub replayDelay: u16,
+    pub unknown_2E: [u8; 2],
+    /// +0x30 `pointer`, semantic; array object of child idles (medium)
+    pub children: *mut c_void,
+    /// +0x38 `ptr:TESIdleForm`, semantic; ANAM first id: the parent idle (form id after load, pointer after InitItem) (high)
+    pub parent: *mut crate::TESIdleForm,
+    /// +0x40 `ptr:TESIdleForm`, semantic; ANAM second id: the previous sibling (medium)
+    pub previousSibling: *mut crate::TESIdleForm,
+    /// +0x48 `class:BSFixedString`, ctor store, semantic, runtime; DNAM: the animation (behaviour) file path (high)
+    pub animationFile: crate::BSFixedString,
+    /// +0x50 `class:BSFixedString`, semantic, runtime; ENAM: the graph event the idle sends (copied to ActionInput+0x28, passed to IAnimationGraphManagerHolder slot 1); the qword is a char* (high)
+    pub animationEvent: crate::BSFixedString,
+    /// +0x58 `pointer`, ctor store, semantic, runtime; char* editor id, kept at run time (high)
+    pub editorID: *mut c_void,
+    /// +0x60 `undefined4`, ctor store
+    pub field_60: u32,
+    pub unknown_64: [u8; 4],
+    #[doc(hidden)]
+    pub __engine: crate::Engine,
+}
+const _: () = assert!(size_of::<TESIdleForm>() == 0x68);
+const _: () = assert!(core::mem::offset_of!(TESIdleForm, __vftable) == 0x0);
+const _: () = assert!(core::mem::offset_of!(TESIdleForm, sourceFiles) == 0x8);
+const _: () = assert!(core::mem::offset_of!(TESIdleForm, formFlags) == 0x10);
+const _: () = assert!(core::mem::offset_of!(TESIdleForm, formID) == 0x14);
+const _: () = assert!(core::mem::offset_of!(TESIdleForm, inGameFlags) == 0x18);
+const _: () = assert!(core::mem::offset_of!(TESIdleForm, formType) == 0x1A);
+const _: () = assert!(core::mem::offset_of!(TESIdleForm, conditions) == 0x20);
+const _: () = assert!(core::mem::offset_of!(TESIdleForm, loopMin) == 0x28);
+const _: () = assert!(core::mem::offset_of!(TESIdleForm, loopMax) == 0x29);
+const _: () = assert!(core::mem::offset_of!(TESIdleForm, field_2A) == 0x2A);
+const _: () = assert!(core::mem::offset_of!(TESIdleForm, replayDelay) == 0x2C);
+const _: () = assert!(core::mem::offset_of!(TESIdleForm, children) == 0x30);
+const _: () = assert!(core::mem::offset_of!(TESIdleForm, parent) == 0x38);
+const _: () = assert!(core::mem::offset_of!(TESIdleForm, previousSibling) == 0x40);
+const _: () = assert!(core::mem::offset_of!(TESIdleForm, animationFile) == 0x48);
+const _: () = assert!(core::mem::offset_of!(TESIdleForm, animationEvent) == 0x50);
+const _: () = assert!(core::mem::offset_of!(TESIdleForm, editorID) == 0x58);
+const _: () = assert!(core::mem::offset_of!(TESIdleForm, field_60) == 0x60);
+
+/// `TESModel`: size 0x28 (exact, medium); primary base `BaseFormComponent`.
+/// Meaning: form component holding a model path (and per-model texture data) (medium, camera pass).
+/// Evidence: camera pass (semantic): IC6 A (static-U). Slots (rtti.json): 0 0x1ec350 vdtor, 1 0x1eaaf0 InitializeData, 2 0x1eabc0 ClearData, 3 0x1eacb0 CopyFromTemplate, 4 0x146780 GetModel, 5 0x1ead10 SetModel, 6 0x1dfd80 (returns 0). Subobject offsets in bound objects (rtti.json mdisp): 0x40 TESFurniture, TESObjectACTI, TESObjectDOOR, TESObjectMISC, TESObjectWEAP, TESObjectLIGH, TESFlora, TESObjectBOOK, TESKey, TESAmmo, TESSoulGem, BGSTalkingActivator, BGSApparatus, BGSExplosion, BGSProjectile, BGSHazard; 0x30 TESObjectSTAT, TESObjectTREE, TESGrass, BGSStaticCollection, BGSArtObject, BGSAddonNode, BGSIdleMarker, BGSNote; 0x50 BGSMovableStatic; 0x58 TESObjectCONT, TESLevCharacter; 0x90 AlchemyItem, IngredientItem; 0xe8 ScrollItem.; size: the ctor and slots 1/2 write +0x18 (qword), +0x20 (dword, u16) and +0x22 (u8); TESModelTextureSwap (0x38, runtime) keeps its own fields from +0x28 (layouts.json field_28/field_30); in TESFurniture and TESObjectACTI that subobject spans +0x40..+0x78. layouts.json's 0x18 (one vote, upper bound 0x28) is a lower bound.
+/// Bases: `BaseFormComponent`@0x0.
+#[repr(C)]
+pub struct TESModel {
+    /// +0x0 `vtbl:TESModel:0`, rtti
+    #[doc(hidden)]
+    pub __vftable: *const crate::raw::vtables::TESModel_vtable,
+    /// +0x8 `class:BSFixedString`, semantic, runtime; model path relative to Data\Meshes\ (the loader prepends "Data\\Meshes\\"); the qword is the pooled C string pointer (high)
+    pub model: crate::BSFixedString,
+    /// +0x10 `pointer`, semantic
+    pub field_10: *mut c_void,
+    /// +0x18 `pointer`, semantic
+    pub field_18: *mut c_void,
+    /// +0x20 `undefined2`, semantic
+    pub field_20: u16,
+    /// +0x22 `undefined1`, semantic
+    pub field_22: u8,
+    pub unknown_23: [u8; 5],
+    #[doc(hidden)]
+    pub __engine: crate::Engine,
+}
+const _: () = assert!(size_of::<TESModel>() == 0x28);
+const _: () = assert!(core::mem::offset_of!(TESModel, __vftable) == 0x0);
+const _: () = assert!(core::mem::offset_of!(TESModel, model) == 0x8);
+const _: () = assert!(core::mem::offset_of!(TESModel, field_10) == 0x10);
+const _: () = assert!(core::mem::offset_of!(TESModel, field_18) == 0x18);
+const _: () = assert!(core::mem::offset_of!(TESModel, field_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(TESModel, field_22) == 0x22);
 
 /// `TESObjectWEAP`: size 0x220 (exact, high); primary base `TESBoundObject`.
 /// Meaning: weapon form: the weapon (animation) type byte (high, camera pass).

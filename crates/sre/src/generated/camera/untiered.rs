@@ -1526,6 +1526,103 @@ impl crate::TESFurniture {
     pub unsafe fn vfunc_55_sub1(param_1: *mut i64, param_2: i64, param_3: i64, param_4: u64) -> u64 { unsafe { function!(40486, (*mut i64, i64, i64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
 }
 
+impl crate::TESIdleForm {
+    /// `TESIdleForm::ClearData`, vtable slot 5, through the object's vtable (decompiler signature, tier untiered; ledger semantic evidence, name high; id 24561, rva 0x3b6c80).
+    /// `undefined ClearData(TESIdleForm * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn clear_data(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { virtual_function!(self, 5, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    /// `TESIdleForm::InitItem`, vtable slot 19, through the object's vtable (decompiler signature, tier untiered; ledger semantic evidence, name high; id 24564, rva 0x3b7240).
+    /// `undefined InitItem(TESIdleForm * this, undefined8 param_1, TypeDescriptor * param_2, TypeDescriptor * param_3)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn init_item(&self, param_1: u64, param_2: *mut c_void, param_3: *mut c_void) -> u64 { unsafe { virtual_function!(self, 19, (*const Self, u64, *mut c_void, *mut c_void) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    /// `TESIdleForm::InitializeData`, vtable slot 4, through the object's vtable (decompiler signature, tier untiered; ledger semantic evidence, name high; id 24560, rva 0x3b6be0).
+    /// `undefined InitializeData(TESIdleForm * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn initialize_data(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { virtual_function!(self, 4, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    /// `TESIdleForm::Load`, vtable slot 6, through the object's vtable (decompiler signature, tier untiered; ledger semantic evidence, name high; id 24563, rva 0x3b6f40).
+    /// `undefined8 Load(TESIdleForm * this, uint * param_1, undefined1 * param_2, undefined8 param_3)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn load(&self, param_1: *mut u32, param_2: *mut u8, param_3: u64) -> u64 { unsafe { virtual_function!(self, 6, (*const Self, *mut u32, *mut u8, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    /// `TESIdleForm::SetFormEditorID` (decompiler signature, tier untiered; ledger slot_propagation evidence, name high; id 24581, rva 0x3b8110).
+    /// `ulonglong SetFormEditorID(TESIdleForm * this, char * param_1, undefined8 param_2, undefined8 param_3)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn set_form_editor_id(&self, param_1: *mut c_char, param_2: u64, param_3: u64) -> u64 { unsafe { function!(24581, (*const Self, *mut c_char, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    /// `TESIdleForm::vfunc_6_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 24589, rva 0x3b8480).
+    /// `undefined vfunc_6_sub0(longlong param_1, longlong param_2)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn vfunc_6_sub0(param_1: i64, param_2: i64) -> u64 { unsafe { function!(24589, (i64, i64) -> u64)(param_1, param_2) } }
+}
+
+impl crate::TESModel {
+    /// `TESModel::ClearData`, vtable slot 2, through the object's vtable (decompiler signature, tier untiered; ledger semantic evidence, name high; id 14778, rva 0x1eabc0).
+    /// `undefined ClearData(TESModel * this, undefined8 param_1, longlong param_2, undefined1 * param_3)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn clear_data(&self, param_1: u64, param_2: i64, param_3: *mut u8) -> u64 { unsafe { virtual_function!(self, 2, (*const Self, u64, i64, *mut u8) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    /// `TESModel::InitializeData`, vtable slot 1, through the object's vtable (decompiler signature, tier untiered; ledger semantic evidence, name high; id 14777, rva 0x1eaaf0).
+    /// `undefined InitializeData(TESModel * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn initialize_data(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { virtual_function!(self, 1, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    /// `TESModel::CopyFromTemplate` (decompiler signature, tier untiered; ledger semantic evidence, name high; id 14779, rva 0x1eacb0).
+    /// `undefined CopyFromTemplate(TESModel * this, undefined8 param_1)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn copy_from_template(&self, param_1: u64) -> u64 { unsafe { function!(14779, (*const Self, u64) -> u64)(core::ptr::from_ref(self), param_1) } }
+    /// `TESModel::GetModel` (decompiler signature, tier untiered; ledger semantic evidence, name high; id 10886, rva 0x146780).
+    /// `undefined8 GetModel(TESModel * this)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn get_model(&self) -> u64 { unsafe { function!(10886, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    /// `TESModel::SetModel` (decompiler signature, tier untiered; ledger semantic evidence, name high; id 14780, rva 0x1ead10).
+    /// `undefined SetModel(TESModel * this, char * param_1)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn set_model(&self, param_1: *mut c_char) -> u64 { unsafe { function!(14780, (*const Self, *mut c_char) -> u64)(core::ptr::from_ref(self), param_1) } }
+    /// `TESModel::dtor` (decompiler signature, tier untiered; ledger callgraph evidence, name high; id 14503, rva 0x1dfc20).
+    /// `undefined dtor(TESModel * this, undefined8 param_1, longlong param_2, undefined1 * param_3)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn dtor_2(&self, param_1: u64, param_2: i64, param_3: *mut u8) -> u64 { unsafe { function!(14503, (*const Self, u64, i64, *mut u8) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    /// `TESModel::dtor` (decompiler signature, tier untiered; ledger callgraph evidence, name high; id 23455, rva 0x38af50).
+    /// `undefined dtor(TESModel * this, undefined8 param_1, longlong param_2, undefined1 * param_3)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn dtor_3(&self, param_1: u64, param_2: i64, param_3: *mut u8) -> u64 { unsafe { function!(23455, (*const Self, u64, i64, *mut u8) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+}
+
 impl crate::TESObjectWEAP {
     /// `TESObjectWEAP::GetLastFile` (decompiler signature, tier untiered; ledger slot_propagation evidence, name medium; id 18145, rva 0x28e7b0).
     /// `undefined GetLastFile(TESObjectWEAP * this)`

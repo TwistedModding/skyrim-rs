@@ -183,12 +183,6 @@ impl core::ops::Deref for crate::TESIcon {
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
-/// `TESIdleForm` is laid out from its primary base `TESForm`, so its methods and fields are reachable through it.
-impl core::ops::Deref for crate::TESIdleForm {
-    type Target = crate::TESForm;
-    #[inline]
-    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
-}
 /// `TESImageSpace` is laid out from its primary base `TESForm`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::TESImageSpace {
     type Target = crate::TESForm;
@@ -246,12 +240,6 @@ impl core::ops::Deref for crate::TESLeveledList {
 /// `TESLoadScreen` is laid out from its primary base `TESForm`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::TESLoadScreen {
     type Target = crate::TESForm;
-    #[inline]
-    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
-}
-/// `TESModel` is laid out from its primary base `BaseFormComponent`, so its methods and fields are reachable through it.
-impl core::ops::Deref for crate::TESModel {
-    type Target = crate::BaseFormComponent;
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }

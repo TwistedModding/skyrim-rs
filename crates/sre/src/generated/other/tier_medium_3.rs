@@ -3,20 +3,6 @@
 
 use core::ffi::{c_char, c_void};
 
-/// `PackQuaternionSmallestThree40` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 65640, rva 0xc53040).
-/// `undefined PackQuaternionSmallestThree40(uint * param_1, undefined1 * param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn pack_quaternion_smallest_three40(param_1: *mut u32, param_2: *mut u8) -> u64 { unsafe { function!(65640, (*mut u32, *mut u8) -> u64)(param_1, param_2) } }
-/// `PackQuaternionSmallestThree48` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 65641, rva 0xc531d0).
-/// `undefined PackQuaternionSmallestThree48(uint * param_1, ushort * param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn pack_quaternion_smallest_three48(param_1: *mut u32, param_2: *mut u16) -> u64 { unsafe { function!(65641, (*mut u32, *mut u16) -> u64)(param_1, param_2) } }
 /// `PackStridedVerticesAndComputeAabb` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 65106, rva 0xc3b990).
 /// `undefined PackStridedVerticesAndComputeAabb(longlong param_1, undefined1[12] * param_2, int param_3, int param_4)`
 ///
@@ -325,13 +311,6 @@ pub unsafe fn papyrus__actor__dispel_spell(vm: *mut c_void, stackId: u32, self_:
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn papyrus__actor__do_combat_spell_apply(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor, a0: *mut crate::SpellItem, a1: *mut crate::TESObjectREFR) { unsafe { function!(54918, (*mut c_void, u32, *mut crate::Actor, *mut crate::SpellItem, *mut crate::TESObjectREFR))(vm, stackId, self_, a0, a1) } }
-/// `Papyrus::Actor::DrawWeapon` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54779, rva 0xa03b70).
-/// `void DrawWeapon(IVirtualMachine * vm, uint stackId, Actor * self)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn papyrus__actor__draw_weapon(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor) { unsafe { function!(54779, (*mut c_void, u32, *mut crate::Actor))(vm, stackId, self_) } }
 /// `Papyrus::Actor::EnableAI` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54919, rva 0xa0d4b0).
 /// `void EnableAI(IVirtualMachine * vm, uint stackId, Actor * self, bool a0)`
 ///
@@ -13478,3 +13457,24 @@ pub unsafe fn resolve_form_pointers_at8_and10(param_1: i64, param_2: i64, param_
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn resolve_handle_to_cached_ref(param_1: *mut u32, param_2: *mut i64) -> u8 { unsafe { function!(34484, (*mut u32, *mut i64) -> u8)(param_1, param_2) } }
+/// `ResolveHandleToCachedRef_2` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 34362, rva 0x5c8c10).
+/// `bool ResolveHandleToCachedRef_2(uint * param_1, longlong * param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn resolve_handle_to_cached_ref_2(param_1: *mut u32, param_2: *mut i64) -> u8 { unsafe { function!(34362, (*mut u32, *mut i64) -> u8)(param_1, param_2) } }
+/// `ResolveHandleToCachedRef_3` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 34902, rva 0x5ddca0).
+/// `bool ResolveHandleToCachedRef_3(uint * param_1, longlong * param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn resolve_handle_to_cached_ref_3(param_1: *mut u32, param_2: *mut i64) -> u8 { unsafe { function!(34902, (*mut u32, *mut i64) -> u8)(param_1, param_2) } }
+/// `ResolveListFormIDs` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 14309, rva 0x1dacd0).
+/// `undefined ResolveListFormIDs(longlong param_1, longlong param_2, TypeDescriptor * param_3, TypeDescriptor * param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn resolve_list_form_i_ds(param_1: i64, param_2: i64, param_3: *mut c_void, param_4: *mut c_void) -> u64 { unsafe { function!(14309, (i64, i64, *mut c_void, *mut c_void) -> u64)(param_1, param_2, param_3, param_4) } }

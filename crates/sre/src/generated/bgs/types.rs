@@ -816,22 +816,22 @@ const _: () = assert!(core::mem::offset_of!(BGSAttackDataMap, field_28) == 0x28)
 const _: () = assert!(core::mem::offset_of!(BGSAttackDataMap, field_38) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BGSAttackDataMap, field_40) == 0x40);
 
-/// `BGSBehaviorGraphModel`: size >= 0x18 (lower bound); partial, the struct stops at the lower bound; primary base `TESModel`.
-/// Evidence: field field_10.
+/// `BGSBehaviorGraphModel`: size >= 0x28 (lower bound); partial, the struct stops at the lower bound; primary base `TESModel`.
+/// Evidence: field field_10; the semantic base TESModel (0x28) ends at 0x28.
 /// Bases: `TESModel`@0x0, `BaseFormComponent`@0x0.
 #[repr(C)]
 pub struct BGSBehaviorGraphModel {
     /// +0x0 `vtbl:BGSBehaviorGraphModel:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSBehaviorGraphModel_vtable,
-    pub unknown_8: [u8; 8],
-    /// +0x10 `undefined8`, base TESModel
-    pub field_10: u64,
+    /// +0x8 `class:BSFixedString`, base TESModel, semantic; model path relative to Data\Meshes\ (the loader prepends "Data\\Meshes\\"); the qword is the pooled C string pointer (high)
+    pub model: crate::BSFixedString,
+    pub unknown_10: [u8; 24],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSBehaviorGraphModel, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BGSBehaviorGraphModel, field_10) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BGSBehaviorGraphModel, model) == 0x8);
 
 /// `BGSBipedModelList`: size >= 0x8 (lower bound); partial, the struct stops at the lower bound; primary base `BaseFormComponent`.
 /// Evidence: vptr at 0x0.
@@ -1585,10 +1585,9 @@ pub struct BGSExplosion {
     /// +0x40 `vtbl:BGSExplosion:40`, rtti
     #[doc(hidden)]
     pub __vftable_40: *const crate::raw::vtables::BGSExplosion_vtable_40,
-    pub unknown_48: [u8; 8],
-    /// +0x50 `undefined8`, base TESModel
-    pub field_50: u64,
-    pub unknown_58: [u8; 16],
+    /// +0x48 `class:BSFixedString`, base TESModel, semantic; model path relative to Data\Meshes\ (the loader prepends "Data\\Meshes\\"); the qword is the pooled C string pointer (high)
+    pub model: crate::BSFixedString,
+    pub unknown_50: [u8; 24],
     /// +0x68 `vtbl:BGSExplosion:68`, rtti
     #[doc(hidden)]
     pub __vftable_68: *const crate::raw::vtables::BGSExplosion_vtable_68,
@@ -1644,7 +1643,7 @@ const _: () = assert!(core::mem::offset_of!(BGSExplosion, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BGSExplosion, field_2A) == 0x2A);
 const _: () = assert!(core::mem::offset_of!(BGSExplosion, __vftable_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(BGSExplosion, __vftable_40) == 0x40);
-const _: () = assert!(core::mem::offset_of!(BGSExplosion, field_50) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BGSExplosion, model) == 0x48);
 const _: () = assert!(core::mem::offset_of!(BGSExplosion, __vftable_68) == 0x68);
 const _: () = assert!(core::mem::offset_of!(BGSExplosion, field_70) == 0x70);
 const _: () = assert!(core::mem::offset_of!(BGSExplosion, field_78) == 0x78);
@@ -2008,10 +2007,9 @@ pub struct BGSHazard {
     /// +0x40 `vtbl:BGSHazard:40`, rtti
     #[doc(hidden)]
     pub __vftable_40: *const crate::raw::vtables::BGSHazard_vtable_40,
-    pub unknown_48: [u8; 8],
-    /// +0x50 `undefined8`, base TESModel
-    pub field_50: u64,
-    pub unknown_58: [u8; 16],
+    /// +0x48 `class:BSFixedString`, base TESModel, semantic; model path relative to Data\Meshes\ (the loader prepends "Data\\Meshes\\"); the qword is the pooled C string pointer (high)
+    pub model: crate::BSFixedString,
+    pub unknown_50: [u8; 24],
     /// +0x68 `vtbl:BGSHazard:68`, rtti
     #[doc(hidden)]
     pub __vftable_68: *const crate::raw::vtables::BGSHazard_vtable_68,
@@ -2054,7 +2052,7 @@ const _: () = assert!(core::mem::offset_of!(BGSHazard, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BGSHazard, field_2A) == 0x2A);
 const _: () = assert!(core::mem::offset_of!(BGSHazard, __vftable_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(BGSHazard, __vftable_40) == 0x40);
-const _: () = assert!(core::mem::offset_of!(BGSHazard, field_50) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BGSHazard, model) == 0x48);
 const _: () = assert!(core::mem::offset_of!(BGSHazard, __vftable_68) == 0x68);
 const _: () = assert!(core::mem::offset_of!(BGSHazard, __vftable_70) == 0x70);
 const _: () = assert!(core::mem::offset_of!(BGSHazard, field_78) == 0x78);
@@ -2199,10 +2197,9 @@ pub struct BGSIdleMarker {
     /// +0x30 `vtbl:BGSIdleMarker:30`, rtti
     #[doc(hidden)]
     pub __vftable_30: *const crate::raw::vtables::BGSIdleMarker_vtable_30,
-    pub unknown_38: [u8; 8],
-    /// +0x40 `undefined8`, base TESModel
-    pub field_40: u64,
-    pub unknown_48: [u8; 16],
+    /// +0x38 `class:BSFixedString`, base TESModel, semantic; model path relative to Data\Meshes\ (the loader prepends "Data\\Meshes\\"); the qword is the pooled C string pointer (high)
+    pub model: crate::BSFixedString,
+    pub unknown_40: [u8; 24],
     /// +0x58 `vtbl:BGSIdleMarker:58`, rtti
     #[doc(hidden)]
     pub __vftable_58: *const crate::raw::vtables::BGSIdleMarker_vtable_58,
@@ -2231,7 +2228,7 @@ const _: () = assert!(core::mem::offset_of!(BGSIdleMarker, field_26) == 0x26);
 const _: () = assert!(core::mem::offset_of!(BGSIdleMarker, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BGSIdleMarker, field_2A) == 0x2A);
 const _: () = assert!(core::mem::offset_of!(BGSIdleMarker, __vftable_30) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BGSIdleMarker, field_40) == 0x40);
+const _: () = assert!(core::mem::offset_of!(BGSIdleMarker, model) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BGSIdleMarker, __vftable_58) == 0x58);
 const _: () = assert!(core::mem::offset_of!(BGSIdleMarker, field_60) == 0x60);
 const _: () = assert!(core::mem::offset_of!(BGSIdleMarker, field_68) == 0x68);
@@ -2259,10 +2256,9 @@ pub struct BGSImpactData {
     /// +0x20 `vtbl:BGSImpactData:20`, rtti
     #[doc(hidden)]
     pub __vftable_20: *const crate::raw::vtables::BGSImpactData_vtable_20,
-    pub unknown_28: [u8; 8],
-    /// +0x30 `undefined8`, base TESModel
-    pub field_30: u64,
-    pub unknown_38: [u8; 16],
+    /// +0x28 `class:BSFixedString`, base TESModel, semantic; model path relative to Data\Meshes\ (the loader prepends "Data\\Meshes\\"); the qword is the pooled C string pointer (high)
+    pub model: crate::BSFixedString,
+    pub unknown_30: [u8; 24],
     /// +0x48 `undefined4`, ctor store (widths [4, 8])
     pub field_48: u32,
     /// +0x4C `undefined4`, ctor store
@@ -2296,7 +2292,7 @@ const _: () = assert!(core::mem::offset_of!(BGSImpactData, formID) == 0x14);
 const _: () = assert!(core::mem::offset_of!(BGSImpactData, inGameFlags) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BGSImpactData, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(BGSImpactData, __vftable_20) == 0x20);
-const _: () = assert!(core::mem::offset_of!(BGSImpactData, field_30) == 0x30);
+const _: () = assert!(core::mem::offset_of!(BGSImpactData, model) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BGSImpactData, field_48) == 0x48);
 const _: () = assert!(core::mem::offset_of!(BGSImpactData, field_4C) == 0x4C);
 const _: () = assert!(core::mem::offset_of!(BGSImpactData, field_50) == 0x50);
@@ -2732,10 +2728,9 @@ pub struct BGSMaterialObject {
     /// +0x20 `vtbl:BGSMaterialObject:20`, rtti
     #[doc(hidden)]
     pub __vftable_20: *const crate::raw::vtables::BGSMaterialObject_vtable_20,
-    pub unknown_28: [u8; 8],
-    /// +0x30 `undefined8`, base TESModel
-    pub field_30: u64,
-    pub unknown_38: [u8; 16],
+    /// +0x28 `class:BSFixedString`, base TESModel, semantic; model path relative to Data\Meshes\ (the loader prepends "Data\\Meshes\\"); the qword is the pooled C string pointer (high)
+    pub model: crate::BSFixedString,
+    pub unknown_30: [u8; 24],
     /// +0x48 `vtbl:BGSMaterialObject:48`, rtti
     #[doc(hidden)]
     pub __vftable_48: *const crate::raw::vtables::BGSMaterialObject_vtable_48,
@@ -2769,7 +2764,7 @@ const _: () = assert!(core::mem::offset_of!(BGSMaterialObject, formID) == 0x14);
 const _: () = assert!(core::mem::offset_of!(BGSMaterialObject, inGameFlags) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BGSMaterialObject, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(BGSMaterialObject, __vftable_20) == 0x20);
-const _: () = assert!(core::mem::offset_of!(BGSMaterialObject, field_30) == 0x30);
+const _: () = assert!(core::mem::offset_of!(BGSMaterialObject, model) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BGSMaterialObject, __vftable_48) == 0x48);
 const _: () = assert!(core::mem::offset_of!(BGSMaterialObject, field_50) == 0x50);
 const _: () = assert!(core::mem::offset_of!(BGSMaterialObject, field_54) == 0x54);
@@ -3517,10 +3512,9 @@ pub struct BGSNote {
     /// +0x30 `vtbl:BGSNote:30`, rtti
     #[doc(hidden)]
     pub __vftable_30: *const crate::raw::vtables::BGSNote_vtable_30,
-    pub unknown_38: [u8; 8],
-    /// +0x40 `undefined8`, base TESModel
-    pub field_40: u64,
-    pub unknown_48: [u8; 16],
+    /// +0x38 `class:BSFixedString`, base TESModel, semantic; model path relative to Data\Meshes\ (the loader prepends "Data\\Meshes\\"); the qword is the pooled C string pointer (high)
+    pub model: crate::BSFixedString,
+    pub unknown_40: [u8; 24],
     /// +0x58 `vtbl:BGSNote:58`, rtti
     #[doc(hidden)]
     pub __vftable_58: *const crate::raw::vtables::BGSNote_vtable_58,
@@ -3563,7 +3557,7 @@ const _: () = assert!(core::mem::offset_of!(BGSNote, field_26) == 0x26);
 const _: () = assert!(core::mem::offset_of!(BGSNote, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BGSNote, field_2A) == 0x2A);
 const _: () = assert!(core::mem::offset_of!(BGSNote, __vftable_30) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BGSNote, field_40) == 0x40);
+const _: () = assert!(core::mem::offset_of!(BGSNote, model) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BGSNote, __vftable_58) == 0x58);
 const _: () = assert!(core::mem::offset_of!(BGSNote, __vftable_68) == 0x68);
 const _: () = assert!(core::mem::offset_of!(BGSNote, __vftable_78) == 0x78);
@@ -7296,10 +7290,9 @@ pub struct BGSProjectile {
     /// +0x40 `vtbl:BGSProjectile:40`, rtti
     #[doc(hidden)]
     pub __vftable_40: *const crate::raw::vtables::BGSProjectile_vtable_40,
-    pub unknown_48: [u8; 8],
-    /// +0x50 `undefined8`, base TESModel
-    pub field_50: u64,
-    pub unknown_58: [u8; 16],
+    /// +0x48 `class:BSFixedString`, base TESModel, semantic; model path relative to Data\Meshes\ (the loader prepends "Data\\Meshes\\"); the qword is the pooled C string pointer (high)
+    pub model: crate::BSFixedString,
+    pub unknown_50: [u8; 24],
     /// +0x68 `vtbl:BGSProjectile:68`, rtti
     #[doc(hidden)]
     pub __vftable_68: *const crate::raw::vtables::BGSProjectile_vtable_68,
@@ -7370,7 +7363,7 @@ const _: () = assert!(core::mem::offset_of!(BGSProjectile, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BGSProjectile, field_2A) == 0x2A);
 const _: () = assert!(core::mem::offset_of!(BGSProjectile, __vftable_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(BGSProjectile, __vftable_40) == 0x40);
-const _: () = assert!(core::mem::offset_of!(BGSProjectile, field_50) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BGSProjectile, model) == 0x48);
 const _: () = assert!(core::mem::offset_of!(BGSProjectile, __vftable_68) == 0x68);
 const _: () = assert!(core::mem::offset_of!(BGSProjectile, __vftable_70) == 0x70);
 const _: () = assert!(core::mem::offset_of!(BGSProjectile, field_78) == 0x78);
@@ -7631,10 +7624,9 @@ pub struct BGSRagdoll {
     /// +0x20 `vtbl:BGSRagdoll:20`, rtti
     #[doc(hidden)]
     pub __vftable_20: *const crate::raw::vtables::BGSRagdoll_vtable_20,
-    pub unknown_28: [u8; 8],
-    /// +0x30 `undefined8`, base TESModel
-    pub field_30: u64,
-    pub unknown_38: [u8; 32],
+    /// +0x28 `class:BSFixedString`, base TESModel, semantic; model path relative to Data\Meshes\ (the loader prepends "Data\\Meshes\\"); the qword is the pooled C string pointer (high)
+    pub model: crate::BSFixedString,
+    pub unknown_30: [u8; 40],
     /// +0x58 `undefined1`, ctor store
     pub field_58: u8,
     pub unknown_59: [u8; 3],
@@ -7716,7 +7708,7 @@ const _: () = assert!(core::mem::offset_of!(BGSRagdoll, formID) == 0x14);
 const _: () = assert!(core::mem::offset_of!(BGSRagdoll, inGameFlags) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BGSRagdoll, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(BGSRagdoll, __vftable_20) == 0x20);
-const _: () = assert!(core::mem::offset_of!(BGSRagdoll, field_30) == 0x30);
+const _: () = assert!(core::mem::offset_of!(BGSRagdoll, model) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BGSRagdoll, field_58) == 0x58);
 const _: () = assert!(core::mem::offset_of!(BGSRagdoll, field_5C) == 0x5C);
 const _: () = assert!(core::mem::offset_of!(BGSRagdoll, field_60) == 0x60);
@@ -8753,22 +8745,22 @@ const _: () = assert!(core::mem::offset_of!(BGSTalkingActivator, field_B8) == 0x
 const _: () = assert!(core::mem::offset_of!(BGSTalkingActivator, field_C0) == 0xC0);
 const _: () = assert!(core::mem::offset_of!(BGSTalkingActivator, field_D0) == 0xD0);
 
-/// `BGSTextureModel`: size >= 0x18 (lower bound); partial, the struct stops at the lower bound; primary base `TESModel`.
-/// Evidence: field field_10.
+/// `BGSTextureModel`: size >= 0x28 (lower bound); partial, the struct stops at the lower bound; primary base `TESModel`.
+/// Evidence: field field_10; the semantic base TESModel (0x28) ends at 0x28.
 /// Bases: `TESModel`@0x0, `BaseFormComponent`@0x0.
 #[repr(C)]
 pub struct BGSTextureModel {
     /// +0x0 `vtbl:BGSTextureModel:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSTextureModel_vtable,
-    pub unknown_8: [u8; 8],
-    /// +0x10 `undefined8`, base TESModel
-    pub field_10: u64,
+    /// +0x8 `class:BSFixedString`, base TESModel, semantic; model path relative to Data\Meshes\ (the loader prepends "Data\\Meshes\\"); the qword is the pooled C string pointer (high)
+    pub model: crate::BSFixedString,
+    pub unknown_10: [u8; 24],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSTextureModel, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BGSTextureModel, field_10) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BGSTextureModel, model) == 0x8);
 
 /// `BGSTextureSet`: size 0x130 (exact, high); primary base `TESBoundObject`.
 /// Evidence: runtime: 0x130 at 3 allocation sites; agrees with the static allocation sites.

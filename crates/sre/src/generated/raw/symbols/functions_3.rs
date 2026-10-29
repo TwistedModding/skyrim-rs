@@ -4,6 +4,7 @@
 use crate::raw::*;
 
 pub(super) const ROWS: &[Function] = &[
+    Function { rva: 0x368c00, id: 22653, confidence: Confidence::High, name: "Cmd::GetInfamy_Execute" },
     Function { rva: 0x368c70, id: 22654, confidence: Confidence::High, name: "Cmd::GetInfamyViolent_Execute" },
     Function { rva: 0x368ce0, id: 22655, confidence: Confidence::High, name: "Cmd::GetInfamyNonViolent_Execute" },
     Function { rva: 0x368d50, id: 22656, confidence: Confidence::High, name: "Cmd::SetAllowFlying_Execute" },
@@ -1585,11 +1586,11 @@ pub(super) const ROWS: &[Function] = &[
     Function { rva: 0x3b68b0, id: 24556, confidence: Confidence::Medium, name: "ConcreteFormFactory<TESIdleForm,78>::vdtor" },
     Function { rva: 0x3b6930, id: 24558, confidence: Confidence::High, name: "TESIdleForm::ctor" },
     Function { rva: 0x3b6a20, id: 24559, confidence: Confidence::Medium, name: "TESIdleForm::ctor" },
-    Function { rva: 0x3b6be0, id: 24560, confidence: Confidence::High, name: "TESIdleForm::vfunc_4" },
-    Function { rva: 0x3b6c80, id: 24561, confidence: Confidence::High, name: "TESIdleForm::vfunc_5" },
+    Function { rva: 0x3b6be0, id: 24560, confidence: Confidence::High, name: "TESIdleForm::InitializeData" },
+    Function { rva: 0x3b6c80, id: 24561, confidence: Confidence::High, name: "TESIdleForm::ClearData" },
     Function { rva: 0x3b6ce0, id: 24562, confidence: Confidence::High, name: "TESIdleForm::vfunc_9" },
-    Function { rva: 0x3b6f40, id: 24563, confidence: Confidence::High, name: "TESIdleForm::vfunc_6" },
-    Function { rva: 0x3b7240, id: 24564, confidence: Confidence::High, name: "TESIdleForm::vfunc_19" },
+    Function { rva: 0x3b6f40, id: 24563, confidence: Confidence::High, name: "TESIdleForm::Load" },
+    Function { rva: 0x3b7240, id: 24564, confidence: Confidence::High, name: "TESIdleForm::InitItem" },
     Function { rva: 0x3b7390, id: 24565, confidence: Confidence::Medium, name: "InsertFormIntoParentArrayAfterSibling" },
     Function { rva: 0x3b77d0, id: 24568, confidence: Confidence::Medium, name: "GetRandomByteInRange28To29" },
     Function { rva: 0x3b78b0, id: 24569, confidence: Confidence::High, name: "HasNonEmptyStringAtField50" },
@@ -8131,5 +8132,4 @@ pub(super) const ROWS: &[Function] = &[
     Function { rva: 0x5845e0, id: 523660, confidence: Confidence::Medium, name: "AppendNewNamedListNode" },
     Function { rva: 0x5846e0, id: 523661, confidence: Confidence::Medium, name: "UnlinkAndDeleteListNode48" },
     Function { rva: 0x584770, id: 523662, confidence: Confidence::Medium, name: "DestroyNamedListNodeList" },
-    Function { rva: 0x5847f0, id: 523663, confidence: Confidence::Medium, name: "EmplaceReallocateQwordVector_5" },
 ];

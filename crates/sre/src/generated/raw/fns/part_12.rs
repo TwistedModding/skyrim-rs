@@ -3,6 +3,66 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `GetEntryField40ByKey` at 0x11f3ed0 (decompiler, medium); signature (untiered): `undefined8 * GetEntryField40ByKey(longlong * param_1, ulonglong * param_2, undefined8 param_3, undefined8 param_4)`
+pub const GetEntryField40ByKey: u64 = 91409;
+/// `GetEntryField70ByRecord` at 0xa68f30 (decompiler, medium); signature (untiered): `undefined8 GetEntryField70ByRecord(longlong param_1, undefined4 * param_2, undefined8 param_3, undefined8 param_4)`
+pub const GetEntryField70ByRecord: u64 = 524065;
+/// `GetEntryField8AtIndex` at 0x5332f0 (decompiler, high); signature (untiered): `undefined8 GetEntryField8AtIndex(longlong * param_1, ulonglong param_2)`
+pub const GetEntryField8AtIndex: u64 = 32352;
+/// `GetEntryField8CForRef` at 0x81a8e0 (decompiler, medium); signature (untiered): `int * GetEntryField8CForRef(longlong param_1, int * param_2, longlong param_3)`
+pub const GetEntryField8CForRef: u64 = 44731;
+/// `GetEntryField90ByRecord` at 0xa68fd0 (decompiler, medium); signature (untiered): `undefined4 GetEntryField90ByRecord(longlong param_1, undefined4 * param_2, undefined8 param_3, undefined8 param_4)`
+pub const GetEntryField90ByRecord: u64 = 524066;
+/// `GetEntryFieldA58At` at 0x1010900 (decompiler, high); signature (high): `undefined8 GetEntryFieldA58At(longlong param_1, uint param_2)`
+pub const GetEntryFieldA58At: u64 = 77377;
+/// `GetEntryFlagA6Bit0ForRef` at 0x81a800 (decompiler, medium); signature (untiered): `ulonglong GetEntryFlagA6Bit0ForRef(longlong param_1, longlong param_2)`
+pub const GetEntryFlagA6Bit0ForRef: u64 = 44729;
+/// `GetEntryFlagBit1ForRef` at 0x81a790 (decompiler, medium); signature (untiered): `byte GetEntryFlagBit1ForRef(longlong param_1, longlong param_2)`
+pub const GetEntryFlagBit1ForRef: u64 = 44728;
+/// `GetEntryForCurrentThreadIndex` at 0x1555990 (decompiler, medium); signature (medium): `undefined * GetEntryForCurrentThreadIndex(void)`
+pub const GetEntryForCurrentThreadIndex: u64 = 107499;
+/// `GetEntryInt78AtIndex` at 0xdbdf30 (decompiler, medium); signature (untiered): `undefined GetEntryInt78AtIndex(longlong param_1)`
+pub const GetEntryInt78AtIndex: u64 = 86371;
+/// `GetEntryOrEmptyFixedString` at 0x14dc790 (decompiler, medium); signature (medium): `undefined8 * GetEntryOrEmptyFixedString(longlong * param_1, uint param_2, undefined8 param_3, undefined8 param_4)`
+pub const GetEntryOrEmptyFixedString: u64 = 105340;
+/// `GetEntryOrLookupByByteKey` at 0x45c380 (decompiler, medium); signature (untiered): `ulonglong GetEntryOrLookupByByteKey(longlong * param_1, uint param_2, longlong * param_3)`
+pub const GetEntryOrLookupByByteKey: u64 = 28187;
+/// `GetEntryPairAtIndex` at 0xec6600 (decompiler, medium); signature (untiered): `ulonglong GetEntryPairAtIndex(longlong param_1, undefined8 * param_2, undefined8 * param_3, uint param_4)`
+pub const GetEntryPairAtIndex: u64 = 69638;
+/// `GetEntryPointerLocked` at 0x115a6c0 (decompiler, medium); signature (medium): `ulonglong GetEntryPointerLocked(longlong param_1, int param_2)`
+pub const GetEntryPointerLocked: u64 = 81952;
+/// `GetEntrySoulLevelValue` at 0x228bc0 (decompiler, medium); signature (medium): `int GetEntrySoulLevelValue(longlong * param_1)`
+pub const GetEntrySoulLevelValue: u64 = 15997;
+/// `GetEntryStringOrDummy` at 0x3b48f0 (decompiler, medium); signature (untiered): `char * GetEntryStringOrDummy(undefined8 param_1, int param_2, longlong * param_3)`
+pub const GetEntryStringOrDummy: u64 = 24501;
+/// `GetEntryValueForOriginalNode` at 0xaf8b90 (decompiler, high); signature (untiered): `undefined8 GetEntryValueForOriginalNode(ulonglong param_1, longlong param_2, int param_3)`
+pub const GetEntryValueForOriginalNode: u64 = 59400;
+/// `GetEntryValueForRefHandle` at 0x81a600 (decompiler, medium); signature (untiered): `int GetEntryValueForRefHandle(longlong param_1, longlong param_2)`
+pub const GetEntryValueForRefHandle: u64 = 44726;
+/// `GetEquipBackupField20` at 0x75d370 (decompiler, high); signature (high): `undefined8 GetEquipBackupField20(longlong param_1)`
+pub const GetEquipBackupField20: u64 = 40703;
+/// `GetEquipSlotOfEquippedObject` at 0x6dd720 (decompiler, medium); signature (untiered): `undefined8 GetEquipSlotOfEquippedObject(undefined8 param_1, longlong param_2, longlong param_3, undefined8 param_4)`
+pub const GetEquipSlotOfEquippedObject: u64 = 38912;
+/// `GetEquippedItemEnchantment` at 0x6ca170 (decompiler, medium); signature (untiered): `longlong GetEquippedItemEnchantment(longlong param_1, char param_2)`
+pub const GetEquippedItemEnchantment: u64 = 38575;
+/// `GetEquippedItemType` at 0x1d74a0 (semantic, high); signature (medium): `int GetEquippedItemType(longlong param_1)`; semantic: item type of an equipped object: weapon types 0..8 as stored, Crossbow 9 -> 12, spell 9, shield 10, torch 11, else 0 (high); signature `int (TESForm* item)`
+pub const GetEquippedItemType: u64 = 14220;
+/// `GetEquippedItemType` as a function pointer type (high).
+pub type GetEquippedItemType_fn = unsafe extern "C" fn(item: *mut crate::TESForm) -> i32;
+/// `GetEquippedObjectOfType29` at 0x66fc60 (decompiler, medium); signature (untiered): `longlong GetEquippedObjectOfType29(longlong param_1, int * param_2)`
+pub const GetEquippedObjectOfType29: u64 = 37168;
+/// `GetEquippedShout` at 0x6d7070 (decompiler, medium); signature (untiered): `longlong GetEquippedShout(longlong param_1)`
+pub const GetEquippedShout: u64 = 38771;
+/// `GetEulerAngleXFromField58Matrix` at 0x8f55b0 (decompiler, medium); signature (untiered): `uint GetEulerAngleXFromField58Matrix(longlong param_1)`
+pub const GetEulerAngleXFromField58Matrix: u64 = 50731;
+/// `GetEulerAnglesFromMatrix` at 0xedf800 (decompiler, medium); signature (medium): `undefined1 GetEulerAnglesFromMatrix(uint * param_1, uint * param_2, float * param_3, uint * param_4)`
+pub const GetEulerAnglesFromMatrix: u64 = 70232;
+/// `GetExeVersionString` at 0x2178c0 (decompiler, high); signature (high): `char * GetExeVersionString(void)`
+pub const GetExeVersionString: u64 = 15650;
+/// `GetExteriorGridX` at 0x2bc620 (decompiler, medium); signature (untiered): `undefined4 GetExteriorGridX(longlong param_1)`
+pub const GetExteriorGridX: u64 = 18958;
+/// `GetExteriorGridY` at 0x2bc640 (decompiler, medium); signature (untiered): `undefined4 GetExteriorGridY(longlong param_1)`
+pub const GetExteriorGridY: u64 = 18959;
 /// `GetExtra19Field1C` at 0x164d80 (decompiler, high); signature (high): `int GetExtra19Field1C(longlong param_1)`
 pub const GetExtra19Field1C: u64 = 11724;
 /// `GetExtra2BRefField10OrDefault` at 0x3010e0 (decompiler, medium); signature (untiered): `undefined4 * GetExtra2BRefField10OrDefault(longlong param_1)`
@@ -1505,8 +1565,10 @@ pub const GetFormAtCombinedIndex: u64 = 20908;
 pub const GetFormAtCombinedIndex_2: u64 = 20918;
 /// `GetFormGoldValue` at 0x1f3560 (semantic, medium); signature (untiered): `int GetFormGoldValue(undefined8 param_1)`; semantic: TESValueForm value (+8) when the form casts to TESValueForm, else the MagicItem/AlchemyItem value from 0x151780(item, 0) truncated, else -1 (medium); signature `i32 (TESForm* form)`
 pub const GetFormGoldValue: u64 = 14978;
-/// `GetFormModelPath` at 0x1eb3f0 (decompiler, medium); signature (medium): `undefined1 * GetFormModelPath(longlong param_1)`
+/// `GetFormModelPath` at 0x1eb3f0 (semantic, high); signature (medium): `undefined1 * GetFormModelPath(longlong param_1)`; semantic: any form's model path: dynamic cast to TESModel then slot 4; else a biped model by sex (reference argument), or for an NPC (form type 0x2b) a sex-specific string from +0x158; '' (literal ID_469508) when none or form is null (high); signature `const char* (TESForm* form)`
 pub const GetFormModelPath: u64 = 14788;
+/// `GetFormModelPath` as a function pointer type (high).
+pub type GetFormModelPath_fn = unsafe extern "C" fn(form: *mut crate::TESForm) -> *const c_char;
 /// `GetFormModelPathWithGlobal187391Extension` at 0x5491e0 (decompiler, medium); signature (untiered): `bool GetFormModelPathWithGlobal187391Extension(longlong param_1, undefined1 * param_2)`
 pub const GetFormModelPathWithGlobal187391Extension: u64 = 32707;
 /// `GetFormTypeByEditorID` at 0x1b7170 (decompiler, medium); signature (medium): `undefined1 GetFormTypeByEditorID(undefined8 param_1, char * param_2, undefined8 param_3, undefined8 param_4)`
@@ -2685,8 +2747,14 @@ pub const GetRefPairForHandle: u64 = 85659;
 pub const GetReferenceEffectPosition: u64 = 34776;
 /// `GetReferenceFromHandle10` at 0x4a3550 (decompiler, medium); signature (untiered): `longlong GetReferenceFromHandle10(longlong param_1)`
 pub const GetReferenceFromHandle10: u64 = 29802;
-/// `GetReferenceModel` at 0x2eebe0 (decompiler, medium); signature (untiered): `longlong GetReferenceModel(longlong param_1)`
+/// `GetReferenceModel` at 0x2eebe0 (semantic, high); signature (untiered): `longlong GetReferenceModel(longlong param_1)`; semantic: the TESModel a reference loads: extra data type 0x58's +0x10 if present (a per-reference override; Cmd::ClearDestruction also uses this extra, so it is the destruction-stage model), else for an NPC base the sex-specific skin, else the base form's (ref+0x40) TESModel subobject (dynamic cast), else the biped model (high); signature `TESModel* (TESObjectREFR* ref)`
 pub const GetReferenceModel: u64 = 19749;
+/// `GetReferenceModel` as a function pointer type (high).
+pub type GetReferenceModel_fn = unsafe extern "C" fn(ref_: *mut crate::TESObjectREFR) -> *mut crate::TESModel;
+/// `GetReferenceModelPath` at 0x2eeb70 (semantic, high); signature (untiered): `undefined GetReferenceModelPath(longlong param_1)`; semantic: GetReferenceModel(ref) then its slot 4 (null without a model): the per-reference path the 3D loader tries first (high); signature `const char* (TESObjectREFR* ref)`
+pub const GetReferenceModelPath: u64 = 19746;
+/// `GetReferenceModelPath` as a function pointer type (high).
+pub type GetReferenceModelPath_fn = unsafe extern "C" fn(ref_: *mut crate::TESObjectREFR) -> *const c_char;
 /// `GetReferenceRadius` at 0x3000e0 (decompiler, medium); signature (medium): `undefined8 GetReferenceRadius(longlong param_1)`
 pub const GetReferenceRadius: u64 = 20185;
 /// `GetRegSettingCollectionSingleton` at 0x662d80 (decompiler, high); signature (high): `undefined8 * GetRegSettingCollectionSingleton(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
@@ -9005,67 +9073,3 @@ pub const INISetting_fClampScale_Display__init: u64 = 10525;
 pub const INISetting_fCloakEffectUpdateInterval_General__atexit: u64 = 170640;
 /// `INISetting_fCloakEffectUpdateInterval_General__init` at 0x92370 (crt_init, medium); signature (high): `void INISetting_fCloakEffectUpdateInterval_General__init(void)`
 pub const INISetting_fCloakEffectUpdateInterval_General__init: u64 = 5418;
-/// `INISetting_fCloudAtlasWidth_Clouds__atexit` at 0x17906c0 (crt_init, medium); signature (high): `void INISetting_fCloudAtlasWidth_Clouds__atexit(void)`
-pub const INISetting_fCloudAtlasWidth_Clouds__atexit: u64 = 170547;
-/// `INISetting_fCloudAtlasWidth_Clouds__init` at 0x90ad0 (crt_init, medium); signature (high): `void INISetting_fCloudAtlasWidth_Clouds__init(void)`
-pub const INISetting_fCloudAtlasWidth_Clouds__init: u64 = 5316;
-/// `INISetting_fCollisionRecoveryMinDist_Camera__atexit` at 0x17a3ff0 (crt_init, medium); signature (high): `void INISetting_fCollisionRecoveryMinDist_Camera__atexit(void)`
-pub const INISetting_fCollisionRecoveryMinDist_Camera__atexit: u64 = 172204;
-/// `INISetting_fCollisionRecoveryMinDist_Camera__init` at 0xb3030 (crt_init, medium); signature (high): `void INISetting_fCollisionRecoveryMinDist_Camera__init(void)`
-pub const INISetting_fCollisionRecoveryMinDist_Camera__init: u64 = 6745;
-/// `INISetting_fCollisionRecoverySpeed_Camera__atexit` at 0x17a4040 (crt_init, medium); signature (high): `void INISetting_fCollisionRecoverySpeed_Camera__atexit(void)`
-pub const INISetting_fCollisionRecoverySpeed_Camera__atexit: u64 = 172205;
-/// `INISetting_fCollisionRecoverySpeed_Camera__init` at 0xb30b0 (crt_init, medium); signature (high): `void INISetting_fCollisionRecoverySpeed_Camera__init(void)`
-pub const INISetting_fCollisionRecoverySpeed_Camera__init: u64 = 6746;
-/// `INISetting_fCollisionSoundHeavyThreshold_Audio__atexit` at 0x1794490 (crt_init, medium); signature (high): `void INISetting_fCollisionSoundHeavyThreshold_Audio__atexit(void)`
-pub const INISetting_fCollisionSoundHeavyThreshold_Audio__atexit: u64 = 170811;
-/// `INISetting_fCollisionSoundHeavyThreshold_Audio__init` at 0x9ac00 (crt_init, medium); signature (high): `void INISetting_fCollisionSoundHeavyThreshold_Audio__init(void)`
-pub const INISetting_fCollisionSoundHeavyThreshold_Audio__init: u64 = 5637;
-/// `INISetting_fConstHDRAdaptTimerForMenu_Display__atexit` at 0x17c3850 (crt_init, medium); signature (high): `void INISetting_fConstHDRAdaptTimerForMenu_Display__atexit(void)`
-pub const INISetting_fConstHDRAdaptTimerForMenu_Display__atexit: u64 = 174640;
-/// `INISetting_fConstHDRAdaptTimerForMenu_Display__init` at 0x103de0 (crt_init, medium); signature (high): `void INISetting_fConstHDRAdaptTimerForMenu_Display__init(void)`
-pub const INISetting_fConstHDRAdaptTimerForMenu_Display__init: u64 = 10490;
-/// `INISetting_fConstantValue_bLightAttenuation__atexit` at 0x1746360 (crt_init, medium); signature (high): `void INISetting_fConstantValue_bLightAttenuation__atexit(void)`
-pub const INISetting_fConstantValue_bLightAttenuation__atexit: u64 = 166019;
-/// `INISetting_fConstantValue_bLightAttenuation__init` at 0x17080 (crt_init, medium); signature (high): `void INISetting_fConstantValue_bLightAttenuation__init(void)`
-pub const INISetting_fConstantValue_bLightAttenuation__init: u64 = 816;
-/// `INISetting_fControllerBufferDepth_Controls__atexit` at 0x179db60 (crt_init, medium); signature (high): `void INISetting_fControllerBufferDepth_Controls__atexit(void)`
-pub const INISetting_fControllerBufferDepth_Controls__atexit: u64 = 171603;
-/// `INISetting_fControllerBufferDepth_Controls__init` at 0xa86e0 (crt_init, medium); signature (high): `void INISetting_fControllerBufferDepth_Controls__init(void)`
-pub const INISetting_fControllerBufferDepth_Controls__init: u64 = 6383;
-/// `INISetting_fControllerDampenTime_Controls__atexit` at 0x179dbb0 (crt_init, medium); signature (high): `void INISetting_fControllerDampenTime_Controls__atexit(void)`
-pub const INISetting_fControllerDampenTime_Controls__atexit: u64 = 171604;
-/// `INISetting_fControllerDampenTime_Controls__init` at 0xa8760 (crt_init, medium); signature (high): `void INISetting_fControllerDampenTime_Controls__init(void)`
-pub const INISetting_fControllerDampenTime_Controls__init: u64 = 6384;
-/// `INISetting_fControllerSampleThreshold_Controls__atexit` at 0x179dc00 (crt_init, medium); signature (high): `void INISetting_fControllerSampleThreshold_Controls__atexit(void)`
-pub const INISetting_fControllerSampleThreshold_Controls__atexit: u64 = 171605;
-/// `INISetting_fControllerSampleThreshold_Controls__init` at 0xa87e0 (crt_init, medium); signature (high): `void INISetting_fControllerSampleThreshold_Controls__init(void)`
-pub const INISetting_fControllerSampleThreshold_Controls__init: u64 = 6385;
-/// `INISetting_fControllerTetherLen_FootIK__atexit` at 0x17b43d0 (crt_init, medium); signature (high): `void INISetting_fControllerTetherLen_FootIK__atexit(void)`
-pub const INISetting_fControllerTetherLen_FootIK__atexit: u64 = 173892;
-/// `INISetting_fControllerTetherLen_FootIK__init` at 0xebaa0 (crt_init, medium); signature (high): `void INISetting_fControllerTetherLen_FootIK__init(void)`
-pub const INISetting_fControllerTetherLen_FootIK__init: u64 = 9639;
-/// `INISetting_fCrafting3DItemPosXWide_Interface__atexit` at 0x17a59f0 (crt_init, medium); signature (high): `void INISetting_fCrafting3DItemPosXWide_Interface__atexit(void)`
-pub const INISetting_fCrafting3DItemPosXWide_Interface__atexit: u64 = 172371;
-/// `INISetting_fCrafting3DItemPosXWide_Interface__init` at 0xb5f10 (crt_init, medium); signature (high): `void INISetting_fCrafting3DItemPosXWide_Interface__init(void)`
-pub const INISetting_fCrafting3DItemPosXWide_Interface__init: u64 = 6918;
-/// `INISetting_fCrafting3DItemPosX_Interface__atexit` at 0x17a59a0 (crt_init, medium); signature (high): `void INISetting_fCrafting3DItemPosX_Interface__atexit(void)`
-pub const INISetting_fCrafting3DItemPosX_Interface__atexit: u64 = 172370;
-/// `INISetting_fCrafting3DItemPosX_Interface__init` at 0xb5e90 (crt_init, medium); signature (high): `void INISetting_fCrafting3DItemPosX_Interface__init(void)`
-pub const INISetting_fCrafting3DItemPosX_Interface__init: u64 = 6917;
-/// `INISetting_fCrafting3DItemPosYWide_Interface__atexit` at 0x17a5a90 (crt_init, medium); signature (high): `void INISetting_fCrafting3DItemPosYWide_Interface__atexit(void)`
-pub const INISetting_fCrafting3DItemPosYWide_Interface__atexit: u64 = 172373;
-/// `INISetting_fCrafting3DItemPosYWide_Interface__init` at 0xb6010 (crt_init, medium); signature (high): `void INISetting_fCrafting3DItemPosYWide_Interface__init(void)`
-pub const INISetting_fCrafting3DItemPosYWide_Interface__init: u64 = 6920;
-/// `INISetting_fCrafting3DItemPosY_Interface__atexit` at 0x17a5a40 (crt_init, medium); signature (high): `void INISetting_fCrafting3DItemPosY_Interface__atexit(void)`
-pub const INISetting_fCrafting3DItemPosY_Interface__atexit: u64 = 172372;
-/// `INISetting_fCrafting3DItemPosY_Interface__init` at 0xb5f90 (crt_init, medium); signature (high): `void INISetting_fCrafting3DItemPosY_Interface__init(void)`
-pub const INISetting_fCrafting3DItemPosY_Interface__init: u64 = 6919;
-/// `INISetting_fCrafting3DItemPosZWide_Interface__atexit` at 0x17a5b30 (crt_init, medium); signature (high): `void INISetting_fCrafting3DItemPosZWide_Interface__atexit(void)`
-pub const INISetting_fCrafting3DItemPosZWide_Interface__atexit: u64 = 172375;
-/// `INISetting_fCrafting3DItemPosZWide_Interface__init` at 0xb6110 (crt_init, medium); signature (high): `void INISetting_fCrafting3DItemPosZWide_Interface__init(void)`
-pub const INISetting_fCrafting3DItemPosZWide_Interface__init: u64 = 6922;
-/// `INISetting_fCrafting3DItemPosZ_Interface__atexit` at 0x17a5ae0 (crt_init, medium); signature (high): `void INISetting_fCrafting3DItemPosZ_Interface__atexit(void)`
-pub const INISetting_fCrafting3DItemPosZ_Interface__atexit: u64 = 172374;
-/// `INISetting_fCrafting3DItemPosZ_Interface__init` at 0xb6090 (crt_init, medium); signature (high): `void INISetting_fCrafting3DItemPosZ_Interface__init(void)`
-pub const INISetting_fCrafting3DItemPosZ_Interface__init: u64 = 6921;

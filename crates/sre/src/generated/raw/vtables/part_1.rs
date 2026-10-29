@@ -845,7 +845,7 @@ pub struct Actor_vtable {
     pub slot_178: *const c_void,
     /// `Actor::vfunc_179` at 0x6c2d30 (rtti, medium); signature (low): `undefined1 vfunc_179(void)`
     pub slot_179: *const c_void,
-    /// `Actor::vfunc_180` at 0x67e830 (rtti, medium); signature (low): `undefined vfunc_180(Actor * this, ulonglong * param_1, byte param_2, char param_3)`
+    /// `Actor::AttachWeapon3D` at 0x67e830 (semantic, medium); signature (untiered): `undefined AttachWeapon3D(Actor * this, ulonglong * param_1, byte param_2, char param_3)`
     pub slot_180: *const c_void,
     /// `Actor::vfunc_181` at 0x67e9b0 (rtti, medium); signature (low): `undefined vfunc_181(Actor * this, longlong param_1, undefined8 param_2, ulonglong param_3)`
     pub slot_181: *const c_void,
@@ -2495,7 +2495,7 @@ pub struct AlchemyItem_vtable {
     pub slot_62: *const c_void,
     /// `TESObject::vfunc_63` at 0x146a40 (rtti, medium); signature (low): `undefined vfunc_63(void)`
     pub slot_63: *const c_void,
-    /// `TESBoundObject::vfunc_64` at 0x277e20 (rtti, medium); signature (low): `TESBoundObject_vtbl * vfunc_64(TESBoundObject * this, TESBoundObject_vtbl * param_1, byte param_2)`
+    /// `TESBoundObject::Clone3D` at 0x277e20 (semantic, high); signature (untiered): `TESBoundObject_vtbl * Clone3D(TESBoundObject * this, TESBoundObject_vtbl * param_1, byte param_2)`
     pub slot_64: *const c_void,
     /// `TESObject::vfunc_65` at 0x275b60 (rtti, medium); signature (low): `undefined vfunc_65(TESObject * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_65: *const c_void,
@@ -2649,9 +2649,9 @@ pub struct AlchemyItem_vtable_90 {
     pub slot_2: *const c_void,
     /// `TESModelTextureSwap::vfunc_3` at 0x1ed240 (rtti, medium); signature (low): `undefined vfunc_3(TESModelTextureSwap * this, undefined8 param_1)`
     pub slot_3: *const c_void,
-    /// `TESModel::vfunc_4` at 0x146780 (rtti, medium); signature (high): `undefined8 vfunc_4(TESModel * this)`
+    /// `TESModel::GetModel` at 0x146780 (semantic, high); signature (untiered): `undefined8 GetModel(TESModel * this)`
     pub slot_4: *const c_void,
-    /// `TESModel::vfunc_5` at 0x1ead10 (rtti, medium); signature (low): `undefined vfunc_5(TESModel * this, char * param_1)`
+    /// `TESModel::SetModel` at 0x1ead10 (semantic, high); signature (untiered): `undefined SetModel(TESModel * this, char * param_1)`
     pub slot_5: *const c_void,
     /// `TESModelTextureSwap::vfunc_6` at 0x146650 (rtti, medium); signature (high): `TESModelTextureSwap * vfunc_6(TESModelTextureSwap * this)`
     pub slot_6: *const c_void,

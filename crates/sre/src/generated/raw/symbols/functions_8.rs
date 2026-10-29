@@ -4,6 +4,16 @@
 use crate::raw::*;
 
 pub(super) const ROWS: &[Function] = &[
+    Function { rva: 0xee5ab0, id: 70379, confidence: Confidence::Medium, name: "NiStream::vfunc_13" },
+    Function { rva: 0xee5ed0, id: 70380, confidence: Confidence::Medium, name: "NiStream::vfunc_14" },
+    Function { rva: 0xee6190, id: 70381, confidence: Confidence::Medium, name: "NiStream::vfunc_15" },
+    Function { rva: 0xee6670, id: 70382, confidence: Confidence::Medium, name: "NiStream::vfunc_16" },
+    Function { rva: 0xee69c0, id: 70383, confidence: Confidence::Medium, name: "NiStream::vfunc_17" },
+    Function { rva: 0xee6a20, id: 70384, confidence: Confidence::Medium, name: "NiStream::vfunc_18" },
+    Function { rva: 0xee6bc0, id: 70385, confidence: Confidence::Medium, name: "NiStream::vfunc_19" },
+    Function { rva: 0xee6c40, id: 70386, confidence: Confidence::Medium, name: "NiStream::vfunc_20" },
+    Function { rva: 0xee6e40, id: 70387, confidence: Confidence::Medium, name: "NiStream::vfunc_21" },
+    Function { rva: 0xee6ec0, id: 70388, confidence: Confidence::Medium, name: "NiStream::vfunc_22" },
     Function { rva: 0xee6f60, id: 70389, confidence: Confidence::Medium, name: "NiStream::vfunc_23" },
     Function { rva: 0xee70b0, id: 70392, confidence: Confidence::Medium, name: "BSStream::vfunc_15_sub0" },
     Function { rva: 0xee71d0, id: 70395, confidence: Confidence::Medium, name: "ReadObjectTypesAndCreateObjects" },
@@ -8683,14 +8693,4 @@ pub(super) const ROWS: &[Function] = &[
     Function { rva: 0x116ef00, id: 82310, confidence: Confidence::High, name: "RefreshMenuPlatform" },
     Function { rva: 0x116f2a0, id: 82313, confidence: Confidence::Medium, name: "IMenu::CreateFxDelegate" },
     Function { rva: 0x116f370, id: 82314, confidence: Confidence::High, name: "IMenu::vdtor" },
-    Function { rva: 0x116f410, id: 443438, confidence: Confidence::Medium, name: "ZeroInitEntry" },
-    Function { rva: 0x116f5b0, id: 82320, confidence: Confidence::High, name: "GetField0_9" },
-    Function { rva: 0x116f610, id: 82322, confidence: Confidence::High, name: "GetField20OfPtrOrInline10" },
-    Function { rva: 0x116f630, id: 82323, confidence: Confidence::High, name: "BSScaleformManager::ctor" },
-    Function { rva: 0x116fc90, id: 82324, confidence: Confidence::Medium, name: "BSScaleformManager::Shutdown" },
-    Function { rva: 0x116fda0, id: 82325, confidence: Confidence::High, name: "BSScaleformManager::LoadMovie" },
-    Function { rva: 0x1170220, id: 82326, confidence: Confidence::Medium, name: "StatsMenu::ctor_sub4" },
-    Function { rva: 0x1170350, id: 82328, confidence: Confidence::Medium, name: "CopyField18RefPtrTo" },
-    Function { rva: 0x11703b0, id: 82329, confidence: Confidence::High, name: "GetSafeZoneX" },
-    Function { rva: 0x1170400, id: 82330, confidence: Confidence::High, name: "GetSafeZoneY" },
 ];

@@ -4,6 +4,13 @@
 use core::ffi::{c_char, c_void};
 
 impl crate::Actor {
+    /// `Actor::AttachWeapon3D`, vtable slot 180, through the object's vtable (decompiler signature, tier untiered; ledger semantic evidence, name medium; id 37374, rva 0x67e830).
+    /// `undefined AttachWeapon3D(Actor * this, ulonglong * param_1, byte param_2, char param_3)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn attach_weapon3_d(&self, param_1: *mut u64, param_2: u8, param_3: c_char) -> u64 { unsafe { virtual_function!(self, 180, (*const Self, *mut u64, u8, c_char) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `Actor::GetLookOriginAndDirection`, vtable slot 194, through the object's vtable (decompiler signature, tier untiered; ledger semantic evidence, name high; id 37479, rva 0x6874c0).
     /// `undefined GetLookOriginAndDirection(Actor * this, undefined4 * param_1, float * param_2)`
     ///

@@ -4,6 +4,16 @@
 use crate::raw::*;
 
 pub(super) const ROWS: &[Function] = &[
+    Function { rva: 0x116f410, id: 443438, confidence: Confidence::Medium, name: "ZeroInitEntry" },
+    Function { rva: 0x116f5b0, id: 82320, confidence: Confidence::High, name: "GetField0_9" },
+    Function { rva: 0x116f610, id: 82322, confidence: Confidence::High, name: "GetField20OfPtrOrInline10" },
+    Function { rva: 0x116f630, id: 82323, confidence: Confidence::High, name: "BSScaleformManager::ctor" },
+    Function { rva: 0x116fc90, id: 82324, confidence: Confidence::Medium, name: "BSScaleformManager::Shutdown" },
+    Function { rva: 0x116fda0, id: 82325, confidence: Confidence::High, name: "BSScaleformManager::LoadMovie" },
+    Function { rva: 0x1170220, id: 82326, confidence: Confidence::Medium, name: "StatsMenu::ctor_sub4" },
+    Function { rva: 0x1170350, id: 82328, confidence: Confidence::Medium, name: "CopyField18RefPtrTo" },
+    Function { rva: 0x11703b0, id: 82329, confidence: Confidence::High, name: "GetSafeZoneX" },
+    Function { rva: 0x1170400, id: 82330, confidence: Confidence::High, name: "GetSafeZoneY" },
     Function { rva: 0x1170450, id: 524270, confidence: Confidence::Medium, name: "IsTextInAllowedCharset" },
     Function { rva: 0x11706d0, id: 82332, confidence: Confidence::Medium, name: "ResolveInterfaceMoviePath" },
     Function { rva: 0x1170760, id: 82333, confidence: Confidence::Medium, name: "CreateMovieIntoSlot" },
@@ -6648,13 +6658,4 @@ pub(super) const ROWS: &[Function] = &[
     Function { rva: 0x13c42e0, id: 450936, confidence: Confidence::Medium, name: "ReleaseVectorStorage" },
     Function { rva: 0x13c4a00, id: 450951, confidence: Confidence::Medium, name: "SetResultField90AndMoveOut_7" },
     Function { rva: 0x13c58d0, id: 527081, confidence: Confidence::Medium, name: "SetResultField90AndMoveOut_8" },
-    Function { rva: 0x13c5ea0, id: 450958, confidence: Confidence::Medium, name: "DestroyViaVfunc0AndFree_46" },
-    Function { rva: 0x13c5f60, id: 450960, confidence: Confidence::Medium, name: "ConstructFunctionalStorage10_6" },
-    Function { rva: 0x13c64d0, id: 450966, confidence: Confidence::High, name: "ScalarDeletingDtorSize10_72" },
-    Function { rva: 0x13c6500, id: 450967, confidence: Confidence::High, name: "ScalarDeletingDtorSize10_73" },
-    Function { rva: 0x13c6a10, id: 450979, confidence: Confidence::Medium, name: "DestroyViaVfunc0AndFree_47" },
-    Function { rva: 0x13c6ad0, id: 450981, confidence: Confidence::Medium, name: "ConstructFunctionalStorage10_7" },
-    Function { rva: 0x13c70d0, id: 450987, confidence: Confidence::High, name: "ScalarDeletingDtorSize10_74" },
-    Function { rva: 0x13c7100, id: 450988, confidence: Confidence::High, name: "ScalarDeletingDtorSize10_75" },
-    Function { rva: 0x13c7610, id: 451000, confidence: Confidence::Medium, name: "DestroyViaVfunc0AndFree_48" },
 ];

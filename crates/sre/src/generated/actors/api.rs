@@ -172,15 +172,12 @@ impl crate::AIProcess {
     /// `bool (AIProcess* process)`
     #[inline]
     pub fn is_in_dialogue_with_player(&self) -> bool { unsafe { function!(39347, (*const Self) -> bool)(core::ptr::from_ref(self)) } }
-    /// `AIProcess::PlayIdle`: builds a TESActionData for the default-object action (0x40 from Papyrus) carrying the idle (+0x48) and runs it through LoadActionAnimationWithCallback 0x703360; returns whether the graph accepted it. Refuses during player VATS playback (VATS+0x20 == 4) and for actors in some states; it stores no 'current idle' pointer
+    /// `AIProcess::PlayIdle`: refuses for the player in VATS mode 4, for sit/sleep states other than 0/3/7, life-state 6 without an idle, or when the idle is not in the idle lists or its conditions (+0x20) fail; builds ActionInput(2, actor, defaultObject[index], target), copies the idle's ENAM (+0x50) into the input's event (+0x28), stores the idle at +0x48, then LoadActionAnimationWithCallback -> TESActionData::Perform. Success: process+0x10 +0x455 = 0, +0x31c = fAIIdleWaitTime(ComplexScene), +0x348 = 0, +0x350 = invalid handle; for a specific idle on an actor where 0x673d00 holds (not force) it also sets +0x456 = 1
     ///
-    /// Semantic, camera pass, medium; ledger semantic evidence, name medium; id 39256, rva 0x6f0a20.
-    /// `bool (AIProcess* this, Actor* actor, u32 actionDefaultObject, TESIdleForm* idle, bool checkConditions, bool force, TESObjectREFR* target)`
-    ///
-    /// # Safety
-    /// The pass rates the signature medium.
+    /// Semantic, camera pass, high; ledger runtime evidence, name high; id 39256, rva 0x6f0a20.
+    /// `bool (AIProcess* this, Actor* actor, int defaultActionIndex, TESIdleForm* idle, bool checkConditions, bool force, TESObjectREFR* target)`
     #[inline]
-    pub unsafe fn play_idle(&self, actor: *mut crate::Actor, actionDefaultObject: u32, idle: *mut crate::TESIdleForm, checkConditions: bool, force: bool, target: *mut crate::TESObjectREFR) -> bool { unsafe { function!(39256, (*const Self, *mut crate::Actor, u32, *mut crate::TESIdleForm, bool, bool, *mut crate::TESObjectREFR) -> bool)(core::ptr::from_ref(self), actor, actionDefaultObject, idle, checkConditions, force, target) } }
+    pub fn play_idle(&self, actor: &crate::Actor, defaultActionIndex: i32, idle: &crate::TESIdleForm, checkConditions: bool, force: bool, target: &crate::TESObjectREFR) -> bool { unsafe { function!(39256, (*const Self, *const crate::Actor, i32, *const crate::TESIdleForm, bool, bool, *const crate::TESObjectREFR) -> bool)(core::ptr::from_ref(self), core::ptr::from_ref(actor), defaultActionIndex, core::ptr::from_ref(idle), checkConditions, force, core::ptr::from_ref(target)) } }
     /// `AIProcess::ResetHighField3F8Pair`: high data +0x3f8 = +0x3fa = 0xffff
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 39522, rva 0x6ffef0.
@@ -322,6 +319,15 @@ impl crate::AIProcess {
     /// `event` must point to what the engine expects.
     #[inline]
     pub unsafe fn dispatch_event_to_field8_sinks(&self, event: *const c_void) { unsafe { function!(40028, (*const Self, *const c_void))(core::ptr::from_ref(self), event) } }
+    /// `LoadActionAnimationWithCallback`: requests the animation file for the action's event (action+0x28) with a RunActionAnimationLoadedCallback kept at process+0x10 +0x430 (it gets &+0x455); when nothing is pending performs the action now (slot 5)
+    ///
+    /// Semantic, camera pass, medium; ledger semantic evidence, name medium; id 39625, rva 0x703360.
+    /// `bool (AIProcess* this, Actor* actor, int actionIndex, TESActionData* action)`
+    ///
+    /// # Safety
+    /// The pass rates the signature medium.
+    #[inline]
+    pub unsafe fn load_action_animation_with_callback(&self, actor: *mut crate::Actor, actionIndex: i32, action: *mut crate::TESActionData) -> bool { unsafe { function!(39625, (*const Self, *mut crate::Actor, i32, *mut crate::TESActionData) -> bool)(core::ptr::from_ref(self), actor, actionIndex, action) } }
     /// `AIProcess::equippedLeft` at +0xF0: object in the left hand
     ///
     /// Semantic field, actors pass, high; `None` while the pointer is null.
@@ -778,15 +784,15 @@ impl crate::Actor {
     /// `void (Actor* actor)`
     #[inline]
     pub fn perform_knockdown_action(&self) { unsafe { function!(40151, (*const Self))(core::ptr::from_ref(self)) } }
-    /// `Actor::PlayIdle_Impl`: Papyrus Actor.PlayIdle (0xa01930, target null) and PlayIdleWithTarget: logs and fails on a None actor, a None idle or no AI process; otherwise AIProcess::PlayIdle(process, actor, 0x40, idle, 1, 0, target)
+    /// `Actor::PlayIdle_Impl`: Papyrus Actor.PlayIdle/PlayIdleWithTarget body: AIProcess::PlayIdle(process, this, 0x40, idle, 1, 0, target)
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 55105, rva 0xa12e60.
-    /// `bool (Actor* this, TESIdleForm* idle, TESObjectREFR* target, IVirtualMachine* vm, u32 stackId)`
+    /// `bool (Actor* this, TESIdleForm* idle, TESObjectREFR* target, VM*, uint stackId)`
     ///
     /// # Safety
-    /// `vm` must point to what the engine expects.
+    /// `a3` must point to what the engine expects.
     #[inline]
-    pub unsafe fn play_idle_impl(&self, idle: *mut crate::TESIdleForm, target: *mut crate::TESObjectREFR, vm: *mut c_void, stackId: u32) -> bool { unsafe { function!(55105, (*const Self, *mut crate::TESIdleForm, *mut crate::TESObjectREFR, *mut c_void, u32) -> bool)(core::ptr::from_ref(self), idle, target, vm, stackId) } }
+    pub unsafe fn play_idle_impl(&self, idle: *mut crate::TESIdleForm, target: *mut crate::TESObjectREFR, a3: *mut c_void, stackId: u32) -> bool { unsafe { function!(55105, (*const Self, *mut crate::TESIdleForm, *mut crate::TESObjectREFR, *mut c_void, u32) -> bool)(core::ptr::from_ref(self), idle, target, a3, stackId) } }
     /// `Actor::ProcessAnimationGraphEvent`: handles the actor's own animation events after TESObjectREFR's handler; a tag found in the footstep source's filter list (BSTArray<BSFixedString> at source+0x60, tested by 0x737040) is re-sent as a BGSFootstepEvent {actor handle, tag} through g_FootstepEventSource_ptr
     ///
     /// Semantic, events pass, high; ledger runtime evidence, name high; id 37997, rva 0x6b2000.
@@ -797,6 +803,12 @@ impl crate::Actor {
     /// `source` must point to what the engine expects.
     #[inline]
     pub unsafe fn process_animation_graph_event(&self, event: *const crate::BSAnimationGraphEvent, source: *mut c_void) -> Result<crate::BSEventNotifyControl, u32> { unsafe { let raw = function!(37997, (*const Self, *const crate::BSAnimationGraphEvent, *mut c_void) -> u32)(core::ptr::from_ref(self).byte_add(0x30), event, source); crate::BSEventNotifyControl::from_u32(raw).ok_or(raw) } }
+    /// `Actor::RaceFlag6SetAndFlag11Clear`: true when the race (Actor+0x1f8) flags TESRace+0x108 have bit 6 set and bit 11 clear: lets the actor draw while swimming (and start combat in water)
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 37218, rva 0x673b60.
+    /// `bool (Actor* this)`
+    #[inline]
+    pub fn race_flag6_set_and_flag11_clear(&self) -> bool { unsafe { function!(37218, (*const Self) -> bool)(core::ptr::from_ref(self)) } }
     /// `Actor::RetryPendingWeaponRequest`: when the weapon state is 1 (want draw) or 4 (want sheathe), calls slot 166 with draw = (state == 1)
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 37280, rva 0x675b90.
@@ -809,6 +821,12 @@ impl crate::Actor {
     /// `void (Actor* this, u32 lifeState)`
     #[inline]
     pub fn set_life_state(&self, lifeState: u32) { unsafe { function!(37612, (*const Self, u32))(core::ptr::from_ref(self), lifeState) } }
+    /// `Actor::SetSwimming`: sets or clears ActorState flags1 bit 10 (Actor+0xc8 & 0x400); when the bit changes it performs default object 0x2b 'Action Swim State Change' (the player through PlayerControls::PerformActionOnControlledActors(controls, 0x2b, 2), an NPC through ActionInput(type 2) + TESActionData::Perform). No weapon code
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 37946, rva 0x6ae890.
+    /// `bool (Actor* this, bool swimming)`
+    #[inline]
+    pub fn set_swimming(&self, swimming: bool) -> bool { unsafe { function!(37946, (*const Self, bool) -> bool)(core::ptr::from_ref(self), swimming) } }
     /// `Actor::SetWeaponDrawn`: Actor's ActorState slot 21: sets graph ints iMagicEquipped, iLeftHandEquipped, iRightHandEquipped on every graph, then ActorState::SetWeaponDrawn
     ///
     /// Semantic, animation pass, high; ledger semantic evidence, name high; id 38821, rva 0x6d9a20.
@@ -834,6 +852,21 @@ impl crate::Actor {
     /// `void (Actor* actor, float delta)`
     #[inline]
     pub fn update_stamina_regen(&self, delta: f32) { unsafe { function!(38452, (*const Self, f32))(core::ptr::from_ref(self), delta) } }
+    /// `ComputeFractionOfScaledExtentBelowLevel`: the fraction of the actor's scaled height under the water surface (0..1); Actor::Update's swim input
+    ///
+    /// Semantic, camera pass, medium; ledger semantic evidence, name medium; id 37448, rva 0x685c30.
+    /// `float (Actor* this, float z, TESWaterForm* water)`
+    ///
+    /// # Safety
+    /// The pass rates the signature medium.
+    #[inline]
+    pub unsafe fn compute_fraction_of_scaled_extent_below_level(&self, z: f32, water: *mut crate::TESWaterForm) -> f32 { unsafe { function!(37448, (*const Self, f32, *mut crate::TESWaterForm) -> f32)(core::ptr::from_ref(self), z, water) } }
+    /// `ResetActorWeaponStateAndCamera`: the engine's immediate sheathe, no animation: slot 180(right WEAP, drawn 0, left 0), slot 180(left WEAP, 0, 1), ActorState slot 21 SetWeaponDrawn(false) (state 0, graph ints iMagicEquipped/iLeftHandEquipped/iRightHandEquipped, PlayerCamera+0x162 for the player), process events {2,1} and {2,0}, PlayerCamera::SetCombatOffsets(...0) for the camera target or a mounted actor, 'WarHorseMode' HUD for the mounted player
+    ///
+    /// Semantic, camera pass, high; ledger runtime evidence, name high; id 37169, rva 0x66fca0.
+    /// `void (Actor* this)`
+    #[inline]
+    pub fn reset_actor_weapon_state_and_camera(&self) { unsafe { function!(37169, (*const Self))(core::ptr::from_ref(self)) } }
     /// `Actor::currentProcess` at +0xF8: the AI process; null for actors without AI
     ///
     /// Semantic field, actors pass, high; `None` while the pointer is null.
@@ -1426,7 +1459,7 @@ impl crate::PlayerCharacter {
     /// `source` must point to what the engine expects.
     #[inline]
     pub unsafe fn process_menu_open_close_event(&self, event: *const crate::MenuOpenCloseEvent, source: *mut c_void) -> Result<crate::BSEventNotifyControl, u32> { unsafe { let raw = function!(40740, (*const Self, *const crate::MenuOpenCloseEvent, *mut c_void) -> u32)(core::ptr::from_ref(self).byte_add(0x2B8), event, source); crate::BSEventNotifyControl::from_u32(raw).ok_or(raw) } }
-    /// `PlayerCharacter::RequestWeaponDrawn`: PlayerCharacter slot 166: performs 'Action Draw'/'Action Sheath' and only on acceptance sets 2 (Drawing) or 5 (Sheathing) and arms the draw/sheathe timeout +0xa28; a refused request leaves the state unchanged (the player never gets 1 or 4 from here)
+    /// `PlayerCharacter::RequestWeaponDrawn`: player slot 166. Sheathe (0): returns at once in state 0 or 5; performs 'Action Sheath' and only when accepted AND the chosen event (ActionInput+0x28) is the interned 'Unequip' (*0x32454f0) sets state 5 (flags2 & ~0x40 | 0xa0), +0xa28 = fPlayerCharacterDrawSheatheTimeout:Animation and calls 0x7568c0(this, 1); a refusal changes nothing. Draw (1): refused by the engine while swimming (0x6e1ca0) unless the race passes 0x673b60
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 41235, rva 0x7766b0.
     /// `void (PlayerCharacter* this, bool draw)`

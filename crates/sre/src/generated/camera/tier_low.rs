@@ -482,6 +482,47 @@ impl crate::TESFurniture {
     pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(17439, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
+impl crate::TESIdleForm {
+    /// `TESIdleForm::ctor` (decompiler signature, tier low; ledger layout_inference evidence, name high; id 24558, rva 0x3b6930).
+    /// `TESIdleForm * ctor(TESIdleForm * this, undefined8 param_1, uint * param_2, longlong * param_3)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn ctor(&self, param_1: u64, param_2: *mut u32, param_3: *mut i64) -> *mut Self { unsafe { function!(24558, (*const Self, u64, *mut u32, *mut i64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    /// `TESIdleForm::ctor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 24559, rva 0x3b6a20).
+    /// `undefined ctor(TESIdleForm * this, undefined8 param_1, ulonglong param_2, undefined8 param_3)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn ctor_2(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(24559, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    /// `TESIdleForm::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 24583, rva 0x3b8200).
+    /// `TESIdleForm * vdtor(TESIdleForm * this, ulonglong param_1, ulonglong param_2, undefined8 param_3)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(24583, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+}
+
+impl crate::TESModel {
+    /// `TESModel::dtor` (decompiler signature, tier low; ledger layout_inference evidence, name high; id 14776, rva 0x1ea9e0).
+    /// `undefined dtor(TESModel * this, undefined8 param_1, longlong param_2, undefined1 * param_3)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn dtor(&self, param_1: u64, param_2: i64, param_3: *mut u8) -> u64 { unsafe { function!(14776, (*const Self, u64, i64, *mut u8) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    /// `TESModel::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 14806, rva 0x1ec350).
+    /// `TESModel * vdtor(TESModel * this, uint param_1, undefined8 param_2, undefined1 * param_3)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: *mut u8) -> *mut Self { unsafe { function!(14806, (*const Self, u32, u64, *mut u8) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+}
+
 impl crate::TESObjectWEAP {
     /// `TESObjectWEAP::BGSDestructibleObjectForm_vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 18136, rva 0x28e4cc).
     /// `undefined BGSDestructibleObjectForm_vdtor(TESObjectWEAP * this, ulonglong param_1, longlong param_2, undefined1 * param_3)`

@@ -11322,7 +11322,7 @@ pub struct Character_vtable {
     pub slot_178: *const c_void,
     /// `Actor::vfunc_179` at 0x6c2d30 (rtti, medium); signature (low): `undefined1 vfunc_179(void)`
     pub slot_179: *const c_void,
-    /// `Actor::vfunc_180` at 0x67e830 (rtti, medium); signature (low): `undefined vfunc_180(Actor * this, ulonglong * param_1, byte param_2, char param_3)`
+    /// `Actor::AttachWeapon3D` at 0x67e830 (semantic, medium); signature (untiered): `undefined AttachWeapon3D(Actor * this, ulonglong * param_1, byte param_2, char param_3)`
     pub slot_180: *const c_void,
     /// `Actor::vfunc_181` at 0x67e9b0 (rtti, medium); signature (low): `undefined vfunc_181(Actor * this, longlong param_1, undefined8 param_2, ulonglong param_3)`
     pub slot_181: *const c_void,

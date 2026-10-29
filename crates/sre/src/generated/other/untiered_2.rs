@@ -3,6 +3,34 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `AssignRefCountedField10` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 82296, rva 0xcf8630).
+/// `undefined AssignRefCountedField10(longlong * param_1, longlong * param_2, longlong param_3)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn assign_ref_counted_field10(param_1: *mut i64, param_2: *mut i64, param_3: i64) -> u64 { unsafe { function!(82296, (*mut i64, *mut i64, i64) -> u64)(param_1, param_2, param_3) } }
+/// `AssignRefCountedPairArrayPtr` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 90901, rva 0x11d5920).
+/// `undefined8 * AssignRefCountedPairArrayPtr(undefined8 * param_1, int * param_2, undefined8 param_3, undefined8 param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn assign_ref_counted_pair_array_ptr(param_1: *mut u64, param_2: *mut i32, param_3: u64, param_4: u64) -> *mut u64 { unsafe { function!(90901, (*mut u64, *mut i32, u64, u64) -> *mut u64)(param_1, param_2, param_3, param_4) } }
+/// `AssignRefCountedPointer_11` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 38167, rva 0x6bb180).
+/// `longlong * AssignRefCountedPointer_11(longlong * param_1, undefined8 * param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn assign_ref_counted_pointer_11(param_1: *mut i64, param_2: *mut u64) -> *mut i64 { unsafe { function!(38167, (*mut i64, *mut u64) -> *mut i64)(param_1, param_2) } }
+/// `AssignRefCountedPointer_12` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 39731, rva 0x71cb30).
+/// `longlong * AssignRefCountedPointer_12(longlong * param_1, undefined8 * param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn assign_ref_counted_pointer_12(param_1: *mut i64, param_2: *mut u64) -> *mut i64 { unsafe { function!(39731, (*mut i64, *mut u64) -> *mut i64)(param_1, param_2) } }
 /// `AssignRefCountedPointer_7` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 69737, rva 0xeca3f0).
 /// `longlong * AssignRefCountedPointer_7(longlong * param_1, undefined8 * param_2)`
 ///
@@ -13310,31 +13338,3 @@ pub unsafe fn compute_mesh_volume_mass_properties(param_1: *mut i64, param_2: f3
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn compute_millisecond_part_from_field68(param_1: i64) -> u64 { unsafe { function!(86298, (i64) -> u64)(param_1) } }
-/// `ComputeMinOfArgs` (decompiler signature, tier untiered; ledger decompiler evidence, name high; id 86220, rva 0xdb6eb0).
-/// `undefined ComputeMinOfArgs(longlong param_1)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn compute_min_of_args(param_1: i64) -> u64 { unsafe { function!(86220, (i64) -> u64)(param_1) } }
-/// `ComputeMinkowskiSupportPoint_2` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 67559, rva 0xcc6280).
-/// `undefined ComputeMinkowskiSupportPoint_2(float * param_1, uint * param_2, float * param_3)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn compute_minkowski_support_point_2(param_1: *mut f32, param_2: *mut u32, param_3: *mut f32) -> u64 { unsafe { function!(67559, (*mut f32, *mut u32, *mut f32) -> u64)(param_1, param_2, param_3) } }
-/// `ComputeMinutesFromField68Milliseconds` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 86299, rva 0xdba180).
-/// `undefined ComputeMinutesFromField68Milliseconds(longlong param_1)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn compute_minutes_from_field68_milliseconds(param_1: i64) -> u64 { unsafe { function!(86299, (i64) -> u64)(param_1) } }
-/// `ComputeModelSpaceBoneTransform` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 56999, rva 0xaa0650).
-/// `longlong ComputeModelSpaceBoneTransform(longlong * param_1, int param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn compute_model_space_bone_transform(param_1: *mut i64, param_2: i32) -> i64 { unsafe { function!(56999, (*mut i64, i32) -> i64)(param_1, param_2) } }

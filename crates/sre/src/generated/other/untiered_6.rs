@@ -3,6 +3,27 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `InitFunctionalStorage0x10_2` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 453260, rva 0x147e620).
+/// `undefined8 * InitFunctionalStorage0x10_2(undefined8 * param_1, undefined8 * param_2, undefined8 * param_3, ulonglong param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn init_functional_storage0x10_2(param_1: *mut u64, param_2: *mut u64, param_3: *mut u64, param_4: u64) -> *mut u64 { unsafe { function!(453260, (*mut u64, *mut u64, *mut u64, u64) -> *mut u64)(param_1, param_2, param_3, param_4) } }
+/// `InitFunctionalStorage0x10_3` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 453261, rva 0x147e720).
+/// `undefined8 * InitFunctionalStorage0x10_3(undefined8 * param_1, undefined8 * param_2, undefined8 * param_3, ulonglong param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn init_functional_storage0x10_3(param_1: *mut u64, param_2: *mut u64, param_3: *mut u64, param_4: u64) -> *mut u64 { unsafe { function!(453261, (*mut u64, *mut u64, *mut u64, u64) -> *mut u64)(param_1, param_2, param_3, param_4) } }
+/// `InitFunctionalStorage0x10_4` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 453262, rva 0x147e820).
+/// `undefined8 * InitFunctionalStorage0x10_4(undefined8 * param_1, undefined8 * param_2, undefined8 * param_3, ulonglong param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn init_functional_storage0x10_4(param_1: *mut u64, param_2: *mut u64, param_3: *mut u64, param_4: u64) -> *mut u64 { unsafe { function!(453262, (*mut u64, *mut u64, *mut u64, u64) -> *mut u64)(param_1, param_2, param_3, param_4) } }
 /// `InitFunctionalStorage0x10_5` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 453263, rva 0x147e920).
 /// `undefined8 * InitFunctionalStorage0x10_5(undefined8 * param_1, undefined8 * param_2, undefined8 * param_3, ulonglong param_4)`
 ///
@@ -7570,13 +7591,6 @@ pub unsafe fn list_node_deleting_dtor_2(param_1: *mut u64, param_2: u32, param_3
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn list_unaccepted_legal_documents(param_1: i64, param_2: *mut i64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(443835, (i64, *mut i64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
-/// `LoadActionAnimationWithCallback` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 39625, rva 0x703360).
-/// `undefined1 LoadActionAnimationWithCallback(longlong param_1, longlong param_2, undefined4 param_3, longlong * param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn load_action_animation_with_callback(param_1: i64, param_2: i64, param_3: u32, param_4: *mut i64) -> u8 { unsafe { function!(39625, (i64, i64, u32, *mut i64) -> u8)(param_1, param_2, param_3, param_4) } }
 /// `LoadActivatorRecordChunk` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 17695, rva 0x279900).
 /// `undefined LoadActivatorRecordChunk(longlong * param_1, int * param_2, undefined8 param_3, char * param_4)`
 ///
@@ -12820,17 +12834,3 @@ pub unsafe fn pack_floats_to_half_entry(param_1: *mut u32, param_2: *mut u32) ->
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn pack_four_quaternions_smallest_three(param_1: *mut u16, param_2: *mut f32, param_3: *mut f32, param_4: *mut f32, param_5: *mut f32) -> u64 { unsafe { function!(67244, (*mut u16, *mut f32, *mut f32, *mut f32, *mut f32) -> u64)(param_1, param_2, param_3, param_4, param_5) } }
-/// `PackObjectIntoScriptVariable` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 54087, rva 0x9e9e50).
-/// `ulonglong * PackObjectIntoScriptVariable(ulonglong * param_1, longlong param_2, longlong * param_3, undefined8 param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn pack_object_into_script_variable(param_1: *mut u64, param_2: i64, param_3: *mut i64, param_4: u64) -> *mut u64 { unsafe { function!(54087, (*mut u64, i64, *mut i64, u64) -> *mut u64)(param_1, param_2, param_3, param_4) } }
-/// `PackObjectVariableType0` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 54086, rva 0x9e9ba0).
-/// `ulonglong * PackObjectVariableType0(ulonglong * param_1, longlong param_2, longlong * param_3, undefined8 param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn pack_object_variable_type0(param_1: *mut u64, param_2: i64, param_3: *mut i64, param_4: u64) -> *mut u64 { unsafe { function!(54086, (*mut u64, i64, *mut i64, u64) -> *mut u64)(param_1, param_2, param_3, param_4) } }

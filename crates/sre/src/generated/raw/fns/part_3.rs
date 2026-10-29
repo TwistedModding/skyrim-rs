@@ -3,6 +3,28 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureUseIdleMarkerParamTypes>::vdtor` at 0x48eb50 (slot_propagation, medium); signature (low): `BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureUseIdleMarkerParamTypes> * vdtor(BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureUseIdleMarkerParamTypes> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureUseIdleMarkerParamTypes__vdtor: u64 = 29328;
+/// `BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureUseIdleMarkerParamTypes>::vfunc_18` at 0x48ed80 (rtti, medium); signature (low): `undefined8 vfunc_18(BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureUseIdleMarkerParamTypes> * this, uint param_1)`
+pub const BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureUseIdleMarkerParamTypes__vfunc_18: u64 = 29337;
+/// `BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureUseIdleMarkerParamTypes>::vfunc_19` at 0x48ed60 (rtti, medium); signature (low): `undefined * vfunc_19(BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureUseIdleMarkerParamTypes> * this, uint param_1)`
+pub const BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureUseIdleMarkerParamTypes__vfunc_19: u64 = 29336;
+/// `BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureUseIdleMarkerParamTypes>::vfunc_20` at 0x48ed40 (rtti, medium); signature (low): `undefined1 vfunc_20(BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureUseIdleMarkerParamTypes> * this, uint param_1)`
+pub const BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureUseIdleMarkerParamTypes__vfunc_20: u64 = 29335;
+/// `BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureUseIdleMarkerParamTypes>::vfunc_30` at 0x48edc0 (rtti, medium); signature (low): `undefined8 * vfunc_30(void)`
+pub const BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureUseIdleMarkerParamTypes__vfunc_30: u64 = 29339;
+/// `BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureUseIdleMarkerParamTypes>::vfunc_34` at 0x48eda0 (rtti, medium); signature (low): `undefined vfunc_34(BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureUseIdleMarkerParamTypes> * this, uint param_1)`
+pub const BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureUseIdleMarkerParamTypes__vfunc_34: u64 = 29338;
+/// `BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureUseMagicParamTypes>::vdtor` at 0x490f40 (slot_propagation, medium); signature (low): `BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureUseMagicParamTypes> * vdtor(BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureUseMagicParamTypes> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureUseMagicParamTypes__vdtor: u64 = 29363;
+/// `BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureUseMagicParamTypes>::vfunc_18` at 0x4912b0 (rtti, medium); signature (low): `undefined8 vfunc_18(BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureUseMagicParamTypes> * this, uint param_1)`
+pub const BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureUseMagicParamTypes__vfunc_18: u64 = 29373;
+/// `BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureUseMagicParamTypes>::vfunc_19` at 0x491290 (rtti, medium); signature (low): `undefined * vfunc_19(BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureUseMagicParamTypes> * this, uint param_1)`
+pub const BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureUseMagicParamTypes__vfunc_19: u64 = 29372;
+/// `BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureUseMagicParamTypes>::vfunc_20` at 0x491270 (rtti, medium); signature (low): `undefined1 vfunc_20(BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureUseMagicParamTypes> * this, uint param_1)`
+pub const BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureUseMagicParamTypes__vfunc_20: u64 = 29371;
+/// `BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureUseMagicParamTypes>::vfunc_30` at 0x491370 (rtti, medium); signature (low): `undefined8 * vfunc_30(void)`
+pub const BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureUseMagicParamTypes__vfunc_30: u64 = 29376;
 /// `BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureUseMagicParamTypes>::vfunc_34` at 0x4912d0 (rtti, medium); signature (low): `undefined vfunc_34(BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureUseMagicParamTypes> * this, uint param_1)`
 pub const BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureUseMagicParamTypes__vfunc_34: u64 = 29374;
 /// `BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureUseWeaponParamTypes>::vdtor` at 0x494150 (slot_propagation, medium); signature (low): `BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureUseWeaponParamTypes> * vdtor(BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureUseWeaponParamTypes> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
@@ -8021,35 +8043,3 @@ pub const BSQueuedResourceCollection_BSResource__EntryDB_BSTextureDB__DBTraits_2
 pub const BSQueuedResourceCollection_BSResource__EntryDB_BSTextureDB__DBTraits_2__vfunc_1: u64 = 76089;
 /// `BSQueuedResourceCollection<BSResource::EntryDB<BSTextureDB::DBTraits>,2>::vfunc_15` at 0xfd8090 (rtti, medium); signature (high): `undefined vfunc_15(BSQueuedResourceCollection<BSResource::EntryDB<BSTextureDB::DBTraits>,2> * this)`
 pub const BSQueuedResourceCollection_BSResource__EntryDB_BSTextureDB__DBTraits_2__vfunc_15: u64 = 76076;
-/// `BSQueuedResourceCollection<BSResource::EntryDB<BSTextureDB::DBTraits>,2>::vfunc_16` at 0xfd7e20 (rtti, medium); signature (low): `undefined vfunc_16(BSQueuedResourceCollection<BSResource::EntryDB<BSTextureDB::DBTraits>,2> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-pub const BSQueuedResourceCollection_BSResource__EntryDB_BSTextureDB__DBTraits_2__vfunc_16: u64 = 76072;
-/// `BSQueuedResourceCollection<BSResource::EntryDB<BSTextureDB::DBTraits>,2>::vfunc_17` at 0xfd7ee0 (rtti, medium); signature (high): `int vfunc_17(BSQueuedResourceCollection<BSResource::EntryDB<BSTextureDB::DBTraits>,2> * this)`
-pub const BSQueuedResourceCollection_BSResource__EntryDB_BSTextureDB__DBTraits_2__vfunc_17: u64 = 76074;
-/// `BSQueuedResourceCollection<BSResource::EntryDB<BSTextureDB::DBTraits>,2>::vfunc_18` at 0xfd8660 (rtti, high); signature (low): `undefined vfunc_18(void)`
-pub const BSQueuedResourceCollection_BSResource__EntryDB_BSTextureDB__DBTraits_2__vfunc_18: u64 = 76085;
-/// `BSQueuedResourceCollection<BSResource::EntryDB<BShkbHkxDB::DBTraits>,2>::BSResource_IEntryDB_PostFlushNotify_vdtor` at 0xbc6ad0 (slot_propagation, medium); signature (high): `undefined BSResource_IEntryDB_PostFlushNotify_vdtor(BSQueuedResourceCollection<BSResource::EntryDB<BShkbHkxDB::DBTraits>,2> * this)`
-pub const BSQueuedResourceCollection_BSResource__EntryDB_BShkbHkxDB__DBTraits_2__BSResource_IEntryDB_PostFlushNotify_vdtor: u64 = 63499;
-/// `BSQueuedResourceCollection<BSResource::EntryDB<BShkbHkxDB::DBTraits>,2>::vdtor` at 0xbc6af0 (slot_propagation, medium); signature (low): `BSQueuedResourceCollection<BSResource::EntryDB<BShkbHkxDB::DBTraits>,2> * vdtor(BSQueuedResourceCollection<BSResource::EntryDB<BShkbHkxDB::DBTraits>,2> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const BSQueuedResourceCollection_BSResource__EntryDB_BShkbHkxDB__DBTraits_2__vdtor: u64 = 63501;
-/// `BSQueuedResourceCollection<BSResource::EntryDB<BShkbHkxDB::DBTraits>,2>::vfunc_1` at 0x547590 (rtti, medium); signature (high): `undefined vfunc_1(BSQueuedResourceCollection<BSResource::EntryDB<BShkbHkxDB::DBTraits>,2> * this)`
-pub const BSQueuedResourceCollection_BSResource__EntryDB_BShkbHkxDB__DBTraits_2__vfunc_1: u64 = 32690;
-/// `BSQueuedResourceCollection<BSResource::EntryDB<BShkbHkxDB::DBTraits>,2>::vfunc_15` at 0x546ec0 (rtti, medium); signature (high): `undefined vfunc_15(BSQueuedResourceCollection<BSResource::EntryDB<BShkbHkxDB::DBTraits>,2> * this)`
-pub const BSQueuedResourceCollection_BSResource__EntryDB_BShkbHkxDB__DBTraits_2__vfunc_15: u64 = 32687;
-/// `BSQueuedResourceCollection<BSResource::EntryDB<BShkbHkxDB::DBTraits>,2>::vfunc_16` at 0x546d20 (rtti, medium); signature (low): `undefined vfunc_16(BSQueuedResourceCollection<BSResource::EntryDB<BShkbHkxDB::DBTraits>,2> * this, ulonglong param_1, longlong param_2, undefined8 param_3)`
-pub const BSQueuedResourceCollection_BSResource__EntryDB_BShkbHkxDB__DBTraits_2__vfunc_16: u64 = 32685;
-/// `BSQueuedResourceCollection<BSResource::EntryDB<BShkbHkxDB::DBTraits>,2>::vfunc_17` at 0x546e60 (rtti, medium); signature (high): `int vfunc_17(BSQueuedResourceCollection<BSResource::EntryDB<BShkbHkxDB::DBTraits>,2> * this)`
-pub const BSQueuedResourceCollection_BSResource__EntryDB_BShkbHkxDB__DBTraits_2__vfunc_17: u64 = 32686;
-/// `BSQueuedResourceCollection<BSResource::EntryDB<BShkbHkxDB::DBTraits>,2>::vfunc_18` at 0xbc8610 (rtti, high); signature (low): `undefined vfunc_18(void)`
-pub const BSQueuedResourceCollection_BSResource__EntryDB_BShkbHkxDB__DBTraits_2__vfunc_18: u64 = 63528;
-/// `BSQueuedResourceCollectionBase::BSResource_IEntryDB_PostFlushNotify_vdtor` at 0xfc8694 (slot_propagation, medium); signature (high): `undefined BSResource_IEntryDB_PostFlushNotify_vdtor(BSQueuedResourceCollectionBase * this)`
-pub const BSQueuedResourceCollectionBase__BSResource_IEntryDB_PostFlushNotify_vdtor: u64 = 75771;
-/// `BSQueuedResourceCollectionBase::BSResource_IEntryDB_PostFlushNotify_vfunc_1` at 0xfc8540 (rtti, medium); signature (high): `undefined1 BSResource_IEntryDB_PostFlushNotify_vfunc_1(BSQueuedResourceCollectionBase * this)`
-pub const BSQueuedResourceCollectionBase__BSResource_IEntryDB_PostFlushNotify_vfunc_1: u64 = 75766;
-/// `BSQueuedResourceCollectionBase::BSResource_IEntryDB_PostFlushNotify_vfunc_1_sub0` at 0xfc7a50 (callgraph, medium); signature (untiered): `undefined4 BSResource_IEntryDB_PostFlushNotify_vfunc_1_sub0(longlong param_1)`
-pub const BSQueuedResourceCollectionBase__BSResource_IEntryDB_PostFlushNotify_vfunc_1_sub0: u64 = 75737;
-/// `BSQueuedResourceCollectionBase::BSResource_IEntryDB_PostFlushNotify_vfunc_2` at 0xfc8610 (rtti, medium); signature (high): `undefined BSResource_IEntryDB_PostFlushNotify_vfunc_2(BSQueuedResourceCollectionBase * this)`
-pub const BSQueuedResourceCollectionBase__BSResource_IEntryDB_PostFlushNotify_vfunc_2: u64 = 75767;
-/// `BSQueuedResourceCollectionBase::ctor` at 0xfc8310 (layout_inference, high); signature (low): `BSQueuedResourceCollectionBase * ctor(BSQueuedResourceCollectionBase * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-pub const BSQueuedResourceCollectionBase__ctor: u64 = 75759;
-/// `BSQueuedResourceCollectionBase::ctor` at 0xfc8380 (layout_inference, high); signature (high): `BSQueuedResourceCollectionBase * ctor(BSQueuedResourceCollectionBase * this)`
-pub const BSQueuedResourceCollectionBase__ctor_2: u64 = 75760;

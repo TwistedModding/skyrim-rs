@@ -3,6 +3,13 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `ReleaseVectorAt80AndDeleterPtrAt08_2` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 446519, rva 0x12d1870).
+/// `undefined ReleaseVectorAt80AndDeleterPtrAt08_2(longlong param_1)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn release_vector_at80_and_deleter_ptr_at08_2(param_1: i64) -> u64 { unsafe { function!(446519, (i64) -> u64)(param_1) } }
 /// `ReleaseVectorBuffer8` (decompiler signature, tier untiered; ledger decompiler evidence, name high; id 523422, rva 0x1409d0).
 /// `undefined ReleaseVectorBuffer8(longlong * param_1, undefined8 param_2, void * param_3, undefined8 param_4)`
 ///
@@ -14178,10 +14185,3 @@ pub unsafe fn set_array_capacity_elem38h(param_1: *mut i64, param_2: u64, param_
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn set_array_capacity_elem4(param_1: *mut i64, param_2: u64, param_3: i64) -> u64 { unsafe { function!(84423, (*mut i64, u64, i64) -> u64)(param_1, param_2, param_3) } }
-/// `SetArrayCapacityElem8` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 82667, rva 0xd00720).
-/// `undefined SetArrayCapacityElem8(longlong * param_1, undefined8 param_2, longlong param_3)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn set_array_capacity_elem8(param_1: *mut i64, param_2: u64, param_3: i64) -> u64 { unsafe { function!(82667, (*mut i64, u64, i64) -> u64)(param_1, param_2, param_3) } }

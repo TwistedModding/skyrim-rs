@@ -267,6 +267,18 @@ impl core::ops::Deref for crate::TESFurniture {
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
+/// `TESIdleForm` is laid out from its primary base `TESForm`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::TESIdleForm {
+    type Target = crate::TESForm;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `TESModel` is laid out from its primary base `BaseFormComponent`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::TESModel {
+    type Target = crate::BaseFormComponent;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
 /// `TESObjectWEAP` is laid out from its primary base `TESBoundObject`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::TESObjectWEAP {
     type Target = crate::TESBoundObject;
@@ -2621,6 +2633,32 @@ impl crate::TESFurniture {
     pub fn associated_spell(&self) -> Option<&crate::SpellItem> { unsafe { { self.associatedSpell }.as_ref() } }
 }
 
+impl crate::TESIdleForm {
+    /// `TESIdleForm::GetFormEditorID`: slot 50: +0x58 or ''. Idle forms keep their editor id at run time
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 24585, rva 0x3b82d0.
+    /// `const char* (TESIdleForm* this)`
+    #[inline]
+    pub fn get_form_editor_id(&self) -> *const c_char { unsafe { function!(24585, (*const Self) -> *const c_char)(core::ptr::from_ref(self)) } }
+    /// `TESIdleForm::parent` at +0x38: ANAM first id: the parent idle (form id after load, pointer after InitItem)
+    ///
+    /// Semantic field, camera pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn parent(&self) -> Option<&crate::TESIdleForm> { unsafe { { self.parent }.as_ref() } }
+}
+
+impl crate::TESModel {
+    /// `TESModel::ctor`: vtable 0x17faf50, +0x8 = empty BSFixedString, +0x10/+0x18/+0x20 = 0
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 14775, rva 0x1ea8e0.
+    /// `TESModel* (TESModel* this)`
+    ///
+    /// # Safety
+    /// It constructs or destroys an object in place.
+    #[inline]
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(14775, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
+}
+
 impl crate::TESObjectWEAP {
     /// The `BGSBlockBashData` base at +0x128.
     #[inline]
@@ -3584,6 +3622,12 @@ pub fn get_first_person_render_context() -> Option<&'static crate::FirstPersonRe
 /// The pass rates the signature medium.
 #[inline]
 pub unsafe fn get_form_gold_value(form: *mut crate::TESForm) -> i32 { unsafe { function!(14978, (*mut crate::TESForm) -> i32)(form) } }
+/// `GetFormModelPath`: any form's model path: dynamic cast to TESModel then slot 4; else a biped model by sex (reference argument), or for an NPC (form type 0x2b) a sex-specific string from +0x158; '' (literal ID_469508) when none or form is null
+///
+/// Semantic, camera pass, high; ledger semantic evidence, name high; id 14788, rva 0x1eb3f0.
+/// `const char* (TESForm* form)`
+#[inline]
+pub fn get_form_model_path(form: &crate::TESForm) -> *const c_char { unsafe { function!(14788, (*const crate::TESForm) -> *const c_char)(core::ptr::from_ref(form)) } }
 /// `GetFormWeight`: the TESWeightForm weight (+8 of the component) chosen by form type, else the constant at 0x17e2820
 ///
 /// Semantic, camera pass, high; ledger semantic evidence, name high; id 14988, rva 0x1f37b0.
@@ -3620,6 +3664,18 @@ pub unsafe fn get_node_from_collidable(collidable: *const c_void) -> *mut crate:
 /// The pass rates the signature medium.
 #[inline]
 pub unsafe fn get_node_from_collidable_or_land(collidable: *const c_void) -> *mut crate::NiAVObject { unsafe { function!(15870, (*const c_void) -> *mut crate::NiAVObject)(collidable) } }
+/// `GetReferenceModel`: the TESModel a reference loads: extra data type 0x58's +0x10 if present (a per-reference override; Cmd::ClearDestruction also uses this extra, so it is the destruction-stage model), else for an NPC base the sex-specific skin, else the base form's (ref+0x40) TESModel subobject (dynamic cast), else the biped model
+///
+/// Semantic, camera pass, high; ledger semantic evidence, name high; id 19749, rva 0x2eebe0.
+/// `TESModel* (TESObjectREFR* ref)`
+#[inline]
+pub fn get_reference_model(ref_: &crate::TESObjectREFR) -> Option<&'static crate::TESModel> { unsafe { function!(19749, (*const crate::TESObjectREFR) -> Option<&'static crate::TESModel>)(core::ptr::from_ref(ref_)) } }
+/// `GetReferenceModelPath`: GetReferenceModel(ref) then its slot 4 (null without a model): the per-reference path the 3D loader tries first
+///
+/// Semantic, camera pass, high; ledger semantic evidence, name high; id 19746, rva 0x2eeb70.
+/// `const char* (TESObjectREFR* ref)`
+#[inline]
+pub fn get_reference_model_path(ref_: &crate::TESObjectREFR) -> *const c_char { unsafe { function!(19746, (*const crate::TESObjectREFR) -> *const c_char)(core::ptr::from_ref(ref_)) } }
 /// `GetSpeechDelay`: returns fSpeechDelay (GameSetting value 0x20b0330)
 ///
 /// Semantic, camera pass, high; ledger semantic evidence, name high; id 26565, rva 0x423e20.
@@ -3847,6 +3903,15 @@ pub fn offset_subtree_world_translation(node: Option<&crate::NiAVObject>, offset
 /// `vm` must point to what the engine expects.
 #[inline]
 pub unsafe fn papyrus__actor__clear_look_at(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor) { unsafe { function!(54659, (*mut c_void, u32, *mut crate::Actor))(vm, stackId, self_) } }
+/// `Papyrus::Actor::DrawWeapon`: slot 166 with 1 (tail jump)
+///
+/// Semantic, camera pass, high; ledger papyrus_native evidence, name high; id 54779, rva 0xa03b70.
+/// `void (VM*, uint, Actor* self)`
+///
+/// # Safety
+/// `a0` must point to what the engine expects.
+#[inline]
+pub unsafe fn papyrus__actor__draw_weapon(a0: *mut c_void, a1: u32, self_: *mut crate::Actor) { unsafe { function!(54779, (*mut c_void, u32, *mut crate::Actor))(a0, a1, self_) } }
 /// `Papyrus::Actor::GetDialogueTarget`: resolves self->dialogueTargetHandle (Actor+0x100) with ResolveActorHandle 0x2676c0
 ///
 /// Semantic, camera pass, high; ledger papyrus_native evidence, name high; id 54682, rva 0xa007f0.
@@ -4095,12 +4160,6 @@ pub fn render_precipitation_occlusion_thunk() { unsafe { function!(107144, ())()
 /// `void (Actor* actor)`
 #[inline]
 pub fn reset_actor_equip_and_camera_state(actor: &crate::Actor) { unsafe { function!(37170, (*const crate::Actor))(core::ptr::from_ref(actor)) } }
-/// `ResetActorWeaponStateAndCamera`: after a sheathe, a beast-form end or a race change: Actor slot 180 (+0x5a0) for the right hand and again for a WEAP in the left hand, slot 21 of the vtable at actor+0xc0, posts event {2, 1} then {2, 0} to the process (DispatchEventToField8Sinks); when the actor is the camera target (PlayerCamera+0x3c) or on a mount: PlayerCamera::SetCombatOffsets(camera, false); a mounted player also gets the animation event "WarHorseMode" (0x9350a0)
-///
-/// Semantic, camera pass, high; ledger runtime evidence, name high; id 37169, rva 0x66fca0.
-/// `void (Actor* actor)`
-#[inline]
-pub fn reset_actor_weapon_state_and_camera(actor: &crate::Actor) { unsafe { function!(37169, (*const crate::Actor))(core::ptr::from_ref(actor)) } }
 /// `ResetLandAndCellPriorityCaches`: invalidates FindLandEntryAtPositionCached's cache (cell x 0x20776ac = y 0x20776b0 = 0x7fffffff, entry 0x219e5f8 = 0) and ComputeCellGridPriority's (0x20776b4 = 5, 0x219e600 = 0)
 ///
 /// Semantic, camera pass, high; ledger semantic evidence, name high; id 13407, rva 0x1a9770.
@@ -4562,6 +4621,9 @@ pub fn g_anim_event_idle_cart_prisoner_c_exit() -> &'static crate::BSFixedString
 /// `g_AnimEvent_IdleCartPrisonerCIdle` at 0x3243f58, id 404008 (semantic, high); "IdleCartPrisonerCIdle"; turns FirstPersonState.useAltEuler on (high, camera pass), type `class:BSFixedString`
 #[inline]
 pub fn g_anim_event_idle_cart_prisoner_c_idle() -> &'static crate::BSFixedString { unsafe { &*(address!(404008) as *const crate::BSFixedString) } }
+/// `g_AnimEvent_Unequip` at 0x32454f0, id 404424 (semantic, high); interned 'Unequip' (0x1803ad8); the player's sheathe request counts as accepted only when the chosen event equals it (high, camera pass), type `BSFixedString`
+#[inline]
+pub fn g_anim_event_unequip() -> &'static crate::BSFixedString { unsafe { &*(address!(404424) as *const crate::BSFixedString) } }
 /// `g_BodyPartTypeNames` at 0x2099290, id 368919 (semantic, medium); const char*[6]: 'Torso', 'DismemberedLimb1 Head1', 'Eye', 'LookAt', 'Fly Grab', 'Saddle' (enum BodyPartType) (medium, camera pass), type `pointer`
 #[inline]
 pub fn g_body_part_type_names() -> *mut *mut c_void { address!(368919) as *mut *mut c_void }
@@ -4625,9 +4687,15 @@ pub fn g_default_max_pitch_down() -> *mut f32 { address!(189817) as *mut f32 }
 /// `g_DefaultMaxPitchUp` at 0x181ab90, id 189822 (semantic, high); -pi/2 (high, camera pass), type `float`
 #[inline]
 pub fn g_default_max_pitch_up() -> *mut f32 { address!(189822) as *mut f32 }
+/// `g_DefaultObjectManager` at 0x219d180, id 400191 (semantic, high); static default-object manager: object i at +0x20 + 8*i (0x219d1a0 + 8*i), loaded byte at +0xbc0 + i (0x219dd40 + i) (high, camera pass), type `BGSDefaultObjectManager`
+#[inline]
+pub fn g_default_object_manager() -> &'static crate::BGSDefaultObjectManager { unsafe { &*(address!(400191) as *const crate::BGSDefaultObjectManager) } }
 /// `g_DefaultObjectNameTable` at 0x207bf40, id 360630 (semantic, high); the default object names: 0x174 records of 0x18 bytes {const char* name; u32 formType; char signature[4]; u64}, indexed like GetDefaultObjectByIndex (manager +0x20 + i*8, present flag +0xbc0 + i) (high, camera pass), type `undefined1`
 #[inline]
 pub fn g_default_object_name_table() -> *mut u8 { address!(360630) as *mut u8 }
+/// `g_DefaultObjectRecord_ActionSwimStateChange` at 0x207c348, id 360676 (semantic, high); default object record 0x2b {name 'Action Swim State Change' (0x182e2a0), type 6, signature 'AASW'} (high, camera pass), type `DefaultObjectRecord`
+#[inline]
+pub fn g_default_object_record_action_swim_state_change() -> *mut c_void { address!(360676) as *mut c_void }
 /// `g_DefaultObjectRecords` at 0x207bee0, id 360620 (semantic, high); default object descriptors of 0x18 bytes {name, type, signature, flags}; index i matches BGSDefaultObjectManager (0x219d180) objects +0x20+8i and loaded flags +0xbc0+i (high, camera pass), type `record[]`
 #[inline]
 pub fn g_default_object_records() -> *mut c_void { address!(360620) as *mut c_void }

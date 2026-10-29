@@ -3,6 +3,34 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `ComputeMinOfArgs` (decompiler signature, tier untiered; ledger decompiler evidence, name high; id 86220, rva 0xdb6eb0).
+/// `undefined ComputeMinOfArgs(longlong param_1)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn compute_min_of_args(param_1: i64) -> u64 { unsafe { function!(86220, (i64) -> u64)(param_1) } }
+/// `ComputeMinkowskiSupportPoint_2` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 67559, rva 0xcc6280).
+/// `undefined ComputeMinkowskiSupportPoint_2(float * param_1, uint * param_2, float * param_3)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn compute_minkowski_support_point_2(param_1: *mut f32, param_2: *mut u32, param_3: *mut f32) -> u64 { unsafe { function!(67559, (*mut f32, *mut u32, *mut f32) -> u64)(param_1, param_2, param_3) } }
+/// `ComputeMinutesFromField68Milliseconds` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 86299, rva 0xdba180).
+/// `undefined ComputeMinutesFromField68Milliseconds(longlong param_1)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn compute_minutes_from_field68_milliseconds(param_1: i64) -> u64 { unsafe { function!(86299, (i64) -> u64)(param_1) } }
+/// `ComputeModelSpaceBoneTransform` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 56999, rva 0xaa0650).
+/// `longlong ComputeModelSpaceBoneTransform(longlong * param_1, int param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn compute_model_space_bone_transform(param_1: *mut i64, param_2: i32) -> i64 { unsafe { function!(56999, (*mut i64, i32) -> i64)(param_1, param_2) } }
 /// `ComputeModelSpaceBoundingBox` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 56997, rva 0xaa0440).
 /// `undefined ComputeModelSpaceBoundingBox(longlong * param_1, undefined1[16] * param_2)`
 ///
@@ -12386,24 +12414,3 @@ pub unsafe fn deleting_dtor_ref_count_size10_7(param_1: *mut crate::GRefCountImp
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn deleting_dtor_ref_count_size10_8(param_1: *mut crate::GRefCountImplCore, param_2: u32, param_3: u64, param_4: u64) -> *mut crate::GRefCountImplCore { unsafe { function!(89105, (*mut crate::GRefCountImplCore, u32, u64, u64) -> *mut crate::GRefCountImplCore)(param_1, param_2, param_3, param_4) } }
-/// `DeletingDtorRefCountSize10_9` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 89106, rva 0xe5a0f0).
-/// `GRefCountImplCore * DeletingDtorRefCountSize10_9(GRefCountImplCore * param_1, uint param_2, undefined8 param_3, undefined8 param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn deleting_dtor_ref_count_size10_9(param_1: *mut crate::GRefCountImplCore, param_2: u32, param_3: u64, param_4: u64) -> *mut crate::GRefCountImplCore { unsafe { function!(89106, (*mut crate::GRefCountImplCore, u32, u64, u64) -> *mut crate::GRefCountImplCore)(param_1, param_2, param_3, param_4) } }
-/// `DeletingDtorRefCountSize28` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 89113, rva 0xe5a580).
-/// `GRefCountImplCore * DeletingDtorRefCountSize28(GRefCountImplCore * param_1, uint param_2, undefined8 param_3, undefined8 param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn deleting_dtor_ref_count_size28(param_1: *mut crate::GRefCountImplCore, param_2: u32, param_3: u64, param_4: u64) -> *mut crate::GRefCountImplCore { unsafe { function!(89113, (*mut crate::GRefCountImplCore, u32, u64, u64) -> *mut crate::GRefCountImplCore)(param_1, param_2, param_3, param_4) } }
-/// `DeletingDtorReleaseRefArraySize48` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 87155, rva 0xde7c60).
-/// `GRefCountImplCore * DeletingDtorReleaseRefArraySize48(GRefCountImplCore * param_1, uint param_2, undefined8 param_3, undefined8 param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn deleting_dtor_release_ref_array_size48(param_1: *mut crate::GRefCountImplCore, param_2: u32, param_3: u64, param_4: u64) -> *mut crate::GRefCountImplCore { unsafe { function!(87155, (*mut crate::GRefCountImplCore, u32, u64, u64) -> *mut crate::GRefCountImplCore)(param_1, param_2, param_3, param_4) } }

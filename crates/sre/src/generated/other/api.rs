@@ -5277,6 +5277,36 @@ impl crate::ActorMediator {
     /// `None` until the engine creates it.
     #[inline]
     pub fn singleton() -> Option<&'static Self> { unsafe { *(address!(403567) as *const Option<&'static Self>) } }
+    /// `ActorMediator::CheckActionRules`: hard-coded refusals per default-object action. 'Action Draw' (0x43): refused (+0x38 = -1) when the weapon state is below 3 and either the actor is swimming and its race fails 0x673b60, or its sit/sleep state is non-zero and it is not mounted. No case for 'Action Sheath' (0x44) or 'Action Swim State Change' (0x2b)
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 39002, rva 0x6e1ca0.
+    /// `bool (ActorMediator* this, TESActionData* action)`
+    #[inline]
+    pub fn check_action_rules(&self, action: &crate::TESActionData) -> bool { unsafe { function!(39002, (*const Self, *const crate::TESActionData) -> bool)(core::ptr::from_ref(self), core::ptr::from_ref(action)) } }
+    /// `ActorMediator::PerformAction`: runs the engine's action rules (0x6e1ca0), selects an idle when the action has no event yet (0x66f700; result +0x38 = -1 when none), sends the event to the actor's graph (0x7d7ac0), applies the action's side effects (0x6e2250); returns acceptance
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 38949, rva 0x6dfbc0.
+    /// `bool (ActorMediator* this, TESActionData* action)`
+    #[inline]
+    pub fn perform_action(&self, action: &crate::TESActionData) -> bool { unsafe { function!(38949, (*const Self, *const crate::TESActionData) -> bool)(core::ptr::from_ref(self), core::ptr::from_ref(action)) } }
+    /// `ActorMediator::SelectIdleForAction`: if the action has no event yet (+0x28 empty), resolves an idle from the action's idle tree (ID_400451, conditions evaluated); none: result +0x38 = -1, false
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 37147, rva 0x66f700.
+    /// `bool (void* idleManager, TESActionData* action)`
+    ///
+    /// # Safety
+    /// `idleManager` must point to what the engine expects.
+    #[inline]
+    pub unsafe fn select_idle_for_action(idleManager: *mut c_void, action: *mut crate::TESActionData) -> bool { unsafe { function!(37147, (*mut c_void, *mut crate::TESActionData) -> bool)(idleManager, action) } }
+    /// `ActorMediator::SendActionEvent`: sends the action's event (+0x28) to the actor's graph through IAnimationGraphManagerHolder slot 1 (actor+0x38); for 'Action Idle' (0x40) with an idle (+0x48) first sets the graph float fIdleTimer (0x219e2e8) to a random byte in the idle's DATA [+0x28, +0x29]
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 43567, rva 0x7d7ac0.
+    /// `bool (void*, TESActionData* action)`
+    ///
+    /// # Safety
+    /// `a0` must point to what the engine expects.
+    #[inline]
+    pub unsafe fn send_action_event(a0: *mut c_void, action: *mut crate::TESActionData) -> bool { unsafe { function!(43567, (*mut c_void, *mut crate::TESActionData) -> bool)(a0, action) } }
 }
 
 impl crate::AlchemyItem {

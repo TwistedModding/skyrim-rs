@@ -3,6 +3,20 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `PackObjectIntoScriptVariable` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 54087, rva 0x9e9e50).
+/// `ulonglong * PackObjectIntoScriptVariable(ulonglong * param_1, longlong param_2, longlong * param_3, undefined8 param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn pack_object_into_script_variable(param_1: *mut u64, param_2: i64, param_3: *mut i64, param_4: u64) -> *mut u64 { unsafe { function!(54087, (*mut u64, i64, *mut i64, u64) -> *mut u64)(param_1, param_2, param_3, param_4) } }
+/// `PackObjectVariableType0` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 54086, rva 0x9e9ba0).
+/// `ulonglong * PackObjectVariableType0(ulonglong * param_1, longlong param_2, longlong * param_3, undefined8 param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn pack_object_variable_type0(param_1: *mut u64, param_2: i64, param_3: *mut i64, param_4: u64) -> *mut u64 { unsafe { function!(54086, (*mut u64, i64, *mut i64, u64) -> *mut u64)(param_1, param_2, param_3, param_4) } }
 /// `PackObjectVariableType3E` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 54079, rva 0x9e88d0).
 /// `ulonglong * PackObjectVariableType3E(ulonglong * param_1, longlong param_2, longlong * param_3, undefined8 param_4)`
 ///
@@ -3510,13 +3524,6 @@ pub unsafe fn queue_mesh_load(param_1: *mut c_char, param_2: *mut i64, param_3: 
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn queue_mesh_load_and_set_flag20(param_1: i64, param_2: *mut c_char) -> u64 { unsafe { function!(26343, (i64, *mut c_char) -> u64)(param_1, param_2) } }
-/// `QueueMeshLoadFromModelPath` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 14083, rva 0x1d15a0).
-/// `undefined QueueMeshLoadFromModelPath(longlong * param_1, longlong * param_2, longlong param_3, undefined4 * param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn queue_mesh_load_from_model_path(param_1: *mut i64, param_2: *mut i64, param_3: i64, param_4: *mut u32) -> u64 { unsafe { function!(14083, (*mut i64, *mut i64, i64, *mut u32) -> u64)(param_1, param_2, param_3, param_4) } }
 /// `QueueMessage20WithRefAndPosition` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 36949, rva 0x668bd0).
 /// `undefined QueueMessage20WithRefAndPosition(undefined8 param_1, longlong param_2, undefined4 * param_3, undefined4 param_4, undefined1 param_5)`
 ///
@@ -13520,10 +13527,3 @@ pub unsafe fn release_vector_at0x98_and_callback_at8(param_1: i64) -> u64 { unsa
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn release_vector_at80_and_deleter_ptr_at08(param_1: i64) -> u64 { unsafe { function!(524743, (i64) -> u64)(param_1) } }
-/// `ReleaseVectorAt80AndDeleterPtrAt08_2` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 446519, rva 0x12d1870).
-/// `undefined ReleaseVectorAt80AndDeleterPtrAt08_2(longlong param_1)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn release_vector_at80_and_deleter_ptr_at08_2(param_1: i64) -> u64 { unsafe { function!(446519, (i64) -> u64)(param_1) } }

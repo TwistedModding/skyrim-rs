@@ -3,6 +3,50 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `CreateZeroedTexture2D` at 0x11b28f0 (decompiler, medium); signature (untiered): `longlong * CreateZeroedTexture2D(undefined8 param_1, int param_2, uint param_3, uint param_4)`
+pub const CreateZeroedTexture2D: u64 = 90274;
+/// `CreditsMenu::GFxFunctionHandler_vdtor` at 0x929d34 (slot_propagation, medium); signature (high): `undefined GFxFunctionHandler_vdtor(CreditsMenu * this)`
+pub const CreditsMenu__GFxFunctionHandler_vdtor: u64 = 51492;
+/// `CreditsMenu::GFxFunctionHandler_vfunc_1` at 0x929620 (rtti, high); signature (low): `undefined GFxFunctionHandler_vfunc_1(CreditsMenu * this, undefined8 * param_1, undefined8 param_2, undefined8 param_3)`
+pub const CreditsMenu__GFxFunctionHandler_vfunc_1: u64 = 51489;
+/// `CreditsMenu::GFxFunctionHandler_vfunc_1_sub0` at 0x929910 (callgraph, medium); signature (untiered): `undefined GFxFunctionHandler_vfunc_1_sub0(undefined8 param_1, undefined8 * param_2, longlong * param_3)`
+pub const CreditsMenu__GFxFunctionHandler_vfunc_1_sub0: u64 = 51490;
+/// `CreditsMenu::GFxFunctionHandler_vfunc_1_sub1` at 0x929a80 (callgraph, medium); signature (untiered): `undefined GFxFunctionHandler_vfunc_1_sub1(undefined8 param_1, undefined8 * param_2, undefined8 * param_3, longlong * param_4)`
+pub const CreditsMenu__GFxFunctionHandler_vfunc_1_sub1: u64 = 524001;
+/// `CreditsMenu::ctor` at 0x929240 (layout_inference, high); signature (high): `CreditsMenu * ctor(CreditsMenu * this)`
+pub const CreditsMenu__ctor: u64 = 51485;
+/// `CreditsMenu::dtor` at 0x9292e0 (layout_inference, high); signature (high): `undefined dtor(CreditsMenu * this)`
+pub const CreditsMenu__dtor: u64 = 51486;
+/// `CreditsMenu::vdtor` at 0x929d40 (slot_propagation, medium); signature (low): `CreditsMenu * vdtor(CreditsMenu * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+pub const CreditsMenu__vdtor: u64 = 51493;
+/// `CreditsMenu::vfunc_4` at 0x9293e0 (rtti, high); signature (low): `undefined8 vfunc_4(CreditsMenu * this, longlong param_1)`
+pub const CreditsMenu__vfunc_4: u64 = 51487;
+/// `CriticalHitEvent::GetEventSource` at 0x6d1750 (semantic, medium); signature (untiered): `undefined8 * GetEventSource(void)`; semantic: the one source of CriticalHitEvent::Event events (medium); signature `BSTEventSource<CriticalHitEvent::Event>* ()`
+pub const CriticalHitEvent__GetEventSource: u64 = 38671;
+/// `CriticalHitEvent::RegisterSink` at 0x6c7bf0 (semantic, medium); signature (untiered): `undefined RegisterSink(undefined8 param_1)`; semantic: registers a CriticalHitEvent::Event sink with the singleton source (medium); signature `void (BSTEventSink<CriticalHitEvent::Event>* sink)`
+pub const CriticalHitEvent__RegisterSink: u64 = 38531;
+/// `CriticalHitEvent::UnregisterSink` at 0x6c7c20 (semantic, medium); signature (untiered): `undefined UnregisterSink(undefined8 param_1)`; semantic: unregisters a CriticalHitEvent::Event sink with the singleton source (medium); signature `void (BSTEventSink<CriticalHitEvent::Event>* sink)`
+pub const CriticalHitEvent__UnregisterSink: u64 = 38532;
+/// `CrosshairPickData::Pick` at 0x409fd0 (runtime, high); signature (untiered): `undefined Pick(longlong param_1, longlong * param_2, float * param_3, float * param_4)`; semantic: the crosshair pick cast: clears the target handles (+4, +8, +0xc), +0x20 and hitPoint (+0x10); length = fFavorRequestPickDistance when a favor request is pending, else max(fActivatePickLength, player +0xae4); casts the pick phantom (+0x28) from origin * Havok scale along direction under the world's read lock (Str_TtworldLinCast) and resolves the target (high); signature `void (CrosshairPickData* this, bhkWorld* world, const NiPoint3* origin, const NiPoint3* direction)`
+pub const CrosshairPickData__Pick: u64 = 26127;
+/// `CrosshairPickData::Pick` as a function pointer type (high).
+pub type CrosshairPickData__Pick_fn = unsafe extern "C" fn(this: *mut crate::CrosshairPickData, world: *mut crate::bhkWorld, origin: *const crate::NiPoint3, direction: *const crate::NiPoint3);
+/// `CrosshairPickData::Reset` at 0x40b310 (semantic, high); signature (untiered): `undefined Reset(longlong param_1)`; semantic: hit object +0x20 = null, handles +4/+8/+0xc = invalid, hit point +0x10..+0x18 = the zero NiPoint3 (high); signature `void (CrosshairPickData* this)`
+pub const CrosshairPickData__Reset: u64 = 26131;
+/// `CrosshairPickData::Reset` as a function pointer type (high).
+pub type CrosshairPickData__Reset_fn = unsafe extern "C" fn(this: *mut crate::CrosshairPickData);
+/// `CrosshairPickData::ctor` at 0x409c30 (semantic, high); signature (untiered): `longlong ctor(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`; semantic: ID_401585 (g_CrosshairPickData_ptr 0x31e0b70) = this; target handles +4/+8 invalid, +0xc = 0, hitPoint +0x10 = zero, +0x20/+0x28/+0x30/+0x34 = 0; builds a bhkSphereShape of radius fActivatePickRadius * Havok scale (slot 46) and a bhkSimpleShapePhantom (layer 0x2c) stored refcounted at +0x28; returns this (high); signature `CrosshairPickData* (CrosshairPickData* this)`
+pub const CrosshairPickData__ctor: u64 = 26125;
+/// `CrosshairPickData::ctor` as a function pointer type (high).
+pub type CrosshairPickData__ctor_fn = unsafe extern "C" fn(this: *mut crate::CrosshairPickData) -> *mut crate::CrosshairPickData;
+/// `CrosshairPickData::dtor` at 0x409f20 (semantic, high); signature (untiered): `undefined dtor(longlong param_1)`; semantic: releases the phantom (+0x28, refcount at +8, vtable+8 on zero) and nulls ID_401585 (high); signature `void (CrosshairPickData* this)`
+pub const CrosshairPickData__dtor: u64 = 26126;
+/// `CrosshairPickData::dtor` as a function pointer type (high).
+pub type CrosshairPickData__dtor_fn = unsafe extern "C" fn(this: *mut crate::CrosshairPickData);
+/// `CstringArrayImplementation::dtor` at 0xc5d850 (layout_inference, high); signature (high): `undefined dtor(CstringArrayImplementation * this)`
+pub const CstringArrayImplementation__dtor: u64 = 65905;
+/// `CstringArrayImplementation::vdtor` at 0xc5e060 (slot_propagation, medium); signature (low): `CstringArrayImplementation * vdtor(CstringArrayImplementation * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+pub const CstringArrayImplementation__vdtor: u64 = 65916;
 /// `CstringArrayImplementation::vfunc_11` at 0xc5faa0 (rtti, high); signature (low): `undefined8 vfunc_11(CstringArrayImplementation * this, int param_1)`
 pub const CstringArrayImplementation__vfunc_11: u64 = 65971;
 /// `CstringArrayImplementation::vfunc_12` at 0xc639c0 (rtti, high); signature (low): `undefined vfunc_12(CstringArrayImplementation * this, int param_1, longlong param_2)`
@@ -8725,51 +8769,3 @@ pub const FormatWideV: u64 = 109868;
 pub const FormatWideV_2: u64 = 109872;
 /// `FormatWideWithLocale` at 0x15ab020 (decompiler, high); signature (high): `int FormatWideWithLocale(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const FormatWideWithLocale: u64 = 109882;
-/// `FormatWideWithLocaleV` at 0x15aaad0 (decompiler, high); signature (high): `int FormatWideWithLocaleV(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4, undefined8 param_5)`
-pub const FormatWideWithLocaleV: u64 = 109867;
-/// `FormatWideWithLocaleV_2` at 0x15aab94 (decompiler, high); signature (high): `int FormatWideWithLocaleV_2(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4, undefined8 param_5)`
-pub const FormatWideWithLocaleV_2: u64 = 109869;
-/// `FormatWideWithLocale_2` at 0x15ab26c (decompiler, high); signature (high): `int FormatWideWithLocale_2(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const FormatWideWithLocale_2: u64 = 109889;
-/// `ForwardCreateAndQueueAsyncOperation` at 0x146d500 (decompiler, high); signature (high): `undefined8 ForwardCreateAndQueueAsyncOperation(longlong param_1, undefined8 param_2, undefined4 * param_3, undefined8 param_4, undefined8 param_5)`
-pub const ForwardCreateAndQueueAsyncOperation: u64 = 103167;
-/// `ForwardExtractRightHandedAxesOrDefault` at 0x10f0df0 (decompiler, high); signature (untiered): `undefined8 ForwardExtractRightHandedAxesOrDefault(undefined8 param_1)`
-pub const ForwardExtractRightHandedAxesOrDefault: u64 = 80846;
-/// `ForwardHandleIfSharedPtrAt140Set` at 0x13af5d0 (decompiler, medium); signature (untiered): `undefined ForwardHandleIfSharedPtrAt140Set(longlong param_1, undefined8 * param_2, undefined8 param_3, undefined8 param_4)`
-pub const ForwardHandleIfSharedPtrAt140Set: u64 = 450553;
-/// `ForwardHandleIfSharedPtrViaField158` at 0x13abef0 (decompiler, medium); signature (untiered): `undefined ForwardHandleIfSharedPtrViaField158(longlong param_1, undefined8 * param_2, undefined8 param_3, undefined8 param_4)`
-pub const ForwardHandleIfSharedPtrViaField158: u64 = 450464;
-/// `ForwardMovedArgToErrCannotUnderstand` at 0x141eae0 (decompiler, medium); signature (untiered): `undefined ForwardMovedArgToErrCannotUnderstand(longlong param_1, undefined8 * param_2, ulonglong param_3, undefined8 param_4)`
-pub const ForwardMovedArgToErrCannotUnderstand: u64 = 451909;
-/// `ForwardOnIMEComposition` at 0xdd5790 (decompiler, medium); signature (untiered): `undefined ForwardOnIMEComposition(longlong param_1)`
-pub const ForwardOnIMEComposition: u64 = 86818;
-/// `ForwardOnSetConversionStatus` at 0xdd5810 (decompiler, medium); signature (untiered): `undefined ForwardOnSetConversionStatus(longlong param_1)`
-pub const ForwardOnSetConversionStatus: u64 = 86820;
-/// `ForwardOnSetCurrentInputLanguage` at 0xdd5880 (decompiler, medium); signature (untiered): `undefined ForwardOnSetCurrentInputLanguage(longlong param_1)`
-pub const ForwardOnSetCurrentInputLanguage: u64 = 86821;
-/// `ForwardOnSetIMEName` at 0xdd58f0 (decompiler, medium); signature (untiered): `undefined ForwardOnSetIMEName(longlong param_1)`
-pub const ForwardOnSetIMEName: u64 = 86822;
-/// `ForwardOnSetSupportedIMEs` at 0xdd5960 (decompiler, medium); signature (untiered): `undefined ForwardOnSetSupportedIMEs(longlong param_1)`
-pub const ForwardOnSetSupportedIMEs: u64 = 86823;
-/// `ForwardOnSetSupportedLanguages` at 0xdd59d0 (decompiler, medium); signature (untiered): `undefined ForwardOnSetSupportedLanguages(longlong param_1)`
-pub const ForwardOnSetSupportedLanguages: u64 = 86824;
-/// `ForwardOnSwitchLanguage` at 0xdd5a40 (decompiler, medium); signature (untiered): `undefined ForwardOnSwitchLanguage(longlong param_1)`
-pub const ForwardOnSwitchLanguage: u64 = 86825;
-/// `ForwardOwnedHandleOrRelease` at 0x13e4b50 (decompiler, medium); signature (untiered): `undefined ForwardOwnedHandleOrRelease(longlong param_1, undefined8 * param_2, undefined8 param_3, undefined8 param_4)`
-pub const ForwardOwnedHandleOrRelease: u64 = 449500;
-/// `ForwardRequestIfWebSocketConnected` at 0x139ab10 (decompiler, medium); signature (untiered): `AsyncOperationProxy * ForwardRequestIfWebSocketConnected(longlong param_1, AsyncOperationProxy * param_2, undefined2 param_3, undefined2 param_4, undefined4 * param_5, longlong * param_6, longlong * param_7)`
-pub const ForwardRequestIfWebSocketConnected: u64 = 97343;
-/// `ForwardRequestIfWebSocketConnected_2` at 0x139acf0 (decompiler, medium); signature (untiered): `AsyncOperationProxy * ForwardRequestIfWebSocketConnected_2(longlong param_1, AsyncOperationProxy * param_2, undefined2 param_3, undefined2 param_4, undefined8 param_5, undefined4 * param_6, longlong * param_7, longlong * param_8)`
-pub const ForwardRequestIfWebSocketConnected_2: u64 = 97345;
-/// `ForwardRequestOrFailSocketTerminated` at 0x146d580 (decompiler, medium); signature (untiered): `undefined ForwardRequestOrFailSocketTerminated(longlong * param_1, AsyncOperationProxy * param_2, undefined8 * param_3, longlong * param_4, longlong * param_5)`
-pub const ForwardRequestOrFailSocketTerminated: u64 = 452954;
-/// `ForwardRequestWithApiVersion` at 0x1389f30 (decompiler, medium); signature (untiered): `undefined ForwardRequestWithApiVersion(AsyncOperationProxy * param_1, longlong param_2, undefined4 * param_3, undefined8 param_4)`
-pub const ForwardRequestWithApiVersion: u64 = 101596;
-/// `ForwardStartAsyncOperation1B20CA8OrFail` at 0x1486ef0 (decompiler, high); signature (high): `undefined8 ForwardStartAsyncOperation1B20CA8OrFail(undefined8 * param_1, undefined8 param_2, undefined4 * param_3, undefined8 param_4, undefined8 param_5)`
-pub const ForwardStartAsyncOperation1B20CA8OrFail: u64 = 453476;
-/// `ForwardStartAsyncOperation1B20CA8OrFail_2` at 0x1486f30 (decompiler, high); signature (high): `undefined8 ForwardStartAsyncOperation1B20CA8OrFail_2(undefined8 * param_1, undefined8 param_2, undefined4 * param_3, undefined8 param_4, undefined8 param_5, undefined8 param_6)`
-pub const ForwardStartAsyncOperation1B20CA8OrFail_2: u64 = 453477;
-/// `ForwardToAttachMountInteraction` at 0x78cf30 (decompiler, medium); signature (medium): `undefined ForwardToAttachMountInteraction(longlong * param_1)`
-pub const ForwardToAttachMountInteraction: u64 = 41532;
-/// `ForwardToNearestSpriteAncestorVfuncE0` at 0xd33360 (decompiler, medium); signature (untiered): `undefined8 ForwardToNearestSpriteAncestorVfuncE0(longlong param_1)`
-pub const ForwardToNearestSpriteAncestorVfuncE0: u64 = 83458;

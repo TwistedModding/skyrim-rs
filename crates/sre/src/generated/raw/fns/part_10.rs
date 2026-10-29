@@ -3,6 +3,54 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `FormatWideWithLocaleV` at 0x15aaad0 (decompiler, high); signature (high): `int FormatWideWithLocaleV(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4, undefined8 param_5)`
+pub const FormatWideWithLocaleV: u64 = 109867;
+/// `FormatWideWithLocaleV_2` at 0x15aab94 (decompiler, high); signature (high): `int FormatWideWithLocaleV_2(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4, undefined8 param_5)`
+pub const FormatWideWithLocaleV_2: u64 = 109869;
+/// `FormatWideWithLocale_2` at 0x15ab26c (decompiler, high); signature (high): `int FormatWideWithLocale_2(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const FormatWideWithLocale_2: u64 = 109889;
+/// `ForwardCreateAndQueueAsyncOperation` at 0x146d500 (decompiler, high); signature (high): `undefined8 ForwardCreateAndQueueAsyncOperation(longlong param_1, undefined8 param_2, undefined4 * param_3, undefined8 param_4, undefined8 param_5)`
+pub const ForwardCreateAndQueueAsyncOperation: u64 = 103167;
+/// `ForwardExtractRightHandedAxesOrDefault` at 0x10f0df0 (decompiler, high); signature (untiered): `undefined8 ForwardExtractRightHandedAxesOrDefault(undefined8 param_1)`
+pub const ForwardExtractRightHandedAxesOrDefault: u64 = 80846;
+/// `ForwardHandleIfSharedPtrAt140Set` at 0x13af5d0 (decompiler, medium); signature (untiered): `undefined ForwardHandleIfSharedPtrAt140Set(longlong param_1, undefined8 * param_2, undefined8 param_3, undefined8 param_4)`
+pub const ForwardHandleIfSharedPtrAt140Set: u64 = 450553;
+/// `ForwardHandleIfSharedPtrViaField158` at 0x13abef0 (decompiler, medium); signature (untiered): `undefined ForwardHandleIfSharedPtrViaField158(longlong param_1, undefined8 * param_2, undefined8 param_3, undefined8 param_4)`
+pub const ForwardHandleIfSharedPtrViaField158: u64 = 450464;
+/// `ForwardMovedArgToErrCannotUnderstand` at 0x141eae0 (decompiler, medium); signature (untiered): `undefined ForwardMovedArgToErrCannotUnderstand(longlong param_1, undefined8 * param_2, ulonglong param_3, undefined8 param_4)`
+pub const ForwardMovedArgToErrCannotUnderstand: u64 = 451909;
+/// `ForwardOnIMEComposition` at 0xdd5790 (decompiler, medium); signature (untiered): `undefined ForwardOnIMEComposition(longlong param_1)`
+pub const ForwardOnIMEComposition: u64 = 86818;
+/// `ForwardOnSetConversionStatus` at 0xdd5810 (decompiler, medium); signature (untiered): `undefined ForwardOnSetConversionStatus(longlong param_1)`
+pub const ForwardOnSetConversionStatus: u64 = 86820;
+/// `ForwardOnSetCurrentInputLanguage` at 0xdd5880 (decompiler, medium); signature (untiered): `undefined ForwardOnSetCurrentInputLanguage(longlong param_1)`
+pub const ForwardOnSetCurrentInputLanguage: u64 = 86821;
+/// `ForwardOnSetIMEName` at 0xdd58f0 (decompiler, medium); signature (untiered): `undefined ForwardOnSetIMEName(longlong param_1)`
+pub const ForwardOnSetIMEName: u64 = 86822;
+/// `ForwardOnSetSupportedIMEs` at 0xdd5960 (decompiler, medium); signature (untiered): `undefined ForwardOnSetSupportedIMEs(longlong param_1)`
+pub const ForwardOnSetSupportedIMEs: u64 = 86823;
+/// `ForwardOnSetSupportedLanguages` at 0xdd59d0 (decompiler, medium); signature (untiered): `undefined ForwardOnSetSupportedLanguages(longlong param_1)`
+pub const ForwardOnSetSupportedLanguages: u64 = 86824;
+/// `ForwardOnSwitchLanguage` at 0xdd5a40 (decompiler, medium); signature (untiered): `undefined ForwardOnSwitchLanguage(longlong param_1)`
+pub const ForwardOnSwitchLanguage: u64 = 86825;
+/// `ForwardOwnedHandleOrRelease` at 0x13e4b50 (decompiler, medium); signature (untiered): `undefined ForwardOwnedHandleOrRelease(longlong param_1, undefined8 * param_2, undefined8 param_3, undefined8 param_4)`
+pub const ForwardOwnedHandleOrRelease: u64 = 449500;
+/// `ForwardRequestIfWebSocketConnected` at 0x139ab10 (decompiler, medium); signature (untiered): `AsyncOperationProxy * ForwardRequestIfWebSocketConnected(longlong param_1, AsyncOperationProxy * param_2, undefined2 param_3, undefined2 param_4, undefined4 * param_5, longlong * param_6, longlong * param_7)`
+pub const ForwardRequestIfWebSocketConnected: u64 = 97343;
+/// `ForwardRequestIfWebSocketConnected_2` at 0x139acf0 (decompiler, medium); signature (untiered): `AsyncOperationProxy * ForwardRequestIfWebSocketConnected_2(longlong param_1, AsyncOperationProxy * param_2, undefined2 param_3, undefined2 param_4, undefined8 param_5, undefined4 * param_6, longlong * param_7, longlong * param_8)`
+pub const ForwardRequestIfWebSocketConnected_2: u64 = 97345;
+/// `ForwardRequestOrFailSocketTerminated` at 0x146d580 (decompiler, medium); signature (untiered): `undefined ForwardRequestOrFailSocketTerminated(longlong * param_1, AsyncOperationProxy * param_2, undefined8 * param_3, longlong * param_4, longlong * param_5)`
+pub const ForwardRequestOrFailSocketTerminated: u64 = 452954;
+/// `ForwardRequestWithApiVersion` at 0x1389f30 (decompiler, medium); signature (untiered): `undefined ForwardRequestWithApiVersion(AsyncOperationProxy * param_1, longlong param_2, undefined4 * param_3, undefined8 param_4)`
+pub const ForwardRequestWithApiVersion: u64 = 101596;
+/// `ForwardStartAsyncOperation1B20CA8OrFail` at 0x1486ef0 (decompiler, high); signature (high): `undefined8 ForwardStartAsyncOperation1B20CA8OrFail(undefined8 * param_1, undefined8 param_2, undefined4 * param_3, undefined8 param_4, undefined8 param_5)`
+pub const ForwardStartAsyncOperation1B20CA8OrFail: u64 = 453476;
+/// `ForwardStartAsyncOperation1B20CA8OrFail_2` at 0x1486f30 (decompiler, high); signature (high): `undefined8 ForwardStartAsyncOperation1B20CA8OrFail_2(undefined8 * param_1, undefined8 param_2, undefined4 * param_3, undefined8 param_4, undefined8 param_5, undefined8 param_6)`
+pub const ForwardStartAsyncOperation1B20CA8OrFail_2: u64 = 453477;
+/// `ForwardToAttachMountInteraction` at 0x78cf30 (decompiler, medium); signature (medium): `undefined ForwardToAttachMountInteraction(longlong * param_1)`
+pub const ForwardToAttachMountInteraction: u64 = 41532;
+/// `ForwardToNearestSpriteAncestorVfuncE0` at 0xd33360 (decompiler, medium); signature (untiered): `undefined8 ForwardToNearestSpriteAncestorVfuncE0(longlong param_1)`
+pub const ForwardToNearestSpriteAncestorVfuncE0: u64 = 83458;
 /// `FourCCToString` at 0x1e5ce0 (decompiler, high); signature (high): `undefined FourCCToString(undefined4 param_1, undefined1 * param_2, uint param_3)`
 pub const FourCCToString: u64 = 14625;
 /// `Fprintf` at 0x90f160 (decompiler, medium); signature (medium): `undefined Fprintf(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
@@ -8517,57 +8565,3 @@ pub const GameSetting_fLockpickBreakNovice__atexit: u64 = 168564;
 pub const GameSetting_fLockpickBreakNovice__init: u64 = 3354;
 /// `GameSetting_fLockpickBreakSkillBase__atexit` at 0x1770d30 (crt_init, medium); signature (high): `void GameSetting_fLockpickBreakSkillBase__atexit(void)`
 pub const GameSetting_fLockpickBreakSkillBase__atexit: u64 = 168565;
-/// `GameSetting_fLockpickBreakSkillBase__init` at 0x5b1f0 (crt_init, medium); signature (high): `void GameSetting_fLockpickBreakSkillBase__init(void)`
-pub const GameSetting_fLockpickBreakSkillBase__init: u64 = 3355;
-/// `GameSetting_fLockpickBreakSkillMult__atexit` at 0x1770d80 (crt_init, medium); signature (high): `void GameSetting_fLockpickBreakSkillMult__atexit(void)`
-pub const GameSetting_fLockpickBreakSkillMult__atexit: u64 = 168566;
-/// `GameSetting_fLockpickBreakSkillMult__init` at 0x5b270 (crt_init, medium); signature (high): `void GameSetting_fLockpickBreakSkillMult__init(void)`
-pub const GameSetting_fLockpickBreakSkillMult__init: u64 = 3356;
-/// `GameSetting_fLockpickBrokenPicksMult__atexit` at 0x1770dd0 (crt_init, medium); signature (high): `void GameSetting_fLockpickBrokenPicksMult__atexit(void)`
-pub const GameSetting_fLockpickBrokenPicksMult__atexit: u64 = 168567;
-/// `GameSetting_fLockpickBrokenPicksMult__init` at 0x5b2f0 (crt_init, medium); signature (high): `void GameSetting_fLockpickBrokenPicksMult__init(void)`
-pub const GameSetting_fLockpickBrokenPicksMult__init: u64 = 3357;
-/// `GameSetting_fLockpickSkillPartialPickBase__atexit` at 0x1770e20 (crt_init, medium); signature (high): `void GameSetting_fLockpickSkillPartialPickBase__atexit(void)`
-pub const GameSetting_fLockpickSkillPartialPickBase__atexit: u64 = 168568;
-/// `GameSetting_fLockpickSkillPartialPickBase__init` at 0x5b370 (crt_init, medium); signature (high): `void GameSetting_fLockpickSkillPartialPickBase__init(void)`
-pub const GameSetting_fLockpickSkillPartialPickBase__init: u64 = 3358;
-/// `GameSetting_fLockpickSkillPartialPickMult__atexit` at 0x1770e70 (crt_init, medium); signature (high): `void GameSetting_fLockpickSkillPartialPickMult__atexit(void)`
-pub const GameSetting_fLockpickSkillPartialPickMult__atexit: u64 = 168569;
-/// `GameSetting_fLockpickSkillPartialPickMult__init` at 0x5b3f0 (crt_init, medium); signature (high): `void GameSetting_fLockpickSkillPartialPickMult__init(void)`
-pub const GameSetting_fLockpickSkillPartialPickMult__init: u64 = 3359;
-/// `GameSetting_fLockpickSkillSweetSpotBase__atexit` at 0x1770ec0 (crt_init, medium); signature (high): `void GameSetting_fLockpickSkillSweetSpotBase__atexit(void)`
-pub const GameSetting_fLockpickSkillSweetSpotBase__atexit: u64 = 168570;
-/// `GameSetting_fLockpickSkillSweetSpotBase__init` at 0x5b470 (crt_init, medium); signature (high): `void GameSetting_fLockpickSkillSweetSpotBase__init(void)`
-pub const GameSetting_fLockpickSkillSweetSpotBase__init: u64 = 3360;
-/// `GameSetting_fLockpickSkillSweetSpotMult__atexit` at 0x1770f10 (crt_init, medium); signature (high): `void GameSetting_fLockpickSkillSweetSpotMult__atexit(void)`
-pub const GameSetting_fLockpickSkillSweetSpotMult__atexit: u64 = 168571;
-/// `GameSetting_fLockpickSkillSweetSpotMult__init` at 0x5b4f0 (crt_init, medium); signature (high): `void GameSetting_fLockpickSkillSweetSpotMult__init(void)`
-pub const GameSetting_fLockpickSkillSweetSpotMult__init: u64 = 3361;
-/// `GameSetting_fLookDownDisableBlinkingAmt__atexit` at 0x17898f0 (crt_init, medium); signature (high): `void GameSetting_fLookDownDisableBlinkingAmt__atexit(void)`
-pub const GameSetting_fLookDownDisableBlinkingAmt__atexit: u64 = 169830;
-/// `GameSetting_fLookDownDisableBlinkingAmt__init` at 0x7f8d0 (crt_init, medium); signature (high): `void GameSetting_fLookDownDisableBlinkingAmt__init(void)`
-pub const GameSetting_fLookDownDisableBlinkingAmt__init: u64 = 4620;
-/// `GameSetting_fLowHealthTutorialPercentage__atexit` at 0x1770f60 (crt_init, medium); signature (high): `void GameSetting_fLowHealthTutorialPercentage__atexit(void)`
-pub const GameSetting_fLowHealthTutorialPercentage__atexit: u64 = 168572;
-/// `GameSetting_fLowHealthTutorialPercentage__init` at 0x5b570 (crt_init, medium); signature (high): `void GameSetting_fLowHealthTutorialPercentage__init(void)`
-pub const GameSetting_fLowHealthTutorialPercentage__init: u64 = 3362;
-/// `GameSetting_fLowLevelNPCBaseHealthMult__atexit` at 0x1770fb0 (crt_init, medium); signature (high): `void GameSetting_fLowLevelNPCBaseHealthMult__atexit(void)`
-pub const GameSetting_fLowLevelNPCBaseHealthMult__atexit: u64 = 168573;
-/// `GameSetting_fLowLevelNPCBaseHealthMult__init` at 0x5b5f0 (crt_init, medium); signature (high): `void GameSetting_fLowLevelNPCBaseHealthMult__init(void)`
-pub const GameSetting_fLowLevelNPCBaseHealthMult__init: u64 = 3363;
-/// `GameSetting_fLowMagickaTutorialPercentage__atexit` at 0x1771000 (crt_init, medium); signature (high): `void GameSetting_fLowMagickaTutorialPercentage__atexit(void)`
-pub const GameSetting_fLowMagickaTutorialPercentage__atexit: u64 = 168574;
-/// `GameSetting_fLowMagickaTutorialPercentage__init` at 0x5b670 (crt_init, medium); signature (high): `void GameSetting_fLowMagickaTutorialPercentage__init(void)`
-pub const GameSetting_fLowMagickaTutorialPercentage__init: u64 = 3364;
-/// `GameSetting_fLowStaminaTutorialPercentage__atexit` at 0x1771050 (crt_init, medium); signature (high): `void GameSetting_fLowStaminaTutorialPercentage__atexit(void)`
-pub const GameSetting_fLowStaminaTutorialPercentage__atexit: u64 = 168575;
-/// `GameSetting_fLowStaminaTutorialPercentage__init` at 0x5b6f0 (crt_init, medium); signature (high): `void GameSetting_fLowStaminaTutorialPercentage__init(void)`
-pub const GameSetting_fLowStaminaTutorialPercentage__init: u64 = 3365;
-/// `GameSetting_fMagicAbsorbDistanceReachMult__atexit` at 0x1777220 (crt_init, medium); signature (high): `void GameSetting_fMagicAbsorbDistanceReachMult__atexit(void)`
-pub const GameSetting_fMagicAbsorbDistanceReachMult__atexit: u64 = 168888;
-/// `GameSetting_fMagicAbsorbDistanceReachMult__init` at 0x64d80 (crt_init, medium); signature (high): `void GameSetting_fMagicAbsorbDistanceReachMult__init(void)`
-pub const GameSetting_fMagicAbsorbDistanceReachMult__init: u64 = 3678;
-/// `GameSetting_fMagicAbsorbVisualTimer__atexit` at 0x1777270 (crt_init, medium); signature (high): `void GameSetting_fMagicAbsorbVisualTimer__atexit(void)`
-pub const GameSetting_fMagicAbsorbVisualTimer__atexit: u64 = 168889;
-/// `GameSetting_fMagicAbsorbVisualTimer__init` at 0x64e00 (crt_init, medium); signature (high): `void GameSetting_fMagicAbsorbVisualTimer__init(void)`
-pub const GameSetting_fMagicAbsorbVisualTimer__init: u64 = 3679;

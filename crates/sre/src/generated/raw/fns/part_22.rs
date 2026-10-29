@@ -3,6 +3,132 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `hkpListShape::hkpShapeContainer_vfunc_3` at 0xb40bf0 (rtti, high); signature (low): `uint hkpShapeContainer_vfunc_3(hkpListShape * this, uint param_1)`
+pub const hkpListShape__hkpShapeContainer_vfunc_3: u64 = 60662;
+/// `hkpListShape::hkpShapeContainer_vfunc_4` at 0xb40370 (rtti, high); signature (low): `undefined4 hkpShapeContainer_vfunc_4(hkpListShape * this, int param_1)`
+pub const hkpListShape__hkpShapeContainer_vfunc_4: u64 = 60650;
+/// `hkpListShape::hkpShapeContainer_vfunc_5` at 0xb403b0 (rtti, high); signature (low): `undefined8 hkpShapeContainer_vfunc_5(hkpListShape * this, int param_1)`
+pub const hkpListShape__hkpShapeContainer_vfunc_5: u64 = 60652;
+/// `hkpListShape::vdtor` at 0xb40b30 (slot_propagation, medium); signature (low): `hkpListShape * vdtor(hkpListShape * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpListShape__vdtor: u64 = 60660;
+/// `hkpListShape::vfunc_2` at 0xb40890 (rtti, high); signature (low): `undefined vfunc_2(hkpListShape * this, longlong * param_1)`
+pub const hkpListShape__vfunc_2: u64 = 60656;
+/// `hkpListShape::vfunc_6` at 0xb40960 (rtti, high); signature (low): `undefined8 vfunc_6(hkpListShape * this, char * param_1)`
+pub const hkpListShape__vfunc_6: u64 = 60657;
+/// `hkpListShape::vfunc_7` at 0xb403d0 (rtti, high); signature (low): `undefined vfunc_7(hkpListShape * this, undefined8 param_2, undefined4 param_3, undefined1[16] * param_4)`
+pub const hkpListShape__vfunc_7: u64 = 60653;
+/// `hkpListShape::vfunc_8` at 0xb404b0 (rtti, high); signature (low): `undefined8 vfunc_8(hkpListShape * this, undefined8 param_1, longlong param_2, longlong param_3)`
+pub const hkpListShape__vfunc_8: u64 = 60654;
+/// `hkpListShape::vfunc_9` at 0xb40690 (rtti, high); signature (low): `undefined vfunc_9(hkpListShape * this, longlong param_1, longlong param_2, undefined8 param_3)`
+pub const hkpListShape__vfunc_9: u64 = 60655;
+/// `hkpMalleableConstraintData::ctor` at 0xb79a70 (layout_inference, medium); signature (low): `hkpMalleableConstraintData * ctor(hkpMalleableConstraintData * this, undefined8 param_1)`
+pub const hkpMalleableConstraintData__ctor: u64 = 62041;
+/// `hkpMalleableConstraintData::ctor` at 0xb79d10 (layout_inference, medium); signature (low): `hkpMalleableConstraintData * ctor(hkpMalleableConstraintData * this, int param_1)`
+pub const hkpMalleableConstraintData__ctor_2: u64 = 62052;
+/// `hkpMalleableConstraintData::dtor` at 0xb79ae0 (layout_inference, high); signature (high): `undefined dtor(hkpMalleableConstraintData * this)`
+pub const hkpMalleableConstraintData__dtor: u64 = 62042;
+/// `hkpMalleableConstraintData::vdtor` at 0xb79d60 (slot_propagation, medium); signature (low): `hkpMalleableConstraintData * vdtor(hkpMalleableConstraintData * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpMalleableConstraintData__vdtor: u64 = 62053;
+/// `hkpMalleableConstraintData::vfunc_10` at 0xb79b40 (rtti, medium); signature (low): `undefined8 vfunc_10(hkpMalleableConstraintData * this, undefined8 param_1)`
+pub const hkpMalleableConstraintData__vfunc_10: u64 = 62044;
+/// `hkpMalleableConstraintData::vfunc_11` at 0xb79b70 (rtti, medium); signature (low): `undefined8 vfunc_11(void)`
+pub const hkpMalleableConstraintData__vfunc_11: u64 = 62045;
+/// `hkpMalleableConstraintData::vfunc_12` at 0xb79cf0 (rtti, medium); signature (high): `undefined vfunc_12(hkpMalleableConstraintData * this)`
+pub const hkpMalleableConstraintData__vfunc_12: u64 = 62051;
+/// `hkpMalleableConstraintData::vfunc_15` at 0xb79c20 (rtti, medium); signature (low): `undefined vfunc_15(hkpMalleableConstraintData * this, undefined8 * param_1, undefined8 * param_2)`
+pub const hkpMalleableConstraintData__vfunc_15: u64 = 62050;
+/// `hkpMalleableConstraintData::vfunc_18` at 0xb79b80 (rtti, medium); signature (low): `undefined vfunc_18(hkpMalleableConstraintData * this, longlong param_1)`
+pub const hkpMalleableConstraintData__vfunc_18: u64 = 62046;
+/// `hkpMapPointsToSubShapeContactMgr::vdtor` at 0xc31bd0 (layout_inference, medium); signature (low): `hkpMapPointsToSubShapeContactMgr * vdtor(hkpMapPointsToSubShapeContactMgr * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpMapPointsToSubShapeContactMgr__vdtor: u64 = 65010;
+/// `hkpMapPointsToSubShapeContactMgr::vfunc_3` at 0xc31c60 (rtti, high); signature (low): `undefined8 vfunc_3(hkpMapPointsToSubShapeContactMgr * this, longlong * param_1, longlong * param_2, undefined8 param_3, undefined8 param_4, longlong param_5, undefined8 param_6)`
+pub const hkpMapPointsToSubShapeContactMgr__vfunc_3: u64 = 65011;
+/// `hkpMapPointsToSubShapeContactMgr::vfunc_4` at 0xc31fa0 (rtti, high); signature (high): `undefined vfunc_4(hkpMapPointsToSubShapeContactMgr * this)`
+pub const hkpMapPointsToSubShapeContactMgr__vfunc_4: u64 = 65017;
+/// `hkpMapPointsToSubShapeContactMgr::vfunc_5` at 0xc31f80 (rtti, high); signature (high): `undefined vfunc_5(hkpMapPointsToSubShapeContactMgr * this)`
+pub const hkpMapPointsToSubShapeContactMgr__vfunc_5: u64 = 65015;
+/// `hkpMapPointsToSubShapeContactMgr::vfunc_6` at 0xc31f70 (rtti, high); signature (high): `undefined vfunc_6(hkpMapPointsToSubShapeContactMgr * this)`
+pub const hkpMapPointsToSubShapeContactMgr__vfunc_6: u64 = 65014;
+/// `hkpMapPointsToSubShapeContactMgr::vfunc_7` at 0xc31dd0 (rtti, high); signature (low): `undefined8 vfunc_7(hkpMapPointsToSubShapeContactMgr * this, longlong * param_1, longlong * param_2, undefined8 param_3, undefined8 param_4, undefined4 param_5, undefined8 param_6, longlong param_7, undefined8 param_8, undefined8 param_9)`
+pub const hkpMapPointsToSubShapeContactMgr__vfunc_7: u64 = 65012;
+/// `hkpMapPointsToSubShapeContactMgr::vfunc_8` at 0xc31f90 (rtti, high); signature (high): `undefined vfunc_8(hkpMapPointsToSubShapeContactMgr * this)`
+pub const hkpMapPointsToSubShapeContactMgr__vfunc_8: u64 = 65016;
+/// `hkpMapPointsToSubShapeContactMgr::vfunc_9` at 0xc31f60 (rtti, high); signature (high): `undefined vfunc_9(hkpMapPointsToSubShapeContactMgr * this)`
+pub const hkpMapPointsToSubShapeContactMgr__vfunc_9: u64 = 65013;
+/// `hkpMaxSizeMotion::vdtor` at 0xb4c5c0 (slot_propagation, medium); signature (low): `hkpMaxSizeMotion * vdtor(hkpMaxSizeMotion * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpMaxSizeMotion__vdtor: u64 = 60881;
+/// `hkpMeshShape::ctor` at 0xc55f10 (layout_inference, high); signature (low): `hkpMeshShape * ctor(hkpMeshShape * this, undefined4 param_2, undefined4 param_3)`
+pub const hkpMeshShape__ctor: u64 = 65696;
+/// `hkpMeshShape::ctor` at 0xc567d0 (layout_inference, high); signature (low): `hkpMeshShape * ctor(hkpMeshShape * this, int param_1)`
+pub const hkpMeshShape__ctor_2: u64 = 65707;
+/// `hkpMeshShape::hkpShapeContainer_vdtor` at 0xc56874 (slot_propagation, medium); signature (high): `undefined hkpShapeContainer_vdtor(hkpMeshShape * this)`
+pub const hkpMeshShape__hkpShapeContainer_vdtor: u64 = 65708;
+/// `hkpMeshShape::hkpShapeContainer_vfunc_2` at 0xc561d0 (rtti, medium); signature (high): `undefined8 hkpShapeContainer_vfunc_2(hkpMeshShape * this)`
+pub const hkpMeshShape__hkpShapeContainer_vfunc_2: u64 = 65701;
+/// `hkpMeshShape::hkpShapeContainer_vfunc_3` at 0xc56250 (rtti, medium); signature (low): `uint hkpShapeContainer_vfunc_3(hkpMeshShape * this, uint param_1)`
+pub const hkpMeshShape__hkpShapeContainer_vfunc_3: u64 = 65702;
+/// `hkpMeshShape::hkpShapeContainer_vfunc_4` at 0xc56530 (rtti, medium); signature (low): `undefined4 hkpShapeContainer_vfunc_4(hkpMeshShape * this, uint param_1)`
+pub const hkpMeshShape__hkpShapeContainer_vfunc_4: u64 = 65704;
+/// `hkpMeshShape::hkpShapeContainer_vfunc_5` at 0xc56330 (rtti, medium); signature (low): `undefined8 * hkpShapeContainer_vfunc_5(hkpMeshShape * this, uint param_1, undefined8 * param_2)`
+pub const hkpMeshShape__hkpShapeContainer_vfunc_5: u64 = 65703;
+/// `hkpMeshShape::vdtor` at 0xc56880 (slot_propagation, medium); signature (low): `hkpMeshShape * vdtor(hkpMeshShape * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpMeshShape__vdtor: u64 = 65709;
+/// `hkpMeshShape::vfunc_11` at 0xc55ff0 (rtti, medium); signature (low): `undefined vfunc_11(hkpMeshShape * this, int param_1)`
+pub const hkpMeshShape__vfunc_11: u64 = 65698;
+/// `hkpMeshShape::vfunc_12` at 0xc55fa0 (rtti, medium); signature (low): `undefined vfunc_12(hkpMeshShape * this, uint param_1, undefined2 param_2)`
+pub const hkpMeshShape__vfunc_12: u64 = 65697;
+/// `hkpMeshShape::vfunc_13` at 0xc560e0 (rtti, medium); signature (low): `undefined vfunc_13(hkpMeshShape * this, undefined8 * param_1)`
+pub const hkpMeshShape__vfunc_13: u64 = 65699;
+/// `hkpMeshShape::vfunc_2` at 0xc56750 (rtti, medium); signature (low): `undefined vfunc_2(hkpMeshShape * this, longlong * param_1)`
+pub const hkpMeshShape__vfunc_2: u64 = 65706;
+/// `hkpMeshShape::vfunc_7` at 0xc565a0 (rtti, medium); signature (low): `undefined vfunc_7(hkpMeshShape * this, float * param_1, float param_2, undefined1[16] * param_3)`
+pub const hkpMeshShape__vfunc_7: u64 = 65705;
+/// `hkpMoppAgent::ctor` at 0xc80970 (layout_inference, high); signature (low): `hkpMoppAgent * ctor(hkpMoppAgent * this, undefined8 param_1)`
+pub const hkpMoppAgent__ctor: u64 = 66773;
+/// `hkpMoppAgent::ctor_caller` at 0xc808c0 (callgraph, medium); signature (untiered): `hkpMoppAgent * ctor_caller(longlong * param_1, longlong * param_2, undefined8 param_3, undefined8 param_4)`
+pub const hkpMoppAgent__ctor_caller: u64 = 66772;
+/// `hkpMoppAgent::vdtor` at 0xc80b40 (layout_inference, medium); signature (low): `hkpMoppAgent * vdtor(hkpMoppAgent * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpMoppAgent__vdtor: u64 = 66776;
+/// `hkpMoppAssembler::vdtor` at 0x112e880 (layout_inference, medium); signature (low): `hkpMoppAssembler * vdtor(hkpMoppAssembler * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpMoppAssembler__vdtor: u64 = 81499;
+/// `hkpMoppBvTreeShape::ctor` at 0xb3d910 (layout_inference, high); signature (low): `hkpMoppBvTreeShape * ctor(hkpMoppBvTreeShape * this, int param_1)`
+pub const hkpMoppBvTreeShape__ctor: u64 = 60506;
+/// `hkpMoppBvTreeShape::ctor` at 0xb41320 (layout_inference, high); signature (low): `hkpMoppBvTreeShape * ctor(hkpMoppBvTreeShape * this, longlong param_1, longlong param_2)`
+pub const hkpMoppBvTreeShape__ctor_2: u64 = 60682;
+/// `hkpMoppBvTreeShape::dtor` at 0xb41370 (layout_inference, high); signature (high): `undefined dtor(hkpMoppBvTreeShape * this)`
+pub const hkpMoppBvTreeShape__dtor: u64 = 60683;
+/// `hkpMoppBvTreeShape::vdtor` at 0xb3e040 (slot_propagation, medium); signature (low): `hkpMoppBvTreeShape * vdtor(hkpMoppBvTreeShape * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpMoppBvTreeShape__vdtor: u64 = 60535;
+/// `hkpMoppBvTreeShape::vfunc_10` at 0xb41660 (rtti, medium); signature (low): `undefined1[16] * vfunc_10(hkpMoppBvTreeShape * this, undefined1[16] * param_1, undefined8 param_2, longlong param_3, undefined8 param_4)`
+pub const hkpMoppBvTreeShape__vfunc_10: u64 = 60687;
+/// `hkpMoppBvTreeShape::vfunc_2` at 0xb417d0 (rtti, medium); signature (low): `undefined vfunc_2(hkpMoppBvTreeShape * this, longlong * param_1)`
+pub const hkpMoppBvTreeShape__vfunc_2: u64 = 60688;
+/// `hkpMoppBvTreeShape::vfunc_4` at 0xb3e510 (rtti, medium); signature (high): `undefined vfunc_4(hkpMoppBvTreeShape * this)`
+pub const hkpMoppBvTreeShape__vfunc_4: u64 = 60546;
+/// `hkpMoppBvTreeShape::vfunc_6` at 0xb41830 (rtti, medium); signature (low): `undefined8 vfunc_6(hkpMoppBvTreeShape * this, undefined8 param_1)`
+pub const hkpMoppBvTreeShape__vfunc_6: u64 = 60689;
+/// `hkpMoppBvTreeShape::vfunc_7` at 0xb413d0 (rtti, medium); signature (high): `undefined vfunc_7(hkpMoppBvTreeShape * this)`
+pub const hkpMoppBvTreeShape__vfunc_7: u64 = 60684;
+/// `hkpMoppBvTreeShape::vfunc_8` at 0xb413f0 (rtti, medium); signature (low): `char * vfunc_8(hkpMoppBvTreeShape * this, char * param_1, undefined8 param_2, longlong param_3)`
+pub const hkpMoppBvTreeShape__vfunc_8: u64 = 60685;
+/// `hkpMoppBvTreeShape::vfunc_9` at 0xb41530 (rtti, medium); signature (low): `undefined vfunc_9(hkpMoppBvTreeShape * this, undefined8 param_1, longlong param_2, undefined8 param_3)`
+pub const hkpMoppBvTreeShape__vfunc_9: u64 = 60686;
+/// `hkpMoppCachedShapeMediator::ctor` at 0x1116bb0 (layout_inference, medium); signature (low): `hkpMoppCachedShapeMediator * ctor(hkpMoppCachedShapeMediator * this, longlong * param_1)`
+pub const hkpMoppCachedShapeMediator__ctor: u64 = 81210;
+/// `hkpMoppCachedShapeMediator::dtor` at 0x1116c00 (layout_inference, high); signature (high): `undefined dtor(hkpMoppCachedShapeMediator * this)`
+pub const hkpMoppCachedShapeMediator__dtor: u64 = 81211;
+/// `hkpMoppCachedShapeMediator::vdtor` at 0x1117360 (slot_propagation, medium); signature (low): `hkpMoppCachedShapeMediator * vdtor(hkpMoppCachedShapeMediator * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpMoppCachedShapeMediator__vdtor: u64 = 81220;
+/// `hkpMoppCachedShapeMediator::vfunc_3` at 0x1116c70 (rtti, high); signature (low): `undefined vfunc_3(hkpMoppCachedShapeMediator * this, undefined8 param_1, undefined4 param_2)`
+pub const hkpMoppCachedShapeMediator__vfunc_3: u64 = 81212;
+/// `hkpMoppCachedShapeMediator::vfunc_3_sub0` at 0x1117170 (callgraph, medium); signature (untiered): `undefined vfunc_3_sub0(longlong param_1, longlong * param_2, float param_3, float * param_4, int param_5)`
+pub const hkpMoppCachedShapeMediator__vfunc_3_sub0: u64 = 81219;
+/// `hkpMoppCachedShapeMediator::vfunc_4` at 0x1116d40 (rtti, high); signature (high): `undefined4 vfunc_4(hkpMoppCachedShapeMediator * this)`
+pub const hkpMoppCachedShapeMediator__vfunc_4: u64 = 81213;
+/// `hkpMoppCachedShapeMediator::vfunc_5` at 0x1116d70 (rtti, high); signature (low): `undefined vfunc_5(hkpMoppCachedShapeMediator * this, undefined4 * param_1)`
+pub const hkpMoppCachedShapeMediator__vfunc_5: u64 = 81215;
+/// `hkpMoppCachedShapeMediator::vfunc_6` at 0x1116de0 (rtti, high); signature (low): `undefined vfunc_6(hkpMoppCachedShapeMediator * this, undefined8 param_1, int param_2, longlong param_3, int param_4, float * param_5, float * param_6)`
+pub const hkpMoppCachedShapeMediator__vfunc_6: u64 = 81216;
 /// `hkpMoppCachedShapeMediator::vfunc_7` at 0x1116fc0 (rtti, high); signature (low): `undefined vfunc_7(hkpMoppCachedShapeMediator * this, undefined8 param_1, int param_2, longlong param_3, int param_4, float * param_5, float * param_6)`
 pub const hkpMoppCachedShapeMediator__vfunc_7: u64 = 81217;
 /// `hkpMoppCachedShapeMediator::vfunc_8` at 0x1116d50 (rtti, high); signature (low): `undefined vfunc_8(hkpMoppCachedShapeMediator * this, undefined8 * param_1)`

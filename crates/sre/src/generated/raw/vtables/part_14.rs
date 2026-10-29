@@ -684,7 +684,7 @@ pub struct MagicItem_vtable {
     pub slot_62: *const c_void,
     /// `TESObject::vfunc_63` at 0x146a40 (rtti, medium); signature (low): `undefined vfunc_63(void)`
     pub slot_63: *const c_void,
-    /// `TESBoundObject::vfunc_64` at 0x277e20 (rtti, medium); signature (low): `TESBoundObject_vtbl * vfunc_64(TESBoundObject * this, TESBoundObject_vtbl * param_1, byte param_2)`
+    /// `TESBoundObject::Clone3D` at 0x277e20 (semantic, high); signature (untiered): `TESBoundObject_vtbl * Clone3D(TESBoundObject * this, TESBoundObject_vtbl * param_1, byte param_2)`
     pub slot_64: *const c_void,
     /// `TESObject::vfunc_65` at 0x275b60 (rtti, medium); signature (low): `undefined vfunc_65(TESObject * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_65: *const c_void,

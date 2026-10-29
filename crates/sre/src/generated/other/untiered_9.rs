@@ -3,6 +3,13 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `SetArrayCapacityElem8` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 82667, rva 0xd00720).
+/// `undefined SetArrayCapacityElem8(longlong * param_1, undefined8 param_2, longlong param_3)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn set_array_capacity_elem8(param_1: *mut i64, param_2: u64, param_3: i64) -> u64 { unsafe { function!(82667, (*mut i64, u64, i64) -> u64)(param_1, param_2, param_3) } }
 /// `SetArrayCapacityElem8AutoHeap` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 84424, rva 0xd6d440).
 /// `undefined SetArrayCapacityElem8AutoHeap(longlong * param_1, undefined8 param_2, longlong param_3)`
 ///
@@ -13933,10 +13940,3 @@ pub unsafe fn try_get_u32_string_pair_ref(param_1: i64, param_2: *mut u32, param
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn try_get_u64_dual_array_holder(param_1: i64, param_2: *mut u64, param_3: *mut u64) -> u8 { unsafe { function!(54410, (i64, *mut u64, *mut u64) -> u8)(param_1, param_2, param_3) } }
-/// `TryGetValueByKeyUnderReadLock` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 69939, rva 0xed2250).
-/// `undefined8 TryGetValueByKeyUnderReadLock(longlong param_1, uint param_2, undefined8 * param_3)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn try_get_value_by_key_under_read_lock(param_1: i64, param_2: u32, param_3: *mut u64) -> u64 { unsafe { function!(69939, (i64, u32, *mut u64) -> u64)(param_1, param_2, param_3) } }

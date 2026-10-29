@@ -4,6 +4,15 @@
 use crate::raw::*;
 
 pub(super) const ROWS: &[Function] = &[
+    Function { rva: 0x13c5ea0, id: 450958, confidence: Confidence::Medium, name: "DestroyViaVfunc0AndFree_46" },
+    Function { rva: 0x13c5f60, id: 450960, confidence: Confidence::Medium, name: "ConstructFunctionalStorage10_6" },
+    Function { rva: 0x13c64d0, id: 450966, confidence: Confidence::High, name: "ScalarDeletingDtorSize10_72" },
+    Function { rva: 0x13c6500, id: 450967, confidence: Confidence::High, name: "ScalarDeletingDtorSize10_73" },
+    Function { rva: 0x13c6a10, id: 450979, confidence: Confidence::Medium, name: "DestroyViaVfunc0AndFree_47" },
+    Function { rva: 0x13c6ad0, id: 450981, confidence: Confidence::Medium, name: "ConstructFunctionalStorage10_7" },
+    Function { rva: 0x13c70d0, id: 450987, confidence: Confidence::High, name: "ScalarDeletingDtorSize10_74" },
+    Function { rva: 0x13c7100, id: 450988, confidence: Confidence::High, name: "ScalarDeletingDtorSize10_75" },
+    Function { rva: 0x13c7610, id: 451000, confidence: Confidence::Medium, name: "DestroyViaVfunc0AndFree_48" },
     Function { rva: 0x13c76d0, id: 451002, confidence: Confidence::Medium, name: "ConstructFunctionalStorage10_8" },
     Function { rva: 0x13c7cd0, id: 451008, confidence: Confidence::High, name: "ScalarDeletingDtorSize10_76" },
     Function { rva: 0x13c7d00, id: 451009, confidence: Confidence::High, name: "ScalarDeletingDtorSize10_77" },
@@ -8186,13 +8195,4 @@ pub(super) const ROWS: &[Function] = &[
     Function { rva: 0x17713c0, id: 168586, confidence: Confidence::Medium, name: "GameSetting_fMoveEncumEffect__atexit" },
     Function { rva: 0x1771410, id: 168587, confidence: Confidence::Medium, name: "GameSetting_fMoveEncumEffectNoWeapon__atexit" },
     Function { rva: 0x1771460, id: 168588, confidence: Confidence::Medium, name: "GameSetting_fMoveFlyRunMult__atexit" },
-    Function { rva: 0x17714b0, id: 168589, confidence: Confidence::Medium, name: "GameSetting_fMoveFlyWalkMult__atexit" },
-    Function { rva: 0x1771500, id: 168590, confidence: Confidence::Medium, name: "GameSetting_fMoveSprintMult__atexit" },
-    Function { rva: 0x1771550, id: 168591, confidence: Confidence::Medium, name: "GameSetting_fMoveSwimMult__atexit" },
-    Function { rva: 0x17715a0, id: 168592, confidence: Confidence::Medium, name: "GameSetting_fMoveWeightMax__atexit" },
-    Function { rva: 0x17715f0, id: 168593, confidence: Confidence::Medium, name: "GameSetting_fMoveWeightMin__atexit" },
-    Function { rva: 0x1771640, id: 168594, confidence: Confidence::Medium, name: "GameSetting_fNPCAttributeHealthMult__atexit" },
-    Function { rva: 0x1771690, id: 168595, confidence: Confidence::Medium, name: "GameSetting_fNPCBaseMagickaMult__atexit" },
-    Function { rva: 0x17716e0, id: 168596, confidence: Confidence::Medium, name: "GameSetting_fNPCHealthLevelBonus__atexit" },
-    Function { rva: 0x1771730, id: 168597, confidence: Confidence::Medium, name: "GameSetting_fDiffMultXPVH__atexit" },
 ];

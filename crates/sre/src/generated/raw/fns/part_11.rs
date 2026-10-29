@@ -3,6 +3,60 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `GameSetting_fLockpickBreakSkillBase__init` at 0x5b1f0 (crt_init, medium); signature (high): `void GameSetting_fLockpickBreakSkillBase__init(void)`
+pub const GameSetting_fLockpickBreakSkillBase__init: u64 = 3355;
+/// `GameSetting_fLockpickBreakSkillMult__atexit` at 0x1770d80 (crt_init, medium); signature (high): `void GameSetting_fLockpickBreakSkillMult__atexit(void)`
+pub const GameSetting_fLockpickBreakSkillMult__atexit: u64 = 168566;
+/// `GameSetting_fLockpickBreakSkillMult__init` at 0x5b270 (crt_init, medium); signature (high): `void GameSetting_fLockpickBreakSkillMult__init(void)`
+pub const GameSetting_fLockpickBreakSkillMult__init: u64 = 3356;
+/// `GameSetting_fLockpickBrokenPicksMult__atexit` at 0x1770dd0 (crt_init, medium); signature (high): `void GameSetting_fLockpickBrokenPicksMult__atexit(void)`
+pub const GameSetting_fLockpickBrokenPicksMult__atexit: u64 = 168567;
+/// `GameSetting_fLockpickBrokenPicksMult__init` at 0x5b2f0 (crt_init, medium); signature (high): `void GameSetting_fLockpickBrokenPicksMult__init(void)`
+pub const GameSetting_fLockpickBrokenPicksMult__init: u64 = 3357;
+/// `GameSetting_fLockpickSkillPartialPickBase__atexit` at 0x1770e20 (crt_init, medium); signature (high): `void GameSetting_fLockpickSkillPartialPickBase__atexit(void)`
+pub const GameSetting_fLockpickSkillPartialPickBase__atexit: u64 = 168568;
+/// `GameSetting_fLockpickSkillPartialPickBase__init` at 0x5b370 (crt_init, medium); signature (high): `void GameSetting_fLockpickSkillPartialPickBase__init(void)`
+pub const GameSetting_fLockpickSkillPartialPickBase__init: u64 = 3358;
+/// `GameSetting_fLockpickSkillPartialPickMult__atexit` at 0x1770e70 (crt_init, medium); signature (high): `void GameSetting_fLockpickSkillPartialPickMult__atexit(void)`
+pub const GameSetting_fLockpickSkillPartialPickMult__atexit: u64 = 168569;
+/// `GameSetting_fLockpickSkillPartialPickMult__init` at 0x5b3f0 (crt_init, medium); signature (high): `void GameSetting_fLockpickSkillPartialPickMult__init(void)`
+pub const GameSetting_fLockpickSkillPartialPickMult__init: u64 = 3359;
+/// `GameSetting_fLockpickSkillSweetSpotBase__atexit` at 0x1770ec0 (crt_init, medium); signature (high): `void GameSetting_fLockpickSkillSweetSpotBase__atexit(void)`
+pub const GameSetting_fLockpickSkillSweetSpotBase__atexit: u64 = 168570;
+/// `GameSetting_fLockpickSkillSweetSpotBase__init` at 0x5b470 (crt_init, medium); signature (high): `void GameSetting_fLockpickSkillSweetSpotBase__init(void)`
+pub const GameSetting_fLockpickSkillSweetSpotBase__init: u64 = 3360;
+/// `GameSetting_fLockpickSkillSweetSpotMult__atexit` at 0x1770f10 (crt_init, medium); signature (high): `void GameSetting_fLockpickSkillSweetSpotMult__atexit(void)`
+pub const GameSetting_fLockpickSkillSweetSpotMult__atexit: u64 = 168571;
+/// `GameSetting_fLockpickSkillSweetSpotMult__init` at 0x5b4f0 (crt_init, medium); signature (high): `void GameSetting_fLockpickSkillSweetSpotMult__init(void)`
+pub const GameSetting_fLockpickSkillSweetSpotMult__init: u64 = 3361;
+/// `GameSetting_fLookDownDisableBlinkingAmt__atexit` at 0x17898f0 (crt_init, medium); signature (high): `void GameSetting_fLookDownDisableBlinkingAmt__atexit(void)`
+pub const GameSetting_fLookDownDisableBlinkingAmt__atexit: u64 = 169830;
+/// `GameSetting_fLookDownDisableBlinkingAmt__init` at 0x7f8d0 (crt_init, medium); signature (high): `void GameSetting_fLookDownDisableBlinkingAmt__init(void)`
+pub const GameSetting_fLookDownDisableBlinkingAmt__init: u64 = 4620;
+/// `GameSetting_fLowHealthTutorialPercentage__atexit` at 0x1770f60 (crt_init, medium); signature (high): `void GameSetting_fLowHealthTutorialPercentage__atexit(void)`
+pub const GameSetting_fLowHealthTutorialPercentage__atexit: u64 = 168572;
+/// `GameSetting_fLowHealthTutorialPercentage__init` at 0x5b570 (crt_init, medium); signature (high): `void GameSetting_fLowHealthTutorialPercentage__init(void)`
+pub const GameSetting_fLowHealthTutorialPercentage__init: u64 = 3362;
+/// `GameSetting_fLowLevelNPCBaseHealthMult__atexit` at 0x1770fb0 (crt_init, medium); signature (high): `void GameSetting_fLowLevelNPCBaseHealthMult__atexit(void)`
+pub const GameSetting_fLowLevelNPCBaseHealthMult__atexit: u64 = 168573;
+/// `GameSetting_fLowLevelNPCBaseHealthMult__init` at 0x5b5f0 (crt_init, medium); signature (high): `void GameSetting_fLowLevelNPCBaseHealthMult__init(void)`
+pub const GameSetting_fLowLevelNPCBaseHealthMult__init: u64 = 3363;
+/// `GameSetting_fLowMagickaTutorialPercentage__atexit` at 0x1771000 (crt_init, medium); signature (high): `void GameSetting_fLowMagickaTutorialPercentage__atexit(void)`
+pub const GameSetting_fLowMagickaTutorialPercentage__atexit: u64 = 168574;
+/// `GameSetting_fLowMagickaTutorialPercentage__init` at 0x5b670 (crt_init, medium); signature (high): `void GameSetting_fLowMagickaTutorialPercentage__init(void)`
+pub const GameSetting_fLowMagickaTutorialPercentage__init: u64 = 3364;
+/// `GameSetting_fLowStaminaTutorialPercentage__atexit` at 0x1771050 (crt_init, medium); signature (high): `void GameSetting_fLowStaminaTutorialPercentage__atexit(void)`
+pub const GameSetting_fLowStaminaTutorialPercentage__atexit: u64 = 168575;
+/// `GameSetting_fLowStaminaTutorialPercentage__init` at 0x5b6f0 (crt_init, medium); signature (high): `void GameSetting_fLowStaminaTutorialPercentage__init(void)`
+pub const GameSetting_fLowStaminaTutorialPercentage__init: u64 = 3365;
+/// `GameSetting_fMagicAbsorbDistanceReachMult__atexit` at 0x1777220 (crt_init, medium); signature (high): `void GameSetting_fMagicAbsorbDistanceReachMult__atexit(void)`
+pub const GameSetting_fMagicAbsorbDistanceReachMult__atexit: u64 = 168888;
+/// `GameSetting_fMagicAbsorbDistanceReachMult__init` at 0x64d80 (crt_init, medium); signature (high): `void GameSetting_fMagicAbsorbDistanceReachMult__init(void)`
+pub const GameSetting_fMagicAbsorbDistanceReachMult__init: u64 = 3678;
+/// `GameSetting_fMagicAbsorbVisualTimer__atexit` at 0x1777270 (crt_init, medium); signature (high): `void GameSetting_fMagicAbsorbVisualTimer__atexit(void)`
+pub const GameSetting_fMagicAbsorbVisualTimer__atexit: u64 = 168889;
+/// `GameSetting_fMagicAbsorbVisualTimer__init` at 0x64e00 (crt_init, medium); signature (high): `void GameSetting_fMagicAbsorbVisualTimer__init(void)`
+pub const GameSetting_fMagicAbsorbVisualTimer__init: u64 = 3679;
 /// `GameSetting_fMagicAccumulatingModifierEffectHoldDuration__atexit` at 0x17772c0 (crt_init, medium); signature (high): `void GameSetting_fMagicAccumulatingModifierEffectHoldDuration__atexit(void)`
 pub const GameSetting_fMagicAccumulatingModifierEffectHoldDuration__atexit: u64 = 168890;
 /// `GameSetting_fMagicAccumulatingModifierEffectHoldDuration__init` at 0x64e80 (crt_init, medium); signature (high): `void GameSetting_fMagicAccumulatingModifierEffectHoldDuration__init(void)`
@@ -9389,63 +9443,3 @@ pub const GetEntryEdgeFlagNibble: u64 = 91070;
 pub const GetEntryEnchantableField12OrFallback: u64 = 15992;
 /// `GetEntryField20ByFormModelPath` at 0x3b8f60 (decompiler, medium); signature (untiered): `longlong GetEntryField20ByFormModelPath(longlong param_1, longlong param_2, undefined8 param_3, undefined8 param_4)`
 pub const GetEntryField20ByFormModelPath: u64 = 24600;
-/// `GetEntryField40ByKey` at 0x11f3ed0 (decompiler, medium); signature (untiered): `undefined8 * GetEntryField40ByKey(longlong * param_1, ulonglong * param_2, undefined8 param_3, undefined8 param_4)`
-pub const GetEntryField40ByKey: u64 = 91409;
-/// `GetEntryField70ByRecord` at 0xa68f30 (decompiler, medium); signature (untiered): `undefined8 GetEntryField70ByRecord(longlong param_1, undefined4 * param_2, undefined8 param_3, undefined8 param_4)`
-pub const GetEntryField70ByRecord: u64 = 524065;
-/// `GetEntryField8AtIndex` at 0x5332f0 (decompiler, high); signature (untiered): `undefined8 GetEntryField8AtIndex(longlong * param_1, ulonglong param_2)`
-pub const GetEntryField8AtIndex: u64 = 32352;
-/// `GetEntryField8CForRef` at 0x81a8e0 (decompiler, medium); signature (untiered): `int * GetEntryField8CForRef(longlong param_1, int * param_2, longlong param_3)`
-pub const GetEntryField8CForRef: u64 = 44731;
-/// `GetEntryField90ByRecord` at 0xa68fd0 (decompiler, medium); signature (untiered): `undefined4 GetEntryField90ByRecord(longlong param_1, undefined4 * param_2, undefined8 param_3, undefined8 param_4)`
-pub const GetEntryField90ByRecord: u64 = 524066;
-/// `GetEntryFieldA58At` at 0x1010900 (decompiler, high); signature (high): `undefined8 GetEntryFieldA58At(longlong param_1, uint param_2)`
-pub const GetEntryFieldA58At: u64 = 77377;
-/// `GetEntryFlagA6Bit0ForRef` at 0x81a800 (decompiler, medium); signature (untiered): `ulonglong GetEntryFlagA6Bit0ForRef(longlong param_1, longlong param_2)`
-pub const GetEntryFlagA6Bit0ForRef: u64 = 44729;
-/// `GetEntryFlagBit1ForRef` at 0x81a790 (decompiler, medium); signature (untiered): `byte GetEntryFlagBit1ForRef(longlong param_1, longlong param_2)`
-pub const GetEntryFlagBit1ForRef: u64 = 44728;
-/// `GetEntryForCurrentThreadIndex` at 0x1555990 (decompiler, medium); signature (medium): `undefined * GetEntryForCurrentThreadIndex(void)`
-pub const GetEntryForCurrentThreadIndex: u64 = 107499;
-/// `GetEntryInt78AtIndex` at 0xdbdf30 (decompiler, medium); signature (untiered): `undefined GetEntryInt78AtIndex(longlong param_1)`
-pub const GetEntryInt78AtIndex: u64 = 86371;
-/// `GetEntryOrEmptyFixedString` at 0x14dc790 (decompiler, medium); signature (medium): `undefined8 * GetEntryOrEmptyFixedString(longlong * param_1, uint param_2, undefined8 param_3, undefined8 param_4)`
-pub const GetEntryOrEmptyFixedString: u64 = 105340;
-/// `GetEntryOrLookupByByteKey` at 0x45c380 (decompiler, medium); signature (untiered): `ulonglong GetEntryOrLookupByByteKey(longlong * param_1, uint param_2, longlong * param_3)`
-pub const GetEntryOrLookupByByteKey: u64 = 28187;
-/// `GetEntryPairAtIndex` at 0xec6600 (decompiler, medium); signature (untiered): `ulonglong GetEntryPairAtIndex(longlong param_1, undefined8 * param_2, undefined8 * param_3, uint param_4)`
-pub const GetEntryPairAtIndex: u64 = 69638;
-/// `GetEntryPointerLocked` at 0x115a6c0 (decompiler, medium); signature (medium): `ulonglong GetEntryPointerLocked(longlong param_1, int param_2)`
-pub const GetEntryPointerLocked: u64 = 81952;
-/// `GetEntrySoulLevelValue` at 0x228bc0 (decompiler, medium); signature (medium): `int GetEntrySoulLevelValue(longlong * param_1)`
-pub const GetEntrySoulLevelValue: u64 = 15997;
-/// `GetEntryStringOrDummy` at 0x3b48f0 (decompiler, medium); signature (untiered): `char * GetEntryStringOrDummy(undefined8 param_1, int param_2, longlong * param_3)`
-pub const GetEntryStringOrDummy: u64 = 24501;
-/// `GetEntryValueForOriginalNode` at 0xaf8b90 (decompiler, high); signature (untiered): `undefined8 GetEntryValueForOriginalNode(ulonglong param_1, longlong param_2, int param_3)`
-pub const GetEntryValueForOriginalNode: u64 = 59400;
-/// `GetEntryValueForRefHandle` at 0x81a600 (decompiler, medium); signature (untiered): `int GetEntryValueForRefHandle(longlong param_1, longlong param_2)`
-pub const GetEntryValueForRefHandle: u64 = 44726;
-/// `GetEquipBackupField20` at 0x75d370 (decompiler, high); signature (high): `undefined8 GetEquipBackupField20(longlong param_1)`
-pub const GetEquipBackupField20: u64 = 40703;
-/// `GetEquipSlotOfEquippedObject` at 0x6dd720 (decompiler, medium); signature (untiered): `undefined8 GetEquipSlotOfEquippedObject(undefined8 param_1, longlong param_2, longlong param_3, undefined8 param_4)`
-pub const GetEquipSlotOfEquippedObject: u64 = 38912;
-/// `GetEquippedItemEnchantment` at 0x6ca170 (decompiler, medium); signature (untiered): `longlong GetEquippedItemEnchantment(longlong param_1, char param_2)`
-pub const GetEquippedItemEnchantment: u64 = 38575;
-/// `GetEquippedItemType` at 0x1d74a0 (semantic, high); signature (medium): `int GetEquippedItemType(longlong param_1)`; semantic: item type of an equipped object: weapon types 0..8 as stored, Crossbow 9 -> 12, spell 9, shield 10, torch 11, else 0 (high); signature `int (TESForm* item)`
-pub const GetEquippedItemType: u64 = 14220;
-/// `GetEquippedItemType` as a function pointer type (high).
-pub type GetEquippedItemType_fn = unsafe extern "C" fn(item: *mut crate::TESForm) -> i32;
-/// `GetEquippedObjectOfType29` at 0x66fc60 (decompiler, medium); signature (untiered): `longlong GetEquippedObjectOfType29(longlong param_1, int * param_2)`
-pub const GetEquippedObjectOfType29: u64 = 37168;
-/// `GetEquippedShout` at 0x6d7070 (decompiler, medium); signature (untiered): `longlong GetEquippedShout(longlong param_1)`
-pub const GetEquippedShout: u64 = 38771;
-/// `GetEulerAngleXFromField58Matrix` at 0x8f55b0 (decompiler, medium); signature (untiered): `uint GetEulerAngleXFromField58Matrix(longlong param_1)`
-pub const GetEulerAngleXFromField58Matrix: u64 = 50731;
-/// `GetEulerAnglesFromMatrix` at 0xedf800 (decompiler, medium); signature (medium): `undefined1 GetEulerAnglesFromMatrix(uint * param_1, uint * param_2, float * param_3, uint * param_4)`
-pub const GetEulerAnglesFromMatrix: u64 = 70232;
-/// `GetExeVersionString` at 0x2178c0 (decompiler, high); signature (high): `char * GetExeVersionString(void)`
-pub const GetExeVersionString: u64 = 15650;
-/// `GetExteriorGridX` at 0x2bc620 (decompiler, medium); signature (untiered): `undefined4 GetExteriorGridX(longlong param_1)`
-pub const GetExteriorGridX: u64 = 18958;
-/// `GetExteriorGridY` at 0x2bc640 (decompiler, medium); signature (untiered): `undefined4 GetExteriorGridY(longlong param_1)`
-pub const GetExteriorGridY: u64 = 18959;

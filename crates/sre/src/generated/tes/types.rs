@@ -858,7 +858,7 @@ pub struct TESClimate {
     pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `class:TESModel`, member ctor TESModel
-    pub m_TESModel_20: crate::TESModel,
+    pub m_TESModel_20: [u8; 24],
     pub unknown_38: [u8; 64],
     /// +0x78 `undefined4`, ctor store
     pub field_78: u32,
@@ -1535,10 +1535,9 @@ pub struct TESGrass {
     /// +0x30 `vtbl:TESGrass:30`, rtti
     #[doc(hidden)]
     pub __vftable_30: *const crate::raw::vtables::TESGrass_vtable_30,
-    pub unknown_38: [u8; 8],
-    /// +0x40 `undefined8`, base TESModel
-    pub field_40: u64,
-    pub unknown_48: [u8; 16],
+    /// +0x38 `class:BSFixedString`, base TESModel, semantic; model path relative to Data\Meshes\ (the loader prepends "Data\\Meshes\\"); the qword is the pooled C string pointer (high)
+    pub model: crate::BSFixedString,
+    pub unknown_40: [u8; 24],
     /// +0x58 `undefined2`, ctor store
     pub field_58: u16,
     /// +0x5A `undefined1`, ctor store
@@ -1577,7 +1576,7 @@ const _: () = assert!(core::mem::offset_of!(TESGrass, field_26) == 0x26);
 const _: () = assert!(core::mem::offset_of!(TESGrass, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(TESGrass, field_2A) == 0x2A);
 const _: () = assert!(core::mem::offset_of!(TESGrass, __vftable_30) == 0x30);
-const _: () = assert!(core::mem::offset_of!(TESGrass, field_40) == 0x40);
+const _: () = assert!(core::mem::offset_of!(TESGrass, model) == 0x38);
 const _: () = assert!(core::mem::offset_of!(TESGrass, field_58) == 0x58);
 const _: () = assert!(core::mem::offset_of!(TESGrass, field_5A) == 0x5A);
 const _: () = assert!(core::mem::offset_of!(TESGrass, field_5C) == 0x5C);
@@ -1613,67 +1612,6 @@ pub struct TESIcon {
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(TESIcon, __vftable) == 0x0);
-
-/// `TESIdleForm`: size 0x68 (exact, medium); primary base `TESForm`.
-/// Evidence: runtime: 0x68 at 1 allocation sites.
-/// Bases: `TESForm`@0x0, `BaseFormComponent`@0x0.
-#[repr(C)]
-pub struct TESIdleForm {
-    /// +0x0 `vtbl:TESIdleForm:0`, rtti
-    #[doc(hidden)]
-    pub __vftable: *const crate::raw::vtables::TESIdleForm_vtable,
-    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
-    pub sourceFiles: *mut crate::TESFileArray,
-    /// +0x10 `undefined4`, base TESForm, semantic; record flags; see the flag rows (high)
-    pub formFlags: u32,
-    /// +0x14 `undefined4`, base TESForm, semantic; the form id (high)
-    pub formID: u32,
-    /// +0x18 `undefined2`, base TESForm, semantic; 16-bit flag word saved with the form; low 6 bits restored on load (medium)
-    pub inGameFlags: u16,
-    /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
-    pub formType: u8,
-    pub unknown_1B: [u8; 13],
-    /// +0x28 `undefined2`, ctor store
-    pub field_28: u16,
-    /// +0x2A `undefined1`, ctor store
-    pub field_2A: u8,
-    pub unknown_2B: [u8; 1],
-    /// +0x2C `undefined2`, ctor store
-    pub field_2C: u16,
-    pub unknown_2E: [u8; 2],
-    /// +0x30 `undefined8`, ctor store
-    pub field_30: u64,
-    /// +0x38 `undefined8`, ctor store
-    pub field_38: u64,
-    /// +0x40 `undefined8`, ctor store
-    pub field_40: u64,
-    /// +0x48 `undefined8`, ctor store
-    pub field_48: u64,
-    pub unknown_50: [u8; 8],
-    /// +0x58 `undefined8`, ctor store
-    pub field_58: u64,
-    /// +0x60 `undefined4`, ctor store
-    pub field_60: u32,
-    pub unknown_64: [u8; 4],
-    #[doc(hidden)]
-    pub __engine: crate::Engine,
-}
-const _: () = assert!(size_of::<TESIdleForm>() == 0x68);
-const _: () = assert!(core::mem::offset_of!(TESIdleForm, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(TESIdleForm, sourceFiles) == 0x8);
-const _: () = assert!(core::mem::offset_of!(TESIdleForm, formFlags) == 0x10);
-const _: () = assert!(core::mem::offset_of!(TESIdleForm, formID) == 0x14);
-const _: () = assert!(core::mem::offset_of!(TESIdleForm, inGameFlags) == 0x18);
-const _: () = assert!(core::mem::offset_of!(TESIdleForm, formType) == 0x1A);
-const _: () = assert!(core::mem::offset_of!(TESIdleForm, field_28) == 0x28);
-const _: () = assert!(core::mem::offset_of!(TESIdleForm, field_2A) == 0x2A);
-const _: () = assert!(core::mem::offset_of!(TESIdleForm, field_2C) == 0x2C);
-const _: () = assert!(core::mem::offset_of!(TESIdleForm, field_30) == 0x30);
-const _: () = assert!(core::mem::offset_of!(TESIdleForm, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(TESIdleForm, field_40) == 0x40);
-const _: () = assert!(core::mem::offset_of!(TESIdleForm, field_48) == 0x48);
-const _: () = assert!(core::mem::offset_of!(TESIdleForm, field_58) == 0x58);
-const _: () = assert!(core::mem::offset_of!(TESIdleForm, field_60) == 0x60);
 
 /// `TESImageSpace`: size 0x70 (exact, high); primary base `TESForm`.
 /// Evidence: runtime: 0x70 at 4 allocation sites.
@@ -2308,24 +2246,6 @@ const _: () = assert!(core::mem::offset_of!(TESLoadScreen, inGameFlags) == 0x18)
 const _: () = assert!(core::mem::offset_of!(TESLoadScreen, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(TESLoadScreen, field_28) == 0x28);
 
-/// `TESModel`: size 0x18 (exact, medium); primary base `BaseFormComponent`.
-/// Evidence: allocation sites (medium): {'24': 1}.
-/// Bases: `BaseFormComponent`@0x0.
-#[repr(C)]
-pub struct TESModel {
-    /// +0x0 `vtbl:TESModel:0`, rtti
-    #[doc(hidden)]
-    pub __vftable: *const crate::raw::vtables::TESModel_vtable,
-    pub unknown_8: [u8; 8],
-    /// +0x10 `undefined8`, ctor store
-    pub field_10: u64,
-    #[doc(hidden)]
-    pub __engine: crate::Engine,
-}
-const _: () = assert!(size_of::<TESModel>() == 0x18);
-const _: () = assert!(core::mem::offset_of!(TESModel, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(TESModel, field_10) == 0x10);
-
 /// `TESModelDB::TESQueuedHandles`: size 0x88 (exact, high); primary base `BSModelDB::QueuedHandles`.
 /// Evidence: runtime: 0x88 at 5 allocation sites; upper bound 0x58 (first own field of AnimationSystemUtils::TESModelAndAnimationHandles at 0x58 (soft)) was wrong.
 /// Bases: `BSModelDB::QueuedHandles`@0x0, `BSQueuedResourceCollection<BSResource::EntryDB<BSModelDB::DBTraits>,2>`@0x0, `BSQueuedResourceCollectionBase`@0x0, `QueuedFile`@0x0, `IOTask`@0x0, `BSTask`@0x0, `BSResource::IEntryDB::PostFlushNotify`@0x38.
@@ -2408,39 +2328,39 @@ pub struct TESModelLODList {
 }
 const _: () = assert!(core::mem::offset_of!(TESModelLODList, __vftable) == 0x0);
 
-/// `TESModelPSA`: size >= 0x18 (lower bound); partial, the struct stops at the lower bound; primary base `TESModel`.
-/// Evidence: field field_10.
+/// `TESModelPSA`: size >= 0x28 (lower bound); partial, the struct stops at the lower bound; primary base `TESModel`.
+/// Evidence: field field_10; the semantic base TESModel (0x28) ends at 0x28.
 /// Bases: `TESModel`@0x0, `BaseFormComponent`@0x0.
 #[repr(C)]
 pub struct TESModelPSA {
     /// +0x0 `vtbl:TESModelPSA:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::TESModelPSA_vtable,
-    pub unknown_8: [u8; 8],
-    /// +0x10 `undefined8`, base TESModel
-    pub field_10: u64,
+    /// +0x8 `class:BSFixedString`, base TESModel, semantic; model path relative to Data\Meshes\ (the loader prepends "Data\\Meshes\\"); the qword is the pooled C string pointer (high)
+    pub model: crate::BSFixedString,
+    pub unknown_10: [u8; 24],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(TESModelPSA, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(TESModelPSA, field_10) == 0x10);
+const _: () = assert!(core::mem::offset_of!(TESModelPSA, model) == 0x8);
 
-/// `TESModelRDT`: size >= 0x18 (lower bound); partial, the struct stops at the lower bound; primary base `TESModel`.
-/// Evidence: field field_10.
+/// `TESModelRDT`: size >= 0x28 (lower bound); partial, the struct stops at the lower bound; primary base `TESModel`.
+/// Evidence: field field_10; the semantic base TESModel (0x28) ends at 0x28.
 /// Bases: `TESModel`@0x0, `BaseFormComponent`@0x0.
 #[repr(C)]
 pub struct TESModelRDT {
     /// +0x0 `vtbl:TESModelRDT:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::TESModelRDT_vtable,
-    pub unknown_8: [u8; 8],
-    /// +0x10 `undefined8`, base TESModel
-    pub field_10: u64,
+    /// +0x8 `class:BSFixedString`, base TESModel, semantic; model path relative to Data\Meshes\ (the loader prepends "Data\\Meshes\\"); the qword is the pooled C string pointer (high)
+    pub model: crate::BSFixedString,
+    pub unknown_10: [u8; 24],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(TESModelRDT, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(TESModelRDT, field_10) == 0x10);
+const _: () = assert!(core::mem::offset_of!(TESModelRDT, model) == 0x8);
 
 /// `TESModelTextureSwap`: size 0x38 (exact, medium); primary base `TESModel`.
 /// Evidence: runtime: 0x38 at 1 allocation sites; agrees with the static allocation sites.
@@ -2450,10 +2370,9 @@ pub struct TESModelTextureSwap {
     /// +0x0 `vtbl:TESModelTextureSwap:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::TESModelTextureSwap_vtable,
-    pub unknown_8: [u8; 8],
-    /// +0x10 `undefined8`, base TESModel
-    pub field_10: u64,
-    pub unknown_18: [u8; 16],
+    /// +0x8 `class:BSFixedString`, base TESModel, semantic; model path relative to Data\Meshes\ (the loader prepends "Data\\Meshes\\"); the qword is the pooled C string pointer (high)
+    pub model: crate::BSFixedString,
+    pub unknown_10: [u8; 24],
     /// +0x28 `undefined8`, ctor store
     pub field_28: u64,
     /// +0x30 `undefined4`, ctor store
@@ -2464,26 +2383,26 @@ pub struct TESModelTextureSwap {
 }
 const _: () = assert!(size_of::<TESModelTextureSwap>() == 0x38);
 const _: () = assert!(core::mem::offset_of!(TESModelTextureSwap, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(TESModelTextureSwap, field_10) == 0x10);
+const _: () = assert!(core::mem::offset_of!(TESModelTextureSwap, model) == 0x8);
 const _: () = assert!(core::mem::offset_of!(TESModelTextureSwap, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(TESModelTextureSwap, field_30) == 0x30);
 
-/// `TESModelTri`: size >= 0x18 (lower bound); partial, the struct stops at the lower bound; primary base `TESModel`.
-/// Evidence: field field_10.
+/// `TESModelTri`: size >= 0x28 (lower bound); partial, the struct stops at the lower bound; primary base `TESModel`.
+/// Evidence: field field_10; the semantic base TESModel (0x28) ends at 0x28.
 /// Bases: `TESModel`@0x0, `BaseFormComponent`@0x0.
 #[repr(C)]
 pub struct TESModelTri {
     /// +0x0 `vtbl:TESModelTri:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::TESModelTri_vtable,
-    pub unknown_8: [u8; 8],
-    /// +0x10 `undefined8`, base TESModel
-    pub field_10: u64,
+    /// +0x8 `class:BSFixedString`, base TESModel, semantic; model path relative to Data\Meshes\ (the loader prepends "Data\\Meshes\\"); the qword is the pooled C string pointer (high)
+    pub model: crate::BSFixedString,
+    pub unknown_10: [u8; 24],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(TESModelTri, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(TESModelTri, field_10) == 0x10);
+const _: () = assert!(core::mem::offset_of!(TESModelTri, model) == 0x8);
 
 /// `TESObject`: size 0x20 (exact, medium); primary base `TESForm`.
 /// Evidence: lower bound base TESForm at 0x0 meets upper bound next base of TESObjectARMA at 0x20.
@@ -3848,10 +3767,9 @@ pub struct TESObjectTREE {
     /// +0x30 `vtbl:TESObjectTREE:30`, rtti
     #[doc(hidden)]
     pub __vftable_30: *const crate::raw::vtables::TESObjectTREE_vtable_30,
-    pub unknown_38: [u8; 8],
-    /// +0x40 `undefined8`, base TESModel
-    pub field_40: u64,
-    pub unknown_48: [u8; 16],
+    /// +0x38 `class:BSFixedString`, base TESModel, semantic; model path relative to Data\Meshes\ (the loader prepends "Data\\Meshes\\"); the qword is the pooled C string pointer (high)
+    pub model: crate::BSFixedString,
+    pub unknown_40: [u8; 24],
     /// +0x58 `vtbl:TESObjectTREE:58`, rtti
     #[doc(hidden)]
     pub __vftable_58: *const crate::raw::vtables::TESObjectTREE_vtable_58,
@@ -3912,7 +3830,7 @@ const _: () = assert!(core::mem::offset_of!(TESObjectTREE, field_26) == 0x26);
 const _: () = assert!(core::mem::offset_of!(TESObjectTREE, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(TESObjectTREE, field_2A) == 0x2A);
 const _: () = assert!(core::mem::offset_of!(TESObjectTREE, __vftable_30) == 0x30);
-const _: () = assert!(core::mem::offset_of!(TESObjectTREE, field_40) == 0x40);
+const _: () = assert!(core::mem::offset_of!(TESObjectTREE, model) == 0x38);
 const _: () = assert!(core::mem::offset_of!(TESObjectTREE, __vftable_58) == 0x58);
 const _: () = assert!(core::mem::offset_of!(TESObjectTREE, __vftable_68) == 0x68);
 const _: () = assert!(core::mem::offset_of!(TESObjectTREE, field_70) == 0x70);
@@ -5677,7 +5595,7 @@ pub struct TESWeather {
     pub field_7F0: u64,
     pub unknown_7F8: [u8; 128],
     /// +0x878 `class:TESModel`, member ctor TESModel
-    pub m_TESModel_878: crate::TESModel,
+    pub m_TESModel_878: [u8; 24],
     pub unknown_890: [u8; 16],
     /// +0x8A0 `undefined8`, ctor store
     pub field_8A0: u64,
@@ -5882,10 +5800,9 @@ pub struct TESWorldSpace {
     /// +0x30 `vtbl:TESWorldSpace:30`, rtti
     #[doc(hidden)]
     pub __vftable_30: *const crate::raw::vtables::TESWorldSpace_vtable_30,
-    pub unknown_38: [u8; 8],
-    /// +0x40 `undefined8`, base TESModel
-    pub field_40: u64,
-    pub unknown_48: [u8; 28],
+    /// +0x38 `class:BSFixedString`, base TESModel, semantic; model path relative to Data\Meshes\ (the loader prepends "Data\\Meshes\\"); the qword is the pooled C string pointer (high)
+    pub model: crate::BSFixedString,
+    pub unknown_40: [u8; 36],
     /// +0x64 `undefined8`, ctor store
     pub field_64: u64,
     /// +0x6C `undefined4`, ctor store
@@ -6025,7 +5942,7 @@ const _: () = assert!(core::mem::offset_of!(TESWorldSpace, inGameFlags) == 0x18)
 const _: () = assert!(core::mem::offset_of!(TESWorldSpace, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(TESWorldSpace, __vftable_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(TESWorldSpace, __vftable_30) == 0x30);
-const _: () = assert!(core::mem::offset_of!(TESWorldSpace, field_40) == 0x40);
+const _: () = assert!(core::mem::offset_of!(TESWorldSpace, model) == 0x38);
 const _: () = assert!(core::mem::offset_of!(TESWorldSpace, field_64) == 0x64);
 const _: () = assert!(core::mem::offset_of!(TESWorldSpace, field_6C) == 0x6C);
 const _: () = assert!(core::mem::offset_of!(TESWorldSpace, field_70) == 0x70);

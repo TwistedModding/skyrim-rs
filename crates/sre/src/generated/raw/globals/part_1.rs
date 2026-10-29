@@ -10739,6 +10739,8 @@ pub const g_ActorValueStorageLock: u64 = 404014;
 pub const g_AnimEvent_IdleCartPrisonerCExit: u64 = 404009;
 /// `g_AnimEvent_IdleCartPrisonerCIdle` at 0x3243f58 (semantic, high); "IdleCartPrisonerCIdle"; turns FirstPersonState.useAltEuler on (high); type `class:BSFixedString`
 pub const g_AnimEvent_IdleCartPrisonerCIdle: u64 = 404008;
+/// `g_AnimEvent_Unequip` at 0x32454f0 (semantic, high); interned 'Unequip' (0x1803ad8); the player's sheathe request counts as accepted only when the chosen event equals it (high); type `BSFixedString`
+pub const g_AnimEvent_Unequip: u64 = 404424;
 /// `g_AnimationClipDataSingleton_ptr` at 0x31e09f0 (xref_inference, medium)
 pub const g_AnimationClipDataSingleton_ptr: u64 = 401553;
 /// `g_AnimationDeferredUpdateQueue` at 0x3267470 (semantic, medium); optional message queue of managers to generate elsewhere; enable byte +0x430 (0x32678b0) is only written 0 by its init (medium); type `pointer`
@@ -12097,8 +12099,12 @@ pub const g_DefaultLightingMaterial: u64 = 414779;
 pub const g_DefaultMaxPitchDown: u64 = 189817;
 /// `g_DefaultMaxPitchUp` at 0x181ab90 (semantic, high); -pi/2 (high); type `float`
 pub const g_DefaultMaxPitchUp: u64 = 189822;
+/// `g_DefaultObjectManager` at 0x219d180 (semantic, high); static default-object manager: object i at +0x20 + 8*i (0x219d1a0 + 8*i), loaded byte at +0xbc0 + i (0x219dd40 + i) (high); type `BGSDefaultObjectManager`
+pub const g_DefaultObjectManager: u64 = 400191;
 /// `g_DefaultObjectNameTable` at 0x207bf40 (semantic, high); the default object names: 0x174 records of 0x18 bytes {const char* name; u32 formType; char signature[4]; u64}, indexed like GetDefaultObjectByIndex (manager +0x20 + i*8, present flag +0xbc0 + i) (high); type `undefined1`
 pub const g_DefaultObjectNameTable: u64 = 360630;
+/// `g_DefaultObjectRecord_ActionSwimStateChange` at 0x207c348 (semantic, high); default object record 0x2b {name 'Action Swim State Change' (0x182e2a0), type 6, signature 'AASW'} (high); type `DefaultObjectRecord`
+pub const g_DefaultObjectRecord_ActionSwimStateChange: u64 = 360676;
 /// `g_DefaultObjectRecords` at 0x207bee0 (semantic, high); default object descriptors of 0x18 bytes {name, type, signature, flags}; index i matches BGSDefaultObjectManager (0x219d180) objects +0x20+8i and loaded flags +0xbc0+i (high); type `record[]`
 pub const g_DefaultObjectRecords: u64 = 360620;
 /// `g_DefaultShaderMaterial` at 0x3698be8 (xref_inference, medium); pointer to `BSShaderMaterial`: default base material; default base material (medium); type `ptr:BSShaderMaterial`
@@ -13589,11 +13595,3 @@ pub const g_UI3DShadowsEnabled: u64 = 383327;
 pub const g_UIBlurManager_ptr: u64 = 403350;
 /// `g_UICursor_ptr` at 0x3210e38 (semantic, high); pointer to `UICursor`: pointer to the cursor static 0x333b080; set by the UI ctor 0x1169395, cleared by the UI dtor 0x11694a2; pointer to the cursor static 0x333b080; set by the UI ctor 0x1169395, cleared by the UI dtor 0x11694a2 (high); type `ptr:UICursor`
 pub const g_UICursor_ptr: u64 = 403551;
-/// `g_UIMenuStackLock` at 0x333b050 (semantic, high); recursive spin lock (owner thread id u32 at +0, recursion count u32 at +4; Sleep(0) spins, Sleep(1) after 10,000) guarding the menu stack and the counters (high); type `undefined8`
-pub const g_UIMenuStackLock: u64 = 412033;
-/// `g_UIMessageQueue` at 0x333b0b0 (semantic, high); the queue's static storage (0xb80 bytes) (high); type `class:UIMessageQueue`
-pub const g_UIMessageQueue: u64 = 412047;
-/// `g_UIMessageQueue_ptr` at 0x21a05c0 (semantic, high); pointer to `UIMessageQueue`: pointer to the UI message queue (0x14333b0b0); null before the UI ctor and after shutdown; pointer to the UI message queue (0x14333b0b0); null before the UI ctor and after shutdown (high); type `ptr:UIMessageQueue`
-pub const g_UIMessageQueue_ptr: u64 = 400445;
-/// `g_UISaveLoadManager_ptr` at 0x31e0140 (xref_inference, medium)
-pub const g_UISaveLoadManager_ptr: u64 = 401336;

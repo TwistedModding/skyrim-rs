@@ -3,6 +3,70 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `INISetting_fCloudAtlasWidth_Clouds__atexit` at 0x17906c0 (crt_init, medium); signature (high): `void INISetting_fCloudAtlasWidth_Clouds__atexit(void)`
+pub const INISetting_fCloudAtlasWidth_Clouds__atexit: u64 = 170547;
+/// `INISetting_fCloudAtlasWidth_Clouds__init` at 0x90ad0 (crt_init, medium); signature (high): `void INISetting_fCloudAtlasWidth_Clouds__init(void)`
+pub const INISetting_fCloudAtlasWidth_Clouds__init: u64 = 5316;
+/// `INISetting_fCollisionRecoveryMinDist_Camera__atexit` at 0x17a3ff0 (crt_init, medium); signature (high): `void INISetting_fCollisionRecoveryMinDist_Camera__atexit(void)`
+pub const INISetting_fCollisionRecoveryMinDist_Camera__atexit: u64 = 172204;
+/// `INISetting_fCollisionRecoveryMinDist_Camera__init` at 0xb3030 (crt_init, medium); signature (high): `void INISetting_fCollisionRecoveryMinDist_Camera__init(void)`
+pub const INISetting_fCollisionRecoveryMinDist_Camera__init: u64 = 6745;
+/// `INISetting_fCollisionRecoverySpeed_Camera__atexit` at 0x17a4040 (crt_init, medium); signature (high): `void INISetting_fCollisionRecoverySpeed_Camera__atexit(void)`
+pub const INISetting_fCollisionRecoverySpeed_Camera__atexit: u64 = 172205;
+/// `INISetting_fCollisionRecoverySpeed_Camera__init` at 0xb30b0 (crt_init, medium); signature (high): `void INISetting_fCollisionRecoverySpeed_Camera__init(void)`
+pub const INISetting_fCollisionRecoverySpeed_Camera__init: u64 = 6746;
+/// `INISetting_fCollisionSoundHeavyThreshold_Audio__atexit` at 0x1794490 (crt_init, medium); signature (high): `void INISetting_fCollisionSoundHeavyThreshold_Audio__atexit(void)`
+pub const INISetting_fCollisionSoundHeavyThreshold_Audio__atexit: u64 = 170811;
+/// `INISetting_fCollisionSoundHeavyThreshold_Audio__init` at 0x9ac00 (crt_init, medium); signature (high): `void INISetting_fCollisionSoundHeavyThreshold_Audio__init(void)`
+pub const INISetting_fCollisionSoundHeavyThreshold_Audio__init: u64 = 5637;
+/// `INISetting_fConstHDRAdaptTimerForMenu_Display__atexit` at 0x17c3850 (crt_init, medium); signature (high): `void INISetting_fConstHDRAdaptTimerForMenu_Display__atexit(void)`
+pub const INISetting_fConstHDRAdaptTimerForMenu_Display__atexit: u64 = 174640;
+/// `INISetting_fConstHDRAdaptTimerForMenu_Display__init` at 0x103de0 (crt_init, medium); signature (high): `void INISetting_fConstHDRAdaptTimerForMenu_Display__init(void)`
+pub const INISetting_fConstHDRAdaptTimerForMenu_Display__init: u64 = 10490;
+/// `INISetting_fConstantValue_bLightAttenuation__atexit` at 0x1746360 (crt_init, medium); signature (high): `void INISetting_fConstantValue_bLightAttenuation__atexit(void)`
+pub const INISetting_fConstantValue_bLightAttenuation__atexit: u64 = 166019;
+/// `INISetting_fConstantValue_bLightAttenuation__init` at 0x17080 (crt_init, medium); signature (high): `void INISetting_fConstantValue_bLightAttenuation__init(void)`
+pub const INISetting_fConstantValue_bLightAttenuation__init: u64 = 816;
+/// `INISetting_fControllerBufferDepth_Controls__atexit` at 0x179db60 (crt_init, medium); signature (high): `void INISetting_fControllerBufferDepth_Controls__atexit(void)`
+pub const INISetting_fControllerBufferDepth_Controls__atexit: u64 = 171603;
+/// `INISetting_fControllerBufferDepth_Controls__init` at 0xa86e0 (crt_init, medium); signature (high): `void INISetting_fControllerBufferDepth_Controls__init(void)`
+pub const INISetting_fControllerBufferDepth_Controls__init: u64 = 6383;
+/// `INISetting_fControllerDampenTime_Controls__atexit` at 0x179dbb0 (crt_init, medium); signature (high): `void INISetting_fControllerDampenTime_Controls__atexit(void)`
+pub const INISetting_fControllerDampenTime_Controls__atexit: u64 = 171604;
+/// `INISetting_fControllerDampenTime_Controls__init` at 0xa8760 (crt_init, medium); signature (high): `void INISetting_fControllerDampenTime_Controls__init(void)`
+pub const INISetting_fControllerDampenTime_Controls__init: u64 = 6384;
+/// `INISetting_fControllerSampleThreshold_Controls__atexit` at 0x179dc00 (crt_init, medium); signature (high): `void INISetting_fControllerSampleThreshold_Controls__atexit(void)`
+pub const INISetting_fControllerSampleThreshold_Controls__atexit: u64 = 171605;
+/// `INISetting_fControllerSampleThreshold_Controls__init` at 0xa87e0 (crt_init, medium); signature (high): `void INISetting_fControllerSampleThreshold_Controls__init(void)`
+pub const INISetting_fControllerSampleThreshold_Controls__init: u64 = 6385;
+/// `INISetting_fControllerTetherLen_FootIK__atexit` at 0x17b43d0 (crt_init, medium); signature (high): `void INISetting_fControllerTetherLen_FootIK__atexit(void)`
+pub const INISetting_fControllerTetherLen_FootIK__atexit: u64 = 173892;
+/// `INISetting_fControllerTetherLen_FootIK__init` at 0xebaa0 (crt_init, medium); signature (high): `void INISetting_fControllerTetherLen_FootIK__init(void)`
+pub const INISetting_fControllerTetherLen_FootIK__init: u64 = 9639;
+/// `INISetting_fCrafting3DItemPosXWide_Interface__atexit` at 0x17a59f0 (crt_init, medium); signature (high): `void INISetting_fCrafting3DItemPosXWide_Interface__atexit(void)`
+pub const INISetting_fCrafting3DItemPosXWide_Interface__atexit: u64 = 172371;
+/// `INISetting_fCrafting3DItemPosXWide_Interface__init` at 0xb5f10 (crt_init, medium); signature (high): `void INISetting_fCrafting3DItemPosXWide_Interface__init(void)`
+pub const INISetting_fCrafting3DItemPosXWide_Interface__init: u64 = 6918;
+/// `INISetting_fCrafting3DItemPosX_Interface__atexit` at 0x17a59a0 (crt_init, medium); signature (high): `void INISetting_fCrafting3DItemPosX_Interface__atexit(void)`
+pub const INISetting_fCrafting3DItemPosX_Interface__atexit: u64 = 172370;
+/// `INISetting_fCrafting3DItemPosX_Interface__init` at 0xb5e90 (crt_init, medium); signature (high): `void INISetting_fCrafting3DItemPosX_Interface__init(void)`
+pub const INISetting_fCrafting3DItemPosX_Interface__init: u64 = 6917;
+/// `INISetting_fCrafting3DItemPosYWide_Interface__atexit` at 0x17a5a90 (crt_init, medium); signature (high): `void INISetting_fCrafting3DItemPosYWide_Interface__atexit(void)`
+pub const INISetting_fCrafting3DItemPosYWide_Interface__atexit: u64 = 172373;
+/// `INISetting_fCrafting3DItemPosYWide_Interface__init` at 0xb6010 (crt_init, medium); signature (high): `void INISetting_fCrafting3DItemPosYWide_Interface__init(void)`
+pub const INISetting_fCrafting3DItemPosYWide_Interface__init: u64 = 6920;
+/// `INISetting_fCrafting3DItemPosY_Interface__atexit` at 0x17a5a40 (crt_init, medium); signature (high): `void INISetting_fCrafting3DItemPosY_Interface__atexit(void)`
+pub const INISetting_fCrafting3DItemPosY_Interface__atexit: u64 = 172372;
+/// `INISetting_fCrafting3DItemPosY_Interface__init` at 0xb5f90 (crt_init, medium); signature (high): `void INISetting_fCrafting3DItemPosY_Interface__init(void)`
+pub const INISetting_fCrafting3DItemPosY_Interface__init: u64 = 6919;
+/// `INISetting_fCrafting3DItemPosZWide_Interface__atexit` at 0x17a5b30 (crt_init, medium); signature (high): `void INISetting_fCrafting3DItemPosZWide_Interface__atexit(void)`
+pub const INISetting_fCrafting3DItemPosZWide_Interface__atexit: u64 = 172375;
+/// `INISetting_fCrafting3DItemPosZWide_Interface__init` at 0xb6110 (crt_init, medium); signature (high): `void INISetting_fCrafting3DItemPosZWide_Interface__init(void)`
+pub const INISetting_fCrafting3DItemPosZWide_Interface__init: u64 = 6922;
+/// `INISetting_fCrafting3DItemPosZ_Interface__atexit` at 0x17a5ae0 (crt_init, medium); signature (high): `void INISetting_fCrafting3DItemPosZ_Interface__atexit(void)`
+pub const INISetting_fCrafting3DItemPosZ_Interface__atexit: u64 = 172374;
+/// `INISetting_fCrafting3DItemPosZ_Interface__init` at 0xb6090 (crt_init, medium); signature (high): `void INISetting_fCrafting3DItemPosZ_Interface__init(void)`
+pub const INISetting_fCrafting3DItemPosZ_Interface__init: u64 = 6921;
 /// `INISetting_fCrafting3DItemScaleWide_Interface__atexit` at 0x17a5bd0 (crt_init, medium); signature (high): `void INISetting_fCrafting3DItemScaleWide_Interface__atexit(void)`
 pub const INISetting_fCrafting3DItemScaleWide_Interface__atexit: u64 = 172377;
 /// `INISetting_fCrafting3DItemScaleWide_Interface__init` at 0xb6210 (crt_init, medium); signature (high): `void INISetting_fCrafting3DItemScaleWide_Interface__init(void)`
@@ -4999,10 +5063,12 @@ pub const IVisitProcedures__vdtor: u64 = 21799;
 pub const IdleDialogueEnterHandler__vdtor: u64 = 43338;
 /// `IdleDialogueEnterHandler::vfunc_1` at 0x7cf290 (rtti, high); signature (low): `undefined1 vfunc_1(void)`
 pub const IdleDialogueEnterHandler__vfunc_1: u64 = 42893;
+/// `IdleDialogueExitHandler::Handle` at 0x7cf2a0 (semantic, high); signature (untiered): `undefined8 Handle(IdleDialogueExitHandler * this, longlong * param_1)`; semantic: graph handler: replays the idle at process+0x10 +0x348 through AIProcess::PlayIdle(..., 0x40, idle, 1, 1, target) (high); signature `bool (IdleDialogueExitHandler* this, Actor* actor)`
+pub const IdleDialogueExitHandler__Handle: u64 = 42894;
+/// `IdleDialogueExitHandler::Handle` as a function pointer type (high).
+pub type IdleDialogueExitHandler__Handle_fn = unsafe extern "C" fn(this: *mut crate::IdleDialogueExitHandler, actor: *mut crate::Actor) -> bool;
 /// `IdleDialogueExitHandler::vdtor` at 0x7d41b0 (layout_inference, medium); signature (low): `IdleDialogueExitHandler * vdtor(IdleDialogueExitHandler * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const IdleDialogueExitHandler__vdtor: u64 = 43339;
-/// `IdleDialogueExitHandler::vfunc_1` at 0x7cf2a0 (rtti, high); signature (low): `undefined8 vfunc_1(IdleDialogueExitHandler * this, longlong * param_1)`
-pub const IdleDialogueExitHandler__vfunc_1: u64 = 42894;
 /// `IdleDialogueExitHandler::vfunc_1_sub0` at 0x6ff420 (callgraph, medium); signature (untiered): `undefined4 * vfunc_1_sub0(longlong param_1, undefined4 * param_2)`
 pub const IdleDialogueExitHandler__vfunc_1_sub0: u64 = 39507;
 /// `ImageCreationThread::vdtor` at 0x59dee0 (slot_propagation, medium); signature (low): `ImageCreationThread * vdtor(ImageCreationThread * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
@@ -8327,77 +8393,3 @@ pub const InvertRigidTransform: u64 = 57088;
 pub const InvertTransform_2: u64 = 44052;
 /// `InvisibilityEffect::ctor` at 0x5c8e40 (layout_inference, high); signature (low): `InvisibilityEffect * ctor(InvisibilityEffect * this, longlong param_1, undefined8 param_2, undefined4 * param_3)`
 pub const InvisibilityEffect__ctor: u64 = 34364;
-/// `InvisibilityEffect::vdtor` at 0x5c9270 (slot_propagation, medium); signature (low): `InvisibilityEffect * vdtor(InvisibilityEffect * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const InvisibilityEffect__vdtor: u64 = 34371;
-/// `InvisibilityEffect::vfunc_10` at 0x5c8f50 (rtti, high); signature (low): `undefined vfunc_10(InvisibilityEffect * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
-pub const InvisibilityEffect__vfunc_10: u64 = 34366;
-/// `InvisibilityEffect::vfunc_11` at 0x5c9030 (rtti, high); signature (low): `undefined vfunc_11(InvisibilityEffect * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
-pub const InvisibilityEffect__vfunc_11: u64 = 34367;
-/// `InvisibilityEffect::vfunc_20` at 0x5c90a0 (rtti, high); signature (high): `undefined vfunc_20(InvisibilityEffect * this)`
-pub const InvisibilityEffect__vfunc_20: u64 = 34369;
-/// `InvisibilityEffect::vfunc_21` at 0x5c9180 (rtti, high); signature (high): `undefined vfunc_21(InvisibilityEffect * this)`
-pub const InvisibilityEffect__vfunc_21: u64 = 34370;
-/// `InvisibilityEffect::vfunc_4` at 0x5c9090 (rtti, high); signature (untiered): `undefined vfunc_4(InvisibilityEffect * this, float param_1)`
-pub const InvisibilityEffect__vfunc_4: u64 = 34368;
-/// `InvokeAndClearCallback90` at 0xcd58d0 (decompiler, medium); signature (untiered): `undefined InvokeAndClearCallback90(longlong param_1)`
-pub const InvokeAndClearCallback90: u64 = 67881;
-/// `InvokeAndClearPendingCallback` at 0x6496c0 (decompiler, medium); signature (untiered): `undefined InvokeAndClearPendingCallback(longlong param_1, undefined4 param_2, undefined8 param_3, undefined8 param_4)`
-pub const InvokeAndClearPendingCallback: u64 = 442631;
-/// `InvokeAndClearQueuedCallbacks` at 0x60f8d0 (decompiler, medium); signature (untiered): `undefined InvokeAndClearQueuedCallbacks(int param_1, longlong * param_2, int * param_3, undefined8 param_4)`
-pub const InvokeAndClearQueuedCallbacks: u64 = 442537;
-/// `InvokeAndReleaseQueuedCallbacks` at 0xbe9800 (decompiler, medium); signature (untiered): `ulonglong InvokeAndReleaseQueuedCallbacks(longlong param_1, undefined8 param_2, longlong param_3, longlong param_4)`
-pub const InvokeAndReleaseQueuedCallbacks: u64 = 63997;
-/// `InvokeAndResetStringCallback` at 0x610c00 (decompiler, medium); signature (untiered): `undefined InvokeAndResetStringCallback(longlong param_1, undefined1 param_2, undefined8 param_3, ulonglong param_4)`
-pub const InvokeAndResetStringCallback: u64 = 35458;
-/// `InvokeAsfunctionLinkUnderPointer` at 0xd956a0 (decompiler, medium); signature (untiered): `undefined8 InvokeAsfunctionLinkUnderPointer(longlong * param_1, int * param_2)`
-pub const InvokeAsfunctionLinkUnderPointer: u64 = 85696;
-/// `InvokeAsyncProxyAt2088IfField10Set` at 0x1422070 (decompiler, medium); signature (untiered): `undefined InvokeAsyncProxyAt2088IfField10Set(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const InvokeAsyncProxyAt2088IfField10Set: u64 = 451938;
-/// `InvokeCallable` at 0x12aa10 (decompiler, medium); signature (untiered): `undefined InvokeCallable(longlong param_1, undefined4 param_2, undefined8 param_3, undefined4 param_4)`
-pub const InvokeCallable: u64 = 440663;
-/// `InvokeCallable4` at 0x123540 (decompiler, medium); signature (untiered): `undefined InvokeCallable4(undefined * UNRECOVERED_JUMPTABLE, undefined8 * param_2, undefined4 * param_3, undefined8 param_4, undefined4 * param_5)`
-pub const InvokeCallable4: u64 = 523253;
-/// `InvokeCallable_2` at 0x12d6f0 (decompiler, medium); signature (untiered): `undefined InvokeCallable_2(longlong param_1)`
-pub const InvokeCallable_2: u64 = 523324;
-/// `InvokeCallbackAtField8` at 0x1123fe0 (decompiler, medium); signature (medium): `undefined InvokeCallbackAtField8(longlong param_1, undefined8 param_2)`
-pub const InvokeCallbackAtField8: u64 = 81325;
-/// `InvokeCallbackField90ThenVfuncA8` at 0xcd5a40 (decompiler, medium); signature (untiered): `undefined InvokeCallbackField90ThenVfuncA8(longlong * param_1)`
-pub const InvokeCallbackField90ThenVfuncA8: u64 = 67883;
-/// `InvokeCallbackForEachRegisteredEntry` at 0x1304e40 (decompiler, medium); signature (untiered): `undefined InvokeCallbackForEachRegisteredEntry(longlong * param_1)`
-pub const InvokeCallbackForEachRegisteredEntry: u64 = 446975;
-/// `InvokeCallbackIfBaseFormMatches` at 0x2974b0 (decompiler, medium); signature (untiered): `ulonglong InvokeCallbackIfBaseFormMatches(ulonglong * param_1, uint * param_2, undefined8 param_3, undefined8 param_4)`
-pub const InvokeCallbackIfBaseFormMatches: u64 = 18332;
-/// `InvokeCallbackOrLogBdkAssert` at 0x12fcd80 (decompiler, medium); signature (untiered): `undefined InvokeCallbackOrLogBdkAssert(longlong param_1, undefined8 * param_2, undefined8 * param_3, undefined8 * param_4, uint * param_5)`
-pub const InvokeCallbackOrLogBdkAssert: u64 = 446863;
-/// `InvokeCallbackWithAsyncProxy` at 0x12ee740 (decompiler, medium); signature (untiered): `AsyncOperationProxy * InvokeCallbackWithAsyncProxy(longlong param_1, AsyncOperationProxy * param_2, longlong * param_3)`
-pub const InvokeCallbackWithAsyncProxy: u64 = 525636;
-/// `InvokeCallbacksOfField10` at 0xd759a0 (decompiler, medium); signature (untiered): `undefined InvokeCallbacksOfField10(longlong param_1)`
-pub const InvokeCallbacksOfField10: u64 = 85096;
-/// `InvokeConfirmContinue` at 0x95cf10 (decompiler, medium); signature (medium): `undefined InvokeConfirmContinue(void)`
-pub const InvokeConfirmContinue: u64 = 52155;
-/// `InvokeDeleterAndClear` at 0x12dc340 (decompiler, medium); signature (medium): `undefined InvokeDeleterAndClear(undefined8 * param_1)`
-pub const InvokeDeleterAndClear: u64 = 525432;
-/// `InvokeDeleterAndClearField8` at 0x1299b90 (decompiler, medium); signature (untiered): `undefined InvokeDeleterAndClearField8(longlong param_1)`
-pub const InvokeDeleterAndClearField8: u64 = 444364;
-/// `InvokeDeleterAndClearPointer` at 0x1481810 (decompiler, medium); signature (medium): `undefined InvokeDeleterAndClearPointer(undefined8 * param_1)`
-pub const InvokeDeleterAndClearPointer: u64 = 453313;
-/// `InvokeDeleterAndClearPointer_2` at 0x1481850 (decompiler, medium); signature (medium): `undefined InvokeDeleterAndClearPointer_2(undefined8 * param_1)`
-pub const InvokeDeleterAndClearPointer_2: u64 = 453314;
-/// `InvokeDeleterAndClearPointer_3` at 0x1481890 (decompiler, medium); signature (medium): `undefined InvokeDeleterAndClearPointer_3(undefined8 * param_1)`
-pub const InvokeDeleterAndClearPointer_3: u64 = 453315;
-/// `InvokeDeleterAndClearPointer_4` at 0x14818d0 (decompiler, medium); signature (medium): `undefined InvokeDeleterAndClearPointer_4(undefined8 * param_1)`
-pub const InvokeDeleterAndClearPointer_4: u64 = 453316;
-/// `InvokeDeleterAndClearPointer_5` at 0x1481910 (decompiler, medium); signature (medium): `undefined InvokeDeleterAndClearPointer_5(undefined8 * param_1)`
-pub const InvokeDeleterAndClearPointer_5: u64 = 453317;
-/// `InvokeDeleterAndClear_10` at 0x134df90 (decompiler, medium); signature (medium): `undefined InvokeDeleterAndClear_10(undefined8 * param_1)`
-pub const InvokeDeleterAndClear_10: u64 = 526464;
-/// `InvokeDeleterAndClear_11` at 0x134fe00 (decompiler, medium); signature (medium): `undefined InvokeDeleterAndClear_11(undefined8 * param_1)`
-pub const InvokeDeleterAndClear_11: u64 = 526474;
-/// `InvokeDeleterAndClear_12` at 0x1424660 (decompiler, medium); signature (medium): `undefined InvokeDeleterAndClear_12(undefined8 * param_1)`
-pub const InvokeDeleterAndClear_12: u64 = 451981;
-/// `InvokeDeleterAndClear_13` at 0x1351350 (decompiler, medium); signature (medium): `undefined InvokeDeleterAndClear_13(undefined8 * param_1)`
-pub const InvokeDeleterAndClear_13: u64 = 447723;
-/// `InvokeDeleterAndClear_14` at 0x13bd6d0 (decompiler, medium); signature (medium): `undefined InvokeDeleterAndClear_14(undefined8 * param_1)`
-pub const InvokeDeleterAndClear_14: u64 = 450845;
-/// `InvokeDeleterAndClear_15` at 0x13b9610 (decompiler, medium); signature (medium): `undefined InvokeDeleterAndClear_15(undefined8 * param_1)`
-pub const InvokeDeleterAndClear_15: u64 = 451285;

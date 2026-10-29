@@ -6149,13 +6149,6 @@ pub unsafe fn get_fixed_string_for_slot_f4(param_1: i64, param_2: *mut i64, para
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn get_float_by_short_key_from_field260_or_field158(param_1: i64, param_2: i16) -> f32 { unsafe { function!(24784, (i64, i16) -> f32)(param_1, param_2) } }
-/// `GetFormModelPath` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 14788, rva 0x1eb3f0).
-/// `undefined1 * GetFormModelPath(longlong param_1)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn get_form_model_path(param_1: i64) -> *mut u8 { unsafe { function!(14788, (i64) -> *mut u8)(param_1) } }
 /// `GetFormTypeByEditorID` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 13695, rva 0x1b7170).
 /// `undefined1 GetFormTypeByEditorID(undefined8 param_1, char * param_2, undefined8 param_3, undefined8 param_4)`
 ///
@@ -11245,13 +11238,6 @@ pub unsafe fn is_field18_populated(param_1: i64) -> i64 { unsafe { function!(696
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn is_field1_c_below_field20(param_1: i64) -> u8 { unsafe { function!(27300, (i64) -> u8)(param_1) } }
-/// `IsField1F8FlagBit6SetAndBit11Clear` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 37218, rva 0x673b60).
-/// `uint IsField1F8FlagBit6SetAndBit11Clear(longlong param_1)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn is_field1_f8_flag_bit6_set_and_bit11_clear(param_1: i64) -> u32 { unsafe { function!(37218, (i64) -> u32)(param_1) } }
 /// `IsField20Flag48Set` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 450186, rva 0x1396630).
 /// `undefined8 IsField20Flag48Set(longlong param_1)`
 ///
@@ -14143,3 +14129,17 @@ pub unsafe fn pack_quaternion_polar32(param_1: *mut f32, param_2: *mut u32) -> u
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn pack_quaternion_smallest_three24(param_1: *mut u32, param_2: *mut u8) -> u64 { unsafe { function!(65638, (*mut u32, *mut u8) -> u64)(param_1, param_2) } }
+/// `PackQuaternionSmallestThree40` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 65640, rva 0xc53040).
+/// `undefined PackQuaternionSmallestThree40(uint * param_1, undefined1 * param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn pack_quaternion_smallest_three40(param_1: *mut u32, param_2: *mut u8) -> u64 { unsafe { function!(65640, (*mut u32, *mut u8) -> u64)(param_1, param_2) } }
+/// `PackQuaternionSmallestThree48` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 65641, rva 0xc531d0).
+/// `undefined PackQuaternionSmallestThree48(uint * param_1, ushort * param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn pack_quaternion_smallest_three48(param_1: *mut u32, param_2: *mut u16) -> u64 { unsafe { function!(65641, (*mut u32, *mut u16) -> u64)(param_1, param_2) } }

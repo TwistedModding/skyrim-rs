@@ -4,6 +4,14 @@
 use crate::raw::*;
 
 pub(super) const ROWS: &[Function] = &[
+    Function { rva: 0x91b9d0, id: 51249, confidence: Confidence::Medium, name: "ReleaseRefCountedPtrArray_2" },
+    Function { rva: 0x91ba70, id: 51250, confidence: Confidence::Medium, name: "ReleaseRefCountedPtrArray" },
+    Function { rva: 0x91bb10, id: 51251, confidence: Confidence::Medium, name: "DestroyOwnedObjectArrayStride16" },
+    Function { rva: 0x91bbc0, id: 51252, confidence: Confidence::Medium, name: "CraftingSubMenus::ConstructibleObjectMenu::ctor_sub0" },
+    Function { rva: 0x91bc20, id: 51253, confidence: Confidence::Medium, name: "ReleaseGFxValueArray" },
+    Function { rva: 0x91bcc0, id: 51254, confidence: Confidence::High, name: "BSTArrayBase::IAllocatorFunctor::dtor" },
+    Function { rva: 0x91bde0, id: 51255, confidence: Confidence::High, name: "ClearAndFreeHashMap16Thunk" },
+    Function { rva: 0x91bdf0, id: 51256, confidence: Confidence::Medium, name: "CraftingSubMenus::SmithingMenu::ctor_sub0" },
     Function { rva: 0x91be00, id: 51257, confidence: Confidence::Medium, name: "FreeHashMapStorage" },
     Function { rva: 0x91bec0, id: 51258, confidence: Confidence::Medium, name: "FreeSmallArrayBuffer_4" },
     Function { rva: 0x91bf10, id: 51259, confidence: Confidence::Medium, name: "FreeSmallArrayBufferAndClearCount" },
@@ -7991,13 +7999,4 @@ pub(super) const ROWS: &[Function] = &[
     Function { rva: 0xb58b10, id: 61334, confidence: Confidence::High, name: "SetRefCountedField78" },
     Function { rva: 0xb58b50, id: 61335, confidence: Confidence::High, name: "LockGlobalAndIncrementField130" },
     Function { rva: 0xb58b80, id: 61337, confidence: Confidence::High, name: "DecrementField130AndUnlockGlobal" },
-    Function { rva: 0xb58bc0, id: 61338, confidence: Confidence::Medium, name: "Wrap_EnterCriticalSection_ID_61338" },
-    Function { rva: 0xb58be0, id: 61339, confidence: Confidence::Medium, name: "Wrap_EnterCriticalSection_ID_61339" },
-    Function { rva: 0xb58c00, id: 61340, confidence: Confidence::Medium, name: "Wrap_LeaveCriticalSection_ID_61340" },
-    Function { rva: 0xb58c20, id: 61341, confidence: Confidence::Medium, name: "Wrap_LeaveCriticalSection_ID_61341" },
-    Function { rva: 0xb58c40, id: 61342, confidence: Confidence::Medium, name: "SetOrClearBit15OfField114AndField88Entry" },
-    Function { rva: 0xb58cc0, id: 61345, confidence: Confidence::Medium, name: "AppendToField1A8Array" },
-    Function { rva: 0xb58d80, id: 61350, confidence: Confidence::Medium, name: "AppendToField1D8Array" },
-    Function { rva: 0xb58de0, id: 61351, confidence: Confidence::Medium, name: "ClearPointerInField1D8Array" },
-    Function { rva: 0xb58e40, id: 61352, confidence: Confidence::High, name: "AppendToArray1B8" },
 ];

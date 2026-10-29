@@ -3,6 +3,52 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `CCallback<BSWin32SystemUtility,FloatingGamepadTextInputDismissed_t,0>::vdtor` at 0x159eb50 (layout_inference, medium); signature (low): `CCallback<BSWin32SystemUtility,FloatingGamepadTextInputDismissed_t,0> * vdtor(CCallback<BSWin32SystemUtility,FloatingGamepadTextInputDismissed_t,0> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const CCallback_BSWin32SystemUtility_FloatingGamepadTextInputDismissed_t_0__vdtor: u64 = 453539;
+/// `CCallback<BSWin32SystemUtility,FloatingGamepadTextInputDismissed_t,0>::vfunc_1` at 0x159ed10 (rtti, high); signature (high): `undefined vfunc_1(CCallback<BSWin32SystemUtility,FloatingGamepadTextInputDismissed_t,0> * this)`
+pub const CCallback_BSWin32SystemUtility_FloatingGamepadTextInputDismissed_t_0__vfunc_1: u64 = 453543;
+/// `CCallback<BSWin32SystemUtility,GameOverlayActivated_t,0>::vdtor` at 0x159eba0 (layout_inference, medium); signature (low): `CCallback<BSWin32SystemUtility,GameOverlayActivated_t,0> * vdtor(CCallback<BSWin32SystemUtility,GameOverlayActivated_t,0> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const CCallback_BSWin32SystemUtility_GameOverlayActivated_t_0__vdtor: u64 = 453540;
+/// `CCallback<BSWin32SystemUtility,GameOverlayActivated_t,0>::vfunc_1` at 0x159ed20 (rtti, high); signature (high): `undefined vfunc_1(CCallback<BSWin32SystemUtility,GameOverlayActivated_t,0> * this)`
+pub const CCallback_BSWin32SystemUtility_GameOverlayActivated_t_0__vfunc_1: u64 = 109211;
+/// `CCallback<BSWin32SystemUtility,GamepadTextInputDismissed_t,0>::vdtor` at 0x159ebf0 (layout_inference, medium); signature (low): `CCallback<BSWin32SystemUtility,GamepadTextInputDismissed_t,0> * vdtor(CCallback<BSWin32SystemUtility,GamepadTextInputDismissed_t,0> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const CCallback_BSWin32SystemUtility_GamepadTextInputDismissed_t_0__vdtor: u64 = 453541;
+/// `CCallback<BSWin32SystemUtility,GamepadTextInputDismissed_t,0>::vfunc_1` at 0x159ed30 (rtti, high); signature (high): `undefined vfunc_1(CCallback<BSWin32SystemUtility,GamepadTextInputDismissed_t,0> * this)`
+pub const CCallback_BSWin32SystemUtility_GamepadTextInputDismissed_t_0__vfunc_1: u64 = 453544;
+/// `CCallbackImpl<1>::vdtor` at 0x1598fc0 (layout_inference, medium); signature (low): `CCallbackImpl<1> * vdtor(CCallbackImpl<1> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const CCallbackImpl_1__vdtor: u64 = 453514;
+/// `CCallbackImpl<1>::vfunc_0` at 0x15990d0 (rtti, medium); signature (high): `undefined vfunc_0(CCallbackImpl<1> * this)`
+pub const CCallbackImpl_1__vfunc_0: u64 = 453518;
+/// `CCallbackImpl<1>::vfunc_2` at 0x1599070 (rtti, medium); signature (low): `undefined8 vfunc_2(void)`
+pub const CCallbackImpl_1__vfunc_2: u64 = 453516;
+/// `CCallbackImpl<8>::vdtor` at 0x1599010 (layout_inference, medium); signature (low): `CCallbackImpl<8> * vdtor(CCallbackImpl<8> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const CCallbackImpl_8__vdtor: u64 = 453515;
+/// `CCallbackImpl<8>::vfunc_0` at 0x15990e0 (rtti, medium); signature (high): `undefined vfunc_0(CCallbackImpl<8> * this)`
+pub const CCallbackImpl_8__vfunc_0: u64 = 453519;
+/// `CCallbackImpl<8>::vfunc_2` at 0x1599080 (rtti, medium); signature (low): `undefined8 vfunc_2(void)`
+pub const CCallbackImpl_8__vfunc_2: u64 = 453517;
+/// `CacheActorValueInfoFields110And114` at 0x738e10 (decompiler, medium); signature (medium): `undefined CacheActorValueInfoFields110And114(void)`
+pub const CacheActorValueInfoFields110And114: u64 = 40239;
+/// `CacheBindables` at 0xadbb40 (decompiler, medium); signature (untiered): `undefined CacheBindables(longlong * param_1)`
+pub const CacheBindables: u64 = 58524;
+/// `CacheClampedComponentValue` at 0x9401d0 (decompiler, medium); signature (untiered): `undefined CacheClampedComponentValue(undefined8 param_1, longlong param_2, undefined8 param_3, undefined8 param_4)`
+pub const CacheClampedComponentValue: u64 = 51811;
+/// `CacheDriveAndClearHashMaps` at 0x63d300 (decompiler, medium); signature (untiered): `undefined CacheDriveAndClearHashMaps(longlong param_1, uint param_2, undefined8 param_3, undefined8 param_4)`
+pub const CacheDriveAndClearHashMaps: u64 = 36135;
+/// `CacheFormComponentCasts` at 0x1dbb80 (decompiler, medium); signature (untiered): `undefined CacheFormComponentCasts(undefined8 * param_1, undefined8 param_2)`
+pub const CacheFormComponentCasts: u64 = 14350;
+/// `CacheInventoryItemValue` at 0x940240 (decompiler, high); signature (untiered): `undefined CacheInventoryItemValue(undefined8 param_1, longlong param_2)`
+pub const CacheInventoryItemValue: u64 = 51813;
+/// `CacheLastPlayerPosition` at 0x75e170 (semantic, high); signature (untiered): `undefined CacheLastPlayerPosition(void)`; semantic: copies the player's position (+0x54..+0x5c) into 0x3244c90..0x3244c98 (high); signature `void (void)`
+pub const CacheLastPlayerPosition: u64 = 40730;
+/// `CacheLastPlayerPosition` as a function pointer type (high).
+pub type CacheLastPlayerPosition_fn = unsafe extern "C" fn();
+/// `CacheMountOrSelfPositionAndSpace` at 0x748650 (decompiler, medium); signature (untiered): `undefined CacheMountOrSelfPositionAndSpace(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const CacheMountOrSelfPositionAndSpace: u64 = 40470;
+/// `CacheNodeTranslationAndRotation` at 0x1004a70 (decompiler, medium); signature (medium): `undefined CacheNodeTranslationAndRotation(longlong param_1)`
+pub const CacheNodeTranslationAndRotation: u64 = 77162;
+/// `CachePlayerPositionAndStartFlyingMountTutorialDelay` at 0x764280 (decompiler, medium); signature (untiered): `undefined CachePlayerPositionAndStartFlyingMountTutorialDelay(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const CachePlayerPositionAndStartFlyingMountTutorialDelay: u64 = 40826;
 /// `CacheShadowMapResolution` at 0x155c650 (semantic, high); signature (untiered): `undefined CacheShadowMapResolution(void)`; semantic: g_ShadowMapResolution (0x34869c0) = iShadowMapResolution value, once at startup (high); signature `void (void)`
 pub const CacheShadowMapResolution: u64 = 107596;
 /// `CacheShadowMapResolution` as a function pointer type (high).
@@ -7795,35 +7841,3 @@ pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextFindAttac
 pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextFlankingMovement__vdtor: u64 = 48448;
 /// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextFlankingMovement>::vfunc_3` at 0x89d110 (rtti, medium); signature (low): `undefined vfunc_3(CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextFlankingMovement> * this, longlong * param_1)`
 pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextFlankingMovement__vfunc_3: u64 = 48471;
-/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextFlankingMovement>::vfunc_6` at 0x89e680 (rtti, medium); signature (low): `undefined vfunc_6(CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextFlankingMovement> * this, longlong * param_1, longlong param_2)`
-pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextFlankingMovement__vfunc_6: u64 = 48504;
-/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextFlankingMovement>::vfunc_7` at 0x89de90 (rtti, medium); signature (low): `undefined vfunc_7(CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextFlankingMovement> * this, longlong * param_1, longlong param_2, undefined8 param_3)`
-pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextFlankingMovement__vfunc_7: u64 = 48494;
-/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextFlankingMovement>::vfunc_8` at 0x89e8e0 (rtti, medium); signature (low): `bool vfunc_8(CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextFlankingMovement> * this, longlong param_1)`
-pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextFlankingMovement__vfunc_8: u64 = 48516;
-/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextFlankingMovement>::vfunc_9` at 0x89db30 (rtti, medium); signature (low): `undefined * vfunc_9(void)`
-pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextFlankingMovement__vfunc_9: u64 = 48488;
-/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextFlee>::vdtor` at 0x8a6830 (slot_propagation, medium); signature (low): `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextFlee> * vdtor(CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextFlee> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextFlee__vdtor: u64 = 48689;
-/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextFlee>::vfunc_3` at 0x8a75f0 (rtti, medium); signature (low): `undefined vfunc_3(CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextFlee> * this, longlong * param_1)`
-pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextFlee__vfunc_3: u64 = 48735;
-/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextFlee>::vfunc_6` at 0x8a8d60 (rtti, medium); signature (low): `undefined vfunc_6(CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextFlee> * this, longlong * param_1, longlong param_2)`
-pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextFlee__vfunc_6: u64 = 48780;
-/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextFlee>::vfunc_7` at 0x8a8720 (rtti, medium); signature (low): `undefined vfunc_7(CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextFlee> * this, longlong * param_1, longlong param_2, undefined8 param_3)`
-pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextFlee__vfunc_7: u64 = 48769;
-/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextFlee>::vfunc_8` at 0x8a9300 (rtti, medium); signature (low): `bool vfunc_8(CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextFlee> * this, longlong param_1)`
-pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextFlee__vfunc_8: u64 = 48804;
-/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextFlee>::vfunc_9` at 0x8a7f40 (rtti, medium); signature (low): `undefined * vfunc_9(void)`
-pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextFlee__vfunc_9: u64 = 48755;
-/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextHide>::vdtor` at 0x8a6870 (slot_propagation, medium); signature (low): `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextHide> * vdtor(CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextHide> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextHide__vdtor: u64 = 48690;
-/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextHide>::vfunc_3` at 0x8a7690 (rtti, medium); signature (low): `undefined vfunc_3(CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextHide> * this, longlong * param_1)`
-pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextHide__vfunc_3: u64 = 48736;
-/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextHide>::vfunc_6` at 0x8a8d80 (rtti, medium); signature (low): `undefined vfunc_6(CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextHide> * this, longlong * param_1, longlong param_2)`
-pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextHide__vfunc_6: u64 = 48781;
-/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextHide>::vfunc_7` at 0x8a8800 (rtti, medium); signature (low): `undefined vfunc_7(CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextHide> * this, longlong * param_1, longlong param_2, undefined8 param_3)`
-pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextHide__vfunc_7: u64 = 48770;
-/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextHide>::vfunc_8` at 0x8a9310 (rtti, medium); signature (low): `bool vfunc_8(CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextHide> * this, longlong param_1)`
-pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextHide__vfunc_8: u64 = 48805;
-/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextHide>::vfunc_9` at 0x8a7fd0 (rtti, medium); signature (low): `undefined * vfunc_9(void)`
-pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextHide__vfunc_9: u64 = 48756;

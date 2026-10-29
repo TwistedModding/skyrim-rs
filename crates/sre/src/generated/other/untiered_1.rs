@@ -2046,6 +2046,13 @@ impl crate::IPipelineStageInterface {
 }
 
 impl crate::IdleDialogueExitHandler {
+    /// `IdleDialogueExitHandler::Handle`, vtable slot 1, through the object's vtable (decompiler signature, tier untiered; ledger semantic evidence, name high; id 42894, rva 0x7cf2a0).
+    /// `undefined8 Handle(IdleDialogueExitHandler * this, longlong * param_1)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn handle(&self, param_1: *mut i64) -> u64 { unsafe { virtual_function!(self, 1, (*const Self, *mut i64) -> u64)(core::ptr::from_ref(self), param_1) } }
     /// `IdleDialogueExitHandler::vfunc_1_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 39507, rva 0x6ff420).
     /// `undefined4 * vfunc_1_sub0(longlong param_1, undefined4 * param_2)`
     ///
@@ -3595,6 +3602,16 @@ impl crate::PatrolActorPackageData {
     pub unsafe fn vfunc_6_sub0(param_1: *mut i64, param_2: u32, param_3: u64, param_4: u64) -> u8 { unsafe { function!(13675, (*mut i64, u32, u64, u64) -> u8)(param_1, param_2, param_3, param_4) } }
 }
 
+impl crate::PickNewIdleHandler {
+    /// `PickNewIdleHandler::Handle`, vtable slot 1, through the object's vtable (decompiler signature, tier untiered; ledger semantic evidence, name high; id 42864, rva 0x7ce130).
+    /// `undefined1 Handle(PickNewIdleHandler * this, longlong param_1)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn handle(&self, param_1: i64) -> u8 { unsafe { virtual_function!(self, 1, (*const Self, i64) -> u8)(core::ptr::from_ref(self), param_1) } }
+}
+
 impl crate::PlayerBedEnterHandler {
     /// `PlayerBedEnterHandler::Handle`, vtable slot 1, through the object's vtable (decompiler signature, tier untiered; ledger semantic evidence, name high; id 42834, rva 0x7cd100).
     /// `undefined8 Handle(PlayerBedEnterHandler * this, TESObjectREFR * param_1)`
@@ -3880,6 +3897,16 @@ impl crate::RightHandWeaponDrawHandler {
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
     pub unsafe fn vfunc_1_sub0(param_1: *mut i64, param_2: u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(40419, (*mut i64, u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
+}
+
+impl crate::RightHandWeaponSheatheHandler {
+    /// `RightHandWeaponSheatheHandler::Handle`, vtable slot 1, through the object's vtable (decompiler signature, tier untiered; ledger semantic evidence, name high; id 42825, rva 0x7ccc20).
+    /// `undefined1 Handle(RightHandWeaponSheatheHandler * this, longlong * param_1)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn handle(&self, param_1: *mut i64) -> u8 { unsafe { virtual_function!(self, 1, (*const Self, *mut i64) -> u8)(core::ptr::from_ref(self), param_1) } }
 }
 
 impl crate::SceneGraph {
@@ -13864,31 +13891,3 @@ pub unsafe fn assign_record28_array(param_1: *mut i64, param_2: *mut i64, param_
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn assign_ref_counted_buffer_ptr(param_1: *mut u64, param_2: *mut u64) -> *mut u64 { unsafe { function!(87420, (*mut u64, *mut u64) -> *mut u64)(param_1, param_2) } }
-/// `AssignRefCountedField10` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 82296, rva 0xcf8630).
-/// `undefined AssignRefCountedField10(longlong * param_1, longlong * param_2, longlong param_3)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn assign_ref_counted_field10(param_1: *mut i64, param_2: *mut i64, param_3: i64) -> u64 { unsafe { function!(82296, (*mut i64, *mut i64, i64) -> u64)(param_1, param_2, param_3) } }
-/// `AssignRefCountedPairArrayPtr` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 90901, rva 0x11d5920).
-/// `undefined8 * AssignRefCountedPairArrayPtr(undefined8 * param_1, int * param_2, undefined8 param_3, undefined8 param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn assign_ref_counted_pair_array_ptr(param_1: *mut u64, param_2: *mut i32, param_3: u64, param_4: u64) -> *mut u64 { unsafe { function!(90901, (*mut u64, *mut i32, u64, u64) -> *mut u64)(param_1, param_2, param_3, param_4) } }
-/// `AssignRefCountedPointer_11` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 38167, rva 0x6bb180).
-/// `longlong * AssignRefCountedPointer_11(longlong * param_1, undefined8 * param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn assign_ref_counted_pointer_11(param_1: *mut i64, param_2: *mut u64) -> *mut i64 { unsafe { function!(38167, (*mut i64, *mut u64) -> *mut i64)(param_1, param_2) } }
-/// `AssignRefCountedPointer_12` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 39731, rva 0x71cb30).
-/// `longlong * AssignRefCountedPointer_12(longlong * param_1, undefined8 * param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn assign_ref_counted_pointer_12(param_1: *mut i64, param_2: *mut u64) -> *mut i64 { unsafe { function!(39731, (*mut i64, *mut u64) -> *mut i64)(param_1, param_2) } }

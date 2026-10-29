@@ -3,6 +3,13 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `TryGetValueByKeyUnderReadLock` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 69939, rva 0xed2250).
+/// `undefined8 TryGetValueByKeyUnderReadLock(longlong param_1, uint param_2, undefined8 * param_3)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn try_get_value_by_key_under_read_lock(param_1: i64, param_2: u32, param_3: *mut u64) -> u64 { unsafe { function!(69939, (i64, u32, *mut u64) -> u64)(param_1, param_2, param_3) } }
 /// `TryGetValueByPairKey` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 67428, rva 0xcbf1b0).
 /// `undefined8 TryGetValueByPairKey(longlong * param_1, ulonglong * param_2, undefined4 * param_3)`
 ///

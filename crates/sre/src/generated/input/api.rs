@@ -840,6 +840,12 @@ impl crate::PlayerControls {
     /// The pass rates the signature medium.
     #[inline]
     pub unsafe fn load_response_graph(&self, which: u32) { unsafe { function!(42366, (*const Self, u32))(core::ptr::from_ref(self), which) } }
+    /// `PlayerControls::PerformActionOnControlledActors`: for every handle in PlayerControls+0x150 (count +0x160, lock +0x168: the player and what it controls) builds ActionInput(type, actor, defaultObject[index]) and performs it; for the player's own handle also calls ProcessActorActionCode(player, index, input)
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 42350, rva 0x7ae440.
+    /// `bool (PlayerControls* this, int defaultObjectIndex, int inputType)`
+    #[inline]
+    pub fn perform_action_on_controlled_actors(&self, defaultObjectIndex: i32, inputType: i32) -> bool { unsafe { function!(42350, (*const Self, i32, i32) -> bool)(core::ptr::from_ref(self), defaultObjectIndex, inputType) } }
     /// `PlayerControls::RemoveHandler`: removes from both lists (deferred and disabled while dispatching)
     ///
     /// Semantic, input pass, high; ledger semantic evidence, name high; id 42357, rva 0x7af3e0.

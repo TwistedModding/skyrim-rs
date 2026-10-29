@@ -4,6 +4,15 @@
 use crate::raw::*;
 
 pub(super) const ROWS: &[Function] = &[
+    Function { rva: 0xb58bc0, id: 61338, confidence: Confidence::Medium, name: "Wrap_EnterCriticalSection_ID_61338" },
+    Function { rva: 0xb58be0, id: 61339, confidence: Confidence::Medium, name: "Wrap_EnterCriticalSection_ID_61339" },
+    Function { rva: 0xb58c00, id: 61340, confidence: Confidence::Medium, name: "Wrap_LeaveCriticalSection_ID_61340" },
+    Function { rva: 0xb58c20, id: 61341, confidence: Confidence::Medium, name: "Wrap_LeaveCriticalSection_ID_61341" },
+    Function { rva: 0xb58c40, id: 61342, confidence: Confidence::Medium, name: "SetOrClearBit15OfField114AndField88Entry" },
+    Function { rva: 0xb58cc0, id: 61345, confidence: Confidence::Medium, name: "AppendToField1A8Array" },
+    Function { rva: 0xb58d80, id: 61350, confidence: Confidence::Medium, name: "AppendToField1D8Array" },
+    Function { rva: 0xb58de0, id: 61351, confidence: Confidence::Medium, name: "ClearPointerInField1D8Array" },
+    Function { rva: 0xb58e40, id: 61352, confidence: Confidence::High, name: "AppendToArray1B8" },
     Function { rva: 0xb58ea0, id: 61353, confidence: Confidence::High, name: "ClearMatchingEntryInField1B8Array" },
     Function { rva: 0xb58f00, id: 61354, confidence: Confidence::High, name: "AppendToArray1C8" },
     Function { rva: 0xb58fc0, id: 61359, confidence: Confidence::High, name: "AppendToArray1F8" },
@@ -8895,14 +8904,4 @@ pub(super) const ROWS: &[Function] = &[
     Function { rva: 0xee5570, id: 70370, confidence: Confidence::Medium, name: "RegisterFactoryByClassName" },
     Function { rva: 0xee5690, id: 70371, confidence: Confidence::Medium, name: "RemoveKeyFromGlobalHashMap" },
     Function { rva: 0xee5a00, id: 70377, confidence: Confidence::Medium, name: "SetField518String" },
-    Function { rva: 0xee5ab0, id: 70379, confidence: Confidence::Medium, name: "NiStream::vfunc_13" },
-    Function { rva: 0xee5ed0, id: 70380, confidence: Confidence::Medium, name: "NiStream::vfunc_14" },
-    Function { rva: 0xee6190, id: 70381, confidence: Confidence::Medium, name: "NiStream::vfunc_15" },
-    Function { rva: 0xee6670, id: 70382, confidence: Confidence::Medium, name: "NiStream::vfunc_16" },
-    Function { rva: 0xee69c0, id: 70383, confidence: Confidence::Medium, name: "NiStream::vfunc_17" },
-    Function { rva: 0xee6a20, id: 70384, confidence: Confidence::Medium, name: "NiStream::vfunc_18" },
-    Function { rva: 0xee6bc0, id: 70385, confidence: Confidence::Medium, name: "NiStream::vfunc_19" },
-    Function { rva: 0xee6c40, id: 70386, confidence: Confidence::Medium, name: "NiStream::vfunc_20" },
-    Function { rva: 0xee6e40, id: 70387, confidence: Confidence::Medium, name: "NiStream::vfunc_21" },
-    Function { rva: 0xee6ec0, id: 70388, confidence: Confidence::Medium, name: "NiStream::vfunc_22" },
 ];

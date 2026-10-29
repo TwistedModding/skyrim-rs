@@ -3136,7 +3136,7 @@ pub struct BGSAcousticSpace_vtable {
     pub slot_62: *const c_void,
     /// `TESObject::vfunc_63` at 0x146a40 (rtti, medium); signature (low): `undefined vfunc_63(void)`
     pub slot_63: *const c_void,
-    /// `TESBoundObject::vfunc_64` at 0x277e20 (rtti, medium); signature (low): `TESBoundObject_vtbl * vfunc_64(TESBoundObject * this, TESBoundObject_vtbl * param_1, byte param_2)`
+    /// `TESBoundObject::Clone3D` at 0x277e20 (semantic, high); signature (untiered): `TESBoundObject_vtbl * Clone3D(TESBoundObject * this, TESBoundObject_vtbl * param_1, byte param_2)`
     pub slot_64: *const c_void,
     /// `BGSAcousticSpace::vfunc_65` at 0x315d00 (rtti, high); signature (untiered): `undefined vfunc_65(undefined8 param_1, longlong param_2, undefined8 param_3, undefined8 param_4)`
     pub slot_65: *const c_void,
@@ -3487,7 +3487,7 @@ pub struct BGSAddonNode_vtable {
     pub slot_62: *const c_void,
     /// `TESObject::vfunc_63` at 0x146a40 (rtti, medium); signature (low): `undefined vfunc_63(void)`
     pub slot_63: *const c_void,
-    /// `TESBoundObject::vfunc_64` at 0x277e20 (rtti, medium); signature (low): `TESBoundObject_vtbl * vfunc_64(TESBoundObject * this, TESBoundObject_vtbl * param_1, byte param_2)`
+    /// `TESBoundObject::Clone3D` at 0x277e20 (semantic, high); signature (untiered): `TESBoundObject_vtbl * Clone3D(TESBoundObject * this, TESBoundObject_vtbl * param_1, byte param_2)`
     pub slot_64: *const c_void,
     /// `TESObject::vfunc_65` at 0x275b60 (rtti, medium); signature (low): `undefined vfunc_65(TESObject * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_65: *const c_void,
@@ -3541,9 +3541,9 @@ pub struct BGSAddonNode_vtable_30 {
     pub slot_2: *const c_void,
     /// `TESModelTextureSwap::vfunc_3` at 0x1ed240 (rtti, medium); signature (low): `undefined vfunc_3(TESModelTextureSwap * this, undefined8 param_1)`
     pub slot_3: *const c_void,
-    /// `TESModel::vfunc_4` at 0x146780 (rtti, medium); signature (high): `undefined8 vfunc_4(TESModel * this)`
+    /// `TESModel::GetModel` at 0x146780 (semantic, high); signature (untiered): `undefined8 GetModel(TESModel * this)`
     pub slot_4: *const c_void,
-    /// `TESModel::vfunc_5` at 0x1ead10 (rtti, medium); signature (low): `undefined vfunc_5(TESModel * this, char * param_1)`
+    /// `TESModel::SetModel` at 0x1ead10 (semantic, high); signature (untiered): `undefined SetModel(TESModel * this, char * param_1)`
     pub slot_5: *const c_void,
     /// `TESModelTextureSwap::vfunc_6` at 0x146650 (rtti, medium); signature (high): `TESModelTextureSwap * vfunc_6(TESModelTextureSwap * this)`
     pub slot_6: *const c_void,
@@ -3781,7 +3781,7 @@ pub struct BGSApparatus_vtable {
     pub slot_62: *const c_void,
     /// `TESObject::vfunc_63` at 0x146a40 (rtti, medium); signature (low): `undefined vfunc_63(void)`
     pub slot_63: *const c_void,
-    /// `TESBoundObject::vfunc_64` at 0x277e20 (rtti, medium); signature (low): `TESBoundObject_vtbl * vfunc_64(TESBoundObject * this, TESBoundObject_vtbl * param_1, byte param_2)`
+    /// `TESBoundObject::Clone3D` at 0x277e20 (semantic, high); signature (untiered): `TESBoundObject_vtbl * Clone3D(TESBoundObject * this, TESBoundObject_vtbl * param_1, byte param_2)`
     pub slot_64: *const c_void,
     /// `TESObject::vfunc_65` at 0x275b60 (rtti, medium); signature (low): `undefined vfunc_65(TESObject * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_65: *const c_void,
@@ -3861,9 +3861,9 @@ pub struct BGSApparatus_vtable_40 {
     pub slot_2: *const c_void,
     /// `TESModelTextureSwap::vfunc_3` at 0x1ed240 (rtti, medium); signature (low): `undefined vfunc_3(TESModelTextureSwap * this, undefined8 param_1)`
     pub slot_3: *const c_void,
-    /// `TESModel::vfunc_4` at 0x146780 (rtti, medium); signature (high): `undefined8 vfunc_4(TESModel * this)`
+    /// `TESModel::GetModel` at 0x146780 (semantic, high); signature (untiered): `undefined8 GetModel(TESModel * this)`
     pub slot_4: *const c_void,
-    /// `TESModel::vfunc_5` at 0x1ead10 (rtti, medium); signature (low): `undefined vfunc_5(TESModel * this, char * param_1)`
+    /// `TESModel::SetModel` at 0x1ead10 (semantic, high); signature (untiered): `undefined SetModel(TESModel * this, char * param_1)`
     pub slot_5: *const c_void,
     /// `TESModelTextureSwap::vfunc_6` at 0x146650 (rtti, medium); signature (high): `TESModelTextureSwap * vfunc_6(TESModelTextureSwap * this)`
     pub slot_6: *const c_void,
@@ -4157,7 +4157,7 @@ pub struct BGSArtObject_vtable {
     pub slot_62: *const c_void,
     /// `TESObject::vfunc_63` at 0x146a40 (rtti, medium); signature (low): `undefined vfunc_63(void)`
     pub slot_63: *const c_void,
-    /// `TESBoundObject::vfunc_64` at 0x277e20 (rtti, medium); signature (low): `TESBoundObject_vtbl * vfunc_64(TESBoundObject * this, TESBoundObject_vtbl * param_1, byte param_2)`
+    /// `TESBoundObject::Clone3D` at 0x277e20 (semantic, high); signature (untiered): `TESBoundObject_vtbl * Clone3D(TESBoundObject * this, TESBoundObject_vtbl * param_1, byte param_2)`
     pub slot_64: *const c_void,
     /// `TESObject::vfunc_65` at 0x275b60 (rtti, medium); signature (low): `undefined vfunc_65(TESObject * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_65: *const c_void,
@@ -4211,9 +4211,9 @@ pub struct BGSArtObject_vtable_30 {
     pub slot_2: *const c_void,
     /// `TESModelTextureSwap::vfunc_3` at 0x1ed240 (rtti, medium); signature (low): `undefined vfunc_3(TESModelTextureSwap * this, undefined8 param_1)`
     pub slot_3: *const c_void,
-    /// `TESModel::vfunc_4` at 0x146780 (rtti, medium); signature (high): `undefined8 vfunc_4(TESModel * this)`
+    /// `TESModel::GetModel` at 0x146780 (semantic, high); signature (untiered): `undefined8 GetModel(TESModel * this)`
     pub slot_4: *const c_void,
-    /// `TESModel::vfunc_5` at 0x1ead10 (rtti, medium); signature (low): `undefined vfunc_5(TESModel * this, char * param_1)`
+    /// `TESModel::SetModel` at 0x1ead10 (semantic, high); signature (untiered): `undefined SetModel(TESModel * this, char * param_1)`
     pub slot_5: *const c_void,
     /// `TESModelTextureSwap::vfunc_6` at 0x146650 (rtti, medium); signature (high): `TESModelTextureSwap * vfunc_6(TESModelTextureSwap * this)`
     pub slot_6: *const c_void,
@@ -4505,13 +4505,13 @@ impl BGSBaseAlias_vtable {
 pub struct BGSBehaviorGraphModel_vtable {
     /// `BGSBehaviorGraphModel::vdtor` at 0x3eb7c0 (slot_propagation, medium); signature (low): `BGSBehaviorGraphModel * vdtor(BGSBehaviorGraphModel * this, ulonglong param_1, longlong param_2, undefined1 * param_3)`
     pub slot_0: *const c_void,
-    /// `TESModel::vfunc_1` at 0x1eaaf0 (rtti, medium); signature (low): `undefined vfunc_1(TESModel * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    /// `TESModel::InitializeData` at 0x1eaaf0 (semantic, high); signature (untiered): `undefined InitializeData(TESModel * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_1: *const c_void,
-    /// `TESModel::vfunc_2` at 0x1eabc0 (rtti, medium); signature (low): `undefined vfunc_2(TESModel * this, undefined8 param_1, longlong param_2, undefined1 * param_3)`
+    /// `TESModel::ClearData` at 0x1eabc0 (semantic, high); signature (untiered): `undefined ClearData(TESModel * this, undefined8 param_1, longlong param_2, undefined1 * param_3)`
     pub slot_2: *const c_void,
-    /// `TESModel::vfunc_3` at 0x1eacb0 (rtti, medium); signature (low): `undefined vfunc_3(TESModel * this, undefined8 param_1)`
+    /// `TESModel::CopyFromTemplate` at 0x1eacb0 (semantic, high); signature (untiered): `undefined CopyFromTemplate(TESModel * this, undefined8 param_1)`
     pub slot_3: *const c_void,
-    /// `TESModel::vfunc_4` at 0x146780 (rtti, medium); signature (high): `undefined8 vfunc_4(TESModel * this)`
+    /// `TESModel::GetModel` at 0x146780 (semantic, high); signature (untiered): `undefined8 GetModel(TESModel * this)`
     pub slot_4: *const c_void,
     /// `BGSBehaviorGraphModel::vfunc_5` at 0x1d1e80 (rtti, high); signature (low): `undefined vfunc_5(BGSBehaviorGraphModel * this, char * param_1)`
     pub slot_5: *const c_void,
@@ -4701,15 +4701,15 @@ impl BGSBodyPartData_vtable {
 pub struct BGSBodyPartData_vtable_20 {
     /// `BGSBodyPartData::TESModel_vdtor` at 0x38c3d4 (slot_propagation, medium); signature (high): `undefined TESModel_vdtor(BGSBodyPartData * this)`
     pub slot_0: *const c_void,
-    /// `TESModel::vfunc_1` at 0x1eaaf0 (rtti, medium); signature (low): `undefined vfunc_1(TESModel * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    /// `TESModel::InitializeData` at 0x1eaaf0 (semantic, high); signature (untiered): `undefined InitializeData(TESModel * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_1: *const c_void,
-    /// `TESModel::vfunc_2` at 0x1eabc0 (rtti, medium); signature (low): `undefined vfunc_2(TESModel * this, undefined8 param_1, longlong param_2, undefined1 * param_3)`
+    /// `TESModel::ClearData` at 0x1eabc0 (semantic, high); signature (untiered): `undefined ClearData(TESModel * this, undefined8 param_1, longlong param_2, undefined1 * param_3)`
     pub slot_2: *const c_void,
-    /// `TESModel::vfunc_3` at 0x1eacb0 (rtti, medium); signature (low): `undefined vfunc_3(TESModel * this, undefined8 param_1)`
+    /// `TESModel::CopyFromTemplate` at 0x1eacb0 (semantic, high); signature (untiered): `undefined CopyFromTemplate(TESModel * this, undefined8 param_1)`
     pub slot_3: *const c_void,
-    /// `TESModel::vfunc_4` at 0x146780 (rtti, medium); signature (high): `undefined8 vfunc_4(TESModel * this)`
+    /// `TESModel::GetModel` at 0x146780 (semantic, high); signature (untiered): `undefined8 GetModel(TESModel * this)`
     pub slot_4: *const c_void,
-    /// `TESModel::vfunc_5` at 0x1ead10 (rtti, medium); signature (low): `undefined vfunc_5(TESModel * this, char * param_1)`
+    /// `TESModel::SetModel` at 0x1ead10 (semantic, high); signature (untiered): `undefined SetModel(TESModel * this, char * param_1)`
     pub slot_5: *const c_void,
     /// `TESModel::vfunc_6` at 0x1dfd80 (rtti, medium); signature (low): `undefined8 vfunc_6(void)`
     pub slot_6: *const c_void,
@@ -5073,15 +5073,15 @@ pub type BGSCameraShot_vtable_InitItem = unsafe extern "C" fn(this: *mut crate::
 pub struct BGSCameraShot_vtable_20 {
     /// `BGSCameraShot::TESModel_Destroy` at 0x31a0a4 (semantic, high); signature (untiered): `undefined TESModel_Destroy(BGSCameraShot * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `TESModel::vfunc_1` at 0x1eaaf0 (rtti, medium); signature (low): `undefined vfunc_1(TESModel * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    /// `TESModel::InitializeData` at 0x1eaaf0 (semantic, high); signature (untiered): `undefined InitializeData(TESModel * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_1: *const c_void,
-    /// `TESModel::vfunc_2` at 0x1eabc0 (rtti, medium); signature (low): `undefined vfunc_2(TESModel * this, undefined8 param_1, longlong param_2, undefined1 * param_3)`
+    /// `TESModel::ClearData` at 0x1eabc0 (semantic, high); signature (untiered): `undefined ClearData(TESModel * this, undefined8 param_1, longlong param_2, undefined1 * param_3)`
     pub slot_2: *const c_void,
-    /// `TESModel::vfunc_3` at 0x1eacb0 (rtti, medium); signature (low): `undefined vfunc_3(TESModel * this, undefined8 param_1)`
+    /// `TESModel::CopyFromTemplate` at 0x1eacb0 (semantic, high); signature (untiered): `undefined CopyFromTemplate(TESModel * this, undefined8 param_1)`
     pub slot_3: *const c_void,
-    /// `TESModel::vfunc_4` at 0x146780 (rtti, medium); signature (high): `undefined8 vfunc_4(TESModel * this)`
+    /// `TESModel::GetModel` at 0x146780 (semantic, high); signature (untiered): `undefined8 GetModel(TESModel * this)`
     pub slot_4: *const c_void,
-    /// `TESModel::vfunc_5` at 0x1ead10 (rtti, medium); signature (low): `undefined vfunc_5(TESModel * this, char * param_1)`
+    /// `TESModel::SetModel` at 0x1ead10 (semantic, high); signature (untiered): `undefined SetModel(TESModel * this, char * param_1)`
     pub slot_5: *const c_void,
     /// `TESModel::vfunc_6` at 0x1dfd80 (rtti, medium); signature (low): `undefined8 vfunc_6(void)`
     pub slot_6: *const c_void,
@@ -6199,7 +6199,7 @@ pub struct BGSDualCastData_vtable {
     pub slot_62: *const c_void,
     /// `TESObject::vfunc_63` at 0x146a40 (rtti, medium); signature (low): `undefined vfunc_63(void)`
     pub slot_63: *const c_void,
-    /// `TESBoundObject::vfunc_64` at 0x277e20 (rtti, medium); signature (low): `TESBoundObject_vtbl * vfunc_64(TESBoundObject * this, TESBoundObject_vtbl * param_1, byte param_2)`
+    /// `TESBoundObject::Clone3D` at 0x277e20 (semantic, high); signature (untiered): `TESBoundObject_vtbl * Clone3D(TESBoundObject * this, TESBoundObject_vtbl * param_1, byte param_2)`
     pub slot_64: *const c_void,
     /// `TESObject::vfunc_65` at 0x275b60 (rtti, medium); signature (low): `undefined vfunc_65(TESObject * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_65: *const c_void,
@@ -6937,15 +6937,15 @@ impl BGSExplosion_vtable_30 {
 pub struct BGSExplosion_vtable_40 {
     /// `BGSExplosion::TESModel_vdtor` at 0x261628 (slot_propagation, medium); signature (high): `undefined TESModel_vdtor(BGSExplosion * this)`
     pub slot_0: *const c_void,
-    /// `TESModel::vfunc_1` at 0x1eaaf0 (rtti, medium); signature (low): `undefined vfunc_1(TESModel * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    /// `TESModel::InitializeData` at 0x1eaaf0 (semantic, high); signature (untiered): `undefined InitializeData(TESModel * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_1: *const c_void,
-    /// `TESModel::vfunc_2` at 0x1eabc0 (rtti, medium); signature (low): `undefined vfunc_2(TESModel * this, undefined8 param_1, longlong param_2, undefined1 * param_3)`
+    /// `TESModel::ClearData` at 0x1eabc0 (semantic, high); signature (untiered): `undefined ClearData(TESModel * this, undefined8 param_1, longlong param_2, undefined1 * param_3)`
     pub slot_2: *const c_void,
-    /// `TESModel::vfunc_3` at 0x1eacb0 (rtti, medium); signature (low): `undefined vfunc_3(TESModel * this, undefined8 param_1)`
+    /// `TESModel::CopyFromTemplate` at 0x1eacb0 (semantic, high); signature (untiered): `undefined CopyFromTemplate(TESModel * this, undefined8 param_1)`
     pub slot_3: *const c_void,
-    /// `TESModel::vfunc_4` at 0x146780 (rtti, medium); signature (high): `undefined8 vfunc_4(TESModel * this)`
+    /// `TESModel::GetModel` at 0x146780 (semantic, high); signature (untiered): `undefined8 GetModel(TESModel * this)`
     pub slot_4: *const c_void,
-    /// `TESModel::vfunc_5` at 0x1ead10 (rtti, medium); signature (low): `undefined vfunc_5(TESModel * this, char * param_1)`
+    /// `TESModel::SetModel` at 0x1ead10 (semantic, high); signature (untiered): `undefined SetModel(TESModel * this, char * param_1)`
     pub slot_5: *const c_void,
     /// `TESModel::vfunc_6` at 0x1dfd80 (rtti, medium); signature (low): `undefined8 vfunc_6(void)`
     pub slot_6: *const c_void,
@@ -7535,7 +7535,7 @@ pub struct BGSHazard_vtable {
     pub slot_62: *const c_void,
     /// `TESObject::vfunc_63` at 0x146a40 (rtti, medium); signature (low): `undefined vfunc_63(void)`
     pub slot_63: *const c_void,
-    /// `TESBoundObject::vfunc_64` at 0x277e20 (rtti, medium); signature (low): `TESBoundObject_vtbl * vfunc_64(TESBoundObject * this, TESBoundObject_vtbl * param_1, byte param_2)`
+    /// `TESBoundObject::Clone3D` at 0x277e20 (semantic, high); signature (untiered): `TESBoundObject_vtbl * Clone3D(TESBoundObject * this, TESBoundObject_vtbl * param_1, byte param_2)`
     pub slot_64: *const c_void,
     /// `TESObject::vfunc_65` at 0x275b60 (rtti, medium); signature (low): `undefined vfunc_65(TESObject * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_65: *const c_void,
@@ -7603,15 +7603,15 @@ impl BGSHazard_vtable_30 {
 pub struct BGSHazard_vtable_40 {
     /// `BGSHazard::TESModel_vdtor` at 0x262700 (slot_propagation, medium); signature (high): `undefined TESModel_vdtor(BGSHazard * this)`
     pub slot_0: *const c_void,
-    /// `TESModel::vfunc_1` at 0x1eaaf0 (rtti, medium); signature (low): `undefined vfunc_1(TESModel * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    /// `TESModel::InitializeData` at 0x1eaaf0 (semantic, high); signature (untiered): `undefined InitializeData(TESModel * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_1: *const c_void,
-    /// `TESModel::vfunc_2` at 0x1eabc0 (rtti, medium); signature (low): `undefined vfunc_2(TESModel * this, undefined8 param_1, longlong param_2, undefined1 * param_3)`
+    /// `TESModel::ClearData` at 0x1eabc0 (semantic, high); signature (untiered): `undefined ClearData(TESModel * this, undefined8 param_1, longlong param_2, undefined1 * param_3)`
     pub slot_2: *const c_void,
-    /// `TESModel::vfunc_3` at 0x1eacb0 (rtti, medium); signature (low): `undefined vfunc_3(TESModel * this, undefined8 param_1)`
+    /// `TESModel::CopyFromTemplate` at 0x1eacb0 (semantic, high); signature (untiered): `undefined CopyFromTemplate(TESModel * this, undefined8 param_1)`
     pub slot_3: *const c_void,
-    /// `TESModel::vfunc_4` at 0x146780 (rtti, medium); signature (high): `undefined8 vfunc_4(TESModel * this)`
+    /// `TESModel::GetModel` at 0x146780 (semantic, high); signature (untiered): `undefined8 GetModel(TESModel * this)`
     pub slot_4: *const c_void,
-    /// `TESModel::vfunc_5` at 0x1ead10 (rtti, medium); signature (low): `undefined vfunc_5(TESModel * this, char * param_1)`
+    /// `TESModel::SetModel` at 0x1ead10 (semantic, high); signature (untiered): `undefined SetModel(TESModel * this, char * param_1)`
     pub slot_5: *const c_void,
     /// `TESModel::vfunc_6` at 0x1dfd80 (rtti, medium); signature (low): `undefined8 vfunc_6(void)`
     pub slot_6: *const c_void,
@@ -7811,9 +7811,9 @@ pub struct BGSHeadPart_vtable_30 {
     pub slot_2: *const c_void,
     /// `TESModelTextureSwap::vfunc_3` at 0x1ed240 (rtti, medium); signature (low): `undefined vfunc_3(TESModelTextureSwap * this, undefined8 param_1)`
     pub slot_3: *const c_void,
-    /// `TESModel::vfunc_4` at 0x146780 (rtti, medium); signature (high): `undefined8 vfunc_4(TESModel * this)`
+    /// `TESModel::GetModel` at 0x146780 (semantic, high); signature (untiered): `undefined8 GetModel(TESModel * this)`
     pub slot_4: *const c_void,
-    /// `TESModel::vfunc_5` at 0x1ead10 (rtti, medium); signature (low): `undefined vfunc_5(TESModel * this, char * param_1)`
+    /// `TESModel::SetModel` at 0x1ead10 (semantic, high); signature (untiered): `undefined SetModel(TESModel * this, char * param_1)`
     pub slot_5: *const c_void,
     /// `TESModelTextureSwap::vfunc_6` at 0x146650 (rtti, medium); signature (high): `TESModelTextureSwap * vfunc_6(TESModelTextureSwap * this)`
     pub slot_6: *const c_void,
@@ -7969,7 +7969,7 @@ pub struct BGSIdleMarker_vtable {
     pub slot_62: *const c_void,
     /// `TESObject::vfunc_63` at 0x146a40 (rtti, medium); signature (low): `undefined vfunc_63(void)`
     pub slot_63: *const c_void,
-    /// `TESBoundObject::vfunc_64` at 0x277e20 (rtti, medium); signature (low): `TESBoundObject_vtbl * vfunc_64(TESBoundObject * this, TESBoundObject_vtbl * param_1, byte param_2)`
+    /// `TESBoundObject::Clone3D` at 0x277e20 (semantic, high); signature (untiered): `TESBoundObject_vtbl * Clone3D(TESBoundObject * this, TESBoundObject_vtbl * param_1, byte param_2)`
     pub slot_64: *const c_void,
     /// `BGSIdleMarker::vfunc_65` at 0x391aa0 (rtti, high); signature (untiered): `undefined vfunc_65(undefined8 param_1, longlong param_2, undefined8 param_3, undefined8 param_4)`
     pub slot_65: *const c_void,
@@ -8017,15 +8017,15 @@ impl BGSIdleMarker_vtable {
 pub struct BGSIdleMarker_vtable_30 {
     /// `BGSIdleMarker::TESModel_vdtor` at 0x391ae4 (slot_propagation, medium); signature (high): `undefined TESModel_vdtor(BGSIdleMarker * this)`
     pub slot_0: *const c_void,
-    /// `TESModel::vfunc_1` at 0x1eaaf0 (rtti, medium); signature (low): `undefined vfunc_1(TESModel * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    /// `TESModel::InitializeData` at 0x1eaaf0 (semantic, high); signature (untiered): `undefined InitializeData(TESModel * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_1: *const c_void,
-    /// `TESModel::vfunc_2` at 0x1eabc0 (rtti, medium); signature (low): `undefined vfunc_2(TESModel * this, undefined8 param_1, longlong param_2, undefined1 * param_3)`
+    /// `TESModel::ClearData` at 0x1eabc0 (semantic, high); signature (untiered): `undefined ClearData(TESModel * this, undefined8 param_1, longlong param_2, undefined1 * param_3)`
     pub slot_2: *const c_void,
-    /// `TESModel::vfunc_3` at 0x1eacb0 (rtti, medium); signature (low): `undefined vfunc_3(TESModel * this, undefined8 param_1)`
+    /// `TESModel::CopyFromTemplate` at 0x1eacb0 (semantic, high); signature (untiered): `undefined CopyFromTemplate(TESModel * this, undefined8 param_1)`
     pub slot_3: *const c_void,
-    /// `TESModel::vfunc_4` at 0x146780 (rtti, medium); signature (high): `undefined8 vfunc_4(TESModel * this)`
+    /// `TESModel::GetModel` at 0x146780 (semantic, high); signature (untiered): `undefined8 GetModel(TESModel * this)`
     pub slot_4: *const c_void,
-    /// `TESModel::vfunc_5` at 0x1ead10 (rtti, medium); signature (low): `undefined vfunc_5(TESModel * this, char * param_1)`
+    /// `TESModel::SetModel` at 0x1ead10 (semantic, high); signature (untiered): `undefined SetModel(TESModel * this, char * param_1)`
     pub slot_5: *const c_void,
     /// `TESModel::vfunc_6` at 0x1dfd80 (rtti, medium); signature (low): `undefined8 vfunc_6(void)`
     pub slot_6: *const c_void,
@@ -8181,15 +8181,15 @@ impl BGSImpactData_vtable {
 pub struct BGSImpactData_vtable_20 {
     /// `BGSImpactData::TESModel_vdtor` at 0x31df34 (slot_propagation, medium); signature (high): `undefined TESModel_vdtor(BGSImpactData * this)`
     pub slot_0: *const c_void,
-    /// `TESModel::vfunc_1` at 0x1eaaf0 (rtti, medium); signature (low): `undefined vfunc_1(TESModel * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    /// `TESModel::InitializeData` at 0x1eaaf0 (semantic, high); signature (untiered): `undefined InitializeData(TESModel * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_1: *const c_void,
-    /// `TESModel::vfunc_2` at 0x1eabc0 (rtti, medium); signature (low): `undefined vfunc_2(TESModel * this, undefined8 param_1, longlong param_2, undefined1 * param_3)`
+    /// `TESModel::ClearData` at 0x1eabc0 (semantic, high); signature (untiered): `undefined ClearData(TESModel * this, undefined8 param_1, longlong param_2, undefined1 * param_3)`
     pub slot_2: *const c_void,
-    /// `TESModel::vfunc_3` at 0x1eacb0 (rtti, medium); signature (low): `undefined vfunc_3(TESModel * this, undefined8 param_1)`
+    /// `TESModel::CopyFromTemplate` at 0x1eacb0 (semantic, high); signature (untiered): `undefined CopyFromTemplate(TESModel * this, undefined8 param_1)`
     pub slot_3: *const c_void,
-    /// `TESModel::vfunc_4` at 0x146780 (rtti, medium); signature (high): `undefined8 vfunc_4(TESModel * this)`
+    /// `TESModel::GetModel` at 0x146780 (semantic, high); signature (untiered): `undefined8 GetModel(TESModel * this)`
     pub slot_4: *const c_void,
-    /// `TESModel::vfunc_5` at 0x1ead10 (rtti, medium); signature (low): `undefined vfunc_5(TESModel * this, char * param_1)`
+    /// `TESModel::SetModel` at 0x1ead10 (semantic, high); signature (untiered): `undefined SetModel(TESModel * this, char * param_1)`
     pub slot_5: *const c_void,
     /// `TESModel::vfunc_6` at 0x1dfd80 (rtti, medium); signature (low): `undefined8 vfunc_6(void)`
     pub slot_6: *const c_void,
@@ -9408,15 +9408,15 @@ impl BGSMaterialObject_vtable {
 pub struct BGSMaterialObject_vtable_20 {
     /// `BGSMaterialObject::TESModel_vdtor` at 0x321c28 (slot_propagation, medium); signature (high): `undefined TESModel_vdtor(BGSMaterialObject * this)`
     pub slot_0: *const c_void,
-    /// `TESModel::vfunc_1` at 0x1eaaf0 (rtti, medium); signature (low): `undefined vfunc_1(TESModel * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    /// `TESModel::InitializeData` at 0x1eaaf0 (semantic, high); signature (untiered): `undefined InitializeData(TESModel * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_1: *const c_void,
-    /// `TESModel::vfunc_2` at 0x1eabc0 (rtti, medium); signature (low): `undefined vfunc_2(TESModel * this, undefined8 param_1, longlong param_2, undefined1 * param_3)`
+    /// `TESModel::ClearData` at 0x1eabc0 (semantic, high); signature (untiered): `undefined ClearData(TESModel * this, undefined8 param_1, longlong param_2, undefined1 * param_3)`
     pub slot_2: *const c_void,
-    /// `TESModel::vfunc_3` at 0x1eacb0 (rtti, medium); signature (low): `undefined vfunc_3(TESModel * this, undefined8 param_1)`
+    /// `TESModel::CopyFromTemplate` at 0x1eacb0 (semantic, high); signature (untiered): `undefined CopyFromTemplate(TESModel * this, undefined8 param_1)`
     pub slot_3: *const c_void,
-    /// `TESModel::vfunc_4` at 0x146780 (rtti, medium); signature (high): `undefined8 vfunc_4(TESModel * this)`
+    /// `TESModel::GetModel` at 0x146780 (semantic, high); signature (untiered): `undefined8 GetModel(TESModel * this)`
     pub slot_4: *const c_void,
-    /// `TESModel::vfunc_5` at 0x1ead10 (rtti, medium); signature (low): `undefined vfunc_5(TESModel * this, char * param_1)`
+    /// `TESModel::SetModel` at 0x1ead10 (semantic, high); signature (untiered): `undefined SetModel(TESModel * this, char * param_1)`
     pub slot_5: *const c_void,
     /// `TESModel::vfunc_6` at 0x1dfd80 (rtti, medium); signature (low): `undefined8 vfunc_6(void)`
     pub slot_6: *const c_void,
@@ -10074,7 +10074,7 @@ pub struct BGSMovableStatic_vtable_20 {
     pub slot_62: *const c_void,
     /// `TESObject::vfunc_63` at 0x146a40 (rtti, medium); signature (low): `undefined vfunc_63(void)`
     pub slot_63: *const c_void,
-    /// `TESBoundObject::vfunc_64` at 0x277e20 (rtti, medium); signature (low): `TESBoundObject_vtbl * vfunc_64(TESBoundObject * this, TESBoundObject_vtbl * param_1, byte param_2)`
+    /// `TESBoundObject::Clone3D` at 0x277e20 (semantic, high); signature (untiered): `TESBoundObject_vtbl * Clone3D(TESBoundObject * this, TESBoundObject_vtbl * param_1, byte param_2)`
     pub slot_64: *const c_void,
     /// `TESObject::vfunc_65` at 0x275b60 (rtti, medium); signature (low): `undefined vfunc_65(TESObject * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_65: *const c_void,
@@ -10128,9 +10128,9 @@ pub struct BGSMovableStatic_vtable_50 {
     pub slot_2: *const c_void,
     /// `TESModelTextureSwap::vfunc_3` at 0x1ed240 (rtti, medium); signature (low): `undefined vfunc_3(TESModelTextureSwap * this, undefined8 param_1)`
     pub slot_3: *const c_void,
-    /// `TESModel::vfunc_4` at 0x146780 (rtti, medium); signature (high): `undefined8 vfunc_4(TESModel * this)`
+    /// `TESModel::GetModel` at 0x146780 (semantic, high); signature (untiered): `undefined8 GetModel(TESModel * this)`
     pub slot_4: *const c_void,
-    /// `TESModel::vfunc_5` at 0x1ead10 (rtti, medium); signature (low): `undefined vfunc_5(TESModel * this, char * param_1)`
+    /// `TESModel::SetModel` at 0x1ead10 (semantic, high); signature (untiered): `undefined SetModel(TESModel * this, char * param_1)`
     pub slot_5: *const c_void,
     /// `TESModelTextureSwap::vfunc_6` at 0x146650 (rtti, medium); signature (high): `TESModelTextureSwap * vfunc_6(TESModelTextureSwap * this)`
     pub slot_6: *const c_void,
@@ -11180,7 +11180,7 @@ pub struct BGSNote_vtable {
     pub slot_62: *const c_void,
     /// `TESObject::vfunc_63` at 0x146a40 (rtti, medium); signature (low): `undefined vfunc_63(void)`
     pub slot_63: *const c_void,
-    /// `TESBoundObject::vfunc_64` at 0x277e20 (rtti, medium); signature (low): `TESBoundObject_vtbl * vfunc_64(TESBoundObject * this, TESBoundObject_vtbl * param_1, byte param_2)`
+    /// `TESBoundObject::Clone3D` at 0x277e20 (semantic, high); signature (untiered): `TESBoundObject_vtbl * Clone3D(TESBoundObject * this, TESBoundObject_vtbl * param_1, byte param_2)`
     pub slot_64: *const c_void,
     /// `TESObject::vfunc_65` at 0x275b60 (rtti, medium); signature (low): `undefined vfunc_65(TESObject * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_65: *const c_void,
@@ -11228,15 +11228,15 @@ impl BGSNote_vtable {
 pub struct BGSNote_vtable_30 {
     /// `BGSNote::TESModel_vdtor` at 0x3953d4 (slot_propagation, medium); signature (high): `undefined TESModel_vdtor(BGSNote * this)`
     pub slot_0: *const c_void,
-    /// `TESModel::vfunc_1` at 0x1eaaf0 (rtti, medium); signature (low): `undefined vfunc_1(TESModel * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    /// `TESModel::InitializeData` at 0x1eaaf0 (semantic, high); signature (untiered): `undefined InitializeData(TESModel * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_1: *const c_void,
-    /// `TESModel::vfunc_2` at 0x1eabc0 (rtti, medium); signature (low): `undefined vfunc_2(TESModel * this, undefined8 param_1, longlong param_2, undefined1 * param_3)`
+    /// `TESModel::ClearData` at 0x1eabc0 (semantic, high); signature (untiered): `undefined ClearData(TESModel * this, undefined8 param_1, longlong param_2, undefined1 * param_3)`
     pub slot_2: *const c_void,
-    /// `TESModel::vfunc_3` at 0x1eacb0 (rtti, medium); signature (low): `undefined vfunc_3(TESModel * this, undefined8 param_1)`
+    /// `TESModel::CopyFromTemplate` at 0x1eacb0 (semantic, high); signature (untiered): `undefined CopyFromTemplate(TESModel * this, undefined8 param_1)`
     pub slot_3: *const c_void,
-    /// `TESModel::vfunc_4` at 0x146780 (rtti, medium); signature (high): `undefined8 vfunc_4(TESModel * this)`
+    /// `TESModel::GetModel` at 0x146780 (semantic, high); signature (untiered): `undefined8 GetModel(TESModel * this)`
     pub slot_4: *const c_void,
-    /// `TESModel::vfunc_5` at 0x1ead10 (rtti, medium); signature (low): `undefined vfunc_5(TESModel * this, char * param_1)`
+    /// `TESModel::SetModel` at 0x1ead10 (semantic, high); signature (untiered): `undefined SetModel(TESModel * this, char * param_1)`
     pub slot_5: *const c_void,
     /// `TESModel::vfunc_6` at 0x1dfd80 (rtti, medium); signature (low): `undefined8 vfunc_6(void)`
     pub slot_6: *const c_void,

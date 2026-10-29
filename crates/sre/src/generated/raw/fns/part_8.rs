@@ -3,6 +3,58 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `CompareFunctionSignatures` at 0x14e1900 (decompiler, medium); signature (untiered): `ulonglong CompareFunctionSignatures(undefined8 param_1, longlong * param_2, ulonglong * param_3, undefined8 param_4)`
+pub const CompareFunctionSignatures: u64 = 105391;
+/// `CompareHashKeysWithWildcard` at 0xeba9e0 (decompiler, medium); signature (medium): `undefined8 CompareHashKeysWithWildcard(byte * param_1, byte * param_2)`
+pub const CompareHashKeysWithWildcard: u64 = 69340;
+/// `CompareImagesMeanSquaredError` at 0x10291b0 (decompiler, medium); signature (untiered): `ulonglong CompareImagesMeanSquaredError(ulonglong * param_1, ulonglong * param_2, ulonglong * param_3, undefined8 param_4)`
+pub const CompareImagesMeanSquaredError: u64 = 77635;
+/// `CompareIndirectString` at 0xaad980 (decompiler, high); signature (untiered): `undefined CompareIndirectString(undefined8 * param_1, longlong param_2)`
+pub const CompareIndirectString: u64 = 57470;
+/// `CompareItemsByScoreThenFormID` at 0x82a100 (decompiler, medium); signature (medium): `undefined8 CompareItemsByScoreThenFormID(longlong * param_1, longlong * param_2)`
+pub const CompareItemsByScoreThenFormID: u64 = 44909;
+/// `CompareJsonValues` at 0xa818e0 (decompiler, high); signature (high): `ulonglong CompareJsonValues(double * param_1, double * param_2)`
+pub const CompareJsonValues: u64 = 443089;
+/// `CompareMappedWideStrings` at 0xe46c70 (decompiler, medium); signature (medium): `int CompareMappedWideStrings(longlong param_1, longlong param_2, ushort * param_3, longlong param_4)`
+pub const CompareMappedWideStrings: u64 = 524176;
+/// `CompareMappingKey` at 0xcf1770 (semantic, high); signature (untiered): `ulonglong CompareMappingKey(longlong param_1, longlong param_2)`; semantic: orders by key low word, then high word (high); signature `int (const UserEventMapping* a, const UserEventMapping* b)`
+pub const CompareMappingKey: u64 = 68573;
+/// `CompareMappingKey` as a function pointer type (high).
+pub type CompareMappingKey_fn = unsafe extern "C" fn(a: *const crate::UserEventMapping, b: *const crate::UserEventMapping) -> i32;
+/// `CompareMenuDepth` at 0x116bed0 (semantic, high); signature (untiered): `undefined4 CompareMenuDepth(longlong * param_1, longlong * param_2)`; semantic: 1 / 0 / -1 by the depth byte +0x18 (high); signature `i32 (IMenu** a, IMenu** b)`
+pub const CompareMenuDepth: u64 = 82098;
+/// `CompareMenuDepth` as a function pointer type (high).
+pub type CompareMenuDepth_fn = unsafe extern "C" fn(a: *mut *mut crate::IMenu, b: *mut *mut crate::IMenu) -> i32;
+/// `CompareMessageBoxDepth` at 0x963ca0 (semantic, medium); signature (untiered): `undefined8 CompareMessageBoxDepth(longlong param_1, longlong param_2)`; semantic: queue order by +0x48 (medium); signature `i32 (const MessageBoxData* a, const MessageBoxData* b)`
+pub const CompareMessageBoxDepth: u64 = 52286;
+/// `CompareNamesAt20CaseInsensitive` at 0x1c50d0 (decompiler, medium); signature (medium): `int CompareNamesAt20CaseInsensitive(longlong param_1, longlong param_2)`
+pub const CompareNamesAt20CaseInsensitive: u64 = 13791;
+/// `ComparePackedShapeRecords` at 0xe21b80 (decompiler, medium); signature (untiered): `undefined ComparePackedShapeRecords(longlong * param_1, longlong * param_2)`
+pub const ComparePackedShapeRecords: u64 = 88123;
+/// `ComparePngSignature` at 0x1196a80 (decompiler, high); signature (untiered): `undefined ComparePngSignature(void * param_1, int param_2)`
+pub const ComparePngSignature: u64 = 89419;
+/// `ComparePointsEqual` at 0xdad610 (decompiler, medium); signature (untiered): `undefined ComparePointsEqual(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const ComparePointsEqual: u64 = 86001;
+/// `CompareQwordArraysEqual` at 0x18d600 (decompiler, medium); signature (medium): `char CompareQwordArraysEqual(longlong * param_1, longlong * param_2)`
+pub const CompareQwordArraysEqual: u64 = 12855;
+/// `CompareResolvedField40FormIDs` at 0x3efda0 (decompiler, medium); signature (medium): `bool CompareResolvedField40FormIDs(longlong param_1, longlong param_2)`
+pub const CompareResolvedField40FormIDs: u64 = 25551;
+/// `CompareScriptVariables` at 0x14d5f10 (decompiler, medium); signature (untiered): `int CompareScriptVariables(undefined8 param_1, ulonglong * param_2, uint * param_3)`
+pub const CompareScriptVariables: u64 = 105220;
+/// `CompareSmallArrays16Equal` at 0x18d700 (decompiler, medium); signature (medium): `ulonglong CompareSmallArrays16Equal(int * param_1, int * param_2)`
+pub const CompareSmallArrays16Equal: u64 = 12857;
+/// `CompareSmallArrays16Equal_2` at 0x18d7c0 (decompiler, medium); signature (medium): `ulonglong CompareSmallArrays16Equal_2(int * param_1, int * param_2)`
+pub const CompareSmallArrays16Equal_2: u64 = 12858;
+/// `CompareStrings` at 0xaa58f0 (decompiler, high); signature (high): `uint CompareStrings(byte * param_1, longlong param_2)`
+pub const CompareStrings: u64 = 57118;
+/// `CompareStringsCaseInsensitiveN` at 0xaa59b0 (decompiler, medium); signature (medium): `undefined8 CompareStringsCaseInsensitiveN(longlong param_1, byte * param_2, int param_3)`
+pub const CompareStringsCaseInsensitiveN: u64 = 57121;
+/// `CompareStringsNoCase` at 0xaa5930 (decompiler, medium); signature (medium): `undefined8 CompareStringsNoCase(longlong param_1, byte * param_2)`
+pub const CompareStringsNoCase: u64 = 57120;
+/// `CompareStringsNoCaseN` at 0xcfe300 (decompiler, medium); signature (medium): `int CompareStringsNoCaseN(char * param_1, char * param_2, longlong param_3)`
+pub const CompareStringsNoCaseN: u64 = 82611;
+/// `CompareValuesByFields` at 0xd6b8e0 (decompiler, medium); signature (untiered): `int CompareValuesByFields(longlong param_1, byte * param_2, byte * param_3)`
+pub const CompareValuesByFields: u64 = 84385;
 /// `CompareValuesWithSortFlags` at 0xd6b410 (decompiler, medium); signature (medium): `uint CompareValuesWithSortFlags(undefined8 * param_1, byte * param_2, byte * param_3)`
 pub const CompareValuesWithSortFlags: u64 = 84384;
 /// `CompareVariantMapsEqual` at 0x1498610 (decompiler, medium); signature (medium): `bool CompareVariantMapsEqual(longlong param_1, longlong param_2)`
@@ -511,6 +563,8 @@ pub const ComputeFollowerSpacingOffset: u64 = 26378;
 pub const ComputeFollowerTeleportPosition: u64 = 37438;
 /// `ComputeFormHealthDamage` at 0x86b020 (decompiler, medium); signature (untiered): `float ComputeFormHealthDamage(longlong * param_1, longlong * param_2, longlong * param_3)`
 pub const ComputeFormHealthDamage: u64 = 47334;
+/// `ComputeFractionOfScaledExtentBelowLevel` at 0x685c30 (semantic, medium); signature (low): `undefined8 ComputeFractionOfScaledExtentBelowLevel(longlong * param_1, float param_2, longlong param_3)`; semantic: the fraction of the actor's scaled height under the water surface (0..1); Actor::Update's swim input (medium); signature `float (Actor* this, float z, TESWaterForm* water)`
+pub const ComputeFractionOfScaledExtentBelowLevel: u64 = 37448;
 /// `ComputeFrustumPlanes` at 0xef7710 (semantic, high); signature (medium): `undefined ComputeFrustumPlanes(float * param_1, float * param_2, float * param_3)`; semantic: six inward planes in the order near, far, left, right, top, bottom (perspective and orthographic branches) (high); signature `void (NiPlane planes[6], const NiFrustum* frustum, const NiTransform* world)`
 pub const ComputeFrustumPlanes: u64 = 70808;
 /// `ComputeFrustumPlanes` as a function pointer type (high).
@@ -7735,47 +7789,3 @@ pub const CreateWeaponEnchantmentControllerIfNeeded: u64 = 34154;
 pub const CreateWeaponObjectFromNode: u64 = 524262;
 /// `CreateWorldWithPhysicsSystems` at 0xba1dc0 (decompiler, medium); signature (untiered): `hkpWorld * CreateWorldWithPhysicsSystems(longlong param_1, char param_2)`
 pub const CreateWorldWithPhysicsSystems: u64 = 62677;
-/// `CreateZeroedTexture2D` at 0x11b28f0 (decompiler, medium); signature (untiered): `longlong * CreateZeroedTexture2D(undefined8 param_1, int param_2, uint param_3, uint param_4)`
-pub const CreateZeroedTexture2D: u64 = 90274;
-/// `CreditsMenu::GFxFunctionHandler_vdtor` at 0x929d34 (slot_propagation, medium); signature (high): `undefined GFxFunctionHandler_vdtor(CreditsMenu * this)`
-pub const CreditsMenu__GFxFunctionHandler_vdtor: u64 = 51492;
-/// `CreditsMenu::GFxFunctionHandler_vfunc_1` at 0x929620 (rtti, high); signature (low): `undefined GFxFunctionHandler_vfunc_1(CreditsMenu * this, undefined8 * param_1, undefined8 param_2, undefined8 param_3)`
-pub const CreditsMenu__GFxFunctionHandler_vfunc_1: u64 = 51489;
-/// `CreditsMenu::GFxFunctionHandler_vfunc_1_sub0` at 0x929910 (callgraph, medium); signature (untiered): `undefined GFxFunctionHandler_vfunc_1_sub0(undefined8 param_1, undefined8 * param_2, longlong * param_3)`
-pub const CreditsMenu__GFxFunctionHandler_vfunc_1_sub0: u64 = 51490;
-/// `CreditsMenu::GFxFunctionHandler_vfunc_1_sub1` at 0x929a80 (callgraph, medium); signature (untiered): `undefined GFxFunctionHandler_vfunc_1_sub1(undefined8 param_1, undefined8 * param_2, undefined8 * param_3, longlong * param_4)`
-pub const CreditsMenu__GFxFunctionHandler_vfunc_1_sub1: u64 = 524001;
-/// `CreditsMenu::ctor` at 0x929240 (layout_inference, high); signature (high): `CreditsMenu * ctor(CreditsMenu * this)`
-pub const CreditsMenu__ctor: u64 = 51485;
-/// `CreditsMenu::dtor` at 0x9292e0 (layout_inference, high); signature (high): `undefined dtor(CreditsMenu * this)`
-pub const CreditsMenu__dtor: u64 = 51486;
-/// `CreditsMenu::vdtor` at 0x929d40 (slot_propagation, medium); signature (low): `CreditsMenu * vdtor(CreditsMenu * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-pub const CreditsMenu__vdtor: u64 = 51493;
-/// `CreditsMenu::vfunc_4` at 0x9293e0 (rtti, high); signature (low): `undefined8 vfunc_4(CreditsMenu * this, longlong param_1)`
-pub const CreditsMenu__vfunc_4: u64 = 51487;
-/// `CriticalHitEvent::GetEventSource` at 0x6d1750 (semantic, medium); signature (untiered): `undefined8 * GetEventSource(void)`; semantic: the one source of CriticalHitEvent::Event events (medium); signature `BSTEventSource<CriticalHitEvent::Event>* ()`
-pub const CriticalHitEvent__GetEventSource: u64 = 38671;
-/// `CriticalHitEvent::RegisterSink` at 0x6c7bf0 (semantic, medium); signature (untiered): `undefined RegisterSink(undefined8 param_1)`; semantic: registers a CriticalHitEvent::Event sink with the singleton source (medium); signature `void (BSTEventSink<CriticalHitEvent::Event>* sink)`
-pub const CriticalHitEvent__RegisterSink: u64 = 38531;
-/// `CriticalHitEvent::UnregisterSink` at 0x6c7c20 (semantic, medium); signature (untiered): `undefined UnregisterSink(undefined8 param_1)`; semantic: unregisters a CriticalHitEvent::Event sink with the singleton source (medium); signature `void (BSTEventSink<CriticalHitEvent::Event>* sink)`
-pub const CriticalHitEvent__UnregisterSink: u64 = 38532;
-/// `CrosshairPickData::Pick` at 0x409fd0 (runtime, high); signature (untiered): `undefined Pick(longlong param_1, longlong * param_2, float * param_3, float * param_4)`; semantic: the crosshair pick cast: clears the target handles (+4, +8, +0xc), +0x20 and hitPoint (+0x10); length = fFavorRequestPickDistance when a favor request is pending, else max(fActivatePickLength, player +0xae4); casts the pick phantom (+0x28) from origin * Havok scale along direction under the world's read lock (Str_TtworldLinCast) and resolves the target (high); signature `void (CrosshairPickData* this, bhkWorld* world, const NiPoint3* origin, const NiPoint3* direction)`
-pub const CrosshairPickData__Pick: u64 = 26127;
-/// `CrosshairPickData::Pick` as a function pointer type (high).
-pub type CrosshairPickData__Pick_fn = unsafe extern "C" fn(this: *mut crate::CrosshairPickData, world: *mut crate::bhkWorld, origin: *const crate::NiPoint3, direction: *const crate::NiPoint3);
-/// `CrosshairPickData::Reset` at 0x40b310 (semantic, high); signature (untiered): `undefined Reset(longlong param_1)`; semantic: hit object +0x20 = null, handles +4/+8/+0xc = invalid, hit point +0x10..+0x18 = the zero NiPoint3 (high); signature `void (CrosshairPickData* this)`
-pub const CrosshairPickData__Reset: u64 = 26131;
-/// `CrosshairPickData::Reset` as a function pointer type (high).
-pub type CrosshairPickData__Reset_fn = unsafe extern "C" fn(this: *mut crate::CrosshairPickData);
-/// `CrosshairPickData::ctor` at 0x409c30 (semantic, high); signature (untiered): `longlong ctor(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`; semantic: ID_401585 (g_CrosshairPickData_ptr 0x31e0b70) = this; target handles +4/+8 invalid, +0xc = 0, hitPoint +0x10 = zero, +0x20/+0x28/+0x30/+0x34 = 0; builds a bhkSphereShape of radius fActivatePickRadius * Havok scale (slot 46) and a bhkSimpleShapePhantom (layer 0x2c) stored refcounted at +0x28; returns this (high); signature `CrosshairPickData* (CrosshairPickData* this)`
-pub const CrosshairPickData__ctor: u64 = 26125;
-/// `CrosshairPickData::ctor` as a function pointer type (high).
-pub type CrosshairPickData__ctor_fn = unsafe extern "C" fn(this: *mut crate::CrosshairPickData) -> *mut crate::CrosshairPickData;
-/// `CrosshairPickData::dtor` at 0x409f20 (semantic, high); signature (untiered): `undefined dtor(longlong param_1)`; semantic: releases the phantom (+0x28, refcount at +8, vtable+8 on zero) and nulls ID_401585 (high); signature `void (CrosshairPickData* this)`
-pub const CrosshairPickData__dtor: u64 = 26126;
-/// `CrosshairPickData::dtor` as a function pointer type (high).
-pub type CrosshairPickData__dtor_fn = unsafe extern "C" fn(this: *mut crate::CrosshairPickData);
-/// `CstringArrayImplementation::dtor` at 0xc5d850 (layout_inference, high); signature (high): `undefined dtor(CstringArrayImplementation * this)`
-pub const CstringArrayImplementation__dtor: u64 = 65905;
-/// `CstringArrayImplementation::vdtor` at 0xc5e060 (slot_propagation, medium); signature (low): `CstringArrayImplementation * vdtor(CstringArrayImplementation * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-pub const CstringArrayImplementation__vdtor: u64 = 65916;

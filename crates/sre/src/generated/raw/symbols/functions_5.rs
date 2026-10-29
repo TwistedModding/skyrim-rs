@@ -4,6 +4,14 @@
 use crate::raw::*;
 
 pub(super) const ROWS: &[Function] = &[
+    Function { rva: 0x7e11c0, id: 43779, confidence: Confidence::Medium, name: "BSTEventSource<BeamProjectileImpactEvent>::Notify" },
+    Function { rva: 0x7e1630, id: 43784, confidence: Confidence::High, name: "ConeProjectile::ctor" },
+    Function { rva: 0x7e16e0, id: 43785, confidence: Confidence::High, name: "ConeProjectile::ctor" },
+    Function { rva: 0x7e17b0, id: 43786, confidence: Confidence::High, name: "ConeProjectile::dtor" },
+    Function { rva: 0x7e1880, id: 43787, confidence: Confidence::High, name: "ConeProjectile::vfunc_194" },
+    Function { rva: 0x7e1890, id: 43788, confidence: Confidence::High, name: "ConeProjectile::vfunc_169" },
+    Function { rva: 0x7e18f0, id: 43789, confidence: Confidence::High, name: "ConeProjectile::vfunc_171" },
+    Function { rva: 0x7e1b60, id: 43790, confidence: Confidence::High, name: "ConeProjectile::vfunc_172" },
     Function { rva: 0x7e1c40, id: 43794, confidence: Confidence::Medium, name: "ConeProjectile::SaveGame" },
     Function { rva: 0x7e1d00, id: 43795, confidence: Confidence::Medium, name: "ConeProjectile::LoadGame" },
     Function { rva: 0x7e1da0, id: 43796, confidence: Confidence::High, name: "ConeProjectile::vfunc_16" },
@@ -6430,12 +6438,4 @@ pub(super) const ROWS: &[Function] = &[
     Function { rva: 0x91b860, id: 51246, confidence: Confidence::High, name: "FreeArrayBufferAndClearCount_22" },
     Function { rva: 0x91b8c0, id: 51247, confidence: Confidence::Medium, name: "FreeArrayBufferAndClearSize_12" },
     Function { rva: 0x91b920, id: 51248, confidence: Confidence::Medium, name: "DestroyOwnedObjectArrayStride48" },
-    Function { rva: 0x91b9d0, id: 51249, confidence: Confidence::Medium, name: "ReleaseRefCountedPtrArray_2" },
-    Function { rva: 0x91ba70, id: 51250, confidence: Confidence::Medium, name: "ReleaseRefCountedPtrArray" },
-    Function { rva: 0x91bb10, id: 51251, confidence: Confidence::Medium, name: "DestroyOwnedObjectArrayStride16" },
-    Function { rva: 0x91bbc0, id: 51252, confidence: Confidence::Medium, name: "CraftingSubMenus::ConstructibleObjectMenu::ctor_sub0" },
-    Function { rva: 0x91bc20, id: 51253, confidence: Confidence::Medium, name: "ReleaseGFxValueArray" },
-    Function { rva: 0x91bcc0, id: 51254, confidence: Confidence::High, name: "BSTArrayBase::IAllocatorFunctor::dtor" },
-    Function { rva: 0x91bde0, id: 51255, confidence: Confidence::High, name: "ClearAndFreeHashMap16Thunk" },
-    Function { rva: 0x91bdf0, id: 51256, confidence: Confidence::Medium, name: "CraftingSubMenus::SmithingMenu::ctor_sub0" },
 ];
