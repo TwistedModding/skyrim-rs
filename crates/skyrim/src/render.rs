@@ -198,7 +198,10 @@ pub struct CascadeSettings {
     pub splits: u32,
 }
 
-fn setting_value<T>(setting: *mut c_void) -> *mut T {
+/// The value of a setting object (an `ini_setting_*` or `game_setting_*` address of `sre`), which
+/// sits at +8 of the object; `T` is the setting's type (`f32` for an `f` setting, `u32` for `i`).
+#[must_use]
+pub fn setting_value<T>(setting: *mut c_void) -> *mut T {
     setting.wrapping_byte_add(SETTING_VALUE).cast()
 }
 

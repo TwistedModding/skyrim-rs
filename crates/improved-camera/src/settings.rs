@@ -93,6 +93,74 @@ impl Field for Offset {
     }
 }
 
+/// IC's camera offsets (`ProfileCamera`), lower-case keys: `forward` is y, `up` z, `right` x.
+#[derive(Clone, Copy, Debug, Default, PartialEq)]
+pub struct CamOffset {
+    pub forward: f32,
+    pub up: f32,
+    pub right: f32,
+}
+
+impl CamOffset {
+    const fn new(forward: f32, up: f32, right: f32) -> Self {
+        Self { forward, up, right }
+    }
+
+    /// As a point: x right, y forward, z up.
+    #[must_use]
+    pub const fn point(self) -> [f32; 3] {
+        [self.right, self.forward, self.up]
+    }
+}
+
+impl Field for CamOffset {
+    fn read(store: &impl Store, key: &str, default: Self) -> Self {
+        let get = |name: &str, default: f32| store.get_f32(&format!("{key}.{name}")).unwrap_or(default);
+        Self { forward: get("forward", default.forward), up: get("up", default.up), right: get("right", default.right) }
+    }
+
+    fn write(&self, store: &impl Store, key: &str) {
+        store.set_f32(&format!("{key}.forward"), self.forward);
+        store.set_f32(&format!("{key}.up"), self.up);
+        store.set_f32(&format!("{key}.right"), self.right);
+    }
+}
+
+/// `ProfileStabilization::Camera`: how fake first person rides the animated head in one camera.
+#[allow(non_snake_case)]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub struct Stab {
+    pub bEnable: bool,
+    pub fHeadFollowStrength: f32,
+    pub fSmoothingSpeed: f32,
+    pub fSmoothingMaxOffset: f32,
+}
+
+impl Default for Stab {
+    fn default() -> Self {
+        Self { bEnable: true, fHeadFollowStrength: 0.35, fSmoothingSpeed: 14.0, fSmoothingMaxOffset: 6.0 }
+    }
+}
+
+impl Field for Stab {
+    fn read(store: &impl Store, key: &str, default: Self) -> Self {
+        let get = |name: &str, default: f32| store.get_f32(&format!("{key}.{name}")).unwrap_or(default);
+        Self {
+            bEnable: store.get_bool(&format!("{key}.bEnable")).unwrap_or(default.bEnable),
+            fHeadFollowStrength: get("fHeadFollowStrength", default.fHeadFollowStrength),
+            fSmoothingSpeed: get("fSmoothingSpeed", default.fSmoothingSpeed),
+            fSmoothingMaxOffset: get("fSmoothingMaxOffset", default.fSmoothingMaxOffset),
+        }
+    }
+
+    fn write(&self, store: &impl Store, key: &str) {
+        store.set_bool(&format!("{key}.bEnable"), self.bEnable);
+        store.set_f32(&format!("{key}.fHeadFollowStrength"), self.fHeadFollowStrength);
+        store.set_f32(&format!("{key}.fSmoothingSpeed"), self.fSmoothingSpeed);
+        store.set_f32(&format!("{key}.fSmoothingMaxOffset"), self.fSmoothingMaxOffset);
+    }
+}
+
 macro_rules! sections {
     ($($ty:ident = $prefix:literal { $($field:ident: $t:ty = $default:expr, }) => {
         $(
@@ -132,6 +200,7 @@ sections! {
         bEnableHeadVampireLord: bool = false,
         bEnableHeadWerewolf: bool = false,
         bEnableHeadSex: bool = false,
+        bEnableHeadSpectator: bool = false,
         bEnableFirstPersonArms: bool = true,
         bEnableFirstPersonArmsMovement: bool = false,
         bEnableThirdPersonTorch: bool = false,
@@ -162,6 +231,11 @@ sections! {
         fRight: f32 = 0.0,
         fDirectionalIntensity: f32 = 1.0,
         fDirectionalSpeed: f32 = 8.0,
+        fAnchorForward: f32 = 14.0,
+        fAnchorUp: f32 = 6.0,
+        bYawSmoothing: bool = true,
+        fYawSmoothingSpeed: f32 = 10.0,
+        fYawSmoothingMaxAngle: f32 = 90.0,
         Combat: Offset = Offset::default(),
     }
     BodyDirectional = "Body.Directional" {
@@ -295,6 +369,9 @@ sections! {
         fFOV: f32 = -30.0,
     }
     Advanced = "Advanced" {
+        bHeadbob: bool = false,
+        bHeadbobCombat: bool = false,
+        bCameraTransition: bool = true,
         fNearDistanceDefault: f32 = 15.0,
         fNearDistanceMax: f32 = 15.0,
         fNearDistanceMin: f32 = 4.0,
@@ -305,6 +382,69 @@ sections! {
         fNearDistanceCombatStartAngle: f32 = -15.0,
         fNearDistanceCombatEndAngle: f32 = -50.0,
         bNearFirstPersonPass: bool = false,
+    }
+    CameraFirstperson = "Camera.Firstperson" {
+        forward: f32 = 0.0,
+        up: f32 = 0.0,
+        right: f32 = 0.0,
+        Combat: CamOffset = CamOffset::default(),
+    }
+    CameraHorse = "Camera.Horse" {
+        forward: f32 = 0.0,
+        up: f32 = 0.0,
+        right: f32 = 0.0,
+        Combat: CamOffset = CamOffset::default(),
+    }
+    Camera = "Camera" {
+        Dragon: CamOffset = CamOffset::new(10.0, 0.0, 0.0),
+        VampireLord: CamOffset = CamOffset::default(),
+        Werewolf: CamOffset = CamOffset::new(-9.0, 0.0, 0.0),
+        Lich: CamOffset = CamOffset::new(9.0, 0.0, 0.0),
+        Sex: CamOffset = CamOffset::new(-12.0, -5.0, 0.0),
+        Spectator: CamOffset = CamOffset::new(5.0, 5.0, 0.0),
+    }
+    Stabilization = "Stabilization" {
+        Horse: Stab = Stab::default(),
+        Dragon: Stab = Stab::default(),
+        VampireLord: Stab = Stab::default(),
+        Werewolf: Stab = Stab::default(),
+        Lich: Stab = Stab::default(),
+        Sex: Stab = Stab::default(),
+        Furniture: Stab = Stab::default(),
+        Crafting: Stab = Stab::default(),
+        Gathering: Stab = Stab::default(),
+        Bleedout: Stab = Stab::default(),
+        Transition: Stab = Stab::default(),
+    }
+    FreeCamera = "FreeCamera" {
+        bEnable: bool = true,
+    }
+    Dialogue = "Dialogue" {
+        bEnable: bool = false,
+        bForceFirstPerson: bool = true,
+        bForceThirdPerson: bool = false,
+        bSmoothTransition: bool = true,
+        fDefaultWorldFOV: f32 = 55.0,
+    }
+    Vanity = "Vanity" {
+        bEnable: bool = false,
+        fIdleDelay: f32 = 120.0,
+        fFOV: f32 = 65.0,
+    }
+}
+
+impl CameraFirstperson {
+    /// The first-person offset, the combat one with the hands drawn.
+    #[must_use]
+    pub const fn offset(&self, hands_drawn: bool) -> CamOffset {
+        if hands_drawn { self.Combat } else { CamOffset::new(self.forward, self.up, self.right) }
+    }
+}
+
+impl CameraHorse {
+    #[must_use]
+    pub const fn offset(&self) -> CamOffset {
+        CamOffset::new(self.forward, self.up, self.right)
     }
 }
 
@@ -323,12 +463,26 @@ pub struct Profile {
     pub FOV: Fov,
     pub Zoom: EffectsZoom,
     pub Advanced: Advanced,
+    pub Firstperson: CameraFirstperson,
+    pub Horse: CameraHorse,
+    pub Camera: Camera,
+    pub Stabilization: Stabilization,
+    pub FreeCamera: FreeCamera,
+    pub Dialogue: Dialogue,
+    pub Vanity: Vanity,
 }
 
 impl Profile {
     #[must_use]
     pub fn read(store: &impl Store) -> Self {
         Self {
+            Firstperson: CameraFirstperson::read(store),
+            Horse: CameraHorse::read(store),
+            Camera: Camera::read(store),
+            Stabilization: Stabilization::read(store),
+            FreeCamera: FreeCamera::read(store),
+            Dialogue: Dialogue::read(store),
+            Vanity: Vanity::read(store),
             General: General::read(store),
             Hide: Hide::read(store),
             Body: Body::read(store),
@@ -355,6 +509,13 @@ impl Profile {
         self.FOV.write(store);
         self.Zoom.write(store);
         self.Advanced.write(store);
+        self.Firstperson.write(store);
+        self.Horse.write(store);
+        self.Camera.write(store);
+        self.Stabilization.write(store);
+        self.FreeCamera.write(store);
+        self.Dialogue.write(store);
+        self.Vanity.write(store);
     }
 }
 

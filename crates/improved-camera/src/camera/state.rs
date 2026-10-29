@@ -1,5 +1,30 @@
-//! `camera/CameraState.h`: the camera types IC tells apart. The first thirteen are the engine's
-//! player camera states by id; the rest are IC's own, derived from menus, the body's action and race.
+//! `camera/CameraState.h`: the camera types IC tells apart (the first thirteen are the engine's
+//! player camera states by id; the rest are IC's own, derived from menus, the body's action and
+//! race), the camera modes and the modifier a state's update fills.
+
+use crate::util::point::P3;
+
+/// `CameraMode`: how the presented camera is placed. `First` is the engine's first person, `Head`
+/// anchors it to the head node (head bob), `Third` is fake first person at the head.
+#[derive(Clone, Copy, Debug, Default, PartialEq, Eq)]
+pub enum CameraMode {
+    First,
+    Head,
+    Third,
+    #[default]
+    None,
+}
+
+/// `Modifier`: what the current state asks of the presented camera.
+#[derive(Clone, Copy, Debug, Default, PartialEq)]
+pub struct Modifier {
+    /// The FOV, 0 until a state sets one.
+    pub fov: f32,
+    /// The camera offset (x right, y forward, z up) the head anchor adds.
+    pub local_offset: P3,
+    /// Simulate first person in a third-person state (fake first person).
+    pub sim_first_person: bool,
+}
 
 #[allow(clippy::upper_case_acronyms)]
 #[repr(u32)]

@@ -30,8 +30,18 @@ framework::plugin! {
 static HOST: OnceLock<&'static Host> = OnceLock::new();
 /// IC's zoom key (`Effects.Zoom.iKey`, unbound by default).
 static ZOOM: OnceLock<Action> = OnceLock::new();
+/// IC's free camera keys (`FreeCamera.iKeyRollLeft`, `iKeyRollRight`, `iKeyReset`): Q, E and R.
+static FREE_CAMERA: OnceLock<[Action; 3]> = OnceLock::new();
+/// Left shift, the free camera's fixed wheel modifier in IC.
+const LEFT_SHIFT: u32 = 0x2A;
 
-fn log(line: &str) {
+/// The frame's input for the camera states: the game's mouse and the free camera's keys.
+pub(crate) fn frame_input() -> camera::states::Input {
+    let (Some(host), Some([left, right, reset])) = (HOST.get(), FREE_CAMERA.get()) else { return camera::states::Input::default() };
+    camera::states::Input { mouse: host.mouse(), roll_left: left.held(), roll_right: right.held(), reset: reset.fired(), modifier: host.key_held(LEFT_SHIFT) }
+}
+
+pub(crate) fn log(line: &str) {
     if let Some(host) = HOST.get()
         && let Ok(mut f) = skse::log::append(host.skse().runtime_version, "improved-camera")
     {
@@ -77,10 +87,13 @@ fn load(host: &'static Host) -> bool {
         _ => {}
     });
     let _ = ZOOM.set(host.action("zoom", "", Scope::Game));
+    let _ = FREE_CAMERA.set([host.action("free-camera-roll-left", "Q", Scope::Game), host.action("free-camera-roll-right", "E", Scope::Game), host.action("free-camera-reset", "R", Scope::Game)]);
     host.on_frame(|| {
         if ZOOM.get().is_some_and(Action::fired) {
             camera::manager::with(|m| m.zoom_active = !m.zoom_active);
         }
+        hook::cameras::on_frame();
+        camera::extended::apply_deferred();
     });
     host.add_tab("Improved Camera").section("Body", ui::body_menu::draw).section("FOV", ui::fov_menu::draw).section("Near plane", ui::near_menu::draw);
     hook::fixes::apply_body_visibility();
@@ -91,6 +104,7 @@ fn load(host: &'static Host) -> bool {
 /// Puts the body back as the engine keeps it: full scales, and the third-person root hidden in
 /// first person; and the engine's world FOV, FOV offset and near plane.
 fn unload() {
+    camera::manager::release();
     camera::manager::reset_fov();
     camera::manager::reset_near();
     let Some(player) = util::skyrim_util::player() else { return };
@@ -104,9 +118,9 @@ fn unload() {
 
 fn save_state() -> Vec<u8> {
     let body = body::manager::with(|m| *m);
-    let camera = camera::manager::with(|m| *m);
+    let camera = camera::manager::with(|m| m.clone());
     let world_fov = util::skyrim_util::camera().map_or(0.0, |c| c.worldFOV);
-    handoff::save(&body, camera, handoff::Written { world_fov, near: skyrim::render::near_distance() })
+    handoff::save(&body, &camera,handoff::Written { world_fov, near: skyrim::render::near_distance() })
 }
 
 /// Takes the old build's state, and the world FOV and near plane it had written over the ones

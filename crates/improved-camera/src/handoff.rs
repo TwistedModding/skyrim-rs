@@ -1,7 +1,9 @@
 //! The state a hot reload hands from one build to the next: the body manager (states, offsets,
-//! the full scales of the parts it shrinks and the frozen pose), the camera manager's types and
-//! FOV and near-plane state, and the engine values the old build had written. Little-endian fields
-//! behind a version byte; bytes of another version are ignored.
+//! the full scales of the parts it shrinks and the frozen pose), the camera manager's state type,
+//! modifier, mode, look and FOV and near-plane state, and the engine values the old build had
+//! written. The new build makes the state object again without its `OnEnter` (what a state keeps
+//! of its own starts over) and with no transition running. Little-endian fields behind a version
+//! byte; bytes of another version are ignored.
 
 use crate::body::manager::{DirectionType, Forced, Manager as Body};
 use crate::body::parts::Scales;
@@ -10,9 +12,13 @@ use crate::body::state::hands::{EquipmentType, HandsState, HandsType, Interactio
 use crate::body::state::movement::{MovementState, MovementType};
 use crate::body::state::race::{RaceState, RaceType};
 use crate::camera::manager::Manager as Camera;
-use crate::camera::state::CameraType;
+use crate::camera::state::{CameraMode, CameraType};
+use crate::camera::states::State;
+use crate::camera::util::look::LookState;
 
-const VERSION: u8 = 3;
+const VERSION: u8 = 4;
+
+const MODES: [CameraMode; 4] = [CameraMode::First, CameraMode::Head, CameraMode::Third, CameraMode::None];
 
 /// What the old build had written into the engine, which its `unload` put back.
 #[derive(Clone, Copy, Debug, PartialEq)]
@@ -60,7 +66,7 @@ impl Reader<'_> {
 }
 
 #[must_use]
-pub fn save(body: &Body, camera: Camera, written: Written) -> Vec<u8> {
+pub fn save(body: &Body, camera: &Camera, written: Written) -> Vec<u8> {
     let mut w = Writer(vec![VERSION]);
     w.u32(body.race.race as u32);
     w.v3(body.race.offset);
@@ -89,13 +95,35 @@ pub fn save(body: &Body, camera: Camera, written: Written) -> Vec<u8> {
     w.v3(body.directional_offset);
     w.v3(body.target_directional_offset);
     w.f32(body.key_release_timer);
-    w.u32(camera.camera as u32);
-    w.u32(camera.previous as u32);
-    for v in [camera.fov, camera.external_fov, camera.resolve_fov, camera.pending_fov_reset, camera.zoom_modifier, camera.dialogue_fov, camera.near, written.world_fov, written.near] {
+    let c = &camera.current;
+    w.u32(camera.state.kind() as u32);
+    w.u32(camera.previous_camera as u32);
+    w.u32(MODES.iter().zip(0u32..).find(|(m, _)| **m == c.mode).map_or(3, |(_, i)| i));
+    w.v3(c.modifier.local_offset);
+    for v in [c.modifier.fov, camera.look.state.yaw, camera.look.state.pitch, camera.external_fov, camera.resolve_fov, camera.pending_fov_reset, camera.zoom_modifier, camera.near, written.world_fov, written.near] {
         w.f32(v);
     }
-    w.u32(u32::from(camera.defer_fov) | u32::from(camera.zoom_active) << 1);
+    w.u32(u32::from(camera.defer_fov) | u32::from(camera.zoom_active) << 1 | u32::from(c.modifier.sim_first_person) << 2 | u32::from(c.first_person) << 3);
     w.0
+}
+
+/// The camera manager the new build continues from.
+fn camera(kind: CameraType, previous: CameraType, mode: CameraMode, offset: [f32; 3], f: [f32; 8], flags: u32) -> Camera {
+    let (state, look_mode) = State::new(kind);
+    let mut camera = Camera::default();
+    (camera.state, camera.previous_camera, camera.defer_fov, camera.zoom_active) = (state, previous, flags & 1 != 0, flags & 2 != 0);
+    (camera.external_fov, camera.resolve_fov, camera.pending_fov_reset, camera.zoom_modifier, camera.near) = (f[3], f[4], f[5], f[6], f[7]);
+    camera.look.mode = look_mode;
+    camera.look.state = LookState { yaw: f[1], pitch: f[2] };
+    let c = &mut camera.current;
+    c.camera = kind;
+    c.mode = mode;
+    c.first_person = flags & 8 != 0;
+    c.modifier.fov = f[0];
+    c.modifier.local_offset = offset;
+    c.modifier.sim_first_person = flags & 4 != 0;
+    camera.present = camera.current;
+    camera
 }
 
 #[must_use]
@@ -129,9 +157,12 @@ pub fn restore(bytes: &[u8]) -> Option<(Body, Camera, Written)> {
     body.target_directional_offset = r.v3()?;
     body.key_release_timer = r.f32()?;
     let (kind, previous) = (CameraType::from_u32(r.u32()?), CameraType::from_u32(r.u32()?));
-    let [fov, external_fov, resolve_fov, pending_fov_reset, zoom_modifier, dialogue_fov, near, world_fov, written_near] = [r.f32()?, r.f32()?, r.f32()?, r.f32()?, r.f32()?, r.f32()?, r.f32()?, r.f32()?, r.f32()?];
+    let mode = *MODES.get(r.u32()? as usize)?;
+    let offset = r.v3()?;
+    let f = [r.f32()?, r.f32()?, r.f32()?, r.f32()?, r.f32()?, r.f32()?, r.f32()?, r.f32()?];
+    let (world_fov, written_near) = (r.f32()?, r.f32()?);
     let flags = r.u32()?;
-    let camera = Camera { camera: kind, previous, fov, defer_fov: flags & 1 != 0, external_fov, resolve_fov, pending_fov_reset, zoom_active: flags & 2 != 0, zoom_modifier, dialogue_fov, near };
+    let camera = camera(kind, previous, mode, offset, f, flags);
     r.0.is_empty().then_some((body, camera, Written { world_fov, near: written_near }))
 }
 
@@ -143,7 +174,9 @@ mod tests {
     use crate::body::state::hands::{EquipmentType, InteractionType};
     use crate::body::state::race::RaceType;
     use crate::camera::manager::Manager as Camera;
-    use crate::camera::state::CameraType;
+    use crate::camera::state::{CameraMode, CameraType, Modifier};
+    use crate::camera::states::State;
+    use crate::camera::util::look::LookMode;
     use crate::settings::BodyAction;
 
     #[test]
@@ -159,14 +192,25 @@ mod tests {
         body.interacting = 104;
         body.interaction = InteractionType::PickPocket;
         body.direction = DirectionType::BackLeft;
-        let camera = Camera { camera: CameraType::FirstPerson, previous: CameraType::ThirdPerson, fov: 90.0, defer_fov: true, external_fov: 70.0, resolve_fov: 84.5, pending_fov_reset: 65.0, zoom_active: true, zoom_modifier: -12.5, dialogue_fov: 65.0, near: 6.25 };
+        let mut camera = Camera::default();
+        (camera.state, camera.previous_camera, camera.defer_fov, camera.zoom_active) = (State::new(CameraType::Horse).0, CameraType::ThirdPerson, true, true);
+        (camera.external_fov, camera.resolve_fov, camera.pending_fov_reset, camera.zoom_modifier, camera.near) = (70.0, 84.5, 65.0, -12.5, 6.25);
+        camera.current.modifier = Modifier { fov: 90.0, local_offset: [1.0, 2.0, 3.0], sim_first_person: true };
+        camera.current.mode = CameraMode::Third;
+        camera.look.state.pitch = 0.3;
         let written = Written { world_fov: 84.5, near: 7.0 };
-        assert_eq!(restore(&save(&body, camera, written)), Some((body, camera, written)));
+        let (b, c, w) = restore(&save(&body, &camera, written)).unwrap();
+        assert_eq!((b, w), (body, written));
+        assert_eq!(c.state.kind(), CameraType::Horse);
+        assert_eq!(c.look.mode, LookMode::ThirdPerson);
+        assert_eq!((c.current.modifier, c.current.mode, c.present.modifier), (camera.current.modifier, CameraMode::Third, camera.current.modifier));
+        assert_eq!((c.previous_camera, c.defer_fov, c.zoom_active, c.near.to_bits(), c.look.state.pitch.to_bits()), (CameraType::ThirdPerson, true, true, 6.25f32.to_bits(), 0.3f32.to_bits()));
+        assert_eq!((c.external_fov, c.resolve_fov, c.pending_fov_reset, c.zoom_modifier), (70.0, 84.5, 65.0, -12.5));
     }
 
     #[test]
     fn other_versions_and_short_bytes_are_ignored() {
-        let bytes = save(&Body::default(), Camera::default(), Written { world_fov: 80.0, near: 15.0 });
+        let bytes = save(&Body::default(), &Camera::default(), Written { world_fov: 80.0, near: 15.0 });
         assert!(restore(&bytes[..bytes.len() - 1]).is_none());
         let mut other = bytes;
         other[0] = 0;
