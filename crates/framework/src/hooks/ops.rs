@@ -80,6 +80,7 @@ ops! {
     TESObjectREFR__GetContainer / TESObjectREFR__GetContainer_fn = "TESObjectREFR::GetContainer",
     TESObjectREFR__GetInventoryChanges / TESObjectREFR__GetInventoryChanges_fn = "TESObjectREFR::GetInventoryChanges",
     TESObjectREFR__GetHandle / TESObjectREFR__GetHandle_fn = "TESObjectREFR::GetHandle",
+    PlayerCharacter__SetFirstPerson / PlayerCharacter__SetFirstPerson_fn = "PlayerCharacter::SetFirstPerson",
 }
 
 /// How many raw addresses, call sites and vtable slots a process can hook together. A slot stays
