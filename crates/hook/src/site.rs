@@ -161,13 +161,38 @@ unsafe fn write_rel32(site: usize, opcode: u8, target: usize) -> Result<usize, E
         tramp.alloc(site, &thunk)?
     };
     let rel = rel32(next, reachable).ok_or_else(|| io::Error::other("trampoline page out of rel32 reach"))?;
+    unsafe { writable(site + 1, 4, || ((site + 1) as *mut i32).write_unaligned(rel)) }?;
+    Ok(previous)
+}
+
+/// Runs `write` with `len` bytes at `address` writable, then restores the protection and flushes the instruction cache.
+unsafe fn writable(address: usize, len: usize, write: impl FnOnce()) -> Result<(), Error> {
     let mut old = 0;
-    if unsafe { VirtualProtect(site as *const c_void, 5, PAGE_EXECUTE_READWRITE, &raw mut old) } == 0 {
+    if unsafe { VirtualProtect(address as *const c_void, len, PAGE_EXECUTE_READWRITE, &raw mut old) } == 0 {
         return Err(io::Error::last_os_error().into());
     }
-    unsafe { ((site + 1) as *mut i32).write_unaligned(rel) };
-    unsafe { VirtualProtect(site as *const c_void, 5, old, &raw mut old) };
-    flush(site, 5);
+    write();
+    unsafe { VirtualProtect(address as *const c_void, len, old, &raw mut old) };
+    flush(address, len);
+    Ok(())
+}
+
+/// Copies `bytes` over the code or read-only data at `address`.
+///
+/// # Safety
+/// No thread may be executing or reading the bytes while they change, and the result must be valid where it lands.
+pub unsafe fn write_code(address: usize, bytes: &[u8]) -> Result<(), Error> {
+    unsafe { writable(address, bytes.len(), || core::ptr::copy_nonoverlapping(bytes.as_ptr(), address as *mut u8, bytes.len())) }
+}
+
+/// Stores `value` in the pointer at `address` (a vtable slot) in one write and returns the previous value.
+///
+/// # Safety
+/// `address` must be an aligned pointer slot whose readers accept `value` in the previous value's place.
+pub unsafe fn write_pointer(address: usize, value: usize) -> Result<usize, Error> {
+    let slot = unsafe { &*(address as *const core::sync::atomic::AtomicUsize) };
+    let mut previous = 0;
+    unsafe { writable(address, size_of::<usize>(), || previous = slot.swap(value, core::sync::atomic::Ordering::SeqCst)) }?;
     Ok(previous)
 }
 
@@ -309,6 +334,17 @@ mod tests {
         assert_eq!(func(stub_addr)(), 102);
         assert_eq!(unsafe { write_call(site, two_addr) }.unwrap(), site_detour as Fn0 as usize);
         assert_eq!(func(stub_addr)(), 2);
+    }
+
+    #[test]
+    fn code_and_pointer_writes_land() {
+        let stub = Trampoline::shared().alloc(one as Fn0 as usize, &[0xB8, 7, 0, 0, 0, 0xC3]).unwrap();
+        assert_eq!(func(stub)(), 7);
+        unsafe { write_code(stub + 1, &[9]) }.unwrap();
+        assert_eq!(func(stub)(), 9);
+        let table = [one as Fn0 as usize, two as Fn0 as usize];
+        assert_eq!(unsafe { write_pointer(table.as_ptr() as usize + 8, stub) }.unwrap(), two as Fn0 as usize);
+        assert_eq!(func(core::hint::black_box(&table)[1])(), 9);
     }
 
     #[test]
