@@ -35,6 +35,22 @@ pub fn delta_world_time() -> f32 {
     skyrim::camera::frame_delta()
 }
 
+/// `Get_DeltaFrameTime`: the unscaled frame time.
+pub fn delta_frame_time() -> f32 {
+    skyrim::camera::frame_delta_real()
+}
+
+/// `fDefaultWorldFOV:Display`, the world FOV IC puts back.
+pub fn default_world_fov() -> f32 {
+    unsafe { sre::ini_setting_f_default_world_fov_display_value().read() }
+}
+
+/// `Is_AnimCamera`: the third-person state is current with its animator camera on, which other
+/// mods set while they own the shot.
+pub fn is_anim_camera() -> bool {
+    camera().is_some_and(|c| c.state() == Some(CameraState::ThirdPerson) && c.third_person().is_some_and(|s| s.animatorCam != 0))
+}
+
 /// `Is_BodyValid`: the player has its third-person 3D.
 pub fn is_body_valid() -> bool {
     player().and_then(PlayerCharacterExt::third_person_root).is_some()

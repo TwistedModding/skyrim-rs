@@ -1,6 +1,7 @@
 //! The state a hot reload hands from one build to the next: the body manager (states, offsets,
-//! the full scales of the parts it shrinks and the frozen pose) and the camera manager's types.
-//! Little-endian fields behind a version byte; bytes of another version are ignored.
+//! the full scales of the parts it shrinks and the frozen pose), the camera manager's types and
+//! FOV state, and the world FOV the old build had written. Little-endian fields behind a version
+//! byte; bytes of another version are ignored.
 
 use crate::body::manager::{DirectionType, Forced, Manager as Body};
 use crate::body::parts::Scales;
@@ -11,7 +12,7 @@ use crate::body::state::race::{RaceState, RaceType};
 use crate::camera::manager::Manager as Camera;
 use crate::camera::state::CameraType;
 
-const VERSION: u8 = 1;
+const VERSION: u8 = 2;
 
 #[derive(Default)]
 struct Writer(Vec<u8>);
@@ -51,7 +52,7 @@ impl Reader<'_> {
 }
 
 #[must_use]
-pub fn save(body: &Body, camera: Camera) -> Vec<u8> {
+pub fn save(body: &Body, camera: Camera, world_fov: f32) -> Vec<u8> {
     let mut w = Writer(vec![VERSION]);
     w.u32(body.race.race as u32);
     w.v3(body.race.offset);
@@ -82,11 +83,15 @@ pub fn save(body: &Body, camera: Camera) -> Vec<u8> {
     w.f32(body.key_release_timer);
     w.u32(camera.camera as u32);
     w.u32(camera.previous as u32);
+    for v in [camera.fov, camera.external_fov, camera.resolve_fov, camera.pending_fov_reset, camera.zoom_modifier, camera.dialogue_fov, world_fov] {
+        w.f32(v);
+    }
+    w.u32(u32::from(camera.defer_fov) | u32::from(camera.zoom_active) << 1);
     w.0
 }
 
 #[must_use]
-pub fn restore(bytes: &[u8]) -> Option<(Body, Camera)> {
+pub fn restore(bytes: &[u8]) -> Option<(Body, Camera, f32)> {
     let (&version, rest) = bytes.split_first()?;
     if version != VERSION {
         return None;
@@ -115,8 +120,11 @@ pub fn restore(bytes: &[u8]) -> Option<(Body, Camera)> {
     body.directional_offset = r.v3()?;
     body.target_directional_offset = r.v3()?;
     body.key_release_timer = r.f32()?;
-    let camera = Camera { camera: CameraType::from_u32(r.u32()?), previous: CameraType::from_u32(r.u32()?) };
-    r.0.is_empty().then_some((body, camera))
+    let (kind, previous) = (CameraType::from_u32(r.u32()?), CameraType::from_u32(r.u32()?));
+    let [fov, external_fov, resolve_fov, pending_fov_reset, zoom_modifier, dialogue_fov, world_fov] = [r.f32()?, r.f32()?, r.f32()?, r.f32()?, r.f32()?, r.f32()?, r.f32()?];
+    let flags = r.u32()?;
+    let camera = Camera { camera: kind, previous, fov, defer_fov: flags & 1 != 0, external_fov, resolve_fov, pending_fov_reset, zoom_active: flags & 2 != 0, zoom_modifier, dialogue_fov };
+    r.0.is_empty().then_some((body, camera, world_fov))
 }
 
 #[cfg(test)]
@@ -143,13 +151,13 @@ mod tests {
         body.interacting = 104;
         body.interaction = InteractionType::PickPocket;
         body.direction = DirectionType::BackLeft;
-        let camera = Camera { camera: CameraType::FirstPerson, previous: CameraType::ThirdPerson };
-        assert_eq!(restore(&save(&body, camera)), Some((body, camera)));
+        let camera = Camera { camera: CameraType::FirstPerson, previous: CameraType::ThirdPerson, fov: 90.0, defer_fov: true, external_fov: 70.0, resolve_fov: 84.5, pending_fov_reset: 65.0, zoom_active: true, zoom_modifier: -12.5, dialogue_fov: 65.0 };
+        assert_eq!(restore(&save(&body, camera, 84.5)), Some((body, camera, 84.5)));
     }
 
     #[test]
     fn other_versions_and_short_bytes_are_ignored() {
-        let bytes = save(&Body::default(), Camera::default());
+        let bytes = save(&Body::default(), Camera::default(), 80.0);
         assert!(restore(&bytes[..bytes.len() - 1]).is_none());
         let mut other = bytes;
         other[0] = 0;

@@ -1,13 +1,15 @@
 //! `hook/FixesHook`: the body in first person. `SetFirstPerson` keeps the third-person root
 //! visible through a managed patch and IC's after-switch visibility check; after the shadow maps
 //! are drawn (`RenderWorldScene` +0x30a) the parts the player should not see are shrunk for the
-//! main view, with the skins' palettes and the rigid gear's previous transforms fixed up.
+//! main view, with the skins' palettes and the rigid gear's previous transforms fixed up. The
+//! hands camera takes the hands FOV, and the tween menu starts from the live world FOV.
 
 use std::collections::HashMap;
 use std::sync::Mutex;
 
 use framework::Host;
 use framework::hooks::ops::{Call, PlayerCharacter__SetFirstPerson};
+use sre::raw::fns::{NiCamera__SetPerspectiveFromFov_fn as SetPerspectiveFromFov, PlayerCamera__GetDefaultFOVForCurrentState_fn as GetDefaultFov};
 use framework::hooks::{Error, Location, Options, PatchId};
 use skyrim::prelude::*;
 use skyrim::render::Transform;
@@ -30,6 +32,15 @@ const RENDER_SHADOW_MAPS_CALL: usize = 0x30a;
 
 type RenderShadowMaps = unsafe extern "C" fn() -> usize;
 
+/// The two calls that set the hands camera's projection every first-person frame, both with the
+/// engine's hands FOV (`camera.md` section 7): `SetupFirstPersonCamera` +0x106, which IC hooks,
+/// and `RenderWorldDepthPrepass` +0x7fd, which sets it again before the first-person draws.
+const HANDS_PROJECTIONS: [(u64, usize); 2] = [(fns::SetupFirstPersonCamera, 0x106), (fns::RenderWorldDepthPrepass, 0x7fd)];
+
+/// `TweenMenuCameraState::Begin` +0x11, the call for the tween camera's base FOV, which always
+/// answers `fDefaultWorldFOV:Display` there.
+const TWEEN_BASE_FOV_CALL: usize = 0x11;
+
 static BODY_PATCH: Mutex<Option<PatchId>> = Mutex::new(None);
 
 pub fn install(host: &'static Host) -> Result<(), Error> {
@@ -43,6 +54,12 @@ pub fn install(host: &'static Host) -> Result<(), Error> {
         }
     })?;
     hooks.after(Call::<RenderShadowMaps>::at(Location::id(fns::RenderWorldScene, RENDER_SHADOW_MAPS_CALL)), Options::new(host.name()), |(), _, _| register_scene_accumulators())?;
+    for (function, offset) in HANDS_PROJECTIONS {
+        hooks.before(Call::<SetPerspectiveFromFov>::at(Location::id(function, offset)), Options::new(host.name()), |args| args.1 = settings::profile().FOV.fFirstPersonHands)?;
+    }
+    hooks.replace(Call::<GetDefaultFov>::at(Location::id(fns::TweenMenuCameraState__Begin, TWEEN_BASE_FOV_CALL)), Options::new(host.name()), |args, original| {
+        util::camera().map_or_else(|| unsafe { original.call(args) }, |camera| camera.worldFOV)
+    })?;
     Ok(())
 }
 

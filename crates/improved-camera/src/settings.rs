@@ -1,6 +1,6 @@
 //! IC's profile (`settings.h`): the options ported so far, with IC's names and defaults, kept in
 //! the plugin's settings under `<Section>.<option>` keys (`General.bEnableBody`,
-//! `Body.Race.HalfDragon.fForward`).
+//! `Body.Race.HalfDragon.fForward`, `FOV.fFirstPersonHands`, `Effects.Zoom.fFOV`).
 
 use std::sync::{LazyLock, RwLock, RwLockReadGuard};
 
@@ -267,6 +267,31 @@ sections! {
         HalfDragon: Offset = Offset::default(),
         HalfDragonVampire: Offset = Offset::default(),
     }
+    Fov = "FOV" {
+        fFirstPerson: f32 = 80.0,
+        fFirstPersonHands: f32 = 80.0,
+        fFirstPersonCombat: f32 = 80.0,
+        fFurniture: f32 = 80.0,
+        fCrafting: f32 = 80.0,
+        fKillmove: f32 = 80.0,
+        fRagdoll: f32 = 80.0,
+        fDeath: f32 = 80.0,
+        fCannibal: f32 = 80.0,
+        fHorse: f32 = 80.0,
+        fHorseCombat: f32 = 80.0,
+        fHorseTransition: f32 = 80.0,
+        fDragon: f32 = 80.0,
+        fDragonCombat: f32 = 80.0,
+        fDragonTransition: f32 = 80.0,
+        fVampireLord: f32 = 80.0,
+        fWerewolf: f32 = 80.0,
+        fLich: f32 = 80.0,
+        fSex: f32 = 80.0,
+        fThirdPerson: f32 = 80.0,
+    }
+    EffectsZoom = "Effects.Zoom" {
+        fFOV: f32 = -30.0,
+    }
 }
 
 /// The active profile, IC's `Plugin::Profile()`.
@@ -281,6 +306,8 @@ pub struct Profile {
     pub Hands: BodyHands,
     pub Action: BodyAction,
     pub Race: BodyRace,
+    pub FOV: Fov,
+    pub Zoom: EffectsZoom,
 }
 
 impl Profile {
@@ -295,6 +322,8 @@ impl Profile {
             Hands: BodyHands::read(store),
             Action: BodyAction::read(store),
             Race: BodyRace::read(store),
+            FOV: Fov::read(store),
+            Zoom: EffectsZoom::read(store),
         }
     }
 
@@ -307,6 +336,8 @@ impl Profile {
         self.Hands.write(store);
         self.Action.write(store);
         self.Race.write(store);
+        self.FOV.write(store);
+        self.Zoom.write(store);
     }
 }
 
@@ -358,6 +389,8 @@ mod tests {
         assert!(p.Hide.bBow && p.Hide.bQuiver && p.Hide.bTwoHanded && !p.Hide.bBody);
         assert_eq!(p.Hands.PowerAttack, Offset { fForward: -12.6, fUp: 0.0, fRight: -6.4 });
         assert!((p.Movement.fSprintLerp - 15.0).abs() < f32::EPSILON);
+        assert!((p.FOV.fFirstPersonHands - 80.0).abs() < f32::EPSILON && (p.FOV.fThirdPerson - 80.0).abs() < f32::EPSILON);
+        assert!((p.Zoom.fFOV + 30.0).abs() < f32::EPSILON);
     }
 
     #[test]
@@ -370,6 +403,8 @@ mod tests {
         assert_eq!(store.get_bool("General.bEnableHead"), Some(true));
         assert_eq!(store.get_f32("Body.Race.HalfDragon.fUp"), Some(-3.0));
         assert_eq!(store.get_f32("Body.Hands.fLerp"), Some(12.0));
+        assert_eq!(store.get_f32("FOV.fFirstPersonHands"), Some(80.0));
+        assert_eq!(store.get_f32("Effects.Zoom.fFOV"), Some(-30.0));
         assert_eq!(Profile::read(&store), p);
     }
 
