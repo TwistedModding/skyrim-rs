@@ -3,10 +3,13 @@
 //! its shadow, the head, arms and sheathed gear hidden from the player's own view, the body states
 //! that decide it, the camera manager with every camera state, its transitions and head anchor,
 //! the body anchored to the camera, the world, hands and tween
-//! menu FOV with the zoom effect, and the pitch-driven world near plane.
+//! menu FOV with the zoom effect, the pitch-driven world near plane, and the gameplay sites: the
+//! magic casters' and effect shaders' root, the crosshair pick, the movement input buffer, the
+//! scroll wheel, the POV toggle and the scripts' forced first and third person.
 
 mod body;
 mod camera;
+mod event;
 mod handoff;
 mod hook;
 mod plugin;
@@ -75,9 +78,21 @@ pub(crate) fn log(line: &str) {
 /// Makes `profile` the active one and stores it; a change of the body option applies or restores
 /// the `SetFirstPerson` patch and the root's visibility at once, and turning it off puts the
 /// engine's FOV and near plane back, as does choosing the first-person pass for the near plane.
+/// Switching the first-person arms makes the magic casters find their node again, and turning
+/// them off turns head bob off (IC's General menu).
 fn apply_profile(profile: &settings::Profile) {
     let before = *settings::profile();
+    let mut profile = *profile;
+    let arms = before.General.bEnableFirstPersonArms != profile.General.bEnableFirstPersonArms;
+    if arms && !profile.General.bEnableFirstPersonArms {
+        profile.Advanced.bHeadbob = false;
+        profile.Advanced.bHeadbobCombat = false;
+    }
+    let profile = &profile;
     settings::set_profile(profile);
+    if arms {
+        util::skyrim_util::reset_magic_nodes();
+    }
     let Some(host) = HOST.get() else { return };
     profile.write(&host.settings());
     let body = profile.General.bEnableBody;

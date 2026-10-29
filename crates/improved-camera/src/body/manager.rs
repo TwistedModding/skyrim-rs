@@ -171,6 +171,12 @@ pub fn with<R>(f: impl FnOnce(&mut Manager) -> R) -> R {
     f(MANAGER.lock().unwrap_or_else(std::sync::PoisonError::into_inner).get_or_insert_with(Manager::default))
 }
 
+/// `Update_ThirdPersonArms`: the body shows its own arms in first person, the first-person arms
+/// being turned off.
+pub fn third_person_arms(general: &settings::General) -> bool {
+    general.bEnableBody && !general.bEnableFirstPersonArms
+}
+
 /// Whether the player is moving: `Actor::IsMoving` is not in the RE yet, so this reads the
 /// current speed the movement controller keeps (`Actor::GetCurrentSpeed`).
 fn is_moving(player: &PlayerCharacter) -> bool {

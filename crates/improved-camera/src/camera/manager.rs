@@ -76,6 +76,10 @@ pub struct Manager {
     pub transition_culled_arms: bool,
     pub look: LookController,
     pub forced_first_person: bool,
+    pub forced_third_person: bool,
+    /// The POV key toggled between first and third person (`m_togglePOV`): the next third-person
+    /// update skips the engine's zoom out.
+    pub toggle_pov: bool,
     /// Fake first person turning back to face forward (`m_orientate`).
     pub orientate: bool,
     pub frame: u64,
@@ -114,6 +118,8 @@ impl Default for Manager {
             transition_culled_arms: false,
             look: LookController::default(),
             forced_first_person: false,
+            forced_third_person: false,
+            toggle_pov: false,
             orientate: false,
             frame: 0,
             head_follow: Quat::IDENTITY,
@@ -136,6 +142,25 @@ pub static MANAGER: Mutex<Option<Manager>> = Mutex::new(None);
 
 pub fn with<R>(f: impl FnOnce(&mut Manager) -> R) -> R {
     f(MANAGER.lock().unwrap_or_else(std::sync::PoisonError::into_inner).get_or_insert_with(Manager::default))
+}
+
+/// `ForceFirstPerson`: a script forced first person; noted only with the body on.
+pub fn force_first_person() {
+    if settings::profile().General.bEnableBody {
+        with(|m| m.forced_first_person = true);
+    }
+}
+
+/// `ForceThirdPerson`: a script forced third person; noted only with the body on.
+pub fn force_third_person() {
+    if settings::profile().General.bEnableBody {
+        with(|m| m.forced_third_person = true);
+    }
+}
+
+/// `NotifyCameraToggle`.
+pub fn notify_camera_toggle() {
+    with(|m| m.toggle_pov = true);
 }
 
 /// `CameraManager::Update`. An engine call a state makes that runs the camera update again
@@ -343,10 +368,10 @@ fn menu_type(engine: CameraType, menu_open: impl Fn(&str) -> bool) -> CameraType
 
 /// The camera lock under a script's POV lock (`m_cameraLock`): taken on the camera of the moment,
 /// moved to the race menu and back to first person after it, to first person for the intro's cart
-/// and a forced first person, released with the lock. IC's change to third person on its own
-/// forced third person comes from its public API, which is not ported.
+/// and a forced first person, to third person for a forced third person, released with the lock.
+/// `forced` is the forced first and third person (`m_forcedFirstperson`, `m_forcedThirdperson`).
 #[must_use]
-pub fn next_lock(lock: CameraType, script: bool, camera: CameraType, action: ActionType, forced_first_person: bool) -> CameraType {
+pub fn next_lock(lock: CameraType, script: bool, camera: CameraType, action: ActionType, forced: (bool, bool)) -> CameraType {
     if !script {
         return CameraType::Unknown;
     }
@@ -354,8 +379,10 @@ pub fn next_lock(lock: CameraType, script: bool, camera: CameraType, action: Act
         camera
     } else if lock != CameraType::RaceMenu && camera == CameraType::RaceMenu {
         CameraType::RaceMenu
-    } else if (lock == CameraType::RaceMenu && camera != CameraType::RaceMenu) || (lock == CameraType::ThirdPerson && action == ActionType::CartRide) || (lock != CameraType::FirstPerson && forced_first_person) {
+    } else if (lock == CameraType::RaceMenu && camera != CameraType::RaceMenu) || (lock == CameraType::ThirdPerson && action == ActionType::CartRide) || (lock != CameraType::FirstPerson && forced.0) {
         CameraType::FirstPerson
+    } else if lock != CameraType::ThirdPerson && forced.1 {
+        CameraType::ThirdPerson
     } else {
         lock
     }
@@ -554,7 +581,7 @@ impl Manager {
         let dead = player.is_some_and(|p| p.is_dead(true));
         // The dragon camera sets the target back every frame (IC2 B), so it is never a spectator.
         let spectator = engine != CameraType::Dragon && util::camera_target().is_some() && player.is_some_and(|p| !p.is_on_mount()) && body.action != ActionType::View;
-        let lock = next_lock(self.camera_lock, util::pov_script_lock(), menu_type(engine, util::is_menu_open), body.action, self.forced_first_person);
+        let lock = next_lock(self.camera_lock, util::pov_script_lock(), menu_type(engine, util::is_menu_open), body.action, (self.forced_first_person, self.forced_third_person));
         if lock != self.camera_lock {
             crate::log(&format!("<Camera Lock> {:?} -> {lock:?}", self.camera_lock));
             self.camera_lock = lock;
@@ -574,6 +601,13 @@ impl Manager {
             self.current.first_person = false;
             if enabled && let Some(third) = camera.third_person() {
                 util::set_zoom(third, FAKE_FIRST_PERSON_ZOOM);
+            }
+        }
+        // The engine zooms out from the minimum after a POV toggle; IC lands on the target at once.
+        if self.toggle_pov && self.current.camera == CameraType::ThirdPerson {
+            self.toggle_pov = false;
+            if enabled && let Some(third) = camera.third_person() {
+                skyrim::store(&third.currentZoom, third.targetZoom);
             }
         }
     }
@@ -653,8 +687,7 @@ impl Manager {
         }
     }
 
-    /// `SetMode`. IC's forced third person comes from its public API and console, which are not
-    /// ported here.
+    /// `SetMode`.
     fn set_mode(&mut self, camera: &PlayerCamera, profile: &Profile) -> CameraMode {
         let current = self.current.camera;
         if !profile.General.bEnableBody || matches!(current, CameraType::MapMenu | CameraType::RaceMenu) {
@@ -666,6 +699,15 @@ impl Manager {
         let min_zoom = *util::min_current_zoom();
         let fake = profile.General.bEnableFakeFirstPerson;
         let mut sim = self.current.modifier.sim_first_person;
+        if self.forced_third_person && self.previous.camera == CameraType::FirstPerson {
+            self.forced_third_person = false;
+            sim = true;
+            self.current.modifier.sim_first_person = true;
+            util::set_zoom(third, FAKE_FIRST_PERSON_ZOOM);
+        }
+        if self.forced_third_person && current == CameraType::ThirdPerson {
+            self.forced_third_person = false;
+        }
         let lock = self.camera_lock;
         let in_first = camera.state() == Some(CameraState::FirstPerson);
         if fake {
@@ -688,6 +730,7 @@ impl Manager {
             if !in_first {
                 camera.force_first_person();
             }
+            self.forced_third_person = false;
             return if body_snapshot::get().action == ActionType::CartRide { CameraMode::Head } else { CameraMode::First };
         }
         if sim {
@@ -1172,14 +1215,17 @@ mod tests {
     #[test]
     fn the_script_lock_follows_ic_rules() {
         use super::next_lock;
+        const NONE: (bool, bool) = (false, false);
         let l = |lock, script, camera, action, forced| next_lock(lock, script, camera, action, forced);
-        assert_eq!(l(CameraType::Unknown, true, CameraType::ThirdPerson, ActionType::None, false), CameraType::ThirdPerson, "set to the camera");
-        assert_eq!(l(CameraType::ThirdPerson, true, CameraType::RaceMenu, ActionType::None, false), CameraType::RaceMenu);
-        assert_eq!(l(CameraType::RaceMenu, true, CameraType::ThirdPerson, ActionType::None, false), CameraType::FirstPerson, "leaving the race menu");
-        assert_eq!(l(CameraType::ThirdPerson, true, CameraType::Animation, ActionType::CartRide, false), CameraType::FirstPerson, "the intro's cart");
-        assert_eq!(l(CameraType::Furniture, true, CameraType::Furniture, ActionType::None, true), CameraType::FirstPerson, "forced first person");
-        assert_eq!(l(CameraType::Furniture, true, CameraType::Animation, ActionType::None, false), CameraType::Furniture, "kept");
-        assert_eq!(l(CameraType::FirstPerson, false, CameraType::ThirdPerson, ActionType::None, false), CameraType::Unknown, "released");
+        assert_eq!(l(CameraType::Unknown, true, CameraType::ThirdPerson, ActionType::None, NONE), CameraType::ThirdPerson, "set to the camera");
+        assert_eq!(l(CameraType::ThirdPerson, true, CameraType::RaceMenu, ActionType::None, NONE), CameraType::RaceMenu);
+        assert_eq!(l(CameraType::RaceMenu, true, CameraType::ThirdPerson, ActionType::None, NONE), CameraType::FirstPerson, "leaving the race menu");
+        assert_eq!(l(CameraType::ThirdPerson, true, CameraType::Animation, ActionType::CartRide, NONE), CameraType::FirstPerson, "the intro's cart");
+        assert_eq!(l(CameraType::Furniture, true, CameraType::Furniture, ActionType::None, (true, false)), CameraType::FirstPerson, "forced first person");
+        assert_eq!(l(CameraType::FirstPerson, true, CameraType::FirstPerson, ActionType::None, (false, true)), CameraType::ThirdPerson, "forced third person");
+        assert_eq!(l(CameraType::Furniture, true, CameraType::Furniture, ActionType::None, (true, true)), CameraType::FirstPerson, "first person wins");
+        assert_eq!(l(CameraType::Furniture, true, CameraType::Animation, ActionType::None, NONE), CameraType::Furniture, "kept");
+        assert_eq!(l(CameraType::FirstPerson, false, CameraType::ThirdPerson, ActionType::None, NONE), CameraType::Unknown, "released");
     }
 
     #[test]

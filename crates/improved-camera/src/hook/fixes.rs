@@ -2,22 +2,26 @@
 //! visible through a managed patch and IC's after-switch visibility check; after the shadow maps
 //! are drawn (`RenderWorldScene` +0x30a) the parts the player should not see are shrunk for the
 //! main view, with the skins' palettes and the rigid gear's previous transforms fixed up. The
-//! hands camera takes the hands FOV, and the tween menu starts from the live world FOV.
+//! hands camera takes the hands FOV, and the tween menu starts from the live world FOV. The magic
+//! casters and the effect shaders on the player pick the root IC's arms are on, the crosshair pick
+//! starts at the presented camera, and the scroll wheel zooms with the POV switch off.
 
 use std::collections::HashMap;
 use std::sync::Mutex;
 
 use framework::Host;
 use framework::hooks::ops::{Call, PlayerCharacter__SetFirstPerson};
-use sre::raw::fns::{NiCamera__SetPerspectiveFromFov_fn as SetPerspectiveFromFov, PlayerCamera__GetDefaultFOVForCurrentState_fn as GetDefaultFov};
-use framework::hooks::{Error, Location, Options, PatchId};
+use framework::hooks::{Error, Location, Next, Options, PatchId, Register};
 use skyrim::prelude::*;
 use skyrim::render::Transform;
 use sre::raw::fns;
+use sre::raw::fns::{NiCamera__SetPerspectiveFromFov_fn as SetPerspectiveFromFov, PlayerCamera__GetDefaultFOVForCurrentState_fn as GetDefaultFov};
 use sre::{BSFadeNode, BSGeometry, NiAVObject, NiNode};
 
-use crate::body::manager::sync_bone_tree;
+use super::IsThirdPerson;
+use crate::body::manager::{sync_bone_tree, third_person_arms};
 use crate::body::parts::{self, SHEATHED_NODES, SHRUNK};
+use crate::camera::snapshot;
 use crate::settings;
 use crate::util::skyrim_util as util;
 
@@ -41,6 +45,31 @@ const HANDS_PROJECTIONS: [(u64, usize); 2] = [(fns::SetupFirstPersonCamera, 0x10
 /// answers `fDefaultWorldFOV:Display` there.
 const TWEEN_BASE_FOV_CALL: usize = 0x11;
 
+/// `ActorMagicCaster::FindCasterNode` +0x51: `IsThirdPerson` on the player (the call is reached for
+/// the player's casters only), which chooses the root the caster's magic node is found in.
+const CASTER_VIEW_CALL: usize = 0x51;
+
+/// `PlayerCharacter::UpdateCrosshairPick` +0x1e7, the pick cast `(pick, world, origin*, direction*)`:
+/// it only reads the origin and runs on the "Pick reference" worker (RE `camera.md` section 12).
+const CROSSHAIR_PICK_CALL: usize = 0x1e7;
+
+type CrosshairPick = unsafe extern "C" fn(usize, usize, usize, usize) -> usize;
+
+/// `ControlMap::MapInputEvents` +0x3cc, `mov eax, [rax+0x120]`: the enabled controls each mapping's
+/// required controls (ecx) are tested against. The cave adds `and cl, 0xdf`, so a mapping no
+/// longer needs the POV switch (bit 5) and the wheel's zoom stays mapped while IC's fake first
+/// person turns the POV switch off.
+const ENABLED_CONTROLS_LOAD: usize = 0x3cc;
+const ENABLED_CONTROLS: [u8; 6] = [0x8B, 0x80, 0x20, 0x01, 0x00, 0x00];
+const ANY_POV_SWITCH: [u8; 9] = [0x8B, 0x80, 0x20, 0x01, 0x00, 0x00, 0x80, 0xE1, 0xDF];
+
+/// `ShaderReferenceEffect::vfunc_40` (its update): +0xe1 calls `vfunc_40_sub4` `bool (effect)` and
+/// +0x1f5 its slot 59 `UpdatePosition`, both choosing the root the effect goes on by the player's
+/// third-person flag; rbx holds the effect's target reference at both (RE `camera.md` section 12).
+const EFFECT_SHADER_CALLS: [usize; 2] = [0xe1, 0x1f5];
+
+type EffectUpdate = unsafe extern "C" fn(usize, usize) -> usize;
+
 static BODY_PATCH: Mutex<Option<PatchId>> = Mutex::new(None);
 
 pub fn install(host: &'static Host) -> Result<(), Error> {
@@ -60,7 +89,46 @@ pub fn install(host: &'static Host) -> Result<(), Error> {
     hooks.replace(Call::<GetDefaultFov>::at(Location::id(fns::TweenMenuCameraState__Begin, TWEEN_BASE_FOV_CALL)), Options::new(host.name()), |args, original| {
         util::camera().map_or_else(|| unsafe { original.call(args) }, |camera| camera.worldFOV)
     })?;
+    hooks.replace(Call::<IsThirdPerson>::at(Location::id(fns::ActorMagicCaster__FindCasterNode, CASTER_VIEW_CALL)), Options::new(host.name()), |_, _| usize::from(effect_node_third_person()))?;
+    hooks.before(Call::<CrosshairPick>::at(Location::id(fns::PlayerCharacter__UpdateCrosshairPick, CROSSHAIR_PICK_CALL)), Options::new(host.name()), |args| crosshair_pick(args.2))?;
+    unsafe { hooks.patch_cave(host.name(), Location::id(fns::ControlMap__MapInputEvents, ENABLED_CONTROLS_LOAD), &ENABLED_CONTROLS, &ANY_POV_SWITCH) }?;
+    for offset in EFFECT_SHADER_CALLS {
+        hooks.around(Call::<EffectUpdate>::at(Location::id(fns::ShaderReferenceEffect__vfunc_40, offset)).passing(Register::Rbx), Options::new(host.name()), shader_reference_effect)?;
+    }
     Ok(())
+}
+
+/// `GetEffectNode_IsThirdPerson`: in first person the casters follow the arms IC shows.
+fn effect_node_third_person() -> bool {
+    if util::is_engine_first_person() {
+        return third_person_arms(&settings::profile().General);
+    }
+    util::player().is_some_and(util::third_person_flag)
+}
+
+/// `CrossHairPickData_Pick`: in first person the pick starts at the presented camera.
+fn crosshair_pick(origin: usize) {
+    let origin = origin as *mut [f32; 3];
+    if !origin.is_null() && util::is_first_person() {
+        unsafe { origin.write(snapshot::get().position) };
+    }
+}
+
+/// `ShaderReferenceEffect_Update`'s `Effect`: an effect on the player in first person or the free
+/// camera goes on the third-person root, unless the first-person arms fight with a weapon drawn.
+/// IC's `MirrorEffect` afterwards is left out (the effect's fields are not in the RE).
+fn shader_reference_effect(args: (usize, usize), next: Next<'_, EffectUpdate>) -> usize {
+    let free = util::is_free_camera();
+    let player = util::player().filter(|p| core::ptr::from_ref::<sre::PlayerCharacter>(p) as usize == args.1 && (util::is_engine_first_person() || free));
+    let Some(player) = player else { return unsafe { next.call(args) } };
+    if util::is_weapon_drawn(player) && !third_person_arms(&settings::profile().General) && !free {
+        return unsafe { next.call(args) };
+    }
+    let saved = util::third_person_flag(player);
+    util::set_third_person_flag(player, true);
+    let ret = unsafe { next.call(args) };
+    util::set_third_person_flag(player, saved);
+    ret
 }
 
 /// Applies or restores the `SetFirstPerson` patch for the body option.

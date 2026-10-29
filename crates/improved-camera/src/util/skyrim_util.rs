@@ -100,7 +100,21 @@ pub fn is_fake_first_person() -> bool {
 
 /// `Is_Firstperson`: real or fake first person.
 pub fn is_first_person() -> bool {
-    camera().is_some_and(|c| c.state() == Some(CameraState::FirstPerson)) || is_fake_first_person()
+    is_engine_first_person() || is_fake_first_person()
+}
+
+/// `PlayerCamera::IsInFirstPerson`: the engine's first-person state is current.
+pub fn is_engine_first_person() -> bool {
+    camera().is_some_and(|c| c.state() == Some(CameraState::FirstPerson))
+}
+
+/// The player's `isInThirdPersonMode`, bit 0 of `viewFlags` (`camera.md` section 10).
+pub fn third_person_flag(player: &PlayerCharacter) -> bool {
+    player.viewFlags & 1 != 0
+}
+
+pub fn set_third_person_flag(player: &PlayerCharacter, third: bool) {
+    skyrim::store(&player.viewFlags, (player.viewFlags & !1) | u8::from(third));
 }
 
 pub fn is_free_camera() -> bool {
@@ -149,9 +163,24 @@ pub enum Hand {
 /// `IsCasting(selectedSpells[hand])`: the hand's caster holds a spell it is casting (the caster's
 /// +0x28, RE `camera.md` IC3 A).
 pub fn is_casting(actor: &Actor, hand: Hand) -> bool {
-    let at = hand as usize * 8;
+    caster(actor, hand as usize).is_some_and(|c| c.field_28 != 0)
+}
+
+/// The actor's caster for casting source `source` (0 to 3), when it was created.
+fn caster(actor: &Actor, source: usize) -> Option<&sre::ActorMagicCaster> {
+    let at = source * 8;
     let pointer = usize::from_le_bytes(actor.magicCasters[at..at + 8].try_into().unwrap_or_default());
-    unsafe { (pointer as *const sre::ActorMagicCaster).as_ref() }.is_some_and(|c| c.field_28 != 0)
+    unsafe { (pointer as *const sre::ActorMagicCaster).as_ref() }
+}
+
+/// `Reset_Magic_Nodes`: the player's four casters find their effect node again.
+pub fn reset_magic_nodes() {
+    let Some(player) = player() else { return };
+    for source in 0..4 {
+        if let Some(caster) = caster(player, source) {
+            caster.reset_caster_nodes();
+        }
+    }
 }
 
 /// `HasMagicEffect`: an active effect on the actor has the base effect with form id `effect`.
