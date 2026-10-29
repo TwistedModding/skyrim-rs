@@ -248,6 +248,7 @@ fn a_disabled_subscriber_keeps_its_place_and_is_skipped() {
     let replace = hooks.replace(raw(toggled), Options::new("t3"), |args, _| args.0 * 100).unwrap();
     assert_eq!(call(toggled, 1, 1), 1100);
     assert!(hooks.set_enabled(before, false));
+    logged(&format!("#{} t1 Before disabled", before.get()));
     assert!(hooks.set_enabled(replace, false));
     assert_eq!(call(toggled, 1, 1), 4);
     assert!(hooks.set_enabled(around, false));
@@ -257,11 +258,15 @@ fn a_disabled_subscriber_keeps_its_place_and_is_skipped() {
     assert_eq!(entries, [("t1", false, 1), ("t2", false, 2), ("t3", false, 1)]);
     assert!(report.to_string().contains("disabled"), "{report}");
     assert!(hooks.set_enabled(before, true));
+    logged(&format!("#{} t1 Before enabled", before.get()));
     assert_eq!(call(toggled, 1, 1), 12);
     assert!(!hooks.set_enabled(SubscriptionId::new(u64::MAX), false));
-    let messages = hooks.messages();
-    assert!(messages.iter().any(|m| m.ends_with(&format!("#{} t1 Before disabled", before.get()))), "{messages:?}");
-    assert!(messages.iter().any(|m| m.ends_with(&format!("#{} t1 Before enabled", before.get()))), "{messages:?}");
+}
+
+/// Checks the shared hook log right away: the parallel tests fill its 64 lines quickly.
+fn logged(line: &str) {
+    let messages = Hooks::HOST.messages();
+    assert!(messages.iter().any(|m| m.ends_with(line)), "{line} not in {messages:?}");
 }
 
 targets! { called rerouted elsewhere slotted spare_slot tail_called }
