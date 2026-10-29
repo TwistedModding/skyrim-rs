@@ -11098,7 +11098,7 @@ pub struct Character_vtable {
     pub slot_70: *const c_void,
     /// `TESObjectREFR::vfunc_71` at 0x2e4f80 (rtti, medium); signature (low): `undefined1 vfunc_71(void)`
     pub slot_71: *const c_void,
-    /// `Actor::HasKeyword` at 0x671bf0 (slot_propagation, high); signature (untiered): `bool HasKeyword(Actor * this, longlong param_1, longlong param_2, undefined8 param_3)`
+    /// `Actor::HasKeyword` at 0x671bf0 (semantic, high); signature (untiered): `bool HasKeyword(Actor * this, longlong param_1, longlong param_2, undefined8 param_3)`
     pub slot_72: *const c_void,
     /// `Actor::vfunc_73` at 0x67f620 (rtti, medium); signature (high): `undefined8 vfunc_73(Actor * this)`
     pub slot_73: *const c_void,
@@ -11196,7 +11196,7 @@ pub struct Character_vtable {
     pub slot_119: *const c_void,
     /// `Actor::vfunc_120` at 0x6b0010 (rtti, medium); signature (low): `ulonglong vfunc_120(Actor * this, longlong * param_1)`
     pub slot_120: *const c_void,
-    /// `Actor::vfunc_121` at 0x6b6300 (rtti, medium); signature (low): `undefined vfunc_121(Actor * this, longlong param_1)`
+    /// `Actor::PrepareAnimationUpdate` at 0x6b6300 (semantic, medium); signature (untiered): `undefined PrepareAnimationUpdate(Actor * this, longlong param_1)`
     pub slot_121: *const c_void,
     /// `Actor::vfunc_122` at 0x6b6580 (rtti, medium); signature (low): `undefined1 vfunc_122(void)`
     pub slot_122: *const c_void,
@@ -11484,7 +11484,7 @@ pub struct Character_vtable {
     pub slot_263: *const c_void,
     /// `Actor::vfunc_264` at 0x6c2ce0 (rtti, medium); signature (low): `undefined vfunc_264(Actor * this, char param_1)`
     pub slot_264: *const c_void,
-    /// `Actor::vfunc_265` at 0x6a51c0 (rtti, medium); signature (low): `undefined vfunc_265(Actor * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    /// `Actor::EnsureMovementController` at 0x6a51c0 (semantic, high); signature (untiered): `undefined EnsureMovementController(Actor * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_265: *const c_void,
     /// `Actor::vfunc_266` at 0x6bde70 (rtti, medium); signature (high): `undefined4 vfunc_266(Actor * this)`
     pub slot_266: *const c_void,
@@ -11510,7 +11510,7 @@ pub struct Character_vtable {
     pub slot_276: *const c_void,
     /// `Actor::vfunc_277` at 0x6acb10 (rtti, medium); signature (high): `undefined vfunc_277(Actor * this)`
     pub slot_277: *const c_void,
-    /// `Actor::vfunc_278` at 0x6acb90 (rtti, medium); signature (high): `undefined vfunc_278(Actor * this)`
+    /// `Actor::RefreshNPCKeywordFlag` at 0x6acb90 (semantic, high); signature (untiered): `undefined RefreshNPCKeywordFlag(Actor * this)`
     pub slot_278: *const c_void,
     /// `Actor::vfunc_279` at 0x6ad3a0 (rtti, medium); signature (low): `undefined vfunc_279(void)`
     pub slot_279: *const c_void,
@@ -11696,7 +11696,7 @@ pub struct Character_vtable_C0 {
     pub slot_3: *const c_void,
     /// `Actor::ActorState_vfunc_4` at 0x6b57f0 (rtti, medium); signature (low): `undefined ActorState_vfunc_4(Actor * this, float * param_1)`
     pub slot_4: *const c_void,
-    /// `Actor::ActorState_vfunc_5` at 0x6b5860 (rtti, medium); signature (low): `undefined4 ActorState_vfunc_5(Actor * this)`
+    /// `Actor::ActorState_GetMovementSpeed` at 0x6b5860 (semantic, high); signature (untiered): `undefined4 ActorState_GetMovementSpeed(Actor * this)`
     pub slot_5: *const c_void,
     /// `Actor::ActorState_vfunc_6` at 0x6b5500 (rtti, medium); signature (low): `undefined4 ActorState_vfunc_6(Actor * this)`
     pub slot_6: *const c_void,

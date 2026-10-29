@@ -1942,13 +1942,13 @@ impl IMenu_flags {
     pub const PUSHES_MENU_INPUT_CONTEXT: Self = Self(0x8);
     /// modal (high)
     pub const MODAL: Self = Self(0x10);
-    /// flag20 (low)
-    pub const FLAG20: Self = Self(0x20);
+    /// freezesWorldRender (high)
+    pub const FREEZES_WORLD_RENDER: Self = Self(0x20);
     /// isOpen (high)
     pub const IS_OPEN: Self = Self(0x40);
     /// usesMenu3D (low)
     pub const USES_MENU3_D: Self = Self(0x80);
-    /// receivesQueueEndUpdate (medium)
+    /// receivesQueueEndUpdate (high)
     pub const RECEIVES_QUEUE_END_UPDATE: Self = Self(0x100);
     /// hidesMenusBelow (medium)
     pub const HIDES_MENUS_BELOW: Self = Self(0x200);

@@ -3138,16 +3138,6 @@ impl crate::ModelReferenceEffect {
     pub unsafe fn vfunc_59_sub0(param_1: *mut i64, param_2: u64) -> u64 { unsafe { function!(34675, (*mut i64, u64) -> u64)(param_1, param_2) } }
 }
 
-impl crate::MountInteraction {
-    /// `MountInteraction::vfunc_14_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 40359, rva 0x73d930).
-    /// `undefined vfunc_14_sub0(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn vfunc_14_sub0(param_1: i64, param_2: u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(40359, (i64, u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
-}
-
 impl crate::NavMesh {
     /// `NavMesh::GetFormDetailedString` (decompiler signature, tier untiered; ledger slot_propagation evidence, name high; id 30337, rva 0x4c1b70).
     /// `undefined GetFormDetailedString(NavMesh * this, undefined8 param_1, ulonglong param_2, undefined8 param_3)`
@@ -4156,89 +4146,6 @@ impl crate::StaticAvoidNodeManager {
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
     pub unsafe fn vfunc_2_sub0(param_1: *mut u64, param_2: *mut i64) -> u64 { unsafe { function!(42485, (*mut u64, *mut i64) -> u64)(param_1, param_2) } }
-}
-
-impl crate::StatsMenu {
-    /// `StatsMenu::MenuEventHandler_vfunc_7_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 52585, rva 0x981f00).
-    /// `undefined MenuEventHandler_vfunc_7_sub0(longlong param_1)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn menu_event_handler_vfunc_7_sub0(param_1: i64) -> u64 { unsafe { function!(52585, (i64) -> u64)(param_1) } }
-    /// `StatsMenu::ctor_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 52547, rva 0x97ff20).
-    /// `undefined ctor_sub0(longlong param_1)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn ctor_sub0(param_1: i64) -> u64 { unsafe { function!(52547, (i64) -> u64)(param_1) } }
-    /// `StatsMenu::ctor_sub2` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 52571, rva 0x981c50).
-    /// `undefined ctor_sub2(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn ctor_sub2(param_1: *mut i64, param_2: u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(52571, (*mut i64, u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
-    /// `StatsMenu::ctor_sub3` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 52577, rva 0x981dc0).
-    /// `undefined ctor_sub3(longlong * param_1)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn ctor_sub3(param_1: *mut i64) -> u64 { unsafe { function!(52577, (*mut i64) -> u64)(param_1) } }
-    /// `StatsMenu::ctor_sub4` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 82326, rva 0x1170220).
-    /// `undefined ctor_sub4(undefined8 param_1, longlong * param_2, longlong param_3, undefined8 param_4, undefined8 param_5, undefined4 param_6, float param_7)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn ctor_sub4(param_1: u64, param_2: *mut i64, param_3: i64, param_4: u64, param_5: u64, param_6: u32, param_7: f32) -> u64 { unsafe { function!(82326, (u64, *mut i64, i64, u64, u64, u32, f32) -> u64)(param_1, param_2, param_3, param_4, param_5, param_6, param_7) } }
-    /// `StatsMenu::vfunc_4_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 51916, rva 0x94ac40).
-    /// `undefined vfunc_4_sub0(void)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn vfunc_4_sub0() -> u64 { unsafe { function!(51916, () -> u64)() } }
-    /// `StatsMenu::vfunc_4_sub2` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 52536, rva 0x97da30).
-    /// `undefined vfunc_4_sub2(longlong param_1)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn vfunc_4_sub2(param_1: i64) -> u64 { unsafe { function!(52536, (i64) -> u64)(param_1) } }
-    /// `StatsMenu::vfunc_4_sub3` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 52539, rva 0x97e8b0).
-    /// `undefined vfunc_4_sub3(longlong param_1, undefined4 * param_2, undefined8 * param_3, longlong * param_4)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn vfunc_4_sub3(param_1: i64, param_2: *mut u32, param_3: *mut u64, param_4: *mut i64) -> u64 { unsafe { function!(52539, (i64, *mut u32, *mut u64, *mut i64) -> u64)(param_1, param_2, param_3, param_4) } }
-    /// `StatsMenu::vfunc_4_sub4` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 52540, rva 0x97eef0).
-    /// `undefined vfunc_4_sub4(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn vfunc_4_sub4(param_1: i64, param_2: u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(52540, (i64, u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
-    /// `StatsMenu::vfunc_4_sub5` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 52588, rva 0x982060).
-    /// `longlong * vfunc_4_sub5(longlong * param_1, longlong * param_2)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn vfunc_4_sub5(param_1: *mut i64, param_2: *mut i64) -> *mut i64 { unsafe { function!(52588, (*mut i64, *mut i64) -> *mut i64)(param_1, param_2) } }
-}
-
-impl crate::StealthMeter {
-    /// `StealthMeter::vfunc_1_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 40594, rva 0x756ab0).
-    /// `undefined vfunc_1_sub0(longlong * param_1, char param_2)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn vfunc_1_sub0(param_1: *mut i64, param_2: c_char) -> u64 { unsafe { function!(40594, (*mut i64, c_char) -> u64)(param_1, param_2) } }
 }
 
 impl crate::StructArrayImplementation {
@@ -13902,3 +13809,80 @@ pub unsafe fn assign_padded_float_matrix(param_1: *mut i64, param_2: *mut i64) -
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn assign_player_target_package_to_actor(param_1: i64, param_2: *mut i64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(39300, (i64, *mut i64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
+/// `AssignPointerClearingHandle` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 87498, rva 0xe03b80).
+/// `int * AssignPointerClearingHandle(int * param_1, longlong param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn assign_pointer_clearing_handle(param_1: *mut i32, param_2: i64) -> *mut i32 { unsafe { function!(87498, (*mut i32, i64) -> *mut i32)(param_1, param_2) } }
+/// `AssignPointerValueToTarget` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 23542, rva 0x38de50).
+/// `undefined AssignPointerValueToTarget(undefined8 param_1, int param_2, byte param_3, longlong * param_4, longlong * param_5)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn assign_pointer_value_to_target(param_1: u64, param_2: i32, param_3: u8, param_4: *mut i64, param_5: *mut i64) -> u64 { unsafe { function!(23542, (u64, i32, u8, *mut i64, *mut i64) -> u64)(param_1, param_2, param_3, param_4, param_5) } }
+/// `AssignPooledStringFromCString` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 69175, rva 0xeb1430).
+/// `undefined AssignPooledStringFromCString(longlong * param_1, char * param_2, char * param_3, char * param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn assign_pooled_string_from_c_string(param_1: *mut i64, param_2: *mut c_char, param_3: *mut c_char, param_4: *mut c_char) -> u64 { unsafe { function!(69175, (*mut i64, *mut c_char, *mut c_char, *mut c_char) -> u64)(param_1, param_2, param_3, param_4) } }
+/// `AssignPooledWideString` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 69179, rva 0xeb1a90).
+/// `ulonglong * AssignPooledWideString(ulonglong * param_1, wchar_t * param_2, ulonglong param_3, ulonglong param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn assign_pooled_wide_string(param_1: *mut u64, param_2: *mut u16, param_3: u64, param_4: u64) -> *mut u64 { unsafe { function!(69179, (*mut u64, *mut u16, u64, u64) -> *mut u64)(param_1, param_2, param_3, param_4) } }
+/// `AssignPostOrderIndexDfs` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 66530, rva 0xc75250).
+/// `int AssignPostOrderIndexDfs(int param_1, longlong * param_2, longlong * param_3, int param_4, longlong * param_5, undefined8 param_6)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn assign_post_order_index_dfs(param_1: i32, param_2: *mut i64, param_3: *mut i64, param_4: i32, param_5: *mut i64, param_6: u64) -> i32 { unsafe { function!(66530, (i32, *mut i64, *mut i64, i32, *mut i64, u64) -> i32)(param_1, param_2, param_3, param_4, param_5, param_6) } }
+/// `AssignQwordVector` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 526253, rva 0x1337440).
+/// `longlong * AssignQwordVector(longlong * param_1, longlong * param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn assign_qword_vector(param_1: *mut i64, param_2: *mut i64) -> *mut i64 { unsafe { function!(526253, (*mut i64, *mut i64) -> *mut i64)(param_1, param_2) } }
+/// `AssignRangeRecord0x170Vector` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 523445, rva 0x141db0).
+/// `undefined AssignRangeRecord0x170Vector(ulonglong * param_1, longlong param_2, longlong param_3)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn assign_range_record0x170_vector(param_1: *mut u64, param_2: i64, param_3: i64) -> u64 { unsafe { function!(523445, (*mut u64, i64, i64) -> u64)(param_1, param_2, param_3) } }
+/// `AssignRangeVector2040` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 449202, rva 0x13764f0).
+/// `undefined AssignRangeVector2040(longlong * param_1, longlong param_2, longlong param_3)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn assign_range_vector2040(param_1: *mut i64, param_2: i64, param_3: i64) -> u64 { unsafe { function!(449202, (*mut i64, i64, i64) -> u64)(param_1, param_2, param_3) } }
+/// `AssignRangeVector50` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 96342, rva 0x1457d80).
+/// `undefined AssignRangeVector50(longlong * param_1, longlong * param_2, longlong * param_3)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn assign_range_vector50(param_1: *mut i64, param_2: *mut i64, param_3: *mut i64) -> u64 { unsafe { function!(96342, (*mut i64, *mut i64, *mut i64) -> u64)(param_1, param_2, param_3) } }
+/// `AssignRecord0x170Vector` (decompiler signature, tier untiered; ledger decompiler evidence, name high; id 523440, rva 0x1417a0).
+/// `undefined8 * AssignRecord0x170Vector(undefined8 * param_1, undefined8 * param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn assign_record0x170_vector(param_1: *mut u64, param_2: *mut u64) -> *mut u64 { unsafe { function!(523440, (*mut u64, *mut u64) -> *mut u64)(param_1, param_2) } }
+/// `AssignRecord28Array` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 523749, rva 0x5ac3b0).
+/// `undefined8 AssignRecord28Array(longlong * param_1, longlong * param_2, undefined8 param_3, ulonglong param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn assign_record28_array(param_1: *mut i64, param_2: *mut i64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(523749, (*mut i64, *mut i64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }

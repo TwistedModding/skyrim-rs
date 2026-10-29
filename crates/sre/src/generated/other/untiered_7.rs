@@ -3,125 +3,6 @@
 
 use core::ffi::{c_char, c_void};
 
-/// `OpenFile` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 89412, rva 0xe9c1a0).
-/// `undefined8 OpenFile(longlong param_1, ulonglong * param_2, uint param_3)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn open_file(param_1: i64, param_2: *mut u64, param_3: u32) -> u64 { unsafe { function!(89412, (i64, *mut u64, u32) -> u64)(param_1, param_2, param_3) } }
-/// `OpenFileFromDiskOrArchive` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 69209, rva 0xeb31f0).
-/// `BSFile * OpenFileFromDiskOrArchive(char * param_1, int param_2, ulonglong param_3, ulonglong param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn open_file_from_disk_or_archive(param_1: *mut c_char, param_2: i32, param_3: u64, param_4: u64) -> *mut crate::BSFile { unsafe { function!(69209, (*mut c_char, i32, u64, u64) -> *mut crate::BSFile)(param_1, param_2, param_3, param_4) } }
-/// `OpenFileViaFileOpener` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 87378, rva 0xdf96a0).
-/// `undefined8 OpenFileViaFileOpener(longlong param_1, undefined8 param_2, uint param_3, undefined8 param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn open_file_via_file_opener(param_1: i64, param_2: u64, param_3: u32, param_4: u64) -> u64 { unsafe { function!(87378, (i64, u64, u32, u64) -> u64)(param_1, param_2, param_3, param_4) } }
-/// `OpenFileViaFileOpenerWithLog` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 84652, rva 0xdf3270).
-/// `undefined8 OpenFileViaFileOpenerWithLog(longlong * param_1, undefined8 param_2, longlong param_3, undefined8 param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn open_file_via_file_opener_with_log(param_1: *mut i64, param_2: u64, param_3: i64, param_4: u64) -> u64 { unsafe { function!(84652, (*mut i64, u64, i64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
-/// `OpenFileViaFileOpenerWithLogState` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 84651, rva 0xdf31d0).
-/// `undefined8 OpenFileViaFileOpenerWithLogState(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn open_file_via_file_opener_with_log_state(param_1: *mut i64, param_2: u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(84651, (*mut i64, u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
-/// `OpenFileWithModeFlags` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 90105, rva 0xeaacf0).
-/// `undefined OpenFileWithModeFlags(longlong param_1)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn open_file_with_mode_flags(param_1: i64) -> u64 { unsafe { function!(90105, (i64) -> u64)(param_1) } }
-/// `OpenHashMapContainsKey` (decompiler signature, tier untiered; ledger decompiler evidence, name high; id 58243, rva 0xac53f0).
-/// `undefined8 OpenHashMapContainsKey(longlong * param_1, undefined8 param_2, longlong param_3)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn open_hash_map_contains_key(param_1: *mut i64, param_2: u64, param_3: i64) -> u64 { unsafe { function!(58243, (*mut i64, u64, i64) -> u64)(param_1, param_2, param_3) } }
-/// `OpenHeapArraySlotSize4At` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 51107, rva 0x90d630).
-/// `undefined OpenHeapArraySlotSize4At(longlong * param_1, uint param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn open_heap_array_slot_size4_at(param_1: *mut i64, param_2: u32) -> u64 { unsafe { function!(51107, (*mut i64, u32) -> u64)(param_1, param_2) } }
-/// `OpenHeapArraySlotSize4At_2` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 52702, rva 0x987a70).
-/// `undefined OpenHeapArraySlotSize4At_2(longlong * param_1, uint param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn open_heap_array_slot_size4_at_2(param_1: *mut i64, param_2: u32) -> u64 { unsafe { function!(52702, (*mut i64, u32) -> u64)(param_1, param_2) } }
-/// `OpenHeapArraySlotSize8At` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 51026, rva 0x905470).
-/// `undefined OpenHeapArraySlotSize8At(longlong * param_1, uint param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn open_heap_array_slot_size8_at(param_1: *mut i64, param_2: u32) -> u64 { unsafe { function!(51026, (*mut i64, u32) -> u64)(param_1, param_2) } }
-/// `OpenHeapArraySlotSize8At_2` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 52299, rva 0x9643d0).
-/// `undefined OpenHeapArraySlotSize8At_2(longlong * param_1, uint param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn open_heap_array_slot_size8_at_2(param_1: *mut i64, param_2: u32) -> u64 { unsafe { function!(52299, (*mut i64, u32) -> u64)(param_1, param_2) } }
-/// `OpenHeapArraySlotSize8At_3` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 442888, rva 0xa77800).
-/// `undefined OpenHeapArraySlotSize8At_3(longlong * param_1, uint param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn open_heap_array_slot_size8_at_3(param_1: *mut i64, param_2: u32) -> u64 { unsafe { function!(442888, (*mut i64, u32) -> u64)(param_1, param_2) } }
-/// `OpenLocalizedStringTableFile` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 15478, rva 0x20e730).
-/// `uint * OpenLocalizedStringTableFile(uint * param_1, char * param_2, undefined8 param_3, undefined8 param_4, uint param_5)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn open_localized_string_table_file(param_1: *mut u32, param_2: *mut c_char, param_3: u64, param_4: u64, param_5: u32) -> *mut u32 { unsafe { function!(15478, (*mut u32, *mut c_char, u64, u64, u32) -> *mut u32)(param_1, param_2, param_3, param_4, param_5) } }
-/// `OpenLooseFileHandle` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 70045, rva 0xed6b20).
-/// `uint OpenLooseFileHandle(longlong param_1, char param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn open_loose_file_handle(param_1: i64, param_2: c_char) -> u32 { unsafe { function!(70045, (i64, c_char) -> u32)(param_1, param_2) } }
-/// `OpenMarketplaceOrShowUpdateRequired` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 441705, rva 0x57e940).
-/// `undefined OpenMarketplaceOrShowUpdateRequired(int param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn open_marketplace_or_show_update_required(param_1: i32, param_2: u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(441705, (i32, u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
-/// `OpenMatchedDeviceAndStartThread` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 68949, rva 0xeaa200).
-/// `undefined OpenMatchedDeviceAndStartThread(undefined8 * param_1)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn open_matched_device_and_start_thread(param_1: *mut u64) -> u64 { unsafe { function!(68949, (*mut u64) -> u64)(param_1) } }
-/// `OpenQwordArrayGapAt` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 32405, rva 0x535b60).
-/// `undefined OpenQwordArrayGapAt(longlong * param_1, uint param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn open_qword_array_gap_at(param_1: *mut i64, param_2: u32) -> u64 { unsafe { function!(32405, (*mut i64, u32) -> u64)(param_1, param_2) } }
 /// `OpenQwordArrayGapAt_2` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 32472, rva 0x5399a0).
 /// `undefined OpenQwordArrayGapAt_2(longlong * param_1, uint param_2)`
 ///
@@ -4308,13 +4189,6 @@ pub unsafe fn queue_terrain_load_for_node(param_1: *mut i64, param_2: *mut i64, 
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn queue_terrain_load_for_node_2(param_1: *mut i64, param_2: *mut i64, param_3: i64, param_4: *mut i64) -> u64 { unsafe { function!(31917, (*mut i64, *mut i64, i64, *mut i64) -> u64)(param_1, param_2, param_3, param_4) } }
-/// `QueueTextMessage` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 51619, rva 0x934f90).
-/// `undefined QueueTextMessage(char param_1, undefined1 * param_2, undefined4 * param_3, undefined8 param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn queue_text_message(param_1: c_char, param_2: *mut u8, param_3: *mut u32, param_4: u64) -> u64 { unsafe { function!(51619, (c_char, *mut u8, *mut u32, u64) -> u64)(param_1, param_2, param_3, param_4) } }
 /// `QueueTextureHandlesForField20` (decompiler signature, tier untiered; ledger decompiler evidence, name high; id 18844, rva 0x2b6f70).
 /// `undefined QueueTextureHandlesForField20(longlong param_1, undefined4 param_2, undefined8 param_3)`
 ///
@@ -13492,3 +13366,143 @@ pub unsafe fn release_tracked_form_if_type2_e(param_1: *mut u64) -> u64 { unsafe
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn release_tracked_form_reference(param_1: i64, param_2: *mut i64) -> u64 { unsafe { function!(36171, (i64, *mut i64) -> u64)(param_1, param_2) } }
+/// `ReleaseTriggerEventStorage` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 26040, rva 0x407030).
+/// `undefined ReleaseTriggerEventStorage(undefined8 * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn release_trigger_event_storage(param_1: *mut u64, param_2: u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(26040, (*mut u64, u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
+/// `ReleaseTwoArrays` (decompiler signature, tier untiered; ledger decompiler evidence, name high; id 92512, rva 0x12295d0).
+/// `undefined ReleaseTwoArrays(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn release_two_arrays(param_1: *mut i64, param_2: u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(92512, (*mut i64, u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
+/// `ReleaseTwoArrays_2` (decompiler signature, tier untiered; ledger decompiler evidence, name high; id 50999, rva 0x9046e0).
+/// `undefined ReleaseTwoArrays_2(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn release_two_arrays_2(param_1: *mut i64, param_2: u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(50999, (*mut i64, u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
+/// `ReleaseTwoFixedStringPairSmallArrays` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 36718, rva 0x660ef0).
+/// `undefined ReleaseTwoFixedStringPairSmallArrays(int * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn release_two_fixed_string_pair_small_arrays(param_1: *mut i32, param_2: u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(36718, (*mut i32, u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
+/// `ReleaseTwoFixedStringSmallArrays` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 36719, rva 0x661010).
+/// `undefined ReleaseTwoFixedStringSmallArrays(int * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn release_two_fixed_string_small_arrays(param_1: *mut i32, param_2: u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(36719, (*mut i32, u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
+/// `ReleaseTwoFixedStrings_2` (decompiler signature, tier untiered; ledger decompiler evidence, name high; id 36707, rva 0x660990).
+/// `undefined ReleaseTwoFixedStrings_2(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn release_two_fixed_strings_2() -> u64 { unsafe { function!(36707, () -> u64)() } }
+/// `ReleaseTwoFixedStrings_3` (decompiler signature, tier untiered; ledger decompiler evidence, name high; id 524904, rva 0x129e250).
+/// `undefined ReleaseTwoFixedStrings_3(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn release_two_fixed_strings_3() -> u64 { unsafe { function!(524904, () -> u64)() } }
+/// `ReleaseTwoFixedStrings_4` (decompiler signature, tier untiered; ledger decompiler evidence, name high; id 65153, rva 0xc3f470).
+/// `undefined ReleaseTwoFixedStrings_4(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn release_two_fixed_strings_4() -> u64 { unsafe { function!(65153, () -> u64)() } }
+/// `ReleaseTwoFixedStrings_5` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 68591, rva 0xcf2780).
+/// `undefined ReleaseTwoFixedStrings_5(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn release_two_fixed_strings_5() -> u64 { unsafe { function!(68591, () -> u64)() } }
+/// `ReleaseTwoFixedStrings_6` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 170522, rva 0x1790140).
+/// `undefined ReleaseTwoFixedStrings_6(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn release_two_fixed_strings_6() -> u64 { unsafe { function!(170522, () -> u64)() } }
+/// `ReleaseTwoFixedStrings_7` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 170523, rva 0x1790160).
+/// `undefined ReleaseTwoFixedStrings_7(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn release_two_fixed_strings_7() -> u64 { unsafe { function!(170523, () -> u64)() } }
+/// `ReleaseTwoFixedStrings_8` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 170525, rva 0x17901d0).
+/// `undefined ReleaseTwoFixedStrings_8(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn release_two_fixed_strings_8() -> u64 { unsafe { function!(170525, () -> u64)() } }
+/// `ReleaseTwoHandleRefCounts` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 38843, rva 0x6da520).
+/// `undefined ReleaseTwoHandleRefCounts(longlong * param_1)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn release_two_handle_ref_counts(param_1: *mut i64) -> u64 { unsafe { function!(38843, (*mut i64) -> u64)(param_1) } }
+/// `ReleaseTwoHandleRefCounts_2` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 40136, rva 0x7351a0).
+/// `undefined ReleaseTwoHandleRefCounts_2(longlong * param_1)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn release_two_handle_ref_counts_2(param_1: *mut i64) -> u64 { unsafe { function!(40136, (*mut i64) -> u64)(param_1) } }
+/// `ReleaseTwoRefCountedPointers` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 47889, rva 0x882200).
+/// `undefined ReleaseTwoRefCountedPointers(longlong * param_1)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn release_two_ref_counted_pointers(param_1: *mut i64) -> u64 { unsafe { function!(47889, (*mut i64) -> u64)(param_1) } }
+/// `ReleaseTwoRefCountedPointers_2` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 49251, rva 0x8bc350).
+/// `undefined ReleaseTwoRefCountedPointers_2(longlong * param_1)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn release_two_ref_counted_pointers_2(param_1: *mut i64) -> u64 { unsafe { function!(49251, (*mut i64) -> u64)(param_1) } }
+/// `ReleaseTwoRefPtrs` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 49866, rva 0x8d6710).
+/// `undefined ReleaseTwoRefPtrs(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn release_two_ref_ptrs(param_1: *mut i64, param_2: u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(49866, (*mut i64, u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
+/// `ReleaseTwoRefPtrsClearingFlag10` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 51349, rva 0x91f7a0).
+/// `undefined ReleaseTwoRefPtrsClearingFlag10(longlong * param_1)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn release_two_ref_ptrs_clearing_flag10(param_1: *mut i64) -> u64 { unsafe { function!(51349, (*mut i64) -> u64)(param_1) } }
+/// `ReleaseTwoRefPtrs_2` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 48683, rva 0x8a66b0).
+/// `undefined ReleaseTwoRefPtrs_2(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn release_two_ref_ptrs_2(param_1: *mut i64, param_2: u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(48683, (*mut i64, u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
+/// `ReleaseTwoRefsAndDecrementCounter` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 48880, rva 0x8af2b0).
+/// `undefined ReleaseTwoRefsAndDecrementCounter(longlong * param_1)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn release_two_refs_and_decrement_counter(param_1: *mut i64) -> u64 { unsafe { function!(48880, (*mut i64) -> u64)(param_1) } }

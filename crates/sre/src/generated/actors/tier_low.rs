@@ -46,13 +46,6 @@ impl crate::Actor {
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
     pub unsafe fn actor_state_vfunc_4(&self, param_1: *mut f32) -> u64 { unsafe { function!(38026, (*const Self, *mut f32) -> u64)(core::ptr::from_ref(self).byte_add(0xC0), param_1) } }
-    /// `Actor::ActorState_vfunc_5` (decompiler signature, tier low; ledger rtti evidence, name medium; id 38028, rva 0x6b5860).
-    /// `undefined4 ActorState_vfunc_5(Actor * this)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn actor_state_vfunc_5(&self) -> u32 { unsafe { function!(38028, (*const Self) -> u32)(core::ptr::from_ref(self).byte_add(0xC0)) } }
     /// `Actor::ActorState_vfunc_6` (decompiler signature, tier low; ledger rtti evidence, name medium; id 38021, rva 0x6b5500).
     /// `undefined4 ActorState_vfunc_6(Actor * this)`
     ///

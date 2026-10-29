@@ -3,6 +3,58 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `BSRenderPass::Alloc` at 0x1555820 (semantic, high); signature (untiered): `undefined Alloc(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined4 param_4, byte param_5, longlong param_6)`; semantic: takes a pass from this thread's pool (index TLS+0x9f4) and initialises it (high); signature `BSRenderPass* (BSShader* shader, BSShaderProperty* property, BSGeometry* geometry, u32 techniqueId, u8 numLights, BSLight** lights)`
+pub const BSRenderPass__Alloc: u64 = 107497;
+/// `BSRenderPass::Alloc` as a function pointer type (high).
+pub type BSRenderPass__Alloc_fn = unsafe extern "C" fn(shader: *mut crate::BSShader, property: *mut crate::BSShaderProperty, geometry: *mut crate::BSGeometry, techniqueId: u32, numLights: u8, lights: *mut *mut crate::BSLight) -> *mut c_void;
+/// `BSRenderPass::QueueRelease` at 0x1555920 (semantic, high); signature (untiered): `undefined QueueRelease(longlong param_1)`; semantic: queues a pass for return to its pool through a lock-free ring (drained by 0x1555d91, which RenderFrame calls before PresentFrame) (high); signature `void (BSRenderPass* pass)`
+pub const BSRenderPass__QueueRelease: u64 = 107498;
+/// `BSRenderPass::QueueRelease` as a function pointer type (high).
+pub type BSRenderPass__QueueRelease_fn = unsafe extern "C" fn(pass: *mut c_void);
+/// `BSResource::ArchiveFoundStreamCB::vdtor` at 0x9f0520 (layout_inference, medium); signature (low): `ArchiveFoundStreamCB * vdtor(ArchiveFoundStreamCB * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const BSResource__ArchiveFoundStreamCB__vdtor: u64 = 54361;
+/// `BSResource::ArchiveManager::ctor` at 0xeca130 (layout_inference, medium); signature (low): `undefined ctor(ArchiveManager * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+pub const BSResource__ArchiveManager__ctor: u64 = 69725;
+/// `BSResource::ArchiveManager::vdtor` at 0xeca4d0 (layout_inference, medium); signature (low): `ArchiveManager * vdtor(ArchiveManager * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const BSResource__ArchiveManager__vdtor: u64 = 69739;
+/// `BSResource::ArchiveStream::ctor` at 0xec6690 (layout_inference, medium); signature (low): `ArchiveStream * ctor(ArchiveStream * this, undefined8 * param_1, undefined4 param_2, uint param_3, longlong * param_4)`
+pub const BSResource__ArchiveStream__ctor: u64 = 69643;
+/// `BSResource::ArchiveStream::ctor` at 0xec6990 (layout_inference, high); signature (low): `ArchiveStream * ctor(ArchiveStream * this, longlong param_1)`
+pub const BSResource__ArchiveStream__ctor_2: u64 = 69649;
+/// `BSResource::ArchiveStream::dtor` at 0xec6700 (layout_inference, high); signature (low): `undefined dtor(ArchiveStream * this, undefined8 param_1, undefined8 param_2, undefined8 * param_3)`
+pub const BSResource__ArchiveStream__dtor: u64 = 69644;
+/// `BSResource::ArchiveStream::dtor` at 0xec70f0 (layout_inference, high); signature (low): `undefined dtor(ArchiveStream * this, undefined8 param_1, undefined8 param_2, undefined8 * param_3)`
+pub const BSResource__ArchiveStream__dtor_2: u64 = 69662;
+/// `BSResource::ArchiveStream::vdtor` at 0xeca650 (layout_inference, medium); signature (low): `ArchiveStream * vdtor(ArchiveStream * this, uint param_1, undefined8 param_2, undefined8 * param_3)`
+pub const BSResource__ArchiveStream__vdtor: u64 = 69741;
+/// `BSResource::ArchiveStream::vfunc_1` at 0xec6c60 (rtti, high); signature (low): `ulonglong vfunc_1(ArchiveStream * this, undefined8 param_1, undefined8 param_2, undefined8 * param_3)`
+pub const BSResource__ArchiveStream__vfunc_1: u64 = 69654;
+/// `BSResource::ArchiveStream::vfunc_10` at 0xec6e70 (rtti, medium); signature (low): `undefined vfunc_10(ArchiveStream * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
+pub const BSResource__ArchiveStream__vfunc_10: u64 = 69658;
+/// `BSResource::ArchiveStream::vfunc_11` at 0xec6ea0 (rtti, high); signature (low): `int vfunc_11(ArchiveStream * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
+pub const BSResource__ArchiveStream__vfunc_11: u64 = 69659;
+/// `BSResource::ArchiveStream::vfunc_12` at 0xecc600 (rtti, high); signature (high): `undefined4 vfunc_12(ArchiveStream * this)`
+pub const BSResource__ArchiveStream__vfunc_12: u64 = 69783;
+/// `BSResource::ArchiveStream::vfunc_2` at 0xec6e50 (rtti, high); signature (low): `undefined vfunc_2(ArchiveStream * this, undefined8 param_1, ulonglong param_2, ulonglong param_3)`
+pub const BSResource__ArchiveStream__vfunc_2: u64 = 69657;
+/// `BSResource::ArchiveStream::vfunc_3` at 0xec6ff0 (rtti, medium); signature (low): `ulonglong vfunc_3(ArchiveStream * this, undefined8 param_1, undefined8 param_2, undefined8 * param_3)`
+pub const BSResource__ArchiveStream__vfunc_3: u64 = 69660;
+/// `BSResource::ArchiveStream::vfunc_5` at 0xec6be0 (rtti, high); signature (low): `undefined vfunc_5(ArchiveStream * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
+pub const BSResource__ArchiveStream__vfunc_5: u64 = 69653;
+/// `BSResource::ArchiveStream::vfunc_6` at 0xec6cf0 (rtti, high); signature (low): `ulonglong vfunc_6(ArchiveStream * this, undefined8 param_1, undefined8 * param_2, int * param_3)`
+pub const BSResource__ArchiveStream__vfunc_6: u64 = 69655;
+/// `BSResource::ArchiveStream::vfunc_7` at 0xecbb10 (rtti, medium); signature (low): `undefined8 vfunc_7(void)`
+pub const BSResource__ArchiveStream__vfunc_7: u64 = 69770;
+/// `BSResource::ArchiveStream::vfunc_8` at 0xec6db0 (rtti, high); signature (low): `undefined8 vfunc_8(ArchiveStream * this, longlong param_1, int param_2, longlong * param_3)`
+pub const BSResource__ArchiveStream__vfunc_8: u64 = 69656;
+/// `BSResource::AsyncStream::vdtor` at 0xeca740 (layout_inference, medium); signature (low): `AsyncStream * vdtor(AsyncStream * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const BSResource__AsyncStream__vdtor: u64 = 69743;
+/// `BSResource::CacheArchiveOp::ctor` at 0xeca1d0 (layout_inference, medium); signature (low): `undefined ctor(CacheArchiveOp * this, undefined8 param_1, undefined8 param_2, undefined8 * param_3)`
+pub const BSResource__CacheArchiveOp__ctor: u64 = 69728;
+/// `BSResource::CacheArchiveOp::vdtor` at 0xeca770 (layout_inference, medium); signature (low): `CacheArchiveOp * vdtor(CacheArchiveOp * this, ulonglong param_1, undefined8 param_2, undefined8 * param_3)`
+pub const BSResource__CacheArchiveOp__vdtor: u64 = 69744;
+/// `BSResource::CacheArchiveOp::vfunc_1` at 0xecc310 (rtti, high); signature (low): `undefined vfunc_1(CacheArchiveOp * this, longlong * param_1)`
+pub const BSResource__CacheArchiveOp__vfunc_1: u64 = 69781;
 /// `BSResource::CacheArchiveOp::vfunc_2` at 0xecc2f0 (rtti, high); signature (low): `undefined vfunc_2(void)`
 pub const BSResource__CacheArchiveOp__vfunc_2: u64 = 69779;
 /// `BSResource::CacheArchiveOp::vfunc_3` at 0xecc300 (rtti, high); signature (low): `undefined vfunc_3(CacheArchiveOp * this, undefined8 param_1, longlong param_2)`
@@ -6189,41 +6241,3 @@ pub const BSTDerivedCreator_BGShkMatFadeController_BShkNonTransformController__v
 pub const BSTDerivedCreator_BGShkPhonemeController_BShkNonTransformController__vdtor: u64 = 26539;
 /// `BSTDerivedCreator<BGShkPhonemeController,BShkNonTransformController>::vfunc_1` at 0x4228a0 (rtti, medium); signature (low): `undefined8 * vfunc_1(BSTDerivedCreator<BGShkPhonemeController,BShkNonTransformController> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
 pub const BSTDerivedCreator_BGShkPhonemeController_BShkNonTransformController__vfunc_1: u64 = 26537;
-/// `BSTDerivedCreator<BGShkPhonemeController,BShkNonTransformController>::vfunc_2` at 0x422910 (rtti, medium); signature (low): `undefined vfunc_2(BSTDerivedCreator<BGShkPhonemeController,BShkNonTransformController> * this, undefined8 * param_1)`
-pub const BSTDerivedCreator_BGShkPhonemeController_BShkNonTransformController__vfunc_2: u64 = 26538;
-/// `BSTDerivedCreator<BSNullImplAudio,BSAudio>::vdtor` at 0xcd63b0 (layout_inference, medium); signature (low): `BSTDerivedCreator<BSNullImplAudio,BSAudio> * vdtor(BSTDerivedCreator<BSNullImplAudio,BSAudio> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const BSTDerivedCreator_BSNullImplAudio_BSAudio__vdtor: u64 = 67908;
-/// `BSTDerivedCreator<BSNullImplAudio,BSAudio>::vfunc_1` at 0xcd6310 (rtti, medium); signature (low): `BSAudio * vfunc_1(BSTDerivedCreator<BSNullImplAudio,BSAudio> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-pub const BSTDerivedCreator_BSNullImplAudio_BSAudio__vfunc_1: u64 = 67906;
-/// `BSTDerivedCreator<BSNullImplAudio,BSAudio>::vfunc_2` at 0xcd6390 (rtti, medium); signature (low): `undefined vfunc_2(BSTDerivedCreator<BSNullImplAudio,BSAudio> * this, undefined8 * param_1)`
-pub const BSTDerivedCreator_BSNullImplAudio_BSAudio__vfunc_2: u64 = 67907;
-/// `BSTDerivedCreator<BSPathingRequest,BSPathingRequest>::vdtor` at 0x11cb770 (layout_inference, medium); signature (low): `BSTDerivedCreator<BSPathingRequest,BSPathingRequest> * vdtor(BSTDerivedCreator<BSPathingRequest,BSPathingRequest> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const BSTDerivedCreator_BSPathingRequest_BSPathingRequest__vdtor: u64 = 90632;
-/// `BSTDerivedCreator<BSPathingRequest,BSPathingRequest>::vfunc_1` at 0x11cb570 (rtti, medium); signature (low): `undefined8 * vfunc_1(BSTDerivedCreator<BSPathingRequest,BSPathingRequest> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-pub const BSTDerivedCreator_BSPathingRequest_BSPathingRequest__vfunc_1: u64 = 90630;
-/// `BSTDerivedCreator<BSPathingRequest,BSPathingRequest>::vfunc_2` at 0x11cb750 (rtti, medium); signature (low): `undefined vfunc_2(BSTDerivedCreator<BSPathingRequest,BSPathingRequest> * this, undefined8 * param_1)`
-pub const BSTDerivedCreator_BSPathingRequest_BSPathingRequest__vfunc_2: u64 = 90631;
-/// `BSTDerivedCreator<BSPathingSolution,BSPathingSolution>::vdtor` at 0x11d71b0 (layout_inference, medium); signature (low): `BSTDerivedCreator<BSPathingSolution,BSPathingSolution> * vdtor(BSTDerivedCreator<BSPathingSolution,BSPathingSolution> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const BSTDerivedCreator_BSPathingSolution_BSPathingSolution__vdtor: u64 = 90957;
-/// `BSTDerivedCreator<BSPathingSolution,BSPathingSolution>::vfunc_1` at 0x11d70c0 (rtti, medium); signature (low): `undefined4 * vfunc_1(BSTDerivedCreator<BSPathingSolution,BSPathingSolution> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-pub const BSTDerivedCreator_BSPathingSolution_BSPathingSolution__vfunc_1: u64 = 90955;
-/// `BSTDerivedCreator<BSPathingSolution,BSPathingSolution>::vfunc_2` at 0x11d7190 (rtti, medium); signature (low): `undefined vfunc_2(BSTDerivedCreator<BSPathingSolution,BSPathingSolution> * this, longlong param_1)`
-pub const BSTDerivedCreator_BSPathingSolution_BSPathingSolution__vfunc_2: u64 = 90956;
-/// `BSTDerivedCreator<BSUIMessageData,IUIMessageData>::vdtor` at 0x1168fb0 (layout_inference, medium); signature (low): `BSTDerivedCreator<BSUIMessageData,IUIMessageData> * vdtor(BSTDerivedCreator<BSUIMessageData,IUIMessageData> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const BSTDerivedCreator_BSUIMessageData_IUIMessageData__vdtor: u64 = 82068;
-/// `BSTDerivedCreator<BSUIMessageData,IUIMessageData>::vfunc_1` at 0x1168f20 (rtti, medium); signature (low): `undefined8 * vfunc_1(BSTDerivedCreator<BSUIMessageData,IUIMessageData> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-pub const BSTDerivedCreator_BSUIMessageData_IUIMessageData__vfunc_1: u64 = 82066;
-/// `BSTDerivedCreator<BSUIMessageData,IUIMessageData>::vfunc_2` at 0x1168f90 (rtti, medium); signature (low): `undefined vfunc_2(BSTDerivedCreator<BSUIMessageData,IUIMessageData> * this, undefined8 * param_1)`
-pub const BSTDerivedCreator_BSUIMessageData_IUIMessageData__vfunc_2: u64 = 82067;
-/// `BSTDerivedCreator<BSUIScaleformData,IUIMessageData>::vdtor` at 0x1168e90 (layout_inference, medium); signature (low): `BSTDerivedCreator<BSUIScaleformData,IUIMessageData> * vdtor(BSTDerivedCreator<BSUIScaleformData,IUIMessageData> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const BSTDerivedCreator_BSUIScaleformData_IUIMessageData__vdtor: u64 = 82063;
-/// `BSTDerivedCreator<BSUIScaleformData,IUIMessageData>::vfunc_1` at 0x1168e00 (rtti, medium); signature (low): `undefined vfunc_1(BSTDerivedCreator<BSUIScaleformData,IUIMessageData> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-pub const BSTDerivedCreator_BSUIScaleformData_IUIMessageData__vfunc_1: u64 = 82061;
-/// `BSTDerivedCreator<BSUIScaleformData,IUIMessageData>::vfunc_2` at 0x1168e70 (rtti, medium); signature (low): `undefined vfunc_2(BSTDerivedCreator<BSUIScaleformData,IUIMessageData> * this, undefined8 * param_1)`
-pub const BSTDerivedCreator_BSUIScaleformData_IUIMessageData__vfunc_2: u64 = 82062;
-/// `BSTDerivedCreator<BSXAudio2Audio,BSAudio>::vdtor` at 0xcd8580 (layout_inference, medium); signature (low): `BSTDerivedCreator<BSXAudio2Audio,BSAudio> * vdtor(BSTDerivedCreator<BSXAudio2Audio,BSAudio> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const BSTDerivedCreator_BSXAudio2Audio_BSAudio__vdtor: u64 = 67969;
-/// `BSTDerivedCreator<BSXAudio2Audio,BSAudio>::vfunc_1` at 0xcd86e0 (rtti, medium); signature (low): `BSAudio * vfunc_1(BSTDerivedCreator<BSXAudio2Audio,BSAudio> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-pub const BSTDerivedCreator_BSXAudio2Audio_BSAudio__vfunc_1: u64 = 67977;
-/// `BSTDerivedCreator<BSXAudio2Audio,BSAudio>::vfunc_2` at 0xcd87a0 (rtti, medium); signature (low): `undefined vfunc_2(BSTDerivedCreator<BSXAudio2Audio,BSAudio> * this, undefined8 * param_1)`
-pub const BSTDerivedCreator_BSXAudio2Audio_BSAudio__vfunc_2: u64 = 67979;

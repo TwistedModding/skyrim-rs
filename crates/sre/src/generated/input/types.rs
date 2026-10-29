@@ -12,12 +12,16 @@ pub struct ActivateHandler {
     /// +0x0 `vtbl:ActivateHandler:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::ActivateHandler_vtable,
-    pub unknown_8: [u8; 24],
+    pub unknown_8: [u8; 19],
+    /// +0x1B `u8`, semantic, runtime; set by Disable/EnablePlayerControls through PlayerControls::SetActivateEnabled (stores !enabled); tested by IsActivateEnabled (high)
+    pub activateDisabled: u8,
+    pub unknown_1C: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ActivateHandler>() == 0x20);
 const _: () = assert!(core::mem::offset_of!(ActivateHandler, __vftable) == 0x0);
+const _: () = assert!(core::mem::offset_of!(ActivateHandler, activateDisabled) == 0x1B);
 
 /// `AmiiboEvent`: size 0x40 (exact, medium); primary base `IDEvent`.
 /// Meaning: amiibo tag (medium, input pass).
@@ -1179,8 +1183,32 @@ pub struct PlayerControls {
     pub unknown_150: [u8; 24],
     /// +0x168 `undefined8`, ctor store
     pub field_168: u64,
-    /// +0x170 `undefined1`, semantic; pointers to the 13 handlers: +0x170 Movement, +0x178 Look, +0x180 Sprint, +0x188 ReadyWeapon, +0x190 AutoMove, +0x198 ToggleRun, +0x1a0 Activate, +0x1a8 Jump, +0x1b0 Shout, +0x1b8 AttackBlock, +0x1c0 Run, +0x1c8 Sneak, +0x1d0 TogglePOV (high)
-    pub builtinHandlers: [u8; 104],
+    /// +0x170 `ptr:MovementHandler`, semantic, runtime; Forward/Back/Strafe/Move handler (0x10, vtable 0x19351c8); the other 12 handler pointers follow at +0x178..+0x1d0 (high)
+    pub movementHandler: *mut crate::MovementHandler,
+    /// +0x178 `ptr:LookHandler`, semantic, runtime; Look (0xb8, vtable 0x1935150) (high)
+    pub lookHandler: *mut crate::LookHandler,
+    /// +0x180 `ptr:SprintHandler`, semantic, runtime; Sprint, held-state (0x18, vtable 0x1935208) (high)
+    pub sprintHandler: *mut crate::SprintHandler,
+    /// +0x188 `ptr:ReadyWeaponHandler`, semantic, runtime; Ready Weapon (0x10, vtable 0x1935348) (high)
+    pub readyWeaponHandler: *mut crate::ReadyWeaponHandler,
+    /// +0x190 `ptr:AutoMoveHandler`, semantic, runtime; Auto-Move (0x10, vtable 0x19353d8) (high)
+    pub autoMoveHandler: *mut crate::AutoMoveHandler,
+    /// +0x198 `ptr:ToggleRunHandler`, semantic, runtime; Toggle Always Run (0x10, vtable 0x1935418) (high)
+    pub toggleRunHandler: *mut crate::ToggleRunHandler,
+    /// +0x1A0 `ptr:ActivateHandler`, semantic, runtime; Activate, held-state (0x20, vtable 0x1935388) (high)
+    pub activateHandler: *mut crate::ActivateHandler,
+    /// +0x1A8 `ptr:JumpHandler`, semantic, runtime; Jump (0x10, vtable 0x19354a8) (high)
+    pub jumpHandler: *mut crate::JumpHandler,
+    /// +0x1B0 `ptr:ShoutHandler`, semantic, runtime; Shout / KinectShout (0x20, vtable 0x1935528) (high)
+    pub shoutHandler: *mut crate::ShoutHandler,
+    /// +0x1B8 `ptr:AttackBlockHandler`, semantic, runtime; Left/Right Attack/Block, held-state (0xc0, vtable 0x1935258) (high)
+    pub attackBlockHandler: *mut crate::AttackBlockHandler,
+    /// +0x1C0 `ptr:RunHandler`, semantic, runtime; Run, held-state (0x18, vtable 0x1935458) (high)
+    pub runHandler: *mut crate::RunHandler,
+    /// +0x1C8 `ptr:SneakHandler`, semantic, runtime; Sneak (0x10, vtable 0x19354e8) (high)
+    pub sneakHandler: *mut crate::SneakHandler,
+    /// +0x1D0 `ptr:TogglePOVHandler`, semantic, runtime; Toggle POV, held-state (0x20, vtable 0x1935568) (high)
+    pub togglePOVHandler: *mut crate::TogglePOVHandler,
     /// +0x1D8 `undefined1`, semantic; in dialogue, the cursor position near the screen edge drives lookInput (keyboard/mouse only) (medium)
     pub dialogueCursorLook: u8,
     pub unknown_1D9: [u8; 3],
@@ -1212,7 +1240,19 @@ const _: () = assert!(core::mem::offset_of!(PlayerControls, pendingHandlerChange
 const _: () = assert!(core::mem::offset_of!(PlayerControls, dispatching) == 0xA0);
 const _: () = assert!(core::mem::offset_of!(PlayerControls, responseGraphs) == 0xA4);
 const _: () = assert!(core::mem::offset_of!(PlayerControls, field_168) == 0x168);
-const _: () = assert!(core::mem::offset_of!(PlayerControls, builtinHandlers) == 0x170);
+const _: () = assert!(core::mem::offset_of!(PlayerControls, movementHandler) == 0x170);
+const _: () = assert!(core::mem::offset_of!(PlayerControls, lookHandler) == 0x178);
+const _: () = assert!(core::mem::offset_of!(PlayerControls, sprintHandler) == 0x180);
+const _: () = assert!(core::mem::offset_of!(PlayerControls, readyWeaponHandler) == 0x188);
+const _: () = assert!(core::mem::offset_of!(PlayerControls, autoMoveHandler) == 0x190);
+const _: () = assert!(core::mem::offset_of!(PlayerControls, toggleRunHandler) == 0x198);
+const _: () = assert!(core::mem::offset_of!(PlayerControls, activateHandler) == 0x1A0);
+const _: () = assert!(core::mem::offset_of!(PlayerControls, jumpHandler) == 0x1A8);
+const _: () = assert!(core::mem::offset_of!(PlayerControls, shoutHandler) == 0x1B0);
+const _: () = assert!(core::mem::offset_of!(PlayerControls, attackBlockHandler) == 0x1B8);
+const _: () = assert!(core::mem::offset_of!(PlayerControls, runHandler) == 0x1C0);
+const _: () = assert!(core::mem::offset_of!(PlayerControls, sneakHandler) == 0x1C8);
+const _: () = assert!(core::mem::offset_of!(PlayerControls, togglePOVHandler) == 0x1D0);
 const _: () = assert!(core::mem::offset_of!(PlayerControls, dialogueCursorLook) == 0x1D8);
 const _: () = assert!(core::mem::offset_of!(PlayerControls, field_1DC) == 0x1DC);
 

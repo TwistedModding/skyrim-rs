@@ -4,6 +4,12 @@
 use crate::raw::*;
 
 pub(super) const ROWS: &[Function] = &[
+    Function { rva: 0xb597b0, id: 61397, confidence: Confidence::Medium, name: "FindArray278EntryByField18" },
+    Function { rva: 0xb59b00, id: 61401, confidence: Confidence::Medium, name: "QueueJobBatchesType10301AndWait" },
+    Function { rva: 0xb59f30, id: 61403, confidence: Confidence::Medium, name: "QueueJobBatchesType10204AndWait" },
+    Function { rva: 0xb5a740, id: 61405, confidence: Confidence::Medium, name: "QueueJobBatchesType20202AndWait" },
+    Function { rva: 0xb5a960, id: 61406, confidence: Confidence::Medium, name: "hkpWorld::getPenetrations" },
+    Function { rva: 0xb5abe0, id: 61407, confidence: Confidence::High, name: "GetField290" },
     Function { rva: 0xb5abf0, id: 61408, confidence: Confidence::Medium, name: "SetRefCountedField290" },
     Function { rva: 0xb5b150, id: 61411, confidence: Confidence::Medium, name: "CallField10Vfunc20UnderLock" },
     Function { rva: 0xb5b1a0, id: 61412, confidence: Confidence::Medium, name: "CallField10Vfunc28UnderLock" },
@@ -8896,8 +8902,4 @@ pub(super) const ROWS: &[Function] = &[
     Function { rva: 0xee8990, id: 70429, confidence: Confidence::Medium, name: "NiTLargeArray<unsigned_int,NiTMallocInterface<unsigned_int>_>::ctor" },
     Function { rva: 0xee89c0, id: 70430, confidence: Confidence::Medium, name: "NiTLargeArray<NiPointer<NiObject>,NiTNewInterface<NiPointer<NiObject>_>_>::ctor" },
     Function { rva: 0xee8a20, id: 70431, confidence: Confidence::Medium, name: "NiTLargeArray<BSFixedString,NiTNewInterface<BSFixedString>_>::ctor" },
-    Function { rva: 0xee8a80, id: 75294, confidence: Confidence::High, name: "NiTLargeArray<NiPointer<NiObject>,NiTNewInterface<NiPointer<NiObject>_>_>::dtor" },
-    Function { rva: 0xee8ae0, id: 75295, confidence: Confidence::High, name: "NiTLargeArray<BSFixedString,NiTNewInterface<BSFixedString>_>::dtor" },
-    Function { rva: 0xee8b40, id: 70434, confidence: Confidence::High, name: "NiTLargeArray<unsigned_int,NiTMallocInterface<unsigned_int>_>::dtor" },
-    Function { rva: 0xee8b70, id: 70435, confidence: Confidence::Medium, name: "NiTMapBase<NiTPointerAllocator<unsigned___int64>,char_const*___ptr64,unsigned_short>::ctor" },
 ];

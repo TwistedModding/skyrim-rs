@@ -1402,8 +1402,9 @@ pub struct PlayerCharacter {
     pub field_898: u32,
     /// +0x89C `undefined4`, ctor store
     pub field_89C: u32,
-    /// +0x8A0 `undefined8`, ctor store
-    pub field_8A0: u64,
+    pub unknown_8A0: [u8; 4],
+    /// +0x8A4 `u32`, semantic; ObjectRefHandle of the actor doing the player a favor (command mode) (medium)
+    pub favorActorHandle: u32,
     /// +0x8A8 `undefined4`, ctor store
     pub field_8A8: u32,
     pub unknown_8AC: [u8; 44],
@@ -1567,8 +1568,8 @@ pub struct PlayerCharacter {
     pub field_BE8: u8,
     /// +0xBE9 `undefined1`, ctor store
     pub field_BE9: u8,
-    /// +0xBEA `undefined1`, ctor store
-    pub field_BEA: u8,
+    /// +0xBEA `u8`, ctor store, semantic, runtime; bit 3 (0x8): the player is AI-driven (SetPlayerAIDriven 0x7559f0, the vampire feed); bits 1-3 (0xe) are tested together by HasFlagsEInByteBEA 0x7517d0. Bits 1 and 2 not identified; see the flag rows (high)
+    pub aiDriveFlags: u8,
     /// +0xBEB `undefined1`, semantic, runtime; bit 0 set while the player is in third person (SetFirstPerson stores !firstPerson) (high)
     pub viewFlags: u8,
     /// +0xBEC `undefined1`, ctor store
@@ -1783,7 +1784,7 @@ const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_890) == 0x890
 const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_894) == 0x894);
 const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_898) == 0x898);
 const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_89C) == 0x89C);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_8A0) == 0x8A0);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, favorActorHandle) == 0x8A4);
 const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_8A8) == 0x8A8);
 const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_8D8) == 0x8D8);
 const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_8DC) == 0x8DC);
@@ -1857,7 +1858,7 @@ const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_BB0) == 0xBB0
 const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_BE0) == 0xBE0);
 const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_BE8) == 0xBE8);
 const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_BE9) == 0xBE9);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_BEA) == 0xBEA);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, aiDriveFlags) == 0xBEA);
 const _: () = assert!(core::mem::offset_of!(PlayerCharacter, viewFlags) == 0xBEB);
 const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_BEC) == 0xBEC);
 
@@ -2826,19 +2827,19 @@ impl ActorState_flags1 {
     }
 }
 
-/// Named bits of `PlayerCharacter.flags` (actors pass); unnamed bits pass through `bits`.
+/// Named bits of `PlayerCharacter.aiDriveFlags` (actors pass); unnamed bits pass through `bits`.
 #[repr(transparent)]
 #[derive(Clone, Copy, PartialEq, Eq, Debug, Default)]
-pub struct PlayerCharacter_flags(pub u32);
+pub struct PlayerCharacter_aiDriveFlags(pub u8);
 
-impl PlayerCharacter_flags {
+impl PlayerCharacter_aiDriveFlags {
     /// thirdPerson (high)
     pub const THIRD_PERSON: Self = Self(0x1);
     /// firstPersonGeometryHidden (high)
     pub const FIRST_PERSON_GEOMETRY_HIDDEN: Self = Self(0x2);
 
     #[must_use]
-    pub const fn bits(self) -> u32 {
+    pub const fn bits(self) -> u8 {
         self.0
     }
 

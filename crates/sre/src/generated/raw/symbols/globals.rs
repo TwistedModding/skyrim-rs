@@ -5985,6 +5985,7 @@ pub(super) const ROWS: &[Global] = &[
     Global { rva: 0x3230018, id: 403350, name: "g_UIBlurManager_ptr" },
     Global { rva: 0x3230030, id: 403352, name: "g_FormTypeToChangeFormType" },
     Global { rva: 0x3230110, id: 403360, name: "g_AppResourceCaching__anon_AE50F340_Manager" },
+    Global { rva: 0x32303b3, id: 403437, name: "g_GamePaused" },
     Global { rva: 0x32303b8, id: 403450, name: "g_TES_ptr" },
     Global { rva: 0x3230498, id: 403439, name: "g_BSClearZNode_ptr" },
     Global { rva: 0x3230508, id: 403440, name: "g_NiNode_ptr_2" },

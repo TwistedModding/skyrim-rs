@@ -3,6 +3,52 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `NiBlendColorInterpolator::vfunc_23` at 0xf731b0 (rtti, high); signature (low): `NiBlendInterpolator * vfunc_23(NiBlendColorInterpolator * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
+pub const NiBlendColorInterpolator__vfunc_23: u64 = 73189;
+/// `NiBlendColorInterpolator::vfunc_24` at 0xf732e0 (rtti, high); signature (low): `undefined vfunc_24(NiBlendColorInterpolator * this, longlong param_1)`
+pub const NiBlendColorInterpolator__vfunc_24: u64 = 73191;
+/// `NiBlendColorInterpolator::vfunc_25` at 0xf73360 (rtti, high); signature (untiered): `undefined vfunc_25(void)`
+pub const NiBlendColorInterpolator__vfunc_25: u64 = 73192;
+/// `NiBlendColorInterpolator::vfunc_26` at 0xf73370 (rtti, high); signature (untiered): `undefined1 vfunc_26(NiBlendColorInterpolator * this, longlong * param_1)`
+pub const NiBlendColorInterpolator__vfunc_26: u64 = 73193;
+/// `NiBlendColorInterpolator::vfunc_27` at 0xf73380 (rtti, high); signature (low): `undefined vfunc_27(NiBlendColorInterpolator * this, longlong * param_1)`
+pub const NiBlendColorInterpolator__vfunc_27: u64 = 73194;
+/// `NiBlendColorInterpolator::vfunc_28` at 0xf733c0 (rtti, high); signature (low): `undefined8 vfunc_28(NiBlendColorInterpolator * this, longlong * param_1)`
+pub const NiBlendColorInterpolator__vfunc_28: u64 = 73195;
+/// `NiBlendColorInterpolator::vfunc_37` at 0xf739d0 (rtti, high); signature (untiered): `undefined1 vfunc_37(void)`
+pub const NiBlendColorInterpolator__vfunc_37: u64 = 73209;
+/// `NiBlendColorInterpolator::vfunc_38` at 0xf73530 (rtti, high); signature (low): `undefined8 vfunc_38(NiBlendColorInterpolator * this, float param_1, undefined8 param_2, undefined8 * param_3)`
+pub const NiBlendColorInterpolator__vfunc_38: u64 = 73198;
+/// `NiBlendColorInterpolator::vfunc_38_sub0` at 0xf736e0 (callgraph, medium); signature (untiered): `ulonglong vfunc_38_sub0(longlong param_1, undefined8 param_2, undefined8 param_3, float * param_4)`
+pub const NiBlendColorInterpolator__vfunc_38_sub0: u64 = 73203;
+/// `NiBlendColorInterpolator::vfunc_39` at 0xf739c0 (rtti, high); signature (untiered): `undefined1 vfunc_39(void)`
+pub const NiBlendColorInterpolator__vfunc_39: u64 = 73208;
+/// `NiBlendColorInterpolator::vfunc_40` at 0xf739e0 (rtti, high); signature (untiered): `undefined1 vfunc_40(void)`
+pub const NiBlendColorInterpolator__vfunc_40: u64 = 73210;
+/// `NiBlendColorInterpolator::vfunc_41` at 0xf739b0 (rtti, high); signature (untiered): `undefined1 vfunc_41(void)`
+pub const NiBlendColorInterpolator__vfunc_41: u64 = 73207;
+/// `NiBlendColorInterpolator::vfunc_42` at 0xf739f0 (rtti, high); signature (untiered): `undefined1 vfunc_42(void)`
+pub const NiBlendColorInterpolator__vfunc_42: u64 = 73211;
+/// `NiBlendColorInterpolator::vfunc_47` at 0xf735f0 (rtti, high); signature (low): `undefined1 vfunc_47(void)`
+pub const NiBlendColorInterpolator__vfunc_47: u64 = 73199;
+/// `NiBlendColorInterpolator::vfunc_59` at 0xf73640 (rtti, high); signature (low): `undefined vfunc_59(NiBlendColorInterpolator * this, longlong * param_1)`
+pub const NiBlendColorInterpolator__vfunc_59: u64 = 73201;
+/// `NiBlendFloatInterpolator::Create` at 0xf68e30 (string, high); signature (low): `NiBlendInterpolator * Create(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const NiBlendFloatInterpolator__Create: u64 = 72899;
+/// `NiBlendFloatInterpolator::ctor` at 0xf689d0 (layout_inference, high); signature (low): `NiBlendFloatInterpolator * ctor(NiBlendFloatInterpolator * this, char param_1, undefined8 param_2, ulonglong param_3)`
+pub const NiBlendFloatInterpolator__ctor: u64 = 72892;
+/// `NiBlendFloatInterpolator::ctor` at 0xf68be0 (layout_inference, high); signature (high): `NiBlendFloatInterpolator * ctor(NiBlendFloatInterpolator * this)`
+pub const NiBlendFloatInterpolator__ctor_2: u64 = 72895;
+/// `NiBlendFloatInterpolator::vdtor` at 0xf68ef0 (slot_propagation, medium); signature (low): `NiBlendFloatInterpolator * vdtor(NiBlendFloatInterpolator * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+pub const NiBlendFloatInterpolator__vdtor: u64 = 72900;
+/// `NiBlendFloatInterpolator::vfunc_2` at 0xf68f30 (rtti, high); signature (low): `TypeNode * vfunc_2(void)`
+pub const NiBlendFloatInterpolator__vfunc_2: u64 = 72901;
+/// `NiBlendFloatInterpolator::vfunc_23` at 0xf686d0 (rtti, high); signature (low): `NiBlendInterpolator * vfunc_23(NiBlendFloatInterpolator * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
+pub const NiBlendFloatInterpolator__vfunc_23: u64 = 72884;
+/// `NiBlendFloatInterpolator::vfunc_24` at 0xf687e0 (rtti, high); signature (low): `undefined vfunc_24(NiBlendFloatInterpolator * this, longlong param_1)`
+pub const NiBlendFloatInterpolator__vfunc_24: u64 = 72886;
+/// `NiBlendFloatInterpolator::vfunc_25` at 0xf68840 (rtti, high); signature (untiered): `undefined vfunc_25(void)`
+pub const NiBlendFloatInterpolator__vfunc_25: u64 = 72887;
 /// `NiBlendFloatInterpolator::vfunc_26` at 0xf68850 (rtti, high); signature (untiered): `undefined1 vfunc_26(NiBlendFloatInterpolator * this, longlong * param_1)`
 pub const NiBlendFloatInterpolator__vfunc_26: u64 = 72888;
 /// `NiBlendFloatInterpolator::vfunc_27` at 0xf68860 (rtti, high); signature (low): `undefined vfunc_27(NiBlendFloatInterpolator * this, longlong * param_1)`
@@ -8575,41 +8621,3 @@ pub const Papyrus__ObjectReference__HasEffectKeyword: u64 = 56637;
 pub const Papyrus__ObjectReference__HasNode: u64 = 56184;
 /// `Papyrus::ObjectReference::HasRefType` at 0xa45f10 (papyrus_native, high); signature (medium): `bool HasRefType(IVirtualMachine * vm, uint stackId, TESObjectREFR * self, BGSLocationRefType * a0)`
 pub const Papyrus__ObjectReference__HasRefType: u64 = 56185;
-/// `Papyrus::ObjectReference::IgnoreFriendlyHits` at 0xa45f60 (papyrus_native, high); signature (medium): `void IgnoreFriendlyHits(IVirtualMachine * vm, uint stackId, TESObjectREFR * self, bool a0)`
-pub const Papyrus__ObjectReference__IgnoreFriendlyHits: u64 = 56186;
-/// `Papyrus::ObjectReference::InterruptCast` at 0xa45f90 (papyrus_native, high); signature (medium): `void InterruptCast(IVirtualMachine * vm, uint stackId, TESObjectREFR * self)`
-pub const Papyrus__ObjectReference__InterruptCast: u64 = 56187;
-/// `Papyrus::ObjectReference::Is3DLoaded` at 0xa45ff0 (papyrus_native, high); signature (medium): `bool Is3DLoaded(IVirtualMachine * vm, uint stackId, TESObjectREFR * self)`
-pub const Papyrus__ObjectReference__Is3DLoaded: u64 = 56188;
-/// `Papyrus::ObjectReference::IsActivateChild` at 0xa46020 (papyrus_native, high); signature (medium): `bool IsActivateChild(IVirtualMachine * vm, uint stackId, TESObjectREFR * self, TESObjectREFR * a0)`
-pub const Papyrus__ObjectReference__IsActivateChild: u64 = 56189;
-/// `Papyrus::ObjectReference::IsActivationBlocked` at 0xa46040 (papyrus_native, high); signature (medium): `bool IsActivationBlocked(IVirtualMachine * vm, uint stackId, TESObjectREFR * self)`
-pub const Papyrus__ObjectReference__IsActivationBlocked: u64 = 56191;
-/// `Papyrus::ObjectReference::IsContainerEmpty` at 0xa46060 (papyrus_native, high); signature (medium): `bool IsContainerEmpty(IVirtualMachine * vm, uint stackId, TESObjectREFR * self)`
-pub const Papyrus__ObjectReference__IsContainerEmpty: u64 = 442743;
-/// `Papyrus::ObjectReference::IsDeleted` at 0xa5d740 (papyrus_native, high); signature (medium): `bool IsDeleted(IVirtualMachine * vm, uint stackId, TESObjectREFR * self)`
-pub const Papyrus__ObjectReference__IsDeleted: u64 = 56638;
-/// `Papyrus::ObjectReference::IsDisabled` at 0xa5d750 (papyrus_native, high); signature (medium): `bool IsDisabled(IVirtualMachine * vm, uint stackId, TESObjectREFR * self)`
-pub const Papyrus__ObjectReference__IsDisabled: u64 = 56639;
-/// `Papyrus::ObjectReference::IsFurnitureInUse` at 0xa46090 (papyrus_native, high); signature (medium): `bool IsFurnitureInUse(IVirtualMachine * vm, uint stackId, TESObjectREFR * self, bool a0)`
-pub const Papyrus__ObjectReference__IsFurnitureInUse: u64 = 56192;
-/// `Papyrus::ObjectReference::IsFurnitureMarkerInUse` at 0xa461f0 (papyrus_native, high); signature (medium): `bool IsFurnitureMarkerInUse(IVirtualMachine * vm, uint stackId, TESObjectREFR * self, uint a0, bool a1)`
-pub const Papyrus__ObjectReference__IsFurnitureMarkerInUse: u64 = 56193;
-/// `Papyrus::ObjectReference::IsIgnoringFriendlyHits` at 0xa5d760 (papyrus_native, high); signature (medium): `bool IsIgnoringFriendlyHits(IVirtualMachine * vm, uint stackId, TESObjectREFR * self)`
-pub const Papyrus__ObjectReference__IsIgnoringFriendlyHits: u64 = 56640;
-/// `Papyrus::ObjectReference::IsInDialogueWithPlayer` at 0xa46240 (papyrus_native, high); signature (medium): `bool IsInDialogueWithPlayer(IVirtualMachine * vm, uint stackId, TESObjectREFR * self)`
-pub const Papyrus__ObjectReference__IsInDialogueWithPlayer: u64 = 56194;
-/// `Papyrus::ObjectReference::IsLockBroken` at 0xa462a0 (papyrus_native, high); signature (medium): `bool IsLockBroken(IVirtualMachine * vm, uint stackId, TESObjectREFR * self)`
-pub const Papyrus__ObjectReference__IsLockBroken: u64 = 56195;
-/// `Papyrus::ObjectReference::IsLocked` at 0xa462d0 (papyrus_native, high); signature (medium): `bool IsLocked(IVirtualMachine * vm, uint stackId, TESObjectREFR * self)`
-pub const Papyrus__ObjectReference__IsLocked: u64 = 56196;
-/// `Papyrus::ObjectReference::IsMapMarkerVisible` at 0xa46300 (papyrus_native, high); signature (medium): `bool IsMapMarkerVisible(IVirtualMachine * vm, uint stackId, TESObjectREFR * self)`
-pub const Papyrus__ObjectReference__IsMapMarkerVisible: u64 = 56197;
-/// `Papyrus::ObjectReference::KnockAreaEffect` at 0xa49760 (papyrus_native, high); signature (medium): `void KnockAreaEffect(IVirtualMachine * vm, uint stackId, TESObjectREFR * self, float a0, float a1)`
-pub const Papyrus__ObjectReference__KnockAreaEffect: u64 = 56236;
-/// `Papyrus::ObjectReference::Lock` at 0xa46370 (papyrus_native, high); signature (medium): `void Lock(IVirtualMachine * vm, uint stackId, TESObjectREFR * self, bool a0, bool a1)`
-pub const Papyrus__ObjectReference__Lock: u64 = 56198;
-/// `Papyrus::ObjectReference::MoveTo` at 0xa46420 (papyrus_native, high); signature (medium): `bool MoveTo(IVirtualMachine * vm, uint stackId, TESObjectREFR * self, TESObjectREFR * a0, float a1, float a2, float a3, bool a4)`
-pub const Papyrus__ObjectReference__MoveTo: u64 = 56199;
-/// `Papyrus::ObjectReference::MoveToInteractionLocation` at 0xa46680 (papyrus_native, high); signature (low): `ulonglong MoveToInteractionLocation(longlong * param_1, uint param_2, longlong * param_3, longlong * param_4)`
-pub const Papyrus__ObjectReference__MoveToInteractionLocation: u64 = 56200;

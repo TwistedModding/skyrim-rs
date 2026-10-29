@@ -3,6 +3,122 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `TESRace::vftable_40` at 0x1861fa8, id 195947 (rtti, high); 4 slots.
+#[repr(C)]
+pub struct TESRace_vtable_40 {
+    /// `TESRace::TESSpellList_vdtor` at 0x3eb730 (slot_propagation, medium); signature (high): `undefined TESSpellList_vdtor(TESRace * this)`
+    pub slot_0: *const c_void,
+    /// `TESSpellList::vfunc_1` at 0x1f0ad0 (rtti, medium); signature (low): `undefined vfunc_1(void)`
+    pub slot_1: *const c_void,
+    /// `TESSpellList::vfunc_2` at 0x1f0ae0 (rtti, medium); signature (untiered): `undefined vfunc_2(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+    pub slot_2: *const c_void,
+    /// `TESSpellList::vfunc_3` at 0x1f0af0 (rtti, medium); signature (low): `undefined vfunc_3(TESSpellList * this, undefined8 param_1)`
+    pub slot_3: *const c_void,
+}
+impl TESRace_vtable_40 {
+    pub const ID: u64 = 195947;
+}
+
+/// `TESRace::vftable_50` at 0x1861fd0, id 195949 (rtti, high); 4 slots.
+#[repr(C)]
+pub struct TESRace_vtable_50 {
+    /// `TESRace::BGSSkinForm_vdtor` at 0x3eb73c (slot_propagation, medium); signature (low): `undefined BGSSkinForm_vdtor(TESRace * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_0: *const c_void,
+    /// `BGSSkinForm::vfunc_1` at 0x1db8d0 (rtti, medium); signature (high): `undefined vfunc_1(BGSSkinForm * this)`
+    pub slot_1: *const c_void,
+    /// `BGSSkinForm::vfunc_2` at 0x1db8e0 (rtti, medium); signature (low): `undefined vfunc_2(void)`
+    pub slot_2: *const c_void,
+    /// `BGSSkinForm::vfunc_3` at 0x1db8f0 (rtti, medium); signature (low): `undefined vfunc_3(BGSSkinForm * this, undefined8 param_1)`
+    pub slot_3: *const c_void,
+}
+impl TESRace_vtable_50 {
+    pub const ID: u64 = 195949;
+}
+
+/// `TESRace::vftable_60` at 0x1861ff8, id 195951 (rtti, high); 4 slots.
+#[repr(C)]
+pub struct TESRace_vtable_60 {
+    /// `TESRace::BGSBipedObjectForm_vdtor` at 0x3eb748 (slot_propagation, medium); signature (low): `undefined BGSBipedObjectForm_vdtor(TESRace * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_0: *const c_void,
+    /// `BGSBipedObjectForm::vfunc_1` at 0x1d20e0 (rtti, medium); signature (high): `undefined vfunc_1(BGSBipedObjectForm * this)`
+    pub slot_1: *const c_void,
+    /// `BGSBipedObjectForm::vfunc_2` at 0x1d20f0 (rtti, medium); signature (low): `undefined vfunc_2(void)`
+    pub slot_2: *const c_void,
+    /// `BGSBipedObjectForm::vfunc_3` at 0x1d2110 (rtti, medium); signature (low): `undefined vfunc_3(BGSBipedObjectForm * this, undefined8 param_1)`
+    pub slot_3: *const c_void,
+}
+impl TESRace_vtable_60 {
+    pub const ID: u64 = 195951;
+}
+
+/// `TESRace::vftable_70` at 0x1862020, id 195953 (rtti, high); 6 slots.
+#[repr(C)]
+pub struct TESRace_vtable_70 {
+    /// `TESRace::BGSKeywordForm_vdtor` at 0x3eb754 (slot_propagation, medium); signature (low): `undefined BGSKeywordForm_vdtor(TESRace * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_0: *const c_void,
+    /// `BGSKeywordForm::vfunc_1` at 0x1d8690 (rtti, medium); signature (low): `undefined vfunc_1(void)`
+    pub slot_1: *const c_void,
+    /// `BGSKeywordForm::vfunc_2` at 0x1d86a0 (rtti, medium); signature (untiered): `undefined vfunc_2(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+    pub slot_2: *const c_void,
+    /// `BGSKeywordForm::vfunc_3` at 0x1d86b0 (rtti, medium); signature (low): `undefined vfunc_3(BGSKeywordForm * this, undefined8 param_1)`
+    pub slot_3: *const c_void,
+    /// `BGSKeywordForm::HasKeyword` at 0x1d89e0 (runtime, high); signature (untiered): `undefined8 HasKeyword(BGSKeywordForm * this, longlong param_1)`
+    pub slot_4: *const c_void,
+    /// `BGSKeywordForm::vfunc_5` at 0x14c8b0 (rtti, medium); signature (low): `undefined8 vfunc_5(void)`
+    pub slot_5: *const c_void,
+}
+impl TESRace_vtable_70 {
+    pub const ID: u64 = 195953;
+}
+
+/// `TESRace::vftable_88` at 0x1862058, id 195955 (rtti, high); 4 slots.
+#[repr(C)]
+pub struct TESRace_vtable_88 {
+    /// `TESRace::BGSAttackDataForm_vdtor` at 0x3eb760 (slot_propagation, medium); signature (low): `undefined BGSAttackDataForm_vdtor(TESRace * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_0: *const c_void,
+    /// `BGSAttackDataForm::vfunc_1` at 0x1d1a70 (rtti, medium); signature (low): `undefined vfunc_1(void)`
+    pub slot_1: *const c_void,
+    /// `BGSAttackDataForm::vfunc_2` at 0x1d1a80 (rtti, medium); signature (high): `undefined vfunc_2(BGSAttackDataForm * this)`
+    pub slot_2: *const c_void,
+    /// `BGSAttackDataForm::vfunc_3` at 0x1d1ac0 (rtti, medium); signature (low): `undefined vfunc_3(BGSAttackDataForm * this, undefined8 param_1)`
+    pub slot_3: *const c_void,
+}
+impl TESRace_vtable_88 {
+    pub const ID: u64 = 195955;
+}
+
+/// `TESRaceForm::vftable` at 0x17fb970, id 187976 (rtti, high); 4 slots.
+#[repr(C)]
+pub struct TESRaceForm_vtable {
+    /// `TESRaceForm::vdtor` at 0x1ef910 (layout_inference, medium); signature (low): `TESRaceForm * vdtor(TESRaceForm * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_0: *const c_void,
+    /// `TESRaceForm::vfunc_1` at 0x1ef730 (rtti, medium); signature (high): `undefined vfunc_1(TESRaceForm * this)`
+    pub slot_1: *const c_void,
+    /// `TESRaceForm::vfunc_2` at 0x1ef740 (rtti, medium); signature (low): `undefined vfunc_2(void)`
+    pub slot_2: *const c_void,
+    /// `TESRaceForm::vfunc_3` at 0x1ef750 (rtti, medium); signature (low): `undefined vfunc_3(TESRaceForm * this, undefined8 param_1)`
+    pub slot_3: *const c_void,
+}
+impl TESRaceForm_vtable {
+    pub const ID: u64 = 187976;
+}
+
+/// `TESReactionForm::vftable` at 0x17fbb78, id 187979 (rtti, high); 4 slots.
+#[repr(C)]
+pub struct TESReactionForm_vtable {
+    /// `TESReactionForm::vdtor` at 0x1f08c0 (layout_inference, medium); signature (low): `TESReactionForm * vdtor(TESReactionForm * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_0: *const c_void,
+    /// `TESReactionForm::vfunc_1` at 0x1ef9c0 (rtti, medium); signature (high): `undefined vfunc_1(TESReactionForm * this)`
+    pub slot_1: *const c_void,
+    /// `TESReactionForm::vfunc_2` at 0x1ef9d0 (rtti, medium); signature (untiered): `undefined vfunc_2(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+    pub slot_2: *const c_void,
+    /// `TESReactionForm::vfunc_3` at 0x1ef9e0 (rtti, medium); signature (low): `undefined vfunc_3(TESReactionForm * this, undefined8 param_1)`
+    pub slot_3: *const c_void,
+}
+impl TESReactionForm_vtable {
+    pub const ID: u64 = 187979;
+}
+
 /// `TESRegion::vftable` at 0x1809318, id 188901 (rtti, high); 60 slots.
 #[repr(C)]
 pub struct TESRegion_vtable {
@@ -3298,7 +3414,7 @@ pub struct TweenMenu_vtable {
     pub slot_4: *const c_void,
     /// `IMenu::AdvanceMovie` at 0x116ee30 (semantic, high); signature (untiered): `undefined AdvanceMovie(IMenu * this, undefined4 param_2, uint param_3)`
     pub slot_5: *const c_void,
-    /// `TweenMenu::PostDisplay` at 0x988250 (semantic, high); signature (untiered): `undefined PostDisplay(TweenMenu * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`; `PostDisplay`: PlayerCamera::Update, then movie display (high); semantic signature: `void (TweenMenu* this)`
+    /// `TweenMenu::PostDisplay` at 0x988250 (runtime, high); signature (untiered): `undefined PostDisplay(TweenMenu * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`; `PostDisplay`: PlayerCamera::Update, then movie display (high); semantic signature: `void (TweenMenu* this)`
     pub slot_6: *const c_void,
     /// `IMenu::PreDisplay` at 0x116eee0 (semantic, high); signature (untiered): `undefined PreDisplay(void)`
     pub slot_7: *const c_void,
@@ -13332,77 +13448,5 @@ pub struct bhkCharProxyControllerCinfo_vtable {
 }
 impl bhkCharProxyControllerCinfo_vtable {
     pub const ID: u64 = 240556;
-}
-
-/// `bhkCharRigidBodyController::vftable` at 0x1a89bf0, id 240580 (rtti, high); 20 slots.
-#[repr(C)]
-pub struct bhkCharRigidBodyController_vtable {
-    /// `bhkCharRigidBodyController::vdtor` at 0x109c100 (slot_propagation, medium); signature (low): `bhkCharRigidBodyController * vdtor(bhkCharRigidBodyController * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `NiRefObject::vfunc_1` at 0xeebf20 (rtti, medium); signature (high): `undefined vfunc_1(NiRefObject * this)`
-    pub slot_1: *const c_void,
-    /// `bhkCharRigidBodyController::vfunc_2` at 0x109ae50 (rtti, high); signature (low): `undefined vfunc_2(bhkCharRigidBodyController * this, float * param_1, char param_2)`
-    pub slot_2: *const c_void,
-    /// `bhkCharRigidBodyController::vfunc_3` at 0x109ab10 (rtti, high); signature (low): `undefined vfunc_3(bhkCharRigidBodyController * this, float * param_1, char param_2, char param_3)`
-    pub slot_3: *const c_void,
-    /// `bhkCharRigidBodyController::vfunc_4` at 0x109b030 (rtti, high); signature (low): `undefined vfunc_4(bhkCharRigidBodyController * this, undefined8 * param_1)`
-    pub slot_4: *const c_void,
-    /// `bhkCharRigidBodyController::vfunc_5` at 0x109b0c0 (rtti, high); signature (high): `undefined vfunc_5(bhkCharRigidBodyController * this)`
-    pub slot_5: *const c_void,
-    /// `bhkCharRigidBodyController::vfunc_6` at 0x109b180 (rtti, high); signature (low): `undefined vfunc_6(bhkCharRigidBodyController * this, undefined8 * param_1)`
-    pub slot_6: *const c_void,
-    /// `bhkCharRigidBodyController::vfunc_7` at 0x109b1c0 (rtti, high); signature (low): `undefined vfunc_7(bhkCharRigidBodyController * this, float * param_1)`
-    pub slot_7: *const c_void,
-    /// `bhkCharRigidBodyController::vfunc_8` at 0x109b270 (rtti, high); signature (low): `undefined4 * vfunc_8(bhkCharRigidBodyController * this, undefined4 * param_1)`
-    pub slot_8: *const c_void,
-    /// `bhkCharRigidBodyController::vfunc_9` at 0x109b320 (rtti, high); signature (low): `undefined vfunc_9(bhkCharRigidBodyController * this, undefined4 param_1)`
-    pub slot_9: *const c_void,
-    /// `bhkCharRigidBodyController::vfunc_10` at 0x109ba60 (rtti, high); signature (high): `char vfunc_10(bhkCharRigidBodyController * this)`
-    pub slot_10: *const c_void,
-    /// `bhkCharRigidBodyController::vfunc_11` at 0x109b3d0 (rtti, high); signature (high): `ulonglong vfunc_11(bhkCharRigidBodyController * this)`
-    pub slot_11: *const c_void,
-    /// `bhkCharRigidBodyController::vfunc_12` at 0x109b560 (rtti, high); signature (low): `undefined vfunc_12(void)`
-    pub slot_12: *const c_void,
-    /// `bhkCharRigidBodyController::vfunc_13` at 0x109b570 (rtti, high); signature (low): `undefined vfunc_13(bhkCharRigidBodyController * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_13: *const c_void,
-    /// `bhkCharRigidBodyController::vfunc_14` at 0x109aa20 (rtti, high); signature (low): `undefined vfunc_14(bhkCharRigidBodyController * this, longlong param_1)`
-    pub slot_14: *const c_void,
-    /// `bhkCharRigidBodyController::vfunc_15` at 0x109aad0 (rtti, high); signature (high): `undefined8 vfunc_15(bhkCharRigidBodyController * this)`
-    pub slot_15: *const c_void,
-    /// `bhkCharRigidBodyController::vfunc_16` at 0x109aa00 (rtti, high); signature (high): `undefined8 vfunc_16(bhkCharRigidBodyController * this)`
-    pub slot_16: *const c_void,
-    /// `bhkCharRigidBodyController::vfunc_17` at 0x109ab00 (rtti, high); signature (low): `undefined4 vfunc_17(void)`
-    pub slot_17: *const c_void,
-    /// `bhkCharRigidBodyController::vfunc_18` at 0x109b640 (rtti, high); signature (low): `undefined8 vfunc_18(bhkCharRigidBodyController * this, longlong param_1)`
-    pub slot_18: *const c_void,
-    /// `bhkCharRigidBodyController::vfunc_19` at 0x109bb50 (rtti, high); signature (low): `undefined vfunc_19(bhkCharRigidBodyController * this, float * param_1)`
-    pub slot_19: *const c_void,
-}
-impl bhkCharRigidBodyController_vtable {
-    pub const ID: u64 = 240580;
-}
-
-/// `bhkCharRigidBodyController::vftable_330` at 0x1a89c98, id 240583 (rtti, high); 8 slots.
-#[repr(C)]
-pub struct bhkCharRigidBodyController_vtable_330 {
-    /// `bhkCharRigidBodyController::hkpCharacterRigidBodyListener_vdtor` at 0x109c0ec (slot_propagation, medium); signature (high): `undefined hkpCharacterRigidBodyListener_vdtor(bhkCharRigidBodyController * this)`
-    pub slot_0: *const c_void,
-    /// `hkReferencedObject::vfunc_1` at 0xaa2c30 (rtti, medium); signature (low): `undefined8 vfunc_1(void)`
-    pub slot_1: *const c_void,
-    /// `hkReferencedObject::vfunc_2` at 0xaa2c40 (rtti, medium); signature (low): `undefined vfunc_2(hkReferencedObject * this, undefined8 param_1, undefined * param_2)`
-    pub slot_2: *const c_void,
-    /// `bhkCharRigidBodyController::hkpCharacterRigidBodyListener_vfunc_3` at 0x1099c20 (rtti, high); signature (low): `undefined hkpCharacterRigidBodyListener_vfunc_3(bhkCharRigidBodyController * this, longlong param_1, undefined8 param_2)`
-    pub slot_3: *const c_void,
-    /// `bhkCharRigidBodyController::hkpCharacterRigidBodyListener_vfunc_4` at 0x1099d00 (rtti, high); signature (low): `undefined hkpCharacterRigidBodyListener_vfunc_4(bhkCharRigidBodyController * this, undefined8 param_1, undefined8 param_2, longlong * param_3, longlong * param_4, longlong * param_5)`
-    pub slot_4: *const c_void,
-    /// `hkpCharacterRigidBodyListener::vfunc_5` at 0x10dfdf0 (rtti, medium); signature (low): `undefined vfunc_5(hkpCharacterRigidBodyListener * this, longlong param_1, longlong * param_2, longlong * param_3, longlong * param_4)`
-    pub slot_5: *const c_void,
-    /// `bhkCharRigidBodyController::hkpCharacterRigidBodyListener_vfunc_6` at 0x109a270 (rtti, high); signature (low): `undefined hkpCharacterRigidBodyListener_vfunc_6(bhkCharRigidBodyController * this, undefined8 param_1, longlong param_2, longlong * param_3)`
-    pub slot_6: *const c_void,
-    /// `hkpCharacterRigidBodyListener::vfunc_7` at 0x10e0580 (rtti, medium); signature (low): `undefined vfunc_7(hkpCharacterRigidBodyListener * this, undefined8 param_1, longlong param_2, longlong * param_3, longlong * param_4, longlong * param_5)`
-    pub slot_7: *const c_void,
-}
-impl bhkCharRigidBodyController_vtable_330 {
-    pub const ID: u64 = 240583;
 }
 

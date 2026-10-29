@@ -3,6 +3,56 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `ComputeAtan2OfArgs` at 0xdb6dd0 (decompiler, high); signature (untiered): `undefined ComputeAtan2OfArgs(longlong param_1)`
+pub const ComputeAtan2OfArgs: u64 = 86218;
+/// `ComputeAtanOfArg0` at 0xdb6b00 (decompiler, high); signature (untiered): `undefined ComputeAtanOfArg0(longlong param_1)`
+pub const ComputeAtanOfArg0: u64 = 86209;
+/// `ComputeAttackRangeToTarget` at 0x86b5d0 (decompiler, medium); signature (untiered): `ulonglong ComputeAttackRangeToTarget(longlong * param_1, longlong * param_2)`
+pub const ComputeAttackRangeToTarget: u64 = 47338;
+/// `ComputeAttackStagger` at 0x41f230 (decompiler, medium); signature (untiered): `float ComputeAttackStagger(longlong * param_1, longlong * param_2)`
+pub const ComputeAttackStagger: u64 = 26422;
+/// `ComputeAttackStaminaCost` at 0x41f760 (decompiler, medium); signature (untiered): `float ComputeAttackStaminaCost(longlong param_1, longlong param_2)`
+pub const ComputeAttackStaminaCost: u64 = 26429;
+/// `ComputeAutoAimAngles` at 0x777c00 (semantic, medium); signature (untiered): `undefined ComputeAutoAimAngles(longlong * param_1, longlong * param_2, longlong param_3, float * param_4, float * param_5, float * param_6, float param_7, float param_8)`; semantic: turns the shooter's aim toward the auto-aim target: computes yaw/pitch deltas from origin to the target and adds them to the base angles (FLT_MIN base = add to current) (medium); signature `void (Actor* shooter, Projectile* projectile, NiAVObject* aimNode, float* yawInOut, float* pitchInOut, const NiPoint3* origin, float baseYaw, float basePitch)`
+pub const ComputeAutoAimAngles: u64 = 41248;
+/// `ComputeAutoVanityCameraPosition` at 0x8f3a10 (semantic, high); signature (untiered): `undefined ComputeAutoVanityCameraPosition(longlong param_1, float * param_2, longlong param_3, undefined8 param_4)`; semantic: out = target 3D world translation + (0, 0, eye height) - fDefaultAutoVanityZoom:Camera * rotation column 1 (forward), then ComputeCameraCasterCollision(camera, out, true); zero point when there is no target (high); signature `void (AutoVanityState* this, NiPoint3* out, const NiMatrix3* rotation)`
+pub const ComputeAutoVanityCameraPosition: u64 = 50713;
+/// `ComputeAutoVanityCameraPosition` as a function pointer type (high).
+pub type ComputeAutoVanityCameraPosition_fn = unsafe extern "C" fn(this: *mut crate::AutoVanityState, out: *mut crate::NiPoint3, rotation: *const crate::NiMatrix3);
+/// `ComputeAverageVector4` at 0xad6ba0 (decompiler, medium); signature (medium): `undefined ComputeAverageVector4(undefined8 param_1, float * param_2, int param_3, float * param_4)`
+pub const ComputeAverageVector4: u64 = 58440;
+/// `ComputeAxisAlignedBoxCorners` at 0xfcead0 (decompiler, medium); signature (medium): `undefined ComputeAxisAlignedBoxCorners(longlong param_1, float * param_2)`
+pub const ComputeAxisAlignedBoxCorners: u64 = 75912;
+/// `ComputeBarycentric2D` at 0x11f8db0 (decompiler, medium); signature (medium): `bool ComputeBarycentric2D(float * param_1, float * param_2, float * param_3, float * param_4, float * param_5)`
+pub const ComputeBarycentric2D: u64 = 91505;
+/// `ComputeBashDamage` at 0x41f0a0 (decompiler, medium); signature (untiered): `undefined ComputeBashDamage(longlong * param_1, float * param_2)`
+pub const ComputeBashDamage: u64 = 26421;
+/// `ComputeBashSkillUse` at 0x41f410 (decompiler, high); signature (high): `float ComputeBashSkillUse(float param_1, char param_2)`
+pub const ComputeBashSkillUse: u64 = 26423;
+/// `ComputeBleedoutValue` at 0x41dc50 (decompiler, medium); signature (untiered): `ulonglong ComputeBleedoutValue(longlong * param_1, longlong param_2, longlong param_3)`
+pub const ComputeBleedoutValue: u64 = 26389;
+/// `ComputeBlockFactor` at 0x41f4d0 (decompiler, medium); signature (medium): `float ComputeBlockFactor(float param_1, float param_2, float param_3, char param_4, char param_5, char param_6)`
+pub const ComputeBlockFactor: u64 = 26425;
+/// `ComputeBlockStagger` at 0x41f560 (decompiler, medium); signature (medium): `float ComputeBlockStagger(float param_1, float param_2, float param_3)`
+pub const ComputeBlockStagger: u64 = 26426;
+/// `ComputeBloodSplatterCount` at 0x420770 (decompiler, medium); signature (medium): `int ComputeBloodSplatterCount(float param_1)`
+pub const ComputeBloodSplatterCount: u64 = 26453;
+/// `ComputeBoneLODCount` at 0xbcc2c0 (decompiler, medium); signature (untiered): `ushort ComputeBoneLODCount(longlong param_1, float * param_2, char param_3, undefined1 * param_4, ushort param_5)`
+pub const ComputeBoneLODCount: u64 = 63575;
+/// `ComputeBoneModelSpaceTransform` at 0xad8a40 (decompiler, medium); signature (untiered): `undefined ComputeBoneModelSpaceTransform(int param_1, longlong * param_2, longlong param_3, float * param_4)`
+pub const ComputeBoneModelSpaceTransform: u64 = 58480;
+/// `ComputeBoneModelTransform` at 0xbf4da0 (decompiler, medium); signature (medium): `undefined ComputeBoneModelTransform(longlong param_1, int param_2, float * param_3)`
+pub const ComputeBoneModelTransform: u64 = 64159;
+/// `ComputeBoundFromPoints` at 0xefe640 (decompiler, medium); signature (medium): `undefined ComputeBoundFromPoints(float * param_1, int param_2, float * param_3)`
+pub const ComputeBoundFromPoints: u64 = 70972;
+/// `ComputeBoundsDiagonalLength` at 0x2eeba0 (decompiler, medium); signature (medium): `float ComputeBoundsDiagonalLength(longlong param_1)`
+pub const ComputeBoundsDiagonalLength: u64 = 19747;
+/// `ComputeBoundsOfEntriesAndField38` at 0x1240f30 (decompiler, medium); signature (untiered): `undefined ComputeBoundsOfEntriesAndField38(longlong param_1, longlong * param_2)`
+pub const ComputeBoundsOfEntriesAndField38: u64 = 93093;
+/// `ComputeBoundsOfStridedPoints` at 0xaa7b10 (decompiler, medium); signature (medium): `undefined ComputeBoundsOfStridedPoints(undefined1[12] * param_1, int param_2, int param_3, uint * param_4)`
+pub const ComputeBoundsOfStridedPoints: u64 = 57239;
+/// `ComputeBoxMassProperties` at 0xc364c0 (decompiler, medium); signature (medium): `undefined8 ComputeBoxMassProperties(float * param_1, float param_2, float * param_3)`
+pub const ComputeBoxMassProperties: u64 = 65065;
 /// `ComputeBudgetCategoryUsage` at 0x213d70 (decompiler, medium); signature (medium): `float ComputeBudgetCategoryUsage(longlong param_1, uint param_2)`
 pub const ComputeBudgetCategoryUsage: u64 = 15568;
 /// `ComputeCameraCasterCollision` at 0x8fa5d0 (runtime, high); signature (untiered): `undefined8 ComputeCameraCasterCollision(longlong param_1, float * param_2, undefined8 param_3, undefined8 param_4)`; semantic: clip cameraPos against the world between the target point and the camera; returns true when moved; manages fadedActorHandle (high); signature `bool (PlayerCamera* this, NiPoint3* cameraPos, bool fadeActors)`
@@ -4025,8 +4075,6 @@ pub const ContainsQwordKeyInHashTable: u64 = 35873;
 pub const ContainsRefHandle: u64 = 44706;
 /// `ContainsRefHandleInField10ArrayLocked` at 0x6f3b70 (decompiler, medium); signature (medium): `ulonglong ContainsRefHandleInField10ArrayLocked(longlong param_1, longlong param_2)`
 pub const ContainsRefHandleInField10ArrayLocked: u64 = 39311;
-/// `ContainsRefHandleViaVfunc6A0` at 0x6c9f60 (decompiler, medium); signature (untiered): `undefined ContainsRefHandleViaVfunc6A0(longlong * param_1, undefined8 param_2)`
-pub const ContainsRefHandleViaVfunc6A0: u64 = 38571;
 /// `ContainsRefHandle_2` at 0x5610d0 (decompiler, medium); signature (untiered): `ulonglong ContainsRefHandle_2(longlong * param_1, longlong param_2)`
 pub const ContainsRefHandle_2: u64 = 33230;
 /// `ContainsRefInEntryArray20` at 0x8192f0 (decompiler, medium); signature (medium): `bool ContainsRefInEntryArray20(longlong param_1, longlong param_2)`
@@ -7733,53 +7781,3 @@ pub const DeallocateEntry60Buffer: u64 = 524989;
 pub const DeallocatePtrArray: u64 = 440884;
 /// `DeallocatePtrArray_10` at 0x138990 (decompiler, medium); signature (untiered): `undefined DeallocatePtrArray_10(undefined8 param_1, void * param_2, longlong param_3, undefined8 param_4)`
 pub const DeallocatePtrArray_10: u64 = 441106;
-/// `DeallocatePtrArray_11` at 0x13b570 (decompiler, medium); signature (untiered): `undefined DeallocatePtrArray_11(undefined8 param_1, void * param_2, longlong param_3, undefined8 param_4)`
-pub const DeallocatePtrArray_11: u64 = 441437;
-/// `DeallocatePtrArray_12` at 0x140bf0 (decompiler, medium); signature (untiered): `undefined DeallocatePtrArray_12(undefined8 param_1, void * param_2, longlong param_3, undefined8 param_4)`
-pub const DeallocatePtrArray_12: u64 = 523424;
-/// `DeallocatePtrArray_13` at 0x143780 (decompiler, medium); signature (untiered): `undefined DeallocatePtrArray_13(undefined8 param_1, void * param_2, longlong param_3, undefined8 param_4)`
-pub const DeallocatePtrArray_13: u64 = 441201;
-/// `DeallocatePtrArray_2` at 0x12e040 (decompiler, medium); signature (untiered): `undefined DeallocatePtrArray_2(undefined8 param_1, void * param_2, longlong param_3, undefined8 param_4)`
-pub const DeallocatePtrArray_2: u64 = 523327;
-/// `DeallocatePtrArray_3` at 0x12f470 (decompiler, medium); signature (untiered): `undefined DeallocatePtrArray_3(undefined8 param_1, void * param_2, longlong param_3, undefined8 param_4)`
-pub const DeallocatePtrArray_3: u64 = 523333;
-/// `DeallocatePtrArray_4` at 0x12f560 (decompiler, medium); signature (untiered): `undefined DeallocatePtrArray_4(undefined8 param_1, void * param_2, longlong param_3, undefined8 param_4)`
-pub const DeallocatePtrArray_4: u64 = 523334;
-/// `DeallocatePtrArray_5` at 0x1344d0 (decompiler, medium); signature (untiered): `undefined DeallocatePtrArray_5(undefined8 param_1, void * param_2, longlong param_3, undefined8 param_4)`
-pub const DeallocatePtrArray_5: u64 = 441270;
-/// `DeallocatePtrArray_6` at 0x134f20 (decompiler, medium); signature (untiered): `undefined DeallocatePtrArray_6(undefined8 param_1, void * param_2, longlong param_3, undefined8 param_4)`
-pub const DeallocatePtrArray_6: u64 = 523383;
-/// `DeallocatePtrArray_7` at 0x135f40 (decompiler, medium); signature (untiered): `undefined DeallocatePtrArray_7(undefined8 param_1, void * param_2, longlong param_3, undefined8 param_4)`
-pub const DeallocatePtrArray_7: u64 = 523397;
-/// `DeallocatePtrArray_8` at 0x137d00 (decompiler, medium); signature (untiered): `undefined DeallocatePtrArray_8(undefined8 param_1, void * param_2, longlong param_3, undefined8 param_4)`
-pub const DeallocatePtrArray_8: u64 = 523406;
-/// `DeallocatePtrArray_9` at 0x137dd0 (decompiler, medium); signature (untiered): `undefined DeallocatePtrArray_9(undefined8 param_1, void * param_2, longlong param_3, undefined8 param_4)`
-pub const DeallocatePtrArray_9: u64 = 523407;
-/// `DeallocateQwordArray` at 0x58fe10 (decompiler, medium); signature (untiered): `undefined DeallocateQwordArray(undefined8 param_1, void * param_2, longlong param_3, undefined8 param_4)`
-pub const DeallocateQwordArray: u64 = 523727;
-/// `DeallocateQwordArray_10` at 0x121a70 (decompiler, medium); signature (untiered): `undefined DeallocateQwordArray_10(undefined8 param_1, void * param_2, longlong param_3, undefined8 param_4)`
-pub const DeallocateQwordArray_10: u64 = 523235;
-/// `DeallocateQwordArray_2` at 0x12cedb0 (decompiler, high); signature (high): `undefined DeallocateQwordArray_2(undefined8 param_1, void * param_2, longlong param_3, undefined8 param_4)`
-pub const DeallocateQwordArray_2: u64 = 446451;
-/// `DeallocateQwordArray_3` at 0x10d550 (decompiler, medium); signature (untiered): `undefined DeallocateQwordArray_3(undefined8 param_1, void * param_2, longlong param_3, undefined8 param_4)`
-pub const DeallocateQwordArray_3: u64 = 439872;
-/// `DeallocateQwordArray_4` at 0x114a60 (decompiler, medium); signature (untiered): `undefined DeallocateQwordArray_4(undefined8 param_1, void * param_2, longlong param_3, undefined8 param_4)`
-pub const DeallocateQwordArray_4: u64 = 523064;
-/// `DeallocateQwordArray_5` at 0x116e70 (decompiler, medium); signature (untiered): `undefined DeallocateQwordArray_5(undefined8 param_1, void * param_2, longlong param_3, undefined8 param_4)`
-pub const DeallocateQwordArray_5: u64 = 523078;
-/// `DeallocateQwordArray_6` at 0x116ee0 (decompiler, medium); signature (untiered): `undefined DeallocateQwordArray_6(undefined8 param_1, void * param_2, longlong param_3, undefined8 param_4)`
-pub const DeallocateQwordArray_6: u64 = 523079;
-/// `DeallocateQwordArray_7` at 0x11a290 (decompiler, medium); signature (untiered): `undefined DeallocateQwordArray_7(undefined8 param_1, void * param_2, longlong param_3, undefined8 param_4)`
-pub const DeallocateQwordArray_7: u64 = 523124;
-/// `DeallocateQwordArray_8` at 0x11d3e0 (decompiler, medium); signature (untiered): `undefined DeallocateQwordArray_8(undefined8 param_1, void * param_2, longlong param_3, undefined8 param_4)`
-pub const DeallocateQwordArray_8: u64 = 523172;
-/// `DeallocateQwordArray_9` at 0x11e950 (decompiler, medium); signature (untiered): `undefined DeallocateQwordArray_9(undefined8 param_1, void * param_2, longlong param_3, undefined8 param_4)`
-pub const DeallocateQwordArray_9: u64 = 440255;
-/// `DeallocateStdBuffer` at 0x10ed20 (decompiler, medium); signature (medium): `undefined DeallocateStdBuffer(void * param_1, ulonglong param_2, void * param_3, undefined8 param_4)`
-pub const DeallocateStdBuffer: u64 = 439884;
-/// `DeallocateStride0x38` at 0x12f4d90 (decompiler, high); signature (high): `undefined DeallocateStride0x38(undefined8 param_1, void * param_2, longlong param_3, undefined8 param_4)`
-pub const DeallocateStride0x38: u64 = 525717;
-/// `DeallocateStride0x58` at 0x12f4d10 (decompiler, medium); signature (untiered): `undefined DeallocateStride0x58(undefined8 param_1, void * param_2, longlong param_3, undefined8 param_4)`
-pub const DeallocateStride0x58: u64 = 525715;
-/// `DeallocateStride0x78` at 0x12f4d50 (decompiler, medium); signature (untiered): `undefined DeallocateStride0x78(undefined8 param_1, void * param_2, longlong param_3, undefined8 param_4)`
-pub const DeallocateStride0x78: u64 = 525716;

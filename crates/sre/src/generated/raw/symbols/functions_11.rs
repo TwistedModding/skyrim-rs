@@ -4,6 +4,11 @@
 use crate::raw::*;
 
 pub(super) const ROWS: &[Function] = &[
+    Function { rva: 0x1771cd0, id: 168615, confidence: Confidence::Medium, name: "GameSetting_fPerkHeavyArmorNoviceDamageMult__atexit" },
+    Function { rva: 0x1771d20, id: 168616, confidence: Confidence::Medium, name: "GameSetting_fPerkHeavyArmorSinkGravityMult__atexit" },
+    Function { rva: 0x1771d70, id: 168617, confidence: Confidence::Medium, name: "GameSetting_fPerkLightArmorExpertSpeedMult__atexit" },
+    Function { rva: 0x1771dc0, id: 168618, confidence: Confidence::Medium, name: "GameSetting_fPerkLightArmorJourneymanDamageMult__atexit" },
+    Function { rva: 0x1771e10, id: 168619, confidence: Confidence::Medium, name: "GameSetting_fPerkLightArmorNoviceDamageMult__atexit" },
     Function { rva: 0x1771e60, id: 168620, confidence: Confidence::Medium, name: "GameSetting_fPersAdmireAggr__atexit" },
     Function { rva: 0x1771eb0, id: 168621, confidence: Confidence::Medium, name: "GameSetting_fPersAdmireConf__atexit" },
     Function { rva: 0x1771f00, id: 168622, confidence: Confidence::Medium, name: "GameSetting_fPersAdmireEner__atexit" },

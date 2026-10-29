@@ -4019,13 +4019,13 @@ pub struct MovementControllerNPC_vtable {
     pub slot_10: *const c_void,
     /// `MovementControllerNPC::vfunc_11` at 0x796410 (rtti, high); signature (high): `undefined vfunc_11(MovementControllerNPC * this)`
     pub slot_11: *const c_void,
-    /// `MovementControllerNPC::vfunc_12` at 0x796940 (rtti, high); signature (low): `undefined vfunc_12(MovementControllerNPC * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    /// `MovementControllerNPC::SetAIDriven` at 0x796940 (runtime, high); signature (untiered): `undefined SetAIDriven(MovementControllerNPC * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`; `SetAIDriven`: controlsDriven = 0; if it changed: the IMovementSetGoal interface (slot 3 lookup with the name 0x3350980) gets its slot 3, then the motion-driven sub-object's slot 4 when its slot 6 is true (high); semantic signature: `void (MovementControllerNPC* this)`
     pub slot_12: *const c_void,
-    /// `MovementControllerNPC::vfunc_13` at 0x7969f0 (rtti, high); signature (low): `undefined vfunc_13(MovementControllerNPC * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    /// `MovementControllerNPC::SetControlsDriven` at 0x7969f0 (runtime, high); signature (untiered): `undefined SetControlsDriven(MovementControllerNPC * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`; `SetControlsDriven`: controlsDriven = 1; same notifications as slot 12 (high); semantic signature: `void (MovementControllerNPC* this)`
     pub slot_13: *const c_void,
-    /// `MovementControllerNPC::vfunc_14` at 0x796aa0 (rtti, high); signature (high): `bool vfunc_14(MovementControllerNPC * this)`
+    /// `MovementControllerNPC::IsAIDriven` at 0x796aa0 (semantic, high); signature (untiered): `bool IsAIDriven(MovementControllerNPC * this)`; `IsAIDriven`: controlsDriven == 0 (high); semantic signature: `bool (MovementControllerNPC* this)`
     pub slot_14: *const c_void,
-    /// `MovementControllerNPC::vfunc_15` at 0x796ac0 (rtti, high); signature (high): `undefined1 vfunc_15(MovementControllerNPC * this)`
+    /// `MovementControllerNPC::IsControlsDriven` at 0x796ac0 (semantic, high); signature (untiered): `undefined1 IsControlsDriven(MovementControllerNPC * this)`; `IsControlsDriven`: controlsDriven (high); semantic signature: `bool (MovementControllerNPC* this)`
     pub slot_15: *const c_void,
     /// `MovementControllerNPC::vfunc_16` at 0x796ad0 (rtti, high); signature (low): `undefined vfunc_16(MovementControllerNPC * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_16: *const c_void,
@@ -4040,7 +4040,39 @@ pub struct MovementControllerNPC_vtable {
 }
 impl MovementControllerNPC_vtable {
     pub const ID: u64 = 208285;
+    pub const SLOT_SetAIDriven: usize = 12;
+    /// Slot 12 as `MovementControllerNPC_vtable_SetAIDriven`, `None` when the slot is null.
+    #[must_use]
+    pub fn SetAIDriven(&self) -> Option<MovementControllerNPC_vtable_SetAIDriven> {
+        unsafe { core::mem::transmute::<*const c_void, Option<MovementControllerNPC_vtable_SetAIDriven>>(self.slot_12) }
+    }
+    pub const SLOT_SetControlsDriven: usize = 13;
+    /// Slot 13 as `MovementControllerNPC_vtable_SetControlsDriven`, `None` when the slot is null.
+    #[must_use]
+    pub fn SetControlsDriven(&self) -> Option<MovementControllerNPC_vtable_SetControlsDriven> {
+        unsafe { core::mem::transmute::<*const c_void, Option<MovementControllerNPC_vtable_SetControlsDriven>>(self.slot_13) }
+    }
+    pub const SLOT_IsAIDriven: usize = 14;
+    /// Slot 14 as `MovementControllerNPC_vtable_IsAIDriven`, `None` when the slot is null.
+    #[must_use]
+    pub fn IsAIDriven(&self) -> Option<MovementControllerNPC_vtable_IsAIDriven> {
+        unsafe { core::mem::transmute::<*const c_void, Option<MovementControllerNPC_vtable_IsAIDriven>>(self.slot_14) }
+    }
+    pub const SLOT_IsControlsDriven: usize = 15;
+    /// Slot 15 as `MovementControllerNPC_vtable_IsControlsDriven`, `None` when the slot is null.
+    #[must_use]
+    pub fn IsControlsDriven(&self) -> Option<MovementControllerNPC_vtable_IsControlsDriven> {
+        unsafe { core::mem::transmute::<*const c_void, Option<MovementControllerNPC_vtable_IsControlsDriven>>(self.slot_15) }
+    }
 }
+/// `MovementControllerNPC::SetAIDriven`, slot 12: controlsDriven = 0; if it changed: the IMovementSetGoal interface (slot 3 lookup with the name 0x3350980) gets its slot 3, then the motion-driven sub-object's slot 4 when its slot 6 is true (high).
+pub type MovementControllerNPC_vtable_SetAIDriven = unsafe extern "C" fn(this: *mut crate::MovementControllerNPC);
+/// `MovementControllerNPC::SetControlsDriven`, slot 13: controlsDriven = 1; same notifications as slot 12 (high).
+pub type MovementControllerNPC_vtable_SetControlsDriven = unsafe extern "C" fn(this: *mut crate::MovementControllerNPC);
+/// `MovementControllerNPC::IsAIDriven`, slot 14: controlsDriven == 0 (high).
+pub type MovementControllerNPC_vtable_IsAIDriven = unsafe extern "C" fn(this: *mut crate::MovementControllerNPC) -> bool;
+/// `MovementControllerNPC::IsControlsDriven`, slot 15: controlsDriven (high).
+pub type MovementControllerNPC_vtable_IsControlsDriven = unsafe extern "C" fn(this: *mut crate::MovementControllerNPC) -> bool;
 
 /// `MovementControllerNPC::vftable_120` at 0x192f198, id 208287 (rtti, high); 4 slots.
 #[repr(C)]
@@ -13615,91 +13647,5 @@ pub struct NiFloatData_vtable {
 }
 impl NiFloatData_vtable {
     pub const ID: u64 = 190021;
-}
-
-/// `NiFloatExtraData::vftable` at 0x1a4d440, id 237423 (rtti, high); 39 slots.
-#[repr(C)]
-pub struct NiFloatExtraData_vtable {
-    /// `NiFloatExtraData::vdtor` at 0xf11120 (layout_inference, medium); signature (low): `NiFloatExtraData * vdtor(NiFloatExtraData * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `NiRefObject::vfunc_1` at 0xeebf20 (rtti, medium); signature (high): `undefined vfunc_1(NiRefObject * this)`
-    pub slot_1: *const c_void,
-    /// `NiFloatExtraData::vfunc_2` at 0xf11160 (rtti, high); signature (low): `TypeNode * vfunc_2(void)`
-    pub slot_2: *const c_void,
-    /// `NiObject::vfunc_3` at 0x20bec0 (rtti, medium); signature (low): `undefined8 vfunc_3(void)`
-    pub slot_3: *const c_void,
-    /// `NiObject::vfunc_4` at 0x1b4d50 (rtti, medium); signature (low): `undefined8 vfunc_4(void)`
-    pub slot_4: *const c_void,
-    /// `NiObject::vfunc_5` at 0x1b4ca0 (rtti, medium); signature (low): `undefined8 vfunc_5(void)`
-    pub slot_5: *const c_void,
-    /// `NiObject::vfunc_6` at 0x1b4cd0 (rtti, medium); signature (low): `undefined8 vfunc_6(void)`
-    pub slot_6: *const c_void,
-    /// `NiObject::vfunc_7` at 0x1b4cb0 (rtti, medium); signature (low): `undefined8 vfunc_7(void)`
-    pub slot_7: *const c_void,
-    /// `NiObject::vfunc_8` at 0x1b4d70 (rtti, medium); signature (low): `undefined8 vfunc_8(void)`
-    pub slot_8: *const c_void,
-    /// `NiObject::vfunc_9` at 0x1b4d60 (rtti, medium); signature (low): `undefined8 vfunc_9(void)`
-    pub slot_9: *const c_void,
-    /// `NiObject::vfunc_10` at 0x1b4d30 (rtti, medium); signature (low): `undefined8 vfunc_10(void)`
-    pub slot_10: *const c_void,
-    /// `NiObject::vfunc_11` at 0x1b4d40 (rtti, medium); signature (low): `undefined8 vfunc_11(void)`
-    pub slot_11: *const c_void,
-    /// `NiObject::vfunc_12` at 0x1b4c90 (rtti, medium); signature (low): `undefined8 vfunc_12(void)`
-    pub slot_12: *const c_void,
-    /// `NiObject::vfunc_13` at 0x1b4ce0 (rtti, medium); signature (low): `undefined8 vfunc_13(void)`
-    pub slot_13: *const c_void,
-    /// `NiObject::vfunc_14` at 0x1b4cf0 (rtti, medium); signature (low): `undefined8 vfunc_14(void)`
-    pub slot_14: *const c_void,
-    /// `NiObject::vfunc_15` at 0x1b4d00 (rtti, medium); signature (low): `undefined8 vfunc_15(void)`
-    pub slot_15: *const c_void,
-    /// `NiObject::vfunc_16` at 0x1b4d20 (rtti, medium); signature (low): `undefined8 vfunc_16(void)`
-    pub slot_16: *const c_void,
-    /// `NiObject::vfunc_17` at 0x1b4cc0 (rtti, medium); signature (low): `undefined8 vfunc_17(void)`
-    pub slot_17: *const c_void,
-    /// `NiObject::vfunc_18` at 0x1b4c70 (rtti, medium); signature (low): `undefined8 vfunc_18(void)`
-    pub slot_18: *const c_void,
-    /// `NiObject::vfunc_19` at 0x1b4c50 (rtti, medium); signature (low): `undefined8 vfunc_19(void)`
-    pub slot_19: *const c_void,
-    /// `NiObject::vfunc_20` at 0x1b4c40 (rtti, medium); signature (low): `undefined8 vfunc_20(void)`
-    pub slot_20: *const c_void,
-    /// `NiObject::vfunc_21` at 0x1b4c80 (rtti, medium); signature (low): `undefined8 vfunc_21(void)`
-    pub slot_21: *const c_void,
-    /// `NiObject::vfunc_22` at 0x1b4c60 (rtti, medium); signature (low): `undefined8 vfunc_22(void)`
-    pub slot_22: *const c_void,
-    /// `NiFloatExtraData::vfunc_23` at 0xf10da0 (rtti, high); signature (low): `NiExtraData * vfunc_23(NiFloatExtraData * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_23: *const c_void,
-    /// `NiFloatExtraData::vfunc_24` at 0xf10eb0 (rtti, high); signature (low): `undefined vfunc_24(NiFloatExtraData * this, longlong param_1)`
-    pub slot_24: *const c_void,
-    /// `NiFloatExtraData::vfunc_25` at 0xf10f10 (rtti, high); signature (untiered): `undefined vfunc_25(void)`
-    pub slot_25: *const c_void,
-    /// `NiFloatExtraData::vfunc_26` at 0xf10f20 (rtti, high); signature (untiered): `undefined8 vfunc_26(NiFloatExtraData * this, longlong * param_1)`
-    pub slot_26: *const c_void,
-    /// `NiFloatExtraData::vfunc_27` at 0xf10f30 (rtti, high); signature (low): `undefined vfunc_27(NiFloatExtraData * this, longlong param_1)`
-    pub slot_27: *const c_void,
-    /// `NiFloatExtraData::vfunc_28` at 0xf10f90 (rtti, high); signature (low): `undefined1 vfunc_28(NiFloatExtraData * this, longlong param_1)`
-    pub slot_28: *const c_void,
-    /// `NiObject::vfunc_29` at 0xedca00 (rtti, medium); signature (low): `undefined vfunc_29(NiObject * this, longlong param_1)`
-    pub slot_29: *const c_void,
-    /// `NiObject::vfunc_30` at 0xedcb50 (rtti, medium); signature (low): `undefined vfunc_30(void)`
-    pub slot_30: *const c_void,
-    /// `NiObject::vfunc_31` at 0xedcb60 (rtti, medium); signature (low): `undefined1 vfunc_31(void)`
-    pub slot_31: *const c_void,
-    /// `NiObject::vfunc_32` at 0xedcb70 (rtti, medium); signature (high): `undefined vfunc_32(NiObject * this)`
-    pub slot_32: *const c_void,
-    /// `NiObject::vfunc_33` at 0xedcb80 (rtti, medium); signature (low): `undefined8 vfunc_33(void)`
-    pub slot_33: *const c_void,
-    /// `NiObject::vfunc_34` at 0xedcb90 (rtti, medium); signature (low): `undefined8 vfunc_34(void)`
-    pub slot_34: *const c_void,
-    /// `NiObject::vfunc_35` at 0xedcba0 (rtti, medium); signature (low): `undefined vfunc_35(void)`
-    pub slot_35: *const c_void,
-    /// `NiObject::vfunc_36` at 0xedcbb0 (rtti, medium); signature (low): `undefined8 vfunc_36(void)`
-    pub slot_36: *const c_void,
-    /// `NiExtraData::IsStreamable` at 0xef9b60 (semantic, medium); signature (untiered): `undefined1 IsStreamable(void)`
-    pub slot_37: *const c_void,
-    /// `NiExtraData::Slot38ReturnsTrue` at 0xef9b70 (semantic, low); signature (untiered): `undefined1 Slot38ReturnsTrue(void)`
-    pub slot_38: *const c_void,
-}
-impl NiFloatExtraData_vtable {
-    pub const ID: u64 = 237423;
 }
 

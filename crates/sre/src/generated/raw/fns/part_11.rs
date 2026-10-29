@@ -3,6 +3,60 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `GameSetting_fMagicExplosionIncorporealMult__init` at 0x66400 (crt_init, medium); signature (high): `void GameSetting_fMagicExplosionIncorporealMult__init(void)`
+pub const GameSetting_fMagicExplosionIncorporealMult__init: u64 = 3723;
+/// `GameSetting_fMagicExplosionIncorporealTime__atexit` at 0x1778080 (crt_init, medium); signature (high): `void GameSetting_fMagicExplosionIncorporealTime__atexit(void)`
+pub const GameSetting_fMagicExplosionIncorporealTime__atexit: u64 = 168934;
+/// `GameSetting_fMagicExplosionIncorporealTime__init` at 0x66480 (crt_init, medium); signature (high): `void GameSetting_fMagicExplosionIncorporealTime__init(void)`
+pub const GameSetting_fMagicExplosionIncorporealTime__init: u64 = 3724;
+/// `GameSetting_fMagicExplosionPowerBase__atexit` at 0x17780d0 (crt_init, medium); signature (high): `void GameSetting_fMagicExplosionPowerBase__atexit(void)`
+pub const GameSetting_fMagicExplosionPowerBase__atexit: u64 = 168935;
+/// `GameSetting_fMagicExplosionPowerBase__init` at 0x66500 (crt_init, medium); signature (high): `void GameSetting_fMagicExplosionPowerBase__init(void)`
+pub const GameSetting_fMagicExplosionPowerBase__init: u64 = 3725;
+/// `GameSetting_fMagicExplosionPowerMax__atexit` at 0x1778120 (crt_init, medium); signature (high): `void GameSetting_fMagicExplosionPowerMax__atexit(void)`
+pub const GameSetting_fMagicExplosionPowerMax__atexit: u64 = 168936;
+/// `GameSetting_fMagicExplosionPowerMax__init` at 0x66580 (crt_init, medium); signature (high): `void GameSetting_fMagicExplosionPowerMax__init(void)`
+pub const GameSetting_fMagicExplosionPowerMax__init: u64 = 3726;
+/// `GameSetting_fMagicExplosionPowerMin__atexit` at 0x1778170 (crt_init, medium); signature (high): `void GameSetting_fMagicExplosionPowerMin__atexit(void)`
+pub const GameSetting_fMagicExplosionPowerMin__atexit: u64 = 168937;
+/// `GameSetting_fMagicExplosionPowerMin__init` at 0x66600 (crt_init, medium); signature (high): `void GameSetting_fMagicExplosionPowerMin__init(void)`
+pub const GameSetting_fMagicExplosionPowerMin__init: u64 = 3727;
+/// `GameSetting_fMagicExplosionPowerMult__atexit` at 0x17781c0 (crt_init, medium); signature (high): `void GameSetting_fMagicExplosionPowerMult__atexit(void)`
+pub const GameSetting_fMagicExplosionPowerMult__atexit: u64 = 168938;
+/// `GameSetting_fMagicExplosionPowerMult__init` at 0x66680 (crt_init, medium); signature (high): `void GameSetting_fMagicExplosionPowerMult__init(void)`
+pub const GameSetting_fMagicExplosionPowerMult__init: u64 = 3728;
+/// `GameSetting_fMagicFogMaximumDistance__atexit` at 0x173cc90 (crt_init, medium); signature (high): `void GameSetting_fMagicFogMaximumDistance__atexit(void)`
+pub const GameSetting_fMagicFogMaximumDistance__atexit: u64 = 165345;
+/// `GameSetting_fMagicFogMaximumDistance__init` at 0x8ba0 (crt_init, medium); signature (high): `void GameSetting_fMagicFogMaximumDistance__init(void)`
+pub const GameSetting_fMagicFogMaximumDistance__init: u64 = 155;
+/// `GameSetting_fMagicFogOptimalDistance__atexit` at 0x173cce0 (crt_init, medium); signature (high): `void GameSetting_fMagicFogOptimalDistance__atexit(void)`
+pub const GameSetting_fMagicFogOptimalDistance__atexit: u64 = 165346;
+/// `GameSetting_fMagicFogOptimalDistance__init` at 0x8c20 (crt_init, medium); signature (high): `void GameSetting_fMagicFogOptimalDistance__init(void)`
+pub const GameSetting_fMagicFogOptimalDistance__init: u64 = 156;
+/// `GameSetting_fMagicGrabActorDrawSpeed__atexit` at 0x1778210 (crt_init, medium); signature (high): `void GameSetting_fMagicGrabActorDrawSpeed__atexit(void)`
+pub const GameSetting_fMagicGrabActorDrawSpeed__atexit: u64 = 168939;
+/// `GameSetting_fMagicGrabActorDrawSpeed__init` at 0x66700 (crt_init, medium); signature (high): `void GameSetting_fMagicGrabActorDrawSpeed__init(void)`
+pub const GameSetting_fMagicGrabActorDrawSpeed__init: u64 = 3729;
+/// `GameSetting_fMagicGrabActorMinDistance__atexit` at 0x1778260 (crt_init, medium); signature (high): `void GameSetting_fMagicGrabActorMinDistance__atexit(void)`
+pub const GameSetting_fMagicGrabActorMinDistance__atexit: u64 = 168940;
+/// `GameSetting_fMagicGrabActorMinDistance__init` at 0x66780 (crt_init, medium); signature (high): `void GameSetting_fMagicGrabActorMinDistance__init(void)`
+pub const GameSetting_fMagicGrabActorMinDistance__init: u64 = 3730;
+/// `GameSetting_fMagicGrabActorRange__atexit` at 0x17782b0 (crt_init, medium); signature (high): `void GameSetting_fMagicGrabActorRange__atexit(void)`
+pub const GameSetting_fMagicGrabActorRange__atexit: u64 = 168941;
+/// `GameSetting_fMagicGrabActorRange__init` at 0x66800 (crt_init, medium); signature (high): `void GameSetting_fMagicGrabActorRange__init(void)`
+pub const GameSetting_fMagicGrabActorRange__init: u64 = 3731;
+/// `GameSetting_fMagicGrabActorThrowForce__atexit` at 0x1778300 (crt_init, medium); signature (high): `void GameSetting_fMagicGrabActorThrowForce__atexit(void)`
+pub const GameSetting_fMagicGrabActorThrowForce__atexit: u64 = 168942;
+/// `GameSetting_fMagicGrabActorThrowForce__init` at 0x66880 (crt_init, medium); signature (high): `void GameSetting_fMagicGrabActorThrowForce__init(void)`
+pub const GameSetting_fMagicGrabActorThrowForce__init: u64 = 3732;
+/// `GameSetting_fMagicGuideSpacing__atexit` at 0x1778350 (crt_init, medium); signature (high): `void GameSetting_fMagicGuideSpacing__atexit(void)`
+pub const GameSetting_fMagicGuideSpacing__atexit: u64 = 168943;
+/// `GameSetting_fMagicGuideSpacing__init` at 0x66900 (crt_init, medium); signature (high): `void GameSetting_fMagicGuideSpacing__init(void)`
+pub const GameSetting_fMagicGuideSpacing__init: u64 = 3733;
+/// `GameSetting_fMagicLesserPowerCooldownTimer__atexit` at 0x17783a0 (crt_init, medium); signature (high): `void GameSetting_fMagicLesserPowerCooldownTimer__atexit(void)`
+pub const GameSetting_fMagicLesserPowerCooldownTimer__atexit: u64 = 168944;
+/// `GameSetting_fMagicLesserPowerCooldownTimer__init` at 0x66980 (crt_init, medium); signature (high): `void GameSetting_fMagicLesserPowerCooldownTimer__init(void)`
+pub const GameSetting_fMagicLesserPowerCooldownTimer__init: u64 = 3734;
 /// `GameSetting_fMagicLightForwardOffset__atexit` at 0x17783f0 (crt_init, medium); signature (high): `void GameSetting_fMagicLightForwardOffset__atexit(void)`
 pub const GameSetting_fMagicLightForwardOffset__atexit: u64 = 168945;
 /// `GameSetting_fMagicLightForwardOffset__init` at 0x66a00 (crt_init, medium); signature (high): `void GameSetting_fMagicLightForwardOffset__init(void)`
@@ -9077,8 +9131,6 @@ pub const GetElementAddress8: u64 = 57560;
 pub const GetElementAddress8_2: u64 = 57559;
 /// `GetElementAndSetBit0OfField88` at 0xe33220 (decompiler, medium); signature (medium): `undefined8 GetElementAndSetBit0OfField88(longlong * param_1, uint param_2)`
 pub const GetElementAndSetBit0OfField88: u64 = 88323;
-/// `GetElementAt20ByteStride` at 0xff13a0 (decompiler, high); signature (untiered): `longlong GetElementAt20ByteStride(longlong param_1, ulonglong param_2)`
-pub const GetElementAt20ByteStride: u64 = 76646;
 /// `GetElementAtIndexOfArray120` at 0x12768e0 (decompiler, medium); signature (untiered): `undefined8 * GetElementAtIndexOfArray120(longlong param_1, undefined8 * param_2, uint param_3)`
 pub const GetElementAtIndexOfArray120: u64 = 444088;
 /// `GetElementAtIndexOfArray1B0` at 0x125dfb0 (decompiler, medium); signature (untiered): `undefined8 * GetElementAtIndexOfArray1B0(longlong param_1, undefined8 * param_2, uint param_3)`
@@ -9441,63 +9493,3 @@ pub const GetExtraType77Field10Field30: u64 = 11865;
 pub const GetExtraType7BHandle: u64 = 12033;
 /// `GetExtraType80Field10Ptr` at 0x16cfa0 (decompiler, high); signature (untiered): `longlong * GetExtraType80Field10Ptr(longlong param_1)`
 pub const GetExtraType80Field10Ptr: u64 = 11891;
-/// `GetExtraType81Data` at 0x16cfd0 (decompiler, high); signature (untiered): `longlong * GetExtraType81Data(longlong param_1)`
-pub const GetExtraType81Data: u64 = 11892;
-/// `GetExtraType85Field10` at 0x1672a0 (decompiler, high); signature (untiered): `undefined4 * GetExtraType85Field10(longlong param_1, undefined4 * param_2)`
-pub const GetExtraType85Field10: u64 = 11776;
-/// `GetExtraType86Data` at 0x164ae0 (decompiler, medium); signature (untiered): `undefined GetExtraType86Data(longlong param_1, undefined4 * param_2)`
-pub const GetExtraType86Data: u64 = 11713;
-/// `GetExtraType8Field10` at 0x16f930 (decompiler, high); signature (untiered): `longlong GetExtraType8Field10(longlong param_1)`
-pub const GetExtraType8Field10: u64 = 11964;
-/// `GetExtraType8Field10IfFlag40Bit0` at 0x2bf310 (decompiler, medium); signature (untiered): `longlong GetExtraType8Field10IfFlag40Bit0(longlong param_1)`
-pub const GetExtraType8Field10IfFlag40Bit0: u64 = 19007;
-/// `GetExtraType91Byte20` at 0x16cb90 (decompiler, high); signature (high): `undefined1 GetExtraType91Byte20(longlong param_1)`
-pub const GetExtraType91Byte20: u64 = 11885;
-/// `GetExtraType91Field14` at 0x16c640 (decompiler, high); signature (high): `undefined4 GetExtraType91Field14(longlong param_1)`
-pub const GetExtraType91Field14: u64 = 11879;
-/// `GetExtraType91Field18` at 0x16c800 (decompiler, high); signature (high): `undefined4 GetExtraType91Field18(longlong param_1)`
-pub const GetExtraType91Field18: u64 = 11881;
-/// `GetExtraType94Field10` at 0x171cf0 (decompiler, medium); signature (untiered): `undefined4 GetExtraType94Field10(longlong param_1)`
-pub const GetExtraType94Field10: u64 = 12027;
-/// `GetExtraType97Field10` at 0x171e60 (decompiler, high); signature (high): `undefined4 GetExtraType97Field10(longlong param_1)`
-pub const GetExtraType97Field10: u64 = 12029;
-/// `GetExtraType99ViaHandle1C` at 0x162e90 (decompiler, medium); signature (untiered): `longlong * GetExtraType99ViaHandle1C(longlong param_1)`
-pub const GetExtraType99ViaHandle1C: u64 = 11654;
-/// `GetExtraType9AField10` at 0x172690 (decompiler, high); signature (high): `undefined1 GetExtraType9AField10(longlong param_1)`
-pub const GetExtraType9AField10: u64 = 12041;
-/// `GetExtraType9BByte1A` at 0x173310 (decompiler, high); signature (untiered): `undefined1 GetExtraType9BByte1A(longlong param_1)`
-pub const GetExtraType9BByte1A: u64 = 12063;
-/// `GetExtraType9BField18` at 0x1732e0 (decompiler, high); signature (high): `undefined2 GetExtraType9BField18(longlong param_1)`
-pub const GetExtraType9BField18: u64 = 12062;
-/// `GetExtraType9DHandle` at 0x172410 (decompiler, high); signature (high): `undefined4 * GetExtraType9DHandle(longlong param_1, undefined4 * param_2)`
-pub const GetExtraType9DHandle: u64 = 12037;
-/// `GetExtraType9FValues` at 0x171e90 (decompiler, high); signature (high): `undefined GetExtraType9FValues(longlong param_1, undefined2 * param_2, undefined4 * param_3)`
-pub const GetExtraType9FValues: u64 = 12030;
-/// `GetExtraTypeA3Field10` at 0x1645a0 (decompiler, high); signature (untiered): `longlong GetExtraTypeA3Field10(longlong param_1)`
-pub const GetExtraTypeA3Field10: u64 = 11693;
-/// `GetExtraTypeA7Field28Ref` at 0x173800 (decompiler, medium); signature (untiered): `undefined GetExtraTypeA7Field28Ref(longlong param_1, longlong * param_2)`
-pub const GetExtraTypeA7Field28Ref: u64 = 12072;
-/// `GetExtraTypeA8Field10` at 0x164fa0 (decompiler, high); signature (untiered): `longlong GetExtraTypeA8Field10(longlong param_1)`
-pub const GetExtraTypeA8Field10: u64 = 11732;
-/// `GetExtraTypeA8StringOrEmpty` at 0x164ee0 (decompiler, medium); signature (untiered): `undefined * GetExtraTypeA8StringOrEmpty(longlong param_1, undefined8 param_2, undefined8 param_3, char * param_4)`
-pub const GetExtraTypeA8StringOrEmpty: u64 = 11731;
-/// `GetExtraTypeAAObject` at 0x173d00 (decompiler, medium); signature (untiered): `undefined8 * GetExtraTypeAAObject(longlong param_1)`
-pub const GetExtraTypeAAObject: u64 = 12078;
-/// `GetExtraTypeADData` at 0x165e20 (decompiler, high); signature (untiered): `longlong * GetExtraTypeADData(longlong param_1)`
-pub const GetExtraTypeADData: u64 = 11753;
-/// `GetExtraTypeAField10` at 0x1697f0 (decompiler, high); signature (high): `undefined4 GetExtraTypeAField10(longlong param_1)`
-pub const GetExtraTypeAField10: u64 = 11813;
-/// `GetExtraTypeDField18` at 0x170c20 (decompiler, high); signature (high): `longlong GetExtraTypeDField18(longlong param_1)`
-pub const GetExtraTypeDField18: u64 = 12001;
-/// `GetExtraWaterDataEntry0Vec3At0` at 0x174210 (decompiler, medium); signature (medium): `undefined GetExtraWaterDataEntry0Vec3At0(longlong param_1, undefined4 * param_2)`
-pub const GetExtraWaterDataEntry0Vec3At0: u64 = 12085;
-/// `GetExtraWaterDataEntry0Vec3At10` at 0x1742a0 (decompiler, medium); signature (medium): `undefined GetExtraWaterDataEntry0Vec3At10(longlong param_1, undefined4 * param_2)`
-pub const GetExtraWaterDataEntry0Vec3At10: u64 = 12086;
-/// `GetExtraWaterDataVec3At0OrDefault` at 0x2cb6e0 (decompiler, medium); signature (untiered): `undefined4 * GetExtraWaterDataVec3At0OrDefault(longlong param_1, undefined4 * param_2)`
-pub const GetExtraWaterDataVec3At0OrDefault: u64 = 19184;
-/// `GetExtraWaterDataVec3At10OrDefault` at 0x2cb730 (decompiler, medium); signature (untiered): `undefined4 * GetExtraWaterDataVec3At10OrDefault(longlong param_1, undefined4 * param_2)`
-pub const GetExtraWaterDataVec3At10OrDefault: u64 = 19185;
-/// `GetExtraWeaponAttackSoundData` at 0x164b80 (decompiler, medium); signature (untiered): `undefined GetExtraWeaponAttackSoundData(longlong param_1, undefined4 * param_2)`
-pub const GetExtraWeaponAttackSoundData: u64 = 11715;
-/// `GetExtraWeaponIdleSound` at 0x164b30 (decompiler, medium); signature (untiered): `undefined GetExtraWeaponIdleSound(longlong param_1, undefined4 * param_2)`
-pub const GetExtraWeaponIdleSound: u64 = 11714;

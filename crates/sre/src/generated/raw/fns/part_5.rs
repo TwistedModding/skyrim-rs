@@ -3,6 +3,44 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `BSTDerivedCreator<BGShkPhonemeController,BShkNonTransformController>::vfunc_2` at 0x422910 (rtti, medium); signature (low): `undefined vfunc_2(BSTDerivedCreator<BGShkPhonemeController,BShkNonTransformController> * this, undefined8 * param_1)`
+pub const BSTDerivedCreator_BGShkPhonemeController_BShkNonTransformController__vfunc_2: u64 = 26538;
+/// `BSTDerivedCreator<BSNullImplAudio,BSAudio>::vdtor` at 0xcd63b0 (layout_inference, medium); signature (low): `BSTDerivedCreator<BSNullImplAudio,BSAudio> * vdtor(BSTDerivedCreator<BSNullImplAudio,BSAudio> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const BSTDerivedCreator_BSNullImplAudio_BSAudio__vdtor: u64 = 67908;
+/// `BSTDerivedCreator<BSNullImplAudio,BSAudio>::vfunc_1` at 0xcd6310 (rtti, medium); signature (low): `BSAudio * vfunc_1(BSTDerivedCreator<BSNullImplAudio,BSAudio> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+pub const BSTDerivedCreator_BSNullImplAudio_BSAudio__vfunc_1: u64 = 67906;
+/// `BSTDerivedCreator<BSNullImplAudio,BSAudio>::vfunc_2` at 0xcd6390 (rtti, medium); signature (low): `undefined vfunc_2(BSTDerivedCreator<BSNullImplAudio,BSAudio> * this, undefined8 * param_1)`
+pub const BSTDerivedCreator_BSNullImplAudio_BSAudio__vfunc_2: u64 = 67907;
+/// `BSTDerivedCreator<BSPathingRequest,BSPathingRequest>::vdtor` at 0x11cb770 (layout_inference, medium); signature (low): `BSTDerivedCreator<BSPathingRequest,BSPathingRequest> * vdtor(BSTDerivedCreator<BSPathingRequest,BSPathingRequest> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const BSTDerivedCreator_BSPathingRequest_BSPathingRequest__vdtor: u64 = 90632;
+/// `BSTDerivedCreator<BSPathingRequest,BSPathingRequest>::vfunc_1` at 0x11cb570 (rtti, medium); signature (low): `undefined8 * vfunc_1(BSTDerivedCreator<BSPathingRequest,BSPathingRequest> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+pub const BSTDerivedCreator_BSPathingRequest_BSPathingRequest__vfunc_1: u64 = 90630;
+/// `BSTDerivedCreator<BSPathingRequest,BSPathingRequest>::vfunc_2` at 0x11cb750 (rtti, medium); signature (low): `undefined vfunc_2(BSTDerivedCreator<BSPathingRequest,BSPathingRequest> * this, undefined8 * param_1)`
+pub const BSTDerivedCreator_BSPathingRequest_BSPathingRequest__vfunc_2: u64 = 90631;
+/// `BSTDerivedCreator<BSPathingSolution,BSPathingSolution>::vdtor` at 0x11d71b0 (layout_inference, medium); signature (low): `BSTDerivedCreator<BSPathingSolution,BSPathingSolution> * vdtor(BSTDerivedCreator<BSPathingSolution,BSPathingSolution> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const BSTDerivedCreator_BSPathingSolution_BSPathingSolution__vdtor: u64 = 90957;
+/// `BSTDerivedCreator<BSPathingSolution,BSPathingSolution>::vfunc_1` at 0x11d70c0 (rtti, medium); signature (low): `undefined4 * vfunc_1(BSTDerivedCreator<BSPathingSolution,BSPathingSolution> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+pub const BSTDerivedCreator_BSPathingSolution_BSPathingSolution__vfunc_1: u64 = 90955;
+/// `BSTDerivedCreator<BSPathingSolution,BSPathingSolution>::vfunc_2` at 0x11d7190 (rtti, medium); signature (low): `undefined vfunc_2(BSTDerivedCreator<BSPathingSolution,BSPathingSolution> * this, longlong param_1)`
+pub const BSTDerivedCreator_BSPathingSolution_BSPathingSolution__vfunc_2: u64 = 90956;
+/// `BSTDerivedCreator<BSUIMessageData,IUIMessageData>::vdtor` at 0x1168fb0 (layout_inference, medium); signature (low): `BSTDerivedCreator<BSUIMessageData,IUIMessageData> * vdtor(BSTDerivedCreator<BSUIMessageData,IUIMessageData> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const BSTDerivedCreator_BSUIMessageData_IUIMessageData__vdtor: u64 = 82068;
+/// `BSTDerivedCreator<BSUIMessageData,IUIMessageData>::vfunc_1` at 0x1168f20 (rtti, medium); signature (low): `undefined8 * vfunc_1(BSTDerivedCreator<BSUIMessageData,IUIMessageData> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+pub const BSTDerivedCreator_BSUIMessageData_IUIMessageData__vfunc_1: u64 = 82066;
+/// `BSTDerivedCreator<BSUIMessageData,IUIMessageData>::vfunc_2` at 0x1168f90 (rtti, medium); signature (low): `undefined vfunc_2(BSTDerivedCreator<BSUIMessageData,IUIMessageData> * this, undefined8 * param_1)`
+pub const BSTDerivedCreator_BSUIMessageData_IUIMessageData__vfunc_2: u64 = 82067;
+/// `BSTDerivedCreator<BSUIScaleformData,IUIMessageData>::vdtor` at 0x1168e90 (layout_inference, medium); signature (low): `BSTDerivedCreator<BSUIScaleformData,IUIMessageData> * vdtor(BSTDerivedCreator<BSUIScaleformData,IUIMessageData> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const BSTDerivedCreator_BSUIScaleformData_IUIMessageData__vdtor: u64 = 82063;
+/// `BSTDerivedCreator<BSUIScaleformData,IUIMessageData>::vfunc_1` at 0x1168e00 (rtti, medium); signature (low): `undefined vfunc_1(BSTDerivedCreator<BSUIScaleformData,IUIMessageData> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+pub const BSTDerivedCreator_BSUIScaleformData_IUIMessageData__vfunc_1: u64 = 82061;
+/// `BSTDerivedCreator<BSUIScaleformData,IUIMessageData>::vfunc_2` at 0x1168e70 (rtti, medium); signature (low): `undefined vfunc_2(BSTDerivedCreator<BSUIScaleformData,IUIMessageData> * this, undefined8 * param_1)`
+pub const BSTDerivedCreator_BSUIScaleformData_IUIMessageData__vfunc_2: u64 = 82062;
+/// `BSTDerivedCreator<BSXAudio2Audio,BSAudio>::vdtor` at 0xcd8580 (layout_inference, medium); signature (low): `BSTDerivedCreator<BSXAudio2Audio,BSAudio> * vdtor(BSTDerivedCreator<BSXAudio2Audio,BSAudio> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const BSTDerivedCreator_BSXAudio2Audio_BSAudio__vdtor: u64 = 67969;
+/// `BSTDerivedCreator<BSXAudio2Audio,BSAudio>::vfunc_1` at 0xcd86e0 (rtti, medium); signature (low): `BSAudio * vfunc_1(BSTDerivedCreator<BSXAudio2Audio,BSAudio> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+pub const BSTDerivedCreator_BSXAudio2Audio_BSAudio__vfunc_1: u64 = 67977;
+/// `BSTDerivedCreator<BSXAudio2Audio,BSAudio>::vfunc_2` at 0xcd87a0 (rtti, medium); signature (low): `undefined vfunc_2(BSTDerivedCreator<BSXAudio2Audio,BSAudio> * this, undefined8 * param_1)`
+pub const BSTDerivedCreator_BSXAudio2Audio_BSAudio__vfunc_2: u64 = 67979;
 /// `BSTDerivedCreator<BShkVisibilityController,BShkNonTransformController>::vdtor` at 0xbde3d0 (layout_inference, medium); signature (low): `BSTDerivedCreator<BShkVisibilityController,BShkNonTransformController> * vdtor(BSTDerivedCreator<BShkVisibilityController,BShkNonTransformController> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const BSTDerivedCreator_BShkVisibilityController_BShkNonTransformController__vdtor: u64 = 63840;
 /// `BSTDerivedCreator<BShkVisibilityController,BShkNonTransformController>::vfunc_1` at 0xbde340 (rtti, medium); signature (low): `undefined vfunc_1(BSTDerivedCreator<BShkVisibilityController,BShkNonTransformController> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
@@ -5697,63 +5735,3 @@ pub const CallGlobal414364IfSet_11: u64 = 99698;
 pub const CallGlobal414364IfSet_12: u64 = 100904;
 /// `CallGlobal414364IfSet_13` at 0x142ba40 (decompiler, medium); signature (untiered): `undefined CallGlobal414364IfSet_13(undefined8 param_1, undefined8 param_2)`
 pub const CallGlobal414364IfSet_13: u64 = 452139;
-/// `CallGlobal414364IfSet_14` at 0x142ba60 (decompiler, medium); signature (untiered): `undefined CallGlobal414364IfSet_14(undefined8 param_1, undefined8 param_2)`
-pub const CallGlobal414364IfSet_14: u64 = 452140;
-/// `CallGlobal414364IfSet_15` at 0x142ba80 (decompiler, medium); signature (untiered): `undefined CallGlobal414364IfSet_15(undefined8 param_1, undefined8 param_2)`
-pub const CallGlobal414364IfSet_15: u64 = 452141;
-/// `CallGlobal414364IfSet_16` at 0x1456800 (decompiler, medium); signature (untiered): `undefined CallGlobal414364IfSet_16(undefined8 param_1, undefined8 param_2)`
-pub const CallGlobal414364IfSet_16: u64 = 102667;
-/// `CallGlobal414364IfSet_17` at 0x1459ce0 (decompiler, medium); signature (untiered): `undefined CallGlobal414364IfSet_17(undefined8 param_1, undefined8 param_2)`
-pub const CallGlobal414364IfSet_17: u64 = 96405;
-/// `CallGlobal414364IfSet_2` at 0x12ea420 (decompiler, medium); signature (untiered): `undefined CallGlobal414364IfSet_2(undefined8 param_1, undefined8 param_2)`
-pub const CallGlobal414364IfSet_2: u64 = 444899;
-/// `CallGlobal414364IfSet_3` at 0x12ea440 (decompiler, medium); signature (untiered): `undefined CallGlobal414364IfSet_3(undefined8 param_1, undefined8 param_2)`
-pub const CallGlobal414364IfSet_3: u64 = 525610;
-/// `CallGlobal414364IfSet_4` at 0x12f0e60 (decompiler, medium); signature (untiered): `undefined CallGlobal414364IfSet_4(undefined8 param_1, undefined8 param_2)`
-pub const CallGlobal414364IfSet_4: u64 = 446662;
-/// `CallGlobal414364IfSet_5` at 0x12ff9d0 (decompiler, medium); signature (untiered): `undefined CallGlobal414364IfSet_5(undefined8 param_1, undefined8 param_2)`
-pub const CallGlobal414364IfSet_5: u64 = 446913;
-/// `CallGlobal414364IfSet_6` at 0x12ffa10 (decompiler, medium); signature (untiered): `undefined CallGlobal414364IfSet_6(undefined8 param_1, undefined8 param_2)`
-pub const CallGlobal414364IfSet_6: u64 = 94526;
-/// `CallGlobal414364IfSet_7` at 0x1301370 (decompiler, medium); signature (untiered): `undefined CallGlobal414364IfSet_7(undefined8 param_1, undefined8 param_2)`
-pub const CallGlobal414364IfSet_7: u64 = 99926;
-/// `CallGlobal414364IfSet_8` at 0x13ac1a0 (decompiler, medium); signature (untiered): `undefined CallGlobal414364IfSet_8(undefined8 param_1, undefined8 param_2)`
-pub const CallGlobal414364IfSet_8: u64 = 450473;
-/// `CallGlobal414364IfSet_9` at 0x13c3500 (decompiler, medium); signature (untiered): `undefined CallGlobal414364IfSet_9(undefined8 param_1, undefined8 param_2)`
-pub const CallGlobal414364IfSet_9: u64 = 99371;
-/// `CallGlobal414364OnParam2` at 0x13073e0 (decompiler, medium); signature (untiered): `undefined CallGlobal414364OnParam2(undefined8 param_1, undefined8 param_2)`
-pub const CallGlobal414364OnParam2: u64 = 447032;
-/// `CallGlobal414364_2` at 0x13ddb30 (decompiler, medium); signature (untiered): `undefined CallGlobal414364_2(undefined8 param_1, undefined8 param_2)`
-pub const CallGlobal414364_2: u64 = 449475;
-/// `CallGlobal414364_3` at 0x13e2520 (decompiler, medium); signature (untiered): `undefined CallGlobal414364_3(undefined8 param_1, undefined8 param_2)`
-pub const CallGlobal414364_3: u64 = 100187;
-/// `CallGlobal414364_4` at 0x13e50d0 (decompiler, medium); signature (untiered): `undefined CallGlobal414364_4(undefined8 param_1, undefined8 param_2)`
-pub const CallGlobal414364_4: u64 = 98457;
-/// `CallGlobal414364_5` at 0x13e78d0 (decompiler, medium); signature (untiered): `undefined CallGlobal414364_5(undefined8 param_1, undefined8 param_2)`
-pub const CallGlobal414364_5: u64 = 101301;
-/// `CallGlobal414364_6` at 0x144c7f0 (decompiler, medium); signature (untiered): `undefined CallGlobal414364_6(undefined8 param_1, undefined8 param_2)`
-pub const CallGlobal414364_6: u64 = 527664;
-/// `CallGlobal414364_7` at 0x146e0f0 (decompiler, medium); signature (untiered): `undefined CallGlobal414364_7(undefined8 param_1, undefined8 param_2)`
-pub const CallGlobal414364_7: u64 = 103185;
-/// `CallGlobal503206AndQueueUIMessage` at 0x57ce40 (decompiler, medium); signature (untiered): `undefined CallGlobal503206AndQueueUIMessage(undefined8 param_1, char param_2)`
-pub const CallGlobal503206AndQueueUIMessage: u64 = 441679;
-/// `CallGlobalCallback410379UnderLock` at 0xebfdf0 (decompiler, medium); signature (untiered): `undefined1 CallGlobalCallback410379UnderLock(undefined8 param_1, undefined4 param_2, undefined4 param_3)`
-pub const CallGlobalCallback410379UnderLock: u64 = 69448;
-/// `CallGlobalCallback505658WithStringPair` at 0x15c1500 (decompiler, medium); signature (untiered): `undefined CallGlobalCallback505658WithStringPair(undefined4 param_1, longlong param_2, undefined1 * param_3, undefined8 param_4)`
-pub const CallGlobalCallback505658WithStringPair: u64 = 453942;
-/// `CallGlobalCallbackIfSet` at 0x15c1ca0 (decompiler, medium); signature (medium): `undefined CallGlobalCallbackIfSet(void)`
-pub const CallGlobalCallbackIfSet: u64 = 527857;
-/// `CallGlobalFn414364IfSet` at 0x1274930 (decompiler, medium); signature (untiered): `undefined CallGlobalFn414364IfSet(undefined8 param_1, undefined8 param_2)`
-pub const CallGlobalFn414364IfSet: u64 = 443798;
-/// `CallGlobalFn414364IfSet_2` at 0x1274950 (decompiler, medium); signature (untiered): `undefined CallGlobalFn414364IfSet_2(undefined8 param_1, undefined8 param_2)`
-pub const CallGlobalFn414364IfSet_2: u64 = 443799;
-/// `CallGlobalFn414364IfSet_3` at 0x1274970 (decompiler, medium); signature (untiered): `undefined CallGlobalFn414364IfSet_3(undefined8 param_1, undefined8 param_2)`
-pub const CallGlobalFn414364IfSet_3: u64 = 98069;
-/// `CallGlobalFn414364IfSet_4` at 0x127acf0 (decompiler, medium); signature (untiered): `undefined CallGlobalFn414364IfSet_4(undefined8 param_1, undefined8 param_2)`
-pub const CallGlobalFn414364IfSet_4: u64 = 524543;
-/// `CallHook414364AndClearTriple` at 0x128b510 (decompiler, medium); signature (untiered): `undefined CallHook414364AndClearTriple(longlong * param_1)`
-pub const CallHook414364AndClearTriple: u64 = 524745;
-/// `CallHook414364AndClearTriple_2` at 0x128f6d0 (decompiler, medium); signature (untiered): `undefined CallHook414364AndClearTriple_2(longlong * param_1)`
-pub const CallHook414364AndClearTriple_2: u64 = 445184;
-/// `CallHook414364AndClearTriple_3` at 0x12dc1c0 (decompiler, medium); signature (untiered): `undefined CallHook414364AndClearTriple_3(longlong * param_1)`
-pub const CallHook414364AndClearTriple_3: u64 = 525429;

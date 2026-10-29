@@ -63,6 +63,12 @@ impl core::ops::Deref for crate::BSFrustumFOVController {
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
+/// `BSFurnitureMarkerNode` is laid out from its primary base `NiExtraData`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::BSFurnitureMarkerNode {
+    type Target = crate::NiExtraData;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
 /// `BeamProjectile` is laid out from its primary base `Projectile`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::BeamProjectile {
     type Target = crate::Projectile;
@@ -177,6 +183,18 @@ impl core::ops::Deref for crate::MapCameraStates__World {
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
+/// `MountInteraction` is laid out from its primary base `RefrInteraction`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::MountInteraction {
+    type Target = crate::RefrInteraction;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `MovementControllerNPC` is laid out from its primary base `MovementControllerAI`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::MovementControllerNPC {
+    type Target = crate::MovementControllerAI;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
 /// `OwnedCameraEffectController` is laid out from its primary base `OwnedController`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::OwnedCameraEffectController {
     type Target = crate::OwnedController;
@@ -204,6 +222,18 @@ impl core::ops::Deref for crate::RaceSexCamera {
 /// `ShaderReferenceEffect` is laid out from its primary base `ReferenceEffect`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::ShaderReferenceEffect {
     type Target = crate::ReferenceEffect;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `StatsMenu` is laid out from its primary base `IMenu`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::StatsMenu {
+    type Target = crate::IMenu;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `StealthMeter` is laid out from its primary base `HUDObject`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::StealthMeter {
+    type Target = crate::HUDObject;
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
@@ -771,6 +801,20 @@ impl crate::BSFrustumFOVController {
     /// It constructs or destroys an object in place.
     #[inline]
     pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(74130, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
+}
+
+impl crate::BSFurnitureMarkerNode {
+    /// `BSFurnitureMarkerNode::GetMarker`: &markers[index] with markers at +0x18 and a 0x14-byte stride (no bounds check; callers test index < +0x28)
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 76646, rva 0xff13a0.
+    /// `FurnitureMarker* (BSFurnitureMarkerNode* this, u32 index)`
+    #[inline]
+    pub fn get_marker(&self, index: u32) -> Option<&'static crate::FurnitureMarker> { unsafe { function!(76646, (*const Self, u32) -> Option<&'static crate::FurnitureMarker>)(core::ptr::from_ref(self), index) } }
+    /// `BSFurnitureMarkerNode::markers` at +0x18: marker array, 0x14 bytes each
+    ///
+    /// Semantic field, camera pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn markers(&self) -> Option<&crate::FurnitureMarker> { unsafe { { self.markers }.as_ref() } }
 }
 
 impl crate::BeamProjectile {
@@ -1450,6 +1494,66 @@ impl crate::MapCameraStates__World {
     pub fn camera(&self) -> Option<&crate::TESCamera> { unsafe { { self.camera }.as_ref() } }
 }
 
+impl crate::MovementControllerNPC {
+    /// The `IAnimationSetCallbackFunctor` base at +0x148.
+    #[inline]
+    pub fn as_i_animation_set_callback_functor(&self) -> &crate::IAnimationSetCallbackFunctor { unsafe { &*core::ptr::from_ref(self).byte_add(0x148).cast() } }
+    /// The `IMovementDirectControl` base at +0x138.
+    #[inline]
+    pub fn as_i_movement_direct_control(&self) -> &crate::IMovementDirectControl { unsafe { &*core::ptr::from_ref(self).byte_add(0x138).cast() } }
+    /// The `IMovementInterface` base at +0x120.
+    #[inline]
+    pub fn as_i_movement_interface(&self) -> &crate::IMovementInterface { unsafe { &*core::ptr::from_ref(self).byte_add(0x120).cast() } }
+    /// The `IMovementInterface` base at +0x128.
+    #[inline]
+    pub fn as_i_movement_interface_2(&self) -> &crate::IMovementInterface { unsafe { &*core::ptr::from_ref(self).byte_add(0x128).cast() } }
+    /// The `IMovementInterface` base at +0x130.
+    #[inline]
+    pub fn as_i_movement_interface_3(&self) -> &crate::IMovementInterface { unsafe { &*core::ptr::from_ref(self).byte_add(0x130).cast() } }
+    /// The `IMovementInterface` base at +0x138.
+    #[inline]
+    pub fn as_i_movement_interface_4(&self) -> &crate::IMovementInterface { unsafe { &*core::ptr::from_ref(self).byte_add(0x138).cast() } }
+    /// The `IMovementInterface` base at +0x140.
+    #[inline]
+    pub fn as_i_movement_interface_5(&self) -> &crate::IMovementInterface { unsafe { &*core::ptr::from_ref(self).byte_add(0x140).cast() } }
+    /// The `IMovementMessageInterface` base at +0x120.
+    #[inline]
+    pub fn as_i_movement_message_interface(&self) -> &crate::IMovementMessageInterface { unsafe { &*core::ptr::from_ref(self).byte_add(0x120).cast() } }
+    /// The `IMovementMotionDrivenControl` base at +0x128.
+    #[inline]
+    pub fn as_i_movement_motion_driven_control(&self) -> &crate::IMovementMotionDrivenControl { unsafe { &*core::ptr::from_ref(self).byte_add(0x128).cast() } }
+    /// The `IMovementPlannerDirectControl` base at +0x140.
+    #[inline]
+    pub fn as_i_movement_planner_direct_control(&self) -> &crate::IMovementPlannerDirectControl { unsafe { &*core::ptr::from_ref(self).byte_add(0x140).cast() } }
+    /// The `IMovementSelectIdle` base at +0x130.
+    #[inline]
+    pub fn as_i_movement_select_idle(&self) -> &crate::IMovementSelectIdle { unsafe { &*core::ptr::from_ref(self).byte_add(0x130).cast() } }
+    /// `MovementControllerNPC::IsAIDriven`, vtable slot 14: controlsDriven == 0
+    ///
+    /// Semantic, camera pass, high; called through the object's vtable.
+    /// `bool (MovementControllerNPC* this)`
+    #[inline]
+    pub fn is_ai_driven(&self) -> bool { unsafe { virtual_function!(self, 14, (*const Self) -> bool)(core::ptr::from_ref(self)) } }
+    /// `MovementControllerNPC::IsControlsDriven`, vtable slot 15: controlsDriven
+    ///
+    /// Semantic, camera pass, high; called through the object's vtable.
+    /// `bool (MovementControllerNPC* this)`
+    #[inline]
+    pub fn is_controls_driven(&self) -> bool { unsafe { virtual_function!(self, 15, (*const Self) -> bool)(core::ptr::from_ref(self)) } }
+    /// `MovementControllerNPC::SetAIDriven`, vtable slot 12: controlsDriven = 0; if it changed: the IMovementSetGoal interface (slot 3 lookup with the name 0x3350980) gets its slot 3, then the motion-driven sub-object's slot 4 when its slot 6 is true
+    ///
+    /// Semantic, camera pass, high; called through the object's vtable.
+    /// `void (MovementControllerNPC* this)`
+    #[inline]
+    pub fn set_ai_driven(&self) { unsafe { virtual_function!(self, 12, (*const Self))(core::ptr::from_ref(self)) } }
+    /// `MovementControllerNPC::SetControlsDriven`, vtable slot 13: controlsDriven = 1; same notifications as slot 12
+    ///
+    /// Semantic, camera pass, high; called through the object's vtable.
+    /// `void (MovementControllerNPC* this)`
+    #[inline]
+    pub fn set_controls_driven(&self) { unsafe { virtual_function!(self, 13, (*const Self))(core::ptr::from_ref(self)) } }
+}
+
 impl crate::OwnedCameraEffectController {
     /// `OwnedCameraEffectController::Destroy`, vtable slot 0: releases attachRoot (+0x28), ReferenceEffectController::dtor, frees 0x38 when flags & 1
     ///
@@ -1879,9 +1983,9 @@ impl crate::PlayerCamera {
     /// `void (PlayerCamera* this, bool on)`
     #[inline]
     pub fn set_pitch_zero(&self, on: bool) { unsafe { function!(50844, (*const Self, bool))(core::ptr::from_ref(self), on) } }
-    /// `PlayerCamera::SetTarget`: +0x3c = handle (invalid when the ref has no handle); null leaves it unchanged
+    /// `PlayerCamera::SetTarget`: stores target's ObjectRefHandle in targetHandle (+0x3c) and does nothing else; a null target leaves +0x3c unchanged; a target whose refcount word (+0x28 & 0x3ff) is 0 stores g_InvalidRefHandle
     ///
-    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 50838, rva 0x8fb250.
+    /// Semantic, camera pass, high; ledger runtime evidence, name high; id 50838, rva 0x8fb250.
     /// `void (PlayerCamera* this, TESObjectREFR* target)`
     /// May be null: `target`.
     #[inline]
@@ -2071,6 +2175,63 @@ impl crate::ShaderReferenceEffect {
     pub fn vfunc_40_sub4(&self) -> bool { unsafe { function!(34933, (*const Self) -> bool)(core::ptr::from_ref(self)) } }
 }
 
+impl crate::StatsMenu {
+    /// The `MenuEventHandler` base at +0x30.
+    #[inline]
+    pub fn as_menu_event_handler(&self) -> &crate::MenuEventHandler { unsafe { &*core::ptr::from_ref(self).byte_add(0x30).cast() } }
+    /// `StatsMenu::BuildPerkTreeNode`: creates the 3D star and line nodes for one perk tree node (StatsNode, LineNode, fStatsStar*Increment, fStatsLineScale) and recurses to children
+    ///
+    /// Semantic, camera pass, medium; ledger semantic evidence, name medium; id 52593, rva 0x9824d0.
+    /// `bool (void* builder, BGSSkillPerkTreeNode* node)`
+    /// May be null: `node`.
+    ///
+    /// # Safety
+    /// The pass rates the signature medium.
+    #[inline]
+    pub unsafe fn build_perk_tree_node(builder: *mut c_void, node: *mut crate::BGSSkillPerkTreeNode) -> bool { unsafe { function!(52593, (*mut c_void, *mut crate::BGSSkillPerkTreeNode) -> bool)(builder, node) } }
+    /// `StatsMenu::CreateCamera`: new NiCamera with viewport (0,1,1,0), near fStatsCameraNearDistance (1), far = SceneGraph slot 62, frustum right = tan(fStatsCameraFOV deg) * (0.75 / a) * 0.55, top = right * a with a = +0x314 / +0x318, placed at the model's 'CameraPosition' node (axes swapped z,y,x), oriented toward the current skill node; minNear 1.0, lodAdjust 0; stored refcounted at StatsMenu+0x40
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 52530, rva 0x97bd30.
+    /// `void (StatsMenu* this)`
+    #[inline]
+    pub fn create_camera(&self) { unsafe { function!(52530, (*const Self))(core::ptr::from_ref(self)) } }
+    /// `StatsMenu::InitSkillViewTable`: fills the static per-skill view records (ID_406482..ID_406564: camera/look-at vectors and angles) used by StatsMenu::vfunc_4_sub3
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 52559, rva 0x980a30.
+    /// `void (void)`
+    #[inline]
+    pub fn init_skill_view_table() { unsafe { function!(52559, ())() } }
+    /// `StatsMenu::SetupScene`: builds the stats menu 3D scene: constellation models (AssignModelFromLookup), star scale (fStatsStarScale), materials and the intro sequence
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 52531, rva 0x97c4b0.
+    /// `void (StatsMenu* this)`
+    #[inline]
+    pub fn setup_scene(&self) { unsafe { function!(52531, (*const Self))(core::ptr::from_ref(self)) } }
+    /// `StatsMenu::ctor`: constructs the skills menu; IMenu flags +0x1c = 0x8189 (| 4 without a gamepad), input context +0x20 = 8, depth left at IMenu's default
+    ///
+    /// Semantic, camera pass, high; ledger layout_inference evidence, name high; id 52508, rva 0x975ff0.
+    /// `StatsMenu* (StatsMenu* this)`
+    ///
+    /// # Safety
+    /// It constructs or destroys an object in place.
+    #[inline]
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(52508, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
+    /// `StatsMenu::camera` at +0x40: the menu's own NiCamera (StatsMenu::CreateCamera 0x97bd30); its local translation is refreshed from +0x288 during the intro and outro
+    ///
+    /// Semantic field, camera pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn camera(&self) -> Option<&crate::NiCamera> { unsafe { { self.camera }.as_ref() } }
+}
+
+impl crate::StealthMeter {
+    /// `StealthMeter::Update`, vtable slot 1: steps displayedLevel toward targetLevel; on reaching 0 or 100 sets '$HIDDEN'/'$DETECTED', plays 'Start' on flashClip and calls vfunc_1_sub0(player, level == 0); sets the meter frame
+    ///
+    /// Semantic, camera pass, high; called through the object's vtable.
+    /// `void (StealthMeter* this)`
+    #[inline]
+    pub fn update(&self) { unsafe { virtual_function!(self, 1, (*const Self))(core::ptr::from_ref(self)) } }
+}
+
 impl crate::StopMountCameraHandler {
     /// `StopMountCameraHandler::Destroy`, vtable slot 0: scalar deleting destructor: restores IHandlerFunctor<Actor,BSFixedStringCI>::vftable 0x1937e30, frees 0x10 when flags & 1
     ///
@@ -2234,14 +2395,68 @@ impl crate::TESCameraState {
 }
 
 impl crate::TESFurniture {
-    /// `TESFurniture::Activate`, vtable slot 55: furniture activation: the player sits (PlayerCamera::EnterFurnitureCamera), a bed opens the sleep menu (or the serve-sentence question), a workbench queues its menu, or the default action 0x37 runs
+    /// `TESFurniture::Activate`, vtable slot 55: existing high row; IC2: a sleep marker 0 (IsSleepMarker) opens the sleep menu, else the sit path and EnterFurnitureCamera
     ///
     /// Semantic, camera pass, high; called through the object's vtable.
-    /// `bool (TESFurniture* this, TESObjectREFR* targetRef, TESObjectREFR* activator, u8 activateFlag, TESBoundObject* object, i32 count)`
+    /// `bool (TESFurniture* this, TESObjectREFR* target, TESObjectREFR* activator, u8 activateFlag, TESBoundObject* object, i32 count)`
     /// May be null: `activator`.
     /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
     #[inline]
-    pub fn activate(&self, targetRef: &crate::TESObjectREFR, activator: Option<&crate::TESObjectREFR>, activateFlag: u8, object: &crate::TESBoundObject, count: i32) -> bool { unsafe { virtual_function!(self, 55, (*const Self, *const crate::TESObjectREFR, *const crate::TESObjectREFR, u8, *const crate::TESBoundObject, i32) -> bool)(core::ptr::from_ref(self), core::ptr::from_ref(targetRef), activator.map_or(core::ptr::null(), core::ptr::from_ref), activateFlag, core::ptr::from_ref(object), count) } }
+    pub fn activate(&self, target: &crate::TESObjectREFR, activator: Option<&crate::TESObjectREFR>, activateFlag: u8, object: &crate::TESBoundObject, count: i32) -> bool { unsafe { virtual_function!(self, 55, (*const Self, *const crate::TESObjectREFR, *const crate::TESObjectREFR, u8, *const crate::TESBoundObject, i32) -> bool)(core::ptr::from_ref(self), core::ptr::from_ref(target), activator.map_or(core::ptr::null(), core::ptr::from_ref), activateFlag, core::ptr::from_ref(object), count) } }
+    /// `TESFurniture::Load`, vtable slot 6: see the function row
+    ///
+    /// Semantic, camera pass, high; called through the object's vtable.
+    /// `bool (TESFurniture* this, TESFile* file)`
+    /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
+    ///
+    /// # Safety
+    /// `file` must point to what the engine expects.
+    #[inline]
+    pub unsafe fn load(&self, file: *mut crate::TESFile) -> bool { unsafe { virtual_function!(self, 6, (*const Self, *mut crate::TESFile) -> bool)(core::ptr::from_ref(self), file) } }
+    /// `TESFurniture::HasSpecialFurnitureKeywordFlag`: +0xe4 bit 29 (0x20000000), set at init when the furniture has default object 0xb3 'Keyword - Special Furniture'
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 17399, rva 0x26e700.
+    /// `bool (const TESFurniture* this)`
+    #[inline]
+    pub fn has_special_furniture_keyword_flag(&self) -> bool { unsafe { function!(17399, (*const Self) -> bool)(core::ptr::from_ref(self)) } }
+    /// `TESFurniture::IsLeanFurniture`: +0xe4 bit 28 (0x10000000): furniture anim type Lean
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 17397, rva 0x26e6c0.
+    /// `bool (const TESFurniture* this)`
+    #[inline]
+    pub fn is_lean_furniture(&self) -> bool { unsafe { function!(17397, (*const Self) -> bool)(core::ptr::from_ref(self)) } }
+    /// `TESFurniture::IsSitFurniture`: +0xe4 bit 30 (0x40000000): furniture anim type Sit
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 17395, rva 0x26e680.
+    /// `bool (const TESFurniture* this)`
+    #[inline]
+    pub fn is_sit_furniture(&self) -> bool { unsafe { function!(17395, (*const Self) -> bool)(core::ptr::from_ref(self)) } }
+    /// `TESFurniture::IsSleepFurniture`: +0xe4 bit 31 (0x80000000): furniture anim type Lay (bed)
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 17396, rva 0x26e6a0.
+    /// `bool (const TESFurniture* this)`
+    #[inline]
+    pub fn is_sleep_furniture(&self) -> bool { unsafe { function!(17396, (*const Self) -> bool)(core::ptr::from_ref(self)) } }
+    /// `TESFurniture::IsSleepMarker`: marker markerIndex of the model's BSFurnitureMarkerNode has flag bit 1 (sleep)
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 17410, rva 0x26ebd0.
+    /// `bool (u32 markerIndex, NiAVObject* root3D)`
+    #[inline]
+    pub fn is_sleep_marker(markerIndex: u32, root3D: &crate::NiAVObject) -> bool { unsafe { function!(17410, (u32, *const crate::NiAVObject) -> bool)(markerIndex, core::ptr::from_ref(root3D)) } }
+    /// `TESFurniture::UpdateMarkerTypeFlags`: recomputes +0xe4 bits 30/31/28 from the furniture model's markers: over the markers whose +0xe4 bit i is set (i < 25), bit 30 if any marker has flag bit 0 (sit), bit 31 if any has bit 1 (sleep), bit 28 if any has bit 2 (lean); then bit 29 from keyword 0xb3
+    ///
+    /// Semantic, camera pass, medium; ledger semantic evidence, name medium; id 17403, rva 0x26e790.
+    /// `void (TESFurniture* this, NiAVObject* root3D)`
+    ///
+    /// # Safety
+    /// The pass rates the signature medium.
+    #[inline]
+    pub unsafe fn update_marker_type_flags(&self, root3D: *mut crate::NiAVObject) { unsafe { function!(17403, (*const Self, *mut crate::NiAVObject))(core::ptr::from_ref(self), root3D) } }
+    /// `TESFurniture::associatedSpell` at +0xE8: NAM1: form id at load, a SpellItem* (or null) after slot 19
+    ///
+    /// Semantic field, camera pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn associated_spell(&self) -> Option<&crate::SpellItem> { unsafe { { self.associatedSpell }.as_ref() } }
 }
 
 impl crate::ThirdPersonState {
@@ -2656,16 +2871,15 @@ pub unsafe fn cmd__show1st_person_execute(paramInfo: *mut c_void, scriptData: *m
 /// `bool (void)`
 #[inline]
 pub fn cmd__toggle_animator_cam_execute() -> bool { unsafe { function!(22888, () -> bool)() } }
-/// `Cmd::ToggleControlsDriven_Execute`: console 'ToggleControlsDriven' on an actor: toggles its movement controller (+0x150) between AI-driven (slot 13) and controls-driven (slot 12) and points the camera at it (PlayerCamera::SetTarget) when controls-driven, back at the player when AI-driven; prints the result
+/// `Cmd::ToggleControlsDriven_Execute`: console ToggleControlsDriven on the selected actor: argument 1 -> movement controller slot 13 (controls-driven) and SetTarget(actor); 0 -> slot 12 (AI-driven) and SetTarget(player); the toggle path uses slot 15; prints the new mode
 ///
 /// Semantic, camera pass, high; ledger console_cmd evidence, name high; id 23089, rva 0x37b3a0.
-/// `bool (const ParamInfo* params, const void* scriptData, TESObjectREFR* thisRef, TESObjectREFR* containingObj, Script* script, ScriptLocals* locals, double* result, u32* offset)`
-/// Retyped: bool (execute args) -> bool (const ParamInfo* params, const void* scriptData, TESObjectREFR* thisRef, TESObjectREFR* containingObj, Script* script, ScriptLocals* locals, double* result, u32* offset): the console-command execute prototype of docs/subsystems/input.md section 5, also spelled by the binary's own RTTI: the local class MobDialogueFlagResetter is scoped in 'bool Script::ResetDialogueFlags(SCRIPT_PARAMETER const*, char const*, TESObjectREFR*, TESObjectREFR*, Script*, ScriptLocals*, double&, unsigned int&)' (data/rtti.json; ScriptLocals is named there). Body: r8 is tested as an actor (formType 0x3e at +0x1a) before UnpackCommandArguments(rcx, rdx, offset, r8, r9, script, locals); every path returns al 1; table entry 0x2091c10.
+/// `bool (const ParamInfo* params, const void* data, TESObjectREFR* thisRef, TESObjectREFR* containingObj, Script* script, ScriptLocals* locals, double* result, u32* offset)`
 ///
 /// # Safety
-/// `scriptData`, `locals`, `result`, `offset` must point to what the engine expects.
+/// `data`, `locals`, `result`, `offset` must point to what the engine expects.
 #[inline]
-pub unsafe fn cmd__toggle_controls_driven_execute(params: *const crate::ParamInfo, scriptData: *const c_void, thisRef: *mut crate::TESObjectREFR, containingObj: *mut crate::TESObjectREFR, script: *mut crate::Script, locals: *mut c_void, result: *mut f64, offset: *mut u32) -> bool { unsafe { function!(23089, (*const crate::ParamInfo, *const c_void, *mut crate::TESObjectREFR, *mut crate::TESObjectREFR, *mut crate::Script, *mut c_void, *mut f64, *mut u32) -> bool)(params, scriptData, thisRef, containingObj, script, locals, result, offset) } }
+pub unsafe fn cmd__toggle_controls_driven_execute(params: *const crate::ParamInfo, data: *const c_void, thisRef: *mut crate::TESObjectREFR, containingObj: *mut crate::TESObjectREFR, script: *mut crate::Script, locals: *mut c_void, result: *mut f64, offset: *mut u32) -> bool { unsafe { function!(23089, (*const crate::ParamInfo, *const c_void, *mut crate::TESObjectREFR, *mut crate::TESObjectREFR, *mut crate::Script, *mut c_void, *mut f64, *mut u32) -> bool)(params, data, thisRef, containingObj, script, locals, result, offset) } }
 /// `Cmd::ToggleFlyCam_Execute`: console 'ToggleFlyCam' (tfc): ToggleFreeCamera(camera, false); pushes input context 0xd when the free camera (+0xd0) is now current, else pops it; prints 'Fly Camera Is %s'
 ///
 /// Semantic, camera pass, high; ledger console_cmd evidence, name high; id 441593, rva 0x372c20.
@@ -2881,6 +3095,27 @@ pub fn get_dialogue_speaker_yaw_offset(actor: &crate::Actor) -> f32 { unsafe { f
 /// `FirstPersonRenderContext* (void)`
 #[inline]
 pub fn get_first_person_render_context() -> Option<&'static crate::FirstPersonRenderContext> { unsafe { function!(107121, () -> Option<&'static crate::FirstPersonRenderContext>)() } }
+/// `GetFormGoldValue`: TESValueForm value (+8) when the form casts to TESValueForm, else the MagicItem/AlchemyItem value from 0x151780(item, 0) truncated, else -1
+///
+/// Semantic, camera pass, medium; ledger semantic evidence, name medium; id 14978, rva 0x1f3560.
+/// `i32 (TESForm* form)`
+///
+/// # Safety
+/// The pass rates the signature medium.
+#[inline]
+pub unsafe fn get_form_gold_value(form: *mut crate::TESForm) -> i32 { unsafe { function!(14978, (*mut crate::TESForm) -> i32)(form) } }
+/// `GetFormWeight`: the TESWeightForm weight (+8 of the component) chosen by form type, else the constant at 0x17e2820
+///
+/// Semantic, camera pass, high; ledger semantic evidence, name high; id 14988, rva 0x1f37b0.
+/// `float (TESForm* form)`
+#[inline]
+pub fn get_form_weight(form: &crate::TESForm) -> f32 { unsafe { function!(14988, (*const crate::TESForm) -> f32)(core::ptr::from_ref(form)) } }
+/// `GetFurnitureMarkerNodeExtraData`: the root's extra data named by the BSFixedString at 0x332e398 when its type node chain contains BSFurnitureMarkerNode, else null
+///
+/// Semantic, camera pass, high; ledger semantic evidence, name high; id 76647, rva 0xff13d0.
+/// `BSFurnitureMarkerNode* (NiAVObject* root3D)`
+#[inline]
+pub fn get_furniture_marker_node_extra_data(root3D: &crate::NiAVObject) -> Option<&'static crate::BSFurnitureMarkerNode> { unsafe { function!(76647, (*const crate::NiAVObject) -> Option<&'static crate::BSFurnitureMarkerNode>)(core::ptr::from_ref(root3D)) } }
 /// `GetInteriorCellBufferSetting`: returns the value of uInterior Cell Buffer:General (INISetting object 0x2077748, value 0x2077750)
 ///
 /// Semantic, camera pass, high; ledger semantic evidence, name high; id 13386, rva 0x1a7fa0.
@@ -3165,6 +3400,15 @@ pub unsafe fn process_handle_array_with_frame_delta(manager: *mut c_void) { unsa
 /// `array`, `item` must point to what the engine expects.
 #[inline]
 pub unsafe fn ptr_array16__set_at_grow(array: *mut c_void, index: u32, item: *mut *mut c_void) -> u32 { unsafe { function!(20691, (*mut c_void, u32, *mut *mut c_void) -> u32)(array, index, item) } }
+/// `QueueCrosshairTargetMessage`: queues a HUDData to 'HUD Menu' (message type 0) with type 2 + largeTarget, flag (+0x40) = activatable, text (+0x18) = text when activatable else "", refHandle (+0x28) = *target; HUDMenu turns it into SetCrosshairTarget
+///
+/// Semantic, camera pass, high; ledger semantic evidence, name high; id 51619, rva 0x934f90.
+/// `void (bool activatable, const char* text, const ObjectRefHandle* target, bool largeTarget)`
+///
+/// # Safety
+/// `text`, `target` must point to what the engine expects.
+#[inline]
+pub unsafe fn queue_crosshair_target_message(activatable: bool, text: *const c_char, target: *const c_void, largeTarget: bool) { unsafe { function!(51619, (bool, *const c_char, *const c_void, bool))(activatable, text, target, largeTarget) } }
 /// `QueuePendingCameraPath`: append path to the registry's pending array (+0x20, u16 count at +0x32)
 ///
 /// Semantic, camera pass, high; ledger semantic evidence, name high; id 20682, rva 0x318020.
@@ -3362,9 +3606,9 @@ pub unsafe fn set_perspective_fov_projection_lh(outMatrix4x4: *mut f32, fovY: f3
 /// `outMatrix4x4` must point to what the engine expects.
 #[inline]
 pub unsafe fn set_perspective_fov_projection_rh(outMatrix4x4: *mut f32, fovY: f32, aspect: f32, zNear: f32, zFar: f32) { unsafe { function!(82691, (*mut f32, f32, f32, f32, f32))(outMatrix4x4, fovY, aspect, zNear, zFar) } }
-/// `SetPlayerAIDriven`: sets player+0xbea bit 3 to aiDriven and calls the object at player+0x150 slot 12 (on) or 13 (off); when turning off and the current package type byte (+0x24) is '%' (0x25), PlayerCamera::PopIfAIDrivenFlag
+/// `SetPlayerAIDriven`: the player's AI-driven setter: aiDriven -> movement controller slot 12 (AI-driven); !aiDriven -> slot 13 (controls-driven) and, when the current package's type byte (+0x24) is 0x25, PlayerCamera::PopIfAIDrivenFlag; then +0xbea bit 3 = aiDriven
 ///
-/// Semantic, camera pass, high; ledger semantic evidence, name high; id 40586, rva 0x7559f0.
+/// Semantic, camera pass, high; ledger runtime evidence, name high; id 40586, rva 0x7559f0.
 /// `void (PlayerCharacter* player, bool aiDriven)`
 #[inline]
 pub fn set_player_ai_driven(player: &crate::PlayerCharacter, aiDriven: bool) { unsafe { function!(40586, (*const crate::PlayerCharacter, bool))(core::ptr::from_ref(player), aiDriven) } }
@@ -3628,6 +3872,9 @@ pub fn game_setting_f_sitting_max_looking_down_value() -> *mut f32 { address!(37
 /// `INIPrefSetting_bInvertYValues_Controls_value` at 0x20b83d0, id 381966 (runtime, high); negates look.y in ApplyLookInputSensitivity (0x7aebad) and in the map look handler path; written by the options menu (high, camera pass), type `u8`
 #[inline]
 pub fn ini_pref_setting_b_invert_y_values_controls_value() -> *mut u8 { address!(381966) as *mut u8 }
+/// `INISetting_bShowCrosshair_Interface` at 0x20bac68, id 382824 (semantic, high); bShowCrosshair:Interface; its value byte (0x20bac70) is SetCrosshairTarget argument 5 (high, camera pass), type `class:Setting`
+#[inline]
+pub fn ini_setting_b_show_crosshair_interface() -> &'static crate::Setting { unsafe { &*(address!(382824) as *const crate::Setting) } }
 /// `INISetting_fDefault1stPersonFOV_Display_value` at 0x20cf9f8, id 388788 (semantic, high); 80; same readers for the first-person FOV; written by the fov command's second argument (high, camera pass), type `float`
 #[inline]
 pub fn ini_setting_f_default1st_person_fov_display_value() -> *mut f32 { address!(388788) as *mut f32 }
@@ -3739,6 +3986,9 @@ pub fn g_frame_timer_fixed_step() -> *mut f32 { address!(410198) as *mut f32 }
 /// `g_FreeCameraEventNames` at 0x3255ac8, id 405792 (semantic, high); the free camera's five user-event names (BSFixedString each): CameraZUp 0x3255ac8, CameraZDown 0x3255ad0, WorldZUp 0x3255ad8, WorldZDown 0x3255ae0, LockToZPlane 0x3255ae8 (high, camera pass), type `undefined1`
 #[inline]
 pub fn g_free_camera_event_names() -> *mut u8 { address!(405792) as *mut u8 }
+/// `g_GamePaused` at 0x32303b3, id 403437 (runtime, high); 1 while any game-pausing menu is open: written every Main::Update as UI->numPausesGame (+0x160) != 0 (high, camera pass), type `u8`
+#[inline]
+pub fn g_game_paused() -> *mut u8 { address!(403437) as *mut u8 }
 /// `g_HUDCameraWorldToClip` at 0x32566d0, id 406126 (runtime, high); 64-byte snapshot of the frame camera's world-to-clip matrix; viewport snapshot at 0x3257c78; lock 0x32567a8 (owner) / 0x32567ac (count) (high, camera pass), type `undefined1`
 #[inline]
 pub fn g_hud_camera_world_to_clip() -> *mut u8 { address!(406126) as *mut u8 }

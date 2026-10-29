@@ -4,6 +4,9 @@
 use crate::raw::*;
 
 pub(super) const ROWS: &[Function] = &[
+    Function { rva: 0x368f40, id: 22658, confidence: Confidence::High, name: "Cmd::GetBribeAmount_Execute" },
+    Function { rva: 0x369000, id: 22659, confidence: Confidence::High, name: "Cmd::GetBribeSuccess_Execute" },
+    Function { rva: 0x369020, id: 22660, confidence: Confidence::High, name: "Cmd::GetIntimidateSuccess_Execute" },
     Function { rva: 0x369040, id: 22661, confidence: Confidence::High, name: "Cmd::GetArrestedState_Execute" },
     Function { rva: 0x369060, id: 22662, confidence: Confidence::High, name: "Cmd::GetArrestingActor_Execute" },
     Function { rva: 0x369080, id: 22663, confidence: Confidence::High, name: "Cmd::ClearArrestState_Execute" },
@@ -8130,7 +8133,4 @@ pub(super) const ROWS: &[Function] = &[
     Function { rva: 0x584ba0, id: 441841, confidence: Confidence::Medium, name: "BSPlatform::BSUserContent::ctor" },
     Function { rva: 0x585550, id: 441845, confidence: Confidence::Medium, name: "FreeSharedPtrArray" },
     Function { rva: 0x585610, id: 441846, confidence: Confidence::Medium, name: "FreeRecordArray28" },
-    Function { rva: 0x585690, id: 523664, confidence: Confidence::Medium, name: "DestroyAndFreeArray2A8" },
-    Function { rva: 0x585720, id: 441847, confidence: Confidence::Medium, name: "FreeArrayBufferAndResetCount_2" },
-    Function { rva: 0x585780, id: 441848, confidence: Confidence::Medium, name: "FreeArrayBufferAndResetCount_3" },
 ];

@@ -3,6 +3,54 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `BGSProcedureUseIdleMarkerExecState::vfunc_7` at 0x48db30 (rtti, high); signature (low): `undefined vfunc_7(BGSProcedureUseIdleMarkerExecState * this, longlong param_1)`
+pub const BGSProcedureUseIdleMarkerExecState__vfunc_7: u64 = 29315;
+/// `BGSProcedureUseIdleMarkerExecState::vfunc_8` at 0x48dce0 (rtti, high); signature (low): `undefined vfunc_8(void)`
+pub const BGSProcedureUseIdleMarkerExecState__vfunc_8: u64 = 29316;
+/// `BGSProcedureUseMagic::vdtor` at 0x490fe0 (layout_inference, medium); signature (low): `BGSProcedureUseMagic * vdtor(BGSProcedureUseMagic * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const BGSProcedureUseMagic__vdtor: u64 = 29366;
+/// `BGSProcedureUseMagic::vfunc_10` at 0x48ef20 (rtti, high); signature (low): `undefined vfunc_10(BGSProcedureUseMagic * this, longlong param_1, longlong param_2)`
+pub const BGSProcedureUseMagic__vfunc_10: u64 = 29343;
+/// `BGSProcedureUseMagic::vfunc_12` at 0x48efa0 (rtti, high); signature (low): `undefined vfunc_12(BGSProcedureUseMagic * this, undefined8 * param_1)`
+pub const BGSProcedureUseMagic__vfunc_12: u64 = 29344;
+/// `BGSProcedureUseMagic::vfunc_12_sub0` at 0x48f1d0 (callgraph, medium); signature (untiered): `undefined vfunc_12_sub0(longlong * param_1, IMAGE_DOS_HEADER * param_2, IMAGE_DOS_HEADER * param_3, IMAGE_DOS_HEADER * param_4)`
+pub const BGSProcedureUseMagic__vfunc_12_sub0: u64 = 29346;
+/// `BGSProcedureUseMagic::vfunc_17` at 0x48ede0 (rtti, high); signature (low): `undefined8 vfunc_17(void)`
+pub const BGSProcedureUseMagic__vfunc_17: u64 = 29341;
+/// `BGSProcedureUseMagic::vfunc_9` at 0x48edf0 (rtti, high); signature (low): `undefined vfunc_9(BGSProcedureUseMagic * this, longlong * param_1)`
+pub const BGSProcedureUseMagic__vfunc_9: u64 = 29342;
+/// `BGSProcedureUseMagicExecState::BSTEventSink_TESSpellCastEvent_vdtor` at 0x490ed0 (slot_propagation, medium); signature (high): `undefined BSTEventSink_TESSpellCastEvent_vdtor(BGSProcedureUseMagicExecState * this)`
+pub const BGSProcedureUseMagicExecState__BSTEventSink_TESSpellCastEvent_vdtor: u64 = 29360;
+/// `BGSProcedureUseMagicExecState::BSTEventSink_TESSpellCastEvent_vfunc_1` at 0x490620 (rtti, high); signature (low): `undefined8 BSTEventSink_TESSpellCastEvent_vfunc_1(BGSProcedureUseMagicExecState * this, longlong * param_1)`
+pub const BGSProcedureUseMagicExecState__BSTEventSink_TESSpellCastEvent_vfunc_1: u64 = 29350;
+/// `BGSProcedureUseMagicExecState::ctor` at 0x490420 (layout_inference, medium); signature (high): `BGSProcedureUseMagicExecState * ctor(BGSProcedureUseMagicExecState * this)`
+pub const BGSProcedureUseMagicExecState__ctor: u64 = 29348;
+/// `BGSProcedureUseMagicExecState::dtor` at 0x4904d0 (layout_inference, high); signature (high): `undefined dtor(BGSProcedureUseMagicExecState * this)`
+pub const BGSProcedureUseMagicExecState__dtor: u64 = 29349;
+/// `BGSProcedureUseMagicExecState::vdtor` at 0x491020 (slot_propagation, medium); signature (low): `BGSProcedureUseMagicExecState * vdtor(BGSProcedureUseMagicExecState * this, ulonglong param_1, longlong param_2, undefined8 param_3)`
+pub const BGSProcedureUseMagicExecState__vdtor: u64 = 29367;
+/// `BGSProcedureUseMagicExecState::vfunc_1` at 0x4906c0 (rtti, high); signature (low): `undefined vfunc_1(BGSProcedureUseMagicExecState * this, undefined8 * param_1, undefined8 param_2, undefined8 param_3)`
+pub const BGSProcedureUseMagicExecState__vfunc_1: u64 = 29351;
+/// `BGSProcedureUseMagicExecState::vfunc_2` at 0x490770 (rtti, high); signature (high): `undefined vfunc_2(BGSProcedureUseMagicExecState * this)`
+pub const BGSProcedureUseMagicExecState__vfunc_2: u64 = 29352;
+/// `BGSProcedureUseMagicExecState::vfunc_6` at 0x490860 (rtti, high); signature (low): `undefined vfunc_6(BGSProcedureUseMagicExecState * this, longlong param_1)`
+pub const BGSProcedureUseMagicExecState__vfunc_6: u64 = 29353;
+/// `BGSProcedureUseMagicExecState::vfunc_7` at 0x490a60 (rtti, high); signature (low): `undefined vfunc_7(BGSProcedureUseMagicExecState * this, longlong * param_1, undefined8 param_2)`
+pub const BGSProcedureUseMagicExecState__vfunc_7: u64 = 29354;
+/// `BGSProcedureUseMagicExecState::vfunc_8` at 0x490da0 (rtti, high); signature (low): `undefined vfunc_8(void)`
+pub const BGSProcedureUseMagicExecState__vfunc_8: u64 = 29355;
+/// `BGSProcedureUseWeapon::vdtor` at 0x4941f0 (layout_inference, medium); signature (low): `BGSProcedureUseWeapon * vdtor(BGSProcedureUseWeapon * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const BGSProcedureUseWeapon__vdtor: u64 = 29401;
+/// `BGSProcedureUseWeapon::vfunc_10` at 0x4916f0 (rtti, high); signature (low): `undefined vfunc_10(BGSProcedureUseWeapon * this, longlong param_1, longlong param_2)`
+pub const BGSProcedureUseWeapon__vfunc_10: u64 = 29380;
+/// `BGSProcedureUseWeapon::vfunc_12` at 0x491770 (rtti, high); signature (low): `undefined vfunc_12(BGSProcedureUseWeapon * this, undefined8 * param_1)`
+pub const BGSProcedureUseWeapon__vfunc_12: u64 = 29381;
+/// `BGSProcedureUseWeapon::vfunc_12_sub0` at 0x491990 (callgraph, medium); signature (untiered): `undefined vfunc_12_sub0(longlong * param_1, longlong * param_2, undefined8 param_3, longlong param_4)`
+pub const BGSProcedureUseWeapon__vfunc_12_sub0: u64 = 29383;
+/// `BGSProcedureUseWeapon::vfunc_17` at 0x491390 (rtti, high); signature (low): `undefined8 vfunc_17(void)`
+pub const BGSProcedureUseWeapon__vfunc_17: u64 = 29378;
+/// `BGSProcedureUseWeapon::vfunc_9` at 0x4913a0 (rtti, high); signature (low): `undefined vfunc_9(BGSProcedureUseWeapon * this, longlong * param_1)`
+pub const BGSProcedureUseWeapon__vfunc_9: u64 = 29379;
 /// `BGSProcedureUseWeaponExecState::ctor` at 0x493770 (layout_inference, medium); signature (high): `BGSProcedureUseWeaponExecState * ctor(BGSProcedureUseWeaponExecState * this)`
 pub const BGSProcedureUseWeaponExecState__ctor: u64 = 29385;
 /// `BGSProcedureUseWeaponExecState::dtor` at 0x4937b0 (layout_inference, high); signature (high): `undefined dtor(BGSProcedureUseWeaponExecState * this)`
@@ -3011,6 +3059,10 @@ pub type BSFrustumFOVController__ctor_fn = unsafe extern "C" fn(this: *mut crate
 pub const BSFurnitureMarkerNode__Create: u64 = 76645;
 /// `BSFurnitureMarkerNode::Create_sub0` at 0xff14a0 (callgraph, medium); signature (untiered): `undefined Create_sub0(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const BSFurnitureMarkerNode__Create_sub0: u64 = 76649;
+/// `BSFurnitureMarkerNode::GetMarker` at 0xff13a0 (semantic, high); signature (untiered): `longlong GetMarker(longlong param_1, ulonglong param_2)`; semantic: &markers[index] with markers at +0x18 and a 0x14-byte stride (no bounds check; callers test index < +0x28) (high); signature `FurnitureMarker* (BSFurnitureMarkerNode* this, u32 index)`
+pub const BSFurnitureMarkerNode__GetMarker: u64 = 76646;
+/// `BSFurnitureMarkerNode::GetMarker` as a function pointer type (high).
+pub type BSFurnitureMarkerNode__GetMarker_fn = unsafe extern "C" fn(this: *mut crate::BSFurnitureMarkerNode, index: u32) -> *mut crate::FurnitureMarker;
 /// `BSFurnitureMarkerNode::vdtor` at 0xff1500 (layout_inference, medium); signature (low): `BSFurnitureMarkerNode * vdtor(BSFurnitureMarkerNode * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const BSFurnitureMarkerNode__vdtor: u64 = 76650;
 /// `BSFurnitureMarkerNode::vfunc_2` at 0xff16c0 (rtti, high); signature (low): `TypeNode * vfunc_2(void)`
@@ -8037,55 +8089,3 @@ pub const BSReference__vfunc_26: u64 = 77021;
 pub const BSReference__vfunc_27: u64 = 77022;
 /// `BSReference::vfunc_28` at 0x10001c0 (rtti, high); signature (low): `ulonglong vfunc_28(BSReference * this, longlong * param_1)`
 pub const BSReference__vfunc_28: u64 = 77023;
-/// `BSRenderPass::Alloc` at 0x1555820 (semantic, high); signature (untiered): `undefined Alloc(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined4 param_4, byte param_5, longlong param_6)`; semantic: takes a pass from this thread's pool (index TLS+0x9f4) and initialises it (high); signature `BSRenderPass* (BSShader* shader, BSShaderProperty* property, BSGeometry* geometry, u32 techniqueId, u8 numLights, BSLight** lights)`
-pub const BSRenderPass__Alloc: u64 = 107497;
-/// `BSRenderPass::Alloc` as a function pointer type (high).
-pub type BSRenderPass__Alloc_fn = unsafe extern "C" fn(shader: *mut crate::BSShader, property: *mut crate::BSShaderProperty, geometry: *mut crate::BSGeometry, techniqueId: u32, numLights: u8, lights: *mut *mut crate::BSLight) -> *mut c_void;
-/// `BSRenderPass::QueueRelease` at 0x1555920 (semantic, high); signature (untiered): `undefined QueueRelease(longlong param_1)`; semantic: queues a pass for return to its pool through a lock-free ring (drained by 0x1555d91, which RenderFrame calls before PresentFrame) (high); signature `void (BSRenderPass* pass)`
-pub const BSRenderPass__QueueRelease: u64 = 107498;
-/// `BSRenderPass::QueueRelease` as a function pointer type (high).
-pub type BSRenderPass__QueueRelease_fn = unsafe extern "C" fn(pass: *mut c_void);
-/// `BSResource::ArchiveFoundStreamCB::vdtor` at 0x9f0520 (layout_inference, medium); signature (low): `ArchiveFoundStreamCB * vdtor(ArchiveFoundStreamCB * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const BSResource__ArchiveFoundStreamCB__vdtor: u64 = 54361;
-/// `BSResource::ArchiveManager::ctor` at 0xeca130 (layout_inference, medium); signature (low): `undefined ctor(ArchiveManager * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-pub const BSResource__ArchiveManager__ctor: u64 = 69725;
-/// `BSResource::ArchiveManager::vdtor` at 0xeca4d0 (layout_inference, medium); signature (low): `ArchiveManager * vdtor(ArchiveManager * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const BSResource__ArchiveManager__vdtor: u64 = 69739;
-/// `BSResource::ArchiveStream::ctor` at 0xec6690 (layout_inference, medium); signature (low): `ArchiveStream * ctor(ArchiveStream * this, undefined8 * param_1, undefined4 param_2, uint param_3, longlong * param_4)`
-pub const BSResource__ArchiveStream__ctor: u64 = 69643;
-/// `BSResource::ArchiveStream::ctor` at 0xec6990 (layout_inference, high); signature (low): `ArchiveStream * ctor(ArchiveStream * this, longlong param_1)`
-pub const BSResource__ArchiveStream__ctor_2: u64 = 69649;
-/// `BSResource::ArchiveStream::dtor` at 0xec6700 (layout_inference, high); signature (low): `undefined dtor(ArchiveStream * this, undefined8 param_1, undefined8 param_2, undefined8 * param_3)`
-pub const BSResource__ArchiveStream__dtor: u64 = 69644;
-/// `BSResource::ArchiveStream::dtor` at 0xec70f0 (layout_inference, high); signature (low): `undefined dtor(ArchiveStream * this, undefined8 param_1, undefined8 param_2, undefined8 * param_3)`
-pub const BSResource__ArchiveStream__dtor_2: u64 = 69662;
-/// `BSResource::ArchiveStream::vdtor` at 0xeca650 (layout_inference, medium); signature (low): `ArchiveStream * vdtor(ArchiveStream * this, uint param_1, undefined8 param_2, undefined8 * param_3)`
-pub const BSResource__ArchiveStream__vdtor: u64 = 69741;
-/// `BSResource::ArchiveStream::vfunc_1` at 0xec6c60 (rtti, high); signature (low): `ulonglong vfunc_1(ArchiveStream * this, undefined8 param_1, undefined8 param_2, undefined8 * param_3)`
-pub const BSResource__ArchiveStream__vfunc_1: u64 = 69654;
-/// `BSResource::ArchiveStream::vfunc_10` at 0xec6e70 (rtti, medium); signature (low): `undefined vfunc_10(ArchiveStream * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
-pub const BSResource__ArchiveStream__vfunc_10: u64 = 69658;
-/// `BSResource::ArchiveStream::vfunc_11` at 0xec6ea0 (rtti, high); signature (low): `int vfunc_11(ArchiveStream * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
-pub const BSResource__ArchiveStream__vfunc_11: u64 = 69659;
-/// `BSResource::ArchiveStream::vfunc_12` at 0xecc600 (rtti, high); signature (high): `undefined4 vfunc_12(ArchiveStream * this)`
-pub const BSResource__ArchiveStream__vfunc_12: u64 = 69783;
-/// `BSResource::ArchiveStream::vfunc_2` at 0xec6e50 (rtti, high); signature (low): `undefined vfunc_2(ArchiveStream * this, undefined8 param_1, ulonglong param_2, ulonglong param_3)`
-pub const BSResource__ArchiveStream__vfunc_2: u64 = 69657;
-/// `BSResource::ArchiveStream::vfunc_3` at 0xec6ff0 (rtti, medium); signature (low): `ulonglong vfunc_3(ArchiveStream * this, undefined8 param_1, undefined8 param_2, undefined8 * param_3)`
-pub const BSResource__ArchiveStream__vfunc_3: u64 = 69660;
-/// `BSResource::ArchiveStream::vfunc_5` at 0xec6be0 (rtti, high); signature (low): `undefined vfunc_5(ArchiveStream * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
-pub const BSResource__ArchiveStream__vfunc_5: u64 = 69653;
-/// `BSResource::ArchiveStream::vfunc_6` at 0xec6cf0 (rtti, high); signature (low): `ulonglong vfunc_6(ArchiveStream * this, undefined8 param_1, undefined8 * param_2, int * param_3)`
-pub const BSResource__ArchiveStream__vfunc_6: u64 = 69655;
-/// `BSResource::ArchiveStream::vfunc_7` at 0xecbb10 (rtti, medium); signature (low): `undefined8 vfunc_7(void)`
-pub const BSResource__ArchiveStream__vfunc_7: u64 = 69770;
-/// `BSResource::ArchiveStream::vfunc_8` at 0xec6db0 (rtti, high); signature (low): `undefined8 vfunc_8(ArchiveStream * this, longlong param_1, int param_2, longlong * param_3)`
-pub const BSResource__ArchiveStream__vfunc_8: u64 = 69656;
-/// `BSResource::AsyncStream::vdtor` at 0xeca740 (layout_inference, medium); signature (low): `AsyncStream * vdtor(AsyncStream * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const BSResource__AsyncStream__vdtor: u64 = 69743;
-/// `BSResource::CacheArchiveOp::ctor` at 0xeca1d0 (layout_inference, medium); signature (low): `undefined ctor(CacheArchiveOp * this, undefined8 param_1, undefined8 param_2, undefined8 * param_3)`
-pub const BSResource__CacheArchiveOp__ctor: u64 = 69728;
-/// `BSResource::CacheArchiveOp::vdtor` at 0xeca770 (layout_inference, medium); signature (low): `CacheArchiveOp * vdtor(CacheArchiveOp * this, ulonglong param_1, undefined8 param_2, undefined8 * param_3)`
-pub const BSResource__CacheArchiveOp__vdtor: u64 = 69744;
-/// `BSResource::CacheArchiveOp::vfunc_1` at 0xecc310 (rtti, high); signature (low): `undefined vfunc_1(CacheArchiveOp * this, longlong * param_1)`
-pub const BSResource__CacheArchiveOp__vfunc_1: u64 = 69781;

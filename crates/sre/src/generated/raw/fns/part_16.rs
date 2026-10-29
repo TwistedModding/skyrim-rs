@@ -3,6 +3,44 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `Papyrus::ObjectReference::IgnoreFriendlyHits` at 0xa45f60 (papyrus_native, high); signature (medium): `void IgnoreFriendlyHits(IVirtualMachine * vm, uint stackId, TESObjectREFR * self, bool a0)`
+pub const Papyrus__ObjectReference__IgnoreFriendlyHits: u64 = 56186;
+/// `Papyrus::ObjectReference::InterruptCast` at 0xa45f90 (papyrus_native, high); signature (medium): `void InterruptCast(IVirtualMachine * vm, uint stackId, TESObjectREFR * self)`
+pub const Papyrus__ObjectReference__InterruptCast: u64 = 56187;
+/// `Papyrus::ObjectReference::Is3DLoaded` at 0xa45ff0 (papyrus_native, high); signature (medium): `bool Is3DLoaded(IVirtualMachine * vm, uint stackId, TESObjectREFR * self)`
+pub const Papyrus__ObjectReference__Is3DLoaded: u64 = 56188;
+/// `Papyrus::ObjectReference::IsActivateChild` at 0xa46020 (papyrus_native, high); signature (medium): `bool IsActivateChild(IVirtualMachine * vm, uint stackId, TESObjectREFR * self, TESObjectREFR * a0)`
+pub const Papyrus__ObjectReference__IsActivateChild: u64 = 56189;
+/// `Papyrus::ObjectReference::IsActivationBlocked` at 0xa46040 (papyrus_native, high); signature (medium): `bool IsActivationBlocked(IVirtualMachine * vm, uint stackId, TESObjectREFR * self)`
+pub const Papyrus__ObjectReference__IsActivationBlocked: u64 = 56191;
+/// `Papyrus::ObjectReference::IsContainerEmpty` at 0xa46060 (papyrus_native, high); signature (medium): `bool IsContainerEmpty(IVirtualMachine * vm, uint stackId, TESObjectREFR * self)`
+pub const Papyrus__ObjectReference__IsContainerEmpty: u64 = 442743;
+/// `Papyrus::ObjectReference::IsDeleted` at 0xa5d740 (papyrus_native, high); signature (medium): `bool IsDeleted(IVirtualMachine * vm, uint stackId, TESObjectREFR * self)`
+pub const Papyrus__ObjectReference__IsDeleted: u64 = 56638;
+/// `Papyrus::ObjectReference::IsDisabled` at 0xa5d750 (papyrus_native, high); signature (medium): `bool IsDisabled(IVirtualMachine * vm, uint stackId, TESObjectREFR * self)`
+pub const Papyrus__ObjectReference__IsDisabled: u64 = 56639;
+/// `Papyrus::ObjectReference::IsFurnitureInUse` at 0xa46090 (papyrus_native, high); signature (medium): `bool IsFurnitureInUse(IVirtualMachine * vm, uint stackId, TESObjectREFR * self, bool a0)`
+pub const Papyrus__ObjectReference__IsFurnitureInUse: u64 = 56192;
+/// `Papyrus::ObjectReference::IsFurnitureMarkerInUse` at 0xa461f0 (papyrus_native, high); signature (medium): `bool IsFurnitureMarkerInUse(IVirtualMachine * vm, uint stackId, TESObjectREFR * self, uint a0, bool a1)`
+pub const Papyrus__ObjectReference__IsFurnitureMarkerInUse: u64 = 56193;
+/// `Papyrus::ObjectReference::IsIgnoringFriendlyHits` at 0xa5d760 (papyrus_native, high); signature (medium): `bool IsIgnoringFriendlyHits(IVirtualMachine * vm, uint stackId, TESObjectREFR * self)`
+pub const Papyrus__ObjectReference__IsIgnoringFriendlyHits: u64 = 56640;
+/// `Papyrus::ObjectReference::IsInDialogueWithPlayer` at 0xa46240 (papyrus_native, high); signature (medium): `bool IsInDialogueWithPlayer(IVirtualMachine * vm, uint stackId, TESObjectREFR * self)`
+pub const Papyrus__ObjectReference__IsInDialogueWithPlayer: u64 = 56194;
+/// `Papyrus::ObjectReference::IsLockBroken` at 0xa462a0 (papyrus_native, high); signature (medium): `bool IsLockBroken(IVirtualMachine * vm, uint stackId, TESObjectREFR * self)`
+pub const Papyrus__ObjectReference__IsLockBroken: u64 = 56195;
+/// `Papyrus::ObjectReference::IsLocked` at 0xa462d0 (papyrus_native, high); signature (medium): `bool IsLocked(IVirtualMachine * vm, uint stackId, TESObjectREFR * self)`
+pub const Papyrus__ObjectReference__IsLocked: u64 = 56196;
+/// `Papyrus::ObjectReference::IsMapMarkerVisible` at 0xa46300 (papyrus_native, high); signature (medium): `bool IsMapMarkerVisible(IVirtualMachine * vm, uint stackId, TESObjectREFR * self)`
+pub const Papyrus__ObjectReference__IsMapMarkerVisible: u64 = 56197;
+/// `Papyrus::ObjectReference::KnockAreaEffect` at 0xa49760 (papyrus_native, high); signature (medium): `void KnockAreaEffect(IVirtualMachine * vm, uint stackId, TESObjectREFR * self, float a0, float a1)`
+pub const Papyrus__ObjectReference__KnockAreaEffect: u64 = 56236;
+/// `Papyrus::ObjectReference::Lock` at 0xa46370 (papyrus_native, high); signature (medium): `void Lock(IVirtualMachine * vm, uint stackId, TESObjectREFR * self, bool a0, bool a1)`
+pub const Papyrus__ObjectReference__Lock: u64 = 56198;
+/// `Papyrus::ObjectReference::MoveTo` at 0xa46420 (papyrus_native, high); signature (medium): `bool MoveTo(IVirtualMachine * vm, uint stackId, TESObjectREFR * self, TESObjectREFR * a0, float a1, float a2, float a3, bool a4)`
+pub const Papyrus__ObjectReference__MoveTo: u64 = 56199;
+/// `Papyrus::ObjectReference::MoveToInteractionLocation` at 0xa46680 (papyrus_native, high); signature (low): `ulonglong MoveToInteractionLocation(longlong * param_1, uint param_2, longlong * param_3, longlong * param_4)`
+pub const Papyrus__ObjectReference__MoveToInteractionLocation: u64 = 56200;
 /// `Papyrus::ObjectReference::MoveToMyEditorLocation` at 0xa46950 (papyrus_native, high); signature (medium): `bool MoveToMyEditorLocation(IVirtualMachine * vm, uint stackId, TESObjectREFR * self)`
 pub const Papyrus__ObjectReference__MoveToMyEditorLocation: u64 = 56201;
 /// `Papyrus::ObjectReference::MoveToNode` at 0xa46af0 (papyrus_native, high); signature (medium): `bool MoveToNode(IVirtualMachine * vm, uint stackId, TESObjectREFR * self, TESObjectREFR * a0, BSFixedString * a1)`
@@ -1627,7 +1665,7 @@ pub type PlayerCamera__SetFirstPersonSkipFrames_fn = unsafe extern "C" fn(this: 
 pub const PlayerCamera__SetPitchZero: u64 = 50844;
 /// `PlayerCamera::SetPitchZero` as a function pointer type (high).
 pub type PlayerCamera__SetPitchZero_fn = unsafe extern "C" fn(this: *mut crate::PlayerCamera, on: bool);
-/// `PlayerCamera::SetTarget` at 0x8fb250 (semantic, high); signature (untiered): `undefined SetTarget(longlong param_1, longlong param_2)`; semantic: +0x3c = handle (invalid when the ref has no handle); null leaves it unchanged (high); signature `void (PlayerCamera* this, TESObjectREFR* target)`
+/// `PlayerCamera::SetTarget` at 0x8fb250 (runtime, high); signature (untiered): `undefined SetTarget(longlong param_1, longlong param_2)`; semantic: stores target's ObjectRefHandle in targetHandle (+0x3c) and does nothing else; a null target leaves +0x3c unchanged; a target whose refcount word (+0x28 & 0x3ff) is 0 stores g_InvalidRefHandle (high); signature `void (PlayerCamera* this, TESObjectREFR* target)`
 pub const PlayerCamera__SetTarget: u64 = 50838;
 /// `PlayerCamera::SetTarget` as a function pointer type (high).
 pub type PlayerCamera__SetTarget_fn = unsafe extern "C" fn(this: *mut crate::PlayerCamera, target: *mut crate::TESObjectREFR);
@@ -1765,6 +1803,8 @@ pub const PlayerCharacter__GetBiped: u64 = 40474;
 pub const PlayerCharacter__GetCurrent3DNoFallback: u64 = 40463;
 /// `PlayerCharacter::GetCurrentBiped` at 0x748c50 (semantic, high); signature (untiered): `undefined GetCurrentBiped(PlayerCharacter * this)`
 pub const PlayerCharacter__GetCurrentBiped: u64 = 40472;
+/// `PlayerCharacter::GetFavorActor` at 0x75adf0 (semantic, medium); signature (untiered): `longlong GetFavorActor(longlong param_1)`; semantic: resolves the handle at +0x8a4 (the actor doing the player a favor, command mode) and returns it without keeping a reference (null when none) (medium); signature `TESObjectREFR* (PlayerCharacter* this)`
+pub const PlayerCharacter__GetFavorActor: u64 = 40665;
 /// `PlayerCharacter::GetHeading` at 0x74c480 (semantic, medium); signature (untiered): `undefined GetHeading(PlayerCharacter * this)`
 pub const PlayerCharacter__GetHeading: u64 = 40528;
 /// `PlayerCharacter::GetLookAtPosition` at 0x75ad40 (semantic, high); signature (untiered): `float * GetLookAtPosition(PlayerCharacter * this, float * param_1)`; semantic: PlayerCharacter slot 91: in first person (slot 113 IsThirdPerson false) PlayerCamera::GetPosition + fFirstPersonLookAtVertOffset on z when GetPosition succeeds; otherwise Actor slot 91's result (high); signature `NiPoint3* (PlayerCharacter* this, NiPoint3* out)`
@@ -1885,6 +1925,10 @@ pub type PlayerCharacter__UpdateCameraControlImageSpace_fn = unsafe extern "C" f
 pub const PlayerCharacter__UpdateCrosshairPick: u64 = 40620;
 /// `PlayerCharacter::UpdateCrosshairPick` as a function pointer type (high).
 pub type PlayerCharacter__UpdateCrosshairPick_fn = unsafe extern "C" fn(this: *mut crate::PlayerCharacter);
+/// `PlayerCharacter::UpdateCrosshairTargetHUD` at 0x757a70 (semantic, high); signature (untiered): `undefined UpdateCrosshairTargetHUD(longlong param_1)`; semantic: per player update: sends the crosshair target to the HUD: target = CrosshairPickData.targetHandle (+4), else largeTargetHandle (+0xc) as a type 3 message; no target, player mounted, PlayerControls+0x1a0 byte 0x1b set or player +0xb04 == 1 -> cleared message; perk entry point 0x4a nonzero or base slot 76 false -> flag 0, text "", handle 0; else flag 1, the handle, text = perk entry point 0x51 label, else slot 76's text, or for a large target the display name (EnsureExtraTextDisplayData 0x2f08d0) (high); signature `void (PlayerCharacter* this)`
+pub const PlayerCharacter__UpdateCrosshairTargetHUD: u64 = 40621;
+/// `PlayerCharacter::UpdateCrosshairTargetHUD` as a function pointer type (high).
+pub type PlayerCharacter__UpdateCrosshairTargetHUD_fn = unsafe extern "C" fn(this: *mut crate::PlayerCharacter);
 /// `PlayerCharacter::UpdateDeathReloadAndActor` at 0x7600f0 (semantic, high); signature (untiered): `undefined UpdateDeathReloadAndActor(TESObjectREFR_vtbl * param_1, float param_2, TESObjectREFR_vtbl * param_3, TypeDescriptor * param_4)`; semantic: part of PlayerCharacter::Update: Actor::UpdateState unless the camera is in cameraStates[6]; the death reload: with the actor state bits (+0xc8 & 0x1e00000) equal to 0x200000 or 0x400000 and fPlayerDeathReloadTime > 0, the timer 0x20b746c starts at the setting, counts down by delta and at < 0 queues save-load request 0xd0000100 (load the last save) or sets ID_403449+0x11; with the setting <= 0 and state 0x400000 shows the sMiscPlayerDeadMessage box once; then the base Actor slot 173, UpdateCamera and TESObjectCELL::AttachReference3D(parentCell, this, true, false) (high); signature `void (PlayerCharacter* this, float delta)`
 pub const PlayerCharacter__UpdateDeathReloadAndActor: u64 = 40748;
 /// `PlayerCharacter::UpdateDeathReloadAndActor` as a function pointer type (high).
@@ -1985,8 +2029,6 @@ pub const PlayerCharacter__vfunc_173_sub13: u64 = 52629;
 pub const PlayerCharacter__vfunc_173_sub2: u64 = 40588;
 /// `PlayerCharacter::vfunc_173_sub3` at 0x757090 (callgraph, medium); signature (untiered): `undefined vfunc_173_sub3(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const PlayerCharacter__vfunc_173_sub3: u64 = 40607;
-/// `PlayerCharacter::vfunc_173_sub4` at 0x757a70 (callgraph, medium); signature (untiered): `undefined vfunc_173_sub4(longlong param_1)`
-pub const PlayerCharacter__vfunc_173_sub4: u64 = 40621;
 /// `PlayerCharacter::vfunc_173_sub5` at 0x75e4f0 (callgraph, medium); signature (untiered): `undefined vfunc_173_sub5(Actor * param_1)`
 pub const PlayerCharacter__vfunc_173_sub5: u64 = 40736;
 /// `PlayerCharacter::vfunc_173_sub6` at 0x75fa50 (callgraph, medium); signature (untiered): `undefined vfunc_173_sub6(longlong * param_1, float param_2, longlong * param_3, float * param_4)`
@@ -2225,6 +2267,10 @@ pub type PlayerControls__InterruptPlayerActions_fn = unsafe extern "C" fn(this: 
 pub const PlayerControls__InterruptPlayerActionsAndCasting: u64 = 523955;
 /// `PlayerControls::InterruptPlayerActionsAndCasting` as a function pointer type (high).
 pub type PlayerControls__InterruptPlayerActionsAndCasting_fn = unsafe extern "C" fn(this: *mut crate::PlayerControls, unusedLoadBuffer: *mut c_void);
+/// `PlayerControls::IsActivateEnabled` at 0x7ae170 (semantic, high); signature (untiered): `bool IsActivateEnabled(longlong param_1)`; semantic: true when PlayerControls+0x1a0 is null or its byte +0x1b is 0 (high); signature `bool (const PlayerControls* this)`
+pub const PlayerControls__IsActivateEnabled: u64 = 42346;
+/// `PlayerControls::IsActivateEnabled` as a function pointer type (high).
+pub type PlayerControls__IsActivateEnabled_fn = unsafe extern "C" fn(this: *const crate::PlayerControls) -> bool;
 /// `PlayerControls::LoadResponseGraph` at 0x7afd10 (semantic, medium); signature (untiered): `undefined LoadResponseGraph(longlong param_1, int param_2)`; semantic: reads f%sGraphX%d/f%sGraphY%d:Controls into one of two curves (medium); signature `void (PlayerControls* this, u32 which)`
 pub const PlayerControls__LoadResponseGraph: u64 = 42366;
 /// `PlayerControls::ProcessEvent` at 0x7ad900 (semantic, high); signature (untiered): `undefined8 ProcessEvent(PlayerControls * this, longlong * param_1, ulonglong param_2, ulonglong param_3)`
@@ -2233,6 +2279,10 @@ pub const PlayerControls__ProcessEvent: u64 = 42338;
 pub const PlayerControls__RemoveHandler: u64 = 42357;
 /// `PlayerControls::RemoveHandler` as a function pointer type (high).
 pub type PlayerControls__RemoveHandler_fn = unsafe extern "C" fn(this: *mut crate::PlayerControls, handler: *mut crate::PlayerInputHandler);
+/// `PlayerControls::SetActivateEnabled` at 0x7ae150 (semantic, high); signature (untiered): `undefined SetActivateEnabled(longlong param_1, byte param_2)`; semantic: ActivateHandler (PlayerControls+0x1a0) byte +0x1b = !enabled, when the handler exists (high); signature `void (PlayerControls* this, bool enabled)`
+pub const PlayerControls__SetActivateEnabled: u64 = 42345;
+/// `PlayerControls::SetActivateEnabled` as a function pointer type (high).
+pub type PlayerControls__SetActivateEnabled_fn = unsafe extern "C" fn(this: *mut crate::PlayerControls, enabled: bool);
 /// `PlayerControls::SetTurnRateFromLookInput` at 0x7b0790 (semantic, medium); signature (untiered): `undefined SetTurnRateFromLookInput(longlong param_1)`; semantic: player process turn delta = lookInput.x * pi, or 0 in third-person free look (AIProcess::SetTurnDelta tail call) (medium); signature `void (PlayerControls* this)`
 pub const PlayerControls__SetTurnRateFromLookInput: u64 = 42373;
 /// `PlayerControls::ctor` at 0x7ad450 (layout_inference, high); signature (high): `PlayerControls * ctor(PlayerControls * this)`; semantic: sets the vtables and globals, registers 4 sinks, creates handlers (high); signature `PlayerControls* (PlayerControls* this)`
@@ -3343,6 +3393,10 @@ pub type QueueConsoleLine_fn = unsafe extern "C" fn(line: *const c_char);
 pub const QueueCreationListRequestResponse: u64 = 419115;
 /// `QueueCreationRequestResponse` at 0x5f95e0 (decompiler, medium); signature (untiered): `undefined QueueCreationRequestResponse(longlong param_1, undefined4 param_2, undefined4 * param_3, longlong param_4)`
 pub const QueueCreationRequestResponse: u64 = 419114;
+/// `QueueCrosshairTargetMessage` at 0x934f90 (semantic, high); signature (untiered): `undefined QueueCrosshairTargetMessage(char param_1, undefined1 * param_2, undefined4 * param_3, undefined8 param_4)`; semantic: queues a HUDData to 'HUD Menu' (message type 0) with type 2 + largeTarget, flag (+0x40) = activatable, text (+0x18) = text when activatable else "", refHandle (+0x28) = *target; HUDMenu turns it into SetCrosshairTarget (high); signature `void (bool activatable, const char* text, const ObjectRefHandle* target, bool largeTarget)`
+pub const QueueCrosshairTargetMessage: u64 = 51619;
+/// `QueueCrosshairTargetMessage` as a function pointer type (high).
+pub type QueueCrosshairTargetMessage_fn = unsafe extern "C" fn(activatable: bool, text: *const c_char, target: *const c_void, largeTarget: bool);
 /// `QueueCurrentEntryMessageAndAddInputSink` at 0x931e30 (decompiler, medium); signature (untiered): `undefined QueueCurrentEntryMessageAndAddInputSink(longlong param_1)`
 pub const QueueCurrentEntryMessageAndAddInputSink: u64 = 51595;
 /// `QueueEntitlementListRequestResponse` at 0x5f9000 (decompiler, medium); signature (untiered): `undefined QueueEntitlementListRequestResponse(longlong param_1, undefined4 param_2, undefined4 * param_3, undefined8 * param_4)`
@@ -3621,8 +3675,6 @@ pub type QueueTasklet_fn = unsafe extern "C" fn(vm: *mut crate::BSScript__Intern
 pub const QueueTerrainLoadForNode: u64 = 31914;
 /// `QueueTerrainLoadForNode_2` at 0x51b6d0 (decompiler, medium); signature (untiered): `undefined8 QueueTerrainLoadForNode_2(longlong * param_1, longlong * param_2, longlong param_3, longlong * param_4)`
 pub const QueueTerrainLoadForNode_2: u64 = 31917;
-/// `QueueTextMessage` at 0x934f90 (decompiler, medium); signature (untiered): `undefined QueueTextMessage(char param_1, undefined1 * param_2, undefined4 * param_3, undefined8 param_4)`
-pub const QueueTextMessage: u64 = 51619;
 /// `QueueTextureHandlesForField20` at 0x2b6f70 (decompiler, high); signature (untiered): `undefined QueueTextureHandlesForField20(longlong param_1, undefined4 param_2, undefined8 param_3)`
 pub const QueueTextureHandlesForField20: u64 = 18844;
 /// `QueueTextureHandlesForSlots` at 0x32dad0 (decompiler, medium); signature (untiered): `undefined QueueTextureHandlesForSlots(longlong param_1, undefined4 param_2, undefined8 param_3)`
@@ -8503,75 +8555,3 @@ pub const ReleaseSharedPtr_7: u64 = 526206;
 pub const ReleaseSharedPtr_8: u64 = 526208;
 /// `ReleaseSharedPtr_9` at 0x12d1b40 (decompiler, medium); signature (medium): `undefined ReleaseSharedPtr_9(longlong param_1)`
 pub const ReleaseSharedPtr_9: u64 = 446526;
-/// `ReleaseSharedRefAndDelete18` at 0x1392360 (decompiler, medium); signature (medium): `void * ReleaseSharedRefAndDelete18(void * param_1, ulonglong param_2, undefined8 param_3, undefined8 param_4)`
-pub const ReleaseSharedRefAndDelete18: u64 = 450108;
-/// `ReleaseSharedRefAndDelete18_2` at 0x13928b0 (decompiler, medium); signature (medium): `void * ReleaseSharedRefAndDelete18_2(void * param_1, ulonglong param_2, undefined8 param_3, undefined8 param_4)`
-pub const ReleaseSharedRefAndDelete18_2: u64 = 450125;
-/// `ReleaseSharedRefAt8` at 0x10c040 (decompiler, high); signature (untiered): `longlong ReleaseSharedRefAt8(longlong param_1)`
-pub const ReleaseSharedRefAt8: u64 = 439826;
-/// `ReleaseSharedRefAtField10` at 0x13867d0 (decompiler, medium); signature (medium): `undefined ReleaseSharedRefAtField10(longlong param_1)`
-pub const ReleaseSharedRefAtField10: u64 = 449106;
-/// `ReleaseSharedRefField18AndDelete` at 0x1386b90 (decompiler, medium); signature (medium): `void * ReleaseSharedRefField18AndDelete(void * param_1, ulonglong param_2, undefined8 param_3, undefined8 param_4)`
-pub const ReleaseSharedRefField18AndDelete: u64 = 449119;
-/// `ReleaseSharedRefField18AndDelete_2` at 0x1386c10 (decompiler, medium); signature (medium): `void * ReleaseSharedRefField18AndDelete_2(void * param_1, ulonglong param_2, undefined8 param_3, undefined8 param_4)`
-pub const ReleaseSharedRefField18AndDelete_2: u64 = 449121;
-/// `ReleaseSixFixedStrings` at 0x614570 (decompiler, medium); signature (untiered): `undefined ReleaseSixFixedStrings(void)`
-pub const ReleaseSixFixedStrings: u64 = 35532;
-/// `ReleaseSlotByHandle` at 0xea4060 (decompiler, medium); signature (untiered): `undefined8 ReleaseSlotByHandle(int param_1)`
-pub const ReleaseSlotByHandle: u64 = 68860;
-/// `ReleaseSmallArrayEntries38Range` at 0x11dcb80 (decompiler, high); signature (high): `undefined ReleaseSmallArrayEntries38Range(int * param_1, uint param_2, uint param_3)`
-pub const ReleaseSmallArrayEntries38Range: u64 = 91025;
-/// `ReleaseSmallPairArrayRange` at 0x11f7ca0 (decompiler, medium); signature (untiered): `undefined ReleaseSmallPairArrayRange(int * param_1, ulonglong param_2, ulonglong param_3, undefined8 param_4)`
-pub const ReleaseSmallPairArrayRange: u64 = 91479;
-/// `ReleaseSmallRefPtrArray` at 0x148d2d0 (decompiler, medium); signature (untiered): `undefined ReleaseSmallRefPtrArray(uint * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const ReleaseSmallRefPtrArray: u64 = 104228;
-/// `ReleaseSmallRefPtrArrayRange` at 0x11eafe0 (decompiler, medium); signature (medium): `undefined ReleaseSmallRefPtrArrayRange(int * param_1, ulonglong param_2, uint param_3)`
-pub const ReleaseSmallRefPtrArrayRange: u64 = 91233;
-/// `ReleaseSoundHandleAt` at 0x5cdb10 (decompiler, high); signature (high): `undefined ReleaseSoundHandleAt(longlong param_1, ulonglong param_2)`
-pub const ReleaseSoundHandleAt: u64 = 34441;
-/// `ReleaseSoundHandlesAndClearHandleMap` at 0x5232d0 (decompiler, medium); signature (untiered): `undefined ReleaseSoundHandlesAndClearHandleMap(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const ReleaseSoundHandlesAndClearHandleMap: u64 = 32056;
-/// `ReleaseSpinFlagGuard` at 0x1343680 (decompiler, medium); signature (untiered): `undefined ReleaseSpinFlagGuard(longlong * param_1)`
-pub const ReleaseSpinFlagGuard: u64 = 526393;
-/// `ReleaseStackAndHeapArrayBuffers` at 0xbd8be0 (decompiler, medium); signature (untiered): `undefined ReleaseStackAndHeapArrayBuffers(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const ReleaseStackAndHeapArrayBuffers: u64 = 63721;
-/// `ReleaseStackBackedArray8` at 0xbd8cb0 (decompiler, medium); signature (untiered): `undefined ReleaseStackBackedArray8(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const ReleaseStackBackedArray8: u64 = 63722;
-/// `ReleaseStackBackedArray8_2` at 0x1b2b10 (decompiler, medium); signature (untiered): `undefined ReleaseStackBackedArray8_2(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const ReleaseStackBackedArray8_2: u64 = 13593;
-/// `ReleaseStackFrameContents` at 0x14a1bf0 (decompiler, medium); signature (untiered): `undefined ReleaseStackFrameContents(uint * param_1, undefined8 param_2, undefined8 param_3, ulonglong param_4)`
-pub const ReleaseStackFrameContents: u64 = 104515;
-/// `ReleaseStaticFixedStrings` at 0x153a00 (decompiler, medium); signature (medium): `undefined ReleaseStaticFixedStrings(void)`
-pub const ReleaseStaticFixedStrings: u64 = 11431;
-/// `ReleaseStorageAndClearGlobal412218` at 0x11f05f0 (decompiler, medium); signature (untiered): `undefined ReleaseStorageAndClearGlobal412218(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const ReleaseStorageAndClearGlobal412218: u64 = 91347;
-/// `ReleaseString68` at 0xdb34d0 (decompiler, medium); signature (untiered): `undefined ReleaseString68(longlong param_1)`
-pub const ReleaseString68: u64 = 86119;
-/// `ReleaseStringAndQueuedEntryRef` at 0x25d660 (decompiler, medium); signature (medium): `undefined ReleaseStringAndQueuedEntryRef(longlong * param_1)`
-pub const ReleaseStringAndQueuedEntryRef: u64 = 16887;
-/// `ReleaseStringAndRefPtrFields` at 0x1179ff0 (decompiler, medium); signature (untiered): `undefined ReleaseStringAndRefPtrFields(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const ReleaseStringAndRefPtrFields: u64 = 82531;
-/// `ReleaseStringBuffer` at 0x13dddb0 (decompiler, medium); signature (untiered): `undefined ReleaseStringBuffer(longlong * param_1)`
-pub const ReleaseStringBuffer: u64 = 449415;
-/// `ReleaseStringBuffer_2` at 0x13dfea0 (decompiler, medium); signature (untiered): `undefined ReleaseStringBuffer_2(longlong * param_1)`
-pub const ReleaseStringBuffer_2: u64 = 449425;
-/// `ReleaseStringBuffer_3` at 0x13e63f0 (decompiler, medium); signature (untiered): `undefined ReleaseStringBuffer_3(longlong * param_1)`
-pub const ReleaseStringBuffer_3: u64 = 449513;
-/// `ReleaseStringBuffer_4` at 0x13fbaf0 (decompiler, medium); signature (untiered): `undefined ReleaseStringBuffer_4(longlong * param_1)`
-pub const ReleaseStringBuffer_4: u64 = 527366;
-/// `ReleaseStringBuffer_5` at 0x13fbb50 (decompiler, medium); signature (untiered): `undefined ReleaseStringBuffer_5(longlong * param_1)`
-pub const ReleaseStringBuffer_5: u64 = 527367;
-/// `ReleaseStringBuffer_6` at 0x13fbbb0 (decompiler, medium); signature (untiered): `undefined ReleaseStringBuffer_6(longlong * param_1)`
-pub const ReleaseStringBuffer_6: u64 = 527368;
-/// `ReleaseStringFields10To20` at 0xd30920 (decompiler, medium); signature (untiered): `undefined ReleaseStringFields10To20(longlong param_1)`
-pub const ReleaseStringFields10To20: u64 = 83412;
-/// `ReleaseStringNodeArray` at 0xd1c780 (decompiler, medium); signature (untiered): `undefined ReleaseStringNodeArray(longlong * param_1)`
-pub const ReleaseStringNodeArray: u64 = 83175;
-/// `ReleaseStringNodeArrayAndField4E8` at 0xd77c80 (decompiler, medium); signature (untiered): `undefined ReleaseStringNodeArrayAndField4E8(undefined8 * param_1)`
-pub const ReleaseStringNodeArrayAndField4E8: u64 = 85159;
-/// `ReleaseStringNodeAt18` at 0x1209a0 (decompiler, medium); signature (untiered): `undefined ReleaseStringNodeAt18(longlong param_1)`
-pub const ReleaseStringNodeAt18: u64 = 440682;
-/// `ReleaseStringNodeToPool` at 0xd0a390 (decompiler, medium); signature (untiered): `undefined ReleaseStringNodeToPool(longlong param_1, longlong * param_2)`
-pub const ReleaseStringNodeToPool: u64 = 82832;
-/// `ReleaseStringPairMapsAndHolders` at 0x9ed5d0 (decompiler, medium); signature (untiered): `undefined ReleaseStringPairMapsAndHolders(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const ReleaseStringPairMapsAndHolders: u64 = 54215;

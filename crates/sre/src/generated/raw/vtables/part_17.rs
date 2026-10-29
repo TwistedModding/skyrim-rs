@@ -3,6 +3,42 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `SkyrimScript::_anon_946BA6A1::StoryEventArguments<SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::LocationStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter>::vftable` at 0x198d838, id 216839 (rtti, high); 2 slots.
+#[repr(C)]
+pub struct SkyrimScript___anon_946BA6A1__StoryEventArguments_SkyrimScript___anon_946BA6A1__RefStoryEventArg_df8215ed2758_vtable {
+    /// `SkyrimScript::_anon_946BA6A1::StoryEventArguments<SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::LocationStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter>::vfunc_0` at 0x9d50a0 (rtti, high); signature (low): `StoryEventArguments<SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::LocationStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter> * vfunc_0(StoryEventArguments<SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::LocationStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_0: *const c_void,
+    /// `SkyrimScript::_anon_946BA6A1::StoryEventArguments<SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::LocationStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter>::vfunc_1` at 0x9d3a80 (rtti, high); signature (low): `undefined8 vfunc_1(StoryEventArguments<SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::LocationStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter> * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_1: *const c_void,
+}
+impl SkyrimScript___anon_946BA6A1__StoryEventArguments_SkyrimScript___anon_946BA6A1__RefStoryEventArg_df8215ed2758_vtable {
+    pub const ID: u64 = 216839;
+}
+
+/// `SkyrimScript::_anon_946BA6A1::StoryEventArguments<SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::LocationStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::FormStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter>::vftable` at 0x198d940, id 216861 (rtti, high); 2 slots.
+#[repr(C)]
+pub struct SkyrimScript___anon_946BA6A1__StoryEventArguments_SkyrimScript___anon_946BA6A1__RefStoryEventArg_42c90c5185a3_vtable {
+    /// `SkyrimScript::_anon_946BA6A1::StoryEventArguments<SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::LocationStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::FormStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter>::vfunc_0` at 0x9d50e0 (rtti, high); signature (low): `StoryEventArguments<SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::LocationStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::FormStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter> * vfunc_0(StoryEventArguments<SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::LocationStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::FormStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_0: *const c_void,
+    /// `SkyrimScript::_anon_946BA6A1::StoryEventArguments<SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::LocationStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::FormStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter>::vfunc_1` at 0x9d3be0 (rtti, high); signature (low): `undefined8 vfunc_1(StoryEventArguments<SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::LocationStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::FormStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter> * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_1: *const c_void,
+}
+impl SkyrimScript___anon_946BA6A1__StoryEventArguments_SkyrimScript___anon_946BA6A1__RefStoryEventArg_42c90c5185a3_vtable {
+    pub const ID: u64 = 216861;
+}
+
+/// `SkyrimScript::_anon_946BA6A1::StoryEventArguments<SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::LocationStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::FormStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::UIntStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter>::vftable` at 0x198d7c0, id 216829 (rtti, high); 2 slots.
+#[repr(C)]
+pub struct SkyrimScript___anon_946BA6A1__StoryEventArguments_SkyrimScript___anon_946BA6A1__RefStoryEventArg_152de8046f82_vtable {
+    /// `SkyrimScript::_anon_946BA6A1::StoryEventArguments<SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::LocationStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::FormStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::UIntStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter>::vfunc_0` at 0x9d5120 (rtti, high); signature (low): `StoryEventArguments<SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::LocationStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::FormStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::UIntStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter> * vfunc_0(StoryEventArguments<SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::LocationStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::FormStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::UIntStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_0: *const c_void,
+    /// `SkyrimScript::_anon_946BA6A1::StoryEventArguments<SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::LocationStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::FormStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::UIntStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter>::vfunc_1` at 0x9d3d70 (rtti, high); signature (low): `undefined8 vfunc_1(StoryEventArguments<SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::LocationStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::FormStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::UIntStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter> * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_1: *const c_void,
+}
+impl SkyrimScript___anon_946BA6A1__StoryEventArguments_SkyrimScript___anon_946BA6A1__RefStoryEventArg_152de8046f82_vtable {
+    pub const ID: u64 = 216829;
+}
+
 /// `SkyrimScript::_anon_946BA6A1::StoryEventArguments<SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::LocationStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::UIntStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter>::vftable` at 0x198d748, id 216819 (rtti, high); 2 slots.
 #[repr(C)]
 pub struct SkyrimScript___anon_946BA6A1__StoryEventArguments_SkyrimScript___anon_946BA6A1__RefStoryEventArg_1b2cc26fa2a2_vtable {
@@ -2330,11 +2366,11 @@ pub struct StatsMenu_vtable {
     pub slot_2: *const c_void,
     /// `StatsMenu::vfunc_3` at 0x97bd20 (rtti, high); signature (high): `undefined vfunc_3(StatsMenu * this)`
     pub slot_3: *const c_void,
-    /// `StatsMenu::ProcessMessage` at 0x976a50 (semantic, high); signature (untiered): `longlong * ProcessMessage(StatsMenu * this, longlong param_1, char * param_2, longlong * param_3)`
+    /// `StatsMenu::ProcessMessage` at 0x976a50 (runtime, high); signature (untiered): `longlong * ProcessMessage(StatsMenu * this, longlong param_1, char * param_2, longlong * param_3)`; `ProcessMessage`: the message handler (see the function row) (high); semantic signature: `UIMessageResult (StatsMenu* this, UIMessage* message)`
     pub slot_4: *const c_void,
     /// `IMenu::AdvanceMovie` at 0x116ee30 (semantic, high); signature (untiered): `undefined AdvanceMovie(IMenu * this, undefined4 param_2, uint param_3)`
     pub slot_5: *const c_void,
-    /// `StatsMenu::vfunc_6` at 0x977fd0 (rtti, high); signature (high): `undefined vfunc_6(StatsMenu * this)`
+    /// `StatsMenu::PostDisplay` at 0x977fd0 (semantic, high); signature (untiered): `undefined PostDisplay(StatsMenu * this)`; `PostDisplay`: draws the stats 3D scene with the menu camera (UI3DScene mode 6), then the movie (high); semantic signature: `void (StatsMenu* this)`
     pub slot_6: *const c_void,
     /// `IMenu::PreDisplay` at 0x116eee0 (semantic, high); signature (untiered): `undefined PreDisplay(void)`
     pub slot_7: *const c_void,
@@ -2343,7 +2379,23 @@ pub struct StatsMenu_vtable {
 }
 impl StatsMenu_vtable {
     pub const ID: u64 = 215973;
+    pub const SLOT_ProcessMessage: usize = 4;
+    /// Slot 4 as `StatsMenu_vtable_ProcessMessage`, `None` when the slot is null.
+    #[must_use]
+    pub fn ProcessMessage(&self) -> Option<StatsMenu_vtable_ProcessMessage> {
+        unsafe { core::mem::transmute::<*const c_void, Option<StatsMenu_vtable_ProcessMessage>>(self.slot_4) }
+    }
+    pub const SLOT_PostDisplay: usize = 6;
+    /// Slot 6 as `StatsMenu_vtable_PostDisplay`, `None` when the slot is null.
+    #[must_use]
+    pub fn PostDisplay(&self) -> Option<StatsMenu_vtable_PostDisplay> {
+        unsafe { core::mem::transmute::<*const c_void, Option<StatsMenu_vtable_PostDisplay>>(self.slot_6) }
+    }
 }
+/// `StatsMenu::ProcessMessage`, slot 4: the message handler (see the function row) (high).
+pub type StatsMenu_vtable_ProcessMessage = unsafe extern "C" fn(this: *mut crate::StatsMenu, message: *mut crate::UIMessage) -> u32;
+/// `StatsMenu::PostDisplay`, slot 6: draws the stats 3D scene with the menu camera (UI3DScene mode 6), then the movie (high).
+pub type StatsMenu_vtable_PostDisplay = unsafe extern "C" fn(this: *mut crate::StatsMenu);
 
 /// `StatsMenu::vftable_30` at 0x1980178, id 215975 (rtti, high); 8 slots.
 #[repr(C)]
@@ -2434,18 +2486,42 @@ impl StatsNode_vtable_18 {
 pub struct StealthMeter_vtable {
     /// `StealthMeter::vfunc_0` at 0x93c220 (rtti, high); signature (low): `StealthMeter * vfunc_0(StealthMeter * this, uint param_1, longlong * param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `StealthMeter::vfunc_1` at 0x93a7e0 (rtti, high); signature (high): `undefined vfunc_1(StealthMeter * this)`
+    /// `StealthMeter::Update` at 0x93a7e0 (semantic, high); signature (untiered): `undefined Update(StealthMeter * this)`; `Update`: steps displayedLevel toward targetLevel; on reaching 0 or 100 sets '$HIDDEN'/'$DETECTED', plays 'Start' on flashClip and calls vfunc_1_sub0(player, level == 0); sets the meter frame (high); semantic signature: `void (StealthMeter* this)`
     pub slot_1: *const c_void,
-    /// `StealthMeter::vfunc_2` at 0x93a700 (rtti, high); signature (low): `undefined8 vfunc_2(StealthMeter * this, longlong param_1)`
+    /// `StealthMeter::ProcessMessage` at 0x93a700 (semantic, high); signature (untiered): `undefined8 ProcessMessage(StealthMeter * this, longlong param_1)`; `ProcessMessage`: takes HUDData type 0x18: shown = +0x40, targetLevel = +0x44; a change of shown plays FadeIn/FadeOut on fadeClip and SetHUDMode('StealthMode', shown); returns true for type 0x18 (high); semantic signature: `bool (StealthMeter* this, UIMessage* msg)`
     pub slot_2: *const c_void,
-    /// `StealthMeter::vfunc_3` at 0x93a680 (rtti, high); signature (low): `undefined vfunc_3(StealthMeter * this, longlong param_1)`
+    /// `StealthMeter::RegisterHUDComponent` at 0x93a680 (semantic, high); signature (untiered): `undefined RegisterHUDComponent(StealthMeter * this, longlong param_1)`; `RegisterHUDComponent`: with more than 9 arguments: clip (+0x10) = args[0], fadeClip = args[4], meterClip = args[5], flashClip = args[8], textField = args[9] (high); semantic signature: `void (StealthMeter* this, FxDelegateArgs* args)`
     pub slot_3: *const c_void,
     /// `HUDObject::Cleanup` at 0x93cb10 (semantic, medium); signature (untiered): `undefined Cleanup(void)`
     pub slot_4: *const c_void,
 }
 impl StealthMeter_vtable {
     pub const ID: u64 = 215386;
+    pub const SLOT_Update: usize = 1;
+    /// Slot 1 as `StealthMeter_vtable_Update`, `None` when the slot is null.
+    #[must_use]
+    pub fn Update(&self) -> Option<StealthMeter_vtable_Update> {
+        unsafe { core::mem::transmute::<*const c_void, Option<StealthMeter_vtable_Update>>(self.slot_1) }
+    }
+    pub const SLOT_ProcessMessage: usize = 2;
+    /// Slot 2 as `StealthMeter_vtable_ProcessMessage`, `None` when the slot is null.
+    #[must_use]
+    pub fn ProcessMessage(&self) -> Option<StealthMeter_vtable_ProcessMessage> {
+        unsafe { core::mem::transmute::<*const c_void, Option<StealthMeter_vtable_ProcessMessage>>(self.slot_2) }
+    }
+    pub const SLOT_RegisterHUDComponent: usize = 3;
+    /// Slot 3 as `StealthMeter_vtable_RegisterHUDComponent`, `None` when the slot is null.
+    #[must_use]
+    pub fn RegisterHUDComponent(&self) -> Option<StealthMeter_vtable_RegisterHUDComponent> {
+        unsafe { core::mem::transmute::<*const c_void, Option<StealthMeter_vtable_RegisterHUDComponent>>(self.slot_3) }
+    }
 }
+/// `StealthMeter::Update`, slot 1: steps displayedLevel toward targetLevel; on reaching 0 or 100 sets '$HIDDEN'/'$DETECTED', plays 'Start' on flashClip and calls vfunc_1_sub0(player, level == 0); sets the meter frame (high).
+pub type StealthMeter_vtable_Update = unsafe extern "C" fn(this: *mut crate::StealthMeter);
+/// `StealthMeter::ProcessMessage`, slot 2: takes HUDData type 0x18: shown = +0x40, targetLevel = +0x44; a change of shown plays FadeIn/FadeOut on fadeClip and SetHUDMode('StealthMode', shown); returns true for type 0x18 (high).
+pub type StealthMeter_vtable_ProcessMessage = unsafe extern "C" fn(this: *mut crate::StealthMeter, msg: *mut crate::UIMessage) -> bool;
+/// `StealthMeter::RegisterHUDComponent`, slot 3: with more than 9 arguments: clip (+0x10) = args[0], fadeClip = args[4], meterClip = args[5], flashClip = args[8], textField = args[9] (high).
+pub type StealthMeter_vtable_RegisterHUDComponent = unsafe extern "C" fn(this: *mut crate::StealthMeter, args: *mut c_void);
 
 /// `StopMountCameraHandler::vftable` at 0x19383a0, id 208923 (rtti, high); 2 slots.
 #[repr(C)]
@@ -6098,7 +6174,7 @@ pub struct TESFurniture_vtable {
     pub slot_4: *const c_void,
     /// `TESFurniture::vfunc_5` at 0x26e130 (rtti, high); signature (low): `undefined vfunc_5(TESFurniture * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_5: *const c_void,
-    /// `TESFurniture::vfunc_6` at 0x26e170 (rtti, high); signature (low): `undefined8 vfunc_6(TESFurniture * this, int * param_1, undefined8 param_2, char * param_3)`
+    /// `TESFurniture::Load` at 0x26e170 (semantic, high); signature (untiered): `undefined8 Load(TESFurniture * this, int * param_1, undefined8 param_2, char * param_3)`; `Load`: see the function row (high); semantic signature: `bool (TESFurniture* this, TESFile* file)`
     pub slot_6: *const c_void,
     /// `TESForm::vfunc_7` at 0x1469b0 (rtti, medium); signature (low): `undefined1 vfunc_7(void)`
     pub slot_7: *const c_void,
@@ -6196,7 +6272,7 @@ pub struct TESFurniture_vtable {
     pub slot_53: *const c_void,
     /// `TESForm::vfunc_54` at 0x1468f0 (rtti, medium); signature (low): `undefined1 vfunc_54(void)`
     pub slot_54: *const c_void,
-    /// `TESFurniture::Activate` at 0x26f340 (semantic, high); signature (untiered): `undefined1 * Activate(TESFurniture * this, longlong * param_1, TESFurniture_vtbl_90 * param_2, undefined8 param_3)`; `Activate`: furniture activation: the player sits (PlayerCamera::EnterFurnitureCamera), a bed opens the sleep menu (or the serve-sentence question), a workbench queues its menu, or the default action 0x37 runs (high); semantic signature: `bool (TESFurniture* this, TESObjectREFR* targetRef, TESObjectREFR* activator, u8 activateFlag, TESBoundObject* object, i32 count)`
+    /// `TESFurniture::Activate` at 0x26f340 (semantic, high); signature (untiered): `undefined1 * Activate(TESFurniture * this, longlong * param_1, TESFurniture_vtbl_90 * param_2, undefined8 param_3)`; `Activate`: existing high row; IC2: a sleep marker 0 (IsSleepMarker) opens the sleep menu, else the sit path and EnterFurnitureCamera (high); semantic signature: `bool (TESFurniture* this, TESObjectREFR* target, TESObjectREFR* activator, u8 activateFlag, TESBoundObject* object, i32 count)`
     pub slot_55: *const c_void,
     /// `TESForm::SetFormID` at 0x1e6bd0 (semantic, high); signature (untiered): `undefined SetFormID(TESForm * this, int param_1, char param_2)`
     pub slot_56: *const c_void,
@@ -6255,6 +6331,12 @@ pub struct TESFurniture_vtable {
 }
 impl TESFurniture_vtable {
     pub const ID: u64 = 189309;
+    pub const SLOT_Load: usize = 6;
+    /// Slot 6 as `TESFurniture_vtable_Load`, `None` when the slot is null.
+    #[must_use]
+    pub fn Load(&self) -> Option<TESFurniture_vtable_Load> {
+        unsafe { core::mem::transmute::<*const c_void, Option<TESFurniture_vtable_Load>>(self.slot_6) }
+    }
     pub const SLOT_Activate: usize = 55;
     /// Slot 55 as `TESFurniture_vtable_Activate`, `None` when the slot is null.
     #[must_use]
@@ -6262,8 +6344,10 @@ impl TESFurniture_vtable {
         unsafe { core::mem::transmute::<*const c_void, Option<TESFurniture_vtable_Activate>>(self.slot_55) }
     }
 }
-/// `TESFurniture::Activate`, slot 55: furniture activation: the player sits (PlayerCamera::EnterFurnitureCamera), a bed opens the sleep menu (or the serve-sentence question), a workbench queues its menu, or the default action 0x37 runs (high).
-pub type TESFurniture_vtable_Activate = unsafe extern "C" fn(this: *mut crate::TESFurniture, targetRef: *mut crate::TESObjectREFR, activator: *mut crate::TESObjectREFR, activateFlag: u8, object: *mut crate::TESBoundObject, count: i32) -> bool;
+/// `TESFurniture::Load`, slot 6: see the function row (high).
+pub type TESFurniture_vtable_Load = unsafe extern "C" fn(this: *mut crate::TESFurniture, file: *mut crate::TESFile) -> bool;
+/// `TESFurniture::Activate`, slot 55: existing high row; IC2: a sleep marker 0 (IsSleepMarker) opens the sleep menu, else the sit path and EnterFurnitureCamera (high).
+pub type TESFurniture_vtable_Activate = unsafe extern "C" fn(this: *mut crate::TESFurniture, target: *mut crate::TESObjectREFR, activator: *mut crate::TESObjectREFR, activateFlag: u8, object: *mut crate::TESBoundObject, count: i32) -> bool;
 
 /// `TESFurniture::vftable_30` at 0x1811ae0, id 189311 (rtti, high); 6 slots.
 #[repr(C)]
@@ -13961,121 +14045,5 @@ pub struct TESRace_vtable_30 {
 }
 impl TESRace_vtable_30 {
     pub const ID: u64 = 195945;
-}
-
-/// `TESRace::vftable_40` at 0x1861fa8, id 195947 (rtti, high); 4 slots.
-#[repr(C)]
-pub struct TESRace_vtable_40 {
-    /// `TESRace::TESSpellList_vdtor` at 0x3eb730 (slot_propagation, medium); signature (high): `undefined TESSpellList_vdtor(TESRace * this)`
-    pub slot_0: *const c_void,
-    /// `TESSpellList::vfunc_1` at 0x1f0ad0 (rtti, medium); signature (low): `undefined vfunc_1(void)`
-    pub slot_1: *const c_void,
-    /// `TESSpellList::vfunc_2` at 0x1f0ae0 (rtti, medium); signature (untiered): `undefined vfunc_2(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-    pub slot_2: *const c_void,
-    /// `TESSpellList::vfunc_3` at 0x1f0af0 (rtti, medium); signature (low): `undefined vfunc_3(TESSpellList * this, undefined8 param_1)`
-    pub slot_3: *const c_void,
-}
-impl TESRace_vtable_40 {
-    pub const ID: u64 = 195947;
-}
-
-/// `TESRace::vftable_50` at 0x1861fd0, id 195949 (rtti, high); 4 slots.
-#[repr(C)]
-pub struct TESRace_vtable_50 {
-    /// `TESRace::BGSSkinForm_vdtor` at 0x3eb73c (slot_propagation, medium); signature (low): `undefined BGSSkinForm_vdtor(TESRace * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `BGSSkinForm::vfunc_1` at 0x1db8d0 (rtti, medium); signature (high): `undefined vfunc_1(BGSSkinForm * this)`
-    pub slot_1: *const c_void,
-    /// `BGSSkinForm::vfunc_2` at 0x1db8e0 (rtti, medium); signature (low): `undefined vfunc_2(void)`
-    pub slot_2: *const c_void,
-    /// `BGSSkinForm::vfunc_3` at 0x1db8f0 (rtti, medium); signature (low): `undefined vfunc_3(BGSSkinForm * this, undefined8 param_1)`
-    pub slot_3: *const c_void,
-}
-impl TESRace_vtable_50 {
-    pub const ID: u64 = 195949;
-}
-
-/// `TESRace::vftable_60` at 0x1861ff8, id 195951 (rtti, high); 4 slots.
-#[repr(C)]
-pub struct TESRace_vtable_60 {
-    /// `TESRace::BGSBipedObjectForm_vdtor` at 0x3eb748 (slot_propagation, medium); signature (low): `undefined BGSBipedObjectForm_vdtor(TESRace * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `BGSBipedObjectForm::vfunc_1` at 0x1d20e0 (rtti, medium); signature (high): `undefined vfunc_1(BGSBipedObjectForm * this)`
-    pub slot_1: *const c_void,
-    /// `BGSBipedObjectForm::vfunc_2` at 0x1d20f0 (rtti, medium); signature (low): `undefined vfunc_2(void)`
-    pub slot_2: *const c_void,
-    /// `BGSBipedObjectForm::vfunc_3` at 0x1d2110 (rtti, medium); signature (low): `undefined vfunc_3(BGSBipedObjectForm * this, undefined8 param_1)`
-    pub slot_3: *const c_void,
-}
-impl TESRace_vtable_60 {
-    pub const ID: u64 = 195951;
-}
-
-/// `TESRace::vftable_70` at 0x1862020, id 195953 (rtti, high); 6 slots.
-#[repr(C)]
-pub struct TESRace_vtable_70 {
-    /// `TESRace::BGSKeywordForm_vdtor` at 0x3eb754 (slot_propagation, medium); signature (low): `undefined BGSKeywordForm_vdtor(TESRace * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `BGSKeywordForm::vfunc_1` at 0x1d8690 (rtti, medium); signature (low): `undefined vfunc_1(void)`
-    pub slot_1: *const c_void,
-    /// `BGSKeywordForm::vfunc_2` at 0x1d86a0 (rtti, medium); signature (untiered): `undefined vfunc_2(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-    pub slot_2: *const c_void,
-    /// `BGSKeywordForm::vfunc_3` at 0x1d86b0 (rtti, medium); signature (low): `undefined vfunc_3(BGSKeywordForm * this, undefined8 param_1)`
-    pub slot_3: *const c_void,
-    /// `BGSKeywordForm::HasKeyword` at 0x1d89e0 (runtime, high); signature (untiered): `undefined8 HasKeyword(BGSKeywordForm * this, longlong param_1)`
-    pub slot_4: *const c_void,
-    /// `BGSKeywordForm::vfunc_5` at 0x14c8b0 (rtti, medium); signature (low): `undefined8 vfunc_5(void)`
-    pub slot_5: *const c_void,
-}
-impl TESRace_vtable_70 {
-    pub const ID: u64 = 195953;
-}
-
-/// `TESRace::vftable_88` at 0x1862058, id 195955 (rtti, high); 4 slots.
-#[repr(C)]
-pub struct TESRace_vtable_88 {
-    /// `TESRace::BGSAttackDataForm_vdtor` at 0x3eb760 (slot_propagation, medium); signature (low): `undefined BGSAttackDataForm_vdtor(TESRace * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `BGSAttackDataForm::vfunc_1` at 0x1d1a70 (rtti, medium); signature (low): `undefined vfunc_1(void)`
-    pub slot_1: *const c_void,
-    /// `BGSAttackDataForm::vfunc_2` at 0x1d1a80 (rtti, medium); signature (high): `undefined vfunc_2(BGSAttackDataForm * this)`
-    pub slot_2: *const c_void,
-    /// `BGSAttackDataForm::vfunc_3` at 0x1d1ac0 (rtti, medium); signature (low): `undefined vfunc_3(BGSAttackDataForm * this, undefined8 param_1)`
-    pub slot_3: *const c_void,
-}
-impl TESRace_vtable_88 {
-    pub const ID: u64 = 195955;
-}
-
-/// `TESRaceForm::vftable` at 0x17fb970, id 187976 (rtti, high); 4 slots.
-#[repr(C)]
-pub struct TESRaceForm_vtable {
-    /// `TESRaceForm::vdtor` at 0x1ef910 (layout_inference, medium); signature (low): `TESRaceForm * vdtor(TESRaceForm * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `TESRaceForm::vfunc_1` at 0x1ef730 (rtti, medium); signature (high): `undefined vfunc_1(TESRaceForm * this)`
-    pub slot_1: *const c_void,
-    /// `TESRaceForm::vfunc_2` at 0x1ef740 (rtti, medium); signature (low): `undefined vfunc_2(void)`
-    pub slot_2: *const c_void,
-    /// `TESRaceForm::vfunc_3` at 0x1ef750 (rtti, medium); signature (low): `undefined vfunc_3(TESRaceForm * this, undefined8 param_1)`
-    pub slot_3: *const c_void,
-}
-impl TESRaceForm_vtable {
-    pub const ID: u64 = 187976;
-}
-
-/// `TESReactionForm::vftable` at 0x17fbb78, id 187979 (rtti, high); 4 slots.
-#[repr(C)]
-pub struct TESReactionForm_vtable {
-    /// `TESReactionForm::vdtor` at 0x1f08c0 (layout_inference, medium); signature (low): `TESReactionForm * vdtor(TESReactionForm * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `TESReactionForm::vfunc_1` at 0x1ef9c0 (rtti, medium); signature (high): `undefined vfunc_1(TESReactionForm * this)`
-    pub slot_1: *const c_void,
-    /// `TESReactionForm::vfunc_2` at 0x1ef9d0 (rtti, medium); signature (untiered): `undefined vfunc_2(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-    pub slot_2: *const c_void,
-    /// `TESReactionForm::vfunc_3` at 0x1ef9e0 (rtti, medium); signature (low): `undefined vfunc_3(TESReactionForm * this, undefined8 param_1)`
-    pub slot_3: *const c_void,
-}
-impl TESReactionForm_vtable {
-    pub const ID: u64 = 187979;
 }
 

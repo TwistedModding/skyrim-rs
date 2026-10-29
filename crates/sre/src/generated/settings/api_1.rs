@@ -11802,9 +11802,6 @@ pub fn ini_setting_b_should_process_requests_animation() -> *mut c_void { addres
 /// `INISetting_bShowCheckMemoryOutput_General` at 0x20b6398, id 381093 (setting, high)
 #[inline]
 pub fn ini_setting_b_show_check_memory_output_general() -> *mut c_void { address!(381093) as *mut c_void }
-/// `INISetting_bShowCrosshair_Interface` at 0x20bac68, id 382824 (setting, high)
-#[inline]
-pub fn ini_setting_b_show_crosshair_interface() -> *mut c_void { address!(382824) as *mut c_void }
 /// `INISetting_bShowGunTarget_General` at 0x20b77d8, id 381645 (setting, high)
 #[inline]
 pub fn ini_setting_b_show_gun_target_general() -> *mut c_void { address!(381645) as *mut c_void }
@@ -15315,3 +15312,6 @@ pub fn ini_setting_i_update_detections_allowed_per_frame_general() -> *mut c_voi
 /// `INISetting_iVolumetricLightingNoiseTextureDepth_Display` at 0x20d70a8, id 391199 (setting, high)
 #[inline]
 pub fn ini_setting_i_volumetric_lighting_noise_texture_depth_display() -> *mut c_void { address!(391199) as *mut c_void }
+/// `INISetting_iVolumetricLightingNoiseTextureHeight_Display` at 0x20d7090, id 391196 (setting, high)
+#[inline]
+pub fn ini_setting_i_volumetric_lighting_noise_texture_height_display() -> *mut c_void { address!(391196) as *mut c_void }

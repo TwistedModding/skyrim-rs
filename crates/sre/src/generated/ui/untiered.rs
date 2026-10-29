@@ -369,13 +369,6 @@ impl crate::HUDMenu {
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
     pub unsafe fn ctor_sub1(param_1: *mut i64, param_2: u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(51694, (*mut i64, u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
-    /// `HUDMenu::vfunc_4_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 20211, rva 0x300ed0).
-    /// `undefined vfunc_4_sub0(longlong param_1)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn vfunc_4_sub0(param_1: i64) -> u64 { unsafe { function!(20211, (i64) -> u64)(param_1) } }
     /// `HUDMenu::vfunc_4_sub1` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 40515, rva 0x74afa0).
     /// `undefined vfunc_4_sub1(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
     ///
@@ -907,7 +900,7 @@ impl crate::MessageBoxMenu {
 }
 
 impl crate::TweenMenu {
-    /// `TweenMenu::PostDisplay` (decompiler signature, tier untiered; ledger semantic evidence, name high; id 52706, rva 0x988250).
+    /// `TweenMenu::PostDisplay` (decompiler signature, tier untiered; ledger runtime evidence, name high; id 52706, rva 0x988250).
     /// `undefined PostDisplay(TweenMenu * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety

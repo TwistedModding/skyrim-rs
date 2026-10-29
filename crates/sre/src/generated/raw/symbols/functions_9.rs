@@ -4,6 +4,12 @@
 use crate::raw::*;
 
 pub(super) const ROWS: &[Function] = &[
+    Function { rva: 0x1172380, id: 82363, confidence: Confidence::Medium, name: "_anon_3B91968A::BSScaleformSysMemMapper::vdtor" },
+    Function { rva: 0x11723b0, id: 82364, confidence: Confidence::Medium, name: "BSScaleformTranslator::vdtor" },
+    Function { rva: 0x1172420, id: 82365, confidence: Confidence::Medium, name: "BSStreamParserData::vdtor" },
+    Function { rva: 0x1172460, id: 82366, confidence: Confidence::Medium, name: "_anon_3B91968A::DejaGFxLogger::vdtor" },
+    Function { rva: 0x11724dc, id: 82367, confidence: Confidence::Medium, name: "_anon_3B91968A::DejaGFxLogger::GFxLogBase_GFxLog_vdtor" },
+    Function { rva: 0x11724f0, id: 82370, confidence: Confidence::Medium, name: "GFxTranslator::vdtor" },
     Function { rva: 0x1172560, id: 82371, confidence: Confidence::Medium, name: "GFxZlibSupport::vdtor" },
     Function { rva: 0x11725d0, id: 82372, confidence: Confidence::Medium, name: "GFxZlibSupportBase::vdtor" },
     Function { rva: 0x1172640, id: 82373, confidence: Confidence::Medium, name: "GSysAllocBase::vdtor" },
@@ -6651,10 +6657,4 @@ pub(super) const ROWS: &[Function] = &[
     Function { rva: 0x13c9e00, id: 451072, confidence: Confidence::High, name: "ScalarDeletingDtorSize10_83" },
     Function { rva: 0x13ca280, id: 451084, confidence: Confidence::Medium, name: "DestroyViaVfunc0AndFree_52" },
     Function { rva: 0x13ca340, id: 451086, confidence: Confidence::Medium, name: "ConstructFunctionalStorage10_12" },
-    Function { rva: 0x13ca7b0, id: 451092, confidence: Confidence::High, name: "ScalarDeletingDtorSize10_84" },
-    Function { rva: 0x13ca7e0, id: 451093, confidence: Confidence::High, name: "ScalarDeletingDtorSize10_85" },
-    Function { rva: 0x13cac10, id: 451105, confidence: Confidence::Medium, name: "DestroyViaVfunc0AndFree_53" },
-    Function { rva: 0x13cac50, id: 451106, confidence: Confidence::Medium, name: "DestructAndFree_11" },
-    Function { rva: 0x13cac90, id: 451107, confidence: Confidence::Medium, name: "ConstructFunctionalStorage10_13" },
-    Function { rva: 0x13cb100, id: 451113, confidence: Confidence::High, name: "ScalarDeletingDtorSize10_86" },
 ];

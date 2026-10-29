@@ -216,16 +216,6 @@ impl crate::BSFogProperty {
     pub unsafe fn vfunc_23_sub0(param_1: i64, param_2: i64, param_3: i64, param_4: u64) -> u64 { unsafe { function!(71418, (i64, i64, i64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
 }
 
-impl crate::BSFurnitureMarkerNode {
-    /// `BSFurnitureMarkerNode::Create_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 76649, rva 0xff14a0).
-    /// `undefined Create_sub0(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn create_sub0(param_1: *mut i64, param_2: u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(76649, (*mut i64, u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
-}
-
 impl crate::BSGamerProfile {
     /// `BSGamerProfile::GetSingleton` (decompiler signature, tier untiered; ledger xref_inference evidence, name medium; id 68666, rva 0xcfac80).
     /// `BSWin32GamerProfile * GetSingleton(void)`

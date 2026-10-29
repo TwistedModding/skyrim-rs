@@ -11,6 +11,20 @@ impl crate::Actor {
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
     pub unsafe fn get_look_origin_and_direction(&self, param_1: *mut u32, param_2: *mut f32) -> u64 { unsafe { virtual_function!(self, 194, (*const Self, *mut u32, *mut f32) -> u64)(core::ptr::from_ref(self), param_1, param_2) } }
+    /// `Actor::PrepareAnimationUpdate`, vtable slot 121, through the object's vtable (decompiler signature, tier untiered; ledger semantic evidence, name medium; id 38054, rva 0x6b6300).
+    /// `undefined PrepareAnimationUpdate(Actor * this, longlong param_1)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn prepare_animation_update(&self, param_1: i64) -> u64 { unsafe { virtual_function!(self, 121, (*const Self, i64) -> u64)(core::ptr::from_ref(self), param_1) } }
+    /// `Actor::RefreshNPCKeywordFlag`, vtable slot 278, through the object's vtable (decompiler signature, tier untiered; ledger semantic evidence, name high; id 37915, rva 0x6acb90).
+    /// `undefined RefreshNPCKeywordFlag(Actor * this)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn refresh_npc_keyword_flag(&self) -> u64 { unsafe { virtual_function!(self, 278, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `Actor::UpdateAnimation`, vtable slot 125, through the object's vtable (decompiler signature, tier untiered; ledger semantic evidence, name medium; id 37361, rva 0x67d590).
     /// `undefined UpdateAnimation(Actor * this, TESObjectREFR * param_1, ulonglong param_2, TypeDescriptor * param_3)`
     ///
@@ -25,13 +39,6 @@ impl crate::Actor {
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
     pub unsafe fn can_fly_here_impl_sub0(param_1: i64) -> u8 { unsafe { function!(20550, (i64) -> u8)(param_1) } }
-    /// `Actor::HasKeyword` (decompiler signature, tier untiered; ledger slot_propagation evidence, name high; id 37183, rva 0x671bf0).
-    /// `bool HasKeyword(Actor * this, longlong param_1, longlong param_2, undefined8 param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn has_keyword(&self, param_1: i64, param_2: i64, param_3: u64) -> u8 { unsafe { function!(37183, (*const Self, i64, i64, u64) -> u8)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `Actor::IPostAnimationChannelUpdateFunctor_vfunc_1_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 39299, rva 0x6f31a0).
     /// `undefined IPostAnimationChannelUpdateFunctor_vfunc_1_sub0(longlong param_1, longlong param_2, undefined8 param_3, ulonglong param_4)`
     ///
@@ -457,13 +464,6 @@ impl crate::Character {
 }
 
 impl crate::PlayerCharacter {
-    /// `PlayerCharacter::EnsureMovementController`, vtable slot 265, through the object's vtable (decompiler signature, tier untiered; ledger semantic evidence, name high; id 40734, rva 0x75e410).
-    /// `undefined EnsureMovementController(PlayerCharacter * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn ensure_movement_controller(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { virtual_function!(self, 265, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `PlayerCharacter::GetLookAtPosition`, vtable slot 91, through the object's vtable (decompiler signature, tier untiered; ledger semantic evidence, name high; id 40664, rva 0x75ad40).
     /// `float * GetLookAtPosition(PlayerCharacter * this, float * param_1)`
     ///
@@ -709,13 +709,6 @@ impl crate::PlayerCharacter {
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
     pub unsafe fn vfunc_173_sub3(param_1: i64, param_2: u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(40607, (i64, u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
-    /// `PlayerCharacter::vfunc_173_sub4` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 40621, rva 0x757a70).
-    /// `undefined vfunc_173_sub4(longlong param_1)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn vfunc_173_sub4(param_1: i64) -> u64 { unsafe { function!(40621, (i64) -> u64)(param_1) } }
     /// `PlayerCharacter::vfunc_173_sub5` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 40736, rva 0x75e4f0).
     /// `undefined vfunc_173_sub5(Actor * param_1)`
     ///

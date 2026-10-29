@@ -628,7 +628,7 @@ pub struct Actor_vtable {
     pub slot_70: *const c_void,
     /// `TESObjectREFR::vfunc_71` at 0x2e4f80 (rtti, medium); signature (low): `undefined1 vfunc_71(void)`
     pub slot_71: *const c_void,
-    /// `Actor::HasKeyword` at 0x671bf0 (slot_propagation, high); signature (untiered): `bool HasKeyword(Actor * this, longlong param_1, longlong param_2, undefined8 param_3)`
+    /// `Actor::HasKeyword` at 0x671bf0 (semantic, high); signature (untiered): `bool HasKeyword(Actor * this, longlong param_1, longlong param_2, undefined8 param_3)`
     pub slot_72: *const c_void,
     /// `Actor::vfunc_73` at 0x67f620 (rtti, medium); signature (high): `undefined8 vfunc_73(Actor * this)`
     pub slot_73: *const c_void,
@@ -726,7 +726,7 @@ pub struct Actor_vtable {
     pub slot_119: *const c_void,
     /// `Actor::vfunc_120` at 0x6b0010 (rtti, medium); signature (low): `ulonglong vfunc_120(Actor * this, longlong * param_1)`
     pub slot_120: *const c_void,
-    /// `Actor::vfunc_121` at 0x6b6300 (rtti, medium); signature (low): `undefined vfunc_121(Actor * this, longlong param_1)`
+    /// `Actor::PrepareAnimationUpdate` at 0x6b6300 (semantic, medium); signature (untiered): `undefined PrepareAnimationUpdate(Actor * this, longlong param_1)`
     pub slot_121: *const c_void,
     /// `Actor::vfunc_122` at 0x6b6580 (rtti, medium); signature (low): `undefined1 vfunc_122(void)`
     pub slot_122: *const c_void,
@@ -1014,7 +1014,7 @@ pub struct Actor_vtable {
     pub slot_263: *const c_void,
     /// `Actor::vfunc_264` at 0x6c2ce0 (rtti, medium); signature (low): `undefined vfunc_264(Actor * this, char param_1)`
     pub slot_264: *const c_void,
-    /// `Actor::vfunc_265` at 0x6a51c0 (rtti, medium); signature (low): `undefined vfunc_265(Actor * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    /// `Actor::EnsureMovementController` at 0x6a51c0 (semantic, high); signature (untiered): `undefined EnsureMovementController(Actor * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`; `EnsureMovementController`: when +0x150 is null: create the MovementControllerNPC (formID), call its slot 6 (+0x30), then its motion-driven sub-object's slot 2 (no process, or process+0x137 set) or slot 1, then slot 4 (high); semantic signature: `void (Actor* this)`
     pub slot_265: *const c_void,
     /// `Actor::vfunc_266` at 0x6bde70 (rtti, medium); signature (high): `undefined4 vfunc_266(Actor * this)`
     pub slot_266: *const c_void,
@@ -1040,7 +1040,7 @@ pub struct Actor_vtable {
     pub slot_276: *const c_void,
     /// `Actor::vfunc_277` at 0x6acb10 (rtti, medium); signature (high): `undefined vfunc_277(Actor * this)`
     pub slot_277: *const c_void,
-    /// `Actor::vfunc_278` at 0x6acb90 (rtti, medium); signature (high): `undefined vfunc_278(Actor * this)`
+    /// `Actor::RefreshNPCKeywordFlag` at 0x6acb90 (semantic, high); signature (untiered): `undefined RefreshNPCKeywordFlag(Actor * this)`
     pub slot_278: *const c_void,
     /// `Actor::vfunc_279` at 0x6ad3a0 (rtti, medium); signature (low): `undefined vfunc_279(void)`
     pub slot_279: *const c_void,
@@ -1123,6 +1123,12 @@ impl Actor_vtable {
     pub fn IsInCombat(&self) -> Option<Actor_vtable_IsInCombat> {
         unsafe { core::mem::transmute::<*const c_void, Option<Actor_vtable_IsInCombat>>(self.slot_227) }
     }
+    pub const SLOT_EnsureMovementController: usize = 265;
+    /// Slot 265 as `Actor_vtable_EnsureMovementController`, `None` when the slot is null.
+    #[must_use]
+    pub fn EnsureMovementController(&self) -> Option<Actor_vtable_EnsureMovementController> {
+        unsafe { core::mem::transmute::<*const c_void, Option<Actor_vtable_EnsureMovementController>>(self.slot_265) }
+    }
     pub const SLOT_Kill: usize = 270;
     /// Slot 270 as `Actor_vtable_Kill`, `None` when the slot is null.
     #[must_use]
@@ -1150,6 +1156,8 @@ pub type Actor_vtable_UpdateEquippedWeaponAnimations = unsafe extern "C" fn(this
 pub type Actor_vtable_SetAlpha = unsafe extern "C" fn(this: *mut crate::Actor, alpha: f32);
 /// `Actor::IsInCombat`, slot 227: whether the actor has a combat controller (high).
 pub type Actor_vtable_IsInCombat = unsafe extern "C" fn(this: *const crate::Actor) -> bool;
+/// `Actor::EnsureMovementController`, slot 265: when +0x150 is null: create the MovementControllerNPC (formID), call its slot 6 (+0x30), then its motion-driven sub-object's slot 2 (no process, or process+0x137 set) or slot 1, then slot 4 (high).
+pub type Actor_vtable_EnsureMovementController = unsafe extern "C" fn(this: *mut crate::Actor);
 /// `Actor::Kill`, slot 270: kills the actor: stops sounds and casts, clears combat, applies the death state and action, sends the kill events; for the player closes menus and pushes the bleedout camera (high).
 pub type Actor_vtable_Kill = unsafe extern "C" fn(this: *mut crate::Actor, killer: *mut crate::Actor, deathEventValue: f32, sendStoryEvent: bool, skipDeathAction: bool);
 /// `Actor::UpdateHeadTracking`, slot 290: head tracking target choice and update (high).
@@ -1296,7 +1304,7 @@ pub struct Actor_vtable_C0 {
     pub slot_3: *const c_void,
     /// `Actor::ActorState_vfunc_4` at 0x6b57f0 (rtti, medium); signature (low): `undefined ActorState_vfunc_4(Actor * this, float * param_1)`
     pub slot_4: *const c_void,
-    /// `Actor::ActorState_vfunc_5` at 0x6b5860 (rtti, medium); signature (low): `undefined4 ActorState_vfunc_5(Actor * this)`
+    /// `Actor::ActorState_GetMovementSpeed` at 0x6b5860 (semantic, high); signature (untiered): `undefined4 ActorState_GetMovementSpeed(Actor * this)`
     pub slot_5: *const c_void,
     /// `Actor::ActorState_vfunc_6` at 0x6b5500 (rtti, medium); signature (low): `undefined4 ActorState_vfunc_6(Actor * this)`
     pub slot_6: *const c_void,

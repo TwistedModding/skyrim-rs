@@ -3,6 +3,56 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `DeallocatePtrArray_11` at 0x13b570 (decompiler, medium); signature (untiered): `undefined DeallocatePtrArray_11(undefined8 param_1, void * param_2, longlong param_3, undefined8 param_4)`
+pub const DeallocatePtrArray_11: u64 = 441437;
+/// `DeallocatePtrArray_12` at 0x140bf0 (decompiler, medium); signature (untiered): `undefined DeallocatePtrArray_12(undefined8 param_1, void * param_2, longlong param_3, undefined8 param_4)`
+pub const DeallocatePtrArray_12: u64 = 523424;
+/// `DeallocatePtrArray_13` at 0x143780 (decompiler, medium); signature (untiered): `undefined DeallocatePtrArray_13(undefined8 param_1, void * param_2, longlong param_3, undefined8 param_4)`
+pub const DeallocatePtrArray_13: u64 = 441201;
+/// `DeallocatePtrArray_2` at 0x12e040 (decompiler, medium); signature (untiered): `undefined DeallocatePtrArray_2(undefined8 param_1, void * param_2, longlong param_3, undefined8 param_4)`
+pub const DeallocatePtrArray_2: u64 = 523327;
+/// `DeallocatePtrArray_3` at 0x12f470 (decompiler, medium); signature (untiered): `undefined DeallocatePtrArray_3(undefined8 param_1, void * param_2, longlong param_3, undefined8 param_4)`
+pub const DeallocatePtrArray_3: u64 = 523333;
+/// `DeallocatePtrArray_4` at 0x12f560 (decompiler, medium); signature (untiered): `undefined DeallocatePtrArray_4(undefined8 param_1, void * param_2, longlong param_3, undefined8 param_4)`
+pub const DeallocatePtrArray_4: u64 = 523334;
+/// `DeallocatePtrArray_5` at 0x1344d0 (decompiler, medium); signature (untiered): `undefined DeallocatePtrArray_5(undefined8 param_1, void * param_2, longlong param_3, undefined8 param_4)`
+pub const DeallocatePtrArray_5: u64 = 441270;
+/// `DeallocatePtrArray_6` at 0x134f20 (decompiler, medium); signature (untiered): `undefined DeallocatePtrArray_6(undefined8 param_1, void * param_2, longlong param_3, undefined8 param_4)`
+pub const DeallocatePtrArray_6: u64 = 523383;
+/// `DeallocatePtrArray_7` at 0x135f40 (decompiler, medium); signature (untiered): `undefined DeallocatePtrArray_7(undefined8 param_1, void * param_2, longlong param_3, undefined8 param_4)`
+pub const DeallocatePtrArray_7: u64 = 523397;
+/// `DeallocatePtrArray_8` at 0x137d00 (decompiler, medium); signature (untiered): `undefined DeallocatePtrArray_8(undefined8 param_1, void * param_2, longlong param_3, undefined8 param_4)`
+pub const DeallocatePtrArray_8: u64 = 523406;
+/// `DeallocatePtrArray_9` at 0x137dd0 (decompiler, medium); signature (untiered): `undefined DeallocatePtrArray_9(undefined8 param_1, void * param_2, longlong param_3, undefined8 param_4)`
+pub const DeallocatePtrArray_9: u64 = 523407;
+/// `DeallocateQwordArray` at 0x58fe10 (decompiler, medium); signature (untiered): `undefined DeallocateQwordArray(undefined8 param_1, void * param_2, longlong param_3, undefined8 param_4)`
+pub const DeallocateQwordArray: u64 = 523727;
+/// `DeallocateQwordArray_10` at 0x121a70 (decompiler, medium); signature (untiered): `undefined DeallocateQwordArray_10(undefined8 param_1, void * param_2, longlong param_3, undefined8 param_4)`
+pub const DeallocateQwordArray_10: u64 = 523235;
+/// `DeallocateQwordArray_2` at 0x12cedb0 (decompiler, high); signature (high): `undefined DeallocateQwordArray_2(undefined8 param_1, void * param_2, longlong param_3, undefined8 param_4)`
+pub const DeallocateQwordArray_2: u64 = 446451;
+/// `DeallocateQwordArray_3` at 0x10d550 (decompiler, medium); signature (untiered): `undefined DeallocateQwordArray_3(undefined8 param_1, void * param_2, longlong param_3, undefined8 param_4)`
+pub const DeallocateQwordArray_3: u64 = 439872;
+/// `DeallocateQwordArray_4` at 0x114a60 (decompiler, medium); signature (untiered): `undefined DeallocateQwordArray_4(undefined8 param_1, void * param_2, longlong param_3, undefined8 param_4)`
+pub const DeallocateQwordArray_4: u64 = 523064;
+/// `DeallocateQwordArray_5` at 0x116e70 (decompiler, medium); signature (untiered): `undefined DeallocateQwordArray_5(undefined8 param_1, void * param_2, longlong param_3, undefined8 param_4)`
+pub const DeallocateQwordArray_5: u64 = 523078;
+/// `DeallocateQwordArray_6` at 0x116ee0 (decompiler, medium); signature (untiered): `undefined DeallocateQwordArray_6(undefined8 param_1, void * param_2, longlong param_3, undefined8 param_4)`
+pub const DeallocateQwordArray_6: u64 = 523079;
+/// `DeallocateQwordArray_7` at 0x11a290 (decompiler, medium); signature (untiered): `undefined DeallocateQwordArray_7(undefined8 param_1, void * param_2, longlong param_3, undefined8 param_4)`
+pub const DeallocateQwordArray_7: u64 = 523124;
+/// `DeallocateQwordArray_8` at 0x11d3e0 (decompiler, medium); signature (untiered): `undefined DeallocateQwordArray_8(undefined8 param_1, void * param_2, longlong param_3, undefined8 param_4)`
+pub const DeallocateQwordArray_8: u64 = 523172;
+/// `DeallocateQwordArray_9` at 0x11e950 (decompiler, medium); signature (untiered): `undefined DeallocateQwordArray_9(undefined8 param_1, void * param_2, longlong param_3, undefined8 param_4)`
+pub const DeallocateQwordArray_9: u64 = 440255;
+/// `DeallocateStdBuffer` at 0x10ed20 (decompiler, medium); signature (medium): `undefined DeallocateStdBuffer(void * param_1, ulonglong param_2, void * param_3, undefined8 param_4)`
+pub const DeallocateStdBuffer: u64 = 439884;
+/// `DeallocateStride0x38` at 0x12f4d90 (decompiler, high); signature (high): `undefined DeallocateStride0x38(undefined8 param_1, void * param_2, longlong param_3, undefined8 param_4)`
+pub const DeallocateStride0x38: u64 = 525717;
+/// `DeallocateStride0x58` at 0x12f4d10 (decompiler, medium); signature (untiered): `undefined DeallocateStride0x58(undefined8 param_1, void * param_2, longlong param_3, undefined8 param_4)`
+pub const DeallocateStride0x58: u64 = 525715;
+/// `DeallocateStride0x78` at 0x12f4d50 (decompiler, medium); signature (untiered): `undefined DeallocateStride0x78(undefined8 param_1, void * param_2, longlong param_3, undefined8 param_4)`
+pub const DeallocateStride0x78: u64 = 525716;
 /// `DeallocateStride16Buffer` at 0x1274990 (decompiler, medium); signature (untiered): `undefined DeallocateStride16Buffer(undefined8 param_1, void * param_2, longlong param_3, undefined8 param_4)`
 pub const DeallocateStride16Buffer: u64 = 505870;
 /// `DeallocateViaMemoryManager` at 0x10bf3c0 (decompiler, high); signature (untiered): `undefined DeallocateViaMemoryManager(undefined8 param_1, void * param_2, undefined8 param_3, undefined8 param_4)`
@@ -8739,47 +8789,3 @@ pub const FreeArrayBufferAndClearCount_20: u64 = 51165;
 pub const FreeArrayBufferAndClearCount_21: u64 = 51166;
 /// `FreeArrayBufferAndClearCount_22` at 0x91b860 (decompiler, high); signature (untiered): `undefined FreeArrayBufferAndClearCount_22(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const FreeArrayBufferAndClearCount_22: u64 = 51246;
-/// `FreeArrayBufferAndClearCount_23` at 0x942660 (decompiler, high); signature (untiered): `undefined FreeArrayBufferAndClearCount_23(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const FreeArrayBufferAndClearCount_23: u64 = 51838;
-/// `FreeArrayBufferAndClearCount_24` at 0x9463a0 (decompiler, high); signature (untiered): `undefined FreeArrayBufferAndClearCount_24(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const FreeArrayBufferAndClearCount_24: u64 = 51878;
-/// `FreeArrayBufferAndClearCount_25` at 0x9505d0 (decompiler, high); signature (untiered): `undefined FreeArrayBufferAndClearCount_25(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const FreeArrayBufferAndClearCount_25: u64 = 51984;
-/// `FreeArrayBufferAndClearCount_26` at 0x9726e0 (decompiler, high); signature (untiered): `undefined FreeArrayBufferAndClearCount_26(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const FreeArrayBufferAndClearCount_26: u64 = 52430;
-/// `FreeArrayBufferAndClearCount_27` at 0x975580 (decompiler, high); signature (untiered): `undefined FreeArrayBufferAndClearCount_27(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const FreeArrayBufferAndClearCount_27: u64 = 52494;
-/// `FreeArrayBufferAndClearCount_28` at 0x9861c0 (decompiler, high); signature (untiered): `undefined FreeArrayBufferAndClearCount_28(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const FreeArrayBufferAndClearCount_28: u64 = 52672;
-/// `FreeArrayBufferAndClearCount_29` at 0xebda50 (decompiler, medium); signature (untiered): `undefined FreeArrayBufferAndClearCount_29(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const FreeArrayBufferAndClearCount_29: u64 = 69386;
-/// `FreeArrayBufferAndClearCount_3` at 0x31bc90 (decompiler, medium); signature (untiered): `undefined FreeArrayBufferAndClearCount_3(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const FreeArrayBufferAndClearCount_3: u64 = 20775;
-/// `FreeArrayBufferAndClearCount_30` at 0xebdab0 (decompiler, medium); signature (untiered): `undefined FreeArrayBufferAndClearCount_30(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const FreeArrayBufferAndClearCount_30: u64 = 69387;
-/// `FreeArrayBufferAndClearCount_31` at 0xebdb10 (decompiler, medium); signature (untiered): `undefined FreeArrayBufferAndClearCount_31(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const FreeArrayBufferAndClearCount_31: u64 = 69388;
-/// `FreeArrayBufferAndClearCount_32` at 0xec9d80 (decompiler, medium); signature (untiered): `undefined FreeArrayBufferAndClearCount_32(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const FreeArrayBufferAndClearCount_32: u64 = 69715;
-/// `FreeArrayBufferAndClearCount_4` at 0x31d290 (decompiler, medium); signature (untiered): `undefined FreeArrayBufferAndClearCount_4(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const FreeArrayBufferAndClearCount_4: u64 = 20817;
-/// `FreeArrayBufferAndClearCount_5` at 0x325320 (decompiler, medium); signature (untiered): `undefined FreeArrayBufferAndClearCount_5(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const FreeArrayBufferAndClearCount_5: u64 = 21045;
-/// `FreeArrayBufferAndClearCount_6` at 0x397ee0 (decompiler, medium); signature (untiered): `undefined FreeArrayBufferAndClearCount_6(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const FreeArrayBufferAndClearCount_6: u64 = 23837;
-/// `FreeArrayBufferAndClearCount_7` at 0x39beb0 (decompiler, medium); signature (untiered): `undefined FreeArrayBufferAndClearCount_7(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const FreeArrayBufferAndClearCount_7: u64 = 23943;
-/// `FreeArrayBufferAndClearCount_8` at 0x39bf10 (decompiler, medium); signature (untiered): `undefined FreeArrayBufferAndClearCount_8(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const FreeArrayBufferAndClearCount_8: u64 = 23944;
-/// `FreeArrayBufferAndClearCount_9` at 0x3cb2c0 (decompiler, medium); signature (untiered): `undefined FreeArrayBufferAndClearCount_9(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const FreeArrayBufferAndClearCount_9: u64 = 24841;
-/// `FreeArrayBufferAndClearSize` at 0x1c64b0 (decompiler, high); signature (untiered): `undefined FreeArrayBufferAndClearSize(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const FreeArrayBufferAndClearSize: u64 = 13821;
-/// `FreeArrayBufferAndClearSize_10` at 0xa6bd90 (decompiler, high); signature (untiered): `undefined FreeArrayBufferAndClearSize_10(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const FreeArrayBufferAndClearSize_10: u64 = 442791;
-/// `FreeArrayBufferAndClearSize_11` at 0x91c560 (decompiler, medium); signature (untiered): `undefined FreeArrayBufferAndClearSize_11(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const FreeArrayBufferAndClearSize_11: u64 = 51272;
-/// `FreeArrayBufferAndClearSize_12` at 0x91b8c0 (decompiler, medium); signature (untiered): `undefined FreeArrayBufferAndClearSize_12(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const FreeArrayBufferAndClearSize_12: u64 = 51247;
-/// `FreeArrayBufferAndClearSize_13` at 0x1ae7a0 (decompiler, high); signature (high): `undefined FreeArrayBufferAndClearSize_13(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const FreeArrayBufferAndClearSize_13: u64 = 13468;

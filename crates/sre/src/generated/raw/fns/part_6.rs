@@ -3,6 +3,66 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `CallGlobal414364IfSet_14` at 0x142ba60 (decompiler, medium); signature (untiered): `undefined CallGlobal414364IfSet_14(undefined8 param_1, undefined8 param_2)`
+pub const CallGlobal414364IfSet_14: u64 = 452140;
+/// `CallGlobal414364IfSet_15` at 0x142ba80 (decompiler, medium); signature (untiered): `undefined CallGlobal414364IfSet_15(undefined8 param_1, undefined8 param_2)`
+pub const CallGlobal414364IfSet_15: u64 = 452141;
+/// `CallGlobal414364IfSet_16` at 0x1456800 (decompiler, medium); signature (untiered): `undefined CallGlobal414364IfSet_16(undefined8 param_1, undefined8 param_2)`
+pub const CallGlobal414364IfSet_16: u64 = 102667;
+/// `CallGlobal414364IfSet_17` at 0x1459ce0 (decompiler, medium); signature (untiered): `undefined CallGlobal414364IfSet_17(undefined8 param_1, undefined8 param_2)`
+pub const CallGlobal414364IfSet_17: u64 = 96405;
+/// `CallGlobal414364IfSet_2` at 0x12ea420 (decompiler, medium); signature (untiered): `undefined CallGlobal414364IfSet_2(undefined8 param_1, undefined8 param_2)`
+pub const CallGlobal414364IfSet_2: u64 = 444899;
+/// `CallGlobal414364IfSet_3` at 0x12ea440 (decompiler, medium); signature (untiered): `undefined CallGlobal414364IfSet_3(undefined8 param_1, undefined8 param_2)`
+pub const CallGlobal414364IfSet_3: u64 = 525610;
+/// `CallGlobal414364IfSet_4` at 0x12f0e60 (decompiler, medium); signature (untiered): `undefined CallGlobal414364IfSet_4(undefined8 param_1, undefined8 param_2)`
+pub const CallGlobal414364IfSet_4: u64 = 446662;
+/// `CallGlobal414364IfSet_5` at 0x12ff9d0 (decompiler, medium); signature (untiered): `undefined CallGlobal414364IfSet_5(undefined8 param_1, undefined8 param_2)`
+pub const CallGlobal414364IfSet_5: u64 = 446913;
+/// `CallGlobal414364IfSet_6` at 0x12ffa10 (decompiler, medium); signature (untiered): `undefined CallGlobal414364IfSet_6(undefined8 param_1, undefined8 param_2)`
+pub const CallGlobal414364IfSet_6: u64 = 94526;
+/// `CallGlobal414364IfSet_7` at 0x1301370 (decompiler, medium); signature (untiered): `undefined CallGlobal414364IfSet_7(undefined8 param_1, undefined8 param_2)`
+pub const CallGlobal414364IfSet_7: u64 = 99926;
+/// `CallGlobal414364IfSet_8` at 0x13ac1a0 (decompiler, medium); signature (untiered): `undefined CallGlobal414364IfSet_8(undefined8 param_1, undefined8 param_2)`
+pub const CallGlobal414364IfSet_8: u64 = 450473;
+/// `CallGlobal414364IfSet_9` at 0x13c3500 (decompiler, medium); signature (untiered): `undefined CallGlobal414364IfSet_9(undefined8 param_1, undefined8 param_2)`
+pub const CallGlobal414364IfSet_9: u64 = 99371;
+/// `CallGlobal414364OnParam2` at 0x13073e0 (decompiler, medium); signature (untiered): `undefined CallGlobal414364OnParam2(undefined8 param_1, undefined8 param_2)`
+pub const CallGlobal414364OnParam2: u64 = 447032;
+/// `CallGlobal414364_2` at 0x13ddb30 (decompiler, medium); signature (untiered): `undefined CallGlobal414364_2(undefined8 param_1, undefined8 param_2)`
+pub const CallGlobal414364_2: u64 = 449475;
+/// `CallGlobal414364_3` at 0x13e2520 (decompiler, medium); signature (untiered): `undefined CallGlobal414364_3(undefined8 param_1, undefined8 param_2)`
+pub const CallGlobal414364_3: u64 = 100187;
+/// `CallGlobal414364_4` at 0x13e50d0 (decompiler, medium); signature (untiered): `undefined CallGlobal414364_4(undefined8 param_1, undefined8 param_2)`
+pub const CallGlobal414364_4: u64 = 98457;
+/// `CallGlobal414364_5` at 0x13e78d0 (decompiler, medium); signature (untiered): `undefined CallGlobal414364_5(undefined8 param_1, undefined8 param_2)`
+pub const CallGlobal414364_5: u64 = 101301;
+/// `CallGlobal414364_6` at 0x144c7f0 (decompiler, medium); signature (untiered): `undefined CallGlobal414364_6(undefined8 param_1, undefined8 param_2)`
+pub const CallGlobal414364_6: u64 = 527664;
+/// `CallGlobal414364_7` at 0x146e0f0 (decompiler, medium); signature (untiered): `undefined CallGlobal414364_7(undefined8 param_1, undefined8 param_2)`
+pub const CallGlobal414364_7: u64 = 103185;
+/// `CallGlobal503206AndQueueUIMessage` at 0x57ce40 (decompiler, medium); signature (untiered): `undefined CallGlobal503206AndQueueUIMessage(undefined8 param_1, char param_2)`
+pub const CallGlobal503206AndQueueUIMessage: u64 = 441679;
+/// `CallGlobalCallback410379UnderLock` at 0xebfdf0 (decompiler, medium); signature (untiered): `undefined1 CallGlobalCallback410379UnderLock(undefined8 param_1, undefined4 param_2, undefined4 param_3)`
+pub const CallGlobalCallback410379UnderLock: u64 = 69448;
+/// `CallGlobalCallback505658WithStringPair` at 0x15c1500 (decompiler, medium); signature (untiered): `undefined CallGlobalCallback505658WithStringPair(undefined4 param_1, longlong param_2, undefined1 * param_3, undefined8 param_4)`
+pub const CallGlobalCallback505658WithStringPair: u64 = 453942;
+/// `CallGlobalCallbackIfSet` at 0x15c1ca0 (decompiler, medium); signature (medium): `undefined CallGlobalCallbackIfSet(void)`
+pub const CallGlobalCallbackIfSet: u64 = 527857;
+/// `CallGlobalFn414364IfSet` at 0x1274930 (decompiler, medium); signature (untiered): `undefined CallGlobalFn414364IfSet(undefined8 param_1, undefined8 param_2)`
+pub const CallGlobalFn414364IfSet: u64 = 443798;
+/// `CallGlobalFn414364IfSet_2` at 0x1274950 (decompiler, medium); signature (untiered): `undefined CallGlobalFn414364IfSet_2(undefined8 param_1, undefined8 param_2)`
+pub const CallGlobalFn414364IfSet_2: u64 = 443799;
+/// `CallGlobalFn414364IfSet_3` at 0x1274970 (decompiler, medium); signature (untiered): `undefined CallGlobalFn414364IfSet_3(undefined8 param_1, undefined8 param_2)`
+pub const CallGlobalFn414364IfSet_3: u64 = 98069;
+/// `CallGlobalFn414364IfSet_4` at 0x127acf0 (decompiler, medium); signature (untiered): `undefined CallGlobalFn414364IfSet_4(undefined8 param_1, undefined8 param_2)`
+pub const CallGlobalFn414364IfSet_4: u64 = 524543;
+/// `CallHook414364AndClearTriple` at 0x128b510 (decompiler, medium); signature (untiered): `undefined CallHook414364AndClearTriple(longlong * param_1)`
+pub const CallHook414364AndClearTriple: u64 = 524745;
+/// `CallHook414364AndClearTriple_2` at 0x128f6d0 (decompiler, medium); signature (untiered): `undefined CallHook414364AndClearTriple_2(longlong * param_1)`
+pub const CallHook414364AndClearTriple_2: u64 = 445184;
+/// `CallHook414364AndClearTriple_3` at 0x12dc1c0 (decompiler, medium); signature (untiered): `undefined CallHook414364AndClearTriple_3(longlong * param_1)`
+pub const CallHook414364AndClearTriple_3: u64 = 525429;
 /// `CallIndexedHandleVfunc48` at 0xc5b0b0 (decompiler, medium); signature (untiered): `undefined CallIndexedHandleVfunc48(undefined8 * param_1)`
 pub const CallIndexedHandleVfunc48: u64 = 65832;
 /// `CallIndexedHandleVfunc70WithArg` at 0xc5af00 (decompiler, medium); signature (untiered): `undefined CallIndexedHandleVfunc70WithArg(undefined8 * param_1, undefined4 param_2)`
@@ -6483,10 +6543,10 @@ pub const Cmd__ToggleCombatDebug_Execute_sub0: u64 = 46901;
 pub const Cmd__ToggleCombatStats_Execute: u64 = 22812;
 /// `Cmd::ToggleContextOverlay_Execute` at 0x37a8d0 (console_cmd, high); signature (low): `undefined1 ToggleContextOverlay_Execute(void)`
 pub const Cmd__ToggleContextOverlay_Execute: u64 = 23070;
-/// `Cmd::ToggleControlsDriven_Execute` at 0x37b3a0 (console_cmd, high); signature (low): `undefined8 ToggleControlsDriven_Execute(longlong param_1, longlong param_2, uint * param_3, uint * param_4, longlong param_5, longlong param_6, undefined8 param_7, uint * param_8)`; semantic: console 'ToggleControlsDriven' on an actor: toggles its movement controller (+0x150) between AI-driven (slot 13) and controls-driven (slot 12) and points the camera at it (PlayerCamera::SetTarget) when controls-driven, back at the player when AI-driven; prints the result (high); signature `bool (const ParamInfo* params, const void* scriptData, TESObjectREFR* thisRef, TESObjectREFR* containingObj, Script* script, ScriptLocals* locals, double* result, u32* offset)`
+/// `Cmd::ToggleControlsDriven_Execute` at 0x37b3a0 (console_cmd, high); signature (low): `undefined8 ToggleControlsDriven_Execute(longlong param_1, longlong param_2, uint * param_3, uint * param_4, longlong param_5, longlong param_6, undefined8 param_7, uint * param_8)`; semantic: console ToggleControlsDriven on the selected actor: argument 1 -> movement controller slot 13 (controls-driven) and SetTarget(actor); 0 -> slot 12 (AI-driven) and SetTarget(player); the toggle path uses slot 15; prints the new mode (high); signature `bool (const ParamInfo* params, const void* data, TESObjectREFR* thisRef, TESObjectREFR* containingObj, Script* script, ScriptLocals* locals, double* result, u32* offset)`
 pub const Cmd__ToggleControlsDriven_Execute: u64 = 23089;
 /// `Cmd::ToggleControlsDriven_Execute` as a function pointer type (high).
-pub type Cmd__ToggleControlsDriven_Execute_fn = unsafe extern "C" fn(params: *const crate::ParamInfo, scriptData: *const c_void, thisRef: *mut crate::TESObjectREFR, containingObj: *mut crate::TESObjectREFR, script: *mut crate::Script, locals: *mut c_void, result: *mut f64, offset: *mut u32) -> bool;
+pub type Cmd__ToggleControlsDriven_Execute_fn = unsafe extern "C" fn(params: *const crate::ParamInfo, data: *const c_void, thisRef: *mut crate::TESObjectREFR, containingObj: *mut crate::TESObjectREFR, script: *mut crate::Script, locals: *mut c_void, result: *mut f64, offset: *mut u32) -> bool;
 /// `Cmd::ToggleConversations_Execute` at 0x36e200 (console_cmd, high); signature (low): `undefined1 ToggleConversations_Execute(void)`
 pub const Cmd__ToggleConversations_Execute: u64 = 22810;
 /// `Cmd::ToggleDDOF_Execute` at 0x37d080 (console_cmd, high); signature (low): `undefined1 ToggleDDOF_Execute(void)`
@@ -7757,57 +7817,3 @@ pub const CombatBehaviorTreeFlight__vfunc_0_cb2: u64 = 50659;
 pub const CombatBehaviorTreeFlight__vfunc_0_cb3: u64 = 50660;
 /// `CombatBehaviorTreeFlight::vfunc_0_cb4` at 0x8f23b0 (callgraph, medium); signature (untiered): `undefined vfunc_0_cb4(longlong param_1)`
 pub const CombatBehaviorTreeFlight__vfunc_0_cb4: u64 = 50662;
-/// `CombatBehaviorTreeFlight::vfunc_0_cb5` at 0x8f2420 (callgraph, medium); signature (untiered): `undefined vfunc_0_cb5(longlong param_1)`
-pub const CombatBehaviorTreeFlight__vfunc_0_cb5: u64 = 50664;
-/// `CombatBehaviorTreeFlight::vfunc_0_cb6` at 0x8f2490 (callgraph, medium); signature (untiered): `undefined vfunc_0_cb6(longlong param_1)`
-pub const CombatBehaviorTreeFlight__vfunc_0_cb6: u64 = 50666;
-/// `CombatBehaviorTreeFlight::vfunc_0_sub0` at 0x8aecd0 (callgraph, medium); signature (untiered): `CombatBehaviorTreeNode * vfunc_0_sub0(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const CombatBehaviorTreeFlight__vfunc_0_sub0: u64 = 48869;
-/// `CombatBehaviorTreeFlight::vfunc_0_sub1` at 0x8aed60 (callgraph, medium); signature (untiered): `CombatBehaviorTreeNode * vfunc_0_sub1(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const CombatBehaviorTreeFlight__vfunc_0_sub1: u64 = 48870;
-/// `CombatBehaviorTreeHide::vfunc_0` at 0x8a1ce0 (rtti, high); signature (low): `undefined vfunc_0(CombatBehaviorTreeHide * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-pub const CombatBehaviorTreeHide__vfunc_0: u64 = 48567;
-/// `CombatBehaviorTreeLinkNode::vdtor` at 0x874480 (slot_propagation, medium); signature (low): `CombatBehaviorTreeLinkNode * vdtor(CombatBehaviorTreeLinkNode * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-pub const CombatBehaviorTreeLinkNode__vdtor: u64 = 47522;
-/// `CombatBehaviorTreeLinkNode::vfunc_2` at 0x875840 (rtti, high); signature (low): `undefined vfunc_2(CombatBehaviorTreeLinkNode * this, longlong param_1)`
-pub const CombatBehaviorTreeLinkNode__vfunc_2: u64 = 47574;
-/// `CombatBehaviorTreeLinkNode::vfunc_8` at 0x8758b0 (rtti, high); signature (low): `bool vfunc_8(CombatBehaviorTreeLinkNode * this, longlong param_1)`
-pub const CombatBehaviorTreeLinkNode__vfunc_8: u64 = 47575;
-/// `CombatBehaviorTreeLinkNode::vfunc_9` at 0x875900 (rtti, high); signature (low): `undefined * vfunc_9(void)`
-pub const CombatBehaviorTreeLinkNode__vfunc_9: u64 = 47576;
-/// `CombatBehaviorTreeLowCombat::vfunc_0` at 0x8b31d0 (rtti, high); signature (low): `undefined vfunc_0(CombatBehaviorTreeLowCombat * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-pub const CombatBehaviorTreeLowCombat__vfunc_0: u64 = 49049;
-/// `CombatBehaviorTreeMagic::vfunc_0` at 0x8b5bc0 (rtti, high); signature (low): `undefined vfunc_0(CombatBehaviorTreeMagic * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-pub const CombatBehaviorTreeMagic__vfunc_0: u64 = 49112;
-/// `CombatBehaviorTreeMagic::vfunc_0_cb0` at 0x8b4c40 (callgraph, medium); signature (untiered): `float vfunc_0_cb0(undefined8 * param_1)`
-pub const CombatBehaviorTreeMagic__vfunc_0_cb0: u64 = 49095;
-/// `CombatBehaviorTreeMagic::vfunc_0_sub0` at 0x8b65c0 (callgraph, medium); signature (untiered): `CombatBehaviorTreeNode * vfunc_0_sub0(CombatBehaviorTreeNode * param_1, char * param_2, undefined8 * param_3, longlong param_4)`
-pub const CombatBehaviorTreeMagic__vfunc_0_sub0: u64 = 49113;
-/// `CombatBehaviorTreeMagic::vfunc_0_sub1` at 0x8b66f0 (callgraph, medium); signature (untiered): `CombatBehaviorTreeNode * vfunc_0_sub1(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const CombatBehaviorTreeMagic__vfunc_0_sub1: u64 = 49114;
-/// `CombatBehaviorTreeMelee::vfunc_0` at 0x8b9ba0 (rtti, high); signature (low): `undefined vfunc_0(CombatBehaviorTreeMelee * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-pub const CombatBehaviorTreeMelee__vfunc_0: u64 = 49182;
-/// `CombatBehaviorTreeMelee::vfunc_0_cb0` at 0x8f2720 (callgraph, medium); signature (untiered): `float vfunc_0_cb0(longlong param_1, longlong param_2)`
-pub const CombatBehaviorTreeMelee__vfunc_0_cb0: u64 = 50674;
-/// `CombatBehaviorTreeMelee::vfunc_0_cb1` at 0x8f2900 (callgraph, medium); signature (untiered): `undefined vfunc_0_cb1(longlong param_1)`
-pub const CombatBehaviorTreeMelee__vfunc_0_cb1: u64 = 50676;
-/// `CombatBehaviorTreeMovement::vfunc_0` at 0x8c2900 (rtti, high); signature (low): `undefined vfunc_0(CombatBehaviorTreeMovement * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-pub const CombatBehaviorTreeMovement__vfunc_0: u64 = 49436;
-/// `CombatBehaviorTreeMovement::vfunc_0_cb0` at 0x562d30 (callgraph, medium); signature (untiered): `bool vfunc_0_cb0(longlong param_1, longlong param_2)`
-pub const CombatBehaviorTreeMovement__vfunc_0_cb0: u64 = 33257;
-/// `CombatBehaviorTreeMovement::vfunc_0_cb1` at 0x6a6a40 (callgraph, medium); signature (untiered): `byte vfunc_0_cb1(undefined8 * * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const CombatBehaviorTreeMovement__vfunc_0_cb1: u64 = 37833;
-/// `CombatBehaviorTreeMovement::vfunc_0_cb2` at 0x856df0 (callgraph, medium); signature (untiered): `ulonglong vfunc_0_cb2(longlong param_1)`
-pub const CombatBehaviorTreeMovement__vfunc_0_cb2: u64 = 46958;
-/// `CombatBehaviorTreeNode::ctor` at 0x8752f0 (layout_inference, medium); signature (high): `CombatBehaviorTreeNode * ctor(CombatBehaviorTreeNode * this)`
-pub const CombatBehaviorTreeNode__ctor: u64 = 47545;
-/// `CombatBehaviorTreeNode::dtor` at 0x875320 (layout_inference, high); signature (high): `undefined dtor(CombatBehaviorTreeNode * this)`
-pub const CombatBehaviorTreeNode__dtor: u64 = 47546;
-/// `CombatBehaviorTreeNode::dtor` at 0x8788e0 (callgraph, high); signature (untiered): `undefined dtor(CombatBehaviorTreeNode * this)`
-pub const CombatBehaviorTreeNode__dtor_2: u64 = 47602;
-/// `CombatBehaviorTreeNode::vdtor` at 0x875b00 (layout_inference, medium); signature (low): `CombatBehaviorTreeNode * vdtor(CombatBehaviorTreeNode * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-pub const CombatBehaviorTreeNode__vdtor: u64 = 47579;
-/// `CombatBehaviorTreeNode::vfunc_1` at 0x875380 (rtti, medium); signature (high): `undefined8 vfunc_1(CombatBehaviorTreeNode * this)`
-pub const CombatBehaviorTreeNode__vfunc_1: u64 = 47547;
-/// `CombatBehaviorTreeNode::vfunc_2` at 0x875540 (rtti, medium); signature (low): `undefined vfunc_2(void)`
-pub const CombatBehaviorTreeNode__vfunc_2: u64 = 47552;

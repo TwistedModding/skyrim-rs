@@ -3,6 +3,56 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `INISetting_fDriveGain_GrabIK__atexit` at 0x17b4420 (crt_init, medium); signature (high): `void INISetting_fDriveGain_GrabIK__atexit(void)`
+pub const INISetting_fDriveGain_GrabIK__atexit: u64 = 173893;
+/// `INISetting_fDriveGain_GrabIK__init` at 0xebb20 (crt_init, medium); signature (high): `void INISetting_fDriveGain_GrabIK__init(void)`
+pub const INISetting_fDriveGain_GrabIK__init: u64 = 9640;
+/// `INISetting_fDualCastChordTime_Controls__atexit` at 0x179e950 (crt_init, medium); signature (high): `void INISetting_fDualCastChordTime_Controls__atexit(void)`
+pub const INISetting_fDualCastChordTime_Controls__atexit: u64 = 171659;
+/// `INISetting_fDualCastChordTime_Controls__init` at 0xaa3a0 (crt_init, medium); signature (high): `void INISetting_fDualCastChordTime_Controls__init(void)`
+pub const INISetting_fDualCastChordTime_Controls__init: u64 = 6427;
+/// `INISetting_fDynamicDOFBlurMultiplierMax_Display__atexit` at 0x17ad160 (crt_init, medium); signature (high): `void INISetting_fDynamicDOFBlurMultiplierMax_Display__atexit(void)`
+pub const INISetting_fDynamicDOFBlurMultiplierMax_Display__atexit: u64 = 173002;
+/// `INISetting_fDynamicDOFBlurMultiplierMax_Display__init` at 0xc3780 (crt_init, medium); signature (high): `void INISetting_fDynamicDOFBlurMultiplierMax_Display__init(void)`
+pub const INISetting_fDynamicDOFBlurMultiplierMax_Display__init: u64 = 7571;
+/// `INISetting_fDynamicDOFBlurMultiplierMin_Display__atexit` at 0x17ad1b0 (crt_init, medium); signature (high): `void INISetting_fDynamicDOFBlurMultiplierMin_Display__atexit(void)`
+pub const INISetting_fDynamicDOFBlurMultiplierMin_Display__atexit: u64 = 173003;
+/// `INISetting_fDynamicDOFBlurMultiplierMin_Display__init` at 0xc3800 (crt_init, medium); signature (high): `void INISetting_fDynamicDOFBlurMultiplierMin_Display__init(void)`
+pub const INISetting_fDynamicDOFBlurMultiplierMin_Display__init: u64 = 7572;
+/// `INISetting_fDynamicDOFFarBlur_Display__atexit` at 0x17c5de0 (crt_init, medium); signature (high): `void INISetting_fDynamicDOFFarBlur_Display__atexit(void)`
+pub const INISetting_fDynamicDOFFarBlur_Display__atexit: u64 = 174761;
+/// `INISetting_fDynamicDOFFarBlur_Display__init` at 0x1078d0 (crt_init, medium); signature (high): `void INISetting_fDynamicDOFFarBlur_Display__init(void)`
+pub const INISetting_fDynamicDOFFarBlur_Display__init: u64 = 10618;
+/// `INISetting_fDynamicDOFFarDist_Display__atexit` at 0x17c5e30 (crt_init, medium); signature (high): `void INISetting_fDynamicDOFFarDist_Display__atexit(void)`
+pub const INISetting_fDynamicDOFFarDist_Display__atexit: u64 = 174762;
+/// `INISetting_fDynamicDOFFarDist_Display__init` at 0x107950 (crt_init, medium); signature (high): `void INISetting_fDynamicDOFFarDist_Display__init(void)`
+pub const INISetting_fDynamicDOFFarDist_Display__init: u64 = 10619;
+/// `INISetting_fDynamicDOFFarRange_Display__atexit` at 0x17c5e80 (crt_init, medium); signature (high): `void INISetting_fDynamicDOFFarRange_Display__atexit(void)`
+pub const INISetting_fDynamicDOFFarRange_Display__atexit: u64 = 174763;
+/// `INISetting_fDynamicDOFFarRange_Display__init` at 0x1079d0 (crt_init, medium); signature (high): `void INISetting_fDynamicDOFFarRange_Display__init(void)`
+pub const INISetting_fDynamicDOFFarRange_Display__init: u64 = 10620;
+/// `INISetting_fDynamicDOFNearBlur_Display__atexit` at 0x17c5ed0 (crt_init, medium); signature (high): `void INISetting_fDynamicDOFNearBlur_Display__atexit(void)`
+pub const INISetting_fDynamicDOFNearBlur_Display__atexit: u64 = 174764;
+/// `INISetting_fDynamicDOFNearBlur_Display__init` at 0x107a50 (crt_init, medium); signature (high): `void INISetting_fDynamicDOFNearBlur_Display__init(void)`
+pub const INISetting_fDynamicDOFNearBlur_Display__init: u64 = 10621;
+/// `INISetting_fDynamicDOFNearDist_Display__atexit` at 0x17c5f20 (crt_init, medium); signature (high): `void INISetting_fDynamicDOFNearDist_Display__atexit(void)`
+pub const INISetting_fDynamicDOFNearDist_Display__atexit: u64 = 174765;
+/// `INISetting_fDynamicDOFNearDist_Display__init` at 0x107ad0 (crt_init, medium); signature (high): `void INISetting_fDynamicDOFNearDist_Display__init(void)`
+pub const INISetting_fDynamicDOFNearDist_Display__init: u64 = 10622;
+/// `INISetting_fDynamicDOFNearRange_Display__atexit` at 0x17c5f70 (crt_init, medium); signature (high): `void INISetting_fDynamicDOFNearRange_Display__atexit(void)`
+pub const INISetting_fDynamicDOFNearRange_Display__atexit: u64 = 174766;
+/// `INISetting_fDynamicDOFNearRange_Display__init` at 0x107b50 (crt_init, medium); signature (high): `void INISetting_fDynamicDOFNearRange_Display__init(void)`
+pub const INISetting_fDynamicDOFNearRange_Display__init: u64 = 10623;
+/// `INISetting_fEaseAngleShutOff_LookIK__atexit` at 0x17b4470 (crt_init, medium); signature (high): `void INISetting_fEaseAngleShutOff_LookIK__atexit(void)`
+pub const INISetting_fEaseAngleShutOff_LookIK__atexit: u64 = 173894;
+/// `INISetting_fEaseAngleShutOff_LookIK__init` at 0xebba0 (crt_init, medium); signature (high): `void INISetting_fEaseAngleShutOff_LookIK__init(void)`
+pub const INISetting_fEaseAngleShutOff_LookIK__init: u64 = 9641;
+/// `INISetting_fEncumberedReminderTimer_General__atexit` at 0x179bee0 (crt_init, medium); signature (high): `void INISetting_fEncumberedReminderTimer_General__atexit(void)`
+pub const INISetting_fEncumberedReminderTimer_General__atexit: u64 = 171443;
+/// `INISetting_fEncumberedReminderTimer_General__init` at 0xa52b0 (crt_init, medium); signature (high): `void INISetting_fEncumberedReminderTimer_General__init(void)`
+pub const INISetting_fEncumberedReminderTimer_General__init: u64 = 6229;
+/// `INISetting_fEnvmapLODFadeEnd_LightingShader__atexit` at 0x17c19d0 (crt_init, medium); signature (high): `void INISetting_fEnvmapLODFadeEnd_LightingShader__atexit(void)`
+pub const INISetting_fEnvmapLODFadeEnd_LightingShader__atexit: u64 = 174447;
 /// `INISetting_fEnvmapLODFadeEnd_LightingShader__init` at 0x100730 (crt_init, medium); signature (high): `void INISetting_fEnvmapLODFadeEnd_LightingShader__init(void)`
 pub const INISetting_fEnvmapLODFadeEnd_LightingShader__init: u64 = 10284;
 /// `INISetting_fEnvmapLODFadeStart_LightingShader__atexit` at 0x17c1a20 (crt_init, medium); signature (high): `void INISetting_fEnvmapLODFadeStart_LightingShader__atexit(void)`
@@ -8357,53 +8407,3 @@ pub const InvokeStoredFunctionPointer_6: u64 = 441099;
 pub const InvokeStoredFunctionPointer_7: u64 = 523455;
 /// `InvokeStoredFunctionPointer_8` at 0x142c10 (decompiler, medium); signature (untiered): `undefined InvokeStoredFunctionPointer_8(undefined8 * param_1, undefined8 * param_2, undefined4 * param_3, undefined8 param_4, undefined4 * param_5)`
 pub const InvokeStoredFunctionPointer_8: u64 = 523456;
-/// `InvokeStoredFunctionPointer_9` at 0x144ea0 (decompiler, medium); signature (untiered): `undefined InvokeStoredFunctionPointer_9(undefined8 * param_1, undefined8 * param_2, undefined4 * param_3, undefined8 param_4, undefined4 * param_5)`
-pub const InvokeStoredFunctionPointer_9: u64 = 441371;
-/// `InvokeType9Or10EntriesForRef` at 0x785130 (decompiler, medium); signature (untiered): `undefined InvokeType9Or10EntriesForRef(longlong param_1, longlong param_2)`
-pub const InvokeType9Or10EntriesForRef: u64 = 41393;
-/// `InvokeVfunc0IfNotNull` at 0x1388500 (decompiler, high); signature (untiered): `undefined InvokeVfunc0IfNotNull(undefined8 * param_1)`
-pub const InvokeVfunc0IfNotNull: u64 = 449154;
-/// `InvokeVfunc0IfNotNull_2` at 0x13884f0 (decompiler, high); signature (untiered): `undefined InvokeVfunc0IfNotNull_2(undefined8 * param_1)`
-pub const InvokeVfunc0IfNotNull_2: u64 = 449156;
-/// `InvokeVfunc0OnHashMapValues` at 0x8748a0 (decompiler, medium); signature (untiered): `undefined InvokeVfunc0OnHashMapValues(longlong param_1)`
-pub const InvokeVfunc0OnHashMapValues: u64 = 47529;
-/// `InvokeVfunc0OnceUnderLock` at 0x133e500 (decompiler, medium); signature (untiered): `undefined8 InvokeVfunc0OnceUnderLock(longlong * param_1, longlong param_2, longlong param_3, undefined8 param_4)`
-pub const InvokeVfunc0OnceUnderLock: u64 = 448890;
-/// `InvokeVfunc10OnEachInField0Array` at 0xbc3080 (decompiler, medium); signature (untiered): `undefined InvokeVfunc10OnEachInField0Array(undefined8 param_1, longlong * param_2)`
-pub const InvokeVfunc10OnEachInField0Array: u64 = 63391;
-/// `InvokeVfunc10OnEachInField8Array` at 0xbc3030 (decompiler, medium); signature (untiered): `undefined InvokeVfunc10OnEachInField8Array(undefined8 param_1, longlong param_2)`
-pub const InvokeVfunc10OnEachInField8Array: u64 = 63390;
-/// `InvokeVfunc10OnPointerArray38` at 0x1dc0e0 (decompiler, medium); signature (untiered): `undefined InvokeVfunc10OnPointerArray38(longlong * param_1)`
-pub const InvokeVfunc10OnPointerArray38: u64 = 14353;
-/// `InvokeVfunc128OnEntriesInState4` at 0xf52940 (decompiler, medium); signature (untiered): `ulonglong InvokeVfunc128OnEntriesInState4(longlong param_1, undefined4 param_2)`
-pub const InvokeVfunc128OnEntriesInState4: u64 = 72391;
-/// `InvokeVfunc18OnPairedPointerArrays38` at 0x1dc120 (decompiler, medium); signature (untiered): `undefined InvokeVfunc18OnPairedPointerArrays38(longlong param_1, longlong * param_2)`
-pub const InvokeVfunc18OnPairedPointerArrays38: u64 = 14354;
-/// `InvokeVfunc18OnceAndSetFlag` at 0xba87b0 (decompiler, medium); signature (medium): `undefined InvokeVfunc18OnceAndSetFlag(longlong * param_1)`
-pub const InvokeVfunc18OnceAndSetFlag: u64 = 62815;
-/// `InvokeVfunc30OnEach` at 0x44c3e0 (decompiler, medium); signature (untiered): `undefined InvokeVfunc30OnEach(longlong * param_1, undefined4 param_2, undefined4 param_3, undefined4 * param_4)`
-pub const InvokeVfunc30OnEach: u64 = 27438;
-/// `InvokeVfunc50OnListItems` at 0x5bc750 (decompiler, medium); signature (untiered): `undefined InvokeVfunc50OnListItems(undefined8 param_1, longlong * param_2)`
-pub const InvokeVfunc50OnListItems: u64 = 34078;
-/// `InvokeVfunc720OnActorHandle` at 0x8544e0 (decompiler, medium); signature (medium): `undefined InvokeVfunc720OnActorHandle(uint param_1)`
-pub const InvokeVfunc720OnActorHandle: u64 = 46902;
-/// `InvokeVfunc8OnPointerArray38` at 0x1dc0a0 (decompiler, medium); signature (untiered): `undefined InvokeVfunc8OnPointerArray38(longlong * param_1)`
-pub const InvokeVfunc8OnPointerArray38: u64 = 14352;
-/// `InvokeVirtualDestructorIfNotNull` at 0x146b760 (decompiler, medium); signature (untiered): `undefined InvokeVirtualDestructorIfNotNull(undefined8 * param_1)`
-pub const InvokeVirtualDestructorIfNotNull: u64 = 452941;
-/// `InvokeVtableSlot38` at 0x15993c0 (decompiler, high); signature (high): `undefined InvokeVtableSlot38(longlong * param_1)`
-pub const InvokeVtableSlot38: u64 = 109216;
-/// `InvokeWithDereferencedArgs` at 0x11c250 (decompiler, medium); signature (untiered): `undefined InvokeWithDereferencedArgs(undefined8 * param_1, undefined8 * param_2, undefined4 * param_3, undefined8 param_4, undefined4 * param_5)`
-pub const InvokeWithDereferencedArgs: u64 = 523159;
-/// `InvokeWithDereferencedArgs_2` at 0x11c2d0 (decompiler, medium); signature (untiered): `undefined InvokeWithDereferencedArgs_2(undefined8 * param_1, undefined8 * param_2, undefined4 * param_3, undefined8 param_4, undefined4 * param_5)`
-pub const InvokeWithDereferencedArgs_2: u64 = 523160;
-/// `InvokeWithDereferencedArgs_3` at 0x11c3a0 (decompiler, medium); signature (untiered): `undefined InvokeWithDereferencedArgs_3(undefined8 * param_1, undefined8 * param_2, undefined4 * param_3, undefined8 param_4, undefined4 * param_5)`
-pub const InvokeWithDereferencedArgs_3: u64 = 523161;
-/// `InvokeWithDereferencedArgs_4` at 0x11c400 (decompiler, medium); signature (untiered): `undefined InvokeWithDereferencedArgs_4(undefined8 * param_1, undefined8 * param_2, undefined4 * param_3, undefined8 param_4, undefined4 * param_5)`
-pub const InvokeWithDereferencedArgs_4: u64 = 523162;
-/// `InvokeWithThreadEventNotifications` at 0xceb1a0 (decompiler, medium); signature (untiered): `ulonglong InvokeWithThreadEventNotifications(longlong * param_1)`
-pub const InvokeWithThreadEventNotifications: u64 = 68445;
-/// `IronSightsState::Begin` at 0x8f76e0 (semantic, high); signature (untiered): `undefined Begin(IronSightsState * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-pub const IronSightsState__Begin: u64 = 50777;
-/// `IronSightsState::Destroy` at 0x8fc630 (semantic, high); signature (untiered): `IronSightsState * Destroy(IronSightsState * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-pub const IronSightsState__Destroy: u64 = 50871;

@@ -204,6 +204,16 @@ impl crate::BSFlattenedBoneTree {
     pub unsafe fn vfunc_23_sub0(param_1: i64, param_2: *mut i64, param_3: i64, param_4: u64) -> u64 { unsafe { function!(70730, (i64, *mut i64, i64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
 }
 
+impl crate::BSFurnitureMarkerNode {
+    /// `BSFurnitureMarkerNode::Create_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 76649, rva 0xff14a0).
+    /// `undefined Create_sub0(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn create_sub0(param_1: *mut i64, param_2: u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(76649, (*mut i64, u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
+}
+
 impl crate::BeamProjectile {
     /// `BeamProjectile::LoadGame` (decompiler signature, tier untiered; ledger slot_propagation evidence, name medium; id 43751, rva 0x7e0370).
     /// `undefined LoadGame(BeamProjectile * this, TESObjectREFR_vtbl * param_1, undefined8 param_2, TypeDescriptor * param_3)`
@@ -826,6 +836,222 @@ impl crate::MapCameraStates__World {
     pub unsafe fn update(&self) -> u64 { unsafe { function!(53043, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
+impl crate::MountInteraction {
+    /// `MountInteraction::vfunc_14_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 40359, rva 0x73d930).
+    /// `undefined vfunc_14_sub0(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn vfunc_14_sub0(param_1: i64, param_2: u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(40359, (i64, u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
+}
+
+impl crate::MovementControllerNPC {
+    /// `MovementControllerNPC::IMovementDirectControl_vfunc_2_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 41968, rva 0x7a2ec0).
+    /// `undefined IMovementDirectControl_vfunc_2_sub0(longlong param_1, undefined4 * param_2)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn i_movement_direct_control_vfunc_2_sub0(param_1: i64, param_2: *mut u32) -> u64 { unsafe { function!(41968, (i64, *mut u32) -> u64)(param_1, param_2) } }
+    /// `MovementControllerNPC::IMovementDirectControl_vfunc_3_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 41969, rva 0x7a2f40).
+    /// `undefined IMovementDirectControl_vfunc_3_sub0(longlong param_1, undefined4 param_2)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn i_movement_direct_control_vfunc_3_sub0(param_1: i64, param_2: u32) -> u64 { unsafe { function!(41969, (i64, u32) -> u64)(param_1, param_2) } }
+    /// `MovementControllerNPC::IMovementDirectControl_vfunc_4_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 41970, rva 0x7a2fa0).
+    /// `undefined IMovementDirectControl_vfunc_4_sub0(longlong param_1, undefined4 * param_2)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn i_movement_direct_control_vfunc_4_sub0(param_1: i64, param_2: *mut u32) -> u64 { unsafe { function!(41970, (i64, *mut u32) -> u64)(param_1, param_2) } }
+    /// `MovementControllerNPC::IMovementDirectControl_vfunc_5_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 41971, rva 0x7a3020).
+    /// `undefined IMovementDirectControl_vfunc_5_sub0(longlong param_1, float * param_2, float param_3)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn i_movement_direct_control_vfunc_5_sub0(param_1: i64, param_2: *mut f32, param_3: f32) -> u64 { unsafe { function!(41971, (i64, *mut f32, f32) -> u64)(param_1, param_2, param_3) } }
+    /// `MovementControllerNPC::IMovementDirectControl_vfunc_6_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 41972, rva 0x7a3260).
+    /// `undefined IMovementDirectControl_vfunc_6_sub0(longlong param_1, undefined4 param_2, float param_3)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn i_movement_direct_control_vfunc_6_sub0(param_1: i64, param_2: u32, param_3: f32) -> u64 { unsafe { function!(41972, (i64, u32, f32) -> u64)(param_1, param_2, param_3) } }
+    /// `MovementControllerNPC::IMovementDirectControl_vfunc_7_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 41973, rva 0x7a3300).
+    /// `undefined IMovementDirectControl_vfunc_7_sub0(longlong param_1, undefined4 * param_2, float param_3)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn i_movement_direct_control_vfunc_7_sub0(param_1: i64, param_2: *mut u32, param_3: f32) -> u64 { unsafe { function!(41973, (i64, *mut u32, f32) -> u64)(param_1, param_2, param_3) } }
+    /// `MovementControllerNPC::IMovementDirectControl_vfunc_8_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 41974, rva 0x7a33d0).
+    /// `undefined IMovementDirectControl_vfunc_8_sub0(longlong param_1)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn i_movement_direct_control_vfunc_8_sub0(param_1: i64) -> u64 { unsafe { function!(41974, (i64) -> u64)(param_1) } }
+    /// `MovementControllerNPC::IMovementMotionDrivenControl_vfunc_4_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 41736, rva 0x798450).
+    /// `undefined IMovementMotionDrivenControl_vfunc_4_sub0(longlong * param_1)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn i_movement_motion_driven_control_vfunc_4_sub0(param_1: *mut i64) -> u64 { unsafe { function!(41736, (*mut i64) -> u64)(param_1) } }
+    /// `MovementControllerNPC::IMovementMotionDrivenControl_vfunc_4_sub1` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 41739, rva 0x798570).
+    /// `undefined IMovementMotionDrivenControl_vfunc_4_sub1(longlong * param_1)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn i_movement_motion_driven_control_vfunc_4_sub1(param_1: *mut i64) -> u64 { unsafe { function!(41739, (*mut i64) -> u64)(param_1) } }
+    /// `MovementControllerNPC::IMovementMotionDrivenControl_vfunc_4_sub2` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 41740, rva 0x7985d0).
+    /// `undefined IMovementMotionDrivenControl_vfunc_4_sub2(longlong * param_1)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn i_movement_motion_driven_control_vfunc_4_sub2(param_1: *mut i64) -> u64 { unsafe { function!(41740, (*mut i64) -> u64)(param_1) } }
+    /// `MovementControllerNPC::IMovementMotionDrivenControl_vfunc_4_sub3` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 41750, rva 0x798880).
+    /// `undefined IMovementMotionDrivenControl_vfunc_4_sub3(longlong * param_1)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn i_movement_motion_driven_control_vfunc_4_sub3(param_1: *mut i64) -> u64 { unsafe { function!(41750, (*mut i64) -> u64)(param_1) } }
+    /// `MovementControllerNPC::IMovementMotionDrivenControl_vfunc_4_sub4` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 41751, rva 0x798900).
+    /// `undefined IMovementMotionDrivenControl_vfunc_4_sub4(longlong * param_1)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn i_movement_motion_driven_control_vfunc_4_sub4(param_1: *mut i64) -> u64 { unsafe { function!(41751, (*mut i64) -> u64)(param_1) } }
+    /// `MovementControllerNPC::IMovementPlannerDirectControl_vfunc_2_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 42140, rva 0x7a7b30).
+    /// `undefined IMovementPlannerDirectControl_vfunc_2_sub0(longlong param_1, undefined4 * param_2)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn i_movement_planner_direct_control_vfunc_2_sub0(param_1: i64, param_2: *mut u32) -> u64 { unsafe { function!(42140, (i64, *mut u32) -> u64)(param_1, param_2) } }
+    /// `MovementControllerNPC::IMovementPlannerDirectControl_vfunc_3_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 42141, rva 0x7a7b90).
+    /// `undefined IMovementPlannerDirectControl_vfunc_3_sub0(longlong param_1, undefined4 param_2)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn i_movement_planner_direct_control_vfunc_3_sub0(param_1: i64, param_2: u32) -> u64 { unsafe { function!(42141, (i64, u32) -> u64)(param_1, param_2) } }
+    /// `MovementControllerNPC::IMovementPlannerDirectControl_vfunc_4_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 42142, rva 0x7a7bf0).
+    /// `undefined IMovementPlannerDirectControl_vfunc_4_sub0(longlong param_1, undefined4 * param_2)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn i_movement_planner_direct_control_vfunc_4_sub0(param_1: i64, param_2: *mut u32) -> u64 { unsafe { function!(42142, (i64, *mut u32) -> u64)(param_1, param_2) } }
+    /// `MovementControllerNPC::IMovementPlannerDirectControl_vfunc_5_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 42143, rva 0x7a7c50).
+    /// `undefined IMovementPlannerDirectControl_vfunc_5_sub0(longlong param_1)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn i_movement_planner_direct_control_vfunc_5_sub0(param_1: i64) -> u64 { unsafe { function!(42143, (i64) -> u64)(param_1) } }
+    /// `MovementControllerNPC::IMovementSelectIdle_vfunc_1_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 24609, rva 0x3b9a20).
+    /// `undefined1 IMovementSelectIdle_vfunc_1_sub0(longlong param_1, longlong param_2, longlong * param_3, uint param_4)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn i_movement_select_idle_vfunc_1_sub0(param_1: i64, param_2: i64, param_3: *mut i64, param_4: u32) -> u8 { unsafe { function!(24609, (i64, i64, *mut i64, u32) -> u8)(param_1, param_2, param_3, param_4) } }
+    /// `MovementControllerNPC::IMovementSelectIdle_vfunc_1_sub1` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 39614, rva 0x702ee0).
+    /// `undefined IMovementSelectIdle_vfunc_1_sub1(longlong param_1, longlong param_2)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn i_movement_select_idle_vfunc_1_sub1(param_1: i64, param_2: i64) -> u64 { unsafe { function!(39614, (i64, i64) -> u64)(param_1, param_2) } }
+    /// `MovementControllerNPC::ctor_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 41790, rva 0x79a500).
+    /// `undefined ctor_sub0(longlong * param_1)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn ctor_sub0(param_1: *mut i64) -> u64 { unsafe { function!(41790, (*mut i64) -> u64)(param_1) } }
+    /// `MovementControllerNPC::vfunc_18_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 41773, rva 0x799c40).
+    /// `undefined8 vfunc_18_sub0(longlong param_1, int param_2, longlong param_3)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn vfunc_18_sub0(param_1: i64, param_2: i32, param_3: i64) -> u64 { unsafe { function!(41773, (i64, i32, i64) -> u64)(param_1, param_2, param_3) } }
+    /// `MovementControllerNPC::vfunc_18_sub1` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 41777, rva 0x799fe0).
+    /// `undefined vfunc_18_sub1(longlong * param_1)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn vfunc_18_sub1(param_1: *mut i64) -> u64 { unsafe { function!(41777, (*mut i64) -> u64)(param_1) } }
+    /// `MovementControllerNPC::vfunc_18_sub1` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 41780, rva 0x79a080).
+    /// `undefined vfunc_18_sub1(longlong * param_1)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn vfunc_18_sub1_2(param_1: *mut i64) -> u64 { unsafe { function!(41780, (*mut i64) -> u64)(param_1) } }
+    /// `MovementControllerNPC::vfunc_18_sub2` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 41778, rva 0x799ff0).
+    /// `undefined vfunc_18_sub2(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn vfunc_18_sub2(param_1: *mut i64, param_2: u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(41778, (*mut i64, u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
+    /// `MovementControllerNPC::vfunc_18_sub2` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 41782, rva 0x79a180).
+    /// `undefined vfunc_18_sub2(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn vfunc_18_sub2_2(param_1: *mut i64, param_2: u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(41782, (*mut i64, u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
+    /// `MovementControllerNPC::vfunc_19_sub0` (decompiler signature, tier untiered; ledger runtime evidence, name medium; id 41748, rva 0x798820).
+    /// `undefined vfunc_19_sub0(longlong param_1)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn vfunc_19_sub0(param_1: i64) -> u64 { unsafe { function!(41748, (i64) -> u64)(param_1) } }
+    /// `MovementControllerNPC::vfunc_19_sub1` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 41771, rva 0x799760).
+    /// `undefined vfunc_19_sub1(longlong * param_1, longlong * param_2)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn vfunc_19_sub1(param_1: *mut i64, param_2: *mut i64) -> u64 { unsafe { function!(41771, (*mut i64, *mut i64) -> u64)(param_1, param_2) } }
+    /// `MovementControllerNPC::vfunc_19_sub2` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 41772, rva 0x7999d0).
+    /// `undefined vfunc_19_sub2(longlong * param_1, longlong * param_2)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn vfunc_19_sub2(param_1: *mut i64, param_2: *mut i64) -> u64 { unsafe { function!(41772, (*mut i64, *mut i64) -> u64)(param_1, param_2) } }
+    /// `MovementControllerNPC::vfunc_19_sub3` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 41826, rva 0x79af60).
+    /// `undefined8 vfunc_19_sub3(longlong * param_1, longlong * param_2, undefined8 param_3, undefined8 param_4)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn vfunc_19_sub3(param_1: *mut i64, param_2: *mut i64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(41826, (*mut i64, *mut i64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
+    /// `MovementControllerNPC::vfunc_19_sub4` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 41827, rva 0x79b0c0).
+    /// `undefined8 vfunc_19_sub4(longlong * param_1, longlong * param_2, undefined8 param_3, undefined8 param_4)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn vfunc_19_sub4(param_1: *mut i64, param_2: *mut i64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(41827, (*mut i64, *mut i64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
+}
+
 impl crate::PlayerCamera {
     /// `PlayerCamera::Destroy` (decompiler signature, tier untiered; ledger semantic evidence, name high; id 50872, rva 0x8fc670).
     /// `PlayerCamera * Destroy(PlayerCamera * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
@@ -950,6 +1176,117 @@ impl crate::ShaderReferenceEffect {
     pub unsafe fn vfunc_62_sub0(param_1: i64, param_2: *mut i64) -> u64 { unsafe { function!(36965, (i64, *mut i64) -> u64)(param_1, param_2) } }
 }
 
+impl crate::StatsMenu {
+    /// `StatsMenu::MenuEventHandler_vfunc_7_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 52585, rva 0x981f00).
+    /// `undefined MenuEventHandler_vfunc_7_sub0(longlong param_1)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn menu_event_handler_vfunc_7_sub0(param_1: i64) -> u64 { unsafe { function!(52585, (i64) -> u64)(param_1) } }
+    /// `StatsMenu::PostDisplay` (decompiler signature, tier untiered; ledger semantic evidence, name high; id 52511, rva 0x977fd0).
+    /// `undefined PostDisplay(StatsMenu * this)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn post_display(&self) -> u64 { unsafe { function!(52511, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    /// `StatsMenu::ProcessMessage` (decompiler signature, tier untiered; ledger runtime evidence, name high; id 52510, rva 0x976a50).
+    /// `longlong * ProcessMessage(StatsMenu * this, longlong param_1, char * param_2, longlong * param_3)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn process_message(&self, param_1: i64, param_2: *mut c_char, param_3: *mut i64) -> *mut i64 { unsafe { function!(52510, (*const Self, i64, *mut c_char, *mut i64) -> *mut i64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    /// `StatsMenu::ctor_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 52547, rva 0x97ff20).
+    /// `undefined ctor_sub0(longlong param_1)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn ctor_sub0(param_1: i64) -> u64 { unsafe { function!(52547, (i64) -> u64)(param_1) } }
+    /// `StatsMenu::ctor_sub2` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 52571, rva 0x981c50).
+    /// `undefined ctor_sub2(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn ctor_sub2(param_1: *mut i64, param_2: u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(52571, (*mut i64, u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
+    /// `StatsMenu::ctor_sub3` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 52577, rva 0x981dc0).
+    /// `undefined ctor_sub3(longlong * param_1)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn ctor_sub3(param_1: *mut i64) -> u64 { unsafe { function!(52577, (*mut i64) -> u64)(param_1) } }
+    /// `StatsMenu::ctor_sub4` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 82326, rva 0x1170220).
+    /// `undefined ctor_sub4(undefined8 param_1, longlong * param_2, longlong param_3, undefined8 param_4, undefined8 param_5, undefined4 param_6, float param_7)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn ctor_sub4(param_1: u64, param_2: *mut i64, param_3: i64, param_4: u64, param_5: u64, param_6: u32, param_7: f32) -> u64 { unsafe { function!(82326, (u64, *mut i64, i64, u64, u64, u32, f32) -> u64)(param_1, param_2, param_3, param_4, param_5, param_6, param_7) } }
+    /// `StatsMenu::vfunc_4_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 51916, rva 0x94ac40).
+    /// `undefined vfunc_4_sub0(void)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn vfunc_4_sub0() -> u64 { unsafe { function!(51916, () -> u64)() } }
+    /// `StatsMenu::vfunc_4_sub2` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 52536, rva 0x97da30).
+    /// `undefined vfunc_4_sub2(longlong param_1)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn vfunc_4_sub2(param_1: i64) -> u64 { unsafe { function!(52536, (i64) -> u64)(param_1) } }
+    /// `StatsMenu::vfunc_4_sub3` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 52539, rva 0x97e8b0).
+    /// `undefined vfunc_4_sub3(longlong param_1, undefined4 * param_2, undefined8 * param_3, longlong * param_4)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn vfunc_4_sub3(param_1: i64, param_2: *mut u32, param_3: *mut u64, param_4: *mut i64) -> u64 { unsafe { function!(52539, (i64, *mut u32, *mut u64, *mut i64) -> u64)(param_1, param_2, param_3, param_4) } }
+    /// `StatsMenu::vfunc_4_sub4` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 52540, rva 0x97eef0).
+    /// `undefined vfunc_4_sub4(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn vfunc_4_sub4(param_1: i64, param_2: u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(52540, (i64, u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
+    /// `StatsMenu::vfunc_4_sub5` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 52588, rva 0x982060).
+    /// `longlong * vfunc_4_sub5(longlong * param_1, longlong * param_2)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn vfunc_4_sub5(param_1: *mut i64, param_2: *mut i64) -> *mut i64 { unsafe { function!(52588, (*mut i64, *mut i64) -> *mut i64)(param_1, param_2) } }
+}
+
+impl crate::StealthMeter {
+    /// `StealthMeter::ProcessMessage` (decompiler signature, tier untiered; ledger semantic evidence, name high; id 51683, rva 0x93a700).
+    /// `undefined8 ProcessMessage(StealthMeter * this, longlong param_1)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn process_message(&self, param_1: i64) -> u64 { unsafe { function!(51683, (*const Self, i64) -> u64)(core::ptr::from_ref(self), param_1) } }
+    /// `StealthMeter::RegisterHUDComponent` (decompiler signature, tier untiered; ledger semantic evidence, name high; id 51682, rva 0x93a680).
+    /// `undefined RegisterHUDComponent(StealthMeter * this, longlong param_1)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn register_hud_component(&self, param_1: i64) -> u64 { unsafe { function!(51682, (*const Self, i64) -> u64)(core::ptr::from_ref(self), param_1) } }
+    /// `StealthMeter::vfunc_1_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 40594, rva 0x756ab0).
+    /// `undefined vfunc_1_sub0(longlong * param_1, char param_2)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn vfunc_1_sub0(param_1: *mut i64, param_2: c_char) -> u64 { unsafe { function!(40594, (*mut i64, c_char) -> u64)(param_1, param_2) } }
+}
+
 impl crate::TESFurniture {
     /// `TESFurniture::vfunc_19_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 17428, rva 0x26fc90).
     /// `undefined vfunc_19_sub0(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
@@ -958,13 +1295,6 @@ impl crate::TESFurniture {
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
     pub unsafe fn vfunc_19_sub0(param_1: i64, param_2: u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(17428, (i64, u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
-    /// `TESFurniture::vfunc_55_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 17410, rva 0x26ebd0).
-    /// `ulonglong vfunc_55_sub0(uint param_1, longlong param_2)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn vfunc_55_sub0(param_1: u32, param_2: i64) -> u64 { unsafe { function!(17410, (u32, i64) -> u64)(param_1, param_2) } }
     /// `TESFurniture::vfunc_55_sub1` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 40486, rva 0x749750).
     /// `undefined8 vfunc_55_sub1(longlong * param_1, longlong param_2, longlong param_3, undefined8 param_4)`
     ///

@@ -6191,13 +6191,6 @@ pub unsafe fn get_form_type_by_editor_id(param_1: u64, param_2: *mut c_char, par
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn get_form_type_category(param_1: *mut i64) -> c_char { unsafe { function!(29622, (*mut i64) -> c_char)(param_1) } }
-/// `GetFormValue` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 14978, rva 0x1f3560).
-/// `int GetFormValue(undefined8 param_1)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn get_form_value(param_1: u64) -> i32 { unsafe { function!(14978, (u64) -> i32)(param_1) } }
 /// `GetFormatBitsPerPixel` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 77537, rva 0x101f150).
 /// `undefined8 GetFormatBitsPerPixel(undefined4 param_1)`
 ///
@@ -6674,13 +6667,6 @@ pub unsafe fn get_min_quad_vertex_height(param_1: i64, param_2: i32) -> u64 { un
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn get_month_index(param_1: *mut u16) -> i16 { unsafe { function!(15838, (*mut u16) -> i16)(param_1) } }
-/// `GetMountInteractionRefHandle` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 38701, rva 0x6d31f0).
-/// `undefined4 * GetMountInteractionRefHandle(longlong param_1, undefined4 * param_2, undefined8 param_3, undefined8 param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn get_mount_interaction_ref_handle(param_1: i64, param_2: *mut u32, param_3: u64, param_4: u64) -> *mut u32 { unsafe { function!(38701, (i64, *mut u32, u64, u64) -> *mut u32)(param_1, param_2, param_3, param_4) } }
 /// `GetNextOccupiedIndex` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 57765, rva 0xab59e0).
 /// `longlong GetNextOccupiedIndex(longlong * param_1, int param_2)`
 ///
@@ -14150,3 +14136,17 @@ pub unsafe fn open_slot_at_stride4(param_1: *mut i64, param_2: u32) -> u64 { uns
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn open_text_gap_and_shift_runs(param_1: *mut i64, param_2: i64, param_3: i64, param_4: i64) -> i64 { unsafe { function!(88412, (*mut i64, i64, i64, i64) -> i64)(param_1, param_2, param_3, param_4) } }
+/// `OpenWideCharGapAt` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 88413, rva 0xe3df90).
+/// `longlong OpenWideCharGapAt(longlong * param_1, longlong param_2, longlong param_3, longlong param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn open_wide_char_gap_at(param_1: *mut i64, param_2: i64, param_3: i64, param_4: i64) -> i64 { unsafe { function!(88413, (*mut i64, i64, i64, i64) -> i64)(param_1, param_2, param_3, param_4) } }
+/// `OperatorDelete` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 109588, rva 0x15a743c).
+/// `undefined OperatorDelete(void * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn operator_delete(param_1: *mut c_void, param_2: u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(109588, (*mut c_void, u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }

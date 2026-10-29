@@ -3,6 +3,22 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `AutoRegisterCreator<CombatPathT<CombatPathRequestOrbit,CombatPathDestinationLocation>,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_>::vdtor` at 0x8e9e40 (layout_inference, medium); signature (low): `AutoRegisterCreator<CombatPathT<CombatPathRequestOrbit,CombatPathDestinationLocation>,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_> * vdtor(AutoRegisterCreator<CombatPathT<CombatPathRequestOrbit,CombatPathDestinationLocation>,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const AutoRegisterCreator_CombatPathT_CombatPathRequestOrbit_CombatPathDestinationLocation_BSTCreateFa_d8780a414c69: u64 = 50307;
+/// `AutoRegisterCreator<CombatPathT<CombatPathRequestRotatePath,CombatPathDestinationLocation>,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_>::vdtor` at 0x8e98c0 (layout_inference, medium); signature (low): `AutoRegisterCreator<CombatPathT<CombatPathRequestRotatePath,CombatPathDestinationLocation>,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_> * vdtor(AutoRegisterCreator<CombatPathT<CombatPathRequestRotatePath,CombatPathDestinationLocation>,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const AutoRegisterCreator_CombatPathT_CombatPathRequestRotatePath_CombatPathDestinationLocation_BSTCre_df113ae0f089: u64 = 50289;
+/// `AutoRegisterCreator<CombatPathT<CombatPathRequestStandard,CombatPathDestinationLocation>,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_>::vdtor` at 0x8e8d30 (layout_inference, medium); signature (low): `AutoRegisterCreator<CombatPathT<CombatPathRequestStandard,CombatPathDestinationLocation>,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_> * vdtor(AutoRegisterCreator<CombatPathT<CombatPathRequestStandard,CombatPathDestinationLocation>,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const AutoRegisterCreator_CombatPathT_CombatPathRequestStandard_CombatPathDestinationLocation_BSTCreat_2f585288f1d1: u64 = 50247;
+/// `AutoRegisterCreator<CombatPathT<CombatPathRequestStandard,CombatPathDestinationRef>,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_>::vdtor` at 0x8e8ee0 (layout_inference, medium); signature (low): `AutoRegisterCreator<CombatPathT<CombatPathRequestStandard,CombatPathDestinationRef>,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_> * vdtor(AutoRegisterCreator<CombatPathT<CombatPathRequestStandard,CombatPathDestinationRef>,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const AutoRegisterCreator_CombatPathT_CombatPathRequestStandard_CombatPathDestinationRef_BSTCreateFact_81d3c9558b18: u64 = 50253;
+/// `AutoRegisterCreator<CombatPathT<CombatPathRequestStraightPath,CombatPathDestinationLocation>,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_>::vdtor` at 0x8e9710 (layout_inference, medium); signature (low): `AutoRegisterCreator<CombatPathT<CombatPathRequestStraightPath,CombatPathDestinationLocation>,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_> * vdtor(AutoRegisterCreator<CombatPathT<CombatPathRequestStraightPath,CombatPathDestinationLocation>,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const AutoRegisterCreator_CombatPathT_CombatPathRequestStraightPath_CombatPathDestinationLocation_BSTC_6ebcc798c940: u64 = 50283;
+/// `AutoRegisterCreator<CombatPathT<CombatPathRequestWeightedMultiGoal,CombatPathDestinationLocations>,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_>::vdtor` at 0x8e93d0 (layout_inference, medium); signature (low): `AutoRegisterCreator<CombatPathT<CombatPathRequestWeightedMultiGoal,CombatPathDestinationLocations>,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_> * vdtor(AutoRegisterCreator<CombatPathT<CombatPathRequestWeightedMultiGoal,CombatPathDestinationLocations>,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const AutoRegisterCreator_CombatPathT_CombatPathRequestWeightedMultiGoal_CombatPathDestinationLocation_d8c27dd501b4: u64 = 50271;
+/// `AutoRegisterCreator<CombatPathT<CombatPathRequestWeightedMultiGoal,CombatPathDestinationRefs>,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_>::vdtor` at 0x8e9560 (layout_inference, medium); signature (low): `AutoRegisterCreator<CombatPathT<CombatPathRequestWeightedMultiGoal,CombatPathDestinationRefs>,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_> * vdtor(AutoRegisterCreator<CombatPathT<CombatPathRequestWeightedMultiGoal,CombatPathDestinationRefs>,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const AutoRegisterCreator_CombatPathT_CombatPathRequestWeightedMultiGoal_CombatPathDestinationRefs_BST_98048684a4fe: u64 = 50277;
+/// `AutoRegisterCreator<CombatPathingDebugData,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_>::vdtor` at 0x8e6970 (layout_inference, medium); signature (low): `AutoRegisterCreator<CombatPathingDebugData,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_> * vdtor(AutoRegisterCreator<CombatPathingDebugData,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const AutoRegisterCreator_CombatPathingDebugData_BSTCreateFactoryManager_unsigned_int_CombatObject_256____vdtor: u64 = 50192;
 /// `AutoRegisterCreator<CombatPathingRequestAdapter,BSTSmartPointerPathingFactoryManager<BSPathingRequest,64>_>::vdtor` at 0x8e4920 (layout_inference, medium); signature (low): `AutoRegisterCreator<CombatPathingRequestAdapter,BSTSmartPointerPathingFactoryManager<BSPathingRequest,64>_> * vdtor(AutoRegisterCreator<CombatPathingRequestAdapter,BSTSmartPointerPathingFactoryManager<BSPathingRequest,64>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const AutoRegisterCreator_CombatPathingRequestAdapter_BSTSmartPointerPathingFactoryManager_BSPathingRequest_64____vdtor: u64 = 50141;
 /// `AutoRegisterCreator<CombatPathingRequestGeneric<CombatPathingGoalPolicyExitWater,CombatPathingSearchPolicyStandard>,BSTSmartPointerPathingFactoryManager<BSPathingRequest,64>_>::vdtor` at 0x8bdc90 (layout_inference, medium); signature (low): `AutoRegisterCreator<CombatPathingRequestGeneric<CombatPathingGoalPolicyExitWater,CombatPathingSearchPolicyStandard>,BSTSmartPointerPathingFactoryManager<BSPathingRequest,64>_> * vdtor(AutoRegisterCreator<CombatPathingRequestGeneric<CombatPathingGoalPolicyExitWater,CombatPathingSearchPolicyStandard>,BSTSmartPointerPathingFactoryManager<BSPathingRequest,64>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
@@ -5131,51 +5147,3 @@ pub const BGSProcedureUseIdleMarkerExecState__vfunc_1: u64 = 29312;
 pub const BGSProcedureUseIdleMarkerExecState__vfunc_2: u64 = 29313;
 /// `BGSProcedureUseIdleMarkerExecState::vfunc_6` at 0x48d9d0 (rtti, high); signature (low): `undefined vfunc_6(BGSProcedureUseIdleMarkerExecState * this, longlong param_1)`
 pub const BGSProcedureUseIdleMarkerExecState__vfunc_6: u64 = 29314;
-/// `BGSProcedureUseIdleMarkerExecState::vfunc_7` at 0x48db30 (rtti, high); signature (low): `undefined vfunc_7(BGSProcedureUseIdleMarkerExecState * this, longlong param_1)`
-pub const BGSProcedureUseIdleMarkerExecState__vfunc_7: u64 = 29315;
-/// `BGSProcedureUseIdleMarkerExecState::vfunc_8` at 0x48dce0 (rtti, high); signature (low): `undefined vfunc_8(void)`
-pub const BGSProcedureUseIdleMarkerExecState__vfunc_8: u64 = 29316;
-/// `BGSProcedureUseMagic::vdtor` at 0x490fe0 (layout_inference, medium); signature (low): `BGSProcedureUseMagic * vdtor(BGSProcedureUseMagic * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const BGSProcedureUseMagic__vdtor: u64 = 29366;
-/// `BGSProcedureUseMagic::vfunc_10` at 0x48ef20 (rtti, high); signature (low): `undefined vfunc_10(BGSProcedureUseMagic * this, longlong param_1, longlong param_2)`
-pub const BGSProcedureUseMagic__vfunc_10: u64 = 29343;
-/// `BGSProcedureUseMagic::vfunc_12` at 0x48efa0 (rtti, high); signature (low): `undefined vfunc_12(BGSProcedureUseMagic * this, undefined8 * param_1)`
-pub const BGSProcedureUseMagic__vfunc_12: u64 = 29344;
-/// `BGSProcedureUseMagic::vfunc_12_sub0` at 0x48f1d0 (callgraph, medium); signature (untiered): `undefined vfunc_12_sub0(longlong * param_1, IMAGE_DOS_HEADER * param_2, IMAGE_DOS_HEADER * param_3, IMAGE_DOS_HEADER * param_4)`
-pub const BGSProcedureUseMagic__vfunc_12_sub0: u64 = 29346;
-/// `BGSProcedureUseMagic::vfunc_17` at 0x48ede0 (rtti, high); signature (low): `undefined8 vfunc_17(void)`
-pub const BGSProcedureUseMagic__vfunc_17: u64 = 29341;
-/// `BGSProcedureUseMagic::vfunc_9` at 0x48edf0 (rtti, high); signature (low): `undefined vfunc_9(BGSProcedureUseMagic * this, longlong * param_1)`
-pub const BGSProcedureUseMagic__vfunc_9: u64 = 29342;
-/// `BGSProcedureUseMagicExecState::BSTEventSink_TESSpellCastEvent_vdtor` at 0x490ed0 (slot_propagation, medium); signature (high): `undefined BSTEventSink_TESSpellCastEvent_vdtor(BGSProcedureUseMagicExecState * this)`
-pub const BGSProcedureUseMagicExecState__BSTEventSink_TESSpellCastEvent_vdtor: u64 = 29360;
-/// `BGSProcedureUseMagicExecState::BSTEventSink_TESSpellCastEvent_vfunc_1` at 0x490620 (rtti, high); signature (low): `undefined8 BSTEventSink_TESSpellCastEvent_vfunc_1(BGSProcedureUseMagicExecState * this, longlong * param_1)`
-pub const BGSProcedureUseMagicExecState__BSTEventSink_TESSpellCastEvent_vfunc_1: u64 = 29350;
-/// `BGSProcedureUseMagicExecState::ctor` at 0x490420 (layout_inference, medium); signature (high): `BGSProcedureUseMagicExecState * ctor(BGSProcedureUseMagicExecState * this)`
-pub const BGSProcedureUseMagicExecState__ctor: u64 = 29348;
-/// `BGSProcedureUseMagicExecState::dtor` at 0x4904d0 (layout_inference, high); signature (high): `undefined dtor(BGSProcedureUseMagicExecState * this)`
-pub const BGSProcedureUseMagicExecState__dtor: u64 = 29349;
-/// `BGSProcedureUseMagicExecState::vdtor` at 0x491020 (slot_propagation, medium); signature (low): `BGSProcedureUseMagicExecState * vdtor(BGSProcedureUseMagicExecState * this, ulonglong param_1, longlong param_2, undefined8 param_3)`
-pub const BGSProcedureUseMagicExecState__vdtor: u64 = 29367;
-/// `BGSProcedureUseMagicExecState::vfunc_1` at 0x4906c0 (rtti, high); signature (low): `undefined vfunc_1(BGSProcedureUseMagicExecState * this, undefined8 * param_1, undefined8 param_2, undefined8 param_3)`
-pub const BGSProcedureUseMagicExecState__vfunc_1: u64 = 29351;
-/// `BGSProcedureUseMagicExecState::vfunc_2` at 0x490770 (rtti, high); signature (high): `undefined vfunc_2(BGSProcedureUseMagicExecState * this)`
-pub const BGSProcedureUseMagicExecState__vfunc_2: u64 = 29352;
-/// `BGSProcedureUseMagicExecState::vfunc_6` at 0x490860 (rtti, high); signature (low): `undefined vfunc_6(BGSProcedureUseMagicExecState * this, longlong param_1)`
-pub const BGSProcedureUseMagicExecState__vfunc_6: u64 = 29353;
-/// `BGSProcedureUseMagicExecState::vfunc_7` at 0x490a60 (rtti, high); signature (low): `undefined vfunc_7(BGSProcedureUseMagicExecState * this, longlong * param_1, undefined8 param_2)`
-pub const BGSProcedureUseMagicExecState__vfunc_7: u64 = 29354;
-/// `BGSProcedureUseMagicExecState::vfunc_8` at 0x490da0 (rtti, high); signature (low): `undefined vfunc_8(void)`
-pub const BGSProcedureUseMagicExecState__vfunc_8: u64 = 29355;
-/// `BGSProcedureUseWeapon::vdtor` at 0x4941f0 (layout_inference, medium); signature (low): `BGSProcedureUseWeapon * vdtor(BGSProcedureUseWeapon * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const BGSProcedureUseWeapon__vdtor: u64 = 29401;
-/// `BGSProcedureUseWeapon::vfunc_10` at 0x4916f0 (rtti, high); signature (low): `undefined vfunc_10(BGSProcedureUseWeapon * this, longlong param_1, longlong param_2)`
-pub const BGSProcedureUseWeapon__vfunc_10: u64 = 29380;
-/// `BGSProcedureUseWeapon::vfunc_12` at 0x491770 (rtti, high); signature (low): `undefined vfunc_12(BGSProcedureUseWeapon * this, undefined8 * param_1)`
-pub const BGSProcedureUseWeapon__vfunc_12: u64 = 29381;
-/// `BGSProcedureUseWeapon::vfunc_12_sub0` at 0x491990 (callgraph, medium); signature (untiered): `undefined vfunc_12_sub0(longlong * param_1, longlong * param_2, undefined8 param_3, longlong param_4)`
-pub const BGSProcedureUseWeapon__vfunc_12_sub0: u64 = 29383;
-/// `BGSProcedureUseWeapon::vfunc_17` at 0x491390 (rtti, high); signature (low): `undefined8 vfunc_17(void)`
-pub const BGSProcedureUseWeapon__vfunc_17: u64 = 29378;
-/// `BGSProcedureUseWeapon::vfunc_9` at 0x4913a0 (rtti, high); signature (low): `undefined vfunc_9(BGSProcedureUseWeapon * this, longlong * param_1)`
-pub const BGSProcedureUseWeapon__vfunc_9: u64 = 29379;

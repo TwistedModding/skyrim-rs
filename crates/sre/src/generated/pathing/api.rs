@@ -117,12 +117,6 @@ impl core::ops::Deref for crate::MovementControllerAI {
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
-/// `MovementControllerNPC` is laid out from its primary base `MovementControllerAI`, so its methods and fields are reachable through it.
-impl core::ops::Deref for crate::MovementControllerNPC {
-    type Target = crate::MovementControllerAI;
-    #[inline]
-    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
-}
 /// `MovementControllerNullDataTracker` is laid out from its primary base `IMovementControllerDataTracker`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::MovementControllerNullDataTracker {
     type Target = crate::IMovementControllerDataTracker;
@@ -811,42 +805,6 @@ impl crate::MovementAgentPathFollowerVirtual {
     /// The `IPipelineStageInterface` base at +0x20.
     #[inline]
     pub fn as_i_pipeline_stage_interface_2(&self) -> &crate::IPipelineStageInterface { unsafe { &*core::ptr::from_ref(self).byte_add(0x20).cast() } }
-}
-
-impl crate::MovementControllerNPC {
-    /// The `IAnimationSetCallbackFunctor` base at +0x148.
-    #[inline]
-    pub fn as_i_animation_set_callback_functor(&self) -> &crate::IAnimationSetCallbackFunctor { unsafe { &*core::ptr::from_ref(self).byte_add(0x148).cast() } }
-    /// The `IMovementDirectControl` base at +0x138.
-    #[inline]
-    pub fn as_i_movement_direct_control(&self) -> &crate::IMovementDirectControl { unsafe { &*core::ptr::from_ref(self).byte_add(0x138).cast() } }
-    /// The `IMovementInterface` base at +0x120.
-    #[inline]
-    pub fn as_i_movement_interface(&self) -> &crate::IMovementInterface { unsafe { &*core::ptr::from_ref(self).byte_add(0x120).cast() } }
-    /// The `IMovementInterface` base at +0x128.
-    #[inline]
-    pub fn as_i_movement_interface_2(&self) -> &crate::IMovementInterface { unsafe { &*core::ptr::from_ref(self).byte_add(0x128).cast() } }
-    /// The `IMovementInterface` base at +0x130.
-    #[inline]
-    pub fn as_i_movement_interface_3(&self) -> &crate::IMovementInterface { unsafe { &*core::ptr::from_ref(self).byte_add(0x130).cast() } }
-    /// The `IMovementInterface` base at +0x138.
-    #[inline]
-    pub fn as_i_movement_interface_4(&self) -> &crate::IMovementInterface { unsafe { &*core::ptr::from_ref(self).byte_add(0x138).cast() } }
-    /// The `IMovementInterface` base at +0x140.
-    #[inline]
-    pub fn as_i_movement_interface_5(&self) -> &crate::IMovementInterface { unsafe { &*core::ptr::from_ref(self).byte_add(0x140).cast() } }
-    /// The `IMovementMessageInterface` base at +0x120.
-    #[inline]
-    pub fn as_i_movement_message_interface(&self) -> &crate::IMovementMessageInterface { unsafe { &*core::ptr::from_ref(self).byte_add(0x120).cast() } }
-    /// The `IMovementMotionDrivenControl` base at +0x128.
-    #[inline]
-    pub fn as_i_movement_motion_driven_control(&self) -> &crate::IMovementMotionDrivenControl { unsafe { &*core::ptr::from_ref(self).byte_add(0x128).cast() } }
-    /// The `IMovementPlannerDirectControl` base at +0x140.
-    #[inline]
-    pub fn as_i_movement_planner_direct_control(&self) -> &crate::IMovementPlannerDirectControl { unsafe { &*core::ptr::from_ref(self).byte_add(0x140).cast() } }
-    /// The `IMovementSelectIdle` base at +0x130.
-    #[inline]
-    pub fn as_i_movement_select_idle(&self) -> &crate::IMovementSelectIdle { unsafe { &*core::ptr::from_ref(self).byte_add(0x130).cast() } }
 }
 
 impl crate::MovementHandlerAgent {

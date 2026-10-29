@@ -3,6 +3,60 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `CombatBehaviorTreeFlight::vfunc_0_cb5` at 0x8f2420 (callgraph, medium); signature (untiered): `undefined vfunc_0_cb5(longlong param_1)`
+pub const CombatBehaviorTreeFlight__vfunc_0_cb5: u64 = 50664;
+/// `CombatBehaviorTreeFlight::vfunc_0_cb6` at 0x8f2490 (callgraph, medium); signature (untiered): `undefined vfunc_0_cb6(longlong param_1)`
+pub const CombatBehaviorTreeFlight__vfunc_0_cb6: u64 = 50666;
+/// `CombatBehaviorTreeFlight::vfunc_0_sub0` at 0x8aecd0 (callgraph, medium); signature (untiered): `CombatBehaviorTreeNode * vfunc_0_sub0(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const CombatBehaviorTreeFlight__vfunc_0_sub0: u64 = 48869;
+/// `CombatBehaviorTreeFlight::vfunc_0_sub1` at 0x8aed60 (callgraph, medium); signature (untiered): `CombatBehaviorTreeNode * vfunc_0_sub1(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const CombatBehaviorTreeFlight__vfunc_0_sub1: u64 = 48870;
+/// `CombatBehaviorTreeHide::vfunc_0` at 0x8a1ce0 (rtti, high); signature (low): `undefined vfunc_0(CombatBehaviorTreeHide * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+pub const CombatBehaviorTreeHide__vfunc_0: u64 = 48567;
+/// `CombatBehaviorTreeLinkNode::vdtor` at 0x874480 (slot_propagation, medium); signature (low): `CombatBehaviorTreeLinkNode * vdtor(CombatBehaviorTreeLinkNode * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+pub const CombatBehaviorTreeLinkNode__vdtor: u64 = 47522;
+/// `CombatBehaviorTreeLinkNode::vfunc_2` at 0x875840 (rtti, high); signature (low): `undefined vfunc_2(CombatBehaviorTreeLinkNode * this, longlong param_1)`
+pub const CombatBehaviorTreeLinkNode__vfunc_2: u64 = 47574;
+/// `CombatBehaviorTreeLinkNode::vfunc_8` at 0x8758b0 (rtti, high); signature (low): `bool vfunc_8(CombatBehaviorTreeLinkNode * this, longlong param_1)`
+pub const CombatBehaviorTreeLinkNode__vfunc_8: u64 = 47575;
+/// `CombatBehaviorTreeLinkNode::vfunc_9` at 0x875900 (rtti, high); signature (low): `undefined * vfunc_9(void)`
+pub const CombatBehaviorTreeLinkNode__vfunc_9: u64 = 47576;
+/// `CombatBehaviorTreeLowCombat::vfunc_0` at 0x8b31d0 (rtti, high); signature (low): `undefined vfunc_0(CombatBehaviorTreeLowCombat * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+pub const CombatBehaviorTreeLowCombat__vfunc_0: u64 = 49049;
+/// `CombatBehaviorTreeMagic::vfunc_0` at 0x8b5bc0 (rtti, high); signature (low): `undefined vfunc_0(CombatBehaviorTreeMagic * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+pub const CombatBehaviorTreeMagic__vfunc_0: u64 = 49112;
+/// `CombatBehaviorTreeMagic::vfunc_0_cb0` at 0x8b4c40 (callgraph, medium); signature (untiered): `float vfunc_0_cb0(undefined8 * param_1)`
+pub const CombatBehaviorTreeMagic__vfunc_0_cb0: u64 = 49095;
+/// `CombatBehaviorTreeMagic::vfunc_0_sub0` at 0x8b65c0 (callgraph, medium); signature (untiered): `CombatBehaviorTreeNode * vfunc_0_sub0(CombatBehaviorTreeNode * param_1, char * param_2, undefined8 * param_3, longlong param_4)`
+pub const CombatBehaviorTreeMagic__vfunc_0_sub0: u64 = 49113;
+/// `CombatBehaviorTreeMagic::vfunc_0_sub1` at 0x8b66f0 (callgraph, medium); signature (untiered): `CombatBehaviorTreeNode * vfunc_0_sub1(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const CombatBehaviorTreeMagic__vfunc_0_sub1: u64 = 49114;
+/// `CombatBehaviorTreeMelee::vfunc_0` at 0x8b9ba0 (rtti, high); signature (low): `undefined vfunc_0(CombatBehaviorTreeMelee * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+pub const CombatBehaviorTreeMelee__vfunc_0: u64 = 49182;
+/// `CombatBehaviorTreeMelee::vfunc_0_cb0` at 0x8f2720 (callgraph, medium); signature (untiered): `float vfunc_0_cb0(longlong param_1, longlong param_2)`
+pub const CombatBehaviorTreeMelee__vfunc_0_cb0: u64 = 50674;
+/// `CombatBehaviorTreeMelee::vfunc_0_cb1` at 0x8f2900 (callgraph, medium); signature (untiered): `undefined vfunc_0_cb1(longlong param_1)`
+pub const CombatBehaviorTreeMelee__vfunc_0_cb1: u64 = 50676;
+/// `CombatBehaviorTreeMovement::vfunc_0` at 0x8c2900 (rtti, high); signature (low): `undefined vfunc_0(CombatBehaviorTreeMovement * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+pub const CombatBehaviorTreeMovement__vfunc_0: u64 = 49436;
+/// `CombatBehaviorTreeMovement::vfunc_0_cb0` at 0x562d30 (callgraph, medium); signature (untiered): `bool vfunc_0_cb0(longlong param_1, longlong param_2)`
+pub const CombatBehaviorTreeMovement__vfunc_0_cb0: u64 = 33257;
+/// `CombatBehaviorTreeMovement::vfunc_0_cb1` at 0x6a6a40 (callgraph, medium); signature (untiered): `byte vfunc_0_cb1(undefined8 * * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const CombatBehaviorTreeMovement__vfunc_0_cb1: u64 = 37833;
+/// `CombatBehaviorTreeMovement::vfunc_0_cb2` at 0x856df0 (callgraph, medium); signature (untiered): `ulonglong vfunc_0_cb2(longlong param_1)`
+pub const CombatBehaviorTreeMovement__vfunc_0_cb2: u64 = 46958;
+/// `CombatBehaviorTreeNode::ctor` at 0x8752f0 (layout_inference, medium); signature (high): `CombatBehaviorTreeNode * ctor(CombatBehaviorTreeNode * this)`
+pub const CombatBehaviorTreeNode__ctor: u64 = 47545;
+/// `CombatBehaviorTreeNode::dtor` at 0x875320 (layout_inference, high); signature (high): `undefined dtor(CombatBehaviorTreeNode * this)`
+pub const CombatBehaviorTreeNode__dtor: u64 = 47546;
+/// `CombatBehaviorTreeNode::dtor` at 0x8788e0 (callgraph, high); signature (untiered): `undefined dtor(CombatBehaviorTreeNode * this)`
+pub const CombatBehaviorTreeNode__dtor_2: u64 = 47602;
+/// `CombatBehaviorTreeNode::vdtor` at 0x875b00 (layout_inference, medium); signature (low): `CombatBehaviorTreeNode * vdtor(CombatBehaviorTreeNode * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+pub const CombatBehaviorTreeNode__vdtor: u64 = 47579;
+/// `CombatBehaviorTreeNode::vfunc_1` at 0x875380 (rtti, medium); signature (high): `undefined8 vfunc_1(CombatBehaviorTreeNode * this)`
+pub const CombatBehaviorTreeNode__vfunc_1: u64 = 47547;
+/// `CombatBehaviorTreeNode::vfunc_2` at 0x875540 (rtti, medium); signature (low): `undefined vfunc_2(void)`
+pub const CombatBehaviorTreeNode__vfunc_2: u64 = 47552;
 /// `CombatBehaviorTreeNode::vfunc_3` at 0x875550 (rtti, medium); signature (low): `undefined vfunc_3(void)`
 pub const CombatBehaviorTreeNode__vfunc_3: u64 = 47553;
 /// `CombatBehaviorTreeNode::vfunc_4` at 0x875560 (rtti, medium); signature (low): `undefined vfunc_4(CombatBehaviorTreeNode * this, longlong param_1)`
@@ -5729,53 +5783,3 @@ pub const ComputeArrowBowVelocityScale: u64 = 26437;
 pub const ComputeArrowPowerFromDrawTime: u64 = 26435;
 /// `ComputeAsinOfArg0` at 0xdb6ab0 (decompiler, high); signature (untiered): `undefined ComputeAsinOfArg0(longlong param_1)`
 pub const ComputeAsinOfArg0: u64 = 86208;
-/// `ComputeAtan2OfArgs` at 0xdb6dd0 (decompiler, high); signature (untiered): `undefined ComputeAtan2OfArgs(longlong param_1)`
-pub const ComputeAtan2OfArgs: u64 = 86218;
-/// `ComputeAtanOfArg0` at 0xdb6b00 (decompiler, high); signature (untiered): `undefined ComputeAtanOfArg0(longlong param_1)`
-pub const ComputeAtanOfArg0: u64 = 86209;
-/// `ComputeAttackRangeToTarget` at 0x86b5d0 (decompiler, medium); signature (untiered): `ulonglong ComputeAttackRangeToTarget(longlong * param_1, longlong * param_2)`
-pub const ComputeAttackRangeToTarget: u64 = 47338;
-/// `ComputeAttackStagger` at 0x41f230 (decompiler, medium); signature (untiered): `float ComputeAttackStagger(longlong * param_1, longlong * param_2)`
-pub const ComputeAttackStagger: u64 = 26422;
-/// `ComputeAttackStaminaCost` at 0x41f760 (decompiler, medium); signature (untiered): `float ComputeAttackStaminaCost(longlong param_1, longlong param_2)`
-pub const ComputeAttackStaminaCost: u64 = 26429;
-/// `ComputeAutoAimAngles` at 0x777c00 (semantic, medium); signature (untiered): `undefined ComputeAutoAimAngles(longlong * param_1, longlong * param_2, longlong param_3, float * param_4, float * param_5, float * param_6, float param_7, float param_8)`; semantic: turns the shooter's aim toward the auto-aim target: computes yaw/pitch deltas from origin to the target and adds them to the base angles (FLT_MIN base = add to current) (medium); signature `void (Actor* shooter, Projectile* projectile, NiAVObject* aimNode, float* yawInOut, float* pitchInOut, const NiPoint3* origin, float baseYaw, float basePitch)`
-pub const ComputeAutoAimAngles: u64 = 41248;
-/// `ComputeAutoVanityCameraPosition` at 0x8f3a10 (semantic, high); signature (untiered): `undefined ComputeAutoVanityCameraPosition(longlong param_1, float * param_2, longlong param_3, undefined8 param_4)`; semantic: out = target 3D world translation + (0, 0, eye height) - fDefaultAutoVanityZoom:Camera * rotation column 1 (forward), then ComputeCameraCasterCollision(camera, out, true); zero point when there is no target (high); signature `void (AutoVanityState* this, NiPoint3* out, const NiMatrix3* rotation)`
-pub const ComputeAutoVanityCameraPosition: u64 = 50713;
-/// `ComputeAutoVanityCameraPosition` as a function pointer type (high).
-pub type ComputeAutoVanityCameraPosition_fn = unsafe extern "C" fn(this: *mut crate::AutoVanityState, out: *mut crate::NiPoint3, rotation: *const crate::NiMatrix3);
-/// `ComputeAverageVector4` at 0xad6ba0 (decompiler, medium); signature (medium): `undefined ComputeAverageVector4(undefined8 param_1, float * param_2, int param_3, float * param_4)`
-pub const ComputeAverageVector4: u64 = 58440;
-/// `ComputeAxisAlignedBoxCorners` at 0xfcead0 (decompiler, medium); signature (medium): `undefined ComputeAxisAlignedBoxCorners(longlong param_1, float * param_2)`
-pub const ComputeAxisAlignedBoxCorners: u64 = 75912;
-/// `ComputeBarycentric2D` at 0x11f8db0 (decompiler, medium); signature (medium): `bool ComputeBarycentric2D(float * param_1, float * param_2, float * param_3, float * param_4, float * param_5)`
-pub const ComputeBarycentric2D: u64 = 91505;
-/// `ComputeBashDamage` at 0x41f0a0 (decompiler, medium); signature (untiered): `undefined ComputeBashDamage(longlong * param_1, float * param_2)`
-pub const ComputeBashDamage: u64 = 26421;
-/// `ComputeBashSkillUse` at 0x41f410 (decompiler, high); signature (high): `float ComputeBashSkillUse(float param_1, char param_2)`
-pub const ComputeBashSkillUse: u64 = 26423;
-/// `ComputeBleedoutValue` at 0x41dc50 (decompiler, medium); signature (untiered): `ulonglong ComputeBleedoutValue(longlong * param_1, longlong param_2, longlong param_3)`
-pub const ComputeBleedoutValue: u64 = 26389;
-/// `ComputeBlockFactor` at 0x41f4d0 (decompiler, medium); signature (medium): `float ComputeBlockFactor(float param_1, float param_2, float param_3, char param_4, char param_5, char param_6)`
-pub const ComputeBlockFactor: u64 = 26425;
-/// `ComputeBlockStagger` at 0x41f560 (decompiler, medium); signature (medium): `float ComputeBlockStagger(float param_1, float param_2, float param_3)`
-pub const ComputeBlockStagger: u64 = 26426;
-/// `ComputeBloodSplatterCount` at 0x420770 (decompiler, medium); signature (medium): `int ComputeBloodSplatterCount(float param_1)`
-pub const ComputeBloodSplatterCount: u64 = 26453;
-/// `ComputeBoneLODCount` at 0xbcc2c0 (decompiler, medium); signature (untiered): `ushort ComputeBoneLODCount(longlong param_1, float * param_2, char param_3, undefined1 * param_4, ushort param_5)`
-pub const ComputeBoneLODCount: u64 = 63575;
-/// `ComputeBoneModelSpaceTransform` at 0xad8a40 (decompiler, medium); signature (untiered): `undefined ComputeBoneModelSpaceTransform(int param_1, longlong * param_2, longlong param_3, float * param_4)`
-pub const ComputeBoneModelSpaceTransform: u64 = 58480;
-/// `ComputeBoneModelTransform` at 0xbf4da0 (decompiler, medium); signature (medium): `undefined ComputeBoneModelTransform(longlong param_1, int param_2, float * param_3)`
-pub const ComputeBoneModelTransform: u64 = 64159;
-/// `ComputeBoundFromPoints` at 0xefe640 (decompiler, medium); signature (medium): `undefined ComputeBoundFromPoints(float * param_1, int param_2, float * param_3)`
-pub const ComputeBoundFromPoints: u64 = 70972;
-/// `ComputeBoundsDiagonalLength` at 0x2eeba0 (decompiler, medium); signature (medium): `float ComputeBoundsDiagonalLength(longlong param_1)`
-pub const ComputeBoundsDiagonalLength: u64 = 19747;
-/// `ComputeBoundsOfEntriesAndField38` at 0x1240f30 (decompiler, medium); signature (untiered): `undefined ComputeBoundsOfEntriesAndField38(longlong param_1, longlong * param_2)`
-pub const ComputeBoundsOfEntriesAndField38: u64 = 93093;
-/// `ComputeBoundsOfStridedPoints` at 0xaa7b10 (decompiler, medium); signature (medium): `undefined ComputeBoundsOfStridedPoints(undefined1[12] * param_1, int param_2, int param_3, uint * param_4)`
-pub const ComputeBoundsOfStridedPoints: u64 = 57239;
-/// `ComputeBoxMassProperties` at 0xc364c0 (decompiler, medium); signature (medium): `undefined8 ComputeBoxMassProperties(float * param_1, float param_2, float * param_3)`
-pub const ComputeBoxMassProperties: u64 = 65065;

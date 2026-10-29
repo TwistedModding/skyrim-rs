@@ -4,6 +4,11 @@
 use crate::raw::*;
 
 pub(super) const ROWS: &[Function] = &[
+    Function { rva: 0x7e3470, id: 43812, confidence: Confidence::High, name: "ConcreteExplosionFactory<Explosion,0>::vfunc_1" },
+    Function { rva: 0x7e34e0, id: 43813, confidence: Confidence::Medium, name: "ConcreteExplosionFactory<Explosion,0>::vdtor" },
+    Function { rva: 0x7e3530, id: 43814, confidence: Confidence::High, name: "IExplosionFactory::dtor" },
+    Function { rva: 0x7e3590, id: 43817, confidence: Confidence::Medium, name: "g_ConcreteExplosionFactory_ChainExplosion_1__init_sub0" },
+    Function { rva: 0x7e3610, id: 43819, confidence: Confidence::Medium, name: "AddUniqueRefHandle" },
     Function { rva: 0x7e3710, id: 43820, confidence: Confidence::Medium, name: "RemoveRefHandleOfRef" },
     Function { rva: 0x7e3800, id: 43821, confidence: Confidence::Medium, name: "ClearRefHandleArray" },
     Function { rva: 0x7e3880, id: 43822, confidence: Confidence::High, name: "UpdateRefsAndPruneDeletedWithFrameDelta" },
@@ -6432,9 +6437,4 @@ pub(super) const ROWS: &[Function] = &[
     Function { rva: 0x91c4f0, id: 51270, confidence: Confidence::Medium, name: "CraftingSubMenus::EnchantConstructMenu::ctor_sub1" },
     Function { rva: 0x91c550, id: 51271, confidence: Confidence::High, name: "FxDelegateHandler::dtor" },
     Function { rva: 0x91c560, id: 51272, confidence: Confidence::Medium, name: "FreeArrayBufferAndClearSize_11" },
-    Function { rva: 0x91c5b0, id: 51273, confidence: Confidence::Medium, name: "CraftingSubMenus::AlchemyMenu::ctor_sub0" },
-    Function { rva: 0x91c600, id: 51274, confidence: Confidence::High, name: "ClearAndFreeHashMap16AtField8" },
-    Function { rva: 0x91c610, id: 51275, confidence: Confidence::High, name: "CraftingSubMenus::AlchemyMenu::ModEffectivenessFunctor::dtor" },
-    Function { rva: 0x91c630, id: 51276, confidence: Confidence::Medium, name: "CraftingSubMenus::SmithingMenu::ctor" },
-    Function { rva: 0x91c6f0, id: 51278, confidence: Confidence::Medium, name: "AssignTrackedFormPtr" },
 ];

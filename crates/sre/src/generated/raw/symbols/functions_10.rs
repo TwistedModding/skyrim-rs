@@ -4,6 +4,12 @@
 use crate::raw::*;
 
 pub(super) const ROWS: &[Function] = &[
+    Function { rva: 0x13ca7b0, id: 451092, confidence: Confidence::High, name: "ScalarDeletingDtorSize10_84" },
+    Function { rva: 0x13ca7e0, id: 451093, confidence: Confidence::High, name: "ScalarDeletingDtorSize10_85" },
+    Function { rva: 0x13cac10, id: 451105, confidence: Confidence::Medium, name: "DestroyViaVfunc0AndFree_53" },
+    Function { rva: 0x13cac50, id: 451106, confidence: Confidence::Medium, name: "DestructAndFree_11" },
+    Function { rva: 0x13cac90, id: 451107, confidence: Confidence::Medium, name: "ConstructFunctionalStorage10_13" },
+    Function { rva: 0x13cb100, id: 451113, confidence: Confidence::High, name: "ScalarDeletingDtorSize10_86" },
     Function { rva: 0x13cb130, id: 451114, confidence: Confidence::High, name: "ScalarDeletingDtorSize10_87" },
     Function { rva: 0x13cbcf0, id: 99706, confidence: Confidence::Medium, name: "DeleteVector0x530" },
     Function { rva: 0x13cbe70, id: 99711, confidence: Confidence::Medium, name: "InsertReallocateVector0x530" },
@@ -8186,9 +8192,4 @@ pub(super) const ROWS: &[Function] = &[
     Function { rva: 0x1771be0, id: 168612, confidence: Confidence::Medium, name: "GameSetting_fPerkHeavyArmorExpertSpeedMult__atexit" },
     Function { rva: 0x1771c30, id: 168613, confidence: Confidence::Medium, name: "GameSetting_fPerkHeavyArmorJourneymanDamageMult__atexit" },
     Function { rva: 0x1771c80, id: 168614, confidence: Confidence::Medium, name: "GameSetting_fPerkHeavyArmorMasterSpeedMult__atexit" },
-    Function { rva: 0x1771cd0, id: 168615, confidence: Confidence::Medium, name: "GameSetting_fPerkHeavyArmorNoviceDamageMult__atexit" },
-    Function { rva: 0x1771d20, id: 168616, confidence: Confidence::Medium, name: "GameSetting_fPerkHeavyArmorSinkGravityMult__atexit" },
-    Function { rva: 0x1771d70, id: 168617, confidence: Confidence::Medium, name: "GameSetting_fPerkLightArmorExpertSpeedMult__atexit" },
-    Function { rva: 0x1771dc0, id: 168618, confidence: Confidence::Medium, name: "GameSetting_fPerkLightArmorJourneymanDamageMult__atexit" },
-    Function { rva: 0x1771e10, id: 168619, confidence: Confidence::Medium, name: "GameSetting_fPerkLightArmorNoviceDamageMult__atexit" },
 ];

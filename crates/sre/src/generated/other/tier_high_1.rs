@@ -3811,23 +3811,6 @@ impl crate::Moon {
     pub unsafe fn ctor(&self) -> u64 { unsafe { function!(26167, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
-impl crate::MountInteraction {
-    /// `MountInteraction::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 40344, rva 0x73c970).
-    /// `MountInteraction * ctor(MountInteraction * this)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(40344, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
-    /// `MountInteraction::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 40345, rva 0x73ca00).
-    /// `MountInteraction * ctor(MountInteraction * this)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn ctor_2(&self) -> *mut Self { unsafe { function!(40345, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
-}
-
 impl crate::MoviePlayer {
     /// `MoviePlayer::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 90289, rva 0x11b39f0).
     /// `MoviePlayer * ctor(MoviePlayer * this)`
@@ -15297,3 +15280,17 @@ pub unsafe fn get_bit5_of_field136(param_1: i64) -> u8 { unsafe { function!(3918
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn get_bit7_of_field1_f8_field108(param_1: i64) -> u32 { unsafe { function!(37217, (i64) -> u32)(param_1) } }
+/// `GetByte13B` (decompiler signature, tier high; ledger decompiler evidence, name high; id 39138, rva 0x6e9740).
+/// `undefined1 GetByte13B(longlong param_1)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn get_byte13_b(param_1: i64) -> u8 { unsafe { function!(39138, (i64) -> u8)(param_1) } }
+/// `GetByte14` (decompiler signature, tier high; ledger decompiler evidence, name high; id 441562, rva 0x1e0a00).
+/// `undefined1 GetByte14(longlong param_1)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn get_byte14(param_1: i64) -> u8 { unsafe { function!(441562, (i64) -> u8)(param_1) } }

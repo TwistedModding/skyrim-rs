@@ -4198,28 +4198,6 @@ const _: () = assert!(core::mem::offset_of!(BSFogProperty, field_80) == 0x80);
 const _: () = assert!(core::mem::offset_of!(BSFogProperty, field_84) == 0x84);
 const _: () = assert!(core::mem::offset_of!(BSFogProperty, field_88) == 0x88);
 
-/// `BSFurnitureMarkerNode`: size 0x30 (exact, medium); primary base `NiExtraData`.
-/// Evidence: runtime: 0x30 at 1 allocation sites.
-/// Bases: `NiExtraData`@0x0, `NiObject`@0x0, `NiRefObject`@0x0.
-#[repr(C)]
-pub struct BSFurnitureMarkerNode {
-    /// +0x0 `vtbl:BSFurnitureMarkerNode:0`, rtti
-    #[doc(hidden)]
-    pub __vftable: *const crate::raw::vtables::BSFurnitureMarkerNode_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
-    pub unknown_C: [u8; 4],
-    /// +0x10 `class:BSFixedString`, base NiExtraData, semantic; the key the owner's sorted array is ordered by (high)
-    pub name: crate::BSFixedString,
-    pub unknown_18: [u8; 24],
-    #[doc(hidden)]
-    pub __engine: crate::Engine,
-}
-const _: () = assert!(size_of::<BSFurnitureMarkerNode>() == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSFurnitureMarkerNode, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BSFurnitureMarkerNode, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSFurnitureMarkerNode, name) == 0x10);
-
 /// `BSGameDataSystemUtility`: size >= 0x6D8 (lower bound); partial, the struct stops at the lower bound.
 /// Evidence: field field_6D0.
 #[repr(C)]

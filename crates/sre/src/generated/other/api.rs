@@ -2655,12 +2655,6 @@ impl core::ops::Deref for crate::MountDismountEndHandler {
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
-/// `MountInteraction` is laid out from its primary base `RefrInteraction`, so its methods and fields are reachable through it.
-impl core::ops::Deref for crate::MountInteraction {
-    type Target = crate::RefrInteraction;
-    #[inline]
-    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
-}
 /// `MultiBoundMarkerData` is laid out from its primary base `BSExtraData`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::MultiBoundMarkerData {
     type Target = crate::BSExtraData;
@@ -3405,21 +3399,9 @@ impl core::ops::Deref for crate::StaticAvoidNodeManager {
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
-/// `StatsMenu` is laid out from its primary base `IMenu`, so its methods and fields are reachable through it.
-impl core::ops::Deref for crate::StatsMenu {
-    type Target = crate::IMenu;
-    #[inline]
-    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
-}
 /// `StatsNode` is laid out from its primary base `SimpleAnimationGraphManagerHolder`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::StatsNode {
     type Target = crate::SimpleAnimationGraphManagerHolder;
-    #[inline]
-    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
-}
-/// `StealthMeter` is laid out from its primary base `HUDObject`, so its methods and fields are reachable through it.
-impl core::ops::Deref for crate::StealthMeter {
-    type Target = crate::HUDObject;
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
@@ -6133,60 +6115,6 @@ impl crate::StaticAvoidNodeManager {
     /// The `BSTEventSink<CellAttachDetachEvent>` base at +0x8.
     #[inline]
     pub fn as_bst_event_sink_cell_attach_detach_event(&self) -> &crate::BSTEventSink_CellAttachDetachEvent { unsafe { &*core::ptr::from_ref(self).byte_add(0x8).cast() } }
-}
-
-impl crate::StatsMenu {
-    /// The `MenuEventHandler` base at +0x30.
-    #[inline]
-    pub fn as_menu_event_handler(&self) -> &crate::MenuEventHandler { unsafe { &*core::ptr::from_ref(self).byte_add(0x30).cast() } }
-    /// `StatsMenu::BuildPerkTreeNode`: creates the 3D star and line nodes for one perk tree node (StatsNode, LineNode, fStatsStar*Increment, fStatsLineScale) and recurses to children
-    ///
-    /// Semantic, camera pass, medium; ledger semantic evidence, name medium; id 52593, rva 0x9824d0.
-    /// `bool (void* builder, BGSSkillPerkTreeNode* node)`
-    /// May be null: `node`.
-    ///
-    /// # Safety
-    /// The pass rates the signature medium.
-    #[inline]
-    pub unsafe fn build_perk_tree_node(builder: *mut c_void, node: *mut crate::BGSSkillPerkTreeNode) -> bool { unsafe { function!(52593, (*mut c_void, *mut crate::BGSSkillPerkTreeNode) -> bool)(builder, node) } }
-    /// `StatsMenu::CreateCamera`: new NiCamera with viewport (0,1,1,0), near fStatsCameraNearDistance (1), far = SceneGraph slot 62, frustum right = tan(fStatsCameraFOV deg) * (0.75 / a) * 0.55, top = right * a with a = +0x314 / +0x318, placed at the model's 'CameraPosition' node (axes swapped z,y,x), oriented toward the current skill node; minNear 1.0, lodAdjust 0; stored refcounted at StatsMenu+0x40
-    ///
-    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 52530, rva 0x97bd30.
-    /// `void (StatsMenu* this)`
-    #[inline]
-    pub fn create_camera(&self) { unsafe { function!(52530, (*const Self))(core::ptr::from_ref(self)) } }
-    /// `StatsMenu::InitSkillViewTable`: fills the static per-skill view records (ID_406482..ID_406564: camera/look-at vectors and angles) used by StatsMenu::vfunc_4_sub3
-    ///
-    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 52559, rva 0x980a30.
-    /// `void (void)`
-    #[inline]
-    pub fn init_skill_view_table() { unsafe { function!(52559, ())() } }
-    /// `StatsMenu::ProcessMessage`: The skills menu's UI message handler (IMenu slot 4): switch on message type +0x8 (0 update, 1 show, 3 hide, 6 Scaleform event, 7 user event, 0xc Kinect). Update drives the constellation intro/outro, perk animations and level-up; show plays UISkillsTransitionUp; hide closes back to the tween menu; input opens the legendary-reset and perk-confirm message boxes. Returns 0 handled, 1 refuse (hide deferred while the outro runs).
-    ///
-    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 52510, rva 0x976a50.
-    /// `UIMessageResult (StatsMenu* this, UIMessage* message)`
-    /// Retyped: return u32 -> UIMessageResult: StatsMenu's IMenu slot 4; returns R14D: 0 (0x976ab8) or 1 (0x977e54, 0x977ecc); see enum UIMessageResult.
-    /// May be null: `message`.
-    ///
-    /// # Safety
-    /// `message` must point to what the engine expects.
-    #[inline]
-    pub unsafe fn process_message(&self, message: *mut crate::UIMessage) -> Result<crate::UIMessageResult, u32> { unsafe { let raw = function!(52510, (*const Self, *mut crate::UIMessage) -> u32)(core::ptr::from_ref(self), message); crate::UIMessageResult::from_u32(raw).ok_or(raw) } }
-    /// `StatsMenu::SetupScene`: builds the stats menu 3D scene: constellation models (AssignModelFromLookup), star scale (fStatsStarScale), materials and the intro sequence
-    ///
-    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 52531, rva 0x97c4b0.
-    /// `void (StatsMenu* this)`
-    #[inline]
-    pub fn setup_scene(&self) { unsafe { function!(52531, (*const Self))(core::ptr::from_ref(self)) } }
-    /// `StatsMenu::ctor`: constructs the StatsMenu: IMenu base, both vtables, menu controls handler, the constellation camera and look-at settings (fStatsStarCameraOffsetX/Y/Z, fStatsStarLookAtX/Y/Z, fStatsSkillsLookAtX/Y/Z), the skill view table (StatsMenu::InitSkillViewTable), music pause (uiMuteMusicPauseTime), the 3D scene mesh queue
-    ///
-    /// Semantic, camera pass, high; ledger layout_inference evidence, name high; id 52508, rva 0x975ff0.
-    /// `StatsMenu* (StatsMenu* this)`
-    ///
-    /// # Safety
-    /// It constructs or destroys an object in place.
-    #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(52508, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::StatsNode {

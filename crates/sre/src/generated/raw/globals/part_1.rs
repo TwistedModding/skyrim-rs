@@ -7849,7 +7849,7 @@ pub const INISetting_bShadowsOnGrass_Display: u64 = 391024;
 pub const INISetting_bShouldProcessRequests_Animation: u64 = 385991;
 /// `INISetting_bShowCheckMemoryOutput_General` at 0x20b6398 (setting, high)
 pub const INISetting_bShowCheckMemoryOutput_General: u64 = 381093;
-/// `INISetting_bShowCrosshair_Interface` at 0x20bac68 (setting, high)
+/// `INISetting_bShowCrosshair_Interface` at 0x20bac68 (semantic, high); bShowCrosshair:Interface; its value byte (0x20bac70) is SetCrosshairTarget argument 5 (high); type `class:Setting`
 pub const INISetting_bShowCrosshair_Interface: u64 = 382824;
 /// `INISetting_bShowGunTarget_General` at 0x20b77d8 (setting, high)
 pub const INISetting_bShowGunTarget_General: u64 = 381645;
@@ -12213,6 +12213,8 @@ pub const g_FreeCameraEventNames: u64 = 405792;
 pub const g_FreeShadowMapSlices: u64 = 391715;
 /// `g_GRefCountImplCore` at 0x20ce5c8 (layout_inference, medium)
 pub const g_GRefCountImplCore: u64 = 390206;
+/// `g_GamePaused` at 0x32303b3 (runtime, high); 1 while any game-pausing menu is open: written every Main::Update as UI->numPausesGame (+0x160) != 0 (high); type `u8`
+pub const g_GamePaused: u64 = 403437;
 /// `g_GarbageCollector_ptr` at 0x219e5d0 (xref_inference, medium)
 pub const g_GarbageCollector_ptr: u64 = 400329;
 /// `g_GrassShader` at 0x33d3de0 (semantic, high); pointer to `BSGrassShader`: holder; holder (high); type `ptr:BSGrassShader`
@@ -13603,7 +13605,3 @@ pub const g_VATSDefaultCameraPathOnce: u64 = 404865;
 pub const g_VATSPathTotalTime: u64 = 404873;
 /// `g_VATSPathTransitionMode` at 0x3252a40 (semantic, high); shot transition mode from the path's flags: 0 dolly, 1 cut (bit 0), 2 dolly only into action-3 shots (bit 1) (high); type `i32`
 pub const g_VATSPathTransitionMode: u64 = 404866;
-/// `g_VATSPlaybackClock` at 0x3252a48 (semantic, high); kill-camera clock (scaled time since playback start), the time of the shot NIF animation (high); type `float`
-pub const g_VATSPlaybackClock: u64 = 404868;
-/// `g_VATSPlaybackElapsed` at 0x3252a4c (semantic, high); elapsed time compared with the path total (high); type `float`
-pub const g_VATSPlaybackElapsed: u64 = 404869;

@@ -1203,7 +1203,7 @@ impl crate::TweenMenu {
     /// `IMenu* ()`
     #[inline]
     pub fn create() -> Option<&'static crate::IMenu> { unsafe { function!(52723, () -> Option<&'static crate::IMenu>)() } }
-    /// `TweenMenu::OnMenuSelected`: opens the menu for the tween selection (cases 1..4: the menus behind the UI string table entries it queues); references g_PlayerCamera_ptr
+    /// `TweenMenu::OnMenuSelected`: selection 1 (skills): QueueFadeMessage(1,1,..,1,0) and AddMessage(UIStrings+0x128 'StatsMenu', show); the tween menu itself is not hidden (only its movie's HideMenu), so it stays on the stack under the stats menu
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 52718, rva 0x988ba0.
     /// `void (TweenMenu* this, i32 selection)`

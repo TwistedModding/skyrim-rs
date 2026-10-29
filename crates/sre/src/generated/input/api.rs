@@ -819,6 +819,12 @@ impl crate::PlayerControls {
     /// `unusedLoadBuffer` must point to what the engine expects.
     #[inline]
     pub unsafe fn interrupt_player_actions_and_casting(&self, unusedLoadBuffer: *mut c_void) { unsafe { function!(523955, (*const Self, *mut c_void))(core::ptr::from_ref(self), unusedLoadBuffer) } }
+    /// `PlayerControls::IsActivateEnabled`: true when PlayerControls+0x1a0 is null or its byte +0x1b is 0
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 42346, rva 0x7ae170.
+    /// `bool (const PlayerControls* this)`
+    #[inline]
+    pub fn is_activate_enabled(&self) -> bool { unsafe { function!(42346, (*const Self) -> bool)(core::ptr::from_ref(self)) } }
     /// `PlayerControls::LoadResponseGraph`: reads f%sGraphX%d/f%sGraphY%d:Controls into one of two curves
     ///
     /// Semantic, input pass, medium; ledger semantic evidence, name medium; id 42366, rva 0x7afd10.
@@ -834,6 +840,12 @@ impl crate::PlayerControls {
     /// `void (PlayerControls* this, PlayerInputHandler* handler)`
     #[inline]
     pub fn remove_handler(&self, handler: &crate::PlayerInputHandler) { unsafe { function!(42357, (*const Self, *const crate::PlayerInputHandler))(core::ptr::from_ref(self), core::ptr::from_ref(handler)) } }
+    /// `PlayerControls::SetActivateEnabled`: ActivateHandler (PlayerControls+0x1a0) byte +0x1b = !enabled, when the handler exists
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 42345, rva 0x7ae150.
+    /// `void (PlayerControls* this, bool enabled)`
+    #[inline]
+    pub fn set_activate_enabled(&self, enabled: bool) { unsafe { function!(42345, (*const Self, bool))(core::ptr::from_ref(self), enabled) } }
     /// `PlayerControls::SetTurnRateFromLookInput`: player process turn delta = lookInput.x * pi, or 0 in third-person free look (AIProcess::SetTurnDelta tail call)
     ///
     /// Semantic, camera pass, medium; ledger semantic evidence, name medium; id 42373, rva 0x7b0790.
@@ -861,6 +873,71 @@ impl crate::PlayerControls {
     /// It constructs or destroys an object in place.
     #[inline]
     pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(42336, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
+    /// `PlayerControls::activateHandler` at +0x1A0: Activate, held-state (0x20, vtable 0x1935388)
+    ///
+    /// Semantic field, input pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn activate_handler(&self) -> Option<&crate::ActivateHandler> { unsafe { { self.activateHandler }.as_ref() } }
+    /// `PlayerControls::attackBlockHandler` at +0x1B8: Left/Right Attack/Block, held-state (0xc0, vtable 0x1935258)
+    ///
+    /// Semantic field, input pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn attack_block_handler(&self) -> Option<&crate::AttackBlockHandler> { unsafe { { self.attackBlockHandler }.as_ref() } }
+    /// `PlayerControls::autoMoveHandler` at +0x190: Auto-Move (0x10, vtable 0x19353d8)
+    ///
+    /// Semantic field, input pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn auto_move_handler(&self) -> Option<&crate::AutoMoveHandler> { unsafe { { self.autoMoveHandler }.as_ref() } }
+    /// `PlayerControls::jumpHandler` at +0x1A8: Jump (0x10, vtable 0x19354a8)
+    ///
+    /// Semantic field, input pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn jump_handler(&self) -> Option<&crate::JumpHandler> { unsafe { { self.jumpHandler }.as_ref() } }
+    /// `PlayerControls::lookHandler` at +0x178: Look (0xb8, vtable 0x1935150)
+    ///
+    /// Semantic field, input pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn look_handler(&self) -> Option<&crate::LookHandler> { unsafe { { self.lookHandler }.as_ref() } }
+    /// `PlayerControls::movementHandler` at +0x170: Forward/Back/Strafe/Move handler (0x10, vtable 0x19351c8); the other 12 handler pointers follow at +0x178..+0x1d0
+    ///
+    /// Semantic field, input pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn movement_handler(&self) -> Option<&crate::MovementHandler> { unsafe { { self.movementHandler }.as_ref() } }
+    /// `PlayerControls::readyWeaponHandler` at +0x188: Ready Weapon (0x10, vtable 0x1935348)
+    ///
+    /// Semantic field, input pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn ready_weapon_handler(&self) -> Option<&crate::ReadyWeaponHandler> { unsafe { { self.readyWeaponHandler }.as_ref() } }
+    /// `PlayerControls::runHandler` at +0x1C0: Run, held-state (0x18, vtable 0x1935458)
+    ///
+    /// Semantic field, input pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn run_handler(&self) -> Option<&crate::RunHandler> { unsafe { { self.runHandler }.as_ref() } }
+    /// `PlayerControls::shoutHandler` at +0x1B0: Shout / KinectShout (0x20, vtable 0x1935528)
+    ///
+    /// Semantic field, input pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn shout_handler(&self) -> Option<&crate::ShoutHandler> { unsafe { { self.shoutHandler }.as_ref() } }
+    /// `PlayerControls::sneakHandler` at +0x1C8: Sneak (0x10, vtable 0x19354e8)
+    ///
+    /// Semantic field, input pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn sneak_handler(&self) -> Option<&crate::SneakHandler> { unsafe { { self.sneakHandler }.as_ref() } }
+    /// `PlayerControls::sprintHandler` at +0x180: Sprint, held-state (0x18, vtable 0x1935208)
+    ///
+    /// Semantic field, input pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn sprint_handler(&self) -> Option<&crate::SprintHandler> { unsafe { { self.sprintHandler }.as_ref() } }
+    /// `PlayerControls::togglePOVHandler` at +0x1D0: Toggle POV, held-state (0x20, vtable 0x1935568)
+    ///
+    /// Semantic field, input pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn toggle_pov_handler(&self) -> Option<&crate::TogglePOVHandler> { unsafe { { self.togglePOVHandler }.as_ref() } }
+    /// `PlayerControls::toggleRunHandler` at +0x198: Toggle Always Run (0x10, vtable 0x1935418)
+    ///
+    /// Semantic field, input pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn toggle_run_handler(&self) -> Option<&crate::ToggleRunHandler> { unsafe { { self.toggleRunHandler }.as_ref() } }
 }
 
 impl crate::QuickSaveLoadHandler {

@@ -571,6 +571,36 @@ const _: () = assert!(core::mem::offset_of!(BSFrustumFOVController, field_38) ==
 const _: () = assert!(core::mem::offset_of!(BSFrustumFOVController, field_40) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSFrustumFOVController, field_48) == 0x48);
 
+/// `BSFurnitureMarkerNode`: size 0x30 (exact, medium); primary base `NiExtraData`.
+/// Meaning: NiExtraData on a furniture model holding the markers (high, camera pass).
+/// Evidence: runtime: 0x30 at 1 allocation sites.
+/// Bases: `NiExtraData`@0x0, `NiObject`@0x0, `NiRefObject`@0x0.
+#[repr(C)]
+pub struct BSFurnitureMarkerNode {
+    /// +0x0 `vtbl:BSFurnitureMarkerNode:0`, rtti
+    #[doc(hidden)]
+    pub __vftable: *const crate::raw::vtables::BSFurnitureMarkerNode_vtable,
+    /// +0x8 `undefined4`, base NiObject
+    pub field_8: u32,
+    pub unknown_C: [u8; 4],
+    /// +0x10 `class:BSFixedString`, base NiExtraData, semantic; the key the owner's sorted array is ordered by (high)
+    pub name: crate::BSFixedString,
+    /// +0x18 `ptr:FurnitureMarker`, semantic; marker array, 0x14 bytes each (high)
+    pub markers: *mut crate::FurnitureMarker,
+    pub unknown_20: [u8; 8],
+    /// +0x28 `u32`, semantic; number of markers (high)
+    pub markerCount: u32,
+    pub unknown_2C: [u8; 4],
+    #[doc(hidden)]
+    pub __engine: crate::Engine,
+}
+const _: () = assert!(size_of::<BSFurnitureMarkerNode>() == 0x30);
+const _: () = assert!(core::mem::offset_of!(BSFurnitureMarkerNode, __vftable) == 0x0);
+const _: () = assert!(core::mem::offset_of!(BSFurnitureMarkerNode, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BSFurnitureMarkerNode, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSFurnitureMarkerNode, markers) == 0x18);
+const _: () = assert!(core::mem::offset_of!(BSFurnitureMarkerNode, markerCount) == 0x28);
+
 /// `BeamProjectile`: size 0x248 (exact, high); primary base `Projectile`.
 /// Meaning: slot rows from pass 12b track M (camera-system functions) (high, camera pass).
 /// Evidence: allocation sites (high): {'584': 3}.
@@ -1739,6 +1769,22 @@ const _: () = assert!(core::mem::offset_of!(FurnitureCameraState, followHeading)
 const _: () = assert!(core::mem::offset_of!(FurnitureCameraState, savedAutoVanityAllowed) == 0x3E);
 const _: () = assert!(core::mem::offset_of!(FurnitureCameraState, pad3F) == 0x3F);
 
+/// `FurnitureMarker`: size 0x14 (exact).
+/// Meaning: one furniture marker of the model (medium, camera pass).
+/// Evidence: one furniture marker of the model; IC2 E (static-N): only +0x10 was read; +0x0..+0xf not read in this track.; size: GetMarker 0xff13a0 stride 0x14.
+#[repr(C)]
+pub struct FurnitureMarker {
+    /// +0x0 `undefined1`, semantic; not read in this track (low)
+    pub field_0: [u8; 16],
+    /// +0x10 `u32`, semantic; bit 0 sit, bit 1 sleep (lay), bit 2 lean; see the flag rows (high)
+    pub animTypeFlags: u32,
+    #[doc(hidden)]
+    pub __engine: crate::Engine,
+}
+const _: () = assert!(size_of::<FurnitureMarker>() == 0x14);
+const _: () = assert!(core::mem::offset_of!(FurnitureMarker, field_0) == 0x0);
+const _: () = assert!(core::mem::offset_of!(FurnitureMarker, animTypeFlags) == 0x10);
+
 /// `HorseCameraState`: size 0xF8 (exact, medium); primary base `ThirdPersonState`.
 /// Meaning: third person while mounted (medium, frame pass).
 /// Evidence: runtime: 0xF8 at 1 allocation sites; agrees with the static allocation sites.
@@ -2266,6 +2312,117 @@ const _: () = assert!(core::mem::offset_of!(MapCameraStates__World, boundsPolygo
 const _: () = assert!(core::mem::offset_of!(MapCameraStates__World, notifyOnBegin) == 0x70);
 const _: () = assert!(core::mem::offset_of!(MapCameraStates__World, padding71) == 0x71);
 
+/// `MountInteraction`: size 0x38 (exact, high); primary base `RefrInteraction`.
+/// Meaning: the RefrInteraction shared by a rider and its mount through ExtraInteraction (0xa9) (high, camera pass).
+/// Evidence: camera pass (semantic): IC2 F (static-N): the two handles of the RefrInteraction base.; size: SetupMountInteraction 0x6d34a0 allocates 0x38 before MountInteraction::ctor 0x73ca00.
+/// Bases: `RefrInteraction`@0x0, `SyncQueueObj`@0x0, `BSIntrusiveRefCounted`@0x8.
+#[repr(C)]
+pub struct MountInteraction {
+    /// +0x0 `vtbl:MountInteraction:0`, rtti
+    #[doc(hidden)]
+    pub __vftable: *const crate::raw::vtables::MountInteraction_vtable,
+    /// +0x8 `undefined4`, base RefrInteraction
+    pub field_8: u32,
+    pub unknown_C: [u8; 4],
+    /// +0x10 `u32`, base RefrInteraction, semantic; the mount (high)
+    pub targetHandle: u32,
+    /// +0x14 `u32`, base RefrInteraction, semantic; the rider (the actor that started the interaction) (high)
+    pub actorHandle: u32,
+    /// +0x18 `undefined1`, base RefrInteraction
+    pub field_18: u8,
+    pub unknown_19: [u8; 31],
+    #[doc(hidden)]
+    pub __engine: crate::Engine,
+}
+const _: () = assert!(size_of::<MountInteraction>() == 0x38);
+const _: () = assert!(core::mem::offset_of!(MountInteraction, __vftable) == 0x0);
+const _: () = assert!(core::mem::offset_of!(MountInteraction, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(MountInteraction, targetHandle) == 0x10);
+const _: () = assert!(core::mem::offset_of!(MountInteraction, actorHandle) == 0x14);
+const _: () = assert!(core::mem::offset_of!(MountInteraction, field_18) == 0x18);
+
+/// `MovementControllerNPC`: size 0x1D0 (exact, high); primary base `MovementControllerAI`.
+/// Meaning: the actor's movement controller (Actor+0x150, refcounted); its controlsDriven byte decides whether the player's controls or the AI drive the actor's movement (high, camera pass).
+/// Evidence: runtime: 0x1D0 at 2 allocation sites; agrees with the static allocation sites.
+/// Bases: `MovementControllerAI`@0x0, `BSIntrusiveRefCounted`@0x8, `IMovementControllerRegisterInterface`@0x0, `IMovementMessageInterface`@0x120, `IMovementInterface`@0x120, `IMovementMotionDrivenControl`@0x128, `IMovementInterface`@0x128, `IMovementSelectIdle`@0x130, `IMovementInterface`@0x130, `IMovementDirectControl`@0x138, `IMovementInterface`@0x138, `IMovementPlannerDirectControl`@0x140, `IMovementInterface`@0x140, `IAnimationSetCallbackFunctor`@0x148.
+#[repr(C)]
+pub struct MovementControllerNPC {
+    /// +0x0 `vtbl:MovementControllerNPC:0`, rtti
+    #[doc(hidden)]
+    pub __vftable: *const crate::raw::vtables::MovementControllerNPC_vtable,
+    /// +0x8 `u32`, base MovementControllerAI, semantic; BSIntrusiveRefCounted count (high)
+    pub refCount: u32,
+    pub unknown_C: [u8; 36],
+    /// +0x30 `undefined4`, base MovementControllerAI
+    pub field_30: u32,
+    pub unknown_34: [u8; 20],
+    /// +0x48 `undefined4`, base MovementControllerAI
+    pub field_48: u32,
+    pub unknown_4C: [u8; 196],
+    /// +0x110 `undefined4`, base MovementControllerAI
+    pub field_110: u32,
+    pub unknown_114: [u8; 4],
+    /// +0x118 `undefined8`, base MovementControllerAI
+    pub field_118: u64,
+    /// +0x120 `vtbl:MovementControllerNPC:120`, rtti
+    #[doc(hidden)]
+    pub __vftable_120: *const crate::raw::vtables::MovementControllerNPC_vtable_120,
+    /// +0x128 `pointer`, semantic; IMovementMotionDrivenControl sub-object (vtable 0x192f1c0) (high)
+    pub motionDrivenControl: *mut c_void,
+    /// +0x130 `vtbl:MovementControllerNPC:130`, rtti
+    #[doc(hidden)]
+    pub __vftable_130: *const crate::raw::vtables::MovementControllerNPC_vtable_130,
+    /// +0x138 `vtbl:MovementControllerNPC:138`, rtti
+    #[doc(hidden)]
+    pub __vftable_138: *const crate::raw::vtables::MovementControllerNPC_vtable_138,
+    /// +0x140 `vtbl:MovementControllerNPC:140`, rtti
+    #[doc(hidden)]
+    pub __vftable_140: *const crate::raw::vtables::MovementControllerNPC_vtable_140,
+    /// +0x148 `vtbl:MovementControllerNPC:148`, rtti
+    #[doc(hidden)]
+    pub __vftable_148: *const crate::raw::vtables::MovementControllerNPC_vtable_148,
+    /// +0x150 `undefined8`, ctor store
+    pub field_150: u64,
+    pub unknown_158: [u8; 72],
+    /// +0x1A0 `undefined8`, ctor store
+    pub field_1A0: u64,
+    /// +0x1A8 `undefined8`, ctor store
+    pub field_1A8: u64,
+    /// +0x1B0 `undefined8`, ctor store
+    pub field_1B0: u64,
+    /// +0x1B8 `undefined8`, ctor store
+    pub field_1B8: u64,
+    pub unknown_1C0: [u8; 5],
+    /// +0x1C5 `u8`, semantic, runtime; 1 = movement driven by the player's controls, 0 = AI-driven (high)
+    pub controlsDriven: u8,
+    pub unknown_1C6: [u8; 2],
+    /// +0x1C8 `undefined4`, ctor store
+    pub field_1C8: u32,
+    pub unknown_1CC: [u8; 4],
+    #[doc(hidden)]
+    pub __engine: crate::Engine,
+}
+const _: () = assert!(size_of::<MovementControllerNPC>() == 0x1D0);
+const _: () = assert!(core::mem::offset_of!(MovementControllerNPC, __vftable) == 0x0);
+const _: () = assert!(core::mem::offset_of!(MovementControllerNPC, refCount) == 0x8);
+const _: () = assert!(core::mem::offset_of!(MovementControllerNPC, field_30) == 0x30);
+const _: () = assert!(core::mem::offset_of!(MovementControllerNPC, field_48) == 0x48);
+const _: () = assert!(core::mem::offset_of!(MovementControllerNPC, field_110) == 0x110);
+const _: () = assert!(core::mem::offset_of!(MovementControllerNPC, field_118) == 0x118);
+const _: () = assert!(core::mem::offset_of!(MovementControllerNPC, __vftable_120) == 0x120);
+const _: () = assert!(core::mem::offset_of!(MovementControllerNPC, motionDrivenControl) == 0x128);
+const _: () = assert!(core::mem::offset_of!(MovementControllerNPC, __vftable_130) == 0x130);
+const _: () = assert!(core::mem::offset_of!(MovementControllerNPC, __vftable_138) == 0x138);
+const _: () = assert!(core::mem::offset_of!(MovementControllerNPC, __vftable_140) == 0x140);
+const _: () = assert!(core::mem::offset_of!(MovementControllerNPC, __vftable_148) == 0x148);
+const _: () = assert!(core::mem::offset_of!(MovementControllerNPC, field_150) == 0x150);
+const _: () = assert!(core::mem::offset_of!(MovementControllerNPC, field_1A0) == 0x1A0);
+const _: () = assert!(core::mem::offset_of!(MovementControllerNPC, field_1A8) == 0x1A8);
+const _: () = assert!(core::mem::offset_of!(MovementControllerNPC, field_1B0) == 0x1B0);
+const _: () = assert!(core::mem::offset_of!(MovementControllerNPC, field_1B8) == 0x1B8);
+const _: () = assert!(core::mem::offset_of!(MovementControllerNPC, controlsDriven) == 0x1C5);
+const _: () = assert!(core::mem::offset_of!(MovementControllerNPC, field_1C8) == 0x1C8);
+
 /// `NiUpdateData`: size 0x8 (exact).
 /// Meaning: argument record of the NiAVObject update slots 44-49 (high, camera pass).
 /// Evidence: argument record of the NiAVObject update slots 44-49; no RTTI; name from the update slots' use (it matches the Gamebryo name); size: callers build it as two adjacent 4-byte stack slots (UpdateNodesAfterRender 0x74c0f6..0x74c10c: [rsp+0x30] time, [rsp+0x34] flags) and pass their address; run-gfx third: 19 UpdateNodesAfterRender hits on thread(s) ['20044', '33320', '38240', '48344', '48472', '48504'] (main thread 32712), each followed on its thread by UpdateNode from 0x74c114 on the third-person root then from 0x74c157 on the first-person root, NiUpdateData flags 0x2001.
@@ -2638,6 +2795,460 @@ const _: () = assert!(core::mem::offset_of!(ShaderReferenceEffect, field_124) ==
 const _: () = assert!(core::mem::offset_of!(ShaderReferenceEffect, field_128) == 0x128);
 const _: () = assert!(core::mem::offset_of!(ShaderReferenceEffect, effectFlags) == 0x130);
 
+/// `StatsMenu`: size 0x328 (exact, medium); primary base `IMenu`.
+/// Meaning: the skills (constellation) menu (high, camera pass).
+/// Evidence: allocation sites (medium): {'808': 1}.
+/// Bases: `IMenu`@0x0, `FxDelegateHandler`@0x0, `GRefCountBase<FxDelegateHandler,2>`@0x0, `GRefCountBaseStatImpl<GRefCountImpl,2>`@0x0, `GRefCountImpl`@0x0, `GRefCountImplCore`@0x0, `MenuEventHandler`@0x30, `BSIntrusiveRefCounted`@0x38.
+/// Packed: a field lies below its natural alignment.
+#[repr(C, packed)]
+pub struct StatsMenu {
+    /// +0x0 `vtbl:StatsMenu:0`, rtti
+    #[doc(hidden)]
+    pub __vftable: *const crate::raw::vtables::StatsMenu_vtable,
+    /// +0x8 `undefined4`, base GRefCountImplCore
+    pub field_8: u32,
+    pub unknown_C: [u8; 4],
+    /// +0x10 `undefined1`, base GRefCountImplCore
+    pub field_10: u8,
+    /// +0x11 `undefined1`, base GRefCountImplCore
+    pub field_11: u8,
+    /// +0x12 `undefined2`, base GRefCountImplCore
+    pub field_12: u16,
+    /// +0x14 `undefined4`, base GRefCountImplCore
+    pub field_14: u32,
+    /// +0x18 `undefined4`, base GRefCountImplCore
+    pub field_18: u32,
+    /// +0x1C `u32`, base GRefCountImplCore, semantic; IMenuFlags (enum below); see the flag rows (high)
+    pub flags: u32,
+    /// +0x20 `undefined1`, base GRefCountImplCore
+    pub field_20: u8,
+    pub unknown_21: [u8; 3],
+    /// +0x24 `undefined4`, base GRefCountImplCore
+    pub field_24: u32,
+    /// +0x28 `undefined1`, base GRefCountImplCore
+    pub field_28: u8,
+    pub unknown_29: [u8; 3],
+    /// +0x2C `undefined4`, base GRefCountImplCore
+    pub field_2C: u32,
+    /// +0x30 `vtbl:StatsMenu:30`, rtti
+    #[doc(hidden)]
+    pub __vftable_30: *const crate::raw::vtables::StatsMenu_vtable_30,
+    /// +0x38 `undefined1`, base GRefCountImplCore
+    pub field_38: u8,
+    pub unknown_39: [u8; 3],
+    /// +0x3C `undefined4`, base GRefCountImplCore
+    pub field_3C: u32,
+    /// +0x40 `ptr:NiCamera`, base GRefCountImplCore, semantic; the menu's own NiCamera (StatsMenu::CreateCamera 0x97bd30); its local translation is refreshed from +0x288 during the intro and outro (high)
+    pub camera: *mut crate::NiCamera,
+    /// +0x48 `undefined1`, base GRefCountImplCore
+    pub field_48: u8,
+    pub unknown_49: [u8; 3],
+    /// +0x4C `undefined4`, base GRefCountImplCore
+    pub field_4C: u32,
+    /// +0x50 `undefined2`, base GRefCountImplCore
+    pub field_50: u16,
+    pub unknown_52: [u8; 2],
+    /// +0x54 `undefined4`, base GRefCountImplCore
+    pub field_54: u32,
+    /// +0x58 `float`, base GRefCountImplCore
+    pub field_58: f32,
+    /// +0x5C `float`, base GRefCountImplCore
+    pub field_5C: f32,
+    /// +0x60 `undefined1`, base GRefCountImplCore
+    pub field_60: u8,
+    pub unknown_61: [u8; 3],
+    /// +0x64 `undefined1`, base GRefCountImplCore
+    pub field_64: u8,
+    pub unknown_65: [u8; 3],
+    /// +0x68 `undefined4`, base GRefCountImplCore
+    pub field_68: u32,
+    /// +0x6C `undefined4`, base GRefCountImplCore
+    pub field_6C: u32,
+    /// +0x70 `undefined1`, base GRefCountImplCore
+    pub field_70: u8,
+    pub unknown_71: [u8; 3],
+    /// +0x74 `undefined4`, base GRefCountImplCore
+    pub field_74: u32,
+    /// +0x78 `undefined1`, base GRefCountImplCore
+    pub field_78: u8,
+    pub unknown_79: [u8; 1],
+    /// +0x7A `undefined2`, base GRefCountImplCore
+    pub field_7A: u16,
+    /// +0x7C `undefined4`, base GRefCountImplCore
+    pub field_7C: u32,
+    /// +0x80 `undefined1`, base GRefCountImplCore
+    pub field_80: u8,
+    pub unknown_81: [u8; 3],
+    /// +0x84 `undefined4`, base GRefCountImplCore
+    pub field_84: u32,
+    /// +0x88 `undefined1`, base GRefCountImplCore
+    pub field_88: u8,
+    pub unknown_89: [u8; 3],
+    /// +0x8C `undefined4`, base GRefCountImplCore
+    pub field_8C: u32,
+    /// +0x90 `undefined2`, base GRefCountImplCore
+    pub field_90: u16,
+    pub unknown_92: [u8; 2],
+    /// +0x94 `undefined4`, base GRefCountImplCore
+    pub field_94: u32,
+    /// +0x98 `undefined1`, base GRefCountImplCore
+    pub field_98: u8,
+    pub unknown_99: [u8; 3],
+    /// +0x9C `undefined4`, base GRefCountImplCore
+    pub field_9C: u32,
+    /// +0xA0 `undefined4`, base GRefCountImplCore
+    pub field_A0: u32,
+    /// +0xA4 `undefined4`, base GRefCountImplCore
+    pub field_A4: u32,
+    /// +0xA8 `undefined1`, base GRefCountImplCore
+    pub field_A8: u8,
+    pub unknown_A9: [u8; 3],
+    /// +0xAC `undefined4`, base GRefCountImplCore
+    pub field_AC: u32,
+    /// +0xB0 `undefined4`, base GRefCountImplCore
+    pub field_B0: u32,
+    /// +0xB4 `undefined4`, base GRefCountImplCore
+    pub field_B4: u32,
+    /// +0xB8 `undefined1`, base GRefCountImplCore
+    pub field_B8: u8,
+    pub unknown_B9: [u8; 3],
+    /// +0xBC `undefined4`, base GRefCountImplCore
+    pub field_BC: u32,
+    /// +0xC0 `undefined8`, ctor store
+    pub field_C0: u64,
+    /// +0xC8 `undefined8`, ctor store
+    pub field_C8: u64,
+    /// +0xD0 `undefined8`, ctor store
+    pub field_D0: u64,
+    /// +0xD8 `undefined8`, ctor store
+    pub field_D8: u64,
+    /// +0xE0 `undefined8`, ctor store
+    pub field_E0: u64,
+    /// +0xE8 `undefined8`, ctor store
+    pub field_E8: u64,
+    /// +0xF0 `undefined8`, ctor store
+    pub field_F0: u64,
+    /// +0xF8 `undefined8`, ctor store
+    pub field_F8: u64,
+    /// +0x100 `undefined8`, ctor store
+    pub field_100: u64,
+    /// +0x108 `undefined8`, ctor store
+    pub field_108: u64,
+    /// +0x110 `undefined8`, ctor store
+    pub field_110: u64,
+    /// +0x118 `undefined8`, ctor store
+    pub field_118: u64,
+    /// +0x120 `undefined8`, ctor store
+    pub field_120: u64,
+    /// +0x128 `undefined8`, ctor store
+    pub field_128: u64,
+    /// +0x130 `undefined8`, ctor store
+    pub field_130: u64,
+    /// +0x138 `undefined8`, ctor store
+    pub field_138: u64,
+    /// +0x140 `undefined8`, ctor store
+    pub field_140: u64,
+    /// +0x148 `undefined8`, ctor store
+    pub field_148: u64,
+    /// +0x150 `undefined8`, ctor store
+    pub field_150: u64,
+    /// +0x158 `undefined8`, ctor store
+    pub field_158: u64,
+    /// +0x160 `undefined8`, ctor store
+    pub field_160: u64,
+    /// +0x168 `undefined8`, ctor store
+    pub field_168: u64,
+    /// +0x170 `undefined8`, ctor store
+    pub field_170: u64,
+    /// +0x178 `undefined8`, ctor store
+    pub field_178: u64,
+    /// +0x180 `undefined8`, ctor store
+    pub field_180: u64,
+    /// +0x188 `undefined8`, ctor store
+    pub field_188: u64,
+    /// +0x190 `undefined8`, ctor store
+    pub field_190: u64,
+    /// +0x198 `undefined8`, ctor store
+    pub field_198: u64,
+    /// +0x1A0 `undefined8`, ctor store
+    pub field_1A0: u64,
+    /// +0x1A8 `undefined8`, ctor store
+    pub field_1A8: u64,
+    /// +0x1B0 `undefined8`, ctor store
+    pub field_1B0: u64,
+    /// +0x1B8 `u32`, semantic; 2 intro playing (ctor), 0 open, 3 outro / closing (medium)
+    pub sequenceState: u32,
+    /// +0x1BC `undefined1`, ctor store
+    pub field_1BC: u8,
+    pub unknown_1BD: [u8; 3],
+    /// +0x1C0 `undefined4`, ctor store
+    pub field_1C0: u32,
+    pub unknown_1C4: [u8; 4],
+    /// +0x1C8 `undefined8`, ctor store
+    pub field_1C8: u64,
+    /// +0x1D0 `undefined4`, ctor store
+    pub field_1D0: u32,
+    /// +0x1D4 `float`, ctor store
+    pub field_1D4: f32,
+    /// +0x1D8 `float`, ctor store
+    pub field_1D8: f32,
+    /// +0x1DC `float`, ctor store
+    pub field_1DC: f32,
+    /// +0x1E0 `undefined8`, ctor store
+    pub field_1E0: u64,
+    /// +0x1E8 `undefined4`, ctor store (widths [4, 8])
+    pub field_1E8: u32,
+    /// +0x1EC `float`, ctor store
+    pub field_1EC: f32,
+    /// +0x1F0 `float`, ctor store (widths [4, 8])
+    pub field_1F0: f32,
+    /// +0x1F4 `float`, ctor store
+    pub field_1F4: f32,
+    /// +0x1F8 `float`, ctor store (widths [4, 8])
+    pub field_1F8: f32,
+    /// +0x1FC `float`, ctor store
+    pub field_1FC: f32,
+    /// +0x200 `float`, ctor store (widths [4, 8])
+    pub field_200: f32,
+    /// +0x204 `float`, ctor store
+    pub field_204: f32,
+    /// +0x208 `float`, ctor store (widths [4, 8])
+    pub field_208: f32,
+    /// +0x20C `float`, ctor store
+    pub field_20C: f32,
+    /// +0x210 `undefined8`, ctor store
+    pub field_210: u64,
+    /// +0x218 `undefined8`, ctor store
+    pub field_218: u64,
+    /// +0x220 `undefined8`, ctor store
+    pub field_220: u64,
+    /// +0x228 `undefined8`, ctor store
+    pub field_228: u64,
+    /// +0x230 `undefined8`, ctor store
+    pub field_230: u64,
+    /// +0x238 `undefined8`, ctor store
+    pub field_238: u64,
+    pub unknown_240: [u8; 16],
+    /// +0x250 `undefined8`, ctor store
+    pub field_250: u64,
+    /// +0x258 `undefined4`, ctor store
+    pub field_258: u32,
+    pub unknown_25C: [u8; 16],
+    /// +0x26C `undefined8`, ctor store
+    pub field_26C: u64,
+    /// +0x274 `undefined8`, ctor store
+    pub field_274: u64,
+    /// +0x27C `undefined8`, ctor store
+    pub field_27C: u64,
+    pub unknown_284: [u8; 4],
+    /// +0x288 `undefined8`, ctor store
+    pub field_288: u64,
+    /// +0x290 `undefined8`, ctor store
+    pub field_290: u64,
+    /// +0x298 `undefined8`, ctor store
+    pub field_298: u64,
+    /// +0x2A0 `undefined8`, ctor store
+    pub field_2A0: u64,
+    /// +0x2A8 `undefined8`, ctor store
+    pub field_2A8: u64,
+    /// +0x2B0 `undefined8`, ctor store
+    pub field_2B0: u64,
+    /// +0x2B8 `undefined8`, ctor store
+    pub field_2B8: u64,
+    pub unknown_2C0: [u8; 16],
+    /// +0x2D0 `undefined4`, ctor store
+    pub field_2D0: u32,
+    pub unknown_2D4: [u8; 28],
+    /// +0x2F0 `undefined8`, ctor store
+    pub field_2F0: u64,
+    /// +0x2F8 `undefined8`, ctor store
+    pub field_2F8: u64,
+    /// +0x300 `undefined4`, ctor store
+    pub field_300: u32,
+    pub unknown_304: [u8; 12],
+    /// +0x310 `undefined4`, ctor store
+    pub field_310: u32,
+    /// +0x314 `float`, ctor store
+    pub field_314: f32,
+    /// +0x318 `float`, ctor store
+    pub field_318: f32,
+    /// +0x31C `undefined8`, ctor store
+    pub field_31C: u64,
+    /// +0x324 `undefined2`, ctor store
+    pub field_324: u16,
+    pub unknown_326: [u8; 2],
+    #[doc(hidden)]
+    pub __engine: crate::Engine,
+}
+const _: () = assert!(size_of::<StatsMenu>() == 0x328);
+const _: () = assert!(core::mem::offset_of!(StatsMenu, __vftable) == 0x0);
+const _: () = assert!(core::mem::offset_of!(StatsMenu, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(StatsMenu, field_10) == 0x10);
+const _: () = assert!(core::mem::offset_of!(StatsMenu, field_11) == 0x11);
+const _: () = assert!(core::mem::offset_of!(StatsMenu, field_12) == 0x12);
+const _: () = assert!(core::mem::offset_of!(StatsMenu, field_14) == 0x14);
+const _: () = assert!(core::mem::offset_of!(StatsMenu, field_18) == 0x18);
+const _: () = assert!(core::mem::offset_of!(StatsMenu, flags) == 0x1C);
+const _: () = assert!(core::mem::offset_of!(StatsMenu, field_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(StatsMenu, field_24) == 0x24);
+const _: () = assert!(core::mem::offset_of!(StatsMenu, field_28) == 0x28);
+const _: () = assert!(core::mem::offset_of!(StatsMenu, field_2C) == 0x2C);
+const _: () = assert!(core::mem::offset_of!(StatsMenu, __vftable_30) == 0x30);
+const _: () = assert!(core::mem::offset_of!(StatsMenu, field_38) == 0x38);
+const _: () = assert!(core::mem::offset_of!(StatsMenu, field_3C) == 0x3C);
+const _: () = assert!(core::mem::offset_of!(StatsMenu, camera) == 0x40);
+const _: () = assert!(core::mem::offset_of!(StatsMenu, field_48) == 0x48);
+const _: () = assert!(core::mem::offset_of!(StatsMenu, field_4C) == 0x4C);
+const _: () = assert!(core::mem::offset_of!(StatsMenu, field_50) == 0x50);
+const _: () = assert!(core::mem::offset_of!(StatsMenu, field_54) == 0x54);
+const _: () = assert!(core::mem::offset_of!(StatsMenu, field_58) == 0x58);
+const _: () = assert!(core::mem::offset_of!(StatsMenu, field_5C) == 0x5C);
+const _: () = assert!(core::mem::offset_of!(StatsMenu, field_60) == 0x60);
+const _: () = assert!(core::mem::offset_of!(StatsMenu, field_64) == 0x64);
+const _: () = assert!(core::mem::offset_of!(StatsMenu, field_68) == 0x68);
+const _: () = assert!(core::mem::offset_of!(StatsMenu, field_6C) == 0x6C);
+const _: () = assert!(core::mem::offset_of!(StatsMenu, field_70) == 0x70);
+const _: () = assert!(core::mem::offset_of!(StatsMenu, field_74) == 0x74);
+const _: () = assert!(core::mem::offset_of!(StatsMenu, field_78) == 0x78);
+const _: () = assert!(core::mem::offset_of!(StatsMenu, field_7A) == 0x7A);
+const _: () = assert!(core::mem::offset_of!(StatsMenu, field_7C) == 0x7C);
+const _: () = assert!(core::mem::offset_of!(StatsMenu, field_80) == 0x80);
+const _: () = assert!(core::mem::offset_of!(StatsMenu, field_84) == 0x84);
+const _: () = assert!(core::mem::offset_of!(StatsMenu, field_88) == 0x88);
+const _: () = assert!(core::mem::offset_of!(StatsMenu, field_8C) == 0x8C);
+const _: () = assert!(core::mem::offset_of!(StatsMenu, field_90) == 0x90);
+const _: () = assert!(core::mem::offset_of!(StatsMenu, field_94) == 0x94);
+const _: () = assert!(core::mem::offset_of!(StatsMenu, field_98) == 0x98);
+const _: () = assert!(core::mem::offset_of!(StatsMenu, field_9C) == 0x9C);
+const _: () = assert!(core::mem::offset_of!(StatsMenu, field_A0) == 0xA0);
+const _: () = assert!(core::mem::offset_of!(StatsMenu, field_A4) == 0xA4);
+const _: () = assert!(core::mem::offset_of!(StatsMenu, field_A8) == 0xA8);
+const _: () = assert!(core::mem::offset_of!(StatsMenu, field_AC) == 0xAC);
+const _: () = assert!(core::mem::offset_of!(StatsMenu, field_B0) == 0xB0);
+const _: () = assert!(core::mem::offset_of!(StatsMenu, field_B4) == 0xB4);
+const _: () = assert!(core::mem::offset_of!(StatsMenu, field_B8) == 0xB8);
+const _: () = assert!(core::mem::offset_of!(StatsMenu, field_BC) == 0xBC);
+const _: () = assert!(core::mem::offset_of!(StatsMenu, field_C0) == 0xC0);
+const _: () = assert!(core::mem::offset_of!(StatsMenu, field_C8) == 0xC8);
+const _: () = assert!(core::mem::offset_of!(StatsMenu, field_D0) == 0xD0);
+const _: () = assert!(core::mem::offset_of!(StatsMenu, field_D8) == 0xD8);
+const _: () = assert!(core::mem::offset_of!(StatsMenu, field_E0) == 0xE0);
+const _: () = assert!(core::mem::offset_of!(StatsMenu, field_E8) == 0xE8);
+const _: () = assert!(core::mem::offset_of!(StatsMenu, field_F0) == 0xF0);
+const _: () = assert!(core::mem::offset_of!(StatsMenu, field_F8) == 0xF8);
+const _: () = assert!(core::mem::offset_of!(StatsMenu, field_100) == 0x100);
+const _: () = assert!(core::mem::offset_of!(StatsMenu, field_108) == 0x108);
+const _: () = assert!(core::mem::offset_of!(StatsMenu, field_110) == 0x110);
+const _: () = assert!(core::mem::offset_of!(StatsMenu, field_118) == 0x118);
+const _: () = assert!(core::mem::offset_of!(StatsMenu, field_120) == 0x120);
+const _: () = assert!(core::mem::offset_of!(StatsMenu, field_128) == 0x128);
+const _: () = assert!(core::mem::offset_of!(StatsMenu, field_130) == 0x130);
+const _: () = assert!(core::mem::offset_of!(StatsMenu, field_138) == 0x138);
+const _: () = assert!(core::mem::offset_of!(StatsMenu, field_140) == 0x140);
+const _: () = assert!(core::mem::offset_of!(StatsMenu, field_148) == 0x148);
+const _: () = assert!(core::mem::offset_of!(StatsMenu, field_150) == 0x150);
+const _: () = assert!(core::mem::offset_of!(StatsMenu, field_158) == 0x158);
+const _: () = assert!(core::mem::offset_of!(StatsMenu, field_160) == 0x160);
+const _: () = assert!(core::mem::offset_of!(StatsMenu, field_168) == 0x168);
+const _: () = assert!(core::mem::offset_of!(StatsMenu, field_170) == 0x170);
+const _: () = assert!(core::mem::offset_of!(StatsMenu, field_178) == 0x178);
+const _: () = assert!(core::mem::offset_of!(StatsMenu, field_180) == 0x180);
+const _: () = assert!(core::mem::offset_of!(StatsMenu, field_188) == 0x188);
+const _: () = assert!(core::mem::offset_of!(StatsMenu, field_190) == 0x190);
+const _: () = assert!(core::mem::offset_of!(StatsMenu, field_198) == 0x198);
+const _: () = assert!(core::mem::offset_of!(StatsMenu, field_1A0) == 0x1A0);
+const _: () = assert!(core::mem::offset_of!(StatsMenu, field_1A8) == 0x1A8);
+const _: () = assert!(core::mem::offset_of!(StatsMenu, field_1B0) == 0x1B0);
+const _: () = assert!(core::mem::offset_of!(StatsMenu, sequenceState) == 0x1B8);
+const _: () = assert!(core::mem::offset_of!(StatsMenu, field_1BC) == 0x1BC);
+const _: () = assert!(core::mem::offset_of!(StatsMenu, field_1C0) == 0x1C0);
+const _: () = assert!(core::mem::offset_of!(StatsMenu, field_1C8) == 0x1C8);
+const _: () = assert!(core::mem::offset_of!(StatsMenu, field_1D0) == 0x1D0);
+const _: () = assert!(core::mem::offset_of!(StatsMenu, field_1D4) == 0x1D4);
+const _: () = assert!(core::mem::offset_of!(StatsMenu, field_1D8) == 0x1D8);
+const _: () = assert!(core::mem::offset_of!(StatsMenu, field_1DC) == 0x1DC);
+const _: () = assert!(core::mem::offset_of!(StatsMenu, field_1E0) == 0x1E0);
+const _: () = assert!(core::mem::offset_of!(StatsMenu, field_1E8) == 0x1E8);
+const _: () = assert!(core::mem::offset_of!(StatsMenu, field_1EC) == 0x1EC);
+const _: () = assert!(core::mem::offset_of!(StatsMenu, field_1F0) == 0x1F0);
+const _: () = assert!(core::mem::offset_of!(StatsMenu, field_1F4) == 0x1F4);
+const _: () = assert!(core::mem::offset_of!(StatsMenu, field_1F8) == 0x1F8);
+const _: () = assert!(core::mem::offset_of!(StatsMenu, field_1FC) == 0x1FC);
+const _: () = assert!(core::mem::offset_of!(StatsMenu, field_200) == 0x200);
+const _: () = assert!(core::mem::offset_of!(StatsMenu, field_204) == 0x204);
+const _: () = assert!(core::mem::offset_of!(StatsMenu, field_208) == 0x208);
+const _: () = assert!(core::mem::offset_of!(StatsMenu, field_20C) == 0x20C);
+const _: () = assert!(core::mem::offset_of!(StatsMenu, field_210) == 0x210);
+const _: () = assert!(core::mem::offset_of!(StatsMenu, field_218) == 0x218);
+const _: () = assert!(core::mem::offset_of!(StatsMenu, field_220) == 0x220);
+const _: () = assert!(core::mem::offset_of!(StatsMenu, field_228) == 0x228);
+const _: () = assert!(core::mem::offset_of!(StatsMenu, field_230) == 0x230);
+const _: () = assert!(core::mem::offset_of!(StatsMenu, field_238) == 0x238);
+const _: () = assert!(core::mem::offset_of!(StatsMenu, field_250) == 0x250);
+const _: () = assert!(core::mem::offset_of!(StatsMenu, field_258) == 0x258);
+const _: () = assert!(core::mem::offset_of!(StatsMenu, field_26C) == 0x26C);
+const _: () = assert!(core::mem::offset_of!(StatsMenu, field_274) == 0x274);
+const _: () = assert!(core::mem::offset_of!(StatsMenu, field_27C) == 0x27C);
+const _: () = assert!(core::mem::offset_of!(StatsMenu, field_288) == 0x288);
+const _: () = assert!(core::mem::offset_of!(StatsMenu, field_290) == 0x290);
+const _: () = assert!(core::mem::offset_of!(StatsMenu, field_298) == 0x298);
+const _: () = assert!(core::mem::offset_of!(StatsMenu, field_2A0) == 0x2A0);
+const _: () = assert!(core::mem::offset_of!(StatsMenu, field_2A8) == 0x2A8);
+const _: () = assert!(core::mem::offset_of!(StatsMenu, field_2B0) == 0x2B0);
+const _: () = assert!(core::mem::offset_of!(StatsMenu, field_2B8) == 0x2B8);
+const _: () = assert!(core::mem::offset_of!(StatsMenu, field_2D0) == 0x2D0);
+const _: () = assert!(core::mem::offset_of!(StatsMenu, field_2F0) == 0x2F0);
+const _: () = assert!(core::mem::offset_of!(StatsMenu, field_2F8) == 0x2F8);
+const _: () = assert!(core::mem::offset_of!(StatsMenu, field_300) == 0x300);
+const _: () = assert!(core::mem::offset_of!(StatsMenu, field_310) == 0x310);
+const _: () = assert!(core::mem::offset_of!(StatsMenu, field_314) == 0x314);
+const _: () = assert!(core::mem::offset_of!(StatsMenu, field_318) == 0x318);
+const _: () = assert!(core::mem::offset_of!(StatsMenu, field_31C) == 0x31C);
+const _: () = assert!(core::mem::offset_of!(StatsMenu, field_324) == 0x324);
+
+/// `StealthMeter`: size 0x98 (exact, medium); primary base `HUDObject`.
+/// Meaning: the HUD's stealth (detection) meter element (a HUDObject) (high, camera pass).
+/// Evidence: runtime: 0x98 at 1 allocation sites; agrees with the static allocation sites.
+/// Bases: `HUDObject`@0x0.
+#[repr(C)]
+pub struct StealthMeter {
+    /// +0x0 `vtbl:StealthMeter:0`, rtti
+    #[doc(hidden)]
+    pub __vftable: *const crate::raw::vtables::StealthMeter_vtable,
+    pub unknown_8: [u8; 32],
+    /// +0x28 `class:GFxValue`, semantic; args[4] of RegisterHUDComponents; FadeIn / FadeOut target (high)
+    pub fadeClip: crate::GFxValue,
+    /// +0x40 `class:GFxValue`, semantic; args[5]; GotoFrame(displayed * k) every Update (high)
+    pub meterClip: crate::GFxValue,
+    /// +0x58 `class:GFxValue`, semantic; args[8]; GotoLabeledFrame 'Start' when the meter reaches 0 or 100 (high)
+    pub flashClip: crate::GFxValue,
+    /// +0x70 `class:GFxValue`, semantic; args[9]; SetText '$HIDDEN' (0) / '$DETECTED' (100) (high)
+    pub textField: crate::GFxValue,
+    /// +0x88 `u32`, semantic; detection level shown, moved toward targetLevel each Update (high)
+    pub displayedLevel: u32,
+    /// +0x8C `u32`, semantic; HUDData +0x44 of the last type 0x18 message (0..100) (high)
+    pub targetLevel: u32,
+    /// +0x90 `u8`, semantic; HUDData +0x40 of the last type 0x18 message; a change runs FadeIn/FadeOut and SetHUDMode('StealthMode', shown) (high)
+    pub shown: u8,
+    /// +0x91 `u8`, semantic; set with shown; makes slot 1 run even when the levels are equal (medium)
+    pub updatePending: u8,
+    /// +0x92 `undefined1`, semantic; padding to 0x98 (medium)
+    pub pad_92: [u8; 6],
+    #[doc(hidden)]
+    pub __engine: crate::Engine,
+}
+const _: () = assert!(size_of::<StealthMeter>() == 0x98);
+const _: () = assert!(core::mem::offset_of!(StealthMeter, __vftable) == 0x0);
+const _: () = assert!(core::mem::offset_of!(StealthMeter, fadeClip) == 0x28);
+const _: () = assert!(core::mem::offset_of!(StealthMeter, meterClip) == 0x40);
+const _: () = assert!(core::mem::offset_of!(StealthMeter, flashClip) == 0x58);
+const _: () = assert!(core::mem::offset_of!(StealthMeter, textField) == 0x70);
+const _: () = assert!(core::mem::offset_of!(StealthMeter, displayedLevel) == 0x88);
+const _: () = assert!(core::mem::offset_of!(StealthMeter, targetLevel) == 0x8C);
+const _: () = assert!(core::mem::offset_of!(StealthMeter, shown) == 0x90);
+const _: () = assert!(core::mem::offset_of!(StealthMeter, updatePending) == 0x91);
+const _: () = assert!(core::mem::offset_of!(StealthMeter, pad_92) == 0x92);
+
 /// `StopMountCameraHandler`: size 0x10 (exact, medium); primary base `IHandlerFunctor<Actor,BSFixedStringCI>`.
 /// Meaning: animation-graph event handler (IHandlerFunctor<Actor,BSFixedStringCI>) registered under the factory key "StopHorseCameraHandler" (high, camera pass).
 /// Evidence: runtime: 0x10 at 1 allocation sites.
@@ -2725,7 +3336,7 @@ const _: () = assert!(core::mem::offset_of!(TESCameraState, id) == 0x18);
 const _: () = assert!(core::mem::offset_of!(TESCameraState, pad_1c) == 0x1C);
 
 /// `TESFurniture`: size 0xF0 (exact, medium); primary base `TESObjectACTI`.
-/// Meaning: slot rows from pass 12b track M (camera-system functions) (medium, camera pass).
+/// Meaning: FURN base form (high, camera pass).
 /// Evidence: runtime: 0xF0 at 1 allocation sites; agrees with the static allocation sites.
 /// Bases: `TESObjectACTI`@0x0, `TESBoundAnimObject`@0x0, `TESBoundObject`@0x0, `TESObject`@0x0, `TESForm`@0x0, `BaseFormComponent`@0x0, `TESFullName`@0x30, `BaseFormComponent`@0x30, `TESModelTextureSwap`@0x40, `TESModel`@0x40, `BaseFormComponent`@0x40, `TESMagicTargetForm`@0xA8, `BGSDestructibleObjectForm`@0x78, `BaseFormComponent`@0x78, `BGSOpenCloseForm`@0x88, `BGSKeywordForm`@0x90, `BaseFormComponent`@0x90.
 #[repr(C)]
@@ -2789,14 +3400,18 @@ pub struct TESFurniture {
     pub field_B8: u64,
     /// +0xC0 `undefined2`, base TESObjectACTI
     pub field_C0: u16,
-    pub unknown_C2: [u8; 30],
-    /// +0xE0 `undefined2`, ctor store
-    pub field_E0: u16,
+    pub unknown_C2: [u8; 6],
+    /// +0xC8 `class:BSTArray`, semantic; per-marker entries (0x10 each: u32 marker index, u32 NAM0 value, BGSKeyword* FNMK); data +0xc8, size +0xd8 (medium)
+    pub markerEntries: crate::BSTArray,
+    /// +0xE0 `u8`, semantic; WBDT byte 0: bench type (0 = not a workbench; nonzero takes the state-9 path in EnterFurnitureCamera) (high)
+    pub workbenchType: u8,
+    /// +0xE1 `u8`, semantic; WBDT byte 1: the workbench's skill as an ActorValue id, 0xff = none (medium)
+    pub workbenchSkill: u8,
     pub unknown_E2: [u8; 2],
-    /// +0xE4 `undefined4`, ctor store
-    pub field_E4: u32,
-    /// +0xE8 `undefined8`, ctor store
-    pub field_E8: u64,
+    /// +0xE4 `u32`, semantic; MNAM: bits 0-24 enabled markers (bit i = marker i of the model's BSFurnitureMarkerNode); 25-27 further flags; 28 Lean, 29 special-furniture keyword, 30 Sit, 31 Lay (sleep); see the flag rows (high)
+    pub activeMarkerFlags: u32,
+    /// +0xE8 `ptr:SpellItem`, semantic; NAM1: form id at load, a SpellItem* (or null) after slot 19 (high)
+    pub associatedSpell: *mut crate::SpellItem,
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -2824,9 +3439,11 @@ const _: () = assert!(core::mem::offset_of!(TESFurniture, field_A8) == 0xA8);
 const _: () = assert!(core::mem::offset_of!(TESFurniture, field_B0) == 0xB0);
 const _: () = assert!(core::mem::offset_of!(TESFurniture, field_B8) == 0xB8);
 const _: () = assert!(core::mem::offset_of!(TESFurniture, field_C0) == 0xC0);
-const _: () = assert!(core::mem::offset_of!(TESFurniture, field_E0) == 0xE0);
-const _: () = assert!(core::mem::offset_of!(TESFurniture, field_E4) == 0xE4);
-const _: () = assert!(core::mem::offset_of!(TESFurniture, field_E8) == 0xE8);
+const _: () = assert!(core::mem::offset_of!(TESFurniture, markerEntries) == 0xC8);
+const _: () = assert!(core::mem::offset_of!(TESFurniture, workbenchType) == 0xE0);
+const _: () = assert!(core::mem::offset_of!(TESFurniture, workbenchSkill) == 0xE1);
+const _: () = assert!(core::mem::offset_of!(TESFurniture, activeMarkerFlags) == 0xE4);
+const _: () = assert!(core::mem::offset_of!(TESFurniture, associatedSpell) == 0xE8);
 
 /// `ThirdPersonState`: size 0xE8 (exact, high); primary base `TESCameraState`.
 /// Meaning: orbit camera behind the target with zoom, shoulder offsets, chase yaw, free rotation and collision recovery; ids 8 and 9 (9 the gameplay one with +0xe1 = 1) (high, frame pass).
@@ -3172,6 +3789,30 @@ impl FirstPersonState_flags {
     }
 }
 
+/// Named bits of `FurnitureMarker.animTypeFlags` (camera pass); unnamed bits pass through `bits`.
+#[repr(transparent)]
+#[derive(Clone, Copy, PartialEq, Eq, Debug, Default)]
+pub struct FurnitureMarker_animTypeFlags(pub u32);
+
+impl FurnitureMarker_animTypeFlags {
+    /// Sit (high)
+    pub const SIT: Self = Self(0x1);
+    /// Sleep (high)
+    pub const SLEEP: Self = Self(0x2);
+    /// Lean (high)
+    pub const LEAN: Self = Self(0x4);
+
+    #[must_use]
+    pub const fn bits(self) -> u32 {
+        self.0
+    }
+
+    #[must_use]
+    pub const fn contains(self, other: Self) -> bool {
+        self.0 & other.0 == other.0
+    }
+}
+
 /// Named bits of `ShaderReferenceEffect.effectFlags` (camera pass); unnamed bits pass through `bits`.
 #[repr(transparent)]
 #[derive(Clone, Copy, PartialEq, Eq, Debug, Default)]
@@ -3180,6 +3821,38 @@ pub struct ShaderReferenceEffect_effectFlags(pub u32);
 impl ShaderReferenceEffect_effectFlags {
     /// AttachedToFirstPersonRoot (medium)
     pub const ATTACHED_TO_FIRST_PERSON_ROOT: Self = Self(0x1);
+
+    #[must_use]
+    pub const fn bits(self) -> u32 {
+        self.0
+    }
+
+    #[must_use]
+    pub const fn contains(self, other: Self) -> bool {
+        self.0 & other.0 == other.0
+    }
+}
+
+/// Named bits of `TESFurniture.activeMarkerFlags` (camera pass); unnamed bits pass through `bits`.
+#[repr(transparent)]
+#[derive(Clone, Copy, PartialEq, Eq, Debug, Default)]
+pub struct TESFurniture_activeMarkerFlags(pub u32);
+
+impl TESFurniture_activeMarkerFlags {
+    /// flag25 (low)
+    pub const FLAG25: Self = Self(0x2000000);
+    /// flag26 (low)
+    pub const FLAG26: Self = Self(0x4000000);
+    /// flag27 (low)
+    pub const FLAG27: Self = Self(0x8000000);
+    /// Lean (high)
+    pub const LEAN: Self = Self(0x10000000);
+    /// SpecialFurnitureKeyword (high)
+    pub const SPECIAL_FURNITURE_KEYWORD: Self = Self(0x20000000);
+    /// Sit (high)
+    pub const SIT: Self = Self(0x40000000);
+    /// Sleep (high)
+    pub const SLEEP: Self = Self(0x80000000);
 
     #[must_use]
     pub const fn bits(self) -> u32 {

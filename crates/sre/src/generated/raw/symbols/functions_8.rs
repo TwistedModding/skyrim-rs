@@ -4,6 +4,10 @@
 use crate::raw::*;
 
 pub(super) const ROWS: &[Function] = &[
+    Function { rva: 0xee8a80, id: 75294, confidence: Confidence::High, name: "NiTLargeArray<NiPointer<NiObject>,NiTNewInterface<NiPointer<NiObject>_>_>::dtor" },
+    Function { rva: 0xee8ae0, id: 75295, confidence: Confidence::High, name: "NiTLargeArray<BSFixedString,NiTNewInterface<BSFixedString>_>::dtor" },
+    Function { rva: 0xee8b40, id: 70434, confidence: Confidence::High, name: "NiTLargeArray<unsigned_int,NiTMallocInterface<unsigned_int>_>::dtor" },
+    Function { rva: 0xee8b70, id: 70435, confidence: Confidence::Medium, name: "NiTMapBase<NiTPointerAllocator<unsigned___int64>,char_const*___ptr64,unsigned_short>::ctor" },
     Function { rva: 0xee8bb0, id: 70436, confidence: Confidence::Medium, name: "NiTMapBase<NiTPointerAllocator<unsigned___int64>,char_const*___ptr64,class_NiObject*___ptr64_(__cdecl*)(void)>::ctor" },
     Function { rva: 0xee8bf0, id: 70437, confidence: Confidence::Medium, name: "NiTMapBase<NiTPointerAllocator<unsigned___int64>,NiObject_const*___ptr64,unsigned_int>::ctor" },
     Function { rva: 0xee8c30, id: 70438, confidence: Confidence::High, name: "NiTStringTemplateMap<NiTPointerMap<char_const*___ptr64,unsigned_short>,unsigned_short>::dtor" },
@@ -4906,8 +4910,8 @@ pub(super) const ROWS: &[Function] = &[
     Function { rva: 0xff11c0, id: 76643, confidence: Confidence::High, name: "BSFurnitureMarkerNode::vfunc_27" },
     Function { rva: 0xff12d0, id: 76644, confidence: Confidence::High, name: "BSFurnitureMarkerNode::vfunc_28" },
     Function { rva: 0xff12e0, id: 76645, confidence: Confidence::High, name: "BSFurnitureMarkerNode::Create" },
-    Function { rva: 0xff13a0, id: 76646, confidence: Confidence::High, name: "GetElementAt20ByteStride" },
-    Function { rva: 0xff13d0, id: 76647, confidence: Confidence::Medium, name: "GetFurnitureMarkerNodeExtraData" },
+    Function { rva: 0xff13a0, id: 76646, confidence: Confidence::High, name: "BSFurnitureMarkerNode::GetMarker" },
+    Function { rva: 0xff13d0, id: 76647, confidence: Confidence::High, name: "GetFurnitureMarkerNodeExtraData" },
     Function { rva: 0xff1450, id: 76648, confidence: Confidence::Medium, name: "ReserveAdditionalArrayCapacityStride20" },
     Function { rva: 0xff14a0, id: 76649, confidence: Confidence::Medium, name: "BSFurnitureMarkerNode::Create_sub0" },
     Function { rva: 0xff1500, id: 76650, confidence: Confidence::Medium, name: "BSFurnitureMarkerNode::vdtor" },
@@ -8691,10 +8695,4 @@ pub(super) const ROWS: &[Function] = &[
     Function { rva: 0x11722b4, id: 82357, confidence: Confidence::Medium, name: "BSResourceStreamParser::BSStreamParserData_vdtor" },
     Function { rva: 0x11722c0, id: 82361, confidence: Confidence::Medium, name: "BSResourceStreamParser::vdtor" },
     Function { rva: 0x1172300, id: 524272, confidence: Confidence::Medium, name: "_anon_3B91968A::BSScaleformAllocatorPaged::vdtor" },
-    Function { rva: 0x1172380, id: 82363, confidence: Confidence::Medium, name: "_anon_3B91968A::BSScaleformSysMemMapper::vdtor" },
-    Function { rva: 0x11723b0, id: 82364, confidence: Confidence::Medium, name: "BSScaleformTranslator::vdtor" },
-    Function { rva: 0x1172420, id: 82365, confidence: Confidence::Medium, name: "BSStreamParserData::vdtor" },
-    Function { rva: 0x1172460, id: 82366, confidence: Confidence::Medium, name: "_anon_3B91968A::DejaGFxLogger::vdtor" },
-    Function { rva: 0x11724dc, id: 82367, confidence: Confidence::Medium, name: "_anon_3B91968A::DejaGFxLogger::GFxLogBase_GFxLog_vdtor" },
-    Function { rva: 0x11724f0, id: 82370, confidence: Confidence::Medium, name: "GFxTranslator::vdtor" },
 ];
