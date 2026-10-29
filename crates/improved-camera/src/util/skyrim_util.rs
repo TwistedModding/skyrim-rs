@@ -66,6 +66,13 @@ pub fn zoom_state(camera: &PlayerCamera, state: CameraState) -> Option<&ThirdPer
     Some(unsafe { &*core::ptr::from_ref(object).cast::<ThirdPersonState>() })
 }
 
+/// `Get_ThirdPersonState()->targetZoomOffset`: the target zoom of the current state when it is
+/// one of the third-person family.
+pub fn current_third_person_zoom(camera: &PlayerCamera) -> Option<f32> {
+    let state = camera.state().filter(|s| (CameraState::ThirdPerson as u32..=CameraState::Dragon as u32).contains(&(*s as u32)))?;
+    zoom_state(camera, state).map(|s| s.targetZoom)
+}
+
 /// The target zoom of one of those states on the player camera.
 pub fn zoom_of(state: CameraState) -> Option<f32> {
     camera().and_then(|c| zoom_state(c, state)).map(|s| s.targetZoom)

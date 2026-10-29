@@ -2,7 +2,7 @@
 //! module docs name the file each one ports). So far: the third-person body in first person with
 //! its shadow, the head, arms and sheathed gear hidden from the player's own view, the body states
 //! that decide it, the camera manager's frame order they read, and the world, hands and tween
-//! menu FOV with the zoom effect.
+//! menu FOV with the zoom effect, and the pitch-driven world near plane.
 
 mod body;
 mod camera;
@@ -41,18 +41,23 @@ fn log(line: &str) {
 
 /// Makes `profile` the active one and stores it; a change of the body option applies or restores
 /// the `SetFirstPerson` patch and the root's visibility at once, and turning it off puts the
-/// engine's FOV back.
+/// engine's FOV and near plane back, as does choosing the first-person pass for the near plane.
 fn apply_profile(profile: &settings::Profile) {
-    let body_changed = settings::profile().General.bEnableBody != profile.General.bEnableBody;
+    let before = *settings::profile();
     settings::set_profile(profile);
     let Some(host) = HOST.get() else { return };
     profile.write(&host.settings());
-    if body_changed {
-        hook::fixes::set_body_patch(host, profile.General.bEnableBody);
+    let body = profile.General.bEnableBody;
+    if before.General.bEnableBody != body {
+        hook::fixes::set_body_patch(host, body);
         hook::fixes::apply_body_visibility();
-        if !profile.General.bEnableBody {
+        if !body {
             camera::manager::reset_fov();
         }
+    }
+    let pass = profile.Advanced.bNearFirstPersonPass;
+    if (before.General.bEnableBody && !body) || (!before.Advanced.bNearFirstPersonPass && pass) {
+        camera::manager::reset_near();
     }
 }
 
@@ -77,16 +82,17 @@ fn load(host: &'static Host) -> bool {
             camera::manager::with(|m| m.zoom_active = !m.zoom_active);
         }
     });
-    host.add_tab("Improved Camera").section("Body", ui::body_menu::draw).section("FOV", ui::fov_menu::draw);
+    host.add_tab("Improved Camera").section("Body", ui::body_menu::draw).section("FOV", ui::fov_menu::draw).section("Near plane", ui::near_menu::draw);
     hook::fixes::apply_body_visibility();
     log("loaded");
     true
 }
 
 /// Puts the body back as the engine keeps it: full scales, and the third-person root hidden in
-/// first person; and the engine's world FOV and FOV offset.
+/// first person; and the engine's world FOV, FOV offset and near plane.
 fn unload() {
     camera::manager::reset_fov();
+    camera::manager::reset_near();
     let Some(player) = util::skyrim_util::player() else { return };
     body::manager::with(|m| m.parts.restore(player));
     if !player.is_third_person()
@@ -100,16 +106,22 @@ fn save_state() -> Vec<u8> {
     let body = body::manager::with(|m| *m);
     let camera = camera::manager::with(|m| *m);
     let world_fov = util::skyrim_util::camera().map_or(0.0, |c| c.worldFOV);
-    handoff::save(&body, camera, world_fov)
+    handoff::save(&body, camera, handoff::Written { world_fov, near: skyrim::render::near_distance() })
 }
 
-/// Takes the old build's state, and the world FOV it had written over the one `unload` put back.
+/// Takes the old build's state, and the world FOV and near plane it had written over the ones
+/// `unload` put back.
 fn restore_state(bytes: &[u8]) {
-    if let Some((body, camera, world_fov)) = handoff::restore(bytes) {
+    if let Some((body, camera, written)) = handoff::restore(bytes) {
         body::manager::with(|m| *m = body);
         camera::manager::with(|m| *m = camera);
-        if let Some(c) = util::skyrim_util::camera().filter(|_| world_fov > 0.0) {
-            skyrim::store(&c.worldFOV, world_fov);
+        if let Some(c) = util::skyrim_util::camera() {
+            if written.world_fov > 0.0 {
+                skyrim::store(&c.worldFOV, written.world_fov);
+            }
+            if written.near > 0.0 && written.near.to_bits() != skyrim::render::near_distance().to_bits() {
+                skyrim::render::set_near_plane(written.near);
+            }
         }
     }
 }

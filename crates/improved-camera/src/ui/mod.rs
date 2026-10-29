@@ -2,3 +2,4 @@
 
 pub mod body_menu;
 pub mod fov_menu;
+pub mod near_menu;
