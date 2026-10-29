@@ -1,16 +1,18 @@
 //! `util/SkyrimUtil.h`: the engine queries IC repeats across its modules.
 
+use std::sync::atomic::{AtomicU16, Ordering};
+
 use skyrim::BSFixedString;
 use skyrim::actors::{RefHandle, RefPtr};
+use skyrim::physics::{self, Hit};
 use skyrim::prelude::*;
 use skyrim::ui::Value;
-use sre::{Actor, ActorAttackState, ActorSitSleepState, ActorState_flags1, ActorWeaponState, CameraState, ControlGroupFlag, DisablePOVType, EventSourceHolder_MenuOpenClose, EventSourceHolder_User, NiAVObject, PlayerCamera, PlayerCharacter, PlayerControls, PlayerInputHandler, TESObjectREFR, ThirdPersonState};
+use sre::{Actor, ActorAttackState, ActorSitSleepState, ActorState_flags1, ActorWeaponState, BodyPartType, CameraState, CollisionLayer, ControlGroupFlag, DisablePOVType, EventSourceHolder_MenuOpenClose, EventSourceHolder_User, MenuTopicManager, NiAVObject, PlayerCamera, PlayerCharacter, PlayerControls, PlayerInputHandler, TESObjectREFR, ThirdPersonState};
+
+use crate::util::point::{self, M3, P3};
 
 /// The third-person state's target zoom IC parks the camera at for its fake first person.
 pub const FAKE_FIRST_PERSON_ZOOM: f32 = -0.275;
-
-/// `BGSBodyPartData` part index of the head (`camera.md` section 30, rated medium).
-const HEAD_PART: u32 = 1;
 
 pub fn player() -> Option<&'static PlayerCharacter> {
     PlayerCharacter::singleton()
@@ -121,11 +123,6 @@ pub fn is_free_camera() -> bool {
     camera().is_some_and(|c| c.state() == Some(CameraState::Free))
 }
 
-/// `Get_BodyPart_Node(actor, kHead)`.
-pub fn head_node(player: &PlayerCharacter) -> Option<&'static NiAVObject> {
-    player.get_body_part_node(HEAD_PART).map(|node| &**node)
-}
-
 pub fn object_by_name(root: &NiAVObject, name: &str) -> Option<&'static NiAVObject> {
     root.get_object_by_name(BSFixedString::new(name).raw())
 }
@@ -200,9 +197,96 @@ pub fn is_weapon_drawn(actor: &Actor) -> bool {
     (ActorWeaponState::WantToDraw as u32..=ActorWeaponState::Drawn as u32).contains(&weapon_state(actor))
 }
 
-/// `Get_BodyPart_Node(actor, kHead)` for any actor.
+/// `Get_BodyPart_Node(actor, kHead)`.
 pub fn actor_head(actor: &Actor) -> Option<&'static NiAVObject> {
-    actor.get_body_part_node(HEAD_PART).map(|node| &**node)
+    actor.get_body_part_node(BodyPartType::Head as u32).map(|node| &**node)
+}
+
+/// `Get_BodyPart_Node(actor, kEye)` (RE `camera.md` IC5 F).
+pub fn actor_eye(actor: &Actor) -> Option<&'static NiAVObject> {
+    actor.get_body_part_node(BodyPartType::Eye as u32).map(|node| &**node)
+}
+
+pub fn position(reference: &TESObjectREFR) -> P3 {
+    [reference.posX, reference.posY, reference.posZ]
+}
+
+/// `Get_Head_Position`: the head node, else the feet raised by `ratio` of the actor's height,
+/// taken as its 3D's bounding sphere diameter.
+pub fn head_position(actor: &Actor, ratio: f32) -> P3 {
+    if let Some(head) = actor_head(actor) {
+        return head.world_transform().translation;
+    }
+    let height = actor.get3_d().map_or(0.0, |root| root.worldBound.radius * 2.0);
+    let p = position(actor);
+    [p[0], p[1], p[2] + height * ratio]
+}
+
+/// `IsFlying`: the actor's flying state (bits 18-20 of `ActorState::flags1`) is not `NotFlying`.
+pub fn is_flying(actor: &Actor) -> bool {
+    (actor.as_actor_state().flags1 >> 18) & 7 != sre::ActorFlyingState::NotFlying as u32
+}
+
+/// The collision group the camera's rays use, taken once from the world filter.
+static PICK_GROUP: AtomicU16 = AtomicU16::new(0);
+
+/// `CastRay`: a ray from `from` to `to` on the camera's pick layer (RE `camera.md` IC5 A), main
+/// thread only.
+pub fn cast_ray(from: P3, to: P3) -> Option<Hit> {
+    let mut group = PICK_GROUP.load(Ordering::Relaxed);
+    if group == 0 {
+        group = physics::fresh_group()?;
+        PICK_GROUP.store(group, Ordering::Relaxed);
+    }
+    physics::pick(from, to, physics::filter_info(CollisionLayer::CAMERAPICK, group))
+}
+
+/// `Is_Solid_Hit`: whether a hit on `layer` blocks a shot; bodies only when `actors_block`.
+#[must_use]
+pub fn is_solid_hit(layer: Option<CollisionLayer>, actors_block: bool) -> bool {
+    use CollisionLayer as L;
+    match layer {
+        Some(L::BIPED | L::DEADBIP) => actors_block,
+        Some(L::CHARCONTROLLER | L::SPELL | L::TRIGGER | L::ACTORZONE | L::SPELLEXPLOSION | L::UNIDENTIFIED) | None => false,
+        Some(_) => true,
+    }
+}
+
+/// `LookRotationMatrix`: the camera basis (right, forward, up columns) at `position` looking at
+/// `target`; `None` when they coincide or the aim is straight up or down.
+#[must_use]
+pub fn look_rotation(position: P3, target: P3) -> Option<M3> {
+    let (forward, length) = point::unitize(point::sub(target, position));
+    if length < 0.001 {
+        return None;
+    }
+    let (right, length) = point::unitize(point::cross(forward, [0.0, 0.0, 1.0]));
+    if length < 0.001 {
+        return None;
+    }
+    Some(point::from_columns(right, forward, point::cross(right, forward)))
+}
+
+/// `UI::IsShowingMenus`: the UI's `menusVisible` byte, which `tm` flips (RE `camera.md` IC5 E).
+pub fn menus_visible() -> bool {
+    ui().is_none_or(|ui| ui.menusVisible != 0)
+}
+
+/// `UI::ShowMenus`: writes `menusVisible`; main thread.
+pub fn show_menus(visible: bool) {
+    if let Some(ui) = ui() {
+        skyrim::store(&ui.menusVisible, u8::from(visible));
+    }
+}
+
+/// `DialogueState::GetTarget`: the topic manager's speaker, else its previous speaker
+/// (`MenuTopicManager` +0x68 and +0x6c, RE `camera.md` IC5 B), as a loaded living actor; the
+/// handles are resolved on every call.
+pub fn dialogue_target() -> Option<RefPtr> {
+    let topics = MenuTopicManager::singleton()?;
+    let target = RefHandle(topics.field_68).lookup().or_else(|| RefHandle(topics.field_6C).lookup())?;
+    let actor = actor_of(&target)?;
+    (actor.get3_d().is_some() && !actor.is_dead(true)).then_some(target)
 }
 
 /// The sit/sleep state, bits 14-17 of `ActorState::flags1` (`ActorSitSleepState`, RE `camera.md` IC3 E).
@@ -250,6 +334,26 @@ pub fn camera_target() -> Option<RefPtr> {
 /// Writes a reference's pitch (`data.angle.x`); the reference's fields are unaligned.
 pub fn set_pitch(reference: &TESObjectREFR, pitch: f32) {
     unsafe { core::ptr::addr_of!(reference.rotX).cast_mut().write_volatile(pitch) };
+}
+
+/// Writes a reference's heading (`data.angle.z`).
+pub fn set_heading(reference: &TESObjectREFR, heading: f32) {
+    unsafe { core::ptr::addr_of!(reference.rotZ).cast_mut().write_volatile(heading) };
+}
+
+/// The process's head-tracking data, the object at `AIProcess`+0x10 (RE `camera.md` IC5 C).
+fn head_track_data(actor: &Actor) -> Option<*mut core::ffi::c_void> {
+    let process = actor.current_process()?;
+    let pointer = usize::from_le_bytes(process.unknown_10[..8].try_into().ok()?);
+    (pointer != 0).then_some(pointer as *mut core::ffi::c_void)
+}
+
+/// `SetHeadtrackTarget(slot, target)`: fills or clears (`None`) one head-track slot
+/// (`HeadTrackData::SetSlot`).
+pub fn set_head_track_slot(actor: &Actor, slot: sre::HeadTrackSlot, target: Option<&TESObjectREFR>) {
+    if let Some(data) = head_track_data(actor) {
+        unsafe { sre::head_track_data__set_slot(data, slot as i32, target.map_or(core::ptr::null_mut(), |t| core::ptr::from_ref(t).cast_mut())) };
+    }
 }
 
 pub fn actor_of(reference: &TESObjectREFR) -> Option<&Actor> {
@@ -367,4 +471,28 @@ pub fn show_crosshair(show: bool) {
     let no = || Value::boolean(false);
     let args = [no(), Value::string(c""), no(), no(), no(), Value::boolean(show), Value::undefined(), Value::undefined(), Value::undefined(), Value::undefined()];
     movie.invoke("_root.HUDMovieBaseInstance.SetCrosshairTarget", &args);
+}
+
+#[cfg(test)]
+mod tests {
+    use sre::CollisionLayer as L;
+
+    use super::{is_solid_hit, look_rotation};
+
+    #[test]
+    fn bodies_block_only_when_asked_and_triggers_never() {
+        assert!(is_solid_hit(Some(L::STATIC), false));
+        assert!(!is_solid_hit(Some(L::BIPED), false) && is_solid_hit(Some(L::DEADBIP), true));
+        assert!(!is_solid_hit(Some(L::CHARCONTROLLER), true) && !is_solid_hit(Some(L::TRIGGER), true) && !is_solid_hit(None, true));
+    }
+
+    #[test]
+    fn the_look_rotation_has_right_forward_up_columns() {
+        let m = look_rotation([0.0; 3], [0.0, 10.0, 0.0]).unwrap();
+        assert_eq!(m, [[1.0, 0.0, 0.0], [0.0, 1.0, 0.0], [0.0, 0.0, 1.0]]);
+        let m = look_rotation([0.0; 3], [10.0, 0.0, 0.0]).unwrap();
+        assert_eq!([m[0][1], m[1][1], m[2][1]], [1.0, 0.0, 0.0]);
+        assert_eq!([m[0][0], m[1][0], m[2][0]], [0.0, -1.0, 0.0]);
+        assert!(look_rotation([0.0; 3], [0.0, 0.0, 10.0]).is_none() && look_rotation([1.0; 3], [1.0; 3]).is_none());
+    }
 }

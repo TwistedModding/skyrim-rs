@@ -4,7 +4,21 @@
 
 use framework::egui;
 
+use crate::camera::util::interpolation::METHOD_NAMES;
 use crate::settings::{self, CamOffset, Profile, Stab};
+
+fn slider(ui: &mut egui::Ui, value: &mut f32, range: core::ops::RangeInclusive<f32>, decimals: usize, label: &str) {
+    ui.add(egui::Slider::new(value, range).fixed_decimals(decimals).text(label));
+}
+
+fn method(ui: &mut egui::Ui, value: &mut i32, label: &str) {
+    let selected = usize::try_from(*value).ok().and_then(|i| METHOD_NAMES.get(i)).copied().unwrap_or(METHOD_NAMES[0]);
+    egui::ComboBox::from_label(label).selected_text(selected).show_ui(ui, |ui| {
+        for (i, name) in (0..).zip(METHOD_NAMES) {
+            ui.selectable_value(value, i, name);
+        }
+    });
+}
 
 fn offset(ui: &mut egui::Ui, o: &mut CamOffset, label: &str) {
     ui.label(label);
@@ -39,10 +53,39 @@ pub fn draw(ui: &mut egui::Ui) {
     ui.checkbox(&mut p.Dialogue.bForceFirstPerson, "Force First Person");
     ui.checkbox(&mut p.Dialogue.bForceThirdPerson, "Force Third Person");
     ui.checkbox(&mut p.Dialogue.bSmoothTransition, "Smooth Transition");
+    let dialogue = &mut p.Dialogue;
+    ui.checkbox(&mut dialogue.bFaceSpeaker, "Face Speaker");
+    ui.checkbox(&mut dialogue.bHeadTracking, "Head Tracking");
+    ui.checkbox(&mut dialogue.bHideDialogueMenu, "Hide Dialogue Menu");
+    ui.checkbox(&mut dialogue.bSwitchTarget, "Speaker Focus");
+    ui.checkbox(&mut dialogue.bLockOn, "Lock On");
+    slider(ui, &mut dialogue.fCameraSpeed, 50.0..=2000.0, 0, "Camera Speed");
+    slider(ui, &mut dialogue.fFirstPersonZoom, 10.0..=200.0, 0, "Zoom: First Person");
+    slider(ui, &mut dialogue.fThirdPersonZoom, 10.0..=300.0, 0, "Zoom: Third Person");
+    slider(ui, &mut dialogue.fDragonZoom, 50.0..=500.0, 0, "Zoom: Dragon");
+    slider(ui, &mut dialogue.fDefaultWorldFOV, 30.0..=120.0, 0, "Default World FOV");
+    slider(ui, &mut dialogue.fPlayerShoulderPosX, -200.0..=200.0, 0, "Player Shoulder: Side");
+    slider(ui, &mut dialogue.fPlayerShoulderPosY, -200.0..=200.0, 0, "Player Shoulder: Forward");
+    slider(ui, &mut dialogue.fPlayerShoulderPosZ, -200.0..=200.0, 0, "Player Shoulder: Up");
+    slider(ui, &mut dialogue.fNpcShoulderPosX, -200.0..=200.0, 0, "NPC Shoulder: Side");
+    slider(ui, &mut dialogue.fNpcShoulderPosY, -200.0..=200.0, 0, "NPC Shoulder: Forward");
+    slider(ui, &mut dialogue.fNpcShoulderPosZ, -200.0..=200.0, 0, "NPC Shoulder: Up");
+    slider(ui, &mut dialogue.fHumanCamOffsetZ, -50.0..=50.0, 0, "Focus Anchor: Human Height");
+    slider(ui, &mut dialogue.fCreatureCamOffsetZ, -100.0..=100.0, 0, "Focus Anchor: Creature Height");
     ui.heading("Idle Camera");
-    ui.checkbox(&mut p.Vanity.bEnable, "Enable");
-    ui.add(egui::Slider::new(&mut p.Vanity.fIdleDelay, 5.0..=600.0).fixed_decimals(0).text("Idle Delay"));
-    ui.add(egui::Slider::new(&mut p.Vanity.fFOV, 20.0..=120.0).fixed_decimals(0).text("FOV"));
+    let vanity = &mut p.Vanity;
+    ui.checkbox(&mut vanity.bEnable, "Enable");
+    ui.checkbox(&mut vanity.bToggleMenus, "Hide Menus");
+    slider(ui, &mut vanity.fIdleDelay, 5.0..=300.0, 0, "Idle Delay");
+    slider(ui, &mut vanity.fOrbitSpeed, -30.0..=30.0, 1, "Orbit: Speed");
+    slider(ui, &mut vanity.fDistance, 100.0..=600.0, 0, "Orbit: Distance");
+    slider(ui, &mut vanity.fHeight, -50.0..=200.0, 0, "Orbit: Height");
+    slider(ui, &mut vanity.fFOV, 30.0..=100.0, 0, "Orbit: FOV");
+    ui.checkbox(&mut vanity.bCollisionSmoothing, "Collision Smoothing");
+    method(ui, &mut vanity.iCollisionPullInMethod, "Pull-In Method");
+    slider(ui, &mut vanity.fCollisionPullInDuration, 0.05..=1.0, 2, "Pull-In Duration");
+    method(ui, &mut vanity.iCollisionRecoveryMethod, "Recovery Method");
+    slider(ui, &mut vanity.fCollisionRecoveryDuration, 0.05..=2.0, 2, "Recovery Duration");
     ui.heading("Offsets");
     let mut first = CamOffset { forward: p.Firstperson.forward, up: p.Firstperson.up, right: p.Firstperson.right };
     offset(ui, &mut first, "First Person");

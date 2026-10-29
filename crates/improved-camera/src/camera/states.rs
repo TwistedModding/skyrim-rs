@@ -4,8 +4,8 @@
 use framework::{GameMouse, GamePad};
 use sre::{CameraState, PlayerCamera};
 
-use super::base::{self, Free, ThirdPerson};
-use super::extended::{self, Dialogue, Spectator};
+use super::base::{self, Free, ThirdPerson, Vanity};
+use super::extended::{self, Dialogue, RaceMenu, Spectator};
 use super::state::{CameraType, Modifier};
 use super::util::look::LookMode;
 use super::util::orbit::OrbitController;
@@ -43,6 +43,8 @@ pub struct Ctx<'a> {
     pub body: Body,
     pub notes: &'a mut Notes,
     pub input: &'a Input,
+    /// The dialogue's speaker focus is wanted this frame (`UsingSpeakerFocus` in the dialogue camera).
+    pub dialogue_focus: bool,
 }
 
 /// IC's state objects with what each keeps between frames.
@@ -50,7 +52,7 @@ pub struct Ctx<'a> {
 pub enum State {
     Unknown,
     FirstPerson,
-    Vanity,
+    Vanity(Vanity),
     Vats(OrbitController),
     Free(Free),
     IronSight,
@@ -72,7 +74,7 @@ pub enum State {
     Dialogue(Dialogue),
     Gathering(OrbitController),
     MapMenu,
-    RaceMenu { previous: CameraType },
+    RaceMenu(RaceMenu),
     Spectator(Spectator),
     VampirelordTransition,
     Vampirelord,
@@ -102,7 +104,7 @@ impl State {
         use LookMode::{Disabled, FirstPerson, ThirdPerson as Third};
         match camera {
             T::FirstPerson => (Self::FirstPerson, FirstPerson),
-            T::Vanity => (Self::Vanity, Disabled),
+            T::Vanity => (Self::Vanity(Vanity::default()), Disabled),
             T::VATS => (Self::Vats(OrbitController::new()), Third),
             T::Free => (Self::Free(Free::new(false)), Disabled),
             T::IronSight => (Self::IronSight, Disabled),
@@ -124,7 +126,7 @@ impl State {
             T::Dialogue => (Self::Dialogue(Dialogue::default()), Disabled),
             T::Gathering => (Self::Gathering(OrbitController::new()), Third),
             T::MapMenu => (Self::MapMenu, Disabled),
-            T::RaceMenu => (Self::RaceMenu { previous: T::Unknown }, Disabled),
+            T::RaceMenu => (Self::RaceMenu(RaceMenu::new()), Disabled),
             T::Spectator => (Self::Spectator(Spectator::default()), Third),
             T::VampirelordTransition => (Self::VampirelordTransition, Third),
             T::Vampirelord => (Self::Vampirelord, Third),
@@ -145,7 +147,7 @@ impl State {
         match self {
             Self::Unknown => T::Unknown,
             Self::FirstPerson => T::FirstPerson,
-            Self::Vanity => T::Vanity,
+            Self::Vanity(_) => T::Vanity,
             Self::Vats(_) => T::VATS,
             Self::Free(_) => T::Free,
             Self::IronSight => T::IronSight,
@@ -167,7 +169,7 @@ impl State {
             Self::Dialogue(_) => T::Dialogue,
             Self::Gathering(_) => T::Gathering,
             Self::MapMenu => T::MapMenu,
-            Self::RaceMenu { .. } => T::RaceMenu,
+            Self::RaceMenu(_) => T::RaceMenu,
             Self::Spectator(_) => T::Spectator,
             Self::VampirelordTransition => T::VampirelordTransition,
             Self::Vampirelord => T::Vampirelord,
@@ -196,7 +198,9 @@ impl State {
                 *p = previous;
                 base::transition_enter(previous, ctx);
             }
-            Self::TweenMenu { previous: p } | Self::RaceMenu { previous: p } => *p = previous,
+            Self::TweenMenu { previous: p } => *p = previous,
+            Self::RaceMenu(state) => state.enter(previous),
+            Self::Vanity(state) => state.enter(ctx),
             Self::ThirdPerson(state) => state.enter(previous, ctx),
             Self::Horse => base::mount_enter(ctx, CameraState::Horse),
             Self::Dragon => base::mount_enter(ctx, CameraState::Dragon),
@@ -206,7 +210,7 @@ impl State {
             Self::Animation { should_sim } => extended::animation_enter(should_sim, previous, ctx),
             Self::Dialogue(state) => state.enter(previous, ctx),
             Self::Spectator(state) => state.enter(previous, ctx),
-            Self::Unknown | Self::Vanity | Self::IronSight | Self::Animated | Self::MapMenu | Self::Vampirelord | Self::Lich | Self::Sex | Self::DragonDismounting => {}
+            Self::Unknown | Self::IronSight | Self::Animated | Self::MapMenu | Self::Vampirelord | Self::Lich | Self::Sex | Self::DragonDismounting => {}
         }
     }
 
@@ -216,7 +220,7 @@ impl State {
         let camera = ctx.profile.Camera;
         match self {
             Self::FirstPerson => base::first_person_update(m, ctx),
-            Self::Vanity => base::vanity_update(m, ctx),
+            Self::Vanity(state) => state.update(m, ctx),
             Self::Vats(orbit) => {
                 base::pov_zoom_toggle(ctx, base::pov_tap);
                 base::orbit_update(orbit, m, ctx, fov.fKillmove, CameraState::ThirdPerson);
@@ -238,11 +242,8 @@ impl State {
                     base::freeze_body();
                 }
             }
-            Self::RaceMenu { previous } => {
-                if matches!(previous, CameraType::FirstPerson | CameraType::ThirdPerson | CameraType::Animation) {
-                    base::freeze_body();
-                }
-            }
+            Self::RaceMenu(state) => state.update(ctx),
+            Self::Dialogue(state) => state.update(m, ctx, ctx.dialogue_focus),
             Self::ThirdPerson(state) => state.update(m, ctx),
             Self::Horse => offset_sim(m, fov.fHorse, ctx.profile.Horse.offset().point()),
             Self::Dragon => offset_sim(m, fov.fDragon, camera.Dragon.point()),
@@ -261,7 +262,7 @@ impl State {
             Self::LichTransition => sim(m, fov.fLich),
             Self::Lich => offset_sim(m, fov.fLich, camera.Lich.point()),
             Self::Sex => offset_sim(m, fov.fSex, camera.Sex.point()),
-            Self::Dialogue(_) | Self::Unknown | Self::IronSight | Self::Animated | Self::MapMenu => {}
+            Self::Unknown | Self::IronSight | Self::Animated | Self::MapMenu => {}
         }
     }
 
@@ -275,26 +276,32 @@ impl State {
             Self::Free(free) | Self::SexTFC(free) => free.exit(),
             Self::Furniture => base::furniture_exit(m, ctx),
             Self::Transition { previous } => base::transition_exit(*previous, m, ctx),
-            Self::TweenMenu { previous } | Self::RaceMenu { previous } => {
+            Self::TweenMenu { previous } => {
                 if *previous == CameraType::FirstPerson {
                     base::freeze_body();
                 }
             }
+            Self::RaceMenu(state) => state.exit(ctx.camera),
+            Self::Vanity(state) => state.exit(),
             Self::HorseDismounting | Self::DragonDismounting => base::dismount_exit(m),
             Self::Horse | Self::Dragon | Self::Animation { .. } | Self::Crafting | Self::VampirelordTransition | Self::Vampirelord | Self::WerewolfTransition | Self::Werewolf | Self::LichTransition | Self::Lich | Self::Sex => m.sim_first_person = false,
             Self::Dialogue(state) => state.exit(ctx),
             Self::Spectator(state) => state.exit(m),
-            Self::Unknown | Self::FirstPerson | Self::Vanity | Self::IronSight | Self::Animated | Self::ThirdPerson(_) | Self::MapMenu | Self::HorseMounting | Self::DragonMounting => {}
+            Self::Unknown | Self::FirstPerson | Self::IronSight | Self::Animated | Self::ThirdPerson(_) | Self::MapMenu | Self::HorseMounting | Self::DragonMounting => {}
         }
     }
 
     /// Puts back what the state holds in the engine, for an unload: the orbit's base pose, the
-    /// free camera's handlers and fly speed, the spectator's target and neck.
-    pub fn release(&mut self, camera: &PlayerCamera) {
+    /// free camera's handlers and fly speed, the spectator's target and neck, the HUD the idle
+    /// camera hid and the dialogue's head tracking.
+    pub fn release(&mut self, camera: &PlayerCamera, profile: &Profile) {
         match self {
             Self::Vats(orbit) | Self::Bleedout(orbit) | Self::Dead(orbit) | Self::Gathering(orbit) => base::orbit_release(orbit, camera),
             Self::Free(free) | Self::SexTFC(free) => free.release(),
             Self::Spectator(state) => state.release(),
+            Self::Vanity(state) => state.exit(),
+            Self::RaceMenu(state) => state.exit(camera),
+            Self::Dialogue(state) => state.release(profile),
             _ => {}
         }
     }

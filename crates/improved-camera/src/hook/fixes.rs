@@ -194,14 +194,15 @@ fn shrink_view_hidden_parts(third: &NiAVObject) {
             any = true;
         }
     };
-    if hidden.left_arm {
+    let focus = crate::camera::snapshot::get().dialogue_focus;
+    if hidden.left_arm && !focus {
         shrink(util::object_by_name(third, "NPC L UpperArm [LUar]"));
     }
-    if hidden.right_arm {
+    if hidden.right_arm && !focus {
         shrink(util::object_by_name(third, "NPC R UpperArm [RUar]"));
     }
-    if hidden.head {
-        shrink(util::player().and_then(util::head_node).and_then(|h| unsafe { h.parent.cast::<NiAVObject>().as_ref() }));
+    if hidden.head && !focus {
+        shrink(util::player().and_then(|p| util::actor_head(p)).and_then(|h| unsafe { h.parent.cast::<NiAVObject>().as_ref() }));
     }
     for (name, group) in SHEATHED_NODES {
         if group.hidden(hidden) {

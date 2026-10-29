@@ -1,19 +1,24 @@
-//! `camera/extended/*`: IC's own camera types. `CameraAnimation`, `CameraDialogue` (the forced
-//! POV and the FOV hand-back), `CameraSpectator`; `CameraCrafting`, `CameraGathering`,
-//! `CameraVampirelord`, `CameraWerewolf`, `CameraLich` and `CameraSex` are in `camera::states` and
-//! `camera::base` with the base states they share their code with; `CameraMapMenu` does nothing,
-//! and `CameraRaceMenu` keeps the body frozen (its mouse orbit is left out, see `docs/STATUS.md`).
+//! `camera/extended/*`: IC's own camera types. `CameraAnimation`, `CameraDialogue`,
+//! `CameraSpectator`, `CameraRaceMenu`; `CameraCrafting`, `CameraGathering`, `CameraVampirelord`,
+//! `CameraWerewolf`, `CameraLich` and `CameraSex` are in `camera::states` and `camera::base` with
+//! the base states they share their code with; `CameraMapMenu` does nothing.
 
 use std::sync::Mutex;
 
 use skyrim::actors::RefHandle;
 use skyrim::prelude::*;
-use sre::Actor;
+use skyrim::ui::Value;
+use sre::{Actor, HeadTrackSlot, PlayerCamera};
 
 use super::base::THIRD_PERSON_ZOOM;
 use super::state::{CameraType, Modifier};
 use super::states::Ctx;
+use super::util::orbit::{OrbitController, Pose};
 use crate::body::state::action::ActionType;
+use crate::settings::{Dialogue as DialogueSettings, Profile};
+use crate::util::math_util::{damped_alpha, lerp, normalize_radian, smoother_step};
+use crate::util::point::{self, M3, P3};
+use crate::util::quaternion_util::Quat;
 use crate::util::skyrim_util::{self as util, FAKE_FIRST_PERSON_ZOOM};
 
 /// `AnimationState::OnEnter`.
@@ -64,16 +69,113 @@ pub fn animation_update(should_sim: &mut bool, m: &mut Modifier, ctx: &Ctx<'_>) 
     }
 }
 
-/// `DialogueState`, with IC's dialogue camera (`Dialogue.bEnable`) only its forced POV. Its FOV
-/// framing of the speaker, facing the speaker and head tracking need the dialogue target
-/// (`MenuTopicManager`), and the speaker focus shots ray casts and the screen fade, none of which
-/// are in the RE yet; `SmoothCam`'s API and the Scene Director check are other plugins' interfaces.
+/// `DialogueMenuState`: the dialogue menu movie's `eMenuState`.
+const SHOW_GREETING: f64 = 0.0;
+const TOPIC_LIST_SHOWN: f64 = 1.0;
+const TRANSITIONING: f64 = 3.0;
+
+const TOPIC_LIST: &str = "_root.DialogueMenu_mc.TopicListHolder._visible";
+
+/// `IsSpeakerTalking`: whether a line plays, from the dialogue menu movie's state. The topic list
+/// is shown while the topics are up, hidden for the greeting, and otherwise shown only without
+/// `bHideDialogueMenu`.
+fn is_speaker_talking(dialogue: &DialogueSettings) -> bool {
+    let Some(movie) = util::ui().and_then(|ui| ui.menu("Dialogue Menu")).and_then(|menu| unsafe { menu.movie.as_ref() }) else { return false };
+    let state = movie.variable("_root.DialogueMenu_mc.eMenuState").and_then(|v| v.as_number());
+    #[allow(clippy::float_cmp)]
+    let (visible, talking) = match state {
+        Some(s) if s == TOPIC_LIST_SHOWN || s == TRANSITIONING => (true, false),
+        Some(s) if s == SHOW_GREETING => (false, true),
+        _ => (!dialogue.bHideDialogueMenu, true),
+    };
+    movie.set_variable(TOPIC_LIST, &Value::boolean(visible));
+    talking
+}
+
+/// `UsingSpeakerFocus`: the speaker focus shots hold between lines when locked on, else only while
+/// a line plays. IC's fade to black between shots is left out, so what is wanted is presented.
+#[must_use]
+pub fn using_speaker_focus(dialogue: &DialogueSettings) -> bool {
+    dialogue.bSwitchTarget && (dialogue.bLockOn || is_speaker_talking(dialogue))
+}
+
+/// `ComputeFOV`: the world FOV that frames the speaker's head at the preferred distance; the
+/// default while no speaker is framed or a focus shot is up.
+#[must_use]
+pub fn framing_fov(preferred: f32, distance: f32, first_person: bool, default: f32) -> f32 {
+    if distance < 1.0 {
+        return default;
+    }
+    ((preferred / distance).atan() * 2.0).to_degrees().max(if first_person { 20.0 } else { 30.0 })
+}
+
+/// How far in front of an obstruction a focus shot stops.
+const FOCUS_PULLBACK: f32 = 10.0;
+
+/// A focus shot's camera position: `distance` back from `anchor` along the level line to
+/// `subject`, moved by the shoulder offset (x to the side, y along the line, z up); `None` when
+/// the two stand within a unit of each other.
+#[must_use]
+pub fn shoulder_position(anchor: P3, subject: P3, shoulder: P3, distance: f32) -> Option<P3> {
+    let to_subject = point::sub(subject, anchor);
+    let (to_subject, length) = point::unitize([to_subject[0], to_subject[1], 0.0]);
+    if length < 1.0 {
+        return None;
+    }
+    let up = [0.0, 0.0, 1.0];
+    let side = point::cross(to_subject, up);
+    Some(point::add(point::add(point::add(anchor, point::scale(to_subject, shoulder[1] - distance)), point::scale(side, shoulder[0])), point::scale(up, shoulder[2])))
+}
+
+/// The heading and pitch (positive looking down) that face `to` from `from`; `None` within a unit
+/// on the ground plane.
+#[must_use]
+pub fn facing(from: P3, to: P3) -> Option<(f32, f32)> {
+    let v = point::sub(to, from);
+    let flat = v[0].hypot(v[1]);
+    (flat >= 1.0).then(|| (v[0].atan2(v[1]), (-v[2]).atan2(flat)))
+}
+
+/// `RotateToTarget`: the player turned toward the speaker's head at `fCameraSpeed`, at once on
+/// the first update.
+fn rotate_to_target(player: &sre::PlayerCharacter, target: &Actor, speed: f32, dt: f32, snap: bool) {
+    let Some((yaw, pitch)) = facing(util::head_position(player, 0.95), util::head_position(target, 0.0)) else { return };
+    let share = if snap { 1.0 } else { damped_alpha(speed * 0.01, dt) };
+    util::set_heading(player, player.rotZ + normalize_radian(yaw - player.rotZ) * share);
+    util::set_pitch(player, lerp(player.rotX, pitch, share));
+}
+
+/// `SetHeadTracking`: the player's graph honours a head-track target only as an "NPC"; `None`
+/// clears the dialogue slot.
+fn set_head_tracking(target: Option<&Actor>) {
+    let Some(player) = util::player() else { return };
+    player.as_i_animation_graph_manager_holder().set_graph_variable_bool(skyrim::BSFixedString::new("IsNPC").raw(), target.is_some());
+    util::set_head_track_slot(player, HeadTrackSlot::DialogueWithPlayer, target.map(|a| &**a));
+}
+
+/// The shot/reverse-shot of the speaker focus: the camera over the player's shoulder at the
+/// speaker while a line plays, over the speaker's shoulder at the player for the reply, eased
+/// between the two.
+#[derive(Clone, Copy, Debug, Default)]
+struct Focus {
+    shot: Option<(P3, Quat)>,
+    blend_start: (P3, Quat),
+    blend_time: f32,
+    last_npc_speaking: bool,
+}
+
+/// `DialogueState`. `SmoothCam`'s API, the Scene Director check, the letterbox and the fade to
+/// black between focus shots (IC's own overlay effects) are left out.
 #[derive(Clone, Copy, Debug, Default)]
 pub struct Dialogue {
     previous: Option<CameraType>,
     previous_fov: f32,
     forced_pov: bool,
     target_zoom: f32,
+    active: bool,
+    /// The aim snapped to the speaker on the first update (IC's `m_snapToFace` cleared).
+    faced: bool,
+    focus: Focus,
 }
 
 impl Dialogue {
@@ -84,6 +186,7 @@ impl Dialogue {
         if !dialogue.bEnable {
             return;
         }
+        self.active = true;
         if dialogue.bForceThirdPerson && previous == CameraType::FirstPerson {
             ctx.camera.force_third_person();
             self.forced_pov = true;
@@ -94,11 +197,118 @@ impl Dialogue {
         }
     }
 
-    /// `OnExit`: the world FOV found on entry is handed back, and a forced POV undone.
+    /// `OnUpdate`: the speaker framed by the FOV, faced and head-tracked.
+    pub fn update(&mut self, m: &mut Modifier, ctx: &Ctx<'_>, focus: bool) {
+        if !self.active {
+            return;
+        }
+        let dialogue = &ctx.profile.Dialogue;
+        let target = util::dialogue_target();
+        let actor = target.as_deref().and_then(util::actor_of);
+        m.fov = match (actor, ctx.camera.camera_root()) {
+            (Some(actor), Some(root)) if !focus => {
+                let first = util::is_first_person();
+                let preferred = if util::is_flying(actor) {
+                    dialogue.fDragonZoom
+                } else if first {
+                    dialogue.fFirstPersonZoom
+                } else {
+                    dialogue.fThirdPersonZoom
+                };
+                let distance = point::length(point::sub(root.world_transform().translation, util::head_position(actor, 0.0)));
+                framing_fov(preferred, distance, first, dialogue.fDefaultWorldFOV)
+            }
+            _ => dialogue.fDefaultWorldFOV,
+        };
+        let (Some(player), Some(actor)) = (util::player(), actor) else { return };
+        if dialogue.bFaceSpeaker {
+            rotate_to_target(player, actor, dialogue.fCameraSpeed, util::delta_frame_time(), !self.faced);
+        }
+        self.faced = true;
+        if dialogue.bHeadTracking {
+            set_head_tracking(Some(actor));
+        }
+    }
+
+    /// `SpeakerFocus`: the authored shot `CaptureCameraState` presents, while `focus` is wanted.
+    pub fn speaker_focus(&mut self, camera: &PlayerCamera, profile: &Profile, focus: bool) -> Option<(P3, M3)> {
+        let f = &mut self.focus;
+        if !focus {
+            f.shot = None;
+            return None;
+        }
+        let dialogue = &profile.Dialogue;
+        let npc_speaking = is_speaker_talking(dialogue);
+        let target = util::dialogue_target()?;
+        let target = util::actor_of(&target)?;
+        let player = util::player()?;
+        camera.camera_root()?;
+        let head = util::actor_head(target);
+        let npc_head = head.map_or_else(|| util::position(target), |h| h.world_transform().translation);
+        let humanoid = head.is_some() && !util::is_flying(target);
+        let offset = if humanoid {
+            [dialogue.fHumanCamOffsetX, dialogue.fHumanCamOffsetY, dialogue.fHumanCamOffsetZ]
+        } else {
+            [dialogue.fCreatureCamOffsetX, dialogue.fCreatureCamOffsetY, dialogue.fCreatureCamOffsetZ]
+        };
+        let player_head = util::head_position(player, 0.95);
+        let (subject, anchor) = if npc_speaking { (npc_head, player_head) } else { (player_head, point::add(npc_head, offset)) };
+        let distance = if npc_speaking && !humanoid { dialogue.fDragonZoom } else { dialogue.fThirdPersonZoom };
+        let shoulder = if npc_speaking {
+            [dialogue.fPlayerShoulderPosX, dialogue.fPlayerShoulderPosY, dialogue.fPlayerShoulderPosZ]
+        } else {
+            [dialogue.fNpcShoulderPosX, dialogue.fNpcShoulderPosY, dialogue.fNpcShoulderPosZ]
+        };
+        let mut position = shoulder_position(anchor, subject, shoulder, distance)?;
+        if let Some(hit) = util::cast_ray(anchor, position).filter(|h| util::is_solid_hit(h.layer, true)) {
+            let (to_anchor, length) = point::unitize(point::sub(anchor, hit.position));
+            if length > 0.0 {
+                position = point::add(hit.position, point::scale(to_anchor, FOCUS_PULLBACK));
+            }
+        }
+        let orientation = Quat::from_matrix(&util::look_rotation(position, subject)?);
+        let duration = (400.0 / dialogue.fCameraSpeed).clamp(0.2, 2.0);
+        let dt = util::delta_frame_time();
+        match f.shot {
+            Some((shot_position, shot_orientation)) if dialogue.bSmoothTransition => {
+                if npc_speaking != f.last_npc_speaking {
+                    f.blend_start = (shot_position, shot_orientation);
+                    f.blend_time = 0.0;
+                    f.last_npc_speaking = npc_speaking;
+                }
+                f.blend_time += dt;
+                let (from, share) = if f.blend_time < duration { (f.blend_start, smoother_step(f.blend_time / duration)) } else { ((shot_position, shot_orientation), damped_alpha(8.0, dt)) };
+                f.shot = Some((point::lerp(from.0, position, share), Quat::slerp(from.1, orientation, share)));
+            }
+            _ => {
+                f.shot = Some((position, orientation));
+                f.blend_time = duration;
+                f.last_npc_speaking = npc_speaking;
+            }
+        }
+        f.shot.map(|(p, o)| (p, o.matrix()))
+    }
+
+    /// For an unload: the head tracking cleared and the topic list shown.
+    pub fn release(&mut self, profile: &Profile) {
+        if self.active && profile.Dialogue.bHeadTracking {
+            set_head_tracking(None);
+        }
+        if let Some(movie) = util::ui().and_then(|ui| ui.menu("Dialogue Menu")).and_then(|menu| unsafe { menu.movie.as_ref() }) {
+            movie.set_variable(TOPIC_LIST, &Value::boolean(true));
+        }
+    }
+
+    /// `OnExit`: the world FOV found on entry is handed back, the head tracking cleared and a
+    /// forced POV undone.
     pub fn exit(&mut self, ctx: &mut Ctx<'_>) {
         if self.previous_fov > 0.0 {
             ctx.notes.fov_reset = self.previous_fov;
         }
+        if ctx.profile.Dialogue.bHeadTracking {
+            set_head_tracking(None);
+        }
+        self.focus.shot = None;
         if !self.forced_pov {
             return;
         }
@@ -111,6 +321,75 @@ impl Dialogue {
                 }
             }
             _ => {}
+        }
+    }
+}
+
+/// The share of the screen width left of which the race menu's panels sit: the engine starts its
+/// own head-look drag only right of it (RE `camera.md` IC5 D).
+const RACE_MENU_PANEL: f32 = 0.45;
+
+/// Whether the cursor at `x` pixels is over the race menu's panels rather than the character, on
+/// a screen `width` pixels wide. IC hit-tests the menu movie; the engine has no hit test and
+/// splits the screen at 45 % for its own drag, which this follows.
+#[must_use]
+pub fn cursor_over_menu(x: f32, width: f32) -> bool {
+    width <= 0.0 || x / width <= RACE_MENU_PANEL
+}
+
+/// `RaceMenuState`: the body frozen as the menu poses it, and the mouse orbit around the player on
+/// the menu's own camera, taking button presses only with the cursor off the menu's panels and
+/// none while a message box (the name entry) is up.
+#[derive(Clone, Debug)]
+pub struct RaceMenu {
+    pub previous: CameraType,
+    orbit: OrbitController,
+}
+
+impl RaceMenu {
+    #[must_use]
+    pub fn new() -> Self {
+        Self { previous: CameraType::Unknown, orbit: OrbitController::new() }
+    }
+
+    pub fn enter(&mut self, previous: CameraType) {
+        self.previous = previous;
+        self.orbit.reset();
+    }
+
+    pub fn update(&mut self, ctx: &Ctx<'_>) {
+        if matches!(self.previous, CameraType::FirstPerson | CameraType::ThirdPerson | CameraType::Animation) {
+            super::base::freeze_body();
+        }
+        let Some(menu) = util::ui().and_then(|ui| ui.race_sex_menu()) else {
+            self.orbit.cancel_interaction();
+            return;
+        };
+        let mouse = &ctx.input.mouse;
+        if util::is_menu_open("MessageBoxMenu") {
+            self.orbit.cancel_interaction();
+        } else {
+            if !sre::UICursor::singleton().is_none_or(|c| cursor_over_menu(c.x, menu.screenWidth)) {
+                for &(button, down) in &mouse.buttons {
+                    self.orbit.button(button, down);
+                }
+            }
+            if mouse.dx != 0 || mouse.dy != 0 {
+                self.orbit.moved(mouse.dx, mouse.dy);
+            }
+        }
+        let (Some(root), Some(player)) = (unsafe { menu.camera().cameraRoot.as_ref() }, util::player()) else { return };
+        let local = root.local_transform();
+        if let Some(pose) = self.orbit.update(Pose { position: local.translation, rotation: local.rotation }, util::position(player)) {
+            super::base::write_root(root, pose);
+        }
+    }
+
+    /// `OnExit`, and an unload: the camera root back where the orbit found it.
+    pub fn exit(&mut self, camera: &PlayerCamera) {
+        super::base::orbit_release(&mut self.orbit, camera);
+        if self.previous == CameraType::FirstPerson {
+            super::base::freeze_body();
         }
     }
 }
@@ -323,5 +602,39 @@ impl Spectator {
             }
         }
         defer(|d| d.target = Some(RefHandle::INVALID));
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use super::{cursor_over_menu, facing, framing_fov, shoulder_position};
+
+    #[test]
+    fn the_race_menu_panels_take_the_left_45_percent() {
+        assert!(cursor_over_menu(864.0, 1920.0));
+        assert!(!cursor_over_menu(865.0, 1920.0));
+        assert!(cursor_over_menu(1500.0, 0.0));
+    }
+
+    #[test]
+    fn the_dialogue_fov_frames_the_preferred_distance() {
+        assert!((framing_fov(75.0, 75.0, false, 55.0) - 90.0).abs() < 1e-3);
+        assert!((framing_fov(10.0, 1000.0, false, 55.0) - 30.0).abs() < f32::EPSILON);
+        assert!((framing_fov(10.0, 1000.0, true, 55.0) - 20.0).abs() < f32::EPSILON);
+        assert!((framing_fov(75.0, 0.5, true, 55.0) - 55.0).abs() < f32::EPSILON);
+    }
+
+    #[test]
+    fn a_focus_shot_sits_back_from_the_anchor_beside_the_line() {
+        let p = shoulder_position([0.0; 3], [0.0, 100.0, 50.0], [60.0, 0.0, 5.0], 75.0).unwrap();
+        assert!((p[0] - 60.0).abs() < 1e-4 && (p[1] + 75.0).abs() < 1e-4 && (p[2] - 5.0).abs() < 1e-4);
+        assert!(shoulder_position([0.0; 3], [0.5, 0.0, 100.0], [0.0; 3], 75.0).is_none());
+    }
+
+    #[test]
+    fn facing_gives_heading_from_y_and_pitch_down_positive() {
+        let (yaw, pitch) = facing([0.0; 3], [100.0, 0.0, -100.0]).unwrap();
+        assert!((yaw - core::f32::consts::FRAC_PI_2).abs() < 1e-6 && (pitch - core::f32::consts::FRAC_PI_4).abs() < 1e-6);
+        assert!(facing([0.0; 3], [0.0, 0.5, 10.0]).is_none());
     }
 }

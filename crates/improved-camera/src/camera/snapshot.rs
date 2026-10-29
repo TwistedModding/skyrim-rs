@@ -17,10 +17,12 @@ pub struct Data {
     /// The presented camera root's local position and rotation.
     pub position: P3,
     pub rotation: M3,
+    /// The dialogue's speaker focus shots, which show the player's whole body, are up.
+    pub dialogue_focus: bool,
 }
 
 impl Data {
-    pub const NONE: Self = Self { current: CameraType::Unknown, previous: CameraType::Unknown, mode: CameraMode::None, transition: CameraType::Unknown, position: [0.0; 3], rotation: IDENTITY };
+    pub const NONE: Self = Self { current: CameraType::Unknown, previous: CameraType::Unknown, mode: CameraMode::None, transition: CameraType::Unknown, position: [0.0; 3], rotation: IDENTITY, dialogue_focus: false };
 }
 
 static SNAPSHOT: Mutex<Data> = Mutex::new(Data::NONE);

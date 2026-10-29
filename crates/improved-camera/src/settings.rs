@@ -9,8 +9,10 @@ use std::sync::{LazyLock, RwLock, RwLockReadGuard};
 pub trait Store {
     fn get_bool(&self, key: &str) -> Option<bool>;
     fn get_f32(&self, key: &str) -> Option<f32>;
+    fn get_i32(&self, key: &str) -> Option<i32>;
     fn set_bool(&self, key: &str, value: bool);
     fn set_f32(&self, key: &str, value: f32);
+    fn set_i32(&self, key: &str, value: i32);
 }
 
 impl Store for framework::settings::Settings {
@@ -22,11 +24,19 @@ impl Store for framework::settings::Settings {
         self.get(key)
     }
 
+    fn get_i32(&self, key: &str) -> Option<i32> {
+        self.get(key)
+    }
+
     fn set_bool(&self, key: &str, value: bool) {
         self.set(key, value);
     }
 
     fn set_f32(&self, key: &str, value: f32) {
+        self.set(key, value);
+    }
+
+    fn set_i32(&self, key: &str, value: i32) {
         self.set(key, value);
     }
 }
@@ -55,6 +65,16 @@ impl Field for f32 {
 
     fn write(&self, store: &impl Store, key: &str) {
         store.set_f32(key, *self);
+    }
+}
+
+impl Field for i32 {
+    fn read(store: &impl Store, key: &str, default: Self) -> Self {
+        store.get_i32(key).unwrap_or(default)
+    }
+
+    fn write(&self, store: &impl Store, key: &str) {
+        store.set_i32(key, *self);
     }
 }
 
@@ -235,6 +255,12 @@ sections! {
         bYawSmoothing: bool = true,
         fYawSmoothingSpeed: f32 = 10.0,
         fYawSmoothingMaxAngle: f32 = 90.0,
+        bFreeLook: bool = true,
+        bFreeLookSpine: bool = false,
+        fFreeLookMaxAngle: f32 = 80.0,
+        fFreeLookSettleAngle: f32 = 35.0,
+        fFreeLookCatchupSpeed: f32 = 15.0,
+        fFreeLookTwistStrength: f32 = 1.0,
         Combat: Offset = Offset::default(),
     }
     BodyDirectional = "Body.Directional" {
@@ -422,12 +448,42 @@ sections! {
         bForceFirstPerson: bool = true,
         bForceThirdPerson: bool = false,
         bSmoothTransition: bool = true,
+        bFaceSpeaker: bool = true,
+        bHeadTracking: bool = true,
+        bHideDialogueMenu: bool = true,
+        bSwitchTarget: bool = false,
+        bLockOn: bool = true,
+        fPlayerShoulderPosX: f32 = 60.0,
+        fPlayerShoulderPosY: f32 = 0.0,
+        fPlayerShoulderPosZ: f32 = 0.0,
+        fNpcShoulderPosX: f32 = -60.0,
+        fNpcShoulderPosY: f32 = 0.0,
+        fNpcShoulderPosZ: f32 = 0.0,
+        fHumanCamOffsetX: f32 = 0.0,
+        fHumanCamOffsetY: f32 = 0.0,
+        fHumanCamOffsetZ: f32 = 5.0,
+        fCreatureCamOffsetX: f32 = 0.0,
+        fCreatureCamOffsetY: f32 = 0.0,
+        fCreatureCamOffsetZ: f32 = 15.0,
+        fCameraSpeed: f32 = 500.0,
+        fFirstPersonZoom: f32 = 50.0,
+        fThirdPersonZoom: f32 = 75.0,
+        fDragonZoom: f32 = 125.0,
         fDefaultWorldFOV: f32 = 55.0,
     }
     Vanity = "Vanity" {
         bEnable: bool = false,
+        bToggleMenus: bool = true,
+        bCollisionSmoothing: bool = true,
         fIdleDelay: f32 = 120.0,
+        fOrbitSpeed: f32 = 10.0,
+        fDistance: f32 = 200.0,
+        fHeight: f32 = 35.0,
         fFOV: f32 = 65.0,
+        iCollisionPullInMethod: i32 = 2,
+        fCollisionPullInDuration: f32 = 0.2,
+        iCollisionRecoveryMethod: i32 = 15,
+        fCollisionRecoveryDuration: f32 = 0.6,
     }
 }
 
@@ -549,11 +605,20 @@ mod tests {
             self.0.borrow().get(key).map(|v| *v as f32)
         }
 
+        #[allow(clippy::cast_possible_truncation)]
+        fn get_i32(&self, key: &str) -> Option<i32> {
+            self.0.borrow().get(key).map(|v| *v as i32)
+        }
+
         fn set_bool(&self, key: &str, value: bool) {
             self.0.borrow_mut().insert(key.to_owned(), f64::from(u8::from(value)));
         }
 
         fn set_f32(&self, key: &str, value: f32) {
+            self.0.borrow_mut().insert(key.to_owned(), f64::from(value));
+        }
+
+        fn set_i32(&self, key: &str, value: i32) {
             self.0.borrow_mut().insert(key.to_owned(), f64::from(value));
         }
     }
@@ -595,6 +660,9 @@ mod tests {
         assert_eq!(store.get_bool("FreeCamera.bEnable"), Some(true));
         assert_eq!(store.get_f32("Dialogue.fDefaultWorldFOV"), Some(55.0));
         assert_eq!(store.get_f32("Vanity.fIdleDelay"), Some(120.0));
+        assert_eq!(store.get_i32("Vanity.iCollisionRecoveryMethod"), Some(15));
+        assert_eq!(store.get_f32("Dialogue.fNpcShoulderPosX"), Some(-60.0));
+        assert_eq!(store.get_bool("Body.bFreeLook"), Some(true));
         assert_eq!(Profile::read(&store), p);
     }
 

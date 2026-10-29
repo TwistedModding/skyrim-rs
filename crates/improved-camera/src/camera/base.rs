@@ -10,10 +10,14 @@ use sre::{CameraState, InputContextEnum, PlayerCamera};
 
 use super::state::{CameraType, Modifier};
 use super::states::Ctx;
+use super::util::interpolation::{Collision, Easing};
 use super::util::orbit::{OrbitController, Pose};
 use crate::body::state::action::ActionType;
 use crate::body::state::hands::HandsType;
 use crate::body::state::race::RaceType;
+use crate::settings::Vanity as VanitySettings;
+use crate::util::math_util::normalize_radian;
+use crate::util::point::{self, M3, P3};
 use crate::util::skyrim_util::{self as util, FAKE_FIRST_PERSON_ZOOM};
 
 /// The third-person zoom IC parks the camera at when it leaves fake first person.
@@ -200,15 +204,119 @@ impl ThirdPerson {
     }
 }
 
-/// `VanityState::OnUpdate`: with IC's idle camera on (and the body), its FOV; the authored orbit
-/// shot, its collision pull-in and the focus on nearby actors wait on ray casts in the RE.
-pub fn vanity_update(m: &mut Modifier, ctx: &Ctx<'_>) {
-    m.fov = if vanity_enabled(ctx.profile) { ctx.profile.Vanity.fFOV } else { ctx.profile.FOV.fThirdPerson };
-}
-
 /// `VanityState::Enabled`: the idle camera is IC's only with the body on.
 pub fn vanity_enabled(profile: &crate::settings::Profile) -> bool {
     profile.Vanity.bEnable && profile.General.bEnableBody
+}
+
+/// How far in front of an obstruction the idle camera stops.
+const VANITY_PULLBACK: f32 = 10.0;
+
+/// The idle orbit's camera position around `subject` at bearing `yaw` (radians, 0 along +Y).
+#[must_use]
+pub fn orbit_position(subject: P3, yaw: f32, v: &VanitySettings) -> P3 {
+    point::add(subject, [yaw.sin() * v.fDistance, yaw.cos() * v.fDistance, v.fHeight])
+}
+
+/// The share of the ray from `subject` to the orbit position the camera keeps in front of a hit
+/// at `hit`, `ray_length` long.
+#[must_use]
+pub fn pull_in(subject: P3, hit: P3, ray_length: f32) -> f32 {
+    ((point::length(point::sub(hit, subject)) - VANITY_PULLBACK) / ray_length).clamp(0.0, 1.0)
+}
+
+/// `VanityState`: IC's idle camera. Once the engine's idle timer starts its vanity camera, IC
+/// authors the shot: an orbit around the player's head at the profile's distance, height and
+/// speed, pulled in front of anything solid and eased back, with the HUD hidden (`tm`) while it
+/// runs. IC's focus on random nearby actors is left out (`docs/STATUS.md`).
+#[derive(Clone, Copy, Debug, Default)]
+pub struct Vanity {
+    /// The authored shot `CaptureCameraState` presents.
+    pub shot: Option<(P3, M3)>,
+    orbit_yaw: f32,
+    collision: Collision,
+    hid_menus: bool,
+    owned: bool,
+}
+
+impl Vanity {
+    pub fn enter(&mut self, ctx: &Ctx<'_>) {
+        self.shot = None;
+        self.owned = false;
+        if vanity_enabled(ctx.profile) {
+            self.begin_shot(ctx);
+        }
+    }
+
+    /// `BeginShot`: the orbit picks up the camera's bearing around the player (behind the player
+    /// when there is none) and the HUD is hidden.
+    fn begin_shot(&mut self, ctx: &Ctx<'_>) {
+        self.shot = None;
+        self.collision.snap(1.0);
+        if let (Some(player), Some(root)) = (util::player(), ctx.camera.camera_root()) {
+            let to_camera = point::sub(root.world_transform().translation, util::head_position(player, 0.95));
+            let (flat, length) = point::unitize([to_camera[0], to_camera[1], 0.0]);
+            self.orbit_yaw = if length > 0.001 { flat[0].atan2(flat[1]) } else { normalize_radian(player.rotZ + core::f32::consts::PI) };
+        }
+        if ctx.profile.Vanity.bToggleMenus && util::menus_visible() {
+            util::show_menus(false);
+            self.hid_menus = true;
+        }
+        self.owned = true;
+    }
+
+    fn show_menus(&mut self) {
+        if core::mem::take(&mut self.hid_menus) {
+            util::show_menus(true);
+        }
+    }
+
+    /// `OnUpdate`.
+    pub fn update(&mut self, m: &mut Modifier, ctx: &Ctx<'_>) {
+        let enabled = vanity_enabled(ctx.profile);
+        m.fov = if enabled { ctx.profile.Vanity.fFOV } else { ctx.profile.FOV.fThirdPerson };
+        if !enabled {
+            self.show_menus();
+            self.shot = None;
+            self.owned = false;
+            return;
+        }
+        if !self.owned {
+            self.begin_shot(ctx);
+        }
+        if util::game_is_paused() {
+            return;
+        }
+        let Some(player) = util::player().filter(|p| p.get3_d().is_some()) else {
+            self.shot = None;
+            return;
+        };
+        let v = &ctx.profile.Vanity;
+        let dt = util::delta_frame_time();
+        let subject = util::head_position(player, 0.95);
+        self.orbit_yaw = normalize_radian(self.orbit_yaw + v.fOrbitSpeed.to_radians() * dt);
+        let position = orbit_position(subject, self.orbit_yaw, v);
+        let ray = point::sub(position, subject);
+        let ray_length = point::length(ray);
+        let hit = util::cast_ray(subject, position).filter(|h| util::is_solid_hit(h.layer, false) && ray_length > 1.0).map_or(1.0, |h| pull_in(subject, h.position, ray_length));
+        let fraction = if !v.bCollisionSmoothing || self.shot.is_none() {
+            self.collision.snap(hit);
+            hit
+        } else {
+            let pull = Easing { method: v.iCollisionPullInMethod, duration: v.fCollisionPullInDuration };
+            let recovery = Easing { method: v.iCollisionRecoveryMethod, duration: v.fCollisionRecoveryDuration };
+            self.collision.update(hit, pull, recovery, dt)
+        };
+        let position = point::add(subject, point::scale(ray, fraction));
+        self.shot = util::look_rotation(position, subject).map(|rotation| (position, rotation));
+    }
+
+    /// `OnExit`, and an unload: the HUD comes back.
+    pub fn exit(&mut self) {
+        self.show_menus();
+        self.shot = None;
+        self.owned = false;
+    }
 }
 
 /// The orbit of the VATS, bleedout, dead and gathering states: the frame's mouse, then the orbit
@@ -256,7 +364,7 @@ pub fn orbit_release(orbit: &mut OrbitController, camera: &PlayerCamera) {
     }
 }
 
-fn write_root(root: &sre::NiAVObject, pose: Pose) {
+pub fn write_root(root: &sre::NiAVObject, pose: Pose) {
     let mut local = root.local_transform();
     local.translation = pose.position;
     local.rotation = pose.rotation;
@@ -577,7 +685,19 @@ impl Free {
 mod tests {
     use framework::GamePad;
 
-    use super::{pad_steps, pov_long_press, pov_tap};
+    use super::{orbit_position, pad_steps, pov_long_press, pov_tap, pull_in};
+    use crate::settings::Vanity;
+
+    #[test]
+    fn the_idle_orbit_circles_the_head_and_stops_short_of_a_hit() {
+        let v = Vanity::default();
+        let p = orbit_position([10.0, 20.0, 100.0], 0.0, &v);
+        assert_eq!(p, [10.0, 220.0, 135.0]);
+        let p = orbit_position([0.0; 3], core::f32::consts::FRAC_PI_2, &v);
+        assert!((p[0] - 200.0).abs() < 1e-3 && p[1].abs() < 1e-3);
+        assert!((pull_in([0.0; 3], [0.0, 110.0, 0.0], 200.0) - 0.5).abs() < 1e-6);
+        assert!(pull_in([0.0; 3], [0.0, 5.0, 0.0], 200.0).abs() < f32::EPSILON);
+    }
 
     #[test]
     fn the_d_pad_steps_while_held_and_at_its_release() {

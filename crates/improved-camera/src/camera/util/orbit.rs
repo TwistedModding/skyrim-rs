@@ -119,6 +119,12 @@ impl OrbitController {
         self.base.take()
     }
 
+    /// `CancelInteraction`: drops a drag in progress.
+    pub fn cancel_interaction(&mut self) {
+        self.rotating = false;
+        self.panning = false;
+    }
+
     pub fn reset(&mut self) {
         *self = Self { settings: self.settings, base: self.base, written: self.written, pan_step: self.pan_step, ..Self::new() };
     }

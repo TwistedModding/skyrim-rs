@@ -111,6 +111,8 @@ struct Nodes<'a> {
 #[derive(Clone, Copy, Debug, Default, PartialEq)]
 pub struct Parts {
     pub scales: Scales,
+    /// The first-person model faded out for the dialogue's speaker focus.
+    first_person_faded: bool,
 }
 
 /// Remembers a part's scale unless it is shrunk now.
@@ -146,7 +148,8 @@ impl Parts {
             }
             if let Some(head) = nodes.head {
                 let engine_state = util::camera().and_then(PlayerCameraExt::state);
-                set_hidden(|h| h.head = !draw_head(&profile.General, snapshot::get().hands, camera, engine_state, util::zoom_of));
+                let focus = camera_snapshot::get().dialogue_focus;
+                set_hidden(|h| h.head = !(focus || draw_head(&profile.General, snapshot::get().hands, camera, engine_state, util::zoom_of)));
                 head.set_local_scale(self.scales.head);
             }
             self.process_weapons(&nodes, profile);
@@ -170,11 +173,11 @@ impl Parts {
         if third.fadeAmount > 0.0 {
             s.fade_amount = third.fadeAmount;
         }
-        let head_part = util::head_node(player);
+        let head_part = util::actor_head(player);
         let head = head_part.and_then(|h| unsafe { h.parent.cast::<NiAVObject>().as_ref() });
         keep_scale(head, &mut s.head);
         let race = snapshot::get().race;
-        let eye = head.and(head_part).or_else(|| match race {
+        let eye = head.and_then(|_| util::actor_eye(player)).or_else(|| match race {
             RaceType::Vampirelord => util::object_by_name(third, "NPC EyeBrow"),
             RaceType::Lich => util::object_by_name(third, "DragPriestNPC Head [Brow]"),
             _ => None,
@@ -208,7 +211,8 @@ impl Parts {
     fn process_arms(&self, [left_first, right_first, left_third, right_third]: [&NiAVObject; 4], general: &General) {
         let body = snapshot::get();
         let engine_state = util::camera().and_then(PlayerCameraExt::state);
-        let (hide_left, hide_right) = match draw_arms(general, &body, engine_state) {
+        let arms = if camera_snapshot::get().dialogue_focus { 1 } else { draw_arms(general, &body, engine_state) };
+        let (hide_left, hide_right) = match arms {
             -1 => (true, true),
             0 => (!draw_left_arm(general, &body), !draw_right_arm(general, &body)),
             _ => (false, false),
@@ -223,12 +227,21 @@ impl Parts {
         });
     }
 
-    fn process_body(&self, nodes: &Nodes<'_>, profile: &Profile) {
+    fn process_body(&mut self, nodes: &Nodes<'_>, profile: &Profile) {
         #[allow(clippy::float_cmp)]
         if let Some(first) = nodes.first
             && first.local.scale != nodes.third.local.scale
         {
             first.set_local_scale(nodes.third.local.scale);
+        }
+        // The first-person model rides the camera; scaling it would break the dialogue head tracking that reads its nodes.
+        if let Some(first) = nodes.first {
+            if camera_snapshot::get().dialogue_focus {
+                skyrim::store(&first.fadeAmount, 0.0);
+                self.first_person_faded = true;
+            } else if core::mem::take(&mut self.first_person_faded) {
+                skyrim::store(&first.fadeAmount, 1.0);
+            }
         }
         skyrim::store(&nodes.third.fadeAmount, body_fade(profile, &snapshot::get(), self.scales.fade_amount));
     }
@@ -251,8 +264,13 @@ impl Parts {
     }
 
     #[allow(clippy::float_cmp)]
-    fn restore_scales(&self, nodes: &Nodes<'_>) {
+    fn restore_scales(&mut self, nodes: &Nodes<'_>) {
         set_hidden(|h| *h = HiddenParts::default());
+        if core::mem::take(&mut self.first_person_faded)
+            && let Some(first) = nodes.first
+        {
+            skyrim::store(&first.fadeAmount, 1.0);
+        }
         let s = &self.scales;
         if nodes.third.fadeAmount != s.fade_amount {
             skyrim::store(&nodes.third.fadeAmount, s.fade_amount);

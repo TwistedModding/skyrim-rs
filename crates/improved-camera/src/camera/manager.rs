@@ -98,6 +98,8 @@ pub struct Manager {
     pub zoom_modifier: f32,
     /// The eased near plane (`UpdateNearDistance`'s `prevNear`), 0 until the first ease.
     pub near: f32,
+    /// The dialogue's speaker focus shots are wanted (`DialogueState::IsFocusActive`).
+    pub dialogue_focus: bool,
 }
 
 impl Default for Manager {
@@ -131,6 +133,7 @@ impl Default for Manager {
             zoom_active: false,
             zoom_modifier: 0.0,
             near: 0.0,
+            dialogue_focus: false,
         }
     }
 }
@@ -235,7 +238,7 @@ fn sync_idle_delay(profile: &Profile) {
 pub fn release() {
     with(|m| {
         if let Some(camera) = util::camera() {
-            m.state.release(camera);
+            m.state.release(camera, &settings::profile());
         }
         m.cancel_transition();
     });
@@ -567,6 +570,7 @@ impl Manager {
             transition: self.transition_from,
             position: self.present.position,
             rotation: self.present.rotation,
+            dialogue_focus: self.dialogue_focus,
         }
     }
 
@@ -585,8 +589,9 @@ impl Manager {
         }
         let next = camera_type(engine, util::is_menu_open, Phase::of_player(), body.action, body.race, dead, spectator);
         let enabled = profile.General.bEnableBody;
+        self.dialogue_focus = next == CameraType::Dialogue && super::extended::using_speaker_focus(&profile.Dialogue);
         let mut notes = Notes::default();
-        let mut ctx = Ctx { camera, profile, body, notes: &mut notes, input };
+        let mut ctx = Ctx { camera, profile, body, notes: &mut notes, input, dialogue_focus: self.dialogue_focus };
         if self.state.kind() != next {
             self.set_camera(next, &mut ctx, enabled);
         }
@@ -645,9 +650,8 @@ impl Manager {
     }
 
     /// `CaptureCameraState`, with its fix while getting up from furniture in an animation in fake
-    /// first person: the player's position and angles stand in for the camera's. The dialogue
-    /// speaker focus and the idle camera's authored shots (ray casts and the dialogue target, not
-    /// in the RE) are absent.
+    /// first person (the player's position and angles stand in for the camera's), and the shots
+    /// the dialogue's speaker focus and the idle camera author.
     fn capture_camera_state(&mut self, camera: &PlayerCamera, profile: &Profile) {
         self.previous = self.current;
         self.frame += 1;
@@ -674,6 +678,14 @@ impl Manager {
             }
         }
         self.current.mode = self.set_mode(camera, profile);
+        let shot = match &mut self.state {
+            State::Dialogue(state) if profile.Dialogue.bEnable => state.speaker_focus(camera, profile, self.dialogue_focus),
+            State::Vanity(state) if super::base::vanity_enabled(profile) => state.shot,
+            _ => None,
+        };
+        if let Some(shot) = shot {
+            (position, rotation) = shot;
+        }
         self.current.position = position;
         self.current.rotation = rotation;
         self.current.orientation = Quat::from_matrix(&rotation);
@@ -931,17 +943,16 @@ impl Manager {
         point::add(world.translation, point::mul_vec(&world.rotation, point::scale(self.head_anchor, scale)))
     }
 
-    /// `BasePosition`. The eye's body part index is not in the RE, so the vampire lord's and the
-    /// dragon priest's named fallbacks are the only eye nodes.
+    /// `BasePosition`.
     fn base_position(&mut self, player: &PlayerCharacter, actor: &Actor, head: &NiAVObject, (forward, right, up): (P3, P3, P3), profile: &Profile, dt: f32) -> Option<P3> {
         let actor_body = actor.get3_d()?;
         let scale = actor_body.local.scale;
         let camera_type = self.present.camera;
-        let eye = match camera_type {
+        let eye = util::actor_eye(actor).or_else(|| match camera_type {
             CameraType::Vampirelord => util::object_by_name(actor_body, "NPC EyeBrow"),
             CameraType::Lich => util::object_by_name(actor_body, "DragPriestNPC Head [Brow]"),
             _ => None,
-        };
+        });
         let a = &profile.Advanced;
         let mut headbob = a.bHeadbob || camera_type > CameraType::IronSight;
         if headbob && !a.bHeadbobCombat && camera_type == CameraType::FirstPerson && util::is_weapon_drawn(player) {

@@ -279,7 +279,7 @@ pub fn anchor_camera(dt: f32) {
         }
         let Some(player) = util::player() else { return };
         let Some(third) = player.third_person_root() else { return };
-        let (Some(head), Some(root)) = (util::head_node(player), util::object_by_name(third, "NPC Root [Root]")) else { return };
+        let (Some(head), Some(root)) = (util::actor_head(player), util::object_by_name(third, "NPC Root [Root]")) else { return };
         let Some(parent) = (unsafe { root.parent.cast::<NiAVObject>().as_ref() }) else { return };
         let body = profile.Body;
         let drawn = !matches!(snapshot::get().hands, HandsType::None | HandsType::Sheath);
