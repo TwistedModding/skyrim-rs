@@ -96,6 +96,39 @@ impl ActionType {
     }
 }
 
+/// `FurnitureAnimation`: what the occupied furniture makes the player do. IC's gathering
+/// furniture is told apart by its model path, which the RE does not give, so it reads as the
+/// furniture's other flags.
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum FurnitureAnimation {
+    Crafting,
+    Sitting,
+    Sleeping,
+    Unknown,
+}
+
+/// `TESFurniture::activeMarkerFlags` (+0xe4) furniture-wide bits (RE `camera.md` request IC2 E).
+const CAN_LEAN: u32 = 1 << 28;
+const CAN_SIT: u32 = 1 << 30;
+const CAN_SLEEP: u32 = 1 << 31;
+
+impl FurnitureAnimation {
+    /// From the furniture's workbench type (+0xe0) and marker flags: a workbench, else a bed, else
+    /// a seat one cannot lean on, else an animation.
+    #[must_use]
+    pub const fn of(workbench: u8, markers: u32) -> Self {
+        if workbench > 0 {
+            Self::Crafting
+        } else if markers & CAN_SLEEP != 0 {
+            Self::Sleeping
+        } else if markers & CAN_SIT != 0 && markers & CAN_LEAN == 0 {
+            Self::Sitting
+        } else {
+            Self::Unknown
+        }
+    }
+}
+
 /// `ActionState`: the target is the profile's offset when the state is entered.
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub struct ActionState {
@@ -135,8 +168,17 @@ impl ActionState {
 
 #[cfg(test)]
 mod tests {
-    use super::{ActionState, ActionType};
+    use super::{ActionState, ActionType, FurnitureAnimation};
     use crate::settings::{BodyAction, Offset};
+
+    #[test]
+    fn furniture_reads_as_ic_tells_it_apart() {
+        assert_eq!(FurnitureAnimation::of(0, 0x4000_0001), FurnitureAnimation::Sitting, "the chair of run-cam2a");
+        assert_eq!(FurnitureAnimation::of(1, 0x6000_0001), FurnitureAnimation::Crafting, "a workbench, though it can be sat at");
+        assert_eq!(FurnitureAnimation::of(0, 0xC000_0001), FurnitureAnimation::Sleeping, "a bed one can sit on");
+        assert_eq!(FurnitureAnimation::of(0, 0x5000_0001), FurnitureAnimation::Unknown, "a seat one leans on");
+        assert_eq!(FurnitureAnimation::of(0, 0x1), FurnitureAnimation::Unknown);
+    }
 
     #[test]
     fn an_action_eases_to_its_offset_and_back_to_none() {

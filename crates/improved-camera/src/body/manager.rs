@@ -7,11 +7,11 @@ use std::sync::Mutex;
 
 use skyrim::prelude::*;
 use skyrim::render::Transform;
-use sre::{ActorState_flags1, FormType, NiAVObject, PlayerCharacter, PlayerControls};
+use sre::{ActorAttackState, ActorState_flags1, ActorWeaponState, FormType, NiAVObject, PlayerCharacter, PlayerControls, TESFurniture, TESObjectWEAP};
 
 use super::parts::Parts;
 use super::snapshot;
-use super::state::action::{ActionState, ActionType};
+use super::state::action::{ActionState, ActionType, FurnitureAnimation};
 use super::state::approach;
 use super::state::hands::{EquipmentType, HandsState, HandsType, InteractionType};
 use super::state::movement::{MovementState, MovementType};
@@ -22,7 +22,7 @@ use crate::plugin::{self, ModInfo};
 use crate::settings::{self, BodyDirectional, Offset, Profile};
 use crate::util::math_util::normalize_radian;
 use crate::util::point;
-use crate::util::skyrim_util as util;
+use crate::util::skyrim_util::{self as util, Hand};
 
 #[repr(u32)]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
@@ -125,6 +125,8 @@ pub struct Manager {
     pub directional_offset: [f32; 3],
     pub target_directional_offset: [f32; 3],
     pub key_release_timer: f32,
+    /// A bash with a bow drawn holds the aim state until the hands lower or the bow goes (`m_bashAimFix`).
+    pub bash_aim_fix: bool,
     /// The root's pose after the last anchor to the camera (`m_lastAnchoredTranslate`, `Rotate`).
     pub anchored: Option<Forced>,
     /// The yaw smoothing's eased turn toward the movement (`m_bodyYaw`), `None` until it starts.
@@ -152,6 +154,7 @@ impl Default for Manager {
             directional_offset: [0.0; 3],
             target_directional_offset: [0.0; 3],
             key_release_timer: 0.0,
+            bash_aim_fix: false,
             anchored: None,
             body_yaw: None,
         }
@@ -410,20 +413,54 @@ impl Manager {
         }
     }
 
+    /// `UpdateActionState` in IC's order. The `SexLab` faction test and IC's `OStim` scene test are
+    /// absent, and with them the sex action; so is the furniture's head tracking switch.
     fn update_action_state(&mut self, player: &PlayerCharacter, profile: &Profile, info: &ModInfo) {
+        let effect = |id| util::has_magic_effect(player, id);
+        let furniture = player.occupied_furniture().map(|reference| {
+            let base = unsafe { reference.baseObject.as_ref() }.and_then(|form| form.cast::<TESFurniture>());
+            base.map_or(FurnitureAnimation::Unknown, |f| FurnitureAnimation::of(f.workbenchType, f.activeMarkerFlags))
+        });
         let fishing = plugin::global_value(info.fishing).is_some_and(|v| v > 0.0);
-        let kind = if util::graph_bool(player, "SkyParkourOngoing") {
+        let cart_ride = plugin::quest_stage(info.quest_intro).is_some_and(|stage| stage > 0 && stage < 145);
+        let kind = if effect(info.lich_transition) {
+            ActionType::LichTransition
+        } else if effect(info.werewolf_transition) {
+            ActionType::WerewolfTransition
+        } else if effect(info.vampirelord_transition) {
+            ActionType::VampirelordTransition
+        } else if util::is_staggered(player) {
+            ActionType::Stagger
+        } else if effect(info.bathe) {
+            ActionType::Bathe
+        } else if util::graph_bool(player, "SkyParkourOngoing") {
             ActionType::Parkour
         } else if util::graph_bool(player, "GTS_Busy") {
             ActionType::Giantess
+        } else if furniture == Some(FurnitureAnimation::Unknown) {
+            ActionType::Animation
+        } else if furniture == Some(FurnitureAnimation::Sleeping) {
+            ActionType::Sleep
+        } else if furniture == Some(FurnitureAnimation::Crafting) {
+            ActionType::Craft
         } else if fishing {
             ActionType::Fish
         } else if util::is_menu_open("Dialogue Menu") {
             ActionType::Dialogue
+        } else if furniture == Some(FurnitureAnimation::Sitting) {
+            ActionType::Sit
         } else if player.is_on_mount() {
             ActionType::Ride
         } else if plugin::is_disabled(info.boat_navmesh_cutter) == Some(false) {
             ActionType::BoatRide
+        } else if cart_ride {
+            ActionType::CartRide
+        } else if player.is_animation_driven() {
+            ActionType::AI
+        } else if !util::movement_controls_enabled() {
+            ActionType::View
+        } else if player.is_in_mid_air() {
+            ActionType::Fall
         } else if util::has_movement_flag(player, ActorState_flags1::SNEAKING) {
             ActionType::Sneak
         } else if util::has_movement_flag(player, ActorState_flags1::SWIMMING) {
@@ -432,6 +469,9 @@ impl Manager {
             ActionType::None
         };
         if self.action.kind != kind {
+            if kind == ActionType::AI {
+                util::set_pitch(player, 0.0);
+            }
             self.action = ActionState::enter(kind, &self.action, &profile.Action);
         }
     }
@@ -443,7 +483,7 @@ impl Manager {
                 Ok(FormType::ARMO) if left => EquipmentType::Shield,
                 Ok(FormType::LIGH) if left => EquipmentType::Torch,
                 Ok(FormType::SPEL) => EquipmentType::Spell,
-                _ => EquipmentType::Fist,
+                _ => form.cast::<TESObjectWEAP>().map_or(EquipmentType::Fist, |weapon| EquipmentType::from_u32(u32::from(weapon.weaponType))),
             })
         };
         let mut update = 0;
@@ -483,9 +523,40 @@ impl Manager {
             self.force_update = force_update;
         }
         self.get_interacting(player, info);
-        let mut kind = if util::weapon_state(player) == 3 { HandsType::Show } else { HandsType::None };
+        let mut kind = match ActorWeaponState::from_u32(util::weapon_state(player)) {
+            Some(ActorWeaponState::Drawing | ActorWeaponState::Drawn) => HandsType::Show,
+            Some(ActorWeaponState::WantToSheathe | ActorWeaponState::Sheathing) => HandsType::Sheath,
+            _ => HandsType::None,
+        };
+        if player.is_blocking() {
+            kind = HandsType::Block;
+        }
+        if util::is_casting(player, Hand::Left) || util::is_casting(player, Hand::Right) {
+            kind = HandsType::Cast;
+        }
+        if player.is_attacking() {
+            kind = HandsType::Attack;
+        }
         if sre::is_power_attacking(player) {
             kind = HandsType::PowerAttack;
+        }
+        if (kind == HandsType::None || self.right_hand != EquipmentType::Bow) && self.bash_aim_fix {
+            self.bash_aim_fix = false;
+        }
+        if self.bash_aim_fix {
+            kind = HandsType::Aim;
+        }
+        if matches!(self.right_hand, EquipmentType::Bow | EquipmentType::Crossbow) {
+            use ActorAttackState as A;
+            match util::attack_state(player) {
+                Some(A::BowDraw | A::BowAttached | A::BowDrawn | A::BowReleasing) => kind = HandsType::Aim,
+                Some(A::BowReleased | A::BowNextAttack) if self.right_hand == EquipmentType::Crossbow => kind = HandsType::Aim,
+                Some(A::Bash) if self.right_hand == EquipmentType::Bow => {
+                    self.bash_aim_fix = true;
+                    kind = HandsType::Aim;
+                }
+                _ => {}
+            }
         }
         if self.force_update > 0 && kind > HandsType::None {
             kind = HandsType::None;

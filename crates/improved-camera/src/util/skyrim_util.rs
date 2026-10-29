@@ -4,7 +4,7 @@ use skyrim::BSFixedString;
 use skyrim::actors::{RefHandle, RefPtr};
 use skyrim::prelude::*;
 use skyrim::ui::Value;
-use sre::{Actor, ActorSitSleepState, ActorState_flags1, ActorWeaponState, CameraState, ControlGroupFlag, DisablePOVType, EventSourceHolder_MenuOpenClose, EventSourceHolder_User, NiAVObject, PlayerCamera, PlayerCharacter, PlayerControls, PlayerInputHandler, TESObjectREFR, ThirdPersonState};
+use sre::{Actor, ActorAttackState, ActorSitSleepState, ActorState_flags1, ActorWeaponState, CameraState, ControlGroupFlag, DisablePOVType, EventSourceHolder_MenuOpenClose, EventSourceHolder_User, NiAVObject, PlayerCamera, PlayerCharacter, PlayerControls, PlayerInputHandler, TESObjectREFR, ThirdPersonState};
 
 /// The third-person state's target zoom IC parks the camera at for its fake first person.
 pub const FAKE_FIRST_PERSON_ZOOM: f32 = -0.275;
@@ -127,6 +127,43 @@ pub fn has_movement_flag(player: &PlayerCharacter, flag: ActorState_flags1) -> b
 /// The weapon state, bits 5-7 of `ActorState::flags2`: 3 is drawn (`actors.md`).
 pub fn weapon_state(actor: &Actor) -> u32 {
     (actor.as_actor_state().flags2 >> 5) & 7
+}
+
+/// `IsStaggering`: `ActorState::flags2` bit 13, set while a stagger plays (RE `camera.md` IC3 A).
+pub fn is_staggered(actor: &Actor) -> bool {
+    actor.as_actor_state().flags2 & 0x2000 != 0
+}
+
+/// The attack state, bits 28-31 of `ActorState::flags1` (`ActorAttackState`, RE `camera.md` IC3 A).
+pub fn attack_state(actor: &Actor) -> Option<ActorAttackState> {
+    ActorAttackState::from_u32(actor.as_actor_state().flags1 >> 28)
+}
+
+/// The hands a caster sits on, `Actor`+0x1a8 indexed by casting source.
+#[derive(Clone, Copy, Debug)]
+pub enum Hand {
+    Left = 0,
+    Right = 1,
+}
+
+/// `IsCasting(selectedSpells[hand])`: the hand's caster holds a spell it is casting (the caster's
+/// +0x28, RE `camera.md` IC3 A).
+pub fn is_casting(actor: &Actor, hand: Hand) -> bool {
+    let at = hand as usize * 8;
+    let pointer = usize::from_le_bytes(actor.magicCasters[at..at + 8].try_into().unwrap_or_default());
+    unsafe { (pointer as *const sre::ActorMagicCaster).as_ref() }.is_some_and(|c| c.field_28 != 0)
+}
+
+/// `HasMagicEffect`: an active effect on the actor has the base effect with form id `effect`.
+pub fn has_magic_effect(actor: &Actor, effect: Option<u32>) -> bool {
+    effect.is_some_and(|id| skyrim::papyrus::active_effects(actor).iter().any(|e| e.get_base_object().is_some_and(|base| base.formID == id)))
+}
+
+/// `ControlMap::IsMovementControlsEnabled`: both movement group bits, 0x401, set in the enabled
+/// controls (`Game.IsMovementControlsEnabled`, RE `camera.md` IC3 A).
+pub fn movement_controls_enabled() -> bool {
+    const MOVEMENT: u32 = ControlGroupFlag::Movement as u32 | ControlGroupFlag::Movement_2 as u32;
+    controls().is_none_or(|c| c.enabledControls & MOVEMENT == MOVEMENT)
 }
 
 /// `Is_Weapon_Drawn`: want to draw, drawing or drawn (`ActorWeaponState` 1-3).
