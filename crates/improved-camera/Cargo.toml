@@ -11,8 +11,8 @@ crate-type = ["cdylib"]
 [dependencies]
 skse.workspace = true
 framework.workspace = true
-sre = { workspace = true, features = ["actors", "camera", "forms"] }
-skyrim = { workspace = true, features = ["actors", "animation", "camera", "forms", "render", "ui"] }
+sre = { workspace = true, features = ["actors", "camera", "forms", "input", "papyrus"] }
+skyrim = { workspace = true, features = ["actors", "animation", "camera", "forms", "input", "papyrus", "render", "ui"] }
 
 [lints]
 workspace = true

@@ -17,7 +17,8 @@ mod util;
 use std::io::Write as _;
 use std::sync::OnceLock;
 
-use framework::{Action, Host, Scope};
+use framework::{Action, Host, InputFilter, Scope};
+use sre::InputDevice;
 use skyrim::prelude::*;
 
 framework::plugin! {
@@ -33,13 +34,34 @@ static HOST: OnceLock<&'static Host> = OnceLock::new();
 static ZOOM: OnceLock<Action> = OnceLock::new();
 /// IC's free camera keys (`FreeCamera.iKeyRollLeft`, `iKeyRollRight`, `iKeyReset`): Q, E and R.
 static FREE_CAMERA: OnceLock<[Action; 3]> = OnceLock::new();
+/// What IC's free camera swallows while its controls run: the menu keys (`is_blackListedEvent`)
+/// and the shoulders it rolls with.
+static FREE_CAMERA_FILTER: OnceLock<InputFilter> = OnceLock::new();
 /// Left shift, the free camera's fixed wheel modifier in IC.
 const LEFT_SHIFT: u32 = 0x2A;
 
-/// The frame's input for the camera states: the game's mouse and the free camera's keys.
+/// The frame's input for the camera states: the game's mouse and gamepad, the free camera's keys
+/// and the game's Toggle POV key released.
 pub(crate) fn frame_input() -> camera::states::Input {
     let (Some(host), Some([left, right, reset])) = (HOST.get(), FREE_CAMERA.get()) else { return camera::states::Input::default() };
-    camera::states::Input { mouse: host.mouse(), roll_left: left.held(), roll_right: right.held(), reset: reset.fired(), modifier: host.key_held(LEFT_SHIFT) }
+    camera::states::Input {
+        mouse: host.mouse(),
+        pad: host.gamepad(),
+        pov_released: plugin::info().keyboard_pov.and_then(|key| host.key_released(key)),
+        roll_left: left.held(),
+        roll_right: right.held(),
+        reset: reset.fired(),
+        modifier: host.key_held(LEFT_SHIFT),
+    }
+}
+
+/// Starts or stops swallowing the free camera's keys.
+pub(crate) fn swallow_free_camera_input(active: bool) {
+    if let Some(filter) = FREE_CAMERA_FILTER.get()
+        && filter.active() != active
+    {
+        filter.set_active(active);
+    }
 }
 
 pub(crate) fn log(line: &str) {
@@ -89,6 +111,8 @@ fn load(host: &'static Host) -> bool {
     });
     let _ = ZOOM.set(host.action("zoom", "", Scope::Game));
     let _ = FREE_CAMERA.set([host.action("free-camera-roll-left", "Q", Scope::Game), host.action("free-camera-roll-right", "E", Scope::Game), host.action("free-camera-reset", "R", Scope::Game)]);
+    let shoulders = [camera::base::PAD_LEFT_SHOULDER, camera::base::PAD_RIGHT_SHOULDER].map(|mask| (InputDevice::Gamepad, mask));
+    let _ = FREE_CAMERA_FILTER.set(host.input_filter("free-camera", &["Favorites", "Journal", "Quick Map", "Quick Stats", "Wait"], &shoulders));
     host.on_frame(|| {
         if ZOOM.get().is_some_and(Action::fired) {
             camera::manager::with(|m| m.zoom_active = !m.zoom_active);

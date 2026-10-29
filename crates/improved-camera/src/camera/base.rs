@@ -4,8 +4,9 @@
 //! `CameraBleedout` (bleedout and dead) and `CameraDragon`; `CameraIronSight` and `CameraAnimated`
 //! do nothing.
 
+use framework::GamePad;
 use skyrim::prelude::*;
-use sre::{CameraState, PlayerCamera};
+use sre::{CameraState, InputContextEnum, PlayerCamera};
 
 use super::state::{CameraType, Modifier};
 use super::states::Ctx;
@@ -225,6 +226,30 @@ pub fn orbit_update(orbit: &mut OrbitController, m: &mut Modifier, ctx: &Ctx<'_>
     }
 }
 
+/// The `KeyboardEvent` of the VATS, dead, gathering and crafting states: the game's Toggle POV key
+/// released after a hold `accept` takes flips the third-person target zoom between fake first
+/// person and the close third person.
+pub fn pov_zoom_toggle(ctx: &Ctx<'_>, accept: fn(f32) -> bool) {
+    if !ctx.input.pov_released.is_some_and(accept) {
+        return;
+    }
+    if let Some(third) = third(ctx) {
+        #[allow(clippy::float_cmp)]
+        let zoom = if third.targetZoom == FAKE_FIRST_PERSON_ZOOM { THIRD_PERSON_ZOOM } else { FAKE_FIRST_PERSON_ZOOM };
+        skyrim::store(&third.targetZoom, zoom);
+    }
+}
+
+/// A tap: released within 0.3 s.
+pub fn pov_tap(held: f32) -> bool {
+    held < 0.3
+}
+
+/// Crafting's long press: held between 1 and 10 s.
+pub fn pov_long_press(held: f32) -> bool {
+    held > 1.0 && held < 10.0
+}
+
 pub fn orbit_release(orbit: &mut OrbitController, camera: &PlayerCamera) {
     if let (Some(root), Some(pose)) = (camera.camera_root(), orbit.release()) {
         write_root(root, pose);
@@ -354,6 +379,27 @@ const SPEED_MAX: f32 = 60.0;
 /// Menus during which the free camera's controls do nothing.
 const CONTROL_MENUS: [&str; 5] = ["Journal Menu", "MapMenu", "InventoryMenu", "MagicMenu", "StatsMenu"];
 
+/// The gamepad buttons IC's free camera reads (`XInput` masks).
+const PAD_UP: u32 = 0x1;
+const PAD_DOWN: u32 = 0x2;
+const PAD_RIGHT_STICK: u32 = 0x80;
+pub const PAD_LEFT_SHOULDER: u32 = 0x100;
+pub const PAD_RIGHT_SHOULDER: u32 = 0x200;
+const PAD_A: u32 = 0x1000;
+
+/// The d-pad's fly speed steps of a frame, `true` up: IC steps on every event of the button, which
+/// is once each frame it is down and once more at its release.
+fn pad_steps(pad: &GamePad) -> Vec<bool> {
+    [(PAD_UP, true), (PAD_DOWN, false)]
+        .into_iter()
+        .flat_map(|(mask, up)| {
+            let held = usize::from(pad.held & mask != 0);
+            let released = pad.buttons.iter().filter(|b| **b == (mask, false)).count();
+            core::iter::repeat_n(up, held + released)
+        })
+        .collect()
+}
+
 /// `FreeState`, and with `sex` set `SexTFCState` (the free camera during a scene).
 #[derive(Clone, Copy, Debug)]
 #[allow(clippy::struct_excessive_bools)]
@@ -366,6 +412,8 @@ pub struct Free {
     rotate: f32,
     dirty: bool,
     modifier: bool,
+    /// Left shift was down last frame: its release clears the modifier.
+    shift: bool,
     player_rotation: (f32, f32),
     player_translation: [f32; 3],
     handlers_off: bool,
@@ -380,7 +428,7 @@ fn set_free_handlers(enabled: bool) {
 impl Free {
     #[must_use]
     pub const fn new(sex: bool) -> Self {
-        Self { sex, active: true, fix_camera_bug: false, original_speed: None, rotate: 0.0, dirty: false, modifier: false, player_rotation: (0.0, 0.0), player_translation: [0.0; 3], handlers_off: false }
+        Self { sex, active: true, fix_camera_bug: false, original_speed: None, rotate: 0.0, dirty: false, modifier: false, shift: false, player_rotation: (0.0, 0.0), player_translation: [0.0; 3], handlers_off: false }
     }
 
     pub fn enter(&mut self, previous: CameraType, ctx: &mut Ctx<'_>) {
@@ -446,50 +494,73 @@ impl Free {
         }
     }
 
-    /// The free camera's keys and wheel (IC's input callbacks, here once a frame): the roll keys
-    /// held, the reset key, left shift held, and the wheel for the fly speed or, with shift, the FOV.
+    /// The free camera's keys, wheel and gamepad (IC's input callbacks, here once a frame): the roll
+    /// keys or shoulders held, the reset key or A, left shift held or the right stick's click
+    /// toggling the modifier, and the wheel or the d-pad's up and down for the fly speed or, with
+    /// the modifier, the FOV. While they run, the game's menu keys and the shoulders are swallowed.
     fn controls(&mut self, ctx: &mut Ctx<'_>) {
-        if !ctx.profile.FreeCamera.bEnable || CONTROL_MENUS.iter().any(|m| util::is_menu_open(m)) || ctx.camera.state() != Some(CameraState::Free) {
+        let live = ctx.profile.FreeCamera.bEnable && !CONTROL_MENUS.iter().any(|m| util::is_menu_open(m)) && ctx.camera.state() == Some(CameraState::Free);
+        crate::swallow_free_camera_input(live);
+        if !live {
             return;
         }
         let input = ctx.input;
-        if input.roll_left || input.roll_right || input.reset || input.modifier || !input.mouse.buttons.is_empty() {
+        let pad = &input.pad;
+        let roll_left = input.roll_left || pad.held & PAD_LEFT_SHOULDER != 0;
+        let roll_right = input.roll_right || pad.held & PAD_RIGHT_SHOULDER != 0;
+        let reset = input.reset || pad.buttons.contains(&(PAD_A, true));
+        let speed_steps = pad_steps(pad);
+        if roll_left || roll_right || reset || input.modifier || !input.mouse.buttons.is_empty() || !pad.buttons.is_empty() || !speed_steps.is_empty() {
             self.dirty = true;
         }
         let speed = util::free_camera_speed();
         let step = *speed / 6.66;
-        if input.roll_left {
+        if roll_left {
             self.rotate -= step;
         }
-        if input.roll_right {
+        if roll_right {
             self.rotate += step;
         }
-        if input.reset {
+        if reset {
             self.rotate = 0.0;
             if let Some(original) = self.original_speed {
                 skyrim::store(speed, original);
             }
             ctx.notes.fov_reset = util::default_world_fov();
         }
-        self.modifier = input.modifier;
-        for &(button, down) in &input.mouse.buttons {
-            if !down || !(8..=9).contains(&button) {
-                continue;
-            }
+        if input.modifier || self.shift {
+            self.modifier = input.modifier;
+        }
+        self.shift = input.modifier;
+        if pad.buttons.contains(&(PAD_RIGHT_STICK, true)) {
+            self.modifier = !self.modifier;
+        }
+        let wheel = input.mouse.buttons.iter().filter(|(button, down)| *down && (8..=9).contains(button)).map(|(button, _)| *button == 8);
+        for up in wheel.chain(speed_steps) {
             if self.modifier {
-                ctx.notes.fov_zoom += if button == 8 { -5.0 } else { 5.0 };
+                ctx.notes.fov_zoom += if up { -5.0 } else { 5.0 };
             } else {
-                skyrim::store(speed, (*speed + if button == 8 { 1.0 } else { -1.0 }).clamp(SPEED_MIN, SPEED_MAX));
+                skyrim::store(speed, (*speed + if up { 1.0 } else { -1.0 }).clamp(SPEED_MIN, SPEED_MAX));
             }
         }
     }
 
-    /// `OnExit`: the handlers back on. IC also pops the free camera input contexts the console's
-    /// `tfc` leaks; popping one is not in the RE yet.
+    /// `OnExit`: the handlers back on and the game's menu keys given back. Once the engine has
+    /// left the free camera, the free camera input contexts the console's `tfc` leaves on the
+    /// control map's stack go too (`PopInputContext` removes every occurrence).
     pub fn exit(&mut self) {
+        crate::swallow_free_camera_input(false);
         if self.handlers_off {
             set_free_handlers(true);
             self.handlers_off = false;
+        }
+        if util::is_free_camera() {
+            return;
+        }
+        let Some(map) = sre::EventSourceHolder_User::singleton() else { return };
+        let leaked = map.context_stack().iter().filter(|c| **c == InputContextEnum::FreeCamera as u32).count();
+        if leaked > 0 && map.pop_context(InputContextEnum::FreeCamera) {
+            crate::log(&format!("<Camera> Removed {leaked} TFC input context(s) on free camera exit"));
         }
     }
 
@@ -499,5 +570,27 @@ impl Free {
         if let Some(original) = self.original_speed {
             skyrim::store(util::free_camera_speed(), original);
         }
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use framework::GamePad;
+
+    use super::{pad_steps, pov_long_press, pov_tap};
+
+    #[test]
+    fn the_d_pad_steps_while_held_and_at_its_release() {
+        let mut pad = GamePad { held: 0x1, buttons: vec![(0x1, true)], ..GamePad::default() };
+        assert_eq!(pad_steps(&pad), vec![true]);
+        pad = GamePad { held: 0x2, buttons: vec![(0x1, false)], ..GamePad::default() };
+        assert_eq!(pad_steps(&pad), vec![true, false]);
+        assert_eq!(pad_steps(&GamePad { held: 0x1000, ..GamePad::default() }), Vec::<bool>::new());
+    }
+
+    #[test]
+    fn the_pov_key_toggles_on_a_tap_or_crafting_long_press() {
+        assert!(pov_tap(0.1) && !pov_tap(0.3));
+        assert!(!pov_long_press(0.5) && pov_long_press(2.0) && !pov_long_press(10.0));
     }
 }

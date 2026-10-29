@@ -1,7 +1,7 @@
 //! `camera/Cameras.h`: the camera state objects IC switches between, one per camera type, each
 //! with its `OnEnter`, `OnUpdate` and `OnExit` (`camera::base` and `camera::extended`).
 
-use framework::GameMouse;
+use framework::{GameMouse, GamePad};
 use sre::{CameraState, PlayerCamera};
 
 use super::base::{self, Free, ThirdPerson};
@@ -12,11 +12,14 @@ use super::util::orbit::OrbitController;
 use crate::body::snapshot::Data as Body;
 use crate::settings::Profile;
 
-/// The frame's input for the states that take some: the game's mouse and the free camera's keys.
+/// The frame's input for the states that take some: the game's mouse and gamepad, the free
+/// camera's keys and the game's Toggle POV key released with its held seconds.
 #[derive(Clone, Debug, Default)]
 #[allow(clippy::struct_excessive_bools)]
 pub struct Input {
     pub mouse: GameMouse,
+    pub pad: GamePad,
+    pub pov_released: Option<f32>,
     pub roll_left: bool,
     pub roll_right: bool,
     pub reset: bool,
@@ -214,10 +217,19 @@ impl State {
         match self {
             Self::FirstPerson => base::first_person_update(m, ctx),
             Self::Vanity => base::vanity_update(m, ctx),
-            Self::Vats(orbit) => base::orbit_update(orbit, m, ctx, fov.fKillmove, CameraState::ThirdPerson),
+            Self::Vats(orbit) => {
+                base::pov_zoom_toggle(ctx, base::pov_tap);
+                base::orbit_update(orbit, m, ctx, fov.fKillmove, CameraState::ThirdPerson);
+            }
             Self::Bleedout(orbit) => base::orbit_update(orbit, m, ctx, fov.fRagdoll, CameraState::Bleedout),
-            Self::Dead(orbit) => base::orbit_update(orbit, m, ctx, fov.fDeath, CameraState::ThirdPerson),
-            Self::Gathering(orbit) => base::orbit_update(orbit, m, ctx, fov.fCrafting, CameraState::ThirdPerson),
+            Self::Dead(orbit) => {
+                base::pov_zoom_toggle(ctx, base::pov_tap);
+                base::orbit_update(orbit, m, ctx, fov.fDeath, CameraState::ThirdPerson);
+            }
+            Self::Gathering(orbit) => {
+                base::pov_zoom_toggle(ctx, base::pov_tap);
+                base::orbit_update(orbit, m, ctx, fov.fCrafting, CameraState::ThirdPerson);
+            }
             Self::Free(free) | Self::SexTFC(free) => free.update(m, ctx),
             Self::Furniture => sim(m, fov.fFurniture),
             Self::Transition { .. } => m.sim_first_person = true,
@@ -237,7 +249,10 @@ impl State {
             Self::HorseMounting | Self::HorseDismounting => sim(m, fov.fHorseTransition),
             Self::DragonMounting | Self::DragonDismounting => sim(m, fov.fDragonTransition),
             Self::Animation { should_sim } => extended::animation_update(should_sim, m, ctx),
-            Self::Crafting => sim(m, fov.fCrafting),
+            Self::Crafting => {
+                base::pov_zoom_toggle(ctx, base::pov_long_press);
+                sim(m, fov.fCrafting);
+            }
             Self::Spectator(state) => state.update(m, ctx),
             Self::VampirelordTransition => sim(m, fov.fVampireLord),
             Self::Vampirelord => offset_sim(m, fov.fVampireLord, camera.VampireLord.point()),

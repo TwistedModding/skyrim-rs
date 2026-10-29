@@ -4,7 +4,7 @@
 use std::sync::Mutex;
 
 use skyrim::prelude::*;
-use sre::{TESDataHandler, TESForm, TESGlobal};
+use sre::{EventSourceHolder_User, InputDevice, TESDataHandler, TESForm, TESGlobal, TESQuest};
 
 #[derive(Clone, Copy, Debug, Default, PartialEq, Eq)]
 pub struct ModInfo {
@@ -21,6 +21,16 @@ pub struct ModInfo {
     pub fishing: Option<u32>,
     /// Dragonborn's boat navmesh cutter reference, enabled while the boat is out.
     pub boat_navmesh_cutter: Option<u32>,
+    /// The intro quest (`Skyrim.esm` 0x3372B, the cart ride); none under Enderal.
+    pub quest_intro: Option<u32>,
+    /// The magic effects of the transitions IC follows: Dawnguard's vampire lord, Skyrim's
+    /// werewolf, `Undeath.esp`'s lich, and `Bathing in Skyrim.esp`'s bathing.
+    pub vampirelord_transition: Option<u32>,
+    pub werewolf_transition: Option<u32>,
+    pub lich_transition: Option<u32>,
+    pub bathe: Option<u32>,
+    /// The keyboard key the game's control map gives "Toggle POV" (`KEYBINDS.keyboardPOV`).
+    pub keyboard_pov: Option<u32>,
 }
 
 static INFO: Mutex<Option<ModInfo>> = Mutex::new(None);
@@ -50,7 +60,19 @@ pub fn detect_mods() {
         interaction: global("FP_AnimTrigger"),
         fishing: global("AnimatedFishing_Global"),
         boat_navmesh_cutter: lookup(handler, 0x0003_CA82, "Dragonborn.esm"),
+        quest_intro: lookup(handler, 0x0003_372B, "Skyrim.esm").filter(|_| global("_00E_VideoSkip").is_none()),
+        vampirelord_transition: lookup(handler, 0x283C, "Dawnguard.esm"),
+        werewolf_transition: lookup(handler, 0x0009_2C45, "Skyrim.esm"),
+        lich_transition: lookup(handler, 0xA443, "Undeath.esp"),
+        bathe: lookup(handler, 0x2C, "Bathing in Skyrim.esp"),
+        keyboard_pov: EventSourceHolder_User::singleton().and_then(|map| map.mapped_key("Toggle POV", InputDevice::Keyboard)),
     });
+}
+
+/// The stage of a quest found by [`detect_mods`] (`TESQuest`+0x228, the highest stage set).
+#[must_use]
+pub fn quest_stage(id: Option<u32>) -> Option<u16> {
+    sre::find_form_by_id(id?)?.cast::<TESQuest>().map(TESQuest::get_current_stage)
 }
 
 /// The value of a global found by [`detect_mods`].
