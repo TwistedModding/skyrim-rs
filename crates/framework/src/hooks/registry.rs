@@ -347,12 +347,13 @@ fn edit(reg: &mut Registry, keep: &dyn Fn(&Meta) -> bool) -> usize {
             removed += unsafe { rebuild(site, meta, &reg.ranks, keep) };
         }
         if meta.order.is_empty() && meta.kind != Kind::Entry {
-            retired.push((site, restore(meta)));
+            retired.push((site, meta.address, restore(meta)));
             *guard = None;
         }
     }
-    reg.sites.retain(|s| !retired.iter().any(|(r, _)| core::ptr::eq(*r, *s)));
-    for (_, line) in retired {
+    reg.sites.retain(|s| !retired.iter().any(|(r, _, _)| core::ptr::eq(*r, *s)));
+    for (_, address, line) in retired {
+        reg.seen.remove(&address);
         reg.log(&line);
     }
     removed
