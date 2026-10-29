@@ -28,7 +28,7 @@
 use core::ffi::{CStr, c_char};
 use std::fmt;
 
-pub use overlay::{Hotkey, Scope, View, egui, theme};
+pub use overlay::{GameMouse, Hotkey, Scope, View, egui, theme};
 use skyrim::events::{BSTEventSource, ErasedHandler, ErasedSource, Event};
 use sre::BSEventNotifyControl;
 use skyrim::input::{Command, CommandSlot, ErasedExecute, Param};
@@ -162,6 +162,9 @@ pub(crate) struct Table {
     pub action: fn(&'static str, &str, &str, Scope) -> usize,
     pub action_fired: fn(usize) -> bool,
     pub action_key: fn(usize) -> Option<Hotkey>,
+    pub action_held: fn(usize) -> bool,
+    pub key_held: fn(u32) -> bool,
+    pub game_mouse: fn() -> GameMouse,
     pub set_tab_title: fn(&'static str, &str),
     pub add_section: fn(&'static str, &str, DrawFn),
     pub add_hud: fn(&'static str, HudDrawFn),
@@ -226,6 +229,23 @@ impl Host {
     #[must_use]
     pub fn action(&self, name: &str, default: &str, scope: Scope) -> Action {
         Action { index: (self.table.action)(self.name, name, default, scope), table: self.table }
+    }
+
+    /// What the mouse did in the events that reached the game since the previous present, from the
+    /// start of the present after them to the start of the next (so once per frame for an
+    /// [`on_frame`](Self::on_frame) callback): the summed movement and the button presses and
+    /// releases in order, the wheel's steps as buttons 8 (up) and 9 (down). Events the overlay kept
+    /// from the game are not in it. For a drag or an orbit a mod reads while the game has the mouse.
+    #[must_use]
+    pub fn mouse(&self) -> GameMouse {
+        (self.table.game_mouse)()
+    }
+
+    /// Whether the keyboard key with this `DirectInput` scan code is down in the game (its press
+    /// reached the game and its release has not yet): for a modifier a mod's own keys combine with.
+    #[must_use]
+    pub fn key_held(&self, scan_code: u32) -> bool {
+        (self.table.key_held)(scan_code)
     }
 
     /// Calls `f` with the VM at the Papyrus registration pass, or at once when the pass has run
@@ -370,6 +390,13 @@ impl Action {
     #[must_use]
     pub fn fired(&self) -> bool {
         (self.table.action_fired)(self.index)
+    }
+
+    /// Whether the bound key and its modifiers are down in the game now: for an action that acts
+    /// every frame while its key is held. False while the action is unbound.
+    #[must_use]
+    pub fn held(&self) -> bool {
+        (self.table.action_held)(self.index)
     }
 
     /// The key bound now; `None` while a conflict leaves the action unbound.

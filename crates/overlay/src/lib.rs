@@ -38,7 +38,7 @@ mod vanilla;
 
 pub use frame::{Frame, read_back, save_next_frame};
 pub use hud::View;
-pub use input::{Capture, DEFAULT_CLOSE, DEFAULT_TOGGLE, Hotkey, KeyUse, Scope, capture, capture_next_key, capturing, on_key, pressed, set_capture, set_close, set_overlay_keys, set_toggle};
+pub use input::{Capture, DEFAULT_CLOSE, DEFAULT_TOGGLE, GameMouse, Hotkey, KeyUse, Scope, capture, capture_next_key, capturing, game_key_held, game_mouse, on_key, pressed, set_capture, set_close, set_overlay_keys, set_toggle};
 
 /// How far into `RenderFrame` its one call to `PresentFrame` is looked for (it sits at +0x601).
 const RENDER_FRAME_LEN: usize = 0x800;

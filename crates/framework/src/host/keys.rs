@@ -167,6 +167,16 @@ pub(super) fn key(index: usize) -> Option<Hotkey> {
     bindings().get(index).and_then(|b| b.key)
 }
 
+/// Whether the action's key and its modifiers are down in the game.
+pub(super) fn held(index: usize) -> bool {
+    key(index).is_some_and(|k| key_held(k, overlay::game_key_held))
+}
+
+fn key_held(key: Hotkey, down: impl Fn(u32) -> bool) -> bool {
+    let either = |a, b| down(a) || down(b);
+    down(key.scan_code) && (!key.shift || either(0x2A, 0x36)) && (!key.ctrl || either(0x1D, 0x9D)) && (!key.alt || either(0x38, 0xB8))
+}
+
 /// Arms the capture of the next key pressed for the action at `index`, or disarms it with `None`.
 pub(super) fn capture(index: Option<usize>) {
     CAPTURE_FOR.store(index.unwrap_or(usize::MAX), Ordering::Relaxed);
@@ -230,6 +240,15 @@ pub(super) fn describe_game_uses() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
+    #[test]
+    fn a_key_is_held_with_its_modifiers() {
+        let k: Hotkey = "Shift+Q".parse().unwrap();
+        assert!(key_held(k, |c| c == 0x10 || c == 0x36), "either shift");
+        assert!(!key_held(k, |c| c == 0x10), "shift missing");
+        assert!(key_held(Hotkey::new(0x10), |c| c == 0x10 || c == 0x1D), "an extra modifier does not stop a hold");
+        assert!(!key_held(Hotkey::new(0x10), |_| false));
+    }
 
     #[test]
     fn resolves_the_file_and_refuses_conflicts() {

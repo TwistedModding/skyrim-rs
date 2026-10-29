@@ -137,10 +137,23 @@ struct Keys {
     capturing: bool,
 }
 
-/// Key presses with who had each: those since the last present, and those the current present reports.
+/// The mouse as the game saw it between two presents: the summed movement in the device's counts
+/// and every button press (`true`) and release (`false`) in order. Buttons: 0 left, 1 right,
+/// 2 middle, 3-7 the others; 8 and 9 are the wheel's steps up and down, pressed once per step.
+#[derive(Clone, Debug, Default, PartialEq, Eq)]
+pub struct GameMouse {
+    pub dx: i32,
+    pub dy: i32,
+    pub buttons: Vec<(u32, bool)>,
+}
+
+/// Key presses with who had each, and the game's mouse: those since the last present, and those
+/// the current present reports.
 struct Presses {
     pending: Vec<(Hotkey, Scope)>,
     current: Vec<(Hotkey, Scope)>,
+    mouse_pending: GameMouse,
+    mouse_current: GameMouse,
 }
 
 struct Pending {
@@ -158,7 +171,7 @@ struct Pending {
 
 static PENDING: Mutex<Pending> = Mutex::new(Pending { events: Vec::new(), modifiers: Modifiers::NONE, pointer: Pos2::ZERO, screen: Vec2::ZERO, pixels_per_point: 1.0, game_held: [false; 256], taken: [false; 256] });
 static KEYS: Mutex<Keys> = Mutex::new(Keys { toggle: Some(DEFAULT_TOGGLE), close: Some(DEFAULT_CLOSE), overlay: Vec::new(), capturing: false });
-static PRESSES: Mutex<Presses> = Mutex::new(Presses { pending: Vec::new(), current: Vec::new() });
+static PRESSES: Mutex<Presses> = Mutex::new(Presses { pending: Vec::new(), current: Vec::new(), mouse_pending: GameMouse { dx: 0, dy: 0, buttons: Vec::new() }, mouse_current: GameMouse { dx: 0, dy: 0, buttons: Vec::new() } });
 static LISTENER: OnceLock<fn(KeyUse)> = OnceLock::new();
 static INSTALLED: AtomicBool = AtomicBool::new(false);
 static SINK: Sink<InputEventList, Gate> = Sink::new(Gate);
@@ -204,10 +217,53 @@ pub fn pressed(key: Hotkey, scope: Scope) -> bool {
     PRESSES.lock().unwrap().current.contains(&(key, scope))
 }
 
+/// What the mouse did in the events that reached the game before this frame's present and after
+/// the previous one's, reported from the start of the present after them to the start of the next.
+/// A frame the overlay keeps from the game is not in it.
+#[must_use]
+pub fn game_mouse() -> GameMouse {
+    PRESSES.lock().unwrap().mouse_current.clone()
+}
+
+/// Whether the keyboard key `scan_code` is down in the game: its press reached the game and its
+/// release has not yet.
+#[must_use]
+pub fn game_key_held(scan_code: u32) -> bool {
+    PENDING.lock().unwrap().game_held[scan_code as usize & 0xFF]
+}
+
 /// Makes the presses since the last present the ones [`pressed`] reports; at the start of every present.
 pub(crate) fn begin_frame() {
     let mut presses = PRESSES.lock().unwrap();
     presses.current = core::mem::take(&mut presses.pending);
+    presses.mouse_current = core::mem::take(&mut presses.mouse_pending);
+}
+
+impl GameMouse {
+    /// Adds the mouse events of a frame's list.
+    fn record(&mut self, list: &InputEventList) {
+        for event in list.iter().filter(|e| InputDevice::from_u32(e.device) == Some(InputDevice::Mouse)) {
+            if let Some(m) = event.as_mouse_move() {
+                self.moved(m.dx.cast_signed(), m.dy.cast_signed());
+            } else if let Some(b) = event.as_button() {
+                self.button(b.idCode, b.value, b.heldDownSecs);
+            }
+        }
+    }
+
+    fn moved(&mut self, dx: i32, dy: i32) {
+        self.dx = self.dx.saturating_add(dx);
+        self.dy = self.dy.saturating_add(dy);
+    }
+
+    /// A button event: down on its first frame, up when its value drops to 0; the held frames between add nothing.
+    fn button(&mut self, id: u32, value: f32, held_secs: f32) {
+        if value != 0.0 && held_secs == 0.0 {
+            self.buttons.push((id, true));
+        } else if value == 0.0 {
+            self.buttons.push((id, false));
+        }
+    }
 }
 
 pub(crate) fn installed() -> bool {
@@ -330,7 +386,12 @@ impl EventSink<InputEventList> for Gate {
             }
         }
         drop((keys, p));
-        PRESSES.lock().unwrap().pending.extend(presses.into_iter().filter(|(_, scope)| *scope == Scope::Overlay || !stop));
+        let mut recorded = PRESSES.lock().unwrap();
+        recorded.pending.extend(presses.into_iter().filter(|(_, scope)| *scope == Scope::Overlay || !stop));
+        if !stop {
+            recorded.mouse_pending.record(list);
+        }
+        drop(recorded);
         if let Some(listener) = LISTENER.get() {
             for report in reports {
                 listener(report);
@@ -496,6 +557,18 @@ fn key(scan_code: u32) -> Option<Key> {
 #[cfg(test)]
 mod tests {
     use super::*;
+
+    #[test]
+    fn the_game_mouse_sums_moves_and_keeps_button_edges() {
+        let mut m = GameMouse::default();
+        m.moved(3, -2);
+        m.moved(4, 5);
+        m.button(0, 1.0, 0.0);
+        m.button(0, 1.0, 0.016);
+        m.button(8, 1.0, 0.0);
+        m.button(0, 0.0, 0.2);
+        assert_eq!(m, GameMouse { dx: 7, dy: 3, buttons: vec![(0, true), (8, true), (0, false)] });
+    }
 
     #[test]
     fn hotkeys_read_and_write_by_name() {
