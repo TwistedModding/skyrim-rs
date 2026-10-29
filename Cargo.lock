@@ -336,6 +336,7 @@ dependencies = [
  "framework",
  "skse",
  "skyrim",
+ "skyrim-sre",
 ]
 
 [[package]]

@@ -10,5 +10,7 @@
   {"wait": 1000},
   {"tool": "console", "args": {"command": "save skyrim-rs-framework"}},
   {"waitFor": "saveGame"},
-  {"wait": 2000}
+  {"wait": 2000},
+  {"tool": "console", "args": {"command": "SkyrimRs capture 9"}},
+  {"wait": 1500}
 ]

@@ -28,7 +28,7 @@ $font = HostLines '^overlay font: Futura CondensedLight from .*fonts_en\.swf$'
 $cursorLine = HostLines "^overlay cursor: the game's, from .*cursormenu\.swf$"
 $command = HostLines '^command SkyrimRs took over console opcode 0x[0-9a-f]+'
 $reloading = HostLines '^skyrim-rs-example: skyrim_rs_example_mod\.dll changed, reloading as generation 2$'
-$detached = HostLines '^skyrim-rs-example: generation 1: 1 hook subscriptions, 0 sinks, 1 natives stubbed, 0 commands stubbed, 2 tab sections, 0 message handlers, 1 Papyrus callbacks, 1 frame callbacks detached$'
+$detached = HostLines '^skyrim-rs-example: generation 1: 1 hook subscriptions, 0 sinks, 1 natives stubbed, 0 commands stubbed, 2 tab sections, 0 HUD painters, 0 message handlers, 1 Papyrus callbacks, 1 frame callbacks detached$'
 $reloaded = HostLines '^skyrim-rs-example: generation 2 loaded, image at 0x[0-9a-f]+$'
 $settingsWritten = HostLines '^settings written to .*skyrim-rs-example\.settings\.json$'
 $framesWritten = HostLines '^overlay frame written to .*skyrim-rs-overlay-[0-4]\.bmp$'
@@ -48,16 +48,6 @@ $newId = Captured (Lines 56) '#(\d+) skyrim-rs-example Before'
 $settingsFile = "$OutDir\skyrim-rs-example.settings.json"
 $scaleOnDisk = if (Test-Path $settingsFile) { Captured (Get-Content $settingsFile -Raw) '"damage_scale":\s*([-\d.]+)' } else { $null }
 
-Add-Type -AssemblyName System.Drawing
-function HalfJpeg($from, $to) {
-    if (-not (Test-Path $from)) { return $false }
-    $img = [System.Drawing.Image]::FromFile($from)
-    $half = New-Object System.Drawing.Bitmap $img, ([int]($img.Width / 2)), ([int]($img.Height / 2))
-    $half.Save($to, [System.Drawing.Imaging.ImageFormat]::Jpeg)
-    $half.Dispose(); $img.Dispose()
-    Remove-Item $from
-    $true
-}
 # One capture per page, as "SkyrimRs gui <n>" numbers them.
 $pageNames = @("example-damage", "example-about", "plugins", "legacy", "settings")
 $shots = @(0..4 | ForEach-Object { HalfJpeg "$SkseLogs\skyrim-rs-overlay-$_.bmp" "$OutDir\gui-$($pageNames[$_])-1.7.104.jpg" })

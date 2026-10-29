@@ -17,7 +17,7 @@
 //! (`QueryInterface` answers as for the host, and the plugin handle is the host's, valid only while
 //! `load` runs), its [`settings`], its hotkeys ([`Host::action`]), and every registration it makes
 //! in the game: loader messages, a per-frame callback, the Papyrus registration pass, a tab in the
-//! host's window ([`Host::add_tab`]), event sinks, Papyrus natives, console commands and hook
+//! host's window ([`Host::add_tab`]), HUD painters drawn into the game ([`Host::add_hud`]), event sinks, Papyrus natives, console commands and hook
 //! subscriptions ([`Host::hooks`]). The host owns the object the engine keeps for each of
 //! them and knows which plugin it belongs to, so the plugin's DLL can be unloaded and replaced
 //! while the game runs: the host loads every plugin from a shadow copy, watches the author's file
@@ -28,7 +28,7 @@
 use core::ffi::{CStr, c_char};
 use std::fmt;
 
-pub use overlay::{Hotkey, Scope, egui, theme};
+pub use overlay::{Hotkey, Scope, View, egui, theme};
 use skyrim::events::{BSTEventSource, ErasedHandler, ErasedSource, Event};
 use sre::BSEventNotifyControl;
 use skyrim::input::{Command, CommandSlot, ErasedExecute, Param};
@@ -61,6 +61,8 @@ pub type PapyrusFn = fn(&'static VirtualMachine);
 pub type FrameFn = fn();
 /// Draws one section of a plugin's tab in the host's window.
 pub type DrawFn = Box<dyn FnMut(&mut egui::Ui) + Send>;
+/// Paints a plugin's shapes into the game, placed through the frame camera's [`View`].
+pub type HudDrawFn = Box<dyn FnMut(&egui::Painter, &View) + Send>;
 
 /// What [`plugin!`] exports as `SkyrimRs_Plugin`. The host reads `abi` and `build` before anything
 /// else, so they stay first and C-typed in every future ABI.
@@ -162,6 +164,7 @@ pub(crate) struct Table {
     pub action_key: fn(usize) -> Option<Hotkey>,
     pub set_tab_title: fn(&'static str, &str),
     pub add_section: fn(&'static str, &str, DrawFn),
+    pub add_hud: fn(&'static str, HudDrawFn),
     pub show_tab: fn(&'static str),
     pub setting: fn(&str, &str) -> Option<Setting>,
     pub set_setting: fn(&str, &str, Setting),
@@ -249,6 +252,26 @@ impl Host {
     pub fn add_tab(&self, title: &str) -> Tab {
         (self.table.set_tab_title)(self.name, title);
         Tab { owner: self.name, table: self.table }
+    }
+
+    /// Adds a HUD painter: `draw` runs every frame on the main thread at the present, whether the
+    /// overlay is open or not, once the scene graph exists, and what it paints lands in the frame
+    /// under the host's window. [`View::project`] places a world point on screen and
+    /// [`View::project_bound`] boxes an object's 3D, an actor's root for a highlight:
+    ///
+    /// ```ignore
+    /// host.add_hud(|painter, view| {
+    ///     let Some(root) = sre::PlayerCharacter::singleton().and_then(|p| p.loaded_data()?.node3_d()) else { return };
+    ///     if let Some(rect) = view.project_bound(root) {
+    ///         painter.rect_stroke(rect, 0.0, (2.0, egui::Color32::GOLD), egui::StrokeKind::Outside);
+    ///     }
+    /// });
+    /// ```
+    ///
+    /// The painters are dropped with the plugin's generation. The game's own menus are not
+    /// considered: a painter that should hide under the inventory or the map checks for them.
+    pub fn add_hud(&self, draw: impl FnMut(&egui::Painter, &View) + Send + 'static) {
+        (self.table.add_hud)(self.name, Box::new(draw));
     }
 
     /// Opens the overlay on this plugin's tab.

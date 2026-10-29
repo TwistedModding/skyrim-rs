@@ -1,8 +1,8 @@
 //! The framework suite's plugin, loaded by the host from `Data\SKSE\Plugins\skyrim-rs\`: it checks
 //! the forwarded SKSE interface and the resolved load order in `load` and appends its name to
 //! `skyrim-rs-order.log` like the `order-*` plugins, records the loader messages the host fans out,
-//! registers `SkyrimRsFrameworkTest.Twice` through the host's Papyrus callback and adds an overlay
-//! window, then reports at `DataLoaded`, after a load and at the save in `skyrim-rs-framework-test.log`
+//! registers `SkyrimRsFrameworkTest.Twice` through the host's Papyrus callback, adds an overlay
+//! window and a HUD painter that boxes the player and checks the frame camera's projection, then reports at `DataLoaded`, after a load and at the save in `skyrim-rs-framework-test.log`
 //! in the test plugin's `PASS`/`FAIL`/`summary` format.
 
 use std::fs::File;
@@ -10,8 +10,9 @@ use std::io::Write as _;
 use std::sync::{Mutex, OnceLock};
 use std::sync::atomic::{AtomicU32, Ordering};
 
-use framework::{Host, egui};
+use framework::{Host, View, egui};
 use skyrim::papyrus::VirtualMachine;
+use skyrim::render::NiAVObjectExt;
 
 framework::plugin! {
     name: "skyrim-rs-framework-test",
@@ -25,6 +26,9 @@ static KINDS: Mutex<Vec<u32>> = Mutex::new(Vec::new());
 static REGISTERED: Mutex<Option<Result<String, String>>> = Mutex::new(None);
 static CALLS: Mutex<Vec<i32>> = Mutex::new(Vec::new());
 static FRAMES: AtomicU32 = AtomicU32::new(0);
+static HUD_FRAMES: AtomicU32 = AtomicU32::new(0);
+/// The projection checks at the last HUD frame with the player's 3D loaded.
+static PROJECTION: Mutex<Option<Result<String, String>>> = Mutex::new(None);
 static HOST: OnceLock<&'static Host> = OnceLock::new();
 
 macro_rules! log {
@@ -70,6 +74,7 @@ fn load(host: &'static Host) -> bool {
     host.on_message(on_message);
     host.on_papyrus(on_papyrus);
     host.add_tab("skyrim-rs framework test").section("main", tab);
+    host.add_hud(hud);
     true
 }
 
@@ -100,7 +105,7 @@ fn on_message(msg: &skse::Message) {
     match msg.kind {
         skse::MessagingInterface::DATA_LOADED => run("dataLoaded", &[("startup_messages", startup_messages), ("papyrus", papyrus)]),
         skse::MessagingInterface::POST_LOAD_GAME => run("postLoadGame", &[("load_messages", load_messages)]),
-        skse::MessagingInterface::SAVE_GAME => run("saveGame", &[("native", native), ("tab", drawn)]),
+        skse::MessagingInterface::SAVE_GAME => run("saveGame", &[("native", native), ("tab", drawn), ("hud", hud_drawn)]),
         _ => {}
     }
 }
@@ -119,6 +124,36 @@ fn on_papyrus(vm: &'static VirtualMachine) {
 fn tab(ui: &mut egui::Ui) {
     let frames = FRAMES.fetch_add(1, Ordering::Relaxed) + 1;
     ui.label(format!("drawn by a framework plugin, frame {frames}"));
+}
+
+fn hud(painter: &egui::Painter, view: &View) {
+    HUD_FRAMES.fetch_add(1, Ordering::Relaxed);
+    let Some(root) = sre::PlayerCharacter::singleton().and_then(|p| p.loaded_data()?.node3_d()) else { return };
+    let player = view.project_bound(root);
+    if let Some(rect) = player {
+        painter.rect_stroke(rect, 0.0, egui::Stroke::new(2.0, egui::Color32::GOLD), egui::StrokeKind::Outside);
+        painter.text(rect.center_top(), egui::Align2::CENTER_BOTTOM, "skyrim-rs HUD", egui::FontId::proportional(20.0), egui::Color32::GOLD);
+    }
+    *PROJECTION.lock().unwrap() = Some(projection(view, player));
+}
+
+/// A point straight ahead of the camera lands on the screen's centre, one behind it does not land.
+fn projection(view: &View, player: Option<egui::Rect>) -> Result<String, String> {
+    let rotation = sre::get_main_camera().ok_or("no frame camera")?.world_transform().rotation;
+    let eye = view.eye();
+    let along = |d: f32| core::array::from_fn(|r| eye[r] + d * rotation[r][0]);
+    let centre = view.screen().center();
+    let ahead = view.project(along(1000.0)).ok_or("a point ahead of the camera did not project")?;
+    check(ahead.distance(centre) < 1.0, &format!("a point ahead landed at {ahead:?}, the centre is {centre:?}"))?;
+    check(view.project(along(-1000.0)).is_none(), "a point behind the camera projected")?;
+    Ok(format!("ahead at {ahead:?} on a {:?} screen, behind not projected, player box {player:?}", view.screen().size()))
+}
+
+fn hud_drawn() -> Result<String, String> {
+    let (frames, tab) = (HUD_FRAMES.load(Ordering::Relaxed), FRAMES.load(Ordering::Relaxed));
+    check(frames > tab, &format!("the HUD ran in {frames} frames, the tab in {tab}: not while the overlay was closed"))?;
+    let projection = PROJECTION.lock().unwrap().clone().ok_or("the player's 3D never loaded in a HUD frame")??;
+    Ok(format!("HUD ran in {frames} frames (tab {tab}); {projection}"))
 }
 
 fn startup_messages() -> Result<String, String> {

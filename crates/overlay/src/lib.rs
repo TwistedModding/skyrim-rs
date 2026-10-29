@@ -16,7 +16,8 @@
 //! own Futura Condensed converted from `Interface\fonts_en.swf` at startup when it can be read and
 //! Segoe UI and Consolas from the Windows font folder otherwise and for monospace (`egui`'s bundled
 //! fonts are not under a license the workspace allows), and the game's own mouse cursor from
-//! `Interface\cursormenu.swf`.
+//! `Interface\cursormenu.swf`. The HUD layer set with [`on_hud`] draws every frame, open or not,
+//! under the windows, with a [`View`] that places shapes in the world through the frame camera.
 
 use std::fmt;
 use std::sync::atomic::{AtomicBool, Ordering};
@@ -29,12 +30,14 @@ use sre::raw::{fns, globals};
 use skyrim::render::PresentFn;
 
 mod frame;
+mod hud;
 mod input;
 mod paint;
 pub mod theme;
 mod vanilla;
 
 pub use frame::{Frame, read_back, save_next_frame};
+pub use hud::View;
 pub use input::{Capture, DEFAULT_CLOSE, DEFAULT_TOGGLE, Hotkey, KeyUse, Scope, capture, capture_next_key, capturing, on_key, pressed, set_capture, set_close, set_overlay_keys, set_toggle};
 
 /// How far into `RenderFrame` its one call to `PresentFrame` is looked for (it sits at +0x601).
@@ -85,6 +88,7 @@ static WINDOWS: Mutex<Vec<Window>> = Mutex::new(Vec::new());
 static OPEN: AtomicBool = AtomicBool::new(false);
 static FAILURE: OnceLock<String> = OnceLock::new();
 static FRAME: OnceLock<fn()> = OnceLock::new();
+static HUD: OnceLock<HudFn> = OnceLock::new();
 static FONTS: OnceLock<Option<(egui::FontDefinitions, String)>> = OnceLock::new();
 static CURSOR: OnceLock<Result<vanilla::Cursor, String>> = OnceLock::new();
 static KEYBOARD_FOCUS: AtomicBool = AtomicBool::new(false);
@@ -116,6 +120,16 @@ pub fn add(draw: impl FnMut(&Context) + Send + 'static) {
 /// windows; the first call sets it for the life of the game.
 pub fn on_frame(f: fn()) {
     let _ = FRAME.set(f);
+}
+
+/// Draws the HUD layer: a painter on the background layer, under the windows, and the frame camera.
+pub type HudFn = fn(&egui::Painter, &View);
+
+/// Runs `f` on the main thread at every present the overlay sees, open or not, once the scene
+/// graph exists; what it paints is drawn into the frame under the overlay's windows and takes no
+/// input. The first call sets it for the life of the game.
+pub fn on_hud(f: HudFn) {
+    let _ = HUD.set(f);
 }
 
 /// Replaces the `egui` context with a fresh one. What a context accumulates (widget state, the
@@ -188,7 +202,7 @@ unsafe extern "C" fn present_detour() {
     if let Some(frame) = FRAME.get() {
         frame();
     }
-    if is_open() && FAILURE.get().is_none() {
+    if (is_open() || HUD.get().is_some()) && FAILURE.get().is_none() {
         draw();
     }
     unsafe { SITE.get().expect("stored before the call site was patched").original()() }
@@ -221,7 +235,11 @@ fn draw() {
     };
     let ppp = (size[1] as f32 / 1080.0).max(1.0);
     let screen = egui::vec2(size[0] as f32, size[1] as f32) / ppp;
-    let (events, mouse) = input::take(screen, ppp);
+    let open = is_open();
+    let (mut events, mouse) = input::take(screen, ppp);
+    if !open {
+        events.clear();
+    }
     if state.cursor.is_none()
         && let Ok(c) = cursor()
     {
@@ -232,10 +250,15 @@ fn draw() {
     raw.viewports.insert(ViewportId::ROOT, ViewportInfo { native_pixels_per_point: Some(ppp), focused: Some(true), ..ViewportInfo::default() });
     let mut windows = core::mem::take(&mut *WINDOWS.lock().unwrap());
     let output = state.ctx.run_pass(raw, |ctx| {
-        for window in &mut windows {
-            window(ctx);
+        if let (Some(hud), Some(view)) = (HUD.get(), View::current(Rect::from_min_size(Pos2::ZERO, screen))) {
+            hud(&ctx.layer_painter(egui::LayerId::background()), &view);
         }
-        input::draw_cursor(ctx, mouse, cursor);
+        if open {
+            for window in &mut windows {
+                window(ctx);
+            }
+            input::draw_cursor(ctx, mouse, cursor);
+        }
     });
     let mut added = WINDOWS.lock().unwrap();
     windows.append(&mut added);

@@ -2,7 +2,8 @@
 # The host (skyrim_rs.dll) loads the suite's plugins from Data\SKSE\Plugins\skyrim-rs in the order their descriptors
 # resolve to (order-head by priority, then the test plugin, order-tail after all; the order-cycle pair refused, the decoy
 # without a descriptor skipped); each loaded plugin appends its name to skyrim-rs-order.log. DevBench calls the test
-# plugin's native and opens and closes the host's overlay; the plugin reports at the save.
+# plugin's native and opens and closes the host's overlay; the plugin reports at the save. A capture after the save,
+# with the overlay closed, shows the test plugin's HUD box around the player.
 $Phases = "load", "dataLoaded", "postLoadGame", "saveGame"
 
 $orderLog = if (Test-Path "$OutDir\skyrim-rs-order.log") { @(Get-Content "$OutDir\skyrim-rs-order.log") } else { @() }
@@ -13,6 +14,7 @@ $orderLine = @($hostLog | Where-Object { $_ -match '^load order: ' })
 $missing = @($hostLog | Where-Object { $_ -match '^no plugin named skyrim-rs-nowhere \(asked by skyrim-rs-order-head\)$' })
 $cycle = @($hostLog | Where-Object { $_ -match '^skipped skyrim_rs_order_cycle_[ab]\.dll: skyrim-rs-order-cycle-[ab] is in a load order cycle with skyrim-rs-order-cycle-[ab]$' })
 $hostHandle = Loaded "skyrim_rs.dll"
+$hudShot = HalfJpeg "$SkseLogs\skyrim-rs-overlay-9.bmp" "$OutDirramework-hud-1.7.104.jpg"
 $subLoader = @($LoaderLog | Where-Object { $_ -match 'skyrim_rs_framework_test|skyrim_rs_order|decoy' })
 
 $rows = @(
@@ -30,6 +32,8 @@ $rows = @(
        ok = ($plugin["native"].ok -and (Returned 4) -eq 42) }
     @{ name = "tab";          plugin = (Detail "tab"); devbench = "F11 taps ok = $((Step 5) -ne $null), $((Step 7) -ne $null)";
        ok = ($plugin["tab"].ok -and (Step 5) -ne $null -and (Step 7) -ne $null) }
+    @{ name = "hud";          plugin = (Detail "hud"); devbench = "SkyrimRs capture 9 with the overlay closed: $(Lines 12); framework-hud-1.7.104.jpg written: $hudShot";
+       ok = ($plugin["hud"].ok -and $hudShot) }
     @{ name = "save trigger"; plugin = ($summaries -match 'framework saveGame') -join ' '; devbench = "waitFor saveGame satisfied: $(($steps | Where-Object { $_.index -eq 10 }).satisfied)";
        ok = (($steps | Where-Object { $_.index -eq 10 }).satisfied -eq $true) }
 )

@@ -12,7 +12,7 @@ use overlay::theme;
 
 use super::owned::Owned;
 use super::{HOSTED_BY, NAME, keys, plugins, refused, reload, skse_plugins};
-use crate::DrawFn;
+use crate::{DrawFn, HudDrawFn};
 use crate::settings::{self, Setting, Value};
 
 /// The host setting holding the capture rule: `focus` (the default) or `all`.
@@ -34,6 +34,13 @@ struct Section {
 unsafe impl Sync for Section {}
 
 static SECTIONS: Owned<Section> = Owned::new();
+
+/// A plugin's HUD painter; only the main thread draws it, under the entry's exclusive lock.
+struct Hud(HudDrawFn);
+
+unsafe impl Sync for Hud {}
+
+static HUDS: Owned<Hud> = Owned::new();
 /// Each plugin's tab title.
 static TITLES: Mutex<Vec<(&'static str, String)>> = Mutex::new(Vec::new());
 
@@ -77,15 +84,30 @@ pub(super) fn add_section(owner: &'static str, name: &str, draw: DrawFn) {
     SECTIONS.add(owner, Section { owner, name: name.to_owned(), draw });
 }
 
+pub(super) fn add_hud(owner: &'static str, draw: HudDrawFn) {
+    HUDS.add(owner, Hud(draw));
+}
+
+/// Puts the window and every plugin's HUD painters on the overlay.
+pub(super) fn install() {
+    overlay::add(draw);
+    overlay::on_hud(draw_hud);
+}
+
+/// The overlay's HUD callback: every plugin's painter in registration order.
+fn draw_hud(painter: &egui::Painter, view: &overlay::View) {
+    HUDS.each_mut(|hud| (hud.0)(painter, view));
+}
+
 pub(super) fn show_tab(owner: &'static str) {
     select(Tab::Mods, Some(owner.to_owned()), None);
     overlay::set_open(true);
 }
 
-/// Drops a plugin's tab and returns how many sections it had.
-pub(super) fn remove(owner: &str) -> usize {
+/// Drops a plugin's tab and HUD painters and returns how many sections and painters it had.
+pub(super) fn remove(owner: &str) -> (usize, usize) {
     TITLES.lock().unwrap_or_else(PoisonError::into_inner).retain(|(o, _)| *o != owner);
-    SECTIONS.remove_owner(owner)
+    (SECTIONS.remove_owner(owner), HUDS.remove_owner(owner))
 }
 
 fn title_of(owner: &str) -> String {
@@ -439,7 +461,7 @@ fn resize_grip(ctx: &egui::Context, window: egui::Rect) {
 
 /// Draws the window; the overlay's one window callback. The window's size is the host's (the grip
 /// sets it), so its contents fill it and never grow it.
-pub(super) fn draw(ctx: &egui::Context) {
+fn draw(ctx: &egui::Context) {
     let mods = mods();
     let (tab, selected) = selection(&mods);
     let size = SHOWN.lock().unwrap_or_else(PoisonError::into_inner).size;

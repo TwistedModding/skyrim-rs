@@ -98,6 +98,7 @@ static TABLE: Table = Table {
     action_key: keys::key,
     set_tab_title: gui::set_title,
     add_section: gui::add_section,
+    add_hud: gui::add_hud,
     show_tab: gui::show_tab,
     setting: settings::get,
     set_setting: settings::set,
@@ -211,7 +212,7 @@ pub fn load(skse: &skse::Interface) -> bool {
         log!("the loader refused the message listener or the Papyrus callback");
         return false;
     }
-    overlay::add(gui::draw);
+    gui::install();
     let shadow = reload::clean(&dir);
     let mut read = Vec::new();
     for path in plugin_files(&dir) {
@@ -511,14 +512,14 @@ fn detach(owner: &str) -> String {
         }));
     }
     let (natives, commands) = (natives.len(), commands.len());
-    let sections = gui::remove(owner);
-    if sections > 0 {
+    let (sections, huds) = gui::remove(owner);
+    if sections + huds > 0 {
         overlay::reset_context();
     }
     let messages = MESSAGES.remove_owner(owner);
     let papyrus = PAPYRUS.remove_owner(owner);
     let frames = FRAMES.remove_owner(owner);
-    format!("{hooks} hook subscriptions, {sinks} sinks, {natives} natives stubbed, {commands} commands stubbed, {sections} tab sections, {messages} message handlers, {papyrus} Papyrus callbacks, {frames} frame callbacks")
+    format!("{hooks} hook subscriptions, {sinks} sinks, {natives} natives stubbed, {commands} commands stubbed, {sections} tab sections, {huds} HUD painters, {messages} message handlers, {papyrus} Papyrus callbacks, {frames} frame callbacks")
 }
 
 fn vm() -> Option<&'static VirtualMachine> {

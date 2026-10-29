@@ -302,6 +302,17 @@ function Loaded($file) {
 }
 function Hosted { @($HostLog | Where-Object { $_ -match "^hosted by $HostedBy, " }).Count -eq 1 }
 function Near($a, $b, $tol) { ($a -ne $null) -and ($b -ne $null) -and ([math]::Abs([double]$a - [double]$b) -lt $tol) }
+# Converts an overlay capture to a half-size JPEG in the run's folder and removes the bitmap.
+Add-Type -AssemblyName System.Drawing
+function HalfJpeg($from, $to) {
+    if (-not (Test-Path $from)) { return $false }
+    $img = [System.Drawing.Image]::FromFile($from)
+    $half = New-Object System.Drawing.Bitmap $img, ([int]($img.Width / 2)), ([int]($img.Height / 2))
+    $half.Save($to, [System.Drawing.Imaging.ImageFormat]::Jpeg)
+    $half.Dispose(); $img.Dispose()
+    Remove-Item $from
+    $true
+}
 
 . "$PSScriptRoot\$Suite-checks.ps1"
 
