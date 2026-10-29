@@ -264,7 +264,27 @@ fn a_disabled_subscriber_keeps_its_place_and_is_skipped() {
     assert!(messages.iter().any(|m| m.ends_with(&format!("#{} t1 Before enabled", before.get()))), "{messages:?}");
 }
 
-targets! { called rerouted elsewhere slotted spare_slot }
+targets! { called rerouted elsewhere slotted spare_slot tail_called }
+
+#[test]
+fn a_tail_jump_is_a_call_site() {
+    let hooks = &Hooks::HOST;
+    let callee = tail_called as *const () as usize;
+    let stub = hook::Trampoline::shared().alloc(callee, &[0xE9, 0, 0, 0, 0]).unwrap();
+    unsafe { hook::write_branch(stub, callee) }.unwrap();
+    let jumper = unsafe { core::mem::transmute::<usize, Fn2>(stub) };
+    assert_eq!(call(jumper, 1, 2), 3);
+    hooks.before(call_at(stub), Options::new("tail"), |args| args.0 += 10).unwrap();
+    hooks.after(call_at(stub), Options::new("tail"), |_, ret, _| assert_eq!(*ret, 13)).unwrap();
+    assert_eq!(call(jumper, 1, 2), 13, "the dispatcher returns to the jumper's caller with the callee's result");
+    let report = report_at(stub).unwrap();
+    assert_eq!(report.name, format!("jmp {stub:#x}/2"));
+    assert!(matches!(report.current, Validation::Managed { .. }), "{report}");
+    assert_eq!(unsafe { *(stub as *const u8) }, 0xE9, "still a jump");
+    assert_eq!(hooks.remove_owner("tail"), 2);
+    assert_eq!(callee_at(stub), callee, "the jump reaches the callee again");
+    assert_eq!(call(jumper, 1, 2), 3);
+}
 
 /// `code` in a code page near the test executable, its `E8` at `call` pointed at `callee`; the code's address.
 fn stub_calling(callee: usize, code: &[u8], call: usize) -> usize {

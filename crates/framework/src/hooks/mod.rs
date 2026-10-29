@@ -18,7 +18,7 @@
 //! `PLUGINS_LOADED_2` and `DATA_LOADED` messages, names the module behind each unmanaged patch, and
 //! marks an installed site whose detour another module overwrote as broken.
 //!
-//! Besides function entries, a site can be one `call rel32` inside a function ([`ops::Call`]) or
+//! Besides function entries, a site can be one `call rel32` or tail `jmp rel32` inside a function ([`ops::Call`]) or
 //! one vtable slot ([`ops::Vtable`]): the call or the pointer is pointed at the dispatcher and the
 //! callee it reached is the original; both are restored when their last subscriber goes. Their
 //! shape is raw (integer-class arguments) or one of the typed shapes [`ops::SHAPES`] lists, which

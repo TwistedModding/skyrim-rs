@@ -116,7 +116,9 @@ impl<F: RawShape> Hookable for Raw<F> {
 /// One `call rel32` (`E8`) inside a function, of a callee with the shape `F`: the call is
 /// pointed at the dispatcher and the callee it reached is the original, so only this caller is
 /// affected. A function-entry subscription on the callee runs as well, inside the original.
-/// Restored once its last subscriber goes.
+/// Restored once its last subscriber goes. A tail `jmp rel32` (`E9`) to a function is taken the
+/// same way (the dispatcher returns to the caller's caller, as the callee did); its site is named
+/// `jmp <location>/<shape>`.
 pub struct Call<F: RawShape>(Location, PhantomData<F>);
 
 impl<F: RawShape> Call<F> {

@@ -7,7 +7,7 @@ use std::sync::{Arc, Mutex, MutexGuard, PoisonError};
 
 use super::ops::{self, OpVisitor, RAW_SLOTS, SHAPES};
 use super::site::{self, Callback, Chain, Entry, Kind, Meta, Op, Ranks, Signature, Site, SiteMeta, Stats, Timing};
-use super::validate::{Validation, hex, read_bytes, validate};
+use super::validate::{Validation, branch_kind, hex, read_bytes, validate};
 use super::{Compat, EntryReport, Error, Location, PatchId, PatchReport, PatchRequest, PatchState, Phase, Request, SiteReport, SubscriptionId, Target};
 
 /// A managed byte patch.
@@ -216,8 +216,8 @@ pub(crate) fn subscribe(req: Request) -> Result<SubscriptionId, Error> {
         }
         Target::Raw { address, shape } => Ok((Kind::Entry, address, Some(shape), format!("raw {address:#x}/{}", label(shape)))),
         Target::Call { at, shape } => {
-            let name = format!("call {at}/{}", label(shape));
-            at.resolve().map(|address| (Kind::Call, address, Some(shape), name.clone())).map_err(|e| unresolved(name, e))
+            let name = |kind: &str| format!("{kind} {at}/{}", label(shape));
+            at.resolve().map(|address| (Kind::Call, address, Some(shape), name(branch_kind(address)))).map_err(|e| unresolved(name("call"), e))
         }
         Target::Vtable { table, slot, shape } => {
             let name = format!("vtable {table}[{slot}]/{}", label(shape));
@@ -371,7 +371,7 @@ fn restore(meta: &SiteMeta) -> String {
         return format!("{} at {:#x}: no subscriber left, left as it is: {now}", meta.name, meta.address);
     }
     let written = match meta.kind {
-        Kind::Call => unsafe { hook::write_call(meta.address, meta.original) }.map(drop),
+        Kind::Call => unsafe { hook::retarget(meta.address, meta.original) }.map(drop),
         Kind::Slot => unsafe { hook::write_pointer(meta.address, meta.original) }.map(drop),
         Kind::Entry => Ok(()),
     };

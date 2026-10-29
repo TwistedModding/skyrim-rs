@@ -214,7 +214,20 @@ pub unsafe fn write_branch(site: usize, target: usize) -> Result<usize, Error> {
     unsafe { write_rel32(site, JMP, target) }
 }
 
-/// A redirected `call rel32`. `F` is the `extern "C" fn` type shared by the callee and the detour.
+/// [`write_call`] or [`write_branch`], whichever instruction `site` holds.
+///
+/// # Safety
+/// Same as [`write_call`].
+pub unsafe fn retarget(site: usize, target: usize) -> Result<usize, Error> {
+    match unsafe { *(site as *const u8) } {
+        op @ (CALL | JMP) => unsafe { write_rel32(site, op, target) },
+        _ => Err(Error::NotRel32(site)),
+    }
+}
+
+/// A redirected `call rel32`, or a tail `jmp rel32` to a function, which reaches the detour with
+/// the caller's arguments and return address as a call reaches its callee. `F` is the
+/// `extern "C" fn` type shared by the callee and the detour.
 pub struct CallSite<F: Copy> {
     site: usize,
     detour: usize,
@@ -239,7 +252,7 @@ impl<F: Copy> CallSite<F> {
     /// `F` must be a function pointer type matching the callee.
     pub unsafe fn create(site: usize, detour: F) -> Result<Self, Error> {
         const { assert!(size_of::<F>() == size_of::<usize>(), "F must be a function pointer type") };
-        if unsafe { *(site as *const u8) } != CALL {
+        if !matches!(unsafe { *(site as *const u8) }, CALL | JMP) {
             return Err(Error::NotRel32(site));
         }
         let previous = Trampoline::shared().resolve(rel32_target(site));
@@ -251,7 +264,7 @@ impl<F: Copy> CallSite<F> {
     /// # Safety
     /// Same as [`write_call`].
     pub unsafe fn enable(&self) -> Result<(), Error> {
-        unsafe { write_call(self.site, self.detour) }.map(drop)
+        unsafe { retarget(self.site, self.detour) }.map(drop)
     }
 
     /// The callee the site reached before, callable from the detour.
@@ -270,7 +283,7 @@ impl<F: Copy> CallSite<F> {
     /// Same as [`write_call`].
     pub unsafe fn remove(self) -> Result<(), Error> {
         let original: usize = unsafe { core::mem::transmute_copy(&self.original) };
-        unsafe { write_call(self.site, original) }.map(drop)
+        unsafe { retarget(self.site, original) }.map(drop)
     }
 }
 
@@ -357,5 +370,26 @@ mod tests {
         assert_eq!(unsafe { write_branch(site, two_addr) }.unwrap(), one_addr);
         assert_eq!(func(site)(), 2);
         assert!(matches!(unsafe { write_call(site, one_addr) }, Err(Error::NotRel32(s)) if s == site));
+    }
+
+    static TAIL: std::sync::OnceLock<CallSite<Fn0>> = std::sync::OnceLock::new();
+
+    extern "C" fn tail_detour() -> u32 {
+        TAIL.get().unwrap().original()() + 10
+    }
+
+    #[test]
+    fn tail_jump_site_round_trips() {
+        let one_addr = one as Fn0 as usize;
+        let site = Trampoline::shared().alloc(one_addr, &[JMP, 0, 0, 0, 0]).unwrap();
+        unsafe { write_branch(site, one_addr) }.unwrap();
+        let hook = unsafe { CallSite::install(site, tail_detour as Fn0) }.unwrap();
+        assert!(TAIL.set(hook).is_ok());
+        assert_eq!(func(site)(), 11, "the jump reaches the detour, which returns to the jump's caller");
+        assert_eq!(unsafe { *(site as *const u8) }, JMP, "the opcode is kept");
+        assert_eq!(unsafe { retarget(site, one_addr) }.unwrap(), tail_detour as Fn0 as usize);
+        assert_eq!(func(site)(), 1);
+        let nops = Trampoline::shared().alloc(one_addr, &[0x90; 5]).unwrap();
+        assert!(matches!(unsafe { retarget(nops, one_addr) }, Err(Error::NotRel32(s)) if s == nops));
     }
 }

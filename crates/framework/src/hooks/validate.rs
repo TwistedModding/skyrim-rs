@@ -83,15 +83,15 @@ pub fn validate(address: usize, detour: Option<usize>) -> Validation {
     }
 }
 
-/// Classifies the `call rel32` at `address`; `ours` is the dispatcher's detour once it is installed
-/// there, so that any other callee then counts as another module's patch.
+/// Classifies the `call rel32` or tail `jmp rel32` at `address`; `ours` is the dispatcher's detour
+/// once it is installed there, so that any other callee then counts as another module's patch.
 #[must_use]
 pub fn validate_call(address: usize, ours: Option<usize>) -> Validation {
     let Some(found) = read::<LEN>(address) else {
         return Validation::Unmanaged { found: [0; LEN], expected: None, target: None };
     };
     let expected = file_bytes(address);
-    if found[0] != 0xE8 {
+    if !matches!(found[0], 0xE8 | 0xE9) {
         return Validation::Unmanaged { found, expected, target: None };
     }
     let callee = through_relay(rel32(address + 5, [found[1], found[2], found[3], found[4]]));
@@ -124,6 +124,11 @@ fn classify(found: Bytes, expected: Option<Bytes>, same: Option<bool>, target: u
 
 pub(crate) fn hex(bytes: &[u8]) -> String {
     bytes.iter().map(|x| format!("{x:02x}")).collect::<Vec<_>>().join(" ")
+}
+
+/// "jmp" for a `jmp rel32` at `address`, else "call", as a call site's name shows it.
+pub(crate) fn branch_kind(address: usize) -> &'static str {
+    if read::<1>(address) == Some([0xE9]) { "jmp" } else { "call" }
 }
 
 /// `len` bytes at `address`, when they are all readable.
