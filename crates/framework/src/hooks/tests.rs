@@ -370,6 +370,49 @@ fn a_call_site_another_writer_changed_is_left_as_it_is() {
     assert!(matches!(hooks.before(not_a_call, Options::new("rw"), |_| {}), Err(Error::Site { .. })));
 }
 
+#[inline(never)]
+unsafe extern "C" fn first_object(this: usize, _: usize) -> usize {
+    black_box(this) + 1
+}
+
+#[inline(never)]
+unsafe extern "C" fn second_object(this: usize, _: usize) -> usize {
+    black_box(this) + 2
+}
+
+/// An object whose vtable's slot 1 is `slot`.
+fn object(slot: Fn2) -> usize {
+    let table: &'static [usize; 2] = Box::leak(Box::new([0, slot as usize]));
+    core::ptr::from_ref::<usize>(Box::leak(Box::new(table.as_ptr() as usize))) as usize
+}
+
+#[test]
+fn a_virtual_call_site_hands_on_the_callers_register() {
+    let hooks = &Hooks::HOST;
+    // push rbx; sub rsp, 0x20; mov rbx, rdx; mov rax, [rcx]; call [rax+8]; add rsp, 0x20; pop rbx; ret
+    let code = [0x53, 0x48, 0x83, 0xEC, 0x20, 0x48, 0x89, 0xD3, 0x48, 0x8B, 0x01, 0xFF, 0x90, 8, 0, 0, 0, 0x48, 0x83, 0xC4, 0x20, 0x5B, 0xC3];
+    let stub = hook::Trampoline::shared().alloc(called as *const () as usize, &code).unwrap();
+    let site = stub + 11;
+    let caller = unsafe { core::mem::transmute::<usize, Fn2>(stub) };
+    let (a, b) = (object(first_object), object(second_object));
+    assert_eq!(call(caller, a, 7), a + 1);
+    let at = || ops::Call::<Fn2>::at(Location::Address(site)).passing(Register::Rbx);
+    hooks.around(at(), Options::new("vc"), |args, next| unsafe { next.call(args) } + args.1 * 10).unwrap();
+    assert_eq!((call(caller, a, 7), call(caller, b, 3)), (a + 1 + 70, b + 2 + 30), "each object reaches its own slot, the caller's rbx comes second");
+    let report = report_at(site).unwrap();
+    assert_eq!(report.name, format!("call {site:#x}/2 +rbx"));
+    assert_eq!(report.validation, Validation::Plausible);
+    assert!(matches!(report.current, Validation::Managed { .. }), "{report}");
+    let plain = hooks.before(ops::Call::<Fn2>::at(Location::Address(site)), Options::new("vc"), |_| {}).unwrap_err();
+    assert!(matches!(&plain, Error::Raw { detail, .. } if detail == "already hooked as 2 +rbx"), "{plain}");
+    let wide = ops::Call::<unsafe extern "C" fn(usize, usize, usize, usize, usize) -> usize>::at(Location::Address(stub)).passing(Register::Rsi);
+    assert!(matches!(hooks.before(wide, Options::new("vc"), |_| {}), Err(Error::Raw { .. })), "the register must land in an argument register");
+    assert!(matches!(unsafe { hooks.patch("vc", Location::Address(site + 5), &[0x90], &[0x90]) }, Err(Error::Overlap { .. })), "the site holds all 6 bytes");
+    assert_eq!(hooks.remove_owner("vc"), 1);
+    assert_eq!(unsafe { core::slice::from_raw_parts(site as *const u8, 6) }, [0xFF, 0x90, 8, 0, 0, 0], "the virtual call is back");
+    assert_eq!(call(caller, b, 3), b + 2);
+}
+
 static TABLE: [Fn2; 2] = [slotted, spare_slot];
 
 #[test]

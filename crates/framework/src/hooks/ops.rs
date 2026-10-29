@@ -10,7 +10,7 @@ use core::marker::PhantomData;
 use sre::raw::fns;
 
 use super::site::{Op, Signature, Site};
-use super::{Hookable, Location, Target};
+use super::{Hookable, Location, Register, Target};
 
 /// Visits the `Op` type behind an index or a raw slot.
 pub(crate) trait OpVisitor<R> {
@@ -118,13 +118,25 @@ impl<F: RawShape> Hookable for Raw<F> {
 /// affected. A function-entry subscription on the callee runs as well, inside the original.
 /// Restored once its last subscriber goes. A tail `jmp rel32` (`E9`) to a function is taken the
 /// same way (the dispatcher returns to the caller's caller, as the callee did); its site is named
-/// `jmp <location>/<shape>`.
-pub struct Call<F: RawShape>(Location, PhantomData<F>);
+/// `jmp <location>/<shape>`. A virtual call `call [rax+disp32]` (`FF 90`) whose rax is the first
+/// argument's vtable (`mov rax, [rcx]` before it, or `mov rax, [r]; mov rcx, r`) is taken too: the
+/// original calls the same slot of the first argument's vtable, so each object reaches its own
+/// function.
+pub struct Call<F: RawShape>(Location, Option<Register>, PhantomData<F>);
 
 impl<F: RawShape> Call<F> {
     #[must_use]
     pub const fn at(instruction: Location) -> Self {
-        Self(instruction, PhantomData)
+        Self(instruction, None, PhantomData)
+    }
+
+    /// Hands the subscribers the caller's `register` as the last argument of `F`, which is a raw
+    /// shape of 1 to 4 arguments: the callee's own, then the register (the original receives it
+    /// too, in an argument register the callee does not read). The site is named
+    /// `call <location>/<shape> +<register>`.
+    #[must_use]
+    pub const fn passing(self, register: Register) -> Self {
+        Self(self.0, Some(register), PhantomData)
     }
 }
 
@@ -132,7 +144,7 @@ impl<F: RawShape> Hookable for Call<F> {
     type Fn = F;
 
     fn target(self) -> Target {
-        Target::Call { at: self.0, shape: F::SHAPE }
+        Target::Call { at: self.0, shape: F::SHAPE, register: self.1 }
     }
 }
 

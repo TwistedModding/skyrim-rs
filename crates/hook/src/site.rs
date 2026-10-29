@@ -1,4 +1,4 @@
-//! Code pages within rel32 reach of the game module and `call`/`jmp rel32` patching.
+//! Code pages within rel32 reach of the game module, and `call`/`jmp rel32` and virtual call patching.
 
 use core::ffi::c_void;
 use std::io;
@@ -18,6 +18,11 @@ const GRANULARITY: usize = 0x10000;
 const REACH: usize = i32::MAX as usize - 2 * PAGE;
 const CALL: u8 = 0xE8;
 const JMP: u8 = 0xE9;
+const NOP: u8 = 0x90;
+/// `call [rax+disp32]`, a virtual call through the vtable in rax.
+const VCALL: [u8; 2] = [0xFF, 0x90];
+/// `mov rax, [rcx]; jmp [rax+disp32]`: a virtual call's original, the slot of the first argument's vtable.
+const VCALL_ORIGINAL: [u8; 5] = [0x48, 0x8B, 0x01, 0xFF, 0xA0];
 /// `jmp [rip+0]`; the 8-byte target follows the instruction.
 const ABS_JMP: [u8; 6] = [0xFF, 0x25, 0, 0, 0, 0];
 
@@ -109,14 +114,34 @@ impl Trampoline {
         Ok(slot)
     }
 
+    fn holds(&self, addr: usize) -> bool {
+        self.pages.iter().any(|p| (p.base..p.base + p.used).contains(&addr))
+    }
+
     /// Sees through an absolute jump this allocator emitted; any other address is returned as is.
     fn resolve(&self, addr: usize) -> usize {
-        let ours = self.pages.iter().any(|p| (p.base..p.base + p.used).contains(&addr));
-        if ours && unsafe { core::slice::from_raw_parts(addr as *const u8, ABS_JMP.len()) } == ABS_JMP {
+        if self.holds(addr) && unsafe { core::slice::from_raw_parts(addr as *const u8, ABS_JMP.len()) } == ABS_JMP {
             unsafe { ((addr + ABS_JMP.len()) as *const usize).read_unaligned() }
         } else {
             addr
         }
+    }
+
+    /// The displacement of the virtual call whose original this allocator emitted at `addr`.
+    fn virtual_slot(&self, addr: usize) -> Option<[u8; 4]> {
+        let code = self.holds(addr).then(|| unsafe { (addr as *const [u8; 9]).read_unaligned() })?;
+        (code[..5] == VCALL_ORIGINAL).then(|| [code[5], code[6], code[7], code[8]])
+    }
+
+    /// `target`, or an absolute jump to it within rel32 reach of `site`.
+    fn reachable(&mut self, site: usize, target: usize) -> Result<usize, Error> {
+        if rel32(site + 5, target).is_some() {
+            return Ok(target);
+        }
+        let mut thunk = [0u8; 14];
+        thunk[..6].copy_from_slice(&ABS_JMP);
+        thunk[6..].copy_from_slice(&target.to_le_bytes());
+        self.alloc(site, &thunk)
     }
 }
 
@@ -151,18 +176,52 @@ unsafe fn write_rel32(site: usize, opcode: u8, target: usize) -> Result<usize, E
     }
     let mut tramp = Trampoline::shared();
     let previous = tramp.resolve(rel32_target(site));
-    let next = site + 5;
-    let reachable = if rel32(next, target).is_some() {
-        target
-    } else {
-        let mut thunk = [0u8; 14];
-        thunk[..6].copy_from_slice(&ABS_JMP);
-        thunk[6..].copy_from_slice(&target.to_le_bytes());
-        tramp.alloc(site, &thunk)?
-    };
-    let rel = rel32(next, reachable).ok_or_else(|| io::Error::other("trampoline page out of rel32 reach"))?;
+    let rel = rel32_to(site, tramp.reachable(site, target)?)?;
     unsafe { writable(site + 1, 4, || ((site + 1) as *mut i32).write_unaligned(rel)) }?;
     Ok(previous)
+}
+
+fn rel32_to(site: usize, reachable: usize) -> Result<i32, Error> {
+    rel32(site + 5, reachable).ok_or_else(|| io::Error::other("trampoline page out of rel32 reach").into())
+}
+
+/// Writes the first 6 of the 8 bytes at `site` in one store.
+unsafe fn write_six(site: usize, six: [u8; 6]) -> Result<(), Error> {
+    let mut bytes = unsafe { (site as *const [u8; 8]).read_unaligned() };
+    bytes[..6].copy_from_slice(&six);
+    unsafe { writable(site, 8, || (site as *mut u64).write_unaligned(u64::from_le_bytes(bytes))) }
+}
+
+/// The length of the instruction at `site` a [`CallSite`] takes: 5 for a `call rel32` or
+/// `jmp rel32`, 6 for a virtual call `call [rax+disp32]`.
+#[must_use]
+pub fn call_length(site: usize) -> Option<usize> {
+    match unsafe { (site as *const [u8; 2]).read_unaligned() } {
+        [CALL | JMP, _] => Some(5),
+        VCALL => Some(6),
+        _ => None,
+    }
+}
+
+/// Whether the code before the virtual call at `site` loads rax from the first argument's object:
+/// `mov rax, [rcx]`, or `mov rax, [r]; mov rcx, r` for a legacy register r.
+fn calls_first_argument(site: usize) -> bool {
+    let before = unsafe { ((site - 6) as *const [u8; 6]).read_unaligned() };
+    let r = before[2];
+    before[3..] == [0x48, 0x8B, 0x01] || (before[..2] == [0x48, 0x8B] && r < 8 && r != 4 && r != 5 && before[3..] == [0x48, 0x8B, 0xC8 | r])
+}
+
+/// Points the call or jump at `site` back at `original`; for a virtual call's original from
+/// [`CallSite::create`], writes the virtual call back.
+///
+/// # Safety
+/// Same as [`write_call`].
+pub unsafe fn restore_call(site: usize, original: usize) -> Result<(), Error> {
+    let slot = Trampoline::shared().virtual_slot(original);
+    match slot {
+        Some(d) => unsafe { write_six(site, [VCALL[0], VCALL[1], d[0], d[1], d[2], d[3]]) },
+        None => unsafe { retarget(site, original) }.map(drop),
+    }
 }
 
 /// Runs `write` with `len` bytes at `address` writable, then restores the protection and flushes the instruction cache.
@@ -228,9 +287,15 @@ pub unsafe fn retarget(site: usize, target: usize) -> Result<usize, Error> {
 /// A redirected `call rel32`, or a tail `jmp rel32` to a function, which reaches the detour with
 /// the caller's arguments and return address as a call reaches its callee. `F` is the
 /// `extern "C" fn` type shared by the callee and the detour.
+///
+/// A virtual call `call [rax+disp32]` (`FF 90`) whose rax holds the vtable of the first argument
+/// (`mov rax, [rcx]` before it, or `mov rax, [r]; mov rcx, r`) is taken too: its 6 bytes become a
+/// `call rel32` and a `nop`, and the original reads the slot from the first argument's vtable
+/// again, so every object still reaches its own function.
 pub struct CallSite<F: Copy> {
     site: usize,
-    detour: usize,
+    /// What the call reaches: the detour, or a stub that hands it a register first.
+    entry: usize,
     original: F,
 }
 
@@ -252,11 +317,31 @@ impl<F: Copy> CallSite<F> {
     /// `F` must be a function pointer type matching the callee.
     pub unsafe fn create(site: usize, detour: F) -> Result<Self, Error> {
         const { assert!(size_of::<F>() == size_of::<usize>(), "F must be a function pointer type") };
-        if !matches!(unsafe { *(site as *const u8) }, CALL | JMP) {
-            return Err(Error::NotRel32(site));
-        }
-        let previous = Trampoline::shared().resolve(rel32_target(site));
-        Ok(Self { site, detour: unsafe { core::mem::transmute_copy(&detour) }, original: unsafe { core::mem::transmute_copy(&previous) } })
+        let previous = match call_length(site) {
+            Some(5) => Trampoline::shared().resolve(rel32_target(site)),
+            Some(_) if calls_first_argument(site) => {
+                let mut code = [0u8; 9];
+                code[..5].copy_from_slice(&VCALL_ORIGINAL);
+                code[5..].copy_from_slice(&unsafe { ((site + 2) as *const [u8; 4]).read_unaligned() });
+                Trampoline::shared().alloc(site, &code)?
+            }
+            _ => return Err(Error::NotRel32(site)),
+        };
+        Ok(Self { site, entry: unsafe { core::mem::transmute_copy(&detour) }, original: unsafe { core::mem::transmute_copy(&previous) } })
+    }
+
+    /// Hands the caller's register `from` to the detour in the argument register `to` (x86
+    /// register numbers: rcx 1, rdx 2, rbx 3, rsi 6, r8 8), through a stub near the site that the
+    /// call reaches first. The callee must take no argument in `to`.
+    ///
+    /// # Safety
+    /// The detour must be of `F` with that argument added; `from` and `to` must be below 16.
+    pub unsafe fn passing(self, from: u8, to: u8) -> Result<Self, Error> {
+        let mut code = vec![0x48 | ((from >> 3) << 2) | (to >> 3), 0x89, 0xC0 | ((from & 7) << 3) | (to & 7)];
+        code.extend(ABS_JMP);
+        code.extend(self.entry.to_le_bytes());
+        let entry = Trampoline::shared().alloc(self.site, &code)?;
+        Ok(Self { entry, ..self })
     }
 
     /// Points the site at the detour.
@@ -264,7 +349,17 @@ impl<F: Copy> CallSite<F> {
     /// # Safety
     /// Same as [`write_call`].
     pub unsafe fn enable(&self) -> Result<(), Error> {
-        unsafe { retarget(self.site, self.detour) }.map(drop)
+        if call_length(self.site) != Some(6) {
+            return unsafe { retarget(self.site, self.entry) }.map(drop);
+        }
+        let rel = rel32_to(self.site, Trampoline::shared().reachable(self.site, self.entry)?)?.to_le_bytes();
+        unsafe { write_six(self.site, [CALL, rel[0], rel[1], rel[2], rel[3], NOP]) }
+    }
+
+    /// What the call reaches once enabled: the detour, or the stub of [`passing`](Self::passing).
+    #[must_use]
+    pub fn entry(&self) -> usize {
+        self.entry
     }
 
     /// The callee the site reached before, callable from the detour.
@@ -283,7 +378,7 @@ impl<F: Copy> CallSite<F> {
     /// Same as [`write_call`].
     pub unsafe fn remove(self) -> Result<(), Error> {
         let original: usize = unsafe { core::mem::transmute_copy(&self.original) };
-        unsafe { retarget(self.site, original) }.map(drop)
+        unsafe { restore_call(self.site, original) }
     }
 }
 
@@ -391,5 +486,85 @@ mod tests {
         assert_eq!(func(site)(), 1);
         let nops = Trampoline::shared().alloc(one_addr, &[0x90; 5]).unwrap();
         assert!(matches!(unsafe { retarget(nops, one_addr) }, Err(Error::NotRel32(s)) if s == nops));
+    }
+
+    type Fn1 = extern "C" fn(usize) -> usize;
+    type Fn2 = extern "C" fn(usize, usize) -> usize;
+
+    extern "C" fn first_slot(_: usize) -> usize {
+        1
+    }
+
+    extern "C" fn second_slot(_: usize) -> usize {
+        2
+    }
+
+    /// An object of a vtable whose slot 1 is `slot`.
+    fn object(slot: Fn1) -> usize {
+        let table: &'static [usize; 2] = Box::leak(Box::new([0, slot as usize]));
+        core::ptr::from_ref::<usize>(Box::leak(Box::new(table.as_ptr() as usize))) as usize
+    }
+
+    static VIRTUAL: std::sync::OnceLock<CallSite<Fn1>> = std::sync::OnceLock::new();
+
+    extern "C" fn virtual_detour(this: usize) -> usize {
+        VIRTUAL.get().unwrap().original()(this) + 100
+    }
+
+    #[test]
+    fn virtual_call_site_round_trips() {
+        let near = one as Fn0 as usize;
+        // sub rsp, 0x28; mov rax, [rcx]; call [rax+8]; add rsp, 0x28; ret
+        let code = [0x48, 0x83, 0xEC, 0x28, 0x48, 0x8B, 0x01, 0xFF, 0x90, 8, 0, 0, 0, 0x48, 0x83, 0xC4, 0x28, 0xC3];
+        let caller = Trampoline::shared().alloc(near, &code).unwrap();
+        let site = caller + 7;
+        let call = |this| unsafe { core::mem::transmute::<usize, Fn1>(caller) }(this);
+        let (a, b) = (object(first_slot), object(second_slot));
+        assert_eq!((call(a), call(b), call_length(site)), (1, 2, Some(6)));
+        let hook = unsafe { CallSite::create(site, virtual_detour as Fn1) }.unwrap();
+        assert!(VIRTUAL.set(hook).is_ok());
+        unsafe { VIRTUAL.get().unwrap().enable() }.unwrap();
+        assert_eq!(unsafe { core::slice::from_raw_parts(site as *const u8, 6) }[5], NOP);
+        assert_eq!((call(a), call(b)), (101, 102), "each object reaches its own slot through the original");
+        assert_eq!(rel32_target(site), virtual_detour as Fn1 as usize);
+        unsafe { restore_call(site, VIRTUAL.get().unwrap().original() as usize) }.unwrap();
+        assert_eq!(unsafe { core::slice::from_raw_parts(site as *const u8, 6) }, [0xFF, 0x90, 8, 0, 0, 0]);
+        assert_eq!((call(a), call(b)), (1, 2));
+
+        // push rsi; sub rsp, 0x20; mov rsi, rcx; mov rax, [rsi]; mov rcx, rsi; call [rax+8]; add rsp, 0x20; pop rsi; ret
+        let through_rsi = [0x56, 0x48, 0x83, 0xEC, 0x20, 0x48, 0x89, 0xCE, 0x48, 0x8B, 0x06, 0x48, 0x8B, 0xCE, 0xFF, 0x90, 8, 0, 0, 0, 0x48, 0x83, 0xC4, 0x20, 0x5E, 0xC3];
+        let caller = Trampoline::shared().alloc(near, &through_rsi).unwrap();
+        assert!(unsafe { CallSite::create(caller + 14, virtual_detour as Fn1) }.is_ok());
+        // mov rax, [rdx]; call [rax+8]: rax is not the first argument's vtable
+        let other = Trampoline::shared().alloc(near, &[0x90, 0x90, 0x90, 0x48, 0x8B, 0x02, 0xFF, 0x90, 8, 0, 0, 0]).unwrap();
+        assert!(matches!(unsafe { CallSite::create(other + 6, virtual_detour as Fn1) }, Err(Error::NotRel32(_))));
+    }
+
+    extern "C" fn plus_one(x: usize) -> usize {
+        x + 1
+    }
+
+    static PASSING: std::sync::OnceLock<CallSite<Fn2>> = std::sync::OnceLock::new();
+
+    extern "C" fn passing_detour(x: usize, rbx: usize) -> usize {
+        PASSING.get().unwrap().original()(x, rbx) + rbx * 10
+    }
+
+    #[test]
+    fn a_call_site_hands_the_detour_a_register() {
+        // push rbx; sub rsp, 0x20; mov rbx, rdx; call plus_one; add rsp, 0x20; pop rbx; ret
+        let code = [0x53, 0x48, 0x83, 0xEC, 0x20, 0x48, 0x89, 0xD3, CALL, 0, 0, 0, 0, 0x48, 0x83, 0xC4, 0x20, 0x5B, 0xC3];
+        let caller = Trampoline::shared().alloc(plus_one as Fn1 as usize, &code).unwrap();
+        let site = caller + 8;
+        unsafe { write_call(site, plus_one as Fn1 as usize) }.unwrap();
+        let call = |x, y| unsafe { core::mem::transmute::<usize, Fn2>(caller) }(x, y);
+        assert_eq!(call(5, 7), 6);
+        let hook = unsafe { CallSite::create(site, passing_detour as Fn2).and_then(|h| h.passing(3, 2)) }.unwrap();
+        assert_ne!(hook.entry(), passing_detour as Fn2 as usize, "the call reaches the stub");
+        assert!(PASSING.set(hook).is_ok());
+        unsafe { PASSING.get().unwrap().enable() }.unwrap();
+        assert_eq!(call(5, 7), 76, "the caller's rbx arrives as the second argument");
+        unsafe { restore_call(site, plus_one as Fn1 as usize) }.unwrap();
+        assert_eq!(call(5, 7), 6);
     }
 }

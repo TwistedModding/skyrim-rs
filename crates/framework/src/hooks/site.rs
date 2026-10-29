@@ -376,12 +376,12 @@ impl Kind {
         }
     }
 
-    /// The bytes an installed site of this kind holds: an entry's first 16, which `MinHook` may
-    /// relocate into its trampoline, the call instruction, or the pointer.
-    pub(crate) fn span(self) -> usize {
+    /// The bytes a site of this kind at `address` holds once installed: an entry's first 16, which
+    /// `MinHook` may relocate into its trampoline, the call instruction, or the pointer.
+    pub(crate) fn span(self, address: usize) -> usize {
         match self {
             Self::Entry => 16,
-            Self::Call => 5,
+            Self::Call => hook::call_length(address).unwrap_or(5),
             Self::Slot => size_of::<usize>(),
         }
     }
@@ -392,6 +392,9 @@ pub(crate) struct SiteMeta {
     pub name: String,
     pub kind: Kind,
     pub address: usize,
+    /// The bytes the site holds, as [`Kind::span`] measured them at install.
+    pub span: usize,
+    /// What the site leads to: the detour, or the stub that hands a call's subscribers a register.
     pub detour: usize,
     /// The callee or the slot's pointer before the detour, restored when the last subscriber of a call or slot site goes.
     pub original: usize,

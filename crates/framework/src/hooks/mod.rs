@@ -18,9 +18,11 @@
 //! `PLUGINS_LOADED_2` and `DATA_LOADED` messages, names the module behind each unmanaged patch, and
 //! marks an installed site whose detour another module overwrote as broken.
 //!
-//! Besides function entries, a site can be one `call rel32` or tail `jmp rel32` inside a function ([`ops::Call`]) or
-//! one vtable slot ([`ops::Vtable`]): the call or the pointer is pointed at the dispatcher and the
-//! callee it reached is the original; both are restored when their last subscriber goes. Their
+//! Besides function entries, a site can be one `call rel32`, tail `jmp rel32` or virtual call on
+//! the first argument inside a function ([`ops::Call`]) or one vtable slot ([`ops::Vtable`]): the
+//! call or the pointer is pointed at the dispatcher and the callee it reached is the original;
+//! both are restored when their last subscriber goes. A call site can hand its subscribers a
+//! register of the caller as one more argument ([`ops::Call::passing`]). Their
 //! shape is raw (integer-class arguments) or one of the typed shapes [`ops::SHAPES`] lists, which
 //! carry float arguments and results. A
 //! plugin's byte patches ([`Hooks::patch`]) are kept in the same registry, which reserves their
@@ -214,14 +216,59 @@ impl fmt::Display for Location {
     }
 }
 
-/// Where a subscription goes: a typed operation of [`ops`], a raw function entry, a call site or
-/// a vtable slot; `shape` indexes [`ops::SHAPES`].
+/// Where a subscription goes: a typed operation of [`ops`], a raw function entry, a call site
+/// (with the caller's register it hands on, if any) or a vtable slot; `shape` indexes [`ops::SHAPES`].
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Target {
     Op(usize),
     Raw { address: usize, shape: usize },
-    Call { at: Location, shape: usize },
+    Call { at: Location, shape: usize, register: Option<Register> },
     Vtable { table: Location, slot: usize, shape: usize },
+}
+
+/// A callee-saved register of a call site's caller, which [`ops::Call::passing`] hands the
+/// subscribers as one more argument.
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Register {
+    Rbx,
+    Rbp,
+    Rsi,
+    Rdi,
+    R12,
+    R13,
+    R14,
+    R15,
+}
+
+impl Register {
+    /// The x86 register number.
+    pub(crate) const fn number(self) -> u8 {
+        match self {
+            Self::Rbx => 3,
+            Self::Rbp => 5,
+            Self::Rsi => 6,
+            Self::Rdi => 7,
+            Self::R12 => 12,
+            Self::R13 => 13,
+            Self::R14 => 14,
+            Self::R15 => 15,
+        }
+    }
+}
+
+impl fmt::Display for Register {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        f.write_str(match self {
+            Self::Rbx => "rbx",
+            Self::Rbp => "rbp",
+            Self::Rsi => "rsi",
+            Self::Rdi => "rdi",
+            Self::R12 => "r12",
+            Self::R13 => "r13",
+            Self::R14 => "r14",
+            Self::R15 => "r15",
+        })
+    }
 }
 
 #[derive(Clone, Copy, Debug, PartialEq, Eq, Hash)]

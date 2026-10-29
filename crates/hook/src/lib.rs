@@ -8,7 +8,7 @@ use minhook::{MH_STATUS, MinHook};
 
 mod site;
 
-pub use site::{CallSite, Trampoline, alloc_near, find_call, retarget, write_branch, write_call, write_code, write_pointer};
+pub use site::{CallSite, Trampoline, alloc_near, call_length, find_call, restore_call, retarget, write_branch, write_call, write_code, write_pointer};
 
 #[derive(Debug)]
 pub enum Error {
@@ -26,7 +26,7 @@ impl fmt::Display for Error {
             Self::VersionLib(e) => e.fmt(f),
             Self::Io(e) => write!(f, "hook: {e}"),
             Self::UnknownId(id) => write!(f, "address library has no id {id}"),
-            Self::NotRel32(site) => write!(f, "no call or jump rel32 at {site:#x}"),
+            Self::NotRel32(site) => write!(f, "no call rel32, jump rel32 or virtual call on the first argument at {site:#x}"),
         }
     }
 }

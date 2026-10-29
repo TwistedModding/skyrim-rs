@@ -8,7 +8,7 @@ use std::sync::{Arc, Mutex, MutexGuard, PoisonError};
 use super::ops::{self, OpVisitor, RAW_SLOTS, SHAPES};
 use super::site::{self, Callback, Chain, Entry, Kind, Meta, Op, Ranks, Signature, Site, SiteMeta, Stats, Timing};
 use super::validate::{Validation, branch_kind, hex, read_bytes, validate};
-use super::{Compat, EntryReport, Error, Location, PatchId, PatchReport, PatchRequest, PatchState, Phase, Request, SiteReport, SubscriptionId, Target};
+use super::{Compat, EntryReport, Error, Location, PatchId, PatchReport, PatchRequest, PatchState, Phase, Register, Request, SiteReport, SubscriptionId, Target};
 
 /// A managed byte patch.
 struct Patch {
@@ -28,8 +28,8 @@ struct Registry {
     ranks: Ranks,
     /// The next subscription or patch id; both share the sequence.
     next_id: u64,
-    /// Kind, address and shape per raw slot, in slot order.
-    raw: Vec<(Kind, usize, usize)>,
+    /// Kind, address, shape and the register a call site hands on, per raw slot, in slot order.
+    raw: Vec<(Kind, usize, usize, Option<Register>)>,
     patches: Vec<Patch>,
     sites: Vec<&'static Site>,
     log: Option<fn(&str)>,
@@ -70,19 +70,19 @@ impl Registry {
         self.messages.push_back(line.to_owned());
     }
 
-    fn raw_slot(&mut self, kind: Kind, address: usize, shape: usize) -> Result<usize, Error> {
+    fn raw_slot(&mut self, kind: Kind, address: usize, shape: usize, register: Option<Register>) -> Result<usize, Error> {
         let refuse = |detail: String| Error::Raw { address, detail };
         if shape >= SHAPES.len() {
             return Err(refuse(format!("no shape {shape}")));
         }
-        if let Some(slot) = self.raw.iter().position(|&(k, a, _)| (k, a) == (kind, address)) {
-            let taken = self.raw[slot].2;
-            return if taken == shape { Ok(slot) } else { Err(refuse(format!("already hooked as {}", label(taken)))) };
+        if let Some(slot) = self.raw.iter().position(|&(k, a, _, _)| (k, a) == (kind, address)) {
+            let (_, _, taken, held) = self.raw[slot];
+            return if (taken, held) == (shape, register) { Ok(slot) } else { Err(refuse(format!("already hooked as {}", label(taken, held)))) };
         }
         if self.raw.len() == RAW_SLOTS {
             return Err(refuse(format!("all {RAW_SLOTS} raw slots are taken")));
         }
-        self.raw.push((kind, address, shape));
+        self.raw.push((kind, address, shape, register));
         Ok(self.raw.len() - 1)
     }
 
@@ -95,7 +95,7 @@ impl Registry {
         }
         let site = self.sites.iter().find_map(|site| {
             let guard = site.meta.lock().unwrap_or_else(PoisonError::into_inner);
-            guard.as_ref().filter(|m| overlaps(m.address, m.kind.span())).map(|m| format!("the hook site {}", m.name))
+            guard.as_ref().filter(|m| overlaps(m.address, m.span)).map(|m| format!("the hook site {}", m.name))
         });
         site.or_else(|| self.seen.iter().find(|&(&a, _)| overlaps(a, 5)).map(|(_, (name, v))| format!("{name}, patched by {}", patcher(v))))
     }
@@ -199,8 +199,22 @@ pub(crate) fn revalidate(moment: &str, ops: &[(&str, usize)]) {
     reg.log(&line);
 }
 
-fn label(shape: usize) -> &'static str {
-    SHAPES.get(shape).copied().unwrap_or("?")
+/// The shape as site names show it, followed by the register a call site hands on.
+fn label(shape: usize, register: Option<Register>) -> String {
+    let shape = SHAPES.get(shape).copied().unwrap_or("?");
+    register.map_or_else(|| shape.to_owned(), |r| format!("{shape} +{r}"))
+}
+
+/// The argument registers by position: rcx, rdx, r8, r9.
+const ARGUMENT_REGISTERS: [u8; 4] = [1, 2, 8, 9];
+
+/// The caller's register and the argument register it is handed in: the last of a raw shape of 1 to 4.
+fn passing(address: usize, shape: usize, register: Option<Register>) -> Result<Option<(u8, u8)>, Error> {
+    let Some(register) = register else { return Ok(None) };
+    match shape.checked_sub(1).and_then(|last| ARGUMENT_REGISTERS.get(last)) {
+        Some(&to) => Ok(Some((register.number(), to))),
+        None => Err(Error::Raw { address, detail: format!("{register} needs a raw shape of 1 to 4 arguments, not {}", label(shape, None)) }),
+    }
 }
 
 pub(crate) fn subscribe(req: Request) -> Result<SubscriptionId, Error> {
@@ -214,21 +228,26 @@ pub(crate) fn subscribe(req: Request) -> Result<SubscriptionId, Error> {
             let (name, id) = ops::OPS[index];
             skyrim::reloc().address(id).map(|address| (Kind::Entry, address, None, name.to_owned())).map_err(|e| unresolved(name.to_owned(), e.to_string()))
         }
-        Target::Raw { address, shape } => Ok((Kind::Entry, address, Some(shape), format!("raw {address:#x}/{}", label(shape)))),
-        Target::Call { at, shape } => {
-            let name = |kind: &str| format!("{kind} {at}/{}", label(shape));
+        Target::Raw { address, shape } => Ok((Kind::Entry, address, Some(shape), format!("raw {address:#x}/{}", label(shape, None)))),
+        Target::Call { at, shape, register } => {
+            let name = |kind: &str| format!("{kind} {at}/{}", label(shape, register));
             at.resolve().map(|address| (Kind::Call, address, Some(shape), name(branch_kind(address)))).map_err(|e| unresolved(name("call"), e))
         }
         Target::Vtable { table, slot, shape } => {
-            let name = format!("vtable {table}[{slot}]/{}", label(shape));
+            let name = format!("vtable {table}[{slot}]/{}", label(shape, None));
             table.resolve().map(|t| (Kind::Slot, t + slot * size_of::<usize>(), Some(shape), name.clone())).map_err(|e| unresolved(name, e))
         }
     };
+    let register = match req.target {
+        Target::Call { register, .. } => register,
+        _ => None,
+    };
     let result = place.and_then(|(kind, address, shape, name)| match (req.target, shape) {
-        (Target::Op(index), _) => ops::with_op(index, Subscriber { reg: &mut reg, req, name, kind, address }).expect("index from the op table"),
+        (Target::Op(index), _) => ops::with_op(index, Subscriber { reg: &mut reg, req, name, kind, address, pass: None }).expect("index from the op table"),
         (_, shape) => {
             let shape = shape.expect("every raw target has a shape");
-            reg.raw_slot(kind, address, shape).and_then(|slot| ops::with_raw(shape, slot, Subscriber { reg: &mut reg, req, name, kind, address }).expect("slot and shape checked"))
+            let pass = passing(address, shape, register)?;
+            reg.raw_slot(kind, address, shape, register).and_then(|slot| ops::with_raw(shape, slot, Subscriber { reg: &mut reg, req, name, kind, address, pass }).expect("slot and shape checked"))
         }
     });
     if let Err(e) = &result {
@@ -244,13 +263,15 @@ struct Subscriber<'a> {
     name: String,
     kind: Kind,
     address: usize,
+    /// The caller's register a call site hands on, and the argument register it lands in.
+    pass: Option<(u8, u8)>,
 }
 
 impl OpVisitor<Result<SubscriptionId, Error>> for Subscriber<'_> {
     fn visit<O: Op>(self) -> Result<SubscriptionId, Error> {
-        let Self { reg, req, name, kind, address } = self;
+        let Self { reg, req, name, kind, address, pass } = self;
         let site = O::site();
-        install::<O>(reg, site, &name, kind, address, &req.owner)?;
+        install::<O>(reg, site, &name, kind, address, pass, &req.owner)?;
         let callback = downcast::<O::Fn>(req.phase, req.signature, req.callback).ok_or_else(|| Error::Callback { site: name.clone(), owner: req.owner.clone() })?;
         let id = reg.next_id;
         reg.next_id += 1;
@@ -290,12 +311,13 @@ fn cast<T: Send + Sync + 'static>(signature: &str, callback: Box<dyn Any + Send 
 type Enable = Box<dyn FnOnce() -> Result<(), hook::Error>>;
 
 /// Validates the site and puts the one detour in, with an empty chain published first.
-fn install<O: Op>(reg: &mut Registry, site: &'static Site, name: &str, kind: Kind, address: usize, owner: &str) -> Result<(), Error> {
+fn install<O: Op>(reg: &mut Registry, site: &'static Site, name: &str, kind: Kind, address: usize, pass: Option<(u8, u8)>, owner: &str) -> Result<(), Error> {
     let mut guard = site.meta.lock().unwrap_or_else(PoisonError::into_inner);
     if guard.is_some() {
         return Ok(());
     }
-    if let Some(with) = reg.holder(address, kind.span()) {
+    let span = kind.span(address);
+    if let Some(with) = reg.holder(address, span) {
         return Err(Error::Overlap { site: name.to_owned(), owner: owner.to_owned(), with });
     }
     let detour = <O::Fn as Signature>::detour::<O>();
@@ -310,13 +332,18 @@ fn install<O: Op>(reg: &mut Registry, site: &'static Site, name: &str, kind: Kin
         reg.log(&format!("{name} at {address:#x}: stacking on the patch by {by}: {validation}"));
     }
     let failed = |e: hook::Error| Error::Install { site: name.to_owned(), owner: owner.to_owned(), detail: e.to_string() };
+    let mut entry = detour_address;
     let (original, enable): (O::Fn, Enable) = match kind {
         Kind::Entry => {
             let hook = unsafe { hook::Hook::create(address, detour) }.map_err(failed)?;
             (hook.original(), Box::new(move || hook.enable()))
         }
         Kind::Call => {
-            let call = unsafe { hook::CallSite::create(address, detour) }.map_err(failed)?;
+            let mut call = unsafe { hook::CallSite::create(address, detour) }.map_err(failed)?;
+            if let Some((from, to)) = pass {
+                call = unsafe { call.passing(from, to) }.map_err(failed)?;
+            }
+            entry = call.entry();
             (call.original(), Box::new(move || unsafe { call.enable() }))
         }
         Kind::Slot => {
@@ -332,7 +359,7 @@ fn install<O: Op>(reg: &mut Registry, site: &'static Site, name: &str, kind: Kin
     enable().map_err(failed)?;
     site.broken.store(false, Relaxed);
     let original = unsafe { core::mem::transmute_copy(&original) };
-    *guard = Some(SiteMeta { name: name.to_owned(), kind, address, detour: detour_address, original, validation, patched_by, order: Vec::new(), rebuild: site::rebuild::<O::Fn> });
+    *guard = Some(SiteMeta { name: name.to_owned(), kind, address, span, detour: entry, original, validation, patched_by, order: Vec::new(), rebuild: site::rebuild::<O::Fn> });
     reg.sites.push(site);
     reg.log(&format!("{name} at {address:#x}: detour installed, entry {validation}"));
     Ok(())
@@ -371,7 +398,7 @@ fn restore(meta: &SiteMeta) -> String {
         return format!("{} at {:#x}: no subscriber left, left as it is: {now}", meta.name, meta.address);
     }
     let written = match meta.kind {
-        Kind::Call => unsafe { hook::retarget(meta.address, meta.original) }.map(drop),
+        Kind::Call => unsafe { hook::restore_call(meta.address, meta.original) },
         Kind::Slot => unsafe { hook::write_pointer(meta.address, meta.original) }.map(drop),
         Kind::Entry => Ok(()),
     };

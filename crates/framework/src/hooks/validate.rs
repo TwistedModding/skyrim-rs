@@ -83,14 +83,22 @@ pub fn validate(address: usize, detour: Option<usize>) -> Validation {
     }
 }
 
-/// Classifies the `call rel32` or tail `jmp rel32` at `address`; `ours` is the dispatcher's detour
-/// once it is installed there, so that any other callee then counts as another module's patch.
+/// Classifies the `call rel32`, tail `jmp rel32` or virtual call `call [rax+disp32]` at `address`;
+/// `ours` is the dispatcher's detour once it is installed there, so that any other callee then
+/// counts as another module's patch. A virtual call has no callee to report.
 #[must_use]
 pub fn validate_call(address: usize, ours: Option<usize>) -> Validation {
     let Some(found) = read::<LEN>(address) else {
         return Validation::Unmanaged { found: [0; LEN], expected: None, target: None };
     };
     let expected = file_bytes(address);
+    if found[..2] == [0xFF, 0x90] {
+        return match expected {
+            Some(e) if e[..6] == found[..6] => Validation::Pristine,
+            Some(e) => Validation::Unmanaged { found, expected: Some(e), target: None },
+            None => Validation::Plausible,
+        };
+    }
     if !matches!(found[0], 0xE8 | 0xE9) {
         return Validation::Unmanaged { found, expected, target: None };
     }
