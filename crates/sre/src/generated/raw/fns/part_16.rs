@@ -3,6 +3,146 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `Papyrus::Game::ShowFirstPersonGeometry` at 0xa24940 (papyrus_native, high); signature (medium): `void ShowFirstPersonGeometry(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, bool a0)`; semantic: PlayerCharacter viewFlags bit 1 = !show (high); signature `void (IVirtualMachine* vm, u32 stackId, void* unused, bool show)`
+pub const Papyrus__Game__ShowFirstPersonGeometry: u64 = 55464;
+/// `Papyrus::Game::ShowFirstPersonGeometry` as a function pointer type (high).
+pub type Papyrus__Game__ShowFirstPersonGeometry_fn = unsafe extern "C" fn(vm: *mut c_void, stackId: u32, unused: *mut c_void, show: bool);
+/// `Papyrus::Game::ShowLimitedRaceMenu` at 0xa2ae70 (papyrus_native, high); signature (medium): `void ShowLimitedRaceMenu(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused)`
+pub const Papyrus__Game__ShowLimitedRaceMenu: u64 = 55579;
+/// `Papyrus::Game::ShowRaceMenu` at 0xa2ae80 (papyrus_native, high); signature (medium): `void ShowRaceMenu(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused)`
+pub const Papyrus__Game__ShowRaceMenu: u64 = 55580;
+/// `Papyrus::Game::ShowTitleSequenceMenu` at 0xa2ae90 (papyrus_native, high); signature (medium): `void ShowTitleSequenceMenu(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused)`
+pub const Papyrus__Game__ShowTitleSequenceMenu: u64 = 55581;
+/// `Papyrus::Game::ShowTrainingMenu` at 0xa2aea0 (papyrus_native, high); signature (medium): `void ShowTrainingMenu(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, Actor * a0)`
+pub const Papyrus__Game__ShowTrainingMenu: u64 = 55582;
+/// `Papyrus::Game::StartNFCDetection` at 0xa25a30 (papyrus_native, high); signature (medium): `bool StartNFCDetection(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused)`
+pub const Papyrus__Game__StartNFCDetection: u64 = 524050;
+/// `Papyrus::Game::StartTitleSequence` at 0xa2aeb0 (papyrus_native, high); signature (medium): `void StartTitleSequence(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, BSFixedString * a0)`
+pub const Papyrus__Game__StartTitleSequence: u64 = 55583;
+/// `Papyrus::Game::StopNFCDetection` at 0xa25a40 (papyrus_native, high); signature (medium): `bool StopNFCDetection(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused)`
+pub const Papyrus__Game__StopNFCDetection: u64 = 524051;
+/// `Papyrus::Game::TeachWord` at 0xa25690 (papyrus_native, high); signature (medium): `void TeachWord(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, TESWordOfPower * a0)`
+pub const Papyrus__Game__TeachWord: u64 = 55500;
+/// `Papyrus::Game::TeachWord_sub0` at 0x936900 (callgraph, medium); signature (untiered): `undefined TeachWord_sub0(undefined1 * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const Papyrus__Game__TeachWord_sub0: u64 = 51648;
+/// `Papyrus::Game::TriggerScreenBlood` at 0xa2aec0 (papyrus_native, high); signature (medium): `void TriggerScreenBlood(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, uint a0)`
+pub const Papyrus__Game__TriggerScreenBlood: u64 = 55584;
+/// `Papyrus::Game::UnlockWord` at 0xa257e0 (papyrus_native, high); signature (medium): `void UnlockWord(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, TESWordOfPower * a0)`
+pub const Papyrus__Game__UnlockWord: u64 = 55501;
+/// `Papyrus::Game::UsingGamepad` at 0xa2aee0 (papyrus_native, high); signature (medium): `bool UsingGamepad(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused)`
+pub const Papyrus__Game__UsingGamepad: u64 = 55585;
+/// `Papyrus::GlobalVariable::GetValue` at 0xa3a270 (papyrus_native, high); signature (medium): `float GetValue(IVirtualMachine * vm, uint stackId, TESGlobal * self)`
+pub const Papyrus__GlobalVariable__GetValue: u64 = 55930;
+/// `Papyrus::GlobalVariable::SetValue` at 0xa39ec0 (runtime, high); signature (untiered): `void SetValue(IVirtualMachine * vm, uint stackId, TESGlobal * self, float a0)`; semantic: the SetValue native of GlobalVariable (high); signature `void (BSScript::IVirtualMachine* vm, u32 stackId, TESGlobal* self, float a0)`
+pub const Papyrus__GlobalVariable__SetValue: u64 = 55923;
+/// `Papyrus::GlobalVariable::SetValue` as a function pointer type (high).
+pub type Papyrus__GlobalVariable__SetValue_fn = unsafe extern "C" fn(vm: *mut crate::BSScript__IVirtualMachine, stackId: u32, self_: *mut crate::TESGlobal, a0: f32);
+/// `Papyrus::ImageSpaceModifier::Apply` at 0xa3a510 (papyrus_native, high); signature (medium): `void Apply(IVirtualMachine * vm, uint stackId, TESImageSpaceModifier * self, float a0)`
+pub const Papyrus__ImageSpaceModifier__Apply: u64 = 55936;
+/// `Papyrus::ImageSpaceModifier::ApplyCrossFade` at 0xa3a530 (papyrus_native, high); signature (medium): `void ApplyCrossFade(IVirtualMachine * vm, uint stackId, TESImageSpaceModifier * self, float a0)`
+pub const Papyrus__ImageSpaceModifier__ApplyCrossFade: u64 = 55937;
+/// `Papyrus::ImageSpaceModifier::PopTo` at 0xa3a550 (papyrus_native, high); signature (medium): `void PopTo(IVirtualMachine * vm, uint stackId, TESImageSpaceModifier * self, TESImageSpaceModifier * a0, float a1)`
+pub const Papyrus__ImageSpaceModifier__PopTo: u64 = 55938;
+/// `Papyrus::ImageSpaceModifier::RegisterFuncs` at 0xa3a5b0 (xref_inference, medium); signature (low): `undefined RegisterFuncs(undefined8 * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const Papyrus__ImageSpaceModifier__RegisterFuncs: u64 = 55941;
+/// `Papyrus::ImageSpaceModifier::Remove` at 0xa3a580 (papyrus_native, high); signature (medium): `void Remove(IVirtualMachine * vm, uint stackId, TESImageSpaceModifier * self)`
+pub const Papyrus__ImageSpaceModifier__Remove: u64 = 55939;
+/// `Papyrus::ImageSpaceModifier::RemoveCrossFade` at 0xa3abe0 (papyrus_native, high); signature (medium): `void RemoveCrossFade(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, float a0)`
+pub const Papyrus__ImageSpaceModifier__RemoveCrossFade: u64 = 55949;
+/// `Papyrus::Ingredient::IsHostile` at 0xa2f0f0 (papyrus_native, high); signature (medium): `bool IsHostile(IVirtualMachine * vm, uint stackId, IngredientItem * self)`
+pub const Papyrus__Ingredient__IsHostile: u64 = 55660;
+/// `Papyrus::Ingredient::LearnAllEffects` at 0xa2f100 (papyrus_native, high); signature (medium): `void LearnAllEffects(IVirtualMachine * vm, uint stackId, IngredientItem * self)`
+pub const Papyrus__Ingredient__LearnAllEffects: u64 = 55661;
+/// `Papyrus::Ingredient::LearnEffect` at 0xa2f110 (papyrus_native, high); signature (medium): `void LearnEffect(IVirtualMachine * vm, uint stackId, IngredientItem * self, uint a0)`
+pub const Papyrus__Ingredient__LearnEffect: u64 = 55662;
+/// `Papyrus::Ingredient::LearnNextEffect` at 0xa2f120 (papyrus_native, high); signature (medium): `uint LearnNextEffect(IVirtualMachine * vm, uint stackId, IngredientItem * self)`
+pub const Papyrus__Ingredient__LearnNextEffect: u64 = 55663;
+/// `Papyrus::Ingredient::RegisterFuncs` at 0xa2ebd0 (xref_inference, medium); signature (low): `undefined RegisterFuncs(undefined8 * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const Papyrus__Ingredient__RegisterFuncs: u64 = 55650;
+/// `Papyrus::Keyword::RegisterFuncs` at 0xa16150 (xref_inference, medium); signature (low): `undefined RegisterFuncs(undefined8 * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const Papyrus__Keyword__RegisterFuncs: u64 = 55177;
+/// `Papyrus::Keyword::SendStoryEvent` at 0xa15f70 (papyrus_native, high); signature (medium): `void SendStoryEvent(IVirtualMachine * vm, uint stackId, BGSKeyword * self, BGSLocation * a0, TESObjectREFR * a1, TESObjectREFR * a2, uint a3, uint a4)`
+pub const Papyrus__Keyword__SendStoryEvent: u64 = 55174;
+/// `Papyrus::Keyword::SendStoryEventAndWait` at 0xa16010 (papyrus_native, high); signature (medium): `bool SendStoryEventAndWait(IVirtualMachine * vm, uint stackId, BGSKeyword * self, BGSLocation * a0, TESObjectREFR * a1, TESObjectREFR * a2, uint a3, uint a4)`
+pub const Papyrus__Keyword__SendStoryEventAndWait: u64 = 55175;
+/// `Papyrus::Keyword::SendStoryEventAndWait_sub0` at 0x9c81a0 (callgraph, medium); signature (untiered): `undefined SendStoryEventAndWait_sub0(longlong param_1, uint param_2, undefined4 param_3, int * * param_4)`
+pub const Papyrus__Keyword__SendStoryEventAndWait_sub0: u64 = 53712;
+/// `Papyrus::LeveledActor::AddForm` at 0xa3b0a0 (papyrus_native, high); signature (medium): `void AddForm(IVirtualMachine * vm, uint stackId, TESLevCharacter * self, TESForm * a0, uint a1)`
+pub const Papyrus__LeveledActor__AddForm: u64 = 55954;
+/// `Papyrus::LeveledActor::RegisterFuncs` at 0xa3b180 (xref_inference, medium); signature (low): `undefined RegisterFuncs(undefined8 * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const Papyrus__LeveledActor__RegisterFuncs: u64 = 55956;
+/// `Papyrus::LeveledActor::Revert` at 0xa3b560 (papyrus_native, high); signature (medium): `void Revert(IVirtualMachine * vm, uint stackId, TESLevCharacter * self)`
+pub const Papyrus__LeveledActor__Revert: u64 = 55962;
+/// `Papyrus::LeveledItem::AddForm` at 0xa3b920 (papyrus_native, high); signature (medium): `void AddForm(IVirtualMachine * vm, uint stackId, TESLevItem * self, TESForm * a0, uint a1, uint a2)`
+pub const Papyrus__LeveledItem__AddForm: u64 = 55965;
+/// `Papyrus::LeveledItem::RegisterFuncs` at 0xa3ba00 (xref_inference, medium); signature (low): `undefined RegisterFuncs(undefined8 * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const Papyrus__LeveledItem__RegisterFuncs: u64 = 55967;
+/// `Papyrus::LeveledItem::Revert` at 0xa3be00 (papyrus_native, high); signature (medium): `void Revert(IVirtualMachine * vm, uint stackId, TESLevItem * self)`
+pub const Papyrus__LeveledItem__Revert: u64 = 55973;
+/// `Papyrus::LeveledSpell::AddForm` at 0xa3c230 (papyrus_native, high); signature (medium): `void AddForm(IVirtualMachine * vm, uint stackId, TESLevSpell * self, TESForm * a0, uint a1)`
+pub const Papyrus__LeveledSpell__AddForm: u64 = 55976;
+/// `Papyrus::LeveledSpell::RegisterFuncs` at 0xa3c310 (xref_inference, medium); signature (low): `undefined RegisterFuncs(undefined8 * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const Papyrus__LeveledSpell__RegisterFuncs: u64 = 55978;
+/// `Papyrus::LeveledSpell::Revert` at 0xa3c6f0 (papyrus_native, high); signature (medium): `void Revert(IVirtualMachine * vm, uint stackId, TESLevSpell * self)`
+pub const Papyrus__LeveledSpell__Revert: u64 = 55984;
+/// `Papyrus::Light::GetWarmthRating` at 0xa412b0 (papyrus_native, high); signature (medium): `float GetWarmthRating(IVirtualMachine * vm, uint stackId, TESObjectLIGH * self)`
+pub const Papyrus__Light__GetWarmthRating: u64 = 56085;
+/// `Papyrus::Light::RegisterFuncs` at 0xa412e0 (xref_inference, medium); signature (low): `undefined RegisterFuncs(undefined8 * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const Papyrus__Light__RegisterFuncs: u64 = 56087;
+/// `Papyrus::Location::GetKeywordData` at 0xa18b40 (papyrus_native, high); signature (medium): `float GetKeywordData(IVirtualMachine * vm, uint stackId, BGSLocation * self, BGSKeyword * a0)`
+pub const Papyrus__Location__GetKeywordData: u64 = 55237;
+/// `Papyrus::Location::GetRefTypeAliveCount` at 0xa17820 (papyrus_native, high); signature (medium): `uint GetRefTypeAliveCount(IVirtualMachine * vm, uint stackId, BGSLocation * self, BGSLocationRefType * a0)`
+pub const Papyrus__Location__GetRefTypeAliveCount: u64 = 55207;
+/// `Papyrus::Location::GetRefTypeDeadCount` at 0xa17880 (papyrus_native, high); signature (medium): `uint GetRefTypeDeadCount(IVirtualMachine * vm, uint stackId, BGSLocation * self, BGSLocationRefType * a0)`
+pub const Papyrus__Location__GetRefTypeDeadCount: u64 = 55208;
+/// `Papyrus::Location::HasCommonParent` at 0xa178e0 (papyrus_native, high); signature (medium): `bool HasCommonParent(IVirtualMachine * vm, uint stackId, BGSLocation * self, BGSLocation * a0, BGSKeyword * a1)`
+pub const Papyrus__Location__HasCommonParent: u64 = 55209;
+/// `Papyrus::Location::HasCommonParent_sub0` at 0xa18370 (callgraph, medium); signature (untiered): `undefined8 HasCommonParent_sub0(longlong param_1, ulonglong * param_2, undefined1 * param_3)`
+pub const Papyrus__Location__HasCommonParent_sub0: u64 = 55215;
+/// `Papyrus::Location::HasCommonParent_sub1` at 0xa18510 (callgraph, medium); signature (untiered): `undefined HasCommonParent_sub1(longlong param_1)`
+pub const Papyrus__Location__HasCommonParent_sub1: u64 = 55216;
+/// `Papyrus::Location::HasRefType` at 0xa18b50 (papyrus_native, high); signature (medium): `bool HasRefType(IVirtualMachine * vm, uint stackId, BGSLocation * self, BGSLocationRefType * a0)`
+pub const Papyrus__Location__HasRefType: u64 = 55238;
+/// `Papyrus::Location::IsChild` at 0xa17a60 (papyrus_native, high); signature (medium): `bool IsChild(IVirtualMachine * vm, uint stackId, BGSLocation * self, BGSLocation * a0)`
+pub const Papyrus__Location__IsChild: u64 = 55210;
+/// `Papyrus::Location::IsCleared` at 0xa18b60 (papyrus_native, high); signature (medium): `bool IsCleared(IVirtualMachine * vm, uint stackId, BGSLocation * self)`
+pub const Papyrus__Location__IsCleared: u64 = 55239;
+/// `Papyrus::Location::IsLoaded` at 0xa18b70 (papyrus_native, high); signature (medium): `bool IsLoaded(IVirtualMachine * vm, uint stackId, BGSLocation * self)`
+pub const Papyrus__Location__IsLoaded: u64 = 55240;
+/// `Papyrus::Location::RegisterFuncs` at 0xa17b30 (xref_inference, medium); signature (low): `undefined RegisterFuncs(undefined8 * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const Papyrus__Location__RegisterFuncs: u64 = 55214;
+/// `Papyrus::Location::SetCleared` at 0xa18b80 (papyrus_native, high); signature (medium): `void SetCleared(IVirtualMachine * vm, uint stackId, BGSLocation * self, bool a0)`
+pub const Papyrus__Location__SetCleared: u64 = 55241;
+/// `Papyrus::Location::SetKeywordData` at 0xa17ad0 (papyrus_native, high); signature (medium): `void SetKeywordData(IVirtualMachine * vm, uint stackId, BGSLocation * self, BGSKeyword * a0, float a1)`
+pub const Papyrus__Location__SetKeywordData: u64 = 55211;
+/// `Papyrus::LocationAlias::Clear` at 0xa16c30 (papyrus_native, high); signature (medium): `void Clear(IVirtualMachine * vm, uint stackId, BGSLocAlias * self)`
+pub const Papyrus__LocationAlias__Clear: u64 = 55188;
+/// `Papyrus::LocationAlias::ForceLocationTo` at 0xa16ca0 (papyrus_native, high); signature (medium): `void ForceLocationTo(IVirtualMachine * vm, uint stackId, BGSLocAlias * self, BGSLocation * a0)`
+pub const Papyrus__LocationAlias__ForceLocationTo: u64 = 55191;
+/// `Papyrus::LocationAlias::GetLocation` at 0xa16c80 (papyrus_native, high); signature (medium): `BGSLocation * GetLocation(IVirtualMachine * vm, uint stackId, BGSLocAlias * self)`
+pub const Papyrus__LocationAlias__GetLocation: u64 = 55189;
+/// `Papyrus::LocationAlias::RegisterFuncs` at 0xa16d00 (xref_inference, medium); signature (low): `undefined RegisterFuncs(undefined8 * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const Papyrus__LocationAlias__RegisterFuncs: u64 = 55195;
+/// `Papyrus::MagicEffect::GetAssociatedSkill` at 0xa229b0 (papyrus_native, high); signature (medium): `bool GetAssociatedSkill(IVirtualMachine * vm, uint stackId, EffectSetting * self)`
+pub const Papyrus__MagicEffect__GetAssociatedSkill: u64 = 55431;
+/// `Papyrus::MagicEffect::RegisterFuncs` at 0xa22a80 (xref_inference, medium); signature (low): `undefined RegisterFuncs(undefined8 * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const Papyrus__MagicEffect__RegisterFuncs: u64 = 55433;
+/// `Papyrus::Math::Ceiling` at 0xa30800 (runtime, high); signature (untiered): `int Ceiling(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, float a0)`; semantic: the Ceiling native of Math (high); signature `int (BSScript::IVirtualMachine* vm, u32 stackId, BSScript::StaticFunctionTag* self, float a0)`
+pub const Papyrus__Math__Ceiling: u64 = 55700;
+/// `Papyrus::Math::Ceiling` as a function pointer type (high).
+pub type Papyrus__Math__Ceiling_fn = unsafe extern "C" fn(vm: *mut crate::BSScript__IVirtualMachine, stackId: u32, self_: *mut c_void, a0: f32) -> i32;
+/// `Papyrus::Math::DegreesToRadians` at 0xa30890 (papyrus_native, high); signature (medium): `float DegreesToRadians(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, float a0)`
+pub const Papyrus__Math__DegreesToRadians: u64 = 55703;
+/// `Papyrus::Math::Floor` at 0xa308b0 (papyrus_native, high); signature (medium): `int Floor(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, float a0)`
+pub const Papyrus__Math__Floor: u64 = 55704;
+/// `Papyrus::Math::RadiansToDegrees` at 0xa30960 (papyrus_native, high); signature (medium): `float RadiansToDegrees(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, float a0)`
+pub const Papyrus__Math__RadiansToDegrees: u64 = 55707;
+/// `Papyrus::Math::RegisterFuncs` at 0xa30a20 (xref_inference, medium); signature (low): `undefined RegisterFuncs(undefined8 * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const Papyrus__Math__RegisterFuncs: u64 = 55710;
+/// `Papyrus::Math::abs` at 0xa31a50 (papyrus_native, high); signature (medium): `float abs(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, float a0)`
+pub const Papyrus__Math__abs: u64 = 55720;
+/// `Papyrus::Math::acos` at 0xa30740 (papyrus_native, high); signature (medium): `float acos(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, float a0)`
+pub const Papyrus__Math__acos: u64 = 55697;
 /// `Papyrus::Math::asin` at 0xa30790 (papyrus_native, high); signature (medium): `float asin(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, float a0)`
 pub const Papyrus__Math__asin: u64 = 55698;
 /// `Papyrus::Math::atan` at 0xa307e0 (papyrus_native, high); signature (medium): `float atan(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, float a0)`
@@ -4351,21 +4491,21 @@ pub const RaceSexCamera__Update: u64 = 52341;
 pub const RaceSexCamera__dtor: u64 = 52436;
 /// `RaceSexCamera::dtor` as a function pointer type (high).
 pub type RaceSexCamera__dtor_fn = unsafe extern "C" fn(this: *mut crate::RaceSexCamera);
+/// `RaceSexMenu::CanProcess` at 0x96b0d0 (semantic, high); signature (untiered): `undefined8 CanProcess(RaceSexMenu * this, longlong * param_1)`
+pub const RaceSexMenu__CanProcess: u64 = 52384;
 /// `RaceSexMenu::MenuEventHandler_vdtor` at 0x972e08 (slot_propagation, medium); signature (high): `undefined MenuEventHandler_vdtor(RaceSexMenu * this)`
 pub const RaceSexMenu__MenuEventHandler_vdtor: u64 = 52444;
-/// `RaceSexMenu::MenuEventHandler_vfunc_1` at 0x96b0d0 (rtti, high); signature (low): `undefined8 MenuEventHandler_vfunc_1(RaceSexMenu * this, longlong * param_1)`
-pub const RaceSexMenu__MenuEventHandler_vfunc_1: u64 = 52384;
-/// `RaceSexMenu::MenuEventHandler_vfunc_5` at 0x96b140 (rtti, high); signature (low): `undefined8 MenuEventHandler_vfunc_5(RaceSexMenu * this, longlong param_1)`
-pub const RaceSexMenu__MenuEventHandler_vfunc_5: u64 = 52385;
-/// `RaceSexMenu::MenuEventHandler_vfunc_6` at 0x96b4e0 (rtti, high); signature (low): `undefined8 MenuEventHandler_vfunc_6(RaceSexMenu * this, longlong param_1)`
-pub const RaceSexMenu__MenuEventHandler_vfunc_6: u64 = 52387;
-/// `RaceSexMenu::MenuEventHandler_vfunc_7` at 0x96b480 (rtti, high); signature (low): `ulonglong MenuEventHandler_vfunc_7(RaceSexMenu * this, longlong param_1)`
-pub const RaceSexMenu__MenuEventHandler_vfunc_7: u64 = 52386;
+/// `RaceSexMenu::ProcessButton` at 0x96b480 (semantic, high); signature (untiered): `ulonglong ProcessButton(RaceSexMenu * this, longlong param_1)`
+pub const RaceSexMenu__ProcessButton: u64 = 52386;
 /// `RaceSexMenu::ProcessMessage` at 0x968010 (semantic, high); signature (untiered): `longlong * ProcessMessage(RaceSexMenu * this, longlong param_1, undefined8 param_2, char * param_3)`; semantic: IMenu slot 4: name entry/confirm boxes, and on the update path applies a queued camera zoom (pending from/to pose pointers 0x3258478/0x3258480 and duration 0x3258488, set by StartCloseFadeOut and by its own appearance-refresh path) to g_RaceMenuCameraInterp, refreshes the player's appearance, updates the player and its 3D, then calls RaceSexCamera slot 2 (high); signature `UIMessageResult (RaceSexMenu* this, UIMessage* message)`
 pub const RaceSexMenu__ProcessMessage: u64 = 52345;
 /// `RaceSexMenu::ProcessMessage` as a function pointer type (high).
 pub type RaceSexMenu__ProcessMessage_fn = unsafe extern "C" fn(this: *mut crate::RaceSexMenu, message: *mut crate::UIMessage) -> u32;
-/// `RaceSexMenu::SetupPlayerLookAt` at 0x96b930 (runtime, high); signature (untiered): `undefined SetupPlayerLookAt(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`; semantic: sets the player's head-tracking graph variables for the race menu camera (fRSMLookAtOnGain:Interface) (high); signature `void (RaceSexMenu* this)`
+/// `RaceSexMenu::ProcessMouseMove` at 0x96b4e0 (semantic, high); signature (untiered): `undefined8 ProcessMouseMove(RaceSexMenu * this, longlong param_1)`
+pub const RaceSexMenu__ProcessMouseMove: u64 = 52387;
+/// `RaceSexMenu::ProcessThumbstick` at 0x96b140 (semantic, high); signature (untiered): `undefined8 ProcessThumbstick(RaceSexMenu * this, longlong param_1)`
+pub const RaceSexMenu__ProcessThumbstick: u64 = 52385;
+/// `RaceSexMenu::SetupPlayerLookAt` at 0x96b930 (runtime, high); signature (untiered): `undefined SetupPlayerLookAt(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`; semantic: turns the player's head tracking on for the race menu: a graph-bool helper on every graph, player flags2 |= 8, saves the graph float named by the fixed string ID_406417 (likely 'LookAtOnGain': Str_LookAtOnGain init 0xbd770, not checked) into menu+0x190 and sets it to fRSMLookAtOnGain, then centres the look with a zero thumbstick event (high); signature `void (RaceSexMenu* this)`
 pub const RaceSexMenu__SetupPlayerLookAt: u64 = 52389;
 /// `RaceSexMenu::SetupPlayerLookAt` as a function pointer type (high).
 pub type RaceSexMenu__SetupPlayerLookAt_fn = unsafe extern "C" fn(this: *mut crate::RaceSexMenu);
@@ -4473,6 +4613,8 @@ pub const RasterizeShapeIntoBitmap: u64 = 88907;
 pub const RayCastTreeF32: u64 = 81691;
 /// `RayIntersectsBoundingSphere` at 0xf25140 (decompiler, high); signature (high): `bool RayIntersectsBoundingSphere(longlong param_1, float * param_2, float * param_3)`
 pub const RayIntersectsBoundingSphere: u64 = 71982;
+/// `RaycastToPointWithinViewCone` at 0x6a2e20 (semantic, medium); signature (untiered): `ulonglong RaycastToPointWithinViewCone(longlong * param_1, float * param_2, float * param_3, undefined8 param_4)`; semantic: line-of-sight ray from the actor's eye (actor position + Actor::GetEyeHeight, or a head point from its process) to target: filterInfo = (the actor's char controller filter & 0xffff0000) | 0x29 (LINEOFSIGHT), a SpecificItemCollector(0x29, actor) at pick+0xa8, TES::Pick; on a hit writes hitOut = lerp(from, to, hitFraction) / Havok scale (medium); signature `bool (Actor* actor, const NiPoint3* target, NiPoint3* hitOut, ...)`
+pub const RaycastToPointWithinViewCone: u64 = 37770;
 /// `RaycastVerticalAgainstPlaneShape` at 0x52cbc0 (semantic, medium); signature (untiered): `bool RaycastVerticalAgainstPlaneShape(undefined8 param_1, longlong param_2, undefined8 * param_3)`; semantic: casts a vertical ray at point against a plane shape owned by rdx, filtered by the camera body's filter word (medium); signature `bool (void* unused, void* planeOwner, const NiPoint3* point)`
 pub const RaycastVerticalAgainstPlaneShape: u64 = 32190;
 /// `Read32ByteChunkWithByteSwap` at 0x203ed0 (decompiler, medium); signature (untiered): `undefined Read32ByteChunkWithByteSwap(uint * param_1, longlong param_2)`
@@ -8311,193 +8453,3 @@ pub const ReleaseRefPtrArray: u64 = 19886;
 pub const ReleaseRefPtrArray16: u64 = 91192;
 /// `ReleaseRefPtrArray16_2` at 0x11e9340 (decompiler, medium); signature (untiered): `undefined ReleaseRefPtrArray16_2(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const ReleaseRefPtrArray16_2: u64 = 91189;
-/// `ReleaseRefPtrArrayAndClearGlobal400326` at 0x2043b0 (decompiler, medium); signature (untiered): `undefined ReleaseRefPtrArrayAndClearGlobal400326(void)`
-pub const ReleaseRefPtrArrayAndClearGlobal400326: u64 = 15325;
-/// `ReleaseRefPtrArrayAndFree` at 0x4ebbf0 (decompiler, high); signature (untiered): `undefined ReleaseRefPtrArrayAndFree(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const ReleaseRefPtrArrayAndFree: u64 = 31074;
-/// `ReleaseRefPtrArrayAndFreeStorage` at 0x4de8d0 (decompiler, medium); signature (untiered): `undefined ReleaseRefPtrArrayAndFreeStorage(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const ReleaseRefPtrArrayAndFreeStorage: u64 = 30724;
-/// `ReleaseRefPtrArrayAndFree_2` at 0x6ba5a0 (decompiler, high); signature (high): `undefined ReleaseRefPtrArrayAndFree_2(longlong * param_1)`
-pub const ReleaseRefPtrArrayAndFree_2: u64 = 38119;
-/// `ReleaseRefPtrArrayAndFree_3` at 0x78b6a0 (decompiler, medium); signature (untiered): `undefined ReleaseRefPtrArrayAndFree_3(longlong * param_1)`
-pub const ReleaseRefPtrArrayAndFree_3: u64 = 41481;
-/// `ReleaseRefPtrArrayAndFree_4` at 0x1187370 (decompiler, high); signature (untiered): `undefined ReleaseRefPtrArrayAndFree_4(longlong * param_1)`
-pub const ReleaseRefPtrArrayAndFree_4: u64 = 84909;
-/// `ReleaseRefPtrArrayAndFree_5` at 0x1187470 (decompiler, high); signature (untiered): `undefined ReleaseRefPtrArrayAndFree_5(longlong * param_1)`
-pub const ReleaseRefPtrArrayAndFree_5: u64 = 84911;
-/// `ReleaseRefPtrArrayAndFree_6` at 0x11e95a0 (decompiler, medium); signature (untiered): `undefined ReleaseRefPtrArrayAndFree_6(longlong * param_1)`
-pub const ReleaseRefPtrArrayAndFree_6: u64 = 91194;
-/// `ReleaseRefPtrArrayAt8` at 0x205bc0 (decompiler, medium); signature (untiered): `undefined ReleaseRefPtrArrayAt8(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const ReleaseRefPtrArrayAt8: u64 = 15347;
-/// `ReleaseRefPtrArrayRange` at 0x662830 (decompiler, medium); signature (medium): `undefined ReleaseRefPtrArrayRange(longlong * param_1, uint param_2, uint param_3)`
-pub const ReleaseRefPtrArrayRange: u64 = 36768;
-/// `ReleaseRefPtrArray_10` at 0x1050c80 (decompiler, high); signature (untiered): `undefined ReleaseRefPtrArray_10(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const ReleaseRefPtrArray_10: u64 = 77950;
-/// `ReleaseRefPtrArray_11` at 0x205c50 (decompiler, medium); signature (untiered): `undefined ReleaseRefPtrArray_11(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const ReleaseRefPtrArray_11: u64 = 15348;
-/// `ReleaseRefPtrArray_12` at 0x1054c30 (decompiler, medium); signature (medium): `undefined ReleaseRefPtrArray_12(longlong * param_1)`
-pub const ReleaseRefPtrArray_12: u64 = 78016;
-/// `ReleaseRefPtrArray_2` at 0x1514160 (decompiler, medium); signature (untiered): `undefined ReleaseRefPtrArray_2(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const ReleaseRefPtrArray_2: u64 = 106407;
-/// `ReleaseRefPtrArray_3` at 0x564730 (decompiler, medium); signature (untiered): `undefined ReleaseRefPtrArray_3(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const ReleaseRefPtrArray_3: u64 = 33292;
-/// `ReleaseRefPtrArray_4` at 0x557160 (decompiler, medium); signature (untiered): `undefined ReleaseRefPtrArray_4(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const ReleaseRefPtrArray_4: u64 = 32997;
-/// `ReleaseRefPtrArray_5` at 0x11e9630 (decompiler, medium); signature (untiered): `undefined ReleaseRefPtrArray_5(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const ReleaseRefPtrArray_5: u64 = 91195;
-/// `ReleaseRefPtrArray_6` at 0x4d2d60 (decompiler, medium); signature (untiered): `undefined ReleaseRefPtrArray_6(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const ReleaseRefPtrArray_6: u64 = 30538;
-/// `ReleaseRefPtrArray_7` at 0x419650 (decompiler, medium); signature (untiered): `undefined ReleaseRefPtrArray_7(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const ReleaseRefPtrArray_7: u64 = 26302;
-/// `ReleaseRefPtrArray_8` at 0x10c23b0 (decompiler, high); signature (untiered): `undefined ReleaseRefPtrArray_8(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const ReleaseRefPtrArray_8: u64 = 80023;
-/// `ReleaseRefPtrArray_9` at 0x109e150 (decompiler, high); signature (untiered): `undefined ReleaseRefPtrArray_9(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const ReleaseRefPtrArray_9: u64 = 79244;
-/// `ReleaseRefPtrAt0` at 0x89c8f0 (decompiler, medium); signature (untiered): `undefined ReleaseRefPtrAt0(longlong * param_1)`
-pub const ReleaseRefPtrAt0: u64 = 48442;
-/// `ReleaseRefPtrAt0_2` at 0x8b6780 (decompiler, medium); signature (untiered): `undefined ReleaseRefPtrAt0_2(longlong * param_1)`
-pub const ReleaseRefPtrAt0_2: u64 = 49115;
-/// `ReleaseRefPtrAt0_3` at 0x8ba2a0 (decompiler, medium); signature (untiered): `undefined ReleaseRefPtrAt0_3(longlong * param_1)`
-pub const ReleaseRefPtrAt0_3: u64 = 49185;
-/// `ReleaseRefPtrAt0_4` at 0x8c18b0 (decompiler, medium); signature (untiered): `undefined ReleaseRefPtrAt0_4(longlong * param_1)`
-pub const ReleaseRefPtrAt0_4: u64 = 49395;
-/// `ReleaseRefPtrAt0_5` at 0x8c18e0 (decompiler, medium); signature (untiered): `undefined ReleaseRefPtrAt0_5(longlong * param_1)`
-pub const ReleaseRefPtrAt0_5: u64 = 49396;
-/// `ReleaseRefPtrAt20` at 0x11cc150 (decompiler, high); signature (untiered): `undefined ReleaseRefPtrAt20(longlong param_1)`
-pub const ReleaseRefPtrAt20: u64 = 90658;
-/// `ReleaseRefPtrAt30` at 0x8af2a0 (decompiler, high); signature (untiered): `undefined ReleaseRefPtrAt30(longlong param_1)`
-pub const ReleaseRefPtrAt30: u64 = 48879;
-/// `ReleaseRefPtrAt8` at 0x11cc100 (decompiler, high); signature (untiered): `undefined ReleaseRefPtrAt8(longlong param_1)`
-pub const ReleaseRefPtrAt8: u64 = 90656;
-/// `ReleaseRefPtrAtField10` at 0x9cb080 (decompiler, high); signature (high): `undefined ReleaseRefPtrAtField10(longlong param_1)`
-pub const ReleaseRefPtrAtField10: u64 = 53750;
-/// `ReleaseRefPtrAtField20` at 0x8c1910 (decompiler, high); signature (high): `undefined ReleaseRefPtrAtField20(longlong param_1)`
-pub const ReleaseRefPtrAtField20: u64 = 49397;
-/// `ReleaseRefPtrAtField28` at 0x202440 (decompiler, high); signature (high): `undefined ReleaseRefPtrAtField28(longlong param_1)`
-pub const ReleaseRefPtrAtField28: u64 = 15249;
-/// `ReleaseRefPtrAtField8` at 0x9c2a50 (decompiler, high); signature (high): `undefined ReleaseRefPtrAtField8(longlong param_1)`
-pub const ReleaseRefPtrAtField8: u64 = 53647;
-/// `ReleaseRefPtrAtField8_2` at 0x71c3f0 (decompiler, medium); signature (untiered): `undefined ReleaseRefPtrAtField8_2(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const ReleaseRefPtrAtField8_2: u64 = 39724;
-/// `ReleaseRefPtrAtField8_3` at 0x9cb0b0 (decompiler, high); signature (high): `undefined ReleaseRefPtrAtField8_3(longlong param_1)`
-pub const ReleaseRefPtrAtField8_3: u64 = 53751;
-/// `ReleaseRefPtrCountAt30` at 0x1c67e0 (decompiler, high); signature (untiered): `undefined ReleaseRefPtrCountAt30(longlong * param_1)`
-pub const ReleaseRefPtrCountAt30: u64 = 13830;
-/// `ReleaseRefPtrCountAt8` at 0x4d30e0 (decompiler, high); signature (untiered): `undefined ReleaseRefPtrCountAt8(longlong * param_1)`
-pub const ReleaseRefPtrCountAt8: u64 = 30549;
-/// `ReleaseRefPtrCountAt8_2` at 0x202380 (decompiler, high); signature (untiered): `undefined ReleaseRefPtrCountAt8_2(longlong * param_1)`
-pub const ReleaseRefPtrCountAt8_2: u64 = 15245;
-/// `ReleaseRefPtrDeleting` at 0x4c00b0 (decompiler, high); signature (high): `undefined ReleaseRefPtrDeleting(longlong * param_1)`
-pub const ReleaseRefPtrDeleting: u64 = 30277;
-/// `ReleaseRefPtrDeleting_2` at 0x559030 (decompiler, high); signature (high): `undefined ReleaseRefPtrDeleting_2(longlong * param_1)`
-pub const ReleaseRefPtrDeleting_2: u64 = 33028;
-/// `ReleaseRefPtrDeleting_3` at 0x63c970 (decompiler, high); signature (high): `undefined ReleaseRefPtrDeleting_3(longlong * param_1)`
-pub const ReleaseRefPtrDeleting_3: u64 = 36120;
-/// `ReleaseRefPtrField0` at 0x1554ed0 (decompiler, high); signature (high): `undefined ReleaseRefPtrField0(longlong * param_1)`
-pub const ReleaseRefPtrField0: u64 = 107476;
-/// `ReleaseRefPtrField10` at 0x200b40 (decompiler, medium); signature (untiered): `undefined ReleaseRefPtrField10(longlong param_1)`
-pub const ReleaseRefPtrField10: u64 = 15225;
-/// `ReleaseRefPtrField20` at 0x50d900 (decompiler, high); signature (high): `undefined ReleaseRefPtrField20(longlong param_1)`
-pub const ReleaseRefPtrField20: u64 = 31689;
-/// `ReleaseRefPtrField28` at 0x12502f0 (decompiler, high); signature (untiered): `undefined ReleaseRefPtrField28(longlong param_1)`
-pub const ReleaseRefPtrField28: u64 = 93365;
-/// `ReleaseRefPtrIfSet` at 0x123720 (decompiler, medium); signature (medium): `undefined ReleaseRefPtrIfSet(undefined8 * param_1)`
-pub const ReleaseRefPtrIfSet: u64 = 440394;
-/// `ReleaseRefPtrPair` at 0x6d05b0 (decompiler, medium); signature (medium): `undefined ReleaseRefPtrPair(longlong * param_1)`
-pub const ReleaseRefPtrPair: u64 = 38650;
-/// `ReleaseRefPtrPairArray` at 0x5e2250 (decompiler, medium); signature (untiered): `undefined ReleaseRefPtrPairArray(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const ReleaseRefPtrPairArray: u64 = 34959;
-/// `ReleaseRefPtrPair_2` at 0x5648e0 (decompiler, high); signature (untiered): `undefined ReleaseRefPtrPair_2(longlong * param_1)`
-pub const ReleaseRefPtrPair_2: u64 = 33296;
-/// `ReleaseRefPtrPair_3` at 0x5be430 (decompiler, medium); signature (medium): `undefined ReleaseRefPtrPair_3(longlong * param_1)`
-pub const ReleaseRefPtrPair_3: u64 = 34111;
-/// `ReleaseRefPtrPair_4` at 0x148d0f0 (decompiler, high); signature (untiered): `undefined ReleaseRefPtrPair_4(undefined8 * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const ReleaseRefPtrPair_4: u64 = 104221;
-/// `ReleaseRefPtrRange` at 0x11c6f70 (decompiler, medium); signature (medium): `undefined ReleaseRefPtrRange(longlong param_1, uint param_2, uint param_3)`
-pub const ReleaseRefPtrRange: u64 = 90520;
-/// `ReleaseRefPtrRange_2` at 0x4c0860 (decompiler, high); signature (high): `undefined ReleaseRefPtrRange_2(longlong * param_1, uint param_2, uint param_3)`
-pub const ReleaseRefPtrRange_2: u64 = 30300;
-/// `ReleaseRefPtrRange_3` at 0x10c2580 (decompiler, high); signature (high): `undefined ReleaseRefPtrRange_3(longlong * param_1, uint param_2, uint param_3)`
-pub const ReleaseRefPtrRange_3: u64 = 80026;
-/// `ReleaseRefPtrRange_4` at 0x148d3d0 (decompiler, medium); signature (untiered): `undefined ReleaseRefPtrRange_4(longlong param_1, ulonglong param_2, ulonglong param_3)`
-pub const ReleaseRefPtrRange_4: u64 = 104230;
-/// `ReleaseRefPtrRefCountAt20` at 0x981d10 (decompiler, high); signature (untiered): `undefined ReleaseRefPtrRefCountAt20(longlong * param_1)`
-pub const ReleaseRefPtrRefCountAt20: u64 = 52574;
-/// `ReleaseRefPtrRefCountAt8` at 0xf5b030 (decompiler, high); signature (untiered): `undefined ReleaseRefPtrRefCountAt8(longlong * param_1)`
-pub const ReleaseRefPtrRefCountAt8: u64 = 72508;
-/// `ReleaseRefPtrToObject50` at 0x660810 (decompiler, medium); signature (untiered): `undefined ReleaseRefPtrToObject50(undefined8 * param_1, undefined8 param_2, undefined8 param_3, undefined8 * param_4)`
-pub const ReleaseRefPtrToObject50: u64 = 36689;
-/// `ReleaseRefPtrU16PairRange` at 0x4c0800 (decompiler, high); signature (high): `undefined ReleaseRefPtrU16PairRange(longlong * param_1, uint param_2, uint param_3)`
-pub const ReleaseRefPtrU16PairRange: u64 = 30299;
-/// `ReleaseRefPtrViaDeletingDtor` at 0x8c1820 (decompiler, high); signature (high): `undefined ReleaseRefPtrViaDeletingDtor(longlong * param_1)`
-pub const ReleaseRefPtrViaDeletingDtor: u64 = 49393;
-/// `ReleaseRefPtrViaDeletingDtor_2` at 0x89c890 (decompiler, high); signature (high): `undefined ReleaseRefPtrViaDeletingDtor_2(longlong * param_1)`
-pub const ReleaseRefPtrViaDeletingDtor_2: u64 = 48440;
-/// `ReleaseRefPtrViaDeletingDtor_3` at 0x887d50 (decompiler, high); signature (high): `undefined ReleaseRefPtrViaDeletingDtor_3(longlong * param_1)`
-pub const ReleaseRefPtrViaDeletingDtor_3: u64 = 47942;
-/// `ReleaseRefPtrViaVfunc1` at 0x40bc20 (decompiler, high); signature (untiered): `undefined ReleaseRefPtrViaVfunc1(longlong * param_1)`
-pub const ReleaseRefPtrViaVfunc1: u64 = 26144;
-/// `ReleaseRefPtrViaVfunc1_10` at 0x8d6770 (decompiler, high); signature (high): `undefined ReleaseRefPtrViaVfunc1_10(longlong * param_1)`
-pub const ReleaseRefPtrViaVfunc1_10: u64 = 49867;
-/// `ReleaseRefPtrViaVfunc1_11` at 0x89c8c0 (decompiler, high); signature (high): `undefined ReleaseRefPtrViaVfunc1_11(longlong * param_1)`
-pub const ReleaseRefPtrViaVfunc1_11: u64 = 48441;
-/// `ReleaseRefPtrViaVfunc1_12` at 0x8a6740 (decompiler, high); signature (high): `undefined ReleaseRefPtrViaVfunc1_12(longlong * param_1)`
-pub const ReleaseRefPtrViaVfunc1_12: u64 = 48685;
-/// `ReleaseRefPtrViaVfunc1_13` at 0x816bf0 (decompiler, high); signature (high): `undefined ReleaseRefPtrViaVfunc1_13(longlong * param_1)`
-pub const ReleaseRefPtrViaVfunc1_13: u64 = 44662;
-/// `ReleaseRefPtrViaVfunc1_14` at 0x8bb060 (decompiler, high); signature (high): `undefined ReleaseRefPtrViaVfunc1_14(longlong * param_1)`
-pub const ReleaseRefPtrViaVfunc1_14: u64 = 49219;
-/// `ReleaseRefPtrViaVfunc1_15` at 0x84d8d0 (decompiler, high); signature (high): `undefined ReleaseRefPtrViaVfunc1_15(longlong * param_1)`
-pub const ReleaseRefPtrViaVfunc1_15: u64 = 46758;
-/// `ReleaseRefPtrViaVfunc1_16` at 0x3f9150 (decompiler, high); signature (high): `undefined ReleaseRefPtrViaVfunc1_16(longlong * param_1)`
-pub const ReleaseRefPtrViaVfunc1_16: u64 = 25743;
-/// `ReleaseRefPtrViaVfunc1_2` at 0x202350 (decompiler, high); signature (untiered): `undefined ReleaseRefPtrViaVfunc1_2(longlong * param_1)`
-pub const ReleaseRefPtrViaVfunc1_2: u64 = 15244;
-/// `ReleaseRefPtrViaVfunc1_3` at 0x202410 (decompiler, high); signature (untiered): `undefined ReleaseRefPtrViaVfunc1_3(longlong * param_1)`
-pub const ReleaseRefPtrViaVfunc1_3: u64 = 15248;
-/// `ReleaseRefPtrViaVfunc1_4` at 0x71c390 (decompiler, high); signature (high): `undefined ReleaseRefPtrViaVfunc1_4(longlong * param_1)`
-pub const ReleaseRefPtrViaVfunc1_4: u64 = 39722;
-/// `ReleaseRefPtrViaVfunc1_5` at 0x1c6810 (decompiler, high); signature (high): `undefined ReleaseRefPtrViaVfunc1_5(longlong * param_1)`
-pub const ReleaseRefPtrViaVfunc1_5: u64 = 13831;
-/// `ReleaseRefPtrViaVfunc1_6` at 0x2b5fc0 (decompiler, high); signature (high): `undefined ReleaseRefPtrViaVfunc1_6(longlong * param_1)`
-pub const ReleaseRefPtrViaVfunc1_6: u64 = 18814;
-/// `ReleaseRefPtrViaVfunc1_7` at 0x321bb0 (decompiler, high); signature (high): `undefined ReleaseRefPtrViaVfunc1_7(longlong * param_1)`
-pub const ReleaseRefPtrViaVfunc1_7: u64 = 20946;
-/// `ReleaseRefPtrViaVfunc1_8` at 0x213910 (decompiler, high); signature (high): `undefined ReleaseRefPtrViaVfunc1_8(longlong * param_1)`
-pub const ReleaseRefPtrViaVfunc1_8: u64 = 15542;
-/// `ReleaseRefPtrViaVfunc1_9` at 0x816bc0 (decompiler, high); signature (high): `undefined ReleaseRefPtrViaVfunc1_9(longlong * param_1)`
-pub const ReleaseRefPtrViaVfunc1_9: u64 = 44661;
-/// `ReleaseRefPtrWithCountAt28` at 0x660850 (decompiler, medium); signature (medium): `undefined ReleaseRefPtrWithCountAt28(longlong * param_1)`
-pub const ReleaseRefPtrWithCountAt28: u64 = 36690;
-/// `ReleaseRefPtrWithCountAt28_2` at 0x71cad0 (decompiler, medium); signature (medium): `undefined ReleaseRefPtrWithCountAt28_2(longlong * param_1)`
-pub const ReleaseRefPtrWithCountAt28_2: u64 = 39729;
-/// `ReleaseRefPtrWithMaskedCount28` at 0x2d1a40 (decompiler, medium); signature (medium): `undefined ReleaseRefPtrWithMaskedCount28(longlong * param_1)`
-pub const ReleaseRefPtrWithMaskedCount28: u64 = 19271;
-/// `ReleaseRefPtrWithShortCount` at 0xc5b120 (decompiler, medium); signature (medium): `undefined ReleaseRefPtrWithShortCount(longlong * param_1)`
-pub const ReleaseRefPtrWithShortCount: u64 = 65836;
-/// `ReleaseRefPtrWithShortCount_2` at 0xc5aa10 (decompiler, medium); signature (medium): `undefined ReleaseRefPtrWithShortCount_2(longlong * param_1)`
-pub const ReleaseRefPtrWithShortCount_2: u64 = 65791;
-/// `ReleaseRefPtrWithTlsTag0x44` at 0xfd5d50 (decompiler, medium); signature (medium): `undefined ReleaseRefPtrWithTlsTag0x44(longlong * param_1)`
-pub const ReleaseRefPtrWithTlsTag0x44: u64 = 76019;
-/// `ReleaseRefPtr_10` at 0x768680 (decompiler, high); signature (high): `undefined ReleaseRefPtr_10(longlong * param_1)`
-pub const ReleaseRefPtr_10: u64 = 40914;
-/// `ReleaseRefPtr_11` at 0x3ffbb0 (decompiler, high); signature (high): `undefined ReleaseRefPtr_11(longlong * param_1)`
-pub const ReleaseRefPtr_11: u64 = 25934;
-/// `ReleaseRefPtr_12` at 0x21ec80 (decompiler, high); signature (high): `undefined ReleaseRefPtr_12(longlong * param_1)`
-pub const ReleaseRefPtr_12: u64 = 15733;
-/// `ReleaseRefPtr_13` at 0x9eccd0 (decompiler, high); signature (high): `undefined ReleaseRefPtr_13(longlong * param_1)`
-pub const ReleaseRefPtr_13: u64 = 54179;
-/// `ReleaseRefPtr_14` at 0x4c3850 (decompiler, medium); signature (untiered): `undefined ReleaseRefPtr_14(longlong * param_1)`
-pub const ReleaseRefPtr_14: u64 = 30371;
-/// `ReleaseRefPtr_15` at 0x19aef0 (decompiler, high); signature (high): `undefined ReleaseRefPtr_15(longlong * param_1)`
-pub const ReleaseRefPtr_15: u64 = 13159;
-/// `ReleaseRefPtr_16` at 0x202320 (decompiler, high); signature (high): `undefined ReleaseRefPtr_16(longlong * param_1)`
-pub const ReleaseRefPtr_16: u64 = 15243;
-/// `ReleaseRefPtr_17` at 0x4b85d0 (decompiler, high); signature (high): `undefined ReleaseRefPtr_17(longlong * param_1)`
-pub const ReleaseRefPtr_17: u64 = 30193;
-/// `ReleaseRefPtr_18` at 0x904630 (decompiler, medium); signature (untiered): `undefined ReleaseRefPtr_18(longlong * param_1)`
-pub const ReleaseRefPtr_18: u64 = 50994;
-/// `ReleaseRefPtr_19` at 0x91bfc0 (decompiler, high); signature (high): `undefined ReleaseRefPtr_19(undefined8 * param_1)`
-pub const ReleaseRefPtr_19: u64 = 51262;
-/// `ReleaseRefPtr_2` at 0x17b620 (decompiler, high); signature (high): `undefined ReleaseRefPtr_2(longlong * param_1)`
-pub const ReleaseRefPtr_2: u64 = 12159;

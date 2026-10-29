@@ -44,6 +44,15 @@ impl crate::ImageSpaceModifierInstanceForm {
 /// May be null: `node`.
 #[inline]
 pub fn add_focus_shadow_node(node: Option<&crate::NiNode>, sortKey: f32) { unsafe { function!(36755, (*const crate::NiNode, f32))(node.map_or(core::ptr::null(), core::ptr::from_ref), sortKey) } }
+/// `ApplyCullingParamsToCuller`: flushKind 0: configures the static culler from params (camera +0x18, accumulator camera, +0x11c/+0x11d/+0x11e/+0x11f/+0x121, cullMode +0x30198, +0x301a0, +0x30190, custom planes, frustum override) and returns it; flushKind 1: returns params+0x30 untouched
+///
+/// Semantic, graphics pass, high; ledger semantic evidence, name high; id 106930, rva 0x152be10.
+/// `BSCullingProcess* (u32 flushKind, CullingParams* params, BSCullingProcess* staticCuller)`
+///
+/// # Safety
+/// `params` must point to what the engine expects.
+#[inline]
+pub unsafe fn apply_culling_params_to_culler(flushKind: u32, params: *mut c_void, staticCuller: *mut crate::BSCullingProcess) -> *mut crate::BSCullingProcess { unsafe { function!(106930, (u32, *mut c_void, *mut crate::BSCullingProcess) -> *mut crate::BSCullingProcess)(flushKind, params, staticCuller) } }
 /// `ApplyViewportDepthRange`: copies 0x20d01c0/0x20d01c4 into RenderStateCache viewport MinDepth/MaxDepth (0x20cfc80/0x20cfc84), dirty bit 2
 ///
 /// Semantic, graphics pass, high; ledger semantic evidence, name high; id 77241, rva 0x1009ab0.
@@ -111,6 +120,12 @@ pub fn dynamic_resolution_upsample(upsample: &crate::ImageSpaceEffect, sourceTar
 /// `void (void)`
 #[inline]
 pub fn end_depth_shift() { unsafe { function!(107126, ())() } }
+/// `FlushFirstPersonAccumulator`: step 14, first person only: shows the first-person root, marks g_FirstPersonAccumulator as the main-view kind (shadowMapIndex 0xffff, mask 0) unless g_SunShadowDisabled, and flushes g_FirstPersonCuller's lists into it
+///
+/// Semantic, graphics pass, high; ledger semantic evidence, name high; id 107128, rva 0x1537a80.
+/// `void (void)`
+#[inline]
+pub fn flush_first_person_accumulator() { unsafe { function!(107128, ())() } }
 /// `Fmt_PtLight`: (existing row) the reference light path: form flags +0xec bits 10-12 make it a shadow light; bit 10 spot (fov from the reference, degrees), bit 11 hemisphere (fov pi -> one parabolic map), else omni (2pi -> two maps); near = form+0xf8 (default 5.0), mask parameter = form+0xf0
 ///
 /// Semantic, graphics pass, medium; ledger semantic evidence, name medium; id 17610, rva 0x274390.
@@ -170,6 +185,15 @@ pub fn image_space_modifier__remove(imod: Option<&crate::TESImageSpaceModifier>)
 /// The pass rates the signature medium.
 #[inline]
 pub unsafe fn image_space_modifier__remove_cross_fade(seconds: f32) { unsafe { function!(18577, (f32))(seconds) } }
+/// `InitCullingParams`: zeroes a CullingParams block; +0x58 = -1, advanceFade (+0x60) = 1
+///
+/// Semantic, graphics pass, high; ledger semantic evidence, name high; id 106919, rva 0x152b6d0.
+/// `CullingParams* (CullingParams* this)`
+///
+/// # Safety
+/// `this` must point to what the engine expects, and the result is an untyped pointer.
+#[inline]
+pub unsafe fn init_culling_params(this: *mut c_void) -> *mut c_void { unsafe { function!(106919, (*mut c_void) -> *mut c_void)(this) } }
 /// `MainWindowProc`: the game window's WNDPROC (ledger: Err_ThisApplicationCannotBeRunFrom_cb2): WM_ACTIVATE app activation, WM_NCACTIVATE, WM_SIZE/WM_WINDOWPOSCHANGED -> resize request and SetWindowPosition, WM_NCHITTEST, WM_DESTROY
 ///
 /// Semantic, graphics pass, high; ledger semantic evidence, name high; id 36649, rva 0x65f270.
@@ -243,6 +267,15 @@ pub fn render_shadow_mask_passes() { unsafe { function!(107141, ())() } }
 /// `void (BSGeometryListCullingProcess* list, BSCullingProcess* culler, bool parallel)`
 #[inline]
 pub fn replay_geometry_list(list: &crate::BSGeometryListCullingProcess, culler: &crate::BSCullingProcess, parallel: bool) { unsafe { function!(76773, (*const crate::BSGeometryListCullingProcess, *const crate::BSCullingProcess, bool))(core::ptr::from_ref(list), core::ptr::from_ref(culler), parallel) } }
+/// `RunCullingWithStaticProcess`: one cull with a function-static culler (g_StaticCuller 0x33d57a0, or the parabolic 0x34059a0 when params+0x5c) or, for flushKind 1, with the culler at params+0x30; cullKind 0 = slot 23 Process(camera +0x10, root +0x40, 0), 1 = ProcessCullObjectList(+0x48, camera, skipHidden +0x61), 2 = ReplayGeometryList(+0x30); flushKind 0 = FlushGroupsToAccumulator(+0x0) then reset the culler, 1 = DrainQueuedVisible only
+///
+/// Semantic, graphics pass, high; ledger semantic evidence, name high; id 106921, rva 0x152b740.
+/// `void (CullingParams* params, u32 cullKind, u32 flushKind)`
+///
+/// # Safety
+/// `params` must point to what the engine expects.
+#[inline]
+pub unsafe fn run_culling_with_static_process(params: *mut c_void, cullKind: u32, flushKind: u32) { unsafe { function!(106921, (*mut c_void, u32, u32))(params, cullKind, flushKind) } }
 /// `SetShadowDistanceForInterior`: (existing row) g_IsInteriorShadowDistance = arg; g_ShadowDistance = fInteriorShadowDistance or fShadowDistance; g_ShadowDistanceSq
 ///
 /// Semantic, graphics pass, high; ledger runtime evidence, name high; id 105631, rva 0x14ebf00.
@@ -364,6 +397,15 @@ pub fn g_dynamic_resolution_lock() -> *mut i32 { address!(411509) as *mut i32 }
 /// `g_DynamicWidthRatio` at 0x33364b4, id 411505 (runtime, high); FrameState+0x114 (high, graphics pass), type `float`
 #[inline]
 pub fn g_dynamic_width_ratio() -> *mut f32 { address!(411505) as *mut f32 }
+/// `g_FirstPersonCuller` at 0x3436040, id 414946 (semantic, high); pointer to `BSGeometryListCullingProcess`: the step-9 first-person culler; its +0x128 list and ordered-group buckets carry the first-person geometry from step 9 to step 14; the step-9 first-person culler; its +0x128 list and ordered-group buckets carry the first-person geometry from step 9 to step 14 (high, graphics pass), type `ptr:BSGeometryListCullingProcess`
+#[inline]
+pub fn g_first_person_culler() -> Option<&'static crate::BSGeometryListCullingProcess> { unsafe { *(address!(414946) as *const Option<&'static crate::BSGeometryListCullingProcess>) } }
+/// `g_FirstPersonOffsetFrame` at 0x343602c, id 414943 (semantic, high); g_RenderFrameCounter value at which 0x3436328 was last rotated (high, graphics pass), type `u32`
+#[inline]
+pub fn g_first_person_offset_frame() -> *mut u32 { address!(414943) as *mut u32 }
+/// `g_FirstPersonRootPrevOffset` at 0x3436328, id 415045 (semantic, high); previous frame's first-person offset, passed as previousOffset to every shift and unshift (high, graphics pass), type `float[3]`
+#[inline]
+pub fn g_first_person_root_prev_offset() -> *mut c_void { address!(415045) as *mut c_void }
 /// `g_FocusShadowNodeCount` at 0x33d3e90, id 414625 (runtime, high); number of focus shadow nodes this frame (0 in vanilla first person without nearby actors) (high, graphics pass), type `u32`
 #[inline]
 pub fn g_focus_shadow_node_count() -> *mut u32 { address!(414625) as *mut u32 }

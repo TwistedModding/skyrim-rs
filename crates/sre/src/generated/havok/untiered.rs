@@ -778,30 +778,6 @@ impl crate::bhkTriangleShape {
     pub unsafe fn vfunc_47_sub0(param_1: i64, param_2: *mut u32) -> u64 { unsafe { function!(79626, (i64, *mut u32) -> u64)(param_1, param_2) } }
 }
 
-impl crate::bhkWorld {
-    /// `bhkWorld::ctor_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 77948, rva 0x1050bc0).
-    /// `undefined ctor_sub0(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn ctor_sub0(param_1: *mut i64, param_2: u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(77948, (*mut i64, u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
-    /// `bhkWorld::ctor_sub1` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 77949, rva 0x1050c20).
-    /// `undefined ctor_sub1(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn ctor_sub1(param_1: *mut i64, param_2: u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(77949, (*mut i64, u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
-    /// `bhkWorld::ctor_sub2` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 77952, rva 0x1050d40).
-    /// `undefined ctor_sub2(undefined8 * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn ctor_sub2(param_1: *mut u64, param_2: u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(77952, (*mut u64, u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
-}
-
 impl crate::hkAvoidBox {
     /// `hkAvoidBox::vfunc_16_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 78934, rva 0x108e8b0).
     /// `bool vfunc_16_sub0(longlong param_1, longlong * param_2, undefined8 param_3, ulonglong param_4, uint param_5)`

@@ -4,6 +4,17 @@
 use crate::raw::*;
 
 pub(super) const ROWS: &[Function] = &[
+    Function { rva: 0x1771780, id: 168598, confidence: Confidence::Medium, name: "GameSetting_fDiffMultXPH__atexit" },
+    Function { rva: 0x17717d0, id: 168599, confidence: Confidence::Medium, name: "GameSetting_fObjectHitH2HReach__atexit" },
+    Function { rva: 0x1771820, id: 168600, confidence: Confidence::Medium, name: "GameSetting_fObjectHitTwoHandReach__atexit" },
+    Function { rva: 0x1771870, id: 168601, confidence: Confidence::Medium, name: "GameSetting_fObjectHitWeaponReach__atexit" },
+    Function { rva: 0x17718c0, id: 168602, confidence: Confidence::Medium, name: "GameSetting_fOutOfBreathStaminaRegenDelay__atexit" },
+    Function { rva: 0x1771910, id: 168603, confidence: Confidence::Medium, name: "GameSetting_fPCBaseHealthMult__atexit" },
+    Function { rva: 0x1771960, id: 168604, confidence: Confidence::Medium, name: "GameSetting_fPCBaseMagickaMult__atexit" },
+    Function { rva: 0x17719b0, id: 168605, confidence: Confidence::Medium, name: "GameSetting_fPCHealthLevelBonus__atexit" },
+    Function { rva: 0x1771a00, id: 168606, confidence: Confidence::Medium, name: "GameSetting_fPainDelay__atexit" },
+    Function { rva: 0x1771a50, id: 168607, confidence: Confidence::Medium, name: "GameSetting_fPartialPickAverage__atexit" },
+    Function { rva: 0x1771aa0, id: 168608, confidence: Confidence::Medium, name: "GameSetting_fPartialPickEasy__atexit" },
     Function { rva: 0x1771af0, id: 168609, confidence: Confidence::Medium, name: "GameSetting_fPartialPickHard__atexit" },
     Function { rva: 0x1771b40, id: 168610, confidence: Confidence::Medium, name: "GameSetting_fPartialPickVeryEasy__atexit" },
     Function { rva: 0x1771b90, id: 168611, confidence: Confidence::Medium, name: "GameSetting_fPartialPickVeryHard__atexit" },

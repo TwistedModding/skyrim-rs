@@ -141,12 +141,6 @@ impl core::ops::Deref for crate::BGSBlockBashData {
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
-/// `BGSBodyPartData` is laid out from its primary base `TESForm`, so its methods and fields are reachable through it.
-impl core::ops::Deref for crate::BGSBodyPartData {
-    type Target = crate::TESForm;
-    #[inline]
-    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
-}
 /// `BGSCollisionLayer` is laid out from its primary base `TESForm`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::BGSCollisionLayer {
     type Target = crate::TESForm;
@@ -1990,30 +1984,6 @@ impl crate::BGSArtObject {
     /// The `TESModelTextureSwap` base at +0x30.
     #[inline]
     pub fn as_tes_model_texture_swap(&self) -> &crate::TESModelTextureSwap { unsafe { &*core::ptr::from_ref(self).byte_add(0x30).cast() } }
-}
-
-impl crate::BGSBodyPartData {
-    /// The `BGSPreloadable` base at +0x48.
-    #[inline]
-    pub fn as_bgs_preloadable(&self) -> &crate::BGSPreloadable { unsafe { &*core::ptr::from_ref(self).byte_add(0x48).cast() } }
-    /// The `BaseFormComponent` base at +0x20.
-    #[inline]
-    pub fn as_base_form_component(&self) -> &crate::BaseFormComponent { unsafe { &*core::ptr::from_ref(self).byte_add(0x20).cast() } }
-    /// The `BaseFormComponent` base at +0x48.
-    #[inline]
-    pub fn as_base_form_component_2(&self) -> &crate::BaseFormComponent { unsafe { &*core::ptr::from_ref(self).byte_add(0x48).cast() } }
-    /// The `TESModel` base at +0x20.
-    #[inline]
-    pub fn as_tes_model(&self) -> &crate::TESModel { unsafe { &*core::ptr::from_ref(self).byte_add(0x20).cast() } }
-    /// `BGSBodyPartData::GetPart`: returns parts[partIndex] (+0x50 + 8 * index) for index 0..5, else null
-    ///
-    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 23473, rva 0x38b720.
-    /// `BGSBodyPart* (const BGSBodyPartData* this, i32 partIndex)`
-    ///
-    /// # Safety
-    /// The result is an untyped pointer.
-    #[inline]
-    pub unsafe fn get_part(&self, partIndex: i32) -> *mut c_void { unsafe { function!(23473, (*const Self, i32) -> *mut c_void)(core::ptr::from_ref(self), partIndex) } }
 }
 
 impl crate::BGSCollisionLayer {

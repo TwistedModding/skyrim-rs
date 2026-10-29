@@ -3,146 +3,6 @@
 
 use core::ffi::{c_char, c_void};
 
-/// `ComputeLockCenterOffset` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 51962, rva 0x94e3d0).
-/// `uint * ComputeLockCenterOffset(longlong param_1, uint * param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn compute_lock_center_offset(param_1: i64, param_2: *mut u32) -> *mut u32 { unsafe { function!(51962, (i64, *mut u32) -> *mut u32)(param_1, param_2) } }
-/// `ComputeLogOfArg0` (decompiler signature, tier untiered; ledger decompiler evidence, name high; id 86214, rva 0xdb6c90).
-/// `undefined ComputeLogOfArg0(longlong param_1)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn compute_log_of_arg0(param_1: i64) -> u64 { unsafe { function!(86214, (i64) -> u64)(param_1) } }
-/// `ComputeMagicItemScore` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 45084, rva 0x82eaf0).
-/// `float ComputeMagicItemScore(longlong param_1, longlong param_2, int param_3, float param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn compute_magic_item_score(param_1: i64, param_2: i64, param_3: i32, param_4: f32) -> f32 { unsafe { function!(45084, (i64, i64, i32, f32) -> f32)(param_1, param_2, param_3, param_4) } }
-/// `ComputeMagicItemScoreForOwner` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 45083, rva 0x82e9f0).
-/// `undefined8 ComputeMagicItemScoreForOwner(longlong param_1, longlong * param_2, undefined4 param_3)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn compute_magic_item_score_for_owner(param_1: i64, param_2: *mut i64, param_3: u32) -> u64 { unsafe { function!(45083, (i64, *mut i64, u32) -> u64)(param_1, param_2, param_3) } }
-/// `ComputeMassAdjustedStagger` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 26428, rva 0x41f5e0).
-/// `float ComputeMassAdjustedStagger(longlong * param_1, longlong * param_2, longlong param_3, float param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn compute_mass_adjusted_stagger(param_1: *mut i64, param_2: *mut i64, param_3: i64, param_4: f32) -> f32 { unsafe { function!(26428, (*mut i64, *mut i64, i64, f32) -> f32)(param_1, param_2, param_3, param_4) } }
-/// `ComputeMassWeightedCenter` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 78108, rva 0x105a510).
-/// `undefined ComputeMassWeightedCenter(longlong * param_1, float * param_2, undefined4 * param_3)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn compute_mass_weighted_center(param_1: *mut i64, param_2: *mut f32, param_3: *mut u32) -> u64 { unsafe { function!(78108, (*mut i64, *mut f32, *mut u32) -> u64)(param_1, param_2, param_3) } }
-/// `ComputeMatrix1C0FromMatrix2x3` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 84940, rva 0x11884f0).
-/// `undefined ComputeMatrix1C0FromMatrix2x3(longlong * param_1, float * param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn compute_matrix1_c0_from_matrix2x3(param_1: *mut i64, param_2: *mut f32) -> u64 { unsafe { function!(84940, (*mut i64, *mut f32) -> u64)(param_1, param_2) } }
-/// `ComputeMaxExtentBitCount` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 81508, rva 0x112ee00).
-/// `undefined ComputeMaxExtentBitCount(longlong param_1)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn compute_max_extent_bit_count(param_1: i64) -> u64 { unsafe { function!(81508, (i64) -> u64)(param_1) } }
-/// `ComputeMaxOfArgs` (decompiler signature, tier untiered; ledger decompiler evidence, name high; id 86219, rva 0xdb6e40).
-/// `undefined ComputeMaxOfArgs(longlong param_1)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn compute_max_of_args(param_1: i64) -> u64 { unsafe { function!(86219, (i64) -> u64)(param_1) } }
-/// `ComputeMaximumOptimalRange` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 50704, rva 0x8f3680).
-/// `undefined ComputeMaximumOptimalRange(longlong param_1)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn compute_maximum_optimal_range(param_1: i64) -> u64 { unsafe { function!(50704, (i64) -> u64)(param_1) } }
-/// `ComputeMemberAlignment` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 57604, rva 0xab0c10).
-/// `int ComputeMemberAlignment(longlong param_1)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn compute_member_alignment(param_1: i64) -> i32 { unsafe { function!(57604, (i64) -> i32)(param_1) } }
-/// `ComputeMemberPositionBoxCorners` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 44753, rva 0x81c850).
-/// `undefined ComputeMemberPositionBoxCorners(longlong param_1, undefined4 * param_2, char param_3)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn compute_member_position_box_corners(param_1: i64, param_2: *mut u32, param_3: c_char) -> u64 { unsafe { function!(44753, (i64, *mut u32, c_char) -> u64)(param_1, param_2, param_3) } }
-/// `ComputeMergedBoundOfArray` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 70974, rva 0xefede0).
-/// `undefined ComputeMergedBoundOfArray(float * param_1, longlong param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn compute_merged_bound_of_array(param_1: *mut f32, param_2: i64) -> u64 { unsafe { function!(70974, (*mut f32, i64) -> u64)(param_1, param_2) } }
-/// `ComputeMeshVolumeIntegrals` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 65086, rva 0xc3a380).
-/// `undefined ComputeMeshVolumeIntegrals(int * param_1, longlong * param_2, float * param_3)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn compute_mesh_volume_integrals(param_1: *mut i32, param_2: *mut i64, param_3: *mut f32) -> u64 { unsafe { function!(65086, (*mut i32, *mut i64, *mut f32) -> u64)(param_1, param_2, param_3) } }
-/// `ComputeMeshVolumeMassProperties` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 65076, rva 0xc38e60).
-/// `undefined8 ComputeMeshVolumeMassProperties(longlong * param_1, float param_2, float * param_3)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn compute_mesh_volume_mass_properties(param_1: *mut i64, param_2: f32, param_3: *mut f32) -> u64 { unsafe { function!(65076, (*mut i64, f32, *mut f32) -> u64)(param_1, param_2, param_3) } }
-/// `ComputeMillisecondPartFromField68` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 86298, rva 0xdba0e0).
-/// `undefined ComputeMillisecondPartFromField68(longlong param_1)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn compute_millisecond_part_from_field68(param_1: i64) -> u64 { unsafe { function!(86298, (i64) -> u64)(param_1) } }
-/// `ComputeMinOfArgs` (decompiler signature, tier untiered; ledger decompiler evidence, name high; id 86220, rva 0xdb6eb0).
-/// `undefined ComputeMinOfArgs(longlong param_1)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn compute_min_of_args(param_1: i64) -> u64 { unsafe { function!(86220, (i64) -> u64)(param_1) } }
-/// `ComputeMinkowskiSupportPoint_2` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 67559, rva 0xcc6280).
-/// `undefined ComputeMinkowskiSupportPoint_2(float * param_1, uint * param_2, float * param_3)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn compute_minkowski_support_point_2(param_1: *mut f32, param_2: *mut u32, param_3: *mut f32) -> u64 { unsafe { function!(67559, (*mut f32, *mut u32, *mut f32) -> u64)(param_1, param_2, param_3) } }
-/// `ComputeMinutesFromField68Milliseconds` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 86299, rva 0xdba180).
-/// `undefined ComputeMinutesFromField68Milliseconds(longlong param_1)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn compute_minutes_from_field68_milliseconds(param_1: i64) -> u64 { unsafe { function!(86299, (i64) -> u64)(param_1) } }
-/// `ComputeModelSpaceBoneTransform` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 56999, rva 0xaa0650).
-/// `longlong ComputeModelSpaceBoneTransform(longlong * param_1, int param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn compute_model_space_bone_transform(param_1: *mut i64, param_2: i32) -> i64 { unsafe { function!(56999, (*mut i64, i32) -> i64)(param_1, param_2) } }
 /// `ComputeModelSpaceBoundingBox` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 56997, rva 0xaa0440).
 /// `undefined ComputeModelSpaceBoundingBox(longlong * param_1, undefined1[16] * param_2)`
 ///
@@ -12449,3 +12309,101 @@ pub unsafe fn deleting_dtor_object_with_hash68(param_1: *mut u64, param_2: u32, 
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn deleting_dtor_object_with_string_hash_table68(param_1: *mut u64, param_2: u32, param_3: u64, param_4: u64) -> *mut u64 { unsafe { function!(86771, (*mut u64, u32, u64, u64) -> *mut u64)(param_1, param_2, param_3, param_4) } }
+/// `DeletingDtorRefCountSize10` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 89097, rva 0xe59d90).
+/// `GRefCountImplCore * DeletingDtorRefCountSize10(GRefCountImplCore * param_1, uint param_2, undefined8 param_3, undefined8 param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn deleting_dtor_ref_count_size10(param_1: *mut crate::GRefCountImplCore, param_2: u32, param_3: u64, param_4: u64) -> *mut crate::GRefCountImplCore { unsafe { function!(89097, (*mut crate::GRefCountImplCore, u32, u64, u64) -> *mut crate::GRefCountImplCore)(param_1, param_2, param_3, param_4) } }
+/// `DeletingDtorRefCountSize10_10` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 89107, rva 0xe5a150).
+/// `GRefCountImplCore * DeletingDtorRefCountSize10_10(GRefCountImplCore * param_1, uint param_2, undefined8 param_3, undefined8 param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn deleting_dtor_ref_count_size10_10(param_1: *mut crate::GRefCountImplCore, param_2: u32, param_3: u64, param_4: u64) -> *mut crate::GRefCountImplCore { unsafe { function!(89107, (*mut crate::GRefCountImplCore, u32, u64, u64) -> *mut crate::GRefCountImplCore)(param_1, param_2, param_3, param_4) } }
+/// `DeletingDtorRefCountSize10_11` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 87725, rva 0xe6c440).
+/// `GRefCountImplCore * DeletingDtorRefCountSize10_11(GRefCountImplCore * param_1, uint param_2, undefined8 param_3, undefined8 param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn deleting_dtor_ref_count_size10_11(param_1: *mut crate::GRefCountImplCore, param_2: u32, param_3: u64, param_4: u64) -> *mut crate::GRefCountImplCore { unsafe { function!(87725, (*mut crate::GRefCountImplCore, u32, u64, u64) -> *mut crate::GRefCountImplCore)(param_1, param_2, param_3, param_4) } }
+/// `DeletingDtorRefCountSize10_12` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 524198, rva 0xe73be0).
+/// `GRefCountImplCore * DeletingDtorRefCountSize10_12(GRefCountImplCore * param_1, uint param_2, undefined8 param_3, undefined8 param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn deleting_dtor_ref_count_size10_12(param_1: *mut crate::GRefCountImplCore, param_2: u32, param_3: u64, param_4: u64) -> *mut crate::GRefCountImplCore { unsafe { function!(524198, (*mut crate::GRefCountImplCore, u32, u64, u64) -> *mut crate::GRefCountImplCore)(param_1, param_2, param_3, param_4) } }
+/// `DeletingDtorRefCountSize10_2` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 89098, rva 0xe59df0).
+/// `GRefCountImplCore * DeletingDtorRefCountSize10_2(GRefCountImplCore * param_1, uint param_2, undefined8 param_3, undefined8 param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn deleting_dtor_ref_count_size10_2(param_1: *mut crate::GRefCountImplCore, param_2: u32, param_3: u64, param_4: u64) -> *mut crate::GRefCountImplCore { unsafe { function!(89098, (*mut crate::GRefCountImplCore, u32, u64, u64) -> *mut crate::GRefCountImplCore)(param_1, param_2, param_3, param_4) } }
+/// `DeletingDtorRefCountSize10_3` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 89100, rva 0xe59eb0).
+/// `GRefCountImplCore * DeletingDtorRefCountSize10_3(GRefCountImplCore * param_1, uint param_2, undefined8 param_3, undefined8 param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn deleting_dtor_ref_count_size10_3(param_1: *mut crate::GRefCountImplCore, param_2: u32, param_3: u64, param_4: u64) -> *mut crate::GRefCountImplCore { unsafe { function!(89100, (*mut crate::GRefCountImplCore, u32, u64, u64) -> *mut crate::GRefCountImplCore)(param_1, param_2, param_3, param_4) } }
+/// `DeletingDtorRefCountSize10_4` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 89101, rva 0xe59f10).
+/// `GRefCountImplCore * DeletingDtorRefCountSize10_4(GRefCountImplCore * param_1, uint param_2, undefined8 param_3, undefined8 param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn deleting_dtor_ref_count_size10_4(param_1: *mut crate::GRefCountImplCore, param_2: u32, param_3: u64, param_4: u64) -> *mut crate::GRefCountImplCore { unsafe { function!(89101, (*mut crate::GRefCountImplCore, u32, u64, u64) -> *mut crate::GRefCountImplCore)(param_1, param_2, param_3, param_4) } }
+/// `DeletingDtorRefCountSize10_5` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 89102, rva 0xe59f70).
+/// `GRefCountImplCore * DeletingDtorRefCountSize10_5(GRefCountImplCore * param_1, uint param_2, undefined8 param_3, undefined8 param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn deleting_dtor_ref_count_size10_5(param_1: *mut crate::GRefCountImplCore, param_2: u32, param_3: u64, param_4: u64) -> *mut crate::GRefCountImplCore { unsafe { function!(89102, (*mut crate::GRefCountImplCore, u32, u64, u64) -> *mut crate::GRefCountImplCore)(param_1, param_2, param_3, param_4) } }
+/// `DeletingDtorRefCountSize10_6` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 89103, rva 0xe59fd0).
+/// `GRefCountImplCore * DeletingDtorRefCountSize10_6(GRefCountImplCore * param_1, uint param_2, undefined8 param_3, undefined8 param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn deleting_dtor_ref_count_size10_6(param_1: *mut crate::GRefCountImplCore, param_2: u32, param_3: u64, param_4: u64) -> *mut crate::GRefCountImplCore { unsafe { function!(89103, (*mut crate::GRefCountImplCore, u32, u64, u64) -> *mut crate::GRefCountImplCore)(param_1, param_2, param_3, param_4) } }
+/// `DeletingDtorRefCountSize10_7` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 89104, rva 0xe5a030).
+/// `GRefCountImplCore * DeletingDtorRefCountSize10_7(GRefCountImplCore * param_1, uint param_2, undefined8 param_3, undefined8 param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn deleting_dtor_ref_count_size10_7(param_1: *mut crate::GRefCountImplCore, param_2: u32, param_3: u64, param_4: u64) -> *mut crate::GRefCountImplCore { unsafe { function!(89104, (*mut crate::GRefCountImplCore, u32, u64, u64) -> *mut crate::GRefCountImplCore)(param_1, param_2, param_3, param_4) } }
+/// `DeletingDtorRefCountSize10_8` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 89105, rva 0xe5a090).
+/// `GRefCountImplCore * DeletingDtorRefCountSize10_8(GRefCountImplCore * param_1, uint param_2, undefined8 param_3, undefined8 param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn deleting_dtor_ref_count_size10_8(param_1: *mut crate::GRefCountImplCore, param_2: u32, param_3: u64, param_4: u64) -> *mut crate::GRefCountImplCore { unsafe { function!(89105, (*mut crate::GRefCountImplCore, u32, u64, u64) -> *mut crate::GRefCountImplCore)(param_1, param_2, param_3, param_4) } }
+/// `DeletingDtorRefCountSize10_9` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 89106, rva 0xe5a0f0).
+/// `GRefCountImplCore * DeletingDtorRefCountSize10_9(GRefCountImplCore * param_1, uint param_2, undefined8 param_3, undefined8 param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn deleting_dtor_ref_count_size10_9(param_1: *mut crate::GRefCountImplCore, param_2: u32, param_3: u64, param_4: u64) -> *mut crate::GRefCountImplCore { unsafe { function!(89106, (*mut crate::GRefCountImplCore, u32, u64, u64) -> *mut crate::GRefCountImplCore)(param_1, param_2, param_3, param_4) } }
+/// `DeletingDtorRefCountSize28` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 89113, rva 0xe5a580).
+/// `GRefCountImplCore * DeletingDtorRefCountSize28(GRefCountImplCore * param_1, uint param_2, undefined8 param_3, undefined8 param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn deleting_dtor_ref_count_size28(param_1: *mut crate::GRefCountImplCore, param_2: u32, param_3: u64, param_4: u64) -> *mut crate::GRefCountImplCore { unsafe { function!(89113, (*mut crate::GRefCountImplCore, u32, u64, u64) -> *mut crate::GRefCountImplCore)(param_1, param_2, param_3, param_4) } }
+/// `DeletingDtorReleaseRefArraySize48` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 87155, rva 0xde7c60).
+/// `GRefCountImplCore * DeletingDtorReleaseRefArraySize48(GRefCountImplCore * param_1, uint param_2, undefined8 param_3, undefined8 param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn deleting_dtor_release_ref_array_size48(param_1: *mut crate::GRefCountImplCore, param_2: u32, param_3: u64, param_4: u64) -> *mut crate::GRefCountImplCore { unsafe { function!(87155, (*mut crate::GRefCountImplCore, u32, u64, u64) -> *mut crate::GRefCountImplCore)(param_1, param_2, param_3, param_4) } }

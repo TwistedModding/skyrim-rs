@@ -4,6 +4,15 @@
 use crate::raw::*;
 
 pub(super) const ROWS: &[Function] = &[
+    Function { rva: 0x7e1c40, id: 43794, confidence: Confidence::Medium, name: "ConeProjectile::SaveGame" },
+    Function { rva: 0x7e1d00, id: 43795, confidence: Confidence::Medium, name: "ConeProjectile::LoadGame" },
+    Function { rva: 0x7e1da0, id: 43796, confidence: Confidence::High, name: "ConeProjectile::vfunc_16" },
+    Function { rva: 0x7e1db0, id: 43797, confidence: Confidence::High, name: "ConeProjectile::vfunc_17" },
+    Function { rva: 0x7e1dc0, id: 43798, confidence: Confidence::High, name: "ConeProjectile::vfunc_18" },
+    Function { rva: 0x7e1e50, id: 43799, confidence: Confidence::High, name: "ConeProjectile::vfunc_184" },
+    Function { rva: 0x7e1e60, id: 43800, confidence: Confidence::High, name: "ConeProjectile::vfunc_188" },
+    Function { rva: 0x7e1fd0, id: 43801, confidence: Confidence::High, name: "ConeProjectile::vfunc_189" },
+    Function { rva: 0x7e20a0, id: 43802, confidence: Confidence::High, name: "ConeProjectile::vfunc_190" },
     Function { rva: 0x7e27e0, id: 43803, confidence: Confidence::High, name: "ConeProjectile::vfunc_192" },
     Function { rva: 0x7e2920, id: 43804, confidence: Confidence::Medium, name: "ConeProjectile::vfunc_190_sub0" },
     Function { rva: 0x7e2e50, id: 43806, confidence: Confidence::Medium, name: "ConeProjectile::vfunc_171_sub0" },
@@ -6429,12 +6438,4 @@ pub(super) const ROWS: &[Function] = &[
     Function { rva: 0x91bcc0, id: 51254, confidence: Confidence::High, name: "BSTArrayBase::IAllocatorFunctor::dtor" },
     Function { rva: 0x91bde0, id: 51255, confidence: Confidence::High, name: "ClearAndFreeHashMap16Thunk" },
     Function { rva: 0x91bdf0, id: 51256, confidence: Confidence::Medium, name: "CraftingSubMenus::SmithingMenu::ctor_sub0" },
-    Function { rva: 0x91be00, id: 51257, confidence: Confidence::Medium, name: "FreeHashMapStorage" },
-    Function { rva: 0x91bec0, id: 51258, confidence: Confidence::Medium, name: "FreeSmallArrayBuffer_4" },
-    Function { rva: 0x91bf10, id: 51259, confidence: Confidence::Medium, name: "FreeSmallArrayBufferAndClearCount" },
-    Function { rva: 0x91bf60, id: 51260, confidence: Confidence::Medium, name: "DeleteOwnedList8" },
-    Function { rva: 0x91bf90, id: 51261, confidence: Confidence::Medium, name: "CraftingSubMenus::EnchantConstructMenu::ctor_sub0" },
-    Function { rva: 0x91bfc0, id: 51262, confidence: Confidence::High, name: "ReleaseRefPtr_19" },
-    Function { rva: 0x91bfe0, id: 51263, confidence: Confidence::High, name: "DecRefPtrIfSet" },
-    Function { rva: 0x91c000, id: 51264, confidence: Confidence::Medium, name: "CraftingSubMenus::AlchemyMenu::ctor" },
 ];

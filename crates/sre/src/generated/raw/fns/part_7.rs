@@ -3,6 +3,34 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextMagic>::vdtor` at 0x8b6830 (slot_propagation, medium); signature (low): `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextMagic> * vdtor(CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextMagic> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextMagic__vdtor: u64 = 49118;
+/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextMagic>::vfunc_3` at 0x8b6e50 (rtti, medium); signature (low): `undefined vfunc_3(CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextMagic> * this, longlong * param_1)`
+pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextMagic__vfunc_3: u64 = 49139;
+/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextMagic>::vfunc_6` at 0x8b74b0 (rtti, medium); signature (low): `undefined vfunc_6(CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextMagic> * this, longlong * param_1, longlong param_2)`
+pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextMagic__vfunc_6: u64 = 49154;
+/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextMagic>::vfunc_7` at 0x8b7300 (rtti, medium); signature (low): `undefined vfunc_7(CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextMagic> * this, longlong * param_1, longlong param_2, undefined8 param_3)`
+pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextMagic__vfunc_7: u64 = 49150;
+/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextMagic>::vfunc_8` at 0x8b7870 (rtti, medium); signature (low): `bool vfunc_8(CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextMagic> * this, longlong param_1)`
+pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextMagic__vfunc_8: u64 = 49162;
+/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextMagic>::vfunc_9` at 0x8b7050 (rtti, medium); signature (low): `undefined * vfunc_9(void)`
+pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextMagic__vfunc_9: u64 = 49144;
+/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextMelee>::vdtor` at 0x8ba360 (slot_propagation, medium); signature (low): `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextMelee> * vdtor(CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextMelee> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextMelee__vdtor: u64 = 49188;
+/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextMelee>::vfunc_3` at 0x8ba760 (rtti, medium); signature (low): `undefined vfunc_3(CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextMelee> * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
+pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextMelee__vfunc_3: u64 = 49201;
+/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextMelee>::vfunc_6` at 0x8bac20 (rtti, medium); signature (low): `undefined vfunc_6(CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextMelee> * this, longlong * param_1, longlong param_2)`
+pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextMelee__vfunc_6: u64 = 49210;
+/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextMelee>::vfunc_7` at 0x8ba9e0 (rtti, medium); signature (low): `undefined vfunc_7(CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextMelee> * this, longlong * param_1, longlong param_2, undefined8 param_3)`
+pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextMelee__vfunc_7: u64 = 49207;
+/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextMelee>::vfunc_8` at 0x8baf30 (rtti, medium); signature (low): `bool vfunc_8(CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextMelee> * this, longlong param_1)`
+pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextMelee__vfunc_8: u64 = 49215;
+/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextMelee>::vfunc_9` at 0x8ba830 (rtti, medium); signature (low): `undefined * vfunc_9(void)`
+pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextMelee__vfunc_9: u64 = 49204;
+/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextRanged>::vdtor` at 0x55ee10 (slot_propagation, medium); signature (low): `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextRanged> * vdtor(CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextRanged> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextRanged__vdtor: u64 = 33158;
+/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextRanged>::vfunc_3` at 0x55f510 (rtti, medium); signature (low): `undefined vfunc_3(CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextRanged> * this, longlong * param_1)`
+pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextRanged__vfunc_3: u64 = 33179;
 /// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextRanged>::vfunc_6` at 0x55fcd0 (rtti, medium); signature (low): `undefined vfunc_6(CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextRanged> * this, longlong * param_1, longlong param_2, undefined8 param_3)`
 pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextRanged__vfunc_6: u64 = 33199;
 /// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextRanged>::vfunc_7` at 0x55f9e0 (rtti, medium); signature (low): `undefined vfunc_7(CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextRanged> * this, longlong * param_1, longlong param_2, undefined8 param_3)`
@@ -5711,39 +5739,3 @@ pub const CompareStringsNoCase: u64 = 57120;
 pub const CompareStringsNoCaseN: u64 = 82611;
 /// `CompareValuesByFields` at 0xd6b8e0 (decompiler, medium); signature (untiered): `int CompareValuesByFields(longlong param_1, byte * param_2, byte * param_3)`
 pub const CompareValuesByFields: u64 = 84385;
-/// `CompareValuesWithSortFlags` at 0xd6b410 (decompiler, medium); signature (medium): `uint CompareValuesWithSortFlags(undefined8 * param_1, byte * param_2, byte * param_3)`
-pub const CompareValuesWithSortFlags: u64 = 84384;
-/// `CompareVariantMapsEqual` at 0x1498610 (decompiler, medium); signature (medium): `bool CompareVariantMapsEqual(longlong param_1, longlong param_2)`
-pub const CompareVariantMapsEqual: u64 = 104403;
-/// `CompareVertexAttributes` at 0xefb320 (decompiler, medium); signature (medium): `undefined8 CompareVertexAttributes(undefined8 param_1, ushort param_2, ushort param_3, longlong param_4, longlong param_5, longlong param_6, longlong param_7)`
-pub const CompareVertexAttributes: u64 = 70892;
-/// `CompareVfuncStringsNoCase` at 0x3f0640 (decompiler, medium); signature (medium): `undefined CompareVfuncStringsNoCase(longlong * param_1, longlong * param_2)`
-pub const CompareVfuncStringsNoCase: u64 = 25563;
-/// `CompareWideCharArrays` at 0x128f190 (decompiler, high); signature (high): `undefined8 CompareWideCharArrays(undefined1[32] * param_1, undefined1[32] * param_2, ulonglong param_3)`
-pub const CompareWideCharArrays: u64 = 524803;
-/// `CompareWideCharBuffers` at 0x128ede0 (decompiler, medium); signature (medium): `undefined8 CompareWideCharBuffers(undefined1[32] * param_1, undefined1[32] * param_2, ulonglong param_3)`
-pub const CompareWideCharBuffers: u64 = 524801;
-/// `CompareWideToNarrowNoCase` at 0xe37a40 (decompiler, medium); signature (medium): `int CompareWideToNarrowNoCase(ushort * param_1, char * param_2, longlong param_3)`
-pub const CompareWideToNarrowNoCase: u64 = 88524;
-/// `Compass::Update` at 0x9385b0 (semantic, high); signature (untiered): `undefined Update(Compass * this)`; semantic: HUD compass: adds the quest target marker, uploads the markers ('SetCompassMarkers'), then 'SetCompassAngle' with the heading PlayerCamera.yaw in degrees (times 57.2958) and the same plus the cell's north rotation, both wrapped to [0, 360), and bShowCompass:Interface (high); signature `void (Compass* this)`
-pub const Compass__Update: u64 = 51668;
-/// `Compass::Update` as a function pointer type (high).
-pub type Compass__Update_fn = unsafe extern "C" fn(this: *mut crate::Compass);
-/// `Compass::vfunc_0` at 0x93bc60 (rtti, high); signature (low): `Compass * vfunc_0(Compass * this, uint param_1, Compass_vtbl * param_2, undefined8 param_3)`
-pub const Compass__vfunc_0: u64 = 51711;
-/// `Compass::vfunc_3` at 0x9388c0 (rtti, high); signature (low): `undefined vfunc_3(Compass * this, longlong param_1)`
-pub const Compass__vfunc_3: u64 = 51669;
-/// `CompileAndRunScript` at 0x343d00 (runtime, high); signature (untiered): `undefined CompileAndRunScript(longlong * param_1, undefined8 param_2, uint param_3, longlong param_4)`; semantic: compiles script->text and, when the result is non-empty, runs it on thisRef; compileType 1 (console) sets TLS+0x600 for the run (high); signature `void (Script* script, ScriptCompiler* compiler, ScriptCompileType compileType, TESObjectREFR* thisRef)`
-pub const CompileAndRunScript: u64 = 441582;
-/// `CompileAndRunScript` as a function pointer type (high).
-pub type CompileAndRunScript_fn = unsafe extern "C" fn(script: *mut crate::Script, compiler: *mut c_void, compileType: u32, thisRef: *mut crate::TESObjectREFR);
-/// `CompileExpressionTokens` at 0x34b9f0 (semantic, medium); signature (untiered): `int CompileExpressionTokens(undefined8 param_1, longlong param_2, undefined4 * param_3, longlong param_4, longlong param_5)`; semantic: compiles function calls inside set/if expressions as 'X' u16 opcode u16 len params, variables as 'r'/'G'/'Z' tokens (medium); signature `int (ScriptCompiler*, ScriptCompileBuffer*, uint* lineNo, const char* expr, char* out)`
-pub const CompileExpressionTokens: u64 = 21971;
-/// `CompileNextLine` at 0x34b150 (semantic, high); signature (untiered): `int CompileNextLine(undefined8 param_1, longlong * param_2, undefined8 param_3, undefined8 param_4)`; semantic: reads the next line into a ScriptLineBuffer (0x41c), reads its first token and looks the command up; returns the line's opcode or 0xffff (high); signature `uint (ScriptCompileBuffer* buf)`
-pub const CompileNextLine: u64 = 21966;
-/// `CompileNextLine` as a function pointer type (high).
-pub type CompileNextLine_fn = unsafe extern "C" fn(buf: *mut c_void) -> u32;
-/// `CompileScriptLine` at 0x34a4e0 (semantic, high); signature (untiered): `undefined8 CompileScriptLine(undefined8 param_1, longlong param_2, TypeDescriptor * param_3, TypeDescriptor * param_4)`; semantic: per-opcode compile of a line; for a command: reference checks, then entry->parse(numParams, params, line, buf) when params != 0, then emits [u16 0x1c, u16 refIndex] u16 opcode, u16 dataLen, data (MAX_SCRIPT_SIZE 0x4000) (high); signature `bool (ScriptCompiler*, Script*, ScriptCompileBuffer* buf, ScriptLineBuffer* line)`
-pub const CompileScriptLine: u64 = 21965;
-/// `CompileScriptLine` as a function pointer type (high).
-pub type CompileScriptLine_fn = unsafe extern "C" fn(a0: *mut c_void, a1: *mut crate::Script, buf: *mut c_void, line: *mut crate::ScriptLineBuffer) -> bool;

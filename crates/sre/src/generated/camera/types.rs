@@ -265,6 +265,74 @@ const _: () = assert!(core::mem::offset_of!(BGSAcousticSpaceListener, field_34) 
 const _: () = assert!(core::mem::offset_of!(BGSAcousticSpaceListener, field_38) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BGSAcousticSpaceListener, field_48) == 0x48);
 
+/// `BGSBodyPart`: size 0xF0 (exact).
+/// Meaning: one body part of a BGSBodyPartData (high, camera pass).
+/// Evidence: one body part of a BGSBodyPartData; ; size: AllocateMemory(0xf0) and OperatorDelete(.., 0xf0) in 0x38b2f0.
+#[repr(C)]
+pub struct BGSBodyPart {
+    /// +0x0 `class:BSFixedString`, semantic; the node looked up in the actor's 3D (LookupNamedObject 0xfddac0(root, &part->nodeName, true)) (high)
+    pub nodeName: crate::BSFixedString,
+    pub unknown_8: [u8; 117],
+    /// +0x7D `undefined1`, semantic; BodyPartType (0..5); selects the slot in partsByType (high)
+    pub type_: u8,
+    pub unknown_7E: [u8; 114],
+    #[doc(hidden)]
+    pub __engine: crate::Engine,
+}
+const _: () = assert!(size_of::<BGSBodyPart>() == 0xF0);
+const _: () = assert!(core::mem::offset_of!(BGSBodyPart, nodeName) == 0x0);
+const _: () = assert!(core::mem::offset_of!(BGSBodyPart, type_) == 0x7D);
+
+/// `BGSBodyPartData`: size 0x88 (exact, high); primary base `TESForm`.
+/// Meaning: race body part data; parts indexed by part type (high, camera pass).
+/// Evidence: runtime: 0x88 at 3 allocation sites; agrees with the static allocation sites.
+/// Bases: `TESForm`@0x0, `BaseFormComponent`@0x0, `TESModel`@0x20, `BaseFormComponent`@0x20, `BGSPreloadable`@0x48, `BaseFormComponent`@0x48.
+#[repr(C)]
+pub struct BGSBodyPartData {
+    /// +0x0 `vtbl:BGSBodyPartData:0`, rtti
+    #[doc(hidden)]
+    pub __vftable: *const crate::raw::vtables::BGSBodyPartData_vtable,
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
+    pub sourceFiles: *mut crate::TESFileArray,
+    /// +0x10 `undefined4`, base TESForm, semantic; record flags; see the flag rows (high)
+    pub formFlags: u32,
+    /// +0x14 `undefined4`, base TESForm, semantic; the form id (high)
+    pub formID: u32,
+    /// +0x18 `undefined2`, base TESForm, semantic; 16-bit flag word saved with the form; low 6 bits restored on load (medium)
+    pub inGameFlags: u16,
+    /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
+    pub formType: u8,
+    pub unknown_1B: [u8; 5],
+    /// +0x20 `vtbl:BGSBodyPartData:20`, rtti
+    #[doc(hidden)]
+    pub __vftable_20: *const crate::raw::vtables::BGSBodyPartData_vtable_20,
+    pub unknown_28: [u8; 8],
+    /// +0x30 `undefined8`, base TESModel
+    pub field_30: u64,
+    pub unknown_38: [u8; 16],
+    /// +0x48 `vtbl:BGSBodyPartData:48`, rtti
+    #[doc(hidden)]
+    pub __vftable_48: *const crate::raw::vtables::BGSBodyPartData_vtable_48,
+    /// +0x50 `pointer`, semantic; BGSBodyPart*[6], index = BodyPartType (high)
+    pub partsByType: [u8; 48],
+    /// +0x80 `undefined8`, ctor store
+    pub field_80: u64,
+    #[doc(hidden)]
+    pub __engine: crate::Engine,
+}
+const _: () = assert!(size_of::<BGSBodyPartData>() == 0x88);
+const _: () = assert!(core::mem::offset_of!(BGSBodyPartData, __vftable) == 0x0);
+const _: () = assert!(core::mem::offset_of!(BGSBodyPartData, sourceFiles) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BGSBodyPartData, formFlags) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BGSBodyPartData, formID) == 0x14);
+const _: () = assert!(core::mem::offset_of!(BGSBodyPartData, inGameFlags) == 0x18);
+const _: () = assert!(core::mem::offset_of!(BGSBodyPartData, formType) == 0x1A);
+const _: () = assert!(core::mem::offset_of!(BGSBodyPartData, __vftable_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(BGSBodyPartData, field_30) == 0x30);
+const _: () = assert!(core::mem::offset_of!(BGSBodyPartData, __vftable_48) == 0x48);
+const _: () = assert!(core::mem::offset_of!(BGSBodyPartData, partsByType) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BGSBodyPartData, field_80) == 0x80);
+
 /// `BGSCameraPath`: size 0x58 (exact, high); primary base `TESForm`.
 /// Meaning: CPTH form (type 0x61): a node of the kill-camera path tree: conditions, an ordered list of shots, a flag byte, children, parent and previous-sibling links. The VATS code picks the deepest path whose conditions pass and plays its shots in list order (high, camera pass).
 /// Evidence: runtime: 0x58 at 2 allocation sites.
@@ -1003,6 +1071,45 @@ const _: () = assert!(core::mem::offset_of!(BleedoutCameraState, soundHandlePad)
 const _: () = assert!(core::mem::offset_of!(BleedoutCameraState, soundHandleRequestedState) == 0x130);
 const _: () = assert!(core::mem::offset_of!(BleedoutCameraState, followHeading) == 0x134);
 const _: () = assert!(core::mem::offset_of!(BleedoutCameraState, pad135) == 0x135);
+
+/// `CachedRaycastData`: size 0x38 (exact, medium); primary base `hkaRaycastInterface`.
+/// Meaning: per-actor hkaRaycastInterface the foot IK uses (medium, camera pass).
+/// Evidence: camera pass (semantic): Fields from PopulateFromREFRHandle 0x54b280.; size: BGSFootIkRaycastInterfaceDB stores entries at stride 0x38 (0x54ae27..).
+/// Bases: `hkaRaycastInterface`@0x0.
+#[repr(C)]
+pub struct CachedRaycastData {
+    /// +0x0 `vtbl:CachedRaycastData:0`, rtti
+    #[doc(hidden)]
+    pub __vftable: *const crate::raw::vtables::CachedRaycastData_vtable,
+    /// +0x8 `undefined4`, semantic; the actor's reference handle (high)
+    pub handle: u32,
+    pub unknown_C: [u8; 4],
+    /// +0x10 `pointer`, semantic; char controller's caching shape phantom (when its type slot 6 returns 2) (medium)
+    pub cachingPhantom: *mut c_void,
+    /// +0x18 `pointer`, semantic; char controller's collected bodies (mode 1) (medium)
+    pub collectedBodies: *mut c_void,
+    /// +0x20 `ptr:bhkWorld`, semantic; the actor's bhkWorld (fallback cast through slot 51) (high)
+    pub world: *mut crate::bhkWorld,
+    /// +0x28 `undefined4`, semantic; the actor's filter info >> 16, shifted back into the ray's filterInfo (high)
+    pub collisionGroup: u32,
+    /// +0x2C `undefined1`, semantic; when set the cast skips the phantom and bodies paths and uses the world (medium)
+    pub useWorldOnly: u8,
+    pub unknown_2D: [u8; 3],
+    /// +0x30 `undefined1`, semantic; sticky: any cast hit (medium)
+    pub everHit: u8,
+    pub unknown_31: [u8; 7],
+    #[doc(hidden)]
+    pub __engine: crate::Engine,
+}
+const _: () = assert!(size_of::<CachedRaycastData>() == 0x38);
+const _: () = assert!(core::mem::offset_of!(CachedRaycastData, __vftable) == 0x0);
+const _: () = assert!(core::mem::offset_of!(CachedRaycastData, handle) == 0x8);
+const _: () = assert!(core::mem::offset_of!(CachedRaycastData, cachingPhantom) == 0x10);
+const _: () = assert!(core::mem::offset_of!(CachedRaycastData, collectedBodies) == 0x18);
+const _: () = assert!(core::mem::offset_of!(CachedRaycastData, world) == 0x20);
+const _: () = assert!(core::mem::offset_of!(CachedRaycastData, collisionGroup) == 0x28);
+const _: () = assert!(core::mem::offset_of!(CachedRaycastData, useWorldOnly) == 0x2C);
+const _: () = assert!(core::mem::offset_of!(CachedRaycastData, everHit) == 0x30);
 
 /// `CameraCasterHolder`: size 0x10 (exact).
 /// Meaning: PlayerCamera+0x120: two refcounted bhkSimpleShapePhantoms built by CreateSpherePhantom 0x557e40 around one bhkSphereShape of radius fCameraCasterSize * havok scale (collision layer 0x27 with a fresh group from bhkCollisionFilter+0x4c) (high, camera pass).
@@ -2715,6 +2822,229 @@ const _: () = assert!(core::mem::offset_of!(RaceSexCamera, initialPosition) == 0
 const _: () = assert!(core::mem::offset_of!(RaceSexCamera, initialRotation) == 0x44);
 const _: () = assert!(core::mem::offset_of!(RaceSexCamera, padding54) == 0x54);
 
+/// `RaceSexMenu`: size 0x1A8 (exact, medium); primary base `IMenu`.
+/// Meaning: the race menu (high, camera pass).
+/// Evidence: allocation sites (medium): {'424': 1}.
+/// Bases: `IMenu`@0x0, `FxDelegateHandler`@0x0, `GRefCountBase<FxDelegateHandler,2>`@0x0, `GRefCountBaseStatImpl<GRefCountImpl,2>`@0x0, `GRefCountImpl`@0x0, `GRefCountImplCore`@0x0, `MenuEventHandler`@0x30, `BSIntrusiveRefCounted`@0x38.
+#[repr(C)]
+pub struct RaceSexMenu {
+    /// +0x0 `vtbl:RaceSexMenu:0`, rtti
+    #[doc(hidden)]
+    pub __vftable: *const crate::raw::vtables::RaceSexMenu_vtable,
+    /// +0x8 `undefined4`, base GRefCountImplCore
+    pub field_8: u32,
+    pub unknown_C: [u8; 4],
+    /// +0x10 `undefined1`, base GRefCountImplCore
+    pub field_10: u8,
+    /// +0x11 `undefined1`, base GRefCountImplCore
+    pub field_11: u8,
+    /// +0x12 `undefined2`, base GRefCountImplCore
+    pub field_12: u16,
+    /// +0x14 `undefined4`, base GRefCountImplCore
+    pub field_14: u32,
+    /// +0x18 `undefined4`, base GRefCountImplCore
+    pub field_18: u32,
+    /// +0x1C `undefined4`, base GRefCountImplCore
+    pub field_1C: u32,
+    /// +0x20 `undefined1`, base GRefCountImplCore
+    pub field_20: u8,
+    pub unknown_21: [u8; 3],
+    /// +0x24 `undefined4`, base GRefCountImplCore
+    pub field_24: u32,
+    /// +0x28 `undefined1`, base GRefCountImplCore
+    pub field_28: u8,
+    pub unknown_29: [u8; 3],
+    /// +0x2C `undefined4`, base GRefCountImplCore
+    pub field_2C: u32,
+    /// +0x30 `vtbl:RaceSexMenu:30`, rtti
+    #[doc(hidden)]
+    pub __vftable_30: *const crate::raw::vtables::RaceSexMenu_vtable_30,
+    /// +0x38 `undefined1`, base GRefCountImplCore
+    pub field_38: u8,
+    pub unknown_39: [u8; 3],
+    /// +0x3C `undefined4`, base GRefCountImplCore
+    pub field_3C: u32,
+    /// +0x40 `undefined1`, base GRefCountImplCore
+    pub field_40: u8,
+    pub unknown_41: [u8; 3],
+    /// +0x44 `undefined4`, base GRefCountImplCore
+    pub field_44: u32,
+    /// +0x48 `undefined1`, base GRefCountImplCore
+    pub field_48: u8,
+    pub unknown_49: [u8; 3],
+    /// +0x4C `undefined4`, base GRefCountImplCore
+    pub field_4C: u32,
+    /// +0x50 `undefined2`, base GRefCountImplCore
+    pub field_50: u16,
+    pub unknown_52: [u8; 2],
+    /// +0x54 `undefined4`, base GRefCountImplCore
+    pub field_54: u32,
+    /// +0x58 `float`, base GRefCountImplCore
+    pub field_58: f32,
+    /// +0x5C `float`, base GRefCountImplCore
+    pub field_5C: f32,
+    /// +0x60 `undefined1`, base GRefCountImplCore
+    pub field_60: u8,
+    pub unknown_61: [u8; 3],
+    /// +0x64 `undefined1`, base GRefCountImplCore
+    pub field_64: u8,
+    pub unknown_65: [u8; 3],
+    /// +0x68 `undefined4`, base GRefCountImplCore
+    pub field_68: u32,
+    /// +0x6C `undefined4`, base GRefCountImplCore
+    pub field_6C: u32,
+    /// +0x70 `undefined1`, base GRefCountImplCore
+    pub field_70: u8,
+    pub unknown_71: [u8; 3],
+    /// +0x74 `undefined4`, base GRefCountImplCore
+    pub field_74: u32,
+    /// +0x78 `undefined1`, base GRefCountImplCore
+    pub field_78: u8,
+    pub unknown_79: [u8; 1],
+    /// +0x7A `undefined2`, base GRefCountImplCore
+    pub field_7A: u16,
+    /// +0x7C `undefined4`, base GRefCountImplCore
+    pub field_7C: u32,
+    /// +0x80 `undefined1`, base GRefCountImplCore
+    pub field_80: u8,
+    pub unknown_81: [u8; 3],
+    /// +0x84 `undefined4`, base GRefCountImplCore
+    pub field_84: u32,
+    /// +0x88 `undefined1`, base GRefCountImplCore
+    pub field_88: u8,
+    pub unknown_89: [u8; 3],
+    /// +0x8C `undefined4`, base GRefCountImplCore
+    pub field_8C: u32,
+    /// +0x90 `undefined2`, base GRefCountImplCore
+    pub field_90: u16,
+    pub unknown_92: [u8; 2],
+    /// +0x94 `undefined4`, base GRefCountImplCore
+    pub field_94: u32,
+    /// +0x98 `undefined1`, base GRefCountImplCore
+    pub field_98: u8,
+    pub unknown_99: [u8; 3],
+    /// +0x9C `undefined4`, base GRefCountImplCore
+    pub field_9C: u32,
+    /// +0xA0 `undefined4`, base GRefCountImplCore
+    pub field_A0: u32,
+    /// +0xA4 `undefined4`, base GRefCountImplCore
+    pub field_A4: u32,
+    /// +0xA8 `undefined1`, base GRefCountImplCore
+    pub field_A8: u8,
+    pub unknown_A9: [u8; 3],
+    /// +0xAC `undefined4`, base GRefCountImplCore
+    pub field_AC: u32,
+    /// +0xB0 `undefined4`, base GRefCountImplCore
+    pub field_B0: u32,
+    /// +0xB4 `undefined4`, base GRefCountImplCore
+    pub field_B4: u32,
+    /// +0xB8 `undefined1`, base GRefCountImplCore
+    pub field_B8: u8,
+    pub unknown_B9: [u8; 3],
+    /// +0xBC `undefined4`, base GRefCountImplCore
+    pub field_BC: u32,
+    pub unknown_C0: [u8; 40],
+    /// +0xE8 `undefined8`, member ctor RaceSexCamera
+    pub m_RaceSexCamera_E8: u64,
+    pub unknown_F0: [u8; 48],
+    /// +0x120 `undefined8`, ctor store
+    pub field_120: u64,
+    /// +0x128 `undefined4`, ctor store
+    pub field_128: u32,
+    pub unknown_12C: [u8; 84],
+    /// +0x180 `undefined4`, ctor store
+    pub field_180: u32,
+    pub unknown_184: [u8; 4],
+    /// +0x188 `undefined8`, ctor store
+    pub field_188: u64,
+    /// +0x190 `float`, semantic; the graph's LookAtOnGain before the menu (restored by the vdtor 0x972f8f) (medium)
+    pub savedLookAtOnGain: f32,
+    /// +0x194 `float`, semantic; (float)g_ScreenWidth (0x33363c4) at construction; the cursor test's divisor (high)
+    pub screenWidth: f32,
+    /// +0x198 `undefined4`, ctor store
+    pub field_198: u32,
+    /// +0x19C `undefined2`, ctor store
+    pub field_19C: u16,
+    /// +0x19E `undefined1`, ctor store
+    pub field_19E: u8,
+    pub unknown_19F: [u8; 1],
+    /// +0x1A0 `undefined1`, ctor store
+    pub field_1A0: u8,
+    /// +0x1A1 `undefined1`, ctor store
+    pub field_1A1: u8,
+    /// +0x1A2 `u8`, semantic; the head look is being driven by the stick or the mouse (medium)
+    pub lookInputActive: u8,
+    pub unknown_1A3: [u8; 2],
+    /// +0x1A5 `u8`, semantic; left button pressed with the cursor right of 45 % of the screen width; mouse moves then steer the head (high)
+    pub mouseLookDrag: u8,
+    pub unknown_1A6: [u8; 2],
+    #[doc(hidden)]
+    pub __engine: crate::Engine,
+}
+const _: () = assert!(size_of::<RaceSexMenu>() == 0x1A8);
+const _: () = assert!(core::mem::offset_of!(RaceSexMenu, __vftable) == 0x0);
+const _: () = assert!(core::mem::offset_of!(RaceSexMenu, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(RaceSexMenu, field_10) == 0x10);
+const _: () = assert!(core::mem::offset_of!(RaceSexMenu, field_11) == 0x11);
+const _: () = assert!(core::mem::offset_of!(RaceSexMenu, field_12) == 0x12);
+const _: () = assert!(core::mem::offset_of!(RaceSexMenu, field_14) == 0x14);
+const _: () = assert!(core::mem::offset_of!(RaceSexMenu, field_18) == 0x18);
+const _: () = assert!(core::mem::offset_of!(RaceSexMenu, field_1C) == 0x1C);
+const _: () = assert!(core::mem::offset_of!(RaceSexMenu, field_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(RaceSexMenu, field_24) == 0x24);
+const _: () = assert!(core::mem::offset_of!(RaceSexMenu, field_28) == 0x28);
+const _: () = assert!(core::mem::offset_of!(RaceSexMenu, field_2C) == 0x2C);
+const _: () = assert!(core::mem::offset_of!(RaceSexMenu, __vftable_30) == 0x30);
+const _: () = assert!(core::mem::offset_of!(RaceSexMenu, field_38) == 0x38);
+const _: () = assert!(core::mem::offset_of!(RaceSexMenu, field_3C) == 0x3C);
+const _: () = assert!(core::mem::offset_of!(RaceSexMenu, field_40) == 0x40);
+const _: () = assert!(core::mem::offset_of!(RaceSexMenu, field_44) == 0x44);
+const _: () = assert!(core::mem::offset_of!(RaceSexMenu, field_48) == 0x48);
+const _: () = assert!(core::mem::offset_of!(RaceSexMenu, field_4C) == 0x4C);
+const _: () = assert!(core::mem::offset_of!(RaceSexMenu, field_50) == 0x50);
+const _: () = assert!(core::mem::offset_of!(RaceSexMenu, field_54) == 0x54);
+const _: () = assert!(core::mem::offset_of!(RaceSexMenu, field_58) == 0x58);
+const _: () = assert!(core::mem::offset_of!(RaceSexMenu, field_5C) == 0x5C);
+const _: () = assert!(core::mem::offset_of!(RaceSexMenu, field_60) == 0x60);
+const _: () = assert!(core::mem::offset_of!(RaceSexMenu, field_64) == 0x64);
+const _: () = assert!(core::mem::offset_of!(RaceSexMenu, field_68) == 0x68);
+const _: () = assert!(core::mem::offset_of!(RaceSexMenu, field_6C) == 0x6C);
+const _: () = assert!(core::mem::offset_of!(RaceSexMenu, field_70) == 0x70);
+const _: () = assert!(core::mem::offset_of!(RaceSexMenu, field_74) == 0x74);
+const _: () = assert!(core::mem::offset_of!(RaceSexMenu, field_78) == 0x78);
+const _: () = assert!(core::mem::offset_of!(RaceSexMenu, field_7A) == 0x7A);
+const _: () = assert!(core::mem::offset_of!(RaceSexMenu, field_7C) == 0x7C);
+const _: () = assert!(core::mem::offset_of!(RaceSexMenu, field_80) == 0x80);
+const _: () = assert!(core::mem::offset_of!(RaceSexMenu, field_84) == 0x84);
+const _: () = assert!(core::mem::offset_of!(RaceSexMenu, field_88) == 0x88);
+const _: () = assert!(core::mem::offset_of!(RaceSexMenu, field_8C) == 0x8C);
+const _: () = assert!(core::mem::offset_of!(RaceSexMenu, field_90) == 0x90);
+const _: () = assert!(core::mem::offset_of!(RaceSexMenu, field_94) == 0x94);
+const _: () = assert!(core::mem::offset_of!(RaceSexMenu, field_98) == 0x98);
+const _: () = assert!(core::mem::offset_of!(RaceSexMenu, field_9C) == 0x9C);
+const _: () = assert!(core::mem::offset_of!(RaceSexMenu, field_A0) == 0xA0);
+const _: () = assert!(core::mem::offset_of!(RaceSexMenu, field_A4) == 0xA4);
+const _: () = assert!(core::mem::offset_of!(RaceSexMenu, field_A8) == 0xA8);
+const _: () = assert!(core::mem::offset_of!(RaceSexMenu, field_AC) == 0xAC);
+const _: () = assert!(core::mem::offset_of!(RaceSexMenu, field_B0) == 0xB0);
+const _: () = assert!(core::mem::offset_of!(RaceSexMenu, field_B4) == 0xB4);
+const _: () = assert!(core::mem::offset_of!(RaceSexMenu, field_B8) == 0xB8);
+const _: () = assert!(core::mem::offset_of!(RaceSexMenu, field_BC) == 0xBC);
+const _: () = assert!(core::mem::offset_of!(RaceSexMenu, m_RaceSexCamera_E8) == 0xE8);
+const _: () = assert!(core::mem::offset_of!(RaceSexMenu, field_120) == 0x120);
+const _: () = assert!(core::mem::offset_of!(RaceSexMenu, field_128) == 0x128);
+const _: () = assert!(core::mem::offset_of!(RaceSexMenu, field_180) == 0x180);
+const _: () = assert!(core::mem::offset_of!(RaceSexMenu, field_188) == 0x188);
+const _: () = assert!(core::mem::offset_of!(RaceSexMenu, savedLookAtOnGain) == 0x190);
+const _: () = assert!(core::mem::offset_of!(RaceSexMenu, screenWidth) == 0x194);
+const _: () = assert!(core::mem::offset_of!(RaceSexMenu, field_198) == 0x198);
+const _: () = assert!(core::mem::offset_of!(RaceSexMenu, field_19C) == 0x19C);
+const _: () = assert!(core::mem::offset_of!(RaceSexMenu, field_19E) == 0x19E);
+const _: () = assert!(core::mem::offset_of!(RaceSexMenu, field_1A0) == 0x1A0);
+const _: () = assert!(core::mem::offset_of!(RaceSexMenu, field_1A1) == 0x1A1);
+const _: () = assert!(core::mem::offset_of!(RaceSexMenu, lookInputActive) == 0x1A2);
+const _: () = assert!(core::mem::offset_of!(RaceSexMenu, mouseLookDrag) == 0x1A5);
+
 /// `ShaderReferenceEffect`: size 0x138 (exact, high); primary base `ReferenceEffect`.
 /// Meaning: effect shader on a reference; re-targets its shader data when the reference's current 3D changes (high, camera pass).
 /// Evidence: allocation sites (high): {'312': 4}.
@@ -4021,6 +4351,34 @@ const _: () = assert!(core::mem::offset_of!(TweenMenuCameraState, targetZoomFOV)
 const _: () = assert!(core::mem::offset_of!(TweenMenuCameraState, closing) == 0x4C);
 const _: () = assert!(core::mem::offset_of!(TweenMenuCameraState, pad4D) == 0x4D);
 
+/// `UICursor`: size 0x30 (exact).
+/// Meaning: the menu cursor's position and limits (static 0x333b080, pointer 0x3210e38), created by the UI singleton's ctor (high, camera pass).
+/// Evidence: the menu cursor's position and limits (static 0x333b080, pointer 0x3210e38), created by the UI singleton's ctor; IC5 D (static-T). Behavioural name; no RTTI. The race menu, CursorMenu's mouse and stick handlers and the Scaleform cursor event read it.; size: UI ctor 0x1169332..0x1169383 initialises +4..+0x2f of the static 0x333b080.
+#[repr(C)]
+pub struct UICursor {
+    pub unknown_0: [u8; 4],
+    /// +0x4 `float`, semantic; cursor x in pixels (client area) (high)
+    pub x: f32,
+    /// +0x8 `float`, semantic; cursor y in pixels (high)
+    pub y: f32,
+    /// +0xC `float[4]`, semantic; min x +0xc, min y +0x10, max x +0x14, max y +0x18 (the clamp) (high)
+    pub bounds: [u8; 16],
+    /// +0x1C `float`, semantic; multiplies the cursor speed settings (medium)
+    pub speedScale: f32,
+    pub unknown_20: [u8; 8],
+    /// +0x28 `float`, semantic; second speed factor (low)
+    pub speedScale2: f32,
+    pub unknown_2C: [u8; 4],
+    #[doc(hidden)]
+    pub __engine: crate::Engine,
+}
+const _: () = assert!(size_of::<UICursor>() == 0x30);
+const _: () = assert!(core::mem::offset_of!(UICursor, x) == 0x4);
+const _: () = assert!(core::mem::offset_of!(UICursor, y) == 0x8);
+const _: () = assert!(core::mem::offset_of!(UICursor, bounds) == 0xC);
+const _: () = assert!(core::mem::offset_of!(UICursor, speedScale) == 0x1C);
+const _: () = assert!(core::mem::offset_of!(UICursor, speedScale2) == 0x28);
+
 /// `VATSCameraState`: size 0x38 (exact, medium); primary base `TESCameraState`.
 /// Meaning: kill camera / VATS playback camera (medium, frame pass).
 /// Evidence: runtime: 0x38 at 1 allocation sites.
@@ -4056,6 +4414,393 @@ const _: () = assert!(core::mem::offset_of!(VATSCameraState, id) == 0x18);
 const _: () = assert!(core::mem::offset_of!(VATSCameraState, pad1C) == 0x1C);
 const _: () = assert!(core::mem::offset_of!(VATSCameraState, rotationEuler) == 0x20);
 const _: () = assert!(core::mem::offset_of!(VATSCameraState, position) == 0x2C);
+
+/// `bhkPickData`: size 0xD0 (exact).
+/// Meaning: the engine's ray pick record: an hkpWorldRayCastInput (+0), an hkpWorldRayCastOutput (+0x30), a ray vector and optional collectors (high, camera pass).
+/// Evidence: the engine's ray pick record: an hkpWorldRayCastInput (+0), an hkpWorldRayCastOutput (+0x30), a ray vector and optional collectors; Fields from bhkWorld::PickObject 0x104be80 (reads and resets) and the initialisers in CastRayGetHitDistance, RaycastToPointWithinViewCone, HasLineOfSightToRef, CachedRaycastData::CastRay. static-G's 'hit record' of LaunchProjectileFromCaster 0x5ce8b0 (+0x30 vector, +0x50 -1 ints, +0x80 pointer, +0xc0 byte) is the same layout. Name chosen by role; it matches a header name I recall (noted per the brief). Positions are Havok units: game * g_HavokWorldScale (0x17fde5c, 0.0142875); back with g_HavokWorldScaleInverse (0x17f423c, 69.99125).; size: stack frames of CastRayGetHitDistance 0x4b9a80 (pick at rsp-0xe8, last field +0xc0 = local_28) and CachedRaycastData::CastRay 0x54af00 (pick at local_f8, last byte local_38 = +0xc0); hkVector4 alignment gives 0xd0. No constructor: every user fills it inline.
+#[repr(C)]
+pub struct bhkPickData {
+    /// +0x0 `hkVector4`, semantic; ray start, Havok units (w ignored, engine writes 0) (high)
+    pub from: [u8; 16],
+    /// +0x10 `hkVector4`, semantic; ray end, Havok units; overwritten with from + ray when ray (+0x90) is non-zero (high)
+    pub to: [u8; 16],
+    /// +0x20 `undefined1`, semantic; 0 in every engine initialiser; when set, CastRayAgainstCollectedBodies and the phantom cast pass the world's shape collection filter (hkpWorld+0xd0, +0x20) (medium)
+    pub enableShapeCollectionFilter: u8,
+    pub unknown_21: [u8; 3],
+    /// +0x24 `undefined4`, semantic; collision filter info of the ray: layer (bits 0..6) | group << 16; see the flags rows (high)
+    pub filterInfo: u32,
+    /// +0x28 `undefined8`, semantic; not written by the engine initialisers read here (hkpWorldRayCastInput's user data slot by position) (low)
+    pub field_28: u64,
+    /// +0x30 `hkVector4`, semantic; out: hit normal, world space (high)
+    pub normal: [u8; 16],
+    /// +0x40 `float`, semantic; out: fraction of from->to at the hit; 1.0 when nothing was hit (high)
+    pub hitFraction: f32,
+    /// +0x44 `undefined4`, semantic; out: shape extra info, -1 when none (medium)
+    pub extraInfo: u32,
+    /// +0x48 `undefined4`, semantic; out: hit shape key path; +0x48 and +0x50 reset to -1 (medium)
+    pub shapeKeys: [u8; 32],
+    pub unknown_68: [u8; 8],
+    /// +0x70 `undefined4`, semantic; out: reset to 0 (low)
+    pub shapeKeyIndex: u32,
+    pub unknown_74: [u8; 12],
+    /// +0x80 `pointer`, semantic; out: the hit body's root collidable; null = no hit. owner = collidable + (int8)collidable[+0x20], type collidable[+0x28] (1 = entity), filterInfo collidable[+0x2c] (high)
+    pub rootCollidable: *mut c_void,
+    pub unknown_88: [u8; 8],
+    /// +0x90 `hkVector4`, semantic; in: optional direction*length; when non-zero, to = from + ray (high)
+    pub ray: [u8; 16],
+    /// +0xA0 `pointer`, semantic; in: optional broadphase cache; non-null selects the cached hkpWorldRayCaster 0xc04b10 (medium)
+    pub rayCache: *mut c_void,
+    /// +0xA8 `ptr:hkpClosestRayHitCollector`, semantic; in: optional single-hit collector (hkpClosestRayHitCollector, or SpecificItemCollector for LOS); PickObject resets it and copies its hit back to +0x30..+0x80 (high)
+    pub closestCollector: *mut crate::hkpClosestRayHitCollector,
+    /// +0xB0 `pointer`, semantic; in: optional all-hits collector; sorted (SortField10Array_2) and its first hit copied to the output (medium)
+    pub allHitsCollector: *mut c_void,
+    /// +0xB8 `pointer`, semantic; in: second all-hits collector kind (SortField10Array) (medium)
+    pub allHitsCollector2: *mut c_void,
+    /// +0xC0 `undefined1`, semantic; out: 1 when PickObject refused the pick for the time budget (no cast, result false) (high)
+    pub skipped: u8,
+    pub unknown_C1: [u8; 15],
+    #[doc(hidden)]
+    pub __engine: crate::Engine,
+}
+const _: () = assert!(size_of::<bhkPickData>() == 0xD0);
+const _: () = assert!(core::mem::offset_of!(bhkPickData, from) == 0x0);
+const _: () = assert!(core::mem::offset_of!(bhkPickData, to) == 0x10);
+const _: () = assert!(core::mem::offset_of!(bhkPickData, enableShapeCollectionFilter) == 0x20);
+const _: () = assert!(core::mem::offset_of!(bhkPickData, filterInfo) == 0x24);
+const _: () = assert!(core::mem::offset_of!(bhkPickData, field_28) == 0x28);
+const _: () = assert!(core::mem::offset_of!(bhkPickData, normal) == 0x30);
+const _: () = assert!(core::mem::offset_of!(bhkPickData, hitFraction) == 0x40);
+const _: () = assert!(core::mem::offset_of!(bhkPickData, extraInfo) == 0x44);
+const _: () = assert!(core::mem::offset_of!(bhkPickData, shapeKeys) == 0x48);
+const _: () = assert!(core::mem::offset_of!(bhkPickData, shapeKeyIndex) == 0x70);
+const _: () = assert!(core::mem::offset_of!(bhkPickData, rootCollidable) == 0x80);
+const _: () = assert!(core::mem::offset_of!(bhkPickData, ray) == 0x90);
+const _: () = assert!(core::mem::offset_of!(bhkPickData, rayCache) == 0xA0);
+const _: () = assert!(core::mem::offset_of!(bhkPickData, closestCollector) == 0xA8);
+const _: () = assert!(core::mem::offset_of!(bhkPickData, allHitsCollector) == 0xB0);
+const _: () = assert!(core::mem::offset_of!(bhkPickData, allHitsCollector2) == 0xB8);
+const _: () = assert!(core::mem::offset_of!(bhkPickData, skipped) == 0xC0);
+
+/// `bhkWorld`: size 0xC710 (exact, medium); primary base `bhkSerializable`.
+/// Meaning: the engine's wrapper of an hkpWorld; one per interior cell (cell extra data type 1) and one shared by the exterior worldspace (**0x21a0598). bhkWorldM (vtable 0x1a831e8) shares slots 37-54. (high, camera pass).
+/// Evidence: runtime: 0xC710 at 1 allocation sites; agrees with the static allocation sites.
+/// Bases: `bhkSerializable`@0x0, `bhkRefObject`@0x0, `NiObject`@0x0, `NiRefObject`@0x0.
+#[repr(C)]
+pub struct bhkWorld {
+    /// +0x0 `vtbl:bhkWorld:0`, rtti
+    #[doc(hidden)]
+    pub __vftable: *const crate::raw::vtables::bhkWorld_vtable,
+    /// +0x8 `undefined4`, base NiObject
+    pub field_8: u32,
+    pub unknown_C: [u8; 4],
+    /// +0x10 `ptr:hkpWorld`, base bhkRefObject, semantic; the Havok world; slots 39 and 40 return it (high)
+    pub world: *mut crate::hkpWorld,
+    /// +0x18 `undefined8`, ctor store
+    pub field_18: u64,
+    pub unknown_20: [u8; 50488],
+    /// +0xC558 `undefined4`, ctor store
+    pub field_C558: u32,
+    pub unknown_C55C: [u8; 4],
+    /// +0xC560 `undefined8`, ctor store
+    pub field_C560: u64,
+    /// +0xC568 `undefined4`, ctor store
+    pub field_C568: u32,
+    /// +0xC56C `undefined4`, ctor store
+    pub field_C56C: u32,
+    /// +0xC570 `undefined8`, member ctor bhkWorld::bhkConstraintProjector
+    pub m_bhkConstraintProjector_C570: u64,
+    /// +0xC578 `undefined8`, ctor store
+    pub field_C578: u64,
+    /// +0xC580 `undefined4`, ctor store
+    pub field_C580: u32,
+    /// +0xC584 `undefined4`, ctor store
+    pub field_C584: u32,
+    /// +0xC588 `undefined8`, ctor store
+    pub field_C588: u64,
+    /// +0xC590 `undefined8`, ctor store
+    pub field_C590: u64,
+    /// +0xC598 `class:BSReadWriteLock`, semantic; the world lock: read for picks and casts, write for the step and phantom moves; used only when bUseWorldLock:HAVOK (high)
+    pub worldLock: crate::BSReadWriteLock,
+    pub unknown_C5A0: [u8; 16],
+    /// +0xC5B0 `undefined1[16]`, ctor store
+    pub field_C5B0: [u8; 16],
+    /// +0xC5C0 `undefined8`, ctor store
+    pub field_C5C0: u64,
+    /// +0xC5C8 `undefined8`, ctor store
+    pub field_C5C8: u64,
+    /// +0xC5D0 `undefined8`, ctor store
+    pub field_C5D0: u64,
+    pub unknown_C5D8: [u8; 8],
+    /// +0xC5E0 `class:bhkWorldCinfo`, member ctor bhkWorldCinfo
+    pub m_bhkWorldCinfo_C5E0: crate::bhkWorldCinfo,
+    /// +0xC6E0 `undefined8`, ctor store
+    pub field_C6E0: u64,
+    /// +0xC6E8 `undefined8`, ctor store
+    pub field_C6E8: u64,
+    /// +0xC6F0 `undefined8`, ctor store
+    pub field_C6F0: u64,
+    /// +0xC6F8 `undefined4`, ctor store
+    pub field_C6F8: u32,
+    /// +0xC6FC `undefined4`, ctor store
+    pub field_C6FC: u32,
+    /// +0xC700 `undefined2`, ctor store
+    pub field_C700: u16,
+    /// +0xC702 `undefined1`, ctor store
+    pub field_C702: u8,
+    pub unknown_C703: [u8; 13],
+    #[doc(hidden)]
+    pub __engine: crate::Engine,
+}
+const _: () = assert!(size_of::<bhkWorld>() == 0xC710);
+const _: () = assert!(core::mem::offset_of!(bhkWorld, __vftable) == 0x0);
+const _: () = assert!(core::mem::offset_of!(bhkWorld, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(bhkWorld, world) == 0x10);
+const _: () = assert!(core::mem::offset_of!(bhkWorld, field_18) == 0x18);
+const _: () = assert!(core::mem::offset_of!(bhkWorld, field_C558) == 0xC558);
+const _: () = assert!(core::mem::offset_of!(bhkWorld, field_C560) == 0xC560);
+const _: () = assert!(core::mem::offset_of!(bhkWorld, field_C568) == 0xC568);
+const _: () = assert!(core::mem::offset_of!(bhkWorld, field_C56C) == 0xC56C);
+const _: () = assert!(core::mem::offset_of!(bhkWorld, m_bhkConstraintProjector_C570) == 0xC570);
+const _: () = assert!(core::mem::offset_of!(bhkWorld, field_C578) == 0xC578);
+const _: () = assert!(core::mem::offset_of!(bhkWorld, field_C580) == 0xC580);
+const _: () = assert!(core::mem::offset_of!(bhkWorld, field_C584) == 0xC584);
+const _: () = assert!(core::mem::offset_of!(bhkWorld, field_C588) == 0xC588);
+const _: () = assert!(core::mem::offset_of!(bhkWorld, field_C590) == 0xC590);
+const _: () = assert!(core::mem::offset_of!(bhkWorld, worldLock) == 0xC598);
+const _: () = assert!(core::mem::offset_of!(bhkWorld, field_C5B0) == 0xC5B0);
+const _: () = assert!(core::mem::offset_of!(bhkWorld, field_C5C0) == 0xC5C0);
+const _: () = assert!(core::mem::offset_of!(bhkWorld, field_C5C8) == 0xC5C8);
+const _: () = assert!(core::mem::offset_of!(bhkWorld, field_C5D0) == 0xC5D0);
+const _: () = assert!(core::mem::offset_of!(bhkWorld, m_bhkWorldCinfo_C5E0) == 0xC5E0);
+const _: () = assert!(core::mem::offset_of!(bhkWorld, field_C6E0) == 0xC6E0);
+const _: () = assert!(core::mem::offset_of!(bhkWorld, field_C6E8) == 0xC6E8);
+const _: () = assert!(core::mem::offset_of!(bhkWorld, field_C6F0) == 0xC6F0);
+const _: () = assert!(core::mem::offset_of!(bhkWorld, field_C6F8) == 0xC6F8);
+const _: () = assert!(core::mem::offset_of!(bhkWorld, field_C6FC) == 0xC6FC);
+const _: () = assert!(core::mem::offset_of!(bhkWorld, field_C700) == 0xC700);
+const _: () = assert!(core::mem::offset_of!(bhkWorld, field_C702) == 0xC702);
+
+/// values in data/collisionlayers.json (camera pass).
+#[repr(u32)]
+#[derive(Clone, Copy, PartialEq, Eq, Debug)]
+pub enum CollisionLayer {
+    /// `UNIDENTIFIED`
+    UNIDENTIFIED = 0,
+    /// `STATIC`
+    STATIC = 1,
+    /// `ANIMSTATIC`
+    ANIMSTATIC = 2,
+    /// `TRANSPARENT`
+    TRANSPARENT = 3,
+    /// `CLUTTER`
+    CLUTTER = 4,
+    /// `WEAPON`
+    WEAPON = 5,
+    /// `PROJECTILE`
+    PROJECTILE = 6,
+    /// `SPELL`
+    SPELL = 7,
+    /// `BIPED`
+    BIPED = 8,
+    /// `TREES`
+    TREES = 9,
+    /// `PROPS`
+    PROPS = 10,
+    /// `WATER`
+    WATER = 11,
+    /// `TRIGGER`
+    TRIGGER = 12,
+    /// `TERRAIN`
+    TERRAIN = 13,
+    /// `TRAP`
+    TRAP = 14,
+    /// `NONCOLLIDABLE`
+    NONCOLLIDABLE = 15,
+    /// `CLOUDTRAP`
+    CLOUDTRAP = 16,
+    /// `GROUND`
+    GROUND = 17,
+    /// `PORTAL`
+    PORTAL = 18,
+    /// `DEBRIS_SMALL`
+    DEBRIS_SMALL = 19,
+    /// `DEBRIS_LARGE`
+    DEBRIS_LARGE = 20,
+    /// `ACOUSTIC_SPACE`
+    ACOUSTIC_SPACE = 21,
+    /// `ACTORZONE`
+    ACTORZONE = 22,
+    /// `PROJECTILEZONE`
+    PROJECTILEZONE = 23,
+    /// `GASTRAP`
+    GASTRAP = 24,
+    /// `SHELLCASING`
+    SHELLCASING = 25,
+    /// `TRANSPARENT_SMALL`
+    TRANSPARENT_SMALL = 26,
+    /// `INVISIBLE_WALL`
+    INVISIBLE_WALL = 27,
+    /// `TRANSPARENT_SMALL_ANIM`
+    TRANSPARENT_SMALL_ANIM = 28,
+    /// `WARD`
+    WARD = 29,
+    /// `CHARCONTROLLER`
+    CHARCONTROLLER = 30,
+    /// `STAIRHELPER`
+    STAIRHELPER = 31,
+    /// `DEADBIP`
+    DEADBIP = 32,
+    /// `BIPED_NO_CC`
+    BIPED_NO_CC = 33,
+    /// `AVOIDBOX`
+    AVOIDBOX = 34,
+    /// `COLLISIONBOX`
+    COLLISIONBOX = 35,
+    /// `CAMERASPHERE`
+    CAMERASPHERE = 36,
+    /// `DOORDETECTION`
+    DOORDETECTION = 37,
+    /// `CONEPROJECTILE`
+    CONEPROJECTILE = 38,
+    /// `CAMERAPICK`
+    CAMERAPICK = 39,
+    /// `ITEMPICK`
+    ITEMPICK = 40,
+    /// `LINEOFSIGHT`
+    LINEOFSIGHT = 41,
+    /// `PATHPICK`
+    PATHPICK = 42,
+    /// `CUSTOMPICK1`
+    CUSTOMPICK1 = 43,
+    /// `CUSTOMPICK2`
+    CUSTOMPICK2 = 44,
+    /// `SPELLEXPLOSION`
+    SPELLEXPLOSION = 45,
+    /// `DROPPINGPICK`
+    DROPPINGPICK = 46,
+}
+
+impl CollisionLayer {
+    #[must_use]
+    pub const fn from_u32(value: u32) -> Option<Self> {
+        match value {
+            0 => Some(Self::UNIDENTIFIED),
+            1 => Some(Self::STATIC),
+            2 => Some(Self::ANIMSTATIC),
+            3 => Some(Self::TRANSPARENT),
+            4 => Some(Self::CLUTTER),
+            5 => Some(Self::WEAPON),
+            6 => Some(Self::PROJECTILE),
+            7 => Some(Self::SPELL),
+            8 => Some(Self::BIPED),
+            9 => Some(Self::TREES),
+            10 => Some(Self::PROPS),
+            11 => Some(Self::WATER),
+            12 => Some(Self::TRIGGER),
+            13 => Some(Self::TERRAIN),
+            14 => Some(Self::TRAP),
+            15 => Some(Self::NONCOLLIDABLE),
+            16 => Some(Self::CLOUDTRAP),
+            17 => Some(Self::GROUND),
+            18 => Some(Self::PORTAL),
+            19 => Some(Self::DEBRIS_SMALL),
+            20 => Some(Self::DEBRIS_LARGE),
+            21 => Some(Self::ACOUSTIC_SPACE),
+            22 => Some(Self::ACTORZONE),
+            23 => Some(Self::PROJECTILEZONE),
+            24 => Some(Self::GASTRAP),
+            25 => Some(Self::SHELLCASING),
+            26 => Some(Self::TRANSPARENT_SMALL),
+            27 => Some(Self::INVISIBLE_WALL),
+            28 => Some(Self::TRANSPARENT_SMALL_ANIM),
+            29 => Some(Self::WARD),
+            30 => Some(Self::CHARCONTROLLER),
+            31 => Some(Self::STAIRHELPER),
+            32 => Some(Self::DEADBIP),
+            33 => Some(Self::BIPED_NO_CC),
+            34 => Some(Self::AVOIDBOX),
+            35 => Some(Self::COLLISIONBOX),
+            36 => Some(Self::CAMERASPHERE),
+            37 => Some(Self::DOORDETECTION),
+            38 => Some(Self::CONEPROJECTILE),
+            39 => Some(Self::CAMERAPICK),
+            40 => Some(Self::ITEMPICK),
+            41 => Some(Self::LINEOFSIGHT),
+            42 => Some(Self::PATHPICK),
+            43 => Some(Self::CUSTOMPICK1),
+            44 => Some(Self::CUSTOMPICK2),
+            45 => Some(Self::SPELLEXPLOSION),
+            46 => Some(Self::DROPPINGPICK),
+            _ => None,
+        }
+    }
+}
+
+/// values in data/bodyparttypes.json (camera pass).
+#[repr(u32)]
+#[derive(Clone, Copy, PartialEq, Eq, Debug)]
+pub enum BodyPartType {
+    /// `Torso`
+    Torso = 0,
+    /// `Head`
+    Head = 1,
+    /// `Eye`
+    Eye = 2,
+    /// `LookAt`
+    LookAt = 3,
+    /// `FlyGrab`
+    FlyGrab = 4,
+    /// `Saddle`
+    Saddle = 5,
+}
+
+impl BodyPartType {
+    #[must_use]
+    pub const fn from_u32(value: u32) -> Option<Self> {
+        match value {
+            0 => Some(Self::Torso),
+            1 => Some(Self::Head),
+            2 => Some(Self::Eye),
+            3 => Some(Self::LookAt),
+            4 => Some(Self::FlyGrab),
+            5 => Some(Self::Saddle),
+            _ => None,
+        }
+    }
+}
+
+/// values in data/headtrackslots.json (camera pass).
+#[repr(u32)]
+#[derive(Clone, Copy, PartialEq, Eq, Debug)]
+pub enum HeadTrackSlot {
+    /// `Default`
+    Default = 0,
+    /// `Unknown1`
+    Unknown1 = 1,
+    /// `ScriptLook`
+    ScriptLook = 2,
+    /// `Unknown3`
+    Unknown3 = 3,
+    /// `DialogueWithPlayer`
+    DialogueWithPlayer = 4,
+    /// `CombatOrWeaponUse`
+    CombatOrWeaponUse = 5,
+}
+
+impl HeadTrackSlot {
+    #[must_use]
+    pub const fn from_u32(value: u32) -> Option<Self> {
+        match value {
+            0 => Some(Self::Default),
+            1 => Some(Self::Unknown1),
+            2 => Some(Self::ScriptLook),
+            3 => Some(Self::Unknown3),
+            4 => Some(Self::DialogueWithPlayer),
+            5 => Some(Self::CombatOrWeaponUse),
+            _ => None,
+        }
+    }
+}
 
 /// values in data/actorattackstates.json (camera pass).
 #[repr(u32)]

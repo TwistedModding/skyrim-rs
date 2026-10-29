@@ -3,6 +3,22 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureUseMagicParamTypes>::vfunc_34` at 0x4912d0 (rtti, medium); signature (low): `undefined vfunc_34(BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureUseMagicParamTypes> * this, uint param_1)`
+pub const BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureUseMagicParamTypes__vfunc_34: u64 = 29374;
+/// `BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureUseWeaponParamTypes>::vdtor` at 0x494150 (slot_propagation, medium); signature (low): `BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureUseWeaponParamTypes> * vdtor(BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureUseWeaponParamTypes> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureUseWeaponParamTypes__vdtor: u64 = 29398;
+/// `BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureUseWeaponParamTypes>::vfunc_18` at 0x494490 (rtti, medium); signature (low): `undefined8 vfunc_18(BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureUseWeaponParamTypes> * this, uint param_1)`
+pub const BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureUseWeaponParamTypes__vfunc_18: u64 = 29408;
+/// `BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureUseWeaponParamTypes>::vfunc_19` at 0x494470 (rtti, medium); signature (low): `undefined * vfunc_19(BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureUseWeaponParamTypes> * this, uint param_1)`
+pub const BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureUseWeaponParamTypes__vfunc_19: u64 = 29407;
+/// `BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureUseWeaponParamTypes>::vfunc_20` at 0x494450 (rtti, medium); signature (low): `undefined1 vfunc_20(BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureUseWeaponParamTypes> * this, uint param_1)`
+pub const BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureUseWeaponParamTypes__vfunc_20: u64 = 29406;
+/// `BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureUseWeaponParamTypes>::vfunc_30` at 0x4944d0 (rtti, medium); signature (low): `undefined8 * vfunc_30(void)`
+pub const BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureUseWeaponParamTypes__vfunc_30: u64 = 29410;
+/// `BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureUseWeaponParamTypes>::vfunc_34` at 0x4944b0 (rtti, medium); signature (low): `undefined vfunc_34(BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureUseWeaponParamTypes> * this, uint param_1)`
+pub const BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureUseWeaponParamTypes__vfunc_34: u64 = 29409;
+/// `BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureWaitParamTypes>::vdtor` at 0x4948a0 (slot_propagation, medium); signature (low): `BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureWaitParamTypes> * vdtor(BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureWaitParamTypes> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureWaitParamTypes__vdtor: u64 = 29424;
 /// `BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureWaitParamTypes>::vfunc_18` at 0x494a40 (rtti, medium); signature (low): `undefined8 vfunc_18(BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureWaitParamTypes> * this, uint param_1)`
 pub const BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureWaitParamTypes__vfunc_18: u64 = 29432;
 /// `BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureWaitParamTypes>::vfunc_19` at 0x494a20 (rtti, medium); signature (low): `undefined * vfunc_19(BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureWaitParamTypes> * this, uint param_1)`
@@ -8037,35 +8053,3 @@ pub const BSQueuedResourceCollectionBase__BSResource_IEntryDB_PostFlushNotify_vf
 pub const BSQueuedResourceCollectionBase__ctor: u64 = 75759;
 /// `BSQueuedResourceCollectionBase::ctor` at 0xfc8380 (layout_inference, high); signature (high): `BSQueuedResourceCollectionBase * ctor(BSQueuedResourceCollectionBase * this)`
 pub const BSQueuedResourceCollectionBase__ctor_2: u64 = 75760;
-/// `BSQueuedResourceCollectionBase::ctor_sub0` at 0xfc7ef0 (callgraph, medium); signature (untiered): `int ctor_sub0(longlong param_1)`
-pub const BSQueuedResourceCollectionBase__ctor_sub0: u64 = 75745;
-/// `BSQueuedResourceCollectionBase::vdtor` at 0xfc86a0 (slot_propagation, medium); signature (low): `BSQueuedResourceCollectionBase * vdtor(BSQueuedResourceCollectionBase * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-pub const BSQueuedResourceCollectionBase__vdtor: u64 = 75772;
-/// `BSQueuedResourceCollectionBase::vfunc_10` at 0xfc8500 (rtti, medium); signature (high): `undefined vfunc_10(BSQueuedResourceCollectionBase * this)`
-pub const BSQueuedResourceCollectionBase__vfunc_10: u64 = 75765;
-/// `BSQueuedResourceCollectionBase::vfunc_11` at 0xfc8640 (rtti, medium); signature (high): `undefined vfunc_11(BSQueuedResourceCollectionBase * this)`
-pub const BSQueuedResourceCollectionBase__vfunc_11: u64 = 75768;
-/// `BSQueuedResourceCollectionBase::vfunc_12` at 0xfc84f0 (rtti, medium); signature (low): `undefined vfunc_12(void)`
-pub const BSQueuedResourceCollectionBase__vfunc_12: u64 = 75764;
-/// `BSQueuedResourceCollectionBase::vfunc_13` at 0xfc8680 (rtti, medium); signature (low): `undefined vfunc_13(void)`
-pub const BSQueuedResourceCollectionBase__vfunc_13: u64 = 75769;
-/// `BSQueuedResourceCollectionBase::vfunc_14` at 0xfc8690 (rtti, medium); signature (low): `undefined vfunc_14(void)`
-pub const BSQueuedResourceCollectionBase__vfunc_14: u64 = 75770;
-/// `BSQueuedResourceCollectionBase::vfunc_3` at 0xfc83f0 (rtti, medium); signature (low): `undefined vfunc_3(BSQueuedResourceCollectionBase * this, undefined4 param_1, undefined8 param_2)`
-pub const BSQueuedResourceCollectionBase__vfunc_3: u64 = 75761;
-/// `BSQueuedResourceCollectionBase::vfunc_4` at 0xfc8460 (rtti, medium); signature (low): `undefined1 vfunc_4(BSQueuedResourceCollectionBase * this, char * param_1, uint param_2)`
-pub const BSQueuedResourceCollectionBase__vfunc_4: u64 = 75762;
-/// `BSQueuedResourceCollectionBase::vfunc_9` at 0xfc8490 (rtti, medium); signature (high): `undefined vfunc_9(BSQueuedResourceCollectionBase * this)`
-pub const BSQueuedResourceCollectionBase__vfunc_9: u64 = 75763;
-/// `BSRagdollContactListenerModifier::ctor` at 0xbb1d00 (layout_inference, medium); signature (high): `BSRagdollContactListenerModifier * ctor(BSRagdollContactListenerModifier * this)`
-pub const BSRagdollContactListenerModifier__ctor: u64 = 63082;
-/// `BSRagdollContactListenerModifier::ctor` at 0xbb1db0 (layout_inference, high); signature (high): `BSRagdollContactListenerModifier * ctor(BSRagdollContactListenerModifier * this)`
-pub const BSRagdollContactListenerModifier__ctor_2: u64 = 63083;
-/// `BSRagdollContactListenerModifier::ctor` at 0xbb1e40 (layout_inference, medium); signature (high): `undefined ctor(BSRagdollContactListenerModifier * this)`
-pub const BSRagdollContactListenerModifier__ctor_3: u64 = 63084;
-/// `BSRagdollContactListenerModifier::ctor` at 0xbb2790 (layout_inference, high); signature (low): `BSRagdollContactListenerModifier * ctor(BSRagdollContactListenerModifier * this, longlong param_1)`
-pub const BSRagdollContactListenerModifier__ctor_4: u64 = 63095;
-/// `BSRagdollContactListenerModifier::hkpContactListener_vdtor` at 0xbb28c4 (slot_propagation, medium); signature (high): `undefined hkpContactListener_vdtor(BSRagdollContactListenerModifier * this)`
-pub const BSRagdollContactListenerModifier__hkpContactListener_vdtor: u64 = 63096;
-/// `BSRagdollContactListenerModifier::hkpContactListener_vfunc_0` at 0xbb2470 (rtti, high); signature (low): `undefined hkpContactListener_vfunc_0(BSRagdollContactListenerModifier * this, longlong param_1)`
-pub const BSRagdollContactListenerModifier__hkpContactListener_vfunc_0: u64 = 63092;

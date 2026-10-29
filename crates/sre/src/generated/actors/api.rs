@@ -82,6 +82,12 @@ impl crate::AIProcess {
     /// `void (AIProcess* this)`
     #[inline]
     pub fn clear_death_force(&self) { unsafe { function!(39499, (*const Self))(core::ptr::from_ref(self)) } }
+    /// `AIProcess::ClearHeadTrackingActive`: MiddleHighProcessData+0x326 = 0 when process->middleHigh exists
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 39889, rva 0x723580.
+    /// `void (AIProcess* process)`
+    #[inline]
+    pub fn clear_head_tracking_active(&self) { unsafe { function!(39889, (*const Self))(core::ptr::from_ref(self)) } }
     /// `AIProcess::ClearKnockState`: ends the actor's knock/ragdoll state: restores its 3D and graph, clears the ragdoll extra, clears Actor+0xc8 bits 25..27 (AND 0xf1ffffff) and, for the player, PlayerCamera::LeaveBleedout(camera, 1) (instant leave of the bleedout camera)
     ///
     /// Semantic, camera pass, high; ledger runtime evidence, name high; id 39897, rva 0x723ff0.
@@ -160,6 +166,12 @@ impl crate::AIProcess {
     /// `bool (AIProcess* this)`
     #[inline]
     pub fn has_middle_high_field210(&self) -> bool { unsafe { function!(39792, (*const Self) -> bool)(core::ptr::from_ref(self)) } }
+    /// `AIProcess::IsInDialogueWithPlayer`: true when the object behind AIProcess+0x10 exists and its byte +0x458 is set
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 39347, rva 0x6f5180.
+    /// `bool (AIProcess* process)`
+    #[inline]
+    pub fn is_in_dialogue_with_player(&self) -> bool { unsafe { function!(39347, (*const Self) -> bool)(core::ptr::from_ref(self)) } }
     /// `AIProcess::PlayIdle`: builds a TESActionData for the default-object action (0x40 from Papyrus) carrying the idle (+0x48) and runs it through LoadActionAnimationWithCallback 0x703360; returns whether the graph accepted it. Refuses during player VATS playback (VATS+0x20 == 4) and for actors in some states; it stores no 'current idle' pointer
     ///
     /// Semantic, camera pass, medium; ledger semantic evidence, name medium; id 39256, rva 0x6f0a20.
@@ -196,6 +208,12 @@ impl crate::AIProcess {
     /// `void (AIProcess* this, float seconds)`
     #[inline]
     pub fn set_head_track_reset_timer(&self, seconds: f32) { unsafe { function!(39473, (*const Self, f32))(core::ptr::from_ref(self), seconds) } }
+    /// `AIProcess::SetHeadTrackTargetPoint`: when process->middleHigh (+8) exists: MiddleHighProcessData+0x326 = 1 (the graph's bHeadTracking channel) and SetGraphVariableVec3OnAllGraphs(actor+0x38, 'TargetLocation', point)
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 39887, rva 0x723510.
+    /// `void (AIProcess* process, Actor* actor, const NiPoint3* point)`
+    #[inline]
+    pub fn set_head_track_target_point(&self, actor: &crate::Actor, point: &crate::NiPoint3) { unsafe { function!(39887, (*const Self, *const crate::Actor, *const crate::NiPoint3))(core::ptr::from_ref(self), core::ptr::from_ref(actor), core::ptr::from_ref(point)) } }
     /// `AIProcess::SetHighField324`: high data (+0x10) +0x324 = value
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 39351, rva 0x6f5200.
@@ -523,7 +541,7 @@ impl crate::Actor {
     pub unsafe fn create_animation_channels(&self, out: *mut c_void) { unsafe { function!(37984, (*const Self, *mut c_void))(core::ptr::from_ref(self).byte_add(0x38), out) } }
     /// `Actor::GetActiveEffectList`: MagicTarget slot 7 on an actor: the list at +0x1a0 of the process's middle-high data (Actor+0xf8, then +8), null for an actor without one; nodes are {effect, next}
     ///
-    /// Semantic, papyrus pass, high; ledger `MagicTarget::GetActiveEffectList` runtime evidence, name high; id 38795, rva 0x6d85b0.
+    /// Semantic, papyrus pass, high; ledger runtime evidence, name high; id 38795, rva 0x6d85b0.
     /// `BSSimpleList<ActiveEffect*>* (MagicTarget* this)`
     ///
     /// # Safety
@@ -650,6 +668,12 @@ impl crate::Actor {
     /// `bool (const Actor* this, const BGSKeyword* keyword)`
     #[inline]
     pub fn has_keyword(&self, keyword: &crate::BGSKeyword) -> bool { unsafe { function!(37183, (*const Self, *const crate::BGSKeyword) -> bool)(core::ptr::from_ref(self), core::ptr::from_ref(keyword)) } }
+    /// `Actor::HeadTrackingOff`: flags2 &= ~8; with a process: clears head-track slot 0 (0x6fe770) and, when race+0x108 bit 15, MiddleHighProcessData+0x326 = 0
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 37798, rva 0x6a54e0.
+    /// `void (Actor* actor)`
+    #[inline]
+    pub fn head_tracking_off(&self) { unsafe { function!(37798, (*const Self))(core::ptr::from_ref(self)) } }
     /// `Actor::IsAnimationDriven`: true when the movement controller's IMovementMotionDrivenControl reports not motion-driven
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 37486, rva 0x687ac0.
@@ -1360,6 +1384,15 @@ impl crate::PlayerCharacter {
     /// `void (PlayerCharacter* this, BGSLoadFormBuffer* buffer)`
     #[inline]
     pub fn load_game(&self, buffer: &crate::BGSLoadFormBuffer) { unsafe { function!(40540, (*const Self, *const crate::BGSLoadFormBuffer))(core::ptr::from_ref(self), core::ptr::from_ref(buffer)) } }
+    /// `PlayerCharacter::OffsetAttachedWorldTranslations`: subtracts v from the world translation of player-owned objects: (+0x9a8)->+0x48, the four entries at +0x1a8 (through 0x5c0c70) and an extra-data object (0x2e76f0); role not identified
+    ///
+    /// Semantic, graphics pass, low; ledger semantic evidence, name low; id 40573, rva 0x7550d0.
+    /// `void (PlayerCharacter* this, const NiPoint3* v)`
+    ///
+    /// # Safety
+    /// The pass rates the signature low.
+    #[inline]
+    pub unsafe fn offset_attached_world_translations(&self, v: *const crate::NiPoint3) { unsafe { function!(40573, (*const Self, *const crate::NiPoint3))(core::ptr::from_ref(self), v) } }
     /// `PlayerCharacter::OnDismountFinished`: after the player is placed at the dismount position: PlayerCamera::LeaveMountCamera, ControlMap::RestoreControlState, 'WarHorseMode' off, this+0x9d4 = -1, cached position reset, three user events re-appended (g_UserEventNames +0x78, +0x90, +0x250)
     ///
     /// Semantic, camera pass, high; ledger runtime evidence, name high; id 40726, rva 0x75e030.

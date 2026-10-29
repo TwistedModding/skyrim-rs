@@ -3,6 +3,68 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `FourCCToString` at 0x1e5ce0 (decompiler, high); signature (high): `undefined FourCCToString(undefined4 param_1, undefined1 * param_2, uint param_3)`
+pub const FourCCToString: u64 = 14625;
+/// `Fprintf` at 0x90f160 (decompiler, medium); signature (medium): `undefined Fprintf(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const Fprintf: u64 = 51108;
+/// `FrameState::AdvanceJitter` at 0x101e360 (semantic, high); signature (untiered): `undefined AdvanceJitter(longlong param_1)`; semantic: next TAA jitter sample (high); signature `void (FrameState* this)`
+pub const FrameState__AdvanceJitter: u64 = 77518;
+/// `FrameState::AdvanceJitter` as a function pointer type (high).
+pub type FrameState__AdvanceJitter_fn = unsafe extern "C" fn(this: *mut crate::FrameState);
+/// `FrameState::LockDynamicResolution` at 0x101e2d0 (semantic, high); signature (untiered): `undefined LockDynamicResolution(longlong param_1, char param_2)`; semantic: release=false increments +0x128, true decrements it if non-zero (high); signature `void (FrameState* this, bool release)`
+pub const FrameState__LockDynamicResolution: u64 = 77516;
+/// `FrameState::LockDynamicResolution` as a function pointer type (high).
+pub type FrameState__LockDynamicResolution_fn = unsafe extern "C" fn(this: *mut crate::FrameState, release: bool);
+/// `FrameState::UpdateDynamicResolutionFlags` at 0x101e300 (semantic, high); signature (untiered): `undefined UpdateDynamicResolutionFlags(longlong param_1, float param_2)`; semantic: sets +0x12c/+0x12d from the measured frame time (high); signature `void (FrameState* this, float frameMs)`
+pub const FrameState__UpdateDynamicResolutionFlags: u64 = 77517;
+/// `FrameState::UpdateDynamicResolutionFlags` as a function pointer type (high).
+pub type FrameState__UpdateDynamicResolutionFlags_fn = unsafe extern "C" fn(this: *mut crate::FrameState, frameMs: f32);
+/// `FrameState::UpdateDynamicResolutionRatios` at 0x101e130 (semantic, high); signature (untiered): `undefined UpdateDynamicResolutionRatios(longlong param_1)`; semantic: frame start of RenderFrame: moves the ratios by fRatioIncreasePerSeconds/fRatioDecreasePerSeconds within [fLowestDynamic*Ratio, 1], quantised (high); signature `void (FrameState* this)`
+pub const FrameState__UpdateDynamicResolutionRatios: u64 = 77515;
+/// `FrameState::UpdateDynamicResolutionRatios` as a function pointer type (high).
+pub type FrameState__UpdateDynamicResolutionRatios_fn = unsafe extern "C" fn(this: *mut crate::FrameState);
+/// `FreeAligned` at 0xaa39e0 (decompiler, medium); signature (medium): `undefined FreeAligned(longlong * param_1, longlong param_2)`
+pub const FreeAligned: u64 = 57055;
+/// `FreeAlignedMemory` at 0x1050b30 (decompiler, high); signature (high): `undefined FreeAlignedMemory(void * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const FreeAlignedMemory: u64 = 77945;
+/// `FreeAlignedMemoryIfSet` at 0x1029420 (decompiler, high); signature (high): `undefined FreeAlignedMemoryIfSet(undefined8 * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const FreeAlignedMemoryIfSet: u64 = 77636;
+/// `FreeAlignedMemory_2` at 0x10a1440 (decompiler, high); signature (high): `undefined FreeAlignedMemory_2(undefined8 param_1, void * param_2, undefined8 param_3, undefined8 param_4)`
+pub const FreeAlignedMemory_2: u64 = 79345;
+/// `FreeAligned_2` at 0x1185150 (decompiler, medium); signature (untiered): `undefined8 FreeAligned_2(longlong param_1, longlong param_2, longlong param_3, ulonglong param_4)`
+pub const FreeAligned_2: u64 = 84787;
+/// `FreeAllBlocks` at 0xbe3160 (decompiler, medium); signature (medium): `undefined FreeAllBlocks(longlong * param_1)`
+pub const FreeAllBlocks: u64 = 63895;
+/// `FreeAllChainedBlocks` at 0x244d60 (decompiler, medium); signature (medium): `undefined FreeAllChainedBlocks(longlong * param_1)`
+pub const FreeAllChainedBlocks: u64 = 16286;
+/// `FreeAllChainedBlocks_2` at 0x1174ce0 (decompiler, medium); signature (medium): `undefined FreeAllChainedBlocks_2(longlong * param_1)`
+pub const FreeAllChainedBlocks_2: u64 = 33559;
+/// `FreeAllChunkBlocks` at 0x20ab60 (decompiler, medium); signature (untiered): `undefined FreeAllChunkBlocks(longlong * param_1)`
+pub const FreeAllChunkBlocks: u64 = 15393;
+/// `FreeAllChunkBlocks_2` at 0xfd42f0 (decompiler, medium); signature (medium): `undefined FreeAllChunkBlocks_2(longlong * param_1)`
+pub const FreeAllChunkBlocks_2: u64 = 82416;
+/// `FreeAllChunkedQueueBlocks` at 0x506c00 (decompiler, medium); signature (untiered): `undefined FreeAllChunkedQueueBlocks(longlong * param_1)`
+pub const FreeAllChunkedQueueBlocks: u64 = 31597;
+/// `FreeAllChunkedQueueBlocks_2` at 0x50d080 (decompiler, medium); signature (untiered): `undefined FreeAllChunkedQueueBlocks_2(longlong * param_1)`
+pub const FreeAllChunkedQueueBlocks_2: u64 = 31676;
+/// `FreeAllChunkedQueueBlocks_3` at 0x512670 (decompiler, medium); signature (untiered): `undefined FreeAllChunkedQueueBlocks_3(longlong * param_1)`
+pub const FreeAllChunkedQueueBlocks_3: u64 = 31759;
+/// `FreeAllChunkedQueueBlocks_4` at 0x51dfb0 (decompiler, medium); signature (untiered): `undefined FreeAllChunkedQueueBlocks_4(longlong * param_1)`
+pub const FreeAllChunkedQueueBlocks_4: u64 = 31992;
+/// `FreeAllEntryLists` at 0xf0e720 (decompiler, medium); signature (medium): `undefined FreeAllEntryLists(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const FreeAllEntryLists: u64 = 71290;
+/// `FreeAllListNodesToScrapHeap` at 0x502a90 (decompiler, medium); signature (untiered): `undefined FreeAllListNodesToScrapHeap(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const FreeAllListNodesToScrapHeap: u64 = 31543;
+/// `FreeAllPointersInArray` at 0x61f7c0 (decompiler, medium); signature (untiered): `undefined FreeAllPointersInArray(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const FreeAllPointersInArray: u64 = 35682;
+/// `FreeAllSegments` at 0x1193720 (decompiler, medium); signature (untiered): `undefined FreeAllSegments(undefined8 * param_1)`
+pub const FreeAllSegments: u64 = 87832;
+/// `FreeAllSegmentsInList` at 0x1193e00 (decompiler, medium); signature (untiered): `undefined FreeAllSegmentsInList(undefined8 * param_1)`
+pub const FreeAllSegmentsInList: u64 = 87837;
+/// `FreeAndClearField8` at 0xdfeaf0 (decompiler, high); signature (untiered): `undefined FreeAndClearField8(longlong param_1)`
+pub const FreeAndClearField8: u64 = 87434;
+/// `FreeAndClearPointer` at 0x5c2b90 (decompiler, high); signature (high): `undefined FreeAndClearPointer(undefined8 * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const FreeAndClearPointer: u64 = 34201;
 /// `FreeAndClearPointer_2` at 0x1e2c50 (decompiler, high); signature (high): `undefined FreeAndClearPointer_2(undefined8 * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const FreeAndClearPointer_2: u64 = 14583;
 /// `FreeAndClearPointer_3` at 0x1184c0 (decompiler, medium); signature (medium): `undefined FreeAndClearPointer_3(undefined8 param_1, undefined8 * param_2, undefined8 param_3, undefined8 param_4)`
@@ -8509,65 +8571,3 @@ pub const GameSetting_fMagicAbsorbDistanceReachMult__init: u64 = 3678;
 pub const GameSetting_fMagicAbsorbVisualTimer__atexit: u64 = 168889;
 /// `GameSetting_fMagicAbsorbVisualTimer__init` at 0x64e00 (crt_init, medium); signature (high): `void GameSetting_fMagicAbsorbVisualTimer__init(void)`
 pub const GameSetting_fMagicAbsorbVisualTimer__init: u64 = 3679;
-/// `GameSetting_fMagicAccumulatingModifierEffectHoldDuration__atexit` at 0x17772c0 (crt_init, medium); signature (high): `void GameSetting_fMagicAccumulatingModifierEffectHoldDuration__atexit(void)`
-pub const GameSetting_fMagicAccumulatingModifierEffectHoldDuration__atexit: u64 = 168890;
-/// `GameSetting_fMagicAccumulatingModifierEffectHoldDuration__init` at 0x64e80 (crt_init, medium); signature (high): `void GameSetting_fMagicAccumulatingModifierEffectHoldDuration__init(void)`
-pub const GameSetting_fMagicAccumulatingModifierEffectHoldDuration__init: u64 = 3680;
-/// `GameSetting_fMagicAreaBaseCostMult__atexit` at 0x1777310 (crt_init, medium); signature (high): `void GameSetting_fMagicAreaBaseCostMult__atexit(void)`
-pub const GameSetting_fMagicAreaBaseCostMult__atexit: u64 = 168891;
-/// `GameSetting_fMagicAreaBaseCostMult__init` at 0x64f00 (crt_init, medium); signature (high): `void GameSetting_fMagicAreaBaseCostMult__init(void)`
-pub const GameSetting_fMagicAreaBaseCostMult__init: u64 = 3681;
-/// `GameSetting_fMagicAreaScaleMax__atexit` at 0x17773b0 (crt_init, medium); signature (high): `void GameSetting_fMagicAreaScaleMax__atexit(void)`
-pub const GameSetting_fMagicAreaScaleMax__atexit: u64 = 168893;
-/// `GameSetting_fMagicAreaScaleMax__init` at 0x65000 (crt_init, medium); signature (high): `void GameSetting_fMagicAreaScaleMax__init(void)`
-pub const GameSetting_fMagicAreaScaleMax__init: u64 = 3683;
-/// `GameSetting_fMagicAreaScaleMin__atexit` at 0x1777400 (crt_init, medium); signature (high): `void GameSetting_fMagicAreaScaleMin__atexit(void)`
-pub const GameSetting_fMagicAreaScaleMin__atexit: u64 = 168894;
-/// `GameSetting_fMagicAreaScaleMin__init` at 0x65080 (crt_init, medium); signature (high): `void GameSetting_fMagicAreaScaleMin__init(void)`
-pub const GameSetting_fMagicAreaScaleMin__init: u64 = 3684;
-/// `GameSetting_fMagicAreaScale__atexit` at 0x1777360 (crt_init, medium); signature (high): `void GameSetting_fMagicAreaScale__atexit(void)`
-pub const GameSetting_fMagicAreaScale__atexit: u64 = 168892;
-/// `GameSetting_fMagicAreaScale__init` at 0x64f80 (crt_init, medium); signature (high): `void GameSetting_fMagicAreaScale__init(void)`
-pub const GameSetting_fMagicAreaScale__init: u64 = 3682;
-/// `GameSetting_fMagicBallMaximumDistance__atexit` at 0x173cab0 (crt_init, medium); signature (high): `void GameSetting_fMagicBallMaximumDistance__atexit(void)`
-pub const GameSetting_fMagicBallMaximumDistance__atexit: u64 = 165339;
-/// `GameSetting_fMagicBallMaximumDistance__init` at 0x88a0 (crt_init, medium); signature (high): `void GameSetting_fMagicBallMaximumDistance__init(void)`
-pub const GameSetting_fMagicBallMaximumDistance__init: u64 = 149;
-/// `GameSetting_fMagicBallOptimalDistance__atexit` at 0x173cb00 (crt_init, medium); signature (high): `void GameSetting_fMagicBallOptimalDistance__atexit(void)`
-pub const GameSetting_fMagicBallOptimalDistance__atexit: u64 = 165340;
-/// `GameSetting_fMagicBallOptimalDistance__init` at 0x8920 (crt_init, medium); signature (high): `void GameSetting_fMagicBallOptimalDistance__init(void)`
-pub const GameSetting_fMagicBallOptimalDistance__init: u64 = 150;
-/// `GameSetting_fMagicBarrierDepth__atexit` at 0x1777450 (crt_init, medium); signature (high): `void GameSetting_fMagicBarrierDepth__atexit(void)`
-pub const GameSetting_fMagicBarrierDepth__atexit: u64 = 168895;
-/// `GameSetting_fMagicBarrierDepth__init` at 0x65100 (crt_init, medium); signature (high): `void GameSetting_fMagicBarrierDepth__init(void)`
-pub const GameSetting_fMagicBarrierDepth__init: u64 = 3685;
-/// `GameSetting_fMagicBarrierHeight__atexit` at 0x17774a0 (crt_init, medium); signature (high): `void GameSetting_fMagicBarrierHeight__atexit(void)`
-pub const GameSetting_fMagicBarrierHeight__atexit: u64 = 168896;
-/// `GameSetting_fMagicBarrierHeight__init` at 0x65180 (crt_init, medium); signature (high): `void GameSetting_fMagicBarrierHeight__init(void)`
-pub const GameSetting_fMagicBarrierHeight__init: u64 = 3686;
-/// `GameSetting_fMagicBarrierSpacing__atexit` at 0x17774f0 (crt_init, medium); signature (high): `void GameSetting_fMagicBarrierSpacing__atexit(void)`
-pub const GameSetting_fMagicBarrierSpacing__atexit: u64 = 168897;
-/// `GameSetting_fMagicBarrierSpacing__init` at 0x65200 (crt_init, medium); signature (high): `void GameSetting_fMagicBarrierSpacing__init(void)`
-pub const GameSetting_fMagicBarrierSpacing__init: u64 = 3687;
-/// `GameSetting_fMagicBoltDuration__atexit` at 0x1777540 (crt_init, medium); signature (high): `void GameSetting_fMagicBoltDuration__atexit(void)`
-pub const GameSetting_fMagicBoltDuration__atexit: u64 = 168898;
-/// `GameSetting_fMagicBoltDuration__init` at 0x65280 (crt_init, medium); signature (high): `void GameSetting_fMagicBoltDuration__init(void)`
-pub const GameSetting_fMagicBoltDuration__init: u64 = 3688;
-/// `GameSetting_fMagicBoltMaximumDistance__atexit` at 0x173cb50 (crt_init, medium); signature (high): `void GameSetting_fMagicBoltMaximumDistance__atexit(void)`
-pub const GameSetting_fMagicBoltMaximumDistance__atexit: u64 = 165341;
-/// `GameSetting_fMagicBoltMaximumDistance__init` at 0x89a0 (crt_init, medium); signature (high): `void GameSetting_fMagicBoltMaximumDistance__init(void)`
-pub const GameSetting_fMagicBoltMaximumDistance__init: u64 = 151;
-/// `GameSetting_fMagicBoltOptimalDistance__atexit` at 0x173cba0 (crt_init, medium); signature (high): `void GameSetting_fMagicBoltOptimalDistance__atexit(void)`
-pub const GameSetting_fMagicBoltOptimalDistance__atexit: u64 = 165342;
-/// `GameSetting_fMagicBoltOptimalDistance__init` at 0x8a20 (crt_init, medium); signature (high): `void GameSetting_fMagicBoltOptimalDistance__init(void)`
-pub const GameSetting_fMagicBoltOptimalDistance__init: u64 = 152;
-/// `GameSetting_fMagicBoltSegmentLength__atexit` at 0x1777590 (crt_init, medium); signature (high): `void GameSetting_fMagicBoltSegmentLength__atexit(void)`
-pub const GameSetting_fMagicBoltSegmentLength__atexit: u64 = 168899;
-/// `GameSetting_fMagicBoltSegmentLength__init` at 0x65300 (crt_init, medium); signature (high): `void GameSetting_fMagicBoltSegmentLength__init(void)`
-pub const GameSetting_fMagicBoltSegmentLength__init: u64 = 3689;
-/// `GameSetting_fMagicCEEnchantMagOffset__atexit` at 0x17775e0 (crt_init, medium); signature (high): `void GameSetting_fMagicCEEnchantMagOffset__atexit(void)`
-pub const GameSetting_fMagicCEEnchantMagOffset__atexit: u64 = 168900;
-/// `GameSetting_fMagicCEEnchantMagOffset__init` at 0x65380 (crt_init, medium); signature (high): `void GameSetting_fMagicCEEnchantMagOffset__init(void)`
-pub const GameSetting_fMagicCEEnchantMagOffset__init: u64 = 3690;
-/// `GameSetting_fMagicCasterPCSkillCostBase__atexit` at 0x1777630 (crt_init, medium); signature (high): `void GameSetting_fMagicCasterPCSkillCostBase__atexit(void)`
-pub const GameSetting_fMagicCasterPCSkillCostBase__atexit: u64 = 168901;

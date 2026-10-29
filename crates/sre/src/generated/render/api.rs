@@ -1279,15 +1279,12 @@ pub fn present_frame() { unsafe { function!(77246, ())() } }
 /// `void (BSCullingProcess* culler)`
 #[inline]
 pub fn process_shadow_scene_node_queues(culler: &crate::BSCullingProcess) { unsafe { function!(106337, (*const crate::BSCullingProcess))(core::ptr::from_ref(culler)) } }
-/// `RenderFirstPerson`: draws the first-person root (arms and weapon) after the main scene; runs only when the first-person root is shown at frame start and the camera is not the free camera
+/// `RenderFirstPerson`: draws the first-person root (arms and weapon) after the main scene: g_FirstPersonAccumulator with g_FirstPersonCamera against depth 7 (bound without a clear) in viewport depth [0, 0.01] (0.1 control-driven); runs only when the first-person root is shown at frame start and the camera is not the free camera
 ///
 /// Semantic, render pass, high; ledger runtime evidence, name high; id 107129, rva 0x1537b10.
-/// `void (void* renderTargets, bool)`
-///
-/// # Safety
-/// `renderTargets` must point to what the engine expects.
+/// `void (bool flag10, bool controlDriven)`
 #[inline]
-pub unsafe fn render_first_person(renderTargets: *mut c_void, a1: bool) { unsafe { function!(107129, (*mut c_void, bool))(renderTargets, a1) } }
+pub fn render_first_person(flag10: bool, controlDriven: bool) { unsafe { function!(107129, (bool, bool))(flag10, controlDriven) } }
 /// `RenderFrame`: per-frame render: world draw when the player's 3D is loaded (0x656d10), menus, screenshots, then PresentFrame
 ///
 /// Semantic, render pass, high; ledger runtime evidence, name high; id 36555, rva 0x6565b0.

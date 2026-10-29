@@ -11661,6 +11661,8 @@ pub const g_BackBufferWidth: u64 = 411485;
 pub const g_BloodSplatterShader: u64 = 414614;
 /// `g_BloodSplatterShaderInstance` at 0x3435c08 (semantic, high); pointer to `BSBloodSplatterShader`: instance pointer; instance pointer (high); type `ptr:BSBloodSplatterShader`
 pub const g_BloodSplatterShaderInstance: u64 = 414854;
+/// `g_BodyPartTypeNames` at 0x2099290 (semantic, medium); const char*[6]: 'Torso', 'DismemberedLimb1 Head1', 'Eye', 'LookAt', 'Fly Grab', 'Saddle' (enum BodyPartType) (medium); type `pointer`
+pub const g_BodyPartTypeNames: u64 = 368919;
 /// `g_CCallResult_BSWin32SystemUtility_EncryptedAppTicketResponse_t` at 0x3699470 (layout_inference, medium)
 pub const g_CCallResult_BSWin32SystemUtility_EncryptedAppTicketResponse_t: u64 = 415503;
 /// `g_CCallbackImpl_1` at 0x3699420 (layout_inference, medium)
@@ -11703,6 +11705,8 @@ pub const g_CharacterCollisionHandler_ptr: u64 = 403563;
 pub const g_CharacterCollisionMessagePlayerAdapter: u64 = 381081;
 /// `g_Character_ptr` at 0x31e05a0 (xref_inference, medium)
 pub const g_Character_ptr: u64 = 401440;
+/// `g_CollisionLayerNames` at 0x20d1f80 (semantic, high); const char*[47]: collision layer names by layer index (enum CollisionLayer); entry 47 is null (high); type `pointer`
+pub const g_CollisionLayerNames: u64 = 389332;
 /// `g_CombatBehaviorTreeAcquireWeapon` at 0x3254ca0 (layout_inference, medium)
 pub const g_CombatBehaviorTreeAcquireWeapon: u64 = 405299;
 /// `g_CombatBehaviorTreeAction` at 0x3254d38 (layout_inference, medium)
@@ -12077,6 +12081,8 @@ pub const g_DOFOverrideMode: u64 = 391008;
 pub const g_DXGIOutput: u64 = 411386;
 /// `g_DebugText_ptr` at 0x333c570 (xref_inference, medium)
 pub const g_DebugText_ptr: u64 = 412090;
+/// `g_DefaultBodyPartData` at 0x31e0178 (semantic, high); pointer to `BGSBodyPartData`: fallback body part data when the race has none; fallback body part data when the race has none (high); type `ptr:BGSBodyPartData`
+pub const g_DefaultBodyPartData: u64 = 401344;
 /// `g_DefaultCameraPath` at 0x31df550 (semantic, high); pointer to `BGSCameraPath`: form 0x16 "DefaultCameraPath"; form 0x16 "DefaultCameraPath" (high); type `ptr:BGSCameraPath`
 pub const g_DefaultCameraPath: u64 = 401130;
 /// `g_DefaultCameraStateRotation` at 0x331d790 (semantic, medium); NiQuaternion returned by TESCameraState::GetRotation and seeded into TransitionState rotations; zero in the file (runtime-initialised) (medium); type `undefined1`
@@ -12149,6 +12155,8 @@ pub const g_EventSourceHolder_MenuOpenClose_ptr: u64 = 400327;
 pub const g_EventSourceHolder_TES: u64 = 400420;
 /// `g_EventSourceHolder_User_ptr` at 0x31a5690 (runtime, high); pointer to `EventSourceHolder_User`: pointer to the user-event holder (UserEventEnabledEvent at +8); pointer to the user-event holder (UserEventEnabledEvent at +8) (high); type `ptr:EventSourceHolder_User`
 pub const g_EventSourceHolder_User_ptr: u64 = 400863;
+/// `g_ExteriorWorldHolder` at 0x21a0598 (semantic, high); address of the slot holding the exterior (worldspace) bhkWorld: world = **0x21a0598 (high); type `pointer`
+pub const g_ExteriorWorldHolder: u64 = 400440;
 /// `g_ExtraDataChangeFlags` at 0x2076db0 (semantic, high); extra data type -> change-flag mask that makes ExtraDataList::SaveGame write it (high); type `undefined4[0xb4]`
 pub const g_ExtraDataChangeFlags: u64 = 358622;
 /// `g_ExtraDataLock` at 0x331c618 (semantic, high); one global lock for every NiObjectNET extra data array (high); type `class:BSReadWriteLock`
@@ -12169,10 +12177,16 @@ pub const g_FadeNodesEnabled: u64 = 390866;
 pub const g_FirstPersonAccumulator: u64 = 415011;
 /// `g_FirstPersonCamera` at 0x3436220 (semantic, high); pointer to `NiCamera`: the hands camera; its projection is set twice per first-person frame (0x1537566, 0x153979d); the hands camera; its projection is set twice per first-person frame (0x1537566, 0x153979d) (high); type `ptr:NiCamera`
 pub const g_FirstPersonCamera: u64 = 415007;
+/// `g_FirstPersonCuller` at 0x3436040 (semantic, high); pointer to `BSGeometryListCullingProcess`: the step-9 first-person culler; its +0x128 list and ordered-group buckets carry the first-person geometry from step 9 to step 14; the step-9 first-person culler; its +0x128 list and ordered-group buckets carry the first-person geometry from step 9 to step 14 (high); type `ptr:BSGeometryListCullingProcess`
+pub const g_FirstPersonCuller: u64 = 414946;
+/// `g_FirstPersonOffsetFrame` at 0x343602c (semantic, high); g_RenderFrameCounter value at which 0x3436328 was last rotated (high); type `u32`
+pub const g_FirstPersonOffsetFrame: u64 = 414943;
 /// `g_FirstPersonPitchGraphVar` at 0x3255ab8 (semantic, high); graph float variable FirstPersonState sends laggedPitchOffset to (high); type `class:BSFixedString`
 pub const g_FirstPersonPitchGraphVar: u64 = 405789;
 /// `g_FirstPersonRootOffset` at 0x3436318 (semantic, high); NiPoint3 = -(first-person root world translation) of this frame; 0x3436328 holds the previous frame's (copied once per g_RenderFrameCounter, 0x343602c) (high); type `undefined1`
 pub const g_FirstPersonRootOffset: u64 = 415042;
+/// `g_FirstPersonRootPrevOffset` at 0x3436328 (semantic, high); previous frame's first-person offset, passed as previousOffset to every shift and unshift (high); type `float[3]`
+pub const g_FirstPersonRootPrevOffset: u64 = 415045;
 /// `g_FirstPersonViewParams` at 0x34362c0 (runtime, high); 0x58-byte block returned by 0x1537410: +0..+8 first-person position offset, +0xc (0x34362cc) the hands FOV used by 0x1537460 and 0x1538fa0 (high); type `undefined1`
 pub const g_FirstPersonViewParams: u64 = 415027;
 /// `g_FocusShadowNodeCount` at 0x33d3e90 (runtime, high); number of focus shadow nodes this frame (0 in vanilla first person without nearby actors) (high); type `u32`
@@ -12185,6 +12199,8 @@ pub const g_FocusShadowOwner: u64 = 415267;
 pub const g_FocusShadowsAssigned: u64 = 415041;
 /// `g_FocusShadowsEnabled` at 0x20d6810 (semantic, medium); 1 in the image, no writer found; gates focus maps (medium); type `u8`
 pub const g_FocusShadowsEnabled: u64 = 390932;
+/// `g_FootIkRaycastInterfaceDB` at 0x31df418 (semantic, high); pointer to `BGSFootIkRaycastInterfaceDB`: the foot IK raycast database singleton; the foot IK raycast database singleton (high); type `ptr:BGSFootIkRaycastInterfaceDB`
+pub const g_FootIkRaycastInterfaceDB: u64 = 401101;
 /// `g_FootstepEventSource_ptr` at 0x32309c8 (semantic, high); pointer to `BSTEventSource`: pointer to the BSTEventSource<BGSFootstepEvent> Main::ctor creates (static storage) followed by the BSTArray<BSFixedString> of forwarded tags at +0x60; actors notify it from their animation graph handler and BGSImpactManager is its sink; pointer to the BSTEventSource<BGSFootstepEvent> Main::ctor creates (static storage) followed by the BSTArray<BSFixedString> of forwarded tags at +0x60; actors notify it from their animation graph handler and BGSImpactManager is its sink (high); type `ptr:BSTEventSource`
 pub const g_FootstepEventSource_ptr: u64 = 403553;
 /// `g_FormTypeSignatures` at 0x17f95a0 (string, high)
@@ -12349,6 +12365,8 @@ pub const g_MainCullingCamera: u64 = 403552;
 pub const g_MainLoopSteps: u64 = 380514;
 /// `g_MaxFocusShadows` at 0x20d6814 (semantic, high); iNumFocusShadow copied by InitShaders 0x14eaaba (image default 4) (high); type `u32`
 pub const g_MaxFocusShadows: u64 = 414621;
+/// `g_MaxPickTime` at 0x20d1758 (semantic, low); pick time budget (0.001 in the image; 0x20d175c = 0.03 while VATS flag 0x333652a is set) (low); type `float`
+pub const g_MaxPickTime: u64 = 389093;
 /// `g_MenuControls` at 0x323a670 (runtime, high); static storage of MenuControls (0x88, ends at ConsoleLog 0x323a700) (high); type `class:MenuControls`
 pub const g_MenuControls: u64 = 403634;
 /// `g_MenuControlsCurrentEvent` at 0x32583b8 (semantic, high); pointer to `InputEvent`: the event being dispatched; the event being dispatched (high); type `ptr:InputEvent`
@@ -12359,7 +12377,7 @@ pub const g_MenuControlsEventHandled: u64 = 406355;
 pub const g_MenuControls_ptr: u64 = 401263;
 /// `g_MenuOpenHandlerHandled` at 0x32583c8 (semantic, high); MenuOpenHandler handled an event this dispatch; MenuOpenHandler and FavoritesHandler refuse further events; cleared at the start of MenuControls::ProcessEvent (high); type `undefined1`
 pub const g_MenuOpenHandlerHandled: u64 = 406356;
-/// `g_MenuTopicManager_ptr` at 0x31df408 (xref_inference, medium)
+/// `g_MenuTopicManager_ptr` at 0x31df408 (runtime, high); pointer to `MenuTopicManager`: the topic manager; points at static storage 0x323ab20 after startup; the topic manager; points at static storage 0x323ab20 after startup (high); type `ptr:MenuTopicManager`
 pub const g_MenuTopicManager_ptr: u64 = 401099;
 /// `g_MessageBoxMenu` at 0x32583f8 (semantic, high); the live MessageBoxMenu (high); type `MessageBoxMenu*`
 pub const g_MessageBoxMenu: u64 = 406361;
@@ -12447,8 +12465,14 @@ pub const g_PendingAudioLoads: u64 = 410105;
 pub const g_PendingConsoleLines: u64 = 504100;
 /// `g_PerFrameConstantBuffer` at 0x3331f08 (semantic, high); ID3D11Buffer* bound to VS and PS constant slot 12 at every frame start (high); type `undefined8`
 pub const g_PerFrameConstantBuffer: u64 = 411384;
+/// `g_PickBudgetDisabled` at 0x3336528 (semantic, medium); when set PickObject never refuses a pick for time; set and cleared by FindAutoAimTarget through SetGlobalByte411521 0x104df40 (medium); type `undefined1`
+pub const g_PickBudgetDisabled: u64 = 411521;
+/// `g_PickTimeThisStep` at 0x3336520 (semantic, low); compared with the pick budget in PickObject; reset by the world step (low); type `float`
+pub const g_PickTimeThisStep: u64 = 411519;
 /// `g_PlaceholderTexture` at 0x3336448 (xref_inference, medium); pointer to `NiSourceTexture`: texture used when a material texture is missing; texture used when a material texture is missing (low); type `ptr:NiSourceTexture`
 pub const g_PlaceholderTexture: u64 = 411503;
+/// `g_PlayerBodyPartDataOverride` at 0x31e0180 (semantic, high); pointer to `BGSBodyPartData`: used instead of the race's body part data for the player when set; used instead of the race's body part data for the player when set (high); type `ptr:BGSBodyPartData`
+pub const g_PlayerBodyPartDataOverride: u64 = 401345;
 /// `g_PlayerCamera` at 0x3245380 (semantic, medium); static PlayerCamera instance (medium); type `class:PlayerCamera`
 pub const g_PlayerCamera: u64 = 404422;
 /// `g_PlayerCamera_ptr` at 0x31a5478 (runtime, high); pointer to `PlayerCamera`: the player camera singleton; the player camera singleton (high); type `ptr:PlayerCamera`
@@ -12491,6 +12515,8 @@ pub const g_RaceMenuCameraEase: u64 = 383171;
 pub const g_RaceMenuCameraInterpDone: u64 = 383182;
 /// `g_RaceMenuFaceCameraTarget` at 0x3258520 (semantic, high); 7 floats: position + quaternion of the face view (high); type `undefined1`
 pub const g_RaceMenuFaceCameraTarget: u64 = 406397;
+/// `g_RaceMenuHeadLookYaw` at 0x3258580 (semantic, medium); race menu head-look horizontal input in [-1, 1]; 0x3258584 the vertical one (medium); type `float`
+pub const g_RaceMenuHeadLookYaw: u64 = 406418;
 /// `g_RagdollFurnitureListener` at 0x209e320 (layout_inference, medium)
 pub const g_RagdollFurnitureListener: u64 = 370090;
 /// `g_RecentHUDMessages` at 0x3258b80 (semantic, high); repeat-suppression table of ShowHUDMessage (high); type `struct{u32 crc; u32 time;}[8]`
@@ -13561,6 +13587,8 @@ pub const g_UI3DScene_ptr: u64 = 403560;
 pub const g_UI3DShadowsEnabled: u64 = 383327;
 /// `g_UIBlurManager_ptr` at 0x3230018 (xref_inference, medium)
 pub const g_UIBlurManager_ptr: u64 = 403350;
+/// `g_UICursor_ptr` at 0x3210e38 (semantic, high); pointer to `UICursor`: pointer to the cursor static 0x333b080; set by the UI ctor 0x1169395, cleared by the UI dtor 0x11694a2; pointer to the cursor static 0x333b080; set by the UI ctor 0x1169395, cleared by the UI dtor 0x11694a2 (high); type `ptr:UICursor`
+pub const g_UICursor_ptr: u64 = 403551;
 /// `g_UIMenuStackLock` at 0x333b050 (semantic, high); recursive spin lock (owner thread id u32 at +0, recursion count u32 at +4; Sleep(0) spins, Sleep(1) after 10,000) guarding the menu stack and the counters (high); type `undefined8`
 pub const g_UIMenuStackLock: u64 = 412033;
 /// `g_UIMessageQueue` at 0x333b0b0 (semantic, high); the queue's static storage (0xb80 bytes) (high); type `class:UIMessageQueue`
@@ -13569,39 +13597,3 @@ pub const g_UIMessageQueue: u64 = 412047;
 pub const g_UIMessageQueue_ptr: u64 = 400445;
 /// `g_UISaveLoadManager_ptr` at 0x31e0140 (xref_inference, medium)
 pub const g_UISaveLoadManager_ptr: u64 = 401336;
-/// `g_UIStrings_ptr` at 0x21a05c8 (semantic, high); interface string table: one BSFixedString per data type and menu name, filled by 0x1177a90 (high); type `pointer`
-pub const g_UIStrings_ptr: u64 = 400446;
-/// `g_UseHDRTonemap` at 0x20d75e4 (semantic, medium); non-zero (static 1): the chain's tonemap step runs effect 30 (HDR) instead of the copy 0x22 (medium); type `u8`
-pub const g_UseHDRTonemap: u64 = 391301;
-/// `g_UserEventNames` at 0x32048d0 (semantic, high); BSFixedString table: +0x70 Toggle POV, +0xb0 Run, +0x1e8 Zoom In, +0x1f0 Zoom Out (data/usereventnames.json) (high); type `pointer`
-pub const g_UserEventNames: u64 = 402638;
-/// `g_UserEventNamesStorage` at 0x32757a0 (semantic, high); static storage the g_UserEventNames pointer (0x32048d0) points at (high); type `class:UserEventNames`
-pub const g_UserEventNamesStorage: u64 = 410238;
-/// `g_UtilityShader` at 0x33d3de8 (semantic, high); pointer to `BSUtilityShader`: holder; holder (high); type `ptr:BSUtilityShader`
-pub const g_UtilityShader: u64 = 414609;
-/// `g_UtilityShaderInstance` at 0x3698b60 (semantic, high); pointer to `BSUtilityShader`: instance pointer; the shader of every depth/shadow pass (lighting and effect properties' slot 43) and of the shadow-mask passes; instance pointer; the shader of every depth/shadow pass (lighting and effect properties' slot 43) and of the shadow-mask passes (high); type `ptr:BSUtilityShader`
-pub const g_UtilityShaderInstance: u64 = 415300;
-/// `g_VATSCameraDollyActive` at 0x31df560 (semantic, high); dolly running (high); type `u8`
-pub const g_VATSCameraDollyActive: u64 = 401132;
-/// `g_VATSCameraDollyDelta` at 0x31df590 (semantic, high); target position - dolly start (high); type `float[3]`
-pub const g_VATSCameraDollyDelta: u64 = 401143;
-/// `g_VATSCameraDollyDuration` at 0x31df56c (semantic, high); dolly time (high); type `float`
-pub const g_VATSCameraDollyDuration: u64 = 401136;
-/// `g_VATSCameraDollyFrom` at 0x31df580 (semantic, high); camera position when the dolly started (PlayerCamera::GetPosition), zero = not yet captured (high); type `float[3]`
-pub const g_VATSCameraDollyFrom: u64 = 401140;
-/// `g_VATSCameraDollyStartClock` at 0x31df564 (semantic, high); playback clock when the dolly started (high); type `float`
-pub const g_VATSCameraDollyStartClock: u64 = 401134;
-/// `g_VATSCameraDollyT` at 0x31df568 (semantic, high); dolly progress 0..1 (high); type `float`
-pub const g_VATSCameraDollyT: u64 = 401135;
-/// `g_VATSCameraInSoundPlayed` at 0x31df561 (semantic, high); UIVATSCameraIn played, UIVATSCameraOut pending (high); type `u8`
-pub const g_VATSCameraInSoundPlayed: u64 = 401133;
-/// `g_VATSCameraMeshOffset` at 0x31df570 (semantic, high); last camera NIF root local translation (high); type `float[3]`
-pub const g_VATSCameraMeshOffset: u64 = 401137;
-/// `g_VATSCameraPhase` at 0x3252a58 (semantic, high); 0 attack, 1 projectile, 2 hit (high); type `i32`
-pub const g_VATSCameraPhase: u64 = 404871;
-/// `g_VATSConsoleCameraPath` at 0x3252a30 (semantic, high); pointer to `BGSCameraPath`: path forced by PlayVATSCameras for the next playback; path forced by PlayVATSCameras for the next playback (high); type `ptr:BGSCameraPath`
-pub const g_VATSConsoleCameraPath: u64 = 404864;
-/// `g_VATSCurrentCameraPath` at 0x3252a50 (semantic, high); pointer to `BGSCameraPath`: path being played; path being played (high); type `ptr:BGSCameraPath`
-pub const g_VATSCurrentCameraPath: u64 = 404870;
-/// `g_VATSDefaultCameraPathOnce` at 0x3252a38 (xref_inference, medium); pointer to `BGSCameraPath`: one-shot path override (consumed by UpdateVATS); one-shot path override (consumed by UpdateVATS) (medium); type `ptr:BGSCameraPath`
-pub const g_VATSDefaultCameraPathOnce: u64 = 404865;

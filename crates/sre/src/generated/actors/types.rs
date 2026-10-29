@@ -106,7 +106,7 @@ pub struct Actor {
     pub __vftable_C0: *const crate::raw::vtables::Actor_vtable_C0,
     /// +0xC8 `undefined4`, base ActorState, semantic; movement flags: bits 8-10 sprint/sneak/swim, 14-17 sit/sleep state (ActorSitSleepState), 18-20 flying state (ActorFlyingState), 21-24 life state (1 dying, 2 dead, 5 essential down, 7-8 bleedout), 25-27 knock state (ActorKnockState), 28-31 attack state (ActorAttackState); see the flag rows (high)
     pub flags1: u32,
-    /// +0xCC `undefined4`, base ActorState, semantic; state flags: bits 5-7 weapon state (ActorWeaponState; drawn when >= 3), bit 8 wants to block (blockStart / blockStop), bits 10-11 recoil and large recoil (IsRecoiling tests 0xc00), bit 13 staggered (IsStaggered 0x33f700) (high)
+    /// +0xCC `undefined4`, base ActorState, semantic; state flags: bit 3 head tracking enabled, bits 5-7 weapon state (ActorWeaponState; drawn when >= 3), bit 8 wants to block (blockStart / blockStop), bits 10-11 recoil and large recoil (IsRecoiling tests 0xc00), bit 13 staggered (IsStaggered 0x33f700) (high)
     pub flags2: u32,
     /// +0xD0 `vtbl:Actor:D0`, rtti
     #[doc(hidden)]
@@ -256,7 +256,7 @@ pub struct ActorState {
     pub __vftable: *const crate::raw::vtables::ActorState_vtable,
     /// +0x8 `undefined4`, ctor store, semantic, runtime; movement flags: bits 8-10 sprint/sneak/swim, 14-17 sit/sleep state (ActorSitSleepState), 18-20 flying state (ActorFlyingState), 21-24 life state (1 dying, 2 dead, 5 essential down, 7-8 bleedout), 25-27 knock state (ActorKnockState), 28-31 attack state (ActorAttackState); see the flag rows (high)
     pub flags1: u32,
-    /// +0xC `undefined4`, ctor store, semantic, runtime; state flags: bits 5-7 weapon state (ActorWeaponState; drawn when >= 3), bit 8 wants to block (blockStart / blockStop), bits 10-11 recoil and large recoil (IsRecoiling tests 0xc00), bit 13 staggered (IsStaggered 0x33f700) (high)
+    /// +0xC `undefined4`, ctor store, semantic, runtime; state flags: bit 3 head tracking enabled, bits 5-7 weapon state (ActorWeaponState; drawn when >= 3), bit 8 wants to block (blockStart / blockStop), bits 10-11 recoil and large recoil (IsRecoiling tests 0xc00), bit 13 staggered (IsStaggered 0x33f700) (high)
     pub flags2: u32,
     #[doc(hidden)]
     pub __engine: crate::Engine,
@@ -601,7 +601,7 @@ pub struct Character {
     pub __vftable_C0: *const crate::raw::vtables::Character_vtable_C0,
     /// +0xC8 `undefined4`, base ActorState, semantic; movement flags: bits 8-10 sprint/sneak/swim, 14-17 sit/sleep state (ActorSitSleepState), 18-20 flying state (ActorFlyingState), 21-24 life state (1 dying, 2 dead, 5 essential down, 7-8 bleedout), 25-27 knock state (ActorKnockState), 28-31 attack state (ActorAttackState); see the flag rows (high)
     pub flags1: u32,
-    /// +0xCC `undefined4`, base ActorState, semantic; state flags: bits 5-7 weapon state (ActorWeaponState; drawn when >= 3), bit 8 wants to block (blockStart / blockStop), bits 10-11 recoil and large recoil (IsRecoiling tests 0xc00), bit 13 staggered (IsStaggered 0x33f700) (high)
+    /// +0xCC `undefined4`, base ActorState, semantic; state flags: bit 3 head tracking enabled, bits 5-7 weapon state (ActorWeaponState; drawn when >= 3), bit 8 wants to block (blockStart / blockStop), bits 10-11 recoil and large recoil (IsRecoiling tests 0xc00), bit 13 staggered (IsStaggered 0x33f700) (high)
     pub flags2: u32,
     /// +0xD0 `vtbl:Character:D0`, rtti
     #[doc(hidden)]
@@ -1021,7 +1021,7 @@ pub struct PlayerCharacter {
     pub __vftable_C0: *const crate::raw::vtables::PlayerCharacter_vtable_C0,
     /// +0xC8 `undefined4`, base ActorState, semantic; movement flags: bits 8-10 sprint/sneak/swim, 14-17 sit/sleep state (ActorSitSleepState), 18-20 flying state (ActorFlyingState), 21-24 life state (1 dying, 2 dead, 5 essential down, 7-8 bleedout), 25-27 knock state (ActorKnockState), 28-31 attack state (ActorAttackState); see the flag rows (high)
     pub flags1: u32,
-    /// +0xCC `undefined4`, base ActorState, semantic; state flags: bits 5-7 weapon state (ActorWeaponState; drawn when >= 3), bit 8 wants to block (blockStart / blockStop), bits 10-11 recoil and large recoil (IsRecoiling tests 0xc00), bit 13 staggered (IsStaggered 0x33f700) (high)
+    /// +0xCC `undefined4`, base ActorState, semantic; state flags: bit 3 head tracking enabled, bits 5-7 weapon state (ActorWeaponState; drawn when >= 3), bit 8 wants to block (blockStart / blockStop), bits 10-11 recoil and large recoil (IsRecoiling tests 0xc00), bit 13 staggered (IsStaggered 0x33f700) (high)
     pub flags2: u32,
     /// +0xD0 `vtbl:PlayerCharacter:D0`, rtti
     #[doc(hidden)]

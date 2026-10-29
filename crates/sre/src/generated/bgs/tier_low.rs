@@ -337,37 +337,6 @@ impl crate::BGSBlockBashData {
     pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(14129, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
-impl crate::BGSBodyPartData {
-    /// `BGSBodyPartData::BGSPreloadable_vfunc_4` (decompiler signature, tier low; ledger rtti evidence, name high; id 23484, rva 0x38c210).
-    /// `undefined BGSPreloadable_vfunc_4(BGSBodyPartData * this, longlong param_1, uint param_2, undefined8 param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn bgs_preloadable_vfunc_4(&self, param_1: i64, param_2: u32, param_3: u64) -> u64 { unsafe { function!(23484, (*const Self, i64, u32, u64) -> u64)(core::ptr::from_ref(self).byte_add(0x48), param_1, param_2, param_3) } }
-    /// `BGSBodyPartData::ctor` (decompiler signature, tier low; ledger layout_inference evidence, name high; id 23465, rva 0x38b110).
-    /// `BGSBodyPartData * ctor(BGSBodyPartData * this, undefined8 param_1, uint * param_2, longlong * param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn ctor(&self, param_1: u64, param_2: *mut u32, param_3: *mut i64) -> *mut Self { unsafe { function!(23465, (*const Self, u64, *mut u32, *mut i64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
-    /// `BGSBodyPartData::dtor` (decompiler signature, tier low; ledger layout_inference evidence, name high; id 23466, rva 0x38b1a0).
-    /// `undefined dtor(BGSBodyPartData * this, undefined8 param_1, longlong param_2, undefined1 * param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn dtor(&self, param_1: u64, param_2: i64, param_3: *mut u8) -> u64 { unsafe { function!(23466, (*const Self, u64, i64, *mut u8) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
-    /// `BGSBodyPartData::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 23496, rva 0x38c590).
-    /// `BGSBodyPartData * vdtor(BGSBodyPartData * this, ulonglong param_1, longlong param_2, undefined1 * param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: i64, param_3: *mut u8) -> *mut Self { unsafe { function!(23496, (*const Self, u64, i64, *mut u8) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
-}
-
 impl crate::BGSCollisionLayer {
     /// `BGSCollisionLayer::ctor` (decompiler signature, tier low; ledger layout_inference evidence, name high; id 20724, rva 0x31a2e0).
     /// `BGSCollisionLayer * ctor(BGSCollisionLayer * this, undefined8 param_1, uint * param_2, longlong * param_3)`

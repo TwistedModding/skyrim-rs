@@ -1853,7 +1853,7 @@ pub type MenuOpenHandler_vtable_ProcessButtonEvent = unsafe extern "C" fn(this: 
 pub struct MenuTopicManager_vtable {
     /// `MenuTopicManager::vdtor` at 0x5f2520 (slot_propagation, medium); signature (low): `MenuTopicManager * vdtor(MenuTopicManager * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `MenuTopicManager::vfunc_1` at 0x5ee850 (rtti, high); signature (low): `undefined8 vfunc_1(MenuTopicManager * this, longlong * param_1)`
+    /// `MenuTopicManager::ProcessEvent_MenuOpenClose` at 0x5ee850 (semantic, high); signature (untiered): `undefined8 ProcessEvent_MenuOpenClose(MenuTopicManager * this, longlong * param_1)`
     pub slot_1: *const c_void,
 }
 impl MenuTopicManager_vtable {

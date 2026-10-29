@@ -10272,12 +10272,20 @@ pub struct CachedRaycastData_vtable {
     pub slot_0: *const c_void,
     /// `CachedRaycastData::vfunc_1` at 0x54b1e0 (rtti, high); signature (low): `undefined8 vfunc_1(CachedRaycastData * this, undefined8 param_1)`
     pub slot_1: *const c_void,
-    /// `CachedRaycastData::vfunc_2` at 0x54af00 (rtti, high); signature (low): `char * vfunc_2(CachedRaycastData * this, char * param_1, float * param_2, float * param_3, undefined4 * param_4, float * param_5)`
+    /// `CachedRaycastData::CastRay` at 0x54af00 (semantic, high); signature (untiered): `char * CastRay(CachedRaycastData * this, char * param_1, float * param_2, float * param_3, undefined4 * param_4, float * param_5)`; `CastRay`: functions row (high); semantic signature: `hkBool* (CachedRaycastData*, hkBool*, const hkVector4*, const hkVector4*, float*, hkVector4*)`
     pub slot_2: *const c_void,
 }
 impl CachedRaycastData_vtable {
     pub const ID: u64 = 205120;
+    pub const SLOT_CastRay: usize = 2;
+    /// Slot 2 as `CachedRaycastData_vtable_CastRay`, `None` when the slot is null.
+    #[must_use]
+    pub fn CastRay(&self) -> Option<CachedRaycastData_vtable_CastRay> {
+        unsafe { core::mem::transmute::<*const c_void, Option<CachedRaycastData_vtable_CastRay>>(self.slot_2) }
+    }
 }
+/// `CachedRaycastData::CastRay`, slot 2: functions row (high).
+pub type CachedRaycastData_vtable_CastRay = unsafe extern "C" fn(a0: *mut crate::CachedRaycastData, a1: *mut c_void, a2: *const crate::hkVector4, a3: *const crate::hkVector4, a4: *mut f32, a5: *mut crate::hkVector4) -> *mut c_void;
 
 /// `CalmEffect::vftable` at 0x18fca18, id 206135 (rtti, high); 34 slots.
 #[repr(C)]
@@ -11534,7 +11542,7 @@ pub struct Character_vtable {
     pub slot_288: *const c_void,
     /// `Actor::vfunc_289` at 0x6b3bf0 (rtti, medium); signature (low): `undefined vfunc_289(Actor * this, longlong param_1)`
     pub slot_289: *const c_void,
-    /// `Actor::UpdateHeadTracking` at 0x6b3f20 (semantic, high); signature (untiered): `undefined UpdateHeadTracking(Actor * this, float param_1, undefined8 param_2, Actor * param_3)`
+    /// `Actor::UpdateHeadTracking` at 0x6b3f20 (runtime, high); signature (untiered): `undefined UpdateHeadTracking(Actor * this, float param_1, undefined8 param_2, Actor * param_3)`
     pub slot_290: *const c_void,
     /// `Actor::vfunc_291` at 0x6b4780 (rtti, medium); signature (low): `undefined vfunc_291(Actor * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_291: *const c_void,
@@ -11642,7 +11650,7 @@ pub struct Character_vtable_A0 {
     pub slot_5: *const c_void,
     /// `Actor::MagicTarget_vfunc_6` at 0x6d8570 (rtti, medium); signature (high): `undefined8 MagicTarget_vfunc_6(Actor * this)`
     pub slot_6: *const c_void,
-    /// `MagicTarget::GetActiveEffectList` at 0x6d85b0 (runtime, high); signature (untiered): `undefined8 GetActiveEffectList(MagicTarget * this)`
+    /// `Actor::GetActiveEffectList` at 0x6d85b0 (runtime, high); signature (untiered): `undefined8 GetActiveEffectList(Actor * this)`
     pub slot_7: *const c_void,
     /// `Actor::MagicTarget_vfunc_8` at 0x6d50c0 (rtti, medium); signature (low): `undefined MagicTarget_vfunc_8(Actor * this, longlong param_1, ulonglong param_2, TypeDescriptor * param_3)`
     pub slot_8: *const c_void,

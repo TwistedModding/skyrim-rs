@@ -4075,13 +4075,6 @@ pub unsafe fn cast_if_derived_from(param_1: i64, param_2: *mut i64) -> *mut i64 
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn cast_ray(param_1: i64, param_2: *mut f32, param_3: *mut f32, param_4: *mut u64) -> u32 { unsafe { function!(81806, (i64, *mut f32, *mut f32, *mut u64) -> u32)(param_1, param_2, param_3, param_4) } }
-/// `CastRayGetHitDistance` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 30229, rva 0x4b9a80).
-/// `float CastRayGetHitDistance(longlong param_1, float * param_2, float * param_3)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn cast_ray_get_hit_distance(param_1: i64, param_2: *mut f32, param_3: *mut f32) -> f32 { unsafe { function!(30229, (i64, *mut f32, *mut f32) -> f32)(param_1, param_2, param_3) } }
 /// `CeilFloat` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 14200, rva 0x1d6a60).
 /// `float CeilFloat(float param_1)`
 ///
@@ -13770,3 +13763,10 @@ pub unsafe fn detach_result_set_field90(param_1: i64, param_2: *mut u64, param_3
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn detach_result_set_field90_10(param_1: i64, param_2: *mut u64, param_3: u64) -> *mut u64 { unsafe { function!(447576, (i64, *mut u64, u64) -> *mut u64)(param_1, param_2, param_3) } }
+/// `DetachResultSetField90_11` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 447968, rva 0x135cdf0).
+/// `undefined8 * DetachResultSetField90_11(longlong param_1, undefined8 * param_2, undefined8 param_3)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn detach_result_set_field90_11(param_1: i64, param_2: *mut u64, param_3: u64) -> *mut u64 { unsafe { function!(447968, (i64, *mut u64, u64) -> *mut u64)(param_1, param_2, param_3) } }

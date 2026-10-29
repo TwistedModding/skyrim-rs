@@ -3,41 +3,6 @@
 
 use core::ffi::{c_char, c_void};
 
-/// `Cmd::CloseFile_Execute` (decompiler signature, tier low; ledger console_cmd evidence, name high; id 441594, rva 0x377b20).
-/// `ulonglong CloseFile_Execute(longlong param_1, longlong param_2, longlong param_3, ulonglong param_4, longlong param_5, longlong param_6, undefined8 param_7, uint * param_8)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn cmd__close_file_execute(param_1: i64, param_2: i64, param_3: i64, param_4: u64, param_5: i64, param_6: i64, param_7: u64, param_8: *mut u32) -> u64 { unsafe { function!(441594, (i64, i64, i64, u64, i64, i64, u64, *mut u32) -> u64)(param_1, param_2, param_3, param_4, param_5, param_6, param_7, param_8) } }
-/// `Cmd::CollisionMesh_Execute` (decompiler signature, tier low; ledger console_cmd evidence, name high; id 23098, rva 0x37bb90).
-/// `undefined1 CollisionMesh_Execute(void)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn cmd__collision_mesh_execute() -> u8 { unsafe { function!(23098, () -> u8)() } }
-/// `Cmd::CompleteAllObjectives_Execute` (decompiler signature, tier low; ledger console_cmd evidence, name high; id 22499, rva 0x362170).
-/// `ulonglong CompleteAllObjectives_Execute(longlong param_1, longlong param_2, longlong param_3, ulonglong param_4, longlong param_5, longlong param_6, undefined8 param_7, uint * param_8)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn cmd__complete_all_objectives_execute(param_1: i64, param_2: i64, param_3: i64, param_4: u64, param_5: i64, param_6: i64, param_7: u64, param_8: *mut u32) -> u64 { unsafe { function!(22499, (i64, i64, i64, u64, i64, i64, u64, *mut u32) -> u64)(param_1, param_2, param_3, param_4, param_5, param_6, param_7, param_8) } }
-/// `Cmd::CompleteAllQuestStages_Execute` (decompiler signature, tier low; ledger console_cmd evidence, name high; id 22987, rva 0x3776e0).
-/// `undefined8 CompleteAllQuestStages_Execute(void)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn cmd__complete_all_quest_stages_execute() -> u64 { unsafe { function!(22987, () -> u64)() } }
-/// `Cmd::CompleteQuest_Execute` (decompiler signature, tier low; ledger console_cmd evidence, name high; id 22260, rva 0x358c00).
-/// `ulonglong CompleteQuest_Execute(longlong param_1, longlong param_2, longlong param_3, ulonglong param_4, longlong param_5, longlong param_6, undefined8 param_7, uint * param_8)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn cmd__complete_quest_execute(param_1: i64, param_2: i64, param_3: i64, param_4: u64, param_5: i64, param_6: i64, param_7: u64, param_8: *mut u32) -> u64 { unsafe { function!(22260, (i64, i64, i64, u64, i64, i64, u64, *mut u32) -> u64)(param_1, param_2, param_3, param_4, param_5, param_6, param_7, param_8) } }
 /// `Cmd::ConfigureDDOF_Execute` (decompiler signature, tier low; ledger console_cmd evidence, name high; id 23127, rva 0x37d0e0).
 /// `undefined8 ConfigureDDOF_Execute(longlong param_1, longlong param_2, longlong param_3, ulonglong param_4, longlong param_5, longlong param_6, undefined8 param_7, uint * param_8)`
 ///
@@ -9390,13 +9355,6 @@ pub unsafe fn cmd__toggle_markers_execute() -> u8 { unsafe { function!(23054, ()
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn cmd__toggle_material_geometry_execute() -> u8 { unsafe { function!(22818, () -> u8)() } }
-/// `Cmd::ToggleMenus_Execute` (decompiler signature, tier low; ledger console_cmd evidence, name high; id 22822, rva 0x36e5d0).
-/// `undefined8 ToggleMenus_Execute(void)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn cmd__toggle_menus_execute() -> u64 { unsafe { function!(22822, () -> u64)() } }
 /// `Cmd::ToggleMiddleHighProcess_Execute` (decompiler signature, tier low; ledger console_cmd evidence, name high; id 22862, rva 0x370ee0).
 /// `undefined8 ToggleMiddleHighProcess_Execute(void)`
 ///
@@ -12449,3 +12407,52 @@ pub unsafe fn wrap_memcmp_id_15314(param_1: *mut c_void, param_2: *mut c_void) -
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn wrap_memcmp_id_31(param_1: i64, param_2: i64, param_3: i64, param_4: i64) -> u8 { unsafe { function!(31, (i64, i64, i64, i64) -> u8)(param_1, param_2, param_3, param_4) } }
+/// `Wrap_memcmp_ID_440952` (decompiler signature, tier low; ledger os_api evidence, name medium; id 440952, rva 0x122c80).
+/// `ulonglong Wrap_memcmp_ID_440952(void * param_1, size_t param_2, void * param_3, size_t param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn wrap_memcmp_id_440952(param_1: *mut c_void, param_2: usize, param_3: *mut c_void, param_4: usize) -> u64 { unsafe { function!(440952, (*mut c_void, usize, *mut c_void, usize) -> u64)(param_1, param_2, param_3, param_4) } }
+/// `Wrap_memcmp_ID_57152` (decompiler signature, tier low; ledger os_api evidence, name medium; id 57152, rva 0xaa5fe0).
+/// `undefined Wrap_memcmp_ID_57152(void * param_1, void * param_2, uint param_3)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn wrap_memcmp_id_57152(param_1: *mut c_void, param_2: *mut c_void, param_3: u32) -> u64 { unsafe { function!(57152, (*mut c_void, *mut c_void, u32) -> u64)(param_1, param_2, param_3) } }
+/// `Wrap_memcmp_ID_71759` (decompiler signature, tier low; ledger os_api evidence, name medium; id 71759, rva 0xf1d330).
+/// `ulonglong Wrap_memcmp_ID_71759(uint * param_1, uint * param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn wrap_memcmp_id_71759(param_1: *mut u32, param_2: *mut u32) -> u64 { unsafe { function!(71759, (*mut u32, *mut u32) -> u64)(param_1, param_2) } }
+/// `Wrap_memcpy_ID_106906` (decompiler signature, tier low; ledger os_api evidence, name medium; id 106906, rva 0x152b1b0).
+/// `undefined Wrap_memcpy_ID_106906(longlong param_1, int param_2, void * param_3, int param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn wrap_memcpy_id_106906(param_1: i64, param_2: i32, param_3: *mut c_void, param_4: i32) -> u64 { unsafe { function!(106906, (i64, i32, *mut c_void, i32) -> u64)(param_1, param_2, param_3, param_4) } }
+/// `Wrap_memcpy_ID_439867` (decompiler signature, tier low; ledger os_api evidence, name medium; id 439867, rva 0x10d2c0).
+/// `undefined Wrap_memcpy_ID_439867(undefined8 param_1, void * param_2, size_t param_3, void * param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn wrap_memcpy_id_439867(param_1: u64, param_2: *mut c_void, param_3: usize, param_4: *mut c_void) -> u64 { unsafe { function!(439867, (u64, *mut c_void, usize, *mut c_void) -> u64)(param_1, param_2, param_3, param_4) } }
+/// `Wrap_memcpy_ID_440341` (decompiler signature, tier low; ledger os_api evidence, name medium; id 440341, rva 0x10b800).
+/// `void * Wrap_memcpy_ID_440341(void * param_1, void * param_2, longlong param_3)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn wrap_memcpy_id_440341(param_1: *mut c_void, param_2: *mut c_void, param_3: i64) -> *mut c_void { unsafe { function!(440341, (*mut c_void, *mut c_void, i64) -> *mut c_void)(param_1, param_2, param_3) } }
+/// `Wrap_memcpy_ID_522977` (decompiler signature, tier low; ledger os_api evidence, name medium; id 522977, rva 0x10c0c0).
+/// `void * Wrap_memcpy_ID_522977(void * param_1, void * param_2, size_t param_3)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn wrap_memcpy_id_522977(param_1: *mut c_void, param_2: *mut c_void, param_3: usize) -> *mut c_void { unsafe { function!(522977, (*mut c_void, *mut c_void, usize) -> *mut c_void)(param_1, param_2, param_3) } }

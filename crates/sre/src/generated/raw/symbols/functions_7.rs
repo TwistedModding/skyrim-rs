@@ -4,6 +4,14 @@
 use crate::raw::*;
 
 pub(super) const ROWS: &[Function] = &[
+    Function { rva: 0xb58ea0, id: 61353, confidence: Confidence::High, name: "ClearMatchingEntryInField1B8Array" },
+    Function { rva: 0xb58f00, id: 61354, confidence: Confidence::High, name: "AppendToArray1C8" },
+    Function { rva: 0xb58fc0, id: 61359, confidence: Confidence::High, name: "AppendToArray1F8" },
+    Function { rva: 0xb59020, id: 61360, confidence: Confidence::High, name: "ClearMatchingEntryInField1F8Array" },
+    Function { rva: 0xb59080, id: 61361, confidence: Confidence::Medium, name: "AppendToField228Array" },
+    Function { rva: 0xb59140, id: 61366, confidence: Confidence::High, name: "AppendToArray208" },
+    Function { rva: 0xb591a0, id: 61367, confidence: Confidence::Medium, name: "ClearPointerInField208Array" },
+    Function { rva: 0xb59200, id: 61368, confidence: Confidence::Medium, name: "AppendToField218Array" },
     Function { rva: 0xb592c0, id: 61373, confidence: Confidence::Medium, name: "AppendToField248Array" },
     Function { rva: 0xb59380, id: 61378, confidence: Confidence::Medium, name: "AppendToField238Array" },
     Function { rva: 0xb59440, id: 61383, confidence: Confidence::High, name: "AppendToArray258" },
@@ -14,6 +22,7 @@ pub(super) const ROWS: &[Function] = &[
     Function { rva: 0xb59700, id: 61396, confidence: Confidence::Medium, name: "DetachObjectFromArray278" },
     Function { rva: 0xb597b0, id: 61397, confidence: Confidence::Medium, name: "FindArray278EntryByField18" },
     Function { rva: 0xb59b00, id: 61401, confidence: Confidence::Medium, name: "QueueJobBatchesType10301AndWait" },
+    Function { rva: 0xb59d80, id: 61402, confidence: Confidence::Medium, name: "hkpWorld::linearCast" },
     Function { rva: 0xb59f30, id: 61403, confidence: Confidence::Medium, name: "QueueJobBatchesType10204AndWait" },
     Function { rva: 0xb5a740, id: 61405, confidence: Confidence::Medium, name: "QueueJobBatchesType20202AndWait" },
     Function { rva: 0xb5a960, id: 61406, confidence: Confidence::Medium, name: "hkpWorld::getPenetrations" },
@@ -8896,13 +8905,4 @@ pub(super) const ROWS: &[Function] = &[
     Function { rva: 0xee6c40, id: 70386, confidence: Confidence::Medium, name: "NiStream::vfunc_20" },
     Function { rva: 0xee6e40, id: 70387, confidence: Confidence::Medium, name: "NiStream::vfunc_21" },
     Function { rva: 0xee6ec0, id: 70388, confidence: Confidence::Medium, name: "NiStream::vfunc_22" },
-    Function { rva: 0xee6f60, id: 70389, confidence: Confidence::Medium, name: "NiStream::vfunc_23" },
-    Function { rva: 0xee70b0, id: 70392, confidence: Confidence::Medium, name: "BSStream::vfunc_15_sub0" },
-    Function { rva: 0xee71d0, id: 70395, confidence: Confidence::Medium, name: "ReadObjectTypesAndCreateObjects" },
-    Function { rva: 0xee7560, id: 70396, confidence: Confidence::Medium, name: "NiStream::vfunc_16_sub0" },
-    Function { rva: 0xee7a20, id: 70397, confidence: Confidence::Medium, name: "SetCannotFindCreateFunctionError" },
-    Function { rva: 0xee7c20, id: 70402, confidence: Confidence::Medium, name: "NiStream::vfunc_15_sub0" },
-    Function { rva: 0xee8110, id: 70405, confidence: Confidence::Medium, name: "NiStream::vfunc_16_sub1" },
-    Function { rva: 0xee86b0, id: 70417, confidence: Confidence::Medium, name: "NiStream::vfunc_13_sub2" },
-    Function { rva: 0xee88f0, id: 70426, confidence: Confidence::Medium, name: "NiStream::ctor_sub0" },
 ];

@@ -3,6 +3,26 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `BSTDerivedCreator<BGSProcedureUseMagic,IProcedure>::vdtor` at 0x490fb0 (layout_inference, medium); signature (low): `BSTDerivedCreator<BGSProcedureUseMagic,IProcedure> * vdtor(BSTDerivedCreator<BGSProcedureUseMagic,IProcedure> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const BSTDerivedCreator_BGSProcedureUseMagic_IProcedure__vdtor: u64 = 29365;
+/// `BSTDerivedCreator<BGSProcedureUseMagic,IProcedure>::vfunc_1` at 0x491190 (rtti, medium); signature (low): `BGSProcedureBase * vfunc_1(BSTDerivedCreator<BGSProcedureUseMagic,IProcedure> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+pub const BSTDerivedCreator_BGSProcedureUseMagic_IProcedure__vfunc_1: u64 = 29368;
+/// `BSTDerivedCreator<BGSProcedureUseMagic,IProcedure>::vfunc_2` at 0x491210 (rtti, medium); signature (low): `undefined vfunc_2(BSTDerivedCreator<BGSProcedureUseMagic,IProcedure> * this, undefined8 * param_1)`
+pub const BSTDerivedCreator_BGSProcedureUseMagic_IProcedure__vfunc_2: u64 = 29369;
+/// `BSTDerivedCreator<BGSProcedureUseMagicExecState,IProcedureTreeExecState>::vdtor` at 0x458b70 (layout_inference, medium); signature (low): `BSTDerivedCreator<BGSProcedureUseMagicExecState,IProcedureTreeExecState> * vdtor(BSTDerivedCreator<BGSProcedureUseMagicExecState,IProcedureTreeExecState> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const BSTDerivedCreator_BGSProcedureUseMagicExecState_IProcedureTreeExecState__vdtor: u64 = 28004;
+/// `BSTDerivedCreator<BGSProcedureUseMagicExecState,IProcedureTreeExecState>::vfunc_1` at 0x45a4d0 (rtti, medium); signature (low): `undefined8 vfunc_1(BSTDerivedCreator<BGSProcedureUseMagicExecState,IProcedureTreeExecState> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+pub const BSTDerivedCreator_BGSProcedureUseMagicExecState_IProcedureTreeExecState__vfunc_1: u64 = 28077;
+/// `BSTDerivedCreator<BGSProcedureUseMagicExecState,IProcedureTreeExecState>::vfunc_2` at 0x45aad0 (rtti, medium); signature (low): `undefined vfunc_2(BSTDerivedCreator<BGSProcedureUseMagicExecState,IProcedureTreeExecState> * this, undefined8 * param_1)`
+pub const BSTDerivedCreator_BGSProcedureUseMagicExecState_IProcedureTreeExecState__vfunc_2: u64 = 28117;
+/// `BSTDerivedCreator<BGSProcedureUseWeapon,IProcedure>::vdtor` at 0x4941c0 (layout_inference, medium); signature (low): `BSTDerivedCreator<BGSProcedureUseWeapon,IProcedure> * vdtor(BSTDerivedCreator<BGSProcedureUseWeapon,IProcedure> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const BSTDerivedCreator_BGSProcedureUseWeapon_IProcedure__vdtor: u64 = 29400;
+/// `BSTDerivedCreator<BGSProcedureUseWeapon,IProcedure>::vfunc_1` at 0x4943b0 (rtti, medium); signature (low): `BGSProcedureBase * vfunc_1(BSTDerivedCreator<BGSProcedureUseWeapon,IProcedure> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+pub const BSTDerivedCreator_BGSProcedureUseWeapon_IProcedure__vfunc_1: u64 = 29404;
+/// `BSTDerivedCreator<BGSProcedureUseWeapon,IProcedure>::vfunc_2` at 0x494430 (rtti, medium); signature (low): `undefined vfunc_2(BSTDerivedCreator<BGSProcedureUseWeapon,IProcedure> * this, undefined8 * param_1)`
+pub const BSTDerivedCreator_BGSProcedureUseWeapon_IProcedure__vfunc_2: u64 = 29405;
+/// `BSTDerivedCreator<BGSProcedureUseWeaponExecState,IProcedureTreeExecState>::vdtor` at 0x458ba0 (layout_inference, medium); signature (low): `BSTDerivedCreator<BGSProcedureUseWeaponExecState,IProcedureTreeExecState> * vdtor(BSTDerivedCreator<BGSProcedureUseWeaponExecState,IProcedureTreeExecState> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const BSTDerivedCreator_BGSProcedureUseWeaponExecState_IProcedureTreeExecState__vdtor: u64 = 28005;
 /// `BSTDerivedCreator<BGSProcedureUseWeaponExecState,IProcedureTreeExecState>::vfunc_1` at 0x45a530 (rtti, medium); signature (low): `undefined8 vfunc_1(BSTDerivedCreator<BGSProcedureUseWeaponExecState,IProcedureTreeExecState> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
 pub const BSTDerivedCreator_BGSProcedureUseWeaponExecState_IProcedureTreeExecState__vfunc_1: u64 = 28078;
 /// `BSTDerivedCreator<BGSProcedureUseWeaponExecState,IProcedureTreeExecState>::vfunc_2` at 0x45aaf0 (rtti, medium); signature (low): `undefined vfunc_2(BSTDerivedCreator<BGSProcedureUseWeaponExecState,IProcedureTreeExecState> * this, undefined8 * param_1)`
@@ -5669,33 +5689,3 @@ pub const CacheMountOrSelfPositionAndSpace: u64 = 40470;
 pub const CacheNodeTranslationAndRotation: u64 = 77162;
 /// `CachePlayerPositionAndStartFlyingMountTutorialDelay` at 0x764280 (decompiler, medium); signature (untiered): `undefined CachePlayerPositionAndStartFlyingMountTutorialDelay(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const CachePlayerPositionAndStartFlyingMountTutorialDelay: u64 = 40826;
-/// `CacheShadowMapResolution` at 0x155c650 (semantic, high); signature (untiered): `undefined CacheShadowMapResolution(void)`; semantic: g_ShadowMapResolution (0x34869c0) = iShadowMapResolution value, once at startup (high); signature `void (void)`
-pub const CacheShadowMapResolution: u64 = 107596;
-/// `CacheShadowMapResolution` as a function pointer type (high).
-pub type CacheShadowMapResolution_fn = unsafe extern "C" fn();
-/// `CacheTerrainLODSettingsFromINI` at 0x519a80 (decompiler, medium); signature (medium): `undefined CacheTerrainLODSettingsFromINI(void)`
-pub const CacheTerrainLODSettingsFromINI: u64 = 31859;
-/// `CacheTransformedStringField8ByRef` at 0xd0a930 (decompiler, medium); signature (untiered): `undefined CacheTransformedStringField8ByRef(ulonglong * param_1)`
-pub const CacheTransformedStringField8ByRef: u64 = 82842;
-/// `CacheVfunc48ResultInField20` at 0xbc4700 (decompiler, medium); signature (untiered): `undefined CacheVfunc48ResultInField20(longlong * param_1)`
-pub const CacheVfunc48ResultInField20: u64 = 63444;
-/// `CachedRaycastData::vdtor` at 0x54c2e0 (layout_inference, medium); signature (low): `CachedRaycastData * vdtor(CachedRaycastData * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const CachedRaycastData__vdtor: u64 = 32763;
-/// `CachedRaycastData::vfunc_1` at 0x54b1e0 (rtti, high); signature (low): `undefined8 vfunc_1(CachedRaycastData * this, undefined8 param_1)`
-pub const CachedRaycastData__vfunc_1: u64 = 32745;
-/// `CachedRaycastData::vfunc_2` at 0x54af00 (rtti, high); signature (low): `char * vfunc_2(CachedRaycastData * this, char * param_1, float * param_2, float * param_3, undefined4 * param_4, float * param_5)`
-pub const CachedRaycastData__vfunc_2: u64 = 32744;
-/// `CalculateMipLevels2D` at 0x10321a0 (decompiler, medium); signature (medium): `undefined8 CalculateMipLevels2D(ulonglong param_1, ulonglong param_2, ulonglong * param_3)`
-pub const CalculateMipLevels2D: u64 = 77683;
-/// `CalculateMipLevels3D` at 0x1032230 (decompiler, medium); signature (medium): `undefined8 CalculateMipLevels3D(ulonglong param_1, ulonglong param_2, ulonglong param_3, ulonglong * param_4)`
-pub const CalculateMipLevels3D: u64 = 77684;
-/// `CallAsyncProxyVfunc0AndExchangeFlag78` at 0x13952c0 (decompiler, medium); signature (medium): `undefined1 CallAsyncProxyVfunc0AndExchangeFlag78(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const CallAsyncProxyVfunc0AndExchangeFlag78: u64 = 450161;
-/// `CallBSCoreMessageVfunc1Formatted` at 0xce1810 (decompiler, medium); signature (untiered): `undefined CallBSCoreMessageVfunc1Formatted(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const CallBSCoreMessageVfunc1Formatted: u64 = 68192;
-/// `CallBSCoreMessageVfunc1WithTlsChannel` at 0xce1860 (decompiler, medium); signature (untiered): `undefined CallBSCoreMessageVfunc1WithTlsChannel(undefined4 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const CallBSCoreMessageVfunc1WithTlsChannel: u64 = 68193;
-/// `CallBSCoreMessageVfunc2Formatted` at 0xce18e0 (decompiler, medium); signature (untiered): `undefined CallBSCoreMessageVfunc2Formatted(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const CallBSCoreMessageVfunc2Formatted: u64 = 68195;
-/// `CallBSCoreMessageVfunc3Formatted` at 0xce19b0 (decompiler, medium); signature (untiered): `undefined CallBSCoreMessageVfunc3Formatted(undefined4 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const CallBSCoreMessageVfunc3Formatted: u64 = 68198;

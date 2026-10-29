@@ -3,6 +3,42 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `CompareValuesWithSortFlags` at 0xd6b410 (decompiler, medium); signature (medium): `uint CompareValuesWithSortFlags(undefined8 * param_1, byte * param_2, byte * param_3)`
+pub const CompareValuesWithSortFlags: u64 = 84384;
+/// `CompareVariantMapsEqual` at 0x1498610 (decompiler, medium); signature (medium): `bool CompareVariantMapsEqual(longlong param_1, longlong param_2)`
+pub const CompareVariantMapsEqual: u64 = 104403;
+/// `CompareVertexAttributes` at 0xefb320 (decompiler, medium); signature (medium): `undefined8 CompareVertexAttributes(undefined8 param_1, ushort param_2, ushort param_3, longlong param_4, longlong param_5, longlong param_6, longlong param_7)`
+pub const CompareVertexAttributes: u64 = 70892;
+/// `CompareVfuncStringsNoCase` at 0x3f0640 (decompiler, medium); signature (medium): `undefined CompareVfuncStringsNoCase(longlong * param_1, longlong * param_2)`
+pub const CompareVfuncStringsNoCase: u64 = 25563;
+/// `CompareWideCharArrays` at 0x128f190 (decompiler, high); signature (high): `undefined8 CompareWideCharArrays(undefined1[32] * param_1, undefined1[32] * param_2, ulonglong param_3)`
+pub const CompareWideCharArrays: u64 = 524803;
+/// `CompareWideCharBuffers` at 0x128ede0 (decompiler, medium); signature (medium): `undefined8 CompareWideCharBuffers(undefined1[32] * param_1, undefined1[32] * param_2, ulonglong param_3)`
+pub const CompareWideCharBuffers: u64 = 524801;
+/// `CompareWideToNarrowNoCase` at 0xe37a40 (decompiler, medium); signature (medium): `int CompareWideToNarrowNoCase(ushort * param_1, char * param_2, longlong param_3)`
+pub const CompareWideToNarrowNoCase: u64 = 88524;
+/// `Compass::Update` at 0x9385b0 (semantic, high); signature (untiered): `undefined Update(Compass * this)`; semantic: HUD compass: adds the quest target marker, uploads the markers ('SetCompassMarkers'), then 'SetCompassAngle' with the heading PlayerCamera.yaw in degrees (times 57.2958) and the same plus the cell's north rotation, both wrapped to [0, 360), and bShowCompass:Interface (high); signature `void (Compass* this)`
+pub const Compass__Update: u64 = 51668;
+/// `Compass::Update` as a function pointer type (high).
+pub type Compass__Update_fn = unsafe extern "C" fn(this: *mut crate::Compass);
+/// `Compass::vfunc_0` at 0x93bc60 (rtti, high); signature (low): `Compass * vfunc_0(Compass * this, uint param_1, Compass_vtbl * param_2, undefined8 param_3)`
+pub const Compass__vfunc_0: u64 = 51711;
+/// `Compass::vfunc_3` at 0x9388c0 (rtti, high); signature (low): `undefined vfunc_3(Compass * this, longlong param_1)`
+pub const Compass__vfunc_3: u64 = 51669;
+/// `CompileAndRunScript` at 0x343d00 (runtime, high); signature (untiered): `undefined CompileAndRunScript(longlong * param_1, undefined8 param_2, uint param_3, longlong param_4)`; semantic: compiles script->text and, when the result is non-empty, runs it on thisRef; compileType 1 (console) sets TLS+0x600 for the run (high); signature `void (Script* script, ScriptCompiler* compiler, ScriptCompileType compileType, TESObjectREFR* thisRef)`
+pub const CompileAndRunScript: u64 = 441582;
+/// `CompileAndRunScript` as a function pointer type (high).
+pub type CompileAndRunScript_fn = unsafe extern "C" fn(script: *mut crate::Script, compiler: *mut c_void, compileType: u32, thisRef: *mut crate::TESObjectREFR);
+/// `CompileExpressionTokens` at 0x34b9f0 (semantic, medium); signature (untiered): `int CompileExpressionTokens(undefined8 param_1, longlong param_2, undefined4 * param_3, longlong param_4, longlong param_5)`; semantic: compiles function calls inside set/if expressions as 'X' u16 opcode u16 len params, variables as 'r'/'G'/'Z' tokens (medium); signature `int (ScriptCompiler*, ScriptCompileBuffer*, uint* lineNo, const char* expr, char* out)`
+pub const CompileExpressionTokens: u64 = 21971;
+/// `CompileNextLine` at 0x34b150 (semantic, high); signature (untiered): `int CompileNextLine(undefined8 param_1, longlong * param_2, undefined8 param_3, undefined8 param_4)`; semantic: reads the next line into a ScriptLineBuffer (0x41c), reads its first token and looks the command up; returns the line's opcode or 0xffff (high); signature `uint (ScriptCompileBuffer* buf)`
+pub const CompileNextLine: u64 = 21966;
+/// `CompileNextLine` as a function pointer type (high).
+pub type CompileNextLine_fn = unsafe extern "C" fn(buf: *mut c_void) -> u32;
+/// `CompileScriptLine` at 0x34a4e0 (semantic, high); signature (untiered): `undefined8 CompileScriptLine(undefined8 param_1, longlong param_2, TypeDescriptor * param_3, TypeDescriptor * param_4)`; semantic: per-opcode compile of a line; for a command: reference checks, then entry->parse(numParams, params, line, buf) when params != 0, then emits [u16 0x1c, u16 refIndex] u16 opcode, u16 dataLen, data (MAX_SCRIPT_SIZE 0x4000) (high); signature `bool (ScriptCompiler*, Script*, ScriptCompileBuffer* buf, ScriptLineBuffer* line)`
+pub const CompileScriptLine: u64 = 21965;
+/// `CompileScriptLine` as a function pointer type (high).
+pub type CompileScriptLine_fn = unsafe extern "C" fn(a0: *mut c_void, a1: *mut crate::Script, buf: *mut c_void, line: *mut crate::ScriptLineBuffer) -> bool;
 /// `CompileScriptWithLocalBuffer` at 0x347a30 (decompiler, medium); signature (untiered): `ulonglong CompileScriptWithLocalBuffer(undefined8 param_1, longlong * param_2, undefined8 param_3, undefined4 * param_4)`
 pub const CompileScriptWithLocalBuffer: u64 = 21955;
 /// `CompleteAsyncRequest` at 0x12c6490 (decompiler, medium); signature (untiered): `undefined CompleteAsyncRequest(void * param_1, undefined8 param_2, undefined4 param_3)`
@@ -7743,45 +7779,3 @@ pub type CrosshairPickData__dtor_fn = unsafe extern "C" fn(this: *mut crate::Cro
 pub const CstringArrayImplementation__dtor: u64 = 65905;
 /// `CstringArrayImplementation::vdtor` at 0xc5e060 (slot_propagation, medium); signature (low): `CstringArrayImplementation * vdtor(CstringArrayImplementation * this, uint param_1, undefined8 param_2, undefined8 param_3)`
 pub const CstringArrayImplementation__vdtor: u64 = 65916;
-/// `CstringArrayImplementation::vfunc_11` at 0xc5faa0 (rtti, high); signature (low): `undefined8 vfunc_11(CstringArrayImplementation * this, int param_1)`
-pub const CstringArrayImplementation__vfunc_11: u64 = 65971;
-/// `CstringArrayImplementation::vfunc_12` at 0xc639c0 (rtti, high); signature (low): `undefined vfunc_12(CstringArrayImplementation * this, int param_1, longlong param_2)`
-pub const CstringArrayImplementation__vfunc_12: u64 = 66157;
-/// `CullFirstPersonGeometry` at 0x658700 (semantic, high); signature (untiered): `undefined CullFirstPersonGeometry(undefined8 param_1, char param_2)`; semantic: clears the first-person geometry cull list (0x?? ID_414946); in first person: clears bit 0 (app-culled) of the player's first-person 3D (slot 111) flags, runs a culling pass with g_FirstPersonCamera into that list, then sets the bit again (high); signature `void (void* unused, bool firstPerson)`
-pub const CullFirstPersonGeometry: u64 = 36563;
-/// `CullFirstPersonGeometry` as a function pointer type (high).
-pub type CullFirstPersonGeometry_fn = unsafe extern "C" fn(unused: *mut c_void, firstPerson: bool);
-/// `CullShadowCastersAndScene` at 0x1537fd0 (runtime, high); signature (untiered): `undefined CullShadowCastersAndScene(longlong * param_1, undefined8 param_2, longlong param_3, ulonglong param_4)`; semantic: the shadow step: sun slot 16, the sun's geometry list cull (0x157ed80), the main camera cull jobs over the scene roots, the other shadow lights and the sun's cascade caster culls (slot 9 inside 0x15389b0); the first-person root stays hidden throughout (high); signature `void (NiCamera* camera, ...)`
-pub const CullShadowCastersAndScene: u64 = 107132;
-/// `CullShadowLights` at 0x15389b0 (runtime, high); signature (untiered): `undefined CullShadowLights(void)`; semantic: updates and culls the casters of the scene's shadow lights and runs the sun's slot 9 (cascade caster cull) while the main camera cull jobs run (high); signature `void (void)`
-pub const CullShadowLights: u64 = 107137;
-/// `CullShadowLights` as a function pointer type (high).
-pub type CullShadowLights_fn = unsafe extern "C" fn();
-/// `CureEffect::ctor` at 0x5c5140 (layout_inference, high); signature (low): `CureEffect * ctor(CureEffect * this, longlong param_1, undefined8 param_2, undefined4 * param_3, undefined4 param_4)`
-pub const CureEffect__ctor: u64 = 34268;
-/// `CureEffect::ctor` at 0x5c5180 (layout_inference, high); signature (low): `CureEffect * ctor(CureEffect * this, longlong param_1, undefined8 param_2, undefined4 * param_3, undefined4 param_4)`
-pub const CureEffect__ctor_2: u64 = 34269;
-/// `CureEffect::vdtor` at 0x5c55b0 (slot_propagation, medium); signature (low): `CureEffect * vdtor(CureEffect * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const CureEffect__vdtor: u64 = 34275;
-/// `CureEffect::vfunc_20` at 0x5c5580 (rtti, high); signature (high): `undefined vfunc_20(CureEffect * this)`
-pub const CureEffect__vfunc_20: u64 = 34274;
-/// `CureEffect::vfunc_20_sub0` at 0x5d10a0 (callgraph, medium); signature (untiered): `undefined vfunc_20_sub0(longlong * param_1, int param_2)`
-pub const CureEffect__vfunc_20_sub0: u64 = 34507;
-/// `CursorMenu::Create` at 0x92a300 (semantic, high); signature (untiered): `void Create(void)`; semantic: menu creator registered under 'Cursor Menu' (ctor inlined except ContainerMenu) (high); signature `IMenu* ()`
-pub const CursorMenu__Create: u64 = 51503;
-/// `CursorMenu::Create` as a function pointer type (high).
-pub type CursorMenu__Create_fn = unsafe extern "C" fn() -> *mut crate::IMenu;
-/// `CursorMenu::MenuEventHandler_vdtor` at 0x92a274 (slot_propagation, medium); signature (high): `undefined MenuEventHandler_vdtor(CursorMenu * this)`
-pub const CursorMenu__MenuEventHandler_vdtor: u64 = 51501;
-/// `CursorMenu::MenuEventHandler_vfunc_1` at 0x92a1a0 (rtti, high); signature (low): `bool MenuEventHandler_vfunc_1(CursorMenu * this, longlong * param_1)`
-pub const CursorMenu__MenuEventHandler_vfunc_1: u64 = 51497;
-/// `CursorMenu::MenuEventHandler_vfunc_5` at 0x92a1f0 (rtti, high); signature (low): `undefined1 MenuEventHandler_vfunc_5(void)`
-pub const CursorMenu__MenuEventHandler_vfunc_5: u64 = 51499;
-/// `CursorMenu::MenuEventHandler_vfunc_5_sub0` at 0x117a4c0 (callgraph, medium); signature (untiered): `undefined MenuEventHandler_vfunc_5_sub0(longlong param_1, longlong param_2)`
-pub const CursorMenu__MenuEventHandler_vfunc_5_sub0: u64 = 82540;
-/// `CursorMenu::MenuEventHandler_vfunc_6` at 0x92a1d0 (rtti, high); signature (low): `undefined1 MenuEventHandler_vfunc_6(void)`
-pub const CursorMenu__MenuEventHandler_vfunc_6: u64 = 51498;
-/// `CursorMenu::MenuEventHandler_vfunc_6_sub0` at 0x117a340 (callgraph, medium); signature (untiered): `undefined MenuEventHandler_vfunc_6_sub0(longlong param_1, longlong param_2)`
-pub const CursorMenu__MenuEventHandler_vfunc_6_sub0: u64 = 82539;
-/// `CursorMenu::ProcessMessage` at 0x92a070 (semantic, high); signature (untiered): `undefined8 ProcessMessage(CursorMenu * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
-pub const CursorMenu__ProcessMessage: u64 = 51496;

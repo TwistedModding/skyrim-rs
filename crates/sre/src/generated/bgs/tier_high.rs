@@ -310,23 +310,6 @@ impl crate::BGSBlockBashData {
     pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(14123, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
 }
 
-impl crate::BGSBodyPartData {
-    /// `BGSBodyPartData::BGSPreloadable_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 23491, rva 0x38c3e0).
-    /// `undefined BGSPreloadable_vdtor(BGSBodyPartData * this)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn bgs_preloadable_vdtor(&self) -> u64 { unsafe { function!(23491, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x48)) } }
-    /// `BGSBodyPartData::TESModel_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 23490, rva 0x38c3d4).
-    /// `undefined TESModel_vdtor(BGSBodyPartData * this)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn tes_model_vdtor(&self) -> u64 { unsafe { function!(23490, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x20)) } }
-}
-
 impl crate::BGSCollisionLayer {
     /// `BGSCollisionLayer::TESDescription_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 20739, rva 0x31ae28).
     /// `undefined TESDescription_vdtor(BGSCollisionLayer * this)`

@@ -39,6 +39,12 @@ impl core::ops::Deref for crate::BGSAcousticSpaceListener {
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
+/// `BGSBodyPartData` is laid out from its primary base `TESForm`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::BGSBodyPartData {
+    type Target = crate::TESForm;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
 /// `BGSCameraPath` is laid out from its primary base `TESForm`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::BGSCameraPath {
     type Target = crate::TESForm;
@@ -78,6 +84,12 @@ impl core::ops::Deref for crate::BeamProjectile {
 /// `BleedoutCameraState` is laid out from its primary base `ThirdPersonState`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::BleedoutCameraState {
     type Target = crate::ThirdPersonState;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `CachedRaycastData` is laid out from its primary base `hkaRaycastInterface`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::CachedRaycastData {
+    type Target = crate::hkaRaycastInterface;
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
@@ -219,6 +231,12 @@ impl core::ops::Deref for crate::RaceSexCamera {
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
+/// `RaceSexMenu` is laid out from its primary base `IMenu`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::RaceSexMenu {
+    type Target = crate::IMenu;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
 /// `ShaderReferenceEffect` is laid out from its primary base `ReferenceEffect`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::ShaderReferenceEffect {
     type Target = crate::ReferenceEffect;
@@ -282,6 +300,12 @@ impl core::ops::Deref for crate::TweenMenuCameraState {
 /// `VATSCameraState` is laid out from its primary base `TESCameraState`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::VATSCameraState {
     type Target = crate::TESCameraState;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `bhkWorld` is laid out from its primary base `bhkSerializable`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::bhkWorld {
+    type Target = crate::bhkSerializable;
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
@@ -437,6 +461,27 @@ impl crate::BGSAcousticSpaceListener {
     /// The pass rates the signature medium.
     #[inline]
     pub unsafe fn vfunc_8(&self, collisionEvent: *mut c_void) -> bool { unsafe { virtual_function!(self, 8, (*const Self, *mut c_void) -> bool)(core::ptr::from_ref(self), collisionEvent) } }
+}
+
+impl crate::BGSBodyPartData {
+    /// The `BGSPreloadable` base at +0x48.
+    #[inline]
+    pub fn as_bgs_preloadable(&self) -> &crate::BGSPreloadable { unsafe { &*core::ptr::from_ref(self).byte_add(0x48).cast() } }
+    /// The `BaseFormComponent` base at +0x20.
+    #[inline]
+    pub fn as_base_form_component(&self) -> &crate::BaseFormComponent { unsafe { &*core::ptr::from_ref(self).byte_add(0x20).cast() } }
+    /// The `BaseFormComponent` base at +0x48.
+    #[inline]
+    pub fn as_base_form_component_2(&self) -> &crate::BaseFormComponent { unsafe { &*core::ptr::from_ref(self).byte_add(0x48).cast() } }
+    /// The `TESModel` base at +0x20.
+    #[inline]
+    pub fn as_tes_model(&self) -> &crate::TESModel { unsafe { &*core::ptr::from_ref(self).byte_add(0x20).cast() } }
+    /// `BGSBodyPartData::GetPart`: returns parts[partIndex] (+0x50 + 8 * index) for index 0..5, else null
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 23473, rva 0x38b720.
+    /// `BGSBodyPart* (const BGSBodyPartData* this, i32 partIndex)`
+    #[inline]
+    pub fn get_part(&self, partIndex: i32) -> Option<&'static crate::BGSBodyPart> { unsafe { function!(23473, (*const Self, i32) -> Option<&'static crate::BGSBodyPart>)(core::ptr::from_ref(self), partIndex) } }
 }
 
 impl crate::BGSCameraPath {
@@ -872,6 +917,14 @@ impl crate::BleedoutCameraState {
     /// Semantic field, frame pass, high; `None` while the pointer is null.
     #[inline]
     pub fn camera_control_node(&self) -> Option<&crate::NiNode> { unsafe { { self.cameraControlNode }.as_ref() } }
+}
+
+impl crate::CachedRaycastData {
+    /// `CachedRaycastData::world` at +0x20: the actor's bhkWorld (fallback cast through slot 51)
+    ///
+    /// Semantic field, camera pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn world(&self) -> Option<&crate::bhkWorld> { unsafe { { self.world }.as_ref() } }
 }
 
 impl crate::CameraCasterHolder {
@@ -2211,6 +2264,52 @@ impl crate::RaceSexCamera {
     pub fn camera_root(&self) -> Option<&crate::NiNode> { unsafe { { self.cameraRoot }.as_ref() } }
 }
 
+impl crate::RaceSexMenu {
+    /// The `MenuEventHandler` base at +0x30.
+    #[inline]
+    pub fn as_menu_event_handler(&self) -> &crate::MenuEventHandler { unsafe { &*core::ptr::from_ref(self).byte_add(0x30).cast() } }
+    /// `RaceSexMenu::ProcessMessage`: IMenu slot 4: name entry/confirm boxes, and on the update path applies a queued camera zoom (pending from/to pose pointers 0x3258478/0x3258480 and duration 0x3258488, set by StartCloseFadeOut and by its own appearance-refresh path) to g_RaceMenuCameraInterp, refreshes the player's appearance, updates the player and its 3D, then calls RaceSexCamera slot 2
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 52345, rva 0x968010.
+    /// `UIMessageResult (RaceSexMenu* this, UIMessage* message)`
+    /// May be null: `message`.
+    ///
+    /// # Safety
+    /// `message` must point to what the engine expects.
+    #[inline]
+    pub unsafe fn process_message(&self, message: *mut crate::UIMessage) -> Result<crate::UIMessageResult, u32> { unsafe { let raw = function!(52345, (*const Self, *mut crate::UIMessage) -> u32)(core::ptr::from_ref(self), message); crate::UIMessageResult::from_u32(raw).ok_or(raw) } }
+    /// `RaceSexMenu::SetupPlayerLookAt`: turns the player's head tracking on for the race menu: a graph-bool helper on every graph, player flags2 |= 8, saves the graph float named by the fixed string ID_406417 (likely 'LookAtOnGain': Str_LookAtOnGain init 0xbd770, not checked) into menu+0x190 and sets it to fRSMLookAtOnGain, then centres the look with a zero thumbstick event
+    ///
+    /// Semantic, camera pass, high; ledger runtime evidence, name high; id 52389, rva 0x96b930.
+    /// `void (RaceSexMenu* this)`
+    #[inline]
+    pub fn setup_player_look_at(&self) { unsafe { function!(52389, (*const Self))(core::ptr::from_ref(self)) } }
+    /// `RaceSexMenu::StartCameraZoom`: starts the race menu camera zoom interpolation in or out
+    ///
+    /// Semantic, camera pass, medium; ledger semantic evidence, name medium; id 52414, rva 0x971760.
+    /// `void (void* unused, bool zoomIn)`
+    ///
+    /// # Safety
+    /// The pass rates the signature medium.
+    #[inline]
+    pub unsafe fn start_camera_zoom(unused: *mut c_void, zoomIn: bool) { unsafe { function!(52414, (*mut c_void, bool))(unused, zoomIn) } }
+    /// `RaceSexMenu::StartCloseFadeOut`: invokes 'FadeOut' on the movie, freezes the current eased camera pose, queues the move to the final pose (fPlayerZoomTime:Interface) for ProcessMessage, sets +0x1a0 (closing), clears the chargen precache
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 52388, rva 0x96b7d0.
+    /// `void (RaceSexMenu* this)`
+    #[inline]
+    pub fn start_close_fade_out(&self) { unsafe { function!(52388, (*const Self))(core::ptr::from_ref(self)) } }
+    /// `RaceSexMenu::ZoomPCCallback`: the movie's 'ZoomPC' call: starts g_RaceMenuCameraInterp from the current eased pose (or from the opposite end when idle) to the zoomed-in or zoomed-out pose (args[0] bool) over fPlayerZoomTime:Interface ms from g_FrameTimeMs
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 52348, rva 0x9691e0.
+    /// `void (const FxDelegateArgs* args)`
+    ///
+    /// # Safety
+    /// `args` must point to what the engine expects.
+    #[inline]
+    pub unsafe fn zoom_pc_callback(args: *const c_void) { unsafe { function!(52348, (*const c_void))(args) } }
+}
+
 impl crate::ShaderReferenceEffect {
     /// `ShaderReferenceEffect::GetTargetRoot`, vtable slot 60: controller's root (+0x30 slot 15) when present, else 0 with flag bit 7, else ReferenceEffect slot 60 = target->Get3D() (slot 112)
     ///
@@ -2839,6 +2938,14 @@ impl crate::TweenMenuCameraState {
     pub fn camera(&self) -> Option<&crate::PlayerCamera> { unsafe { { self.camera }.as_ref() } }
 }
 
+impl crate::UICursor {
+    /// `g_UICursor_ptr` at 0x3210e38, id 403551 (semantic, high); pointer to `UICursor`: pointer to the cursor static 0x333b080; set by the UI ctor 0x1169395, cleared by the UI dtor 0x11694a2; pointer to the cursor static 0x333b080; set by the UI ctor 0x1169395, cleared by the UI dtor 0x11694a2 (high, camera pass), type `ptr:UICursor`
+    ///
+    /// `None` until the engine creates it.
+    #[inline]
+    pub fn singleton() -> Option<&'static Self> { unsafe { *(address!(403551) as *const Option<&'static Self>) } }
+}
+
 impl crate::VATSCameraState {
     /// `VATSCameraState::SetAngles`: stores the VATS camera's Euler angles at +0x20/+0x24/+0x28
     ///
@@ -2867,6 +2974,22 @@ impl crate::VATSCameraState {
     /// Semantic field, frame pass, high; `None` while the pointer is null.
     #[inline]
     pub fn camera(&self) -> Option<&crate::TESCamera> { unsafe { { self.camera }.as_ref() } }
+}
+
+impl crate::bhkPickData {
+    /// `bhkPickData::closestCollector` at +0xA8: in: optional single-hit collector (hkpClosestRayHitCollector, or SpecificItemCollector for LOS); PickObject resets it and copies its hit back to +0x30..+0x80
+    ///
+    /// Semantic field, camera pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn closest_collector(&self) -> Option<&crate::hkpClosestRayHitCollector> { unsafe { { self.closestCollector }.as_ref() } }
+}
+
+impl crate::bhkWorld {
+    /// `bhkWorld::world` at +0x10: the Havok world; slots 39 and 40 return it
+    ///
+    /// Semantic field, camera pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn world(&self) -> Option<&crate::hkpWorld> { unsafe { { self.world }.as_ref() } }
 }
 
 /// `ActivateReference`: activates a reference: resolves an activate parent, sends TESActivateEvent (unless defaultProcessingOnly), then runs the base object's Activate (slot 55) and ActivateMountableActor
@@ -2952,16 +3075,31 @@ pub fn camera_shake__unload_model() { unsafe { function!(33011, ())() } }
 /// `bool (void)`
 #[inline]
 pub fn can_open_tween_menu() -> bool { unsafe { function!(52719, () -> bool)() } }
-/// `CastCameraLinearAndCollectHits`: sphere cast of caster+0 from 'from' to 'to' in havok units under the world read lock; 'to' comes back clipped; hitRecord gets the hit data; *hitRef the hit reference
+/// `CastCameraLinearAndCollectHits`: the camera's sphere sweep (camera.md section 9) on the camera caster phantom (layer 0x27 CAMERAPICK, built by CameraCasterHolder::ctor): sets the sphere radius, moves the phantom to from under the world write lock, linear-casts to `to` under the read lock with an all-hits collector; skips hidden nodes, treats actor-layer hits as occluder candidates, clips *to at the first other hit and copies it to *hit (0x40 bytes)
 ///
 /// Semantic, camera pass, high; ledger runtime evidence, name high; id 33007, rva 0x5574f0.
-/// `bool (CameraCasterHolder* caster, bhkWorld* world, NiPoint3* from, NiPoint3* to, float* hitRecord, TESObjectREFR** hitRef, float radius)`
+/// `bool (CameraCasterHolder* holder, bhkWorld* world, const NiPoint3* from, NiPoint3* to, hkpRootCdPoint* hit, Actor** occluder, float radius)`
 /// May be null: `world`.
 ///
 /// # Safety
-/// `caster`, `hitRecord`, `hitRef` must point to what the engine expects.
+/// `holder`, `hit`, `occluder` must point to what the engine expects.
 #[inline]
-pub unsafe fn cast_camera_linear_and_collect_hits(caster: *mut crate::CameraCasterHolder, world: *mut crate::bhkWorld, from: *mut crate::NiPoint3, to: *mut crate::NiPoint3, hitRecord: *mut f32, hitRef: *mut *mut crate::TESObjectREFR, radius: f32) -> bool { unsafe { function!(33007, (*mut crate::CameraCasterHolder, *mut crate::bhkWorld, *mut crate::NiPoint3, *mut crate::NiPoint3, *mut f32, *mut *mut crate::TESObjectREFR, f32) -> bool)(caster, world, from, to, hitRecord, hitRef, radius) } }
+pub unsafe fn cast_camera_linear_and_collect_hits(holder: *mut crate::CameraCasterHolder, world: *mut crate::bhkWorld, from: *const crate::NiPoint3, to: *mut crate::NiPoint3, hit: *mut c_void, occluder: *mut *mut crate::Actor, radius: f32) -> bool { unsafe { function!(33007, (*mut crate::CameraCasterHolder, *mut crate::bhkWorld, *const crate::NiPoint3, *mut crate::NiPoint3, *mut c_void, *mut *mut crate::Actor, f32) -> bool)(holder, world, from, to, hit, occluder, radius) } }
+/// `CastProjectileRayOrSphere`: the engine's sphere cast with a pick's filter: when *(float*)(projectileData+0xec) (radius, game units) >= fLargeProjectileSize it builds a stack hkpCollidable over an hkpSphereShape(radius * Havok scale) at pick->from with filterInfo = pick+0x24, casts it to pick->to (or from+ray) with hkpWorld::linearCast 0xb59d80 and an hkpClosestCdPointCollector under the world read lock, writes the hit's distance (path fraction) to pick+0x40 and returns the hit node; smaller radii take the ray path TESObjectCELL::Pick(projectile->parentCell, pick) with an hkpClosestRayHitCollector
+///
+/// Semantic, camera pass, medium; ledger semantic evidence, name medium; id 47299, rva 0x868130.
+/// `NiAVObject* (TESObjectREFR* projectile, const void* projectileData, bhkPickData* pick)`
+///
+/// # Safety
+/// The pass rates the signature medium.
+#[inline]
+pub unsafe fn cast_projectile_ray_or_sphere(projectile: *mut crate::TESObjectREFR, projectileData: *const c_void, pick: *mut crate::bhkPickData) -> *mut crate::NiAVObject { unsafe { function!(47299, (*mut crate::TESObjectREFR, *const c_void, *mut crate::bhkPickData) -> *mut crate::NiAVObject)(projectile, projectileData, pick) } }
+/// `CastRayGetHitDistance`: the engine's minimal ray: builds a bhkPickData on the stack with an hkpClosestRayHitCollector at +0xa8, filterInfo = (fresh group << 16) | 0x2a (PATHPICK), calls GetbhkWorld(cell)->PickObject; returns |to-from| * hitFraction, or -1.0 on no hit or when the hit's layer is 3, 0x1a or 0x1c (transparent layers)
+///
+/// Semantic, camera pass, high; ledger semantic evidence, name high; id 30229, rva 0x4b9a80.
+/// `float (TESObjectCELL* cell, const NiPoint3* from, const NiPoint3* to)`
+#[inline]
+pub fn cast_ray_get_hit_distance(cell: &crate::TESObjectCELL, from: &crate::NiPoint3, to: &crate::NiPoint3) -> f32 { unsafe { function!(30229, (*const crate::TESObjectCELL, *const crate::NiPoint3, *const crate::NiPoint3) -> f32)(core::ptr::from_ref(cell), core::ptr::from_ref(from), core::ptr::from_ref(to)) } }
 /// `CheckVATSTargetVisibleInDirection`: for i = 1..fVATSSmartCameraCheckStepCount (5): point = subject position stepped i * fVATSSmartCameraCheckStepDistance (128) along heading + angleOffset at +fVATSSmartCameraCheckHeight; ray to the target's 3D world translate; stop at the first step whose ray hits something other than the target at fraction <= 0.85 (an actor hit only within 256 units); returns i * fVATSSmartCameraCheckStepDistance of the last step evaluated (StepCount * StepDistance = 640 when no step stopped)
 ///
 /// Semantic, camera pass, high; ledger semantic evidence, name high; id 37727, rva 0x6a07c0.
@@ -3324,7 +3462,7 @@ pub unsafe fn create_projectile_by_type(outHandle: *mut u32, data: *mut crate::P
 /// The pass rates the signature medium.
 #[inline]
 pub unsafe fn create_sphere_phantom(holder: *mut crate::CameraCasterHolder, radius: f32) { unsafe { function!(33009, (*mut crate::CameraCasterHolder, f32))(holder, radius) } }
-/// `CullFirstPersonGeometry`: clears the first-person geometry cull list (0x?? ID_414946); in first person: clears bit 0 (app-culled) of the player's first-person 3D (slot 111) flags, runs a culling pass with g_FirstPersonCamera into that list, then sets the bit again
+/// `CullFirstPersonGeometry`: step 9: resets the first-person culler g_FirstPersonCuller 0x3436040 (a BSGeometryListCullingProcess) and, in first person, clears bit 0 of the player's first-person 3D (slot 111), culls it into that culler's own lists with g_FirstPersonCamera and sets the bit again; nothing reaches an accumulator until FlushFirstPersonAccumulator 0x1537a80 at step 14
 ///
 /// Semantic, camera pass, high; ledger semantic evidence, name high; id 36563, rva 0x658700.
 /// `void (void* unused, bool firstPerson)`
@@ -3373,6 +3511,12 @@ pub fn find_first_time_controller_in_tree(root: &crate::NiAVObject) -> Option<&'
 /// `BGSCameraPath* (BGSCameraPath* path, TESObjectREFR* subject, TESObjectREFR* target)`
 #[inline]
 pub fn find_matching_camera_path_recursive(path: &crate::BGSCameraPath, subject: &crate::TESObjectREFR, target: &crate::TESObjectREFR) -> Option<&'static crate::BGSCameraPath> { unsafe { function!(20648, (*const crate::BGSCameraPath, *const crate::TESObjectREFR, *const crate::TESObjectREFR) -> Option<&'static crate::BGSCameraPath>)(core::ptr::from_ref(path), core::ptr::from_ref(subject), core::ptr::from_ref(target)) } }
+/// `FindReferenceFromNode`: walks node and its parents (+0x30) until a node whose vtable +0x28 (as-fade-node) result has a user reference at +0xf8; returns the player for the player's first-person root (slot 111 Get3DFor(1)); a reference whose base (+0x40) has form type 0x2a ('*') defers to its parent's reference. Does not add a reference count.
+///
+/// Semantic, camera pass, high; ledger semantic evidence, name high; id 19750, rva 0x2eece0.
+/// `TESObjectREFR* (NiAVObject* node)`
+#[inline]
+pub fn find_reference_from_node(node: &crate::NiAVObject) -> Option<&'static crate::TESObjectREFR> { unsafe { function!(19750, (*const crate::NiAVObject) -> Option<&'static crate::TESObjectREFR>)(core::ptr::from_ref(node)) } }
 /// `FinishFirstPersonPass`: undoes the first-person subtree shift (OffsetSubtreeWorldTranslation(node [0x34362d8], -(0x3436318..), -(0x3436328..))), restores the hands camera's world translation from the context, sets ShadowSceneNode.eyePosition from the frame camera's parent (the camera root) local translation ([0x34362e8] +0x128 -> +0x30 -> +0x6c), zeroes its +0x2e8 vector, accumulator mode 0
 ///
 /// Semantic, camera pass, high; ledger semantic evidence, name high; id 107124, rva 0x15376b0.
@@ -3458,12 +3602,66 @@ pub fn get_furniture_marker_node_extra_data(root3D: &crate::NiAVObject) -> Optio
 /// `u32 (void)`
 #[inline]
 pub fn get_interior_cell_buffer_setting() -> u32 { unsafe { function!(13386, () -> u32)() } }
+/// `GetNodeFromCollidable`: owner = collidable + (int8)collidable[+0x20]; returns the owner's property 2 value's +0x10, else the first keyed value of owner+0x18; the scene node of the hit body
+///
+/// Semantic, camera pass, medium; ledger semantic evidence, name medium; id 77988, rva 0x1051de0.
+/// `NiAVObject* (const hkpCollidable* collidable)`
+///
+/// # Safety
+/// The pass rates the signature medium.
+#[inline]
+pub unsafe fn get_node_from_collidable(collidable: *const c_void) -> *mut crate::NiAVObject { unsafe { function!(77988, (*const c_void) -> *mut crate::NiAVObject)(collidable) } }
+/// `GetNodeFromCollidableOrLand`: for a collidable whose group (filterInfo +0x2c, high 16 bits) is 1 (landscape): the land's node from QueryLandAtPosition 0x1a5760 at the owner's position (+0x1a0, divided by the Havok scale), +0x30; otherwise GetNodeFromCollidable 0x1051de0
+///
+/// Semantic, camera pass, medium; ledger semantic evidence, name medium; id 15870, rva 0x2236d0.
+/// `NiAVObject* (const hkpCollidable* collidable)`
+///
+/// # Safety
+/// The pass rates the signature medium.
+#[inline]
+pub unsafe fn get_node_from_collidable_or_land(collidable: *const c_void) -> *mut crate::NiAVObject { unsafe { function!(15870, (*const c_void) -> *mut crate::NiAVObject)(collidable) } }
 /// `GetSpeechDelay`: returns fSpeechDelay (GameSetting value 0x20b0330)
 ///
 /// Semantic, camera pass, high; ledger semantic evidence, name high; id 26565, rva 0x423e20.
 /// `float (void)`
 #[inline]
 pub fn get_speech_delay() -> f32 { unsafe { function!(26565, () -> f32)() } }
+/// `HasLineOfSightToRef`: when the target is inside the main camera frustum, casts up to three LOS rays (layer 0x29, looker's group) from the scene-graph camera position to three heights on the target and returns true when one hits nothing or the target; else the looker's knowledge byte
+///
+/// Semantic, camera pass, medium; ledger semantic evidence, name medium; id 40520, rva 0x74bbe0.
+/// `bool (Actor* looker, TESObjectREFR* target, bool* inFrustumOut)`
+///
+/// # Safety
+/// The pass rates the signature medium.
+#[inline]
+pub unsafe fn has_line_of_sight_to_ref(looker: *mut crate::Actor, target: *mut crate::TESObjectREFR, inFrustumOut: *mut bool) -> bool { unsafe { function!(40520, (*mut crate::Actor, *mut crate::TESObjectREFR, *mut bool) -> bool)(looker, target, inFrustumOut) } }
+/// `HeadTrackData::ClearSlot`: clears slot (handle invalid, active byte 0); with keepAsDefault and a target that resolved, moves that target into slot 0; else RetargetHeadTrack
+///
+/// Semantic, camera pass, high; ledger runtime evidence, name high; id 39756, rva 0x71dcf0.
+/// `void (AIProcessData10* data, i32 slot, bool keepAsDefault)`
+///
+/// # Safety
+/// `data` must point to what the engine expects.
+#[inline]
+pub unsafe fn head_track_data__clear_slot(data: *mut c_void, slot: i32, keepAsDefault: bool) { unsafe { function!(39756, (*mut c_void, i32, bool))(data, slot, keepAsDefault) } }
+/// `HeadTrackData::Retarget`: takes the highest active slot's handle (5 down to 0); when it differs from +0x178: +0x46a = 0, +0x178 = handle, +0x164..+0x16c = the target's look position (slot 91), +0x174 = 0, +0x170 = fAIHeadTrackDialogueStayInOffsetMin
+///
+/// Semantic, camera pass, high; ledger semantic evidence, name high; id 39770, rva 0x71ea00.
+/// `void (AIProcessData10* data)`
+///
+/// # Safety
+/// `data` must point to what the engine expects.
+#[inline]
+pub unsafe fn head_track_data__retarget(data: *mut c_void) { unsafe { function!(39770, (*mut c_void))(data) } }
+/// `HeadTrackData::SetSlot`: data+0x140 + slot*4 = handle(ref) (or invalid), data+0x158 + slot = (ref != null); when ref is set, RetargetHeadTrack 0x71ea00
+///
+/// Semantic, camera pass, high; ledger runtime evidence, name high; id 39783, rva 0x71fa50.
+/// `void (AIProcessData10* data, i32 slot, TESObjectREFR* ref)`
+///
+/// # Safety
+/// `data` must point to what the engine expects.
+#[inline]
+pub unsafe fn head_track_data__set_slot(data: *mut c_void, slot: i32, ref_: *mut crate::TESObjectREFR) { unsafe { function!(39783, (*mut c_void, i32, *mut crate::TESObjectREFR))(data, slot, ref_) } }
 /// `InitDragonMaxTurnAngle`: g_DragonMaxTurnAngle = fDragonMaxAngleBeforeTurn:Camera (90 in the image) * pi/180
 ///
 /// Semantic, camera pass, high; ledger semantic evidence, name high; id 5325, rva 0x90f30.
@@ -3565,6 +3763,21 @@ pub unsafe fn is_visible_in_main_camera_or_multi_bound(unused: *mut c_void, obje
 /// `combatController`, `hitRecord` must point to what the engine expects.
 #[inline]
 pub unsafe fn launch_projectile_from_caster(caster: *mut crate::MagicCaster, projectile: *mut crate::BGSProjectile, shooter: *mut crate::TESObjectREFR, combatController: *mut c_void, origin: *const crate::NiPoint3, angleZ: f32, angleX: f32, area: u32, hitRecord: *const c_void) -> bool { unsafe { function!(34452, (*mut crate::MagicCaster, *mut crate::BGSProjectile, *mut crate::TESObjectREFR, *mut c_void, *const crate::NiPoint3, f32, f32, u32, *const c_void) -> bool)(caster, projectile, shooter, combatController, origin, angleZ, angleX, area, hitRecord) } }
+/// `LinearCastSphere`: Havok utility (ball gun): sphere of the given radius (Havok units) cast from -> to with hkpWorld::linearCast and an hkpClosestCdPointCollector; returns true when nothing was hit (out = {to, zero normal, -1, null}); on a hit out = {contact point +0, normal xyz + fraction w +0x10, shape key +0x20, hit hkpWorldObject (entity) +0x28} and returns false
+///
+/// Semantic, camera pass, medium; ledger semantic evidence, name medium; id 62781, rva 0xba6bf0.
+/// `bool (hkpWorld* world, const hkVector4* from, float radius, const hkVector4* to, SphereCastResult* out)`
+///
+/// # Safety
+/// The pass rates the signature medium.
+#[inline]
+pub unsafe fn linear_cast_sphere(world: *mut crate::hkpWorld, from: *const crate::hkVector4, radius: f32, to: *const crate::hkVector4, out: *mut c_void) -> bool { unsafe { function!(62781, (*mut crate::hkpWorld, *const crate::hkVector4, f32, *const crate::hkVector4, *mut c_void) -> bool)(world, from, radius, to, out) } }
+/// `LockWorldForReadIfEnabled`: BSReadWriteLock::LockForRead(world+0xc598) when bUseWorldLock:HAVOK (0x20d18c8) is set
+///
+/// Semantic, camera pass, high; ledger semantic evidence, name high; id 77926, rva 0x104fca0.
+/// `void (bhkWorld* world)`
+#[inline]
+pub fn lock_world_for_read_if_enabled(world: &crate::bhkWorld) { unsafe { function!(77926, (*const crate::bhkWorld))(core::ptr::from_ref(world)) } }
 /// `MoveFollowingCameraPathAfterInArray`: find the sibling whose previousSibling is path and move it directly behind path (recursively for its own follower); two claimants log an error
 ///
 /// Semantic, camera pass, high; ledger semantic evidence, name high; id 20641, rva 0x316b90.
@@ -3625,6 +3838,24 @@ pub fn no_op_tween_menu58() { unsafe { function!(56852, ())() } }
 /// May be null: `node`.
 #[inline]
 pub fn offset_subtree_world_translation(node: Option<&crate::NiAVObject>, offset: &crate::NiPoint3, previousOffset: &crate::NiPoint3) { unsafe { function!(107150, (*const crate::NiAVObject, *const crate::NiPoint3, *const crate::NiPoint3))(node.map_or(core::ptr::null(), core::ptr::from_ref), core::ptr::from_ref(offset), core::ptr::from_ref(previousOffset)) } }
+/// `Papyrus::Actor::ClearLookAt`: ExtraHeadingTarget = invalid; with a process: SetHeadTrackHold(process, true) (slot 2 cleared, its target kept as slot 0 default, hold timer +0x160), 0x6a6c90 (movement position request cleared), data+0x17c = invalid
+///
+/// Semantic, camera pass, high; ledger papyrus_native evidence, name high; id 54659, rva 0x9ffec0.
+/// `void (IVirtualMachine* vm, u32 stackId, Actor* self)`
+///
+/// # Safety
+/// `vm` must point to what the engine expects.
+#[inline]
+pub unsafe fn papyrus__actor__clear_look_at(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor) { unsafe { function!(54659, (*mut c_void, u32, *mut crate::Actor))(vm, stackId, self_) } }
+/// `Papyrus::Actor::GetDialogueTarget`: resolves self->dialogueTargetHandle (Actor+0x100) with ResolveActorHandle 0x2676c0
+///
+/// Semantic, camera pass, high; ledger papyrus_native evidence, name high; id 54682, rva 0xa007f0.
+/// `Actor* (IVirtualMachine* vm, u32 stackId, Actor* self)`
+///
+/// # Safety
+/// `vm` must point to what the engine expects.
+#[inline]
+pub unsafe fn papyrus__actor__get_dialogue_target(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor) -> *mut crate::Actor { unsafe { function!(54682, (*mut c_void, u32, *mut crate::Actor) -> *mut crate::Actor)(vm, stackId, self_) } }
 /// `Papyrus::Actor::GetEquippedItemType`: hand 0 left, 1 right: the equipped item's type; vm is used only on the error paths
 ///
 /// Semantic, camera pass, high; ledger papyrus_native evidence, name high; id 54685, rva 0xa00940.
@@ -3634,6 +3865,33 @@ pub fn offset_subtree_world_translation(node: Option<&crate::NiAVObject>, offset
 /// `vm` must point to what the engine expects.
 #[inline]
 pub unsafe fn papyrus__actor__get_equipped_item_type(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor, hand: u32) -> i32 { unsafe { function!(54685, (*mut c_void, u32, *mut crate::Actor, u32) -> i32)(vm, stackId, self_, hand) } }
+/// `Papyrus::Actor::SetHeadTracking`: ActorState flags2 (Actor+0xcc) bit 3 = enable; nothing else
+///
+/// Semantic, camera pass, high; ledger papyrus_native evidence, name high; id 54752, rva 0xa025b0.
+/// `void (IVirtualMachine* vm, u32 stackId, Actor* self, bool enable)`
+///
+/// # Safety
+/// `vm` must point to what the engine expects.
+#[inline]
+pub unsafe fn papyrus__actor__set_head_tracking(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor, enable: bool) { unsafe { function!(54752, (*mut c_void, u32, *mut crate::Actor, bool))(vm, stackId, self_, enable) } }
+/// `Papyrus::Actor::SetLookAt`: with pathingLookAt false: slot 2 = target (0x6fe6d0) and ExtraHeadingTarget (extra 0x45) = target's handle; with true: a movement position request toward target (0x6a6b20), data+0x17c = target handle and target flag 0x40000; then self slot 10 (0x80000000)
+///
+/// Semantic, camera pass, high; ledger papyrus_native evidence, name high; id 54754, rva 0xa02640.
+/// `void (IVirtualMachine* vm, u32 stackId, Actor* self, TESObjectREFR* target, bool pathingLookAt)`
+///
+/// # Safety
+/// `vm` must point to what the engine expects.
+#[inline]
+pub unsafe fn papyrus__actor__set_look_at(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor, target: *mut crate::TESObjectREFR, pathingLookAt: bool) { unsafe { function!(54754, (*mut c_void, u32, *mut crate::Actor, *mut crate::TESObjectREFR, bool))(vm, stackId, self_, target, pathingLookAt) } }
+/// `Papyrus::Debug::ToggleMenus`: the same toggle of UI+0x1c0, no echo
+///
+/// Semantic, camera pass, high; ledger papyrus_native evidence, name high; id 55390, rva 0xa1f9e0.
+/// `void (IVirtualMachine* vm, u32 stackId, StaticFunctionTag*)`
+///
+/// # Safety
+/// `vm`, `a2` must point to what the engine expects.
+#[inline]
+pub unsafe fn papyrus__debug__toggle_menus(vm: *mut c_void, stackId: u32, a2: *mut c_void) { unsafe { function!(55390, (*mut c_void, u32, *mut c_void))(vm, stackId, a2) } }
 /// `Papyrus::Game::DisablePlayerControls`: clears ControlMap bits (movement 0x401, fighting 0x40, looking 2, sneaking 0x80, menu 0x100) and, when camSwitch is set, writes PlayerControls.bDisablePOVChange[disablePOVType] = 1; it never touches ControlMap bit 5
 ///
 /// Semantic, camera pass, high; ledger papyrus_native evidence, name high; id 55454, rva 0xa23ee0.
@@ -4120,6 +4378,12 @@ pub fn update_furniture_state_or_forward(actor: &crate::Actor, state: u32) { uns
 /// `manager` must point to what the engine expects.
 #[inline]
 pub unsafe fn update_handle_array_with_frame_delta(manager: *mut c_void) { unsafe { function!(43946, (*mut c_void))(manager) } }
+/// `UpdateHeadTrackingIfInRange`: the NPC head-tracking job step: unless the life state / mount / flying checks exclude it, and when the character controller's +0x29c distance is within fAIMaxHeadTrackDistanceFromPC (or the large-creature value), calls slot 290 then 291 with g_FrameDelta (scaled by the VATS multiplier for the VATS target)
+///
+/// Semantic, camera pass, high; ledger semantic evidence, name high; id 37363, rva 0x67d930.
+/// `void (Actor* actor)`
+#[inline]
+pub fn update_head_tracking_if_in_range(actor: &crate::Actor) { unsafe { function!(37363, (*const crate::Actor))(core::ptr::from_ref(actor)) } }
 /// `UpdateKnockState`: per-update knock state machine: 2 -> ragdoll and 1, 4 -> ragdoll and 3; 1 (and 3 unless bleeding out) begin the get-up once the body is still; 5 turns the actor to the body heading and goes to 6
 ///
 /// Semantic, camera pass, medium; ledger semantic evidence, name medium; id 39896, rva 0x723b60.
@@ -4298,6 +4562,9 @@ pub fn g_anim_event_idle_cart_prisoner_c_exit() -> &'static crate::BSFixedString
 /// `g_AnimEvent_IdleCartPrisonerCIdle` at 0x3243f58, id 404008 (semantic, high); "IdleCartPrisonerCIdle"; turns FirstPersonState.useAltEuler on (high, camera pass), type `class:BSFixedString`
 #[inline]
 pub fn g_anim_event_idle_cart_prisoner_c_idle() -> &'static crate::BSFixedString { unsafe { &*(address!(404008) as *const crate::BSFixedString) } }
+/// `g_BodyPartTypeNames` at 0x2099290, id 368919 (semantic, medium); const char*[6]: 'Torso', 'DismemberedLimb1 Head1', 'Eye', 'LookAt', 'Fly Grab', 'Saddle' (enum BodyPartType) (medium, camera pass), type `pointer`
+#[inline]
+pub fn g_body_part_type_names() -> *mut *mut c_void { address!(368919) as *mut *mut c_void }
 /// `g_CameraPathController` at 0x32307e0, id 403535 (semantic, high); pointer to `NiTimeController`: first time controller of the camera path model; its +0x20 ends the playback; first time controller of the camera path model; its +0x20 ends the playback (high, camera pass), type `ptr:NiTimeController`
 #[inline]
 pub fn g_camera_path_controller() -> Option<&'static crate::NiTimeController> { unsafe { *(address!(403535) as *const Option<&'static crate::NiTimeController>) } }
@@ -4331,6 +4598,9 @@ pub fn g_camera_shake_strength() -> *mut f32 { address!(402622) as *mut f32 }
 /// `g_CameraShakeTimeLeft` at 0x3204864, id 402623 (runtime, high); seconds of shake left (high, camera pass), type `float`
 #[inline]
 pub fn g_camera_shake_time_left() -> *mut f32 { address!(402623) as *mut f32 }
+/// `g_CollisionLayerNames` at 0x20d1f80, id 389332 (semantic, high); const char*[47]: collision layer names by layer index (enum CollisionLayer); entry 47 is null (high, camera pass), type `pointer`
+#[inline]
+pub fn g_collision_layer_names() -> *mut *mut c_void { address!(389332) as *mut *mut c_void }
 /// `g_CrosshairPickData` at 0x3245340, id 404421 (semantic, high); the static pick data object (high, camera pass), type `class:CrosshairPickData`
 #[inline]
 pub fn g_crosshair_pick_data() -> &'static crate::CrosshairPickData { unsafe { &*(address!(404421) as *const crate::CrosshairPickData) } }
@@ -4340,6 +4610,9 @@ pub fn g_current_camera_eye_position() -> &'static crate::NiPoint3 { unsafe { &*
 /// `g_CurrentCameraEyePositionOlder` at 0x20cff68, id 388912 (semantic, medium); entry+0x278: the older of the two previous eye positions (medium, camera pass), type `class:NiPoint3`
 #[inline]
 pub fn g_current_camera_eye_position_older() -> &'static crate::NiPoint3 { unsafe { &*(address!(388912) as *const crate::NiPoint3) } }
+/// `g_DefaultBodyPartData` at 0x31e0178, id 401344 (semantic, high); pointer to `BGSBodyPartData`: fallback body part data when the race has none; fallback body part data when the race has none (high, camera pass), type `ptr:BGSBodyPartData`
+#[inline]
+pub fn g_default_body_part_data() -> Option<&'static crate::BGSBodyPartData> { unsafe { *(address!(401344) as *const Option<&'static crate::BGSBodyPartData>) } }
 /// `g_DefaultCameraPath` at 0x31df550, id 401130 (semantic, high); pointer to `BGSCameraPath`: form 0x16 "DefaultCameraPath"; form 0x16 "DefaultCameraPath" (high, camera pass), type `ptr:BGSCameraPath`
 #[inline]
 pub fn g_default_camera_path() -> Option<&'static crate::BGSCameraPath> { unsafe { *(address!(401130) as *const Option<&'static crate::BGSCameraPath>) } }
@@ -4364,6 +4637,9 @@ pub fn g_dialogue_turn_start_yaw() -> *mut f32 { address!(381588) as *mut f32 }
 /// `g_DragonMaxTurnAngle` at 0x32048c8, id 402637 (semantic, high); fDragonMaxAngleBeforeTurn:Camera in radians (pi/2 by default) (high, camera pass), type `float`
 #[inline]
 pub fn g_dragon_max_turn_angle() -> *mut f32 { address!(402637) as *mut f32 }
+/// `g_ExteriorWorldHolder` at 0x21a0598, id 400440 (semantic, high); address of the slot holding the exterior (worldspace) bhkWorld: world = **0x21a0598 (high, camera pass), type `pointer`
+#[inline]
+pub fn g_exterior_world_holder() -> *mut *mut c_void { address!(400440) as *mut *mut c_void }
 /// `g_FOVTanScale` at 0x20d9230, id 391777 (semantic, high); tan(fov/2) / tan(37.5 deg), set with the world FOV (high, camera pass), type `float`
 #[inline]
 pub fn g_fov_tan_scale() -> *mut f32 { address!(391777) as *mut f32 }
@@ -4382,6 +4658,9 @@ pub fn g_first_person_root_offset() -> *mut u8 { address!(415042) as *mut u8 }
 /// `g_FirstPersonViewParams` at 0x34362c0, id 415027 (runtime, high); 0x58-byte block returned by 0x1537410: +0..+8 first-person position offset, +0xc (0x34362cc) the hands FOV used by 0x1537460 and 0x1538fa0 (high, camera pass), type `undefined1`
 #[inline]
 pub fn g_first_person_view_params() -> *mut u8 { address!(415027) as *mut u8 }
+/// `g_FootIkRaycastInterfaceDB` at 0x31df418, id 401101 (semantic, high); pointer to `BGSFootIkRaycastInterfaceDB`: the foot IK raycast database singleton; the foot IK raycast database singleton (high, camera pass), type `ptr:BGSFootIkRaycastInterfaceDB`
+#[inline]
+pub fn g_foot_ik_raycast_interface_db() -> Option<&'static crate::BGSFootIkRaycastInterfaceDB> { unsafe { *(address!(401101) as *const Option<&'static crate::BGSFootIkRaycastInterfaceDB>) } }
 /// `g_FrameTimer_fixedStep` at 0x3275600, id 410198 (semantic, medium); g_FrameTimer+0x10: fixed frame step override; 1/iFPS while the camera path records, 0 otherwise (medium, camera pass), type `float`
 #[inline]
 pub fn g_frame_timer_fixed_step() -> *mut f32 { address!(410198) as *mut f32 }
@@ -4421,12 +4700,24 @@ pub fn g_main() -> *mut *mut c_void { address!(403449) as *mut *mut c_void }
 /// `g_MainCullingCamera` at 0x32309c0, id 403552 (semantic, high); MainCullingCamera singleton handed to BSTreeManager (high, camera pass), type `pointer`
 #[inline]
 pub fn g_main_culling_camera() -> *mut *mut c_void { address!(403552) as *mut *mut c_void }
+/// `g_MaxPickTime` at 0x20d1758, id 389093 (semantic, low); pick time budget (0.001 in the image; 0x20d175c = 0.03 while VATS flag 0x333652a is set) (low, camera pass), type `float`
+#[inline]
+pub fn g_max_pick_time() -> *mut f32 { address!(389093) as *mut f32 }
 /// `g_NodeUpdateTime` at 0x219e5f0, id 400333 (semantic, low); time the player's root updates pass in NiUpdateData (ID_400333) (low, camera pass), type `float`
 #[inline]
 pub fn g_node_update_time() -> *mut f32 { address!(400333) as *mut f32 }
 /// `g_NullMapCameraCallbacks` at 0x20bc368, id 383506 (semantic, high); the NullMapCameraCallbacks singleton used by MapCamera::ctor 0x996170 (high, camera pass), type `class:IMapCameraCallbacks`
 #[inline]
 pub fn g_null_map_camera_callbacks() -> &'static crate::IMapCameraCallbacks { unsafe { &*(address!(383506) as *const crate::IMapCameraCallbacks) } }
+/// `g_PickBudgetDisabled` at 0x3336528, id 411521 (semantic, medium); when set PickObject never refuses a pick for time; set and cleared by FindAutoAimTarget through SetGlobalByte411521 0x104df40 (medium, camera pass), type `undefined1`
+#[inline]
+pub fn g_pick_budget_disabled() -> *mut u8 { address!(411521) as *mut u8 }
+/// `g_PickTimeThisStep` at 0x3336520, id 411519 (semantic, low); compared with the pick budget in PickObject; reset by the world step (low, camera pass), type `float`
+#[inline]
+pub fn g_pick_time_this_step() -> *mut f32 { address!(411519) as *mut f32 }
+/// `g_PlayerBodyPartDataOverride` at 0x31e0180, id 401345 (semantic, high); pointer to `BGSBodyPartData`: used instead of the race's body part data for the player when set; used instead of the race's body part data for the player when set (high, camera pass), type `ptr:BGSBodyPartData`
+#[inline]
+pub fn g_player_body_part_data_override() -> Option<&'static crate::BGSBodyPartData> { unsafe { *(address!(401345) as *const Option<&'static crate::BGSBodyPartData>) } }
 /// `g_PlayerCamera` at 0x3245380, id 404422 (semantic, medium); static PlayerCamera instance (medium, camera pass), type `class:PlayerCamera`
 #[inline]
 pub fn g_player_camera() -> &'static crate::PlayerCamera { unsafe { &*(address!(404422) as *const crate::PlayerCamera) } }
@@ -4454,6 +4745,9 @@ pub fn g_race_menu_camera_interp_done() -> *mut u8 { address!(383182) as *mut u8
 /// `g_RaceMenuFaceCameraTarget` at 0x3258520, id 406397 (semantic, high); 7 floats: position + quaternion of the face view (high, camera pass), type `undefined1`
 #[inline]
 pub fn g_race_menu_face_camera_target() -> *mut u8 { address!(406397) as *mut u8 }
+/// `g_RaceMenuHeadLookYaw` at 0x3258580, id 406418 (semantic, medium); race menu head-look horizontal input in [-1, 1]; 0x3258584 the vertical one (medium, camera pass), type `float`
+#[inline]
+pub fn g_race_menu_head_look_yaw() -> *mut f32 { address!(406418) as *mut f32 }
 /// `g_SetPlayerControlsName` at 0x324fd88, id 404516 (semantic, high); "Set Player Controls": the movement-controller handler the player's slot 265 configures with fPlayerThirdPersonDampenTime (high, camera pass), type `class:BSFixedString`
 #[inline]
 pub fn g_set_player_controls_name() -> &'static crate::BSFixedString { unsafe { &*(address!(404516) as *const crate::BSFixedString) } }

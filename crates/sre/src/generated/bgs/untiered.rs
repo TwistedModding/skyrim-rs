@@ -34,37 +34,6 @@ impl crate::BGSAnimSoundStateManager {
     pub unsafe fn vfunc_1_sub2(param_1: i64, param_2: *mut u64, param_3: *mut u64) -> u8 { unsafe { function!(15022, (i64, *mut u64, *mut u64) -> u8)(param_1, param_2, param_3) } }
 }
 
-impl crate::BGSBodyPartData {
-    /// `BGSBodyPartData::BGSPreloadable_vfunc_4_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 23453, rva 0x38aca0).
-    /// `undefined BGSPreloadable_vfunc_4_sub0(longlong param_1, longlong param_2, ulonglong param_3, undefined8 param_4)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn bgs_preloadable_vfunc_4_sub0(param_1: i64, param_2: i64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(23453, (i64, i64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
-    /// `BGSBodyPartData::vfunc_19_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 23447, rva 0x38a300).
-    /// `undefined vfunc_19_sub0(longlong param_1, longlong param_2, TypeDescriptor * param_3, TypeDescriptor * param_4)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn vfunc_19_sub0(param_1: i64, param_2: i64, param_3: *mut c_void, param_4: *mut c_void) -> u64 { unsafe { function!(23447, (i64, i64, *mut c_void, *mut c_void) -> u64)(param_1, param_2, param_3, param_4) } }
-    /// `BGSBodyPartData::vfunc_6_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 23442, rva 0x389c40).
-    /// `undefined8 * vfunc_6_sub0(undefined8 * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn vfunc_6_sub0(param_1: *mut u64, param_2: u64, param_3: u64, param_4: u64) -> *mut u64 { unsafe { function!(23442, (*mut u64, u64, u64, u64) -> *mut u64)(param_1, param_2, param_3, param_4) } }
-    /// `BGSBodyPartData::vfunc_6_sub1` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 23446, rva 0x389ed0).
-    /// `bool vfunc_6_sub1(longlong * param_1, longlong param_2, undefined8 param_3, char * param_4)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn vfunc_6_sub1(param_1: *mut i64, param_2: i64, param_3: u64, param_4: *mut c_char) -> u8 { unsafe { function!(23446, (*mut i64, i64, u64, *mut c_char) -> u8)(param_1, param_2, param_3, param_4) } }
-}
-
 impl crate::BGSCollisionLayer {
     /// `BGSCollisionLayer::vfunc_19_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 20732, rva 0x31ab10).
     /// `undefined8 vfunc_19_sub0(longlong param_1, uint * param_2, undefined8 * param_3)`
@@ -145,6 +114,16 @@ impl crate::BGSExplosion {
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
     pub unsafe fn vfunc_6_sub2(param_1: *mut u64, param_2: i64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(17010, (*mut u64, i64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
+}
+
+impl crate::BGSFootIkRaycastInterfaceDB {
+    /// `BGSFootIkRaycastInterfaceDB::GetRaycastData`, vtable slot 1, through the object's vtable (decompiler signature, tier untiered; ledger semantic evidence, name medium; id 32742, rva 0x54ac90).
+    /// `ulonglong GetRaycastData(BGSFootIkRaycastInterfaceDB * this, ulonglong param_1, ulonglong param_2)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn get_raycast_data(&self, param_1: u64, param_2: u64) -> u64 { unsafe { virtual_function!(self, 1, (*const Self, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2) } }
 }
 
 impl crate::BGSGamebryoSequenceGeneratorHolderSingleton {

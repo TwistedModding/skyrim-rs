@@ -37,6 +37,23 @@ impl crate::BGSAcousticSpaceListener {
     pub unsafe fn dtor(&self) -> u64 { unsafe { function!(25674, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
+impl crate::BGSBodyPartData {
+    /// `BGSBodyPartData::BGSPreloadable_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 23491, rva 0x38c3e0).
+    /// `undefined BGSPreloadable_vdtor(BGSBodyPartData * this)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn bgs_preloadable_vdtor(&self) -> u64 { unsafe { function!(23491, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x48)) } }
+    /// `BGSBodyPartData::TESModel_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 23490, rva 0x38c3d4).
+    /// `undefined TESModel_vdtor(BGSBodyPartData * this)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn tes_model_vdtor(&self) -> u64 { unsafe { function!(23490, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x20)) } }
+}
+
 impl crate::BeamProjectile {
     /// `BeamProjectile::BSHandleRefObject_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 43772, rva 0x7e1058).
     /// `undefined BSHandleRefObject_vdtor(BeamProjectile * this)`
@@ -215,6 +232,30 @@ impl crate::MovementControllerNPC {
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
     pub unsafe fn i_movement_select_idle_vfunc_5(&self) -> u8 { unsafe { function!(41697, (*const Self) -> u8)(core::ptr::from_ref(self).byte_add(0x130)) } }
+}
+
+impl crate::RaceSexMenu {
+    /// `RaceSexMenu::MenuEventHandler_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 52444, rva 0x972e08).
+    /// `undefined MenuEventHandler_vdtor(RaceSexMenu * this)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn menu_event_handler_vdtor(&self) -> u64 { unsafe { function!(52444, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x30)) } }
+    /// `RaceSexMenu::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 52342, rva 0x967950).
+    /// `RaceSexMenu * ctor(RaceSexMenu * this)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(52342, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
+    /// `RaceSexMenu::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 52343, rva 0x967b40).
+    /// `undefined ctor(RaceSexMenu * this)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn ctor_2(&self) -> u64 { unsafe { function!(52343, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ShaderReferenceEffect {

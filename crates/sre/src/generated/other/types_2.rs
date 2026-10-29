@@ -9369,225 +9369,6 @@ pub struct REFREventCallbacks__IEventCallbackFactory {
 }
 const _: () = assert!(core::mem::offset_of!(REFREventCallbacks__IEventCallbackFactory, __vftable) == 0x0);
 
-/// `RaceSexMenu`: size 0x1A8 (exact, medium); primary base `IMenu`.
-/// Evidence: allocation sites (medium): {'424': 1}.
-/// Bases: `IMenu`@0x0, `FxDelegateHandler`@0x0, `GRefCountBase<FxDelegateHandler,2>`@0x0, `GRefCountBaseStatImpl<GRefCountImpl,2>`@0x0, `GRefCountImpl`@0x0, `GRefCountImplCore`@0x0, `MenuEventHandler`@0x30, `BSIntrusiveRefCounted`@0x38.
-/// Packed: a field lies below its natural alignment.
-#[repr(C, packed)]
-pub struct RaceSexMenu {
-    /// +0x0 `vtbl:RaceSexMenu:0`, rtti
-    #[doc(hidden)]
-    pub __vftable: *const crate::raw::vtables::RaceSexMenu_vtable,
-    /// +0x8 `undefined4`, base GRefCountImplCore
-    pub field_8: u32,
-    pub unknown_C: [u8; 4],
-    /// +0x10 `undefined1`, base GRefCountImplCore
-    pub field_10: u8,
-    /// +0x11 `undefined1`, base GRefCountImplCore
-    pub field_11: u8,
-    /// +0x12 `undefined2`, base GRefCountImplCore
-    pub field_12: u16,
-    /// +0x14 `undefined4`, base GRefCountImplCore
-    pub field_14: u32,
-    /// +0x18 `undefined4`, base GRefCountImplCore
-    pub field_18: u32,
-    /// +0x1C `undefined4`, base GRefCountImplCore
-    pub field_1C: u32,
-    /// +0x20 `undefined1`, base GRefCountImplCore
-    pub field_20: u8,
-    pub unknown_21: [u8; 3],
-    /// +0x24 `undefined4`, base GRefCountImplCore
-    pub field_24: u32,
-    /// +0x28 `undefined1`, base GRefCountImplCore
-    pub field_28: u8,
-    pub unknown_29: [u8; 3],
-    /// +0x2C `undefined4`, base GRefCountImplCore
-    pub field_2C: u32,
-    /// +0x30 `vtbl:RaceSexMenu:30`, rtti
-    #[doc(hidden)]
-    pub __vftable_30: *const crate::raw::vtables::RaceSexMenu_vtable_30,
-    /// +0x38 `undefined1`, base GRefCountImplCore
-    pub field_38: u8,
-    pub unknown_39: [u8; 3],
-    /// +0x3C `undefined4`, base GRefCountImplCore
-    pub field_3C: u32,
-    /// +0x40 `undefined1`, base GRefCountImplCore
-    pub field_40: u8,
-    pub unknown_41: [u8; 3],
-    /// +0x44 `undefined4`, base GRefCountImplCore
-    pub field_44: u32,
-    /// +0x48 `undefined1`, base GRefCountImplCore
-    pub field_48: u8,
-    pub unknown_49: [u8; 3],
-    /// +0x4C `undefined4`, base GRefCountImplCore
-    pub field_4C: u32,
-    /// +0x50 `undefined2`, base GRefCountImplCore
-    pub field_50: u16,
-    pub unknown_52: [u8; 2],
-    /// +0x54 `undefined4`, base GRefCountImplCore
-    pub field_54: u32,
-    /// +0x58 `float`, base GRefCountImplCore
-    pub field_58: f32,
-    /// +0x5C `float`, base GRefCountImplCore
-    pub field_5C: f32,
-    /// +0x60 `undefined1`, base GRefCountImplCore
-    pub field_60: u8,
-    pub unknown_61: [u8; 3],
-    /// +0x64 `undefined1`, base GRefCountImplCore
-    pub field_64: u8,
-    pub unknown_65: [u8; 3],
-    /// +0x68 `undefined4`, base GRefCountImplCore
-    pub field_68: u32,
-    /// +0x6C `undefined4`, base GRefCountImplCore
-    pub field_6C: u32,
-    /// +0x70 `undefined1`, base GRefCountImplCore
-    pub field_70: u8,
-    pub unknown_71: [u8; 3],
-    /// +0x74 `undefined4`, base GRefCountImplCore
-    pub field_74: u32,
-    /// +0x78 `undefined1`, base GRefCountImplCore
-    pub field_78: u8,
-    pub unknown_79: [u8; 1],
-    /// +0x7A `undefined2`, base GRefCountImplCore
-    pub field_7A: u16,
-    /// +0x7C `undefined4`, base GRefCountImplCore
-    pub field_7C: u32,
-    /// +0x80 `undefined1`, base GRefCountImplCore
-    pub field_80: u8,
-    pub unknown_81: [u8; 3],
-    /// +0x84 `undefined4`, base GRefCountImplCore
-    pub field_84: u32,
-    /// +0x88 `undefined1`, base GRefCountImplCore
-    pub field_88: u8,
-    pub unknown_89: [u8; 3],
-    /// +0x8C `undefined4`, base GRefCountImplCore
-    pub field_8C: u32,
-    /// +0x90 `undefined2`, base GRefCountImplCore
-    pub field_90: u16,
-    pub unknown_92: [u8; 2],
-    /// +0x94 `undefined4`, base GRefCountImplCore
-    pub field_94: u32,
-    /// +0x98 `undefined1`, base GRefCountImplCore
-    pub field_98: u8,
-    pub unknown_99: [u8; 3],
-    /// +0x9C `undefined4`, base GRefCountImplCore
-    pub field_9C: u32,
-    /// +0xA0 `undefined4`, base GRefCountImplCore
-    pub field_A0: u32,
-    /// +0xA4 `undefined4`, base GRefCountImplCore
-    pub field_A4: u32,
-    /// +0xA8 `undefined1`, base GRefCountImplCore
-    pub field_A8: u8,
-    pub unknown_A9: [u8; 3],
-    /// +0xAC `undefined4`, base GRefCountImplCore
-    pub field_AC: u32,
-    /// +0xB0 `undefined4`, base GRefCountImplCore
-    pub field_B0: u32,
-    /// +0xB4 `undefined4`, base GRefCountImplCore
-    pub field_B4: u32,
-    /// +0xB8 `undefined1`, base GRefCountImplCore
-    pub field_B8: u8,
-    pub unknown_B9: [u8; 3],
-    /// +0xBC `undefined4`, base GRefCountImplCore
-    pub field_BC: u32,
-    pub unknown_C0: [u8; 40],
-    /// +0xE8 `undefined8`, member ctor RaceSexCamera
-    pub m_RaceSexCamera_E8: u64,
-    pub unknown_F0: [u8; 48],
-    /// +0x120 `undefined8`, ctor store
-    pub field_120: u64,
-    /// +0x128 `undefined4`, ctor store
-    pub field_128: u32,
-    pub unknown_12C: [u8; 84],
-    /// +0x180 `undefined4`, ctor store
-    pub field_180: u32,
-    pub unknown_184: [u8; 4],
-    /// +0x188 `undefined8`, ctor store
-    pub field_188: u64,
-    /// +0x190 `undefined4`, ctor store
-    pub field_190: u32,
-    /// +0x194 `float`, ctor store
-    pub field_194: f32,
-    /// +0x198 `undefined4`, ctor store
-    pub field_198: u32,
-    /// +0x19C `undefined2`, ctor store
-    pub field_19C: u16,
-    /// +0x19E `undefined1`, ctor store
-    pub field_19E: u8,
-    pub unknown_19F: [u8; 1],
-    /// +0x1A0 `undefined1`, ctor store
-    pub field_1A0: u8,
-    /// +0x1A1 `undefined1`, ctor store
-    pub field_1A1: u8,
-    /// +0x1A2 `undefined4`, ctor store
-    pub field_1A2: u32,
-    pub unknown_1A6: [u8; 2],
-    #[doc(hidden)]
-    pub __engine: crate::Engine,
-}
-const _: () = assert!(size_of::<RaceSexMenu>() == 0x1A8);
-const _: () = assert!(core::mem::offset_of!(RaceSexMenu, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(RaceSexMenu, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(RaceSexMenu, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(RaceSexMenu, field_11) == 0x11);
-const _: () = assert!(core::mem::offset_of!(RaceSexMenu, field_12) == 0x12);
-const _: () = assert!(core::mem::offset_of!(RaceSexMenu, field_14) == 0x14);
-const _: () = assert!(core::mem::offset_of!(RaceSexMenu, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(RaceSexMenu, field_1C) == 0x1C);
-const _: () = assert!(core::mem::offset_of!(RaceSexMenu, field_20) == 0x20);
-const _: () = assert!(core::mem::offset_of!(RaceSexMenu, field_24) == 0x24);
-const _: () = assert!(core::mem::offset_of!(RaceSexMenu, field_28) == 0x28);
-const _: () = assert!(core::mem::offset_of!(RaceSexMenu, field_2C) == 0x2C);
-const _: () = assert!(core::mem::offset_of!(RaceSexMenu, __vftable_30) == 0x30);
-const _: () = assert!(core::mem::offset_of!(RaceSexMenu, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(RaceSexMenu, field_3C) == 0x3C);
-const _: () = assert!(core::mem::offset_of!(RaceSexMenu, field_40) == 0x40);
-const _: () = assert!(core::mem::offset_of!(RaceSexMenu, field_44) == 0x44);
-const _: () = assert!(core::mem::offset_of!(RaceSexMenu, field_48) == 0x48);
-const _: () = assert!(core::mem::offset_of!(RaceSexMenu, field_4C) == 0x4C);
-const _: () = assert!(core::mem::offset_of!(RaceSexMenu, field_50) == 0x50);
-const _: () = assert!(core::mem::offset_of!(RaceSexMenu, field_54) == 0x54);
-const _: () = assert!(core::mem::offset_of!(RaceSexMenu, field_58) == 0x58);
-const _: () = assert!(core::mem::offset_of!(RaceSexMenu, field_5C) == 0x5C);
-const _: () = assert!(core::mem::offset_of!(RaceSexMenu, field_60) == 0x60);
-const _: () = assert!(core::mem::offset_of!(RaceSexMenu, field_64) == 0x64);
-const _: () = assert!(core::mem::offset_of!(RaceSexMenu, field_68) == 0x68);
-const _: () = assert!(core::mem::offset_of!(RaceSexMenu, field_6C) == 0x6C);
-const _: () = assert!(core::mem::offset_of!(RaceSexMenu, field_70) == 0x70);
-const _: () = assert!(core::mem::offset_of!(RaceSexMenu, field_74) == 0x74);
-const _: () = assert!(core::mem::offset_of!(RaceSexMenu, field_78) == 0x78);
-const _: () = assert!(core::mem::offset_of!(RaceSexMenu, field_7A) == 0x7A);
-const _: () = assert!(core::mem::offset_of!(RaceSexMenu, field_7C) == 0x7C);
-const _: () = assert!(core::mem::offset_of!(RaceSexMenu, field_80) == 0x80);
-const _: () = assert!(core::mem::offset_of!(RaceSexMenu, field_84) == 0x84);
-const _: () = assert!(core::mem::offset_of!(RaceSexMenu, field_88) == 0x88);
-const _: () = assert!(core::mem::offset_of!(RaceSexMenu, field_8C) == 0x8C);
-const _: () = assert!(core::mem::offset_of!(RaceSexMenu, field_90) == 0x90);
-const _: () = assert!(core::mem::offset_of!(RaceSexMenu, field_94) == 0x94);
-const _: () = assert!(core::mem::offset_of!(RaceSexMenu, field_98) == 0x98);
-const _: () = assert!(core::mem::offset_of!(RaceSexMenu, field_9C) == 0x9C);
-const _: () = assert!(core::mem::offset_of!(RaceSexMenu, field_A0) == 0xA0);
-const _: () = assert!(core::mem::offset_of!(RaceSexMenu, field_A4) == 0xA4);
-const _: () = assert!(core::mem::offset_of!(RaceSexMenu, field_A8) == 0xA8);
-const _: () = assert!(core::mem::offset_of!(RaceSexMenu, field_AC) == 0xAC);
-const _: () = assert!(core::mem::offset_of!(RaceSexMenu, field_B0) == 0xB0);
-const _: () = assert!(core::mem::offset_of!(RaceSexMenu, field_B4) == 0xB4);
-const _: () = assert!(core::mem::offset_of!(RaceSexMenu, field_B8) == 0xB8);
-const _: () = assert!(core::mem::offset_of!(RaceSexMenu, field_BC) == 0xBC);
-const _: () = assert!(core::mem::offset_of!(RaceSexMenu, m_RaceSexCamera_E8) == 0xE8);
-const _: () = assert!(core::mem::offset_of!(RaceSexMenu, field_120) == 0x120);
-const _: () = assert!(core::mem::offset_of!(RaceSexMenu, field_128) == 0x128);
-const _: () = assert!(core::mem::offset_of!(RaceSexMenu, field_180) == 0x180);
-const _: () = assert!(core::mem::offset_of!(RaceSexMenu, field_188) == 0x188);
-const _: () = assert!(core::mem::offset_of!(RaceSexMenu, field_190) == 0x190);
-const _: () = assert!(core::mem::offset_of!(RaceSexMenu, field_194) == 0x194);
-const _: () = assert!(core::mem::offset_of!(RaceSexMenu, field_198) == 0x198);
-const _: () = assert!(core::mem::offset_of!(RaceSexMenu, field_19C) == 0x19C);
-const _: () = assert!(core::mem::offset_of!(RaceSexMenu, field_19E) == 0x19E);
-const _: () = assert!(core::mem::offset_of!(RaceSexMenu, field_1A0) == 0x1A0);
-const _: () = assert!(core::mem::offset_of!(RaceSexMenu, field_1A1) == 0x1A1);
-const _: () = assert!(core::mem::offset_of!(RaceSexMenu, field_1A2) == 0x1A2);
-
 /// `RagdollFurnitureListener`: size >= 0x20 (lower bound); partial, the struct stops at the lower bound; primary base `hkpContactListener`.
 /// Evidence: field field_18.
 /// Bases: `hkpContactListener`@0x0, `hkpEntityListener`@0x8, `BSTSingletonExplicit<RagdollFurnitureListener>`@0x10.
@@ -19770,4 +19551,299 @@ const _: () = assert!(core::mem::offset_of!(_anon_422024B4__Clear1nTracksFilter,
 const _: () = assert!(core::mem::offset_of!(_anon_422024B4__Clear1nTracksFilter, field_108) == 0x108);
 const _: () = assert!(core::mem::offset_of!(_anon_422024B4__Clear1nTracksFilter, field_110) == 0x110);
 const _: () = assert!(core::mem::offset_of!(_anon_422024B4__Clear1nTracksFilter, field_114) == 0x114);
+
+/// `_anon_422024B4::NeverCollideFilter`: size >= 0x118 (lower bound); partial, the struct stops at the lower bound; primary base `hkpCollisionFilter`.
+/// Evidence: field field_114.
+/// Bases: `hkpCollisionFilter`@0x0, `hkReferencedObject`@0x0, `hkBaseObject`@0x0, `hkpCollidableCollidableFilter`@0x10, `hkpShapeCollectionFilter`@0x18, `hkpRayShapeCollectionFilter`@0x20, `hkpRayCollidableFilter`@0x28.
+#[repr(C)]
+pub struct _anon_422024B4__NeverCollideFilter {
+    /// +0x0 `vtbl:_anon_422024B4::NeverCollideFilter:0`, rtti
+    #[doc(hidden)]
+    pub __vftable: *const crate::raw::vtables::_anon_422024B4__NeverCollideFilter_vtable,
+    /// +0x8 `undefined4`, base hkpCollisionFilter
+    pub field_8: u32,
+    pub unknown_C: [u8; 4],
+    /// +0x10 `vtbl:_anon_422024B4::NeverCollideFilter:10`, rtti
+    #[doc(hidden)]
+    pub __vftable_10: *const crate::raw::vtables::_anon_422024B4__NeverCollideFilter_vtable_10,
+    /// +0x18 `vtbl:_anon_422024B4::NeverCollideFilter:18`, rtti
+    #[doc(hidden)]
+    pub __vftable_18: *const crate::raw::vtables::_anon_422024B4__NeverCollideFilter_vtable_18,
+    /// +0x20 `vtbl:_anon_422024B4::NeverCollideFilter:20`, rtti
+    #[doc(hidden)]
+    pub __vftable_20: *const crate::raw::vtables::_anon_422024B4__NeverCollideFilter_vtable_20,
+    /// +0x28 `vtbl:_anon_422024B4::NeverCollideFilter:28`, rtti
+    #[doc(hidden)]
+    pub __vftable_28: *const crate::raw::vtables::_anon_422024B4__NeverCollideFilter_vtable_28,
+    /// +0x30 `undefined4`, base hkBaseObject
+    pub field_30: u32,
+    /// +0x34 `undefined4`, base hkBaseObject
+    pub field_34: u32,
+    /// +0x38 `undefined4`, base hkBaseObject
+    pub field_38: u32,
+    /// +0x3C `undefined4`, base hkBaseObject
+    pub field_3C: u32,
+    /// +0x40 `undefined4`, base hkBaseObject
+    pub field_40: u32,
+    /// +0x44 `undefined4`, base hkBaseObject
+    pub field_44: u32,
+    /// +0x48 `undefined4`, base hkBaseObject
+    pub field_48: u32,
+    /// +0x4C `undefined4`, base hkBaseObject
+    pub field_4C: u32,
+    /// +0x50 `undefined4`, base hkBaseObject
+    pub field_50: u32,
+    /// +0x54 `undefined4`, base hkBaseObject
+    pub field_54: u32,
+    /// +0x58 `undefined4`, base hkBaseObject
+    pub field_58: u32,
+    /// +0x5C `undefined4`, base hkBaseObject
+    pub field_5C: u32,
+    /// +0x60 `undefined4`, base hkBaseObject
+    pub field_60: u32,
+    /// +0x64 `undefined4`, base hkBaseObject
+    pub field_64: u32,
+    /// +0x68 `undefined4`, base hkBaseObject
+    pub field_68: u32,
+    /// +0x6C `undefined4`, base hkBaseObject
+    pub field_6C: u32,
+    /// +0x70 `undefined4`, base hkBaseObject
+    pub field_70: u32,
+    /// +0x74 `undefined4`, base hkBaseObject
+    pub field_74: u32,
+    /// +0x78 `undefined4`, base hkBaseObject
+    pub field_78: u32,
+    /// +0x7C `undefined4`, base hkBaseObject
+    pub field_7C: u32,
+    /// +0x80 `undefined4`, base hkBaseObject
+    pub field_80: u32,
+    /// +0x84 `undefined4`, base hkBaseObject
+    pub field_84: u32,
+    /// +0x88 `undefined4`, base hkBaseObject
+    pub field_88: u32,
+    /// +0x8C `undefined4`, base hkBaseObject
+    pub field_8C: u32,
+    /// +0x90 `undefined4`, base hkBaseObject
+    pub field_90: u32,
+    /// +0x94 `undefined4`, base hkBaseObject
+    pub field_94: u32,
+    /// +0x98 `undefined4`, base hkBaseObject
+    pub field_98: u32,
+    /// +0x9C `undefined4`, base hkBaseObject
+    pub field_9C: u32,
+    /// +0xA0 `undefined4`, base hkBaseObject
+    pub field_A0: u32,
+    /// +0xA4 `undefined4`, base hkBaseObject
+    pub field_A4: u32,
+    /// +0xA8 `undefined8`, base hkBaseObject
+    pub field_A8: u64,
+    /// +0xB0 `undefined4`, base hkBaseObject
+    pub field_B0: u32,
+    /// +0xB4 `undefined4`, base hkBaseObject
+    pub field_B4: u32,
+    /// +0xB8 `undefined8`, base hkBaseObject
+    pub field_B8: u64,
+    /// +0xC0 `undefined4`, base hkBaseObject
+    pub field_C0: u32,
+    /// +0xC4 `undefined4`, base hkBaseObject
+    pub field_C4: u32,
+    pub unknown_C8: [u8; 64],
+    /// +0x108 `undefined8`, base hkBaseObject
+    pub field_108: u64,
+    /// +0x110 `undefined4`, base hkBaseObject
+    pub field_110: u32,
+    /// +0x114 `undefined4`, base hkBaseObject
+    pub field_114: u32,
+    #[doc(hidden)]
+    pub __engine: crate::Engine,
+}
+const _: () = assert!(core::mem::offset_of!(_anon_422024B4__NeverCollideFilter, __vftable) == 0x0);
+const _: () = assert!(core::mem::offset_of!(_anon_422024B4__NeverCollideFilter, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(_anon_422024B4__NeverCollideFilter, __vftable_10) == 0x10);
+const _: () = assert!(core::mem::offset_of!(_anon_422024B4__NeverCollideFilter, __vftable_18) == 0x18);
+const _: () = assert!(core::mem::offset_of!(_anon_422024B4__NeverCollideFilter, __vftable_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(_anon_422024B4__NeverCollideFilter, __vftable_28) == 0x28);
+const _: () = assert!(core::mem::offset_of!(_anon_422024B4__NeverCollideFilter, field_30) == 0x30);
+const _: () = assert!(core::mem::offset_of!(_anon_422024B4__NeverCollideFilter, field_34) == 0x34);
+const _: () = assert!(core::mem::offset_of!(_anon_422024B4__NeverCollideFilter, field_38) == 0x38);
+const _: () = assert!(core::mem::offset_of!(_anon_422024B4__NeverCollideFilter, field_3C) == 0x3C);
+const _: () = assert!(core::mem::offset_of!(_anon_422024B4__NeverCollideFilter, field_40) == 0x40);
+const _: () = assert!(core::mem::offset_of!(_anon_422024B4__NeverCollideFilter, field_44) == 0x44);
+const _: () = assert!(core::mem::offset_of!(_anon_422024B4__NeverCollideFilter, field_48) == 0x48);
+const _: () = assert!(core::mem::offset_of!(_anon_422024B4__NeverCollideFilter, field_4C) == 0x4C);
+const _: () = assert!(core::mem::offset_of!(_anon_422024B4__NeverCollideFilter, field_50) == 0x50);
+const _: () = assert!(core::mem::offset_of!(_anon_422024B4__NeverCollideFilter, field_54) == 0x54);
+const _: () = assert!(core::mem::offset_of!(_anon_422024B4__NeverCollideFilter, field_58) == 0x58);
+const _: () = assert!(core::mem::offset_of!(_anon_422024B4__NeverCollideFilter, field_5C) == 0x5C);
+const _: () = assert!(core::mem::offset_of!(_anon_422024B4__NeverCollideFilter, field_60) == 0x60);
+const _: () = assert!(core::mem::offset_of!(_anon_422024B4__NeverCollideFilter, field_64) == 0x64);
+const _: () = assert!(core::mem::offset_of!(_anon_422024B4__NeverCollideFilter, field_68) == 0x68);
+const _: () = assert!(core::mem::offset_of!(_anon_422024B4__NeverCollideFilter, field_6C) == 0x6C);
+const _: () = assert!(core::mem::offset_of!(_anon_422024B4__NeverCollideFilter, field_70) == 0x70);
+const _: () = assert!(core::mem::offset_of!(_anon_422024B4__NeverCollideFilter, field_74) == 0x74);
+const _: () = assert!(core::mem::offset_of!(_anon_422024B4__NeverCollideFilter, field_78) == 0x78);
+const _: () = assert!(core::mem::offset_of!(_anon_422024B4__NeverCollideFilter, field_7C) == 0x7C);
+const _: () = assert!(core::mem::offset_of!(_anon_422024B4__NeverCollideFilter, field_80) == 0x80);
+const _: () = assert!(core::mem::offset_of!(_anon_422024B4__NeverCollideFilter, field_84) == 0x84);
+const _: () = assert!(core::mem::offset_of!(_anon_422024B4__NeverCollideFilter, field_88) == 0x88);
+const _: () = assert!(core::mem::offset_of!(_anon_422024B4__NeverCollideFilter, field_8C) == 0x8C);
+const _: () = assert!(core::mem::offset_of!(_anon_422024B4__NeverCollideFilter, field_90) == 0x90);
+const _: () = assert!(core::mem::offset_of!(_anon_422024B4__NeverCollideFilter, field_94) == 0x94);
+const _: () = assert!(core::mem::offset_of!(_anon_422024B4__NeverCollideFilter, field_98) == 0x98);
+const _: () = assert!(core::mem::offset_of!(_anon_422024B4__NeverCollideFilter, field_9C) == 0x9C);
+const _: () = assert!(core::mem::offset_of!(_anon_422024B4__NeverCollideFilter, field_A0) == 0xA0);
+const _: () = assert!(core::mem::offset_of!(_anon_422024B4__NeverCollideFilter, field_A4) == 0xA4);
+const _: () = assert!(core::mem::offset_of!(_anon_422024B4__NeverCollideFilter, field_A8) == 0xA8);
+const _: () = assert!(core::mem::offset_of!(_anon_422024B4__NeverCollideFilter, field_B0) == 0xB0);
+const _: () = assert!(core::mem::offset_of!(_anon_422024B4__NeverCollideFilter, field_B4) == 0xB4);
+const _: () = assert!(core::mem::offset_of!(_anon_422024B4__NeverCollideFilter, field_B8) == 0xB8);
+const _: () = assert!(core::mem::offset_of!(_anon_422024B4__NeverCollideFilter, field_C0) == 0xC0);
+const _: () = assert!(core::mem::offset_of!(_anon_422024B4__NeverCollideFilter, field_C4) == 0xC4);
+const _: () = assert!(core::mem::offset_of!(_anon_422024B4__NeverCollideFilter, field_108) == 0x108);
+const _: () = assert!(core::mem::offset_of!(_anon_422024B4__NeverCollideFilter, field_110) == 0x110);
+const _: () = assert!(core::mem::offset_of!(_anon_422024B4__NeverCollideFilter, field_114) == 0x114);
+
+/// `_anon_47E0B371::NullMapCameraCallbacks`: size >= 0x8 (lower bound); partial, the struct stops at the lower bound; primary base `IMapCameraCallbacks`.
+/// Evidence: vptr at 0x0.
+/// Bases: `IMapCameraCallbacks`@0x0, `BSTSingletonImplicit<_anon_47E0B371::NullMapCameraCallbacks>`@0x8.
+#[repr(C)]
+pub struct _anon_47E0B371__NullMapCameraCallbacks {
+    /// +0x0 `vtbl:_anon_47E0B371::NullMapCameraCallbacks:0`, rtti
+    #[doc(hidden)]
+    pub __vftable: *const crate::raw::vtables::_anon_47E0B371__NullMapCameraCallbacks_vtable,
+    #[doc(hidden)]
+    pub __engine: crate::Engine,
+}
+const _: () = assert!(core::mem::offset_of!(_anon_47E0B371__NullMapCameraCallbacks, __vftable) == 0x0);
+
+/// `_anon_498DB440::NearestHitCollector`: size >= 0x8 (lower bound); partial, the struct stops at the lower bound; primary base `hkpRayHitCollector`.
+/// Evidence: vptr at 0x0.
+/// Bases: `hkpRayHitCollector`@0x0.
+#[repr(C)]
+pub struct _anon_498DB440__NearestHitCollector {
+    /// +0x0 `vtbl:_anon_498DB440::NearestHitCollector:0`, rtti
+    #[doc(hidden)]
+    pub __vftable: *const crate::raw::vtables::_anon_498DB440__NearestHitCollector_vtable,
+    #[doc(hidden)]
+    pub __engine: crate::Engine,
+}
+const _: () = assert!(core::mem::offset_of!(_anon_498DB440__NearestHitCollector, __vftable) == 0x0);
+
+/// `_anon_498DB440::RotateNormalHitCollector`: size >= 0x8 (lower bound); partial, the struct stops at the lower bound; primary base `hkpRayHitCollector`.
+/// Evidence: vptr at 0x0.
+/// Bases: `hkpRayHitCollector`@0x0.
+#[repr(C)]
+pub struct _anon_498DB440__RotateNormalHitCollector {
+    /// +0x0 `vtbl:_anon_498DB440::RotateNormalHitCollector:0`, rtti
+    #[doc(hidden)]
+    pub __vftable: *const crate::raw::vtables::_anon_498DB440__RotateNormalHitCollector_vtable,
+    #[doc(hidden)]
+    pub __engine: crate::Engine,
+}
+const _: () = assert!(core::mem::offset_of!(_anon_498DB440__RotateNormalHitCollector, __vftable) == 0x0);
+
+/// `_anon_569CF5D7::PreloadCountVisitor`: size >= 0x8 (lower bound); partial, the struct stops at the lower bound; primary base `MagicItem::PreloadableVisitor`.
+/// Evidence: vptr at 0x0.
+/// Bases: `MagicItem::PreloadableVisitor`@0x0.
+#[repr(C)]
+pub struct _anon_569CF5D7__PreloadCountVisitor {
+    /// +0x0 `vtbl:_anon_569CF5D7::PreloadCountVisitor:0`, rtti
+    #[doc(hidden)]
+    pub __vftable: *const crate::raw::vtables::_anon_569CF5D7__PreloadCountVisitor_vtable,
+    #[doc(hidden)]
+    pub __engine: crate::Engine,
+}
+const _: () = assert!(core::mem::offset_of!(_anon_569CF5D7__PreloadCountVisitor, __vftable) == 0x0);
+
+/// `_anon_569CF5D7::PreloadModelsVisitor`: size >= 0x8 (lower bound); partial, the struct stops at the lower bound; primary base `MagicItem::PreloadableVisitor`.
+/// Evidence: vptr at 0x0.
+/// Bases: `MagicItem::PreloadableVisitor`@0x0.
+#[repr(C)]
+pub struct _anon_569CF5D7__PreloadModelsVisitor {
+    /// +0x0 `vtbl:_anon_569CF5D7::PreloadModelsVisitor:0`, rtti
+    #[doc(hidden)]
+    pub __vftable: *const crate::raw::vtables::_anon_569CF5D7__PreloadModelsVisitor_vtable,
+    #[doc(hidden)]
+    pub __engine: crate::Engine,
+}
+const _: () = assert!(core::mem::offset_of!(_anon_569CF5D7__PreloadModelsVisitor, __vftable) == 0x0);
+
+/// `_anon_569CF5D7::QueuedMagicItem`: size 0xA8 (exact, medium); primary base `AnimationSystemUtils::TESModelAndAnimationHandles`.
+/// Evidence: runtime: 0xA8 at 1 allocation sites; agrees with the static allocation sites.
+/// Bases: `AnimationSystemUtils::TESModelAndAnimationHandles`@0x0, `TESModelDB::TESQueuedHandles`@0x0, `BSModelDB::QueuedHandles`@0x0, `BSQueuedResourceCollection<BSResource::EntryDB<BSModelDB::DBTraits>,2>`@0x0, `BSQueuedResourceCollectionBase`@0x0, `QueuedFile`@0x0, `IOTask`@0x0, `BSTask`@0x0, `BSResource::IEntryDB::PostFlushNotify`@0x38.
+#[repr(C)]
+pub struct _anon_569CF5D7__QueuedMagicItem {
+    /// +0x0 `vtbl:_anon_569CF5D7::QueuedMagicItem:0`, rtti
+    #[doc(hidden)]
+    pub __vftable: *const crate::raw::vtables::_anon_569CF5D7__QueuedMagicItem_vtable,
+    /// +0x8 `undefined4`, base QueuedFile
+    pub field_8: u32,
+    /// +0xC `undefined4`, base QueuedFile
+    pub field_C: u32,
+    /// +0x10 `undefined8`, base QueuedFile
+    pub field_10: u64,
+    /// +0x18 `undefined4`, base QueuedFile
+    pub field_18: u32,
+    pub unknown_1C: [u8; 4],
+    /// +0x20 `undefined8`, base QueuedFile
+    pub field_20: u64,
+    /// +0x28 `undefined8`, base QueuedFile
+    pub field_28: u64,
+    /// +0x30 `undefined4`, base QueuedFile
+    pub field_30: u32,
+    pub unknown_34: [u8; 4],
+    /// +0x38 `vtbl:_anon_569CF5D7::QueuedMagicItem:38`, rtti
+    #[doc(hidden)]
+    pub __vftable_38: *const crate::raw::vtables::_anon_569CF5D7__QueuedMagicItem_vtable_38,
+    /// +0x40 `undefined4`, base BSResource::IEntryDB::PostFlushNotify
+    pub field_40: u32,
+    pub unknown_44: [u8; 4],
+    /// +0x48 `undefined8`, base BSResource::IEntryDB::PostFlushNotify
+    pub field_48: u64,
+    /// +0x50 `undefined4`, base BSQueuedResourceCollectionBase
+    pub field_50: u32,
+    /// +0x54 `undefined2`, base BSQueuedResourceCollectionBase
+    pub field_54: u16,
+    pub unknown_56: [u8; 2],
+    /// +0x58 `undefined4`, base AnimationSystemUtils::TESModelAndAnimationHandles
+    pub field_58: u32,
+    pub unknown_5C: [u8; 44],
+    /// +0x88 `undefined8`, base AnimationSystemUtils::TESModelAndAnimationHandles
+    pub field_88: u64,
+    /// +0x90 `undefined8`, base AnimationSystemUtils::TESModelAndAnimationHandles
+    pub field_90: u64,
+    pub unknown_98: [u8; 16],
+    #[doc(hidden)]
+    pub __engine: crate::Engine,
+}
+const _: () = assert!(size_of::<_anon_569CF5D7__QueuedMagicItem>() == 0xA8);
+const _: () = assert!(core::mem::offset_of!(_anon_569CF5D7__QueuedMagicItem, __vftable) == 0x0);
+const _: () = assert!(core::mem::offset_of!(_anon_569CF5D7__QueuedMagicItem, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(_anon_569CF5D7__QueuedMagicItem, field_C) == 0xC);
+const _: () = assert!(core::mem::offset_of!(_anon_569CF5D7__QueuedMagicItem, field_10) == 0x10);
+const _: () = assert!(core::mem::offset_of!(_anon_569CF5D7__QueuedMagicItem, field_18) == 0x18);
+const _: () = assert!(core::mem::offset_of!(_anon_569CF5D7__QueuedMagicItem, field_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(_anon_569CF5D7__QueuedMagicItem, field_28) == 0x28);
+const _: () = assert!(core::mem::offset_of!(_anon_569CF5D7__QueuedMagicItem, field_30) == 0x30);
+const _: () = assert!(core::mem::offset_of!(_anon_569CF5D7__QueuedMagicItem, __vftable_38) == 0x38);
+const _: () = assert!(core::mem::offset_of!(_anon_569CF5D7__QueuedMagicItem, field_40) == 0x40);
+const _: () = assert!(core::mem::offset_of!(_anon_569CF5D7__QueuedMagicItem, field_48) == 0x48);
+const _: () = assert!(core::mem::offset_of!(_anon_569CF5D7__QueuedMagicItem, field_50) == 0x50);
+const _: () = assert!(core::mem::offset_of!(_anon_569CF5D7__QueuedMagicItem, field_54) == 0x54);
+const _: () = assert!(core::mem::offset_of!(_anon_569CF5D7__QueuedMagicItem, field_58) == 0x58);
+const _: () = assert!(core::mem::offset_of!(_anon_569CF5D7__QueuedMagicItem, field_88) == 0x88);
+const _: () = assert!(core::mem::offset_of!(_anon_569CF5D7__QueuedMagicItem, field_90) == 0x90);
+
+/// `_anon_5C8159CE::FavoriteItemHandler<MagicItem,SpellAttack::Event>`: size >= 0x8 (lower bound); partial, the struct stops at the lower bound; primary base `BSTEventSink<SpellAttack::Event>`.
+/// Evidence: vptr at 0x0.
+/// Bases: `BSTEventSink<SpellAttack::Event>`@0x0.
+#[repr(C)]
+pub struct _anon_5C8159CE__FavoriteItemHandler_MagicItem_SpellAttack__Event {
+    /// +0x0 `vtbl:_anon_5C8159CE::FavoriteItemHandler<MagicItem,SpellAttack::Event>:0`, rtti
+    #[doc(hidden)]
+    pub __vftable: *const crate::raw::vtables::_anon_5C8159CE__FavoriteItemHandler_MagicItem_SpellAttack__Event_vtable,
+    #[doc(hidden)]
+    pub __engine: crate::Engine,
+}
+const _: () = assert!(core::mem::offset_of!(_anon_5C8159CE__FavoriteItemHandler_MagicItem_SpellAttack__Event, __vftable) == 0x0);
 

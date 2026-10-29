@@ -3641,13 +3641,6 @@ impl crate::MenuTopicManager {
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
     pub unsafe fn bst_event_sink_position_player_event_vdtor(&self) -> u64 { unsafe { function!(35317, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x8)) } }
-    /// `MenuTopicManager::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 35265, rva 0x5ee360).
-    /// `MenuTopicManager * ctor(MenuTopicManager * this)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(35265, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::MissileProjectile {
@@ -4366,30 +4359,6 @@ impl crate::REFREventCallbacks__IEventCallbackFactory {
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
     pub unsafe fn dtor(&self) -> u64 { unsafe { function!(20147, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
-}
-
-impl crate::RaceSexMenu {
-    /// `RaceSexMenu::MenuEventHandler_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 52444, rva 0x972e08).
-    /// `undefined MenuEventHandler_vdtor(RaceSexMenu * this)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn menu_event_handler_vdtor(&self) -> u64 { unsafe { function!(52444, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x30)) } }
-    /// `RaceSexMenu::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 52342, rva 0x967950).
-    /// `RaceSexMenu * ctor(RaceSexMenu * this)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(52342, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
-    /// `RaceSexMenu::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 52343, rva 0x967b40).
-    /// `undefined ctor(RaceSexMenu * this)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn ctor_2(&self) -> u64 { unsafe { function!(52343, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::RagdollFurnitureListener {
@@ -15294,3 +15263,31 @@ pub unsafe fn get_byte13_b(param_1: i64) -> u8 { unsafe { function!(39138, (i64)
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn get_byte14(param_1: i64) -> u8 { unsafe { function!(441562, (i64) -> u8)(param_1) } }
+/// `GetByteField0C2` (decompiler signature, tier high; ledger decompiler evidence, name high; id 61629, rva 0xb65860).
+/// `undefined1 * GetByteField0C2(longlong param_1, undefined1 * param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn get_byte_field0_c2(param_1: i64, param_2: *mut u8) -> *mut u8 { unsafe { function!(61629, (i64, *mut u8) -> *mut u8)(param_1, param_2) } }
+/// `GetByteField19` (decompiler signature, tier high; ledger decompiler evidence, name high; id 57602, rva 0xab0ad0).
+/// `undefined1 GetByteField19(longlong param_1)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn get_byte_field19(param_1: i64) -> u8 { unsafe { function!(57602, (i64) -> u8)(param_1) } }
+/// `GetByteFieldCC` (decompiler signature, tier high; ledger decompiler evidence, name high; id 62276, rva 0xb86b80).
+/// `undefined1 GetByteFieldCC(longlong param_1)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn get_byte_field_cc(param_1: i64) -> u8 { unsafe { function!(62276, (i64) -> u8)(param_1) } }
+/// `GetByteFieldDA5` (decompiler signature, tier high; ledger decompiler evidence, name high; id 441532, rva 0x1c2280).
+/// `undefined1 GetByteFieldDA5(longlong param_1)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn get_byte_field_da5(param_1: i64) -> u8 { unsafe { function!(441532, (i64) -> u8)(param_1) } }

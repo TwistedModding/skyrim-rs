@@ -101,13 +101,6 @@ impl crate::CursorMenu {
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
     pub unsafe fn menu_event_handler_vfunc_5_sub0(param_1: i64, param_2: i64) -> u64 { unsafe { function!(82540, (i64, i64) -> u64)(param_1, param_2) } }
-    /// `CursorMenu::MenuEventHandler_vfunc_6_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 82539, rva 0x117a340).
-    /// `undefined MenuEventHandler_vfunc_6_sub0(longlong param_1, longlong param_2)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn menu_event_handler_vfunc_6_sub0(param_1: i64, param_2: i64) -> u64 { unsafe { function!(82539, (i64, i64) -> u64)(param_1, param_2) } }
     /// `CursorMenu::ProcessMessage` (decompiler signature, tier untiered; ledger semantic evidence, name high; id 51496, rva 0x92a070).
     /// `undefined8 ProcessMessage(CursorMenu * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
     ///

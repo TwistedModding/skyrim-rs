@@ -3,6 +3,36 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `CacheShadowMapResolution` at 0x155c650 (semantic, high); signature (untiered): `undefined CacheShadowMapResolution(void)`; semantic: g_ShadowMapResolution (0x34869c0) = iShadowMapResolution value, once at startup (high); signature `void (void)`
+pub const CacheShadowMapResolution: u64 = 107596;
+/// `CacheShadowMapResolution` as a function pointer type (high).
+pub type CacheShadowMapResolution_fn = unsafe extern "C" fn();
+/// `CacheTerrainLODSettingsFromINI` at 0x519a80 (decompiler, medium); signature (medium): `undefined CacheTerrainLODSettingsFromINI(void)`
+pub const CacheTerrainLODSettingsFromINI: u64 = 31859;
+/// `CacheTransformedStringField8ByRef` at 0xd0a930 (decompiler, medium); signature (untiered): `undefined CacheTransformedStringField8ByRef(ulonglong * param_1)`
+pub const CacheTransformedStringField8ByRef: u64 = 82842;
+/// `CacheVfunc48ResultInField20` at 0xbc4700 (decompiler, medium); signature (untiered): `undefined CacheVfunc48ResultInField20(longlong * param_1)`
+pub const CacheVfunc48ResultInField20: u64 = 63444;
+/// `CachedRaycastData::CastRay` at 0x54af00 (semantic, high); signature (untiered): `char * CastRay(CachedRaycastData * this, char * param_1, float * param_2, float * param_3, undefined4 * param_4, float * param_5)`
+pub const CachedRaycastData__CastRay: u64 = 32744;
+/// `CachedRaycastData::vdtor` at 0x54c2e0 (layout_inference, medium); signature (low): `CachedRaycastData * vdtor(CachedRaycastData * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const CachedRaycastData__vdtor: u64 = 32763;
+/// `CachedRaycastData::vfunc_1` at 0x54b1e0 (rtti, high); signature (low): `undefined8 vfunc_1(CachedRaycastData * this, undefined8 param_1)`
+pub const CachedRaycastData__vfunc_1: u64 = 32745;
+/// `CalculateMipLevels2D` at 0x10321a0 (decompiler, medium); signature (medium): `undefined8 CalculateMipLevels2D(ulonglong param_1, ulonglong param_2, ulonglong * param_3)`
+pub const CalculateMipLevels2D: u64 = 77683;
+/// `CalculateMipLevels3D` at 0x1032230 (decompiler, medium); signature (medium): `undefined8 CalculateMipLevels3D(ulonglong param_1, ulonglong param_2, ulonglong param_3, ulonglong * param_4)`
+pub const CalculateMipLevels3D: u64 = 77684;
+/// `CallAsyncProxyVfunc0AndExchangeFlag78` at 0x13952c0 (decompiler, medium); signature (medium): `undefined1 CallAsyncProxyVfunc0AndExchangeFlag78(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const CallAsyncProxyVfunc0AndExchangeFlag78: u64 = 450161;
+/// `CallBSCoreMessageVfunc1Formatted` at 0xce1810 (decompiler, medium); signature (untiered): `undefined CallBSCoreMessageVfunc1Formatted(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const CallBSCoreMessageVfunc1Formatted: u64 = 68192;
+/// `CallBSCoreMessageVfunc1WithTlsChannel` at 0xce1860 (decompiler, medium); signature (untiered): `undefined CallBSCoreMessageVfunc1WithTlsChannel(undefined4 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const CallBSCoreMessageVfunc1WithTlsChannel: u64 = 68193;
+/// `CallBSCoreMessageVfunc2Formatted` at 0xce18e0 (decompiler, medium); signature (untiered): `undefined CallBSCoreMessageVfunc2Formatted(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const CallBSCoreMessageVfunc2Formatted: u64 = 68195;
+/// `CallBSCoreMessageVfunc3Formatted` at 0xce19b0 (decompiler, medium); signature (untiered): `undefined CallBSCoreMessageVfunc3Formatted(undefined4 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const CallBSCoreMessageVfunc3Formatted: u64 = 68198;
 /// `CallBSCoreMessageVfunc3WithTlsChannel` at 0xce1940 (decompiler, medium); signature (untiered): `undefined CallBSCoreMessageVfunc3WithTlsChannel(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const CallBSCoreMessageVfunc3WithTlsChannel: u64 = 68197;
 /// `CallBindScriptObjectWithErrorReport` at 0x9bf290 (decompiler, medium); signature (untiered): `undefined8 CallBindScriptObjectWithErrorReport(undefined8 * param_1, undefined8 param_2)`
@@ -487,17 +517,17 @@ pub const CarveSegmentIntoSizeClassList: u64 = 87857;
 pub const CastAliasSpells: u64 = 38753;
 /// `CastAttackHitSpells` at 0x6d5ab0 (decompiler, medium); signature (untiered): `undefined CastAttackHitSpells(longlong * param_1, undefined8 * param_2, undefined4 * param_3, longlong * param_4)`
 pub const CastAttackHitSpells: u64 = 38748;
-/// `CastCameraLinearAndCollectHits` at 0x5574f0 (runtime, high); signature (untiered): `ulonglong CastCameraLinearAndCollectHits(longlong * param_1, longlong * param_2, float * param_3, float * param_4, float * param_5, undefined8 * param_6, float param_7)`; semantic: sphere cast of caster+0 from 'from' to 'to' in havok units under the world read lock; 'to' comes back clipped; hitRecord gets the hit data; *hitRef the hit reference (high); signature `bool (CameraCasterHolder* caster, bhkWorld* world, NiPoint3* from, NiPoint3* to, float* hitRecord, TESObjectREFR** hitRef, float radius)`
+/// `CastCameraLinearAndCollectHits` at 0x5574f0 (runtime, high); signature (untiered): `ulonglong CastCameraLinearAndCollectHits(longlong * param_1, longlong * param_2, float * param_3, float * param_4, float * param_5, undefined8 * param_6, float param_7)`; semantic: the camera's sphere sweep (camera.md section 9) on the camera caster phantom (layer 0x27 CAMERAPICK, built by CameraCasterHolder::ctor): sets the sphere radius, moves the phantom to from under the world write lock, linear-casts to `to` under the read lock with an all-hits collector; skips hidden nodes, treats actor-layer hits as occluder candidates, clips *to at the first other hit and copies it to *hit (0x40 bytes) (high); signature `bool (CameraCasterHolder* holder, bhkWorld* world, const NiPoint3* from, NiPoint3* to, hkpRootCdPoint* hit, Actor** occluder, float radius)`
 pub const CastCameraLinearAndCollectHits: u64 = 33007;
 /// `CastCameraLinearAndCollectHits` as a function pointer type (high).
-pub type CastCameraLinearAndCollectHits_fn = unsafe extern "C" fn(caster: *mut crate::CameraCasterHolder, world: *mut crate::bhkWorld, from: *mut crate::NiPoint3, to: *mut crate::NiPoint3, hitRecord: *mut f32, hitRef: *mut *mut crate::TESObjectREFR, radius: f32) -> bool;
+pub type CastCameraLinearAndCollectHits_fn = unsafe extern "C" fn(holder: *mut crate::CameraCasterHolder, world: *mut crate::bhkWorld, from: *const crate::NiPoint3, to: *mut crate::NiPoint3, hit: *mut c_void, occluder: *mut *mut crate::Actor, radius: f32) -> bool;
 /// `CastIfDerivedFrom` at 0x2163f0 (decompiler, medium); signature (medium): `longlong * CastIfDerivedFrom(longlong param_1, longlong * param_2)`
 pub const CastIfDerivedFrom: u64 = 15619;
 /// `CastLinearFromPointAlongDirection` at 0x3ff900 (decompiler, medium); signature (untiered): `undefined8 CastLinearFromPointAlongDirection(longlong * param_1, longlong * param_2, float * param_3, float * param_4, float param_5)`
 pub const CastLinearFromPointAlongDirection: u64 = 25931;
 /// `CastPlayerSpellAndNotifySpellAttack` at 0x7b1fb0 (decompiler, medium); signature (untiered): `undefined CastPlayerSpellAndNotifySpellAttack(longlong param_1, longlong * param_2, char param_3)`
 pub const CastPlayerSpellAndNotifySpellAttack: u64 = 42417;
-/// `CastProjectileRayOrSphere` at 0x868130 (decompiler, medium); signature (untiered): `ulonglong CastProjectileRayOrSphere(longlong param_1, longlong param_2, float * param_3)`
+/// `CastProjectileRayOrSphere` at 0x868130 (semantic, medium); signature (untiered): `ulonglong CastProjectileRayOrSphere(longlong param_1, longlong param_2, float * param_3)`; semantic: the engine's sphere cast with a pick's filter: when *(float*)(projectileData+0xec) (radius, game units) >= fLargeProjectileSize it builds a stack hkpCollidable over an hkpSphereShape(radius * Havok scale) at pick->from with filterInfo = pick+0x24, casts it to pick->to (or from+ray) with hkpWorld::linearCast 0xb59d80 and an hkpClosestCdPointCollector under the world read lock, writes the hit's distance (path fraction) to pick+0x40 and returns the hit node; smaller radii take the ray path TESObjectCELL::Pick(projectile->parentCell, pick) with an hkpClosestRayHitCollector (medium); signature `NiAVObject* (TESObjectREFR* projectile, const void* projectileData, bhkPickData* pick)`
 pub const CastProjectileRayOrSphere: u64 = 47299;
 /// `CastRay` at 0x1147ef0 (decompiler, medium); signature (medium): `undefined4 CastRay(longlong param_1, float * param_2, float * param_3, undefined8 * param_4)`
 pub const CastRay: u64 = 81806;
@@ -513,8 +543,10 @@ pub const CastRayAgainstPhantomShapes: u64 = 60942;
 pub const CastRayAgainstSphere: u64 = 60362;
 /// `CastRayAgainstTrees` at 0x1164ca0 (decompiler, medium); signature (untiered): `char * CastRayAgainstTrees(char * param_1, uint param_2, undefined8 * param_3, undefined1[16] * param_4, float * param_5, longlong * param_6)`
 pub const CastRayAgainstTrees: u64 = 82037;
-/// `CastRayGetHitDistance` at 0x4b9a80 (decompiler, medium); signature (medium): `float CastRayGetHitDistance(longlong param_1, float * param_2, float * param_3)`
+/// `CastRayGetHitDistance` at 0x4b9a80 (semantic, high); signature (medium): `float CastRayGetHitDistance(longlong param_1, float * param_2, float * param_3)`; semantic: the engine's minimal ray: builds a bhkPickData on the stack with an hkpClosestRayHitCollector at +0xa8, filterInfo = (fresh group << 16) | 0x2a (PATHPICK), calls GetbhkWorld(cell)->PickObject; returns |to-from| * hitFraction, or -1.0 on no hit or when the hit's layer is 3, 0x1a or 0x1c (transparent layers) (high); signature `float (TESObjectCELL* cell, const NiPoint3* from, const NiPoint3* to)`
 pub const CastRayGetHitDistance: u64 = 30229;
+/// `CastRayGetHitDistance` as a function pointer type (high).
+pub type CastRayGetHitDistance_fn = unsafe extern "C" fn(cell: *mut crate::TESObjectCELL, from: *const crate::NiPoint3, to: *const crate::NiPoint3) -> f32;
 /// `CastSpellOnCasterWithFlags` at 0x5ca4c0 (decompiler, medium); signature (untiered): `undefined CastSpellOnCasterWithFlags(undefined8 param_1, undefined8 param_2, byte param_3)`
 pub const CastSpellOnCasterWithFlags: u64 = 34403;
 /// `CastSpellViaCaster` at 0x5ca5e0 (decompiler, medium); signature (untiered): `undefined CastSpellViaCaster(longlong * param_1, longlong param_2, void * param_3, undefined1 param_4)`
@@ -1725,8 +1757,6 @@ pub const ClearField8AndField18_3: u64 = 81577;
 pub const ClearField8AndField18_4: u64 = 81578;
 /// `ClearField8AndString10` at 0x12a3770 (decompiler, medium); signature (medium): `undefined ClearField8AndString10(longlong param_1, undefined8 param_2, void * param_3, undefined8 param_4)`
 pub const ClearField8AndString10: u64 = 445313;
-/// `ClearField8Byte326` at 0x723580 (decompiler, high); signature (untiered): `undefined ClearField8Byte326(longlong param_1)`
-pub const ClearField8Byte326: u64 = 39889;
 /// `ClearField8Flags` at 0x6e14d0 (decompiler, high); signature (high): `undefined8 ClearField8Flags(longlong param_1, ushort param_2)`
 pub const ClearField8Flags: u64 = 38984;
 /// `ClearField8HashMap` at 0x981df0 (decompiler, high); signature (untiered): `undefined ClearField8HashMap(longlong param_1)`
@@ -2917,8 +2947,6 @@ pub const ClearRefHandleEntryArrayStride10: u64 = 41503;
 pub const ClearRefHandleMap: u64 = 19495;
 /// `ClearRefHandleSlot3OfField10` at 0x6fe820 (decompiler, medium); signature (untiered): `undefined ClearRefHandleSlot3OfField10(longlong param_1)`
 pub const ClearRefHandleSlot3OfField10: u64 = 39470;
-/// `ClearRefHandleSlotAndRetarget` at 0x71dcf0 (decompiler, medium); signature (untiered): `undefined ClearRefHandleSlotAndRetarget(longlong param_1, int param_2, char param_3, undefined8 param_4)`
-pub const ClearRefHandleSlotAndRetarget: u64 = 39756;
 /// `ClearRefKeyHashMapOptionalFree` at 0x1f7340 (decompiler, medium); signature (untiered): `undefined ClearRefKeyHashMapOptionalFree(longlong param_1, undefined * param_2, undefined8 param_3, undefined8 param_4)`
 pub const ClearRefKeyHashMapOptionalFree: u64 = 15051;
 /// `ClearRefList` at 0x1578890 (decompiler, medium); signature (untiered): `undefined ClearRefList(undefined8 * param_1)`
@@ -6763,7 +6791,7 @@ pub const Cmd__ToggleMapEffect_Execute: u64 = 22837;
 pub const Cmd__ToggleMarkers_Execute: u64 = 23054;
 /// `Cmd::ToggleMaterialGeometry_Execute` at 0x36e450 (console_cmd, high); signature (low): `undefined1 ToggleMaterialGeometry_Execute(void)`
 pub const Cmd__ToggleMaterialGeometry_Execute: u64 = 22818;
-/// `Cmd::ToggleMenus_Execute` at 0x36e5d0 (console_cmd, high); signature (low): `undefined8 ToggleMenus_Execute(void)`
+/// `Cmd::ToggleMenus_Execute` at 0x36e5d0 (console_cmd, high); signature (low): `undefined8 ToggleMenus_Execute(void)`; semantic: UI+0x1c0 (menusVisible) = !menusVisible; prints 'Menus -> %s' when console echo (TLS+0x600) is on; returns true (high); signature `bool (...) /* console execute callback; no argument is read */`
 pub const Cmd__ToggleMenus_Execute: u64 = 22822;
 /// `Cmd::ToggleMiddleHighProcess_Execute` at 0x370ee0 (console_cmd, high); signature (low): `undefined8 ToggleMiddleHighProcess_Execute(void)`
 pub const Cmd__ToggleMiddleHighProcess_Execute: u64 = 22862;
@@ -7799,31 +7827,3 @@ pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextHide__vfu
 pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextHide__vfunc_8: u64 = 48805;
 /// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextHide>::vfunc_9` at 0x8a7fd0 (rtti, medium); signature (low): `undefined * vfunc_9(void)`
 pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextHide__vfunc_9: u64 = 48756;
-/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextMagic>::vdtor` at 0x8b6830 (slot_propagation, medium); signature (low): `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextMagic> * vdtor(CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextMagic> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextMagic__vdtor: u64 = 49118;
-/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextMagic>::vfunc_3` at 0x8b6e50 (rtti, medium); signature (low): `undefined vfunc_3(CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextMagic> * this, longlong * param_1)`
-pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextMagic__vfunc_3: u64 = 49139;
-/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextMagic>::vfunc_6` at 0x8b74b0 (rtti, medium); signature (low): `undefined vfunc_6(CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextMagic> * this, longlong * param_1, longlong param_2)`
-pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextMagic__vfunc_6: u64 = 49154;
-/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextMagic>::vfunc_7` at 0x8b7300 (rtti, medium); signature (low): `undefined vfunc_7(CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextMagic> * this, longlong * param_1, longlong param_2, undefined8 param_3)`
-pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextMagic__vfunc_7: u64 = 49150;
-/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextMagic>::vfunc_8` at 0x8b7870 (rtti, medium); signature (low): `bool vfunc_8(CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextMagic> * this, longlong param_1)`
-pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextMagic__vfunc_8: u64 = 49162;
-/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextMagic>::vfunc_9` at 0x8b7050 (rtti, medium); signature (low): `undefined * vfunc_9(void)`
-pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextMagic__vfunc_9: u64 = 49144;
-/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextMelee>::vdtor` at 0x8ba360 (slot_propagation, medium); signature (low): `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextMelee> * vdtor(CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextMelee> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextMelee__vdtor: u64 = 49188;
-/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextMelee>::vfunc_3` at 0x8ba760 (rtti, medium); signature (low): `undefined vfunc_3(CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextMelee> * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
-pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextMelee__vfunc_3: u64 = 49201;
-/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextMelee>::vfunc_6` at 0x8bac20 (rtti, medium); signature (low): `undefined vfunc_6(CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextMelee> * this, longlong * param_1, longlong param_2)`
-pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextMelee__vfunc_6: u64 = 49210;
-/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextMelee>::vfunc_7` at 0x8ba9e0 (rtti, medium); signature (low): `undefined vfunc_7(CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextMelee> * this, longlong * param_1, longlong param_2, undefined8 param_3)`
-pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextMelee__vfunc_7: u64 = 49207;
-/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextMelee>::vfunc_8` at 0x8baf30 (rtti, medium); signature (low): `bool vfunc_8(CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextMelee> * this, longlong param_1)`
-pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextMelee__vfunc_8: u64 = 49215;
-/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextMelee>::vfunc_9` at 0x8ba830 (rtti, medium); signature (low): `undefined * vfunc_9(void)`
-pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextMelee__vfunc_9: u64 = 49204;
-/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextRanged>::vdtor` at 0x55ee10 (slot_propagation, medium); signature (low): `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextRanged> * vdtor(CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextRanged> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextRanged__vdtor: u64 = 33158;
-/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextRanged>::vfunc_3` at 0x55f510 (rtti, medium); signature (low): `undefined vfunc_3(CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextRanged> * this, longlong * param_1)`
-pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextRanged__vfunc_3: u64 = 33179;

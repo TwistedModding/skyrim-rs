@@ -3,6 +3,68 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `GameSetting_fMagicAccumulatingModifierEffectHoldDuration__atexit` at 0x17772c0 (crt_init, medium); signature (high): `void GameSetting_fMagicAccumulatingModifierEffectHoldDuration__atexit(void)`
+pub const GameSetting_fMagicAccumulatingModifierEffectHoldDuration__atexit: u64 = 168890;
+/// `GameSetting_fMagicAccumulatingModifierEffectHoldDuration__init` at 0x64e80 (crt_init, medium); signature (high): `void GameSetting_fMagicAccumulatingModifierEffectHoldDuration__init(void)`
+pub const GameSetting_fMagicAccumulatingModifierEffectHoldDuration__init: u64 = 3680;
+/// `GameSetting_fMagicAreaBaseCostMult__atexit` at 0x1777310 (crt_init, medium); signature (high): `void GameSetting_fMagicAreaBaseCostMult__atexit(void)`
+pub const GameSetting_fMagicAreaBaseCostMult__atexit: u64 = 168891;
+/// `GameSetting_fMagicAreaBaseCostMult__init` at 0x64f00 (crt_init, medium); signature (high): `void GameSetting_fMagicAreaBaseCostMult__init(void)`
+pub const GameSetting_fMagicAreaBaseCostMult__init: u64 = 3681;
+/// `GameSetting_fMagicAreaScaleMax__atexit` at 0x17773b0 (crt_init, medium); signature (high): `void GameSetting_fMagicAreaScaleMax__atexit(void)`
+pub const GameSetting_fMagicAreaScaleMax__atexit: u64 = 168893;
+/// `GameSetting_fMagicAreaScaleMax__init` at 0x65000 (crt_init, medium); signature (high): `void GameSetting_fMagicAreaScaleMax__init(void)`
+pub const GameSetting_fMagicAreaScaleMax__init: u64 = 3683;
+/// `GameSetting_fMagicAreaScaleMin__atexit` at 0x1777400 (crt_init, medium); signature (high): `void GameSetting_fMagicAreaScaleMin__atexit(void)`
+pub const GameSetting_fMagicAreaScaleMin__atexit: u64 = 168894;
+/// `GameSetting_fMagicAreaScaleMin__init` at 0x65080 (crt_init, medium); signature (high): `void GameSetting_fMagicAreaScaleMin__init(void)`
+pub const GameSetting_fMagicAreaScaleMin__init: u64 = 3684;
+/// `GameSetting_fMagicAreaScale__atexit` at 0x1777360 (crt_init, medium); signature (high): `void GameSetting_fMagicAreaScale__atexit(void)`
+pub const GameSetting_fMagicAreaScale__atexit: u64 = 168892;
+/// `GameSetting_fMagicAreaScale__init` at 0x64f80 (crt_init, medium); signature (high): `void GameSetting_fMagicAreaScale__init(void)`
+pub const GameSetting_fMagicAreaScale__init: u64 = 3682;
+/// `GameSetting_fMagicBallMaximumDistance__atexit` at 0x173cab0 (crt_init, medium); signature (high): `void GameSetting_fMagicBallMaximumDistance__atexit(void)`
+pub const GameSetting_fMagicBallMaximumDistance__atexit: u64 = 165339;
+/// `GameSetting_fMagicBallMaximumDistance__init` at 0x88a0 (crt_init, medium); signature (high): `void GameSetting_fMagicBallMaximumDistance__init(void)`
+pub const GameSetting_fMagicBallMaximumDistance__init: u64 = 149;
+/// `GameSetting_fMagicBallOptimalDistance__atexit` at 0x173cb00 (crt_init, medium); signature (high): `void GameSetting_fMagicBallOptimalDistance__atexit(void)`
+pub const GameSetting_fMagicBallOptimalDistance__atexit: u64 = 165340;
+/// `GameSetting_fMagicBallOptimalDistance__init` at 0x8920 (crt_init, medium); signature (high): `void GameSetting_fMagicBallOptimalDistance__init(void)`
+pub const GameSetting_fMagicBallOptimalDistance__init: u64 = 150;
+/// `GameSetting_fMagicBarrierDepth__atexit` at 0x1777450 (crt_init, medium); signature (high): `void GameSetting_fMagicBarrierDepth__atexit(void)`
+pub const GameSetting_fMagicBarrierDepth__atexit: u64 = 168895;
+/// `GameSetting_fMagicBarrierDepth__init` at 0x65100 (crt_init, medium); signature (high): `void GameSetting_fMagicBarrierDepth__init(void)`
+pub const GameSetting_fMagicBarrierDepth__init: u64 = 3685;
+/// `GameSetting_fMagicBarrierHeight__atexit` at 0x17774a0 (crt_init, medium); signature (high): `void GameSetting_fMagicBarrierHeight__atexit(void)`
+pub const GameSetting_fMagicBarrierHeight__atexit: u64 = 168896;
+/// `GameSetting_fMagicBarrierHeight__init` at 0x65180 (crt_init, medium); signature (high): `void GameSetting_fMagicBarrierHeight__init(void)`
+pub const GameSetting_fMagicBarrierHeight__init: u64 = 3686;
+/// `GameSetting_fMagicBarrierSpacing__atexit` at 0x17774f0 (crt_init, medium); signature (high): `void GameSetting_fMagicBarrierSpacing__atexit(void)`
+pub const GameSetting_fMagicBarrierSpacing__atexit: u64 = 168897;
+/// `GameSetting_fMagicBarrierSpacing__init` at 0x65200 (crt_init, medium); signature (high): `void GameSetting_fMagicBarrierSpacing__init(void)`
+pub const GameSetting_fMagicBarrierSpacing__init: u64 = 3687;
+/// `GameSetting_fMagicBoltDuration__atexit` at 0x1777540 (crt_init, medium); signature (high): `void GameSetting_fMagicBoltDuration__atexit(void)`
+pub const GameSetting_fMagicBoltDuration__atexit: u64 = 168898;
+/// `GameSetting_fMagicBoltDuration__init` at 0x65280 (crt_init, medium); signature (high): `void GameSetting_fMagicBoltDuration__init(void)`
+pub const GameSetting_fMagicBoltDuration__init: u64 = 3688;
+/// `GameSetting_fMagicBoltMaximumDistance__atexit` at 0x173cb50 (crt_init, medium); signature (high): `void GameSetting_fMagicBoltMaximumDistance__atexit(void)`
+pub const GameSetting_fMagicBoltMaximumDistance__atexit: u64 = 165341;
+/// `GameSetting_fMagicBoltMaximumDistance__init` at 0x89a0 (crt_init, medium); signature (high): `void GameSetting_fMagicBoltMaximumDistance__init(void)`
+pub const GameSetting_fMagicBoltMaximumDistance__init: u64 = 151;
+/// `GameSetting_fMagicBoltOptimalDistance__atexit` at 0x173cba0 (crt_init, medium); signature (high): `void GameSetting_fMagicBoltOptimalDistance__atexit(void)`
+pub const GameSetting_fMagicBoltOptimalDistance__atexit: u64 = 165342;
+/// `GameSetting_fMagicBoltOptimalDistance__init` at 0x8a20 (crt_init, medium); signature (high): `void GameSetting_fMagicBoltOptimalDistance__init(void)`
+pub const GameSetting_fMagicBoltOptimalDistance__init: u64 = 152;
+/// `GameSetting_fMagicBoltSegmentLength__atexit` at 0x1777590 (crt_init, medium); signature (high): `void GameSetting_fMagicBoltSegmentLength__atexit(void)`
+pub const GameSetting_fMagicBoltSegmentLength__atexit: u64 = 168899;
+/// `GameSetting_fMagicBoltSegmentLength__init` at 0x65300 (crt_init, medium); signature (high): `void GameSetting_fMagicBoltSegmentLength__init(void)`
+pub const GameSetting_fMagicBoltSegmentLength__init: u64 = 3689;
+/// `GameSetting_fMagicCEEnchantMagOffset__atexit` at 0x17775e0 (crt_init, medium); signature (high): `void GameSetting_fMagicCEEnchantMagOffset__atexit(void)`
+pub const GameSetting_fMagicCEEnchantMagOffset__atexit: u64 = 168900;
+/// `GameSetting_fMagicCEEnchantMagOffset__init` at 0x65380 (crt_init, medium); signature (high): `void GameSetting_fMagicCEEnchantMagOffset__init(void)`
+pub const GameSetting_fMagicCEEnchantMagOffset__init: u64 = 3690;
+/// `GameSetting_fMagicCasterPCSkillCostBase__atexit` at 0x1777630 (crt_init, medium); signature (high): `void GameSetting_fMagicCasterPCSkillCostBase__atexit(void)`
+pub const GameSetting_fMagicCasterPCSkillCostBase__atexit: u64 = 168901;
 /// `GameSetting_fMagicCasterPCSkillCostBase__init` at 0x65400 (crt_init, medium); signature (high): `void GameSetting_fMagicCasterPCSkillCostBase__init(void)`
 pub const GameSetting_fMagicCasterPCSkillCostBase__init: u64 = 3691;
 /// `GameSetting_fMagicCasterPCSkillCostMult__atexit` at 0x1777680 (crt_init, medium); signature (high): `void GameSetting_fMagicCasterPCSkillCostMult__atexit(void)`
@@ -9387,77 +9449,3 @@ pub const GetExeVersionString: u64 = 15650;
 pub const GetExteriorGridX: u64 = 18958;
 /// `GetExteriorGridY` at 0x2bc640 (decompiler, medium); signature (untiered): `undefined4 GetExteriorGridY(longlong param_1)`
 pub const GetExteriorGridY: u64 = 18959;
-/// `GetExtra19Field1C` at 0x164d80 (decompiler, high); signature (high): `int GetExtra19Field1C(longlong param_1)`
-pub const GetExtra19Field1C: u64 = 11724;
-/// `GetExtra2BRefField10OrDefault` at 0x3010e0 (decompiler, medium); signature (untiered): `undefined4 * GetExtra2BRefField10OrDefault(longlong param_1)`
-pub const GetExtra2BRefField10OrDefault: u64 = 20218;
-/// `GetExtra40Field10` at 0x164eb0 (decompiler, high); signature (untiered): `longlong GetExtra40Field10(longlong param_1)`
-pub const GetExtra40Field10: u64 = 11730;
-/// `GetExtra8BField10` at 0x166cf0 (decompiler, high); signature (untiered): `longlong GetExtra8BField10(longlong param_1)`
-pub const GetExtra8BField10: u64 = 11768;
-/// `GetExtraA4RefHandle` at 0x1722a0 (decompiler, high); signature (high): `undefined4 * GetExtraA4RefHandle(longlong param_1, undefined4 * param_2)`
-pub const GetExtraA4RefHandle: u64 = 12035;
-/// `GetExtraActivateRefFlag` at 0x1689b0 (decompiler, high); signature (high): `undefined8 GetExtraActivateRefFlag(longlong param_1)`
-pub const GetExtraActivateRefFlag: u64 = 11794;
-/// `GetExtraAmmo` at 0x171680 (decompiler, medium); signature (untiered): `undefined GetExtraAmmo(longlong param_1)`
-pub const GetExtraAmmo: u64 = 12019;
-/// `GetExtraByType47` at 0x164140 (decompiler, high); signature (high): `undefined GetExtraByType47(longlong param_1)`
-pub const GetExtraByType47: u64 = 11679;
-/// `GetExtraCachedScaleFirst` at 0x1649b0 (decompiler, high); signature (high): `undefined4 GetExtraCachedScaleFirst(longlong param_1)`
-pub const GetExtraCachedScaleFirst: u64 = 11708;
-/// `GetExtraCachedScaleSecond` at 0x1649e0 (decompiler, high); signature (high): `undefined4 GetExtraCachedScaleSecond(longlong param_1)`
-pub const GetExtraCachedScaleSecond: u64 = 11709;
-/// `GetExtraCell3DField10` at 0x16efc0 (decompiler, medium); signature (untiered): `longlong GetExtraCell3DField10(longlong param_1)`
-pub const GetExtraCell3DField10: u64 = 11951;
-/// `GetExtraCellWaterType` at 0x1669a0 (decompiler, high); signature (untiered): `longlong GetExtraCellWaterType(longlong param_1)`
-pub const GetExtraCellWaterType: u64 = 11764;
-/// `GetExtraCreatureAwakeSound` at 0x164a90 (decompiler, medium); signature (untiered): `undefined GetExtraCreatureAwakeSound(longlong param_1, undefined4 * param_2)`
-pub const GetExtraCreatureAwakeSound: u64 = 11712;
-/// `GetExtraDataType14Field10` at 0x164e80 (decompiler, high); signature (untiered): `longlong GetExtraDataType14Field10(longlong param_1)`
-pub const GetExtraDataType14Field10: u64 = 11729;
-/// `GetExtraDataType15Field10` at 0x164c20 (decompiler, high); signature (untiered): `longlong GetExtraDataType15Field10(longlong param_1)`
-pub const GetExtraDataType15Field10: u64 = 11717;
-/// `GetExtraDataType2E` at 0x164830 (decompiler, high); signature (untiered): `undefined GetExtraDataType2E(longlong param_1)`
-pub const GetExtraDataType2E: u64 = 11700;
-/// `GetExtraDataType3CPayload` at 0x1700c0 (decompiler, high); signature (untiered): `longlong * GetExtraDataType3CPayload(longlong param_1)`
-pub const GetExtraDataType3CPayload: u64 = 11978;
-/// `GetExtraDataType5C` at 0x171370 (decompiler, high); signature (untiered): `undefined GetExtraDataType5C(longlong param_1)`
-pub const GetExtraDataType5C: u64 = 12013;
-/// `GetExtraDataType6CValue` at 0x16db10 (decompiler, high); signature (high): `longlong GetExtraDataType6CValue(longlong param_1)`
-pub const GetExtraDataType6CValue: u64 = 11903;
-/// `GetExtraDataType71` at 0x1692e0 (decompiler, high); signature (untiered): `longlong * GetExtraDataType71(longlong param_1)`
-pub const GetExtraDataType71: u64 = 11803;
-/// `GetExtraDataType88` at 0x1728d0 (decompiler, high); signature (high): `undefined GetExtraDataType88(longlong param_1)`
-pub const GetExtraDataType88: u64 = 12045;
-/// `GetExtraDataType8E` at 0x1648b0 (decompiler, high); signature (untiered): `undefined GetExtraDataType8E(longlong param_1)`
-pub const GetExtraDataType8E: u64 = 11702;
-/// `GetExtraDataType99Field10` at 0x16a4c0 (decompiler, high); signature (high): `longlong GetExtraDataType99Field10(longlong param_1)`
-pub const GetExtraDataType99Field10: u64 = 11834;
-/// `GetExtraDistantDataValues` at 0x165500 (decompiler, medium); signature (untiered): `undefined8 * GetExtraDistantDataValues(longlong param_1, undefined8 * param_2)`
-pub const GetExtraDistantDataValues: u64 = 11738;
-/// `GetExtraEnableStateChildrenList` at 0x165910 (decompiler, high); signature (untiered): `longlong * GetExtraEnableStateChildrenList(longlong param_1)`
-pub const GetExtraEnableStateChildrenList: u64 = 11748;
-/// `GetExtraEnableStateParentFlag` at 0x165790 (decompiler, high); signature (high): `byte GetExtraEnableStateParentFlag(longlong param_1)`
-pub const GetExtraEnableStateParentFlag: u64 = 11741;
-/// `GetExtraEncounterZone` at 0x16a0a0 (decompiler, high); signature (untiered): `longlong GetExtraEncounterZone(longlong param_1)`
-pub const GetExtraEncounterZone: u64 = 11828;
-/// `GetExtraEncounterZoneOrField128Field220` at 0x2be760 (decompiler, medium); signature (untiered): `longlong GetExtraEncounterZoneOrField128Field220(longlong param_1)`
-pub const GetExtraEncounterZoneOrField128Field220: u64 = 18989;
-/// `GetExtraFactionChanges` at 0x171100 (decompiler, high); signature (untiered): `undefined GetExtraFactionChanges(longlong param_1)`
-pub const GetExtraFactionChanges: u64 = 12009;
-/// `GetExtraGhostFlag` at 0x164790 (decompiler, medium); signature (medium): `undefined1 GetExtraGhostFlag(longlong param_1)`
-pub const GetExtraGhostFlag: u64 = 11698;
-/// `GetExtraHavokField18` at 0x16f330 (decompiler, medium); signature (untiered): `longlong * GetExtraHavokField18(longlong param_1)`
-pub const GetExtraHavokField18: u64 = 11956;
-/// `GetExtraHealthValue` at 0x1648c0 (decompiler, high); signature (untiered): `undefined4 GetExtraHealthValue(longlong param_1)`
-pub const GetExtraHealthValue: u64 = 11703;
-/// `GetExtraLeveledItemBase` at 0x166f90 (decompiler, high); signature (untiered): `longlong GetExtraLeveledItemBase(longlong param_1)`
-pub const GetExtraLeveledItemBase: u64 = 11772;
-/// `GetExtraMapMarkerData` at 0x1644e0 (decompiler, high); signature (untiered): `longlong GetExtraMapMarkerData(longlong param_1)`
-pub const GetExtraMapMarkerData: u64 = 11689;
-/// `GetExtraMultiBoundField10` at 0x16a870 (decompiler, medium); signature (untiered): `longlong GetExtraMultiBoundField10(longlong param_1)`
-pub const GetExtraMultiBoundField10: u64 = 11840;
-/// `GetExtraMultiBoundMarkerData` at 0x16a760 (decompiler, medium); signature (untiered): `undefined GetExtraMultiBoundMarkerData(longlong param_1)`
-pub const GetExtraMultiBoundMarkerData: u64 = 11838;
-/// `GetExtraMultiBoundRef` at 0x16a610 (decompiler, medium); signature (medium): `longlong GetExtraMultiBoundRef(longlong param_1)`
-pub const GetExtraMultiBoundRef: u64 = 11836;

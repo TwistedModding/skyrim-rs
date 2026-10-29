@@ -3,6 +3,50 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `CstringArrayImplementation::vfunc_11` at 0xc5faa0 (rtti, high); signature (low): `undefined8 vfunc_11(CstringArrayImplementation * this, int param_1)`
+pub const CstringArrayImplementation__vfunc_11: u64 = 65971;
+/// `CstringArrayImplementation::vfunc_12` at 0xc639c0 (rtti, high); signature (low): `undefined vfunc_12(CstringArrayImplementation * this, int param_1, longlong param_2)`
+pub const CstringArrayImplementation__vfunc_12: u64 = 66157;
+/// `CullFirstPersonGeometry` at 0x658700 (semantic, high); signature (untiered): `undefined CullFirstPersonGeometry(undefined8 param_1, char param_2)`; semantic: step 9: resets the first-person culler g_FirstPersonCuller 0x3436040 (a BSGeometryListCullingProcess) and, in first person, clears bit 0 of the player's first-person 3D (slot 111), culls it into that culler's own lists with g_FirstPersonCamera and sets the bit again; nothing reaches an accumulator until FlushFirstPersonAccumulator 0x1537a80 at step 14 (high); signature `void (void* unused, bool firstPerson)`
+pub const CullFirstPersonGeometry: u64 = 36563;
+/// `CullFirstPersonGeometry` as a function pointer type (high).
+pub type CullFirstPersonGeometry_fn = unsafe extern "C" fn(unused: *mut c_void, firstPerson: bool);
+/// `CullShadowCastersAndScene` at 0x1537fd0 (runtime, high); signature (untiered): `undefined CullShadowCastersAndScene(longlong * param_1, undefined8 param_2, longlong param_3, ulonglong param_4)`; semantic: the shadow step: sun slot 16, the sun's geometry list cull (0x157ed80), the main camera cull jobs over the scene roots, the other shadow lights and the sun's cascade caster culls (slot 9 inside 0x15389b0); the first-person root stays hidden throughout (high); signature `void (NiCamera* camera, ...)`
+pub const CullShadowCastersAndScene: u64 = 107132;
+/// `CullShadowLights` at 0x15389b0 (runtime, high); signature (untiered): `undefined CullShadowLights(void)`; semantic: updates and culls the casters of the scene's shadow lights and runs the sun's slot 9 (cascade caster cull) while the main camera cull jobs run (high); signature `void (void)`
+pub const CullShadowLights: u64 = 107137;
+/// `CullShadowLights` as a function pointer type (high).
+pub type CullShadowLights_fn = unsafe extern "C" fn();
+/// `CureEffect::ctor` at 0x5c5140 (layout_inference, high); signature (low): `CureEffect * ctor(CureEffect * this, longlong param_1, undefined8 param_2, undefined4 * param_3, undefined4 param_4)`
+pub const CureEffect__ctor: u64 = 34268;
+/// `CureEffect::ctor` at 0x5c5180 (layout_inference, high); signature (low): `CureEffect * ctor(CureEffect * this, longlong param_1, undefined8 param_2, undefined4 * param_3, undefined4 param_4)`
+pub const CureEffect__ctor_2: u64 = 34269;
+/// `CureEffect::vdtor` at 0x5c55b0 (slot_propagation, medium); signature (low): `CureEffect * vdtor(CureEffect * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const CureEffect__vdtor: u64 = 34275;
+/// `CureEffect::vfunc_20` at 0x5c5580 (rtti, high); signature (high): `undefined vfunc_20(CureEffect * this)`
+pub const CureEffect__vfunc_20: u64 = 34274;
+/// `CureEffect::vfunc_20_sub0` at 0x5d10a0 (callgraph, medium); signature (untiered): `undefined vfunc_20_sub0(longlong * param_1, int param_2)`
+pub const CureEffect__vfunc_20_sub0: u64 = 34507;
+/// `CursorMenu::Create` at 0x92a300 (semantic, high); signature (untiered): `void Create(void)`; semantic: menu creator registered under 'Cursor Menu' (ctor inlined except ContainerMenu) (high); signature `IMenu* ()`
+pub const CursorMenu__Create: u64 = 51503;
+/// `CursorMenu::Create` as a function pointer type (high).
+pub type CursorMenu__Create_fn = unsafe extern "C" fn() -> *mut crate::IMenu;
+/// `CursorMenu::MenuEventHandler_vdtor` at 0x92a274 (slot_propagation, medium); signature (high): `undefined MenuEventHandler_vdtor(CursorMenu * this)`
+pub const CursorMenu__MenuEventHandler_vdtor: u64 = 51501;
+/// `CursorMenu::MenuEventHandler_vfunc_1` at 0x92a1a0 (rtti, high); signature (low): `bool MenuEventHandler_vfunc_1(CursorMenu * this, longlong * param_1)`
+pub const CursorMenu__MenuEventHandler_vfunc_1: u64 = 51497;
+/// `CursorMenu::MenuEventHandler_vfunc_5` at 0x92a1f0 (rtti, high); signature (low): `undefined1 MenuEventHandler_vfunc_5(void)`
+pub const CursorMenu__MenuEventHandler_vfunc_5: u64 = 51499;
+/// `CursorMenu::MenuEventHandler_vfunc_5_sub0` at 0x117a4c0 (callgraph, medium); signature (untiered): `undefined MenuEventHandler_vfunc_5_sub0(longlong param_1, longlong param_2)`
+pub const CursorMenu__MenuEventHandler_vfunc_5_sub0: u64 = 82540;
+/// `CursorMenu::MenuEventHandler_vfunc_6` at 0x92a1d0 (rtti, high); signature (low): `undefined1 MenuEventHandler_vfunc_6(void)`
+pub const CursorMenu__MenuEventHandler_vfunc_6: u64 = 51498;
+/// `CursorMenu::MoveCursorByMouse` at 0x117a340 (semantic, high); signature (untiered): `undefined MoveCursorByMouse(longlong param_1, longlong param_2)`; semantic: cursor +4 (x) += dx * speed, +8 (y) += dy * speed, clamped to [+0xc, +0x14] and [+0x10, +0x18]; with bBackgroundMouse:Controls the position is GetCursorPos minus the foreground window's client origin instead; then a Scaleform cursor event with (x, y) (high); signature `void (UICursor* cursor, MouseMoveEvent* e)`
+pub const CursorMenu__MoveCursorByMouse: u64 = 82539;
+/// `CursorMenu::MoveCursorByMouse` as a function pointer type (high).
+pub type CursorMenu__MoveCursorByMouse_fn = unsafe extern "C" fn(cursor: *mut crate::UICursor, e: *mut crate::MouseMoveEvent);
+/// `CursorMenu::ProcessMessage` at 0x92a070 (semantic, high); signature (untiered): `undefined8 ProcessMessage(CursorMenu * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
+pub const CursorMenu__ProcessMessage: u64 = 51496;
 /// `CursorMenu::ctor` at 0x929f80 (layout_inference, high); signature (high): `CursorMenu * ctor(CursorMenu * this)`
 pub const CursorMenu__ctor: u64 = 51495;
 /// `CursorMenu::vdtor` at 0x92a280 (slot_propagation, medium); signature (low): `CursorMenu * vdtor(CursorMenu * this, uint param_1, undefined8 param_2, undefined8 param_3)`
@@ -7777,8 +7821,10 @@ pub const FindRefValueByFixedStringKey: u64 = 105079;
 pub const FindRefValueByU64Key: u64 = 104747;
 /// `FindRefWithField40EqualGlobal` at 0x2cf710 (decompiler, medium); signature (untiered): `undefined FindRefWithField40EqualGlobal(longlong param_1, undefined8 * param_2)`
 pub const FindRefWithField40EqualGlobal: u64 = 19229;
-/// `FindReferenceFromNode` at 0x2eece0 (decompiler, medium); signature (untiered): `longlong * FindReferenceFromNode(longlong * param_1)`
+/// `FindReferenceFromNode` at 0x2eece0 (semantic, high); signature (untiered): `longlong * FindReferenceFromNode(longlong * param_1)`; semantic: walks node and its parents (+0x30) until a node whose vtable +0x28 (as-fade-node) result has a user reference at +0xf8; returns the player for the player's first-person root (slot 111 Get3DFor(1)); a reference whose base (+0x40) has form type 0x2a ('*') defers to its parent's reference. Does not add a reference count. (high); signature `TESObjectREFR* (NiAVObject* node)`
 pub const FindReferenceFromNode: u64 = 19750;
+/// `FindReferenceFromNode` as a function pointer type (high).
+pub type FindReferenceFromNode_fn = unsafe extern "C" fn(node: *mut crate::NiAVObject) -> *mut crate::TESObjectREFR;
 /// `FindReferenceFromObjectNode` at 0x404740 (decompiler, medium); signature (untiered): `longlong * FindReferenceFromObjectNode(longlong param_1)`
 pub const FindReferenceFromObjectNode: u64 = 26003;
 /// `FindRefsInRadiusAroundRef` at 0x1ba750 (decompiler, medium); signature (untiered): `undefined FindRefsInRadiusAroundRef(undefined8 param_1, longlong * param_2, float param_3, float * param_4, float param_5, longlong param_6, undefined8 param_7)`
@@ -8321,6 +8367,10 @@ pub const FlushBufferedStream: u64 = 88698;
 pub const FlushBumpRangeToFreeList: u64 = 57958;
 /// `FlushDeflateBlock` at 0xa9bfa0 (decompiler, medium); signature (untiered): `undefined FlushDeflateBlock(longlong * param_1, undefined1 * param_2, int param_3, int param_4)`
 pub const FlushDeflateBlock: u64 = 56952;
+/// `FlushFirstPersonAccumulator` at 0x1537a80 (semantic, high); signature (untiered): `undefined FlushFirstPersonAccumulator(void)`; semantic: step 14, first person only: shows the first-person root, marks g_FirstPersonAccumulator as the main-view kind (shadowMapIndex 0xffff, mask 0) unless g_SunShadowDisabled, and flushes g_FirstPersonCuller's lists into it (high); signature `void (void)`
+pub const FlushFirstPersonAccumulator: u64 = 107128;
+/// `FlushFirstPersonAccumulator` as a function pointer type (high).
+pub type FlushFirstPersonAccumulator_fn = unsafe extern "C" fn();
 /// `FlushFrameCompressionBuffer` at 0x15ae930 (decompiler, medium); signature (untiered): `undefined8 FlushFrameCompressionBuffer(longlong param_1, undefined8 param_2, ulonglong param_3)`
 pub const FlushFrameCompressionBuffer: u64 = 110002;
 /// `FlushPendingAddAndRemoveArrays` at 0xfda930 (decompiler, medium); signature (untiered): `DWORD FlushPendingAddAndRemoveArrays(longlong param_1)`
@@ -8723,65 +8773,3 @@ pub const ForwardStartAsyncOperation1B20CA8OrFail_2: u64 = 453477;
 pub const ForwardToAttachMountInteraction: u64 = 41532;
 /// `ForwardToNearestSpriteAncestorVfuncE0` at 0xd33360 (decompiler, medium); signature (untiered): `undefined8 ForwardToNearestSpriteAncestorVfuncE0(longlong param_1)`
 pub const ForwardToNearestSpriteAncestorVfuncE0: u64 = 83458;
-/// `FourCCToString` at 0x1e5ce0 (decompiler, high); signature (high): `undefined FourCCToString(undefined4 param_1, undefined1 * param_2, uint param_3)`
-pub const FourCCToString: u64 = 14625;
-/// `Fprintf` at 0x90f160 (decompiler, medium); signature (medium): `undefined Fprintf(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const Fprintf: u64 = 51108;
-/// `FrameState::AdvanceJitter` at 0x101e360 (semantic, high); signature (untiered): `undefined AdvanceJitter(longlong param_1)`; semantic: next TAA jitter sample (high); signature `void (FrameState* this)`
-pub const FrameState__AdvanceJitter: u64 = 77518;
-/// `FrameState::AdvanceJitter` as a function pointer type (high).
-pub type FrameState__AdvanceJitter_fn = unsafe extern "C" fn(this: *mut crate::FrameState);
-/// `FrameState::LockDynamicResolution` at 0x101e2d0 (semantic, high); signature (untiered): `undefined LockDynamicResolution(longlong param_1, char param_2)`; semantic: release=false increments +0x128, true decrements it if non-zero (high); signature `void (FrameState* this, bool release)`
-pub const FrameState__LockDynamicResolution: u64 = 77516;
-/// `FrameState::LockDynamicResolution` as a function pointer type (high).
-pub type FrameState__LockDynamicResolution_fn = unsafe extern "C" fn(this: *mut crate::FrameState, release: bool);
-/// `FrameState::UpdateDynamicResolutionFlags` at 0x101e300 (semantic, high); signature (untiered): `undefined UpdateDynamicResolutionFlags(longlong param_1, float param_2)`; semantic: sets +0x12c/+0x12d from the measured frame time (high); signature `void (FrameState* this, float frameMs)`
-pub const FrameState__UpdateDynamicResolutionFlags: u64 = 77517;
-/// `FrameState::UpdateDynamicResolutionFlags` as a function pointer type (high).
-pub type FrameState__UpdateDynamicResolutionFlags_fn = unsafe extern "C" fn(this: *mut crate::FrameState, frameMs: f32);
-/// `FrameState::UpdateDynamicResolutionRatios` at 0x101e130 (semantic, high); signature (untiered): `undefined UpdateDynamicResolutionRatios(longlong param_1)`; semantic: frame start of RenderFrame: moves the ratios by fRatioIncreasePerSeconds/fRatioDecreasePerSeconds within [fLowestDynamic*Ratio, 1], quantised (high); signature `void (FrameState* this)`
-pub const FrameState__UpdateDynamicResolutionRatios: u64 = 77515;
-/// `FrameState::UpdateDynamicResolutionRatios` as a function pointer type (high).
-pub type FrameState__UpdateDynamicResolutionRatios_fn = unsafe extern "C" fn(this: *mut crate::FrameState);
-/// `FreeAligned` at 0xaa39e0 (decompiler, medium); signature (medium): `undefined FreeAligned(longlong * param_1, longlong param_2)`
-pub const FreeAligned: u64 = 57055;
-/// `FreeAlignedMemory` at 0x1050b30 (decompiler, high); signature (high): `undefined FreeAlignedMemory(void * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const FreeAlignedMemory: u64 = 77945;
-/// `FreeAlignedMemoryIfSet` at 0x1029420 (decompiler, high); signature (high): `undefined FreeAlignedMemoryIfSet(undefined8 * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const FreeAlignedMemoryIfSet: u64 = 77636;
-/// `FreeAlignedMemory_2` at 0x10a1440 (decompiler, high); signature (high): `undefined FreeAlignedMemory_2(undefined8 param_1, void * param_2, undefined8 param_3, undefined8 param_4)`
-pub const FreeAlignedMemory_2: u64 = 79345;
-/// `FreeAligned_2` at 0x1185150 (decompiler, medium); signature (untiered): `undefined8 FreeAligned_2(longlong param_1, longlong param_2, longlong param_3, ulonglong param_4)`
-pub const FreeAligned_2: u64 = 84787;
-/// `FreeAllBlocks` at 0xbe3160 (decompiler, medium); signature (medium): `undefined FreeAllBlocks(longlong * param_1)`
-pub const FreeAllBlocks: u64 = 63895;
-/// `FreeAllChainedBlocks` at 0x244d60 (decompiler, medium); signature (medium): `undefined FreeAllChainedBlocks(longlong * param_1)`
-pub const FreeAllChainedBlocks: u64 = 16286;
-/// `FreeAllChainedBlocks_2` at 0x1174ce0 (decompiler, medium); signature (medium): `undefined FreeAllChainedBlocks_2(longlong * param_1)`
-pub const FreeAllChainedBlocks_2: u64 = 33559;
-/// `FreeAllChunkBlocks` at 0x20ab60 (decompiler, medium); signature (untiered): `undefined FreeAllChunkBlocks(longlong * param_1)`
-pub const FreeAllChunkBlocks: u64 = 15393;
-/// `FreeAllChunkBlocks_2` at 0xfd42f0 (decompiler, medium); signature (medium): `undefined FreeAllChunkBlocks_2(longlong * param_1)`
-pub const FreeAllChunkBlocks_2: u64 = 82416;
-/// `FreeAllChunkedQueueBlocks` at 0x506c00 (decompiler, medium); signature (untiered): `undefined FreeAllChunkedQueueBlocks(longlong * param_1)`
-pub const FreeAllChunkedQueueBlocks: u64 = 31597;
-/// `FreeAllChunkedQueueBlocks_2` at 0x50d080 (decompiler, medium); signature (untiered): `undefined FreeAllChunkedQueueBlocks_2(longlong * param_1)`
-pub const FreeAllChunkedQueueBlocks_2: u64 = 31676;
-/// `FreeAllChunkedQueueBlocks_3` at 0x512670 (decompiler, medium); signature (untiered): `undefined FreeAllChunkedQueueBlocks_3(longlong * param_1)`
-pub const FreeAllChunkedQueueBlocks_3: u64 = 31759;
-/// `FreeAllChunkedQueueBlocks_4` at 0x51dfb0 (decompiler, medium); signature (untiered): `undefined FreeAllChunkedQueueBlocks_4(longlong * param_1)`
-pub const FreeAllChunkedQueueBlocks_4: u64 = 31992;
-/// `FreeAllEntryLists` at 0xf0e720 (decompiler, medium); signature (medium): `undefined FreeAllEntryLists(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const FreeAllEntryLists: u64 = 71290;
-/// `FreeAllListNodesToScrapHeap` at 0x502a90 (decompiler, medium); signature (untiered): `undefined FreeAllListNodesToScrapHeap(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const FreeAllListNodesToScrapHeap: u64 = 31543;
-/// `FreeAllPointersInArray` at 0x61f7c0 (decompiler, medium); signature (untiered): `undefined FreeAllPointersInArray(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const FreeAllPointersInArray: u64 = 35682;
-/// `FreeAllSegments` at 0x1193720 (decompiler, medium); signature (untiered): `undefined FreeAllSegments(undefined8 * param_1)`
-pub const FreeAllSegments: u64 = 87832;
-/// `FreeAllSegmentsInList` at 0x1193e00 (decompiler, medium); signature (untiered): `undefined FreeAllSegmentsInList(undefined8 * param_1)`
-pub const FreeAllSegmentsInList: u64 = 87837;
-/// `FreeAndClearField8` at 0xdfeaf0 (decompiler, high); signature (untiered): `undefined FreeAndClearField8(longlong param_1)`
-pub const FreeAndClearField8: u64 = 87434;
-/// `FreeAndClearPointer` at 0x5c2b90 (decompiler, high); signature (high): `undefined FreeAndClearPointer(undefined8 * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const FreeAndClearPointer: u64 = 34201;

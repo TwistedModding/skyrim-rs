@@ -7011,7 +7011,7 @@ impl BGSExplosion_vtable_88 {
 pub struct BGSFootIkRaycastInterfaceDB_vtable {
     /// `BGSFootIkRaycastInterfaceDB::vdtor` at 0x54c250 (layout_inference, medium); signature (low): `BGSFootIkRaycastInterfaceDB * vdtor(BGSFootIkRaycastInterfaceDB * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `BGSFootIkRaycastInterfaceDB::vfunc_1` at 0x54ac90 (rtti, high); signature (low): `ulonglong vfunc_1(BGSFootIkRaycastInterfaceDB * this, ulonglong param_1, ulonglong param_2)`
+    /// `BGSFootIkRaycastInterfaceDB::GetRaycastData` at 0x54ac90 (semantic, medium); signature (untiered): `ulonglong GetRaycastData(BGSFootIkRaycastInterfaceDB * this, ulonglong param_1, ulonglong param_2)`
     pub slot_1: *const c_void,
     /// `BGSFootIkRaycastInterfaceDB::vfunc_2` at 0x54aef0 (rtti, high); signature (low): `undefined4 vfunc_2(void)`
     pub slot_2: *const c_void,

@@ -3,27 +3,6 @@
 
 use core::ffi::{c_char, c_void};
 
-/// `PackPositionToGridCoords` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 20503, rva 0x30e860).
-/// `uint PackPositionToGridCoords(float * param_1)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn pack_position_to_grid_coords(param_1: *mut f32) -> u32 { unsafe { function!(20503, (*mut f32) -> u32)(param_1) } }
-/// `PackQuaternionPolar32` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 65639, rva 0xc52e20).
-/// `undefined PackQuaternionPolar32(float * param_1, uint * param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn pack_quaternion_polar32(param_1: *mut f32, param_2: *mut u32) -> u64 { unsafe { function!(65639, (*mut f32, *mut u32) -> u64)(param_1, param_2) } }
-/// `PackQuaternionSmallestThree24` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 65638, rva 0xc52cb0).
-/// `undefined PackQuaternionSmallestThree24(uint * param_1, byte * param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn pack_quaternion_smallest_three24(param_1: *mut u32, param_2: *mut u8) -> u64 { unsafe { function!(65638, (*mut u32, *mut u8) -> u64)(param_1, param_2) } }
 /// `PackQuaternionSmallestThree40` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 65640, rva 0xc53040).
 /// `undefined PackQuaternionSmallestThree40(uint * param_1, undefined1 * param_2)`
 ///
@@ -311,13 +290,6 @@ pub unsafe fn papyrus__actor__clear_extra_arrows(vm: *mut c_void, stackId: u32, 
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn papyrus__actor__clear_keep_offset_from_actor(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor) { unsafe { function!(54915, (*mut c_void, u32, *mut crate::Actor))(vm, stackId, self_) } }
-/// `Papyrus::Actor::ClearLookAt` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54659, rva 0x9ffec0).
-/// `void ClearLookAt(IVirtualMachine * vm, uint stackId, Actor * self)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn papyrus__actor__clear_look_at(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor) { unsafe { function!(54659, (*mut c_void, u32, *mut crate::Actor))(vm, stackId, self_) } }
 /// `Papyrus::Actor::DamageActorValue` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54660, rva 0x9fff30).
 /// `void DamageActorValue(IVirtualMachine * vm, uint stackId, Actor * self, BSFixedString * a0, float a1)`
 ///
@@ -472,13 +444,6 @@ pub unsafe fn papyrus__actor__get_crime_faction(vm: *mut c_void, stackId: u32, s
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn papyrus__actor__get_current_package(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor) -> *mut crate::TESPackage { unsafe { function!(54681, (*mut c_void, u32, *mut crate::Actor) -> *mut crate::TESPackage)(vm, stackId, self_) } }
-/// `Papyrus::Actor::GetDialogueTarget` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54682, rva 0xa007f0).
-/// `Actor * GetDialogueTarget(IVirtualMachine * vm, uint stackId, Actor * self)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn papyrus__actor__get_dialogue_target(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor) -> *mut crate::Actor { unsafe { function!(54682, (*mut c_void, u32, *mut crate::Actor) -> *mut crate::Actor)(vm, stackId, self_) } }
 /// `Papyrus::Actor::GetEquippedArmorInSlot` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54684, rva 0xa008c0).
 /// `TESObjectARMO * GetEquippedArmorInSlot(IVirtualMachine * vm, uint stackId, Actor * self, uint a0)`
 ///
@@ -1200,13 +1165,6 @@ pub unsafe fn papyrus__actor__set_forced_landing_marker(vm: *mut c_void, stackId
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn papyrus__actor__set_ghost(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor, a0: u8) { unsafe { function!(54966, (*mut c_void, u32, *mut crate::Actor, u8))(vm, stackId, self_, a0) } }
-/// `Papyrus::Actor::SetHeadTracking` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54752, rva 0xa025b0).
-/// `void SetHeadTracking(IVirtualMachine * vm, uint stackId, Actor * self, bool a0)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn papyrus__actor__set_head_tracking(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor, a0: u8) { unsafe { function!(54752, (*mut c_void, u32, *mut crate::Actor, u8))(vm, stackId, self_, a0) } }
 /// `Papyrus::Actor::SetIntimidated` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54967, rva 0xa0d8b0).
 /// `void SetIntimidated(IVirtualMachine * vm, uint stackId, Actor * self, bool a0)`
 ///
@@ -1214,13 +1172,6 @@ pub unsafe fn papyrus__actor__set_head_tracking(vm: *mut c_void, stackId: u32, s
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn papyrus__actor__set_intimidated(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor, a0: u8) { unsafe { function!(54967, (*mut c_void, u32, *mut crate::Actor, u8))(vm, stackId, self_, a0) } }
-/// `Papyrus::Actor::SetLookAt` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54754, rva 0xa02640).
-/// `void SetLookAt(IVirtualMachine * vm, uint stackId, Actor * self, TESObjectREFR * a0, bool a1)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn papyrus__actor__set_look_at(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor, a0: *mut crate::TESObjectREFR, a1: u8) { unsafe { function!(54754, (*mut c_void, u32, *mut crate::Actor, *mut crate::TESObjectREFR, u8))(vm, stackId, self_, a0, a1) } }
 /// `Papyrus::Actor::SetNoBleedoutRecovery` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54968, rva 0xa0d8c0).
 /// `void SetNoBleedoutRecovery(IVirtualMachine * vm, uint stackId, Actor * self, bool a0)`
 ///
@@ -1865,13 +1816,6 @@ pub unsafe fn papyrus__debug__toggle_ai(vm: *mut c_void, stackId: u32, unused: *
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn papyrus__debug__toggle_collisions(vm: *mut c_void, stackId: u32, unused: *mut c_void) { unsafe { function!(55389, (*mut c_void, u32, *mut c_void))(vm, stackId, unused) } }
-/// `Papyrus::Debug::ToggleMenus` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55390, rva 0xa1f9e0).
-/// `void ToggleMenus(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn papyrus__debug__toggle_menus(vm: *mut c_void, stackId: u32, unused: *mut c_void) { unsafe { function!(55390, (*mut c_void, u32, *mut c_void))(vm, stackId, unused) } }
 /// `Papyrus::Debug::Trace` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55391, rva 0xa1fa00).
 /// `void Trace(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, BSFixedString * a0, uint a1)`
 ///
@@ -13478,3 +13422,59 @@ pub unsafe fn resize_tagged_string_array(param_1: *mut i64, param_2: u64) -> u64
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn resize_twelve_byte_entry_array(param_1: *mut i64, param_2: u32, param_3: u64, param_4: u64) -> u8 { unsafe { function!(77209, (*mut i64, u32, u64, u64) -> u8)(param_1, param_2, param_3, param_4) } }
+/// `ResizeTypedValuePointerArray` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 84428, rva 0xd6d6a0).
+/// `undefined ResizeTypedValuePointerArray(longlong param_1, int param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn resize_typed_value_pointer_array(param_1: i64, param_2: i32) -> u64 { unsafe { function!(84428, (i64, i32) -> u64)(param_1, param_2) } }
+/// `ResizeU16Array` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 30304, rva 0x4c0c90).
+/// `bool ResizeU16Array(longlong * param_1, uint param_2, undefined8 param_3, undefined8 param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn resize_u16_array(param_1: *mut i64, param_2: u32, param_3: u64, param_4: u64) -> u8 { unsafe { function!(30304, (*mut i64, u32, u64, u64) -> u8)(param_1, param_2, param_3, param_4) } }
+/// `ResizeU16Vector` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 96668, rva 0x12dbe30).
+/// `undefined ResizeU16Vector(ulonglong * param_1, ulonglong param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn resize_u16_vector(param_1: *mut u64, param_2: u64) -> u64 { unsafe { function!(96668, (*mut u64, u64) -> u64)(param_1, param_2) } }
+/// `ResizeU32Buffer` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 89744, rva 0xe9f6d0).
+/// `undefined ResizeU32Buffer(undefined8 * param_1, ulonglong param_2, longlong param_3)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn resize_u32_buffer(param_1: *mut u64, param_2: u64, param_3: i64) -> u64 { unsafe { function!(89744, (*mut u64, u64, i64) -> u64)(param_1, param_2, param_3) } }
+/// `ResizeU64KeyedHashTable` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 87221, rva 0xdec690).
+/// `undefined ResizeU64KeyedHashTable(longlong * param_1, undefined8 param_2, ulonglong param_3)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn resize_u64_keyed_hash_table(param_1: *mut i64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(87221, (*mut i64, u64, u64) -> u64)(param_1, param_2, param_3) } }
+/// `ResizeUserContentArray` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 445990, rva 0x12c2580).
+/// `bool ResizeUserContentArray(longlong * param_1, uint param_2, undefined8 param_3, undefined8 param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn resize_user_content_array(param_1: *mut i64, param_2: u32, param_3: u64, param_4: u64) -> u8 { unsafe { function!(445990, (*mut i64, u32, u64, u64) -> u8)(param_1, param_2, param_3, param_4) } }
+/// `ResolveFormPointersAt8And10` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 14126, rva 0x1d2270).
+/// `undefined ResolveFormPointersAt8And10(longlong param_1, longlong param_2, undefined8 param_3, undefined8 param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn resolve_form_pointers_at8_and10(param_1: i64, param_2: i64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(14126, (i64, i64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
+/// `ResolveHandleToCachedRef` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 34484, rva 0x5d03f0).
+/// `bool ResolveHandleToCachedRef(uint * param_1, longlong * param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn resolve_handle_to_cached_ref(param_1: *mut u32, param_2: *mut i64) -> u8 { unsafe { function!(34484, (*mut u32, *mut i64) -> u8)(param_1, param_2) } }

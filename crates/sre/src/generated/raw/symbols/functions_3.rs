@@ -4,6 +4,10 @@
 use crate::raw::*;
 
 pub(super) const ROWS: &[Function] = &[
+    Function { rva: 0x368c70, id: 22654, confidence: Confidence::High, name: "Cmd::GetInfamyViolent_Execute" },
+    Function { rva: 0x368ce0, id: 22655, confidence: Confidence::High, name: "Cmd::GetInfamyNonViolent_Execute" },
+    Function { rva: 0x368d50, id: 22656, confidence: Confidence::High, name: "Cmd::SetAllowFlying_Execute" },
+    Function { rva: 0x368ed0, id: 22657, confidence: Confidence::High, name: "Cmd::GetInSharedCrimeFaction_Execute" },
     Function { rva: 0x368f40, id: 22658, confidence: Confidence::High, name: "Cmd::GetBribeAmount_Execute" },
     Function { rva: 0x369000, id: 22659, confidence: Confidence::High, name: "Cmd::GetBribeSuccess_Execute" },
     Function { rva: 0x369020, id: 22660, confidence: Confidence::High, name: "Cmd::GetIntimidateSuccess_Execute" },
@@ -5765,7 +5769,7 @@ pub(super) const ROWS: &[Function] = &[
     Function { rva: 0x4b9630, id: 30225, confidence: Confidence::High, name: "Nop_88" },
     Function { rva: 0x4b9810, id: 30227, confidence: Confidence::Medium, name: "RemoveRefLinkEntryAt" },
     Function { rva: 0x4b9990, id: 30228, confidence: Confidence::Medium, name: "NavMesh::vfunc_6_sub0" },
-    Function { rva: 0x4b9a80, id: 30229, confidence: Confidence::Medium, name: "CastRayGetHitDistance" },
+    Function { rva: 0x4b9a80, id: 30229, confidence: Confidence::High, name: "CastRayGetHitDistance" },
     Function { rva: 0x4b9ca0, id: 30230, confidence: Confidence::Medium, name: "AddNavMeshPortalExtrasToRefs" },
     Function { rva: 0x4ba450, id: 30232, confidence: Confidence::Medium, name: "ConnectTriangleEdgeNeighbors" },
     Function { rva: 0x4bb8f0, id: 30238, confidence: Confidence::Medium, name: "UnlinkField110FromAllNavMeshInfos" },
@@ -7482,9 +7486,9 @@ pub(super) const ROWS: &[Function] = &[
     Function { rva: 0x54a820, id: 32737, confidence: Confidence::Medium, name: "ReleaseGlobal401101" },
     Function { rva: 0x54aba0, id: 32740, confidence: Confidence::Medium, name: "ClearByte30WhereByte2EIsZero" },
     Function { rva: 0x54abe0, id: 32741, confidence: Confidence::Medium, name: "FindEntryByRefHandle" },
-    Function { rva: 0x54ac90, id: 32742, confidence: Confidence::High, name: "BGSFootIkRaycastInterfaceDB::vfunc_1" },
+    Function { rva: 0x54ac90, id: 32742, confidence: Confidence::Medium, name: "BGSFootIkRaycastInterfaceDB::GetRaycastData" },
     Function { rva: 0x54aef0, id: 32743, confidence: Confidence::High, name: "BGSFootIkRaycastInterfaceDB::vfunc_2" },
-    Function { rva: 0x54af00, id: 32744, confidence: Confidence::High, name: "CachedRaycastData::vfunc_2" },
+    Function { rva: 0x54af00, id: 32744, confidence: Confidence::High, name: "CachedRaycastData::CastRay" },
     Function { rva: 0x54b1e0, id: 32745, confidence: Confidence::High, name: "CachedRaycastData::vfunc_1" },
     Function { rva: 0x54b280, id: 32747, confidence: Confidence::Medium, name: "PopulateFromREFRHandle" },
     Function { rva: 0x54bf10, id: 32754, confidence: Confidence::Medium, name: "InsertOrAssignU64ToPairHashMap" },
@@ -8128,8 +8132,4 @@ pub(super) const ROWS: &[Function] = &[
     Function { rva: 0x5846e0, id: 523661, confidence: Confidence::Medium, name: "UnlinkAndDeleteListNode48" },
     Function { rva: 0x584770, id: 523662, confidence: Confidence::Medium, name: "DestroyNamedListNodeList" },
     Function { rva: 0x5847f0, id: 523663, confidence: Confidence::Medium, name: "EmplaceReallocateQwordVector_5" },
-    Function { rva: 0x584950, id: 441839, confidence: Confidence::Medium, name: "CopyConstructRecordArray28" },
-    Function { rva: 0x584b00, id: 441840, confidence: Confidence::Medium, name: "CopyConstructRecordWithTwoStrings" },
-    Function { rva: 0x584ba0, id: 441841, confidence: Confidence::Medium, name: "BSPlatform::BSUserContent::ctor" },
-    Function { rva: 0x585550, id: 441845, confidence: Confidence::Medium, name: "FreeSharedPtrArray" },
 ];

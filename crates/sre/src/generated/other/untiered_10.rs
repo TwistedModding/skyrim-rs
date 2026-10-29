@@ -3,153 +3,6 @@
 
 use core::ffi::{c_char, c_void};
 
-/// `TryGetField28RefOfField10` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 90358, rva 0x11b6e50).
-/// `bool TryGetField28RefOfField10(longlong param_1, longlong * param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn try_get_field28_ref_of_field10(param_1: i64, param_2: *mut i64) -> u8 { unsafe { function!(90358, (i64, *mut i64) -> u8)(param_1, param_2) } }
-/// `TryGetField38ManagerEntryAtIndex` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 40852, rva 0x765d60).
-/// `bool TryGetField38ManagerEntryAtIndex(longlong param_1, undefined8 * param_2, undefined8 param_3, undefined8 param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn try_get_field38_manager_entry_at_index(param_1: i64, param_2: *mut u64, param_3: u64, param_4: u64) -> u8 { unsafe { function!(40852, (i64, *mut u64, u64, u64) -> u8)(param_1, param_2, param_3, param_4) } }
-/// `TryGetFields30To40IfField3CIsOne` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 83821, rva 0xd482e0).
-/// `longlong TryGetFields30To40IfField3CIsOne(longlong param_1, ulonglong * param_2, undefined4 * param_3, undefined1 * param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn try_get_fields30_to40_if_field3_c_is_one(param_1: i64, param_2: *mut u64, param_3: *mut u32, param_4: *mut u8) -> i64 { unsafe { function!(83821, (i64, *mut u64, *mut u32, *mut u8) -> i64)(param_1, param_2, param_3, param_4) } }
-/// `TryGetFixedStringForKey` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 32572, rva 0x53f9d0).
-/// `undefined8 TryGetFixedStringForKey(longlong param_1, longlong * param_2, longlong * param_3, undefined8 param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn try_get_fixed_string_for_key(param_1: i64, param_2: *mut i64, param_3: *mut i64, param_4: u64) -> u64 { unsafe { function!(32572, (i64, *mut i64, *mut i64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
-/// `TryGetMappedValueUnderSharedLock` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 451856, rva 0x141b6c0).
-/// `undefined2 * TryGetMappedValueUnderSharedLock(longlong param_1, undefined2 * param_2, undefined8 param_3)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn try_get_mapped_value_under_shared_lock(param_1: i64, param_2: *mut u16, param_3: u64) -> *mut u16 { unsafe { function!(451856, (i64, *mut u16, u64) -> *mut u16)(param_1, param_2, param_3) } }
-/// `TryGetOpenHashMapValue` (decompiler signature, tier untiered; ledger decompiler evidence, name high; id 58212, rva 0xac5050).
-/// `undefined8 TryGetOpenHashMapValue(longlong * param_1, longlong param_2, undefined8 * param_3)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn try_get_open_hash_map_value(param_1: *mut i64, param_2: i64, param_3: *mut u64) -> u64 { unsafe { function!(58212, (*mut i64, i64, *mut u64) -> u64)(param_1, param_2, param_3) } }
-/// `TryGetPairKeyHashMap0x18Value` (decompiler signature, tier untiered; ledger decompiler evidence, name high; id 66370, rva 0xc6bdb0).
-/// `undefined8 TryGetPairKeyHashMap0x18Value(longlong * param_1, undefined4 * param_2, undefined4 * param_3)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn try_get_pair_key_hash_map0x18_value(param_1: *mut i64, param_2: *mut u32, param_3: *mut u32) -> u64 { unsafe { function!(66370, (*mut i64, *mut u32, *mut u32) -> u64)(param_1, param_2, param_3) } }
-/// `TryGetPairKeyHashMap0x18Value_2` (decompiler signature, tier untiered; ledger decompiler evidence, name high; id 66459, rva 0xc71030).
-/// `undefined8 TryGetPairKeyHashMap0x18Value_2(longlong * param_1, undefined4 * param_2, undefined4 * param_3)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn try_get_pair_key_hash_map0x18_value_2(param_1: *mut i64, param_2: *mut u32, param_3: *mut u32) -> u64 { unsafe { function!(66459, (*mut i64, *mut u32, *mut u32) -> u64)(param_1, param_2, param_3) } }
-/// `TryGetPointerHashMap16Value` (decompiler signature, tier untiered; ledger decompiler evidence, name high; id 66602, rva 0xc78150).
-/// `undefined8 TryGetPointerHashMap16Value(longlong * param_1, ulonglong param_2, undefined4 * param_3)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn try_get_pointer_hash_map16_value(param_1: *mut i64, param_2: u64, param_3: *mut u32) -> u64 { unsafe { function!(66602, (*mut i64, u64, *mut u32) -> u64)(param_1, param_2, param_3) } }
-/// `TryGetPointerHashMapValue` (decompiler signature, tier untiered; ledger decompiler evidence, name high; id 58211, rva 0xac5000).
-/// `undefined8 TryGetPointerHashMapValue(longlong * param_1, ulonglong param_2, undefined8 * param_3)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn try_get_pointer_hash_map_value(param_1: *mut i64, param_2: u64, param_3: *mut u64) -> u64 { unsafe { function!(58211, (*mut i64, u64, *mut u64) -> u64)(param_1, param_2, param_3) } }
-/// `TryGetRefPtrFromGlobal369702HashMap` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 24802, rva 0x3c9310).
-/// `undefined8 TryGetRefPtrFromGlobal369702HashMap(ulonglong param_1, longlong * param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn try_get_ref_ptr_from_global369702_hash_map(param_1: u64, param_2: *mut i64) -> u64 { unsafe { function!(24802, (u64, *mut i64) -> u64)(param_1, param_2) } }
-/// `TryGetTriangleHeightNearPoint` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 90422, rva 0x11bcfb0).
-/// `bool TryGetTriangleHeightNearPoint(undefined8 param_1, undefined8 * * param_2, undefined8 * * param_3, undefined8 param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn try_get_triangle_height_near_point(param_1: u64, param_2: *mut *mut u64, param_3: *mut *mut u64, param_4: u64) -> u8 { unsafe { function!(90422, (u64, *mut *mut u64, *mut *mut u64, u64) -> u8)(param_1, param_2, param_3, param_4) } }
-/// `TryGetU32ArraySetHolder` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 53760, rva 0x9cb430).
-/// `undefined1 TryGetU32ArraySetHolder(longlong param_1, uint * param_2, undefined8 * param_3)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn try_get_u32_array_set_holder(param_1: i64, param_2: *mut u32, param_3: *mut u64) -> u8 { unsafe { function!(53760, (i64, *mut u32, *mut u64) -> u8)(param_1, param_2, param_3) } }
-/// `TryGetU32NestedMapRef` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 53482, rva 0x9b7860).
-/// `undefined1 TryGetU32NestedMapRef(longlong param_1, uint * param_2, undefined8 * param_3)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn try_get_u32_nested_map_ref(param_1: i64, param_2: *mut u32, param_3: *mut u64) -> u8 { unsafe { function!(53482, (i64, *mut u32, *mut u64) -> u8)(param_1, param_2, param_3) } }
-/// `TryGetU32NestedMapRef_2` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 53483, rva 0x9b7930).
-/// `undefined1 TryGetU32NestedMapRef_2(longlong param_1, uint * param_2, undefined8 * param_3)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn try_get_u32_nested_map_ref_2(param_1: i64, param_2: *mut u32, param_3: *mut u64) -> u8 { unsafe { function!(53483, (i64, *mut u32, *mut u64) -> u8)(param_1, param_2, param_3) } }
-/// `TryGetU32NestedMapRef_3` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 53481, rva 0x9b7790).
-/// `undefined1 TryGetU32NestedMapRef_3(longlong param_1, uint * param_2, undefined8 * param_3)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn try_get_u32_nested_map_ref_3(param_1: i64, param_2: *mut u32, param_3: *mut u64) -> u8 { unsafe { function!(53481, (i64, *mut u32, *mut u64) -> u8)(param_1, param_2, param_3) } }
-/// `TryGetU32RefAndTwoFixedStrings` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 53478, rva 0x9b7520).
-/// `undefined8 TryGetU32RefAndTwoFixedStrings(longlong param_1, uint * param_2, undefined8 * param_3)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn try_get_u32_ref_and_two_fixed_strings(param_1: i64, param_2: *mut u32, param_3: *mut u64) -> u64 { unsafe { function!(53478, (i64, *mut u32, *mut u64) -> u64)(param_1, param_2, param_3) } }
-/// `TryGetU32RefArrayHolder` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 53762, rva 0x9cb5e0).
-/// `undefined1 TryGetU32RefArrayHolder(longlong param_1, uint * param_2, undefined8 * param_3)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn try_get_u32_ref_array_holder(param_1: i64, param_2: *mut u32, param_3: *mut u64) -> u8 { unsafe { function!(53762, (i64, *mut u32, *mut u64) -> u8)(param_1, param_2, param_3) } }
-/// `TryGetU32StringPairRef` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 53479, rva 0x9b7600).
-/// `undefined1 TryGetU32StringPairRef(longlong param_1, uint * param_2, undefined8 * param_3)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn try_get_u32_string_pair_ref(param_1: i64, param_2: *mut u32, param_3: *mut u64) -> u8 { unsafe { function!(53479, (i64, *mut u32, *mut u64) -> u8)(param_1, param_2, param_3) } }
-/// `TryGetU64DualArrayHolder` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 54410, rva 0x9f1430).
-/// `undefined1 TryGetU64DualArrayHolder(longlong param_1, ulonglong * param_2, undefined8 * param_3)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn try_get_u64_dual_array_holder(param_1: i64, param_2: *mut u64, param_3: *mut u64) -> u8 { unsafe { function!(54410, (i64, *mut u64, *mut u64) -> u8)(param_1, param_2, param_3) } }
-/// `TryGetValueByKeyUnderReadLock` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 69939, rva 0xed2250).
-/// `undefined8 TryGetValueByKeyUnderReadLock(longlong param_1, uint param_2, undefined8 * param_3)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn try_get_value_by_key_under_read_lock(param_1: i64, param_2: u32, param_3: *mut u64) -> u64 { unsafe { function!(69939, (i64, u32, *mut u64) -> u64)(param_1, param_2, param_3) } }
 /// `TryGetValueByPairKey` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 67428, rva 0xcbf1b0).
 /// `undefined8 TryGetValueByPairKey(longlong * param_1, ulonglong * param_2, undefined4 * param_3)`
 ///
@@ -2460,13 +2313,6 @@ pub unsafe fn update_grid_center_from_player(param_1: i64, param_2: u64, param_3
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn update_grid_center_from_position(param_1: i64, param_2: *mut c_void, param_3: u8, param_4: *mut c_void) -> u64 { unsafe { function!(13288, (i64, *mut c_void, u8, *mut c_void) -> u64)(param_1, param_2, param_3, param_4) } }
-/// `UpdateHeadTrackTargetFromSlots` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 39770, rva 0x71ea00).
-/// `undefined UpdateHeadTrackTargetFromSlots(longlong param_1)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn update_head_track_target_from_slots(param_1: i64) -> u64 { unsafe { function!(39770, (i64) -> u64)(param_1) } }
 /// `UpdateHeadTrackTargetOffset` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 39474, rva 0x6fe930).
 /// `undefined4 * UpdateHeadTrackTargetOffset(longlong param_1, longlong * param_2, longlong param_3, float * param_4, char param_5)`
 ///
@@ -2474,13 +2320,6 @@ pub unsafe fn update_head_track_target_from_slots(param_1: i64) -> u64 { unsafe 
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn update_head_track_target_offset(param_1: i64, param_2: *mut i64, param_3: i64, param_4: *mut f32, param_5: c_char) -> *mut u32 { unsafe { function!(39474, (i64, *mut i64, i64, *mut f32, c_char) -> *mut u32)(param_1, param_2, param_3, param_4, param_5) } }
-/// `UpdateHeadTrackingIfInRange` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 37363, rva 0x67d930).
-/// `undefined UpdateHeadTrackingIfInRange(longlong * param_1)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn update_head_tracking_if_in_range(param_1: *mut i64) -> u64 { unsafe { function!(37363, (*mut i64) -> u64)(param_1) } }
 /// `UpdateHighlightSpeechCategories` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 35127, rva 0x5e8b80).
 /// `DWORD UpdateHighlightSpeechCategories(void)`
 ///

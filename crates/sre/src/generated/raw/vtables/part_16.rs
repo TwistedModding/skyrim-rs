@@ -5912,7 +5912,7 @@ pub struct PlayerCharacter_vtable {
     pub slot_288: *const c_void,
     /// `PlayerCharacter::vfunc_289` at 0x75d450 (rtti, high); signature (low): `undefined vfunc_289(PlayerCharacter * this, longlong * param_1, ulonglong param_2, float * param_3)`
     pub slot_289: *const c_void,
-    /// `Actor::UpdateHeadTracking` at 0x6b3f20 (semantic, high); signature (untiered): `undefined UpdateHeadTracking(Actor * this, float param_1, undefined8 param_2, Actor * param_3)`
+    /// `Actor::UpdateHeadTracking` at 0x6b3f20 (runtime, high); signature (untiered): `undefined UpdateHeadTracking(Actor * this, float param_1, undefined8 param_2, Actor * param_3)`
     pub slot_290: *const c_void,
     /// `Actor::vfunc_291` at 0x6b4780 (rtti, medium); signature (low): `undefined vfunc_291(Actor * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_291: *const c_void,
@@ -6162,7 +6162,7 @@ pub struct PlayerCharacter_vtable_A0 {
     pub slot_5: *const c_void,
     /// `Actor::MagicTarget_vfunc_6` at 0x6d8570 (rtti, medium); signature (high): `undefined8 MagicTarget_vfunc_6(Actor * this)`
     pub slot_6: *const c_void,
-    /// `MagicTarget::GetActiveEffectList` at 0x6d85b0 (runtime, high); signature (untiered): `undefined8 GetActiveEffectList(MagicTarget * this)`
+    /// `Actor::GetActiveEffectList` at 0x6d85b0 (runtime, high); signature (untiered): `undefined8 GetActiveEffectList(Actor * this)`
     pub slot_7: *const c_void,
     /// `PlayerCharacter::MagicTarget_vfunc_8` at 0x761690 (rtti, high); signature (low): `undefined MagicTarget_vfunc_8(PlayerCharacter * this, longlong param_1, undefined8 param_2, TypeDescriptor * param_3)`
     pub slot_8: *const c_void,
@@ -8212,7 +8212,7 @@ pub type RaceSexCamera_vtable_Update = unsafe extern "C" fn(this: *mut crate::Ra
 pub struct RaceSexMenu_vtable {
     /// `RaceSexMenu::vdtor` at 0x972f20 (slot_propagation, medium); signature (low): `RaceSexMenu * vdtor(RaceSexMenu * this, uint param_1)`
     pub slot_0: *const c_void,
-    /// `RaceSexMenu::vfunc_1` at 0x968c50 (rtti, high); signature (low): `undefined vfunc_1(RaceSexMenu * this, longlong * param_1)`
+    /// `RaceSexMenu::vfunc_1` at 0x968c50 (rtti, high); signature (low): `undefined vfunc_1(RaceSexMenu * this, longlong * param_1)`; `CanProcess`: see functions (high); semantic signature: `bool (MenuEventHandler*, InputEvent*)`
     pub slot_1: *const c_void,
     /// `RaceSexMenu::vfunc_2` at 0x967d40 (rtti, high); signature (high): `undefined vfunc_2(RaceSexMenu * this)`
     pub slot_2: *const c_void,
@@ -8220,25 +8220,57 @@ pub struct RaceSexMenu_vtable {
     pub slot_3: *const c_void,
     /// `RaceSexMenu::ProcessMessage` at 0x968010 (semantic, high); signature (untiered): `longlong * ProcessMessage(RaceSexMenu * this, longlong param_1, undefined8 param_2, char * param_3)`
     pub slot_4: *const c_void,
-    /// `RaceSexMenu::vfunc_5` at 0x968830 (rtti, high); signature (low): `undefined vfunc_5(RaceSexMenu * this, undefined4 param_2, uint param_3)`
+    /// `RaceSexMenu::vfunc_5` at 0x968830 (rtti, high); signature (low): `undefined vfunc_5(RaceSexMenu * this, undefined4 param_2, uint param_3)`; `ProcessThumbstick`: see functions (high); semantic signature: `bool (MenuEventHandler*, ThumbstickEvent*)`
     pub slot_5: *const c_void,
-    /// `IMenu::PostDisplay` at 0x57b470 (semantic, high); signature (untiered): `undefined PostDisplay(IMenu * this)`
+    /// `IMenu::PostDisplay` at 0x57b470 (semantic, high); signature (untiered): `undefined PostDisplay(IMenu * this)`; `ProcessMouseMove`: see functions (high); semantic signature: `bool (MenuEventHandler*, MouseMoveEvent*)`
     pub slot_6: *const c_void,
-    /// `IMenu::PreDisplay` at 0x116eee0 (semantic, high); signature (untiered): `undefined PreDisplay(void)`
+    /// `IMenu::PreDisplay` at 0x116eee0 (semantic, high); signature (untiered): `undefined PreDisplay(void)`; `ProcessButton`: see functions (high); semantic signature: `bool (MenuEventHandler*, ButtonEvent*)`
     pub slot_7: *const c_void,
     /// `IMenu::RefreshPlatform` at 0x116eef0 (semantic, high); signature (untiered): `undefined RefreshPlatform(IMenu * this, undefined8 param_1, longlong param_2, undefined * param_3)`
     pub slot_8: *const c_void,
 }
 impl RaceSexMenu_vtable {
     pub const ID: u64 = 215885;
+    pub const SLOT_CanProcess: usize = 1;
+    /// Slot 1 as `RaceSexMenu_vtable_CanProcess`, `None` when the slot is null.
+    #[must_use]
+    pub fn CanProcess(&self) -> Option<RaceSexMenu_vtable_CanProcess> {
+        unsafe { core::mem::transmute::<*const c_void, Option<RaceSexMenu_vtable_CanProcess>>(self.slot_1) }
+    }
+    pub const SLOT_ProcessThumbstick: usize = 5;
+    /// Slot 5 as `RaceSexMenu_vtable_ProcessThumbstick`, `None` when the slot is null.
+    #[must_use]
+    pub fn ProcessThumbstick(&self) -> Option<RaceSexMenu_vtable_ProcessThumbstick> {
+        unsafe { core::mem::transmute::<*const c_void, Option<RaceSexMenu_vtable_ProcessThumbstick>>(self.slot_5) }
+    }
+    pub const SLOT_ProcessMouseMove: usize = 6;
+    /// Slot 6 as `RaceSexMenu_vtable_ProcessMouseMove`, `None` when the slot is null.
+    #[must_use]
+    pub fn ProcessMouseMove(&self) -> Option<RaceSexMenu_vtable_ProcessMouseMove> {
+        unsafe { core::mem::transmute::<*const c_void, Option<RaceSexMenu_vtable_ProcessMouseMove>>(self.slot_6) }
+    }
+    pub const SLOT_ProcessButton: usize = 7;
+    /// Slot 7 as `RaceSexMenu_vtable_ProcessButton`, `None` when the slot is null.
+    #[must_use]
+    pub fn ProcessButton(&self) -> Option<RaceSexMenu_vtable_ProcessButton> {
+        unsafe { core::mem::transmute::<*const c_void, Option<RaceSexMenu_vtable_ProcessButton>>(self.slot_7) }
+    }
 }
+/// `RaceSexMenu::CanProcess`, slot 1: see functions (high).
+pub type RaceSexMenu_vtable_CanProcess = unsafe extern "C" fn(a0: *mut crate::MenuEventHandler, a1: *mut crate::InputEvent) -> bool;
+/// `RaceSexMenu::ProcessThumbstick`, slot 5: see functions (high).
+pub type RaceSexMenu_vtable_ProcessThumbstick = unsafe extern "C" fn(a0: *mut crate::MenuEventHandler, a1: *mut crate::ThumbstickEvent) -> bool;
+/// `RaceSexMenu::ProcessMouseMove`, slot 6: see functions (high).
+pub type RaceSexMenu_vtable_ProcessMouseMove = unsafe extern "C" fn(a0: *mut crate::MenuEventHandler, a1: *mut crate::MouseMoveEvent) -> bool;
+/// `RaceSexMenu::ProcessButton`, slot 7: see functions (high).
+pub type RaceSexMenu_vtable_ProcessButton = unsafe extern "C" fn(a0: *mut crate::MenuEventHandler, a1: *mut crate::ButtonEvent) -> bool;
 
 /// `RaceSexMenu::vftable_30` at 0x197ee00, id 215887 (rtti, high); 8 slots.
 #[repr(C)]
 pub struct RaceSexMenu_vtable_30 {
     /// `RaceSexMenu::MenuEventHandler_vdtor` at 0x972e08 (slot_propagation, medium); signature (high): `undefined MenuEventHandler_vdtor(RaceSexMenu * this)`
     pub slot_0: *const c_void,
-    /// `RaceSexMenu::MenuEventHandler_vfunc_1` at 0x96b0d0 (rtti, high); signature (low): `undefined8 MenuEventHandler_vfunc_1(RaceSexMenu * this, longlong * param_1)`
+    /// `RaceSexMenu::CanProcess` at 0x96b0d0 (semantic, high); signature (untiered): `undefined8 CanProcess(RaceSexMenu * this, longlong * param_1)`
     pub slot_1: *const c_void,
     /// `MenuEventHandler::Unk2` at 0x5825e0 (semantic, low); signature (untiered): `undefined1 Unk2(void)`
     pub slot_2: *const c_void,
@@ -8246,11 +8278,11 @@ pub struct RaceSexMenu_vtable_30 {
     pub slot_3: *const c_void,
     /// `MenuEventHandler::ProcessKinectEvent` at 0x5825d0 (semantic, medium); signature (untiered): `undefined1 ProcessKinectEvent(void)`
     pub slot_4: *const c_void,
-    /// `RaceSexMenu::MenuEventHandler_vfunc_5` at 0x96b140 (rtti, high); signature (low): `undefined8 MenuEventHandler_vfunc_5(RaceSexMenu * this, longlong param_1)`
+    /// `RaceSexMenu::ProcessThumbstick` at 0x96b140 (semantic, high); signature (untiered): `undefined8 ProcessThumbstick(RaceSexMenu * this, longlong param_1)`
     pub slot_5: *const c_void,
-    /// `RaceSexMenu::MenuEventHandler_vfunc_6` at 0x96b4e0 (rtti, high); signature (low): `undefined8 MenuEventHandler_vfunc_6(RaceSexMenu * this, longlong param_1)`
+    /// `RaceSexMenu::ProcessMouseMove` at 0x96b4e0 (semantic, high); signature (untiered): `undefined8 ProcessMouseMove(RaceSexMenu * this, longlong param_1)`
     pub slot_6: *const c_void,
-    /// `RaceSexMenu::MenuEventHandler_vfunc_7` at 0x96b480 (rtti, high); signature (low): `ulonglong MenuEventHandler_vfunc_7(RaceSexMenu * this, longlong param_1)`
+    /// `RaceSexMenu::ProcessButton` at 0x96b480 (semantic, high); signature (untiered): `ulonglong ProcessButton(RaceSexMenu * this, longlong param_1)`
     pub slot_7: *const c_void,
 }
 impl RaceSexMenu_vtable_30 {

@@ -2425,30 +2425,6 @@ impl crate::bhkWindListener {
     pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(78188, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
-impl crate::bhkWorld {
-    /// `bhkWorld::ctor` (decompiler signature, tier low; ledger layout_inference evidence, name high; id 77830, rva 0x1048b60).
-    /// `bhkWorld * ctor(bhkWorld * this, longlong param_1)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn ctor(&self, param_1: i64) -> *mut Self { unsafe { function!(77830, (*const Self, i64) -> *mut Self)(core::ptr::from_ref(self), param_1) } }
-    /// `bhkWorld::dtor` (decompiler signature, tier low; ledger layout_inference evidence, name high; id 77831, rva 0x1048e80).
-    /// `undefined dtor(bhkWorld * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn dtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(77831, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
-    /// `bhkWorld::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 77969, rva 0x1051590).
-    /// `bhkWorld * vdtor(bhkWorld * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(77969, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
-}
-
 impl crate::bhkWorld__bhkConstraintProjector {
     /// `bhkWorld::bhkConstraintProjector::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 77968, rva 0x1051510).
     /// `bhkConstraintProjector * vdtor(bhkConstraintProjector * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`

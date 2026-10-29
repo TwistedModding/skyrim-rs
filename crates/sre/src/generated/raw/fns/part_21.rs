@@ -3,6 +3,134 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `g_AutoRegisterCreator_KinectStateChangeData_BSTCreateFactoryManager_BSFixedString_IUIMessageData_16__init` at 0xc11c0 (crt_init, medium); signature (high): `void g_AutoRegisterCreator_KinectStateChangeData_BSTCreateFactoryManager_BSFixedString_IUIMessageData_16__init(void)`
+pub const g_AutoRegisterCreator_KinectStateChangeData_BSTCreateFactoryManager_BSFixedString_IUIMessageData_16__init: u64 = 7474;
+/// `g_AutoRegisterCreator_KinectUserEventData_BSTCreateFactoryManager_BSFixedString_IUIMessageData_16__atexit` at 0x17abba0 (crt_init, medium); signature (high): `void g_AutoRegisterCreator_KinectUserEventData_BSTCreateFactoryManager_BSFixedString_IUIMessageData_16__atexit(void)`
+pub const g_AutoRegisterCreator_KinectUserEventData_BSTCreateFactoryManager_BSFixedString_IUIMessageData_16__atexit: u64 = 172907;
+/// `g_AutoRegisterCreator_KinectUserEventData_BSTCreateFactoryManager_BSFixedString_IUIMessageData_16__init` at 0xc1250 (crt_init, medium); signature (high): `void g_AutoRegisterCreator_KinectUserEventData_BSTCreateFactoryManager_BSFixedString_IUIMessageData_16__init(void)`
+pub const g_AutoRegisterCreator_KinectUserEventData_BSTCreateFactoryManager_BSFixedString_IUIMessageData_16__init: u64 = 7475;
+/// `g_AutoRegisterCreator_LoadingMenuData_BSTCreateFactoryManager_BSFixedString_IUIMessageData_16__atexit` at 0x17abbb0 (crt_init, medium); signature (high): `void g_AutoRegisterCreator_LoadingMenuData_BSTCreateFactoryManager_BSFixedString_IUIMessageData_16__atexit(void)`
+pub const g_AutoRegisterCreator_LoadingMenuData_BSTCreateFactoryManager_BSFixedString_IUIMessageData_16__atexit: u64 = 172908;
+/// `g_AutoRegisterCreator_LoadingMenuData_BSTCreateFactoryManager_BSFixedString_IUIMessageData_16__init` at 0xc12e0 (crt_init, medium); signature (high): `void g_AutoRegisterCreator_LoadingMenuData_BSTCreateFactoryManager_BSFixedString_IUIMessageData_16__init(void)`
+pub const g_AutoRegisterCreator_LoadingMenuData_BSTCreateFactoryManager_BSFixedString_IUIMessageData_16__init: u64 = 7476;
+/// `g_AutoRegisterCreator_MessageBoxData_BSTCreateFactoryManager_BSFixedString_IUIMessageData_16__atexit` at 0x17abbc0 (crt_init, medium); signature (high): `void g_AutoRegisterCreator_MessageBoxData_BSTCreateFactoryManager_BSFixedString_IUIMessageData_16__atexit(void)`
+pub const g_AutoRegisterCreator_MessageBoxData_BSTCreateFactoryManager_BSFixedString_IUIMessageData_16__atexit: u64 = 172909;
+/// `g_AutoRegisterCreator_MessageBoxData_BSTCreateFactoryManager_BSFixedString_IUIMessageData_16__init` at 0xc1370 (crt_init, medium); signature (high): `void g_AutoRegisterCreator_MessageBoxData_BSTCreateFactoryManager_BSFixedString_IUIMessageData_16__init(void)`
+pub const g_AutoRegisterCreator_MessageBoxData_BSTCreateFactoryManager_BSFixedString_IUIMessageData_16__init: u64 = 7477;
+/// `g_AutoRegisterCreator_MountInteraction_BSTCreateFactoryManager_RefrInteraction_INTERACT_METHOD_RefrInteraction_1__init` at 0xa46f0 (crt_init, medium); signature (high): `void g_AutoRegisterCreator_MountInteraction_BSTCreateFactoryManager_RefrInteraction_INTERACT_METHOD_RefrInteraction_1__init(void)`
+pub const g_AutoRegisterCreator_MountInteraction_BSTCreateFactoryManager_RefrInteraction_INTERACT_METHOD_RefrInteraction_1__init: u64 = 6200;
+/// `g_AutoRegisterCreator_MountInteraction_BSTCreateFactoryManager_RefrInteraction_INTERACT_METHOD_RefrInteraction_1__init_sub0` at 0x73db30 (callgraph, medium); signature (untiered): `undefined8 g_AutoRegisterCreator_MountInteraction_BSTCreateFactoryManager_RefrInteraction_INTERACT_METHOD_RefrInteraction_1__init_sub0(longlong param_1, uint * param_2, undefined8 * param_3)`
+pub const g_AutoRegisterCreator_MountInteraction_BSTCreateFactoryManager_RefrInteraction_INTERACT_METHOD_R_bcb3e068e953: u64 = 40360;
+/// `g_AutoRegisterCreator_PathingDoor_BSTSmartPointerPathingFactoryManager_BSPathingDoor_64__init` at 0x88820 (crt_init, medium); signature (high): `void g_AutoRegisterCreator_PathingDoor_BSTSmartPointerPathingFactoryManager_BSPathingDoor_64__init(void)`
+pub const g_AutoRegisterCreator_PathingDoor_BSTSmartPointerPathingFactoryManager_BSPathingDoor_64__init: u64 = 4972;
+/// `g_AutoRegisterCreator_PathingDoor_BSTSmartPointerPathingFactoryManager_BSPathingDoor_64__init_sub0` at 0x4e1da0 (callgraph, medium); signature (untiered): `undefined8 g_AutoRegisterCreator_PathingDoor_BSTSmartPointerPathingFactoryManager_BSPathingDoor_64__init_sub0(longlong param_1, uint * param_2, undefined8 * param_3)`
+pub const g_AutoRegisterCreator_PathingDoor_BSTSmartPointerPathingFactoryManager_BSPathingDoor_64__init_sub0: u64 = 30829;
+/// `g_AutoRegisterCreator_PathingLockData_BSTSmartPointerPathingFactoryManager_BSPathingLockData_64__init` at 0x88930 (crt_init, medium); signature (high): `void g_AutoRegisterCreator_PathingLockData_BSTSmartPointerPathingFactoryManager_BSPathingLockData_64__init(void)`
+pub const g_AutoRegisterCreator_PathingLockData_BSTSmartPointerPathingFactoryManager_BSPathingLockData_64__init: u64 = 4973;
+/// `g_AutoRegisterCreator_RefHandleUIData_BSTCreateFactoryManager_BSFixedString_IUIMessageData_16__atexit` at 0x17abbd0 (crt_init, medium); signature (high): `void g_AutoRegisterCreator_RefHandleUIData_BSTCreateFactoryManager_BSFixedString_IUIMessageData_16__atexit(void)`
+pub const g_AutoRegisterCreator_RefHandleUIData_BSTCreateFactoryManager_BSFixedString_IUIMessageData_16__atexit: u64 = 172910;
+/// `g_AutoRegisterCreator_RefHandleUIData_BSTCreateFactoryManager_BSFixedString_IUIMessageData_16__init` at 0xc1400 (crt_init, medium); signature (high): `void g_AutoRegisterCreator_RefHandleUIData_BSTCreateFactoryManager_BSFixedString_IUIMessageData_16__init(void)`
+pub const g_AutoRegisterCreator_RefHandleUIData_BSTCreateFactoryManager_BSFixedString_IUIMessageData_16__init: u64 = 7478;
+/// `g_AutoRegisterCreator_TESFormUIData_BSTCreateFactoryManager_BSFixedString_IUIMessageData_16__atexit` at 0x17abbe0 (crt_init, medium); signature (high): `void g_AutoRegisterCreator_TESFormUIData_BSTCreateFactoryManager_BSFixedString_IUIMessageData_16__atexit(void)`
+pub const g_AutoRegisterCreator_TESFormUIData_BSTCreateFactoryManager_BSFixedString_IUIMessageData_16__atexit: u64 = 172911;
+/// `g_AutoRegisterCreator_TESFormUIData_BSTCreateFactoryManager_BSFixedString_IUIMessageData_16__init` at 0xc1490 (crt_init, medium); signature (high): `void g_AutoRegisterCreator_TESFormUIData_BSTCreateFactoryManager_BSFixedString_IUIMessageData_16__init(void)`
+pub const g_AutoRegisterCreator_TESFormUIData_BSTCreateFactoryManager_BSFixedString_IUIMessageData_16__init: u64 = 7479;
+/// `g_AutoRegisterFactory__anon_FA78E63F_BShkbAnimationGraphLoadScrapper_BSTFactoryManager_BSFixedString_BSAnimationGraphLoadScrapper_2_BSTSingletonImplicit__init` at 0xde320 (crt_init, medium); signature (high): `void g_AutoRegisterFactory__anon_FA78E63F_BShkbAnimationGraphLoadScrapper_BSTFactoryManager_BSFixedString_BSAnimationGraphLoadScrapper_2_BSTSingletonImplicit__init(void)`
+pub const g_AutoRegisterFactory__anon_FA78E63F_BShkbAnimationGraphLoadScrapper_BSTFactoryManager_BSFixedSt_ce01d2b5d0d1: u64 = 8864;
+/// `g_AutoRegisterFactory__anon_FA78E63F_BShkbAnimationGraphLoadScrapper_BSTFactoryManager_BSFixedString_BSAnimationGraphLoadScrapper_2_BSTSingletonImplicit__init_sub0` at 0xbd5ab0 (callgraph, medium); signature (untiered): `undefined8 g_AutoRegisterFactory__anon_FA78E63F_BShkbAnimationGraphLoadScrapper_BSTFactoryManager_BSFixedString_BSAnimationGraphLoadScrapper_2_BSTSingletonImplicit__init_sub0(longlong param_1, ulonglong * param_2, ulonglong * param_3)`
+pub const g_AutoRegisterFactory__anon_FA78E63F_BShkbAnimationGraphLoadScrapper_BSTFactoryManager_BSFixedSt_9336e6c73ebc: u64 = 63644;
+/// `g_AutoRegisterMovementAgentCreator_MovementAgentActorAvoider__init` at 0xf34f0 (crt_init, medium); signature (high): `void g_AutoRegisterMovementAgentCreator_MovementAgentActorAvoider__init(void)`
+pub const g_AutoRegisterMovementAgentCreator_MovementAgentActorAvoider__init: u64 = 10031;
+/// `g_AutoRegisterMovementAgentCreator_MovementAgentActorState__init` at 0xf0f40 (crt_init, medium); signature (high): `void g_AutoRegisterMovementAgentCreator_MovementAgentActorState__init(void)`
+pub const g_AutoRegisterMovementAgentCreator_MovementAgentActorState__init: u64 = 9952;
+/// `g_AutoRegisterMovementAgentCreator_MovementAgentPathFollowerFlight__init` at 0xf44d0 (crt_init, medium); signature (high): `void g_AutoRegisterMovementAgentCreator_MovementAgentPathFollowerFlight__init(void)`
+pub const g_AutoRegisterMovementAgentCreator_MovementAgentPathFollowerFlight__init: u64 = 10062;
+/// `g_AutoRegisterMovementAgentCreator_MovementAgentPathFollowerStandard__init` at 0xf11d0 (crt_init, medium); signature (high): `void g_AutoRegisterMovementAgentCreator_MovementAgentPathFollowerStandard__init(void)`
+pub const g_AutoRegisterMovementAgentCreator_MovementAgentPathFollowerStandard__init: u64 = 9956;
+/// `g_AutoRegisterMovementAgentCreator_MovementAgentPathFollowerVirtual__init` at 0xf45e0 (crt_init, medium); signature (high): `void g_AutoRegisterMovementAgentCreator_MovementAgentPathFollowerVirtual__init(void)`
+pub const g_AutoRegisterMovementAgentCreator_MovementAgentPathFollowerVirtual__init: u64 = 10063;
+/// `g_AutoRegisterMovementAgentCreator_MovementHandlerAgentAngleController__init` at 0xf46f0 (crt_init, medium); signature (high): `void g_AutoRegisterMovementAgentCreator_MovementHandlerAgentAngleController__init(void)`
+pub const g_AutoRegisterMovementAgentCreator_MovementHandlerAgentAngleController__init: u64 = 10064;
+/// `g_AutoRegisterMovementAgentCreator_MovementHandlerAgentAngleGain__init` at 0xf4800 (crt_init, medium); signature (high): `void g_AutoRegisterMovementAgentCreator_MovementHandlerAgentAngleGain__init(void)`
+pub const g_AutoRegisterMovementAgentCreator_MovementHandlerAgentAngleGain__init: u64 = 10065;
+/// `g_AutoRegisterMovementAgentCreator_MovementHandlerAgentAnglePassThrough__init` at 0xf4a20 (crt_init, medium); signature (high): `void g_AutoRegisterMovementAgentCreator_MovementHandlerAgentAnglePassThrough__init(void)`
+pub const g_AutoRegisterMovementAgentCreator_MovementHandlerAgentAnglePassThrough__init: u64 = 10067;
+/// `g_AutoRegisterMovementAgentCreator_MovementHandlerAgentDirectControl__init` at 0xa83b0 (crt_init, medium); signature (high): `void g_AutoRegisterMovementAgentCreator_MovementHandlerAgentDirectControl__init(void)`
+pub const g_AutoRegisterMovementAgentCreator_MovementHandlerAgentDirectControl__init: u64 = 6378;
+/// `g_AutoRegisterMovementAgentCreator_MovementHandlerAgentDirectionPassThrough__init` at 0xf4b30 (crt_init, medium); signature (high): `void g_AutoRegisterMovementAgentCreator_MovementHandlerAgentDirectionPassThrough__init(void)`
+pub const g_AutoRegisterMovementAgentCreator_MovementHandlerAgentDirectionPassThrough__init: u64 = 10068;
+/// `g_AutoRegisterMovementAgentCreator_MovementHandlerAgentLargeDeltaIdle__init` at 0xf4dd0 (crt_init, medium); signature (high): `void g_AutoRegisterMovementAgentCreator_MovementHandlerAgentLargeDeltaIdle__init(void)`
+pub const g_AutoRegisterMovementAgentCreator_MovementHandlerAgentLargeDeltaIdle__init: u64 = 10071;
+/// `g_AutoRegisterMovementAgentCreator_MovementHandlerAgentPlayerControlsActionTrigger__init` at 0xa89e0 (crt_init, medium); signature (high): `void g_AutoRegisterMovementAgentCreator_MovementHandlerAgentPlayerControlsActionTrigger__init(void)`
+pub const g_AutoRegisterMovementAgentCreator_MovementHandlerAgentPlayerControlsActionTrigger__init: u64 = 6389;
+/// `g_AutoRegisterMovementAgentCreator_MovementHandlerAgentPlayerControls__init` at 0xa84f0 (crt_init, medium); signature (high): `void g_AutoRegisterMovementAgentCreator_MovementHandlerAgentPlayerControls__init(void)`
+pub const g_AutoRegisterMovementAgentCreator_MovementHandlerAgentPlayerControls__init: u64 = 6380;
+/// `g_AutoRegisterMovementAgentCreator_MovementHandlerAgentSpeedPassThrough__init` at 0xf4910 (crt_init, medium); signature (high): `void g_AutoRegisterMovementAgentCreator_MovementHandlerAgentSpeedPassThrough__init(void)`
+pub const g_AutoRegisterMovementAgentCreator_MovementHandlerAgentSpeedPassThrough__init: u64 = 10066;
+/// `g_AutoRegisterMovementAgentCreator_MovementHandlerAgentSprintActionTrigger__init` at 0xa8af0 (crt_init, medium); signature (high): `void g_AutoRegisterMovementAgentCreator_MovementHandlerAgentSprintActionTrigger__init(void)`
+pub const g_AutoRegisterMovementAgentCreator_MovementHandlerAgentSprintActionTrigger__init: u64 = 6390;
+/// `g_AutoRegisterMovementAgentCreator_MovementHandlerAgentStairsHelper__init` at 0xa8d80 (crt_init, medium); signature (high): `void g_AutoRegisterMovementAgentCreator_MovementHandlerAgentStairsHelper__init(void)`
+pub const g_AutoRegisterMovementAgentCreator_MovementHandlerAgentStairsHelper__init: u64 = 6394;
+/// `g_AutoRegisterMovementAgentCreator_MovementHandlerAgentStrafing__init` at 0xf4c40 (crt_init, medium); signature (high): `void g_AutoRegisterMovementAgentCreator_MovementHandlerAgentStrafing__init(void)`
+pub const g_AutoRegisterMovementAgentCreator_MovementHandlerAgentStrafing__init: u64 = 10069;
+/// `g_AutoRegisterMovementAgentCreator_MovementHandlerAgentTranslationController__init` at 0xf3bb0 (crt_init, medium); signature (high): `void g_AutoRegisterMovementAgentCreator_MovementHandlerAgentTranslationController__init(void)`
+pub const g_AutoRegisterMovementAgentCreator_MovementHandlerAgentTranslationController__init: u64 = 10046;
+/// `g_AutoRegisterMovementAgentCreator_MovementPathManagerAgentAvoidBox__init` at 0xf50f0 (crt_init, medium); signature (high): `void g_AutoRegisterMovementAgentCreator_MovementPathManagerAgentAvoidBox__init(void)`
+pub const g_AutoRegisterMovementAgentCreator_MovementPathManagerAgentAvoidBox__init: u64 = 10075;
+/// `g_AutoRegisterMovementAgentCreator_MovementPathManagerAgentLoadedAreaMonitor__init` at 0xf4390 (crt_init, medium); signature (high): `void g_AutoRegisterMovementAgentCreator_MovementPathManagerAgentLoadedAreaMonitor__init(void)`
+pub const g_AutoRegisterMovementAgentCreator_MovementPathManagerAgentLoadedAreaMonitor__init: u64 = 10060;
+/// `g_AutoRegisterMovementAgentCreator_MovementPathManagerAgentStaticAvoider__init` at 0xf3040 (crt_init, medium); signature (high): `void g_AutoRegisterMovementAgentCreator_MovementPathManagerAgentStaticAvoider__init(void)`
+pub const g_AutoRegisterMovementAgentCreator_MovementPathManagerAgentStaticAvoider__init: u64 = 10022;
+/// `g_AutoRegisterMovementAgentCreator_MovementPlannerAgentDirectControl__init` at 0xa8ff0 (crt_init, medium); signature (high): `void g_AutoRegisterMovementAgentCreator_MovementPlannerAgentDirectControl__init(void)`
+pub const g_AutoRegisterMovementAgentCreator_MovementPlannerAgentDirectControl__init: u64 = 6398;
+/// `g_AutoRegisterMovementAgentCreator_MovementPlannerAgentHorseControls__init` at 0xa9100 (crt_init, medium); signature (high): `void g_AutoRegisterMovementAgentCreator_MovementPlannerAgentHorseControls__init(void)`
+pub const g_AutoRegisterMovementAgentCreator_MovementPlannerAgentHorseControls__init: u64 = 6399;
+/// `g_AutoRegisterMovementAgentCreator_MovementPlannerAgentKeepOffset__init` at 0xa9240 (crt_init, medium); signature (high): `void g_AutoRegisterMovementAgentCreator_MovementPlannerAgentKeepOffset__init(void)`
+pub const g_AutoRegisterMovementAgentCreator_MovementPlannerAgentKeepOffset__init: u64 = 6401;
+/// `g_AutoRegisterMovementAgentCreator_MovementPlannerAgentNavmeshBounds__init` at 0xf4ee0 (crt_init, medium); signature (high): `void g_AutoRegisterMovementAgentCreator_MovementPlannerAgentNavmeshBounds__init(void)`
+pub const g_AutoRegisterMovementAgentCreator_MovementPlannerAgentNavmeshBounds__init: u64 = 10072;
+/// `g_AutoRegisterMovementAgentCreator_MovementPlannerAgentWarp__init` at 0xa9380 (crt_init, medium); signature (high): `void g_AutoRegisterMovementAgentCreator_MovementPlannerAgentWarp__init(void)`
+pub const g_AutoRegisterMovementAgentCreator_MovementPlannerAgentWarp__init: u64 = 6403;
+/// `g_AutoRegisterMovementAgentCreator_MovementStateFollowPath__init` at 0xf5650 (crt_init, medium); signature (high): `void g_AutoRegisterMovementAgentCreator_MovementStateFollowPath__init(void)`
+pub const g_AutoRegisterMovementAgentCreator_MovementStateFollowPath__init: u64 = 10084;
+/// `g_AutoRegisterMovementAgentCreator_MovementStateTweener__init` at 0xf5540 (crt_init, medium); signature (high): `void g_AutoRegisterMovementAgentCreator_MovementStateTweener__init(void)`
+pub const g_AutoRegisterMovementAgentCreator_MovementStateTweener__init: u64 = 10083;
+/// `g_AutoRegisterMovementAgentCreator_MovementTweenerAgentAnimationDriven__init` at 0xa9770 (crt_init, medium); signature (high): `void g_AutoRegisterMovementAgentCreator_MovementTweenerAgentAnimationDriven__init(void)`
+pub const g_AutoRegisterMovementAgentCreator_MovementTweenerAgentAnimationDriven__init: u64 = 6410;
+/// `g_AutoRegisterMovementAgentCreator_MovementTweenerAgentFixedDelta__init` at 0xf3d60 (crt_init, medium); signature (high): `void g_AutoRegisterMovementAgentCreator_MovementTweenerAgentFixedDelta__init(void)`
+pub const g_AutoRegisterMovementAgentCreator_MovementTweenerAgentFixedDelta__init: u64 = 10049;
+/// `g_AutoRegisterMovementAgentCreator_MovementTweenerAgentNodeFollower__init` at 0xa9920 (crt_init, medium); signature (high): `void g_AutoRegisterMovementAgentCreator_MovementTweenerAgentNodeFollower__init(void)`
+pub const g_AutoRegisterMovementAgentCreator_MovementTweenerAgentNodeFollower__init: u64 = 6413;
+/// `g_AutoRegisterMovementArbiterCreator_MovementHandlerArbiter__init` at 0xf3f20 (crt_init, medium); signature (high): `void g_AutoRegisterMovementArbiterCreator_MovementHandlerArbiter__init(void)`
+pub const g_AutoRegisterMovementArbiterCreator_MovementHandlerArbiter__init: u64 = 10052;
+/// `g_AutoRegisterMovementArbiterCreator_MovementPathManagerArbiter__init` at 0xf1870 (crt_init, medium); signature (high): `void g_AutoRegisterMovementArbiterCreator_MovementPathManagerArbiter__init(void)`
+pub const g_AutoRegisterMovementArbiterCreator_MovementPathManagerArbiter__init: u64 = 9970;
+/// `g_AutoRegisterMovementArbiterCreator_MovementPlannerArbiter__init` at 0xf4090 (crt_init, medium); signature (high): `void g_AutoRegisterMovementArbiterCreator_MovementPlannerArbiter__init(void)`
+pub const g_AutoRegisterMovementArbiterCreator_MovementPlannerArbiter__init: u64 = 10055;
+/// `g_AutoRegisterMovementArbiterCreator_MovementPostUpdateArbiter__init` at 0xf2ed0 (crt_init, medium); signature (high): `void g_AutoRegisterMovementArbiterCreator_MovementPostUpdateArbiter__init(void)`
+pub const g_AutoRegisterMovementArbiterCreator_MovementPostUpdateArbiter__init: u64 = 10019;
+/// `g_AutoRegisterMovementArbiterCreator_MovementTweenerArbiter__init` at 0xf53c0 (crt_init, medium); signature (high): `void g_AutoRegisterMovementArbiterCreator_MovementTweenerArbiter__init(void)`
+pub const g_AutoRegisterMovementArbiterCreator_MovementTweenerArbiter__init: u64 = 10081;
+/// `g_AutoRegisterPathBuilderFactory_BSPathingRequest__anon_9196AC74_PathBuilderBSPathingRequest__init` at 0xf2370 (crt_init, medium); signature (high): `void g_AutoRegisterPathBuilderFactory_BSPathingRequest__anon_9196AC74_PathBuilderBSPathingRequest__init(void)`
+pub const g_AutoRegisterPathBuilderFactory_BSPathingRequest__anon_9196AC74_PathBuilderBSPathingRequest__init: u64 = 9994;
+/// `g_AutoRegisterPathBuilderFactory_CombatPathingRequestMultiGoal_CombatPathingRequestBuilder__atexit` at 0x17a2c30 (crt_init, medium); signature (high): `void g_AutoRegisterPathBuilderFactory_CombatPathingRequestMultiGoal_CombatPathingRequestBuilder__atexit(void)`
+pub const g_AutoRegisterPathBuilderFactory_CombatPathingRequestMultiGoal_CombatPathingRequestBuilder__atexit: u64 = 172121;
+/// `g_AutoRegisterPathBuilderFactory_CombatPathingRequestMultiGoal_CombatPathingRequestBuilder__init` at 0xb08c0 (crt_init, medium); signature (high): `void g_AutoRegisterPathBuilderFactory_CombatPathingRequestMultiGoal_CombatPathingRequestBuilder__init(void)`
+pub const g_AutoRegisterPathBuilderFactory_CombatPathingRequestMultiGoal_CombatPathingRequestBuilder__init: u64 = 6661;
+/// `g_AutoRegisterPathBuilderFactory_CombatPathingRequestStandard_CombatPathingRequestBuilder__atexit` at 0x17a2c50 (crt_init, medium); signature (high): `void g_AutoRegisterPathBuilderFactory_CombatPathingRequestStandard_CombatPathingRequestBuilder__atexit(void)`
+pub const g_AutoRegisterPathBuilderFactory_CombatPathingRequestStandard_CombatPathingRequestBuilder__atexit: u64 = 172123;
+/// `g_AutoRegisterPathBuilderFactory_CombatPathingRequestStandard_CombatPathingRequestBuilder__init` at 0xb0990 (crt_init, medium); signature (high): `void g_AutoRegisterPathBuilderFactory_CombatPathingRequestStandard_CombatPathingRequestBuilder__init(void)`
+pub const g_AutoRegisterPathBuilderFactory_CombatPathingRequestStandard_CombatPathingRequestBuilder__init: u64 = 6663;
+/// `g_AutoRegisterPathBuilderFactory_PathingRequestClosePoint__anon_90BDF338_PathBuilderClosePointPath__init` at 0x89f20 (crt_init, medium); signature (high): `void g_AutoRegisterPathBuilderFactory_PathingRequestClosePoint__anon_90BDF338_PathBuilderClosePointPath__init(void)`
+pub const g_AutoRegisterPathBuilderFactory_PathingRequestClosePoint__anon_90BDF338_PathBuilderClosePointPath__init: u64 = 4994;
+/// `g_AutoRegisterPathBuilderFactory_PathingRequestFlee_PathBuilderFlee_PathBuilderFleePath__init` at 0x8a130 (crt_init, medium); signature (high): `void g_AutoRegisterPathBuilderFactory_PathingRequestFlee_PathBuilderFlee_PathBuilderFleePath__init(void)`
+pub const g_AutoRegisterPathBuilderFactory_PathingRequestFlee_PathBuilderFlee_PathBuilderFleePath__init: u64 = 4998;
+/// `g_AutoRegisterPathBuilderFactory_PathingRequestFlyAction_PathBuilderFlight_PathBuilderFlyActionPath__atexit` at 0x178df20 (crt_init, medium); signature (high): `void g_AutoRegisterPathBuilderFactory_PathingRequestFlyAction_PathBuilderFlight_PathBuilderFlyActionPath__atexit(void)`
+pub const g_AutoRegisterPathBuilderFactory_PathingRequestFlyAction_PathBuilderFlight_PathBuilderFlyActionPath__atexit: u64 = 170256;
+/// `g_AutoRegisterPathBuilderFactory_PathingRequestFlyAction_PathBuilderFlight_PathBuilderFlyActionPath__init` at 0x8a220 (crt_init, medium); signature (high): `void g_AutoRegisterPathBuilderFactory_PathingRequestFlyAction_PathBuilderFlight_PathBuilderFlyActionPath__init(void)`
+pub const g_AutoRegisterPathBuilderFactory_PathingRequestFlyAction_PathBuilderFlight_PathBuilderFlyActionPath__init: u64 = 4999;
+/// `g_AutoRegisterPathBuilderFactory_PathingRequestFlyHover_PathBuilderFlight_PathBuilderFlyHoverPath__atexit` at 0x178df30 (crt_init, medium); signature (high): `void g_AutoRegisterPathBuilderFactory_PathingRequestFlyHover_PathBuilderFlight_PathBuilderFlyHoverPath__atexit(void)`
+pub const g_AutoRegisterPathBuilderFactory_PathingRequestFlyHover_PathBuilderFlight_PathBuilderFlyHoverPath__atexit: u64 = 170257;
 /// `g_AutoRegisterPathBuilderFactory_PathingRequestFlyHover_PathBuilderFlight_PathBuilderFlyHoverPath__init` at 0x8a280 (crt_init, medium); signature (high): `void g_AutoRegisterPathBuilderFactory_PathingRequestFlyHover_PathBuilderFlight_PathBuilderFlyHoverPath__init(void)`
 pub const g_AutoRegisterPathBuilderFactory_PathingRequestFlyHover_PathBuilderFlight_PathBuilderFlyHoverPath__init: u64 = 5000;
 /// `g_AutoRegisterPathBuilderFactory_PathingRequestFlyLand_PathBuilderFlight_PathBuilderFlyLandPath__atexit` at 0x178df40 (crt_init, medium); signature (high): `void g_AutoRegisterPathBuilderFactory_PathingRequestFlyLand_PathBuilderFlight_PathBuilderFlyLandPath__atexit(void)`
@@ -8467,205 +8595,3 @@ pub const hkpMoppCachedShapeMediator__vfunc_4: u64 = 81213;
 pub const hkpMoppCachedShapeMediator__vfunc_5: u64 = 81215;
 /// `hkpMoppCachedShapeMediator::vfunc_6` at 0x1116de0 (rtti, high); signature (low): `undefined vfunc_6(hkpMoppCachedShapeMediator * this, undefined8 param_1, int param_2, longlong param_3, int param_4, float * param_5, float * param_6)`
 pub const hkpMoppCachedShapeMediator__vfunc_6: u64 = 81216;
-/// `hkpMoppCachedShapeMediator::vfunc_7` at 0x1116fc0 (rtti, high); signature (low): `undefined vfunc_7(hkpMoppCachedShapeMediator * this, undefined8 param_1, int param_2, longlong param_3, int param_4, float * param_5, float * param_6)`
-pub const hkpMoppCachedShapeMediator__vfunc_7: u64 = 81217;
-/// `hkpMoppCachedShapeMediator::vfunc_8` at 0x1116d50 (rtti, high); signature (low): `undefined vfunc_8(hkpMoppCachedShapeMediator * this, undefined8 * param_1)`
-pub const hkpMoppCachedShapeMediator__vfunc_8: u64 = 81214;
-/// `hkpMoppCachedShapeMediator::vfunc_9` at 0x1117150 (rtti, high); signature (low): `undefined8 vfunc_9(hkpMoppCachedShapeMediator * this, undefined8 param_1, undefined4 * param_2)`
-pub const hkpMoppCachedShapeMediator__vfunc_9: u64 = 81218;
-/// `hkpMoppCode::dtor` at 0x2b6050 (layout_inference, high); signature (low): `undefined dtor(hkpMoppCode * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-pub const hkpMoppCode__dtor: u64 = 18818;
-/// `hkpMoppCode::vdtor` at 0x2b6460 (slot_propagation, medium); signature (low): `hkpMoppCode * vdtor(hkpMoppCode * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const hkpMoppCode__vdtor: u64 = 18826;
-/// `hkpMoppCodeGenerator::ctor` at 0x112afe0 (layout_inference, medium); signature (low): `hkpMoppCodeGenerator * ctor(hkpMoppCodeGenerator * this, int param_1)`
-pub const hkpMoppCodeGenerator__ctor: u64 = 81457;
-/// `hkpMoppCodeGenerator::dtor` at 0x112b050 (layout_inference, high); signature (high): `undefined dtor(hkpMoppCodeGenerator * this)`
-pub const hkpMoppCodeGenerator__dtor: u64 = 81458;
-/// `hkpMoppCodeGenerator::vdtor` at 0x112b2b0 (slot_propagation, medium); signature (low): `hkpMoppCodeGenerator * vdtor(hkpMoppCodeGenerator * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-pub const hkpMoppCodeGenerator__vdtor: u64 = 81462;
-/// `hkpMoppCostFunction::ctor` at 0x1117420 (layout_inference, medium); signature (low): `hkpMoppCostFunction * ctor(hkpMoppCostFunction * this, undefined8 * param_1)`
-pub const hkpMoppCostFunction__ctor: u64 = 81222;
-/// `hkpMoppCostFunction::vdtor` at 0x1117490 (layout_inference, medium); signature (low): `hkpMoppCostFunction * vdtor(hkpMoppCostFunction * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const hkpMoppCostFunction__vdtor: u64 = 81224;
-/// `hkpMoppDefaultAssembler::ctor` at 0x112b330 (layout_inference, medium); signature (low): `hkpMoppDefaultAssembler * ctor(hkpMoppDefaultAssembler * this, undefined4 * param_1, undefined8 param_2, undefined8 param_3)`
-pub const hkpMoppDefaultAssembler__ctor: u64 = 81463;
-/// `hkpMoppDefaultAssembler::dtor` at 0x112b650 (layout_inference, high); signature (high): `undefined dtor(hkpMoppDefaultAssembler * this)`
-pub const hkpMoppDefaultAssembler__dtor: u64 = 81464;
-/// `hkpMoppDefaultAssembler::vdtor` at 0x112e910 (slot_propagation, medium); signature (low): `hkpMoppDefaultAssembler * vdtor(hkpMoppDefaultAssembler * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-pub const hkpMoppDefaultAssembler__vdtor: u64 = 81500;
-/// `hkpMoppDefaultAssembler::vfunc_3` at 0x112f130 (rtti, high); signature (low): `undefined8 vfunc_3(void)`
-pub const hkpMoppDefaultAssembler__vfunc_3: u64 = 81511;
-/// `hkpMoppDefaultAssembler::vfunc_4` at 0x112f140 (rtti, high); signature (high): `undefined8 vfunc_4(hkpMoppDefaultAssembler * this)`
-pub const hkpMoppDefaultAssembler__vfunc_4: u64 = 81512;
-/// `hkpMoppDefaultAssembler::vfunc_5` at 0x112b700 (rtti, high); signature (low): `undefined vfunc_5(hkpMoppDefaultAssembler * this, longlong * param_1, undefined8 param_2, undefined4 param_3)`
-pub const hkpMoppDefaultAssembler__vfunc_5: u64 = 81466;
-/// `hkpMoppDefaultAssembler::vfunc_5_sub0` at 0x112c520 (callgraph, medium); signature (untiered): `int vfunc_5_sub0(longlong param_1, longlong * param_2, longlong param_3, int * param_4, longlong * param_5)`
-pub const hkpMoppDefaultAssembler__vfunc_5_sub0: u64 = 81472;
-/// `hkpMoppDefaultAssembler::vfunc_5_sub1` at 0x112ca50 (callgraph, medium); signature (untiered): `uint vfunc_5_sub1(longlong param_1, longlong param_2, int param_3, uint param_4)`
-pub const hkpMoppDefaultAssembler__vfunc_5_sub1: u64 = 81473;
-/// `hkpMoppDefaultAssembler::vfunc_5_sub2` at 0x112cb70 (callgraph, medium); signature (untiered): `undefined vfunc_5_sub2(longlong param_1, longlong * param_2, longlong param_3, int * param_4, undefined4 param_5, longlong * param_6)`
-pub const hkpMoppDefaultAssembler__vfunc_5_sub2: u64 = 81474;
-/// `hkpMoppDefaultAssembler::vfunc_5_sub3` at 0x112d130 (callgraph, medium); signature (untiered): `int vfunc_5_sub3(longlong param_1, longlong param_2, longlong param_3, int * param_4)`
-pub const hkpMoppDefaultAssembler__vfunc_5_sub3: u64 = 81476;
-/// `hkpMoppDefaultAssembler::vfunc_5_sub4` at 0x112d690 (callgraph, medium); signature (untiered): `undefined vfunc_5_sub4(longlong param_1, longlong param_2, longlong param_3, int * param_4)`
-pub const hkpMoppDefaultAssembler__vfunc_5_sub4: u64 = 81482;
-/// `hkpMoppDefaultAssembler::vfunc_5_sub5` at 0x112db10 (callgraph, medium); signature (untiered): `int vfunc_5_sub5(longlong param_1, longlong * param_2, longlong param_3, int * param_4)`
-pub const hkpMoppDefaultAssembler__vfunc_5_sub5: u64 = 81484;
-/// `hkpMoppDefaultAssembler::vfunc_6` at 0x112c1e0 (rtti, high); signature (low): `undefined vfunc_6(hkpMoppDefaultAssembler * this, longlong param_1, undefined1[16] * param_2)`
-pub const hkpMoppDefaultAssembler__vfunc_6: u64 = 81467;
-/// `hkpMoppDefaultSplitter::ctor` at 0x1129510 (layout_inference, medium); signature (high): `hkpMoppDefaultSplitter * ctor(hkpMoppDefaultSplitter * this)`
-pub const hkpMoppDefaultSplitter__ctor: u64 = 81437;
-/// `hkpMoppDefaultSplitter::vdtor` at 0x112a8f0 (slot_propagation, medium); signature (low): `hkpMoppDefaultSplitter * vdtor(hkpMoppDefaultSplitter * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-pub const hkpMoppDefaultSplitter__vdtor: u64 = 81450;
-/// `hkpMoppDefaultSplitter::vfunc_3` at 0x1129730 (rtti, high); signature (low): `undefined vfunc_3(hkpMoppDefaultSplitter * this, undefined8 * param_1)`
-pub const hkpMoppDefaultSplitter__vfunc_3: u64 = 81440;
-/// `hkpMoppDefaultSplitter::vfunc_4` at 0x1129760 (rtti, high); signature (high): `int vfunc_4(hkpMoppDefaultSplitter * this)`
-pub const hkpMoppDefaultSplitter__vfunc_4: u64 = 81441;
-/// `hkpMoppDefaultSplitter::vfunc_5` at 0x1129570 (rtti, high); signature (low): `undefined8 vfunc_5(hkpMoppDefaultSplitter * this, longlong * param_1, undefined8 param_2, longlong * param_3, longlong param_4, undefined8 * param_5)`
-pub const hkpMoppDefaultSplitter__vfunc_5: u64 = 81439;
-/// `hkpMoppDefaultSplitter::vfunc_5_sub0` at 0x11298a0 (callgraph, medium); signature (untiered): `longlong * vfunc_5_sub0(longlong param_1, longlong param_2, undefined8 * param_3, int param_4, int param_5)`
-pub const hkpMoppDefaultSplitter__vfunc_5_sub0: u64 = 81444;
-/// `hkpMoppMediator::vdtor` at 0x1116aa0 (layout_inference, medium); signature (low): `hkpMoppMediator * vdtor(hkpMoppMediator * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const hkpMoppMediator__vdtor: u64 = 81208;
-/// `hkpMoppModifier::vdtor` at 0xb3e0c0 (layout_inference, medium); signature (low): `hkpMoppModifier * vdtor(hkpMoppModifier * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const hkpMoppModifier__vdtor: u64 = 60536;
-/// `hkpMoppNodeMgr::vdtor` at 0x112a970 (layout_inference, medium); signature (low): `hkpMoppNodeMgr * vdtor(hkpMoppNodeMgr * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const hkpMoppNodeMgr__vdtor: u64 = 81451;
-/// `hkpMoppShapeMediator::ctor` at 0x1116650 (layout_inference, medium); signature (low): `hkpMoppShapeMediator * ctor(hkpMoppShapeMediator * this, longlong * param_1)`
-pub const hkpMoppShapeMediator__ctor: u64 = 81199;
-/// `hkpMoppShapeMediator::vdtor` at 0x1116b30 (slot_propagation, medium); signature (low): `hkpMoppShapeMediator * vdtor(hkpMoppShapeMediator * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-pub const hkpMoppShapeMediator__vdtor: u64 = 81209;
-/// `hkpMoppShapeMediator::vfunc_3` at 0x11166b0 (rtti, high); signature (low): `undefined vfunc_3(void)`
-pub const hkpMoppShapeMediator__vfunc_3: u64 = 81201;
-/// `hkpMoppShapeMediator::vfunc_4` at 0x11166c0 (rtti, high); signature (high): `undefined4 vfunc_4(hkpMoppShapeMediator * this)`
-pub const hkpMoppShapeMediator__vfunc_4: u64 = 81202;
-/// `hkpMoppShapeMediator::vfunc_5` at 0x11166f0 (rtti, high); signature (low): `undefined vfunc_5(hkpMoppShapeMediator * this, undefined4 * param_1)`
-pub const hkpMoppShapeMediator__vfunc_5: u64 = 81204;
-/// `hkpMoppShapeMediator::vfunc_6` at 0x1116760 (rtti, high); signature (low): `undefined vfunc_6(hkpMoppShapeMediator * this, uint * param_1, undefined8 param_2, undefined4 * param_3, int param_4, float * param_5, float * param_6)`
-pub const hkpMoppShapeMediator__vfunc_6: u64 = 81205;
-/// `hkpMoppShapeMediator::vfunc_7` at 0x11168f0 (rtti, high); signature (low): `undefined vfunc_7(hkpMoppShapeMediator * this, uint * param_1, undefined8 param_2, undefined4 * param_3, int param_4, float * param_5, float * param_6)`
-pub const hkpMoppShapeMediator__vfunc_7: u64 = 81206;
-/// `hkpMoppShapeMediator::vfunc_8` at 0x11166d0 (rtti, high); signature (low): `undefined vfunc_8(hkpMoppShapeMediator * this, undefined8 * param_1)`
-pub const hkpMoppShapeMediator__vfunc_8: u64 = 81203;
-/// `hkpMoppShapeMediator::vfunc_9` at 0x1116a80 (rtti, high); signature (low): `undefined8 vfunc_9(hkpMoppShapeMediator * this, longlong param_1, undefined4 * param_2)`
-pub const hkpMoppShapeMediator__vfunc_9: u64 = 81207;
-/// `hkpMoppSplitter::vdtor` at 0x112aa00 (layout_inference, medium); signature (low): `hkpMoppSplitter * vdtor(hkpMoppSplitter * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const hkpMoppSplitter__vdtor: u64 = 81452;
-/// `hkpMotion::ctor` at 0xb4f2f0 (layout_inference, medium); signature (high): `hkpMotion * ctor(hkpMotion * this)`
-pub const hkpMotion__ctor: u64 = 60957;
-/// `hkpMotion::ctor` at 0xb4f3d0 (layout_inference, medium); signature (low): `hkpMotion * ctor(hkpMotion * this, float * param_1, undefined8 param_2, char param_3)`
-pub const hkpMotion__ctor_2: u64 = 60958;
-/// `hkpMotion::vdtor` at 0xb4c640 (layout_inference, medium); signature (low): `hkpMotion * vdtor(hkpMotion * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const hkpMotion__vdtor: u64 = 60882;
-/// `hkpMotion::vfunc_11` at 0xb4f520 (rtti, medium); signature (low): `undefined vfunc_11(hkpMotion * this, undefined8 param_1)`
-pub const hkpMotion__vfunc_11: u64 = 60962;
-/// `hkpMotion::vfunc_12` at 0xb4f540 (rtti, medium); signature (low): `undefined vfunc_12(hkpMotion * this, undefined8 param_1)`
-pub const hkpMotion__vfunc_12: u64 = 60963;
-/// `hkpMotion::vfunc_13` at 0xb4f560 (rtti, medium); signature (low): `undefined vfunc_13(hkpMotion * this, undefined8 param_1)`
-pub const hkpMotion__vfunc_13: u64 = 60964;
-/// `hkpMotion::vfunc_14` at 0xb4f580 (rtti, medium); signature (low): `undefined vfunc_14(hkpMotion * this, undefined8 param_1, undefined8 param_2)`
-pub const hkpMotion__vfunc_14: u64 = 60965;
-/// `hkpMotion::vfunc_15` at 0xb4f5b0 (rtti, medium); signature (low): `undefined vfunc_15(hkpMotion * this, undefined8 param_1)`
-pub const hkpMotion__vfunc_15: u64 = 60967;
-/// `hkpMotion::vfunc_16` at 0xb4f5d0 (rtti, medium); signature (low): `undefined vfunc_16(hkpMotion * this, undefined8 * param_1)`
-pub const hkpMotion__vfunc_16: u64 = 60968;
-/// `hkpMotion::vfunc_17` at 0xb4f5f0 (rtti, medium); signature (low): `undefined vfunc_17(hkpMotion * this, undefined8 * param_1)`
-pub const hkpMotion__vfunc_17: u64 = 60969;
-/// `hkpMotion::vfunc_19` at 0xb4f610 (rtti, medium); signature (low): `undefined vfunc_19(hkpMotion * this, float * param_1)`
-pub const hkpMotion__vfunc_19: u64 = 60970;
-/// `hkpMotion::vfunc_25` at 0xb4f650 (rtti, medium); signature (low): `undefined vfunc_25(hkpMotion * this, longlong param_1)`
-pub const hkpMotion__vfunc_25: u64 = 60972;
-/// `hkpMotion::vfunc_3` at 0xb4f4e0 (rtti, medium); signature (medium): `undefined vfunc_3(hkpMotion * this, float param_1)`
-pub const hkpMotion__vfunc_3: u64 = 60960;
-/// `hkpMotion::vfunc_4` at 0xb4f510 (rtti, medium); signature (low): `undefined vfunc_4(hkpMotion * this, undefined4 param_2)`
-pub const hkpMotion__vfunc_4: u64 = 60961;
-/// `hkpMotorAction::ctor` at 0xb9b1d0 (layout_inference, high); signature (high): `undefined ctor(hkpMotorAction * this)`
-pub const hkpMotorAction__ctor: u64 = 62485;
-/// `hkpMotorAction::ctor` at 0xba2cc0 (layout_inference, high); signature (low): `hkpMotorAction * ctor(hkpMotorAction * this, longlong param_1, undefined8 * param_2, undefined8 param_3, undefined4 param_4)`
-pub const hkpMotorAction__ctor_2: u64 = 62686;
-/// `hkpMotorAction::vdtor` at 0xb9c280 (slot_propagation, medium); signature (low): `hkpMotorAction * vdtor(hkpMotorAction * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-pub const hkpMotorAction__vdtor: u64 = 62587;
-/// `hkpMotorAction::vfunc_3` at 0xba2d90 (rtti, high); signature (low): `undefined vfunc_3(hkpMotorAction * this, longlong param_1)`
-pub const hkpMotorAction__vfunc_3: u64 = 62687;
-/// `hkpMotorAction::vfunc_7` at 0xba2ee0 (rtti, high); signature (low): `hkpMotorAction * vfunc_7(hkpMotorAction * this, undefined8 * param_1, longlong param_2, undefined8 param_3)`
-pub const hkpMotorAction__vfunc_7: u64 = 62688;
-/// `hkpMountedBallGun::ctor` at 0xba8310 (layout_inference, high); signature (low): `hkpMountedBallGun * ctor(hkpMountedBallGun * this, int param_1)`
-pub const hkpMountedBallGun__ctor: u64 = 62809;
-/// `hkpMountedBallGun::ctor` at 0xba8360 (layout_inference, high); signature (low): `hkpMountedBallGun * ctor(hkpMountedBallGun * this, int param_1)`
-pub const hkpMountedBallGun__ctor_2: u64 = 62810;
-/// `hkpMountedBallGun::vdtor` at 0xba8690 (slot_propagation, medium); signature (low): `hkpMountedBallGun * vdtor(hkpMountedBallGun * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-pub const hkpMountedBallGun__vdtor: u64 = 62812;
-/// `hkpMountedBallGun::vfunc_4` at 0xba83a0 (rtti, high); signature (low): `undefined vfunc_4(hkpMountedBallGun * this, longlong param_1, float * param_2)`
-pub const hkpMountedBallGun__vfunc_4: u64 = 62811;
-/// `hkpMouseSpringAction::ctor` at 0xb999c0 (layout_inference, high); signature (low): `hkpMouseSpringAction * ctor(hkpMouseSpringAction * this, longlong param_1)`
-pub const hkpMouseSpringAction__ctor: u64 = 62466;
-/// `hkpMouseSpringAction::ctor` at 0xb99a40 (layout_inference, high); signature (low): `hkpMouseSpringAction * ctor(hkpMouseSpringAction * this, undefined8 * param_2, undefined8 * param_3, undefined4 param_4, int param_5, undefined4 param_6, longlong param_7, longlong * param_8)`
-pub const hkpMouseSpringAction__ctor_2: u64 = 62467;
-/// `hkpMouseSpringAction::ctor` at 0xb9b230 (layout_inference, high); signature (high): `undefined ctor(hkpMouseSpringAction * this)`
-pub const hkpMouseSpringAction__ctor_3: u64 = 62487;
-/// `hkpMouseSpringAction::vdtor` at 0xb9a260 (slot_propagation, medium); signature (low): `hkpMouseSpringAction * vdtor(hkpMouseSpringAction * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-pub const hkpMouseSpringAction__vdtor: u64 = 62473;
-/// `hkpMouseSpringAction::vfunc_3` at 0xb99e20 (rtti, high); signature (low): `undefined vfunc_3(hkpMouseSpringAction * this, longlong param_1)`
-pub const hkpMouseSpringAction__vfunc_3: u64 = 62471;
-/// `hkpMouseSpringAction::vfunc_6` at 0xb99d50 (rtti, high); signature (high): `undefined vfunc_6(hkpMouseSpringAction * this)`
-pub const hkpMouseSpringAction__vfunc_6: u64 = 62468;
-/// `hkpMouseSpringAction::vfunc_7` at 0xb9a110 (rtti, high); signature (low): `hkpMouseSpringAction * vfunc_7(hkpMouseSpringAction * this, undefined8 * param_1, longlong param_2)`
-pub const hkpMouseSpringAction__vfunc_7: u64 = 62472;
-/// `hkpMultiRayConvexAgent::ctor` at 0xc89310 (layout_inference, medium); signature (low): `hkpMultiRayConvexAgent * ctor(hkpMultiRayConvexAgent * this, longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const hkpMultiRayConvexAgent__ctor: u64 = 66921;
-/// `hkpMultiRayConvexAgent::vdtor` at 0xc895c0 (layout_inference, medium); signature (low): `hkpMultiRayConvexAgent * vdtor(hkpMultiRayConvexAgent * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-pub const hkpMultiRayConvexAgent__vdtor: u64 = 66925;
-/// `hkpMultiRayConvexAgent::vfunc_3` at 0xc88ac0 (rtti, high); signature (low): `undefined vfunc_3(hkpMultiRayConvexAgent * this, undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const hkpMultiRayConvexAgent__vfunc_3: u64 = 66916;
-/// `hkpMultiRayConvexAgent::vfunc_4` at 0xc88cf0 (rtti, high); signature (low): `undefined vfunc_4(hkpMultiRayConvexAgent * this, longlong * param_1, undefined8 * param_2, undefined8 param_3, longlong * param_4)`
-pub const hkpMultiRayConvexAgent__vfunc_4: u64 = 66918;
-/// `hkpMultiRayConvexAgent::vfunc_6` at 0xc89840 (rtti, high); signature (low): `undefined vfunc_6(hkpMultiRayConvexAgent * this, longlong * param_1, undefined8 * param_2, undefined8 param_3, longlong * param_4)`
-pub const hkpMultiRayConvexAgent__vfunc_6: u64 = 66929;
-/// `hkpMultiRayConvexAgent::vfunc_7` at 0xc89290 (rtti, medium); signature (low): `undefined vfunc_7(hkpMultiRayConvexAgent * this, undefined8 param_1)`
-pub const hkpMultiRayConvexAgent__vfunc_7: u64 = 66920;
-/// `hkpMultiRayShape::ctor` at 0xb462a0 (layout_inference, medium); signature (low): `hkpMultiRayShape * ctor(hkpMultiRayShape * this, longlong param_2, int param_3, undefined4 param_4)`
-pub const hkpMultiRayShape__ctor: u64 = 60776;
-/// `hkpMultiRayShape::vdtor` at 0xb3e0f0 (layout_inference, medium); signature (low): `hkpMultiRayShape * vdtor(hkpMultiRayShape * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-pub const hkpMultiRayShape__vdtor: u64 = 60537;
-/// `hkpMultiRayShape::vfunc_2` at 0xb465f0 (rtti, high); signature (low): `undefined vfunc_2(hkpMultiRayShape * this, longlong * param_1)`
-pub const hkpMultiRayShape__vfunc_2: u64 = 60780;
-/// `hkpMultiRayShape::vfunc_7` at 0xb46450 (rtti, high); signature (low): `undefined vfunc_7(hkpMultiRayShape * this, float * param_1, undefined8 param_2, undefined1[16] * param_3)`
-pub const hkpMultiRayShape__vfunc_7: u64 = 60777;
-/// `hkpMultiRayShape::vfunc_8` at 0xb465d0 (rtti, high); signature (low): `undefined1 * vfunc_8(hkpMultiRayShape * this, undefined1 * param_1)`
-pub const hkpMultiRayShape__vfunc_8: u64 = 60778;
-/// `hkpMultiRayShape::vfunc_9` at 0xb465e0 (rtti, high); signature (low): `undefined vfunc_9(void)`
-pub const hkpMultiRayShape__vfunc_9: u64 = 60779;
-/// `hkpMultiSphereAgent::ctor` at 0xc8f700 (layout_inference, medium); signature (low): `hkpMultiSphereAgent * ctor(hkpMultiSphereAgent * this, longlong * param_2, longlong * param_3, longlong * param_4, undefined8 param_5)`
-pub const hkpMultiSphereAgent__ctor: u64 = 67048;
-/// `hkpMultiSphereAgent::vdtor` at 0xc8fc60 (layout_inference, medium); signature (low): `hkpMultiSphereAgent * vdtor(hkpMultiSphereAgent * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-pub const hkpMultiSphereAgent__vdtor: u64 = 67053;
-/// `hkpMultiSphereAgent::vfunc_3` at 0xc8f2a0 (rtti, high); signature (low): `undefined vfunc_3(hkpMultiSphereAgent * this, longlong * param_1, undefined8 param_2, undefined8 param_3, longlong param_4)`
-pub const hkpMultiSphereAgent__vfunc_3: u64 = 67045;
-/// `hkpMultiSphereAgent::vfunc_4` at 0xc8eee0 (rtti, high); signature (low): `undefined vfunc_4(hkpMultiSphereAgent * this, longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const hkpMultiSphereAgent__vfunc_4: u64 = 67043;
-/// `hkpMultiSphereAgent::vfunc_5` at 0xc8eae0 (rtti, medium); signature (low): `undefined vfunc_5(hkpMultiSphereAgent * this, longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4, undefined8 param_5)`
-pub const hkpMultiSphereAgent__vfunc_5: u64 = 67041;
-/// `hkpMultiSphereAgent::vfunc_6` at 0xc8e8f0 (rtti, high); signature (low): `undefined vfunc_6(hkpMultiSphereAgent * this, longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const hkpMultiSphereAgent__vfunc_6: u64 = 67040;
-/// `hkpMultiSphereAgent::vfunc_7` at 0xc8f680 (rtti, medium); signature (low): `undefined vfunc_7(hkpMultiSphereAgent * this, undefined8 param_1)`
-pub const hkpMultiSphereAgent__vfunc_7: u64 = 67047;
-/// `hkpMultiSphereShape::ctor` at 0xb45b50 (layout_inference, medium); signature (low): `hkpMultiSphereShape * ctor(hkpMultiSphereShape * this, undefined8 * param_1, int param_2)`
-pub const hkpMultiSphereShape__ctor: u64 = 60767;
-/// `hkpMultiSphereShape::vdtor` at 0xb3e1c0 (layout_inference, medium); signature (low): `hkpMultiSphereShape * vdtor(hkpMultiSphereShape * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const hkpMultiSphereShape__vdtor: u64 = 60538;
-/// `hkpMultiSphereShape::vfunc_11` at 0xb45ba0 (rtti, high); signature (high): `undefined4 vfunc_11(hkpMultiSphereShape * this)`
-pub const hkpMultiSphereShape__vfunc_11: u64 = 60768;
-/// `hkpMultiSphereShape::vfunc_12` at 0xb45bb0 (rtti, high); signature (low): `undefined8 * vfunc_12(hkpMultiSphereShape * this, undefined8 * param_1)`
-pub const hkpMultiSphereShape__vfunc_12: u64 = 60769;
-/// `hkpMultiSphereShape::vfunc_2` at 0xb45bf0 (rtti, high); signature (low): `undefined vfunc_2(hkpMultiSphereShape * this, undefined8 param_1)`
-pub const hkpMultiSphereShape__vfunc_2: u64 = 60770;
-/// `hkpMultiSphereShape::vfunc_7` at 0xb45c10 (rtti, high); signature (low): `undefined vfunc_7(hkpMultiSphereShape * this, float * param_1, float param_2, float * param_3)`
-pub const hkpMultiSphereShape__vfunc_7: u64 = 60771;
-/// `hkpMultiSphereShape::vfunc_8` at 0xb45d10 (rtti, high); signature (low): `undefined8 vfunc_8(hkpMultiSphereShape * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-pub const hkpMultiSphereShape__vfunc_8: u64 = 60772;
-/// `hkpMultiSphereShape::vfunc_9` at 0xb45db0 (rtti, high); signature (low): `undefined vfunc_9(hkpMultiSphereShape * this, undefined8 param_1, longlong param_2, undefined8 * param_3)`
-pub const hkpMultiSphereShape__vfunc_9: u64 = 60773;
-/// `hkpMultiSphereTriangleAgent::vdtor` at 0xc88310 (layout_inference, medium); signature (low): `hkpMultiSphereTriangleAgent * vdtor(hkpMultiSphereTriangleAgent * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const hkpMultiSphereTriangleAgent__vdtor: u64 = 66906;
-/// `hkpMultiSphereTriangleAgent::vfunc_3` at 0xc87820 (rtti, high); signature (low): `undefined vfunc_3(hkpMultiSphereTriangleAgent * this, longlong * param_1, longlong * param_2, undefined8 param_3, longlong * param_4)`
-pub const hkpMultiSphereTriangleAgent__vfunc_3: u64 = 66898;

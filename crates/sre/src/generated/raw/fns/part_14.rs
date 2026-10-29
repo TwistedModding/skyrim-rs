@@ -3,6 +3,106 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `InvokeDeleterAndClear_16` at 0x135d620 (decompiler, medium); signature (medium): `undefined InvokeDeleterAndClear_16(undefined8 * param_1)`
+pub const InvokeDeleterAndClear_16: u64 = 447615;
+/// `InvokeDeleterAndClear_17` at 0x135e640 (decompiler, medium); signature (medium): `undefined InvokeDeleterAndClear_17(undefined8 * param_1)`
+pub const InvokeDeleterAndClear_17: u64 = 447647;
+/// `InvokeDeleterAndClear_18` at 0x143da30 (decompiler, medium); signature (medium): `undefined InvokeDeleterAndClear_18(undefined8 * param_1)`
+pub const InvokeDeleterAndClear_18: u64 = 452377;
+/// `InvokeDeleterAndClear_19` at 0x13cc970 (decompiler, medium); signature (medium): `undefined InvokeDeleterAndClear_19(undefined8 * param_1)`
+pub const InvokeDeleterAndClear_19: u64 = 451148;
+/// `InvokeDeleterAndClear_2` at 0x1461d10 (decompiler, medium); signature (medium): `undefined InvokeDeleterAndClear_2(undefined8 * param_1)`
+pub const InvokeDeleterAndClear_2: u64 = 527702;
+/// `InvokeDeleterAndClear_20` at 0x14798c0 (decompiler, high); signature (untiered): `undefined InvokeDeleterAndClear_20(undefined8 * param_1)`
+pub const InvokeDeleterAndClear_20: u64 = 453144;
+/// `InvokeDeleterAndClear_21` at 0x1461c10 (decompiler, high); signature (untiered): `undefined InvokeDeleterAndClear_21(undefined8 * param_1)`
+pub const InvokeDeleterAndClear_21: u64 = 527699;
+/// `InvokeDeleterAndClear_22` at 0x1390e00 (decompiler, high); signature (untiered): `undefined InvokeDeleterAndClear_22(undefined8 * param_1)`
+pub const InvokeDeleterAndClear_22: u64 = 450068;
+/// `InvokeDeleterAndClear_23` at 0x12dc7c0 (decompiler, high); signature (high): `undefined InvokeDeleterAndClear_23(undefined8 * param_1)`
+pub const InvokeDeleterAndClear_23: u64 = 525450;
+/// `InvokeDeleterAndClear_24` at 0x12dd380 (decompiler, high); signature (high): `undefined InvokeDeleterAndClear_24(undefined8 * param_1)`
+pub const InvokeDeleterAndClear_24: u64 = 525497;
+/// `InvokeDeleterAndClear_25` at 0x1325980 (decompiler, high); signature (high): `undefined InvokeDeleterAndClear_25(undefined8 * param_1)`
+pub const InvokeDeleterAndClear_25: u64 = 526091;
+/// `InvokeDeleterAndClear_26` at 0x12dc880 (decompiler, high); signature (high): `undefined InvokeDeleterAndClear_26(undefined8 * param_1)`
+pub const InvokeDeleterAndClear_26: u64 = 525453;
+/// `InvokeDeleterAndClear_27` at 0x12dcb00 (decompiler, high); signature (high): `undefined InvokeDeleterAndClear_27(undefined8 * param_1)`
+pub const InvokeDeleterAndClear_27: u64 = 525463;
+/// `InvokeDeleterAndClear_28` at 0x12dcd80 (decompiler, high); signature (high): `undefined InvokeDeleterAndClear_28(undefined8 * param_1)`
+pub const InvokeDeleterAndClear_28: u64 = 525473;
+/// `InvokeDeleterAndClear_29` at 0x12598e0 (decompiler, medium); signature (medium): `undefined InvokeDeleterAndClear_29(undefined8 * param_1)`
+pub const InvokeDeleterAndClear_29: u64 = 443984;
+/// `InvokeDeleterAndClear_3` at 0x1461700 (decompiler, medium); signature (medium): `undefined InvokeDeleterAndClear_3(undefined8 * param_1)`
+pub const InvokeDeleterAndClear_3: u64 = 452714;
+/// `InvokeDeleterAndClear_30` at 0x1389c00 (decompiler, high); signature (high): `undefined InvokeDeleterAndClear_30(undefined8 * param_1)`
+pub const InvokeDeleterAndClear_30: u64 = 449188;
+/// `InvokeDeleterAndClear_31` at 0x1390dc0 (decompiler, high); signature (high): `undefined InvokeDeleterAndClear_31(undefined8 * param_1)`
+pub const InvokeDeleterAndClear_31: u64 = 450067;
+/// `InvokeDeleterAndClear_32` at 0x1390f00 (decompiler, high); signature (high): `undefined InvokeDeleterAndClear_32(undefined8 * param_1)`
+pub const InvokeDeleterAndClear_32: u64 = 450072;
+/// `InvokeDeleterAndClear_33` at 0x1390f80 (decompiler, high); signature (high): `undefined InvokeDeleterAndClear_33(undefined8 * param_1)`
+pub const InvokeDeleterAndClear_33: u64 = 450074;
+/// `InvokeDeleterAndClear_34` at 0x1390fc0 (decompiler, high); signature (high): `undefined InvokeDeleterAndClear_34(undefined8 * param_1)`
+pub const InvokeDeleterAndClear_34: u64 = 450075;
+/// `InvokeDeleterAndClear_35` at 0x1391000 (decompiler, high); signature (high): `undefined InvokeDeleterAndClear_35(undefined8 * param_1)`
+pub const InvokeDeleterAndClear_35: u64 = 450076;
+/// `InvokeDeleterAndClear_36` at 0x1391040 (decompiler, high); signature (high): `undefined InvokeDeleterAndClear_36(undefined8 * param_1)`
+pub const InvokeDeleterAndClear_36: u64 = 450077;
+/// `InvokeDeleterAndClear_37` at 0x13a1a60 (decompiler, high); signature (high): `undefined InvokeDeleterAndClear_37(undefined8 * param_1)`
+pub const InvokeDeleterAndClear_37: u64 = 451309;
+/// `InvokeDeleterAndClear_38` at 0x13a8800 (decompiler, high); signature (high): `undefined InvokeDeleterAndClear_38(undefined8 * param_1)`
+pub const InvokeDeleterAndClear_38: u64 = 450365;
+/// `InvokeDeleterAndClear_39` at 0x13a8840 (decompiler, high); signature (high): `undefined InvokeDeleterAndClear_39(undefined8 * param_1)`
+pub const InvokeDeleterAndClear_39: u64 = 450366;
+/// `InvokeDeleterAndClear_4` at 0x1461c50 (decompiler, medium); signature (medium): `undefined InvokeDeleterAndClear_4(undefined8 * param_1)`
+pub const InvokeDeleterAndClear_4: u64 = 452732;
+/// `InvokeDeleterAndClear_5` at 0x1461bd0 (decompiler, medium); signature (medium): `undefined InvokeDeleterAndClear_5(undefined8 * param_1)`
+pub const InvokeDeleterAndClear_5: u64 = 452730;
+/// `InvokeDeleterAndClear_6` at 0x12dca00 (decompiler, medium); signature (medium): `undefined InvokeDeleterAndClear_6(undefined8 * param_1)`
+pub const InvokeDeleterAndClear_6: u64 = 525459;
+/// `InvokeDeleterAndClear_7` at 0x12dc640 (decompiler, medium); signature (medium): `undefined InvokeDeleterAndClear_7(undefined8 * param_1)`
+pub const InvokeDeleterAndClear_7: u64 = 525444;
+/// `InvokeDeleterAndClear_8` at 0x12dc3c0 (decompiler, medium); signature (medium): `undefined InvokeDeleterAndClear_8(undefined8 * param_1)`
+pub const InvokeDeleterAndClear_8: u64 = 525434;
+/// `InvokeDeleterAndClear_9` at 0x1307e50 (decompiler, medium); signature (medium): `undefined InvokeDeleterAndClear_9(undefined8 * param_1)`
+pub const InvokeDeleterAndClear_9: u64 = 448066;
+/// `InvokeDeletersAndClearFields08And80` at 0x12a1660 (decompiler, medium); signature (medium): `undefined InvokeDeletersAndClearFields08And80(longlong param_1)`
+pub const InvokeDeletersAndClearFields08And80: u64 = 524942;
+/// `InvokeEntriesMatchingField10` at 0xf6a620 (decompiler, medium); signature (untiered): `undefined InvokeEntriesMatchingField10(longlong param_1, longlong param_2)`
+pub const InvokeEntriesMatchingField10: u64 = 72957;
+/// `InvokeEntryCallbackByName` at 0x115a7b0 (decompiler, medium); signature (untiered): `undefined8 InvokeEntryCallbackByName(longlong param_1, undefined8 param_2, undefined8 param_3)`
+pub const InvokeEntryCallbackByName: u64 = 81954;
+/// `InvokeEntryCallbackLocked` at 0x115a830 (decompiler, medium); signature (untiered): `undefined8 InvokeEntryCallbackLocked(longlong param_1, int param_2, undefined8 param_3)`
+pub const InvokeEntryCallbackLocked: u64 = 81955;
+/// `InvokeEntryTableCallback1D00` at 0xc07070 (decompiler, medium); signature (untiered): `undefined InvokeEntryTableCallback1D00(undefined1 * param_1, longlong * param_2)`
+pub const InvokeEntryTableCallback1D00: u64 = 64660;
+/// `InvokeEntryTableCallback1D08` at 0xc07140 (decompiler, medium); signature (untiered): `undefined InvokeEntryTableCallback1D08(undefined1 * param_1, float param_2, undefined4 param_3, longlong * param_4)`
+pub const InvokeEntryTableCallback1D08: u64 = 64661;
+/// `InvokeField190Slot1` at 0x1064670 (decompiler, medium); signature (untiered): `undefined InvokeField190Slot1(longlong param_1, undefined4 param_2)`
+pub const InvokeField190Slot1: u64 = 78264;
+/// `InvokeField280Callback` at 0x11a17c0 (decompiler, high); signature (untiered): `undefined InvokeField280Callback(longlong param_1)`
+pub const InvokeField280Callback: u64 = 89546;
+/// `InvokeField8CallbackAndClearField0` at 0x1290bf0 (decompiler, medium); signature (medium): `undefined InvokeField8CallbackAndClearField0(undefined8 * param_1)`
+pub const InvokeField8CallbackAndClearField0: u64 = 524812;
+/// `InvokeField8CallbackAndClearField0_2` at 0x1290c30 (decompiler, medium); signature (medium): `undefined InvokeField8CallbackAndClearField0_2(undefined8 * param_1)`
+pub const InvokeField8CallbackAndClearField0_2: u64 = 524813;
+/// `InvokeField8CallbackAndClearField0_3` at 0x12dc680 (decompiler, medium); signature (medium): `undefined InvokeField8CallbackAndClearField0_3(undefined8 * param_1)`
+pub const InvokeField8CallbackAndClearField0_3: u64 = 525445;
+/// `InvokeField8CallbackAndClearField0_4` at 0x12dc780 (decompiler, medium); signature (medium): `undefined InvokeField8CallbackAndClearField0_4(undefined8 * param_1)`
+pub const InvokeField8CallbackAndClearField0_4: u64 = 525449;
+/// `InvokeField8CallbackAndClearField0_5` at 0x12dc8c0 (decompiler, medium); signature (medium): `undefined InvokeField8CallbackAndClearField0_5(undefined8 * param_1)`
+pub const InvokeField8CallbackAndClearField0_5: u64 = 525454;
+/// `InvokeField8CallbackAndClearField0_6` at 0x12dcac0 (decompiler, medium); signature (medium): `undefined InvokeField8CallbackAndClearField0_6(undefined8 * param_1)`
+pub const InvokeField8CallbackAndClearField0_6: u64 = 525462;
+/// `InvokeField8CallbackAndClearField0_7` at 0x12dcb40 (decompiler, medium); signature (medium): `undefined InvokeField8CallbackAndClearField0_7(undefined8 * param_1)`
+pub const InvokeField8CallbackAndClearField0_7: u64 = 525464;
+/// `InvokeFunctionField38AndReleaseSharedArg` at 0x12827c0 (decompiler, medium); signature (untiered): `undefined InvokeFunctionField38AndReleaseSharedArg(longlong param_1, undefined4 param_2, longlong param_3, undefined8 param_4)`
+pub const InvokeFunctionField38AndReleaseSharedArg: u64 = 444234;
+/// `InvokeFunctionObjectWithArgs` at 0xd32fd0 (decompiler, medium); signature (untiered): `undefined1 * InvokeFunctionObjectWithArgs(longlong * param_1, longlong * param_2, longlong * param_3)`
+pub const InvokeFunctionObjectWithArgs: u64 = 83453;
+/// `InvokeFunctionPointerWithDerefArgs` at 0x131110 (decompiler, medium); signature (untiered): `undefined InvokeFunctionPointerWithDerefArgs(undefined8 * param_1, undefined8 * param_2, undefined4 * param_3, undefined8 param_4, undefined4 * param_5)`
+pub const InvokeFunctionPointerWithDerefArgs: u64 = 523362;
 /// `InvokeFunctionPointerWithDerefArgs_2` at 0x131190 (decompiler, medium); signature (untiered): `undefined InvokeFunctionPointerWithDerefArgs_2(undefined8 * param_1, undefined8 * param_2, undefined4 * param_3, undefined8 param_4, undefined4 * param_5)`
 pub const InvokeFunctionPointerWithDerefArgs_2: u64 = 523363;
 /// `InvokeFunctionPointerWithDerefArgs_3` at 0x1311f0 (decompiler, medium); signature (untiered): `undefined InvokeFunctionPointerWithDerefArgs_3(undefined8 * param_1, undefined8 * param_2, undefined4 * param_3, undefined8 param_4, undefined4 * param_5)`
@@ -425,8 +525,6 @@ pub const IsChunkTypeCITC: u64 = 21107;
 pub const IsCloakCasterUsable: u64 = 45398;
 /// `IsClosedMeshWithConsistentWinding` at 0xb426b0 (decompiler, medium); signature (medium): `undefined1 * IsClosedMeshWithConsistentWinding(longlong param_1, undefined1 * param_2)`
 pub const IsClosedMeshWithConsistentWinding: u64 = 60717;
-/// `IsCollisionEnabled` at 0x107c870 (decompiler, medium); signature (medium): `bool IsCollisionEnabled(longlong param_1, uint param_2, uint param_3)`
-pub const IsCollisionEnabled: u64 = 78553;
 /// `IsCollisionSoundPairWithinTimeDelta` at 0x643c30 (decompiler, medium); signature (medium): `ulonglong IsCollisionSoundPairWithinTimeDelta(longlong param_1, int * param_2, int param_3)`
 pub const IsCollisionSoundPairWithinTimeDelta: u64 = 36223;
 /// `IsCombatActorField1D0EqualField8` at 0x8b4d00 (decompiler, medium); signature (medium): `bool IsCombatActorField1D0EqualField8(longlong param_1)`
@@ -591,8 +689,6 @@ pub const IsField10Field130In3To6: u64 = 39452;
 pub const IsField10Field3B8State0Or5: u64 = 39372;
 /// `IsField10Field3B8State1Or2` at 0x6f5f90 (decompiler, medium); signature (medium): `ulonglong IsField10Field3B8State1Or2(longlong param_1)`
 pub const IsField10Field3B8State1Or2: u64 = 39369;
-/// `IsField10Field458Set` at 0x6f5180 (decompiler, high); signature (high): `longlong IsField10Field458Set(longlong param_1)`
-pub const IsField10Field458Set: u64 = 39347;
 /// `IsField10GlobalMatchAndField122Set` at 0x524050 (decompiler, medium); signature (untiered): `ulonglong IsField10GlobalMatchAndField122Set(undefined8 param_1, longlong param_2)`
 pub const IsField10GlobalMatchAndField122Set: u64 = 32060;
 /// `IsField10InGlobalArray400544` at 0x1f6af0 (decompiler, medium); signature (medium): `undefined8 IsField10InGlobalArray400544(longlong param_1)`
@@ -1961,7 +2057,7 @@ pub const LineNode__vdtor: u64 = 52603;
 pub const LineNode__vfunc_12: u64 = 52549;
 /// `LinearCastShapeCollection` at 0xc8d8d0 (decompiler, medium); signature (untiered): `undefined LinearCastShapeCollection(undefined8 * param_1, longlong * param_2, longlong * param_3, undefined8 param_4, undefined8 param_5)`
 pub const LinearCastShapeCollection: u64 = 67026;
-/// `LinearCastSphere` at 0xba6bf0 (decompiler, medium); signature (untiered): `undefined8 LinearCastSphere(longlong param_1, undefined8 * param_2, undefined4 param_3, undefined8 * param_4, undefined8 * param_5)`
+/// `LinearCastSphere` at 0xba6bf0 (semantic, medium); signature (untiered): `undefined8 LinearCastSphere(longlong param_1, undefined8 * param_2, undefined4 param_3, undefined8 * param_4, undefined8 * param_5)`; semantic: Havok utility (ball gun): sphere of the given radius (Havok units) cast from -> to with hkpWorld::linearCast and an hkpClosestCdPointCollector; returns true when nothing was hit (out = {to, zero normal, -1, null}); on a hit out = {contact point +0, normal xyz + fraction w +0x10, shape key +0x20, hit hkpWorldObject (entity) +0x28} and returns false (medium); signature `bool (hkpWorld* world, const hkVector4* from, float radius, const hkVector4* to, SphereCastResult* out)`
 pub const LinearCastSphere: u64 = 62781;
 /// `LinearCastViaIterativeClosestPointsFlipped` at 0xc82fc0 (decompiler, medium); signature (untiered): `undefined LinearCastViaIterativeClosestPointsFlipped(undefined8 param_1, undefined8 param_2, undefined8 * param_3, undefined8 param_4, longlong param_5)`
 pub const LinearCastViaIterativeClosestPointsFlipped: u64 = 66823;
@@ -2817,8 +2913,10 @@ pub const LockWeakPtr: u64 = 451535;
 pub const LockWeakPtrOrThrow: u64 = 450244;
 /// `LockWeakReference` at 0x1413320 (decompiler, medium); signature (untiered): `undefined8 * LockWeakReference(undefined8 * param_1, undefined8 * param_2)`
 pub const LockWeakReference: u64 = 451536;
-/// `LockWorldForReadIfEnabled` at 0x104fca0 (decompiler, high); signature (high): `undefined LockWorldForReadIfEnabled(longlong param_1)`
+/// `LockWorldForReadIfEnabled` at 0x104fca0 (semantic, high); signature (high): `undefined LockWorldForReadIfEnabled(longlong param_1)`; semantic: BSReadWriteLock::LockForRead(world+0xc598) when bUseWorldLock:HAVOK (0x20d18c8) is set (high); signature `void (bhkWorld* world)`
 pub const LockWorldForReadIfEnabled: u64 = 77926;
+/// `LockWorldForReadIfEnabled` as a function pointer type (high).
+pub type LockWorldForReadIfEnabled_fn = unsafe extern "C" fn(world: *mut crate::bhkWorld);
 /// `LockpickingMenu::BSTEventSink_MenuOpenCloseEvent_vdtor` at 0x9506d4 (slot_propagation, medium); signature (high): `undefined BSTEventSink_MenuOpenCloseEvent_vdtor(LockpickingMenu * this)`
 pub const LockpickingMenu__BSTEventSink_MenuOpenCloseEvent_vdtor: u64 = 51989;
 /// `LockpickingMenu::BSTEventSink_MenuOpenCloseEvent_vfunc_1` at 0x94d5d0 (rtti, high); signature (high): `undefined8 BSTEventSink_MenuOpenCloseEvent_vfunc_1(LockpickingMenu * this)`
@@ -3483,10 +3581,6 @@ pub const MagicTarget__ForEachActiveEffectVisitor__dtor_27: u64 = 53536;
 pub const MagicTarget__ForEachActiveEffectVisitor__dtor_28: u64 = 54199;
 /// `MagicTarget::ForEachActiveEffectVisitor::vdtor` at 0x384a70 (layout_inference, medium); signature (low): `ForEachActiveEffectVisitor * vdtor(ForEachActiveEffectVisitor * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const MagicTarget__ForEachActiveEffectVisitor__vdtor: u64 = 23284;
-/// `MagicTarget::GetActiveEffectList` at 0x6d85b0 (runtime, high); signature (untiered): `undefined8 GetActiveEffectList(MagicTarget * this)`; semantic: MagicTarget slot 7 on an actor: the list at +0x1a0 of the process's middle-high data (Actor+0xf8, then +8), null for an actor without one; nodes are {effect, next} (high); signature `BSSimpleList<ActiveEffect*>* (MagicTarget* this)`
-pub const MagicTarget__GetActiveEffectList: u64 = 38795;
-/// `Actor::GetActiveEffectList` as a function pointer type (high).
-pub type MagicTarget__GetActiveEffectList_fn = unsafe extern "C" fn(this: *mut crate::MagicTarget) -> *mut c_void;
 /// `MagicTarget::HasActiveEffectWithBase` at 0x5d16d0 (semantic, high); signature (untiered): `char HasActiveEffectWithBase(longlong * param_1, longlong param_2)`; semantic: the engine's own walk of the list: node = slot 7; stop when node is null or (node->item == null && node->next == null); skip null items; match ActiveEffect::GetBaseObject(item) == base. Takes no lock and does not test the effect's flags (inactive and finishing effects match too) (high); signature `bool (MagicTarget* this, EffectSetting* base)`
 pub const MagicTarget__HasActiveEffectWithBase: u64 = 34517;
 /// `MagicTarget::HasActiveEffectWithBase` as a function pointer type (high).
@@ -4367,8 +4461,34 @@ pub type MenuTable__InsertOrAssign_fn = unsafe extern "C" fn(map: *mut c_void, m
 pub const MenuTopicManager__BSTEventSink_PositionPlayerEvent_vdtor: u64 = 35317;
 /// `MenuTopicManager::BSTEventSink_PositionPlayerEvent_vfunc_1` at 0x5ee8e0 (rtti, high); signature (low): `undefined8 BSTEventSink_PositionPlayerEvent_vfunc_1(MenuTopicManager * this, int * param_1)`
 pub const MenuTopicManager__BSTEventSink_PositionPlayerEvent_vfunc_1: u64 = 35273;
-/// `MenuTopicManager::ctor` at 0x5ee360 (layout_inference, medium); signature (high): `MenuTopicManager * ctor(MenuTopicManager * this)`
+/// `MenuTopicManager::EndDialogueState` at 0x5ee910 (semantic, high); signature (untiered): `undefined EndDialogueState(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`; semantic: clears the dialogue state under the +0x40 critical section: +0x68 = g_InvalidRefHandle (unless the speaker is a non-actor with extra data 0x71 still talking), frees the +0x80/+0x98 arrays, +0xb0 = 0, +0xb2..+0xb9 = 0, +0x70 = 0, +0xb1 = 0, topic lists +0x20/+0x28/+0x30/+0x38 freed (high); signature `void (MenuTopicManager* this)`
+pub const MenuTopicManager__EndDialogueState: u64 = 35274;
+/// `MenuTopicManager::EndDialogueState` as a function pointer type (high).
+pub type MenuTopicManager__EndDialogueState_fn = unsafe extern "C" fn(this: *mut crate::MenuTopicManager);
+/// `MenuTopicManager::EndDialogueWithSpeaker` at 0x5f0ad0 (runtime, high); signature (untiered): `undefined EndDialogueWithSpeaker(longlong param_1, longlong * param_2, char param_3)`; semantic: ends the current dialogue: notifies the speaker (slot 65 with false), picks and says a walk-away topic where one applies, restores the NPC's package, then EndDialogueState 0x5ee910 (+0x68 invalid); if a walk-away topic was said the speaker handle is written back to +0x68; with fromMenuClose it queues a UI message and sets +0xb3 = 0, +0xbb = 1 (high); signature `void (MenuTopicManager* this, TESObjectREFR* ref, bool fromMenuClose)`
+pub const MenuTopicManager__EndDialogueWithSpeaker: u64 = 35294;
+/// `MenuTopicManager::EndDialogueWithSpeaker` as a function pointer type (high).
+pub type MenuTopicManager__EndDialogueWithSpeaker_fn = unsafe extern "C" fn(this: *mut crate::MenuTopicManager, ref_: *mut crate::TESObjectREFR, fromMenuClose: bool);
+/// `MenuTopicManager::GetSpeaker` at 0x5f06c0 (semantic, high); signature (untiered): `longlong GetSpeaker(longlong param_1)`; semantic: resolves the speaker handle +0x68 and returns the raw reference (the temporary reference is dropped before returning), null when invalid; takes no lock (high); signature `TESObjectREFR* (MenuTopicManager* this)`
+pub const MenuTopicManager__GetSpeaker: u64 = 35288;
+/// `MenuTopicManager::GetSpeaker` as a function pointer type (high).
+pub type MenuTopicManager__GetSpeaker_fn = unsafe extern "C" fn(this: *mut crate::MenuTopicManager) -> *mut crate::TESObjectREFR;
+/// `MenuTopicManager::ProcessEvent_MenuOpenClose` at 0x5ee850 (semantic, high); signature (untiered): `undefined8 ProcessEvent_MenuOpenClose(MenuTopicManager * this, longlong * param_1)`; semantic: on the Dialogue Menu closing (e->menuName == UIStrings+0x98 'Dialogue Menu' and e->opening == 0): +0xb3 = 1 when the speaker handle +0x68 still resolves, and +0xbb = 0; returns 0. It does not clear +0x68 itself (high); signature `BSEventNotifyControl (MenuTopicManager* this, const MenuOpenCloseEvent* e, BSTEventSource<MenuOpenCloseEvent>* src)`
+pub const MenuTopicManager__ProcessEvent_MenuOpenClose: u64 = 35272;
+/// `MenuTopicManager::ProcessEvent_MenuOpenClose` as a function pointer type (high).
+pub type MenuTopicManager__ProcessEvent_MenuOpenClose_fn = unsafe extern "C" fn(this: *mut crate::MenuTopicManager, e: *const crate::MenuOpenCloseEvent, src: *mut c_void) -> u32;
+/// `MenuTopicManager::SetPreviousSpeaker` at 0x5f0a10 (semantic, high); signature (untiered): `undefined SetPreviousSpeaker(longlong param_1, longlong param_2)`; semantic: writes ref's handle (or g_InvalidRefHandle for null) to +0x6c (high); signature `void (MenuTopicManager* this, TESObjectREFR* ref)`
+pub const MenuTopicManager__SetPreviousSpeaker: u64 = 35292;
+/// `MenuTopicManager::SetPreviousSpeaker` as a function pointer type (high).
+pub type MenuTopicManager__SetPreviousSpeaker_fn = unsafe extern "C" fn(this: *mut crate::MenuTopicManager, ref_: *mut crate::TESObjectREFR);
+/// `MenuTopicManager::SetSpeakerAndBeginDialogue` at 0x5ef4c0 (runtime, high); signature (untiered): `undefined1 SetSpeakerAndBeginDialogue(uint * param_1, uint * param_2, uint * param_3, longlong * param_4, char param_5)`; semantic: starts a dialogue: under the +0x40 critical section ends any previous speaker (walk-away path when it differs), resets the state, writes the new speaker's handle to +0x68, builds the topic list and, on success, sets +0xb1 = 1, queues the dialogue UI messages and calls PlayerCharacter::StartDialogueTurnTowardSpeaker; on failure resets again (+0x68 back to invalid) and returns false (high); signature `bool (MenuTopicManager* this, TESObjectREFR* speaker, u32* unk, TopicEntry* topic, bool flag)`
+pub const MenuTopicManager__SetSpeakerAndBeginDialogue: u64 = 35282;
+/// `MenuTopicManager::SetSpeakerAndBeginDialogue` as a function pointer type (high).
+pub type MenuTopicManager__SetSpeakerAndBeginDialogue_fn = unsafe extern "C" fn(this: *mut crate::MenuTopicManager, speaker: *mut crate::TESObjectREFR, unk: *mut u32, topic: *mut c_void, flag: bool) -> bool;
+/// `MenuTopicManager::ctor` at 0x5ee360 (semantic, high); signature (high): `MenuTopicManager * ctor(MenuTopicManager * this)`; semantic: builds the dialogue topic manager in static storage 0x323ab20 and stores it in g_MenuTopicManager_ptr; speaker +0x68 and +0x6c start as g_InvalidRefHandle; InitializeCriticalSection(+0x40); registers +0 as a MenuOpenCloseEvent sink on the UI singleton (high); signature `MenuTopicManager* (MenuTopicManager* this)`
 pub const MenuTopicManager__ctor: u64 = 35265;
+/// `MenuTopicManager::ctor` as a function pointer type (high).
+pub type MenuTopicManager__ctor_fn = unsafe extern "C" fn(this: *mut crate::MenuTopicManager) -> *mut crate::MenuTopicManager;
 /// `MenuTopicManager::ctor_sub0` at 0x5f2230 (callgraph, medium); signature (untiered): `undefined ctor_sub0(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const MenuTopicManager__ctor_sub0: u64 = 35311;
 /// `MenuTopicManager::ctor_sub1` at 0x5f22b0 (callgraph, medium); signature (untiered): `undefined ctor_sub1(void)`
@@ -4377,8 +4497,6 @@ pub const MenuTopicManager__ctor_sub1: u64 = 35313;
 pub const MenuTopicManager__dtor: u64 = 35266;
 /// `MenuTopicManager::vdtor` at 0x5f2520 (slot_propagation, medium); signature (low): `MenuTopicManager * vdtor(MenuTopicManager * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const MenuTopicManager__vdtor: u64 = 35320;
-/// `MenuTopicManager::vfunc_1` at 0x5ee850 (rtti, high); signature (low): `undefined8 vfunc_1(MenuTopicManager * this, longlong * param_1)`
-pub const MenuTopicManager__vfunc_1: u64 = 35272;
 /// `MergeAdjacentFreeBlocks` at 0xcecc40 (decompiler, medium); signature (untiered): `undefined MergeAdjacentFreeBlocks(longlong param_1, ulonglong * param_2, ulonglong * param_3)`
 pub const MergeAdjacentFreeBlocks: u64 = 68495;
 /// `MergeCountEntriesFrom` at 0x1e9a80 (decompiler, medium); signature (untiered): `undefined MergeCountEntriesFrom(longlong param_1, longlong param_2)`
@@ -8373,145 +8491,3 @@ pub const NiBSplineFloatInterpolator__vfunc_60: u64 = 73509;
 pub const NiBSplineFloatInterpolator__vfunc_61: u64 = 73510;
 /// `NiBSplineFloatInterpolator::vfunc_64` at 0xf7a8c0 (rtti, medium); signature (low): `undefined4 vfunc_64(NiBSplineFloatInterpolator * this, short param_1)`
 pub const NiBSplineFloatInterpolator__vfunc_64: u64 = 73511;
-/// `NiBSplineFloatInterpolator::vfunc_65` at 0xf7a8e0 (rtti, medium); signature (low): `undefined vfunc_65(NiBSplineFloatInterpolator * this, undefined4 param_1, short param_2)`
-pub const NiBSplineFloatInterpolator__vfunc_65: u64 = 73512;
-/// `NiBSplineInterpolator::ctor` at 0xf977d0 (layout_inference, medium); signature (high): `undefined ctor(NiBSplineInterpolator * this)`
-pub const NiBSplineInterpolator__ctor: u64 = 74416;
-/// `NiBSplineInterpolator::ctor` at 0xf97aa0 (layout_inference, high); signature (low): `NiBSplineInterpolator * ctor(NiBSplineInterpolator * this, longlong param_1, longlong param_2)`
-pub const NiBSplineInterpolator__ctor_2: u64 = 74426;
-/// `NiBSplineInterpolator::vdtor` at 0xf97b10 (layout_inference, medium); signature (low): `NiBSplineInterpolator * vdtor(NiBSplineInterpolator * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const NiBSplineInterpolator__vdtor: u64 = 74427;
-/// `NiBSplineInterpolator::vfunc_2` at 0xf97bb0 (rtti, high); signature (low): `TypeNode * vfunc_2(void)`
-pub const NiBSplineInterpolator__vfunc_2: u64 = 74428;
-/// `NiBSplineInterpolator::vfunc_24` at 0xf97510 (rtti, high); signature (low): `undefined vfunc_24(NiBSplineInterpolator * this, longlong param_1)`
-pub const NiBSplineInterpolator__vfunc_24: u64 = 74411;
-/// `NiBSplineInterpolator::vfunc_25` at 0xf97610 (rtti, high); signature (untiered): `undefined vfunc_25(void)`
-pub const NiBSplineInterpolator__vfunc_25: u64 = 74412;
-/// `NiBSplineInterpolator::vfunc_26` at 0xf97620 (rtti, high); signature (low): `undefined1 vfunc_26(NiBSplineInterpolator * this, longlong * param_1)`
-pub const NiBSplineInterpolator__vfunc_26: u64 = 74413;
-/// `NiBSplineInterpolator::vfunc_27` at 0xf97690 (rtti, high); signature (low): `undefined vfunc_27(NiBSplineInterpolator * this, longlong * param_1)`
-pub const NiBSplineInterpolator__vfunc_27: u64 = 74414;
-/// `NiBSplineInterpolator::vfunc_28` at 0xf97740 (rtti, high); signature (low): `undefined8 vfunc_28(NiBSplineInterpolator * this, longlong * param_1)`
-pub const NiBSplineInterpolator__vfunc_28: u64 = 74415;
-/// `NiBSplineInterpolator::vfunc_49` at 0xf97960 (rtti, medium); signature (low): `undefined vfunc_49(void)`
-pub const NiBSplineInterpolator__vfunc_49: u64 = 74420;
-/// `NiBSplineInterpolator::vfunc_50` at 0xf97a40 (rtti, medium); signature (low): `undefined vfunc_50(NiBSplineInterpolator * this, float * param_1, float * param_2)`
-pub const NiBSplineInterpolator__vfunc_50: u64 = 74423;
-/// `NiBSplineInterpolator::vfunc_51` at 0xf97a80 (rtti, medium); signature (low): `undefined vfunc_51(void)`
-pub const NiBSplineInterpolator__vfunc_51: u64 = 74424;
-/// `NiBSplineInterpolator::vfunc_52` at 0xf97a90 (rtti, medium); signature (low): `undefined8 vfunc_52(void)`
-pub const NiBSplineInterpolator__vfunc_52: u64 = 74425;
-/// `NiBSplineInterpolator::vfunc_58` at 0xf97850 (rtti, medium); signature (low): `undefined4 vfunc_58(NiBSplineInterpolator * this, ushort param_1)`
-pub const NiBSplineInterpolator__vfunc_58: u64 = 74417;
-/// `NiBSplineInterpolator::vfunc_62` at 0xf978c0 (rtti, medium); signature (low): `undefined1 vfunc_62(void)`
-pub const NiBSplineInterpolator__vfunc_62: u64 = 74418;
-/// `NiBSplineInterpolator::vfunc_63` at 0xf978d0 (rtti, medium); signature (low): `int vfunc_63(NiBSplineInterpolator * this, undefined2 param_1)`
-pub const NiBSplineInterpolator__vfunc_63: u64 = 74419;
-/// `NiBSplinePoint3Interpolator::Create` at 0xf7b060 (string, high); signature (low): `NiBSplineInterpolator * Create(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const NiBSplinePoint3Interpolator__Create: u64 = 73540;
-/// `NiBSplinePoint3Interpolator::ctor` at 0xf7add0 (layout_inference, high); signature (low): `NiBSplinePoint3Interpolator * ctor(NiBSplinePoint3Interpolator * this, longlong param_1, undefined4 param_2, longlong param_3)`
-pub const NiBSplinePoint3Interpolator__ctor: u64 = 73529;
-/// `NiBSplinePoint3Interpolator::ctor` at 0xf7ae20 (layout_inference, high); signature (low): `NiBSplinePoint3Interpolator * ctor(NiBSplinePoint3Interpolator * this, undefined4 * param_1)`
-pub const NiBSplinePoint3Interpolator__ctor_2: u64 = 73530;
-/// `NiBSplinePoint3Interpolator::vdtor` at 0xf7b120 (slot_propagation, medium); signature (low): `NiBSplinePoint3Interpolator * vdtor(NiBSplinePoint3Interpolator * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-pub const NiBSplinePoint3Interpolator__vdtor: u64 = 73541;
-/// `NiBSplinePoint3Interpolator::vfunc_2` at 0xf7b160 (rtti, high); signature (low): `TypeNode * vfunc_2(void)`
-pub const NiBSplinePoint3Interpolator__vfunc_2: u64 = 73542;
-/// `NiBSplinePoint3Interpolator::vfunc_23` at 0xf7aa50 (rtti, high); signature (low): `NiBSplineInterpolator * vfunc_23(NiBSplinePoint3Interpolator * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
-pub const NiBSplinePoint3Interpolator__vfunc_23: u64 = 73521;
-/// `NiBSplinePoint3Interpolator::vfunc_24` at 0xf7ab90 (rtti, high); signature (low): `undefined vfunc_24(NiBSplinePoint3Interpolator * this, longlong param_1)`
-pub const NiBSplinePoint3Interpolator__vfunc_24: u64 = 73523;
-/// `NiBSplinePoint3Interpolator::vfunc_25` at 0xf7ac00 (rtti, high); signature (untiered): `undefined vfunc_25(void)`
-pub const NiBSplinePoint3Interpolator__vfunc_25: u64 = 73524;
-/// `NiBSplinePoint3Interpolator::vfunc_26` at 0xf7ac10 (rtti, high); signature (low): `bool vfunc_26(NiBSplinePoint3Interpolator * this, longlong * param_1)`
-pub const NiBSplinePoint3Interpolator__vfunc_26: u64 = 73525;
-/// `NiBSplinePoint3Interpolator::vfunc_27` at 0xf7ac30 (rtti, high); signature (low): `undefined vfunc_27(NiBSplinePoint3Interpolator * this, longlong * param_1)`
-pub const NiBSplinePoint3Interpolator__vfunc_27: u64 = 73526;
-/// `NiBSplinePoint3Interpolator::vfunc_28` at 0xf7aca0 (rtti, high); signature (low): `ulonglong vfunc_28(NiBSplinePoint3Interpolator * this, longlong * param_1)`
-pub const NiBSplinePoint3Interpolator__vfunc_28: u64 = 73527;
-/// `NiBSplinePoint3Interpolator::vfunc_37` at 0xf7b190 (rtti, high); signature (untiered): `undefined1 vfunc_37(void)`
-pub const NiBSplinePoint3Interpolator__vfunc_37: u64 = 73545;
-/// `NiBSplinePoint3Interpolator::vfunc_38` at 0xf7b180 (rtti, high); signature (untiered): `undefined1 vfunc_38(void)`
-pub const NiBSplinePoint3Interpolator__vfunc_38: u64 = 73544;
-/// `NiBSplinePoint3Interpolator::vfunc_39` at 0xf7ae70 (rtti, high); signature (low): `undefined8 vfunc_39(NiBSplinePoint3Interpolator * this, float param_1, undefined8 param_2, undefined4 * param_3)`
-pub const NiBSplinePoint3Interpolator__vfunc_39: u64 = 73531;
-/// `NiBSplinePoint3Interpolator::vfunc_40` at 0xf7b1a0 (rtti, high); signature (untiered): `undefined1 vfunc_40(void)`
-pub const NiBSplinePoint3Interpolator__vfunc_40: u64 = 73546;
-/// `NiBSplinePoint3Interpolator::vfunc_41` at 0xf7b170 (rtti, high); signature (untiered): `undefined1 vfunc_41(void)`
-pub const NiBSplinePoint3Interpolator__vfunc_41: u64 = 73543;
-/// `NiBSplinePoint3Interpolator::vfunc_42` at 0xf7b1b0 (rtti, high); signature (untiered): `undefined1 vfunc_42(void)`
-pub const NiBSplinePoint3Interpolator__vfunc_42: u64 = 73547;
-/// `NiBSplinePoint3Interpolator::vfunc_46` at 0xf7af50 (rtti, medium); signature (low): `undefined1 vfunc_46(void)`
-pub const NiBSplinePoint3Interpolator__vfunc_46: u64 = 73532;
-/// `NiBSplinePoint3Interpolator::vfunc_57` at 0xf7afb0 (rtti, medium); signature (low): `undefined8 vfunc_57(void)`
-pub const NiBSplinePoint3Interpolator__vfunc_57: u64 = 73534;
-/// `NiBSplinePoint3Interpolator::vfunc_59` at 0xf7afc0 (rtti, medium); signature (low): `undefined8 vfunc_59(NiBSplinePoint3Interpolator * this, short param_1)`
-pub const NiBSplinePoint3Interpolator__vfunc_59: u64 = 73535;
-/// `NiBSplinePoint3Interpolator::vfunc_60` at 0xf7afe0 (rtti, medium); signature (low): `undefined8 vfunc_60(NiBSplinePoint3Interpolator * this, short param_1)`
-pub const NiBSplinePoint3Interpolator__vfunc_60: u64 = 73536;
-/// `NiBSplinePoint3Interpolator::vfunc_61` at 0xf7b000 (rtti, medium); signature (low): `bool vfunc_61(NiBSplinePoint3Interpolator * this, short param_1)`
-pub const NiBSplinePoint3Interpolator__vfunc_61: u64 = 73537;
-/// `NiBSplinePoint3Interpolator::vfunc_64` at 0xf7b030 (rtti, medium); signature (low): `undefined4 vfunc_64(NiBSplinePoint3Interpolator * this, short param_1)`
-pub const NiBSplinePoint3Interpolator__vfunc_64: u64 = 73538;
-/// `NiBSplinePoint3Interpolator::vfunc_65` at 0xf7b050 (rtti, medium); signature (low): `undefined vfunc_65(NiBSplinePoint3Interpolator * this, undefined4 param_1, short param_2)`
-pub const NiBSplinePoint3Interpolator__vfunc_65: u64 = 73539;
-/// `NiBSplineTransformInterpolator::Create` at 0xf7bd60 (string, high); signature (low): `NiBSplineInterpolator * Create(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const NiBSplineTransformInterpolator__Create: u64 = 73572;
-/// `NiBSplineTransformInterpolator::ctor` at 0xf7b710 (layout_inference, high); signature (low): `NiBSplineTransformInterpolator * ctor(NiBSplineTransformInterpolator * this, longlong param_1, undefined4 param_2, undefined4 param_3, undefined4 param_4, longlong param_5)`
-pub const NiBSplineTransformInterpolator__ctor: u64 = 73556;
-/// `NiBSplineTransformInterpolator::ctor` at 0xf7b7b0 (layout_inference, high); signature (low): `NiBSplineTransformInterpolator * ctor(NiBSplineTransformInterpolator * this, float * param_1)`
-pub const NiBSplineTransformInterpolator__ctor_2: u64 = 73557;
-/// `NiBSplineTransformInterpolator::vdtor` at 0xf7be60 (slot_propagation, medium); signature (low): `NiBSplineTransformInterpolator * vdtor(NiBSplineTransformInterpolator * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-pub const NiBSplineTransformInterpolator__vdtor: u64 = 73573;
-/// `NiBSplineTransformInterpolator::vfunc_2` at 0xf7bea0 (rtti, high); signature (low): `TypeNode * vfunc_2(void)`
-pub const NiBSplineTransformInterpolator__vfunc_2: u64 = 73574;
-/// `NiBSplineTransformInterpolator::vfunc_23` at 0xf7b1c0 (rtti, high); signature (low): `NiBSplineInterpolator * vfunc_23(NiBSplineTransformInterpolator * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
-pub const NiBSplineTransformInterpolator__vfunc_23: u64 = 73548;
-/// `NiBSplineTransformInterpolator::vfunc_24` at 0xf7b380 (rtti, high); signature (low): `undefined vfunc_24(NiBSplineTransformInterpolator * this, longlong param_1)`
-pub const NiBSplineTransformInterpolator__vfunc_24: u64 = 73550;
-/// `NiBSplineTransformInterpolator::vfunc_25` at 0xf7b450 (rtti, high); signature (untiered): `undefined vfunc_25(void)`
-pub const NiBSplineTransformInterpolator__vfunc_25: u64 = 73551;
-/// `NiBSplineTransformInterpolator::vfunc_26` at 0xf7b460 (rtti, high); signature (low): `bool vfunc_26(NiBSplineTransformInterpolator * this, longlong * param_1)`
-pub const NiBSplineTransformInterpolator__vfunc_26: u64 = 73552;
-/// `NiBSplineTransformInterpolator::vfunc_27` at 0xf7b480 (rtti, high); signature (low): `undefined vfunc_27(NiBSplineTransformInterpolator * this, longlong * param_1)`
-pub const NiBSplineTransformInterpolator__vfunc_27: u64 = 73553;
-/// `NiBSplineTransformInterpolator::vfunc_28` at 0xf7b550 (rtti, high); signature (low): `ulonglong vfunc_28(NiBSplineTransformInterpolator * this, longlong * param_1)`
-pub const NiBSplineTransformInterpolator__vfunc_28: u64 = 73554;
-/// `NiBSplineTransformInterpolator::vfunc_37` at 0xf7b820 (rtti, high); signature (low): `ulonglong vfunc_37(NiBSplineTransformInterpolator * this, float param_1, undefined8 param_2, float * param_3)`
-pub const NiBSplineTransformInterpolator__vfunc_37: u64 = 73558;
-/// `NiBSplineTransformInterpolator::vfunc_38` at 0xf7bec0 (rtti, high); signature (untiered): `undefined1 vfunc_38(void)`
-pub const NiBSplineTransformInterpolator__vfunc_38: u64 = 73576;
-/// `NiBSplineTransformInterpolator::vfunc_39` at 0xf7bed0 (rtti, high); signature (untiered): `undefined1 vfunc_39(void)`
-pub const NiBSplineTransformInterpolator__vfunc_39: u64 = 73577;
-/// `NiBSplineTransformInterpolator::vfunc_40` at 0xf7bee0 (rtti, high); signature (untiered): `undefined1 vfunc_40(void)`
-pub const NiBSplineTransformInterpolator__vfunc_40: u64 = 73578;
-/// `NiBSplineTransformInterpolator::vfunc_41` at 0xf7beb0 (rtti, high); signature (untiered): `undefined1 vfunc_41(void)`
-pub const NiBSplineTransformInterpolator__vfunc_41: u64 = 73575;
-/// `NiBSplineTransformInterpolator::vfunc_42` at 0xf7bef0 (rtti, high); signature (untiered): `undefined1 vfunc_42(void)`
-pub const NiBSplineTransformInterpolator__vfunc_42: u64 = 73579;
-/// `NiBSplineTransformInterpolator::vfunc_48` at 0xf7bb10 (rtti, medium); signature (low): `undefined1 vfunc_48(void)`
-pub const NiBSplineTransformInterpolator__vfunc_48: u64 = 73559;
-/// `NiBSplineTransformInterpolator::vfunc_57` at 0xf7bc10 (rtti, medium); signature (low): `undefined8 vfunc_57(void)`
-pub const NiBSplineTransformInterpolator__vfunc_57: u64 = 73566;
-/// `NiBSplineTransformInterpolator::vfunc_59` at 0xf7bc20 (rtti, medium); signature (low): `undefined8 vfunc_59(NiBSplineTransformInterpolator * this, short param_1)`
-pub const NiBSplineTransformInterpolator__vfunc_59: u64 = 73567;
-/// `NiBSplineTransformInterpolator::vfunc_60` at 0xf7bc50 (rtti, medium); signature (low): `undefined8 vfunc_60(NiBSplineTransformInterpolator * this, short param_1)`
-pub const NiBSplineTransformInterpolator__vfunc_60: u64 = 73568;
-/// `NiBSplineTransformInterpolator::vfunc_61` at 0xf7bc70 (rtti, medium); signature (low): `undefined8 vfunc_61(NiBSplineTransformInterpolator * this, short param_1)`
-pub const NiBSplineTransformInterpolator__vfunc_61: u64 = 73569;
-/// `NiBSplineTransformInterpolator::vfunc_64` at 0xf7bd00 (rtti, medium); signature (low): `undefined4 vfunc_64(NiBSplineTransformInterpolator * this, short param_1)`
-pub const NiBSplineTransformInterpolator__vfunc_64: u64 = 73570;
-/// `NiBSplineTransformInterpolator::vfunc_65` at 0xf7bd30 (rtti, medium); signature (low): `undefined vfunc_65(NiBSplineTransformInterpolator * this, undefined4 param_1, short param_2)`
-pub const NiBSplineTransformInterpolator__vfunc_65: u64 = 73571;
-/// `NiBackToFrontAccumulator::ctor` at 0xf1e770 (layout_inference, high); signature (high): `NiBackToFrontAccumulator * ctor(NiBackToFrontAccumulator * this)`
-pub const NiBackToFrontAccumulator__ctor: u64 = 71804;
-/// `NiBackToFrontAccumulator::dtor` at 0xf1e7c0 (layout_inference, high); signature (low): `undefined dtor(NiBackToFrontAccumulator * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-pub const NiBackToFrontAccumulator__dtor: u64 = 71805;
-/// `NiBackToFrontAccumulator::vdtor` at 0xf1ec30 (slot_propagation, medium); signature (low): `NiBackToFrontAccumulator * vdtor(NiBackToFrontAccumulator * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-pub const NiBackToFrontAccumulator__vdtor: u64 = 71817;
-/// `NiBackToFrontAccumulator::vfunc_2` at 0xf1ed30 (rtti, high); signature (low): `TypeNode * vfunc_2(void)`
-pub const NiBackToFrontAccumulator__vfunc_2: u64 = 71818;
-/// `NiBackToFrontAccumulator::vfunc_23` at 0xf1e540 (rtti, high); signature (low): `NiAccumulator * vfunc_23(NiBackToFrontAccumulator * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
-pub const NiBackToFrontAccumulator__vfunc_23: u64 = 71796;
-/// `NiBackToFrontAccumulator::vfunc_24` at 0xf1e640 (rtti, high); signature (untiered): `undefined vfunc_24(void)`
-pub const NiBackToFrontAccumulator__vfunc_24: u64 = 71798;

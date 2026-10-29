@@ -573,12 +573,6 @@ impl core::ops::Deref for crate::CCallbackImpl_8 {
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
-/// `CachedRaycastData` is laid out from its primary base `hkaRaycastInterface`, so its methods and fields are reachable through it.
-impl core::ops::Deref for crate::CachedRaycastData {
-    type Target = crate::hkaRaycastInterface;
-    #[inline]
-    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
-}
 /// `CalmEffect` is laid out from its primary base `TargetValueModifierEffect`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::CalmEffect {
     type Target = crate::TargetValueModifierEffect;
@@ -3066,12 +3060,6 @@ impl core::ops::Deref for crate::REFREventCallbacks__ConcreteEventCallbackFactor
 /// `REFREventCallbacks::ConcreteEventCallbackFactory<_anon_A86607C4::ScenePhaseResultsCallBack>` is laid out from its primary base `REFREventCallbacks::IEventCallbackFactory`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::REFREventCallbacks__ConcreteEventCallbackFactory__anon_A86607C4__ScenePhaseResultsCallBack {
     type Target = crate::REFREventCallbacks__IEventCallbackFactory;
-    #[inline]
-    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
-}
-/// `RaceSexMenu` is laid out from its primary base `IMenu`, so its methods and fields are reachable through it.
-impl core::ops::Deref for crate::RaceSexMenu {
-    type Target = crate::IMenu;
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
@@ -5788,9 +5776,56 @@ impl crate::MarketplaceMenu {
 }
 
 impl crate::MenuTopicManager {
+    /// `g_MenuTopicManager_ptr` at 0x31df408, id 401099 (runtime, high); pointer to `MenuTopicManager`: the topic manager; points at static storage 0x323ab20 after startup; the topic manager; points at static storage 0x323ab20 after startup (high, camera pass), type `ptr:MenuTopicManager`
+    ///
+    /// `None` until the engine creates it.
+    #[inline]
+    pub fn singleton() -> Option<&'static Self> { unsafe { *(address!(401099) as *const Option<&'static Self>) } }
     /// The `BSTEventSink<PositionPlayerEvent>` base at +0x8.
     #[inline]
     pub fn as_bst_event_sink_position_player_event(&self) -> &crate::BSTEventSink_PositionPlayerEvent { unsafe { &*core::ptr::from_ref(self).byte_add(0x8).cast() } }
+    /// `MenuTopicManager::EndDialogueState`: clears the dialogue state under the +0x40 critical section: +0x68 = g_InvalidRefHandle (unless the speaker is a non-actor with extra data 0x71 still talking), frees the +0x80/+0x98 arrays, +0xb0 = 0, +0xb2..+0xb9 = 0, +0x70 = 0, +0xb1 = 0, topic lists +0x20/+0x28/+0x30/+0x38 freed
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 35274, rva 0x5ee910.
+    /// `void (MenuTopicManager* this)`
+    #[inline]
+    pub fn end_dialogue_state(&self) { unsafe { function!(35274, (*const Self))(core::ptr::from_ref(self)) } }
+    /// `MenuTopicManager::EndDialogueWithSpeaker`: ends the current dialogue: notifies the speaker (slot 65 with false), picks and says a walk-away topic where one applies, restores the NPC's package, then EndDialogueState 0x5ee910 (+0x68 invalid); if a walk-away topic was said the speaker handle is written back to +0x68; with fromMenuClose it queues a UI message and sets +0xb3 = 0, +0xbb = 1
+    ///
+    /// Semantic, camera pass, high; ledger runtime evidence, name high; id 35294, rva 0x5f0ad0.
+    /// `void (MenuTopicManager* this, TESObjectREFR* ref, bool fromMenuClose)`
+    #[inline]
+    pub fn end_dialogue_with_speaker(&self, ref_: &crate::TESObjectREFR, fromMenuClose: bool) { unsafe { function!(35294, (*const Self, *const crate::TESObjectREFR, bool))(core::ptr::from_ref(self), core::ptr::from_ref(ref_), fromMenuClose) } }
+    /// `MenuTopicManager::GetSpeaker`: resolves the speaker handle +0x68 and returns the raw reference (the temporary reference is dropped before returning), null when invalid; takes no lock
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 35288, rva 0x5f06c0.
+    /// `TESObjectREFR* (MenuTopicManager* this)`
+    #[inline]
+    pub fn get_speaker(&self) -> Option<&'static crate::TESObjectREFR> { unsafe { function!(35288, (*const Self) -> Option<&'static crate::TESObjectREFR>)(core::ptr::from_ref(self)) } }
+    /// `MenuTopicManager::SetPreviousSpeaker`: writes ref's handle (or g_InvalidRefHandle for null) to +0x6c
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 35292, rva 0x5f0a10.
+    /// `void (MenuTopicManager* this, TESObjectREFR* ref)`
+    #[inline]
+    pub fn set_previous_speaker(&self, ref_: &crate::TESObjectREFR) { unsafe { function!(35292, (*const Self, *const crate::TESObjectREFR))(core::ptr::from_ref(self), core::ptr::from_ref(ref_)) } }
+    /// `MenuTopicManager::SetSpeakerAndBeginDialogue`: starts a dialogue: under the +0x40 critical section ends any previous speaker (walk-away path when it differs), resets the state, writes the new speaker's handle to +0x68, builds the topic list and, on success, sets +0xb1 = 1, queues the dialogue UI messages and calls PlayerCharacter::StartDialogueTurnTowardSpeaker; on failure resets again (+0x68 back to invalid) and returns false
+    ///
+    /// Semantic, camera pass, high; ledger runtime evidence, name high; id 35282, rva 0x5ef4c0.
+    /// `bool (MenuTopicManager* this, TESObjectREFR* speaker, u32* unk, TopicEntry* topic, bool flag)`
+    ///
+    /// # Safety
+    /// `unk`, `topic` must point to what the engine expects.
+    #[inline]
+    pub unsafe fn set_speaker_and_begin_dialogue(&self, speaker: *mut crate::TESObjectREFR, unk: *mut u32, topic: *mut c_void, flag: bool) -> bool { unsafe { function!(35282, (*const Self, *mut crate::TESObjectREFR, *mut u32, *mut c_void, bool) -> bool)(core::ptr::from_ref(self), speaker, unk, topic, flag) } }
+    /// `MenuTopicManager::ctor`: builds the dialogue topic manager in static storage 0x323ab20 and stores it in g_MenuTopicManager_ptr; speaker +0x68 and +0x6c start as g_InvalidRefHandle; InitializeCriticalSection(+0x40); registers +0 as a MenuOpenCloseEvent sink on the UI singleton
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 35265, rva 0x5ee360.
+    /// `MenuTopicManager* (MenuTopicManager* this)`
+    ///
+    /// # Safety
+    /// It constructs or destroys an object in place.
+    #[inline]
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(35265, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::MistMenu {
@@ -5939,52 +5974,6 @@ impl crate::Projectile {
     /// The pass rates the signature medium.
     #[inline]
     pub unsafe fn update_aim_from_player_camera(&self) { unsafe { function!(44200, (*const Self))(core::ptr::from_ref(self)) } }
-}
-
-impl crate::RaceSexMenu {
-    /// The `MenuEventHandler` base at +0x30.
-    #[inline]
-    pub fn as_menu_event_handler(&self) -> &crate::MenuEventHandler { unsafe { &*core::ptr::from_ref(self).byte_add(0x30).cast() } }
-    /// `RaceSexMenu::ProcessMessage`: IMenu slot 4: name entry/confirm boxes, and on the update path applies a queued camera zoom (pending from/to pose pointers 0x3258478/0x3258480 and duration 0x3258488, set by StartCloseFadeOut and by its own appearance-refresh path) to g_RaceMenuCameraInterp, refreshes the player's appearance, updates the player and its 3D, then calls RaceSexCamera slot 2
-    ///
-    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 52345, rva 0x968010.
-    /// `UIMessageResult (RaceSexMenu* this, UIMessage* message)`
-    /// May be null: `message`.
-    ///
-    /// # Safety
-    /// `message` must point to what the engine expects.
-    #[inline]
-    pub unsafe fn process_message(&self, message: *mut crate::UIMessage) -> Result<crate::UIMessageResult, u32> { unsafe { let raw = function!(52345, (*const Self, *mut crate::UIMessage) -> u32)(core::ptr::from_ref(self), message); crate::UIMessageResult::from_u32(raw).ok_or(raw) } }
-    /// `RaceSexMenu::SetupPlayerLookAt`: sets the player's head-tracking graph variables for the race menu camera (fRSMLookAtOnGain:Interface)
-    ///
-    /// Semantic, camera pass, high; ledger runtime evidence, name high; id 52389, rva 0x96b930.
-    /// `void (RaceSexMenu* this)`
-    #[inline]
-    pub fn setup_player_look_at(&self) { unsafe { function!(52389, (*const Self))(core::ptr::from_ref(self)) } }
-    /// `RaceSexMenu::StartCameraZoom`: starts the race menu camera zoom interpolation in or out
-    ///
-    /// Semantic, camera pass, medium; ledger semantic evidence, name medium; id 52414, rva 0x971760.
-    /// `void (void* unused, bool zoomIn)`
-    ///
-    /// # Safety
-    /// The pass rates the signature medium.
-    #[inline]
-    pub unsafe fn start_camera_zoom(unused: *mut c_void, zoomIn: bool) { unsafe { function!(52414, (*mut c_void, bool))(unused, zoomIn) } }
-    /// `RaceSexMenu::StartCloseFadeOut`: invokes 'FadeOut' on the movie, freezes the current eased camera pose, queues the move to the final pose (fPlayerZoomTime:Interface) for ProcessMessage, sets +0x1a0 (closing), clears the chargen precache
-    ///
-    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 52388, rva 0x96b7d0.
-    /// `void (RaceSexMenu* this)`
-    #[inline]
-    pub fn start_close_fade_out(&self) { unsafe { function!(52388, (*const Self))(core::ptr::from_ref(self)) } }
-    /// `RaceSexMenu::ZoomPCCallback`: the movie's 'ZoomPC' call: starts g_RaceMenuCameraInterp from the current eased pose (or from the opposite end when idle) to the zoomed-in or zoomed-out pose (args[0] bool) over fPlayerZoomTime:Interface ms from g_FrameTimeMs
-    ///
-    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 52348, rva 0x9691e0.
-    /// `void (const FxDelegateArgs* args)`
-    ///
-    /// # Safety
-    /// `args` must point to what the engine expects.
-    #[inline]
-    pub unsafe fn zoom_pc_callback(args: *const c_void) { unsafe { function!(52348, (*const c_void))(args) } }
 }
 
 impl crate::RagdollFurnitureListener {
@@ -6312,9 +6301,6 @@ pub fn g_lip_synch_anim_db_lip_audio_interface() -> *mut c_void { address!(35969
 /// `g_MagicFavorites` at 0x323a1d0, id 403620 (layout_inference, medium)
 #[inline]
 pub fn g_magic_favorites() -> *mut c_void { address!(403620) as *mut c_void }
-/// `g_MenuTopicManager_ptr` at 0x31df408, id 401099 (xref_inference, medium)
-#[inline]
-pub fn g_menu_topic_manager_ptr() -> *mut c_void { address!(401099) as *mut c_void }
 /// `g_NavMeshObstacleManager_ptr` at 0x21a05a8, id 400442 (xref_inference, medium)
 #[inline]
 pub fn g_nav_mesh_obstacle_manager_ptr() -> *mut c_void { address!(400442) as *mut c_void }

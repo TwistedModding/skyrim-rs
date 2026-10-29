@@ -7,6 +7,10 @@ use core::ffi::{c_char, c_void};
 pub const AIProcess__ClearDeathForce: u64 = 39499;
 /// `AIProcess::ClearDeathForce` as a function pointer type (high).
 pub type AIProcess__ClearDeathForce_fn = unsafe extern "C" fn(this: *mut crate::AIProcess);
+/// `AIProcess::ClearHeadTrackingActive` at 0x723580 (semantic, high); signature (untiered): `undefined ClearHeadTrackingActive(longlong param_1)`; semantic: MiddleHighProcessData+0x326 = 0 when process->middleHigh exists (high); signature `void (AIProcess* process)`
+pub const AIProcess__ClearHeadTrackingActive: u64 = 39889;
+/// `AIProcess::ClearHeadTrackingActive` as a function pointer type (high).
+pub type AIProcess__ClearHeadTrackingActive_fn = unsafe extern "C" fn(process: *mut crate::AIProcess);
 /// `AIProcess::ClearKnockState` at 0x723ff0 (runtime, high); signature (untiered): `undefined ClearKnockState(longlong param_1, TESObjectREFR * param_2, undefined8 param_3, undefined8 param_4)`; semantic: ends the actor's knock/ragdoll state: restores its 3D and graph, clears the ragdoll extra, clears Actor+0xc8 bits 25..27 (AND 0xf1ffffff) and, for the player, PlayerCamera::LeaveBleedout(camera, 1) (instant leave of the bleedout camera) (high); signature `void (AIProcess* this, Actor* actor)`
 pub const AIProcess__ClearKnockState: u64 = 39897;
 /// `AIProcess::ClearKnockState` as a function pointer type (high).
@@ -55,6 +59,10 @@ pub type AIProcess__GetMovementSpeed_fn = unsafe extern "C" fn(this: *const crat
 pub const AIProcess__HasMiddleHighField210: u64 = 39792;
 /// `AIProcess::HasMiddleHighField210` as a function pointer type (high).
 pub type AIProcess__HasMiddleHighField210_fn = unsafe extern "C" fn(this: *mut crate::AIProcess) -> bool;
+/// `AIProcess::IsInDialogueWithPlayer` at 0x6f5180 (semantic, high); signature (untiered): `longlong IsInDialogueWithPlayer(longlong param_1)`; semantic: true when the object behind AIProcess+0x10 exists and its byte +0x458 is set (high); signature `bool (AIProcess* process)`
+pub const AIProcess__IsInDialogueWithPlayer: u64 = 39347;
+/// `AIProcess::IsInDialogueWithPlayer` as a function pointer type (high).
+pub type AIProcess__IsInDialogueWithPlayer_fn = unsafe extern "C" fn(process: *mut crate::AIProcess) -> bool;
 /// `AIProcess::PlayIdle` at 0x6f0a20 (semantic, medium); signature (untiered): `ulonglong PlayIdle(longlong param_1, longlong * param_2, longlong param_3, longlong * param_4, char param_5, char param_6, longlong param_7)`; semantic: builds a TESActionData for the default-object action (0x40 from Papyrus) carrying the idle (+0x48) and runs it through LoadActionAnimationWithCallback 0x703360; returns whether the graph accepted it. Refuses during player VATS playback (VATS+0x20 == 4) and for actors in some states; it stores no 'current idle' pointer (medium); signature `bool (AIProcess* this, Actor* actor, u32 actionDefaultObject, TESIdleForm* idle, bool checkConditions, bool force, TESObjectREFR* target)`
 pub const AIProcess__PlayIdle: u64 = 39256;
 /// `AIProcess::ResetHighField3F8Pair` at 0x6ffef0 (semantic, high); signature (untiered): `undefined ResetHighField3F8Pair(longlong param_1)`; semantic: high data +0x3f8 = +0x3fa = 0xffff (high); signature `void (AIProcess* this)`
@@ -73,6 +81,10 @@ pub type AIProcess__SetField94_fn = unsafe extern "C" fn(this: *mut crate::AIPro
 pub const AIProcess__SetHeadTrackResetTimer: u64 = 39473;
 /// `AIProcess::SetHeadTrackResetTimer` as a function pointer type (high).
 pub type AIProcess__SetHeadTrackResetTimer_fn = unsafe extern "C" fn(this: *mut crate::AIProcess, seconds: f32);
+/// `AIProcess::SetHeadTrackTargetPoint` at 0x723510 (semantic, high); signature (untiered): `undefined SetHeadTrackTargetPoint(longlong param_1, longlong param_2, undefined4 * param_3)`; semantic: when process->middleHigh (+8) exists: MiddleHighProcessData+0x326 = 1 (the graph's bHeadTracking channel) and SetGraphVariableVec3OnAllGraphs(actor+0x38, 'TargetLocation', point) (high); signature `void (AIProcess* process, Actor* actor, const NiPoint3* point)`
+pub const AIProcess__SetHeadTrackTargetPoint: u64 = 39887;
+/// `AIProcess::SetHeadTrackTargetPoint` as a function pointer type (high).
+pub type AIProcess__SetHeadTrackTargetPoint_fn = unsafe extern "C" fn(process: *mut crate::AIProcess, actor: *mut crate::Actor, point: *const crate::NiPoint3);
 /// `AIProcess::SetHighField324` at 0x6f5200 (semantic, high); signature (untiered): `undefined SetHighField324(longlong param_1, undefined4 param_2)`; semantic: high data (+0x10) +0x324 = value (high); signature `void (AIProcess* this, float value)`
 pub const AIProcess__SetHighField324: u64 = 39351;
 /// `AIProcess::SetHighField324` as a function pointer type (high).
@@ -599,6 +611,10 @@ pub const Actor__ForEachSpellVisitor__dtor_3: u64 = 44945;
 pub const Actor__ForEachSpellVisitor__dtor_4: u64 = 52069;
 /// `Actor::ForEachSpellVisitor::vdtor` at 0x6dabd0 (layout_inference, medium); signature (low): `ForEachSpellVisitor * vdtor(ForEachSpellVisitor * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const Actor__ForEachSpellVisitor__vdtor: u64 = 38859;
+/// `Actor::GetActiveEffectList` at 0x6d85b0 (runtime, high); signature (untiered): `undefined8 GetActiveEffectList(Actor * this)`; semantic: MagicTarget slot 7 on an actor: the list at +0x1a0 of the process's middle-high data (Actor+0xf8, then +8), null for an actor without one; nodes are {effect, next} (high); signature `BSSimpleList<ActiveEffect*>* (MagicTarget* this)`
+pub const Actor__GetActiveEffectList: u64 = 38795;
+/// `Actor::GetActiveEffectList` as a function pointer type (high).
+pub type Actor__GetActiveEffectList_fn = unsafe extern "C" fn(this: *mut crate::MagicTarget) -> *mut c_void;
 /// `Actor::GetActorValueModifier` at 0x6c5440 (semantic, high); signature (untiered): `undefined4 GetActorValueModifier(longlong param_1, int param_2, int param_3)`; semantic: one modifier of a value (high); signature `float Actor::GetActorValueModifier(Actor* this, int modifier, ActorValue value)`
 pub const Actor__GetActorValueModifier: u64 = 38469;
 /// `Actor::GetActorValueModifier` as a function pointer type (high).
@@ -671,6 +687,10 @@ pub type Actor__GetScaledHeight_fn = unsafe extern "C" fn(actor: *const crate::A
 pub const Actor__HasKeyword: u64 = 37183;
 /// `Actor::HasKeyword` as a function pointer type (high).
 pub type Actor__HasKeyword_fn = unsafe extern "C" fn(this: *const crate::Actor, keyword: *const crate::BGSKeyword) -> bool;
+/// `Actor::HeadTrackingOff` at 0x6a54e0 (semantic, high); signature (untiered): `undefined HeadTrackingOff(longlong param_1)`; semantic: flags2 &= ~8; with a process: clears head-track slot 0 (0x6fe770) and, when race+0x108 bit 15, MiddleHighProcessData+0x326 = 0 (high); signature `void (Actor* actor)`
+pub const Actor__HeadTrackingOff: u64 = 37798;
+/// `Actor::HeadTrackingOff` as a function pointer type (high).
+pub type Actor__HeadTrackingOff_fn = unsafe extern "C" fn(actor: *mut crate::Actor);
 /// `Actor::IAnimationGraphManagerHolder_vdtor` at 0x6bbcfc (slot_propagation, medium); signature (high): `undefined IAnimationGraphManagerHolder_vdtor(Actor * this)`
 pub const Actor__IAnimationGraphManagerHolder_vdtor: u64 = 38191;
 /// `Actor::IAnimationGraphManagerHolder_vfunc_11` at 0x6b0180 (rtti, medium); signature (low): `undefined IAnimationGraphManagerHolder_vfunc_11(Actor * this, longlong * param_1)`
@@ -845,7 +865,7 @@ pub const Actor__UpdateAlpha: u64 = 38721;
 pub const Actor__UpdateAnimation: u64 = 37361;
 /// `Actor::UpdateEquippedWeaponAnimations` at 0x67e360 (semantic, high); signature (untiered): `undefined UpdateEquippedWeaponAnimations(Actor * this, char param_1)`
 pub const Actor__UpdateEquippedWeaponAnimations: u64 = 37373;
-/// `Actor::UpdateHeadTracking` at 0x6b3f20 (semantic, high); signature (untiered): `undefined UpdateHeadTracking(Actor * this, float param_1, undefined8 param_2, Actor * param_3)`
+/// `Actor::UpdateHeadTracking` at 0x6b3f20 (runtime, high); signature (untiered): `undefined UpdateHeadTracking(Actor * this, float param_1, undefined8 param_2, Actor * param_3)`
 pub const Actor__UpdateHeadTracking: u64 = 38009;
 /// `Actor::UpdateStaminaRegen` at 0x6c4620 (semantic, high); signature (untiered): `undefined UpdateStaminaRegen(longlong param_1, float param_2, undefined8 param_3, undefined8 param_4)`; semantic: decrements the stamina regen delay (AV 0x1a) by delta; when it is not delayed and the actor may regenerate (process flag bit 23, not in the 0x100 state unless extra 0xa9 is present and +0x204 bit 1 clear), applies the stamina regen for delta, except for the player while bow zoom is active (PlayerCamera+0x161) (high); signature `void (Actor* actor, float delta)`
 pub const Actor__UpdateStaminaRegen: u64 = 38452;
@@ -5145,6 +5165,10 @@ pub const ApplyCommaSeparatedTokensFromField28: u64 = 70089;
 pub const ApplyCrimeGoldSkillPenalty: u64 = 41579;
 /// `ApplyCssPropertyToTextFormat` at 0xe56780 (decompiler, medium); signature (untiered): `undefined ApplyCssPropertyToTextFormat(longlong param_1, undefined8 * param_2, char * param_3)`
 pub const ApplyCssPropertyToTextFormat: u64 = 89054;
+/// `ApplyCullingParamsToCuller` at 0x152be10 (semantic, high); signature (untiered): `longlong ApplyCullingParamsToCuller(int param_1, longlong * param_2, longlong param_3)`; semantic: flushKind 0: configures the static culler from params (camera +0x18, accumulator camera, +0x11c/+0x11d/+0x11e/+0x11f/+0x121, cullMode +0x30198, +0x301a0, +0x30190, custom planes, frustum override) and returns it; flushKind 1: returns params+0x30 untouched (high); signature `BSCullingProcess* (u32 flushKind, CullingParams* params, BSCullingProcess* staticCuller)`
+pub const ApplyCullingParamsToCuller: u64 = 106930;
+/// `ApplyCullingParamsToCuller` as a function pointer type (high).
+pub type ApplyCullingParamsToCuller_fn = unsafe extern "C" fn(flushKind: u32, params: *mut c_void, staticCuller: *mut crate::BSCullingProcess) -> *mut crate::BSCullingProcess;
 /// `ApplyDamageRegenDelayAndDispatch` at 0x6c54c0 (decompiler, medium); signature (untiered): `undefined ApplyDamageRegenDelayAndDispatch(longlong param_1, int param_2, undefined4 param_3, float param_4, undefined8 param_5)`
 pub const ApplyDamageRegenDelayAndDispatch: u64 = 38470;
 /// `ApplyDamageStageFromExtra55` at 0x1d4cb0 (decompiler, medium); signature (untiered): `undefined8 ApplyDamageStageFromExtra55(longlong param_1, longlong * param_2, char param_3)`
@@ -7245,11 +7269,3 @@ pub const AutoRegisterCreator_CombatPathT_CombatPathRequestFlyingAttack_CombatPa
 pub const AutoRegisterCreator_CombatPathT_CombatPathRequestGeneric_CombatPathingGoalPolicyExitWater_Combat_be934cad70a0: u64 = 49320;
 /// `AutoRegisterCreator<CombatPathT<CombatPathRequestGeneric<CombatPathingGoalPolicyFindAttackLocation,CombatPathingSearchPolicyStandard>,CombatPathDestinationNone>,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_>::vdtor` at 0x88f800 (layout_inference, medium); signature (low): `AutoRegisterCreator<CombatPathT<CombatPathRequestGeneric<CombatPathingGoalPolicyFindAttackLocation,CombatPathingSearchPolicyStandard>,CombatPathDestinationNone>,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_> * vdtor(AutoRegisterCreator<CombatPathT<CombatPathRequestGeneric<CombatPathingGoalPolicyFindAttackLocation,CombatPathingSearchPolicyStandard>,CombatPathDestinationNone>,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const AutoRegisterCreator_CombatPathT_CombatPathRequestGeneric_CombatPathingGoalPolicyFindAttackLocati_353d86519740: u64 = 48162;
-/// `AutoRegisterCreator<CombatPathT<CombatPathRequestGeneric<CombatPathingGoalPolicyFindCover,CombatPathingSearchPolicyStandard>,CombatPathDestinationNone>,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_>::vdtor` at 0x8d5440 (layout_inference, medium); signature (low): `AutoRegisterCreator<CombatPathT<CombatPathRequestGeneric<CombatPathingGoalPolicyFindCover,CombatPathingSearchPolicyStandard>,CombatPathDestinationNone>,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_> * vdtor(AutoRegisterCreator<CombatPathT<CombatPathRequestGeneric<CombatPathingGoalPolicyFindCover,CombatPathingSearchPolicyStandard>,CombatPathDestinationNone>,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const AutoRegisterCreator_CombatPathT_CombatPathRequestGeneric_CombatPathingGoalPolicyFindCover_Combat_582f14a6467a: u64 = 49833;
-/// `AutoRegisterCreator<CombatPathT<CombatPathRequestGeneric<CombatPathingGoalPolicyFindHideCover,CombatPathingSearchPolicyStandard>,CombatPathDestinationNone>,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_>::vdtor` at 0x8a2590 (layout_inference, medium); signature (low): `AutoRegisterCreator<CombatPathT<CombatPathRequestGeneric<CombatPathingGoalPolicyFindHideCover,CombatPathingSearchPolicyStandard>,CombatPathDestinationNone>,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_> * vdtor(AutoRegisterCreator<CombatPathT<CombatPathRequestGeneric<CombatPathingGoalPolicyFindHideCover,CombatPathingSearchPolicyStandard>,CombatPathDestinationNone>,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const AutoRegisterCreator_CombatPathT_CombatPathRequestGeneric_CombatPathingGoalPolicyFindHideCover_Co_967aec96e7d5: u64 = 48580;
-/// `AutoRegisterCreator<CombatPathT<CombatPathRequestGeneric<CombatPathingGoalPolicyFindTargetLocation,CombatPathingSearchPolicyStandard>,CombatPathDestinationRef>,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_>::vdtor` at 0x85e570 (layout_inference, medium); signature (low): `AutoRegisterCreator<CombatPathT<CombatPathRequestGeneric<CombatPathingGoalPolicyFindTargetLocation,CombatPathingSearchPolicyStandard>,CombatPathDestinationRef>,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_> * vdtor(AutoRegisterCreator<CombatPathT<CombatPathRequestGeneric<CombatPathingGoalPolicyFindTargetLocation,CombatPathingSearchPolicyStandard>,CombatPathDestinationRef>,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const AutoRegisterCreator_CombatPathT_CombatPathRequestGeneric_CombatPathingGoalPolicyFindTargetLocati_dd6ff5e7aaaf: u64 = 47080;
-/// `AutoRegisterCreator<CombatPathT<CombatPathRequestGeneric<CombatPathingGoalPolicyFlank,CombatPathingSearchPolicyFlank>,CombatPathDestinationRef>,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_>::vdtor` at 0x893910 (layout_inference, medium); signature (low): `AutoRegisterCreator<CombatPathT<CombatPathRequestGeneric<CombatPathingGoalPolicyFlank,CombatPathingSearchPolicyFlank>,CombatPathDestinationRef>,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_> * vdtor(AutoRegisterCreator<CombatPathT<CombatPathRequestGeneric<CombatPathingGoalPolicyFlank,CombatPathingSearchPolicyFlank>,CombatPathDestinationRef>,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const AutoRegisterCreator_CombatPathT_CombatPathRequestGeneric_CombatPathingGoalPolicyFlank_CombatPath_e9cdc7a3d3ec: u64 = 48281;

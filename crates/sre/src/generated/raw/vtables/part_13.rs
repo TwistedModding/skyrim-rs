@@ -9381,7 +9381,7 @@ impl HeadTrackingOffHandler_vtable {
 pub struct HeadTrackingOnHandler_vtable {
     /// `HeadTrackingOnHandler::vdtor` at 0x7d4120 (layout_inference, medium); signature (low): `HeadTrackingOnHandler * vdtor(HeadTrackingOnHandler * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `HeadTrackingOnHandler::vfunc_1` at 0x7cd5a0 (rtti, high); signature (low): `undefined1 vfunc_1(HeadTrackingOnHandler * this, longlong param_1)`
+    /// `HeadTrackingOnHandler::Handle` at 0x7cd5a0 (semantic, high); signature (untiered): `undefined1 Handle(HeadTrackingOnHandler * this, longlong param_1)`
     pub slot_1: *const c_void,
 }
 impl HeadTrackingOnHandler_vtable {

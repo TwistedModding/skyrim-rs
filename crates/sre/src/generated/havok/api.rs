@@ -765,12 +765,6 @@ impl core::ops::Deref for crate::bhkWindListener {
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
-/// `bhkWorld` is laid out from its primary base `bhkSerializable`, so its methods and fields are reachable through it.
-impl core::ops::Deref for crate::bhkWorld {
-    type Target = crate::bhkSerializable;
-    #[inline]
-    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
-}
 /// `bhkWorld::bhkConstraintProjector` is laid out from its primary base `hkpConstraintListener`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::bhkWorld__bhkConstraintProjector {
     type Target = crate::hkpConstraintListener;
@@ -4396,6 +4390,26 @@ impl crate::bhkCharacterController {
     pub fn set_distance_to_camera(&self, cameraPosition: &crate::NiPoint3, actor3D: Option<&crate::NiAVObject>) { unsafe { function!(78274, (*const Self, *const crate::NiPoint3, *const crate::NiAVObject))(core::ptr::from_ref(self), core::ptr::from_ref(cameraPosition), actor3D.map_or(core::ptr::null(), core::ptr::from_ref)) } }
 }
 
+impl crate::bhkCollisionFilter {
+    /// `g_bhkCollisionFilter_ptr` at 0x21a3e00, id 400562 (semantic, high); pointer to `bhkCollisionFilter`: the world collision filter; the world collision filter (high, camera pass), type `ptr:bhkCollisionFilter`
+    ///
+    /// `None` until the engine creates it.
+    #[inline]
+    pub fn singleton() -> Option<&'static Self> { unsafe { *(address!(400562) as *const Option<&'static Self>) } }
+    /// `bhkCollisionFilter::IsCollisionEnabled`: the filter rule: no collision when either info has bit 14 (unless A's layer is 0x2c); collision whenever either group (bits 16..31) is 0; same group: layer matrix bit and the bone/system rules (bit 15, bits 8..12; layers 8, 0x20, 0x21 via the per-system table +0x50; layer 0x1e with bit 15); different groups: the layer matrix bit (filter+0x1d0 + 8*layerA, bit layerB), with the 0x1e/0x1f00 and +0x3d0 exceptions
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 78553, rva 0x107c870.
+    /// `bool (const bhkCollisionFilter* filter, u32 infoA, u32 infoB)`
+    #[inline]
+    pub fn is_collision_enabled(&self, infoA: u32, infoB: u32) -> bool { unsafe { function!(78553, (*const Self, u32, u32) -> bool)(core::ptr::from_ref(self), infoA, infoB) } }
+    /// `bhkCollisionFilter::SetLayerCollisionMask`: writes row `layer` of the layer matrix (filter+0x1d0 + 8*layer = mask) and mirrors it into column `layer` of the 47 rows (bit `layer` of row i = mask bit i)
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 78556, rva 0x107cb70.
+    /// `void (bhkCollisionFilter* filter, i32 layer, u64 mask)`
+    #[inline]
+    pub fn set_layer_collision_mask(&self, layer: i32, mask: u64) { unsafe { function!(78556, (*const Self, i32, u64))(core::ptr::from_ref(self), layer, mask) } }
+}
+
 impl crate::bhkThreadMemorySource {
     /// The `IMemoryHeap` base at +0x8.
     #[inline]
@@ -4711,6 +4725,18 @@ impl crate::hkpTriggerVolume {
     pub fn as_hkp_world_post_simulation_listener(&self) -> &crate::hkpWorldPostSimulationListener { unsafe { &*core::ptr::from_ref(self).byte_add(0x18).cast() } }
 }
 
+impl crate::hkpWorld {
+    /// `hkpWorld::linearCast`: Havok's world linear cast ('TtworldLinCast'); the engine's sphere and phantom sweeps all go through it
+    ///
+    /// Semantic, camera pass, medium; ledger semantic evidence, name medium; id 61402, rva 0xb59d80.
+    /// `void (hkpWorld* world, const hkpCollidable* collA, const hkpLinearCastInput* input, hkpCdPointCollector* castCollector, hkpCdPointCollector* startCollector)`
+    ///
+    /// # Safety
+    /// The pass rates the signature medium.
+    #[inline]
+    pub unsafe fn linear_cast(&self, collA: *const c_void, input: *const c_void, castCollector: *mut crate::hkpCdPointCollector, startCollector: *mut crate::hkpCdPointCollector) { unsafe { function!(61402, (*const Self, *const c_void, *const c_void, *mut crate::hkpCdPointCollector, *mut crate::hkpCdPointCollector))(core::ptr::from_ref(self), collA, input, castCollector, startCollector) } }
+}
+
 impl crate::hkxCamera {
     /// `hkxCamera::vdtor`: slot 0: resets the vtable to hkBaseObject; when flags bit 0: frees 0x50 bytes (memory router, or the default heap with bit 2)
     ///
@@ -4726,9 +4752,6 @@ impl crate::hkxCamera {
 /// `g_bhkBipedOrientationController_ptr` at 0x3336e28, id 411537 (xref_inference, medium)
 #[inline]
 pub fn g_bhk_biped_orientation_controller_ptr() -> *mut c_void { address!(411537) as *mut c_void }
-/// `g_bhkCollisionFilter_ptr` at 0x21a3e00, id 400562 (xref_inference, medium)
-#[inline]
-pub fn g_bhk_collision_filter_ptr() -> *mut c_void { address!(400562) as *mut c_void }
 /// `g_bhkMemorySystem_ptr` at 0x3336690, id 411534 (xref_inference, medium)
 #[inline]
 pub fn g_bhk_memory_system_ptr() -> *mut c_void { address!(411534) as *mut c_void }

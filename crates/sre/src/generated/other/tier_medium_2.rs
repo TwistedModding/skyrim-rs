@@ -3,13 +3,6 @@
 
 use core::ffi::{c_char, c_void};
 
-/// `DetachResultSetField90_11` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 447968, rva 0x135cdf0).
-/// `undefined8 * DetachResultSetField90_11(longlong param_1, undefined8 * param_2, undefined8 param_3)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn detach_result_set_field90_11(param_1: i64, param_2: *mut u64, param_3: u64) -> *mut u64 { unsafe { function!(447968, (i64, *mut u64, u64) -> *mut u64)(param_1, param_2, param_3) } }
 /// `DetachResultSetField90_12` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 447631, rva 0x135dc40).
 /// `undefined8 * DetachResultSetField90_12(longlong param_1, undefined8 * param_2, undefined8 param_3)`
 ///
@@ -6947,13 +6940,6 @@ pub unsafe fn get_record_type_index_at_offset(param_1: i64, param_2: u32) -> u32
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn get_rect_from_xy_width_height(param_1: i64, param_2: i64, param_3: *mut f64) -> u64 { unsafe { function!(85918, (i64, i64, *mut f64) -> u64)(param_1, param_2, param_3) } }
-/// `GetRefFromHandle68` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 35288, rva 0x5f06c0).
-/// `longlong GetRefFromHandle68(longlong param_1)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn get_ref_from_handle68(param_1: i64) -> i64 { unsafe { function!(35288, (i64) -> i64)(param_1) } }
 /// `GetReferenceEffectPosition` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 34776, rva 0x5dbc40).
 /// `undefined GetReferenceEffectPosition(longlong * param_1, undefined4 * param_2)`
 ///
@@ -10895,13 +10881,6 @@ pub unsafe fn is_chunk_type_citc(param_1: u64, param_2: i32) -> u8 { unsafe { fu
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn is_closed_mesh_with_consistent_winding(param_1: i64, param_2: *mut u8) -> *mut u8 { unsafe { function!(60717, (i64, *mut u8) -> *mut u8)(param_1, param_2) } }
-/// `IsCollisionEnabled` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 78553, rva 0x107c870).
-/// `bool IsCollisionEnabled(longlong param_1, uint param_2, uint param_3)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn is_collision_enabled(param_1: i64, param_2: u32, param_3: u32) -> u8 { unsafe { function!(78553, (i64, u32, u32) -> u8)(param_1, param_2, param_3) } }
 /// `IsCollisionSoundPairWithinTimeDelta` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 36223, rva 0x643c30).
 /// `ulonglong IsCollisionSoundPairWithinTimeDelta(longlong param_1, int * param_2, int param_3)`
 ///
@@ -14143,3 +14122,24 @@ pub unsafe fn pack_pixels32_to24(param_1: *mut u8, param_2: i64, param_3: *mut u
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn pack_pixels_in_row(param_1: *mut u32, param_2: *mut u8, param_3: i32) -> u64 { unsafe { function!(90214, (*mut u32, *mut u8, i32) -> u64)(param_1, param_2, param_3) } }
+/// `PackPositionToGridCoords` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 20503, rva 0x30e860).
+/// `uint PackPositionToGridCoords(float * param_1)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn pack_position_to_grid_coords(param_1: *mut f32) -> u32 { unsafe { function!(20503, (*mut f32) -> u32)(param_1) } }
+/// `PackQuaternionPolar32` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 65639, rva 0xc52e20).
+/// `undefined PackQuaternionPolar32(float * param_1, uint * param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn pack_quaternion_polar32(param_1: *mut f32, param_2: *mut u32) -> u64 { unsafe { function!(65639, (*mut f32, *mut u32) -> u64)(param_1, param_2) } }
+/// `PackQuaternionSmallestThree24` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 65638, rva 0xc52cb0).
+/// `undefined PackQuaternionSmallestThree24(uint * param_1, byte * param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn pack_quaternion_smallest_three24(param_1: *mut u32, param_2: *mut u8) -> u64 { unsafe { function!(65638, (*mut u32, *mut u8) -> u64)(param_1, param_2) } }

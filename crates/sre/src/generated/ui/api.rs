@@ -351,6 +351,15 @@ impl crate::CursorMenu {
     /// `IMenu* ()`
     #[inline]
     pub fn create() -> Option<&'static crate::IMenu> { unsafe { function!(51503, () -> Option<&'static crate::IMenu>)() } }
+    /// `CursorMenu::MoveCursorByMouse`: cursor +4 (x) += dx * speed, +8 (y) += dy * speed, clamped to [+0xc, +0x14] and [+0x10, +0x18]; with bBackgroundMouse:Controls the position is GetCursorPos minus the foreground window's client origin instead; then a Scaleform cursor event with (x, y)
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 82539, rva 0x117a340.
+    /// `void (UICursor* cursor, MouseMoveEvent* e)`
+    ///
+    /// # Safety
+    /// `cursor` must point to what the engine expects.
+    #[inline]
+    pub unsafe fn move_cursor_by_mouse(cursor: *mut crate::UICursor, e: *mut crate::MouseMoveEvent) { unsafe { function!(82539, (*mut crate::UICursor, *mut crate::MouseMoveEvent))(cursor, e) } }
 }
 
 impl crate::DialogueMenu {

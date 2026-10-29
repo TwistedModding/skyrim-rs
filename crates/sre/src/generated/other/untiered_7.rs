@@ -3,153 +3,6 @@
 
 use core::ffi::{c_char, c_void};
 
-/// `OpenHeapArraySlotSize8At_2` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 52299, rva 0x9643d0).
-/// `undefined OpenHeapArraySlotSize8At_2(longlong * param_1, uint param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn open_heap_array_slot_size8_at_2(param_1: *mut i64, param_2: u32) -> u64 { unsafe { function!(52299, (*mut i64, u32) -> u64)(param_1, param_2) } }
-/// `OpenHeapArraySlotSize8At_3` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 442888, rva 0xa77800).
-/// `undefined OpenHeapArraySlotSize8At_3(longlong * param_1, uint param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn open_heap_array_slot_size8_at_3(param_1: *mut i64, param_2: u32) -> u64 { unsafe { function!(442888, (*mut i64, u32) -> u64)(param_1, param_2) } }
-/// `OpenLocalizedStringTableFile` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 15478, rva 0x20e730).
-/// `uint * OpenLocalizedStringTableFile(uint * param_1, char * param_2, undefined8 param_3, undefined8 param_4, uint param_5)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn open_localized_string_table_file(param_1: *mut u32, param_2: *mut c_char, param_3: u64, param_4: u64, param_5: u32) -> *mut u32 { unsafe { function!(15478, (*mut u32, *mut c_char, u64, u64, u32) -> *mut u32)(param_1, param_2, param_3, param_4, param_5) } }
-/// `OpenLooseFileHandle` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 70045, rva 0xed6b20).
-/// `uint OpenLooseFileHandle(longlong param_1, char param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn open_loose_file_handle(param_1: i64, param_2: c_char) -> u32 { unsafe { function!(70045, (i64, c_char) -> u32)(param_1, param_2) } }
-/// `OpenMarketplaceOrShowUpdateRequired` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 441705, rva 0x57e940).
-/// `undefined OpenMarketplaceOrShowUpdateRequired(int param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn open_marketplace_or_show_update_required(param_1: i32, param_2: u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(441705, (i32, u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
-/// `OpenMatchedDeviceAndStartThread` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 68949, rva 0xeaa200).
-/// `undefined OpenMatchedDeviceAndStartThread(undefined8 * param_1)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn open_matched_device_and_start_thread(param_1: *mut u64) -> u64 { unsafe { function!(68949, (*mut u64) -> u64)(param_1) } }
-/// `OpenQwordArrayGapAt` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 32405, rva 0x535b60).
-/// `undefined OpenQwordArrayGapAt(longlong * param_1, uint param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn open_qword_array_gap_at(param_1: *mut i64, param_2: u32) -> u64 { unsafe { function!(32405, (*mut i64, u32) -> u64)(param_1, param_2) } }
-/// `OpenQwordArrayGapAt_2` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 32472, rva 0x5399a0).
-/// `undefined OpenQwordArrayGapAt_2(longlong * param_1, uint param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn open_qword_array_gap_at_2(param_1: *mut i64, param_2: u32) -> u64 { unsafe { function!(32472, (*mut i64, u32) -> u64)(param_1, param_2) } }
-/// `OpenSlotInSmallArray12` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 68230, rva 0xce3150).
-/// `undefined OpenSlotInSmallArray12(uint * param_1, uint param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn open_slot_in_small_array12(param_1: *mut u32, param_2: u32) -> u64 { unsafe { function!(68230, (*mut u32, u32) -> u64)(param_1, param_2) } }
-/// `OpenStreamAndCheckFileHeader` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 26624, rva 0x4271e0).
-/// `undefined1 OpenStreamAndCheckFileHeader(longlong * param_1, longlong * param_2, longlong * param_3, undefined8 param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn open_stream_and_check_file_header(param_1: *mut i64, param_2: *mut i64, param_3: *mut i64, param_4: u64) -> u8 { unsafe { function!(26624, (*mut i64, *mut i64, *mut i64, u64) -> u8)(param_1, param_2, param_3, param_4) } }
-/// `OpenWinHttpRequest` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 527208, rva 0x13de1f0).
-/// `undefined OpenWinHttpRequest(longlong * param_1, longlong param_2, undefined8 param_3, uint param_4, longlong * param_5)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn open_win_http_request(param_1: *mut i64, param_2: i64, param_3: u64, param_4: u32, param_5: *mut i64) -> u64 { unsafe { function!(527208, (*mut i64, i64, u64, u32, *mut i64) -> u64)(param_1, param_2, param_3, param_4, param_5) } }
-/// `OrFlagsIntoField14` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 70886, rva 0xefb0e0).
-/// `undefined OrFlagsIntoField14(longlong param_1, ushort param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn or_flags_into_field14(param_1: i64, param_2: u16) -> u64 { unsafe { function!(70886, (i64, u16) -> u64)(param_1, param_2) } }
-/// `OrFlagsIntoListAt10Entry` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 21853, rva 0x341a90).
-/// `ulonglong OrFlagsIntoListAt10Entry(longlong param_1, longlong param_2, uint param_3)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn or_flags_into_list_at10_entry(param_1: i64, param_2: i64, param_3: u32) -> u64 { unsafe { function!(21853, (i64, i64, u32) -> u64)(param_1, param_2, param_3) } }
-/// `OrVfunc10ResultIntoFlag` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 32953, rva 0x555fd0).
-/// `undefined8 OrVfunc10ResultIntoFlag(char * param_1, longlong * param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn or_vfunc10_result_into_flag(param_1: *mut c_char, param_2: *mut i64) -> u64 { unsafe { function!(32953, (*mut c_char, *mut i64) -> u64)(param_1, param_2) } }
-/// `PackActorIntoVariable` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 55510, rva 0xa28f20).
-/// `ulonglong * PackActorIntoVariable(ulonglong * param_1, longlong param_2, longlong * param_3, undefined8 param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn pack_actor_into_variable(param_1: *mut u64, param_2: i64, param_3: *mut i64, param_4: u64) -> *mut u64 { unsafe { function!(55510, (*mut u64, i64, *mut i64, u64) -> *mut u64)(param_1, param_2, param_3, param_4) } }
-/// `PackFloat4ImageIntoImage` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 77664, rva 0x102fd70).
-/// `undefined8 PackFloat4ImageIntoImage(longlong * param_1, longlong * param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn pack_float4_image_into_image(param_1: *mut i64, param_2: *mut i64) -> u64 { unsafe { function!(77664, (*mut i64, *mut i64) -> u64)(param_1, param_2) } }
-/// `PackFloat4ToBytes` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 57108, rva 0xaa5420).
-/// `undefined PackFloat4ToBytes(float param_1, float param_2, float param_3, float param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn pack_float4_to_bytes(param_1: f32, param_2: f32, param_3: f32, param_4: f32) -> u64 { unsafe { function!(57108, (f32, f32, f32, f32) -> u64)(param_1, param_2, param_3, param_4) } }
-/// `PackFloatsToHalfEntry` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 31655, rva 0x50b550).
-/// `undefined PackFloatsToHalfEntry(uint * param_1, uint * param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn pack_floats_to_half_entry(param_1: *mut u32, param_2: *mut u32) -> u64 { unsafe { function!(31655, (*mut u32, *mut u32) -> u64)(param_1, param_2) } }
-/// `PackFourQuaternionsSmallestThree` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 67244, rva 0xcb1280).
-/// `undefined PackFourQuaternionsSmallestThree(ushort * param_1, float * param_2, float * param_3, float * param_4, float * param_5)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn pack_four_quaternions_smallest_three(param_1: *mut u16, param_2: *mut f32, param_3: *mut f32, param_4: *mut f32, param_5: *mut f32) -> u64 { unsafe { function!(67244, (*mut u16, *mut f32, *mut f32, *mut f32, *mut f32) -> u64)(param_1, param_2, param_3, param_4, param_5) } }
-/// `PackObjectIntoScriptVariable` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 54087, rva 0x9e9e50).
-/// `ulonglong * PackObjectIntoScriptVariable(ulonglong * param_1, longlong param_2, longlong * param_3, undefined8 param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn pack_object_into_script_variable(param_1: *mut u64, param_2: i64, param_3: *mut i64, param_4: u64) -> *mut u64 { unsafe { function!(54087, (*mut u64, i64, *mut i64, u64) -> *mut u64)(param_1, param_2, param_3, param_4) } }
-/// `PackObjectVariableType0` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 54086, rva 0x9e9ba0).
-/// `ulonglong * PackObjectVariableType0(ulonglong * param_1, longlong param_2, longlong * param_3, undefined8 param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn pack_object_variable_type0(param_1: *mut u64, param_2: i64, param_3: *mut i64, param_4: u64) -> *mut u64 { unsafe { function!(54086, (*mut u64, i64, *mut i64, u64) -> *mut u64)(param_1, param_2, param_3, param_4) } }
 /// `PackObjectVariableType3E` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 54079, rva 0x9e88d0).
 /// `ulonglong * PackObjectVariableType3E(ulonglong * param_1, longlong param_2, longlong * param_3, undefined8 param_4)`
 ///
@@ -13506,3 +13359,171 @@ pub unsafe fn release_two_handle_ref_counts(param_1: *mut i64) -> u64 { unsafe {
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn release_two_handle_ref_counts_2(param_1: *mut i64) -> u64 { unsafe { function!(40136, (*mut i64) -> u64)(param_1) } }
+/// `ReleaseTwoRefCountedPointers` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 47889, rva 0x882200).
+/// `undefined ReleaseTwoRefCountedPointers(longlong * param_1)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn release_two_ref_counted_pointers(param_1: *mut i64) -> u64 { unsafe { function!(47889, (*mut i64) -> u64)(param_1) } }
+/// `ReleaseTwoRefCountedPointers_2` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 49251, rva 0x8bc350).
+/// `undefined ReleaseTwoRefCountedPointers_2(longlong * param_1)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn release_two_ref_counted_pointers_2(param_1: *mut i64) -> u64 { unsafe { function!(49251, (*mut i64) -> u64)(param_1) } }
+/// `ReleaseTwoRefPtrs` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 49866, rva 0x8d6710).
+/// `undefined ReleaseTwoRefPtrs(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn release_two_ref_ptrs(param_1: *mut i64, param_2: u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(49866, (*mut i64, u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
+/// `ReleaseTwoRefPtrsClearingFlag10` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 51349, rva 0x91f7a0).
+/// `undefined ReleaseTwoRefPtrsClearingFlag10(longlong * param_1)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn release_two_ref_ptrs_clearing_flag10(param_1: *mut i64) -> u64 { unsafe { function!(51349, (*mut i64) -> u64)(param_1) } }
+/// `ReleaseTwoRefPtrs_2` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 48683, rva 0x8a66b0).
+/// `undefined ReleaseTwoRefPtrs_2(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn release_two_ref_ptrs_2(param_1: *mut i64, param_2: u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(48683, (*mut i64, u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
+/// `ReleaseTwoRefsAndDecrementCounter` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 48880, rva 0x8af2b0).
+/// `undefined ReleaseTwoRefsAndDecrementCounter(longlong * param_1)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn release_two_refs_and_decrement_counter(param_1: *mut i64) -> u64 { unsafe { function!(48880, (*mut i64) -> u64)(param_1) } }
+/// `ReleaseTypedArrays30To40` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 73051, rva 0xf6e4c0).
+/// `undefined ReleaseTypedArrays30To40(longlong param_1)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn release_typed_arrays30_to40(param_1: i64) -> u64 { unsafe { function!(73051, (i64) -> u64)(param_1) } }
+/// `ReleaseTypedValue` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 82872, rva 0xd0be30).
+/// `undefined ReleaseTypedValue(byte * param_1)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn release_typed_value(param_1: *mut u8) -> u64 { unsafe { function!(82872, (*mut u8) -> u64)(param_1) } }
+/// `ReleaseValueArray` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 51698, rva 0x93b930).
+/// `undefined ReleaseValueArray(undefined8 * param_1, undefined8 * param_2, longlong * param_3, undefined8 param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn release_value_array(param_1: *mut u64, param_2: *mut u64, param_3: *mut i64, param_4: u64) -> u64 { unsafe { function!(51698, (*mut u64, *mut u64, *mut i64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
+/// `ReleaseValueArrayAndField88` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 84396, rva 0xd6c040).
+/// `undefined ReleaseValueArrayAndField88(longlong param_1)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn release_value_array_and_field88(param_1: i64) -> u64 { unsafe { function!(84396, (i64) -> u64)(param_1) } }
+/// `ReleaseValueArrayAndFields88D0` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 84395, rva 0xd6bf70).
+/// `undefined ReleaseValueArrayAndFields88D0(longlong param_1)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn release_value_array_and_fields88_d0(param_1: i64) -> u64 { unsafe { function!(84395, (i64) -> u64)(param_1) } }
+/// `ReleaseValueVariant` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 82888, rva 0xd0cd70).
+/// `undefined ReleaseValueVariant(undefined1 * param_1)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn release_value_variant(param_1: *mut u8) -> u64 { unsafe { function!(82888, (*mut u8) -> u64)(param_1) } }
+/// `ReleaseVarBlockEntries` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 88344, rva 0xe33640).
+/// `undefined ReleaseVarBlockEntries(uint * param_1)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn release_var_block_entries(param_1: *mut u32) -> u64 { unsafe { function!(88344, (*mut u32) -> u64)(param_1) } }
+/// `ReleaseVarBlockEntriesByFlags` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 88345, rva 0xe336e0).
+/// `undefined ReleaseVarBlockEntriesByFlags(longlong param_1, uint param_2, undefined8 * param_3)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn release_var_block_entries_by_flags(param_1: i64, param_2: u32, param_3: *mut u64) -> u64 { unsafe { function!(88345, (i64, u32, *mut u64) -> u64)(param_1, param_2, param_3) } }
+/// `ReleaseVariableArrayRef` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 53605, rva 0x9c00e0).
+/// `undefined ReleaseVariableArrayRef(undefined8 * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn release_variable_array_ref(param_1: *mut u64, param_2: u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(53605, (*mut u64, u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
+/// `ReleaseVariant` (decompiler signature, tier untiered; ledger decompiler evidence, name high; id 104375, rva 0x1497120).
+/// `undefined ReleaseVariant(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn release_variant() -> u64 { unsafe { function!(104375, () -> u64)() } }
+/// `ReleaseVariantRange` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 104231, rva 0x148d420).
+/// `undefined ReleaseVariantRange(undefined8 param_1, undefined8 param_2, uint param_3)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn release_variant_range(param_1: u64, param_2: u64, param_3: u32) -> u64 { unsafe { function!(104231, (u64, u64, u32) -> u64)(param_1, param_2, param_3) } }
+/// `ReleaseVariantValue` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 104395, rva 0x1497c50).
+/// `undefined ReleaseVariantValue(uint * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn release_variant_value(param_1: *mut u32, param_2: u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(104395, (*mut u32, u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
+/// `ReleaseVectorAt0x18` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 97856, rva 0x1461600).
+/// `undefined ReleaseVectorAt0x18(longlong param_1)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn release_vector_at0x18(param_1: i64) -> u64 { unsafe { function!(97856, (i64) -> u64)(param_1) } }
+/// `ReleaseVectorAt0x20` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 452709, rva 0x1461650).
+/// `undefined ReleaseVectorAt0x20(longlong param_1)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn release_vector_at0x20(param_1: i64) -> u64 { unsafe { function!(452709, (i64) -> u64)(param_1) } }
+/// `ReleaseVectorAt0x90AndCallbackAt8` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 452707, rva 0x1461500).
+/// `undefined ReleaseVectorAt0x90AndCallbackAt8(longlong param_1)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn release_vector_at0x90_and_callback_at8(param_1: i64) -> u64 { unsafe { function!(452707, (i64) -> u64)(param_1) } }
+/// `ReleaseVectorAt0x98AndCallbackAt8` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 452708, rva 0x1461580).
+/// `undefined ReleaseVectorAt0x98AndCallbackAt8(longlong param_1)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn release_vector_at0x98_and_callback_at8(param_1: i64) -> u64 { unsafe { function!(452708, (i64) -> u64)(param_1) } }
+/// `ReleaseVectorAt80AndDeleterPtrAt08` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 524743, rva 0x128b440).
+/// `undefined ReleaseVectorAt80AndDeleterPtrAt08(longlong param_1)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn release_vector_at80_and_deleter_ptr_at08(param_1: i64) -> u64 { unsafe { function!(524743, (i64) -> u64)(param_1) } }
+/// `ReleaseVectorAt80AndDeleterPtrAt08_2` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 446519, rva 0x12d1870).
+/// `undefined ReleaseVectorAt80AndDeleterPtrAt08_2(longlong param_1)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn release_vector_at80_and_deleter_ptr_at08_2(param_1: i64) -> u64 { unsafe { function!(446519, (i64) -> u64)(param_1) } }

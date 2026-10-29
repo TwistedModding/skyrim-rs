@@ -8356,9 +8356,9 @@ pub struct bhkWorld_vtable {
     pub slot_37: *const c_void,
     /// `bhkWorld::vfunc_38` at 0x1050300 (rtti, medium); signature (low): `undefined vfunc_38(bhkWorld * this, char param_1)`
     pub slot_38: *const c_void,
-    /// `bhkWorld::vfunc_39` at 0x104b470 (rtti, medium); signature (high): `undefined8 vfunc_39(bhkWorld * this)`
+    /// `bhkWorld::GetWorld` at 0x104b470 (semantic, high); signature (untiered): `undefined8 GetWorld(bhkWorld * this)`; `GetWorld`: returns +0x10 (high); semantic signature: `hkpWorld* (bhkWorld*)`
     pub slot_39: *const c_void,
-    /// `bhkWorld::vfunc_40` at 0x104b480 (rtti, medium); signature (high): `undefined8 vfunc_40(bhkWorld * this)`
+    /// `bhkWorld::GetWorldForLock` at 0x104b480 (semantic, high); signature (untiered): `undefined8 GetWorldForLock(bhkWorld * this)`; `GetWorldForLock`: returns +0x10; callers take ->+0x430 for the lock (high); semantic signature: `hkpWorld* (bhkWorld*)`
     pub slot_40: *const c_void,
     /// `bhkSerializable::vfunc_41` at 0x2f9b60 (rtti, medium); signature (low): `undefined1 vfunc_41(void)`
     pub slot_41: *const c_void,
@@ -8378,9 +8378,9 @@ pub struct bhkWorld_vtable {
     pub slot_48: *const c_void,
     /// `bhkSerializable::vfunc_49` at 0x1082bd0 (rtti, medium); signature (high): `undefined vfunc_49(bhkSerializable * this)`
     pub slot_49: *const c_void,
-    /// `bhkWorld::vfunc_50` at 0x104ac30 (rtti, medium); signature (low): `undefined8 vfunc_50(bhkWorld * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+    /// `bhkWorld::Step` at 0x104ac30 (semantic, medium); signature (untiered): `undefined8 Step(bhkWorld * this, uint param_1, undefined8 param_2, undefined8 param_3)`; `Step`: the physics step: write lock, step, callbacks (medium); semantic signature: `bool (bhkWorld*, ...)`
     pub slot_50: *const c_void,
-    /// `bhkWorld::vfunc_51` at 0x104be80 (rtti, medium); signature (low): `undefined1 * vfunc_51(bhkWorld * this, float * param_1)`
+    /// `bhkWorld::PickObject` at 0x104be80 (runtime, high); signature (untiered): `undefined1 * PickObject(bhkWorld * this, float * param_1)`; `PickObject`: the ray pick (functions row) (high); semantic signature: `bool (bhkWorld*, bhkPickData*)`
     pub slot_51: *const c_void,
     /// `bhkWorld::vfunc_52` at 0x104c2c0 (rtti, medium); signature (high): `bool vfunc_52(bhkWorld * this)`
     pub slot_52: *const c_void,
@@ -8391,7 +8391,32 @@ pub struct bhkWorld_vtable {
 }
 impl bhkWorld_vtable {
     pub const ID: u64 = 238918;
+    pub const SLOT_GetWorld: usize = 39;
+    /// Slot 39 as `bhkWorld_vtable_GetWorld`, `None` when the slot is null.
+    #[must_use]
+    pub fn GetWorld(&self) -> Option<bhkWorld_vtable_GetWorld> {
+        unsafe { core::mem::transmute::<*const c_void, Option<bhkWorld_vtable_GetWorld>>(self.slot_39) }
+    }
+    pub const SLOT_GetWorldForLock: usize = 40;
+    /// Slot 40 as `bhkWorld_vtable_GetWorldForLock`, `None` when the slot is null.
+    #[must_use]
+    pub fn GetWorldForLock(&self) -> Option<bhkWorld_vtable_GetWorldForLock> {
+        unsafe { core::mem::transmute::<*const c_void, Option<bhkWorld_vtable_GetWorldForLock>>(self.slot_40) }
+    }
+    pub const SLOT_Step: usize = 50;
+    pub const SLOT_PickObject: usize = 51;
+    /// Slot 51 as `bhkWorld_vtable_PickObject`, `None` when the slot is null.
+    #[must_use]
+    pub fn PickObject(&self) -> Option<bhkWorld_vtable_PickObject> {
+        unsafe { core::mem::transmute::<*const c_void, Option<bhkWorld_vtable_PickObject>>(self.slot_51) }
+    }
 }
+/// `bhkWorld::GetWorld`, slot 39: returns +0x10 (high).
+pub type bhkWorld_vtable_GetWorld = unsafe extern "C" fn(a0: *mut crate::bhkWorld) -> *mut crate::hkpWorld;
+/// `bhkWorld::GetWorldForLock`, slot 40: returns +0x10; callers take ->+0x430 for the lock (high).
+pub type bhkWorld_vtable_GetWorldForLock = unsafe extern "C" fn(a0: *mut crate::bhkWorld) -> *mut crate::hkpWorld;
+/// `bhkWorld::PickObject`, slot 51: the ray pick (functions row) (high).
+pub type bhkWorld_vtable_PickObject = unsafe extern "C" fn(a0: *mut crate::bhkWorld, a1: *mut crate::bhkPickData) -> bool;
 
 /// `bhkWorld::bhkConstraintProjector::vftable` at 0x1a7cd68, id 238916 (rtti, high); 7 slots.
 #[repr(C)]
@@ -8510,9 +8535,9 @@ pub struct bhkWorldM_vtable {
     pub slot_37: *const c_void,
     /// `bhkWorld::vfunc_38` at 0x1050300 (rtti, medium); signature (low): `undefined vfunc_38(bhkWorld * this, char param_1)`
     pub slot_38: *const c_void,
-    /// `bhkWorld::vfunc_39` at 0x104b470 (rtti, medium); signature (high): `undefined8 vfunc_39(bhkWorld * this)`
+    /// `bhkWorld::GetWorld` at 0x104b470 (semantic, high); signature (untiered): `undefined8 GetWorld(bhkWorld * this)`
     pub slot_39: *const c_void,
-    /// `bhkWorld::vfunc_40` at 0x104b480 (rtti, medium); signature (high): `undefined8 vfunc_40(bhkWorld * this)`
+    /// `bhkWorld::GetWorldForLock` at 0x104b480 (semantic, high); signature (untiered): `undefined8 GetWorldForLock(bhkWorld * this)`
     pub slot_40: *const c_void,
     /// `bhkSerializable::vfunc_41` at 0x2f9b60 (rtti, medium); signature (low): `undefined1 vfunc_41(void)`
     pub slot_41: *const c_void,
@@ -8532,9 +8557,9 @@ pub struct bhkWorldM_vtable {
     pub slot_48: *const c_void,
     /// `bhkSerializable::vfunc_49` at 0x1082bd0 (rtti, medium); signature (high): `undefined vfunc_49(bhkSerializable * this)`
     pub slot_49: *const c_void,
-    /// `bhkWorld::vfunc_50` at 0x104ac30 (rtti, medium); signature (low): `undefined8 vfunc_50(bhkWorld * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+    /// `bhkWorld::Step` at 0x104ac30 (semantic, medium); signature (untiered): `undefined8 Step(bhkWorld * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_50: *const c_void,
-    /// `bhkWorld::vfunc_51` at 0x104be80 (rtti, medium); signature (low): `undefined1 * vfunc_51(bhkWorld * this, float * param_1)`
+    /// `bhkWorld::PickObject` at 0x104be80 (runtime, high); signature (untiered): `undefined1 * PickObject(bhkWorld * this, float * param_1)`
     pub slot_51: *const c_void,
     /// `bhkWorld::vfunc_52` at 0x104c2c0 (rtti, medium); signature (high): `bool vfunc_52(bhkWorld * this)`
     pub slot_52: *const c_void,
@@ -11317,21 +11342,5 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
 }
 impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_0403e1f878bd_vtable {
     pub const ID: u64 = 468022;
-}
-
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_99647caeb1d555456edf28d2fb97c094>_>::vftable` at 0x1adecb0, id 537008 (rtti, high); 4 slots.
-#[repr(C)]
-pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_d1306a274e4f_vtable {
-    /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_99647caeb1d555456edf28d2fb97c094>_>::vfunc_0` at 0x12c20c0 (rtti, high); signature (low): `CopyableCallable<<lambda_99647caeb1d555456edf28d2fb97c094>_> * vfunc_0(CopyableCallable<<lambda_99647caeb1d555456edf28d2fb97c094>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_99647caeb1d555456edf28d2fb97c094>_>::vfunc_1` at 0x12c24e0 (rtti, medium); signature (low): `undefined vfunc_1(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_99647caeb1d555456edf28d2fb97c094>_> * this, undefined8 * param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_1: *const c_void,
-    /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_99647caeb1d555456edf28d2fb97c094>_>::vfunc_2` at 0x12c21d0 (rtti, high); signature (low): `undefined8 * vfunc_2(CopyableCallable<<lambda_99647caeb1d555456edf28d2fb97c094>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
-    pub slot_2: *const c_void,
-    /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_99647caeb1d555456edf28d2fb97c094>_>::vfunc_3` at 0x12c2510 (rtti, high); signature (low): `undefined8 * vfunc_3(CopyableCallable<<lambda_99647caeb1d555456edf28d2fb97c094>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
-    pub slot_3: *const c_void,
-}
-impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_d1306a274e4f_vtable {
-    pub const ID: u64 = 537008;
 }
 

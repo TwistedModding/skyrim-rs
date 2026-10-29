@@ -4380,19 +4380,6 @@ pub struct CCallbackImpl_8 {
 }
 const _: () = assert!(core::mem::offset_of!(CCallbackImpl_8, __vftable) == 0x0);
 
-/// `CachedRaycastData`: size >= 0x8 (lower bound); partial, the struct stops at the lower bound; primary base `hkaRaycastInterface`.
-/// Evidence: vptr at 0x0.
-/// Bases: `hkaRaycastInterface`@0x0.
-#[repr(C)]
-pub struct CachedRaycastData {
-    /// +0x0 `vtbl:CachedRaycastData:0`, rtti
-    #[doc(hidden)]
-    pub __vftable: *const crate::raw::vtables::CachedRaycastData_vtable,
-    #[doc(hidden)]
-    pub __engine: crate::Engine,
-}
-const _: () = assert!(core::mem::offset_of!(CachedRaycastData, __vftable) == 0x0);
-
 /// `CalmEffect`: size 0x98 (exact, medium); primary base `TargetValueModifierEffect`.
 /// Evidence: allocation sites (medium): {'152': 1}.
 /// Bases: `TargetValueModifierEffect`@0x0, `ValueModifierEffect`@0x0, `ActiveEffect`@0x0.

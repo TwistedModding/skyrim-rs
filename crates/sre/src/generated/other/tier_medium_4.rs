@@ -3,62 +3,6 @@
 
 use core::ffi::{c_char, c_void};
 
-/// `ResizeTypedValuePointerArray` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 84428, rva 0xd6d6a0).
-/// `undefined ResizeTypedValuePointerArray(longlong param_1, int param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn resize_typed_value_pointer_array(param_1: i64, param_2: i32) -> u64 { unsafe { function!(84428, (i64, i32) -> u64)(param_1, param_2) } }
-/// `ResizeU16Array` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 30304, rva 0x4c0c90).
-/// `bool ResizeU16Array(longlong * param_1, uint param_2, undefined8 param_3, undefined8 param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn resize_u16_array(param_1: *mut i64, param_2: u32, param_3: u64, param_4: u64) -> u8 { unsafe { function!(30304, (*mut i64, u32, u64, u64) -> u8)(param_1, param_2, param_3, param_4) } }
-/// `ResizeU16Vector` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 96668, rva 0x12dbe30).
-/// `undefined ResizeU16Vector(ulonglong * param_1, ulonglong param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn resize_u16_vector(param_1: *mut u64, param_2: u64) -> u64 { unsafe { function!(96668, (*mut u64, u64) -> u64)(param_1, param_2) } }
-/// `ResizeU32Buffer` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 89744, rva 0xe9f6d0).
-/// `undefined ResizeU32Buffer(undefined8 * param_1, ulonglong param_2, longlong param_3)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn resize_u32_buffer(param_1: *mut u64, param_2: u64, param_3: i64) -> u64 { unsafe { function!(89744, (*mut u64, u64, i64) -> u64)(param_1, param_2, param_3) } }
-/// `ResizeU64KeyedHashTable` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 87221, rva 0xdec690).
-/// `undefined ResizeU64KeyedHashTable(longlong * param_1, undefined8 param_2, ulonglong param_3)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn resize_u64_keyed_hash_table(param_1: *mut i64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(87221, (*mut i64, u64, u64) -> u64)(param_1, param_2, param_3) } }
-/// `ResizeUserContentArray` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 445990, rva 0x12c2580).
-/// `bool ResizeUserContentArray(longlong * param_1, uint param_2, undefined8 param_3, undefined8 param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn resize_user_content_array(param_1: *mut i64, param_2: u32, param_3: u64, param_4: u64) -> u8 { unsafe { function!(445990, (*mut i64, u32, u64, u64) -> u8)(param_1, param_2, param_3, param_4) } }
-/// `ResolveFormPointersAt8And10` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 14126, rva 0x1d2270).
-/// `undefined ResolveFormPointersAt8And10(longlong param_1, longlong param_2, undefined8 param_3, undefined8 param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn resolve_form_pointers_at8_and10(param_1: i64, param_2: i64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(14126, (i64, i64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
-/// `ResolveHandleToCachedRef` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 34484, rva 0x5d03f0).
-/// `bool ResolveHandleToCachedRef(uint * param_1, longlong * param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn resolve_handle_to_cached_ref(param_1: *mut u32, param_2: *mut i64) -> u8 { unsafe { function!(34484, (*mut u32, *mut i64) -> u8)(param_1, param_2) } }
 /// `ResolveHandleToCachedRef_2` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 34362, rva 0x5c8c10).
 /// `bool ResolveHandleToCachedRef_2(uint * param_1, longlong * param_2)`
 ///
@@ -248,13 +192,6 @@ pub unsafe fn run_check_sphere_visitor(param_1: u64, param_2: *mut u32, param_3:
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn run_crt_common_main() -> u64 { unsafe { function!(109636, () -> u64)() } }
-/// `RunCullingWithStaticProcess` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 106921, rva 0x152b740).
-/// `undefined RunCullingWithStaticProcess(longlong * param_1, int param_2, int param_3)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn run_culling_with_static_process(param_1: *mut i64, param_2: i32, param_3: i32) -> u64 { unsafe { function!(106921, (*mut i64, i32, i32) -> u64)(param_1, param_2, param_3) } }
 /// `RunNextQueuedTasklet` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 69609, rva 0xec5340).
 /// `undefined RunNextQueuedTasklet(longlong param_1, longlong param_2, char param_3)`
 ///
@@ -1970,13 +1907,6 @@ pub unsafe fn set_bit_for_key_in_map68(param_1: i64, param_2: u64, param_3: u8, 
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn set_bit_in_field10_bitmap(param_1: i64, param_2: u32, param_3: u64, param_4: u64) -> u64 { unsafe { function!(11566, (i64, u32, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
-/// `SetBitMatrixRowAndColumn` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 78556, rva 0x107cb70).
-/// `undefined SetBitMatrixRowAndColumn(longlong param_1, int param_2, ulonglong param_3)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn set_bit_matrix_row_and_column(param_1: i64, param_2: i32, param_3: u64) -> u64 { unsafe { function!(78556, (i64, i32, u64) -> u64)(param_1, param_2, param_3) } }
 /// `SetBitRange` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 84793, rva 0x11854f0).
 /// `undefined SetBitRange(longlong param_1, ulonglong param_2, longlong param_3)`
 ///
@@ -3797,13 +3727,6 @@ pub unsafe fn set_ref_counted_field58_of_field78(param_1: i64, param_2: *mut i64
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn set_ref_field38(param_1: i64, param_2: *mut i32) -> u64 { unsafe { function!(88502, (i64, *mut i32) -> u64)(param_1, param_2) } }
-/// `SetRefHandleSlot` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 39783, rva 0x71fa50).
-/// `undefined SetRefHandleSlot(longlong param_1, int param_2, longlong param_3)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn set_ref_handle_slot(param_1: i64, param_2: i32, param_3: i64) -> u64 { unsafe { function!(39783, (i64, i32, i64) -> u64)(param_1, param_2, param_3) } }
 /// `SetRefHealthExtra` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 20171, rva 0x2ffc80).
 /// `undefined SetRefHealthExtra(longlong param_1, float param_2)`
 ///

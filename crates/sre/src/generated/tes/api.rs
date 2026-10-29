@@ -645,6 +645,15 @@ impl crate::TES {
     /// `void ()`
     #[inline]
     pub fn create_save_load_manager() { unsafe { function!(35722, ())() } }
+    /// `TES::Pick`: picks in the loaded world around the player: cell = tes+0xc0 (the interior cell) or the centre cell of the grid tes+0x78 (uGridsToLoad/2, uGridsToLoad/2); returns TESObjectCELL::Pick(cell, pick)
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 13371, rva 0x1a6f80.
+    /// `NiAVObject* (TES* tes, bhkPickData* pick)`
+    ///
+    /// # Safety
+    /// `pick` must point to what the engine expects.
+    #[inline]
+    pub unsafe fn pick(&self, pick: *mut crate::bhkPickData) -> *mut crate::NiAVObject { unsafe { function!(13371, (*const Self, *mut crate::bhkPickData) -> *mut crate::NiAVObject)(core::ptr::from_ref(self), pick) } }
 }
 
 impl crate::TESActorBase {
@@ -1124,6 +1133,21 @@ impl crate::TESObjectCELL {
     /// May be null: `ref_`.
     #[inline]
     pub fn attach_reference3_d(&self, ref_: Option<&crate::TESObjectREFR>, forceRoomSearch: bool, skipOwnMultiBound: bool) { unsafe { function!(19165, (*const Self, *const crate::TESObjectREFR, bool, bool))(core::ptr::from_ref(self), ref_.map_or(core::ptr::null(), core::ptr::from_ref), forceRoomSearch, skipOwnMultiBound) } }
+    /// `TESObjectCELL::GetbhkWorld`: interior (cell+0x40 bit 0): the bhkWorld stored in the cell's extra list (+0x48, ExtraData type 1, value +0x10) through GetExtraType0x01Value 0x16f140; exterior: **(0x21a0598)
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 18995, rva 0x2be9b0.
+    /// `bhkWorld* (TESObjectCELL* cell)`
+    #[inline]
+    pub fn getbhk_world(&self) -> Option<&'static crate::bhkWorld> { unsafe { function!(18995, (*const Self) -> Option<&'static crate::bhkWorld>)(core::ptr::from_ref(self)) } }
+    /// `TESObjectCELL::Pick`: picks against the cell's world (interior: the cell's own bhkWorld from ExtraData type 1; exterior: the shared exterior bhkWorld **0x21a0598) through bhkWorld slot 51 and returns the hit's scene node (null on no hit)
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 18997, rva 0x2beb40.
+    /// `NiAVObject* (TESObjectCELL* cell, bhkPickData* pick)`
+    ///
+    /// # Safety
+    /// `pick` must point to what the engine expects.
+    #[inline]
+    pub unsafe fn pick(&self, pick: *mut crate::bhkPickData) -> *mut crate::NiAVObject { unsafe { function!(18997, (*const Self, *mut crate::bhkPickData) -> *mut crate::NiAVObject)(core::ptr::from_ref(self), pick) } }
 }
 
 impl crate::TESObjectCONT {

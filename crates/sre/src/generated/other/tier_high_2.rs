@@ -3,34 +3,6 @@
 
 use core::ffi::{c_char, c_void};
 
-/// `GetByteField0C2` (decompiler signature, tier high; ledger decompiler evidence, name high; id 61629, rva 0xb65860).
-/// `undefined1 * GetByteField0C2(longlong param_1, undefined1 * param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn get_byte_field0_c2(param_1: i64, param_2: *mut u8) -> *mut u8 { unsafe { function!(61629, (i64, *mut u8) -> *mut u8)(param_1, param_2) } }
-/// `GetByteField19` (decompiler signature, tier high; ledger decompiler evidence, name high; id 57602, rva 0xab0ad0).
-/// `undefined1 GetByteField19(longlong param_1)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn get_byte_field19(param_1: i64) -> u8 { unsafe { function!(57602, (i64) -> u8)(param_1) } }
-/// `GetByteFieldCC` (decompiler signature, tier high; ledger decompiler evidence, name high; id 62276, rva 0xb86b80).
-/// `undefined1 GetByteFieldCC(longlong param_1)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn get_byte_field_cc(param_1: i64) -> u8 { unsafe { function!(62276, (i64) -> u8)(param_1) } }
-/// `GetByteFieldDA5` (decompiler signature, tier high; ledger decompiler evidence, name high; id 441532, rva 0x1c2280).
-/// `undefined1 GetByteFieldDA5(longlong param_1)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn get_byte_field_da5(param_1: i64) -> u8 { unsafe { function!(441532, (i64) -> u8)(param_1) } }
 /// `GetChannelBytePtr` (decompiler signature, tier high; ledger decompiler evidence, name high; id 77775, rva 0x1044130).
 /// `longlong GetChannelBytePtr(longlong param_1, longlong param_2)`
 ///
@@ -4588,13 +4560,6 @@ pub unsafe fn is_field10_equal5001(param_1: i64) -> u8 { unsafe { function!(4494
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn is_field10_field130_in3_to6(param_1: i64) -> u8 { unsafe { function!(39452, (i64) -> u8)(param_1) } }
-/// `IsField10Field458Set` (decompiler signature, tier high; ledger decompiler evidence, name high; id 39347, rva 0x6f5180).
-/// `longlong IsField10Field458Set(longlong param_1)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn is_field10_field458_set(param_1: i64) -> i64 { unsafe { function!(39347, (i64) -> i64)(param_1) } }
 /// `IsField10Nonzero` (decompiler signature, tier high; ledger decompiler evidence, name high; id 442385, rva 0x603f30).
 /// `bool IsField10Nonzero(longlong param_1)`
 ///
@@ -5491,13 +5456,6 @@ pub unsafe fn lock_global402045_for_read(param_1: u64) -> u64 { unsafe { functio
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn lock_spin_lock120(param_1: i64) -> u64 { unsafe { function!(19189, (i64) -> u64)(param_1) } }
-/// `LockWorldForReadIfEnabled` (decompiler signature, tier high; ledger decompiler evidence, name high; id 77926, rva 0x104fca0).
-/// `undefined LockWorldForReadIfEnabled(longlong param_1)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn lock_world_for_read_if_enabled(param_1: i64) -> u64 { unsafe { function!(77926, (i64) -> u64)(param_1) } }
 /// `LogFixedStringWarning` (decompiler signature, tier high; ledger decompiler evidence, name high; id 524607, rva 0x1283470).
 /// `undefined LogFixedStringWarning(undefined8 param_1, char param_2, undefined8 param_3)`
 ///
@@ -16348,3 +16306,38 @@ pub unsafe fn set_ref_counted_field30_3(param_1: i64, param_2: i64) -> u64 { uns
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn set_ref_counted_field30_4(param_1: i64, param_2: i64) -> u64 { unsafe { function!(61967, (i64, i64) -> u64)(param_1, param_2) } }
+/// `SetRefCountedField40` (decompiler signature, tier high; ledger decompiler evidence, name high; id 59479, rva 0xaffe70).
+/// `undefined SetRefCountedField40(longlong param_1, longlong param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn set_ref_counted_field40(param_1: i64, param_2: i64) -> u64 { unsafe { function!(59479, (i64, i64) -> u64)(param_1, param_2) } }
+/// `SetRefCountedField50` (decompiler signature, tier high; ledger decompiler evidence, name high; id 59484, rva 0xb00080).
+/// `undefined SetRefCountedField50(longlong param_1, longlong param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn set_ref_counted_field50(param_1: i64, param_2: i64) -> u64 { unsafe { function!(59484, (i64, i64) -> u64)(param_1, param_2) } }
+/// `SetRefCountedField68` (decompiler signature, tier high; ledger decompiler evidence, name high; id 58460, rva 0xad7df0).
+/// `undefined SetRefCountedField68(longlong param_1, longlong param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn set_ref_counted_field68(param_1: i64, param_2: i64) -> u64 { unsafe { function!(58460, (i64, i64) -> u64)(param_1, param_2) } }
+/// `SetRefCountedField78` (decompiler signature, tier high; ledger decompiler evidence, name high; id 61334, rva 0xb58b10).
+/// `undefined SetRefCountedField78(longlong param_1, longlong param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn set_ref_counted_field78(param_1: i64, param_2: i64) -> u64 { unsafe { function!(61334, (i64, i64) -> u64)(param_1, param_2) } }
+/// `SetRefCountedField88` (decompiler signature, tier high; ledger decompiler evidence, name high; id 59262, rva 0xae96c0).
+/// `undefined SetRefCountedField88(longlong param_1, longlong param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn set_ref_counted_field88(param_1: i64, param_2: i64) -> u64 { unsafe { function!(59262, (i64, i64) -> u64)(param_1, param_2) } }
