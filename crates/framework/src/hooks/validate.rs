@@ -45,7 +45,6 @@ impl Validation {
 
 impl fmt::Display for Validation {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
-        let hex = |b: &Bytes| b.iter().map(|x| format!("{x:02x}")).collect::<Vec<_>>().join(" ");
         match self {
             Self::Pristine => f.write_str("pristine, equal to the executable file"),
             Self::Plausible => f.write_str("plausible, no file bytes to compare and no jump at the entry"),
@@ -82,6 +81,54 @@ pub fn validate(address: usize, detour: Option<usize>) -> Validation {
         None if matches!(found[0], 0xE8 | 0xCC) || (found[0] == 0xFF && found[1] & 0x38 == 0x20) => Validation::Unmanaged { found, expected: None, target: None },
         None => Validation::Plausible,
     }
+}
+
+/// Classifies the `call rel32` at `address`; `ours` is the dispatcher's detour once it is installed
+/// there, so that any other callee then counts as another module's patch.
+#[must_use]
+pub fn validate_call(address: usize, ours: Option<usize>) -> Validation {
+    let Some(found) = read::<LEN>(address) else {
+        return Validation::Unmanaged { found: [0; LEN], expected: None, target: None };
+    };
+    let expected = file_bytes(address);
+    if found[0] != 0xE8 {
+        return Validation::Unmanaged { found, expected, target: None };
+    }
+    let callee = through_relay(rel32(address + 5, [found[1], found[2], found[3], found[4]]));
+    classify(found, expected, expected.map(|e| e[..5] == found[..5]), callee, ours)
+}
+
+/// Classifies the vtable slot at `address`, comparing its pointer with the file's relocated to the
+/// loaded image.
+#[must_use]
+pub fn validate_slot(address: usize, ours: Option<usize>) -> Validation {
+    let Some(found) = read::<LEN>(address) else {
+        return Validation::Unmanaged { found: [0; LEN], expected: None, target: None };
+    };
+    let pointer = |b: &Bytes| usize::from_le_bytes([b[0], b[1], b[2], b[3], b[4], b[5], b[6], b[7]]);
+    let expected = file_bytes(address);
+    let same = expected.zip(preferred_base()).map(|(e, preferred)| pointer(&e).wrapping_sub(preferred).wrapping_add(hook::module_base()) == pointer(&found));
+    classify(found, expected, same, pointer(&found), ours)
+}
+
+/// `same` is whether the live bytes equal the file's, `None` without file bytes.
+fn classify(found: Bytes, expected: Option<Bytes>, same: Option<bool>, target: usize, ours: Option<usize>) -> Validation {
+    match same {
+        _ if ours == Some(target) => Validation::Managed { detour: target },
+        Some(true) => Validation::Pristine,
+        Some(false) => Validation::Unmanaged { found, expected, target: Some(target) },
+        None if ours.is_some() => Validation::Unmanaged { found, expected: None, target: Some(target) },
+        None => Validation::Plausible,
+    }
+}
+
+pub(crate) fn hex(bytes: &[u8]) -> String {
+    bytes.iter().map(|x| format!("{x:02x}")).collect::<Vec<_>>().join(" ")
+}
+
+/// `len` bytes at `address`, when they are all readable.
+pub(crate) fn read_bytes(address: usize, len: usize) -> Option<Vec<u8>> {
+    readable(address, len).then(|| unsafe { core::slice::from_raw_parts(address as *const u8, len) }.to_vec())
 }
 
 fn rel32(next: usize, bytes: [u8; 4]) -> usize {
@@ -164,6 +211,17 @@ fn file_bytes(address: usize) -> Option<Bytes> {
         let (va, raw_size, raw) = (u32_at(section + 12), u32_at(section + 16), u32_at(section + 20));
         (rva >= va && rva + LEN <= va + raw_size).then(|| rva - va + raw)
     })?;
+    read_file(offset)
+}
+
+/// The image base the executable was linked at (+24 of the PE32+ optional header); the headers sit
+/// at the same offsets in the file as in memory, where the loader may have rewritten the field.
+fn preferred_base() -> Option<usize> {
+    let nt = unsafe { ((hook::module_base() + 0x3c) as *const u32).read_unaligned() } as usize;
+    read_file(nt + 48).map(|b| usize::from_le_bytes([b[0], b[1], b[2], b[3], b[4], b[5], b[6], b[7]]))
+}
+
+fn read_file(offset: usize) -> Option<Bytes> {
     let mut file = File::open(std::env::current_exe().ok()?).ok()?;
     file.seek(SeekFrom::Start(offset as u64)).ok()?;
     let mut bytes = [0; LEN];

@@ -1,6 +1,6 @@
 //! The console command `SkyrimRs`: `gui [n]` opens the overlay (on page `n`) and lists the pages,
 //! the framework plugins and the SKSE plugins; `hooks` lists every hook site with its entry state
-//! and subscribers and the dispatcher's last messages; `toggle <id>` switches a subscriber; `keys`
+//! and subscribers, every byte patch and the dispatcher's last messages; `toggle <id>` switches a subscriber or a patch; `keys`
 //! lists the hotkeys; `bind <n>` captures the next key pressed for hotkey `n` as the Settings tab's
 //! "Set" button does; `capture [n]` writes the next overlay frame to `skyrim-rs-overlay.bmp`
 //! (`skyrim-rs-overlay-<n>.bmp`) in the SKSE log folder.
@@ -9,7 +9,7 @@ use skyrim::input::{Arg, CommandContext, Param};
 use sre::ScriptParamType;
 
 use super::{HOOKS, NAME, flush_settings, gui, keys, skse_plugins};
-use crate::hooks::{Hooks, SiteReport, SubscriptionId};
+use crate::hooks::{Hooks, PatchId, PatchState, SiteReport, SubscriptionId};
 
 /// How a site's entry looked at install and looks now, the module behind another module's patch,
 /// and whether the site broke (its detour overwritten in refuse mode: the subscribers no longer run).
@@ -63,16 +63,26 @@ fn hook_lines() -> Vec<String> {
         lines.push(format!("site {} at {:#x}: {} calls, last {} ns, mean {} ns, last outcome {:?}, {}", site.name, site.address, site.timing.calls, site.timing.last_ns, site.timing.mean_ns, site.last_outcome, site_state(&site)));
         lines.extend(site.entries.iter().map(|e| format!("  {e}")));
     }
+    lines.extend(HOOKS.patches().iter().map(ToString::to_string));
     lines.extend(HOOKS.messages().iter().map(|m| format!("message: {m}")));
     lines
 }
 
+/// Switches subscription or patch `id`.
 fn toggle(id: u64) -> String {
-    let id = SubscriptionId::new(id);
-    let enabled = HOOKS.diagnostics().iter().flat_map(|site| &site.entries).find(|e| e.id == id).map(|e| e.enabled);
-    match enabled {
-        Some(enabled) if HOOKS.set_enabled(id, !enabled) => format!("#{} {}", id.get(), if enabled { "disabled" } else { "enabled" }),
-        _ => format!("no subscription #{}", id.get()),
+    let word = |enabled: bool| if enabled { "enabled" } else { "disabled" };
+    let sub = SubscriptionId::new(id);
+    if let Some(enabled) = HOOKS.diagnostics().iter().flat_map(|site| &site.entries).find(|e| e.id == sub).map(|e| e.enabled) {
+        return if HOOKS.set_enabled(sub, !enabled) { format!("#{id} {}", word(!enabled)) } else { format!("no subscription #{id}") };
+    }
+    let patch = PatchId::new(id);
+    match HOOKS.patches().into_iter().find(|p| p.id == patch) {
+        Some(p) if p.state != PatchState::Applied && p.state != PatchState::Disabled => p.to_string(),
+        Some(p) => {
+            let applied = p.state == PatchState::Applied;
+            HOOKS.set_patch_enabled(patch, !applied).map_or_else(|e| e.to_string(), |()| format!("patch #{id} {}", word(!applied)))
+        }
+        None => format!("no subscription or patch #{id}"),
     }
 }
 

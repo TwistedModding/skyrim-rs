@@ -263,3 +263,178 @@ fn a_disabled_subscriber_keeps_its_place_and_is_skipped() {
     assert!(messages.iter().any(|m| m.ends_with(&format!("#{} t1 Before disabled", before.get()))), "{messages:?}");
     assert!(messages.iter().any(|m| m.ends_with(&format!("#{} t1 Before enabled", before.get()))), "{messages:?}");
 }
+
+targets! { called rerouted elsewhere slotted spare_slot }
+
+/// `sub rsp, 0x28; call callee; add rsp, 0x28; ret` in a code page near the test executable, and the address of its call.
+fn caller_of(callee: Fn2) -> (Fn2, usize) {
+    let code = [0x48, 0x83, 0xEC, 0x28, 0xE8, 0, 0, 0, 0, 0x48, 0x83, 0xC4, 0x28, 0xC3];
+    let stub = hook::Trampoline::shared().alloc(callee as usize, &code).unwrap();
+    unsafe { hook::write_call(stub + 4, callee as usize) }.unwrap();
+    (unsafe { core::mem::transmute::<usize, Fn2>(stub) }, stub + 4)
+}
+
+fn callee_at(site: usize) -> usize {
+    let rel = unsafe { ((site + 1) as *const i32).read_unaligned() };
+    (site + 5).wrapping_add_signed(rel as isize)
+}
+
+fn report_at(address: usize) -> Option<SiteReport> {
+    Hooks::HOST.diagnostics().into_iter().find(|s| s.address == address)
+}
+
+fn call_at(site: usize) -> ops::Call<Fn2> {
+    ops::Call::at(Location::Address(site))
+}
+
+#[test]
+fn call_sites_share_one_chain_beside_the_callee_entry() {
+    let hooks = &Hooks::HOST;
+    let (caller, site) = caller_of(called);
+    let outcomes = Arc::new(Mutex::new(Vec::new()));
+    let log = Arc::clone(&outcomes);
+    hooks.before(raw(called), Options::new("entry"), |args| args.1 += 100).unwrap();
+    hooks.before(call_at(site), Options::new("c2").after(&["c1"]), |args| args.0 *= 10).unwrap();
+    hooks.before(call_at(site), Options::new("c1"), |args| args.0 += 1).unwrap();
+    hooks.after(call_at(site), Options::new("c2"), move |args, ret, outcome| log.lock().unwrap().push((*args, *ret, outcome))).unwrap();
+    assert_eq!(call(caller, 1, 2), 20 + 102, "the call site's chain, then the callee's entry chain inside the original");
+    assert_eq!(call(called, 1, 2), 103, "a direct call runs the entry chain only");
+    assert_eq!(*outcomes.lock().unwrap(), [((20, 2), 122, Outcome::Original)]);
+
+    let report = report_at(site).unwrap();
+    assert_eq!(report.name, format!("call {site:#x}/2"));
+    assert_eq!(report.validation, Validation::Plausible);
+    assert!(matches!(report.current, Validation::Managed { .. }), "{report}");
+    let order: Vec<(&str, Phase)> = report.entries.iter().map(|e| (e.owner.as_str(), e.phase)).collect();
+    assert_eq!(order, [("c1", Phase::Before), ("c2", Phase::Before), ("c2", Phase::After)]);
+
+    assert_eq!(hooks.remove_owner("c1") + hooks.remove_owner("c2"), 3);
+    assert_eq!(callee_at(site), called as *const () as usize, "the call reaches the callee again");
+    assert!(report_at(site).is_none());
+    assert_eq!(call(caller, 1, 2), 103);
+
+    let id = hooks.replace(call_at(site), Options::new("c3"), |args, _| args.0 + 7).unwrap();
+    assert_eq!(call(caller, 1, 2), 8, "the slot bound to the site is installed again");
+    assert!(hooks.unsubscribe(id));
+    assert_eq!(callee_at(site), called as *const () as usize);
+}
+
+#[test]
+fn a_call_site_another_writer_changed_is_left_as_it_is() {
+    let hooks = &Hooks::HOST;
+    let (caller, site) = caller_of(rerouted);
+    hooks.before(call_at(site), Options::new("rw"), |args| args.0 += 1).unwrap();
+    assert_eq!(call(caller, 1, 1), 3);
+    unsafe { hook::write_call(site, elsewhere as *const () as usize) }.unwrap();
+    let ours = report_at(site).map(|r| match r.current {
+        Validation::Unmanaged { target, .. } => target,
+        _ => None,
+    });
+    assert_eq!(ours, Some(Some(elsewhere as *const () as usize)), "an installed call site reached elsewhere is another writer's");
+    assert_eq!(hooks.remove_owner("rw"), 1);
+    assert_eq!(callee_at(site), elsewhere as *const () as usize);
+    let not_a_call = call_at(caller as usize);
+    assert!(matches!(hooks.before(not_a_call, Options::new("rw"), |_| {}), Err(Error::Site { .. })));
+}
+
+static TABLE: [Fn2; 2] = [slotted, spare_slot];
+
+#[test]
+fn vtable_slots_dispatch_in_order_and_restore() {
+    let hooks = &Hooks::HOST;
+    assert_eq!(validate_slot(core::ptr::from_ref(&TABLE[1]) as usize, None), Validation::Pristine, "the file's pointer, relocated to the loaded image");
+    let table: &'static [usize; 2] = Box::leak(Box::new([slotted as *const () as usize, spare_slot as *const () as usize]));
+    let entry = core::ptr::from_ref(&table[1]) as usize;
+    let slot = || ops::Vtable::<Fn2>::slot(Location::Address(table.as_ptr() as usize), 1);
+    let virtual_call = |a, b| call(unsafe { core::mem::transmute::<usize, Fn2>(core::ptr::read_volatile(entry as *const usize)) }, a, b);
+    hooks.before(slot(), Options::new("v1"), |args| args.0 += 5).unwrap();
+    hooks.around(slot(), Options::new("v3"), |args, next| unsafe { next.call((args.0 * 2, args.1)) }).unwrap();
+    hooks.around(slot(), Options::new("v2").priority(1), |args, next| unsafe { next.call((args.0, args.1 * 3)) }).unwrap();
+    assert_eq!(virtual_call(1, 1), 12 + 3, "v1, then v2 (priority 1) around v3");
+    assert_eq!(call(spare_slot, 1, 1), 2, "the function itself is untouched");
+    let report = report_at(entry).unwrap();
+    assert_eq!(report.name, format!("vtable {:#x}[1]/2", table.as_ptr() as usize));
+    assert!(matches!(report.current, Validation::Managed { .. }), "{report}");
+    assert_eq!(hooks.remove_owner("v1") + hooks.remove_owner("v2") + hooks.remove_owner("v3"), 3);
+    assert_eq!(unsafe { core::ptr::read_volatile(entry as *const usize) }, spare_slot as *const () as usize);
+    assert_eq!(virtual_call(1, 1), 2);
+    let unaligned = ops::Vtable::<Fn2>::slot(Location::Address(table.as_ptr() as usize + 1), 0);
+    assert!(matches!(hooks.before(unaligned, Options::new("v1"), |_| {}), Err(Error::Raw { .. })));
+}
+
+/// `mov eax, n; ret` in a code page near the test executable.
+fn returning(n: u8) -> (unsafe extern "C" fn() -> u32, usize) {
+    let stub = hook::Trampoline::shared().alloc(called as *const () as usize, &[0xB8, n, 0, 0, 0, 0xC3]).unwrap();
+    (unsafe { core::mem::transmute::<usize, unsafe extern "C" fn() -> u32>(stub) }, stub)
+}
+
+fn run(f: unsafe extern "C" fn() -> u32) -> u32 {
+    unsafe { black_box(f)() }
+}
+
+#[test]
+fn patches_are_checked_reserved_toggled_and_restored() {
+    let hooks = &Hooks::HOST;
+    let (f, stub) = returning(1);
+    let at = Location::Address(stub + 1);
+    let id = unsafe { hooks.patch("p1", at, &[1, 0], &[2, 0]) }.unwrap();
+    assert_eq!(run(f), 2);
+    let overlap = unsafe { hooks.patch("p2", Location::Address(stub + 2), &[0, 0], &[1, 1]) }.unwrap_err();
+    assert!(matches!(&overlap, Error::Overlap { with, .. } if *with == format!("patch #{} of p1 at {at}", id.get())), "{overlap}");
+
+    let state = |id: PatchId| hooks.patches().into_iter().find(|p| p.id == id).map(|p| p.state);
+    assert_eq!(state(id), Some(PatchState::Applied));
+    hooks.set_patch_enabled(id, false).unwrap();
+    assert_eq!((run(f), state(id)), (1, Some(PatchState::Disabled)));
+    hooks.set_patch_enabled(id, true).unwrap();
+    assert_eq!(run(f), 2);
+
+    unsafe { hook::write_code(stub + 1, &[3]) }.unwrap();
+    assert_eq!(state(id), Some(PatchState::Overwritten { found: vec![3, 0] }));
+    assert!(matches!(hooks.set_patch_enabled(id, false), Err(Error::Mismatch { .. })));
+    unsafe { hook::write_code(stub + 1, &[2]) }.unwrap();
+    assert!(hooks.patches().iter().any(|p| p.id == id && p.to_string() == format!("patch #{} p1 at {at} ({:#x}): 01 00 -> 02 00, applied", id.get(), stub + 1)));
+
+    assert_eq!(hooks.remove_owner("p1"), 0);
+    assert_eq!(run(f), 1, "the owner's removal restores its patches");
+    assert!(state(id).is_none() && !hooks.unpatch(id));
+    assert!(matches!(hooks.set_patch_enabled(id, true), Err(Error::NoPatch(_))));
+}
+
+#[test]
+fn patches_refuse_other_bytes_lengths_and_owners() {
+    let hooks = &Hooks::HOST;
+    let (f, stub) = returning(4);
+    let at = Location::Address(stub + 1);
+    let mismatch = unsafe { hooks.patch("q", at, &[5], &[6]) }.unwrap_err();
+    assert_eq!(mismatch, Error::Mismatch { site: format!("patch at {at}"), owner: "q".into(), expected: vec![5], found: vec![4] });
+    assert!(hooks.messages().iter().any(|m| m == &format!("refused: {mismatch}")));
+    assert!(matches!(unsafe { hooks.patch("q", at, &[], &[]) }, Err(Error::Install { .. })));
+    assert!(matches!(unsafe { hooks.patch("q", at, &[4], &[5, 6]) }, Err(Error::Install { .. })));
+    assert!(matches!(unsafe { Hooks::for_plugin("q").patch("r", at, &[4], &[5]) }, Err(Error::Owner { .. })));
+    let id = unsafe { Hooks::for_plugin("q").patch("q", at, &[4], &[5]) }.unwrap();
+    assert_eq!(run(f), 5);
+    assert!(hooks.unpatch(id));
+    assert_eq!(run(f), 4);
+}
+
+#[test]
+fn patches_and_hook_sites_hold_their_bytes_against_each_other() {
+    targets! { reserved }
+    let hooks = &Hooks::HOST;
+    let (caller, site) = caller_of(reserved);
+    let rel = unsafe { ((site + 1) as *const [u8; 4]).read_unaligned() };
+    let id = unsafe { hooks.patch("h1", Location::Address(site + 1), &rel, &rel) }.unwrap();
+    let refused = hooks.before(call_at(site), Options::new("h2"), |_| {}).unwrap_err();
+    assert!(matches!(&refused, Error::Overlap { with, .. } if with.starts_with(&format!("patch #{} of h1", id.get()))), "{refused}");
+    assert!(hooks.unpatch(id));
+
+    hooks.before(call_at(site), Options::new("h2"), |args| args.0 += 1).unwrap();
+    let call_bytes = unsafe { ((site + 1) as *const [u8; 4]).read_unaligned() };
+    let refused = unsafe { hooks.patch("h1", Location::Address(site + 2), &call_bytes[1..], &call_bytes[1..]) }.unwrap_err();
+    assert!(matches!(&refused, Error::Overlap { with, .. } if *with == format!("the hook site call {site:#x}/2")), "{refused}");
+    hooks.before(raw(reserved), Options::new("h2"), |_| {}).unwrap();
+    assert!(matches!(unsafe { hooks.patch("h1", Location::Address(reserved as *const () as usize + 3), &[0], &[0]) }, Err(Error::Overlap { .. })), "an entry site holds its first 16 bytes");
+    assert_eq!(call(caller, 1, 1), 3);
+    assert_eq!(hooks.remove_owner("h2"), 2);
+}

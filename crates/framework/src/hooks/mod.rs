@@ -18,6 +18,12 @@
 //! `PLUGINS_LOADED_2` and `DATA_LOADED` messages, names the module behind each unmanaged patch, and
 //! marks an installed site whose detour another module overwrote as broken.
 //!
+//! Besides function entries, a site can be one `call rel32` inside a function ([`ops::Call`]) or
+//! one vtable slot ([`ops::Vtable`]): the call or the pointer is pointed at the dispatcher and the
+//! callee it reached is the original; both are restored when their last subscriber goes. A
+//! plugin's byte patches ([`Hooks::patch`]) are kept in the same registry, which reserves their
+//! bytes against each other and against the installed sites.
+//!
 //! Subscriptions are added and removed from any thread while the detours run; a removal returns
 //! only once no call can still be inside the removed subscriber. Registering or removing from
 //! inside a subscriber is refused, since it would wait for itself.
@@ -33,7 +39,7 @@ mod site;
 mod validate;
 
 pub use site::{AfterFn, Args, AroundFn, BeforeFn, Next, Op, Original, Outcome, ReplaceFn, Ret, Signature, Site, Timing};
-pub use validate::{Bytes, Validation, owner, validate};
+pub use validate::{Bytes, Validation, owner, validate, validate_call, validate_slot};
 
 /// What the dispatcher does with a site another module has patched.
 #[derive(Clone, Copy, Debug, Default, PartialEq, Eq)]
@@ -145,6 +151,12 @@ pub enum Error {
     Reentrant,
     /// The `Options` owner is not the name of the plugin the handle belongs to.
     Owner { given: String, plugin: String },
+    /// The bytes are held by `with`: another patch, an installed hook site or another module's patch.
+    Overlap { site: String, owner: String, with: String },
+    /// The live bytes are not the ones a patch expects to find (or, toggling it, the ones it left).
+    Mismatch { site: String, owner: String, expected: Vec<u8>, found: Vec<u8> },
+    /// No patch has this id.
+    NoPatch(PatchId),
 }
 
 impl fmt::Display for Error {
@@ -161,17 +173,110 @@ impl fmt::Display for Error {
             Self::Callback { site, owner } => write!(f, "{site}: {owner}'s callback is not of the site's signature"),
             Self::Reentrant => f.write_str("registration from inside a hook subscriber"),
             Self::Owner { given, plugin } => write!(f, "owner {given} given by the plugin {plugin}"),
+            Self::Overlap { site, owner, with } => write!(f, "{site}: refused for {owner}, the bytes overlap {with}"),
+            Self::Mismatch { site, owner, expected, found } => write!(f, "{site}: refused for {owner}, expected {}, found {}", validate::hex(expected), validate::hex(found)),
+            Self::NoPatch(id) => write!(f, "no patch #{}", id.0),
         }
     }
 }
 
 impl std::error::Error for Error {}
 
-/// Where a subscription goes: a typed operation of [`ops`] or a raw address.
+/// An address in the game: an Address Library id plus an offset, or an address already resolved.
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Location {
+    Id { id: u64, offset: usize },
+    Address(usize),
+}
+
+impl Location {
+    #[must_use]
+    pub const fn id(id: u64, offset: usize) -> Self {
+        Self::Id { id, offset }
+    }
+
+    fn resolve(self) -> Result<usize, String> {
+        match self {
+            Self::Id { id, offset } => skyrim::reloc().address(id).map(|a| a + offset).map_err(|e| e.to_string()),
+            Self::Address(address) => Ok(address),
+        }
+    }
+}
+
+impl fmt::Display for Location {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        match self {
+            Self::Id { id, offset } => write!(f, "id {id}+{offset:#x}"),
+            Self::Address(address) => write!(f, "{address:#x}"),
+        }
+    }
+}
+
+/// Where a subscription goes: a typed operation of [`ops`], a raw function entry, a call site or a vtable slot.
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Target {
     Op(usize),
     Raw { address: usize, arity: usize },
+    Call { at: Location, arity: usize },
+    Vtable { table: Location, slot: usize, arity: usize },
+}
+
+#[derive(Clone, Copy, Debug, PartialEq, Eq, Hash)]
+pub struct PatchId(u64);
+
+impl PatchId {
+    /// The number the logs and reports show as `#n`, from the same sequence as subscriptions.
+    #[must_use]
+    pub const fn get(self) -> u64 {
+        self.0
+    }
+
+    #[must_use]
+    pub const fn new(n: u64) -> Self {
+        Self(n)
+    }
+}
+
+/// A byte patch as it crosses from a plugin to the host.
+pub(crate) struct PatchRequest {
+    pub owner: String,
+    pub at: Location,
+    pub expected: Vec<u8>,
+    pub replacement: Vec<u8>,
+}
+
+/// What a patch's bytes hold now.
+#[derive(Clone, Debug, PartialEq, Eq)]
+pub enum PatchState {
+    /// The replacement is in place.
+    Applied,
+    /// The original bytes are back, held for the patch.
+    Disabled,
+    /// Another writer changed the bytes since; the patch can no longer be toggled.
+    Overwritten { found: Vec<u8> },
+}
+
+/// One managed byte patch, as [`Hooks::patches`] reports it.
+#[derive(Clone, Debug)]
+pub struct PatchReport {
+    pub id: PatchId,
+    pub owner: String,
+    pub site: Location,
+    pub address: usize,
+    pub original: Vec<u8>,
+    pub replacement: Vec<u8>,
+    pub state: PatchState,
+}
+
+impl fmt::Display for PatchReport {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        write!(f, "patch #{} {} at {} ({:#x}): {} -> {}, ", self.id.0, self.owner, self.site, self.address, validate::hex(&self.original), validate::hex(&self.replacement))?;
+        match &self.state {
+            PatchState::Applied => f.write_str("applied"),
+            PatchState::Disabled => f.write_str("disabled"),
+            PatchState::Overwritten { found } => write!(f, "overwritten by another writer, found {}", validate::hex(found)),
+        }
+    }
 }
 
 /// Something a subscriber can attach to, with the signature its callbacks are typed by.
@@ -276,6 +381,10 @@ pub struct Hooks {
     set_enabled: fn(SubscriptionId, bool) -> bool,
     diagnostics: fn() -> Vec<SiteReport>,
     messages: fn() -> Vec<String>,
+    patch: fn(PatchRequest) -> Result<PatchId, Error>,
+    set_patch_enabled: fn(PatchId, bool) -> Result<(), Error>,
+    unpatch: fn(PatchId) -> bool,
+    patches: fn() -> Vec<PatchReport>,
 }
 
 impl Hooks {
@@ -289,6 +398,10 @@ impl Hooks {
         set_enabled: registry::set_enabled,
         diagnostics: registry::diagnostics,
         messages: registry::messages,
+        patch: registry::patch,
+        set_patch_enabled: registry::set_patch_enabled,
+        unpatch: registry::unpatch,
+        patches: registry::patches,
     };
 
     /// The registry as the plugin `name` sees it.
@@ -320,13 +433,50 @@ impl Hooks {
         registry::revalidate(moment, &resolved);
     }
 
-    fn request<C: Send + Sync + 'static>(&self, target: Target, phase: Phase, options: Options<'_>, callback: C) -> Result<SubscriptionId, Error> {
-        if let Some(plugin) = self.owner
-            && plugin != options.owner
-        {
-            return Err(Error::Owner { given: options.owner.to_owned(), plugin: plugin.to_owned() });
+    fn check_owner(&self, owner: &str) -> Result<(), Error> {
+        match self.owner {
+            Some(plugin) if plugin != owner => Err(Error::Owner { given: owner.to_owned(), plugin: plugin.to_owned() }),
+            _ => Ok(()),
         }
+    }
+
+    fn request<C: Send + Sync + 'static>(&self, target: Target, phase: Phase, options: Options<'_>, callback: C) -> Result<SubscriptionId, Error> {
+        self.check_owner(options.owner)?;
         (self.subscribe)(Request::new(target, phase, options, callback))
+    }
+
+    /// Writes `replacement` over the bytes at `at`, which must hold `expected` (of the same length,
+    /// 1 to 64 bytes). Refused when the bytes differ, or overlap another patch, an installed hook
+    /// site or another module's patch the host has seen; a hook subscription whose site would
+    /// overlap the patch is refused in turn. The patch belongs to `owner` (this plugin's name) and
+    /// its original bytes are written back when it is disabled or removed, and before the
+    /// plugin's DLL is unloaded.
+    ///
+    /// # Safety
+    /// The replacement must be valid code or data where it lands for every thread that runs or
+    /// reads it, and no thread may be executing those bytes while they are written.
+    pub unsafe fn patch(&self, owner: &str, at: Location, expected: &[u8], replacement: &[u8]) -> Result<PatchId, Error> {
+        self.check_owner(owner)?;
+        (self.patch)(PatchRequest { owner: owner.to_owned(), at, expected: expected.to_vec(), replacement: replacement.to_vec() })
+    }
+
+    /// Writes a patch's replacement back (`true`) or its original bytes (`false`); refused with
+    /// `Error::Mismatch` when another writer changed the bytes since.
+    pub fn set_patch_enabled(&self, id: PatchId, enabled: bool) -> Result<(), Error> {
+        (self.set_patch_enabled)(id, enabled)
+    }
+
+    /// Restores a patch's original bytes and forgets it; false when no such patch exists. Bytes
+    /// another writer changed since are left as they are.
+    #[must_use]
+    pub fn unpatch(&self, id: PatchId) -> bool {
+        (self.unpatch)(id)
+    }
+
+    /// Every managed patch with its owner, bytes and state.
+    #[must_use]
+    pub fn patches(&self) -> Vec<PatchReport> {
+        (self.patches)()
     }
 
     /// Runs `f` before the function with the arguments, which it may edit.
@@ -361,7 +511,7 @@ impl Hooks {
     }
 
     /// Removes every subscription of `owner` and returns how many; once it returns, no call is
-    /// inside any of them.
+    /// inside any of them. The owner's patches are restored and removed with them.
     #[must_use]
     pub fn remove_owner(&self, owner: &str) -> usize {
         (self.remove_owner)(owner)

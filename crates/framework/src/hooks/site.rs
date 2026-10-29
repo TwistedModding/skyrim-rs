@@ -9,7 +9,7 @@ use std::time::{Duration, Instant};
 
 use windows_sys::Win32::System::Threading::GetCurrentThreadId;
 
-use super::validate::Validation;
+use super::validate::{self, Validation};
 use super::{Error, Phase};
 use crate::order::{self, Constraints};
 
@@ -358,11 +358,42 @@ impl<F: Signature> Chain<F> {
 /// Republishes a site's chain keeping the entries a predicate accepts; `rebuild::<F>` for the site's signature.
 pub(crate) type Rebuild = unsafe fn(&Site, &mut SiteMeta, &Ranks, &dyn Fn(&Meta) -> bool) -> usize;
 
+/// What a site's detour replaces: a function entry (through `MinHook`), a `call rel32` or a vtable slot.
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub(crate) enum Kind {
+    Entry,
+    Call,
+    Slot,
+}
+
+impl Kind {
+    pub(crate) fn validate(self, address: usize, ours: Option<usize>) -> Validation {
+        match self {
+            Self::Entry => validate::validate(address, ours),
+            Self::Call => validate::validate_call(address, ours),
+            Self::Slot => validate::validate_slot(address, ours),
+        }
+    }
+
+    /// The bytes an installed site of this kind holds: an entry's first 16, which `MinHook` may
+    /// relocate into its trampoline, the call instruction, or the pointer.
+    pub(crate) fn span(self) -> usize {
+        match self {
+            Self::Entry => 16,
+            Self::Call => 5,
+            Self::Slot => size_of::<usize>(),
+        }
+    }
+}
+
 /// What the registry knows about an installed site.
 pub(crate) struct SiteMeta {
     pub name: String,
+    pub kind: Kind,
     pub address: usize,
     pub detour: usize,
+    /// The callee or the slot's pointer before the detour, restored when the last subscriber of a call or slot site goes.
+    pub original: usize,
     pub validation: Validation,
     /// The module another module's jump at the entry leads to: the patch stacked on at install, or the one that overwrote the detour since.
     pub patched_by: Option<String>,

@@ -1,4 +1,5 @@
-//! The typed engine operations a plugin can subscribe to, and the raw slots for addresses outside the set.
+//! The typed engine operations a plugin can subscribe to, and the raw slots for function entries,
+//! call sites and vtable slots outside the set.
 //!
 //! Each marker type below is one engine function: its Address Library id and `extern "C" fn` type
 //! come from `sre`, so a subscriber's closure is checked against the function's real
@@ -9,7 +10,7 @@ use core::marker::PhantomData;
 use sre::raw::fns;
 
 use super::site::{Op, Signature, Site};
-use super::{Hookable, Target};
+use super::{Hookable, Location, Target};
 
 /// Visits the `Op` type behind an index or a raw slot.
 pub(crate) trait OpVisitor<R> {
@@ -81,8 +82,9 @@ ops! {
     TESObjectREFR__GetHandle / TESObjectREFR__GetHandle_fn = "TESObjectREFR::GetHandle",
 }
 
-/// How many raw addresses a process can hook at once.
-pub const RAW_SLOTS: usize = 16;
+/// How many raw addresses, call sites and vtable slots a process can hook together. A slot stays
+/// bound to its address for the session, so a reloaded plugin finds its own again.
+pub const RAW_SLOTS: usize = 32;
 
 /// The most integer-class arguments a raw hook can carry.
 pub const RAW_MAX_ARITY: usize = 8;
@@ -107,6 +109,48 @@ impl<F: RawShape> Hookable for Raw<F> {
 
     fn target(self) -> Target {
         Target::Raw { address: self.0, arity: F::ARITY }
+    }
+}
+
+/// One `call rel32` (`E8`) inside a function, of a callee with the raw shape `F`: the call is
+/// pointed at the dispatcher and the callee it reached is the original, so only this caller is
+/// affected. A function-entry subscription on the callee runs as well, inside the original.
+/// Restored once its last subscriber goes.
+pub struct Call<F: RawShape>(Location, PhantomData<F>);
+
+impl<F: RawShape> Call<F> {
+    #[must_use]
+    pub const fn at(instruction: Location) -> Self {
+        Self(instruction, PhantomData)
+    }
+}
+
+impl<F: RawShape> Hookable for Call<F> {
+    type Fn = F;
+
+    fn target(self) -> Target {
+        Target::Call { at: self.0, arity: F::ARITY }
+    }
+}
+
+/// Slot `n` of a vtable, of a virtual function with the raw shape `F`: the slot's pointer is
+/// swapped for the dispatcher's and the previous one is the original, so only objects of that
+/// vtable are affected. Restored once its last subscriber goes.
+pub struct Vtable<F: RawShape>(Location, usize, PhantomData<F>);
+
+impl<F: RawShape> Vtable<F> {
+    /// `table` is the vtable itself (`sre::raw::vtables::<Class>_vtable::ID`, or its address).
+    #[must_use]
+    pub const fn slot(table: Location, n: usize) -> Self {
+        Self(table, n, PhantomData)
+    }
+}
+
+impl<F: RawShape> Hookable for Vtable<F> {
+    type Fn = F;
+
+    fn target(self) -> Target {
+        Target::Vtable { table: self.0, slot: self.1, arity: F::ARITY }
     }
 }
 
@@ -147,23 +191,11 @@ raw_shapes! {
 
 macro_rules! raw_slots {
     ($n:literal, $slot:expr, $visitor:expr) => {
+        raw_slots!(@ $n, $slot, $visitor, 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31)
+    };
+    (@ $n:literal, $slot:expr, $visitor:expr, $($k:literal) => {
         match $slot {
-            0 => Some($visitor.visit::<RawSlot<$n, 0>>()),
-            1 => Some($visitor.visit::<RawSlot<$n, 1>>()),
-            2 => Some($visitor.visit::<RawSlot<$n, 2>>()),
-            3 => Some($visitor.visit::<RawSlot<$n, 3>>()),
-            4 => Some($visitor.visit::<RawSlot<$n, 4>>()),
-            5 => Some($visitor.visit::<RawSlot<$n, 5>>()),
-            6 => Some($visitor.visit::<RawSlot<$n, 6>>()),
-            7 => Some($visitor.visit::<RawSlot<$n, 7>>()),
-            8 => Some($visitor.visit::<RawSlot<$n, 8>>()),
-            9 => Some($visitor.visit::<RawSlot<$n, 9>>()),
-            10 => Some($visitor.visit::<RawSlot<$n, 10>>()),
-            11 => Some($visitor.visit::<RawSlot<$n, 11>>()),
-            12 => Some($visitor.visit::<RawSlot<$n, 12>>()),
-            13 => Some($visitor.visit::<RawSlot<$n, 13>>()),
-            14 => Some($visitor.visit::<RawSlot<$n, 14>>()),
-            15 => Some($visitor.visit::<RawSlot<$n, 15>>()),
+            $($k => Some($visitor.visit::<RawSlot<$n, $k>>()),
             _ => None,
         }
     };
