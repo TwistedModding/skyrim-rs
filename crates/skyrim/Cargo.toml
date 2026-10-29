@@ -14,7 +14,7 @@ windows-sys = { workspace = true, features = ["Win32_System_Kernel", "Win32_Syst
 # `store` and `BSFixedString` are always compiled and need none.
 [features]
 default = []
-actors = ["sre/actors"]
+actors = ["sre/actors", "sre/render"]
 animation = ["events", "sre/actors", "sre/animation"]
 audio = ["sre/audio"]
 camera = ["sre/camera", "sre/frame"]
