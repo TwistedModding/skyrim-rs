@@ -59,7 +59,7 @@ pub mod prelude {
     #[cfg(feature = "save")]
     pub use crate::save::{BGSSaveLoadGameExt, BGSSaveLoadManagerExt};
     #[cfg(feature = "ui")]
-    pub use crate::ui::{GFxMovieViewExt, MenuManagerExt, UIMessageQueueExt};
+    pub use crate::ui::{GFxMovieViewExt, MenuManagerExt, RaceSexMenuExt, UIMessageQueueExt};
 }
 
 #[derive(Debug)]

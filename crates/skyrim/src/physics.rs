@@ -54,7 +54,8 @@ pub const fn layer_of(filter_info: u32) -> Option<CollisionLayer> {
 /// of 0 (`CastRayGetHitDistance`).
 #[must_use]
 pub const fn next_group(counter: u32) -> u16 {
-    match counter.wrapping_add(1) as u16 {
+    let [low, high, ..] = counter.wrapping_add(1).to_le_bytes();
+    match u16::from_le_bytes([low, high]) {
         0 => 10,
         group => group,
     }
@@ -64,12 +65,12 @@ pub const fn next_group(counter: u32) -> u16 {
 /// rays: a group no body belongs to. `None` before the filter exists.
 #[must_use]
 pub fn fresh_group() -> Option<u16> {
-    let holder = crate::reloc().address(globals::g_bhkCollisionFilter_ptr).ok()? as *const *const u8;
+    let holder = crate::reloc().address(globals::g_bhkCollisionFilter_ptr).ok()? as *const *const u32;
     let filter = unsafe { *holder };
     if filter.is_null() {
         return None;
     }
-    let counter = unsafe { &*filter.add(NEXT_COLLISION_GROUP).cast::<u32>() };
+    let counter = unsafe { &*filter.add(NEXT_COLLISION_GROUP / 4) };
     let group = next_group(*counter);
     crate::store(counter, u32::from(group));
     Some(group)
@@ -83,7 +84,7 @@ pub fn lerp(from: [f32; 3], to: [f32; 3], fraction: f32) -> [f32; 3] {
 
 fn havok_vector(p: [f32; 3]) -> [u8; 16] {
     let mut out = [0; 16];
-    for (chunk, v) in out.chunks_exact_mut(4).zip(p) {
+    for (chunk, v) in out.as_chunks_mut::<4>().0.iter_mut().zip(p) {
         chunk.copy_from_slice(&(v * HAVOK_SCALE).to_le_bytes());
     }
     out

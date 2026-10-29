@@ -18,7 +18,7 @@ use std::sync::atomic::{AtomicU32, Ordering};
 
 use sre::raw::vtables::{IMenu_vtable_AdvanceMovie, IMenu_vtable_PostCreate, IMenu_vtable_PostDisplay, IMenu_vtable_ProcessMessage, IMenu_vtable_RefreshPlatform, IMenu_vtable_vdtor};
 use sre::raw::{fns, vtables};
-use sre::{EventSourceHolder_MenuOpenClose, GFxMovieView, GFxScaleMode, HUDMenu, IMenu, UIMessage, UIMessageQueue, UIMessageResult};
+use sre::{EventSourceHolder_MenuOpenClose, GFxMovieView, GFxScaleMode, HUDMenu, IMenu, RaceSexCamera, RaceSexMenu, UIMessage, UIMessageQueue, UIMessageResult};
 
 use crate::BSFixedString;
 use crate::spin::SpinGuard;
@@ -228,6 +228,8 @@ pub trait MenuManagerExt {
     fn menu(&self, name: &str) -> Option<&IMenu>;
     /// The live HUD, `HUDMenu` behind "HUD Menu".
     fn hud(&self) -> Option<&HUDMenu>;
+    /// The live race menu, `RaceSexMenu` behind `"RaceSex Menu"`.
+    fn race_sex_menu(&self) -> Option<&RaceSexMenu>;
     /// Registers (or replaces) the creator for `name` (`Register`, id 82086): the engine calls
     /// [`Menu::create`] when the menu is first shown. The table may rehash, so register at load
     /// or from the UI step.
@@ -270,6 +272,11 @@ impl MenuManagerExt for EventSourceHolder_MenuOpenClose {
         (crate::class_of(menu)?.id == vtables::HUDMenu_vtable::ID).then(|| unsafe { &*core::ptr::from_ref(menu).cast::<HUDMenu>() })
     }
 
+    fn race_sex_menu(&self) -> Option<&RaceSexMenu> {
+        let menu = self.menu("RaceSex Menu")?;
+        (crate::class_of(menu)?.id == vtables::RaceSexMenu_vtable::ID).then(|| unsafe { &*core::ptr::from_ref(menu).cast::<RaceSexMenu>() })
+    }
+
     fn register_menu<M: Menu>(&self, name: &str) {
         let name = c_string(name);
         unsafe { self.register(name.as_ptr(), create_menu::<M> as *const c_void) }
@@ -277,6 +284,19 @@ impl MenuManagerExt for EventSourceHolder_MenuOpenClose {
 
     fn unload(&self, name: &str) {
         self.unload_menu(BSFixedString::new(name).raw());
+    }
+}
+
+/// What the generated race menu leaves raw: its camera.
+pub trait RaceSexMenuExt {
+    /// The menu's camera, embedded at +0xe8 (RE `camera.md`, `RaceSexCamera`); its root is the
+    /// node the menu eases between the body and face shots.
+    fn camera(&self) -> &RaceSexCamera;
+}
+
+impl RaceSexMenuExt for RaceSexMenu {
+    fn camera(&self) -> &RaceSexCamera {
+        unsafe { &*(&raw const self.m_RaceSexCamera_E8).cast::<RaceSexCamera>() }
     }
 }
 
