@@ -12,7 +12,7 @@ use core::ffi::{CStr, c_char, c_void};
 use std::sync::{Mutex, OnceLock, PoisonError, RwLock};
 
 use sre::raw::fns;
-use sre::{BSWin32KeyboardDevice, ButtonEvent, CharEvent, EventSourceHolder_Input, EventSourceHolder_User, InputDevice, InputEvent, InputEventType, MouseMoveEvent, ScriptParamType, TESForm, TESObjectREFR, ThumbstickEvent};
+use sre::{BSWin32KeyboardDevice, ButtonEvent, CharEvent, EventSourceHolder_Input, EventSourceHolder_User, InputContextEnum, InputDevice, InputEvent, InputEventType, MouseMoveEvent, ScriptParamType, TESForm, TESObjectREFR, ThumbstickEvent};
 
 use crate::BSFixedString;
 
@@ -120,6 +120,9 @@ pub trait ControlMapExt {
     /// The key of `device` the gameplay context maps to `user_event` (`"Toggle POV"`), with the
     /// player's remaps once the control map has loaded them.
     fn mapped_key(&self, user_event: &str, device: InputDevice) -> Option<u32>;
+    /// Removes every occurrence of `context` from the stack (`ControlMap::PopInputContext`); true
+    /// when one was there. Main thread.
+    fn pop_context(&self, context: InputContextEnum) -> bool;
 }
 
 impl ControlMapExt for EventSourceHolder_User {
@@ -145,6 +148,10 @@ impl ControlMapExt for EventSourceHolder_User {
 
     fn mapped_key(&self, user_event: &str, device: InputDevice) -> Option<u32> {
         mappings(self, device).find(|(context, m)| *context == 0 && *BSFixedString::view(&m.userEvent) == *user_event).map(|(_, m)| m.inputKey & 0xFFFF)
+    }
+
+    fn pop_context(&self, context: InputContextEnum) -> bool {
+        unsafe { sre::control_map__pop_input_context(core::ptr::from_ref(self).cast_mut().cast(), context) }
     }
 }
 
