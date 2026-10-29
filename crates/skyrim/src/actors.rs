@@ -12,7 +12,8 @@ use core::sync::atomic::{AtomicU32, Ordering};
 use std::ffi::CString;
 use std::fmt;
 
-use sre::{ActorValue, ActorValueInfo, ActorValueList, ContainerEntry, InventoryChanges, InventoryEntry, NiAVObject, PlayerCharacter, TESContainer, TESFullName, TESObjectREFR};
+use sre::raw::fns;
+use sre::{AIProcess, Actor, ActorValue, ActorValueInfo, ActorValueList, ContainerEntry, InventoryChanges, InventoryEntry, NiAVObject, PlayerCharacter, TESContainer, TESFullName, TESObjectREFR};
 
 use crate::ptr_slice;
 
@@ -88,6 +89,24 @@ impl TESObjectREFRExt for TESObjectREFR {
         let mut handle = 0;
         unsafe { self.get_handle(&raw mut handle) };
         RefHandle(handle)
+    }
+}
+
+pub trait ActorExt {
+    /// The furniture reference the actor's process is using, the one whose base object
+    /// `Actor::GetFurnitureAnimType` classifies: the handle `GetField8RefHandle` (id 39916) reads
+    /// from `currentProcess` (RE `camera.md` request IC2 E). `None` without a process or furniture.
+    fn occupied_furniture(&self) -> Option<RefPtr>;
+}
+
+impl ActorExt for Actor {
+    fn occupied_furniture(&self) -> Option<RefPtr> {
+        type GetFn = unsafe extern "C" fn(process: *const AIProcess, out: *mut u32) -> *mut u32;
+        let process = self.current_process()?;
+        let get: GetFn = unsafe { crate::engine_fn(fns::GetField8RefHandle) };
+        let mut handle = 0;
+        unsafe { get(process, &raw mut handle) };
+        RefHandle(handle).lookup()
     }
 }
 

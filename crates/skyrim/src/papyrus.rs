@@ -200,22 +200,26 @@ struct EffectNode {
     next: *const EffectNode,
 }
 
-/// The handles of `actor`'s active effects that have one: an effect gets a unique id, and so a
-/// handle, only when its `EffectSetting` is scripted (form flag bit 22). The list is the one
-/// `MagicTarget` slot 7 returns, empty for an actor without middle-high process data.
+/// `actor`'s active effects, walked as `MagicTarget::HasActiveEffectWithBase` walks them: the list
+/// `MagicTarget` slot 7 returns (empty for an actor without middle-high process data), up to a null
+/// node or one whose effect and next are both null, null effects skipped (RE `camera.md` request
+/// IC3 G). The list changes on the main thread, where it is read.
 #[must_use]
-pub fn active_effect_handles(actor: &Actor) -> Vec<Handle> {
+pub fn active_effects(actor: &Actor) -> Vec<&'static sre::ActiveEffect> {
     let mut node = unsafe { actor.get_active_effect_list() }.cast_const().cast::<EffectNode>();
-    let mut handles = Vec::new();
-    while let Some(n) = unsafe { node.as_ref() } {
-        if let Some(effect) = unsafe { n.effect.as_ref() }
-            && effect.uniqueID != 0
-        {
-            handles.push(Handle::active_effect(actor.formID, effect.uniqueID));
-        }
+    let mut effects = Vec::new();
+    while let Some(n) = unsafe { node.as_ref() }.filter(|n| !n.effect.is_null() || !n.next.is_null()) {
+        effects.extend(unsafe { n.effect.as_ref() });
         node = n.next;
     }
-    handles
+    effects
+}
+
+/// The handles of `actor`'s active effects that have one: an effect gets a unique id, and so a
+/// handle, only when its `EffectSetting` is scripted (form flag bit 22).
+#[must_use]
+pub fn active_effect_handles(actor: &Actor) -> Vec<Handle> {
+    active_effects(actor).into_iter().filter(|e| e.uniqueID != 0).map(|e| Handle::active_effect(actor.formID, e.uniqueID)).collect()
 }
 
 /// `BSScript::TypeInfo`: a [`PapyrusType`] below 0x10, else an `ObjectTypeInfo` pointer with bit 0

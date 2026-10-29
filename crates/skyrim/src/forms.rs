@@ -9,7 +9,7 @@
 use core::ffi::CStr;
 use std::ffi::CString;
 
-use sre::{Actor, BGSKeyword, BGSListForm, BGSLocation, BGSSoundCategory, Character, FormType, PlayerCharacter, TESClass, TESDataHandler, TESFile, TESForm, TESGlobal, TESNPC, TESObjectCELL, TESObjectREFR, TESObjectWEAP, TESRace, TESWorldSpace, VMTypeID};
+use sre::{Actor, BGSKeyword, BGSListForm, BGSLocation, BGSSoundCategory, Character, EffectSetting, FormType, PlayerCharacter, TESClass, TESDataHandler, TESFile, TESForm, TESFurniture, TESGlobal, TESNPC, TESObjectCELL, TESObjectREFR, TESObjectWEAP, TESQuest, TESRace, TESWorldSpace, VMTypeID};
 
 use crate::ptr_slice;
 
@@ -93,6 +93,9 @@ by_form_type!(
     BGSListForm = FLST / FormList,
     TESGlobal = GLOB / GlobalVariable,
     TESObjectWEAP = WEAP / Weapon,
+    TESFurniture = FURN / Furniture,
+    TESQuest = QUST / Quest,
+    EffectSetting = MGEF / MagicEffect,
     TESNPC = NPC_ / ActorBase,
     TESRace = RACE / Race,
     TESClass = CLAS / Class,
