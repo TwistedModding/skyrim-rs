@@ -92,10 +92,10 @@ pub const RAW_MAX_ARITY: usize = 8;
 
 static RAW_SITES: [Site; RAW_SLOTS] = [const { Site::new() }; RAW_SLOTS];
 
-/// A function `sre` does not type, hooked by address with a shape the caller vouches for.
-/// Only integer-class arguments and results are carried (`usize` each, in register order); a
-/// float or a struct passed by value is not preserved. A second plugin may subscribe to the same
-/// address with the same shape; a different shape is refused.
+/// A function `sre` does not type, hooked by address with a shape the caller vouches for: a raw
+/// shape carries integer-class arguments and results only (`usize` each, in register order; a
+/// float or a struct passed by value is not preserved), a typed shape the function type it names.
+/// A second plugin may subscribe to the same address with the same shape; a different shape is refused.
 pub struct Raw<F: RawShape>(usize, PhantomData<F>);
 
 impl<F: RawShape> Raw<F> {
@@ -109,11 +109,11 @@ impl<F: RawShape> Hookable for Raw<F> {
     type Fn = F;
 
     fn target(self) -> Target {
-        Target::Raw { address: self.0, arity: F::ARITY }
+        Target::Raw { address: self.0, shape: F::SHAPE }
     }
 }
 
-/// One `call rel32` (`E8`) inside a function, of a callee with the raw shape `F`: the call is
+/// One `call rel32` (`E8`) inside a function, of a callee with the shape `F`: the call is
 /// pointed at the dispatcher and the callee it reached is the original, so only this caller is
 /// affected. A function-entry subscription on the callee runs as well, inside the original.
 /// Restored once its last subscriber goes.
@@ -130,11 +130,11 @@ impl<F: RawShape> Hookable for Call<F> {
     type Fn = F;
 
     fn target(self) -> Target {
-        Target::Call { at: self.0, arity: F::ARITY }
+        Target::Call { at: self.0, shape: F::SHAPE }
     }
 }
 
-/// Slot `n` of a vtable, of a virtual function with the raw shape `F`: the slot's pointer is
+/// Slot `n` of a vtable, of a virtual function with the shape `F`: the slot's pointer is
 /// swapped for the dispatcher's and the previous one is the original, so only objects of that
 /// vtable are affected. Restored once its last subscriber goes.
 pub struct Vtable<F: RawShape>(Location, usize, PhantomData<F>);
@@ -151,44 +151,20 @@ impl<F: RawShape> Hookable for Vtable<F> {
     type Fn = F;
 
     fn target(self) -> Target {
-        Target::Vtable { table: self.0, slot: self.1, arity: F::ARITY }
+        Target::Vtable { table: self.0, slot: self.1, shape: F::SHAPE }
     }
 }
 
-/// `unsafe extern "C" fn(usize, ...) -> usize` with up to [`RAW_MAX_ARITY`] arguments.
+/// A shape a raw entry, call site or vtable slot carries: `unsafe extern "C" fn(usize, ...) ->
+/// usize` with up to [`RAW_MAX_ARITY`] arguments, or one of the `sre` function types `shapes!`
+/// lists, whose float arguments and float result reach the original intact. Adding a typed shape
+/// is one line there.
 pub trait RawShape: Signature {
-    const ARITY: usize;
+    /// The shape's index in [`SHAPES`].
+    const SHAPE: usize;
 }
 
 pub(crate) struct RawSlot<const N: usize, const K: usize>;
-
-macro_rules! raw_shapes {
-    ($($n:literal => ($($A:ty),*);) => {$(
-        impl RawShape for unsafe extern "C" fn($($A),*) -> usize {
-            const ARITY: usize = $n;
-        }
-
-        impl<const K: usize> Op for RawSlot<$n, K> {
-            type Fn = unsafe extern "C" fn($($A),*) -> usize;
-
-            fn site() -> &'static Site {
-                &RAW_SITES[K]
-            }
-        }
-    };
-}
-
-raw_shapes! {
-    0 => ();
-    1 => (usize);
-    2 => (usize, usize);
-    3 => (usize, usize, usize);
-    4 => (usize, usize, usize, usize);
-    5 => (usize, usize, usize, usize, usize);
-    6 => (usize, usize, usize, usize, usize, usize);
-    7 => (usize, usize, usize, usize, usize, usize, usize);
-    8 => (usize, usize, usize, usize, usize, usize, usize, usize);
-}
 
 macro_rules! raw_slots {
     ($n:literal, $slot:expr, $visitor:expr) => {
@@ -202,17 +178,44 @@ macro_rules! raw_slots {
     };
 }
 
-pub(crate) fn with_raw<R>(arity: usize, slot: usize, visitor: impl OpVisitor<R>) -> Option<R> {
-    match arity {
-        0 => raw_slots!(0, slot, visitor),
-        1 => raw_slots!(1, slot, visitor),
-        2 => raw_slots!(2, slot, visitor),
-        3 => raw_slots!(3, slot, visitor),
-        4 => raw_slots!(4, slot, visitor),
-        5 => raw_slots!(5, slot, visitor),
-        6 => raw_slots!(6, slot, visitor),
-        7 => raw_slots!(7, slot, visitor),
-        8 => raw_slots!(8, slot, visitor),
-        _ => None,
-    }
+macro_rules! shapes {
+    ($($n:literal $label:literal => $fn:ty;) => {
+        $(
+            impl RawShape for $fn {
+                const SHAPE: usize = $n;
+            }
+
+            impl<const K: usize> Op for RawSlot<$n, K> {
+                type Fn = $fn;
+
+                fn site() -> &'static Site {
+                    &RAW_SITES[K]
+                }
+            }
+        
+
+        /// Each shape as site names show it: a raw shape's arity, a typed shape's function.
+        pub const SHAPES: &[&str] = &[$($label),*];
+
+        pub(crate) fn with_raw<R>(shape: usize, slot: usize, visitor: impl OpVisitor<R>) -> Option<R> {
+            match shape {
+                $($n => raw_slots!($n, slot, visitor),
+                _ => None,
+            }
+        }
+    };
+}
+
+shapes! {
+    0 "0" => unsafe extern "C" fn() -> usize;
+    1 "1" => unsafe extern "C" fn(usize) -> usize;
+    2 "2" => unsafe extern "C" fn(usize, usize) -> usize;
+    3 "3" => unsafe extern "C" fn(usize, usize, usize) -> usize;
+    4 "4" => unsafe extern "C" fn(usize, usize, usize, usize) -> usize;
+    5 "5" => unsafe extern "C" fn(usize, usize, usize, usize, usize) -> usize;
+    6 "6" => unsafe extern "C" fn(usize, usize, usize, usize, usize, usize) -> usize;
+    7 "7" => unsafe extern "C" fn(usize, usize, usize, usize, usize, usize, usize) -> usize;
+    8 "8" => unsafe extern "C" fn(usize, usize, usize, usize, usize, usize, usize, usize) -> usize;
+    9 "NiCamera::SetPerspectiveFromFov" => fns::NiCamera__SetPerspectiveFromFov_fn;
+    10 "PlayerCamera::GetDefaultFOVForCurrentState" => fns::PlayerCamera__GetDefaultFOVForCurrentState_fn;
 }

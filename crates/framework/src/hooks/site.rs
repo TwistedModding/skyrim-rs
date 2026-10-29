@@ -68,6 +68,7 @@ signatures! {
     (a A, b B, c C, d D, e E, f F)
     (a A, b B, c C, d D, e E, f F, g G)
     (a A, b B, c C, d D, e E, f F, g G, h H)
+    (a A, b B, c C, d D, e E, f F, g G, h H, i I)
 }
 
 thread_local! {

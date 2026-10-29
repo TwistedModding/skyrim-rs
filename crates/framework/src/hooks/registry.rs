@@ -5,7 +5,7 @@ use core::sync::atomic::{AtomicBool, Ordering::Relaxed};
 use std::collections::{BTreeMap, VecDeque};
 use std::sync::{Arc, Mutex, MutexGuard, PoisonError};
 
-use super::ops::{self, OpVisitor, RAW_MAX_ARITY, RAW_SLOTS};
+use super::ops::{self, OpVisitor, RAW_SLOTS, SHAPES};
 use super::site::{self, Callback, Chain, Entry, Kind, Meta, Op, Ranks, Signature, Site, SiteMeta, Stats, Timing};
 use super::validate::{Validation, hex, read_bytes, validate};
 use super::{Compat, EntryReport, Error, Location, PatchId, PatchReport, PatchRequest, PatchState, Phase, Request, SiteReport, SubscriptionId, Target};
@@ -28,7 +28,7 @@ struct Registry {
     ranks: Ranks,
     /// The next subscription or patch id; both share the sequence.
     next_id: u64,
-    /// Kind, address and arity per raw slot, in slot order.
+    /// Kind, address and shape per raw slot, in slot order.
     raw: Vec<(Kind, usize, usize)>,
     patches: Vec<Patch>,
     sites: Vec<&'static Site>,
@@ -70,19 +70,19 @@ impl Registry {
         self.messages.push_back(line.to_owned());
     }
 
-    fn raw_slot(&mut self, kind: Kind, address: usize, arity: usize) -> Result<usize, Error> {
+    fn raw_slot(&mut self, kind: Kind, address: usize, shape: usize) -> Result<usize, Error> {
         let refuse = |detail: String| Error::Raw { address, detail };
-        if arity > RAW_MAX_ARITY {
-            return Err(refuse(format!("arity {arity} is above {RAW_MAX_ARITY}")));
+        if shape >= SHAPES.len() {
+            return Err(refuse(format!("no shape {shape}")));
         }
         if let Some(slot) = self.raw.iter().position(|&(k, a, _)| (k, a) == (kind, address)) {
             let taken = self.raw[slot].2;
-            return if taken == arity { Ok(slot) } else { Err(refuse(format!("already hooked with arity {taken}"))) };
+            return if taken == shape { Ok(slot) } else { Err(refuse(format!("already hooked as {}", label(taken)))) };
         }
         if self.raw.len() == RAW_SLOTS {
             return Err(refuse(format!("all {RAW_SLOTS} raw slots are taken")));
         }
-        self.raw.push((kind, address, arity));
+        self.raw.push((kind, address, shape));
         Ok(self.raw.len() - 1)
     }
 
@@ -199,6 +199,10 @@ pub(crate) fn revalidate(moment: &str, ops: &[(&str, usize)]) {
     reg.log(&line);
 }
 
+fn label(shape: usize) -> &'static str {
+    SHAPES.get(shape).copied().unwrap_or("?")
+}
+
 pub(crate) fn subscribe(req: Request) -> Result<SubscriptionId, Error> {
     if site::in_callback() {
         return Err(Error::Reentrant);
@@ -210,21 +214,21 @@ pub(crate) fn subscribe(req: Request) -> Result<SubscriptionId, Error> {
             let (name, id) = ops::OPS[index];
             skyrim::reloc().address(id).map(|address| (Kind::Entry, address, None, name.to_owned())).map_err(|e| unresolved(name.to_owned(), e.to_string()))
         }
-        Target::Raw { address, arity } => Ok((Kind::Entry, address, Some(arity), format!("raw {address:#x}/{arity}"))),
-        Target::Call { at, arity } => {
-            let name = format!("call {at}/{arity}");
-            at.resolve().map(|address| (Kind::Call, address, Some(arity), name.clone())).map_err(|e| unresolved(name, e))
+        Target::Raw { address, shape } => Ok((Kind::Entry, address, Some(shape), format!("raw {address:#x}/{}", label(shape)))),
+        Target::Call { at, shape } => {
+            let name = format!("call {at}/{}", label(shape));
+            at.resolve().map(|address| (Kind::Call, address, Some(shape), name.clone())).map_err(|e| unresolved(name, e))
         }
-        Target::Vtable { table, slot, arity } => {
-            let name = format!("vtable {table}[{slot}]/{arity}");
-            table.resolve().map(|t| (Kind::Slot, t + slot * size_of::<usize>(), Some(arity), name.clone())).map_err(|e| unresolved(name, e))
+        Target::Vtable { table, slot, shape } => {
+            let name = format!("vtable {table}[{slot}]/{}", label(shape));
+            table.resolve().map(|t| (Kind::Slot, t + slot * size_of::<usize>(), Some(shape), name.clone())).map_err(|e| unresolved(name, e))
         }
     };
-    let result = place.and_then(|(kind, address, arity, name)| match (req.target, arity) {
+    let result = place.and_then(|(kind, address, shape, name)| match (req.target, shape) {
         (Target::Op(index), _) => ops::with_op(index, Subscriber { reg: &mut reg, req, name, kind, address }).expect("index from the op table"),
-        (_, arity) => {
-            let arity = arity.expect("every raw target has an arity");
-            reg.raw_slot(kind, address, arity).and_then(|slot| ops::with_raw(arity, slot, Subscriber { reg: &mut reg, req, name, kind, address }).expect("slot and arity checked"))
+        (_, shape) => {
+            let shape = shape.expect("every raw target has a shape");
+            reg.raw_slot(kind, address, shape).and_then(|slot| ops::with_raw(shape, slot, Subscriber { reg: &mut reg, req, name, kind, address }).expect("slot and shape checked"))
         }
     });
     if let Err(e) = &result {

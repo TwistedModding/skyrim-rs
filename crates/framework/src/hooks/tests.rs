@@ -266,11 +266,19 @@ fn a_disabled_subscriber_keeps_its_place_and_is_skipped() {
 
 targets! { called rerouted elsewhere slotted spare_slot }
 
-/// `sub rsp, 0x28; call callee; add rsp, 0x28; ret` in a code page near the test executable, and the address of its call.
+/// `code` in a code page near the test executable, its `E8` at `call` pointed at `callee`; the code's address.
+fn stub_calling(callee: usize, code: &[u8], call: usize) -> usize {
+    let stub = hook::Trampoline::shared().alloc(callee, code).unwrap();
+    unsafe { hook::write_call(stub + call, callee) }.unwrap();
+    stub
+}
+
+/// `sub rsp, 0x28; call callee; add rsp, 0x28; ret`; register arguments and the result pass through.
+const CALLER: [u8; 14] = [0x48, 0x83, 0xEC, 0x28, 0xE8, 0, 0, 0, 0, 0x48, 0x83, 0xC4, 0x28, 0xC3];
+
+/// A caller of `callee` and the address of its call.
 fn caller_of(callee: Fn2) -> (Fn2, usize) {
-    let code = [0x48, 0x83, 0xEC, 0x28, 0xE8, 0, 0, 0, 0, 0x48, 0x83, 0xC4, 0x28, 0xC3];
-    let stub = hook::Trampoline::shared().alloc(callee as usize, &code).unwrap();
-    unsafe { hook::write_call(stub + 4, callee as usize) }.unwrap();
+    let stub = stub_calling(callee as usize, &CALLER, 4);
     (unsafe { core::mem::transmute::<usize, Fn2>(stub) }, stub + 4)
 }
 
@@ -437,4 +445,54 @@ fn patches_and_hook_sites_hold_their_bytes_against_each_other() {
     assert!(matches!(unsafe { hooks.patch("h1", Location::Address(reserved as *const () as usize + 3), &[0], &[0]) }, Err(Error::Overlap { .. })), "an entry site holds its first 16 bytes");
     assert_eq!(call(caller, 1, 1), 3);
     assert_eq!(hooks.remove_owner("h2"), 2);
+}
+
+type Projection = sre::raw::fns::NiCamera__SetPerspectiveFromFov_fn;
+type DefaultFov = sre::raw::fns::PlayerCamera__GetDefaultFOVForCurrentState_fn;
+type Projected = (f32, f32, f32, u32, u32, bool, bool, f32);
+
+static PROJECTED: Mutex<Option<Projected>> = Mutex::new(None);
+
+#[inline(never)]
+unsafe extern "C" fn projection(_: *mut sre::NiCamera, fov: f32, near: f32, far: f32, width: u32, height: u32, spans: bool, lod: bool, reference: f32) {
+    *PROJECTED.lock().unwrap() = Some(black_box((fov, near, far, width, height, spans, lod, reference)));
+}
+
+#[inline(never)]
+unsafe extern "C" fn default_fov(_: *mut sre::PlayerCamera) -> f32 {
+    black_box(80.0)
+}
+
+#[test]
+fn typed_call_sites_carry_float_arguments_and_results() {
+    let hooks = &Hooks::HOST;
+    // sub rsp, 0x58; the caller's five stack arguments copied below the home space; call; add rsp, 0x58; ret
+    let mut code = vec![0x48, 0x83, 0xEC, 0x58];
+    for i in 0..5u8 {
+        code.extend([0x48, 0x8B, 0x84, 0x24, 0x80 + 8 * i, 0, 0, 0, 0x48, 0x89, 0x44, 0x24, 0x20 + 8 * i]);
+    }
+    let call = code.len();
+    code.extend([0xE8, 0, 0, 0, 0, 0x48, 0x83, 0xC4, 0x58, 0xC3]);
+    let stub = stub_calling(projection as *const () as usize, &code, call);
+    let caller = unsafe { core::mem::transmute::<usize, Projection>(stub) };
+    let site = ops::Call::<Projection>::at(Location::Address(stub + call));
+    hooks.before(site, Options::new("hands"), |args| args.1 = 55.0).unwrap();
+    unsafe { black_box(caller)(core::ptr::null_mut(), 80.0, 5.0, 10100.0, 1920, 1080, false, true, 75.0) };
+    assert_eq!(*PROJECTED.lock().unwrap(), Some((55.0, 5.0, 10100.0, 1920, 1080, false, true, 75.0)), "the edited FOV, every other register and stack argument intact");
+    assert_eq!(report_at(stub + call).unwrap().name, format!("call {:#x}/NiCamera::SetPerspectiveFromFov", stub + call));
+    assert_eq!(hooks.remove_owner("hands"), 1);
+
+    let stub = stub_calling(default_fov as *const () as usize, &CALLER, 4);
+    let caller = unsafe { core::mem::transmute::<usize, DefaultFov>(stub) };
+    let site = || ops::Call::<DefaultFov>::at(Location::Address(stub + 4));
+    let seen = Arc::new(Mutex::new(None));
+    let log = Arc::clone(&seen);
+    hooks.after(site(), Options::new("tween"), move |_, ret, _| *log.lock().unwrap() = Some(ret.to_bits())).unwrap();
+    assert_eq!(unsafe { black_box(caller)(core::ptr::null_mut()) }.to_bits(), 80f32.to_bits());
+    assert_eq!(*seen.lock().unwrap(), Some(80f32.to_bits()), "the original's float result");
+    hooks.replace(site(), Options::new("tween"), |_, _| 65.5).unwrap();
+    assert_eq!(unsafe { black_box(caller)(core::ptr::null_mut()) }.to_bits(), 65.5f32.to_bits(), "the replacement's float result reaches the caller");
+    let raw = ops::Call::<unsafe extern "C" fn(usize) -> usize>::at(Location::Address(stub + 4));
+    assert!(matches!(hooks.before(raw, Options::new("tween"), |_| {}), Err(Error::Raw { .. })), "one shape per site");
+    assert_eq!(hooks.remove_owner("tween"), 2);
 }

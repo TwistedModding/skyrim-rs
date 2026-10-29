@@ -20,7 +20,9 @@
 //!
 //! Besides function entries, a site can be one `call rel32` inside a function ([`ops::Call`]) or
 //! one vtable slot ([`ops::Vtable`]): the call or the pointer is pointed at the dispatcher and the
-//! callee it reached is the original; both are restored when their last subscriber goes. A
+//! callee it reached is the original; both are restored when their last subscriber goes. Their
+//! shape is raw (integer-class arguments) or one of the typed shapes [`ops::SHAPES`] lists, which
+//! carry float arguments and results. A
 //! plugin's byte patches ([`Hooks::patch`]) are kept in the same registry, which reserves their
 //! bytes against each other and against the installed sites.
 //!
@@ -212,13 +214,14 @@ impl fmt::Display for Location {
     }
 }
 
-/// Where a subscription goes: a typed operation of [`ops`], a raw function entry, a call site or a vtable slot.
+/// Where a subscription goes: a typed operation of [`ops`], a raw function entry, a call site or
+/// a vtable slot; `shape` indexes [`ops::SHAPES`].
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Target {
     Op(usize),
-    Raw { address: usize, arity: usize },
-    Call { at: Location, arity: usize },
-    Vtable { table: Location, slot: usize, arity: usize },
+    Raw { address: usize, shape: usize },
+    Call { at: Location, shape: usize },
+    Vtable { table: Location, slot: usize, shape: usize },
 }
 
 #[derive(Clone, Copy, Debug, PartialEq, Eq, Hash)]
