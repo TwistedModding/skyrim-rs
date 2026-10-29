@@ -1,7 +1,8 @@
 //! The input source's first sink: the overlay's keys (the toggle, the close key, the keys bound to
 //! the overlay and a key being captured), and while the overlay is open every event of the frame as
 //! `egui` events, hidden from the sinks after it unless [`Capture::Focus`] lets the frame through to
-//! the game.
+//! the game. A frame that reaches the game passes its button events through the host's filter
+//! ([`filter_game_buttons`]) first.
 
 use std::fmt;
 use std::str::FromStr;
@@ -11,7 +12,7 @@ use std::sync::{Mutex, OnceLock};
 use egui::{Context, Event, Key, Modifiers, MouseWheelSource, MouseWheelUnit, PointerButton, Pos2, TouchPhase, Vec2};
 use skyrim::events::{BSTEventSource, Event as _, EventSink, InputEventList, Sink};
 use skyrim::prelude::*;
-use sre::{BSEventNotifyControl, InputDevice, InputEvent};
+use sre::{BSEventNotifyControl, ButtonEvent, InputDevice, InputEvent};
 
 /// The key that opens and closes the overlay unless the host binds another: F11.
 pub const DEFAULT_TOGGLE: Hotkey = Hotkey::new(0x57);
@@ -173,6 +174,7 @@ static PENDING: Mutex<Pending> = Mutex::new(Pending { events: Vec::new(), modifi
 static KEYS: Mutex<Keys> = Mutex::new(Keys { toggle: Some(DEFAULT_TOGGLE), close: Some(DEFAULT_CLOSE), overlay: Vec::new(), capturing: false });
 static PRESSES: Mutex<Presses> = Mutex::new(Presses { pending: Vec::new(), current: Vec::new(), mouse_pending: GameMouse { dx: 0, dy: 0, buttons: Vec::new() }, mouse_current: GameMouse { dx: 0, dy: 0, buttons: Vec::new() } });
 static LISTENER: OnceLock<fn(KeyUse)> = OnceLock::new();
+static FILTER: OnceLock<fn(&ButtonEvent) -> bool> = OnceLock::new();
 static INSTALLED: AtomicBool = AtomicBool::new(false);
 static SINK: Sink<InputEventList, Gate> = Sink::new(Gate);
 
@@ -207,6 +209,13 @@ pub fn capturing() -> bool {
 /// Calls `f` on the main thread with every key the overlay took; the first call sets it for the life of the game.
 pub fn on_key(f: fn(KeyUse)) {
     let _ = LISTENER.set(f);
+}
+
+/// Calls `f` on the input thread with every button event of a frame that reaches the game, before
+/// the game's handlers see it; the handlers pass over an event `f` returns `true` for
+/// (`ButtonEventExt::skip`). The first call sets it for the life of the game.
+pub fn filter_game_buttons(f: fn(&ButtonEvent) -> bool) {
+    let _ = FILTER.set(f);
 }
 
 /// Whether `key` was pressed while `scope` had it before this frame's present and after the
@@ -386,6 +395,11 @@ impl EventSink<InputEventList> for Gate {
             }
         }
         drop((keys, p));
+        if !stop && let Some(filter) = FILTER.get() {
+            for b in list.iter().filter_map(|e| e.as_button()).filter(|b| filter(b)) {
+                b.skip();
+            }
+        }
         let mut recorded = PRESSES.lock().unwrap();
         recorded.pending.extend(presses.into_iter().filter(|(_, scope)| *scope == Scope::Overlay || !stop));
         if !stop {

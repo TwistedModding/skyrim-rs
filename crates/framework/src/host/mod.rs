@@ -54,6 +54,7 @@ macro_rules! log {
 }
 
 mod console;
+mod filters;
 mod gui;
 mod keys;
 mod owned;
@@ -99,6 +100,9 @@ static TABLE: Table = Table {
     action_held: keys::held,
     key_held: overlay::game_key_held,
     game_mouse: overlay::game_mouse,
+    input_filter: filters::declare,
+    filter_set_active: filters::set_active,
+    filter_active: filters::is_active,
     set_tab_title: gui::set_title,
     add_section: gui::add_section,
     add_hud: gui::add_hud,
@@ -522,7 +526,11 @@ fn detach(owner: &str) -> String {
     let messages = MESSAGES.remove_owner(owner);
     let papyrus = PAPYRUS.remove_owner(owner);
     let frames = FRAMES.remove_owner(owner);
-    format!("{hooks} hook subscriptions, {sinks} sinks, {natives} natives stubbed, {commands} commands stubbed, {sections} tab sections, {huds} HUD painters, {messages} message handlers, {papyrus} Papyrus callbacks, {frames} frame callbacks")
+    let filters = match filters::remove_owner(owner) {
+        0 => String::new(),
+        n => format!(", {n} active input filters"),
+    };
+    format!("{hooks} hook subscriptions, {sinks} sinks, {natives} natives stubbed, {commands} commands stubbed, {sections} tab sections, {huds} HUD painters, {messages} message handlers, {papyrus} Papyrus callbacks, {frames} frame callbacks{filters}")
 }
 
 fn vm() -> Option<&'static VirtualMachine> {

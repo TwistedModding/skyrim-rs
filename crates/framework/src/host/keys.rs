@@ -57,11 +57,13 @@ fn holder(list: &[Binding], key: Hotkey, except: usize) -> Option<&str> {
     list.iter().enumerate().find(|(i, b)| *i != except && b.key == Some(key)).map(|(_, b)| b.name.as_str())
 }
 
-/// Declares the host's toggle and close keys; before the overlay is installed.
+/// Declares the host's toggle and close keys and gives the overlay's sink the host's key listener
+/// and input filters; before the overlay is installed.
 pub(super) fn declare_host() {
     declare(NAME, "toggle", &overlay::DEFAULT_TOGGLE.to_string(), Scope::Overlay);
     declare(NAME, "close", &overlay::DEFAULT_CLOSE.to_string(), Scope::Overlay);
     overlay::on_key(on_key);
+    overlay::filter_game_buttons(super::filters::swallows);
 }
 
 /// Declares `<owner>.<action>`, or finds it again for a reloaded plugin, and returns its index.

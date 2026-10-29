@@ -61,6 +61,27 @@ impl InputEventExt for InputEvent {
     }
 }
 
+pub trait ButtonEventExt {
+    /// The user event the control map gave the event this frame, "" when no enabled mapping took it.
+    fn user_event(&self) -> &BSFixedString;
+    /// Makes the game's handlers pass the event over: its user event becomes "", what
+    /// `MapInputEvents` leaves on an event no enabled mapping takes. Done from a sink at the front
+    /// of the input source, before `MenuControls` and `PlayerControls` read it; sinks that read the
+    /// device and key still see the event.
+    fn skip(&self);
+}
+
+impl ButtonEventExt for ButtonEvent {
+    fn user_event(&self) -> &BSFixedString {
+        BSFixedString::view(&self.userEvent)
+    }
+
+    fn skip(&self) {
+        let mut blank = BSFixedString::new("");
+        unsafe { core::ptr::swap(core::ptr::from_ref(&self.userEvent).cast_mut().cast::<BSFixedString>(), &raw mut blank) };
+    }
+}
+
 pub trait InputManagerExt {
     /// The `DirectInput` keyboard (its `keyState` byte has bit 0x80 while a physical key is down).
     fn keyboard(&self) -> Option<&BSWin32KeyboardDevice>;

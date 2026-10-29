@@ -30,7 +30,7 @@ use std::fmt;
 
 pub use overlay::{GameMouse, Hotkey, Scope, View, egui, theme};
 use skyrim::events::{BSTEventSource, ErasedHandler, ErasedSource, Event};
-use sre::BSEventNotifyControl;
+use sre::{BSEventNotifyControl, InputDevice};
 use skyrim::input::{Command, CommandSlot, ErasedExecute, Param};
 use skyrim::papyrus::{ErasedNativeFn, IntoVariable, LatentFn, NativeCall, NativeFn, NativeFunction, NativeKind, NativeMethod, ParamType, VirtualMachine};
 
@@ -154,6 +154,8 @@ pub(crate) struct CommandRequest<'a> {
     pub execute: ErasedExecute,
 }
 
+pub(crate) type DeclareFilterFn = fn(&str, &str, &[&str], &[(InputDevice, u32)]) -> usize;
+
 /// The host's functions, one table shared by every plugin's [`Host`]; the owner comes first.
 pub(crate) struct Table {
     pub on_message: fn(&'static str, MessageFn),
@@ -165,6 +167,9 @@ pub(crate) struct Table {
     pub action_held: fn(usize) -> bool,
     pub key_held: fn(u32) -> bool,
     pub game_mouse: fn() -> GameMouse,
+    pub input_filter: DeclareFilterFn,
+    pub filter_set_active: fn(usize, bool),
+    pub filter_active: fn(usize) -> bool,
     pub set_tab_title: fn(&'static str, &str),
     pub add_section: fn(&'static str, &str, DrawFn),
     pub add_hud: fn(&'static str, HudDrawFn),
@@ -246,6 +251,25 @@ impl Host {
     #[must_use]
     pub fn key_held(&self, scan_code: u32) -> bool {
         (self.table.key_held)(scan_code)
+    }
+
+    /// Declares the input filter `<plugin>.<name>`: while it is active, button events whose user
+    /// event is one of `user_events` (as the control map names them: `"Favorites"`, `"Quick Map"`;
+    /// any case) or whose device and key are in `buttons` (`(InputDevice::Gamepad, 0x100)`) reach
+    /// the game with their user event blanked, so `MenuControls`, `PlayerControls` and every
+    /// handler that reads the user event passes them over; the host's actions and the sinks that
+    /// read the key still see them. It starts inactive; the plugin switches it with
+    /// [`InputFilter::set_active`] whenever its condition changes (from [`on_frame`](Self::on_frame)
+    /// or a hook). Filters only take events away, so several plugins' filters need no order. A
+    /// later generation of the plugin declaring the same name gets the same filter, inactive.
+    ///
+    /// ```ignore
+    /// let menus = host.input_filter("no-menus", &["Favorites", "Journal"], &[]);
+    /// host.on_frame(|| FILTER.get().unwrap().set_active(in_free_camera()));
+    /// ```
+    #[must_use]
+    pub fn input_filter(&self, name: &str, user_events: &[&str], buttons: &[(InputDevice, u32)]) -> InputFilter {
+        InputFilter { index: (self.table.input_filter)(self.name, name, user_events, buttons), table: self.table }
     }
 
     /// Calls `f` with the VM at the Papyrus registration pass, or at once when the pass has run
@@ -403,6 +427,25 @@ impl Action {
     #[must_use]
     pub fn key(&self) -> Option<Hotkey> {
         (self.table.action_key)(self.index)
+    }
+}
+
+/// An input filter from [`Host::input_filter`].
+#[derive(Clone, Copy)]
+pub struct InputFilter {
+    index: usize,
+    table: &'static Table,
+}
+
+impl InputFilter {
+    /// Starts or stops taking the filter's events from the game, from the next input frame.
+    pub fn set_active(&self, active: bool) {
+        (self.table.filter_set_active)(self.index, active);
+    }
+
+    #[must_use]
+    pub fn active(&self) -> bool {
+        (self.table.filter_active)(self.index)
     }
 }
 

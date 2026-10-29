@@ -1,14 +1,14 @@
 //! The console command `SkyrimRs`: `gui [n]` opens the overlay (on page `n`) and lists the pages,
 //! the framework plugins and the SKSE plugins; `hooks` lists every hook site with its entry state
 //! and subscribers, every byte patch and the dispatcher's last messages; `toggle <id>` switches a subscriber or a patch; `keys`
-//! lists the hotkeys; `bind <n>` captures the next key pressed for hotkey `n` as the Settings tab's
+//! lists the hotkeys and the input filters; `bind <n>` captures the next key pressed for hotkey `n` as the Settings tab's
 //! "Set" button does; `capture [n]` writes the next overlay frame to `skyrim-rs-overlay.bmp`
 //! (`skyrim-rs-overlay-<n>.bmp`) in the SKSE log folder.
 
 use skyrim::input::{Arg, CommandContext, Param};
 use sre::ScriptParamType;
 
-use super::{HOOKS, NAME, flush_settings, gui, keys, skse_plugins};
+use super::{HOOKS, NAME, filters, flush_settings, gui, keys, skse_plugins};
 use crate::hooks::{Hooks, PatchId, PatchState, SiteReport, SubscriptionId};
 
 /// How a site's entry looked at install and looks now, the module behind another module's patch,
@@ -50,6 +50,7 @@ fn key_lines() -> Vec<String> {
         let game = if b.game.is_empty() { String::new() } else { format!(", game: {}", b.game) };
         lines.push(format!("key {i} {}: {} (default {}, {:?}{game})", b.name, keys::show(b.key), keys::show(b.default), b.scope));
     }
+    lines.extend(filters::lines());
     let last = keys::last_message();
     if !last.is_empty() {
         lines.push(format!("keys: {last}"));

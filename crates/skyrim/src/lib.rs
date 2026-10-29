@@ -49,7 +49,7 @@ pub mod prelude {
     #[cfg(feature = "forms")]
     pub use crate::forms::{FormClass, TESDataHandlerExt, TESFileExt, TESFormExt};
     #[cfg(feature = "input")]
-    pub use crate::input::{ControlMapExt, InputEventExt, InputManagerExt};
+    pub use crate::input::{ButtonEventExt, ControlMapExt, InputEventExt, InputManagerExt};
     #[cfg(feature = "papyrus")]
     pub use crate::papyrus::VirtualMachineExt;
     #[cfg(feature = "render")]
