@@ -27,6 +27,8 @@ pub mod forms;
 pub mod input;
 #[cfg(feature = "papyrus")]
 pub mod papyrus;
+#[cfg(feature = "physics")]
+pub mod physics;
 #[cfg(feature = "render")]
 pub mod render;
 #[cfg(feature = "save")]
