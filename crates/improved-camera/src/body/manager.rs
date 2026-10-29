@@ -274,7 +274,7 @@ pub fn anchor_camera(dt: f32) {
         let Some(parent) = (unsafe { root.parent.cast::<NiAVObject>().as_ref() }) else { return };
         let body = profile.Body;
         let drawn = !matches!(snapshot::get().hands, HandsType::None | HandsType::Sheath);
-        if !util::is_seated(player) && !drawn && body.bYawSmoothing {
+        if !util::is_interacting(player) && !drawn && body.bYawSmoothing {
             let right = point::mul_vec(&camera.rotation, [1.0, 0.0, 0.0]);
             let look_yaw = normalize_radian(right[0].atan2(right[1]) - core::f32::consts::FRAC_PI_2);
             let (x, y) = move_input();

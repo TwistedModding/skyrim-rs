@@ -1,7 +1,7 @@
 //! IC's profile (`settings.h`): the options ported so far, with IC's names and defaults, kept in
 //! the plugin's settings under `<Section>.<option>` keys (`General.bEnableBody`,
-//! `Body.Race.HalfDragon.fForward`, `FOV.fFirstPersonHands`, `Effects.Zoom.fFOV`,
-//! `Advanced.fNearDistanceMin`). `Advanced.bNearFirstPersonPass` is the port's own: which way the
+//! `Body.Race.HalfDragon.fForward`, `FOV.fFirstPersonHands`, `Effects.Zoom.fFOV`, `Camera.Dragon.forward`,
+//! `Stabilization.Horse.fSmoothingSpeed`, `Advanced.fNearDistanceMin`). `Advanced.bNearFirstPersonPass` is the port's own: which way the
 //! near plane is handled (`camera::manager`).
 
 use std::sync::{LazyLock, RwLock, RwLockReadGuard};
@@ -587,6 +587,17 @@ mod tests {
         assert_eq!(store.get_f32("Effects.Zoom.fFOV"), Some(-30.0));
         assert_eq!(store.get_f32("Advanced.fNearDistanceStartAngle"), Some(-15.0));
         assert_eq!(store.get_bool("Advanced.bNearFirstPersonPass"), Some(false));
+        assert_eq!(store.get_bool("Advanced.bCameraTransition"), Some(true));
+        assert_eq!(store.get_f32("Camera.Dragon.forward"), Some(10.0));
+        assert_eq!(store.get_f32("Camera.Sex.up"), Some(-5.0));
+        assert_eq!(store.get_f32("Camera.Firstperson.Combat.right"), Some(0.0));
+        assert_eq!(store.get_f32("Camera.Horse.forward"), Some(0.0));
+        assert_eq!(store.get_bool("Stabilization.Bleedout.bEnable"), Some(true));
+        assert_eq!(store.get_f32("Stabilization.Horse.fHeadFollowStrength"), Some(0.35));
+        assert_eq!(store.get_f32("Body.fAnchorForward"), Some(14.0));
+        assert_eq!(store.get_bool("FreeCamera.bEnable"), Some(true));
+        assert_eq!(store.get_f32("Dialogue.fDefaultWorldFOV"), Some(55.0));
+        assert_eq!(store.get_f32("Vanity.fIdleDelay"), Some(120.0));
         assert_eq!(Profile::read(&store), p);
     }
 

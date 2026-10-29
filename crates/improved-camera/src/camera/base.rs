@@ -278,19 +278,74 @@ pub fn mount_enter(ctx: &Ctx<'_>, state: CameraState) {
     }
 }
 
-/// `TransitionState::OnEnter`: from first person, fake first person. IC's fixes after the horse
-/// and dragon dismounts are absent with the dismount states (request IC3).
+/// `HorseMountingState::OnEnter` and `DragonMountingState::OnEnter`: from first person, fake
+/// first person facing ahead.
+pub fn mounting_enter(previous: CameraType, ctx: &Ctx<'_>, state: CameraState) {
+    if previous != CameraType::FirstPerson {
+        return;
+    }
+    if let Some(third) = third(ctx) {
+        util::set_zoom(third, FAKE_FIRST_PERSON_ZOOM);
+    }
+    if let Some(mount) = util::family(ctx.camera, state) {
+        skyrim::store(&mount.freeRotation.x, 0.0);
+    }
+}
+
+/// `HorseDismountingState::OnEnter`: the third-person state takes the horse's zoom.
+pub fn horse_dismount_enter(ctx: &Ctx<'_>) {
+    if let (Some(horse), Some(third)) = (util::family(ctx.camera, CameraState::Horse), third(ctx)) {
+        util::copy_zoom(horse, third);
+    }
+}
+
+/// `HorseDismountingState::OnExit` and `DragonDismountingState::OnExit`: the player's pitch back to level.
+pub fn dismount_exit(m: &mut Modifier) {
+    m.sim_first_person = false;
+    if let Some(player) = util::player() {
+        util::set_pitch(player, 0.0);
+    }
+}
+
+/// `TransitionState::OnEnter`: after the horse dismount the transition goes back to the POV the
+/// horse camera had (first person at the fake first-person zoom, else third), IC taking one
+/// reference on the state as it points the transition at it; after the dragon dismount the
+/// third-person state takes the dragon's zoom; from first person, fake first person.
 pub fn transition_enter(previous: CameraType, ctx: &Ctx<'_>) {
-    if previous == CameraType::FirstPerson
-        && let Some(third) = third(ctx)
+    if previous == CameraType::HorseDismounting
+        && let Some(horse) = util::family(ctx.camera, CameraState::Horse)
+        && let Some(transition) = ctx.camera.state_object(CameraState::PlayerCameraTransition)
     {
+        #[allow(clippy::float_cmp)]
+        let to = if horse.targetZoom == FAKE_FIRST_PERSON_ZOOM {
+            Some(CameraState::FirstPerson)
+        } else if horse.targetZoom > -0.27 {
+            Some(CameraState::ThirdPerson)
+        } else {
+            None
+        };
+        if let Some(to) = to.and_then(|s| ctx.camera.state_object(s)) {
+            let transition = unsafe { &*core::ptr::from_ref(transition).cast::<sre::PlayerCameraTransitionState>() };
+            skyrim::store(&transition.toState, core::ptr::from_ref(to).cast_mut());
+            unsafe { core::sync::atomic::AtomicU32::from_ptr(core::ptr::from_ref(&to.refCount).cast_mut()) }.fetch_add(1, core::sync::atomic::Ordering::AcqRel);
+        }
+    }
+    let Some(third) = third(ctx) else { return };
+    if previous == CameraType::DragonDismounting
+        && let Some(dragon) = util::family(ctx.camera, CameraState::Dragon)
+    {
+        util::copy_zoom(dragon, third);
+    }
+    if previous == CameraType::FirstPerson {
         util::set_zoom(third, FAKE_FIRST_PERSON_ZOOM);
     }
 }
 
-/// `TransitionState::OnExit`: fake first person stays after a transition from first person.
+/// `TransitionState::OnExit`: fake first person stays after a transition from first person or
+/// the dragon's mounting or dismounting while the zoom is in fake first person.
 pub fn transition_exit(previous: CameraType, m: &mut Modifier, ctx: &Ctx<'_>) {
-    m.sim_first_person = previous == CameraType::FirstPerson && third(ctx).is_some_and(|t| t.targetZoom <= -0.27);
+    let force = matches!(previous, CameraType::DragonDismounting | CameraType::DragonMounting | CameraType::FirstPerson);
+    m.sim_first_person = force && third(ctx).is_some_and(|t| t.targetZoom <= -0.27);
 }
 
 /// `FREE_CAMERA_SPEED_MIN` and `_MAX`, and IC's sex scene camera's same bounds.

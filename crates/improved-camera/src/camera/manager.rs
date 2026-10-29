@@ -13,9 +13,6 @@
 //! whole step or settled on an end of its range. The first-person pass: the world near stays the
 //! engine's and the body would be drawn by the first-person pass instead; that routing is not
 //! built, so this way only keeps the engine's near.
-//!
-//! IC's camera lock under a Papyrus POV lock (`povScriptMode`, request IC3) is absent: the lock
-//! is always released, which is IC's state outside scripted scenes.
 
 use std::sync::Mutex;
 use std::sync::atomic::{AtomicU32, Ordering};
@@ -72,6 +69,8 @@ pub struct Manager {
     pub previous_camera: CameraType,
     /// The type a transition blends from, `Unknown` when none runs.
     pub transition_from: CameraType,
+    /// The camera held while a script locks the POV (`m_cameraLock`), `Unknown` when released.
+    pub camera_lock: CameraType,
     pub transition_time: f32,
     /// The first-person arms hidden at the start of a blend into first person.
     pub transition_culled_arms: bool,
@@ -110,6 +109,7 @@ impl Default for Manager {
             present: Present::default(),
             previous_camera: CameraType::Unknown,
             transition_from: CameraType::Unknown,
+            camera_lock: CameraType::Unknown,
             transition_time: 0.0,
             transition_culled_arms: false,
             look: LookController::default(),
@@ -308,12 +308,29 @@ pub fn near_target(a: &Advanced, camera: CameraType, third_zoom: Option<f32>, ha
     Some(NearTarget::Ease { near, pinned, default })
 }
 
-/// The camera type IC derives from the engine state, the open menus, the body's action and race,
-/// death and a followed actor (`spectator`: the camera targets an actor that is not the player,
-/// the player is not mounted and not viewing).
-#[must_use]
-pub fn camera_type(engine: CameraType, menu_open: impl Fn(&str) -> bool, action: ActionType, race: RaceType, dead: bool, spectator: bool) -> CameraType {
-    let mut camera = if menu_open("MapMenu") {
+/// The player's sit/sleep phase as IC reads it for the mount cameras.
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Phase {
+    None,
+    Entering,
+    Leaving,
+}
+
+impl Phase {
+    fn of_player() -> Self {
+        if util::is_entering_interaction() {
+            Self::Entering
+        } else if util::is_leaving_interaction() {
+            Self::Leaving
+        } else {
+            Self::None
+        }
+    }
+}
+
+/// The camera type of the open menus, else the engine state's (the stats menu stops the vanity camera).
+fn menu_type(engine: CameraType, menu_open: impl Fn(&str) -> bool) -> CameraType {
+    if menu_open("MapMenu") {
         CameraType::MapMenu
     } else if menu_open("RaceSex Menu") {
         CameraType::RaceMenu
@@ -321,6 +338,41 @@ pub fn camera_type(engine: CameraType, menu_open: impl Fn(&str) -> bool, action:
         CameraType::Unknown
     } else {
         engine
+    }
+}
+
+/// The camera lock under a script's POV lock (`m_cameraLock`): taken on the camera of the moment,
+/// moved to the race menu and back to first person after it, to first person for the intro's cart
+/// and a forced first person, released with the lock. IC's change to third person on its own
+/// forced third person comes from its public API, which is not ported.
+#[must_use]
+pub fn next_lock(lock: CameraType, script: bool, camera: CameraType, action: ActionType, forced_first_person: bool) -> CameraType {
+    if !script {
+        return CameraType::Unknown;
+    }
+    if lock == CameraType::Unknown {
+        camera
+    } else if lock != CameraType::RaceMenu && camera == CameraType::RaceMenu {
+        CameraType::RaceMenu
+    } else if (lock == CameraType::RaceMenu && camera != CameraType::RaceMenu) || (lock == CameraType::ThirdPerson && action == ActionType::CartRide) || (lock != CameraType::FirstPerson && forced_first_person) {
+        CameraType::FirstPerson
+    } else {
+        lock
+    }
+}
+
+/// The camera type IC derives from the engine state, the open menus, the mounting phase, the
+/// body's action and race, death and a followed actor (`spectator`: the camera targets an actor
+/// that is not the player, the player is not mounted and not viewing).
+#[must_use]
+pub fn camera_type(engine: CameraType, menu_open: impl Fn(&str) -> bool, phase: Phase, action: ActionType, race: RaceType, dead: bool, spectator: bool) -> CameraType {
+    let mut camera = menu_type(engine, &menu_open);
+    camera = match (camera, phase) {
+        (CameraType::Dragon, Phase::Entering) => CameraType::DragonMounting,
+        (CameraType::Dragon, Phase::Leaving) => CameraType::DragonDismounting,
+        (CameraType::Horse, Phase::Entering) => CameraType::HorseMounting,
+        (CameraType::Horse, Phase::Leaving) => CameraType::HorseDismounting,
+        _ => camera,
     };
     if camera == CameraType::Bleedout && dead {
         camera = CameraType::Dead;
@@ -412,16 +464,16 @@ pub fn stabilization(profile: &Profile, camera: CameraType) -> Stab {
     }
 }
 
-/// `HeadFollow`: whether the camera follows the head's rotation in this camera type. The beast
-/// and lich forms follow while an animation drives the actor (`IsAnimationDriven`, request IC3),
-/// so here never; IC's Enderal intro exception reads a quest stage (request IC3).
+/// `HeadFollow`: whether the camera follows the head's rotation in this camera type; the beast
+/// and lich forms only while an animation drives the actor (`animation_driven`). IC's exception
+/// for Enderal's intro quest is left out with the Enderal detection.
 #[must_use]
-pub fn head_follow(camera: CameraType, body: &body_snapshot::Data) -> bool {
+pub fn head_follow(camera: CameraType, body: &body_snapshot::Data, animation_driven: bool) -> bool {
     match camera {
         CameraType::Dragon | CameraType::Horse => body.movement == MovementType::Idle && body.hands <= HandsType::Sheath,
         CameraType::Sex => true,
         CameraType::Spectator => body.action == ActionType::Sex,
-        CameraType::Vampirelord | CameraType::Werewolf | CameraType::Lich => false,
+        CameraType::Vampirelord | CameraType::Werewolf | CameraType::Lich => animation_driven,
         _ => !matches!(body.action, ActionType::Bathe | ActionType::CartRide) && camera == CameraType::Animation,
     }
 }
@@ -502,7 +554,12 @@ impl Manager {
         let dead = player.is_some_and(|p| p.is_dead(true));
         // The dragon camera sets the target back every frame (IC2 B), so it is never a spectator.
         let spectator = engine != CameraType::Dragon && util::camera_target().is_some() && player.is_some_and(|p| !p.is_on_mount()) && body.action != ActionType::View;
-        let next = camera_type(engine, util::is_menu_open, body.action, body.race, dead, spectator);
+        let lock = next_lock(self.camera_lock, util::pov_script_lock(), menu_type(engine, util::is_menu_open), body.action, self.forced_first_person);
+        if lock != self.camera_lock {
+            crate::log(&format!("<Camera Lock> {:?} -> {lock:?}", self.camera_lock));
+            self.camera_lock = lock;
+        }
+        let next = camera_type(engine, util::is_menu_open, Phase::of_player(), body.action, body.race, dead, spectator);
         let enabled = profile.General.bEnableBody;
         let mut notes = Notes::default();
         let mut ctx = Ctx { camera, profile, body, notes: &mut notes, input };
@@ -586,8 +643,8 @@ impl Manager {
         }
     }
 
-    /// `SetMode`. IC's script-lock branches are absent with the lock (request IC3), and its forced
-    /// third person comes from its public API and console, which are not ported here.
+    /// `SetMode`. IC's forced third person comes from its public API and console, which are not
+    /// ported here.
     fn set_mode(&mut self, camera: &PlayerCamera, profile: &Profile) -> CameraMode {
         let current = self.current.camera;
         if !profile.General.bEnableBody || matches!(current, CameraType::MapMenu | CameraType::RaceMenu) {
@@ -599,18 +656,29 @@ impl Manager {
         let min_zoom = *util::min_current_zoom();
         let fake = profile.General.bEnableFakeFirstPerson;
         let mut sim = self.current.modifier.sim_first_person;
+        let lock = self.camera_lock;
+        let in_first = camera.state() == Some(CameraState::FirstPerson);
         if fake {
             util::set_pov_switch(false);
-            if camera.state() == Some(CameraState::FirstPerson) {
+            if !in_first && lock == CameraType::FirstPerson {
+                camera.force_first_person();
+                sim = false;
+            } else if in_first && lock > CameraType::FirstPerson {
                 camera.force_third_person();
                 sim = true;
             } else {
-                sim = camera.state() != Some(CameraState::Free);
+                sim = lock != CameraType::FirstPerson && camera.state() != Some(CameraState::Free);
             }
             self.current.modifier.sim_first_person = sim;
         }
         if self.forced_first_person && current == CameraType::FirstPerson {
             self.forced_first_person = false;
+        }
+        if current == CameraType::Animation && lock == CameraType::FirstPerson {
+            if !in_first {
+                camera.force_first_person();
+            }
+            return if body_snapshot::get().action == ActionType::CartRide { CameraMode::Head } else { CameraMode::First };
         }
         if sim {
             if min_zoom > -0.27 {
@@ -756,7 +824,7 @@ impl Manager {
             }
         }
         let body = body_snapshot::get();
-        if head_follow(camera_type, &body) {
+        if head_follow(camera_type, &body, actor.is_animation_driven()) {
             let mut head_rotation = head.world_transform().rotation;
             if camera_type != CameraType::Animation {
                 let strength = stabilization(profile, camera_type).fHeadFollowStrength.clamp(0.0, 1.0);
@@ -814,8 +882,7 @@ impl Manager {
     }
 
     /// `BasePosition`. The eye's body part index is not in the RE, so the vampire lord's and the
-    /// dragon priest's named fallbacks are the only eye nodes; `Is_Sitting` reads the furniture
-    /// the actor occupies (`util::is_seated`).
+    /// dragon priest's named fallbacks are the only eye nodes.
     fn base_position(&mut self, player: &PlayerCharacter, actor: &Actor, head: &NiAVObject, (forward, right, up): (P3, P3, P3), profile: &Profile, dt: f32) -> Option<P3> {
         let actor_body = actor.get3_d()?;
         let scale = actor_body.local.scale;
@@ -833,7 +900,7 @@ impl Manager {
         let action = body_snapshot::get().action;
         let offset = if matches!(action, ActionType::None | ActionType::Ride | ActionType::Sex) { self.current.modifier.local_offset } else { [0.0; 3] };
         let along = |f: f32, r: f32, u: f32| point::add(point::add(point::scale(forward, f), point::scale(right, r)), point::scale(up, u));
-        if headbob {
+        if headbob || self.camera_lock == CameraType::FirstPerson {
             let point = eye.filter(|e| e.world_transform().scale >= 0.1).unwrap_or(head).world_transform().translation;
             let anchor = self.smooth_head_anchor(profile, actor_body, point, dt);
             return Some(point::add(anchor, point::scale(along(offset[1] + 8.0, offset[0], offset[2] + 1.0), scale)));
@@ -842,7 +909,7 @@ impl Manager {
         let first = player.get3_d_for(true);
         let camera1st = first.and_then(|f| util::object_by_name(f, "Camera1st [Cam1]"));
         Some(match (first, camera1st) {
-            (Some(first), Some(cam)) if !util::is_seated(actor) => point::add(point::add(first.world_transform().translation, point::scale(cam.local_transform().translation, scale)), shift),
+            (Some(first), Some(cam)) if !util::is_sitting(actor) => point::add(point::add(first.world_transform().translation, point::scale(cam.local_transform().translation, scale)), shift),
             _ => point::add(self.present.position, shift),
         })
     }
@@ -999,7 +1066,7 @@ impl Manager {
 
 #[cfg(test)]
 mod tests {
-    use super::{Manager, NearTarget, Present, blend, camera_type, chase_anchor, head_follow, level_basis, near_target, stabilization, valid_transition};
+    use super::{Manager, NearTarget, Phase, Present, blend, camera_type, chase_anchor, head_follow, level_basis, near_target, stabilization, valid_transition};
     use crate::body::snapshot::Data as Body;
     use crate::body::state::action::ActionType;
     use crate::body::state::hands::HandsType;
@@ -1014,7 +1081,7 @@ mod tests {
     #[test]
     fn menus_actions_races_and_a_followed_actor_override_the_engine_state() {
         let none = |_: &str| false;
-        let t = |engine, menus: fn(&str) -> bool, action, race, dead, spectator| camera_type(engine, menus, action, race, dead, spectator);
+        let t = |engine, menus: fn(&str) -> bool, action, race, dead, spectator| camera_type(engine, menus, Phase::None, action, race, dead, spectator);
         assert_eq!(t(CameraType::FirstPerson, none, ActionType::None, RaceType::Nord, false, false), CameraType::FirstPerson);
         assert_eq!(t(CameraType::FirstPerson, |m| m == "MapMenu", ActionType::Sit, RaceType::Nord, false, false), CameraType::MapMenu);
         assert_eq!(t(CameraType::ThirdPerson, none, ActionType::Sit, RaceType::Nord, false, false), CameraType::Animation);
@@ -1070,14 +1137,39 @@ mod tests {
     #[test]
     fn the_head_is_followed_where_ic_follows_it() {
         let body = |movement, hands, action| Body { movement, action, hands, ..Body::NONE };
-        assert!(head_follow(CameraType::Horse, &body(MovementType::Idle, HandsType::Sheath, ActionType::Ride)));
-        assert!(!head_follow(CameraType::Horse, &body(MovementType::Run, HandsType::None, ActionType::Ride)));
-        assert!(!head_follow(CameraType::Dragon, &body(MovementType::Idle, HandsType::Show, ActionType::None)));
-        assert!(head_follow(CameraType::Sex, &Body::NONE));
-        assert!(head_follow(CameraType::Spectator, &body(MovementType::None, HandsType::None, ActionType::Sex)));
-        assert!(head_follow(CameraType::Animation, &body(MovementType::None, HandsType::None, ActionType::Sit)));
-        assert!(!head_follow(CameraType::Animation, &body(MovementType::None, HandsType::None, ActionType::CartRide)));
-        assert!(!head_follow(CameraType::Furniture, &Body::NONE));
+        assert!(head_follow(CameraType::Horse, &body(MovementType::Idle, HandsType::Sheath, ActionType::Ride), false));
+        assert!(!head_follow(CameraType::Horse, &body(MovementType::Run, HandsType::None, ActionType::Ride), false));
+        assert!(!head_follow(CameraType::Dragon, &body(MovementType::Idle, HandsType::Show, ActionType::None), false));
+        assert!(head_follow(CameraType::Sex, &Body::NONE, false));
+        assert!(head_follow(CameraType::Spectator, &body(MovementType::None, HandsType::None, ActionType::Sex), false));
+        assert!(head_follow(CameraType::Animation, &body(MovementType::None, HandsType::None, ActionType::Sit), false));
+        assert!(!head_follow(CameraType::Animation, &body(MovementType::None, HandsType::None, ActionType::CartRide), false));
+        assert!(!head_follow(CameraType::Furniture, &Body::NONE, false));
+        assert!(!head_follow(CameraType::Werewolf, &Body::NONE, false) && head_follow(CameraType::Werewolf, &Body::NONE, true), "beast forms while an animation drives them");
+    }
+
+    #[test]
+    fn the_sit_phase_turns_the_mount_cameras_into_mounting_and_dismounting() {
+        let none = |_: &str| false;
+        let t = |engine, phase| camera_type(engine, none, phase, ActionType::None, RaceType::Nord, false, false);
+        assert_eq!(t(CameraType::Horse, Phase::Entering), CameraType::HorseMounting);
+        assert_eq!(t(CameraType::Horse, Phase::Leaving), CameraType::HorseDismounting);
+        assert_eq!(t(CameraType::Dragon, Phase::Entering), CameraType::DragonMounting);
+        assert_eq!(t(CameraType::Dragon, Phase::Leaving), CameraType::DragonDismounting);
+        assert_eq!(t(CameraType::ThirdPerson, Phase::Leaving), CameraType::ThirdPerson);
+    }
+
+    #[test]
+    fn the_script_lock_follows_ic_rules() {
+        use super::next_lock;
+        let l = |lock, script, camera, action, forced| next_lock(lock, script, camera, action, forced);
+        assert_eq!(l(CameraType::Unknown, true, CameraType::ThirdPerson, ActionType::None, false), CameraType::ThirdPerson, "set to the camera");
+        assert_eq!(l(CameraType::ThirdPerson, true, CameraType::RaceMenu, ActionType::None, false), CameraType::RaceMenu);
+        assert_eq!(l(CameraType::RaceMenu, true, CameraType::ThirdPerson, ActionType::None, false), CameraType::FirstPerson, "leaving the race menu");
+        assert_eq!(l(CameraType::ThirdPerson, true, CameraType::Animation, ActionType::CartRide, false), CameraType::FirstPerson, "the intro's cart");
+        assert_eq!(l(CameraType::Furniture, true, CameraType::Furniture, ActionType::None, true), CameraType::FirstPerson, "forced first person");
+        assert_eq!(l(CameraType::Furniture, true, CameraType::Animation, ActionType::None, false), CameraType::Furniture, "kept");
+        assert_eq!(l(CameraType::FirstPerson, false, CameraType::ThirdPerson, ActionType::None, false), CameraType::Unknown, "released");
     }
 
     #[test]

@@ -4,7 +4,7 @@ use skyrim::BSFixedString;
 use skyrim::actors::{RefHandle, RefPtr};
 use skyrim::prelude::*;
 use skyrim::ui::Value;
-use sre::{Actor, ActorState_flags1, CameraState, ControlGroupFlag, EventSourceHolder_MenuOpenClose, EventSourceHolder_User, NiAVObject, PlayerCamera, PlayerCharacter, PlayerControls, PlayerInputHandler, TESObjectREFR, ThirdPersonState};
+use sre::{Actor, ActorSitSleepState, ActorState_flags1, ActorWeaponState, CameraState, ControlGroupFlag, DisablePOVType, EventSourceHolder_MenuOpenClose, EventSourceHolder_User, NiAVObject, PlayerCamera, PlayerCharacter, PlayerControls, PlayerInputHandler, TESObjectREFR, ThirdPersonState};
 
 /// The third-person state's target zoom IC parks the camera at for its fake first person.
 pub const FAKE_FIRST_PERSON_ZOOM: f32 = -0.275;
@@ -129,9 +129,9 @@ pub fn weapon_state(actor: &Actor) -> u32 {
     (actor.as_actor_state().flags2 >> 5) & 7
 }
 
-/// `Is_Weapon_Drawn`: IC also counts want-to-draw and drawing, which are not in the RE yet; drawn only.
+/// `Is_Weapon_Drawn`: want to draw, drawing or drawn (`ActorWeaponState` 1-3).
 pub fn is_weapon_drawn(actor: &Actor) -> bool {
-    weapon_state(actor) == 3
+    (ActorWeaponState::WantToDraw as u32..=ActorWeaponState::Drawn as u32).contains(&weapon_state(actor))
 }
 
 /// `Get_BodyPart_Node(actor, kHead)` for any actor.
@@ -139,11 +139,38 @@ pub fn actor_head(actor: &Actor) -> Option<&'static NiAVObject> {
     actor.get_body_part_node(HEAD_PART).map(|node| &**node)
 }
 
-/// `Is_Sitting` and `Is_Interacting`: the sit/sleep state is not in the RE yet (request IC3), so
-/// this is whether the actor occupies furniture it sits or lies on (`GetFurnitureAnimType`: 1 sit,
-/// 2 lie, 4 lean).
-pub fn is_seated(actor: &Actor) -> bool {
-    matches!(actor.get_furniture_anim_type(), 1 | 2)
+/// The sit/sleep state, bits 14-17 of `ActorState::flags1` (`ActorSitSleepState`, RE `camera.md` IC3 E).
+pub fn sit_sleep_state(actor: &Actor) -> u32 {
+    (actor.as_actor_state().flags1 >> 14) & 0xF
+}
+
+/// `Is_Entering_Interaction`: the player wants to sit or sleep, or is getting in.
+pub fn is_entering_interaction() -> bool {
+    use ActorSitSleepState as S;
+    player().is_some_and(|p| matches!(S::from_u32(sit_sleep_state(p)), Some(S::WantToSit | S::EnteringSit | S::WantToSleep | S::EnteringBed)))
+}
+
+/// `Is_Leaving_Interaction`: the player is getting up from a seat or a bed.
+pub fn is_leaving_interaction() -> bool {
+    use ActorSitSleepState as S;
+    player().is_some_and(|p| matches!(S::from_u32(sit_sleep_state(p)), Some(S::ExitingSit | S::ExitingBed)))
+}
+
+/// `Is_Interacting`: any sit/sleep phase.
+pub fn is_interacting(actor: &Actor) -> bool {
+    sit_sleep_state(actor) != ActorSitSleepState::None as u32
+}
+
+/// `Is_Sitting`: seated (riding included) or asleep.
+pub fn is_sitting(actor: &Actor) -> bool {
+    use ActorSitSleepState as S;
+    matches!(S::from_u32(sit_sleep_state(actor)), Some(S::Sitting | S::Sleeping))
+}
+
+/// `povScriptMode`: a script disabled the POV switch (`PlayerControls::bDisablePOVChange[0]`,
+/// RE `camera.md` IC3 D); only read.
+pub fn pov_script_lock() -> bool {
+    PlayerControls::singleton().is_some_and(|c| c.bDisablePOVChange[DisablePOVType::Script as usize] != 0)
 }
 
 /// `Get_CameraTarget_Actor`: the actor the camera follows when it is not the player. The handle is

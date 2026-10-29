@@ -1,7 +1,8 @@
 //! `ImprovedCamera` on the skyrim-rs framework, ported module by module from IC's sources (the
 //! module docs name the file each one ports). So far: the third-person body in first person with
 //! its shadow, the head, arms and sheathed gear hidden from the player's own view, the body states
-//! that decide it, the camera manager's frame order they read, and the world, hands and tween
+//! that decide it, the camera manager with every camera state, its transitions and head anchor,
+//! the body anchored to the camera, the world, hands and tween
 //! menu FOV with the zoom effect, and the pitch-driven world near plane.
 
 mod body;
@@ -95,7 +96,7 @@ fn load(host: &'static Host) -> bool {
         hook::cameras::on_frame();
         camera::extended::apply_deferred();
     });
-    host.add_tab("Improved Camera").section("Body", ui::body_menu::draw).section("FOV", ui::fov_menu::draw).section("Near plane", ui::near_menu::draw);
+    host.add_tab("Improved Camera").section("Body", ui::body_menu::draw).section("FOV", ui::fov_menu::draw).section("Near plane", ui::near_menu::draw).section("Camera", ui::camera_menu::draw);
     hook::fixes::apply_body_visibility();
     log("loaded");
     true

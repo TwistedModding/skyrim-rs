@@ -42,8 +42,7 @@ pub struct Ctx<'a> {
     pub input: &'a Input,
 }
 
-/// IC's state objects with what each keeps between frames. The mounting and dismounting states
-/// are absent: their camera types come from the sit/sleep phases (request IC3).
+/// IC's state objects with what each keeps between frames.
 #[derive(Clone, Debug)]
 pub enum State {
     Unknown,
@@ -58,8 +57,12 @@ pub enum State {
     Animated,
     ThirdPerson(ThirdPerson),
     Horse,
+    HorseMounting,
+    HorseDismounting,
     Bleedout(OrbitController),
     Dragon,
+    DragonMounting,
+    DragonDismounting,
     Animation { should_sim: bool },
     Crafting,
     Dead(OrbitController),
@@ -106,6 +109,10 @@ impl State {
             T::Animated => (Self::Animated, Third),
             T::ThirdPerson => (Self::ThirdPerson(ThirdPerson::default()), Third),
             T::Horse => (Self::Horse, Third),
+            T::HorseMounting => (Self::HorseMounting, Third),
+            T::HorseDismounting => (Self::HorseDismounting, Third),
+            T::DragonMounting => (Self::DragonMounting, Third),
+            T::DragonDismounting => (Self::DragonDismounting, Third),
             T::Bleedout => (Self::Bleedout(OrbitController::new()), Third),
             T::Dragon => (Self::Dragon, Third),
             T::Animation => (Self::Animation { should_sim: false }, Third),
@@ -145,6 +152,10 @@ impl State {
             Self::Animated => T::Animated,
             Self::ThirdPerson(_) => T::ThirdPerson,
             Self::Horse => T::Horse,
+            Self::HorseMounting => T::HorseMounting,
+            Self::HorseDismounting => T::HorseDismounting,
+            Self::DragonMounting => T::DragonMounting,
+            Self::DragonDismounting => T::DragonDismounting,
             Self::Bleedout(_) => T::Bleedout,
             Self::Dragon => T::Dragon,
             Self::Animation { .. } => T::Animation,
@@ -186,10 +197,13 @@ impl State {
             Self::ThirdPerson(state) => state.enter(previous, ctx),
             Self::Horse => base::mount_enter(ctx, CameraState::Horse),
             Self::Dragon => base::mount_enter(ctx, CameraState::Dragon),
+            Self::HorseMounting => base::mounting_enter(previous, ctx, CameraState::Horse),
+            Self::DragonMounting => base::mounting_enter(previous, ctx, CameraState::Dragon),
+            Self::HorseDismounting => base::horse_dismount_enter(ctx),
             Self::Animation { should_sim } => extended::animation_enter(should_sim, previous, ctx),
             Self::Dialogue(state) => state.enter(previous, ctx),
             Self::Spectator(state) => state.enter(previous, ctx),
-            Self::Unknown | Self::Vanity | Self::IronSight | Self::Animated | Self::MapMenu | Self::Vampirelord | Self::Lich | Self::Sex => {}
+            Self::Unknown | Self::Vanity | Self::IronSight | Self::Animated | Self::MapMenu | Self::Vampirelord | Self::Lich | Self::Sex | Self::DragonDismounting => {}
         }
     }
 
@@ -220,6 +234,8 @@ impl State {
             Self::ThirdPerson(state) => state.update(m, ctx),
             Self::Horse => offset_sim(m, fov.fHorse, ctx.profile.Horse.offset().point()),
             Self::Dragon => offset_sim(m, fov.fDragon, camera.Dragon.point()),
+            Self::HorseMounting | Self::HorseDismounting => sim(m, fov.fHorseTransition),
+            Self::DragonMounting | Self::DragonDismounting => sim(m, fov.fDragonTransition),
             Self::Animation { should_sim } => extended::animation_update(should_sim, m, ctx),
             Self::Crafting => sim(m, fov.fCrafting),
             Self::Spectator(state) => state.update(m, ctx),
@@ -249,10 +265,11 @@ impl State {
                     base::freeze_body();
                 }
             }
+            Self::HorseDismounting | Self::DragonDismounting => base::dismount_exit(m),
             Self::Horse | Self::Dragon | Self::Animation { .. } | Self::Crafting | Self::VampirelordTransition | Self::Vampirelord | Self::WerewolfTransition | Self::Werewolf | Self::LichTransition | Self::Lich | Self::Sex => m.sim_first_person = false,
             Self::Dialogue(state) => state.exit(ctx),
             Self::Spectator(state) => state.exit(m),
-            Self::Unknown | Self::FirstPerson | Self::Vanity | Self::IronSight | Self::Animated | Self::ThirdPerson(_) | Self::MapMenu => {}
+            Self::Unknown | Self::FirstPerson | Self::Vanity | Self::IronSight | Self::Animated | Self::ThirdPerson(_) | Self::MapMenu | Self::HorseMounting | Self::DragonMounting => {}
         }
     }
 
@@ -279,7 +296,7 @@ mod tests {
         for value in 0..=CameraType::Unknown as u32 {
             let camera = CameraType::from_u32(value);
             let (state, look) = State::new(camera);
-            let absent = matches!(camera, CameraType::HorseMounting | CameraType::HorseDismounting | CameraType::DragonMounting | CameraType::DragonDismounting | CameraType::Cinematic);
+            let absent = camera == CameraType::Cinematic;
             assert_eq!(state.kind(), if absent { CameraType::Unknown } else { camera }, "{camera:?}");
             let disabled = matches!(camera, CameraType::Vanity | CameraType::Free | CameraType::IronSight | CameraType::TweenMenu | CameraType::Dialogue | CameraType::MapMenu | CameraType::RaceMenu | CameraType::SexTFC) || absent || camera == CameraType::Unknown;
             let expected = if camera == CameraType::FirstPerson {
