@@ -1,6 +1,6 @@
 use core::ffi::c_void;
 use core::hint::black_box;
-use std::sync::atomic::{AtomicUsize, Ordering::SeqCst};
+use std::sync::atomic::{AtomicBool, AtomicUsize, Ordering::SeqCst};
 use std::sync::{Arc, Mutex, OnceLock};
 use std::time::{Duration, Instant};
 
@@ -103,6 +103,7 @@ fn constraints_then_priority_then_rank_then_registration() {
 #[test]
 fn removal_waits_for_the_subscriber_in_flight() {
     static RUNS: AtomicUsize = AtomicUsize::new(0);
+    static STOP: AtomicBool = AtomicBool::new(false);
     let hooks = &Hooks::HOST;
     hooks
         .before(raw(removal), Options::new("slow"), |_| {
@@ -111,19 +112,21 @@ fn removal_waits_for_the_subscriber_in_flight() {
         })
         .unwrap();
     let caller = std::thread::spawn(|| {
-        for _ in 0..5 {
+        while !STOP.load(SeqCst) {
             call(removal, 1, 1);
         }
     });
     while RUNS.load(SeqCst) == 0 {
         std::thread::yield_now();
     }
+    // The caller runs until stopped, so a removal that waited for every call would never return.
     let start = Instant::now();
     assert_eq!(hooks.remove_owner("slow"), 1);
     let runs = RUNS.load(SeqCst);
-    assert!(start.elapsed() < Duration::from_millis(200));
+    assert!(start.elapsed() < Duration::from_secs(2), "{:?}", start.elapsed());
     std::thread::sleep(Duration::from_millis(100));
     assert_eq!(RUNS.load(SeqCst), runs, "a callback ran after remove_owner returned");
+    STOP.store(true, SeqCst);
     caller.join().unwrap();
     assert_eq!(hooks.remove_owner("slow"), 0);
 }
