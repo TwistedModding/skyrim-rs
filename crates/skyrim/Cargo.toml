@@ -8,7 +8,7 @@ publish.workspace = true
 skse.workspace = true
 hook.workspace = true
 sre = { workspace = true, default-features = false }
-windows-sys = { workspace = true, features = ["Win32_System_Threading"] }
+windows-sys = { workspace = true, features = ["Win32_System_Kernel", "Win32_System_Threading"] }
 
 # One feature per module, each with the `sre` groups its code calls. `init`, `reloc`, `class_of`,
 # `store` and `BSFixedString` are always compiled and need none.

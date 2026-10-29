@@ -12,7 +12,7 @@ use core::sync::atomic::{AtomicU32, Ordering};
 use std::ffi::CString;
 use std::fmt;
 
-use sre::{ActorValue, ActorValueInfo, ActorValueList, ContainerEntry, InventoryChanges, InventoryEntry, TESContainer, TESFullName, TESObjectREFR};
+use sre::{ActorValue, ActorValueInfo, ActorValueList, ContainerEntry, InventoryChanges, InventoryEntry, NiAVObject, PlayerCharacter, TESContainer, TESFullName, TESObjectREFR};
 
 use crate::ptr_slice;
 
@@ -88,6 +88,19 @@ impl TESObjectREFRExt for TESObjectREFR {
         let mut handle = 0;
         unsafe { self.get_handle(&raw mut handle) };
         RefHandle(handle)
+    }
+}
+
+pub trait PlayerCharacterExt {
+    /// The third-person root, `loadedData->node3D`, whichever view is current; the first-person
+    /// root is the generated `first_person_root()`. `None` while the player has no 3D. A load
+    /// replaces both, so a pointer kept across frames is cleared at `PreLoadGame`.
+    fn third_person_root(&self) -> Option<&NiAVObject>;
+}
+
+impl PlayerCharacterExt for PlayerCharacter {
+    fn third_person_root(&self) -> Option<&NiAVObject> {
+        self.loaded_data()?.node3_d().map(|node| &**node)
     }
 }
 

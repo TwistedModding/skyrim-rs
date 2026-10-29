@@ -219,6 +219,8 @@ pub trait MenuManagerExt {
     fn stack(&self) -> MenuStack<'_>;
     /// `IsMenuOpen` (id 82074): the menu is registered and its flag 0x40 is set.
     fn is_open(&self, name: &str) -> bool;
+    /// Whether an open menu pauses the game (`IMenu_flags::PAUSES_GAME` on any menu of the stack).
+    fn is_paused(&self) -> bool;
     /// A name `Register` has seen (`MenuTable::Find`, id 82135).
     fn is_registered(&self, name: &str) -> bool;
     /// The live menu registered under `name`: `None` when the name is unknown or the menu was
@@ -244,6 +246,10 @@ impl MenuManagerExt for EventSourceHolder_MenuOpenClose {
 
     fn is_open(&self, name: &str) -> bool {
         self.is_menu_open(BSFixedString::new(name).raw())
+    }
+
+    fn is_paused(&self) -> bool {
+        self.stack().iter().any(|m| m.flags & sre::IMenu_flags::PAUSES_GAME.bits() != 0)
     }
 
     fn is_registered(&self, name: &str) -> bool {

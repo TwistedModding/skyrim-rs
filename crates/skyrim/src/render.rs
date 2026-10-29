@@ -15,7 +15,7 @@ use core::ffi::{CStr, c_void};
 use core::sync::atomic::{AtomicU32, Ordering};
 
 use sre::raw::{fns, vtables};
-use sre::{BSCullingProcess, BSGeometry, BSLight, BSLightingShaderMaterialBase, BSShaderMaterial, BSShaderProperty, BSShaderTextureSet, BSShadowLight, BSTextureSet, CameraMatrixEntry, NiAVObject, NiCamera, NiNode, NiTransform, ShaderMaterialType, ShadowMapData, ShadowSceneNode, TextureSetSlot};
+use sre::{BSCullingProcess, BSFadeNode, BSFlattenedBoneTree, BSGeometry, BSLight, BSLightingShaderMaterialBase, BSShaderMaterial, BSShaderProperty, BSShaderTextureSet, BSShadowLight, BSTextureSet, CameraMatrixEntry, NiAVObject, NiCamera, NiNode, NiSkinInstance, NiTransform, ShaderMaterialType, ShadowMapData, ShadowSceneNode, TextureSetSlot};
 
 use crate::ptr_slice;
 
@@ -265,6 +265,24 @@ pub struct Transform {
 
 const _: () = assert!(size_of::<Transform>() == size_of::<NiTransform>());
 
+impl Transform {
+    /// `self * child`: the world transform of an object whose parent's world is `self` and whose
+    /// local transform is `child`.
+    #[must_use]
+    pub fn compose(&self, child: &Self) -> Self {
+        let r = &self.rotation;
+        let mut rotation = [[0.0; 3]; 3];
+        let mut translation = self.translation;
+        for (i, row) in rotation.iter_mut().enumerate() {
+            for (j, value) in row.iter_mut().enumerate() {
+                *value = (0..3).map(|k| r[i][k] * child.rotation[k][j]).sum();
+            }
+            translation[i] += self.scale * (0..3).map(|k| r[i][k] * child.translation[k]).sum::<f32>();
+        }
+        Self { rotation, translation, scale: self.scale * child.scale }
+    }
+}
+
 impl From<&NiTransform> for Transform {
     fn from(t: &NiTransform) -> Self {
         unsafe { core::ptr::from_ref(t).cast::<Self>().read_volatile() }
@@ -299,6 +317,14 @@ unsafe impl NodeClass for NiNode {
     ];
 }
 
+unsafe impl NodeClass for BSFadeNode {
+    const VTABLES: &'static [u64] = &[vtables::BSFadeNode_vtable::ID];
+}
+
+unsafe impl NodeClass for BSFlattenedBoneTree {
+    const VTABLES: &'static [u64] = &[vtables::BSFlattenedBoneTree_vtable::ID];
+}
+
 unsafe impl NodeClass for BSGeometry {
     const VTABLES: &'static [u64] = &[
         vtables::BSGeometry_vtable::ID,
@@ -324,12 +350,17 @@ pub trait NiAVObjectExt {
     /// [`update_transforms`](Self::update_transforms); from a pose-write hook on a bone of the graph's
     /// own skeleton, call nothing (`crate::animation`).
     fn set_local_transform(&self, local: Transform);
+    /// Writes the local scale alone, under the same rules as [`set_local_transform`](Self::set_local_transform).
+    fn set_local_scale(&self, scale: f32);
     fn world_transform(&self) -> Transform;
     /// Recomputes the world transforms and bounds after a local transform change
     /// (`NiAVObject::UpdateNode`: slot 44 on the object, then the parent's slot 61). Main thread, between frames.
     fn update_transforms(&self);
     /// Whether `ancestor` is this object or one of its parents, looking at most `depth` levels up.
     fn is_under(&self, ancestor: &NiAVObject, depth: usize) -> bool;
+    /// Calls `f` with this object and every object below it, parents before children. Main thread,
+    /// between frames, or from a render step that runs while the main thread waits.
+    fn for_each(&self, f: &mut dyn FnMut(&NiAVObject));
 }
 
 impl NiAVObjectExt for NiAVObject {
@@ -355,6 +386,10 @@ impl NiAVObjectExt for NiAVObject {
         unsafe { core::ptr::from_ref(&self.local).cast::<Transform>().cast_mut().write_volatile(local) }
     }
 
+    fn set_local_scale(&self, scale: f32) {
+        crate::store(&self.local.scale, scale);
+    }
+
     fn world_transform(&self) -> Transform {
         Transform::from(&self.world)
     }
@@ -377,6 +412,15 @@ impl NiAVObjectExt for NiAVObject {
         }
         false
     }
+
+    fn for_each(&self, f: &mut dyn FnMut(&NiAVObject)) {
+        f(self);
+        if let Some(node) = self.cast::<NiNode>() {
+            for child in node.children().iter().flatten() {
+                child.for_each(f);
+            }
+        }
+    }
 }
 
 pub trait NiNodeExt {
@@ -390,6 +434,78 @@ impl NiNodeExt for NiNode {
         let data = usize::from_le_bytes(b[8..16].try_into().unwrap()) as *const c_void;
         let size = u16::from_le_bytes([b[18], b[19]]);
         unsafe { ptr_slice(data, u32::from(size)) }
+    }
+}
+
+pub trait NiSkinInstanceExt {
+    /// Makes the next draw rebuild a palette already built in render frame `frame`
+    /// (`g_RenderFrameCounter`): `paletteFrame` steps back one and the current and previous palettes
+    /// swap under the skin's lock, so the rebuild's copy of current over previous restores the
+    /// previous frame's palette. False when the palette was not built in `frame`.
+    fn rewind_palette(&self, frame: u32) -> bool;
+}
+
+impl NiSkinInstanceExt for NiSkinInstance {
+    fn rewind_palette(&self, frame: u32) -> bool {
+        use windows_sys::Win32::System::Threading::{CRITICAL_SECTION, EnterCriticalSection, LeaveCriticalSection};
+        const { assert!(size_of::<CRITICAL_SECTION>() == 40) };
+        let lock = (&raw const self.paletteLock).cast::<CRITICAL_SECTION>().cast_mut();
+        unsafe { EnterCriticalSection(lock) };
+        let built = unsafe { (&raw const self.paletteFrame).read_volatile() } == frame;
+        if built {
+            crate::store(&self.paletteFrame, frame.wrapping_sub(1));
+            let (current, previous) = unsafe { ((&raw const self.palette).read_volatile(), (&raw const self.previousPalette).read_volatile()) };
+            crate::store(&self.palette, previous);
+            crate::store(&self.previousPalette, current);
+        }
+        unsafe { LeaveCriticalSection(lock) };
+        built
+    }
+}
+
+/// One flat bone of a `BSFlattenedBoneTree` (0x80 bytes, `camera.md` section 10).
+#[repr(C)]
+pub struct FlatBone {
+    pub local: NiTransform,
+    pub world: NiTransform,
+    /// Index of the parent entry, negative for the tree node itself.
+    pub parent: i32,
+    unknown_6c: [u8; 4],
+    /// The bone's own node, null for a bone dissolved into the tree.
+    pub node: *mut NiAVObject,
+    pub name: *const core::ffi::c_char,
+}
+
+const _: () = assert!(size_of::<FlatBone>() == 0x80);
+
+pub trait BSFlattenedBoneTreeExt {
+    fn bones(&self) -> &[FlatBone];
+    /// Re-derives every entry's world transform: an entry with a node takes the node's world, one
+    /// without composes its parent entry's world (the tree's own for the first level) with its
+    /// local. Node worlds are read, never written. Main thread, or a render step the main thread waits on.
+    fn rechain_bones(&self);
+}
+
+impl BSFlattenedBoneTreeExt for BSFlattenedBoneTree {
+    fn bones(&self) -> &[FlatBone] {
+        if self.bones.is_null() {
+            return &[];
+        }
+        unsafe { core::slice::from_raw_parts(self.bones.cast::<FlatBone>(), self.boneCount as usize) }
+    }
+
+    fn rechain_bones(&self) {
+        let bones = self.bones();
+        for bone in bones {
+            let world = match unsafe { bone.node.as_ref() } {
+                Some(node) => node.world_transform(),
+                None => {
+                    let parent = usize::try_from(bone.parent).ok().and_then(|i| bones.get(i)).map_or(&self.world, |p| &p.world);
+                    Transform::from(parent).compose(&Transform::from(&bone.local))
+                }
+            };
+            unsafe { core::ptr::from_ref(&bone.world).cast::<Transform>().cast_mut().write_volatile(world) }
+        }
     }
 }
 
@@ -499,5 +615,21 @@ impl BSTextureSetExt for BSTextureSet {
         }
         let p = unsafe { &*core::ptr::from_ref(self).cast::<BSShaderTextureSet>() }.get_texture_path(slot);
         if p.is_null() { None } else { Some(unsafe { CStr::from_ptr(p) }) }
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use super::Transform;
+
+    #[test]
+    fn compose_scales_rotates_then_translates_the_child() {
+        let quarter_turn = [[0.0, -1.0, 0.0], [1.0, 0.0, 0.0], [0.0, 0.0, 1.0]];
+        let parent = Transform { rotation: quarter_turn, translation: [10.0, 0.0, 5.0], scale: 2.0 };
+        let child = Transform { rotation: quarter_turn, translation: [1.0, 0.0, 0.0], scale: 0.5 };
+        let world = parent.compose(&child);
+        assert_eq!(world.translation, [10.0, 2.0, 5.0]);
+        assert_eq!(world.rotation, [[-1.0, 0.0, 0.0], [0.0, -1.0, 0.0], [0.0, 0.0, 1.0]]);
+        assert!((world.scale - 1.0).abs() < f32::EPSILON);
     }
 }

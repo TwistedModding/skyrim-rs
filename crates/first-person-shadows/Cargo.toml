@@ -12,7 +12,7 @@ crate-type = ["cdylib"]
 skse.workspace = true
 hook.workspace = true
 sre = { workspace = true, features = ["actors"] }
-skyrim = { workspace = true, features = ["render"] }
+skyrim = { workspace = true, features = ["actors", "render"] }
 
 [lints]
 workspace = true

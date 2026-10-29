@@ -41,7 +41,7 @@ pub use string::BSFixedString;
 /// helpers next to the generated methods in completion.
 pub mod prelude {
     #[cfg(feature = "actors")]
-    pub use crate::actors::{ActorValueListExt, InventoryChangesExt, TESContainerExt, TESFullNameExt, TESObjectREFRExt};
+    pub use crate::actors::{ActorValueListExt, InventoryChangesExt, PlayerCharacterExt, TESContainerExt, TESFullNameExt, TESObjectREFRExt};
     #[cfg(feature = "animation")]
     pub use crate::animation::{BSAnimationGraphManagerExt, BShkbAnimationGraphExt, IAnimationGraphManagerHolderExt};
     #[cfg(feature = "camera")]
@@ -53,7 +53,7 @@ pub mod prelude {
     #[cfg(feature = "papyrus")]
     pub use crate::papyrus::VirtualMachineExt;
     #[cfg(feature = "render")]
-    pub use crate::render::{BSCullingProcessExt, BSShaderMaterialExt, BSShaderPropertyExt, BSShadowLightExt, BSTextureSetExt, NiAVObjectExt, NiNodeExt, NodeClass, ShadowSceneNodeExt};
+    pub use crate::render::{BSCullingProcessExt, BSFlattenedBoneTreeExt, BSShaderMaterialExt, BSShaderPropertyExt, BSShadowLightExt, BSTextureSetExt, NiAVObjectExt, NiNodeExt, NiSkinInstanceExt, NodeClass, ShadowSceneNodeExt};
     #[cfg(feature = "save")]
     pub use crate::save::{BGSSaveLoadGameExt, BGSSaveLoadManagerExt};
     #[cfg(feature = "ui")]

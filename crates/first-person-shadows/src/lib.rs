@@ -16,7 +16,7 @@ use std::sync::atomic::{AtomicBool, AtomicPtr, AtomicU32, Ordering};
 use skyrim::prelude::*;
 use skyrim::render::{CullFn, SetFirstPersonFn};
 use sre::raw::vtables;
-use sre::{NiAVObject, PlayerCharacter};
+use sre::PlayerCharacter;
 
 skse::plugin! {
     name: "skyrim-rs-first-person-shadows",
@@ -51,17 +51,12 @@ macro_rules! log {
 /// Caches the third-person root and shows it in first person; third person is the engine's own state.
 fn apply(first_person: bool) {
     FIRST_PERSON.store(first_person, Ordering::Relaxed);
-    let root = sre::PlayerCharacter::singleton().and_then(third_person_root);
+    let root = sre::PlayerCharacter::singleton().and_then(PlayerCharacter::third_person_root);
     THIRD_ROOT.store(root.map_or(core::ptr::null_mut(), |r| core::ptr::from_ref(r).cast_mut()), Ordering::Release);
     if first_person && let Some(root) = root {
         root.set_hidden(false);
         log!("first person: third-person root {root:p} shown (flags {:#x})", root.flags);
     }
-}
-
-/// The third-person root, `loadedData->node3D`.
-fn third_person_root(player: &PlayerCharacter) -> Option<&NiAVObject> {
-    player.loaded_data()?.node3_d().map(|node| &**node)
 }
 
 unsafe extern "C" fn switch_detour(player: *mut sre::PlayerCharacter, first_person: bool) {
@@ -120,7 +115,7 @@ unsafe extern "C" fn on_message(msg: *mut skse::Message) {
         }
         skse::MessagingInterface::SAVE_GAME => {
             let first_person = FIRST_PERSON.load(Ordering::Relaxed);
-            let roots = sre::PlayerCharacter::singleton().map(|p| (third_person_root(p).map(|r| r.flags), p.first_person_root().map(|r| r.flags)));
+            let roots = sre::PlayerCharacter::singleton().map(|p| (p.third_person_root().map(|r| r.flags), p.first_person_root().map(|r| r.flags)));
             log!(
                 "save: first_person={first_person} root flags {roots:?}; in first person the body root was visited {} times by shadow cameras and {} by other cameras, the face skipped {} times for other cameras and passed {} times to shadow cameras",
                 BODY_SHADOW.load(Ordering::Relaxed),
