@@ -293,6 +293,8 @@ pub(crate) struct PatchRequest {
     pub at: Location,
     pub expected: Vec<u8>,
     pub replacement: Vec<u8>,
+    /// The code a jump in place of `expected` leads to; `replacement` is that jump, made by the registry.
+    pub cave: Option<Vec<u8>>,
 }
 
 /// What a patch's bytes hold now.
@@ -315,12 +317,17 @@ pub struct PatchReport {
     pub address: usize,
     pub original: Vec<u8>,
     pub replacement: Vec<u8>,
+    /// The code the replacement jumps to, for [`Hooks::patch_cave`].
+    pub cave: Option<Vec<u8>>,
     pub state: PatchState,
 }
 
 impl fmt::Display for PatchReport {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         write!(f, "patch #{} {} at {} ({:#x}): {} -> {}, ", self.id.0, self.owner, self.site, self.address, validate::hex(&self.original), validate::hex(&self.replacement))?;
+        if let Some(code) = &self.cave {
+            write!(f, "cave {}, ", validate::hex(code))?;
+        }
         match &self.state {
             PatchState::Applied => f.write_str("applied"),
             PatchState::Disabled => f.write_str("disabled"),
@@ -507,7 +514,21 @@ impl Hooks {
     /// reads it, and no thread may be executing those bytes while they are written.
     pub unsafe fn patch(&self, owner: &str, at: Location, expected: &[u8], replacement: &[u8]) -> Result<PatchId, Error> {
         self.check_owner(owner)?;
-        (self.patch)(PatchRequest { owner: owner.to_owned(), at, expected: expected.to_vec(), replacement: replacement.to_vec() })
+        (self.patch)(PatchRequest { owner: owner.to_owned(), at, expected: expected.to_vec(), replacement: replacement.to_vec(), cave: None })
+    }
+
+    /// A patch whose replacement is a `jmp rel32` (padded with `nop`s) to `code`, which the host
+    /// copies near `at` and follows with a jump back to the instruction after the `expected`
+    /// bytes (5 to 64): for a change that does not fit in place. Checked, reserved, toggled,
+    /// reported and restored as [`patch`](Self::patch) does; the report shows the cave's code.
+    ///
+    /// # Safety
+    /// As [`patch`](Self::patch); `expected` must end on an instruction boundary that nothing
+    /// jumps into, and `code` must run anywhere: no rip-relative operand and no relative branch
+    /// out of it.
+    pub unsafe fn patch_cave(&self, owner: &str, at: Location, expected: &[u8], code: &[u8]) -> Result<PatchId, Error> {
+        self.check_owner(owner)?;
+        (self.patch)(PatchRequest { owner: owner.to_owned(), at, expected: expected.to_vec(), replacement: Vec::new(), cave: Some(code.to_vec()) })
     }
 
     /// Writes a patch's replacement back (`true`) or its original bytes (`false`); refused with

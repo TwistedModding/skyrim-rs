@@ -478,6 +478,29 @@ fn patches_are_checked_reserved_toggled_and_restored() {
 }
 
 #[test]
+fn a_cave_patch_jumps_to_its_code_and_back() {
+    let hooks = &Hooks::HOST;
+    // mov eax, 1; add eax, 2; ret
+    let stub = hook::Trampoline::shared().alloc(called as *const () as usize, &[0xB8, 1, 0, 0, 0, 0x83, 0xC0, 0x02, 0xC3]).unwrap();
+    let f = unsafe { core::mem::transmute::<usize, unsafe extern "C" fn() -> u32>(stub) };
+    let at = Location::Address(stub);
+    let short = unsafe { hooks.patch_cave("cave", Location::Address(stub + 5), &[0x83, 0xC0, 0x02], &[0x90]) }.unwrap_err();
+    assert!(matches!(&short, Error::Install { detail, .. } if detail.contains("needs 5")), "{short}");
+    let id = unsafe { hooks.patch_cave("cave", at, &[0xB8, 1, 0, 0, 0], &[0xB8, 10, 0, 0, 0]) }.unwrap();
+    assert_eq!(run(f), 12, "the cave's code, then the bytes after the patch");
+    let report = hooks.patches().into_iter().find(|p| p.id == id).unwrap();
+    assert_eq!((report.replacement[0], report.state.clone()), (0xE9, PatchState::Applied));
+    assert!(report.to_string().ends_with(", cave b8 0a 00 00 00, applied"), "{report}");
+    assert!(matches!(unsafe { hooks.patch("cave", Location::Address(stub + 4), &[0], &[0]) }, Err(Error::Overlap { .. })));
+    hooks.set_patch_enabled(id, false).unwrap();
+    assert_eq!(run(f), 3);
+    hooks.set_patch_enabled(id, true).unwrap();
+    assert_eq!(run(f), 12);
+    assert_eq!(hooks.remove_owner("cave"), 0);
+    assert_eq!(run(f), 3, "restored with its owner");
+}
+
+#[test]
 fn patches_refuse_other_bytes_lengths_and_owners() {
     let hooks = &Hooks::HOST;
     let (f, stub) = returning(4);

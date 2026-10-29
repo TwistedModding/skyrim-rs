@@ -273,6 +273,22 @@ pub unsafe fn write_branch(site: usize, target: usize) -> Result<usize, Error> {
     unsafe { write_rel32(site, JMP, target) }
 }
 
+/// Copies `code` near `site` followed by a jump to `site + len`, and returns the `len` bytes that
+/// lead there from `site`: a `jmp rel32` padded with `nop`s. Nothing is written at `site`.
+pub fn cave(site: usize, len: usize, code: &[u8]) -> Result<Vec<u8>, Error> {
+    if len < 5 {
+        return Err(io::Error::other(format!("a jump to a cave needs 5 bytes, not {len}")).into());
+    }
+    let mut body = code.to_vec();
+    body.extend(ABS_JMP);
+    body.extend((site + len).to_le_bytes());
+    let rel = rel32_to(site, Trampoline::shared().alloc(site, &body)?)?;
+    let mut bytes = vec![JMP];
+    bytes.extend(rel.to_le_bytes());
+    bytes.resize(len, NOP);
+    Ok(bytes)
+}
+
 /// [`write_call`] or [`write_branch`], whichever instruction `site` holds.
 ///
 /// # Safety
@@ -538,6 +554,19 @@ mod tests {
         // mov rax, [rdx]; call [rax+8]: rax is not the first argument's vtable
         let other = Trampoline::shared().alloc(near, &[0x90, 0x90, 0x90, 0x48, 0x8B, 0x02, 0xFF, 0x90, 8, 0, 0, 0]).unwrap();
         assert!(matches!(unsafe { CallSite::create(other + 6, virtual_detour as Fn1) }, Err(Error::NotRel32(_))));
+    }
+
+    #[test]
+    fn a_cave_runs_its_code_and_returns_after_the_bytes() {
+        // mov eax, 1; add eax, 2; ret
+        let site = Trampoline::shared().alloc(one as Fn0 as usize, &[0xB8, 1, 0, 0, 0, 0x83, 0xC0, 0x02, 0xC3]).unwrap();
+        assert_eq!(func(site)(), 3);
+        let jump = cave(site, 5, &[0xB8, 10, 0, 0, 0]).unwrap();
+        assert_eq!((jump.len(), jump[0]), (5, JMP));
+        unsafe { write_code(site, &jump) }.unwrap();
+        assert_eq!(func(site)(), 12, "the cave's mov, then the add after the replaced bytes");
+        assert_eq!(cave(site, 8, &[0x90]).unwrap()[5..], [NOP; 3]);
+        assert!(cave(site, 4, &[0x90]).is_err());
     }
 
     extern "C" fn plus_one(x: usize) -> usize {

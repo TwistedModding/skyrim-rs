@@ -18,6 +18,7 @@ struct Patch {
     address: usize,
     original: Vec<u8>,
     replacement: Vec<u8>,
+    cave: Option<Vec<u8>>,
     enabled: bool,
 }
 
@@ -120,8 +121,12 @@ impl Registry {
     fn add_patch(&mut self, req: PatchRequest, site: &str) -> Result<usize, Error> {
         let refuse = |detail: String| Error::Install { site: site.to_owned(), owner: req.owner.clone(), detail };
         let len = req.expected.len();
-        if !(1..=PATCH_MAX).contains(&len) || req.replacement.len() != len {
-            return Err(refuse(format!("{len} expected and {} replacement bytes, both must be 1 to {PATCH_MAX} and equal", req.replacement.len())));
+        match &req.cave {
+            None if !(1..=PATCH_MAX).contains(&len) || req.replacement.len() != len => {
+                return Err(refuse(format!("{len} expected and {} replacement bytes, both must be 1 to {PATCH_MAX} and equal", req.replacement.len())));
+            }
+            Some(_) if !(5..=PATCH_MAX).contains(&len) => return Err(refuse(format!("{len} expected bytes, a jump to a cave needs 5 to {PATCH_MAX}"))),
+            _ => {}
         }
         let address = req.at.resolve().map_err(refuse)?;
         if let Some(with) = self.holder(address, len) {
@@ -131,8 +136,12 @@ impl Registry {
         if found != req.expected {
             return Err(Error::Mismatch { site: site.to_owned(), owner: req.owner.clone(), expected: req.expected, found });
         }
-        unsafe { hook::write_code(address, &req.replacement) }.map_err(|e| refuse(e.to_string()))?;
-        self.patches.push(Patch { id: self.next_id, owner: req.owner, at: req.at, address, original: req.expected, replacement: req.replacement, enabled: true });
+        let replacement = match &req.cave {
+            Some(code) => hook::cave(address, len, code).map_err(|e| refuse(e.to_string()))?,
+            None => req.replacement,
+        };
+        unsafe { hook::write_code(address, &replacement) }.map_err(|e| refuse(e.to_string()))?;
+        self.patches.push(Patch { id: self.next_id, owner: req.owner, at: req.at, address, original: req.expected, replacement, cave: req.cave, enabled: true });
         self.next_id += 1;
         Ok(self.patches.len() - 1)
     }
@@ -496,7 +505,7 @@ pub(crate) fn patches() -> Vec<PatchReport> {
                 false if found == p.original => PatchState::Disabled,
                 _ => PatchState::Overwritten { found },
             };
-            PatchReport { id: PatchId(p.id), owner: p.owner.clone(), site: p.at, address: p.address, original: p.original.clone(), replacement: p.replacement.clone(), state }
+            PatchReport { id: PatchId(p.id), owner: p.owner.clone(), site: p.at, address: p.address, original: p.original.clone(), replacement: p.replacement.clone(), cave: p.cave.clone(), state }
         })
         .collect()
 }
