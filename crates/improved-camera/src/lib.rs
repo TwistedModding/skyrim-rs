@@ -2,7 +2,8 @@
 //! module docs name the file each one ports). So far: the third-person body in first person with
 //! its shadow, the head, arms and sheathed gear hidden from the player's own view, the body states
 //! that decide it, the camera manager with every camera state, its transitions and head anchor,
-//! the body anchored to the camera, the world, hands and tween
+//! the body anchored to the camera with the first-person free look, the idle camera's orbit, the
+//! dialogue's framing and speaker focus shots, the race menu orbit, the world, hands and tween
 //! menu FOV with the zoom effect, the pitch-driven world near plane, and the gameplay sites: the
 //! magic casters' and effect shaders' root, the crosshair pick, the movement input buffer, the
 //! scroll wheel, the POV toggle and the scripts' forced first and third person.
@@ -141,6 +142,7 @@ fn load(host: &'static Host) -> bool {
 /// first person; and the engine's world FOV, FOV offset and near plane.
 fn unload() {
     camera::manager::release();
+    body::free_look::release();
     camera::manager::reset_fov();
     camera::manager::reset_near();
     let Some(player) = util::skyrim_util::player() else { return };

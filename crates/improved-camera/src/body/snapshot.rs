@@ -19,6 +19,8 @@ pub struct Data {
     pub left_hand: EquipmentType,
     pub right_hand: EquipmentType,
     pub interaction: InteractionType,
+    /// The race carries the `ActorTypeNPC` keyword, and with it the character head-track rig.
+    pub humanoid: bool,
 }
 
 impl Data {
@@ -31,6 +33,7 @@ impl Data {
         left_hand: EquipmentType::Fist,
         right_hand: EquipmentType::Fist,
         interaction: InteractionType::None,
+        humanoid: false,
     };
 }
 

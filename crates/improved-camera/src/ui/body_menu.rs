@@ -1,5 +1,5 @@
-//! `ui/menu/BodyMenu`, the part this port has so far: the body's General and Hide options and its
-//! global placement, in the host's tab.
+//! `ui/menu/BodyMenu`, the part this port has so far: the body's General and Hide options, its
+//! global placement and the free look, in the host's tab.
 
 use framework::egui;
 
@@ -56,6 +56,14 @@ pub fn draw(ui: &mut egui::Ui) {
     drag(ui, &mut b.Combat.fForward, "Combat forward");
     drag(ui, &mut b.Combat.fUp, "Combat up");
     drag(ui, &mut b.Combat.fRight, "Combat right");
+
+    ui.heading("Free Look");
+    ui.checkbox(&mut b.bFreeLook, "Enable free look");
+    ui.checkbox(&mut b.bFreeLookSpine, "Spine twist");
+    ui.add(egui::Slider::new(&mut b.fFreeLookMaxAngle, 0.0..=180.0).text("Look Threshold (deg)"));
+    ui.add(egui::Slider::new(&mut b.fFreeLookSettleAngle, 0.0..=90.0).text("Settle Angle (deg)"));
+    ui.add(egui::Slider::new(&mut b.fFreeLookCatchupSpeed, 1.0..=30.0).text("Shuffle Speed (x10 deg/s)"));
+    ui.add(egui::Slider::new(&mut b.fFreeLookTwistStrength, 0.1..=3.0).text("Twist Strength"));
 
     if p != before {
         crate::apply_profile(&p);

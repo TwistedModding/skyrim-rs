@@ -181,9 +181,25 @@ pub fn update(camera: &PlayerCamera) {
         m.update_fov(camera, &profile, delta);
         m.update_near_distance(camera, &profile.Advanced);
     }
-    snapshot::set(m.snapshot());
+    let data = m.snapshot();
+    snapshot::set(data);
     drop(guard);
     crate::body::manager::anchor_camera(delta);
+    let world_delta = util::delta_world_time();
+    crate::body::free_look::drive(&profile, &data, world_delta);
+    update_dialogue_head_tracking(camera, &profile, &data, world_delta);
+}
+
+/// The engine runs the player's head tracking only from the third-person camera states on (RE
+/// `camera.md` IC5 C), so in the first-person, free and furniture states the dialogue's target is
+/// followed only if the update is run here; the free look runs its own.
+fn update_dialogue_head_tracking(camera: &PlayerCamera, profile: &Profile, data: &snapshot::Data, dt: f32) {
+    let below_third = camera.state().is_some_and(|s| (s as u32) < CameraState::ThirdPerson as u32);
+    if data.current == CameraType::Dialogue && profile.Dialogue.bEnable && profile.Dialogue.bHeadTracking && below_third && !crate::body::free_look::with(|f| f.driving)
+        && let Some(player) = util::player()
+    {
+        player.update_head_tracking(dt);
+    }
 }
 
 /// The engine values IC writes and the port puts back at unload: `fMinCurrentZoom`, the four

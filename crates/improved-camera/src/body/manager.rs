@@ -9,6 +9,7 @@ use skyrim::prelude::*;
 use skyrim::render::Transform;
 use sre::{ActorAttackState, ActorState_flags1, ActorWeaponState, FormType, NiAVObject, PlayerCharacter, PlayerControls, TESFurniture, TESObjectWEAP};
 
+use super::free_look::{self, FreeLook};
 use super::parts::Parts;
 use super::snapshot;
 use super::state::action::{ActionState, ActionType, FurnitureAnimation};
@@ -131,6 +132,8 @@ pub struct Manager {
     pub anchored: Option<Forced>,
     /// The yaw smoothing's eased turn toward the movement (`m_bodyYaw`), `None` until it starts.
     pub body_yaw: Option<f32>,
+    /// `m_humanoidRace`.
+    pub humanoid: bool,
 }
 
 impl Default for Manager {
@@ -157,6 +160,7 @@ impl Default for Manager {
             bash_aim_fix: false,
             anchored: None,
             body_yaw: None,
+            humanoid: false,
         }
     }
 }
@@ -256,79 +260,118 @@ pub fn smooth_movement_offset(previous: Option<f32>, target: f32, speed: f32, ma
 }
 
 /// `BODY::Manager::AnchorCamera`, after the camera update: in first person the body's root is
-/// turned by the yaw smoothing and moved so the head sits `fAnchorForward` behind and `fAnchorUp`
-/// below the presented camera, less the state offsets. IC's first-person free look (its deadzone
-/// and head-track twist) needs the head-track target and `ProcessTracking`, not in the RE, and its
-/// foot IK and FSMP hand-off are later items; without them the deadzone never engages, as in IC
-/// with free look off.
+/// turned by the yaw smoothing or the free look's deadzone and moved so the head sits
+/// `fAnchorForward` behind and `fAnchorUp` below the presented camera, less the state offsets.
+/// IC's foot IK and FSMP hand-off are later items.
 pub fn anchor_camera(dt: f32) {
     if util::game_is_paused() {
         return;
     }
     let camera = camera_snapshot::get();
     let profile = *settings::profile();
-    with(|m| {
-        if camera.mode != CameraMode::First {
-            m.anchored = None;
-            m.body_yaw = None;
-            return;
-        }
-        if !profile.General.bEnableBody || camera.transition != CameraType::Unknown {
-            m.body_yaw = None;
-            return;
-        }
-        let Some(player) = util::player() else { return };
-        let Some(third) = player.third_person_root() else { return };
-        let (Some(head), Some(root)) = (util::actor_head(player), util::object_by_name(third, "NPC Root [Root]")) else { return };
-        let Some(parent) = (unsafe { root.parent.cast::<NiAVObject>().as_ref() }) else { return };
-        let body = profile.Body;
-        let drawn = !matches!(snapshot::get().hands, HandsType::None | HandsType::Sheath);
-        if !util::is_interacting(player) && !drawn && body.bYawSmoothing {
-            let right = point::mul_vec(&camera.rotation, [1.0, 0.0, 0.0]);
-            let look_yaw = normalize_radian(right[0].atan2(right[1]) - core::f32::consts::FRAC_PI_2);
-            let (x, y) = move_input();
-            let magnitude = x.hypot(y);
-            let move_angle = if magnitude > 0.1 { (if y >= 0.0 { x } else { -x }).atan2(y.abs()) } else { 0.0 };
-            let mut offset = smooth_movement_offset(m.body_yaw, move_angle, body.fYawSmoothingSpeed, body.fYawSmoothingMaxAngle, dt);
-            m.body_yaw = Some(offset);
-            let forward = point::mul_vec(&root.world_transform().rotation, [0.0, 1.0, 0.0]);
-            let body_yaw = forward[0].atan2(forward[1]);
-            if magnitude > 0.1
-                && let Some(spine) = util::object_by_name(third, "NPC Spine [Spn0]")
-            {
-                let spine_forward = point::mul_vec(&spine.world_transform().rotation, [0.0, 1.0, 0.0]);
-                let turn = normalize_radian(spine_forward[0].atan2(spine_forward[1]) - body_yaw);
-                let max = body.fYawSmoothingMaxAngle.abs().to_radians();
-                let total = normalize_radian(offset + turn);
-                if total > max {
-                    offset -= total - max;
-                } else if total < -max {
-                    offset -= total + max;
-                }
-            }
-            let delta = normalize_radian(look_yaw + offset - body_yaw);
-            if delta.abs() > 1e-5 {
-                let p = parent.world_transform().rotation;
-                let mut local = root.local_transform();
-                local.rotation = point::mul(&point::mul(&point::mul(&point::transpose(&p), &point::z_rotation(delta)), &p), &local.rotation);
-                root.set_local_transform(local);
-                root.update_transforms();
-            }
-        } else {
-            m.body_yaw = None;
-        }
-        let world = third.world_transform();
-        let nudge = anchor_offset(m, &profile);
-        let anchor = point::scale([-nudge[0], body.fAnchorForward - nudge[1], body.fAnchorUp - nudge[2]], world.scale);
-        let delta = point::sub(camera.position, point::add(head.world_transform().translation, point::mul_vec(&world.rotation, anchor)));
-        let parent = parent.world_transform();
-        let parent_scale = if parent.scale > 0.0001 { parent.scale } else { 1.0 };
-        let mut local = root.local_transform();
-        local.translation = point::add(local.translation, point::mul_vec(&point::transpose(&parent.rotation), point::scale(delta, 1.0 / parent_scale)));
-        root.set_local_transform(local);
-        root.update_transforms();
-        m.anchored = Some(Forced { translate: local.translation, rotate: local.rotation });
+    let mut events = [None; 2];
+    let release = with(|m| anchor(m, &camera, &profile, dt, &mut events));
+    for event in events {
+        free_look::send_turn_event(event);
+    }
+    if release {
+        free_look::release();
+    }
+}
+
+/// `AnchorCamera` under the body manager's lock; the turn events to send after it, and whether the
+/// free look's twist lets go.
+fn anchor(m: &mut Manager, camera: &camera_snapshot::Data, profile: &Profile, dt: f32, events: &mut [Option<&'static str>; 2]) -> bool {
+    let snap = |events: &mut [Option<&'static str>; 2]| events[1] = free_look::with(FreeLook::snap_body_yaw);
+    if camera.mode != CameraMode::First {
+        m.anchored = None;
+        m.body_yaw = None;
+        snap(events);
+        return true;
+    }
+    if !profile.General.bEnableBody || camera.transition != CameraType::Unknown {
+        m.body_yaw = None;
+        snap(events);
+        return true;
+    }
+    let nodes = util::player().and_then(|player| {
+        let third = player.third_person_root()?;
+        let head = util::actor_head(player)?;
+        let root = util::object_by_name(third, "NPC Root [Root]")?;
+        let parent = unsafe { root.parent.cast::<NiAVObject>().as_ref() }?;
+        Some((player, third, head, root, parent))
     });
+    let Some((player, third, head, root, parent)) = nodes else {
+        m.body_yaw = None;
+        snap(events);
+        return false;
+    };
+    let body = profile.Body;
+    let state = snapshot::get();
+    let look = free_look::with(|f| *f);
+    let free = body.bFreeLook && look.driving && !free_look::decide(&state).align;
+    let furniture = util::is_interacting(player);
+    let drawn = !matches!(state.hands, HandsType::None | HandsType::Sheath);
+    // Drawing while the deadzone holds the body turned eases it back to the camera first.
+    let unwinding = drawn && !furniture && body.bFreeLook && look.decoupled;
+    if !furniture && (!drawn || unwinding) && (body.bYawSmoothing || free || unwinding) {
+        let right = point::mul_vec(&camera.rotation, [1.0, 0.0, 0.0]);
+        let look_yaw = normalize_radian(right[0].atan2(right[1]) - core::f32::consts::FRAC_PI_2);
+        let (x, y) = move_input();
+        let magnitude = x.hypot(y);
+        let move_angle = if magnitude > 0.1 { (if y >= 0.0 { x } else { -x }).atan2(y.abs()) } else { 0.0 };
+        let mut offset = smooth_movement_offset(m.body_yaw, move_angle, body.fYawSmoothingSpeed, body.fYawSmoothingMaxAngle, dt);
+        m.body_yaw = Some(offset);
+        let forward = point::mul_vec(&root.world_transform().rotation, [0.0, 1.0, 0.0]);
+        let body_yaw = forward[0].atan2(forward[1]);
+        if magnitude > 0.1
+            && let Some(spine) = util::object_by_name(third, "NPC Spine [Spn0]")
+        {
+            let spine_forward = point::mul_vec(&spine.world_transform().rotation, [0.0, 1.0, 0.0]);
+            let turn = normalize_radian(spine_forward[0].atan2(spine_forward[1]) - body_yaw);
+            let max = body.fYawSmoothingMaxAngle.abs().to_radians();
+            let total = normalize_radian(offset + turn);
+            if total > max {
+                offset -= total - max;
+            } else if total < -max {
+                offset -= total + max;
+            }
+        }
+        let desired = normalize_radian(look_yaw + offset);
+        let delta = if unwinding || free {
+            let (target, event) = free_look::with(|f| f.update_body_yaw(desired, unwinding || magnitude > 0.1, &body, dt));
+            events[0] = event;
+            if unwinding && normalize_radian(desired - target).abs() < 1f32.to_radians() {
+                snap(events);
+            }
+            normalize_radian(target - body_yaw)
+        } else {
+            snap(events);
+            normalize_radian(desired - body_yaw)
+        };
+        if delta.abs() > 1e-5 {
+            let p = parent.world_transform().rotation;
+            let mut local = root.local_transform();
+            local.rotation = point::mul(&point::mul(&point::mul(&point::transpose(&p), &point::z_rotation(delta)), &p), &local.rotation);
+            root.set_local_transform(local);
+            root.update_transforms();
+        }
+    } else {
+        m.body_yaw = None;
+        snap(events);
+    }
+    let world = third.world_transform();
+    let nudge = anchor_offset(m, profile);
+    let anchor = point::scale([-nudge[0], body.fAnchorForward - nudge[1], body.fAnchorUp - nudge[2]], world.scale);
+    let delta = point::sub(camera.position, point::add(head.world_transform().translation, point::mul_vec(&world.rotation, anchor)));
+    let parent = parent.world_transform();
+    let parent_scale = if parent.scale > 0.0001 { parent.scale } else { 1.0 };
+    let mut local = root.local_transform();
+    local.translation = point::add(local.translation, point::mul_vec(&point::transpose(&parent.rotation), point::scale(delta, 1.0 / parent_scale)));
+    root.set_local_transform(local);
+    root.update_transforms();
+    m.anchored = Some(Forced { translate: local.translation, rotate: local.rotation });
+    false
 }
 
 impl Manager {
@@ -367,6 +410,7 @@ impl Manager {
             left_hand: self.left_hand,
             right_hand: self.right_hand,
             interaction: self.interaction,
+            humanoid: self.humanoid,
         }
     }
 
@@ -382,6 +426,7 @@ impl Manager {
         ];
         let kind = tagged.into_iter().rev().find(|(form, _)| *form == Some(id)).map_or_else(|| RaceType::from_u32(id), |(_, tag)| tag);
         self.race = RaceState { race: kind, offset: kind.offset(&profile.Race).map_or([0.0; 3], Offset::point) };
+        self.humanoid = race.as_form().keywords().iter().flatten().any(|k| k.editor_id() == Some(c"ActorTypeNPC"));
     }
 
     fn update_movement_state(&mut self, player: &PlayerCharacter, profile: &Profile) {
