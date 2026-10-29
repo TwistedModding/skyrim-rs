@@ -165,7 +165,9 @@ pub(crate) struct Table {
     pub action_fired: fn(usize) -> bool,
     pub action_key: fn(usize) -> Option<Hotkey>,
     pub action_held: fn(usize) -> bool,
+    pub action_released: fn(usize) -> Option<f32>,
     pub key_held: fn(u32) -> bool,
+    pub key_released: fn(u32) -> Option<f32>,
     pub game_mouse: fn() -> GameMouse,
     pub input_filter: DeclareFilterFn,
     pub filter_set_active: fn(usize, bool),
@@ -251,6 +253,14 @@ impl Host {
     #[must_use]
     pub fn key_held(&self, scan_code: u32) -> bool {
         (self.table.key_held)(scan_code)
+    }
+
+    /// The seconds the keyboard key with this scan code had been held when its release reached the
+    /// game, reported for one frame like [`mouse`](Self::mouse); `None` when it was not released.
+    /// For a tap-or-hold key, or a key the game's control map names (`ControlMapExt::mapped_key`).
+    #[must_use]
+    pub fn key_released(&self, scan_code: u32) -> Option<f32> {
+        (self.table.key_released)(scan_code)
     }
 
     /// Declares the input filter `<plugin>.<name>`: while it is active, button events whose user
@@ -421,6 +431,14 @@ impl Action {
     #[must_use]
     pub fn held(&self) -> bool {
         (self.table.action_held)(self.index)
+    }
+
+    /// The seconds the bound key had been held when its release reached the game, for the frame
+    /// after the release (as [`fired`](Self::fired) for the press); the modifiers may already be up.
+    /// `None` while the key is not released or the action is unbound.
+    #[must_use]
+    pub fn released(&self) -> Option<f32> {
+        (self.table.action_released)(self.index)
     }
 
     /// The key bound now; `None` while a conflict leaves the action unbound.

@@ -148,13 +148,22 @@ pub struct GameMouse {
     pub buttons: Vec<(u32, bool)>,
 }
 
-/// Key presses with who had each, and the game's mouse: those since the last present, and those
-/// the current present reports.
+/// What one present reports: key presses with who had each, the game's mouse and the keyboard
+/// releases that reached the game with the seconds each key was held.
+struct Reported {
+    presses: Vec<(Hotkey, Scope)>,
+    mouse: GameMouse,
+    releases: Vec<(u32, f32)>,
+}
+
+impl Reported {
+    const EMPTY: Self = Self { presses: Vec::new(), mouse: GameMouse { dx: 0, dy: 0, buttons: Vec::new() }, releases: Vec::new() };
+}
+
+/// Those since the last present, and those the current present reports.
 struct Presses {
-    pending: Vec<(Hotkey, Scope)>,
-    current: Vec<(Hotkey, Scope)>,
-    mouse_pending: GameMouse,
-    mouse_current: GameMouse,
+    pending: Reported,
+    current: Reported,
 }
 
 struct Pending {
@@ -172,7 +181,7 @@ struct Pending {
 
 static PENDING: Mutex<Pending> = Mutex::new(Pending { events: Vec::new(), modifiers: Modifiers::NONE, pointer: Pos2::ZERO, screen: Vec2::ZERO, pixels_per_point: 1.0, game_held: [false; 256], taken: [false; 256] });
 static KEYS: Mutex<Keys> = Mutex::new(Keys { toggle: Some(DEFAULT_TOGGLE), close: Some(DEFAULT_CLOSE), overlay: Vec::new(), capturing: false });
-static PRESSES: Mutex<Presses> = Mutex::new(Presses { pending: Vec::new(), current: Vec::new(), mouse_pending: GameMouse { dx: 0, dy: 0, buttons: Vec::new() }, mouse_current: GameMouse { dx: 0, dy: 0, buttons: Vec::new() } });
+static PRESSES: Mutex<Presses> = Mutex::new(Presses { pending: Reported::EMPTY, current: Reported::EMPTY });
 static LISTENER: OnceLock<fn(KeyUse)> = OnceLock::new();
 static FILTER: OnceLock<fn(&ButtonEvent) -> bool> = OnceLock::new();
 static INSTALLED: AtomicBool = AtomicBool::new(false);
@@ -223,7 +232,7 @@ pub fn filter_game_buttons(f: fn(&ButtonEvent) -> bool) {
 /// windows) to the start of the next.
 #[must_use]
 pub fn pressed(key: Hotkey, scope: Scope) -> bool {
-    PRESSES.lock().unwrap().current.contains(&(key, scope))
+    PRESSES.lock().unwrap().current.presses.contains(&(key, scope))
 }
 
 /// What the mouse did in the events that reached the game before this frame's present and after
@@ -231,7 +240,14 @@ pub fn pressed(key: Hotkey, scope: Scope) -> bool {
 /// A frame the overlay keeps from the game is not in it.
 #[must_use]
 pub fn game_mouse() -> GameMouse {
-    PRESSES.lock().unwrap().mouse_current.clone()
+    PRESSES.lock().unwrap().current.mouse.clone()
+}
+
+/// Whether the keyboard key `scan_code` was released in the game in the same window as
+/// [`game_mouse`], with the seconds it was held (the event's own count, from its press frame).
+#[must_use]
+pub fn game_key_released(scan_code: u32) -> Option<f32> {
+    PRESSES.lock().unwrap().current.releases.iter().rev().find(|(code, _)| *code == scan_code).map(|(_, held)| *held)
 }
 
 /// Whether the keyboard key `scan_code` is down in the game: its press reached the game and its
@@ -244,22 +260,31 @@ pub fn game_key_held(scan_code: u32) -> bool {
 /// Makes the presses since the last present the ones [`pressed`] reports; at the start of every present.
 pub(crate) fn begin_frame() {
     let mut presses = PRESSES.lock().unwrap();
-    presses.current = core::mem::take(&mut presses.pending);
-    presses.mouse_current = core::mem::take(&mut presses.mouse_pending);
+    presses.current = core::mem::replace(&mut presses.pending, Reported::EMPTY);
 }
 
-impl GameMouse {
-    /// Adds the mouse events of a frame's list.
+impl Reported {
+    /// Adds the mouse events and the keyboard releases of a frame's list that reached the game.
     fn record(&mut self, list: &InputEventList) {
-        for event in list.iter().filter(|e| InputDevice::from_u32(e.device) == Some(InputDevice::Mouse)) {
-            if let Some(m) = event.as_mouse_move() {
-                self.moved(m.dx.cast_signed(), m.dy.cast_signed());
-            } else if let Some(b) = event.as_button() {
-                self.button(b.idCode, b.value, b.heldDownSecs);
+        for event in list.iter() {
+            match (InputDevice::from_u32(event.device), event.as_button(), event.as_mouse_move()) {
+                (Some(InputDevice::Mouse), _, Some(m)) => self.mouse.moved(m.dx.cast_signed(), m.dy.cast_signed()),
+                (Some(InputDevice::Mouse), Some(b), _) => self.mouse.button(b.idCode, b.value, b.heldDownSecs),
+                (Some(InputDevice::Keyboard), Some(b), _) => self.key(b.idCode, b.value, b.heldDownSecs),
+                _ => {}
             }
         }
     }
 
+    /// A keyboard event: only the release frame, value 0 with the held time, is kept.
+    fn key(&mut self, scan_code: u32, value: f32, held_secs: f32) {
+        if value == 0.0 {
+            self.releases.push((scan_code, held_secs));
+        }
+    }
+}
+
+impl GameMouse {
     fn moved(&mut self, dx: i32, dy: i32) {
         self.dx = self.dx.saturating_add(dx);
         self.dy = self.dy.saturating_add(dy);
@@ -401,9 +426,9 @@ impl EventSink<InputEventList> for Gate {
             }
         }
         let mut recorded = PRESSES.lock().unwrap();
-        recorded.pending.extend(presses.into_iter().filter(|(_, scope)| *scope == Scope::Overlay || !stop));
+        recorded.pending.presses.extend(presses.into_iter().filter(|(_, scope)| *scope == Scope::Overlay || !stop));
         if !stop {
-            recorded.mouse_pending.record(list);
+            recorded.pending.record(list);
         }
         drop(recorded);
         if let Some(listener) = LISTENER.get() {
@@ -582,6 +607,16 @@ mod tests {
         m.button(8, 1.0, 0.0);
         m.button(0, 0.0, 0.2);
         assert_eq!(m, GameMouse { dx: 7, dy: 3, buttons: vec![(0, true), (8, true), (0, false)] });
+    }
+
+    #[test]
+    fn a_key_release_keeps_its_held_time() {
+        let mut r = Reported::EMPTY;
+        r.key(0x21, 1.0, 0.0);
+        r.key(0x21, 1.0, 0.1);
+        r.key(0x21, 0.0, 0.25);
+        r.key(0x12, 1.0, 0.0);
+        assert_eq!(r.releases, vec![(0x21, 0.25)]);
     }
 
     #[test]

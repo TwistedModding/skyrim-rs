@@ -174,6 +174,12 @@ pub(super) fn held(index: usize) -> bool {
     key(index).is_some_and(|k| key_held(k, overlay::game_key_held))
 }
 
+/// The seconds the action's key was held when it was released in the game this frame; the
+/// modifiers are not asked for, since they may be let go first.
+pub(super) fn released(index: usize) -> Option<f32> {
+    key(index).and_then(|k| overlay::game_key_released(k.scan_code))
+}
+
 fn key_held(key: Hotkey, down: impl Fn(u32) -> bool) -> bool {
     let either = |a, b| down(a) || down(b);
     down(key.scan_code) && (!key.shift || either(0x2A, 0x36)) && (!key.ctrl || either(0x1D, 0x9D)) && (!key.alt || either(0x38, 0xB8))
@@ -277,6 +283,7 @@ mod tests {
         assert_eq!(settings::get(NAME, "key.test.a"), Some(Setting::Text("Shift+K".to_owned())));
         assert_eq!(settings::get(NAME, "by.hand"), Some(Setting::Text("kept".to_owned())));
         assert!(!fired(a));
+        assert_eq!(released(a), None);
         let last = last_message();
         let c = declare("test", "c", "", Scope::Game);
         assert_eq!(key(c), None);

@@ -117,6 +117,9 @@ pub trait ControlMapExt {
     /// Every line of the parsed control map that maps key `id` of `device` (keyboard, mouse or
     /// gamepad): the context, the user event and the modifier key the line pairs with it (0 for none).
     fn user_events(&self, device: InputDevice, id: u32) -> Vec<(u32, String, u32)>;
+    /// The key of `device` the gameplay context maps to `user_event` (`"Toggle POV"`), with the
+    /// player's remaps once the control map has loaded them.
+    fn mapped_key(&self, user_event: &str, device: InputDevice) -> Option<u32>;
 }
 
 impl ControlMapExt for EventSourceHolder_User {
@@ -137,26 +140,28 @@ impl ControlMapExt for EventSourceHolder_User {
     }
 
     fn user_events(&self, device: InputDevice, id: u32) -> Vec<(u32, String, u32)> {
-        const LINKED: u32 = 0x7FFF_FFFF;
-        let mut found = Vec::new();
-        for (index, pointer) in (0u32..).zip(self.contexts.as_chunks::<8>().0) {
-            let Some(context) = (unsafe { (usize::from_le_bytes(*pointer) as *const sre::InputContext).as_ref() }) else { continue };
-            let mappings = match device {
-                InputDevice::Keyboard => &context.keyboardMappings,
-                InputDevice::Mouse => &context.mouseMappings,
-                InputDevice::Gamepad => &context.gamepadMappings,
-                _ => return found,
-            };
-            if mappings.data.is_null() {
-                continue;
-            }
-            let mappings = unsafe { core::slice::from_raw_parts(mappings.data.cast::<sre::UserEventMapping>(), mappings.size as usize) };
-            for m in mappings.iter().filter(|m| m.inputKey != LINKED && m.inputKey & 0xFFFF == id) {
-                found.push((index, BSFixedString::view(&m.userEvent).to_string(), m.inputKey >> 16));
-            }
-        }
-        found
+        mappings(self, device).filter(|(_, m)| m.inputKey & 0xFFFF == id).map(|(context, m)| (context, BSFixedString::view(&m.userEvent).to_string(), m.inputKey >> 16)).collect()
     }
+
+    fn mapped_key(&self, user_event: &str, device: InputDevice) -> Option<u32> {
+        mappings(self, device).find(|(context, m)| *context == 0 && *BSFixedString::view(&m.userEvent) == *user_event).map(|(_, m)| m.inputKey & 0xFFFF)
+    }
+}
+
+/// Every line of the parsed control map for `device`, with its context; linked lines left out.
+fn mappings(map: &EventSourceHolder_User, device: InputDevice) -> impl Iterator<Item = (u32, &sre::UserEventMapping)> {
+    const LINKED: u32 = 0x7FFF_FFFF;
+    (0u32..).zip(map.contexts.as_chunks::<8>().0).flat_map(move |(index, pointer)| {
+        let context = unsafe { (usize::from_le_bytes(*pointer) as *const sre::InputContext).as_ref() };
+        let lines = context.and_then(|c| match device {
+            InputDevice::Keyboard => Some(&c.keyboardMappings),
+            InputDevice::Mouse => Some(&c.mouseMappings),
+            InputDevice::Gamepad => Some(&c.gamepadMappings),
+            _ => None,
+        });
+        let lines = lines.filter(|l| !l.data.is_null()).map_or(&[][..], |l| unsafe { core::slice::from_raw_parts(l.data.cast::<sre::UserEventMapping>(), l.size as usize) });
+        lines.iter().filter(|m| m.inputKey != LINKED).map(move |m| (index, m))
+    })
 }
 
 /// The player's input handlers in the order they are offered every event: `Movement`, `Look`,
