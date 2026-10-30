@@ -31,6 +31,11 @@ impl<T> Owned<T> {
         *entries = Some(Arc::new(next));
     }
 
+    /// The owner of every callback, in registration order.
+    pub(crate) fn owners(&self) -> Vec<&'static str> {
+        self.snapshot().iter().flat_map(|v| v.iter()).map(|e| e.owner).collect()
+    }
+
     /// Calls `f` with every callback in registration order until it returns false. Registering
     /// from inside `f` is fine; removing is not (it would wait for this call).
     pub(crate) fn each(&self, mut f: impl FnMut(&T) -> bool) {
@@ -86,7 +91,9 @@ mod tests {
             *v != 2
         });
         assert_eq!(seen, [1, 2]);
+        assert_eq!(owned.owners(), ["a", "b", "a"]);
         assert_eq!(owned.remove_owner("a"), 2);
+        assert_eq!(owned.owners(), ["b"]);
         assert_eq!(owned.remove_owner("a"), 0);
         seen.clear();
         owned.each_mut(|v| seen.push(*v));

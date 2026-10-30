@@ -753,10 +753,21 @@ fn replace_command(owner: &'static str, name: &CStr, execute: ErasedExecute) -> 
     Ok(command.slot())
 }
 
-/// One line per command a plugin registered or replaced, for the console inspector.
+/// One line per event source the plugins' sinks are on, and one for the player's graph, with the
+/// owner of each handler in the order they run, for the console inspector.
+fn sink_lines() -> Vec<String> {
+    let line = |what: String, owners: Vec<&str>| (!owners.is_empty()).then(|| format!("sink on {what}: {}", owners.join(", ")));
+    let mut lines: Vec<String> = SINKS.lock().unwrap_or_else(PoisonError::into_inner).iter().filter_map(|s| line(format!("the source at {:#x}", s.source.address()), s.handlers.owners())).collect();
+    lines.extend(line("the player's graph".to_owned(), PLAYER_GRAPH.owners()));
+    lines
+}
+
+/// One line per command a plugin registered or replaced and per Papyrus native it bound, for the
+/// console inspector.
 fn command_lines() -> Vec<String> {
     let mut lines: Vec<String> = COMMANDS.lock().unwrap_or_else(PoisonError::into_inner).iter().map(|c| format!("command {} ({}): opcode {:#x}, in place of the unused {}", c.name, c.owner, c.erased.slot().opcode, c.erased.slot().replaced)).collect();
     lines.extend(REPLACED.lock().unwrap_or_else(PoisonError::into_inner).iter().map(|c| format!("command {} ({}): opcode {:#x}, the engine's execute {}", c.name, c.owner, c.replaced.slot().opcode, if c.replaced.active() { "replaced" } else { "restored" })));
+    lines.extend(NATIVES.lock().unwrap_or_else(PoisonError::into_inner).iter().map(|n| format!("native {}.{} ({})", n.class, n.name, n.owner)));
     lines
 }
 
@@ -821,12 +832,14 @@ mod tests {
         add_player_graph_sink("graph-b", record(2, BSEventNotifyControl::Stop));
         add_player_graph_sink("graph-a", record(4, BSEventNotifyControl::Continue));
         assert!(PLAYER_GRAPH_SINK.get().is_some());
+        assert!(sink_lines().contains(&"sink on the player's graph: graph-a, graph-b, graph-a".to_owned()));
         assert_eq!(dispatch(&PLAYER_GRAPH, core::ptr::null(), core::ptr::null()), BSEventNotifyControl::Stop);
         assert_eq!(SEEN.swap(0, Ordering::Relaxed), 3, "b stops the walk before a's second handler");
         assert!(detach("graph-b").contains(" 1 sinks"));
         assert_eq!(dispatch(&PLAYER_GRAPH, core::ptr::null(), core::ptr::null()), BSEventNotifyControl::Continue);
         assert_eq!(SEEN.swap(0, Ordering::Relaxed), 5);
         assert!(detach("graph-a").contains(" 2 sinks"));
+        assert!(!sink_lines().iter().any(|l| l.contains("player's graph")));
         assert_eq!(dispatch(&PLAYER_GRAPH, core::ptr::null(), core::ptr::null()), BSEventNotifyControl::Continue);
         assert_eq!(SEEN.load(Ordering::Relaxed), 0);
     }

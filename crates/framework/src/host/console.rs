@@ -1,7 +1,7 @@
 //! The console command `SkyrimRs`: `gui [n]` opens the overlay (on page `n`) and lists the pages,
 //! the framework plugins, the SKSE plugins, the plugin names served and the interfaces exported; `hooks` lists every hook site with its entry state
-//! and subscribers, every byte patch and the dispatcher's last messages; `commands` lists the console
-//! commands plugins registered or replaced; `toggle <id>` switches a subscriber or a patch; `keys`
+//! and subscribers, every byte patch, the plugins' event sinks and the dispatcher's last messages; `commands` lists the console
+//! commands plugins registered or replaced and the Papyrus natives they bound; `toggle <id>` switches a subscriber or a patch; `keys`
 //! lists the hotkeys and the input filters; `bind <n>` captures the next key pressed for hotkey `n` as the Settings tab's
 //! "Set" button does; `capture [n]` writes the next overlay frame to `skyrim-rs-overlay.bmp`
 //! (`skyrim-rs-overlay-<n>.bmp`) in the SKSE log folder.
@@ -9,7 +9,7 @@
 use skyrim::input::{Arg, CommandContext, Param};
 use sre::ScriptParamType;
 
-use super::{HOOKS, NAME, alias, command_lines, filters, flush_settings, gui, interface, keys, skse_plugins};
+use super::{HOOKS, NAME, alias, command_lines, filters, flush_settings, gui, interface, keys, sink_lines, skse_plugins};
 use crate::hooks::{Hooks, PatchId, PatchState, SiteReport, SubscriptionId};
 
 /// How a site's entry looked at install and looks now, the module behind another module's patch,
@@ -68,6 +68,7 @@ fn hook_lines() -> Vec<String> {
         lines.extend(site.entries.iter().map(|e| format!("  {e}")));
     }
     lines.extend(HOOKS.patches().iter().map(ToString::to_string));
+    lines.extend(sink_lines());
     lines.extend(HOOKS.messages().iter().map(|m| format!("message: {m}")));
     lines
 }
