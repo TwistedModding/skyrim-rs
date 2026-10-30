@@ -1,7 +1,8 @@
 //! Animation (subsystem pass 7): the pose write and world update hooks, a reference's graph event
 //! source, and what the generated holder, manager and graph methods leave `unsafe`: the graph
 //! variables a getter writes into an out-parameter, the graphs and bone nodes as slices, the pose
-//! the behaviour graph produced, and a graph from the bone array the pose hook receives.
+//! the behaviour graph produced, and a graph from the bone array the pose hook receives; an
+//! actor's face data, its input channels, expression override, eyes and blink (RE `camera.md` IC8 H).
 //!
 //! The pose is written on a job worker thread by `ApplyPoseToBoneNodes`, once per graph and
 //! frame, while the main thread draws; the world update of the skeleton runs after the draws, so
@@ -13,7 +14,7 @@
 use core::ffi::c_void;
 
 use sre::raw::fns;
-use sre::{BSAnimationGraphEvent, BSAnimationGraphManager, BShkbAnimationGraph, IAnimationGraphManagerHolder, NiAVObject, TESObjectREFR};
+use sre::{Actor, BSAnimationGraphEvent, BSAnimationGraphManager, BSFaceGenAnimationData, BSFaceGenKeyframeMultiple, BShkbAnimationGraph, FaceBlinkStage, IAnimationGraphManagerHolder, NiAVObject, TESObjectREFR};
 
 use crate::BSFixedString;
 use crate::events::BSTEventSource;
@@ -201,5 +202,107 @@ impl BShkbAnimationGraphExt for BShkbAnimationGraph {
     fn foot_ik_disabled(&self) -> Option<bool> {
         let driver = self.character.footIkDriver.cast::<u8>();
         (!driver.is_null()).then(|| unsafe { driver.add(FOOT_IK_DISABLED).read() } != 0)
+    }
+}
+
+/// A face channel group whose names the engine keeps in a table, the position being the index.
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum FaceChannel {
+    /// 16 phonemes (`Aah` .. `W`).
+    Phoneme,
+    /// 17 expressions (`DialogueAnger` .. `CombatShout`).
+    Expression,
+    /// 17 modifiers (`BlinkLeft` .. `HeadYaw`; 14-16 are head tracking).
+    Modifier,
+}
+
+/// The engine's names of a channel group (`g_FaceGenPhonemeNames`, `g_FaceGenExpressionNames`,
+/// `g_FaceGenModifierNames`; RE `camera.md` IC8 H).
+#[must_use]
+pub fn face_channel_names(channel: FaceChannel) -> Vec<String> {
+    let (table, count) = match channel {
+        FaceChannel::Phoneme => (sre::g_face_gen_phoneme_names(), 16),
+        FaceChannel::Expression => (sre::g_face_gen_expression_names(), 17),
+        FaceChannel::Modifier => (sre::g_face_gen_modifier_names(), 17),
+    };
+    (0..count)
+        .map(|i| {
+            let name = unsafe { table.add(i).read() }.cast::<core::ffi::c_char>();
+            if name.is_null() { String::new() } else { unsafe { core::ffi::CStr::from_ptr(name) }.to_string_lossy().into_owned() }
+        })
+        .collect()
+}
+
+/// The face animation data of an actor, through vtable slot 99 (`GetFaceGenAnimationData`, the
+/// face node's +0x150); `None` without a face. Main thread.
+#[must_use]
+pub fn face_data(actor: &Actor) -> Option<&BSFaceGenAnimationData> {
+    type GetFn = unsafe extern "C" fn(*const Actor) -> *const BSFaceGenAnimationData;
+    let get: GetFn = unsafe { core::mem::transmute(sre::vtable_entry(actor, 99)) };
+    unsafe { get(actor).as_ref() }
+}
+
+/// Writes a field of the packed face data, which the engine keeps aligned.
+fn put<T>(field: *const T, value: T) {
+    unsafe { field.cast_mut().write_volatile(value) };
+}
+
+fn write_values(channel: *const BSFaceGenKeyframeMultiple, values: &[f32]) {
+    let channel = unsafe { &*channel };
+    let count = (channel.count as usize).min(values.len());
+    if channel.values.is_null() || count == 0 {
+        return;
+    }
+    let target = channel.values.cast::<f32>();
+    for (i, value) in values.iter().take(count).enumerate() {
+        unsafe { target.add(i).write_volatile(*value) };
+    }
+    crate::store(&channel.isZero, 0);
+}
+
+pub trait BSFaceGenAnimationDataExt {
+    /// Writes the phoneme and modifier inputs from index 0 (as many as given and the channel holds)
+    /// under the data's lock, clearing each channel's all-zero flag so the morpher sees them.
+    fn set_inputs(&self, phonemes: &[f32], modifiers: &[f32]);
+    /// The expression held as Papyrus `SetExpressionOverride` holds it: the override lock
+    /// released, `SetExpression` (id 26594; index -1 to 16, weight 0 to 1), the lock set again so
+    /// the engine's mood and dialogue writes pass it by.
+    fn set_expression_override(&self, expression: i32, weight: f32);
+    /// Releases the override lock (`ClearExpressionOverride`).
+    fn clear_expression_override(&self);
+    /// The eyes' base heading and pitch, with the engine's emotion offsets held at zero.
+    fn hold_eyes(&self, heading: f32, pitch: f32);
+    /// Parks the blink state machine in its wait so the eyelids hold.
+    fn hold_blink(&self);
+}
+
+impl BSFaceGenAnimationDataExt for BSFaceGenAnimationData {
+    fn set_inputs(&self, phonemes: &[f32], modifiers: &[f32]) {
+        let lock = &raw const self.lock;
+        let _guard = crate::spin::SpinGuard::lock(unsafe { &*lock });
+        write_values(&raw const self.phonemeInput, phonemes);
+        write_values(&raw const self.modifierInput, modifiers);
+    }
+
+    fn set_expression_override(&self, expression: i32, weight: f32) {
+        put(&raw const self.expressionOverride, 0);
+        self.set_expression(expression, weight.clamp(0.0, 1.0));
+        put(&raw const self.expressionOverride, 1);
+    }
+
+    fn clear_expression_override(&self) {
+        put(&raw const self.expressionOverride, 0);
+    }
+
+    fn hold_eyes(&self, heading: f32, pitch: f32) {
+        put(&raw const self.eyeHeadingBase, heading);
+        put(&raw const self.eyePitchBase, pitch);
+        put(&raw const self.eyeHeadingOffset, 0.0);
+        put(&raw const self.eyePitchOffset, 0.0);
+    }
+
+    fn hold_blink(&self) {
+        put(&raw const self.blinkStage, FaceBlinkStage::Waiting as u32);
+        put(&raw const self.blinkTimer, 10.0);
     }
 }
