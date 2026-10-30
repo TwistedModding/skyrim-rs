@@ -245,6 +245,9 @@ fn load(host: &'static Host) -> bool {
                 if let Err(e) = host.register_command::<console::commands::Ic>() {
                     log(&format!("ic command refused: {e}"));
                 }
+                if let Err(e) = host.replace_command(c"SetCameraFOV", console::commands::set_camera_fov) {
+                    log(&format!("SetCameraFOV not replaced: {e}"));
+                }
             }
         }
         skse::MessagingInterface::POST_LOAD_GAME | skse::MessagingInterface::NEW_GAME => {
