@@ -782,8 +782,14 @@ fn pose(ui: &mut egui::Ui) -> bool {
             None => io::load_adjustment(&io::directory("Adjustments"), &file).map(|a| crate::camera::studio::adjustments::Adjustment { file: file.clone(), ..a }),
         };
         match loaded {
-            Ok(layer) => {
+            Ok(mut layer) => {
                 m.selected_adjustment = manager::with(|s| {
+                    if !file.starts_with("[SAM] ")
+                        && let Some(actor) = target.cast::<sre::Actor>()
+                    {
+                        layer.persistent = s.pose.is_actor_persistent(actor, &file) || s.pose.is_race_persistent(actor, &file);
+                        layer.include_in_pose &= !layer.persistent;
+                    }
                     let a = s.pose.get_or_create(&target);
                     a.stack.push(layer);
                     a.stack.len() - 1
@@ -955,6 +961,26 @@ fn layer_editor(ui: &mut egui::Ui, m: &mut Menu, s: &mut Manager, target: &sre::
         }
     });
     ui.checkbox(&mut layer.include_in_pose, "In Pose Export").on_hover_text("Bake this layer into saved pose files (turn off for skeleton fixes)");
+    let file = layer.file.clone();
+    let Some(actor) = target.cast::<sre::Actor>() else { return };
+    let has_file = !file.is_empty();
+    let (mut actor_persistent, mut race_persistent) = if has_file { (s.pose.is_actor_persistent(actor, &file), s.pose.is_race_persistent(actor, &file)) } else { (false, false) };
+    if let Some(layer) = s.pose.actors.get_mut(&target.formID).and_then(|a| a.stack.get_mut(m.selected_adjustment)) {
+        layer.persistent = actor_persistent || race_persistent;
+    }
+    ui.horizontal(|ui| {
+        ui.add_enabled_ui(has_file, |ui| {
+            if ui.checkbox(&mut actor_persistent, "Persist: Actor").on_hover_text("Skeleton adjustment: auto-applies to THIS character on every load, active outside Photo Mode").changed() {
+                s.pose.set_actor_persistent(actor, &file, actor_persistent);
+            }
+            if ui.checkbox(&mut race_persistent, "Persist: Race").on_hover_text("Race adjustment: auto-applies to every actor of this race+sex on load").changed() {
+                s.pose.set_race_persistent(actor, &file, race_persistent);
+            }
+        });
+        if !has_file {
+            ui.weak("(save the layer first)");
+        }
+    });
 }
 
 /// The Freeze / Unfreeze switch of the Pose page (a row) and the Bones page (a small button).

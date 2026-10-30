@@ -1,6 +1,6 @@
 //! `camera/studio/StudioIO`: the studio's files. Its own live in a folder of the port's
 //! (`Data\SKSE\Plugins\skyrim-rs\improved-camera\PhotoMode\`, with IC's layout: `Adjustments`,
-//! `Poses`, `Expressions`, `Lights`, `Scenes`, `Shots` and `Cameras.json`);
+//! `Poses`, `Expressions`, `Lights`, `Scenes`, `Shots`, `Cameras.json` and `Persistent.json`);
 //! Screen Archer Menu's pose, adjustment and face morph packs under `Data\SAM\` are only read. JSON
 //! as IC writes it (tab-indented, `version` 1).
 
@@ -275,6 +275,74 @@ pub fn load_adjustment(dir: &Path, name: &str) -> Result<Adjustment, String> {
         return Err(format!("Invalid adjustment file: {}", path.display()));
     }
     Ok(Adjustment { name: text_or(&json, "name", name), bones: bones(json.get("bones")), ..Adjustment::default() })
+}
+
+/// `Persistent.json`: the adjustment files each actor (by form key) and each race and sex
+/// (`EditorID|F`) gets whenever its 3D loads, outside the photo mode too.
+#[derive(Clone, Debug, Default, PartialEq, Eq)]
+pub struct Persistent {
+    pub actors: BTreeMap<String, Vec<String>>,
+    pub races: BTreeMap<String, Vec<String>>,
+}
+
+/// `HasAssignment`.
+#[must_use]
+pub fn has_assignment(map: &BTreeMap<String, Vec<String>>, key: &str, file: &str) -> bool {
+    map.get(key).is_some_and(|files| files.iter().any(|f| f == file))
+}
+
+/// `ToggleAssignment`: a key whose list empties goes; an empty key or file changes nothing.
+pub fn toggle_assignment(map: &mut BTreeMap<String, Vec<String>>, key: &str, file: &str, enable: bool) {
+    if key.is_empty() || file.is_empty() {
+        return;
+    }
+    let files = map.entry(key.to_owned()).or_default();
+    let at = files.iter().position(|f| f == file);
+    match at {
+        None if enable => files.push(file.to_owned()),
+        Some(i) if !enable => {
+            files.remove(i);
+        }
+        _ => {}
+    }
+    if files.is_empty() {
+        map.remove(key);
+    }
+}
+
+fn assignments_json(map: &BTreeMap<String, Vec<String>>) -> Json {
+    Json::Object(map.iter().map(|(k, files)| (k.clone(), Json::Array(files.iter().map(|f| Json::Text(f.clone())).collect()))).collect())
+}
+
+/// IC's `readMap`: entries that are not arrays and files that are not strings are skipped.
+fn assignments(json: Option<&Json>) -> BTreeMap<String, Vec<String>> {
+    members(json)
+        .iter()
+        .filter_map(|(key, files)| match files {
+            Json::Array(items) => Some((key.clone(), items.iter().filter_map(|i| if let Json::Text(f) = i { Some(f.clone()) } else { None }).collect())),
+            _ => None,
+        })
+        .collect()
+}
+
+/// `LoadPersistentConfig` from `dir`; empty when the file is missing.
+pub fn load_persistent(dir: &Path) -> Result<Persistent, String> {
+    let path = dir.join("Persistent.json");
+    if !path.is_file() {
+        return Ok(Persistent::default());
+    }
+    let json = read(&path)?;
+    if !matches!(json, Json::Object(_)) {
+        return Err(format!("Invalid persistent config: {}", path.display()));
+    }
+    Ok(Persistent { actors: assignments(json.get("actors")), races: assignments(json.get("races")) })
+}
+
+/// `SavePersistentConfig`.
+pub fn save_persistent(dir: &Path, persistent: &Persistent) -> Result<PathBuf, String> {
+    let json = object(vec![("version", Json::Number(FILE_VERSION)), ("actors", assignments_json(&persistent.actors)), ("races", assignments_json(&persistent.races))]);
+    let path = dir.join("Persistent.json");
+    write(&path, &json).map(|()| path)
 }
 
 /// `SavePose`: absolute local transforms per bone, the rotation as the exact matrix (`rotmat`, rows
@@ -911,6 +979,30 @@ mod tests {
         assert_eq!((third.spot, third.shadows, third.kind, third.animation, third.attach, third.color), (true, true, Kind::Point, Animation::None, Attach::World, [0.5, 1.0, 0.25]));
         std::fs::write(dir.join("Empty.json"), r#"{"type": "lightrig"}"#).unwrap();
         assert!(load_light_rig(&dir, "Empty", &resolve).is_err());
+        let _ = std::fs::remove_dir_all(&dir);
+    }
+
+    #[test]
+    fn persistent_assignments_toggle_and_round_trip() {
+        let dir = temp("persistent");
+        assert_eq!(load_persistent(&dir).unwrap(), Persistent::default());
+        let mut p = Persistent::default();
+        toggle_assignment(&mut p.actors, "Skyrim.esm|000A2C94", "Lydia fix", true);
+        toggle_assignment(&mut p.actors, "Skyrim.esm|000A2C94", "Lydia fix", true);
+        toggle_assignment(&mut p.races, "NordRace|F", "Tall", true);
+        toggle_assignment(&mut p.races, "NordRace|F", "Neck", true);
+        toggle_assignment(&mut p.races, "", "Neck", true);
+        assert_eq!(p.actors["Skyrim.esm|000A2C94"], ["Lydia fix"]);
+        assert!(has_assignment(&p.races, "NordRace|F", "Neck") && !has_assignment(&p.races, "NordRace|M", "Neck"));
+        save_persistent(&dir, &p).unwrap();
+        assert_eq!(load_persistent(&dir).unwrap(), p);
+        toggle_assignment(&mut p.actors, "Skyrim.esm|000A2C94", "Lydia fix", false);
+        assert!(p.actors.is_empty(), "an emptied key goes");
+        std::fs::write(dir.join("Persistent.json"), r#"{"version": 1, "actors": {"A|00000001": ["x", 2, "y"], "B|00000002": "z"}}"#).unwrap();
+        let read = load_persistent(&dir).unwrap();
+        assert_eq!((read.actors.len(), read.actors["A|00000001"].clone(), read.races.len()), (1, vec!["x".to_owned(), "y".to_owned()], 0));
+        std::fs::write(dir.join("Persistent.json"), "[]").unwrap();
+        assert!(load_persistent(&dir).is_err());
         let _ = std::fs::remove_dir_all(&dir);
     }
 

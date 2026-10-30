@@ -10,9 +10,9 @@
 //! for the anchored body, FSMP told when the body is camera-driven; the look limits, the sitting
 //! look-down limit, the body in interior rooms and the camera's fades skipped; IC's menu as the
 //! tab's sections, its profiles kept in the plugin's settings with the importer of IC's own files,
-//! its `ic` console command, and the photo mode (the studio: pose layers, the orbit camera, bone
-//! markers, guides, the light rig, the sun, colour grading, pose packs, bookmarks, scenes and PNG
-//! capture).
+//! its `ic` console command, and the photo mode (the studio: pose layers, persistent skeleton and
+//! race adjustments, the orbit camera, bone markers, guides, the light rig, the sun, colour
+//! grading, pose packs, bookmarks, scenes and PNG capture).
 
 mod api;
 mod body;
@@ -240,10 +240,11 @@ fn load(host: &'static Host) -> bool {
     host.on_message(|msg| match msg.kind {
         skse::MessagingInterface::DATA_LOADED => {
             plugin::detect_mods();
-            if let Some(host) = HOST.get()
-                && let Err(e) = host.register_command::<console::commands::Ic>()
-            {
-                log(&format!("ic command refused: {e}"));
+            if let Some(host) = HOST.get() {
+                event::game_event_manager::register(host);
+                if let Err(e) = host.register_command::<console::commands::Ic>() {
+                    log(&format!("ic command refused: {e}"));
+                }
             }
         }
         skse::MessagingInterface::POST_LOAD_GAME | skse::MessagingInterface::NEW_GAME => {
@@ -253,6 +254,7 @@ fn load(host: &'static Host) -> bool {
         }
         _ => {}
     });
+    event::game_event_manager::register(host);
     host.on_plugin_message(api::fsmp::SENDER, api::fsmp::handle_message);
     let _ = ZOOM.set(host.action("zoom", "", Scope::Game));
     let _ = FREE_CAMERA.set([host.action("free-camera-roll-left", "Q", Scope::Game), host.action("free-camera-roll-right", "E", Scope::Game), host.action("free-camera-reset", "R", Scope::Game)]);

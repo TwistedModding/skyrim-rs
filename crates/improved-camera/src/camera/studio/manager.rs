@@ -17,7 +17,7 @@ use skyrim::forms::TESFormExt;
 use skyrim::render::{NiAVObjectExt, NiNodeExt, Transform};
 use sre::{Actor, CameraState, FreeCameraState, InputContextEnum, NiAVObject, NiNode, TESObjectREFR};
 
-use super::adjustments::{PoseEngine, third_person_3d};
+use super::adjustments::{Adjustment, PoseEngine, third_person_3d};
 use super::capture::{self, Capture, Step};
 use super::environment;
 use super::io::{self, CameraBookmark, Scene, SceneActor, SceneSun};
@@ -1016,6 +1016,8 @@ pub fn on_global_update() {
     if util::is_menu_open("Loading Menu") {
         return;
     }
+    let loaded = core::mem::take(&mut *LOADED.lock().unwrap_or_else(std::sync::PoisonError::into_inner));
+    loaded.into_iter().for_each(on_actor_loaded);
     with(|m| {
         if m.active {
             m.update_orbit_camera();
@@ -1031,6 +1033,40 @@ pub fn on_global_update() {
         let jobs = m.lights.take_jobs();
         m.tasks.extend(jobs.into_iter().map(Task::Light));
     });
+}
+
+/// Form ids of the references whose 3D loaded since the last tick.
+static LOADED: Mutex<Vec<u32>> = Mutex::new(Vec::new());
+
+/// From the object-loaded sink, on the sending thread: the reference is looked at on the next tick.
+pub fn queue_loaded(form_id: u32) {
+    LOADED.lock().unwrap_or_else(std::sync::PoisonError::into_inner).push(form_id);
+}
+
+/// `OnActorLoaded`: an actor's persistent skeleton and race adjustments put on it (and the ones
+/// its assignments no longer cover taken off) whenever its 3D loads; the files are read outside
+/// the session's lock.
+fn on_actor_loaded(id: u32) {
+    let Some(reference) = sre::find_form_by_id(id).and_then(|f| f.cast::<TESObjectREFR>()) else { return };
+    let Some(actor) = reference.cast::<Actor>() else { return };
+    let pending = with(|m| m.pose.persistent_pending(actor));
+    if pending.is_empty() {
+        return;
+    }
+    let dir = io::directory("Adjustments");
+    let layers: Vec<Adjustment> = pending
+        .into_iter()
+        .filter_map(|file| match io::load_adjustment(&dir, &file) {
+            Ok(layer) => Some(Adjustment { file, persistent: true, include_in_pose: false, ..layer }),
+            Err(e) => {
+                crate::log(&format!("<Photo Mode> {e}"));
+                None
+            }
+        })
+        .collect();
+    if !layers.is_empty() {
+        with(|m| m.pose.add_persistent(reference, layers));
+    }
 }
 
 /// For an unload: the bones handed back to the animation, the rig's references removed and the

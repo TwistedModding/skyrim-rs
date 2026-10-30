@@ -9,8 +9,9 @@ use std::collections::{BTreeMap, HashMap};
 use skyrim::actors::{ActorExt, PlayerCharacterExt, RefHandle, TESObjectREFRExt};
 use skyrim::forms::TESFormExt;
 use skyrim::render::{NiAVObjectExt, Transform, from_euler_xyz, to_euler_xyz};
-use sre::{Actor, ActorState_flags1, NiAVObject, PlayerCharacter, TESObjectREFR};
+use sre::{Actor, ActorState_flags1, NiAVObject, PlayerCharacter, TESNPC, TESObjectREFR};
 
+use super::io::{self, Persistent};
 use crate::util::point::{self, M3, P3};
 use crate::util::skyrim_util as util;
 
@@ -316,6 +317,23 @@ pub struct PoseEngine {
     pending_freeze: BTreeMap<u32, (RefHandle, u32)>,
     /// Unfreezes retried until the actor resolves.
     pending_unfreeze: BTreeMap<u32, RefHandle>,
+    /// `Persistent.json`, read on first use.
+    persistent: Option<Persistent>,
+}
+
+/// `ActorKey`: the actor's plugin and local id; empty for one created at runtime, which has no
+/// file and no id that survives a save.
+#[must_use]
+pub fn actor_key(actor: &Actor) -> String {
+    super::environment::form_key(actor.formID)
+}
+
+/// `RaceKey`: the race's editor id (races keep theirs on this runtime) and the base's sex.
+#[must_use]
+pub fn race_key(actor: &Actor) -> String {
+    let (Some(race), Some(npc)) = (actor.race(), actor.base_object().and_then(|b| b.cast::<TESNPC>())) else { return String::new() };
+    let editor_id = race.editor_id().map_or_else(|| "UnknownRace".to_owned(), |id| id.to_string_lossy().into_owned());
+    format!("{editor_id}|{}", if npc.get_sex() == 1 { "F" } else { "M" })
 }
 
 fn is_moving(actor: &Actor) -> bool {
@@ -435,6 +453,108 @@ impl PoseEngine {
         self.actors.retain(|_, a| a.handle.lookup().is_some() || !a.stack.iter().all(|l| l.persistent && !l.file.is_empty()));
         for adjustments in self.actors.values_mut() {
             adjustments.apply(apply_all);
+        }
+    }
+
+    /// `EnsurePersistentConfig`.
+    fn config(&mut self) -> &mut Persistent {
+        self.persistent.get_or_insert_with(|| {
+            let config = io::load_persistent(&io::directory("")).unwrap_or_else(|e| {
+                crate::log(&format!("<Photo Mode> Persistent config load failed: {e}"));
+                Persistent::default()
+            });
+            crate::log(&format!("<Photo Mode> Persistent config: {} actor(s), {} race(s)", config.actors.len(), config.races.len()));
+            config
+        })
+    }
+
+    fn save_config(&mut self) {
+        let config = self.config().clone();
+        if let Err(e) = io::save_persistent(&io::directory(""), &config) {
+            crate::log(&format!("<Photo Mode> {e}"));
+        }
+    }
+
+    #[must_use]
+    pub fn is_actor_persistent(&mut self, actor: &Actor, file: &str) -> bool {
+        io::has_assignment(&self.config().actors, &actor_key(actor), file)
+    }
+
+    #[must_use]
+    pub fn is_race_persistent(&mut self, actor: &Actor, file: &str) -> bool {
+        io::has_assignment(&self.config().races, &race_key(actor), file)
+    }
+
+    /// `SetActorPersistent`: the file follows this actor through every load.
+    pub fn set_actor_persistent(&mut self, actor: &Actor, file: &str, enable: bool) {
+        io::toggle_assignment(&mut self.config().actors, &actor_key(actor), file, enable);
+        self.save_config();
+        self.sync_assignment(file, actor.formID);
+    }
+
+    /// `SetRacePersistent`: the file goes on every actor of this race and sex as it loads.
+    pub fn set_race_persistent(&mut self, actor: &Actor, file: &str, enable: bool) {
+        io::toggle_assignment(&mut self.config().races, &race_key(actor), file, enable);
+        self.save_config();
+        self.sync_assignment(file, actor.formID);
+    }
+
+    /// `SyncAssignment`: the stacks of the loaded actors follow the config at once. An assigned
+    /// actor's copies become persistent (and leave pose exports); the edited actor keeps its layer,
+    /// no longer persistent; elsewhere the auto-applied copies go and their bones are handed back.
+    fn sync_assignment(&mut self, file: &str, keep: u32) {
+        if file.is_empty() {
+            return;
+        }
+        let config = self.config().clone();
+        for (id, adjustments) in &mut self.actors {
+            let Some(reference) = adjustments.handle.lookup() else { continue };
+            let Some(actor) = reference.cast::<Actor>() else { continue };
+            let assigned = io::has_assignment(&config.actors, &actor_key(actor), file) || io::has_assignment(&config.races, &race_key(actor), file);
+            let copies = adjustments.stack.iter_mut().filter(|l| l.file == file);
+            if assigned {
+                for layer in copies {
+                    layer.persistent = true;
+                    layer.include_in_pose = false;
+                }
+            } else if *id == keep {
+                copies.for_each(|layer| layer.persistent = false);
+            } else {
+                let before = adjustments.stack.len();
+                adjustments.stack.retain(|l| !(l.file == file && l.persistent));
+                if adjustments.stack.len() != before {
+                    crate::log(&format!("<Photo Mode> Persistent adjustment '{file}' removed from {id:08X}"));
+                }
+            }
+        }
+    }
+
+    /// `OnActorLoaded`'s first half: the persistent layers the config no longer covers come off
+    /// (an actor away when its assignment went still carries one), and the assigned files not on
+    /// the actor yet are returned to be read.
+    pub fn persistent_pending(&mut self, actor: &Actor) -> Vec<String> {
+        let config = self.config();
+        let mut assigned: Vec<String> = config.actors.get(&actor_key(actor)).into_iter().chain(config.races.get(&race_key(actor))).flatten().cloned().collect();
+        if let Some(existing) = self.actors.get_mut(&actor.formID) {
+            let before = existing.stack.len();
+            existing.stack.retain(|l| !l.persistent || assigned.contains(&l.file));
+            if existing.stack.len() != before {
+                crate::log(&format!("<Photo Mode> {} stale persistent layer(s) removed from {:08X} on load", before - existing.stack.len(), actor.formID));
+            }
+            assigned.retain(|f| !existing.stack.iter().any(|l| l.file == *f));
+        }
+        assigned
+    }
+
+    /// `OnActorLoaded`'s last half: the layers read, unless a layer of the same file got there meanwhile.
+    pub fn add_persistent(&mut self, reference: &TESObjectREFR, layers: Vec<Adjustment>) {
+        let id = reference.formID;
+        let adjustments = self.get_or_create(reference);
+        for layer in layers {
+            if !adjustments.stack.iter().any(|l| l.file == layer.file) {
+                crate::log(&format!("<Photo Mode> Persistent adjustment '{}' applied to {id:08X}", layer.file));
+                adjustments.stack.push(layer);
+            }
         }
     }
 }
