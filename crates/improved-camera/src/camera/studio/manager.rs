@@ -5,6 +5,7 @@
 //! the HUD painter. Pose layers apply every frame in every camera state (outside the studio only the
 //! persistent ones, unless edits are kept on exit).
 
+use std::collections::BTreeMap;
 use std::sync::Mutex;
 use std::time::Duration;
 
@@ -19,7 +20,7 @@ use sre::{Actor, CameraState, FreeCameraState, InputContextEnum, NiAVObject, NiN
 use super::adjustments::{PoseEngine, third_person_3d};
 use super::capture::{self, Capture, Step};
 use super::environment;
-use super::io::{self, CameraBookmark};
+use super::io::{self, CameraBookmark, Scene, SceneActor, SceneSun};
 use super::gear::GearEngine;
 use super::shaders::{self, Applied, ShaderEngine};
 use crate::settings;
@@ -763,6 +764,91 @@ impl Manager {
     #[must_use]
     pub fn is_collision_disabled(&self, id: u32) -> bool {
         self.positioning.collision_off.contains(&id)
+    }
+
+    /// `RequestCollision`: one reference's collision, for a scene's restore.
+    pub fn request_collision(&mut self, reference: &TESObjectREFR, disabled: bool) {
+        self.positioning.collision_requests.push((reference.handle(), disabled));
+    }
+
+    /// `CaptureScene`: the framing, the environment and one entry per actor the studio touched,
+    /// keyed by plugin and local id (an actor created at runtime has no file and is left out).
+    #[must_use]
+    pub fn capture_scene(&self) -> Scene {
+        fn entry(actors: &mut BTreeMap<u32, SceneActor>, id: u32) -> Option<&mut SceneActor> {
+            if let std::collections::btree_map::Entry::Vacant(slot) = actors.entry(id) {
+                let key = environment::form_key(id);
+                let actor = sre::find_form_by_id(id).and_then(|f| f.cast::<TESObjectREFR>()).filter(|r| r.cast::<Actor>().is_some())?;
+                if key.is_empty() {
+                    return None;
+                }
+                slot.insert(SceneActor { key, name: shown_name(actor), ..SceneActor::default() });
+            }
+            actors.get_mut(&id)
+        }
+        let mut actors = BTreeMap::new();
+        for (id, adjustments) in &self.pose.actors {
+            if let Some(e) = entry(&mut actors, *id) {
+                e.layers.extend(adjustments.stack.iter().filter(|l| !l.persistent).cloned());
+            }
+        }
+        for id in self.pose.frozen_actors() {
+            if let Some(e) = entry(&mut actors, id) {
+                e.frozen = true;
+            }
+        }
+        for (id, mask) in self.gear.snapshot() {
+            if let Some(e) = entry(&mut actors, id) {
+                e.hidden_gear = mask;
+            }
+        }
+        for &id in &self.positioning.collision_off {
+            if let Some(e) = entry(&mut actors, id) {
+                e.collision_off = true;
+            }
+        }
+        let sun = environment::get_sun();
+        Scene {
+            camera: Self::read_camera_pose().bookmark(String::new()),
+            hour: Some(environment::hour()),
+            weather: Some(environment::form_key(self.forced_weather)).filter(|k| self.forced_weather != 0 && !k.is_empty()),
+            sun: sun.enabled.then_some(SceneSun { azimuth: sun.azimuth, elevation: sun.elevation }),
+            actors: actors.into_values().collect(),
+        }
+    }
+
+    /// `ApplyScene`: the hour and weather when it sets them, the sun only when it carries one; the
+    /// collision of earlier scenes handed back, then each actor's layers (persistent ones kept),
+    /// freeze, hidden gear and collision; then the camera.
+    pub fn apply_scene(&mut self, scene: &Scene) {
+        if let Some(hour) = scene.hour {
+            self.set_hour(hour);
+        }
+        if let Some(key) = &scene.weather {
+            self.force_weather(environment::resolve_form_key(key), false);
+        }
+        if let Some(sun) = scene.sun {
+            environment::set_sun(environment::SunOverride { enabled: true, azimuth: sun.azimuth, elevation: sun.elevation });
+        }
+        self.restore_collision();
+        let mut restored = 0;
+        for saved in &scene.actors {
+            let id = environment::resolve_form_key(&saved.key);
+            let Some(reference) = sre::find_form_by_id(id).and_then(|f| f.cast::<TESObjectREFR>()) else {
+                crate::log(&format!("<Photo Mode> Scene actor '{}' ({}) is not present in this save", saved.name, saved.key));
+                continue;
+            };
+            let Some(actor) = reference.cast::<Actor>() else { continue };
+            let stack = &mut self.pose.get_or_create(reference).stack;
+            stack.retain(|l| l.persistent);
+            stack.extend(saved.layers.iter().cloned());
+            self.pose.set_actor_frozen(actor, saved.frozen);
+            self.gear.set_hidden_mask(actor, saved.hidden_gear);
+            self.request_collision(reference, saved.collision_off);
+            restored += 1;
+        }
+        self.request_camera_pose(CameraPose::from(&scene.camera), true, true, true, true);
+        crate::log(&format!("<Photo Mode> Scene applied ({restored}/{} actors)", scene.actors.len()));
     }
 
     /// `SetFootIKDisabled`: the graph bool the engine's per-actor foot IK switch reads, set on the

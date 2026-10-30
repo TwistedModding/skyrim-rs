@@ -19,7 +19,7 @@ use crate::camera::studio::adjustments::{axis_angle, degrees_from_rotation, rota
 use crate::camera::studio::capture::ASPECT_NAMES;
 use crate::camera::studio::environment::{self, ImodInfo};
 use crate::camera::studio::idles::{self, PosePack};
-use crate::camera::studio::io::{self, CameraBookmark, SamPack, Scene, SceneSun};
+use crate::camera::studio::io::{self, CameraBookmark, SamPack};
 use crate::camera::studio::manager::{self, CameraPose, Manager};
 use crate::camera::studio::{gear, node_names, shaders};
 use crate::util::point;
@@ -1102,21 +1102,14 @@ fn scenes(ui: &mut egui::Ui) -> bool {
     let m = guard.get_or_insert_with(Menu::default);
     let dir = io::directory("Scenes");
     let files = m.scene_files.get_or_insert_with(|| io::list_files(&dir));
-    ui.weak("A scene here is the camera framing, the hour, the forced weather and the sun override.");
+    ui.weak("Save or restore the whole shot: every posed actor, the camera and the environment.");
     title(ui, "Save");
     let mut saved = false;
     ui.horizontal(|ui| {
         ui.add(egui::TextEdit::singleline(&mut m.scene_save_name).hint_text("Scene name...").desired_width(ui.available_width() * 0.55));
         if ui.button("Save Scene").clicked() {
             let name = io::sanitize_file_name(&if m.scene_save_name.is_empty() { format!("Scene {}", files.len() + 1) } else { m.scene_save_name.clone() });
-            let sun = environment::get_sun();
-            let forced = manager::with(|s| s.forced_weather);
-            let scene = Scene {
-                camera: Manager::read_camera_pose().bookmark(String::new()),
-                hour: Some(environment::hour()),
-                weather: Some(environment::form_key(forced)).filter(|k| forced != 0 && !k.is_empty()),
-                sun: sun.enabled.then_some(SceneSun { azimuth: sun.azimuth, elevation: sun.elevation }),
-            };
+            let scene = manager::with(|s| s.capture_scene());
             match io::save_scene(&dir, &scene, &name) {
                 Ok(path) => {
                     crate::log(&format!("<Photo Mode> Saved scene: {}", path.display()));
@@ -1141,7 +1134,7 @@ fn scenes(ui: &mut egui::Ui) -> bool {
                 m.selected_scene.clone_from(file);
                 let mut notes = Vec::new();
                 match io::load_scene(&dir, file, &mut notes) {
-                    Ok(scene) => apply_scene(&scene),
+                    Ok(scene) => manager::with(|s| s.apply_scene(&scene)),
                     Err(e) => notes.push(e),
                 }
                 log_all(notes);
@@ -1156,24 +1149,6 @@ fn scenes(ui: &mut egui::Ui) -> bool {
         m.scene_files = None;
     }
     false
-}
-
-/// `ApplyScene`, for what a scene carries here: the hour and the weather when it sets them, the sun
-/// only when it sets one, then the camera.
-fn apply_scene(scene: &Scene) {
-    manager::with(|m| {
-        if let Some(hour) = scene.hour {
-            m.set_hour(hour);
-        }
-        if let Some(key) = &scene.weather {
-            m.force_weather(environment::resolve_form_key(key), false);
-        }
-    });
-    if let Some(sun) = scene.sun {
-        environment::set_sun(environment::SunOverride { enabled: true, azimuth: sun.azimuth, elevation: sun.elevation });
-    }
-    let pose = CameraPose::from(&scene.camera);
-    manager::with(|m| m.request_camera_pose(pose, true, true, true, true));
 }
 
 fn idle_page(ui: &mut egui::Ui) -> bool {

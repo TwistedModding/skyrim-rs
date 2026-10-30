@@ -110,6 +110,12 @@ impl GearEngine {
         self.actors.get(&id).is_some_and(|e| e.hidden & slot.bit() != 0)
     }
 
+    /// `Snapshot`: the actors with something hidden, and what.
+    #[must_use]
+    pub fn snapshot(&self) -> Vec<(u32, u32)> {
+        self.actors.iter().filter(|(_, e)| e.hidden != 0).map(|(id, e)| (*id, e.hidden)).collect()
+    }
+
     /// `SetHiddenMask`.
     pub fn set_hidden_mask(&mut self, actor: &Actor, mask: u32) {
         let entry = self.actors.entry(actor.formID).or_insert(Entry { handle: actor.handle(), hidden: 0, applied: 0 });

@@ -359,6 +359,12 @@ impl PoseEngine {
         self.frozen.contains_key(&id) || self.pending_freeze.contains_key(&id)
     }
 
+    /// `FrozenActors`: staged freezes count too.
+    #[must_use]
+    pub fn frozen_actors(&self) -> Vec<u32> {
+        self.frozen.keys().chain(self.pending_freeze.keys().filter(|id| !self.frozen.contains_key(id))).copied().collect()
+    }
+
     /// `UnfreezeAll`: through the pending set, so an unresolvable actor keeps retrying.
     pub fn unfreeze_all(&mut self) {
         crate::log(&format!("<Photo Mode> UnfreezeAll: {} actors", self.frozen.len() + self.pending_freeze.len()));

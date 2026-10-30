@@ -82,6 +82,13 @@ fn f32_or(json: &Json, key: &str, default: f32) -> f32 {
     as_f32(json.get(key)).unwrap_or(default)
 }
 
+fn bool_or(json: &Json, key: &str, default: bool) -> bool {
+    match json.get(key) {
+        Some(Json::Bool(v)) => *v,
+        _ => default,
+    }
+}
+
 fn text_or(json: &Json, key: &str, default: &str) -> String {
     match json.get(key) {
         Some(Json::Text(v)) => v.clone(),
@@ -98,6 +105,13 @@ fn read_triple(json: &Json, key: &str, out: &mut P3) -> bool {
         }
     }
     true
+}
+
+fn members_of(json: &Json) -> &[Json] {
+    match json {
+        Json::Array(items) => items,
+        _ => &[],
+    }
 }
 
 fn members(json: Option<&Json>) -> &[(String, Json)] {
@@ -135,6 +149,32 @@ fn bones_json(bones: &BTreeMap<String, BoneDelta>) -> Json {
 
 fn bones(json: Option<&Json>) -> BTreeMap<String, BoneDelta> {
     members(json).iter().map(|(n, e)| (n.clone(), bone_delta(e))).collect()
+}
+
+/// `LayerToJson`: a whole layer with its flags, as a scene keeps it.
+fn layer_json(layer: &Adjustment) -> Json {
+    object(vec![
+        ("name", Json::Text(layer.name.clone())),
+        ("file", Json::Text(layer.file.clone())),
+        ("enabled", Json::Bool(layer.enabled)),
+        ("isPose", Json::Bool(layer.is_pose)),
+        ("persistent", Json::Bool(layer.persistent)),
+        ("includeInPose", Json::Bool(layer.include_in_pose)),
+        ("bones", bones_json(&layer.bones)),
+    ])
+}
+
+/// `LayerFromJson`.
+fn layer(json: &Json) -> Adjustment {
+    Adjustment {
+        name: text_or(json, "name", "Adjustment"),
+        file: text_or(json, "file", ""),
+        enabled: bool_or(json, "enabled", true),
+        is_pose: bool_or(json, "isPose", false),
+        persistent: bool_or(json, "persistent", false),
+        include_in_pose: bool_or(json, "includeInPose", true),
+        bones: bones(json.get("bones")),
+    }
 }
 
 /// `SaveAdjustment`: one layer's deltas as `<dir>\<name>.json`.
@@ -440,14 +480,56 @@ pub fn parse_form_key(key: &str) -> Option<(&str, u32)> {
     Some((plugin, u32::from_str_radix(local, 16).ok()?))
 }
 
-/// What of IC's scene the port restores: the camera, the hour, the forced weather (a form key) and
-/// the sun. IC's actors and lights are still read past, their blocks noted.
+/// One actor of a scene (`Scene::Actor`): keyed by plugin and local id, so the scene loads into
+/// another save; its non-persistent layers with their flags.
+#[derive(Clone, Debug, Default, PartialEq)]
+pub struct SceneActor {
+    pub key: String,
+    /// Shown only; the key decides.
+    pub name: String,
+    pub frozen: bool,
+    pub collision_off: bool,
+    pub hidden_gear: u32,
+    pub layers: Vec<Adjustment>,
+}
+
+/// What of IC's scene the port restores: the camera, the hour, the forced weather (a form key),
+/// the sun and the actors. IC's lights are still read past, their block noted.
 #[derive(Clone, Debug, Default, PartialEq)]
 pub struct Scene {
     pub camera: CameraBookmark,
     pub hour: Option<f32>,
     pub weather: Option<String>,
     pub sun: Option<SceneSun>,
+    pub actors: Vec<SceneActor>,
+}
+
+fn scene_actor_json(actor: &SceneActor) -> Json {
+    object(vec![
+        ("actor", Json::Text(actor.key.clone())),
+        ("name", Json::Text(actor.name.clone())),
+        ("frozen", Json::Bool(actor.frozen)),
+        ("collisionOff", Json::Bool(actor.collision_off)),
+        ("hiddenGear", Json::Number(f64::from(actor.hidden_gear))),
+        ("layers", Json::Array(actor.layers.iter().map(layer_json).collect())),
+    ])
+}
+
+#[allow(clippy::cast_possible_truncation, clippy::cast_sign_loss)]
+fn scene_actor(json: &Json) -> Option<SceneActor> {
+    let key = text_or(json, "actor", "");
+    if key.is_empty() {
+        return None;
+    }
+    let layers = match json.get("layers") {
+        Some(Json::Array(items)) => items.iter().filter(|l| matches!(l, Json::Object(_))).map(layer).collect(),
+        _ => Vec::new(),
+    };
+    let hidden_gear = match json.get("hiddenGear") {
+        Some(Json::Number(v)) => *v as u32,
+        _ => 0,
+    };
+    Some(SceneActor { key, name: text_or(json, "name", ""), frozen: bool_or(json, "frozen", false), collision_off: bool_or(json, "collisionOff", false), hidden_gear, layers })
 }
 
 pub fn save_scene(dir: &Path, scene: &Scene, name: &str) -> Result<PathBuf, String> {
@@ -461,7 +543,7 @@ pub fn save_scene(dir: &Path, scene: &Scene, name: &str) -> Result<PathBuf, Stri
     if let Some(sun) = scene.sun {
         fields.push(("sun", object(vec![("azimuth", num(sun.azimuth)), ("elevation", num(sun.elevation))])));
     }
-    fields.push(("actors", Json::Array(Vec::new())));
+    fields.push(("actors", Json::Array(scene.actors.iter().map(scene_actor_json).collect())));
     let path = dir.join(format!("{name}.json"));
     write(&path, &object(fields)).map(|()| path)
 }
@@ -477,15 +559,20 @@ pub fn load_scene(dir: &Path, name: &str, notes: &mut Vec<String>) -> Result<Sce
         camera: json.get("camera").map(|c| camera(c, "")).unwrap_or_default(),
         hour: as_f32(json.get("hour")).filter(|h| *h >= 0.0),
         weather: Some(text_or(&json, "weather", "")).filter(|w| !w.is_empty()),
+        actors: match json.get("actors") {
+            Some(Json::Array(items)) => items.iter().filter_map(scene_actor).collect(),
+            _ => Vec::new(),
+        },
         ..Scene::default()
     };
     if let Some(sun) = json.get("sun").filter(|s| matches!(s, Json::Object(_))) {
         scene.sun = Some(SceneSun { azimuth: f32_or(sun, "azimuth", 0.0), elevation: f32_or(sun, "elevation", 0.0) });
     }
-    for key in ["actors", "lights"] {
-        if matches!(json.get(key), Some(Json::Array(a)) if !a.is_empty()) {
-            notes.push(format!("{name}: the scene's {key} are not restored here"));
-        }
+    if matches!(json.get("lights"), Some(Json::Array(a)) if !a.is_empty()) {
+        notes.push(format!("{name}: the scene's lights are not restored here"));
+    }
+    if json.get("actors").is_some_and(|a| members_of(a).iter().any(|e| e.get("face").is_some())) {
+        notes.push(format!("{name}: the scene's faces are not restored here"));
     }
     Ok(scene)
 }
@@ -566,15 +653,18 @@ mod tests {
         let shots = vec![CameraBookmark { name: "Shot 1".into(), position: [10.0, -20.5, 300.0], pitch: 0.1, yaw: 3.0, roll: -5.0, fov: 55.0 }, CameraBookmark { name: "Wide".into(), ..CameraBookmark::default() }];
         save_camera_bookmarks(&dir, &shots).unwrap();
         assert_eq!(load_camera_bookmarks(&dir), shots);
-        let scene = Scene { camera: CameraBookmark { name: String::new(), ..shots[0].clone() }, hour: Some(18.5), weather: Some("Skyrim.esm|0000081A".into()), sun: Some(SceneSun { azimuth: 135.0, elevation: 20.0 }) };
+        let layer = Adjustment { name: "Lean".into(), file: "lean".into(), enabled: false, is_pose: true, persistent: false, include_in_pose: false, bones: BTreeMap::from([("NPC Head [Head]".to_owned(), BoneDelta { rotation: [5.0, 0.0, -10.0], ..BoneDelta::default() })]) };
+        let lydia = SceneActor { key: "Skyrim.esm|000A2C94".into(), name: "Lydia".into(), frozen: true, collision_off: true, hidden_gear: 0b10_0001, layers: vec![layer] };
+        let scene = Scene { camera: CameraBookmark { name: String::new(), ..shots[0].clone() }, hour: Some(18.5), weather: Some("Skyrim.esm|0000081A".into()), sun: Some(SceneSun { azimuth: 135.0, elevation: 20.0 }), actors: vec![lydia] };
         save_scene(&dir, &scene, "Dusk").unwrap();
         let mut notes = Vec::new();
         assert_eq!(load_scene(&dir, "Dusk", &mut notes).unwrap(), scene);
         assert_eq!(notes, Vec::<String>::new());
-        std::fs::write(dir.join("Ic.json"), r#"{"type": "scene", "camera": {"fov": 40}, "hour": 6.5, "actors": [{"actor": "Skyrim.esm|00000007"}], "lights": []}"#).unwrap();
+        std::fs::write(dir.join("Ic.json"), r#"{"type": "scene", "camera": {"fov": 40}, "hour": 6.5, "actors": [{"actor": "Skyrim.esm|00000007", "face": {}}, {"name": "no key"}], "lights": [{}]}"#).unwrap();
         let ic = load_scene(&dir, "Ic", &mut notes).unwrap();
         assert!((ic.camera.fov - 40.0).abs() < f32::EPSILON && ic.sun.is_none() && ic.hour == Some(6.5) && ic.weather.is_none());
-        assert_eq!(notes, ["Ic: the scene's actors are not restored here"]);
+        assert_eq!(notes, ["Ic: the scene's lights are not restored here", "Ic: the scene's faces are not restored here"]);
+        assert_eq!(ic.actors, [SceneActor { key: "Skyrim.esm|00000007".into(), ..SceneActor::default() }], "an actor without a key is skipped");
         assert_eq!(parse_form_key("Skyrim.esm|0000081A"), Some(("Skyrim.esm", 0x81a)));
         assert_eq!(parse_form_key("Skyrim.esm"), None);
         std::fs::write(dir.join("Pose.json"), r#"{"type": "pose"}"#).unwrap();
