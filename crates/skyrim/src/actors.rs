@@ -2,8 +2,8 @@
 //! lookup returns, and what the generated `TESObjectREFR`, `InventoryChanges`, `TESContainer`,
 //! `TESFullName` and `ActorValueList` methods leave `unsafe`: the handle out-parameter, the
 //! inventory list, the base container's entries, the full name as `&CStr`, the actor value table
-//! as a slice and a lookup by name; the mount a rider sits on and the process lists' high actor
-//! handles.
+//! as a slice and a lookup by name; the mount a rider sits on, the motion mode and the process lists'
+//! high actor handles.
 //!
 //! Read and write on the game's main thread, as with forms.
 
@@ -14,7 +14,7 @@ use std::ffi::CString;
 use std::fmt;
 
 use sre::raw::{fns, globals};
-use sre::{AIProcess, Actor, ActorValue, ActorValueInfo, ActorValueList, ContainerEntry, InventoryChanges, InventoryEntry, NiAVObject, PlayerCharacter, TESContainer, TESFullName, TESObjectREFR};
+use sre::{AIProcess, Actor, ActorValue, ActorValueInfo, ActorValueList, ContainerEntry, InventoryChanges, InventoryEntry, MotionDriveMode, NiAVObject, PlayerCharacter, TESContainer, TESFullName, TESObjectREFR};
 
 use crate::ptr_slice;
 
@@ -101,6 +101,10 @@ pub trait ActorExt {
     /// The mount the actor rides through `Actor::GetMountRef` (id 38702), which fills a counted
     /// pointer; `None` when the actor rides nothing.
     fn mount(&self) -> Option<RefPtr>;
+    /// The movement controller's motion mode (`MovementControllerNPC`+0x1c0, the value
+    /// `IsMotionDriven` tests; RE `camera.md` request IC8 M); `None` without a controller or for a
+    /// value outside the enum.
+    fn motion_mode(&self) -> Option<MotionDriveMode>;
 }
 
 impl ActorExt for Actor {
@@ -117,6 +121,11 @@ impl ActorExt for Actor {
         let mut out: *mut TESObjectREFR = core::ptr::null_mut();
         unsafe { self.get_mount_ref((&raw mut out).cast()) };
         NonNull::new(out).map(RefPtr)
+    }
+
+    fn motion_mode(&self) -> Option<MotionDriveMode> {
+        let controller = unsafe { self.movementController.as_ref() }?;
+        MotionDriveMode::from_u32(controller.motionMode)
     }
 }
 

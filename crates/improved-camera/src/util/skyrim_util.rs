@@ -7,7 +7,7 @@ use skyrim::actors::{RefHandle, RefPtr};
 use skyrim::physics::{self, Hit};
 use skyrim::prelude::*;
 use skyrim::ui::Value;
-use sre::{Actor, ActorAttackState, ActorSitSleepState, ActorState_flags1, ActorWeaponState, BodyPartType, CameraState, CollisionLayer, ControlGroupFlag, DisablePOVType, EventSourceHolder_MenuOpenClose, EventSourceHolder_User, MenuTopicManager, NiAVObject, PlayerCamera, PlayerCharacter, PlayerControls, PlayerInputHandler, TESForm, TESObjectREFR, ThirdPersonState};
+use sre::{Actor, ActorAttackState, ActorSitSleepState, ActorState_flags1, ActorWeaponState, BodyPartType, CameraState, CollisionLayer, ControlGroupFlag, DisablePOVType, EventSourceHolder_MenuOpenClose, EventSourceHolder_User, MenuTopicManager, MotionDriveMode, NiAVObject, PlayerCamera, PlayerCharacter, PlayerControls, PlayerInputHandler, TESForm, TESObjectREFR, ThirdPersonState};
 
 use crate::util::point::{self, M3, P3};
 
@@ -429,10 +429,14 @@ pub fn is_beast_mode() -> bool {
     sre::g_menu_controls().menuHotkeysDisabled != 0
 }
 
-/// `Is_ScriptMode`, without the movement controller's test (its field is not in the RE): outside
-/// beast form, the movement controls are off (IC's POV script lock test reduces to that).
+/// `Is_ScriptMode`: outside beast form, the movement controls are off (IC's POV script lock test
+/// reduces to that), or, not sitting, the movement controller is animation-driven (motion mode 0).
 pub fn is_script_mode() -> bool {
-    player().is_some() && !is_beast_mode() && !movement_controls_enabled()
+    let Some(player) = player() else { return false };
+    if is_beast_mode() {
+        return false;
+    }
+    !movement_controls_enabled() || (!is_sitting(player) && player.motion_mode() == Some(MotionDriveMode::AnimationDriven))
 }
 
 /// Writes a reference's pitch (`data.angle.x`); the reference's fields are unaligned.
