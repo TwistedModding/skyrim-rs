@@ -27,7 +27,9 @@ pub enum Kind {
     Spot,
 }
 
-/// Animated intensity, also a flag of the base form.
+/// Animated intensity, also a flag of the base form. IC's slow variants are bits the engine does
+/// not slow anything with: 0x40 alone does not flicker, 0x100 pulses as 0x80 does from the same
+/// speed field (RE `camera.md` IC9 H), so they name forms carrying those bits.
 #[derive(Clone, Copy, Debug, Default, PartialEq, Eq)]
 pub enum Animation {
     #[default]
@@ -84,9 +86,9 @@ impl Animation {
         match self {
             Self::None => "Steady",
             Self::Flicker => "Flicker",
-            Self::FlickerSlow => "Flicker (slow)",
+            Self::FlickerSlow => "Flicker (variant bit)",
             Self::Pulse => "Pulse",
-            Self::PulseSlow => "Pulse (slow)",
+            Self::PulseSlow => "Pulse (variant bit)",
         }
     }
 }
@@ -126,11 +128,14 @@ pub fn index_of<T: PartialEq>(all: &[T], value: &T) -> u32 {
     all.iter().position(|v| v == value).and_then(|i| u32::try_from(i).ok()).unwrap_or(0)
 }
 
-/// `TESObjectLIGH` flags the rig reads (RE `camera.md` IC8 E; `sre`'s flag rows).
-const SPOT: u32 = Flags::SPOT.bits() | Flags::SHADOW_SPOT.bits();
+/// `TESObjectLIGH` flags as the engine reads them (RE `camera.md` IC8 E, IC9 H). The engine's spot
+/// is the spot shadow 0x400, a cone of the form's angle (+0xf4); nothing reads 0x200, `sre`'s
+/// `SPOT` row.
+const SPOT: u32 = Flags::SHADOW_SPOT.bits();
 const SHADOW: u32 = Flags::SHADOW_SPOT.bits() | Flags::SHADOW_HEMISPHERE.bits() | Flags::SHADOW_OMNI.bits();
-/// The engine's inline "no flicker" test is `(flags & 0x1c8) == 0`: no flicker or pulse bit.
-const ANIMATED: u32 = 0x1c8;
+/// What animates a light: flicker 0x8, pulse 0x80 or 0x100 (`UpdateLightFlicker`). The engine's
+/// inline 0x1c8 test, which also counts 0x40, is cell bookkeeping.
+const ANIMATED: u32 = Flags::FLICKER.bits() | Flags::PULSE.bits() | Flags::PULSE_VARIANT.bits();
 
 /// The form is the single truth for whether a light aims: a negative spot still is one.
 #[must_use]
@@ -156,14 +161,14 @@ pub const fn kind_of(flags: u32) -> Kind {
 #[must_use]
 pub const fn score(flags: u32, shadows: bool, animation: Animation) -> i32 {
     let shadow = if casts_shadows(flags) == shadows { 4 } else { 0 };
-    let bit = match animation {
+    let bits = match animation {
         Animation::None => return shadow + if flags & ANIMATED == 0 { 2 } else { 0 },
         Animation::Flicker => Flags::FLICKER.bits(),
-        Animation::FlickerSlow => Flags::FLICKER_VARIANT.bits(),
+        Animation::FlickerSlow => Flags::FLICKER.bits() | Flags::FLICKER_VARIANT.bits(),
         Animation::Pulse => Flags::PULSE.bits(),
         Animation::PulseSlow => Flags::PULSE_VARIANT.bits(),
     };
-    shadow + if flags & bit != 0 { 2 } else { 0 }
+    shadow + if flags & bits == bits { 2 } else { 0 }
 }
 
 /// A loaded light form, as the rig and the form browser see it.
@@ -845,15 +850,18 @@ mod tests {
 
     #[test]
     fn flags_decode_as_the_engine_reads_them() {
-        assert!(is_spot(0x200) && is_spot(0x400) && !is_spot(0x800));
+        assert!(is_spot(0x400) && !is_spot(0x200) && !is_spot(0x800));
         assert!(casts_shadows(0x400) && casts_shadows(0x800) && casts_shadows(0x1000) && !casts_shadows(0x200));
         assert_eq!(kind_of(0x1400), Kind::Spot);
+        assert_eq!(kind_of(0x200), Kind::Point, "nothing reads 0x200");
         assert_eq!(score(0, false, Animation::None), 6);
-        for animated in [0x8, 0x40, 0x80, 0x100] {
-            assert_eq!(score(animated, false, Animation::None), 4, "{animated:#x} is not 'no flicker'");
+        assert_eq!(score(0x40, false, Animation::None), 6, "0x40 alone does not flicker");
+        for animated in [0x8, 0x80, 0x100] {
+            assert_eq!(score(animated, false, Animation::None), 4, "{animated:#x} animates");
         }
         assert_eq!(score(0x0408, true, Animation::Flicker), 6);
-        assert_eq!(score(0x0040, false, Animation::FlickerSlow), 6);
+        assert_eq!(score(0x0048, false, Animation::FlickerSlow), 6);
+        assert_eq!(score(0x0040, false, Animation::FlickerSlow), 4, "the variant bit without flicker");
         assert_eq!(score(0x0080, true, Animation::Pulse), 2);
         assert_eq!(score(0x1100, true, Animation::PulseSlow), 6);
         let carried = FormInfo { flags: 0x2, ..form(1, 0x2) };
@@ -864,10 +872,10 @@ mod tests {
     #[test]
     fn forms_are_picked_by_kind_then_score() {
         let forms = [form(1, 0x2), form(2, 0x8), form(3, 0x400), form(4, 0x200), form(5, 0), form(6, 0x1000)];
-        assert_eq!(pick_form(&forms, Kind::Point, false, Animation::None).map(|f| f.form_id), Some(5));
+        assert_eq!(pick_form(&forms, Kind::Point, false, Animation::None).map(|f| f.form_id), Some(4), "0x200 is a plain point");
         assert_eq!(pick_form(&forms, Kind::Point, false, Animation::Flicker).map(|f| f.form_id), Some(2));
         assert_eq!(pick_form(&forms, Kind::Point, true, Animation::None).map(|f| f.form_id), Some(6));
-        assert_eq!(pick_form(&forms, Kind::Spot, false, Animation::None).map(|f| f.form_id), Some(4));
+        assert_eq!(pick_form(&forms, Kind::Spot, false, Animation::None).map(|f| f.form_id), Some(3), "every spot casts shadows");
         assert_eq!(pick_form(&forms, Kind::Spot, true, Animation::None).map(|f| f.form_id), Some(3));
         assert!(can_match(&forms, Kind::Spot, true, Animation::None) && !can_match(&forms, Kind::Spot, true, Animation::Pulse));
         assert!(!has_form_for(&forms[..1], Kind::Point));

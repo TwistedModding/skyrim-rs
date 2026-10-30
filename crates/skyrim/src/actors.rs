@@ -198,34 +198,34 @@ pub fn references_in_radius(cell: &TESObjectCELL, origin: [f32; 3], radius: f32)
 
 /// The live references within `radius` of `center`, disabled and deleted ones left out, through
 /// `TES::ForEachReferenceInRadiusOfRef` (id 13701): `center`'s cell when that is an interior, else
-/// the loaded cells of its worldspace (RE `camera.md` IC8 C). Main thread.
+/// the loaded cells of its worldspace (RE `camera.md` IC8 C). Its first argument is never read
+/// and is passed null (IC9 H). Main thread.
 #[must_use]
 pub fn references_around(center: &TESObjectREFR, radius: f32) -> Vec<RefHandle> {
     let mut found: Vec<*mut TESObjectREFR> = Vec::new();
     let origin = NiPoint3 { x: center.posX, y: center.posY, z: center.posZ, __engine: sre::Engine::new() };
-    let tes = sre::TES::singleton().map_or(core::ptr::null_mut(), |t| core::ptr::from_ref(t).cast_mut().cast());
-    unsafe { sre::TES::for_each_reference_in_radius_of_ref(tes, core::ptr::from_ref(center).cast_mut(), radius, &raw const origin, radius, collect as *const c_void, (&raw mut found).cast()) };
+    unsafe { sre::TES::for_each_reference_in_radius_of_ref(core::ptr::null_mut(), core::ptr::from_ref(center).cast_mut(), radius, &raw const origin, radius, collect as *const c_void, (&raw mut found).cast()) };
     live_handles(found)
 }
 
 /// Places a new reference of `base` at `at`'s position and angles, in its cell and worldspace, as
-/// Papyrus `PlaceAtMe` places each copy (`TESDataHandler::CreateReferenceAtLocation`, id 13723;
-/// RE `camera.md` IC8 D); `persist` is the native's force-persist flag. `None` when the engine
-/// placed nothing. Main thread.
+/// Papyrus `PlaceAtMe` places a plain base form at 0xa46f0c: `TESDataHandler::CreateReferenceAtLocation`
+/// (id 13723) with no existing reference, primitive or linked reference, `persist` as the
+/// force-persist flag and the last flag set (RE `camera.md` IC9 H; the call has no count, the
+/// native calls it once per copy). `None` when the engine placed nothing. Main thread.
 #[must_use]
 pub fn place_at_me(at: &TESObjectREFR, base: &TESBoundObject, persist: bool) -> Option<RefHandle> {
-    type CreateFn = unsafe extern "C" fn(*const c_void, *mut u32, *const TESBoundObject, *const NiPoint3, *const NiPoint3, *mut TESObjectCELL, *const sre::TESWorldSpace, *mut TESObjectREFR, *mut c_void, *mut c_void, bool, bool) -> *mut u32;
-    let holder = crate::reloc().address(globals::g_TESDataHandler_ptr).ok()? as *const *const c_void;
+    let holder = crate::reloc().address(globals::g_TESDataHandler_ptr).ok()? as *const *mut c_void;
     let data = unsafe { *holder };
     if data.is_null() {
         return None;
     }
-    let create: CreateFn = unsafe { crate::engine_fn(fns::TESDataHandler__CreateReferenceAtLocation) };
     let position = (&raw const at.posX).cast::<NiPoint3>();
     let angles = (&raw const at.rotX).cast::<NiPoint3>();
-    let worldspace = at.get_worldspace().map_or(core::ptr::null(), core::ptr::from_ref);
-    let mut handle = 0;
-    unsafe { create(data, &raw mut handle, base, position, angles, at.parentCell, worldspace, core::ptr::null_mut(), core::ptr::null_mut(), core::ptr::null_mut(), persist, true) };
+    let worldspace = at.get_worldspace().map_or(core::ptr::null_mut(), |w| core::ptr::from_ref(w).cast_mut());
+    let mut handle = RefHandle::INVALID.0;
+    let base = core::ptr::from_ref(base).cast_mut();
+    unsafe { sre::TESDataHandler::create_reference_at_location(data, (&raw mut handle).cast(), base, position, angles, at.parentCell, worldspace, core::ptr::null_mut(), core::ptr::null_mut(), 0, persist, true) };
     Some(RefHandle(handle)).filter(|h| *h != RefHandle::INVALID)
 }
 
