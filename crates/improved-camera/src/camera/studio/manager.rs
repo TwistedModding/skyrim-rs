@@ -9,6 +9,8 @@ use std::sync::Mutex;
 use std::time::Duration;
 
 use skyrim::actors::{PlayerCharacterExt, RefHandle, TESObjectREFRExt};
+use skyrim::physics;
+use skyrim::render::NiSkinInstanceExt;
 use skyrim::camera::{PlayerCameraExt, TESCameraStateExt};
 use skyrim::forms::TESFormExt;
 use skyrim::render::{NiAVObjectExt, NiNodeExt, Transform};
@@ -123,6 +125,99 @@ pub struct BonePoint {
     pub rotate: [[f32; 3]; 3],
     pub parent_rotate: [[f32; 3]; 3],
     pub parent_scale: f32,
+    /// A loaded mesh skins to it or something hangs under it: editing it shows.
+    pub used: bool,
+}
+
+/// An actor or object in reach of the camera (`NearbyActor`, `NearbyObject`).
+#[derive(Clone, Debug)]
+pub struct Nearby {
+    pub handle: RefHandle,
+    pub name: String,
+    pub distance: f32,
+}
+
+/// The objects list keeps the nearest hundred.
+const MAX_OBJECTS: usize = 100;
+
+/// A reference's placement for the undo stack (`PositionSnapshot`).
+#[derive(Clone, Copy, Debug)]
+struct Placement {
+    handle: RefHandle,
+    position: P3,
+    angle: P3,
+    scale: f32,
+}
+
+impl Placement {
+    fn of(reference: &TESObjectREFR) -> Self {
+        Self { handle: reference.handle(), position: util::position(reference), angle: [reference.rotX, reference.rotY, reference.rotZ], scale: scale_of(reference) }
+    }
+}
+
+fn scale_of(reference: &TESObjectREFR) -> f32 {
+    f32::from(reference.refScale) / 100.0
+}
+
+/// The UI's placement requests, applied on the game tick (`Positioning`).
+#[derive(Debug, Default)]
+#[allow(clippy::struct_excessive_bools)]
+struct Positioning {
+    position: Option<P3>,
+    angle: Option<P3>,
+    scale: Option<f32>,
+    undo: bool,
+    push_undo: bool,
+    toggle_collision: bool,
+    undo_stack: Vec<Placement>,
+    /// Form ids of the references whose collision the studio turned off.
+    collision_off: std::collections::BTreeSet<u32>,
+    /// Per-reference collision changes (a scene's restore).
+    collision_requests: Vec<(RefHandle, bool)>,
+}
+
+/// An actor's 3D follows its character controller, so it moves with it; the rest move as the
+/// console moves them.
+fn move_ref(reference: &TESObjectREFR, position: P3) {
+    physics::move_reference(reference, position);
+}
+
+/// Actors turn through their heading and clamped pitch setters, other references by their angles.
+fn rotate_ref(reference: &TESObjectREFR, angle: P3) {
+    if let Some(actor) = reference.cast::<Actor>() {
+        actor.set_heading(angle[2]);
+        sre::set_clamped_pitch(actor, angle[0]);
+    } else {
+        let [x, y, z] = angle;
+        reference.set_angles(&sre::NiPoint3 { x, y, z, __engine: sre::Engine::new() });
+    }
+    physics::sync_3d(reference);
+}
+
+/// `GetDisplayFullName`, else IC's fallbacks (`RefDisplayName`, `FormLabel`).
+fn shown_name(reference: &TESObjectREFR) -> String {
+    reference.display_name().map(|n| n.to_string_lossy().into_owned()).filter(|n| !n.is_empty()).unwrap_or_else(|| display_name(Some(reference)))
+}
+
+/// The names of the nodes under `object` a skinned geometry deforms with or that hold geometry
+/// below them (`RefreshSnapshots`' used-bone walk); true when `object`'s subtree has geometry.
+fn collect_used(object: &NiAVObject, used: &mut std::collections::HashSet<String>) -> bool {
+    let name = |o: &NiAVObject| skyrim::BSFixedString::view(&o.name).to_str().filter(|n| !n.is_empty()).map(str::to_owned);
+    if let Some(geometry) = object.cast::<sre::BSGeometry>() {
+        if let Some(skin) = unsafe { geometry.skinInstance.as_ref() } {
+            used.extend(skin.bones().iter().flatten().filter_map(|b| name(b)));
+        }
+        return true;
+    }
+    let Some(node) = object.cast::<NiNode>() else { return false };
+    let mut has_geometry = false;
+    for child in node.children().iter().flatten() {
+        has_geometry |= collect_used(child, used);
+    }
+    if has_geometry && let Some(n) = name(object) {
+        used.insert(n);
+    }
+    has_geometry
 }
 
 /// What waits for the frame callback (IC's game-thread tasks).
@@ -133,6 +228,7 @@ enum Task {
     Event(u32, &'static str),
     OwnedEvent(u32, String),
     Imod { previous: u32, next: u32, strength: f32 },
+    FootIk(u32, bool),
 }
 
 #[derive(Debug, Default)]
@@ -153,6 +249,12 @@ pub struct Manager {
     orbit: Orbit,
     intent: CameraIntent,
     pub bones: Vec<BonePoint>,
+    pub nearby: Vec<Nearby>,
+    pub objects: Vec<Nearby>,
+    snapshot_tick: u32,
+    positioning: Positioning,
+    /// Handles of the actors whose foot IK the studio switched off.
+    foot_ik_off: std::collections::BTreeSet<u32>,
     tasks: Vec<Task>,
 }
 
@@ -203,7 +305,7 @@ fn collect_bones(object: &NiAVObject, depth: u32, out: &mut Vec<BonePoint>) {
     {
         let world: Transform = object.world_transform();
         let parent = unsafe { object.parent.cast::<NiAVObject>().as_ref() }.map(NiAVObjectExt::world_transform);
-        out.push(BonePoint { name: name.to_owned(), world: world.translation, rotate: world.rotation, parent_rotate: parent.map_or(point::IDENTITY, |p| p.rotation), parent_scale: parent.map_or(1.0, |p| p.scale) });
+        out.push(BonePoint { name: name.to_owned(), world: world.translation, rotate: world.rotation, parent_rotate: parent.map_or(point::IDENTITY, |p| p.rotation), parent_scale: parent.map_or(1.0, |p| p.scale), used: false });
     }
     for child in node.children().iter().flatten() {
         collect_bones(child, depth + 1, out);
@@ -303,7 +405,12 @@ impl Manager {
         self.apply_hud_preference();
         environment::release_sun();
         self.clear_imod();
+        self.restore_collision();
+        for handle in core::mem::take(&mut self.foot_ik_off) {
+            self.tasks.push(Task::FootIk(handle, false));
+        }
         if settings::profile().Studio.bRevertOnExit {
+            self.pose.unfreeze_all();
             for adjustments in self.pose.actors.values_mut() {
                 adjustments.revert_all();
             }
@@ -550,13 +657,194 @@ impl Manager {
         skyrim::store(&free.yaw, yaw);
     }
 
-    /// `RefreshSnapshots`: the target's bones every tick, for the markers and the bone list.
-    fn refresh_bones(&mut self) {
+    /// `RefreshSnapshots`: the nearby lists four times a second, the target's bones (and which a
+    /// mesh uses) every tick, for the markers and the bone list.
+    fn refresh_snapshots(&mut self) {
+        self.snapshot_tick = self.snapshot_tick.wrapping_add(1);
+        if self.snapshot_tick.is_multiple_of(15) {
+            let radius = settings::profile().Studio.fNearbyRadius;
+            self.nearby = nearby_actors(radius);
+            self.objects = nearby_objects(radius);
+        }
         self.bones.clear();
         if let Some(root) = self.target().filter(|t| t.cast::<Actor>().is_some()).and_then(|t| third_person_3d(&t)) {
             collect_bones(root, 0, &mut self.bones);
+            let mut used = std::collections::HashSet::new();
+            collect_used(root, &mut used);
+            for bone in &mut self.bones {
+                bone.used = used.contains(&bone.name);
+            }
         }
     }
+
+    pub fn request_position(&mut self, position: P3) {
+        self.positioning.position = Some(position);
+    }
+
+    /// Radians.
+    pub fn request_angle(&mut self, angle: P3) {
+        self.positioning.angle = Some(angle);
+    }
+
+    pub fn request_scale(&mut self, scale: f32) {
+        self.positioning.scale = Some(scale);
+    }
+
+    pub fn push_undo(&mut self) {
+        self.positioning.push_undo = true;
+    }
+
+    pub fn undo(&mut self) {
+        self.positioning.undo = true;
+    }
+
+    #[must_use]
+    pub fn undo_depth(&self) -> usize {
+        self.positioning.undo_stack.len()
+    }
+
+    pub fn toggle_collision(&mut self) {
+        self.positioning.toggle_collision = true;
+    }
+
+    #[must_use]
+    pub fn is_collision_disabled(&self, id: u32) -> bool {
+        self.positioning.collision_off.contains(&id)
+    }
+
+    /// `SetFootIKDisabled`: the graph bool the engine's per-actor foot IK switch reads, set on the
+    /// next frame.
+    pub fn set_foot_ik_disabled(&mut self, actor: &Actor, disabled: bool) {
+        let handle = actor.handle().0;
+        if disabled {
+            self.foot_ik_off.insert(handle);
+        } else {
+            self.foot_ik_off.remove(&handle);
+        }
+        self.tasks.push(Task::FootIk(handle, disabled));
+    }
+
+    fn set_collision(&mut self, reference: &TESObjectREFR, disabled: bool) {
+        physics::set_collision_disabled(reference, disabled);
+        if disabled {
+            self.positioning.collision_off.insert(reference.formID);
+        } else {
+            self.positioning.collision_off.remove(&reference.formID);
+        }
+    }
+
+    /// `ApplyPositioning`: the UI's requests on the game tick. Moves the studio makes shift the
+    /// orbit's pan the other way, so the pinned camera stays put while the target moves.
+    fn apply_positioning(&mut self) {
+        for (handle, disabled) in core::mem::take(&mut self.positioning.collision_requests) {
+            if let Some(r) = handle.lookup() {
+                self.set_collision(&r, disabled);
+            }
+        }
+        let Some(target) = self.target() else {
+            let p = &mut self.positioning;
+            (p.position, p.angle, p.scale, p.undo, p.push_undo, p.toggle_collision) = (None, None, None, false, false, false);
+            return;
+        };
+        if core::mem::take(&mut self.positioning.push_undo) {
+            let stack = &mut self.positioning.undo_stack;
+            stack.push(Placement::of(&target));
+            if stack.len() > 32 {
+                stack.remove(0);
+            }
+        }
+        let orbit = &mut self.orbit;
+        let mut compensate = |reference: &TESObjectREFR, delta: P3| {
+            if orbit.valid && orbit.pivot_target == reference.formID {
+                orbit.pan[0] -= delta[0];
+                orbit.pan[1] -= delta[1];
+            }
+        };
+        if core::mem::take(&mut self.positioning.undo) {
+            while let Some(snapshot) = self.positioning.undo_stack.pop() {
+                let Some(r) = snapshot.handle.lookup() else { continue };
+                let delta = point::sub(snapshot.position, util::position(&r));
+                move_ref(&r, snapshot.position);
+                rotate_ref(&r, snapshot.angle);
+                if (scale_of(&r) - snapshot.scale).abs() > 0.001 {
+                    r.set_scale(snapshot.scale);
+                }
+                compensate(&r, delta);
+                break;
+            }
+        }
+        if let Some(position) = self.positioning.position.take() {
+            let delta = point::sub(position, util::position(&target));
+            move_ref(&target, position);
+            compensate(&target, delta);
+        }
+        if let Some(angle) = self.positioning.angle.take() {
+            rotate_ref(&target, angle);
+        }
+        if let Some(scale) = self.positioning.scale.take() {
+            target.set_scale(scale);
+        }
+        if core::mem::take(&mut self.positioning.toggle_collision) {
+            let disable = !self.positioning.collision_off.contains(&target.formID);
+            self.set_collision(&target, disable);
+            crate::log(&format!("<Photo Mode> Collision {} for {:08X}", if disable { "disabled" } else { "enabled" }, target.formID));
+        }
+    }
+
+    /// `RestoreCollision`: every reference the studio turned off collides again.
+    fn restore_collision(&mut self) {
+        for id in core::mem::take(&mut self.positioning.collision_off) {
+            if let Some(r) = sre::find_form_by_id(id).and_then(|f| f.cast::<TESObjectREFR>()) {
+                physics::set_collision_disabled(r, false);
+            }
+        }
+        self.positioning.collision_requests.clear();
+    }
+}
+
+/// Where the nearby lists measure from: the camera, since in the free camera the subject is where
+/// the camera flew, not the player.
+fn camera_origin() -> Option<P3> {
+    let root = util::camera()?.camera_root()?;
+    Some(root.world_transform().translation)
+}
+
+/// `GetNearbyActors`: the actors in high process with 3D within `radius`, nearest first.
+fn nearby_actors(radius: f32) -> Vec<Nearby> {
+    let Some(origin) = camera_origin() else { return Vec::new() };
+    let mut nearby: Vec<Nearby> = skyrim::actors::high_actor_handles()
+        .into_iter()
+        .filter_map(|handle| {
+            let actor = handle.lookup()?;
+            actor.get3_d()?;
+            let distance = point::length(point::sub(util::position(&actor), origin));
+            (distance <= radius).then(|| Nearby { handle, name: actor.display_name().map_or_else(|| "<unnamed>".to_owned(), |n| n.to_string_lossy().into_owned()), distance })
+        })
+        .collect();
+    nearby.sort_by(|a, b| a.distance.total_cmp(&b.distance));
+    nearby
+}
+
+/// `GetNearbyObjects`: the player's cell's references with 3D within `radius` that are not
+/// actors, the nearest hundred, named after the cut.
+fn nearby_objects(radius: f32) -> Vec<Nearby> {
+    let (Some(origin), Some(player)) = (camera_origin(), util::player()) else { return Vec::new() };
+    let Some(cell) = (unsafe { player.parentCell.as_ref() }) else { return Vec::new() };
+    let mut nearby: Vec<Nearby> = skyrim::actors::references_in_radius(cell, origin, radius)
+        .into_iter()
+        .filter_map(|handle| {
+            let r = handle.lookup()?;
+            (r.cast::<Actor>().is_none() && r.get3_d().is_some()).then(|| Nearby { handle, name: String::new(), distance: point::length(point::sub(util::position(&r), origin)) })
+        })
+        .collect();
+    nearby.sort_by(|a, b| a.distance.total_cmp(&b.distance));
+    nearby.truncate(MAX_OBJECTS);
+    for entry in &mut nearby {
+        if let Some(r) = entry.handle.lookup() {
+            entry.name = shown_name(&r);
+        }
+    }
+    nearby
 }
 
 /// `OnGlobalUpdate`, once a frame after the camera update, in every camera state.
@@ -567,7 +855,8 @@ pub fn on_global_update() {
     with(|m| {
         if m.active {
             m.update_orbit_camera();
-            m.refresh_bones();
+            m.apply_positioning();
+            m.refresh_snapshots();
         }
         let apply_all = m.active || !settings::profile().Studio.bRevertOnExit;
         m.pose.on_game_update(apply_all);
@@ -578,6 +867,11 @@ pub fn on_global_update() {
 /// put back; a reloaded build starts a fresh session.
 pub fn release() {
     with(|m| {
+        m.restore_collision();
+        m.pose.thaw();
+        for handle in core::mem::take(&mut m.foot_ik_off) {
+            set_foot_ik(handle, false);
+        }
         for adjustments in m.pose.actors.values_mut() {
             adjustments.revert_all();
         }
@@ -593,6 +887,14 @@ pub fn release() {
 /// From `FreeState::OnExit`.
 pub fn on_free_camera_exit() {
     with(Manager::on_free_camera_exit);
+}
+
+/// The graph bool the engine's per-actor foot IK switch reads every update (RE `camera.md` IC8 B).
+fn set_foot_ik(handle: u32, disabled: bool) {
+    if let Some(r) = RefHandle(handle).lookup() {
+        r.as_i_animation_graph_manager_holder().set_graph_variable_bool(skyrim::BSFixedString::new("bHumanoidFootIKDisable").raw(), disabled);
+        crate::log(&format!("<Photo Mode> Foot IK {} for {:08X}", if disabled { "disabled" } else { "enabled" }, r.formID));
+    }
 }
 
 fn notify(handle: u32, event: &str) {
@@ -620,6 +922,7 @@ pub fn on_frame() {
             Task::Event(handle, event) => notify(handle, event),
             Task::OwnedEvent(handle, event) => notify(handle, &event),
             Task::Imod { previous, next, strength } => environment::restart_imod(previous, next, strength),
+            Task::FootIk(handle, disabled) => set_foot_ik(handle, disabled),
         }
     }
     let delay = Duration::from_secs_f32(settings::profile().Studio.fBracketDelay.clamp(0.0, 5.0));

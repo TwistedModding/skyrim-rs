@@ -6,10 +6,10 @@
 
 use std::collections::{BTreeMap, HashMap};
 
-use skyrim::actors::{PlayerCharacterExt, RefHandle};
+use skyrim::actors::{ActorExt, PlayerCharacterExt, RefHandle, TESObjectREFRExt};
 use skyrim::forms::TESFormExt;
 use skyrim::render::{NiAVObjectExt, Transform, from_euler_xyz, to_euler_xyz};
-use sre::{NiAVObject, PlayerCharacter, TESObjectREFR};
+use sre::{Actor, ActorState_flags1, NiAVObject, PlayerCharacter, TESObjectREFR};
 
 use crate::util::point::{self, M3, P3};
 use crate::util::skyrim_util as util;
@@ -304,24 +304,128 @@ impl ActorAdjustments {
     }
 }
 
-/// `PoseEngine`: the stacks of every actor the studio touched, by form id.
+/// Frames a moving actor gets to blend back to a stand before its freeze engages (~0.75 s).
+const SETTLE_TICKS: u32 = 45;
+
+/// `PoseEngine`: the stacks of every actor the studio touched, by form id, and the freeze intents.
 #[derive(Clone, Debug, Default)]
 pub struct PoseEngine {
     pub actors: BTreeMap<u32, ActorAdjustments>,
+    frozen: BTreeMap<u32, RefHandle>,
+    /// Freezes staged for moving actors: AI stopped, the pause engages once settled.
+    pending_freeze: BTreeMap<u32, (RefHandle, u32)>,
+    /// Unfreezes retried until the actor resolves.
+    pending_unfreeze: BTreeMap<u32, RefHandle>,
+}
+
+fn is_moving(actor: &Actor) -> bool {
+    let flags = ActorState_flags1(actor.as_actor_state().flags1);
+    [ActorState_flags1::WALKING, ActorState_flags1::RUNNING, ActorState_flags1::SPRINTING, ActorState_flags1::SWIMMING].into_iter().any(|f| flags.contains(f))
+}
+
+fn with_actor(handle: RefHandle, f: impl FnOnce(&Actor)) -> bool {
+    handle.lookup().is_some_and(|r| r.cast::<Actor>().map(f).is_some())
+}
+
+/// `WriteAnimGraphFlag` and `EnableAI`: the graph paused or running, the AI with it (never the
+/// player's).
+fn hold(actor: &Actor, frozen: bool) {
+    actor.set_graph_paused(frozen);
+    if actor.cast::<PlayerCharacter>().is_none() {
+        actor.set_ai_enabled(!frozen);
+    }
 }
 
 impl PoseEngine {
+    /// `SetActorFrozen`: an intent the game tick carries out; a moving actor's freeze is staged.
+    pub fn set_actor_frozen(&mut self, actor: &Actor, frozen: bool) {
+        let id = actor.formID;
+        if frozen {
+            self.pending_unfreeze.remove(&id);
+            if is_moving(actor) {
+                self.pending_freeze.insert(id, (actor.handle(), SETTLE_TICKS));
+                crate::log(&format!("<Photo Mode> Actor {id:08X} freeze staged (settling)"));
+            } else {
+                self.frozen.entry(id).or_insert_with(|| actor.handle());
+                crate::log(&format!("<Photo Mode> Actor {id:08X} frozen"));
+            }
+        } else if self.frozen.remove(&id).is_some() || self.pending_freeze.remove(&id).is_some() {
+            self.pending_unfreeze.insert(id, actor.handle());
+        }
+    }
+
+    #[must_use]
+    pub fn is_actor_frozen(&self, id: u32) -> bool {
+        self.frozen.contains_key(&id) || self.pending_freeze.contains_key(&id)
+    }
+
+    /// `UnfreezeAll`: through the pending set, so an unresolvable actor keeps retrying.
+    pub fn unfreeze_all(&mut self) {
+        crate::log(&format!("<Photo Mode> UnfreezeAll: {} actors", self.frozen.len() + self.pending_freeze.len()));
+        self.pending_unfreeze.extend(core::mem::take(&mut self.frozen));
+        self.pending_unfreeze.extend(core::mem::take(&mut self.pending_freeze).into_iter().map(|(id, (h, _))| (id, h)));
+    }
+
+    /// Every frozen actor resumed now, for an unload.
+    pub fn thaw(&mut self) {
+        self.unfreeze_all();
+        self.update_freezes(false);
+    }
+
+    /// The freeze part of `OnGameUpdate`: unfreezes retried until they resolve, then (when
+    /// everything applies) staged freezes settled and the pause re-asserted, since the engine keeps
+    /// re-enabling graph updates.
+    fn update_freezes(&mut self, apply_all: bool) {
+        self.pending_unfreeze.retain(|id, handle| {
+            let done = with_actor(*handle, |a| hold(a, false));
+            if done {
+                crate::log(&format!("<Photo Mode> Actor {id:08X} unfrozen"));
+            }
+            !done
+        });
+        if !apply_all {
+            return;
+        }
+        let mut settled = Vec::new();
+        for (id, (handle, ticks)) in &mut self.pending_freeze {
+            let mut still_moving = false;
+            if !with_actor(*handle, |a| {
+                if a.cast::<PlayerCharacter>().is_none() {
+                    a.set_ai_enabled(false);
+                }
+                still_moving = is_moving(a);
+            }) {
+                continue;
+            }
+            if *ticks == 0 || (!still_moving && *ticks < 20) {
+                settled.push(*id);
+            } else {
+                *ticks -= 1;
+            }
+        }
+        for id in settled {
+            if let Some((handle, _)) = self.pending_freeze.remove(&id) {
+                self.frozen.insert(id, handle);
+                crate::log(&format!("<Photo Mode> Actor {id:08X} frozen (settled)"));
+            }
+        }
+        for handle in self.frozen.values() {
+            with_actor(*handle, |a| hold(a, true));
+        }
+    }
+
     pub fn get_or_create(&mut self, reference: &TESObjectREFR) -> &mut ActorAdjustments {
         let id = reference.formID;
         self.actors.entry(id).or_insert_with(|| {
             crate::log(&format!("<Photo Mode> Pose stack created for {id:08X}"));
-            ActorAdjustments::new(skyrim::actors::TESObjectREFRExt::handle(reference))
+            ActorAdjustments::new(reference.handle())
         })
     }
 
     /// `OnGameUpdate`'s apply sweep: a gone actor whose layers would all come back on their own
     /// is dropped, the rest apply.
     pub fn on_game_update(&mut self, apply_all: bool) {
+        self.update_freezes(apply_all);
         self.actors.retain(|_, a| a.handle.lookup().is_some() || !a.stack.iter().all(|l| l.persistent && !l.file.is_empty()));
         for adjustments in self.actors.values_mut() {
             adjustments.apply(apply_all);

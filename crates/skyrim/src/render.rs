@@ -526,9 +526,17 @@ pub trait NiSkinInstanceExt {
     /// swap under the skin's lock, so the rebuild's copy of current over previous restores the
     /// previous frame's palette. False when the palette was not built in `frame`.
     fn rewind_palette(&self, frame: u32) -> bool;
+    /// The bone nodes the skin deforms with (`boneNodes`, as many as the bind data's `boneCount`;
+    /// RE `camera.md` IC8 J).
+    fn bones(&self) -> &[Option<&NiAVObject>];
 }
 
 impl NiSkinInstanceExt for NiSkinInstance {
+    fn bones(&self) -> &[Option<&NiAVObject>] {
+        let count = unsafe { self.skinData.as_ref() }.map_or(0, |d| d.boneCount);
+        if self.boneNodes.is_null() { &[] } else { unsafe { ptr_slice(self.boneNodes, count) } }
+    }
+
     fn rewind_palette(&self, frame: u32) -> bool {
         use windows_sys::Win32::System::Threading::{CRITICAL_SECTION, EnterCriticalSection, LeaveCriticalSection};
         const { assert!(size_of::<CRITICAL_SECTION>() == 40) };

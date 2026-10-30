@@ -11,6 +11,7 @@ use std::sync::atomic::{AtomicU64, Ordering};
 
 use framework::egui::{self, Color32, Painter, Pos2, Stroke};
 use framework::View;
+use skyrim::forms::TESFormExt;
 use skyrim::render::NiAVObjectExt;
 
 use super::widgets::{combo, rows, section_header, slider, toggle};
@@ -33,6 +34,7 @@ enum Page {
     Target,
     Pose,
     Bones,
+    Position,
     Camera,
     Environment,
     Scenes,
@@ -70,6 +72,9 @@ struct Menu {
     imods: Option<Vec<ImodInfo>>,
     imod_search: String,
     imod_strength: Option<f32>,
+    /// World units per dragged pixel on the Position page (IC: 1).
+    move_strength: Option<f32>,
+    object_search: String,
     /// The mouse button driving the orbit (0 rotate, 1 pan) or a bone drag (2).
     drag: Option<u8>,
 }
@@ -103,10 +108,10 @@ fn contains_no_case(haystack: &str, needle: &str) -> bool {
     needle.is_empty() || haystack.to_lowercase().contains(&needle.to_lowercase())
 }
 
-/// The bones the markers and the list show: SAM's posing set when the skeleton has any of it,
-/// everything with "Show All Bones" (or on a creature it does not cover).
-fn bone_shown(name: &str, show_all: bool, has_known: bool) -> bool {
-    show_all || !has_known || node_names::find(name).is_some()
+/// The bones the markers show: SAM's posing set when the skeleton has any of it (everything on a
+/// creature it does not cover), and only bones a mesh uses, unless "Show All Bones" is on.
+fn bone_shown(name: &str, used: bool, show_all: bool, has_known: bool) -> bool {
+    show_all || (used && (!has_known || node_names::find(name).is_some()))
 }
 
 /// The markers of the Bones page, projected through the frame camera.
@@ -118,7 +123,7 @@ pub fn paint_markers(painter: &Painter, view: &View) {
     let bones = manager::with(|m| m.bones.clone());
     let has_known = bones.iter().any(|b| node_names::find(&b.name).is_some());
     let mut placed = Vec::new();
-    for bone in bones.iter().filter(|b| bone_shown(&b.name, show_all, has_known) && contains_no_case(&b.name, &search)) {
+    for bone in bones.iter().filter(|b| bone_shown(&b.name, b.used, show_all, has_known) && contains_no_case(&b.name, &search)) {
         let Some(at) = view.project(bone.world) else { continue };
         let picked = bone.name == selected;
         let (radius, color, width) = if picked { (7.0, Color32::from_rgb(255, 210, 80), 2.5) } else { (3.5, Color32::from_white_alpha(140), 1.5) };
@@ -268,6 +273,7 @@ pub fn draw(ui: &mut egui::Ui) {
         Page::Target => target(ui),
         Page::Pose => pose(ui),
         Page::Bones => bones(ui),
+        Page::Position => position(ui),
         Page::Camera => camera(ui),
         Page::Environment => environment_page(ui),
         Page::Scenes => scenes(ui),
@@ -288,6 +294,9 @@ fn home(ui: &mut egui::Ui, target_name: &str) {
     if row(ui, "Pose", None, "") {
         go(Page::Pose);
     }
+    if row(ui, "Position", None, "") {
+        go(Page::Position);
+    }
     if row(ui, "Camera", None, "") {
         go(Page::Camera);
     }
@@ -302,10 +311,6 @@ fn home(ui: &mut egui::Ui, target_name: &str) {
     }
     if row(ui, "Options", None, "") {
         go(Page::Options);
-    }
-    let paused = Manager::paused();
-    if row(ui, if paused { "Resume World" } else { "Pause World" }, None, "Freezes the world as tfc 1 does") {
-        Manager::toggle_pause();
     }
     ui.add_space(10.0);
     if row(ui, "Exit Photo Mode", None, "") {
@@ -328,6 +333,117 @@ fn target(ui: &mut egui::Ui) -> bool {
     if row(ui, "Target Crosshair Pick", Some(&crosshair), "") {
         manager::with(Manager::target_crosshair_ref);
     }
+    let (target, nearby, objects) = manager::with(|s| (s.target().map(|t| t.formID), s.nearby.clone(), s.objects.clone()));
+    title(ui, "Nearby");
+    super::edit(ui, |ui, p| rows(ui, "NearbyRadius", |ui| slider(ui, "Search radius", &mut p.Studio.fNearbyRadius, 256.0, 8192.0, 0, "")));
+    let mut pick = None;
+    nearby_list(ui, "NearbyActors", &nearby, target, "", "No actors within radius", 200.0, &mut pick);
+    title(ui, "Nearby Objects");
+    let search = menu(|m| {
+        ui.add(egui::TextEdit::singleline(&mut m.object_search).hint_text("Search props...").desired_width(f32::INFINITY));
+        m.object_search.clone()
+    });
+    nearby_list(ui, "NearbyObjects", &objects, target, &search, "No objects within radius", f32::INFINITY, &mut pick);
+    if let Some(r) = pick.and_then(|h: skyrim::actors::RefHandle| h.lookup()) {
+        manager::with(|s| s.set_target(Some(&r)));
+    }
+    false
+}
+
+/// A selectable list of nearby references with their distance on the right.
+#[allow(clippy::too_many_arguments)]
+fn nearby_list(ui: &mut egui::Ui, id: &str, entries: &[manager::Nearby], target: Option<u32>, search: &str, empty: &str, height: f32, pick: &mut Option<skyrim::actors::RefHandle>) {
+    egui::Frame::group(ui.style()).show(ui, |ui| {
+        egui::ScrollArea::vertical().id_salt(id).max_height(height).show(ui, |ui| {
+            if entries.is_empty() {
+                ui.weak(empty);
+            }
+            for entry in entries.iter().filter(|e| contains_no_case(&e.name, search)) {
+                let Some(r) = entry.handle.lookup() else { continue };
+                ui.horizontal(|ui| {
+                    if ui.selectable_label(target == Some(r.formID), &entry.name).clicked() {
+                        *pick = Some(entry.handle);
+                    }
+                    ui.with_layout(egui::Layout::right_to_left(egui::Align::Center), |ui| ui.weak(format!("{:.0}", entry.distance)));
+                });
+            }
+        });
+    });
+}
+
+fn position(ui: &mut egui::Ui) -> bool {
+    if page_header(ui, "Position") {
+        return true;
+    }
+    let Some(target) = manager::with(|m| m.target()) else {
+        ui.weak("No target selected");
+        return false;
+    };
+    let paused = Manager::paused();
+    if row(ui, if paused { "Resume Game" } else { "Pause Game" }, None, "Freezes world time - note most posing works better unpaused (freeze actors instead)") {
+        Manager::toggle_pause();
+    }
+    let collision_off = manager::with(|s| s.is_collision_disabled(target.formID));
+    if row(ui, if collision_off { "Enable Collision" } else { "Disable Collision" }, collision_off.then_some("off - levitating"), "Turns the target's collision off so it can be placed anywhere (levitate)") {
+        manager::with(Manager::toggle_collision);
+    }
+    if let Some(actor) = target.cast::<sre::Actor>() {
+        let ik_off = util::graph_bool(&target, "bHumanoidFootIKDisable");
+        if row(ui, if ik_off { "Enable Foot IK" } else { "Disable Foot IK" }, ik_off.then_some("off"), "Foot IK makes legs fight manual posing - disable it per target while posing legs") {
+            manager::with(|s| s.set_foot_ik_disabled(actor, !ik_off));
+        }
+    }
+    let depth = manager::with(|s| s.undo_depth());
+    let steps = format!("{depth} step(s)");
+    if ui.add_enabled_ui(depth > 0, |ui| row(ui, "Undo", (depth > 0).then_some(steps.as_str()), "")).inner {
+        manager::with(Manager::undo);
+    }
+    title(ui, "Transform");
+    let strength = menu(|m| *m.move_strength.get_or_insert(1.0));
+    let mut new_strength = strength;
+    ui.add(egui::Slider::new(&mut new_strength, 0.05..=25.0).logarithmic(true).text("Drag strength")).on_hover_text("How far one pixel of dragging moves the target - low for micro-spacing, high for big moves");
+    menu(|m| m.move_strength = Some(new_strength));
+    let mut position = util::position(&target);
+    let mut angle = [target.rotX, target.rotY, target.rotZ].map(f32::to_degrees);
+    let mut scale = f32::from(target.refScale) / 100.0;
+    let triple = |ui: &mut egui::Ui, label: &str, values: &mut [f32; 3], speed: f32| {
+        ui.horizontal(|ui| {
+            let mut started = false;
+            let mut changed = false;
+            for value in values.iter_mut() {
+                let r = ui.add(egui::DragValue::new(value).speed(speed).fixed_decimals(2));
+                started |= r.drag_started() || r.gained_focus();
+                changed |= r.changed();
+            }
+            ui.label(label);
+            (started, changed)
+        })
+        .inner
+    };
+    let (started, changed) = triple(ui, "Position", &mut position, strength);
+    let (started_angle, changed_angle) = triple(ui, "Rotation", &mut angle, 0.25);
+    let (started_scale, changed_scale) = ui
+        .horizontal(|ui| {
+            let r = ui.add(egui::DragValue::new(&mut scale).speed(0.002).range(0.01..=10.0).fixed_decimals(3));
+            ui.label("Scale");
+            (r.drag_started() || r.gained_focus(), r.changed())
+        })
+        .inner;
+    manager::with(|s| {
+        if started || started_angle || started_scale {
+            s.push_undo();
+        }
+        if changed {
+            s.request_position(position);
+        }
+        if changed_angle {
+            s.request_angle(angle.map(f32::to_radians));
+        }
+        if changed_scale {
+            s.request_scale(scale);
+        }
+    });
+    ui.weak("Drag to adjust - double-click to type an exact value");
     false
 }
 
@@ -380,6 +496,7 @@ fn pose(ui: &mut egui::Ui) -> bool {
         ui.weak("Target has no 3D loaded");
         return false;
     };
+    freeze_toggle(ui, &target, false);
     if row(ui, "Edit Bones", None, "") {
         manager::with(|m| {
             let stack = &mut m.pose.get_or_create(&target).stack;
@@ -594,6 +711,24 @@ fn layer_editor(ui: &mut egui::Ui, m: &mut Menu, s: &mut Manager, target: &sre::
     ui.checkbox(&mut layer.include_in_pose, "In Pose Export").on_hover_text("Bake this layer into saved pose files (turn off for skeleton fixes)");
 }
 
+/// The Freeze / Unfreeze switch of the Pose page (a row) and the Bones page (a small button).
+fn freeze_toggle(ui: &mut egui::Ui, target: &sre::TESObjectREFR, small: bool) {
+    let Some(actor) = target.cast::<sre::Actor>() else { return };
+    let frozen = manager::with(|s| s.pose.is_actor_frozen(target.formID));
+    let label = if frozen { "Unfreeze" } else { "Freeze" };
+    let clicked = if small { ui.small_button(label).clicked() } else { row(ui, label, None, "Pauses the actor's animation so the pose holds still while editing") };
+    if clicked {
+        manager::with(|s| s.pose.set_actor_frozen(actor, !frozen));
+    }
+}
+
+/// Playing an event unfreezes first: a frozen graph swallows events.
+fn unfreeze(target: &sre::TESObjectREFR) {
+    if let Some(actor) = target.cast::<sre::Actor>() {
+        manager::with(|s| s.pose.set_actor_frozen(actor, false));
+    }
+}
+
 fn bones(ui: &mut egui::Ui) -> bool {
     if page_header(ui, "Bones") {
         return true;
@@ -604,6 +739,7 @@ fn bones(ui: &mut egui::Ui) -> bool {
     };
     let mut guard = MENU.lock().unwrap_or_else(std::sync::PoisonError::into_inner);
     let m = guard.get_or_insert_with(Menu::default);
+    freeze_toggle(ui, &target, true);
     manager::with(|s| {
         let points = s.bones.clone();
         let Some(adjustments) = s.pose.actors.get_mut(&target.formID).filter(|a| !a.stack.is_empty()) else {
@@ -615,10 +751,9 @@ fn bones(ui: &mut egui::Ui) -> bool {
         ui.weak(format!("Editing layer: {}", layer.name));
         ui.checkbox(&mut m.show_all_bones, "Show All Bones").on_hover_text("Include helper nodes (CME/MOV/physics) in the list and markers; normally only SAM's posing set is shown");
         ui.add(egui::TextEdit::singleline(&mut m.bone_search).hint_text("Search bones...").desired_width(f32::INFINITY));
-        let has_known = points.iter().any(|b| node_names::find(&b.name).is_some());
         let mut buckets: BTreeMap<&str, Vec<(&str, &str)>> = BTreeMap::new();
         let mut other = Vec::new();
-        for b in points.iter().filter(|b| bone_shown(&b.name, m.show_all_bones, has_known)) {
+        for b in points.iter().filter(|b| m.show_all_bones || b.used) {
             match node_names::find(&b.name) {
                 Some(e) => buckets.entry(e.category).or_default().push((b.name.as_str(), e.display_name)),
                 None => other.push((b.name.as_str(), b.name.as_str())),
@@ -918,16 +1053,18 @@ fn idle_page(ui: &mut egui::Ui) -> bool {
     if page_header(ui, "Pose Packs") {
         return true;
     }
-    if !manager::with(|m| m.target()).is_some_and(|t| t.cast_actor()) {
+    let Some(target) = manager::with(|m| m.target()).filter(IsActor::cast_actor) else {
         ui.weak("Target an actor to play poses");
         return false;
-    }
+    };
     if row(ui, "A-Pose", Some("static reference pose"), "") {
+        unfreeze(&target);
         manager::with(|m| m.play_static_event(idles::A_POSE));
     }
     let mut guard = MENU.lock().unwrap_or_else(std::sync::PoisonError::into_inner);
     let m = guard.get_or_insert_with(Menu::default);
     if row(ui, "Reset Idle", Some("back to normal behavior"), "") {
+        unfreeze(&target);
         manager::with(|s| s.play_static_event(idles::RESET_IDLE));
         m.last_event.clear();
     }
@@ -958,6 +1095,7 @@ fn idle_page(ui: &mut egui::Ui) -> bool {
             }
             for event in set.events.iter().filter(|e| contains_no_case(e, &m.idle_search)) {
                 if ui.selectable_label(*event == m.last_event, event).clicked() {
+                    unfreeze(&target);
                     manager::with(|s| s.play_event(event));
                     m.last_event.clone_from(event);
                 }
@@ -1016,9 +1154,10 @@ mod tests {
 
     #[test]
     fn bones_and_searches_filter_as_ic_s_menu() {
-        assert!(bone_shown("NPC Head [Head]", false, true));
-        assert!(!bone_shown("CME Body [Body]", false, true));
-        assert!(bone_shown("CME Body [Body]", true, true) && bone_shown("Tail1", false, false));
+        assert!(bone_shown("NPC Head [Head]", true, false, true));
+        assert!(!bone_shown("NPC Head [Head]", false, false, true), "a bone nothing skins to");
+        assert!(!bone_shown("CME Body [Body]", true, false, true));
+        assert!(bone_shown("CME Body [Body]", false, true, true) && bone_shown("Tail1", true, false, false));
         assert!(contains_no_case("NPC Head [Head]", "head") && contains_no_case("x", "") && !contains_no_case("Spine", "neck"));
         assert_eq!(stem("Sub/kneel.yaml"), "Sub/kneel");
         assert_eq!(stem("plain"), "plain");
