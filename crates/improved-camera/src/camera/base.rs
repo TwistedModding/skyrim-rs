@@ -17,7 +17,7 @@ use crate::body::state::action::ActionType;
 use crate::body::state::hands::HandsType;
 use crate::body::state::race::RaceType;
 use crate::settings::Vanity as VanitySettings;
-use crate::util::math_util::normalize_radian;
+use crate::util::math_util::{normalize_radian, smoother_step};
 use crate::util::point::{self, M3, P3};
 use crate::util::skyrim_util::{self as util, FAKE_FIRST_PERSON_ZOOM};
 
@@ -237,15 +237,157 @@ pub fn pull_in(subject: P3, hit: P3, ray_length: f32) -> f32 {
 /// `VanityState`: IC's idle camera. Once the engine's idle timer starts its vanity camera, IC
 /// authors the shot: an orbit around the player's head at the profile's distance, height and
 /// speed, pulled in front of anything solid and eased back, with the HUD hidden (`tm`) while it
-/// runs. IC's focus on random nearby actors is left out (`docs/STATUS.md`).
+/// runs, and now and then aimed toward a random nearby actor in frame.
 #[derive(Clone, Copy, Debug, Default)]
 pub struct Vanity {
     /// The authored shot `CaptureCameraState` presents.
     pub shot: Option<(P3, M3)>,
     orbit_yaw: f32,
     collision: Collision,
+    focus: Focus,
     hid_menus: bool,
     owned: bool,
+}
+
+#[derive(Clone, Copy, Debug, Default, PartialEq, Eq)]
+enum FocusState {
+    #[default]
+    None,
+    BlendIn,
+    Hold,
+    BlendOut,
+}
+
+/// The NPC focus: the aim swings onto a fixed point beside the player toward a random visible
+/// actor, holds, and swings back. The point composes the shot; it does not track.
+#[derive(Clone, Copy, Debug, Default)]
+pub struct Focus {
+    state: FocusState,
+    point: P3,
+    blend: f32,
+    timer: f32,
+    cooldown: f32,
+    rng: u64,
+}
+
+impl Focus {
+    /// The share of the swing toward the focus point, eased.
+    #[must_use]
+    pub fn eased_blend(&self) -> f32 {
+        smoother_step(self.blend.clamp(0.0, 1.0))
+    }
+
+    /// `ComputeFOV`.
+    #[must_use]
+    pub fn fov(&self, v: &VanitySettings) -> f32 {
+        v.fFOV + self.eased_blend() * v.fFocusFOVOffset
+    }
+
+    /// A uniform draw in `[0, 1)` (xorshift64*, seeded once per process).
+    fn next(&mut self) -> f32 {
+        if self.rng == 0 {
+            use std::hash::{BuildHasher, Hasher};
+            self.rng = std::collections::hash_map::RandomState::new().build_hasher().finish() | 1;
+        }
+        self.rng ^= self.rng >> 12;
+        self.rng ^= self.rng << 25;
+        self.rng ^= self.rng >> 27;
+        #[allow(clippy::cast_precision_loss)]
+        let unit = (self.rng.wrapping_mul(0x2545_f491_4f6c_dd1d) >> 40) as f32 / (1u64 << 24) as f32;
+        unit
+    }
+
+    /// `UpdateFocus`: `pick` returns the chosen actor's head position given the camera's position,
+    /// its unit forward and a draw in `[0, 1)`.
+    pub fn update(&mut self, camera: P3, subject: P3, dt: f32, v: &VanitySettings, pick: impl FnOnce(P3, P3, f32) -> Option<P3>) {
+        if !v.bNPCFocus && self.state != FocusState::BlendOut {
+            self.state = if self.blend > 0.0 { FocusState::BlendOut } else { FocusState::None };
+        }
+        let blend_time = v.fFocusBlendTime.max(0.05);
+        match self.state {
+            FocusState::None => {
+                if !v.bNPCFocus {
+                    return;
+                }
+                self.cooldown -= dt;
+                if self.cooldown > 0.0 {
+                    return;
+                }
+                self.cooldown = v.fFocusCooldown;
+                if self.next() * 100.0 > v.fFocusChance {
+                    return;
+                }
+                let (forward, length) = point::unitize(point::sub(subject, camera));
+                if length < 0.001 {
+                    return;
+                }
+                let draw = self.next();
+                if let Some(target) = pick(camera, forward, draw) {
+                    let (to_target, distance) = point::unitize(point::sub(target, subject));
+                    self.point = point::add(subject, point::scale(to_target, v.fFocusOffset.min(distance)));
+                    self.state = FocusState::BlendIn;
+                } else {
+                    self.cooldown = 1.5;
+                }
+            }
+            FocusState::BlendIn => {
+                self.blend += dt / blend_time;
+                if self.blend >= 1.0 {
+                    self.blend = 1.0;
+                    self.timer = v.fFocusDuration;
+                    self.state = FocusState::Hold;
+                }
+            }
+            FocusState::Hold => {
+                self.timer -= dt;
+                if self.timer <= 0.0 {
+                    self.state = FocusState::BlendOut;
+                }
+            }
+            FocusState::BlendOut => {
+                self.blend -= dt / blend_time;
+                if self.blend <= 0.0 {
+                    self.blend = 0.0;
+                    self.cooldown = v.fFocusCooldown;
+                    self.state = FocusState::None;
+                }
+            }
+        }
+    }
+
+    fn reset(&mut self) {
+        self.state = FocusState::None;
+        self.blend = 0.0;
+    }
+}
+
+/// `PickFocusTarget`: the head (chest for headless creatures) of a loaded, living actor in high
+/// process, other than the player's mount, between 50 units and `fFocusRadius` from the camera,
+/// inside a cone a touch wider than half the FOV and not behind anything solid; chosen by `draw`.
+fn pick_focus_target(player: &sre::PlayerCharacter, camera: P3, forward: P3, draw: f32, v: &VanitySettings) -> Option<P3> {
+    let cone = (v.fFOV * 0.6).min(80.0).to_radians().cos();
+    let mount = player.mount();
+    let candidates: Vec<P3> = skyrim::actors::high_actor_handles()
+        .into_iter()
+        .filter_map(skyrim::actors::RefHandle::lookup)
+        .filter(|r| mount.as_ref().is_none_or(|m| !core::ptr::eq::<sre::TESObjectREFR>(&raw const **m, &raw const **r)))
+        .filter_map(|r| {
+            let actor = util::actor_of(&r)?;
+            if actor.get3_d().is_none() || actor.is_dead(true) {
+                return None;
+            }
+            let focus = util::head_position(actor, 0.5);
+            let (to_actor, distance) = point::unitize(point::sub(focus, camera));
+            if !(50.0..=v.fFocusRadius).contains(&distance) || point::dot(to_actor, forward) < cone {
+                return None;
+            }
+            let blocked = util::cast_ray(camera, focus).is_some_and(|h| util::is_solid_hit(h.layer, false) && h.fraction < 0.95);
+            (!blocked).then_some(focus)
+        })
+        .collect();
+    #[allow(clippy::cast_possible_truncation, clippy::cast_sign_loss, clippy::cast_precision_loss)]
+    let index = ((draw * candidates.len() as f32) as usize).min(candidates.len().saturating_sub(1));
+    candidates.get(index).copied()
 }
 
 impl Vanity {
@@ -283,7 +425,7 @@ impl Vanity {
     /// `OnUpdate`.
     pub fn update(&mut self, m: &mut Modifier, ctx: &Ctx<'_>) {
         let enabled = vanity_enabled(ctx.profile);
-        m.fov = if enabled { ctx.profile.Vanity.fFOV } else { ctx.profile.FOV.fThirdPerson };
+        m.fov = if enabled { self.focus.fov(&ctx.profile.Vanity) } else { ctx.profile.FOV.fThirdPerson };
         if !enabled {
             self.show_menus();
             self.shot = None;
@@ -317,13 +459,16 @@ impl Vanity {
             self.collision.update(hit, pull, recovery, dt)
         };
         let position = point::add(subject, point::scale(ray, fraction));
-        self.shot = util::look_rotation(position, subject).map(|rotation| (position, rotation));
+        self.focus.update(position, subject, dt, v, |camera, forward, draw| pick_focus_target(player, camera, forward, draw, v));
+        let look = point::lerp(subject, self.focus.point, self.focus.eased_blend());
+        self.shot = util::look_rotation(position, look).or_else(|| util::look_rotation(position, subject)).map(|rotation| (position, rotation));
     }
 
     /// `OnExit`, and an unload: the HUD comes back.
     pub fn exit(&mut self) {
         self.show_menus();
         self.shot = None;
+        self.focus.reset();
         self.owned = false;
     }
 }
@@ -707,7 +852,7 @@ impl Free {
 mod tests {
     use framework::GamePad;
 
-    use super::{orbit_position, pad_steps, pov_long_press, pov_tap, pull_in};
+    use super::{Focus, FocusState, orbit_position, pad_steps, pov_long_press, pov_tap, pull_in};
     use crate::settings::Vanity;
 
     #[test]
@@ -719,6 +864,37 @@ mod tests {
         assert!((p[0] - 200.0).abs() < 1e-3 && p[1].abs() < 1e-3);
         assert!((pull_in([0.0; 3], [0.0, 110.0, 0.0], 200.0) - 0.5).abs() < 1e-6);
         assert!(pull_in([0.0; 3], [0.0, 5.0, 0.0], 200.0).abs() < f32::EPSILON);
+    }
+
+    #[test]
+    fn the_focus_swings_in_holds_and_swings_back() {
+        let v = Vanity { fFocusChance: 100.0, fFocusCooldown: 1.0, fFocusBlendTime: 1.0, fFocusDuration: 2.0, fFocusOffset: 100.0, ..Vanity::default() };
+        let mut f = Focus::default();
+        f.update([0.0, -200.0, 0.0], [0.0; 3], 0.1, &v, |_, forward, _| {
+            assert!((forward[1] - 1.0).abs() < 1e-6);
+            Some([300.0, 0.0, 0.0])
+        });
+        assert_eq!(f.state, FocusState::BlendIn);
+        assert_eq!(f.point, [100.0, 0.0, 0.0]);
+        f.update([0.0; 3], [0.0; 3], 1.0, &v, |_, _, _| None);
+        assert_eq!(f.state, FocusState::Hold);
+        assert!((f.fov(&v) - (v.fFOV + v.fFocusFOVOffset)).abs() < 1e-5);
+        f.update([0.0; 3], [0.0; 3], 2.0, &v, |_, _, _| None);
+        assert_eq!(f.state, FocusState::BlendOut);
+        f.update([0.0; 3], [0.0; 3], 1.0, &v, |_, _, _| None);
+        assert_eq!((f.state, f.blend, f.cooldown), (FocusState::None, 0.0, 1.0));
+    }
+
+    #[test]
+    fn the_focus_retries_soon_without_a_subject_and_lets_go_when_switched_off() {
+        let v = Vanity { fFocusChance: 100.0, ..Vanity::default() };
+        let mut f = Focus::default();
+        f.update([0.0, -200.0, 0.0], [0.0; 3], 0.1, &v, |_, _, _| None);
+        assert_eq!((f.state, f.cooldown), (FocusState::None, 1.5));
+        f.blend = 0.5;
+        f.state = FocusState::Hold;
+        f.update([0.0; 3], [0.0; 3], 0.1, &Vanity { bNPCFocus: false, ..v }, |_, _, _| None);
+        assert_eq!(f.state, FocusState::BlendOut);
     }
 
     #[test]
