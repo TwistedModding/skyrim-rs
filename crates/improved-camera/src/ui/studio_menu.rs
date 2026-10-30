@@ -21,7 +21,7 @@ use crate::camera::studio::environment::{self, ImodInfo};
 use crate::camera::studio::idles::{self, PosePack};
 use crate::camera::studio::io::{self, CameraBookmark, SamPack, Scene, SceneSun};
 use crate::camera::studio::manager::{self, CameraPose, Manager};
-use crate::camera::studio::node_names;
+use crate::camera::studio::{node_names, shaders};
 use crate::util::point;
 use crate::util::skyrim_util as util;
 
@@ -35,6 +35,7 @@ enum Page {
     Pose,
     Bones,
     Position,
+    Effects,
     Camera,
     Environment,
     Scenes,
@@ -72,6 +73,10 @@ struct Menu {
     imods: Option<Vec<ImodInfo>>,
     imod_search: String,
     weathers: Option<Vec<environment::WeatherInfo>>,
+    /// The effect browser's lists: shaders, art objects.
+    effects: Option<[Vec<shaders::EffectInfo>; 2]>,
+    effect_art: bool,
+    effect_search: String,
     weather_search: String,
     imod_strength: Option<f32>,
     /// World units per dragged pixel on the Position page (IC: 1).
@@ -276,6 +281,7 @@ pub fn draw(ui: &mut egui::Ui) {
         Page::Pose => pose(ui),
         Page::Bones => bones(ui),
         Page::Position => position(ui),
+        Page::Effects => effects_page(ui),
         Page::Camera => camera(ui),
         Page::Environment => environment_page(ui),
         Page::Scenes => scenes(ui),
@@ -298,6 +304,9 @@ fn home(ui: &mut egui::Ui, target_name: &str) {
     }
     if row(ui, "Position", None, "") {
         go(Page::Position);
+    }
+    if row(ui, "Effects", None, "Hold an effect shader or art object on the target - glows, membranes, auras") {
+        go(Page::Effects);
     }
     if row(ui, "Camera", None, "") {
         go(Page::Camera);
@@ -371,6 +380,40 @@ fn nearby_list(ui: &mut egui::Ui, id: &str, entries: &[manager::Nearby], target:
             }
         });
     });
+}
+
+fn effects_page(ui: &mut egui::Ui) -> bool {
+    if page_header(ui, "Effects") {
+        return true;
+    }
+    let Some(target) = manager::with(|m| m.target()) else {
+        ui.weak("Target something to hold an effect on it.");
+        return false;
+    };
+    ui.weak("Held with no duration and removed when Photo Mode closes.");
+    let mut guard = MENU.lock().unwrap_or_else(std::sync::PoisonError::into_inner);
+    let m = guard.get_or_insert_with(Menu::default);
+    ui.horizontal(|ui| {
+        ui.radio_value(&mut m.effect_art, false, "Effect Shaders");
+        ui.radio_value(&mut m.effect_art, true, "Art Objects");
+    });
+    if ui.add_sized([ui.available_width(), 22.0], egui::Button::new("Remove All")).clicked() {
+        manager::with(Manager::remove_all_effects);
+    }
+    ui.add(egui::TextEdit::singleline(&mut m.effect_search).hint_text("Search effects...").desired_width(f32::INFINITY));
+    let art = m.effect_art;
+    let lists = m.effects.get_or_insert_with(|| [shaders::effects(false), shaders::effects(true)]);
+    let handle = skyrim::actors::TESObjectREFRExt::handle(&*target);
+    egui::ScrollArea::vertical().id_salt("EffectList").show(ui, |ui| {
+        for effect in lists[usize::from(art)].iter().filter(|e| contains_no_case(&e.label, &m.effect_search)) {
+            let entry = shaders::Applied { handle, effect: effect.form_id, art };
+            let applied = manager::with(|s| s.shaders.is_applied(entry));
+            if ui.selectable_label(applied, &effect.label).clicked() {
+                manager::with(|s| if applied { s.remove_effect(entry) } else { s.apply_effect(entry) });
+            }
+        }
+    });
+    false
 }
 
 fn position(ui: &mut egui::Ui) -> bool {

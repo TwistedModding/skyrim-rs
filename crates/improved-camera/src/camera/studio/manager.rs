@@ -20,6 +20,7 @@ use super::adjustments::{PoseEngine, third_person_3d};
 use super::capture::{self, Capture, Step};
 use super::environment;
 use super::io::{self, CameraBookmark};
+use super::shaders::{self, Applied, ShaderEngine};
 use crate::settings;
 use crate::util::point::{self, P3};
 use crate::util::skyrim_util as util;
@@ -230,6 +231,7 @@ enum Task {
     Imod { previous: u32, next: u32, strength: f32 },
     FootIk(u32, bool),
     Hour(f32),
+    Effect(Applied, bool),
     /// A weather to force (snapping or with a transition), or none to release ours.
     Weather(Option<(u32, bool)>),
 }
@@ -249,6 +251,7 @@ pub struct Manager {
     pub imod_strength: f32,
     /// The weather the studio forced, released when it closes.
     pub forced_weather: u32,
+    pub shaders: ShaderEngine,
     /// The camera pins onto the target (the Camera page's switch).
     pub orbit_enabled: bool,
     orbit: Orbit,
@@ -411,6 +414,7 @@ impl Manager {
         environment::release_sun();
         self.clear_imod();
         self.release_weather();
+        self.remove_all_effects();
         self.restore_collision();
         for handle in core::mem::take(&mut self.foot_ik_off) {
             self.tasks.push(Task::FootIk(handle, false));
@@ -525,6 +529,26 @@ impl Manager {
         self.imod = form_id;
         self.imod_strength = strength.clamp(0.0, 1.0);
         self.tasks.push(Task::Imod { previous, next: form_id, strength: self.imod_strength });
+    }
+
+    /// `ShaderEngine::Apply`, started on the next frame.
+    pub fn apply_effect(&mut self, entry: Applied) {
+        if self.shaders.apply(entry) {
+            self.tasks.push(Task::Effect(entry, true));
+        }
+    }
+
+    /// `ShaderEngine::Remove`.
+    pub fn remove_effect(&mut self, entry: Applied) {
+        if self.shaders.remove(entry) {
+            self.tasks.push(Task::Effect(entry, false));
+        }
+    }
+
+    /// `ShaderEngine::RemoveAll`.
+    pub fn remove_all_effects(&mut self) {
+        let all = self.shaders.take_all();
+        self.tasks.extend(all.into_iter().map(|e| Task::Effect(e, false)));
     }
 
     /// `SetHour`.
@@ -906,6 +930,7 @@ pub fn release() {
         if m.forced_weather != 0 {
             environment::release_weather();
         }
+        m.shaders.take_all().into_iter().for_each(shaders::stop);
         if m.hid_hud || m.capture.hid_hud {
             util::show_menus(true);
         }
@@ -953,6 +978,8 @@ pub fn on_frame() {
             Task::Imod { previous, next, strength } => environment::restart_imod(previous, next, strength),
             Task::FootIk(handle, disabled) => set_foot_ik(handle, disabled),
             Task::Hour(hour) => environment::set_hour(hour),
+            Task::Effect(entry, true) => shaders::play(entry),
+            Task::Effect(entry, false) => shaders::stop(entry),
             Task::Weather(Some((form_id, transition))) => environment::force_weather(form_id, transition),
             Task::Weather(None) => environment::release_weather(),
         }
