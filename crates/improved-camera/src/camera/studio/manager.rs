@@ -23,6 +23,7 @@ use super::environment;
 use super::io::{self, CameraBookmark, Scene, SceneActor, SceneSun};
 use super::face::FaceEngine;
 use super::gear::GearEngine;
+use super::lights::{self, Job, LightEngine};
 use super::shaders::{self, Applied, ShaderEngine};
 use crate::settings;
 use crate::util::point::{self, P3};
@@ -237,6 +238,7 @@ enum Task {
     Effect(Applied, bool),
     /// A weather to force (snapping or with a transition), or none to release ours.
     Weather(Option<(u32, bool)>),
+    Light(Job),
 }
 
 #[derive(Debug, Default)]
@@ -257,6 +259,7 @@ pub struct Manager {
     pub shaders: ShaderEngine,
     pub gear: GearEngine,
     pub face: FaceEngine,
+    pub lights: LightEngine,
     /// The camera pins onto the target (the Camera page's switch).
     pub orbit_enabled: bool,
     orbit: Orbit,
@@ -416,6 +419,7 @@ impl Manager {
         let steps = self.capture.cancel();
         self.run_capture_steps(steps);
         self.apply_hud_preference();
+        self.lights.clear_all();
         environment::release_sun();
         self.clear_imod();
         self.release_weather();
@@ -696,10 +700,7 @@ impl Manager {
             self.orbit.valid = false;
             return;
         };
-        let mut anchor = util::position(&target);
-        if target.cast::<Actor>().is_some() {
-            anchor[2] += root.worldBound.radius * 2.0 * 0.65;
-        }
+        let mut anchor = aim_point(&target, root);
         let camera = [free.position.x, free.position.y, free.position.z];
         if !self.orbit.valid || self.orbit.pivot_target != target.formID {
             let (yaw, pitch, distance) = engage(point::sub(camera, anchor), target.rotZ);
@@ -822,6 +823,7 @@ impl Manager {
             weather: Some(environment::form_key(self.forced_weather)).filter(|k| self.forced_weather != 0 && !k.is_empty()),
             sun: sun.enabled.then_some(SceneSun { azimuth: sun.azimuth, elevation: sun.elevation }),
             actors: actors.into_values().collect(),
+            rig: self.lights.rig(),
         }
     }
 
@@ -829,6 +831,7 @@ impl Manager {
     /// collision of earlier scenes handed back, then each actor's layers (persistent ones kept),
     /// freeze, hidden gear and collision; then the camera.
     pub fn apply_scene(&mut self, scene: &Scene) {
+        self.lights.replace_rig(scene.rig.clone());
         if let Some(hour) = scene.hour {
             self.set_hour(hour);
         }
@@ -859,7 +862,7 @@ impl Manager {
             restored += 1;
         }
         self.request_camera_pose(CameraPose::from(&scene.camera), true, true, true, true);
-        crate::log(&format!("<Photo Mode> Scene applied ({restored}/{} actors)", scene.actors.len()));
+        crate::log(&format!("<Photo Mode> Scene applied ({restored}/{} actors, {} lights)", scene.actors.len(), scene.rig.lights.len()));
     }
 
     /// `SetFootIKDisabled`: the graph bool the engine's per-actor foot IK switch reads, set on the
@@ -952,6 +955,17 @@ impl Manager {
     }
 }
 
+/// The chest the orbit pivots on and spotlights aim at: an actor's feet raised 0.65 of its 3D's
+/// bound diameter (IC: `GetHeight() * 0.65`), any other reference's position.
+#[must_use]
+pub fn aim_point(target: &TESObjectREFR, root: &NiAVObject) -> P3 {
+    let mut point = util::position(target);
+    if target.cast::<Actor>().is_some() {
+        point[2] += root.worldBound.radius * 2.0 * 0.65;
+    }
+    point
+}
+
 /// Where the nearby lists measure from: the camera, since in the free camera the subject is where
 /// the camera flew, not the player.
 fn camera_origin() -> Option<P3> {
@@ -1012,13 +1026,24 @@ pub fn on_global_update() {
         m.pose.on_game_update(apply_all);
         m.face.on_game_update(apply_all);
         m.gear.on_game_update(apply_all);
+        let target = m.target();
+        m.lights.on_game_update(target.as_deref(), apply_all);
+        let jobs = m.lights.take_jobs();
+        m.tasks.extend(jobs.into_iter().map(Task::Light));
     });
 }
 
-/// For an unload: the bones handed back to the animation, the sun, the colour grading and the HUD
-/// put back; a reloaded build starts a fresh session.
+/// For an unload: the bones handed back to the animation, the rig's references removed and the
+/// cell lights, the sun, the colour grading and the HUD put back; a reloaded build starts a fresh
+/// session.
 pub fn release() {
     with(|m| {
+        for task in core::mem::take(&mut m.tasks) {
+            if let Task::Light(Job::Delete(handle)) = task {
+                lights::delete(handle);
+            }
+        }
+        m.lights.release();
         m.restore_collision();
         m.pose.thaw();
         for handle in core::mem::take(&mut m.foot_ik_off) {
@@ -1086,6 +1111,13 @@ pub fn on_frame() {
             Task::Effect(entry, false) => shaders::stop(entry),
             Task::Weather(Some((form_id, transition))) => environment::force_weather(form_id, transition),
             Task::Weather(None) => environment::release_weather(),
+            Task::Light(Job::Spawn { light, base, target, extra }) => {
+                let placed = lights::spawn(base, target);
+                if let Some(unwanted) = with(|m| m.lights.land(light, base, extra, placed)) {
+                    lights::delete(unwanted);
+                }
+            }
+            Task::Light(Job::Delete(handle)) => lights::delete(handle),
         }
     }
     let delay = Duration::from_secs_f32(settings::profile().Studio.fBracketDelay.clamp(0.0, 5.0));

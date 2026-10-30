@@ -92,7 +92,30 @@ fn guides(painter: &Painter, screen: Rect) {
     }
 }
 
-/// The HUD painter: guides and bone markers while the studio is open and its menu is up.
+/// The light markers: an orb and a label at every placed light of the rig, in its colour, so an
+/// off-screen rig can be found.
+#[allow(clippy::cast_possible_truncation, clippy::cast_sign_loss)]
+fn light_markers(painter: &Painter, view: &View) {
+    let lights: Vec<(usize, [f32; 3], [f32; 3], bool)> = manager::with(|m| {
+        let rig = &m.lights;
+        if !rig.markers_visible {
+            return Vec::new();
+        }
+        rig.lights.iter().enumerate().filter(|(_, l)| l.handle != skyrim::actors::RefHandle::INVALID).map(|(i, l)| (i + 1, l.world_position, l.color, l.spot)).collect()
+    });
+    for (index, at, color, spot) in lights {
+        let [r, g, b] = color.map(|c| (c.clamp(0.0, 1.0) * 255.0) as u8);
+        let color = Color32::from_rgba_unmultiplied(r, g, b, 220);
+        let Some(centre) = view.project(at) else { continue };
+        let radius = view.project([at[0], at[1], at[2] + 8.0]).map_or(4.0, |top| centre.distance(top).max(2.0));
+        painter.circle_filled(centre, radius, color);
+        if let Some(label) = view.project([at[0], at[1], at[2] + 14.0]) {
+            painter.text(label, egui::Align2::CENTER_BOTTOM, format!("{} {index}", if spot { "Spot" } else { "Point" }), egui::FontId::proportional(14.0), color);
+        }
+    }
+}
+
+/// The HUD painter: guides and bone and light markers while the studio is open and its menu is up.
 pub fn paint(painter: &Painter, view: &View) {
     super::studio_menu::markers(Vec::clear);
     if !manager::with(|m| m.active) || !super::studio_menu::input_captured() {
@@ -100,6 +123,7 @@ pub fn paint(painter: &Painter, view: &View) {
     }
     guides(painter, view.screen());
     super::studio_menu::paint_markers(painter, view);
+    light_markers(painter, view);
 }
 
 #[cfg(test)]

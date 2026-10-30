@@ -23,6 +23,7 @@ use crate::camera::studio::io::{self, CameraBookmark, SamPack};
 use crate::camera::studio::manager::{self, CameraPose, Manager};
 use crate::camera::studio::adjustments::BoneDelta;
 use crate::camera::studio::face::{FaceNames, FaceState};
+use crate::camera::studio::lights::{self, Animation, Attach, Kind, LightEngine, Role};
 use crate::camera::studio::{gear, node_names, shaders};
 use crate::util::point;
 use crate::util::skyrim_util as util;
@@ -41,6 +42,7 @@ enum Page {
     Gear,
     Face,
     Camera,
+    Lights,
     Environment,
     Scenes,
     Idles,
@@ -93,6 +95,13 @@ struct Menu {
     object_search: String,
     /// The mouse button driving the orbit (0 rotate, 1 pan) or a bone drag (2).
     drag: Option<u8>,
+    selected_light: usize,
+    rig_files: Option<Vec<String>>,
+    selected_rig_file: String,
+    rig_save_name: String,
+    light_plugin_filter: String,
+    light_form_search: String,
+    selected_cell_light: Option<skyrim::actors::RefHandle>,
 }
 
 static MENU: Mutex<Option<Menu>> = Mutex::new(None);
@@ -294,6 +303,7 @@ pub fn draw(ui: &mut egui::Ui) {
         Page::Gear => gear_page(ui),
         Page::Face => face_page(ui),
         Page::Camera => camera(ui),
+        Page::Lights => lights_page(ui),
         Page::Environment => environment_page(ui),
         Page::Scenes => scenes(ui),
         Page::Idles => idle_page(ui),
@@ -328,13 +338,16 @@ fn home(ui: &mut egui::Ui, target_name: &str) {
     if row(ui, "Camera", None, "") {
         go(Page::Camera);
     }
+    if row(ui, "Lights", None, "") {
+        go(Page::Lights);
+    }
     if row(ui, "Environment", None, "Sun angle and colour grading") {
         go(Page::Environment);
     }
     if row(ui, "Pose Packs", None, "") {
         go(Page::Idles);
     }
-    if row(ui, "Scenes", None, "Save or restore the camera framing and the sun") {
+    if row(ui, "Scenes", None, "Save or restore the whole shot: every posed actor, the lights, the camera and the environment") {
         go(Page::Scenes);
     }
     if row(ui, "Options", None, "") {
@@ -1257,7 +1270,7 @@ fn scenes(ui: &mut egui::Ui) -> bool {
     let m = guard.get_or_insert_with(Menu::default);
     let dir = io::directory("Scenes");
     let files = m.scene_files.get_or_insert_with(|| io::list_files(&dir));
-    ui.weak("Save or restore the whole shot: every posed actor, the camera and the environment.");
+    ui.weak("Save or restore the whole shot: every posed actor, the lights, the camera and the environment.");
     title(ui, "Save");
     let mut saved = false;
     ui.horizontal(|ui| {
@@ -1265,7 +1278,7 @@ fn scenes(ui: &mut egui::Ui) -> bool {
         if ui.button("Save Scene").clicked() {
             let name = io::sanitize_file_name(&if m.scene_save_name.is_empty() { format!("Scene {}", files.len() + 1) } else { m.scene_save_name.clone() });
             let scene = manager::with(|s| s.capture_scene());
-            match io::save_scene(&dir, &scene, &name) {
+            match io::save_scene(&dir, &scene, &name, &environment::form_key) {
                 Ok(path) => {
                     crate::log(&format!("<Photo Mode> Saved scene: {}", path.display()));
                     m.selected_scene = name;
@@ -1287,12 +1300,10 @@ fn scenes(ui: &mut egui::Ui) -> bool {
             }
             if ui.selectable_label(*file == m.selected_scene, file).clicked() {
                 m.selected_scene.clone_from(file);
-                let mut notes = Vec::new();
-                match io::load_scene(&dir, file, &mut notes) {
+                match io::load_scene(&dir, file, &lights::resolve_form) {
                     Ok(scene) => manager::with(|s| s.apply_scene(&scene)),
-                    Err(e) => notes.push(e),
+                    Err(e) => crate::log(&format!("<Photo Mode> {e}")),
                 }
-                log_all(notes);
             }
         });
     }
@@ -1304,6 +1315,332 @@ fn scenes(ui: &mut egui::Ui) -> bool {
         m.scene_files = None;
     }
     false
+}
+
+fn lights_page(ui: &mut egui::Ui) -> bool {
+    if page_header(ui, "Lights") {
+        return true;
+    }
+    if manager::with(|m| m.target()).is_none() {
+        ui.weak("Target something to light");
+        return false;
+    }
+    let mut guard = MENU.lock().unwrap_or_else(std::sync::PoisonError::into_inner);
+    let m = guard.get_or_insert_with(Menu::default);
+    let bones: Vec<String> = manager::with(|s| s.bones.iter().map(|b| b.name.clone()).collect());
+    manager::with(|s| light_rig(ui, m, &mut s.lights, &bones));
+    false
+}
+
+/// `ShowLights`: building the rig, its files, the selected light and its form, then the nearby
+/// placed lights.
+fn light_rig(ui: &mut egui::Ui, m: &mut Menu, rig: &mut LightEngine, bones: &[String]) {
+    let forms = lights::all_forms();
+    ui.checkbox(&mut rig.markers_visible, "Show Markers").on_hover_text("Draws an orb + label at every light so off-screen rigs are findable");
+    let added = rig.lights.len();
+    if row(ui, "Three-Point Setup", Some("Key + Fill + Rim"), "The standard portrait setup: a key off to one side, a dim cool fill opposite it, and a rim behind to separate the subject from the background") {
+        rig.add_three_point_setup();
+    }
+    ui.columns(3, |columns| {
+        for (i, role) in Role::ALL[1..].iter().enumerate() {
+            if columns[i % 3].add_sized([columns[i % 3].available_width(), 22.0], egui::Button::new(role.name())).clicked() {
+                rig.add_role_light(*role);
+            }
+        }
+    });
+    for (label, value, tooltip, kind, shadows, negative) in [
+        ("Add Point Light", None, "", Kind::Point, false, false),
+        ("Add Spot Light", Some("auto-aims at the chest"), "", Kind::Spot, false, false),
+        ("Add Shadow Point Light", None, "Casts real shadows. Shadow lights compete for the engine's shadow budget, so a few is fine and a dozen is not", Kind::Point, true, false),
+        ("Add Shadow Spot Light", Some("auto-aims at the chest"), "A shadow-casting cone - the sharpest, most directional light available", Kind::Spot, true, false),
+        ("Add Negative Light", None, "Subtracts light instead of adding it - carves shadow into an over-lit area", Kind::Point, false, true),
+    ] {
+        if row(ui, label, value, tooltip) {
+            rig.add_light(kind, shadows, negative);
+        }
+    }
+    if rig.lights.len() != added {
+        m.selected_light = rig.lights.len() - 1;
+    }
+    if !rig.lights.is_empty() && row(ui, "Clear All Lights", None, "") {
+        rig.clear_all();
+        return;
+    }
+    rig_files(ui, m, rig);
+    if rig.lights.is_empty() {
+        ui.weak("No lights in the rig yet");
+        return;
+    }
+    m.selected_light = m.selected_light.min(rig.lights.len() - 1);
+    title(ui, "Rig");
+    ui.horizontal(|ui| {
+        ui.add(egui::DragValue::new(&mut rig.rig_rotation).speed(0.5).fixed_decimals(1));
+        ui.label("Rig Rotation");
+    });
+    ui.horizontal(|ui| {
+        for v in &mut rig.rig_offset {
+            ui.add(egui::DragValue::new(v).speed(0.5).fixed_decimals(1));
+        }
+        ui.label("Rig Offset");
+    });
+    title(ui, "Lights");
+    egui::Frame::group(ui.style()).show(ui, |ui| {
+        egui::ScrollArea::vertical().id_salt("LightList").max_height(ui.text_style_height(&egui::TextStyle::Body) * 6.0).show(ui, |ui| {
+            for (i, light) in rig.lights.iter().enumerate() {
+                let name = if light.name.is_empty() { if light.spot { "Spot" } else { "Point" } } else { &light.name };
+                if ui.selectable_label(i == m.selected_light, format!("{name} ({})", if light.enabled { "on" } else { "off" })).clicked() {
+                    m.selected_light = i;
+                }
+            }
+        });
+    });
+    let index = m.selected_light;
+    let delete = ui
+        .horizontal(|ui| {
+            ui.checkbox(&mut rig.lights[index].enabled, "Enabled");
+            ui.button("Delete").clicked()
+        })
+        .inner;
+    if delete {
+        rig.request_delete(index);
+        return;
+    }
+    if light_editor(ui, &mut rig.lights[index], forms, bones) {
+        rig.refresh_form(index);
+    }
+    if let Some(form_id) = light_forms(ui, m, &rig.lights[index], forms) {
+        rig.request_swap(index, form_id);
+    }
+    nearby_lights(ui, m, rig);
+}
+
+/// Saving and loading whole rigs under `PhotoMode\Lights`.
+fn rig_files(ui: &mut egui::Ui, m: &mut Menu, rig: &mut LightEngine) {
+    let dir = io::directory("Lights");
+    let files = m.rig_files.get_or_insert_with(|| io::list_files(&dir)).clone();
+    let mut load = None;
+    ui.horizontal(|ui| {
+        file_combo(ui, "RigFiles", &files, &mut m.selected_rig_file, "Select rig...");
+        if ui.button("Load Rig").clicked() && !m.selected_rig_file.is_empty() {
+            load = Some(m.selected_rig_file.clone());
+        }
+        if ui.button("Random").clicked() && !files.is_empty() {
+            let pick = files[usize::try_from(ui.ctx().cumulative_frame_nr()).unwrap_or(0) % files.len()].clone();
+            m.selected_rig_file.clone_from(&pick);
+            load = Some(pick);
+        }
+    });
+    if let Some(file) = load {
+        match io::load_light_rig(&dir, &file, &lights::resolve_form) {
+            Ok(loaded) => {
+                crate::log(&format!("<Photo Mode> Loaded light rig: {file} ({} lights)", loaded.lights.len()));
+                rig.replace_rig(loaded);
+                m.selected_light = 0;
+            }
+            Err(e) => crate::log(&format!("<Photo Mode> {e}")),
+        }
+    }
+    ui.horizontal(|ui| {
+        ui.add(egui::TextEdit::singleline(&mut m.rig_save_name).hint_text("Rig name...").desired_width(ui.available_width() * 0.55));
+        let name = io::sanitize_file_name(&m.rig_save_name);
+        if ui.button("Save Rig").clicked() && !name.is_empty() {
+            match io::save_light_rig(&dir, &rig.rig(), &name, &environment::form_key) {
+                Ok(path) => {
+                    crate::log(&format!("<Photo Mode> Saved light rig: {} ({} lights)", path.display(), rig.lights.len()));
+                    m.rig_files = None;
+                }
+                Err(e) => crate::log(&format!("<Photo Mode> {e}")),
+            }
+        }
+    });
+}
+
+fn enum_combo<T: Copy + PartialEq>(ui: &mut egui::Ui, label: &str, all: &[T], value: T, name: impl Fn(T) -> &'static str, available: impl Fn(T) -> bool) -> Option<T> {
+    let mut picked = None;
+    egui::ComboBox::from_label(label).selected_text(name(value)).show_ui(ui, |ui| {
+        for &entry in all {
+            let response = ui.add_enabled_ui(available(entry), |ui| ui.selectable_label(entry == value, name(entry))).inner.on_disabled_hover_text("No usable light form of this type in the load order");
+            if response.clicked() {
+                picked = Some(entry);
+            }
+        }
+    });
+    picked
+}
+
+/// The selected light's values, role, type, animation, flags, attachment and softbox; true when
+/// its base form has to change.
+fn light_editor(ui: &mut egui::Ui, light: &mut lights::Light, forms: &[lights::FormInfo], bones: &[String]) -> bool {
+    ui.add(egui::TextEdit::singleline(&mut light.name).hint_text("Light name...").desired_width(f32::INFINITY));
+    let number = |ui: &mut egui::Ui, label: &str, value: &mut f32, speed: f64, range: Option<(f32, f32)>| {
+        ui.horizontal(|ui| {
+            let mut drag = egui::DragValue::new(value).speed(speed).fixed_decimals(1);
+            if let Some((a, b)) = range {
+                drag = drag.range(a..=b);
+            }
+            ui.add(drag);
+            ui.label(label);
+        });
+    };
+    number(ui, "Angle", &mut light.angle, 0.5, None);
+    number(ui, "Distance", &mut light.distance, 1.0, Some((10.0, 4096.0)));
+    number(ui, "Height", &mut light.height, 1.0, Some((-512.0, 1024.0)));
+    ui.horizontal(|ui| {
+        ui.color_edit_button_rgb(&mut light.color);
+        ui.label("Color");
+    });
+    ui.add(egui::Slider::new(&mut light.fade, 0.0..=5.0).fixed_decimals(2).text("Intensity"));
+    ui.add(egui::Slider::new(&mut light.radius, 32.0..=2048.0).fixed_decimals(0).text("Radius"));
+    if light.spot {
+        number(ui, "Aim X", &mut light.aim_x, 0.5, None);
+        number(ui, "Aim Y", &mut light.aim_y, 0.5, None);
+    }
+    let mut form_dirty = false;
+    if let Some(role) = enum_combo(ui, "Role", &Role::ALL, light.role, Role::name, |_| true) {
+        lights::apply_role_preset(light, role, forms);
+        form_dirty = true;
+    }
+    if let Some(kind) = enum_combo(ui, "Type", &Kind::ALL, light.kind, Kind::name, |k| lights::has_form_for(forms, k)) {
+        light.kind = kind;
+        form_dirty = true;
+    }
+    if let Some(animation) = enum_combo(ui, "Animation", &Animation::ALL, light.animation, Animation::name, |_| true) {
+        light.animation = animation;
+        form_dirty = true;
+    }
+    ui.horizontal(|ui| {
+        form_dirty |= ui.checkbox(&mut light.shadows, "Casts Shadows").on_hover_text("Shadow casters compete for the engine's shadow-light budget - too many and some silently stop rendering").changed();
+        ui.checkbox(&mut light.negative, "Negative").on_hover_text("Subtracts light instead of adding it. Colour still applies - a warm negative light removes warmth. Keep it close to what it should darken");
+    });
+    if !lights::can_match(forms, light.kind, light.shadows, light.animation) {
+        ui.colored_label(Color32::from_rgb(201, 170, 72), "No light form matches that combination.");
+        ui.weak("The closest available form is in use instead.");
+    }
+    title(ui, "Attachment");
+    if let Some(attach) = enum_combo(ui, "Attach To", &Attach::ALL, light.attach, Attach::name, |_| true) {
+        light.attach = attach;
+        light.anchor_valid = false;
+    }
+    if light.attach == Attach::Bone {
+        egui::ComboBox::from_label("Bone").selected_text(if light.bone.is_empty() { "<none>" } else { &light.bone }).show_ui(ui, |ui| {
+            for bone in bones {
+                ui.selectable_value(&mut light.bone, bone.clone(), bone);
+            }
+        });
+    }
+    title(ui, "Softbox");
+    ui.checkbox(&mut light.softbox, "Soften").on_hover_text("The engine has no area lights, so this spreads a grid of dimmer emitters over a rectangle facing the subject - softer falloff and gentler shadow edges");
+    if light.softbox {
+        number(ui, "Width", &mut light.soft_width, 1.0, Some((0.0, 1024.0)));
+        number(ui, "Height", &mut light.soft_height, 1.0, Some((0.0, 1024.0)));
+        ui.add(egui::Slider::new(&mut light.soft_columns, 1..=5).text("Columns"));
+        ui.add(egui::Slider::new(&mut light.soft_rows, 1..=5).text("Rows"));
+        ui.weak(format!("{} emitters - intensity is split across them", lights::softbox_extras(light) + 1));
+    }
+    form_dirty
+}
+
+/// `ShowLights`' form browser: every loaded light form by plugin and name, with badges; a click
+/// swaps the selected light's form in place.
+fn light_forms(ui: &mut egui::Ui, m: &mut Menu, light: &lights::Light, forms: &[lights::FormInfo]) -> Option<u32> {
+    const CAP: usize = 200;
+    title(ui, "Light Form");
+    let current = forms.iter().find(|f| f.form_id == light.base);
+    ui.weak(format!("Current: {}", current.map_or("?", |f| f.label.as_str()))).on_hover_text("Different forms = different falloff/shadow behavior; pick one below to swap in place");
+    let mut plugins: Vec<&str> = Vec::new();
+    for f in forms {
+        if !plugins.contains(&f.plugin.as_str()) {
+            plugins.push(&f.plugin);
+        }
+    }
+    ui.horizontal(|ui| {
+        egui::ComboBox::from_id_salt("LightPluginFilter").width(ui.available_width() * 0.45).selected_text(if m.light_plugin_filter.is_empty() { "All mods" } else { &m.light_plugin_filter }).show_ui(ui, |ui| {
+            ui.selectable_value(&mut m.light_plugin_filter, String::new(), "All mods");
+            for plugin in &plugins {
+                ui.selectable_value(&mut m.light_plugin_filter, (*plugin).to_owned(), *plugin);
+            }
+        });
+        ui.add(egui::TextEdit::singleline(&mut m.light_form_search).hint_text("Search lights...").desired_width(f32::INFINITY));
+    });
+    let mut picked = None;
+    egui::Frame::group(ui.style()).show(ui, |ui| {
+        egui::ScrollArea::vertical().id_salt("LightForms").max_height(ui.text_style_height(&egui::TextStyle::Body) * 8.0).show(ui, |ui| {
+            let matching: Vec<&lights::FormInfo> = forms.iter().filter(|f| (m.light_plugin_filter.is_empty() || f.plugin == m.light_plugin_filter) && contains_no_case(&f.label, &m.light_form_search)).collect();
+            for form in matching.iter().take(CAP) {
+                let mut label = form.label.clone();
+                for (on, badge) in [(lights::is_spot(form.flags), "  [spot]"), (lights::casts_shadows(form.flags), "  [shadow]"), (form.has_model, "  [mesh]"), (form.flags & sre::TESObjectLIGH_flags::CAN_CARRY.bits() != 0, "  [carry]")] {
+                    if on {
+                        label.push_str(badge);
+                    }
+                }
+                if ui.selectable_label(form.form_id == light.base, label).clicked() {
+                    picked = Some(form.form_id);
+                }
+            }
+            if matching.len() > CAP {
+                ui.weak(format!("+{} more - narrow the search", matching.len() - CAP));
+            }
+        });
+    });
+    picked
+}
+
+/// `ShowNearbyLights`: placed lights around the target, switched or tinted one by one or all at
+/// once; edits are held every tick until restored.
+fn nearby_lights(ui: &mut egui::Ui, m: &mut Menu, rig: &mut LightEngine) {
+    title(ui, "Nearby Lights");
+    if rig.cell_lights.is_empty() {
+        ui.weak("No placed lights in range");
+        return;
+    }
+    ui.columns(3, |columns| {
+        let width = columns[0].available_width();
+        if columns[0].add_sized([width, 22.0], egui::Button::new("Disable All")).on_hover_text("Turns off every placed light in range - a clean slate for the rig").clicked() {
+            rig.set_all_cell_lights(false);
+        }
+        if columns[1].add_sized([width, 22.0], egui::Button::new("Enable All")).clicked() {
+            rig.set_all_cell_lights(true);
+        }
+        if columns[2].add_sized([width, 22.0], egui::Button::new("Restore All")).on_hover_text("Hands every touched light back to the game (also happens on Photo Mode exit)").clicked() {
+            rig.restore_all_cell_lights();
+        }
+    });
+    egui::Frame::group(ui.style()).show(ui, |ui| {
+        egui::ScrollArea::vertical().id_salt("CellLightList").max_height(ui.text_style_height(&egui::TextStyle::Body) * 6.0).show(ui, |ui| {
+            for entry in &rig.cell_lights {
+                let state = if !entry.managed { "" } else if entry.enabled { " (edited)" } else { " (off)" };
+                ui.horizontal(|ui| {
+                    if ui.selectable_label(m.selected_cell_light == Some(entry.handle), format!("{}{state}", entry.label)).clicked() {
+                        m.selected_cell_light = Some(entry.handle);
+                    }
+                    ui.with_layout(egui::Layout::right_to_left(egui::Align::Center), |ui| ui.weak(format!("{:.0}", entry.distance)));
+                });
+            }
+        });
+    });
+    let Some(selected) = rig.cell_lights.iter_mut().find(|c| Some(c.handle) == m.selected_cell_light) else {
+        ui.weak("Select a light to edit");
+        return;
+    };
+    let mut touched = false;
+    ui.horizontal(|ui| {
+        touched |= ui.checkbox(&mut selected.enabled, "Enabled").changed();
+        if selected.managed && ui.button("Restore").clicked() {
+            selected.restore_requested = true;
+        }
+    });
+    if selected.restore_requested {
+        return;
+    }
+    ui.horizontal(|ui| {
+        touched |= ui.color_edit_button_rgb(&mut selected.values.color).changed();
+        ui.label("Color");
+    });
+    touched |= ui.add(egui::Slider::new(&mut selected.values.fade, 0.0..=5.0).fixed_decimals(2).text("Intensity")).changed();
+    touched |= ui.add(egui::Slider::new(&mut selected.values.radius, 32.0..=2048.0).fixed_decimals(0).text("Radius")).changed();
+    if touched {
+        selected.managed = true;
+    }
 }
 
 fn idle_page(ui: &mut egui::Ui) -> bool {

@@ -7,6 +7,7 @@ pub mod face;
 pub mod gear;
 pub mod idles;
 pub mod io;
+pub mod lights;
 pub mod manager;
 pub mod node_names;
 pub mod shaders;

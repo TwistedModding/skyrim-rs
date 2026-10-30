@@ -1,7 +1,8 @@
 //! `camera/studio/StudioIO`: the studio's files. Its own live in a folder of the port's
 //! (`Data\SKSE\Plugins\skyrim-rs\improved-camera\PhotoMode\`, with IC's layout: `Adjustments`,
-//! `Poses`, `Expressions`, `Scenes`, `Shots` and `Cameras.json`); Screen Archer Menu's pose,
-//! adjustment and face morph packs under `Data\SAM\` are only read. JSON as IC writes it (tab-indented, `version` 1).
+//! `Poses`, `Expressions`, `Lights`, `Scenes`, `Shots` and `Cameras.json`);
+//! Screen Archer Menu's pose, adjustment and face morph packs under `Data\SAM\` are only read. JSON
+//! as IC writes it (tab-indented, `version` 1).
 
 use std::collections::BTreeMap;
 use std::fmt::Write as _;
@@ -12,6 +13,7 @@ use skyrim::render::Transform;
 
 use super::adjustments::{Adjustment, BoneDelta, degrees_from_rotation, rotation_from_degrees};
 use super::face::{FaceNames, FaceState, parse_sam_expression};
+use super::lights::{self, Animation, Attach, Kind, Light, Rig, Role};
 use crate::util::point::P3;
 
 const FILE_VERSION: f64 = 1.0;
@@ -547,6 +549,124 @@ pub fn save_outfit_studio_pose(dir: &Path, layer: &Adjustment, name: &str) -> Re
     Ok(path)
 }
 
+#[allow(clippy::cast_possible_truncation, clippy::cast_sign_loss)]
+fn u32_or(json: &Json, key: &str, default: u32) -> u32 {
+    match json.get(key) {
+        Some(Json::Number(v)) if *v >= 0.0 => *v as u32,
+        _ => default,
+    }
+}
+
+#[allow(clippy::cast_possible_truncation)]
+fn i32_or(json: &Json, key: &str, default: i32) -> i32 {
+    match json.get(key) {
+        Some(Json::Number(v)) => *v as i32,
+        _ => default,
+    }
+}
+
+fn light_json(light: &Light, key: &dyn Fn(u32) -> String) -> Json {
+    let index = |i: u32| Json::Number(f64::from(i));
+    object(vec![
+        ("form", Json::Text(key(light.base))),
+        ("name", Json::Text(light.name.clone())),
+        ("spot", Json::Bool(light.spot)),
+        ("kind", index(lights::index_of(&Kind::ALL, &light.kind))),
+        ("animation", index(lights::index_of(&Animation::ALL, &light.animation))),
+        ("role", index(lights::index_of(&Role::ALL, &light.role))),
+        ("attach", index(lights::index_of(&Attach::ALL, &light.attach))),
+        ("shadows", Json::Bool(light.shadows)),
+        ("negative", Json::Bool(light.negative)),
+        ("bone", Json::Text(light.bone.clone())),
+        ("softbox", Json::Bool(light.softbox)),
+        ("softWidth", num(light.soft_width)),
+        ("softHeight", num(light.soft_height)),
+        ("softColumns", Json::Number(f64::from(light.soft_columns))),
+        ("softRows", Json::Number(f64::from(light.soft_rows))),
+        ("enabled", Json::Bool(light.enabled)),
+        ("angle", num(light.angle)),
+        ("distance", num(light.distance)),
+        ("height", num(light.height)),
+        ("aimX", num(light.aim_x)),
+        ("aimY", num(light.aim_y)),
+        ("color", triple(light.color)),
+        ("fade", num(light.fade)),
+        ("radius", num(light.radius)),
+    ])
+}
+
+/// `LightsToJson`: the rig body light rig files and scenes share; `key` names a base form by plugin.
+fn rig_json(rig: &Rig, key: &dyn Fn(u32) -> String) -> Vec<(&'static str, Json)> {
+    vec![("rigRotation", num(rig.rotation)), ("rigOffset", triple(rig.offset)), ("lights", Json::Array(rig.lights.iter().map(|l| light_json(l, key)).collect()))]
+}
+
+/// What a saved light's form key comes back as: the form's runtime id and its flags (the form the
+/// load order offers instead when the key's plugin is gone), `None` to skip the light.
+pub type ResolveLight<'a> = &'a dyn Fn(&str, bool) -> Option<(u32, u32)>;
+
+/// `LightsFromJson`: `None` without a `lights` array. Every light is staged to be placed; the form
+/// that resolved decides whether it aims and casts shadows. Rigs from before kinds carry only
+/// `spot`; the old third kind (2) was a negative point.
+fn rig_from_json(json: &Json, resolve: ResolveLight) -> Option<Rig> {
+    let Some(Json::Array(entries)) = json.get("lights") else { return None };
+    let mut rig = Rig { rotation: f32_or(json, "rigRotation", 0.0), ..Rig::default() };
+    read_triple(json, "rigOffset", &mut rig.offset);
+    for entry in entries.iter().filter(|e| matches!(e, Json::Object(_))) {
+        let spot = bool_or(entry, "spot", false);
+        let kind = u32_or(entry, "kind", u32::from(spot));
+        let Some((base, flags)) = resolve(&text_or(entry, "form", ""), spot) else { continue };
+        let enumerated = |key: &str, len: usize| Some(u32_or(entry, key, 0) as usize).filter(|i| *i < len).unwrap_or(0);
+        let mut light = Light {
+            base,
+            spot: lights::is_spot(flags),
+            shadows: lights::casts_shadows(flags),
+            negative: bool_or(entry, "negative", kind == 2),
+            kind: Kind::ALL.get(kind as usize).copied().unwrap_or(Kind::Point),
+            animation: Animation::ALL[enumerated("animation", Animation::ALL.len())],
+            role: Role::ALL[enumerated("role", Role::ALL.len())],
+            attach: Attach::ALL[enumerated("attach", Attach::ALL.len())],
+            bone: text_or(entry, "bone", ""),
+            softbox: bool_or(entry, "softbox", false),
+            soft_width: f32_or(entry, "softWidth", 160.0),
+            soft_height: f32_or(entry, "softHeight", 120.0),
+            soft_columns: i32_or(entry, "softColumns", 3),
+            soft_rows: i32_or(entry, "softRows", 2),
+            name: text_or(entry, "name", ""),
+            enabled: bool_or(entry, "enabled", true),
+            angle: f32_or(entry, "angle", 0.0),
+            distance: f32_or(entry, "distance", 120.0),
+            height: f32_or(entry, "height", 120.0),
+            aim_x: f32_or(entry, "aimX", 0.0),
+            aim_y: f32_or(entry, "aimY", 0.0),
+            fade: f32_or(entry, "fade", 1.0),
+            radius: f32_or(entry, "radius", 256.0),
+            spawn_requested: true,
+            ..Light::default()
+        };
+        read_triple(entry, "color", &mut light.color);
+        if light.name.is_empty() {
+            light.name = format!("{} {}", if light.spot { "Spot" } else { "Point" }, rig.lights.len() + 1);
+        }
+        rig.lights.push(light);
+    }
+    Some(rig)
+}
+
+/// `SaveLightRig`: `<dir>\<name>.json`.
+pub fn save_light_rig(dir: &Path, rig: &Rig, name: &str, key: &dyn Fn(u32) -> String) -> Result<PathBuf, String> {
+    let mut fields = rig_json(rig, key);
+    fields.push(("version", Json::Number(FILE_VERSION)));
+    fields.push(("type", Json::Text("lightrig".into())));
+    let path = dir.join(format!("{name}.json"));
+    write(&path, &object(fields)).map(|()| path)
+}
+
+/// `LoadLightRig`.
+pub fn load_light_rig(dir: &Path, name: &str, resolve: ResolveLight) -> Result<Rig, String> {
+    let path = dir.join(format!("{name}.json"));
+    rig_from_json(&read(&path)?, resolve).ok_or_else(|| format!("Invalid light rig: {}", path.display()))
+}
+
 /// The sun override a scene carries: compass azimuth and elevation, degrees.
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub struct SceneSun {
@@ -575,8 +695,8 @@ pub struct SceneActor {
     pub layers: Vec<Adjustment>,
 }
 
-/// What of IC's scene the port restores: the camera, the hour, the forced weather (a form key),
-/// the sun and the actors. IC's lights are still read past, their block noted.
+/// A whole shot: the camera, the hour, the forced weather (a form key), the sun, the actors and
+/// the light rig.
 #[derive(Clone, Debug, Default, PartialEq)]
 pub struct Scene {
     pub camera: CameraBookmark,
@@ -584,6 +704,7 @@ pub struct Scene {
     pub weather: Option<String>,
     pub sun: Option<SceneSun>,
     pub actors: Vec<SceneActor>,
+    pub rig: Rig,
 }
 
 fn scene_actor_json(actor: &SceneActor) -> Json {
@@ -619,8 +740,10 @@ fn scene_actor(json: &Json) -> Option<SceneActor> {
     Some(SceneActor { key, name: text_or(json, "name", ""), frozen: bool_or(json, "frozen", false), collision_off: bool_or(json, "collisionOff", false), hidden_gear, face, layers })
 }
 
-pub fn save_scene(dir: &Path, scene: &Scene, name: &str) -> Result<PathBuf, String> {
-    let mut fields = vec![("lights", Json::Array(Vec::new())), ("version", Json::Number(FILE_VERSION)), ("type", Json::Text("scene".into())), ("camera", camera_json(&scene.camera, false))];
+/// `SaveScene`; `key` names the lights' base forms by plugin.
+pub fn save_scene(dir: &Path, scene: &Scene, name: &str, key: &dyn Fn(u32) -> String) -> Result<PathBuf, String> {
+    let mut fields = rig_json(&scene.rig, key);
+    fields.extend([("version", Json::Number(FILE_VERSION)), ("type", Json::Text("scene".into())), ("camera", camera_json(&scene.camera, false))]);
     if let Some(hour) = scene.hour {
         fields.push(("hour", num(hour)));
     }
@@ -635,8 +758,8 @@ pub fn save_scene(dir: &Path, scene: &Scene, name: &str) -> Result<PathBuf, Stri
     write(&path, &object(fields)).map(|()| path)
 }
 
-/// `LoadScene`; `notes` names the blocks the port does not restore.
-pub fn load_scene(dir: &Path, name: &str, notes: &mut Vec<String>) -> Result<Scene, String> {
+/// `LoadScene`: a scene without lights is legitimate, only the block is optional.
+pub fn load_scene(dir: &Path, name: &str, resolve: ResolveLight) -> Result<Scene, String> {
     let path = dir.join(format!("{name}.json"));
     let json = read(&path)?;
     if !matches!(json.get("type"), Some(Json::Text(t)) if t == "scene") {
@@ -650,15 +773,12 @@ pub fn load_scene(dir: &Path, name: &str, notes: &mut Vec<String>) -> Result<Sce
             Some(Json::Array(items)) => items.iter().filter_map(scene_actor).collect(),
             _ => Vec::new(),
         },
+        rig: rig_from_json(&json, resolve).unwrap_or_default(),
         ..Scene::default()
     };
     if let Some(sun) = json.get("sun").filter(|s| matches!(s, Json::Object(_))) {
         scene.sun = Some(SceneSun { azimuth: f32_or(sun, "azimuth", 0.0), elevation: f32_or(sun, "elevation", 0.0) });
     }
-    if matches!(json.get("lights"), Some(Json::Array(a)) if !a.is_empty()) {
-        notes.push(format!("{name}: the scene's lights are not restored here"));
-    }
-
     Ok(scene)
 }
 
@@ -741,20 +861,56 @@ mod tests {
         let layer = Adjustment { name: "Lean".into(), file: "lean".into(), enabled: false, is_pose: true, persistent: false, include_in_pose: false, bones: BTreeMap::from([("NPC Head [Head]".to_owned(), BoneDelta { rotation: [5.0, 0.0, -10.0], ..BoneDelta::default() })]) };
         let smile = FaceState { expression: 10, expression_value: 0.75, eyes_override: true, eyes_heading: -0.25, persistent: true, tongue: [("PA Tongue".to_owned(), BoneDelta { position: [0.0, 0.5, 0.0], ..BoneDelta::default() })].into(), ..FaceState::default() };
         let lydia = SceneActor { key: "Skyrim.esm|000A2C94".into(), name: "Lydia".into(), frozen: true, collision_off: true, hidden_gear: 0b10_0001, face: Some(smile), layers: vec![layer] };
-        let scene = Scene { camera: CameraBookmark { name: String::new(), ..shots[0].clone() }, hour: Some(18.5), weather: Some("Skyrim.esm|0000081A".into()), sun: Some(SceneSun { azimuth: 135.0, elevation: 20.0 }), actors: vec![lydia] };
-        save_scene(&dir, &scene, "Dusk").unwrap();
-        let mut notes = Vec::new();
-        assert_eq!(load_scene(&dir, "Dusk", &mut notes).unwrap(), scene);
-        assert_eq!(notes, Vec::<String>::new());
-        std::fs::write(dir.join("Ic.json"), r#"{"type": "scene", "camera": {"fov": 40}, "hour": 6.5, "actors": [{"actor": "Skyrim.esm|00000007", "face": {}}, {"name": "no key"}], "lights": [{}]}"#).unwrap();
-        let ic = load_scene(&dir, "Ic", &mut notes).unwrap();
-        assert!((ic.camera.fov - 40.0).abs() < f32::EPSILON && ic.sun.is_none() && ic.hour == Some(6.5) && ic.weather.is_none());
-        assert_eq!(notes, ["Ic: the scene's lights are not restored here"]);
+        let rig = Rig { rotation: 15.0, offset: [0.0, 10.0, -5.0], lights: vec![key_light()] };
+        let scene = Scene { camera: CameraBookmark { name: String::new(), ..shots[0].clone() }, hour: Some(18.5), weather: Some("Skyrim.esm|0000081A".into()), sun: Some(SceneSun { azimuth: 135.0, elevation: 20.0 }), actors: vec![lydia], rig };
+        save_scene(&dir, &scene, "Dusk", &form_key).unwrap();
+        assert_eq!(load_scene(&dir, "Dusk", &resolve).unwrap(), scene);
+        std::fs::write(dir.join("Ic.json"), r#"{"type": "scene", "camera": {"fov": 40}, "hour": 6.5, "actors": [{"actor": "Skyrim.esm|00000007", "face": {}}, {"name": "no key"}]}"#).unwrap();
+        let ic = load_scene(&dir, "Ic", &resolve).unwrap();
+        assert!((ic.camera.fov - 40.0).abs() < f32::EPSILON && ic.sun.is_none() && ic.hour == Some(6.5) && ic.weather.is_none() && ic.rig == Rig::default());
         assert_eq!(ic.actors, [SceneActor { key: "Skyrim.esm|00000007".into(), face: Some(FaceState::default()), ..SceneActor::default() }], "an actor without a key is skipped");
         assert_eq!(parse_form_key("Skyrim.esm|0000081A"), Some(("Skyrim.esm", 0x81a)));
         assert_eq!(parse_form_key("Skyrim.esm"), None);
         std::fs::write(dir.join("Pose.json"), r#"{"type": "pose"}"#).unwrap();
-        assert!(load_scene(&dir, "Pose", &mut notes).is_err());
+        assert!(load_scene(&dir, "Pose", &resolve).is_err());
+        let _ = std::fs::remove_dir_all(&dir);
+    }
+
+    /// Form keys as `Plugin|LOCALID` of a test load order holding `Skyrim.esm` only: spot forms
+    /// have bit 12 set in their id, every other plugin falls back to a point form.
+    fn form_key(id: u32) -> String {
+        format!("Skyrim.esm|{id:08X}")
+    }
+
+    fn resolve(key: &str, spot: bool) -> Option<(u32, u32)> {
+        match parse_form_key(key) {
+            Some(("Skyrim.esm", id)) => Some((id, if id & 0x1000 != 0 { 0x400 } else { 0 })),
+            _ if spot => None,
+            _ => Some((0x99, 0)),
+        }
+    }
+
+    fn key_light() -> Light {
+        Light { base: 0x1001, name: "Key".into(), spot: true, shadows: true, kind: Kind::Spot, animation: Animation::Pulse, role: Role::Key, attach: Attach::Bone, bone: "NPC Head [Head]".into(), angle: 45.0, distance: 130.0, height: 150.0, aim_x: 2.5, aim_y: -1.0, color: [1.0, 0.95, 0.86], fade: 0.75, radius: 420.0, softbox: true, soft_width: 200.0, soft_height: 90.0, soft_columns: 4, soft_rows: 1, enabled: false, negative: true, spawn_requested: true, ..Light::default() }
+    }
+
+    #[test]
+    fn light_rigs_round_trip_and_read_older_files() {
+        let dir = temp("lights");
+        let rig = Rig { rotation: -30.0, offset: [1.0, 2.0, 3.0], lights: vec![key_light(), Light { base: 0x22, name: "Fill".into(), spawn_requested: true, ..Light::default() }] };
+        save_light_rig(&dir, &rig, "Portrait", &form_key).unwrap();
+        assert_eq!(load_light_rig(&dir, "Portrait", &resolve).unwrap(), rig);
+        let live = Rig { lights: vec![Light { id: 4, handle: skyrim::actors::RefHandle(0x0010_0001), extra: vec![skyrim::actors::RefHandle(0x0010_0002)], world_position: [5.0; 3], ..key_light() }], ..rig.clone() };
+        save_light_rig(&dir, &live, "Live", &form_key).unwrap();
+        assert_eq!(load_light_rig(&dir, "Live", &resolve).unwrap().lights[0], key_light(), "only the rig's data is kept");
+        std::fs::write(dir.join("Old.json"), r#"{"lights": [{"form": "Gone.esp|00000001", "spot": true}, {"form": "Gone.esp|00000002", "kind": 2, "name": ""}, {"form": "Skyrim.esm|00001003", "kind": 7, "animation": 9, "attach": 3, "color": [0.5, "x", 0.25]}, 3]}"#).unwrap();
+        let old = load_light_rig(&dir, "Old", &resolve).unwrap();
+        assert_eq!(old.lights.len(), 2, "a spot whose form is gone and has no fallback is skipped");
+        assert_eq!((old.lights[0].base, old.lights[0].negative, old.lights[0].kind, old.lights[0].name.as_str()), (0x99, true, Kind::Point, "Point 1"));
+        let third = &old.lights[1];
+        assert_eq!((third.spot, third.shadows, third.kind, third.animation, third.attach, third.color), (true, true, Kind::Point, Animation::None, Attach::World, [0.5, 1.0, 0.25]));
+        std::fs::write(dir.join("Empty.json"), r#"{"type": "lightrig"}"#).unwrap();
+        assert!(load_light_rig(&dir, "Empty", &resolve).is_err());
         let _ = std::fs::remove_dir_all(&dir);
     }
 

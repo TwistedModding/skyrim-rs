@@ -11,7 +11,8 @@
 //! look-down limit, the body in interior rooms and the camera's fades skipped; IC's menu as the
 //! tab's sections, its profiles kept in the plugin's settings with the importer of IC's own files,
 //! its `ic` console command, and the photo mode (the studio: pose layers, the orbit camera, bone
-//! markers, guides, the sun, colour grading, pose packs, bookmarks, scenes and PNG capture).
+//! markers, guides, the light rig, the sun, colour grading, pose packs, bookmarks, scenes and PNG
+//! capture).
 
 mod api;
 mod body;
