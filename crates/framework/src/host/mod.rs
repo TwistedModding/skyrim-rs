@@ -116,6 +116,8 @@ static TABLE: Table = Table {
     add_section: gui::add_section,
     add_hud: gui::add_hud,
     show_tab: gui::show_tab,
+    show_section: gui::show_section,
+    read_frame: overlay::read_back,
     setting: settings::get,
     set_setting: settings::set,
     setting_keys: settings::keys,

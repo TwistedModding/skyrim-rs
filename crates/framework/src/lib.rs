@@ -28,7 +28,7 @@
 use core::ffi::{CStr, c_char};
 use std::fmt;
 
-pub use overlay::{GameMouse, GamePad, Hotkey, Scope, View, egui, theme};
+pub use overlay::{Frame, GameMouse, GamePad, Hotkey, Scope, View, egui, theme};
 use skyrim::events::{BSTEventSource, ErasedHandler, ErasedSource, Event};
 use sre::{BSAnimationGraphEvent, BSEventNotifyControl, InputDevice};
 use skyrim::input::{Command, CommandSlot, ErasedExecute, Param};
@@ -178,6 +178,8 @@ pub(crate) struct Table {
     pub add_section: fn(&'static str, &str, DrawFn),
     pub add_hud: fn(&'static str, HudDrawFn),
     pub show_tab: fn(&'static str),
+    pub show_section: fn(&'static str, &str),
+    pub read_frame: fn() -> Result<Frame, String>,
     pub setting: fn(&str, &str) -> Option<Setting>,
     pub set_setting: fn(&str, &str, Setting),
     pub setting_keys: fn(&str, &str) -> Vec<String>,
@@ -352,6 +354,27 @@ impl Host {
     /// Opens the overlay on this plugin's tab.
     pub fn show_tab(&self) {
         (self.table.show_tab)(self.name);
+    }
+
+    /// Opens the overlay on the section `name` of this plugin's tab.
+    pub fn show_section(&self, name: &str) {
+        (self.table.show_section)(self.name, name);
+    }
+
+    /// The frame the game drew, as it will be presented without the overlay's windows and HUD
+    /// painters: call it from an [`on_frame`](Self::on_frame) callback, which runs at the present
+    /// before the overlay draws. The pixels are RGBA rows; a back buffer that is not 8-bit RGBA or
+    /// BGRA, or is multisampled, is refused with its format named. A mod hides the game's own HUD
+    /// a couple of frames before (the UI's `menusVisible` byte, which Scaleform acts on at its next
+    /// render) when the shot should not show it.
+    ///
+    /// ```ignore
+    /// host.on_frame(|| if SHOOT.get().is_some_and(|a| a.fired()) {
+    ///     let written = HOST.get().unwrap().read_frame().and_then(|f| f.write_png(&path).map_err(|e| e.to_string()));
+    /// });
+    /// ```
+    pub fn read_frame(&self) -> Result<Frame, String> {
+        (self.table.read_frame)()
     }
 
     /// This plugin's settings, read from its file before `load` and kept by the host across reloads.

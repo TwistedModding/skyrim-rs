@@ -104,6 +104,11 @@ pub(super) fn show_tab(owner: &'static str) {
     overlay::set_open(true);
 }
 
+pub(super) fn show_section(owner: &'static str, section: &str) {
+    select(Tab::Mods, Some(owner.to_owned()), Some(section.to_owned()));
+    overlay::set_open(true);
+}
+
 /// Drops a plugin's tab and HUD painters and returns how many sections and painters it had.
 pub(super) fn remove(owner: &str) -> (usize, usize) {
     TITLES.lock().unwrap_or_else(PoisonError::into_inner).retain(|(o, _)| *o != owner);
