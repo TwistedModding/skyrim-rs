@@ -10,7 +10,7 @@
 //! for the anchored body, FSMP told when the body is camera-driven; the look limits, the sitting
 //! look-down limit, the body in interior rooms and the camera's fades skipped; IC's menu as the
 //! tab's sections, its profiles kept in the plugin's settings with the importer of IC's own files,
-//! its `ic` console command, and the photo mode (the studio: pose layers, persistent skeleton and
+//! its `ic` console command, its modder API served under IC's own plugin name, and the photo mode (the studio: pose layers, persistent skeleton and
 //! race adjustments, the orbit camera, bone markers, guides, the light rig, the sun, colour
 //! grading, pose packs, bookmarks, scenes and PNG capture).
 
@@ -256,6 +256,7 @@ fn load(host: &'static Host) -> bool {
     });
     event::game_event_manager::register(host);
     host.on_plugin_message(api::fsmp::SENDER, api::fsmp::handle_message);
+    api::provider::install(host);
     let _ = ZOOM.set(host.action("zoom", "", Scope::Game));
     let _ = FREE_CAMERA.set([host.action("free-camera-roll-left", "Q", Scope::Game), host.action("free-camera-roll-right", "E", Scope::Game), host.action("free-camera-reset", "R", Scope::Game)]);
     let _ = PHOTO_MODE.set([host.action("photo-mode-input", "Insert", Scope::Game), host.action("photo-mode-capture", "F10", Scope::Game)]);
@@ -338,14 +339,15 @@ fn save_state() -> Vec<u8> {
     let body = body::manager::with(|m| *m);
     let camera = camera::manager::with(|m| m.clone());
     let world_fov = util::skyrim_util::camera().map_or(0.0, |c| c.worldFOV);
-    handoff::save(&body, &camera, handoff::Written { world_fov, near: skyrim::render::near_distance() }, api::fsmp::saved())
+    handoff::save(&body, &camera, handoff::Written { world_fov, near: skyrim::render::near_distance() }, api::fsmp::saved(), &api::provider::saved())
 }
 
-/// Takes the old build's state, FSMP's interface it received, and the world FOV and near plane it
+/// Takes the old build's state, FSMP's interface it received, the API's owners and callbacks, and the world FOV and near plane it
 /// had written over the ones `unload` put back.
 fn restore_state(bytes: &[u8]) {
-    if let Some((body, camera, written, fsmp)) = handoff::restore(bytes) {
+    if let Some((body, camera, written, fsmp, provider)) = handoff::restore(bytes) {
         api::fsmp::restore(fsmp);
+        api::provider::restore(&provider);
         body::manager::with(|m| *m = body);
         camera::manager::with(|m| *m = camera);
         camera::manager::notify_free_look();

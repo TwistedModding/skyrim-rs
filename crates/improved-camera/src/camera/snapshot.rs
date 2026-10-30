@@ -21,10 +21,12 @@ pub struct Data {
     pub dialogue_focus: bool,
     /// The idle camera presents its orbit shot (`VanityState::HasShot`).
     pub idle_shot: bool,
+    /// The FOV the presented state authored (`current.modifier.fov`), 0 until one sets it.
+    pub fov: f32,
 }
 
 impl Data {
-    pub const NONE: Self = Self { current: CameraType::Unknown, previous: CameraType::Unknown, mode: CameraMode::None, transition: CameraType::Unknown, position: [0.0; 3], rotation: IDENTITY, dialogue_focus: false, idle_shot: false };
+    pub const NONE: Self = Self { current: CameraType::Unknown, previous: CameraType::Unknown, mode: CameraMode::None, transition: CameraType::Unknown, position: [0.0; 3], rotation: IDENTITY, dialogue_focus: false, idle_shot: false, fov: 0.0 };
 }
 
 static SNAPSHOT: Mutex<Data> = Mutex::new(Data::NONE);

@@ -189,11 +189,17 @@ impl Drop for RwGuard {
     }
 }
 
+/// The calling thread's id, as the engine's locks record their owner.
+#[must_use]
+pub fn thread_id() -> u32 {
+    unsafe { windows_sys::Win32::System::Threading::GetCurrentThreadId() }
+}
+
 #[cfg(any(feature = "animation", feature = "events", feature = "render", feature = "ui"))]
 mod spin {
     use core::sync::atomic::{AtomicU32, Ordering};
 
-    use windows_sys::Win32::System::Threading::{GetCurrentThreadId, Sleep};
+    use windows_sys::Win32::System::Threading::Sleep;
 
     /// A held `BSSpinLock`, the engine's recursive lock (owner thread id at +0, recursion count at +4),
     /// spun on the way the engine does (`Sleep(0)`, then `Sleep(1)` after 10,000 tries) and released on drop.
@@ -202,7 +208,7 @@ mod spin {
     impl SpinGuard {
         pub(crate) fn lock(lock: &sre::BSSpinLock) -> Self {
             let (owner, count) = Self::words(lock);
-            let me = unsafe { GetCurrentThreadId() };
+            let me = super::thread_id();
             let mut spins = 0u32;
             loop {
                 if owner.load(Ordering::Acquire) == me {

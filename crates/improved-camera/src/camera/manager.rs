@@ -201,6 +201,7 @@ pub fn update(camera: &PlayerCamera) {
     }
     let data = m.snapshot();
     snapshot::set(data);
+    crate::api::provider::notify_pov(data.current, util::is_first_person());
     drop(guard);
     super::studio::manager::on_global_update();
     crate::body::manager::anchor_camera(delta);
@@ -620,6 +621,7 @@ impl Manager {
             rotation: self.present.rotation,
             dialogue_focus: self.dialogue_focus,
             idle_shot: matches!(&self.state, State::Vanity(v) if v.shot.is_some()),
+            fov: self.present.modifier.fov,
         }
     }
 
@@ -702,6 +704,7 @@ impl Manager {
             self.cancel_transition();
         }
         crate::log(&format!("<Camera> Enter: {next:?}"));
+        crate::api::provider::notify_camera_state(from, next, util::is_first_person());
     }
 
     /// `CaptureCameraState`, with its fix while getting up from furniture in an animation in fake

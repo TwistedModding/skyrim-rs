@@ -1,10 +1,11 @@
 //! The state a hot reload hands from one build to the next: the body manager (states, offsets,
 //! the full scales of the parts it shrinks and the frozen pose), the camera manager's state type,
 //! modifier, mode, look and FOV and near-plane state, the engine values the old build had
-//! written, and FSMP's interface it received. The new build makes the state object again without its `OnEnter` (what a state keeps
+//! written, FSMP's interface it received, and the API's owners and consumers' callbacks. The new build makes the state object again without its `OnEnter` (what a state keeps
 //! of its own starts over) and with no transition running. Little-endian fields behind a version
 //! byte; bytes of another version are ignored.
 
+use crate::api::provider::Saved as Api;
 use crate::body::manager::{DirectionType, Forced, Manager as Body};
 use crate::body::parts::Scales;
 use crate::body::state::action::{ActionState, ActionType};
@@ -16,7 +17,7 @@ use crate::camera::state::{CameraMode, CameraType};
 use crate::camera::states::State;
 use crate::camera::util::look::LookState;
 
-const VERSION: u8 = 5;
+const VERSION: u8 = 6;
 
 const MODES: [CameraMode; 4] = [CameraMode::First, CameraMode::Head, CameraMode::Third, CameraMode::None];
 
@@ -76,7 +77,7 @@ impl Reader<'_> {
 }
 
 #[must_use]
-pub fn save(body: &Body, camera: &Camera, written: Written, fsmp: u64) -> Vec<u8> {
+pub fn save(body: &Body, camera: &Camera, written: Written, fsmp: u64, api: &Api) -> Vec<u8> {
     let mut w = Writer(vec![VERSION]);
     w.u32(body.race.race as u32);
     w.v3(body.race.offset);
@@ -115,6 +116,13 @@ pub fn save(body: &Body, camera: &Camera, written: Written, fsmp: u64) -> Vec<u8
     }
     w.u32(u32::from(camera.defer_fov) | u32::from(camera.zoom_active) << 1 | u32::from(c.modifier.sim_first_person) << 2 | u32::from(c.first_person) << 3);
     w.u64(fsmp);
+    for v in [api.camera_owner, api.crosshair_owner, u32::from(api.unlocked_horse_aim), u32::from(api.pov.cast_unsigned()), api.thread_id, u32::try_from(api.callbacks.len()).unwrap_or(0)] {
+        w.u32(v);
+    }
+    for &(handle, callback) in &api.callbacks {
+        w.u32(handle);
+        w.u64(callback);
+    }
     w.0
 }
 
@@ -138,7 +146,7 @@ fn camera(kind: CameraType, previous: CameraType, mode: CameraMode, offset: [f32
 }
 
 #[must_use]
-pub fn restore(bytes: &[u8]) -> Option<(Body, Camera, Written, u64)> {
+pub fn restore(bytes: &[u8]) -> Option<(Body, Camera, Written, u64, Api)> {
     let (&version, rest) = bytes.split_first()?;
     if version != VERSION {
         return None;
@@ -175,12 +183,16 @@ pub fn restore(bytes: &[u8]) -> Option<(Body, Camera, Written, u64)> {
     let flags = r.u32()?;
     let camera = camera(kind, previous, mode, offset, f, flags);
     let fsmp = r.u64()?;
-    r.0.is_empty().then_some((body, camera, Written { world_fov, near: written_near }, fsmp))
+    let mut api = Api { camera_owner: r.u32()?, crosshair_owner: r.u32()?, unlocked_horse_aim: r.u32()? != 0, pov: u8::try_from(r.u32()?).ok()?.cast_signed(), thread_id: r.u32()?, callbacks: Vec::new() };
+    for _ in 0..r.u32()? {
+        api.callbacks.push((r.u32()?, r.u64()?));
+    }
+    r.0.is_empty().then_some((body, camera, Written { world_fov, near: written_near }, fsmp, api))
 }
 
 #[cfg(test)]
 mod tests {
-    use super::{Written, restore, save};
+    use super::{Api, Written, restore, save};
     use crate::body::manager::{DirectionType, Forced, Manager as Body};
     use crate::body::state::action::{ActionState, ActionType};
     use crate::body::state::hands::{EquipmentType, InteractionType};
@@ -211,8 +223,9 @@ mod tests {
         camera.current.mode = CameraMode::Third;
         camera.look.state.pitch = 0.3;
         let written = Written { world_fov: 84.5, near: 7.0 };
-        let (b, c, w, fsmp) = restore(&save(&body, &camera, written, 0x7ff6_1234_5678)).unwrap();
-        assert_eq!((b, w, fsmp), (body, written, 0x7ff6_1234_5678));
+        let api = Api { camera_owner: 12, crosshair_owner: u32::MAX, unlocked_horse_aim: true, pov: -1, thread_id: 4321, callbacks: vec![(12, 0x7ff6_0000_1000), (30, 0x7ff6_0000_2000)] };
+        let (b, c, w, fsmp, a) = restore(&save(&body, &camera, written, 0x7ff6_1234_5678, &api)).unwrap();
+        assert_eq!((b, w, fsmp, a), (body, written, 0x7ff6_1234_5678, api));
         assert_eq!(c.state.kind(), CameraType::Horse);
         assert_eq!(c.look.mode, LookMode::ThirdPerson);
         assert_eq!((c.current.modifier, c.current.mode, c.present.modifier), (camera.current.modifier, CameraMode::Third, camera.current.modifier));
@@ -222,7 +235,7 @@ mod tests {
 
     #[test]
     fn other_versions_and_short_bytes_are_ignored() {
-        let bytes = save(&Body::default(), &Camera::default(), Written { world_fov: 80.0, near: 15.0 }, 0);
+        let bytes = save(&Body::default(), &Camera::default(), Written { world_fov: 80.0, near: 15.0 }, 0, &Api::default());
         assert!(restore(&bytes[..bytes.len() - 1]).is_none());
         let mut other = bytes;
         other[0] = 0;
