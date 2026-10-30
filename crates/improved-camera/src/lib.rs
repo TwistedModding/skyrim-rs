@@ -346,6 +346,7 @@ fn unload() {
     body::free_look::release();
     body::manager::release_foot_ik();
     body::bumper::release();
+    hook::graphics::release();
     api::fsmp::set_player_body_camera_driven(false);
     camera::manager::reset_fov();
     camera::manager::reset_near();
