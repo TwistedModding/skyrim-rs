@@ -3,6 +3,60 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `NiAccumulator::vdtor` at 0xf1ee00 (layout_inference, medium); signature (low): `NiAccumulator * vdtor(NiAccumulator * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const NiAccumulator__vdtor: u64 = 76381;
+/// `NiAccumulator::vfunc_2` at 0xf1ee40 (rtti, high); signature (low): `TypeNode * vfunc_2(void)`
+pub const NiAccumulator__vfunc_2: u64 = 71829;
+/// `NiAccumulator::vfunc_24` at 0xf1ed50 (rtti, high); signature (untiered): `undefined vfunc_24(void)`
+pub const NiAccumulator__vfunc_24: u64 = 71820;
+/// `NiAccumulator::vfunc_25` at 0xf1ed60 (rtti, high); signature (untiered): `undefined vfunc_25(void)`
+pub const NiAccumulator__vfunc_25: u64 = 71821;
+/// `NiAccumulator::vfunc_26` at 0xf1ed70 (rtti, high); signature (untiered): `undefined vfunc_26(NiAccumulator * this, longlong * param_1)`
+pub const NiAccumulator__vfunc_26: u64 = 71822;
+/// `NiAccumulator::vfunc_27` at 0xf1ed80 (rtti, high); signature (untiered): `undefined vfunc_27(void)`
+pub const NiAccumulator__vfunc_27: u64 = 71823;
+/// `NiAccumulator::vfunc_28` at 0xf1ed90 (rtti, high); signature (untiered): `ulonglong vfunc_28(NiAccumulator * this, longlong * param_1)`
+pub const NiAccumulator__vfunc_28: u64 = 71824;
+/// `NiAccumulator::vfunc_37` at 0xf1edd0 (rtti, medium); signature (low): `undefined vfunc_37(NiAccumulator * this, undefined8 param_1)`
+pub const NiAccumulator__vfunc_37: u64 = 71826;
+/// `NiAccumulator::vfunc_38` at 0xf1ede0 (rtti, high); signature (high): `undefined vfunc_38(NiAccumulator * this)`
+pub const NiAccumulator__vfunc_38: u64 = 71827;
+/// `NiAccumulator::vfunc_40` at 0xf0f4f0 (rtti, medium); signature (low): `undefined8 vfunc_40(void)`
+pub const NiAccumulator__vfunc_40: u64 = 71326;
+/// `NiAccumulator::vfunc_41` at 0xf0f500 (rtti, medium); signature (low): `undefined vfunc_41(void)`
+pub const NiAccumulator__vfunc_41: u64 = 71327;
+/// `NiAdditionalGeometryData::Create` at 0xf1c040 (string, high); signature (low): `NiObject * Create(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const NiAdditionalGeometryData__Create: u64 = 71724;
+/// `NiAdditionalGeometryData::dtor` at 0xf1c110 (layout_inference, high); signature (low): `undefined dtor(NiAdditionalGeometryData * this, undefined8 param_1, undefined8 param_2, longlong param_3)`
+pub const NiAdditionalGeometryData__dtor: u64 = 71725;
+/// `NiAdditionalGeometryData::vdtor` at 0xf1d5e0 (slot_propagation, medium); signature (low): `NiAdditionalGeometryData * vdtor(NiAdditionalGeometryData * this, uint param_1, undefined8 param_2, longlong param_3)`
+pub const NiAdditionalGeometryData__vdtor: u64 = 71765;
+/// `NiAdditionalGeometryData::vfunc_2` at 0xf1d6f0 (rtti, high); signature (low): `TypeNode * vfunc_2(void)`
+pub const NiAdditionalGeometryData__vfunc_2: u64 = 71766;
+/// `NiAdditionalGeometryData::vfunc_24` at 0xf1b910 (rtti, high); signature (low): `undefined vfunc_24(NiAdditionalGeometryData * this, longlong param_1)`
+pub const NiAdditionalGeometryData__vfunc_24: u64 = 71719;
+/// `NiAdditionalGeometryData::vfunc_24_sub0` at 0xf1cba0 (callgraph, medium); signature (untiered): `undefined vfunc_24_sub0(uint * param_1, longlong param_2, undefined8 param_3, undefined8 param_4, ushort param_5)`
+pub const NiAdditionalGeometryData__vfunc_24_sub0: u64 = 71757;
+/// `NiAdditionalGeometryData::vfunc_25` at 0xf1bc60 (rtti, high); signature (untiered): `undefined vfunc_25(void)`
+pub const NiAdditionalGeometryData__vfunc_25: u64 = 71720;
+/// `NiAdditionalGeometryData::vfunc_26` at 0xf1bc70 (rtti, high); signature (untiered): `undefined vfunc_26(NiAdditionalGeometryData * this, longlong * param_1)`
+pub const NiAdditionalGeometryData__vfunc_26: u64 = 71721;
+/// `NiAdditionalGeometryData::vfunc_27` at 0xf1bc80 (rtti, high); signature (low): `undefined vfunc_27(NiAdditionalGeometryData * this, longlong param_1)`
+pub const NiAdditionalGeometryData__vfunc_27: u64 = 71722;
+/// `NiAdditionalGeometryData::vfunc_27_sub0` at 0xf1ce40 (callgraph, medium); signature (untiered): `undefined vfunc_27_sub0(longlong param_1, longlong param_2, longlong param_3, uint param_4, ushort param_5)`
+pub const NiAdditionalGeometryData__vfunc_27_sub0: u64 = 71758;
+/// `NiAdditionalGeometryData::vfunc_28` at 0xf1bf50 (rtti, high); signature (low): `ulonglong vfunc_28(NiAdditionalGeometryData * this, longlong * param_1)`
+pub const NiAdditionalGeometryData__vfunc_28: u64 = 71723;
+/// `NiAllocator::vdtor` at 0xeae960 (layout_inference, medium); signature (low): `NiAllocator * vdtor(NiAllocator * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const NiAllocator__vdtor: u64 = 69055;
+/// `NiAlphaAccumulator::Create` at 0xf0f2b0 (string, high); signature (low): `NiBackToFrontAccumulator * Create(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const NiAlphaAccumulator__Create: u64 = 71319;
+/// `NiAlphaAccumulator::ctor` at 0xf0f370 (layout_inference, high); signature (high): `NiAlphaAccumulator * ctor(NiAlphaAccumulator * this)`
+pub const NiAlphaAccumulator__ctor: u64 = 71320;
+/// `NiAlphaAccumulator::dtor` at 0xf0f3b0 (layout_inference, high); signature (high): `undefined dtor(NiAlphaAccumulator * this)`
+pub const NiAlphaAccumulator__dtor: u64 = 71321;
+/// `NiAlphaAccumulator::vdtor` at 0xf0f4a0 (layout_inference, medium); signature (low): `NiAlphaAccumulator * vdtor(NiAlphaAccumulator * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const NiAlphaAccumulator__vdtor: u64 = 71324;
 /// `NiAlphaAccumulator::vfunc_2` at 0xf0f4e0 (rtti, high); signature (low): `TypeNode * vfunc_2(void)`
 pub const NiAlphaAccumulator__vfunc_2: u64 = 71325;
 /// `NiAlphaAccumulator::vfunc_23` at 0xf0f120 (rtti, medium); signature (low): `NiBackToFrontAccumulator * vfunc_23(NiAlphaAccumulator * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
@@ -8675,45 +8729,3 @@ pub const Papyrus__Cell__RegisterFuncs: u64 = 56042;
 pub const Papyrus__Cell__Reset: u64 = 56038;
 /// `Papyrus::Cell::SetActorOwner` at 0xa3ff80 (papyrus_native, high); signature (medium): `void SetActorOwner(IVirtualMachine * vm, uint stackId, TESObjectCELL * self, TESNPC * a0)`
 pub const Papyrus__Cell__SetActorOwner: u64 = 56057;
-/// `Papyrus::Cell::SetFactionOwner` at 0xa3ff90 (papyrus_native, high); signature (medium): `void SetFactionOwner(IVirtualMachine * vm, uint stackId, TESObjectCELL * self, TESFaction * a0)`
-pub const Papyrus__Cell__SetFactionOwner: u64 = 56058;
-/// `Papyrus::Cell::SetFogColor` at 0xa3ee00 (papyrus_native, high); signature (medium): `void SetFogColor(IVirtualMachine * vm, uint stackId, TESObjectCELL * self, uint a0, uint a1, uint a2, uint a3, uint a4, uint a5)`
-pub const Papyrus__Cell__SetFogColor: u64 = 56039;
-/// `Papyrus::Cell::SetFogColor_sub0` at 0x2bc2d0 (callgraph, medium); signature (untiered): `undefined SetFogColor_sub0(longlong param_1, undefined4 param_2)`
-pub const Papyrus__Cell__SetFogColor_sub0: u64 = 18942;
-/// `Papyrus::Cell::SetFogColor_sub1` at 0x2bc2f0 (callgraph, medium); signature (untiered): `undefined SetFogColor_sub1(longlong param_1, undefined4 param_2)`
-pub const Papyrus__Cell__SetFogColor_sub1: u64 = 18943;
-/// `Papyrus::Cell::SetFogPlanes` at 0xa3eea0 (papyrus_native, high); signature (medium): `void SetFogPlanes(IVirtualMachine * vm, uint stackId, TESObjectCELL * self, float a0, float a1)`
-pub const Papyrus__Cell__SetFogPlanes: u64 = 56040;
-/// `Papyrus::Cell::SetFogPlanes_sub0` at 0x2bc350 (callgraph, medium); signature (untiered): `undefined SetFogPlanes_sub0(longlong param_1, undefined4 param_2)`
-pub const Papyrus__Cell__SetFogPlanes_sub0: u64 = 18945;
-/// `Papyrus::Cell::SetFogPlanes_sub1` at 0x2bc3c0 (callgraph, medium); signature (untiered): `undefined SetFogPlanes_sub1(longlong param_1, undefined4 param_2)`
-pub const Papyrus__Cell__SetFogPlanes_sub1: u64 = 18947;
-/// `Papyrus::Cell::SetFogPower` at 0xa3ffa0 (papyrus_native, high); signature (medium): `void SetFogPower(IVirtualMachine * vm, uint stackId, TESObjectCELL * self, float a0)`
-pub const Papyrus__Cell__SetFogPower: u64 = 56059;
-/// `Papyrus::Cell::SetPublic` at 0xa3ffb0 (papyrus_native, high); signature (medium): `void SetPublic(IVirtualMachine * vm, uint stackId, TESObjectCELL * self, bool a0)`
-pub const Papyrus__Cell__SetPublic: u64 = 56060;
-/// `Papyrus::Debug::CenterOnCell` at 0xa1eee0 (papyrus_native, high); signature (medium): `void CenterOnCell(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, BSFixedString * a0)`
-pub const Papyrus__Debug__CenterOnCell: u64 = 55367;
-/// `Papyrus::Debug::CenterOnCellAndWait` at 0xa1ef60 (papyrus_native, high); signature (medium): `bool CenterOnCellAndWait(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, BSFixedString * a0)`
-pub const Papyrus__Debug__CenterOnCellAndWait: u64 = 55368;
-/// `Papyrus::Debug::CloseUserLog` at 0xa1f0a0 (papyrus_native, high); signature (medium): `void CloseUserLog(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, BSFixedString * a0)`
-pub const Papyrus__Debug__CloseUserLog: u64 = 55370;
-/// `Papyrus::Debug::CloseUserLog_sub0` at 0x9d8b30 (callgraph, medium); signature (untiered): `ulonglong * CloseUserLog_sub0(longlong param_1, ulonglong * param_2, undefined8 param_3, undefined8 param_4)`
-pub const Papyrus__Debug__CloseUserLog_sub0: u64 = 53932;
-/// `Papyrus::Debug::DebugChannelNotify` at 0xa1f0f0 (papyrus_native, high); signature (medium): `void DebugChannelNotify(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, BSFixedString * a0, BSFixedString * a1)`
-pub const Papyrus__Debug__DebugChannelNotify: u64 = 55371;
-/// `Papyrus::Debug::DumpAliasData` at 0xa1f110 (papyrus_native, high); signature (medium): `void DumpAliasData(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, TESQuest * a0)`
-pub const Papyrus__Debug__DumpAliasData: u64 = 55372;
-/// `Papyrus::Debug::DumpAliasData_sub0` at 0xa213a0 (callgraph, medium); signature (untiered): `undefined8 DumpAliasData_sub0(longlong * param_1, longlong * param_2, undefined8 param_3, longlong param_4)`
-pub const Papyrus__Debug__DumpAliasData_sub0: u64 = 55396;
-/// `Papyrus::Debug::GetConfigName` at 0xa1f310 (runtime, high); signature (untiered): `bool GetConfigName(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused)`; semantic: the latent GetConfigName native of Debug (returns its string through ReturnFromLatent) (high); signature `bool (BSScript::IVirtualMachine* vm, u32 stackId, BSScript::StaticFunctionTag* self)`
-pub const Papyrus__Debug__GetConfigName: u64 = 55373;
-/// `Papyrus::Debug::GetConfigName` as a function pointer type (high).
-pub type Papyrus__Debug__GetConfigName_fn = unsafe extern "C" fn(vm: *mut crate::BSScript__IVirtualMachine, stackId: u32, self_: *mut c_void) -> bool;
-/// `Papyrus::Debug::GetPlatformName` at 0xa1f3c0 (papyrus_native, high); signature (medium): `bool GetPlatformName(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused)`
-pub const Papyrus__Debug__GetPlatformName: u64 = 55374;
-/// `Papyrus::Debug::GetPlatformName_sub0` at 0xeac650 (callgraph, medium); signature (untiered): `char * GetPlatformName_sub0(void)`
-pub const Papyrus__Debug__GetPlatformName_sub0: u64 = 68970;
-/// `Papyrus::Debug::GetVersionNumber` at 0xa1f470 (papyrus_native, high); signature (medium): `bool GetVersionNumber(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused)`
-pub const Papyrus__Debug__GetVersionNumber: u64 = 55375;

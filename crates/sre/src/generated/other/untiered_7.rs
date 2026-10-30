@@ -3,20 +3,6 @@
 
 use core::ffi::{c_char, c_void};
 
-/// `Papyrus::Actor::SetSubGraphFloatVariable_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 54814, rva 0xa0b040).
-/// `undefined SetSubGraphFloatVariable_sub0(longlong param_1, ulonglong * param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn papyrus__actor__set_sub_graph_float_variable_sub0(param_1: i64, param_2: *mut u64) -> u64 { unsafe { function!(54814, (i64, *mut u64) -> u64)(param_1, param_2) } }
-/// `Papyrus::Actor::ShowGiftMenu_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 51576, rva 0x930040).
-/// `undefined ShowGiftMenu_sub0(longlong param_1, longlong param_2, longlong * param_3, undefined8 param_4, undefined1 param_5)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn papyrus__actor__show_gift_menu_sub0(param_1: i64, param_2: i64, param_3: *mut i64, param_4: u64, param_5: u8) -> u64 { unsafe { function!(51576, (i64, i64, *mut i64, u64, u8) -> u64)(param_1, param_2, param_3, param_4, param_5) } }
 /// `Papyrus::Actor::ShowGiftMenu_sub1` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 54840, rva 0xa0c210).
 /// `undefined ShowGiftMenu_sub1(longlong * param_1)`
 ///
@@ -13583,3 +13569,24 @@ pub unsafe fn remove_all_inventory_event_filters(param_1: i64, param_2: u64, par
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn remove_all_map_items(param_1: *mut i64) -> u64 { unsafe { function!(41107, (*mut i64) -> u64)(param_1) } }
+/// `RemoveAllMapItems_2` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 19369, rva 0x2d5ba0).
+/// `undefined RemoveAllMapItems_2(longlong * param_1)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn remove_all_map_items_2(param_1: *mut i64) -> u64 { unsafe { function!(19369, (*mut i64) -> u64)(param_1) } }
+/// `RemoveAllMapItems_3` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 19371, rva 0x2d5d00).
+/// `undefined RemoveAllMapItems_3(longlong * param_1)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn remove_all_map_items_3(param_1: *mut i64) -> u64 { unsafe { function!(19371, (*mut i64) -> u64)(param_1) } }
+/// `RemoveAllMapItems_4` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 19372, rva 0x2d5db0).
+/// `undefined RemoveAllMapItems_4(longlong * param_1)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn remove_all_map_items_4(param_1: *mut i64) -> u64 { unsafe { function!(19372, (*mut i64) -> u64)(param_1) } }

@@ -4,6 +4,7 @@
 use crate::raw::*;
 
 pub(super) const ROWS: &[Function] = &[
+    Function { rva: 0xee2680, id: 70302, confidence: Confidence::Medium, name: "NiNode::vfunc_45" },
     Function { rva: 0xee28e0, id: 70303, confidence: Confidence::High, name: "NiNode::UpdateUpwardPass" },
     Function { rva: 0xee2920, id: 70304, confidence: Confidence::Medium, name: "NiNode::vfunc_47" },
     Function { rva: 0xee2a40, id: 70305, confidence: Confidence::Medium, name: "NiNode::vfunc_46" },
@@ -8695,5 +8696,4 @@ pub(super) const ROWS: &[Function] = &[
     Function { rva: 0x116bfb0, id: 82100, confidence: Confidence::High, name: "MenuTable::InsertOrAssign" },
     Function { rva: 0x116c260, id: 82103, confidence: Confidence::High, name: "FreeArrayBufferIfAllocated_34" },
     Function { rva: 0x116c2c0, id: 82104, confidence: Confidence::High, name: "FreeArrayBufferIfAllocated_35" },
-    Function { rva: 0x116c320, id: 82105, confidence: Confidence::High, name: "FreeArrayBufferIfAllocated_36" },
 ];

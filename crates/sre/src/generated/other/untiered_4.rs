@@ -3,20 +3,6 @@
 
 use core::ffi::{c_char, c_void};
 
-/// `DeletingDtorVtable242327Object_3` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 85484, rva 0xd87770).
-/// `undefined8 * DeletingDtorVtable242327Object_3(undefined8 * param_1, uint param_2, undefined8 param_3, undefined8 param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn deleting_dtor_vtable242327_object_3(param_1: *mut u64, param_2: u32, param_3: u64, param_4: u64) -> *mut u64 { unsafe { function!(85484, (*mut u64, u32, u64, u64) -> *mut u64)(param_1, param_2, param_3, param_4) } }
-/// `DeletingDtorVtable242327Object_4` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 85581, rva 0xd8e820).
-/// `undefined8 * DeletingDtorVtable242327Object_4(undefined8 * param_1, uint param_2, undefined8 param_3, undefined8 param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn deleting_dtor_vtable242327_object_4(param_1: *mut u64, param_2: u32, param_3: u64, param_4: u64) -> *mut u64 { unsafe { function!(85581, (*mut u64, u32, u64, u64) -> *mut u64)(param_1, param_2, param_3, param_4) } }
 /// `DeletingDtorVtable244415Object` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 86711, rva 0xdcfff0).
 /// `undefined8 * DeletingDtorVtable244415Object(undefined8 * param_1, uint param_2, undefined8 param_3, undefined8 param_4)`
 ///
@@ -13212,3 +13198,24 @@ pub unsafe fn free_entry_array_stride20_2(param_1: i64, param_2: u64, param_3: u
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn free_entry_record_and_fixed_strings(param_1: i64, param_2: u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(442481, (i64, u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
+/// `FreeField0` (decompiler signature, tier untiered; ledger decompiler evidence, name high; id 70898, rva 0xefb6c0).
+/// `undefined FreeField0(undefined8 * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn free_field0(param_1: *mut u64, param_2: u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(70898, (*mut u64, u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
+/// `FreeField0_2` (decompiler signature, tier untiered; ledger decompiler evidence, name high; id 70899, rva 0xefb720).
+/// `undefined FreeField0_2(undefined8 * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn free_field0_2(param_1: *mut u64, param_2: u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(70899, (*mut u64, u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
+/// `FreeField10` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 447418, rva 0x1348b30).
+/// `undefined FreeField10(longlong param_1)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn free_field10(param_1: i64) -> u64 { unsafe { function!(447418, (i64) -> u64)(param_1) } }

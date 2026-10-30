@@ -2750,6 +2750,7 @@ pub(super) const ROWS: &[Function] = &[
     Function { rva: 0x4155f0, id: 26244, confidence: Confidence::High, name: "Sky::ReleaseWeatherOverride" },
     Function { rva: 0x415610, id: 26245, confidence: Confidence::Medium, name: "SelectRandomField58FromField40List" },
     Function { rva: 0x4158d0, id: 26247, confidence: Confidence::Medium, name: "BlendWeatherImageSpaces" },
+    Function { rva: 0x415b80, id: 26248, confidence: Confidence::Medium, name: "BlendWeatherVolumetricLighting" },
     Function { rva: 0x416240, id: 26251, confidence: Confidence::Medium, name: "UpdateLightLODFadeDistancesSquared" },
     Function { rva: 0x416a20, id: 26254, confidence: Confidence::Medium, name: "GetField698EntriesFromPair" },
     Function { rva: 0x416a90, id: 26255, confidence: Confidence::Medium, name: "GatherTableColorsAndWeightedValue" },
@@ -8131,5 +8132,4 @@ pub(super) const ROWS: &[Function] = &[
     Function { rva: 0x5824b0, id: 441750, confidence: Confidence::Medium, name: "`public:_static_void___cdecl_MarketplaceMenu::Start(MarketplaceMenu::MarketplaceMode)'::__l8::doNothingCallback::vdtor" },
     Function { rva: 0x5824e0, id: 441751, confidence: Confidence::Medium, name: "MarketplaceMenu::errorCallback::vdtor" },
     Function { rva: 0x582510, id: 33628, confidence: Confidence::Medium, name: "StaticInit_5252_cb0" },
-    Function { rva: 0x582580, id: 416263, confidence: Confidence::Medium, name: "ReleaseFixedStringRange_3" },
 ];

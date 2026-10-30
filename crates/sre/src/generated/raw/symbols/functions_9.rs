@@ -4,6 +4,7 @@
 use crate::raw::*;
 
 pub(super) const ROWS: &[Function] = &[
+    Function { rva: 0x116c320, id: 82105, confidence: Confidence::High, name: "FreeArrayBufferIfAllocated_36" },
     Function { rva: 0x116c380, id: 82106, confidence: Confidence::Medium, name: "DecRefElementsAndFreeArrayAt8" },
     Function { rva: 0x116c400, id: 82107, confidence: Confidence::Medium, name: "DecRefElementsAndFreeArray" },
     Function { rva: 0x116c520, id: 82109, confidence: Confidence::High, name: "BSTMessageQueue<UIMessage*___ptr64>::dtor" },
@@ -6655,5 +6656,4 @@ pub(super) const ROWS: &[Function] = &[
     Function { rva: 0x13b6870, id: 526986, confidence: Confidence::High, name: "ScalarDeletingDtorSize10_69" },
     Function { rva: 0x13b6a30, id: 526990, confidence: Confidence::Medium, name: "IsEnabledChildReadyAndField148Null_3" },
     Function { rva: 0x13b7010, id: 450744, confidence: Confidence::Medium, name: "DestroyViaVfunc0AndFree_45" },
-    Function { rva: 0x13b70d0, id: 450746, confidence: Confidence::Medium, name: "ConstructFunctionalStorage10_5" },
 ];

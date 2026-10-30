@@ -3,6 +3,48 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `Papyrus::Cell::SetFactionOwner` at 0xa3ff90 (papyrus_native, high); signature (medium): `void SetFactionOwner(IVirtualMachine * vm, uint stackId, TESObjectCELL * self, TESFaction * a0)`
+pub const Papyrus__Cell__SetFactionOwner: u64 = 56058;
+/// `Papyrus::Cell::SetFogColor` at 0xa3ee00 (papyrus_native, high); signature (medium): `void SetFogColor(IVirtualMachine * vm, uint stackId, TESObjectCELL * self, uint a0, uint a1, uint a2, uint a3, uint a4, uint a5)`
+pub const Papyrus__Cell__SetFogColor: u64 = 56039;
+/// `Papyrus::Cell::SetFogColor_sub0` at 0x2bc2d0 (callgraph, medium); signature (untiered): `undefined SetFogColor_sub0(longlong param_1, undefined4 param_2)`
+pub const Papyrus__Cell__SetFogColor_sub0: u64 = 18942;
+/// `Papyrus::Cell::SetFogColor_sub1` at 0x2bc2f0 (callgraph, medium); signature (untiered): `undefined SetFogColor_sub1(longlong param_1, undefined4 param_2)`
+pub const Papyrus__Cell__SetFogColor_sub1: u64 = 18943;
+/// `Papyrus::Cell::SetFogPlanes` at 0xa3eea0 (papyrus_native, high); signature (medium): `void SetFogPlanes(IVirtualMachine * vm, uint stackId, TESObjectCELL * self, float a0, float a1)`
+pub const Papyrus__Cell__SetFogPlanes: u64 = 56040;
+/// `Papyrus::Cell::SetFogPlanes_sub0` at 0x2bc350 (callgraph, medium); signature (untiered): `undefined SetFogPlanes_sub0(longlong param_1, undefined4 param_2)`
+pub const Papyrus__Cell__SetFogPlanes_sub0: u64 = 18945;
+/// `Papyrus::Cell::SetFogPlanes_sub1` at 0x2bc3c0 (callgraph, medium); signature (untiered): `undefined SetFogPlanes_sub1(longlong param_1, undefined4 param_2)`
+pub const Papyrus__Cell__SetFogPlanes_sub1: u64 = 18947;
+/// `Papyrus::Cell::SetFogPower` at 0xa3ffa0 (papyrus_native, high); signature (medium): `void SetFogPower(IVirtualMachine * vm, uint stackId, TESObjectCELL * self, float a0)`
+pub const Papyrus__Cell__SetFogPower: u64 = 56059;
+/// `Papyrus::Cell::SetPublic` at 0xa3ffb0 (papyrus_native, high); signature (medium): `void SetPublic(IVirtualMachine * vm, uint stackId, TESObjectCELL * self, bool a0)`
+pub const Papyrus__Cell__SetPublic: u64 = 56060;
+/// `Papyrus::Debug::CenterOnCell` at 0xa1eee0 (papyrus_native, high); signature (medium): `void CenterOnCell(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, BSFixedString * a0)`
+pub const Papyrus__Debug__CenterOnCell: u64 = 55367;
+/// `Papyrus::Debug::CenterOnCellAndWait` at 0xa1ef60 (papyrus_native, high); signature (medium): `bool CenterOnCellAndWait(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, BSFixedString * a0)`
+pub const Papyrus__Debug__CenterOnCellAndWait: u64 = 55368;
+/// `Papyrus::Debug::CloseUserLog` at 0xa1f0a0 (papyrus_native, high); signature (medium): `void CloseUserLog(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, BSFixedString * a0)`
+pub const Papyrus__Debug__CloseUserLog: u64 = 55370;
+/// `Papyrus::Debug::CloseUserLog_sub0` at 0x9d8b30 (callgraph, medium); signature (untiered): `ulonglong * CloseUserLog_sub0(longlong param_1, ulonglong * param_2, undefined8 param_3, undefined8 param_4)`
+pub const Papyrus__Debug__CloseUserLog_sub0: u64 = 53932;
+/// `Papyrus::Debug::DebugChannelNotify` at 0xa1f0f0 (papyrus_native, high); signature (medium): `void DebugChannelNotify(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, BSFixedString * a0, BSFixedString * a1)`
+pub const Papyrus__Debug__DebugChannelNotify: u64 = 55371;
+/// `Papyrus::Debug::DumpAliasData` at 0xa1f110 (papyrus_native, high); signature (medium): `void DumpAliasData(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, TESQuest * a0)`
+pub const Papyrus__Debug__DumpAliasData: u64 = 55372;
+/// `Papyrus::Debug::DumpAliasData_sub0` at 0xa213a0 (callgraph, medium); signature (untiered): `undefined8 DumpAliasData_sub0(longlong * param_1, longlong * param_2, undefined8 param_3, longlong param_4)`
+pub const Papyrus__Debug__DumpAliasData_sub0: u64 = 55396;
+/// `Papyrus::Debug::GetConfigName` at 0xa1f310 (runtime, high); signature (untiered): `bool GetConfigName(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused)`; semantic: the latent GetConfigName native of Debug (returns its string through ReturnFromLatent) (high); signature `bool (BSScript::IVirtualMachine* vm, u32 stackId, BSScript::StaticFunctionTag* self)`
+pub const Papyrus__Debug__GetConfigName: u64 = 55373;
+/// `Papyrus::Debug::GetConfigName` as a function pointer type (high).
+pub type Papyrus__Debug__GetConfigName_fn = unsafe extern "C" fn(vm: *mut crate::BSScript__IVirtualMachine, stackId: u32, self_: *mut c_void) -> bool;
+/// `Papyrus::Debug::GetPlatformName` at 0xa1f3c0 (papyrus_native, high); signature (medium): `bool GetPlatformName(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused)`
+pub const Papyrus__Debug__GetPlatformName: u64 = 55374;
+/// `Papyrus::Debug::GetPlatformName_sub0` at 0xeac650 (callgraph, medium); signature (untiered): `char * GetPlatformName_sub0(void)`
+pub const Papyrus__Debug__GetPlatformName_sub0: u64 = 68970;
+/// `Papyrus::Debug::GetVersionNumber` at 0xa1f470 (papyrus_native, high); signature (medium): `bool GetVersionNumber(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused)`
+pub const Papyrus__Debug__GetVersionNumber: u64 = 55375;
 /// `Papyrus::Debug::MessageBox` at 0xa1f520 (papyrus_native, high); signature (medium): `void MessageBox(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, BSFixedString * a0)`; semantic: ShowMessageBox(text, null, 0, 4, 10, "OK", null) (high); signature `void (IVirtualMachine* vm, u32 stackId, void*, const BSFixedString* text)`
 pub const Papyrus__Debug__MessageBox: u64 = 55376;
 /// `Papyrus::Debug::MessageBox` as a function pointer type (high).
@@ -8205,53 +8247,3 @@ pub const ReleaseProcessSubobjects: u64 = 39250;
 pub const ReleasePtrAndSetField8: u64 = 107477;
 /// `ReleaseQueuedBlocksToFreeLists` at 0xce61d0 (decompiler, medium); signature (untiered): `undefined ReleaseQueuedBlocksToFreeLists(longlong param_1, longlong param_2)`
 pub const ReleaseQueuedBlocksToFreeLists: u64 = 68318;
-/// `ReleaseQueuedEntryHandle` at 0x244f30 (decompiler, medium); signature (untiered): `undefined ReleaseQueuedEntryHandle(longlong * param_1)`
-pub const ReleaseQueuedEntryHandle: u64 = 16288;
-/// `ReleaseQueuedEntryRef_2` at 0xbc62a0 (decompiler, medium); signature (untiered): `undefined ReleaseQueuedEntryRef_2(longlong * param_1)`
-pub const ReleaseQueuedEntryRef_2: u64 = 63485;
-/// `ReleaseQueuedHandle` at 0x19b540 (decompiler, medium); signature (untiered): `undefined ReleaseQueuedHandle(longlong * param_1)`
-pub const ReleaseQueuedHandle: u64 = 13172;
-/// `ReleaseQueuedRefsWithinTimeBudget` at 0xeec5f0 (decompiler, medium); signature (untiered): `DWORD ReleaseQueuedRefsWithinTimeBudget(void)`
-pub const ReleaseQueuedRefsWithinTimeBudget: u64 = 70545;
-/// `ReleaseQueuesAndHashMap` at 0x11f5490 (decompiler, medium); signature (untiered): `undefined ReleaseQueuesAndHashMap(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const ReleaseQueuesAndHashMap: u64 = 91424;
-/// `ReleaseREFRPtr` at 0x28e340 (decompiler, medium); signature (untiered): `undefined ReleaseREFRPtr(longlong * param_1)`
-pub const ReleaseREFRPtr: u64 = 18121;
-/// `ReleaseREFRPtr_2` at 0x5d0100 (decompiler, medium); signature (untiered): `undefined ReleaseREFRPtr_2(longlong * param_1)`
-pub const ReleaseREFRPtr_2: u64 = 34468;
-/// `ReleaseRadixTableRange` at 0x1190ce0 (decompiler, medium); signature (untiered): `undefined ReleaseRadixTableRange(undefined8 * param_1, ulonglong param_2, longlong param_3)`
-pub const ReleaseRadixTableRange: u64 = 87766;
-/// `ReleaseRange24ByteEntryRefs` at 0x17e7e0 (decompiler, high); signature (high): `undefined ReleaseRange24ByteEntryRefs(longlong * param_1, uint param_2, uint param_3)`
-pub const ReleaseRange24ByteEntryRefs: u64 = 12328;
-/// `ReleaseRangeEntryAndMergeFreeNeighbors` at 0x811b70 (decompiler, medium); signature (untiered): `ulonglong ReleaseRangeEntryAndMergeFreeNeighbors(longlong param_1, longlong param_2)`
-pub const ReleaseRangeEntryAndMergeFreeNeighbors: u64 = 44543;
-/// `ReleaseRecord968Strings` at 0x137d4a0 (decompiler, medium); signature (untiered): `undefined ReleaseRecord968Strings(longlong * param_1)`
-pub const ReleaseRecord968Strings: u64 = 448920;
-/// `ReleaseRecordFields` at 0x15bfad0 (decompiler, medium); signature (untiered): `undefined ReleaseRecordFields(longlong * param_1, undefined8 param_2, void * param_3, undefined8 param_4)`
-pub const ReleaseRecordFields: u64 = 453694;
-/// `ReleaseRecordFieldsAndDelete` at 0x1104e0 (decompiler, high); signature (high): `void * ReleaseRecordFieldsAndDelete(void * param_1, ulonglong param_2, undefined8 param_3, undefined8 param_4)`
-pub const ReleaseRecordFieldsAndDelete: u64 = 439925;
-/// `ReleaseRecordFieldsInRangeF8` at 0x11d430 (decompiler, high); signature (untiered): `undefined ReleaseRecordFieldsInRangeF8(undefined8 param_1, longlong * param_2, longlong * param_3, undefined8 param_4)`
-pub const ReleaseRecordFieldsInRangeF8: u64 = 440228;
-/// `ReleaseRecordFieldsInVectorF8` at 0x120370 (decompiler, high); signature (untiered): `undefined ReleaseRecordFieldsInVectorF8(undefined8 * param_1, undefined8 param_2, void * param_3, undefined8 param_4)`
-pub const ReleaseRecordFieldsInVectorF8: u64 = 440326;
-/// `ReleaseRectSubtree` at 0xea2360 (decompiler, medium); signature (untiered): `undefined ReleaseRectSubtree(longlong param_1, longlong * param_2)`
-pub const ReleaseRectSubtree: u64 = 89772;
-/// `ReleaseRefAndDelete16` at 0x100d890 (decompiler, medium); signature (untiered): `undefined ReleaseRefAndDelete16(undefined8 param_1, undefined8 * param_2, undefined8 param_3, undefined8 param_4)`
-pub const ReleaseRefAndDelete16: u64 = 77296;
-/// `ReleaseRefAndDestroyOnZero` at 0x117da60 (decompiler, medium); signature (untiered): `undefined ReleaseRefAndDestroyOnZero(longlong * param_1)`
-pub const ReleaseRefAndDestroyOnZero: u64 = 84542;
-/// `ReleaseRefAndEnqueueToPendingList` at 0xbc6940 (decompiler, medium); signature (medium): `undefined ReleaseRefAndEnqueueToPendingList(longlong * param_1)`
-pub const ReleaseRefAndEnqueueToPendingList: u64 = 63495;
-/// `ReleaseRefAndFree` at 0xd4fb80 (decompiler, medium); signature (untiered): `undefined ReleaseRefAndFree(int * param_1)`
-pub const ReleaseRefAndFree: u64 = 83929;
-/// `ReleaseRefAndNotifyOwner` at 0xd07fb0 (decompiler, medium); signature (untiered): `undefined ReleaseRefAndNotifyOwner(undefined8 * param_1)`
-pub const ReleaseRefAndNotifyOwner: u64 = 82797;
-/// `ReleaseRefAndQueueWhenLast` at 0xbc8780 (decompiler, medium); signature (untiered): `undefined ReleaseRefAndQueueWhenLast(longlong param_1)`
-pub const ReleaseRefAndQueueWhenLast: u64 = 63531;
-/// `ReleaseRefAndResetHandle` at 0x15550d0 (decompiler, medium); signature (untiered): `undefined ReleaseRefAndResetHandle(longlong * param_1)`
-pub const ReleaseRefAndResetHandle: u64 = 107483;
-/// `ReleaseRefAndTwoFixedStrings` at 0x9b7460 (decompiler, medium); signature (untiered): `undefined ReleaseRefAndTwoFixedStrings(undefined8 * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const ReleaseRefAndTwoFixedStrings: u64 = 53476;
-/// `ReleaseRefArray118` at 0xee2030 (decompiler, medium); signature (medium): `undefined ReleaseRefArray118(longlong param_1)`
-pub const ReleaseRefArray118: u64 = 70295;

@@ -3,6 +3,10 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureShoutParamTypes>::vfunc_19` at 0x4855d0 (rtti, medium); signature (low): `undefined * vfunc_19(BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureShoutParamTypes> * this, uint param_1)`
+pub const BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureShoutParamTypes__vfunc_19: u64 = 29110;
+/// `BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureShoutParamTypes>::vfunc_20` at 0x4855b0 (rtti, medium); signature (low): `undefined1 vfunc_20(BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureShoutParamTypes> * this, uint param_1)`
+pub const BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureShoutParamTypes__vfunc_20: u64 = 29109;
 /// `BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureShoutParamTypes>::vfunc_30` at 0x485630 (rtti, medium); signature (low): `undefined8 * vfunc_30(void)`
 pub const BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureShoutParamTypes__vfunc_30: u64 = 29113;
 /// `BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureShoutParamTypes>::vfunc_34` at 0x485610 (rtti, medium); signature (low): `undefined vfunc_34(BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureShoutParamTypes> * this, uint param_1)`
@@ -7991,9 +7995,3 @@ pub const BSProceduralLightningController__ctor_2: u64 = 76917;
 pub const BSProceduralLightningController__ctor_sub0: u64 = 76942;
 /// `BSProceduralLightningController::ctor_sub1` at 0xffe200 (callgraph, medium); signature (untiered): `undefined ctor_sub1(longlong * param_1)`
 pub const BSProceduralLightningController__ctor_sub1: u64 = 76945;
-/// `BSProceduralLightningController::ctor_sub2` at 0xffe280 (callgraph, medium); signature (untiered): `undefined ctor_sub2(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const BSProceduralLightningController__ctor_sub2: u64 = 76948;
-/// `BSProceduralLightningController::vdtor` at 0xffe320 (slot_propagation, medium); signature (low): `BSProceduralLightningController * vdtor(BSProceduralLightningController * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const BSProceduralLightningController__vdtor: u64 = 76950;
-/// `BSProceduralLightningController::vfunc_2` at 0xffe530 (rtti, high); signature (low): `TypeNode * vfunc_2(void)`
-pub const BSProceduralLightningController__vfunc_2: u64 = 76952;

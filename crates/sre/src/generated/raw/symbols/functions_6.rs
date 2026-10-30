@@ -4,6 +4,7 @@
 use crate::raw::*;
 
 pub(super) const ROWS: &[Function] = &[
+    Function { rva: 0x916140, id: 51199, confidence: Confidence::Medium, name: "CraftingMenu::ctor" },
     Function { rva: 0x9161c0, id: 51200, confidence: Confidence::High, name: "CraftingMenu::vfunc_4" },
     Function { rva: 0x9167d0, id: 51201, confidence: Confidence::High, name: "CraftingMenu::vfunc_5" },
     Function { rva: 0x916820, id: 51202, confidence: Confidence::High, name: "CraftingMenu::vfunc_6" },
@@ -7995,5 +7996,4 @@ pub(super) const ROWS: &[Function] = &[
     Function { rva: 0xb52e40, id: 61264, confidence: Confidence::Medium, name: "StaticInit_8595_sub0" },
     Function { rva: 0xb52e60, id: 61265, confidence: Confidence::Medium, name: "StaticInit_8544_sub0" },
     Function { rva: 0xb52e70, id: 61266, confidence: Confidence::Medium, name: "StaticInit_8582_sub0" },
-    Function { rva: 0xb52e80, id: 61267, confidence: Confidence::Medium, name: "StaticInit_8637_sub0" },
 ];

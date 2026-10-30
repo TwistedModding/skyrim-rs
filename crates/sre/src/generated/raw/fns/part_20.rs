@@ -3,6 +3,76 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `_anon_025735F6::ContainerChangedEventArguments::vfunc_0` at 0x9f0590 (rtti, high); signature (low): `ContainerChangedEventArguments * vfunc_0(ContainerChangedEventArguments * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+pub const _anon_025735F6__ContainerChangedEventArguments__vfunc_0: u64 = 54363;
+/// `_anon_025735F6::ContainerChangedEventArguments::vfunc_1` at 0x9ee180 (rtti, high); signature (low): `undefined8 vfunc_1(ContainerChangedEventArguments * this, longlong * param_1, undefined8 param_2, ulonglong param_3)`
+pub const _anon_025735F6__ContainerChangedEventArguments__vfunc_1: u64 = 54237;
+/// `_anon_025735F6::ContainerEventArguments::vfunc_0` at 0x9f05d0 (rtti, high); signature (low): `ContainerEventArguments * vfunc_0(ContainerEventArguments * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+pub const _anon_025735F6__ContainerEventArguments__vfunc_0: u64 = 54364;
+/// `_anon_025735F6::ContainerEventArguments::vfunc_1` at 0x9ee260 (rtti, high); signature (low): `undefined8 vfunc_1(ContainerEventArguments * this, longlong * param_1, undefined8 param_2, ulonglong param_3)`
+pub const _anon_025735F6__ContainerEventArguments__vfunc_1: u64 = 54238;
+/// `_anon_025735F6::DestructionStageChangedArguments::vfunc_0` at 0x9f0610 (rtti, high); signature (low): `DestructionStageChangedArguments * vfunc_0(DestructionStageChangedArguments * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+pub const _anon_025735F6__DestructionStageChangedArguments__vfunc_0: u64 = 54365;
+/// `_anon_025735F6::DestructionStageChangedArguments::vfunc_1` at 0x9ee3a0 (rtti, high); signature (low): `undefined8 vfunc_1(DestructionStageChangedArguments * this, longlong * param_1, undefined8 param_2, ulonglong param_3)`
+pub const _anon_025735F6__DestructionStageChangedArguments__vfunc_1: u64 = 54239;
+/// `_anon_025735F6::EventCallbackAdapter::vfunc_0` at 0x9f06a0 (rtti, high); signature (low): `EventCallbackAdapter * vfunc_0(EventCallbackAdapter * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const _anon_025735F6__EventCallbackAdapter__vfunc_0: u64 = 54367;
+/// `_anon_025735F6::EventCallbackAdapter::vfunc_1` at 0x9ee490 (rtti, high); signature (low): `undefined vfunc_1(EventCallbackAdapter * this, EventCallbackAdapter * param_1, undefined8 param_2, undefined8 param_3)`
+pub const _anon_025735F6__EventCallbackAdapter__vfunc_1: u64 = 54240;
+/// `_anon_025735F6::EventCallbackAdapter::vfunc_1_sub0` at 0x1489c10 (callgraph, medium); signature (untiered): `undefined vfunc_1_sub0(longlong param_1, longlong * param_2)`
+pub const _anon_025735F6__EventCallbackAdapter__vfunc_1_sub0: u64 = 104186;
+/// `_anon_025735F6::EventCallbackAdapter::vfunc_2` at 0x9f1180 (rtti, high); signature (low): `undefined1 vfunc_2(void)`
+pub const _anon_025735F6__EventCallbackAdapter__vfunc_2: u64 = 54404;
+/// `_anon_025735F6::EventCallbackAdapter::vfunc_3` at 0x9f7620 (rtti, high); signature (low): `undefined vfunc_3(EventCallbackAdapter * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
+pub const _anon_025735F6__EventCallbackAdapter__vfunc_3: u64 = 54519;
+/// `_anon_025735F6::HitArguments::vfunc_0` at 0x9f07c0 (rtti, high); signature (low): `HitArguments * vfunc_0(HitArguments * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+pub const _anon_025735F6__HitArguments__vfunc_0: u64 = 54370;
+/// `_anon_025735F6::HitArguments::vfunc_1` at 0x9ee510 (rtti, high); signature (low): `undefined8 vfunc_1(HitArguments * this, longlong * param_1, undefined8 param_2, ulonglong param_3)`
+pub const _anon_025735F6__HitArguments__vfunc_1: u64 = 54241;
+/// `_anon_025735F6::HitArguments::vfunc_1_sub0` at 0x9e8e30 (callgraph, medium); signature (untiered): `ulonglong * vfunc_1_sub0(ulonglong * param_1, longlong param_2, longlong * param_3, undefined8 param_4)`
+pub const _anon_025735F6__HitArguments__vfunc_1_sub0: u64 = 54081;
+/// `_anon_025735F6::LOSEventArguments::vfunc_0` at 0x9f09a0 (rtti, high); signature (low): `LOSEventArguments * vfunc_0(LOSEventArguments * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+pub const _anon_025735F6__LOSEventArguments__vfunc_0: u64 = 54378;
+/// `_anon_025735F6::LOSEventArguments::vfunc_1` at 0x9ee780 (rtti, high); signature (low): `undefined8 vfunc_1(LOSEventArguments * this, longlong * param_1, undefined8 param_2, ulonglong param_3)`
+pub const _anon_025735F6__LOSEventArguments__vfunc_1: u64 = 54242;
+/// `_anon_025735F6::MagicEffectApplyArguments::vfunc_0` at 0x9f09e0 (rtti, high); signature (low): `MagicEffectApplyArguments * vfunc_0(MagicEffectApplyArguments * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+pub const _anon_025735F6__MagicEffectApplyArguments__vfunc_0: u64 = 54379;
+/// `_anon_025735F6::MagicEffectApplyArguments::vfunc_1` at 0x9ee860 (rtti, high); signature (low): `undefined8 vfunc_1(MagicEffectApplyArguments * this, longlong * param_1, undefined8 param_2, ulonglong param_3)`
+pub const _anon_025735F6__MagicEffectApplyArguments__vfunc_1: u64 = 54243;
+/// `_anon_025735F6::MagicEffectApplyArguments::vfunc_1_sub0` at 0x9e9390 (callgraph, medium); signature (untiered): `ulonglong * vfunc_1_sub0(ulonglong * param_1, longlong param_2, longlong * param_3, undefined8 param_4)`
+pub const _anon_025735F6__MagicEffectApplyArguments__vfunc_1_sub0: u64 = 54083;
+/// `_anon_025735F6::MagicWardHitArguments::vfunc_0` at 0x9f0a20 (rtti, high); signature (low): `MagicWardHitArguments * vfunc_0(MagicWardHitArguments * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+pub const _anon_025735F6__MagicWardHitArguments__vfunc_0: u64 = 54380;
+/// `_anon_025735F6::MagicWardHitArguments::vfunc_1` at 0x9ee950 (rtti, high); signature (low): `undefined8 vfunc_1(MagicWardHitArguments * this, longlong * param_1, undefined8 param_2, ulonglong param_3)`
+pub const _anon_025735F6__MagicWardHitArguments__vfunc_1: u64 = 54244;
+/// `_anon_025735F6::MagicWardHitArguments::vfunc_1_sub0` at 0x9e9640 (callgraph, medium); signature (untiered): `ulonglong * vfunc_1_sub0(ulonglong * param_1, longlong param_2, longlong * param_3, undefined8 param_4)`
+pub const _anon_025735F6__MagicWardHitArguments__vfunc_1_sub0: u64 = 54084;
+/// `_anon_025735F6::OnCombatStateChangedArguments::vfunc_0` at 0x9f0ae0 (rtti, high); signature (low): `OnCombatStateChangedArguments * vfunc_0(OnCombatStateChangedArguments * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+pub const _anon_025735F6__OnCombatStateChangedArguments__vfunc_0: u64 = 54383;
+/// `_anon_025735F6::OnCombatStateChangedArguments::vfunc_1` at 0x9eea80 (rtti, high); signature (low): `undefined8 vfunc_1(OnCombatStateChangedArguments * this, longlong * param_1, undefined8 param_2, ulonglong param_3)`
+pub const _anon_025735F6__OnCombatStateChangedArguments__vfunc_1: u64 = 54245;
+/// `_anon_025735F6::PerkFragmentArguments::vfunc_0` at 0x9f0b20 (rtti, high); signature (low): `PerkFragmentArguments * vfunc_0(PerkFragmentArguments * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+pub const _anon_025735F6__PerkFragmentArguments__vfunc_0: u64 = 54384;
+/// `_anon_025735F6::PerkFragmentArguments::vfunc_1` at 0x9eeb60 (rtti, high); signature (low): `undefined8 vfunc_1(PerkFragmentArguments * this, longlong * param_1, undefined8 param_2, ulonglong param_3)`
+pub const _anon_025735F6__PerkFragmentArguments__vfunc_1: u64 = 54246;
+/// `_anon_025735F6::PlayerBowShotArguments::vfunc_0` at 0x9f0b60 (rtti, high); signature (low): `PlayerBowShotArguments * vfunc_0(PlayerBowShotArguments * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+pub const _anon_025735F6__PlayerBowShotArguments__vfunc_0: u64 = 54385;
+/// `_anon_025735F6::PlayerBowShotArguments::vfunc_1` at 0x9eec60 (rtti, high); signature (low): `undefined8 vfunc_1(PlayerBowShotArguments * this, longlong * param_1, undefined8 param_2, ulonglong param_3)`
+pub const _anon_025735F6__PlayerBowShotArguments__vfunc_1: u64 = 54247;
+/// `_anon_025735F6::PlayerBowShotArguments::vfunc_1_sub0` at 0x9e98f0 (callgraph, medium); signature (untiered): `ulonglong * vfunc_1_sub0(ulonglong * param_1, longlong param_2, longlong * param_3, undefined8 param_4)`
+pub const _anon_025735F6__PlayerBowShotArguments__vfunc_1_sub0: u64 = 54085;
+/// `_anon_025735F6::PlayerBowShotArguments::vfunc_1_sub1` at 0x9ea100 (callgraph, medium); signature (untiered): `ulonglong * vfunc_1_sub1(ulonglong * param_1, longlong param_2, longlong * param_3, undefined8 param_4)`
+pub const _anon_025735F6__PlayerBowShotArguments__vfunc_1_sub1: u64 = 54088;
+/// `_anon_025735F6::ScriptFoundCallback::dtor` at 0x9ed7c0 (layout_inference, high); signature (low): `undefined dtor(ScriptFoundCallback * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+pub const _anon_025735F6__ScriptFoundCallback__dtor: u64 = 54216;
+/// `_anon_025735F6::ScriptFoundCallback::vdtor` at 0x9f0be0 (layout_inference, medium); signature (low): `ScriptFoundCallback * vdtor(ScriptFoundCallback * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const _anon_025735F6__ScriptFoundCallback__vdtor: u64 = 54387;
+/// `_anon_025735F6::ScriptFoundCallback::vfunc_1` at 0x9eee20 (rtti, high); signature (low): `undefined vfunc_1(ScriptFoundCallback * this, undefined8 param_1, char * param_2, longlong param_3)`
+pub const _anon_025735F6__ScriptFoundCallback__vfunc_1: u64 = 54248;
+/// `_anon_025735F6::SingleActorArgument::vfunc_0` at 0x9f0c30 (rtti, high); signature (low): `SingleActorArgument * vfunc_0(SingleActorArgument * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const _anon_025735F6__SingleActorArgument__vfunc_0: u64 = 54388;
+/// `_anon_025735F6::SingleActorArgument::vfunc_1` at 0x9eefb0 (rtti, high); signature (low): `undefined8 vfunc_1(SingleActorArgument * this, longlong * param_1, undefined8 param_2, ulonglong param_3)`
+pub const _anon_025735F6__SingleActorArgument__vfunc_1: u64 = 54249;
 /// `_anon_025735F6::SingleObjectRefrHandleArgument::vfunc_0` at 0x9f0ca0 (rtti, high); signature (low): `SingleObjectRefrHandleArgument * vfunc_0(SingleObjectRefrHandleArgument * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const _anon_025735F6__SingleObjectRefrHandleArgument__vfunc_0: u64 = 54389;
 /// `_anon_025735F6::SingleObjectRefrHandleArgument::vfunc_1` at 0x9ef080 (rtti, high); signature (low): `undefined8 vfunc_1(SingleObjectRefrHandleArgument * this, longlong * param_1, undefined8 param_2, ulonglong param_3)`
@@ -5759,35 +5829,3 @@ pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void
 pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_5b131ba9b805: u64 = 446247;
 /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_af1c5628e4452240cdaa04843329f091>_>::vfunc_3` at 0x12cb9c0 (rtti, high); signature (low): `undefined8 * vfunc_3(CopyableCallable<<lambda_af1c5628e4452240cdaa04843329f091>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
 pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_533af41bd738: u64 = 446288;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_c52bf3fa64981bb2fac1cf8941423930>_>::vfunc_0` at 0x12d2220 (rtti, high); signature (low): `CopyableCallable<<lambda_c52bf3fa64981bb2fac1cf8941423930>_> * vfunc_0(CopyableCallable<<lambda_c52bf3fa64981bb2fac1cf8941423930>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_646aac246f82: u64 = 446549;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_c52bf3fa64981bb2fac1cf8941423930>_>::vfunc_2` at 0x12d2f80 (rtti, high); signature (low): `undefined8 * vfunc_2(CopyableCallable<<lambda_c52bf3fa64981bb2fac1cf8941423930>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_74b177c18278: u64 = 446572;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_c52bf3fa64981bb2fac1cf8941423930>_>::vfunc_3` at 0x12d37e0 (rtti, high); signature (low): `undefined8 * vfunc_3(CopyableCallable<<lambda_c52bf3fa64981bb2fac1cf8941423930>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_6a070938cc48: u64 = 446588;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_d4e662662591968f723ad2e6b67bd457>_>::vfunc_0` at 0x12d2250 (rtti, high); signature (low): `CopyableCallable<<lambda_d4e662662591968f723ad2e6b67bd457>_> * vfunc_0(CopyableCallable<<lambda_d4e662662591968f723ad2e6b67bd457>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_b13c53ceda43: u64 = 446550;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_d4e662662591968f723ad2e6b67bd457>_>::vfunc_2` at 0x12d2fe0 (rtti, high); signature (low): `undefined8 * vfunc_2(CopyableCallable<<lambda_d4e662662591968f723ad2e6b67bd457>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_e540e3354656: u64 = 446573;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_d4e662662591968f723ad2e6b67bd457>_>::vfunc_3` at 0x12d3840 (rtti, high); signature (low): `undefined8 * vfunc_3(CopyableCallable<<lambda_d4e662662591968f723ad2e6b67bd457>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_b4864bde277b: u64 = 446589;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_dc47955391806d5d301a84fffe1e352f>_>::vfunc_0` at 0x12bc590 (rtti, high); signature (low): `CopyableCallable<<lambda_dc47955391806d5d301a84fffe1e352f>_> * vfunc_0(CopyableCallable<<lambda_dc47955391806d5d301a84fffe1e352f>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_99697eac1e33: u64 = 445882;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_dc47955391806d5d301a84fffe1e352f>_>::vfunc_2` at 0x12bcb50 (rtti, high); signature (low): `undefined8 * vfunc_2(CopyableCallable<<lambda_dc47955391806d5d301a84fffe1e352f>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_8bf26c6ab833: u64 = 445894;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_dc47955391806d5d301a84fffe1e352f>_>::vfunc_3` at 0x12bd480 (rtti, high); signature (low): `undefined8 * vfunc_3(CopyableCallable<<lambda_dc47955391806d5d301a84fffe1e352f>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_792c48126398: u64 = 445912;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_ec7833b5bfb3ef55e5ada91b58a80c43>_>::vfunc_0` at 0x12c98d0 (rtti, high); signature (low): `CopyableCallable<<lambda_ec7833b5bfb3ef55e5ada91b58a80c43>_> * vfunc_0(CopyableCallable<<lambda_ec7833b5bfb3ef55e5ada91b58a80c43>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_0200a3d08742: u64 = 446226;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_ec7833b5bfb3ef55e5ada91b58a80c43>_>::vfunc_2` at 0x12ca320 (rtti, high); signature (low): `undefined8 * vfunc_2(CopyableCallable<<lambda_ec7833b5bfb3ef55e5ada91b58a80c43>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_ed4623535f85: u64 = 446259;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_ec7833b5bfb3ef55e5ada91b58a80c43>_>::vfunc_3` at 0x12cba20 (rtti, high); signature (low): `undefined8 * vfunc_3(CopyableCallable<<lambda_ec7833b5bfb3ef55e5ada91b58a80c43>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_1aa097045ee6: u64 = 446300;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::ICallableBase::vfunc_0` at 0x129a590 (rtti, high); signature (low): `ICallableBase * vfunc_0(ICallableBase * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_103aab61d9bc: u64 = 444376;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable::vfunc_0` at 0x129a5f0 (rtti, high); signature (low): `ICopyableCallable * vfunc_0(ICopyableCallable * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_7b8fb69f9a67: u64 = 444377;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bool,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bool,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_463900ed92a2f8fa13b2115620e21f94>_>::vfunc_0` at 0x12ad2a0 (rtti, high); signature (low): `CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bool,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_463900ed92a2f8fa13b2115620e21f94>_> * vfunc_0(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bool,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_463900ed92a2f8fa13b2115620e21f94>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_0ccf56988b66: u64 = 445515;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bool,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bool,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_463900ed92a2f8fa13b2115620e21f94>_>::vfunc_1` at 0x12b00b0 (rtti, medium); signature (low): `undefined vfunc_1(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bool,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_463900ed92a2f8fa13b2115620e21f94>_> * this, undefined8 * param_1, undefined8 param_2, undefined8 param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_722773e48170: u64 = 445622;

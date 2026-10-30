@@ -3,6 +3,22 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `BuildItemEnchantmentSoulGemRequirementList` at 0x9280e0 (decompiler, medium); signature (untiered): `undefined BuildItemEnchantmentSoulGemRequirementList(longlong param_1)`
+pub const BuildItemEnchantmentSoulGemRequirementList: u64 = 51457;
+/// `BuildKdTreeIfNotEmpty` at 0x11606e0 (decompiler, medium); signature (untiered): `undefined BuildKdTreeIfNotEmpty(undefined8 param_1, undefined8 * param_2)`
+pub const BuildKdTreeIfNotEmpty: u64 = 82008;
+/// `BuildLinearJacobianSchema` at 0xc23430 (decompiler, medium); signature (untiered): `undefined BuildLinearJacobianSchema(float * param_1, longlong param_2, longlong * param_3)`
+pub const BuildLinearJacobianSchema: u64 = 64775;
+/// `BuildLinearLimitJacobianSchema` at 0xc23b50 (decompiler, medium); signature (untiered): `undefined BuildLinearLimitJacobianSchema(float * param_1, longlong param_2, longlong * param_3)`
+pub const BuildLinearLimitJacobianSchema: u64 = 64780;
+/// `BuildLinkedMeshAndDropUnusedVertices` at 0x11edea0 (decompiler, medium); signature (untiered): `undefined BuildLinkedMeshAndDropUnusedVertices(longlong * param_1, longlong * param_2, ulonglong * param_3, ulonglong param_4)`
+pub const BuildLinkedMeshAndDropUnusedVertices: u64 = 91304;
+/// `BuildLinkedMeshFromCompactArrays` at 0x11ed9c0 (decompiler, medium); signature (untiered): `undefined BuildLinkedMeshFromCompactArrays(longlong param_1, longlong param_2, ulonglong param_3, ulonglong param_4)`
+pub const BuildLinkedMeshFromCompactArrays: u64 = 91302;
+/// `BuildLoadOrderAndDescriptionBoxPage` at 0x15f7d60 (decompiler, medium); signature (untiered): `undefined BuildLoadOrderAndDescriptionBoxPage(longlong * param_1, longlong param_2, undefined8 param_3, undefined8 param_4)`
+pub const BuildLoadOrderAndDescriptionBoxPage: u64 = 454714;
+/// `BuildLoadOrderArchivePageControls` at 0x16192c0 (decompiler, medium); signature (untiered): `undefined BuildLoadOrderArchivePageControls(longlong * param_1, longlong param_2, undefined8 param_3, undefined8 param_4)`
+pub const BuildLoadOrderArchivePageControls: u64 = 454621;
 /// `BuildManifestFilePath` at 0x647570 (decompiler, medium); signature (untiered): `undefined BuildManifestFilePath(longlong param_1, longlong param_2, ulonglong param_3, ulonglong * param_4)`
 pub const BuildManifestFilePath: u64 = 442620;
 /// `BuildManifestPathInCreationsDownloadDirectory` at 0x647660 (decompiler, medium); signature (untiered): `undefined BuildManifestPathInCreationsDownloadDirectory(longlong param_1, ulonglong * param_2, undefined8 param_3, undefined8 param_4)`
@@ -131,6 +147,10 @@ pub const BuildVertexAdjacencyArrays: u64 = 80971;
 pub const BuildViewProjectionMatrices: u64 = 77510;
 /// `BuildViewProjectionMatrices` as a function pointer type (high).
 pub type BuildViewProjectionMatrices_fn = unsafe extern "C" fn(this: *mut crate::FrameState, view: *mut f32, proj: *mut f32, viewProj: *mut f32, forward: *const crate::NiPoint3, up: *const crate::NiPoint3, right: *const crate::NiPoint3, frustum: *const crate::NiFrustum);
+/// `BuildVolumetricLightingVolume` at 0x15312d0 (runtime, high); signature (untiered): `undefined BuildVolumetricLightingVolume(undefined4 * param_1, undefined8 param_2, char param_3)`; semantic: the frame's volumetric step (RenderWorldScene 0x6571b3, after RenderShadowMaps and before the depth pre-pass): unless interior and bVolumetricLightingDisableInterior (or the map menu flag 0x343635e) disables it, copies the weather's parameters into params when g_VolumetricLightingWeatherUpdate (refilling both repartition tables when the range factor +0x2c changed), fills the generate constants (UpdateVolumetricLightingConstants), dispatches ISVolumetricLightingGenerateCS (+0x50) over width/32 x height/32 x depth into both volumes +0x68/+0x70 with the inverse repartition table +0x80 at t2 and the noise volume +0x60 at t3, then ISVolumetricLightingRaymarchCS (+0x58) once per slice 1..depth-1, ping-ponging the volumes with the slice index in 0x3435f40 (high); signature `void (VolumetricLightingParams* params, NiCamera* camera, bool interior)`
+pub const BuildVolumetricLightingVolume: u64 = 107023;
+/// `BuildVolumetricLightingVolume` as a function pointer type (high).
+pub type BuildVolumetricLightingVolume_fn = unsafe extern "C" fn(params: *mut c_void, camera: *mut crate::NiCamera, interior: bool);
 /// `BuildYesNoDialogControls` at 0x15e8080 (decompiler, medium); signature (untiered): `undefined BuildYesNoDialogControls(longlong * param_1, float * param_2, void * param_3, longlong * param_4, longlong * param_5)`
 pub const BuildYesNoDialogControls: u64 = 454781;
 /// `BumpAllocate0x140FromFieldB8` at 0x517290 (decompiler, medium); signature (medium): `longlong BumpAllocate0x140FromFieldB8(longlong param_1)`
@@ -4201,12 +4221,6 @@ pub const Cmd__FunctionDisplayRenderTarget_Execute: u64 = 23106;
 pub const Cmd__FunctionPrintVolumetricLightingParameters_Execute: u64 = 23115;
 /// `Cmd::FunctionSetVolumetricLightingParameters_Execute` at 0x37c0b0 (console_cmd, high); signature (low): `ulonglong FunctionSetVolumetricLightingParameters_Execute(longlong param_1, longlong param_2, longlong param_3, ulonglong param_4, longlong param_5, longlong param_6, undefined8 param_7, uint * param_8)`
 pub const Cmd__FunctionSetVolumetricLightingParameters_Execute: u64 = 23114;
-/// `Cmd::FunctionSetVolumetricLightingParameters_Execute_sub0` at 0x1530d90 (callgraph, medium); signature (untiered): `undefined FunctionSetVolumetricLightingParameters_Execute_sub0(longlong param_1, int param_2)`
-pub const Cmd__FunctionSetVolumetricLightingParameters_Execute_sub0: u64 = 107016;
-/// `Cmd::FunctionSetVolumetricLightingParameters_Execute_sub1` at 0x1530e60 (callgraph, medium); signature (untiered): `undefined FunctionSetVolumetricLightingParameters_Execute_sub1(longlong param_1, int param_2)`
-pub const Cmd__FunctionSetVolumetricLightingParameters_Execute_sub1: u64 = 107019;
-/// `Cmd::FunctionSetVolumetricLightingParameters_Execute_sub2` at 0x1530ed0 (callgraph, medium); signature (untiered): `undefined FunctionSetVolumetricLightingParameters_Execute_sub2(longlong param_1, undefined4 param_2)`
-pub const Cmd__FunctionSetVolumetricLightingParameters_Execute_sub2: u64 = 107020;
 /// `Cmd::FunctionSetVolumetricLightingResolution_Execute` at 0x37ccb0 (console_cmd, high); signature (low): `undefined1 FunctionSetVolumetricLightingResolution_Execute(void)`
 pub const Cmd__FunctionSetVolumetricLightingResolution_Execute: u64 = 23116;
 /// `Cmd::FunctionToggleDownsampleCS_Execute` at 0x37bf40 (console_cmd, high); signature (low): `undefined1 FunctionToggleDownsampleCS_Execute(void)`
@@ -7919,9 +7933,3 @@ pub const CombatBehaviorTreeCreateContextNode1_CombatBehaviorContextRanged_Comba
 pub const CombatBehaviorTreeCreateContextNode1_CombatBehaviorContextShout_CombatBehaviorExpression_CombatB_2ea7c7153aac: u64 = 49769;
 /// `CombatBehaviorTreeCreateContextNode1<CombatBehaviorContextShout,CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorEquipContext,class_NiPointer<CombatInventoryItem>_const&___ptr64_(__cdecl_CombatBehaviorEquipContext::*)(void)const___ptr64>_>_>::vfunc_2` at 0x8d1e80 (rtti, high); signature (low): `undefined vfunc_2(CombatBehaviorTreeCreateContextNode1<CombatBehaviorContextShout,CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorEquipContext,class_NiPointer<CombatInventoryItem>_const&___ptr64_(__cdecl_CombatBehaviorEquipContext::*)(void)const___ptr64>_>_> * this, undefined8 * param_1, undefined8 param_2, undefined8 param_3)`
 pub const CombatBehaviorTreeCreateContextNode1_CombatBehaviorContextShout_CombatBehaviorExpression_CombatB_2df364ec15ce: u64 = 49775;
-/// `CombatBehaviorTreeCreateContextNode1<CombatBehaviorContextShout,CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorEquipContext,class_NiPointer<CombatInventoryItem>_const&___ptr64_(__cdecl_CombatBehaviorEquipContext::*)(void)const___ptr64>_>_>::vfunc_2_sub0` at 0x8d1b00 (callgraph, medium); signature (untiered): `undefined8 * vfunc_2_sub0(longlong * param_1, undefined8 * param_2, undefined8 * param_3, undefined8 param_4)`
-pub const CombatBehaviorTreeCreateContextNode1_CombatBehaviorContextShout_CombatBehaviorExpression_CombatB_37dd6f47002b: u64 = 49767;
-/// `CombatBehaviorTreeCreateContextNode1<CombatBehaviorContextUsePotion,CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorEquipContext,class_NiPointer<CombatInventoryItem>_const&___ptr64_(__cdecl_CombatBehaviorEquipContext::*)(void)const___ptr64>_>_>::vdtor` at 0x8d84f0 (slot_propagation, medium); signature (low): `CombatBehaviorTreeCreateContextNode1<CombatBehaviorContextUsePotion,CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorEquipContext,class_NiPointer<CombatInventoryItem>_const&___ptr64_(__cdecl_CombatBehaviorEquipContext::*)(void)const___ptr64>_>_> * vdtor(CombatBehaviorTreeCreateContextNode1<CombatBehaviorContextUsePotion,CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorEquipContext,class_NiPointer<CombatInventoryItem>_const&___ptr64_(__cdecl_CombatBehaviorEquipContext::*)(void)const___ptr64>_>_> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-pub const CombatBehaviorTreeCreateContextNode1_CombatBehaviorContextUsePotion_CombatBehaviorExpression_Com_c0e42d602af3: u64 = 49922;
-/// `CombatBehaviorTreeCreateContextNode1<CombatBehaviorContextUsePotion,CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorEquipContext,class_NiPointer<CombatInventoryItem>_const&___ptr64_(__cdecl_CombatBehaviorEquipContext::*)(void)const___ptr64>_>_>::vfunc_2` at 0x8d8620 (rtti, high); signature (low): `undefined vfunc_2(CombatBehaviorTreeCreateContextNode1<CombatBehaviorContextUsePotion,CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorEquipContext,class_NiPointer<CombatInventoryItem>_const&___ptr64_(__cdecl_CombatBehaviorEquipContext::*)(void)const___ptr64>_>_> * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
-pub const CombatBehaviorTreeCreateContextNode1_CombatBehaviorContextUsePotion_CombatBehaviorExpression_Com_9dc939ae7610: u64 = 49927;

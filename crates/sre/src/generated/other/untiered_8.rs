@@ -3,27 +3,6 @@
 
 use core::ffi::{c_char, c_void};
 
-/// `RemoveAllMapItems_2` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 19369, rva 0x2d5ba0).
-/// `undefined RemoveAllMapItems_2(longlong * param_1)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn remove_all_map_items_2(param_1: *mut i64) -> u64 { unsafe { function!(19369, (*mut i64) -> u64)(param_1) } }
-/// `RemoveAllMapItems_3` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 19371, rva 0x2d5d00).
-/// `undefined RemoveAllMapItems_3(longlong * param_1)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn remove_all_map_items_3(param_1: *mut i64) -> u64 { unsafe { function!(19371, (*mut i64) -> u64)(param_1) } }
-/// `RemoveAllMapItems_4` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 19372, rva 0x2d5db0).
-/// `undefined RemoveAllMapItems_4(longlong * param_1)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn remove_all_map_items_4(param_1: *mut i64) -> u64 { unsafe { function!(19372, (*mut i64) -> u64)(param_1) } }
 /// `RemoveAllMapItems_5` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 19370, rva 0x2d5c50).
 /// `undefined RemoveAllMapItems_5(longlong * param_1)`
 ///
@@ -14157,3 +14136,17 @@ pub unsafe fn set_bit800_of_nth_sizer_item(param_1: i64, param_2: i32) -> u64 { 
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn set_bits2001000_of_field154(param_1: i64) -> u64 { unsafe { function!(89525, (i64) -> u64)(param_1) } }
+/// `SetBits2001000OfField154Unchecked` (decompiler signature, tier untiered; ledger decompiler evidence, name high; id 89533, rva 0x11a1070).
+/// `undefined SetBits2001000OfField154Unchecked(longlong param_1)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn set_bits2001000_of_field154_unchecked(param_1: i64) -> u64 { unsafe { function!(89533, (i64) -> u64)(param_1) } }
+/// `SetBits2001000OfField154_2` (decompiler signature, tier untiered; ledger decompiler evidence, name high; id 89527, rva 0x11a0ef0).
+/// `undefined SetBits2001000OfField154_2(longlong param_1)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn set_bits2001000_of_field154_2(param_1: i64) -> u64 { unsafe { function!(89527, (i64) -> u64)(param_1) } }

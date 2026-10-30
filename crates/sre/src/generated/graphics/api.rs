@@ -59,12 +59,39 @@ pub unsafe fn apply_culling_params_to_culler(flushKind: u32, params: *mut c_void
 /// `void (void)`
 #[inline]
 pub fn apply_viewport_depth_range() { unsafe { function!(77241, ())() } }
+/// `ApplyVolumetricLighting`: image-space apply (RenderImageSpace 0x153ad90, ISApplyVolumetricLighting): draws into outTarget with depth 0 at t0, the history at t1, the marched volume at t2, the repartition table +0x78 at t3, blue noise at t4, motion vectors at t5 and last frame's depth at t6; constants intensity / depth slices and the temporal factor; then copies depth 0 into the previous-depth target. Per pixel: slice = repartition(depth), amount = volume(uv, slice) * intensity / slices, blended with the reprojected history unless the depth moved by more than 0.01
+///
+/// Semantic, graphics pass, high; ledger runtime evidence, name high; id 107193, rva 0x153df60.
+/// `int (void* effect, int historyTarget, int outTarget)`
+///
+/// # Safety
+/// `effect` must point to what the engine expects.
+#[inline]
+pub unsafe fn apply_volumetric_lighting(effect: *mut c_void, historyTarget: i32, outTarget: i32) -> i32 { unsafe { function!(107193, (*mut c_void, i32, i32) -> i32)(effect, historyTarget, outTarget) } }
 /// `BeginDepthShift`: when g_DepthShiftEnabled (0x20d72c0) and (Map Menu open (0x3436058) or 0x3436311 clear): caches far = slot 62 in 0x3436050 and near = slot 63 in 0x3436054, reframes the frame camera with SetPerspectiveFromFov(sg+0x13c, near, n*f / (f + (n - f) * 1.000002)) and narrows the viewport depth range to [min, min(max, 0.999998)] (saved in 0x34362b8/0x34362bc)
 ///
 /// Semantic, graphics pass, high; ledger runtime evidence, name high; id 107125, rva 0x15377f0.
 /// `void (void)`
 #[inline]
 pub fn begin_depth_shift() { unsafe { function!(107125, ())() } }
+/// `BlendWeatherVolumetricLighting`: blends the current weather's (sky+0x48) and the previous weather's (sky+0x50, by the transition sky+0x1b8) BGSVolumetricLighting records per time of day (weather +0x8a8 + index*8, record +0x20, 12 floats; missing records fall back to the INI values) and stores the result with SetWeatherVolumetricLighting
+///
+/// Semantic, graphics pass, medium; ledger semantic evidence, name medium; id 26248, rva 0x415b80.
+/// `void (void* sky, uint timeOfDay, uint nextTimeOfDay, bool blendTimes, float t)`
+///
+/// # Safety
+/// The pass rates the signature medium.
+#[inline]
+pub unsafe fn blend_weather_volumetric_lighting(sky: *mut c_void, timeOfDay: u32, nextTimeOfDay: u32, blendTimes: bool, t: f32) { unsafe { function!(26248, (*mut c_void, u32, u32, bool, f32))(sky, timeOfDay, nextTimeOfDay, blendTimes, t) } }
+/// `BlurVolumetricLighting`: the separable compute blur after the apply (effect at ImageSpaceState+0x188, target 0x2d as temporary): horizontal then vertical dispatch
+///
+/// Semantic, graphics pass, medium; ledger semantic evidence, name medium; id 107206, rva 0x15403f0.
+/// `int (void* effect, int source, int dest, int temp)`
+///
+/// # Safety
+/// The pass rates the signature medium.
+#[inline]
+pub unsafe fn blur_volumetric_lighting(effect: *mut c_void, source: i32, dest: i32, temp: i32) -> i32 { unsafe { function!(107206, (*mut c_void, i32, i32, i32) -> i32)(effect, source, dest, temp) } }
 /// `BuildFocusShadowList`: rebuilds g_FocusShadowNodes each frame: the player's third-person root if its flag bit 0 is clear, then nearby actors' 3D sorted by distance^2 - radius^2 while < fMaxFocusShadowMapDistance^2 and count < g_MaxFocusShadows
 ///
 /// Semantic, graphics pass, high; ledger runtime evidence, name high; id 36589, rva 0x65a400.
@@ -77,6 +104,15 @@ pub fn build_focus_shadow_list() { unsafe { function!(36589, ())() } }
 /// `void (void)`
 #[inline]
 pub fn build_frame_job_lists() { unsafe { function!(35402, ())() } }
+/// `BuildVolumetricLightingVolume`: the frame's volumetric step (RenderWorldScene 0x6571b3, after RenderShadowMaps and before the depth pre-pass): unless interior and bVolumetricLightingDisableInterior (or the map menu flag 0x343635e) disables it, copies the weather's parameters into params when g_VolumetricLightingWeatherUpdate (refilling both repartition tables when the range factor +0x2c changed), fills the generate constants (UpdateVolumetricLightingConstants), dispatches ISVolumetricLightingGenerateCS (+0x50) over width/32 x height/32 x depth into both volumes +0x68/+0x70 with the inverse repartition table +0x80 at t2 and the noise volume +0x60 at t3, then ISVolumetricLightingRaymarchCS (+0x58) once per slice 1..depth-1, ping-ponging the volumes with the slice index in 0x3435f40
+///
+/// Semantic, graphics pass, high; ledger runtime evidence, name high; id 107023, rva 0x15312d0.
+/// `void (VolumetricLightingParams* params, NiCamera* camera, bool interior)`
+///
+/// # Safety
+/// `params` must point to what the engine expects.
+#[inline]
+pub unsafe fn build_volumetric_lighting_volume(params: *mut c_void, camera: *mut crate::NiCamera, interior: bool) { unsafe { function!(107023, (*mut c_void, *mut crate::NiCamera, bool))(params, camera, interior) } }
 /// `CacheShadowMapResolution`: g_ShadowMapResolution (0x34869c0) = iShadowMapResolution value, once at startup
 ///
 /// Semantic, graphics pass, high; ledger semantic evidence, name high; id 107596, rva 0x155c650.
@@ -93,6 +129,15 @@ pub fn cache_shadow_map_resolution() { unsafe { function!(107596, ())() } }
 /// `scriptData`, `locals`, `result`, `offset` must point to what the engine expects.
 #[inline]
 pub unsafe fn cmd__dynamic_resolution_execute(params: *const crate::ParamInfo, scriptData: *const c_void, thisRef: *mut crate::TESObjectREFR, containingObj: *mut crate::TESObjectREFR, script: *mut crate::Script, locals: *mut c_void, result: *mut f64, offset: *mut u32) -> bool { unsafe { function!(23220, (*const crate::ParamInfo, *const c_void, *mut crate::TESObjectREFR, *mut crate::TESObjectREFR, *mut crate::Script, *mut c_void, *mut f64, *mut u32) -> bool)(params, scriptData, thisRef, containingObj, script, locals, result, offset) } }
+/// `CompositeVolumetricLighting`: adds the volumetric amount (t0, the parity target) times the sun or custom colour into the frame (plain, lens-flare or alternate variant); reads no depth
+///
+/// Semantic, graphics pass, medium; ledger semantic evidence, name medium; id 107213, rva 0x1540ae0.
+/// `int (void* effect, int source, int dest)`
+///
+/// # Safety
+/// The pass rates the signature medium.
+#[inline]
+pub unsafe fn composite_volumetric_lighting(effect: *mut c_void, source: i32, dest: i32) -> i32 { unsafe { function!(107213, (*mut c_void, i32, i32) -> i32)(effect, source, dest) } }
 /// `ComputeTargetTexelConstants`: image-space ping-pong constants: [0x14] = near, [0x15] = far of g_CurrentRenderCamera (also _2 0x1545ab0, _3 0x1545fa0)
 ///
 /// Semantic, graphics pass, medium; ledger semantic evidence, name medium; id 107276, rva 0x15455c0.
@@ -102,6 +147,24 @@ pub unsafe fn cmd__dynamic_resolution_execute(params: *const crate::ParamInfo, s
 /// The pass rates the signature medium.
 #[inline]
 pub unsafe fn compute_target_texel_constants(effect: *mut c_void, constants: *mut f32) { unsafe { function!(107276, (*mut c_void, *mut f32))(effect, constants) } }
+/// `CopyWeatherVolumetricLighting`: when g_VolumetricLightingWeatherUpdate, copies the 12 weather floats g_WeatherVolumetricLighting into params+0x0..+0x2c and refills both tables when the range factor changed (the same copy is inlined in BuildVolumetricLightingVolume)
+///
+/// Semantic, graphics pass, high; ledger semantic evidence, name high; id 107028, rva 0x1532240.
+/// `void (VolumetricLightingParams* params)`
+///
+/// # Safety
+/// `params` must point to what the engine expects.
+#[inline]
+pub unsafe fn copy_weather_volumetric_lighting(params: *mut c_void) { unsafe { function!(107028, (*mut c_void))(params) } }
+/// `DispatchVolumetricLightingGenerate`: the generate dispatch alone (constants, volumes +0x68/+0x70, noise +0x60, inverse repartition +0x80, shader +0x50) without the per-slice march
+///
+/// Semantic, graphics pass, medium; ledger semantic evidence, name medium; id 107025, rva 0x1531820.
+/// `void (VolumetricLightingParams* params, NiCamera* camera)`
+///
+/// # Safety
+/// The pass rates the signature medium.
+#[inline]
+pub unsafe fn dispatch_volumetric_lighting_generate(params: *mut c_void, camera: *mut crate::NiCamera) { unsafe { function!(107025, (*mut c_void, *mut crate::NiCamera))(params, camera) } }
 /// `DownsampleNormalsForSSR`: SSR setup: optional normal downsample into colour 6 (bDownSampleNormalSSR, iReflectionResolutionDivider 2 by pixel shader, 4 by compute), then RenderScreenSpaceReflectionPass 0x15419a0 into colour 0x6e
 ///
 /// Semantic, graphics pass, high; ledger semantic evidence, name high; id 107146, rva 0x153a6b0.
@@ -120,6 +183,15 @@ pub fn dynamic_resolution_upsample(upsample: &crate::ImageSpaceEffect, sourceTar
 /// `void (void)`
 #[inline]
 pub fn end_depth_shift() { unsafe { function!(107126, ())() } }
+/// `FillVolumetricRepartitionTable`: maps the 1D texture (MapD3DResource mode 4, write-discard) and writes texel i = function(i / 4096, params+0x2c) for i in 0..4095; function is float (float x, float range) in xmm0/xmm1
+///
+/// Semantic, graphics pass, high; ledger runtime evidence, name high; id 107035, rva 0x1532730.
+/// `void (VolumetricLightingParams* params, void* function, void* texture)`
+///
+/// # Safety
+/// `params`, `function`, `texture` must point to what the engine expects.
+#[inline]
+pub unsafe fn fill_volumetric_repartition_table(params: *mut c_void, function: *mut c_void, texture: *mut c_void) { unsafe { function!(107035, (*mut c_void, *mut c_void, *mut c_void))(params, function, texture) } }
 /// `FlushFirstPersonAccumulator`: step 14, first person only: shows the first-person root, marks g_FirstPersonAccumulator as the main-view kind (shadowMapIndex 0xffff, mask 0) unless g_SunShadowDisabled, and flushes g_FirstPersonCuller's lists into it
 ///
 /// Semantic, graphics pass, high; ledger semantic evidence, name high; id 107128, rva 0x1537a80.
@@ -191,6 +263,15 @@ pub unsafe fn image_space_modifier__remove_cross_fade(seconds: f32) { unsafe { f
 /// `this` must point to what the engine expects, and the result is an untyped pointer.
 #[inline]
 pub unsafe fn init_culling_params(this: *mut c_void) -> *mut c_void { unsafe { function!(106919, (*mut c_void) -> *mut c_void)(this) } }
+/// `InitVolumetricLighting`: renderer init (InitShaders) and RefreshShaders: the console defaults table, the texture sizes per quality (low/medium/high from the iVolumetricLightingTexture* settings), the enable and weather-update copies, the volumes (0x1532330), the two 4096-entry R32_FLOAT 1D textures 'Volumetric Lighting Repartition' (+0x78) and 'Volumetric Lighting Inverse Repartition' (+0x80), the compute shaders ISVolumetricLightingGenerateCS (+0x50) and ISVolumetricLightingRaymarchCS (+0x58), then fills both tables with +0x40 and +0x48
+///
+/// Semantic, graphics pass, high; ledger semantic evidence, name high; id 107021, rva 0x1530f10.
+/// `void (VolumetricLightingParams* params, void* shaderStream)`
+///
+/// # Safety
+/// `params`, `shaderStream` must point to what the engine expects.
+#[inline]
+pub unsafe fn init_volumetric_lighting(params: *mut c_void, shaderStream: *mut c_void) { unsafe { function!(107021, (*mut c_void, *mut c_void))(params, shaderStream) } }
 /// `MainWindowProc`: the game window's WNDPROC (ledger: Err_ThisApplicationCannotBeRunFrom_cb2): WM_ACTIVATE app activation, WM_NCACTIVATE, WM_SIZE/WM_WINDOWPOSCHANGED -> resize request and SetWindowPosition, WM_NCHITTEST, WM_DESTROY
 ///
 /// Semantic, graphics pass, high; ledger semantic evidence, name high; id 36649, rva 0x65f270.
@@ -279,6 +360,42 @@ pub unsafe fn run_culling_with_static_process(params: *mut c_void, cullKind: u32
 /// `void (bool isInterior)`
 #[inline]
 pub fn set_shadow_distance_for_interior(isInterior: bool) { unsafe { function!(105631, (bool))(isInterior) } }
+/// `SetVolumetricRangeFactor`: svlp range: writes +0x2c and refills both repartition tables; the console clamps its value (run-ic10: 300 became 80)
+///
+/// Semantic, graphics pass, high; ledger runtime evidence, name high; id 107020, rva 0x1530ed0.
+/// `void (VolumetricLightingParams* params, float range)`
+///
+/// # Safety
+/// `params` must point to what the engine expects.
+#[inline]
+pub unsafe fn set_volumetric_range_factor(params: *mut c_void, range: f32) { unsafe { function!(107020, (*mut c_void, f32))(params, range) } }
+/// `SetVolumetricRepartitionMode`: svlp function: mode 0 sets +0x40/+0x48 to VolumetricRepartitionPow/VolumetricInverseRepartitionPow, mode 1 to the base-3 exponential pair; any other mode keeps the pointers; then refills both tables from +0x2c
+///
+/// Semantic, graphics pass, high; ledger runtime evidence, name high; id 107019, rva 0x1530e60.
+/// `void (VolumetricLightingParams* params, int mode)`
+///
+/// # Safety
+/// `params` must point to what the engine expects.
+#[inline]
+pub unsafe fn set_volumetric_repartition_mode(params: *mut c_void, mode: i32) { unsafe { function!(107019, (*mut c_void, i32))(params, mode) } }
+/// `SetVolumetricTextureQuality`: svlp quality: copies the quality's width/height/depth into +0x30..+0x38, releases and recreates the volumes
+///
+/// Semantic, graphics pass, high; ledger semantic evidence, name high; id 107016, rva 0x1530d90.
+/// `void (VolumetricLightingParams* params, int quality)`
+///
+/// # Safety
+/// `params` must point to what the engine expects.
+#[inline]
+pub unsafe fn set_volumetric_texture_quality(params: *mut c_void, quality: i32) { unsafe { function!(107016, (*mut c_void, i32))(params, quality) } }
+/// `SetWeatherVolumetricLighting`: copies 12 floats into g_WeatherVolumetricLighting 0x33d3ea8
+///
+/// Semantic, graphics pass, high; ledger semantic evidence, name high; id 105632, rva 0x14ebf80.
+/// `void (float* params)`
+///
+/// # Safety
+/// `params` must point to what the engine expects.
+#[inline]
+pub unsafe fn set_weather_volumetric_lighting(params: *mut f32) { unsafe { function!(105632, (*mut f32))(params) } }
 /// `SetupReflectedCamera`: reflected local translation = source world translation mirrored across the plane (p - 2 (n.p - d) n); local rotation = the source's normalized world rotation columns reflected (column 1 negated so the frame stays right-handed); local scale = |source world scale|; SetFrustum(reflected, source frustum +0x150); UpdateNode
 ///
 /// Semantic, graphics pass, high; ledger runtime evidence, name high; id 76214, rva 0xfde350.
@@ -334,7 +451,7 @@ pub unsafe fn taa__render(this: *mut c_void, sourceTarget: crate::RenderTargetId
 /// `unused` must point to what the engine expects.
 #[inline]
 pub unsafe fn update_image_space_modifiers(unused: *mut c_void, advanceClock: bool) { unsafe { function!(36587, (*mut c_void, bool))(unused, advanceClock) } }
-/// `UpdateSunShadowConstants`: converts the sun's split distances (+0x5a4, +0x5a8) into post-projection depth with the camera's near/far: (s*f - f*n) / ((f - n) * s)
+/// `UpdateVolumetricLightingConstants`: (correction of UpdateSunShadowConstants) fills the generate shader's constant buffer 0x3435db0 (0x180 bytes): c0-c3 the camera's cached view-projection (FindEntryByKeyAndFlag on the frame state, entry +0xb0), c4-c7 its inverse, c8-c13 the sun's two cascade matrices shifted by the eye, c17 the cascade split distances turned into depth with the camera's near/far ((s f - f n) / ((f - n) s)), the last split and the cascade count, c18 the shadow-casting flag, c19 the sun direction, c20 the volume size, c21 the drifting noise offset plus the eye and 1/density size, c22.w the jitter index (frame counter +0x88 & 7), c23 density contribution, phase scattering and phase contribution
 ///
 /// Semantic, graphics pass, high; ledger semantic evidence, name high; id 107027, rva 0x1531b30.
 /// `void (VolumetricLightingParams* params, NiCamera* camera)`
@@ -342,7 +459,31 @@ pub unsafe fn update_image_space_modifiers(unused: *mut c_void, advanceClock: bo
 /// # Safety
 /// `params` must point to what the engine expects.
 #[inline]
-pub unsafe fn update_sun_shadow_constants(params: *mut c_void, camera: *mut crate::NiCamera) { unsafe { function!(107027, (*mut c_void, *mut crate::NiCamera))(params, camera) } }
+pub unsafe fn update_volumetric_lighting_constants(params: *mut c_void, camera: *mut crate::NiCamera) { unsafe { function!(107027, (*mut c_void, *mut crate::NiCamera))(params, camera) } }
+/// `VolumetricInverseRepartitionExp`: inverse table of mode 1: log(s) / log(3^range) + 1 (not the exact inverse of VolumetricRepartitionExp)
+///
+/// Semantic, graphics pass, high; ledger semantic evidence, name high; id 107039, rva 0x15328c0.
+/// `float (float s, float range)`
+#[inline]
+pub fn volumetric_inverse_repartition_exp(s: f32, range: f32) -> f32 { unsafe { function!(107039, (f32, f32) -> f32)(s, range) } }
+/// `VolumetricInverseRepartitionPow`: the default inverse repartition: depth = pow(s, 1 / range); filled into +0x80, which the generate shader samples with the slice coordinate
+///
+/// Semantic, graphics pass, high; ledger runtime evidence, name high; id 107037, rva 0x1532830.
+/// `float (float s, float range)`
+#[inline]
+pub fn volumetric_inverse_repartition_pow(s: f32, range: f32) -> f32 { unsafe { function!(107037, (f32, f32) -> f32)(s, range) } }
+/// `VolumetricRepartitionExp`: repartition mode 1: (3^(x range) - 1) / (3^range - 1)
+///
+/// Semantic, graphics pass, high; ledger semantic evidence, name high; id 107038, rva 0x1532850.
+/// `float (float x, float range)`
+#[inline]
+pub fn volumetric_repartition_exp(x: f32, range: f32) -> f32 { unsafe { function!(107038, (f32, f32) -> f32)(x, range) } }
+/// `VolumetricRepartitionPow`: the default repartition: slice coordinate = pow(depth, range); filled into +0x78, which the apply pass samples with the pixel's depth
+///
+/// Semantic, graphics pass, high; ledger runtime evidence, name high; id 107036, rva 0x1532820.
+/// `float (float x, float range)`
+#[inline]
+pub fn volumetric_repartition_pow(x: f32, range: f32) -> f32 { unsafe { function!(107036, (f32, f32) -> f32)(x, range) } }
 /// `WaterSystem::UpdateForCamera`: per-frame water update from the culler's camera: frustum corners, underwater test, wading water, reflections, and the depth-of-field override fade
 ///
 /// Semantic, graphics pass, high; ledger runtime evidence, name high; id 32174, rva 0x5299b0.

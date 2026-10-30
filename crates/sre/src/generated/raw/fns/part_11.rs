@@ -3,6 +3,46 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `GameSetting_fIntimidateSpeechcraftCurve__atexit` at 0x17538c0 (crt_init, medium); signature (high): `void GameSetting_fIntimidateSpeechcraftCurve__atexit(void)`
+pub const GameSetting_fIntimidateSpeechcraftCurve__atexit: u64 = 167066;
+/// `GameSetting_fIntimidateSpeechcraftCurve__init` at 0x2cd40 (crt_init, medium); signature (high): `void GameSetting_fIntimidateSpeechcraftCurve__init(void)`
+pub const GameSetting_fIntimidateSpeechcraftCurve__init: u64 = 1856;
+/// `GameSetting_fInvisibilityMaxRefraction__atexit` at 0x173ca10 (crt_init, medium); signature (high): `void GameSetting_fInvisibilityMaxRefraction__atexit(void)`
+pub const GameSetting_fInvisibilityMaxRefraction__atexit: u64 = 165337;
+/// `GameSetting_fInvisibilityMaxRefraction__init` at 0x87a0 (crt_init, medium); signature (high): `void GameSetting_fInvisibilityMaxRefraction__init(void)`
+pub const GameSetting_fInvisibilityMaxRefraction__init: u64 = 147;
+/// `GameSetting_fInvisibilityMinRefraction__atexit` at 0x173ca60 (crt_init, medium); signature (high): `void GameSetting_fInvisibilityMinRefraction__atexit(void)`
+pub const GameSetting_fInvisibilityMinRefraction__atexit: u64 = 165338;
+/// `GameSetting_fInvisibilityMinRefraction__init` at 0x8820 (crt_init, medium); signature (high): `void GameSetting_fInvisibilityMinRefraction__init(void)`
+pub const GameSetting_fInvisibilityMinRefraction__init: u64 = 148;
+/// `GameSetting_fIronSightsDOFDistance__atexit` at 0x17679b0 (crt_init, medium); signature (high): `void GameSetting_fIronSightsDOFDistance__atexit(void)`
+pub const GameSetting_fIronSightsDOFDistance__atexit: u64 = 168093;
+/// `GameSetting_fIronSightsDOFDistance__init` at 0x4c9e0 (crt_init, medium); signature (high): `void GameSetting_fIronSightsDOFDistance__init(void)`
+pub const GameSetting_fIronSightsDOFDistance__init: u64 = 2883;
+/// `GameSetting_fIronSightsDOFRange__atexit` at 0x1767a00 (crt_init, medium); signature (high): `void GameSetting_fIronSightsDOFRange__atexit(void)`
+pub const GameSetting_fIronSightsDOFRange__atexit: u64 = 168094;
+/// `GameSetting_fIronSightsDOFRange__init` at 0x4ca60 (crt_init, medium); signature (high): `void GameSetting_fIronSightsDOFRange__init(void)`
+pub const GameSetting_fIronSightsDOFRange__init: u64 = 2884;
+/// `GameSetting_fIronSightsDOFStrengthCap__atexit` at 0x1767a50 (crt_init, medium); signature (high): `void GameSetting_fIronSightsDOFStrengthCap__atexit(void)`
+pub const GameSetting_fIronSightsDOFStrengthCap__atexit: u64 = 168095;
+/// `GameSetting_fIronSightsDOFStrengthCap__init` at 0x4cae0 (crt_init, medium); signature (high): `void GameSetting_fIronSightsDOFStrengthCap__init(void)`
+pub const GameSetting_fIronSightsDOFStrengthCap__init: u64 = 2885;
+/// `GameSetting_fIronSightsDOFSwitchSeconds__atexit` at 0x1767aa0 (crt_init, medium); signature (high): `void GameSetting_fIronSightsDOFSwitchSeconds__atexit(void)`
+pub const GameSetting_fIronSightsDOFSwitchSeconds__atexit: u64 = 168096;
+/// `GameSetting_fIronSightsDOFSwitchSeconds__init` at 0x4cb60 (crt_init, medium); signature (high): `void GameSetting_fIronSightsDOFSwitchSeconds__init(void)`
+pub const GameSetting_fIronSightsDOFSwitchSeconds__init: u64 = 2886;
+/// `GameSetting_fIronSightsFOVTimeChange__atexit` at 0x1767af0 (crt_init, medium); signature (high): `void GameSetting_fIronSightsFOVTimeChange__atexit(void)`
+pub const GameSetting_fIronSightsFOVTimeChange__atexit: u64 = 168097;
+/// `GameSetting_fIronSightsFOVTimeChange__init` at 0x4cbe0 (crt_init, medium); signature (high): `void GameSetting_fIronSightsFOVTimeChange__init(void)`
+pub const GameSetting_fIronSightsFOVTimeChange__init: u64 = 2887;
+/// `GameSetting_fIronSightsGunMotionBlur__atexit` at 0x1767b40 (crt_init, medium); signature (high): `void GameSetting_fIronSightsGunMotionBlur__atexit(void)`
+pub const GameSetting_fIronSightsGunMotionBlur__atexit: u64 = 168098;
+/// `GameSetting_fIronSightsGunMotionBlur__init` at 0x4cc60 (crt_init, medium); signature (high): `void GameSetting_fIronSightsGunMotionBlur__init(void)`
+pub const GameSetting_fIronSightsGunMotionBlur__init: u64 = 2888;
+/// `GameSetting_fIronSightsMotionBlur__atexit` at 0x1767b90 (crt_init, medium); signature (high): `void GameSetting_fIronSightsMotionBlur__atexit(void)`
+pub const GameSetting_fIronSightsMotionBlur__atexit: u64 = 168099;
+/// `GameSetting_fIronSightsMotionBlur__init` at 0x4cce0 (crt_init, medium); signature (high): `void GameSetting_fIronSightsMotionBlur__init(void)`
+pub const GameSetting_fIronSightsMotionBlur__init: u64 = 2889;
 /// `GameSetting_fItemPointsMult__atexit` at 0x17771d0 (crt_init, medium); signature (high): `void GameSetting_fItemPointsMult__atexit(void)`
 pub const GameSetting_fItemPointsMult__atexit: u64 = 168887;
 /// `GameSetting_fItemPointsMult__init` at 0x64d00 (crt_init, medium); signature (high): `void GameSetting_fItemPointsMult__init(void)`
@@ -9405,41 +9445,3 @@ pub const GetCombatPathingGoalPolicyLocationCrc: u64 = 50226;
 pub const GetCombatPathingRequestGenericExitWaterStandardHash: u64 = 49416;
 /// `GetCombatPathingRequestGenericFindAttackLocationStandardHash` at 0x892830 (decompiler, high); signature (high): `uint GetCombatPathingRequestGenericFindAttackLocationStandardHash(void)`
 pub const GetCombatPathingRequestGenericFindAttackLocationStandardHash: u64 = 48240;
-/// `GetCombatPathingRequestGenericFindCoverStandardHash` at 0x8d7130 (decompiler, high); signature (high): `uint GetCombatPathingRequestGenericFindCoverStandardHash(void)`
-pub const GetCombatPathingRequestGenericFindCoverStandardHash: u64 = 49891;
-/// `GetCombatPathingRequestGenericFindHideCoverStandardHash` at 0x8a7b60 (decompiler, high); signature (high): `uint GetCombatPathingRequestGenericFindHideCoverStandardHash(void)`
-pub const GetCombatPathingRequestGenericFindHideCoverStandardHash: u64 = 48748;
-/// `GetCombatPathingRequestGenericFindTargetLocationStandardHash` at 0x860ff0 (decompiler, high); signature (high): `uint GetCombatPathingRequestGenericFindTargetLocationStandardHash(void)`
-pub const GetCombatPathingRequestGenericFindTargetLocationStandardHash: u64 = 47156;
-/// `GetCombatPathingRequestGenericFlankDistantStandardHash` at 0x89d6f0 (decompiler, high); signature (high): `uint GetCombatPathingRequestGenericFlankDistantStandardHash(void)`
-pub const GetCombatPathingRequestGenericFlankDistantStandardHash: u64 = 48480;
-/// `GetCombatPathingRequestGenericFlankFlankHash` at 0x89d640 (decompiler, high); signature (high): `uint GetCombatPathingRequestGenericFlankFlankHash(void)`
-pub const GetCombatPathingRequestGenericFlankFlankHash: u64 = 48479;
-/// `GetCombatPathingRequestGenericFleeStandardHash` at 0x8a7c10 (decompiler, high); signature (high): `uint GetCombatPathingRequestGenericFleeStandardHash(void)`
-pub const GetCombatPathingRequestGenericFleeStandardHash: u64 = 48749;
-/// `GetCombatPathingRequestGenericRetreatStandardHash` at 0x8f0700 (decompiler, high); signature (high): `uint GetCombatPathingRequestGenericRetreatStandardHash(void)`
-pub const GetCombatPathingRequestGenericRetreatStandardHash: u64 = 50600;
-/// `GetCombatPathingRequestGenericReturnToCombatAreaStandardHash` at 0x8c2100 (decompiler, high); signature (high): `uint GetCombatPathingRequestGenericReturnToCombatAreaStandardHash(void)`
-pub const GetCombatPathingRequestGenericReturnToCombatAreaStandardHash: u64 = 49417;
-/// `GetCombatPathingRequestGenericSearchStandardHash` at 0x8cf910 (decompiler, high); signature (high): `uint GetCombatPathingRequestGenericSearchStandardHash(void)`
-pub const GetCombatPathingRequestGenericSearchStandardHash: u64 = 49713;
-/// `GetCombatPathingRequestGenericSearchWanderStandardHash` at 0x8cf9c0 (decompiler, high); signature (high): `uint GetCombatPathingRequestGenericSearchWanderStandardHash(void)`
-pub const GetCombatPathingRequestGenericSearchWanderStandardHash: u64 = 49714;
-/// `GetCombatPathingRequestMultiGoalHash` at 0x8e7c60 (decompiler, high); signature (high): `undefined4 GetCombatPathingRequestMultiGoalHash(void)`
-pub const GetCombatPathingRequestMultiGoalHash: u64 = 50228;
-/// `GetCombatWeaponDPSAsInt` at 0x28c120 (decompiler, high); signature (high): `int GetCombatWeaponDPSAsInt(longlong param_1)`
-pub const GetCombatWeaponDPSAsInt: u64 = 18092;
-/// `GetCombinedBoxCenterAndDiagonalSq` at 0x81c740 (decompiler, medium); signature (medium): `float GetCombinedBoxCenterAndDiagonalSq(longlong param_1, float * param_2)`
-pub const GetCombinedBoxCenterAndDiagonalSq: u64 = 44752;
-/// `GetCommandLineProgramName` at 0xeac660 (decompiler, medium); signature (untiered): `undefined1 * GetCommandLineProgramName(void)`
-pub const GetCommandLineProgramName: u64 = 68971;
-/// `GetCommandNumParams` at 0x4a8bf0 (decompiler, medium); signature (medium): `ushort GetCommandNumParams(ushort * param_1)`
-pub const GetCommandNumParams: u64 = 29937;
-/// `GetCommandTableEntryByOpcode` at 0x34a230 (semantic, high); signature (high): `CommandTableEntry * GetCommandTableEntryByOpcode(int param_1)`; semantic: op-0x100 < 0x1c1 -> console table, op-0x1000 < 0x2e1 -> script table, else null (high); signature `CommandTableEntry* (int opcode)`
-pub const GetCommandTableEntryByOpcode: u64 = 21963;
-/// `GetCommandTableEntryByOpcode` as a function pointer type (high).
-pub type GetCommandTableEntryByOpcode_fn = unsafe extern "C" fn(opcode: i32) -> *mut crate::CommandTableEntry;
-/// `GetComplementOfField10` at 0xab2590 (decompiler, high); signature (untiered): `uint GetComplementOfField10(longlong param_1)`
-pub const GetComplementOfField10: u64 = 57666;
-/// `GetComponentByFormType` at 0x1d7310 (decompiler, medium); signature (untiered): `longlong GetComponentByFormType(longlong param_1)`
-pub const GetComponentByFormType: u64 = 14218;

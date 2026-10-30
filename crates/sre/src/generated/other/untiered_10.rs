@@ -3,13 +3,6 @@
 
 use core::ffi::{c_char, c_void};
 
-/// `UnescapeJsonStringIntoFixedString` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 527475, rva 0x14068d0).
-/// `undefined UnescapeJsonStringIntoFixedString(undefined8 * param_1, byte * param_2, undefined8 param_3, undefined8 param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn unescape_json_string_into_fixed_string(param_1: *mut u64, param_2: *mut u8, param_3: u64, param_4: u64) -> u64 { unsafe { function!(527475, (*mut u64, *mut u8, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
 /// `UnescapeJsonStringIntoFixedString1024` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 527289, rva 0x13f0a50).
 /// `undefined UnescapeJsonStringIntoFixedString1024(undefined8 * param_1, ulonglong * param_2, undefined8 param_3, undefined8 param_4)`
 ///

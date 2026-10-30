@@ -4,6 +4,17 @@
 use crate::raw::*;
 
 pub(super) const ROWS: &[Function] = &[
+    Function { rva: 0x1770150, id: 168527, confidence: Confidence::Medium, name: "GameSetting_fGameplaySpeakingEmotionMinChangeValue__atexit" },
+    Function { rva: 0x17701a0, id: 168528, confidence: Confidence::Medium, name: "GameSetting_fGameplayVoiceFilePadding__atexit" },
+    Function { rva: 0x17701f0, id: 168529, confidence: Confidence::Medium, name: "GameSetting_fGameplayiSpeakingEmotionMaxDeltaChange__atexit" },
+    Function { rva: 0x1770240, id: 168530, confidence: Confidence::Medium, name: "GameSetting_fGameplayiSpeakingEmotionMinDeltaChange__atexit" },
+    Function { rva: 0x1770290, id: 168531, confidence: Confidence::Medium, name: "GameSetting_fGrabMaxWeightRunning__atexit" },
+    Function { rva: 0x17702e0, id: 168532, confidence: Confidence::Medium, name: "GameSetting_fGrabMaxWeightWalking__atexit" },
+    Function { rva: 0x1770330, id: 168533, confidence: Confidence::Medium, name: "GameSetting_fHazardDropMaxDistance__atexit" },
+    Function { rva: 0x1770380, id: 168534, confidence: Confidence::Medium, name: "GameSetting_fHorseMountOffsetX__atexit" },
+    Function { rva: 0x17703d0, id: 168535, confidence: Confidence::Medium, name: "GameSetting_fHorseMountOffsetY__atexit" },
+    Function { rva: 0x1770420, id: 168536, confidence: Confidence::Medium, name: "GameSetting_fHostileActorExteriorDistance__atexit" },
+    Function { rva: 0x1770470, id: 168537, confidence: Confidence::Medium, name: "GameSetting_fHostileActorInteriorDistance__atexit" },
     Function { rva: 0x17704c0, id: 168538, confidence: Confidence::Medium, name: "GameSetting_fHostileFlyingActorExteriorDistance__atexit" },
     Function { rva: 0x1770510, id: 168539, confidence: Confidence::Medium, name: "GameSetting_fImpactShaderMaxDistance__atexit" },
     Function { rva: 0x1770560, id: 168540, confidence: Confidence::Medium, name: "GameSetting_fImpactShaderMaxMagnitude__atexit" },

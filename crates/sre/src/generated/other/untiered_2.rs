@@ -10181,27 +10181,6 @@ pub unsafe fn cmd__extract_mod_execute_sub0() -> u64 { unsafe { function!(442215
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn cmd__force_save_execute_sub0() -> u64 { unsafe { function!(35735, () -> u64)() } }
-/// `Cmd::FunctionSetVolumetricLightingParameters_Execute_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 107016, rva 0x1530d90).
-/// `undefined FunctionSetVolumetricLightingParameters_Execute_sub0(longlong param_1, int param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn cmd__function_set_volumetric_lighting_parameters_execute_sub0(param_1: i64, param_2: i32) -> u64 { unsafe { function!(107016, (i64, i32) -> u64)(param_1, param_2) } }
-/// `Cmd::FunctionSetVolumetricLightingParameters_Execute_sub1` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 107019, rva 0x1530e60).
-/// `undefined FunctionSetVolumetricLightingParameters_Execute_sub1(longlong param_1, int param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn cmd__function_set_volumetric_lighting_parameters_execute_sub1(param_1: i64, param_2: i32) -> u64 { unsafe { function!(107019, (i64, i32) -> u64)(param_1, param_2) } }
-/// `Cmd::FunctionSetVolumetricLightingParameters_Execute_sub2` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 107020, rva 0x1530ed0).
-/// `undefined FunctionSetVolumetricLightingParameters_Execute_sub2(longlong param_1, undefined4 param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn cmd__function_set_volumetric_lighting_parameters_execute_sub2(param_1: i64, param_2: u32) -> u64 { unsafe { function!(107020, (i64, u32) -> u64)(param_1, param_2) } }
 /// `Cmd::GetActivationHeight_Eval_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 39330, rva 0x6f4560).
 /// `undefined4 GetActivationHeight_Eval_sub0(longlong param_1)`
 ///
@@ -13331,3 +13310,17 @@ pub unsafe fn compute_moving_spheres_contact(param_1: f32, param_2: *mut f32, pa
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn compute_named_value_list_crc32(param_1: *mut i64) -> u64 { unsafe { function!(57819, (*mut i64) -> u64)(param_1) } }
+/// `ComputeNearestTriangleFeature` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 81296, rva 0x1121ec0).
+/// `undefined ComputeNearestTriangleFeature(float * param_1, float * param_2, float * param_3, float * param_4, float * param_5, undefined1[16] * param_6)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn compute_nearest_triangle_feature(param_1: *mut f32, param_2: *mut f32, param_3: *mut f32, param_4: *mut f32, param_5: *mut f32, param_6: *mut c_void) -> u64 { unsafe { function!(81296, (*mut f32, *mut f32, *mut f32, *mut f32, *mut f32, *mut c_void) -> u64)(param_1, param_2, param_3, param_4, param_5, param_6) } }
+/// `ComputeNodeSceneStatsAndTextureUse` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 15579, rva 0x215350).
+/// `undefined ComputeNodeSceneStatsAndTextureUse(undefined8 param_1, undefined4 * param_2, int * param_3, undefined8 param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn compute_node_scene_stats_and_texture_use(param_1: u64, param_2: *mut u32, param_3: *mut i32, param_4: u64) -> u64 { unsafe { function!(15579, (u64, *mut u32, *mut i32, u64) -> u64)(param_1, param_2, param_3, param_4) } }

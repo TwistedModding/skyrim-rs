@@ -3,6 +3,44 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `ForEachEntryWithQualifyingExtraList` at 0x237410 (decompiler, medium); signature (untiered): `undefined ForEachEntryWithQualifyingExtraList(undefined8 * param_1, longlong * param_2, uint param_3)`
+pub const ForEachEntryWithQualifyingExtraList: u64 = 16097;
+/// `ForEachField60EntryCallVfunc58` at 0x397810 (decompiler, medium); signature (untiered): `undefined ForEachField60EntryCallVfunc58(longlong param_1, undefined8 param_2)`
+pub const ForEachField60EntryCallVfunc58: u64 = 23824;
+/// `ForEachHashEntryLocked` at 0x2c3060 (decompiler, medium); signature (untiered): `undefined ForEachHashEntryLocked(longlong param_1, undefined8 param_2)`
+pub const ForEachHashEntryLocked: u64 = 19071;
+/// `ForEachHashMapEntryWhileTrue` at 0x4d1850 (decompiler, medium); signature (untiered): `undefined ForEachHashMapEntryWhileTrue(longlong param_1, undefined * param_2)`
+pub const ForEachHashMapEntryWhileTrue: u64 = 30513;
+/// `ForEachInventoryItem` at 0x23e550 (decompiler, medium); signature (untiered): `int ForEachInventoryItem(undefined8 * param_1, undefined * param_2, undefined8 param_3, ulonglong param_4)`
+pub const ForEachInventoryItem: u64 = 16140;
+/// `ForEachListEntry` at 0x5d2ed0 (decompiler, medium); signature (medium): `undefined ForEachListEntry(longlong * param_1, longlong * param_2)`
+pub const ForEachListEntry: u64 = 34540;
+/// `ForEachListNodeCallVfunc8` at 0xd6e480 (decompiler, medium); signature (untiered): `undefined ForEachListNodeCallVfunc8(longlong param_1)`
+pub const ForEachListNodeCallVfunc8: u64 = 84450;
+/// `ForEachListNodeLocked` at 0xcf9030 (decompiler, medium); signature (untiered): `undefined ForEachListNodeLocked(longlong param_1, longlong * param_2)`
+pub const ForEachListNodeLocked: u64 = 82191;
+/// `ForEachListNodeWhileContinue` at 0x4a2ff0 (decompiler, medium); signature (untiered): `undefined ForEachListNodeWhileContinue(longlong * param_1, undefined8 * param_2)`
+pub const ForEachListNodeWhileContinue: u64 = 29789;
+/// `ForEachPoolElement` at 0xabbdd0 (decompiler, medium); signature (untiered): `undefined ForEachPoolElement(ulonglong * param_1, undefined * param_2, undefined4 param_3, undefined8 param_4)`
+pub const ForEachPoolElement: u64 = 57945;
+/// `ForEachQuadShapeIntersectingPointRadius` at 0x2b2650 (decompiler, medium); signature (untiered): `undefined ForEachQuadShapeIntersectingPointRadius(longlong param_1, undefined4 * param_2, undefined4 param_3, undefined * param_4, undefined8 param_5)`
+pub const ForEachQuadShapeIntersectingPointRadius: u64 = 18781;
+/// `ForEachQuadShapeIntersectingSphere` at 0x2b27e0 (decompiler, medium); signature (untiered): `undefined ForEachQuadShapeIntersectingSphere(longlong param_1, float * param_2, undefined * param_3, undefined8 param_4)`
+pub const ForEachQuadShapeIntersectingSphere: u64 = 18782;
+/// `ForEachRefInRadiusUntilMatch` at 0x297570 (decompiler, medium); signature (untiered): `char ForEachRefInRadiusUntilMatch(longlong param_1, undefined8 * param_2)`
+pub const ForEachRefInRadiusUntilMatch: u64 = 18333;
+/// `ForEachRefOfForm` at 0x2968a0 (decompiler, high); signature (untiered): `undefined ForEachRefOfForm(undefined8 param_1, longlong param_2, undefined8 param_3, undefined8 param_4, undefined4 param_5)`
+pub const ForEachRefOfForm: u64 = 18326;
+/// `ForEachRefOfFormType` at 0x296f50 (decompiler, medium); signature (untiered): `int ForEachRefOfFormType(longlong param_1, uint param_2, longlong param_3, undefined * param_4, undefined8 param_5, uint param_6)`
+pub const ForEachRefOfFormType: u64 = 18331;
+/// `ForEachRefOfFormTypeByType` at 0x296870 (decompiler, high); signature (untiered): `undefined ForEachRefOfFormTypeByType(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4, undefined4 param_5)`
+pub const ForEachRefOfFormTypeByType: u64 = 18325;
+/// `ForEachResolvedRefHandle` at 0x2bfd50 (decompiler, medium); signature (untiered): `undefined ForEachResolvedRefHandle(longlong param_1, longlong * param_2, undefined8 param_3, undefined8 param_4)`
+pub const ForEachResolvedRefHandle: u64 = 19031;
+/// `ForEachRigidBodyInTreeRecursive` at 0x107a030 (decompiler, medium); signature (untiered): `longlong * ForEachRigidBodyInTreeRecursive(longlong * param_1, longlong param_2)`
+pub const ForEachRigidBodyInTreeRecursive: u64 = 78507;
+/// `ForceRefIntoAlias` at 0x3d4fa0 (decompiler, medium); signature (untiered): `undefined ForceRefIntoAlias(uint * param_1, uint param_2, longlong * * param_3)`
+pub const ForceRefIntoAlias: u64 = 25052;
 /// `FormIDIndexMap::GetFormID` at 0x614dc0 (semantic, high); signature (untiered): `ulonglong GetFormID(longlong param_1, uint param_2)`; semantic: index -> form id through the reverse map, 0 when absent (high); signature `u32 (FormIDIndexMap* map, u32 index)`
 pub const FormIDIndexMap__GetFormID: u64 = 35555;
 /// `FormIDIndexMap::GetFormID` as a function pointer type (high).
@@ -8497,43 +8535,3 @@ pub const GameSetting_fIntimidateConfidenceMultCowardly__init: u64 = 1854;
 pub const GameSetting_fIntimidateConfidenceMultFoolhardy__atexit: u64 = 167065;
 /// `GameSetting_fIntimidateConfidenceMultFoolhardy__init` at 0x2ccc0 (crt_init, medium); signature (high): `void GameSetting_fIntimidateConfidenceMultFoolhardy__init(void)`
 pub const GameSetting_fIntimidateConfidenceMultFoolhardy__init: u64 = 1855;
-/// `GameSetting_fIntimidateSpeechcraftCurve__atexit` at 0x17538c0 (crt_init, medium); signature (high): `void GameSetting_fIntimidateSpeechcraftCurve__atexit(void)`
-pub const GameSetting_fIntimidateSpeechcraftCurve__atexit: u64 = 167066;
-/// `GameSetting_fIntimidateSpeechcraftCurve__init` at 0x2cd40 (crt_init, medium); signature (high): `void GameSetting_fIntimidateSpeechcraftCurve__init(void)`
-pub const GameSetting_fIntimidateSpeechcraftCurve__init: u64 = 1856;
-/// `GameSetting_fInvisibilityMaxRefraction__atexit` at 0x173ca10 (crt_init, medium); signature (high): `void GameSetting_fInvisibilityMaxRefraction__atexit(void)`
-pub const GameSetting_fInvisibilityMaxRefraction__atexit: u64 = 165337;
-/// `GameSetting_fInvisibilityMaxRefraction__init` at 0x87a0 (crt_init, medium); signature (high): `void GameSetting_fInvisibilityMaxRefraction__init(void)`
-pub const GameSetting_fInvisibilityMaxRefraction__init: u64 = 147;
-/// `GameSetting_fInvisibilityMinRefraction__atexit` at 0x173ca60 (crt_init, medium); signature (high): `void GameSetting_fInvisibilityMinRefraction__atexit(void)`
-pub const GameSetting_fInvisibilityMinRefraction__atexit: u64 = 165338;
-/// `GameSetting_fInvisibilityMinRefraction__init` at 0x8820 (crt_init, medium); signature (high): `void GameSetting_fInvisibilityMinRefraction__init(void)`
-pub const GameSetting_fInvisibilityMinRefraction__init: u64 = 148;
-/// `GameSetting_fIronSightsDOFDistance__atexit` at 0x17679b0 (crt_init, medium); signature (high): `void GameSetting_fIronSightsDOFDistance__atexit(void)`
-pub const GameSetting_fIronSightsDOFDistance__atexit: u64 = 168093;
-/// `GameSetting_fIronSightsDOFDistance__init` at 0x4c9e0 (crt_init, medium); signature (high): `void GameSetting_fIronSightsDOFDistance__init(void)`
-pub const GameSetting_fIronSightsDOFDistance__init: u64 = 2883;
-/// `GameSetting_fIronSightsDOFRange__atexit` at 0x1767a00 (crt_init, medium); signature (high): `void GameSetting_fIronSightsDOFRange__atexit(void)`
-pub const GameSetting_fIronSightsDOFRange__atexit: u64 = 168094;
-/// `GameSetting_fIronSightsDOFRange__init` at 0x4ca60 (crt_init, medium); signature (high): `void GameSetting_fIronSightsDOFRange__init(void)`
-pub const GameSetting_fIronSightsDOFRange__init: u64 = 2884;
-/// `GameSetting_fIronSightsDOFStrengthCap__atexit` at 0x1767a50 (crt_init, medium); signature (high): `void GameSetting_fIronSightsDOFStrengthCap__atexit(void)`
-pub const GameSetting_fIronSightsDOFStrengthCap__atexit: u64 = 168095;
-/// `GameSetting_fIronSightsDOFStrengthCap__init` at 0x4cae0 (crt_init, medium); signature (high): `void GameSetting_fIronSightsDOFStrengthCap__init(void)`
-pub const GameSetting_fIronSightsDOFStrengthCap__init: u64 = 2885;
-/// `GameSetting_fIronSightsDOFSwitchSeconds__atexit` at 0x1767aa0 (crt_init, medium); signature (high): `void GameSetting_fIronSightsDOFSwitchSeconds__atexit(void)`
-pub const GameSetting_fIronSightsDOFSwitchSeconds__atexit: u64 = 168096;
-/// `GameSetting_fIronSightsDOFSwitchSeconds__init` at 0x4cb60 (crt_init, medium); signature (high): `void GameSetting_fIronSightsDOFSwitchSeconds__init(void)`
-pub const GameSetting_fIronSightsDOFSwitchSeconds__init: u64 = 2886;
-/// `GameSetting_fIronSightsFOVTimeChange__atexit` at 0x1767af0 (crt_init, medium); signature (high): `void GameSetting_fIronSightsFOVTimeChange__atexit(void)`
-pub const GameSetting_fIronSightsFOVTimeChange__atexit: u64 = 168097;
-/// `GameSetting_fIronSightsFOVTimeChange__init` at 0x4cbe0 (crt_init, medium); signature (high): `void GameSetting_fIronSightsFOVTimeChange__init(void)`
-pub const GameSetting_fIronSightsFOVTimeChange__init: u64 = 2887;
-/// `GameSetting_fIronSightsGunMotionBlur__atexit` at 0x1767b40 (crt_init, medium); signature (high): `void GameSetting_fIronSightsGunMotionBlur__atexit(void)`
-pub const GameSetting_fIronSightsGunMotionBlur__atexit: u64 = 168098;
-/// `GameSetting_fIronSightsGunMotionBlur__init` at 0x4cc60 (crt_init, medium); signature (high): `void GameSetting_fIronSightsGunMotionBlur__init(void)`
-pub const GameSetting_fIronSightsGunMotionBlur__init: u64 = 2888;
-/// `GameSetting_fIronSightsMotionBlur__atexit` at 0x1767b90 (crt_init, medium); signature (high): `void GameSetting_fIronSightsMotionBlur__atexit(void)`
-pub const GameSetting_fIronSightsMotionBlur__atexit: u64 = 168099;
-/// `GameSetting_fIronSightsMotionBlur__init` at 0x4cce0 (crt_init, medium); signature (high): `void GameSetting_fIronSightsMotionBlur__init(void)`
-pub const GameSetting_fIronSightsMotionBlur__init: u64 = 2889;

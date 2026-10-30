@@ -131,6 +131,14 @@ pub const g_VATSPlaybackEndDelay: u64 = 404872;
 pub const g_VATSShotMaxTime: u64 = 404874;
 /// `g_VATS_ptr` at 0x31a5720 (semantic, medium); VATS object: +0x20 mode (0 = not in VATS playback), +0x30 target, +0x80 time scale (medium); type `pointer`
 pub const g_VATS_ptr: u64 = 400883;
+/// `g_VolumetricLighting` at 0x20d7230 (runtime, high)
+pub const g_VolumetricLighting: u64 = 391247;
+/// `g_VolumetricLightingEnabled` at 0x3435f44 (semantic, high)
+pub const g_VolumetricLightingEnabled: u64 = 414913;
+/// `g_VolumetricLightingGenerateConstants` at 0x3435db0 (semantic, high)
+pub const g_VolumetricLightingGenerateConstants: u64 = 414886;
+/// `g_VolumetricLightingWeatherUpdate` at 0x3435f45 (runtime, high)
+pub const g_VolumetricLightingWeatherUpdate: u64 = 414914;
 /// `g_WaterShader` at 0x33d3e58 (semantic, high); pointer to `BSWaterShader`: holder; holder (high); type `ptr:BSWaterShader`
 pub const g_WaterShader: u64 = 414615;
 /// `g_WaterShaderInstance` at 0x3436458 (semantic, high); pointer to `BSWaterShader`: instance pointer; instance pointer (high); type `ptr:BSWaterShader`
@@ -141,6 +149,8 @@ pub const g_WaterSystem_ptr: u64 = 400450;
 pub const g_WeaponTypeBipedIndex: u64 = 360260;
 /// `g_WeatherNode` at 0x3230760 (semantic, high); pointer to `NiNode`: NiNode named "Weather" attached under a scene root at world setup; attach root of OwnedCameraEffectController; NiNode named "Weather" attached under a scene root at world setup; attach root of OwnedCameraEffectController (high); type `ptr:NiNode`
 pub const g_WeatherNode: u64 = 403517;
+/// `g_WeatherVolumetricLighting` at 0x33d3ea8 (semantic, high)
+pub const g_WeatherVolumetricLighting: u64 = 414627;
 /// `g_WorldAccumulator` at 0x3436230 (runtime, high); pointer to `BSShaderAccumulator`: renderMode 0: the main colour draw; its +0x12c is ToggleDecalRendering's switch; RenderWorld writes its eyePosition; renderMode 0: the main colour draw; its +0x12c is ToggleDecalRendering's switch; RenderWorld writes its eyePosition (high); type `ptr:BSShaderAccumulator`
 pub const g_WorldAccumulator: u64 = 415009;
 /// `g_WorldDepthAccumulator` at 0x3436228 (runtime, high); pointer to `BSShaderAccumulator`: renderMode 0xc, drawSkinnedDecals 1: the world depth pre-pass (step 12) and RenderShadowMaps' camera-depth draws; renderMode 0xc, drawSkinnedDecals 1: the world depth pre-pass (step 12) and RenderShadowMaps' camera-depth draws (high); type `ptr:BSShaderAccumulator`

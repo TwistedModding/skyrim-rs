@@ -3,27 +3,6 @@
 
 use core::ffi::{c_char, c_void};
 
-/// `FreeField0` (decompiler signature, tier untiered; ledger decompiler evidence, name high; id 70898, rva 0xefb6c0).
-/// `undefined FreeField0(undefined8 * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn free_field0(param_1: *mut u64, param_2: u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(70898, (*mut u64, u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
-/// `FreeField0_2` (decompiler signature, tier untiered; ledger decompiler evidence, name high; id 70899, rva 0xefb720).
-/// `undefined FreeField0_2(undefined8 * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn free_field0_2(param_1: *mut u64, param_2: u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(70899, (*mut u64, u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
-/// `FreeField10` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 447418, rva 0x1348b30).
-/// `undefined FreeField10(longlong param_1)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn free_field10(param_1: i64) -> u64 { unsafe { function!(447418, (i64) -> u64)(param_1) } }
 /// `FreeField10Array240Items` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 39339, rva 0x6f4b40).
 /// `undefined FreeField10Array240Items(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 ///
@@ -14185,3 +14164,24 @@ pub unsafe fn init_hash_map_sized_for_auto_save_count(param_1: *mut u64, param_2
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn init_hash_map_with16_buckets(param_1: *mut u64) -> *mut u64 { unsafe { function!(57751, (*mut u64) -> *mut u64)(param_1) } }
+/// `InitHashMapWith32Buckets` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 18533, rva 0x2a16c0).
+/// `undefined4 * InitHashMapWith32Buckets(undefined4 * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn init_hash_map_with32_buckets(param_1: *mut u32, param_2: u64, param_3: u64, param_4: u64) -> *mut u32 { unsafe { function!(18533, (*mut u32, u64, u64, u64) -> *mut u32)(param_1, param_2, param_3, param_4) } }
+/// `InitHashTableOnBuffer` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 57197, rva 0xaa69f0).
+/// `undefined InitHashTableOnBuffer(longlong * param_1, longlong param_2, uint param_3)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn init_hash_table_on_buffer(param_1: *mut i64, param_2: i64, param_3: u32) -> u64 { unsafe { function!(57197, (*mut i64, i64, u32) -> u64)(param_1, param_2, param_3) } }
+/// `InitHeaderAndEmptyArray` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 29671, rva 0x49fcf0).
+/// `undefined4 * InitHeaderAndEmptyArray(undefined4 * param_1)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn init_header_and_empty_array(param_1: *mut u32) -> *mut u32 { unsafe { function!(29671, (*mut u32) -> *mut u32)(param_1) } }

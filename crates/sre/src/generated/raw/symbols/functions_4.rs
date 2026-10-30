@@ -4,6 +4,7 @@
 use crate::raw::*;
 
 pub(super) const ROWS: &[Function] = &[
+    Function { rva: 0x582580, id: 416263, confidence: Confidence::Medium, name: "ReleaseFixedStringRange_3" },
     Function { rva: 0x5825c0, id: 523614, confidence: Confidence::Medium, name: "MenuEventHandler::ProcessButtonEvent" },
     Function { rva: 0x5825d0, id: 523615, confidence: Confidence::Medium, name: "MenuEventHandler::ProcessKinectEvent" },
     Function { rva: 0x5825f0, id: 523616, confidence: Confidence::Medium, name: "MenuEventHandler::ProcessMouseMoveEvent" },
@@ -7891,5 +7892,4 @@ pub(super) const ROWS: &[Function] = &[
     Function { rva: 0x7def90, id: 43722, confidence: Confidence::High, name: "BarrierProjectile::vfunc_102" },
     Function { rva: 0x7df5c0, id: 43723, confidence: Confidence::High, name: "BarrierProjectile::vfunc_172" },
     Function { rva: 0x7df690, id: 43724, confidence: Confidence::High, name: "BarrierProjectile::vfunc_171" },
-    Function { rva: 0x7df6b0, id: 43725, confidence: Confidence::Medium, name: "BarrierProjectile::SaveGame" },
 ];

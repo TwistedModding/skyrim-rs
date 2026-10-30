@@ -3,20 +3,6 @@
 
 use core::ffi::{c_char, c_void};
 
-/// `SetBits2001000OfField154Unchecked` (decompiler signature, tier untiered; ledger decompiler evidence, name high; id 89533, rva 0x11a1070).
-/// `undefined SetBits2001000OfField154Unchecked(longlong param_1)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn set_bits2001000_of_field154_unchecked(param_1: i64) -> u64 { unsafe { function!(89533, (i64) -> u64)(param_1) } }
-/// `SetBits2001000OfField154_2` (decompiler signature, tier untiered; ledger decompiler evidence, name high; id 89527, rva 0x11a0ef0).
-/// `undefined SetBits2001000OfField154_2(longlong param_1)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn set_bits2001000_of_field154_2(param_1: i64) -> u64 { unsafe { function!(89527, (i64) -> u64)(param_1) } }
 /// `SetBlendCollisionField38Recursive` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 40864, rva 0x766a90).
 /// `longlong * SetBlendCollisionField38Recursive(longlong * param_1, longlong * param_2)`
 ///
@@ -13926,3 +13912,10 @@ pub unsafe fn unequip_worn_entry_object(param_1: u64, param_2: i64, param_3: *mu
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn unescape_json_string(param_1: *mut u64, param_2: *mut u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(448022, (*mut u64, *mut u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
+/// `UnescapeJsonStringIntoFixedString` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 527475, rva 0x14068d0).
+/// `undefined UnescapeJsonStringIntoFixedString(undefined8 * param_1, byte * param_2, undefined8 param_3, undefined8 param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn unescape_json_string_into_fixed_string(param_1: *mut u64, param_2: *mut u8, param_3: u64, param_4: u64) -> u64 { unsafe { function!(527475, (*mut u64, *mut u8, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }

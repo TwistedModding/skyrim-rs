@@ -3,6 +3,10 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `BSTDerivedCreator<BGSProcedurePatrolExecState,IProcedureTreeExecState>::vfunc_2` at 0x45a8d0 (rtti, medium); signature (low): `undefined vfunc_2(BSTDerivedCreator<BGSProcedurePatrolExecState,IProcedureTreeExecState> * this, undefined8 * param_1)`
+pub const BSTDerivedCreator_BGSProcedurePatrolExecState_IProcedureTreeExecState__vfunc_2: u64 = 28101;
+/// `BSTDerivedCreator<BGSProcedurePursue,IProcedure>::vdtor` at 0x47d300 (layout_inference, medium); signature (low): `BSTDerivedCreator<BGSProcedurePursue,IProcedure> * vdtor(BSTDerivedCreator<BGSProcedurePursue,IProcedure> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const BSTDerivedCreator_BGSProcedurePursue_IProcedure__vdtor: u64 = 28978;
 /// `BSTDerivedCreator<BGSProcedurePursue,IProcedure>::vfunc_1` at 0x47d370 (rtti, medium); signature (low): `BGSProcedureBase * vfunc_1(BSTDerivedCreator<BGSProcedurePursue,IProcedure> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
 pub const BSTDerivedCreator_BGSProcedurePursue_IProcedure__vfunc_1: u64 = 28980;
 /// `BSTDerivedCreator<BGSProcedurePursue,IProcedure>::vfunc_2` at 0x47d3f0 (rtti, medium); signature (low): `undefined vfunc_2(BSTDerivedCreator<BGSProcedurePursue,IProcedure> * this, undefined8 * param_1)`
@@ -5331,10 +5335,14 @@ pub const BlendVec3Array: u64 = 71120;
 pub const BlendVector4ArraysByModeNoFlag: u64 = 67221;
 /// `BlendWeatherImageSpaces` at 0x4158d0 (decompiler, medium); signature (untiered): `undefined BlendWeatherImageSpaces(longlong param_1, uint param_2, ulonglong param_3, TypeDescriptor * param_4, float param_5)`
 pub const BlendWeatherImageSpaces: u64 = 26247;
+/// `BlendWeatherVolumetricLighting` at 0x415b80 (semantic, medium); signature (untiered): `undefined BlendWeatherVolumetricLighting(longlong param_1, ulonglong param_2, uint param_3, char param_4, float param_5)`; semantic: blends the current weather's (sky+0x48) and the previous weather's (sky+0x50, by the transition sky+0x1b8) BGSVolumetricLighting records per time of day (weather +0x8a8 + index*8, record +0x20, 12 floats; missing records fall back to the INI values) and stores the result with SetWeatherVolumetricLighting (medium); signature `void (void* sky, uint timeOfDay, uint nextTimeOfDay, bool blendTimes, float t)`
+pub const BlendWeatherVolumetricLighting: u64 = 26248;
 /// `BlendWeightedBoolResults` at 0xf72ec0 (decompiler, medium); signature (untiered): `undefined8 BlendWeightedBoolResults(longlong param_1, float param_2, undefined8 param_3, undefined1 * param_4)`
 pub const BlendWeightedBoolResults: u64 = 73180;
 /// `BlendWeightedFloatResults` at 0xf68cd0 (decompiler, medium); signature (untiered): `undefined8 BlendWeightedFloatResults(longlong param_1, float param_2, undefined8 param_3, float * param_4)`
 pub const BlendWeightedFloatResults: u64 = 72898;
+/// `BlurVolumetricLighting` at 0x15403f0 (semantic, medium); signature (untiered): `undefined4 BlurVolumetricLighting(undefined8 * param_1, undefined8 param_2, undefined4 param_3, undefined4 param_4)`; semantic: the separable compute blur after the apply (effect at ImageSpaceState+0x188, target 0x2d as temporary): horizontal then vertical dispatch (medium); signature `int (void* effect, int source, int dest, int temp)`
+pub const BlurVolumetricLighting: u64 = 107206;
 /// `BookMenu::BSTEventSink_BSAnimationGraphEvent_vdtor` at 0x908a04 (slot_propagation, medium); signature (high): `undefined BSTEventSink_BSAnimationGraphEvent_vdtor(BookMenu * this)`
 pub const BookMenu__BSTEventSink_BSAnimationGraphEvent_vdtor: u64 = 51068;
 /// `BookMenu::BSTEventSink_BSAnimationGraphEvent_vfunc_1` at 0x908800 (rtti, high); signature (low): `undefined8 BSTEventSink_BSAnimationGraphEvent_vfunc_1(BookMenu * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
@@ -5589,19 +5597,3 @@ pub const BuildInventoryEntryAtIndex: u64 = 16106;
 pub const BuildInventoryEntryForObject: u64 = 16133;
 /// `BuildInvertedPointerMap` at 0xabfe20 (decompiler, medium); signature (untiered): `undefined BuildInvertedPointerMap(longlong * param_1, undefined8 param_2)`
 pub const BuildInvertedPointerMap: u64 = 58074;
-/// `BuildItemEnchantmentSoulGemRequirementList` at 0x9280e0 (decompiler, medium); signature (untiered): `undefined BuildItemEnchantmentSoulGemRequirementList(longlong param_1)`
-pub const BuildItemEnchantmentSoulGemRequirementList: u64 = 51457;
-/// `BuildKdTreeIfNotEmpty` at 0x11606e0 (decompiler, medium); signature (untiered): `undefined BuildKdTreeIfNotEmpty(undefined8 param_1, undefined8 * param_2)`
-pub const BuildKdTreeIfNotEmpty: u64 = 82008;
-/// `BuildLinearJacobianSchema` at 0xc23430 (decompiler, medium); signature (untiered): `undefined BuildLinearJacobianSchema(float * param_1, longlong param_2, longlong * param_3)`
-pub const BuildLinearJacobianSchema: u64 = 64775;
-/// `BuildLinearLimitJacobianSchema` at 0xc23b50 (decompiler, medium); signature (untiered): `undefined BuildLinearLimitJacobianSchema(float * param_1, longlong param_2, longlong * param_3)`
-pub const BuildLinearLimitJacobianSchema: u64 = 64780;
-/// `BuildLinkedMeshAndDropUnusedVertices` at 0x11edea0 (decompiler, medium); signature (untiered): `undefined BuildLinkedMeshAndDropUnusedVertices(longlong * param_1, longlong * param_2, ulonglong * param_3, ulonglong param_4)`
-pub const BuildLinkedMeshAndDropUnusedVertices: u64 = 91304;
-/// `BuildLinkedMeshFromCompactArrays` at 0x11ed9c0 (decompiler, medium); signature (untiered): `undefined BuildLinkedMeshFromCompactArrays(longlong param_1, longlong param_2, ulonglong param_3, ulonglong param_4)`
-pub const BuildLinkedMeshFromCompactArrays: u64 = 91302;
-/// `BuildLoadOrderAndDescriptionBoxPage` at 0x15f7d60 (decompiler, medium); signature (untiered): `undefined BuildLoadOrderAndDescriptionBoxPage(longlong * param_1, longlong param_2, undefined8 param_3, undefined8 param_4)`
-pub const BuildLoadOrderAndDescriptionBoxPage: u64 = 454714;
-/// `BuildLoadOrderArchivePageControls` at 0x16192c0 (decompiler, medium); signature (untiered): `undefined BuildLoadOrderArchivePageControls(longlong * param_1, longlong param_2, undefined8 param_3, undefined8 param_4)`
-pub const BuildLoadOrderArchivePageControls: u64 = 454621;

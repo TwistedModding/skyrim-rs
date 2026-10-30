@@ -3,6 +3,78 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `TESBipedModelForm::vdtor` at 0x1dfc30 (slot_propagation, medium); signature (low): `TESBipedModelForm * vdtor(TESBipedModelForm * this, ulonglong param_1, longlong param_2, undefined1 * param_3)`
+pub const TESBipedModelForm__vdtor: u64 = 14504;
+/// `TESBipedModelForm::vfunc_1` at 0x1df3e0 (rtti, medium); signature (high): `undefined vfunc_1(TESBipedModelForm * this)`
+pub const TESBipedModelForm__vfunc_1: u64 = 14488;
+/// `TESBipedModelForm::vfunc_2` at 0x1df430 (rtti, medium); signature (high): `undefined vfunc_2(TESBipedModelForm * this)`
+pub const TESBipedModelForm__vfunc_2: u64 = 14489;
+/// `TESBipedModelForm::vfunc_3` at 0x1df4c0 (rtti, medium); signature (low): `undefined vfunc_3(TESBipedModelForm * this, undefined8 param_1)`
+pub const TESBipedModelForm__vfunc_3: u64 = 14491;
+/// `TESBoundAnimObject::ctor` at 0x2790a0 (layout_inference, high); signature (low): `TESBoundAnimObject * ctor(TESBoundAnimObject * this, undefined8 param_1, uint * param_2, longlong * param_3)`
+pub const TESBoundAnimObject__ctor: u64 = 17674;
+/// `TESBoundAnimObject::vdtor` at 0x279140 (layout_inference, medium); signature (low): `TESBoundAnimObject * vdtor(TESBoundAnimObject * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const TESBoundAnimObject__vdtor: u64 = 17677;
+/// `TESBoundAnimObject::vfunc_60` at 0x267800 (rtti, medium); signature (low): `undefined1 vfunc_60(void)`
+pub const TESBoundAnimObject__vfunc_60: u64 = 17205;
+/// `TESBoundAnimObject::vfunc_75` at 0x279130 (rtti, medium); signature (low): `undefined1 vfunc_75(void)`
+pub const TESBoundAnimObject__vfunc_75: u64 = 17676;
+/// `TESBoundObject::Clone3D` at 0x277e20 (semantic, high); signature (untiered): `TESBoundObject_vtbl * Clone3D(TESBoundObject * this, TESBoundObject_vtbl * param_1, byte param_2)`; semantic: TESBoundObject slot 64 (shared by 40 classes, furniture included): builds a reference's 3D from "Data\\Meshes\\" + (GetReferenceModelPath(ref) or the biped path or GetFormModelPath(this)) (high); signature `NiAVObject* (TESBoundObject* this, TESObjectREFR* ref, bool)`
+pub const TESBoundObject__Clone3D: u64 = 17667;
+/// `TESBoundObject::Clone3D` as a function pointer type (high).
+pub type TESBoundObject__Clone3D_fn = unsafe extern "C" fn(this: *mut crate::TESBoundObject, ref_: *mut crate::TESObjectREFR, a2: bool) -> *mut crate::NiAVObject;
+/// `TESBoundObject::ctor` at 0x276920 (layout_inference, high); signature (high): `TESBoundObject * ctor(TESBoundObject * this)`
+pub const TESBoundObject__ctor: u64 = 17654;
+/// `TESBoundObject::vdtor` at 0x279180 (layout_inference, medium); signature (low): `TESBoundObject * vdtor(TESBoundObject * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const TESBoundObject__vdtor: u64 = 17678;
+/// `TESBoundObject::vfunc_38` at 0x277b10 (rtti, medium); signature (low): `undefined vfunc_38(TESBoundObject * this, longlong param_1)`
+pub const TESBoundObject__vfunc_38: u64 = 17664;
+/// `TESBoundObject::vfunc_39` at 0x1468a0 (rtti, medium); signature (low): `undefined1 vfunc_39(void)`
+pub const TESBoundObject__vfunc_39: u64 = 10903;
+/// `TESBoundObject::vfunc_55` at 0x278e50 (rtti, medium); signature (low): `undefined1 vfunc_55(TESBoundObject * this, longlong param_1, undefined8 param_2, undefined1 param_3, undefined8 param_4, undefined4 param_5)`
+pub const TESBoundObject__vfunc_55: u64 = 17670;
+/// `TESBoundObject::vfunc_68` at 0x278e00 (rtti, medium); signature (high): `undefined vfunc_68(TESBoundObject * this)`
+pub const TESBoundObject__vfunc_68: u64 = 17668;
+/// `TESBoundObject::vfunc_72` at 0x146a70 (rtti, medium); signature (low): `undefined vfunc_72(void)`
+pub const TESBoundObject__vfunc_72: u64 = 10927;
+/// `TESBoundObject::vfunc_73` at 0x1467c0 (rtti, medium); signature (low): `undefined8 vfunc_73(void)`
+pub const TESBoundObject__vfunc_73: u64 = 10890;
+/// `TESBoundObject::vfunc_74` at 0x277e00 (rtti, medium); signature (low): `undefined vfunc_74(TESBoundObject * this, undefined8 param_1)`
+pub const TESBoundObject__vfunc_74: u64 = 17666;
+/// `TESBoundObject::vfunc_75` at 0x278e40 (rtti, medium); signature (low): `undefined1 vfunc_75(void)`
+pub const TESBoundObject__vfunc_75: u64 = 17669;
+/// `TESBoundObject::vfunc_76` at 0x278ed0 (rtti, medium); signature (low): `undefined8 vfunc_76(TESBoundObject * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
+pub const TESBoundObject__vfunc_76: u64 = 17671;
+/// `TESBoundObject::vfunc_77` at 0x278f90 (rtti, medium); signature (low): `undefined8 vfunc_77(TESBoundObject * this, longlong param_1, char param_2, undefined8 param_3, float param_4)`
+pub const TESBoundObject__vfunc_77: u64 = 17672;
+/// `TESBoundObject::vfunc_78` at 0x146850 (rtti, medium); signature (low): `undefined vfunc_78(void)`
+pub const TESBoundObject__vfunc_78: u64 = 10899;
+/// `TESBoundObject::vfunc_79` at 0x1469f0 (rtti, medium); signature (low): `undefined vfunc_79(void)`
+pub const TESBoundObject__vfunc_79: u64 = 10919;
+/// `TESBoundObject::vfunc_80` at 0x1469c0 (rtti, medium); signature (low): `undefined vfunc_80(void)`
+pub const TESBoundObject__vfunc_80: u64 = 10916;
+/// `TESBoundObject::vfunc_81` at 0x1469d0 (rtti, medium); signature (low): `undefined vfunc_81(void)`
+pub const TESBoundObject__vfunc_81: u64 = 10917;
+/// `TESBoundObject::vfunc_82` at 0x1469e0 (rtti, medium); signature (low): `undefined vfunc_82(void)`
+pub const TESBoundObject__vfunc_82: u64 = 10918;
+/// `TESCamera::AddZoomInput` at 0x558db0 (semantic, high); signature (untiered): `undefined AddZoomInput(longlong param_1, float param_2)`; semantic: TESCamera zoom input (+0x1c) += delta (high); signature `void (TESCamera* this, float delta)`
+pub const TESCamera__AddZoomInput: u64 = 33022;
+/// `TESCamera::AddZoomInput` as a function pointer type (high).
+pub type TESCamera__AddZoomInput_fn = unsafe extern "C" fn(this: *mut crate::TESCamera, delta: f32);
+/// `TESCamera::BeginCurrentState` at 0x2480e0 (semantic, high); signature (untiered): `undefined BeginCurrentState(longlong param_1)`; semantic: tail-calls currentState->Begin (slot 1); resets the local map view (high); signature `void (TESCamera* this)`
+pub const TESCamera__BeginCurrentState: u64 = 16327;
+/// `TESCamera::BeginCurrentState` as a function pointer type (high).
+pub type TESCamera__BeginCurrentState_fn = unsafe extern "C" fn(this: *mut crate::TESCamera);
+/// `TESCamera::Destroy` at 0x559060 (semantic, high); signature (untiered): `TESCamera * Destroy(TESCamera * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+pub const TESCamera__Destroy: u64 = 33029;
+/// `TESCamera::SetCameraRoot` at 0x558dd0 (semantic, high); signature (untiered): `undefined SetCameraRoot(TESCamera * this, longlong * param_1)`
+pub const TESCamera__SetCameraRoot: u64 = 33023;
+/// `TESCamera::SetState` at 0x558f90 (semantic, high); signature (untiered): `undefined SetState(longlong param_1, undefined8 * param_2)`; semantic: End (slot 2) on the current state, refcounted swap of +0x28, Begin (slot 1) on the new one (high); signature `void (TESCamera* this, TESCameraState* state)`
+pub const TESCamera__SetState: u64 = 33026;
+/// `TESCamera::SetState` as a function pointer type (high).
+pub type TESCamera__SetState_fn = unsafe extern "C" fn(this: *mut crate::TESCamera, state: *mut crate::TESCameraState);
+/// `TESCamera::Update` at 0x558e70 (semantic, high); signature (untiered): `undefined Update(TESCamera * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+pub const TESCamera__Update: u64 = 33025;
 /// `TESCamera::ctor` at 0x558c80 (semantic, high); signature (high): `TESCamera * ctor(TESCamera * this)`; semantic: base constructor: vtable 0x18ebbe0, rotationInput (+0x8) and translationInput (+0x10) from zero constants (0x20ccb20, 0x20ccb24, 0x20ccc28, 0x20ccc2c, 0x20ccc30), zoomInput 0, cameraRoot null, currentState null, enabled (+0x30) = 1 (high); signature `TESCamera* (TESCamera* this)`
 pub const TESCamera__ctor: u64 = 33018;
 /// `TESCamera::ctor` as a function pointer type (high).
@@ -5675,10 +5747,6 @@ pub const UpdateStealthPointForAttacker: u64 = 44739;
 pub const UpdateStealthPoints: u64 = 44805;
 /// `UpdateString50FromNumber48` at 0xdb4fa0 (decompiler, medium); signature (untiered): `undefined UpdateString50FromNumber48(longlong param_1)`
 pub const UpdateString50FromNumber48: u64 = 86163;
-/// `UpdateSunShadowConstants` at 0x1531b30 (semantic, high); signature (untiered): `undefined UpdateSunShadowConstants(longlong param_1, longlong param_2)`; semantic: converts the sun's split distances (+0x5a4, +0x5a8) into post-projection depth with the camera's near/far: (s*f - f*n) / ((f - n) * s) (high); signature `void (VolumetricLightingParams* params, NiCamera* camera)`
-pub const UpdateSunShadowConstants: u64 = 107027;
-/// `UpdateSunShadowConstants` as a function pointer type (high).
-pub type UpdateSunShadowConstants_fn = unsafe extern "C" fn(params: *mut c_void, camera: *mut crate::NiCamera);
 /// `UpdateSwitchNodeFromFlagBit13` at 0x1eeb10 (decompiler, medium); signature (untiered): `undefined UpdateSwitchNodeFromFlagBit13(longlong param_1, longlong * param_2)`
 pub const UpdateSwitchNodeFromFlagBit13: u64 = 14865;
 /// `UpdateTakeBackItemProcedure` at 0x7182a0 (decompiler, medium); signature (untiered): `undefined UpdateTakeBackItemProcedure(longlong * param_1, TESObjectREFR * param_2, undefined8 param_3, undefined8 param_4)`
@@ -5757,6 +5825,10 @@ pub const UpdateVATSLight: u64 = 44312;
 pub const UpdateValueNodesForRefs: u64 = 19198;
 /// `UpdateVendorRespawnIfDue` at 0x3b4780 (decompiler, medium); signature (untiered): `undefined UpdateVendorRespawnIfDue(longlong param_1)`
 pub const UpdateVendorRespawnIfDue: u64 = 24495;
+/// `UpdateVolumetricLightingConstants` at 0x1531b30 (semantic, high); signature (untiered): `undefined UpdateVolumetricLightingConstants(longlong param_1, longlong param_2)`; semantic: (correction of UpdateSunShadowConstants) fills the generate shader's constant buffer 0x3435db0 (0x180 bytes): c0-c3 the camera's cached view-projection (FindEntryByKeyAndFlag on the frame state, entry +0xb0), c4-c7 its inverse, c8-c13 the sun's two cascade matrices shifted by the eye, c17 the cascade split distances turned into depth with the camera's near/far ((s f - f n) / ((f - n) s)), the last split and the cascade count, c18 the shadow-casting flag, c19 the sun direction, c20 the volume size, c21 the drifting noise offset plus the eye and 1/density size, c22.w the jitter index (frame counter +0x88 & 7), c23 density contribution, phase scattering and phase contribution (high); signature `void (VolumetricLightingParams* params, NiCamera* camera)`
+pub const UpdateVolumetricLightingConstants: u64 = 107027;
+/// `UpdateVolumetricLightingConstants` as a function pointer type (high).
+pub type UpdateVolumetricLightingConstants_fn = unsafe extern "C" fn(params: *mut c_void, camera: *mut crate::NiCamera);
 /// `UpdateWaterAudio` at 0x523470 (decompiler, medium); signature (untiered): `undefined UpdateWaterAudio(void)`
 pub const UpdateWaterAudio: u64 = 32057;
 /// `UpdateWeaponIdleSound` at 0x721c50 (semantic, medium); signature (untiered): `undefined UpdateWeaponIdleSound(longlong param_1, char param_2, longlong * param_3, longlong * param_4, undefined4 param_5)`; semantic: weapon draw/sheathe visuals and the weapon idle sound: shows/hides the weapon's named nodes, stores the drawn byte in the middle-high data (+0x316), refreshes the equip slot (UpdateForIndexOrAll) (medium); signature `void (AIProcess* process, bool drawn, void** weaponModel, Actor* actor, i32 slot)`
@@ -6313,6 +6385,22 @@ pub const VoiceSpellFireHandler__vdtor: u64 = 43370;
 pub const VoiceSpellFireHandler__vfunc_1: u64 = 42818;
 /// `VoiceSpellFireHandler::vfunc_1_sub0` at 0x3880c0 (callgraph, medium); signature (untiered): `undefined vfunc_1_sub0(int param_1)`
 pub const VoiceSpellFireHandler__vfunc_1_sub0: u64 = 23369;
+/// `VolumetricInverseRepartitionExp` at 0x15328c0 (semantic, high); signature (untiered): `float VolumetricInverseRepartitionExp(float param_1, float param_2)`; semantic: inverse table of mode 1: log(s) / log(3^range) + 1 (not the exact inverse of VolumetricRepartitionExp) (high); signature `float (float s, float range)`
+pub const VolumetricInverseRepartitionExp: u64 = 107039;
+/// `VolumetricInverseRepartitionExp` as a function pointer type (high).
+pub type VolumetricInverseRepartitionExp_fn = unsafe extern "C" fn(s: f32, range: f32) -> f32;
+/// `VolumetricInverseRepartitionPow` at 0x1532830 (runtime, high); semantic: the default inverse repartition: depth = pow(s, 1 / range); filled into +0x80, which the generate shader samples with the slice coordinate (high); signature `float (float s, float range)`
+pub const VolumetricInverseRepartitionPow: u64 = 107037;
+/// `VolumetricInverseRepartitionPow` as a function pointer type (high).
+pub type VolumetricInverseRepartitionPow_fn = unsafe extern "C" fn(s: f32, range: f32) -> f32;
+/// `VolumetricRepartitionExp` at 0x1532850 (semantic, high); signature (untiered): `float VolumetricRepartitionExp(float param_1, float param_2)`; semantic: repartition mode 1: (3^(x range) - 1) / (3^range - 1) (high); signature `float (float x, float range)`
+pub const VolumetricRepartitionExp: u64 = 107038;
+/// `VolumetricRepartitionExp` as a function pointer type (high).
+pub type VolumetricRepartitionExp_fn = unsafe extern "C" fn(x: f32, range: f32) -> f32;
+/// `VolumetricRepartitionPow` at 0x1532820 (runtime, high); semantic: the default repartition: slice coordinate = pow(depth, range); filled into +0x78, which the apply pass samples with the pixel's depth (high); signature `float (float x, float range)`
+pub const VolumetricRepartitionPow: u64 = 107036;
+/// `VolumetricRepartitionPow` as a function pointer type (high).
+pub type VolumetricRepartitionPow_fn = unsafe extern "C" fn(x: f32, range: f32) -> f32;
 /// `Vsnprintf` at 0x128f170 (decompiler, medium); signature (medium): `int Vsnprintf(longlong param_1, longlong param_2, longlong param_3, undefined8 param_4)`
 pub const Vsnprintf: u64 = 94315;
 /// `Vsnprintf_2` at 0x15ac53c (decompiler, medium); signature (medium): `int Vsnprintf_2(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
@@ -8959,73 +9047,3 @@ pub const _anon_025735F6__AmiiboTouchArguments__vfunc_1: u64 = 524037;
 pub const _anon_025735F6__AnimationEventArguments__vfunc_0: u64 = 54360;
 /// `_anon_025735F6::AnimationEventArguments::vfunc_1` at 0x9ee060 (rtti, high); signature (low): `undefined8 vfunc_1(AnimationEventArguments * this, longlong * param_1, undefined8 param_2, ulonglong param_3)`
 pub const _anon_025735F6__AnimationEventArguments__vfunc_1: u64 = 54236;
-/// `_anon_025735F6::ContainerChangedEventArguments::vfunc_0` at 0x9f0590 (rtti, high); signature (low): `ContainerChangedEventArguments * vfunc_0(ContainerChangedEventArguments * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-pub const _anon_025735F6__ContainerChangedEventArguments__vfunc_0: u64 = 54363;
-/// `_anon_025735F6::ContainerChangedEventArguments::vfunc_1` at 0x9ee180 (rtti, high); signature (low): `undefined8 vfunc_1(ContainerChangedEventArguments * this, longlong * param_1, undefined8 param_2, ulonglong param_3)`
-pub const _anon_025735F6__ContainerChangedEventArguments__vfunc_1: u64 = 54237;
-/// `_anon_025735F6::ContainerEventArguments::vfunc_0` at 0x9f05d0 (rtti, high); signature (low): `ContainerEventArguments * vfunc_0(ContainerEventArguments * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-pub const _anon_025735F6__ContainerEventArguments__vfunc_0: u64 = 54364;
-/// `_anon_025735F6::ContainerEventArguments::vfunc_1` at 0x9ee260 (rtti, high); signature (low): `undefined8 vfunc_1(ContainerEventArguments * this, longlong * param_1, undefined8 param_2, ulonglong param_3)`
-pub const _anon_025735F6__ContainerEventArguments__vfunc_1: u64 = 54238;
-/// `_anon_025735F6::DestructionStageChangedArguments::vfunc_0` at 0x9f0610 (rtti, high); signature (low): `DestructionStageChangedArguments * vfunc_0(DestructionStageChangedArguments * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-pub const _anon_025735F6__DestructionStageChangedArguments__vfunc_0: u64 = 54365;
-/// `_anon_025735F6::DestructionStageChangedArguments::vfunc_1` at 0x9ee3a0 (rtti, high); signature (low): `undefined8 vfunc_1(DestructionStageChangedArguments * this, longlong * param_1, undefined8 param_2, ulonglong param_3)`
-pub const _anon_025735F6__DestructionStageChangedArguments__vfunc_1: u64 = 54239;
-/// `_anon_025735F6::EventCallbackAdapter::vfunc_0` at 0x9f06a0 (rtti, high); signature (low): `EventCallbackAdapter * vfunc_0(EventCallbackAdapter * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const _anon_025735F6__EventCallbackAdapter__vfunc_0: u64 = 54367;
-/// `_anon_025735F6::EventCallbackAdapter::vfunc_1` at 0x9ee490 (rtti, high); signature (low): `undefined vfunc_1(EventCallbackAdapter * this, EventCallbackAdapter * param_1, undefined8 param_2, undefined8 param_3)`
-pub const _anon_025735F6__EventCallbackAdapter__vfunc_1: u64 = 54240;
-/// `_anon_025735F6::EventCallbackAdapter::vfunc_1_sub0` at 0x1489c10 (callgraph, medium); signature (untiered): `undefined vfunc_1_sub0(longlong param_1, longlong * param_2)`
-pub const _anon_025735F6__EventCallbackAdapter__vfunc_1_sub0: u64 = 104186;
-/// `_anon_025735F6::EventCallbackAdapter::vfunc_2` at 0x9f1180 (rtti, high); signature (low): `undefined1 vfunc_2(void)`
-pub const _anon_025735F6__EventCallbackAdapter__vfunc_2: u64 = 54404;
-/// `_anon_025735F6::EventCallbackAdapter::vfunc_3` at 0x9f7620 (rtti, high); signature (low): `undefined vfunc_3(EventCallbackAdapter * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
-pub const _anon_025735F6__EventCallbackAdapter__vfunc_3: u64 = 54519;
-/// `_anon_025735F6::HitArguments::vfunc_0` at 0x9f07c0 (rtti, high); signature (low): `HitArguments * vfunc_0(HitArguments * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-pub const _anon_025735F6__HitArguments__vfunc_0: u64 = 54370;
-/// `_anon_025735F6::HitArguments::vfunc_1` at 0x9ee510 (rtti, high); signature (low): `undefined8 vfunc_1(HitArguments * this, longlong * param_1, undefined8 param_2, ulonglong param_3)`
-pub const _anon_025735F6__HitArguments__vfunc_1: u64 = 54241;
-/// `_anon_025735F6::HitArguments::vfunc_1_sub0` at 0x9e8e30 (callgraph, medium); signature (untiered): `ulonglong * vfunc_1_sub0(ulonglong * param_1, longlong param_2, longlong * param_3, undefined8 param_4)`
-pub const _anon_025735F6__HitArguments__vfunc_1_sub0: u64 = 54081;
-/// `_anon_025735F6::LOSEventArguments::vfunc_0` at 0x9f09a0 (rtti, high); signature (low): `LOSEventArguments * vfunc_0(LOSEventArguments * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-pub const _anon_025735F6__LOSEventArguments__vfunc_0: u64 = 54378;
-/// `_anon_025735F6::LOSEventArguments::vfunc_1` at 0x9ee780 (rtti, high); signature (low): `undefined8 vfunc_1(LOSEventArguments * this, longlong * param_1, undefined8 param_2, ulonglong param_3)`
-pub const _anon_025735F6__LOSEventArguments__vfunc_1: u64 = 54242;
-/// `_anon_025735F6::MagicEffectApplyArguments::vfunc_0` at 0x9f09e0 (rtti, high); signature (low): `MagicEffectApplyArguments * vfunc_0(MagicEffectApplyArguments * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-pub const _anon_025735F6__MagicEffectApplyArguments__vfunc_0: u64 = 54379;
-/// `_anon_025735F6::MagicEffectApplyArguments::vfunc_1` at 0x9ee860 (rtti, high); signature (low): `undefined8 vfunc_1(MagicEffectApplyArguments * this, longlong * param_1, undefined8 param_2, ulonglong param_3)`
-pub const _anon_025735F6__MagicEffectApplyArguments__vfunc_1: u64 = 54243;
-/// `_anon_025735F6::MagicEffectApplyArguments::vfunc_1_sub0` at 0x9e9390 (callgraph, medium); signature (untiered): `ulonglong * vfunc_1_sub0(ulonglong * param_1, longlong param_2, longlong * param_3, undefined8 param_4)`
-pub const _anon_025735F6__MagicEffectApplyArguments__vfunc_1_sub0: u64 = 54083;
-/// `_anon_025735F6::MagicWardHitArguments::vfunc_0` at 0x9f0a20 (rtti, high); signature (low): `MagicWardHitArguments * vfunc_0(MagicWardHitArguments * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-pub const _anon_025735F6__MagicWardHitArguments__vfunc_0: u64 = 54380;
-/// `_anon_025735F6::MagicWardHitArguments::vfunc_1` at 0x9ee950 (rtti, high); signature (low): `undefined8 vfunc_1(MagicWardHitArguments * this, longlong * param_1, undefined8 param_2, ulonglong param_3)`
-pub const _anon_025735F6__MagicWardHitArguments__vfunc_1: u64 = 54244;
-/// `_anon_025735F6::MagicWardHitArguments::vfunc_1_sub0` at 0x9e9640 (callgraph, medium); signature (untiered): `ulonglong * vfunc_1_sub0(ulonglong * param_1, longlong param_2, longlong * param_3, undefined8 param_4)`
-pub const _anon_025735F6__MagicWardHitArguments__vfunc_1_sub0: u64 = 54084;
-/// `_anon_025735F6::OnCombatStateChangedArguments::vfunc_0` at 0x9f0ae0 (rtti, high); signature (low): `OnCombatStateChangedArguments * vfunc_0(OnCombatStateChangedArguments * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-pub const _anon_025735F6__OnCombatStateChangedArguments__vfunc_0: u64 = 54383;
-/// `_anon_025735F6::OnCombatStateChangedArguments::vfunc_1` at 0x9eea80 (rtti, high); signature (low): `undefined8 vfunc_1(OnCombatStateChangedArguments * this, longlong * param_1, undefined8 param_2, ulonglong param_3)`
-pub const _anon_025735F6__OnCombatStateChangedArguments__vfunc_1: u64 = 54245;
-/// `_anon_025735F6::PerkFragmentArguments::vfunc_0` at 0x9f0b20 (rtti, high); signature (low): `PerkFragmentArguments * vfunc_0(PerkFragmentArguments * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-pub const _anon_025735F6__PerkFragmentArguments__vfunc_0: u64 = 54384;
-/// `_anon_025735F6::PerkFragmentArguments::vfunc_1` at 0x9eeb60 (rtti, high); signature (low): `undefined8 vfunc_1(PerkFragmentArguments * this, longlong * param_1, undefined8 param_2, ulonglong param_3)`
-pub const _anon_025735F6__PerkFragmentArguments__vfunc_1: u64 = 54246;
-/// `_anon_025735F6::PlayerBowShotArguments::vfunc_0` at 0x9f0b60 (rtti, high); signature (low): `PlayerBowShotArguments * vfunc_0(PlayerBowShotArguments * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-pub const _anon_025735F6__PlayerBowShotArguments__vfunc_0: u64 = 54385;
-/// `_anon_025735F6::PlayerBowShotArguments::vfunc_1` at 0x9eec60 (rtti, high); signature (low): `undefined8 vfunc_1(PlayerBowShotArguments * this, longlong * param_1, undefined8 param_2, ulonglong param_3)`
-pub const _anon_025735F6__PlayerBowShotArguments__vfunc_1: u64 = 54247;
-/// `_anon_025735F6::PlayerBowShotArguments::vfunc_1_sub0` at 0x9e98f0 (callgraph, medium); signature (untiered): `ulonglong * vfunc_1_sub0(ulonglong * param_1, longlong param_2, longlong * param_3, undefined8 param_4)`
-pub const _anon_025735F6__PlayerBowShotArguments__vfunc_1_sub0: u64 = 54085;
-/// `_anon_025735F6::PlayerBowShotArguments::vfunc_1_sub1` at 0x9ea100 (callgraph, medium); signature (untiered): `ulonglong * vfunc_1_sub1(ulonglong * param_1, longlong param_2, longlong * param_3, undefined8 param_4)`
-pub const _anon_025735F6__PlayerBowShotArguments__vfunc_1_sub1: u64 = 54088;
-/// `_anon_025735F6::ScriptFoundCallback::dtor` at 0x9ed7c0 (layout_inference, high); signature (low): `undefined dtor(ScriptFoundCallback * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-pub const _anon_025735F6__ScriptFoundCallback__dtor: u64 = 54216;
-/// `_anon_025735F6::ScriptFoundCallback::vdtor` at 0x9f0be0 (layout_inference, medium); signature (low): `ScriptFoundCallback * vdtor(ScriptFoundCallback * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const _anon_025735F6__ScriptFoundCallback__vdtor: u64 = 54387;
-/// `_anon_025735F6::ScriptFoundCallback::vfunc_1` at 0x9eee20 (rtti, high); signature (low): `undefined vfunc_1(ScriptFoundCallback * this, undefined8 param_1, char * param_2, longlong param_3)`
-pub const _anon_025735F6__ScriptFoundCallback__vfunc_1: u64 = 54248;
-/// `_anon_025735F6::SingleActorArgument::vfunc_0` at 0x9f0c30 (rtti, high); signature (low): `SingleActorArgument * vfunc_0(SingleActorArgument * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const _anon_025735F6__SingleActorArgument__vfunc_0: u64 = 54388;
-/// `_anon_025735F6::SingleActorArgument::vfunc_1` at 0x9eefb0 (rtti, high); signature (low): `undefined8 vfunc_1(SingleActorArgument * this, longlong * param_1, undefined8 param_2, ulonglong param_3)`
-pub const _anon_025735F6__SingleActorArgument__vfunc_1: u64 = 54249;

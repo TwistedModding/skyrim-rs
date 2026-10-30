@@ -3,6 +3,24 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `CombatPathingRequestMultiGoal::vfunc_9_sub0` at 0x8e71a0 (callgraph, medium); signature (untiered): `undefined vfunc_9_sub0(longlong param_1)`
+pub const CombatPathingRequestMultiGoal__vfunc_9_sub0: u64 = 50201;
+/// `CombatPathingRequestMultiGoal::vfunc_9_sub1` at 0x8e7200 (callgraph, medium); signature (untiered): `undefined vfunc_9_sub1(longlong param_1)`
+pub const CombatPathingRequestMultiGoal__vfunc_9_sub1: u64 = 50202;
+/// `CombatPathingRequestStandard::vdtor` at 0x8e66c0 (layout_inference, medium); signature (low): `CombatPathingRequestStandard * vdtor(CombatPathingRequestStandard * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const CombatPathingRequestStandard__vdtor: u64 = 50186;
+/// `CombatPathingRequestStandard::vfunc_1` at 0x8e5320 (rtti, high); signature (untiered): `undefined4 vfunc_1(void)`
+pub const CombatPathingRequestStandard__vfunc_1: u64 = 50167;
+/// `CombatPathingRequestStandard::vfunc_10` at 0x8e66b0 (rtti, high); signature (untiered): `CombatPathBuilderStandard * vfunc_10(undefined8 * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const CombatPathingRequestStandard__vfunc_10: u64 = 50185;
+/// `CombatProjectileAimController::ctor` at 0x80b650 (layout_inference, high); signature (low): `CombatProjectileAimController * ctor(CombatProjectileAimController * this, longlong param_1, longlong param_2, longlong param_3, longlong param_4, float param_5, uint param_6)`
+pub const CombatProjectileAimController__ctor: u64 = 44383;
+/// `CombatProjectileAimController::ctor_sub0` at 0x867610 (callgraph, medium); signature (untiered): `float ctor_sub0(longlong * param_1, longlong param_2)`
+pub const CombatProjectileAimController__ctor_sub0: u64 = 47290;
+/// `CombatProjectileAimController::vdtor` at 0x80d5e0 (layout_inference, medium); signature (low): `CombatProjectileAimController * vdtor(CombatProjectileAimController * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+pub const CombatProjectileAimController__vdtor: u64 = 44403;
+/// `CombatProjectileAimController::vfunc_10` at 0x80c820 (rtti, high); signature (low): `undefined vfunc_10(CombatProjectileAimController * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+pub const CombatProjectileAimController__vfunc_10: u64 = 44394;
 /// `CombatProjectileAimController::vfunc_2` at 0x80c970 (rtti, high); signature (untiered): `uint vfunc_2(void)`
 pub const CombatProjectileAimController__vfunc_2: u64 = 44395;
 /// `CombatProjectileAimController::vfunc_3` at 0x80c4c0 (rtti, high); signature (low): `undefined vfunc_3(CombatProjectileAimController * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
@@ -385,6 +403,8 @@ pub const ComposeQuatTransforms: u64 = 72647;
 pub const ComposeScaledTransformFromField50: u64 = 64076;
 /// `ComposeTranslationRotation` at 0xb27140 (decompiler, medium); signature (medium): `undefined ComposeTranslationRotation(float * param_1, float * param_2, float * param_3, float * param_4, float * param_5, float * param_6)`
 pub const ComposeTranslationRotation: u64 = 60052;
+/// `CompositeVolumetricLighting` at 0x1540ae0 (semantic, medium); signature (untiered): `int CompositeVolumetricLighting(longlong * param_1, undefined8 param_2, int param_3)`; semantic: adds the volumetric amount (t0, the parity target) times the sun or custom colour into the frame (plain, lens-flare or alternate variant); reads no depth (medium); signature `int (void* effect, int source, int dest)`
+pub const CompositeVolumetricLighting: u64 = 107213;
 /// `CompressAndWritePayload` at 0x159b530 (runtime, high); signature (untiered): `undefined CompressAndWritePayload(ulonglong * param_1)`; semantic: compresses data[headerEnd..size] (zlib or LZ4 by +0xbc8) and rewrites it in place after u32 uncompressed size, u32 compressed size (high); signature `void (Win32FileType*)`
 pub const CompressAndWritePayload: u64 = 109333;
 /// `CompressAndWritePayload` as a function pointer type (high).
@@ -6233,6 +6253,10 @@ pub const CopyVectorsIntoField40ArrayAt: u64 = 62027;
 pub const CopyVerticesAndTrianglesFrom: u64 = 81759;
 /// `CopyWaveFormatToBuffer` at 0x2078 (decompiler, medium); signature (medium): `undefined CopyWaveFormatToBuffer(short * param_1, void * param_2, ulonglong * param_3)`
 pub const CopyWaveFormatToBuffer: u64 = 56;
+/// `CopyWeatherVolumetricLighting` at 0x1532240 (semantic, high); signature (untiered): `undefined CopyWeatherVolumetricLighting(undefined4 * param_1)`; semantic: when g_VolumetricLightingWeatherUpdate, copies the 12 weather floats g_WeatherVolumetricLighting into params+0x0..+0x2c and refills both tables when the range factor changed (the same copy is inlined in BuildVolumetricLightingVolume) (high); signature `void (VolumetricLightingParams* params)`
+pub const CopyWeatherVolumetricLighting: u64 = 107028;
+/// `CopyWeatherVolumetricLighting` as a function pointer type (high).
+pub type CopyWeatherVolumetricLighting_fn = unsafe extern "C" fn(params: *mut c_void);
 /// `CopyWithIncRefOfThirdField` at 0xd3d7f0 (decompiler, high); signature (high): `undefined8 * CopyWithIncRefOfThirdField(undefined8 * param_1, undefined8 * param_2)`
 pub const CopyWithIncRefOfThirdField: u64 = 83656;
 /// `CopyWithRefCountedField20` at 0x11b6600 (decompiler, medium); signature (untiered): `undefined4 * CopyWithRefCountedField20(undefined4 * param_1, undefined4 * param_2)`
@@ -7799,21 +7823,3 @@ pub const CreatePointFromPolar: u64 = 86008;
 pub const CreatePooledWideString: u64 = 69176;
 /// `CreatePositionedSoundHandlesForChildren` at 0x523ac0 (decompiler, medium); signature (untiered): `undefined CreatePositionedSoundHandlesForChildren(undefined8 param_1, ulonglong param_2, longlong param_3, undefined8 param_4)`
 pub const CreatePositionedSoundHandlesForChildren: u64 = 32058;
-/// `CreatePrimitiveByType` at 0x212710 (decompiler, high); signature (untiered): `longlong * CreatePrimitiveByType(int param_1, uint * param_2, undefined8 param_3, undefined8 param_4)`
-pub const CreatePrimitiveByType: u64 = 15518;
-/// `CreatePrimitiveFromRecord` at 0x2126b0 (decompiler, medium); signature (medium): `undefined8 CreatePrimitiveFromRecord(longlong param_1)`
-pub const CreatePrimitiveFromRecord: u64 = 15517;
-/// `CreatePrismaticConstraintInstance` at 0xb74bd0 (decompiler, medium); signature (untiered): `hkpConstraintInstance * CreatePrismaticConstraintInstance(longlong param_1, longlong param_2, longlong param_3)`
-pub const CreatePrismaticConstraintInstance: u64 = 61936;
-/// `CreateProjectileAtPosition` at 0x1bd1e0 (decompiler, medium); signature (untiered): `uint * CreateProjectileAtPosition(undefined8 param_1, uint * param_2, ulonglong param_3, BeamProjectile * * param_4, undefined4 * param_5, longlong param_6, longlong param_7)`
-pub const CreateProjectileAtPosition: u64 = 13728;
-/// `CreateProjectileByType` at 0x7f9300 (semantic, high); signature (untiered): `uint * CreateProjectileByType(uint * param_1, longlong param_2, undefined8 param_3, BeamProjectile * * param_4)`; semantic: creates the projectile for data: class by the BGSProjectile's type bits (data->projectile +0x80 & 0x7f0000: 0x10000 Missile 0x1e8, 0x20000 Grenade 0x1f0, 0x40000 Beam 0x248 (reused per shooter), 0x80000 Flame 0x1e8 (reused), 0x100000 Cone 0x220, 0x200000 Barrier 0x200 (data+0x4c = 0 first), 0x400000 Arrow 0x1f8), sets flags from data, adds it to data->cell (+0x68) and returns *outHandle (invalid handle on failure). Launch data (RTTI Projectile::LaunchData, vtable 0x17f63b0): +0x08 origin NiPoint3 (Projectile::ctor 0x7f8a50 SetPosition(this, data+8)); direction as angles: +0x48 angleZ (heading, SetAngleZ), +0x4c angleX (pitch, SetAngleField48 = ref +0x48), angleY = 0; +0x14 NiPoint3 (default ID_410468..70, from the caster's hit record +0x30); +0x20 BGSProjectile*; +0x28 shooter; +0x30 combat controller; +0x38 weapon; +0x40 ammo; +0x58 desired target; +0x60/+0x64 -> projectile +0x1b0/+0x1b4; +0x68 cell; +0x70 spell; +0x78 casting source; +0x80/+0x88 enchantment/poison (ArrowProjectile::ctor 0x7ddd60 -> +0x1e8/+0x1f0); +0x90 area; +0x94 power; +0x98 scale -> +0x1d0 (high); signature `u32* (u32* outHandle, Projectile::LaunchData* data)`
-pub const CreateProjectileByType: u64 = 44108;
-/// `CreateProjectileByType` as a function pointer type (high).
-pub type CreateProjectileByType_fn = unsafe extern "C" fn(outHandle: *mut u32, data: *mut crate::Projectile__LaunchData) -> *mut u32;
-/// `CreateProjectilePickCache` at 0x7f6730 (decompiler, medium); signature (untiered): `undefined8 * CreateProjectilePickCache(longlong * param_1, float * param_2, undefined8 param_3, float param_4, float param_5, float param_6)`
-pub const CreateProjectilePickCache: u64 = 44071;
-/// `CreateQueuedHead` at 0x195830 (decompiler, medium); signature (untiered): `undefined CreateQueuedHead(undefined8 param_1, undefined4 * param_2, longlong * param_3, undefined8 param_4, undefined8 param_5)`
-pub const CreateQueuedHead: u64 = 13055;
-/// `CreateREFRSyncController` at 0x305550 (decompiler, medium); signature (medium): `undefined8 CreateREFRSyncController(undefined4 * param_1, longlong param_2, undefined4 * param_3, longlong param_4, undefined8 param_5, char param_6)`
-pub const CreateREFRSyncController: u64 = 20319;

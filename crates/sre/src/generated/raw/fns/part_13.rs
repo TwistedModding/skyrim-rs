@@ -3,6 +3,44 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `INISetting_fAnimInterpMaxTime_Animation__atexit` at 0x17b08c0 (crt_init, medium); signature (high): `void INISetting_fAnimInterpMaxTime_Animation__atexit(void)`
+pub const INISetting_fAnimInterpMaxTime_Animation__atexit: u64 = 173615;
+/// `INISetting_fAnimInterpMaxTime_Animation__init` at 0xde060 (crt_init, medium); signature (high): `void INISetting_fAnimInterpMaxTime_Animation__init(void)`
+pub const INISetting_fAnimInterpMaxTime_Animation__init: u64 = 8857;
+/// `INISetting_fAnimInterpMinTime_Animation__atexit` at 0x17b0910 (crt_init, medium); signature (high): `void INISetting_fAnimInterpMinTime_Animation__atexit(void)`
+pub const INISetting_fAnimInterpMinTime_Animation__atexit: u64 = 173616;
+/// `INISetting_fAnimInterpMinTime_Animation__init` at 0xde0e0 (crt_init, medium); signature (high): `void INISetting_fAnimInterpMinTime_Animation__init(void)`
+pub const INISetting_fAnimInterpMinTime_Animation__init: u64 = 8858;
+/// `INISetting_fAnimInterpNearDist_Animation__atexit` at 0x17b0960 (crt_init, medium); signature (high): `void INISetting_fAnimInterpNearDist_Animation__atexit(void)`
+pub const INISetting_fAnimInterpNearDist_Animation__atexit: u64 = 173617;
+/// `INISetting_fAnimInterpNearDist_Animation__init` at 0xde160 (crt_init, medium); signature (high): `void INISetting_fAnimInterpNearDist_Animation__init(void)`
+pub const INISetting_fAnimInterpNearDist_Animation__init: u64 = 8859;
+/// `INISetting_fAnimInterpSlop_Animation__atexit` at 0x17b09b0 (crt_init, medium); signature (high): `void INISetting_fAnimInterpSlop_Animation__atexit(void)`
+pub const INISetting_fAnimInterpSlop_Animation__atexit: u64 = 173618;
+/// `INISetting_fAnimInterpSlop_Animation__init` at 0xde1e0 (crt_init, medium); signature (high): `void INISetting_fAnimInterpSlop_Animation__init(void)`
+pub const INISetting_fAnimInterpSlop_Animation__init: u64 = 8860;
+/// `INISetting_fAnkleOffset_FootIK__atexit` at 0x17b4330 (crt_init, medium); signature (high): `void INISetting_fAnkleOffset_FootIK__atexit(void)`
+pub const INISetting_fAnkleOffset_FootIK__atexit: u64 = 173890;
+/// `INISetting_fAnkleOffset_FootIK__init` at 0xeb9a0 (crt_init, medium); signature (high): `void INISetting_fAnkleOffset_FootIK__init(void)`
+pub const INISetting_fAnkleOffset_FootIK__init: u64 = 9637;
+/// `INISetting_fArchiveInitBufferMB_Papyrus__atexit` at 0x1794830 (crt_init, medium); signature (high): `void INISetting_fArchiveInitBufferMB_Papyrus__atexit(void)`
+pub const INISetting_fArchiveInitBufferMB_Papyrus__atexit: u64 = 170831;
+/// `INISetting_fArchiveInitBufferMB_Papyrus__init` at 0x9b210 (crt_init, medium); signature (high): `void INISetting_fArchiveInitBufferMB_Papyrus__init(void)`
+pub const INISetting_fArchiveInitBufferMB_Papyrus__init: u64 = 5657;
+/// `INISetting_fAudioRumbleBigDeadZone_audio__atexit` at 0x17903e0 (crt_init, medium); signature (high): `void INISetting_fAudioRumbleBigDeadZone_audio__atexit(void)`
+pub const INISetting_fAudioRumbleBigDeadZone_audio__atexit: u64 = 170537;
+/// `INISetting_fAudioRumbleBigDeadZone_audio__init` at 0x90610 (crt_init, medium); signature (high): `void INISetting_fAudioRumbleBigDeadZone_audio__init(void)`
+pub const INISetting_fAudioRumbleBigDeadZone_audio__init: u64 = 5305;
+/// `INISetting_fAudioRumbleBigExponent_audio__atexit` at 0x1790430 (crt_init, medium); signature (high): `void INISetting_fAudioRumbleBigExponent_audio__atexit(void)`
+pub const INISetting_fAudioRumbleBigExponent_audio__atexit: u64 = 170538;
+/// `INISetting_fAudioRumbleBigExponent_audio__init` at 0x90690 (crt_init, medium); signature (high): `void INISetting_fAudioRumbleBigExponent_audio__init(void)`
+pub const INISetting_fAudioRumbleBigExponent_audio__init: u64 = 5306;
+/// `INISetting_fAudioRumbleBigLerpMax_audio__atexit` at 0x1790480 (crt_init, medium); signature (high): `void INISetting_fAudioRumbleBigLerpMax_audio__atexit(void)`
+pub const INISetting_fAudioRumbleBigLerpMax_audio__atexit: u64 = 170539;
+/// `INISetting_fAudioRumbleBigLerpMax_audio__init` at 0x90710 (crt_init, medium); signature (high): `void INISetting_fAudioRumbleBigLerpMax_audio__init(void)`
+pub const INISetting_fAudioRumbleBigLerpMax_audio__init: u64 = 5307;
+/// `INISetting_fAudioRumbleBigLerpMin_audio__atexit` at 0x17904d0 (crt_init, medium); signature (high): `void INISetting_fAudioRumbleBigLerpMin_audio__atexit(void)`
+pub const INISetting_fAudioRumbleBigLerpMin_audio__atexit: u64 = 170540;
 /// `INISetting_fAudioRumbleBigLerpMin_audio__init` at 0x90790 (crt_init, medium); signature (high): `void INISetting_fAudioRumbleBigLerpMin_audio__init(void)`
 pub const INISetting_fAudioRumbleBigLerpMin_audio__init: u64 = 5308;
 /// `INISetting_fAudioRumblePowerAttackAdj_audio__atexit` at 0x1790520 (crt_init, medium); signature (high): `void INISetting_fAudioRumblePowerAttackAdj_audio__atexit(void)`
@@ -5525,7 +5563,7 @@ pub const ImageSpaceEffectRefraction__vfunc_2: u64 = 107743;
 pub const ImageSpaceEffectRefraction__vfunc_6: u64 = 107747;
 /// `ImageSpaceEffectRefraction::vfunc_7` at 0x1565a20 (rtti, high); signature (high): `undefined8 vfunc_7(ImageSpaceEffectRefraction * this)`
 pub const ImageSpaceEffectRefraction__vfunc_7: u64 = 107745;
-/// `ImageSpaceEffectVolumetricLighting::Render` at 0x1550010 (semantic, medium); signature (untiered): `undefined8 Render(ImageSpaceEffectVolumetricLighting * this)`; semantic: slot 7 (0x1b479a8): inverse of the cached view-projection of entry 0x415133's camera, and the first split recomputed from g_CurrentRenderCamera near/far (pow(g_ShadowDistance / n, 1 / cascades)) and converted to depth (medium); signature `void (ImageSpaceEffectVolumetricLighting* this, ...)`
+/// `ImageSpaceEffectVolumetricLighting::Render` at 0x1550010 (semantic, medium); signature (untiered): `undefined8 Render(ImageSpaceEffectVolumetricLighting * this)`; semantic: (correction) the legacy image-space effect 32, made only when bEnableVolumetricLighting:Display (default 0, unset in the owner's INIs): view-projection, its inverse, the first split from g_CurrentRenderCamera near/far, the cascade matrices and the sun colour into its constants; not part of the volumetric chain the game runs by default (medium); signature `void (ImageSpaceEffectVolumetricLighting* this)`
 pub const ImageSpaceEffectVolumetricLighting__Render: u64 = 107379;
 /// `ImageSpaceEffectVolumetricLighting::ctor` at 0x154fa30 (layout_inference, high); signature (high): `ImageSpaceEffectVolumetricLighting * ctor(ImageSpaceEffectVolumetricLighting * this)`
 pub const ImageSpaceEffectVolumetricLighting__ctor: u64 = 107375;
@@ -6961,6 +6999,10 @@ pub const InitVector4Default: u64 = 70801;
 pub const InitVectorWithScrapArrays: u64 = 71488;
 /// `InitVelocityConstraintMotor` at 0x10d0100 (decompiler, high); signature (high): `undefined8 * InitVelocityConstraintMotor(undefined8 * param_1)`
 pub const InitVelocityConstraintMotor: u64 = 80215;
+/// `InitVolumetricLighting` at 0x1530f10 (semantic, high); signature (untiered): `undefined InitVolumetricLighting(longlong param_1, longlong param_2)`; semantic: renderer init (InitShaders) and RefreshShaders: the console defaults table, the texture sizes per quality (low/medium/high from the iVolumetricLightingTexture* settings), the enable and weather-update copies, the volumes (0x1532330), the two 4096-entry R32_FLOAT 1D textures 'Volumetric Lighting Repartition' (+0x78) and 'Volumetric Lighting Inverse Repartition' (+0x80), the compute shaders ISVolumetricLightingGenerateCS (+0x50) and ISVolumetricLightingRaymarchCS (+0x58), then fills both tables with +0x40 and +0x48 (high); signature `void (VolumetricLightingParams* params, void* shaderStream)`
+pub const InitVolumetricLighting: u64 = 107021;
+/// `InitVolumetricLighting` as a function pointer type (high).
+pub type InitVolumetricLighting_fn = unsafe extern "C" fn(params: *mut c_void, shaderStream: *mut c_void);
 /// `InitVolumetricLightingParamsFromINI` at 0x15308a0 (decompiler, high); signature (high): `undefined4 * InitVolumetricLightingParamsFromINI(undefined4 * param_1)`
 pub const InitVolumetricLightingParamsFromINI: u64 = 107010;
 /// `InitWalletGetBalanceRequest` at 0x139d100 (decompiler, medium); signature (untiered): `undefined InitWalletGetBalanceRequest(longlong * param_1, undefined8 * param_2, longlong param_3, undefined1 * param_4, undefined8 param_5)`
@@ -8355,41 +8397,3 @@ pub const InterruptCastAndExitNodeIfActorFieldF8Field10Zero: u64 = 49765;
 pub const InterruptCastHandler__vdtor: u64 = 43340;
 /// `InterruptCastHandler::vfunc_1` at 0x7ce0e0 (rtti, high); signature (low): `undefined1 vfunc_1(InterruptCastHandler * this, longlong param_1)`
 pub const InterruptCastHandler__vfunc_1: u64 = 42862;
-/// `InterruptCastingAndReset` at 0x5cd2f0 (decompiler, medium); signature (untiered): `undefined InterruptCastingAndReset(longlong * param_1)`
-pub const InterruptCastingAndReset: u64 = 34427;
-/// `InterruptContextCastIfActive` at 0x8b53a0 (decompiler, medium); signature (untiered): `undefined InterruptContextCastIfActive(void)`
-pub const InterruptContextCastIfActive: u64 = 49102;
-/// `InterruptContextCastIfActive_2` at 0x8b5680 (decompiler, medium); signature (untiered): `undefined InterruptContextCastIfActive_2(void)`
-pub const InterruptContextCastIfActive_2: u64 = 49107;
-/// `IntersectBoxCapsule` at 0xf34510 (decompiler, medium); signature (untiered): `undefined8 IntersectBoxCapsule(undefined4 param_1, undefined8 param_2, undefined8 param_3, longlong param_4, undefined8 param_5, undefined4 * param_6, undefined4 * param_7, char param_8, uint * param_9, uint * param_10)`
-pub const IntersectBoxCapsule: u64 = 72120;
-/// `IntersectBoxSphere` at 0xf30ba0 (decompiler, medium); signature (untiered): `undefined8 IntersectBoxSphere(undefined4 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4, undefined8 param_5, undefined4 * param_6, undefined4 * param_7, char param_8, uint * param_9, uint * param_10)`
-pub const IntersectBoxSphere: u64 = 72118;
-/// `IntersectCapsuleCapsule` at 0xf39350 (decompiler, medium); signature (untiered): `undefined8 IntersectCapsuleCapsule(undefined4 param_1, undefined8 param_2, float * param_3, undefined8 param_4, float * param_5, undefined4 * param_6, undefined4 * param_7, char param_8, uint * param_9, uint * param_10)`
-pub const IntersectCapsuleCapsule: u64 = 72147;
-/// `IntersectCapsuleSphere` at 0xf39210 (decompiler, medium); signature (untiered): `undefined8 IntersectCapsuleSphere(undefined4 param_1, undefined8 param_2, float * param_3, undefined8 param_4, float * param_5, undefined4 * param_6, undefined4 * param_7, char param_8, uint * param_9, uint * param_10)`
-pub const IntersectCapsuleSphere: u64 = 72146;
-/// `IntersectCapsuleTriangle` at 0xf39490 (decompiler, medium); signature (untiered): `undefined8 IntersectCapsuleTriangle(float param_1, longlong param_2, float * param_3, float * param_4, float * param_5, float * param_6, float * param_7, undefined4 * param_8, float * param_9, char param_10, float * param_11, float * param_12)`
-pub const IntersectCapsuleTriangle: u64 = 72148;
-/// `IntersectLineWithCircle2D` at 0x11fc480 (decompiler, medium); signature (medium): `undefined1 IntersectLineWithCircle2D(float * param_1, float * param_2, undefined4 * param_3)`
-pub const IntersectLineWithCircle2D: u64 = 91542;
-/// `IntersectLineWithSegmentOrNearestEndpointXY` at 0x11faea0 (decompiler, medium); signature (medium): `undefined IntersectLineWithSegmentOrNearestEndpointXY(float * param_1, float * param_2, float * param_3, float * param_4, float * param_5)`
-pub const IntersectLineWithSegmentOrNearestEndpointXY: u64 = 91520;
-/// `IntersectLineWithSegmentXY` at 0x11fb060 (decompiler, medium); signature (medium): `undefined8 IntersectLineWithSegmentXY(float * param_1, float * param_2, float * param_3, float * param_4, float * param_5)`
-pub const IntersectLineWithSegmentXY: u64 = 91521;
-/// `IntersectMatchingFieldsFlags1A` at 0xdff6f0 (decompiler, medium); signature (untiered): `undefined4 * IntersectMatchingFieldsFlags1A(longlong param_1, undefined4 * param_2, longlong param_3)`
-pub const IntersectMatchingFieldsFlags1A: u64 = 87443;
-/// `IntersectMatchingFieldsFlags42` at 0xdff1d0 (decompiler, medium); signature (untiered): `undefined4 * IntersectMatchingFieldsFlags42(longlong param_1, undefined4 * param_2, longlong param_3)`
-pub const IntersectMatchingFieldsFlags42: u64 = 87442;
-/// `IntersectRayTriangle` at 0xf25230 (decompiler, medium); signature (medium): `undefined8 IntersectRayTriangle(float * param_1, float * param_2, float * param_3, float * param_4, float * param_5, char param_6, float * param_7, float * param_8, float * param_9, float * param_10)`
-pub const IntersectRayTriangle: u64 = 71983;
-/// `IntersectRayWithCircle2D` at 0x11fcfc0 (decompiler, medium); signature (medium): `undefined8 IntersectRayWithCircle2D(float * param_1, float * param_2, float * param_3, float param_4, float * param_5, float * param_6)`
-pub const IntersectRayWithCircle2D: u64 = 91555;
-/// `IntersectRayWithOrientedBox` at 0xf4e6a0 (decompiler, medium); signature (untiered): `undefined8 IntersectRayWithOrientedBox(longlong param_1, float * param_2, float * param_3, float * param_4, float * param_5)`
-pub const IntersectRayWithOrientedBox: u64 = 72334;
-/// `IntersectRayWithTriangle` at 0xb3e720 (decompiler, medium); signature (untiered): `undefined1 * IntersectRayWithTriangle(undefined1 * param_1, float * param_2, float * param_3, float * param_4, float * param_5, float * param_6, float * param_7, float * param_8, float * param_9, char param_10)`
-pub const IntersectRayWithTriangle: u64 = 60577;
-/// `IntersectRectangleObject` at 0xda68b0 (decompiler, medium); signature (untiered): `undefined IntersectRectangleObject(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const IntersectRectangleObject: u64 = 85885;
-/// `IntersectSegmentWithLineXY` at 0x11fb1a0 (decompiler, medium); signature (medium): `undefined8 IntersectSegmentWithLineXY(float * param_1, float * param_2, float * param_3, float * param_4, float * param_5)`
-pub const IntersectSegmentWithLineXY: u64 = 91522;

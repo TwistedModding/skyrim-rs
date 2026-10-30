@@ -3,6 +3,12 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `BSProceduralLightningController::ctor_sub2` at 0xffe280 (callgraph, medium); signature (untiered): `undefined ctor_sub2(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const BSProceduralLightningController__ctor_sub2: u64 = 76948;
+/// `BSProceduralLightningController::vdtor` at 0xffe320 (slot_propagation, medium); signature (low): `BSProceduralLightningController * vdtor(BSProceduralLightningController * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const BSProceduralLightningController__vdtor: u64 = 76950;
+/// `BSProceduralLightningController::vfunc_2` at 0xffe530 (rtti, high); signature (low): `TypeNode * vfunc_2(void)`
+pub const BSProceduralLightningController__vfunc_2: u64 = 76952;
 /// `BSProceduralLightningController::vfunc_23` at 0xffc5e0 (rtti, high); signature (low): `longlong * vfunc_23(BSProceduralLightningController * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
 pub const BSProceduralLightningController__vfunc_23: u64 = 76908;
 /// `BSProceduralLightningController::vfunc_24` at 0xffc810 (rtti, high); signature (low): `undefined vfunc_24(BSProceduralLightningController * this, longlong param_1)`
@@ -6311,7 +6317,3 @@ pub const BSTDerivedCreator_BGSProcedurePatrol_IProcedure__vfunc_2: u64 = 28960;
 pub const BSTDerivedCreator_BGSProcedurePatrolExecState_IProcedureTreeExecState__vdtor: u64 = 27988;
 /// `BSTDerivedCreator<BGSProcedurePatrolExecState,IProcedureTreeExecState>::vfunc_1` at 0x459d70 (rtti, medium); signature (low): `undefined8 vfunc_1(BSTDerivedCreator<BGSProcedurePatrolExecState,IProcedureTreeExecState> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
 pub const BSTDerivedCreator_BGSProcedurePatrolExecState_IProcedureTreeExecState__vfunc_1: u64 = 28061;
-/// `BSTDerivedCreator<BGSProcedurePatrolExecState,IProcedureTreeExecState>::vfunc_2` at 0x45a8d0 (rtti, medium); signature (low): `undefined vfunc_2(BSTDerivedCreator<BGSProcedurePatrolExecState,IProcedureTreeExecState> * this, undefined8 * param_1)`
-pub const BSTDerivedCreator_BGSProcedurePatrolExecState_IProcedureTreeExecState__vfunc_2: u64 = 28101;
-/// `BSTDerivedCreator<BGSProcedurePursue,IProcedure>::vdtor` at 0x47d300 (layout_inference, medium); signature (low): `BSTDerivedCreator<BGSProcedurePursue,IProcedure> * vdtor(BSTDerivedCreator<BGSProcedurePursue,IProcedure> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const BSTDerivedCreator_BGSProcedurePursue_IProcedure__vdtor: u64 = 28978;

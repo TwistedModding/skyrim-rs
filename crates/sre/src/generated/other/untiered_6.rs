@@ -3,27 +3,6 @@
 
 use core::ffi::{c_char, c_void};
 
-/// `InitHashMapWith32Buckets` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 18533, rva 0x2a16c0).
-/// `undefined4 * InitHashMapWith32Buckets(undefined4 * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn init_hash_map_with32_buckets(param_1: *mut u32, param_2: u64, param_3: u64, param_4: u64) -> *mut u32 { unsafe { function!(18533, (*mut u32, u64, u64, u64) -> *mut u32)(param_1, param_2, param_3, param_4) } }
-/// `InitHashTableOnBuffer` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 57197, rva 0xaa69f0).
-/// `undefined InitHashTableOnBuffer(longlong * param_1, longlong param_2, uint param_3)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn init_hash_table_on_buffer(param_1: *mut i64, param_2: i64, param_3: u32) -> u64 { unsafe { function!(57197, (*mut i64, i64, u32) -> u64)(param_1, param_2, param_3) } }
-/// `InitHeaderAndEmptyArray` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 29671, rva 0x49fcf0).
-/// `undefined4 * InitHeaderAndEmptyArray(undefined4 * param_1)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn init_header_and_empty_array(param_1: *mut u32) -> *mut u32 { unsafe { function!(29671, (*mut u32) -> *mut u32)(param_1) } }
 /// `InitHitData` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 44005, rva 0x7f0330).
 /// `undefined InitHitData(float * param_1, undefined8 param_2, longlong * param_3, float param_4, longlong * param_5)`
 ///
@@ -12827,3 +12806,17 @@ pub unsafe fn papyrus__actor__set_forced_landing_marker_sub0(param_1: i64, param
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn papyrus__actor__set_relationship_rank_sub0(param_1: i64, param_2: c_char, param_3: i32, param_4: u64) -> u64 { unsafe { function!(37674, (i64, c_char, i32, u64) -> u64)(param_1, param_2, param_3, param_4) } }
+/// `Papyrus::Actor::SetSubGraphFloatVariable_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 54814, rva 0xa0b040).
+/// `undefined SetSubGraphFloatVariable_sub0(longlong param_1, ulonglong * param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn papyrus__actor__set_sub_graph_float_variable_sub0(param_1: i64, param_2: *mut u64) -> u64 { unsafe { function!(54814, (i64, *mut u64) -> u64)(param_1, param_2) } }
+/// `Papyrus::Actor::ShowGiftMenu_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 51576, rva 0x930040).
+/// `undefined ShowGiftMenu_sub0(longlong param_1, longlong param_2, longlong * param_3, undefined8 param_4, undefined1 param_5)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn papyrus__actor__show_gift_menu_sub0(param_1: i64, param_2: i64, param_3: *mut i64, param_4: u64, param_5: u8) -> u64 { unsafe { function!(51576, (i64, i64, *mut i64, u64, u8) -> u64)(param_1, param_2, param_3, param_4, param_5) } }
