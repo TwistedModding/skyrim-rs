@@ -42,25 +42,29 @@ impl Slot {
         1 << self as u32
     }
 
-    /// `SlotObjects`: the biped indices behind the slot. The armor ones are the slot mask bits of
-    /// the Creation Kit's biped slots (30 head, 31 hair, 41 long hair, 42 circlet, 39 shield),
-    /// the weapons 32-40 and the quiver the ammo object 41 (RE `camera.md` IC8 I).
+    /// `SlotObjects`: the fixed biped indices behind the slot. The armor ones are the slot mask
+    /// bits of the Creation Kit's biped slots (30 head, 31 hair, 41 long hair, 42 circlet), the
+    /// weapons 32-40 and the quiver the ammo object 41 (RE `camera.md` IC8 I); the shield's comes
+    /// from the actor's race ([`parts`]).
     #[must_use]
     pub const fn objects(self) -> &'static [usize] {
         match self {
             Self::Helmet => &[0],
             Self::Hair => &[1, 11],
             Self::Circlet => &[12],
-            Self::Shield => &[9],
+            Self::Shield => &[],
             Self::Quiver => &[41],
             Self::Weapons => &[32, 33, 34, 35, 36, 37, 38, 39, 40],
         }
     }
 }
 
+/// The slot's attached 3D on `actor`; the shield is the biped object the race names for the
+/// shield and the left hand (`TESRace`+0x138, 9 on every race the RE read; IC9 G).
 fn parts(actor: &Actor, slot: Slot) -> impl Iterator<Item = &sre::NiAVObject> {
     let objects = actor.biped_objects();
-    slot.objects().iter().filter_map(|&i| objects.get(i)).filter_map(|o| unsafe { o.partClone.as_ref() })
+    let shield = if slot == Slot::Shield { actor.race().map(|r| r.leftHandBipedIndex as usize) } else { None };
+    slot.objects().iter().copied().chain(shield).filter_map(|i| objects.get(i)).filter_map(|o| unsafe { o.partClone.as_ref() })
 }
 
 /// `IsSlotFilled`: a slot with nothing equipped has no 3D to hide.

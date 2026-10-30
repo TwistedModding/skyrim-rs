@@ -315,18 +315,12 @@ pub fn from_euler_xyz(x: f32, y: f32, z: f32) -> Matrix3 {
 }
 
 /// The `[x, y, z]` [`from_euler_xyz`] builds `m` from: `NiMatrix3::ToEulerAnglesXYZ` (id 70215)
-/// off the poles; at a pole `z` is 0 and `x` is solved so the angles build `m` again (the RE row
-/// gives `x` the opposite sign there, which would not).
+/// off the poles; at a pole (`|m02| >= 1`) `y` is +-pi/2, `z` 0 and `x` is `atan2(-m21, m11)`,
+/// which builds `m` again where the engine's own `x` has the opposite sign (RE `camera.md` IC9 G).
 #[must_use]
 pub fn to_euler_xyz(m: &Matrix3) -> [f32; 3] {
     let y = -m[0][2].clamp(-1.0, 1.0).asin();
-    if m[0][2] <= -1.0 {
-        [m[1][0].atan2(m[1][1]), y, 0.0]
-    } else if m[0][2] >= 1.0 {
-        [-m[1][0].atan2(m[1][1]), y, 0.0]
-    } else {
-        [m[1][2].atan2(m[2][2]), y, m[0][1].atan2(m[0][0])]
-    }
+    if m[0][2].abs() >= 1.0 { [(-m[2][1]).atan2(m[1][1]), y, 0.0] } else { [m[1][2].atan2(m[2][2]), y, m[0][1].atan2(m[0][0])] }
 }
 
 /// `NiMatrix3::FromEulerAnglesZXY` (id 70233): `Z(z) * X(x) * Y(y)`, heading, pitch (positive
@@ -497,7 +491,8 @@ impl NiAVObjectExt for NiAVObject {
 
 /// Puts an effect shader's data on every geometry under `root` that takes it, through
 /// `ApplyEffectShaderData` (id 17330), as `ShaderReferenceEffect` does for its own root; the
-/// number of geometries. Main thread, or the effect update that owns `data`.
+/// number of geometries. Main thread, where the temporary-effects update that owns `data` runs too
+/// (RE `camera.md` IC9 F).
 pub fn apply_effect_shader_data(shader: &TESEffectShader, root: &NiAVObject, data: &BSEffectShaderData) -> i32 {
     unsafe { sre::apply_effect_shader_data(core::ptr::from_ref(shader).cast_mut(), core::ptr::from_ref(root).cast_mut(), core::ptr::from_ref(data).cast_mut(), false) }
 }
@@ -909,10 +904,14 @@ mod tests {
             assert!(angles.iter().zip(back).all(|(a, b)| (a - b).abs() < 1e-3), "{angles:?} -> {back:?}");
         }
         for y in [core::f32::consts::FRAC_PI_2, -core::f32::consts::FRAC_PI_2] {
-            let mut pole = from_euler_xyz(0.4, y, 0.0);
-            pole[0][2] = pole[0][2].signum();
-            let back = to_euler_xyz(&pole);
-            assert!(back[2] == 0.0 && close(&from_euler_xyz(back[0], back[1], back[2]), &pole), "{y}: {back:?}");
+            for z in [0.0, 0.9] {
+                let mut pole = from_euler_xyz(0.4, y, z);
+                pole[0][2] = pole[0][2].signum();
+                let back = to_euler_xyz(&pole);
+                assert_eq!((back[1], back[2]), (y, 0.0));
+                assert!((back[0] - (-pole[2][1]).atan2(pole[1][1])).abs() < 1e-6, "IC9 G's x");
+                assert!(close(&from_euler_xyz(back[0], back[1], back[2]), &pole), "{y} {z}: {back:?}");
+            }
         }
     }
 
