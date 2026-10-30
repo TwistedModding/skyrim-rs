@@ -290,6 +290,7 @@ fn load(host: &'static Host) -> bool {
         }
         console::commands::run_pending();
         body::manager::sheathe_while_swimming();
+        event::game_event_manager::apply_menu_events();
         hook::cameras::on_frame();
         camera::extended::apply_deferred();
         studio_frame();
