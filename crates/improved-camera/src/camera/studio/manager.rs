@@ -21,6 +21,7 @@ use super::adjustments::{PoseEngine, third_person_3d};
 use super::capture::{self, Capture, Step};
 use super::environment;
 use super::io::{self, CameraBookmark, Scene, SceneActor, SceneSun};
+use super::face::FaceEngine;
 use super::gear::GearEngine;
 use super::shaders::{self, Applied, ShaderEngine};
 use crate::settings;
@@ -255,6 +256,7 @@ pub struct Manager {
     pub forced_weather: u32,
     pub shaders: ShaderEngine,
     pub gear: GearEngine,
+    pub face: FaceEngine,
     /// The camera pins onto the target (the Camera page's switch).
     pub orbit_enabled: bool,
     orbit: Orbit,
@@ -425,6 +427,7 @@ impl Manager {
         }
         if settings::profile().Studio.bRevertOnExit {
             self.pose.unfreeze_all();
+            self.face.revert_all(false);
             for adjustments in self.pose.actors.values_mut() {
                 adjustments.revert_all();
             }
@@ -797,6 +800,11 @@ impl Manager {
                 e.frozen = true;
             }
         }
+        for (id, state) in self.face.overridden() {
+            if let Some(e) = entry(&mut actors, id) {
+                e.face = Some(state.clone());
+            }
+        }
         for (id, mask) in self.gear.snapshot() {
             if let Some(e) = entry(&mut actors, id) {
                 e.hidden_gear = mask;
@@ -843,6 +851,9 @@ impl Manager {
             stack.retain(|l| l.persistent);
             stack.extend(saved.layers.iter().cloned());
             self.pose.set_actor_frozen(actor, saved.frozen);
+            if let Some(face) = &saved.face {
+                *self.face.get_or_create(actor) = face.clone();
+            }
             self.gear.set_hidden_mask(actor, saved.hidden_gear);
             self.request_collision(reference, saved.collision_off);
             restored += 1;
@@ -999,6 +1010,7 @@ pub fn on_global_update() {
         }
         let apply_all = m.active || !settings::profile().Studio.bRevertOnExit;
         m.pose.on_game_update(apply_all);
+        m.face.on_game_update(apply_all);
         m.gear.on_game_update(apply_all);
     });
 }
@@ -1022,6 +1034,7 @@ pub fn release() {
         }
         m.shaders.take_all().into_iter().for_each(shaders::stop);
         m.gear.revert_all();
+        m.face.revert_all(true);
         if m.hid_hud || m.capture.hid_hud {
             util::show_menus(true);
         }

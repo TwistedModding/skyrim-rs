@@ -21,6 +21,8 @@ use crate::camera::studio::environment::{self, ImodInfo};
 use crate::camera::studio::idles::{self, PosePack};
 use crate::camera::studio::io::{self, CameraBookmark, SamPack};
 use crate::camera::studio::manager::{self, CameraPose, Manager};
+use crate::camera::studio::adjustments::BoneDelta;
+use crate::camera::studio::face::{FaceNames, FaceState};
 use crate::camera::studio::{gear, node_names, shaders};
 use crate::util::point;
 use crate::util::skyrim_util as util;
@@ -37,6 +39,7 @@ enum Page {
     Position,
     Effects,
     Gear,
+    Face,
     Camera,
     Environment,
     Scenes,
@@ -78,6 +81,11 @@ struct Menu {
     effects: Option<[Vec<shaders::EffectInfo>; 2]>,
     effect_art: bool,
     effect_search: String,
+    face_names: Option<FaceNames>,
+    expression_files: Option<Vec<String>>,
+    selected_expression_file: String,
+    expression_save_name: String,
+    selected_tongue_bone: String,
     weather_search: String,
     imod_strength: Option<f32>,
     /// World units per dragged pixel on the Position page (IC: 1).
@@ -284,6 +292,7 @@ pub fn draw(ui: &mut egui::Ui) {
         Page::Position => position(ui),
         Page::Effects => effects_page(ui),
         Page::Gear => gear_page(ui),
+        Page::Face => face_page(ui),
         Page::Camera => camera(ui),
         Page::Environment => environment_page(ui),
         Page::Scenes => scenes(ui),
@@ -306,6 +315,9 @@ fn home(ui: &mut egui::Ui, target_name: &str) {
     }
     if row(ui, "Position", None, "") {
         go(Page::Position);
+    }
+    if row(ui, "Face", None, "") {
+        go(Page::Face);
     }
     if row(ui, "Gear", None, "Hide the target's helmet, hair, shield, quiver or weapons for the shot") {
         go(Page::Gear);
@@ -385,6 +397,149 @@ fn nearby_list(ui: &mut egui::Ui, id: &str, entries: &[manager::Nearby], target:
             }
         });
     });
+}
+
+fn face_page(ui: &mut egui::Ui) -> bool {
+    if page_header(ui, "Face") {
+        return true;
+    }
+    let Some(target) = manager::with(|m| m.target()).filter(IsActor::cast_actor) else {
+        ui.weak("Target an actor to edit their face");
+        return false;
+    };
+    let Some(actor) = target.cast::<sre::Actor>() else { return false };
+    if manager::with(|s| s.face.get(actor.formID).is_none()) {
+        ui.weak("Values are re-asserted every frame while active -");
+        ui.weak("blinking and eye-tracking hold automatically.");
+        ui.add_space(6.0);
+        if row(ui, "Start Face Override", None, "") {
+            manager::with(|s| {
+                s.face.get_or_create(actor);
+            });
+        }
+        return false;
+    }
+    if row(ui, "Reset Face", Some("stop overriding"), "") {
+        manager::with(|s| s.face.remove(actor.formID));
+        return false;
+    }
+    let tongue_bones: Vec<String> = manager::with(|s| s.bones.iter().filter(|b| contains_no_case(&b.name, "tongue")).map(|b| b.name.clone()).collect());
+    let mut guard = MENU.lock().unwrap_or_else(std::sync::PoisonError::into_inner);
+    let m = guard.get_or_insert_with(Menu::default);
+    let (dir, sam) = (io::directory("Expressions"), io::sam_dir("FaceMorphs"));
+    let files = m.expression_files.get_or_insert_with(|| io::list_files(&dir).into_iter().chain(io::list_sam_expressions(&sam).into_iter().map(|f| format!("[SAM] {f}"))).collect());
+    let names = m.face_names.get_or_insert_with(FaceNames::engine).clone();
+    let mut saved = false;
+    manager::with(|s| {
+        let Some(state) = s.face.get_mut(actor.formID) else { return };
+        ui.horizontal(|ui| {
+            egui::ComboBox::from_id_salt("ExpressionFiles").width(ui.available_width() * 0.55).selected_text(if m.selected_expression_file.is_empty() { "Select file..." } else { m.selected_expression_file.as_str() }).show_ui(ui, |ui| {
+                for file in files.iter() {
+                    ui.selectable_value(&mut m.selected_expression_file, file.clone(), file);
+                }
+            });
+            if ui.button("Load").clicked() && !m.selected_expression_file.is_empty() {
+                let loaded = match m.selected_expression_file.strip_prefix("[SAM] ") {
+                    Some(relative) => io::load_sam_expression(&sam, relative, &names, state),
+                    None => io::load_expression(&dir, &m.selected_expression_file),
+                };
+                match loaded {
+                    Ok(face) => {
+                        *state = face;
+                        crate::log(&format!("<Photo Mode> Loaded expression: {}", m.selected_expression_file));
+                    }
+                    Err(e) => crate::log(&format!("<Photo Mode> {e}")),
+                }
+            }
+        });
+        ui.horizontal(|ui| {
+            ui.add(egui::TextEdit::singleline(&mut m.expression_save_name).hint_text("Expression name...").desired_width(ui.available_width() * 0.55));
+            let name = io::sanitize_file_name(&m.expression_save_name);
+            if ui.button("Save").clicked() && !name.is_empty() {
+                match io::save_expression(&dir, state, &name) {
+                    Ok(path) => {
+                        crate::log(&format!("<Photo Mode> Saved expression: {}", path.display()));
+                        saved = true;
+                    }
+                    Err(e) => crate::log(&format!("<Photo Mode> {e}")),
+                }
+            }
+        });
+        title(ui, "Expression");
+        ui.horizontal(|ui| {
+            let current = usize::try_from(state.expression).ok().and_then(|i| names.expressions.get(i)).map_or("?", String::as_str);
+            egui::ComboBox::from_id_salt("Expression").width(ui.available_width() * 0.55).selected_text(current).show_ui(ui, |ui| {
+                for (i, name) in names.expressions.iter().enumerate() {
+                    let index = i32::try_from(i).unwrap_or_default();
+                    ui.selectable_value(&mut state.expression, index, name);
+                }
+            });
+            ui.add(egui::Slider::new(&mut state.expression_value, 0.0..=1.0).fixed_decimals(2));
+        });
+        title(ui, "Eyes");
+        ui.horizontal(|ui| {
+            ui.checkbox(&mut state.eyes_override, "Aim Eyes").on_hover_text("Overrides eye direction and holds it (auto eye-tracking is out-written every frame)");
+            ui.checkbox(&mut state.suppress_blink, "Hold Eyelids").on_hover_text("Parks the blink state machine so eyelid values hold");
+        });
+        ui.checkbox(&mut state.persistent, "Keep After Exit").on_hover_text("This face keeps applying outside Photo Mode and survives Revert Edits on Exit, the same way a persistent skeleton adjustment does");
+        ui.add_enabled_ui(state.eyes_override, |ui| {
+            ui.add(egui::Slider::new(&mut state.eyes_heading, -0.6..=0.6).text("Look Right").fixed_decimals(3));
+            ui.add(egui::Slider::new(&mut state.eyes_pitch, -0.5..=0.5).text("Look Up").fixed_decimals(3));
+        });
+        tongue_editor(ui, &mut m.selected_tongue_bone, state, &tongue_bones);
+        title(ui, "Modifiers");
+        for (i, value) in state.modifiers.iter_mut().enumerate() {
+            ui.add(egui::Slider::new(value, 0.0..=1.0).text(names.modifiers.get(i).map_or("?", String::as_str)).fixed_decimals(2));
+        }
+        title(ui, "Phonemes");
+        for (i, value) in state.phonemes.iter_mut().enumerate() {
+            ui.add(egui::Slider::new(value, 0.0..=1.0).text(names.phonemes.get(i).map_or("?", String::as_str)).fixed_decimals(2));
+        }
+    });
+    if saved {
+        m.expression_files = None;
+    }
+    false
+}
+
+/// The Face page's tongue bones (when the skeleton or head ships them), saved with the expression.
+fn tongue_editor(ui: &mut egui::Ui, selected: &mut String, state: &mut FaceState, bones: &[String]) {
+    if bones.is_empty() {
+        return;
+    }
+    title(ui, "Tongue");
+    if !bones.contains(selected) {
+        selected.clone_from(&bones[0]);
+    }
+    if bones.len() > 1 {
+        egui::ComboBox::from_id_salt("TongueBone").selected_text(selected.clone()).show_ui(ui, |ui| {
+            for bone in bones {
+                ui.selectable_value(selected, bone.clone(), bone);
+            }
+        });
+    } else {
+        ui.weak(selected.as_str());
+    }
+    let mut delta = state.tongue.get(selected).copied().unwrap_or_default();
+    let mut changed = false;
+    for (label, values, speed) in [("Position", &mut delta.position, 0.02), ("Rotation", &mut delta.rotation, 0.25)] {
+        ui.horizontal(|ui| {
+            for v in values.iter_mut() {
+                changed |= ui.add(egui::DragValue::new(v).speed(speed).fixed_decimals(3)).changed();
+            }
+            ui.label(label);
+        });
+    }
+    ui.horizontal(|ui| {
+        changed |= ui.add(egui::DragValue::new(&mut delta.scale).speed(0.005).range(0.01..=5.0).fixed_decimals(3)).changed();
+        ui.label("Scale");
+    });
+    if changed {
+        state.tongue.insert(selected.clone(), delta);
+    }
+    if ui.button("Reset Tongue").clicked() {
+        state.tongue.values_mut().for_each(|d| *d = BoneDelta::default());
+    }
 }
 
 fn gear_page(ui: &mut egui::Ui) -> bool {

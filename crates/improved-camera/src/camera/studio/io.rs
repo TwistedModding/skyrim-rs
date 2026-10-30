@@ -1,7 +1,7 @@
 //! `camera/studio/StudioIO`: the studio's files. Its own live in a folder of the port's
 //! (`Data\SKSE\Plugins\skyrim-rs\improved-camera\PhotoMode\`, with IC's layout: `Adjustments`,
-//! `Poses`, `Scenes`, `Shots` and `Cameras.json`); Screen Archer Menu's pose and adjustment packs
-//! under `Data\SAM\` are only read. JSON as IC writes it (tab-indented, `version` 1).
+//! `Poses`, `Expressions`, `Scenes`, `Shots` and `Cameras.json`); Screen Archer Menu's pose,
+//! adjustment and face morph packs under `Data\SAM\` are only read. JSON as IC writes it (tab-indented, `version` 1).
 
 use std::collections::BTreeMap;
 use std::fmt::Write as _;
@@ -11,6 +11,7 @@ use framework::settings::{Json, parse_json};
 use skyrim::render::Transform;
 
 use super::adjustments::{Adjustment, BoneDelta, degrees_from_rotation, rotation_from_degrees};
+use super::face::{FaceNames, FaceState, parse_sam_expression};
 use crate::util::point::P3;
 
 const FILE_VERSION: f64 = 1.0;
@@ -107,13 +108,6 @@ fn read_triple(json: &Json, key: &str, out: &mut P3) -> bool {
     true
 }
 
-fn members_of(json: &Json) -> &[Json] {
-    match json {
-        Json::Array(items) => items,
-        _ => &[],
-    }
-}
-
 fn members(json: Option<&Json>) -> &[(String, Json)] {
     match json {
         Some(Json::Object(m)) => m,
@@ -175,6 +169,93 @@ fn layer(json: &Json) -> Adjustment {
         include_in_pose: bool_or(json, "includeInPose", true),
         bones: bones(json.get("bones")),
     }
+}
+
+/// `FaceToJson`: the face body expression files and scenes share.
+fn face_json(face: &FaceState) -> Vec<(&'static str, Json)> {
+    let mut fields = vec![
+        ("expression", Json::Number(f64::from(face.expression))),
+        ("expressionValue", num(face.expression_value)),
+        ("phonemes", Json::Array(face.phonemes.iter().map(|v| num(*v)).collect())),
+        ("modifiers", Json::Array(face.modifiers.iter().map(|v| num(*v)).collect())),
+        ("eyesOverride", Json::Bool(face.eyes_override)),
+        ("eyesHeading", num(face.eyes_heading)),
+        ("eyesPitch", num(face.eyes_pitch)),
+        ("suppressBlink", Json::Bool(face.suppress_blink)),
+        ("persistent", Json::Bool(face.persistent)),
+    ];
+    if !face.tongue.is_empty() {
+        fields.push(("tongue", Json::Object(face.tongue.iter().map(|(n, d)| (n.clone(), bone_delta_json(d))).collect())));
+    }
+    fields
+}
+
+/// `FaceFromJson`.
+#[allow(clippy::cast_possible_truncation)]
+fn face(json: &Json) -> FaceState {
+    let mut out = FaceState::default();
+    if let Some(Json::Number(v)) = json.get("expression") {
+        out.expression = *v as i32;
+    }
+    out.expression_value = f32_or(json, "expressionValue", 0.0);
+    for (key, values) in [("phonemes", &mut out.phonemes[..]), ("modifiers", &mut out.modifiers[..])] {
+        if let Some(Json::Array(items)) = json.get(key) {
+            for (value, item) in values.iter_mut().zip(items) {
+                if let Some(v) = as_f32(Some(item)) {
+                    *value = v;
+                }
+            }
+        }
+    }
+    out.eyes_override = bool_or(json, "eyesOverride", false);
+    out.eyes_heading = f32_or(json, "eyesHeading", 0.0);
+    out.eyes_pitch = f32_or(json, "eyesPitch", 0.0);
+    out.suppress_blink = bool_or(json, "suppressBlink", true);
+    out.persistent = bool_or(json, "persistent", false);
+    out.tongue = bones(json.get("tongue"));
+    out
+}
+
+/// `SaveExpression`: `<dir>\<name>.json`.
+pub fn save_expression(dir: &Path, face_state: &FaceState, name: &str) -> Result<PathBuf, String> {
+    let mut fields = face_json(face_state);
+    fields.push(("version", Json::Number(FILE_VERSION)));
+    fields.push(("type", Json::Text("expression".into())));
+    let path = dir.join(format!("{name}.json"));
+    write(&path, &object(fields)).map(|()| path)
+}
+
+/// `LoadExpression`.
+pub fn load_expression(dir: &Path, name: &str) -> Result<FaceState, String> {
+    read(&dir.join(format!("{name}.json"))).map(|json| face(&json))
+}
+
+/// `ListSamExpressions`: the YAML files under `Data\SAM\FaceMorphs`, by relative stem.
+#[must_use]
+pub fn list_sam_expressions(dir: &Path) -> Vec<String> {
+    fn walk(dir: &Path, base: &Path, out: &mut Vec<String>) {
+        let Ok(entries) = std::fs::read_dir(dir) else { return };
+        for entry in entries.flatten() {
+            let path = entry.path();
+            if path.is_dir() {
+                walk(&path, base, out);
+            } else if path.extension().is_some_and(|e| e.eq_ignore_ascii_case("yaml") || e.eq_ignore_ascii_case("yml"))
+                && let Ok(relative) = path.with_extension("").strip_prefix(base)
+            {
+                out.push(relative.to_string_lossy().replace('\\', "/"));
+            }
+        }
+    }
+    let mut files = Vec::new();
+    walk(dir, dir, &mut files);
+    files.sort();
+    files
+}
+
+/// `LoadSamExpression`: a `FaceMorphs` file by its relative stem, `.yaml` or `.yml`.
+pub fn load_sam_expression(dir: &Path, relative: &str, names: &FaceNames, previous: &FaceState) -> Result<FaceState, String> {
+    let text = ["yaml", "yml"].iter().find_map(|ext| std::fs::read_to_string(dir.join(format!("{relative}.{ext}"))).ok()).ok_or_else(|| format!("SAM expression not found: {relative}"))?;
+    Ok(parse_sam_expression(&text, names, previous))
 }
 
 /// `SaveAdjustment`: one layer's deltas as `<dir>\<name>.json`.
@@ -490,6 +571,7 @@ pub struct SceneActor {
     pub frozen: bool,
     pub collision_off: bool,
     pub hidden_gear: u32,
+    pub face: Option<FaceState>,
     pub layers: Vec<Adjustment>,
 }
 
@@ -505,14 +587,18 @@ pub struct Scene {
 }
 
 fn scene_actor_json(actor: &SceneActor) -> Json {
-    object(vec![
+    let mut fields = vec![
         ("actor", Json::Text(actor.key.clone())),
         ("name", Json::Text(actor.name.clone())),
         ("frozen", Json::Bool(actor.frozen)),
         ("collisionOff", Json::Bool(actor.collision_off)),
         ("hiddenGear", Json::Number(f64::from(actor.hidden_gear))),
-        ("layers", Json::Array(actor.layers.iter().map(layer_json).collect())),
-    ])
+    ];
+    if let Some(f) = &actor.face {
+        fields.push(("face", object(face_json(f))));
+    }
+    fields.push(("layers", Json::Array(actor.layers.iter().map(layer_json).collect())));
+    object(fields)
 }
 
 #[allow(clippy::cast_possible_truncation, clippy::cast_sign_loss)]
@@ -529,7 +615,8 @@ fn scene_actor(json: &Json) -> Option<SceneActor> {
         Some(Json::Number(v)) => *v as u32,
         _ => 0,
     };
-    Some(SceneActor { key, name: text_or(json, "name", ""), frozen: bool_or(json, "frozen", false), collision_off: bool_or(json, "collisionOff", false), hidden_gear, layers })
+    let face = json.get("face").filter(|f| matches!(f, Json::Object(_))).map(face);
+    Some(SceneActor { key, name: text_or(json, "name", ""), frozen: bool_or(json, "frozen", false), collision_off: bool_or(json, "collisionOff", false), hidden_gear, face, layers })
 }
 
 pub fn save_scene(dir: &Path, scene: &Scene, name: &str) -> Result<PathBuf, String> {
@@ -571,9 +658,7 @@ pub fn load_scene(dir: &Path, name: &str, notes: &mut Vec<String>) -> Result<Sce
     if matches!(json.get("lights"), Some(Json::Array(a)) if !a.is_empty()) {
         notes.push(format!("{name}: the scene's lights are not restored here"));
     }
-    if json.get("actors").is_some_and(|a| members_of(a).iter().any(|e| e.get("face").is_some())) {
-        notes.push(format!("{name}: the scene's faces are not restored here"));
-    }
+
     Ok(scene)
 }
 
@@ -654,7 +739,8 @@ mod tests {
         save_camera_bookmarks(&dir, &shots).unwrap();
         assert_eq!(load_camera_bookmarks(&dir), shots);
         let layer = Adjustment { name: "Lean".into(), file: "lean".into(), enabled: false, is_pose: true, persistent: false, include_in_pose: false, bones: BTreeMap::from([("NPC Head [Head]".to_owned(), BoneDelta { rotation: [5.0, 0.0, -10.0], ..BoneDelta::default() })]) };
-        let lydia = SceneActor { key: "Skyrim.esm|000A2C94".into(), name: "Lydia".into(), frozen: true, collision_off: true, hidden_gear: 0b10_0001, layers: vec![layer] };
+        let smile = FaceState { expression: 10, expression_value: 0.75, eyes_override: true, eyes_heading: -0.25, persistent: true, tongue: [("PA Tongue".to_owned(), BoneDelta { position: [0.0, 0.5, 0.0], ..BoneDelta::default() })].into(), ..FaceState::default() };
+        let lydia = SceneActor { key: "Skyrim.esm|000A2C94".into(), name: "Lydia".into(), frozen: true, collision_off: true, hidden_gear: 0b10_0001, face: Some(smile), layers: vec![layer] };
         let scene = Scene { camera: CameraBookmark { name: String::new(), ..shots[0].clone() }, hour: Some(18.5), weather: Some("Skyrim.esm|0000081A".into()), sun: Some(SceneSun { azimuth: 135.0, elevation: 20.0 }), actors: vec![lydia] };
         save_scene(&dir, &scene, "Dusk").unwrap();
         let mut notes = Vec::new();
@@ -663,12 +749,27 @@ mod tests {
         std::fs::write(dir.join("Ic.json"), r#"{"type": "scene", "camera": {"fov": 40}, "hour": 6.5, "actors": [{"actor": "Skyrim.esm|00000007", "face": {}}, {"name": "no key"}], "lights": [{}]}"#).unwrap();
         let ic = load_scene(&dir, "Ic", &mut notes).unwrap();
         assert!((ic.camera.fov - 40.0).abs() < f32::EPSILON && ic.sun.is_none() && ic.hour == Some(6.5) && ic.weather.is_none());
-        assert_eq!(notes, ["Ic: the scene's lights are not restored here", "Ic: the scene's faces are not restored here"]);
-        assert_eq!(ic.actors, [SceneActor { key: "Skyrim.esm|00000007".into(), ..SceneActor::default() }], "an actor without a key is skipped");
+        assert_eq!(notes, ["Ic: the scene's lights are not restored here"]);
+        assert_eq!(ic.actors, [SceneActor { key: "Skyrim.esm|00000007".into(), face: Some(FaceState::default()), ..SceneActor::default() }], "an actor without a key is skipped");
         assert_eq!(parse_form_key("Skyrim.esm|0000081A"), Some(("Skyrim.esm", 0x81a)));
         assert_eq!(parse_form_key("Skyrim.esm"), None);
         std::fs::write(dir.join("Pose.json"), r#"{"type": "pose"}"#).unwrap();
         assert!(load_scene(&dir, "Pose", &mut notes).is_err());
+        let _ = std::fs::remove_dir_all(&dir);
+    }
+
+    #[test]
+    fn expressions_round_trip_and_sam_face_morphs_are_found() {
+        let dir = temp("face");
+        let face = FaceState { expression: 2, expression_value: 0.5, modifiers: [0.25; 14], suppress_blink: false, ..FaceState::default() };
+        save_expression(&dir, &face, "Grin").unwrap();
+        assert_eq!(load_expression(&dir, "Grin").unwrap(), face);
+        std::fs::create_dir_all(dir.join("Pack")).unwrap();
+        std::fs::write(dir.join("Pack/smile.YML"), "phoneme:\n  Aah: 50\n").unwrap();
+        std::fs::write(dir.join("frown.yaml"), "").unwrap();
+        assert_eq!(list_sam_expressions(&dir), ["Pack/smile", "frown"]);
+        let loaded = load_sam_expression(&dir, "Pack/smile", &crate::camera::studio::face::tests::names(), &face).unwrap();
+        assert!((loaded.phonemes[0] - 0.5).abs() < f32::EPSILON && loaded.expression == 7);
         let _ = std::fs::remove_dir_all(&dir);
     }
 
