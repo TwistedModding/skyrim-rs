@@ -127,9 +127,13 @@ pub fn object_by_name(root: &NiAVObject, name: &str) -> Option<&'static NiAVObje
     root.get_object_by_name(BSFixedString::new(name).raw())
 }
 
+pub fn player_graph_manager(player: &PlayerCharacter) -> Option<&sre::BSAnimationGraphManager> {
+    player.current_process().and_then(|p| p.middle_high()).and_then(|m| m.animation_graph_manager())
+}
+
 /// The player's animation graphs: the third-person project first, the first-person arms second.
 pub fn player_graphs(player: &PlayerCharacter) -> &[Option<&sre::BShkbAnimationGraph>] {
-    player.current_process().and_then(|p| p.middle_high()).and_then(|m| m.animation_graph_manager()).map_or(&[], |m| m.graphs())
+    player_graph_manager(player).map_or(&[], |m| m.graphs())
 }
 
 pub fn graph_bool(reference: &TESObjectREFR, name: &str) -> bool {

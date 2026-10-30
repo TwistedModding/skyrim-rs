@@ -441,20 +441,26 @@ fn to_parent_local(parent: &NiAVObject, delta: [f32; 3]) -> [f32; 3] {
 /// foot IK driver disabled and the engine drives only the active graph's, so the anchored body
 /// would never plant its feet. Drive it from the behaviour graph's own `bHumanoidFootIKDisable`,
 /// which riding and swimming still raise. Whether foot IK is live.
+///
+/// The engine disables the driver again on every POV switch and graph re-attach, so the driver's
+/// state is compared every frame and written only when it differs: enabling is a byte store,
+/// disabling frees the legs' state and goes through the manager's lock.
 fn update_foot_ik(profile: &Profile) -> bool {
     if !profile.General.bEnableBody || !util::is_engine_first_person() {
         return false;
     }
-    let Some(player) = util::player() else { return false };
-    let graphs = util::player_graphs(player);
+    let Some(manager) = util::player().and_then(util::player_graph_manager) else { return false };
+    let graphs = manager.graphs();
     if graphs.len() < 2 {
         return false;
     }
-    let Some(graph) = graphs[0] else { return false };
-    let Some(driver) = (unsafe { graph.character.footIkDriver.as_ref() }) else { return false };
+    let Some(graph) = graphs[0].filter(|g| g.doFootIK != 0) else { return false };
+    let Some(driver_disabled) = graph.foot_ik_disabled() else { return false };
     let mut disabled = false;
     unsafe { graph.get_graph_variable_bool(BSFixedString::new("bHumanoidFootIKDisable").raw(), &raw mut disabled) };
-    driver.set_disabled(disabled);
+    if disabled != driver_disabled {
+        manager.set_foot_ik_disabled(disabled);
+    }
     !disabled
 }
 
@@ -464,10 +470,10 @@ pub fn release_foot_ik() {
     if !with(|m| core::mem::take(&mut m.foot_ik_active)) {
         return;
     }
-    if let Some(graph) = util::player().and_then(|p| util::player_graphs(p).first().copied().flatten())
-        && let Some(driver) = unsafe { graph.character.footIkDriver.as_ref() }
+    if let Some(manager) = util::player().and_then(util::player_graph_manager)
+        && manager.graphs().first().copied().flatten().and_then(BShkbAnimationGraphExt::foot_ik_disabled) == Some(false)
     {
-        driver.set_disabled(true);
+        manager.set_foot_ik_disabled(true);
     }
 }
 
