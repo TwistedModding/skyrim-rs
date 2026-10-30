@@ -1,10 +1,12 @@
 //! Ray picks against the Havok world (RE `camera.md` request IC5 A): a `bhkPickData` filled as the
 //! engine fills its own, cast by `TESObjectCELL::Pick` (`bhkWorld::PickObject` on the cell's world,
 //! which takes the world's read lock itself), and the hit's position, normal, fraction, collision
-//! layer and reference.
+//! layer and reference; the character controller's collision shapes are in [`controller`].
 //!
 //! Pick on the main thread (or on a job the engine runs Havok work on): `PickObject` reads Havok
 //! thread-local state a thread the engine did not set up does not have.
+
+pub mod controller;
 
 use sre::raw::{fns, globals};
 use sre::{CollisionLayer, PlayerCharacter, TESObjectCELL, bhkPickData};
