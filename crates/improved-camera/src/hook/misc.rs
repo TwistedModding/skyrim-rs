@@ -2,18 +2,21 @@
 //! `PlayerCharacter::UpdateNodesAfterRender` (+0x94; the first-person update follows at +0xd7);
 //! the movement controller's third-person test, so first person with head bob buffers its input
 //! as third person does; the events sent into the player's graph and the tags it sends, for
-//! `Is_Animation_Playing`; the photo mode's sun override after `Sky::Update`; and the Papyrus
+//! `Is_Animation_Playing`; the player's turn-in-place actions, held back while the free look's
+//! twist runs or `bDisableTurnAnimation` is on; the photo mode's sun override after `Sky::Update`;
+//! and the Papyrus
 //! `Game.ForceFirstPerson` and `Game.ForceThirdPerson`, rebound to tell the camera manager.
 
 use framework::Host;
 use framework::hooks::ops::{Call, Raw, Sky__Update};
-use framework::hooks::{Error, Location, Options};
+use framework::hooks::{Error, Location, Options, Register};
 use skyrim::papyrus::VirtualMachine;
 use skyrim::BSFixedString;
 use sre::{BSEventNotifyControl, NiAVObject, TESObjectREFR};
 use sre::raw::fns;
 
 use super::IsThirdPerson;
+use crate::body::free_look;
 use crate::body::manager::update_animation_third_person;
 use crate::camera::manager;
 use crate::settings;
@@ -27,6 +30,14 @@ const UPDATE_THIRD_PERSON_CALL: usize = 0x94;
 const MOVEMENT_VIEW_CALL: usize = 0x303;
 
 type UpdateNode = unsafe extern "C" fn(usize, usize) -> usize;
+
+/// `ActorTurnDeltaChannel::Compute` +0xcf (0x7c6caf), the only call that queues the turn actions
+/// 99 'Action Turn Right', 100 'Action Turn Left' and 101 'Action Turn Stop', as
+/// `AIProcess::QueuePostChannelAction(process, &index)`; rbx holds the actor (RE `camera.md` IC7 E).
+const TURN_ACTION_CALL: usize = 0xcf;
+const TURN_ACTIONS: core::ops::RangeInclusive<u32> = 99..=101;
+
+type QueueAction = unsafe extern "C" fn(usize, usize, usize) -> usize;
 
 /// `IAnimationGraphManagerHolder::NotifyAnimationGraph(holder, const BSFixedString& event) -> bool`,
 /// where `AIProcess::PlayIdle` sends an idle's event into the graph (RE `camera.md` IC6 C).
@@ -52,6 +63,14 @@ pub fn install(host: &'static Host) -> Result<(), Error> {
             util::on_player_graph_event(BSFixedString::view(event).as_bytes());
         }
     })?;
+    hooks.replace(Call::<QueueAction>::at(Location::id(fns::ActorTurnDeltaChannel__Compute, TURN_ACTION_CALL)).passing(Register::Rbx), Options::new(host.name()), |args, original| {
+        let index = unsafe { (args.1 as *const u32).as_ref() }.copied();
+        let player = util::player().is_some_and(|p| core::ptr::from_ref::<sre::PlayerCharacter>(p) as usize == args.2);
+        if player && index.is_some_and(|i| skips_turn_action(i, settings::profile().Body.bDisableTurnAnimation, free_look::with(|f| f.driving))) {
+            return 0;
+        }
+        unsafe { original.call(args) }
+    })?;
     hooks.after(Sky__Update, Options::new(host.name()), |args, (), _| {
         if let Some(sky) = unsafe { args.0.as_ref() } {
             crate::camera::studio::environment::apply_sun(sky);
@@ -65,6 +84,13 @@ pub fn install(host: &'static Host) -> Result<(), Error> {
     });
     host.on_papyrus(register_natives);
     Ok(())
+}
+
+/// `PlayerNotifyAnimationGraph`'s filter, moved to where the engine queues the turn: the player's
+/// turn actions are dropped while the twist holds the body or the option is on. The `TurnDelta`
+/// graph value keeps flowing, and the free look's own turn events go straight into the graph.
+fn skips_turn_action(index: u32, disable_turn_animation: bool, twist: bool) -> bool {
+    TURN_ACTIONS.contains(&index) && (disable_turn_animation || twist)
 }
 
 /// `SmoothAnimationTransitions`: first person with the body and head bob (with a weapon drawn,
@@ -108,4 +134,21 @@ fn force_third_person() {
     }
     crate::log("ForceThirdPerson called.");
     manager::force_third_person();
+}
+
+#[cfg(test)]
+mod tests {
+    use super::skips_turn_action;
+
+    #[test]
+    fn only_the_three_turn_actions_are_held_back_and_only_when_asked() {
+        for index in 99..=101 {
+            assert!(skips_turn_action(index, true, false));
+            assert!(skips_turn_action(index, false, true));
+            assert!(!skips_turn_action(index, false, false));
+        }
+        for index in [97, 98, 102, 105] {
+            assert!(!skips_turn_action(index, true, true));
+        }
+    }
 }
