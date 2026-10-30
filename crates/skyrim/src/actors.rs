@@ -3,7 +3,7 @@
 //! `TESFullName` and `ActorValueList` methods leave `unsafe`: the handle out-parameter, the
 //! inventory list, the base container's entries, the full name as `&CStr`, the actor value table
 //! as a slice and a lookup by name; the mount a rider sits on, the motion mode, a graph pause, the
-//! display name and the process lists' high actor handles.
+//! display name, the biped's objects and the process lists' high actor handles.
 //!
 //! Read and write on the game's main thread, as with forms.
 
@@ -14,7 +14,7 @@ use std::ffi::CString;
 use std::fmt;
 
 use sre::raw::{fns, globals};
-use sre::{AIProcess, Actor, ActorValue, ActorValueInfo, ActorValueList, ContainerEntry, InventoryChanges, InventoryEntry, MotionDriveMode, NiAVObject, NiPoint3, PlayerCharacter, TESContainer, TESForm_formFlags, TESFullName, TESObjectCELL, TESObjectREFR};
+use sre::{AIProcess, Actor, ActorValue, BipedAnim, BipedObject, ActorValueInfo, ActorValueList, ContainerEntry, InventoryChanges, InventoryEntry, MotionDriveMode, NiAVObject, NiPoint3, PlayerCharacter, TESContainer, TESForm_formFlags, TESFullName, TESObjectCELL, TESObjectREFR};
 
 use crate::ptr_slice;
 
@@ -118,6 +118,10 @@ pub trait ActorExt {
     /// again with one forced update. The engine re-enables them, so a pause is re-asserted every
     /// frame. Main thread.
     fn set_graph_paused(&self, paused: bool);
+    /// The third-person biped's 42 objects (`Character`+0x268, `BipedAnim`+0x10; RE `camera.md`
+    /// IC8 I): 0-31 the armor slot mask bits (0 head, 1 hair), 32-40 the right hand's weapon by
+    /// type, 41 ammo. Empty without a biped. Main thread.
+    fn biped_objects(&self) -> &[BipedObject];
 }
 
 /// `boolFlags2` bit 8: the animation graph updates.
@@ -154,6 +158,16 @@ impl ActorExt for Actor {
 
     fn set_graph_paused(&self, paused: bool) {
         crate::store(&self.boolFlags2, graph_flags(self.boolFlags2, paused));
+    }
+
+    fn biped_objects(&self) -> &[BipedObject] {
+        const COUNT: usize = 42;
+        const _: () = assert!(size_of::<BipedObject>() * COUNT == 0x13b0);
+        let biped = self.field_268 as *const BipedAnim;
+        match unsafe { biped.as_ref() } {
+            Some(b) => unsafe { core::slice::from_raw_parts((core::ptr::from_ref(b) as usize + core::mem::offset_of!(BipedAnim, objects)) as *const BipedObject, COUNT) },
+            None => &[],
+        }
     }
 }
 
