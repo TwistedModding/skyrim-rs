@@ -66,7 +66,7 @@ const ENABLED_CONTROLS_LOAD: usize = 0x3cc;
 const ENABLED_CONTROLS: [u8; 6] = [0x8B, 0x80, 0x20, 0x01, 0x00, 0x00];
 const ANY_POV_SWITCH: [u8; 9] = [0x8B, 0x80, 0x20, 0x01, 0x00, 0x00, 0x80, 0xE1, 0xDF];
 
-/// `ShaderReferenceEffect::vfunc_40` (its update): +0xe1 calls `vfunc_40_sub4` `bool (effect)` and
+/// `ShaderReferenceEffect::Update`: +0xe1 calls `vfunc_40_sub4` `bool (effect)` and
 /// +0x1f5 its slot 59 `UpdatePosition`, both choosing the root the effect goes on by the player's
 /// third-person flag; rbx holds the effect's target reference at both (RE `camera.md` section 12).
 const EFFECT_SHADER_CALLS: [usize; 2] = [0xe1, 0x1f5];
@@ -117,7 +117,7 @@ pub fn install(host: &'static Host) -> Result<(), Error> {
     hooks.before(Call::<CrosshairPick>::at(Location::id(fns::PlayerCharacter__UpdateCrosshairPick, CROSSHAIR_PICK_CALL)), Options::new(host.name()), |args| crosshair_pick(args.2))?;
     unsafe { hooks.patch_cave(host.name(), Location::id(fns::ControlMap__MapInputEvents, ENABLED_CONTROLS_LOAD), &ENABLED_CONTROLS, &ANY_POV_SWITCH) }?;
     for offset in EFFECT_SHADER_CALLS {
-        hooks.around(Call::<EffectUpdate>::at(Location::id(fns::ShaderReferenceEffect__vfunc_40, offset)).passing(Register::Rbx), Options::new(host.name()), shader_reference_effect)?;
+        hooks.around(Call::<EffectUpdate>::at(Location::id(fns::ShaderReferenceEffect__Update, offset)).passing(Register::Rbx), Options::new(host.name()), shader_reference_effect)?;
     }
     hooks.replace(Call::<Reference3D>::at(Location::id(fns::TESObjectCELL__AttachReference3D, CELL_ATTACH_3D_CALL)), Options::new(host.name()), |args, original| {
         third_person_3d(args.0).unwrap_or_else(|| unsafe { original.call(args) })
