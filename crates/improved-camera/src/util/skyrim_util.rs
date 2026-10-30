@@ -1,6 +1,6 @@
 //! `util/SkyrimUtil.h`: the engine queries IC repeats across its modules.
 
-use std::sync::atomic::{AtomicU16, Ordering};
+use std::sync::atomic::{AtomicU8, AtomicU16, Ordering};
 
 use skyrim::BSFixedString;
 use skyrim::actors::{RefHandle, RefPtr};
@@ -328,6 +328,60 @@ pub fn is_sitting(actor: &Actor) -> bool {
     matches!(S::from_u32(sit_sleep_state(actor)), Some(S::Sitting | S::Sleeping))
 }
 
+/// The idles `DrawArms` asks `Is_Animation_Playing` about. There is no engine query, so they are
+/// followed through the player's graph (RE `camera.md` IC6 C): an idle starts when its event is
+/// sent into the graph and ends at the graph's `IdleStop` or `tailMTIdle` tag. IC's `DrinkPotion`
+/// is the idle `IdleDrinkPotion`, whose event has that name.
+#[repr(u8)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Idle {
+    None = 0,
+    ReadElderScroll,
+    DrinkPotion,
+}
+
+impl Idle {
+    const fn from_u8(value: u8) -> Self {
+        match value {
+            1 => Self::ReadElderScroll,
+            2 => Self::DrinkPotion,
+            _ => Self::None,
+        }
+    }
+
+    /// The idle playing once the graph has sent or received `event` (the pool folds case).
+    #[must_use]
+    pub fn next(self, event: &[u8]) -> Self {
+        let is = |name: &str| event.eq_ignore_ascii_case(name.as_bytes());
+        if is("IdleReadElderScroll") {
+            Self::ReadElderScroll
+        } else if is("IdleDrinkPotion") {
+            Self::DrinkPotion
+        } else if is("IdleStop") || is("tailMTIdle") {
+            Self::None
+        } else {
+            self
+        }
+    }
+}
+
+static IDLE: AtomicU8 = AtomicU8::new(Idle::None as u8);
+
+/// Follows an event sent into the player's graph or a tag it sent, on whichever thread did.
+pub fn on_player_graph_event(event: &[u8]) {
+    let _ = IDLE.try_update(Ordering::Relaxed, Ordering::Relaxed, |v| Some(Idle::from_u8(v).next(event) as u8));
+}
+
+/// Forgets the idle, for a load that rebuilds the graph without its end tag.
+pub fn clear_idle() {
+    IDLE.store(Idle::None as u8, Ordering::Relaxed);
+}
+
+/// `Is_Animation_Playing`.
+pub fn is_animation_playing(idle: Idle) -> bool {
+    Idle::from_u8(IDLE.load(Ordering::Relaxed)) == idle
+}
+
 /// `povScriptMode`: a script disabled the POV switch (`PlayerControls::bDisablePOVChange[0]`,
 /// RE `camera.md` IC3 D); only read.
 pub fn pov_script_lock() -> bool {
@@ -488,7 +542,25 @@ pub fn show_crosshair(show: bool) {
 mod tests {
     use sre::CollisionLayer as L;
 
-    use super::{is_solid_hit, look_rotation};
+    use super::{Idle, is_solid_hit, look_rotation};
+
+    fn after(events: &[&str]) -> Idle {
+        events.iter().fold(Idle::None, |idle, e| idle.next(e.as_bytes()))
+    }
+
+    #[test]
+    fn idles_follow_the_graph_as_run_ic6_recorded_them() {
+        let potion = ["IdleDrinkPotion", "IdleOffsetStop", "AnimObjLoad", "AnimObjDraw"];
+        assert_eq!(after(&potion), Idle::DrinkPotion);
+        assert_eq!(after(&[&potion[..], &["IdleStop"]].concat()), Idle::None);
+        let scroll = ["IdleReadElderScroll", "AnimObjectUnequip", "IdleOffsetStop"];
+        assert_eq!(after(&scroll), Idle::ReadElderScroll);
+        assert_eq!(after(&[&scroll[..], &["IdleStop", "AnimObjectUnequip", "MTState", "tailMTState", "HeadTrackingOn", "tailMTIdle"]].concat()), Idle::None);
+        assert_eq!(after(&["IdleReadElderScroll", "tailmtidle"]), Idle::None, "the pool folds case");
+        assert_eq!(after(&["idledrinkpotion"]), Idle::DrinkPotion);
+        assert_eq!(after(&["IdleReadElderScroll", "IdleDrinkPotion"]), Idle::DrinkPotion, "the later idle");
+        assert_eq!(after(&["FootLeft", "IdleStop", "AnimObjDraw", "DrinkPotion"]), Idle::None, "no idle without its event");
+    }
 
     #[test]
     fn bodies_block_only_when_asked_and_triggers_never() {

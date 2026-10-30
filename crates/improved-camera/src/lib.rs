@@ -120,7 +120,10 @@ fn load(host: &'static Host) -> bool {
     }
     host.on_message(|msg| match msg.kind {
         skse::MessagingInterface::DATA_LOADED => plugin::detect_mods(),
-        skse::MessagingInterface::POST_LOAD_GAME => hook::fixes::apply_body_visibility(),
+        skse::MessagingInterface::POST_LOAD_GAME => {
+            util::skyrim_util::clear_idle();
+            hook::fixes::apply_body_visibility();
+        }
         _ => {}
     });
     host.on_plugin_message(api::fsmp::SENDER, api::fsmp::handle_message);

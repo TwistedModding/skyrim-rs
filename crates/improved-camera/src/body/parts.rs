@@ -15,7 +15,7 @@ use super::state::race::RaceType;
 use crate::camera::snapshot as camera_snapshot;
 use crate::camera::state::CameraType;
 use crate::settings::{General, Profile};
-use crate::util::skyrim_util::{self as util, FAKE_FIRST_PERSON_ZOOM};
+use crate::util::skyrim_util::{self as util, FAKE_FIRST_PERSON_ZOOM, Idle};
 
 /// Scale of a part hidden by shrinking.
 pub const SHRUNK: f32 = 0.001;
@@ -326,6 +326,9 @@ pub fn draw_arms(general: &General, body: &snapshot::Data, engine_state: Option<
     let arms_drawn = body.hands > HandsType::None;
     let aiming = body.hands == HandsType::Aim;
     if body.interaction > InteractionType::None || body.action == ActionType::Parkour {
+        return -1;
+    }
+    if util::is_animation_playing(Idle::ReadElderScroll) || util::is_animation_playing(Idle::DrinkPotion) {
         return -1;
     }
     if !general.bEnableFirstPersonArms {
