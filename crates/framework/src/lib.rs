@@ -363,8 +363,8 @@ impl Host {
 
     /// The frame the game drew, as it will be presented without the overlay's windows and HUD
     /// painters: call it from an [`on_frame`](Self::on_frame) callback, which runs at the present
-    /// before the overlay draws. The pixels are RGBA rows; a back buffer that is not 8-bit RGBA or
-    /// BGRA, or is multisampled, is refused with its format named. A mod hides the game's own HUD
+    /// before the overlay draws. The pixels are RGBA rows; a back buffer that is not the game's
+    /// `R8G8B8A8_UNORM`, or is multisampled, is refused with its format named. A mod hides the game's own HUD
     /// a couple of frames before (the UI's `menusVisible` byte, which Scaleform acts on at its next
     /// render) when the shot should not show it.
     ///

@@ -10,7 +10,7 @@ use std::sync::Mutex;
 use sre::raw::globals;
 use windows::Win32::Foundation::GENERIC_WRITE;
 use windows::Win32::Graphics::Direct3D11::{D3D11_CPU_ACCESS_READ, D3D11_MAP_READ, D3D11_MAPPED_SUBRESOURCE, D3D11_RENDER_TARGET_VIEW_DESC, D3D11_TEXTURE2D_DESC, D3D11_USAGE_STAGING, ID3D11Device, ID3D11DeviceContext, ID3D11RenderTargetView, ID3D11Texture2D};
-use windows::Win32::Graphics::Dxgi::Common::{DXGI_FORMAT, DXGI_FORMAT_B8G8R8A8_UNORM, DXGI_FORMAT_B8G8R8A8_UNORM_SRGB, DXGI_FORMAT_B8G8R8X8_UNORM, DXGI_FORMAT_B8G8R8X8_UNORM_SRGB, DXGI_FORMAT_R8G8B8A8_UNORM, DXGI_FORMAT_R8G8B8A8_UNORM_SRGB, DXGI_FORMAT_UNKNOWN};
+use windows::Win32::Graphics::Dxgi::Common::{DXGI_FORMAT_R8G8B8A8_UNORM, DXGI_FORMAT_UNKNOWN};
 use windows::Win32::Graphics::Imaging::{CLSID_WICImagingFactory, GUID_ContainerFormatPng, GUID_WICPixelFormat24bppBGR, GUID_WICPixelFormat32bppRGBA, IWICImagingFactory, WICBitmapDitherTypeNone, WICBitmapEncoderNoCache, WICBitmapPaletteTypeCustom};
 use windows::Win32::System::Com::{CLSCTX_INPROC_SERVER, COINIT_APARTMENTTHREADED, CoCreateInstance, CoInitializeEx};
 use windows::core::{HSTRING, Interface};
@@ -96,7 +96,9 @@ impl Frame {
 }
 
 /// Copies the back buffer through a staging texture. Call on the thread that presents, after the
-/// overlay drew (from a detour on `PresentFrame`'s entry, or through [`save_next_frame`]).
+/// overlay drew (from a detour on `PresentFrame`'s entry, or through [`save_next_frame`]). The
+/// game creates its swap chain as `R8G8B8A8_UNORM` and keeps it on a resize (RE `camera.md` IC8 N),
+/// so any other format means something replaced the swap chain and is refused.
 pub fn read_back() -> Result<Frame, String> {
     let e = |e: windows::core::Error| e.to_string();
     let rtv = sre::g_current_render_window().map(|w| w.backBufferRTV).filter(|p| !p.is_null()).ok_or("no back buffer")?;
@@ -112,7 +114,9 @@ pub fn read_back() -> Result<Frame, String> {
     let mut view = D3D11_RENDER_TARGET_VIEW_DESC::default();
     unsafe { rtv.GetDesc(&raw mut view) };
     let format = if view.Format == DXGI_FORMAT_UNKNOWN { desc.Format } else { view.Format };
-    let order = channel_order(format).ok_or_else(|| format!("the back buffer's format {} is not 8-bit RGBA or BGRA", format.0))?;
+    if format != DXGI_FORMAT_R8G8B8A8_UNORM {
+        return Err(format!("the back buffer's format {} is not R8G8B8A8_UNORM", format.0));
+    }
     if desc.SampleDesc.Count > 1 {
         return Err(format!("the back buffer is multisampled ({}x)", desc.SampleDesc.Count));
     }
@@ -130,27 +134,7 @@ pub fn read_back() -> Result<Frame, String> {
         rgba.extend_from_slice(&rows[y * pitch..y * pitch + width * 4]);
     }
     unsafe { context.Unmap(&staging, 0) };
-    if order == Order::Bgra {
-        for px in rgba.as_chunks_mut::<4>().0 {
-            px.swap(0, 2);
-        }
-    }
     Ok(Frame { width, height, rgba })
-}
-
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-enum Order {
-    Rgba,
-    Bgra,
-}
-
-/// How a back buffer format orders its four 8-bit channels; `None` for any other format.
-fn channel_order(format: DXGI_FORMAT) -> Option<Order> {
-    match format {
-        DXGI_FORMAT_R8G8B8A8_UNORM | DXGI_FORMAT_R8G8B8A8_UNORM_SRGB => Some(Order::Rgba),
-        DXGI_FORMAT_B8G8R8A8_UNORM | DXGI_FORMAT_B8G8R8A8_UNORM_SRGB | DXGI_FORMAT_B8G8R8X8_UNORM | DXGI_FORMAT_B8G8R8X8_UNORM_SRGB => Some(Order::Bgra),
-        _ => None,
-    }
 }
 
 /// The WIC factory; a thread without COM gets an apartment first.
@@ -176,23 +160,14 @@ pub(crate) fn after_draw() {
 #[cfg(test)]
 mod tests {
     use windows::Win32::Foundation::GENERIC_READ;
-    use windows::Win32::Graphics::Dxgi::Common::{DXGI_FORMAT_B8G8R8A8_UNORM_SRGB, DXGI_FORMAT_R10G10B10A2_UNORM, DXGI_FORMAT_R16G16B16A16_FLOAT, DXGI_FORMAT_R8G8B8A8_UNORM};
     use windows::Win32::Graphics::Imaging::{GUID_WICPixelFormat32bppRGBA, WICBitmapDitherTypeNone, WICBitmapPaletteTypeCustom, WICDecodeMetadataCacheOnDemand};
     use windows::core::HSTRING;
 
-    use super::{Frame, Order, channel_order, wic};
+    use super::{Frame, wic};
 
     fn frame() -> Frame {
         let rgba = [[255, 0, 0, 255], [0, 255, 0, 255], [0, 0, 255, 255], [10, 20, 30, 0], [1, 2, 3, 255], [200, 100, 50, 255]].concat();
         Frame { width: 3, height: 2, rgba }
-    }
-
-    #[test]
-    fn only_8_bit_rgba_and_bgra_are_read() {
-        assert_eq!(channel_order(DXGI_FORMAT_R8G8B8A8_UNORM), Some(Order::Rgba));
-        assert_eq!(channel_order(DXGI_FORMAT_B8G8R8A8_UNORM_SRGB), Some(Order::Bgra));
-        assert_eq!(channel_order(DXGI_FORMAT_R10G10B10A2_UNORM), None);
-        assert_eq!(channel_order(DXGI_FORMAT_R16G16B16A16_FLOAT), None);
     }
 
     #[test]
