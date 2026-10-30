@@ -482,6 +482,7 @@ impl Manager {
     fn update(&mut self, player: &PlayerCharacter, profile: &Profile, info: &ModInfo, mode: CameraMode) -> [f32; 3] {
         self.update_states(player, profile, info);
         let head = matches!(mode, CameraMode::Head | CameraMode::Third);
+        super::bumper::update(player, head || !util::is_engine_first_person(), &profile.Advanced);
         if profile.General.bEnableBody && !head { self.final_offset } else { [0.0; 3] }
     }
 

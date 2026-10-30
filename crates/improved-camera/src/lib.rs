@@ -311,13 +311,14 @@ fn studio_frame() {
 }
 
 /// Puts the body back as the engine keeps it: full scales, the third-person root hidden in first
-/// person and its foot IK parked; the engine's world FOV, FOV offset and near plane; and FSMP
+/// person, its foot IK parked and its original controller shape; the engine's world FOV, FOV offset and near plane; and FSMP
 /// simulating the player as usual.
 fn unload() {
     camera::studio::manager::release();
     camera::manager::release();
     body::free_look::release();
     body::manager::release_foot_ik();
+    body::bumper::release();
     api::fsmp::set_player_body_camera_driven(false);
     camera::manager::reset_fov();
     camera::manager::reset_near();
