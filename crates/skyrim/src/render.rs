@@ -14,7 +14,7 @@
 //! the viewport are the byte layouts `render.json` gives for its `undefined` fields.
 
 use core::ffi::{CStr, c_void};
-use core::sync::atomic::{AtomicU32, Ordering};
+use core::sync::atomic::{AtomicU32, AtomicUsize, Ordering};
 
 use sre::raw::{fns, vtables};
 use sre::{BGSArtObject, BSCullingProcess, Calendar, ModelReferenceEffect, ReferenceEffect, ShaderReferenceEffect, Sky, TESObjectREFR, TESWeather, BSEffectShaderData, BSFadeNode, BSFlattenedBoneTree, BSGeometry, BSLight, BSLightingShaderMaterialBase, BSShaderMaterial, BSShaderProperty, BSShaderTextureSet, BSShadowLight, BSTextureSet, CameraMatrixEntry, NiAVObject, NiCamera, NiNode, NiPointLight, NiSkinInstance, TESFullName, TESObjectLIGH, NiTransform, ShaderMaterialType, ShadowMapData, ShadowSceneNode, TESEffectShader, TextureSetSlot};
@@ -162,6 +162,90 @@ pub fn set_near_plane(near: f32) {
     let fov = sre::PlayerCamera::singleton().map_or(0.0, |c| c.worldFOV) + crate::camera::fov_offset();
     if let Some(graph) = sre::g_scene_graph() {
         graph.set_field_of_view(fov, true, None, true);
+    }
+}
+
+/// `VolumetricLightingParams` (`g_VolumetricLighting`, `graphics.md` "Request IC10"): the range
+/// factor, the repartition function pair `float (float x, float range)` the tables are filled
+/// through, and the two 4096-texel tables.
+const VOLUMETRIC_RANGE: usize = 0x2c;
+const VOLUMETRIC_FUNCTIONS: [usize; 2] = [0x40, 0x48];
+const VOLUMETRIC_TABLES: [usize; 2] = [0x78, 0x80];
+/// The tables' half texel and last texel centre.
+const HALF_TEXEL: f32 = 1.0 / 8192.0;
+const LAST_TEXEL: f32 = 4095.0 / 4096.0;
+
+/// `reference / near` as bits, 0 while the engine's functions are in place.
+static VOLUMETRIC_SCALE: AtomicU32 = AtomicU32::new(0);
+static VOLUMETRIC_ORIGINALS: [AtomicUsize; 2] = [AtomicUsize::new(0), AtomicUsize::new(0)];
+
+fn volumetric_scale() -> f32 {
+    match VOLUMETRIC_SCALE.load(Ordering::Relaxed) {
+        0 => 1.0,
+        bits => f32::from_bits(bits),
+    }
+}
+
+/// Depth to slice: the engine's `pow(x, r)` taken at the depth `x` has under the reference near;
+/// the last texel keeps the engine's sky value.
+extern "C" fn near_repartition(x: f32, range: f32) -> f32 {
+    let x = if x >= LAST_TEXEL { LAST_TEXEL } else { (1.0 - volumetric_scale() * (1.0 - x - HALF_TEXEL) - HALF_TEXEL).clamp(0.0, LAST_TEXEL) };
+    x.powf(range)
+}
+
+/// Slice to depth: the engine's `pow(s, 1/r)` moved so slice `s` lies at its distance under the
+/// reference near.
+extern "C" fn near_inverse_repartition(s: f32, range: f32) -> f32 {
+    1.0 - (1.0 - s.powf(1.0 / range)) / volumetric_scale()
+}
+
+fn volumetric_field<T>(offset: usize) -> *mut T {
+    sre::g_volumetric_lighting().wrapping_byte_add(offset).cast()
+}
+
+/// Whether both tables exist, so a refill has something to fill.
+fn volumetric_tables_exist() -> bool {
+    !sre::g_volumetric_lighting().is_null() && VOLUMETRIC_TABLES.iter().all(|&t| unsafe { volumetric_field::<usize>(t).read_volatile() } != 0)
+}
+
+fn refill_volumetric_tables() {
+    let range = unsafe { volumetric_field::<f32>(VOLUMETRIC_RANGE).read_volatile() };
+    unsafe { sre::set_volumetric_range_factor(sre::g_volumetric_lighting(), range) };
+}
+
+/// Keeps volumetric lighting at the look it has under the `reference` near while the world draws
+/// with `near`: the engine lays its slices at fixed depth values, so their distances scale with
+/// near and a lower near hazes the frame. Swaps in near-compensated repartition functions on the
+/// first call and refills the tables when the ratio changes. Main thread, before
+/// `BuildVolumetricLightingVolume`; [`release_volumetric_near`] before the functions' module unloads.
+pub fn compensate_volumetric_near(reference: f32, near: f32) {
+    let scale = if near > 0.0 { reference / near } else { 1.0 };
+    let installed = VOLUMETRIC_SCALE.load(Ordering::Relaxed);
+    if installed == scale.to_bits() || (installed == 0 && scale.to_bits() == 1f32.to_bits()) || !volumetric_tables_exist() {
+        return;
+    }
+    VOLUMETRIC_SCALE.store(scale.to_bits(), Ordering::Relaxed);
+    if installed == 0 {
+        let ours = [near_repartition as *const () as usize, near_inverse_repartition as *const () as usize];
+        for ((offset, original), function) in VOLUMETRIC_FUNCTIONS.into_iter().zip(&VOLUMETRIC_ORIGINALS).zip(ours) {
+            let slot = volumetric_field::<usize>(offset);
+            original.store(unsafe { slot.read_volatile() }, Ordering::Relaxed);
+            unsafe { slot.write_volatile(function) };
+        }
+    }
+    refill_volumetric_tables();
+}
+
+/// Puts the engine's repartition functions back and refills the tables with them.
+pub fn release_volumetric_near() {
+    if VOLUMETRIC_SCALE.swap(0, Ordering::Relaxed) == 0 {
+        return;
+    }
+    for (offset, original) in VOLUMETRIC_FUNCTIONS.into_iter().zip(&VOLUMETRIC_ORIGINALS) {
+        unsafe { volumetric_field::<usize>(offset).write_volatile(original.load(Ordering::Relaxed)) };
+    }
+    if volumetric_tables_exist() {
+        refill_volumetric_tables();
     }
 }
 
@@ -881,7 +965,29 @@ pub fn is_interior() -> bool {
 
 #[cfg(test)]
 mod tests {
-    use super::{Matrix3, Transform, axis_turn, from_euler_xyz, from_euler_zxy, mul3, to_euler_xyz};
+    use super::{Matrix3, Transform, axis_turn, from_euler_xyz, from_euler_zxy, mul3, near_inverse_repartition, near_repartition, to_euler_xyz};
+
+    #[test]
+    fn volumetric_slices_keep_their_distance_under_the_reference_near() {
+        use core::sync::atomic::Ordering;
+        let range = 40.0;
+        let distance = |depth: f32, near: f32| near / (1.0 - depth);
+        super::VOLUMETRIC_SCALE.store(1f32.to_bits(), Ordering::Relaxed);
+        for x in [0.1, 0.5, 0.9, 0.999] {
+            assert!((near_repartition(x, range) / x.powf(range) - 1.0).abs() < 1e-4, "{x}");
+            assert!((near_inverse_repartition(x, range) - x.powf(1.0 / range)).abs() < 1e-6);
+        }
+        super::VOLUMETRIC_SCALE.store((15f32 / 2.0).to_bits(), Ordering::Relaxed);
+        for s in [0.1f32, 0.5, 0.9] {
+            let engine = distance(s.powf(1.0 / range), 15.0);
+            let ours = distance(near_inverse_repartition(s, range), 2.0);
+            assert!((ours / engine - 1.0).abs() < 1e-3, "{s}: {ours} vs {engine}");
+            let engine_lookup = (s.powf(1.0 / range) - super::HALF_TEXEL).powf(range);
+            let ours = near_repartition(near_inverse_repartition(s, range) - super::HALF_TEXEL, range);
+            assert!((ours / engine_lookup - 1.0).abs() < 1e-3, "{s}: {ours} vs {engine_lookup}");
+        }
+        super::VOLUMETRIC_SCALE.store(0, Ordering::Relaxed);
+    }
 
     fn close(a: &Matrix3, b: &Matrix3) -> bool {
         (0..3).all(|i| (0..3).all(|j| (a[i][j] - b[i][j]).abs() < 1e-4))

@@ -325,10 +325,15 @@ pub fn init_near() {
     ENGINE_NEAR.store(skyrim::render::near_distance().to_bits(), Ordering::Relaxed);
 }
 
+/// The engine's world near plane as `init_near` left it.
+pub fn engine_near() -> f32 {
+    f32::from_bits(ENGINE_NEAR.load(Ordering::Relaxed))
+}
+
 /// Puts the engine's world near plane back, in the setting and the frame camera together, as
 /// IC's `Reset_FirstPerson` and the free camera's entry do.
 pub fn reset_near() {
-    let engine = f32::from_bits(ENGINE_NEAR.load(Ordering::Relaxed));
+    let engine = engine_near();
     if util::camera().is_some() && skyrim::render::near_distance().to_bits() != engine.to_bits() {
         skyrim::render::set_near_plane(engine);
     }

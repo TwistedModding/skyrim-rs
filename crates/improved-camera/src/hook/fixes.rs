@@ -6,7 +6,8 @@
 //! casters and the effect shaders on the player pick the root IC's arms are on, the crosshair pick
 //! starts at the presented camera, and the scroll wheel zooms with the POV switch off. The cell
 //! places the body in interior rooms, the camera fades neither the player nor the actors it
-//! passes, and seated players look down to 90 degrees.
+//! passes, and seated players look down to 90 degrees. Volumetric lighting keeps the engine near's
+//! look while the world near is lowered.
 
 use std::collections::HashMap;
 use std::sync::Mutex;
@@ -38,6 +39,12 @@ const HIDE_NOP: [u8; 3] = [0x0F, 0x1F, 0x00];
 const RENDER_SHADOW_MAPS_CALL: usize = 0x30a;
 
 type RenderShadowMaps = unsafe extern "C" fn() -> usize;
+
+/// `RenderWorldScene` +0x353, the call to `BuildVolumetricLightingVolume(params, camera, interior)`
+/// with the frame camera, before the volume is generated (RE `graphics.md` "Request IC10").
+const VOLUMETRIC_BUILD_CALL: usize = 0x353;
+
+type BuildVolumetricVolume = unsafe extern "C" fn(usize, usize, usize) -> usize;
 
 /// The two calls that set the hands camera's projection every first-person frame, both with the
 /// engine's hands FOV (`camera.md` section 7): `SetupFirstPersonCamera` +0x106, which IC hooks,
@@ -107,6 +114,11 @@ pub fn install(host: &'static Host) -> Result<(), Error> {
         }
     })?;
     hooks.after(Call::<RenderShadowMaps>::at(Location::id(fns::RenderWorldScene, RENDER_SHADOW_MAPS_CALL)), Options::new(host.name()), |(), _, _| register_scene_accumulators())?;
+    hooks.before(Call::<BuildVolumetricVolume>::at(Location::id(fns::RenderWorldScene, VOLUMETRIC_BUILD_CALL)), Options::new(host.name()), |args| {
+        if let Some(camera) = unsafe { (args.1 as *const sre::NiCamera).as_ref() } {
+            skyrim::render::compensate_volumetric_near(manager::engine_near(), camera.frustumNear);
+        }
+    })?;
     for (function, offset) in HANDS_PROJECTIONS {
         hooks.before(Call::<SetPerspectiveFromFov>::at(Location::id(function, offset)), Options::new(host.name()), |args| args.1 = settings::profile().FOV.fFirstPersonHands)?;
     }

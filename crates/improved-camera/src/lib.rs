@@ -338,8 +338,8 @@ fn studio_frame() {
 }
 
 /// Puts the body back as the engine keeps it: full scales, the third-person root hidden in first
-/// person, its foot IK parked and its original controller shape; the engine's world FOV, FOV offset, near plane and death
-/// reload time; and FSMP simulating the player as usual.
+/// person, its foot IK parked and its original controller shape; the engine's world FOV, FOV offset, near plane,
+/// volumetric repartition functions and death reload time; and FSMP simulating the player as usual.
 fn unload() {
     camera::studio::manager::release();
     camera::manager::release();
@@ -350,6 +350,7 @@ fn unload() {
     api::fsmp::set_player_body_camera_driven(false);
     camera::manager::reset_fov();
     camera::manager::reset_near();
+    skyrim::render::release_volumetric_near();
     match DEATH_RELOAD_ORIGINAL.load(Ordering::Relaxed) {
         0 => {}
         bits => skyrim::store(util::skyrim_util::death_reload_time(), f32::from_bits(bits)),
