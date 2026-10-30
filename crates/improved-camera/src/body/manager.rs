@@ -13,7 +13,7 @@ use sre::{ActorAttackState, ActorState_flags1, ActorWeaponState, FormType, NiAVO
 use super::free_look::{self, FreeLook};
 use super::parts::Parts;
 use super::snapshot;
-use super::state::action::{ActionState, ActionType, FurnitureAnimation};
+use super::state::action::{ActionState, ActionType, FurnitureAnimation, is_gather_model};
 use super::state::approach;
 use super::state::hands::{EquipmentType, HandsState, HandsType, InteractionType};
 use super::state::movement::{MovementState, MovementType};
@@ -546,8 +546,8 @@ impl Manager {
     fn update_action_state(&mut self, player: &PlayerCharacter, profile: &Profile, info: &ModInfo) {
         let effect = |id| util::has_magic_effect(player, id);
         let furniture = player.occupied_furniture().map(|reference| {
-            let base = unsafe { reference.baseObject.as_ref() }.and_then(|form| form.cast::<TESFurniture>());
-            base.map_or(FurnitureAnimation::Unknown, |f| FurnitureAnimation::of(f.workbenchType, f.activeMarkerFlags))
+            let base = unsafe { reference.baseObject.as_ref() }.and_then(|form| Some((form.cast::<TESFurniture>()?, util::model_path(form))));
+            base.map_or(FurnitureAnimation::Unknown, |(f, model)| FurnitureAnimation::of(f.workbenchType, model.is_some_and(is_gather_model), f.activeMarkerFlags))
         });
         let fishing = plugin::global_value(info.fishing).is_some_and(|v| v > 0.0);
         let cart_ride = plugin::quest_stage(info.quest_intro).is_some_and(|stage| stage > 0 && stage < 145);
@@ -569,6 +569,8 @@ impl Manager {
             ActionType::Animation
         } else if furniture == Some(FurnitureAnimation::Sleeping) {
             ActionType::Sleep
+        } else if furniture == Some(FurnitureAnimation::Gathering) {
+            ActionType::Gather
         } else if furniture == Some(FurnitureAnimation::Crafting) {
             ActionType::Craft
         } else if fishing {

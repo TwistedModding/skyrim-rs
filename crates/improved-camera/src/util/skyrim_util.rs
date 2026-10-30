@@ -7,7 +7,7 @@ use skyrim::actors::{RefHandle, RefPtr};
 use skyrim::physics::{self, Hit};
 use skyrim::prelude::*;
 use skyrim::ui::Value;
-use sre::{Actor, ActorAttackState, ActorSitSleepState, ActorState_flags1, ActorWeaponState, BodyPartType, CameraState, CollisionLayer, ControlGroupFlag, DisablePOVType, EventSourceHolder_MenuOpenClose, EventSourceHolder_User, MenuTopicManager, NiAVObject, PlayerCamera, PlayerCharacter, PlayerControls, PlayerInputHandler, TESObjectREFR, ThirdPersonState};
+use sre::{Actor, ActorAttackState, ActorSitSleepState, ActorState_flags1, ActorWeaponState, BodyPartType, CameraState, CollisionLayer, ControlGroupFlag, DisablePOVType, EventSourceHolder_MenuOpenClose, EventSourceHolder_User, MenuTopicManager, NiAVObject, PlayerCamera, PlayerCharacter, PlayerControls, PlayerInputHandler, TESForm, TESObjectREFR, ThirdPersonState};
 
 use crate::util::point::{self, M3, P3};
 
@@ -138,6 +138,12 @@ pub fn graph_bool(player: &PlayerCharacter, name: &str) -> bool {
 
 pub fn has_movement_flag(player: &PlayerCharacter, flag: ActorState_flags1) -> bool {
     ActorState_flags1(player.as_actor_state().flags1).contains(flag)
+}
+
+/// `GetModel`: a form's model path relative to `Data\Meshes` (`GetFormModelPath`, `TESModel`+0x8; RE `camera.md` IC6 A).
+pub fn model_path(form: &TESForm) -> Option<&'static str> {
+    let path = sre::get_form_model_path(form);
+    if path.is_null() { None } else { unsafe { core::ffi::CStr::from_ptr(path) }.to_str().ok() }
 }
 
 /// The weapon state, bits 5-7 of `ActorState::flags2`: 3 is drawn (`actors.md`).

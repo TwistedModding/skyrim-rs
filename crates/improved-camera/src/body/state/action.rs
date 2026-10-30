@@ -96,12 +96,11 @@ impl ActionType {
     }
 }
 
-/// `FurnitureAnimation`: what the occupied furniture makes the player do. IC's gathering
-/// furniture is told apart by its model path, which the RE does not give, so it reads as the
-/// furniture's other flags.
+/// `FurnitureAnimation`: what the occupied furniture makes the player do.
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum FurnitureAnimation {
     Crafting,
+    Gathering,
     Sitting,
     Sleeping,
     Unknown,
@@ -112,13 +111,32 @@ const CAN_LEAN: u32 = 1 << 28;
 const CAN_SIT: u32 = 1 << 30;
 const CAN_SLEEP: u32 = 1 << 31;
 
+/// `FurnitureGatherNames`: the models of the woodchopping block, the mill log pile and the pickaxe markers.
+const GATHER_MODELS: [&str; 5] = [
+    "Furniture\\Clutter\\MillLogPile.nif",
+    "Furniture\\Clutter\\WoodChoppingBlock.nif",
+    "Furniture\\PickaxeFloorMarker.nif",
+    "Furniture\\PickaxeTableMarker.nif",
+    "Furniture\\PickaxeWallMarker.nif",
+];
+
+/// Whether `model`, a path relative to `Data\Meshes`, is gathering furniture's. The engine's
+/// string pool folds case, so the path may come back in another case than the plugin spelled it.
+#[must_use]
+pub fn is_gather_model(model: &str) -> bool {
+    GATHER_MODELS.iter().any(|m| m.eq_ignore_ascii_case(model))
+}
+
 impl FurnitureAnimation {
-    /// From the furniture's workbench type (+0xe0) and marker flags: a workbench, else a bed, else
-    /// a seat one cannot lean on, else an animation.
+    /// From the furniture's workbench type (+0xe0), whether its model is gathering furniture's,
+    /// and its marker flags: a workbench, else gathering, else a bed, else a seat one cannot lean
+    /// on, else an animation.
     #[must_use]
-    pub const fn of(workbench: u8, markers: u32) -> Self {
+    pub const fn of(workbench: u8, gather: bool, markers: u32) -> Self {
         if workbench > 0 {
             Self::Crafting
+        } else if gather {
+            Self::Gathering
         } else if markers & CAN_SLEEP != 0 {
             Self::Sleeping
         } else if markers & CAN_SIT != 0 && markers & CAN_LEAN == 0 {
@@ -168,16 +186,31 @@ impl ActionState {
 
 #[cfg(test)]
 mod tests {
-    use super::{ActionState, ActionType, FurnitureAnimation};
+    use super::{ActionState, ActionType, FurnitureAnimation, is_gather_model};
     use crate::settings::{BodyAction, Offset};
 
     #[test]
     fn furniture_reads_as_ic_tells_it_apart() {
-        assert_eq!(FurnitureAnimation::of(0, 0x4000_0001), FurnitureAnimation::Sitting, "the chair of run-cam2a");
-        assert_eq!(FurnitureAnimation::of(1, 0x6000_0001), FurnitureAnimation::Crafting, "a workbench, though it can be sat at");
-        assert_eq!(FurnitureAnimation::of(0, 0xC000_0001), FurnitureAnimation::Sleeping, "a bed one can sit on");
-        assert_eq!(FurnitureAnimation::of(0, 0x5000_0001), FurnitureAnimation::Unknown, "a seat one leans on");
-        assert_eq!(FurnitureAnimation::of(0, 0x1), FurnitureAnimation::Unknown);
+        assert_eq!(FurnitureAnimation::of(0, false, 0x4000_0001), FurnitureAnimation::Sitting, "the chair of run-cam2a");
+        assert_eq!(FurnitureAnimation::of(1, false, 0x6000_0001), FurnitureAnimation::Crafting, "a workbench, though it can be sat at");
+        assert_eq!(FurnitureAnimation::of(0, false, 0xC000_0001), FurnitureAnimation::Sleeping, "a bed one can sit on");
+        assert_eq!(FurnitureAnimation::of(0, false, 0x5000_0001), FurnitureAnimation::Unknown, "a seat one leans on");
+        assert_eq!(FurnitureAnimation::of(0, false, 0x1), FurnitureAnimation::Unknown);
+        assert_eq!(FurnitureAnimation::of(0, true, 0x1), FurnitureAnimation::Gathering);
+        assert_eq!(FurnitureAnimation::of(0, true, 0xC000_0001), FurnitureAnimation::Gathering, "gathering before the bed flag");
+        assert_eq!(FurnitureAnimation::of(1, true, 0x1), FurnitureAnimation::Crafting, "the workbench before gathering");
+    }
+
+    #[test]
+    fn gathering_furniture_by_its_model_in_any_case() {
+        assert!(is_gather_model("Furniture\\Clutter\\WoodChoppingBlock.nif"));
+        assert!(is_gather_model("furniture\\clutter\\millLogPile.NIF"));
+        assert!(is_gather_model("FURNITURE\\PICKAXEWALLMARKER.NIF"));
+        assert!(is_gather_model("Furniture\\PickaxeFloorMarker.nif") && is_gather_model("Furniture\\PickaxeTableMarker.nif"));
+        assert!(!is_gather_model("Furniture\\Common\\CommonChair01.nif"), "the chair of run-ic6");
+        assert!(!is_gather_model("Furniture\\Clutter\\WoodChoppingBlock.nif.bak"));
+        assert!(!is_gather_model("Meshes\\Furniture\\Clutter\\WoodChoppingBlock.nif"), "paths are relative to Data\\Meshes");
+        assert!(!is_gather_model(""));
     }
 
     #[test]
