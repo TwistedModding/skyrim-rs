@@ -132,6 +132,7 @@ fn load(host: &'static Host) -> bool {
         if ZOOM.get().is_some_and(Action::fired) {
             camera::manager::with(|m| m.zoom_active = !m.zoom_active);
         }
+        body::manager::sheathe_while_swimming();
         hook::cameras::on_frame();
         camera::extended::apply_deferred();
     });

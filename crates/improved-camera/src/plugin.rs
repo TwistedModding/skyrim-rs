@@ -29,6 +29,8 @@ pub struct ModInfo {
     pub werewolf_transition: Option<u32>,
     pub lich_transition: Option<u32>,
     pub bathe: Option<u32>,
+    /// The Attack Behavior Framework's `bfcoTG_BaseStyle` global; that mod lets weapons be drawn in water.
+    pub bfco: Option<u32>,
     /// The keyboard key the game's control map gives "Toggle POV" (`KEYBINDS.keyboardPOV`).
     pub keyboard_pov: Option<u32>,
 }
@@ -65,6 +67,7 @@ pub fn detect_mods() {
         werewolf_transition: lookup(handler, 0x0009_2C45, "Skyrim.esm"),
         lich_transition: lookup(handler, 0xA443, "Undeath.esp"),
         bathe: lookup(handler, 0x2C, "Bathing in Skyrim.esp"),
+        bfco: global("bfcoTG_BaseStyle"),
         keyboard_pov: EventSourceHolder_User::singleton().and_then(|map| map.mapped_key("Toggle POV", InputDevice::Keyboard)),
     });
 }

@@ -194,7 +194,26 @@ pub fn third_person_arms(general: &settings::General) -> bool {
     general.bEnableBody && !general.bEnableFirstPersonArms
 }
 
-/// Whether the player is moving: `Actor::IsMoving` is not in the RE yet, so this reads the
+/// `Update`'s fix for weapons drawn in first person while swimming: IC asks for a sheathe while
+/// the body swims with its hands up, unless the Attack Behavior Framework allows weapons in water.
+/// `drawn` is the live weapon state above sheathed, so a sheathe asked once is not asked again.
+#[must_use]
+pub fn swim_sheathe(body: &snapshot::Data, swimming: bool, drawn: bool, bfco: bool) -> bool {
+    body.action == ActionType::Swim && body.hands > HandsType::None && swimming && drawn && !bfco
+}
+
+/// Runs the swim fix on the main thread, through the engine's own immediate sheathe
+/// (`ResetActorWeaponStateAndCamera`, RE `camera.md` IC6 B): the draw is refused in water, so
+/// the weapon stays away until the player leaves it.
+pub fn sheathe_while_swimming() {
+    let Some(player) = util::player() else { return };
+    let swimming = util::has_movement_flag(player, ActorState_flags1::SWIMMING);
+    if swim_sheathe(&snapshot::get(), swimming, util::weapon_state(player) != ActorWeaponState::Sheathed as u32, plugin::info().bfco.is_some()) {
+        player.reset_actor_weapon_state_and_camera();
+    }
+}
+
+/// Whether the player is moving:`Actor::IsMoving` is not in the RE yet, so this reads the
 /// current speed the movement controller keeps (`Actor::GetCurrentSpeed`).
 fn is_moving(player: &PlayerCharacter) -> bool {
     player.get_current_speed() > 0.0
@@ -763,7 +782,18 @@ impl Manager {
 
 #[cfg(test)]
 mod tests {
-    use super::DirectionType;
+    use super::{ActionType, DirectionType, HandsType, snapshot, swim_sheathe};
+
+    #[test]
+    fn sheathes_once_while_swimming_with_the_hands_up() {
+        let swim = snapshot::Data { action: ActionType::Swim, hands: HandsType::Show, ..snapshot::Data::NONE };
+        assert!(swim_sheathe(&swim, true, true, false));
+        assert!(!swim_sheathe(&swim, true, false, false), "already sheathed");
+        assert!(!swim_sheathe(&swim, true, true, true), "the Attack Behavior Framework allows weapons in water");
+        assert!(!swim_sheathe(&swim, false, true, false), "out of the water since the body's last update");
+        assert!(!swim_sheathe(&snapshot::Data { hands: HandsType::None, ..swim }, true, true, false));
+        assert!(!swim_sheathe(&snapshot::Data { action: ActionType::None, ..swim }, true, true, false));
+    }
 
     #[test]
     fn direction_from_input() {
