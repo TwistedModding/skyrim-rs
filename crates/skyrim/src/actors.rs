@@ -3,7 +3,8 @@
 //! `TESFullName` and `ActorValueList` methods leave `unsafe`: the handle out-parameter, the
 //! inventory list, the base container's entries, the full name as `&CStr`, the actor value table
 //! as a slice and a lookup by name; the mount a rider sits on, the motion mode, a graph pause, the
-//! display name, the biped's objects and the process lists' high actor handles.
+//! display name, the biped's objects and the process lists' high actor handles; the references in
+//! range of a point or of a reference, and placing and deleting a reference.
 //!
 //! Read and write on the game's main thread, as with forms.
 
@@ -14,7 +15,7 @@ use std::ffi::CString;
 use std::fmt;
 
 use sre::raw::{fns, globals};
-use sre::{AIProcess, Actor, ActorValue, BipedAnim, BipedObject, ActorValueInfo, ActorValueList, ContainerEntry, InventoryChanges, InventoryEntry, MotionDriveMode, NiAVObject, NiPoint3, PlayerCharacter, TESContainer, TESForm_formFlags, TESFullName, TESObjectCELL, TESObjectREFR};
+use sre::{AIProcess, Actor, ActorValue, BipedAnim, BipedObject, ActorValueInfo, ActorValueList, ContainerEntry, InventoryChanges, InventoryEntry, MotionDriveMode, NiAVObject, NiPoint3, PlayerCharacter, TESBoundObject, TESContainer, TESForm, TESForm_formFlags, TESFullName, TESObjectCELL, TESObjectREFR};
 
 use crate::ptr_slice;
 
@@ -171,21 +172,75 @@ impl ActorExt for Actor {
     }
 }
 
+/// A reference walk's callback: collects every reference it is handed and never stops the walk.
+unsafe extern "C" fn collect(reference: *mut TESObjectREFR, data: *mut c_void) -> bool {
+    unsafe { (*data.cast::<Vec<*mut TESObjectREFR>>()).push(reference) };
+    false
+}
+
+/// The handles of what a walk collected, disabled and deleted references left out.
+fn live_handles(found: Vec<*mut TESObjectREFR>) -> Vec<RefHandle> {
+    let skip = TESForm_formFlags::DELETED.bits() | TESForm_formFlags::DISABLED.bits();
+    found.into_iter().filter_map(|r| unsafe { r.as_ref() }).filter(|r| r.formFlags & skip == 0).map(TESObjectREFRExt::handle).collect()
+}
+
 /// The live references of `cell` within `radius` of `origin`, disabled and deleted ones left out,
 /// through `TESObjectCELL::ForEachReferenceInRadius` (id 19068), which walks under the cell's lock
 /// and follows load doors into linked cells within the radius (RE `camera.md` IC8 C). Main thread.
 #[must_use]
 pub fn references_in_radius(cell: &TESObjectCELL, origin: [f32; 3], radius: f32) -> Vec<RefHandle> {
-    unsafe extern "C" fn collect(reference: *mut TESObjectREFR, data: *mut c_void) -> bool {
-        unsafe { (*data.cast::<Vec<*mut TESObjectREFR>>()).push(reference) };
-        false
-    }
     let mut found: Vec<*mut TESObjectREFR> = Vec::new();
     let [x, y, z] = origin;
     let origin = NiPoint3 { x, y, z, __engine: sre::Engine::new() };
     unsafe { cell.for_each_reference_in_radius(&raw const origin, radius, &raw const origin, radius, collect as *const c_void, (&raw mut found).cast()) };
-    let skip = TESForm_formFlags::DELETED.bits() | TESForm_formFlags::DISABLED.bits();
-    found.into_iter().filter_map(|r| unsafe { r.as_ref() }).filter(|r| r.formFlags & skip == 0).map(TESObjectREFRExt::handle).collect()
+    live_handles(found)
+}
+
+/// The live references within `radius` of `center`, disabled and deleted ones left out, through
+/// `TES::ForEachReferenceInRadiusOfRef` (id 13701): `center`'s cell when that is an interior, else
+/// the loaded cells of its worldspace (RE `camera.md` IC8 C). Main thread.
+#[must_use]
+pub fn references_around(center: &TESObjectREFR, radius: f32) -> Vec<RefHandle> {
+    let mut found: Vec<*mut TESObjectREFR> = Vec::new();
+    let origin = NiPoint3 { x: center.posX, y: center.posY, z: center.posZ, __engine: sre::Engine::new() };
+    let tes = sre::TES::singleton().map_or(core::ptr::null_mut(), |t| core::ptr::from_ref(t).cast_mut().cast());
+    unsafe { sre::TES::for_each_reference_in_radius_of_ref(tes, core::ptr::from_ref(center).cast_mut(), radius, &raw const origin, radius, collect as *const c_void, (&raw mut found).cast()) };
+    live_handles(found)
+}
+
+/// Places a new reference of `base` at `at`'s position and angles, in its cell and worldspace, as
+/// Papyrus `PlaceAtMe` places each copy (`TESDataHandler::CreateReferenceAtLocation`, id 13723;
+/// RE `camera.md` IC8 D); `persist` is the native's force-persist flag. `None` when the engine
+/// placed nothing. Main thread.
+#[must_use]
+pub fn place_at_me(at: &TESObjectREFR, base: &TESBoundObject, persist: bool) -> Option<RefHandle> {
+    type CreateFn = unsafe extern "C" fn(*const c_void, *mut u32, *const TESBoundObject, *const NiPoint3, *const NiPoint3, *mut TESObjectCELL, *const sre::TESWorldSpace, *mut TESObjectREFR, *mut c_void, *mut c_void, bool, bool) -> *mut u32;
+    let holder = crate::reloc().address(globals::g_TESDataHandler_ptr).ok()? as *const *const c_void;
+    let data = unsafe { *holder };
+    if data.is_null() {
+        return None;
+    }
+    let create: CreateFn = unsafe { crate::engine_fn(fns::TESDataHandler__CreateReferenceAtLocation) };
+    let position = (&raw const at.posX).cast::<NiPoint3>();
+    let angles = (&raw const at.rotX).cast::<NiPoint3>();
+    let worldspace = at.get_worldspace().map_or(core::ptr::null(), core::ptr::from_ref);
+    let mut handle = 0;
+    unsafe { create(data, &raw mut handle, base, position, angles, at.parentCell, worldspace, core::ptr::null_mut(), core::ptr::null_mut(), core::ptr::null_mut(), persist, true) };
+    Some(RefHandle(handle)).filter(|h| *h != RefHandle::INVALID)
+}
+
+/// Removes a reference as Papyrus `Disable` and `Delete` end: `Disable` (slot 137, which unloads
+/// its 3D and sets the disabled bit), then `SetDelete(true)` (slot 35; RE `camera.md` IC8 D).
+/// Main thread.
+pub fn delete_reference(reference: &TESObjectREFR) {
+    type DisableFn = unsafe extern "C" fn(*const TESObjectREFR);
+    type SetDeleteFn = unsafe extern "C" fn(*const TESForm, bool);
+    let disable: DisableFn = unsafe { core::mem::transmute(sre::vtable_entry(reference, 137)) };
+    let set_delete: SetDeleteFn = unsafe { core::mem::transmute(sre::vtable_entry(reference, 35)) };
+    unsafe {
+        disable(reference);
+        set_delete(core::ptr::from_ref(reference).cast(), true);
+    }
 }
 
 /// Offset of the high actor handle array in `ProcessLists` (data +0, capacity +8, size +0x10).

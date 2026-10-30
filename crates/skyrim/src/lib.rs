@@ -55,7 +55,7 @@ pub mod prelude {
     #[cfg(feature = "papyrus")]
     pub use crate::papyrus::VirtualMachineExt;
     #[cfg(feature = "render")]
-    pub use crate::render::{BSCullingProcessExt, BSFlattenedBoneTreeExt, BSShaderMaterialExt, BSShaderPropertyExt, BSShadowLightExt, BSTextureSetExt, NiAVObjectExt, NiNodeExt, NiSkinInstanceExt, NodeClass, ShadowSceneNodeExt};
+    pub use crate::render::{BSCullingProcessExt, BSFlattenedBoneTreeExt, BSShaderMaterialExt, BSShaderPropertyExt, BSShadowLightExt, BSTextureSetExt, NiAVObjectExt, NiNodeExt, NiPointLightExt, NiSkinInstanceExt, NodeClass, ShadowSceneNodeExt, TESObjectLIGHExt};
     #[cfg(feature = "save")]
     pub use crate::save::{BGSSaveLoadGameExt, BGSSaveLoadManagerExt};
     #[cfg(feature = "ui")]

@@ -4,7 +4,8 @@
 //! scene graph, light, culler and shader classes leave `unsafe`: transforms and the children array
 //! decoded from their bytes, the hidden bit set atomically, light and shadow map arrays as slices,
 //! checked casts by vtable, the shadow pass tests a cull detour makes, and an effect shader's data
-//! applied to or removed from a tree.
+//! applied to or removed from a tree; a reference's point light found by type and its colour,
+//! fade and radius read and written.
 //!
 //! Reads follow the pass's thread model: light lists, roots and flags are stable while the frame
 //! culls (the main thread changes them between frames); a [`CullFn`] detour runs on the job
@@ -16,7 +17,7 @@ use core::ffi::{CStr, c_void};
 use core::sync::atomic::{AtomicU32, Ordering};
 
 use sre::raw::{fns, vtables};
-use sre::{BGSArtObject, BSCullingProcess, Calendar, ModelReferenceEffect, ReferenceEffect, ShaderReferenceEffect, Sky, TESObjectREFR, TESWeather, BSEffectShaderData, BSFadeNode, BSFlattenedBoneTree, BSGeometry, BSLight, BSLightingShaderMaterialBase, BSShaderMaterial, BSShaderProperty, BSShaderTextureSet, BSShadowLight, BSTextureSet, CameraMatrixEntry, NiAVObject, NiCamera, NiNode, NiSkinInstance, NiTransform, ShaderMaterialType, ShadowMapData, ShadowSceneNode, TESEffectShader, TextureSetSlot};
+use sre::{BGSArtObject, BSCullingProcess, Calendar, ModelReferenceEffect, ReferenceEffect, ShaderReferenceEffect, Sky, TESObjectREFR, TESWeather, BSEffectShaderData, BSFadeNode, BSFlattenedBoneTree, BSGeometry, BSLight, BSLightingShaderMaterialBase, BSShaderMaterial, BSShaderProperty, BSShaderTextureSet, BSShadowLight, BSTextureSet, CameraMatrixEntry, NiAVObject, NiCamera, NiNode, NiPointLight, NiSkinInstance, TESFullName, TESObjectLIGH, NiTransform, ShaderMaterialType, ShadowMapData, ShadowSceneNode, TESEffectShader, TextureSetSlot};
 
 use crate::ptr_slice;
 
@@ -731,12 +732,12 @@ const EFFECTS: usize = 0x108;
 const EFFECT_COUNT: usize = 0x118;
 const EFFECT_LOCK: usize = 0x120;
 
-/// Whether the effect's class is `node` or derives from it: the type node of slot 2, walked up
-/// through the parent at +8.
-fn derives_from(effect: &ReferenceEffect, node: *const u8) -> bool {
-    type TypeFn = unsafe extern "C" fn(*const ReferenceEffect) -> *const u8;
-    let get: TypeFn = unsafe { core::mem::transmute(sre::vtable_entry(effect, 2)) };
-    let mut current = unsafe { get(effect) };
+/// Whether the object's class is `node` or derives from it: the type node of slot 2, walked up
+/// through the parent at +8 (RE `camera.md` IC8 E and F).
+fn derives_from<T>(object: &T, node: *const u8) -> bool {
+    type TypeFn = unsafe extern "C" fn(*const c_void) -> *const u8;
+    let get: TypeFn = unsafe { core::mem::transmute(sre::vtable_entry(object, 2)) };
+    let mut current = unsafe { get(core::ptr::from_ref(object).cast()) };
     while !current.is_null() {
         if current == node {
             return true;
@@ -770,6 +771,59 @@ pub fn stop_reference_effects(target: u32, form_id: u32, art: bool) {
         if form == Some(form_id) {
             crate::store(&effect.finished, 1);
         }
+    }
+}
+
+/// The first point light at or under `root`, found by its type node (`g_TypeNode_NiPointLight`;
+/// RE `camera.md` IC8 E): the light a light reference's 3D carries.
+#[must_use]
+pub fn point_light(root: &NiAVObject) -> Option<&NiPointLight> {
+    if derives_from(root, sre::g_type_node_ni_point_light()) {
+        return Some(unsafe { &*core::ptr::from_ref(root).cast::<NiPointLight>() });
+    }
+    root.cast::<NiNode>()?.children().iter().flatten().find_map(|child| point_light(child))
+}
+
+/// What a light shines with: `NiLight`'s diffuse colour, fade (its intensity) and radius.
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub struct LightValues {
+    pub color: [f32; 3],
+    pub fade: f32,
+    pub radius: f32,
+}
+
+pub trait NiPointLightExt {
+    /// The radius is the first of the three radius floats.
+    fn values(&self) -> LightValues;
+    /// Writes the colour, the fade and the radius into all three radius floats, then the
+    /// attenuation that radius gives (`ApplyLightAttenuationSettings`, id 17626). Main thread.
+    fn set_values(&self, values: LightValues);
+}
+
+impl NiPointLightExt for NiPointLight {
+    fn values(&self) -> LightValues {
+        LightValues { color: [self.diffuse.r, self.diffuse.g, self.diffuse.b], fade: self.fade, radius: self.radius.x }
+    }
+
+    #[allow(clippy::cast_possible_truncation, clippy::cast_sign_loss)]
+    fn set_values(&self, values: LightValues) {
+        let [r, g, b] = values.color;
+        for (field, value) in [(&self.diffuse.r, r), (&self.diffuse.g, g), (&self.diffuse.b, b), (&self.radius.x, values.radius), (&self.radius.y, values.radius), (&self.radius.z, values.radius), (&self.fade, values.fade)] {
+            crate::store(field, value);
+        }
+        sre::apply_light_attenuation_settings(self, values.radius.max(0.0) as u32);
+    }
+}
+
+pub trait TESObjectLIGHExt {
+    /// The light's full name (its `TESFullName` base at +0x30); `None` when empty.
+    fn full_name(&self) -> Option<&CStr>;
+}
+
+impl TESObjectLIGHExt for TESObjectLIGH {
+    fn full_name(&self) -> Option<&CStr> {
+        let name = unsafe { &*core::ptr::from_ref(self).byte_add(0x30).cast::<TESFullName>() }.name;
+        if name.is_null() { None } else { Some(unsafe { CStr::from_ptr(name.cast()) }).filter(|s| !s.is_empty()) }
     }
 }
 
