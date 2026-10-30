@@ -147,6 +147,12 @@ impl MessagingInterface {
     pub fn listen_skse(&self, handle: PluginHandle, handler: MessageCallback) -> bool {
         unsafe { (self.register_listener)(handle, c"SKSE".as_ptr(), handler) }
     }
+
+    /// Listens to the messages every other plugin dispatches (null sender).
+    #[must_use]
+    pub fn listen_plugins(&self, handle: PluginHandle, handler: MessageCallback) -> bool {
+        unsafe { (self.register_listener)(handle, core::ptr::null(), handler) }
+    }
 }
 
 pub type SerializationCallback = unsafe extern "C" fn(intfc: *const SerializationInterface);

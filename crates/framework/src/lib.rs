@@ -159,6 +159,7 @@ pub(crate) type DeclareFilterFn = fn(&str, &str, &[&str], &[(InputDevice, u32)])
 /// The host's functions, one table shared by every plugin's [`Host`]; the owner comes first.
 pub(crate) struct Table {
     pub on_message: fn(&'static str, MessageFn),
+    pub on_plugin_message: fn(&'static str, &str, MessageFn),
     pub on_frame: fn(&'static str, FrameFn),
     pub on_papyrus: fn(&'static str, PapyrusFn),
     pub action: fn(&'static str, &str, &str, Scope) -> usize,
@@ -213,6 +214,14 @@ impl Host {
     /// so setup done at `DATA_LOADED` is done again.
     pub fn on_message(&self, f: MessageFn) {
         (self.table.on_message)(self.name, f);
+    }
+
+    /// Calls `f` with every message the SKSE plugin named `sender` dispatches from now on (the
+    /// loader matches the name case-insensitively): another plugin's API handed out as a message,
+    /// on the dispatching thread. Messages sent before the call are not replayed, so a reloaded
+    /// plugin keeps what an earlier one received through its state handoff.
+    pub fn on_plugin_message(&self, sender: &str, f: MessageFn) {
+        (self.table.on_plugin_message)(self.name, sender, f);
     }
 
     /// Calls `f` once a frame on the main thread, at the frame's present whether the overlay is

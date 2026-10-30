@@ -73,6 +73,8 @@ static PLUGINS: OnceLock<Vec<Plugin>> = OnceLock::new();
 /// The DLLs in the plugin folder the host did not load, each with the reason.
 static REFUSED: Mutex<Vec<(String, String)>> = Mutex::new(Vec::new());
 static MESSAGES: Owned<MessageFn> = Owned::new();
+/// Handlers of other SKSE plugins' messages, each with the sender it listens to.
+static PLUGIN_MESSAGES: Owned<(String, MessageFn)> = Owned::new();
 static FRAMES: Owned<FrameFn> = Owned::new();
 static PAPYRUS: Owned<PapyrusFn> = Owned::new();
 static SINKS: Mutex<Vec<SourceSinks>> = Mutex::new(Vec::new());
@@ -92,6 +94,7 @@ static SKSE_PLUGINS: Mutex<Vec<LegacyPlugin>> = Mutex::new(Vec::new());
 static HOOKS: Hooks = Hooks::HOST;
 static TABLE: Table = Table {
     on_message,
+    on_plugin_message,
     on_frame,
     on_papyrus,
     action: keys::declare,
@@ -218,7 +221,7 @@ pub fn load(skse: &skse::Interface) -> bool {
         log!("no messaging or Papyrus interface");
         return false;
     };
-    if !messaging.listen_skse(skse.plugin_handle(), on_skse_message) || !papyrus.register(on_papyrus_pass) {
+    if !messaging.listen_skse(skse.plugin_handle(), on_skse_message) || !messaging.listen_plugins(skse.plugin_handle(), on_plugin_dispatch) || !papyrus.register(on_papyrus_pass) {
         log!("the loader refused the message listener or the Papyrus callback");
         return false;
     }
@@ -526,7 +529,7 @@ fn detach(owner: &str) -> String {
     if sections + huds > 0 {
         overlay::reset_context();
     }
-    let messages = MESSAGES.remove_owner(owner);
+    let messages = MESSAGES.remove_owner(owner) + PLUGIN_MESSAGES.remove_owner(owner);
     let papyrus = PAPYRUS.remove_owner(owner);
     let frames = FRAMES.remove_owner(owner);
     let filters = match filters::remove_owner(owner) {
@@ -589,6 +592,25 @@ fn on_message(owner: &'static str, f: MessageFn) {
     for kind in seen {
         f(&skse::Message { sender: c"SKSE".as_ptr(), kind, data_len: 0, data: core::ptr::null_mut() });
     }
+}
+
+fn on_plugin_message(owner: &'static str, sender: &str, f: MessageFn) {
+    PLUGIN_MESSAGES.add(owner, (sender.to_owned(), f));
+}
+
+/// Whether a message's sender is `name`, compared as the loader compares senders.
+fn sent_by(msg: &skse::Message, name: &str) -> bool {
+    !msg.sender.is_null() && unsafe { CStr::from_ptr(msg.sender) }.to_bytes().eq_ignore_ascii_case(name.as_bytes())
+}
+
+unsafe extern "C" fn on_plugin_dispatch(msg: *mut skse::Message) {
+    let Some(msg) = (unsafe { msg.as_ref() }) else { return };
+    PLUGIN_MESSAGES.each(|(sender, f)| {
+        if sent_by(msg, sender) {
+            f(msg);
+        }
+        true
+    });
 }
 
 fn on_frame(owner: &'static str, f: FrameFn) {
@@ -667,6 +689,25 @@ mod tests {
         assert!(accept(ABI, BUILD).is_ok());
         assert!(accept(ABI + 1, BUILD).is_err());
         assert!(accept(ABI, c"framework 0.0.0, rustc 1.0.0").is_err());
+    }
+
+    #[test]
+    fn plugin_messages_reach_the_handlers_of_their_sender_until_the_owner_goes() {
+        static SEEN: AtomicU32 = AtomicU32::new(0);
+        fn count(msg: &skse::Message) {
+            SEEN.fetch_add(msg.kind, Ordering::Relaxed);
+        }
+        let send = |sender: &CStr, kind| {
+            let mut msg = skse::Message { sender: sender.as_ptr(), kind, data_len: 0, data: core::ptr::null_mut() };
+            unsafe { on_plugin_dispatch(&raw mut msg) };
+        };
+        on_plugin_message("listener", "hdtsmp64", count);
+        send(c"HDTSMP64", 1);
+        send(c"other", 10);
+        assert_eq!(SEEN.load(Ordering::Relaxed), 1);
+        assert_eq!(PLUGIN_MESSAGES.remove_owner("listener"), 1);
+        send(c"hdtsmp64", 100);
+        assert_eq!(SEEN.load(Ordering::Relaxed), 1);
     }
 
     #[test]
