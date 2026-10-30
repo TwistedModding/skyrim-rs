@@ -383,8 +383,9 @@ pub struct BShkbAnimationGraph {
     pub generatePoseOnWrite: u8,
     /// +0x247 `undefined1`, semantic; ctor flag (Actor: from the race), enables the +0x190 list (low)
     pub buildNameMatch: u8,
-    /// +0x248 `undefined2`, ctor store
-    pub field_248: u16,
+    pub unknown_248: [u8; 1],
+    /// +0x249 `u8`, semantic; foot IK runs in FinalizePose for this graph this frame (high)
+    pub doFootIK: u8,
     pub unknown_24A: [u8; 6],
     #[doc(hidden)]
     pub __engine: crate::Engine,
@@ -417,7 +418,7 @@ const _: () = assert!(core::mem::offset_of!(BShkbAnimationGraph, eventsSuppresse
 const _: () = assert!(core::mem::offset_of!(BShkbAnimationGraph, activating) == 0x244);
 const _: () = assert!(core::mem::offset_of!(BShkbAnimationGraph, generatePoseOnWrite) == 0x246);
 const _: () = assert!(core::mem::offset_of!(BShkbAnimationGraph, buildNameMatch) == 0x247);
-const _: () = assert!(core::mem::offset_of!(BShkbAnimationGraph, field_248) == 0x248);
+const _: () = assert!(core::mem::offset_of!(BShkbAnimationGraph, doFootIK) == 0x249);
 
 /// `IAnimationGraphManagerHolder`: size 0x8 (exact, medium).
 /// Meaning: interface a reference (or a menu/effect object) implements to own a BSAnimationGraphManager: create/load its graphs, push variables, send events (high, animation pass).
@@ -447,7 +448,7 @@ pub struct NiSkinData {
     pub unknown_C: [u8; 4],
     /// +0x10 `ptr:NiObject`, semantic; refcounted object released by the dtor; not set by LoadBinary (slot 25 is a 5-byte thunk) (low)
     pub field10: *mut crate::NiObject,
-    /// +0x18 `class:NiTransform`, semantic; overall transform of the skin (rotation, translation, scale) (medium); retyped undefined1 -> class:NiTransform: meaning: rotation, translation, scale; IsEqual compares 13 floats (0x34); LoadBinary reads it first
+    /// +0x18 `class:NiTransform`, semantic; overall transform of the skin (rotation, translation, scale) (medium)
     pub skinTransform: crate::NiTransform,
     pub unknown_4C: [u8; 4],
     /// +0x50 `pointer`, semantic; per-bone records, 0x58 bytes each (high)
@@ -471,9 +472,9 @@ const _: () = assert!(core::mem::offset_of!(NiSkinData, boneCount) == 0x58);
 /// Evidence: bind data of one bone; LoadBinary init loop and reads; IsEqual compares floats 0..0xc as a transform, floats 0xd..0x10 and the weights; size: stride 0x58 in the LoadBinary 0xf0d710 allocation and in UpdatePalette (ADD R12,0x58).
 #[repr(C)]
 pub struct NiSkinData__BoneData {
-    /// +0x0 `class:NiTransform`, semantic; bind-pose inverse: skin space to the bone's space (rotation, translation, scale) (high); retyped undefined1 -> class:NiTransform: UpdatePalette 0x1015800: NiTransform::Multiply(boneWorld, out, &boneData[i]) at 0x141015b24
+    /// +0x0 `class:NiTransform`, semantic; bind-pose inverse: skin space to the bone's space (rotation, translation, scale) (high)
     pub skinToBone: crate::NiTransform,
-    /// +0x34 `class:NiBound`, semantic; bound sphere of the bone's vertices (center, radius) in bone space (high); retyped undefined1 -> class:NiBound: meaning: centre, radius; NiSkinInstance::ComputeBound 0xf09cb0 moves it with NiTransform::ApplyToBound
+    /// +0x34 `class:NiBound`, semantic; bound sphere of the bone's vertices (center, radius) in bone space (high)
     pub boundSphere: crate::NiBound,
     pub unknown_44: [u8; 4],
     /// +0x48 `pointer`, semantic; optional vertex weights, 8 bytes each {u16 vertex, pad, float weight} (high)

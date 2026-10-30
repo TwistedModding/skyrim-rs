@@ -11204,7 +11204,7 @@ pub struct Character_vtable {
     pub slot_119: *const c_void,
     /// `Actor::vfunc_120` at 0x6b0010 (rtti, medium); signature (low): `ulonglong vfunc_120(Actor * this, longlong * param_1)`
     pub slot_120: *const c_void,
-    /// `Actor::PrepareAnimationUpdate` at 0x6b6300 (semantic, medium); signature (untiered): `undefined PrepareAnimationUpdate(Actor * this, longlong param_1)`
+    /// `Actor::PrepareAnimationUpdate` at 0x6b6300 (semantic, high); signature (untiered): `undefined PrepareAnimationUpdate(Actor * this, longlong param_1)`
     pub slot_121: *const c_void,
     /// `Actor::vfunc_122` at 0x6b6580 (rtti, medium); signature (low): `undefined1 vfunc_122(void)`
     pub slot_122: *const c_void,

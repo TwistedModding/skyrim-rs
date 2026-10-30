@@ -11499,7 +11499,7 @@ pub const g_AutoRegisterSmartPtrDerivedPathingType_PathingRequestStopMoving_BSPa
 pub const g_AutoRegisterSmartPtrDerivedPathingType_PathingRequest_BSPathingRequest_64: u64 = 402084;
 /// `g_BGSAnimSoundStateManager` at 0x3231550 (layout_inference, medium)
 pub const g_BGSAnimSoundStateManager: u64 = 403608;
-/// `g_BGSFootIkRaycastInterfaceDB` at 0x32047e0 (layout_inference, medium)
+/// `g_BGSFootIkRaycastInterfaceDB` at 0x32047e0 (semantic, high); static raycast interface DB; pointers to it at 0x31df418 and 0x325bb88 (the one the driver run reads) (high); type `class:BGSFootIkRaycastInterfaceDB`
 pub const g_BGSFootIkRaycastInterfaceDB: u64 = 402609;
 /// `g_BGSGamebryoSequenceGeneratorHolderSingleton_ptr` at 0x3204668 (xref_inference, medium)
 pub const g_BGSGamebryoSequenceGeneratorHolderSingleton_ptr: u64 = 402595;
@@ -11701,6 +11701,8 @@ pub const g_CameraShakeTimeLeft: u64 = 402623;
 pub const g_CategoryVolumeSlots: u64 = 401172;
 /// `g_ChangeFormTypeToFormType` at 0x20b55c0 (semantic, high); save type (0..48) -> formType: REFR ACHR PMIS PGRE PBEA PFLA CELL INFO QUST NPC_ ACTI TACT ARMO BOOK CONT DOOR INGR LIGH MISC APPA STAT MSTT FURN WEAP AMMO KEYM ALCH IDLM NOTE ECZN CLAS FACT PACK NAVM WOOP MGEF SMQN SCEN LCTN RELA PHZD PBAR PCON FLST LVLN LVLI LVSP PARW ENCH (high); type `undefined4[49]`
 pub const g_ChangeFormTypeToFormType: u64 = 380703;
+/// `g_CharacterBumperMaterialId` at 0x33376c8 (semantic, high); CRC32 of 'CharacterBumper' (static init 0x1063de0), compared with bhkShape+0x20 (high); type `u32`
+pub const g_CharacterBumperMaterialId: u64 = 411553;
 /// `g_CharacterCollisionHandler_ptr` at 0x3230a18 (xref_inference, medium)
 pub const g_CharacterCollisionHandler_ptr: u64 = 403563;
 /// `g_CharacterCollisionMessagePlayerAdapter` at 0x20b6338 (layout_inference, medium)
@@ -12099,7 +12101,7 @@ pub const g_DefaultLightingMaterial: u64 = 414779;
 pub const g_DefaultMaxPitchDown: u64 = 189817;
 /// `g_DefaultMaxPitchUp` at 0x181ab90 (semantic, high); -pi/2 (high); type `float`
 pub const g_DefaultMaxPitchUp: u64 = 189822;
-/// `g_DefaultObjectManager` at 0x219d180 (semantic, high); static default-object manager: object i at +0x20 + 8*i (0x219d1a0 + 8*i), loaded byte at +0xbc0 + i (0x219dd40 + i) (high); type `BGSDefaultObjectManager`
+/// `g_DefaultObjectManager` at 0x219d180 (semantic, high); default objects: object i at +0x20+8i (0x219d1a0), ready byte at +0xbc0+i (0x219dd40); names table 0x207bf40 (0x18 each) (high); type `class:BGSDefaultObjectManager`
 pub const g_DefaultObjectManager: u64 = 400191;
 /// `g_DefaultObjectNameTable` at 0x207bf40 (semantic, high); the default object names: 0x174 records of 0x18 bytes {const char* name; u32 formType; char signature[4]; u64}, indexed like GetDefaultObjectByIndex (manager +0x20 + i*8, present flag +0xbc0 + i) (high); type `undefined1`
 pub const g_DefaultObjectNameTable: u64 = 360630;
@@ -12501,7 +12503,9 @@ pub const g_PlayerSleepWaitMovementControllerAdapter: u64 = 381082;
 pub const g_PrecipitationOcclusionMapEnabled: u64 = 370126;
 /// `g_ProcessListMovementInterface` at 0x20b8040 (layout_inference, medium)
 pub const g_ProcessListMovementInterface: u64 = 381866;
-/// `g_ProcessLists_ptr` at 0x219e570 (semantic, medium); process lists; +0x30/+0x40 high actor handles, +0x1e6 run-animations flag (medium); type `pointer`
+/// `g_ProcessListsHandleLock` at 0x3245560 (semantic, high); guards the four actor handle arrays: write in Add/Remove (0x77a790, 0x77a940, 0x77a890, 0x77abd0, 0x77d0e0), read in UpdateWithTimeBudget 0x77b818 (high); type `BSReadWriteLock`
+pub const g_ProcessListsHandleLock: u64 = 404442;
+/// `g_ProcessLists_ptr` at 0x219e570 (semantic, high); process lists singleton (points at the static 0x3241730) (high); type `pointer`
 pub const g_ProcessLists_ptr: u64 = 400315;
 /// `g_REFREventCallbacks_ConcreteEventCallbackFactory__anon_01A9FA1F_SceneResultsCallBack` at 0x31e02b0 (layout_inference, medium)
 pub const g_REFREventCallbacks_ConcreteEventCallbackFactory__anon_01A9FA1F_SceneResultsCallBack: u64 = 401377;
@@ -13589,9 +13593,3 @@ pub const g_TypeNode_bhkWorldObject: u64 = 411515;
 pub const g_TypeNode_hkPackedNiTriStripsData: u64 = 411603;
 /// `g_UI3DScene_ptr` at 0x3230a00 (semantic, medium); pointer to the static menu 3D scene manager at 0x323a280 (no vtable): +0x8 culler, +0x10 and +0x18 accumulators, +0x20 NiCamera, +0x28 lock, +0x30 scene [1], +0x38 eight mode roots, +0x78 per-mode light definition chains, +0x90 current mode, +0x98 mode stack (medium); type `pointer`
 pub const g_UI3DScene_ptr: u64 = 403560;
-/// `g_UI3DShadowsEnabled` at 0x20bbdd0 (semantic, low); gate for the Mist mode's shadow lights (1 in the image) (low); type `undefined4`
-pub const g_UI3DShadowsEnabled: u64 = 383327;
-/// `g_UIBlurManager_ptr` at 0x3230018 (xref_inference, medium)
-pub const g_UIBlurManager_ptr: u64 = 403350;
-/// `g_UICursor_ptr` at 0x3210e38 (semantic, high); pointer to `UICursor`: pointer to the cursor static 0x333b080; set by the UI ctor 0x1169395, cleared by the UI dtor 0x11694a2; pointer to the cursor static 0x333b080; set by the UI ctor 0x1169395, cleared by the UI dtor 0x11694a2 (high); type `ptr:UICursor`
-pub const g_UICursor_ptr: u64 = 403551;

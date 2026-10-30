@@ -6975,13 +6975,6 @@ pub unsafe fn add_ref_handle_to_field130_list(param_1: i64, param_2: *mut u32, p
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn add_ref_handle_to_field130_list_2(param_1: i64, param_2: i64) -> u64 { unsafe { function!(19426, (i64, i64) -> u64)(param_1, param_2) } }
-/// `AddRefHandleToListIfAbsent` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 41289, rva 0x77a790).
-/// `undefined AddRefHandleToListIfAbsent(longlong param_1, uint * param_2, int param_3)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn add_ref_handle_to_list_if_absent(param_1: i64, param_2: *mut u32, param_3: i32) -> u64 { unsafe { function!(41289, (i64, *mut u32, i32) -> u64)(param_1, param_2, param_3) } }
 /// `AddRefMemberCollectablesWithArrayA8` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 85778, rva 0xd9fe60).
 /// `undefined AddRefMemberCollectablesWithArrayA8(longlong param_1, longlong param_2)`
 ///
@@ -7073,13 +7066,6 @@ pub unsafe fn add_ref_ptr_to_locked_global_array388643(param_1: *mut i64, param_
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn add_ref_radix_table_range(param_1: *mut u64, param_2: u64, param_3: i64) -> u64 { unsafe { function!(87763, (*mut u64, u64, i64) -> u64)(param_1, param_2, param_3) } }
-/// `AddRefRefCounted16UnderLock` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 57010, rva 0xaa26b0).
-/// `undefined AddRefRefCounted16UnderLock(longlong param_1)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn add_ref_ref_counted16_under_lock(param_1: i64) -> u64 { unsafe { function!(57010, (i64) -> u64)(param_1) } }
 /// `AddRefToCellAtItsPosition` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 13726, rva 0x1bcf40).
 /// `undefined8 AddRefToCellAtItsPosition(undefined8 param_1, longlong * * param_2, longlong param_3)`
 ///
@@ -9908,13 +9894,6 @@ pub unsafe fn append_dword_ref_ptr_pair(param_1: *mut u32, param_2: *mut u32) ->
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn append_dword_to_array(param_1: *mut i64, param_2: *mut u32) -> u64 { unsafe { function!(12911, (*mut i64, *mut u32) -> u64)(param_1, param_2) } }
-/// `AppendDwordToField10SmallArray` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 39298, rva 0x6f3110).
-/// `undefined AppendDwordToField10SmallArray(longlong param_1, undefined4 * param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn append_dword_to_field10_small_array(param_1: i64, param_2: *mut u32) -> u64 { unsafe { function!(39298, (i64, *mut u32) -> u64)(param_1, param_2) } }
 /// `AppendDwordsToBufferAt10` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 73348, rva 0xf76f40).
 /// `ulonglong AppendDwordsToBufferAt10(longlong param_1, void * param_2, int param_3, int param_4)`
 ///
@@ -13891,3 +13870,24 @@ pub unsafe fn assign_record28_array(param_1: *mut i64, param_2: *mut i64, param_
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn assign_ref_counted_buffer_ptr(param_1: *mut u64, param_2: *mut u64) -> *mut u64 { unsafe { function!(87420, (*mut u64, *mut u64) -> *mut u64)(param_1, param_2) } }
+/// `AssignRefCountedField10` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 82296, rva 0xcf8630).
+/// `undefined AssignRefCountedField10(longlong * param_1, longlong * param_2, longlong param_3)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn assign_ref_counted_field10(param_1: *mut i64, param_2: *mut i64, param_3: i64) -> u64 { unsafe { function!(82296, (*mut i64, *mut i64, i64) -> u64)(param_1, param_2, param_3) } }
+/// `AssignRefCountedPairArrayPtr` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 90901, rva 0x11d5920).
+/// `undefined8 * AssignRefCountedPairArrayPtr(undefined8 * param_1, int * param_2, undefined8 param_3, undefined8 param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn assign_ref_counted_pair_array_ptr(param_1: *mut u64, param_2: *mut i32, param_3: u64, param_4: u64) -> *mut u64 { unsafe { function!(90901, (*mut u64, *mut i32, u64, u64) -> *mut u64)(param_1, param_2, param_3, param_4) } }
+/// `AssignRefCountedPointer_11` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 38167, rva 0x6bb180).
+/// `longlong * AssignRefCountedPointer_11(longlong * param_1, undefined8 * param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn assign_ref_counted_pointer_11(param_1: *mut i64, param_2: *mut u64) -> *mut i64 { unsafe { function!(38167, (*mut i64, *mut u64) -> *mut i64)(param_1, param_2) } }

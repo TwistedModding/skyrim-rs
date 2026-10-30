@@ -472,13 +472,6 @@ impl crate::PlayerCharacter {
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
     pub unsafe fn i_animation_graph_manager_holder_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(40933, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self).byte_add(0x38), param_1, param_2, param_3) } }
-    /// `PlayerCharacter::IAnimationGraphManagerHolder_vfunc_11` (decompiler signature, tier low; ledger rtti evidence, name high; id 40754, rva 0x760f50).
-    /// `undefined IAnimationGraphManagerHolder_vfunc_11(PlayerCharacter * this, longlong * param_1)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn i_animation_graph_manager_holder_vfunc_11(&self, param_1: *mut i64) -> u64 { unsafe { function!(40754, (*const Self, *mut i64) -> u64)(core::ptr::from_ref(self).byte_add(0x38), param_1) } }
     /// `PlayerCharacter::IAnimationGraphManagerHolder_vfunc_4` (decompiler signature, tier low; ledger rtti evidence, name high; id 40755, rva 0x761050).
     /// `undefined8 IAnimationGraphManagerHolder_vfunc_4(PlayerCharacter * this, longlong param_1)`
     ///

@@ -3,6 +3,18 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureUnlockParamTypes>::vdtor` at 0x477830 (slot_propagation, medium); signature (low): `BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureUnlockParamTypes> * vdtor(BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureUnlockParamTypes> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureUnlockParamTypes__vdtor: u64 = 28858;
+/// `BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureUnlockParamTypes>::vfunc_18` at 0x477c30 (rtti, medium); signature (low): `undefined8 vfunc_18(BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureUnlockParamTypes> * this, uint param_1)`
+pub const BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureUnlockParamTypes__vfunc_18: u64 = 28876;
+/// `BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureUnlockParamTypes>::vfunc_19` at 0x477bf0 (rtti, medium); signature (low): `undefined * vfunc_19(BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureUnlockParamTypes> * this, uint param_1)`
+pub const BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureUnlockParamTypes__vfunc_19: u64 = 28874;
+/// `BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureUnlockParamTypes>::vfunc_20` at 0x477bb0 (rtti, medium); signature (low): `undefined1 vfunc_20(BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureUnlockParamTypes> * this, uint param_1)`
+pub const BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureUnlockParamTypes__vfunc_20: u64 = 28872;
+/// `BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureUnlockParamTypes>::vfunc_30` at 0x477ca0 (rtti, medium); signature (low): `undefined * vfunc_30(void)`
+pub const BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureUnlockParamTypes__vfunc_30: u64 = 28880;
+/// `BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureUnlockParamTypes>::vfunc_34` at 0x477c70 (rtti, medium); signature (low): `undefined vfunc_34(BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureUnlockParamTypes> * this, uint param_1)`
+pub const BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureUnlockParamTypes__vfunc_34: u64 = 28878;
 /// `BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureUseIdleMarkerParamTypes>::vdtor` at 0x48eb50 (slot_propagation, medium); signature (low): `BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureUseIdleMarkerParamTypes> * vdtor(BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureUseIdleMarkerParamTypes> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureUseIdleMarkerParamTypes__vdtor: u64 = 29328;
 /// `BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureUseIdleMarkerParamTypes>::vfunc_18` at 0x48ed80 (rtti, medium); signature (low): `undefined8 vfunc_18(BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureUseIdleMarkerParamTypes> * this, uint param_1)`
@@ -1587,10 +1599,18 @@ pub const BSAnimationGraphManager__ProcessEvent: u64 = 63371;
 pub const BSAnimationGraphManager__SetActiveGraph: u64 = 63363;
 /// `BSAnimationGraphManager::SetActiveGraph` as a function pointer type (high).
 pub type BSAnimationGraphManager__SetActiveGraph_fn = unsafe extern "C" fn(this: *mut crate::BSAnimationGraphManager, index: u32) -> bool;
+/// `BSAnimationGraphManager::SetGraph0FootIkDisabled` at 0x765350 (semantic, high); signature (untiered): `undefined SetGraph0FootIkDisabled(longlong param_1, undefined8 * param_2)`; semantic: under the manager spin lock +0xa0, finds the first graph entry passing the type check (0xbd2ff0 vs *0x326fb50) and calls SetDisabled(graph+0x100, **disabled) on it, then stops: only graph 0 is touched (high); signature `void (BSAnimationGraphManager* this, bool** disabled)`
+pub const BSAnimationGraphManager__SetGraph0FootIkDisabled: u64 = 40846;
+/// `BSAnimationGraphManager::SetGraph0FootIkDisabled` as a function pointer type (high).
+pub type BSAnimationGraphManager__SetGraph0FootIkDisabled_fn = unsafe extern "C" fn(this: *mut crate::BSAnimationGraphManager, disabled: *mut *mut bool);
 /// `BSAnimationGraphManager::Update` at 0xbc0680 (semantic, high); signature (untiered): `undefined Update(undefined8 * param_1, float * param_2)`; semantic: per frame: update channels, push channel values into each graph (0xbcf570), Update every graph (events collected from the active one), unlock, send the collected events through every graph that has sinks (0xbcf360), then write poses inline (0xbcf480 per graph) or hand the manager to the queue ID_409516 and release its semaphore (high); signature `void (BSAnimationGraphManager* this, BSAnimationUpdateData* data)`
 pub const BSAnimationGraphManager__Update: u64 = 63358;
 /// `BSAnimationGraphManager::Update` as a function pointer type (high).
 pub type BSAnimationGraphManager__Update_fn = unsafe extern "C" fn(this: *mut crate::BSAnimationGraphManager, data: *mut c_void);
+/// `BSAnimationGraphManager::UpdateActiveGraphFootIk` at 0x7dd8c0 (semantic, high); signature (untiered): `undefined UpdateActiveGraphFootIk(longlong param_1, undefined8 * param_2)`; semantic: under the manager spin lock +0xa0, calls UpdateActiveGraphFootIkSwitch for the active graph (+0xb0) only (high); signature `void (BSAnimationGraphManager* this, FootIkFeedback** out)`
+pub const BSAnimationGraphManager__UpdateActiveGraphFootIk: u64 = 43692;
+/// `BSAnimationGraphManager::UpdateActiveGraphFootIk` as a function pointer type (high).
+pub type BSAnimationGraphManager__UpdateActiveGraphFootIk_fn = unsafe extern "C" fn(this: *mut crate::BSAnimationGraphManager, out: *mut *mut c_void);
 /// `BSAnimationGraphManager::ctor` at 0xbbffd0 (layout_inference, medium); signature (high): `BSAnimationGraphManager * ctor(BSAnimationGraphManager * this)`
 pub const BSAnimationGraphManager__ctor: u64 = 63353;
 /// `BSAnimationGraphManager::ctor` at 0xbc00b0 (layout_inference, medium); signature (low): `BSAnimationGraphManager * ctor(BSAnimationGraphManager * this, longlong param_1, int param_2)`
@@ -8021,25 +8041,3 @@ pub const BSQueuedResourceCollection_BSResource__EntryDB_BSModelDB__DBTraits_2__
 pub const BSQueuedResourceCollection_BSResource__EntryDB_BSModelDB__DBTraits_2__vfunc_17: u64 = 11392;
 /// `BSQueuedResourceCollection<BSResource::EntryDB<BSModelDB::DBTraits>,2>::vfunc_18` at 0x153280 (rtti, medium); signature (low): `undefined vfunc_18(void)`
 pub const BSQueuedResourceCollection_BSResource__EntryDB_BSModelDB__DBTraits_2__vfunc_18: u64 = 11400;
-/// `BSQueuedResourceCollection<BSResource::EntryDB<BSModelDB::DBTraits>,42>::BSResource_IEntryDB_PostFlushNotify_vdtor` at 0x19ba40 (slot_propagation, medium); signature (high): `undefined BSResource_IEntryDB_PostFlushNotify_vdtor(BSQueuedResourceCollection<BSResource::EntryDB<BSModelDB::DBTraits>,42> * this)`
-pub const BSQueuedResourceCollection_BSResource__EntryDB_BSModelDB__DBTraits_42__BSResource_IEntryDB_PostFlushNotify_vdtor: u64 = 13180;
-/// `BSQueuedResourceCollection<BSResource::EntryDB<BSModelDB::DBTraits>,42>::vdtor` at 0x19bb30 (slot_propagation, medium); signature (low): `BSQueuedResourceCollection<BSResource::EntryDB<BSModelDB::DBTraits>,42> * vdtor(BSQueuedResourceCollection<BSResource::EntryDB<BSModelDB::DBTraits>,42> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const BSQueuedResourceCollection_BSResource__EntryDB_BSModelDB__DBTraits_42__vdtor: u64 = 13190;
-/// `BSQueuedResourceCollection<BSResource::EntryDB<BSModelDB::DBTraits>,42>::vfunc_1` at 0x19e7f0 (rtti, medium); signature (high): `undefined vfunc_1(BSQueuedResourceCollection<BSResource::EntryDB<BSModelDB::DBTraits>,42> * this)`
-pub const BSQueuedResourceCollection_BSResource__EntryDB_BSModelDB__DBTraits_42__vfunc_1: u64 = 13268;
-/// `BSQueuedResourceCollection<BSResource::EntryDB<BSModelDB::DBTraits>,42>::vfunc_15` at 0x19ca00 (rtti, medium); signature (high): `undefined vfunc_15(BSQueuedResourceCollection<BSResource::EntryDB<BSModelDB::DBTraits>,42> * this)`
-pub const BSQueuedResourceCollection_BSResource__EntryDB_BSModelDB__DBTraits_42__vfunc_15: u64 = 13229;
-/// `BSQueuedResourceCollection<BSResource::EntryDB<BSModelDB::DBTraits>,42>::vfunc_16` at 0x19c920 (rtti, medium); signature (low): `undefined vfunc_16(BSQueuedResourceCollection<BSResource::EntryDB<BSModelDB::DBTraits>,42> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-pub const BSQueuedResourceCollection_BSResource__EntryDB_BSModelDB__DBTraits_42__vfunc_16: u64 = 13227;
-/// `BSQueuedResourceCollection<BSResource::EntryDB<BSModelDB::DBTraits>,42>::vfunc_17` at 0x19c9a0 (rtti, medium); signature (high): `int vfunc_17(BSQueuedResourceCollection<BSResource::EntryDB<BSModelDB::DBTraits>,42> * this)`
-pub const BSQueuedResourceCollection_BSResource__EntryDB_BSModelDB__DBTraits_42__vfunc_17: u64 = 13228;
-/// `BSQueuedResourceCollection<BSResource::EntryDB<BSModelDB::DBTraits>,42>::vfunc_18` at 0x19cf70 (rtti, medium); signature (low): `undefined vfunc_18(void)`
-pub const BSQueuedResourceCollection_BSResource__EntryDB_BSModelDB__DBTraits_42__vfunc_18: u64 = 13247;
-/// `BSQueuedResourceCollection<BSResource::EntryDB<BSTextureDB::DBTraits>,2>::BSResource_IEntryDB_PostFlushNotify_vdtor` at 0xfd75e0 (slot_propagation, medium); signature (high): `undefined BSResource_IEntryDB_PostFlushNotify_vdtor(BSQueuedResourceCollection<BSResource::EntryDB<BSTextureDB::DBTraits>,2> * this)`
-pub const BSQueuedResourceCollection_BSResource__EntryDB_BSTextureDB__DBTraits_2__BSResource_IEntryDB_PostFlushNotify_vdtor: u64 = 76057;
-/// `BSQueuedResourceCollection<BSResource::EntryDB<BSTextureDB::DBTraits>,2>::vdtor` at 0xfd7600 (slot_propagation, medium); signature (low): `BSQueuedResourceCollection<BSResource::EntryDB<BSTextureDB::DBTraits>,2> * vdtor(BSQueuedResourceCollection<BSResource::EntryDB<BSTextureDB::DBTraits>,2> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const BSQueuedResourceCollection_BSResource__EntryDB_BSTextureDB__DBTraits_2__vdtor: u64 = 76059;
-/// `BSQueuedResourceCollection<BSResource::EntryDB<BSTextureDB::DBTraits>,2>::vfunc_1` at 0xfd8980 (rtti, medium); signature (high): `undefined vfunc_1(BSQueuedResourceCollection<BSResource::EntryDB<BSTextureDB::DBTraits>,2> * this)`
-pub const BSQueuedResourceCollection_BSResource__EntryDB_BSTextureDB__DBTraits_2__vfunc_1: u64 = 76089;
-/// `BSQueuedResourceCollection<BSResource::EntryDB<BSTextureDB::DBTraits>,2>::vfunc_15` at 0xfd8090 (rtti, medium); signature (high): `undefined vfunc_15(BSQueuedResourceCollection<BSResource::EntryDB<BSTextureDB::DBTraits>,2> * this)`
-pub const BSQueuedResourceCollection_BSResource__EntryDB_BSTextureDB__DBTraits_2__vfunc_15: u64 = 76076;

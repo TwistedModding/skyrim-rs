@@ -178,6 +178,15 @@ impl crate::AIProcess {
     /// `bool (AIProcess* this, Actor* actor, int defaultActionIndex, TESIdleForm* idle, bool checkConditions, bool force, TESObjectREFR* target)`
     #[inline]
     pub fn play_idle(&self, actor: &crate::Actor, defaultActionIndex: i32, idle: &crate::TESIdleForm, checkConditions: bool, force: bool, target: &crate::TESObjectREFR) -> bool { unsafe { function!(39256, (*const Self, *const crate::Actor, i32, *const crate::TESIdleForm, bool, bool, *const crate::TESObjectREFR) -> bool)(core::ptr::from_ref(self), core::ptr::from_ref(actor), defaultActionIndex, core::ptr::from_ref(idle), checkConditions, force, core::ptr::from_ref(target)) } }
+    /// `AIProcess::QueuePostChannelAction`: appends the index to the small array at *(process+0x10)+0x400 (data inline +0x408 or pointer, count +0x410)
+    ///
+    /// Semantic, camera pass, high; ledger runtime evidence, name high; id 39298, rva 0x6f3110.
+    /// `void (AIProcess* process, u32* defaultObjectIndex)`
+    ///
+    /// # Safety
+    /// `defaultObjectIndex` must point to what the engine expects.
+    #[inline]
+    pub unsafe fn queue_post_channel_action(&self, defaultObjectIndex: *mut u32) { unsafe { function!(39298, (*const Self, *mut u32))(core::ptr::from_ref(self), defaultObjectIndex) } }
     /// `AIProcess::ResetHighField3F8Pair`: high data +0x3f8 = +0x3fa = 0xffff
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 39522, rva 0x6ffef0.
@@ -524,6 +533,15 @@ impl crate::Actor {
     /// `void (Actor* this)`
     #[inline]
     pub fn advance_deferred_kill_state(&self) { unsafe { function!(38617, (*const Self))(core::ptr::from_ref(self)) } }
+    /// `Actor::ApplyFootIkFeedback`: with INI bFootIKFeedback:Animation (default 1) and an entry in the foot IK raycast DB: builds the feedback record (controller +0x21b bit 0 into +0x23), runs UpdateActiveGraphFootIk on the actor's manager and moves the actor/controller by the returned error translation; without the INI it only snaps the actor to the controller position
+    ///
+    /// Semantic, camera pass, medium; ledger semantic evidence, name medium; id 43690, rva 0x7dd0f0.
+    /// `u64 (Actor* this)`
+    ///
+    /// # Safety
+    /// The pass rates the signature medium.
+    #[inline]
+    pub unsafe fn apply_foot_ik_feedback(&self) -> u64 { unsafe { function!(43690, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `Actor::ApplyMovementStep`: the actor's movement step: position, heading += step yaw (SetField50Angle, skipped for the player while +0xbed bit 2), pitch = clamp(rotX + step pitch) with limits by mount state: horse (fMountedMaxLookingDown only when the mount's flags2 & 0xe0 is in 0x60..0xbf, fHorseMaxUpwardPitch), flying mount (fFlyingMountedMaxLookingDown, fDragonMaxUpwardPitch), sitting (fSittingMaxLookingDown), then SetAngleField48
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 37356, rva 0x67c380.
@@ -536,6 +554,15 @@ impl crate::Actor {
     /// `void (Actor* this, bool sendGetUpAction)`
     #[inline]
     pub fn begin_get_up(&self, sendGetUpAction: bool) { unsafe { function!(40150, (*const Self, bool))(core::ptr::from_ref(self), sendGetUpAction) } }
+    /// `Actor::BuildBumperListShape`: with bAllowCharacterBumper:HAVOK set, wraps the controller body shape in a new bhkListShape whose last child is the bumper capsule (moved into controller space by rewriting the capsule's vertices at +0x30/+0x40, w = radius from +0x20) and disables that last child; a body shape that is already a list contributes its children
+    ///
+    /// Semantic, camera pass, medium; ledger semantic evidence, name medium; id 78352, rva 0x1069be0.
+    /// `bhkListShape* (void* bumperSource, bhkShape* bodyShape, const float* controllerOffset)`
+    ///
+    /// # Safety
+    /// The pass rates the signature medium.
+    #[inline]
+    pub unsafe fn build_bumper_list_shape(bumperSource: *mut c_void, bodyShape: *mut crate::bhkShape, controllerOffset: *const f32) -> *mut crate::bhkListShape { unsafe { function!(78352, (*mut c_void, *mut crate::bhkShape, *const f32) -> *mut crate::bhkListShape)(bumperSource, bodyShape, controllerOffset) } }
     /// `Actor::CreateAnimationChannels`: Actor holder slot 10: creates the per-actor graph data channels: Speed, TargetSpeed, Pitch, Roll, Direction, TurnDelta, PitchDelta, weaponSpeedMult, leftWeaponSpeedMult, iWantBlock, bHeadTracking, TimeDelta
     ///
     /// Semantic, animation pass, high; ledger semantic evidence, name high; id 37984, rva 0x6b0650.
@@ -784,6 +811,15 @@ impl crate::Actor {
     /// `void (Actor* actor)`
     #[inline]
     pub fn perform_knockdown_action(&self) { unsafe { function!(40151, (*const Self))(core::ptr::from_ref(self)) } }
+    /// `Actor::PerformQueuedChannelActions`: drains the queue: for each index takes default object i (manager 0x219d180: object +0x20+8i, ready byte +0xbc0+i) and runs TESActionData::Perform 0x78db80 with ActionInput type 2 on the actor; clears the count
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 39299, rva 0x6f31a0.
+    /// `void (AIProcess* process, Actor* actor)`
+    ///
+    /// # Safety
+    /// `process` must point to what the engine expects.
+    #[inline]
+    pub unsafe fn perform_queued_channel_actions(process: *mut crate::AIProcess, actor: *mut Self) { unsafe { function!(39299, (*mut crate::AIProcess, *mut Self))(process, actor) } }
     /// `Actor::PlayIdle_Impl`: Papyrus Actor.PlayIdle/PlayIdleWithTarget body: AIProcess::PlayIdle(process, this, 0x40, idle, 1, 0, target)
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 55105, rva 0xa12e60.
@@ -1432,6 +1468,15 @@ impl crate::PlayerCharacter {
     /// `void (PlayerCharacter* this)`
     #[inline]
     pub fn on_dismount_finished(&self) { unsafe { function!(40726, (*const Self))(core::ptr::from_ref(self)) } }
+    /// `PlayerCharacter::OnGraphManagerSet`: PlayerCharacter holder slot 11: after Actor's version, when the manager has 2 graphs selects graph 1 if graph 0 is active and +0xbb3 bit 0 is clear, detaches the sinks from the inactive graph and calls SetGraph0FootIkDisabled(mgr, active == 1)
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 40754, rva 0x760f50.
+    /// `void (PlayerCharacter* this /* holder +0x38 */, BSAnimationGraphManager** mgr)`
+    ///
+    /// # Safety
+    /// `mgr` must point to what the engine expects.
+    #[inline]
+    pub unsafe fn on_graph_manager_set(&self, mgr: *mut *mut crate::BSAnimationGraphManager) { unsafe { function!(40754, (*const Self, *mut *mut crate::BSAnimationGraphManager))(core::ptr::from_ref(self).byte_add(0x38), mgr) } }
     /// `PlayerCharacter::OnMountActivated`: the player mounts *mount: ownership check (stealing a horse), flying-mount setup (default object 0x16a 'Flying Mount - Fly Fast Worldspaces', fFlyingMountTutorialMessageDelay), clears the sneak flag 0x400 and the controller's +0x21c, and when the mount differs from the current one (slot 0x8a0 handle) switches the camera to the horse
     ///
     /// Semantic, camera pass, high; ledger runtime evidence, name high; id 40725, rva 0x75ddc0.
@@ -1519,6 +1564,12 @@ impl crate::PlayerCharacter {
     /// `void (PlayerCharacter* this)`
     #[inline]
     pub fn start_dialogue_turn_toward_speaker(&self) { unsafe { function!(40496, (*const Self))(core::ptr::from_ref(self)) } }
+    /// `PlayerCharacter::ToggleActiveGraphAndSinks`: when the player's manager has 2 graphs: moves the transform-delta sink and the g_ActorMediator graph-event sink from the old active graph to the new one, flips the active graph (SetActiveGraph 0xbc0d60 with (active-1)&1) and calls SetGraph0FootIkDisabled(manager, newActive == 1)
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 40737, rva 0x75e770.
+    /// `void (PlayerCharacter* this)`
+    #[inline]
+    pub fn toggle_active_graph_and_sinks(&self) { unsafe { function!(40737, (*const Self))(core::ptr::from_ref(self)) } }
     /// `PlayerCharacter::UpdateAnimation`: slot 125 for the player: collision transforms, graph update, then the first- and third-person biped graphs
     ///
     /// Semantic, animation pass, high; ledger runtime evidence, name high; id 40521, rva 0x74bf70.

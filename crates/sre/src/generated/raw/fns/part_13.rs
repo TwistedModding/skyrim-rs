@@ -3,6 +3,40 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `INISetting_fCharControllerWarpDistSqr_HAVOK__init` at 0xeb170 (crt_init, medium); signature (high): `void INISetting_fCharControllerWarpDistSqr_HAVOK__init(void)`
+pub const INISetting_fCharControllerWarpDistSqr_HAVOK__init: u64 = 9615;
+/// `INISetting_fCharacterLightLumMax_Display__atexit` at 0x17c1410 (crt_init, medium); signature (high): `void INISetting_fCharacterLightLumMax_Display__atexit(void)`
+pub const INISetting_fCharacterLightLumMax_Display__atexit: u64 = 174429;
+/// `INISetting_fCharacterLightLumMax_Display__init` at 0xffeb0 (crt_init, medium); signature (high): `void INISetting_fCharacterLightLumMax_Display__init(void)`
+pub const INISetting_fCharacterLightLumMax_Display__init: u64 = 10263;
+/// `INISetting_fCharacterLightLumScale_Display__atexit` at 0x17c1460 (crt_init, medium); signature (high): `void INISetting_fCharacterLightLumScale_Display__atexit(void)`
+pub const INISetting_fCharacterLightLumScale_Display__atexit: u64 = 174430;
+/// `INISetting_fCharacterLightLumScale_Display__init` at 0xfff30 (crt_init, medium); signature (high): `void INISetting_fCharacterLightLumScale_Display__init(void)`
+pub const INISetting_fCharacterLightLumScale_Display__init: u64 = 10264;
+/// `INISetting_fCharacterLightPrimaryLightIntensity_Display__atexit` at 0x17c14b0 (crt_init, medium); signature (high): `void INISetting_fCharacterLightPrimaryLightIntensity_Display__atexit(void)`
+pub const INISetting_fCharacterLightPrimaryLightIntensity_Display__atexit: u64 = 174431;
+/// `INISetting_fCharacterLightPrimaryLightIntensity_Display__init` at 0xfffb0 (crt_init, medium); signature (high): `void INISetting_fCharacterLightPrimaryLightIntensity_Display__init(void)`
+pub const INISetting_fCharacterLightPrimaryLightIntensity_Display__init: u64 = 10265;
+/// `INISetting_fCharacterLightSecondaryLightIntensity_Display__atexit` at 0x17c1500 (crt_init, medium); signature (high): `void INISetting_fCharacterLightSecondaryLightIntensity_Display__atexit(void)`
+pub const INISetting_fCharacterLightSecondaryLightIntensity_Display__atexit: u64 = 174432;
+/// `INISetting_fCharacterLightSecondaryLightIntensity_Display__init` at 0x100030 (crt_init, medium); signature (high): `void INISetting_fCharacterLightSecondaryLightIntensity_Display__init(void)`
+pub const INISetting_fCharacterLightSecondaryLightIntensity_Display__init: u64 = 10266;
+/// `INISetting_fChaseCameraMaxAngle_Camera__atexit` at 0x17a3f50 (crt_init, medium); signature (high): `void INISetting_fChaseCameraMaxAngle_Camera__atexit(void)`
+pub const INISetting_fChaseCameraMaxAngle_Camera__atexit: u64 = 172202;
+/// `INISetting_fChaseCameraMaxAngle_Camera__init` at 0xb2f30 (crt_init, medium); signature (high): `void INISetting_fChaseCameraMaxAngle_Camera__init(void)`
+pub const INISetting_fChaseCameraMaxAngle_Camera__init: u64 = 6743;
+/// `INISetting_fChaseCameraSpeed_Camera__atexit` at 0x17a3fa0 (crt_init, medium); signature (high): `void INISetting_fChaseCameraSpeed_Camera__atexit(void)`
+pub const INISetting_fChaseCameraSpeed_Camera__atexit: u64 = 172203;
+/// `INISetting_fChaseCameraSpeed_Camera__init` at 0xb2fb0 (crt_init, medium); signature (high): `void INISetting_fChaseCameraSpeed_Camera__init(void)`
+pub const INISetting_fChaseCameraSpeed_Camera__init: u64 = 6744;
+/// `INISetting_fClampScale_Display__atexit` at 0x17c4340 (crt_init, medium); signature (high): `void INISetting_fClampScale_Display__atexit(void)`
+pub const INISetting_fClampScale_Display__atexit: u64 = 174675;
+/// `INISetting_fClampScale_Display__init` at 0x104ec0 (crt_init, medium); signature (high): `void INISetting_fClampScale_Display__init(void)`
+pub const INISetting_fClampScale_Display__init: u64 = 10525;
+/// `INISetting_fCloakEffectUpdateInterval_General__atexit` at 0x1791d90 (crt_init, medium); signature (high): `void INISetting_fCloakEffectUpdateInterval_General__atexit(void)`
+pub const INISetting_fCloakEffectUpdateInterval_General__atexit: u64 = 170640;
+/// `INISetting_fCloakEffectUpdateInterval_General__init` at 0x92370 (crt_init, medium); signature (high): `void INISetting_fCloakEffectUpdateInterval_General__init(void)`
+pub const INISetting_fCloakEffectUpdateInterval_General__init: u64 = 5418;
 /// `INISetting_fCloudAtlasWidth_Clouds__atexit` at 0x17906c0 (crt_init, medium); signature (high): `void INISetting_fCloudAtlasWidth_Clouds__atexit(void)`
 pub const INISetting_fCloudAtlasWidth_Clouds__atexit: u64 = 170547;
 /// `INISetting_fCloudAtlasWidth_Clouds__init` at 0x90ad0 (crt_init, medium); signature (high): `void INISetting_fCloudAtlasWidth_Clouds__init(void)`
@@ -5647,6 +5681,10 @@ pub const InitBoxBoxAgentFuncs: u64 = 66653;
 pub const InitButtonLabelAndCallback: u64 = 454593;
 /// `InitBvTreeAgent3FuncTable` at 0xc34f30 (decompiler, medium); signature (untiered): `undefined InitBvTreeAgent3FuncTable(undefined8 * param_1)`
 pub const InitBvTreeAgent3FuncTable: u64 = 65042;
+/// `InitCharacterBumperMaterialId` at 0x1063de0 (semantic, high); signature (untiered): `undefined InitCharacterBumperMaterialId(void)`; semantic: static init: BSFixedString 'CharacterBumper' (0x1a7fea0), then ComputeCrc32OfString(&g_CharacterBumperMaterialId 0x33376c8, str, 1) (high); signature `void ()`
+pub const InitCharacterBumperMaterialId: u64 = 78259;
+/// `InitCharacterBumperMaterialId` as a function pointer type (high).
+pub type InitCharacterBumperMaterialId_fn = unsafe extern "C" fn();
 /// `InitCharacterControllerFromCinfo` at 0x1067390 (decompiler, medium); signature (untiered): `undefined InitCharacterControllerFromCinfo(longlong param_1, longlong param_2, undefined8 param_3, undefined8 param_4)`
 pub const InitCharacterControllerFromCinfo: u64 = 78305;
 /// `InitChunkBufferReader` at 0x1ceac0 (decompiler, medium); signature (untiered): `undefined8 * InitChunkBufferReader(undefined8 * param_1, longlong param_2, undefined8 param_3, undefined8 param_4)`
@@ -8349,47 +8387,3 @@ pub const InventoryUtils___anon_3F954FDF__IsFavoriteVisitor__vdtor: u64 = 16188;
 pub const InventoryUtils___anon_3F954FDF__IsFavoriteVisitor__vfunc_1: u64 = 16234;
 /// `InventoryUtils::_anon_3F954FDF::IsWornVisitor::vdtor` at 0x2406e0 (layout_inference, medium); signature (low): `IsWornVisitor * vdtor(IsWornVisitor * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const InventoryUtils___anon_3F954FDF__IsWornVisitor__vdtor: u64 = 16189;
-/// `InventoryUtils::_anon_3F954FDF::IsWornVisitor::vfunc_1` at 0x242410 (rtti, high); signature (low): `undefined8 vfunc_1(IsWornVisitor * this, longlong * param_1)`
-pub const InventoryUtils___anon_3F954FDF__IsWornVisitor__vfunc_1: u64 = 16235;
-/// `InventoryUtils::_anon_3F954FDF::IsWornVisitor::vfunc_1_sub0` at 0x2294f0 (callgraph, medium); signature (untiered): `undefined4 vfunc_1_sub0(longlong * param_1)`
-pub const InventoryUtils___anon_3F954FDF__IsWornVisitor__vfunc_1_sub0: u64 = 16015;
-/// `InventoryUtils::_anon_3F954FDF::WornHasKeywordVisitor::vdtor` at 0x240800 (layout_inference, medium); signature (low): `WornHasKeywordVisitor * vdtor(WornHasKeywordVisitor * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const InventoryUtils___anon_3F954FDF__WornHasKeywordVisitor__vdtor: u64 = 16194;
-/// `InventoryUtils::_anon_3F954FDF::WornHasKeywordVisitor::vfunc_1` at 0x242480 (rtti, high); signature (low): `bool vfunc_1(WornHasKeywordVisitor * this, longlong * param_1)`
-pub const InventoryUtils___anon_3F954FDF__WornHasKeywordVisitor__vfunc_1: u64 = 16237;
-/// `InverseDct8x8` at 0x15dc300 (decompiler, medium); signature (untiered): `undefined InverseDct8x8(longlong param_1, int param_2, longlong param_3)`
-pub const InverseDct8x8: u64 = 453902;
-/// `InverseDct8x8Block` at 0x59be40 (decompiler, medium); signature (medium): `undefined InverseDct8x8Block(longlong param_1, int param_2, longlong param_3)`
-pub const InverseDct8x8Block: u64 = 442017;
-/// `InverseRotateVectorArrayByQuaternions` at 0xca68c0 (decompiler, medium); signature (medium): `undefined InverseRotateVectorArrayByQuaternions(longlong param_1, longlong param_2, longlong param_3, int param_4)`
-pub const InverseRotateVectorArrayByQuaternions: u64 = 67233;
-/// `InverseTransformPoint` at 0xaa7430 (decompiler, medium); signature (medium): `undefined InverseTransformPoint(float * param_1, float * param_2, float * param_3)`
-pub const InverseTransformPoint: u64 = 57218;
-/// `InverseTransformPointByQuatTranslation` at 0xaa7300 (decompiler, medium); signature (medium): `undefined InverseTransformPointByQuatTranslation(float * param_1, float * param_2, float * param_3)`
-pub const InverseTransformPointByQuatTranslation: u64 = 57216;
-/// `InvertAffineMatrix2x3` at 0xd03ac0 (decompiler, medium); signature (medium): `undefined InvertAffineMatrix2x3(float * param_1, float * param_2)`
-pub const InvertAffineMatrix2x3: u64 = 82720;
-/// `InvertAlphaInRow` at 0x11b04c0 (decompiler, medium); signature (medium): `undefined InvertAlphaInRow(uint * param_1, undefined1 * param_2)`
-pub const InvertAlphaInRow: u64 = 90217;
-/// `InvertGrayPixelRow` at 0x11a71e0 (decompiler, medium); signature (medium): `undefined InvertGrayPixelRow(longlong param_1, ulonglong * param_2)`
-pub const InvertGrayPixelRow: u64 = 90121;
-/// `InvertMatrix3` at 0x7f5390 (decompiler, medium); signature (medium): `ulonglong InvertMatrix3(float * param_1, float * param_2)`
-pub const InvertMatrix3: u64 = 44051;
-/// `InvertMatrix3InPlace` at 0xaaab90 (decompiler, medium); signature (medium): `bool InvertMatrix3InPlace(float * param_1, float param_2)`
-pub const InvertMatrix3InPlace: u64 = 57376;
-/// `InvertMatrix3x3` at 0x5d8920 (decompiler, high); signature (high): `float * InvertMatrix3x3(float * param_1, float * param_2)`
-pub const InvertMatrix3x3: u64 = 34686;
-/// `InvertMatrix4x4` at 0xab6d40 (decompiler, medium); signature (medium): `bool InvertMatrix4x4(float * param_1, float * param_2, float param_3)`
-pub const InvertMatrix4x4: u64 = 57810;
-/// `InvertMatrix4x4InPlace` at 0xab6cf0 (decompiler, medium); signature (medium): `undefined InvertMatrix4x4InPlace(undefined8 * param_1, undefined4 param_2)`
-pub const InvertMatrix4x4InPlace: u64 = 57809;
-/// `InvertMatrixObject` at 0xda1a10 (decompiler, medium); signature (untiered): `undefined InvertMatrixObject(longlong param_1)`
-pub const InvertMatrixObject: u64 = 85810;
-/// `InvertQuatTransform` at 0xf5fce0 (decompiler, medium); signature (medium): `undefined InvertQuatTransform(float * param_1, float * param_2)`
-pub const InvertQuatTransform: u64 = 72646;
-/// `InvertRigidTransform` at 0xaa4330 (decompiler, medium); signature (medium): `undefined InvertRigidTransform(float * param_1, float * param_2)`
-pub const InvertRigidTransform: u64 = 57088;
-/// `InvertTransform_2` at 0x7f5510 (decompiler, medium); signature (medium): `undefined InvertTransform_2(float * param_1, float * param_2)`
-pub const InvertTransform_2: u64 = 44052;
-/// `InvisibilityEffect::ctor` at 0x5c8e40 (layout_inference, high); signature (low): `InvisibilityEffect * ctor(InvisibilityEffect * this, longlong param_1, undefined8 param_2, undefined4 * param_3)`
-pub const InvisibilityEffect__ctor: u64 = 34364;

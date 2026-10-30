@@ -183,33 +183,15 @@ impl core::ops::Deref for crate::bhkCharControllerShape {
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
-/// `bhkCharProxyController` is laid out from its primary base `hkpCharacterProxyListener`, so its methods and fields are reachable through it.
-impl core::ops::Deref for crate::bhkCharProxyController {
-    type Target = crate::hkpCharacterProxyListener;
-    #[inline]
-    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
-}
 /// `bhkCharProxyControllerCinfo` is laid out from its primary base `bhkCharacterControllerCinfo`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::bhkCharProxyControllerCinfo {
     type Target = crate::bhkCharacterControllerCinfo;
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
-/// `bhkCharRigidBodyController` is laid out from its primary base `bhkCharacterController`, so its methods and fields are reachable through it.
-impl core::ops::Deref for crate::bhkCharRigidBodyController {
-    type Target = crate::bhkCharacterController;
-    #[inline]
-    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
-}
 /// `bhkCharRigidBodyControllerCinfo` is laid out from its primary base `bhkCharacterControllerCinfo`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::bhkCharRigidBodyControllerCinfo {
     type Target = crate::bhkCharacterControllerCinfo;
-    #[inline]
-    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
-}
-/// `bhkCharacterController` is laid out from its primary base `NiRefObject`, so its methods and fields are reachable through it.
-impl core::ops::Deref for crate::bhkCharacterController {
-    type Target = crate::NiRefObject;
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
@@ -642,12 +624,6 @@ impl core::ops::Deref for crate::bhkSPCollisionObject {
 /// `bhkSerializable` is laid out from its primary base `bhkRefObject`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::bhkSerializable {
     type Target = crate::bhkRefObject;
-    #[inline]
-    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
-}
-/// `bhkShape` is laid out from its primary base `bhkSerializable`, so its methods and fields are reachable through it.
-impl core::ops::Deref for crate::bhkShape {
-    type Target = crate::bhkSerializable;
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
@@ -1131,6 +1107,12 @@ impl core::ops::Deref for crate::hkDummyMemoryTrackerImpl {
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
+/// `hkDummySingleton` is laid out from its primary base `hkReferencedObject`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::hkDummySingleton {
+    type Target = crate::hkReferencedObject;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
 /// `hkErrStream` is laid out from its primary base `hkOstream`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::hkErrStream {
     type Target = crate::hkOstream;
@@ -1449,12 +1431,6 @@ impl core::ops::Deref for crate::hkRagdollLimitsConstraintCinfo {
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
-/// `hkReferencedObject` is laid out from its primary base `hkBaseObject`, so its methods and fields are reachable through it.
-impl core::ops::Deref for crate::hkReferencedObject {
-    type Target = crate::hkBaseObject;
-    #[inline]
-    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
-}
 /// `hkReferencedObjectLock` is laid out from its primary base `hkReferencedObject`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::hkReferencedObjectLock {
     type Target = crate::hkReferencedObject;
@@ -1623,6 +1599,12 @@ impl core::ops::Deref for crate::hkThreadMemory {
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
+/// `hkTraceStream` is laid out from its primary base `hkReferencedObject`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::hkTraceStream {
+    type Target = crate::hkReferencedObject;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
 /// `hkTrackerLayoutCalculator` is laid out from its primary base `hkReferencedObject`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::hkTrackerLayoutCalculator {
     type Target = crate::hkReferencedObject;
@@ -1647,6 +1629,12 @@ impl core::ops::Deref for crate::hkTrackerSerializableScanSnapshot {
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
+/// `hkTrackerTypeLayout` is laid out from its primary base `hkReferencedObject`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::hkTrackerTypeLayout {
+    type Target = crate::hkReferencedObject;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
 /// `hkTrackerTypeTreeCache` is laid out from its primary base `hkReferencedObject`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::hkTrackerTypeTreeCache {
     type Target = crate::hkReferencedObject;
@@ -1659,8 +1647,20 @@ impl core::ops::Deref for crate::hkTrackerTypeTreeTextCache {
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
+/// `hkTypeInfoRegistry` is laid out from its primary base `hkReferencedObject`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::hkTypeInfoRegistry {
+    type Target = crate::hkReferencedObject;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
 /// `hkVersionPatchManager` is laid out from its primary base `hkReferencedObject`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::hkVersionPatchManager {
+    type Target = crate::hkReferencedObject;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `hkVtableClassRegistry` is laid out from its primary base `hkReferencedObject`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::hkVtableClassRegistry {
     type Target = crate::hkReferencedObject;
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
@@ -1709,6 +1709,12 @@ impl core::ops::Deref for crate::hkaAnimatedReferenceFrame {
 }
 /// `hkaAnimation` is laid out from its primary base `hkReferencedObject`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::hkaAnimation {
+    type Target = crate::hkReferencedObject;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `hkaAnimationBinding` is laid out from its primary base `hkReferencedObject`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::hkaAnimationBinding {
     type Target = crate::hkReferencedObject;
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
@@ -1815,6 +1821,12 @@ impl core::ops::Deref for crate::hkaSplineCompressedAnimation {
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
+/// `hkbAnimationBindingSet` is laid out from its primary base `hkReferencedObject`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::hkbAnimationBindingSet {
+    type Target = crate::hkReferencedObject;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
 /// `hkbAnimationBindingWithTriggers` is laid out from its primary base `hkReferencedObject`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::hkbAnimationBindingWithTriggers {
     type Target = crate::hkReferencedObject;
@@ -1899,6 +1911,12 @@ impl core::ops::Deref for crate::hkbBehaviorGraphInternalStateInfo {
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
+/// `hkbBehaviorGraphStringData` is laid out from its primary base `hkReferencedObject`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::hkbBehaviorGraphStringData {
+    type Target = crate::hkReferencedObject;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
 /// `hkbBehaviorInfo` is laid out from its primary base `hkReferencedObject`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::hkbBehaviorInfo {
     type Target = crate::hkReferencedObject;
@@ -1929,9 +1947,21 @@ impl core::ops::Deref for crate::hkbBlenderGenerator {
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
+/// `hkbBlenderGeneratorInternalState` is laid out from its primary base `hkReferencedObject`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::hkbBlenderGeneratorInternalState {
+    type Target = crate::hkReferencedObject;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
 /// `hkbBlendingTransitionEffect` is laid out from its primary base `hkbTransitionEffect`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::hkbBlendingTransitionEffect {
     type Target = crate::hkbTransitionEffect;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `hkbBlendingTransitionEffectInternalState` is laid out from its primary base `hkReferencedObject`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::hkbBlendingTransitionEffectInternalState {
+    type Target = crate::hkReferencedObject;
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
@@ -1962,6 +1992,12 @@ impl core::ops::Deref for crate::hkbCharacterControlCommand {
 /// `hkbCharacterControllerModifier` is laid out from its primary base `hkbModifier`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::hkbCharacterControllerModifier {
     type Target = crate::hkbModifier;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `hkbCharacterControllerModifierInternalState` is laid out from its primary base `hkReferencedObject`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::hkbCharacterControllerModifierInternalState {
+    type Target = crate::hkReferencedObject;
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
@@ -2019,6 +2055,18 @@ impl core::ops::Deref for crate::hkbClipGenerator {
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
+/// `hkbClipGeneratorInternalState` is laid out from its primary base `hkReferencedObject`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::hkbClipGeneratorInternalState {
+    type Target = crate::hkReferencedObject;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `hkbClipTriggerArray` is laid out from its primary base `hkReferencedObject`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::hkbClipTriggerArray {
+    type Target = crate::hkReferencedObject;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
 /// `hkbClosestLocalFrameCollector` is laid out from its primary base `hkLocalFrameCollector`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::hkbClosestLocalFrameCollector {
     type Target = crate::hkLocalFrameCollector;
@@ -2028,6 +2076,12 @@ impl core::ops::Deref for crate::hkbClosestLocalFrameCollector {
 /// `hkbCombineTransformsModifier` is laid out from its primary base `hkbModifier`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::hkbCombineTransformsModifier {
     type Target = crate::hkbModifier;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `hkbCombineTransformsModifierInternalState` is laid out from its primary base `hkReferencedObject`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::hkbCombineTransformsModifierInternalState {
+    type Target = crate::hkReferencedObject;
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
@@ -2043,15 +2097,33 @@ impl core::ops::Deref for crate::hkbComputeDirectionModifier {
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
+/// `hkbComputeDirectionModifierInternalState` is laid out from its primary base `hkReferencedObject`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::hkbComputeDirectionModifierInternalState {
+    type Target = crate::hkReferencedObject;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
 /// `hkbComputeRotationFromAxisAngleModifier` is laid out from its primary base `hkbModifier`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::hkbComputeRotationFromAxisAngleModifier {
     type Target = crate::hkbModifier;
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
+/// `hkbComputeRotationFromAxisAngleModifierInternalState` is laid out from its primary base `hkReferencedObject`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::hkbComputeRotationFromAxisAngleModifierInternalState {
+    type Target = crate::hkReferencedObject;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
 /// `hkbComputeRotationToTargetModifier` is laid out from its primary base `hkbModifier`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::hkbComputeRotationToTargetModifier {
     type Target = crate::hkbModifier;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `hkbComputeRotationToTargetModifierInternalState` is laid out from its primary base `hkReferencedObject`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::hkbComputeRotationToTargetModifierInternalState {
+    type Target = crate::hkReferencedObject;
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
@@ -2067,6 +2139,12 @@ impl core::ops::Deref for crate::hkbDampingModifier {
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
+/// `hkbDampingModifierInternalState` is laid out from its primary base `hkReferencedObject`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::hkbDampingModifierInternalState {
+    type Target = crate::hkReferencedObject;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
 /// `hkbDefaultRaycastInterface` is laid out from its primary base `hkReferencedObject`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::hkbDefaultRaycastInterface {
     type Target = crate::hkReferencedObject;
@@ -2079,15 +2157,33 @@ impl core::ops::Deref for crate::hkbDelayedModifier {
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
+/// `hkbDelayedModifierInternalState` is laid out from its primary base `hkReferencedObject`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::hkbDelayedModifierInternalState {
+    type Target = crate::hkReferencedObject;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
 /// `hkbDetectCloseToGroundModifier` is laid out from its primary base `hkbModifier`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::hkbDetectCloseToGroundModifier {
     type Target = crate::hkbModifier;
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
+/// `hkbDetectCloseToGroundModifierInternalState` is laid out from its primary base `hkReferencedObject`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::hkbDetectCloseToGroundModifierInternalState {
+    type Target = crate::hkReferencedObject;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
 /// `hkbEvaluateExpressionModifier` is laid out from its primary base `hkbModifier`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::hkbEvaluateExpressionModifier {
     type Target = crate::hkbModifier;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `hkbEvaluateExpressionModifierInternalState` is laid out from its primary base `hkReferencedObject`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::hkbEvaluateExpressionModifierInternalState {
+    type Target = crate::hkReferencedObject;
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
@@ -2100,6 +2196,12 @@ impl core::ops::Deref for crate::hkbEvaluateHandleModifier {
 /// `hkbEventDrivenModifier` is laid out from its primary base `hkbModifierWrapper`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::hkbEventDrivenModifier {
     type Target = crate::hkbModifierWrapper;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `hkbEventDrivenModifierInternalState` is laid out from its primary base `hkReferencedObject`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::hkbEventDrivenModifierInternalState {
+    type Target = crate::hkReferencedObject;
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
@@ -2136,6 +2238,12 @@ impl core::ops::Deref for crate::hkbEventSequencedData {
 /// `hkbEventsFromRangeModifier` is laid out from its primary base `hkbModifier`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::hkbEventsFromRangeModifier {
     type Target = crate::hkbModifier;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `hkbEventsFromRangeModifierInternalState` is laid out from its primary base `hkReferencedObject`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::hkbEventsFromRangeModifierInternalState {
+    type Target = crate::hkReferencedObject;
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
@@ -2193,6 +2301,12 @@ impl core::ops::Deref for crate::hkbGeneratorTransitionEffect {
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
+/// `hkbGeneratorTransitionEffectInternalState` is laid out from its primary base `hkReferencedObject`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::hkbGeneratorTransitionEffectInternalState {
+    type Target = crate::hkReferencedObject;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
 /// `hkbGetHandleOnBoneModifier` is laid out from its primary base `hkbModifier`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::hkbGetHandleOnBoneModifier {
     type Target = crate::hkbModifier;
@@ -2205,9 +2319,21 @@ impl core::ops::Deref for crate::hkbGetUpModifier {
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
+/// `hkbGetUpModifierInternalState` is laid out from its primary base `hkReferencedObject`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::hkbGetUpModifierInternalState {
+    type Target = crate::hkReferencedObject;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
 /// `hkbGetWorldFromModelModifier` is laid out from its primary base `hkbModifier`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::hkbGetWorldFromModelModifier {
     type Target = crate::hkbModifier;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `hkbGetWorldFromModelModifierInternalState` is laid out from its primary base `hkReferencedObject`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::hkbGetWorldFromModelModifierInternalState {
+    type Target = crate::hkReferencedObject;
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
@@ -2271,9 +2397,21 @@ impl core::ops::Deref for crate::hkbLookAtModifier {
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
+/// `hkbLookAtModifierInternalState` is laid out from its primary base `hkReferencedObject`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::hkbLookAtModifierInternalState {
+    type Target = crate::hkReferencedObject;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
 /// `hkbManualSelectorGenerator` is laid out from its primary base `hkbGenerator`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::hkbManualSelectorGenerator {
     type Target = crate::hkbGenerator;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `hkbManualSelectorGeneratorInternalState` is laid out from its primary base `hkReferencedObject`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::hkbManualSelectorGeneratorInternalState {
+    type Target = crate::hkReferencedObject;
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
@@ -2319,6 +2457,12 @@ impl core::ops::Deref for crate::hkbMoveCharacterModifier {
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
+/// `hkbMoveCharacterModifierInternalState` is laid out from its primary base `hkReferencedObject`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::hkbMoveCharacterModifierInternalState {
+    type Target = crate::hkReferencedObject;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
 /// `hkbNamedEventPayload` is laid out from its primary base `hkbEventPayload`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::hkbNamedEventPayload {
     type Target = crate::hkbEventPayload;
@@ -2355,6 +2499,12 @@ impl core::ops::Deref for crate::hkbNode__BoundVariablesCollector {
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
+/// `hkbNodeInternalStateInfo` is laid out from its primary base `hkReferencedObject`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::hkbNodeInternalStateInfo {
+    type Target = crate::hkReferencedObject;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
 /// `hkbParticleSystemEventPayload` is laid out from its primary base `hkbEventPayload`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::hkbParticleSystemEventPayload {
     type Target = crate::hkbEventPayload;
@@ -2364,6 +2514,12 @@ impl core::ops::Deref for crate::hkbParticleSystemEventPayload {
 /// `hkbPoseMatchingGenerator` is laid out from its primary base `hkbBlenderGenerator`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::hkbPoseMatchingGenerator {
     type Target = crate::hkbBlenderGenerator;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `hkbPoseMatchingGeneratorInternalState` is laid out from its primary base `hkReferencedObject`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::hkbPoseMatchingGeneratorInternalState {
+    type Target = crate::hkReferencedObject;
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
@@ -2439,6 +2595,12 @@ impl core::ops::Deref for crate::hkbRotateCharacterModifier {
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
+/// `hkbRotateCharacterModifierInternalState` is laid out from its primary base `hkReferencedObject`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::hkbRotateCharacterModifierInternalState {
+    type Target = crate::hkReferencedObject;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
 /// `hkbSceneModifier` is laid out from its primary base `hkReferencedObject`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::hkbSceneModifier {
     type Target = crate::hkReferencedObject;
@@ -2454,6 +2616,12 @@ impl core::ops::Deref for crate::hkbSenseHandleModifier {
 /// `hkbSequence` is laid out from its primary base `hkbModifier`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::hkbSequence {
     type Target = crate::hkbModifier;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `hkbSequenceInternalState` is laid out from its primary base `hkReferencedObject`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::hkbSequenceInternalState {
+    type Target = crate::hkReferencedObject;
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
@@ -2529,8 +2697,20 @@ impl core::ops::Deref for crate::hkbStateMachine {
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
+/// `hkbStateMachine::EventPropertyArray` is laid out from its primary base `hkReferencedObject`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::hkbStateMachine__EventPropertyArray {
+    type Target = crate::hkReferencedObject;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
 /// `hkbStateMachine::TransitionInfoArray` is laid out from its primary base `hkReferencedObject`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::hkbStateMachine__TransitionInfoArray {
+    type Target = crate::hkReferencedObject;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `hkbStateMachineInternalState` is laid out from its primary base `hkReferencedObject`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::hkbStateMachineInternalState {
     type Target = crate::hkReferencedObject;
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
@@ -2538,6 +2718,12 @@ impl core::ops::Deref for crate::hkbStateMachine__TransitionInfoArray {
 /// `hkbStringCondition` is laid out from its primary base `hkbCondition`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::hkbStringCondition {
     type Target = crate::hkbCondition;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `hkbSymbolIdMap` is laid out from its primary base `hkReferencedObject`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::hkbSymbolIdMap {
+    type Target = crate::hkReferencedObject;
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
@@ -2553,9 +2739,21 @@ impl core::ops::Deref for crate::hkbTimerModifier {
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
+/// `hkbTimerModifierInternalState` is laid out from its primary base `hkReferencedObject`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::hkbTimerModifierInternalState {
+    type Target = crate::hkReferencedObject;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
 /// `hkbTransformVectorModifier` is laid out from its primary base `hkbModifier`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::hkbTransformVectorModifier {
     type Target = crate::hkbModifier;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `hkbTransformVectorModifierInternalState` is laid out from its primary base `hkReferencedObject`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::hkbTransformVectorModifierInternalState {
+    type Target = crate::hkReferencedObject;
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
@@ -2817,6 +3015,12 @@ impl core::ops::Deref for crate::hkpBvAgent {
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
+/// `hkpBvShape` is laid out from its primary base `hkpShape`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::hkpBvShape {
+    type Target = crate::hkpShape;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
 /// `hkpBvTreeAgent` is laid out from its primary base `hkpCollisionAgent`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::hkpBvTreeAgent {
     type Target = crate::hkpCollisionAgent;
@@ -2841,12 +3045,6 @@ impl core::ops::Deref for crate::hkpCachingShapePhantom {
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
-/// `hkpCapsuleShape` is laid out from its primary base `hkpConvexShape`, so its methods and fields are reachable through it.
-impl core::ops::Deref for crate::hkpCapsuleShape {
-    type Target = crate::hkpConvexShape;
-    #[inline]
-    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
-}
 /// `hkpCharacterContext` is laid out from its primary base `hkReferencedObject`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::hkpCharacterContext {
     type Target = crate::hkReferencedObject;
@@ -2862,12 +3060,6 @@ impl core::ops::Deref for crate::hkpCharacterControllerCinfo {
 /// `hkpCharacterMotion` is laid out from its primary base `hkpMotion`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::hkpCharacterMotion {
     type Target = crate::hkpMotion;
-    #[inline]
-    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
-}
-/// `hkpCharacterProxy` is laid out from its primary base `hkReferencedObject`, so its methods and fields are reachable through it.
-impl core::ops::Deref for crate::hkpCharacterProxy {
-    type Target = crate::hkReferencedObject;
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
@@ -3084,6 +3276,12 @@ impl core::ops::Deref for crate::hkpConvexTransformShape {
 /// `hkpConvexTransformShapeBase` is laid out from its primary base `hkpConvexShape`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::hkpConvexTransformShapeBase {
     type Target = crate::hkpConvexShape;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `hkpConvexVerticesConnectivity` is laid out from its primary base `hkReferencedObject`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::hkpConvexVerticesConnectivity {
+    type Target = crate::hkReferencedObject;
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
@@ -3351,12 +3549,6 @@ impl core::ops::Deref for crate::hkpListAgent {
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
-/// `hkpListShape` is laid out from its primary base `hkpShapeCollection`, so its methods and fields are reachable through it.
-impl core::ops::Deref for crate::hkpListShape {
-    type Target = crate::hkpShapeCollection;
-    #[inline]
-    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
-}
 /// `hkpMalleableConstraintData` is laid out from its primary base `hkpConstraintData`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::hkpMalleableConstraintData {
     type Target = crate::hkpConstraintData;
@@ -3402,6 +3594,12 @@ impl core::ops::Deref for crate::hkpMoppBvTreeShape {
 /// `hkpMoppCachedShapeMediator` is laid out from its primary base `hkpMoppMediator`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::hkpMoppCachedShapeMediator {
     type Target = crate::hkpMoppMediator;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `hkpMoppCode` is laid out from its primary base `hkReferencedObject`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::hkpMoppCode {
+    type Target = crate::hkReferencedObject;
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
@@ -3573,6 +3771,12 @@ impl core::ops::Deref for crate::hkpPhantomAgent {
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
+/// `hkpPhantomBroadPhaseListener` is laid out from its primary base `hkReferencedObject`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::hkpPhantomBroadPhaseListener {
+    type Target = crate::hkReferencedObject;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
 /// `hkpPhantomCallbackShape` is laid out from its primary base `hkpShape`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::hkpPhantomCallbackShape {
     type Target = crate::hkpShape;
@@ -3618,6 +3822,12 @@ impl core::ops::Deref for crate::hkpPointToPlaneConstraintData {
 /// `hkpPoweredChainData` is laid out from its primary base `hkpConstraintChainData`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::hkpPoweredChainData {
     type Target = crate::hkpConstraintChainData;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `hkpPoweredChainMapper` is laid out from its primary base `hkReferencedObject`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::hkpPoweredChainMapper {
+    type Target = crate::hkReferencedObject;
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
@@ -3737,12 +3947,6 @@ impl core::ops::Deref for crate::hkpSerializedDisplayMarkerList {
 }
 /// `hkpSerializedDisplayRbTransforms` is laid out from its primary base `hkReferencedObject`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::hkpSerializedDisplayRbTransforms {
-    type Target = crate::hkReferencedObject;
-    #[inline]
-    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
-}
-/// `hkpShape` is laid out from its primary base `hkReferencedObject`, so its methods and fields are reachable through it.
-impl core::ops::Deref for crate::hkpShape {
     type Target = crate::hkReferencedObject;
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
@@ -3873,9 +4077,27 @@ impl core::ops::Deref for crate::hkpStorageExtendedMeshShape {
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
+/// `hkpStorageExtendedMeshShape::MeshSubpartStorage` is laid out from its primary base `hkReferencedObject`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::hkpStorageExtendedMeshShape__MeshSubpartStorage {
+    type Target = crate::hkReferencedObject;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `hkpStorageExtendedMeshShape::ShapeSubpartStorage` is laid out from its primary base `hkReferencedObject`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::hkpStorageExtendedMeshShape__ShapeSubpartStorage {
+    type Target = crate::hkReferencedObject;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
 /// `hkpStorageMeshShape` is laid out from its primary base `hkpMeshShape`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::hkpStorageMeshShape {
     type Target = crate::hkpMeshShape;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `hkpStorageMeshShape::SubpartStorage` is laid out from its primary base `hkReferencedObject`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::hkpStorageMeshShape__SubpartStorage {
+    type Target = crate::hkReferencedObject;
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
@@ -4074,6 +4296,12 @@ impl core::ops::Deref for crate::hkpThinBoxMotion {
 /// `hkpToiResourceMgr` is laid out from its primary base `hkReferencedObject`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::hkpToiResourceMgr {
     type Target = crate::hkReferencedObject;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `hkpTransformShape` is laid out from its primary base `hkpShape`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::hkpTransformShape {
+    type Target = crate::hkpShape;
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
@@ -4359,35 +4587,13 @@ impl core::ops::Deref for crate::hkxVertexVectorDataChannel {
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
-impl crate::bhkCharProxyController {
-    /// The `NiRefObject` base at +0x10.
-    #[inline]
-    pub fn as_ni_ref_object(&self) -> &crate::NiRefObject { unsafe { &*core::ptr::from_ref(self).byte_add(0x10).cast() } }
-    /// The `bhkCharacterController` base at +0x10.
-    #[inline]
-    pub fn as_bhk_character_controller(&self) -> &crate::bhkCharacterController { unsafe { &*core::ptr::from_ref(self).byte_add(0x10).cast() } }
-}
-
-impl crate::bhkCharRigidBodyController {
-    /// The `hkBaseObject` base at +0x330.
-    #[inline]
-    pub fn as_hk_base_object(&self) -> &crate::hkBaseObject { unsafe { &*core::ptr::from_ref(self).byte_add(0x330).cast() } }
-    /// The `hkReferencedObject` base at +0x330.
-    #[inline]
-    pub fn as_hk_referenced_object(&self) -> &crate::hkReferencedObject { unsafe { &*core::ptr::from_ref(self).byte_add(0x330).cast() } }
-    /// The `hkpCharacterRigidBodyListener` base at +0x330.
-    #[inline]
-    pub fn as_hkp_character_rigid_body_listener(&self) -> &crate::hkpCharacterRigidBodyListener { unsafe { &*core::ptr::from_ref(self).byte_add(0x330).cast() } }
-}
-
-impl crate::bhkCharacterController {
-    /// `bhkCharacterController::SetDistanceToCamera`: +0x29c = max(0, |cameraPosition - actor3D world bound centre (+0xe4)| - bound radius (+0xf0)); nothing when actor3D is null
+impl crate::bhkCapsuleShape {
+    /// `bhkCapsuleShape::CreateHavokShape`: the engine's own Havok object allocation pattern: TlsGetValue(*0x325a844)->+0x58 vtbl[1](heap, 0x50); u16 +8 = 0x50; hkpCapsuleShape::ctor; wrapper vtbl[37] (SetReferencedObject); removeReference
     ///
-    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 78274, rva 0x1064c90.
-    /// `void (bhkCharacterController* this, const NiPoint3* cameraPosition, NiAVObject* actor3D)`
-    /// May be null: `actor3D`.
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 78800, rva 0x1088c00.
+    /// `void (bhkCapsuleShape* this, const hkVector4* a, const hkVector4* b, float radius)`
     #[inline]
-    pub fn set_distance_to_camera(&self, cameraPosition: &crate::NiPoint3, actor3D: Option<&crate::NiAVObject>) { unsafe { function!(78274, (*const Self, *const crate::NiPoint3, *const crate::NiAVObject))(core::ptr::from_ref(self), core::ptr::from_ref(cameraPosition), actor3D.map_or(core::ptr::null(), core::ptr::from_ref)) } }
+    pub fn create_havok_shape(&self, a: &crate::hkVector4, b: &crate::hkVector4, radius: f32) { unsafe { function!(78800, (*const Self, *const crate::hkVector4, *const crate::hkVector4, f32))(core::ptr::from_ref(self), core::ptr::from_ref(a), core::ptr::from_ref(b), radius) } }
 }
 
 impl crate::bhkCollisionFilter {
@@ -4479,6 +4685,18 @@ impl crate::hkbBehaviorClient {
     pub fn as_hk_remote_object_client_side_listener(&self) -> &crate::hkRemoteObjectClientSideListener { unsafe { &*core::ptr::from_ref(self).byte_add(0x10).cast() } }
 }
 
+impl crate::hkbCameraShakeEventPayload {
+    /// `hkbCameraShakeEventPayload::Destroy`: Havok deleting dtor: base vtable; flags & 1 frees, through the default heap (0x18 bytes) when flags & 4, else the thread's memory router with memSizeAndFlags (+8 u16, 0xffff -> 0x18)
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 80358, rva 0x10d19d0.
+    /// `hkbCameraShakeEventPayload* (hkbCameraShakeEventPayload* this, u32 flags)`
+    ///
+    /// # Safety
+    /// It constructs or destroys an object in place.
+    #[inline]
+    pub unsafe fn destroy(&self, flags: u32) -> *mut Self { unsafe { function!(80358, (*const Self, u32) -> *mut Self)(core::ptr::from_ref(self), flags) } }
+}
+
 impl crate::hkbDefaultRaycastInterface {
     /// The `hkaRaycastInterface` base at +0x10.
     #[inline]
@@ -4486,7 +4704,22 @@ impl crate::hkbDefaultRaycastInterface {
 }
 
 impl crate::hkbFootIkDriver {
-    /// `hkbFootIkDriver::SetDisabled`: writes disabled to +0x4a; when true also resets the driver's leg entries (ClearEntriesAndResetState 0xad42a0: releases each 0x30-byte leg entry's +0x20 object, zeroes +0x40/+0x48/+0x4c)
+    /// `hkbFootIkDriver::ClearLegsAndReset`: for each internal leg (driver+0x10, count +0x18, 0x30 each) deletes the leg object at +0x20 through its vtable slot 0 (arg 1) and zeroes +0..+0x10, +0x28, +0x2c, +0x2d; then zeroes +0x40 (qword), +0x48 (u16: legs-initialised and +0x49) and +0x4c
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 58431, rva 0xad42a0.
+    /// `void (hkbFootIkDriver* this)`
+    #[inline]
+    pub fn clear_legs_and_reset(&self) { unsafe { function!(58431, (*const Self))(core::ptr::from_ref(self)) } }
+    /// `hkbFootIkDriver::Run`: the graph's foot IK pass ('TtFootIkController' timer): returns at once when +0x4a (disabled) is set, the pose has fewer than 12 tracks, or the character has no hkbFootIkDriverInfo; else sets up the legs (once, 0xad42b0, when +0x48 is 0), asks the raycast DB for the character's raycast interface (DB slot 1), runs SolveFootIk 0xa9ddf0 per leg and writes the corrected pose
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 58423, rva 0xad2300.
+    /// `void (hkbFootIkDriver* this, hkbContext* ctx, hkbGeneratorOutput* pose)`
+    ///
+    /// # Safety
+    /// `ctx`, `pose` must point to what the engine expects.
+    #[inline]
+    pub unsafe fn run(&self, ctx: *mut c_void, pose: *mut c_void) { unsafe { function!(58423, (*const Self, *mut c_void, *mut c_void))(core::ptr::from_ref(self), ctx, pose) } }
+    /// `hkbFootIkDriver::SetDisabled`: writes the disabled byte +0x4a; when disabling it also calls ClearEntriesAndResetState 0xad42a0 (frees every per-leg object and zeroes the leg state)
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 58428, rva 0xad4260.
     /// `void (hkbFootIkDriver* this, bool disabled)`
@@ -4510,15 +4743,6 @@ impl crate::hkpBroadPhaseBorderListener {
     /// The `hkpBroadPhaseListener` base at +0x10.
     #[inline]
     pub fn as_hkp_broad_phase_listener(&self) -> &crate::hkpBroadPhaseListener { unsafe { &*core::ptr::from_ref(self).byte_add(0x10).cast() } }
-}
-
-impl crate::hkpCharacterProxy {
-    /// The `hkpEntityListener` base at +0x10.
-    #[inline]
-    pub fn as_hkp_entity_listener(&self) -> &crate::hkpEntityListener { unsafe { &*core::ptr::from_ref(self).byte_add(0x10).cast() } }
-    /// The `hkpPhantomListener` base at +0x18.
-    #[inline]
-    pub fn as_hkp_phantom_listener(&self) -> &crate::hkpPhantomListener { unsafe { &*core::ptr::from_ref(self).byte_add(0x18).cast() } }
 }
 
 impl crate::hkpCharacterRigidBody {
@@ -4567,27 +4791,6 @@ impl crate::hkpConvexListShape {
     /// The `hkpShapeContainer` base at +0x28.
     #[inline]
     pub fn as_hkp_shape_container(&self) -> &crate::hkpShapeContainer { unsafe { &*core::ptr::from_ref(self).byte_add(0x28).cast() } }
-}
-
-impl crate::hkpConvexVerticesShape {
-    /// `hkpConvexVerticesShape::UnpackSoAVerticesToVector4Array`: copies the shape's vertices out of its 4-wide SoA blocks (+0x50, 0x30 bytes per block: x[4], y[4], z[4]; count +0x60) into outVertices as (x, y, z, 0), growing the array (data +0, size +8, capacity|flags +0xc) to the count
-    ///
-    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 65093, rva 0xc3abd0.
-    /// `void (const hkpConvexVerticesShape* this, hkArray<hkVector4>* outVertices)`
-    ///
-    /// # Safety
-    /// `outVertices` must point to what the engine expects.
-    #[inline]
-    pub unsafe fn unpack_so_a_vertices_to_vector4_array(&self, outVertices: *mut c_void) { unsafe { function!(65093, (*const Self, *mut c_void))(core::ptr::from_ref(self), outVertices) } }
-    /// `hkpConvexVerticesShape::ctor`: builds the shape from a convex hull of the vertices. vertices = {const float* data +0, i32 count +8, i32 strideBytes +0xc} (12 bytes read per vertex). config (0x18 bytes) = {u8 createConnectivity +0 (builds an hkpConvexVerticesConnectivity, else deletes it), u8 shrinkByRadius +1 (with radius > 0), u8 shrinkOption +2 (passed to the shrinker 0x10c3e20), float convexRadius +4 (-> this+0x20), i32 maxVertices +8 (hull reduced when > 3), float shrinkParamA +0xc, float shrinkParamB +0x10, float +0x14 (default -0.1, not read here)}
-    ///
-    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 80831, rva 0x10ee650.
-    /// `hkpConvexVerticesShape* (hkpConvexVerticesShape* this, const StridedVertices* vertices, const ConvexVerticesBuildConfig* config)`
-    ///
-    /// # Safety
-    /// It constructs or destroys an object in place.
-    #[inline]
-    pub unsafe fn ctor(&self, vertices: *const c_void, config: *const c_void) -> *mut Self { unsafe { function!(80831, (*const Self, *const c_void, *const c_void) -> *mut Self)(core::ptr::from_ref(self), vertices, config) } }
 }
 
 impl crate::hkpDisableEntityCollisionFilter {
@@ -4657,15 +4860,6 @@ impl crate::hkpFirstPersonGun {
     /// It constructs or destroys an object in place.
     #[inline]
     pub unsafe fn dtor(&self) { unsafe { function!(62778, (*const Self))(core::ptr::from_ref(self)) } }
-    /// `hkpFirstPersonGun::vdtor`: slot 0: dtor, then when flags bit 0: frees 0x38 bytes (memory router of the thread, or the default heap with bit 2)
-    ///
-    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 62783, rva 0xba6ec0.
-    /// `hkpFirstPersonGun* (hkpFirstPersonGun* this, u32 flags)`
-    ///
-    /// # Safety
-    /// It constructs or destroys an object in place.
-    #[inline]
-    pub unsafe fn vdtor(&self, flags: u32) -> *mut Self { unsafe { function!(62783, (*const Self, u32) -> *mut Self)(core::ptr::from_ref(self), flags) } }
 }
 
 impl crate::hkpGunProjectile {
@@ -4726,6 +4920,15 @@ impl crate::hkpTriggerVolume {
 }
 
 impl crate::hkpWorld {
+    /// `hkpWorld::QueueOperation`: QueuePendingWorldOperation(world->+0xe8, op): the deferred path setShape takes while the world is locked
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 61428, rva 0xb5c280.
+    /// `void (hkpWorld* this, const hkWorldOperation* op)`
+    ///
+    /// # Safety
+    /// `op` must point to what the engine expects.
+    #[inline]
+    pub unsafe fn queue_operation(&self, op: *const c_void) { unsafe { function!(61428, (*const Self, *const c_void))(core::ptr::from_ref(self), op) } }
     /// `hkpWorld::linearCast`: Havok's world linear cast ('TtworldLinCast'); the engine's sphere and phantom sweeps all go through it
     ///
     /// Semantic, camera pass, medium; ledger semantic evidence, name medium; id 61402, rva 0xb59d80.
@@ -4735,18 +4938,6 @@ impl crate::hkpWorld {
     /// The pass rates the signature medium.
     #[inline]
     pub unsafe fn linear_cast(&self, collA: *const c_void, input: *const c_void, castCollector: *mut crate::hkpCdPointCollector, startCollector: *mut crate::hkpCdPointCollector) { unsafe { function!(61402, (*const Self, *const c_void, *const c_void, *mut crate::hkpCdPointCollector, *mut crate::hkpCdPointCollector))(core::ptr::from_ref(self), collA, input, castCollector, startCollector) } }
-}
-
-impl crate::hkxCamera {
-    /// `hkxCamera::vdtor`: slot 0: resets the vtable to hkBaseObject; when flags bit 0: frees 0x50 bytes (memory router, or the default heap with bit 2)
-    ///
-    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 65443, rva 0xc48720.
-    /// `hkxCamera* (hkxCamera* this, u64 flags)`
-    ///
-    /// # Safety
-    /// It constructs or destroys an object in place.
-    #[inline]
-    pub unsafe fn vdtor(&self, flags: u64) -> *mut Self { unsafe { function!(65443, (*const Self, u64) -> *mut Self)(core::ptr::from_ref(self), flags) } }
 }
 
 /// `g_bhkBipedOrientationController_ptr` at 0x3336e28, id 411537 (xref_inference, medium)
@@ -4767,9 +4958,6 @@ pub fn g_bhk_telekinesis_listener() -> *mut c_void { address!(403644) as *mut c_
 /// `g_hkContainerDebugAllocator_Allocator` at 0x20bce10, id 383829 (layout_inference, medium)
 #[inline]
 pub fn g_hk_container_debug_allocator_allocator() -> *mut c_void { address!(383829) as *mut c_void }
-/// `g_hkContainerHeapAllocator_Allocator` at 0x20bce08, id 383828 (layout_inference, medium)
-#[inline]
-pub fn g_hk_container_heap_allocator_allocator() -> *mut c_void { address!(383828) as *mut c_void }
 /// `g_hkContainerTempAllocator_Allocator` at 0x20bce00, id 383827 (layout_inference, medium)
 #[inline]
 pub fn g_hk_container_temp_allocator_allocator() -> *mut c_void { address!(383827) as *mut c_void }

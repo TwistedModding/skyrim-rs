@@ -315,9 +315,39 @@ impl core::ops::Deref for crate::VATSCameraState {
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
+/// `bhkCharProxyController` is laid out from its primary base `hkpCharacterProxyListener`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::bhkCharProxyController {
+    type Target = crate::hkpCharacterProxyListener;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `bhkCharRigidBodyController` is laid out from its primary base `bhkCharacterController`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::bhkCharRigidBodyController {
+    type Target = crate::bhkCharacterController;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `bhkShape` is laid out from its primary base `bhkSerializable`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::bhkShape {
+    type Target = crate::bhkSerializable;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
 /// `bhkWorld` is laid out from its primary base `bhkSerializable`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::bhkWorld {
     type Target = crate::bhkSerializable;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `hkpCharacterProxy` is laid out from its primary base `hkReferencedObject`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::hkpCharacterProxy {
+    type Target = crate::hkReferencedObject;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `hkpShape` is laid out from its primary base `hkReferencedObject`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::hkpShape {
+    type Target = crate::hkReferencedObject;
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
@@ -2323,30 +2353,42 @@ impl crate::RaceSexMenu {
 }
 
 impl crate::ShaderReferenceEffect {
-    /// `ShaderReferenceEffect::GetTargetRoot`, vtable slot 60: controller's root (+0x30 slot 15) when present, else 0 with flag bit 7, else ReferenceEffect slot 60 = target->Get3D() (slot 112)
+    /// `ShaderReferenceEffect::InitEffectData`: first-update setup: creates the BSEffectShaderData (0x26c0f0 from the shader and the textures +0xe0/+0xe8/+0xf0) into +0x110 (0x5e0d93), sets its node filter at data+8 (0x5e07b0's cb0, or the form-set filter when TESEffectShader+0x1b0 bit 10), and applies it to the target root with ApplyEffectShaderData; skipped when TESEffectShader+0x1b0 bit 0 is set
     ///
-    /// Semantic, camera pass, high; called through the object's vtable.
-    /// `NiAVObject* (ShaderReferenceEffect* this)`
-    #[inline]
-    pub fn get_target_root(&self) -> Option<&'static crate::NiAVObject> { unsafe { virtual_function!(self, 60, (*const Self) -> Option<&'static crate::NiAVObject>)(core::ptr::from_ref(self)) } }
-    /// `ShaderReferenceEffect::UpdateTargetRoot`, vtable slot 59: root = slot 60; when it differs from attachedRoot (or bit 2): RemoveEffectShaderData(effectShader, old, effectData), ApplyEffectShaderData(effectShader, root, effectData, false); then places the effect's own node (+0xf8) relative to the root
-    ///
-    /// Semantic, camera pass, high; called through the object's vtable.
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 34934, rva 0x5e07b0.
     /// `void (ShaderReferenceEffect* this)`
     #[inline]
-    pub fn update_target_root(&self) { unsafe { virtual_function!(self, 59, (*const Self))(core::ptr::from_ref(self)) } }
-    /// `ShaderReferenceEffect::vfunc_40`: per-frame effect shader update; rbx holds the resolved target reference from 0x5de995 to the release at 0x5dea69
+    pub fn init_effect_data(&self) { unsafe { function!(34934, (*const Self))(core::ptr::from_ref(self)) } }
+    /// `ShaderReferenceEffect::ctor`: +0x108 effectShader = controller slot 13 (0x68); effectFlags +0x130 bit 0 = target is the player and its third-person root is visible, bit 7 = controller slot 28 (0xe0) false; loads the shader's addon models into +0x78
     ///
-    /// Semantic, camera pass, high; ledger rtti evidence, name high; id 34913, rva 0x5de900.
-    /// `bool (ShaderReferenceEffect* this, float delta)`
+    /// Semantic, camera pass, high; ledger layout_inference evidence, name high; id 34910, rva 0x5de270.
+    /// `ShaderReferenceEffect* (ShaderReferenceEffect* this, ReferenceEffectController* ctl)`
+    ///
+    /// # Safety
+    /// It constructs or destroys an object in place.
     #[inline]
-    pub fn vfunc_40(&self, delta: f32) -> bool { unsafe { function!(34913, (*const Self, f32) -> bool)(core::ptr::from_ref(self), delta) } }
+    pub unsafe fn ctor(&self, ctl: *mut crate::ReferenceEffectController) -> *mut Self { unsafe { function!(34910, (*const Self, *mut crate::ReferenceEffectController) -> *mut Self)(core::ptr::from_ref(self), ctl) } }
     /// `ShaderReferenceEffect::vfunc_40_sub4`: ready check: resolves particle sources until all are loaded (flag 8), then builds the emitters on the target root once (vfunc_40_sub4_sub0, flag 0x10) or rebuilds them after a root change (flag 0x20); returns flag bit 4
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 34933, rva 0x5e05e0.
     /// `bool (ShaderReferenceEffect* this)`
     #[inline]
     pub fn vfunc_40_sub4(&self) -> bool { unsafe { function!(34933, (*const Self) -> bool)(core::ptr::from_ref(self)) } }
+    /// `ShaderReferenceEffect::attachedRoot` at +0x118: root the data is currently applied under (refcounted)
+    ///
+    /// Semantic field, camera pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn attached_root(&self) -> Option<&crate::NiAVObject> { unsafe { { self.attachedRoot }.as_ref() } }
+    /// `ShaderReferenceEffect::effectData` at +0x110: the shader data stored into each property's +0x68
+    ///
+    /// Semantic field, camera pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn effect_data(&self) -> Option<&crate::BSEffectShaderData> { unsafe { { self.effectData }.as_ref() } }
+    /// `ShaderReferenceEffect::effectShader` at +0x108: the effect's TESEffectShader form
+    ///
+    /// Semantic field, camera pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn effect_shader(&self) -> Option<&crate::TESEffectShader> { unsafe { { self.effectShader }.as_ref() } }
 }
 
 impl crate::StatsMenu {
@@ -3014,6 +3056,120 @@ impl crate::VATSCameraState {
     pub fn camera(&self) -> Option<&crate::TESCamera> { unsafe { { self.camera }.as_ref() } }
 }
 
+impl crate::bhkCharProxyController {
+    /// The `NiRefObject` base at +0x10.
+    #[inline]
+    pub fn as_ni_ref_object(&self) -> &crate::NiRefObject { unsafe { &*core::ptr::from_ref(self).byte_add(0x10).cast() } }
+    /// The `bhkCharacterController` base at +0x10.
+    #[inline]
+    pub fn as_bhk_character_controller(&self) -> &crate::bhkCharacterController { unsafe { &*core::ptr::from_ref(self).byte_add(0x10).cast() } }
+    /// `bhkCharProxyController::GetPosition`, vtable slot 2: phantom translation under the read lock
+    ///
+    /// Semantic, camera pass, high; called through the object's vtable.
+    /// `void (bhkCharacterController* this, hkVector4* out, bool subtractOffset)`
+    /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
+    #[inline]
+    pub fn get_position(&self, out: &mut crate::hkVector4, subtractOffset: bool) { unsafe { virtual_function!(self, 2, (*const Self, *mut crate::hkVector4, bool))(core::ptr::from_ref(self), core::ptr::from_mut(out), subtractOffset) } }
+    /// `bhkCharProxyController::InitFromCinfo`: fills the controller from the cinfo (InitCharacterControllerFromCinfo on the base), creates the bhkCachingShapePhantom (0x30) around the active shape, stores it at +0x5a0, passes its hkpCachingShapePhantom to the proxy cinfo (cinfo+0x108) and creates the hkpCharacterProxy through the bhkCharacterProxy wrapper's slot 46
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 79136, rva 0x10983e0.
+    /// `void (bhkCharProxyController* this, bhkCharProxyControllerCinfo* cinfo)`
+    #[inline]
+    pub fn init_from_cinfo(&self, cinfo: &crate::bhkCharProxyControllerCinfo) { unsafe { function!(79136, (*const Self, *const crate::bhkCharProxyControllerCinfo))(core::ptr::from_ref(self), core::ptr::from_ref(cinfo)) } }
+    /// `bhkCharProxyController::ctor`: proxy controller constructor: hkpCharacterProxyListener vtable at +0, bhkCharacterController base at +0x10, embedded bhkCharacterProxy wrapper at +0x340, bhkCharacterPointCollector at +0x360, phantom wrapper pointer +0x5a0 (cleared), byte +0x5a8; then ctor_sub0 0x10983e0 builds the phantom and the Havok proxy
+    ///
+    /// Semantic, camera pass, high; ledger layout_inference evidence, name high; id 79128, rva 0x1097260.
+    /// `bhkCharProxyController* (bhkCharProxyController* this, bhkCharProxyControllerCinfo* cinfo)`
+    ///
+    /// # Safety
+    /// It constructs or destroys an object in place.
+    #[inline]
+    pub unsafe fn ctor(&self, cinfo: *mut crate::bhkCharProxyControllerCinfo) -> *mut Self { unsafe { function!(79128, (*const Self, *mut crate::bhkCharProxyControllerCinfo) -> *mut Self)(core::ptr::from_ref(self), cinfo) } }
+    /// `bhkCharProxyController::phantom` at +0x5A0: NiPointer to the phantom wrapper (0x30 bytes, vtable 0x1a88de0); its +0x10 is the hkpCachingShapePhantom the proxy uses
+    ///
+    /// Semantic field, camera pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn phantom(&self) -> Option<&crate::bhkCachingShapePhantom> { unsafe { { self.phantom }.as_ref() } }
+}
+
+impl crate::bhkCharRigidBodyController {
+    /// The `hkBaseObject` base at +0x330.
+    #[inline]
+    pub fn as_hk_base_object(&self) -> &crate::hkBaseObject { unsafe { &*core::ptr::from_ref(self).byte_add(0x330).cast() } }
+    /// The `hkReferencedObject` base at +0x330.
+    #[inline]
+    pub fn as_hk_referenced_object(&self) -> &crate::hkReferencedObject { unsafe { &*core::ptr::from_ref(self).byte_add(0x330).cast() } }
+    /// The `hkpCharacterRigidBodyListener` base at +0x330.
+    #[inline]
+    pub fn as_hkp_character_rigid_body_listener(&self) -> &crate::hkpCharacterRigidBodyListener { unsafe { &*core::ptr::from_ref(self).byte_add(0x330).cast() } }
+    /// `bhkCharRigidBodyController::GetWorldObject`, vtable slot 16: hkpCharacterRigidBody+0x20, the hkpRigidBody
+    ///
+    /// Semantic, camera pass, high; called through the object's vtable.
+    /// `hkpWorldObject* (bhkCharacterController* this)`
+    #[inline]
+    pub fn get_world_object(&self) -> Option<&'static crate::hkpWorldObject> { unsafe { virtual_function!(self, 16, (*const Self) -> Option<&'static crate::hkpWorldObject>)(core::ptr::from_ref(self)) } }
+    /// `bhkCharRigidBodyController::GetbhkWorld`, vtable slot 15: hkpWorld+0x430
+    ///
+    /// Semantic, camera pass, high; called through the object's vtable.
+    /// `bhkWorld* (bhkCharacterController* this)`
+    #[inline]
+    pub fn getbhk_world(&self) -> Option<&'static crate::bhkWorld> { unsafe { virtual_function!(self, 15, (*const Self) -> Option<&'static crate::bhkWorld>)(core::ptr::from_ref(self)) } }
+    /// `bhkCharRigidBodyController::InitFromCinfo`: fills the controller, passes the active shape's hkpShape to the hkpCharacterRigidBody cinfo (cinfo+0xc8), creates it through the bhkCharacterRigidBody wrapper's slot 46, allocates a bhkRigidBody wrapper (0x40) into +0x360 and points it (slot 37) at hkpCharacterRigidBody+0x20 (the hkpRigidBody)
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 79188, rva 0x109a720.
+    /// `void (bhkCharRigidBodyController* this, bhkCharRigidBodyControllerCinfo* cinfo)`
+    #[inline]
+    pub fn init_from_cinfo(&self, cinfo: &crate::bhkCharRigidBodyControllerCinfo) { unsafe { function!(79188, (*const Self, *const crate::bhkCharRigidBodyControllerCinfo))(core::ptr::from_ref(self), core::ptr::from_ref(cinfo)) } }
+    /// `bhkCharRigidBodyController::ctor`: rigid-body controller constructor: bhkCharacterController base at +0 (shared primary vtable 0x1a89bf0), hkpCharacterRigidBodyListener (hkReferencedObject) at +0x330 with +0x338 = 0x1ffff, embedded bhkCharacterRigidBody wrapper +0x340 (Havok object at +0x350), +0x358 = 0, +0x360 bhkRigidBody* (cleared, set in ctor_sub0), bhkCharacterPointCollector +0x370
+    ///
+    /// Semantic, camera pass, high; ledger layout_inference evidence, name high; id 79183, rva 0x1099a40.
+    /// `bhkCharRigidBodyController* (bhkCharRigidBodyController* this, bhkCharRigidBodyControllerCinfo* cinfo)`
+    ///
+    /// # Safety
+    /// It constructs or destroys an object in place.
+    #[inline]
+    pub unsafe fn ctor(&self, cinfo: *mut crate::bhkCharRigidBodyControllerCinfo) -> *mut Self { unsafe { function!(79183, (*const Self, *mut crate::bhkCharRigidBodyControllerCinfo) -> *mut Self)(core::ptr::from_ref(self), cinfo) } }
+    /// `bhkCharRigidBodyController::rigidBody` at +0x360: NiPointer to a bhkRigidBody wrapper (0x40) whose +0x10 is the same hkpRigidBody
+    ///
+    /// Semantic field, camera pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn rigid_body(&self) -> Option<&crate::bhkRigidBody> { unsafe { { self.rigidBody }.as_ref() } }
+}
+
+impl crate::bhkCharacterController {
+    /// `bhkCharacterController::ReplaceShape`: the engine's own controller shape swap: under the bhkWorld write lock, if the world object's collidable shape differs from newShape->+0x10 it removes the object from the hkpWorld (entity or phantom by the broadphase type byte), calls setShape (slot 3), re-adds it, then decrements the old shape's bhkShape wrapper (old hkpShape->+0x10, NiRefObject count, no null check) and increments newShape's; returns true when it changed
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 78308, rva 0x1067bd0.
+    /// `bool (bhkCharacterController* this, bhkShape* newShape)`
+    #[inline]
+    pub fn replace_shape(&self, newShape: &crate::bhkShape) -> bool { unsafe { function!(78308, (*const Self, *const crate::bhkShape) -> bool)(core::ptr::from_ref(self), core::ptr::from_ref(newShape)) } }
+    /// `bhkCharacterController::SetActiveShape`: if index < 2, differs from +0x278 and +0x280[index] is set: stores index at +0x278, calls slot 2, then ReplaceShape(this, +0x280[index])
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 78267, rva 0x10647b0.
+    /// `void (bhkCharacterController* this, int index)`
+    #[inline]
+    pub fn set_active_shape(&self, index: i32) { unsafe { function!(78267, (*const Self, i32))(core::ptr::from_ref(self), index) } }
+    /// `bhkCharacterController::SetBumperEnabled`: the engine's character bumper switch: when +0x321 (has bumper) is set and +0x320 differs, and the active shape is a list (type 9): under the bhkWorld write lock removes the world object, enables or disables every list child whose bhkShape material (+0x20) equals the CharacterBumper id (*0x33376c8), and re-adds it
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 78268, rva 0x1064810.
+    /// `void (bhkCharacterController* this, bool enable)`
+    #[inline]
+    pub fn set_bumper_enabled(&self, enable: bool) { unsafe { function!(78268, (*const Self, bool))(core::ptr::from_ref(self), enable) } }
+    /// `bhkCharacterController::SetDistanceToCamera`: +0x29c = max(0, |cameraPosition - actor3D world bound centre (+0xe4)| - bound radius (+0xf0)); nothing when actor3D is null
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 78274, rva 0x1064c90.
+    /// `void (bhkCharacterController* this, const NiPoint3* cameraPosition, NiAVObject* actor3D)`
+    /// May be null: `actor3D`.
+    #[inline]
+    pub fn set_distance_to_camera(&self, cameraPosition: &crate::NiPoint3, actor3D: Option<&crate::NiAVObject>) { unsafe { function!(78274, (*const Self, *const crate::NiPoint3, *const crate::NiAVObject))(core::ptr::from_ref(self), core::ptr::from_ref(cameraPosition), actor3D.map_or(core::ptr::null(), core::ptr::from_ref)) } }
+    /// `bhkCharacterController::UpdateShapesFromCinfo`: copies the cinfo's two bhkShape NiPointers (cinfo+0x90/+0x98) into +0x280/+0x288, switches +0x278 when the cinfo index differs, optionally builds a box phantom, then recomputes the controller bounds from the active shape's AABB (for a list with +0x321 set, the union of the children that are not CharacterBumper)
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 78306, rva 0x1067540.
+    /// `void (bhkCharacterController* this, bhkCharacterControllerCinfo* cinfo)`
+    #[inline]
+    pub fn update_shapes_from_cinfo(&self, cinfo: &crate::bhkCharacterControllerCinfo) { unsafe { function!(78306, (*const Self, *const crate::bhkCharacterControllerCinfo))(core::ptr::from_ref(self), core::ptr::from_ref(cinfo)) } }
+}
+
 impl crate::bhkPickData {
     /// `bhkPickData::closestCollector` at +0xA8: in: optional single-hit collector (hkpClosestRayHitCollector, or SpecificItemCollector for LOS); PickObject resets it and copies its hit back to +0x30..+0x80
     ///
@@ -3022,12 +3178,161 @@ impl crate::bhkPickData {
     pub fn closest_collector(&self) -> Option<&crate::hkpClosestRayHitCollector> { unsafe { { self.closestCollector }.as_ref() } }
 }
 
+impl crate::bhkShape {
+    /// `bhkShape::LinkHavokObject`, vtable slot 38: userData + reference
+    ///
+    /// Semantic, camera pass, high; called through the object's vtable.
+    /// `void (bhkShape* this, bool link)`
+    #[inline]
+    pub fn link_havok_object(&self, link: bool) { unsafe { virtual_function!(self, 38, (*const Self, bool))(core::ptr::from_ref(self), link) } }
+    /// `bhkShape::SetReferencedObject`, vtable slot 37: setter
+    ///
+    /// Semantic, camera pass, high; called through the object's vtable.
+    /// `void (bhkRefObject* this, hkReferencedObject* object)`
+    /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
+    #[inline]
+    pub fn set_referenced_object(&self, object: &crate::hkReferencedObject) { unsafe { virtual_function!(self, 37, (*const Self, *const crate::hkReferencedObject))(core::ptr::from_ref(self), core::ptr::from_ref(object)) } }
+    /// `bhkShape::havokShape` at +0x10: the referenced hkpShape; set through slot 37
+    ///
+    /// Semantic field, camera pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn havok_shape(&self) -> Option<&crate::hkpShape> { unsafe { { self.havokShape }.as_ref() } }
+}
+
 impl crate::bhkWorld {
+    /// `bhkWorld::LockForWriteIfEnabled`: BSReadWriteLock::LockForWrite(this+0xc598) when bUseWorldLock:HAVOK is set
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 77928, rva 0x104fce0.
+    /// `void (bhkWorld* this)`
+    #[inline]
+    pub fn lock_for_write_if_enabled(&self) { unsafe { function!(77928, (*const Self))(core::ptr::from_ref(self)) } }
     /// `bhkWorld::world` at +0x10: the Havok world; slots 39 and 40 return it
     ///
     /// Semantic field, camera pass, high; `None` while the pointer is null.
     #[inline]
     pub fn world(&self) -> Option<&crate::hkpWorld> { unsafe { { self.world }.as_ref() } }
+}
+
+impl crate::hkReferencedObject {
+    /// `hkReferencedObject::AddReference`: if memSizeAndFlags (+8, u16) != 0, increments referenceCount (+0xA, i16); under the global reference lock (critical section at *0x325a808 + 0x28) when its mode +0x10 == 1 and this thread does not already hold it
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 57010, rva 0xaa26b0.
+    /// `void (const hkReferencedObject* this)`
+    #[inline]
+    pub fn add_reference(&self) { unsafe { function!(57010, (*const Self))(core::ptr::from_ref(self)) } }
+    /// `hkReferencedObject::RemoveReference`: if memSizeAndFlags != 0: when the count is 1 sets it to 0 and calls the virtual destructor (slot 0, flag 1) without the lock; else decrements under the same lock and deletes when it reached 0
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 57011, rva 0xaa2770.
+    /// `void (const hkReferencedObject* this)`
+    #[inline]
+    pub fn remove_reference(&self) { unsafe { function!(57011, (*const Self))(core::ptr::from_ref(self)) } }
+}
+
+impl crate::hkpCapsuleShape {
+    /// `hkpCapsuleShape::ctor`: radius -> +0x20, +8 dword = 0x1ffff, userData +0x10 = 0, type +0x18 = 5, vertexA -> +0x30, vertexB -> +0x40, and the radius again into +0x3c and +0x4c (w of both vertices)
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 60374, rva 0xb3b6e0.
+    /// `hkpCapsuleShape* (hkpCapsuleShape* this, const hkVector4* vertexA, const hkVector4* vertexB, float radius)`
+    ///
+    /// # Safety
+    /// It constructs or destroys an object in place.
+    #[inline]
+    pub unsafe fn ctor(&self, vertexA: *const crate::hkVector4, vertexB: *const crate::hkVector4, radius: f32) -> *mut Self { unsafe { function!(60374, (*const Self, *const crate::hkVector4, *const crate::hkVector4, f32) -> *mut Self)(core::ptr::from_ref(self), vertexA, vertexB, radius) } }
+}
+
+impl crate::hkpCharacterProxy {
+    /// The `hkpEntityListener` base at +0x10.
+    #[inline]
+    pub fn as_hkp_entity_listener(&self) -> &crate::hkpEntityListener { unsafe { &*core::ptr::from_ref(self).byte_add(0x10).cast() } }
+    /// The `hkpPhantomListener` base at +0x18.
+    #[inline]
+    pub fn as_hkp_phantom_listener(&self) -> &crate::hkpPhantomListener { unsafe { &*core::ptr::from_ref(self).byte_add(0x18).cast() } }
+    /// `hkpCharacterProxy::GetShapePhantom`: returns hkpCharacterProxy+0x80 (the shape phantom)
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 62642, rva 0xb9ddf0.
+    /// `hkpShapePhantom* (hkpCharacterProxy* this)`
+    #[inline]
+    pub fn get_shape_phantom(&self) -> Option<&'static crate::hkpShapePhantom> { unsafe { function!(62642, (*const Self) -> Option<&'static crate::hkpShapePhantom>)(core::ptr::from_ref(self)) } }
+    /// `hkpCharacterProxy::shapePhantom` at +0x80: the shape phantom, referenced (addReference on set)
+    ///
+    /// Semantic field, camera pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn shape_phantom(&self) -> Option<&crate::hkpShapePhantom> { unsafe { { self.shapePhantom }.as_ref() } }
+    /// `hkpCharacterProxy::userData` at +0xF0: back pointer to the wrapper (bhkCharacterProxy slot 38 writes it)
+    ///
+    /// Semantic field, camera pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn user_data(&self) -> Option<&crate::bhkCharacterProxy> { unsafe { { self.userData }.as_ref() } }
+}
+
+impl crate::hkpConvexVerticesShape {
+    /// `hkpConvexVerticesShape::BuildFromPoints`: builds the convex hull of the points (hkgpConvexHull) and constructs from it: radius = config+4, planes into +0x78, vertices +0x50/+0x60; config byte 0 keeps an hkpConvexVerticesConnectivity (+0x88); config byte 1 with radius > 0 shrinks by the convex radius (floats +0xc/+0x10, byte +2); int +8 > 3 limits the vertex count
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 80831, rva 0x10ee650.
+    /// `hkpConvexVerticesShape* (hkpConvexVerticesShape* this, const hkStridedVertices* points, const hkpConvexVerticesShape::BuildConfig* config)`
+    ///
+    /// # Safety
+    /// `points`, `config` must point to what the engine expects.
+    #[inline]
+    pub unsafe fn build_from_points(&self, points: *const c_void, config: *const c_void) -> *mut Self { unsafe { function!(80831, (*const Self, *const c_void, *const c_void) -> *mut Self)(core::ptr::from_ref(self), points, config) } }
+    /// `hkpConvexVerticesShape::GetVertices`: unpacks the SoA vertex blocks (+0x50, 0x30 bytes per 4 vertices: x[4] +0, y[4] +0x10, z[4] +0x20) into out (count +0x60, w = 0), growing out with hkContainerHeapAllocator
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 65093, rva 0xc3abd0.
+    /// `void (const hkpConvexVerticesShape* this, hkArray<hkVector4>* out)`
+    ///
+    /// # Safety
+    /// `out` must point to what the engine expects.
+    #[inline]
+    pub unsafe fn get_vertices(&self, out: *mut c_void) { unsafe { function!(65093, (*const Self, *mut c_void))(core::ptr::from_ref(self), out) } }
+    /// `hkpConvexVerticesShape::ctor`: direct constructor: +8 = 0x1ffff, radius +0x20, type +0x18 = 6, copies the planes into +0x78 (hkContainerHeapAllocator), packs the vertices into the SoA array +0x50 and computes the AABB (PackStridedVerticesAndComputeAabb 0xc3b990)
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 65089, rva 0xc3a870.
+    /// `hkpConvexVerticesShape* (hkpConvexVerticesShape* this, const hkStridedVertices* vertices, const hkArray<hkVector4>* planeEquations, float radius)`
+    ///
+    /// # Safety
+    /// It constructs or destroys an object in place.
+    #[inline]
+    pub unsafe fn ctor(&self, vertices: *const c_void, planeEquations: *const c_void, radius: f32) -> *mut Self { unsafe { function!(65089, (*const Self, *const c_void, *const c_void, f32) -> *mut Self)(core::ptr::from_ref(self), vertices, planeEquations, radius) } }
+    /// `hkpConvexVerticesShape::connectivity` at +0x88: optional, referenced
+    ///
+    /// Semantic field, camera pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn connectivity(&self) -> Option<&crate::hkpConvexVerticesConnectivity> { unsafe { { self.connectivity }.as_ref() } }
+}
+
+impl crate::hkpListShape {
+    /// `hkpListShape::FillChildShapes`: the only code that writes child shapes: grows +0x30 (stride 0x20), count -> +0x38, per non-null input: child+0 = shape, +8 = filterInfos[i] or 0, +0x10 = count, +0xc = 0; refPolicy 1 AddRefs every child (IncrementFieldAForStridedObjectsLocked 0xaa28b0); then recomputes the cached AABB (0xb401c0)
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 60658, rva 0xb40a30.
+    /// `void (hkpListShape* this, const hkpShape* const* shapes, int count, const u32* filterInfos, int refPolicy)`
+    ///
+    /// # Safety
+    /// `shapes`, `filterInfos` must point to what the engine expects.
+    #[inline]
+    pub unsafe fn fill_child_shapes(&self, shapes: *mut *const crate::hkpShape, count: i32, filterInfos: *const u32, refPolicy: i32) { unsafe { function!(60658, (*const Self, *mut *const crate::hkpShape, i32, *const u32, i32))(core::ptr::from_ref(self), shapes, count, filterInfos, refPolicy) } }
+    /// `hkpListShape::RecomputeBounds`: unions every child's getAabb (identity transform, tolerance 0) and caches half extents at +0x50 and center at +0x60
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 60645, rva 0xb401c0.
+    /// `void (hkpListShape* this)`
+    #[inline]
+    pub fn recompute_bounds(&self) { unsafe { function!(60645, (*const Self))(core::ptr::from_ref(self)) } }
+    /// `hkpListShape::ctor`: hkpShapeCollection(type 9) base, list vtables 0x19eb078/+0x20 0x19eb0e8, child array +0x30 (reserved 4), setShapes, all 256 enable bits (+0x70..+0x8f) set, +0x40 = 0
+    ///
+    /// Semantic, camera pass, high; ledger layout_inference evidence, name high; id 60642, rva 0xb3ffa0.
+    /// `hkpListShape* (hkpListShape* this, const hkpShape* const* shapes, int count, int refPolicy)`
+    ///
+    /// # Safety
+    /// It constructs or destroys an object in place.
+    #[inline]
+    pub unsafe fn ctor(&self, shapes: *mut *const crate::hkpShape, count: i32, refPolicy: i32) -> *mut Self { unsafe { function!(60642, (*const Self, *mut *const crate::hkpShape, i32, i32) -> *mut Self)(core::ptr::from_ref(self), shapes, count, refPolicy) } }
+}
+
+impl crate::hkpShape {
+    /// `hkpShape::userData` at +0x10: the bhkShape wrapper, written by bhkShape slot 38 (0 when unlinked); ctors write 0
+    ///
+    /// Semantic field, camera pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn user_data(&self) -> Option<&crate::bhkShape> { unsafe { { self.userData }.as_ref() } }
 }
 
 /// `ActivateReference`: activates a reference: resolves an activate parent, sends TESActivateEvent (unless defaultProcessingOnly), then runs the base object's Activate (slot 55) and ActivateMountableActor
@@ -3037,31 +3342,31 @@ impl crate::bhkWorld {
 /// May be null: `activator`, `object`.
 #[inline]
 pub fn activate_reference(target: &crate::TESObjectREFR, activator: Option<&crate::TESObjectREFR>, activateFlag: u8, object: Option<&crate::TESBoundObject>, count: i32, defaultProcessingOnly: bool) -> bool { unsafe { function!(19796, (*const crate::TESObjectREFR, *const crate::TESObjectREFR, u8, *const crate::TESBoundObject, i32, bool) -> bool)(core::ptr::from_ref(target), activator.map_or(core::ptr::null(), core::ptr::from_ref), activateFlag, object.map_or(core::ptr::null(), core::ptr::from_ref), count, defaultProcessingOnly) } }
-/// `ApplyActionAnimEventEffects`: applies an action's animation event to the actor state: attack state 1/6/8, 0xa -> 0xb on attackRelease, recoil bits, sit/sleep phases, sneak and the block want-bit
+/// `ActorTurnDeltaChannel::Compute`: TurnDelta channel: out = ActorState(+0xc0) slot 6 rotation speed * -57.2958 (deg/s); when sendActions: |prev| < 1 and |out| >= 1 queues action index 99 + (out > 0) (99 'Action Turn Right', 100 'Action Turn Left'); |prev| >= 1 and |out| < 1 queues 101 'Action Turn Stop'; queue = AppendDwordToField10SmallArray(actor->currentProcess) at 0x7c6caf; then prev = out. Pass-through when the process +0x10 byte +0x46d is set (0x6adea0)
 ///
-/// Semantic, camera pass, high; ledger semantic evidence, name high; id 39004, rva 0x6e2250.
-/// `void (void* unused, BGSActionData* action, bool isEnd, void* p4)`
+/// Semantic, camera pass, high; ledger runtime evidence, name high; id 42773, rva 0x7c6be0.
+/// `void (float* prev, BSFixedString* name, bool sendActions, Actor* actor, float* out)`
 ///
 /// # Safety
-/// `unused`, `p4` must point to what the engine expects.
+/// `prev`, `name`, `out` must point to what the engine expects.
 #[inline]
-pub unsafe fn apply_action_anim_event_effects(unused: *mut c_void, action: *mut crate::BGSActionData, isEnd: bool, p4: *mut c_void) { unsafe { function!(39004, (*mut c_void, *mut crate::BGSActionData, bool, *mut c_void))(unused, action, isEnd, p4) } }
+pub unsafe fn actor_turn_delta_channel__compute(prev: *mut f32, name: *mut crate::BSFixedString, sendActions: bool, actor: *mut crate::Actor, out: *mut f32) { unsafe { function!(42773, (*mut f32, *mut crate::BSFixedString, bool, *mut crate::Actor, *mut f32))(prev, name, sendActions, actor, out) } }
 /// `ApplyClampedPitchDelta`: as SetClampedPitch with actor+0x48 + pitchDelta; the 'ja' at +0x7f
 ///
 /// Semantic, camera pass, high; ledger runtime evidence, name high; id 37611, rva 0x693050.
 /// `void (Actor* actor, float pitchDelta)`
 #[inline]
 pub fn apply_clamped_pitch_delta(actor: &crate::Actor, pitchDelta: f32) { unsafe { function!(37611, (*const crate::Actor, f32))(core::ptr::from_ref(actor), pitchDelta) } }
-/// `ApplyEffectShaderData`: walks node's subtree (children +0x118, count +0x122; data's name filter at +8 skips subtrees) and stores data into effectOverlay (+0x68, SetField68RefPtr 0x26d4e0) of each geometry's shader property (+0x128) that passes slot 57 (+0x1c8), the shader's +0x1b0 bit 5 test (property flags bit 10 or 21), requireFlag49 (property flags bit 49) and flags bit 26 clear; returns the count
+/// `ApplyEffectShaderData`: recursive walk: for a node (slot 3) visits children +0x118/count +0x122 unless data+8 (filter fn) accepts the node's name; for a geometry (slot 7) with a shader property (+0x128) whose slot 57 accepts and whose flags +0x38 pass (bit 26 clear; with shader+0x1b0 bit 5 only 0x400/0x200000 properties; with onlyFlagged only bit 49) stores data into property+0x68 (SetField68RefPtr 0x26d4e0); returns the count
 ///
 /// Semantic, camera pass, high; ledger semantic evidence, name high; id 17330, rva 0x26c600.
-/// `i32 (TESEffectShader* shader, NiAVObject* node, BSEffectShaderData* data, bool requireFlag49)`
+/// `int (TESEffectShader* shader, NiAVObject* root, BSEffectShaderData* data, bool onlyFlagged)`
 /// May be null: `node`, `data`.
 ///
 /// # Safety
 /// `data` must point to what the engine expects.
 #[inline]
-pub unsafe fn apply_effect_shader_data(shader: *mut crate::TESEffectShader, node: *mut crate::NiAVObject, data: *mut c_void, requireFlag49: bool) -> i32 { unsafe { function!(17330, (*mut crate::TESEffectShader, *mut crate::NiAVObject, *mut c_void, bool) -> i32)(shader, node, data, requireFlag49) } }
+pub unsafe fn apply_effect_shader_data(shader: *mut crate::TESEffectShader, root: *mut crate::NiAVObject, data: *mut crate::BSEffectShaderData, onlyFlagged: bool) -> i32 { unsafe { function!(17330, (*mut crate::TESEffectShader, *mut crate::NiAVObject, *mut crate::BSEffectShaderData, bool) -> i32)(shader, root, data, onlyFlagged) } }
 /// `ApproachWithAccelerationLimit`: one step of an acceleration- and speed-limited approach of current toward target: picks the accelerate/cruise/brake phase from the stopping distance, clamps the new velocity to +-acceleration*dt around velocity and to +-maxSpeed, returns current + velocity' * dt (velocity unchanged when within both tolerances)
 ///
 /// Semantic, camera pass, high; ledger semantic evidence, name high; id 91824, rva 0x1210280.
@@ -3718,6 +4023,12 @@ pub unsafe fn head_track_data__retarget(data: *mut c_void) { unsafe { function!(
 /// `data` must point to what the engine expects.
 #[inline]
 pub unsafe fn head_track_data__set_slot(data: *mut c_void, slot: i32, ref_: *mut crate::TESObjectREFR) { unsafe { function!(39783, (*mut c_void, i32, *mut crate::TESObjectREFR))(data, slot, ref_) } }
+/// `InitCharacterBumperMaterialId`: static init: BSFixedString 'CharacterBumper' (0x1a7fea0), then ComputeCrc32OfString(&g_CharacterBumperMaterialId 0x33376c8, str, 1)
+///
+/// Semantic, camera pass, high; ledger semantic evidence, name high; id 78259, rva 0x1063de0.
+/// `void ()`
+#[inline]
+pub fn init_character_bumper_material_id() { unsafe { function!(78259, ())() } }
 /// `InitDragonMaxTurnAngle`: g_DragonMaxTurnAngle = fDragonMaxAngleBeforeTurn:Camera (90 in the image) * pi/180
 ///
 /// Semantic, camera pass, high; ledger semantic evidence, name high; id 5325, rva 0x90f30.
@@ -4077,6 +4388,60 @@ pub unsafe fn predict_projectile_hit(shooter: *mut crate::Actor, target: *mut cr
 /// `manager` must point to what the engine expects.
 #[inline]
 pub unsafe fn process_handle_array_with_frame_delta(manager: *mut c_void) { unsafe { function!(34706, (*mut c_void))(manager) } }
+/// `ProcessLists::AddActorHandle`: under the RW lock 0x3245560 (write) appends h to *(this+0x90+level*8) if absent
+///
+/// Semantic, camera pass, high; ledger semantic evidence, name high; id 41289, rva 0x77a790.
+/// `void (ProcessLists* this, ActorHandle* h, int level)`
+///
+/// # Safety
+/// `this`, `h` must point to what the engine expects.
+#[inline]
+pub unsafe fn process_lists__add_actor_handle(this: *mut c_void, h: *mut c_void, level: i32) { unsafe { function!(41289, (*mut c_void, *mut c_void, i32))(this, h, level) } }
+/// `ProcessLists::CollectAnimatedHighActors`: engine loop over the high list (+0x30): for each u32 handle ResolveActorHandle 0x2676c0 (add-ref), filter (3D loaded, not disabled/deleted, parent cell attached type 7), collect, release via refcount +0x28 (low 10 bits) and vtable(+0x20) slot 1
+///
+/// Semantic, camera pass, high; ledger semantic evidence, name high; id 41466, rva 0x78a2d0.
+/// `bool (BSTArray<ActorHandle>* highList, ScrapArrays* out)`
+///
+/// # Safety
+/// `highList`, `out` must point to what the engine expects.
+#[inline]
+pub unsafe fn process_lists__collect_animated_high_actors(highList: *mut c_void, out: *mut c_void) -> bool { unsafe { function!(41466, (*mut c_void, *mut c_void) -> bool)(highList, out) } }
+/// `ProcessLists::RefreshAllActors`: engine loop over all four lists through the +0x90 pointer table (4 iterations, data +0, size +0x10 of each array)
+///
+/// Semantic, camera pass, high; ledger semantic evidence, name high; id 41308, rva 0x77cd80.
+/// `void (ProcessLists* this)`
+///
+/// # Safety
+/// `this` must point to what the engine expects.
+#[inline]
+pub unsafe fn process_lists__refresh_all_actors(this: *mut c_void) { unsafe { function!(41308, (*mut c_void))(this) } }
+/// `ProcessLists::RemoveActorHandle`: under the RW lock 0x3245560 (write) erases h from *(this+0x90+level*8), level 0..3
+///
+/// Semantic, camera pass, high; ledger semantic evidence, name high; id 41291, rva 0x77a940.
+/// `void (ProcessLists* this, ActorHandle* h, int level)`
+///
+/// # Safety
+/// `this`, `h` must point to what the engine expects.
+#[inline]
+pub unsafe fn process_lists__remove_actor_handle(this: *mut c_void, h: *mut c_void, level: i32) { unsafe { function!(41291, (*mut c_void, *mut c_void, i32))(this, h, level) } }
+/// `ProcessLists::StopShaderEffectsOnRef`: under the spin lock lists+0x120 walks the temp-effect array +0x108 (count +0x118), and for every ShaderReferenceEffect (TypeNode check) whose target handle +0x38 is ref and whose +0x108 is shader sets +0x40 = 1 (finish)
+///
+/// Semantic, camera pass, high; ledger semantic evidence, name high; id 41395, rva 0x785310.
+/// `void (ProcessLists* lists, TESObjectREFR* ref, TESEffectShader* shader)`
+///
+/// # Safety
+/// `lists` must point to what the engine expects.
+#[inline]
+pub unsafe fn process_lists__stop_shader_effects_on_ref(lists: *mut c_void, ref_: *mut crate::TESObjectREFR, shader: *mut crate::TESEffectShader) { unsafe { function!(41395, (*mut c_void, *mut crate::TESObjectREFR, *mut crate::TESEffectShader))(lists, ref_, shader) } }
+/// `ProcessLists::ctor`: sets g_ProcessLists_ptr; zero-inits four BSTArray<u32 handle> at +0x30, +0x48, +0x60, +0x78 and points the level table: +0x90 -> +0x30, +0x98 -> +0x60, +0xa0 -> +0x78, +0xa8 -> +0x48
+///
+/// Semantic, camera pass, high; ledger semantic evidence, name high; id 41287, rva 0x77a130.
+/// `ProcessLists* (ProcessLists* this)`
+///
+/// # Safety
+/// It constructs or destroys an object in place.
+#[inline]
+pub unsafe fn process_lists__ctor(this: *mut c_void) -> *mut c_void { unsafe { function!(41287, (*mut c_void) -> *mut c_void)(this) } }
 /// `PtrArray16::SetAtGrow`: NiT-style array with u16 capacity/size/count/grow at +0x10/+0x12/+0x14/+0x16: grow to index + grow step, store item, keep the non-null count; returns index
 ///
 /// Semantic, camera pass, high; ledger semantic evidence, name high; id 20691, rva 0x318540.
@@ -4105,6 +4470,15 @@ pub unsafe fn queue_crosshair_target_message(activatable: bool, text: *const c_c
 /// `registry` must point to what the engine expects.
 #[inline]
 pub unsafe fn queue_pending_camera_path(registry: *mut c_void, path: *mut crate::BGSCameraPath) { unsafe { function!(20682, (*mut c_void, *mut crate::BGSCameraPath))(registry, path) } }
+/// `RagdollAnimation::UpdateFootIk`: the ragdoll-animation foot IK (caller UpdateRagdollAnimation); the only reader of the [FootIK] INI gains fOnOffGain, fGroundAscendingGain, fGroundDescendingGain, fFootRaisedGain, fFootPlantedGain (0x1070253..0x107028b) plus fVertErrorGain, fControllerTetherLen, fPelvisUpDownBias, fPelvisOffsetDamping, iNumFramesFootEaseOut
+///
+/// Semantic, camera pass, high; ledger semantic evidence, name high; id 78436, rva 0x10701d0.
+/// `void (RagdollAnimation* this, float* dt)`
+///
+/// # Safety
+/// `this`, `dt` must point to what the engine expects.
+#[inline]
+pub unsafe fn ragdoll_animation__update_foot_ik(this: *mut c_void, dt: *mut f32) { unsafe { function!(78436, (*mut c_void, *mut f32))(this, dt) } }
 /// `RaycastVerticalAgainstPlaneShape`: casts a vertical ray at point against a plane shape owned by rdx, filtered by the camera body's filter word
 ///
 /// Semantic, camera pass, medium; ledger semantic evidence, name medium; id 32190, rva 0x52cbc0.
@@ -4132,16 +4506,16 @@ pub unsafe fn rehash_if_over_load_factor(this: *mut c_void) { unsafe { function!
 /// `pointer` must point to what the engine expects.
 #[inline]
 pub unsafe fn release_camera_state_pointer(pointer: *mut c_void) { unsafe { function!(16340, (*mut c_void))(pointer) } }
-/// `RemoveEffectShaderData`: walks node's subtree like ApplyEffectShaderData (same name filter at data+8) and clears effectOverlay (+0x68) on each shader property whose effectOverlay == data (tail jump to SetField68RefPtr(property, null))
+/// `RemoveEffectShaderData`: same walk; clears property+0x68 only where it equals data
 ///
 /// Semantic, camera pass, high; ledger semantic evidence, name high; id 17331, rva 0x26c750.
-/// `void (TESEffectShader* shader, NiAVObject* node, BSEffectShaderData* data)`
+/// `void (TESEffectShader* shader, NiAVObject* root, BSEffectShaderData* data)`
 /// May be null: `node`, `data`.
 ///
 /// # Safety
 /// `data` must point to what the engine expects.
 #[inline]
-pub unsafe fn remove_effect_shader_data(shader: *mut crate::TESEffectShader, node: *mut crate::NiAVObject, data: *mut c_void) { unsafe { function!(17331, (*mut crate::TESEffectShader, *mut crate::NiAVObject, *mut c_void))(shader, node, data) } }
+pub unsafe fn remove_effect_shader_data(shader: *mut crate::TESEffectShader, root: *mut crate::NiAVObject, data: *mut crate::BSEffectShaderData) { unsafe { function!(17331, (*mut crate::TESEffectShader, *mut crate::NiAVObject, *mut crate::BSEffectShaderData))(shader, root, data) } }
 /// `RemoveREFRSyncControllersFromTree`: TraverseNodeTreeWithCallback_2(root, 0x305080), the callback unlinking controllers of RTTI type REFRSyncController (g_TypeNode_REFRSyncController 0x31df440) from each node
 ///
 /// Semantic, camera pass, high; ledger semantic evidence, name high; id 20314, rva 0x305060.
@@ -4321,6 +4695,15 @@ pub fn setup_vats_camera_from_mesh(shot: &crate::BGSCameraShot, locationRef: Opt
 /// May be null: `camera`.
 #[inline]
 pub fn snapshot_camera_for_hud(camera: Option<&crate::NiCamera>) -> u32 { unsafe { function!(51639, (*const crate::NiCamera) -> u32)(camera.map_or(core::ptr::null(), core::ptr::from_ref)) } }
+/// `SolveFootIkLeg`: per-leg solver shared by the graph driver (0xad2300) and the ragdoll path (0x10701d0); input struct initialised by InitFootIkDefaults 0xa9dce0 (+0x60 = 1, +0x68 raycast interface, +0x70 0.2, +0x74..+0x88 1.0)
+///
+/// Semantic, camera pass, medium; ledger semantic evidence, name medium; id 56977, rva 0xa9ddf0.
+/// `void (FootIkLeg* leg, FootIkInput* in, FootIkOutput* out, hkaPose* pose)`
+///
+/// # Safety
+/// The pass rates the signature medium.
+#[inline]
+pub unsafe fn solve_foot_ik_leg(leg: *mut c_void, in_: *mut c_void, out: *mut c_void, pose: *mut c_void) { unsafe { function!(56977, (*mut c_void, *mut c_void, *mut c_void, *mut c_void))(leg, in_, out, pose) } }
 /// `SpeakSoundOrTopic`: plays a voice line (sound path or topic) on an actor with its lip file and speaker/listener idles; returns the duration
 ///
 /// Semantic, camera pass, medium; ledger semantic evidence, name medium; id 37542, rva 0x68d490.
@@ -4392,6 +4775,15 @@ pub unsafe fn ui3_d_scene_manager__set_camera_local_translate(this: *mut c_void,
 /// `this`, `data` must point to what the engine expects.
 #[inline]
 pub unsafe fn ui3_d_scene_manager__update_current_mode_root(this: *mut c_void, data: *mut crate::NiUpdateData) { unsafe { function!(52732, (*mut c_void, *mut crate::NiUpdateData))(this, data) } }
+/// `UpdateActiveGraphFootIkSwitch`: the engine's 'off while moving / on stairs' switch: skips when graph+0x249 is 0; with foot IK data and a driver it reads graph bool 'bHumanoidFootIKDisable' (if the variable is missing nothing is changed), float 'SpeedSampled' and bool 'IsAttacking', writes 'm_worldFromModelFeedbackGain' and calls SetDisabled(driver, bHumanoidFootIKDisable || (SpeedSampled >= 200 && !IsAttacking) || (out+0x23 && SpeedSampled != 0)); then copies the driver's error out translation and align rotation into out
+///
+/// Semantic, camera pass, high; ledger semantic evidence, name high; id 43693, rva 0x7dda40.
+/// `u64 (FootIkFeedback* out, BShkbAnimationGraph* graph)`
+///
+/// # Safety
+/// `out` must point to what the engine expects.
+#[inline]
+pub unsafe fn update_active_graph_foot_ik_switch(out: *mut c_void, graph: *mut crate::BShkbAnimationGraph) -> u64 { unsafe { function!(43693, (*mut c_void, *mut crate::BShkbAnimationGraph) -> u64)(out, graph) } }
 /// `UpdateBoneWorldTransforms`: refreshes every flat entry's world transform in index order from its materialised node or its parent entry
 ///
 /// Semantic, camera pass, high; ledger semantic evidence, name high; id 70746, rva 0xef4f50.
@@ -4624,6 +5016,9 @@ pub fn g_anim_event_idle_cart_prisoner_c_idle() -> &'static crate::BSFixedString
 /// `g_AnimEvent_Unequip` at 0x32454f0, id 404424 (semantic, high); interned 'Unequip' (0x1803ad8); the player's sheathe request counts as accepted only when the chosen event equals it (high, camera pass), type `BSFixedString`
 #[inline]
 pub fn g_anim_event_unequip() -> &'static crate::BSFixedString { unsafe { &*(address!(404424) as *const crate::BSFixedString) } }
+/// `g_BGSFootIkRaycastInterfaceDB` at 0x32047e0, id 402609 (semantic, high); static raycast interface DB; pointers to it at 0x31df418 and 0x325bb88 (the one the driver run reads) (high, camera pass), type `class:BGSFootIkRaycastInterfaceDB`
+#[inline]
+pub fn g_bgs_foot_ik_raycast_interface_db() -> &'static crate::BGSFootIkRaycastInterfaceDB { unsafe { &*(address!(402609) as *const crate::BGSFootIkRaycastInterfaceDB) } }
 /// `g_BodyPartTypeNames` at 0x2099290, id 368919 (semantic, medium); const char*[6]: 'Torso', 'DismemberedLimb1 Head1', 'Eye', 'LookAt', 'Fly Grab', 'Saddle' (enum BodyPartType) (medium, camera pass), type `pointer`
 #[inline]
 pub fn g_body_part_type_names() -> *mut *mut c_void { address!(368919) as *mut *mut c_void }
@@ -4660,6 +5055,9 @@ pub fn g_camera_shake_strength() -> *mut f32 { address!(402622) as *mut f32 }
 /// `g_CameraShakeTimeLeft` at 0x3204864, id 402623 (runtime, high); seconds of shake left (high, camera pass), type `float`
 #[inline]
 pub fn g_camera_shake_time_left() -> *mut f32 { address!(402623) as *mut f32 }
+/// `g_CharacterBumperMaterialId` at 0x33376c8, id 411553 (semantic, high); CRC32 of 'CharacterBumper' (static init 0x1063de0), compared with bhkShape+0x20 (high, camera pass), type `u32`
+#[inline]
+pub fn g_character_bumper_material_id() -> *mut u32 { address!(411553) as *mut u32 }
 /// `g_CollisionLayerNames` at 0x20d1f80, id 389332 (semantic, high); const char*[47]: collision layer names by layer index (enum CollisionLayer); entry 47 is null (high, camera pass), type `pointer`
 #[inline]
 pub fn g_collision_layer_names() -> *mut *mut c_void { address!(389332) as *mut *mut c_void }
@@ -4687,7 +5085,7 @@ pub fn g_default_max_pitch_down() -> *mut f32 { address!(189817) as *mut f32 }
 /// `g_DefaultMaxPitchUp` at 0x181ab90, id 189822 (semantic, high); -pi/2 (high, camera pass), type `float`
 #[inline]
 pub fn g_default_max_pitch_up() -> *mut f32 { address!(189822) as *mut f32 }
-/// `g_DefaultObjectManager` at 0x219d180, id 400191 (semantic, high); static default-object manager: object i at +0x20 + 8*i (0x219d1a0 + 8*i), loaded byte at +0xbc0 + i (0x219dd40 + i) (high, camera pass), type `BGSDefaultObjectManager`
+/// `g_DefaultObjectManager` at 0x219d180, id 400191 (semantic, high); default objects: object i at +0x20+8i (0x219d1a0), ready byte at +0xbc0+i (0x219dd40); names table 0x207bf40 (0x18 each) (high, camera pass), type `class:BGSDefaultObjectManager`
 #[inline]
 pub fn g_default_object_manager() -> &'static crate::BGSDefaultObjectManager { unsafe { &*(address!(400191) as *const crate::BGSDefaultObjectManager) } }
 /// `g_DefaultObjectNameTable` at 0x207bf40, id 360630 (semantic, high); the default object names: 0x174 records of 0x18 bytes {const char* name; u32 formType; char signature[4]; u64}, indexed like GetDefaultObjectByIndex (manager +0x20 + i*8, present flag +0xbc0 + i) (high, camera pass), type `undefined1`
@@ -4801,6 +5199,9 @@ pub fn g_player_ref_ptr() -> Option<&'static crate::PlayerCharacter> { unsafe { 
 /// `g_PrecipitationOcclusionMapEnabled` at 0x209e550, id 370126 (semantic, medium); precipitation occlusion map toggle (console tocm) (medium, camera pass), type `u8`
 #[inline]
 pub fn g_precipitation_occlusion_map_enabled() -> *mut u8 { address!(370126) as *mut u8 }
+/// `g_ProcessListsHandleLock` at 0x3245560, id 404442 (semantic, high); guards the four actor handle arrays: write in Add/Remove (0x77a790, 0x77a940, 0x77a890, 0x77abd0, 0x77d0e0), read in UpdateWithTimeBudget 0x77b818 (high, camera pass), type `BSReadWriteLock`
+#[inline]
+pub fn g_process_lists_handle_lock() -> &'static crate::BSReadWriteLock { unsafe { &*(address!(404442) as *const crate::BSReadWriteLock) } }
 /// `g_RaceMenuBodyCameraTarget` at 0x3258500, id 406392 (semantic, high); 7 floats: position + quaternion of the body view (high, camera pass), type `undefined1`
 #[inline]
 pub fn g_race_menu_body_camera_target() -> *mut u8 { address!(406392) as *mut u8 }
@@ -4894,3 +5295,12 @@ pub fn g_water_system_ptr() -> *mut *mut c_void { address!(400450) as *mut *mut 
 /// `g_WeatherNode` at 0x3230760, id 403517 (semantic, high); pointer to `NiNode`: NiNode named "Weather" attached under a scene root at world setup; attach root of OwnedCameraEffectController; NiNode named "Weather" attached under a scene root at world setup; attach root of OwnedCameraEffectController (high, camera pass), type `ptr:NiNode`
 #[inline]
 pub fn g_weather_node() -> Option<&'static crate::NiNode> { unsafe { *(address!(403517) as *const Option<&'static crate::NiNode>) } }
+/// `g_hkContainerHeapAllocator` at 0x20bce08, id 383828 (semantic, high); allocator for hkArray storage (vtable +0x18 alloc(int* size), +0x20 free(ptr, bytes)) (high, camera pass), type `class:hkContainerHeapAllocator::Allocator`
+#[inline]
+pub fn g_hk_container_heap_allocator() -> &'static crate::hkContainerHeapAllocator__Allocator { unsafe { &*(address!(383828) as *const crate::hkContainerHeapAllocator__Allocator) } }
+/// `g_hkMemoryRouterTlsIndex` at 0x325a844, id 407383 (semantic, high); TLS index of the thread's Havok memory router; router+0x58 is the heap allocator: vtable +8 blockAlloc(heap, size), +0x10 blockFree(heap, ptr, size) (high, camera pass), type `u32`
+#[inline]
+pub fn g_hk_memory_router_tls_index() -> *mut u32 { address!(407383) as *mut u32 }
+/// `g_hkReferencedObjectLock` at 0x325a808, id 407375 (semantic, high); global reference-count lock: +0x10 mode (1 = multithreaded), +0x14 recursion count, +0x28 CRITICAL_SECTION (high, camera pass), type `pointer`
+#[inline]
+pub fn g_hk_referenced_object_lock() -> *mut *mut c_void { address!(407375) as *mut *mut c_void }

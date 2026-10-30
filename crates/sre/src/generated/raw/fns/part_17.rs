@@ -3,6 +3,120 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `ReleaseRefCountedPtr_29` at 0x496030 (decompiler, medium); signature (untiered): `undefined ReleaseRefCountedPtr_29(longlong * param_1)`
+pub const ReleaseRefCountedPtr_29: u64 = 29453;
+/// `ReleaseRefCountedPtr_3` at 0x6baaf0 (decompiler, high); signature (high): `undefined ReleaseRefCountedPtr_3(longlong * param_1)`
+pub const ReleaseRefCountedPtr_3: u64 = 38133;
+/// `ReleaseRefCountedPtr_30` at 0x46d010 (decompiler, medium); signature (untiered): `undefined ReleaseRefCountedPtr_30(longlong * param_1)`
+pub const ReleaseRefCountedPtr_30: u64 = 28562;
+/// `ReleaseRefCountedPtr_31` at 0x46e5d0 (decompiler, medium); signature (untiered): `undefined ReleaseRefCountedPtr_31(longlong * param_1)`
+pub const ReleaseRefCountedPtr_31: u64 = 28597;
+/// `ReleaseRefCountedPtr_32` at 0x502910 (decompiler, medium); signature (untiered): `undefined ReleaseRefCountedPtr_32(longlong * param_1)`
+pub const ReleaseRefCountedPtr_32: u64 = 31533;
+/// `ReleaseRefCountedPtr_33` at 0x46e600 (decompiler, medium); signature (untiered): `undefined ReleaseRefCountedPtr_33(longlong * param_1)`
+pub const ReleaseRefCountedPtr_33: u64 = 28598;
+/// `ReleaseRefCountedPtr_34` at 0x4759e0 (decompiler, medium); signature (untiered): `undefined ReleaseRefCountedPtr_34(longlong * param_1)`
+pub const ReleaseRefCountedPtr_34: u64 = 28787;
+/// `ReleaseRefCountedPtr_35` at 0x4879b0 (decompiler, medium); signature (untiered): `undefined ReleaseRefCountedPtr_35(longlong * param_1)`
+pub const ReleaseRefCountedPtr_35: u64 = 29154;
+/// `ReleaseRefCountedPtr_36` at 0x478f20 (decompiler, medium); signature (untiered): `undefined ReleaseRefCountedPtr_36(longlong * param_1)`
+pub const ReleaseRefCountedPtr_36: u64 = 28899;
+/// `ReleaseRefCountedPtr_37` at 0x502940 (decompiler, medium); signature (untiered): `undefined ReleaseRefCountedPtr_37(longlong * param_1)`
+pub const ReleaseRefCountedPtr_37: u64 = 31535;
+/// `ReleaseRefCountedPtr_38` at 0x4fa150 (decompiler, medium); signature (untiered): `undefined ReleaseRefCountedPtr_38(longlong * param_1)`
+pub const ReleaseRefCountedPtr_38: u64 = 31489;
+/// `ReleaseRefCountedPtr_39` at 0x4deaa0 (decompiler, medium); signature (untiered): `undefined ReleaseRefCountedPtr_39(longlong * param_1)`
+pub const ReleaseRefCountedPtr_39: u64 = 30729;
+/// `ReleaseRefCountedPtr_4` at 0x555d00 (decompiler, high); signature (high): `undefined ReleaseRefCountedPtr_4(longlong * param_1)`
+pub const ReleaseRefCountedPtr_4: u64 = 32940;
+/// `ReleaseRefCountedPtr_40` at 0x4fa180 (decompiler, medium); signature (untiered): `undefined ReleaseRefCountedPtr_40(longlong * param_1)`
+pub const ReleaseRefCountedPtr_40: u64 = 31490;
+/// `ReleaseRefCountedPtr_41` at 0x29cc20 (decompiler, high); signature (high): `undefined ReleaseRefCountedPtr_41(longlong * param_1)`
+pub const ReleaseRefCountedPtr_41: u64 = 18416;
+/// `ReleaseRefCountedPtr_42` at 0x46cfe0 (decompiler, high); signature (high): `undefined ReleaseRefCountedPtr_42(longlong * param_1)`
+pub const ReleaseRefCountedPtr_42: u64 = 28561;
+/// `ReleaseRefCountedPtr_43` at 0x3aa420 (decompiler, medium); signature (untiered): `undefined ReleaseRefCountedPtr_43(longlong * param_1)`
+pub const ReleaseRefCountedPtr_43: u64 = 24181;
+/// `ReleaseRefCountedPtr_44` at 0x1173680 (decompiler, high); signature (high): `undefined ReleaseRefCountedPtr_44(longlong * param_1)`
+pub const ReleaseRefCountedPtr_44: u64 = 84472;
+/// `ReleaseRefCountedPtr_45` at 0x9ecd00 (decompiler, high); signature (high): `undefined ReleaseRefCountedPtr_45(longlong * param_1)`
+pub const ReleaseRefCountedPtr_45: u64 = 54180;
+/// `ReleaseRefCountedPtr_46` at 0x14c7800 (decompiler, high); signature (high): `undefined ReleaseRefCountedPtr_46(longlong * param_1)`
+pub const ReleaseRefCountedPtr_46: u64 = 104988;
+/// `ReleaseRefCountedPtr_47` at 0x8ce720 (decompiler, high); signature (high): `undefined ReleaseRefCountedPtr_47(longlong * param_1)`
+pub const ReleaseRefCountedPtr_47: u64 = 49664;
+/// `ReleaseRefCountedPtr_48` at 0x8dd6e0 (decompiler, high); signature (high): `undefined ReleaseRefCountedPtr_48(longlong * param_1)`
+pub const ReleaseRefCountedPtr_48: u64 = 50034;
+/// `ReleaseRefCountedPtr_49` at 0x8dd770 (decompiler, high); signature (high): `undefined ReleaseRefCountedPtr_49(longlong * param_1)`
+pub const ReleaseRefCountedPtr_49: u64 = 50037;
+/// `ReleaseRefCountedPtr_5` at 0x17bc30 (decompiler, high); signature (high): `undefined ReleaseRefCountedPtr_5(longlong * param_1)`
+pub const ReleaseRefCountedPtr_5: u64 = 12171;
+/// `ReleaseRefCountedPtr_50` at 0x6babc0 (decompiler, high); signature (high): `undefined ReleaseRefCountedPtr_50(longlong * param_1)`
+pub const ReleaseRefCountedPtr_50: u64 = 38137;
+/// `ReleaseRefCountedPtr_51` at 0xfc4100 (decompiler, high); signature (high): `undefined ReleaseRefCountedPtr_51(longlong * param_1)`
+pub const ReleaseRefCountedPtr_51: u64 = 75659;
+/// `ReleaseRefCountedPtr_52` at 0x4b0150 (decompiler, high); signature (high): `undefined ReleaseRefCountedPtr_52(longlong * param_1)`
+pub const ReleaseRefCountedPtr_52: u64 = 30084;
+/// `ReleaseRefCountedPtr_53` at 0x19aec0 (decompiler, high); signature (high): `undefined ReleaseRefCountedPtr_53(longlong * param_1)`
+pub const ReleaseRefCountedPtr_53: u64 = 13158;
+/// `ReleaseRefCountedPtr_54` at 0x8788f0 (decompiler, high); signature (untiered): `undefined ReleaseRefCountedPtr_54(longlong * param_1)`
+pub const ReleaseRefCountedPtr_54: u64 = 47603;
+/// `ReleaseRefCountedPtr_55` at 0x55ec20 (decompiler, high); signature (untiered): `undefined ReleaseRefCountedPtr_55(longlong * param_1)`
+pub const ReleaseRefCountedPtr_55: u64 = 33152;
+/// `ReleaseRefCountedPtr_56` at 0x82b730 (decompiler, high); signature (untiered): `undefined ReleaseRefCountedPtr_56(longlong * param_1)`
+pub const ReleaseRefCountedPtr_56: u64 = 44938;
+/// `ReleaseRefCountedPtr_57` at 0x71c260 (decompiler, high); signature (high): `undefined ReleaseRefCountedPtr_57(longlong * param_1)`
+pub const ReleaseRefCountedPtr_57: u64 = 39716;
+/// `ReleaseRefCountedPtr_58` at 0x860910 (decompiler, high); signature (untiered): `undefined ReleaseRefCountedPtr_58(longlong * param_1)`
+pub const ReleaseRefCountedPtr_58: u64 = 47141;
+/// `ReleaseRefCountedPtr_59` at 0x1b2a00 (decompiler, high); signature (high): `undefined ReleaseRefCountedPtr_59(longlong * param_1)`
+pub const ReleaseRefCountedPtr_59: u64 = 13590;
+/// `ReleaseRefCountedPtr_6` at 0x383b40 (decompiler, high); signature (high): `undefined ReleaseRefCountedPtr_6(longlong * param_1)`
+pub const ReleaseRefCountedPtr_6: u64 = 23254;
+/// `ReleaseRefCountedPtr_60` at 0x4c3820 (decompiler, high); signature (high): `undefined ReleaseRefCountedPtr_60(longlong * param_1)`
+pub const ReleaseRefCountedPtr_60: u64 = 30370;
+/// `ReleaseRefCountedPtr_61` at 0x9b0fa0 (decompiler, high); signature (high): `undefined ReleaseRefCountedPtr_61(longlong * param_1)`
+pub const ReleaseRefCountedPtr_61: u64 = 53388;
+/// `ReleaseRefCountedPtr_62` at 0x9b1010 (decompiler, high); signature (high): `undefined ReleaseRefCountedPtr_62(longlong * param_1)`
+pub const ReleaseRefCountedPtr_62: u64 = 53390;
+/// `ReleaseRefCountedPtr_63` at 0x92c470 (decompiler, high); signature (high): `undefined ReleaseRefCountedPtr_63(longlong * param_1)`
+pub const ReleaseRefCountedPtr_63: u64 = 51528;
+/// `ReleaseRefCountedPtr_64` at 0x205dc0 (decompiler, high); signature (untiered): `undefined ReleaseRefCountedPtr_64(longlong * param_1)`
+pub const ReleaseRefCountedPtr_64: u64 = 15353;
+/// `ReleaseRefCountedPtr_65` at 0x120ad0 (decompiler, high); signature (untiered): `undefined ReleaseRefCountedPtr_65(longlong * param_1)`
+pub const ReleaseRefCountedPtr_65: u64 = 440367;
+/// `ReleaseRefCountedPtr_66` at 0x997140 (decompiler, high); signature (untiered): `undefined ReleaseRefCountedPtr_66(longlong * param_1)`
+pub const ReleaseRefCountedPtr_66: u64 = 53024;
+/// `ReleaseRefCountedPtr_67` at 0x997170 (decompiler, high); signature (untiered): `undefined ReleaseRefCountedPtr_67(longlong * param_1)`
+pub const ReleaseRefCountedPtr_67: u64 = 53025;
+/// `ReleaseRefCountedPtr_68` at 0x5d8760 (decompiler, high); signature (high): `undefined ReleaseRefCountedPtr_68(longlong * param_1)`
+pub const ReleaseRefCountedPtr_68: u64 = 34677;
+/// `ReleaseRefCountedPtr_69` at 0x73dd70 (decompiler, high); signature (high): `undefined ReleaseRefCountedPtr_69(longlong * param_1)`
+pub const ReleaseRefCountedPtr_69: u64 = 40363;
+/// `ReleaseRefCountedPtr_7` at 0x17bc60 (decompiler, high); signature (high): `undefined ReleaseRefCountedPtr_7(longlong * param_1)`
+pub const ReleaseRefCountedPtr_7: u64 = 12172;
+/// `ReleaseRefCountedPtr_70` at 0x7aa7e0 (decompiler, high); signature (high): `undefined ReleaseRefCountedPtr_70(longlong * param_1)`
+pub const ReleaseRefCountedPtr_70: u64 = 42223;
+/// `ReleaseRefCountedPtr_71` at 0x79a4a0 (decompiler, high); signature (high): `undefined ReleaseRefCountedPtr_71(longlong * param_1)`
+pub const ReleaseRefCountedPtr_71: u64 = 41788;
+/// `ReleaseRefCountedPtr_72` at 0x79a4d0 (decompiler, high); signature (high): `undefined ReleaseRefCountedPtr_72(longlong * param_1)`
+pub const ReleaseRefCountedPtr_72: u64 = 41789;
+/// `ReleaseRefCountedPtr_73` at 0x52ece0 (decompiler, high); signature (high): `undefined ReleaseRefCountedPtr_73(longlong * param_1)`
+pub const ReleaseRefCountedPtr_73: u64 = 32245;
+/// `ReleaseRefCountedPtr_74` at 0x52ecb0 (decompiler, high); signature (high): `undefined ReleaseRefCountedPtr_74(longlong * param_1)`
+pub const ReleaseRefCountedPtr_74: u64 = 32244;
+/// `ReleaseRefCountedPtr_75` at 0x52ec80 (decompiler, high); signature (high): `undefined ReleaseRefCountedPtr_75(longlong * param_1)`
+pub const ReleaseRefCountedPtr_75: u64 = 32243;
+/// `ReleaseRefCountedPtr_76` at 0x4c0150 (decompiler, medium); signature (untiered): `undefined ReleaseRefCountedPtr_76(longlong * param_1)`
+pub const ReleaseRefCountedPtr_76: u64 = 30280;
+/// `ReleaseRefCountedPtr_77` at 0x3aa4c0 (decompiler, high); signature (high): `undefined ReleaseRefCountedPtr_77(longlong * param_1)`
+pub const ReleaseRefCountedPtr_77: u64 = 24184;
+/// `ReleaseRefCountedPtr_78` at 0x4dea70 (decompiler, high); signature (high): `undefined ReleaseRefCountedPtr_78(longlong * param_1)`
+pub const ReleaseRefCountedPtr_78: u64 = 30728;
+/// `ReleaseRefCountedPtr_79` at 0x28e380 (decompiler, medium); signature (untiered): `undefined ReleaseRefCountedPtr_79(longlong * param_1)`
+pub const ReleaseRefCountedPtr_79: u64 = 18122;
+/// `ReleaseRefCountedPtr_8` at 0x9cd250 (decompiler, high); signature (high): `undefined ReleaseRefCountedPtr_8(longlong * param_1)`
+pub const ReleaseRefCountedPtr_8: u64 = 53783;
 /// `ReleaseRefCountedPtr_80` at 0x19af20 (decompiler, medium); signature (medium): `undefined ReleaseRefCountedPtr_80(longlong * param_1)`
 pub const ReleaseRefCountedPtr_80: u64 = 13160;
 /// `ReleaseRefCountedPtr_81` at 0x19af50 (decompiler, medium); signature (medium): `undefined ReleaseRefCountedPtr_81(longlong * param_1)`
@@ -1197,10 +1311,10 @@ pub const RemoveDwordKeyFromHashMap: u64 = 20607;
 pub const RemoveDwordKeyedEntryLocked: u64 = 30389;
 /// `RemoveEdgeFromVertexPairMap` at 0x114fe60 (decompiler, medium); signature (untiered): `undefined RemoveEdgeFromVertexPairMap(longlong * param_1, longlong * param_2)`
 pub const RemoveEdgeFromVertexPairMap: u64 = 81841;
-/// `RemoveEffectShaderData` at 0x26c750 (semantic, high); signature (untiered): `undefined RemoveEffectShaderData(undefined8 param_1, longlong * param_2, longlong param_3)`; semantic: walks node's subtree like ApplyEffectShaderData (same name filter at data+8) and clears effectOverlay (+0x68) on each shader property whose effectOverlay == data (tail jump to SetField68RefPtr(property, null)) (high); signature `void (TESEffectShader* shader, NiAVObject* node, BSEffectShaderData* data)`
+/// `RemoveEffectShaderData` at 0x26c750 (semantic, high); signature (untiered): `undefined RemoveEffectShaderData(undefined8 param_1, longlong * param_2, longlong param_3)`; semantic: same walk; clears property+0x68 only where it equals data (high); signature `void (TESEffectShader* shader, NiAVObject* root, BSEffectShaderData* data)`
 pub const RemoveEffectShaderData: u64 = 17331;
 /// `RemoveEffectShaderData` as a function pointer type (high).
-pub type RemoveEffectShaderData_fn = unsafe extern "C" fn(shader: *mut crate::TESEffectShader, node: *mut crate::NiAVObject, data: *mut c_void);
+pub type RemoveEffectShaderData_fn = unsafe extern "C" fn(shader: *mut crate::TESEffectShader, root: *mut crate::NiAVObject, data: *mut crate::BSEffectShaderData);
 /// `RemoveElementBySwapWithLast` at 0xc06de0 (decompiler, medium); signature (untiered): `undefined RemoveElementBySwapWithLast(ushort * param_1, longlong param_2)`
 pub const RemoveElementBySwapWithLast: u64 = 64657;
 /// `RemoveElementRange16` at 0x14c910 (decompiler, medium); signature (medium): `undefined RemoveElementRange16(longlong * param_1, int param_2, int param_3)`
@@ -8297,8 +8411,6 @@ pub const SetActionEntity: u64 = 61002;
 pub const SetActiveAccumulatorMode: u64 = 105641;
 /// `SetActiveAccumulatorMode` as a function pointer type (high).
 pub type SetActiveAccumulatorMode_fn = unsafe extern "C" fn(mode: u32);
-/// `SetActiveSlotField278` at 0x10647b0 (decompiler, medium); signature (untiered): `undefined SetActiveSlotField278(longlong * param_1, int param_2)`
-pub const SetActiveSlotField278: u64 = 78267;
 /// `SetActorBaseDataFlag` at 0x1dd2c0 (decompiler, medium); signature (medium): `undefined SetActorBaseDataFlag(longlong param_1, uint param_2, char param_3, char param_4)`
 pub const SetActorBaseDataFlag: u64 = 14383;
 /// `SetActorBaseLevel` at 0x1dd430 (decompiler, medium); signature (medium): `undefined SetActorBaseLevel(longlong param_1, undefined2 param_2)`
@@ -8731,8 +8843,6 @@ pub const SetCategoryVolume: u64 = 67845;
 pub type SetCategoryVolume_fn = unsafe extern "C" fn(handle: *mut *mut crate::BSISoundCategory, volume: f32);
 /// `SetCellChildNodeVisible` at 0x1a4cc0 (decompiler, medium); signature (untiered): `undefined SetCellChildNodeVisible(longlong param_1, uint param_2, undefined8 param_3, undefined8 param_4)`
 pub const SetCellChildNodeVisible: u64 = 13343;
-/// `SetCharacterBumperEnabled` at 0x1064810 (decompiler, medium); signature (untiered): `longlong * SetCharacterBumperEnabled(longlong * param_1, byte param_2)`
-pub const SetCharacterBumperEnabled: u64 = 78268;
 /// `SetCheckForMissingContentOnStartup` at 0x623d90 (decompiler, high); signature (high): `undefined SetCheckForMissingContentOnStartup(undefined1 param_1)`
 pub const SetCheckForMissingContentOnStartup: u64 = 442574;
 /// `SetChildButtonHighlighted` at 0x1619ba0 (decompiler, medium); signature (untiered): `undefined SetChildButtonHighlighted(longlong * param_1, ulonglong param_2, char param_3)`
@@ -8935,87 +9045,3 @@ pub const SetErrorFromPlatformMessageAt678_2: u64 = 526458;
 pub const SetErrorFromPlatformMessageAt98: u64 = 447789;
 /// `SetErrorFromPlatformMessageAt98_2` at 0x1354d90 (decompiler, medium); signature (untiered): `undefined SetErrorFromPlatformMessageAt98_2(longlong * param_1, longlong param_2, undefined8 param_3, char * param_4)`
 pub const SetErrorFromPlatformMessageAt98_2: u64 = 526523;
-/// `SetErrorFromPlatformMessageAt98_3` at 0x1355ca0 (decompiler, medium); signature (untiered): `undefined SetErrorFromPlatformMessageAt98_3(longlong * param_1, longlong param_2, undefined8 param_3, char * param_4)`
-pub const SetErrorFromPlatformMessageAt98_3: u64 = 526549;
-/// `SetErrorFromPlatformMessageAt98_4` at 0x13571e0 (decompiler, medium); signature (untiered): `undefined SetErrorFromPlatformMessageAt98_4(longlong * param_1, longlong param_2, undefined8 param_3, char * param_4)`
-pub const SetErrorFromPlatformMessageAt98_4: u64 = 526576;
-/// `SetErrorFromPlatformMessageAt98_5` at 0x1358890 (decompiler, medium); signature (untiered): `undefined SetErrorFromPlatformMessageAt98_5(longlong * param_1, longlong param_2, undefined8 param_3, char * param_4)`
-pub const SetErrorFromPlatformMessageAt98_5: u64 = 526605;
-/// `SetErrorFromPlatformMessageAt98_6` at 0x1368090 (decompiler, medium); signature (untiered): `undefined SetErrorFromPlatformMessageAt98_6(longlong * param_1, longlong param_2, undefined8 param_3, char * param_4)`
-pub const SetErrorFromPlatformMessageAt98_6: u64 = 526750;
-/// `SetErrorFromPlatformMessageAt98_7` at 0x1373b30 (decompiler, medium); signature (untiered): `undefined SetErrorFromPlatformMessageAt98_7(longlong * param_1, longlong param_2, undefined8 param_3, char * param_4)`
-pub const SetErrorFromPlatformMessageAt98_7: u64 = 526817;
-/// `SetErrorFromPlatformMessageAt98_8` at 0x13a2010 (decompiler, medium); signature (untiered): `undefined SetErrorFromPlatformMessageAt98_8(longlong * param_1, longlong param_2, undefined8 param_3, char * param_4)`
-pub const SetErrorFromPlatformMessageAt98_8: u64 = 100343;
-/// `SetErrorFromPlatformMessageAtD0` at 0x1363ea0 (decompiler, medium); signature (untiered): `undefined SetErrorFromPlatformMessageAtD0(longlong * param_1, longlong param_2, undefined8 param_3, char * param_4)`
-pub const SetErrorFromPlatformMessageAtD0: u64 = 526701;
-/// `SetExternalBuffer` at 0xaa8820 (decompiler, medium); signature (medium): `undefined SetExternalBuffer(longlong * param_1, longlong param_2, int param_3)`
-pub const SetExternalBuffer: u64 = 57256;
-/// `SetExtra5CByte12` at 0x686570 (decompiler, medium); signature (untiered): `undefined SetExtra5CByte12(longlong * param_1, undefined1 param_2, undefined8 param_3, undefined8 param_4)`
-pub const SetExtra5CByte12: u64 = 37465;
-/// `SetExtraActionField10` at 0x170980 (decompiler, medium); signature (untiered): `undefined SetExtraActionField10(longlong param_1, int param_2)`
-pub const SetExtraActionField10: u64 = 11997;
-/// `SetExtraActionField18` at 0x170b50 (decompiler, medium); signature (untiered): `undefined SetExtraActionField18(longlong param_1, longlong param_2, undefined8 param_3, undefined8 param_4)`
-pub const SetExtraActionField18: u64 = 12000;
-/// `SetExtraAlphaCutoff` at 0x172580 (decompiler, medium); signature (medium): `undefined SetExtraAlphaCutoff(longlong param_1, undefined1 param_2, undefined8 param_3)`
-pub const SetExtraAlphaCutoff: u64 = 12040;
-/// `SetExtraAmmo` at 0x171690 (decompiler, medium); signature (medium): `undefined SetExtraAmmo(longlong param_1, longlong param_2, undefined8 param_3)`
-pub const SetExtraAmmo: u64 = 12020;
-/// `SetExtraAshPileRef` at 0x1672e0 (decompiler, medium); signature (medium): `undefined SetExtraAshPileRef(longlong param_1, uint * param_2, undefined8 param_3, undefined8 param_4)`
-pub const SetExtraAshPileRef: u64 = 11777;
-/// `SetExtraAttachRef` at 0x165cf0 (decompiler, high); signature (untiered): `undefined SetExtraAttachRef(longlong param_1, int * param_2, undefined8 param_3, undefined8 param_4)`
-pub const SetExtraAttachRef: u64 = 11752;
-/// `SetExtraBiped` at 0x15f6a0 (decompiler, medium); signature (untiered): `ExtraBiped * SetExtraBiped(longlong param_1, undefined8 * param_2, undefined8 param_3, undefined8 param_4)`
-pub const SetExtraBiped: u64 = 11603;
-/// `SetExtraCachedScale` at 0x160b20 (decompiler, high); signature (high): `undefined SetExtraCachedScale(longlong param_1, float param_2, undefined8 param_3, undefined8 param_4)`
-pub const SetExtraCachedScale: u64 = 11621;
-/// `SetExtraCannotWear` at 0x1604f0 (decompiler, medium); signature (medium): `undefined SetExtraCannotWear(longlong param_1, char param_2, undefined8 param_3, undefined8 param_4)`
-pub const SetExtraCannotWear: u64 = 11615;
-/// `SetExtraCell3D` at 0x16ee60 (decompiler, medium); signature (untiered): `undefined SetExtraCell3D(longlong param_1, longlong * param_2, undefined8 param_3, undefined8 param_4)`
-pub const SetExtraCell3D: u64 = 11950;
-/// `SetExtraCellAcousticSpace` at 0x16f6c0 (decompiler, medium); signature (medium): `undefined SetExtraCellAcousticSpace(longlong param_1, longlong param_2, undefined8 param_3, undefined8 param_4)`
-pub const SetExtraCellAcousticSpace: u64 = 11961;
-/// `SetExtraCellGrassDataField28` at 0x1736d0 (decompiler, high); signature (high): `undefined SetExtraCellGrassDataField28(longlong param_1, undefined8 * param_2, undefined8 param_3, undefined8 param_4)`
-pub const SetExtraCellGrassDataField28: u64 = 12071;
-/// `SetExtraCellImageSpace` at 0x16f960 (decompiler, medium); signature (untiered): `undefined SetExtraCellImageSpace(longlong param_1, longlong param_2, undefined8 param_3, undefined8 param_4)`
-pub const SetExtraCellImageSpace: u64 = 11965;
-/// `SetExtraCellMusicType` at 0x16f570 (decompiler, medium); signature (medium): `undefined SetExtraCellMusicType(longlong param_1, longlong param_2, undefined8 param_3, undefined8 param_4)`
-pub const SetExtraCellMusicType: u64 = 11959;
-/// `SetExtraCellSkyRegion` at 0x16f810 (decompiler, medium); signature (medium): `undefined SetExtraCellSkyRegion(longlong param_1, longlong param_2, undefined8 param_3, undefined8 param_4)`
-pub const SetExtraCellSkyRegion: u64 = 11963;
-/// `SetExtraCellWaterEnvMap` at 0x173380 (decompiler, medium); signature (medium): `undefined SetExtraCellWaterEnvMap(longlong param_1, char * param_2, undefined8 param_3, undefined8 param_4)`
-pub const SetExtraCellWaterEnvMap: u64 = 12065;
-/// `SetExtraCellWaterType` at 0x1669d0 (decompiler, high); signature (untiered): `undefined SetExtraCellWaterType(longlong param_1, longlong param_2, undefined8 param_3, undefined8 param_4)`
-pub const SetExtraCellWaterType: u64 = 11765;
-/// `SetExtraCellWaterTypeUnlessDefault` at 0x2bf430 (decompiler, medium); signature (untiered): `undefined SetExtraCellWaterTypeUnlessDefault(longlong param_1, longlong param_2, undefined8 param_3, undefined8 param_4)`
-pub const SetExtraCellWaterTypeUnlessDefault: u64 = 19011;
-/// `SetExtraCharge` at 0x160960 (decompiler, high); signature (untiered): `undefined SetExtraCharge(longlong param_1, undefined4 param_2, undefined8 param_3, undefined8 param_4)`
-pub const SetExtraCharge: u64 = 11619;
-/// `SetExtraCollisionData` at 0x16c0e0 (decompiler, medium); signature (medium): `undefined SetExtraCollisionData(longlong param_1, longlong param_2, undefined8 param_3, undefined8 param_4)`
-pub const SetExtraCollisionData: u64 = 11873;
-/// `SetExtraCount` at 0x160760 (decompiler, high); signature (high): `undefined SetExtraCount(longlong param_1, ushort param_2, undefined8 param_3, undefined8 param_4)`
-pub const SetExtraCount: u64 = 11617;
-/// `SetExtraCreatureAwakeSound` at 0x160ee0 (decompiler, high); signature (untiered): `undefined SetExtraCreatureAwakeSound(longlong param_1, int * param_2, undefined8 param_3, undefined8 param_4)`
-pub const SetExtraCreatureAwakeSound: u64 = 11624;
-/// `SetExtraCreatureMovementSound` at 0x161020 (decompiler, medium); signature (untiered): `undefined SetExtraCreatureMovementSound(longlong param_1, int * param_2, undefined8 param_3, undefined8 param_4)`
-pub const SetExtraCreatureMovementSound: u64 = 11625;
-/// `SetExtraDecalGroup` at 0x166b20 (decompiler, medium); signature (untiered): `undefined SetExtraDecalGroup(longlong param_1, longlong param_2, undefined8 param_3, undefined8 param_4)`
-pub const SetExtraDecalGroup: u64 = 11767;
-/// `SetExtraDetachTime` at 0x169820 (decompiler, high); signature (untiered): `undefined SetExtraDetachTime(longlong param_1, int param_2, undefined8 param_3, undefined8 param_4)`
-pub const SetExtraDetachTime: u64 = 11814;
-/// `SetExtraDistantData` at 0x162440 (decompiler, high); signature (untiered): `undefined SetExtraDistantData(longlong param_1, undefined4 * param_2, undefined8 param_3, undefined8 param_4)`
-pub const SetExtraDistantData: u64 = 11644;
-/// `SetExtraDistantData_2` at 0x162550 (decompiler, medium); signature (untiered): `undefined SetExtraDistantData_2(longlong param_1, longlong param_2, undefined8 param_3)`
-pub const SetExtraDistantData_2: u64 = 11645;
-/// `SetExtraEmittanceSource` at 0x16a4f0 (decompiler, high); signature (untiered): `undefined SetExtraEmittanceSource(longlong param_1, longlong param_2, undefined8 param_3, undefined8 param_4)`
-pub const SetExtraEmittanceSource: u64 = 11835;
-/// `SetExtraEnableStateParent` at 0x165660 (decompiler, high); signature (untiered): `undefined SetExtraEnableStateParent(longlong param_1, int * param_2, undefined8 param_3, undefined8 param_4)`
-pub const SetExtraEnableStateParent: u64 = 11740;
-/// `SetExtraEnchantment` at 0x173170 (decompiler, high); signature (high): `undefined SetExtraEnchantment(longlong param_1, longlong param_2, undefined8 param_3, undefined8 param_4)`
-pub const SetExtraEnchantment: u64 = 12060;
-/// `SetExtraEncounterZone` at 0x16a0d0 (decompiler, high); signature (untiered): `undefined SetExtraEncounterZone(longlong param_1, longlong param_2, undefined8 param_3, undefined8 param_4)`
-pub const SetExtraEncounterZone: u64 = 11829;
-/// `SetExtraFavorCost` at 0x171d20 (decompiler, medium); signature (medium): `undefined SetExtraFavorCost(longlong param_1, float param_2, undefined8 param_3, undefined8 param_4)`
-pub const SetExtraFavorCost: u64 = 12028;
-/// `SetExtraFlagsBits` at 0x1726c0 (decompiler, medium); signature (medium): `undefined SetExtraFlagsBits(longlong param_1, uint param_2, undefined8 param_3)`
-pub const SetExtraFlagsBits: u64 = 12042;

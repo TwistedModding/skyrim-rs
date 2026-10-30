@@ -2667,8 +2667,8 @@ pub struct ahkpCharacterProxy {
     /// +0x0 `vtbl:ahkpCharacterProxy:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::ahkpCharacterProxy_vtable,
-    /// +0x8 `undefined4`, base hkpCharacterProxy
-    pub field_8: u32,
+    /// +0x8 `u32`, base hkpCharacterProxy, semantic; hkReferencedObject words (0x1ffff from the ctor) (high)
+    pub memSizeAndRefCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `vtbl:ahkpCharacterProxy:10`, rtti
     #[doc(hidden)]
@@ -2704,14 +2704,8 @@ pub struct ahkpCharacterProxy {
     pub field_58: u32,
     /// +0x5C `undefined4`, base hkBaseObject
     pub field_5C: u32,
-    /// +0x60 `undefined4`, base hkBaseObject
-    pub field_60: u32,
-    /// +0x64 `undefined4`, base hkBaseObject
-    pub field_64: u32,
-    /// +0x68 `undefined4`, base hkBaseObject
-    pub field_68: u32,
-    /// +0x6C `undefined4`, base hkBaseObject
-    pub field_6C: u32,
+    /// +0x60 `class:hkVector4`, base hkpCharacterProxy, semantic; linear velocity (proxy controller slots 6/7 read/write it) (high)
+    pub velocity: crate::hkVector4,
     /// +0x70 `undefined4`, base hkBaseObject
     pub field_70: u32,
     /// +0x74 `undefined4`, base hkBaseObject
@@ -2720,10 +2714,8 @@ pub struct ahkpCharacterProxy {
     pub field_78: u32,
     /// +0x7C `undefined4`, base hkBaseObject
     pub field_7C: u32,
-    /// +0x80 `undefined4`, base hkBaseObject
-    pub field_80: u32,
-    /// +0x84 `undefined4`, base hkBaseObject
-    pub field_84: u32,
+    /// +0x80 `ptr:hkpShapePhantom`, base hkpCharacterProxy, semantic; the shape phantom, referenced (addReference on set) (high)
+    pub shapePhantom: *mut crate::hkpShapePhantom,
     /// +0x88 `undefined4`, base hkBaseObject
     pub field_88: u32,
     /// +0x8C `undefined4`, base hkBaseObject
@@ -2758,13 +2750,16 @@ pub struct ahkpCharacterProxy {
     pub field_D0: u32,
     /// +0xD4 `undefined4`, base hkpCharacterProxy
     pub field_D4: u32,
-    pub unknown_D8: [u8; 40],
+    pub unknown_D8: [u8; 24],
+    /// +0xF0 `ptr:bhkCharacterProxy`, base hkpCharacterProxy, semantic; back pointer to the wrapper (bhkCharacterProxy slot 38 writes it) (high)
+    pub userData: *mut crate::bhkCharacterProxy,
+    pub unknown_F8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ahkpCharacterProxy>() == 0x100);
 const _: () = assert!(core::mem::offset_of!(ahkpCharacterProxy, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(ahkpCharacterProxy, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(ahkpCharacterProxy, memSizeAndRefCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(ahkpCharacterProxy, __vftable_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(ahkpCharacterProxy, __vftable_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(ahkpCharacterProxy, m_hkpRayShapeCollectionFilter_20) == 0x20);
@@ -2781,16 +2776,12 @@ const _: () = assert!(core::mem::offset_of!(ahkpCharacterProxy, field_50) == 0x5
 const _: () = assert!(core::mem::offset_of!(ahkpCharacterProxy, field_54) == 0x54);
 const _: () = assert!(core::mem::offset_of!(ahkpCharacterProxy, field_58) == 0x58);
 const _: () = assert!(core::mem::offset_of!(ahkpCharacterProxy, field_5C) == 0x5C);
-const _: () = assert!(core::mem::offset_of!(ahkpCharacterProxy, field_60) == 0x60);
-const _: () = assert!(core::mem::offset_of!(ahkpCharacterProxy, field_64) == 0x64);
-const _: () = assert!(core::mem::offset_of!(ahkpCharacterProxy, field_68) == 0x68);
-const _: () = assert!(core::mem::offset_of!(ahkpCharacterProxy, field_6C) == 0x6C);
+const _: () = assert!(core::mem::offset_of!(ahkpCharacterProxy, velocity) == 0x60);
 const _: () = assert!(core::mem::offset_of!(ahkpCharacterProxy, field_70) == 0x70);
 const _: () = assert!(core::mem::offset_of!(ahkpCharacterProxy, field_74) == 0x74);
 const _: () = assert!(core::mem::offset_of!(ahkpCharacterProxy, field_78) == 0x78);
 const _: () = assert!(core::mem::offset_of!(ahkpCharacterProxy, field_7C) == 0x7C);
-const _: () = assert!(core::mem::offset_of!(ahkpCharacterProxy, field_80) == 0x80);
-const _: () = assert!(core::mem::offset_of!(ahkpCharacterProxy, field_84) == 0x84);
+const _: () = assert!(core::mem::offset_of!(ahkpCharacterProxy, shapePhantom) == 0x80);
 const _: () = assert!(core::mem::offset_of!(ahkpCharacterProxy, field_88) == 0x88);
 const _: () = assert!(core::mem::offset_of!(ahkpCharacterProxy, field_8C) == 0x8C);
 const _: () = assert!(core::mem::offset_of!(ahkpCharacterProxy, field_90) == 0x90);
@@ -2808,6 +2799,7 @@ const _: () = assert!(core::mem::offset_of!(ahkpCharacterProxy, field_C4) == 0xC
 const _: () = assert!(core::mem::offset_of!(ahkpCharacterProxy, field_C8) == 0xC8);
 const _: () = assert!(core::mem::offset_of!(ahkpCharacterProxy, field_D0) == 0xD0);
 const _: () = assert!(core::mem::offset_of!(ahkpCharacterProxy, field_D4) == 0xD4);
+const _: () = assert!(core::mem::offset_of!(ahkpCharacterProxy, userData) == 0xF0);
 
 /// `ahkpCharacterRigidBody`: size >= 0x118 (lower bound); partial, the struct stops at the lower bound; primary base `hkpCharacterRigidBody`.
 /// Evidence: field field_114.

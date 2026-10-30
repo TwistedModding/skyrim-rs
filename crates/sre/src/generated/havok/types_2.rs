@@ -3,1002 +3,6 @@
 
 use core::ffi::c_void;
 
-/// `hkStreamWriter`: size >= 0x118 (lower bound, upper bound 0x20); partial, the struct stops at the lower bound; primary base `hkReferencedObject`.
-/// Evidence: lower field field_114; upper derived HavokFileStreambufWriter size 0x20 at 0x0.
-/// Bases: `hkReferencedObject`@0x0, `hkBaseObject`@0x0.
-#[repr(C)]
-pub struct hkStreamWriter {
-    /// +0x0 `vtbl:hkStreamWriter:0`, rtti
-    #[doc(hidden)]
-    pub __vftable: *const crate::raw::vtables::hkStreamWriter_vtable,
-    pub unknown_8: [u8; 8],
-    /// +0x10 `undefined8`, base hkBaseObject
-    pub m_hkpCollidableCollidableFilter_10: u64,
-    /// +0x18 `undefined8`, base hkBaseObject
-    pub m_hkpShapeCollectionFilter_18: u64,
-    /// +0x20 `undefined8`, base hkBaseObject
-    pub m_hkpRayShapeCollectionFilter_20: u64,
-    /// +0x28 `undefined8`, base hkBaseObject
-    pub m_hkpRayCollidableFilter_28: u64,
-    /// +0x30 `undefined4`, base hkBaseObject
-    pub field_30: u32,
-    /// +0x34 `undefined4`, base hkBaseObject
-    pub field_34: u32,
-    /// +0x38 `undefined4`, base hkBaseObject
-    pub field_38: u32,
-    /// +0x3C `undefined4`, base hkBaseObject
-    pub field_3C: u32,
-    /// +0x40 `undefined4`, base hkBaseObject
-    pub field_40: u32,
-    /// +0x44 `undefined4`, base hkBaseObject
-    pub field_44: u32,
-    /// +0x48 `undefined4`, base hkBaseObject
-    pub field_48: u32,
-    /// +0x4C `undefined4`, base hkBaseObject
-    pub field_4C: u32,
-    /// +0x50 `undefined4`, base hkBaseObject
-    pub field_50: u32,
-    /// +0x54 `undefined4`, base hkBaseObject
-    pub field_54: u32,
-    /// +0x58 `undefined4`, base hkBaseObject
-    pub field_58: u32,
-    /// +0x5C `undefined4`, base hkBaseObject
-    pub field_5C: u32,
-    /// +0x60 `undefined4`, base hkBaseObject
-    pub field_60: u32,
-    /// +0x64 `undefined4`, base hkBaseObject
-    pub field_64: u32,
-    /// +0x68 `undefined4`, base hkBaseObject
-    pub field_68: u32,
-    /// +0x6C `undefined4`, base hkBaseObject
-    pub field_6C: u32,
-    /// +0x70 `undefined4`, base hkBaseObject
-    pub field_70: u32,
-    /// +0x74 `undefined4`, base hkBaseObject
-    pub field_74: u32,
-    /// +0x78 `undefined4`, base hkBaseObject
-    pub field_78: u32,
-    /// +0x7C `undefined4`, base hkBaseObject
-    pub field_7C: u32,
-    /// +0x80 `undefined4`, base hkBaseObject
-    pub field_80: u32,
-    /// +0x84 `undefined4`, base hkBaseObject
-    pub field_84: u32,
-    /// +0x88 `undefined4`, base hkBaseObject
-    pub field_88: u32,
-    /// +0x8C `undefined4`, base hkBaseObject
-    pub field_8C: u32,
-    /// +0x90 `undefined4`, base hkBaseObject
-    pub field_90: u32,
-    /// +0x94 `undefined4`, base hkBaseObject
-    pub field_94: u32,
-    /// +0x98 `undefined4`, base hkBaseObject
-    pub field_98: u32,
-    /// +0x9C `undefined4`, base hkBaseObject
-    pub field_9C: u32,
-    /// +0xA0 `undefined4`, base hkBaseObject
-    pub field_A0: u32,
-    /// +0xA4 `undefined4`, base hkBaseObject
-    pub field_A4: u32,
-    /// +0xA8 `undefined8`, base hkBaseObject
-    pub field_A8: u64,
-    /// +0xB0 `undefined4`, base hkBaseObject
-    pub field_B0: u32,
-    /// +0xB4 `undefined4`, base hkBaseObject
-    pub field_B4: u32,
-    /// +0xB8 `undefined8`, base hkBaseObject
-    pub field_B8: u64,
-    /// +0xC0 `undefined4`, base hkBaseObject
-    pub field_C0: u32,
-    /// +0xC4 `undefined4`, base hkBaseObject
-    pub field_C4: u32,
-    pub unknown_C8: [u8; 64],
-    /// +0x108 `undefined8`, base hkBaseObject
-    pub field_108: u64,
-    /// +0x110 `undefined4`, base hkBaseObject
-    pub field_110: u32,
-    /// +0x114 `undefined4`, base hkBaseObject
-    pub field_114: u32,
-    #[doc(hidden)]
-    pub __engine: crate::Engine,
-}
-const _: () = assert!(core::mem::offset_of!(hkStreamWriter, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(hkStreamWriter, m_hkpCollidableCollidableFilter_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(hkStreamWriter, m_hkpShapeCollectionFilter_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(hkStreamWriter, m_hkpRayShapeCollectionFilter_20) == 0x20);
-const _: () = assert!(core::mem::offset_of!(hkStreamWriter, m_hkpRayCollidableFilter_28) == 0x28);
-const _: () = assert!(core::mem::offset_of!(hkStreamWriter, field_30) == 0x30);
-const _: () = assert!(core::mem::offset_of!(hkStreamWriter, field_34) == 0x34);
-const _: () = assert!(core::mem::offset_of!(hkStreamWriter, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(hkStreamWriter, field_3C) == 0x3C);
-const _: () = assert!(core::mem::offset_of!(hkStreamWriter, field_40) == 0x40);
-const _: () = assert!(core::mem::offset_of!(hkStreamWriter, field_44) == 0x44);
-const _: () = assert!(core::mem::offset_of!(hkStreamWriter, field_48) == 0x48);
-const _: () = assert!(core::mem::offset_of!(hkStreamWriter, field_4C) == 0x4C);
-const _: () = assert!(core::mem::offset_of!(hkStreamWriter, field_50) == 0x50);
-const _: () = assert!(core::mem::offset_of!(hkStreamWriter, field_54) == 0x54);
-const _: () = assert!(core::mem::offset_of!(hkStreamWriter, field_58) == 0x58);
-const _: () = assert!(core::mem::offset_of!(hkStreamWriter, field_5C) == 0x5C);
-const _: () = assert!(core::mem::offset_of!(hkStreamWriter, field_60) == 0x60);
-const _: () = assert!(core::mem::offset_of!(hkStreamWriter, field_64) == 0x64);
-const _: () = assert!(core::mem::offset_of!(hkStreamWriter, field_68) == 0x68);
-const _: () = assert!(core::mem::offset_of!(hkStreamWriter, field_6C) == 0x6C);
-const _: () = assert!(core::mem::offset_of!(hkStreamWriter, field_70) == 0x70);
-const _: () = assert!(core::mem::offset_of!(hkStreamWriter, field_74) == 0x74);
-const _: () = assert!(core::mem::offset_of!(hkStreamWriter, field_78) == 0x78);
-const _: () = assert!(core::mem::offset_of!(hkStreamWriter, field_7C) == 0x7C);
-const _: () = assert!(core::mem::offset_of!(hkStreamWriter, field_80) == 0x80);
-const _: () = assert!(core::mem::offset_of!(hkStreamWriter, field_84) == 0x84);
-const _: () = assert!(core::mem::offset_of!(hkStreamWriter, field_88) == 0x88);
-const _: () = assert!(core::mem::offset_of!(hkStreamWriter, field_8C) == 0x8C);
-const _: () = assert!(core::mem::offset_of!(hkStreamWriter, field_90) == 0x90);
-const _: () = assert!(core::mem::offset_of!(hkStreamWriter, field_94) == 0x94);
-const _: () = assert!(core::mem::offset_of!(hkStreamWriter, field_98) == 0x98);
-const _: () = assert!(core::mem::offset_of!(hkStreamWriter, field_9C) == 0x9C);
-const _: () = assert!(core::mem::offset_of!(hkStreamWriter, field_A0) == 0xA0);
-const _: () = assert!(core::mem::offset_of!(hkStreamWriter, field_A4) == 0xA4);
-const _: () = assert!(core::mem::offset_of!(hkStreamWriter, field_A8) == 0xA8);
-const _: () = assert!(core::mem::offset_of!(hkStreamWriter, field_B0) == 0xB0);
-const _: () = assert!(core::mem::offset_of!(hkStreamWriter, field_B4) == 0xB4);
-const _: () = assert!(core::mem::offset_of!(hkStreamWriter, field_B8) == 0xB8);
-const _: () = assert!(core::mem::offset_of!(hkStreamWriter, field_C0) == 0xC0);
-const _: () = assert!(core::mem::offset_of!(hkStreamWriter, field_C4) == 0xC4);
-const _: () = assert!(core::mem::offset_of!(hkStreamWriter, field_108) == 0x108);
-const _: () = assert!(core::mem::offset_of!(hkStreamWriter, field_110) == 0x110);
-const _: () = assert!(core::mem::offset_of!(hkStreamWriter, field_114) == 0x114);
-
-/// `hkSubStreamWriter`: size >= 0x118 (lower bound); partial, the struct stops at the lower bound; primary base `hkStreamWriter`.
-/// Evidence: field field_114.
-/// Bases: `hkStreamWriter`@0x0, `hkReferencedObject`@0x0, `hkBaseObject`@0x0.
-#[repr(C)]
-pub struct hkSubStreamWriter {
-    /// +0x0 `vtbl:hkSubStreamWriter:0`, rtti
-    #[doc(hidden)]
-    pub __vftable: *const crate::raw::vtables::hkSubStreamWriter_vtable,
-    pub unknown_8: [u8; 8],
-    /// +0x10 `undefined8`, base hkBaseObject
-    pub m_hkpCollidableCollidableFilter_10: u64,
-    /// +0x18 `undefined8`, base hkBaseObject
-    pub m_hkpShapeCollectionFilter_18: u64,
-    /// +0x20 `undefined8`, base hkBaseObject
-    pub m_hkpRayShapeCollectionFilter_20: u64,
-    /// +0x28 `undefined8`, base hkBaseObject
-    pub m_hkpRayCollidableFilter_28: u64,
-    /// +0x30 `undefined4`, base hkBaseObject
-    pub field_30: u32,
-    /// +0x34 `undefined4`, base hkBaseObject
-    pub field_34: u32,
-    /// +0x38 `undefined4`, base hkBaseObject
-    pub field_38: u32,
-    /// +0x3C `undefined4`, base hkBaseObject
-    pub field_3C: u32,
-    /// +0x40 `undefined4`, base hkBaseObject
-    pub field_40: u32,
-    /// +0x44 `undefined4`, base hkBaseObject
-    pub field_44: u32,
-    /// +0x48 `undefined4`, base hkBaseObject
-    pub field_48: u32,
-    /// +0x4C `undefined4`, base hkBaseObject
-    pub field_4C: u32,
-    /// +0x50 `undefined4`, base hkBaseObject
-    pub field_50: u32,
-    /// +0x54 `undefined4`, base hkBaseObject
-    pub field_54: u32,
-    /// +0x58 `undefined4`, base hkBaseObject
-    pub field_58: u32,
-    /// +0x5C `undefined4`, base hkBaseObject
-    pub field_5C: u32,
-    /// +0x60 `undefined4`, base hkBaseObject
-    pub field_60: u32,
-    /// +0x64 `undefined4`, base hkBaseObject
-    pub field_64: u32,
-    /// +0x68 `undefined4`, base hkBaseObject
-    pub field_68: u32,
-    /// +0x6C `undefined4`, base hkBaseObject
-    pub field_6C: u32,
-    /// +0x70 `undefined4`, base hkBaseObject
-    pub field_70: u32,
-    /// +0x74 `undefined4`, base hkBaseObject
-    pub field_74: u32,
-    /// +0x78 `undefined4`, base hkBaseObject
-    pub field_78: u32,
-    /// +0x7C `undefined4`, base hkBaseObject
-    pub field_7C: u32,
-    /// +0x80 `undefined4`, base hkBaseObject
-    pub field_80: u32,
-    /// +0x84 `undefined4`, base hkBaseObject
-    pub field_84: u32,
-    /// +0x88 `undefined4`, base hkBaseObject
-    pub field_88: u32,
-    /// +0x8C `undefined4`, base hkBaseObject
-    pub field_8C: u32,
-    /// +0x90 `undefined4`, base hkBaseObject
-    pub field_90: u32,
-    /// +0x94 `undefined4`, base hkBaseObject
-    pub field_94: u32,
-    /// +0x98 `undefined4`, base hkBaseObject
-    pub field_98: u32,
-    /// +0x9C `undefined4`, base hkBaseObject
-    pub field_9C: u32,
-    /// +0xA0 `undefined4`, base hkBaseObject
-    pub field_A0: u32,
-    /// +0xA4 `undefined4`, base hkBaseObject
-    pub field_A4: u32,
-    /// +0xA8 `undefined8`, base hkBaseObject
-    pub field_A8: u64,
-    /// +0xB0 `undefined4`, base hkBaseObject
-    pub field_B0: u32,
-    /// +0xB4 `undefined4`, base hkBaseObject
-    pub field_B4: u32,
-    /// +0xB8 `undefined8`, base hkBaseObject
-    pub field_B8: u64,
-    /// +0xC0 `undefined4`, base hkBaseObject
-    pub field_C0: u32,
-    /// +0xC4 `undefined4`, base hkBaseObject
-    pub field_C4: u32,
-    pub unknown_C8: [u8; 64],
-    /// +0x108 `undefined8`, base hkBaseObject
-    pub field_108: u64,
-    /// +0x110 `undefined4`, base hkBaseObject
-    pub field_110: u32,
-    /// +0x114 `undefined4`, base hkBaseObject
-    pub field_114: u32,
-    #[doc(hidden)]
-    pub __engine: crate::Engine,
-}
-const _: () = assert!(core::mem::offset_of!(hkSubStreamWriter, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(hkSubStreamWriter, m_hkpCollidableCollidableFilter_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(hkSubStreamWriter, m_hkpShapeCollectionFilter_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(hkSubStreamWriter, m_hkpRayShapeCollectionFilter_20) == 0x20);
-const _: () = assert!(core::mem::offset_of!(hkSubStreamWriter, m_hkpRayCollidableFilter_28) == 0x28);
-const _: () = assert!(core::mem::offset_of!(hkSubStreamWriter, field_30) == 0x30);
-const _: () = assert!(core::mem::offset_of!(hkSubStreamWriter, field_34) == 0x34);
-const _: () = assert!(core::mem::offset_of!(hkSubStreamWriter, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(hkSubStreamWriter, field_3C) == 0x3C);
-const _: () = assert!(core::mem::offset_of!(hkSubStreamWriter, field_40) == 0x40);
-const _: () = assert!(core::mem::offset_of!(hkSubStreamWriter, field_44) == 0x44);
-const _: () = assert!(core::mem::offset_of!(hkSubStreamWriter, field_48) == 0x48);
-const _: () = assert!(core::mem::offset_of!(hkSubStreamWriter, field_4C) == 0x4C);
-const _: () = assert!(core::mem::offset_of!(hkSubStreamWriter, field_50) == 0x50);
-const _: () = assert!(core::mem::offset_of!(hkSubStreamWriter, field_54) == 0x54);
-const _: () = assert!(core::mem::offset_of!(hkSubStreamWriter, field_58) == 0x58);
-const _: () = assert!(core::mem::offset_of!(hkSubStreamWriter, field_5C) == 0x5C);
-const _: () = assert!(core::mem::offset_of!(hkSubStreamWriter, field_60) == 0x60);
-const _: () = assert!(core::mem::offset_of!(hkSubStreamWriter, field_64) == 0x64);
-const _: () = assert!(core::mem::offset_of!(hkSubStreamWriter, field_68) == 0x68);
-const _: () = assert!(core::mem::offset_of!(hkSubStreamWriter, field_6C) == 0x6C);
-const _: () = assert!(core::mem::offset_of!(hkSubStreamWriter, field_70) == 0x70);
-const _: () = assert!(core::mem::offset_of!(hkSubStreamWriter, field_74) == 0x74);
-const _: () = assert!(core::mem::offset_of!(hkSubStreamWriter, field_78) == 0x78);
-const _: () = assert!(core::mem::offset_of!(hkSubStreamWriter, field_7C) == 0x7C);
-const _: () = assert!(core::mem::offset_of!(hkSubStreamWriter, field_80) == 0x80);
-const _: () = assert!(core::mem::offset_of!(hkSubStreamWriter, field_84) == 0x84);
-const _: () = assert!(core::mem::offset_of!(hkSubStreamWriter, field_88) == 0x88);
-const _: () = assert!(core::mem::offset_of!(hkSubStreamWriter, field_8C) == 0x8C);
-const _: () = assert!(core::mem::offset_of!(hkSubStreamWriter, field_90) == 0x90);
-const _: () = assert!(core::mem::offset_of!(hkSubStreamWriter, field_94) == 0x94);
-const _: () = assert!(core::mem::offset_of!(hkSubStreamWriter, field_98) == 0x98);
-const _: () = assert!(core::mem::offset_of!(hkSubStreamWriter, field_9C) == 0x9C);
-const _: () = assert!(core::mem::offset_of!(hkSubStreamWriter, field_A0) == 0xA0);
-const _: () = assert!(core::mem::offset_of!(hkSubStreamWriter, field_A4) == 0xA4);
-const _: () = assert!(core::mem::offset_of!(hkSubStreamWriter, field_A8) == 0xA8);
-const _: () = assert!(core::mem::offset_of!(hkSubStreamWriter, field_B0) == 0xB0);
-const _: () = assert!(core::mem::offset_of!(hkSubStreamWriter, field_B4) == 0xB4);
-const _: () = assert!(core::mem::offset_of!(hkSubStreamWriter, field_B8) == 0xB8);
-const _: () = assert!(core::mem::offset_of!(hkSubStreamWriter, field_C0) == 0xC0);
-const _: () = assert!(core::mem::offset_of!(hkSubStreamWriter, field_C4) == 0xC4);
-const _: () = assert!(core::mem::offset_of!(hkSubStreamWriter, field_108) == 0x108);
-const _: () = assert!(core::mem::offset_of!(hkSubStreamWriter, field_110) == 0x110);
-const _: () = assert!(core::mem::offset_of!(hkSubStreamWriter, field_114) == 0x114);
-
-/// `hkTagfileReader`: size >= 0x118 (lower bound); partial, the struct stops at the lower bound; primary base `hkReferencedObject`.
-/// Evidence: field field_114.
-/// Bases: `hkReferencedObject`@0x0, `hkBaseObject`@0x0.
-#[repr(C)]
-pub struct hkTagfileReader {
-    /// +0x0 `vtbl:hkTagfileReader:0`, rtti
-    #[doc(hidden)]
-    pub __vftable: *const crate::raw::vtables::hkTagfileReader_vtable,
-    pub unknown_8: [u8; 8],
-    /// +0x10 `undefined8`, base hkBaseObject
-    pub m_hkpCollidableCollidableFilter_10: u64,
-    /// +0x18 `undefined8`, base hkBaseObject
-    pub m_hkpShapeCollectionFilter_18: u64,
-    /// +0x20 `undefined8`, base hkBaseObject
-    pub m_hkpRayShapeCollectionFilter_20: u64,
-    /// +0x28 `undefined8`, base hkBaseObject
-    pub m_hkpRayCollidableFilter_28: u64,
-    /// +0x30 `undefined4`, base hkBaseObject
-    pub field_30: u32,
-    /// +0x34 `undefined4`, base hkBaseObject
-    pub field_34: u32,
-    /// +0x38 `undefined4`, base hkBaseObject
-    pub field_38: u32,
-    /// +0x3C `undefined4`, base hkBaseObject
-    pub field_3C: u32,
-    /// +0x40 `undefined4`, base hkBaseObject
-    pub field_40: u32,
-    /// +0x44 `undefined4`, base hkBaseObject
-    pub field_44: u32,
-    /// +0x48 `undefined4`, base hkBaseObject
-    pub field_48: u32,
-    /// +0x4C `undefined4`, base hkBaseObject
-    pub field_4C: u32,
-    /// +0x50 `undefined4`, base hkBaseObject
-    pub field_50: u32,
-    /// +0x54 `undefined4`, base hkBaseObject
-    pub field_54: u32,
-    /// +0x58 `undefined4`, base hkBaseObject
-    pub field_58: u32,
-    /// +0x5C `undefined4`, base hkBaseObject
-    pub field_5C: u32,
-    /// +0x60 `undefined4`, base hkBaseObject
-    pub field_60: u32,
-    /// +0x64 `undefined4`, base hkBaseObject
-    pub field_64: u32,
-    /// +0x68 `undefined4`, base hkBaseObject
-    pub field_68: u32,
-    /// +0x6C `undefined4`, base hkBaseObject
-    pub field_6C: u32,
-    /// +0x70 `undefined4`, base hkBaseObject
-    pub field_70: u32,
-    /// +0x74 `undefined4`, base hkBaseObject
-    pub field_74: u32,
-    /// +0x78 `undefined4`, base hkBaseObject
-    pub field_78: u32,
-    /// +0x7C `undefined4`, base hkBaseObject
-    pub field_7C: u32,
-    /// +0x80 `undefined4`, base hkBaseObject
-    pub field_80: u32,
-    /// +0x84 `undefined4`, base hkBaseObject
-    pub field_84: u32,
-    /// +0x88 `undefined4`, base hkBaseObject
-    pub field_88: u32,
-    /// +0x8C `undefined4`, base hkBaseObject
-    pub field_8C: u32,
-    /// +0x90 `undefined4`, base hkBaseObject
-    pub field_90: u32,
-    /// +0x94 `undefined4`, base hkBaseObject
-    pub field_94: u32,
-    /// +0x98 `undefined4`, base hkBaseObject
-    pub field_98: u32,
-    /// +0x9C `undefined4`, base hkBaseObject
-    pub field_9C: u32,
-    /// +0xA0 `undefined4`, base hkBaseObject
-    pub field_A0: u32,
-    /// +0xA4 `undefined4`, base hkBaseObject
-    pub field_A4: u32,
-    /// +0xA8 `undefined8`, base hkBaseObject
-    pub field_A8: u64,
-    /// +0xB0 `undefined4`, base hkBaseObject
-    pub field_B0: u32,
-    /// +0xB4 `undefined4`, base hkBaseObject
-    pub field_B4: u32,
-    /// +0xB8 `undefined8`, base hkBaseObject
-    pub field_B8: u64,
-    /// +0xC0 `undefined4`, base hkBaseObject
-    pub field_C0: u32,
-    /// +0xC4 `undefined4`, base hkBaseObject
-    pub field_C4: u32,
-    pub unknown_C8: [u8; 64],
-    /// +0x108 `undefined8`, base hkBaseObject
-    pub field_108: u64,
-    /// +0x110 `undefined4`, base hkBaseObject
-    pub field_110: u32,
-    /// +0x114 `undefined4`, base hkBaseObject
-    pub field_114: u32,
-    #[doc(hidden)]
-    pub __engine: crate::Engine,
-}
-const _: () = assert!(core::mem::offset_of!(hkTagfileReader, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(hkTagfileReader, m_hkpCollidableCollidableFilter_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(hkTagfileReader, m_hkpShapeCollectionFilter_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(hkTagfileReader, m_hkpRayShapeCollectionFilter_20) == 0x20);
-const _: () = assert!(core::mem::offset_of!(hkTagfileReader, m_hkpRayCollidableFilter_28) == 0x28);
-const _: () = assert!(core::mem::offset_of!(hkTagfileReader, field_30) == 0x30);
-const _: () = assert!(core::mem::offset_of!(hkTagfileReader, field_34) == 0x34);
-const _: () = assert!(core::mem::offset_of!(hkTagfileReader, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(hkTagfileReader, field_3C) == 0x3C);
-const _: () = assert!(core::mem::offset_of!(hkTagfileReader, field_40) == 0x40);
-const _: () = assert!(core::mem::offset_of!(hkTagfileReader, field_44) == 0x44);
-const _: () = assert!(core::mem::offset_of!(hkTagfileReader, field_48) == 0x48);
-const _: () = assert!(core::mem::offset_of!(hkTagfileReader, field_4C) == 0x4C);
-const _: () = assert!(core::mem::offset_of!(hkTagfileReader, field_50) == 0x50);
-const _: () = assert!(core::mem::offset_of!(hkTagfileReader, field_54) == 0x54);
-const _: () = assert!(core::mem::offset_of!(hkTagfileReader, field_58) == 0x58);
-const _: () = assert!(core::mem::offset_of!(hkTagfileReader, field_5C) == 0x5C);
-const _: () = assert!(core::mem::offset_of!(hkTagfileReader, field_60) == 0x60);
-const _: () = assert!(core::mem::offset_of!(hkTagfileReader, field_64) == 0x64);
-const _: () = assert!(core::mem::offset_of!(hkTagfileReader, field_68) == 0x68);
-const _: () = assert!(core::mem::offset_of!(hkTagfileReader, field_6C) == 0x6C);
-const _: () = assert!(core::mem::offset_of!(hkTagfileReader, field_70) == 0x70);
-const _: () = assert!(core::mem::offset_of!(hkTagfileReader, field_74) == 0x74);
-const _: () = assert!(core::mem::offset_of!(hkTagfileReader, field_78) == 0x78);
-const _: () = assert!(core::mem::offset_of!(hkTagfileReader, field_7C) == 0x7C);
-const _: () = assert!(core::mem::offset_of!(hkTagfileReader, field_80) == 0x80);
-const _: () = assert!(core::mem::offset_of!(hkTagfileReader, field_84) == 0x84);
-const _: () = assert!(core::mem::offset_of!(hkTagfileReader, field_88) == 0x88);
-const _: () = assert!(core::mem::offset_of!(hkTagfileReader, field_8C) == 0x8C);
-const _: () = assert!(core::mem::offset_of!(hkTagfileReader, field_90) == 0x90);
-const _: () = assert!(core::mem::offset_of!(hkTagfileReader, field_94) == 0x94);
-const _: () = assert!(core::mem::offset_of!(hkTagfileReader, field_98) == 0x98);
-const _: () = assert!(core::mem::offset_of!(hkTagfileReader, field_9C) == 0x9C);
-const _: () = assert!(core::mem::offset_of!(hkTagfileReader, field_A0) == 0xA0);
-const _: () = assert!(core::mem::offset_of!(hkTagfileReader, field_A4) == 0xA4);
-const _: () = assert!(core::mem::offset_of!(hkTagfileReader, field_A8) == 0xA8);
-const _: () = assert!(core::mem::offset_of!(hkTagfileReader, field_B0) == 0xB0);
-const _: () = assert!(core::mem::offset_of!(hkTagfileReader, field_B4) == 0xB4);
-const _: () = assert!(core::mem::offset_of!(hkTagfileReader, field_B8) == 0xB8);
-const _: () = assert!(core::mem::offset_of!(hkTagfileReader, field_C0) == 0xC0);
-const _: () = assert!(core::mem::offset_of!(hkTagfileReader, field_C4) == 0xC4);
-const _: () = assert!(core::mem::offset_of!(hkTagfileReader, field_108) == 0x108);
-const _: () = assert!(core::mem::offset_of!(hkTagfileReader, field_110) == 0x110);
-const _: () = assert!(core::mem::offset_of!(hkTagfileReader, field_114) == 0x114);
-
-/// `hkTagfileWriter`: size >= 0x118 (lower bound); partial, the struct stops at the lower bound; primary base `hkReferencedObject`.
-/// Evidence: field field_114.
-/// Bases: `hkReferencedObject`@0x0, `hkBaseObject`@0x0.
-#[repr(C)]
-pub struct hkTagfileWriter {
-    /// +0x0 `vtbl:hkTagfileWriter:0`, rtti
-    #[doc(hidden)]
-    pub __vftable: *const crate::raw::vtables::hkTagfileWriter_vtable,
-    pub unknown_8: [u8; 8],
-    /// +0x10 `undefined8`, base hkBaseObject
-    pub m_hkpCollidableCollidableFilter_10: u64,
-    /// +0x18 `undefined8`, base hkBaseObject
-    pub m_hkpShapeCollectionFilter_18: u64,
-    /// +0x20 `undefined8`, base hkBaseObject
-    pub m_hkpRayShapeCollectionFilter_20: u64,
-    /// +0x28 `undefined8`, base hkBaseObject
-    pub m_hkpRayCollidableFilter_28: u64,
-    /// +0x30 `undefined4`, base hkBaseObject
-    pub field_30: u32,
-    /// +0x34 `undefined4`, base hkBaseObject
-    pub field_34: u32,
-    /// +0x38 `undefined4`, base hkBaseObject
-    pub field_38: u32,
-    /// +0x3C `undefined4`, base hkBaseObject
-    pub field_3C: u32,
-    /// +0x40 `undefined4`, base hkBaseObject
-    pub field_40: u32,
-    /// +0x44 `undefined4`, base hkBaseObject
-    pub field_44: u32,
-    /// +0x48 `undefined4`, base hkBaseObject
-    pub field_48: u32,
-    /// +0x4C `undefined4`, base hkBaseObject
-    pub field_4C: u32,
-    /// +0x50 `undefined4`, base hkBaseObject
-    pub field_50: u32,
-    /// +0x54 `undefined4`, base hkBaseObject
-    pub field_54: u32,
-    /// +0x58 `undefined4`, base hkBaseObject
-    pub field_58: u32,
-    /// +0x5C `undefined4`, base hkBaseObject
-    pub field_5C: u32,
-    /// +0x60 `undefined4`, base hkBaseObject
-    pub field_60: u32,
-    /// +0x64 `undefined4`, base hkBaseObject
-    pub field_64: u32,
-    /// +0x68 `undefined4`, base hkBaseObject
-    pub field_68: u32,
-    /// +0x6C `undefined4`, base hkBaseObject
-    pub field_6C: u32,
-    /// +0x70 `undefined4`, base hkBaseObject
-    pub field_70: u32,
-    /// +0x74 `undefined4`, base hkBaseObject
-    pub field_74: u32,
-    /// +0x78 `undefined4`, base hkBaseObject
-    pub field_78: u32,
-    /// +0x7C `undefined4`, base hkBaseObject
-    pub field_7C: u32,
-    /// +0x80 `undefined4`, base hkBaseObject
-    pub field_80: u32,
-    /// +0x84 `undefined4`, base hkBaseObject
-    pub field_84: u32,
-    /// +0x88 `undefined4`, base hkBaseObject
-    pub field_88: u32,
-    /// +0x8C `undefined4`, base hkBaseObject
-    pub field_8C: u32,
-    /// +0x90 `undefined4`, base hkBaseObject
-    pub field_90: u32,
-    /// +0x94 `undefined4`, base hkBaseObject
-    pub field_94: u32,
-    /// +0x98 `undefined4`, base hkBaseObject
-    pub field_98: u32,
-    /// +0x9C `undefined4`, base hkBaseObject
-    pub field_9C: u32,
-    /// +0xA0 `undefined4`, base hkBaseObject
-    pub field_A0: u32,
-    /// +0xA4 `undefined4`, base hkBaseObject
-    pub field_A4: u32,
-    /// +0xA8 `undefined8`, base hkBaseObject
-    pub field_A8: u64,
-    /// +0xB0 `undefined4`, base hkBaseObject
-    pub field_B0: u32,
-    /// +0xB4 `undefined4`, base hkBaseObject
-    pub field_B4: u32,
-    /// +0xB8 `undefined8`, base hkBaseObject
-    pub field_B8: u64,
-    /// +0xC0 `undefined4`, base hkBaseObject
-    pub field_C0: u32,
-    /// +0xC4 `undefined4`, base hkBaseObject
-    pub field_C4: u32,
-    pub unknown_C8: [u8; 64],
-    /// +0x108 `undefined8`, base hkBaseObject
-    pub field_108: u64,
-    /// +0x110 `undefined4`, base hkBaseObject
-    pub field_110: u32,
-    /// +0x114 `undefined4`, base hkBaseObject
-    pub field_114: u32,
-    #[doc(hidden)]
-    pub __engine: crate::Engine,
-}
-const _: () = assert!(core::mem::offset_of!(hkTagfileWriter, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(hkTagfileWriter, m_hkpCollidableCollidableFilter_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(hkTagfileWriter, m_hkpShapeCollectionFilter_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(hkTagfileWriter, m_hkpRayShapeCollectionFilter_20) == 0x20);
-const _: () = assert!(core::mem::offset_of!(hkTagfileWriter, m_hkpRayCollidableFilter_28) == 0x28);
-const _: () = assert!(core::mem::offset_of!(hkTagfileWriter, field_30) == 0x30);
-const _: () = assert!(core::mem::offset_of!(hkTagfileWriter, field_34) == 0x34);
-const _: () = assert!(core::mem::offset_of!(hkTagfileWriter, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(hkTagfileWriter, field_3C) == 0x3C);
-const _: () = assert!(core::mem::offset_of!(hkTagfileWriter, field_40) == 0x40);
-const _: () = assert!(core::mem::offset_of!(hkTagfileWriter, field_44) == 0x44);
-const _: () = assert!(core::mem::offset_of!(hkTagfileWriter, field_48) == 0x48);
-const _: () = assert!(core::mem::offset_of!(hkTagfileWriter, field_4C) == 0x4C);
-const _: () = assert!(core::mem::offset_of!(hkTagfileWriter, field_50) == 0x50);
-const _: () = assert!(core::mem::offset_of!(hkTagfileWriter, field_54) == 0x54);
-const _: () = assert!(core::mem::offset_of!(hkTagfileWriter, field_58) == 0x58);
-const _: () = assert!(core::mem::offset_of!(hkTagfileWriter, field_5C) == 0x5C);
-const _: () = assert!(core::mem::offset_of!(hkTagfileWriter, field_60) == 0x60);
-const _: () = assert!(core::mem::offset_of!(hkTagfileWriter, field_64) == 0x64);
-const _: () = assert!(core::mem::offset_of!(hkTagfileWriter, field_68) == 0x68);
-const _: () = assert!(core::mem::offset_of!(hkTagfileWriter, field_6C) == 0x6C);
-const _: () = assert!(core::mem::offset_of!(hkTagfileWriter, field_70) == 0x70);
-const _: () = assert!(core::mem::offset_of!(hkTagfileWriter, field_74) == 0x74);
-const _: () = assert!(core::mem::offset_of!(hkTagfileWriter, field_78) == 0x78);
-const _: () = assert!(core::mem::offset_of!(hkTagfileWriter, field_7C) == 0x7C);
-const _: () = assert!(core::mem::offset_of!(hkTagfileWriter, field_80) == 0x80);
-const _: () = assert!(core::mem::offset_of!(hkTagfileWriter, field_84) == 0x84);
-const _: () = assert!(core::mem::offset_of!(hkTagfileWriter, field_88) == 0x88);
-const _: () = assert!(core::mem::offset_of!(hkTagfileWriter, field_8C) == 0x8C);
-const _: () = assert!(core::mem::offset_of!(hkTagfileWriter, field_90) == 0x90);
-const _: () = assert!(core::mem::offset_of!(hkTagfileWriter, field_94) == 0x94);
-const _: () = assert!(core::mem::offset_of!(hkTagfileWriter, field_98) == 0x98);
-const _: () = assert!(core::mem::offset_of!(hkTagfileWriter, field_9C) == 0x9C);
-const _: () = assert!(core::mem::offset_of!(hkTagfileWriter, field_A0) == 0xA0);
-const _: () = assert!(core::mem::offset_of!(hkTagfileWriter, field_A4) == 0xA4);
-const _: () = assert!(core::mem::offset_of!(hkTagfileWriter, field_A8) == 0xA8);
-const _: () = assert!(core::mem::offset_of!(hkTagfileWriter, field_B0) == 0xB0);
-const _: () = assert!(core::mem::offset_of!(hkTagfileWriter, field_B4) == 0xB4);
-const _: () = assert!(core::mem::offset_of!(hkTagfileWriter, field_B8) == 0xB8);
-const _: () = assert!(core::mem::offset_of!(hkTagfileWriter, field_C0) == 0xC0);
-const _: () = assert!(core::mem::offset_of!(hkTagfileWriter, field_C4) == 0xC4);
-const _: () = assert!(core::mem::offset_of!(hkTagfileWriter, field_108) == 0x108);
-const _: () = assert!(core::mem::offset_of!(hkTagfileWriter, field_110) == 0x110);
-const _: () = assert!(core::mem::offset_of!(hkTagfileWriter, field_114) == 0x114);
-
-/// `hkTagfileWriter::AddDataObjectListener`: size >= 0x118 (lower bound); partial, the struct stops at the lower bound; primary base `hkReferencedObject`.
-/// Evidence: field field_114.
-/// Bases: `hkReferencedObject`@0x0, `hkBaseObject`@0x0.
-#[repr(C)]
-pub struct hkTagfileWriter__AddDataObjectListener {
-    /// +0x0 `vtbl:hkTagfileWriter::AddDataObjectListener:0`, rtti
-    #[doc(hidden)]
-    pub __vftable: *const crate::raw::vtables::hkTagfileWriter__AddDataObjectListener_vtable,
-    pub unknown_8: [u8; 8],
-    /// +0x10 `undefined8`, base hkBaseObject
-    pub m_hkpCollidableCollidableFilter_10: u64,
-    /// +0x18 `undefined8`, base hkBaseObject
-    pub m_hkpShapeCollectionFilter_18: u64,
-    /// +0x20 `undefined8`, base hkBaseObject
-    pub m_hkpRayShapeCollectionFilter_20: u64,
-    /// +0x28 `undefined8`, base hkBaseObject
-    pub m_hkpRayCollidableFilter_28: u64,
-    /// +0x30 `undefined4`, base hkBaseObject
-    pub field_30: u32,
-    /// +0x34 `undefined4`, base hkBaseObject
-    pub field_34: u32,
-    /// +0x38 `undefined4`, base hkBaseObject
-    pub field_38: u32,
-    /// +0x3C `undefined4`, base hkBaseObject
-    pub field_3C: u32,
-    /// +0x40 `undefined4`, base hkBaseObject
-    pub field_40: u32,
-    /// +0x44 `undefined4`, base hkBaseObject
-    pub field_44: u32,
-    /// +0x48 `undefined4`, base hkBaseObject
-    pub field_48: u32,
-    /// +0x4C `undefined4`, base hkBaseObject
-    pub field_4C: u32,
-    /// +0x50 `undefined4`, base hkBaseObject
-    pub field_50: u32,
-    /// +0x54 `undefined4`, base hkBaseObject
-    pub field_54: u32,
-    /// +0x58 `undefined4`, base hkBaseObject
-    pub field_58: u32,
-    /// +0x5C `undefined4`, base hkBaseObject
-    pub field_5C: u32,
-    /// +0x60 `undefined4`, base hkBaseObject
-    pub field_60: u32,
-    /// +0x64 `undefined4`, base hkBaseObject
-    pub field_64: u32,
-    /// +0x68 `undefined4`, base hkBaseObject
-    pub field_68: u32,
-    /// +0x6C `undefined4`, base hkBaseObject
-    pub field_6C: u32,
-    /// +0x70 `undefined4`, base hkBaseObject
-    pub field_70: u32,
-    /// +0x74 `undefined4`, base hkBaseObject
-    pub field_74: u32,
-    /// +0x78 `undefined4`, base hkBaseObject
-    pub field_78: u32,
-    /// +0x7C `undefined4`, base hkBaseObject
-    pub field_7C: u32,
-    /// +0x80 `undefined4`, base hkBaseObject
-    pub field_80: u32,
-    /// +0x84 `undefined4`, base hkBaseObject
-    pub field_84: u32,
-    /// +0x88 `undefined4`, base hkBaseObject
-    pub field_88: u32,
-    /// +0x8C `undefined4`, base hkBaseObject
-    pub field_8C: u32,
-    /// +0x90 `undefined4`, base hkBaseObject
-    pub field_90: u32,
-    /// +0x94 `undefined4`, base hkBaseObject
-    pub field_94: u32,
-    /// +0x98 `undefined4`, base hkBaseObject
-    pub field_98: u32,
-    /// +0x9C `undefined4`, base hkBaseObject
-    pub field_9C: u32,
-    /// +0xA0 `undefined4`, base hkBaseObject
-    pub field_A0: u32,
-    /// +0xA4 `undefined4`, base hkBaseObject
-    pub field_A4: u32,
-    /// +0xA8 `undefined8`, base hkBaseObject
-    pub field_A8: u64,
-    /// +0xB0 `undefined4`, base hkBaseObject
-    pub field_B0: u32,
-    /// +0xB4 `undefined4`, base hkBaseObject
-    pub field_B4: u32,
-    /// +0xB8 `undefined8`, base hkBaseObject
-    pub field_B8: u64,
-    /// +0xC0 `undefined4`, base hkBaseObject
-    pub field_C0: u32,
-    /// +0xC4 `undefined4`, base hkBaseObject
-    pub field_C4: u32,
-    pub unknown_C8: [u8; 64],
-    /// +0x108 `undefined8`, base hkBaseObject
-    pub field_108: u64,
-    /// +0x110 `undefined4`, base hkBaseObject
-    pub field_110: u32,
-    /// +0x114 `undefined4`, base hkBaseObject
-    pub field_114: u32,
-    #[doc(hidden)]
-    pub __engine: crate::Engine,
-}
-const _: () = assert!(core::mem::offset_of!(hkTagfileWriter__AddDataObjectListener, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(hkTagfileWriter__AddDataObjectListener, m_hkpCollidableCollidableFilter_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(hkTagfileWriter__AddDataObjectListener, m_hkpShapeCollectionFilter_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(hkTagfileWriter__AddDataObjectListener, m_hkpRayShapeCollectionFilter_20) == 0x20);
-const _: () = assert!(core::mem::offset_of!(hkTagfileWriter__AddDataObjectListener, m_hkpRayCollidableFilter_28) == 0x28);
-const _: () = assert!(core::mem::offset_of!(hkTagfileWriter__AddDataObjectListener, field_30) == 0x30);
-const _: () = assert!(core::mem::offset_of!(hkTagfileWriter__AddDataObjectListener, field_34) == 0x34);
-const _: () = assert!(core::mem::offset_of!(hkTagfileWriter__AddDataObjectListener, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(hkTagfileWriter__AddDataObjectListener, field_3C) == 0x3C);
-const _: () = assert!(core::mem::offset_of!(hkTagfileWriter__AddDataObjectListener, field_40) == 0x40);
-const _: () = assert!(core::mem::offset_of!(hkTagfileWriter__AddDataObjectListener, field_44) == 0x44);
-const _: () = assert!(core::mem::offset_of!(hkTagfileWriter__AddDataObjectListener, field_48) == 0x48);
-const _: () = assert!(core::mem::offset_of!(hkTagfileWriter__AddDataObjectListener, field_4C) == 0x4C);
-const _: () = assert!(core::mem::offset_of!(hkTagfileWriter__AddDataObjectListener, field_50) == 0x50);
-const _: () = assert!(core::mem::offset_of!(hkTagfileWriter__AddDataObjectListener, field_54) == 0x54);
-const _: () = assert!(core::mem::offset_of!(hkTagfileWriter__AddDataObjectListener, field_58) == 0x58);
-const _: () = assert!(core::mem::offset_of!(hkTagfileWriter__AddDataObjectListener, field_5C) == 0x5C);
-const _: () = assert!(core::mem::offset_of!(hkTagfileWriter__AddDataObjectListener, field_60) == 0x60);
-const _: () = assert!(core::mem::offset_of!(hkTagfileWriter__AddDataObjectListener, field_64) == 0x64);
-const _: () = assert!(core::mem::offset_of!(hkTagfileWriter__AddDataObjectListener, field_68) == 0x68);
-const _: () = assert!(core::mem::offset_of!(hkTagfileWriter__AddDataObjectListener, field_6C) == 0x6C);
-const _: () = assert!(core::mem::offset_of!(hkTagfileWriter__AddDataObjectListener, field_70) == 0x70);
-const _: () = assert!(core::mem::offset_of!(hkTagfileWriter__AddDataObjectListener, field_74) == 0x74);
-const _: () = assert!(core::mem::offset_of!(hkTagfileWriter__AddDataObjectListener, field_78) == 0x78);
-const _: () = assert!(core::mem::offset_of!(hkTagfileWriter__AddDataObjectListener, field_7C) == 0x7C);
-const _: () = assert!(core::mem::offset_of!(hkTagfileWriter__AddDataObjectListener, field_80) == 0x80);
-const _: () = assert!(core::mem::offset_of!(hkTagfileWriter__AddDataObjectListener, field_84) == 0x84);
-const _: () = assert!(core::mem::offset_of!(hkTagfileWriter__AddDataObjectListener, field_88) == 0x88);
-const _: () = assert!(core::mem::offset_of!(hkTagfileWriter__AddDataObjectListener, field_8C) == 0x8C);
-const _: () = assert!(core::mem::offset_of!(hkTagfileWriter__AddDataObjectListener, field_90) == 0x90);
-const _: () = assert!(core::mem::offset_of!(hkTagfileWriter__AddDataObjectListener, field_94) == 0x94);
-const _: () = assert!(core::mem::offset_of!(hkTagfileWriter__AddDataObjectListener, field_98) == 0x98);
-const _: () = assert!(core::mem::offset_of!(hkTagfileWriter__AddDataObjectListener, field_9C) == 0x9C);
-const _: () = assert!(core::mem::offset_of!(hkTagfileWriter__AddDataObjectListener, field_A0) == 0xA0);
-const _: () = assert!(core::mem::offset_of!(hkTagfileWriter__AddDataObjectListener, field_A4) == 0xA4);
-const _: () = assert!(core::mem::offset_of!(hkTagfileWriter__AddDataObjectListener, field_A8) == 0xA8);
-const _: () = assert!(core::mem::offset_of!(hkTagfileWriter__AddDataObjectListener, field_B0) == 0xB0);
-const _: () = assert!(core::mem::offset_of!(hkTagfileWriter__AddDataObjectListener, field_B4) == 0xB4);
-const _: () = assert!(core::mem::offset_of!(hkTagfileWriter__AddDataObjectListener, field_B8) == 0xB8);
-const _: () = assert!(core::mem::offset_of!(hkTagfileWriter__AddDataObjectListener, field_C0) == 0xC0);
-const _: () = assert!(core::mem::offset_of!(hkTagfileWriter__AddDataObjectListener, field_C4) == 0xC4);
-const _: () = assert!(core::mem::offset_of!(hkTagfileWriter__AddDataObjectListener, field_108) == 0x108);
-const _: () = assert!(core::mem::offset_of!(hkTagfileWriter__AddDataObjectListener, field_110) == 0x110);
-const _: () = assert!(core::mem::offset_of!(hkTagfileWriter__AddDataObjectListener, field_114) == 0x114);
-
-/// `hkTempDetectAllocator`: size >= 0xA0 (lower bound); partial, the struct stops at the lower bound; primary base `hkMemoryAllocator`.
-/// Evidence: field field_98.
-/// Bases: `hkMemoryAllocator`@0x0.
-#[repr(C)]
-pub struct hkTempDetectAllocator {
-    /// +0x0 `vtbl:hkTempDetectAllocator:0`, rtti
-    #[doc(hidden)]
-    pub __vftable: *const crate::raw::vtables::hkTempDetectAllocator_vtable,
-    pub unknown_8: [u8; 40],
-    /// +0x30 `undefined8`, ctor store
-    pub field_30: u64,
-    /// +0x38 `undefined8`, ctor store
-    pub field_38: u64,
-    /// +0x40 `undefined4`, ctor store
-    pub field_40: u32,
-    /// +0x44 `undefined4`, ctor store
-    pub field_44: u32,
-    /// +0x48 `undefined8`, ctor store
-    pub field_48: u64,
-    /// +0x50 `undefined8`, ctor store
-    pub field_50: u64,
-    /// +0x58 `undefined8`, ctor store
-    pub field_58: u64,
-    pub unknown_60: [u8; 32],
-    /// +0x80 `undefined8`, ctor store
-    pub field_80: u64,
-    /// +0x88 `undefined4`, ctor store
-    pub field_88: u32,
-    /// +0x8C `undefined4`, ctor store
-    pub field_8C: u32,
-    /// +0x90 `undefined8`, ctor store
-    pub field_90: u64,
-    /// +0x98 `undefined8`, ctor store
-    pub field_98: u64,
-    #[doc(hidden)]
-    pub __engine: crate::Engine,
-}
-const _: () = assert!(core::mem::offset_of!(hkTempDetectAllocator, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(hkTempDetectAllocator, field_30) == 0x30);
-const _: () = assert!(core::mem::offset_of!(hkTempDetectAllocator, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(hkTempDetectAllocator, field_40) == 0x40);
-const _: () = assert!(core::mem::offset_of!(hkTempDetectAllocator, field_44) == 0x44);
-const _: () = assert!(core::mem::offset_of!(hkTempDetectAllocator, field_48) == 0x48);
-const _: () = assert!(core::mem::offset_of!(hkTempDetectAllocator, field_50) == 0x50);
-const _: () = assert!(core::mem::offset_of!(hkTempDetectAllocator, field_58) == 0x58);
-const _: () = assert!(core::mem::offset_of!(hkTempDetectAllocator, field_80) == 0x80);
-const _: () = assert!(core::mem::offset_of!(hkTempDetectAllocator, field_88) == 0x88);
-const _: () = assert!(core::mem::offset_of!(hkTempDetectAllocator, field_8C) == 0x8C);
-const _: () = assert!(core::mem::offset_of!(hkTempDetectAllocator, field_90) == 0x90);
-const _: () = assert!(core::mem::offset_of!(hkTempDetectAllocator, field_98) == 0x98);
-
-/// `hkThreadMemory`: size >= 0x28 (lower bound); partial, the struct stops at the lower bound; primary base `hkMemoryAllocator`.
-/// Evidence: field field_20.
-/// Bases: `hkMemoryAllocator`@0x0.
-#[repr(C)]
-pub struct hkThreadMemory {
-    /// +0x0 `vtbl:hkThreadMemory:0`, rtti
-    #[doc(hidden)]
-    pub __vftable: *const crate::raw::vtables::hkThreadMemory_vtable,
-    pub unknown_8: [u8; 16],
-    /// +0x18 `undefined8`, ctor store
-    pub field_18: u64,
-    /// +0x20 `undefined4`, ctor store
-    pub field_20: u32,
-    pub unknown_24: [u8; 4],
-    #[doc(hidden)]
-    pub __engine: crate::Engine,
-}
-const _: () = assert!(core::mem::offset_of!(hkThreadMemory, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(hkThreadMemory, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(hkThreadMemory, field_20) == 0x20);
-
-/// `hkTraceStream`: size 0x30 (exact, medium); primary base `hkReferencedObject`.
-/// Evidence: conflict, allocation size kept: allocation size 0x30 below lower bound 0x118 (base hkReferencedObject at 0x0).
-/// Bases: `hkReferencedObject`@0x0, `hkBaseObject`@0x0, `hkSingleton<hkTraceStream>`@0x10.
-#[repr(C)]
-pub struct hkTraceStream {
-    /// +0x0 `vtbl:hkTraceStream:0`, rtti
-    #[doc(hidden)]
-    pub __vftable: *const crate::raw::vtables::hkTraceStream_vtable,
-    pub unknown_8: [u8; 8],
-    /// +0x10 `undefined8`, base hkBaseObject
-    pub m_hkpCollidableCollidableFilter_10: u64,
-    /// +0x18 `undefined8`, base hkBaseObject
-    pub m_hkpShapeCollectionFilter_18: u64,
-    /// +0x20 `undefined8`, base hkBaseObject
-    pub m_hkpRayShapeCollectionFilter_20: u64,
-    /// +0x28 `undefined8`, base hkBaseObject
-    pub m_hkpRayCollidableFilter_28: u64,
-    #[doc(hidden)]
-    pub __engine: crate::Engine,
-}
-const _: () = assert!(size_of::<hkTraceStream>() == 0x30);
-const _: () = assert!(core::mem::offset_of!(hkTraceStream, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(hkTraceStream, m_hkpCollidableCollidableFilter_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(hkTraceStream, m_hkpShapeCollectionFilter_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(hkTraceStream, m_hkpRayShapeCollectionFilter_20) == 0x20);
-const _: () = assert!(core::mem::offset_of!(hkTraceStream, m_hkpRayCollidableFilter_28) == 0x28);
-
-/// `hkTrackerArrayLayoutHandler`: size 0x10 (exact, medium); primary base `hkTrackerLayoutHandler`.
-/// Evidence: conflict, allocation size kept: allocation size 0x10 below lower bound 0x118 (base hkTrackerLayoutHandler at 0x0).
-/// Bases: `hkTrackerLayoutHandler`@0x0, `hkReferencedObject`@0x0, `hkBaseObject`@0x0.
-#[repr(C)]
-pub struct hkTrackerArrayLayoutHandler {
-    /// +0x0 `vtbl:hkTrackerArrayLayoutHandler:0`, rtti
-    #[doc(hidden)]
-    pub __vftable: *const crate::raw::vtables::hkTrackerArrayLayoutHandler_vtable,
-    pub unknown_8: [u8; 8],
-    #[doc(hidden)]
-    pub __engine: crate::Engine,
-}
-const _: () = assert!(size_of::<hkTrackerArrayLayoutHandler>() == 0x10);
-const _: () = assert!(core::mem::offset_of!(hkTrackerArrayLayoutHandler, __vftable) == 0x0);
-
-/// `hkTrackerCachedHashMapLayoutHandler`: size 0x10 (exact, medium); primary base `hkTrackerLayoutHandler`.
-/// Evidence: conflict, allocation size kept: allocation size 0x10 below lower bound 0x118 (base hkTrackerLayoutHandler at 0x0).
-/// Bases: `hkTrackerLayoutHandler`@0x0, `hkReferencedObject`@0x0, `hkBaseObject`@0x0.
-#[repr(C)]
-pub struct hkTrackerCachedHashMapLayoutHandler {
-    /// +0x0 `vtbl:hkTrackerCachedHashMapLayoutHandler:0`, rtti
-    #[doc(hidden)]
-    pub __vftable: *const crate::raw::vtables::hkTrackerCachedHashMapLayoutHandler_vtable,
-    pub unknown_8: [u8; 8],
-    #[doc(hidden)]
-    pub __engine: crate::Engine,
-}
-const _: () = assert!(size_of::<hkTrackerCachedHashMapLayoutHandler>() == 0x10);
-const _: () = assert!(core::mem::offset_of!(hkTrackerCachedHashMapLayoutHandler, __vftable) == 0x0);
-
-/// `hkTrackerLayoutCalculator`: size >= 0x118 (lower bound); partial, the struct stops at the lower bound; primary base `hkReferencedObject`.
-/// Evidence: field field_114.
-/// Bases: `hkReferencedObject`@0x0, `hkBaseObject`@0x0.
-#[repr(C)]
-pub struct hkTrackerLayoutCalculator {
-    /// +0x0 `vtbl:hkTrackerLayoutCalculator:0`, rtti
-    #[doc(hidden)]
-    pub __vftable: *const crate::raw::vtables::hkTrackerLayoutCalculator_vtable,
-    /// +0x8 `undefined4`, ctor store
-    pub field_8: u32,
-    pub unknown_C: [u8; 4],
-    /// +0x10 `undefined8`, base hkBaseObject
-    pub m_hkpCollidableCollidableFilter_10: u64,
-    /// +0x18 `undefined8`, base hkBaseObject
-    pub m_hkpShapeCollectionFilter_18: u64,
-    /// +0x20 `undefined8`, base hkBaseObject
-    pub m_hkpRayShapeCollectionFilter_20: u64,
-    /// +0x28 `undefined8`, base hkBaseObject
-    pub m_hkpRayCollidableFilter_28: u64,
-    /// +0x30 `undefined4`, base hkBaseObject
-    pub field_30: u32,
-    /// +0x34 `undefined4`, base hkBaseObject
-    pub field_34: u32,
-    /// +0x38 `undefined4`, base hkBaseObject
-    pub field_38: u32,
-    /// +0x3C `undefined4`, base hkBaseObject
-    pub field_3C: u32,
-    /// +0x40 `undefined4`, base hkBaseObject
-    pub field_40: u32,
-    /// +0x44 `undefined4`, base hkBaseObject
-    pub field_44: u32,
-    /// +0x48 `undefined4`, base hkBaseObject
-    pub field_48: u32,
-    /// +0x4C `undefined4`, base hkBaseObject
-    pub field_4C: u32,
-    /// +0x50 `undefined4`, base hkBaseObject
-    pub field_50: u32,
-    /// +0x54 `undefined4`, base hkBaseObject
-    pub field_54: u32,
-    /// +0x58 `undefined4`, base hkBaseObject
-    pub field_58: u32,
-    /// +0x5C `undefined4`, base hkBaseObject
-    pub field_5C: u32,
-    /// +0x60 `undefined4`, base hkBaseObject
-    pub field_60: u32,
-    /// +0x64 `undefined4`, base hkBaseObject
-    pub field_64: u32,
-    /// +0x68 `undefined4`, base hkBaseObject
-    pub field_68: u32,
-    /// +0x6C `undefined4`, base hkBaseObject
-    pub field_6C: u32,
-    /// +0x70 `undefined4`, base hkBaseObject
-    pub field_70: u32,
-    /// +0x74 `undefined4`, base hkBaseObject
-    pub field_74: u32,
-    /// +0x78 `undefined4`, base hkBaseObject
-    pub field_78: u32,
-    /// +0x7C `undefined4`, base hkBaseObject
-    pub field_7C: u32,
-    /// +0x80 `undefined4`, base hkBaseObject
-    pub field_80: u32,
-    /// +0x84 `undefined4`, base hkBaseObject
-    pub field_84: u32,
-    /// +0x88 `undefined4`, base hkBaseObject
-    pub field_88: u32,
-    /// +0x8C `undefined4`, base hkBaseObject
-    pub field_8C: u32,
-    /// +0x90 `undefined4`, base hkBaseObject
-    pub field_90: u32,
-    /// +0x94 `undefined4`, base hkBaseObject
-    pub field_94: u32,
-    /// +0x98 `undefined4`, base hkBaseObject
-    pub field_98: u32,
-    /// +0x9C `undefined4`, base hkBaseObject
-    pub field_9C: u32,
-    /// +0xA0 `undefined4`, base hkBaseObject
-    pub field_A0: u32,
-    /// +0xA4 `undefined4`, base hkBaseObject
-    pub field_A4: u32,
-    /// +0xA8 `undefined8`, base hkBaseObject
-    pub field_A8: u64,
-    /// +0xB0 `undefined4`, base hkBaseObject
-    pub field_B0: u32,
-    /// +0xB4 `undefined4`, base hkBaseObject
-    pub field_B4: u32,
-    /// +0xB8 `undefined8`, base hkBaseObject
-    pub field_B8: u64,
-    /// +0xC0 `undefined4`, base hkBaseObject
-    pub field_C0: u32,
-    /// +0xC4 `undefined4`, base hkBaseObject
-    pub field_C4: u32,
-    pub unknown_C8: [u8; 64],
-    /// +0x108 `undefined8`, base hkBaseObject
-    pub field_108: u64,
-    /// +0x110 `undefined4`, base hkBaseObject
-    pub field_110: u32,
-    /// +0x114 `undefined4`, base hkBaseObject
-    pub field_114: u32,
-    #[doc(hidden)]
-    pub __engine: crate::Engine,
-}
-const _: () = assert!(core::mem::offset_of!(hkTrackerLayoutCalculator, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(hkTrackerLayoutCalculator, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(hkTrackerLayoutCalculator, m_hkpCollidableCollidableFilter_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(hkTrackerLayoutCalculator, m_hkpShapeCollectionFilter_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(hkTrackerLayoutCalculator, m_hkpRayShapeCollectionFilter_20) == 0x20);
-const _: () = assert!(core::mem::offset_of!(hkTrackerLayoutCalculator, m_hkpRayCollidableFilter_28) == 0x28);
-const _: () = assert!(core::mem::offset_of!(hkTrackerLayoutCalculator, field_30) == 0x30);
-const _: () = assert!(core::mem::offset_of!(hkTrackerLayoutCalculator, field_34) == 0x34);
-const _: () = assert!(core::mem::offset_of!(hkTrackerLayoutCalculator, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(hkTrackerLayoutCalculator, field_3C) == 0x3C);
-const _: () = assert!(core::mem::offset_of!(hkTrackerLayoutCalculator, field_40) == 0x40);
-const _: () = assert!(core::mem::offset_of!(hkTrackerLayoutCalculator, field_44) == 0x44);
-const _: () = assert!(core::mem::offset_of!(hkTrackerLayoutCalculator, field_48) == 0x48);
-const _: () = assert!(core::mem::offset_of!(hkTrackerLayoutCalculator, field_4C) == 0x4C);
-const _: () = assert!(core::mem::offset_of!(hkTrackerLayoutCalculator, field_50) == 0x50);
-const _: () = assert!(core::mem::offset_of!(hkTrackerLayoutCalculator, field_54) == 0x54);
-const _: () = assert!(core::mem::offset_of!(hkTrackerLayoutCalculator, field_58) == 0x58);
-const _: () = assert!(core::mem::offset_of!(hkTrackerLayoutCalculator, field_5C) == 0x5C);
-const _: () = assert!(core::mem::offset_of!(hkTrackerLayoutCalculator, field_60) == 0x60);
-const _: () = assert!(core::mem::offset_of!(hkTrackerLayoutCalculator, field_64) == 0x64);
-const _: () = assert!(core::mem::offset_of!(hkTrackerLayoutCalculator, field_68) == 0x68);
-const _: () = assert!(core::mem::offset_of!(hkTrackerLayoutCalculator, field_6C) == 0x6C);
-const _: () = assert!(core::mem::offset_of!(hkTrackerLayoutCalculator, field_70) == 0x70);
-const _: () = assert!(core::mem::offset_of!(hkTrackerLayoutCalculator, field_74) == 0x74);
-const _: () = assert!(core::mem::offset_of!(hkTrackerLayoutCalculator, field_78) == 0x78);
-const _: () = assert!(core::mem::offset_of!(hkTrackerLayoutCalculator, field_7C) == 0x7C);
-const _: () = assert!(core::mem::offset_of!(hkTrackerLayoutCalculator, field_80) == 0x80);
-const _: () = assert!(core::mem::offset_of!(hkTrackerLayoutCalculator, field_84) == 0x84);
-const _: () = assert!(core::mem::offset_of!(hkTrackerLayoutCalculator, field_88) == 0x88);
-const _: () = assert!(core::mem::offset_of!(hkTrackerLayoutCalculator, field_8C) == 0x8C);
-const _: () = assert!(core::mem::offset_of!(hkTrackerLayoutCalculator, field_90) == 0x90);
-const _: () = assert!(core::mem::offset_of!(hkTrackerLayoutCalculator, field_94) == 0x94);
-const _: () = assert!(core::mem::offset_of!(hkTrackerLayoutCalculator, field_98) == 0x98);
-const _: () = assert!(core::mem::offset_of!(hkTrackerLayoutCalculator, field_9C) == 0x9C);
-const _: () = assert!(core::mem::offset_of!(hkTrackerLayoutCalculator, field_A0) == 0xA0);
-const _: () = assert!(core::mem::offset_of!(hkTrackerLayoutCalculator, field_A4) == 0xA4);
-const _: () = assert!(core::mem::offset_of!(hkTrackerLayoutCalculator, field_A8) == 0xA8);
-const _: () = assert!(core::mem::offset_of!(hkTrackerLayoutCalculator, field_B0) == 0xB0);
-const _: () = assert!(core::mem::offset_of!(hkTrackerLayoutCalculator, field_B4) == 0xB4);
-const _: () = assert!(core::mem::offset_of!(hkTrackerLayoutCalculator, field_B8) == 0xB8);
-const _: () = assert!(core::mem::offset_of!(hkTrackerLayoutCalculator, field_C0) == 0xC0);
-const _: () = assert!(core::mem::offset_of!(hkTrackerLayoutCalculator, field_C4) == 0xC4);
-const _: () = assert!(core::mem::offset_of!(hkTrackerLayoutCalculator, field_108) == 0x108);
-const _: () = assert!(core::mem::offset_of!(hkTrackerLayoutCalculator, field_110) == 0x110);
-const _: () = assert!(core::mem::offset_of!(hkTrackerLayoutCalculator, field_114) == 0x114);
-
 /// `hkTrackerLayoutHandler`: size >= 0x118 (lower bound, upper bound 0x10); partial, the struct stops at the lower bound; primary base `hkReferencedObject`.
 /// Evidence: lower field field_114; upper derived hkTrackerArrayLayoutHandler size 0x10 at 0x0.
 /// Bases: `hkReferencedObject`@0x0, `hkBaseObject`@0x0.
@@ -18814,4 +17818,965 @@ pub struct hkbMoveCharacterModifierInternalState {
 const _: () = assert!(size_of::<hkbMoveCharacterModifierInternalState>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(hkbMoveCharacterModifierInternalState, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(hkbMoveCharacterModifierInternalState, m_hkpCollidableCollidableFilter_10) == 0x10);
+
+/// `hkbNamedEventPayload`: size >= 0x118 (lower bound); partial, the struct stops at the lower bound; primary base `hkbEventPayload`.
+/// Evidence: field field_114.
+/// Bases: `hkbEventPayload`@0x0, `hkReferencedObject`@0x0, `hkBaseObject`@0x0.
+#[repr(C)]
+pub struct hkbNamedEventPayload {
+    /// +0x0 `vtbl:hkbNamedEventPayload:0`, rtti
+    #[doc(hidden)]
+    pub __vftable: *const crate::raw::vtables::hkbNamedEventPayload_vtable,
+    pub unknown_8: [u8; 8],
+    /// +0x10 `undefined8`, base hkBaseObject
+    pub m_hkpCollidableCollidableFilter_10: u64,
+    /// +0x18 `undefined8`, base hkBaseObject
+    pub m_hkpShapeCollectionFilter_18: u64,
+    /// +0x20 `undefined8`, base hkBaseObject
+    pub m_hkpRayShapeCollectionFilter_20: u64,
+    /// +0x28 `undefined8`, base hkBaseObject
+    pub m_hkpRayCollidableFilter_28: u64,
+    /// +0x30 `undefined4`, base hkBaseObject
+    pub field_30: u32,
+    /// +0x34 `undefined4`, base hkBaseObject
+    pub field_34: u32,
+    /// +0x38 `undefined4`, base hkBaseObject
+    pub field_38: u32,
+    /// +0x3C `undefined4`, base hkBaseObject
+    pub field_3C: u32,
+    /// +0x40 `undefined4`, base hkBaseObject
+    pub field_40: u32,
+    /// +0x44 `undefined4`, base hkBaseObject
+    pub field_44: u32,
+    /// +0x48 `undefined4`, base hkBaseObject
+    pub field_48: u32,
+    /// +0x4C `undefined4`, base hkBaseObject
+    pub field_4C: u32,
+    /// +0x50 `undefined4`, base hkBaseObject
+    pub field_50: u32,
+    /// +0x54 `undefined4`, base hkBaseObject
+    pub field_54: u32,
+    /// +0x58 `undefined4`, base hkBaseObject
+    pub field_58: u32,
+    /// +0x5C `undefined4`, base hkBaseObject
+    pub field_5C: u32,
+    /// +0x60 `undefined4`, base hkBaseObject
+    pub field_60: u32,
+    /// +0x64 `undefined4`, base hkBaseObject
+    pub field_64: u32,
+    /// +0x68 `undefined4`, base hkBaseObject
+    pub field_68: u32,
+    /// +0x6C `undefined4`, base hkBaseObject
+    pub field_6C: u32,
+    /// +0x70 `undefined4`, base hkBaseObject
+    pub field_70: u32,
+    /// +0x74 `undefined4`, base hkBaseObject
+    pub field_74: u32,
+    /// +0x78 `undefined4`, base hkBaseObject
+    pub field_78: u32,
+    /// +0x7C `undefined4`, base hkBaseObject
+    pub field_7C: u32,
+    /// +0x80 `undefined4`, base hkBaseObject
+    pub field_80: u32,
+    /// +0x84 `undefined4`, base hkBaseObject
+    pub field_84: u32,
+    /// +0x88 `undefined4`, base hkBaseObject
+    pub field_88: u32,
+    /// +0x8C `undefined4`, base hkBaseObject
+    pub field_8C: u32,
+    /// +0x90 `undefined4`, base hkBaseObject
+    pub field_90: u32,
+    /// +0x94 `undefined4`, base hkBaseObject
+    pub field_94: u32,
+    /// +0x98 `undefined4`, base hkBaseObject
+    pub field_98: u32,
+    /// +0x9C `undefined4`, base hkBaseObject
+    pub field_9C: u32,
+    /// +0xA0 `undefined4`, base hkBaseObject
+    pub field_A0: u32,
+    /// +0xA4 `undefined4`, base hkBaseObject
+    pub field_A4: u32,
+    /// +0xA8 `undefined8`, base hkBaseObject
+    pub field_A8: u64,
+    /// +0xB0 `undefined4`, base hkBaseObject
+    pub field_B0: u32,
+    /// +0xB4 `undefined4`, base hkBaseObject
+    pub field_B4: u32,
+    /// +0xB8 `undefined8`, base hkBaseObject
+    pub field_B8: u64,
+    /// +0xC0 `undefined4`, base hkBaseObject
+    pub field_C0: u32,
+    /// +0xC4 `undefined4`, base hkBaseObject
+    pub field_C4: u32,
+    pub unknown_C8: [u8; 64],
+    /// +0x108 `undefined8`, base hkBaseObject
+    pub field_108: u64,
+    /// +0x110 `undefined4`, base hkBaseObject
+    pub field_110: u32,
+    /// +0x114 `undefined4`, base hkBaseObject
+    pub field_114: u32,
+    #[doc(hidden)]
+    pub __engine: crate::Engine,
+}
+const _: () = assert!(core::mem::offset_of!(hkbNamedEventPayload, __vftable) == 0x0);
+const _: () = assert!(core::mem::offset_of!(hkbNamedEventPayload, m_hkpCollidableCollidableFilter_10) == 0x10);
+const _: () = assert!(core::mem::offset_of!(hkbNamedEventPayload, m_hkpShapeCollectionFilter_18) == 0x18);
+const _: () = assert!(core::mem::offset_of!(hkbNamedEventPayload, m_hkpRayShapeCollectionFilter_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(hkbNamedEventPayload, m_hkpRayCollidableFilter_28) == 0x28);
+const _: () = assert!(core::mem::offset_of!(hkbNamedEventPayload, field_30) == 0x30);
+const _: () = assert!(core::mem::offset_of!(hkbNamedEventPayload, field_34) == 0x34);
+const _: () = assert!(core::mem::offset_of!(hkbNamedEventPayload, field_38) == 0x38);
+const _: () = assert!(core::mem::offset_of!(hkbNamedEventPayload, field_3C) == 0x3C);
+const _: () = assert!(core::mem::offset_of!(hkbNamedEventPayload, field_40) == 0x40);
+const _: () = assert!(core::mem::offset_of!(hkbNamedEventPayload, field_44) == 0x44);
+const _: () = assert!(core::mem::offset_of!(hkbNamedEventPayload, field_48) == 0x48);
+const _: () = assert!(core::mem::offset_of!(hkbNamedEventPayload, field_4C) == 0x4C);
+const _: () = assert!(core::mem::offset_of!(hkbNamedEventPayload, field_50) == 0x50);
+const _: () = assert!(core::mem::offset_of!(hkbNamedEventPayload, field_54) == 0x54);
+const _: () = assert!(core::mem::offset_of!(hkbNamedEventPayload, field_58) == 0x58);
+const _: () = assert!(core::mem::offset_of!(hkbNamedEventPayload, field_5C) == 0x5C);
+const _: () = assert!(core::mem::offset_of!(hkbNamedEventPayload, field_60) == 0x60);
+const _: () = assert!(core::mem::offset_of!(hkbNamedEventPayload, field_64) == 0x64);
+const _: () = assert!(core::mem::offset_of!(hkbNamedEventPayload, field_68) == 0x68);
+const _: () = assert!(core::mem::offset_of!(hkbNamedEventPayload, field_6C) == 0x6C);
+const _: () = assert!(core::mem::offset_of!(hkbNamedEventPayload, field_70) == 0x70);
+const _: () = assert!(core::mem::offset_of!(hkbNamedEventPayload, field_74) == 0x74);
+const _: () = assert!(core::mem::offset_of!(hkbNamedEventPayload, field_78) == 0x78);
+const _: () = assert!(core::mem::offset_of!(hkbNamedEventPayload, field_7C) == 0x7C);
+const _: () = assert!(core::mem::offset_of!(hkbNamedEventPayload, field_80) == 0x80);
+const _: () = assert!(core::mem::offset_of!(hkbNamedEventPayload, field_84) == 0x84);
+const _: () = assert!(core::mem::offset_of!(hkbNamedEventPayload, field_88) == 0x88);
+const _: () = assert!(core::mem::offset_of!(hkbNamedEventPayload, field_8C) == 0x8C);
+const _: () = assert!(core::mem::offset_of!(hkbNamedEventPayload, field_90) == 0x90);
+const _: () = assert!(core::mem::offset_of!(hkbNamedEventPayload, field_94) == 0x94);
+const _: () = assert!(core::mem::offset_of!(hkbNamedEventPayload, field_98) == 0x98);
+const _: () = assert!(core::mem::offset_of!(hkbNamedEventPayload, field_9C) == 0x9C);
+const _: () = assert!(core::mem::offset_of!(hkbNamedEventPayload, field_A0) == 0xA0);
+const _: () = assert!(core::mem::offset_of!(hkbNamedEventPayload, field_A4) == 0xA4);
+const _: () = assert!(core::mem::offset_of!(hkbNamedEventPayload, field_A8) == 0xA8);
+const _: () = assert!(core::mem::offset_of!(hkbNamedEventPayload, field_B0) == 0xB0);
+const _: () = assert!(core::mem::offset_of!(hkbNamedEventPayload, field_B4) == 0xB4);
+const _: () = assert!(core::mem::offset_of!(hkbNamedEventPayload, field_B8) == 0xB8);
+const _: () = assert!(core::mem::offset_of!(hkbNamedEventPayload, field_C0) == 0xC0);
+const _: () = assert!(core::mem::offset_of!(hkbNamedEventPayload, field_C4) == 0xC4);
+const _: () = assert!(core::mem::offset_of!(hkbNamedEventPayload, field_108) == 0x108);
+const _: () = assert!(core::mem::offset_of!(hkbNamedEventPayload, field_110) == 0x110);
+const _: () = assert!(core::mem::offset_of!(hkbNamedEventPayload, field_114) == 0x114);
+
+/// `hkbNamedIntEventPayload`: size >= 0x118 (lower bound); partial, the struct stops at the lower bound; primary base `hkbNamedEventPayload`.
+/// Evidence: field field_114.
+/// Bases: `hkbNamedEventPayload`@0x0, `hkbEventPayload`@0x0, `hkReferencedObject`@0x0, `hkBaseObject`@0x0.
+#[repr(C)]
+pub struct hkbNamedIntEventPayload {
+    /// +0x0 `vtbl:hkbNamedIntEventPayload:0`, rtti
+    #[doc(hidden)]
+    pub __vftable: *const crate::raw::vtables::hkbNamedIntEventPayload_vtable,
+    pub unknown_8: [u8; 8],
+    /// +0x10 `undefined8`, base hkBaseObject
+    pub m_hkpCollidableCollidableFilter_10: u64,
+    /// +0x18 `undefined8`, base hkBaseObject
+    pub m_hkpShapeCollectionFilter_18: u64,
+    /// +0x20 `undefined8`, base hkBaseObject
+    pub m_hkpRayShapeCollectionFilter_20: u64,
+    /// +0x28 `undefined8`, base hkBaseObject
+    pub m_hkpRayCollidableFilter_28: u64,
+    /// +0x30 `undefined4`, base hkBaseObject
+    pub field_30: u32,
+    /// +0x34 `undefined4`, base hkBaseObject
+    pub field_34: u32,
+    /// +0x38 `undefined4`, base hkBaseObject
+    pub field_38: u32,
+    /// +0x3C `undefined4`, base hkBaseObject
+    pub field_3C: u32,
+    /// +0x40 `undefined4`, base hkBaseObject
+    pub field_40: u32,
+    /// +0x44 `undefined4`, base hkBaseObject
+    pub field_44: u32,
+    /// +0x48 `undefined4`, base hkBaseObject
+    pub field_48: u32,
+    /// +0x4C `undefined4`, base hkBaseObject
+    pub field_4C: u32,
+    /// +0x50 `undefined4`, base hkBaseObject
+    pub field_50: u32,
+    /// +0x54 `undefined4`, base hkBaseObject
+    pub field_54: u32,
+    /// +0x58 `undefined4`, base hkBaseObject
+    pub field_58: u32,
+    /// +0x5C `undefined4`, base hkBaseObject
+    pub field_5C: u32,
+    /// +0x60 `undefined4`, base hkBaseObject
+    pub field_60: u32,
+    /// +0x64 `undefined4`, base hkBaseObject
+    pub field_64: u32,
+    /// +0x68 `undefined4`, base hkBaseObject
+    pub field_68: u32,
+    /// +0x6C `undefined4`, base hkBaseObject
+    pub field_6C: u32,
+    /// +0x70 `undefined4`, base hkBaseObject
+    pub field_70: u32,
+    /// +0x74 `undefined4`, base hkBaseObject
+    pub field_74: u32,
+    /// +0x78 `undefined4`, base hkBaseObject
+    pub field_78: u32,
+    /// +0x7C `undefined4`, base hkBaseObject
+    pub field_7C: u32,
+    /// +0x80 `undefined4`, base hkBaseObject
+    pub field_80: u32,
+    /// +0x84 `undefined4`, base hkBaseObject
+    pub field_84: u32,
+    /// +0x88 `undefined4`, base hkBaseObject
+    pub field_88: u32,
+    /// +0x8C `undefined4`, base hkBaseObject
+    pub field_8C: u32,
+    /// +0x90 `undefined4`, base hkBaseObject
+    pub field_90: u32,
+    /// +0x94 `undefined4`, base hkBaseObject
+    pub field_94: u32,
+    /// +0x98 `undefined4`, base hkBaseObject
+    pub field_98: u32,
+    /// +0x9C `undefined4`, base hkBaseObject
+    pub field_9C: u32,
+    /// +0xA0 `undefined4`, base hkBaseObject
+    pub field_A0: u32,
+    /// +0xA4 `undefined4`, base hkBaseObject
+    pub field_A4: u32,
+    /// +0xA8 `undefined8`, base hkBaseObject
+    pub field_A8: u64,
+    /// +0xB0 `undefined4`, base hkBaseObject
+    pub field_B0: u32,
+    /// +0xB4 `undefined4`, base hkBaseObject
+    pub field_B4: u32,
+    /// +0xB8 `undefined8`, base hkBaseObject
+    pub field_B8: u64,
+    /// +0xC0 `undefined4`, base hkBaseObject
+    pub field_C0: u32,
+    /// +0xC4 `undefined4`, base hkBaseObject
+    pub field_C4: u32,
+    pub unknown_C8: [u8; 64],
+    /// +0x108 `undefined8`, base hkBaseObject
+    pub field_108: u64,
+    /// +0x110 `undefined4`, base hkBaseObject
+    pub field_110: u32,
+    /// +0x114 `undefined4`, base hkBaseObject
+    pub field_114: u32,
+    #[doc(hidden)]
+    pub __engine: crate::Engine,
+}
+const _: () = assert!(core::mem::offset_of!(hkbNamedIntEventPayload, __vftable) == 0x0);
+const _: () = assert!(core::mem::offset_of!(hkbNamedIntEventPayload, m_hkpCollidableCollidableFilter_10) == 0x10);
+const _: () = assert!(core::mem::offset_of!(hkbNamedIntEventPayload, m_hkpShapeCollectionFilter_18) == 0x18);
+const _: () = assert!(core::mem::offset_of!(hkbNamedIntEventPayload, m_hkpRayShapeCollectionFilter_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(hkbNamedIntEventPayload, m_hkpRayCollidableFilter_28) == 0x28);
+const _: () = assert!(core::mem::offset_of!(hkbNamedIntEventPayload, field_30) == 0x30);
+const _: () = assert!(core::mem::offset_of!(hkbNamedIntEventPayload, field_34) == 0x34);
+const _: () = assert!(core::mem::offset_of!(hkbNamedIntEventPayload, field_38) == 0x38);
+const _: () = assert!(core::mem::offset_of!(hkbNamedIntEventPayload, field_3C) == 0x3C);
+const _: () = assert!(core::mem::offset_of!(hkbNamedIntEventPayload, field_40) == 0x40);
+const _: () = assert!(core::mem::offset_of!(hkbNamedIntEventPayload, field_44) == 0x44);
+const _: () = assert!(core::mem::offset_of!(hkbNamedIntEventPayload, field_48) == 0x48);
+const _: () = assert!(core::mem::offset_of!(hkbNamedIntEventPayload, field_4C) == 0x4C);
+const _: () = assert!(core::mem::offset_of!(hkbNamedIntEventPayload, field_50) == 0x50);
+const _: () = assert!(core::mem::offset_of!(hkbNamedIntEventPayload, field_54) == 0x54);
+const _: () = assert!(core::mem::offset_of!(hkbNamedIntEventPayload, field_58) == 0x58);
+const _: () = assert!(core::mem::offset_of!(hkbNamedIntEventPayload, field_5C) == 0x5C);
+const _: () = assert!(core::mem::offset_of!(hkbNamedIntEventPayload, field_60) == 0x60);
+const _: () = assert!(core::mem::offset_of!(hkbNamedIntEventPayload, field_64) == 0x64);
+const _: () = assert!(core::mem::offset_of!(hkbNamedIntEventPayload, field_68) == 0x68);
+const _: () = assert!(core::mem::offset_of!(hkbNamedIntEventPayload, field_6C) == 0x6C);
+const _: () = assert!(core::mem::offset_of!(hkbNamedIntEventPayload, field_70) == 0x70);
+const _: () = assert!(core::mem::offset_of!(hkbNamedIntEventPayload, field_74) == 0x74);
+const _: () = assert!(core::mem::offset_of!(hkbNamedIntEventPayload, field_78) == 0x78);
+const _: () = assert!(core::mem::offset_of!(hkbNamedIntEventPayload, field_7C) == 0x7C);
+const _: () = assert!(core::mem::offset_of!(hkbNamedIntEventPayload, field_80) == 0x80);
+const _: () = assert!(core::mem::offset_of!(hkbNamedIntEventPayload, field_84) == 0x84);
+const _: () = assert!(core::mem::offset_of!(hkbNamedIntEventPayload, field_88) == 0x88);
+const _: () = assert!(core::mem::offset_of!(hkbNamedIntEventPayload, field_8C) == 0x8C);
+const _: () = assert!(core::mem::offset_of!(hkbNamedIntEventPayload, field_90) == 0x90);
+const _: () = assert!(core::mem::offset_of!(hkbNamedIntEventPayload, field_94) == 0x94);
+const _: () = assert!(core::mem::offset_of!(hkbNamedIntEventPayload, field_98) == 0x98);
+const _: () = assert!(core::mem::offset_of!(hkbNamedIntEventPayload, field_9C) == 0x9C);
+const _: () = assert!(core::mem::offset_of!(hkbNamedIntEventPayload, field_A0) == 0xA0);
+const _: () = assert!(core::mem::offset_of!(hkbNamedIntEventPayload, field_A4) == 0xA4);
+const _: () = assert!(core::mem::offset_of!(hkbNamedIntEventPayload, field_A8) == 0xA8);
+const _: () = assert!(core::mem::offset_of!(hkbNamedIntEventPayload, field_B0) == 0xB0);
+const _: () = assert!(core::mem::offset_of!(hkbNamedIntEventPayload, field_B4) == 0xB4);
+const _: () = assert!(core::mem::offset_of!(hkbNamedIntEventPayload, field_B8) == 0xB8);
+const _: () = assert!(core::mem::offset_of!(hkbNamedIntEventPayload, field_C0) == 0xC0);
+const _: () = assert!(core::mem::offset_of!(hkbNamedIntEventPayload, field_C4) == 0xC4);
+const _: () = assert!(core::mem::offset_of!(hkbNamedIntEventPayload, field_108) == 0x108);
+const _: () = assert!(core::mem::offset_of!(hkbNamedIntEventPayload, field_110) == 0x110);
+const _: () = assert!(core::mem::offset_of!(hkbNamedIntEventPayload, field_114) == 0x114);
+
+/// `hkbNamedRealEventPayload`: size >= 0x118 (lower bound); partial, the struct stops at the lower bound; primary base `hkbNamedEventPayload`.
+/// Evidence: field field_114.
+/// Bases: `hkbNamedEventPayload`@0x0, `hkbEventPayload`@0x0, `hkReferencedObject`@0x0, `hkBaseObject`@0x0.
+#[repr(C)]
+pub struct hkbNamedRealEventPayload {
+    /// +0x0 `vtbl:hkbNamedRealEventPayload:0`, rtti
+    #[doc(hidden)]
+    pub __vftable: *const crate::raw::vtables::hkbNamedRealEventPayload_vtable,
+    pub unknown_8: [u8; 8],
+    /// +0x10 `undefined8`, base hkBaseObject
+    pub m_hkpCollidableCollidableFilter_10: u64,
+    /// +0x18 `undefined8`, base hkBaseObject
+    pub m_hkpShapeCollectionFilter_18: u64,
+    /// +0x20 `undefined8`, base hkBaseObject
+    pub m_hkpRayShapeCollectionFilter_20: u64,
+    /// +0x28 `undefined8`, base hkBaseObject
+    pub m_hkpRayCollidableFilter_28: u64,
+    /// +0x30 `undefined4`, base hkBaseObject
+    pub field_30: u32,
+    /// +0x34 `undefined4`, base hkBaseObject
+    pub field_34: u32,
+    /// +0x38 `undefined4`, base hkBaseObject
+    pub field_38: u32,
+    /// +0x3C `undefined4`, base hkBaseObject
+    pub field_3C: u32,
+    /// +0x40 `undefined4`, base hkBaseObject
+    pub field_40: u32,
+    /// +0x44 `undefined4`, base hkBaseObject
+    pub field_44: u32,
+    /// +0x48 `undefined4`, base hkBaseObject
+    pub field_48: u32,
+    /// +0x4C `undefined4`, base hkBaseObject
+    pub field_4C: u32,
+    /// +0x50 `undefined4`, base hkBaseObject
+    pub field_50: u32,
+    /// +0x54 `undefined4`, base hkBaseObject
+    pub field_54: u32,
+    /// +0x58 `undefined4`, base hkBaseObject
+    pub field_58: u32,
+    /// +0x5C `undefined4`, base hkBaseObject
+    pub field_5C: u32,
+    /// +0x60 `undefined4`, base hkBaseObject
+    pub field_60: u32,
+    /// +0x64 `undefined4`, base hkBaseObject
+    pub field_64: u32,
+    /// +0x68 `undefined4`, base hkBaseObject
+    pub field_68: u32,
+    /// +0x6C `undefined4`, base hkBaseObject
+    pub field_6C: u32,
+    /// +0x70 `undefined4`, base hkBaseObject
+    pub field_70: u32,
+    /// +0x74 `undefined4`, base hkBaseObject
+    pub field_74: u32,
+    /// +0x78 `undefined4`, base hkBaseObject
+    pub field_78: u32,
+    /// +0x7C `undefined4`, base hkBaseObject
+    pub field_7C: u32,
+    /// +0x80 `undefined4`, base hkBaseObject
+    pub field_80: u32,
+    /// +0x84 `undefined4`, base hkBaseObject
+    pub field_84: u32,
+    /// +0x88 `undefined4`, base hkBaseObject
+    pub field_88: u32,
+    /// +0x8C `undefined4`, base hkBaseObject
+    pub field_8C: u32,
+    /// +0x90 `undefined4`, base hkBaseObject
+    pub field_90: u32,
+    /// +0x94 `undefined4`, base hkBaseObject
+    pub field_94: u32,
+    /// +0x98 `undefined4`, base hkBaseObject
+    pub field_98: u32,
+    /// +0x9C `undefined4`, base hkBaseObject
+    pub field_9C: u32,
+    /// +0xA0 `undefined4`, base hkBaseObject
+    pub field_A0: u32,
+    /// +0xA4 `undefined4`, base hkBaseObject
+    pub field_A4: u32,
+    /// +0xA8 `undefined8`, base hkBaseObject
+    pub field_A8: u64,
+    /// +0xB0 `undefined4`, base hkBaseObject
+    pub field_B0: u32,
+    /// +0xB4 `undefined4`, base hkBaseObject
+    pub field_B4: u32,
+    /// +0xB8 `undefined8`, base hkBaseObject
+    pub field_B8: u64,
+    /// +0xC0 `undefined4`, base hkBaseObject
+    pub field_C0: u32,
+    /// +0xC4 `undefined4`, base hkBaseObject
+    pub field_C4: u32,
+    pub unknown_C8: [u8; 64],
+    /// +0x108 `undefined8`, base hkBaseObject
+    pub field_108: u64,
+    /// +0x110 `undefined4`, base hkBaseObject
+    pub field_110: u32,
+    /// +0x114 `undefined4`, base hkBaseObject
+    pub field_114: u32,
+    #[doc(hidden)]
+    pub __engine: crate::Engine,
+}
+const _: () = assert!(core::mem::offset_of!(hkbNamedRealEventPayload, __vftable) == 0x0);
+const _: () = assert!(core::mem::offset_of!(hkbNamedRealEventPayload, m_hkpCollidableCollidableFilter_10) == 0x10);
+const _: () = assert!(core::mem::offset_of!(hkbNamedRealEventPayload, m_hkpShapeCollectionFilter_18) == 0x18);
+const _: () = assert!(core::mem::offset_of!(hkbNamedRealEventPayload, m_hkpRayShapeCollectionFilter_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(hkbNamedRealEventPayload, m_hkpRayCollidableFilter_28) == 0x28);
+const _: () = assert!(core::mem::offset_of!(hkbNamedRealEventPayload, field_30) == 0x30);
+const _: () = assert!(core::mem::offset_of!(hkbNamedRealEventPayload, field_34) == 0x34);
+const _: () = assert!(core::mem::offset_of!(hkbNamedRealEventPayload, field_38) == 0x38);
+const _: () = assert!(core::mem::offset_of!(hkbNamedRealEventPayload, field_3C) == 0x3C);
+const _: () = assert!(core::mem::offset_of!(hkbNamedRealEventPayload, field_40) == 0x40);
+const _: () = assert!(core::mem::offset_of!(hkbNamedRealEventPayload, field_44) == 0x44);
+const _: () = assert!(core::mem::offset_of!(hkbNamedRealEventPayload, field_48) == 0x48);
+const _: () = assert!(core::mem::offset_of!(hkbNamedRealEventPayload, field_4C) == 0x4C);
+const _: () = assert!(core::mem::offset_of!(hkbNamedRealEventPayload, field_50) == 0x50);
+const _: () = assert!(core::mem::offset_of!(hkbNamedRealEventPayload, field_54) == 0x54);
+const _: () = assert!(core::mem::offset_of!(hkbNamedRealEventPayload, field_58) == 0x58);
+const _: () = assert!(core::mem::offset_of!(hkbNamedRealEventPayload, field_5C) == 0x5C);
+const _: () = assert!(core::mem::offset_of!(hkbNamedRealEventPayload, field_60) == 0x60);
+const _: () = assert!(core::mem::offset_of!(hkbNamedRealEventPayload, field_64) == 0x64);
+const _: () = assert!(core::mem::offset_of!(hkbNamedRealEventPayload, field_68) == 0x68);
+const _: () = assert!(core::mem::offset_of!(hkbNamedRealEventPayload, field_6C) == 0x6C);
+const _: () = assert!(core::mem::offset_of!(hkbNamedRealEventPayload, field_70) == 0x70);
+const _: () = assert!(core::mem::offset_of!(hkbNamedRealEventPayload, field_74) == 0x74);
+const _: () = assert!(core::mem::offset_of!(hkbNamedRealEventPayload, field_78) == 0x78);
+const _: () = assert!(core::mem::offset_of!(hkbNamedRealEventPayload, field_7C) == 0x7C);
+const _: () = assert!(core::mem::offset_of!(hkbNamedRealEventPayload, field_80) == 0x80);
+const _: () = assert!(core::mem::offset_of!(hkbNamedRealEventPayload, field_84) == 0x84);
+const _: () = assert!(core::mem::offset_of!(hkbNamedRealEventPayload, field_88) == 0x88);
+const _: () = assert!(core::mem::offset_of!(hkbNamedRealEventPayload, field_8C) == 0x8C);
+const _: () = assert!(core::mem::offset_of!(hkbNamedRealEventPayload, field_90) == 0x90);
+const _: () = assert!(core::mem::offset_of!(hkbNamedRealEventPayload, field_94) == 0x94);
+const _: () = assert!(core::mem::offset_of!(hkbNamedRealEventPayload, field_98) == 0x98);
+const _: () = assert!(core::mem::offset_of!(hkbNamedRealEventPayload, field_9C) == 0x9C);
+const _: () = assert!(core::mem::offset_of!(hkbNamedRealEventPayload, field_A0) == 0xA0);
+const _: () = assert!(core::mem::offset_of!(hkbNamedRealEventPayload, field_A4) == 0xA4);
+const _: () = assert!(core::mem::offset_of!(hkbNamedRealEventPayload, field_A8) == 0xA8);
+const _: () = assert!(core::mem::offset_of!(hkbNamedRealEventPayload, field_B0) == 0xB0);
+const _: () = assert!(core::mem::offset_of!(hkbNamedRealEventPayload, field_B4) == 0xB4);
+const _: () = assert!(core::mem::offset_of!(hkbNamedRealEventPayload, field_B8) == 0xB8);
+const _: () = assert!(core::mem::offset_of!(hkbNamedRealEventPayload, field_C0) == 0xC0);
+const _: () = assert!(core::mem::offset_of!(hkbNamedRealEventPayload, field_C4) == 0xC4);
+const _: () = assert!(core::mem::offset_of!(hkbNamedRealEventPayload, field_108) == 0x108);
+const _: () = assert!(core::mem::offset_of!(hkbNamedRealEventPayload, field_110) == 0x110);
+const _: () = assert!(core::mem::offset_of!(hkbNamedRealEventPayload, field_114) == 0x114);
+
+/// `hkbNamedStringEventPayload`: size >= 0x118 (lower bound); partial, the struct stops at the lower bound; primary base `hkbNamedEventPayload`.
+/// Evidence: field field_114.
+/// Bases: `hkbNamedEventPayload`@0x0, `hkbEventPayload`@0x0, `hkReferencedObject`@0x0, `hkBaseObject`@0x0.
+#[repr(C)]
+pub struct hkbNamedStringEventPayload {
+    /// +0x0 `vtbl:hkbNamedStringEventPayload:0`, rtti
+    #[doc(hidden)]
+    pub __vftable: *const crate::raw::vtables::hkbNamedStringEventPayload_vtable,
+    pub unknown_8: [u8; 8],
+    /// +0x10 `undefined8`, base hkBaseObject
+    pub m_hkpCollidableCollidableFilter_10: u64,
+    /// +0x18 `undefined8`, base hkBaseObject
+    pub m_hkpShapeCollectionFilter_18: u64,
+    /// +0x20 `undefined8`, base hkBaseObject
+    pub m_hkpRayShapeCollectionFilter_20: u64,
+    /// +0x28 `undefined8`, base hkBaseObject
+    pub m_hkpRayCollidableFilter_28: u64,
+    /// +0x30 `undefined4`, base hkBaseObject
+    pub field_30: u32,
+    /// +0x34 `undefined4`, base hkBaseObject
+    pub field_34: u32,
+    /// +0x38 `undefined4`, base hkBaseObject
+    pub field_38: u32,
+    /// +0x3C `undefined4`, base hkBaseObject
+    pub field_3C: u32,
+    /// +0x40 `undefined4`, base hkBaseObject
+    pub field_40: u32,
+    /// +0x44 `undefined4`, base hkBaseObject
+    pub field_44: u32,
+    /// +0x48 `undefined4`, base hkBaseObject
+    pub field_48: u32,
+    /// +0x4C `undefined4`, base hkBaseObject
+    pub field_4C: u32,
+    /// +0x50 `undefined4`, base hkBaseObject
+    pub field_50: u32,
+    /// +0x54 `undefined4`, base hkBaseObject
+    pub field_54: u32,
+    /// +0x58 `undefined4`, base hkBaseObject
+    pub field_58: u32,
+    /// +0x5C `undefined4`, base hkBaseObject
+    pub field_5C: u32,
+    /// +0x60 `undefined4`, base hkBaseObject
+    pub field_60: u32,
+    /// +0x64 `undefined4`, base hkBaseObject
+    pub field_64: u32,
+    /// +0x68 `undefined4`, base hkBaseObject
+    pub field_68: u32,
+    /// +0x6C `undefined4`, base hkBaseObject
+    pub field_6C: u32,
+    /// +0x70 `undefined4`, base hkBaseObject
+    pub field_70: u32,
+    /// +0x74 `undefined4`, base hkBaseObject
+    pub field_74: u32,
+    /// +0x78 `undefined4`, base hkBaseObject
+    pub field_78: u32,
+    /// +0x7C `undefined4`, base hkBaseObject
+    pub field_7C: u32,
+    /// +0x80 `undefined4`, base hkBaseObject
+    pub field_80: u32,
+    /// +0x84 `undefined4`, base hkBaseObject
+    pub field_84: u32,
+    /// +0x88 `undefined4`, base hkBaseObject
+    pub field_88: u32,
+    /// +0x8C `undefined4`, base hkBaseObject
+    pub field_8C: u32,
+    /// +0x90 `undefined4`, base hkBaseObject
+    pub field_90: u32,
+    /// +0x94 `undefined4`, base hkBaseObject
+    pub field_94: u32,
+    /// +0x98 `undefined4`, base hkBaseObject
+    pub field_98: u32,
+    /// +0x9C `undefined4`, base hkBaseObject
+    pub field_9C: u32,
+    /// +0xA0 `undefined4`, base hkBaseObject
+    pub field_A0: u32,
+    /// +0xA4 `undefined4`, base hkBaseObject
+    pub field_A4: u32,
+    /// +0xA8 `undefined8`, base hkBaseObject
+    pub field_A8: u64,
+    /// +0xB0 `undefined4`, base hkBaseObject
+    pub field_B0: u32,
+    /// +0xB4 `undefined4`, base hkBaseObject
+    pub field_B4: u32,
+    /// +0xB8 `undefined8`, base hkBaseObject
+    pub field_B8: u64,
+    /// +0xC0 `undefined4`, base hkBaseObject
+    pub field_C0: u32,
+    /// +0xC4 `undefined4`, base hkBaseObject
+    pub field_C4: u32,
+    pub unknown_C8: [u8; 64],
+    /// +0x108 `undefined8`, base hkBaseObject
+    pub field_108: u64,
+    /// +0x110 `undefined4`, base hkBaseObject
+    pub field_110: u32,
+    /// +0x114 `undefined4`, base hkBaseObject
+    pub field_114: u32,
+    #[doc(hidden)]
+    pub __engine: crate::Engine,
+}
+const _: () = assert!(core::mem::offset_of!(hkbNamedStringEventPayload, __vftable) == 0x0);
+const _: () = assert!(core::mem::offset_of!(hkbNamedStringEventPayload, m_hkpCollidableCollidableFilter_10) == 0x10);
+const _: () = assert!(core::mem::offset_of!(hkbNamedStringEventPayload, m_hkpShapeCollectionFilter_18) == 0x18);
+const _: () = assert!(core::mem::offset_of!(hkbNamedStringEventPayload, m_hkpRayShapeCollectionFilter_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(hkbNamedStringEventPayload, m_hkpRayCollidableFilter_28) == 0x28);
+const _: () = assert!(core::mem::offset_of!(hkbNamedStringEventPayload, field_30) == 0x30);
+const _: () = assert!(core::mem::offset_of!(hkbNamedStringEventPayload, field_34) == 0x34);
+const _: () = assert!(core::mem::offset_of!(hkbNamedStringEventPayload, field_38) == 0x38);
+const _: () = assert!(core::mem::offset_of!(hkbNamedStringEventPayload, field_3C) == 0x3C);
+const _: () = assert!(core::mem::offset_of!(hkbNamedStringEventPayload, field_40) == 0x40);
+const _: () = assert!(core::mem::offset_of!(hkbNamedStringEventPayload, field_44) == 0x44);
+const _: () = assert!(core::mem::offset_of!(hkbNamedStringEventPayload, field_48) == 0x48);
+const _: () = assert!(core::mem::offset_of!(hkbNamedStringEventPayload, field_4C) == 0x4C);
+const _: () = assert!(core::mem::offset_of!(hkbNamedStringEventPayload, field_50) == 0x50);
+const _: () = assert!(core::mem::offset_of!(hkbNamedStringEventPayload, field_54) == 0x54);
+const _: () = assert!(core::mem::offset_of!(hkbNamedStringEventPayload, field_58) == 0x58);
+const _: () = assert!(core::mem::offset_of!(hkbNamedStringEventPayload, field_5C) == 0x5C);
+const _: () = assert!(core::mem::offset_of!(hkbNamedStringEventPayload, field_60) == 0x60);
+const _: () = assert!(core::mem::offset_of!(hkbNamedStringEventPayload, field_64) == 0x64);
+const _: () = assert!(core::mem::offset_of!(hkbNamedStringEventPayload, field_68) == 0x68);
+const _: () = assert!(core::mem::offset_of!(hkbNamedStringEventPayload, field_6C) == 0x6C);
+const _: () = assert!(core::mem::offset_of!(hkbNamedStringEventPayload, field_70) == 0x70);
+const _: () = assert!(core::mem::offset_of!(hkbNamedStringEventPayload, field_74) == 0x74);
+const _: () = assert!(core::mem::offset_of!(hkbNamedStringEventPayload, field_78) == 0x78);
+const _: () = assert!(core::mem::offset_of!(hkbNamedStringEventPayload, field_7C) == 0x7C);
+const _: () = assert!(core::mem::offset_of!(hkbNamedStringEventPayload, field_80) == 0x80);
+const _: () = assert!(core::mem::offset_of!(hkbNamedStringEventPayload, field_84) == 0x84);
+const _: () = assert!(core::mem::offset_of!(hkbNamedStringEventPayload, field_88) == 0x88);
+const _: () = assert!(core::mem::offset_of!(hkbNamedStringEventPayload, field_8C) == 0x8C);
+const _: () = assert!(core::mem::offset_of!(hkbNamedStringEventPayload, field_90) == 0x90);
+const _: () = assert!(core::mem::offset_of!(hkbNamedStringEventPayload, field_94) == 0x94);
+const _: () = assert!(core::mem::offset_of!(hkbNamedStringEventPayload, field_98) == 0x98);
+const _: () = assert!(core::mem::offset_of!(hkbNamedStringEventPayload, field_9C) == 0x9C);
+const _: () = assert!(core::mem::offset_of!(hkbNamedStringEventPayload, field_A0) == 0xA0);
+const _: () = assert!(core::mem::offset_of!(hkbNamedStringEventPayload, field_A4) == 0xA4);
+const _: () = assert!(core::mem::offset_of!(hkbNamedStringEventPayload, field_A8) == 0xA8);
+const _: () = assert!(core::mem::offset_of!(hkbNamedStringEventPayload, field_B0) == 0xB0);
+const _: () = assert!(core::mem::offset_of!(hkbNamedStringEventPayload, field_B4) == 0xB4);
+const _: () = assert!(core::mem::offset_of!(hkbNamedStringEventPayload, field_B8) == 0xB8);
+const _: () = assert!(core::mem::offset_of!(hkbNamedStringEventPayload, field_C0) == 0xC0);
+const _: () = assert!(core::mem::offset_of!(hkbNamedStringEventPayload, field_C4) == 0xC4);
+const _: () = assert!(core::mem::offset_of!(hkbNamedStringEventPayload, field_108) == 0x108);
+const _: () = assert!(core::mem::offset_of!(hkbNamedStringEventPayload, field_110) == 0x110);
+const _: () = assert!(core::mem::offset_of!(hkbNamedStringEventPayload, field_114) == 0x114);
+
+/// `hkbNode`: size >= 0x118 (lower bound, upper bound 0x50); partial, the struct stops at the lower bound; primary base `hkbBindable`.
+/// Evidence: lower field field_114; upper next base of BSRagdollContactListenerModifier at 0x50.
+/// Bases: `hkbBindable`@0x0, `hkReferencedObject`@0x0, `hkBaseObject`@0x0.
+#[repr(C)]
+pub struct hkbNode {
+    /// +0x0 `vtbl:hkbNode:0`, rtti
+    #[doc(hidden)]
+    pub __vftable: *const crate::raw::vtables::hkbNode_vtable,
+    /// +0x8 `undefined4`, base hkbBindable
+    pub field_8: u32,
+    pub unknown_C: [u8; 4],
+    /// +0x10 `undefined8`, base hkBaseObject
+    pub m_hkpCollidableCollidableFilter_10: u64,
+    /// +0x18 `undefined8`, base hkBaseObject
+    pub m_hkpShapeCollectionFilter_18: u64,
+    /// +0x20 `undefined8`, base hkBaseObject
+    pub m_hkpRayShapeCollectionFilter_20: u64,
+    /// +0x28 `undefined8`, base hkBaseObject
+    pub m_hkpRayCollidableFilter_28: u64,
+    /// +0x30 `undefined4`, base hkBaseObject
+    pub field_30: u32,
+    /// +0x34 `undefined4`, base hkBaseObject
+    pub field_34: u32,
+    /// +0x38 `undefined4`, base hkBaseObject
+    pub field_38: u32,
+    /// +0x3C `undefined4`, base hkBaseObject
+    pub field_3C: u32,
+    /// +0x40 `undefined4`, base hkBaseObject
+    pub field_40: u32,
+    /// +0x44 `undefined4`, base hkBaseObject
+    pub field_44: u32,
+    /// +0x48 `undefined4`, base hkBaseObject
+    pub field_48: u32,
+    /// +0x4C `undefined4`, base hkBaseObject
+    pub field_4C: u32,
+    /// +0x50 `undefined4`, base hkBaseObject
+    pub field_50: u32,
+    /// +0x54 `undefined4`, base hkBaseObject
+    pub field_54: u32,
+    /// +0x58 `undefined4`, base hkBaseObject
+    pub field_58: u32,
+    /// +0x5C `undefined4`, base hkBaseObject
+    pub field_5C: u32,
+    /// +0x60 `undefined4`, base hkBaseObject
+    pub field_60: u32,
+    /// +0x64 `undefined4`, base hkBaseObject
+    pub field_64: u32,
+    /// +0x68 `undefined4`, base hkBaseObject
+    pub field_68: u32,
+    /// +0x6C `undefined4`, base hkBaseObject
+    pub field_6C: u32,
+    /// +0x70 `undefined4`, base hkBaseObject
+    pub field_70: u32,
+    /// +0x74 `undefined4`, base hkBaseObject
+    pub field_74: u32,
+    /// +0x78 `undefined4`, base hkBaseObject
+    pub field_78: u32,
+    /// +0x7C `undefined4`, base hkBaseObject
+    pub field_7C: u32,
+    /// +0x80 `undefined4`, base hkBaseObject
+    pub field_80: u32,
+    /// +0x84 `undefined4`, base hkBaseObject
+    pub field_84: u32,
+    /// +0x88 `undefined4`, base hkBaseObject
+    pub field_88: u32,
+    /// +0x8C `undefined4`, base hkBaseObject
+    pub field_8C: u32,
+    /// +0x90 `undefined4`, base hkBaseObject
+    pub field_90: u32,
+    /// +0x94 `undefined4`, base hkBaseObject
+    pub field_94: u32,
+    /// +0x98 `undefined4`, base hkBaseObject
+    pub field_98: u32,
+    /// +0x9C `undefined4`, base hkBaseObject
+    pub field_9C: u32,
+    /// +0xA0 `undefined4`, base hkBaseObject
+    pub field_A0: u32,
+    /// +0xA4 `undefined4`, base hkBaseObject
+    pub field_A4: u32,
+    /// +0xA8 `undefined8`, base hkBaseObject
+    pub field_A8: u64,
+    /// +0xB0 `undefined4`, base hkBaseObject
+    pub field_B0: u32,
+    /// +0xB4 `undefined4`, base hkBaseObject
+    pub field_B4: u32,
+    /// +0xB8 `undefined8`, base hkBaseObject
+    pub field_B8: u64,
+    /// +0xC0 `undefined4`, base hkBaseObject
+    pub field_C0: u32,
+    /// +0xC4 `undefined4`, base hkBaseObject
+    pub field_C4: u32,
+    pub unknown_C8: [u8; 64],
+    /// +0x108 `undefined8`, base hkBaseObject
+    pub field_108: u64,
+    /// +0x110 `undefined4`, base hkBaseObject
+    pub field_110: u32,
+    /// +0x114 `undefined4`, base hkBaseObject
+    pub field_114: u32,
+    #[doc(hidden)]
+    pub __engine: crate::Engine,
+}
+const _: () = assert!(core::mem::offset_of!(hkbNode, __vftable) == 0x0);
+const _: () = assert!(core::mem::offset_of!(hkbNode, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(hkbNode, m_hkpCollidableCollidableFilter_10) == 0x10);
+const _: () = assert!(core::mem::offset_of!(hkbNode, m_hkpShapeCollectionFilter_18) == 0x18);
+const _: () = assert!(core::mem::offset_of!(hkbNode, m_hkpRayShapeCollectionFilter_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(hkbNode, m_hkpRayCollidableFilter_28) == 0x28);
+const _: () = assert!(core::mem::offset_of!(hkbNode, field_30) == 0x30);
+const _: () = assert!(core::mem::offset_of!(hkbNode, field_34) == 0x34);
+const _: () = assert!(core::mem::offset_of!(hkbNode, field_38) == 0x38);
+const _: () = assert!(core::mem::offset_of!(hkbNode, field_3C) == 0x3C);
+const _: () = assert!(core::mem::offset_of!(hkbNode, field_40) == 0x40);
+const _: () = assert!(core::mem::offset_of!(hkbNode, field_44) == 0x44);
+const _: () = assert!(core::mem::offset_of!(hkbNode, field_48) == 0x48);
+const _: () = assert!(core::mem::offset_of!(hkbNode, field_4C) == 0x4C);
+const _: () = assert!(core::mem::offset_of!(hkbNode, field_50) == 0x50);
+const _: () = assert!(core::mem::offset_of!(hkbNode, field_54) == 0x54);
+const _: () = assert!(core::mem::offset_of!(hkbNode, field_58) == 0x58);
+const _: () = assert!(core::mem::offset_of!(hkbNode, field_5C) == 0x5C);
+const _: () = assert!(core::mem::offset_of!(hkbNode, field_60) == 0x60);
+const _: () = assert!(core::mem::offset_of!(hkbNode, field_64) == 0x64);
+const _: () = assert!(core::mem::offset_of!(hkbNode, field_68) == 0x68);
+const _: () = assert!(core::mem::offset_of!(hkbNode, field_6C) == 0x6C);
+const _: () = assert!(core::mem::offset_of!(hkbNode, field_70) == 0x70);
+const _: () = assert!(core::mem::offset_of!(hkbNode, field_74) == 0x74);
+const _: () = assert!(core::mem::offset_of!(hkbNode, field_78) == 0x78);
+const _: () = assert!(core::mem::offset_of!(hkbNode, field_7C) == 0x7C);
+const _: () = assert!(core::mem::offset_of!(hkbNode, field_80) == 0x80);
+const _: () = assert!(core::mem::offset_of!(hkbNode, field_84) == 0x84);
+const _: () = assert!(core::mem::offset_of!(hkbNode, field_88) == 0x88);
+const _: () = assert!(core::mem::offset_of!(hkbNode, field_8C) == 0x8C);
+const _: () = assert!(core::mem::offset_of!(hkbNode, field_90) == 0x90);
+const _: () = assert!(core::mem::offset_of!(hkbNode, field_94) == 0x94);
+const _: () = assert!(core::mem::offset_of!(hkbNode, field_98) == 0x98);
+const _: () = assert!(core::mem::offset_of!(hkbNode, field_9C) == 0x9C);
+const _: () = assert!(core::mem::offset_of!(hkbNode, field_A0) == 0xA0);
+const _: () = assert!(core::mem::offset_of!(hkbNode, field_A4) == 0xA4);
+const _: () = assert!(core::mem::offset_of!(hkbNode, field_A8) == 0xA8);
+const _: () = assert!(core::mem::offset_of!(hkbNode, field_B0) == 0xB0);
+const _: () = assert!(core::mem::offset_of!(hkbNode, field_B4) == 0xB4);
+const _: () = assert!(core::mem::offset_of!(hkbNode, field_B8) == 0xB8);
+const _: () = assert!(core::mem::offset_of!(hkbNode, field_C0) == 0xC0);
+const _: () = assert!(core::mem::offset_of!(hkbNode, field_C4) == 0xC4);
+const _: () = assert!(core::mem::offset_of!(hkbNode, field_108) == 0x108);
+const _: () = assert!(core::mem::offset_of!(hkbNode, field_110) == 0x110);
+const _: () = assert!(core::mem::offset_of!(hkbNode, field_114) == 0x114);
+
+/// `hkbNode::BoundVariablesCollector`: size >= 0x8 (lower bound); partial, the struct stops at the lower bound; primary base `hkbBindableCollector`.
+/// Evidence: vptr at 0x0.
+/// Bases: `hkbBindableCollector`@0x0.
+#[repr(C)]
+pub struct hkbNode__BoundVariablesCollector {
+    /// +0x0 `vtbl:hkbNode::BoundVariablesCollector:0`, rtti
+    #[doc(hidden)]
+    pub __vftable: *const crate::raw::vtables::hkbNode__BoundVariablesCollector_vtable,
+    #[doc(hidden)]
+    pub __engine: crate::Engine,
+}
+const _: () = assert!(core::mem::offset_of!(hkbNode__BoundVariablesCollector, __vftable) == 0x0);
+
+/// `hkbNodeInternalStateInfo`: size 0x78 (exact, high); primary base `hkReferencedObject`.
+/// Evidence: conflict, allocation size kept: allocation size 0x78 below lower bound 0x118 (base hkReferencedObject at 0x0).
+/// Bases: `hkReferencedObject`@0x0, `hkBaseObject`@0x0.
+#[repr(C)]
+pub struct hkbNodeInternalStateInfo {
+    /// +0x0 `vtbl:hkbNodeInternalStateInfo:0`, rtti
+    #[doc(hidden)]
+    pub __vftable: *const crate::raw::vtables::hkbNodeInternalStateInfo_vtable,
+    pub unknown_8: [u8; 8],
+    /// +0x10 `undefined8`, base hkBaseObject
+    pub m_hkpCollidableCollidableFilter_10: u64,
+    /// +0x18 `undefined8`, base hkBaseObject
+    pub m_hkpShapeCollectionFilter_18: u64,
+    /// +0x20 `undefined8`, base hkBaseObject
+    pub m_hkpRayShapeCollectionFilter_20: u64,
+    /// +0x28 `undefined8`, base hkBaseObject
+    pub m_hkpRayCollidableFilter_28: u64,
+    /// +0x30 `undefined4`, base hkBaseObject
+    pub field_30: u32,
+    /// +0x34 `undefined4`, base hkBaseObject
+    pub field_34: u32,
+    /// +0x38 `undefined4`, base hkBaseObject
+    pub field_38: u32,
+    /// +0x3C `undefined4`, base hkBaseObject
+    pub field_3C: u32,
+    /// +0x40 `undefined4`, base hkBaseObject
+    pub field_40: u32,
+    /// +0x44 `undefined4`, base hkBaseObject
+    pub field_44: u32,
+    /// +0x48 `undefined4`, base hkBaseObject
+    pub field_48: u32,
+    /// +0x4C `undefined4`, base hkBaseObject
+    pub field_4C: u32,
+    /// +0x50 `undefined4`, base hkBaseObject
+    pub field_50: u32,
+    /// +0x54 `undefined4`, base hkBaseObject
+    pub field_54: u32,
+    /// +0x58 `undefined4`, base hkBaseObject
+    pub field_58: u32,
+    /// +0x5C `undefined4`, base hkBaseObject
+    pub field_5C: u32,
+    /// +0x60 `undefined4`, base hkBaseObject
+    pub field_60: u32,
+    /// +0x64 `undefined4`, base hkBaseObject
+    pub field_64: u32,
+    /// +0x68 `undefined4`, base hkBaseObject
+    pub field_68: u32,
+    /// +0x6C `undefined4`, base hkBaseObject
+    pub field_6C: u32,
+    /// +0x70 `undefined4`, base hkBaseObject
+    pub field_70: u32,
+    /// +0x74 `undefined4`, base hkBaseObject
+    pub field_74: u32,
+    #[doc(hidden)]
+    pub __engine: crate::Engine,
+}
+const _: () = assert!(size_of::<hkbNodeInternalStateInfo>() == 0x78);
+const _: () = assert!(core::mem::offset_of!(hkbNodeInternalStateInfo, __vftable) == 0x0);
+const _: () = assert!(core::mem::offset_of!(hkbNodeInternalStateInfo, m_hkpCollidableCollidableFilter_10) == 0x10);
+const _: () = assert!(core::mem::offset_of!(hkbNodeInternalStateInfo, m_hkpShapeCollectionFilter_18) == 0x18);
+const _: () = assert!(core::mem::offset_of!(hkbNodeInternalStateInfo, m_hkpRayShapeCollectionFilter_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(hkbNodeInternalStateInfo, m_hkpRayCollidableFilter_28) == 0x28);
+const _: () = assert!(core::mem::offset_of!(hkbNodeInternalStateInfo, field_30) == 0x30);
+const _: () = assert!(core::mem::offset_of!(hkbNodeInternalStateInfo, field_34) == 0x34);
+const _: () = assert!(core::mem::offset_of!(hkbNodeInternalStateInfo, field_38) == 0x38);
+const _: () = assert!(core::mem::offset_of!(hkbNodeInternalStateInfo, field_3C) == 0x3C);
+const _: () = assert!(core::mem::offset_of!(hkbNodeInternalStateInfo, field_40) == 0x40);
+const _: () = assert!(core::mem::offset_of!(hkbNodeInternalStateInfo, field_44) == 0x44);
+const _: () = assert!(core::mem::offset_of!(hkbNodeInternalStateInfo, field_48) == 0x48);
+const _: () = assert!(core::mem::offset_of!(hkbNodeInternalStateInfo, field_4C) == 0x4C);
+const _: () = assert!(core::mem::offset_of!(hkbNodeInternalStateInfo, field_50) == 0x50);
+const _: () = assert!(core::mem::offset_of!(hkbNodeInternalStateInfo, field_54) == 0x54);
+const _: () = assert!(core::mem::offset_of!(hkbNodeInternalStateInfo, field_58) == 0x58);
+const _: () = assert!(core::mem::offset_of!(hkbNodeInternalStateInfo, field_5C) == 0x5C);
+const _: () = assert!(core::mem::offset_of!(hkbNodeInternalStateInfo, field_60) == 0x60);
+const _: () = assert!(core::mem::offset_of!(hkbNodeInternalStateInfo, field_64) == 0x64);
+const _: () = assert!(core::mem::offset_of!(hkbNodeInternalStateInfo, field_68) == 0x68);
+const _: () = assert!(core::mem::offset_of!(hkbNodeInternalStateInfo, field_6C) == 0x6C);
+const _: () = assert!(core::mem::offset_of!(hkbNodeInternalStateInfo, field_70) == 0x70);
+const _: () = assert!(core::mem::offset_of!(hkbNodeInternalStateInfo, field_74) == 0x74);
+
+/// `hkbParticleSystemEventPayload`: size >= 0x118 (lower bound); partial, the struct stops at the lower bound; primary base `hkbEventPayload`.
+/// Evidence: field field_114.
+/// Bases: `hkbEventPayload`@0x0, `hkReferencedObject`@0x0, `hkBaseObject`@0x0.
+#[repr(C)]
+pub struct hkbParticleSystemEventPayload {
+    /// +0x0 `vtbl:hkbParticleSystemEventPayload:0`, rtti
+    #[doc(hidden)]
+    pub __vftable: *const crate::raw::vtables::hkbParticleSystemEventPayload_vtable,
+    pub unknown_8: [u8; 8],
+    /// +0x10 `undefined8`, base hkBaseObject
+    pub m_hkpCollidableCollidableFilter_10: u64,
+    /// +0x18 `undefined8`, base hkBaseObject
+    pub m_hkpShapeCollectionFilter_18: u64,
+    /// +0x20 `undefined8`, base hkBaseObject
+    pub m_hkpRayShapeCollectionFilter_20: u64,
+    /// +0x28 `undefined8`, base hkBaseObject
+    pub m_hkpRayCollidableFilter_28: u64,
+    /// +0x30 `undefined4`, base hkBaseObject
+    pub field_30: u32,
+    /// +0x34 `undefined4`, base hkBaseObject
+    pub field_34: u32,
+    /// +0x38 `undefined4`, base hkBaseObject
+    pub field_38: u32,
+    /// +0x3C `undefined4`, base hkBaseObject
+    pub field_3C: u32,
+    /// +0x40 `undefined4`, base hkBaseObject
+    pub field_40: u32,
+    /// +0x44 `undefined4`, base hkBaseObject
+    pub field_44: u32,
+    /// +0x48 `undefined4`, base hkBaseObject
+    pub field_48: u32,
+    /// +0x4C `undefined4`, base hkBaseObject
+    pub field_4C: u32,
+    /// +0x50 `undefined4`, base hkBaseObject
+    pub field_50: u32,
+    /// +0x54 `undefined4`, base hkBaseObject
+    pub field_54: u32,
+    /// +0x58 `undefined4`, base hkBaseObject
+    pub field_58: u32,
+    /// +0x5C `undefined4`, base hkBaseObject
+    pub field_5C: u32,
+    /// +0x60 `undefined4`, base hkBaseObject
+    pub field_60: u32,
+    /// +0x64 `undefined4`, base hkBaseObject
+    pub field_64: u32,
+    /// +0x68 `undefined4`, base hkBaseObject
+    pub field_68: u32,
+    /// +0x6C `undefined4`, base hkBaseObject
+    pub field_6C: u32,
+    /// +0x70 `undefined4`, base hkBaseObject
+    pub field_70: u32,
+    /// +0x74 `undefined4`, base hkBaseObject
+    pub field_74: u32,
+    /// +0x78 `undefined4`, base hkBaseObject
+    pub field_78: u32,
+    /// +0x7C `undefined4`, base hkBaseObject
+    pub field_7C: u32,
+    /// +0x80 `undefined4`, base hkBaseObject
+    pub field_80: u32,
+    /// +0x84 `undefined4`, base hkBaseObject
+    pub field_84: u32,
+    /// +0x88 `undefined4`, base hkBaseObject
+    pub field_88: u32,
+    /// +0x8C `undefined4`, base hkBaseObject
+    pub field_8C: u32,
+    /// +0x90 `undefined4`, base hkBaseObject
+    pub field_90: u32,
+    /// +0x94 `undefined4`, base hkBaseObject
+    pub field_94: u32,
+    /// +0x98 `undefined4`, base hkBaseObject
+    pub field_98: u32,
+    /// +0x9C `undefined4`, base hkBaseObject
+    pub field_9C: u32,
+    /// +0xA0 `undefined4`, base hkBaseObject
+    pub field_A0: u32,
+    /// +0xA4 `undefined4`, base hkBaseObject
+    pub field_A4: u32,
+    /// +0xA8 `undefined8`, base hkBaseObject
+    pub field_A8: u64,
+    /// +0xB0 `undefined4`, base hkBaseObject
+    pub field_B0: u32,
+    /// +0xB4 `undefined4`, base hkBaseObject
+    pub field_B4: u32,
+    /// +0xB8 `undefined8`, base hkBaseObject
+    pub field_B8: u64,
+    /// +0xC0 `undefined4`, base hkBaseObject
+    pub field_C0: u32,
+    /// +0xC4 `undefined4`, base hkBaseObject
+    pub field_C4: u32,
+    pub unknown_C8: [u8; 64],
+    /// +0x108 `undefined8`, base hkBaseObject
+    pub field_108: u64,
+    /// +0x110 `undefined4`, base hkBaseObject
+    pub field_110: u32,
+    /// +0x114 `undefined4`, base hkBaseObject
+    pub field_114: u32,
+    #[doc(hidden)]
+    pub __engine: crate::Engine,
+}
+const _: () = assert!(core::mem::offset_of!(hkbParticleSystemEventPayload, __vftable) == 0x0);
+const _: () = assert!(core::mem::offset_of!(hkbParticleSystemEventPayload, m_hkpCollidableCollidableFilter_10) == 0x10);
+const _: () = assert!(core::mem::offset_of!(hkbParticleSystemEventPayload, m_hkpShapeCollectionFilter_18) == 0x18);
+const _: () = assert!(core::mem::offset_of!(hkbParticleSystemEventPayload, m_hkpRayShapeCollectionFilter_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(hkbParticleSystemEventPayload, m_hkpRayCollidableFilter_28) == 0x28);
+const _: () = assert!(core::mem::offset_of!(hkbParticleSystemEventPayload, field_30) == 0x30);
+const _: () = assert!(core::mem::offset_of!(hkbParticleSystemEventPayload, field_34) == 0x34);
+const _: () = assert!(core::mem::offset_of!(hkbParticleSystemEventPayload, field_38) == 0x38);
+const _: () = assert!(core::mem::offset_of!(hkbParticleSystemEventPayload, field_3C) == 0x3C);
+const _: () = assert!(core::mem::offset_of!(hkbParticleSystemEventPayload, field_40) == 0x40);
+const _: () = assert!(core::mem::offset_of!(hkbParticleSystemEventPayload, field_44) == 0x44);
+const _: () = assert!(core::mem::offset_of!(hkbParticleSystemEventPayload, field_48) == 0x48);
+const _: () = assert!(core::mem::offset_of!(hkbParticleSystemEventPayload, field_4C) == 0x4C);
+const _: () = assert!(core::mem::offset_of!(hkbParticleSystemEventPayload, field_50) == 0x50);
+const _: () = assert!(core::mem::offset_of!(hkbParticleSystemEventPayload, field_54) == 0x54);
+const _: () = assert!(core::mem::offset_of!(hkbParticleSystemEventPayload, field_58) == 0x58);
+const _: () = assert!(core::mem::offset_of!(hkbParticleSystemEventPayload, field_5C) == 0x5C);
+const _: () = assert!(core::mem::offset_of!(hkbParticleSystemEventPayload, field_60) == 0x60);
+const _: () = assert!(core::mem::offset_of!(hkbParticleSystemEventPayload, field_64) == 0x64);
+const _: () = assert!(core::mem::offset_of!(hkbParticleSystemEventPayload, field_68) == 0x68);
+const _: () = assert!(core::mem::offset_of!(hkbParticleSystemEventPayload, field_6C) == 0x6C);
+const _: () = assert!(core::mem::offset_of!(hkbParticleSystemEventPayload, field_70) == 0x70);
+const _: () = assert!(core::mem::offset_of!(hkbParticleSystemEventPayload, field_74) == 0x74);
+const _: () = assert!(core::mem::offset_of!(hkbParticleSystemEventPayload, field_78) == 0x78);
+const _: () = assert!(core::mem::offset_of!(hkbParticleSystemEventPayload, field_7C) == 0x7C);
+const _: () = assert!(core::mem::offset_of!(hkbParticleSystemEventPayload, field_80) == 0x80);
+const _: () = assert!(core::mem::offset_of!(hkbParticleSystemEventPayload, field_84) == 0x84);
+const _: () = assert!(core::mem::offset_of!(hkbParticleSystemEventPayload, field_88) == 0x88);
+const _: () = assert!(core::mem::offset_of!(hkbParticleSystemEventPayload, field_8C) == 0x8C);
+const _: () = assert!(core::mem::offset_of!(hkbParticleSystemEventPayload, field_90) == 0x90);
+const _: () = assert!(core::mem::offset_of!(hkbParticleSystemEventPayload, field_94) == 0x94);
+const _: () = assert!(core::mem::offset_of!(hkbParticleSystemEventPayload, field_98) == 0x98);
+const _: () = assert!(core::mem::offset_of!(hkbParticleSystemEventPayload, field_9C) == 0x9C);
+const _: () = assert!(core::mem::offset_of!(hkbParticleSystemEventPayload, field_A0) == 0xA0);
+const _: () = assert!(core::mem::offset_of!(hkbParticleSystemEventPayload, field_A4) == 0xA4);
+const _: () = assert!(core::mem::offset_of!(hkbParticleSystemEventPayload, field_A8) == 0xA8);
+const _: () = assert!(core::mem::offset_of!(hkbParticleSystemEventPayload, field_B0) == 0xB0);
+const _: () = assert!(core::mem::offset_of!(hkbParticleSystemEventPayload, field_B4) == 0xB4);
+const _: () = assert!(core::mem::offset_of!(hkbParticleSystemEventPayload, field_B8) == 0xB8);
+const _: () = assert!(core::mem::offset_of!(hkbParticleSystemEventPayload, field_C0) == 0xC0);
+const _: () = assert!(core::mem::offset_of!(hkbParticleSystemEventPayload, field_C4) == 0xC4);
+const _: () = assert!(core::mem::offset_of!(hkbParticleSystemEventPayload, field_108) == 0x108);
+const _: () = assert!(core::mem::offset_of!(hkbParticleSystemEventPayload, field_110) == 0x110);
+const _: () = assert!(core::mem::offset_of!(hkbParticleSystemEventPayload, field_114) == 0x114);
 

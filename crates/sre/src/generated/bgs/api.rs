@@ -2397,9 +2397,6 @@ impl crate::BGSWaterCollisionManager__bshkAutoWater {
 /// `g_BGSAnimSoundStateManager` at 0x3231550, id 403608 (layout_inference, medium)
 #[inline]
 pub fn g_bgs_anim_sound_state_manager() -> *mut c_void { address!(403608) as *mut c_void }
-/// `g_BGSFootIkRaycastInterfaceDB` at 0x32047e0, id 402609 (layout_inference, medium)
-#[inline]
-pub fn g_bgs_foot_ik_raycast_interface_db() -> *mut c_void { address!(402609) as *mut c_void }
 /// `g_BGSGamebryoSequenceGeneratorHolderSingleton_ptr` at 0x3204668, id 402595 (xref_inference, medium)
 #[inline]
 pub fn g_bgs_gamebryo_sequence_generator_holder_singleton_ptr() -> *mut c_void { address!(402595) as *mut c_void }

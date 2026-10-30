@@ -7487,7 +7487,7 @@ pub(super) const ROWS: &[Function] = &[
     Function { rva: 0x54a820, id: 32737, confidence: Confidence::Medium, name: "ReleaseGlobal401101" },
     Function { rva: 0x54aba0, id: 32740, confidence: Confidence::Medium, name: "ClearByte30WhereByte2EIsZero" },
     Function { rva: 0x54abe0, id: 32741, confidence: Confidence::Medium, name: "FindEntryByRefHandle" },
-    Function { rva: 0x54ac90, id: 32742, confidence: Confidence::Medium, name: "BGSFootIkRaycastInterfaceDB::GetRaycastData" },
+    Function { rva: 0x54ac90, id: 32742, confidence: Confidence::Medium, name: "BGSFootIkRaycastInterfaceDB::GetRaycastInterface" },
     Function { rva: 0x54aef0, id: 32743, confidence: Confidence::High, name: "BGSFootIkRaycastInterfaceDB::vfunc_2" },
     Function { rva: 0x54af00, id: 32744, confidence: Confidence::High, name: "CachedRaycastData::CastRay" },
     Function { rva: 0x54b1e0, id: 32745, confidence: Confidence::High, name: "CachedRaycastData::vfunc_1" },

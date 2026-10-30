@@ -5223,6 +5223,12 @@ impl core::ops::Deref for crate::_void___cdecl_BSResource__RegisterPrefix_char_c
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
+/// `ahkpCharacterProxy` is laid out from its primary base `hkpCharacterProxy`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::ahkpCharacterProxy {
+    type Target = crate::hkpCharacterProxy;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
 /// `ahkpCharacterRigidBody` is laid out from its primary base `hkpCharacterRigidBody`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::ahkpCharacterRigidBody {
     type Target = crate::hkpCharacterRigidBody;
@@ -5283,12 +5289,6 @@ impl crate::ActorMediator {
     /// `bool (ActorMediator* this, TESActionData* action)`
     #[inline]
     pub fn check_action_rules(&self, action: &crate::TESActionData) -> bool { unsafe { function!(39002, (*const Self, *const crate::TESActionData) -> bool)(core::ptr::from_ref(self), core::ptr::from_ref(action)) } }
-    /// `ActorMediator::PerformAction`: runs the engine's action rules (0x6e1ca0), selects an idle when the action has no event yet (0x66f700; result +0x38 = -1 when none), sends the event to the actor's graph (0x7d7ac0), applies the action's side effects (0x6e2250); returns acceptance
-    ///
-    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 38949, rva 0x6dfbc0.
-    /// `bool (ActorMediator* this, TESActionData* action)`
-    #[inline]
-    pub fn perform_action(&self, action: &crate::TESActionData) -> bool { unsafe { function!(38949, (*const Self, *const crate::TESActionData) -> bool)(core::ptr::from_ref(self), core::ptr::from_ref(action)) } }
     /// `ActorMediator::SelectIdleForAction`: if the action has no event yet (+0x28 empty), resolves an idle from the action's idle tree (ID_400451, conditions evaluated); none: result +0x38 = -1, false
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 37147, rva 0x66f700.
@@ -6173,15 +6173,6 @@ impl crate::ZeroPitchHandler {
     /// `bool (ZeroPitchHandler* this, Actor* actor)`
     #[inline]
     pub fn handle(&self, actor: &crate::Actor) -> bool { unsafe { function!(42901, (*const Self, *const crate::Actor) -> bool)(core::ptr::from_ref(self), core::ptr::from_ref(actor)) } }
-}
-
-impl crate::ahkpCharacterProxy {
-    /// The `hkpEntityListener` base at +0x10.
-    #[inline]
-    pub fn as_hkp_entity_listener(&self) -> &crate::hkpEntityListener { unsafe { &*core::ptr::from_ref(self).byte_add(0x10).cast() } }
-    /// The `hkpPhantomListener` base at +0x18.
-    #[inline]
-    pub fn as_hkp_phantom_listener(&self) -> &crate::hkpPhantomListener { unsafe { &*core::ptr::from_ref(self).byte_add(0x18).cast() } }
 }
 
 /// `RegSetting_sBasePath` at 0x20b6158, id 381024 (setting, high)

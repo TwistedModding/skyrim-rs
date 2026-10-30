@@ -45,9 +45,33 @@ impl core::ops::Deref for crate::NiSkinPartition {
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
+/// `hkaSkeleton` is laid out from its primary base `hkReferencedObject`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::hkaSkeleton {
+    type Target = crate::hkReferencedObject;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
 /// `hkbBehaviorGraph` is laid out from its primary base `hkbGenerator`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::hkbBehaviorGraph {
     type Target = crate::hkbGenerator;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `hkbCharacter` is laid out from its primary base `hkReferencedObject`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::hkbCharacter {
+    type Target = crate::hkReferencedObject;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `hkbRagdollDriver` is laid out from its primary base `hkReferencedObject`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::hkbRagdollDriver {
+    type Target = crate::hkReferencedObject;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `hkbVariableValueSet` is laid out from its primary base `hkReferencedObject`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::hkbVariableValueSet {
+    type Target = crate::hkReferencedObject;
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
@@ -98,6 +122,15 @@ impl crate::BSAnimationGraphManager {
     /// `bool (BSAnimationGraphManager* this, uint index)`
     #[inline]
     pub fn set_active_graph(&self, index: u32) -> bool { unsafe { function!(63363, (*const Self, u32) -> bool)(core::ptr::from_ref(self), index) } }
+    /// `BSAnimationGraphManager::SetGraph0FootIkDisabled`: under the manager spin lock +0xa0, finds the first graph entry passing the type check (0xbd2ff0 vs *0x326fb50) and calls SetDisabled(graph+0x100, **disabled) on it, then stops: only graph 0 is touched
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 40846, rva 0x765350.
+    /// `void (BSAnimationGraphManager* this, bool** disabled)`
+    ///
+    /// # Safety
+    /// `disabled` must point to what the engine expects.
+    #[inline]
+    pub unsafe fn set_graph0_foot_ik_disabled(&self, disabled: *mut *mut bool) { unsafe { function!(40846, (*const Self, *mut *mut bool))(core::ptr::from_ref(self), disabled) } }
     /// `BSAnimationGraphManager::Update`: per frame: update channels, push channel values into each graph (0xbcf570), Update every graph (events collected from the active one), unlock, send the collected events through every graph that has sinks (0xbcf360), then write poses inline (0xbcf480 per graph) or hand the manager to the queue ID_409516 and release its semaphore
     ///
     /// Semantic, animation pass, high; ledger semantic evidence, name high; id 63358, rva 0xbc0680.
@@ -107,6 +140,15 @@ impl crate::BSAnimationGraphManager {
     /// `data` must point to what the engine expects.
     #[inline]
     pub unsafe fn update(&self, data: *mut c_void) { unsafe { function!(63358, (*const Self, *mut c_void))(core::ptr::from_ref(self), data) } }
+    /// `BSAnimationGraphManager::UpdateActiveGraphFootIk`: under the manager spin lock +0xa0, calls UpdateActiveGraphFootIkSwitch for the active graph (+0xb0) only
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 43692, rva 0x7dd8c0.
+    /// `void (BSAnimationGraphManager* this, FootIkFeedback** out)`
+    ///
+    /// # Safety
+    /// `out` must point to what the engine expects.
+    #[inline]
+    pub unsafe fn update_active_graph_foot_ik(&self, out: *mut *mut c_void) { unsafe { function!(43692, (*const Self, *mut *mut c_void))(core::ptr::from_ref(self), out) } }
 }
 
 impl crate::BSDismemberSkinInstance {
@@ -226,15 +268,12 @@ impl crate::BShkbAnimationGraph {
     /// `ctx`, `eventsOut` must point to what the engine expects.
     #[inline]
     pub unsafe fn collect_graph_events(&self, ctx: *mut c_void, eventsOut: *mut c_void) { unsafe { function!(63583, (*const Self, *mut c_void, *mut c_void))(core::ptr::from_ref(self), ctx, eventsOut) } }
-    /// `BShkbAnimationGraph::FinalizePose`: blends current/previous outputs when interpolating, runs the foot IK controller under the world read lock and copies the result into the character pose buffer
+    /// `BShkbAnimationGraph::FinalizePose`: interpolation and foot IK, then the copy into hkbCharacter.poseLocal; foot IK runs only when graph+0x249 (doFootIK) is set, INI bFootIK:Animation is on, root node +0x218 is set, the character setup has foot IK info and a driver (+0x100) exists; otherwise it calls ReleaseEntryObjectsAndReset on the driver. Holds the bhkWorld read lock around the driver run
     ///
-    /// Semantic, animation pass, medium; ledger semantic evidence, name medium; id 63581, rva 0xbcc7e0.
+    /// Semantic, animation pass, high; ledger semantic evidence, name high; id 63581, rva 0xbcc7e0.
     /// `void (BShkbAnimationGraph* this, u16 boneCount)`
-    ///
-    /// # Safety
-    /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn finalize_pose(&self, boneCount: u16) { unsafe { function!(63581, (*const Self, u16))(core::ptr::from_ref(self), boneCount) } }
+    pub fn finalize_pose(&self, boneCount: u16) { unsafe { function!(63581, (*const Self, u16))(core::ptr::from_ref(self), boneCount) } }
     /// `BShkbAnimationGraph::Generate`: hkbBehaviorGraph::generate into +0x220, pose listeners, foot IK, then the bone write
     ///
     /// Semantic, animation pass, high; ledger semantic evidence, name high; id 63568, rva 0xbcb290.
@@ -332,14 +371,14 @@ impl crate::BShkbAnimationGraph {
     /// May be null: `root`.
     #[inline]
     pub fn set_root_node(&self, root: Option<&crate::NiNode>) { unsafe { function!(63596, (*const Self, *const crate::NiNode))(core::ptr::from_ref(self), root.map_or(core::ptr::null(), core::ptr::from_ref)) } }
-    /// `BShkbAnimationGraph::Update`: advances the behaviour graph for the frame and collects its events into eventsOut when non-null
+    /// `BShkbAnimationGraph::Update`: per-graph update; writes the doFootIK byte +0x249 twice: first = data+0x2e, at the end = data+0x2e && all bones generated (ComputeBoneLODCount out flag) when bFootIK:Animation, foot IK info and driver and root node exist; also sets the driver's +0x4c to the frame delta (SetField4C 0xad4280)
     ///
-    /// Semantic, animation pass, medium; ledger semantic evidence, name medium; id 63587, rva 0xbcedb0.
-    /// `void (BShkbAnimationGraph* this, BSAnimationUpdateData* data, BSScrapArray<GraphEventPair>* eventsOut)`
+    /// Semantic, animation pass, high; ledger semantic evidence, name high; id 63587, rva 0xbcedb0.
+    /// `void (BShkbAnimationGraph* this, BSAnimationUpdateData* data, void* eventsOut)`
     /// May be null: `eventsOut`.
     ///
     /// # Safety
-    /// The pass rates the signature medium.
+    /// `data`, `eventsOut` must point to what the engine expects.
     #[inline]
     pub unsafe fn update(&self, data: *mut c_void, eventsOut: *mut c_void) { unsafe { function!(63587, (*const Self, *mut c_void, *mut c_void))(core::ptr::from_ref(self), data, eventsOut) } }
     /// `BShkbAnimationGraph::WritePoseToNodes`: writes the generated pose into the bone nodes: foot IK step then ApplyQuaternionTransformsToNodes(character pose, boneNodes +0x160, boneCount +0x240); GenerateBehaviorGraphPose instead when +0x246
@@ -1114,7 +1153,7 @@ pub fn g_job_list_serving_thread() -> &'static crate::JobListManager__ServingThr
 /// `g_MainLoopSteps` at 0x20b4f00, id 380514 (semantic, medium); named main loop job steps ('Process lists' 0x20b4f00 .. 'Post reset' 0x20b51a0), 16-byte entries (medium, animation pass), type `struct {fn, const char* name}[]`
 #[inline]
 pub fn g_main_loop_steps() -> *mut c_void { address!(380514) as *mut c_void }
-/// `g_ProcessLists_ptr` at 0x219e570, id 400315 (semantic, medium); process lists; +0x30/+0x40 high actor handles, +0x1e6 run-animations flag (medium, animation pass), type `pointer`
+/// `g_ProcessLists_ptr` at 0x219e570, id 400315 (semantic, high); process lists singleton (points at the static 0x3241730) (high, animation pass), type `pointer`
 #[inline]
 pub fn g_process_lists_ptr() -> *mut *mut c_void { address!(400315) as *mut *mut c_void }
 /// `g_strIsAttacking` at 0x3252908, id 404830 (semantic, high); interned 'IsAttacking' built at static init (0xac720) (high, animation pass), type `class:BSFixedString`

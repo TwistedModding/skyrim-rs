@@ -168,58 +168,6 @@ impl crate::bhkCartTether {
     pub unsafe fn ctor(&self) -> u64 { unsafe { function!(25736, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
-impl crate::bhkCharProxyController {
-    /// `bhkCharProxyController::bhkCharacterController_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 79160, rva 0x109940c).
-    /// `undefined bhkCharacterController_vdtor(bhkCharProxyController * this)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn bhk_character_controller_vdtor(&self) -> u64 { unsafe { function!(79160, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
-    /// `bhkCharProxyController::bhkCharacterController_vfunc_11` (decompiler signature, tier high; ledger rtti evidence, name high; id 79149, rva 0x1098c90).
-    /// `undefined8 bhkCharacterController_vfunc_11(bhkCharProxyController * this)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn bhk_character_controller_vfunc_11(&self) -> u64 { unsafe { function!(79149, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
-    /// `bhkCharProxyController::bhkCharacterController_vfunc_12` (decompiler signature, tier high; ledger rtti evidence, name high; id 79150, rva 0x1098e20).
-    /// `undefined bhkCharacterController_vfunc_12(bhkCharProxyController * this)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn bhk_character_controller_vfunc_12(&self) -> u64 { unsafe { function!(79150, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
-    /// `bhkCharProxyController::bhkCharacterController_vfunc_13` (decompiler signature, tier high; ledger rtti evidence, name high; id 79151, rva 0x1098e90).
-    /// `undefined bhkCharacterController_vfunc_13(bhkCharProxyController * this)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn bhk_character_controller_vfunc_13(&self) -> u64 { unsafe { function!(79151, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
-    /// `bhkCharProxyController::bhkCharacterController_vfunc_15` (decompiler signature, tier high; ledger rtti evidence, name high; id 79139, rva 0x10987c0).
-    /// `undefined8 bhkCharacterController_vfunc_15(bhkCharProxyController * this)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn bhk_character_controller_vfunc_15(&self) -> u64 { unsafe { function!(79139, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
-    /// `bhkCharProxyController::bhkCharacterController_vfunc_16` (decompiler signature, tier high; ledger rtti evidence, name high; id 79137, rva 0x1098710).
-    /// `undefined8 bhkCharacterController_vfunc_16(bhkCharProxyController * this)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn bhk_character_controller_vfunc_16(&self) -> u64 { unsafe { function!(79137, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
-    /// `bhkCharProxyController::bhkCharacterController_vfunc_19` (decompiler signature, tier high; ledger rtti evidence, name high; id 79154, rva 0x10991e0).
-    /// `undefined bhkCharacterController_vfunc_19(bhkCharProxyController * this)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn bhk_character_controller_vfunc_19(&self) -> u64 { unsafe { function!(79154, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
-}
-
 impl crate::bhkCharProxyControllerCinfo {
     /// `bhkCharProxyControllerCinfo::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 79121, rva 0x10970a0).
     /// `bhkCharProxyControllerCinfo * ctor(bhkCharProxyControllerCinfo * this)`
@@ -237,16 +185,6 @@ impl crate::bhkCharProxyControllerCinfo {
     pub unsafe fn dtor(&self) -> u64 { unsafe { function!(79122, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
-impl crate::bhkCharRigidBodyController {
-    /// `bhkCharRigidBodyController::hkpCharacterRigidBodyListener_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 79211, rva 0x109c0ec).
-    /// `undefined hkpCharacterRigidBodyListener_vdtor(bhkCharRigidBodyController * this)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn hkp_character_rigid_body_listener_vdtor(&self) -> u64 { unsafe { function!(79211, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x330)) } }
-}
-
 impl crate::bhkCharRigidBodyControllerCinfo {
     /// `bhkCharRigidBodyControllerCinfo::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 79176, rva 0x10998c0).
     /// `bhkCharRigidBodyControllerCinfo * ctor(bhkCharRigidBodyControllerCinfo * this)`
@@ -262,16 +200,6 @@ impl crate::bhkCharRigidBodyControllerCinfo {
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
     pub unsafe fn dtor(&self) -> u64 { unsafe { function!(79177, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
-}
-
-impl crate::bhkCharacterController {
-    /// `bhkCharacterController::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 78258, rva 0x1063c10).
-    /// `undefined dtor(bhkCharacterController * this)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(78258, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::bhkCharacterControllerCinfo {
@@ -3902,23 +3830,6 @@ impl crate::hkpCharacterContext {
     pub unsafe fn dtor(&self) -> u64 { unsafe { function!(62426, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
-impl crate::hkpCharacterProxy {
-    /// `hkpCharacterProxy::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 62628, rva 0xb9cae0).
-    /// `hkpCharacterProxy * ctor(hkpCharacterProxy * this)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(62628, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
-    /// `hkpCharacterProxy::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 62629, rva 0xb9cb80).
-    /// `undefined dtor(hkpCharacterProxy * this)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(62629, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
-}
-
 impl crate::hkpCharacterProxyListener {
     /// `hkpCharacterProxyListener::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 79159, rva 0x1099400).
     /// `undefined dtor(hkpCharacterProxyListener * this)`
@@ -4262,16 +4173,6 @@ impl crate::hkpConvexListShape {
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
     pub unsafe fn hkp_shape_container_vfunc_1(&self) -> u32 { unsafe { function!(60756, (*const Self) -> u32)(core::ptr::from_ref(self).byte_add(0x28)) } }
-}
-
-impl crate::hkpConvexVerticesShape {
-    /// `hkpConvexVerticesShape::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 65092, rva 0xc3ab10).
-    /// `undefined dtor(hkpConvexVerticesShape * this)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(65092, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::hkpDashpotAction {
@@ -4652,37 +4553,6 @@ impl crate::hkpLinearParametricCurve {
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
     pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(61902, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
-}
-
-impl crate::hkpListShape {
-    /// `hkpListShape::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 60644, rva 0xb40100).
-    /// `undefined dtor(hkpListShape * this)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(60644, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
-    /// `hkpListShape::hkpShapeContainer_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 60659, rva 0xb40b1c).
-    /// `undefined hkpShapeContainer_vdtor(hkpListShape * this)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn hkp_shape_container_vdtor(&self) -> u64 { unsafe { function!(60659, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x20)) } }
-    /// `hkpListShape::hkpShapeContainer_vfunc_1` (decompiler signature, tier high; ledger rtti evidence, name high; id 60663, rva 0xb40c30).
-    /// `int hkpShapeContainer_vfunc_1(hkpListShape * this)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn hkp_shape_container_vfunc_1(&self) -> i32 { unsafe { function!(60663, (*const Self) -> i32)(core::ptr::from_ref(self).byte_add(0x20)) } }
-    /// `hkpListShape::hkpShapeContainer_vfunc_2` (decompiler signature, tier high; ledger rtti evidence, name high; id 60661, rva 0xb40bb0).
-    /// `ulonglong hkpShapeContainer_vfunc_2(hkpListShape * this)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn hkp_shape_container_vfunc_2(&self) -> u64 { unsafe { function!(60661, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x20)) } }
 }
 
 impl crate::hkpMalleableConstraintData {

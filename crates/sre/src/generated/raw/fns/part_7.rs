@@ -3,6 +3,32 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextDodgeThreat>::vfunc_3` at 0x87f380 (rtti, medium); signature (low): `undefined vfunc_3(CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextDodgeThreat> * this, longlong * param_1)`
+pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextDodgeThreat__vfunc_3: u64 = 47817;
+/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextDodgeThreat>::vfunc_6` at 0x87f800 (rtti, medium); signature (low): `undefined vfunc_6(void)`
+pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextDodgeThreat__vfunc_6: u64 = 47824;
+/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextDodgeThreat>::vfunc_7` at 0x87f730 (rtti, medium); signature (low): `undefined vfunc_7(CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextDodgeThreat> * this, undefined8 * param_1, undefined8 param_2, undefined8 param_3)`
+pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextDodgeThreat__vfunc_7: u64 = 47822;
+/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextDodgeThreat>::vfunc_8` at 0x87f8d0 (rtti, medium); signature (low): `bool vfunc_8(CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextDodgeThreat> * this, longlong param_1)`
+pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextDodgeThreat__vfunc_8: u64 = 47828;
+/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextDodgeThreat>::vfunc_9` at 0x87f610 (rtti, medium); signature (low): `undefined * vfunc_9(void)`
+pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextDodgeThreat__vfunc_9: u64 = 47820;
+/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextFindAttackLocation>::vdtor` at 0x891ee0 (slot_propagation, medium); signature (low): `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextFindAttackLocation> * vdtor(CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextFindAttackLocation> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextFindAttackLocation__vdtor: u64 = 48214;
+/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextFindAttackLocation>::vfunc_3` at 0x8925d0 (rtti, medium); signature (low): `undefined vfunc_3(CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextFindAttackLocation> * this, longlong * param_1)`
+pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextFindAttackLocation__vfunc_3: u64 = 48234;
+/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextFindAttackLocation>::vfunc_6` at 0x893160 (rtti, medium); signature (low): `undefined vfunc_6(void)`
+pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextFindAttackLocation__vfunc_6: u64 = 48255;
+/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextFindAttackLocation>::vfunc_7` at 0x892c40 (rtti, medium); signature (low): `undefined vfunc_7(CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextFindAttackLocation> * this, undefined8 * param_1, undefined8 param_2, undefined8 param_3)`
+pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextFindAttackLocation__vfunc_7: u64 = 48247;
+/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextFindAttackLocation>::vfunc_8` at 0x893420 (rtti, medium); signature (low): `bool vfunc_8(CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextFindAttackLocation> * this, longlong param_1)`
+pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextFindAttackLocation__vfunc_8: u64 = 48264;
+/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextFindAttackLocation>::vfunc_9` at 0x892970 (rtti, medium); signature (low): `undefined * vfunc_9(void)`
+pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextFindAttackLocation__vfunc_9: u64 = 48242;
+/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextFlankingMovement>::vdtor` at 0x89cad0 (slot_propagation, medium); signature (low): `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextFlankingMovement> * vdtor(CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextFlankingMovement> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextFlankingMovement__vdtor: u64 = 48448;
+/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextFlankingMovement>::vfunc_3` at 0x89d110 (rtti, medium); signature (low): `undefined vfunc_3(CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextFlankingMovement> * this, longlong * param_1)`
+pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextFlankingMovement__vfunc_3: u64 = 48471;
 /// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextFlankingMovement>::vfunc_6` at 0x89e680 (rtti, medium); signature (low): `undefined vfunc_6(CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextFlankingMovement> * this, longlong * param_1, longlong param_2)`
 pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextFlankingMovement__vfunc_6: u64 = 48504;
 /// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextFlankingMovement>::vfunc_7` at 0x89de90 (rtti, medium); signature (low): `undefined vfunc_7(CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextFlankingMovement> * this, longlong * param_1, longlong param_2, undefined8 param_3)`
@@ -5679,43 +5705,3 @@ pub const CompareActorHandlesByDistanceToPlayer: u64 = 41403;
 pub const CompareByByteFieldDEDescending: u64 = 12745;
 /// `CompareByDistanceAndFacingWeight` at 0x5e50c0 (decompiler, medium); signature (medium): `undefined8 CompareByDistanceAndFacingWeight(float * param_1, float * param_2)`
 pub const CompareByDistanceAndFacingWeight: u64 = 35011;
-/// `CompareByField37ThenVfuncString` at 0x3f0690 (decompiler, medium); signature (medium): `int CompareByField37ThenVfuncString(longlong * param_1, longlong * param_2)`
-pub const CompareByField37ThenVfuncString: u64 = 25564;
-/// `CompareByField8Field9ThenVfunc20` at 0x397550 (decompiler, medium); signature (medium): `undefined8 CompareByField8Field9ThenVfunc20(longlong * param_1, longlong * param_2)`
-pub const CompareByField8Field9ThenVfunc20: u64 = 23820;
-/// `CompareByFloatField30` at 0x940190 (decompiler, medium); signature (medium): `int CompareByFloatField30(char * param_1, longlong * param_2, longlong * param_3)`
-pub const CompareByFloatField30: u64 = 51810;
-/// `CompareByIntField30` at 0x940200 (decompiler, medium); signature (medium): `int CompareByIntField30(char * param_1, longlong * param_2, longlong * param_3)`
-pub const CompareByIntField30: u64 = 51812;
-/// `CompareDistanceToRadius` at 0x2d47d0 (decompiler, high); signature (high): `ulonglong CompareDistanceToRadius(float * param_1, float * param_2, float param_3)`
-pub const CompareDistanceToRadius: u64 = 19353;
-/// `CompareDwordArraysEqual` at 0x18d880 (decompiler, medium); signature (medium): `char CompareDwordArraysEqual(longlong * param_1, longlong * param_2)`
-pub const CompareDwordArraysEqual: u64 = 12859;
-/// `CompareDwordArraysEqual_2` at 0x18d900 (decompiler, medium); signature (medium): `char CompareDwordArraysEqual_2(longlong * param_1, longlong * param_2)`
-pub const CompareDwordArraysEqual_2: u64 = 12860;
-/// `CompareEntriesByCastString` at 0x91f040 (decompiler, medium); signature (untiered): `uint CompareEntriesByCastString(undefined8 * param_1, undefined8 * param_2)`
-pub const CompareEntriesByCastString: u64 = 51341;
-/// `CompareEntriesByCastStringThenField50` at 0x91fa20 (decompiler, medium); signature (untiered): `uint CompareEntriesByCastStringThenField50(longlong * param_1, longlong * param_2)`
-pub const CompareEntriesByCastStringThenField50: u64 = 51353;
-/// `CompareEntriesByTypeThenSoulLevelOrString` at 0x91f0a0 (decompiler, medium); signature (untiered): `uint CompareEntriesByTypeThenSoulLevelOrString(longlong * param_1, longlong * param_2)`
-pub const CompareEntriesByTypeThenSoulLevelOrString: u64 = 51342;
-/// `CompareExchangeRefCountedPointer` at 0x151e20 (decompiler, medium); signature (medium): `undefined8 CompareExchangeRefCountedPointer(longlong * param_1, longlong * param_2, longlong * param_3)`
-pub const CompareExchangeRefCountedPointer: u64 = 11344;
-/// `CompareExchangeRefCountedPtrAt20` at 0x247c10 (decompiler, medium); signature (medium): `undefined8 CompareExchangeRefCountedPtrAt20(longlong param_1, longlong * param_2, longlong * param_3)`
-pub const CompareExchangeRefCountedPtrAt20: u64 = 16324;
-/// `CompareExchangeRefCountedPtrField20` at 0x5569c0 (decompiler, medium); signature (untiered): `undefined8 CompareExchangeRefCountedPtrField20(longlong param_1, longlong * param_2, longlong * param_3)`
-pub const CompareExchangeRefCountedPtrField20: u64 = 32981;
-/// `CompareExchangeRefPtrField20_2` at 0xfd5b20 (decompiler, medium); signature (medium): `undefined8 CompareExchangeRefPtrField20_2(longlong param_1, longlong * param_2, longlong * param_3)`
-pub const CompareExchangeRefPtrField20_2: u64 = 82481;
-/// `CompareExchangeRefPtrField20_3` at 0x25daa0 (decompiler, medium); signature (untiered): `undefined8 CompareExchangeRefPtrField20_3(longlong param_1, longlong * param_2, longlong * param_3)`
-pub const CompareExchangeRefPtrField20_3: u64 = 16900;
-/// `CompareField13CLess` at 0xba4430 (decompiler, high); signature (high): `undefined8 CompareField13CLess(undefined8 param_1, longlong param_2, longlong param_3)`
-pub const CompareField13CLess: u64 = 62712;
-/// `CompareFloatsByClassification` at 0xcc1ac0 (decompiler, medium); signature (medium): `undefined1 * CompareFloatsByClassification(undefined1 * param_1, float param_2, float param_3)`
-pub const CompareFloatsByClassification: u64 = 67515;
-/// `CompareFloatsByOperator` at 0x4a6eb0 (decompiler, high); signature (high): `undefined8 CompareFloatsByOperator(undefined4 param_1, float param_2, float param_3)`
-pub const CompareFloatsByOperator: u64 = 29891;
-/// `CompareFloatsDescending` at 0x82a1a0 (decompiler, high); signature (high): `undefined8 CompareFloatsDescending(float * param_1, float * param_2)`
-pub const CompareFloatsDescending: u64 = 44911;
-/// `CompareFormIDsByCastString` at 0x922160 (decompiler, medium); signature (untiered): `uint CompareFormIDsByCastString(int * param_1, int * param_2, undefined8 param_3, undefined8 param_4)`
-pub const CompareFormIDsByCastString: u64 = 51365;

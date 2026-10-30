@@ -1732,13 +1732,6 @@ pub unsafe fn papyrus__debug__player_move_to_and_wait(vm: *mut c_void, stackId: 
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn papyrus__debug__send_animation_event(vm: *mut c_void, stackId: u32, unused: *mut c_void, a0: *mut crate::TESObjectREFR, a1: *mut crate::BSFixedString) { unsafe { function!(55380, (*mut c_void, u32, *mut c_void, *mut crate::TESObjectREFR, *mut crate::BSFixedString))(vm, stackId, unused, a0, a1) } }
-/// `Papyrus::Debug::SetFootIK` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55381, rva 0xa1f670).
-/// `void SetFootIK(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, bool a0)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn papyrus__debug__set_foot_ik(vm: *mut c_void, stackId: u32, unused: *mut c_void, a0: u8) { unsafe { function!(55381, (*mut c_void, u32, *mut c_void, u8))(vm, stackId, unused, a0) } }
 /// `Papyrus::Debug::SetGodMode` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55382, rva 0xa1f680).
 /// `void SetGodMode(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, bool a0)`
 ///
@@ -13478,3 +13471,10 @@ pub unsafe fn resolve_handle_to_cached_ref_3(param_1: *mut u32, param_2: *mut i6
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn resolve_list_form_i_ds(param_1: i64, param_2: i64, param_3: *mut c_void, param_4: *mut c_void) -> u64 { unsafe { function!(14309, (i64, i64, *mut c_void, *mut c_void) -> u64)(param_1, param_2, param_3, param_4) } }
+/// `ResolveMastersForFileListD60` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 13746, rva 0x1be710).
+/// `undefined ResolveMastersForFileListD60(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn resolve_masters_for_file_list_d60(param_1: i64, param_2: u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(13746, (i64, u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }

@@ -1883,13 +1883,6 @@ impl crate::BSTAnimationGraphDataChannel_Actor_float_ActorTimeDeltaChannel {
 }
 
 impl crate::BSTAnimationGraphDataChannel_Actor_float_ActorTurnDeltaChannel {
-    /// `BSTAnimationGraphDataChannel<Actor,float,ActorTurnDeltaChannel>::vfunc_1_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 42773, rva 0x7c6be0).
-    /// `undefined vfunc_1_sub0(float * param_1, undefined8 param_2, char param_3, longlong param_4, float * param_5)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn vfunc_1_sub0(param_1: *mut f32, param_2: u64, param_3: c_char, param_4: i64, param_5: *mut f32) -> u64 { unsafe { function!(42773, (*mut f32, u64, c_char, i64, *mut f32) -> u64)(param_1, param_2, param_3, param_4, param_5) } }
     /// `BSTAnimationGraphDataChannel<Actor,float,ActorTurnDeltaChannel>::vfunc_2_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 42774, rva 0x7c6ce0).
     /// `undefined vfunc_2_sub0(undefined8 param_1, longlong param_2)`
     ///

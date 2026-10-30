@@ -3,6 +3,18 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `SkyrimScript::_anon_946BA6A1::StoryEventArguments<SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::FormStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::UIntStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::UIntStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter>::vftable` at 0x198d928, id 216859 (rtti, high); 2 slots.
+#[repr(C)]
+pub struct SkyrimScript___anon_946BA6A1__StoryEventArguments_SkyrimScript___anon_946BA6A1__RefStoryEventArg_f81d113e81ee_vtable {
+    /// `SkyrimScript::_anon_946BA6A1::StoryEventArguments<SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::FormStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::UIntStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::UIntStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter>::vfunc_0` at 0x9d5020 (rtti, high); signature (low): `StoryEventArguments<SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::FormStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::UIntStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::UIntStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter> * vfunc_0(StoryEventArguments<SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::FormStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::UIntStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::UIntStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_0: *const c_void,
+    /// `SkyrimScript::_anon_946BA6A1::StoryEventArguments<SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::FormStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::UIntStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::UIntStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter>::vfunc_1` at 0x9d3730 (rtti, high); signature (low): `undefined8 vfunc_1(StoryEventArguments<SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::FormStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::UIntStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::UIntStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter> * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_1: *const c_void,
+}
+impl SkyrimScript___anon_946BA6A1__StoryEventArguments_SkyrimScript___anon_946BA6A1__RefStoryEventArg_f81d113e81ee_vtable {
+    pub const ID: u64 = 216859;
+}
+
 /// `SkyrimScript::_anon_946BA6A1::StoryEventArguments<SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::LocationStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter>::vftable` at 0x198d838, id 216839 (rtti, high); 2 slots.
 #[repr(C)]
 pub struct SkyrimScript___anon_946BA6A1__StoryEventArguments_SkyrimScript___anon_946BA6A1__RefStoryEventArg_df8215ed2758_vtable {

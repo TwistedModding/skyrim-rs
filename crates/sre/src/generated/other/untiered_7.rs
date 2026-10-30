@@ -3,48 +3,6 @@
 
 use core::ffi::{c_char, c_void};
 
-/// `PackObjectIntoScriptVariable` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 54087, rva 0x9e9e50).
-/// `ulonglong * PackObjectIntoScriptVariable(ulonglong * param_1, longlong param_2, longlong * param_3, undefined8 param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn pack_object_into_script_variable(param_1: *mut u64, param_2: i64, param_3: *mut i64, param_4: u64) -> *mut u64 { unsafe { function!(54087, (*mut u64, i64, *mut i64, u64) -> *mut u64)(param_1, param_2, param_3, param_4) } }
-/// `PackObjectVariableType0` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 54086, rva 0x9e9ba0).
-/// `ulonglong * PackObjectVariableType0(ulonglong * param_1, longlong param_2, longlong * param_3, undefined8 param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn pack_object_variable_type0(param_1: *mut u64, param_2: i64, param_3: *mut i64, param_4: u64) -> *mut u64 { unsafe { function!(54086, (*mut u64, i64, *mut i64, u64) -> *mut u64)(param_1, param_2, param_3, param_4) } }
-/// `PackObjectVariableType3E` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 54079, rva 0x9e88d0).
-/// `ulonglong * PackObjectVariableType3E(ulonglong * param_1, longlong param_2, longlong * param_3, undefined8 param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn pack_object_variable_type3_e(param_1: *mut u64, param_2: i64, param_3: *mut i64, param_4: u64) -> *mut u64 { unsafe { function!(54079, (*mut u64, i64, *mut i64, u64) -> *mut u64)(param_1, param_2, param_3, param_4) } }
-/// `PackR11G11B10Float` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 77672, rva 0x1030970).
-/// `undefined PackR11G11B10Float(uint * param_1, ulonglong param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn pack_r11_g11_b10_float(param_1: *mut u32, param_2: u64) -> u64 { unsafe { function!(77672, (*mut u32, u64) -> u64)(param_1, param_2) } }
-/// `PackRectsGroupedByKey` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 88905, rva 0xe2dc70).
-/// `undefined PackRectsGroupedByKey(longlong param_1, longlong * param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn pack_rects_grouped_by_key(param_1: i64, param_2: *mut i64) -> u64 { unsafe { function!(88905, (i64, *mut i64) -> u64)(param_1, param_2) } }
-/// `PackRectsIntoNodeRecursive` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 89849, rva 0xe84d50).
-/// `undefined PackRectsIntoNodeRecursive(longlong param_1, uint param_2, ulonglong param_3)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn pack_rects_into_node_recursive(param_1: i64, param_2: u32, param_3: u64) -> u64 { unsafe { function!(89849, (i64, u32, u64) -> u64)(param_1, param_2, param_3) } }
 /// `PackTESObjectARMOIntoVariable` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 54808, rva 0xa0a020).
 /// `ulonglong * PackTESObjectARMOIntoVariable(ulonglong * param_1, longlong param_2, longlong * param_3, undefined8 param_4)`
 ///
@@ -11336,13 +11294,6 @@ pub unsafe fn release_ref_counted16_ptr_and_clear_2(param_1: *mut u64) -> u64 { 
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn release_ref_counted16_ptr_array(param_1: *mut u64, param_2: u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(32823, (*mut u64, u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
-/// `ReleaseRefCounted16UnderLock` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 57011, rva 0xaa2770).
-/// `undefined ReleaseRefCounted16UnderLock(undefined8 * param_1)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn release_ref_counted16_under_lock(param_1: *mut u64) -> u64 { unsafe { function!(57011, (*mut u64) -> u64)(param_1) } }
 /// `ReleaseRefCounted18` (decompiler signature, tier untiered; ledger decompiler evidence, name high; id 54184, rva 0x9ecda0).
 /// `undefined ReleaseRefCounted18(undefined8 * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 ///
@@ -13527,3 +13478,59 @@ pub unsafe fn release_vector_at0x98_and_callback_at8(param_1: i64) -> u64 { unsa
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn release_vector_at80_and_deleter_ptr_at08(param_1: i64) -> u64 { unsafe { function!(524743, (i64) -> u64)(param_1) } }
+/// `ReleaseVectorAt80AndDeleterPtrAt08_2` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 446519, rva 0x12d1870).
+/// `undefined ReleaseVectorAt80AndDeleterPtrAt08_2(longlong param_1)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn release_vector_at80_and_deleter_ptr_at08_2(param_1: i64) -> u64 { unsafe { function!(446519, (i64) -> u64)(param_1) } }
+/// `ReleaseVectorBuffer8` (decompiler signature, tier untiered; ledger decompiler evidence, name high; id 523422, rva 0x1409d0).
+/// `undefined ReleaseVectorBuffer8(longlong * param_1, undefined8 param_2, void * param_3, undefined8 param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn release_vector_buffer8(param_1: *mut i64, param_2: u64, param_3: *mut c_void, param_4: u64) -> u64 { unsafe { function!(523422, (*mut i64, u64, *mut c_void, u64) -> u64)(param_1, param_2, param_3, param_4) } }
+/// `ReleaseVectorStorage` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 450936, rva 0x13c42e0).
+/// `undefined ReleaseVectorStorage(longlong * param_1)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn release_vector_storage(param_1: *mut i64) -> u64 { unsafe { function!(450936, (*mut i64) -> u64)(param_1) } }
+/// `ReleaseVectorStorage_2` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 449062, rva 0x13841e0).
+/// `undefined ReleaseVectorStorage_2(longlong * param_1)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn release_vector_storage_2(param_1: *mut i64) -> u64 { unsafe { function!(449062, (*mut i64) -> u64)(param_1) } }
+/// `ReleaseVectorStorage_3` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 449242, rva 0x1378c20).
+/// `undefined ReleaseVectorStorage_3(longlong * param_1)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn release_vector_storage_3(param_1: *mut i64) -> u64 { unsafe { function!(449242, (*mut i64) -> u64)(param_1) } }
+/// `ReleaseVectorStorage_4` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 525783, rva 0x12f9ac0).
+/// `undefined ReleaseVectorStorage_4(longlong * param_1)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn release_vector_storage_4(param_1: *mut i64) -> u64 { unsafe { function!(525783, (*mut i64) -> u64)(param_1) } }
+/// `ReleaseVectorStorage_5` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 443642, rva 0x126dce0).
+/// `undefined ReleaseVectorStorage_5(longlong * param_1)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn release_vector_storage_5(param_1: *mut i64) -> u64 { unsafe { function!(443642, (*mut i64) -> u64)(param_1) } }
+/// `ReleaseVectorStorage_6` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 526732, rva 0x1367470).
+/// `undefined ReleaseVectorStorage_6(longlong * param_1)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn release_vector_storage_6(param_1: *mut i64) -> u64 { unsafe { function!(526732, (*mut i64) -> u64)(param_1) } }

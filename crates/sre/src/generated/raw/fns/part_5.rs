@@ -3,6 +3,28 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `BSTDerivedCreator<BGSProcedureTreeSequence,IProcedureTreeItem>::vfunc_1` at 0x45a170 (rtti, medium); signature (low): `BGSProcedureTreeBranch * vfunc_1(BSTDerivedCreator<BGSProcedureTreeSequence,IProcedureTreeItem> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+pub const BSTDerivedCreator_BGSProcedureTreeSequence_IProcedureTreeItem__vfunc_1: u64 = 28070;
+/// `BSTDerivedCreator<BGSProcedureTreeSequence,IProcedureTreeItem>::vfunc_2` at 0x45a9f0 (rtti, medium); signature (low): `undefined vfunc_2(BSTDerivedCreator<BGSProcedureTreeSequence,IProcedureTreeItem> * this, undefined8 * param_1)`
+pub const BSTDerivedCreator_BGSProcedureTreeSequence_IProcedureTreeItem__vfunc_2: u64 = 28110;
+/// `BSTDerivedCreator<BGSProcedureTreeSequenceExecState,IProcedureTreeExecState>::vdtor` at 0x458a50 (layout_inference, medium); signature (low): `BSTDerivedCreator<BGSProcedureTreeSequenceExecState,IProcedureTreeExecState> * vdtor(BSTDerivedCreator<BGSProcedureTreeSequenceExecState,IProcedureTreeExecState> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const BSTDerivedCreator_BGSProcedureTreeSequenceExecState_IProcedureTreeExecState__vdtor: u64 = 27998;
+/// `BSTDerivedCreator<BGSProcedureTreeSequenceExecState,IProcedureTreeExecState>::vfunc_1` at 0x45a1f0 (rtti, medium); signature (low): `undefined vfunc_1(BSTDerivedCreator<BGSProcedureTreeSequenceExecState,IProcedureTreeExecState> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+pub const BSTDerivedCreator_BGSProcedureTreeSequenceExecState_IProcedureTreeExecState__vfunc_1: u64 = 28071;
+/// `BSTDerivedCreator<BGSProcedureTreeSequenceExecState,IProcedureTreeExecState>::vfunc_2` at 0x45aa10 (rtti, medium); signature (low): `undefined vfunc_2(BSTDerivedCreator<BGSProcedureTreeSequenceExecState,IProcedureTreeExecState> * this, undefined8 * param_1)`
+pub const BSTDerivedCreator_BGSProcedureTreeSequenceExecState_IProcedureTreeExecState__vfunc_2: u64 = 28111;
+/// `BSTDerivedCreator<BGSProcedureTreeSimultaneous,IProcedureTreeItem>::vdtor` at 0x458a80 (layout_inference, medium); signature (low): `BSTDerivedCreator<BGSProcedureTreeSimultaneous,IProcedureTreeItem> * vdtor(BSTDerivedCreator<BGSProcedureTreeSimultaneous,IProcedureTreeItem> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const BSTDerivedCreator_BGSProcedureTreeSimultaneous_IProcedureTreeItem__vdtor: u64 = 27999;
+/// `BSTDerivedCreator<BGSProcedureTreeSimultaneous,IProcedureTreeItem>::vfunc_1` at 0x45a260 (rtti, medium); signature (low): `BGSProcedureTreeBranch * vfunc_1(BSTDerivedCreator<BGSProcedureTreeSimultaneous,IProcedureTreeItem> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+pub const BSTDerivedCreator_BGSProcedureTreeSimultaneous_IProcedureTreeItem__vfunc_1: u64 = 28072;
+/// `BSTDerivedCreator<BGSProcedureTreeSimultaneous,IProcedureTreeItem>::vfunc_2` at 0x45aa30 (rtti, medium); signature (low): `undefined vfunc_2(BSTDerivedCreator<BGSProcedureTreeSimultaneous,IProcedureTreeItem> * this, undefined8 * param_1)`
+pub const BSTDerivedCreator_BGSProcedureTreeSimultaneous_IProcedureTreeItem__vfunc_2: u64 = 28112;
+/// `BSTDerivedCreator<BGSProcedureTreeSimultaneousExecState,IProcedureTreeExecState>::vdtor` at 0x458ab0 (layout_inference, medium); signature (low): `BSTDerivedCreator<BGSProcedureTreeSimultaneousExecState,IProcedureTreeExecState> * vdtor(BSTDerivedCreator<BGSProcedureTreeSimultaneousExecState,IProcedureTreeExecState> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const BSTDerivedCreator_BGSProcedureTreeSimultaneousExecState_IProcedureTreeExecState__vdtor: u64 = 28000;
+/// `BSTDerivedCreator<BGSProcedureTreeSimultaneousExecState,IProcedureTreeExecState>::vfunc_1` at 0x45a2e0 (rtti, medium); signature (low): `undefined8 * vfunc_1(BSTDerivedCreator<BGSProcedureTreeSimultaneousExecState,IProcedureTreeExecState> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+pub const BSTDerivedCreator_BGSProcedureTreeSimultaneousExecState_IProcedureTreeExecState__vfunc_1: u64 = 28073;
+/// `BSTDerivedCreator<BGSProcedureTreeSimultaneousExecState,IProcedureTreeExecState>::vfunc_2` at 0x45aa50 (rtti, medium); signature (low): `undefined vfunc_2(BSTDerivedCreator<BGSProcedureTreeSimultaneousExecState,IProcedureTreeExecState> * this, undefined8 * param_1)`
+pub const BSTDerivedCreator_BGSProcedureTreeSimultaneousExecState_IProcedureTreeExecState__vfunc_2: u64 = 28113;
 /// `BSTDerivedCreator<BGSProcedureTreeStacked,IProcedureTreeItem>::vdtor` at 0x458ae0 (layout_inference, medium); signature (low): `BSTDerivedCreator<BGSProcedureTreeStacked,IProcedureTreeItem> * vdtor(BSTDerivedCreator<BGSProcedureTreeStacked,IProcedureTreeItem> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const BSTDerivedCreator_BGSProcedureTreeStacked_IProcedureTreeItem__vdtor: u64 = 28001;
 /// `BSTDerivedCreator<BGSProcedureTreeStacked,IProcedureTreeItem>::vfunc_1` at 0x45a380 (rtti, medium); signature (low): `BGSProcedureTreeBranch * vfunc_1(BSTDerivedCreator<BGSProcedureTreeStacked,IProcedureTreeItem> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
@@ -4501,8 +4523,10 @@ pub const BShkbAnimationGraph__AddRagdollToWorld: u64 = 63621;
 pub const BShkbAnimationGraph__CollectGraphEvents: u64 = 63583;
 /// `BShkbAnimationGraph::CollectGraphEvents` as a function pointer type (high).
 pub type BShkbAnimationGraph__CollectGraphEvents_fn = unsafe extern "C" fn(this: *mut crate::BShkbAnimationGraph, ctx: *mut c_void, eventsOut: *mut c_void);
-/// `BShkbAnimationGraph::FinalizePose` at 0xbcc7e0 (semantic, medium); signature (untiered): `undefined FinalizePose(longlong param_1, ushort param_2)`; semantic: blends current/previous outputs when interpolating, runs the foot IK controller under the world read lock and copies the result into the character pose buffer (medium); signature `void (BShkbAnimationGraph* this, u16 boneCount)`
+/// `BShkbAnimationGraph::FinalizePose` at 0xbcc7e0 (semantic, high); signature (untiered): `undefined FinalizePose(longlong param_1, ushort param_2)`; semantic: interpolation and foot IK, then the copy into hkbCharacter.poseLocal; foot IK runs only when graph+0x249 (doFootIK) is set, INI bFootIK:Animation is on, root node +0x218 is set, the character setup has foot IK info and a driver (+0x100) exists; otherwise it calls ReleaseEntryObjectsAndReset on the driver. Holds the bhkWorld read lock around the driver run (high); signature `void (BShkbAnimationGraph* this, u16 boneCount)`
 pub const BShkbAnimationGraph__FinalizePose: u64 = 63581;
+/// `BShkbAnimationGraph::FinalizePose` as a function pointer type (high).
+pub type BShkbAnimationGraph__FinalizePose_fn = unsafe extern "C" fn(this: *mut crate::BShkbAnimationGraph, boneCount: u16);
 /// `BShkbAnimationGraph::Generate` at 0xbcb290 (semantic, high); signature (untiered): `undefined Generate(longlong param_1, char param_2)`; semantic: hkbBehaviorGraph::generate into +0x220, pose listeners, foot IK, then the bone write (high); signature `void (BShkbAnimationGraph* this, bool useSpuGenerate)`
 pub const BShkbAnimationGraph__Generate: u64 = 63568;
 /// `BShkbAnimationGraph::Generate` as a function pointer type (high).
@@ -4555,8 +4579,10 @@ pub const BShkbAnimationGraph__SetRootNode: u64 = 63596;
 pub type BShkbAnimationGraph__SetRootNode_fn = unsafe extern "C" fn(this: *mut crate::BShkbAnimationGraph, root: *mut crate::NiNode);
 /// `BShkbAnimationGraph::SetWorld` at 0xbd3b40 (semantic, high); signature (untiered): `undefined SetWorld(BShkbAnimationGraph * this, undefined8 param_1)`
 pub const BShkbAnimationGraph__SetWorld: u64 = 63623;
-/// `BShkbAnimationGraph::Update` at 0xbcedb0 (semantic, medium); signature (untiered): `undefined Update(undefined8 * param_1, float * param_2, longlong param_3)`; semantic: advances the behaviour graph for the frame and collects its events into eventsOut when non-null (medium); signature `void (BShkbAnimationGraph* this, BSAnimationUpdateData* data, BSScrapArray<GraphEventPair>* eventsOut)`
+/// `BShkbAnimationGraph::Update` at 0xbcedb0 (semantic, high); signature (untiered): `undefined Update(undefined8 * param_1, float * param_2, longlong param_3)`; semantic: per-graph update; writes the doFootIK byte +0x249 twice: first = data+0x2e, at the end = data+0x2e && all bones generated (ComputeBoneLODCount out flag) when bFootIK:Animation, foot IK info and driver and root node exist; also sets the driver's +0x4c to the frame delta (SetField4C 0xad4280) (high); signature `void (BShkbAnimationGraph* this, BSAnimationUpdateData* data, void* eventsOut)`
 pub const BShkbAnimationGraph__Update: u64 = 63587;
+/// `BShkbAnimationGraph::Update` as a function pointer type (high).
+pub type BShkbAnimationGraph__Update_fn = unsafe extern "C" fn(this: *mut crate::BShkbAnimationGraph, data: *mut c_void, eventsOut: *mut c_void);
 /// `BShkbAnimationGraph::WritePoseToNodes` at 0xbcf480 (semantic, high); signature (untiered): `undefined WritePoseToNodes(longlong param_1, undefined1 * param_2, undefined8 param_3, undefined8 param_4)`; semantic: writes the generated pose into the bone nodes: foot IK step then ApplyQuaternionTransformsToNodes(character pose, boneNodes +0x160, boneCount +0x240); GenerateBehaviorGraphPose instead when +0x246 (high); signature `void (BShkbAnimationGraph* this, bool* flag)`
 pub const BShkbAnimationGraph__WritePoseToNodes: u64 = 63589;
 /// `BShkbAnimationGraph::WritePoseToNodes` as a function pointer type (high).
@@ -5623,53 +5649,3 @@ pub const ByteArrayImplementation__vfunc_18: u64 = 66137;
 pub const ByteArrayImplementation__vfunc_20: u64 = 66133;
 /// `ByteArrayImplementation::vfunc_33` at 0xc62d40 (rtti, high); signature (low): `undefined vfunc_33(ByteArrayImplementation * this, void * param_1, uint param_2)`
 pub const ByteArrayImplementation__vfunc_33: u64 = 66112;
-/// `ByteSwap16Array` at 0xbfee70 (decompiler, high); signature (high): `undefined ByteSwap16Array(longlong param_1, int param_2)`
-pub const ByteSwap16Array: u64 = 64423;
-/// `ByteSwap26ByteHeader` at 0x3cc580 (decompiler, high); signature (high): `undefined ByteSwap26ByteHeader(uint * param_1)`
-pub const ByteSwap26ByteHeader: u64 = 24900;
-/// `ByteSwap32Array` at 0xbfeeb0 (decompiler, high); signature (high): `undefined ByteSwap32Array(longlong param_1, int param_2)`
-pub const ByteSwap32Array: u64 = 64424;
-/// `ByteSwap4Words` at 0xbaf090 (decompiler, high); signature (high): `undefined ByteSwap4Words(undefined1 * param_1)`
-pub const ByteSwap4Words: u64 = 62915;
-/// `ByteSwap64` at 0x146e780 (decompiler, high); signature (high): `ulonglong ByteSwap64(ulonglong param_1)`
-pub const ByteSwap64: u64 = 103193;
-/// `ByteSwap64_2` at 0x146e830 (decompiler, high); signature (high): `ulonglong ByteSwap64_2(ulonglong param_1)`
-pub const ByteSwap64_2: u64 = 103195;
-/// `ByteSwap8Dwords` at 0x203fd0 (decompiler, high); signature (high): `undefined ByteSwap8Dwords(uint * param_1)`
-pub const ByteSwap8Dwords: u64 = 15315;
-/// `ByteSwapCountedWordTables` at 0xbaef80 (decompiler, medium); signature (medium): `undefined ByteSwapCountedWordTables(byte * param_1)`
-pub const ByteSwapCountedWordTables: u64 = 62913;
-/// `ByteSwapDwordFields` at 0x28e6a0 (decompiler, high); signature (high): `undefined ByteSwapDwordFields(longlong param_1)`
-pub const ByteSwapDwordFields: u64 = 18144;
-/// `ByteSwapDwordFields_2` at 0x28e5f0 (decompiler, medium); signature (medium): `undefined ByteSwapDwordFields_2(longlong param_1)`
-pub const ByteSwapDwordFields_2: u64 = 18143;
-/// `ByteSwapDwordsAt0To3C` at 0x108fe70 (decompiler, high); signature (high): `longlong ByteSwapDwordsAt0To3C(longlong param_1)`
-pub const ByteSwapDwordsAt0To3C: u64 = 78971;
-/// `ByteSwapDwordsAt28And30To3F` at 0xbaee80 (decompiler, medium); signature (medium): `undefined ByteSwapDwordsAt28And30To3F(longlong param_1)`
-pub const ByteSwapDwordsAt28And30To3F: u64 = 62911;
-/// `ByteSwapDwordsAt4To1F` at 0xbaede0 (decompiler, medium); signature (medium): `undefined ByteSwapDwordsAt4To1F(longlong param_1)`
-pub const ByteSwapDwordsAt4To1F: u64 = 62910;
-/// `ByteSwapFields` at 0x1056660 (decompiler, medium); signature (medium): `undefined ByteSwapFields(longlong param_1)`
-pub const ByteSwapFields: u64 = 78051;
-/// `ByteSwapFields4And8` at 0x4a3350 (decompiler, high); signature (high): `undefined ByteSwapFields4And8(longlong param_1)`
-pub const ByteSwapFields4And8: u64 = 29795;
-/// `ByteSwapFields4And8_2` at 0x4a57e0 (decompiler, high); signature (high): `undefined ByteSwapFields4And8_2(longlong param_1)`
-pub const ByteSwapFields4And8_2: u64 = 29840;
-/// `ByteSwapFields4And8_3` at 0x4a5800 (decompiler, high); signature (high): `undefined ByteSwapFields4And8_3(longlong param_1)`
-pub const ByteSwapFields4And8_3: u64 = 29841;
-/// `ByteSwapInPlaceAndAdvance` at 0xc505b0 (decompiler, medium); signature (medium): `undefined ByteSwapInPlaceAndAdvance(int param_1, longlong * param_2)`
-pub const ByteSwapInPlaceAndAdvance: u64 = 65587;
-/// `ByteSwapSampleBuffer` at 0xcdce30 (decompiler, medium); signature (medium): `undefined ByteSwapSampleBuffer(uint * param_1, uint param_2, uint param_3)`
-pub const ByteSwapSampleBuffer: u64 = 68067;
-/// `ByteSwapWaveFormatHeader` at 0xcdceb0 (decompiler, medium); signature (medium): `undefined ByteSwapWaveFormatHeader(short * param_1, ushort * param_2, int param_3)`
-pub const ByteSwapWaveFormatHeader: u64 = 68068;
-/// `ByteSwapWords0To5AndDwords8To1B` at 0xbaeee0 (decompiler, medium); signature (medium): `undefined ByteSwapWords0To5AndDwords8To1B(undefined1 * param_1)`
-pub const ByteSwapWords0To5AndDwords8To1B: u64 = 62912;
-/// `ByteSwapWordsAndDwords30To3F` at 0xbaf000 (decompiler, medium); signature (untiered): `undefined ByteSwapWordsAndDwords30To3F(longlong param_1)`
-pub const ByteSwapWordsAndDwords30To3F: u64 = 62914;
-/// `CCallResult<BSWin32SystemUtility,EncryptedAppTicketResponse_t>::vfunc_0` at 0x15990b0 (rtti, high); signature (low): `undefined vfunc_0(CCallResult<BSWin32SystemUtility,EncryptedAppTicketResponse_t> * this, undefined8 param_1, undefined8 param_2, CCallResult<BSWin32SystemUtility,EncryptedAppTicketResponse_t>_vtbl * param_3)`
-pub const CCallResult_BSWin32SystemUtility_EncryptedAppTicketResponse_t__vfunc_0: u64 = 109210;
-/// `CCallResult<BSWin32SystemUtility,EncryptedAppTicketResponse_t>::vfunc_1` at 0x1599090 (rtti, high); signature (low): `undefined vfunc_1(CCallResult<BSWin32SystemUtility,EncryptedAppTicketResponse_t> * this, undefined8 param_1)`
-pub const CCallResult_BSWin32SystemUtility_EncryptedAppTicketResponse_t__vfunc_1: u64 = 109209;
-/// `CCallResult<BSWin32SystemUtility,EncryptedAppTicketResponse_t>::vfunc_2` at 0x1599060 (rtti, high); signature (low): `undefined8 vfunc_2(void)`
-pub const CCallResult_BSWin32SystemUtility_EncryptedAppTicketResponse_t__vfunc_2: u64 = 109207;

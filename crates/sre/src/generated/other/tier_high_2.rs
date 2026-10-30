@@ -3,13 +3,6 @@
 
 use core::ffi::{c_char, c_void};
 
-/// `GetChannelBytePtr` (decompiler signature, tier high; ledger decompiler evidence, name high; id 77775, rva 0x1044130).
-/// `longlong GetChannelBytePtr(longlong param_1, longlong param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn get_channel_byte_ptr(param_1: i64, param_2: i64) -> i64 { unsafe { function!(77775, (i64, i64) -> i64)(param_1, param_2) } }
 /// `GetChannelBytePtr_2` (decompiler signature, tier high; ledger decompiler evidence, name high; id 77776, rva 0x1044160).
 /// `longlong GetChannelBytePtr_2(longlong param_1, longlong param_2)`
 ///
@@ -16341,3 +16334,10 @@ pub unsafe fn set_ref_counted_field78(param_1: i64, param_2: i64) -> u64 { unsaf
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn set_ref_counted_field88(param_1: i64, param_2: i64) -> u64 { unsafe { function!(59262, (i64, i64) -> u64)(param_1, param_2) } }
+/// `SetRefCountedField8_2` (decompiler signature, tier high; ledger decompiler evidence, name high; id 63810, rva 0xbdc870).
+/// `undefined SetRefCountedField8_2(longlong param_1, longlong param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn set_ref_counted_field8_2(param_1: i64, param_2: i64) -> u64 { unsafe { function!(63810, (i64, i64) -> u64)(param_1, param_2) } }

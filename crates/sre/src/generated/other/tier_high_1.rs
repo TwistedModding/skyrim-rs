@@ -7675,13 +7675,6 @@ pub unsafe fn clear_bit0_of_field3_c(param_1: i64) -> u64 { unsafe { function!(4
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn clear_bit15_of_field40_in_list(param_1: i64) -> u64 { unsafe { function!(89746, (i64) -> u64)(param_1) } }
-/// `ClearBitInField70Bitset` (decompiler signature, tier high; ledger decompiler evidence, name high; id 60647, rva 0xb402b0).
-/// `undefined ClearBitInField70Bitset(longlong param_1, uint param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn clear_bit_in_field70_bitset(param_1: i64, param_2: u32) -> u64 { unsafe { function!(60647, (i64, u32) -> u64)(param_1, param_2) } }
 /// `ClearBits2And3OfByteBEB` (decompiler signature, tier high; ledger decompiler evidence, name high; id 40577, rva 0x755620).
 /// `undefined ClearBits2And3OfByteBEB(longlong param_1, byte param_2)`
 ///
@@ -15291,3 +15284,10 @@ pub unsafe fn get_byte_field_cc(param_1: i64) -> u8 { unsafe { function!(62276, 
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn get_byte_field_da5(param_1: i64) -> u8 { unsafe { function!(441532, (i64) -> u8)(param_1) } }
+/// `GetChannelBytePtr` (decompiler signature, tier high; ledger decompiler evidence, name high; id 77775, rva 0x1044130).
+/// `longlong GetChannelBytePtr(longlong param_1, longlong param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn get_channel_byte_ptr(param_1: i64, param_2: i64) -> i64 { unsafe { function!(77775, (i64, i64) -> i64)(param_1, param_2) } }

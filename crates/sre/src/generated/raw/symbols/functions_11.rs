@@ -4,6 +4,23 @@
 use crate::raw::*;
 
 pub(super) const ROWS: &[Function] = &[
+    Function { rva: 0x1770f60, id: 168572, confidence: Confidence::Medium, name: "GameSetting_fLowHealthTutorialPercentage__atexit" },
+    Function { rva: 0x1770fb0, id: 168573, confidence: Confidence::Medium, name: "GameSetting_fLowLevelNPCBaseHealthMult__atexit" },
+    Function { rva: 0x1771000, id: 168574, confidence: Confidence::Medium, name: "GameSetting_fLowMagickaTutorialPercentage__atexit" },
+    Function { rva: 0x1771050, id: 168575, confidence: Confidence::Medium, name: "GameSetting_fLowStaminaTutorialPercentage__atexit" },
+    Function { rva: 0x17710a0, id: 168576, confidence: Confidence::Medium, name: "GameSetting_fMapMarkerMaxPercentSize__atexit" },
+    Function { rva: 0x17710f0, id: 168577, confidence: Confidence::Medium, name: "GameSetting_fMapMarkerMinFadeAlpha__atexit" },
+    Function { rva: 0x1771140, id: 168578, confidence: Confidence::Medium, name: "GameSetting_fMapMarkerMinPercentSize__atexit" },
+    Function { rva: 0x1771190, id: 168579, confidence: Confidence::Medium, name: "GameSetting_fMapQuestMarkerMaxPercentSize__atexit" },
+    Function { rva: 0x17711e0, id: 168580, confidence: Confidence::Medium, name: "GameSetting_fMapQuestMarkerMinFadeAlpha__atexit" },
+    Function { rva: 0x1771230, id: 168581, confidence: Confidence::Medium, name: "GameSetting_fMapQuestMarkerMinPercentSize__atexit" },
+    Function { rva: 0x1771280, id: 168582, confidence: Confidence::Medium, name: "GameSetting_fMaximumWind__atexit" },
+    Function { rva: 0x17712d0, id: 168583, confidence: Confidence::Medium, name: "GameSetting_fMinDistanceUseHorse__atexit" },
+    Function { rva: 0x1771320, id: 168584, confidence: Confidence::Medium, name: "GameSetting_fMoveCharRunBase__atexit" },
+    Function { rva: 0x1771370, id: 168585, confidence: Confidence::Medium, name: "GameSetting_fMoveCharWalkBase__atexit" },
+    Function { rva: 0x17713c0, id: 168586, confidence: Confidence::Medium, name: "GameSetting_fMoveEncumEffect__atexit" },
+    Function { rva: 0x1771410, id: 168587, confidence: Confidence::Medium, name: "GameSetting_fMoveEncumEffectNoWeapon__atexit" },
+    Function { rva: 0x1771460, id: 168588, confidence: Confidence::Medium, name: "GameSetting_fMoveFlyRunMult__atexit" },
     Function { rva: 0x17714b0, id: 168589, confidence: Confidence::Medium, name: "GameSetting_fMoveFlyWalkMult__atexit" },
     Function { rva: 0x1771500, id: 168590, confidence: Confidence::Medium, name: "GameSetting_fMoveSprintMult__atexit" },
     Function { rva: 0x1771550, id: 168591, confidence: Confidence::Medium, name: "GameSetting_fMoveSwimMult__atexit" },

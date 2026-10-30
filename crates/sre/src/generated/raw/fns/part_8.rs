@@ -3,6 +3,46 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `CompareByField37ThenVfuncString` at 0x3f0690 (decompiler, medium); signature (medium): `int CompareByField37ThenVfuncString(longlong * param_1, longlong * param_2)`
+pub const CompareByField37ThenVfuncString: u64 = 25564;
+/// `CompareByField8Field9ThenVfunc20` at 0x397550 (decompiler, medium); signature (medium): `undefined8 CompareByField8Field9ThenVfunc20(longlong * param_1, longlong * param_2)`
+pub const CompareByField8Field9ThenVfunc20: u64 = 23820;
+/// `CompareByFloatField30` at 0x940190 (decompiler, medium); signature (medium): `int CompareByFloatField30(char * param_1, longlong * param_2, longlong * param_3)`
+pub const CompareByFloatField30: u64 = 51810;
+/// `CompareByIntField30` at 0x940200 (decompiler, medium); signature (medium): `int CompareByIntField30(char * param_1, longlong * param_2, longlong * param_3)`
+pub const CompareByIntField30: u64 = 51812;
+/// `CompareDistanceToRadius` at 0x2d47d0 (decompiler, high); signature (high): `ulonglong CompareDistanceToRadius(float * param_1, float * param_2, float param_3)`
+pub const CompareDistanceToRadius: u64 = 19353;
+/// `CompareDwordArraysEqual` at 0x18d880 (decompiler, medium); signature (medium): `char CompareDwordArraysEqual(longlong * param_1, longlong * param_2)`
+pub const CompareDwordArraysEqual: u64 = 12859;
+/// `CompareDwordArraysEqual_2` at 0x18d900 (decompiler, medium); signature (medium): `char CompareDwordArraysEqual_2(longlong * param_1, longlong * param_2)`
+pub const CompareDwordArraysEqual_2: u64 = 12860;
+/// `CompareEntriesByCastString` at 0x91f040 (decompiler, medium); signature (untiered): `uint CompareEntriesByCastString(undefined8 * param_1, undefined8 * param_2)`
+pub const CompareEntriesByCastString: u64 = 51341;
+/// `CompareEntriesByCastStringThenField50` at 0x91fa20 (decompiler, medium); signature (untiered): `uint CompareEntriesByCastStringThenField50(longlong * param_1, longlong * param_2)`
+pub const CompareEntriesByCastStringThenField50: u64 = 51353;
+/// `CompareEntriesByTypeThenSoulLevelOrString` at 0x91f0a0 (decompiler, medium); signature (untiered): `uint CompareEntriesByTypeThenSoulLevelOrString(longlong * param_1, longlong * param_2)`
+pub const CompareEntriesByTypeThenSoulLevelOrString: u64 = 51342;
+/// `CompareExchangeRefCountedPointer` at 0x151e20 (decompiler, medium); signature (medium): `undefined8 CompareExchangeRefCountedPointer(longlong * param_1, longlong * param_2, longlong * param_3)`
+pub const CompareExchangeRefCountedPointer: u64 = 11344;
+/// `CompareExchangeRefCountedPtrAt20` at 0x247c10 (decompiler, medium); signature (medium): `undefined8 CompareExchangeRefCountedPtrAt20(longlong param_1, longlong * param_2, longlong * param_3)`
+pub const CompareExchangeRefCountedPtrAt20: u64 = 16324;
+/// `CompareExchangeRefCountedPtrField20` at 0x5569c0 (decompiler, medium); signature (untiered): `undefined8 CompareExchangeRefCountedPtrField20(longlong param_1, longlong * param_2, longlong * param_3)`
+pub const CompareExchangeRefCountedPtrField20: u64 = 32981;
+/// `CompareExchangeRefPtrField20_2` at 0xfd5b20 (decompiler, medium); signature (medium): `undefined8 CompareExchangeRefPtrField20_2(longlong param_1, longlong * param_2, longlong * param_3)`
+pub const CompareExchangeRefPtrField20_2: u64 = 82481;
+/// `CompareExchangeRefPtrField20_3` at 0x25daa0 (decompiler, medium); signature (untiered): `undefined8 CompareExchangeRefPtrField20_3(longlong param_1, longlong * param_2, longlong * param_3)`
+pub const CompareExchangeRefPtrField20_3: u64 = 16900;
+/// `CompareField13CLess` at 0xba4430 (decompiler, high); signature (high): `undefined8 CompareField13CLess(undefined8 param_1, longlong param_2, longlong param_3)`
+pub const CompareField13CLess: u64 = 62712;
+/// `CompareFloatsByClassification` at 0xcc1ac0 (decompiler, medium); signature (medium): `undefined1 * CompareFloatsByClassification(undefined1 * param_1, float param_2, float param_3)`
+pub const CompareFloatsByClassification: u64 = 67515;
+/// `CompareFloatsByOperator` at 0x4a6eb0 (decompiler, high); signature (high): `undefined8 CompareFloatsByOperator(undefined4 param_1, float param_2, float param_3)`
+pub const CompareFloatsByOperator: u64 = 29891;
+/// `CompareFloatsDescending` at 0x82a1a0 (decompiler, high); signature (high): `undefined8 CompareFloatsDescending(float * param_1, float * param_2)`
+pub const CompareFloatsDescending: u64 = 44911;
+/// `CompareFormIDsByCastString` at 0x922160 (decompiler, medium); signature (untiered): `uint CompareFormIDsByCastString(int * param_1, int * param_2, undefined8 param_3, undefined8 param_4)`
+pub const CompareFormIDsByCastString: u64 = 51365;
 /// `CompareFunctionSignatures` at 0x14e1900 (decompiler, medium); signature (untiered): `ulonglong CompareFunctionSignatures(undefined8 param_1, longlong * param_2, ulonglong * param_3, undefined8 param_4)`
 pub const CompareFunctionSignatures: u64 = 105391;
 /// `CompareHashKeysWithWildcard` at 0xeba9e0 (decompiler, medium); signature (medium): `undefined8 CompareHashKeysWithWildcard(byte * param_1, byte * param_2)`
@@ -6471,8 +6511,6 @@ pub const CreateAndRegisterEffectSetting: u64 = 11164;
 pub const CreateAndRegisterGlobalEntry: u64 = 453803;
 /// `CreateAndRegisterSegment` at 0x1192db0 (decompiler, medium); signature (untiered): `longlong * CreateAndRegisterSegment(undefined8 * param_1, longlong param_2)`
 pub const CreateAndRegisterSegment: u64 = 87812;
-/// `CreateAndSetCapsuleShape` at 0x1088c00 (decompiler, medium); signature (untiered): `undefined CreateAndSetCapsuleShape(longlong * param_1, undefined8 * param_2, undefined8 * param_3, undefined4 param_4)`
-pub const CreateAndSetCapsuleShape: u64 = 78800;
 /// `CreateAndSetField28` at 0xe51500 (decompiler, medium); signature (medium): `undefined8 CreateAndSetField28(longlong param_1)`
 pub const CreateAndSetField28: u64 = 88971;
 /// `CreateAndStartFollowPackage` at 0x6816a0 (decompiler, medium); signature (untiered): `SpectatorPackage * CreateAndStartFollowPackage(longlong * param_1, longlong * param_2, undefined8 param_3, longlong param_4, float param_5, float param_6, undefined1 param_7, undefined1 param_8)`
@@ -7753,39 +7791,3 @@ pub const CreateTriangleFromVertices: u64 = 91315;
 pub const CreateTrianglesForTwoNeighborVertices: u64 = 91300;
 /// `CreateTriangulatedGeometryFromFaces` at 0x10efd80 (decompiler, medium); signature (untiered): `longlong * CreateTriangulatedGeometryFromFaces(longlong param_1, longlong param_2)`
 pub const CreateTriangulatedGeometryFromFaces: u64 = 80839;
-/// `CreateType2RecordFromField1C0` at 0x1238eb0 (decompiler, medium); signature (untiered): `undefined CreateType2RecordFromField1C0(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const CreateType2RecordFromField1C0: u64 = 92998;
-/// `CreateType3RecordFromField1E0` at 0x123a6f0 (decompiler, medium); signature (untiered): `undefined CreateType3RecordFromField1E0(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const CreateType3RecordFromField1E0: u64 = 93003;
-/// `CreateTypeLayoutForClass` at 0xac3a40 (decompiler, medium); signature (untiered): `undefined8 * CreateTypeLayoutForClass(longlong param_1, int * param_2)`
-pub const CreateTypeLayoutForClass: u64 = 58157;
-/// `CreateUrlEncodedVarsObject` at 0xd87900 (decompiler, medium); signature (untiered): `undefined8 * CreateUrlEncodedVarsObject(undefined8 param_1, longlong * param_2)`
-pub const CreateUrlEncodedVarsObject: u64 = 85489;
-/// `CreateUserLog` at 0x9d8910 (decompiler, medium); signature (untiered): `undefined8 CreateUserLog(longlong param_1, ulonglong * param_2, undefined8 param_3, undefined8 param_4)`
-pub const CreateUserLog: u64 = 53931;
-/// `CreateValueModifierEffectSubclass` at 0x5e5380 (decompiler, medium); signature (medium): `ValueModifierEffect * CreateValueModifierEffectSubclass(longlong param_1, undefined8 param_2, undefined4 * param_3)`
-pub const CreateValueModifierEffectSubclass: u64 = 35025;
-/// `CreateVertexAndIndexBuffers` at 0x100b770 (decompiler, medium); signature (untiered): `void * CreateVertexAndIndexBuffers(longlong param_1, void * param_2, ulonglong param_3, undefined8 param_4, void * param_5, uint param_6)`
-pub const CreateVertexAndIndexBuffers: u64 = 77260;
-/// `CreateVertexIndexBufferRecord` at 0x100cfb0 (decompiler, medium); signature (untiered): `void * CreateVertexIndexBufferRecord(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4, undefined8 param_5, undefined8 param_6, int param_7)`
-pub const CreateVertexIndexBufferRecord: u64 = 77281;
-/// `CreateVertexIndexBuffersWithIndexCopy` at 0x100c2f0 (decompiler, medium); signature (untiered): `undefined8 * CreateVertexIndexBuffersWithIndexCopy(longlong param_1, undefined8 param_2, undefined8 param_3, ulonglong param_4, int param_5, void * param_6, uint param_7)`
-pub const CreateVertexIndexBuffersWithIndexCopy: u64 = 77269;
-/// `CreateVertexNode` at 0x124fc10 (decompiler, medium); signature (untiered): `ushort * CreateVertexNode(longlong param_1, ushort param_2, undefined1 param_3, char param_4, char param_5)`
-pub const CreateVertexNode: u64 = 93354;
-/// `CreateVertexShaderRecord` at 0x100fdd0 (decompiler, medium); signature (untiered): `void * CreateVertexShaderRecord(undefined8 param_1, void * param_2, ulonglong param_3, undefined8 param_4, undefined8 param_5)`
-pub const CreateVertexShaderRecord: u64 = 77349;
-/// `CreateVtable243694Object` at 0xdaa940 (decompiler, medium); signature (untiered): `undefined CreateVtable243694Object(undefined8 param_1, longlong param_2)`
-pub const CreateVtable243694Object: u64 = 85946;
-/// `CreateVtable243714ObjectAsResult` at 0xdacae0 (decompiler, medium); signature (untiered): `undefined CreateVtable243714ObjectAsResult(longlong param_1)`
-pub const CreateVtable243714ObjectAsResult: u64 = 85992;
-/// `CreateVtable243750Object` at 0xdaeee0 (decompiler, medium); signature (untiered): `undefined CreateVtable243750Object(undefined8 param_1, longlong param_2)`
-pub const CreateVtable243750Object: u64 = 86027;
-/// `CreateVtable244491ObjectIntoField8` at 0xdd3080 (decompiler, medium); signature (untiered): `undefined CreateVtable244491ObjectIntoField8(longlong param_1)`
-pub const CreateVtable244491ObjectIntoField8: u64 = 86765;
-/// `CreateWeaponEnchantmentControllerIfNeeded` at 0x5c0cd0 (decompiler, medium); signature (untiered): `undefined CreateWeaponEnchantmentControllerIfNeeded(longlong param_1, undefined8 param_2, longlong * param_3, longlong * param_4)`
-pub const CreateWeaponEnchantmentControllerIfNeeded: u64 = 34154;
-/// `CreateWeaponObjectFromNode` at 0x107fc30 (decompiler, medium); signature (untiered): `bhkBlendCollisionObject * CreateWeaponObjectFromNode(undefined4 param_1, undefined8 param_2, longlong * param_3, undefined8 param_4)`
-pub const CreateWeaponObjectFromNode: u64 = 524262;
-/// `CreateWorldWithPhysicsSystems` at 0xba1dc0 (decompiler, medium); signature (untiered): `hkpWorld * CreateWorldWithPhysicsSystems(longlong param_1, char param_2)`
-pub const CreateWorldWithPhysicsSystems: u64 = 62677;

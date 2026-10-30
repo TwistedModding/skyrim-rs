@@ -3,6 +3,50 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `InventoryUtils::_anon_3F954FDF::IsWornVisitor::vfunc_1` at 0x242410 (rtti, high); signature (low): `undefined8 vfunc_1(IsWornVisitor * this, longlong * param_1)`
+pub const InventoryUtils___anon_3F954FDF__IsWornVisitor__vfunc_1: u64 = 16235;
+/// `InventoryUtils::_anon_3F954FDF::IsWornVisitor::vfunc_1_sub0` at 0x2294f0 (callgraph, medium); signature (untiered): `undefined4 vfunc_1_sub0(longlong * param_1)`
+pub const InventoryUtils___anon_3F954FDF__IsWornVisitor__vfunc_1_sub0: u64 = 16015;
+/// `InventoryUtils::_anon_3F954FDF::WornHasKeywordVisitor::vdtor` at 0x240800 (layout_inference, medium); signature (low): `WornHasKeywordVisitor * vdtor(WornHasKeywordVisitor * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const InventoryUtils___anon_3F954FDF__WornHasKeywordVisitor__vdtor: u64 = 16194;
+/// `InventoryUtils::_anon_3F954FDF::WornHasKeywordVisitor::vfunc_1` at 0x242480 (rtti, high); signature (low): `bool vfunc_1(WornHasKeywordVisitor * this, longlong * param_1)`
+pub const InventoryUtils___anon_3F954FDF__WornHasKeywordVisitor__vfunc_1: u64 = 16237;
+/// `InverseDct8x8` at 0x15dc300 (decompiler, medium); signature (untiered): `undefined InverseDct8x8(longlong param_1, int param_2, longlong param_3)`
+pub const InverseDct8x8: u64 = 453902;
+/// `InverseDct8x8Block` at 0x59be40 (decompiler, medium); signature (medium): `undefined InverseDct8x8Block(longlong param_1, int param_2, longlong param_3)`
+pub const InverseDct8x8Block: u64 = 442017;
+/// `InverseRotateVectorArrayByQuaternions` at 0xca68c0 (decompiler, medium); signature (medium): `undefined InverseRotateVectorArrayByQuaternions(longlong param_1, longlong param_2, longlong param_3, int param_4)`
+pub const InverseRotateVectorArrayByQuaternions: u64 = 67233;
+/// `InverseTransformPoint` at 0xaa7430 (decompiler, medium); signature (medium): `undefined InverseTransformPoint(float * param_1, float * param_2, float * param_3)`
+pub const InverseTransformPoint: u64 = 57218;
+/// `InverseTransformPointByQuatTranslation` at 0xaa7300 (decompiler, medium); signature (medium): `undefined InverseTransformPointByQuatTranslation(float * param_1, float * param_2, float * param_3)`
+pub const InverseTransformPointByQuatTranslation: u64 = 57216;
+/// `InvertAffineMatrix2x3` at 0xd03ac0 (decompiler, medium); signature (medium): `undefined InvertAffineMatrix2x3(float * param_1, float * param_2)`
+pub const InvertAffineMatrix2x3: u64 = 82720;
+/// `InvertAlphaInRow` at 0x11b04c0 (decompiler, medium); signature (medium): `undefined InvertAlphaInRow(uint * param_1, undefined1 * param_2)`
+pub const InvertAlphaInRow: u64 = 90217;
+/// `InvertGrayPixelRow` at 0x11a71e0 (decompiler, medium); signature (medium): `undefined InvertGrayPixelRow(longlong param_1, ulonglong * param_2)`
+pub const InvertGrayPixelRow: u64 = 90121;
+/// `InvertMatrix3` at 0x7f5390 (decompiler, medium); signature (medium): `ulonglong InvertMatrix3(float * param_1, float * param_2)`
+pub const InvertMatrix3: u64 = 44051;
+/// `InvertMatrix3InPlace` at 0xaaab90 (decompiler, medium); signature (medium): `bool InvertMatrix3InPlace(float * param_1, float param_2)`
+pub const InvertMatrix3InPlace: u64 = 57376;
+/// `InvertMatrix3x3` at 0x5d8920 (decompiler, high); signature (high): `float * InvertMatrix3x3(float * param_1, float * param_2)`
+pub const InvertMatrix3x3: u64 = 34686;
+/// `InvertMatrix4x4` at 0xab6d40 (decompiler, medium); signature (medium): `bool InvertMatrix4x4(float * param_1, float * param_2, float param_3)`
+pub const InvertMatrix4x4: u64 = 57810;
+/// `InvertMatrix4x4InPlace` at 0xab6cf0 (decompiler, medium); signature (medium): `undefined InvertMatrix4x4InPlace(undefined8 * param_1, undefined4 param_2)`
+pub const InvertMatrix4x4InPlace: u64 = 57809;
+/// `InvertMatrixObject` at 0xda1a10 (decompiler, medium); signature (untiered): `undefined InvertMatrixObject(longlong param_1)`
+pub const InvertMatrixObject: u64 = 85810;
+/// `InvertQuatTransform` at 0xf5fce0 (decompiler, medium); signature (medium): `undefined InvertQuatTransform(float * param_1, float * param_2)`
+pub const InvertQuatTransform: u64 = 72646;
+/// `InvertRigidTransform` at 0xaa4330 (decompiler, medium); signature (medium): `undefined InvertRigidTransform(float * param_1, float * param_2)`
+pub const InvertRigidTransform: u64 = 57088;
+/// `InvertTransform_2` at 0x7f5510 (decompiler, medium); signature (medium): `undefined InvertTransform_2(float * param_1, float * param_2)`
+pub const InvertTransform_2: u64 = 44052;
+/// `InvisibilityEffect::ctor` at 0x5c8e40 (layout_inference, high); signature (low): `InvisibilityEffect * ctor(InvisibilityEffect * this, longlong param_1, undefined8 param_2, undefined4 * param_3)`
+pub const InvisibilityEffect__ctor: u64 = 34364;
 /// `InvisibilityEffect::vdtor` at 0x5c9270 (slot_propagation, medium); signature (low): `InvisibilityEffect * vdtor(InvisibilityEffect * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const InvisibilityEffect__vdtor: u64 = 34371;
 /// `InvisibilityEffect::vfunc_10` at 0x5c8f50 (rtti, high); signature (low): `undefined vfunc_10(InvisibilityEffect * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
@@ -2937,8 +2981,6 @@ pub const LocationDiscovery__UnregisterSink: u64 = 40378;
 pub const LockAndCoalesceFreeBlocks: u64 = 68303;
 /// `LockAndGetField160` at 0xefd6e0 (decompiler, medium); signature (untiered): `undefined8 LockAndGetField160(longlong param_1)`
 pub const LockAndGetField160: u64 = 70951;
-/// `LockC598ForWriteIfWorldLock` at 0x104fce0 (decompiler, high); signature (untiered): `undefined LockC598ForWriteIfWorldLock(longlong param_1)`
-pub const LockC598ForWriteIfWorldLock: u64 = 77928;
 /// `LockEffect::ctor` at 0x5c9d00 (layout_inference, high); signature (low): `LockEffect * ctor(LockEffect * this, longlong param_1, undefined8 param_2, undefined4 * param_3)`
 pub const LockEffect__ctor: u64 = 34393;
 /// `LockEffect::vdtor` at 0x5c9f10 (slot_propagation, medium); signature (low): `LockEffect * vdtor(LockEffect * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
@@ -8445,41 +8487,3 @@ pub const NiBSplineCompPoint3Interpolator__vfunc_25: u64 = 73439;
 pub const NiBSplineCompPoint3Interpolator__vfunc_26: u64 = 73440;
 /// `NiBSplineCompPoint3Interpolator::vfunc_27` at 0xf79400 (rtti, high); signature (low): `undefined vfunc_27(NiBSplineCompPoint3Interpolator * this, longlong param_1)`
 pub const NiBSplineCompPoint3Interpolator__vfunc_27: u64 = 73441;
-/// `NiBSplineCompPoint3Interpolator::vfunc_28` at 0xf79460 (rtti, high); signature (low): `ulonglong vfunc_28(NiBSplineCompPoint3Interpolator * this, longlong param_1)`
-pub const NiBSplineCompPoint3Interpolator__vfunc_28: u64 = 73442;
-/// `NiBSplineCompPoint3Interpolator::vfunc_37` at 0xf798c0 (rtti, high); signature (untiered): `undefined1 vfunc_37(void)`
-pub const NiBSplineCompPoint3Interpolator__vfunc_37: u64 = 73458;
-/// `NiBSplineCompPoint3Interpolator::vfunc_38` at 0xf798b0 (rtti, high); signature (untiered): `undefined1 vfunc_38(void)`
-pub const NiBSplineCompPoint3Interpolator__vfunc_38: u64 = 73457;
-/// `NiBSplineCompPoint3Interpolator::vfunc_39` at 0xf79610 (rtti, high); signature (low): `undefined8 vfunc_39(NiBSplineCompPoint3Interpolator * this, float param_1, undefined8 param_2, undefined4 * param_3)`
-pub const NiBSplineCompPoint3Interpolator__vfunc_39: u64 = 73446;
-/// `NiBSplineCompPoint3Interpolator::vfunc_40` at 0xf798d0 (rtti, high); signature (untiered): `undefined1 vfunc_40(void)`
-pub const NiBSplineCompPoint3Interpolator__vfunc_40: u64 = 73459;
-/// `NiBSplineCompPoint3Interpolator::vfunc_41` at 0xf798a0 (rtti, high); signature (untiered): `undefined1 vfunc_41(void)`
-pub const NiBSplineCompPoint3Interpolator__vfunc_41: u64 = 73456;
-/// `NiBSplineCompPoint3Interpolator::vfunc_42` at 0xf798e0 (rtti, high); signature (untiered): `undefined1 vfunc_42(void)`
-pub const NiBSplineCompPoint3Interpolator__vfunc_42: u64 = 73460;
-/// `NiBSplineCompPoint3Interpolator::vfunc_62` at 0xf79780 (rtti, high); signature (low): `undefined1 vfunc_62(void)`
-pub const NiBSplineCompPoint3Interpolator__vfunc_62: u64 = 73452;
-/// `NiBSplineCompTransformInterpolator::Create` at 0xf7a1a0 (string, high); signature (low): `NiBSplineTransformInterpolator * Create(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const NiBSplineCompTransformInterpolator__Create: u64 = 73486;
-/// `NiBSplineCompTransformInterpolator::ctor` at 0xf79cc0 (layout_inference, high); signature (low): `NiBSplineCompTransformInterpolator * ctor(NiBSplineCompTransformInterpolator * this, longlong param_1, undefined4 param_2, undefined4 param_3, undefined4 param_4, longlong param_5)`
-pub const NiBSplineCompTransformInterpolator__ctor: u64 = 73469;
-/// `NiBSplineCompTransformInterpolator::ctor` at 0xf79d30 (layout_inference, high); signature (low): `NiBSplineCompTransformInterpolator * ctor(NiBSplineCompTransformInterpolator * this, float * param_1)`
-pub const NiBSplineCompTransformInterpolator__ctor_2: u64 = 73470;
-/// `NiBSplineCompTransformInterpolator::vdtor` at 0xf7a290 (slot_propagation, medium); signature (low): `NiBSplineCompTransformInterpolator * vdtor(NiBSplineCompTransformInterpolator * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-pub const NiBSplineCompTransformInterpolator__vdtor: u64 = 73487;
-/// `NiBSplineCompTransformInterpolator::vfunc_2` at 0xf7a2d0 (rtti, high); signature (low): `TypeNode * vfunc_2(void)`
-pub const NiBSplineCompTransformInterpolator__vfunc_2: u64 = 73488;
-/// `NiBSplineCompTransformInterpolator::vfunc_23` at 0xf798f0 (rtti, high); signature (low): `NiBSplineTransformInterpolator * vfunc_23(NiBSplineCompTransformInterpolator * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
-pub const NiBSplineCompTransformInterpolator__vfunc_23: u64 = 73461;
-/// `NiBSplineCompTransformInterpolator::vfunc_24` at 0xf79a80 (rtti, high); signature (low): `undefined vfunc_24(NiBSplineCompTransformInterpolator * this, longlong param_1)`
-pub const NiBSplineCompTransformInterpolator__vfunc_24: u64 = 73463;
-/// `NiBSplineCompTransformInterpolator::vfunc_25` at 0xf79ae0 (rtti, high); signature (untiered): `undefined vfunc_25(void)`
-pub const NiBSplineCompTransformInterpolator__vfunc_25: u64 = 73464;
-/// `NiBSplineCompTransformInterpolator::vfunc_26` at 0xf79af0 (rtti, high); signature (low): `bool vfunc_26(void)`
-pub const NiBSplineCompTransformInterpolator__vfunc_26: u64 = 73465;
-/// `NiBSplineCompTransformInterpolator::vfunc_27` at 0xf79b10 (rtti, high); signature (low): `undefined vfunc_27(NiBSplineCompTransformInterpolator * this, longlong param_1)`
-pub const NiBSplineCompTransformInterpolator__vfunc_27: u64 = 73466;
-/// `NiBSplineCompTransformInterpolator::vfunc_28` at 0xf79b70 (rtti, high); signature (low): `ulonglong vfunc_28(NiBSplineCompTransformInterpolator * this, longlong param_1)`
-pub const NiBSplineCompTransformInterpolator__vfunc_28: u64 = 73467;

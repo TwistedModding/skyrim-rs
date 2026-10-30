@@ -6124,7 +6124,7 @@ pub struct PlayerCharacter_vtable_38 {
     pub slot_9: *const c_void,
     /// `Actor::CreateAnimationChannels` at 0x6b0650 (semantic, high); signature (untiered): `undefined8 CreateAnimationChannels(Actor * this, longlong param_1)`
     pub slot_10: *const c_void,
-    /// `PlayerCharacter::IAnimationGraphManagerHolder_vfunc_11` at 0x760f50 (rtti, high); signature (low): `undefined IAnimationGraphManagerHolder_vfunc_11(PlayerCharacter * this, longlong * param_1)`
+    /// `PlayerCharacter::OnGraphManagerSet` at 0x760f50 (semantic, high); signature (untiered): `undefined OnGraphManagerSet(PlayerCharacter * this, longlong * param_1)`
     pub slot_11: *const c_void,
     /// `Actor::IAnimationGraphManagerHolder_vfunc_12` at 0x6b1180 (rtti, medium); signature (high): `undefined IAnimationGraphManagerHolder_vfunc_12(Actor * this)`
     pub slot_12: *const c_void,
@@ -10386,7 +10386,7 @@ pub struct ShaderReferenceEffect_vtable {
     pub slot_38: *const c_void,
     /// `ReferenceEffect::vfunc_39` at 0x5db5e0 (rtti, medium); signature (high): `undefined vfunc_39(ReferenceEffect * this)`
     pub slot_39: *const c_void,
-    /// `ShaderReferenceEffect::vfunc_40` at 0x5de900 (rtti, high); signature (medium): `char vfunc_40(ShaderReferenceEffect * this, float param_1)`
+    /// `ShaderReferenceEffect::Update` at 0x5de900 (semantic, high); signature (untiered): `char Update(ShaderReferenceEffect * this, float param_1)`; `Update`: see functions (high); semantic signature: `bool (ShaderReferenceEffect*, float dt)`
     pub slot_40: *const c_void,
     /// `ShaderReferenceEffect::vfunc_41` at 0x5dfab0 (rtti, high); signature (high): `undefined8 vfunc_41(ShaderReferenceEffect * this)`
     pub slot_41: *const c_void,
@@ -10412,21 +10412,21 @@ pub struct ShaderReferenceEffect_vtable {
     pub slot_51: *const c_void,
     /// `ShaderReferenceEffect::vfunc_52` at 0x5dfdb0 (rtti, high); signature (high): `undefined vfunc_52(ShaderReferenceEffect * this)`
     pub slot_52: *const c_void,
-    /// `ShaderReferenceEffect::vfunc_53` at 0x5dfdd0 (rtti, high); signature (high): `undefined vfunc_53(ShaderReferenceEffect * this)`
+    /// `ShaderReferenceEffect::ApplyAfterDelay` at 0x5dfdd0 (semantic, high); signature (untiered): `undefined ApplyAfterDelay(ShaderReferenceEffect * this)`; `ApplyAfterDelay`: +0x134 countdown, FillEffectShaderParameters 0x26c270, apply to slot 60's root (high); semantic signature: `void (ShaderReferenceEffect*)`
     pub slot_53: *const c_void,
     /// `ShaderReferenceEffect::vfunc_54` at 0x5de6b0 (rtti, high); signature (high): `undefined8 vfunc_54(ShaderReferenceEffect * this)`
     pub slot_54: *const c_void,
-    /// `ShaderReferenceEffect::vfunc_55` at 0x5df6c0 (rtti, high); signature (high): `undefined vfunc_55(ShaderReferenceEffect * this)`
+    /// `ShaderReferenceEffect::Suspend` at 0x5df6c0 (semantic, high); signature (untiered): `undefined Suspend(ShaderReferenceEffect * this)`; `Suspend`: see functions (high); semantic signature: `void (ShaderReferenceEffect*)`
     pub slot_55: *const c_void,
-    /// `ShaderReferenceEffect::vfunc_56` at 0x5df7a0 (rtti, high); signature (high): `undefined vfunc_56(ShaderReferenceEffect * this)`
+    /// `ShaderReferenceEffect::Resume` at 0x5df7a0 (semantic, high); signature (untiered): `undefined Resume(ShaderReferenceEffect * this)`; `Resume`: see functions (high); semantic signature: `void (ShaderReferenceEffect*)`
     pub slot_56: *const c_void,
-    /// `ShaderReferenceEffect::vfunc_57` at 0x5df880 (rtti, high); signature (low): `undefined vfunc_57(ShaderReferenceEffect * this, undefined8 param_1, longlong param_2, undefined8 param_3)`
+    /// `ShaderReferenceEffect::Finish` at 0x5df880 (semantic, high); signature (untiered): `undefined Finish(ShaderReferenceEffect * this, undefined8 param_1, longlong param_2, undefined8 param_3)`; `Finish`: see functions (high); semantic signature: `void (ShaderReferenceEffect*, ...)`
     pub slot_57: *const c_void,
     /// `ReferenceEffect::vfunc_58` at 0x5db710 (rtti, medium); signature (low): `undefined vfunc_58(ReferenceEffect * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_58: *const c_void,
-    /// `ShaderReferenceEffect::UpdateTargetRoot` at 0x5def30 (semantic, high); signature (untiered): `undefined UpdateTargetRoot(ShaderReferenceEffect * this)`; `UpdateTargetRoot`: root = slot 60; when it differs from attachedRoot (or bit 2): RemoveEffectShaderData(effectShader, old, effectData), ApplyEffectShaderData(effectShader, root, effectData, false); then places the effect's own node (+0xf8) relative to the root (high); semantic signature: `void (ShaderReferenceEffect* this)`
+    /// `ShaderReferenceEffect::UpdateTargetRoot` at 0x5def30 (semantic, high); signature (untiered): `undefined UpdateTargetRoot(ShaderReferenceEffect * this)`; `UpdateTargetRoot`: see functions (high); semantic signature: `void (ShaderReferenceEffect*)`
     pub slot_59: *const c_void,
-    /// `ShaderReferenceEffect::GetTargetRoot` at 0x5dfac0 (semantic, high); signature (untiered): `longlong GetTargetRoot(ShaderReferenceEffect * this)`; `GetTargetRoot`: controller's root (+0x30 slot 15) when present, else 0 with flag bit 7, else ReferenceEffect slot 60 = target->Get3D() (slot 112) (high); semantic signature: `NiAVObject* (ShaderReferenceEffect* this)`
+    /// `ShaderReferenceEffect::GetTargetRoot` at 0x5dfac0 (semantic, high); signature (untiered): `longlong GetTargetRoot(ShaderReferenceEffect * this)`; `GetTargetRoot`: see functions (high); semantic signature: `NiAVObject* (ShaderReferenceEffect*)`
     pub slot_60: *const c_void,
     /// `ReferenceEffect::vfunc_61` at 0x5dbc30 (rtti, medium); signature (low): `undefined1 vfunc_61(void)`
     pub slot_61: *const c_void,
@@ -10435,6 +10435,31 @@ pub struct ShaderReferenceEffect_vtable {
 }
 impl ShaderReferenceEffect_vtable {
     pub const ID: u64 = 206059;
+    pub const SLOT_Update: usize = 40;
+    /// Slot 40 as `ShaderReferenceEffect_vtable_Update`, `None` when the slot is null.
+    #[must_use]
+    pub fn Update(&self) -> Option<ShaderReferenceEffect_vtable_Update> {
+        unsafe { core::mem::transmute::<*const c_void, Option<ShaderReferenceEffect_vtable_Update>>(self.slot_40) }
+    }
+    pub const SLOT_ApplyAfterDelay: usize = 53;
+    /// Slot 53 as `ShaderReferenceEffect_vtable_ApplyAfterDelay`, `None` when the slot is null.
+    #[must_use]
+    pub fn ApplyAfterDelay(&self) -> Option<ShaderReferenceEffect_vtable_ApplyAfterDelay> {
+        unsafe { core::mem::transmute::<*const c_void, Option<ShaderReferenceEffect_vtable_ApplyAfterDelay>>(self.slot_53) }
+    }
+    pub const SLOT_Suspend: usize = 55;
+    /// Slot 55 as `ShaderReferenceEffect_vtable_Suspend`, `None` when the slot is null.
+    #[must_use]
+    pub fn Suspend(&self) -> Option<ShaderReferenceEffect_vtable_Suspend> {
+        unsafe { core::mem::transmute::<*const c_void, Option<ShaderReferenceEffect_vtable_Suspend>>(self.slot_55) }
+    }
+    pub const SLOT_Resume: usize = 56;
+    /// Slot 56 as `ShaderReferenceEffect_vtable_Resume`, `None` when the slot is null.
+    #[must_use]
+    pub fn Resume(&self) -> Option<ShaderReferenceEffect_vtable_Resume> {
+        unsafe { core::mem::transmute::<*const c_void, Option<ShaderReferenceEffect_vtable_Resume>>(self.slot_56) }
+    }
+    pub const SLOT_Finish: usize = 57;
     pub const SLOT_UpdateTargetRoot: usize = 59;
     /// Slot 59 as `ShaderReferenceEffect_vtable_UpdateTargetRoot`, `None` when the slot is null.
     #[must_use]
@@ -10448,10 +10473,18 @@ impl ShaderReferenceEffect_vtable {
         unsafe { core::mem::transmute::<*const c_void, Option<ShaderReferenceEffect_vtable_GetTargetRoot>>(self.slot_60) }
     }
 }
-/// `ShaderReferenceEffect::UpdateTargetRoot`, slot 59: root = slot 60; when it differs from attachedRoot (or bit 2): RemoveEffectShaderData(effectShader, old, effectData), ApplyEffectShaderData(effectShader, root, effectData, false); then places the effect's own node (+0xf8) relative to the root (high).
-pub type ShaderReferenceEffect_vtable_UpdateTargetRoot = unsafe extern "C" fn(this: *mut crate::ShaderReferenceEffect);
-/// `ShaderReferenceEffect::GetTargetRoot`, slot 60: controller's root (+0x30 slot 15) when present, else 0 with flag bit 7, else ReferenceEffect slot 60 = target->Get3D() (slot 112) (high).
-pub type ShaderReferenceEffect_vtable_GetTargetRoot = unsafe extern "C" fn(this: *mut crate::ShaderReferenceEffect) -> *mut crate::NiAVObject;
+/// `ShaderReferenceEffect::Update`, slot 40: see functions (high).
+pub type ShaderReferenceEffect_vtable_Update = unsafe extern "C" fn(a0: *mut crate::ShaderReferenceEffect, dt: f32) -> bool;
+/// `ShaderReferenceEffect::ApplyAfterDelay`, slot 53: +0x134 countdown, FillEffectShaderParameters 0x26c270, apply to slot 60's root (high).
+pub type ShaderReferenceEffect_vtable_ApplyAfterDelay = unsafe extern "C" fn(a0: *mut crate::ShaderReferenceEffect);
+/// `ShaderReferenceEffect::Suspend`, slot 55: see functions (high).
+pub type ShaderReferenceEffect_vtable_Suspend = unsafe extern "C" fn(a0: *mut crate::ShaderReferenceEffect);
+/// `ShaderReferenceEffect::Resume`, slot 56: see functions (high).
+pub type ShaderReferenceEffect_vtable_Resume = unsafe extern "C" fn(a0: *mut crate::ShaderReferenceEffect);
+/// `ShaderReferenceEffect::UpdateTargetRoot`, slot 59: see functions (high).
+pub type ShaderReferenceEffect_vtable_UpdateTargetRoot = unsafe extern "C" fn(a0: *mut crate::ShaderReferenceEffect);
+/// `ShaderReferenceEffect::GetTargetRoot`, slot 60: see functions (high).
+pub type ShaderReferenceEffect_vtable_GetTargetRoot = unsafe extern "C" fn(a0: *mut crate::ShaderReferenceEffect) -> *mut crate::NiAVObject;
 
 /// `ShadowSceneNode::vftable` at 0x1b3dba0, id 254646 (rtti, high); 62 slots.
 #[repr(C)]
@@ -12153,17 +12186,5 @@ pub struct SkyrimScript___anon_946BA6A1__StoryEventArguments_SkyrimScript___anon
 }
 impl SkyrimScript___anon_946BA6A1__StoryEventArguments_SkyrimScript___anon_946BA6A1__RefStoryEventArg_7102a7866e3a_vtable {
     pub const ID: u64 = 216851;
-}
-
-/// `SkyrimScript::_anon_946BA6A1::StoryEventArguments<SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::FormStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::UIntStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::UIntStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter>::vftable` at 0x198d928, id 216859 (rtti, high); 2 slots.
-#[repr(C)]
-pub struct SkyrimScript___anon_946BA6A1__StoryEventArguments_SkyrimScript___anon_946BA6A1__RefStoryEventArg_f81d113e81ee_vtable {
-    /// `SkyrimScript::_anon_946BA6A1::StoryEventArguments<SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::FormStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::UIntStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::UIntStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter>::vfunc_0` at 0x9d5020 (rtti, high); signature (low): `StoryEventArguments<SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::FormStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::UIntStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::UIntStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter> * vfunc_0(StoryEventArguments<SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::FormStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::UIntStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::UIntStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `SkyrimScript::_anon_946BA6A1::StoryEventArguments<SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::FormStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::UIntStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::UIntStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter>::vfunc_1` at 0x9d3730 (rtti, high); signature (low): `undefined8 vfunc_1(StoryEventArguments<SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::FormStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::UIntStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::UIntStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter> * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_1: *const c_void,
-}
-impl SkyrimScript___anon_946BA6A1__StoryEventArguments_SkyrimScript___anon_946BA6A1__RefStoryEventArg_f81d113e81ee_vtable {
-    pub const ID: u64 = 216859;
 }
 

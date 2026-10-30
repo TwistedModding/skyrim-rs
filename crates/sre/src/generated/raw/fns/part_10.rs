@@ -3,6 +3,44 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `FormatWideLegacyWithLocale` at 0x15ab314 (decompiler, medium); signature (medium): `int FormatWideLegacyWithLocale(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const FormatWideLegacyWithLocale: u64 = 109891;
+/// `FormatWideMaxCountSecure` at 0x15ab3cc (decompiler, high); signature (high): `int FormatWideMaxCountSecure(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const FormatWideMaxCountSecure: u64 = 109893;
+/// `FormatWideMaxCountSecureWithLocale` at 0x15ab36c (decompiler, high); signature (high): `int FormatWideMaxCountSecureWithLocale(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4, undefined8 param_5)`
+pub const FormatWideMaxCountSecureWithLocale: u64 = 109892;
+/// `FormatWidePositional` at 0x15ab218 (decompiler, high); signature (high): `int FormatWidePositional(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const FormatWidePositional: u64 = 109888;
+/// `FormatWidePositionalV` at 0x15aae34 (decompiler, high); signature (high): `int FormatWidePositionalV(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const FormatWidePositionalV: u64 = 109876;
+/// `FormatWidePositionalWithLocale` at 0x15ab1c4 (decompiler, high); signature (high): `int FormatWidePositionalWithLocale(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const FormatWidePositionalWithLocale: u64 = 109887;
+/// `FormatWidePositionalWithLocaleV` at 0x15aadd0 (decompiler, high); signature (high): `int FormatWidePositionalWithLocaleV(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4, undefined8 param_5)`
+pub const FormatWidePositionalWithLocaleV: u64 = 109875;
+/// `FormatWideSecure` at 0x15ab170 (decompiler, high); signature (high): `int FormatWideSecure(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const FormatWideSecure: u64 = 109886;
+/// `FormatWideSecureV` at 0x15aad70 (decompiler, high); signature (high): `int FormatWideSecureV(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const FormatWideSecureV: u64 = 109874;
+/// `FormatWideSecureWithLocale` at 0x15ab11c (decompiler, high); signature (high): `int FormatWideSecureWithLocale(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const FormatWideSecureWithLocale: u64 = 109885;
+/// `FormatWideSecureWithLocaleV` at 0x15aad0c (decompiler, high); signature (high): `int FormatWideSecureWithLocaleV(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4, undefined8 param_5)`
+pub const FormatWideSecureWithLocaleV: u64 = 109873;
+/// `FormatWideStringV` at 0x128f180 (decompiler, high); signature (high): `int FormatWideStringV(longlong param_1, longlong param_2, longlong param_3, undefined8 param_4)`
+pub const FormatWideStringV: u64 = 94316;
+/// `FormatWideUnbounded` at 0x15ab074 (decompiler, high); signature (high): `int FormatWideUnbounded(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const FormatWideUnbounded: u64 = 109883;
+/// `FormatWideUnboundedV` at 0x15aac58 (decompiler, high); signature (high): `int FormatWideUnboundedV(undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+pub const FormatWideUnboundedV: u64 = 109871;
+/// `FormatWideUnboundedWithLocale` at 0x15aafcc (decompiler, high); signature (high): `int FormatWideUnboundedWithLocale(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const FormatWideUnboundedWithLocale: u64 = 109881;
+/// `FormatWideUnboundedWithLocaleV` at 0x15aabf8 (decompiler, high); signature (high): `int FormatWideUnboundedWithLocaleV(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const FormatWideUnboundedWithLocaleV: u64 = 109870;
+/// `FormatWideV` at 0x15aab34 (decompiler, high); signature (high): `int FormatWideV(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const FormatWideV: u64 = 109868;
+/// `FormatWideV_2` at 0x15aacac (decompiler, high); signature (high): `int FormatWideV_2(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const FormatWideV_2: u64 = 109872;
+/// `FormatWideWithLocale` at 0x15ab020 (decompiler, high); signature (high): `int FormatWideWithLocale(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const FormatWideWithLocale: u64 = 109882;
 /// `FormatWideWithLocaleV` at 0x15aaad0 (decompiler, high); signature (high): `int FormatWideWithLocaleV(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4, undefined8 param_5)`
 pub const FormatWideWithLocaleV: u64 = 109867;
 /// `FormatWideWithLocaleV_2` at 0x15aab94 (decompiler, high); signature (high): `int FormatWideWithLocaleV_2(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4, undefined8 param_5)`
@@ -8523,45 +8561,3 @@ pub const GameSetting_fLockPickBreakMult__init: u64 = 1868;
 pub const GameSetting_fLockPickQualityBase__atexit: u64 = 167079;
 /// `GameSetting_fLockPickQualityBase__init` at 0x2d3c0 (crt_init, medium); signature (high): `void GameSetting_fLockPickQualityBase__init(void)`
 pub const GameSetting_fLockPickQualityBase__init: u64 = 1869;
-/// `GameSetting_fLockPickQualityMult__atexit` at 0x1753d20 (crt_init, medium); signature (high): `void GameSetting_fLockPickQualityMult__atexit(void)`
-pub const GameSetting_fLockPickQualityMult__atexit: u64 = 167080;
-/// `GameSetting_fLockPickQualityMult__init` at 0x2d440 (crt_init, medium); signature (high): `void GameSetting_fLockPickQualityMult__init(void)`
-pub const GameSetting_fLockPickQualityMult__init: u64 = 1870;
-/// `GameSetting_fLockSkillBase__atexit` at 0x1770b50 (crt_init, medium); signature (high): `void GameSetting_fLockSkillBase__atexit(void)`
-pub const GameSetting_fLockSkillBase__atexit: u64 = 168559;
-/// `GameSetting_fLockSkillBase__init` at 0x5aef0 (crt_init, medium); signature (high): `void GameSetting_fLockSkillBase__init(void)`
-pub const GameSetting_fLockSkillBase__init: u64 = 3349;
-/// `GameSetting_fLockSkillMult__atexit` at 0x1753d70 (crt_init, medium); signature (high): `void GameSetting_fLockSkillMult__atexit(void)`
-pub const GameSetting_fLockSkillMult__atexit: u64 = 167081;
-/// `GameSetting_fLockSkillMult__init` at 0x2d4c0 (crt_init, medium); signature (high): `void GameSetting_fLockSkillMult__init(void)`
-pub const GameSetting_fLockSkillMult__init: u64 = 1871;
-/// `GameSetting_fLockTrapGoOffBase__atexit` at 0x1753dc0 (crt_init, medium); signature (high): `void GameSetting_fLockTrapGoOffBase__atexit(void)`
-pub const GameSetting_fLockTrapGoOffBase__atexit: u64 = 167082;
-/// `GameSetting_fLockTrapGoOffBase__init` at 0x2d540 (crt_init, medium); signature (high): `void GameSetting_fLockTrapGoOffBase__init(void)`
-pub const GameSetting_fLockTrapGoOffBase__init: u64 = 1872;
-/// `GameSetting_fLockTrapGoOffMult__atexit` at 0x1753e10 (crt_init, medium); signature (high): `void GameSetting_fLockTrapGoOffMult__atexit(void)`
-pub const GameSetting_fLockTrapGoOffMult__atexit: u64 = 167083;
-/// `GameSetting_fLockTrapGoOffMult__init` at 0x2d5c0 (crt_init, medium); signature (high): `void GameSetting_fLockTrapGoOffMult__init(void)`
-pub const GameSetting_fLockTrapGoOffMult__init: u64 = 1873;
-/// `GameSetting_fLockpickBreakAdept__atexit` at 0x1770ba0 (crt_init, medium); signature (high): `void GameSetting_fLockpickBreakAdept__atexit(void)`
-pub const GameSetting_fLockpickBreakAdept__atexit: u64 = 168560;
-/// `GameSetting_fLockpickBreakAdept__init` at 0x5af70 (crt_init, medium); signature (high): `void GameSetting_fLockpickBreakAdept__init(void)`
-pub const GameSetting_fLockpickBreakAdept__init: u64 = 3350;
-/// `GameSetting_fLockpickBreakApprentice__atexit` at 0x1770bf0 (crt_init, medium); signature (high): `void GameSetting_fLockpickBreakApprentice__atexit(void)`
-pub const GameSetting_fLockpickBreakApprentice__atexit: u64 = 168561;
-/// `GameSetting_fLockpickBreakApprentice__init` at 0x5aff0 (crt_init, medium); signature (high): `void GameSetting_fLockpickBreakApprentice__init(void)`
-pub const GameSetting_fLockpickBreakApprentice__init: u64 = 3351;
-/// `GameSetting_fLockpickBreakExpert__atexit` at 0x1770c40 (crt_init, medium); signature (high): `void GameSetting_fLockpickBreakExpert__atexit(void)`
-pub const GameSetting_fLockpickBreakExpert__atexit: u64 = 168562;
-/// `GameSetting_fLockpickBreakExpert__init` at 0x5b070 (crt_init, medium); signature (high): `void GameSetting_fLockpickBreakExpert__init(void)`
-pub const GameSetting_fLockpickBreakExpert__init: u64 = 3352;
-/// `GameSetting_fLockpickBreakMaster__atexit` at 0x1770c90 (crt_init, medium); signature (high): `void GameSetting_fLockpickBreakMaster__atexit(void)`
-pub const GameSetting_fLockpickBreakMaster__atexit: u64 = 168563;
-/// `GameSetting_fLockpickBreakMaster__init` at 0x5b0f0 (crt_init, medium); signature (high): `void GameSetting_fLockpickBreakMaster__init(void)`
-pub const GameSetting_fLockpickBreakMaster__init: u64 = 3353;
-/// `GameSetting_fLockpickBreakNovice__atexit` at 0x1770ce0 (crt_init, medium); signature (high): `void GameSetting_fLockpickBreakNovice__atexit(void)`
-pub const GameSetting_fLockpickBreakNovice__atexit: u64 = 168564;
-/// `GameSetting_fLockpickBreakNovice__init` at 0x5b170 (crt_init, medium); signature (high): `void GameSetting_fLockpickBreakNovice__init(void)`
-pub const GameSetting_fLockpickBreakNovice__init: u64 = 3354;
-/// `GameSetting_fLockpickBreakSkillBase__atexit` at 0x1770d30 (crt_init, medium); signature (high): `void GameSetting_fLockpickBreakSkillBase__atexit(void)`
-pub const GameSetting_fLockpickBreakSkillBase__atexit: u64 = 168565;

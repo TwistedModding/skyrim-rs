@@ -228,9 +228,9 @@ pub struct BGSWaterCollisionManager__bhkAutoWater_vtable {
     pub slot_35: *const c_void,
     /// `NiObject::vfunc_36` at 0xedcbb0 (rtti, medium); signature (low): `undefined8 vfunc_36(void)`
     pub slot_36: *const c_void,
-    /// `bhkSerializable::vfunc_37` at 0x10829c0 (rtti, medium); signature (low): `undefined vfunc_37(bhkSerializable * this, longlong param_1)`
+    /// `bhkShape::SetReferencedObject` at 0x10829c0 (semantic, high); signature (untiered): `undefined SetReferencedObject(bhkShape * this, longlong param_1)`
     pub slot_37: *const c_void,
-    /// `bhkWorldObject::vfunc_38` at 0x10483b0 (rtti, medium); signature (low): `undefined vfunc_38(bhkWorldObject * this, char param_1)`
+    /// `bhkWorldObject::LinkHavokObject` at 0x10483b0 (semantic, high); signature (untiered): `undefined LinkHavokObject(bhkWorldObject * this, char param_1)`
     pub slot_38: *const c_void,
     /// `bhkWorldObject::vfunc_39` at 0x1047cc0 (rtti, medium); signature (high): `undefined8 vfunc_39(bhkWorldObject * this)`
     pub slot_39: *const c_void,

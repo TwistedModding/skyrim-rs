@@ -3,12 +3,252 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `hkpGskfAgent::vfunc_13` at 0xcc36f0 (rtti, medium); signature (low): `undefined vfunc_13(hkpGskfAgent * this, short param_1)`
+pub const hkpGskfAgent__vfunc_13: u64 = 67540;
+/// `hkpGskfAgent::vfunc_6` at 0xcc3430 (rtti, high); signature (low): `undefined vfunc_6(hkpGskfAgent * this, longlong param_1, longlong param_2, longlong param_3, ulonglong * param_4)`
+pub const hkpGskfAgent__vfunc_6: u64 = 67536;
+/// `hkpGskfAgent::vfunc_7` at 0xcc3620 (rtti, medium); signature (low): `undefined vfunc_7(hkpGskfAgent * this, undefined8 param_1)`
+pub const hkpGskfAgent__vfunc_7: u64 = 67537;
+/// `hkpGunProjectile::ctor` at 0xba8710 (layout_inference, medium); signature (low): `hkpGunProjectile * ctor(hkpGunProjectile * this, undefined8 param_1, longlong param_2)`
+pub const hkpGunProjectile__ctor: u64 = 62813;
+/// `hkpGunProjectile::dtor` at 0xba8760 (layout_inference, high); signature (high): `undefined dtor(hkpGunProjectile * this)`
+pub const hkpGunProjectile__dtor: u64 = 62814;
+/// `hkpGunProjectile::dtor_sub0` at 0xba8b80 (callgraph, medium); signature (untiered): `undefined dtor_sub0(longlong param_1)`
+pub const hkpGunProjectile__dtor_sub0: u64 = 62822;
+/// `hkpGunProjectile::hkpContactListener_vdtor` at 0xba904c (slot_propagation, medium); signature (high): `undefined hkpContactListener_vdtor(hkpGunProjectile * this)`
+pub const hkpGunProjectile__hkpContactListener_vdtor: u64 = 62839;
+/// `hkpGunProjectile::hkpContactListener_vfunc_0` at 0xba9160 (rtti, high); signature (high): `undefined hkpContactListener_vfunc_0(hkpGunProjectile * this)`
+pub const hkpGunProjectile__hkpContactListener_vfunc_0: u64 = 62842;
+/// `hkpGunProjectile::vdtor` at 0xba9060 (slot_propagation, medium); signature (low): `hkpGunProjectile * vdtor(hkpGunProjectile * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpGunProjectile__vdtor: u64 = 62840;
+/// `hkpGunProjectile::vfunc_3` at 0xba8b70 (rtti, high); signature (untiered): `undefined vfunc_3(longlong param_1)`
+pub const hkpGunProjectile__vfunc_3: u64 = 62821;
+/// `hkpGunProjectile::vfunc_4` at 0xba9180 (rtti, high); signature (high): `undefined vfunc_4(hkpGunProjectile * this)`
+pub const hkpGunProjectile__vfunc_4: u64 = 62844;
+/// `hkpGunProjectile::vfunc_5` at 0xba9190 (rtti, high); signature (low): `undefined vfunc_5(void)`
+pub const hkpGunProjectile__vfunc_5: u64 = 62845;
+/// `hkpHavokSnapshot::ConvertListener::dtor` at 0xb97b50 (layout_inference, high); signature (high): `undefined dtor(ConvertListener * this)`
+pub const hkpHavokSnapshot__ConvertListener__dtor: u64 = 62432;
+/// `hkpHavokSnapshot::ConvertListener::vdtor` at 0xb983d0 (slot_propagation, medium); signature (low): `ConvertListener * vdtor(ConvertListener * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpHavokSnapshot__ConvertListener__vdtor: u64 = 62441;
+/// `hkpHavokSnapshot::ConvertListener::vfunc_3` at 0xb97c10 (rtti, high); signature (low): `undefined vfunc_3(ConvertListener * this, longlong * param_1, undefined8 * param_2)`
+pub const hkpHavokSnapshot__ConvertListener__vfunc_3: u64 = 62433;
+/// `hkpHeightFieldAgent::ctor` at 0x10d3390 (layout_inference, medium); signature (low): `hkpHeightFieldAgent * ctor(hkpHeightFieldAgent * this, undefined8 * param_1, undefined8 param_2, undefined8 param_3, longlong param_4)`
+pub const hkpHeightFieldAgent__ctor: u64 = 80408;
+/// `hkpHeightFieldAgent::vdtor` at 0x10d3750 (layout_inference, medium); signature (low): `hkpHeightFieldAgent * vdtor(hkpHeightFieldAgent * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpHeightFieldAgent__vdtor: u64 = 80414;
+/// `hkpHeightFieldAgent::vfunc_3` at 0x10d26d0 (rtti, high); signature (low): `undefined vfunc_3(hkpHeightFieldAgent * this, undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const hkpHeightFieldAgent__vfunc_3: u64 = 80401;
+/// `hkpHeightFieldAgent::vfunc_4` at 0x10d2a40 (rtti, high); signature (low): `undefined vfunc_4(hkpHeightFieldAgent * this, undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const hkpHeightFieldAgent__vfunc_4: u64 = 80403;
+/// `hkpHeightFieldAgent::vfunc_5` at 0x10d2ef0 (rtti, medium); signature (low): `undefined vfunc_5(hkpHeightFieldAgent * this, undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const hkpHeightFieldAgent__vfunc_5: u64 = 80405;
+/// `hkpHeightFieldAgent::vfunc_6` at 0x10d3b80 (rtti, high); signature (low): `undefined vfunc_6(hkpHeightFieldAgent * this, undefined8 * param_1, undefined8 * param_2, longlong param_3, longlong * param_4)`
+pub const hkpHeightFieldAgent__vfunc_6: u64 = 80420;
+/// `hkpHeightFieldAgent::vfunc_7` at 0x10d32f0 (rtti, medium); signature (low): `undefined vfunc_7(hkpHeightFieldAgent * this, undefined8 param_1)`
+pub const hkpHeightFieldAgent__vfunc_7: u64 = 80407;
+/// `hkpHeightFieldShape::vdtor` at 0xb3a7d0 (layout_inference, medium); signature (low): `hkpHeightFieldShape * vdtor(hkpHeightFieldShape * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpHeightFieldShape__vdtor: u64 = 60347;
+/// `hkpHingeConstraintData::ctor` at 0xb62cf0 (layout_inference, medium); signature (high): `hkpHingeConstraintData * ctor(hkpHingeConstraintData * this)`
+pub const hkpHingeConstraintData__ctor: u64 = 61551;
+/// `hkpHingeConstraintData::ctor_sub0` at 0xb63600 (callgraph, medium); signature (untiered): `undefined2 * ctor_sub0(undefined2 * param_1)`
+pub const hkpHingeConstraintData__ctor_sub0: u64 = 61565;
+/// `hkpHingeConstraintData::vdtor` at 0xb51f50 (layout_inference, medium); signature (low): `hkpHingeConstraintData * vdtor(hkpHingeConstraintData * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpHingeConstraintData__vdtor: u64 = 61213;
+/// `hkpHingeConstraintData::vfunc_10` at 0xb63490 (rtti, high); signature (low): `undefined1 * vfunc_10(hkpHingeConstraintData * this, undefined1 * param_1)`
+pub const hkpHingeConstraintData__vfunc_10: u64 = 61558;
+/// `hkpHingeConstraintData::vfunc_11` at 0xb63530 (rtti, high); signature (low): `undefined8 vfunc_11(void)`
+pub const hkpHingeConstraintData__vfunc_11: u64 = 61559;
+/// `hkpHingeConstraintData::vfunc_12` at 0xb635e0 (rtti, high); signature (low): `undefined vfunc_12(hkpHingeConstraintData * this, char param_1, undefined8 * param_2)`
+pub const hkpHingeConstraintData__vfunc_12: u64 = 61564;
+/// `hkpHingeConstraintData::vfunc_18` at 0xb635c0 (rtti, high); signature (low): `undefined vfunc_18(hkpHingeConstraintData * this, int * param_1)`
+pub const hkpHingeConstraintData__vfunc_18: u64 = 61563;
+/// `hkpHingeConstraintData::vfunc_3` at 0xb63440 (rtti, high); signature (low): `undefined vfunc_3(hkpHingeConstraintData * this, undefined4 param_2)`
+pub const hkpHingeConstraintData__vfunc_3: u64 = 61554;
+/// `hkpHingeConstraintData::vfunc_4` at 0xb63450 (rtti, high); signature (low): `undefined4 vfunc_4(hkpHingeConstraintData * this)`
+pub const hkpHingeConstraintData__vfunc_4: u64 = 61555;
+/// `hkpHingeConstraintData::vfunc_5` at 0xb63540 (rtti, high); signature (low): `undefined vfunc_5(hkpHingeConstraintData * this, int param_1)`
+pub const hkpHingeConstraintData__vfunc_5: u64 = 61560;
+/// `hkpHingeConstraintData::vfunc_6` at 0xb63570 (rtti, high); signature (low): `undefined8 vfunc_6(hkpHingeConstraintData * this, undefined4 * param_1)`
+pub const hkpHingeConstraintData__vfunc_6: u64 = 61561;
+/// `hkpHingeConstraintData::vfunc_7` at 0xb63590 (rtti, high); signature (medium): `undefined8 vfunc_7(hkpHingeConstraintData * this, float param_1)`
+pub const hkpHingeConstraintData__vfunc_7: u64 = 61562;
+/// `hkpHingeConstraintData::vfunc_8` at 0xb63460 (rtti, high); signature (low): `undefined vfunc_8(hkpHingeConstraintData * this, byte param_1)`
+pub const hkpHingeConstraintData__vfunc_8: u64 = 61556;
+/// `hkpHingeConstraintData::vfunc_9` at 0xb63480 (rtti, high); signature (high): `byte vfunc_9(hkpHingeConstraintData * this)`
+pub const hkpHingeConstraintData__vfunc_9: u64 = 61557;
+/// `hkpHingeLimitsData::ctor` at 0xb76f00 (layout_inference, medium); signature (high): `hkpHingeLimitsData * ctor(hkpHingeLimitsData * this)`
+pub const hkpHingeLimitsData__ctor: u64 = 61988;
+/// `hkpHingeLimitsData::vdtor` at 0xb51fe0 (layout_inference, medium); signature (low): `hkpHingeLimitsData * vdtor(hkpHingeLimitsData * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpHingeLimitsData__vdtor: u64 = 61214;
+/// `hkpHingeLimitsData::vfunc_10` at 0xb77500 (rtti, high); signature (low): `undefined1 * vfunc_10(hkpHingeLimitsData * this, undefined1 * param_1)`
+pub const hkpHingeLimitsData__vfunc_10: u64 = 61991;
+/// `hkpHingeLimitsData::vfunc_11` at 0xb77570 (rtti, high); signature (low): `undefined8 vfunc_11(void)`
+pub const hkpHingeLimitsData__vfunc_11: u64 = 61992;
+/// `hkpHingeLimitsData::vfunc_12` at 0xb775a0 (rtti, high); signature (low): `undefined vfunc_12(hkpHingeLimitsData * this, undefined8 param_1, undefined4 * param_2)`
+pub const hkpHingeLimitsData__vfunc_12: u64 = 61994;
+/// `hkpHingeLimitsData::vfunc_18` at 0xb77580 (rtti, high); signature (low): `undefined vfunc_18(hkpHingeLimitsData * this, int * param_1)`
+pub const hkpHingeLimitsData__vfunc_18: u64 = 61993;
+/// `hkpIslandActivationListener::vdtor` at 0x3fd420 (layout_inference, medium); signature (low): `hkpIslandActivationListener * vdtor(hkpIslandActivationListener * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpIslandActivationListener__vdtor: u64 = 25856;
+/// `hkpIterativeLinearCastAgent::vdtor` at 0xc7a3b0 (layout_inference, medium); signature (low): `hkpIterativeLinearCastAgent * vdtor(hkpIterativeLinearCastAgent * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpIterativeLinearCastAgent__vdtor: u64 = 66663;
+/// `hkpIterativeLinearCastAgent::vfunc_5` at 0xcc1d30 (rtti, medium); signature (low): `undefined vfunc_5(hkpIterativeLinearCastAgent * this, undefined8 * param_1, undefined8 param_2, undefined8 * param_3, longlong * param_4, longlong * param_5)`
+pub const hkpIterativeLinearCastAgent__vfunc_5: u64 = 67519;
+/// `hkpKeyframedRigidMotion::ctor` at 0xb4c0e0 (layout_inference, high); signature (low): `hkpKeyframedRigidMotion * ctor(hkpKeyframedRigidMotion * this, int param_1)`
+pub const hkpKeyframedRigidMotion__ctor: u64 = 60871;
+/// `hkpKeyframedRigidMotion::ctor` at 0xb66f80 (layout_inference, high); signature (low): `hkpKeyframedRigidMotion * ctor(hkpKeyframedRigidMotion * this, float * param_1, undefined8 param_2)`
+pub const hkpKeyframedRigidMotion__ctor_2: u64 = 61679;
+/// `hkpKeyframedRigidMotion::dtor` at 0xb66fd0 (layout_inference, high); signature (high): `undefined dtor(hkpKeyframedRigidMotion * this)`
+pub const hkpKeyframedRigidMotion__dtor: u64 = 61680;
+/// `hkpKeyframedRigidMotion::vdtor` at 0xb4c540 (slot_propagation, medium); signature (low): `hkpKeyframedRigidMotion * vdtor(hkpKeyframedRigidMotion * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpKeyframedRigidMotion__vdtor: u64 = 60880;
+/// `hkpKeyframedRigidMotion::vfunc_10` at 0xb670b0 (rtti, medium); signature (low): `undefined vfunc_10(hkpKeyframedRigidMotion * this, undefined8 * param_1)`
+pub const hkpKeyframedRigidMotion__vfunc_10: u64 = 61688;
+/// `hkpKeyframedRigidMotion::vfunc_18` at 0xb670d0 (rtti, medium); signature (low): `undefined vfunc_18(hkpKeyframedRigidMotion * this, float * param_1, float * param_2, float * param_3, undefined4 * param_4)`
+pub const hkpKeyframedRigidMotion__vfunc_18: u64 = 61689;
+/// `hkpKeyframedRigidMotion::vfunc_19` at 0xb67160 (rtti, medium); signature (low): `undefined vfunc_19(void)`
+pub const hkpKeyframedRigidMotion__vfunc_19: u64 = 61690;
+/// `hkpKeyframedRigidMotion::vfunc_20` at 0xb67170 (rtti, medium); signature (low): `undefined vfunc_20(void)`
+pub const hkpKeyframedRigidMotion__vfunc_20: u64 = 61691;
+/// `hkpKeyframedRigidMotion::vfunc_21` at 0xb67180 (rtti, medium); signature (low): `undefined vfunc_21(void)`
+pub const hkpKeyframedRigidMotion__vfunc_21: u64 = 61692;
+/// `hkpKeyframedRigidMotion::vfunc_22` at 0xb671a0 (rtti, medium); signature (low): `undefined vfunc_22(void)`
+pub const hkpKeyframedRigidMotion__vfunc_22: u64 = 61694;
+/// `hkpKeyframedRigidMotion::vfunc_23` at 0xb67190 (rtti, medium); signature (low): `undefined vfunc_23(void)`
+pub const hkpKeyframedRigidMotion__vfunc_23: u64 = 61693;
+/// `hkpKeyframedRigidMotion::vfunc_24` at 0xb671b0 (rtti, medium); signature (low): `undefined vfunc_24(void)`
+pub const hkpKeyframedRigidMotion__vfunc_24: u64 = 61695;
+/// `hkpKeyframedRigidMotion::vfunc_26` at 0xb671c0 (rtti, medium); signature (low): `undefined vfunc_26(void)`
+pub const hkpKeyframedRigidMotion__vfunc_26: u64 = 61696;
+/// `hkpKeyframedRigidMotion::vfunc_27` at 0xb671d0 (rtti, medium); signature (low): `undefined vfunc_27(hkpKeyframedRigidMotion * this, longlong param_1)`
+pub const hkpKeyframedRigidMotion__vfunc_27: u64 = 61697;
+/// `hkpKeyframedRigidMotion::vfunc_3` at 0xb67010 (rtti, medium); signature (low): `undefined vfunc_3(void)`
+pub const hkpKeyframedRigidMotion__vfunc_3: u64 = 61681;
+/// `hkpKeyframedRigidMotion::vfunc_4` at 0xb67020 (rtti, medium); signature (low): `undefined vfunc_4(void)`
+pub const hkpKeyframedRigidMotion__vfunc_4: u64 = 61682;
+/// `hkpKeyframedRigidMotion::vfunc_5` at 0xb67030 (rtti, medium); signature (low): `undefined vfunc_5(hkpKeyframedRigidMotion * this, undefined8 * param_1)`
+pub const hkpKeyframedRigidMotion__vfunc_5: u64 = 61683;
+/// `hkpKeyframedRigidMotion::vfunc_6` at 0xb67060 (rtti, medium); signature (low): `undefined vfunc_6(hkpKeyframedRigidMotion * this, undefined8 * param_1)`
+pub const hkpKeyframedRigidMotion__vfunc_6: u64 = 61685;
+/// `hkpKeyframedRigidMotion::vfunc_7` at 0xb67050 (rtti, medium); signature (low): `undefined vfunc_7(void)`
+pub const hkpKeyframedRigidMotion__vfunc_7: u64 = 61684;
+/// `hkpKeyframedRigidMotion::vfunc_8` at 0xb67080 (rtti, medium); signature (low): `undefined vfunc_8(void)`
+pub const hkpKeyframedRigidMotion__vfunc_8: u64 = 61686;
+/// `hkpKeyframedRigidMotion::vfunc_9` at 0xb67090 (rtti, medium); signature (low): `undefined vfunc_9(hkpKeyframedRigidMotion * this, undefined8 * param_1)`
+pub const hkpKeyframedRigidMotion__vfunc_9: u64 = 61687;
+/// `hkpLimitedForceConstraintMotor::vdtor` at 0xb52070 (layout_inference, medium); signature (low): `hkpLimitedForceConstraintMotor * vdtor(hkpLimitedForceConstraintMotor * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpLimitedForceConstraintMotor__vdtor: u64 = 61215;
+/// `hkpLimitedHingeConstraintData::ctor` at 0xb64410 (layout_inference, medium); signature (high): `hkpLimitedHingeConstraintData * ctor(hkpLimitedHingeConstraintData * this)`
+pub const hkpLimitedHingeConstraintData__ctor: u64 = 61588;
+/// `hkpLimitedHingeConstraintData::ctor_sub0` at 0xb64db0 (callgraph, medium); signature (untiered): `undefined2 * ctor_sub0(undefined2 * param_1)`
+pub const hkpLimitedHingeConstraintData__ctor_sub0: u64 = 61605;
+/// `hkpLimitedHingeConstraintData::dtor` at 0xb64520 (layout_inference, high); signature (high): `undefined dtor(hkpLimitedHingeConstraintData * this)`
+pub const hkpLimitedHingeConstraintData__dtor: u64 = 61589;
+/// `hkpLimitedHingeConstraintData::vdtor` at 0xb52100 (slot_propagation, medium); signature (low): `hkpLimitedHingeConstraintData * vdtor(hkpLimitedHingeConstraintData * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpLimitedHingeConstraintData__vdtor: u64 = 61216;
+/// `hkpLimitedHingeConstraintData::vfunc_10` at 0xb64bb0 (rtti, high); signature (low): `undefined1 * vfunc_10(hkpLimitedHingeConstraintData * this, undefined1 * param_1)`
+pub const hkpLimitedHingeConstraintData__vfunc_10: u64 = 61596;
+/// `hkpLimitedHingeConstraintData::vfunc_11` at 0xb64d70 (rtti, high); signature (low): `undefined8 vfunc_11(void)`
+pub const hkpLimitedHingeConstraintData__vfunc_11: u64 = 61602;
+/// `hkpLimitedHingeConstraintData::vfunc_12` at 0xb64da0 (rtti, high); signature (low): `undefined vfunc_12(hkpLimitedHingeConstraintData * this, undefined8 param_1, undefined4 * param_2)`
+pub const hkpLimitedHingeConstraintData__vfunc_12: u64 = 61604;
+/// `hkpLimitedHingeConstraintData::vfunc_18` at 0xb64d80 (rtti, high); signature (low): `undefined vfunc_18(hkpLimitedHingeConstraintData * this, int * param_1)`
+pub const hkpLimitedHingeConstraintData__vfunc_18: u64 = 61603;
+/// `hkpLimitedHingeConstraintData::vfunc_3` at 0xb64b60 (rtti, high); signature (low): `undefined vfunc_3(hkpLimitedHingeConstraintData * this, undefined4 param_2)`
+pub const hkpLimitedHingeConstraintData__vfunc_3: u64 = 61592;
+/// `hkpLimitedHingeConstraintData::vfunc_4` at 0xb64b70 (rtti, high); signature (low): `undefined4 vfunc_4(hkpLimitedHingeConstraintData * this)`
+pub const hkpLimitedHingeConstraintData__vfunc_4: u64 = 61593;
+/// `hkpLimitedHingeConstraintData::vfunc_5` at 0xb64cf0 (rtti, high); signature (low): `undefined vfunc_5(hkpLimitedHingeConstraintData * this, int param_1)`
+pub const hkpLimitedHingeConstraintData__vfunc_5: u64 = 61599;
+/// `hkpLimitedHingeConstraintData::vfunc_6` at 0xb64d20 (rtti, high); signature (low): `undefined8 vfunc_6(hkpLimitedHingeConstraintData * this, undefined4 * param_1)`
+pub const hkpLimitedHingeConstraintData__vfunc_6: u64 = 61600;
+/// `hkpLimitedHingeConstraintData::vfunc_7` at 0xb64d40 (rtti, high); signature (medium): `undefined8 vfunc_7(hkpLimitedHingeConstraintData * this, float param_1)`
+pub const hkpLimitedHingeConstraintData__vfunc_7: u64 = 61601;
+/// `hkpLimitedHingeConstraintData::vfunc_8` at 0xb64b80 (rtti, high); signature (low): `undefined vfunc_8(hkpLimitedHingeConstraintData * this, byte param_1)`
+pub const hkpLimitedHingeConstraintData__vfunc_8: u64 = 61594;
+/// `hkpLimitedHingeConstraintData::vfunc_9` at 0xb64ba0 (rtti, high); signature (high): `byte vfunc_9(hkpLimitedHingeConstraintData * this)`
+pub const hkpLimitedHingeConstraintData__vfunc_9: u64 = 61595;
+/// `hkpLinearParametricCurve::ctor` at 0xb727c0 (layout_inference, medium); signature (high): `hkpLinearParametricCurve * ctor(hkpLinearParametricCurve * this)`
+pub const hkpLinearParametricCurve__ctor: u64 = 61902;
+/// `hkpLinearParametricCurve::vdtor` at 0xb52180 (slot_propagation, medium); signature (low): `hkpLinearParametricCurve * vdtor(hkpLinearParametricCurve * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpLinearParametricCurve__vdtor: u64 = 61217;
+/// `hkpLinearParametricCurve::vfunc_10` at 0xb73200 (rtti, high); signature (low): `undefined1 * vfunc_10(hkpLinearParametricCurve * this, undefined1 * param_1)`
+pub const hkpLinearParametricCurve__vfunc_10: u64 = 61910;
+/// `hkpLinearParametricCurve::vfunc_11` at 0xb73370 (rtti, high); signature (low): `undefined vfunc_11(hkpLinearParametricCurve * this, longlong * param_1)`
+pub const hkpLinearParametricCurve__vfunc_11: u64 = 61913;
+/// `hkpLinearParametricCurve::vfunc_12` at 0xb73440 (rtti, high); signature (low): `undefined vfunc_12(hkpLinearParametricCurve * this, float * param_1)`
+pub const hkpLinearParametricCurve__vfunc_12: u64 = 61915;
+/// `hkpLinearParametricCurve::vfunc_13` at 0xb734b0 (rtti, high); signature (high): `hkpLinearParametricCurve * vfunc_13(hkpLinearParametricCurve * this)`
+pub const hkpLinearParametricCurve__vfunc_13: u64 = 61916;
+/// `hkpLinearParametricCurve::vfunc_13_sub0` at 0xb73210 (callgraph, medium); signature (untiered): `undefined vfunc_13_sub0(longlong param_1, float * param_2)`
+pub const hkpLinearParametricCurve__vfunc_13_sub0: u64 = 61911;
+/// `hkpLinearParametricCurve::vfunc_3` at 0xb72810 (rtti, high); signature (low): `undefined vfunc_3(hkpLinearParametricCurve * this, float param_1, float * param_2)`
+pub const hkpLinearParametricCurve__vfunc_3: u64 = 61903;
+/// `hkpLinearParametricCurve::vfunc_4` at 0xb728c0 (rtti, high); signature (low): `undefined vfunc_4(hkpLinearParametricCurve * this, float param_1, float * param_2, float * param_3)`
+pub const hkpLinearParametricCurve__vfunc_4: u64 = 61904;
+/// `hkpLinearParametricCurve::vfunc_5` at 0xb72c50 (rtti, high); signature (low): `undefined vfunc_5(hkpLinearParametricCurve * this, float param_1, undefined1[16] * param_2)`
+pub const hkpLinearParametricCurve__vfunc_5: u64 = 61905;
+/// `hkpLinearParametricCurve::vfunc_6` at 0xb72fa0 (rtti, high); signature (low): `undefined8 vfunc_6(void)`
+pub const hkpLinearParametricCurve__vfunc_6: u64 = 61906;
+/// `hkpLinearParametricCurve::vfunc_7` at 0xb72fb0 (rtti, high); signature (low): `undefined vfunc_7(void)`
+pub const hkpLinearParametricCurve__vfunc_7: u64 = 61907;
+/// `hkpLinearParametricCurve::vfunc_8` at 0xb72fd0 (rtti, high); signature (low): `undefined vfunc_8(undefined8 param_1, uint param_2)`
+pub const hkpLinearParametricCurve__vfunc_8: u64 = 61908;
+/// `hkpLinearParametricCurve::vfunc_9` at 0xb73070 (rtti, high); signature (low): `undefined vfunc_9(hkpLinearParametricCurve * this, undefined4 param_2, float * param_3)`
+pub const hkpLinearParametricCurve__vfunc_9: u64 = 61909;
+/// `hkpListAgent::ctor` at 0xc8b3e0 (layout_inference, medium); signature (low): `hkpListAgent * ctor(hkpListAgent * this, undefined8 param_1, undefined8 param_2, undefined8 * param_3, undefined8 param_4)`
+pub const hkpListAgent__ctor: u64 = 66976;
+/// `hkpListAgent::vdtor` at 0xc8b6f0 (layout_inference, medium); signature (low): `hkpListAgent * vdtor(hkpListAgent * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpListAgent__vdtor: u64 = 66981;
+/// `hkpListAgent::vfunc_10` at 0xc8b390 (rtti, medium); signature (low): `undefined vfunc_10(hkpListAgent * this, float param_2, uint param_3, longlong * param_4)`
+pub const hkpListAgent__vfunc_10: u64 = 66974;
+/// `hkpListAgent::vfunc_2` at 0xc8b360 (rtti, medium); signature (low): `undefined vfunc_2(hkpListAgent * this, longlong * param_1)`
+pub const hkpListAgent__vfunc_2: u64 = 66972;
+/// `hkpListAgent::vfunc_3` at 0xc8b2d0 (rtti, high); signature (low): `undefined vfunc_3(hkpListAgent * this, undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const hkpListAgent__vfunc_3: u64 = 66970;
+/// `hkpListAgent::vfunc_4` at 0xc8b2a0 (rtti, high); signature (low): `undefined vfunc_4(hkpListAgent * this, undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const hkpListAgent__vfunc_4: u64 = 66969;
+/// `hkpListAgent::vfunc_5` at 0xc8b260 (rtti, medium); signature (low): `undefined vfunc_5(hkpListAgent * this, undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const hkpListAgent__vfunc_5: u64 = 66967;
+/// `hkpListAgent::vfunc_6` at 0xc8b090 (rtti, high); signature (low): `undefined vfunc_6(hkpListAgent * this, longlong param_1, longlong * param_2, longlong param_3, ulonglong * param_4)`
+pub const hkpListAgent__vfunc_6: u64 = 66966;
+/// `hkpListAgent::vfunc_7` at 0xc8b3a0 (rtti, medium); signature (low): `undefined vfunc_7(hkpListAgent * this, undefined8 param_1)`
+pub const hkpListAgent__vfunc_7: u64 = 66975;
+/// `hkpListAgent::vfunc_8` at 0xc8b300 (rtti, high); signature (low): `undefined vfunc_8(hkpListAgent * this, undefined8 param_1, undefined8 * param_2, undefined8 param_3, undefined8 param_4)`
+pub const hkpListAgent__vfunc_8: u64 = 66971;
+/// `hkpListAgent::vfunc_9` at 0xc8b380 (rtti, medium); signature (low): `undefined vfunc_9(hkpListAgent * this, longlong * param_1)`
+pub const hkpListAgent__vfunc_9: u64 = 66973;
+/// `hkpListShape::DisableChild` at 0xb402b0 (semantic, high); signature (untiered): `undefined DisableChild(longlong param_1, uint param_2)`; semantic: clears bit index in the bitset at +0x70 and increments u16 +0x42 when it changed (high); signature `void (hkpListShape* this, unsigned index)`
+pub const hkpListShape__DisableChild: u64 = 60647;
+/// `hkpListShape::FillChildShapes` at 0xb40a30 (semantic, high); signature (untiered): `undefined FillChildShapes(longlong param_1, longlong * param_2, uint param_3, undefined4 * param_4, int param_5)`; semantic: the only code that writes child shapes: grows +0x30 (stride 0x20), count -> +0x38, per non-null input: child+0 = shape, +8 = filterInfos[i] or 0, +0x10 = count, +0xc = 0; refPolicy 1 AddRefs every child (IncrementFieldAForStridedObjectsLocked 0xaa28b0); then recomputes the cached AABB (0xb401c0) (high); signature `void (hkpListShape* this, const hkpShape* const* shapes, int count, const u32* filterInfos, int refPolicy)`
+pub const hkpListShape__FillChildShapes: u64 = 60658;
+/// `hkpListShape::FillChildShapes` as a function pointer type (high).
+pub type hkpListShape__FillChildShapes_fn = unsafe extern "C" fn(this: *mut crate::hkpListShape, shapes: *mut *const crate::hkpShape, count: i32, filterInfos: *const u32, refPolicy: i32);
+/// `hkpListShape::GetChildShape` at 0xb403b0 (semantic, high); signature (untiered): `undefined8 GetChildShape(hkpListShape * this, int param_1)`; semantic: hkpShapeContainer slot 5 (this = list+0x20): returns childInfo[key].shape = *(list+0x30 + key*0x20) (high); signature `const hkpShape* (const hkpShapeContainer* this, unsigned key, void* buffer)`
+pub const hkpListShape__GetChildShape: u64 = 60652;
+/// `hkpListShape::RecomputeBounds` at 0xb401c0 (semantic, high); signature (untiered): `undefined RecomputeBounds(undefined8 param_1)`; semantic: unions every child's getAabb (identity transform, tolerance 0) and caches half extents at +0x50 and center at +0x60 (high); signature `void (hkpListShape* this)`
+pub const hkpListShape__RecomputeBounds: u64 = 60645;
+/// `hkpListShape::RecomputeBounds` as a function pointer type (high).
+pub type hkpListShape__RecomputeBounds_fn = unsafe extern "C" fn(this: *mut crate::hkpListShape);
+/// `hkpListShape::ctor` at 0xb3ffa0 (layout_inference, high); signature (low): `hkpListShape * ctor(hkpListShape * this, undefined8 param_1, undefined4 param_2, undefined4 param_3)`; semantic: hkpShapeCollection(type 9) base, list vtables 0x19eb078/+0x20 0x19eb0e8, child array +0x30 (reserved 4), setShapes, all 256 enable bits (+0x70..+0x8f) set, +0x40 = 0 (high); signature `hkpListShape* (hkpListShape* this, const hkpShape* const* shapes, int count, int refPolicy)`
+pub const hkpListShape__ctor: u64 = 60642;
+/// `hkpListShape::ctor` as a function pointer type (high).
+pub type hkpListShape__ctor_fn = unsafe extern "C" fn(this: *mut crate::hkpListShape, shapes: *mut *const crate::hkpShape, count: i32, refPolicy: i32) -> *mut crate::hkpListShape;
+/// `hkpListShape::ctor` at 0xb40090 (layout_inference, high); signature (low): `hkpListShape * ctor(hkpListShape * this, int param_1)`
+pub const hkpListShape__ctor_2: u64 = 60643;
+/// `hkpListShape::dtor` at 0xb40100 (layout_inference, high); signature (high): `undefined dtor(hkpListShape * this)`
+pub const hkpListShape__dtor: u64 = 60644;
+/// `hkpListShape::hkpShapeContainer_vdtor` at 0xb40b1c (slot_propagation, medium); signature (high): `undefined hkpShapeContainer_vdtor(hkpListShape * this)`
+pub const hkpListShape__hkpShapeContainer_vdtor: u64 = 60659;
+/// `hkpListShape::hkpShapeContainer_vfunc_1` at 0xb40c30 (rtti, high); signature (high): `int hkpShapeContainer_vfunc_1(hkpListShape * this)`
+pub const hkpListShape__hkpShapeContainer_vfunc_1: u64 = 60663;
+/// `hkpListShape::hkpShapeContainer_vfunc_2` at 0xb40bb0 (rtti, high); signature (high): `ulonglong hkpShapeContainer_vfunc_2(hkpListShape * this)`
+pub const hkpListShape__hkpShapeContainer_vfunc_2: u64 = 60661;
 /// `hkpListShape::hkpShapeContainer_vfunc_3` at 0xb40bf0 (rtti, high); signature (low): `uint hkpShapeContainer_vfunc_3(hkpListShape * this, uint param_1)`
 pub const hkpListShape__hkpShapeContainer_vfunc_3: u64 = 60662;
 /// `hkpListShape::hkpShapeContainer_vfunc_4` at 0xb40370 (rtti, high); signature (low): `undefined4 hkpShapeContainer_vfunc_4(hkpListShape * this, int param_1)`
 pub const hkpListShape__hkpShapeContainer_vfunc_4: u64 = 60650;
-/// `hkpListShape::hkpShapeContainer_vfunc_5` at 0xb403b0 (rtti, high); signature (low): `undefined8 hkpShapeContainer_vfunc_5(hkpListShape * this, int param_1)`
-pub const hkpListShape__hkpShapeContainer_vfunc_5: u64 = 60652;
 /// `hkpListShape::vdtor` at 0xb40b30 (slot_propagation, medium); signature (low): `hkpListShape * vdtor(hkpListShape * this, uint param_1, undefined8 param_2, undefined8 param_3)`
 pub const hkpListShape__vdtor: u64 = 60660;
 /// `hkpListShape::vfunc_2` at 0xb40890 (rtti, high); signature (low): `undefined vfunc_2(hkpListShape * this, longlong * param_1)`
@@ -837,6 +1077,10 @@ pub const hkpReportContactMgr__vfunc_7: u64 = 62183;
 pub const hkpReportContactMgr__vfunc_8: u64 = 62184;
 /// `hkpReportContactMgr::vfunc_9` at 0xb7ed00 (rtti, high); signature (high): `undefined vfunc_9(hkpReportContactMgr * this)`
 pub const hkpReportContactMgr__vfunc_9: u64 = 62190;
+/// `hkpRigidBody::SetShape` at 0xb4d590 (semantic, high); signature (untiered): `undefined8 SetShape(hkpRigidBody * this, longlong * param_1)`; semantic: hkpWorldObject slot 3 for rigid bodies: if the world is locked (world+0xf8 != 0) queues operation 5 and returns 0; else locks the world's critical section count, removes the entity's broadphase pairs, AddRefs the new shape, Releases the old, stores it at +0x20, recomputes mass-related extents (+0x88), re-adds the AABB and returns 1 (high); signature `int (hkpRigidBody* this, const hkpShape* shape)`
+pub const hkpRigidBody__SetShape: u64 = 60913;
+/// `hkpRigidBody::SetShape` as a function pointer type (high).
+pub type hkpRigidBody__SetShape_fn = unsafe extern "C" fn(this: *mut crate::hkpRigidBody, shape: *const crate::hkpShape) -> i32;
 /// `hkpRigidBody::ctor` at 0xb4c880 (layout_inference, high); signature (low): `hkpRigidBody * ctor(hkpRigidBody * this, undefined4 * param_1)`
 pub const hkpRigidBody__ctor: u64 = 60887;
 /// `hkpRigidBody::ctor` at 0xb4cda0 (layout_inference, high); signature (low): `hkpRigidBody * ctor(hkpRigidBody * this, int param_1)`
@@ -847,8 +1091,6 @@ pub const hkpRigidBody__ctor_sub0: u64 = 60971;
 pub const hkpRigidBody__ctor_sub1: u64 = 64490;
 /// `hkpRigidBody::vdtor` at 0xb4de10 (slot_propagation, medium); signature (low): `hkpRigidBody * vdtor(hkpRigidBody * this, uint param_1, undefined8 param_2, undefined8 param_3)`
 pub const hkpRigidBody__vdtor: u64 = 60920;
-/// `hkpRigidBody::vfunc_3` at 0xb4d590 (rtti, high); signature (low): `undefined8 vfunc_3(hkpRigidBody * this, longlong * param_1)`
-pub const hkpRigidBody__vfunc_3: u64 = 60913;
 /// `hkpRigidBody::vfunc_3_sub0` at 0xb68360 (callgraph, medium); signature (untiered): `undefined vfunc_3_sub0(longlong param_1)`
 pub const hkpRigidBody__vfunc_3_sub0: u64 = 61703;
 /// `hkpRigidBody::vfunc_3_sub1` at 0xb6a2c0 (callgraph, medium); signature (untiered): `undefined vfunc_3_sub1(longlong param_1, undefined8 param_2)`
@@ -979,14 +1221,16 @@ pub const hkpShapeContainer__vfunc_6: u64 = 60286;
 pub const hkpShapeInfo__dtor: u64 = 60509;
 /// `hkpShapeInfo::vdtor` at 0xb3e2d0 (slot_propagation, medium); signature (low): `hkpShapeInfo * vdtor(hkpShapeInfo * this, uint param_1, undefined8 param_2, undefined8 param_3)`
 pub const hkpShapeInfo__vdtor: u64 = 60541;
+/// `hkpShapePhantom::SetShape` at 0xb65f20 (semantic, high); signature (untiered): `undefined8 SetShape(hkpShapePhantom * this, longlong param_1)`; semantic: hkpWorldObject slot 3 for hkpSimpleShapePhantom and hkpCachingShapePhantom: queued with result 0 when world+0xf8 != 0; else ++world+0xf8, removes broadphase pairs, AddRef new / Release old, stores at +0x20, refreshes, re-adds the phantom AABB, --world+0xf8, returns 1 (high); signature `int (hkpShapePhantom* this, const hkpShape* shape)`
+pub const hkpShapePhantom__SetShape: u64 = 61654;
+/// `hkpShapePhantom::SetShape` as a function pointer type (high).
+pub type hkpShapePhantom__SetShape_fn = unsafe extern "C" fn(this: *mut crate::hkpShapePhantom, shape: *const crate::hkpShape) -> i32;
 /// `hkpShapePhantom::ctor` at 0xb65d80 (layout_inference, high); signature (low): `hkpShapePhantom * ctor(hkpShapePhantom * this, longlong param_1, float * param_2)`
 pub const hkpShapePhantom__ctor: u64 = 61651;
 /// `hkpShapePhantom::vdtor` at 0xb527f0 (slot_propagation, medium); signature (low): `hkpShapePhantom * vdtor(hkpShapePhantom * this, uint param_1, undefined8 param_2, undefined8 param_3)`
 pub const hkpShapePhantom__vdtor: u64 = 61229;
 /// `hkpShapePhantom::vfunc_14` at 0xb66070 (rtti, high); signature (untiered): `undefined vfunc_14(hkpShapePhantom * this)`
 pub const hkpShapePhantom__vfunc_14: u64 = 61657;
-/// `hkpShapePhantom::vfunc_3` at 0xb65f20 (rtti, medium); signature (low): `undefined8 vfunc_3(hkpShapePhantom * this, longlong param_1)`
-pub const hkpShapePhantom__vfunc_3: u64 = 61654;
 /// `hkpShapePhantom::vfunc_5` at 0xb66060 (rtti, medium); signature (high): `undefined1 * vfunc_5(hkpShapePhantom * this)`
 pub const hkpShapePhantom__vfunc_5: u64 = 61656;
 /// `hkpShapePhantom::vfunc_7` at 0xb66020 (rtti, medium); signature (low): `undefined vfunc_7(hkpShapePhantom * this, undefined8 param_1)`
@@ -1845,6 +2089,10 @@ pub const hkpWheelConstraintData__vfunc_11: u64 = 61953;
 pub const hkpWheelConstraintData__vfunc_12: u64 = 61955;
 /// `hkpWheelConstraintData::vfunc_18` at 0xb75dd0 (rtti, high); signature (low): `undefined vfunc_18(hkpWheelConstraintData * this, int * param_1)`
 pub const hkpWheelConstraintData__vfunc_18: u64 = 61954;
+/// `hkpWorld::QueueOperation` at 0xb5c280 (semantic, high); signature (untiered): `undefined QueueOperation(longlong param_1)`; semantic: QueuePendingWorldOperation(world->+0xe8, op): the deferred path setShape takes while the world is locked (high); signature `void (hkpWorld* this, const hkWorldOperation* op)`
+pub const hkpWorld__QueueOperation: u64 = 61428;
+/// `hkpWorld::QueueOperation` as a function pointer type (high).
+pub type hkpWorld__QueueOperation_fn = unsafe extern "C" fn(this: *mut crate::hkpWorld, op: *const c_void);
 /// `hkpWorld::ctor` at 0xb531c0 (layout_inference, medium); signature (low): `hkpWorld * ctor(hkpWorld * this, longlong param_1, uint param_2)`
 pub const hkpWorld__ctor: u64 = 61302;
 /// `hkpWorld::ctor` at 0xb5c420 (layout_inference, medium); signature (high): `hkpWorld * ctor(hkpWorld * this)`

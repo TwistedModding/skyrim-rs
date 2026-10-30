@@ -494,6 +494,27 @@ const _: () = assert!(core::mem::offset_of!(BGSCameraShot, cutAway) == 0xB1);
 const _: () = assert!(core::mem::offset_of!(BGSCameraShot, padB2) == 0xB2);
 const _: () = assert!(core::mem::offset_of!(BGSCameraShot, modelHandle) == 0xB8);
 
+/// `BSEffectShaderData`: size 0x88 (exact).
+/// Meaning: refcounted effect-shader parameters shared by every property under the effect's root (name from the request; no RTTI in the binary) (medium, camera pass).
+/// Evidence: refcounted effect-shader parameters shared by every property under the effect's root (name from the request; no RTTI in the binary); IC7 C (static-W). Created by 0x26c0f0; parameters filled by 0x26c270 and animated by 0x26c830 (+0x38, +0x48 scaled by the fade; +0x50/+0x54 alpha tests).; size: freed with size 0x88 by 0x26d4e0 on the last release.
+#[repr(C)]
+pub struct BSEffectShaderData {
+    /// +0x0 `u32`, semantic; intrusive count (lock inc/dec) (high)
+    pub refCount: u32,
+    pub unknown_4: [u8; 4],
+    /// +0x8 `pointer`, semantic; bool (*)(const BSFixedString* nodeName): a node it accepts is skipped by Apply/Remove (high)
+    pub nodeFilter: *mut c_void,
+    /// +0x10 `pointer`, semantic; three NiPointers +0x10/+0x18/+0x20 released with the data (high)
+    pub textures: [u8; 24],
+    pub unknown_28: [u8; 96],
+    #[doc(hidden)]
+    pub __engine: crate::Engine,
+}
+const _: () = assert!(size_of::<BSEffectShaderData>() == 0x88);
+const _: () = assert!(core::mem::offset_of!(BSEffectShaderData, refCount) == 0x0);
+const _: () = assert!(core::mem::offset_of!(BSEffectShaderData, nodeFilter) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BSEffectShaderData, textures) == 0x10);
+
 /// `BSFlattenedBoneTree`: size 0x168 (exact, medium); primary base `NiNode`.
 /// Meaning: skeleton node that keeps every bone as a flat 0x80-byte entry and refreshes their world transforms after its own update (high, camera pass).
 /// Evidence: runtime: 0x168 at 1 allocation sites; agrees with the static allocation sites.
@@ -3045,7 +3066,7 @@ const _: () = assert!(core::mem::offset_of!(RaceSexMenu, lookInputActive) == 0x1
 const _: () = assert!(core::mem::offset_of!(RaceSexMenu, mouseLookDrag) == 0x1A5);
 
 /// `ShaderReferenceEffect`: size 0x138 (exact, high); primary base `ReferenceEffect`.
-/// Meaning: effect shader on a reference; re-targets its shader data when the reference's current 3D changes (high, camera pass).
+/// Meaning: a TESEffectShader played on a reference (membrane/particle shader) (high, camera pass).
 /// Evidence: allocation sites (high): {'312': 4}.
 /// Bases: `ReferenceEffect`@0x0, `BSTempEffect`@0x0, `NiObject`@0x0, `NiRefObject`@0x0.
 #[repr(C)]
@@ -3071,13 +3092,13 @@ pub struct ShaderReferenceEffect {
     pub unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base ReferenceEffect
     pub field_30: u64,
-    /// +0x38 `undefined4`, base ReferenceEffect
-    pub field_38: u32,
+    /// +0x38 `u32`, base ReferenceEffect, semantic; target reference handle (ReferenceEffect) (high)
+    pub target: u32,
     /// +0x3C `undefined4`, base ReferenceEffect
     pub field_3C: u32,
-    /// +0x40 `undefined2`, base ReferenceEffect
-    pub field_40: u16,
-    pub unknown_42: [u8; 126],
+    /// +0x40 `u8`, base ReferenceEffect, semantic; set to stop the effect (ReferenceEffect) (high)
+    pub finished: u8,
+    pub unknown_41: [u8; 127],
     /// +0xC0 `undefined4`, ctor store
     pub field_C0: u32,
     /// +0xC4 `undefined1`, ctor store
@@ -3096,25 +3117,26 @@ pub struct ShaderReferenceEffect {
     pub field_E8: u64,
     /// +0xF0 `undefined8`, ctor store
     pub field_F0: u64,
-    /// +0xF8 `undefined8`, ctor store
-    pub field_F8: u64,
+    /// +0xF8 `ptr:NiNode`, semantic; particle-shader node (slot 41 returns it) (medium)
+    pub particleRoot: *mut crate::NiNode,
     /// +0x100 `undefined8`, ctor store
     pub field_100: u64,
-    /// +0x108 `pointer`, semantic; the effect shader form (fill/edge timings at +0x144..+0x158, flags at +0x1b0) (medium)
-    pub effectShader: *mut c_void,
-    /// +0x110 `pointer`, semantic; refcounted shader data stored into BSShaderProperty.effectOverlay (+0x68) of the lighting properties under the target root (high)
-    pub effectData: *mut c_void,
-    /// +0x118 `pointer`, semantic; root the data was last applied to (refcounted) (high)
-    pub attachedRoot: *mut c_void,
+    /// +0x108 `ptr:TESEffectShader`, semantic; the effect's TESEffectShader form (high)
+    pub effectShader: *mut crate::TESEffectShader,
+    /// +0x110 `ptr:BSEffectShaderData`, semantic; the shader data stored into each property's +0x68 (high)
+    pub effectData: *mut crate::BSEffectShaderData,
+    /// +0x118 `ptr:NiAVObject`, semantic; root the data is currently applied under (refcounted) (high)
+    pub attachedRoot: *mut crate::NiAVObject,
     /// +0x120 `undefined4`, ctor store
     pub field_120: u32,
     /// +0x124 `undefined4`, ctor store
     pub field_124: u32,
     /// +0x128 `undefined8`, ctor store
     pub field_128: u64,
-    /// +0x130 `u32`, semantic; bit 0 attached to the first-person root; 2 force re-apply; 3 particle sources resolved; 4 emitters built; 5 root changed; 6 finish now; 7 no default target; see the flag rows (medium)
+    /// +0x130 `u32`, semantic; bit 0 target is the player in third person, bit 2 force re-apply, bit 3 models loaded, bit 4 data initialised, bit 5 target root changed/retargeted, bit 6 suspended, bit 7 no fallback root; see the flag rows (medium)
     pub effectFlags: u32,
-    pub unknown_134: [u8; 4],
+    /// +0x134 `u32`, semantic; while non-zero the data is not touched; slot 53 0x5dfdd0 counts it down and applies at 0 (high)
+    pub applyDelay: u32,
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -3127,9 +3149,9 @@ const _: () = assert!(core::mem::offset_of!(ShaderReferenceEffect, field_20) == 
 const _: () = assert!(core::mem::offset_of!(ShaderReferenceEffect, field_24) == 0x24);
 const _: () = assert!(core::mem::offset_of!(ShaderReferenceEffect, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(ShaderReferenceEffect, field_30) == 0x30);
-const _: () = assert!(core::mem::offset_of!(ShaderReferenceEffect, field_38) == 0x38);
+const _: () = assert!(core::mem::offset_of!(ShaderReferenceEffect, target) == 0x38);
 const _: () = assert!(core::mem::offset_of!(ShaderReferenceEffect, field_3C) == 0x3C);
-const _: () = assert!(core::mem::offset_of!(ShaderReferenceEffect, field_40) == 0x40);
+const _: () = assert!(core::mem::offset_of!(ShaderReferenceEffect, finished) == 0x40);
 const _: () = assert!(core::mem::offset_of!(ShaderReferenceEffect, field_C0) == 0xC0);
 const _: () = assert!(core::mem::offset_of!(ShaderReferenceEffect, field_C4) == 0xC4);
 const _: () = assert!(core::mem::offset_of!(ShaderReferenceEffect, field_C8) == 0xC8);
@@ -3138,7 +3160,7 @@ const _: () = assert!(core::mem::offset_of!(ShaderReferenceEffect, field_D8) == 
 const _: () = assert!(core::mem::offset_of!(ShaderReferenceEffect, field_E0) == 0xE0);
 const _: () = assert!(core::mem::offset_of!(ShaderReferenceEffect, field_E8) == 0xE8);
 const _: () = assert!(core::mem::offset_of!(ShaderReferenceEffect, field_F0) == 0xF0);
-const _: () = assert!(core::mem::offset_of!(ShaderReferenceEffect, field_F8) == 0xF8);
+const _: () = assert!(core::mem::offset_of!(ShaderReferenceEffect, particleRoot) == 0xF8);
 const _: () = assert!(core::mem::offset_of!(ShaderReferenceEffect, field_100) == 0x100);
 const _: () = assert!(core::mem::offset_of!(ShaderReferenceEffect, effectShader) == 0x108);
 const _: () = assert!(core::mem::offset_of!(ShaderReferenceEffect, effectData) == 0x110);
@@ -3147,6 +3169,7 @@ const _: () = assert!(core::mem::offset_of!(ShaderReferenceEffect, field_120) ==
 const _: () = assert!(core::mem::offset_of!(ShaderReferenceEffect, field_124) == 0x124);
 const _: () = assert!(core::mem::offset_of!(ShaderReferenceEffect, field_128) == 0x128);
 const _: () = assert!(core::mem::offset_of!(ShaderReferenceEffect, effectFlags) == 0x130);
+const _: () = assert!(core::mem::offset_of!(ShaderReferenceEffect, applyDelay) == 0x134);
 
 /// `StatsMenu`: size 0x328 (exact, medium); primary base `IMenu`.
 /// Meaning: the skills (constellation) menu (high, camera pass).
@@ -4515,6 +4538,296 @@ const _: () = assert!(core::mem::offset_of!(VATSCameraState, pad1C) == 0x1C);
 const _: () = assert!(core::mem::offset_of!(VATSCameraState, rotationEuler) == 0x20);
 const _: () = assert!(core::mem::offset_of!(VATSCameraState, position) == 0x2C);
 
+/// `bhkCharProxyController`: size 0x5B0 (exact, medium); primary base `hkpCharacterProxyListener`.
+/// Meaning: the proxy-based character controller (the player always uses it) (high, camera pass).
+/// Evidence: runtime: 0x5B0 at 1 allocation sites; agrees with the static allocation sites.
+/// Bases: `hkpCharacterProxyListener`@0x0, `bhkCharacterController`@0x10, `NiRefObject`@0x10, `BSTEventSource<bhkCharacterMoveFinishEvent>`@0x20.
+#[repr(C)]
+pub struct bhkCharProxyController {
+    /// +0x0 `pointer`, semantic; 0x1a89540 (high)
+    pub vtbl_hkpCharacterProxyListener: *mut c_void,
+    pub unknown_8: [u8; 8],
+    /// +0x10 `class:bhkCharacterController`, semantic; the bhkCharacterController base (vtable 0x1a89578); the pointer the process data stores (high)
+    pub controller: crate::bhkCharacterController,
+    /// +0x340 `class:bhkCharacterProxy`, semantic; embedded bhkCharacterProxy wrapper (vtable 0x1a89370, bhkRefObject: count +8, Havok object +0x10) (high)
+    pub characterProxy: [u8; 32],
+    /// +0x360 `class:bhkCharacterPointCollector`, semantic; support query collector (medium)
+    pub pointCollector: [u8; 576],
+    /// +0x5A0 `ptr:bhkCachingShapePhantom`, semantic; NiPointer to the phantom wrapper (0x30 bytes, vtable 0x1a88de0); its +0x10 is the hkpCachingShapePhantom the proxy uses (high)
+    pub phantom: *mut crate::bhkCachingShapePhantom,
+    /// +0x5A8 `undefined1`, semantic; cleared by the ctor (medium)
+    pub field_5A8: u8,
+    pub unknown_5A9: [u8; 7],
+    #[doc(hidden)]
+    pub __engine: crate::Engine,
+}
+const _: () = assert!(size_of::<bhkCharProxyController>() == 0x5B0);
+const _: () = assert!(core::mem::offset_of!(bhkCharProxyController, vtbl_hkpCharacterProxyListener) == 0x0);
+const _: () = assert!(core::mem::offset_of!(bhkCharProxyController, controller) == 0x10);
+const _: () = assert!(core::mem::offset_of!(bhkCharProxyController, characterProxy) == 0x340);
+const _: () = assert!(core::mem::offset_of!(bhkCharProxyController, pointCollector) == 0x360);
+const _: () = assert!(core::mem::offset_of!(bhkCharProxyController, phantom) == 0x5A0);
+const _: () = assert!(core::mem::offset_of!(bhkCharProxyController, field_5A8) == 0x5A8);
+
+/// `bhkCharRigidBodyController`: size 0x5B0 (exact, medium); primary base `bhkCharacterController`.
+/// Meaning: the rigid-body character controller (NPCs when bUseCharacterRB:HAVOK is set and the race does not force the proxy) (high, camera pass).
+/// Evidence: runtime: 0x5B0 at 1 allocation sites; agrees with the static allocation sites.
+/// Bases: `bhkCharacterController`@0x0, `NiRefObject`@0x0, `BSTEventSource<bhkCharacterMoveFinishEvent>`@0x10, `hkpCharacterRigidBodyListener`@0x330, `hkReferencedObject`@0x330, `hkBaseObject`@0x330.
+#[repr(C)]
+pub struct bhkCharRigidBodyController {
+    /// +0x0 `class:bhkCharacterController`, semantic; base (high)
+    pub controller: crate::bhkCharacterController,
+    /// +0x330 `class:hkpCharacterRigidBodyListener`, semantic; hkReferencedObject listener, +0x338 = 0x1ffff (high)
+    pub listener: [u8; 16],
+    /// +0x340 `class:bhkCharacterRigidBody`, base hkpCharacterRigidBodyListener, semantic; embedded wrapper (vtable 0x1a899d8) (high)
+    pub characterRigidBody: [u8; 32],
+    /// +0x360 `ptr:bhkRigidBody`, base hkpCharacterRigidBodyListener, semantic; NiPointer to a bhkRigidBody wrapper (0x40) whose +0x10 is the same hkpRigidBody (high)
+    pub rigidBody: *mut crate::bhkRigidBody,
+    /// +0x368 `undefined4`, base hkpCharacterRigidBodyListener
+    pub field_368: u32,
+    /// +0x36C `undefined4`, base hkpCharacterRigidBodyListener
+    pub field_36C: u32,
+    /// +0x370 `class:bhkCharacterPointCollector`, base hkpCharacterRigidBodyListener, semantic; support query collector (medium)
+    pub pointCollector: [u8; 576],
+    #[doc(hidden)]
+    pub __engine: crate::Engine,
+}
+const _: () = assert!(size_of::<bhkCharRigidBodyController>() == 0x5B0);
+const _: () = assert!(core::mem::offset_of!(bhkCharRigidBodyController, controller) == 0x0);
+const _: () = assert!(core::mem::offset_of!(bhkCharRigidBodyController, listener) == 0x330);
+const _: () = assert!(core::mem::offset_of!(bhkCharRigidBodyController, characterRigidBody) == 0x340);
+const _: () = assert!(core::mem::offset_of!(bhkCharRigidBodyController, rigidBody) == 0x360);
+const _: () = assert!(core::mem::offset_of!(bhkCharRigidBodyController, field_368) == 0x368);
+const _: () = assert!(core::mem::offset_of!(bhkCharRigidBodyController, field_36C) == 0x36C);
+const _: () = assert!(core::mem::offset_of!(bhkCharRigidBodyController, pointCollector) == 0x370);
+
+/// `bhkCharacterController`: size 0x330 (exact, high); primary base `NiRefObject`.
+/// Meaning: the controller base both kinds share (pure virtual vtable 0x1a7f7a0, id 239067; td 0x216d668 id 398621) (high, camera pass).
+/// Evidence: camera pass (semantic): IC7 A1/A7 (static-V). Only the fields this request needs. Slots (overridden per kind, pure in 0x1a7f7a0): 2 GetPosition(out, bool) proxy 0x1098920 / rigid 0x109ae50 (ReplaceShape calls [rax+0x10] with r8d 0); 15 GetbhkWorld proxy 0x10987c0 / rigid 0x109aad0; 16 GetWorldObject proxy 0x1098710 (the hkpCachingShapePhantom) / rigid 0x109aa00 (the hkpRigidBody), called as [rax+0x80] by ReplaceShape and SetBumperEnabled.; size: types.md: upper bound 0x330 (next base of bhkCharRigidBodyController); proxy places its own fields from +0x340 of the full object = base+0x330.
+/// Bases: `NiRefObject`@0x0, `BSTEventSource<bhkCharacterMoveFinishEvent>`@0x10.
+/// Packed: a field lies below its natural alignment.
+#[repr(C, packed)]
+pub struct bhkCharacterController {
+    /// +0x0 `vtbl:bhkCharacterController:0`, rtti
+    #[doc(hidden)]
+    pub __vftable: *const crate::raw::vtables::bhkCharacterController_vtable,
+    /// +0x8 `undefined4`, ctor store
+    pub field_8: u32,
+    pub unknown_C: [u8; 4],
+    /// +0x10 `class:BSTEventSource`, RTTI base BSTEventSource<bhkCharacterMoveFinishEvent>
+    pub source_bhkCharacterMoveFinishEvent: crate::BSTEventSource,
+    pub unknown_68: [u8; 8],
+    /// +0x70 `undefined1[16]`, ctor store
+    pub field_70: [u8; 16],
+    pub unknown_80: [u8; 8],
+    /// +0x88 `undefined4`, ctor store
+    pub field_88: u32,
+    pub unknown_8C: [u8; 4],
+    /// +0x90 `undefined1[16]`, ctor store
+    pub field_90: [u8; 16],
+    /// +0xA0 `undefined1[16]`, ctor store
+    pub field_A0: [u8; 16],
+    /// +0xB0 `undefined1[16]`, ctor store
+    pub field_B0: [u8; 16],
+    /// +0xC0 `undefined1[16]`, ctor store
+    pub field_C0: [u8; 16],
+    pub unknown_D0: [u8; 16],
+    /// +0xE0 `undefined1[16]`, ctor store
+    pub field_E0: [u8; 16],
+    /// +0xF0 `undefined1[16]`, ctor store
+    pub field_F0: [u8; 16],
+    /// +0x100 `undefined1[16]`, ctor store
+    pub field_100: [u8; 16],
+    /// +0x110 `undefined1[16]`, ctor store
+    pub field_110: [u8; 16],
+    /// +0x120 `undefined8`, member ctor BSBound
+    pub m_BSBound_120: u64,
+    pub unknown_128: [u8; 40],
+    /// +0x150 `undefined8`, member ctor BSBound
+    pub m_BSBound_150: u64,
+    pub unknown_158: [u8; 40],
+    /// +0x180 `float`, ctor store
+    pub field_180: f32,
+    /// +0x184 `float`, ctor store
+    pub field_184: f32,
+    /// +0x188 `float`, ctor store
+    pub field_188: f32,
+    pub unknown_18C: [u8; 4],
+    /// +0x190 `undefined8`, ctor store
+    pub field_190: u64,
+    pub unknown_198: [u8; 8],
+    /// +0x1A0 `undefined4`, ctor store
+    pub field_1A0: u32,
+    pub unknown_1A4: [u8; 12],
+    /// +0x1B0 `undefined1[16]`, ctor store
+    pub field_1B0: [u8; 16],
+    /// +0x1C0 `undefined1[16]`, ctor store
+    pub field_1C0: [u8; 16],
+    /// +0x1D0 `undefined4`, ctor store
+    pub field_1D0: u32,
+    /// +0x1D4 `undefined1`, ctor store
+    pub field_1D4: u8,
+    pub unknown_1D5: [u8; 11],
+    /// +0x1E0 `undefined8`, member ctor hkpCharacterContext
+    pub m_hkpCharacterContext_1E0: u64,
+    pub unknown_1E8: [u8; 24],
+    /// +0x200 `u32`, semantic; CharacterState of the current Havok character state: 0 on ground, 1 jumping, 2 in air, 3 climbing, 4 flying, 5 swimming (medium)
+    pub characterState: u32,
+    pub unknown_204: [u8; 20],
+    /// +0x218 `undefined8`, ctor store
+    pub field_218: u64,
+    /// +0x220 `undefined8`, ctor store
+    pub field_220: u64,
+    /// +0x228 `undefined8`, ctor store
+    pub field_228: u64,
+    /// +0x230 `undefined4`, ctor store
+    pub field_230: u32,
+    /// +0x234 `float`, ctor store
+    pub field_234: f32,
+    /// +0x238 `undefined8`, ctor store
+    pub field_238: u64,
+    /// +0x240 `undefined8`, ctor store
+    pub field_240: u64,
+    /// +0x248 `undefined8`, ctor store
+    pub field_248: u64,
+    /// +0x250 `undefined4`, ctor store
+    pub field_250: u32,
+    /// +0x254 `undefined4`, ctor store
+    pub field_254: u32,
+    /// +0x258 `undefined8`, ctor store
+    pub field_258: u64,
+    /// +0x260 `float`, ctor store
+    pub field_260: f32,
+    /// +0x264 `undefined8`, ctor store
+    pub field_264: u64,
+    pub unknown_26C: [u8; 4],
+    /// +0x270 `undefined8`, ctor store
+    pub field_270: u64,
+    /// +0x278 `i32`, semantic; index into shapes; 2 (ctor) = none (high)
+    pub activeShapeIndex: u32,
+    /// +0x27C `undefined4`, ctor store
+    pub field_27C: u32,
+    /// +0x280 `undefined16`, semantic; two NiPointer<bhkShape> controller shapes (from cinfo +0x90/+0x98) (high)
+    pub shapes: [u8; 16],
+    /// +0x290 `float`, ctor store
+    pub field_290: f32,
+    /// +0x294 `float`, ctor store
+    pub field_294: f32,
+    /// +0x298 `float`, ctor store
+    pub field_298: f32,
+    /// +0x29C `undefined4`, ctor store
+    pub field_29C: u32,
+    /// +0x2A0 `undefined8`, ctor store
+    pub field_2A0: u64,
+    /// +0x2A8 `undefined4`, ctor store
+    pub field_2A8: u32,
+    pub unknown_2AC: [u8; 4],
+    /// +0x2B0 `undefined8`, ctor store
+    pub field_2B0: u64,
+    /// +0x2B8 `undefined4`, ctor store
+    pub field_2B8: u32,
+    pub unknown_2BC: [u8; 4],
+    /// +0x2C0 `undefined8`, ctor store
+    pub field_2C0: u64,
+    /// +0x2C8 `undefined8`, ctor store
+    pub field_2C8: u64,
+    pub unknown_2D0: [u8; 12],
+    /// +0x2DC `undefined8`, ctor store
+    pub field_2DC: u64,
+    /// +0x2E4 `undefined4`, ctor store
+    pub field_2E4: u32,
+    /// +0x2E8 `undefined8`, ctor store
+    pub field_2E8: u64,
+    pub unknown_2F0: [u8; 8],
+    /// +0x2F8 `undefined8`, ctor store
+    pub field_2F8: u64,
+    /// +0x300 `float`, ctor store
+    pub field_300: f32,
+    /// +0x304 `undefined8`, ctor store
+    pub field_304: u64,
+    /// +0x30C `float`, ctor store
+    pub field_30C: f32,
+    /// +0x310 `float`, ctor store
+    pub field_310: f32,
+    /// +0x314 `undefined8`, ctor store
+    pub field_314: u64,
+    /// +0x31C `undefined4`, ctor store
+    pub field_31C: u32,
+    /// +0x320 `u8`, semantic; current bumper state (high)
+    pub bumperEnabled: u8,
+    /// +0x321 `u8`, semantic; the active list carries CharacterBumper children (from cinfo+0xa3) (high)
+    pub hasBumper: u8,
+    pub unknown_322: [u8; 14],
+    #[doc(hidden)]
+    pub __engine: crate::Engine,
+}
+const _: () = assert!(size_of::<bhkCharacterController>() == 0x330);
+const _: () = assert!(core::mem::offset_of!(bhkCharacterController, __vftable) == 0x0);
+const _: () = assert!(core::mem::offset_of!(bhkCharacterController, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(bhkCharacterController, source_bhkCharacterMoveFinishEvent) == 0x10);
+const _: () = assert!(core::mem::offset_of!(bhkCharacterController, field_70) == 0x70);
+const _: () = assert!(core::mem::offset_of!(bhkCharacterController, field_88) == 0x88);
+const _: () = assert!(core::mem::offset_of!(bhkCharacterController, field_90) == 0x90);
+const _: () = assert!(core::mem::offset_of!(bhkCharacterController, field_A0) == 0xA0);
+const _: () = assert!(core::mem::offset_of!(bhkCharacterController, field_B0) == 0xB0);
+const _: () = assert!(core::mem::offset_of!(bhkCharacterController, field_C0) == 0xC0);
+const _: () = assert!(core::mem::offset_of!(bhkCharacterController, field_E0) == 0xE0);
+const _: () = assert!(core::mem::offset_of!(bhkCharacterController, field_F0) == 0xF0);
+const _: () = assert!(core::mem::offset_of!(bhkCharacterController, field_100) == 0x100);
+const _: () = assert!(core::mem::offset_of!(bhkCharacterController, field_110) == 0x110);
+const _: () = assert!(core::mem::offset_of!(bhkCharacterController, m_BSBound_120) == 0x120);
+const _: () = assert!(core::mem::offset_of!(bhkCharacterController, m_BSBound_150) == 0x150);
+const _: () = assert!(core::mem::offset_of!(bhkCharacterController, field_180) == 0x180);
+const _: () = assert!(core::mem::offset_of!(bhkCharacterController, field_184) == 0x184);
+const _: () = assert!(core::mem::offset_of!(bhkCharacterController, field_188) == 0x188);
+const _: () = assert!(core::mem::offset_of!(bhkCharacterController, field_190) == 0x190);
+const _: () = assert!(core::mem::offset_of!(bhkCharacterController, field_1A0) == 0x1A0);
+const _: () = assert!(core::mem::offset_of!(bhkCharacterController, field_1B0) == 0x1B0);
+const _: () = assert!(core::mem::offset_of!(bhkCharacterController, field_1C0) == 0x1C0);
+const _: () = assert!(core::mem::offset_of!(bhkCharacterController, field_1D0) == 0x1D0);
+const _: () = assert!(core::mem::offset_of!(bhkCharacterController, field_1D4) == 0x1D4);
+const _: () = assert!(core::mem::offset_of!(bhkCharacterController, m_hkpCharacterContext_1E0) == 0x1E0);
+const _: () = assert!(core::mem::offset_of!(bhkCharacterController, characterState) == 0x200);
+const _: () = assert!(core::mem::offset_of!(bhkCharacterController, field_218) == 0x218);
+const _: () = assert!(core::mem::offset_of!(bhkCharacterController, field_220) == 0x220);
+const _: () = assert!(core::mem::offset_of!(bhkCharacterController, field_228) == 0x228);
+const _: () = assert!(core::mem::offset_of!(bhkCharacterController, field_230) == 0x230);
+const _: () = assert!(core::mem::offset_of!(bhkCharacterController, field_234) == 0x234);
+const _: () = assert!(core::mem::offset_of!(bhkCharacterController, field_238) == 0x238);
+const _: () = assert!(core::mem::offset_of!(bhkCharacterController, field_240) == 0x240);
+const _: () = assert!(core::mem::offset_of!(bhkCharacterController, field_248) == 0x248);
+const _: () = assert!(core::mem::offset_of!(bhkCharacterController, field_250) == 0x250);
+const _: () = assert!(core::mem::offset_of!(bhkCharacterController, field_254) == 0x254);
+const _: () = assert!(core::mem::offset_of!(bhkCharacterController, field_258) == 0x258);
+const _: () = assert!(core::mem::offset_of!(bhkCharacterController, field_260) == 0x260);
+const _: () = assert!(core::mem::offset_of!(bhkCharacterController, field_264) == 0x264);
+const _: () = assert!(core::mem::offset_of!(bhkCharacterController, field_270) == 0x270);
+const _: () = assert!(core::mem::offset_of!(bhkCharacterController, activeShapeIndex) == 0x278);
+const _: () = assert!(core::mem::offset_of!(bhkCharacterController, field_27C) == 0x27C);
+const _: () = assert!(core::mem::offset_of!(bhkCharacterController, shapes) == 0x280);
+const _: () = assert!(core::mem::offset_of!(bhkCharacterController, field_290) == 0x290);
+const _: () = assert!(core::mem::offset_of!(bhkCharacterController, field_294) == 0x294);
+const _: () = assert!(core::mem::offset_of!(bhkCharacterController, field_298) == 0x298);
+const _: () = assert!(core::mem::offset_of!(bhkCharacterController, field_29C) == 0x29C);
+const _: () = assert!(core::mem::offset_of!(bhkCharacterController, field_2A0) == 0x2A0);
+const _: () = assert!(core::mem::offset_of!(bhkCharacterController, field_2A8) == 0x2A8);
+const _: () = assert!(core::mem::offset_of!(bhkCharacterController, field_2B0) == 0x2B0);
+const _: () = assert!(core::mem::offset_of!(bhkCharacterController, field_2B8) == 0x2B8);
+const _: () = assert!(core::mem::offset_of!(bhkCharacterController, field_2C0) == 0x2C0);
+const _: () = assert!(core::mem::offset_of!(bhkCharacterController, field_2C8) == 0x2C8);
+const _: () = assert!(core::mem::offset_of!(bhkCharacterController, field_2DC) == 0x2DC);
+const _: () = assert!(core::mem::offset_of!(bhkCharacterController, field_2E4) == 0x2E4);
+const _: () = assert!(core::mem::offset_of!(bhkCharacterController, field_2E8) == 0x2E8);
+const _: () = assert!(core::mem::offset_of!(bhkCharacterController, field_2F8) == 0x2F8);
+const _: () = assert!(core::mem::offset_of!(bhkCharacterController, field_300) == 0x300);
+const _: () = assert!(core::mem::offset_of!(bhkCharacterController, field_304) == 0x304);
+const _: () = assert!(core::mem::offset_of!(bhkCharacterController, field_30C) == 0x30C);
+const _: () = assert!(core::mem::offset_of!(bhkCharacterController, field_310) == 0x310);
+const _: () = assert!(core::mem::offset_of!(bhkCharacterController, field_314) == 0x314);
+const _: () = assert!(core::mem::offset_of!(bhkCharacterController, field_31C) == 0x31C);
+const _: () = assert!(core::mem::offset_of!(bhkCharacterController, bumperEnabled) == 0x320);
+const _: () = assert!(core::mem::offset_of!(bhkCharacterController, hasBumper) == 0x321);
+
 /// `bhkPickData`: size 0xD0 (exact).
 /// Meaning: the engine's ray pick record: an hkpWorldRayCastInput (+0), an hkpWorldRayCastOutput (+0x30), a ray vector and optional collectors (high, camera pass).
 /// Evidence: the engine's ray pick record: an hkpWorldRayCastInput (+0), an hkpWorldRayCastOutput (+0x30), a ray vector and optional collectors; Fields from bhkWorld::PickObject 0x104be80 (reads and resets) and the initialisers in CastRayGetHitDistance, RaycastToPointWithinViewCone, HasLineOfSightToRef, CachedRaycastData::CastRay. static-G's 'hit record' of LaunchProjectileFromCaster 0x5ce8b0 (+0x30 vector, +0x50 -1 ints, +0x80 pointer, +0xc0 byte) is the same layout. Name chosen by role; it matches a header name I recall (noted per the brief). Positions are Havok units: game * g_HavokWorldScale (0x17fde5c, 0.0142875); back with g_HavokWorldScaleInverse (0x17f423c, 69.99125).; size: stack frames of CastRayGetHitDistance 0x4b9a80 (pick at rsp-0xe8, last field +0xc0 = local_28) and CachedRaycastData::CastRay 0x54af00 (pick at local_f8, last byte local_38 = +0xc0); hkVector4 alignment gives 0xd0. No constructor: every user fills it inline.
@@ -4580,6 +4893,28 @@ const _: () = assert!(core::mem::offset_of!(bhkPickData, closestCollector) == 0x
 const _: () = assert!(core::mem::offset_of!(bhkPickData, allHitsCollector) == 0xB0);
 const _: () = assert!(core::mem::offset_of!(bhkPickData, allHitsCollector2) == 0xB8);
 const _: () = assert!(core::mem::offset_of!(bhkPickData, skipped) == 0xC0);
+
+/// `bhkShape`: size 0x18 (exact, low); primary base `bhkSerializable`.
+/// Meaning: the engine's wrapper around an hkpShape (bhkRefObject: NiRefObject count +8, Havok object +0x10) (high, camera pass).
+/// Evidence: lower bound field field_10 meets upper bound first own field of bhkBoxShape at 0x18 (soft).
+/// Bases: `bhkSerializable`@0x0, `bhkRefObject`@0x0, `NiObject`@0x0, `NiRefObject`@0x0.
+#[repr(C)]
+pub struct bhkShape {
+    /// +0x0 `vtbl:bhkShape:0`, rtti
+    #[doc(hidden)]
+    pub __vftable: *const crate::raw::vtables::bhkShape_vtable,
+    /// +0x8 `u32`, base NiObject, semantic; NiRefObject count (lock inc/xadd) (high)
+    pub refCount: u32,
+    pub unknown_C: [u8; 4],
+    /// +0x10 `ptr:hkpShape`, base bhkRefObject, semantic, runtime; the referenced hkpShape; set through slot 37 (high)
+    pub havokShape: *mut crate::hkpShape,
+    #[doc(hidden)]
+    pub __engine: crate::Engine,
+}
+const _: () = assert!(size_of::<bhkShape>() == 0x18);
+const _: () = assert!(core::mem::offset_of!(bhkShape, __vftable) == 0x0);
+const _: () = assert!(core::mem::offset_of!(bhkShape, refCount) == 0x8);
+const _: () = assert!(core::mem::offset_of!(bhkShape, havokShape) == 0x10);
 
 /// `bhkWorld`: size 0xC710 (exact, medium); primary base `bhkSerializable`.
 /// Meaning: the engine's wrapper of an hkpWorld; one per interior cell (cell extra data type 1) and one shared by the exterior worldspace (**0x21a0598). bhkWorldM (vtable 0x1a831e8) shares slots 37-54. (high, camera pass).
@@ -4679,6 +5014,582 @@ const _: () = assert!(core::mem::offset_of!(bhkWorld, field_C6F8) == 0xC6F8);
 const _: () = assert!(core::mem::offset_of!(bhkWorld, field_C6FC) == 0xC6FC);
 const _: () = assert!(core::mem::offset_of!(bhkWorld, field_C700) == 0xC700);
 const _: () = assert!(core::mem::offset_of!(bhkWorld, field_C702) == 0xC702);
+
+/// `hkReferencedObject`: size 0x10 (exact, high); primary base `hkBaseObject`.
+/// Meaning: Havok reference-counted base (high, camera pass).
+/// Evidence: camera pass (semantic): IC7 A10 (static-V). Vtable id 190056. Constructors store dword 0x1ffff at +8 (memSizeAndFlags 0xffff, count 1) after the allocator wrote the u16 size, so the deleting destructors fall back to the class size.; size: types.md upper bound 0x10.
+/// Bases: `hkBaseObject`@0x0.
+#[repr(C)]
+pub struct hkReferencedObject {
+    /// +0x0 `vtbl:hkReferencedObject:0`, rtti
+    #[doc(hidden)]
+    pub __vftable: *const crate::raw::vtables::hkReferencedObject_vtable,
+    /// +0x8 `u16`, semantic; 0 = static / not counted (add and remove do nothing) (high)
+    pub memSizeAndFlags: u16,
+    /// +0xA `i16`, semantic; reference count (high)
+    pub referenceCount: u16,
+    pub unknown_C: [u8; 4],
+    #[doc(hidden)]
+    pub __engine: crate::Engine,
+}
+const _: () = assert!(size_of::<hkReferencedObject>() == 0x10);
+const _: () = assert!(core::mem::offset_of!(hkReferencedObject, __vftable) == 0x0);
+const _: () = assert!(core::mem::offset_of!(hkReferencedObject, memSizeAndFlags) == 0x8);
+const _: () = assert!(core::mem::offset_of!(hkReferencedObject, referenceCount) == 0xA);
+
+/// `hkbFootIkDriver::InternalLeg`: size 0x30 (exact).
+/// Meaning: per-leg runtime state of the driver (medium, camera pass).
+/// Evidence: per-leg runtime state of the driver; IC7 FS A (static-W); size: stride in 0xad42a0 and the run 0xad2300.
+#[repr(C)]
+pub struct hkbFootIkDriver__InternalLeg {
+    /// +0x0 `undefined16`, semantic; corrected ankle position (written when the pose has world-from-model weight) (medium)
+    pub ankleTargetMS: [u8; 16],
+    /// +0x10 `undefined16`, semantic; SolveFootIkLeg output (ground hit candidate) (low)
+    pub solverOut: [u8; 16],
+    /// +0x20 `pointer`, semantic; per-leg solver object (deleted through vtable slot 0 by 0xad42a0); +0x40 up vector written each frame, +0x50 normal-like vector (medium)
+    pub legSolver: *mut c_void,
+    /// +0x28 `float`, semantic; solver output height; + info.verticalOffset (+0x2c) when +0x2c set (medium)
+    pub groundHeight: f32,
+    /// +0x2C `u8`, semantic; the leg's ray hit (medium)
+    pub hit: u8,
+    /// +0x2D `u8`, semantic; ankle height below info leg footPlantedAnkleHeightMS (+0x30) (medium)
+    pub planted: u8,
+    pub unknown_2E: [u8; 2],
+    #[doc(hidden)]
+    pub __engine: crate::Engine,
+}
+const _: () = assert!(size_of::<hkbFootIkDriver__InternalLeg>() == 0x30);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkDriver__InternalLeg, ankleTargetMS) == 0x0);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkDriver__InternalLeg, solverOut) == 0x10);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkDriver__InternalLeg, legSolver) == 0x20);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkDriver__InternalLeg, groundHeight) == 0x28);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkDriver__InternalLeg, hit) == 0x2C);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkDriver__InternalLeg, planted) == 0x2D);
+
+/// `hkbFootIkDriverInfoLeg`: size 0x60 (exact).
+/// Meaning: per-leg foot IK data (toe point = footEndLS) (high, camera pass).
+/// Evidence: per-leg foot IK data (toe point = footEndLS); IC7 FS A (static-W). Reflection member table 0x19c74b0. The run reads ankleIndex (+0x50) and footPlantedAnkleHeightMS (+0x30) every frame from the info, so an edit of footEndLS is seen by the next run once the legs are (re)initialised; when the legs object copies it (0xad42b0) was not read.; size: leg stride 0x60 in the run 0xad2300.
+#[repr(C)]
+pub struct hkbFootIkDriverInfoLeg {
+    /// +0x0 `undefined16`, semantic; quaternion (high)
+    pub prevAnkleRotLS: [u8; 16],
+    /// +0x10 `undefined16`, semantic; reflection (high)
+    pub kneeAxisLS: [u8; 16],
+    /// +0x20 `undefined16`, semantic; reflection (the toe/foot end point) (high)
+    pub footEndLS: [u8; 16],
+    /// +0x30 `float`, semantic; reflection; run compares the ankle height with it (high)
+    pub footPlantedAnkleHeightMS: f32,
+    /// +0x34 `float`, semantic; reflection (high)
+    pub footRaisedAnkleHeightMS: f32,
+    /// +0x38 `float`, semantic; reflection (high)
+    pub maxAnkleHeightMS: f32,
+    /// +0x3C `float`, semantic; reflection (high)
+    pub minAnkleHeightMS: f32,
+    /// +0x40 `float`, semantic; reflection (high)
+    pub maxKneeAngleDegrees: f32,
+    /// +0x44 `float`, semantic; reflection (high)
+    pub minKneeAngleDegrees: f32,
+    /// +0x48 `float`, semantic; reflection (high)
+    pub maxAnkleAngleDegrees: f32,
+    /// +0x4C `i16`, semantic; reflection (high)
+    pub hipIndex: u16,
+    /// +0x4E `i16`, semantic; reflection (high)
+    pub kneeIndex: u16,
+    /// +0x50 `i16`, semantic; reflection; read by the run (high)
+    pub ankleIndex: u16,
+    pub unknown_52: [u8; 14],
+    #[doc(hidden)]
+    pub __engine: crate::Engine,
+}
+const _: () = assert!(size_of::<hkbFootIkDriverInfoLeg>() == 0x60);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkDriverInfoLeg, prevAnkleRotLS) == 0x0);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkDriverInfoLeg, kneeAxisLS) == 0x10);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkDriverInfoLeg, footEndLS) == 0x20);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkDriverInfoLeg, footPlantedAnkleHeightMS) == 0x30);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkDriverInfoLeg, footRaisedAnkleHeightMS) == 0x34);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkDriverInfoLeg, maxAnkleHeightMS) == 0x38);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkDriverInfoLeg, minAnkleHeightMS) == 0x3C);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkDriverInfoLeg, maxKneeAngleDegrees) == 0x40);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkDriverInfoLeg, minKneeAngleDegrees) == 0x44);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkDriverInfoLeg, maxAnkleAngleDegrees) == 0x48);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkDriverInfoLeg, hipIndex) == 0x4C);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkDriverInfoLeg, kneeIndex) == 0x4E);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkDriverInfoLeg, ankleIndex) == 0x50);
+
+/// `hkbFootIkGains`: size 0x30 (exact).
+/// Meaning: foot IK gains (graph data of hkbFootIkControlsModifier); no engine INI feeds them (high, camera pass).
+/// Evidence: foot IK gains (graph data of hkbFootIkControlsModifier); no engine INI feeds them; IC7 FS A (static-W). Reflection member table 0x19c42b0. The [FootIK] INI gains are read only by the ragdoll path 0x10701d0.; size: reflection members to +0x2c.
+#[repr(C)]
+pub struct hkbFootIkGains {
+    /// +0x0 `float`, semantic; reflection (high)
+    pub onOffGain: f32,
+    /// +0x4 `float`, semantic; reflection (high)
+    pub groundAscendingGain: f32,
+    /// +0x8 `float`, semantic; reflection (high)
+    pub groundDescendingGain: f32,
+    /// +0xC `float`, semantic; reflection (high)
+    pub footPlantedGain: f32,
+    /// +0x10 `float`, semantic; reflection (high)
+    pub footRaisedGain: f32,
+    /// +0x14 `float`, semantic; reflection (high)
+    pub footUnlockGain: f32,
+    /// +0x18 `float`, semantic; reflection (high)
+    pub worldFromModelFeedbackGain: f32,
+    /// +0x1C `float`, semantic; reflection (high)
+    pub errorUpDownBias: f32,
+    /// +0x20 `float`, semantic; reflection (high)
+    pub alignWorldFromModelGain: f32,
+    /// +0x24 `float`, semantic; reflection (high)
+    pub hipOrientationGain: f32,
+    /// +0x28 `float`, semantic; reflection (high)
+    pub maxKneeAngleDifference: f32,
+    /// +0x2C `float`, semantic; reflection (high)
+    pub ankleOrientationGain: f32,
+    #[doc(hidden)]
+    pub __engine: crate::Engine,
+}
+const _: () = assert!(size_of::<hkbFootIkGains>() == 0x30);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkGains, onOffGain) == 0x0);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkGains, groundAscendingGain) == 0x4);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkGains, groundDescendingGain) == 0x8);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkGains, footPlantedGain) == 0xC);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkGains, footRaisedGain) == 0x10);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkGains, footUnlockGain) == 0x14);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkGains, worldFromModelFeedbackGain) == 0x18);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkGains, errorUpDownBias) == 0x1C);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkGains, alignWorldFromModelGain) == 0x20);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkGains, hipOrientationGain) == 0x24);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkGains, maxKneeAngleDifference) == 0x28);
+const _: () = assert!(core::mem::offset_of!(hkbFootIkGains, ankleOrientationGain) == 0x2C);
+
+/// `hkpCapsuleShape`: size 0x50 (exact, high); primary base `hkpConvexShape`.
+/// Meaning: capsule: two end points and a radius (high, camera pass).
+/// Evidence: camera pass (semantic): IC7 A8 (static-V). Vtable id 227306.; size: vdtor 0xb3bfb0 default size 0x50; CreateAndSetCapsuleShape allocates 0x50.
+/// Bases: `hkpConvexShape`@0x0, `hkpSphereRepShape`@0x0, `hkpShape`@0x0, `hkReferencedObject`@0x0, `hkBaseObject`@0x0.
+#[repr(C)]
+pub struct hkpCapsuleShape {
+    /// +0x0 `vtbl:hkpCapsuleShape:0`, rtti
+    #[doc(hidden)]
+    pub __vftable: *const crate::raw::vtables::hkpCapsuleShape_vtable,
+    /// +0x8 `undefined4`, ctor store
+    pub field_8: u32,
+    pub unknown_C: [u8; 4],
+    /// +0x10 `undefined8`, base hkBaseObject
+    pub m_hkpCollidableCollidableFilter_10: u64,
+    /// +0x18 `undefined8`, base hkBaseObject
+    pub m_hkpShapeCollectionFilter_18: u64,
+    /// +0x20 `float`, base hkBaseObject, semantic, runtime; radius (Havok units) (high)
+    pub radius: f32,
+    pub unknown_24: [u8; 4],
+    /// +0x28 `undefined8`, base hkBaseObject
+    pub m_hkpRayCollidableFilter_28: u64,
+    /// +0x30 `class:hkVector4`, base hkBaseObject, semantic, runtime; first end point, w = radius (high)
+    pub vertexA: crate::hkVector4,
+    /// +0x40 `class:hkVector4`, base hkBaseObject, semantic, runtime; second end point, w = radius (high)
+    pub vertexB: crate::hkVector4,
+    #[doc(hidden)]
+    pub __engine: crate::Engine,
+}
+const _: () = assert!(size_of::<hkpCapsuleShape>() == 0x50);
+const _: () = assert!(core::mem::offset_of!(hkpCapsuleShape, __vftable) == 0x0);
+const _: () = assert!(core::mem::offset_of!(hkpCapsuleShape, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(hkpCapsuleShape, m_hkpCollidableCollidableFilter_10) == 0x10);
+const _: () = assert!(core::mem::offset_of!(hkpCapsuleShape, m_hkpShapeCollectionFilter_18) == 0x18);
+const _: () = assert!(core::mem::offset_of!(hkpCapsuleShape, radius) == 0x20);
+const _: () = assert!(core::mem::offset_of!(hkpCapsuleShape, m_hkpRayCollidableFilter_28) == 0x28);
+const _: () = assert!(core::mem::offset_of!(hkpCapsuleShape, vertexA) == 0x30);
+const _: () = assert!(core::mem::offset_of!(hkpCapsuleShape, vertexB) == 0x40);
+
+/// `hkpCharacterProxy`: size 0x100 (exact, high); primary base `hkReferencedObject`.
+/// Meaning: Havok character proxy (high, camera pass).
+/// Evidence: camera pass (semantic): IC7 A2 (static-V). Fields needed here only.; size: bhkCharacterProxy::vfunc_46 0x10de990 allocates 0x100 from the router heap and writes u16 +8 = 0x100 (the runtime class is ahkpCharacterProxy, vtable 0x1a96970, id 241432).
+/// Bases: `hkReferencedObject`@0x0, `hkBaseObject`@0x0, `hkpEntityListener`@0x10, `hkpPhantomListener`@0x18.
+#[repr(C)]
+pub struct hkpCharacterProxy {
+    /// +0x0 `vtbl:hkpCharacterProxy:0`, rtti
+    #[doc(hidden)]
+    pub __vftable: *const crate::raw::vtables::hkpCharacterProxy_vtable,
+    /// +0x8 `u32`, semantic; hkReferencedObject words (0x1ffff from the ctor) (high)
+    pub memSizeAndRefCount: u32,
+    pub unknown_C: [u8; 4],
+    /// +0x10 `vtbl:hkpCharacterProxy:10`, rtti
+    #[doc(hidden)]
+    pub __vftable_10: *const crate::raw::vtables::hkpCharacterProxy_vtable_10,
+    /// +0x18 `vtbl:hkpCharacterProxy:18`, rtti
+    #[doc(hidden)]
+    pub __vftable_18: *const crate::raw::vtables::hkpCharacterProxy_vtable_18,
+    /// +0x20 `undefined8`, base hkBaseObject
+    pub m_hkpRayShapeCollectionFilter_20: u64,
+    /// +0x28 `undefined8`, base hkBaseObject
+    pub m_hkpRayCollidableFilter_28: u64,
+    /// +0x30 `undefined4`, base hkBaseObject
+    pub field_30: u32,
+    /// +0x34 `undefined4`, base hkBaseObject
+    pub field_34: u32,
+    /// +0x38 `undefined4`, base hkBaseObject
+    pub field_38: u32,
+    /// +0x3C `undefined4`, base hkBaseObject
+    pub field_3C: u32,
+    /// +0x40 `undefined4`, base hkBaseObject
+    pub field_40: u32,
+    /// +0x44 `undefined4`, base hkBaseObject
+    pub field_44: u32,
+    /// +0x48 `undefined4`, base hkBaseObject
+    pub field_48: u32,
+    /// +0x4C `undefined4`, base hkBaseObject
+    pub field_4C: u32,
+    /// +0x50 `undefined4`, base hkBaseObject
+    pub field_50: u32,
+    /// +0x54 `undefined4`, base hkBaseObject
+    pub field_54: u32,
+    /// +0x58 `undefined4`, base hkBaseObject
+    pub field_58: u32,
+    /// +0x5C `undefined4`, base hkBaseObject
+    pub field_5C: u32,
+    /// +0x60 `class:hkVector4`, base hkBaseObject, semantic; linear velocity (proxy controller slots 6/7 read/write it) (high)
+    pub velocity: crate::hkVector4,
+    /// +0x70 `undefined4`, base hkBaseObject
+    pub field_70: u32,
+    /// +0x74 `undefined4`, base hkBaseObject
+    pub field_74: u32,
+    /// +0x78 `undefined4`, base hkBaseObject
+    pub field_78: u32,
+    /// +0x7C `undefined4`, base hkBaseObject
+    pub field_7C: u32,
+    /// +0x80 `ptr:hkpShapePhantom`, base hkBaseObject, semantic, runtime; the shape phantom, referenced (addReference on set) (high)
+    pub shapePhantom: *mut crate::hkpShapePhantom,
+    /// +0x88 `undefined4`, base hkBaseObject
+    pub field_88: u32,
+    /// +0x8C `undefined4`, base hkBaseObject
+    pub field_8C: u32,
+    /// +0x90 `undefined4`, base hkBaseObject
+    pub field_90: u32,
+    /// +0x94 `undefined4`, base hkBaseObject
+    pub field_94: u32,
+    /// +0x98 `undefined4`, base hkBaseObject
+    pub field_98: u32,
+    /// +0x9C `undefined4`, base hkBaseObject
+    pub field_9C: u32,
+    /// +0xA0 `undefined4`, base hkBaseObject
+    pub field_A0: u32,
+    /// +0xA4 `undefined4`, base hkBaseObject
+    pub field_A4: u32,
+    /// +0xA8 `undefined8`, base hkBaseObject
+    pub field_A8: u64,
+    /// +0xB0 `undefined4`, base hkBaseObject
+    pub field_B0: u32,
+    /// +0xB4 `undefined4`, base hkBaseObject
+    pub field_B4: u32,
+    /// +0xB8 `undefined8`, base hkBaseObject
+    pub field_B8: u64,
+    /// +0xC0 `undefined4`, base hkBaseObject
+    pub field_C0: u32,
+    /// +0xC4 `undefined4`, base hkBaseObject
+    pub field_C4: u32,
+    /// +0xC8 `undefined8`, ctor store
+    pub field_C8: u64,
+    /// +0xD0 `undefined4`, ctor store
+    pub field_D0: u32,
+    /// +0xD4 `undefined4`, ctor store
+    pub field_D4: u32,
+    pub unknown_D8: [u8; 24],
+    /// +0xF0 `ptr:bhkCharacterProxy`, semantic; back pointer to the wrapper (bhkCharacterProxy slot 38 writes it) (high)
+    pub userData: *mut crate::bhkCharacterProxy,
+    pub unknown_F8: [u8; 8],
+    #[doc(hidden)]
+    pub __engine: crate::Engine,
+}
+const _: () = assert!(size_of::<hkpCharacterProxy>() == 0x100);
+const _: () = assert!(core::mem::offset_of!(hkpCharacterProxy, __vftable) == 0x0);
+const _: () = assert!(core::mem::offset_of!(hkpCharacterProxy, memSizeAndRefCount) == 0x8);
+const _: () = assert!(core::mem::offset_of!(hkpCharacterProxy, __vftable_10) == 0x10);
+const _: () = assert!(core::mem::offset_of!(hkpCharacterProxy, __vftable_18) == 0x18);
+const _: () = assert!(core::mem::offset_of!(hkpCharacterProxy, m_hkpRayShapeCollectionFilter_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(hkpCharacterProxy, m_hkpRayCollidableFilter_28) == 0x28);
+const _: () = assert!(core::mem::offset_of!(hkpCharacterProxy, field_30) == 0x30);
+const _: () = assert!(core::mem::offset_of!(hkpCharacterProxy, field_34) == 0x34);
+const _: () = assert!(core::mem::offset_of!(hkpCharacterProxy, field_38) == 0x38);
+const _: () = assert!(core::mem::offset_of!(hkpCharacterProxy, field_3C) == 0x3C);
+const _: () = assert!(core::mem::offset_of!(hkpCharacterProxy, field_40) == 0x40);
+const _: () = assert!(core::mem::offset_of!(hkpCharacterProxy, field_44) == 0x44);
+const _: () = assert!(core::mem::offset_of!(hkpCharacterProxy, field_48) == 0x48);
+const _: () = assert!(core::mem::offset_of!(hkpCharacterProxy, field_4C) == 0x4C);
+const _: () = assert!(core::mem::offset_of!(hkpCharacterProxy, field_50) == 0x50);
+const _: () = assert!(core::mem::offset_of!(hkpCharacterProxy, field_54) == 0x54);
+const _: () = assert!(core::mem::offset_of!(hkpCharacterProxy, field_58) == 0x58);
+const _: () = assert!(core::mem::offset_of!(hkpCharacterProxy, field_5C) == 0x5C);
+const _: () = assert!(core::mem::offset_of!(hkpCharacterProxy, velocity) == 0x60);
+const _: () = assert!(core::mem::offset_of!(hkpCharacterProxy, field_70) == 0x70);
+const _: () = assert!(core::mem::offset_of!(hkpCharacterProxy, field_74) == 0x74);
+const _: () = assert!(core::mem::offset_of!(hkpCharacterProxy, field_78) == 0x78);
+const _: () = assert!(core::mem::offset_of!(hkpCharacterProxy, field_7C) == 0x7C);
+const _: () = assert!(core::mem::offset_of!(hkpCharacterProxy, shapePhantom) == 0x80);
+const _: () = assert!(core::mem::offset_of!(hkpCharacterProxy, field_88) == 0x88);
+const _: () = assert!(core::mem::offset_of!(hkpCharacterProxy, field_8C) == 0x8C);
+const _: () = assert!(core::mem::offset_of!(hkpCharacterProxy, field_90) == 0x90);
+const _: () = assert!(core::mem::offset_of!(hkpCharacterProxy, field_94) == 0x94);
+const _: () = assert!(core::mem::offset_of!(hkpCharacterProxy, field_98) == 0x98);
+const _: () = assert!(core::mem::offset_of!(hkpCharacterProxy, field_9C) == 0x9C);
+const _: () = assert!(core::mem::offset_of!(hkpCharacterProxy, field_A0) == 0xA0);
+const _: () = assert!(core::mem::offset_of!(hkpCharacterProxy, field_A4) == 0xA4);
+const _: () = assert!(core::mem::offset_of!(hkpCharacterProxy, field_A8) == 0xA8);
+const _: () = assert!(core::mem::offset_of!(hkpCharacterProxy, field_B0) == 0xB0);
+const _: () = assert!(core::mem::offset_of!(hkpCharacterProxy, field_B4) == 0xB4);
+const _: () = assert!(core::mem::offset_of!(hkpCharacterProxy, field_B8) == 0xB8);
+const _: () = assert!(core::mem::offset_of!(hkpCharacterProxy, field_C0) == 0xC0);
+const _: () = assert!(core::mem::offset_of!(hkpCharacterProxy, field_C4) == 0xC4);
+const _: () = assert!(core::mem::offset_of!(hkpCharacterProxy, field_C8) == 0xC8);
+const _: () = assert!(core::mem::offset_of!(hkpCharacterProxy, field_D0) == 0xD0);
+const _: () = assert!(core::mem::offset_of!(hkpCharacterProxy, field_D4) == 0xD4);
+const _: () = assert!(core::mem::offset_of!(hkpCharacterProxy, userData) == 0xF0);
+
+/// `hkpConvexVerticesShape`: size 0x90 (exact, high); primary base `hkpConvexShape`.
+/// Meaning: convex hull of vertices (high, camera pass).
+/// Evidence: camera pass (semantic): IC7 A9 (static-V). Vtable id 234261. hkCharControllerShape (vtable 0x1a92998) is the engine's subclass (same size).; size: vdtor 0xc3c180 default 0x90; CreateCharControllerShape and the shrinker allocate 0x90.
+/// Bases: `hkpConvexShape`@0x0, `hkpSphereRepShape`@0x0, `hkpShape`@0x0, `hkReferencedObject`@0x0, `hkBaseObject`@0x0.
+#[repr(C)]
+pub struct hkpConvexVerticesShape {
+    /// +0x0 `vtbl:hkpConvexVerticesShape:0`, rtti
+    #[doc(hidden)]
+    pub __vftable: *const crate::raw::vtables::hkpConvexVerticesShape_vtable,
+    /// +0x8 `undefined4`, ctor store
+    pub field_8: u32,
+    pub unknown_C: [u8; 4],
+    /// +0x10 `undefined8`, base hkBaseObject
+    pub m_hkpCollidableCollidableFilter_10: u64,
+    /// +0x18 `undefined8`, base hkBaseObject
+    pub m_hkpShapeCollectionFilter_18: u64,
+    /// +0x20 `float`, base hkBaseObject, semantic; convex radius (high)
+    pub radius: f32,
+    pub unknown_24: [u8; 4],
+    /// +0x28 `undefined8`, base hkBaseObject
+    pub m_hkpRayCollidableFilter_28: u64,
+    /// +0x30 `class:hkVector4`, base hkBaseObject, semantic; AABB pair written by PackStridedVerticesAndComputeAabb; which of +0x30/+0x40 is the center was not read (medium)
+    pub aabbHalfExtents: crate::hkVector4,
+    /// +0x40 `class:hkVector4`, base hkBaseObject, semantic; see +0x30 (medium)
+    pub aabbCenter: crate::hkVector4,
+    /// +0x50 `pointer`, base hkBaseObject, semantic; SoA blocks of 4 vertices, 0x30 bytes each (x[4], y[4], z[4]); the last block is padded with the last vertex (high)
+    pub rotatedVerticesData: *mut c_void,
+    /// +0x58 `i32`, base hkBaseObject, semantic; (numVertices + 3) / 4 (high)
+    pub rotatedVerticesSize: u32,
+    /// +0x5C `u32`, base hkBaseObject, semantic; hkArray (high)
+    pub rotatedVerticesCapacityAndFlags: u32,
+    /// +0x60 `i32`, base hkBaseObject, semantic; vertex count (high)
+    pub numVertices: u32,
+    /// +0x64 `undefined4`, base hkBaseObject
+    pub field_64: u32,
+    /// +0x68 `undefined4`, base hkBaseObject
+    pub field_68: u32,
+    /// +0x6C `undefined4`, base hkBaseObject
+    pub field_6C: u32,
+    /// +0x70 `undefined4`, base hkBaseObject
+    pub field_70: u32,
+    /// +0x74 `undefined4`, base hkBaseObject
+    pub field_74: u32,
+    /// +0x78 `undefined16`, base hkBaseObject, semantic; data +0x78, size +0x80, capacityAndFlags +0x84 (high)
+    pub planeEquations: [u8; 16],
+    /// +0x88 `ptr:hkpConvexVerticesConnectivity`, base hkBaseObject, semantic; optional, referenced (high)
+    pub connectivity: *mut crate::hkpConvexVerticesConnectivity,
+    #[doc(hidden)]
+    pub __engine: crate::Engine,
+}
+const _: () = assert!(size_of::<hkpConvexVerticesShape>() == 0x90);
+const _: () = assert!(core::mem::offset_of!(hkpConvexVerticesShape, __vftable) == 0x0);
+const _: () = assert!(core::mem::offset_of!(hkpConvexVerticesShape, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(hkpConvexVerticesShape, m_hkpCollidableCollidableFilter_10) == 0x10);
+const _: () = assert!(core::mem::offset_of!(hkpConvexVerticesShape, m_hkpShapeCollectionFilter_18) == 0x18);
+const _: () = assert!(core::mem::offset_of!(hkpConvexVerticesShape, radius) == 0x20);
+const _: () = assert!(core::mem::offset_of!(hkpConvexVerticesShape, m_hkpRayCollidableFilter_28) == 0x28);
+const _: () = assert!(core::mem::offset_of!(hkpConvexVerticesShape, aabbHalfExtents) == 0x30);
+const _: () = assert!(core::mem::offset_of!(hkpConvexVerticesShape, aabbCenter) == 0x40);
+const _: () = assert!(core::mem::offset_of!(hkpConvexVerticesShape, rotatedVerticesData) == 0x50);
+const _: () = assert!(core::mem::offset_of!(hkpConvexVerticesShape, rotatedVerticesSize) == 0x58);
+const _: () = assert!(core::mem::offset_of!(hkpConvexVerticesShape, rotatedVerticesCapacityAndFlags) == 0x5C);
+const _: () = assert!(core::mem::offset_of!(hkpConvexVerticesShape, numVertices) == 0x60);
+const _: () = assert!(core::mem::offset_of!(hkpConvexVerticesShape, field_64) == 0x64);
+const _: () = assert!(core::mem::offset_of!(hkpConvexVerticesShape, field_68) == 0x68);
+const _: () = assert!(core::mem::offset_of!(hkpConvexVerticesShape, field_6C) == 0x6C);
+const _: () = assert!(core::mem::offset_of!(hkpConvexVerticesShape, field_70) == 0x70);
+const _: () = assert!(core::mem::offset_of!(hkpConvexVerticesShape, field_74) == 0x74);
+const _: () = assert!(core::mem::offset_of!(hkpConvexVerticesShape, planeEquations) == 0x78);
+const _: () = assert!(core::mem::offset_of!(hkpConvexVerticesShape, connectivity) == 0x88);
+
+/// `hkpListShape`: size 0x90 (exact, high); primary base `hkpShapeCollection`.
+/// Meaning: list of child shapes (hkpShapeCollection with an hkpShapeContainer at +0x20, vtable 0x19eb0e8) (high, camera pass).
+/// Evidence: camera pass (semantic): IC7 A7 (static-V). Vtable ids 227916 / 227918.; size: vdtor 0xb40b30 default 0x90; RebuildShapeTreeWithReplacements allocates 0x90.
+/// Bases: `hkpShapeCollection`@0x0, `hkpShape`@0x0, `hkReferencedObject`@0x0, `hkBaseObject`@0x0, `hkpShapeContainer`@0x20.
+#[repr(C)]
+pub struct hkpListShape {
+    /// +0x0 `vtbl:hkpListShape:0`, rtti
+    #[doc(hidden)]
+    pub __vftable: *const crate::raw::vtables::hkpListShape_vtable,
+    /// +0x8 `undefined4`, base hkpShapeCollection
+    pub field_8: u32,
+    pub unknown_C: [u8; 4],
+    /// +0x10 `undefined8`, base hkBaseObject
+    pub m_hkpCollidableCollidableFilter_10: u64,
+    /// +0x18 `undefined8`, base hkBaseObject
+    pub m_hkpShapeCollectionFilter_18: u64,
+    /// +0x20 `pointer`, semantic; 0x19eb0e8 (high)
+    pub vtbl_hkpShapeContainer: *mut c_void,
+    /// +0x28 `undefined8`, base hkBaseObject
+    pub m_hkpRayCollidableFilter_28: u64,
+    /// +0x30 `pointer`, base hkBaseObject, semantic, runtime; array of 0x20-byte entries: +0 const hkpShape* shape, +8 u32 collisionFilterInfo, +0xc u32 (0), +0x10 u32 (setShapes writes the child count) (high)
+    pub childInfoData: *mut c_void,
+    /// +0x38 `i32`, base hkBaseObject, semantic, runtime; number of children (high)
+    pub childInfoSize: u32,
+    /// +0x3C `u32`, base hkBaseObject, semantic; hkArray capacity | 0x80000000 (not owned) (high)
+    pub childInfoCapacityAndFlags: u32,
+    /// +0x40 `u16`, base hkBaseObject, semantic; 0 from the ctor (medium)
+    pub flags: u16,
+    /// +0x42 `u16`, semantic; count of cleared enable bits (high)
+    pub numDisabledChildren: u16,
+    /// +0x44 `undefined4`, base hkBaseObject
+    pub field_44: u32,
+    /// +0x48 `undefined4`, base hkBaseObject
+    pub field_48: u32,
+    /// +0x4C `undefined4`, base hkBaseObject
+    pub field_4C: u32,
+    /// +0x50 `class:hkVector4`, base hkBaseObject, semantic; cached (high)
+    pub aabbHalfExtents: crate::hkVector4,
+    /// +0x60 `class:hkVector4`, base hkBaseObject, semantic; cached (high)
+    pub aabbCenter: crate::hkVector4,
+    /// +0x70 `u32[8]`, base hkBaseObject, semantic; 256-bit enable mask (all set by the ctor) (high)
+    pub enabledChildren: [u8; 32],
+    #[doc(hidden)]
+    pub __engine: crate::Engine,
+}
+const _: () = assert!(size_of::<hkpListShape>() == 0x90);
+const _: () = assert!(core::mem::offset_of!(hkpListShape, __vftable) == 0x0);
+const _: () = assert!(core::mem::offset_of!(hkpListShape, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(hkpListShape, m_hkpCollidableCollidableFilter_10) == 0x10);
+const _: () = assert!(core::mem::offset_of!(hkpListShape, m_hkpShapeCollectionFilter_18) == 0x18);
+const _: () = assert!(core::mem::offset_of!(hkpListShape, vtbl_hkpShapeContainer) == 0x20);
+const _: () = assert!(core::mem::offset_of!(hkpListShape, m_hkpRayCollidableFilter_28) == 0x28);
+const _: () = assert!(core::mem::offset_of!(hkpListShape, childInfoData) == 0x30);
+const _: () = assert!(core::mem::offset_of!(hkpListShape, childInfoSize) == 0x38);
+const _: () = assert!(core::mem::offset_of!(hkpListShape, childInfoCapacityAndFlags) == 0x3C);
+const _: () = assert!(core::mem::offset_of!(hkpListShape, flags) == 0x40);
+const _: () = assert!(core::mem::offset_of!(hkpListShape, numDisabledChildren) == 0x42);
+const _: () = assert!(core::mem::offset_of!(hkpListShape, field_44) == 0x44);
+const _: () = assert!(core::mem::offset_of!(hkpListShape, field_48) == 0x48);
+const _: () = assert!(core::mem::offset_of!(hkpListShape, field_4C) == 0x4C);
+const _: () = assert!(core::mem::offset_of!(hkpListShape, aabbHalfExtents) == 0x50);
+const _: () = assert!(core::mem::offset_of!(hkpListShape, aabbCenter) == 0x60);
+const _: () = assert!(core::mem::offset_of!(hkpListShape, enabledChildren) == 0x70);
+
+/// `hkpShape`: size 0x20 (exact, high); primary base `hkReferencedObject`.
+/// Meaning: Havok shape base (high, camera pass).
+/// Evidence: camera pass (semantic): IC7 A4/A5 (static-V). id of the vtable 190231.; size: types.md upper bound 0x20; derived shapes put their own fields from +0x20 (convex radius).
+/// Bases: `hkReferencedObject`@0x0, `hkBaseObject`@0x0.
+#[repr(C)]
+pub struct hkpShape {
+    /// +0x0 `vtbl:hkpShape:0`, rtti
+    #[doc(hidden)]
+    pub __vftable: *const crate::raw::vtables::hkpShape_vtable,
+    /// +0x8 `u16`, semantic; 0 = static / not counted (add and remove do nothing) (high)
+    pub memSizeAndFlags: u16,
+    /// +0xA `i16`, semantic; reference count (high)
+    pub referenceCount: u16,
+    pub unknown_C: [u8; 4],
+    /// +0x10 `ptr:bhkShape`, base hkBaseObject, semantic, runtime; the bhkShape wrapper, written by bhkShape slot 38 (0 when unlinked); ctors write 0 (high)
+    pub userData: *mut crate::bhkShape,
+    /// +0x18 `u32`, base hkBaseObject, semantic, runtime; ShapeType (enum below) (high)
+    pub type_: u32,
+    pub unknown_1C: [u8; 4],
+    #[doc(hidden)]
+    pub __engine: crate::Engine,
+}
+const _: () = assert!(size_of::<hkpShape>() == 0x20);
+const _: () = assert!(core::mem::offset_of!(hkpShape, __vftable) == 0x0);
+const _: () = assert!(core::mem::offset_of!(hkpShape, memSizeAndFlags) == 0x8);
+const _: () = assert!(core::mem::offset_of!(hkpShape, referenceCount) == 0xA);
+const _: () = assert!(core::mem::offset_of!(hkpShape, userData) == 0x10);
+const _: () = assert!(core::mem::offset_of!(hkpShape, type_) == 0x18);
+
+/// values in data/hkpshapetypes.json (camera pass).
+#[repr(u32)]
+#[derive(Clone, Copy, PartialEq, Eq, Debug)]
+pub enum hkpShapeType {
+    /// `Unset`
+    Unset = 0,
+    /// `Cylinder`
+    Cylinder = 2,
+    /// `Triangle`
+    Triangle = 3,
+    /// `Box`
+    Box = 4,
+    /// `Capsule`
+    Capsule = 5,
+    /// `ConvexVertices`
+    ConvexVertices = 6,
+    /// `Collection`
+    Collection = 7,
+    /// `BvTree`
+    BvTree = 8,
+    /// `List`
+    List = 9,
+    /// `Mopp`
+    Mopp = 10,
+    /// `ConvexTranslate`
+    ConvexTranslate = 11,
+    /// `ConvexTransform`
+    ConvexTransform = 12,
+    /// `SampledHeightField`
+    SampledHeightField = 13,
+    /// `ExtendedMesh`
+    ExtendedMesh = 14,
+    /// `Transform`
+    Transform = 15,
+    /// `Convex`
+    Convex = 19,
+    /// `MultiSphere`
+    MultiSphere = 22,
+    /// `ConvexList`
+    ConvexList = 23,
+    /// `Mesh`
+    Mesh = 24,
+    /// `MultiRay`
+    MultiRay = 25,
+    /// `Bv`
+    Bv = 28,
+    /// `Plane`
+    Plane = 29,
+    /// `PhantomCallback`
+    PhantomCallback = 30,
+}
+
+impl hkpShapeType {
+    #[must_use]
+    pub const fn from_u32(value: u32) -> Option<Self> {
+        match value {
+            0 => Some(Self::Unset),
+            2 => Some(Self::Cylinder),
+            3 => Some(Self::Triangle),
+            4 => Some(Self::Box),
+            5 => Some(Self::Capsule),
+            6 => Some(Self::ConvexVertices),
+            7 => Some(Self::Collection),
+            8 => Some(Self::BvTree),
+            9 => Some(Self::List),
+            10 => Some(Self::Mopp),
+            11 => Some(Self::ConvexTranslate),
+            12 => Some(Self::ConvexTransform),
+            13 => Some(Self::SampledHeightField),
+            14 => Some(Self::ExtendedMesh),
+            15 => Some(Self::Transform),
+            19 => Some(Self::Convex),
+            22 => Some(Self::MultiSphere),
+            23 => Some(Self::ConvexList),
+            24 => Some(Self::Mesh),
+            25 => Some(Self::MultiRay),
+            28 => Some(Self::Bv),
+            29 => Some(Self::Plane),
+            30 => Some(Self::PhantomCallback),
+            _ => None,
+        }
+    }
+}
 
 /// values in data/collisionlayers.json (camera pass).
 #[repr(u32)]

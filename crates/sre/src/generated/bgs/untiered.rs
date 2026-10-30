@@ -117,13 +117,13 @@ impl crate::BGSExplosion {
 }
 
 impl crate::BGSFootIkRaycastInterfaceDB {
-    /// `BGSFootIkRaycastInterfaceDB::GetRaycastData`, vtable slot 1, through the object's vtable (decompiler signature, tier untiered; ledger semantic evidence, name medium; id 32742, rva 0x54ac90).
-    /// `ulonglong GetRaycastData(BGSFootIkRaycastInterfaceDB * this, ulonglong param_1, ulonglong param_2)`
+    /// `BGSFootIkRaycastInterfaceDB::GetRaycastInterface`, vtable slot 1, through the object's vtable (decompiler signature, tier untiered; ledger semantic evidence, name medium; id 32742, rva 0x54ac90).
+    /// `ulonglong GetRaycastInterface(BGSFootIkRaycastInterfaceDB * this, ulonglong param_1, ulonglong param_2)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn get_raycast_data(&self, param_1: u64, param_2: u64) -> u64 { unsafe { virtual_function!(self, 1, (*const Self, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2) } }
+    pub unsafe fn get_raycast_interface(&self, param_1: u64, param_2: u64) -> u64 { unsafe { virtual_function!(self, 1, (*const Self, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2) } }
 }
 
 impl crate::BGSGamebryoSequenceGeneratorHolderSingleton {

@@ -1354,6 +1354,55 @@ impl crate::RaceSexMenu {
 }
 
 impl crate::ShaderReferenceEffect {
+    /// `ShaderReferenceEffect::ApplyAfterDelay` (decompiler signature, tier untiered; ledger semantic evidence, name high; id 34925, rva 0x5dfdd0).
+    /// `undefined ApplyAfterDelay(ShaderReferenceEffect * this)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn apply_after_delay(&self) -> u64 { unsafe { function!(34925, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    /// `ShaderReferenceEffect::Finish` (decompiler signature, tier untiered; ledger semantic evidence, name high; id 34917, rva 0x5df880).
+    /// `undefined Finish(ShaderReferenceEffect * this, undefined8 param_1, longlong param_2, undefined8 param_3)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn finish(&self, param_1: u64, param_2: i64, param_3: u64) -> u64 { unsafe { function!(34917, (*const Self, u64, i64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    /// `ShaderReferenceEffect::GetTargetRoot` (decompiler signature, tier untiered; ledger semantic evidence, name high; id 34919, rva 0x5dfac0).
+    /// `longlong GetTargetRoot(ShaderReferenceEffect * this)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn get_target_root(&self) -> i64 { unsafe { function!(34919, (*const Self) -> i64)(core::ptr::from_ref(self)) } }
+    /// `ShaderReferenceEffect::Resume` (decompiler signature, tier untiered; ledger semantic evidence, name high; id 34916, rva 0x5df7a0).
+    /// `undefined Resume(ShaderReferenceEffect * this)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn resume(&self) -> u64 { unsafe { function!(34916, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    /// `ShaderReferenceEffect::Suspend` (decompiler signature, tier untiered; ledger semantic evidence, name high; id 34915, rva 0x5df6c0).
+    /// `undefined Suspend(ShaderReferenceEffect * this)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn suspend(&self) -> u64 { unsafe { function!(34915, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    /// `ShaderReferenceEffect::Update` (decompiler signature, tier untiered; ledger semantic evidence, name high; id 34913, rva 0x5de900).
+    /// `char Update(ShaderReferenceEffect * this, float param_1)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn update(&self, param_1: f32) -> c_char { unsafe { function!(34913, (*const Self, f32) -> c_char)(core::ptr::from_ref(self), param_1) } }
+    /// `ShaderReferenceEffect::UpdateTargetRoot` (decompiler signature, tier untiered; ledger semantic evidence, name high; id 34914, rva 0x5def30).
+    /// `undefined UpdateTargetRoot(ShaderReferenceEffect * this)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn update_target_root(&self) -> u64 { unsafe { function!(34914, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
     /// `ShaderReferenceEffect::vfunc_40_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 17332, rva 0x26c830).
     /// `undefined vfunc_40_sub0(longlong param_1, longlong param_2, float param_3, float param_4, float param_5, char param_6)`
     ///
@@ -2019,6 +2068,141 @@ impl crate::VATSCameraState {
     pub unsafe fn update(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(50935, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
+impl crate::bhkCharProxyController {
+    /// `bhkCharProxyController::GetCollisionFilterInfo` (decompiler signature, tier untiered; ledger semantic evidence, name medium; id 79147, rva 0x1098b80).
+    /// `undefined4 * GetCollisionFilterInfo(bhkCharProxyController * this, undefined4 * param_1)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn get_collision_filter_info(&self, param_1: *mut u32) -> *mut u32 { unsafe { function!(79147, (*const Self, *mut u32) -> *mut u32)(core::ptr::from_ref(self).byte_add(0x10), param_1) } }
+    /// `bhkCharProxyController::GetPosition` (decompiler signature, tier untiered; ledger semantic evidence, name high; id 79142, rva 0x1098920).
+    /// `undefined GetPosition(bhkCharProxyController * this, float * param_1, char param_2)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn get_position_2(&self, param_1: *mut f32, param_2: c_char) -> u64 { unsafe { function!(79142, (*const Self, *mut f32, c_char) -> u64)(core::ptr::from_ref(self).byte_add(0x10), param_1, param_2) } }
+    /// `bhkCharProxyController::GetWorldObject` (decompiler signature, tier untiered; ledger semantic evidence, name high; id 79137, rva 0x1098710).
+    /// `undefined8 GetWorldObject(bhkCharProxyController * this)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn get_world_object(&self) -> u64 { unsafe { function!(79137, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
+    /// `bhkCharProxyController::GetbhkWorld` (decompiler signature, tier untiered; ledger semantic evidence, name high; id 79139, rva 0x10987c0).
+    /// `undefined8 GetbhkWorld(bhkCharProxyController * this)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn getbhk_world(&self) -> u64 { unsafe { function!(79139, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x10)) } }
+    /// `bhkCharProxyController::bhkCharacterController_vfunc_11_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 62633, rva 0xb9d280).
+    /// `undefined bhkCharacterController_vfunc_11_sub0(longlong * param_1, longlong param_2, float * param_3, longlong * param_4, longlong * param_5)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn bhk_character_controller_vfunc_11_sub0(param_1: *mut i64, param_2: i64, param_3: *mut f32, param_4: *mut i64, param_5: *mut i64) -> u64 { unsafe { function!(62633, (*mut i64, i64, *mut f32, *mut i64, *mut i64) -> u64)(param_1, param_2, param_3, param_4, param_5) } }
+    /// `bhkCharProxyController::bhkCharacterController_vfunc_14_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 80541, rva 0x10deb70).
+    /// `undefined bhkCharacterController_vfunc_14_sub0(longlong * param_1)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn bhk_character_controller_vfunc_14_sub0(param_1: *mut i64) -> u64 { unsafe { function!(80541, (*mut i64) -> u64)(param_1) } }
+    /// `bhkCharProxyController::ctor_sub1` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 79157, rva 0x1099370).
+    /// `undefined ctor_sub1(longlong * param_1)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn ctor_sub1(param_1: *mut i64) -> u64 { unsafe { function!(79157, (*mut i64) -> u64)(param_1) } }
+    /// `bhkCharProxyController::dtor_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 62645, rva 0xb9e470).
+    /// `undefined dtor_sub0(longlong param_1, longlong param_2)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn dtor_sub0(param_1: i64, param_2: i64) -> u64 { unsafe { function!(62645, (i64, i64) -> u64)(param_1, param_2) } }
+    /// `bhkCharProxyController::vfunc_1_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 78286, rva 0x1066110).
+    /// `undefined vfunc_1_sub0(longlong param_1, longlong param_2)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn vfunc_1_sub0(param_1: i64, param_2: i64) -> u64 { unsafe { function!(78286, (i64, i64) -> u64)(param_1, param_2) } }
+    /// `bhkCharProxyController::vfunc_5_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 78304, rva 0x10671b0).
+    /// `undefined vfunc_5_sub0(longlong param_1, longlong param_2, float * param_3)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn vfunc_5_sub0(param_1: i64, param_2: i64, param_3: *mut f32) -> u64 { unsafe { function!(78304, (i64, i64, *mut f32) -> u64)(param_1, param_2, param_3) } }
+}
+
+impl crate::bhkCharRigidBodyController {
+    /// `bhkCharRigidBodyController::hkpCharacterRigidBodyListener_vfunc_4_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 79219, rva 0x109c4a0).
+    /// `longlong hkpCharacterRigidBodyListener_vfunc_4_sub0(longlong param_1)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn hkp_character_rigid_body_listener_vfunc_4_sub0(param_1: i64) -> i64 { unsafe { function!(79219, (i64) -> i64)(param_1) } }
+    /// `bhkCharRigidBodyController::vfunc_18_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 79135, rva 0x1098210).
+    /// `DWORD vfunc_18_sub0(longlong param_1)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn vfunc_18_sub0(param_1: i64) -> u32 { unsafe { function!(79135, (i64) -> u32)(param_1) } }
+    /// `bhkCharRigidBodyController::vfunc_19_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 62458, rva 0xb997c0).
+    /// `undefined vfunc_19_sub0(longlong param_1, float * param_2)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn vfunc_19_sub0(param_1: i64, param_2: *mut f32) -> u64 { unsafe { function!(62458, (i64, *mut f32) -> u64)(param_1, param_2) } }
+    /// `bhkCharRigidBodyController::vfunc_6_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 62457, rva 0xb997a0).
+    /// `longlong vfunc_6_sub0(longlong param_1)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn vfunc_6_sub0(param_1: i64) -> i64 { unsafe { function!(62457, (i64) -> i64)(param_1) } }
+}
+
+impl crate::bhkCharacterController {
+    /// `bhkCharacterController::ctor_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 78323, rva 0x1068d60).
+    /// `undefined ctor_sub0(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn ctor_sub0(param_1: *mut i64, param_2: u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(78323, (*mut i64, u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
+    /// `bhkCharacterController::ctor_sub1` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 78326, rva 0x1068f10).
+    /// `undefined ctor_sub1(longlong * param_1)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn ctor_sub1(param_1: *mut i64) -> u64 { unsafe { function!(78326, (*mut i64) -> u64)(param_1) } }
+    /// `bhkCharacterController::ctor_sub2` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 78330, rva 0x10690b0).
+    /// `undefined ctor_sub2(undefined8 * param_1)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn ctor_sub2(param_1: *mut u64) -> u64 { unsafe { function!(78330, (*mut u64) -> u64)(param_1) } }
+    /// `bhkCharacterController::dtor_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 78314, rva 0x10687e0).
+    /// `undefined dtor_sub0(longlong param_1, undefined * param_2, undefined8 param_3, undefined8 param_4)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn dtor_sub0(param_1: i64, param_2: *mut c_void, param_3: u64, param_4: u64) -> u64 { unsafe { function!(78314, (i64, *mut c_void, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
+}
+
 impl crate::bhkWorld {
     /// `bhkWorld::GetWorld` (decompiler signature, tier untiered; ledger semantic evidence, name high; id 77852, rva 0x104b470).
     /// `undefined8 GetWorld(bhkWorld * this)`
@@ -2069,5 +2253,25 @@ impl crate::bhkWorld {
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
     pub unsafe fn ctor_sub2(param_1: *mut u64, param_2: u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(77952, (*mut u64, u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
+}
+
+impl crate::hkReferencedObject {
+    /// `hkReferencedObject::Destroy`, vtable slot 0, through the object's vtable (decompiler signature, tier untiered; ledger semantic evidence, name high; id 18825, rva 0x2b63d0).
+    /// `hkReferencedObject * Destroy(hkReferencedObject * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn destroy(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { virtual_function!(self, 0, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+}
+
+impl crate::hkpCharacterProxy {
+    /// `hkpCharacterProxy::ctor_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 62631, rva 0xb9cef0).
+    /// `undefined ctor_sub0(longlong param_1, longlong param_2)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn ctor_sub0(param_1: i64, param_2: i64) -> u64 { unsafe { function!(62631, (i64, i64) -> u64)(param_1, param_2) } }
 }
 

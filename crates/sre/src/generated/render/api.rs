@@ -570,6 +570,15 @@ impl crate::BSShaderProperty {
     /// The pass rates the signature medium.
     #[inline]
     pub unsafe fn update(&self, d: *mut crate::NiUpdateData) { unsafe { virtual_function!(self, 38, (*const Self, *mut crate::NiUpdateData))(core::ptr::from_ref(self), d) } }
+    /// `BSShaderProperty::SetEffectData`: add-ref data (+0 count), reset prop+0x34 to 0x7fffffff, release the old +0x68 (on last ref releases its NiPointers +0x10/+0x18/+0x20 and frees 0x88 bytes), store data at +0x68
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 17356, rva 0x26d4e0.
+    /// `void (BSShaderProperty* prop, BSEffectShaderData* data)`
+    ///
+    /// # Safety
+    /// `data` must point to what the engine expects.
+    #[inline]
+    pub unsafe fn set_effect_data(&self, data: *mut crate::BSEffectShaderData) { unsafe { function!(17356, (*const Self, *mut crate::BSEffectShaderData))(core::ptr::from_ref(self), data) } }
     /// `BSShaderProperty::SetFlag`: sets or clears a flags bit; invalidates lastRenderPassState (+0x34 = 0x7fffffff) when the bit changes
     ///
     /// Semantic, frame pass, high; ledger semantic evidence, name high; id 105540, rva 0x14e7ef0.

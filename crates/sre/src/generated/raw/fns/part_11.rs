@@ -3,6 +3,48 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `GameSetting_fLockPickQualityMult__atexit` at 0x1753d20 (crt_init, medium); signature (high): `void GameSetting_fLockPickQualityMult__atexit(void)`
+pub const GameSetting_fLockPickQualityMult__atexit: u64 = 167080;
+/// `GameSetting_fLockPickQualityMult__init` at 0x2d440 (crt_init, medium); signature (high): `void GameSetting_fLockPickQualityMult__init(void)`
+pub const GameSetting_fLockPickQualityMult__init: u64 = 1870;
+/// `GameSetting_fLockSkillBase__atexit` at 0x1770b50 (crt_init, medium); signature (high): `void GameSetting_fLockSkillBase__atexit(void)`
+pub const GameSetting_fLockSkillBase__atexit: u64 = 168559;
+/// `GameSetting_fLockSkillBase__init` at 0x5aef0 (crt_init, medium); signature (high): `void GameSetting_fLockSkillBase__init(void)`
+pub const GameSetting_fLockSkillBase__init: u64 = 3349;
+/// `GameSetting_fLockSkillMult__atexit` at 0x1753d70 (crt_init, medium); signature (high): `void GameSetting_fLockSkillMult__atexit(void)`
+pub const GameSetting_fLockSkillMult__atexit: u64 = 167081;
+/// `GameSetting_fLockSkillMult__init` at 0x2d4c0 (crt_init, medium); signature (high): `void GameSetting_fLockSkillMult__init(void)`
+pub const GameSetting_fLockSkillMult__init: u64 = 1871;
+/// `GameSetting_fLockTrapGoOffBase__atexit` at 0x1753dc0 (crt_init, medium); signature (high): `void GameSetting_fLockTrapGoOffBase__atexit(void)`
+pub const GameSetting_fLockTrapGoOffBase__atexit: u64 = 167082;
+/// `GameSetting_fLockTrapGoOffBase__init` at 0x2d540 (crt_init, medium); signature (high): `void GameSetting_fLockTrapGoOffBase__init(void)`
+pub const GameSetting_fLockTrapGoOffBase__init: u64 = 1872;
+/// `GameSetting_fLockTrapGoOffMult__atexit` at 0x1753e10 (crt_init, medium); signature (high): `void GameSetting_fLockTrapGoOffMult__atexit(void)`
+pub const GameSetting_fLockTrapGoOffMult__atexit: u64 = 167083;
+/// `GameSetting_fLockTrapGoOffMult__init` at 0x2d5c0 (crt_init, medium); signature (high): `void GameSetting_fLockTrapGoOffMult__init(void)`
+pub const GameSetting_fLockTrapGoOffMult__init: u64 = 1873;
+/// `GameSetting_fLockpickBreakAdept__atexit` at 0x1770ba0 (crt_init, medium); signature (high): `void GameSetting_fLockpickBreakAdept__atexit(void)`
+pub const GameSetting_fLockpickBreakAdept__atexit: u64 = 168560;
+/// `GameSetting_fLockpickBreakAdept__init` at 0x5af70 (crt_init, medium); signature (high): `void GameSetting_fLockpickBreakAdept__init(void)`
+pub const GameSetting_fLockpickBreakAdept__init: u64 = 3350;
+/// `GameSetting_fLockpickBreakApprentice__atexit` at 0x1770bf0 (crt_init, medium); signature (high): `void GameSetting_fLockpickBreakApprentice__atexit(void)`
+pub const GameSetting_fLockpickBreakApprentice__atexit: u64 = 168561;
+/// `GameSetting_fLockpickBreakApprentice__init` at 0x5aff0 (crt_init, medium); signature (high): `void GameSetting_fLockpickBreakApprentice__init(void)`
+pub const GameSetting_fLockpickBreakApprentice__init: u64 = 3351;
+/// `GameSetting_fLockpickBreakExpert__atexit` at 0x1770c40 (crt_init, medium); signature (high): `void GameSetting_fLockpickBreakExpert__atexit(void)`
+pub const GameSetting_fLockpickBreakExpert__atexit: u64 = 168562;
+/// `GameSetting_fLockpickBreakExpert__init` at 0x5b070 (crt_init, medium); signature (high): `void GameSetting_fLockpickBreakExpert__init(void)`
+pub const GameSetting_fLockpickBreakExpert__init: u64 = 3352;
+/// `GameSetting_fLockpickBreakMaster__atexit` at 0x1770c90 (crt_init, medium); signature (high): `void GameSetting_fLockpickBreakMaster__atexit(void)`
+pub const GameSetting_fLockpickBreakMaster__atexit: u64 = 168563;
+/// `GameSetting_fLockpickBreakMaster__init` at 0x5b0f0 (crt_init, medium); signature (high): `void GameSetting_fLockpickBreakMaster__init(void)`
+pub const GameSetting_fLockpickBreakMaster__init: u64 = 3353;
+/// `GameSetting_fLockpickBreakNovice__atexit` at 0x1770ce0 (crt_init, medium); signature (high): `void GameSetting_fLockpickBreakNovice__atexit(void)`
+pub const GameSetting_fLockpickBreakNovice__atexit: u64 = 168564;
+/// `GameSetting_fLockpickBreakNovice__init` at 0x5b170 (crt_init, medium); signature (high): `void GameSetting_fLockpickBreakNovice__init(void)`
+pub const GameSetting_fLockpickBreakNovice__init: u64 = 3354;
+/// `GameSetting_fLockpickBreakSkillBase__atexit` at 0x1770d30 (crt_init, medium); signature (high): `void GameSetting_fLockpickBreakSkillBase__atexit(void)`
+pub const GameSetting_fLockpickBreakSkillBase__atexit: u64 = 168565;
 /// `GameSetting_fLockpickBreakSkillBase__init` at 0x5b1f0 (crt_init, medium); signature (high): `void GameSetting_fLockpickBreakSkillBase__init(void)`
 pub const GameSetting_fLockpickBreakSkillBase__init: u64 = 3355;
 /// `GameSetting_fLockpickBreakSkillMult__atexit` at 0x1770d80 (crt_init, medium); signature (high): `void GameSetting_fLockpickBreakSkillMult__atexit(void)`
@@ -9401,45 +9443,3 @@ pub const GetEnableStateParentHandle: u64 = 11739;
 pub const GetEnchantableField12OrFallback: u64 = 14564;
 /// `GetEnchantmentOrFallback` at 0x1e1fd0 (decompiler, medium); signature (untiered): `longlong GetEnchantmentOrFallback(undefined8 param_1, longlong param_2)`
 pub const GetEnchantmentOrFallback: u64 = 14563;
-/// `GetEnchantmentOrFallbackFromPair` at 0x22a290 (decompiler, high); signature (untiered): `undefined GetEnchantmentOrFallbackFromPair(undefined8 * param_1)`
-pub const GetEnchantmentOrFallbackFromPair: u64 = 16026;
-/// `GetEncounterZoneLocationByteEC` at 0x2c4050 (decompiler, medium); signature (untiered): `undefined1 GetEncounterZoneLocationByteEC(longlong param_1, undefined8 param_2, undefined8 param_3, TypeDescriptor * param_4)`
-pub const GetEncounterZoneLocationByteEC: u64 = 19085;
-/// `GetEntry18Field8` at 0xab59d0 (decompiler, high); signature (high): `undefined8 GetEntry18Field8(longlong * param_1, int param_2)`
-pub const GetEntry18Field8: u64 = 57764;
-/// `GetEntry58At` at 0x11e02a0 (decompiler, high); signature (high): `longlong GetEntry58At(longlong param_1, ushort param_2)`
-pub const GetEntry58At: u64 = 91096;
-/// `GetEntryAtField60Position` at 0xe52010 (decompiler, medium); signature (untiered): `undefined8 GetEntryAtField60Position(longlong param_1)`
-pub const GetEntryAtField60Position: u64 = 88980;
-/// `GetEntryAtIndex` at 0xd80f00 (decompiler, medium); signature (untiered): `undefined GetEntryAtIndex(longlong param_1, longlong * param_2, uint param_3)`
-pub const GetEntryAtIndex: u64 = 85355;
-/// `GetEntryAtIndexFromInlineOrHeapArray` at 0xee54b0 (decompiler, medium); signature (untiered): `undefined8 GetEntryAtIndexFromInlineOrHeapArray(longlong param_1, uint param_2)`
-pub const GetEntryAtIndexFromInlineOrHeapArray: u64 = 70365;
-/// `GetEntryAtIndexLocked` at 0xe153d0 (decompiler, medium); signature (untiered): `undefined GetEntryAtIndexLocked(longlong param_1, longlong * param_2, uint param_3)`
-pub const GetEntryAtIndexLocked: u64 = 88114;
-/// `GetEntryAtIndexLocked_2` at 0xd805a0 (decompiler, medium); signature (medium): `undefined8 GetEntryAtIndexLocked_2(longlong param_1, uint param_2)`
-pub const GetEntryAtIndexLocked_2: u64 = 85332;
-/// `GetEntryAtIndexOrDefault` at 0xe1b1d0 (decompiler, medium); signature (untiered): `GRefCountImplCore * GetEntryAtIndexOrDefault(longlong param_1, ulonglong param_2)`
-pub const GetEntryAtIndexOrDefault: u64 = 88828;
-/// `GetEntryAtIndex_2` at 0xb4b3d0 (decompiler, medium); signature (untiered): `undefined8 GetEntryAtIndex_2(longlong param_1, int param_2)`
-pub const GetEntryAtIndex_2: u64 = 60857;
-/// `GetEntryBoundsRect` at 0xe1a2d0 (decompiler, medium); signature (medium): `float * GetEntryBoundsRect(longlong * param_1, uint param_2, float * param_3)`
-pub const GetEntryBoundsRect: u64 = 88794;
-/// `GetEntryByIndexAcrossTwoArrays` at 0xb4b290 (decompiler, medium); signature (untiered): `undefined8 GetEntryByIndexAcrossTwoArrays(longlong param_1, int param_2)`
-pub const GetEntryByIndexAcrossTwoArrays: u64 = 60855;
-/// `GetEntryByIndexOrDefault` at 0xbd0660 (decompiler, high); signature (untiered): `undefined * GetEntryByIndexOrDefault(longlong param_1, short param_2)`
-pub const GetEntryByIndexOrDefault: u64 = 63600;
-/// `GetEntryByte1CForTarget` at 0x223770 (decompiler, medium); signature (untiered): `int GetEntryByte1CForTarget(longlong param_1, longlong param_2)`
-pub const GetEntryByte1CForTarget: u64 = 15871;
-/// `GetEntryByte7CAtIndex` at 0xdbdea0 (decompiler, medium); signature (untiered): `undefined GetEntryByte7CAtIndex(longlong param_1)`
-pub const GetEntryByte7CAtIndex: u64 = 86370;
-/// `GetEntryDataByKeyFromArray448` at 0x3e9510 (decompiler, medium); signature (medium): `char GetEntryDataByKeyFromArray448(longlong param_1, longlong param_2, longlong param_3)`
-pub const GetEntryDataByKeyFromArray448: u64 = 25390;
-/// `GetEntryDword20Stride18` at 0x1ba9a0 (decompiler, high); signature (high): `undefined4 GetEntryDword20Stride18(longlong param_1, byte param_2)`
-pub const GetEntryDword20Stride18: u64 = 13706;
-/// `GetEntryEdgeFlagNibble` at 0x11df5a0 (decompiler, medium); signature (medium): `ushort GetEntryEdgeFlagNibble(longlong param_1, ushort param_2, char param_3, undefined1 * param_4, undefined1 * param_5)`
-pub const GetEntryEdgeFlagNibble: u64 = 91070;
-/// `GetEntryEnchantableField12OrFallback` at 0x2288c0 (decompiler, medium); signature (untiered): `undefined GetEntryEnchantableField12OrFallback(undefined8 * param_1)`
-pub const GetEntryEnchantableField12OrFallback: u64 = 15992;
-/// `GetEntryField20ByFormModelPath` at 0x3b8f60 (decompiler, medium); signature (untiered): `longlong GetEntryField20ByFormModelPath(longlong param_1, longlong param_2, undefined8 param_3, undefined8 param_4)`
-pub const GetEntryField20ByFormModelPath: u64 = 24600;

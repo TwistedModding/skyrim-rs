@@ -3,76 +3,6 @@
 
 use core::ffi::{c_char, c_void};
 
-/// `TryGetValueByKeyUnderReadLock` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 69939, rva 0xed2250).
-/// `undefined8 TryGetValueByKeyUnderReadLock(longlong param_1, uint param_2, undefined8 * param_3)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn try_get_value_by_key_under_read_lock(param_1: i64, param_2: u32, param_3: *mut u64) -> u64 { unsafe { function!(69939, (i64, u32, *mut u64) -> u64)(param_1, param_2, param_3) } }
-/// `TryGetValueByPairKey` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 67428, rva 0xcbf1b0).
-/// `undefined8 TryGetValueByPairKey(longlong * param_1, ulonglong * param_2, undefined4 * param_3)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn try_get_value_by_pair_key(param_1: *mut i64, param_2: *mut u64, param_3: *mut u32) -> u64 { unsafe { function!(67428, (*mut i64, *mut u64, *mut u32) -> u64)(param_1, param_2, param_3) } }
-/// `TryGetVariantByQwordKey` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 104232, rva 0x148d460).
-/// `undefined1 TryGetVariantByQwordKey(longlong param_1, ulonglong * param_2, int * param_3, undefined8 param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn try_get_variant_by_qword_key(param_1: i64, param_2: *mut u64, param_3: *mut i32, param_4: u64) -> u8 { unsafe { function!(104232, (i64, *mut u64, *mut i32, u64) -> u8)(param_1, param_2, param_3, param_4) } }
-/// `TryInsertStringKeyedTreeNode` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 441838, rva 0x58e5b0).
-/// `undefined8 * TryInsertStringKeyedTreeNode(longlong * param_1, undefined8 * param_2, char param_3, undefined8 * param_4, void * param_5)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn try_insert_string_keyed_tree_node(param_1: *mut i64, param_2: *mut u64, param_3: c_char, param_4: *mut u64, param_5: *mut c_void) -> *mut u64 { unsafe { function!(441838, (*mut i64, *mut u64, c_char, *mut u64, *mut c_void) -> *mut u64)(param_1, param_2, param_3, param_4, param_5) } }
-/// `TryLandPlayerFlyingMount` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 40722, rva 0x75dc90).
-/// `undefined TryLandPlayerFlyingMount(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn try_land_player_flying_mount(param_1: u64, param_2: u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(40722, (u64, u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
-/// `TryLaunchProjectileFromCaster` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 34451, rva 0x5ce750).
-/// `undefined8 TryLaunchProjectileFromCaster(longlong * param_1, longlong param_2, float * param_3, longlong param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn try_launch_projectile_from_caster(param_1: *mut i64, param_2: i64, param_3: *mut f32, param_4: i64) -> u64 { unsafe { function!(34451, (*mut i64, i64, *mut f32, i64) -> u64)(param_1, param_2, param_3, param_4) } }
-/// `TryLockedCallVfunc360` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 12358, rva 0x17fcd0).
-/// `DWORD TryLockedCallVfunc360(longlong * param_1, undefined8 param_2, undefined1 param_3)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn try_locked_call_vfunc360(param_1: *mut i64, param_2: u64, param_3: u8) -> u32 { unsafe { function!(12358, (*mut i64, u64, u8) -> u32)(param_1, param_2, param_3) } }
-/// `TryParseHeadingPrefix` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 454970, rva 0x160dbc0).
-/// `ulonglong TryParseHeadingPrefix(undefined8 param_1, char * param_2, undefined4 * param_3, undefined8 param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn try_parse_heading_prefix(param_1: u64, param_2: *mut c_char, param_3: *mut u32, param_4: u64) -> u64 { unsafe { function!(454970, (u64, *mut c_char, *mut u32, u64) -> u64)(param_1, param_2, param_3, param_4) } }
-/// `TryParseNumberedListPrefix` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 454966, rva 0x160cc00).
-/// `undefined8 TryParseNumberedListPrefix(longlong param_1, undefined8 * param_2, int * param_3, char * param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn try_parse_numbered_list_prefix(param_1: i64, param_2: *mut u64, param_3: *mut i32, param_4: *mut c_char) -> u64 { unsafe { function!(454966, (i64, *mut u64, *mut i32, *mut c_char) -> u64)(param_1, param_2, param_3, param_4) } }
-/// `TryPlayPainReaction` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 37656, rva 0x69bc90).
-/// `undefined TryPlayPainReaction(longlong * param_1, char param_2, undefined8 param_3, TypeDescriptor * param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn try_play_pain_reaction(param_1: *mut i64, param_2: c_char, param_3: u64, param_4: *mut c_void) -> u64 { unsafe { function!(37656, (*mut i64, c_char, u64, *mut c_void) -> u64)(param_1, param_2, param_3, param_4) } }
 /// `TryPopFrontDwordRefPtrPair` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 91388, rva 0x11f2c00).
 /// `bool TryPopFrontDwordRefPtrPair(longlong param_1, undefined4 * param_2, undefined8 param_3, undefined8 param_4)`
 ///
@@ -2586,13 +2516,6 @@ pub unsafe fn update_process_lists_handles(param_1: i64, param_2: u64, param_3: 
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn update_process_lists_or_find_auto_aim(param_1: i64, param_2: u64, param_3: i64, param_4: *mut u64) -> u64 { unsafe { function!(36580, (i64, u64, i64, *mut u64) -> u64)(param_1, param_2, param_3, param_4) } }
-/// `UpdateProcessListsWithTimeBudget` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 41296, rva 0x77b470).
-/// `undefined UpdateProcessListsWithTimeBudget(longlong param_1, undefined8 param_2, longlong param_3, ulonglong param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn update_process_lists_with_time_budget(param_1: i64, param_2: u64, param_3: i64, param_4: u64) -> u64 { unsafe { function!(41296, (i64, u64, i64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
 /// `UpdateProcessTierListsAndUnregisterRef` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 13354, rva 0x1a5cd0).
 /// `undefined UpdateProcessTierListsAndUnregisterRef(undefined8 param_1, TESObjectREFR * param_2)`
 ///

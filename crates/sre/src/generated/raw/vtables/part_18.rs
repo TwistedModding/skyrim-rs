@@ -7455,7 +7455,7 @@ pub struct _anon_57720BD5__bhkTiltPreventAction_vtable {
     pub slot_35: *const c_void,
     /// `NiObject::vfunc_36` at 0xedcbb0 (rtti, medium); signature (low): `undefined8 vfunc_36(void)`
     pub slot_36: *const c_void,
-    /// `bhkSerializable::vfunc_37` at 0x10829c0 (rtti, medium); signature (low): `undefined vfunc_37(bhkSerializable * this, longlong param_1)`
+    /// `bhkShape::SetReferencedObject` at 0x10829c0 (semantic, high); signature (untiered): `undefined SetReferencedObject(bhkShape * this, longlong param_1)`
     pub slot_37: *const c_void,
     /// `bhkAction::vfunc_38` at 0x1093350 (rtti, medium); signature (low): `undefined vfunc_38(bhkAction * this, char param_1)`
     pub slot_38: *const c_void,
@@ -7565,7 +7565,7 @@ pub struct _anon_57720BD5__bhkWheelAction_vtable {
     pub slot_35: *const c_void,
     /// `NiObject::vfunc_36` at 0xedcbb0 (rtti, medium); signature (low): `undefined8 vfunc_36(void)`
     pub slot_36: *const c_void,
-    /// `bhkSerializable::vfunc_37` at 0x10829c0 (rtti, medium); signature (low): `undefined vfunc_37(bhkSerializable * this, longlong param_1)`
+    /// `bhkShape::SetReferencedObject` at 0x10829c0 (semantic, high); signature (untiered): `undefined SetReferencedObject(bhkShape * this, longlong param_1)`
     pub slot_37: *const c_void,
     /// `bhkAction::vfunc_38` at 0x1093350 (rtti, medium); signature (low): `undefined vfunc_38(bhkAction * this, char param_1)`
     pub slot_38: *const c_void,
@@ -11603,9 +11603,9 @@ pub struct bhkAabbPhantom_vtable {
     pub slot_35: *const c_void,
     /// `NiObject::vfunc_36` at 0xedcbb0 (rtti, medium); signature (low): `undefined8 vfunc_36(void)`
     pub slot_36: *const c_void,
-    /// `bhkSerializable::vfunc_37` at 0x10829c0 (rtti, medium); signature (low): `undefined vfunc_37(bhkSerializable * this, longlong param_1)`
+    /// `bhkShape::SetReferencedObject` at 0x10829c0 (semantic, high); signature (untiered): `undefined SetReferencedObject(bhkShape * this, longlong param_1)`
     pub slot_37: *const c_void,
-    /// `bhkWorldObject::vfunc_38` at 0x10483b0 (rtti, medium); signature (low): `undefined vfunc_38(bhkWorldObject * this, char param_1)`
+    /// `bhkWorldObject::LinkHavokObject` at 0x10483b0 (semantic, high); signature (untiered): `undefined LinkHavokObject(bhkWorldObject * this, char param_1)`
     pub slot_38: *const c_void,
     /// `bhkWorldObject::vfunc_39` at 0x1047cc0 (rtti, medium); signature (high): `undefined8 vfunc_39(bhkWorldObject * this)`
     pub slot_39: *const c_void,
@@ -11747,7 +11747,7 @@ pub struct bhkAction_vtable {
     pub slot_35: *const c_void,
     /// `NiObject::vfunc_36` at 0xedcbb0 (rtti, medium); signature (low): `undefined8 vfunc_36(void)`
     pub slot_36: *const c_void,
-    /// `bhkSerializable::vfunc_37` at 0x10829c0 (rtti, medium); signature (low): `undefined vfunc_37(bhkSerializable * this, longlong param_1)`
+    /// `bhkShape::SetReferencedObject` at 0x10829c0 (semantic, high); signature (untiered): `undefined SetReferencedObject(bhkShape * this, longlong param_1)`
     pub slot_37: *const c_void,
     /// `bhkAction::vfunc_38` at 0x1093350 (rtti, medium); signature (low): `undefined vfunc_38(bhkAction * this, char param_1)`
     pub slot_38: *const c_void,
@@ -11857,7 +11857,7 @@ pub struct bhkAngularDashpotAction_vtable {
     pub slot_35: *const c_void,
     /// `NiObject::vfunc_36` at 0xedcbb0 (rtti, medium); signature (low): `undefined8 vfunc_36(void)`
     pub slot_36: *const c_void,
-    /// `bhkSerializable::vfunc_37` at 0x10829c0 (rtti, medium); signature (low): `undefined vfunc_37(bhkSerializable * this, longlong param_1)`
+    /// `bhkShape::SetReferencedObject` at 0x10829c0 (semantic, high); signature (untiered): `undefined SetReferencedObject(bhkShape * this, longlong param_1)`
     pub slot_37: *const c_void,
     /// `bhkAction::vfunc_38` at 0x1093350 (rtti, medium); signature (low): `undefined vfunc_38(bhkAction * this, char param_1)`
     pub slot_38: *const c_void,
@@ -12079,9 +12079,9 @@ pub struct bhkAvoidBox_vtable {
     pub slot_35: *const c_void,
     /// `NiObject::vfunc_36` at 0xedcbb0 (rtti, medium); signature (low): `undefined8 vfunc_36(void)`
     pub slot_36: *const c_void,
-    /// `bhkSerializable::vfunc_37` at 0x10829c0 (rtti, medium); signature (low): `undefined vfunc_37(bhkSerializable * this, longlong param_1)`
+    /// `bhkShape::SetReferencedObject` at 0x10829c0 (semantic, high); signature (untiered): `undefined SetReferencedObject(bhkShape * this, longlong param_1)`
     pub slot_37: *const c_void,
-    /// `bhkWorldObject::vfunc_38` at 0x10483b0 (rtti, medium); signature (low): `undefined vfunc_38(bhkWorldObject * this, char param_1)`
+    /// `bhkWorldObject::LinkHavokObject` at 0x10483b0 (semantic, high); signature (untiered): `undefined LinkHavokObject(bhkWorldObject * this, char param_1)`
     pub slot_38: *const c_void,
     /// `bhkWorldObject::vfunc_39` at 0x1047cc0 (rtti, medium); signature (high): `undefined8 vfunc_39(bhkWorldObject * this)`
     pub slot_39: *const c_void,
@@ -12449,7 +12449,7 @@ pub struct bhkBinaryAction_vtable {
     pub slot_35: *const c_void,
     /// `NiObject::vfunc_36` at 0xedcbb0 (rtti, medium); signature (low): `undefined8 vfunc_36(void)`
     pub slot_36: *const c_void,
-    /// `bhkSerializable::vfunc_37` at 0x10829c0 (rtti, medium); signature (low): `undefined vfunc_37(bhkSerializable * this, longlong param_1)`
+    /// `bhkShape::SetReferencedObject` at 0x10829c0 (semantic, high); signature (untiered): `undefined SetReferencedObject(bhkShape * this, longlong param_1)`
     pub slot_37: *const c_void,
     /// `bhkAction::vfunc_38` at 0x1093350 (rtti, medium); signature (low): `undefined vfunc_38(bhkAction * this, char param_1)`
     pub slot_38: *const c_void,
@@ -12803,9 +12803,9 @@ pub struct bhkBoxShape_vtable {
     pub slot_35: *const c_void,
     /// `NiObject::vfunc_36` at 0xedcbb0 (rtti, medium); signature (low): `undefined8 vfunc_36(void)`
     pub slot_36: *const c_void,
-    /// `bhkSerializable::vfunc_37` at 0x10829c0 (rtti, medium); signature (low): `undefined vfunc_37(bhkSerializable * this, longlong param_1)`
+    /// `bhkShape::SetReferencedObject` at 0x10829c0 (semantic, high); signature (untiered): `undefined SetReferencedObject(bhkShape * this, longlong param_1)`
     pub slot_37: *const c_void,
-    /// `bhkShape::vfunc_38` at 0x1082f90 (rtti, medium); signature (low): `undefined vfunc_38(bhkShape * this, char param_1)`
+    /// `bhkShape::LinkHavokObject` at 0x1082f90 (semantic, high); signature (untiered): `undefined LinkHavokObject(bhkShape * this, char param_1)`
     pub slot_38: *const c_void,
     /// `bhkSerializable::vfunc_39` at 0x2fa2a0 (rtti, medium); signature (low): `undefined8 vfunc_39(void)`
     pub slot_39: *const c_void,
@@ -13037,7 +13037,7 @@ pub struct bhkBvTreeShape_vtable {
     pub slot_35: *const c_void,
     /// `NiObject::vfunc_36` at 0xedcbb0 (rtti, medium); signature (low): `undefined8 vfunc_36(void)`
     pub slot_36: *const c_void,
-    /// `bhkSerializable::vfunc_37` at 0x10829c0 (rtti, medium); signature (low): `undefined vfunc_37(bhkSerializable * this, longlong param_1)`
+    /// `bhkShape::SetReferencedObject` at 0x10829c0 (semantic, high); signature (untiered): `undefined SetReferencedObject(bhkShape * this, longlong param_1)`
     pub slot_37: *const c_void,
     /// `bhkBvTreeShape::vfunc_38` at 0x108a390 (rtti, medium); signature (low): `undefined vfunc_38(bhkBvTreeShape * this, char param_1)`
     pub slot_38: *const c_void,
@@ -13153,9 +13153,9 @@ pub struct bhkCachingShapePhantom_vtable {
     pub slot_35: *const c_void,
     /// `NiObject::vfunc_36` at 0xedcbb0 (rtti, medium); signature (low): `undefined8 vfunc_36(void)`
     pub slot_36: *const c_void,
-    /// `bhkSerializable::vfunc_37` at 0x10829c0 (rtti, medium); signature (low): `undefined vfunc_37(bhkSerializable * this, longlong param_1)`
+    /// `bhkShape::SetReferencedObject` at 0x10829c0 (semantic, high); signature (untiered): `undefined SetReferencedObject(bhkShape * this, longlong param_1)`
     pub slot_37: *const c_void,
-    /// `bhkWorldObject::vfunc_38` at 0x10483b0 (rtti, medium); signature (low): `undefined vfunc_38(bhkWorldObject * this, char param_1)`
+    /// `bhkWorldObject::LinkHavokObject` at 0x10483b0 (semantic, high); signature (untiered): `undefined LinkHavokObject(bhkWorldObject * this, char param_1)`
     pub slot_38: *const c_void,
     /// `bhkWorldObject::vfunc_39` at 0x1047cc0 (rtti, medium); signature (high): `undefined8 vfunc_39(bhkWorldObject * this)`
     pub slot_39: *const c_void,
@@ -13263,9 +13263,9 @@ pub struct bhkCapsuleShape_vtable {
     pub slot_35: *const c_void,
     /// `NiObject::vfunc_36` at 0xedcbb0 (rtti, medium); signature (low): `undefined8 vfunc_36(void)`
     pub slot_36: *const c_void,
-    /// `bhkSerializable::vfunc_37` at 0x10829c0 (rtti, medium); signature (low): `undefined vfunc_37(bhkSerializable * this, longlong param_1)`
+    /// `bhkShape::SetReferencedObject` at 0x10829c0 (semantic, high); signature (untiered): `undefined SetReferencedObject(bhkShape * this, longlong param_1)`
     pub slot_37: *const c_void,
-    /// `bhkShape::vfunc_38` at 0x1082f90 (rtti, medium); signature (low): `undefined vfunc_38(bhkShape * this, char param_1)`
+    /// `bhkShape::LinkHavokObject` at 0x1082f90 (semantic, high); signature (untiered): `undefined LinkHavokObject(bhkShape * this, char param_1)`
     pub slot_38: *const c_void,
     /// `bhkSerializable::vfunc_39` at 0x2fa2a0 (rtti, medium); signature (low): `undefined8 vfunc_39(void)`
     pub slot_39: *const c_void,

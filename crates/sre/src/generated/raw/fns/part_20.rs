@@ -3,6 +3,90 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `_anon_6854232C::FindClosestOpenEdgeFunctor::vdtor` at 0x11c5390 (layout_inference, medium); signature (low): `FindClosestOpenEdgeFunctor * vdtor(FindClosestOpenEdgeFunctor * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const _anon_6854232C__FindClosestOpenEdgeFunctor__vdtor: u64 = 90499;
+/// `_anon_6854232C::FindClosestOpenEdgeFunctor::vfunc_1` at 0x11c4ee0 (rtti, high); signature (low): `undefined8 vfunc_1(FindClosestOpenEdgeFunctor * this, longlong param_1, ushort param_2, uint param_3)`
+pub const _anon_6854232C__FindClosestOpenEdgeFunctor__vfunc_1: u64 = 90494;
+/// `_anon_6854232C::PathSmootherRayCastBuildNodesForLargeZDelta::dtor` at 0x11c4c20 (layout_inference, high); signature (high): `undefined dtor(PathSmootherRayCastBuildNodesForLargeZDelta * this)`
+pub const _anon_6854232C__PathSmootherRayCastBuildNodesForLargeZDelta__dtor: u64 = 90486;
+/// `_anon_6854232C::PathSmootherRayCastBuildNodesForLargeZDelta::vdtor` at 0x11c5460 (layout_inference, medium); signature (low): `PathSmootherRayCastBuildNodesForLargeZDelta * vdtor(PathSmootherRayCastBuildNodesForLargeZDelta * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+pub const _anon_6854232C__PathSmootherRayCastBuildNodesForLargeZDelta__vdtor: u64 = 90503;
+/// `_anon_6854232C::PathSmootherRayCastBuildNodesForLargeZDelta::vfunc_1` at 0x11c5760 (rtti, high); signature (low): `char vfunc_1(PathSmootherRayCastBuildNodesForLargeZDelta * this, undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined4 * param_4)`
+pub const _anon_6854232C__PathSmootherRayCastBuildNodesForLargeZDelta__vfunc_1: u64 = 90513;
+/// `_anon_6854232C::PathSmootherRayCastBuildNodesForLargeZDelta::vfunc_1_sub0` at 0x11c2fa0 (callgraph, medium); signature (untiered): `char vfunc_1_sub0(longlong * param_1, undefined8 param_2, undefined8 * param_3, longlong * param_4)`
+pub const _anon_6854232C__PathSmootherRayCastBuildNodesForLargeZDelta__vfunc_1_sub0: u64 = 90463;
+/// `_anon_6854232C::PathSmootherRayCastBuildNodesForLargeZDelta::vfunc_1_sub1` at 0x1241670 (callgraph, medium); signature (untiered): `undefined8 vfunc_1_sub1(longlong param_1)`
+pub const _anon_6854232C__PathSmootherRayCastBuildNodesForLargeZDelta__vfunc_1_sub1: u64 = 93111;
+/// `_anon_6854232C::SortIntersectingEdgesFunctor::dtor` at 0x11c4c80 (layout_inference, high); signature (high): `undefined dtor(SortIntersectingEdgesFunctor * this)`
+pub const _anon_6854232C__SortIntersectingEdgesFunctor__dtor: u64 = 90487;
+/// `_anon_6854232C::SortIntersectingEdgesFunctor::vdtor` at 0x11c54e0 (layout_inference, medium); signature (low): `SortIntersectingEdgesFunctor * vdtor(SortIntersectingEdgesFunctor * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+pub const _anon_6854232C__SortIntersectingEdgesFunctor__vdtor: u64 = 90504;
+/// `_anon_6854232C::SortIntersectingEdgesFunctor::vfunc_1` at 0x11c5010 (rtti, high); signature (low): `undefined8 vfunc_1(SortIntersectingEdgesFunctor * this, longlong param_1, ushort param_2, uint param_3)`
+pub const _anon_6854232C__SortIntersectingEdgesFunctor__vfunc_1: u64 = 90495;
+/// `_anon_69ACCFBB::CastWornEnchantmentsVisitor::vdtor` at 0x5d5f90 (layout_inference, medium); signature (low): `CastWornEnchantmentsVisitor * vdtor(CastWornEnchantmentsVisitor * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+pub const _anon_69ACCFBB__CastWornEnchantmentsVisitor__vdtor: u64 = 34635;
+/// `_anon_69ACCFBB::CastWornEnchantmentsVisitor::vfunc_1` at 0x5d6400 (rtti, high); signature (low): `undefined8 vfunc_1(CastWornEnchantmentsVisitor * this, longlong * param_1)`
+pub const _anon_69ACCFBB__CastWornEnchantmentsVisitor__vfunc_1: u64 = 34644;
+/// `_anon_69ACCFBB::CastWornEnchantmentsVisitor::vfunc_1_sub0` at 0x6d5c60 (callgraph, medium); signature (untiered): `char vfunc_1_sub0(longlong param_1, undefined8 * param_2)`
+pub const _anon_69ACCFBB__CastWornEnchantmentsVisitor__vfunc_1_sub0: u64 = 38749;
+/// `_anon_69ACCFBB::CountActorValueEffects::vdtor` at 0x5d6010 (layout_inference, medium); signature (low): `CountActorValueEffects * vdtor(CountActorValueEffects * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const _anon_69ACCFBB__CountActorValueEffects__vdtor: u64 = 34636;
+/// `_anon_69ACCFBB::CountActorValueEffects::vfunc_1` at 0x5d5f10 (rtti, high); signature (low): `bool vfunc_1(CountActorValueEffects * this, longlong param_1)`
+pub const _anon_69ACCFBB__CountActorValueEffects__vfunc_1: u64 = 34634;
+/// `_anon_69ACCFBB::DispelWornItemEnchantsVisitor::vdtor` at 0x5d6040 (layout_inference, medium); signature (low): `DispelWornItemEnchantsVisitor * vdtor(DispelWornItemEnchantsVisitor * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const _anon_69ACCFBB__DispelWornItemEnchantsVisitor__vdtor: u64 = 34637;
+/// `_anon_69ACCFBB::DispelWornItemEnchantsVisitor::vfunc_1` at 0x5d6530 (rtti, high); signature (low): `undefined8 vfunc_1(DispelWornItemEnchantsVisitor * this, longlong * param_1)`
+pub const _anon_69ACCFBB__DispelWornItemEnchantsVisitor__vfunc_1: u64 = 34645;
+/// `_anon_69ACCFBB::PreloadWornItemEnchantsVisitor::vdtor` at 0x5d6070 (layout_inference, medium); signature (low): `PreloadWornItemEnchantsVisitor * vdtor(PreloadWornItemEnchantsVisitor * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const _anon_69ACCFBB__PreloadWornItemEnchantsVisitor__vdtor: u64 = 34638;
+/// `_anon_69ACCFBB::PreloadWornItemEnchantsVisitor::vfunc_1` at 0x5d6590 (rtti, high); signature (low): `undefined8 vfunc_1(PreloadWornItemEnchantsVisitor * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
+pub const _anon_69ACCFBB__PreloadWornItemEnchantsVisitor__vfunc_1: u64 = 34646;
+/// `_anon_69ACCFBB::UnloadWornItemEnchantsVisitor::vdtor` at 0x5d60a0 (layout_inference, medium); signature (low): `UnloadWornItemEnchantsVisitor * vdtor(UnloadWornItemEnchantsVisitor * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const _anon_69ACCFBB__UnloadWornItemEnchantsVisitor__vdtor: u64 = 34639;
+/// `_anon_69ACCFBB::UnloadWornItemEnchantsVisitor::vfunc_1` at 0x5d65d0 (rtti, high); signature (low): `undefined8 vfunc_1(UnloadWornItemEnchantsVisitor * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
+pub const _anon_69ACCFBB__UnloadWornItemEnchantsVisitor__vfunc_1: u64 = 34647;
+/// `_anon_6A635D9D::SynchronizedClipGenVisitor::vfunc_0` at 0x5519f0 (rtti, high); signature (low): `SynchronizedClipGenVisitor * vfunc_0(SynchronizedClipGenVisitor * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+pub const _anon_6A635D9D__SynchronizedClipGenVisitor__vfunc_0: u64 = 32836;
+/// `_anon_6A635D9D::SynchronizedClipGenVisitor::vfunc_1` at 0x552120 (rtti, high); signature (low): `undefined8 vfunc_1(SynchronizedClipGenVisitor * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const _anon_6A635D9D__SynchronizedClipGenVisitor__vfunc_1: u64 = 32851;
+/// `_anon_705FD51E::MagicMenuAddActiveEffectVisitor::ctor` at 0x9555c0 (layout_inference, medium); signature (low): `MagicMenuAddActiveEffectVisitor * ctor(MagicMenuAddActiveEffectVisitor * this, undefined8 param_1, undefined1 * param_2, ulonglong param_3)`
+pub const _anon_705FD51E__MagicMenuAddActiveEffectVisitor__ctor: u64 = 52057;
+/// `_anon_705FD51E::MagicMenuAddActiveEffectVisitor::vdtor` at 0x9566e0 (layout_inference, medium); signature (low): `MagicMenuAddActiveEffectVisitor * vdtor(MagicMenuAddActiveEffectVisitor * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const _anon_705FD51E__MagicMenuAddActiveEffectVisitor__vdtor: u64 = 52078;
+/// `_anon_705FD51E::MagicMenuAddActiveEffectVisitor::vfunc_1` at 0x955c50 (rtti, high); signature (low): `undefined8 vfunc_1(MagicMenuAddActiveEffectVisitor * this, ulonglong param_1)`
+pub const _anon_705FD51E__MagicMenuAddActiveEffectVisitor__vfunc_1: u64 = 52072;
+/// `_anon_705FD51E::MagicMenuAddActiveEffectVisitor::vfunc_1_sub0` at 0x5bcc20 (callgraph, medium); signature (untiered): `undefined vfunc_1_sub0(longlong param_1, longlong * param_2, undefined8 param_3, undefined8 param_4)`
+pub const _anon_705FD51E__MagicMenuAddActiveEffectVisitor__vfunc_1_sub0: u64 = 34089;
+/// `_anon_705FD51E::MagicMenuAddActiveEffectVisitor::vfunc_1_sub1` at 0x954e70 (callgraph, medium); signature (untiered): `undefined8 vfunc_1_sub1(longlong param_1, ulonglong * param_2, ulonglong * param_3)`
+pub const _anon_705FD51E__MagicMenuAddActiveEffectVisitor__vfunc_1_sub1: u64 = 52052;
+/// `_anon_705FD51E::MagicMenuAddActiveEffectVisitor::vfunc_1_sub2` at 0x955010 (callgraph, medium); signature (untiered): `undefined8 vfunc_1_sub2(longlong param_1, ulonglong * param_2, ulonglong * param_3)`
+pub const _anon_705FD51E__MagicMenuAddActiveEffectVisitor__vfunc_1_sub2: u64 = 52053;
+/// `_anon_705FD51E::MagicMenuAddSpellVisitor::vdtor` at 0x956740 (layout_inference, medium); signature (low): `MagicMenuAddSpellVisitor * vdtor(MagicMenuAddSpellVisitor * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const _anon_705FD51E__MagicMenuAddSpellVisitor__vdtor: u64 = 52079;
+/// `_anon_705FD51E::MagicMenuAddSpellVisitor::vfunc_1` at 0x956360 (rtti, high); signature (low): `undefined8 vfunc_1(MagicMenuAddSpellVisitor * this, undefined8 param_1)`
+pub const _anon_705FD51E__MagicMenuAddSpellVisitor__vfunc_1: u64 = 52073;
+/// `_anon_705FD51E::SpendSoulCallback::vdtor` at 0x956770 (layout_inference, medium); signature (low): `SpendSoulCallback * vdtor(SpendSoulCallback * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const _anon_705FD51E__SpendSoulCallback__vdtor: u64 = 52080;
+/// `_anon_705FD51E::SpendSoulCallback::vfunc_1` at 0x9563b0 (rtti, high); signature (low): `undefined vfunc_1(SpendSoulCallback * this, char param_1, undefined8 param_2, undefined8 param_3)`
+pub const _anon_705FD51E__SpendSoulCallback__vfunc_1: u64 = 52074;
+/// `_anon_705FD51E::StoreEnchantedItemsVisitor::vdtor` at 0x9567a0 (layout_inference, medium); signature (low): `StoreEnchantedItemsVisitor * vdtor(StoreEnchantedItemsVisitor * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const _anon_705FD51E__StoreEnchantedItemsVisitor__vdtor: u64 = 52081;
+/// `_anon_705FD51E::StoreEnchantedItemsVisitor::vfunc_1` at 0x957cc0 (rtti, high); signature (low): `undefined8 vfunc_1(StoreEnchantedItemsVisitor * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
+pub const _anon_705FD51E__StoreEnchantedItemsVisitor__vfunc_1: u64 = 52104;
+/// `_anon_705FD51E::StoreEnchantedItemsVisitor::vfunc_1_sub0` at 0x954ce0 (callgraph, medium); signature (untiered): `undefined8 vfunc_1_sub0(longlong param_1, uint * param_2, undefined8 * param_3)`
+pub const _anon_705FD51E__StoreEnchantedItemsVisitor__vfunc_1_sub0: u64 = 52051;
+/// `_anon_7174C251::TopicResultCallBack::vdtor` at 0x3f4650 (slot_propagation, medium); signature (low): `TopicResultCallBack * vdtor(TopicResultCallBack * this, uint param_1)`
+pub const _anon_7174C251__TopicResultCallBack__vdtor: u64 = 25647;
+/// `_anon_7174C251::TopicResultCallBack::vfunc_1` at 0x3f4550 (rtti, high); signature (untiered): `undefined vfunc_1(void)`
+pub const _anon_7174C251__TopicResultCallBack__vfunc_1: u64 = 25644;
+/// `_anon_7174C251::TopicResultCallBack::vfunc_3` at 0x3f4780 (rtti, high); signature (low): `undefined8 * vfunc_3(void)`
+pub const _anon_7174C251__TopicResultCallBack__vfunc_3: u64 = 25651;
+/// `_anon_71CE6E17::DeepCopyStream::vfunc_0` at 0xedd040 (rtti, high); signature (low): `DeepCopyStream * vfunc_0(DeepCopyStream * this, ulonglong param_1, longlong param_2, undefined * param_3)`
+pub const _anon_71CE6E17__DeepCopyStream__vfunc_0: u64 = 70206;
+/// `_anon_71CE6E17::DeepCopyStream::vfunc_13` at 0xedd0c0 (rtti, high); signature (high): `undefined4 vfunc_13(DeepCopyStream * this)`
+pub const _anon_71CE6E17__DeepCopyStream__vfunc_13: u64 = 70208;
+/// `_anon_71CE6E17::DeepCopyStream::vfunc_14` at 0xedd620 (rtti, high); signature (high): `undefined vfunc_14(DeepCopyStream * this)`
+pub const _anon_71CE6E17__DeepCopyStream__vfunc_14: u64 = 70211;
 /// `_anon_748233AE::CloakEffectCallbackFunctor::vfunc_0` at 0x5c4660 (rtti, high); signature (low): `CloakEffectCallbackFunctor * vfunc_0(CloakEffectCallbackFunctor * this, uint param_1, undefined8 param_2, undefined8 param_3)`
 pub const _anon_748233AE__CloakEffectCallbackFunctor__vfunc_0: u64 = 34248;
 /// `_anon_748233AE::CloakEffectCallbackFunctor::vfunc_1` at 0x5c46e0 (rtti, high); signature (low): `undefined vfunc_1(CloakEffectCallbackFunctor * this, longlong param_1)`
@@ -1435,6 +1519,10 @@ pub const bhkCachingShapePhantom__vfunc_46_sub0: u64 = 79117;
 pub const bhkCachingShapePhantom__vfunc_47: u64 = 79111;
 /// `bhkCapsuleShape::Create` at 0x1088ff0 (string, medium); signature (low): `undefined Create(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const bhkCapsuleShape__Create: u64 = 78803;
+/// `bhkCapsuleShape::CreateHavokShape` at 0x1088c00 (semantic, high); signature (untiered): `undefined CreateHavokShape(longlong * param_1, undefined8 * param_2, undefined8 * param_3, undefined4 param_4)`; semantic: the engine's own Havok object allocation pattern: TlsGetValue(*0x325a844)->+0x58 vtbl[1](heap, 0x50); u16 +8 = 0x50; hkpCapsuleShape::ctor; wrapper vtbl[37] (SetReferencedObject); removeReference (high); signature `void (bhkCapsuleShape* this, const hkVector4* a, const hkVector4* b, float radius)`
+pub const bhkCapsuleShape__CreateHavokShape: u64 = 78800;
+/// `bhkCapsuleShape::CreateHavokShape` as a function pointer type (high).
+pub type bhkCapsuleShape__CreateHavokShape_fn = unsafe extern "C" fn(this: *mut crate::bhkCapsuleShape, a: *const crate::hkVector4, b: *const crate::hkVector4, radius: f32);
 /// `bhkCapsuleShape::ctor` at 0x1088a70 (layout_inference, high); signature (low): `bhkCapsuleShape * ctor(bhkCapsuleShape * this, float * param_1, float * param_2, float param_3)`
 pub const bhkCapsuleShape__ctor: u64 = 78799;
 /// `bhkCapsuleShape::ctor` at 0x1089080 (layout_inference, high); signature (high): `bhkCapsuleShape * ctor(bhkCapsuleShape * this)`
@@ -1481,6 +1569,18 @@ pub const bhkCharControllerShape__vdtor: u64 = 80116;
 pub const bhkCharControllerShape__vfunc_2: u64 = 80118;
 /// `bhkCharControllerShape::vfunc_46` at 0x10c8c10 (rtti, high); signature (low): `undefined vfunc_46(bhkCharControllerShape * this, longlong param_1)`
 pub const bhkCharControllerShape__vfunc_46: u64 = 80113;
+/// `bhkCharProxyController::GetCollisionFilterInfo` at 0x1098b80 (semantic, medium); signature (untiered): `undefined4 * GetCollisionFilterInfo(bhkCharProxyController * this, undefined4 * param_1)`
+pub const bhkCharProxyController__GetCollisionFilterInfo: u64 = 79147;
+/// `bhkCharProxyController::GetPosition` at 0x1098920 (semantic, high); signature (untiered): `undefined GetPosition(bhkCharProxyController * this, float * param_1, char param_2)`
+pub const bhkCharProxyController__GetPosition: u64 = 79142;
+/// `bhkCharProxyController::GetWorldObject` at 0x1098710 (semantic, high); signature (untiered): `undefined8 GetWorldObject(bhkCharProxyController * this)`
+pub const bhkCharProxyController__GetWorldObject: u64 = 79137;
+/// `bhkCharProxyController::GetbhkWorld` at 0x10987c0 (semantic, high); signature (untiered): `undefined8 GetbhkWorld(bhkCharProxyController * this)`
+pub const bhkCharProxyController__GetbhkWorld: u64 = 79139;
+/// `bhkCharProxyController::InitFromCinfo` at 0x10983e0 (semantic, high); signature (untiered): `undefined InitFromCinfo(longlong param_1, longlong param_2, undefined8 param_3, undefined8 param_4)`; semantic: fills the controller from the cinfo (InitCharacterControllerFromCinfo on the base), creates the bhkCachingShapePhantom (0x30) around the active shape, stores it at +0x5a0, passes its hkpCachingShapePhantom to the proxy cinfo (cinfo+0x108) and creates the hkpCharacterProxy through the bhkCharacterProxy wrapper's slot 46 (high); signature `void (bhkCharProxyController* this, bhkCharProxyControllerCinfo* cinfo)`
+pub const bhkCharProxyController__InitFromCinfo: u64 = 79136;
+/// `bhkCharProxyController::InitFromCinfo` as a function pointer type (high).
+pub type bhkCharProxyController__InitFromCinfo_fn = unsafe extern "C" fn(this: *mut crate::bhkCharProxyController, cinfo: *mut crate::bhkCharProxyControllerCinfo);
 /// `bhkCharProxyController::bhkCharacterController_vdtor` at 0x109940c (slot_propagation, medium); signature (high): `undefined bhkCharacterController_vdtor(bhkCharProxyController * this)`
 pub const bhkCharProxyController__bhkCharacterController_vdtor: u64 = 79160;
 /// `bhkCharProxyController::bhkCharacterController_vfunc_10` at 0x1099080 (rtti, high); signature (low): `char bhkCharacterController_vfunc_10(bhkCharProxyController * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
@@ -1497,18 +1597,12 @@ pub const bhkCharProxyController__bhkCharacterController_vfunc_13: u64 = 79151;
 pub const bhkCharProxyController__bhkCharacterController_vfunc_14: u64 = 79138;
 /// `bhkCharProxyController::bhkCharacterController_vfunc_14_sub0` at 0x10deb70 (callgraph, medium); signature (untiered): `undefined bhkCharacterController_vfunc_14_sub0(longlong * param_1)`
 pub const bhkCharProxyController__bhkCharacterController_vfunc_14_sub0: u64 = 80541;
-/// `bhkCharProxyController::bhkCharacterController_vfunc_15` at 0x10987c0 (rtti, high); signature (high): `undefined8 bhkCharacterController_vfunc_15(bhkCharProxyController * this)`
-pub const bhkCharProxyController__bhkCharacterController_vfunc_15: u64 = 79139;
-/// `bhkCharProxyController::bhkCharacterController_vfunc_16` at 0x1098710 (rtti, high); signature (high): `undefined8 bhkCharacterController_vfunc_16(bhkCharProxyController * this)`
-pub const bhkCharProxyController__bhkCharacterController_vfunc_16: u64 = 79137;
 /// `bhkCharProxyController::bhkCharacterController_vfunc_17` at 0x10987f0 (rtti, high); signature (low): `undefined4 bhkCharacterController_vfunc_17(void)`
 pub const bhkCharProxyController__bhkCharacterController_vfunc_17: u64 = 79140;
 /// `bhkCharProxyController::bhkCharacterController_vfunc_18` at 0x1098fa0 (rtti, high); signature (low): `undefined8 bhkCharacterController_vfunc_18(bhkCharProxyController * this, longlong param_1)`
 pub const bhkCharProxyController__bhkCharacterController_vfunc_18: u64 = 79152;
 /// `bhkCharProxyController::bhkCharacterController_vfunc_19` at 0x10991e0 (rtti, high); signature (high): `undefined bhkCharacterController_vfunc_19(bhkCharProxyController * this)`
 pub const bhkCharProxyController__bhkCharacterController_vfunc_19: u64 = 79154;
-/// `bhkCharProxyController::bhkCharacterController_vfunc_2` at 0x1098920 (rtti, high); signature (low): `undefined bhkCharacterController_vfunc_2(bhkCharProxyController * this, float * param_1, char param_2)`
-pub const bhkCharProxyController__bhkCharacterController_vfunc_2: u64 = 79142;
 /// `bhkCharProxyController::bhkCharacterController_vfunc_3` at 0x1098800 (rtti, high); signature (low): `undefined bhkCharacterController_vfunc_3(bhkCharProxyController * this, float * param_1, char param_2)`
 pub const bhkCharProxyController__bhkCharacterController_vfunc_3: u64 = 79141;
 /// `bhkCharProxyController::bhkCharacterController_vfunc_4` at 0x1098a30 (rtti, high); signature (low): `undefined bhkCharacterController_vfunc_4(bhkCharProxyController * this, undefined8 * param_1)`
@@ -1519,14 +1613,12 @@ pub const bhkCharProxyController__bhkCharacterController_vfunc_5: u64 = 79144;
 pub const bhkCharProxyController__bhkCharacterController_vfunc_6: u64 = 79145;
 /// `bhkCharProxyController::bhkCharacterController_vfunc_7` at 0x1098b60 (rtti, high); signature (low): `undefined bhkCharacterController_vfunc_7(bhkCharProxyController * this, undefined8 * param_1)`
 pub const bhkCharProxyController__bhkCharacterController_vfunc_7: u64 = 79146;
-/// `bhkCharProxyController::bhkCharacterController_vfunc_8` at 0x1098b80 (rtti, high); signature (low): `undefined4 * bhkCharacterController_vfunc_8(bhkCharProxyController * this, undefined4 * param_1)`
-pub const bhkCharProxyController__bhkCharacterController_vfunc_8: u64 = 79147;
 /// `bhkCharProxyController::bhkCharacterController_vfunc_9` at 0x1098c10 (rtti, high); signature (low): `undefined bhkCharacterController_vfunc_9(bhkCharProxyController * this, undefined4 param_1)`
 pub const bhkCharProxyController__bhkCharacterController_vfunc_9: u64 = 79148;
-/// `bhkCharProxyController::ctor` at 0x1097260 (layout_inference, high); signature (low): `bhkCharProxyController * ctor(bhkCharProxyController * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
+/// `bhkCharProxyController::ctor` at 0x1097260 (layout_inference, high); signature (low): `bhkCharProxyController * ctor(bhkCharProxyController * this, longlong param_1, undefined8 param_2, undefined8 param_3)`; semantic: proxy controller constructor: hkpCharacterProxyListener vtable at +0, bhkCharacterController base at +0x10, embedded bhkCharacterProxy wrapper at +0x340, bhkCharacterPointCollector at +0x360, phantom wrapper pointer +0x5a0 (cleared), byte +0x5a8; then ctor_sub0 0x10983e0 builds the phantom and the Havok proxy (high); signature `bhkCharProxyController* (bhkCharProxyController* this, bhkCharProxyControllerCinfo* cinfo)`
 pub const bhkCharProxyController__ctor: u64 = 79128;
-/// `bhkCharProxyController::ctor_sub0` at 0x10983e0 (callgraph, medium); signature (untiered): `undefined ctor_sub0(longlong param_1, longlong param_2, undefined8 param_3, undefined8 param_4)`
-pub const bhkCharProxyController__ctor_sub0: u64 = 79136;
+/// `bhkCharProxyController::ctor` as a function pointer type (high).
+pub type bhkCharProxyController__ctor_fn = unsafe extern "C" fn(this: *mut crate::bhkCharProxyController, cinfo: *mut crate::bhkCharProxyControllerCinfo) -> *mut crate::bhkCharProxyController;
 /// `bhkCharProxyController::ctor_sub1` at 0x1099370 (callgraph, medium); signature (untiered): `undefined ctor_sub1(longlong * param_1)`
 pub const bhkCharProxyController__ctor_sub1: u64 = 79157;
 /// `bhkCharProxyController::dtor` at 0x1097430 (layout_inference, high); signature (low): `undefined dtor(bhkCharProxyController * this, bhkCharProxyController * param_1)`
@@ -1565,12 +1657,20 @@ pub const bhkCharProxyControllerCinfo__vfunc_3: u64 = 79124;
 pub const bhkCharProxyControllerCinfo__vfunc_4: u64 = 79125;
 /// `bhkCharProxyControllerCinfo::vfunc_5` at 0x1097250 (rtti, high); signature (low): `undefined4 vfunc_5(void)`
 pub const bhkCharProxyControllerCinfo__vfunc_5: u64 = 79127;
-/// `bhkCharRigidBodyController::ctor` at 0x1099a40 (layout_inference, high); signature (low): `bhkCharRigidBodyController * ctor(bhkCharRigidBodyController * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
+/// `bhkCharRigidBodyController::GetWorldObject` at 0x109aa00 (semantic, high); signature (untiered): `undefined8 GetWorldObject(bhkCharRigidBodyController * this)`
+pub const bhkCharRigidBodyController__GetWorldObject: u64 = 79189;
+/// `bhkCharRigidBodyController::GetbhkWorld` at 0x109aad0 (semantic, high); signature (untiered): `undefined8 GetbhkWorld(bhkCharRigidBodyController * this)`
+pub const bhkCharRigidBodyController__GetbhkWorld: u64 = 79191;
+/// `bhkCharRigidBodyController::InitFromCinfo` at 0x109a720 (semantic, high); signature (untiered): `undefined InitFromCinfo(longlong * param_1, longlong param_2, undefined8 param_3, undefined8 param_4)`; semantic: fills the controller, passes the active shape's hkpShape to the hkpCharacterRigidBody cinfo (cinfo+0xc8), creates it through the bhkCharacterRigidBody wrapper's slot 46, allocates a bhkRigidBody wrapper (0x40) into +0x360 and points it (slot 37) at hkpCharacterRigidBody+0x20 (the hkpRigidBody) (high); signature `void (bhkCharRigidBodyController* this, bhkCharRigidBodyControllerCinfo* cinfo)`
+pub const bhkCharRigidBodyController__InitFromCinfo: u64 = 79188;
+/// `bhkCharRigidBodyController::InitFromCinfo` as a function pointer type (high).
+pub type bhkCharRigidBodyController__InitFromCinfo_fn = unsafe extern "C" fn(this: *mut crate::bhkCharRigidBodyController, cinfo: *mut crate::bhkCharRigidBodyControllerCinfo);
+/// `bhkCharRigidBodyController::ctor` at 0x1099a40 (layout_inference, high); signature (low): `bhkCharRigidBodyController * ctor(bhkCharRigidBodyController * this, longlong param_1, undefined8 param_2, undefined8 param_3)`; semantic: rigid-body controller constructor: bhkCharacterController base at +0 (shared primary vtable 0x1a89bf0), hkpCharacterRigidBodyListener (hkReferencedObject) at +0x330 with +0x338 = 0x1ffff, embedded bhkCharacterRigidBody wrapper +0x340 (Havok object at +0x350), +0x358 = 0, +0x360 bhkRigidBody* (cleared, set in ctor_sub0), bhkCharacterPointCollector +0x370 (high); signature `bhkCharRigidBodyController* (bhkCharRigidBodyController* this, bhkCharRigidBodyControllerCinfo* cinfo)`
 pub const bhkCharRigidBodyController__ctor: u64 = 79183;
+/// `bhkCharRigidBodyController::ctor` as a function pointer type (high).
+pub type bhkCharRigidBodyController__ctor_fn = unsafe extern "C" fn(this: *mut crate::bhkCharRigidBodyController, cinfo: *mut crate::bhkCharRigidBodyControllerCinfo) -> *mut crate::bhkCharRigidBodyController;
 /// `bhkCharRigidBodyController::ctor` at 0x1099af0 (layout_inference, medium); signature (low): `undefined ctor(bhkCharRigidBodyController * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
 pub const bhkCharRigidBodyController__ctor_2: u64 = 79184;
-/// `bhkCharRigidBodyController::ctor_sub0` at 0x109a720 (callgraph, medium); signature (untiered): `undefined ctor_sub0(longlong * param_1, longlong param_2, undefined8 param_3, undefined8 param_4)`
-pub const bhkCharRigidBodyController__ctor_sub0: u64 = 79188;
 /// `bhkCharRigidBodyController::hkpCharacterRigidBodyListener_vdtor` at 0x109c0ec (slot_propagation, medium); signature (high): `undefined hkpCharacterRigidBodyListener_vdtor(bhkCharRigidBodyController * this)`
 pub const bhkCharRigidBodyController__hkpCharacterRigidBodyListener_vdtor: u64 = 79211;
 /// `bhkCharRigidBodyController::hkpCharacterRigidBodyListener_vfunc_3` at 0x1099c20 (rtti, high); signature (low): `undefined hkpCharacterRigidBodyListener_vfunc_3(bhkCharRigidBodyController * this, longlong param_1, undefined8 param_2)`
@@ -1593,10 +1693,6 @@ pub const bhkCharRigidBodyController__vfunc_12: u64 = 79202;
 pub const bhkCharRigidBodyController__vfunc_13: u64 = 79203;
 /// `bhkCharRigidBodyController::vfunc_14` at 0x109aa20 (rtti, high); signature (low): `undefined vfunc_14(bhkCharRigidBodyController * this, longlong param_1)`
 pub const bhkCharRigidBodyController__vfunc_14: u64 = 79190;
-/// `bhkCharRigidBodyController::vfunc_15` at 0x109aad0 (rtti, high); signature (high): `undefined8 vfunc_15(bhkCharRigidBodyController * this)`
-pub const bhkCharRigidBodyController__vfunc_15: u64 = 79191;
-/// `bhkCharRigidBodyController::vfunc_16` at 0x109aa00 (rtti, high); signature (high): `undefined8 vfunc_16(bhkCharRigidBodyController * this)`
-pub const bhkCharRigidBodyController__vfunc_16: u64 = 79189;
 /// `bhkCharRigidBodyController::vfunc_17` at 0x109ab00 (rtti, high); signature (low): `undefined4 vfunc_17(void)`
 pub const bhkCharRigidBodyController__vfunc_17: u64 = 79192;
 /// `bhkCharRigidBodyController::vfunc_18` at 0x109b640 (rtti, high); signature (low): `undefined8 vfunc_18(bhkCharRigidBodyController * this, longlong param_1)`
@@ -1643,10 +1739,26 @@ pub const bhkCharRigidBodyControllerCinfo__vfunc_4: u64 = 79180;
 pub const bhkCharRigidBodyControllerCinfo__vfunc_5: u64 = 79182;
 /// `bhkCharacterCollisionHandler::vdtor` at 0x793480 (layout_inference, medium); signature (low): `bhkCharacterCollisionHandler * vdtor(bhkCharacterCollisionHandler * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const bhkCharacterCollisionHandler__vdtor: u64 = 41660;
+/// `bhkCharacterController::ReplaceShape` at 0x1067bd0 (semantic, high); signature (untiered): `bool ReplaceShape(longlong * param_1, longlong param_2, undefined8 param_3, undefined8 param_4)`; semantic: the engine's own controller shape swap: under the bhkWorld write lock, if the world object's collidable shape differs from newShape->+0x10 it removes the object from the hkpWorld (entity or phantom by the broadphase type byte), calls setShape (slot 3), re-adds it, then decrements the old shape's bhkShape wrapper (old hkpShape->+0x10, NiRefObject count, no null check) and increments newShape's; returns true when it changed (high); signature `bool (bhkCharacterController* this, bhkShape* newShape)`
+pub const bhkCharacterController__ReplaceShape: u64 = 78308;
+/// `bhkCharacterController::ReplaceShape` as a function pointer type (high).
+pub type bhkCharacterController__ReplaceShape_fn = unsafe extern "C" fn(this: *mut crate::bhkCharacterController, newShape: *mut crate::bhkShape) -> bool;
+/// `bhkCharacterController::SetActiveShape` at 0x10647b0 (semantic, high); signature (untiered): `undefined SetActiveShape(longlong * param_1, int param_2)`; semantic: if index < 2, differs from +0x278 and +0x280[index] is set: stores index at +0x278, calls slot 2, then ReplaceShape(this, +0x280[index]) (high); signature `void (bhkCharacterController* this, int index)`
+pub const bhkCharacterController__SetActiveShape: u64 = 78267;
+/// `bhkCharacterController::SetActiveShape` as a function pointer type (high).
+pub type bhkCharacterController__SetActiveShape_fn = unsafe extern "C" fn(this: *mut crate::bhkCharacterController, index: i32);
+/// `bhkCharacterController::SetBumperEnabled` at 0x1064810 (semantic, high); signature (untiered): `longlong * SetBumperEnabled(longlong * param_1, byte param_2)`; semantic: the engine's character bumper switch: when +0x321 (has bumper) is set and +0x320 differs, and the active shape is a list (type 9): under the bhkWorld write lock removes the world object, enables or disables every list child whose bhkShape material (+0x20) equals the CharacterBumper id (*0x33376c8), and re-adds it (high); signature `void (bhkCharacterController* this, bool enable)`
+pub const bhkCharacterController__SetBumperEnabled: u64 = 78268;
+/// `bhkCharacterController::SetBumperEnabled` as a function pointer type (high).
+pub type bhkCharacterController__SetBumperEnabled_fn = unsafe extern "C" fn(this: *mut crate::bhkCharacterController, enable: bool);
 /// `bhkCharacterController::SetDistanceToCamera` at 0x1064c90 (semantic, high); signature (untiered): `undefined SetDistanceToCamera(longlong param_1, float * param_2, longlong param_3)`; semantic: +0x29c = max(0, |cameraPosition - actor3D world bound centre (+0xe4)| - bound radius (+0xf0)); nothing when actor3D is null (high); signature `void (bhkCharacterController* this, const NiPoint3* cameraPosition, NiAVObject* actor3D)`
 pub const bhkCharacterController__SetDistanceToCamera: u64 = 78274;
 /// `bhkCharacterController::SetDistanceToCamera` as a function pointer type (high).
 pub type bhkCharacterController__SetDistanceToCamera_fn = unsafe extern "C" fn(this: *mut crate::bhkCharacterController, cameraPosition: *const crate::NiPoint3, actor3D: *mut crate::NiAVObject);
+/// `bhkCharacterController::UpdateShapesFromCinfo` at 0x1067540 (semantic, high); signature (untiered): `undefined UpdateShapesFromCinfo(longlong * param_1, longlong * param_2, undefined8 param_3, undefined8 param_4)`; semantic: copies the cinfo's two bhkShape NiPointers (cinfo+0x90/+0x98) into +0x280/+0x288, switches +0x278 when the cinfo index differs, optionally builds a box phantom, then recomputes the controller bounds from the active shape's AABB (for a list with +0x321 set, the union of the children that are not CharacterBumper) (high); signature `void (bhkCharacterController* this, bhkCharacterControllerCinfo* cinfo)`
+pub const bhkCharacterController__UpdateShapesFromCinfo: u64 = 78306;
+/// `bhkCharacterController::UpdateShapesFromCinfo` as a function pointer type (high).
+pub type bhkCharacterController__UpdateShapesFromCinfo_fn = unsafe extern "C" fn(this: *mut crate::bhkCharacterController, cinfo: *mut crate::bhkCharacterControllerCinfo);
 /// `bhkCharacterController::ctor` at 0x1063880 (layout_inference, high); signature (low): `bhkCharacterController * ctor(bhkCharacterController * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
 pub const bhkCharacterController__ctor: u64 = 78257;
 /// `bhkCharacterController::ctor_sub0` at 0x1068d60 (callgraph, medium); signature (untiered): `undefined ctor_sub0(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
@@ -3099,6 +3211,10 @@ pub const bhkRagdollTemplateData__vfunc_25: u64 = 79221;
 pub const bhkRagdollTemplateData__vfunc_26: u64 = 79222;
 /// `bhkRagdollTemplateData::vfunc_27` at 0x109ca40 (rtti, high); signature (low): `undefined vfunc_27(bhkRagdollTemplateData * this, longlong param_1)`
 pub const bhkRagdollTemplateData__vfunc_27: u64 = 79223;
+/// `bhkRefObject::SetReferencedObject` at 0x10825d0 (semantic, high); signature (untiered): `undefined SetReferencedObject(bhkRefObject * this, longlong param_1)`; semantic: if object differs from +0x10: slot 38 (unlink, false), +0x10 = object, slot 38 (link, true) (high); signature `void (bhkRefObject* this, hkReferencedObject* object)`
+pub const bhkRefObject__SetReferencedObject: u64 = 78649;
+/// `bhkRefObject::SetReferencedObject` as a function pointer type (high).
+pub type bhkRefObject__SetReferencedObject_fn = unsafe extern "C" fn(this: *mut crate::bhkRefObject, object: *mut crate::hkReferencedObject);
 /// `bhkRefObject::ctor` at 0x1082510 (layout_inference, high); signature (high): `bhkRefObject * ctor(bhkRefObject * this)`
 pub const bhkRefObject__ctor: u64 = 78647;
 /// `bhkRefObject::dtor` at 0x1082540 (layout_inference, high); signature (high): `undefined dtor(bhkRefObject * this)`
@@ -3107,8 +3223,6 @@ pub const bhkRefObject__dtor: u64 = 78648;
 pub const bhkRefObject__vdtor: u64 = 78651;
 /// `bhkRefObject::vfunc_2` at 0x1082730 (rtti, high); signature (low): `TypeNode * vfunc_2(void)`
 pub const bhkRefObject__vfunc_2: u64 = 78652;
-/// `bhkRefObject::vfunc_37` at 0x10825d0 (rtti, high); signature (low): `undefined vfunc_37(bhkRefObject * this, longlong param_1)`
-pub const bhkRefObject__vfunc_37: u64 = 78649;
 /// `bhkRefObject::vfunc_38` at 0x1082620 (rtti, medium); signature (low): `undefined vfunc_38(bhkRefObject * this, char param_1)`
 pub const bhkRefObject__vfunc_38: u64 = 78650;
 /// `bhkRigidBody::Create` at 0x105b9a0 (string, medium); signature (low): `undefined Create(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
@@ -3243,8 +3357,6 @@ pub const bhkSerializable__vfunc_25: u64 = 78654;
 pub const bhkSerializable__vfunc_26: u64 = 78655;
 /// `bhkSerializable::vfunc_27` at 0x10827d0 (rtti, medium); signature (low): `undefined vfunc_27(bhkSerializable * this, longlong param_1)`
 pub const bhkSerializable__vfunc_27: u64 = 78656;
-/// `bhkSerializable::vfunc_37` at 0x10829c0 (rtti, medium); signature (low): `undefined vfunc_37(bhkSerializable * this, longlong param_1)`
-pub const bhkSerializable__vfunc_37: u64 = 78659;
 /// `bhkSerializable::vfunc_39` at 0x2fa2a0 (rtti, medium); signature (low): `undefined8 vfunc_39(void)`
 pub const bhkSerializable__vfunc_39: u64 = 20020;
 /// `bhkSerializable::vfunc_40` at 0x2fa2b0 (rtti, medium); signature (low): `undefined8 vfunc_40(void)`
@@ -3263,6 +3375,10 @@ pub const bhkSerializable__vfunc_45: u64 = 78661;
 pub const bhkSerializable__vfunc_48: u64 = 78662;
 /// `bhkSerializable::vfunc_49` at 0x1082bd0 (rtti, medium); signature (high): `undefined vfunc_49(bhkSerializable * this)`
 pub const bhkSerializable__vfunc_49: u64 = 78663;
+/// `bhkShape::LinkHavokObject` at 0x1082f90 (semantic, high); signature (untiered): `undefined LinkHavokObject(bhkShape * this, char param_1)`
+pub const bhkShape__LinkHavokObject: u64 = 78677;
+/// `bhkShape::SetReferencedObject` at 0x10829c0 (semantic, high); signature (untiered): `undefined SetReferencedObject(bhkShape * this, longlong param_1)`
+pub const bhkShape__SetReferencedObject: u64 = 78659;
 /// `bhkShape::dtor` at 0x1082e30 (layout_inference, high); signature (low): `undefined dtor(bhkShape * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
 pub const bhkShape__dtor: u64 = 78671;
 /// `bhkShape::vdtor` at 0x2f9560 (slot_propagation, medium); signature (low): `bhkShape * vdtor(bhkShape * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
@@ -3279,8 +3395,6 @@ pub const bhkShape__vfunc_26: u64 = 78668;
 pub const bhkShape__vfunc_27: u64 = 78669;
 /// `bhkShape::vfunc_28` at 0x1082df0 (rtti, medium); signature (low): `ulonglong vfunc_28(bhkShape * this, longlong * param_1)`
 pub const bhkShape__vfunc_28: u64 = 78670;
-/// `bhkShape::vfunc_38` at 0x1082f90 (rtti, medium); signature (low): `undefined vfunc_38(bhkShape * this, char param_1)`
-pub const bhkShape__vfunc_38: u64 = 78677;
 /// `bhkShape::vfunc_50` at 0x1082e70 (rtti, medium); signature (low): `undefined vfunc_50(bhkShape * this, longlong * param_1, longlong param_2)`
 pub const bhkShape__vfunc_50: u64 = 78672;
 /// `bhkShape::vfunc_51` at 0x1082ea0 (rtti, medium); signature (low): `undefined8 vfunc_51(bhkShape * this, undefined4 * param_1)`
@@ -3701,6 +3815,10 @@ pub const bhkWindListener__vfunc_6: u64 = 78186;
 pub const bhkWorld__GetWorld: u64 = 77852;
 /// `bhkWorld::GetWorldForLock` at 0x104b480 (semantic, high); signature (untiered): `undefined8 GetWorldForLock(bhkWorld * this)`
 pub const bhkWorld__GetWorldForLock: u64 = 77853;
+/// `bhkWorld::LockForWriteIfEnabled` at 0x104fce0 (semantic, high); signature (untiered): `undefined LockForWriteIfEnabled(longlong param_1)`; semantic: BSReadWriteLock::LockForWrite(this+0xc598) when bUseWorldLock:HAVOK is set (high); signature `void (bhkWorld* this)`
+pub const bhkWorld__LockForWriteIfEnabled: u64 = 77928;
+/// `bhkWorld::LockForWriteIfEnabled` as a function pointer type (high).
+pub type bhkWorld__LockForWriteIfEnabled_fn = unsafe extern "C" fn(this: *mut crate::bhkWorld);
 /// `bhkWorld::PickObject` at 0x104be80 (runtime, high); signature (untiered): `undefined1 * PickObject(bhkWorld * this, float * param_1)`
 pub const bhkWorld__PickObject: u64 = 77860;
 /// `bhkWorld::Step` at 0x104ac30 (semantic, medium); signature (untiered): `undefined8 Step(bhkWorld * this, uint param_1, undefined8 param_2, undefined8 param_3)`
@@ -3751,6 +3869,10 @@ pub const bhkWorldM__ctor: u64 = 78630;
 pub const bhkWorldM__vdtor: u64 = 78637;
 /// `bhkWorldM::vfunc_2` at 0x1082420 (rtti, high); signature (low): `TypeNode * vfunc_2(void)`
 pub const bhkWorldM__vfunc_2: u64 = 78638;
+/// `bhkWorldObject::LinkHavokObject` at 0x10483b0 (semantic, high); signature (untiered): `undefined LinkHavokObject(bhkWorldObject * this, char param_1)`; semantic: bhkWorldObject slot 38: writes hkpWorldObject+0x18 (userData) = this or 0; on link increments the NiRefObject count of the collidable shape's bhkShape (hkpWorldObject+0x20 -> shape -> +0x10); on unlink removes from the world (slot 42) and decrements it (high); signature `void (bhkWorldObject* this, bool link)`
+pub const bhkWorldObject__LinkHavokObject: u64 = 77810;
+/// `bhkWorldObject::LinkHavokObject` as a function pointer type (high).
+pub type bhkWorldObject__LinkHavokObject_fn = unsafe extern "C" fn(this: *mut crate::bhkWorldObject, link: bool);
 /// `bhkWorldObject::ctor` at 0x1047aa0 (layout_inference, high); signature (high): `bhkWorldObject * ctor(bhkWorldObject * this)`
 pub const bhkWorldObject__ctor: u64 = 77791;
 /// `bhkWorldObject::dtor` at 0x1047ae0 (layout_inference, high); signature (high): `undefined dtor(bhkWorldObject * this)`
@@ -3767,8 +3889,6 @@ pub const bhkWorldObject__vfunc_25: u64 = 77788;
 pub const bhkWorldObject__vfunc_26: u64 = 77789;
 /// `bhkWorldObject::vfunc_27` at 0x1047980 (rtti, medium); signature (low): `undefined vfunc_27(bhkWorldObject * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
 pub const bhkWorldObject__vfunc_27: u64 = 77790;
-/// `bhkWorldObject::vfunc_38` at 0x10483b0 (rtti, medium); signature (low): `undefined vfunc_38(bhkWorldObject * this, char param_1)`
-pub const bhkWorldObject__vfunc_38: u64 = 77810;
 /// `bhkWorldObject::vfunc_39` at 0x1047cc0 (rtti, medium); signature (high): `undefined8 vfunc_39(bhkWorldObject * this)`
 pub const bhkWorldObject__vfunc_39: u64 = 77796;
 /// `bhkWorldObject::vfunc_40` at 0x1047ce0 (rtti, medium); signature (high): `undefined8 vfunc_40(bhkWorldObject * this)`
@@ -5455,101 +5575,3 @@ pub const g_AutoRegisterCombatObject_CombatPathT_CombatPathRequestWeightedMultiG
 pub const g_AutoRegisterCombatObject_CombatPathT_CombatPathRequestWeightedMultiGoal_CombatPathDestinationRefs__atexit: u64 = 172141;
 /// `g_AutoRegisterCombatObject_CombatPathT_CombatPathRequestWeightedMultiGoal_CombatPathDestinationRefs__init` at 0xb11a0 (crt_init, medium); signature (high): `void g_AutoRegisterCombatObject_CombatPathT_CombatPathRequestWeightedMultiGoal_CombatPathDestinationRefs__init(void)`
 pub const g_AutoRegisterCombatObject_CombatPathT_CombatPathRequestWeightedMultiGoal_CombatPathDestinationRefs__init: u64 = 6681;
-/// `g_AutoRegisterCombatObject_CombatPathT_CombatPathRequestWeightedMultiGoal_CombatPathDestinationRefs__init_sub0` at 0x8f0670 (callgraph, medium); signature (untiered): `uint g_AutoRegisterCombatObject_CombatPathT_CombatPathRequestWeightedMultiGoal_CombatPathDestinationRefs__init_sub0(void)`
-pub const g_AutoRegisterCombatObject_CombatPathT_CombatPathRequestWeightedMultiGoal_CombatPathDestinationRefs__init_sub0: u64 = 50599;
-/// `g_AutoRegisterCombatObject_CombatPathingDebugData__init` at 0xb09f0 (crt_init, medium); signature (high): `void g_AutoRegisterCombatObject_CombatPathingDebugData__init(void)`
-pub const g_AutoRegisterCombatObject_CombatPathingDebugData__init: u64 = 6664;
-/// `g_AutoRegisterCombatObject_CombatProjectileAimController__atexit` at 0x17a1280 (crt_init, medium); signature (high): `void g_AutoRegisterCombatObject_CombatProjectileAimController__atexit(void)`
-pub const g_AutoRegisterCombatObject_CombatProjectileAimController__atexit: u64 = 171880;
-/// `g_AutoRegisterCombatObject_CombatProjectileAimController__init` at 0xad8a0 (crt_init, medium); signature (high): `void g_AutoRegisterCombatObject_CombatProjectileAimController__init(void)`
-pub const g_AutoRegisterCombatObject_CombatProjectileAimController__init: u64 = 6546;
-/// `g_AutoRegisterCombatObject_CombatTargetLocationSearchResult__atexit` at 0x17a1b30 (crt_init, medium); signature (high): `void g_AutoRegisterCombatObject_CombatTargetLocationSearchResult__atexit(void)`
-pub const g_AutoRegisterCombatObject_CombatTargetLocationSearchResult__atexit: u64 = 171932;
-/// `g_AutoRegisterCombatObject_CombatTargetLocationSearchResult__init` at 0xae810 (crt_init, medium); signature (high): `void g_AutoRegisterCombatObject_CombatTargetLocationSearchResult__init(void)`
-pub const g_AutoRegisterCombatObject_CombatTargetLocationSearchResult__init: u64 = 6597;
-/// `g_AutoRegisterCombatObject_CombatTargetLocationSearch__atexit` at 0x17a1b20 (crt_init, medium); signature (high): `void g_AutoRegisterCombatObject_CombatTargetLocationSearch__atexit(void)`
-pub const g_AutoRegisterCombatObject_CombatTargetLocationSearch__atexit: u64 = 171931;
-/// `g_AutoRegisterCombatObject_CombatTargetLocationSearch__init` at 0xae7a0 (crt_init, medium); signature (high): `void g_AutoRegisterCombatObject_CombatTargetLocationSearch__init(void)`
-pub const g_AutoRegisterCombatObject_CombatTargetLocationSearch__init: u64 = 6596;
-/// `g_AutoRegisterCombatObject_CombatTargetLocation__atexit` at 0x17a1b10 (crt_init, medium); signature (high): `void g_AutoRegisterCombatObject_CombatTargetLocation__atexit(void)`
-pub const g_AutoRegisterCombatObject_CombatTargetLocation__atexit: u64 = 171930;
-/// `g_AutoRegisterCombatObject_CombatTargetLocation__init` at 0xae730 (crt_init, medium); signature (high): `void g_AutoRegisterCombatObject_CombatTargetLocation__init(void)`
-pub const g_AutoRegisterCombatObject_CombatTargetLocation__init: u64 = 6595;
-/// `g_AutoRegisterCombatObject_CombatTargetSelectorFixed__atexit` at 0x17a1b90 (crt_init, medium); signature (high): `void g_AutoRegisterCombatObject_CombatTargetSelectorFixed__atexit(void)`
-pub const g_AutoRegisterCombatObject_CombatTargetSelectorFixed__atexit: u64 = 171934;
-/// `g_AutoRegisterCombatObject_CombatTargetSelectorFixed__init` at 0xae8f0 (crt_init, medium); signature (high): `void g_AutoRegisterCombatObject_CombatTargetSelectorFixed__init(void)`
-pub const g_AutoRegisterCombatObject_CombatTargetSelectorFixed__init: u64 = 6599;
-/// `g_AutoRegisterCombatObject_CombatTargetSelectorStandard__atexit` at 0x17a1ba0 (crt_init, medium); signature (high): `void g_AutoRegisterCombatObject_CombatTargetSelectorStandard__atexit(void)`
-pub const g_AutoRegisterCombatObject_CombatTargetSelectorStandard__atexit: u64 = 171935;
-/// `g_AutoRegisterCombatObject_CombatTargetSelectorStandard__init` at 0xae960 (crt_init, medium); signature (high): `void g_AutoRegisterCombatObject_CombatTargetSelectorStandard__init(void)`
-pub const g_AutoRegisterCombatObject_CombatTargetSelectorStandard__init: u64 = 6600;
-/// `g_AutoRegisterCombatObject_CombatThreat__init` at 0xaea40 (crt_init, medium); signature (high): `void g_AutoRegisterCombatObject_CombatThreat__init(void)`
-pub const g_AutoRegisterCombatObject_CombatThreat__init: u64 = 6602;
-/// `g_AutoRegisterCombatObject_CombatTrackTargetAimController__atexit` at 0x17a1290 (crt_init, medium); signature (high): `void g_AutoRegisterCombatObject_CombatTrackTargetAimController__atexit(void)`
-pub const g_AutoRegisterCombatObject_CombatTrackTargetAimController__atexit: u64 = 171881;
-/// `g_AutoRegisterCombatObject_CombatTrackTargetAimController__init` at 0xad910 (crt_init, medium); signature (high): `void g_AutoRegisterCombatObject_CombatTrackTargetAimController__init(void)`
-pub const g_AutoRegisterCombatObject_CombatTrackTargetAimController__init: u64 = 6547;
-/// `g_AutoRegisterCombatObject_DiveBombSpeedController__init` at 0xaf9d0 (crt_init, medium); signature (high): `void g_AutoRegisterCombatObject_DiveBombSpeedController__init(void)`
-pub const g_AutoRegisterCombatObject_DiveBombSpeedController__init: u64 = 6631;
-/// `g_AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicyExitWater_CombatPathingSearchPolicyStandard_CombatPathDestinationNone__atexit` at 0x17a2730 (crt_init, medium); signature (high): `void g_AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicyExitWater_CombatPathingSearchPolicyStandard_CombatPathDestinationNone__atexit(void)`
-pub const g_AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicyExitWater_CombatPathingSearchPo_8b6290f59cfa: u64 = 172074;
-/// `g_AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicyExitWater_CombatPathingSearchPolicyStandard_CombatPathDestinationNone__init` at 0xafc60 (crt_init, medium); signature (high): `void g_AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicyExitWater_CombatPathingSearchPolicyStandard_CombatPathDestinationNone__init(void)`
-pub const g_AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicyExitWater_CombatPathingSearchPo_267dfd796333: u64 = 6639;
-/// `g_AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicyExitWater_CombatPathingSearchPolicyStandard_CombatPathDestinationNone__init_sub0` at 0x8c1dd0 (callgraph, medium); signature (untiered): `uint g_AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicyExitWater_CombatPathingSearchPolicyStandard_CombatPathDestinationNone__init_sub0(void)`
-pub const g_AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicyExitWater_CombatPathingSearchPo_598270347abe: u64 = 49414;
-/// `g_AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicyFindAttackLocation_CombatPathingSearchPolicyStandard_CombatPathDestinationNone__atexit` at 0x17a21b0 (crt_init, medium); signature (high): `void g_AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicyFindAttackLocation_CombatPathingSearchPolicyStandard_CombatPathDestinationNone__atexit(void)`
-pub const g_AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicyFindAttackLocation_CombatPathin_bef9474d9ef8: u64 = 172001;
-/// `g_AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicyFindAttackLocation_CombatPathingSearchPolicyStandard_CombatPathDestinationNone__init` at 0xaf240 (crt_init, medium); signature (high): `void g_AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicyFindAttackLocation_CombatPathingSearchPolicyStandard_CombatPathDestinationNone__init(void)`
-pub const g_AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicyFindAttackLocation_CombatPathin_44b463d77baf: u64 = 6619;
-/// `g_AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicyFindCover_CombatPathingSearchPolicyStandard_CombatPathDestinationNone__atexit` at 0x17a29d0 (crt_init, medium); signature (high): `void g_AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicyFindCover_CombatPathingSearchPolicyStandard_CombatPathDestinationNone__atexit(void)`
-pub const g_AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicyFindCover_CombatPathingSearchPo_f44e78c1cd4f: u64 = 172105;
-/// `g_AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicyFindCover_CombatPathingSearchPolicyStandard_CombatPathDestinationNone__init` at 0xb0510 (crt_init, medium); signature (high): `void g_AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicyFindCover_CombatPathingSearchPolicyStandard_CombatPathDestinationNone__init(void)`
-pub const g_AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicyFindCover_CombatPathingSearchPo_bc93fbc039a6: u64 = 6652;
-/// `g_AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicyFindHideCover_CombatPathingSearchPolicyStandard_CombatPathDestinationNone__atexit` at 0x17a2370 (crt_init, medium); signature (high): `void g_AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicyFindHideCover_CombatPathingSearchPolicyStandard_CombatPathDestinationNone__atexit(void)`
-pub const g_AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicyFindHideCover_CombatPathingSear_d1cc02d9c204: u64 = 172022;
-/// `g_AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicyFindHideCover_CombatPathingSearchPolicyStandard_CombatPathDestinationNone__init` at 0xaf730 (crt_init, medium); signature (high): `void g_AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicyFindHideCover_CombatPathingSearchPolicyStandard_CombatPathDestinationNone__init(void)`
-pub const g_AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicyFindHideCover_CombatPathingSear_d343431ddeaf: u64 = 6628;
-/// `g_AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicyFindHideCover_CombatPathingSearchPolicyStandard_CombatPathDestinationNone__init_sub0` at 0x8a7960 (callgraph, medium); signature (untiered): `uint g_AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicyFindHideCover_CombatPathingSearchPolicyStandard_CombatPathDestinationNone__init_sub0(void)`
-pub const g_AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicyFindHideCover_CombatPathingSear_57b494bdfa6a: u64 = 48746;
-/// `g_AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicyFindTargetLocation_CombatPathingSearchPolicyStandard_CombatPathDestinationRef__atexit` at 0x17a1a90 (crt_init, medium); signature (high): `void g_AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicyFindTargetLocation_CombatPathingSearchPolicyStandard_CombatPathDestinationRef__atexit(void)`
-pub const g_AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicyFindTargetLocation_CombatPathin_fc618c9d24be: u64 = 171928;
-/// `g_AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicyFindTargetLocation_CombatPathingSearchPolicyStandard_CombatPathDestinationRef__init` at 0xae6a0 (crt_init, medium); signature (high): `void g_AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicyFindTargetLocation_CombatPathingSearchPolicyStandard_CombatPathDestinationRef__init(void)`
-pub const g_AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicyFindTargetLocation_CombatPathin_488681f86954: u64 = 6593;
-/// `g_AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicyFlankDistant_CombatPathingSearchPolicyStandard_CombatPathDestinationLocation__atexit` at 0x17a2270 (crt_init, medium); signature (high): `void g_AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicyFlankDistant_CombatPathingSearchPolicyStandard_CombatPathDestinationLocation__atexit(void)`
-pub const g_AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicyFlankDistant_CombatPathingSearc_abb6a29dd643: u64 = 172009;
-/// `g_AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicyFlankDistant_CombatPathingSearchPolicyStandard_CombatPathDestinationLocation__init` at 0xaf3d0 (crt_init, medium); signature (high): `void g_AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicyFlankDistant_CombatPathingSearchPolicyStandard_CombatPathDestinationLocation__init(void)`
-pub const g_AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicyFlankDistant_CombatPathingSearc_351f6905224a: u64 = 6622;
-/// `g_AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicyFlankDistant_CombatPathingSearchPolicyStandard_CombatPathDestinationLocation__init_sub0` at 0x89d500 (callgraph, medium); signature (untiered): `uint g_AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicyFlankDistant_CombatPathingSearchPolicyStandard_CombatPathDestinationLocation__init_sub0(void)`
-pub const g_AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicyFlankDistant_CombatPathingSearc_dc699f27a867: u64 = 48478;
-/// `g_AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicyFlank_CombatPathingSearchPolicyFlank_CombatPathDestinationRef__atexit` at 0x17a2240 (crt_init, medium); signature (high): `void g_AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicyFlank_CombatPathingSearchPolicyFlank_CombatPathDestinationRef__atexit(void)`
-pub const g_AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicyFlank_CombatPathingSearchPolicy_45644355e95a: u64 = 172008;
-/// `g_AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicyFlank_CombatPathingSearchPolicyFlank_CombatPathDestinationRef__init` at 0xaf2a0 (crt_init, medium); signature (high): `void g_AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicyFlank_CombatPathingSearchPolicyFlank_CombatPathDestinationRef__init(void)`
-pub const g_AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicyFlank_CombatPathingSearchPolicy_7e9b4c1e6144: u64 = 6621;
-/// `g_AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicyFlank_CombatPathingSearchPolicyFlank_CombatPathDestinationRef__init_sub0` at 0x89d400 (callgraph, medium); signature (untiered): `uint g_AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicyFlank_CombatPathingSearchPolicyFlank_CombatPathDestinationRef__init_sub0(void)`
-pub const g_AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicyFlank_CombatPathingSearchPolicy_2f10664e5992: u64 = 48477;
-/// `g_AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicyFlee_CombatPathingSearchPolicyStandard_CombatPathDestinationNone__atexit` at 0x17a23a0 (crt_init, medium); signature (high): `void g_AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicyFlee_CombatPathingSearchPolicyStandard_CombatPathDestinationNone__atexit(void)`
-pub const g_AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicyFlee_CombatPathingSearchPolicyS_0c11e355c81d: u64 = 172023;
-/// `g_AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicyFlee_CombatPathingSearchPolicyStandard_CombatPathDestinationNone__init` at 0xaf860 (crt_init, medium); signature (high): `void g_AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicyFlee_CombatPathingSearchPolicyStandard_CombatPathDestinationNone__init(void)`
-pub const g_AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicyFlee_CombatPathingSearchPolicyS_70e93ce80668: u64 = 6629;
-/// `g_AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicyFlee_CombatPathingSearchPolicyStandard_CombatPathDestinationNone__init_sub0` at 0x8a7a60 (callgraph, medium); signature (untiered): `uint g_AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicyFlee_CombatPathingSearchPolicyStandard_CombatPathDestinationNone__init_sub0(void)`
-pub const g_AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicyFlee_CombatPathingSearchPolicyS_a851da3376e7: u64 = 48747;
-/// `g_AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicyRetreat_CombatPathingSearchPolicyStandard_CombatPathDestinationNone__atexit` at 0x17a2c70 (crt_init, medium); signature (high): `void g_AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicyRetreat_CombatPathingSearchPolicyStandard_CombatPathDestinationNone__atexit(void)`
-pub const g_AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicyRetreat_CombatPathingSearchPoli_802f9807b23f: u64 = 172125;
-/// `g_AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicyRetreat_CombatPathingSearchPolicyStandard_CombatPathDestinationNone__init` at 0xb0af0 (crt_init, medium); signature (high): `void g_AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicyRetreat_CombatPathingSearchPolicyStandard_CombatPathDestinationNone__init(void)`
-pub const g_AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicyRetreat_CombatPathingSearchPoli_b8bb76a53802: u64 = 6665;
-/// `g_AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicyReturnToCombatArea_CombatPathingSearchPolicyStandard_CombatPathDestinationLocation__atexit` at 0x17a2760 (crt_init, medium); signature (high): `void g_AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicyReturnToCombatArea_CombatPathingSearchPolicyStandard_CombatPathDestinationLocation__atexit(void)`
-pub const g_AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicyReturnToCombatArea_CombatPathin_a68543238a36: u64 = 172075;
-/// `g_AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicyReturnToCombatArea_CombatPathingSearchPolicyStandard_CombatPathDestinationLocation__init` at 0xafd90 (crt_init, medium); signature (high): `void g_AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicyReturnToCombatArea_CombatPathingSearchPolicyStandard_CombatPathDestinationLocation__init(void)`
-pub const g_AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicyReturnToCombatArea_CombatPathin_ddc52f5ce7f1: u64 = 6640;
-/// `g_AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicyReturnToCombatArea_CombatPathingSearchPolicyStandard_CombatPathDestinationLocation__init_sub0` at 0x8c1f10 (callgraph, medium); signature (untiered): `uint g_AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicyReturnToCombatArea_CombatPathingSearchPolicyStandard_CombatPathDestinationLocation__init_sub0(void)`
-pub const g_AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicyReturnToCombatArea_CombatPathin_3e58a53cbe2c: u64 = 49415;
-/// `g_AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicySearchWander_CombatPathingSearchPolicyStandard_CombatPathDestinationNone__atexit` at 0x17a2880 (crt_init, medium); signature (high): `void g_AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicySearchWander_CombatPathingSearchPolicyStandard_CombatPathDestinationNone__atexit(void)`
-pub const g_AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicySearchWander_CombatPathingSearc_b8a1ddbb93a0: u64 = 172087;
-/// `g_AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicySearchWander_CombatPathingSearchPolicyStandard_CombatPathDestinationNone__init` at 0xb0120 (crt_init, medium); signature (high): `void g_AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicySearchWander_CombatPathingSearchPolicyStandard_CombatPathDestinationNone__init(void)`
-pub const g_AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicySearchWander_CombatPathingSearc_ad8dc21c59be: u64 = 6646;
-/// `g_AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicySearchWander_CombatPathingSearchPolicyStandard_CombatPathDestinationNone__init_sub0` at 0x8cf810 (callgraph, medium); signature (untiered): `uint g_AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicySearchWander_CombatPathingSearchPolicyStandard_CombatPathDestinationNone__init_sub0(void)`
-pub const g_AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicySearchWander_CombatPathingSearc_fd392bea5265: u64 = 49712;
-/// `g_AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicySearch_CombatPathingSearchPolicyStandard_CombatPathDestinationNone__atexit` at 0x17a2850 (crt_init, medium); signature (high): `void g_AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicySearch_CombatPathingSearchPolicyStandard_CombatPathDestinationNone__atexit(void)`
-pub const g_AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicySearch_CombatPathingSearchPolic_de3a82851edf: u64 = 172086;
-/// `g_AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicySearch_CombatPathingSearchPolicyStandard_CombatPathDestinationNone__init` at 0xafff0 (crt_init, medium); signature (high): `void g_AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicySearch_CombatPathingSearchPolicyStandard_CombatPathDestinationNone__init(void)`
-pub const g_AutoRegisterCombatPathingRequestGeneric_CombatPathingGoalPolicySearch_CombatPathingSearchPolic_4bdedca5a373: u64 = 6645;

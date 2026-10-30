@@ -3,13 +3,6 @@
 
 use core::ffi::{c_char, c_void};
 
-/// `ResolveMastersForFileListD60` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 13746, rva 0x1be710).
-/// `undefined ResolveMastersForFileListD60(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn resolve_masters_for_file_list_d60(param_1: i64, param_2: u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(13746, (i64, u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
 /// `ResolveRefHandleIntoSmartPtr` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 12971, rva 0x1917d0).
 /// `undefined ResolveRefHandleIntoSmartPtr(uint * param_1, longlong * param_2)`
 ///

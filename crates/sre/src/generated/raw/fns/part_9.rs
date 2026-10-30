@@ -3,6 +3,42 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `CreateType2RecordFromField1C0` at 0x1238eb0 (decompiler, medium); signature (untiered): `undefined CreateType2RecordFromField1C0(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const CreateType2RecordFromField1C0: u64 = 92998;
+/// `CreateType3RecordFromField1E0` at 0x123a6f0 (decompiler, medium); signature (untiered): `undefined CreateType3RecordFromField1E0(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const CreateType3RecordFromField1E0: u64 = 93003;
+/// `CreateTypeLayoutForClass` at 0xac3a40 (decompiler, medium); signature (untiered): `undefined8 * CreateTypeLayoutForClass(longlong param_1, int * param_2)`
+pub const CreateTypeLayoutForClass: u64 = 58157;
+/// `CreateUrlEncodedVarsObject` at 0xd87900 (decompiler, medium); signature (untiered): `undefined8 * CreateUrlEncodedVarsObject(undefined8 param_1, longlong * param_2)`
+pub const CreateUrlEncodedVarsObject: u64 = 85489;
+/// `CreateUserLog` at 0x9d8910 (decompiler, medium); signature (untiered): `undefined8 CreateUserLog(longlong param_1, ulonglong * param_2, undefined8 param_3, undefined8 param_4)`
+pub const CreateUserLog: u64 = 53931;
+/// `CreateValueModifierEffectSubclass` at 0x5e5380 (decompiler, medium); signature (medium): `ValueModifierEffect * CreateValueModifierEffectSubclass(longlong param_1, undefined8 param_2, undefined4 * param_3)`
+pub const CreateValueModifierEffectSubclass: u64 = 35025;
+/// `CreateVertexAndIndexBuffers` at 0x100b770 (decompiler, medium); signature (untiered): `void * CreateVertexAndIndexBuffers(longlong param_1, void * param_2, ulonglong param_3, undefined8 param_4, void * param_5, uint param_6)`
+pub const CreateVertexAndIndexBuffers: u64 = 77260;
+/// `CreateVertexIndexBufferRecord` at 0x100cfb0 (decompiler, medium); signature (untiered): `void * CreateVertexIndexBufferRecord(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4, undefined8 param_5, undefined8 param_6, int param_7)`
+pub const CreateVertexIndexBufferRecord: u64 = 77281;
+/// `CreateVertexIndexBuffersWithIndexCopy` at 0x100c2f0 (decompiler, medium); signature (untiered): `undefined8 * CreateVertexIndexBuffersWithIndexCopy(longlong param_1, undefined8 param_2, undefined8 param_3, ulonglong param_4, int param_5, void * param_6, uint param_7)`
+pub const CreateVertexIndexBuffersWithIndexCopy: u64 = 77269;
+/// `CreateVertexNode` at 0x124fc10 (decompiler, medium); signature (untiered): `ushort * CreateVertexNode(longlong param_1, ushort param_2, undefined1 param_3, char param_4, char param_5)`
+pub const CreateVertexNode: u64 = 93354;
+/// `CreateVertexShaderRecord` at 0x100fdd0 (decompiler, medium); signature (untiered): `void * CreateVertexShaderRecord(undefined8 param_1, void * param_2, ulonglong param_3, undefined8 param_4, undefined8 param_5)`
+pub const CreateVertexShaderRecord: u64 = 77349;
+/// `CreateVtable243694Object` at 0xdaa940 (decompiler, medium); signature (untiered): `undefined CreateVtable243694Object(undefined8 param_1, longlong param_2)`
+pub const CreateVtable243694Object: u64 = 85946;
+/// `CreateVtable243714ObjectAsResult` at 0xdacae0 (decompiler, medium); signature (untiered): `undefined CreateVtable243714ObjectAsResult(longlong param_1)`
+pub const CreateVtable243714ObjectAsResult: u64 = 85992;
+/// `CreateVtable243750Object` at 0xdaeee0 (decompiler, medium); signature (untiered): `undefined CreateVtable243750Object(undefined8 param_1, longlong param_2)`
+pub const CreateVtable243750Object: u64 = 86027;
+/// `CreateVtable244491ObjectIntoField8` at 0xdd3080 (decompiler, medium); signature (untiered): `undefined CreateVtable244491ObjectIntoField8(longlong param_1)`
+pub const CreateVtable244491ObjectIntoField8: u64 = 86765;
+/// `CreateWeaponEnchantmentControllerIfNeeded` at 0x5c0cd0 (decompiler, medium); signature (untiered): `undefined CreateWeaponEnchantmentControllerIfNeeded(longlong param_1, undefined8 param_2, longlong * param_3, longlong * param_4)`
+pub const CreateWeaponEnchantmentControllerIfNeeded: u64 = 34154;
+/// `CreateWeaponObjectFromNode` at 0x107fc30 (decompiler, medium); signature (untiered): `bhkBlendCollisionObject * CreateWeaponObjectFromNode(undefined4 param_1, undefined8 param_2, longlong * param_3, undefined8 param_4)`
+pub const CreateWeaponObjectFromNode: u64 = 524262;
+/// `CreateWorldWithPhysicsSystems` at 0xba1dc0 (decompiler, medium); signature (untiered): `hkpWorld * CreateWorldWithPhysicsSystems(longlong param_1, char param_2)`
+pub const CreateWorldWithPhysicsSystems: u64 = 62677;
 /// `CreateZeroedTexture2D` at 0x11b28f0 (decompiler, medium); signature (untiered): `longlong * CreateZeroedTexture2D(undefined8 param_1, int param_2, uint param_3, uint param_4)`
 pub const CreateZeroedTexture2D: u64 = 90274;
 /// `CreditsMenu::GFxFunctionHandler_vdtor` at 0x929d34 (slot_propagation, medium); signature (high): `undefined GFxFunctionHandler_vdtor(CreditsMenu * this)`
@@ -8731,41 +8767,3 @@ pub const FormatWide: u64 = 109890;
 pub const FormatWideLegacy: u64 = 109865;
 /// `FormatWideLegacyV` at 0x15aaa6c (decompiler, medium); signature (medium): `int FormatWideLegacyV(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const FormatWideLegacyV: u64 = 109866;
-/// `FormatWideLegacyWithLocale` at 0x15ab314 (decompiler, medium); signature (medium): `int FormatWideLegacyWithLocale(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const FormatWideLegacyWithLocale: u64 = 109891;
-/// `FormatWideMaxCountSecure` at 0x15ab3cc (decompiler, high); signature (high): `int FormatWideMaxCountSecure(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const FormatWideMaxCountSecure: u64 = 109893;
-/// `FormatWideMaxCountSecureWithLocale` at 0x15ab36c (decompiler, high); signature (high): `int FormatWideMaxCountSecureWithLocale(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4, undefined8 param_5)`
-pub const FormatWideMaxCountSecureWithLocale: u64 = 109892;
-/// `FormatWidePositional` at 0x15ab218 (decompiler, high); signature (high): `int FormatWidePositional(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const FormatWidePositional: u64 = 109888;
-/// `FormatWidePositionalV` at 0x15aae34 (decompiler, high); signature (high): `int FormatWidePositionalV(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const FormatWidePositionalV: u64 = 109876;
-/// `FormatWidePositionalWithLocale` at 0x15ab1c4 (decompiler, high); signature (high): `int FormatWidePositionalWithLocale(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const FormatWidePositionalWithLocale: u64 = 109887;
-/// `FormatWidePositionalWithLocaleV` at 0x15aadd0 (decompiler, high); signature (high): `int FormatWidePositionalWithLocaleV(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4, undefined8 param_5)`
-pub const FormatWidePositionalWithLocaleV: u64 = 109875;
-/// `FormatWideSecure` at 0x15ab170 (decompiler, high); signature (high): `int FormatWideSecure(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const FormatWideSecure: u64 = 109886;
-/// `FormatWideSecureV` at 0x15aad70 (decompiler, high); signature (high): `int FormatWideSecureV(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const FormatWideSecureV: u64 = 109874;
-/// `FormatWideSecureWithLocale` at 0x15ab11c (decompiler, high); signature (high): `int FormatWideSecureWithLocale(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const FormatWideSecureWithLocale: u64 = 109885;
-/// `FormatWideSecureWithLocaleV` at 0x15aad0c (decompiler, high); signature (high): `int FormatWideSecureWithLocaleV(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4, undefined8 param_5)`
-pub const FormatWideSecureWithLocaleV: u64 = 109873;
-/// `FormatWideStringV` at 0x128f180 (decompiler, high); signature (high): `int FormatWideStringV(longlong param_1, longlong param_2, longlong param_3, undefined8 param_4)`
-pub const FormatWideStringV: u64 = 94316;
-/// `FormatWideUnbounded` at 0x15ab074 (decompiler, high); signature (high): `int FormatWideUnbounded(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const FormatWideUnbounded: u64 = 109883;
-/// `FormatWideUnboundedV` at 0x15aac58 (decompiler, high); signature (high): `int FormatWideUnboundedV(undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-pub const FormatWideUnboundedV: u64 = 109871;
-/// `FormatWideUnboundedWithLocale` at 0x15aafcc (decompiler, high); signature (high): `int FormatWideUnboundedWithLocale(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const FormatWideUnboundedWithLocale: u64 = 109881;
-/// `FormatWideUnboundedWithLocaleV` at 0x15aabf8 (decompiler, high); signature (high): `int FormatWideUnboundedWithLocaleV(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const FormatWideUnboundedWithLocaleV: u64 = 109870;
-/// `FormatWideV` at 0x15aab34 (decompiler, high); signature (high): `int FormatWideV(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const FormatWideV: u64 = 109868;
-/// `FormatWideV_2` at 0x15aacac (decompiler, high); signature (high): `int FormatWideV_2(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const FormatWideV_2: u64 = 109872;
-/// `FormatWideWithLocale` at 0x15ab020 (decompiler, high); signature (high): `int FormatWideWithLocale(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const FormatWideWithLocale: u64 = 109882;

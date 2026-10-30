@@ -3,41 +3,6 @@
 
 use core::ffi::{c_char, c_void};
 
-/// `InitFunctionalStorage0x10_2` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 453260, rva 0x147e620).
-/// `undefined8 * InitFunctionalStorage0x10_2(undefined8 * param_1, undefined8 * param_2, undefined8 * param_3, ulonglong param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn init_functional_storage0x10_2(param_1: *mut u64, param_2: *mut u64, param_3: *mut u64, param_4: u64) -> *mut u64 { unsafe { function!(453260, (*mut u64, *mut u64, *mut u64, u64) -> *mut u64)(param_1, param_2, param_3, param_4) } }
-/// `InitFunctionalStorage0x10_3` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 453261, rva 0x147e720).
-/// `undefined8 * InitFunctionalStorage0x10_3(undefined8 * param_1, undefined8 * param_2, undefined8 * param_3, ulonglong param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn init_functional_storage0x10_3(param_1: *mut u64, param_2: *mut u64, param_3: *mut u64, param_4: u64) -> *mut u64 { unsafe { function!(453261, (*mut u64, *mut u64, *mut u64, u64) -> *mut u64)(param_1, param_2, param_3, param_4) } }
-/// `InitFunctionalStorage0x10_4` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 453262, rva 0x147e820).
-/// `undefined8 * InitFunctionalStorage0x10_4(undefined8 * param_1, undefined8 * param_2, undefined8 * param_3, ulonglong param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn init_functional_storage0x10_4(param_1: *mut u64, param_2: *mut u64, param_3: *mut u64, param_4: u64) -> *mut u64 { unsafe { function!(453262, (*mut u64, *mut u64, *mut u64, u64) -> *mut u64)(param_1, param_2, param_3, param_4) } }
-/// `InitFunctionalStorage0x10_5` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 453263, rva 0x147e920).
-/// `undefined8 * InitFunctionalStorage0x10_5(undefined8 * param_1, undefined8 * param_2, undefined8 * param_3, ulonglong param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn init_functional_storage0x10_5(param_1: *mut u64, param_2: *mut u64, param_3: *mut u64, param_4: u64) -> *mut u64 { unsafe { function!(453263, (*mut u64, *mut u64, *mut u64, u64) -> *mut u64)(param_1, param_2, param_3, param_4) } }
-/// `InitFunctionalStorage0x10_6` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 453265, rva 0x147eb20).
-/// `undefined8 * InitFunctionalStorage0x10_6(undefined8 * param_1, undefined8 * param_2, undefined8 * param_3, ulonglong param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn init_functional_storage0x10_6(param_1: *mut u64, param_2: *mut u64, param_3: *mut u64, param_4: u64) -> *mut u64 { unsafe { function!(453265, (*mut u64, *mut u64, *mut u64, u64) -> *mut u64)(param_1, param_2, param_3, param_4) } }
 /// `InitFunctionalStorage0x10_7` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 453267, rva 0x147ec20).
 /// `undefined8 * InitFunctionalStorage0x10_7(undefined8 * param_1, undefined8 * param_2, undefined8 * param_3, ulonglong param_4)`
 ///
@@ -9012,13 +8977,6 @@ pub unsafe fn load_xml_tagfile_and_version(param_1: u64, param_2: *mut i64, para
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn lock_and_get_field160(param_1: i64) -> u64 { unsafe { function!(70951, (i64) -> u64)(param_1) } }
-/// `LockC598ForWriteIfWorldLock` (decompiler signature, tier untiered; ledger decompiler evidence, name high; id 77928, rva 0x104fce0).
-/// `undefined LockC598ForWriteIfWorldLock(longlong param_1)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn lock_c598_for_write_if_world_lock(param_1: i64) -> u64 { unsafe { function!(77928, (i64) -> u64)(param_1) } }
 /// `LockFreeQueueEnqueue` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 442059, rva 0x59e9c0).
 /// `undefined LockFreeQueueEnqueue(longlong * param_1, longlong * param_2, undefined8 param_3, undefined8 param_4)`
 ///
@@ -12834,3 +12792,45 @@ pub unsafe fn pack_floats_to_half_entry(param_1: *mut u32, param_2: *mut u32) ->
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn pack_four_quaternions_smallest_three(param_1: *mut u16, param_2: *mut f32, param_3: *mut f32, param_4: *mut f32, param_5: *mut f32) -> u64 { unsafe { function!(67244, (*mut u16, *mut f32, *mut f32, *mut f32, *mut f32) -> u64)(param_1, param_2, param_3, param_4, param_5) } }
+/// `PackObjectIntoScriptVariable` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 54087, rva 0x9e9e50).
+/// `ulonglong * PackObjectIntoScriptVariable(ulonglong * param_1, longlong param_2, longlong * param_3, undefined8 param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn pack_object_into_script_variable(param_1: *mut u64, param_2: i64, param_3: *mut i64, param_4: u64) -> *mut u64 { unsafe { function!(54087, (*mut u64, i64, *mut i64, u64) -> *mut u64)(param_1, param_2, param_3, param_4) } }
+/// `PackObjectVariableType0` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 54086, rva 0x9e9ba0).
+/// `ulonglong * PackObjectVariableType0(ulonglong * param_1, longlong param_2, longlong * param_3, undefined8 param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn pack_object_variable_type0(param_1: *mut u64, param_2: i64, param_3: *mut i64, param_4: u64) -> *mut u64 { unsafe { function!(54086, (*mut u64, i64, *mut i64, u64) -> *mut u64)(param_1, param_2, param_3, param_4) } }
+/// `PackObjectVariableType3E` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 54079, rva 0x9e88d0).
+/// `ulonglong * PackObjectVariableType3E(ulonglong * param_1, longlong param_2, longlong * param_3, undefined8 param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn pack_object_variable_type3_e(param_1: *mut u64, param_2: i64, param_3: *mut i64, param_4: u64) -> *mut u64 { unsafe { function!(54079, (*mut u64, i64, *mut i64, u64) -> *mut u64)(param_1, param_2, param_3, param_4) } }
+/// `PackR11G11B10Float` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 77672, rva 0x1030970).
+/// `undefined PackR11G11B10Float(uint * param_1, ulonglong param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn pack_r11_g11_b10_float(param_1: *mut u32, param_2: u64) -> u64 { unsafe { function!(77672, (*mut u32, u64) -> u64)(param_1, param_2) } }
+/// `PackRectsGroupedByKey` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 88905, rva 0xe2dc70).
+/// `undefined PackRectsGroupedByKey(longlong param_1, longlong * param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn pack_rects_grouped_by_key(param_1: i64, param_2: *mut i64) -> u64 { unsafe { function!(88905, (i64, *mut i64) -> u64)(param_1, param_2) } }
+/// `PackRectsIntoNodeRecursive` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 89849, rva 0xe84d50).
+/// `undefined PackRectsIntoNodeRecursive(longlong param_1, uint param_2, ulonglong param_3)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn pack_rects_into_node_recursive(param_1: i64, param_2: u32, param_3: u64) -> u64 { unsafe { function!(89849, (i64, u32, u64) -> u64)(param_1, param_2, param_3) } }

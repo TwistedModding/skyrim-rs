@@ -4,6 +4,16 @@
 use crate::raw::*;
 
 pub(super) const ROWS: &[Function] = &[
+    Function { rva: 0x7e0970, id: 43763, confidence: Confidence::Medium, name: "BeamProjectile::vfunc_192_sub0" },
+    Function { rva: 0x7e0a80, id: 43765, confidence: Confidence::Medium, name: "InitTripleEntryBlock" },
+    Function { rva: 0x7e0b00, id: 43766, confidence: Confidence::Medium, name: "FreeArrayBufferIfAllocated_26" },
+    Function { rva: 0x7e104c, id: 43771, confidence: Confidence::Medium, name: "BeamProjectile::BSTEventSink_BSProceduralGeomEvent_vdtor" },
+    Function { rva: 0x7e1058, id: 43772, confidence: Confidence::Medium, name: "BeamProjectile::BSHandleRefObject_vdtor" },
+    Function { rva: 0x7e1064, id: 43773, confidence: Confidence::Medium, name: "BeamProjectile::BSTEventSink_BSAnimationGraphEvent_vdtor" },
+    Function { rva: 0x7e1070, id: 43774, confidence: Confidence::Medium, name: "BeamProjectile::IAnimationGraphManagerHolder_vdtor" },
+    Function { rva: 0x7e1080, id: 43775, confidence: Confidence::Medium, name: "BSTEventSink<BSProceduralGeomEvent>::vdtor" },
+    Function { rva: 0x7e10b0, id: 43776, confidence: Confidence::Medium, name: "BeamProjectile::vdtor" },
+    Function { rva: 0x7e1180, id: 43778, confidence: Confidence::High, name: "ReserveHeapArraySlot8_125" },
     Function { rva: 0x7e11c0, id: 43779, confidence: Confidence::Medium, name: "BSTEventSource<BeamProjectileImpactEvent>::Notify" },
     Function { rva: 0x7e1630, id: 43784, confidence: Confidence::High, name: "ConeProjectile::ctor" },
     Function { rva: 0x7e16e0, id: 43785, confidence: Confidence::High, name: "ConeProjectile::ctor" },
@@ -6428,14 +6438,4 @@ pub(super) const ROWS: &[Function] = &[
     Function { rva: 0x918960, id: 51234, confidence: Confidence::Medium, name: "SyncEntryPtrArrayFromGFxAndUpdateItemList" },
     Function { rva: 0x918ac0, id: 51235, confidence: Confidence::Medium, name: "SyncEntryArray16FromGFxAndUpdateItemList" },
     Function { rva: 0x918c30, id: 51236, confidence: Confidence::Medium, name: "UpdateRequiredItemsFlagsAndInvokeUpdateItemList" },
-    Function { rva: 0x918f50, id: 51238, confidence: Confidence::Medium, name: "CopyU32ToU32HashMap" },
-    Function { rva: 0x9190e0, id: 51239, confidence: Confidence::High, name: "CraftingSubMenus::AlchemyMenu::ctor" },
-    Function { rva: 0x9194a0, id: 51240, confidence: Confidence::High, name: "CraftingSubMenus::ConstructibleObjectMenu::ctor" },
-    Function { rva: 0x91abb0, id: 51241, confidence: Confidence::High, name: "CraftingSubMenus::CraftingSubMenu::ctor" },
-    Function { rva: 0x91b010, id: 51242, confidence: Confidence::High, name: "CraftingSubMenus::EnchantConstructMenu::ctor" },
-    Function { rva: 0x91b680, id: 51243, confidence: Confidence::High, name: "CraftingSubMenus::SmithingMenu::ctor" },
-    Function { rva: 0x91b810, id: 51244, confidence: Confidence::High, name: "FreeArrayStorageAndClearCount_10" },
-    Function { rva: 0x91b860, id: 51246, confidence: Confidence::High, name: "FreeArrayBufferAndClearCount_22" },
-    Function { rva: 0x91b8c0, id: 51247, confidence: Confidence::Medium, name: "FreeArrayBufferAndClearSize_12" },
-    Function { rva: 0x91b920, id: 51248, confidence: Confidence::Medium, name: "DestroyOwnedObjectArrayStride48" },
 ];

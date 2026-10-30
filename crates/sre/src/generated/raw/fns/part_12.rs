@@ -3,6 +3,48 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `GetEnchantmentOrFallbackFromPair` at 0x22a290 (decompiler, high); signature (untiered): `undefined GetEnchantmentOrFallbackFromPair(undefined8 * param_1)`
+pub const GetEnchantmentOrFallbackFromPair: u64 = 16026;
+/// `GetEncounterZoneLocationByteEC` at 0x2c4050 (decompiler, medium); signature (untiered): `undefined1 GetEncounterZoneLocationByteEC(longlong param_1, undefined8 param_2, undefined8 param_3, TypeDescriptor * param_4)`
+pub const GetEncounterZoneLocationByteEC: u64 = 19085;
+/// `GetEntry18Field8` at 0xab59d0 (decompiler, high); signature (high): `undefined8 GetEntry18Field8(longlong * param_1, int param_2)`
+pub const GetEntry18Field8: u64 = 57764;
+/// `GetEntry58At` at 0x11e02a0 (decompiler, high); signature (high): `longlong GetEntry58At(longlong param_1, ushort param_2)`
+pub const GetEntry58At: u64 = 91096;
+/// `GetEntryAtField60Position` at 0xe52010 (decompiler, medium); signature (untiered): `undefined8 GetEntryAtField60Position(longlong param_1)`
+pub const GetEntryAtField60Position: u64 = 88980;
+/// `GetEntryAtIndex` at 0xd80f00 (decompiler, medium); signature (untiered): `undefined GetEntryAtIndex(longlong param_1, longlong * param_2, uint param_3)`
+pub const GetEntryAtIndex: u64 = 85355;
+/// `GetEntryAtIndexFromInlineOrHeapArray` at 0xee54b0 (decompiler, medium); signature (untiered): `undefined8 GetEntryAtIndexFromInlineOrHeapArray(longlong param_1, uint param_2)`
+pub const GetEntryAtIndexFromInlineOrHeapArray: u64 = 70365;
+/// `GetEntryAtIndexLocked` at 0xe153d0 (decompiler, medium); signature (untiered): `undefined GetEntryAtIndexLocked(longlong param_1, longlong * param_2, uint param_3)`
+pub const GetEntryAtIndexLocked: u64 = 88114;
+/// `GetEntryAtIndexLocked_2` at 0xd805a0 (decompiler, medium); signature (medium): `undefined8 GetEntryAtIndexLocked_2(longlong param_1, uint param_2)`
+pub const GetEntryAtIndexLocked_2: u64 = 85332;
+/// `GetEntryAtIndexOrDefault` at 0xe1b1d0 (decompiler, medium); signature (untiered): `GRefCountImplCore * GetEntryAtIndexOrDefault(longlong param_1, ulonglong param_2)`
+pub const GetEntryAtIndexOrDefault: u64 = 88828;
+/// `GetEntryAtIndex_2` at 0xb4b3d0 (decompiler, medium); signature (untiered): `undefined8 GetEntryAtIndex_2(longlong param_1, int param_2)`
+pub const GetEntryAtIndex_2: u64 = 60857;
+/// `GetEntryBoundsRect` at 0xe1a2d0 (decompiler, medium); signature (medium): `float * GetEntryBoundsRect(longlong * param_1, uint param_2, float * param_3)`
+pub const GetEntryBoundsRect: u64 = 88794;
+/// `GetEntryByIndexAcrossTwoArrays` at 0xb4b290 (decompiler, medium); signature (untiered): `undefined8 GetEntryByIndexAcrossTwoArrays(longlong param_1, int param_2)`
+pub const GetEntryByIndexAcrossTwoArrays: u64 = 60855;
+/// `GetEntryByIndexOrDefault` at 0xbd0660 (decompiler, high); signature (untiered): `undefined * GetEntryByIndexOrDefault(longlong param_1, short param_2)`
+pub const GetEntryByIndexOrDefault: u64 = 63600;
+/// `GetEntryByte1CForTarget` at 0x223770 (decompiler, medium); signature (untiered): `int GetEntryByte1CForTarget(longlong param_1, longlong param_2)`
+pub const GetEntryByte1CForTarget: u64 = 15871;
+/// `GetEntryByte7CAtIndex` at 0xdbdea0 (decompiler, medium); signature (untiered): `undefined GetEntryByte7CAtIndex(longlong param_1)`
+pub const GetEntryByte7CAtIndex: u64 = 86370;
+/// `GetEntryDataByKeyFromArray448` at 0x3e9510 (decompiler, medium); signature (medium): `char GetEntryDataByKeyFromArray448(longlong param_1, longlong param_2, longlong param_3)`
+pub const GetEntryDataByKeyFromArray448: u64 = 25390;
+/// `GetEntryDword20Stride18` at 0x1ba9a0 (decompiler, high); signature (high): `undefined4 GetEntryDword20Stride18(longlong param_1, byte param_2)`
+pub const GetEntryDword20Stride18: u64 = 13706;
+/// `GetEntryEdgeFlagNibble` at 0x11df5a0 (decompiler, medium); signature (medium): `ushort GetEntryEdgeFlagNibble(longlong param_1, ushort param_2, char param_3, undefined1 * param_4, undefined1 * param_5)`
+pub const GetEntryEdgeFlagNibble: u64 = 91070;
+/// `GetEntryEnchantableField12OrFallback` at 0x2288c0 (decompiler, medium); signature (untiered): `undefined GetEntryEnchantableField12OrFallback(undefined8 * param_1)`
+pub const GetEntryEnchantableField12OrFallback: u64 = 15992;
+/// `GetEntryField20ByFormModelPath` at 0x3b8f60 (decompiler, medium); signature (untiered): `longlong GetEntryField20ByFormModelPath(longlong param_1, longlong param_2, undefined8 param_3, undefined8 param_4)`
+pub const GetEntryField20ByFormModelPath: u64 = 24600;
 /// `GetEntryField40ByKey` at 0x11f3ed0 (decompiler, medium); signature (untiered): `undefined8 * GetEntryField40ByKey(longlong * param_1, ulonglong * param_2, undefined8 param_3, undefined8 param_4)`
 pub const GetEntryField40ByKey: u64 = 91409;
 /// `GetEntryField70ByRecord` at 0xa68f30 (decompiler, medium); signature (untiered): `undefined8 GetEntryField70ByRecord(longlong param_1, undefined4 * param_2, undefined8 param_3, undefined8 param_4)`
@@ -1247,8 +1289,6 @@ pub const GetField80SlotByIndex: u64 = 20351;
 pub const GetField80Subobject: u64 = 77821;
 /// `GetField80_2` at 0x2bcd60 (decompiler, high); signature (untiered): `undefined8 GetField80_2(longlong param_1)`
 pub const GetField80_2: u64 = 18973;
-/// `GetField80_3` at 0xb9ddf0 (decompiler, high); signature (untiered): `undefined8 GetField80_3(longlong param_1)`
-pub const GetField80_3: u64 = 62642;
 /// `GetField80_4` at 0xf18fb0 (decompiler, high); signature (high): `undefined8 GetField80_4(longlong param_1)`
 pub const GetField80_4: u64 = 71636;
 /// `GetField88` at 0x310820 (decompiler, high); signature (high): `undefined8 GetField88(longlong param_1)`
@@ -9039,37 +9079,3 @@ pub const INISetting_fCharControllerCheckHeightOffset_Camera__atexit: u64 = 1721
 pub const INISetting_fCharControllerCheckHeightOffset_Camera__init: u64 = 6735;
 /// `INISetting_fCharControllerWarpDistSqr_HAVOK__atexit` at 0x17b3d70 (crt_init, medium); signature (high): `void INISetting_fCharControllerWarpDistSqr_HAVOK__atexit(void)`
 pub const INISetting_fCharControllerWarpDistSqr_HAVOK__atexit: u64 = 173869;
-/// `INISetting_fCharControllerWarpDistSqr_HAVOK__init` at 0xeb170 (crt_init, medium); signature (high): `void INISetting_fCharControllerWarpDistSqr_HAVOK__init(void)`
-pub const INISetting_fCharControllerWarpDistSqr_HAVOK__init: u64 = 9615;
-/// `INISetting_fCharacterLightLumMax_Display__atexit` at 0x17c1410 (crt_init, medium); signature (high): `void INISetting_fCharacterLightLumMax_Display__atexit(void)`
-pub const INISetting_fCharacterLightLumMax_Display__atexit: u64 = 174429;
-/// `INISetting_fCharacterLightLumMax_Display__init` at 0xffeb0 (crt_init, medium); signature (high): `void INISetting_fCharacterLightLumMax_Display__init(void)`
-pub const INISetting_fCharacterLightLumMax_Display__init: u64 = 10263;
-/// `INISetting_fCharacterLightLumScale_Display__atexit` at 0x17c1460 (crt_init, medium); signature (high): `void INISetting_fCharacterLightLumScale_Display__atexit(void)`
-pub const INISetting_fCharacterLightLumScale_Display__atexit: u64 = 174430;
-/// `INISetting_fCharacterLightLumScale_Display__init` at 0xfff30 (crt_init, medium); signature (high): `void INISetting_fCharacterLightLumScale_Display__init(void)`
-pub const INISetting_fCharacterLightLumScale_Display__init: u64 = 10264;
-/// `INISetting_fCharacterLightPrimaryLightIntensity_Display__atexit` at 0x17c14b0 (crt_init, medium); signature (high): `void INISetting_fCharacterLightPrimaryLightIntensity_Display__atexit(void)`
-pub const INISetting_fCharacterLightPrimaryLightIntensity_Display__atexit: u64 = 174431;
-/// `INISetting_fCharacterLightPrimaryLightIntensity_Display__init` at 0xfffb0 (crt_init, medium); signature (high): `void INISetting_fCharacterLightPrimaryLightIntensity_Display__init(void)`
-pub const INISetting_fCharacterLightPrimaryLightIntensity_Display__init: u64 = 10265;
-/// `INISetting_fCharacterLightSecondaryLightIntensity_Display__atexit` at 0x17c1500 (crt_init, medium); signature (high): `void INISetting_fCharacterLightSecondaryLightIntensity_Display__atexit(void)`
-pub const INISetting_fCharacterLightSecondaryLightIntensity_Display__atexit: u64 = 174432;
-/// `INISetting_fCharacterLightSecondaryLightIntensity_Display__init` at 0x100030 (crt_init, medium); signature (high): `void INISetting_fCharacterLightSecondaryLightIntensity_Display__init(void)`
-pub const INISetting_fCharacterLightSecondaryLightIntensity_Display__init: u64 = 10266;
-/// `INISetting_fChaseCameraMaxAngle_Camera__atexit` at 0x17a3f50 (crt_init, medium); signature (high): `void INISetting_fChaseCameraMaxAngle_Camera__atexit(void)`
-pub const INISetting_fChaseCameraMaxAngle_Camera__atexit: u64 = 172202;
-/// `INISetting_fChaseCameraMaxAngle_Camera__init` at 0xb2f30 (crt_init, medium); signature (high): `void INISetting_fChaseCameraMaxAngle_Camera__init(void)`
-pub const INISetting_fChaseCameraMaxAngle_Camera__init: u64 = 6743;
-/// `INISetting_fChaseCameraSpeed_Camera__atexit` at 0x17a3fa0 (crt_init, medium); signature (high): `void INISetting_fChaseCameraSpeed_Camera__atexit(void)`
-pub const INISetting_fChaseCameraSpeed_Camera__atexit: u64 = 172203;
-/// `INISetting_fChaseCameraSpeed_Camera__init` at 0xb2fb0 (crt_init, medium); signature (high): `void INISetting_fChaseCameraSpeed_Camera__init(void)`
-pub const INISetting_fChaseCameraSpeed_Camera__init: u64 = 6744;
-/// `INISetting_fClampScale_Display__atexit` at 0x17c4340 (crt_init, medium); signature (high): `void INISetting_fClampScale_Display__atexit(void)`
-pub const INISetting_fClampScale_Display__atexit: u64 = 174675;
-/// `INISetting_fClampScale_Display__init` at 0x104ec0 (crt_init, medium); signature (high): `void INISetting_fClampScale_Display__init(void)`
-pub const INISetting_fClampScale_Display__init: u64 = 10525;
-/// `INISetting_fCloakEffectUpdateInterval_General__atexit` at 0x1791d90 (crt_init, medium); signature (high): `void INISetting_fCloakEffectUpdateInterval_General__atexit(void)`
-pub const INISetting_fCloakEffectUpdateInterval_General__atexit: u64 = 170640;
-/// `INISetting_fCloakEffectUpdateInterval_General__init` at 0x92370 (crt_init, medium); signature (high): `void INISetting_fCloakEffectUpdateInterval_General__init(void)`
-pub const INISetting_fCloakEffectUpdateInterval_General__init: u64 = 5418;
