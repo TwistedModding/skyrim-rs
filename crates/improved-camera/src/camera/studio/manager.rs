@@ -172,11 +172,12 @@ pub fn console_ref() -> Option<skyrim::actors::RefPtr> {
     RefHandle(unsafe { *sre::g_console_selected_ref().cast::<u32>() }).lookup()
 }
 
-/// `PeekCrosshairRef`: the crosshair's picked reference (the pick's actor fallback waits on RE
-/// request IC8 L).
+/// `PeekCrosshairRef`: the crosshair's picked reference, else the actor the pick hit (it often
+/// survives in the free camera when the target goes stale).
 #[must_use]
 pub fn crosshair_ref() -> Option<skyrim::actors::RefPtr> {
-    RefHandle(sre::CrosshairPickData::singleton()?.targetHandle).lookup()
+    let pick = sre::CrosshairPickData::singleton()?;
+    RefHandle(pick.targetHandle).lookup().or_else(|| RefHandle(pick.actorHandle).lookup())
 }
 
 /// A reference's name for the menu: the base form's full name, its editor id, or its form id.
