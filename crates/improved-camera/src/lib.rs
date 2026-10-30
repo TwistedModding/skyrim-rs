@@ -261,6 +261,7 @@ fn load(host: &'static Host) -> bool {
         hook::cameras::on_frame();
         camera::extended::apply_deferred();
     });
+    host.add_hud(ui::effect::paint);
     host.add_tab("Improved Camera")
         .section("Profiles", ui::main_menu::draw)
         .section("General", ui::general_menu::draw)

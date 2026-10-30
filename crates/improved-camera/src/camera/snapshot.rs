@@ -19,10 +19,12 @@ pub struct Data {
     pub rotation: M3,
     /// The dialogue's speaker focus shots, which show the player's whole body, are up.
     pub dialogue_focus: bool,
+    /// The idle camera presents its orbit shot (`VanityState::HasShot`).
+    pub idle_shot: bool,
 }
 
 impl Data {
-    pub const NONE: Self = Self { current: CameraType::Unknown, previous: CameraType::Unknown, mode: CameraMode::None, transition: CameraType::Unknown, position: [0.0; 3], rotation: IDENTITY, dialogue_focus: false };
+    pub const NONE: Self = Self { current: CameraType::Unknown, previous: CameraType::Unknown, mode: CameraMode::None, transition: CameraType::Unknown, position: [0.0; 3], rotation: IDENTITY, dialogue_focus: false, idle_shot: false };
 }
 
 static SNAPSHOT: Mutex<Data> = Mutex::new(Data::NONE);

@@ -6,6 +6,7 @@ pub mod body_menu;
 pub mod camera_menu;
 pub mod console_menu;
 pub mod dialogue_menu;
+pub mod effect;
 pub mod effects_menu;
 pub mod fov_menu;
 pub mod free_camera_menu;

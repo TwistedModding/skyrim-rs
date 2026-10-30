@@ -16,6 +16,7 @@ use super::states::Ctx;
 use super::util::orbit::{OrbitController, Pose};
 use crate::body::state::action::ActionType;
 use crate::settings::{Dialogue as DialogueSettings, Profile};
+use crate::ui::effect::fade;
 use crate::util::math_util::{damped_alpha, lerp, normalize_radian, smoother_step};
 use crate::util::point::{self, M3, P3};
 use crate::util::quaternion_util::Quat;
@@ -162,10 +163,12 @@ struct Focus {
     blend_start: (P3, Quat),
     blend_time: f32,
     last_npc_speaking: bool,
+    /// What is on screen with the fade on: the wanted focus lands only once the screen is black.
+    presented: bool,
+    fading_out: bool,
 }
 
-/// `DialogueState`. `SmoothCam`'s API, the Scene Director check, the letterbox and the fade to
-/// black between focus shots (IC's own overlay effects) are left out.
+/// `DialogueState`. `SmoothCam`'s API and the Scene Director check are left out.
 #[derive(Clone, Copy, Debug, Default)]
 pub struct Dialogue {
     previous: Option<CameraType>,
@@ -230,15 +233,59 @@ impl Dialogue {
         }
     }
 
+    /// `FocusPresented` with the fade on.
+    pub const fn focus_presented(&self) -> bool {
+        self.focus.presented
+    }
+
     /// `SpeakerFocus`: the authored shot `CaptureCameraState` presents, while `focus` is wanted.
-    pub fn speaker_focus(&mut self, camera: &PlayerCamera, profile: &Profile, focus: bool) -> Option<(P3, M3)> {
+    /// With "Speaker Focus Fade" every change of what is framed (the focus starting or ending, the
+    /// swap between the two shots) fades to black, commits behind the black frame and fades back;
+    /// `settle` asks the manager to cancel a running transition at the commit.
+    pub fn speaker_focus(&mut self, camera: &PlayerCamera, profile: &Profile, focus: bool, transitioning: bool, settle: &mut bool) -> Option<(P3, M3)> {
+        let dialogue = &profile.Dialogue;
+        let npc_speaking = is_speaker_talking(dialogue);
         let f = &mut self.focus;
+        if dialogue.bFadeToBlack {
+            let change = f.presented != focus || (f.presented && npc_speaking != f.last_npc_speaking);
+            if change && !f.fading_out {
+                if !f.presented && transitioning {
+                    f.presented = true;
+                    f.shot = None;
+                } else {
+                    f.fading_out = true;
+                    fade::fade_to(1.0, dialogue.fFadeSpeed);
+                }
+            } else if f.fading_out && !change {
+                f.fading_out = false;
+                fade::fade_to(0.0, dialogue.fFadeSpeed);
+            }
+            if f.fading_out {
+                if !fade::is_black() {
+                    fade::fade_to(1.0, dialogue.fFadeSpeed);
+                    return if f.presented { f.shot.map(|(p, o)| (p, o.matrix())) } else { None };
+                }
+                f.fading_out = false;
+                f.presented = focus;
+                f.last_npc_speaking = npc_speaking;
+                f.shot = None;
+                *settle = true;
+                fade::fade_to(0.0, dialogue.fFadeSpeed);
+            }
+            if !f.presented {
+                return None;
+            }
+        } else {
+            if f.fading_out {
+                f.fading_out = false;
+                fade::fade_to(0.0, dialogue.fFadeSpeed);
+            }
+            f.presented = focus;
+        }
         if !focus {
             f.shot = None;
             return None;
         }
-        let dialogue = &profile.Dialogue;
-        let npc_speaking = is_speaker_talking(dialogue);
         let target = util::dialogue_target()?;
         let target = util::actor_of(&target)?;
         let player = util::player()?;
@@ -308,7 +355,10 @@ impl Dialogue {
         if ctx.profile.Dialogue.bHeadTracking {
             set_head_tracking(None);
         }
-        self.focus.shot = None;
+        if self.focus.fading_out {
+            fade::fade_to(0.0, ctx.profile.Dialogue.fFadeSpeed);
+        }
+        self.focus = Focus::default();
         if !self.forced_pov {
             return;
         }

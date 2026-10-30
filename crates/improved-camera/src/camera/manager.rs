@@ -617,6 +617,7 @@ impl Manager {
             position: self.present.position,
             rotation: self.present.rotation,
             dialogue_focus: self.dialogue_focus,
+            idle_shot: matches!(&self.state, State::Vanity(v) if v.shot.is_some()),
         }
     }
 
@@ -635,7 +636,11 @@ impl Manager {
         }
         let next = camera_type(engine, util::is_menu_open, Phase::of_player(), body.action, body.race, dead, spectator);
         let enabled = profile.General.bEnableBody;
-        self.dialogue_focus = next == CameraType::Dialogue && super::extended::using_speaker_focus(&profile.Dialogue);
+        self.dialogue_focus = next == CameraType::Dialogue
+            && match &self.state {
+                State::Dialogue(state) if profile.Dialogue.bFadeToBlack => state.focus_presented(),
+                _ => super::extended::using_speaker_focus(&profile.Dialogue),
+            };
         let mut notes = Notes::default();
         let mut ctx = Ctx { camera, profile, body, notes: &mut notes, input, dialogue_focus: self.dialogue_focus };
         if self.state.kind() != next {
@@ -726,11 +731,16 @@ impl Manager {
             }
         }
         self.current.mode = self.set_mode(camera, profile);
+        let transitioning = self.transition_from != CameraType::Unknown;
+        let mut settle = false;
         let shot = match &mut self.state {
-            State::Dialogue(state) if profile.Dialogue.bEnable => state.speaker_focus(camera, profile, self.dialogue_focus),
+            State::Dialogue(state) if profile.Dialogue.bEnable => state.speaker_focus(camera, profile, super::extended::using_speaker_focus(&profile.Dialogue), transitioning, &mut settle),
             State::Vanity(state) if super::base::vanity_enabled(profile) => state.shot,
             _ => None,
         };
+        if settle {
+            self.cancel_transition();
+        }
         if let Some(shot) = shot {
             (position, rotation) = shot;
         }
