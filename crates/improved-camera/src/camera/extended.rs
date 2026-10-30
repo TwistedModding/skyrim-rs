@@ -410,6 +410,11 @@ fn defer(f: impl FnOnce(&mut Deferred)) {
     f(&mut DEFERRED.lock().unwrap_or_else(std::sync::PoisonError::into_inner));
 }
 
+/// `ic spec`: the camera follows `actor`, or the player again with `None`, from the next frame.
+pub fn request_target(actor: Option<RefHandle>) {
+    defer(|d| d.target = Some(actor.unwrap_or(RefHandle::INVALID)));
+}
+
 /// Writes the heading of the actor the camera now follows into the third-person state's yaw
 /// (+0x7c, +0x80): the state's `Begin` does not run again on a target change.
 fn seed_yaw(actor: &Actor) {

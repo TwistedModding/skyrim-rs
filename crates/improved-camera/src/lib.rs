@@ -15,6 +15,7 @@
 mod api;
 mod body;
 mod camera;
+mod console;
 mod event;
 mod handoff;
 mod hook;
@@ -40,7 +41,7 @@ framework::plugin! {
     restore_state: restore_state,
 }
 
-static HOST: OnceLock<&'static Host> = OnceLock::new();
+pub(crate) static HOST: OnceLock<&'static Host> = OnceLock::new();
 /// IC's zoom key (`Effects.Zoom.iKey`, unbound by default).
 pub(crate) static ZOOM: OnceLock<Action> = OnceLock::new();
 /// IC's free camera keys (`FreeCamera.iKeyRollLeft`, `iKeyRollRight`, `iKeyReset`): Q, E and R.
@@ -232,7 +233,14 @@ fn load(host: &'static Host) -> bool {
         return false;
     }
     host.on_message(|msg| match msg.kind {
-        skse::MessagingInterface::DATA_LOADED => plugin::detect_mods(),
+        skse::MessagingInterface::DATA_LOADED => {
+            plugin::detect_mods();
+            if let Some(host) = HOST.get()
+                && let Err(e) = host.register_command::<console::commands::Ic>()
+            {
+                log(&format!("ic command refused: {e}"));
+            }
+        }
         skse::MessagingInterface::POST_LOAD_GAME => {
             util::skyrim_util::clear_idle();
             hook::fixes::apply_body_visibility();
@@ -248,6 +256,7 @@ fn load(host: &'static Host) -> bool {
         if ZOOM.get().is_some_and(Action::fired) {
             camera::manager::with(|m| m.zoom_active = !m.zoom_active);
         }
+        console::commands::run_pending();
         body::manager::sheathe_while_swimming();
         hook::cameras::on_frame();
         camera::extended::apply_deferred();
