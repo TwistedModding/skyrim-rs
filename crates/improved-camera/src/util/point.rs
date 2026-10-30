@@ -1,6 +1,9 @@
 //! The point and matrix arithmetic IC writes with the engine's `NiPoint3` and `NiMatrix3`
 //! operators, on `[f32; 3]` points and row-major `[[f32; 3]; 3]` matrices.
 
+pub use skyrim::physics::lerp;
+pub use skyrim::render::mul3 as mul;
+
 pub type P3 = [f32; 3];
 pub type M3 = [[f32; 3]; 3];
 
@@ -43,28 +46,10 @@ pub fn unitize(a: P3) -> (P3, f32) {
     if len > 0.0 { (scale(a, 1.0 / len), len) } else { ([0.0; 3], 0.0) }
 }
 
-/// `SkyrimUtil.h` `Lerp`.
-#[must_use]
-pub fn lerp(a: P3, b: P3, t: f32) -> P3 {
-    add(a, scale(sub(b, a), t))
-}
-
 /// `matrix * point`.
 #[must_use]
 pub fn mul_vec(m: &M3, v: P3) -> P3 {
     [dot(m[0], v), dot(m[1], v), dot(m[2], v)]
-}
-
-/// `a * b`.
-#[must_use]
-pub fn mul(a: &M3, b: &M3) -> M3 {
-    let mut out = [[0.0; 3]; 3];
-    for (i, row) in out.iter_mut().enumerate() {
-        for (j, cell) in row.iter_mut().enumerate() {
-            *cell = a[i][0] * b[0][j] + a[i][1] * b[1][j] + a[i][2] * b[2][j];
-        }
-    }
-    out
 }
 
 #[must_use]

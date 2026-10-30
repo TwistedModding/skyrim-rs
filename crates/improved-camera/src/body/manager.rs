@@ -94,14 +94,6 @@ impl DirectionType {
     }
 }
 
-fn add(a: [f32; 3], b: [f32; 3]) -> [f32; 3] {
-    [a[0] + b[0], a[1] + b[1], a[2] + b[2]]
-}
-
-fn scale(a: [f32; 3], s: f32) -> [f32; 3] {
-    a.map(|v| v * s)
-}
-
 /// The frozen pose of the body while a menu pauses the game.
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub struct Forced {
@@ -266,7 +258,7 @@ pub fn update_animation_third_person(third: &NiAVObject, forced: bool) {
         if util::camera().and_then(PlayerCameraExt::state) == Some(sre::CameraState::FirstPerson) && camera.transition == CameraType::Unknown {
             let offset = m.update(player, &profile, &info, camera.mode);
             let mut local = root.local_transform();
-            local.translation = add(local.translation, offset);
+            local.translation = point::add(local.translation, offset);
             // Last frame's anchored root held across the graph's re-pose, until the camera
             // update anchors it again.
             if let (CameraMode::First, Some(anchored)) = (camera.mode, m.anchored) {
@@ -285,7 +277,7 @@ pub fn update_animation_third_person(third: &NiAVObject, forced: bool) {
 /// (its combat one with the hands drawn).
 fn anchor_offset(m: &Manager, profile: &Profile) -> [f32; 3] {
     let global = if snapshot::get().hands > HandsType::None { profile.Body.Combat.point() } else { [profile.Body.fRight, profile.Body.fForward, profile.Body.fUp] };
-    [m.race.offset, m.movement.offset, m.action.offset, m.hands.offset, m.directional_offset, global].into_iter().fold([0.0; 3], add)
+    [m.race.offset, m.movement.offset, m.action.offset, m.hands.offset, m.directional_offset, global].into_iter().fold([0.0; 3], point::add)
 }
 
 /// `SmoothMovementOffset`: the yaw smoothing's turn toward the movement, capped at
@@ -558,7 +550,7 @@ impl Manager {
         let direction = determine_direction(player);
         if direction != self.direction {
             self.direction = direction;
-            self.target_directional_offset = direction.sway(&profile.Directional).map_or([0.0; 3], |o| scale(o.point(), profile.Body.fDirectionalIntensity));
+            self.target_directional_offset = direction.sway(&profile.Directional).map_or([0.0; 3], |o| point::scale(o.point(), profile.Body.fDirectionalIntensity));
             self.key_release_timer = 0.0;
         }
         let speed = player.as_i_animation_graph_manager_holder().variable_float(&skyrim::BSFixedString::new("Speed")).unwrap_or(0.0);
@@ -748,28 +740,28 @@ impl Manager {
         self.land_timer = (self.land_timer - dt).max(0.0);
         self.prev_action = action;
 
-        let mut result = add(self.race.offset, self.movement.offset());
+        let mut result = point::add(self.race.offset, self.movement.offset());
 
-        let mut action_offset = add(result, self.action.offset());
+        let mut action_offset = point::add(result, self.action.offset());
         if action == ActionType::Sneak {
             match movement {
-                MovementType::Run => action_offset = scale(action_offset, 0.8),
-                MovementType::Idle => action_offset = scale(action_offset, 0.95),
+                MovementType::Run => action_offset = point::scale(action_offset, 0.8),
+                MovementType::Idle => action_offset = point::scale(action_offset, 0.95),
                 _ => {}
             }
         }
         if action == ActionType::Fall || self.land_timer > 0.0 {
-            action_offset = scale(action_offset, if determine_direction(player).is_back() { 5.0 } else { 2.1 });
+            action_offset = point::scale(action_offset, if determine_direction(player).is_back() { 5.0 } else { 2.1 });
         }
         if matches!(action, ActionType::BoatRide | ActionType::CartRide) {
             action_offset = [0.0; 3];
         }
         result = action_offset;
 
-        let mut hands_offset = add(result, self.hands.offset());
+        let mut hands_offset = point::add(result, self.hands.offset());
         if hands == HandsType::Show {
             if action == ActionType::Sneak {
-                hands_offset = add(hands_offset, scale(self.hands.offset(), -1.0));
+                hands_offset = point::add(hands_offset, point::scale(self.hands.offset(), -1.0));
             } else if movement == MovementType::Run {
                 hands_offset[1] += 13.0;
             }
@@ -791,12 +783,12 @@ impl Manager {
             };
         }
         if !matches!(action, ActionType::BoatRide | ActionType::CartRide | ActionType::Swim | ActionType::Fall) {
-            result = add(result, scale(self.directional_offset, movement_scale));
+            result = point::add(result, point::scale(self.directional_offset, movement_scale));
         }
 
         let body = &profile.Body;
         let placement = if hands > HandsType::None { body.Combat.point() } else { [body.fRight, body.fForward, body.fUp] };
-        add(result, placement)
+        point::add(result, placement)
     }
 }
 

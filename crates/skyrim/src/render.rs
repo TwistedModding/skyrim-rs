@@ -287,7 +287,9 @@ impl Transform {
 /// A row-major `NiMatrix3`.
 pub type Matrix3 = [[f32; 3]; 3];
 
-fn mul3(a: &Matrix3, b: &Matrix3) -> Matrix3 {
+/// `a * b`.
+#[must_use]
+pub fn mul3(a: &Matrix3, b: &Matrix3) -> Matrix3 {
     core::array::from_fn(|i| core::array::from_fn(|j| (0..3).map(|k| a[i][k] * b[k][j]).sum()))
 }
 
