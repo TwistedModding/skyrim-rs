@@ -73,7 +73,7 @@ fn set_body_hidden(first_person: bool, hidden: bool) {
 }
 
 fn body_hidden(first_person: bool) -> bool {
-    body_root(first_person).is_some_and(|r| r.flags & 1 != 0)
+    body_root(first_person).is_some_and(NiAVObjectExt::is_hidden)
 }
 
 /// `FirstPersonState::OnEnter`.

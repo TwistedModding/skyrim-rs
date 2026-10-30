@@ -392,6 +392,8 @@ pub trait NiAVObjectExt {
     /// root between its steps, so a mod changes it on the main thread between frames or on the
     /// player's third-person root only.
     fn set_hidden(&self, hidden: bool);
+    /// Whether the hidden bit is set.
+    fn is_hidden(&self) -> bool;
     fn local_transform(&self) -> Transform;
     /// Writes the local transform. On the main thread between frames follow it with
     /// [`update_transforms`](Self::update_transforms); from a pose-write hook on a bone of the graph's
@@ -429,6 +431,10 @@ impl NiAVObjectExt for NiAVObject {
         } else {
             flags.fetch_and(!HIDDEN, Ordering::Relaxed);
         }
+    }
+
+    fn is_hidden(&self) -> bool {
+        unsafe { AtomicU32::from_ptr((&raw const self.flags).cast_mut()) }.load(Ordering::Relaxed) & HIDDEN != 0
     }
 
     fn local_transform(&self) -> Transform {
