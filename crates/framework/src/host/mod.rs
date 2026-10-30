@@ -78,6 +78,9 @@ static PLUGIN_MESSAGES: Owned<(String, MessageFn)> = Owned::new();
 static FRAMES: Owned<FrameFn> = Owned::new();
 static PAPYRUS: Owned<PapyrusFn> = Owned::new();
 static SINKS: Mutex<Vec<SourceSinks>> = Mutex::new(Vec::new());
+static PLAYER_GRAPH: Owned<ErasedHandler> = Owned::new();
+/// The host's sink on the player's graph source, made at the first [`Host::add_player_graph_sink`].
+static PLAYER_GRAPH_SINK: OnceLock<&'static ErasedSink> = OnceLock::new();
 static NATIVES: Mutex<Vec<Native>> = Mutex::new(Vec::new());
 static COMMANDS: Mutex<Vec<ConsoleCommand>> = Mutex::new(Vec::new());
 /// The startup message kinds seen so far, replayed to a handler registered after them.
@@ -116,6 +119,7 @@ static TABLE: Table = Table {
     setting: settings::get,
     set_setting: settings::set,
     add_sink,
+    add_player_graph_sink,
     register_native,
     register_command,
     plugins,
@@ -282,6 +286,7 @@ pub fn load(skse: &skse::Interface) -> bool {
 /// The overlay's frame callback: reloads first, then every plugin's [`Host::on_frame`].
 fn frame() {
     reload::tick();
+    follow_player_graph();
     FRAMES.each(|f| {
         f();
         true
@@ -507,7 +512,7 @@ fn describe(descriptor: &Descriptor, file: String) -> Plugin {
 fn detach(owner: &str) -> String {
     let hooks = HOOKS.remove_owner(owner);
     let sources: Vec<&'static Owned<ErasedHandler>> = SINKS.lock().unwrap_or_else(PoisonError::into_inner).iter().map(|s| s.handlers).collect();
-    let sinks: usize = sources.iter().map(|handlers| handlers.remove_owner(owner)).sum();
+    let sinks = sources.iter().map(|handlers| handlers.remove_owner(owner)).sum::<usize>() + PLAYER_GRAPH.remove_owner(owner);
     let natives: Vec<(String, &'static str, ErasedNative)> = NATIVES.lock().unwrap_or_else(PoisonError::into_inner).iter().filter(|n| n.owner == owner).map(|n| (format!("{}.{}", n.class, n.name), n.owner, n.erased)).collect();
     for (what, plugin, erased) in &natives {
         let (what, plugin) = (what.clone(), *plugin);
@@ -633,25 +638,45 @@ fn on_papyrus(owner: &'static str, f: PapyrusFn) {
     }
 }
 
+/// Runs `handlers` in registration order until one returns `Stop`.
+fn dispatch(handlers: &Owned<ErasedHandler>, event: *const c_void, source: *const sre::BSTEventSource) -> BSEventNotifyControl {
+    let mut control = BSEventNotifyControl::Continue;
+    handlers.each(|f| {
+        control = f(event, source);
+        control == BSEventNotifyControl::Continue
+    });
+    control
+}
+
 fn add_sink(owner: &'static str, source: ErasedSource, handler: ErasedHandler) {
     let mut sinks = SINKS.lock().unwrap_or_else(PoisonError::into_inner);
     let handlers = if let Some(s) = sinks.iter().find(|s| s.source == source) {
         s.handlers
     } else {
         let handlers: &'static Owned<ErasedHandler> = Box::leak(Box::new(Owned::new()));
-        source.add_sink(ErasedSink::new(Box::new(move |event, source| {
-            let mut control = BSEventNotifyControl::Continue;
-            handlers.each(|f| {
-                control = f(event, source);
-                control == BSEventNotifyControl::Continue
-            });
-            control
-        })));
+        source.add_sink(ErasedSink::new(Box::new(move |event, source| dispatch(handlers, event, source))));
         sinks.push(SourceSinks { source, handlers });
         handlers
     };
     handlers.add(owner, handler);
     log!("{owner}: sink added on the source at {:#x}", source.address());
+}
+
+fn add_player_graph_sink(owner: &'static str, handler: ErasedHandler) {
+    PLAYER_GRAPH.add(owner, handler);
+    PLAYER_GRAPH_SINK.get_or_init(|| ErasedSink::new(Box::new(|event, source| dispatch(&PLAYER_GRAPH, event, source))));
+    log!("{owner}: sink added on the player's graph");
+}
+
+/// Puts the player graph sink on graph 0's current source (graph 0 sends in both views).
+/// `AddEventSink` skips a sink already registered, and a source rebuilt with the player's 3D, at
+/// the old address or another, gets it again.
+fn follow_player_graph() {
+    if let (Some(sink), Some(player)) = (PLAYER_GRAPH_SINK.get(), sre::PlayerCharacter::singleton())
+        && let Some(source) = skyrim::animation::graph_event_source(player, Some(0))
+    {
+        ErasedSource::new(source).add_sink(sink);
+    }
 }
 
 fn register_native(owner: &'static str, request: NativeRequest<'_>) -> Result<&'static NativeFunction, Error> {
@@ -717,6 +742,29 @@ mod tests {
         assert_eq!(PLUGIN_MESSAGES.remove_owner("listener"), 1);
         send(c"hdtsmp64", 100);
         assert_eq!(SEEN.load(Ordering::Relaxed), 1);
+    }
+
+    #[test]
+    fn player_graph_handlers_run_in_order_and_go_with_their_plugin() {
+        static SEEN: AtomicU32 = AtomicU32::new(0);
+        let record = |bit: u32, control: BSEventNotifyControl| -> ErasedHandler {
+            Box::new(move |_, _| {
+                assert_eq!(SEEN.fetch_or(bit, Ordering::Relaxed) & !(bit - 1), 0, "a later handler ran first");
+                control
+            })
+        };
+        add_player_graph_sink("graph-a", record(1, BSEventNotifyControl::Continue));
+        add_player_graph_sink("graph-b", record(2, BSEventNotifyControl::Stop));
+        add_player_graph_sink("graph-a", record(4, BSEventNotifyControl::Continue));
+        assert!(PLAYER_GRAPH_SINK.get().is_some());
+        assert_eq!(dispatch(&PLAYER_GRAPH, core::ptr::null(), core::ptr::null()), BSEventNotifyControl::Stop);
+        assert_eq!(SEEN.swap(0, Ordering::Relaxed), 3, "b stops the walk before a's second handler");
+        assert!(detach("graph-b").contains(" 1 sinks"));
+        assert_eq!(dispatch(&PLAYER_GRAPH, core::ptr::null(), core::ptr::null()), BSEventNotifyControl::Continue);
+        assert_eq!(SEEN.swap(0, Ordering::Relaxed), 5);
+        assert!(detach("graph-a").contains(" 2 sinks"));
+        assert_eq!(dispatch(&PLAYER_GRAPH, core::ptr::null(), core::ptr::null()), BSEventNotifyControl::Continue);
+        assert_eq!(SEEN.load(Ordering::Relaxed), 0);
     }
 
     #[test]

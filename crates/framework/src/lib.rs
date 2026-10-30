@@ -30,7 +30,7 @@ use std::fmt;
 
 pub use overlay::{GameMouse, GamePad, Hotkey, Scope, View, egui, theme};
 use skyrim::events::{BSTEventSource, ErasedHandler, ErasedSource, Event};
-use sre::{BSEventNotifyControl, InputDevice};
+use sre::{BSAnimationGraphEvent, BSEventNotifyControl, InputDevice};
 use skyrim::input::{Command, CommandSlot, ErasedExecute, Param};
 use skyrim::papyrus::{ErasedNativeFn, IntoVariable, LatentFn, NativeCall, NativeFn, NativeFunction, NativeKind, NativeMethod, ParamType, VirtualMachine};
 
@@ -181,6 +181,7 @@ pub(crate) struct Table {
     pub setting: fn(&str, &str) -> Option<Setting>,
     pub set_setting: fn(&str, &str, Setting),
     pub add_sink: fn(&'static str, ErasedSource, ErasedHandler),
+    pub add_player_graph_sink: fn(&'static str, ErasedHandler),
     pub register_native: fn(&'static str, NativeRequest<'_>) -> Result<&'static NativeFunction, Error>,
     pub register_command: fn(&'static str, CommandRequest<'_>) -> Result<CommandSlot, Error>,
     pub plugins: fn() -> &'static [Plugin],
@@ -368,6 +369,19 @@ impl Host {
         });
         (self.table.add_sink)(self.name, source, handler);
         Ok(())
+    }
+
+    /// Registers `f` for the player's behaviour graph events (`BSAnimationGraphEvent`: the tag, the
+    /// player as holder, the payload) through a sink the host owns. The graph's source dies with
+    /// the player's 3D, so the host registers its sink on the current source every frame; the
+    /// events between a 3D rebuild and the next frame are missed. `f` runs on the sending thread,
+    /// often a job thread, with the source lock held.
+    pub fn add_player_graph_sink(&self, f: impl Fn(&BSAnimationGraphEvent) -> BSEventNotifyControl + Send + Sync + 'static) {
+        let handler: ErasedHandler = Box::new(move |event, _| match unsafe { event.cast::<BSAnimationGraphEvent>().as_ref() } {
+            Some(event) => f(event),
+            None => BSEventNotifyControl::Continue,
+        });
+        (self.table.add_player_graph_sink)(self.name, handler);
     }
 
     /// Registers `f` as `class.name`, a `native global` function, through a function object the

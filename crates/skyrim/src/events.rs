@@ -131,7 +131,13 @@ impl ErasedSource {
     /// The source of `E`, `None` while its holder does not exist yet.
     #[must_use]
     pub fn of<E: Event>() -> Option<Self> {
-        E::source().map(|s| Self { source: s.as_mut_ptr(), add: E::ADD_SINK })
+        E::source().map(Self::new)
+    }
+
+    /// A source of `E` reached some other way, such as a reference's graph source.
+    #[must_use]
+    pub fn new<E: Event>(source: &BSTEventSource<E>) -> Self {
+        Self { source: source.as_mut_ptr(), add: E::ADD_SINK }
     }
 
     #[must_use]
