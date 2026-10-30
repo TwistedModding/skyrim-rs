@@ -23,7 +23,7 @@ forms = ["sre/forms"]
 input = ["sre/events", "sre/input", "sre/ui"]
 papyrus = ["forms", "sre/actors", "sre/events", "sre/papyrus", "sre/script"]
 physics = ["actors", "forms", "render", "sre/camera"]
-render = ["camera", "sre/bs", "sre/camera", "sre/frame", "sre/graphics", "sre/other", "sre/render", "sre/settings"]
+render = ["camera", "sre/bs", "sre/camera", "sre/frame", "sre/graphics", "sre/other", "sre/render", "sre/ni", "sre/settings", "sre/tes"]
 save = ["events", "sre/save"]
 ui = ["sre/events", "sre/ui"]
 

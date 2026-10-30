@@ -9,7 +9,7 @@
 use core::ffi::CStr;
 use std::ffi::CString;
 
-use sre::{Actor, BGSKeyword, BGSListForm, BGSLocation, BGSSoundCategory, Character, EffectSetting, FormType, PlayerCharacter, TESClass, TESDataHandler, TESFile, TESForm, TESFurniture, TESGlobal, TESNPC, TESObjectCELL, TESObjectREFR, TESObjectWEAP, TESQuest, TESRace, TESWorldSpace, VMTypeID};
+use sre::{Actor, BGSArtObject, BGSKeyword, BGSListForm, BGSLocation, BGSSoundCategory, Character, EffectSetting, FormType, PlayerCharacter, TESClass, TESDataHandler, TESEffectShader, TESFile, TESForm, TESFurniture, TESGlobal, TESNPC, TESObjectCELL, TESObjectLIGH, TESObjectREFR, TESObjectWEAP, TESQuest, TESRace, TESWeather, TESWorldSpace, VMTypeID};
 
 use crate::ptr_slice;
 
@@ -103,6 +103,10 @@ by_form_type!(
     TESWorldSpace = WRLD / WorldSpace,
     BGSLocation = LCTN / Location,
     BGSSoundCategory = SNCT / SoundCategory,
+    TESWeather = WTHR / Weather,
+    TESObjectLIGH = LIGH / Light,
+    TESEffectShader = EFSH / EffectShader,
+    BGSArtObject = ARTO / Art,
 );
 
 pub trait TESFormExt {
@@ -181,9 +185,25 @@ pub trait TESFileExt {
     /// A file-relative id as the runtime form id through `TESFile::ResolveFormID` (id 14003);
     /// `None` when the file is not loaded.
     fn runtime_form_id(&self, local: u32) -> Option<u32>;
+    /// The file's name (`fileName`, +0x58).
+    fn name(&self) -> &str;
+}
+
+/// A runtime form id without its load-order prefix: the low 12 bits for a light plugin's (`FE`)
+/// form, the low 24 otherwise. With the form's file (`TESForm::GetFile(0)`) it names the form
+/// across load orders, as the engine's own `GetFormFromFile` takes it (RE `camera.md` IC8 K).
+#[must_use]
+pub const fn local_form_id(form_id: u32) -> u32 {
+    if form_id >> 24 == 0xFE { form_id & 0xFFF } else { form_id & 0x00FF_FFFF }
 }
 
 impl TESFileExt for TESFile {
+    fn name(&self) -> &str {
+        let bytes = &self.fileName;
+        let end = bytes.iter().position(|&b| b == 0).unwrap_or(bytes.len());
+        core::str::from_utf8(&bytes[..end]).unwrap_or_default()
+    }
+
     fn runtime_form_id(&self, local: u32) -> Option<u32> {
         if self.compileIndex == 0xFF {
             return None;
@@ -191,5 +211,17 @@ impl TESFileExt for TESFile {
         let mut id = local;
         unsafe { self.resolve_form_id(&raw mut id) };
         Some(id)
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use super::local_form_id;
+
+    #[test]
+    fn a_local_id_drops_the_load_order_prefix() {
+        assert_eq!(local_form_id(0x0000_081A), 0x81A);
+        assert_eq!(local_form_id(0x0A01_2345), 0x01_2345);
+        assert_eq!(local_form_id(0xFE01_2805), 0x805);
     }
 }

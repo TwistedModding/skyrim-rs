@@ -16,7 +16,7 @@ use core::ffi::{CStr, c_void};
 use core::sync::atomic::{AtomicU32, Ordering};
 
 use sre::raw::{fns, vtables};
-use sre::{BSCullingProcess, BSEffectShaderData, BSFadeNode, BSFlattenedBoneTree, BSGeometry, BSLight, BSLightingShaderMaterialBase, BSShaderMaterial, BSShaderProperty, BSShaderTextureSet, BSShadowLight, BSTextureSet, CameraMatrixEntry, NiAVObject, NiCamera, NiNode, NiSkinInstance, NiTransform, ShaderMaterialType, ShadowMapData, ShadowSceneNode, TESEffectShader, TextureSetSlot};
+use sre::{BSCullingProcess, Calendar, Sky, TESWeather, BSEffectShaderData, BSFadeNode, BSFlattenedBoneTree, BSGeometry, BSLight, BSLightingShaderMaterialBase, BSShaderMaterial, BSShaderProperty, BSShaderTextureSet, BSShadowLight, BSTextureSet, CameraMatrixEntry, NiAVObject, NiCamera, NiNode, NiSkinInstance, NiTransform, ShaderMaterialType, ShadowMapData, ShadowSceneNode, TESEffectShader, TextureSetSlot};
 
 use crate::ptr_slice;
 
@@ -707,6 +707,55 @@ impl BSTextureSetExt for BSTextureSet {
         let p = unsafe { &*core::ptr::from_ref(self).cast::<BSShaderTextureSet>() }.get_texture_path(slot);
         if p.is_null() { None } else { Some(unsafe { CStr::from_ptr(p) }) }
     }
+}
+
+/// The sun's scene objects (RE `camera.md` IC8 G): the light whose rotation the shadows read, the
+/// root whose translation places the sun (the disc hangs under it) and the glare billboard under
+/// the weather node, which `Sun::Update` gives the root's translation. A mod moving the sun writes
+/// the root and the glare after `Sun::Update`.
+pub struct SunNodes {
+    pub light: &'static NiAVObject,
+    pub root: Option<&'static NiAVObject>,
+    pub glare: Option<&'static NiAVObject>,
+}
+
+pub trait SkyExt {
+    /// `None` without a sun or its light (menus, loading).
+    fn sun_nodes(&self) -> Option<SunNodes>;
+    /// The weather on screen (`currentWeather`, +0x48).
+    fn current_weather(&self) -> Option<&'static TESWeather>;
+}
+
+impl SkyExt for Sky {
+    fn sun_nodes(&self) -> Option<SunNodes> {
+        let sun = unsafe { self.sun.as_ref() }?;
+        let light: &NiAVObject = unsafe { sun.light.as_ref() }?;
+        Some(SunNodes { light, root: unsafe { sun.root.cast::<NiAVObject>().as_ref() }, glare: unsafe { sun.glareBillboard.cast::<NiAVObject>().as_ref() } })
+    }
+
+    fn current_weather(&self) -> Option<&'static TESWeather> {
+        unsafe { self.currentWeather.as_ref() }
+    }
+}
+
+/// `GameHour` (the calendar's global +0x20, 0 to 24), which the sky reads every frame.
+#[must_use]
+pub fn game_hour() -> Option<f32> {
+    unsafe { Calendar::singleton()?.gameHour.as_ref() }.map(|g| g.value)
+}
+
+/// Writes `GameHour`. Main thread.
+pub fn set_game_hour(hour: f32) {
+    if let Some(global) = Calendar::singleton().and_then(|c| unsafe { c.gameHour.as_ref() }) {
+        crate::store(&global.value, hour);
+    }
+}
+
+/// Whether the player is in an interior cell (`TES`+0xc0 set). The sky's mode is no answer: an
+/// interior that shows the sky runs mode 2 or 3.
+#[must_use]
+pub fn is_interior() -> bool {
+    sre::TES::singleton().is_some_and(|tes| tes.field_C0 != 0)
 }
 
 #[cfg(test)]
