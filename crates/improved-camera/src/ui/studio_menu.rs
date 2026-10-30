@@ -12,7 +12,7 @@ use std::sync::atomic::{AtomicU64, Ordering};
 use framework::egui::{self, Color32, Painter, Pos2, Stroke};
 use framework::View;
 use skyrim::forms::TESFormExt;
-use skyrim::render::NiAVObjectExt;
+use skyrim::render::{self as render, NiAVObjectExt};
 
 use super::widgets::{combo, rows, section_header, slider, toggle};
 use crate::camera::studio::adjustments::{axis_angle, degrees_from_rotation, rotation_from_degrees, third_person_3d};
@@ -71,6 +71,8 @@ struct Menu {
     last_event: String,
     imods: Option<Vec<ImodInfo>>,
     imod_search: String,
+    weathers: Option<Vec<environment::WeatherInfo>>,
+    weather_search: String,
     imod_strength: Option<f32>,
     /// World units per dragged pixel on the Position page (IC: 1).
     move_strength: Option<f32>,
@@ -940,6 +942,19 @@ fn environment_page(ui: &mut egui::Ui) -> bool {
     if page_header(ui, "Environment") {
         return true;
     }
+    title(ui, "Time of Day");
+    let mut hour = environment::hour();
+    if ui.add(egui::Slider::new(&mut hour, 0.0..=23.99).text("Hour").fixed_decimals(2)).changed() {
+        manager::with(|m| m.set_hour(hour));
+    }
+    ui.columns(3, |columns| {
+        for (i, (label, preset)) in [("Dawn", 5.5), ("Morning", 9.0), ("Noon", 13.0), ("Golden", 18.5), ("Dusk", 20.5), ("Night", 1.0)].into_iter().enumerate() {
+            let column = &mut columns[i % 3];
+            if column.add_sized([column.available_width(), 20.0], egui::Button::new(label)).clicked() {
+                manager::with(|m| m.set_hour(preset));
+            }
+        }
+    });
     title(ui, "Sun");
     let mut sun = environment::get_sun();
     let mut changed = ui.checkbox(&mut sun.enabled, "Override Sun Angle").on_hover_text("Sets the shadow direction directly instead of deriving it from the time of day").changed();
@@ -950,16 +965,37 @@ fn environment_page(ui: &mut egui::Ui) -> bool {
         }
         changed |= ui.add(egui::Slider::new(&mut sun.azimuth, 0.0..=360.0).text("Azimuth").suffix(" deg").fixed_decimals(0)).on_hover_text("Compass bearing: 0 is north, increasing clockwise").changed();
         changed |= ui.add(egui::Slider::new(&mut sun.elevation, -20.0..=90.0).text("Elevation").suffix(" deg").fixed_decimals(0)).on_hover_text("Height above the horizon. Low angles give long shadows; below zero puts the sun under the horizon").changed();
-        ui.weak("Only the light (and the shadows) move: the sun's disc and glare stay where the hour puts them.");
+        ui.weak("Volumetric fog and screen-space effects take a moment to\nsettle after a big change - they blend over several frames.");
     }
     if changed {
         environment::set_sun(sun);
     }
+    let mut guard = MENU.lock().unwrap_or_else(std::sync::PoisonError::into_inner);
+    let m = guard.get_or_insert_with(Menu::default);
+    title(ui, "Weather");
+    if render::is_interior() {
+        ui.weak("Interior cell - weather has no effect here.");
+    } else {
+        let (current, forced) = (environment::current_weather(), manager::with(|s| s.forced_weather));
+        if ui.add_enabled(forced != 0, egui::Button::new("Release Override")).clicked() {
+            manager::with(Manager::release_weather);
+        }
+        ui.add(egui::TextEdit::singleline(&mut m.weather_search).hint_text("Search weathers...").desired_width(f32::INFINITY));
+        let list = m.weathers.get_or_insert_with(environment::weathers);
+        egui::ScrollArea::vertical().id_salt("WeatherList").max_height(180.0).show(ui, |ui| {
+            for weather in list.iter().filter(|w| contains_no_case(&w.label, &m.weather_search)) {
+                ui.horizontal(|ui| {
+                    if ui.selectable_label(weather.form_id == current, &weather.label).clicked() {
+                        manager::with(|s| s.force_weather(weather.form_id, false));
+                    }
+                    ui.with_layout(egui::Layout::right_to_left(egui::Align::Center), |ui| ui.weak(weather.kind.name()));
+                });
+            }
+        });
+    }
     title(ui, "Colour Grading");
     ui.weak("The game's own imagespace modifiers.");
     let (active, held) = manager::with(|s| (s.imod, s.imod_strength));
-    let mut guard = MENU.lock().unwrap_or_else(std::sync::PoisonError::into_inner);
-    let m = guard.get_or_insert_with(Menu::default);
     let strength = m.imod_strength.get_or_insert(held);
     let response = ui.add_enabled(active != 0, egui::Slider::new(strength, 0.0..=1.0).text("Strength").fixed_decimals(2));
     if response.drag_stopped() || (response.changed() && !response.dragged()) {
@@ -990,7 +1026,7 @@ fn scenes(ui: &mut egui::Ui) -> bool {
     let m = guard.get_or_insert_with(Menu::default);
     let dir = io::directory("Scenes");
     let files = m.scene_files.get_or_insert_with(|| io::list_files(&dir));
-    ui.weak("A scene here is the camera framing and the sun override.");
+    ui.weak("A scene here is the camera framing, the hour, the forced weather and the sun override.");
     title(ui, "Save");
     let mut saved = false;
     ui.horizontal(|ui| {
@@ -998,7 +1034,13 @@ fn scenes(ui: &mut egui::Ui) -> bool {
         if ui.button("Save Scene").clicked() {
             let name = io::sanitize_file_name(&if m.scene_save_name.is_empty() { format!("Scene {}", files.len() + 1) } else { m.scene_save_name.clone() });
             let sun = environment::get_sun();
-            let scene = Scene { camera: Manager::read_camera_pose().bookmark(String::new()), sun: sun.enabled.then_some(SceneSun { azimuth: sun.azimuth, elevation: sun.elevation }) };
+            let forced = manager::with(|s| s.forced_weather);
+            let scene = Scene {
+                camera: Manager::read_camera_pose().bookmark(String::new()),
+                hour: Some(environment::hour()),
+                weather: Some(environment::form_key(forced)).filter(|k| forced != 0 && !k.is_empty()),
+                sun: sun.enabled.then_some(SceneSun { azimuth: sun.azimuth, elevation: sun.elevation }),
+            };
             match io::save_scene(&dir, &scene, &name) {
                 Ok(path) => {
                     crate::log(&format!("<Photo Mode> Saved scene: {}", path.display()));
@@ -1040,8 +1082,17 @@ fn scenes(ui: &mut egui::Ui) -> bool {
     false
 }
 
-/// `ApplyScene`, for what a scene carries here: the sun only when it sets one, then the camera.
+/// `ApplyScene`, for what a scene carries here: the hour and the weather when it sets them, the sun
+/// only when it sets one, then the camera.
 fn apply_scene(scene: &Scene) {
+    manager::with(|m| {
+        if let Some(hour) = scene.hour {
+            m.set_hour(hour);
+        }
+        if let Some(key) = &scene.weather {
+            m.force_weather(environment::resolve_form_key(key), false);
+        }
+    });
     if let Some(sun) = scene.sun {
         environment::set_sun(environment::SunOverride { enabled: true, azimuth: sun.azimuth, elevation: sun.elevation });
     }

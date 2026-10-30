@@ -433,16 +433,31 @@ pub struct SceneSun {
     pub elevation: f32,
 }
 
-/// What of IC's scene the port restores: the camera and the sun. IC's actors, lights, hour and
-/// weather wait on RE request IC8; a file that holds them is still read, those blocks noted.
+/// `ResolveFormKey`'s parse: a `Plugin|LOCALID` key's plugin and local id.
+#[must_use]
+pub fn parse_form_key(key: &str) -> Option<(&str, u32)> {
+    let (plugin, local) = key.split_once('|')?;
+    Some((plugin, u32::from_str_radix(local, 16).ok()?))
+}
+
+/// What of IC's scene the port restores: the camera, the hour, the forced weather (a form key) and
+/// the sun. IC's actors and lights are still read past, their blocks noted.
 #[derive(Clone, Debug, Default, PartialEq)]
 pub struct Scene {
     pub camera: CameraBookmark,
+    pub hour: Option<f32>,
+    pub weather: Option<String>,
     pub sun: Option<SceneSun>,
 }
 
 pub fn save_scene(dir: &Path, scene: &Scene, name: &str) -> Result<PathBuf, String> {
     let mut fields = vec![("lights", Json::Array(Vec::new())), ("version", Json::Number(FILE_VERSION)), ("type", Json::Text("scene".into())), ("camera", camera_json(&scene.camera, false))];
+    if let Some(hour) = scene.hour {
+        fields.push(("hour", num(hour)));
+    }
+    if let Some(weather) = &scene.weather {
+        fields.push(("weather", Json::Text(weather.clone())));
+    }
     if let Some(sun) = scene.sun {
         fields.push(("sun", object(vec![("azimuth", num(sun.azimuth)), ("elevation", num(sun.elevation))])));
     }
@@ -458,18 +473,18 @@ pub fn load_scene(dir: &Path, name: &str, notes: &mut Vec<String>) -> Result<Sce
     if !matches!(json.get("type"), Some(Json::Text(t)) if t == "scene") {
         return Err(format!("Invalid scene file: {}", path.display()));
     }
-    let mut scene = Scene { camera: json.get("camera").map(|c| camera(c, "")).unwrap_or_default(), ..Scene::default() };
+    let mut scene = Scene {
+        camera: json.get("camera").map(|c| camera(c, "")).unwrap_or_default(),
+        hour: as_f32(json.get("hour")).filter(|h| *h >= 0.0),
+        weather: Some(text_or(&json, "weather", "")).filter(|w| !w.is_empty()),
+        ..Scene::default()
+    };
     if let Some(sun) = json.get("sun").filter(|s| matches!(s, Json::Object(_))) {
         scene.sun = Some(SceneSun { azimuth: f32_or(sun, "azimuth", 0.0), elevation: f32_or(sun, "elevation", 0.0) });
     }
     for key in ["actors", "lights"] {
         if matches!(json.get(key), Some(Json::Array(a)) if !a.is_empty()) {
             notes.push(format!("{name}: the scene's {key} are not restored here"));
-        }
-    }
-    for key in ["hour", "weather"] {
-        if json.get(key).is_some() {
-            notes.push(format!("{name}: the scene's {key} is not restored here"));
         }
     }
     Ok(scene)
@@ -551,15 +566,17 @@ mod tests {
         let shots = vec![CameraBookmark { name: "Shot 1".into(), position: [10.0, -20.5, 300.0], pitch: 0.1, yaw: 3.0, roll: -5.0, fov: 55.0 }, CameraBookmark { name: "Wide".into(), ..CameraBookmark::default() }];
         save_camera_bookmarks(&dir, &shots).unwrap();
         assert_eq!(load_camera_bookmarks(&dir), shots);
-        let scene = Scene { camera: CameraBookmark { name: String::new(), ..shots[0].clone() }, sun: Some(SceneSun { azimuth: 135.0, elevation: 20.0 }) };
+        let scene = Scene { camera: CameraBookmark { name: String::new(), ..shots[0].clone() }, hour: Some(18.5), weather: Some("Skyrim.esm|0000081A".into()), sun: Some(SceneSun { azimuth: 135.0, elevation: 20.0 }) };
         save_scene(&dir, &scene, "Dusk").unwrap();
         let mut notes = Vec::new();
         assert_eq!(load_scene(&dir, "Dusk", &mut notes).unwrap(), scene);
         assert_eq!(notes, Vec::<String>::new());
         std::fs::write(dir.join("Ic.json"), r#"{"type": "scene", "camera": {"fov": 40}, "hour": 6.5, "actors": [{"actor": "Skyrim.esm|00000007"}], "lights": []}"#).unwrap();
         let ic = load_scene(&dir, "Ic", &mut notes).unwrap();
-        assert!((ic.camera.fov - 40.0).abs() < f32::EPSILON && ic.sun.is_none());
-        assert_eq!(notes, ["Ic: the scene's actors are not restored here", "Ic: the scene's hour is not restored here"]);
+        assert!((ic.camera.fov - 40.0).abs() < f32::EPSILON && ic.sun.is_none() && ic.hour == Some(6.5) && ic.weather.is_none());
+        assert_eq!(notes, ["Ic: the scene's actors are not restored here"]);
+        assert_eq!(parse_form_key("Skyrim.esm|0000081A"), Some(("Skyrim.esm", 0x81a)));
+        assert_eq!(parse_form_key("Skyrim.esm"), None);
         std::fs::write(dir.join("Pose.json"), r#"{"type": "pose"}"#).unwrap();
         assert!(load_scene(&dir, "Pose", &mut notes).is_err());
         let _ = std::fs::remove_dir_all(&dir);

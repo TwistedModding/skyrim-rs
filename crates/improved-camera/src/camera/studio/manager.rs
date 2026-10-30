@@ -229,6 +229,9 @@ enum Task {
     OwnedEvent(u32, String),
     Imod { previous: u32, next: u32, strength: f32 },
     FootIk(u32, bool),
+    Hour(f32),
+    /// A weather to force (snapping or with a transition), or none to release ours.
+    Weather(Option<(u32, bool)>),
 }
 
 #[derive(Debug, Default)]
@@ -244,6 +247,8 @@ pub struct Manager {
     pub capture: Capture,
     pub imod: u32,
     pub imod_strength: f32,
+    /// The weather the studio forced, released when it closes.
+    pub forced_weather: u32,
     /// The camera pins onto the target (the Camera page's switch).
     pub orbit_enabled: bool,
     orbit: Orbit,
@@ -405,6 +410,7 @@ impl Manager {
         self.apply_hud_preference();
         environment::release_sun();
         self.clear_imod();
+        self.release_weather();
         self.restore_collision();
         for handle in core::mem::take(&mut self.foot_ik_off) {
             self.tasks.push(Task::FootIk(handle, false));
@@ -519,6 +525,26 @@ impl Manager {
         self.imod = form_id;
         self.imod_strength = strength.clamp(0.0, 1.0);
         self.tasks.push(Task::Imod { previous, next: form_id, strength: self.imod_strength });
+    }
+
+    /// `SetHour`.
+    pub fn set_hour(&mut self, hour: f32) {
+        self.tasks.push(Task::Hour(hour));
+    }
+
+    /// `ForceWeather`: the id is resolved again on the frame, so a load in between drops it.
+    pub fn force_weather(&mut self, form_id: u32, transition: bool) {
+        if form_id != 0 {
+            self.forced_weather = form_id;
+            self.tasks.push(Task::Weather(Some((form_id, transition))));
+        }
+    }
+
+    /// `ReleaseWeather`: only a weather the studio forced.
+    pub fn release_weather(&mut self) {
+        if core::mem::take(&mut self.forced_weather) != 0 {
+            self.tasks.push(Task::Weather(None));
+        }
     }
 
     /// `ClearImod`.
@@ -877,6 +903,9 @@ pub fn release() {
         }
         environment::release_sun();
         environment::restart_imod(core::mem::take(&mut m.imod), 0, 0.0);
+        if m.forced_weather != 0 {
+            environment::release_weather();
+        }
         if m.hid_hud || m.capture.hid_hud {
             util::show_menus(true);
         }
@@ -923,6 +952,9 @@ pub fn on_frame() {
             Task::OwnedEvent(handle, event) => notify(handle, &event),
             Task::Imod { previous, next, strength } => environment::restart_imod(previous, next, strength),
             Task::FootIk(handle, disabled) => set_foot_ik(handle, disabled),
+            Task::Hour(hour) => environment::set_hour(hour),
+            Task::Weather(Some((form_id, transition))) => environment::force_weather(form_id, transition),
+            Task::Weather(None) => environment::release_weather(),
         }
     }
     let delay = Duration::from_secs_f32(settings::profile().Studio.fBracketDelay.clamp(0.0, 5.0));
